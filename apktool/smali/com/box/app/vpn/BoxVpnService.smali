@@ -94,8 +94,6 @@
 
     move-result-object v3
 
-    invoke-direct {v1, p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     invoke-direct {v1, p0, v3, v2}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
 
     invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V

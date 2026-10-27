@@ -33,13 +33,13 @@
     # already granted -> go straight into the app
     const-string v0, "box_vpn"
 
-    invoke-virtual {p0, v0}, Lcom/box/app/vpn/RootGateActivity;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    const/4 v2, 0x0
+
+    invoke-virtual {p0, v0, v2}, Lcom/box/app/vpn/RootGateActivity;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
     const-string v1, "root_gate_passed"
-
-    const/4 v2, 0x0
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -110,13 +110,13 @@
 
     const/4 v6, 0x1
 
-    invoke-virtual {v3, v6}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;I)V
+    invoke-virtual {v3, v6}, Landroid/widget/TextView;->setTypeface(I)V
 
     const/4 v6, 0x0
 
     const/16 v7, 0x10
 
-    invoke-virtual {v3, v7, v6}, Landroid/widget/TextView;->setPadding(IIII)V
+    invoke-virtual {v3, v7, v6, v7, v6}, Landroid/widget/TextView;->setPadding(IIII)V
 
     invoke-virtual {v0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
@@ -171,7 +171,7 @@
 
     const/16 v1, 0x10
 
-    invoke-virtual {v6, v1, v7}, Landroid/widget/TextView;->setPadding(IIII)V
+    invoke-virtual {v6, v1, v7, v1, v7}, Landroid/widget/TextView;->setPadding(IIII)V
 
     invoke-virtual {v0, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
