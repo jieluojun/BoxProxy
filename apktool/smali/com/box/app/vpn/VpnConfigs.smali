@@ -178,7 +178,8 @@
 
     if-eqz v3, :cond_full
 
-    if-ne v3, v2, :cond_trim
+    # v1 = unread remainder (length - offset): trim only on short reads
+    if-nez v1, :cond_trim
 
     :cond_full
     return-object v2
