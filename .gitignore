@@ -1,0 +1,23 @@
+# 构建产物
+*.apk
+*.apks
+*.aab
+*.idsig
+/dist/
+/artifacts/
+decompiled/build/
+decompiled/dist/
+
+# 工具与脚本缓存
+/.tools/
+
+# 签名材料，禁止入库
+*.jks
+*.keystore
+*.p12
+keystore.properties
+
+# 杂项
+.DS_Store
+.idea/
+*.iml
