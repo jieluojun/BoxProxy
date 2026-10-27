@@ -201,16 +201,28 @@ public final class MainActivity extends Activity {
     }
 
     private LinearLayout page() {
-        LinearLayout root = new LinearLayout(this);
-        root.setOrientation(LinearLayout.VERTICAL);
-        root.setPadding(28, 32, 28, 24);
-        ScrollView scroll = new ScrollView(this);
-        scroll.addView(root);
-        // ScrollView is the root container while keeping a simple, dependency-free UI.
-        LinearLayout shell = new LinearLayout(this);
-        shell.setOrientation(LinearLayout.VERTICAL);
-        shell.addView(scroll, new LinearLayout.LayoutParams(-1, -1));
-        return shell;
+        return new ScrollPage(this);
+    }
+
+    /** A scrollable page that directs the activity's addView calls into its content column. */
+    private static final class ScrollPage extends LinearLayout {
+        private final LinearLayout content;
+
+        ScrollPage(Activity activity) {
+            super(activity);
+            setOrientation(LinearLayout.VERTICAL);
+            ScrollView scroll = new ScrollView(activity);
+            scroll.setFillViewport(true);
+            content = new LinearLayout(activity);
+            content.setOrientation(LinearLayout.VERTICAL);
+            content.setPadding(28, 32, 28, 24);
+            scroll.addView(content);
+            super.addView(scroll, new LinearLayout.LayoutParams(-1, -1));
+        }
+
+        @Override public void addView(View child) {
+            content.addView(child);
+        }
     }
 
     private TextView text(String value, int sp, boolean bold) {
