@@ -1,0 +1,16 @@
+# apktool build output
+apktool/build/
+
+# packaged apks and signing material
+*.apk
+*.ap_
+*.keystore
+*.jks
+keystore.properties
+
+# local tooling / work dirs
+work/
+tmp/
+.idea/
+*.iml
+.DS_Store
