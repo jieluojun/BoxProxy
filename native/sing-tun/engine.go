@@ -168,7 +168,8 @@ func (h *socksForwarder) NewPacketConnectionEx(ctx context.Context, client N.Pac
 }
 
 func (h *socksForwarder) dialTCP(ctx context.Context, destination M.Socksaddr) (net.Conn, error) {
-    control, err := net.Dialer{Timeout: 10 * time.Second}.DialContext(ctx, "tcp", h.address)
+    dialer := &net.Dialer{Timeout: 10 * time.Second}
+    control, err := dialer.DialContext(ctx, "tcp", h.address)
     if err != nil { return nil, err }
     fail := func(e error) (net.Conn, error) { _ = control.Close(); return nil, e }
     if err = socksGreeting(control); err != nil { return fail(err) }
@@ -184,7 +185,8 @@ func (h *socksForwarder) dialTCP(ctx context.Context, destination M.Socksaddr) (
 }
 
 func (h *socksForwarder) openUDPAssociation(ctx context.Context) (net.Conn, net.Conn, error) {
-    control, err := net.Dialer{Timeout: 10 * time.Second}.DialContext(ctx, "tcp", h.address)
+    dialer := &net.Dialer{Timeout: 10 * time.Second}
+    control, err := dialer.DialContext(ctx, "tcp", h.address)
     if err != nil { return nil, nil, err }
     fail := func(e error) (net.Conn, net.Conn, error) { _ = control.Close(); return nil, nil, e }
     if err = socksGreeting(control); err != nil { return fail(err) }
