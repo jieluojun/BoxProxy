@@ -20,7 +20,8 @@ concurrency:
 jobs:
   build-debug-apk:
     name: Build debug APK
-    runs-on: ubuntu-latest
+    # Keep the Android toolchain on the stable runner while ubuntu-latest migrates to 26.04.
+    runs-on: ubuntu-24.04
     timeout-minutes: 45
     steps:
       - name: Check out source
@@ -39,7 +40,7 @@ jobs:
           cache-dependency-path: native/sing-tun/go.mod
 
       - name: Set up Android SDK and NDK
-        uses: android-actions/setup-android@v3
+        uses: android-actions/setup-android@v4.0.4
 
       - name: Install Android SDK packages
         run: sdkmanager "platforms;android-35" "build-tools;35.0.0" "ndk;27.2.12479018"
