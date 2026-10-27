@@ -14,16 +14,25 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: '17'
 
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Locate preinstalled Android build-tools
+        run: |
+          # GitHub-hosted ubuntu runners ship the Android SDK (incl. build-tools)
+          echo "ANDROID_HOME=$ANDROID_HOME"
+          ls "$ANDROID_HOME/build-tools"
+          ZIPALIGN=$(find "$ANDROID_HOME/build-tools" -name zipalign | sort -V | tail -n1)
+          APKSIGNER=$(find "$ANDROID_HOME/build-tools" -name apksigner | sort -V | tail -n1)
+          test -x "$ZIPALIGN"
+          test -x "$APKSIGNER"
+          echo "ZIPALIGN=$ZIPALIGN" >> "$GITHUB_ENV"
+          echo "APKSIGNER=$APKSIGNER" >> "$GITHUB_ENV"
 
       - name: Download apktool 2.9.3
         run: |
@@ -56,11 +65,10 @@ jobs:
 
       - name: zipalign
         run: |
-          zipalign -p -f 4 boxproxy-patched-unsigned.apk boxproxy-patched-aligned.apk
+          "$ZIPALIGN" -p -f 4 boxproxy-patched-unsigned.apk boxproxy-patched-aligned.apk
 
       - name: Sign with apksigner
         run: |
-          APKSIGNER=$(find $ANDROID_HOME/build-tools -name apksigner | sort -V | tail -n1)
           "$APKSIGNER" sign \
             --ks release.keystore \
             --ks-pass "pass:${KS_PASS}" \
