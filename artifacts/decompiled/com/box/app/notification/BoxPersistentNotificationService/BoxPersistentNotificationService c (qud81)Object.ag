@@ -1,0 +1,160 @@
+# Lcom/box/app/notification/BoxPersistentNotificationService;->c(Lqu; Ld81;)Ljava/lang/Object; [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v4
+# - v5:qu
+# - v6:d81
+#
+# - return:java.lang.Object
+
+c-BB@0x0 : [ c-BB@0x8 c-BB@0x26 ]
+	0       (00000000) instance-of          v0, v6, Lua0;
+	1       (00000004) if-eqz               v0, +011h
+
+c-BB@0x8 : [ c-BB@0x1e c-BB@0x26 ]
+	2       (00000008) move-object          v0, v6
+	3       (0000000a) check-cast           v0, Lua0;
+	4       (0000000e) iget                 v1, v0, Lua0;->l I
+	5       (00000012) const/high16         v2, -2147483648
+	6       (00000016) and-int              v3, v1, v2
+	7       (0000001a) if-eqz               v3, +006h
+
+c-BB@0x1e : [ c-BB@0x30 ]
+	8       (0000001e) sub-int/2addr        v1, v2
+	9       (00000020) iput                 v1, v0, Lua0;->l I
+	10      (00000024) goto                 +6h
+
+c-BB@0x26 : [ c-BB@0x30 ]
+	11      (00000026) new-instance         v0, Lua0;
+	12      (0000002a) invoke-direct        v0, v4, v6, Lua0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService; Ld81;)V
+
+c-BB@0x30 : [ c-BB@0x40 c-BB@0x58 ]
+	13      (00000030) iget-object          v6, v0, Lua0;->j Ljava/lang/Object;
+	14      (00000034) iget                 v1, v0, Lua0;->l I
+	15      (00000038) const/4              v2, 1
+	16      (0000003a) const/4              v3, 0
+	17      (0000003c) if-eqz               v1, +00eh
+
+c-BB@0x40 : [ c-BB@0x44 c-BB@0x4c ]
+	18      (00000040) if-ne                v1, v2, +006h
+
+c-BB@0x44 : [ c-BB@0xec ]
+	19      (00000044) invoke-static        v6, Lc33;->N(Ljava/lang/Object;)V
+	20      (0000004a) goto                 +51h
+
+c-BB@0x4c : 
+	21      (0000004c) const-string         v4, "call to 'resume' before 'invoke' with coroutine"
+	22      (00000050) invoke-static        v4, Lmv1;->e(Ljava/lang/String;)V
+	23      (00000056) return-object        v3
+
+c-BB@0x58 : [ c-BB@0x66 c-BB@0x166 ]
+	24      (00000058) invoke-static        v6, Lc33;->N(Ljava/lang/Object;)V
+	25      (0000005e) iget-object          v4, v4, Lcom/box/app/notification/BoxPersistentNotificationService;->l Lla0;
+	26      (00000062) if-eqz               v4, +082h
+
+c-BB@0x66 : [ c-BB@0x92 c-BB@0xc0 ]
+	27      (00000066) invoke-virtual       v5, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	28      (0000006c) iget-object          v4, v5, Lqu;->i Ljava/lang/String;
+	29      (00000070) iget-object          v5, v5, Lqu;->j Ljava/lang/String;
+	30      (00000074) const-string         v6, "
+"
+	31      (00000078) invoke-static        v4, v6, v5, Lxu1;->C(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	32      (0000007e) move-result-object   v4
+	33      (00000080) const-string         v5, "{core}"
+	34      (00000084) const/4              v6, 0
+	35      (00000086) invoke-static        v4, v5, v6, Lw96;->j0(Ljava/lang/CharSequence; Ljava/lang/CharSequence; Z)Z
+	36      (0000008c) move-result          v5
+	37      (0000008e) if-nez               v5, +019h
+
+c-BB@0x92 : [ c-BB@0xa2 c-BB@0xc0 ]
+	38      (00000092) const-string         v5, "{mode}"
+	39      (00000096) invoke-static        v4, v5, v6, Lw96;->j0(Ljava/lang/CharSequence; Ljava/lang/CharSequence; Z)Z
+	40      (0000009c) move-result          v5
+	41      (0000009e) if-nez               v5, +011h
+
+c-BB@0xa2 : [ c-BB@0xb2 c-BB@0xb4 ]
+	42      (000000a2) const-string         v5, "{config}"
+	43      (000000a6) invoke-static        v4, v5, v6, Lw96;->j0(Ljava/lang/CharSequence; Ljava/lang/CharSequence; Z)Z
+	44      (000000ac) move-result          v4
+	45      (000000ae) if-eqz               v4, +003h
+
+c-BB@0xb2 : [ c-BB@0xc0 ]
+	46      (000000b2) goto                 +7h
+
+c-BB@0xb4 : 
+	47      (000000b4) new-instance         v4, Lq64;
+	48      (000000b8) invoke-direct        v4, v3, v3, v3, Lq64;-><init>(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+	49      (000000be) return-object        v4
+
+c-BB@0xc0 : [ c-BB@0xea c-BB@0xec ]
+	50      (000000c0) sget-object          v4, Loj1;->a Lsf1;
+	51      (000000c4) sget-object          v4, Ljf1;->l Ljf1;
+	52      (000000c8) new-instance         v5, Lff;
+	53      (000000cc) const/4              v6, 4
+	54      (000000ce) const/4              v1, 2
+	55      (000000d0) invoke-direct        v5, v1, v3, v6, Lff;-><init>(I Lc81; B)V
+	56      (000000d6) iput                 v2, v0, Lua0;->l I
+	57      (000000da) invoke-static        v4, v5, v0, Lf;->c0(Lwa1; Lv52; Lc81;)Ljava/lang/Object;
+	58      (000000e0) move-result-object   v6
+	59      (000000e2) sget-object          v4, Lgb1;->j Lgb1;
+	60      (000000e6) if-ne                v6, v4, +003h
+
+c-BB@0xea : 
+	61      (000000ea) return-object        v4
+
+c-BB@0xec : [ c-BB@0x110 c-BB@0x112 ]
+	62      (000000ec) check-cast           v6, Lya0;
+	63      (000000f0) iget-object          v4, v6, Lya0;->a Ljava/lang/String;
+	64      (000000f4) invoke-static        v4, Lw96;->V0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+	65      (000000fa) move-result-object   v4
+	66      (000000fc) invoke-virtual       v4, Ljava/lang/Object;->toString()Ljava/lang/String;
+	67      (00000102) move-result-object   v4
+	68      (00000104) invoke-virtual       v4, Ljava/lang/String;->length()I
+	69      (0000010a) move-result          v5
+	70      (0000010c) if-lez               v5, +003h
+
+c-BB@0x110 : [ c-BB@0x114 ]
+	71      (00000110) goto                 +2h
+
+c-BB@0x112 : [ c-BB@0x114 ]
+	72      (00000112) move-object          v4, v3
+
+c-BB@0x114 : [ c-BB@0x134 c-BB@0x136 ]
+	73      (00000114) iget-object          v5, v6, Lya0;->b Ljava/lang/String;
+	74      (00000118) invoke-static        v5, Lw96;->V0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+	75      (0000011e) move-result-object   v5
+	76      (00000120) invoke-virtual       v5, Ljava/lang/Object;->toString()Ljava/lang/String;
+	77      (00000126) move-result-object   v5
+	78      (00000128) invoke-virtual       v5, Ljava/lang/String;->length()I
+	79      (0000012e) move-result          v0
+	80      (00000130) if-lez               v0, +003h
+
+c-BB@0x134 : [ c-BB@0x138 ]
+	81      (00000134) goto                 +2h
+
+c-BB@0x136 : [ c-BB@0x138 ]
+	82      (00000136) move-object          v5, v3
+
+c-BB@0x138 : [ c-BB@0x158 c-BB@0x15a ]
+	83      (00000138) iget-object          v6, v6, Lya0;->h Ljava/lang/String;
+	84      (0000013c) invoke-static        v6, Lw96;->V0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+	85      (00000142) move-result-object   v6
+	86      (00000144) invoke-virtual       v6, Ljava/lang/Object;->toString()Ljava/lang/String;
+	87      (0000014a) move-result-object   v6
+	88      (0000014c) invoke-virtual       v6, Ljava/lang/String;->length()I
+	89      (00000152) move-result          v0
+	90      (00000154) if-lez               v0, +003h
+
+c-BB@0x158 : [ c-BB@0x15a ]
+	91      (00000158) move-object          v3, v6
+
+c-BB@0x15a : 
+	92      (0000015a) new-instance         v6, Lq64;
+	93      (0000015e) invoke-direct        v6, v4, v5, v3, Lq64;-><init>(Ljava/lang/String; Ljava/lang/String; Ljava/lang/String;)V
+	94      (00000164) return-object        v6
+
+c-BB@0x166 : 
+	95      (00000166) const-string         v4, "contentRenderer"
+	96      (0000016a) invoke-static        v4, Los2;->t0(Ljava/lang/String;)V
+	97      (00000170) throw                v3
+

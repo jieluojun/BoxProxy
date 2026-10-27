@@ -1,0 +1,41 @@
+# Lcom/box/app/MainActivity;->r()Z [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v5
+#
+# - return:boolean
+
+r-BB@0x0 : [ r-BB@0xe r-BB@0x10 ]
+	0       (00000000) invoke-virtual       v5, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+	1       (00000006) move-result-object   v0
+	2       (00000008) const/4              v1, 0
+	3       (0000000a) if-nez               v0, +003h
+
+r-BB@0xe : 
+	4       (0000000e) return               v1
+
+r-BB@0x10 : [ r-BB@0x2c r-BB@0x2e ]
+	5       (00000010) const-string         v2, "com.boxproxy.box.notification.EXTRA_TARGET"
+	6       (00000014) invoke-virtual       v0, v2, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+	7       (0000001a) move-result-object   v3
+	8       (0000001c) const-string         v4, "panel"
+	9       (00000020) invoke-static        v3, v4, Los2;->d0(Ljava/lang/Object; Ljava/lang/Object;)Z
+	10      (00000026) move-result          v3
+	11      (00000028) if-nez               v3, +003h
+
+r-BB@0x2c : 
+	12      (0000002c) return               v1
+
+r-BB@0x2e : 
+	13      (0000002e) invoke-virtual       v0, v2, Landroid/content/Intent;->removeExtra(Ljava/lang/String;)V
+	14      (00000034) new-instance         v0, Landroid/content/Intent;
+	15      (00000038) const-class          v1, Lcom/box/app/PanelSheetActivity;
+	16      (0000003c) invoke-direct        v0, v5, v1, Landroid/content/Intent;-><init>(Landroid/content/Context; Ljava/lang/Class;)V
+	17      (00000042) const-string         v1, "com.boxproxy.box.action.OPEN_PANEL_SHEET"
+	18      (00000046) invoke-virtual       v0, v1, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+	19      (0000004c) const/high16         v1, 805306368
+	20      (00000050) invoke-virtual       v0, v1, Landroid/content/Intent;->setFlags(I)Landroid/content/Intent;
+	21      (00000056) invoke-virtual       v5, v0, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+	22      (0000005c) const/4              v5, 1
+	23      (0000005e) return               v5
+

@@ -1,0 +1,64 @@
+# Lcom/box/app/notification/BoxPersistentNotificationService;->onCreate()V [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v6
+#
+# - return:void
+
+onCreate-BB@0x0 : [ onCreate-BB@0x8e onCreate-BB@0x90 ]
+	0       (00000000) invoke-super         v6, Landroid/app/Service;->onCreate()V
+	1       (00000006) invoke-virtual       v6, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+	2       (0000000c) move-result-object   v0
+	3       (0000000e) const-string         v1, "app_icon_preferences"
+	4       (00000012) const/4              v2, 0
+	5       (00000014) invoke-virtual       v0, v1, v2, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String; I)Landroid/content/SharedPreferences;
+	6       (0000001a) move-result-object   v0
+	7       (0000001c) const-string         v1, "app_icon_variant"
+	8       (00000020) const-string         v3, "default"
+	9       (00000024) invoke-interface     v0, v1, v3, Landroid/content/SharedPreferences;->getString(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	10      (0000002a) move-result-object   v0
+	11      (0000002c) sget-object          v1, Ler;->k Lw8;
+	12      (00000030) invoke-virtual       v1, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	13      (00000036) invoke-static        v0, Lw8;->t(Ljava/lang/String;)Ler;
+	14      (0000003c) move-result-object   v0
+	15      (0000003e) iput-object          v0, v6, Lcom/box/app/notification/BoxPersistentNotificationService;->o Ler;
+	16      (00000042) new-instance         v0, Lla0;
+	17      (00000046) invoke-virtual       v6, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+	18      (0000004c) move-result-object   v1
+	19      (0000004e) invoke-virtual       v1, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	20      (00000054) invoke-direct        v0, v1, Lla0;-><init>(Landroid/content/Context;)V
+	21      (0000005a) iput-object          v0, v6, Lcom/box/app/notification/BoxPersistentNotificationService;->l Lla0;
+	22      (0000005e) new-instance         v0, Lla0;
+	23      (00000062) invoke-virtual       v6, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+	24      (00000068) move-result-object   v1
+	25      (0000006a) invoke-virtual       v1, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	26      (00000070) invoke-direct        v0, v1, Lla0;-><init>(Landroid/content/Context;)V
+	27      (00000076) iput-object          v0, v6, Lcom/box/app/notification/BoxPersistentNotificationService;->m Lla0;
+	28      (0000007a) const-class          v0, Landroid/app/NotificationManager;
+	29      (0000007e) invoke-virtual       v6, v0, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+	30      (00000084) move-result-object   v0
+	31      (00000086) check-cast           v0, Landroid/app/NotificationManager;
+	32      (0000008a) if-nez               v0, +003h
+
+onCreate-BB@0x8e : 
+	33      (0000008e) return-void          
+
+onCreate-BB@0x90 : 
+	34      (00000090) new-instance         v1, Landroid/app/NotificationChannel;
+	35      (00000094) const                v3, 2131690093
+	36      (0000009a) invoke-virtual       v6, v3, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	37      (000000a0) move-result-object   v3
+	38      (000000a2) const/4              v4, 2
+	39      (000000a4) const-string         v5, "box_persistent_status"
+	40      (000000a8) invoke-direct        v1, v5, v3, v4, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String; Ljava/lang/CharSequence; I)V
+	41      (000000ae) const                v3, 2131690092
+	42      (000000b4) invoke-virtual       v6, v3, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	43      (000000ba) move-result-object   v6
+	44      (000000bc) invoke-virtual       v1, v6, Landroid/app/NotificationChannel;->setDescription(Ljava/lang/String;)V
+	45      (000000c2) const/4              v6, 0
+	46      (000000c4) invoke-virtual       v1, v6, v6, Landroid/app/NotificationChannel;->setSound(Landroid/net/Uri; Landroid/media/AudioAttributes;)V
+	47      (000000ca) invoke-virtual       v1, v2, Landroid/app/NotificationChannel;->enableVibration(Z)V
+	48      (000000d0) invoke-virtual       v1, v2, Landroid/app/NotificationChannel;->setShowBadge(Z)V
+	49      (000000d6) invoke-virtual       v0, v1, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
+	50      (000000dc) return-void          
+

@@ -1,0 +1,76 @@
+# Lcom/box/app/MainActivity;->onCreate(Landroid/os/Bundle;)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.os.Bundle
+#
+# - return:void
+
+onCreate-BB@0x0 : [ onCreate-BB@0x38 onCreate-BB@0xc2 ]
+	0       (00000000) sget-object          v0, Ltu;->f Lw8;
+	1       (00000004) invoke-virtual       v0, v3, Lw8;->u(Landroid/content/Context;)Ltu;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) iput-object          v0, v3, Lcom/box/app/MainActivity;->J Ltu;
+	4       (00000010) iget-object          v0, v0, Ltu;->e Lg65;
+	5       (00000014) iget-object          v0, v0, Lg65;->j Ll86;
+	6       (00000018) invoke-virtual       v0, Ll86;->getValue()Ljava/lang/Object;
+	7       (0000001e) move-result-object   v0
+	8       (00000020) check-cast           v0, Lqu;
+	9       (00000024) iget-object          v0, v0, Lqu;->b Lfr;
+	10      (00000028) invoke-static        v3, v0, Lr67;->v(Llo; Lfr;)V
+	11      (0000002e) iget-object          v0, v3, Lcom/box/app/MainActivity;->J Ltu;
+	12      (00000032) const/4              v1, 0
+	13      (00000034) if-eqz               v0, +047h
+
+onCreate-BB@0x38 : [ onCreate-BB@0x64 onCreate-BB@0x6c ]
+	14      (00000038) iget-object          v2, v0, Ltu;->b Ll86;
+	15      (0000003c) invoke-virtual       v2, Ll86;->getValue()Ljava/lang/Object;
+	16      (00000042) move-result-object   v2
+	17      (00000044) check-cast           v2, Lqu;
+	18      (00000048) iget-object          v2, v2, Lqu;->b Lfr;
+	19      (0000004c) invoke-virtual       v0, v2, Ltu;->a(Lfr;)V
+	20      (00000052) invoke-super         v3, v4, Llo;->onCreate(Landroid/os/Bundle;)V
+	21      (00000058) invoke-virtual       v3, Lcom/box/app/MainActivity;->r()Z
+	22      (0000005e) move-result          v4
+	23      (00000060) if-eqz               v4, +006h
+
+onCreate-BB@0x64 : 
+	24      (00000064) invoke-virtual       v3, Landroid/app/Activity;->finish()V
+	25      (0000006a) return-void          
+
+onCreate-BB@0x6c : [ onCreate-BB@0x78 onCreate-BB@0x7a ]
+	26      (0000006c) invoke-virtual       v3, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+	27      (00000072) move-result-object   v4
+	28      (00000074) if-nez               v4, +003h
+
+onCreate-BB@0x78 : [ onCreate-BB@0x92 ]
+	29      (00000078) goto                 +dh
+
+onCreate-BB@0x7a : [ onCreate-BB@0x8a onCreate-BB@0x92 ]
+	30      (0000007a) const-string         v0, "com.boxproxy.box.notification.EXTRA_TARGET"
+	31      (0000007e) invoke-virtual       v4, v0, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+	32      (00000084) move-result-object   v2
+	33      (00000086) if-eqz               v2, +006h
+
+onCreate-BB@0x8a : [ onCreate-BB@0x92 ]
+	34      (0000008a) invoke-virtual       v4, v0, Landroid/content/Intent;->removeExtra(Ljava/lang/String;)V
+	35      (00000090) move-object          v1, v2
+
+onCreate-BB@0x92 : 
+	36      (00000092) iget-object          v4, v3, Lcom/box/app/MainActivity;->K Llk4;
+	37      (00000096) invoke-virtual       v4, v1, Llk4;->setValue(Ljava/lang/Object;)V
+	38      (0000009c) new-instance         v4, Ljy2;
+	39      (000000a0) const/4              v0, 4
+	40      (000000a2) invoke-direct        v4, v3, v0, Ljy2;-><init>(Ljava/lang/Object; B)V
+	41      (000000a8) new-instance         v0, Lty0;
+	42      (000000ac) const                v1, -722458777
+	43      (000000b2) const/4              v2, 1
+	44      (000000b4) invoke-direct        v0, v1, v2, v4, Lty0;-><init>(I Z Ld62;)V
+	45      (000000ba) invoke-static        v3, v0, Liy0;->a(Llo; Lty0;)V
+	46      (000000c0) return-void          
+
+onCreate-BB@0xc2 : 
+	47      (000000c2) const-string         v3, "repository"
+	48      (000000c6) invoke-static        v3, Los2;->t0(Ljava/lang/String;)V
+	49      (000000cc) throw                v1
+

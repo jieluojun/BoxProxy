@@ -1,0 +1,36 @@
+# Lcom/box/app/notification/BoxPersistentNotificationService;->onDestroy()V [access_flags=public final]
+#
+# Parameters:
+# local registers: v0...v2
+#
+# - return:void
+
+onDestroy-BB@0x0 : [ onDestroy-BB@0xa onDestroy-BB@0x10 ]
+	0       (00000000) iget-object          v0, v2, Lcom/box/app/notification/BoxPersistentNotificationService;->n Ly76;
+	1       (00000004) const/4              v1, 0
+	2       (00000006) if-eqz               v0, +005h
+
+onDestroy-BB@0xa : [ onDestroy-BB@0x10 ]
+	3       (0000000a) invoke-virtual       v0, v1, Lpt2;->c(Ljava/util/concurrent/CancellationException;)V
+
+onDestroy-BB@0x10 : [ onDestroy-BB@0x24 onDestroy-BB@0x32 ]
+	4       (00000010) iput-object          v1, v2, Lcom/box/app/notification/BoxPersistentNotificationService;->n Ly76;
+	5       (00000014) iput-object          v1, v2, Lcom/box/app/notification/BoxPersistentNotificationService;->r Lpa0;
+	6       (00000018) iput-object          v1, v2, Lcom/box/app/notification/BoxPersistentNotificationService;->p Landroid/app/Notification;
+	7       (0000001c) iget-boolean         v0, v2, Lcom/box/app/notification/BoxPersistentNotificationService;->q Z
+	8       (00000020) if-eqz               v0, +009h
+
+onDestroy-BB@0x24 : [ onDestroy-BB@0x32 ]
+	9       (00000024) const/4              v0, 1
+	10      (00000026) invoke-virtual       v2, v0, Landroid/app/Service;->stopForeground(I)V
+	11      (0000002c) const/4              v0, 0
+	12      (0000002e) iput-boolean         v0, v2, Lcom/box/app/notification/BoxPersistentNotificationService;->q Z
+
+onDestroy-BB@0x32 : 
+	13      (00000032) iget-object          v0, v2, Lcom/box/app/notification/BoxPersistentNotificationService;->k Lt74;
+	14      (00000036) iput-object          v1, v0, Lt74;->k Ljava/lang/Object;
+	15      (0000003a) iget-object          v0, v2, Lcom/box/app/notification/BoxPersistentNotificationService;->j La81;
+	16      (0000003e) invoke-static        v0, v1, Lr67;->y(Lfb1; Ljava/util/concurrent/CancellationException;)V
+	17      (00000044) invoke-super         v2, Landroid/app/Service;->onDestroy()V
+	18      (0000004a) return-void          
+

@@ -1,0 +1,65 @@
+# Lcom/box/app/AppApplication;->a(Lgq6; Ljava/lang/String; Z)V [access_flags=public static]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:gq6
+# - v3:java.lang.String
+# - v4:boolean
+#
+# - return:void
+
+a-BB@0x0 : [ a-BB@0x4 ]
+	0       (00000000) const-string         v0, "textmate/"
+
+a-BB@0x4 : [ a-BB@0x3a a-BB@0x3c ]
+	1       (00000004) new-instance         v1, Ljava/lang/StringBuilder;
+	2       (00000008) invoke-direct        v1, v0, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+	3       (0000000e) invoke-virtual       v1, v3, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	4       (00000014) const-string         v0, ".json"
+	5       (00000018) invoke-virtual       v1, v0, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+	6       (0000001e) invoke-virtual       v1, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+	7       (00000024) move-result-object   v0
+	8       (00000026) invoke-static        Lxx1;->c()Lxx1;
+	9       (0000002c) move-result-object   v1
+	10      (0000002e) invoke-virtual       v1, v0, Lxx1;->e(Ljava/lang/String;)Ljava/io/InputStream;
+	11      (00000034) move-result-object   v1
+	12      (00000036) if-nez               v1, +003h
+	4:5d
+	(Ljava/lang/Throwable; -> 60 a-BB@0x60)
+
+a-BB@0x3a : [ a-BB@0x90 ]
+	13      (0000003a) goto                 +2bh
+	4:5d
+	(Ljava/lang/Throwable; -> 60 a-BB@0x60)
+
+a-BB@0x3c : [ a-BB@0x6e ]
+	14      (0000003c) invoke-static        v1, v0, Lil2;->a(Ljava/io/InputStream; Ljava/lang/String;)Lnk2;
+	15      (00000042) move-result-object   v0
+	16      (00000044) new-instance         v1, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;
+	17      (00000048) invoke-direct        v1, v0, v3, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;-><init>(Lil2; Ljava/lang/String;)V
+	18      (0000004e) invoke-virtual       v1, v4, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->setDark(Z)V
+	19      (00000054) invoke-virtual       v2, v1, Lgq6;->U(Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;)V
+	20      (0000005a) sget-object          v2, Ld07;->a Ld07;
+	21      (0000005e) goto                 +8h
+
+a-BB@0x60 : [ a-BB@0x6e ]
+	22      (00000060) move-exception       v2
+	23      (00000062) new-instance         v4, Lwa5;
+	24      (00000066) invoke-direct        v4, v2, Lwa5;-><init>(Ljava/lang/Throwable;)V
+	25      (0000006c) move-object          v2, v4
+
+a-BB@0x6e : [ a-BB@0x7a a-BB@0x90 ]
+	26      (0000006e) invoke-static        v2, Lxa5;->a(Ljava/lang/Object;)Ljava/lang/Throwable;
+	27      (00000074) move-result-object   v2
+	28      (00000076) if-eqz               v2, +00dh
+
+a-BB@0x7a : [ a-BB@0x90 ]
+	29      (0000007a) const-string         v4, "Failed to load TextMate theme: "
+	30      (0000007e) invoke-virtual       v4, v3, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+	31      (00000084) move-result-object   v3
+	32      (00000086) const-string         v4, "BoxAppTextMate"
+	33      (0000008a) invoke-static        v4, v3, v2, Landroid/util/Log;->w(Ljava/lang/String; Ljava/lang/String; Ljava/lang/Throwable;)I
+
+a-BB@0x90 : 
+	34      (00000090) return-void          
+

@@ -1,0 +1,113 @@
+# Lcom/box/app/CoreImportActivity;->onCreate(Landroid/os/Bundle;)V [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v3
+# - v4:android.os.Bundle
+#
+# - return:void
+
+onCreate-BB@0x0 : [ onCreate-BB@0x94 onCreate-BB@0x98 ]
+	0       (00000000) sget-object          v0, Ltu;->f Lw8;
+	1       (00000004) invoke-virtual       v0, v3, Lw8;->u(Landroid/content/Context;)Ltu;
+	2       (0000000a) move-result-object   v0
+	3       (0000000c) iput-object          v0, v3, Lcom/box/app/CoreImportActivity;->J Ltu;
+	4       (00000010) iget-object          v0, v0, Ltu;->e Lg65;
+	5       (00000014) iget-object          v0, v0, Lg65;->j Ll86;
+	6       (00000018) invoke-virtual       v0, Ll86;->getValue()Ljava/lang/Object;
+	7       (0000001e) move-result-object   v0
+	8       (00000020) check-cast           v0, Lqu;
+	9       (00000024) iget-object          v0, v0, Lqu;->b Lfr;
+	10      (00000028) invoke-static        v3, v0, Lr67;->v(Llo; Lfr;)V
+	11      (0000002e) invoke-super         v3, v4, Llo;->onCreate(Landroid/os/Bundle;)V
+	12      (00000034) const/4              v4, 0
+	13      (00000036) invoke-virtual       v3, v4, Landroid/app/Activity;->setFinishOnTouchOutside(Z)V
+	14      (0000003c) invoke-virtual       v3, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+	15      (00000042) move-result-object   v4
+	16      (00000044) const                v0, 17170445
+	17      (0000004a) invoke-virtual       v4, v0, Landroid/view/Window;->setBackgroundDrawableResource(I)V
+	18      (00000050) invoke-virtual       v3, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+	19      (00000056) move-result-object   v4
+	20      (00000058) const/4              v0, 2
+	21      (0000005a) invoke-virtual       v4, v0, Landroid/view/Window;->addFlags(I)V
+	22      (00000060) invoke-virtual       v3, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+	23      (00000066) move-result-object   v4
+	24      (00000068) invoke-virtual       v3, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+	25      (0000006e) move-result-object   v0
+	26      (00000070) invoke-virtual       v0, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+	27      (00000076) move-result-object   v0
+	28      (00000078) const                v1, 1043878380
+	29      (0000007e) iput                 v1, v0, Landroid/view/WindowManager$LayoutParams;->dimAmount F
+	30      (00000082) invoke-virtual       v4, v0, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+	31      (00000088) invoke-virtual       v3, Landroid/app/Activity;->getIntent()Landroid/content/Intent;
+	32      (0000008e) move-result-object   v4
+	33      (00000090) if-nez               v4, +004h
+
+onCreate-BB@0x94 : [ onCreate-BB@0xfc ]
+	34      (00000094) const/4              v4, 0
+	35      (00000096) goto                 +33h
+
+onCreate-BB@0x98 : [ onCreate-BB@0xa4 onCreate-BB@0xf4 ]
+	36      (00000098) invoke-virtual       v4, Landroid/content/Intent;->getAction()Ljava/lang/String;
+	37      (0000009e) move-result-object   v0
+	38      (000000a0) if-eqz               v0, +02ah
+
+onCreate-BB@0xa4 : [ onCreate-BB@0xb6 onCreate-BB@0xb8 ]
+	39      (000000a4) invoke-virtual       v0, Ljava/lang/String;->hashCode()I
+	40      (000000aa) move-result          v1
+	41      (000000ac) const                v2, -1173264947
+	42      (000000b2) if-eq                v1, v2, +003h
+
+onCreate-BB@0xb6 : [ onCreate-BB@0xf4 ]
+	43      (000000b6) goto                 +1fh
+
+onCreate-BB@0xb8 : [ onCreate-BB@0xc8 onCreate-BB@0xf4 ]
+	44      (000000b8) const-string         v1, "android.intent.action.SEND"
+	45      (000000bc) invoke-virtual       v0, v1, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	46      (000000c2) move-result          v0
+	47      (000000c4) if-eqz               v0, +018h
+
+onCreate-BB@0xc8 : [ onCreate-BB@0xd4 onCreate-BB@0xe2 ]
+	48      (000000c8) sget                 v0, Landroid/os/Build$VERSION;->SDK_INT I
+	49      (000000cc) const/16             v1, 33
+	50      (000000d0) if-lt                v0, v1, +009h
+
+onCreate-BB@0xd4 : [ onCreate-BB@0xfc ]
+	51      (000000d4) invoke-static        v4, La5;->l(Landroid/content/Intent;)Ljava/lang/Object;
+	52      (000000da) move-result-object   v4
+	53      (000000dc) check-cast           v4, Landroid/net/Uri;
+	54      (000000e0) goto                 +eh
+
+onCreate-BB@0xe2 : [ onCreate-BB@0xfc ]
+	55      (000000e2) const-string         v0, "android.intent.extra.STREAM"
+	56      (000000e6) invoke-virtual       v4, v0, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;)Landroid/os/Parcelable;
+	57      (000000ec) move-result-object   v4
+	58      (000000ee) check-cast           v4, Landroid/net/Uri;
+	59      (000000f2) goto                 +5h
+
+onCreate-BB@0xf4 : [ onCreate-BB@0xfc ]
+	60      (000000f4) invoke-virtual       v4, Landroid/content/Intent;->getData()Landroid/net/Uri;
+	61      (000000fa) move-result-object   v4
+
+onCreate-BB@0xfc : [ onCreate-BB@0x100 onCreate-BB@0x122 ]
+	62      (000000fc) if-nez               v4, +013h
+
+onCreate-BB@0x100 : 
+	63      (00000100) const                v4, 2131689745
+	64      (00000106) invoke-virtual       v3, v4, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	65      (0000010c) move-result-object   v4
+	66      (0000010e) invoke-virtual       v4, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	67      (00000114) invoke-static        v3, v4, Lk53;->a0(Landroid/content/Context; Ljava/lang/String;)V
+	68      (0000011a) invoke-virtual       v3, Landroid/app/Activity;->finish()V
+	69      (00000120) return-void          
+
+onCreate-BB@0x122 : 
+	70      (00000122) new-instance         v0, Ld31;
+	71      (00000126) const/4              v1, 3
+	72      (00000128) invoke-direct        v0, v3, v4, v1, Ld31;-><init>(Ljava/lang/Object; Ljava/lang/Object; B)V
+	73      (0000012e) new-instance         v4, Lty0;
+	74      (00000132) const                v1, -235395183
+	75      (00000138) const/4              v2, 1
+	76      (0000013a) invoke-direct        v4, v1, v2, v0, Lty0;-><init>(I Z Ld62;)V
+	77      (00000140) invoke-static        v3, v4, Liy0;->a(Llo; Lty0;)V
+	78      (00000146) return-void          
+

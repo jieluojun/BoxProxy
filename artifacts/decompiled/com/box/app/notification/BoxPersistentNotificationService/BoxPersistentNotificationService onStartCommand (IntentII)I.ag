@@ -1,0 +1,187 @@
+# Lcom/box/app/notification/BoxPersistentNotificationService;->onStartCommand(Landroid/content/Intent; I I)I [access_flags=public final]
+#
+# Parameters:
+# - local registers: v0...v6
+# - v7:android.content.Intent
+# - v8:int
+# - v9:int
+#
+# - return:int
+
+onStartCommand-BB@0x0 : [ onStartCommand-BB@0xa onStartCommand-BB@0x2a ]
+	0       (00000000) sget-object          v8, Ler;->k Lw8;
+	1       (00000004) const/4              v9, 0
+	2       (00000006) if-eqz               v7, +012h
+
+onStartCommand-BB@0xa : [ onStartCommand-BB@0x1a onStartCommand-BB@0x2a ]
+	3       (0000000a) const-string         v0, "com.boxproxy.box.notification.EXTRA_ICON_VARIANT"
+	4       (0000000e) invoke-virtual       v7, v0, Landroid/content/Intent;->getStringExtra(Ljava/lang/String;)Ljava/lang/String;
+	5       (00000014) move-result-object   v0
+	6       (00000016) if-eqz               v0, +00ah
+
+onStartCommand-BB@0x1a : [ onStartCommand-BB@0x5c ]
+	7       (0000001a) invoke-virtual       v8, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	8       (00000020) invoke-static        v0, Lw8;->t(Ljava/lang/String;)Ler;
+	9       (00000026) move-result-object   v8
+	10      (00000028) goto                 +1ah
+
+onStartCommand-BB@0x2a : [ onStartCommand-BB@0x5c ]
+	11      (0000002a) invoke-virtual       v6, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+	12      (00000030) move-result-object   v0
+	13      (00000032) const-string         v1, "app_icon_preferences"
+	14      (00000036) invoke-virtual       v0, v1, v9, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String; I)Landroid/content/SharedPreferences;
+	15      (0000003c) move-result-object   v0
+	16      (0000003e) const-string         v1, "app_icon_variant"
+	17      (00000042) const-string         v2, "default"
+	18      (00000046) invoke-interface     v0, v1, v2, Landroid/content/SharedPreferences;->getString(Ljava/lang/String; Ljava/lang/String;)Ljava/lang/String;
+	19      (0000004c) move-result-object   v0
+	20      (0000004e) invoke-virtual       v8, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	21      (00000054) invoke-static        v0, Lw8;->t(Ljava/lang/String;)Ler;
+	22      (0000005a) move-result-object   v8
+
+onStartCommand-BB@0x5c : [ onStartCommand-BB@0x6c onStartCommand-BB@0x106 ]
+	23      (0000005c) iput-object          v8, v6, Lcom/box/app/notification/BoxPersistentNotificationService;->o Ler;
+	24      (00000060) iget-object          v8, v6, Lcom/box/app/notification/BoxPersistentNotificationService;->p Landroid/app/Notification;
+	25      (00000064) const/4              v0, 2
+	26      (00000066) const/4              v1, 1
+	27      (00000068) if-nez               v8, +04fh
+
+onStartCommand-BB@0x6c : [ onStartCommand-BB@0xe0 onStartCommand-BB@0xee ]
+	28      (0000006c) new-instance         v8, Lo64;
+	29      (00000070) invoke-direct        v8, v6, Lo64;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;)V
+	30      (00000076) const                v2, 2131230820
+	31      (0000007c) iget-object          v3, v8, Lo64;->m Landroid/app/Notification;
+	32      (00000080) iput                 v2, v3, Landroid/app/Notification;->icon I
+	33      (00000084) const                v2, 2131690565
+	34      (0000008a) invoke-virtual       v6, v2, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	35      (00000090) move-result-object   v2
+	36      (00000092) invoke-static        v2, Lo64;->b(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+	37      (00000098) move-result-object   v2
+	38      (0000009a) iput-object          v2, v8, Lo64;->e Ljava/lang/CharSequence;
+	39      (0000009e) const                v2, 2131690566
+	40      (000000a4) invoke-virtual       v6, v2, Landroid/content/Context;->getString(I)Ljava/lang/String;
+	41      (000000aa) move-result-object   v2
+	42      (000000ac) invoke-static        v2, Lo64;->b(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+	43      (000000b2) move-result-object   v2
+	44      (000000b4) iput-object          v2, v8, Lo64;->f Ljava/lang/CharSequence;
+	45      (000000b8) invoke-virtual       v8, v0, Lo64;->c(I)V
+	46      (000000be) const/16             v2, 8
+	47      (000000c2) invoke-virtual       v8, v2, Lo64;->c(I)V
+	48      (000000c8) iput-boolean         v1, v8, Lo64;->n Z
+	49      (000000cc) iput-boolean         v9, v8, Lo64;->h Z
+	50      (000000d0) const-string         v2, "service"
+	51      (000000d4) iput-object          v2, v8, Lo64;->j Ljava/lang/String;
+	52      (000000d8) iget-object          v2, v8, Lo64;->k Landroid/os/Bundle;
+	53      (000000dc) if-nez               v2, +009h
+
+onStartCommand-BB@0xe0 : [ onStartCommand-BB@0xee ]
+	54      (000000e0) new-instance         v2, Landroid/os/Bundle;
+	55      (000000e4) invoke-direct        v2, Landroid/os/Bundle;-><init>()V
+	56      (000000ea) iput-object          v2, v8, Lo64;->k Landroid/os/Bundle;
+
+onStartCommand-BB@0xee : [ onStartCommand-BB@0x106 ]
+	57      (000000ee) const-string         v3, "android.app.preferSmallIcon"
+	58      (000000f2) invoke-virtual       v2, v3, v1, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String; Z)V
+	59      (000000f8) invoke-virtual       v8, Lo64;->a()Landroid/app/Notification;
+	60      (000000fe) move-result-object   v8
+	61      (00000100) invoke-virtual       v8, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+onStartCommand-BB@0x106 : [ onStartCommand-BB@0x112 onStartCommand-BB@0x11c ]
+	62      (00000106) invoke-virtual       v6, v8, v9, Lcom/box/app/notification/BoxPersistentNotificationService;->f(Landroid/app/Notification; Z)V
+	63      (0000010c) const/4              v8, 0
+	64      (0000010e) if-eqz               v7, +007h
+
+onStartCommand-BB@0x112 : [ onStartCommand-BB@0x11e ]
+	65      (00000112) invoke-virtual       v7, Landroid/content/Intent;->getAction()Ljava/lang/String;
+	66      (00000118) move-result-object   v7
+	67      (0000011a) goto                 +2h
+
+onStartCommand-BB@0x11c : [ onStartCommand-BB@0x11e ]
+	68      (0000011c) move-object          v7, v8
+
+onStartCommand-BB@0x11e : [ onStartCommand-BB@0x128 onStartCommand-BB@0x1bc ]
+	69      (0000011e) const/4              v2, 3
+	70      (00000120) iget-object          v3, v6, Lcom/box/app/notification/BoxPersistentNotificationService;->j La81;
+	71      (00000124) if-eqz               v7, +04ch
+
+onStartCommand-BB@0x128 : [ onStartCommand-BB@0x13a onStartCommand-BB@0x198 ]
+	72      (00000128) invoke-virtual       v7, Ljava/lang/String;->hashCode()I
+	73      (0000012e) move-result          v4
+	74      (00000130) const                v5, -222404983
+	75      (00000136) if-eq                v4, v5, +031h
+
+onStartCommand-BB@0x13a : [ onStartCommand-BB@0x144 onStartCommand-BB@0x174 ]
+	76      (0000013a) const                v0, 154626568
+	77      (00000140) if-eq                v4, v0, +01ah
+
+onStartCommand-BB@0x144 : [ onStartCommand-BB@0x14e onStartCommand-BB@0x150 ]
+	78      (00000144) const                v0, 974605920
+	79      (0000014a) if-eq                v4, v0, +003h
+
+onStartCommand-BB@0x14e : [ onStartCommand-BB@0x1bc ]
+	80      (0000014e) goto                 +37h
+
+onStartCommand-BB@0x150 : [ onStartCommand-BB@0x160 onStartCommand-BB@0x162 ]
+	81      (00000150) const-string         v0, "com.boxproxy.box.notification.ACTION_RELOAD"
+	82      (00000154) invoke-virtual       v7, v0, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	83      (0000015a) move-result          v7
+	84      (0000015c) if-nez               v7, +003h
+
+onStartCommand-BB@0x160 : [ onStartCommand-BB@0x1bc ]
+	85      (00000160) goto                 +2eh
+
+onStartCommand-BB@0x162 : 
+	86      (00000162) new-instance         v7, Lsa0;
+	87      (00000166) invoke-direct        v7, v6, v8, v9, Lsa0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService; Lc81; B)V
+	88      (0000016c) invoke-static        v3, v8, v8, v7, v2, Lf;->J(Lfb1; Lwa1; Lib1; Lv52; I)Ly76;
+	89      (00000172) return               v1
+
+onStartCommand-BB@0x174 : [ onStartCommand-BB@0x184 onStartCommand-BB@0x186 ]
+	90      (00000174) const-string         v9, "com.boxproxy.box.notification.ACTION_RESTART"
+	91      (00000178) invoke-virtual       v7, v9, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	92      (0000017e) move-result          v7
+	93      (00000180) if-nez               v7, +003h
+
+onStartCommand-BB@0x184 : [ onStartCommand-BB@0x1bc ]
+	94      (00000184) goto                 +1ch
+
+onStartCommand-BB@0x186 : 
+	95      (00000186) new-instance         v7, Lsa0;
+	96      (0000018a) invoke-direct        v7, v6, v8, v1, Lsa0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService; Lc81; B)V
+	97      (00000190) invoke-static        v3, v8, v8, v7, v2, Lf;->J(Lfb1; Lwa1; Lib1; Lv52; I)Ly76;
+	98      (00000196) return               v1
+
+onStartCommand-BB@0x198 : [ onStartCommand-BB@0x1a8 onStartCommand-BB@0x1aa ]
+	99      (00000198) const-string         v9, "com.boxproxy.box.notification.ACTION_STOP"
+	100     (0000019c) invoke-virtual       v7, v9, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+	101     (000001a2) move-result          v7
+	102     (000001a4) if-nez               v7, +003h
+
+onStartCommand-BB@0x1a8 : [ onStartCommand-BB@0x1bc ]
+	103     (000001a8) goto                 +ah
+
+onStartCommand-BB@0x1aa : 
+	104     (000001aa) new-instance         v7, Lsa0;
+	105     (000001ae) invoke-direct        v7, v6, v8, v0, Lsa0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService; Lc81; B)V
+	106     (000001b4) invoke-static        v3, v8, v8, v7, v2, Lf;->J(Lfb1; Lwa1; Lib1; Lv52; I)Ly76;
+	107     (000001ba) return               v1
+
+onStartCommand-BB@0x1bc : [ onStartCommand-BB@0x1c4 onStartCommand-BB@0x1d6 ]
+	108     (000001bc) iget-object          v7, v6, Lcom/box/app/notification/BoxPersistentNotificationService;->n Ly76;
+	109     (000001c0) if-eqz               v7, +00bh
+
+onStartCommand-BB@0x1c4 : 
+	110     (000001c4) new-instance         v7, Lra0;
+	111     (000001c8) invoke-direct        v7, v6, v8, v1, Lra0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService; Lc81; B)V
+	112     (000001ce) invoke-static        v3, v8, v8, v7, v2, Lf;->J(Lfb1; Lwa1; Lib1; Lv52; I)Ly76;
+	113     (000001d4) return               v1
+
+onStartCommand-BB@0x1d6 : 
+	114     (000001d6) new-instance         v7, Lf9;
+	115     (000001da) const/4              v9, 4
+	116     (000001dc) invoke-direct        v7, v6, v8, v9, Lf9;-><init>(Ljava/lang/Object; Lc81; B)V
+	117     (000001e2) invoke-static        v3, v8, v8, v7, v2, Lf;->J(Lfb1; Lwa1; Lib1; Lv52; I)Ly76;
+	118     (000001e8) move-result-object   v7
+	119     (000001ea) iput-object          v7, v6, Lcom/box/app/notification/BoxPersistentNotificationService;->n Ly76;
+	120     (000001ee) return               v1
+

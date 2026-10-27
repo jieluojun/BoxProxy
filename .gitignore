@@ -1,0 +1,5 @@
+.gradle/
+**/build/
+android/src/main/jniLibs/**/*.so
+android/src/main/jniLibs/**/*.h
+native/sing-tun/vendor/
