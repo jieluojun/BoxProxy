@@ -1,0 +1,76 @@
+# Lve3;->h0(Lv25; Lv62;)Ljava/lang/String; [access_flags=public static final]
+#
+# Parameters:
+# - local registers: v0...v1
+# - v2:v25
+# - v3:v62
+#
+# - return:java.lang.String
+
+h0-BB@0x0 : [ h0-BB@0x14 h0-BB@0x90 ]
+	0       (00000000) invoke-virtual       v2, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+	1       (00000006) invoke-virtual       v2, Ljava/lang/Enum;->ordinal()I
+	2       (0000000c) move-result          v2
+	3       (0000000e) const/4              v0, 0
+	4       (00000010) if-eqz               v2, +040h
+
+h0-BB@0x14 : [ h0-BB@0x1a h0-BB@0x82 ]
+	5       (00000014) const/4              v1, 1
+	6       (00000016) if-eq                v2, v1, +036h
+
+h0-BB@0x1a : [ h0-BB@0x20 h0-BB@0x74 ]
+	7       (0000001a) const/4              v1, 2
+	8       (0000001c) if-eq                v2, v1, +02ch
+
+h0-BB@0x20 : [ h0-BB@0x26 h0-BB@0x66 ]
+	9       (00000020) const/4              v1, 3
+	10      (00000022) if-eq                v2, v1, +022h
+
+h0-BB@0x26 : [ h0-BB@0x2c h0-BB@0x58 ]
+	11      (00000026) const/4              v1, 4
+	12      (00000028) if-eq                v2, v1, +018h
+
+h0-BB@0x2c : [ h0-BB@0x32 h0-BB@0x48 ]
+	13      (0000002c) const/4              v1, 5
+	14      (0000002e) if-ne                v2, v1, +00dh
+
+h0-BB@0x32 : [ h0-BB@0x3e ]
+	15      (00000032) const                v2, -1608292153
+	16      (00000038) const                v1, 2131690187
+
+h0-BB@0x3e : 
+	17      (0000003e) invoke-static        v3, v2, v1, v3, v0, Lv66;->n(Lv62; I I Lv62; Z)Ljava/lang/String;
+	18      (00000044) move-result-object   v2
+	19      (00000046) return-object        v2
+
+h0-BB@0x48 : 
+	20      (00000048) const                v2, -1608304799
+	21      (0000004e) invoke-static        v3, v2, v0, Lv66;->g(Lv62; I Z)Lrx0;
+	22      (00000054) move-result-object   v2
+	23      (00000056) throw                v2
+
+h0-BB@0x58 : [ h0-BB@0x3e ]
+	24      (00000058) const                v2, -1608294523
+	25      (0000005e) const                v1, 2131690188
+	26      (00000064) goto                 -13h
+
+h0-BB@0x66 : [ h0-BB@0x3e ]
+	27      (00000066) const                v2, -1608296920
+	28      (0000006c) const                v1, 2131690190
+	29      (00000072) goto                 -1ah
+
+h0-BB@0x74 : [ h0-BB@0x3e ]
+	30      (00000074) const                v2, -1608299292
+	31      (0000007a) const                v1, 2131690185
+	32      (00000080) goto                 -21h
+
+h0-BB@0x82 : [ h0-BB@0x3e ]
+	33      (00000082) const                v2, -1608301594
+	34      (00000088) const                v1, 2131690192
+	35      (0000008e) goto                 -28h
+
+h0-BB@0x90 : [ h0-BB@0x3e ]
+	36      (00000090) const                v2, -1608303869
+	37      (00000096) const                v1, 2131690193
+	38      (0000009c) goto                 -2fh
+

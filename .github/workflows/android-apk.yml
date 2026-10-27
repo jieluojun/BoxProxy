@@ -1,4 +1,4 @@
-name: Build Android APK
+name: Build standalone VPN preview APK (not original UI)
 
 on:
   push:
@@ -19,7 +19,7 @@ concurrency:
 
 jobs:
   build-debug-apk:
-    name: Build debug APK
+    name: Build preview APK (not original UI)
     # Keep the Android toolchain on the stable runner while ubuntu-latest migrates to 26.04.
     runs-on: ubuntu-24.04
     timeout-minutes: 45
@@ -68,7 +68,7 @@ jobs:
       - name: Upload debug APK
         uses: actions/upload-artifact@v4
         with:
-          name: boxproxy-debug-apk
+          name: boxproxy-vpn-preview-not-original-ui
           path: android/build/outputs/apk/debug/*.apk
           if-no-files-found: error
           retention-days: 14

@@ -6,7 +6,7 @@
 
     <application
         android:allowBackup="false"
-        android:label="BoxProxy"
+        android:label="BoxProxy VPN Preview (not original UI)"
         android:icon="@mipmap/ic_launcher"
         android:roundIcon="@mipmap/ic_launcher"
         android:theme="@android:style/Theme.Material.Light.NoActionBar"

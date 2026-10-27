@@ -1,0 +1,56 @@
+# Lv25;-><clinit>()V [access_flags=static constructor]
+#
+# Parameters:
+# local registers: v0...v8
+#
+# - return:void
+
+<clinit>-BB@0x0 : 
+	0       (00000000) new-instance         v0, Lv25;
+	1       (00000004) const/4              v1, 0
+	2       (00000006) const-string         v2, "tun"
+	3       (0000000a) const-string         v3, "Tun"
+	4       (0000000e) invoke-direct        v0, v1, v3, v2, Lv25;-><init>(I Ljava/lang/String; Ljava/lang/String;)V
+	5       (00000014) sput-object          v0, Lv25;->l Lv25;
+	6       (00000018) new-instance         v1, Lv25;
+	7       (0000001c) const/4              v2, 1
+	8       (0000001e) const-string         v3, "tproxy"
+	9       (00000022) const-string         v4, "TProxy"
+	10      (00000026) invoke-direct        v1, v2, v4, v3, Lv25;-><init>(I Ljava/lang/String; Ljava/lang/String;)V
+	11      (0000002c) sput-object          v1, Lv25;->m Lv25;
+	12      (00000030) new-instance         v2, Lv25;
+	13      (00000034) const/4              v3, 2
+	14      (00000036) const-string         v4, "ebpf"
+	15      (0000003a) const-string         v5, "Ebpf"
+	16      (0000003e) invoke-direct        v2, v3, v5, v4, Lv25;-><init>(I Ljava/lang/String; Ljava/lang/String;)V
+	17      (00000044) sput-object          v2, Lv25;->n Lv25;
+	18      (00000048) new-instance         v3, Lv25;
+	19      (0000004c) const/4              v4, 3
+	20      (0000004e) const-string         v5, "redirect"
+	21      (00000052) const-string         v6, "Redirect"
+	22      (00000056) invoke-direct        v3, v4, v6, v5, Lv25;-><init>(I Ljava/lang/String; Ljava/lang/String;)V
+	23      (0000005c) sput-object          v3, Lv25;->o Lv25;
+	24      (00000060) new-instance         v4, Lv25;
+	25      (00000064) const/4              v5, 4
+	26      (00000066) const-string         v6, "mixed"
+	27      (0000006a) const-string         v7, "Mixed"
+	28      (0000006e) invoke-direct        v4, v5, v7, v6, Lv25;-><init>(I Ljava/lang/String; Ljava/lang/String;)V
+	29      (00000074) sput-object          v4, Lv25;->p Lv25;
+	30      (00000078) new-instance         v5, Lv25;
+	31      (0000007c) const/4              v6, 5
+	32      (0000007e) const-string         v7, "enhance"
+	33      (00000082) const-string         v8, "Enhance"
+	34      (00000086) invoke-direct        v5, v6, v8, v7, Lv25;-><init>(I Ljava/lang/String; Ljava/lang/String;)V
+	35      (0000008c) sput-object          v5, Lv25;->q Lv25;
+	36      (00000090) filled-new-array/range v0 ... v5, [Lv25;
+	37      (00000096) move-result-object   v0
+	38      (00000098) sput-object          v0, Lv25;->r [Lv25;
+	39      (0000009c) new-instance         v1, Lcv1;
+	40      (000000a0) invoke-direct        v1, v0, Lcv1;-><init>([Ljava/lang/Enum;)V
+	41      (000000a6) sput-object          v1, Lv25;->s Lcv1;
+	42      (000000aa) new-instance         v0, Lr25;
+	43      (000000ae) const/4              v1, 3
+	44      (000000b0) invoke-direct        v0, v1, Lr25;-><init>(B)V
+	45      (000000b6) sput-object          v0, Lv25;->k Lr25;
+	46      (000000ba) return-void          
+
