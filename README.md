@@ -4,6 +4,13 @@
 
 > 说明：该应用为 Kotlin / Jetpack Compose 编写且经过 R8 混淆与资源路径缩短，jadx 等工具产出的 Java 伪源码无法重新编译成 APK。因此本仓库以 **apktool 的 smali 工程** 作为可构建的反编译结果——代码、资源均可在此基础上修改并重新打包。如需阅读近似 Java 源码，可在本地对原 APK 运行 jadx（见文末），但其输出不属于构建输入。
 
+## 本次修改
+
+- **移除首次启动的 Root 页**：保留欢迎页与免责声明；在免责声明页点击下一步后直接完成引导并进入主界面，不再进入 Root 检查页，也不再在引导阶段触发 Magisk 授权请求。注意：这只删除首次引导中的 Root 页，进入 App 后，依赖 Root 的核心功能仍可能按原逻辑要求或申请 Root。
+- **整体迁移工作目录**：中央工作目录由内部 `filesDir/box` 改为 `Context.getExternalFilesDir(null)/box`。对包名 `com.boxproxy.box`，该路径即 `/storage/emulated/0/Android/data/com.boxproxy.box/files/box`；`bin/`（含 `boxctl`、`boxbpf`）、`run/state`、`box.db` 与各核心配置目录都随之迁移。若 `getExternalFilesDir(null)` 不可用（返回 `null`），才回退到原内部 `filesDir/box`。
+- 原内部目录的既有数据**不会自动搬移**；首次运行会在新目录下按原逻辑重新建目录、复制默认 Mihomo 配置、解包核心并创建数据库。需要保留旧配置时，请先自行导出 App 备份或手动复制旧 `box` 目录。
+- **执行风险提醒**：多数设备的外部存储以 `noexec` 挂载。按需求整体迁移后，位于新 `bin/` 下的 `boxctl`/`boxbpf`/代理核心在某些设备或无 Root 场景可能无法直接执行；如遇到核心无法启动，应优先排查该挂载选项。
+
 ## 原始 APK 信息
 
 | 项目 | 值 |
