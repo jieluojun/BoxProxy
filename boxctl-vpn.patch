@@ -354,6 +354,38 @@ index d7bb2dc..5540800 100644
      fn print_command<S: AsRef<str>>(&self, program: &str, args: &[S]) {
          if self.dry_run || self.verbose {
              eprintln!("+ {}", shell_join(program, args));
+diff --git a/boxctl/src/logger.rs b/boxctl/src/logger.rs
+index f6e374c..355f4df 100644
+--- a/boxctl/src/logger.rs
++++ b/boxctl/src/logger.rs
+@@ -45,6 +45,7 @@ pub enum LogKey {
+     ServiceStart,
+     ServiceStartFailed,
+     ServiceExitedAfterStart,
++    ServiceCoreExited,
+     ServiceAlreadyRunningStopOld,
+     ServiceCommand,
+     ServiceStarted,
+diff --git a/boxctl/src/logger/catalog.rs b/boxctl/src/logger/catalog.rs
+index bbd9588..5c3a5a7 100644
+--- a/boxctl/src/logger/catalog.rs
++++ b/boxctl/src/logger/catalog.rs
+@@ -25,6 +25,7 @@ fn en_template(key: LogKey) -> &'static str {
+         LogKey::ServiceStart => "Service start: core {core}, workdir {workdir}, config {config}",
+         LogKey::ServiceStartFailed => "Service start failed: {error}",
+         LogKey::ServiceExitedAfterStart => "Core {core} exited immediately after start, last log: {detail}",
++        LogKey::ServiceCoreExited => "Core {core} exited while the VPN service was running (pid {pid})",
+         LogKey::ServiceAlreadyRunningStopOld => "{core} already running, stopping old process first",
+         LogKey::ServiceCommand => "Service command: {command}",
+         LogKey::ServiceStarted => "Service started: {core} PID {pid}",
+@@ -119,6 +120,7 @@ fn zh_template(key: LogKey) -> &'static str {
+         LogKey::ServiceStart => "服务启动: 核心 {core}, 工作目录 {workdir}, 配置 {config}",
+         LogKey::ServiceStartFailed => "服务启动失败: {error}",
+         LogKey::ServiceExitedAfterStart => "核心 {core} 启动后立即退出, 最近日志: {detail}",
++        LogKey::ServiceCoreExited => "核心 {core} 在 VPN 服务运行期间退出 (pid {pid})",
+         LogKey::ServiceAlreadyRunningStopOld => "{core} 已在运行, 先停止旧进程",
+         LogKey::ServiceCommand => "服务启动命令: {command}",
+         LogKey::ServiceStarted => "服务已启动: {core} PID {pid}",
 diff --git a/boxctl/src/monitor/watcher.rs b/boxctl/src/monitor/watcher.rs
 index e649615..9e08960 100644
 --- a/boxctl/src/monitor/watcher.rs
