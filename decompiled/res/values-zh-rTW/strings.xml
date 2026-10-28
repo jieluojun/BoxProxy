@@ -635,6 +635,8 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="proxy_mode_title">執行模式</string>
     <string name="proxy_mode_tproxy">TPROXY</string>
     <string name="proxy_mode_tun">TUN</string>
+    <string name="proxy_mode_vpn">VPN</string>
+    <string name="proxy_mode_vpn_summary">免 Root 的 VPN 通道</string>
     <string name="proxy_other_section_dns_hijack">DNS 劫持</string>
     <string name="proxy_other_section_proxy_behavior">代理能力</string>
     <string name="proxy_other_section_resource_limits">資源限制</string>

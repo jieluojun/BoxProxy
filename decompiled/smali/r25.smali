@@ -87,6 +87,8 @@
 .method public static e(Lu25;)Ljava/util/ArrayList;
     .locals 6
 
+    :try_start_all
+
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -98,6 +100,33 @@
     .line 5
     .line 6
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    # without root the only usable run mode is the root-free VPN one
+    const/4 v1, -0x1
+
+    :try_start_root
+    # never block the UI: read the cached probe result only
+    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->available()I
+
+    move-result v1
+    :try_end_root
+    .catch Ljava/lang/Throwable; {:try_start_root .. :try_end_root} :catch_root
+
+    # v1 == 0  -> confirmed "no root" -> only the root-free VPN mode
+    # v1 == 1  -> root available     -> the full list (VPN first)
+    # v1 == -1 -> unknown            -> full list, the probe will settle it
+    if-nez v1, :cond_with_root
+
+    sget-object v1, Lv25;->t:Lv25;
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    return-object v0
+
+    :catch_root
+    const/4 v1, -0x1
+
+    :cond_with_root
 
     .line 7
     .line 8
@@ -231,6 +260,27 @@
 
     .line 71
     :cond_3
+    # VPN sits above TUN in the run mode list
+    const/4 v1, 0x0
+
+    sget-object v2, Lv25;->t:Lv25;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+
+    return-object v0
+    :try_end_all
+    .catch Ljava/lang/Throwable; {:try_start_all .. :try_end_all} :catch_all
+
+    :catch_all
+    # never let the mode list break the settings screen
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    sget-object v1, Lv25;->t:Lv25;
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
     return-object v0
 .end method
 
