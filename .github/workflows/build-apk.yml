@@ -12,11 +12,13 @@ on:
     tags: ["v*"]
     paths:
       - "decompiled/**"
+      - "scripts/**"
       - ".github/workflows/build-apk.yml"
   pull_request:
     branches: [main]
     paths:
       - "decompiled/**"
+      - "scripts/**"
       - ".github/workflows/build-apk.yml"
 
 permissions:

@@ -86,6 +86,12 @@
         <service android:enabled="true" android:exported="false" android:foregroundServiceType="specialUse" android:name="com.box.app.notification.BoxPersistentNotificationService" android:stopWithTask="false">
             <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="persistent_box_service_status_notification"/>
         </service>
+        <service android:enabled="true" android:exported="true" android:foregroundServiceType="specialUse" android:name="com.box.app.vpn.BoxVpnService" android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService"/>
+            </intent-filter>
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="rootless_vpn_tunnel_for_proxy_core"/>
+        </service>
         <provider android:authorities="com.boxproxy.box.androidx-startup" android:exported="false" android:name="androidx.startup.InitializationProvider">
             <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
             <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
