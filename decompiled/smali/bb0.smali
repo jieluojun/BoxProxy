@@ -263,24 +263,23 @@
     sget-object v1, Ld07;->a:Ld07;
 
     # Root-free VPN runtime: intercept before any shell work
-    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->shouldHandle()Z;
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->shouldHandle()Z
 
-    move-result v2;
+    move-result v2
 
-    if-eqz v2, :cond_vf_cont_bb;
+    if-eqz v2, :cond_vf_cont_bb
 
-    const-string v2, "start";
+    const-string v2, "start"
 
-    invoke-static {v2}, Lcom/box/app/vpn/BoxVpnBridge;->requestStart(Ljava/lang/String;)V;
+    invoke-static {v2}, Lcom/box/app/vpn/BoxVpnBridge;->requestStart(Ljava/lang/String;)V
 
     invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->serviceResult()Lza0;
 
-    move-result-object v2;
+    move-result-object v2
 
-    return-object v2;
+    return-object v2
 
     :cond_vf_cont_bb
-
 
     .line 4
     .line 5

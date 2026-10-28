@@ -3327,21 +3327,21 @@
     .locals 11
 
     # Root-free VPN runtime: the start script would need root
-    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->shouldHandle()Z;
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->shouldHandle()Z
 
-    move-result v0;
+    move-result v0
 
-    if-eqz v0, :cond_vf_cont_l;
+    if-eqz v0, :cond_vf_cont_l
 
-    const-string v0, "start";
+    const-string v0, "start"
 
-    invoke-static {v0}, Lcom/box/app/vpn/BoxVpnBridge;->requestStart(Ljava/lang/String;)V;
+    invoke-static {v0}, Lcom/box/app/vpn/BoxVpnBridge;->requestStart(Ljava/lang/String;)V
 
     invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->serviceResult()Lza0;
 
-    move-result-object v0;
+    move-result-object v0
 
-    return-object v0;
+    return-object v0
 
     :cond_vf_cont_l
 
