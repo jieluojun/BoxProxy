@@ -389,10 +389,16 @@
     const/4 p0, 0x5
 
     .line 23
-    if-ne v0, p0, :cond_0
+    if-ne v0, p0, :cond_vpn6
 
     .line 24
     .line 25
+
+    :cond_vpn6
+    # ordinal 6 is the root-free VPN mode, handled like TUN
+    const/4 p0, 0x6
+
+    if-ne v0, p0, :cond_0
     goto :goto_0
 
     .line 26
@@ -610,10 +616,16 @@
     const/4 p0, 0x5
 
     .line 23
-    if-ne v0, p0, :cond_0
+    if-ne v0, p0, :cond_vpn6
 
     .line 24
     .line 25
+
+    :cond_vpn6
+    # ordinal 6 is the root-free VPN mode, handled like TUN
+    const/4 p0, 0x6
+
+    if-ne v0, p0, :cond_0
     goto :goto_0
 
     .line 26

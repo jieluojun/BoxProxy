@@ -636,6 +636,8 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="proxy_mode_title">Run Mode</string>
     <string name="proxy_mode_tproxy">TPROXY</string>
     <string name="proxy_mode_tun">TUN</string>
+    <string name="proxy_mode_vpn">VPN</string>
+    <string name="proxy_mode_vpn_summary">Root-free VPN tunnel</string>
     <string name="proxy_other_section_dns_hijack">DNS Hijack</string>
     <string name="proxy_other_section_proxy_behavior">Proxy Behavior</string>
     <string name="proxy_other_section_resource_limits">Resource Limits</string>
