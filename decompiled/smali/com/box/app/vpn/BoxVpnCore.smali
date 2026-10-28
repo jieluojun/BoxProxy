@@ -258,6 +258,7 @@
 
     move-result v0
     :try_end_0
+    goto :try_start_1
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
@@ -478,7 +479,9 @@
     const/4 v3, 0x0
 
     :inbound_loop
-    array-length v4, v2
+    invoke-virtual {v2}, Lorg/json/JSONArray;->length()I
+
+    move-result v4
 
     if-ge v3, v4, :add_tun
 
