@@ -180,6 +180,9 @@
 .method public final onCreate()V
     .locals 6
 
+    # Debugging aid: dump uncaught exceptions to <externalFilesDir>/box_crash.txt
+    invoke-static {p0}, Lcom/box/app/vpn/CrashHandler;->install(Landroid/content/Context;)V
+
     .line 1
     invoke-super {p0}, Landroid/app/Application;->onCreate()V
 
