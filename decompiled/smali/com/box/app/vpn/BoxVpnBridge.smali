@@ -149,148 +149,36 @@
 .method public static final coreName()Ljava/lang/String;
     .locals 2
 
-    const-string v0, "core_name"
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->settings()Lya0;
 
+    move-result-object v0
+
+    if-nez v0, :cond_get
+
+    goto :fallback
+
+    :cond_get
+    iget-object v1, v0, Lya0;->a:Ljava/lang/String;
+
+    if-nez v1, :fallback
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-nez v1, :fallback
+
+    iget-object v1, v0, Lya0;->a:Ljava/lang/String;
+
+    return-object v1
+
+    :fallback
     const-string v1, "mihomo"
 
-    invoke-static {v0, v1}, Lcom/box/app/vpn/BoxVpnBridge;->dbValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v0
-
-    return-object v0
+    return-object v1
 .end method
 
-.method public static final dbFile()Ljava/io/File;
-    .locals 1
 
-    invoke-static {}, Llb0;->k()Lab0;
-
-    move-result-object v0
-
-    iget-object v0, v0, Lab0;->e:Ljava/io/File;
-
-    return-object v0
-.end method
-
-.method public static final dbValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    .locals 6
-
-    const/4 v0, 0x0
-
-    const/4 v1, 0x0
-
-    :try_start_0
-    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->dbFile()Ljava/io/File;
-
-    move-result-object v2
-
-    # no database file -> default
-    if-nez v2, :cond_has_file
-
-    return-object p1
-
-    :cond_has_file
-    invoke-virtual {v2}, Ljava/io/File;->exists()Z
-
-    move-result v3
-
-    # missing database file -> default
-    if-nez v3, :cond_open
-
-    return-object p1
-
-    :cond_open
-    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    const/4 v4, 0x0
-
-    invoke-static {v2, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->openDatabase(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v3, "SELECT "
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v3, " FROM runtime_profile WHERE id = 1"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v2, v3}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
-
-    move-result v2
-
-    # empty table -> default
-    if-nez v2, :cond_has_row
-
-    return-object p1
-
-    :cond_has_row
-    const/4 v2, 0x0
-
-    invoke-interface {v0, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    # null column -> default
-    if-nez v2, :cond_use
-
-    return-object p1
-
-    :cond_use
-    invoke-virtual {v2}, Ljava/lang/String;->length()I
-
-    move-result v3
-
-    # empty string -> default
-    if-nez v3, :cond_value_ok
-
-    return-object p1
-
-    :cond_value_ok
-    move-object p1, v2
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    :try_start_1
-    # release cursor
-    if-eqz v0, :cond_db
-
-    invoke-interface {v0}, Landroid/database/Cursor;->close()V
-
-    :cond_db
-    # release database
-    if-eqz v1, :cond_done
-
-    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->close()V
-    :try_end_1
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
-
-    :catch_1
-    :cond_done
-    return-object p1
-.end method
 
 .method public static final clearState()V
     .locals 1
@@ -314,18 +202,49 @@
     return-void
 .end method
 
-.method public static final configName()Ljava/lang/String;
-    .locals 2
+.method private static final settings()Lya0;
+    .locals 1
 
-    const-string v0, "config_name"
-
-    const-string v1, ""
-
-    invoke-static {v0, v1}, Lcom/box/app/vpn/BoxVpnBridge;->dbValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    :try_start_0
+    # read through the app's own database layer instead of opening the
+    # SQLite file ourselves: a second connection contends with the app's
+    # writer and made the settings screens hang
+    invoke-static {}, Llb0;->g()Lya0;
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     move-result-object v0
 
     return-object v0
+
+    :catch_0
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public static final configName()Ljava/lang/String;
+    .locals 2
+
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->settings()Lya0;
+
+    move-result-object v0
+
+    if-nez v0, :cond_get
+
+    const-string v1, ""
+
+    return-object v1
+
+    :cond_get
+    iget-object v1, v0, Lya0;->h:Ljava/lang/String;
+
+    if-nez v1, :cond_ok
+
+    const-string v1, ""
+
+    :cond_ok
+    return-object v1
 .end method
 
 .method public static final homeDir()Ljava/io/File;
@@ -351,21 +270,21 @@
     return-object v0
 
     :cond_has_verb
-    # The root-free runtime owns the command channel when the VPN mode is
-    # selected, and also on devices without root, where boxctl cannot run.
-    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->isVpnMode()Z
+    # The root-free runtime owns the command channel on devices without root,
+    # where boxctl cannot run at all. That check is free, so do it first and
+    # skip the settings lookup in the common case.
+    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->available()I
 
     move-result v1
 
     if-nez v1, :cond_vpn
 
-    # no blocking probe here: use whatever the background probe already knows
-    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->available()I
+    # Root available (or not probed yet): only take over when the stored run
+    # mode is the VPN one.
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->isVpnMode()Z
 
     move-result v1
 
-    # 0 = probe finished and reported no root; -1 (unknown) and 1 keep the
-    # normal path so a rooted device never gets hijacked
     if-nez v1, :cond_vpn
 
     return-object v0
@@ -602,62 +521,6 @@
     return-void
 .end method
 
-.method public static final markMode()V
-    .locals 5
-
-    :try_start_0
-    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->isVpnMode()Z
-
-    move-result v0
-
-    # already stored
-    if-nez v0, :cond_done
-
-    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->dbFile()Ljava/io/File;
-
-    move-result-object v0
-
-    if-nez v0, :cond_file
-
-    goto :cond_done
-
-    :cond_file
-    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
-    move-result-object v1
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    invoke-static {v1, v2, v3}, Landroid/database/sqlite/SQLiteDatabase;->openDatabase(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)Landroid/database/sqlite/SQLiteDatabase;
-
-    move-result-object v1
-
-    new-instance v2, Landroid/content/ContentValues;
-
-    invoke-direct {v2}, Landroid/content/ContentValues;-><init>()V
-
-    const-string v3, "mode"
-
-    const-string v4, "vpn"
-
-    invoke-virtual {v2, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    const-string v3, "runtime_profile"
-
-    const/4 v4, 0x0
-
-    invoke-virtual {v1, v3, v2, v4, v4}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->close()V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    :cond_done
-    return-void
-.end method
 
 .method public static final pid()I
     .locals 5
@@ -845,15 +708,33 @@
 .method public static final runMode()Ljava/lang/String;
     .locals 2
 
-    const-string v0, "mode"
-
-    const-string v1, "tun"
-
-    invoke-static {v0, v1}, Lcom/box/app/vpn/BoxVpnBridge;->dbValue(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->settings()Lya0;
 
     move-result-object v0
 
-    return-object v0
+    if-nez v0, :cond_get
+
+    goto :fallback
+
+    :cond_get
+    iget-object v1, v0, Lya0;->b:Ljava/lang/String;
+
+    if-nez v1, :fallback
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    if-nez v1, :fallback
+
+    iget-object v1, v0, Lya0;->b:Ljava/lang/String;
+
+    return-object v1
+
+    :fallback
+    const-string v1, "tun"
+
+    return-object v1
 .end method
 
 .method public static final startService(Landroid/content/Context;Landroid/content/Intent;)Z

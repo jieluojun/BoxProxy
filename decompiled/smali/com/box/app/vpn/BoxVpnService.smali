@@ -730,8 +730,6 @@
 
     invoke-static {v0, v1}, Lcom/box/app/vpn/BoxVpnBridge;->writeState(ILjava/lang/String;)V
 
-    # keep the stored run mode in sync with the runtime that is actually up
-    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->markMode()V
 
     new-instance v1, Ljava/lang/StringBuilder;
 

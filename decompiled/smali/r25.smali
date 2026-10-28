@@ -100,18 +100,19 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     # without root the only usable run mode is the root-free VPN one
-    const/4 v1, 0x0
+    const/4 v1, -0x1
 
     :try_start_root
-    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->isRootAvailable()Z
+    # never block the UI: read the cached probe result only
+    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->available()I
 
     move-result v1
     :try_end_root
     .catch Ljava/lang/Throwable; {:try_start_root .. :try_end_root} :catch_root
 
-    # v1 != 0 -> root available -> fall through to the full list
-    # v1 == 0 -> no root -> only the root-free VPN mode
-    if-nez v1, :cond_with_root
+    # 0 = probe finished, no root -> only the root-free VPN mode.
+    # -1 (unknown) and 1 (root) -> full list.
+    if-eqz v1, :cond_with_root
 
     sget-object v1, Lv25;->t:Lv25;
 
@@ -120,7 +121,7 @@
     return-object v0
 
     :catch_root
-    const/4 v1, 0x0
+    const/4 v1, -0x1
 
     :cond_with_root
 

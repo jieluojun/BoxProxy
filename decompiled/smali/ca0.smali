@@ -2959,19 +2959,23 @@
     const-string v8, "mode"
 
     # devices without root can only use the root-free VPN runtime
-    const/4 v9, 0x0
+    const/4 v9, 0x1
 
     :try_start_root
-    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->isRootAvailable()Z
+    # never block the database thread: read the cached probe result only
+    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->available()I
 
     move-result v9
     :try_end_root
     .catch Ljava/lang/Throwable; {:try_start_root .. :try_end_root} :catch_root
 
-    # rooted -> the classic TUN default, otherwise the root-free VPN one
-    if-eqz v9, :cond_default_vpn
+    # only a confirmed "no root" switches the default to the VPN runtime
+    if-nez v9, :cond_default_vpn
 
     :catch_root
+    const/4 v9, 0x1
+
+    :cond_default_tun
     const-string v9, "tun"
 
     goto :put_mode

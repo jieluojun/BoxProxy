@@ -38,10 +38,37 @@
 .end method
 
 .method public static final available()I
-    .locals 1
+    .locals 2
 
     sget v0, Lcom/box/app/vpn/BoxRootState;->available:I
 
+    const/4 v1, -0x1
+
+    # already known
+    if-ne v0, v1, :cond_ret
+
+    # Unknown: a plain file existence check is free, so the "no root" answer
+    # is available immediately without ever running su or blocking a thread.
+    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->hasSu()Z
+
+    move-result v0
+
+    if-nez v0, :cond_probe
+
+    const/4 v0, 0x0
+
+    sput v0, Lcom/box/app/vpn/BoxRootState;->available:I
+
+    return v0
+
+    :cond_probe
+    # A su binary exists: assume the device is rooted so no mode gets hidden,
+    # and confirm in the background (probeNow() overwrites the value).
+    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->refresh()V
+
+    const/4 v0, 0x1
+
+    :cond_ret
     return v0
 .end method
 
@@ -50,6 +77,18 @@
 
     const/4 v0, 0x0
 
+    # No su binary at all -> definitely not rooted, skip the exec entirely
+    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->hasSu()Z
+
+    move-result v0
+
+    if-eqz v0, :has_su
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :has_su
     # Only run "su" when a su binary is actually installed, otherwise every
     # launch would pop a root request dialog on devices using a prompting
     # manager, or pay the cost of a failing exec.
@@ -220,54 +259,14 @@
 .end method
 
 .method public static final isRootAvailable()Z
-    .locals 5
+    .locals 2
 
-    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->loadCached()V
-
-    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->needsProbe()Z
+    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->available()I
 
     move-result v0
 
-    # already known -> answer right away
-    if-eqz v0, :cond_eval
-
-    # unknown: probe in the background, but wait a bounded moment so the
-    # UI does not have to guess (su is fast when it is missing)
-    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->refresh()V
-
-    const/4 v0, 0x0
-
-    :cond_wait
-    const/16 v2, 0x14
-
-    # gave up waiting
-    if-ge v0, v2, :cond_eval
-
-    sget v3, Lcom/box/app/vpn/BoxRootState;->available:I
-
-    const/4 v4, -0x1
-
-    # probe finished
-    if-eq v3, v4, :cond_eval
-
-    const-wide/16 v3, 0x32
-
-    :try_start_0
-    invoke-static {v3, v4}, Ljava/lang/Thread;->sleep(J)V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    add-int/lit8 v0, v0, 0x1
-
-    goto :cond_wait
-
-    :cond_eval
-    sget v0, Lcom/box/app/vpn/BoxRootState;->available:I
-
     const/4 v1, 0x1
 
-    # root available
     if-ne v0, v1, :cond_none
 
     const/4 v0, 0x1
@@ -275,6 +274,121 @@
     return v0
 
     :cond_none
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method private static final hasSu()Z
+    .locals 6
+
+    const/16 v0, 0xb
+
+    new-array v0, v0, [Ljava/lang/String;
+
+    const/4 v1, 0x0
+
+    const-string v2, "/system/bin/su"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x1
+
+    const-string v2, "/system/xbin/su"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x2
+
+    const-string v2, "/sbin/su"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x3
+
+    const-string v2, "/su/bin/su"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x4
+
+    const-string v2, "/debug_ramdisk/su"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x5
+
+    const-string v2, "/vendor/bin/su"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x6
+
+    const-string v2, "/system/sd/xbin/su"
+
+    aput-object v2, v0, v1
+
+    const/4 v1, 0x7
+
+    const-string v2, "/data/local/bin/su"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x8
+
+    const-string v2, "/data/local/xbin/su"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0x9
+
+    const-string v2, "/data/adb/ksu/bin/su"
+
+    aput-object v2, v0, v1
+
+    const/16 v1, 0xa
+
+    const-string v2, "/data/adb/apd/bin/su"
+
+    aput-object v2, v0, v1
+
+    array-length v1, v0
+
+    const/4 v2, 0x0
+
+    :loop
+    if-ge v2, v1, :done
+
+    aget-object v3, v0, v2
+
+    :try_start_0
+    new-instance v4, Ljava/io/File;
+
+    invoke-direct {v4, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v4}, Ljava/io/File;->exists()Z
+
+    move-result v3
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    # found one
+    if-eqz v3, :found
+
+    goto :next
+
+    :catch_0
+    :next
+    add-int/lit8 v2, v2, 0x1
+
+    goto :loop
+
+    :found
+    const/4 v0, 0x1
+
+    return v0
+
+    :done
     const/4 v0, 0x0
 
     return v0
