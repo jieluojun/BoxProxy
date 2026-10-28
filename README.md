@@ -17,7 +17,8 @@
   - `establish()` 之后 `detachFd()` 取得 TUN 描述符，用 `android.system.Os.posix_spawn` + `PosixSpawnFileActions.adddup2` 把它复制到子进程的 **fd 3**，再启动配置好的代理内核（`mihomo`/`clash` 系）。
   - 内核配置文件会被复制到 `run/vpn/<core>-boxvpn.yaml`：原配置里的 `tun:` 段整段剥除，替换为 `enable: true`、`stack: mixed`、`auto-route: false`、`auto-detect-interface: false`、`dns-hijack: any:53` 与 `file-descriptor: 3`。
   - 内核查找顺序：`nativeLibraryDir/lib<core>.so` → `<home>/bin/<core>`（App 内已有的核心安装目录）。
-  - **内核随包分发**：目标 API ≥ 29 的应用不允许执行自己写入 `filesDir`/外部存储的可执行文件（W^X），因此免 Root 场景下唯一能执行的位置是 `nativeLibraryDir`。构建时（`scripts/build.sh` 与 CI 的 *Bundle proxy core* 步骤）会把 [mihomo](https://github.com/MetaCubeX/mihomo) 官方 `android-arm64-v8a` 发行版解压后放到 `decompiled/lib/arm64-v8a/libmihomo.so`（版本由 `MIHOMO_VERSION` 指定，默认 `v1.19.33`），同时清单里的 `android:extractNativeLibs` 改为 `true`，安装时该文件会被解压到 `nativeLibraryDir`，以 `libmihomo.so` 的名字直接被 `posix_spawn` 执行。若构建环境无法下载内核，构建仍会成功，此时 VPN 模式回退到 `<home>/bin/<core>`。
+  - **不内置内核**：VPN 模式沿用 App 自己的「自定义内核」行为，只使用用户在 App 内安装的核心（`<home>/bin/<core>`），APK 不打包任何代理内核，也不会去 `nativeLibraryDir` 里找 `libmihomo.so`（该位置仅作为兼容分支保留）。
+  - **执行方式**：先尝试直接 `posix_spawn` 该核心（会先补一次 `setExecutable(true)`）；若系统拒绝执行（外部存储 `noexec` 挂载、或目标 API ≥ 29 的 W^X 限制），再尝试 `/system/bin/linker64 <core>` 启动——动态链接的内核可以在 `noexec` 目录下被链接器映射运行。两次尝试的异常都会写进 `run/vpn.log`，便于判断是权限问题还是内核本身的问题。
   - 新增 `com.box.app.vpn.BoxVpnService`（清单中声明 `android.net.VpnService` intent-filter 与 `BIND_VPN_SERVICE` 权限、`foregroundServiceType="specialUse"`），常驻通知带「Stop」按钮；`com.box.app.vpn.BoxVpnCore` 负责配置改写与 `posix_spawn`；`com.box.app.vpn.BoxVpnBridge` 负责路径/状态/启动停止与命令拦截；`com.box.app.vpn.BoxRootState` 负责 Root 探测。
   - 运行状态通过 `<home>/run/vpn.state`（`pid\nreason`）、`<home>/run/box.pid` 与 `<home>/run/vpn.log` / `run/vpn-core.log` 暴露，内核退出后服务会自动收尾。
   - 无 Root 时运行模式列表只保留 VPN 一项（`Lr25;->e` 内做筛选），有 Root 时 VPN 作为额外模式排在最前；数据库默认 `mode` 在无 Root 设备上直接写为 `vpn`。
@@ -26,7 +27,8 @@
   - 已知限制：`tun.file-descriptor` 为 mihomo/clash 系内核独有的能力，sing-box / xray / hysteria 暂不支持该模式；选择这些核心时 VPN 模式无法启动，请改用 mihomo。
 
 - **本轮修复（VPN 模式启动失败）**：
-  - `BoxVpnBridge.intercept()`（挂在统一 Shell 执行器 `Llb0;->c` 上）此前会把除 `monitor` 之外的所有 boxctl 命令替换成 `echo box-vpn-ok`，并按子串把 `clashapi clear`、`cnip reload` 之类误判成停止/重启，导致基础代理配置、其他代理配置等界面读不到真实结果。现在只认「`start`/`stop`/`restart`」与「`core start`/`core stop`/`core restart`」，其余命令一律返回 `null` 交回原实现。
+  - 删除了挂在统一 Shell 执行器 `Llb0;->c` 上的命令拦截 `BoxVpnBridge.intercept()`：它会把启动脚本（脚本正文里含 `start`/`boot` 字样）替换成 `echo box-vpn-ok`，App 读到的「退出码」就成了 `box-vpn-ok`，于是首页弹出 **`启动失败: box-vpn-ok`**；同时它也会吞掉基础代理配置等界面的 boxctl 命令。现在 `Llb0;->c` 完全恢复原样，启动/停止只走 `r()`/`f()`/`o()` 三个钩子。
+  - 移除随包分发的 mihomo 内核（恢复到原来的 `extractNativeLibs=false`，构建脚本不再下载内核）。
   - VPN 授权弹窗的等待时间由 1.7 秒改为每 500ms 轮询、最多 40 次（约 20 秒），避免用户还在系统弹窗上确认时服务就已以 `consent-denied` 收尾。
   - 启动/停止开关 `Llb0;->r(ZLd81;)` 是 Kotlin 挂起函数，入口由状态机分支构成。此前的 hook 放在方法最前面，协程恢复（`invokeSuspend` 以 `false` 重入）时会被当成「停止」；现改为只在该方法**首次调用**的分支（`:cond_0`，即标签位未置位、且续体不是 `Lib0` 时）里拦截，且 `invoke-static/range` 保留 `p1` 可达（`.locals 34` 时 `p1` 已超过 `v15`，普通 `invoke-static {p1}` 无法汇编）。
   - 修正 `r` 钩子里的分支极性：只有 `interceptService` 返回**非 null** 时才短路返回，否则继续走原有 Root 脚本逻辑。

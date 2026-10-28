@@ -30,24 +30,6 @@ if [[ ! -f "$jar" ]]; then
 fi
 echo "${APKTOOL_SHA256}  ${jar}" | sha256sum -c -
 
-# 代理内核（免 Root 的 VPN 模式需要从 nativeLibraryDir 执行，只有打包进 lib/ 才可执行）
-CORE_VERSION="${MIHOMO_VERSION:-v1.19.33}"
-CORE_ARCHIVE="mihomo-android-arm64-v8-${CORE_VERSION}.gz"
-CORE_TARGET="$PROJECT_DIR/lib/arm64-v8a/libmihomo.so"
-if [[ ! -s "$CORE_TARGET" ]]; then
-  echo ">> fetching mihomo ${CORE_VERSION} (android arm64-v8a) as $CORE_TARGET ..."
-  mkdir -p "$(dirname "$CORE_TARGET")"
-  curl -fsSL --retry 3 -o "$TOOLS_DIR/mihomo.gz" \
-    "https://github.com/MetaCubeX/mihomo/releases/download/${CORE_VERSION}/${CORE_ARCHIVE}" || \
-    echo "!! mihomo download failed; the VPN mode will fall back to <home>/bin/<core>"
-  if [[ -s "$TOOLS_DIR/mihomo.gz" ]]; then
-    gunzip -c "$TOOLS_DIR/mihomo.gz" > "$CORE_TARGET"
-    chmod 755 "$CORE_TARGET"
-    head -c 4 "$CORE_TARGET" | grep -q $'\x7fELF' || echo "!! downloaded core is not an ELF binary"
-    ls -lh "$CORE_TARGET"
-  fi
-fi
-
 version_name="$(sed -n 's/^  versionName:[[:space:]]*//p' "$PROJECT_DIR/apktool.yml" | head -n 1 | tr -d '\r')"
 [[ -n "$version_name" ]] || { echo "error: versionName not found in $PROJECT_DIR/apktool.yml"; exit 1; }
 unsigned="$OUT_DIR/BoxProxy-${version_name}-unsigned.apk"

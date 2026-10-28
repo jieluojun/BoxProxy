@@ -33,9 +33,6 @@ env:
   # 官方 apktool_2.9.3.jar 的 sha256（与发行包大小 23254968 字节对应，已交叉验证）
   APKTOOL_SHA256: "7956eb04194300ce0d0a84ad18771eebc94b89fb8d1ddcce8ea4c056818646f4"
   PROJECT_DIR: "decompiled"
-  # 免 Root 的 VPN 模式需要可执行的代理内核：只有打包进 lib/<abi>/lib<core>.so、
-  # 并被安装器解压到 nativeLibraryDir 的内核才能在无 Root 时执行。
-  MIHOMO_VERSION: "v1.19.33"
 
 jobs:
   build:
@@ -85,30 +82,6 @@ jobs:
           fi
           echo "${APKTOOL_SHA256}  ${jar}" | sha256sum -c -
           java -jar "$jar" --version
-
-      - name: Bundle proxy core (mihomo, arm64-v8a)
-        shell: bash
-        run: |
-          set -euo pipefail
-          target="$PROJECT_DIR/lib/arm64-v8a/libmihomo.so"
-          if [[ -s "$target" ]]; then
-            echo "core already present: $target"; exit 0
-          fi
-          mkdir -p "$(dirname "$target")"
-          url="https://github.com/MetaCubeX/mihomo/releases/download/${MIHOMO_VERSION}/mihomo-android-arm64-v8-${MIHOMO_VERSION}.gz"
-          if ! curl -fsSL --retry 3 -o "$RUNNER_TEMP/mihomo.gz" "$url"; then
-            echo "::warning::mihomo core download failed; APK will not bundle a core (VPN mode falls back to <home>/bin/<core>)"
-            exit 0
-          fi
-          gunzip -c "$RUNNER_TEMP/mihomo.gz" > "$target"
-          chmod 755 "$target"
-          if ! head -c 4 "$target" | grep -q $'\x7fELF'; then
-            echo "::warning::downloaded mihomo core is not an ELF binary; dropping it"
-            rm -f "$target"
-            exit 0
-          fi
-          ls -lh "$target"
-          echo "core sha256: $(sha256sum "$target" | cut -d ' ' -f 1)"
 
       - name: Build unsigned APK with apktool
         shell: bash

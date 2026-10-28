@@ -10,8 +10,6 @@ decompiled/dist/
 
 # 工具与脚本缓存
 /.tools/
-# 构建时下载的代理内核（由 scripts/build.sh / CI 放入，不入库）
-/decompiled/lib/arm64-v8a/libmihomo.so
 
 # 签名材料，禁止入库
 *.jks

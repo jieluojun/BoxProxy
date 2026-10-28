@@ -195,6 +195,20 @@
 
     const/4 v1, 0x0
 
+    # the core comes from the app's own core manager: make sure the exec bit is
+    # set (harmless when the file system keeps it read-only)
+    :try_start_x
+    const/4 v2, 0x1
+
+    invoke-virtual {p0, v2}, Ljava/io/File;->setExecutable(Z)Z
+    :try_end_x
+    .catch Ljava/lang/Throwable; {:try_start_x .. :try_end_x} :catch_x
+
+    goto :exec_ready
+
+    :catch_x
+    :exec_ready
+
     :try_start_0
     new-instance v2, Landroid/system/PosixSpawnFileActions;
 
@@ -257,6 +271,134 @@
 
     :try_start_1
     # the parent copy of the log descriptor is not needed any more
+    if-eqz v1, :cond_closed
+
+    invoke-virtual {v1}, Ljava/io/OutputStream;->close()V
+
+    :cond_closed
+    :try_end_1
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
+    # execve refused (noexec mount / targetSdk W^X): retry through the dynamic
+    # linker, which only needs read access to the core binary
+    if-gtz v0, :spawn_done
+
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/box/app/vpn/BoxVpnCore;->spawnViaLinker(Ljava/io/File;Ljava/io/File;Ljava/io/File;Ljava/io/File;Ljava/io/FileDescriptor;)I
+
+    move-result v0
+
+    :spawn_done
+    return v0
+.end method
+
+.method public static final linkerArgv(Ljava/io/File;Ljava/io/File;Ljava/io/File;)Ljava/util/List;
+    .locals 2
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    const-string v1, "/system/bin/linker64"
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    const-string v1, "-d"
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {p1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    const-string v1, "-f"
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    invoke-virtual {p2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-object v0
+.end method
+
+.method public static final spawnViaLinker(Ljava/io/File;Ljava/io/File;Ljava/io/File;Ljava/io/File;Ljava/io/FileDescriptor;)I
+    .locals 8
+
+    const/4 v0, -0x1
+
+    const/4 v1, 0x0
+
+    :try_start_0
+    new-instance v2, Landroid/system/PosixSpawnFileActions;
+
+    invoke-direct {v2}, Landroid/system/PosixSpawnFileActions;-><init>()V
+
+    new-instance v3, Ljava/io/FileOutputStream;
+
+    const/4 v4, 0x1
+
+    invoke-direct {v3, p3, v4}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;Z)V
+
+    move-object v1, v3
+
+    invoke-virtual {v3}, Ljava/io/FileOutputStream;->getFD()Ljava/io/FileDescriptor;
+
+    move-result-object v4
+
+    const/4 v5, 0x1
+
+    invoke-virtual {v2, v4, v5}, Landroid/system/PosixSpawnFileActions;->adddup2(Ljava/io/FileDescriptor;I)V
+
+    const/4 v5, 0x2
+
+    invoke-virtual {v2, v4, v5}, Landroid/system/PosixSpawnFileActions;->adddup2(Ljava/io/FileDescriptor;I)V
+
+    invoke-virtual {v2, v4}, Landroid/system/PosixSpawnFileActions;->addclose(Ljava/io/FileDescriptor;)V
+
+    const/4 v5, 0x3
+
+    invoke-virtual {v2, p4, v5}, Landroid/system/PosixSpawnFileActions;->adddup2(Ljava/io/FileDescriptor;I)V
+
+    invoke-static {p0, p1, p2}, Lcom/box/app/vpn/BoxVpnCore;->linkerArgv(Ljava/io/File;Ljava/io/File;Ljava/io/File;)Ljava/util/List;
+
+    move-result-object v5
+
+    invoke-static {p1}, Lcom/box/app/vpn/BoxVpnCore;->env(Ljava/io/File;)Ljava/util/List;
+
+    move-result-object v6
+
+    const-string v7, "/system/bin/linker64"
+
+    invoke-static {v7, v5, v6, v2}, Landroid/system/Os;->posix_spawn(Ljava/lang/String;Ljava/util/List;Ljava/util/List;Landroid/system/PosixSpawnFileActions;)I
+
+    move-result v0
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :done
+
+    :catch_0
+    move-exception v2
+
+    invoke-virtual {v2}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
+
+    :done
+    :try_start_1
     if-eqz v1, :cond_closed
 
     invoke-virtual {v1}, Ljava/io/OutputStream;->close()V
