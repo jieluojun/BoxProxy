@@ -772,7 +772,7 @@
 
     const v14, 0x7f0f0500
 
-    :goto_7
+    :vpn_label_tail
     invoke-static {v13, v11, v14, v13, v15}, Lv66;->n(Lv62;IILv62;Z)Ljava/lang/String;
 
     move-result-object v11
