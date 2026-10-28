@@ -619,22 +619,8 @@
     .line 141
     if-eqz v1, :cond_b
 
-    .line 142
-    .line 143
-    invoke-virtual {p0}, Lrz5;->f()Z
-
-    .line 144
-    .line 145
-    .line 146
-    move-result v1
-
-    .line 147
-    if-nez v1, :cond_a
-
-    .line 148
-    .line 149
-    goto :goto_4
-
+    # Accept the builder's plain-sh fallback when root is unavailable.
+    # Lrz5;->f() remains unchanged for callers that need to detect root.
     .line 150
     :cond_a
     new-instance v1, Loc5;

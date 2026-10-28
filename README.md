@@ -8,6 +8,7 @@
 
 - **移除首次启动的 Root 页**：保留欢迎页与免责声明；在免责声明页点击下一步后直接完成引导并进入主界面，不再进入 Root 检查页，也不再在引导阶段触发 Magisk 授权请求。注意：这只删除首次引导中的 Root 页，进入 App 后，依赖 Root 的核心功能仍可能按原逻辑要求或申请 Root。
 - **整体迁移工作目录**：中央工作目录由内部 `filesDir/box` 改为 `Context.getExternalFilesDir(null)/box`。对包名 `com.boxproxy.box`，该路径即 `/storage/emulated/0/Android/data/com.boxproxy.box/files/box`；`bin/`（含 `boxctl`、`boxbpf`）、`run/state`、`box.db` 与各核心配置目录都随之迁移。若 `getExternalFilesDir(null)` 不可用（返回 `null`），才回退到原内部 `filesDir/box`。
+- **无 Root 时文件管理降级**：文件管理、配置检查/读取/重命名等命令原本经统一 Shell 执行器运行，Root 不可用时会报“无法获取 Root Shell 会话”。现允许会话池与直连执行器使用底层已有的普通 `sh` 回退会话，以应用自身 UID 访问外部工作目录；Root 状态检测本身未改，确需系统特权的操作仍会按实际权限失败。若设备装有 `su`，底层仍会先按原逻辑尝试 Root，失败后才降级。
 - 原内部目录的既有数据**不会自动搬移**；首次运行会在新目录下按原逻辑重新建目录、复制默认 Mihomo 配置、解包核心并创建数据库。需要保留旧配置时，请先自行导出 App 备份或手动复制旧 `box` 目录。
 - **执行风险提醒**：多数设备的外部存储以 `noexec` 挂载。按需求整体迁移后，位于新 `bin/` 下的 `boxctl`/`boxbpf`/代理核心在某些设备或无 Root 场景可能无法直接执行；如遇到核心无法启动，应优先排查该挂载选项。
 
