@@ -402,7 +402,7 @@
     const/4 v3, 0x5
 
     .line 158
-    if-ne v1, v3, :cond_vpn
+    if-ne v1, v3, :cond_a
 
     .line 159
     .line 160
@@ -412,16 +412,6 @@
     .line 162
     .line 163
     goto :goto_3
-
-    :cond_vpn
-    const/4 v3, 0x6
-
-    if-ne v1, v3, :cond_a
-
-    const v1, 0x7f0f04a8
-
-    goto :goto_3
-
 
     .line 164
     :cond_a

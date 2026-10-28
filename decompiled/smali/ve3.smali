@@ -18352,7 +18352,7 @@
     const/4 v1, 0x5
 
     .line 24
-    if-ne p0, v1, :cond_vpn
+    if-ne p0, v1, :cond_0
 
     .line 25
     .line 26
@@ -18366,18 +18366,6 @@
     .line 30
     .line 31
     .line 32
-
-    goto :goto_0
-
-    :cond_vpn
-    const/4 v1, 0x6
-
-    if-ne p0, v1, :cond_0
-
-    const p0, -0x5fdc9701
-
-    const v1, 0x7f0f04a8
-
     :goto_0
     invoke-static {p1, p0, v1, p1, v0}, Lv66;->n(Lv62;IILv62;Z)Ljava/lang/String;
 
