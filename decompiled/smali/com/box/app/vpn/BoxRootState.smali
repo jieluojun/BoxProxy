@@ -44,42 +44,130 @@
 .end method
 
 .method private static final detect()Z
-    .locals 6
+    .locals 7
 
     const/4 v0, 0x0
 
-    :try_start_0
-    const/4 v1, 0x3
+    # Only run "su" when a su binary is actually installed, otherwise every
+    # launch would pop a root request dialog on devices using a prompting
+    # manager, or pay the cost of a failing exec.
+    const/16 v1, 0xa
 
     new-array v1, v1, [Ljava/lang/String;
 
     const/4 v2, 0x0
 
-    const-string v3, "/system/bin/sh"
+    const-string v3, "/system/bin/su"
 
     aput-object v3, v1, v2
 
     const/4 v2, 0x1
 
-    const-string v3, "-c"
+    const-string v3, "/system/xbin/su"
 
     aput-object v3, v1, v2
 
     const/4 v2, 0x2
 
-    const-string v3, "su -c id 2>/dev/null"
+    const-string v3, "/sbin/su"
 
     aput-object v3, v1, v2
 
+    const/4 v2, 0x3
+
+    const-string v3, "/su/bin/su"
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x4
+
+    const-string v3, "/debug_ramdisk/su"
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x5
+
+    const-string v3, "/vendor/bin/su"
+
+    aput-object v3, v1, v2
+
+    const/4 v2, 0x6
+
+    const-string v3, "/system/sd/xbin/su"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x7
+
+    const-string v3, "/data/local/bin/su"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x8
+
+    const-string v3, "/data/local/xbin/su"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0x9
+
+    const-string v3, "/data/adb/ksu/bin/su"
+
+    aput-object v3, v1, v2
+
+    :try_start_0
+    array-length v2, v1
+
+    const/4 v3, 0x0
+
+    :su_loop
+    if-ge v3, v2, :cond_probe
+
+    aget-object v4, v1, v3
+
+    new-instance v5, Ljava/io/File;
+
+    invoke-direct {v5, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v5}, Ljava/io/File;->exists()Z
+
+    move-result v4
+
+    # a su binary exists -> ask it who we are
+    if-nez v4, :su_probe
+
+    add-int/lit8 v3, v3, 0x1
+
+    goto :su_loop
+
+    :su_probe
+    const/4 v2, 0x3
+
+    new-array v2, v2, [Ljava/lang/String;
+
+    const/4 v3, 0x0
+
+    const-string v4, "/system/bin/sh"
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x1
+
+    const-string v4, "-c"
+
+    aput-object v4, v2, v3
+
+    const/4 v3, 0x2
+
+    const-string v4, "su -c id 2>/dev/null"
+
+    aput-object v4, v2, v3
+
     invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v2, v1}, Ljava/lang/Runtime;->exec([Ljava/lang/String;)Ljava/lang/Process;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Ljava/lang/Process;->getInputStream()Ljava/io/InputStream;
+    invoke-virtual {v3, v2}, Ljava/lang/Runtime;->exec([Ljava/lang/String;)Ljava/lang/Process;
 
     move-result-object v2
 
@@ -87,41 +175,39 @@
 
     new-instance v4, Ljava/io/InputStreamReader;
 
-    invoke-direct {v4, v2}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
+    invoke-virtual {v2}, Ljava/lang/Process;->getInputStream()Ljava/io/InputStream;
+
+    move-result-object v5
+
+    invoke-direct {v4, v5}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
 
     invoke-direct {v3, v4}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
     invoke-virtual {v3}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v3}, Ljava/io/BufferedReader;->close()V
+    invoke-virtual {v2}, Ljava/lang/Process;->destroy()V
 
-    invoke-virtual {v1}, Ljava/lang/Process;->destroy()V
+    # no output -> su refused or timed out
+    if-eqz v3, :cond_probe
 
-    if-nez v2, :cond_a
+    const-string v2, "uid=0("
 
-    return v0
+    invoke-virtual {v3, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    :cond_a
-    const-string v1, "uid=0("
+    move-result v2
 
-    invoke-virtual {v2, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_b
+    # root granted
+    if-eqz v2, :cond_probe
 
     const/4 v0, 0x1
 
-    :cond_b
-    return v0
+    :cond_probe
     :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    move-exception v1
-
     return v0
 .end method
 

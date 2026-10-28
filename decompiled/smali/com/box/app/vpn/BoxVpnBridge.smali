@@ -938,7 +938,7 @@
 
     move-result-object v2
 
-    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->writeText(Ljava/io/File;Ljava/lang/String;)V
+    invoke-static {v2, v1}, Lcom/box/app/vpn/BoxVpnBridge;->writeText(Ljava/io/File;Ljava/lang/String;)V
 
     invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->pidFile()Ljava/io/File;
 
