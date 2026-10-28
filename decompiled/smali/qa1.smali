@@ -3682,21 +3682,21 @@
     .line 146
     :cond_a
     # BoxProxy patch: in rootless VPN mode restart the VpnService instead of boxctl
-    sget-object p1, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
+    sget-object v4, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
 
-    invoke-static {p1}, Lcom/box/app/vpn/VpnGate;->requestStop(Landroid/content/Context;)Z
+    invoke-static {v4}, Lcom/box/app/vpn/VpnGate;->requestStop(Landroid/content/Context;)Z
 
-    move-result p2
+    move-result v5
 
-    if-eqz p2, :cond_vpn_restart_skip
+    if-eqz v5, :cond_vpn_restart_skip
 
-    sget-object p1, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
+    sget-object v4, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
 
-    invoke-static {p1}, Lcom/box/app/vpn/VpnGate;->requestStart(Landroid/content/Context;)Z
+    invoke-static {v4}, Lcom/box/app/vpn/VpnGate;->requestStart(Landroid/content/Context;)Z
 
-    sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    sget-object v6, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    return-object p0
+    return-object v6
 
     :cond_vpn_restart_skip
     sget-object p0, Lwc5;->a:Lwc5;

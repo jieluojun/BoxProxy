@@ -541,7 +541,7 @@
 
     aget-object v4, v0, v1
 
-    invoke-virtual {v4, p1}, Lab0;->c(Ljava/lang/String;)Ljava/io/File;
+    invoke-virtual {v4, p0}, Lab0;->c(Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v5
 
