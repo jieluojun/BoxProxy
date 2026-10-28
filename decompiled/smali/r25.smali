@@ -99,6 +99,21 @@
     .line 6
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
+    # without root the only usable run mode is the root-free VPN one
+    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->isRootAvailable()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_with_root
+
+    sget-object v1, Lv25;->t:Lv25;
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    return-object v0
+
+    :cond_with_root
+
     .line 7
     .line 8
     .line 9
@@ -231,6 +246,13 @@
 
     .line 71
     :cond_3
+    # VPN sits above TUN in the run mode list
+    const/4 v1, 0x0
+
+    sget-object v2, Lv25;->t:Lv25;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+
     return-object v0
 .end method
 

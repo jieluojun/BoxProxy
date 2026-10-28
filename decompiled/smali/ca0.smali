@@ -2958,12 +2958,21 @@
     .line 40
     const-string v8, "mode"
 
-    .line 41
-    .line 42
+    # devices without root can only use the root-free VPN runtime
+    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->isRootAvailable()Z
+
+    move-result v9
+
+    if-eqz v9, :cond_default_tun
+
+    const-string v9, "vpn"
+
+    goto :put_mode
+
+    :cond_default_tun
     const-string v9, "tun"
 
-    .line 43
-    .line 44
+    :put_mode
     invoke-virtual {v6, v8, v9}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 45

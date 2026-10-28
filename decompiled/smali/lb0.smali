@@ -215,6 +215,17 @@
 .method public static c(Ljava/lang/String;)Ljava/lang/String;
     .locals 4
 
+    # in VPN mode the root-free service replaces boxctl completely
+    invoke-static {p0}, Lcom/box/app/vpn/BoxVpnBridge;->intercept(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    # nothing intercepted -> keep the normal boxctl path
+    if-eqz v0, :cond_vpn_pass_c
+
+    return-object v0
+
+    :cond_vpn_pass_c
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -1167,6 +1178,18 @@
 .method public static j(Ljava/lang/String;)Ljava/lang/String;
     .locals 3
 
+    # the root-free VPN mode is not a boxctl mode, pass it through untouched
+    const-string v0, "vpn"
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_vpn_pass
+
+    return-object v0
+
+    :cond_vpn_pass
     .line 1
     if-eqz p0, :cond_0
 

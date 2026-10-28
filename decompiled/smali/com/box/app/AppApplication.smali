@@ -183,6 +183,14 @@
     .line 1
     invoke-super {p0}, Landroid/app/Application;->onCreate()V
 
+    # probe for root in the background, the run mode list depends on it
+    :try_start_probe
+    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->refresh()V
+    :try_end_probe
+    .catch Ljava/lang/Throwable; {:try_start_probe .. :try_end_probe} :catch_probe
+
+    :catch_probe
+
     .line 2
     .line 3
     .line 4

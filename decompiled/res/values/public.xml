@@ -1989,6 +1989,8 @@
     <public type="string" name="wifi_match_picker_location_required" id="0x7f0f04a5" />
     <public type="string" name="wifi_match_picker_permission_required" id="0x7f0f04a6" />
     <public type="string" name="wifi_match_ssid_hint" id="0x7f0f04a7" />
+    <public type="string" name="proxy_mode_vpn" id="0x7f0f04a8" />
+    <public type="string" name="proxy_mode_vpn_summary" id="0x7f0f04a9" />
     <public type="style" name="AlertDialog.AppCompat" id="0x7f100000" />
     <public type="style" name="AlertDialog.AppCompat.Light" id="0x7f100001" />
     <public type="style" name="Animation.AppCompat.Dialog" id="0x7f100002" />

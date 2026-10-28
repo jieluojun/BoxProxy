@@ -791,7 +791,7 @@
     const/4 v14, 0x5
 
     .line 340
-    if-ne v11, v14, :cond_a
+    if-ne v11, v14, :cond_vpn
 
     .line 341
     .line 342
@@ -808,6 +808,20 @@
     const/4 v15, 0x0
 
     .line 349
+
+    goto :goto_7
+
+    :cond_vpn
+    const/4 v14, 0x6
+
+    if-ne v11, v14, :cond_a
+
+    const v11, -0x1c2fe3a5
+
+    const/4 v15, 0x0
+
+    const v14, 0x7f0f04a8
+
     :goto_7
     invoke-static {v13, v11, v14, v13, v15}, Lv66;->n(Lv62;IILv62;Z)Ljava/lang/String;
 

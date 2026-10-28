@@ -12,6 +12,17 @@
 - 原内部目录的既有数据**不会自动搬移**；首次运行会在新目录下按原逻辑重新建目录、复制默认 Mihomo 配置、解包核心并创建数据库。需要保留旧配置时，请先自行导出 App 备份或手动复制旧 `box` 目录。
 - **执行风险提醒**：多数设备的外部存储以 `noexec` 挂载。按需求整体迁移后，位于新 `bin/` 下的 `boxctl`/`boxbpf`/代理核心在某些设备或无 Root 场景可能无法直接执行；如遇到核心无法启动，应优先排查该挂载选项。
 
+- **新增无需 Root 的「VPN」运行模式**（位于运行模式列表中 TUN 之上）：参考 [Mishka](https://github.com/jieluojun/Mishka) 的「无 Root 只显示 VPN」与 [AnyPortal](https://github.com/AnyPortal/AnyPortal) 的「免 Root 运行自定义内核」思路实现，但**不采用** AnyPortal 把 TUN 交给 `hev-socks5-tunnel` 再转发到本地 SOCKS 的方案。
+  - 应用自己作为 `VpnService` 建立 TUN（`172.19.0.1/30`、`fdfe:dcba:9876::1/126`、路由 `0.0.0.0/0`、DNS `172.19.0.2`，并把自身包名加入 `addDisallowedApplication`，使内核出站流量绕过隧道直接走物理网络）。
+  - `establish()` 之后 `detachFd()` 取得 TUN 描述符，用 `android.system.Os.posix_spawn` + `PosixSpawnFileActions.adddup2` 把它复制到子进程的 **fd 3**，再启动配置好的代理内核（`mihomo`/`clash` 系）。
+  - 内核配置文件会被复制到 `run/vpn/<core>-boxvpn.yaml`：原配置里的 `tun:` 段整段剥除，替换为 `enable: true`、`stack: mixed`、`auto-route: false`、`auto-detect-interface: false`、`dns-hijack: any:53` 与 `file-descriptor: 3`。
+  - 内核查找顺序：`nativeLibraryDir/lib<core>.so`（可作为 `libmihomo.so` 随包分发）→ `<home>/bin/<core>`（App 内已有的核心安装目录）。
+  - 新增 `com.box.app.vpn.BoxVpnService`（清单中声明 `android.net.VpnService` intent-filter 与 `BIND_VPN_SERVICE` 权限、`foregroundServiceType="specialUse"`），常驻通知带「Stop」按钮；`com.box.app.vpn.BoxVpnCore` 负责配置改写与 `posix_spawn`；`com.box.app.vpn.BoxVpnBridge` 负责路径/状态/启动停止与命令拦截；`com.box.app.vpn.BoxRootState` 负责 Root 探测。
+  - 运行状态通过 `<home>/run/vpn.state`（`pid\nreason`）、`<home>/run/box.pid` 与 `<home>/run/vpn.log` / `run/vpn-core.log` 暴露，内核退出后服务会自动收尾。
+  - 无 Root 时运行模式列表只保留 VPN 一项（`Lr25;->e` 内做筛选），有 Root 时 VPN 作为额外模式排在最前；数据库默认 `mode` 在无 Root 设备上直接写为 `vpn`。
+  - 首次启用会弹出系统的 VPN 授权对话框（`VpnService.prepare`）；需在弹窗中允许，若未允许会在日志中记录 `consent-denied` 并停止服务。
+  - 已知限制：`tun.file-descriptor` 为 mihomo/clash 系内核独有的能力，sing-box / xray / hysteria 暂不支持该模式；未随包分发内核时需先在 App 内安装 mihomo 核心。
+
 ## 原始 APK 信息
 
 | 项目 | 值 |
