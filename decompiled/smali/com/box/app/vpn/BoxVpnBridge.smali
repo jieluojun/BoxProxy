@@ -46,7 +46,7 @@
     const/4 v0, 0x0
 
     # a pid must be positive to mean anything
-    if-lez p0, :cond_exit
+    if-gtz p0, :cond_exit
 
     :try_start_0
     new-instance v1, Ljava/lang/StringBuilder;
@@ -83,7 +83,7 @@
     array-length v1, v1
 
     # empty cmdline -> zombie -> dead
-    if-lez v1, :cond_exit
+    if-gtz v1, :cond_exit
 
     const/4 v0, 0x1
     :try_end_0
@@ -153,20 +153,20 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_get
+    # v0 == null -> default core
+    if-eqz v0, :fallback
 
-    goto :fallback
-
-    :cond_get
     iget-object v1, v0, Lya0;->a:Ljava/lang/String;
 
-    if-nez v1, :fallback
+    # v1 == null -> default core
+    if-eqz v1, :fallback
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    if-nez v1, :fallback
+    # empty string -> default core
+    if-eqz v1, :fallback
 
     iget-object v1, v0, Lya0;->a:Ljava/lang/String;
 
@@ -230,20 +230,19 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_get
+    # v0 == null -> no configured name
+    if-eqz v0, :fallback
 
-    const-string v1, ""
+    iget-object v1, v0, Lya0;->h:Ljava/lang/String;
+
+    # v1 == null -> no configured name
+    if-eqz v1, :fallback
 
     return-object v1
 
-    :cond_get
-    iget-object v1, v0, Lya0;->h:Ljava/lang/String;
-
-    if-nez v1, :cond_ok
-
+    :fallback
     const-string v1, ""
 
-    :cond_ok
     return-object v1
 .end method
 
@@ -265,7 +264,7 @@
     const/4 v0, 0x0
 
     # no verb -> leave the normal path alone
-    if-eqz p0, :cond_has_verb
+    if-nez p0, :cond_has_verb
 
     return-object v0
 
@@ -277,7 +276,8 @@
 
     move-result v1
 
-    if-nez v1, :cond_vpn
+    # v1 == 0 -> confirmed no root -> the VPN bridge owns the command channel
+    if-eqz v1, :cond_vpn
 
     # Root available (or not probed yet): only take over when the stored run
     # mode is the VPN one.
@@ -712,20 +712,20 @@
 
     move-result-object v0
 
-    if-nez v0, :cond_get
+    # v0 == null -> default mode
+    if-eqz v0, :fallback
 
-    goto :fallback
-
-    :cond_get
     iget-object v1, v0, Lya0;->b:Ljava/lang/String;
 
-    if-nez v1, :fallback
+    # v1 == null -> default mode
+    if-eqz v1, :fallback
 
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v1
 
-    if-nez v1, :fallback
+    # empty string -> default mode
+    if-eqz v1, :fallback
 
     iget-object v1, v0, Lya0;->b:Ljava/lang/String;
 

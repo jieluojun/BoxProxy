@@ -486,7 +486,7 @@
     .locals 4
 
     # nothing to kill
-    if-lez p0, :exit_now
+    if-gtz p0, :exit_now
 
     :cond_pid
     :try_start_0

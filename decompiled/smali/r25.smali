@@ -112,9 +112,10 @@
     :try_end_root
     .catch Ljava/lang/Throwable; {:try_start_root .. :try_end_root} :catch_root
 
-    # 0 = probe finished, no root -> only the root-free VPN mode.
-    # -1 (unknown) and 1 (root) -> full list.
-    if-eqz v1, :cond_with_root
+    # v1 == 0  -> confirmed "no root" -> only the root-free VPN mode
+    # v1 == 1  -> root available     -> the full list (VPN first)
+    # v1 == -1 -> unknown            -> full list, the probe will settle it
+    if-nez v1, :cond_with_root
 
     sget-object v1, Lv25;->t:Lv25;
 

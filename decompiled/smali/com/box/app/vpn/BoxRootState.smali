@@ -38,35 +38,66 @@
 .end method
 
 .method public static final available()I
-    .locals 2
+    .locals 6
 
     sget v0, Lcom/box/app/vpn/BoxRootState;->available:I
 
     const/4 v1, -0x1
 
-    # already known
+    # the probe already answered
     if-ne v0, v1, :cond_ret
 
-    # Unknown: a plain file existence check is free, so the "no root" answer
-    # is available immediately without ever running su or blocking a thread.
+    # Cheap, free check first: no su binary at all means no root, and the
+    # privileged run modes must stay hidden.
     invoke-static {}, Lcom/box/app/vpn/BoxRootState;->hasSu()Z
 
-    move-result v0
+    move-result v2
 
-    if-nez v0, :cond_probe
+    if-eqz v2, :cond_no_root
+
+    # A su binary exists but the app may not be authorised. Start the probe
+    # and wait for it briefly: granted -> a few ms, denied/prompt pending ->
+    # the value stays unknown and we answer "no root" for now.
+    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->refresh()V
+
+    const/4 v2, 0x0
+
+    :wait_loop
+    const/16 v3, 0x14
+
+    if-ge v2, v3, :after_wait
+
+    sget v4, Lcom/box/app/vpn/BoxRootState;->available:I
+
+    # probe finished -> use its answer
+    if-ne v4, v1, :after_wait
+
+    const-wide/16 v4, 0x14
+
+    :try_start_0
+    invoke-static {v4, v5}, Ljava/lang/Thread;->sleep(J)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    add-int/lit8 v2, v2, 0x1
+
+    goto :wait_loop
+
+    :after_wait
+    sget v0, Lcom/box/app/vpn/BoxRootState;->available:I
+
+    # still unknown -> do not expose the privileged modes
+    if-ne v0, v1, :cond_ret
 
     const/4 v0, 0x0
 
-    sput v0, Lcom/box/app/vpn/BoxRootState;->available:I
-
     return v0
 
-    :cond_probe
-    # A su binary exists: assume the device is rooted so no mode gets hidden,
-    # and confirm in the background (probeNow() overwrites the value).
-    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->refresh()V
+    :cond_no_root
+    const/4 v0, 0x0
 
-    const/4 v0, 0x1
+    sput v0, Lcom/box/app/vpn/BoxRootState;->available:I
 
     :cond_ret
     return v0
@@ -82,7 +113,8 @@
 
     move-result v0
 
-    if-eqz v0, :has_su
+    # su present -> go probe it, otherwise answer "no root" immediately
+    if-nez v0, :has_su
 
     const/4 v0, 0x0
 
@@ -218,6 +250,25 @@
 
     move-result-object v2
 
+    # A pending root prompt must never hang the probe: wait at most 4s.
+    const-wide/16 v3, 0x4
+
+    sget-object v5, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+
+    invoke-virtual {v2, v3, v4, v5}, Ljava/lang/Process;->waitFor(JLjava/util/concurrent/TimeUnit;)Z
+
+    move-result v3
+
+    # did not finish -> no root
+    if-nez v3, :cond_exited
+
+    invoke-virtual {v2}, Ljava/lang/Process;->destroyForcibly()Ljava/lang/Process;
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_exited
     new-instance v3, Ljava/io/BufferedReader;
 
     new-instance v4, Ljava/io/InputStreamReader;
@@ -373,7 +424,7 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     # found one
-    if-eqz v3, :found
+    if-nez v3, :found
 
     goto :next
 
@@ -438,12 +489,44 @@
 .end method
 
 .method private static final loadCached()V
-    .locals 0
+    .locals 4
 
-    # The cached flag is only informational: a device can gain or lose root
-    # between launches, so the live probe always decides. The value is still
-    # written to preferences by probeNow() for diagnostics.
+    sget v0, Lcom/box/app/vpn/BoxRootState;->available:I
 
+    const/4 v1, -0x1
+
+    # only seed an unknown state
+    if-ne v0, v1, :cond_done
+
+    :try_start_0
+    sget-object v0, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
+
+    invoke-static {v0}, Lcom/box/app/vpn/BoxRootState;->prefsOf(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    if-nez v0, :cond_done
+
+    const-string v2, "root_available"
+
+    const/4 v3, -0x1
+
+    invoke-interface {v0, v2, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    # only a confirmed "root available" is reused, a "no root" answer is
+    # always re-checked because root can be granted between launches
+    if-eq v2, v3, :cond_done
+
+    sput v3, Lcom/box/app/vpn/BoxRootState;->available:I
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    :cond_done
     return-void
 .end method
 

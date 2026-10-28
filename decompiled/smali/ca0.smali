@@ -2969,8 +2969,8 @@
     :try_end_root
     .catch Ljava/lang/Throwable; {:try_start_root .. :try_end_root} :catch_root
 
-    # only a confirmed "no root" switches the default to the VPN runtime
-    if-nez v9, :cond_default_vpn
+    # only a confirmed "no root" (0) switches the default to the VPN runtime
+    if-eqz v9, :cond_default_vpn
 
     :catch_root
     const/4 v9, 0x1
