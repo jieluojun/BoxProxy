@@ -9,6 +9,8 @@
 
 .field private static volatile probing:I
 
+.field private static volatile lastProbe:J
+
 .field public static final prefsKey:Ljava/lang/String; = "root_available"
 
 .field public static final prefsName:Ljava/lang/String; = "box_root_state"
@@ -51,7 +53,7 @@
     # Only run "su" when a su binary is actually installed, otherwise every
     # launch would pop a root request dialog on devices using a prompting
     # manager, or pay the cost of a failing exec.
-    const/16 v1, 0xa
+    const/16 v1, 0xb
 
     new-array v1, v1, [Ljava/lang/String;
 
@@ -112,6 +114,12 @@
     const/16 v2, 0x9
 
     const-string v3, "/data/adb/ksu/bin/su"
+
+    aput-object v3, v1, v2
+
+    const/16 v2, 0xa
+
+    const-string v3, "/data/adb/apd/bin/su"
 
     aput-object v3, v1, v2
 
@@ -216,12 +224,12 @@
 
     invoke-static {}, Lcom/box/app/vpn/BoxRootState;->loadCached()V
 
-    sget v0, Lcom/box/app/vpn/BoxRootState;->available:I
+    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->needsProbe()Z
 
-    const/4 v1, -0x1
+    move-result v0
 
     # already known -> answer right away
-    if-ne v0, v1, :cond_eval
+    if-eqz v0, :cond_eval
 
     # unknown: probe in the background, but wait a bounded moment so the
     # UI does not have to guess (su is fast when it is missing)
@@ -230,7 +238,7 @@
     const/4 v0, 0x0
 
     :cond_wait
-    const/16 v2, 0xa
+    const/16 v2, 0x14
 
     # gave up waiting
     if-ge v0, v2, :cond_eval
@@ -272,6 +280,49 @@
     return v0
 .end method
 
+.method private static final needsProbe()Z
+    .locals 6
+
+    const/4 v1, 0x0
+
+    sget v0, Lcom/box/app/vpn/BoxRootState;->available:I
+
+    const/4 v2, -0x1
+
+    # not probed yet -> probe now
+    if-ne v0, v2, :cond_known
+
+    const/4 v1, 0x1
+
+    return v1
+
+    :cond_known
+    # root available -> nothing to do
+    if-nez v0, :cond_ret
+
+    # reported "no root": the user may have granted it just now, so re-check
+    # once the previous answer is older than a minute
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    sget-wide v4, Lcom/box/app/vpn/BoxRootState;->lastProbe:J
+
+    sub-long/2addr v2, v4
+
+    const-wide/16 v4, 0xea60
+
+    cmp-long v0, v2, v4
+
+    # still fresh
+    if-lez v0, :cond_ret
+
+    const/4 v1, 0x1
+
+    :cond_ret
+    return v1
+.end method
+
 .method private static final loadCached()V
     .locals 0
 
@@ -310,6 +361,12 @@
 .method public static final probeNow()Z
     .locals 7
 
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v2
+
+    sput-wide v2, Lcom/box/app/vpn/BoxRootState;->lastProbe:J
+
     invoke-static {}, Lcom/box/app/vpn/BoxRootState;->detect()Z
 
     move-result v0
@@ -323,6 +380,26 @@
     :cond_store
     sput v1, Lcom/box/app/vpn/BoxRootState;->available:I
 
+    :try_start_log
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "root probe: available="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
+    :try_end_log
+    .catch Ljava/lang/Throwable; {:try_start_log .. :try_end_log} :catch_log
+
+    :catch_log
     sget-object v2, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
 
     invoke-static {v2}, Lcom/box/app/vpn/BoxRootState;->prefsOf(Landroid/content/Context;)Landroid/content/SharedPreferences;
@@ -368,12 +445,12 @@
 .method public static final refresh()V
     .locals 3
 
-    sget v0, Lcom/box/app/vpn/BoxRootState;->available:I
+    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->needsProbe()Z
 
-    const/4 v1, -0x1
+    move-result v0
 
     # the answer is already known
-    if-ne v0, v1, :cond_done
+    if-eqz v0, :cond_done
 
     sget v0, Lcom/box/app/vpn/BoxRootState;->probing:I
 

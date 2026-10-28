@@ -109,7 +109,9 @@
     :try_end_root
     .catch Ljava/lang/Throwable; {:try_start_root .. :try_end_root} :catch_root
 
-    if-eqz v1, :cond_with_root
+    # v1 != 0 -> root available -> fall through to the full list
+    # v1 == 0 -> no root -> only the root-free VPN mode
+    if-nez v1, :cond_with_root
 
     sget-object v1, Lv25;->t:Lv25;
 

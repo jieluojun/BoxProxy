@@ -2968,16 +2968,16 @@
     :try_end_root
     .catch Ljava/lang/Throwable; {:try_start_root .. :try_end_root} :catch_root
 
-    # rooted -> the classic TUN default
-    if-nez v9, :cond_default_tun
+    # rooted -> the classic TUN default, otherwise the root-free VPN one
+    if-eqz v9, :cond_default_vpn
 
-    const-string v9, "vpn"
+    :catch_root
+    const-string v9, "tun"
 
     goto :put_mode
 
-    :catch_root
-    :cond_default_tun
-    const-string v9, "tun"
+    :cond_default_vpn
+    const-string v9, "vpn"
 
     :put_mode
     invoke-virtual {v6, v8, v9}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
