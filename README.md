@@ -26,6 +26,14 @@
   - 排错：`<home>/run/vpn.log` 记录服务侧的分步日志（`step: ...`、`core missing`、`establish-failed`、`spawn-failed`、`consent-denied`、`core-exited`、`fatal` 等），`<home>/run/vpn-core.log` 是内核自身的 stdout/stderr，`<home>/run/vpn.state` 为 `<pid>\n<原因>`。
   - 已知限制：`tun.file-descriptor` 为 mihomo/clash 系内核独有的能力，sing-box / xray / hysteria 暂不支持该模式；选择这些核心时 VPN 模式无法启动，请改用 mihomo。
 
+- **全内核 VPN 支持（v2fly / sing-box）**：
+  - `BoxVpnCore.runtimeConfig` 新增格式检测：核心名为 `mihomo`/`clash` 走 YAML 正则注入（原有逻辑），其余核心走 JSON 注入（新增 `injectJsonFd` 辅助方法）。
+  - **v2fly / v2ray / xray**：利用内核内置的 `preopened_fd` 配置项（v2fly `app/tun/config.pb.go` 已定义，无需补丁），注入 `preopened_fd: 3` 并设 `auto_route: false`。
+  - **sing-box**：需打补丁——在 `option/tun.go` 的 `TunInboundOptions` 添加 `FileDescriptor int json:"file_descriptor,omitempty"`，并在 `protocol/tun/inbound.go` 的 `tun.Options` 构造中传 `FileDescriptor: options.FileDescriptor`（sing-tun 库的 `Options.FileDescriptor` 在 Linux 上完整支持，`tun_linux.go` 第 55-80 行）。补丁后的 sing-box 可接受 `file_descriptor: 3`。
+  - 输出文件扩展名随格式变化：YAML 用 `.yaml`，JSON 用 `.json`。
+  - JSON 注入逻辑：解析配置 → 取 `inbounds` 数组 → 找 `type == "tun"` 的 inbound → 设 fd 字段 + `auto_route: false`；若未找到 tun inbound 则新建一个（含 `type/tag/fd/auto_route`）。
+  - boxctl 未改动——VPN 模式的配置注入由 App 侧 `BoxVpnCore` 直接完成，不依赖 boxctl。
+
 - **本轮修复（VPN 模式启动失败）**：
   - 删除了挂在统一 Shell 执行器 `Llb0;->c` 上的命令拦截 `BoxVpnBridge.intercept()`：它会把启动脚本（脚本正文里含 `start`/`boot` 字样）替换成 `echo box-vpn-ok`，App 读到的「退出码」就成了 `box-vpn-ok`，于是首页弹出 **`启动失败: box-vpn-ok`**；同时它也会吞掉基础代理配置等界面的 boxctl 命令。现在 `Llb0;->c` 完全恢复原样，启动/停止只走 `r()`/`f()`/`o()` 三个钩子。
   - 移除随包分发的 mihomo 内核（恢复到原来的 `extractNativeLibs=false`，构建脚本不再下载内核）。

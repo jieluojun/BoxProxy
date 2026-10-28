@@ -459,119 +459,291 @@
     return-object v0
 .end method
 
-.method public static final runtimeConfig(Ljava/lang/String;Ljava/io/File;I)Ljava/io/File;
-    .locals 10
+.method public static final injectJsonFd(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
+    .locals 12
 
     const/4 v0, 0x0
 
     :try_start_0
-    new-instance v1, Ljava/io/File;
+    new-instance v1, Lorg/json/JSONObject;
 
-    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->runDir()Ljava/io/File;
+    invoke-direct {v1, p0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
+
+    const-string v2, "inbounds"
+
+    invoke-virtual {v1, v2}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v2
 
-    const-string v3, "vpn"
+    const/4 v3, 0x0
 
-    invoke-direct {v1, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    :inbound_loop
+    array-length v4, v2
 
-    invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
+    if-ge v3, v4, :add_tun
 
-    new-instance v2, Ljava/io/File;
+    invoke-virtual {v2, v3}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
-    new-instance v3, Ljava/lang/StringBuilder;
+    move-result-object v4
 
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v5, "type"
 
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v4, "-boxvpn.yaml"
+    move-result-object v5
 
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v6, "tun"
 
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/String;)Z
 
-    move-result-object v3
+    move-result v6
 
-    invoke-direct {v2, v1, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    if-eqz v6, :next_inbound
+
+    invoke-virtual {v4, p1, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+
+    const/4 v7, 0x0
+
+    const-string v8, "auto_route"
+
+    invoke-virtual {v4, v8, v7}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
+
+    invoke-virtual {v1}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    goto :done
+
+    :next_inbound
+    add-int/lit8 v3, v3, 0x1
+
+    goto :inbound_loop
+
+    :add_tun
+    new-instance v4, Lorg/json/JSONObject;
+
+    const-string v5, "type"
+
+    const-string v6, "tun"
+
+    invoke-virtual {v4, v5, v6}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    const-string v5, "tag"
+
+    const-string v6, "tun-in"
+
+    invoke-virtual {v4, v5, v6}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+
+    invoke-virtual {v4, p1, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+
+    const/4 v7, 0x0
+
+    const-string v5, "auto_route"
+
+    invoke-virtual {v4, v5, v7}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
+
+    invoke-virtual {v2, v4}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    invoke-virtual {v1}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    :done
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    return-object v0
+.end method
+
+.method public static final runtimeConfig(Ljava/lang/String;Ljava/io/File;I)Ljava/io/File;
+    .locals 12
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    # determine format: 0 = YAML (mihomo/clash), 1 = JSON (sing-box/v2fly/xray)
+    const-string v1, "mihomo"
+
+    invoke-virtual {v1, p0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v1
+
+    const-string v2, "clash"
+
+    invoke-virtual {v2, p0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v1, :check_clash
+
+    goto :yaml_fmt
+
+    :check_clash
+    if-eqz v2, :json_fmt
+
+    :yaml_fmt
+    const/4 v3, 0x0
+
+    goto :create_dir
+
+    :json_fmt
+    const/4 v3, 0x1
+
+    :create_dir
+    new-instance v4, Ljava/io/File;
+
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->runDir()Ljava/io/File;
+
+    move-result-object v5
+
+    const-string v6, "vpn"
+
+    invoke-direct {v4, v5, v6}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {v4}, Ljava/io/File;->mkdirs()Z
+
+    new-instance v5, Ljava/io/File;
+
+    new-instance v6, Ljava/lang/StringBuilder;
+
+    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v6, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    if-eqz v3, :yaml_ext
+
+    const-string v7, "-boxvpn.json"
+
+    goto :append_ext
+
+    :yaml_ext
+    const-string v7, "-boxvpn.yaml"
+
+    :append_ext
+    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-direct {v5, v4, v6}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     # read the source profile
     invoke-virtual {p1}, Ljava/io/File;->toPath()Ljava/nio/file/Path;
 
-    move-result-object v3
+    move-result-object v6
 
-    invoke-static {v3}, Ljava/nio/file/Files;->readAllBytes(Ljava/nio/file/Path;)[B
+    invoke-static {v6}, Ljava/nio/file/Files;->readAllBytes(Ljava/nio/file/Path;)[B
 
-    move-result-object v3
+    move-result-object v6
 
-    new-instance v4, Ljava/lang/String;
+    new-instance v7, Ljava/lang/String;
 
-    sget-object v5, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
+    sget-object v8, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    invoke-direct {v4, v3, v5}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
+    invoke-direct {v7, v6, v8}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
 
+    if-eqz v3, :yaml_branch
+
+    # === JSON handling (sing-box / v2fly / xray) ===
+    :json_branch
+    # determine fd field name
+    const-string v8, "sing-box"
+
+    invoke-virtual {v8, p0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v8
+
+    if-eqz v8, :v2fly_fd
+
+    const-string v8, "file_descriptor"
+
+    goto :fd_name_ready
+
+    :v2fly_fd
+    const-string v8, "preopened_fd"
+
+    :fd_name_ready
+    invoke-static {v7, v8, p2}, Lcom/box/app/vpn/BoxVpnCore;->injectJsonFd(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v7
+
+    if-eqz v7, :json_failed
+
+    goto :write_config
+
+    # === YAML handling (mihomo / clash) ===
+    :yaml_branch
     # drop any tun: section coming from the profile
-    const-string v5, "(?m)^tun:[^\\n]*(?:\\n[ \\t][^\\n]*)*\\n?"
+    const-string v8, "(?m)^tun:[^\\n]*(?:\\n[ \\t][^\\n]*)*\\n?"
 
-    invoke-static {v5}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-static {v8}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
-    move-result-object v5
+    move-result-object v8
 
-    invoke-virtual {v5, v4}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    invoke-virtual {v8, v7}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    move-result-object v5
+    move-result-object v8
 
-    const-string v6, ""
+    const-string v9, ""
 
-    invoke-virtual {v5, v6}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v8, v9}, Ljava/util/regex/Matcher;->replaceAll(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v7
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {v8, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    const-string v6, "\n"
+    const-string v9, "\n"
 
-    invoke-virtual {v4, v6}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
+    invoke-virtual {v7, v9}, Ljava/lang/String;->endsWith(Ljava/lang/String;)Z
 
-    move-result v6
+    move-result v9
 
-    # make sure the appended block starts on its own line
-    if-nez v6, :cond_newline
+    if-nez v9, :yaml_newline
 
-    const-string v6, "\n"
+    const-string v9, "\n"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    :cond_newline
-    const-string v6, "tun:\n  enable: true\n  stack: mixed\n  device: boxvpn\n  mtu: 1500\n  auto-route: false\n  auto-detect-interface: false\n  strict-route: false\n  file-descriptor: "
+    :yaml_newline
+    const-string v9, "tun:\n  enable: true\n  stack: mixed\n  device: boxvpn\n  mtu: 1500\n  auto-route: false\n  auto-detect-interface: false\n  strict-route: false\n  file-descriptor: "
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    const-string v6, "\n  dns-hijack:\n    - any:53\n    - tcp://any:53\n"
+    const-string v9, "\n  dns-hijack:\n    - any:53\n    - tcp://any:53\n"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v7
 
-    sget-object v5, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
+    :write_config
+    sget-object v8, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
 
-    invoke-virtual {v4, v5}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+    invoke-virtual {v7, v8}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
-    move-result-object v4
+    move-result-object v7
 
-    invoke-virtual {v2}, Ljava/io/File;->toPath()Ljava/nio/file/Path;
+    invoke-virtual {v5}, Ljava/io/File;->toPath()Ljava/nio/file/Path;
 
-    move-result-object v5
+    move-result-object v8
 
-    invoke-static {v5, v4}, Ljava/nio/file/Files;->write(Ljava/nio/file/Path;[B)Ljava/nio/file/Path;
+    invoke-static {v8, v7}, Ljava/nio/file/Files;->write(Ljava/nio/file/Path;[B)Ljava/nio/file/Path;
 
-    move-object v0, v2
+    move-object v0, v5
+
+    goto :done
+
+    :json_failed
+    const/4 v0, 0x0
+
+    :done
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
