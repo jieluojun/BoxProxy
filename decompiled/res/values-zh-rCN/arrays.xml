@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_service_failure_ignored_prefixes">
+        <item>启动:</item>
+        <item>启动完成</item>
+        <item>停止:</item>
+        <item>停止完成</item>
+        <item>重启:</item>
+        <item>服务启动:</item>
+        <item>服务已启动</item>
+        <item>服务停止:</item>
+        <item>服务已停止</item>
+    </string-array>
+</resources>

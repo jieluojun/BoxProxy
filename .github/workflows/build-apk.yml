@@ -1,0 +1,193 @@
+name: Build APK
+
+# BoxProxy 反编译工程的回编译工作流：
+#   apktool b（官方发行版，sha256 校验）-> zipalign -> apksigner 签名/验证 -> 产物上传
+# 说明：本工程由 apktool 2.9.3 反编译生成，APKTOOL_VERSION 必须与之保持一致；
+#       升级 apktool 时需重新反编译原包，并同步修改下面的版本与 sha256。
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    tags: ["v*"]
+    paths:
+      - "decompiled/**"
+      - ".github/workflows/build-apk.yml"
+  pull_request:
+    branches: [main]
+    paths:
+      - "decompiled/**"
+      - ".github/workflows/build-apk.yml"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-apk-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  APKTOOL_VERSION: "2.9.3"
+  # 官方 apktool_2.9.3.jar 的 sha256（与发行包大小 23254968 字节对应，已交叉验证）
+  APKTOOL_SHA256: "7956eb04194300ce0d0a84ad18771eebc94b89fb8d1ddcce8ea4c056818646f4"
+  PROJECT_DIR: "decompiled"
+
+jobs:
+  build:
+    name: Rebuild, align, sign
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Read version from apktool.yml
+        id: ver
+        shell: bash
+        run: |
+          set -euo pipefail
+          version_name="$(sed -n 's/^  versionName:[[:space:]]*//p' "$PROJECT_DIR/apktool.yml" | head -n 1 | tr -d '\r')"
+          version_code="$(sed -n 's/^  versionCode:[[:space:]]*//p' "$PROJECT_DIR/apktool.yml" | head -n 1 | tr -d '\r')"
+          if [[ -z "$version_name" || -z "$version_code" ]]; then
+            echo "::error::failed to parse versionName/versionCode from $PROJECT_DIR/apktool.yml"
+            exit 1
+          fi
+          echo "version_name=${version_name}" >> "$GITHUB_OUTPUT"
+          echo "version_code=${version_code}" >> "$GITHUB_OUTPUT"
+          echo "BoxProxy versionName=${version_name} versionCode=${version_code}"
+
+      - name: Cache apktool
+        uses: actions/cache@v6
+        with:
+          path: ~/tools
+          key: apktool-${{ env.APKTOOL_VERSION }}-${{ env.APKTOOL_SHA256 }}
+
+      - name: Download apktool (official release, sha256 verified)
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/tools"
+          jar="$HOME/tools/apktool_${APKTOOL_VERSION}.jar"
+          if [[ ! -f "$jar" ]]; then
+            curl -fsSL --retry 3 -o "$jar" \
+              "https://github.com/iBotPeaches/Apktool/releases/download/v${APKTOOL_VERSION}/apktool_${APKTOOL_VERSION}.jar"
+          fi
+          echo "${APKTOOL_SHA256}  ${jar}" | sha256sum -c -
+          java -jar "$jar" --version
+
+      - name: Build unsigned APK with apktool
+        shell: bash
+        run: |
+          set -euo pipefail
+          java -jar "$HOME/tools/apktool_${APKTOOL_VERSION}.jar" b "$PROJECT_DIR" -o "$RUNNER_TEMP/unsigned.apk"
+          ls -lh "$RUNNER_TEMP/unsigned.apk"
+
+      - name: Align, sign and verify
+        id: sign
+        shell: bash
+        env:
+          KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+          KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
+          KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+
+          # ---- 定位 Android SDK build-tools（zipalign / apksigner / aapt2）----
+          sdk="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+          bt="$(ls -d "$sdk"/build-tools/*/ 2>/dev/null | sort -V | tail -n 1 || true)"
+          if [[ -z "${bt}" || ! -x "${bt}apksigner" ]]; then
+            echo "build-tools not found, installing via sdkmanager..."
+            sdkmanager="$(find "$sdk/cmdline-tools" -name sdkmanager -type f 2>/dev/null | sort -V | tail -n 1)"
+            yes | "$sdkmanager" --licenses > /dev/null || true
+            "$sdkmanager" "build-tools;35.0.0"
+            bt="$(ls -d "$sdk"/build-tools/*/ | sort -V | tail -n 1)"
+          fi
+          echo "Using build-tools: $bt"
+
+          # ---- 准备签名密钥：优先使用仓库 Secrets，否则生成临时调试密钥 ----
+          if [[ -n "${KEYSTORE_BASE64}" ]]; then
+            if [[ -z "${KEYSTORE_PASSWORD}" || -z "${KEY_ALIAS}" ]]; then
+              echo "::error::配置了 KEYSTORE_BASE64 时，必须同时配置 KEYSTORE_PASSWORD 与 KEY_ALIAS"
+              exit 1
+            fi
+            ks="$RUNNER_TEMP/release.keystore"
+            printf '%s' "$KEYSTORE_BASE64" | base64 -d > "$ks"
+            KS_PASS="$KEYSTORE_PASSWORD"
+            [[ -n "${KEY_PASSWORD}" ]] && KEY_PASS="$KEY_PASSWORD" || KEY_PASS="$KEYSTORE_PASSWORD"
+            SIGN_MODE="release (Secrets keystore)"
+          else
+            ks="$RUNNER_TEMP/debug.keystore"
+            keytool -genkeypair -keystore "$ks" -storepass android -alias androiddebugkey \
+              -keypass android -dname "CN=Android Debug,O=Android,C=US" \
+              -keyalg RSA -keysize 2048 -validity 10000
+            KEY_ALIAS="androiddebugkey" KS_PASS="android" KEY_PASS="android"
+            SIGN_MODE="debug (ephemeral, generated in CI)"
+            echo "::warning::未配置签名 Secrets，已使用 CI 临时生成的调试密钥签名；该产物不可覆盖安装正式版本。"
+          fi
+          export KS_PASS KEY_PASS
+
+          # ---- zipalign -> sign -> verify ----
+          mkdir -p "$GITHUB_WORKSPACE/artifacts"
+          out="$GITHUB_WORKSPACE/artifacts/BoxProxy-${{ steps.ver.outputs.version_name }}-rebuilt.apk"
+          "${bt}zipalign" -f -p 4 "$RUNNER_TEMP/unsigned.apk" "$RUNNER_TEMP/aligned.apk"
+          "${bt}zipalign" -c -p 4 "$RUNNER_TEMP/aligned.apk"
+          "${bt}apksigner" sign --ks "$ks" --ks-key-alias "$KEY_ALIAS" \
+            --ks-pass env:KS_PASS --key-pass env:KEY_PASS \
+            --out "$out" "$RUNNER_TEMP/aligned.apk"
+          "${bt}apksigner" verify --verbose --print-certs "$out" | tee "$RUNNER_TEMP/apksigner-verify.txt"
+          "${bt}aapt2" dump badging "$out" | head -n 5
+
+          ( cd "$GITHUB_WORKSPACE/artifacts" && sha256sum "$(basename "$out")" > "$(basename "$out").sha256" )
+          echo "sign_mode=${SIGN_MODE}" >> "$GITHUB_OUTPUT"
+          {
+            echo "## BoxProxy APK build"
+            echo "| 项目 | 值 |"
+            echo "|---|---|"
+            echo "| 包名 | \`com.boxproxy.box\` |"
+            echo "| versionName / versionCode | ${{ steps.ver.outputs.version_name }} / ${{ steps.ver.outputs.version_code }} |"
+            echo "| 签名模式 | ${SIGN_MODE} |"
+            echo "| 产物 | \`$(basename "$out")\` ($(du -h "$out" | cut -f 1)) |"
+            echo "| sha256 | \`$(sha256sum "$out" | cut -d ' ' -f 1)\` |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: BoxProxy-${{ steps.ver.outputs.version_name }}-rebuilt
+          path: artifacts/
+          if-no-files-found: error
+          retention-days: 30
+
+  release:
+    name: Publish GitHub Release
+    needs: build
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - name: Download built APK
+        uses: actions/download-artifact@v8
+        with:
+          pattern: BoxProxy-*-rebuilt
+          path: artifacts
+          merge-multiple: true
+
+      - name: Create release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release create "${{ github.ref_name }}" artifacts/*.apk artifacts/*.sha256 \
+            --repo "${{ github.repository }}" --verify-tag \
+            --title "BoxProxy ${{ github.ref_name }}" \
+            --notes "由 GitHub Actions 从 \`decompiled/\` 反编译工程回编译（apktool ${APKTOOL_VERSION} + zipalign + apksigner）。签名与官方版本不同，无法覆盖安装官方版本，请先卸载后再安装。"
