@@ -90,6 +90,37 @@ jobs:
           java -jar "$HOME/tools/apktool_${APKTOOL_VERSION}.jar" b "$PROJECT_DIR" -o "$RUNNER_TEMP/unsigned.apk"
           ls -lh "$RUNNER_TEMP/unsigned.apk"
 
+      - name: Verify rootless VPN classes in dex
+        shell: bash
+        run: |
+          set -euo pipefail
+          tmp="$(mktemp -d)"
+          unzip -q -o "$RUNNER_TEMP/unsigned.apk" classes.dex -d "$tmp"
+          for cls in BoxVpnService VpnGate VpnMode VpnPermissionActivity; do
+            if ! grep -qa "com/box/app/vpn/$cls" "$tmp/classes.dex"; then
+              echo "::error::dex is missing the rootless VPN class com/box/app/vpn/$cls"
+              exit 1
+            fi
+          done
+          echo "rootless VPN classes present in dex: BoxVpnService, VpnGate, VpnMode, VpnPermissionActivity"
+
+      - name: Verify bundled boxctl supports --vpn-fd
+        shell: bash
+        continue-on-error: true
+        run: |
+          set -euo pipefail
+          bin="$PROJECT_DIR/assets/boxctl/arm64-v8a/boxctl"
+          [[ -f "$bin" ]] || { echo "::warning::bundled boxctl not found at $bin"; exit 1; }
+          if grep -qa -- "--vpn-fd" "$bin"; then
+            echo "bundled boxctl supports --vpn-fd"
+          else
+            echo "::warning::bundled boxctl does NOT support --vpn-fd."
+            echo "         The rootless VPN mode needs the boxctl build produced by 'boxctl-vpn.patch'."
+            echo "         Apply that patch to boxproxy/boxproxy, rebuild the aarch64-v8a binary and replace"
+            echo "         decompiled/assets/boxctl/arm64-v8a/boxctl before shipping a VPN capable build."
+            exit 1
+          fi
+
       - name: Align, sign and verify
         id: sign
         shell: bash

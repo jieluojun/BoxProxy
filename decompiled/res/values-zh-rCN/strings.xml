@@ -1086,4 +1086,11 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="wifi_match_picker_location_required">请开启定位以扫描 Wi-Fi</string>
     <string name="wifi_match_picker_permission_required">需要 Wi-Fi 权限</string>
     <string name="wifi_match_ssid_hint">SSID</string>
+    <string name="proxy_mode_vpn">VPN</string>
+    <string name="vpn_notification_title">BoxProxy VPN</string>
+    <string name="vpn_notification_text">免 Root VPN 代理正在运行</string>
+    <string name="vpn_channel_name">VPN 服务</string>
+    <string name="vpn_error_no_core">未找到代理内核，请先导入 Mihomo 或 Xray 内核。</string>
+    <string name="vpn_error_denied">未授予 VPN 权限。</string>
+    <string name="vpn_error_start">VPN 内核启动失败。</string>
 </resources>

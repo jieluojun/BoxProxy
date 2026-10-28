@@ -125,6 +125,9 @@
     .line 35
     invoke-virtual {v4, p0, p1}, Lxt4;->q(Lv25;Lr52;)V
 
+    # BoxProxy patch: persist the VPN mode flag for the rootless VpnService path
+    invoke-static {v3, p0}, Lcom/box/app/vpn/VpnMode;->onModeSelected(Landroid/content/Context;Lv25;)V
+
     .line 36
     .line 37
     .line 38

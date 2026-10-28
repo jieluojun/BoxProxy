@@ -378,6 +378,26 @@
     :cond_5
     invoke-static {p1}, Lc33;->N(Ljava/lang/Object;)V
 
+    # BoxProxy patch: rootless VPN mode bypasses boxctl entirely
+    sget-object v1, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
+
+    invoke-static {v1}, Lcom/box/app/vpn/VpnGate;->requestStart(Landroid/content/Context;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_vpn_start_skip
+
+    new-instance v1, Lcg2;
+
+    const-string v2, ""
+
+    const/4 v3, 0x1
+
+    invoke-direct {v1, v2, v3}, Lcg2;-><init>(Ljava/lang/String;Z)V
+
+    return-object v1
+
+    :cond_vpn_start_skip
     .line 82
     .line 83
     .line 84

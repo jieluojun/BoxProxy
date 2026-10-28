@@ -1,0 +1,594 @@
+diff --git a/boxctl/src/cli.rs b/boxctl/src/cli.rs
+index a1be89c..194577d 100644
+--- a/boxctl/src/cli.rs
++++ b/boxctl/src/cli.rs
+@@ -117,6 +117,13 @@ struct RawOptions {
+     #[arg(long, value_enum, value_name = "MODE", help = "Network mode")]
+     mode: Option<NetworkMode>,
+ 
++    #[arg(
++        long = "vpn-fd",
++        value_name = "FD",
++        help = "TUN file descriptor handed over by the Android VPN service"
++    )]
++    vpn_fd: Option<i32>,
++
+     #[arg(long, value_name = "MODE", help = "Proxy handling mode")]
+     proxy_mode: Option<String>,
+ 
+@@ -257,6 +264,7 @@ struct RawOptions {
+ #[derive(Clone, Copy, Debug, ValueEnum)]
+ #[value(rename_all = "kebab-case")]
+ enum NetworkMode {
++    Vpn,
+     Tun,
+     Tproxy,
+     Ebpf,
+@@ -268,6 +276,7 @@ enum NetworkMode {
+ impl NetworkMode {
+     fn as_str(self) -> &'static str {
+         match self {
++            Self::Vpn => "vpn",
+             Self::Tun => "tun",
+             Self::Tproxy => "tproxy",
+             Self::Ebpf => "ebpf",
+@@ -455,6 +464,7 @@ impl RawOptions {
+             bin_path: self.bin_path.clone(),
+             config_path: self.config_path.clone(),
+             network_mode: self.mode.map(|mode| mode.as_str().to_string()),
++            vpn_fd: self.vpn_fd,
+             proxy_mode: self.proxy_mode.clone(),
+             tproxy_port: self.tproxy_port.clone(),
+             redir_port: self.redir_port.clone(),
+diff --git a/boxctl/src/config.rs b/boxctl/src/config.rs
+index 6eb281a..44290d2 100644
+--- a/boxctl/src/config.rs
++++ b/boxctl/src/config.rs
+@@ -26,6 +26,7 @@ pub struct ConfigOverrides {
+     pub config_path: Option<PathBuf>,
+     pub auto_sync_config: Option<bool>,
+     pub network_mode: Option<String>,
++    pub vpn_fd: Option<i32>,
+     pub proxy_mode: Option<String>,
+     pub tproxy_port: Option<String>,
+     pub redir_port: Option<String>,
+@@ -71,6 +72,7 @@ pub struct Config {
+     pub bin_log: PathBuf,
+     pub auto_sync_config: bool,
+     pub network_mode: NetworkMode,
++    pub vpn_fd: Option<i32>,
+     pub proxy_mode: ProxyMode,
+     pub tproxy_port: String,
+     pub redir_port: String,
+@@ -180,6 +182,9 @@ impl Config {
+                 .clone()
+                 .unwrap_or_else(|| db_data.mode.clone()),
+         )?;
++        if network_mode == NetworkMode::Vpn && overrides.vpn_fd.is_none() {
++            return Err("network mode vpn requires --vpn-fd".to_string());
++        }
+         let proxy_mode = ProxyMode::parse(
+             &overrides
+                 .proxy_mode
+@@ -281,6 +286,7 @@ impl Config {
+             bin_log: paths.run.join(format!("{bin_name}.log")),
+             auto_sync_config,
+             network_mode,
++            vpn_fd: overrides.vpn_fd,
+             proxy_mode,
+             tproxy_port: resolved_tproxy_port.value,
+             redir_port: resolved_redir_port.value,
+diff --git a/boxctl/src/config/types.rs b/boxctl/src/config/types.rs
+index df10361..d4ee4ef 100644
+--- a/boxctl/src/config/types.rs
++++ b/boxctl/src/config/types.rs
+@@ -3,6 +3,7 @@ use std::fmt;
+ 
+ #[derive(Clone, Copy, Debug, PartialEq, Eq)]
+ pub enum NetworkMode {
++    Vpn,
+     Tun,
+     Tproxy,
+     Ebpf,
+@@ -14,6 +15,7 @@ pub enum NetworkMode {
+ impl NetworkMode {
+     pub fn parse(value: &str) -> Result<Self> {
+         match value.trim().to_ascii_lowercase().as_str() {
++            "vpn" => Ok(Self::Vpn),
+             "tun" => Ok(Self::Tun),
+             "tproxy" => Ok(Self::Tproxy),
+             "ebpf" => Ok(Self::Ebpf),
+@@ -26,6 +28,7 @@ impl NetworkMode {
+ 
+     pub const fn as_str(self) -> &'static str {
+         match self {
++            Self::Vpn => "vpn",
+             Self::Tun => "tun",
+             Self::Tproxy => "tproxy",
+             Self::Ebpf => "ebpf",
+@@ -36,7 +39,7 @@ impl NetworkMode {
+     }
+ 
+     pub const fn uses_tun(self) -> bool {
+-        matches!(self, Self::Tun | Self::Mixed)
++        matches!(self, Self::Vpn | Self::Tun | Self::Mixed)
+     }
+ }
+ 
+diff --git a/boxctl/src/core_config.rs b/boxctl/src/core_config.rs
+index 3101563..d373d92 100644
+--- a/boxctl/src/core_config.rs
++++ b/boxctl/src/core_config.rs
+@@ -18,6 +18,11 @@ use util::*;
+ const MANAGED_TUN_BEGIN: &str = "# boxctl managed tun begin";
+ const MANAGED_TUN_END: &str = "# boxctl managed tun end";
+ 
++/// File descriptor the Android VPN service TUN is dup'ed onto right before the
++/// core is exec'ed, so the core can reference the already-existing TUN device
++/// from its own config instead of creating one.
++pub(crate) const VPN_TUN_FD: i32 = 3;
++
+ pub fn sync(config: &Config) -> Result<()> {
+     ensure_network_mode_supported(config)?;
+     if !config.auto_sync_config {
+@@ -45,6 +50,14 @@ pub(crate) fn ensure_network_mode_supported(config: &Config) -> Result<()> {
+     if config.network_mode == crate::config::NetworkMode::Ebpf && config.bin_name != "sing-box" {
+         return Err("eBPF network mode is only supported by sing-box".to_string());
+     }
++    if config.network_mode == crate::config::NetworkMode::Vpn
++        && !matches!(config.bin_name.as_str(), "mihomo" | "xray")
++    {
++        return Err(format!(
++            "vpn network mode is only supported by the mihomo and xray cores, got {}",
++            config.bin_name
++        ));
++    }
+     Ok(())
+ }
+ 
+diff --git a/boxctl/src/core_config/mihomo.rs b/boxctl/src/core_config/mihomo.rs
+index ff46046..eea8ce8 100644
+--- a/boxctl/src/core_config/mihomo.rs
++++ b/boxctl/src/core_config/mihomo.rs
+@@ -7,7 +7,11 @@ pub(super) fn sync_mihomo(config: &Config) -> Result<()> {
+     let source = config.source_config_path();
+     let source_text = fs::read_to_string(source)
+         .map_err(|err| format!("read mihomo config {} failed: {err}", source.display()))?;
+-    let source_text = if config.auto_sync_config {
++    // The rootless VPN mode always needs the managed tun block, even when the
++    // user turned automatic config synchronisation off for the root modes.
++    let sync_managed_block =
++        config.auto_sync_config || config.network_mode == crate::config::NetworkMode::Vpn;
++    let source_text = if sync_managed_block {
+         remove_legacy_managed_tun_block(&source_text)
+     } else {
+         source_text
+@@ -15,7 +19,7 @@ pub(super) fn sync_mihomo(config: &Config) -> Result<()> {
+     let anchor_template_keys = referenced_top_level_anchor_template_keys(&source_text, source)?;
+     let mut runtime_value = parse_yaml_runtime_value(&source_text, "mihomo", source)?;
+     remove_top_level_anchor_templates(&mut runtime_value, &anchor_template_keys)?;
+-    if config.auto_sync_config {
++    if sync_managed_block {
+         sync_mihomo_value(&mut runtime_value, &MihomoSettings::from(config))?;
+     }
+     let text = format_yaml_runtime_value(&runtime_value, "mihomo", source)?;
+@@ -230,6 +234,8 @@ fn sync_mihomo_value(runtime: &mut Value, settings: &MihomoSettings) -> Result<(
+ #[derive(Clone)]
+ struct MihomoSettings {
+     network_mode: String,
++    vpn: bool,
++    vpn_fd: Option<i32>,
+     proxy_mode: String,
+     redir_port: String,
+     tproxy_port: String,
+@@ -248,6 +254,8 @@ impl From<&Config> for MihomoSettings {
+     fn from(config: &Config) -> Self {
+         Self {
+             network_mode: config.network_mode.to_string(),
++            vpn: config.network_mode == crate::config::NetworkMode::Vpn,
++            vpn_fd: config.vpn_fd,
+             proxy_mode: config.proxy_mode.to_string(),
+             redir_port: config.redir_port.clone(),
+             tproxy_port: config.tproxy_port.clone(),
+@@ -266,7 +274,7 @@ impl From<&Config> for MihomoSettings {
+ 
+ impl MihomoSettings {
+     fn tun_enabled(&self) -> bool {
+-        matches!(self.network_mode.as_str(), "tun" | "mixed")
++        matches!(self.network_mode.as_str(), "vpn" | "tun" | "mixed")
+     }
+ 
+     fn app_proxy_filter_enabled(&self) -> bool {
+@@ -309,6 +317,8 @@ impl MihomoSettings {
+ }
+ 
+ struct MihomoTunConfig {
++    vpn: bool,
++    file_descriptor: Option<i32>,
+     stack: String,
+     device: String,
+     auto_route: bool,
+@@ -323,8 +333,19 @@ struct MihomoTunConfig {
+ impl MihomoTunConfig {
+     fn from(settings: &MihomoSettings, current_stack: Option<String>) -> Self {
+         let box_managed_route = settings.box_managed_tun_route;
+-        let (include_uid, exclude_uid) = settings.tun_uid_lists();
++        let vpn = settings.vpn;
++        let (include_uid, exclude_uid) = if vpn {
++            (Vec::new(), Vec::new())
++        } else {
++            settings.tun_uid_lists()
++        };
+         Self {
++            vpn,
++            file_descriptor: if vpn {
++                Some(settings.vpn_fd.unwrap_or(VPN_TUN_FD))
++            } else {
++                None
++            },
+             stack: if settings.bypass_cn_ip {
+                 "gvisor".to_string()
+             } else {
+@@ -340,10 +361,10 @@ impl MihomoTunConfig {
+                     .unwrap_or_else(|| "gvisor".to_string())
+             },
+             device: empty_default(&settings.tun_device, "meta").to_string(),
+-            auto_route: !box_managed_route,
++            auto_route: !vpn && !box_managed_route,
+             strict_route: box_managed_route.then_some(false),
+             auto_redirect: box_managed_route.then_some(false),
+-            auto_detect_interface: !box_managed_route,
++            auto_detect_interface: !vpn && !box_managed_route,
+             include_uid,
+             exclude_uid,
+             exclude_interface: normalized_text_values(&settings.blocked_interfaces),
+@@ -353,7 +374,28 @@ impl MihomoTunConfig {
+     fn apply(&self, tun: &mut Mapping) {
+         set_value(tun, "enable", Value::from(true));
+         set_default_value(tun, "mtu", Value::from(1500_u16));
+-        set_default_value(tun, "device", Value::from(self.device.as_str()));
++        if self.vpn {
++            // The TUN interface already exists: the Android VPN service created it
++            // and boxctl handed the descriptor over on fd VPN_TUN_FD. mihomo must
++            // neither open a device of its own nor manage routes or uid filters,
++            // the VPN stack owns all of that.
++            if let Some(fd) = self.file_descriptor {
++                set_value(tun, "file-descriptor", Value::from(fd as i64));
++            }
++            for key in [
++                "device",
++                "strict-route",
++                "auto-redirect",
++                "include-uid",
++                "exclude-uid",
++                "include-android-user",
++                "include-interface",
++            ] {
++                tun.shift_remove(key);
++            }
++        } else {
++            set_default_value(tun, "device", Value::from(self.device.as_str()));
++        }
+         set_default_value(tun, "stack", Value::from(self.stack.as_str()));
+         tun.entry(Value::from("dns-hijack")).or_insert_with(|| {
+             Value::Sequence(vec![Value::from("any:53"), Value::from("tcp://any:53")])
+@@ -373,8 +415,10 @@ impl MihomoTunConfig {
+             set_value(tun, "auto-redirect", Value::from(value));
+         }
+         set_optional_string_list(tun, "exclude-interface", &self.exclude_interface);
+-        set_optional_uid_list(tun, "include-uid", &self.include_uid);
+-        set_optional_uid_list(tun, "exclude-uid", &self.exclude_uid);
++        if !self.vpn {
++            set_optional_uid_list(tun, "include-uid", &self.include_uid);
++            set_optional_uid_list(tun, "exclude-uid", &self.exclude_uid);
++        }
+     }
+ }
+ 
+diff --git a/boxctl/src/exec.rs b/boxctl/src/exec.rs
+index d7bb2dc..5540800 100644
+--- a/boxctl/src/exec.rs
++++ b/boxctl/src/exec.rs
+@@ -211,6 +211,64 @@ impl Runner {
+         Ok(Some(pid))
+     }
+ 
++    /// Spawn a child with an extra file descriptor dup'ed onto `target_fd` right
++    /// before the exec, so the child can reference an already existing TUN device
++    /// handed over by the Android VPN service. The child keeps the current user
++    /// identity: the rootless VPN mode never needs privileges.
++    pub fn spawn_with_fd_to_file<S: AsRef<str>>(
++        &self,
++        program: &str,
++        args: &[S],
++        log_path: &Path,
++        envs: &[(&str, String)],
++        source_fd: i32,
++        target_fd: i32,
++    ) -> Result<Option<u32>> {
++        self.print_command(program, args);
++        if self.dry_run {
++            return Ok(None);
++        }
++
++        let stdout = File::create(log_path)
++            .map_err(|err| format!("create log {} failed: {err}", log_path.display()))?;
++        let stderr = stdout
++            .try_clone()
++            .map_err(|err| format!("copy log handle {} failed: {err}", log_path.display()))?;
++
++        let mut command = Command::new(program);
++        command
++            .args(args.iter().map(|value| value.as_ref()))
++            .stdin(Stdio::null())
++            .stdout(Stdio::from(stdout))
++            .stderr(Stdio::from(stderr));
++        for (key, value) in envs {
++            command.env(*key, value.as_str());
++        }
++        unsafe {
++            command.pre_exec(move || {
++                if libc::dup2(source_fd, target_fd) < 0 {
++                    return Err(io::Error::last_os_error());
++                }
++                Ok(())
++            });
++        }
++
++        let mut child = command
++            .spawn()
++            .map_err(|err| command_start_error("start", program, err))?;
++        let pid = child.id();
++
++        std::thread::Builder::new()
++            .name("boxctl-child-reaper".to_string())
++            .stack_size(CHILD_REAPER_STACK_SIZE)
++            .spawn(move || {
++                let _ = child.wait();
++            })
++            .map_err(|err| format!("start child reaper thread failed: {err}"))?;
++
++        Ok(Some(pid))
++    }
++
+     fn print_command<S: AsRef<str>>(&self, program: &str, args: &[S]) {
+         if self.dry_run || self.verbose {
+             eprintln!("+ {}", shell_join(program, args));
+diff --git a/boxctl/src/monitor/watcher.rs b/boxctl/src/monitor/watcher.rs
+index e649615..9e08960 100644
+--- a/boxctl/src/monitor/watcher.rs
++++ b/boxctl/src/monitor/watcher.rs
+@@ -38,7 +38,13 @@ pub(super) fn monitor_required(config: &Config, runner: &Runner) -> bool {
+         return true;
+     }
+ 
+-    service::is_running(config, runner) && config.network_mode != crate::config::NetworkMode::Tun
++    if matches!(
++        config.network_mode,
++        crate::config::NetworkMode::Tun | crate::config::NetworkMode::Vpn
++    ) {
++        return false;
++    }
++    service::is_running(config, runner)
+ }
+ 
+ pub(super) fn monitor_worker_running(config: &Config) -> bool {
+diff --git a/boxctl/src/rules.rs b/boxctl/src/rules.rs
+index e9ce2ef..4d0faf8 100644
+--- a/boxctl/src/rules.rs
++++ b/boxctl/src/rules.rs
+@@ -56,15 +56,25 @@ const EBPF_APP_UID_MAP: &str = "/sys/fs/bpf/box/box_app_uid_set";
+ 
+ pub fn apply(config: &Config, runner: &Runner) -> Result<()> {
+     crate::core_config::ensure_network_mode_supported(config)?;
++    if config.network_mode == crate::config::NetworkMode::Vpn {
++        // The VPN stack owns routing and bypass rules; no privileged ruleset here.
++        return Ok(());
++    }
+     RuleManager::new(config, runner).apply()
+ }
+ 
+ pub fn clear(config: &Config, runner: &Runner) -> Result<()> {
++    if config.network_mode == crate::config::NetworkMode::Vpn {
++        return Ok(());
++    }
+     RuleManager::new(config, runner).clear()
+ }
+ 
+ pub fn renew(config: &Config, runner: &Runner) -> Result<()> {
+     crate::core_config::ensure_network_mode_supported(config)?;
++    if config.network_mode == crate::config::NetworkMode::Vpn {
++        return Ok(());
++    }
+     let manager = RuleManager::new(config, runner);
+     manager.clear()?;
+     manager.apply()
+diff --git a/boxctl/src/service.rs b/boxctl/src/service.rs
+index 995521e..4ef9bc9 100644
+--- a/boxctl/src/service.rs
++++ b/boxctl/src/service.rs
+@@ -9,6 +9,9 @@ use std::fs;
+ use std::path::{Path, PathBuf};
+ use std::thread;
+ use std::time::{Duration, Instant, UNIX_EPOCH};
++
++#[cfg(unix)]
++use std::os::unix::io::AsRawFd;
+ mod command;
+ mod config_check;
+ mod permissions;
+@@ -50,6 +53,10 @@ fn start_inner(config: &Config, runner: &Runner) -> Result<()> {
+         ],
+     );
+ 
++    if config.network_mode == crate::config::NetworkMode::Vpn {
++        return start_vpn(config, runner);
++    }
++
+     let running = running_core_pids(config);
+     if !running.is_empty() {
+         logger::warn_key(
+@@ -129,8 +136,161 @@ fn start_inner(config: &Config, runner: &Runner) -> Result<()> {
+     Ok(())
+ }
+ 
+-fn read_log_tail(path: &Path) -> String {
+-    let Ok(text) = fs::read_to_string(path) else {
++/// Rootless VPN mode. The Android VPN service owns the TUN interface and handed
++/// the descriptor over through `--vpn-fd`; boxctl only has to dup it onto the
++/// descriptor the core config refers to and start the core as the current user.
++/// No routing rules, no privileges and no process identity change are involved,
++/// the VPN stack already took care of routing and bypass rules.
++fn start_vpn(config: &Config, runner: &Runner) -> Result<()> {
++    let tun_fd = resolve_vpn_fd(config)?;
++
++    let running = running_core_pids(config);
++    if !running.is_empty() {
++        logger::warn_key(
++            config,
++            LogKey::ServiceAlreadyRunningStopOld,
++            &[arg("core", &config.bin_name)],
++        );
++        stop_pids(config, runner, running)?;
++    }
++
++    let mut envs = core_env(config);
++    if config.bin_name == "xray" {
++        // xray picks the inherited TUN descriptor up from the environment.
++        envs.push(("XRAY_TUN_FD", crate::core_config::VPN_TUN_FD.to_string()));
++    }
++    let (program, args) = core_run_command(config);
++    logger::debug_key(
++        config,
++        LogKey::ServiceCommand,
++        &[arg(
++            "command",
++            format!(
++                "{} {}",
++                program,
++                args.iter()
++                    .map(String::as_str)
++                    .collect::<Vec<_>>()
++                    .join(" ")
++            ),
++        )],
++    );
++
++    let pid = runner.spawn_with_fd_to_file(
++        &program,
++        &args,
++        &config.bin_log,
++        &envs,
++        tun_fd,
++        crate::core_config::VPN_TUN_FD,
++    )?;
++    let Some(pid) = pid else {
++        logger::info_key(
++            config,
++            LogKey::ServicePreviewNotStarted,
++            &[arg("core", &config.bin_name)],
++        );
++        return Ok(());
++    };
++
++    if !runner.dry_run() {
++        fs::write(&config.box_pid, pid.to_string())
++            .map_err(|err| format!("write PID {} failed: {err}", config.box_pid.display()))?;
++    }
++
++    if !runner.dry_run() {
++        thread::sleep(Duration::from_millis(STARTUP_PROBE_DELAY_MS));
++        if !pid_matches_core(config, &pid.to_string()) {
++            let _ = remove_pid(config);
++            let detail = read_log_tail(&config.bin_log);
++            let detail = if detail.is_empty() {
++                "-"
++            } else {
++                detail.as_str()
++            };
++            logger::error_key(
++                config,
++                LogKey::ServiceExitedAfterStart,
++                &[arg("core", &config.bin_name), arg("detail", detail)],
++            );
++            return Err(format!(
++                "core {} exited immediately after start",
++                config.bin_name
++            ));
++        }
++    }
++
++    logger::info_key(
++        config,
++        LogKey::ServiceStarted,
++        &[arg("core", &config.bin_name), arg("pid", pid)],
++    );
++
++    if runner.dry_run() {
++        return Ok(());
++    }
++    // Stay alive while the core runs: the Android VPN service is waiting on this
++    // process and tears the tunnel down as soon as it exits.
++    loop {
++        thread::sleep(Duration::from_secs(VPN_SUPERVISE_INTERVAL_SECS));
++        if !is_pid_alive(pid) {
++            logger::warn_key(
++                config,
++                LogKey::ServiceCoreExited,
++                &[arg("core", &config.bin_name), arg("pid", pid)],
++            );
++            return Err(format!("core {} exited", config.bin_name));
++        }
++    }
++}
++
++const VPN_SUPERVISE_INTERVAL_SECS: u64 = 1;
++
++fn is_pid_alive(pid: u32) -> bool {
++    fs::metadata(format!("/proc/{pid}")).is_ok()
++}
++
++/// Resolve the TUN descriptor the VPN service handed over. It is inherited when
++/// the app managed to clear FD_CLOEXEC on it; otherwise it is re-opened through
++/// the parent process' `/proc/<pid>/fd` entry, which works regardless of that flag.
++fn resolve_vpn_fd(config: &Config) -> Result<i32> {
++    let Some(fd) = config.vpn_fd else {
++        return Err("network mode vpn requires --vpn-fd".to_string());
++    };
++    if is_tun_fd(fd) {
++        return Ok(fd);
++    }
++
++    let parent = unsafe { libc::getppid() };
++    let path = PathBuf::from(format!("/proc/{parent}/fd/{fd}"));
++    let opened = std::fs::File::open(&path).map_err(|err| {
++        format!(
++            "vpn tun fd {} is not available ({}): {err}",
++            fd,
++            path.display()
++        )
++    })?;
++    let duplicated = unsafe { libc::dup(opened.as_raw_fd()) };
++    drop(opened);
++    if duplicated < 0 {
++        return Err(format!("dup vpn tun fd {fd} failed"));
++    }
++    if !is_tun_fd(duplicated) {
++        unsafe { libc::close(duplicated) };
++        return Err(format!("vpn fd {fd} is not a TUN device"));
++    }
++    Ok(duplicated)
++}
++
++fn is_tun_fd(fd: i32) -> bool {
++    fs::read_link(format!("/proc/self/fd/{fd}"))
++        .ok()
++        .and_then(|path| path.to_str().map(|value| value.to_string()))
++        .map(|path| path.starts_with("/dev/net/tun"))
++        .unwrap_or(false)
++}
++
++fn read_log_tail(path: &Path) -> String {    let Ok(text) = fs::read_to_string(path) else {
+         return String::new();
+     };
+     let mut tail: Vec<&str> = text

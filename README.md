@@ -135,3 +135,56 @@ jadx -d jadx-out BoxProxy-26.10.27.c9eabe1-arm64-v8a.apk
 ## 免责声明
 
 本仓库中的反编译内容来自上表所列公开分发的 APK，仅用于学习、兼容性与互操作研究。原始应用的代码与资源权利归其原作者所有；任何再分发或商用修改前，请确保你已获得相应授权并遵守适用法律法规。
+
+## Rootless VPN run mode (no root required)
+
+A new run mode `VPN` was added, listed **above `TUN`** in the run-mode dropdown.
+
+* Without root the dropdown only shows `VPN` — every root backed mode stays hidden
+  (same behaviour as Mishka).
+* With root the full list is returned, with `VPN` still pinned to the top.
+* `VPN` is only offered for cores that can consume an existing TUN descriptor,
+  i.e. **Mihomo** (`tun.file-descriptor`) and **Xray** (`XRAY_TUN_FD`). Other cores
+  simply do not get the entry.
+* **No proxy core is bundled.** Import a core with *Tools → Install core from file*
+  (`files/box/bin/<core>`). `BoxVpnService.pickCore` picks the first core present in
+  that directory, preferring `mihomo` → `xray` → `sing-box` → `v2fly` → `hysteria`.
+
+### Data path (no hev-socks5-tunnel, no local SOCKS hop)
+
+```
+BoxVpnService (VpnService.Builder)
+  -> TUN 172.19.0.1/30, MTU 8500, default route, DNS 172.19.0.2, non blocking
+  -> detachFd()  (clear FD_CLOEXEC, API 30+)
+  -> boxctl --home <files/box> --bin <core> --mode vpn --vpn-fd <fd> up
+       -> fd dup2'd onto fd 3 for the child
+       -> mihomo: tun.file-descriptor: 3, auto-route/auto-detect-interface off
+       -> xray : XRAY_TUN_FD=3, TUN_FD=3
+  -> boxctl supervises the core; if it dies, start fails and the service cleans up
+```
+
+`VpnService.prepare()` is routed through the `VpnPermissionActivity` trampoline
+(`startActivityForResult`, request code `0x3e9`) so the permission flow stays inside
+the app. Start/stop/restart of the `VPN` mode are intercepted in the start/stop/restart
+hooks and never reach `boxctl up/down` — only `VPN` mode does that.
+
+### boxctl side
+
+`decompiled/assets/boxctl/arm64-v8a/boxctl` must be rebuilt with
+[`boxctl-vpn.patch`](boxctl-vpn.patch) applied to `boxproxy/boxproxy`. The patch adds
+`--vpn-fd`, `NetworkMode::Vpn`, the VPN core-config path, the fd handover helper and
+the supervisor loop. Until the rebuilt binary is vendored, the CI job
+`Verify bundled boxctl supports --vpn-fd` reports a warning and the VPN mode cannot
+start (it fails with `vpn_error_no_core`).
+
+### Resources
+
+| name | id |
+|---|---|
+| `proxy_mode_vpn` | `0x7f0f0500` |
+| `vpn_notification_title` | `0x7f0f0501` |
+| `vpn_notification_text` | `0x7f0f0502` |
+| `vpn_channel_name` | `0x7f0f0503` |
+| `vpn_error_no_core` | `0x7f0f0504` |
+| `vpn_error_denied` | `0x7f0f0505` |
+| `vpn_error_start` | `0x7f0f0506` |

@@ -87,6 +87,25 @@
 .method public static e(Lu25;)Ljava/util/ArrayList;
     .locals 6
 
+    # BoxProxy patch: without root the root backed run modes stay hidden and the
+    # rootless VPN mode is the only choice (Mishka behaviour).
+    invoke-static {}, Lcom/box/app/vpn/VpnMode;->isRootAvailable()Z
+
+    move-result v4
+
+    if-nez v4, :cond_root_ok
+
+    new-instance v4, Ljava/util/ArrayList;
+
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
+
+    sget-object v5, Lv25;->t:Lv25;
+
+    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    return-object v4
+
+    :cond_root_ok
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -150,6 +169,23 @@
     .line 31
     check-cast v3, Lv25;
 
+    # BoxProxy patch: the rootless VPN mode is only offered by cores able to
+    # consume an already existing TUN descriptor (mihomo, xray).
+    sget-object v4, Lv25;->t:Lv25;
+
+    if-ne v3, v4, :cond_vpn_ok
+
+    sget-object v4, Lu25;->n:Lu25;
+
+    if-eq p0, v4, :cond_vpn_ok
+
+    sget-object v4, Lu25;->p:Lu25;
+
+    if-eq p0, v4, :cond_vpn_ok
+
+    goto :goto_0
+
+    :cond_vpn_ok
     .line 32
     .line 33
     sget-object v4, Lv25;->n:Lv25;
@@ -230,6 +266,23 @@
     goto :goto_0
 
     .line 71
+    # BoxProxy patch: place the rootless VPN mode at the top of the list,
+    # right above TUN.
+    sget-object v1, Lu25;->n:Lu25;
+
+    if-ne p0, v1, :cond_vpn_no_prepend
+
+    sget-object v1, Lu25;->p:Lu25;
+
+    if-ne p0, v1, :cond_vpn_no_prepend
+
+    const/4 v1, 0x0
+
+    sget-object v2, Lv25;->t:Lv25;
+
+    invoke-virtual {v0, v1, v2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+
+    :cond_vpn_no_prepend
     :cond_3
     return-object v0
 .end method

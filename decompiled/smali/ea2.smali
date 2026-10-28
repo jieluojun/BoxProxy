@@ -836,6 +836,26 @@
     :cond_9
     invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
 
+    # BoxProxy patch: stop the rootless VPN service instead of boxctl down
+    sget-object v9, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
+
+    invoke-static {v9}, Lcom/box/app/vpn/VpnGate;->requestStop(Landroid/content/Context;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_vpn_stop_skip
+
+    new-instance v9, Lcg2;
+
+    const-string v10, ""
+
+    const/4 v0, 0x1
+
+    invoke-direct {v9, v10, v0}, Lcg2;-><init>(Ljava/lang/String;Z)V
+
+    return-object v9
+
+    :cond_vpn_stop_skip
     .line 171
     .line 172
     .line 173

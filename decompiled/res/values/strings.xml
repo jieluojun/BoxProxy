@@ -1092,4 +1092,11 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="wifi_match_picker_location_required">Enable location to scan Wi-Fi</string>
     <string name="wifi_match_picker_permission_required">Wi-Fi permission required</string>
     <string name="wifi_match_ssid_hint">SSID</string>
+    <string name="proxy_mode_vpn">VPN</string>
+    <string name="vpn_notification_title">BoxProxy VPN</string>
+    <string name="vpn_notification_text">Rootless VPN proxy is running</string>
+    <string name="vpn_channel_name">VPN service</string>
+    <string name="vpn_error_no_core">No proxy core found. Import a Mihomo or Xray core first.</string>
+    <string name="vpn_error_denied">VPN permission was denied.</string>
+    <string name="vpn_error_start">VPN core failed to start.</string>
 </resources>

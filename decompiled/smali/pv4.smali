@@ -761,6 +761,25 @@
     .line 326
     move-result v11
 
+    # BoxProxy patch: label of the rootless VPN run mode
+    const/16 v14, 0x6
+
+    if-ne v11, v14, :cond_vpn_skip
+
+    const/4 v15, 0x0
+
+    const v11, -0x1c2f0006
+
+    const v14, 0x7f0f0500
+
+    :goto_7
+    invoke-static {v13, v11, v14, v13, v15}, Lv66;->n(Lv62;IILv62;Z)Ljava/lang/String;
+
+    move-result-object v11
+
+    goto :goto_8
+
+    :cond_vpn_skip
     .line 327
     if-eqz v11, :cond_f
 
