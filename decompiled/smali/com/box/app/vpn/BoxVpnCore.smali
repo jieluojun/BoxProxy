@@ -466,51 +466,59 @@
     const/4 v0, 0x0
 
     :try_start_0
+    # parse config JSON
     new-instance v1, Lorg/json/JSONObject;
 
     invoke-direct {v1, p0}, Lorg/json/JSONObject;-><init>(Ljava/lang/String;)V
 
+    # get inbounds array
     const-string v2, "inbounds"
 
     invoke-virtual {v1, v2}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v9
 
+    # loop counter
     const/4 v3, 0x0
 
     :inbound_loop
+    # get array length
     invoke-virtual {v9}, Lorg/json/JSONArray;->length()I
 
     move-result v4
 
     if-ge v3, v4, :add_tun
 
+    # get inbound at index
     invoke-virtual {v9, v3}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
-
-    move-result-object v4
-
-    const-string v5, "type"
-
-    invoke-virtual {v4, v5}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v5
 
-    const-string v6, "tun"
+    # check type
+    const-string v6, "type"
 
-    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/String;)Z
+    invoke-virtual {v5, v6}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result v6
+    move-result-object v6
 
-    if-eqz v6, :next_inbound
+    const-string v7, "tun"
 
-    invoke-virtual {v4, p1, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+    invoke-virtual {v6, v7}, Ljava/lang/String;->equals(Ljava/lang/String;)Z
 
-    const/4 v7, 0x0
+    move-result v10
 
-    const-string v8, "auto_route"
+    if-eqz v10, :next_inbound
 
-    invoke-virtual {v4, v8, v7}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
+    # found tun inbound: set fd and auto_route
+    invoke-virtual {v5, p1, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
+    const/4 v8, 0x0
+
+    const-string v6, "auto_route"
+
+    invoke-virtual {v5, v6, v8}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
+
+    # return modified JSON
     invoke-virtual {v1}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -523,30 +531,35 @@
     goto :inbound_loop
 
     :add_tun
-    new-instance v4, Lorg/json/JSONObject;
+    # create new tun inbound
+    new-instance v5, Lorg/json/JSONObject;
 
-    const-string v5, "type"
+    invoke-direct {v5}, Lorg/json/JSONObject;-><init>()V
 
-    const-string v6, "tun"
+    const-string v6, "type"
 
-    invoke-virtual {v4, v5, v6}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    const-string v7, "tun"
 
-    const-string v5, "tag"
+    invoke-virtual {v5, v6, v7}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    const-string v6, "tun-in"
+    const-string v6, "tag"
 
-    invoke-virtual {v4, v5, v6}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+    const-string v7, "tun-in"
 
-    invoke-virtual {v4, p1, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
+    invoke-virtual {v5, v6, v7}, Lorg/json/JSONObject;->put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
 
-    const/4 v7, 0x0
+    invoke-virtual {v5, p1, p2}, Lorg/json/JSONObject;->put(Ljava/lang/String;I)Lorg/json/JSONObject;
 
-    const-string v5, "auto_route"
+    const/4 v8, 0x0
 
-    invoke-virtual {v4, v5, v7}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
+    const-string v6, "auto_route"
 
-    invoke-virtual {v9, v4}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+    invoke-virtual {v5, v6, v8}, Lorg/json/JSONObject;->put(Ljava/lang/String;Z)Lorg/json/JSONObject;
 
+    # add tun inbound to inbounds array
+    invoke-virtual {v9, v5}, Lorg/json/JSONArray;->put(Ljava/lang/Object;)Lorg/json/JSONArray;
+
+    # return modified JSON
     invoke-virtual {v1}, Lorg/json/JSONObject;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -558,6 +571,7 @@
     :catch_0
     return-object v0
 .end method
+
 
 .method public static final runtimeConfig(Ljava/lang/String;Ljava/io/File;I)Ljava/io/File;
     .locals 12
