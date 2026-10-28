@@ -563,7 +563,11 @@
 
     invoke-virtual {p0, v5, v6}, Lcom/box/app/vpn/BoxVpnService;->notice(Ljava/lang/String;Ljava/lang/String;)V
 
-    const-wide/16 v5, 0x1770
+    # wait up to ~20s for the user to hit "OK" in the system dialog
+    const/4 v0, 0x0
+
+    :consent_wait
+    const-wide/16 v5, 0x1f4
 
     :try_start_4
     invoke-static {v5, v6}, Ljava/lang/Thread;->sleep(J)V
@@ -575,8 +579,15 @@
 
     move-result-object v6
 
-    # still missing -> give up and let the user retry
+    # null -> the user granted the permission
     if-eqz v6, :cond_consented
+
+    add-int/lit8 v0, v0, 0x1
+
+    # still waiting (40 x 500ms)
+    const/16 v5, 0x28
+
+    if-lt v0, v5, :consent_wait
 
     const-string v5, "consent-denied"
 
