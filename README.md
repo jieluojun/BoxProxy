@@ -16,8 +16,8 @@
   - 应用自己作为 `VpnService` 建立 TUN（`172.19.0.1/30`、`fdfe:dcba:9876::1/126`、路由 `0.0.0.0/0`、DNS `172.19.0.2`，并把自身包名加入 `addDisallowedApplication`，使内核出站流量绕过隧道直接走物理网络）。
   - `establish()` 之后 `detachFd()` 取得 TUN 描述符，用 `android.system.Os.posix_spawn` + `PosixSpawnFileActions.adddup2` 把它复制到子进程的 **fd 3**，再启动配置好的代理内核（`mihomo`/`clash` 系）。
   - 内核配置文件会被复制到 `run/vpn/<core>-boxvpn.yaml`：原配置里的 `tun:` 段整段剥除，替换为 `enable: true`、`stack: mixed`、`auto-route: false`、`auto-detect-interface: false`、`dns-hijack: any:53` 与 `file-descriptor: 3`。
-  - 内核查找顺序：`nativeLibraryDir/lib<core>.so` → `<home>/bin/<core>`（App 内已有的核心安装目录）。
-  - **不内置内核**：VPN 模式沿用 App 自己的「自定义内核」行为，只使用用户在 App 内安装的核心（`<home>/bin/<core>`），APK 不打包任何代理内核，也不会去 `nativeLibraryDir` 里找 `libmihomo.so`（该位置仅作为兼容分支保留）。
+  - 内核来源只有一个：`<home>/bin/<core>`（App 内已有的核心安装目录，即「自定义内核」），APK 不打包任何代理内核。
+  - **不内置内核**：VPN 模式沿用 App 自己的「自定义内核」行为，只使用用户在 App 内安装的核心（`<home>/bin/<core>`）；`lib/` 里只有原包自带的 3 个 `.so`，`resolveExecutable()` 也不再查 `nativeLibraryDir`。
   - **执行方式**：先尝试直接 `posix_spawn` 该核心（会先补一次 `setExecutable(true)`）；若系统拒绝执行（外部存储 `noexec` 挂载、或目标 API ≥ 29 的 W^X 限制），再尝试 `/system/bin/linker64 <core>` 启动——动态链接的内核可以在 `noexec` 目录下被链接器映射运行。两次尝试的异常都会写进 `run/vpn.log`，便于判断是权限问题还是内核本身的问题。
   - 新增 `com.box.app.vpn.BoxVpnService`（清单中声明 `android.net.VpnService` intent-filter 与 `BIND_VPN_SERVICE` 权限、`foregroundServiceType="specialUse"`），常驻通知带「Stop」按钮；`com.box.app.vpn.BoxVpnCore` 负责配置改写与 `posix_spawn`；`com.box.app.vpn.BoxVpnBridge` 负责路径/状态/启动停止与命令拦截；`com.box.app.vpn.BoxRootState` 负责 Root 探测。
   - 运行状态通过 `<home>/run/vpn.state`（`pid\nreason`）、`<home>/run/box.pid` 与 `<home>/run/vpn.log` / `run/vpn-core.log` 暴露，内核退出后服务会自动收尾。

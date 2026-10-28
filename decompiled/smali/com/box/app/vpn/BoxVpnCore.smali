@@ -433,61 +433,8 @@
     const/4 v0, 0x0
 
     :try_start_0
-    # preferred location: the packaged native library directory
-    if-nez p0, :cond_ctx
-
-    goto :bin
-
-    :cond_ctx
-    invoke-virtual {p0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
-
-    move-result-object v1
-
-    if-nez v1, :cond_info
-
-    goto :bin
-
-    :cond_info
-    iget-object v2, v1, Landroid/content/pm/ApplicationInfo;->nativeLibraryDir:Ljava/lang/String;
-
-    if-nez v2, :cond_lib
-
-    goto :bin
-
-    :cond_lib
-    new-instance v3, Ljava/io/File;
-
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v5, "lib"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v5, ".so"
-
-    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v4
-
-    invoke-direct {v3, v2, v4}, Ljava/io/File;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    invoke-virtual {v3}, Ljava/io/File;->exists()Z
-
-    move-result v4
-
-    # packaged library found
-    if-eqz v4, :bin
-
-    return-object v3
-
-    :bin
-    # fallback: the user supplied core inside <home>/bin
+    # The VPN mode never ships a core: it runs the very same core the user
+    # installed through the app's own core manager, i.e. <home>/bin/<core>.
     invoke-static {p1}, Lcom/box/app/vpn/BoxVpnBridge;->binFile(Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v1
