@@ -92,98 +92,136 @@
 .end method
 
 .method public final notice(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 8
+    .locals 9
 
-    :try_start_0
-    const-string v0, "notification"
+    const/4 v0, 0x0
 
-    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    # ---- build the notification, never let this throw ----
+    :try_start_n
+    const-string v1, "notification"
 
-    move-result-object v0
-
-    check-cast v0, Landroid/app/NotificationManager;
-
-    # channel (id, name, importance)
-    new-instance v1, Landroid/app/NotificationChannel;
-
-    const-string v2, "box_vpn"
-
-    const-string v3, "Box VPN"
-
-    const/4 v4, 0x2
-
-    invoke-direct {v1, v2, v3, v4}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
-
-    invoke-virtual {v0, v1}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
-
-    new-instance v1, Landroid/app/Notification$Builder;
-
-    const-string v2, "box_vpn"
-
-    invoke-direct {v1, p0, v2}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
-
-    const v2, 0x7f080064
-
-    invoke-virtual {v1, v2}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
-
-    invoke-virtual {v1, p1}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    invoke-virtual {v1, p2}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v1, v2}, Landroid/app/Notification$Builder;->setOngoing(Z)Landroid/app/Notification$Builder;
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v1, v2}, Landroid/app/Notification$Builder;->setShowWhen(Z)Landroid/app/Notification$Builder;
-
-    # stop action
-    new-instance v3, Landroid/content/Intent;
-
-    const-class v4, Lcom/box/app/vpn/BoxVpnService;
-
-    invoke-direct {v3, p0, v4}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    const-string v4, "com.box.app.vpn.action.STOP"
-
-    invoke-virtual {v3, v4}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    const/4 v4, 0x1
-
-    const/high16 v5, 0xc000000
-
-    invoke-static {p0, v4, v3, v5}, Landroid/app/PendingIntent;->getService(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
-
-    move-result-object v3
-
-    new-instance v4, Landroid/app/Notification$Action$Builder;
-
-    const/4 v5, 0x0
-
-    const-string v6, "Stop"
-
-    invoke-direct {v4, v5, v6, v3}, Landroid/app/Notification$Action$Builder;-><init>(Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
-
-    invoke-virtual {v4}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
-
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Landroid/app/Notification$Builder;->addAction(Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
-
-    invoke-virtual {v1}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;
+    invoke-virtual {p0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object v1
 
+    check-cast v1, Landroid/app/NotificationManager;
+
+    new-instance v2, Landroid/app/NotificationChannel;
+
+    const-string v3, "box_vpn"
+
+    const-string v4, "Box VPN"
+
+    const/4 v5, 0x2
+
+    invoke-direct {v2, v3, v4, v5}, Landroid/app/NotificationChannel;-><init>(Ljava/lang/String;Ljava/lang/CharSequence;I)V
+
+    invoke-virtual {v1, v2}, Landroid/app/NotificationManager;->createNotificationChannel(Landroid/app/NotificationChannel;)V
+
+    new-instance v2, Landroid/app/Notification$Builder;
+
+    const-string v3, "box_vpn"
+
+    invoke-direct {v2, p0, v3}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+
+    const v3, 0x7f080064
+
+    invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
+
+    invoke-virtual {v2, p1}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
+
+    invoke-virtual {v2, p2}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
+
+    const/4 v3, 0x1
+
+    invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setOngoing(Z)Landroid/app/Notification$Builder;
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v2, v3}, Landroid/app/Notification$Builder;->setShowWhen(Z)Landroid/app/Notification$Builder;
+
+    # "Stop" action
+    new-instance v4, Landroid/content/Intent;
+
+    const-class v5, Lcom/box/app/vpn/BoxVpnService;
+
+    invoke-direct {v4, p0, v5}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    const-string v5, "com.box.app.vpn.action.STOP"
+
+    invoke-virtual {v4, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    const/4 v5, 0x1
+
+    const/high16 v6, 0xc000000
+
+    invoke-static {p0, v5, v4, v6}, Landroid/app/PendingIntent;->getService(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+
+    move-result-object v4
+
+    new-instance v5, Landroid/app/Notification$Action$Builder;
+
+    const/4 v6, 0x0
+
+    const-string v7, "Stop"
+
+    invoke-direct {v5, v6, v7, v4}, Landroid/app/Notification$Action$Builder;-><init>(Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
+
+    invoke-virtual {v5}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
+
+    move-result-object v4
+
+    invoke-virtual {v2, v4}, Landroid/app/Notification$Builder;->addAction(Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
+
+    invoke-virtual {v2}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;
+
+    move-result-object v0
+    :try_end_n
+    .catch Ljava/lang/Throwable; {:try_start_n .. :try_end_n} :catch_n
+
+    goto :have_notification
+
+    :catch_n
+    const/4 v0, 0x0
+
+    :have_notification
+    # ---- go foreground; the process dies in 5s if this is skipped ----
+    # Android 10..13 reject unknown foreground service types, so only pass a
+    # type from API 34 upwards and fall back to the two argument form.
+    :try_start_f
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v2, 0x22
+
+    if-lt v1, v2, :fallback_fg
+
     const v2, 0x7f31
 
-    const v3, 0x40000000
+    const v1, 0x40000000
 
-    invoke-virtual {p0, v2, v1, v3}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;I)V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {p0, v2, v0, v1}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;I)V
 
-    :catch_0
+    return-void
+
+    :fallback_fg
+    const v2, 0x7f31
+
+    invoke-virtual {p0, v2, v0}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;)V
+
+    return-void
+    :try_end_f
+    .catch Ljava/lang/Throwable; {:try_start_f .. :try_end_f} :catch_f
+
+    :catch_f
+    # last resort: the plain two argument call
+    :try_start_f2
+    const v2, 0x7f31
+
+    invoke-virtual {p0, v2, v0}, Landroid/app/Service;->startForeground(ILandroid/app/Notification;)V
+    :try_end_f2
+    .catch Ljava/lang/Throwable; {:try_start_f2 .. :try_end_f2} :catch_f2
+
+    :catch_f2
     return-void
 .end method
 
@@ -215,6 +253,8 @@
     .locals 4
 
     const/4 v0, 0x2
+
+    :try_start_g
 
     # no intent (restarted by the system) -> tear everything down
     if-nez p1, :cond_has_intent
@@ -321,6 +361,22 @@
 
     invoke-virtual {v3}, Ljava/lang/Thread;->start()V
 
+    :try_end_g
+    .catch Ljava/lang/Throwable; {:try_start_g .. :try_end_g} :catch_g
+
+    return v0
+
+    :catch_g
+    move-exception v1
+
+    invoke-virtual {v1}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p0, v1}, Lcom/box/app/vpn/BoxVpnService;->fail(Ljava/lang/String;)V
+
+    const/4 v0, 0x2
+
     return v0
 .end method
 
@@ -365,6 +421,8 @@
 .method public final work()V
     .locals 7
 
+    :try_start_all
+
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -399,6 +457,10 @@
 
     :catch_1
     invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->coreName()Ljava/lang/String;
+    const-string v0, "step: dirs ready"
+
+    invoke-static {v0}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
+
 
     move-result-object v0
 
@@ -437,6 +499,10 @@
 
     :cond_exe
     iget-object v0, p0, Lcom/box/app/vpn/BoxVpnService;->core:Ljava/lang/String;
+    const-string v0, "step: core found"
+
+    invoke-static {v0}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
+
 
     invoke-static {v0}, Lcom/box/app/vpn/BoxVpnCore;->configFile(Ljava/lang/String;)Ljava/io/File;
 
@@ -455,6 +521,10 @@
 
     :cond_cfg
     # stop a stale instance first
+    const-string v0, "step: config found"
+
+    invoke-static {v0}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
+
     invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->pid()I
 
     move-result v3
@@ -514,6 +584,10 @@
 
     :cond_consented
     invoke-virtual {p0}, Lcom/box/app/vpn/BoxVpnService;->closeTun()V
+    const-string v0, "step: consent ok"
+
+    invoke-static {v0}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
+
 
     :try_start_2
     new-instance v3, Landroid/net/VpnService$Builder;
@@ -582,6 +656,10 @@
 
     :cond_up
     # detach the raw tun descriptor and re-adopt it so we keep ownership
+    const-string v0, "step: tunnel established"
+
+    invoke-static {v0}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
+
     invoke-virtual {v3}, Landroid/os/ParcelFileDescriptor;->detachFd()I
 
     move-result v4
@@ -652,6 +730,9 @@
 
     invoke-static {v0, v1}, Lcom/box/app/vpn/BoxVpnBridge;->writeState(ILjava/lang/String;)V
 
+    # keep the stored run mode in sync with the runtime that is actually up
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->markMode()V
+
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -715,6 +796,24 @@
     invoke-static {v0}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
 
     const-string v0, "core-exited"
+
+    invoke-virtual {p0, v0}, Lcom/box/app/vpn/BoxVpnService;->stopVpn(Ljava/lang/String;)V
+
+    :try_end_all
+    .catch Ljava/lang/Throwable; {:try_start_all .. :try_end_all} :catch_all
+
+    return-void
+
+    :catch_all
+    move-exception v0
+
+    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Lcom/box/app/vpn/BoxVpnService;->fail(Ljava/lang/String;)V
+
+    const-string v0, "fatal"
 
     invoke-virtual {p0, v0}, Lcom/box/app/vpn/BoxVpnService;->stopVpn(Ljava/lang/String;)V
 

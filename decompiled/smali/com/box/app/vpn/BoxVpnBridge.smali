@@ -206,7 +206,7 @@
 
     const/4 v3, 0x0
 
-    const/4 v4, 0x1
+    const/4 v4, 0x0
 
     invoke-static {v2, v3, v4}, Landroid/database/sqlite/SQLiteDatabase;->openDatabase(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)Landroid/database/sqlite/SQLiteDatabase;
 
@@ -351,11 +351,21 @@
     return-object v0
 
     :cond_has_verb
+    # The root-free runtime owns the command channel when the VPN mode is
+    # selected, and also on devices without root, where boxctl cannot run.
     invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->isVpnMode()Z
 
     move-result v1
 
-    # not running the VPN runtime -> normal boxctl path
+    if-nez v1, :cond_vpn
+
+    # no blocking probe here: use whatever the background probe already knows
+    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->available()I
+
+    move-result v1
+
+    # 0 = probe finished and reported no root; -1 (unknown) and 1 keep the
+    # normal path so a rooted device never gets hijacked
     if-nez v1, :cond_vpn
 
     return-object v0
@@ -368,6 +378,19 @@
 
     move-result-object v1
 
+    # status polling must keep its original implementation, otherwise the
+    # caller would spin on an instantly finishing command
+    const-string v2, "monitor"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_chk_stop
+
+    return-object v0
+
+    :cond_chk_stop
     const-string v2, "stop"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -379,7 +402,7 @@
 
     invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->requestStop()V
 
-    const-string v0, "true"
+    const-string v0, "echo box-vpn-ok"
 
     return-object v0
 
@@ -394,33 +417,102 @@
 
     invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->requestStop()V
 
-    const-string v0, "true"
+    const-string v0, "echo box-vpn-ok"
 
     return-object v0
 
     :cond_chk_clear
-    # "clashapi clear" belongs to the shutdown sequence
     const-string v2, "clear"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_start
+    if-eqz v2, :cond_chk_disable
 
     invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->requestStop()V
 
-    const-string v0, "true"
+    const-string v0, "echo box-vpn-ok"
 
     return-object v0
 
-    :cond_start
-    # anything else is an auxiliary/start command -> make sure the VPN runs
+    :cond_chk_disable
+    const-string v2, "disable"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_chk_start
+
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->requestStop()V
+
+    const-string v0, "echo box-vpn-ok"
+
+    return-object v0
+
+    :cond_chk_start
+    # start family -> bring the tunnel up
+    const-string v2, "start"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_chk_boot
+
     invoke-static {p0}, Lcom/box/app/vpn/BoxVpnBridge;->requestStart(Ljava/lang/String;)V
+
+    goto :silent
+
+    :cond_chk_boot
+    const-string v2, "boot"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_chk_restart
+
+    invoke-static {p0}, Lcom/box/app/vpn/BoxVpnBridge;->requestStart(Ljava/lang/String;)V
+
+    goto :silent
+
+    :cond_chk_restart
+    const-string v2, "restart"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_chk_reload
+
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->requestStop()V
+
+    invoke-static {p0}, Lcom/box/app/vpn/BoxVpnBridge;->requestStart(Ljava/lang/String;)V
+
+    goto :silent
+
+    :cond_chk_reload
+    const-string v2, "reload"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_silent
+
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->requestStop()V
+
+    invoke-static {p0}, Lcom/box/app/vpn/BoxVpnBridge;->requestStart(Ljava/lang/String;)V
+
+    :cond_silent
+    :silent
+    # every other boxctl command is handled by the service itself; report a
+    # harmless success so the caller keeps working
+    const-string v0, "echo box-vpn-ok"
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    const-string v0, "true"
 
     :catch_0
     return-object v0
@@ -507,6 +599,63 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
+    return-void
+.end method
+
+.method public static final markMode()V
+    .locals 5
+
+    :try_start_0
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->isVpnMode()Z
+
+    move-result v0
+
+    # already stored
+    if-nez v0, :cond_done
+
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->dbFile()Ljava/io/File;
+
+    move-result-object v0
+
+    if-nez v0, :cond_file
+
+    goto :cond_done
+
+    :cond_file
+    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x0
+
+    invoke-static {v1, v2, v3}, Landroid/database/sqlite/SQLiteDatabase;->openDatabase(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v1
+
+    new-instance v2, Landroid/content/ContentValues;
+
+    invoke-direct {v2}, Landroid/content/ContentValues;-><init>()V
+
+    const-string v3, "mode"
+
+    const-string v4, "vpn"
+
+    invoke-virtual {v2, v3, v4}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v3, "runtime_profile"
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v1, v3, v2, v4, v4}, Landroid/database/sqlite/SQLiteDatabase;->update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+
+    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    :cond_done
     return-void
 .end method
 

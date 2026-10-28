@@ -2959,16 +2959,23 @@
     const-string v8, "mode"
 
     # devices without root can only use the root-free VPN runtime
+    const/4 v9, 0x0
+
+    :try_start_root
     invoke-static {}, Lcom/box/app/vpn/BoxRootState;->isRootAvailable()Z
 
     move-result v9
+    :try_end_root
+    .catch Ljava/lang/Throwable; {:try_start_root .. :try_end_root} :catch_root
 
-    if-eqz v9, :cond_default_tun
+    # rooted -> the classic TUN default
+    if-nez v9, :cond_default_tun
 
     const-string v9, "vpn"
 
     goto :put_mode
 
+    :catch_root
     :cond_default_tun
     const-string v9, "tun"
 

@@ -18374,7 +18374,7 @@
 
     if-ne p0, v1, :cond_0
 
-    const p0, -0x5fdc9739
+    const p0, -0x5fdc9701
 
     const v1, 0x7f0f04a8
 

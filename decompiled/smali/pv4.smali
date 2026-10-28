@@ -816,7 +816,7 @@
 
     if-ne v11, v14, :cond_a
 
-    const v11, -0x1c2fe3a5
+    const v11, -0x1c2fe301
 
     const/4 v15, 0x0
 

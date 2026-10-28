@@ -100,9 +100,14 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     # without root the only usable run mode is the root-free VPN one
+    const/4 v1, 0x0
+
+    :try_start_root
     invoke-static {}, Lcom/box/app/vpn/BoxRootState;->isRootAvailable()Z
 
     move-result v1
+    :try_end_root
+    .catch Ljava/lang/Throwable; {:try_start_root .. :try_end_root} :catch_root
 
     if-eqz v1, :cond_with_root
 
@@ -111,6 +116,9 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     return-object v0
+
+    :catch_root
+    const/4 v1, 0x0
 
     :cond_with_root
 

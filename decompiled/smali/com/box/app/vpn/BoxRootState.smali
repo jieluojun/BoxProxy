@@ -144,7 +144,7 @@
     const/4 v0, 0x0
 
     :cond_wait
-    const/16 v2, 0x10
+    const/16 v2, 0xa
 
     # gave up waiting
     if-ge v0, v2, :cond_eval
