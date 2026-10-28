@@ -50,6 +50,11 @@
     .line 7
     aget-object v2, p0, v1
 
+    # 调用方给的行可能是 null（脚本模板里某个值为空时就会这样）。以前这里直接
+    # 调 getBytes() 抛 NPE，异常在后台线程池里没人接住 -> 整个进程被杀 ->
+    # 前台服务又把进程拉起来 -> 反复重启，表现为“App 变卡顿”。这里跳过空行。
+    if-nez v2, :null_line
+
     .line 8
     .line 9
     sget-object v3, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
@@ -77,6 +82,14 @@
 
     .line 21
     .line 22
+    goto :next_line
+
+    :null_line
+    const-string v3, "script line is null (skipped)"
+
+    invoke-static {v3}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
+
+    :next_line
     .line 23
     add-int/lit8 v1, v1, 0x1
 

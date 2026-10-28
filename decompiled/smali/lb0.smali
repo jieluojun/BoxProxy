@@ -215,6 +215,23 @@
 .method public static c(Ljava/lang/String;)Ljava/lang/String;
     .locals 4
 
+    # VPN 运行模式下 start/stop/restart 不再拼成 boxctl 命令（外部存储 noexec、
+    # 且无 Root 也跑不了），直接交给免 Root 运行时处理。
+    :try_start_vc
+    invoke-static {p0}, Lcom/box/app/vpn/BoxVpnBridge;->lifecycleCommand(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+    :try_end_vc
+    .catch Ljava/lang/Throwable; {:try_start_vc .. :try_end_vc} :catch_vc
+
+    # 返回 null -> 保持原有 boxctl 行为
+    if-nez v0, :cond_vc_pass
+
+    return-object v0
+
+    :catch_vc
+    :cond_vc_pass
+
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -292,6 +309,12 @@
     .line 39
     .line 40
     .line 41
+    move-result-object p0
+
+    # 把命令里的 <home>/bin/boxctl、boxbpf 换成 files/bin 下的可执行副本
+    # （外部存储多为 noexec，原位置无法执行）；纯文本替换，不改任何全局状态。
+    invoke-static {p0}, Lcom/box/app/vpn/BoxVpnBridge;->stageTools(Ljava/lang/String;)Ljava/lang/String;
+
     move-result-object p0
 
     .line 42
@@ -2604,8 +2627,8 @@
     # resuming this suspending function must never trigger a second start
     instance-of v0, p1, Ldb0;
 
-    # not a resume -> the root-free hook may take over
-    if-eqz v0, :cond_vf_cont
+    # already a resume (v0 == 1) -> skip the hook
+    if-nez v0, :cond_vf_cont
 
     # Root-free VPN runtime: the start script would need root
     invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->shouldHandle()Z
@@ -3822,6 +3845,26 @@
 .method public final m(Ljava/lang/String;Ljava/io/File;Ld81;)Ljava/lang/Object;
     .locals 7
 
+    # 防御：落地路径为空时不再 NPE 崩掉主线程，改为返回失败结果（界面提示解压失败）。
+    if-nez p2, :m_dest_ok
+
+    const-string v0, "asset-null-dest"
+
+    invoke-static {v0}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
+
+    new-instance v0, Lza0;
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    const-string v3, "asset destination is null"
+
+    invoke-direct {v0, v1, v2, v3}, Lza0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
+
+    return-object v0
+
+    :m_dest_ok
     .line 1
     instance-of v0, p3, Lfb0;
 
@@ -4296,8 +4339,8 @@
     # resuming this suspending function must never trigger a second stop
     instance-of v0, p1, Lgb0;
 
-    # not a resume -> the root-free hook may take over
-    if-eqz v0, :cond_vo_cont
+    # already a resume (v0 == 1) -> skip the hook
+    if-nez v0, :cond_vo_cont
 
     # Root-free VPN runtime: stop the tunnel instead of the root script
     invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->shouldHandle()Z
@@ -5723,6 +5766,26 @@
 .method public final x(Ljava/io/File;[BLd81;)Ljava/lang/Object;
     .locals 12
 
+    # 防御：落地路径为空时不再 NPE 崩掉主线程，改为返回失败结果（界面提示解压失败）。
+    if-nez p1, :x_dest_ok
+
+    const-string v0, "asset-null-dest"
+
+    invoke-static {v0}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
+
+    new-instance v0, Lza0;
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    const-string v3, "asset destination is null"
+
+    invoke-direct {v0, v1, v2, v3}, Lza0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
+
+    return-object v0
+
+    :x_dest_ok
     .line 1
     const-string v0, "mv -f "
 

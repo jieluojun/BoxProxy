@@ -262,22 +262,41 @@
     .locals 3
 
     :try_start_0
-    # no root at all -> the root-free runtime owns start/stop
-    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->available()I
+    # 运行模式是 VPN -> 完全走免 Root 运行时：既不跑 boxctl，也不碰 su
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->isVpnMode()Z
 
     move-result v0
 
-    if-nez v0, :cond_mode
+    if-eqz v0, :cond_root
+
+    const-string v0, "shouldHandle: vpn mode"
+
+    invoke-static {v0}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
     return v0
 
-    :cond_mode
-    # rooted device: only when the stored run mode is the VPN one
-    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->isVpnMode()Z
+    :cond_root
+    # 其它模式：只有“确认有 Root”才交回原来的 boxctl 脚本。
+    # available(): 1 = 有 Root，0 = 无 Root，-1 = 未知（仍在探测）。
+    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->available()I
 
     move-result v0
+
+    # 1 = 确认有 Root -> 不接管
+    if-gtz v0, :handled
+
+    const-string v0, "shouldHandle: rooted, keep boxctl"
+
+    invoke-static {v0}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :handled
+    const/4 v0, 0x1
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -315,7 +334,7 @@
 .end method
 
 .method public static final interceptService(Z)Lza0;
-    .locals 2
+    .locals 3
 
     const/4 v0, 0x0
 
@@ -324,10 +343,14 @@
 
     move-result v1
 
-    # not ours -> let the original implementation run
-    if-eqz v1, :cond_ret
+    # not ours -> let the original (boxctl / su) implementation run
+    if-eqz v1, :pass
 
     if-eqz p0, :cond_stop
+
+    const-string v1, "intercept: start"
+
+    invoke-static {v1}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
 
     const-string v1, "start"
 
@@ -336,6 +359,10 @@
     goto :result
 
     :cond_stop
+    const-string v1, "intercept: stop"
+
+    invoke-static {v1}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
+
     invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->requestStop()V
 
     :result
@@ -345,30 +372,67 @@
 
     move-result-object v0
 
+    goto :done
+
     :catch_0
-    :cond_ret
+    const/4 v0, 0x0
+
+    goto :done
+
+    :pass
+    const-string v1, "intercept: pass to boxctl"
+
+    invoke-static {v1}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
+
+    :done
     return-object v0
 .end method
 
 .method public static final isVpnMode()Z
     .locals 2
 
+    const/4 v0, 0x0
+
+    :try_start_0
     invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->runMode()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    const-string v1, "vpn"
+    if-nez v1, :done
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v0, "vpn"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
 
     move-result v0
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
+    goto :done
+
+    :catch_0
+    const/4 v0, 0x0
+
+    :done
     return v0
 .end method
 
 .method public static final log(Ljava/lang/String;)V
     .locals 5
 
+    # 同时打到 logcat（tag: BoxProxyVPN），文件写不进时还能用 adb 抓
+    :try_start_lc
+    const-string v0, "BoxProxyVPN"
+
+    invoke-static {v0, p0}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    :try_end_lc
+    .catch Ljava/lang/Throwable; {:try_start_lc .. :try_end_lc} :catch_lc
+
+    :catch_lc
     :try_start_0
     new-instance v0, Ljava/io/File;
 
@@ -651,31 +715,42 @@
 .end method
 
 .method public static final startService(Landroid/content/Context;Landroid/content/Intent;)Z
-    .locals 3
+    .locals 4
 
     const/4 v0, 0x0
 
+    if-nez p0, :ret
+
+    if-nez p1, :ret
+
+    # 优先 startService：VpnService 在前台时允许，且不会带来
+    # “必须 5 秒内进入前台，否则进程被杀”的约束。
     :try_start_0
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v2, 0x1a
-
-    # Android 8.0 and newer requires startForegroundService
-    if-lt v1, v2, :cond_legacy
-
-    invoke-virtual {p0, p1}, Landroid/content/Context;->startForegroundService(Landroid/content/Intent;)Landroid/content/ComponentName;
-
-    goto :ok
-
-    :cond_legacy
     invoke-virtual {p0, p1}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    :ok
     const/4 v0, 0x1
+
+    goto :ret
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
+    # 后台限制等情况下退回 startForegroundService（API 26+）
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/16 v2, 0x1a
+
+    if-ge v1, v2, :ret
+
+    :try_start_1
+    invoke-virtual {p0, p1}, Landroid/content/Context;->startForegroundService(Landroid/content/Intent;)Landroid/content/ComponentName;
+
+    const/4 v0, 0x1
+    :try_end_1
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
+    :ret
     return v0
 .end method
 
@@ -691,6 +766,382 @@
     move-result v1
 
     return v1
+.end method
+
+.method public static final lifecycleCommand(Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
+
+    const/4 v0, 0x0
+
+    if-nez p0, :done
+
+    :try_start_0
+    # 只在 VPN 运行模式下接管，其它模式完全保持原样
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->isVpnMode()Z
+
+    move-result v1
+
+    if-eqz v1, :done
+
+    sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+
+    invoke-virtual {p0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v1
+
+    # start / boot -> 启动免 Root 隧道
+    const-string v2, "start"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :do_start
+
+    const-string v2, "boot"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :do_start
+
+    # stop / kill / disable / clear -> 停止隧道
+    const-string v2, "stop"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :do_stop
+
+    const-string v2, "kill"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :do_stop
+
+    const-string v2, "disable"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :do_stop
+
+    const-string v2, "clear"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :do_stop
+
+    # restart -> 先停再起
+    const-string v2, "restart"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :do_restart
+
+    goto :done
+
+    :do_start
+    const-string v1, "lifecycle: start"
+
+    invoke-static {v1}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
+
+    invoke-static {p0}, Lcom/box/app/vpn/BoxVpnBridge;->requestStart(Ljava/lang/String;)V
+
+    goto :handled
+
+    :do_stop
+    const-string v1, "lifecycle: stop"
+
+    invoke-static {v1}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
+
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->requestStop()V
+
+    goto :handled
+
+    :do_restart
+    const-string v1, "lifecycle: restart"
+
+    invoke-static {v1}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
+
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->requestStop()V
+
+    invoke-static {p0}, Lcom/box/app/vpn/BoxVpnBridge;->requestStart(Ljava/lang/String;)V
+
+    :handled
+    # 不执行 boxctl（外部存储 noexec 且无 Root），直接给调用方一条
+    # 退出码为 0 的空命令，界面即可按“已下发”继续轮询状态。
+    const-string v0, "true"
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :done
+
+    :catch_0
+    const/4 v0, 0x0
+
+    :done
+    return-object v0
+.end method
+
+
+.method public static final copyOver(Ljava/io/File;Ljava/io/File;)V
+    .locals 4
+
+    :try_start_0
+    const/4 v0, 0x1
+
+    new-array v1, v0, [Ljava/nio/file/CopyOption;
+
+    const/4 v2, 0x0
+
+    sget-object v3, Ljava/nio/file/StandardCopyOption;->REPLACE_EXISTING:Ljava/nio/file/StandardCopyOption;
+
+    aput-object v3, v1, v2
+
+    invoke-virtual {p0}, Ljava/io/File;->toPath()Ljava/nio/file/Path;
+
+    move-result-object v2
+
+    invoke-virtual {p1}, Ljava/io/File;->toPath()Ljava/nio/file/Path;
+
+    move-result-object v3
+
+    invoke-static {v2, v3, v1}, Ljava/nio/file/Files;->copy(Ljava/nio/file/Path;Ljava/nio/file/Path;[Ljava/nio/file/CopyOption;)Ljava/nio/file/Path;
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    return-void
+.end method
+
+.method public static final copyForExec(Ljava/io/File;Ljava/io/File;)Z
+    .locals 5
+
+    const/4 v0, 0x0
+
+    if-nez p0, :done
+
+    if-nez p1, :done
+
+    :try_start_0
+    invoke-virtual {p1}, Ljava/io/File;->getParentFile()Ljava/io/File;
+
+    move-result-object v1
+
+    if-nez v1, :dir_ok
+
+    invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
+
+    :dir_ok
+    invoke-virtual {p1}, Ljava/io/File;->exists()Z
+
+    move-result v1
+
+    # 目标不存在 -> 复制
+    if-eqz v1, :do_copy
+
+    invoke-virtual {p1}, Ljava/io/File;->length()J
+
+    move-result-wide v1
+
+    invoke-virtual {p0}, Ljava/io/File;->length()J
+
+    move-result-wide v3
+
+    cmp-long v1, v1, v3
+
+    # 大小一致 -> 直接复用副本
+    if-nez v1, :ready
+
+    :do_copy
+    invoke-static {p0, p1}, Lcom/box/app/vpn/BoxVpnBridge;->copyOver(Ljava/io/File;Ljava/io/File;)V
+
+    :ready
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    invoke-virtual {p1, v1, v2}, Ljava/io/File;->setExecutable(ZZ)Z
+
+    invoke-virtual {p1, v1, v2}, Ljava/io/File;->setReadable(ZZ)Z
+
+    const/4 v0, 0x1
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    :done
+    return v0
+.end method
+
+.method public static final toolFile(Ljava/io/File;)Ljava/io/File;
+    .locals 5
+
+    # 把 boxctl/boxbpf 复制到应用私有目录 files/bin 并置为可执行。
+    # 任何情况下都返回一个非空 File（失败时返回原对象），绝不返回 null。
+    :try_start_0
+    if-nez p0, :null_out
+
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->appContext()Landroid/content/Context;
+
+    move-result-object v1
+
+    if-nez v1, :orig
+
+    invoke-virtual {v1}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+
+    move-result-object v1
+
+    if-nez v1, :orig
+
+    new-instance v2, Ljava/io/File;
+
+    const-string v3, "bin"
+
+    invoke-direct {v2, v1, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    if-nez v3, :orig
+
+    new-instance v4, Ljava/io/File;
+
+    invoke-direct {v4, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-static {p0, v4}, Lcom/box/app/vpn/BoxVpnBridge;->copyForExec(Ljava/io/File;Ljava/io/File;)Z
+
+    move-result v0
+
+    # 复制失败 -> 保持原路径
+    if-nez v0, :orig
+
+    return-object v4
+
+    :orig
+    return-object p0
+
+    :null_out
+    const/4 v0, 0x0
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    return-object p0
+.end method
+
+.method public static final stageTools(Ljava/lang/String;)Ljava/lang/String;
+    .locals 6
+
+    # 把命令字符串里的 <home>/bin/boxctl、<home>/bin/boxbpf 替换成
+    # files/bin 下的可执行副本。只做文本替换，不触碰路径表(Lab0)与启动流程。
+    # v0 必须最先赋值：后面多个分支直接跳 :done 取 v0，未初始化的寄存器会让
+    # ART 拒绝整个类（VerifyError），表现为 App 启动即闪退且一行日志都没有。
+    move-object v0, p0
+
+    if-nez p0, :done
+
+    # 快路径：命令里根本没有 boxctl/boxbpf 时，直接原样返回。
+    # 以前每条命令都要走 k() + 两次 toolFile（appContext/getFilesDir/exists/length
+    # + 可能的 4.9MB 复制），命令一多就把主线程和磁盘拖慢。
+    const-string v1, "/bin/boxctl"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :check_bpf
+
+    goto :stage_now
+
+    :check_bpf
+    const-string v1, "/bin/boxbpf"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-nez v1, :done
+
+    :stage_now
+    :try_start_0
+    invoke-static {}, Llb0;->k()Lab0;
+
+    move-result-object v1
+
+    if-nez v1, :done
+
+    iget-object v2, v1, Lab0;->f:Ljava/io/File;
+
+    invoke-static {v2}, Lcom/box/app/vpn/BoxVpnBridge;->toolFile(Ljava/io/File;)Ljava/io/File;
+
+    move-result-object v3
+
+    if-nez v3, :no_boxctl
+
+    if-ne v3, v2, :no_boxctl
+
+    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v4, v5}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    :no_boxctl
+    iget-object v2, v1, Lab0;->g:Ljava/io/File;
+
+    invoke-static {v2}, Lcom/box/app/vpn/BoxVpnBridge;->toolFile(Ljava/io/File;)Ljava/io/File;
+
+    move-result-object v3
+
+    if-nez v3, :done
+
+    if-ne v3, v2, :done
+
+    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v4, v5}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :done
+
+    :catch_0
+    move-object v0, p0
+
+    :done
+    return-object v0
 .end method
 
 .method public static final writeState(ILjava/lang/String;)V

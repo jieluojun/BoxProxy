@@ -178,10 +178,29 @@
 
 # virtual methods
 .method public final onCreate()V
-    .locals 6
+    .locals 7
 
     .line 1
     invoke-super {p0}, Landroid/app/Application;->onCreate()V
+
+    # 启动心跳：只要 logcat 里看不到这一行，就说明进程在 Application 初始化之前就死了
+    const-string v6, "BoxProxyVPN"
+
+    const-string v5, "app onCreate"
+
+    invoke-static {v6, v5}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+
+    # 未捕获异常（含堆栈）写进 run/vpn.log，便于定位“点击启动就闪退”
+    :try_start_crash
+    new-instance v6, Lcom/box/app/vpn/BoxVpnCrashHandler;
+
+    invoke-direct {v6}, Lcom/box/app/vpn/BoxVpnCrashHandler;-><init>()V
+
+    invoke-static {v6}, Ljava/lang/Thread;->setDefaultUncaughtExceptionHandler(Ljava/lang/Thread$UncaughtExceptionHandler;)V
+    :try_end_crash
+    .catch Ljava/lang/Throwable; {:try_start_crash .. :try_end_crash} :catch_crash
+
+    :catch_crash
 
     # probe for root in the background, the run mode list depends on it
     :try_start_probe

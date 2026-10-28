@@ -411,6 +411,55 @@
     return v0
 .end method
 
+.method public static final stageExecutable(Landroid/content/Context;Ljava/io/File;)Ljava/io/File;
+    .locals 4
+
+    const/4 v0, 0x0
+
+    if-nez p1, :done
+
+    if-nez p0, :done
+
+    :try_start_0
+    invoke-virtual {p0}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+
+    move-result-object v1
+
+    if-nez v1, :done
+
+    new-instance v2, Ljava/io/File;
+
+    const-string v3, "vpn-core"
+
+    invoke-direct {v2, v1, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v3
+
+    new-instance v1, Ljava/io/File;
+
+    invoke-direct {v1, v2, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-static {p1, v1}, Lcom/box/app/vpn/BoxVpnBridge;->copyForExec(Ljava/io/File;Ljava/io/File;)Z
+
+    move-result v3
+
+    if-eqz v3, :done
+
+    move-object v0, v1
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :done
+
+    :catch_0
+    return-object v0
+
+    :done
+    return-object v0
+.end method
+
 .method public static final logFile()Ljava/io/File;
     .locals 3
 

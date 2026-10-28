@@ -42,6 +42,29 @@
 
 
 # virtual methods
+.method public final onCreate()V
+    .locals 1
+
+    invoke-super {p0}, Landroid/net/VpnService;->onCreate()V
+
+    # :vpn 进程内的兜底：任何未捕获异常都写进 run/vpn.log 并只杀本进程
+    :try_start_oc
+    new-instance v0, Lcom/box/app/vpn/BoxVpnCrashHandler;
+
+    invoke-direct {v0}, Lcom/box/app/vpn/BoxVpnCrashHandler;-><init>()V
+
+    invoke-static {v0}, Ljava/lang/Thread;->setDefaultUncaughtExceptionHandler(Ljava/lang/Thread$UncaughtExceptionHandler;)V
+
+    const-string v0, "service created"
+
+    invoke-static {v0}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
+    :try_end_oc
+    .catch Ljava/lang/Throwable; {:try_start_oc .. :try_end_oc} :catch_oc
+
+    :catch_oc
+    return-void
+.end method
+
 .method public final closeTun()V
     .locals 1
 
@@ -185,7 +208,11 @@
     const/4 v0, 0x0
 
     :have_notification
-    # ---- go foreground; the process dies in 5s if this is skipped ----
+    # 通知没构建出来 -> 直接放弃前台化：不调用 startForeground 最多只是
+    # 服务被系统回收，不会像“声明了前台却没进入前台”那样让进程被杀。
+    if-eqz v0, :no_fg
+
+    # ---- go foreground ----
     # Android 10..13 reject unknown foreground service types, so only pass a
     # type from API 34 upwards and fall back to the two argument form.
     :try_start_f
@@ -222,6 +249,7 @@
     .catch Ljava/lang/Throwable; {:try_start_f2 .. :try_end_f2} :catch_f2
 
     :catch_f2
+    :no_fg
     return-void
 .end method
 
@@ -500,6 +528,24 @@
     return-void
 
     :cond_exe
+    # 免 Root：内核来自 App 的自定义内核目录（外部存储，多半 noexec），
+    # 先在应用私有目录里做一份 0755 的副本，再从私有目录启动。
+    invoke-static {p0, v1}, Lcom/box/app/vpn/BoxVpnCore;->stageExecutable(Landroid/content/Context;Ljava/io/File;)Ljava/io/File;
+
+    move-result-object v1
+
+    # 无法在内核目录里落地可执行副本
+    if-eqz v1, :staged
+
+    const-string v0, "core-stage-failed"
+
+    invoke-virtual {p0, v0}, Lcom/box/app/vpn/BoxVpnService;->fail(Ljava/lang/String;)V
+
+    invoke-virtual {p0, v0}, Lcom/box/app/vpn/BoxVpnService;->stopVpn(Ljava/lang/String;)V
+
+    return-void
+
+    :staged
     invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v0
@@ -584,8 +630,8 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    # still waiting (40 x 500ms)
-    const/16 v5, 0x28
+    # still waiting (20 x 500ms = 10s)
+    const/16 v5, 0x14
 
     if-lt v0, v5, :consent_wait
 

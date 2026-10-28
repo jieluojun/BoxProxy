@@ -6,8 +6,10 @@ usesFramework:
   - 1
   tag: null
 sdkInfo:
-  minSdkVersion: 29
-  targetSdkVersion: 37
+  # AnyPortal / Termux 的免 Root 做法：targetSdk 必须 < 29，否则 SELinux 不允许
+  # 应用执行自己数据目录里的可执行文件（W^X），自定义内核无法以应用 UID 启动。
+  minSdkVersion: 28
+  targetSdkVersion: 28
 packageInfo:
   forcedPackageId: 127
   renameManifestPackage: null
