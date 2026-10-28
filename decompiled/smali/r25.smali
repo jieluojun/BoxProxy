@@ -87,6 +87,8 @@
 .method public static e(Lu25;)Ljava/util/ArrayList;
     .locals 6
 
+    :try_start_all
+
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
@@ -263,6 +265,20 @@
     sget-object v2, Lv25;->t:Lv25;
 
     invoke-virtual {v0, v1, v2}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
+
+    return-object v0
+    :try_end_all
+    .catch Ljava/lang/Throwable; {:try_start_all .. :try_end_all} :catch_all
+
+    :catch_all
+    # never let the mode list break the settings screen
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    sget-object v1, Lv25;->t:Lv25;
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     return-object v0
 .end method
