@@ -21,6 +21,7 @@
   - 运行状态通过 `<home>/run/vpn.state`（`pid\nreason`）、`<home>/run/box.pid` 与 `<home>/run/vpn.log` / `run/vpn-core.log` 暴露，内核退出后服务会自动收尾。
   - 无 Root 时运行模式列表只保留 VPN 一项（`Lr25;->e` 内做筛选），有 Root 时 VPN 作为额外模式排在最前；数据库默认 `mode` 在无 Root 设备上直接写为 `vpn`。
   - 首次启用会弹出系统的 VPN 授权对话框（`VpnService.prepare`）；需在弹窗中允许，若未允许会在日志中记录 `consent-denied` 并停止服务。
+  - 排错：`<home>/run/vpn.log` 记录服务侧的分步日志（`step: ...`、`core missing`、`establish-failed`、`spawn-failed`、`consent-denied`、`core-exited`、`fatal` 等），`<home>/run/vpn-core.log` 是内核自身的 stdout/stderr，`<home>/run/vpn.state` 为 `<pid>\n<原因>`。
   - 已知限制：`tun.file-descriptor` 为 mihomo/clash 系内核独有的能力，sing-box / xray / hysteria 暂不支持该模式；未随包分发内核时需先在 App 内安装 mihomo 核心。
 
 ## 原始 APK 信息
