@@ -1404,28 +1404,41 @@
     .locals 9
 
     .line 1
-    new-instance v1, Ljava/io/File;
+    sget-object v0, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
 
     .line 2
     .line 3
-    sget-object v0, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
+    invoke-static {}, Lsa7;->p()Landroid/content/Context;
 
     .line 4
     .line 5
-    invoke-static {}, Lsa7;->p()Landroid/content/Context;
-
     .line 6
-    .line 7
-    .line 8
     move-result-object v0
+
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    invoke-virtual {v0, v2}, Landroid/content/Context;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
 
     .line 9
-    invoke-virtual {v0}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
-
     .line 10
     .line 11
-    .line 12
     move-result-object v0
+
+    .line 12
+    if-nez v0, :cond_external_files_ready
+
+    invoke-static {}, Lsa7;->p()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+
+    move-result-object v0
+
+    :cond_external_files_ready
+    new-instance v1, Ljava/io/File;
 
     .line 13
     const-string v2, "box"

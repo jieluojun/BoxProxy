@@ -500,6 +500,10 @@
     .line 205
     check-cast v15, Lg52;
 
+    move-object/from16 v0, p0
+
+    iget-object v15, v0, Lba4;->q:Lg52;
+
     .line 206
     .line 207
     const/16 v17, 0x0
