@@ -170,12 +170,16 @@ hooks and never reach `boxctl up/down` — only `VPN` mode does that.
 
 ### boxctl side
 
-`decompiled/assets/boxctl/arm64-v8a/boxctl` must be rebuilt with
-[`boxctl-vpn.patch`](boxctl-vpn.patch) applied to `boxproxy/boxproxy`. The patch adds
-`--vpn-fd`, `NetworkMode::Vpn`, the VPN core-config path, the fd handover helper and
-the supervisor loop. Until the rebuilt binary is vendored, the CI job
-`Verify bundled boxctl supports --vpn-fd` reports a warning and the VPN mode cannot
-start (it fails with `vpn_error_no_core`).
+The APK no longer ships a hand-vendored `boxctl`: the `boxctl-build` CI job checks out
+`boxproxy/boxproxy` at a pinned commit, applies [`boxctl-vpn.patch`](boxctl-vpn.patch)
+(adds `--vpn-fd`, `NetworkMode::Vpn`, the VPN core-config path, the fd handover helper
+and the supervisor loop), cross-compiles it with Rust 1.97.0 + NDK 29 for
+`aarch64-linux-android`, and publishes the binary as an artifact. The `build` job
+downloads it into `decompiled/assets/boxctl/arm64-v8a/boxctl` before `apktool b` and
+hard-fails if the result does not contain `--vpn-fd`.
+
+The patch is verified to apply cleanly to `boxproxy/boxproxy@main`
+(`c68d3471a5fc01494e965e436d69fd8c395cf7a4`); bump `BUILD_REF` when upstream moves.
 
 ### Resources
 

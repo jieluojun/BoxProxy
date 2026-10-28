@@ -14,12 +14,14 @@ on:
       - "decompiled/**"
       - "scripts/**"
       - ".github/workflows/build-apk.yml"
+      - "boxctl-vpn.patch"
   pull_request:
     branches: [main]
     paths:
       - "decompiled/**"
       - "scripts/**"
       - ".github/workflows/build-apk.yml"
+      - "boxctl-vpn.patch"
 
 permissions:
   contents: read
@@ -39,9 +41,29 @@ jobs:
     name: Rebuild, align, sign
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    needs: boxctl-build
     steps:
       - name: Checkout
         uses: actions/checkout@v7
+
+      - name: Fetch boxctl built by CI
+        uses: actions/download-artifact@v4
+        with:
+          name: boxctl-arm64-v8a
+          path: decompiled/assets/boxctl/arm64-v8a
+
+      - name: Make boxctl executable and verify --vpn-fd
+        shell: bash
+        run: |
+          set -euo pipefail
+          bin="decompiled/assets/boxctl/arm64-v8a/boxctl"
+          test -f "$bin"
+          chmod 755 "$bin"
+          grep -qa -- "--vpn-fd" "$bin" || {
+            echo "::error::the boxctl built by CI does not support --vpn-fd"
+            exit 1
+          }
+          echo "bundled boxctl supports --vpn-fd"
 
       - name: Setup JDK 17
         uses: actions/setup-java@v6
@@ -181,31 +203,70 @@ jobs:
           if-no-files-found: error
           retention-days: 30
 
-  boxctl-vpn:
-    name: boxctl supports --vpn-fd
+  boxctl-build:
+    name: Build boxctl (aarch64-v8a)
     runs-on: ubuntu-latest
-    timeout-minutes: 5
-    # 非阻塞检查：APK 侧改动本身完整可构建，但免 Root VPN 模式依赖重建后的
-    # boxctl 二进制。这里把它显式暴露成一个独立 job，而不是藏在构建日志里。
-    continue-on-error: true
+    timeout-minutes: 30
+    env:
+      ANDROID_NDK_VERSION: "29.0.14206865"
+      ANDROID_API_LEVEL: "29"
+      BUILD_TARGET: aarch64-linux-android
+      # boxproxy/boxproxy @ main；boxctl-vpn.patch 已在该 commit 上验证可干净应用
+      BUILD_REF: "c68d3471a5fc01494e965e436d69fd8c395cf7a4"
     steps:
-      - name: Checkout
+      - name: Checkout boxproxy/boxproxy
         uses: actions/checkout@v7
+        with:
+          repository: boxproxy/boxproxy
+          ref: ${{ env.BUILD_REF }}
+          path: boxproxy-src
 
-      - name: Check bundled boxctl for --vpn-fd
+      - name: Apply boxctl-vpn.patch
         shell: bash
         run: |
           set -euo pipefail
-          bin="decompiled/assets/boxctl/arm64-v8a/boxctl"
-          [[ -f "$bin" ]] || { echo "::warning::bundled boxctl not found at $bin"; exit 1; }
-          if grep -qa -- "--vpn-fd" "$bin"; then
-            echo "bundled boxctl supports --vpn-fd"
-          else
-            echo "::warning::bundled boxctl does NOT support --vpn-fd, so the rootless VPN mode cannot start."
-            echo "         Apply boxctl-vpn.patch to boxproxy/boxproxy, rebuild the aarch64-v8a binary and replace"
-            echo "         decompiled/assets/boxctl/arm64-v8a/boxctl."
-            exit 1
-          fi
+          git -C boxproxy-src apply --check --verbose "$GITHUB_WORKSPACE/boxctl-vpn.patch"
+          git -C boxproxy-src apply --verbose "$GITHUB_WORKSPACE/boxctl-vpn.patch"
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install Android NDK
+        shell: bash
+        run: |
+          set -euo pipefail
+          sdkmanager --install "ndk;${ANDROID_NDK_VERSION}"
+          ndk_root="${ANDROID_HOME}/ndk/${ANDROID_NDK_VERSION}"
+          test -d "$ndk_root"
+          echo "ANDROID_NDK_ROOT=${ndk_root}" >> "$GITHUB_ENV"
+          echo "TOOLCHAIN=${ndk_root}/toolchains/llvm/prebuilt/linux-x86_64/bin" >> "$GITHUB_ENV"
+
+      - name: Set up Rust 1.97.0
+        uses: dtolnay/rust-toolchain@1.97.0
+
+      - name: Add Android Rust target
+        shell: bash
+        run: rustup target add "$BUILD_TARGET" --toolchain 1.97.0
+
+      - name: Build boxctl
+        shell: bash
+        run: |
+          set -euo pipefail
+          android_clang="${TOOLCHAIN}/${BUILD_TARGET}${ANDROID_API_LEVEL}-clang"
+          android_clangxx="${TOOLCHAIN}/${BUILD_TARGET}${ANDROID_API_LEVEL}-clang++"
+          CARGO_TARGET_AARCH64_LINUX_ANDROID_LINKER="$android_clang" \
+          CC_aarch64_linux_android="$android_clang" \
+          CXX_aarch64_linux_android="$android_clangxx" \
+          AR_aarch64_linux_android="${TOOLCHAIN}/llvm-ar" \
+            cargo build --manifest-path boxproxy-src/boxctl/Cargo.toml --release --target "$BUILD_TARGET"
+
+      - name: Upload boxctl binary
+        uses: actions/upload-artifact@v7
+        with:
+          name: boxctl-arm64-v8a
+          path: boxproxy-src/boxctl/target/${{ env.BUILD_TARGET }}/release/boxctl
+          if-no-files-found: error
+          retention-days: 7
 
   release:
     name: Publish GitHub Release
