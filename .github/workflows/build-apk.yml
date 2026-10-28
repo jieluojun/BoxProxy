@@ -214,6 +214,9 @@ jobs:
       # boxproxy/boxproxy @ main；boxctl-vpn.patch 已在该 commit 上验证可干净应用
       BUILD_REF: "c68d3471a5fc01494e965e436d69fd8c395cf7a4"
     steps:
+      - name: Checkout BoxProxy (carries boxctl-vpn.patch)
+        uses: actions/checkout@v7
+
       - name: Checkout boxproxy/boxproxy
         uses: actions/checkout@v7
         with:
