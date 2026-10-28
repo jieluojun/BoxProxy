@@ -355,177 +355,114 @@
 
     const/4 v0, 0x0
 
-    # no verb -> leave the normal path alone
-    if-nez p0, :cond_has_verb
+    # no command -> nothing to intercept
+    if-nez p0, :done
 
-    return-object v0
-
-    :cond_has_verb
-    # The root-free runtime owns the command channel on devices without root,
-    # where boxctl cannot run at all. That check is free, so do it first and
-    # skip the settings lookup in the common case.
+    :try_start_0
     invoke-static {}, Lcom/box/app/vpn/BoxRootState;->available()I
 
     move-result v1
 
-    # v1 == 0 -> confirmed no root -> the VPN bridge owns the command channel
+    # no root at all -> the root-free runtime owns start/stop
     if-eqz v1, :cond_vpn
 
-    # Root available (or not probed yet): only take over when the stored run
-    # mode is the VPN one.
+    # root (or unprobed): only take over in the VPN run mode
     invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->isVpnMode()Z
 
     move-result v1
 
-    if-nez v1, :cond_vpn
-
-    return-object v0
+    if-eqz v1, :done
 
     :cond_vpn
-    :try_start_0
     sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v1
 
-    # status polling must keep its original implementation, otherwise the
-    # caller would spin on an instantly finishing command
-    const-string v2, "monitor"
+    invoke-virtual {v1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    move-result-object v1
 
-    move-result v2
-
-    if-eqz v2, :cond_chk_stop
-
-    return-object v0
-
-    :cond_chk_stop
-    const-string v2, "stop"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    # a stop request -> tear the VPN down
-    if-eqz v2, :cond_chk_kill
-
-    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->requestStop()V
-
-    const-string v0, "echo box-vpn-ok"
-
-    return-object v0
-
-    :cond_chk_kill
-    const-string v2, "kill"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_chk_clear
-
-    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->requestStop()V
-
-    const-string v0, "echo box-vpn-ok"
-
-    return-object v0
-
-    :cond_chk_clear
-    const-string v2, "clear"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_chk_disable
-
-    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->requestStop()V
-
-    const-string v0, "echo box-vpn-ok"
-
-    return-object v0
-
-    :cond_chk_disable
-    const-string v2, "disable"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_chk_start
-
-    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->requestStop()V
-
-    const-string v0, "echo box-vpn-ok"
-
-    return-object v0
-
-    :cond_chk_start
-    # start family -> bring the tunnel up
+    # ---- only the core run commands are ours ----
     const-string v2, "start"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_chk_boot
+    if-nez v2, :cond_start
 
-    invoke-static {p0}, Lcom/box/app/vpn/BoxVpnBridge;->requestStart(Ljava/lang/String;)V
+    const-string v2, "stop"
 
-    goto :silent
-
-    :cond_chk_boot
-    const-string v2, "boot"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_chk_restart
+    if-nez v2, :cond_stop
 
-    invoke-static {p0}, Lcom/box/app/vpn/BoxVpnBridge;->requestStart(Ljava/lang/String;)V
-
-    goto :silent
-
-    :cond_chk_restart
     const-string v2, "restart"
 
-    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_chk_reload
+    if-nez v2, :cond_restart
 
-    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->requestStop()V
-
-    invoke-static {p0}, Lcom/box/app/vpn/BoxVpnBridge;->requestStart(Ljava/lang/String;)V
-
-    goto :silent
-
-    :cond_chk_reload
-    const-string v2, "reload"
+    const-string v2, "core restart"
 
     invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v2
 
-    if-eqz v2, :cond_silent
+    if-nez v2, :cond_restart
 
+    const-string v2, "core start"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_start
+
+    const-string v2, "core stop"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_stop
+
+    # every other boxctl command (config, files, clashapi, cnip, monitor ...)
+    # must keep its own implementation, so report "not intercepted"
+    goto :done
+
+    :cond_start
+    invoke-static {p0}, Lcom/box/app/vpn/BoxVpnBridge;->requestStart(Ljava/lang/String;)V
+
+    goto :handled
+
+    :cond_stop
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->requestStop()V
+
+    goto :handled
+
+    :cond_restart
     invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->requestStop()V
 
     invoke-static {p0}, Lcom/box/app/vpn/BoxVpnBridge;->requestStart(Ljava/lang/String;)V
 
-    :cond_silent
-    :silent
-    # every other boxctl command is handled by the service itself; report a
-    # harmless success so the caller keeps working
+    :handled
     const-string v0, "echo box-vpn-ok"
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
+    goto :done
+
     :catch_0
+    const/4 v0, 0x0
+
+    :done
     return-object v0
 .end method
 
