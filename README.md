@@ -26,6 +26,8 @@
   - 已知限制：`tun.file-descriptor` 为 mihomo/clash 系内核独有的能力，sing-box / xray / hysteria 暂不支持该模式；选择这些核心时 VPN 模式无法启动，请改用 mihomo。
 
 - **本轮修复（VPN 模式启动失败）**：
+  - `BoxVpnBridge.intercept()`（挂在统一 Shell 执行器 `Llb0;->c` 上）此前会把除 `monitor` 之外的所有 boxctl 命令替换成 `echo box-vpn-ok`，并按子串把 `clashapi clear`、`cnip reload` 之类误判成停止/重启，导致基础代理配置、其他代理配置等界面读不到真实结果。现在只认「`start`/`stop`/`restart`」与「`core start`/`core stop`/`core restart`」，其余命令一律返回 `null` 交回原实现。
+  - VPN 授权弹窗的等待时间由 1.7 秒改为每 500ms 轮询、最多 40 次（约 20 秒），避免用户还在系统弹窗上确认时服务就已以 `consent-denied` 收尾。
   - 启动/停止开关 `Llb0;->r(ZLd81;)` 是 Kotlin 挂起函数，入口由状态机分支构成。此前的 hook 放在方法最前面，协程恢复（`invokeSuspend` 以 `false` 重入）时会被当成「停止」；现改为只在该方法**首次调用**的分支（`:cond_0`，即标签位未置位、且续体不是 `Lib0` 时）里拦截，且 `invoke-static/range` 保留 `p1` 可达（`.locals 34` 时 `p1` 已超过 `v15`，普通 `invoke-static {p1}` 无法汇编）。
   - 修正 `r` 钩子里的分支极性：只有 `interceptService` 返回**非 null** 时才短路返回，否则继续走原有 Root 脚本逻辑。
   - 修正 `BoxVpnService.work()` 里两处寄存器覆盖：内核名被日志字符串覆盖导致 `iput core` 存进 `log()` 的返回值、`configFile()` 收到的是日志文本而不是核心名（表现为日志 `core missing` / `missing-config`）。现按「取得核心名 → 读配置 → 建立 TUN → 注入 fd 3 → `posix_spawn`」顺序正确取值。
