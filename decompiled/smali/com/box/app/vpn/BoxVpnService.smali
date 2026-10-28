@@ -457,14 +457,16 @@
 
     :catch_1
     invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->coreName()Ljava/lang/String;
-    const-string v0, "step: dirs ready"
-
-    invoke-static {v0}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
-
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/box/app/vpn/BoxVpnService;->core:Ljava/lang/String;
+
+    const-string v0, "step: dirs ready"
+
+    invoke-static {v0}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
+
+    iget-object v0, p0, Lcom/box/app/vpn/BoxVpnService;->core:Ljava/lang/String;
 
     invoke-static {p0, v0}, Lcom/box/app/vpn/BoxVpnCore;->resolveExecutable(Landroid/content/Context;Ljava/lang/String;)Ljava/io/File;
 
@@ -498,11 +500,13 @@
     return-void
 
     :cond_exe
-    iget-object v0, p0, Lcom/box/app/vpn/BoxVpnService;->core:Ljava/lang/String;
-    const-string v0, "step: core found"
+    invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v0
 
     invoke-static {v0}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
 
+    iget-object v0, p0, Lcom/box/app/vpn/BoxVpnService;->core:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/box/app/vpn/BoxVpnCore;->configFile(Ljava/lang/String;)Ljava/io/File;
 

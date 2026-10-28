@@ -247,6 +247,14 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
+    move-exception v2
+
+    invoke-virtual {v2}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/box/app/vpn/BoxVpnBridge;->log(Ljava/lang/String;)V
+
     :try_start_1
     # the parent copy of the log descriptor is not needed any more
     if-eqz v1, :cond_closed

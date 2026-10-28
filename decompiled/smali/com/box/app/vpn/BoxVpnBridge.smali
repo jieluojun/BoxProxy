@@ -258,6 +258,98 @@
     return-object v0
 .end method
 
+.method public static final shouldHandle()Z
+    .locals 3
+
+    :try_start_0
+    # no root at all -> the root-free runtime owns start/stop
+    invoke-static {}, Lcom/box/app/vpn/BoxRootState;->available()I
+
+    move-result v0
+
+    if-nez v0, :cond_mode
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_mode
+    # rooted device: only when the stored run mode is the VPN one
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->isVpnMode()Z
+
+    move-result v0
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v0
+
+    :catch_0
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+.method public static final serviceResult()Lza0;
+    .locals 4
+
+    :try_start_0
+    new-instance v0, Lza0;
+
+    # flags 2 == success, Ld07.a is the success marker, no message
+    const/4 v1, 0x2
+
+    sget-object v2, Ld07;->a:Ld07;
+
+    const/4 v3, 0x0
+
+    invoke-direct {v0, v1, v2, v3}, Lza0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-object v0
+
+    :catch_0
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
+.method public static final interceptService(Z)Lza0;
+    .locals 2
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->shouldHandle()Z
+
+    move-result v1
+
+    # not ours -> let the original implementation run
+    if-eqz v1, :cond_ret
+
+    if-eqz p0, :cond_stop
+
+    const-string v1, "start"
+
+    invoke-static {v1}, Lcom/box/app/vpn/BoxVpnBridge;->requestStart(Ljava/lang/String;)V
+
+    goto :result
+
+    :cond_stop
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->requestStop()V
+
+    :result
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->serviceResult()Lza0;
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    move-result-object v0
+
+    :catch_0
+    :cond_ret
+    return-object v0
+.end method
+
 .method public static final intercept(Ljava/lang/String;)Ljava/lang/String;
     .locals 4
 
@@ -748,7 +840,7 @@
     const/16 v2, 0x1a
 
     # Android 8.0 and newer requires startForegroundService
-    if-ge v1, v2, :cond_legacy
+    if-lt v1, v2, :cond_legacy
 
     invoke-virtual {p0, p1}, Landroid/content/Context;->startForegroundService(Landroid/content/Intent;)Landroid/content/ComponentName;
 

@@ -16,13 +16,22 @@
   - 应用自己作为 `VpnService` 建立 TUN（`172.19.0.1/30`、`fdfe:dcba:9876::1/126`、路由 `0.0.0.0/0`、DNS `172.19.0.2`，并把自身包名加入 `addDisallowedApplication`，使内核出站流量绕过隧道直接走物理网络）。
   - `establish()` 之后 `detachFd()` 取得 TUN 描述符，用 `android.system.Os.posix_spawn` + `PosixSpawnFileActions.adddup2` 把它复制到子进程的 **fd 3**，再启动配置好的代理内核（`mihomo`/`clash` 系）。
   - 内核配置文件会被复制到 `run/vpn/<core>-boxvpn.yaml`：原配置里的 `tun:` 段整段剥除，替换为 `enable: true`、`stack: mixed`、`auto-route: false`、`auto-detect-interface: false`、`dns-hijack: any:53` 与 `file-descriptor: 3`。
-  - 内核查找顺序：`nativeLibraryDir/lib<core>.so`（可作为 `libmihomo.so` 随包分发）→ `<home>/bin/<core>`（App 内已有的核心安装目录）。
+  - 内核查找顺序：`nativeLibraryDir/lib<core>.so` → `<home>/bin/<core>`（App 内已有的核心安装目录）。
+  - **内核随包分发**：目标 API ≥ 29 的应用不允许执行自己写入 `filesDir`/外部存储的可执行文件（W^X），因此免 Root 场景下唯一能执行的位置是 `nativeLibraryDir`。构建时（`scripts/build.sh` 与 CI 的 *Bundle proxy core* 步骤）会把 [mihomo](https://github.com/MetaCubeX/mihomo) 官方 `android-arm64-v8a` 发行版解压后放到 `decompiled/lib/arm64-v8a/libmihomo.so`（版本由 `MIHOMO_VERSION` 指定，默认 `v1.19.33`），同时清单里的 `android:extractNativeLibs` 改为 `true`，安装时该文件会被解压到 `nativeLibraryDir`，以 `libmihomo.so` 的名字直接被 `posix_spawn` 执行。若构建环境无法下载内核，构建仍会成功，此时 VPN 模式回退到 `<home>/bin/<core>`。
   - 新增 `com.box.app.vpn.BoxVpnService`（清单中声明 `android.net.VpnService` intent-filter 与 `BIND_VPN_SERVICE` 权限、`foregroundServiceType="specialUse"`），常驻通知带「Stop」按钮；`com.box.app.vpn.BoxVpnCore` 负责配置改写与 `posix_spawn`；`com.box.app.vpn.BoxVpnBridge` 负责路径/状态/启动停止与命令拦截；`com.box.app.vpn.BoxRootState` 负责 Root 探测。
   - 运行状态通过 `<home>/run/vpn.state`（`pid\nreason`）、`<home>/run/box.pid` 与 `<home>/run/vpn.log` / `run/vpn-core.log` 暴露，内核退出后服务会自动收尾。
   - 无 Root 时运行模式列表只保留 VPN 一项（`Lr25;->e` 内做筛选），有 Root 时 VPN 作为额外模式排在最前；数据库默认 `mode` 在无 Root 设备上直接写为 `vpn`。
   - 首次启用会弹出系统的 VPN 授权对话框（`VpnService.prepare`）；需在弹窗中允许，若未允许会在日志中记录 `consent-denied` 并停止服务。
   - 排错：`<home>/run/vpn.log` 记录服务侧的分步日志（`step: ...`、`core missing`、`establish-failed`、`spawn-failed`、`consent-denied`、`core-exited`、`fatal` 等），`<home>/run/vpn-core.log` 是内核自身的 stdout/stderr，`<home>/run/vpn.state` 为 `<pid>\n<原因>`。
-  - 已知限制：`tun.file-descriptor` 为 mihomo/clash 系内核独有的能力，sing-box / xray / hysteria 暂不支持该模式；未随包分发内核时需先在 App 内安装 mihomo 核心。
+  - 已知限制：`tun.file-descriptor` 为 mihomo/clash 系内核独有的能力，sing-box / xray / hysteria 暂不支持该模式；选择这些核心时 VPN 模式无法启动，请改用 mihomo。
+
+- **本轮修复（VPN 模式启动失败）**：
+  - 启动/停止开关 `Llb0;->r(ZLd81;)` 是 Kotlin 挂起函数，入口由状态机分支构成。此前的 hook 放在方法最前面，协程恢复（`invokeSuspend` 以 `false` 重入）时会被当成「停止」；现改为只在该方法**首次调用**的分支（`:cond_0`，即标签位未置位、且续体不是 `Lib0` 时）里拦截，且 `invoke-static/range` 保留 `p1` 可达（`.locals 34` 时 `p1` 已超过 `v15`，普通 `invoke-static {p1}` 无法汇编）。
+  - 修正 `r` 钩子里的分支极性：只有 `interceptService` 返回**非 null** 时才短路返回，否则继续走原有 Root 脚本逻辑。
+  - 修正 `BoxVpnService.work()` 里两处寄存器覆盖：内核名被日志字符串覆盖导致 `iput core` 存进 `log()` 的返回值、`configFile()` 收到的是日志文本而不是核心名（表现为日志 `core missing` / `missing-config`）。现按「取得核心名 → 读配置 → 建立 TUN → 注入 fd 3 → `posix_spawn`」顺序正确取值。
+  - 修正 `BoxVpnBridge.startService()` 的分支极性：API ≥ 26 现在走 `startForegroundService()`（此前 `if-ge` 写反，Android 8+ 反而调用 `startService`，后台启动会抛 `IllegalStateException` 被吞掉，表现为点了没反应）。
+  - `BoxVpnCore.launch()` 失败时把异常写进 `run/vpn.log`；`work()` 记录实际使用的内核路径，便于排查 `spawn-failed`。
+  - `BoxVpnService.f()`/`o()`（启动/停止实现）的钩子同样只对首次调用生效，避免协程恢复时重复启动/停止。
 
 ## 原始 APK 信息
 

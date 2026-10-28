@@ -2621,6 +2621,31 @@
 .method public final f(Ld81;)Ljava/lang/Object;
     .locals 14
 
+    # resuming this suspending function must never trigger a second start
+    instance-of v0, p1, Ldb0;
+
+    # not a resume -> the root-free hook may take over
+    if-eqz v0, :cond_vf_cont
+
+    # Root-free VPN runtime: the start script would need root
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->shouldHandle()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_vf_cont
+
+    const-string v0, "start"
+
+    invoke-static {v0}, Lcom/box/app/vpn/BoxVpnBridge;->requestStart(Ljava/lang/String;)V
+
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->serviceResult()Lza0;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_vf_cont
+
     .line 1
     instance-of v0, p1, Ldb0;
 
@@ -4288,6 +4313,29 @@
 .method public final o(Ld81;)Ljava/lang/Object;
     .locals 5
 
+    # resuming this suspending function must never trigger a second stop
+    instance-of v0, p1, Lgb0;
+
+    # not a resume -> the root-free hook may take over
+    if-eqz v0, :cond_vo_cont
+
+    # Root-free VPN runtime: stop the tunnel instead of the root script
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->shouldHandle()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_vo_cont
+
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->requestStop()V
+
+    invoke-static {}, Lcom/box/app/vpn/BoxVpnBridge;->serviceResult()Lza0;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_vo_cont
+
     .line 1
     instance-of v0, p1, Lgb0;
 
@@ -4847,6 +4895,19 @@
 
     .line 24
     :cond_0
+    # Root-free VPN runtime hook: only the first (non-resuming) invocation gets
+    # here, so a coroutine resume can never flip start into stop.
+    # (/range is required: with .locals 34 the p1 register is above v15)
+    invoke-static/range {p1 .. p1}, Lcom/box/app/vpn/BoxVpnBridge;->interceptService(Z)Lza0;
+
+    move-result-object v2
+
+    # handled by the root-free runtime -> bypass the root script path
+    if-eqz v2, :cond_vs_free
+
+    return-object v2
+
+    :cond_vs_free
     new-instance v2, Lib0;
 
     .line 25
