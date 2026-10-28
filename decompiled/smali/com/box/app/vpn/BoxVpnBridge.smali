@@ -46,7 +46,7 @@
     const/4 v0, 0x0
 
     # a pid must be positive to mean anything
-    if-gtz p0, :cond_exit
+    if-lez p0, :cond_exit
 
     :try_start_0
     new-instance v1, Ljava/lang/StringBuilder;
@@ -82,7 +82,8 @@
 
     array-length v1, v1
 
-    if-gtz v1, :cond_exit
+    # empty cmdline -> zombie -> dead
+    if-lez v1, :cond_exit
 
     const/4 v0, 0x1
     :try_end_0
@@ -252,7 +253,7 @@
     move-result-object v2
 
     # null column -> default
-    if-eqz v2, :cond_use
+    if-nez v2, :cond_use
 
     return-object p1
 
@@ -262,7 +263,7 @@
     move-result v3
 
     # empty string -> default
-    if-eqz v3, :cond_value_ok
+    if-nez v3, :cond_value_ok
 
     return-object p1
 
@@ -355,7 +356,7 @@
     move-result v1
 
     # not running the VPN runtime -> normal boxctl path
-    if-eqz v1, :cond_vpn
+    if-nez v1, :cond_vpn
 
     return-object v0
 
@@ -559,8 +560,8 @@
 
     move-result v2
 
-    # single line -> parse the whole thing
-    if-gez v2, :cond_multiline
+    # a state file without a newline is a single token
+    if-ltz v2, :cond_multiline
 
     goto :parse
 

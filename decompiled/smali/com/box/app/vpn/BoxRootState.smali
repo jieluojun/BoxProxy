@@ -187,43 +187,12 @@
 .end method
 
 .method private static final loadCached()V
-    .locals 4
+    .locals 0
 
-    sget v0, Lcom/box/app/vpn/BoxRootState;->available:I
+    # The cached flag is only informational: a device can gain or lose root
+    # between launches, so the live probe always decides. The value is still
+    # written to preferences by probeNow() for diagnostics.
 
-    const/4 v1, -0x1
-
-    if-ne v0, v1, :cond_loaded
-
-    sget-object v0, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
-
-    invoke-static {v0}, Lcom/box/app/vpn/BoxRootState;->prefsOf(Landroid/content/Context;)Landroid/content/SharedPreferences;
-
-    move-result-object v0
-
-    if-nez v0, :cond_loaded
-
-    :try_start_0
-    const-string v1, "root_available"
-
-    const/4 v2, -0x1
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    move-result v1
-
-    const/4 v2, -0x1
-
-    if-ne v1, v2, :cond_skip
-
-    sput v1, Lcom/box/app/vpn/BoxRootState;->available:I
-
-    :cond_skip
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    :cond_loaded
     return-void
 .end method
 

@@ -342,7 +342,7 @@
     iput v2, p0, Lcom/box/app/vpn/BoxVpnService;->corePid:I
 
     # kill the core outside of this call
-    if-gtz v1, :cond_close
+    if-lez v1, :cond_close
 
     invoke-static {v1}, Lcom/box/app/vpn/BoxVpnCore;->terminate(I)V
 
