@@ -215,6 +215,17 @@
 .method public static c(Ljava/lang/String;)Ljava/lang/String;
     .locals 4
 
+    # BoxProxy patch: VPN 运行模式下 start/stop/restart 由 BoxVpnService 处理，不再调用 boxctl
+    invoke-static {p0}, Lcom/box/app/vpn/VpnMode;->intercept(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    if-eqz v0, :boxproxy_not_intercepted
+
+    return-object v0
+
+    :boxproxy_not_intercepted
+
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 

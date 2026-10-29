@@ -635,6 +635,7 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="proxy_mode_title">Режим работы</string>
     <string name="proxy_mode_tproxy">TPROXY</string>
     <string name="proxy_mode_tun">TUN</string>
+    <string name="proxy_mode_vpn">VPN</string>
     <string name="proxy_other_section_dns_hijack">Перехват DNS</string>
     <string name="proxy_other_section_proxy_behavior">Поведение прокси</string>
     <string name="proxy_other_section_resource_limits">Ограничения ресурсов</string>

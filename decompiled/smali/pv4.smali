@@ -762,6 +762,11 @@
     move-result v11
 
     .line 327
+    # BoxProxy patch: 序号 6（VPN）→ 专用标签
+    const/4 v14, 0x6
+
+    if-eq v11, v14, :cond_vpn_label
+
     if-eqz v11, :cond_f
 
     .line 328
@@ -820,6 +825,15 @@
     goto :goto_8
 
     .line 354
+    :cond_vpn_label
+    const v11, -0x1c2f0006
+
+    const v14, 0x7f0f04a8
+
+    const/4 v15, 0x0
+
+    goto :goto_7
+
     :cond_a
     const/4 v15, 0x0
 

@@ -231,6 +231,11 @@
 
     .line 71
     :cond_3
+    # BoxProxy patch: 无 Root 仅保留 VPN；有 Root 时 VPN 位于 TUN 上方（仅 Mihomo）
+    invoke-static {v0, p0}, Lcom/box/app/vpn/VpnMode;->filterRunModes(Ljava/util/ArrayList;Lu25;)Ljava/util/ArrayList;
+
+    move-result-object v0
+
     return-object v0
 .end method
 

@@ -123,6 +123,9 @@
     .line 33
     .line 34
     .line 35
+    # BoxProxy patch: 先记录是否选中 VPN（xt4.q 可能异步触发重启，需先写入标志）
+    invoke-static {v3, p0}, Lcom/box/app/vpn/VpnMode;->onModeSelected(Landroid/content/Context;Lv25;)V
+
     invoke-virtual {v4, p0, p1}, Lxt4;->q(Lv25;Lr52;)V
 
     .line 36

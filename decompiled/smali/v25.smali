@@ -18,6 +18,9 @@
 
 .field public static final enum q:Lv25;
 
+# BoxProxy 补丁：免 Root VPN 运行模式（序号 6，位于 TUN 上方的展示由 r25 负责）
+.field public static final enum t:Lv25;
+
 .field public static final synthetic r:[Lv25;
 
 .field public static final synthetic s:Lcv1;
@@ -29,7 +32,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 9
+    .locals 10
 
     .line 1
     new-instance v0, Lv25;
@@ -176,12 +179,56 @@
 
     .line 72
     .line 73
-    filled-new-array/range {v0 .. v5}, [Lv25;
+    # BoxProxy patch: VPN（免 Root VpnService）模式，序号 6
+    new-instance v6, Lv25;
+
+    const/4 v7, 0x6
+
+    const-string v8, "Vpn"
+
+    const-string v9, "vpn"
+
+    invoke-direct {v6, v7, v8, v9}, Lv25;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    sput-object v6, Lv25;->t:Lv25;
+
+    const/4 v7, 0x7
+
+    new-array v7, v7, [Lv25;
+
+    const/4 v8, 0x0
+
+    aput-object v0, v7, v8
+
+    const/4 v8, 0x1
+
+    aput-object v1, v7, v8
+
+    const/4 v8, 0x2
+
+    aput-object v2, v7, v8
+
+    const/4 v8, 0x3
+
+    aput-object v3, v7, v8
+
+    const/4 v8, 0x4
+
+    aput-object v4, v7, v8
+
+    const/4 v8, 0x5
+
+    aput-object v5, v7, v8
+
+    const/4 v8, 0x6
+
+    aput-object v6, v7, v8
+
+    move-object v0, v7
 
     .line 74
     .line 75
     .line 76
-    move-result-object v0
 
     .line 77
     sput-object v0, Lv25;->r:[Lv25;

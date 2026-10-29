@@ -12,6 +12,58 @@
 - 原内部目录的既有数据**不会自动搬移**；首次运行会在新目录下按原逻辑重新建目录、复制默认 Mihomo 配置、解包核心并创建数据库。需要保留旧配置时，请先自行导出 App 备份或手动复制旧 `box` 目录。
 - **执行风险提醒**：多数设备的外部存储以 `noexec` 挂载。按需求整体迁移后，位于新 `bin/` 下的 `boxctl`/`boxbpf`/代理核心在某些设备或无 Root 场景可能无法直接执行；如遇到核心无法启动，应优先排查该挂载选项。
 
+## 免 Root VPN 运行模式（本次修改）
+
+在「运行模式」列表中，TUN 正上方新增 **VPN**（免 Root）。设计参考：
+
+- **Mishka**：未授予 Root 时运行模式列表只显示 VPN，其它模式隐藏；VPN 由 `VpnService` 建立 TUN。
+- **AnyPortal**：应用以自身 UID 启动用户自备的代理内核，内核通过本地接口接入 TUN。
+
+数据通路：
+
+```
+VpnService.Builder.establish() -> TUN fd（仅本进程可见）
+  -> 抽象 UNIX 套接字 + SCM_RIGHTS -> libboxtunfd.so（nativeLibraryDir，可执行）
+  -> dup2 到 fd 3，execv 用户自备的 mihomo（<filesDir>/vpn/bin/mihomo）
+  -> mihomo 配置 tun.file-descriptor: 3 读写 TUN
+```
+
+| 组件 | 位置 | 说明 |
+|---|---|---|
+| `com.box.app.vpn.VpnMode` | `decompiled/smali/com/box/app/vpn/` | Root 检测、运行模式门控、`Llb0;->c` 拦截 |
+| `com.box.app.vpn.BoxVpnService` | 同上 | 建立 TUN、复制内核、生成配置、交接 fd、监管内核 |
+| `com.box.app.vpn.VpnPermissionActivity` | 同上 | 系统 VPN 授权中转（`VpnService.prepare`） |
+| `libboxtunfd.so` | `decompiled/lib/arm64-v8a/` | fd 交接启动器（**不是内核**），源码 `native/boxtunfd/boxtunfd.c`，构建 `native/build.sh` |
+
+行为与门控：
+
+- **无 Root**：运行模式列表只显示 VPN，其它模式隐藏；启动/停止/重启全部走 VPN 服务，不再调用 boxctl。
+- **有 Root**：VPN 仅对 Mihomo 内核显示，位于 TUN 上方；选择 VPN 后同样由 VPN 服务接管。
+- Root 检测只检查 `su` 二进制是否存在，**不执行 `su`**（避免在列表构建时触发 Magisk 弹窗）。
+- 从 VPN 切换到其它模式会自动停止 VPN 服务。
+
+内核与配置（**本工程不内置任何内核**）：
+
+- 内核：通过应用内「安装内核」导入到 `<外部目录>/box/bin/mihomo`。VPN 启动时复制到内部目录 `filesDir/vpn/bin/mihomo` 后执行（外部存储通常 `noexec`）。
+- 配置：读取 `<外部目录>/box/mihomo/config.yaml`，去掉原有顶层 `tun:` 段后追加由服务管理的 TUN 段（`file-descriptor: 3`、`auto-route: false`、`dns-hijack: any:53`），写入 `filesDir/vpn/config.yaml`。
+- 日志：内核输出写入 `filesDir/vpn/core.log`；服务状态输出到 logcat（标签 `BoxProxyVPN`）。
+
+为何 `minSdk`/`targetSdk` 降到 28：Android 10+ 的 W^X 策略禁止 `targetSdk≥29` 的应用执行其私有数据目录中的文件，用户导入的内核必须依赖 `targetSdk≤28` 的豁免才能执行。`extractNativeLibs` 同时改为 `true`，以便 `libboxtunfd.so` 被解压到可执行的 `nativeLibraryDir`。
+
+已知限制（请在真机验证）：
+
+- 仅支持 **Mihomo** 内核；sing-box / xray / v2fly 没有“接管已有 TUN fd”的入口，不在 VPN 模式中提供。
+- 仅 IPv4（路由 `0.0.0.0/0`）；IPv6 流量不经过 TUN。
+- 开机自启、磁贴（Quick Settings）启动受 Android 后台启动限制影响，VPN 不一定会自动拉起。
+- 降低 SDK 到 28 会影响应用在新系统上的兼容性与 Play 上架资格；原工程中依赖 API 29+ 的代码路径需要在低版本设备上自行验证。
+- 本次修改基于对 smali 的手工改写，已通过 apktool 汇编与 dex 解析检查，但**未在真机上运行验证**。
+
+重新构建启动器（可选，已附带预编译产物）：
+
+```bash
+ZIG="python3 -m ziglang" native/build.sh   # 需要 pip install ziglang
+```
+
 ## 原始 APK 信息
 
 | 项目 | 值 |
