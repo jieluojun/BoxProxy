@@ -83,6 +83,12 @@
     # 无 Root：永远处于 VPN 模式（Mishka 行为）
     invoke-static {}, Lcom/box/app/vpn/VpnMode;->isRootAvailable()Z
     move-result v0
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+    move-result-object v1
+    const-string v2, "isVpnActive root="
+    invoke-virtual {v2, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v1
+    invoke-static {v1}, Lcom/box/app/vpn/VpnMode;->trace(Ljava/lang/String;)V
     if-nez v0, :with_root
     const/4 v0, 0x1
     return v0
@@ -92,6 +98,12 @@
     invoke-static {}, Llb0;->g()Lya0;
     move-result-object v0
     iget-object v0, v0, Lya0;->b:Ljava/lang/String;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v1
+    const-string v2, "mode="
+    invoke-virtual {v2, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v1
+    invoke-static {v1}, Lcom/box/app/vpn/VpnMode;->trace(Ljava/lang/String;)V
     if-eqz v0, :mode_fallback
     invoke-static {v0}, Lr25;->i(Ljava/lang/String;)Lv25;
     move-result-object v0
@@ -326,4 +338,22 @@
     const/4 v0, 0x0
 
     return-object v0
+.end method
+
+
+.method public static trace(Ljava/lang/String;)V
+    .locals 3
+    :try_start
+    new-instance v0, Ljava/io/FileWriter;
+    const-string v1, "/storage/emulated/0/Android/data/com.boxproxy.box/files/vpn_trace.txt"
+    const/4 v2, 0x1
+    invoke-direct {v0, v1, v2}, Ljava/io/FileWriter;-><init>(Ljava/lang/String;Z)V
+    invoke-virtual {v0, p0}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+    const-string v1, "\n"
+    invoke-virtual {v0, v1}, Ljava/io/Writer;->write(Ljava/lang/String;)V
+    invoke-virtual {v0}, Ljava/io/Writer;->close()V
+    :try_end
+    .catch Ljava/lang/Throwable; {:try_start .. :try_end} :catch_all
+    :catch_all
+    return-void
 .end method

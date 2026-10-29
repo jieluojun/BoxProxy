@@ -2596,6 +2596,10 @@
 .method public final f(Ld81;)Ljava/lang/Object;
     .locals 14
 
+    # BoxProxy 诊断：boot 脚本即将执行（说明走到了 boxctl 路径）
+    const-string v0, "f: boxctl boot script path reached"
+    invoke-static {v0}, Lcom/box/app/vpn/VpnMode;->trace(Ljava/lang/String;)V
+
     .line 1
     instance-of v0, p1, Ldb0;
 
@@ -4770,6 +4774,18 @@
 
 .method public final r(ZLd81;)Ljava/lang/Object;
     .locals 34
+
+    # BoxProxy 诊断：记录进入 r 时的参数与 Context 状态
+    const-string v0, "r enter z="
+    invoke-static/range {p1 .. p1}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+    move-result-object v1
+    invoke-virtual {v0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v0
+    invoke-static {v0}, Lcom/box/app/vpn/VpnMode;->trace(Ljava/lang/String;)V
+    sget-object v0, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
+    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v0
+    invoke-static {v0}, Lcom/box/app/vpn/VpnMode;->trace(Ljava/lang/String;)V
 
     # BoxProxy patch: 无 Root / VPN 模式下，启动由 VPN 服务接管，不再执行 boxctl boot 脚本
     sget-object v0, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
