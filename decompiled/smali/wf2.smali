@@ -402,7 +402,7 @@
     const/4 v3, 0x5
 
     .line 158
-    if-ne v1, v3, :cond_a
+    if-ne v1, v3, :cond_vpn_check
 
     .line 159
     .line 160
@@ -414,6 +414,15 @@
     goto :goto_3
 
     .line 164
+    :cond_vpn_check
+    const/4 v3, 0x6
+
+    if-ne v1, v3, :cond_a
+
+    const v1, 0x7f0f04a8
+
+    goto :goto_3
+
     :cond_a
     invoke-static {}, Lyd1;->a()V
 

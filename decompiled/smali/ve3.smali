@@ -18352,7 +18352,7 @@
     const/4 v1, 0x5
 
     .line 24
-    if-ne p0, v1, :cond_0
+    if-ne p0, v1, :cond_vpn_check
 
     .line 25
     .line 26
@@ -18378,6 +18378,12 @@
     return-object p0
 
     .line 37
+    :cond_vpn_check
+    const/4 v1, 0x6
+    if-ne p0, v1, :cond_0
+    const p0, -0x1f3e5d7b
+    const v1, 0x7f0f04a8
+    goto :goto_0
     :cond_0
     const p0, -0x5fdcc89f
 
