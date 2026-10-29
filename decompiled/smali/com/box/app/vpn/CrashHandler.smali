@@ -18,7 +18,7 @@
 
     invoke-static {}, Ljava/lang/Thread;->getDefaultUncaughtExceptionHandler()Ljava/lang/Thread$UncaughtExceptionHandler;
 
-    move-result v0
+    move-result-object v0
 
     sput-object v0, Lcom/box/app/vpn/CrashHandler;->previous:Ljava/lang/Thread$UncaughtExceptionHandler;
 
