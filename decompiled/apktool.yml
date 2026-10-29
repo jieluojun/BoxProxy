@@ -6,8 +6,14 @@ usesFramework:
   - 1
   tag: null
 sdkInfo:
-  minSdkVersion: 29
-  targetSdkVersion: 37
+  # 无 root VPN 运行模式需要在应用私有目录里 execve() 用户导入的代理内核。
+  # Android 10+ 只给 targetSdk<=28 的应用保留 untrusted_app_27 SELinux 域，
+  # 该域仍然允许 app_data_file:execute_no_trans（Termux / AnyPortal 同款做法）。
+  # aapt2 会把 targetSdkVersion 抬到 minSdkVersion，所以两者一起降到 28。
+  # 上游原包为 minSdk 29 / targetSdk 37：改回去后 root 模式不受影响，
+  # 但 VPN 模式将无法在 Android 10+ 上启动内核进程。
+  minSdkVersion: 28
+  targetSdkVersion: 28
 packageInfo:
   forcedPackageId: 127
   renameManifestPackage: null

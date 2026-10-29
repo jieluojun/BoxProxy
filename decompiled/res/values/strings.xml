@@ -246,7 +246,7 @@
     <string name="core_import_detail_format">Format</string>
     <string name="core_import_detail_size">Binary size</string>
     <string name="core_import_dialog_target_title">Install as</string>
-    <string name="core_import_dialog_warning">This file will be installed as a proxy core and run with root privileges. Continue only if you trust its source.</string>
+    <string name="core_import_dialog_warning">This file will be installed as a proxy core and executed by the app: with root privileges in the root run modes, or as an unprivileged process in VPN mode. Continue only if you trust its source.</string>
     <string name="core_import_empty_source">The selected file is empty</string>
     <string name="core_import_failed">Core installation failed</string>
     <string name="core_import_format_raw">Raw binary</string>
@@ -309,7 +309,7 @@
     <string name="home_connections_title">Connection details</string>
     <string name="home_cpu_label">CPU</string>
     <string name="home_detail_search_no_results">No matching content</string>
-    <string name="home_error_root_body">This app requires root access to control Box service.</string>
+    <string name="home_error_root_body">Root access is required to control the Box service. Without root, switch the run mode to VPN: the tunnel then runs through the system VPN and the core as an unprivileged process.</string>
     <string name="home_error_root_title">Root required</string>
     <string name="home_ip_details_action">Details</string>
     <string name="home_ip_geo_field_asn">ASN</string>
@@ -564,9 +564,9 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="onboarding_enter_app">Enter App</string>
     <string name="onboarding_next">Next</string>
     <string name="onboarding_request_root">Request Root</string>
-    <string name="onboarding_root_body">Box needs root permission to read and manage app files, service status, proxy settings, and related runtime data. Please grant root access when the system or root manager prompts for authorization.</string>
+    <string name="onboarding_root_body">Box needs root permission to read and manage app files, service status, proxy settings, and related runtime data. Please grant root access when the system or root manager prompts for authorization. Without root the TUN/TPROXY/eBPF/redirect modes are unavailable and only the VPN run mode is offered.</string>
     <string name="onboarding_root_checking">Checking root permission...</string>
-    <string name="onboarding_root_denied">Root permission is not confirmed. Tap the button below and allow it in Magisk or your root manager.</string>
+    <string name="onboarding_root_denied">Root permission is not confirmed. Tap the button below and allow it in Magisk or your root manager, or continue without root - the app then only offers the no-root VPN run mode.</string>
     <string name="onboarding_root_granted">Root permission is available</string>
     <string name="onboarding_root_title">Root Permission</string>
     <string name="other_proxy_config_subtitle">Proxy switches, DNS hijack, resource limits, and firewall</string>
@@ -636,6 +636,7 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="proxy_mode_title">Run Mode</string>
     <string name="proxy_mode_tproxy">TPROXY</string>
     <string name="proxy_mode_tun">TUN</string>
+    <string name="proxy_mode_vpn">VPN</string>
     <string name="proxy_other_section_dns_hijack">DNS Hijack</string>
     <string name="proxy_other_section_proxy_behavior">Proxy Behavior</string>
     <string name="proxy_other_section_resource_limits">Resource Limits</string>

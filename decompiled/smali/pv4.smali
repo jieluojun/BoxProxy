@@ -790,24 +790,28 @@
     .line 339
     const/4 v14, 0x5
 
-    .line 340
+    if-eq v11, v14, :cond_enhance
+
+    const/4 v14, 0x6
+
     if-ne v11, v14, :cond_a
 
-    .line 341
-    .line 342
-    const v11, -0x1c2fe3a5
+    # no-root VPN tunnel mode (added by the BoxProxy VPN patch)
+    const v11, -0x1c2f0006
 
-    .line 343
-    .line 344
-    .line 345
-    const v14, 0x7f0f02cb
+    const v14, 0x7f0f04a8
 
-    .line 346
-    .line 347
-    .line 348
     const/4 v15, 0x0
 
-    .line 349
+    goto :goto_7
+
+    :cond_enhance
+    const v11, -0x1c2fe3a5
+
+    const v14, 0x7f0f02cb
+
+    const/4 v15, 0x0
+
     :goto_7
     invoke-static {v13, v11, v14, v13, v15}, Lv66;->n(Lv62;IILv62;Z)Ljava/lang/String;
 

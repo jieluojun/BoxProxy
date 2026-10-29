@@ -229,6 +229,10 @@
     .line 62
     invoke-static {v6, v2, v2, p0, v0}, Lf;->J(Lfb1;Lwa1;Lib1;Lv52;I)Ly76;
 
+    # no-root VPN run mode: still ask for root, but never lock the user out of
+    # the app when root is unavailable - continue into the app right away.
+    invoke-interface {v7}, Lg52;->invoke()Ljava/lang/Object;
+
     .line 63
     .line 64
     .line 65

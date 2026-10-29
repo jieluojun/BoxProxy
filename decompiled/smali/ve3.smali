@@ -18351,21 +18351,24 @@
     .line 23
     const/4 v1, 0x5
 
-    .line 24
+    if-eq p0, v1, :cond_enhance
+
+    const/4 v1, 0x6
+
     if-ne p0, v1, :cond_0
 
-    .line 25
-    .line 26
+    # no-root VPN tunnel mode (added by the BoxProxy VPN patch)
+    const p0, -0x5fdc0006
+
+    const v1, 0x7f0f04a8
+
+    goto :goto_0
+
+    :cond_enhance
     const p0, -0x5fdc9739
 
-    .line 27
-    .line 28
-    .line 29
     const v1, 0x7f0f02cb
 
-    .line 30
-    .line 31
-    .line 32
     :goto_0
     invoke-static {p1, p0, v1, p1, v0}, Lv66;->n(Lv62;IILv62;Z)Ljava/lang/String;
 

@@ -18,6 +18,12 @@
 
 .field public static final enum q:Lv25;
 
+# no-root VPN tunnel mode (added by the BoxProxy VPN patch). It is declared last so
+# that the ordinal of every pre-existing constant stays untouched - only the new
+# switch branches below have to know about ordinal 6. The run mode *list* shown in
+# the settings UI is ordered by Lr25;->e(Lu25;), which puts this constant first.
+.field public static final enum t:Lv25;
+
 .field public static final synthetic r:[Lv25;
 
 .field public static final synthetic s:Lcv1;
@@ -29,7 +35,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 9
+    .locals 10
 
     .line 1
     new-instance v0, Lv25;
@@ -175,8 +181,19 @@
     sput-object v5, Lv25;->q:Lv25;
 
     .line 72
-    .line 73
-    filled-new-array/range {v0 .. v5}, [Lv25;
+    new-instance v6, Lv25;
+
+    const/4 v7, 0x6
+
+    const-string v8, "vpn"
+
+    const-string v9, "Vpn"
+
+    invoke-direct {v6, v7, v9, v8}, Lv25;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    sput-object v6, Lv25;->t:Lv25;
+
+    filled-new-array/range {v0 .. v6}, [Lv25;
 
     .line 74
     .line 75

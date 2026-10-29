@@ -2596,6 +2596,9 @@
     .line 1
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    # no-root VPN run mode: bring the tunnel up/down as soon as the run mode changes
+    invoke-static {p1}, Lcom/box/app/vpn/VpnMode;->onProxyModeChanged(Lv25;)V
+
     .line 2
     .line 3
     .line 4

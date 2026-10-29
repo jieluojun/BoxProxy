@@ -87,150 +87,86 @@
 .method public static e(Lu25;)Ljava/util/ArrayList;
     .locals 6
 
-    .line 1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    # Supported run modes for the given core, in display order.
+    #
+    # The no-root VPN tunnel is always offered first so that it shows up right
+    # above "Tun" in the run mode picker. When the device has no usable root the
+    # VPN tunnel is the only mode that can work at all, so every root-only mode
+    # is hidden (Mishka-style behaviour).
 
-    .line 2
-    .line 3
-    .line 4
     new-instance v0, Ljava/util/ArrayList;
 
-    .line 5
-    .line 6
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 7
-    .line 8
-    .line 9
-    sget-object v1, Lv25;->s:Lcv1;
+    sget-object v1, Lv25;->t:Lv25;
 
-    .line 10
-    .line 11
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 12
-    .line 13
-    .line 14
-    new-instance v2, Lh3;
-
-    .line 15
-    .line 16
-    const/4 v3, 0x0
-
-    .line 17
-    invoke-direct {v2, v1, v3}, Lh3;-><init>(Ljava/lang/Object;B)V
-
-    .line 18
-    .line 19
-    .line 20
-    :cond_0
-    :goto_0
-    invoke-virtual {v2}, Lh3;->hasNext()Z
-
-    .line 21
-    .line 22
-    .line 23
-    move-result v1
-
-    .line 24
-    if-eqz v1, :cond_3
-
-    .line 25
-    .line 26
-    invoke-virtual {v2}, Lh3;->next()Ljava/lang/Object;
-
-    .line 27
-    .line 28
-    .line 29
-    move-result-object v1
-
-    .line 30
-    move-object v3, v1
-
-    .line 31
-    check-cast v3, Lv25;
-
-    .line 32
-    .line 33
-    sget-object v4, Lv25;->n:Lv25;
-
-    .line 34
-    .line 35
-    if-ne v3, v4, :cond_1
-
-    .line 36
-    .line 37
-    sget-object v4, Lu25;->n:Lu25;
-
-    .line 38
-    .line 39
-    if-eq p0, v4, :cond_1
-
-    .line 40
-    .line 41
-    sget-object v4, Lu25;->o:Lu25;
-
-    .line 42
-    .line 43
-    if-ne p0, v4, :cond_0
-
-    .line 44
-    .line 45
-    :cond_1
-    sget-object v4, Lu25;->p:Lu25;
-
-    .line 46
-    .line 47
-    if-ne p0, v4, :cond_2
-
-    .line 48
-    .line 49
-    sget-object v4, Lv25;->l:Lv25;
-
-    .line 50
-    .line 51
-    sget-object v5, Lv25;->p:Lv25;
-
-    .line 52
-    .line 53
-    filled-new-array {v4, v5}, [Lv25;
-
-    .line 54
-    .line 55
-    .line 56
-    move-result-object v4
-
-    .line 57
-    invoke-static {v4}, Lvv;->Q0([Ljava/lang/Object;)Ljava/util/Set;
-
-    .line 58
-    .line 59
-    .line 60
-    move-result-object v4
-
-    .line 61
-    invoke-interface {v4, v3}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    .line 62
-    .line 63
-    .line 64
-    move-result v3
-
-    .line 65
-    if-nez v3, :cond_0
-
-    .line 66
-    .line 67
-    :cond_2
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 68
-    .line 69
-    .line 70
-    goto :goto_0
+    invoke-static {}, Lcom/box/app/vpn/VpnMode;->isNoRoot()Z
 
-    .line 71
-    :cond_3
+    move-result v1
+
+    if-eqz v1, :cond_all_modes
+
+    return-object v0
+
+    :cond_all_modes
+    invoke-static {}, Lv25;->values()[Lv25;
+
+    move-result-object v1
+
+    array-length v2, v1
+
+    const/4 v3, 0x0
+
+    :goto_loop
+    if-ge v3, v2, :cond_done
+
+    aget-object v4, v1, v3
+
+    sget-object v5, Lv25;->t:Lv25;
+
+    if-ne v4, v5, :cond_not_vpn
+
+    goto :cond_next
+
+    :cond_not_vpn
+    sget-object v5, Lv25;->n:Lv25;
+
+    if-ne v4, v5, :cond_not_ebpf
+
+    sget-object v5, Lu25;->n:Lu25;
+
+    if-ne p0, v5, :cond_add
+
+    sget-object v5, Lu25;->o:Lu25;
+
+    if-ne p0, v5, :cond_next
+
+    goto :cond_add
+
+    :cond_not_ebpf
+    sget-object v5, Lu25;->p:Lu25;
+
+    if-ne p0, v5, :cond_add
+
+    sget-object v5, Lv25;->l:Lv25;
+
+    if-eq v4, v5, :cond_add
+
+    sget-object v5, Lv25;->p:Lv25;
+
+    if-ne v4, v5, :cond_next
+
+    :cond_add
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    :cond_next
+    add-int/lit8 v3, v3, 0x1
+
+    goto :goto_loop
+
+    :cond_done
     return-object v0
 .end method
 

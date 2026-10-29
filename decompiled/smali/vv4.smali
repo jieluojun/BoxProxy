@@ -389,10 +389,12 @@
     const/4 p0, 0x5
 
     .line 23
+    if-eq v0, p0, :goto_0
+
+    const/4 p0, 0x6
+
     if-ne v0, p0, :cond_0
 
-    .line 24
-    .line 25
     goto :goto_0
 
     .line 26
@@ -610,11 +612,13 @@
     const/4 p0, 0x5
 
     .line 23
+    if-eq v0, p0, :goto_0
+
+    const/4 p0, 0x6
+
     if-ne v0, p0, :cond_0
 
-    .line 24
-    .line 25
-    goto :goto_0
+    goto :cond_4
 
     .line 26
     :cond_0

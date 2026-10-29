@@ -1533,6 +1533,7 @@
     <public type="string" name="proxy_mode_title" id="0x7f0f02cf" />
     <public type="string" name="proxy_mode_tproxy" id="0x7f0f02d0" />
     <public type="string" name="proxy_mode_tun" id="0x7f0f02d1" />
+    <public type="string" name="proxy_mode_vpn" id="0x7f0f04a8" />
     <public type="string" name="proxy_other_section_dns_hijack" id="0x7f0f02d2" />
     <public type="string" name="proxy_other_section_proxy_behavior" id="0x7f0f02d3" />
     <public type="string" name="proxy_other_section_resource_limits" id="0x7f0f02d4" />

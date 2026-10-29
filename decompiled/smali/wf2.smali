@@ -401,16 +401,20 @@
     .line 157
     const/4 v3, 0x5
 
-    .line 158
+    if-eq v1, v3, :cond_enhance
+
+    const/4 v3, 0x6
+
     if-ne v1, v3, :cond_a
 
-    .line 159
-    .line 160
+    # no-root VPN tunnel mode (added by the BoxProxy VPN patch)
+    const v1, 0x7f0f04a8
+
+    goto :goto_3
+
+    :cond_enhance
     const v1, 0x7f0f02cb
 
-    .line 161
-    .line 162
-    .line 163
     goto :goto_3
 
     .line 164
