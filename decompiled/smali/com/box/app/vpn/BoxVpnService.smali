@@ -484,6 +484,18 @@
     invoke-direct {v6, v5}, Ljava/lang/ProcessBuilder;-><init>([Ljava/lang/String;)V
 
     invoke-virtual {v6, v3}, Ljava/lang/ProcessBuilder;->directory(Ljava/io/File;)Ljava/lang/ProcessBuilder;
+    invoke-static {}, Llb0;->k()Lab0;
+    move-result-object v7
+    iget-object v7, v7, Lab0;->c:Ljava/io/File;
+    new-instance v8, Ljava/io/File;
+    const-string v0, "box.pid"
+    invoke-direct {v8, v7, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-virtual {v8}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    move-result-object v7
+    const-string v0, "BOXTUN_PIDFILE"
+    invoke-virtual {v6}, Ljava/lang/ProcessBuilder;->environment()Ljava/util/Map;
+    move-result-object v8
+    invoke-interface {v8, v0, v7}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     const/4 v7, 0x1
 

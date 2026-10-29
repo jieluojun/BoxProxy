@@ -128,6 +128,21 @@ int main(int argc, char **argv) {
     /* dup2 得到的描述符不带 CLOEXEC；若 fd 本身就是 3，则需手动清除 */
     if (fcntl(TUN_FD, F_SETFD, 0) < 0) die(11, "fcntl");
 
+    /* 写入 PID 文件（供应用的运行状态检查读取）。exec 不改变 PID，因此这里写入的即内核 PID。
+     * 写入失败不影响启动。 */
+    {
+        const char *pidfile = getenv("BOXTUN_PIDFILE");
+        if (pidfile != NULL && pidfile[0] != '\0') {
+            char buf[32];
+            int len = snprintf(buf, sizeof buf, "%ld\n", (long)getpid());
+            int pfd = open(pidfile, O_WRONLY | O_CREAT | O_TRUNC | O_CLOEXEC, 0644);
+            if (pfd >= 0) {
+                if (len > 0) (void)!write(pfd, buf, (size_t)len);
+                close(pfd);
+            }
+        }
+    }
+
     execv(argv[2], argv + 2);
     die(127, "execv core");
     return 127;
