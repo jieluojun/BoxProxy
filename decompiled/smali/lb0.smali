@@ -4771,6 +4771,20 @@
 .method public final r(ZLd81;)Ljava/lang/Object;
     .locals 34
 
+    # BoxProxy patch: 无 Root / VPN 模式下，启动由 VPN 服务接管，不再执行 boxctl boot 脚本
+    sget-object v0, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
+    if-eqz v0, :boxproxy_r_not_vpn
+    invoke-static {v0}, Lcom/box/app/vpn/VpnMode;->isVpnActive(Landroid/content/Context;)Z
+    move-result v1
+    if-eqz v1, :boxproxy_r_not_vpn
+    invoke-static {v0}, Lcom/box/app/vpn/VpnMode;->requestStart(Landroid/content/Context;)V
+    new-instance v1, Lza0;
+    sget-object v2, Ld07;->a:Ld07;
+    const/4 v3, 0x0
+    invoke-direct {v1, v3, v2, v3}, Lza0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
+    return-object v1
+    :boxproxy_r_not_vpn
+
     .line 1
     move-object/from16 v0, p0
 
