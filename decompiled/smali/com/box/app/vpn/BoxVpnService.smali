@@ -66,7 +66,9 @@
 .end method
 
 .method private shutdown()V
-    .locals 2
+    .locals 3
+    const-string v2, "service shutdown() called"
+    invoke-static {v2}, Lcom/box/app/vpn/VpnMode;->trace(Ljava/lang/String;)V
 
     const/4 v0, 0x1
 
@@ -790,7 +792,9 @@
 .end method
 
 .method public onRevoke()V
-    .locals 0
+    .locals 1
+    const-string v0, "onRevoke: system revoked VPN permission"
+    invoke-static {v0}, Lcom/box/app/vpn/VpnMode;->trace(Ljava/lang/String;)V
 
     # 用户在系统设置中撤销了 VPN 授权
     invoke-direct {p0}, Lcom/box/app/vpn/BoxVpnService;->shutdown()V
@@ -799,7 +803,9 @@
 .end method
 
 .method public onDestroy()V
-    .locals 0
+    .locals 1
+    const-string v0, "onDestroy: VPN service destroyed"
+    invoke-static {v0}, Lcom/box/app/vpn/VpnMode;->trace(Ljava/lang/String;)V
 
     invoke-direct {p0}, Lcom/box/app/vpn/BoxVpnService;->shutdown()V
 

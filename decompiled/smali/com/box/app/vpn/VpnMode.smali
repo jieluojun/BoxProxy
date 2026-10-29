@@ -369,6 +369,10 @@
     const-string v3, "mihomo"
     invoke-direct {v2, v1, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
     invoke-static {v2}, Lcom/box/app/vpn/VpnMode;->listOne(Ljava/io/File;)V
+    new-instance v2, Ljava/io/File;
+    const-string v3, "run"
+    invoke-direct {v2, v1, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-static {v2}, Lcom/box/app/vpn/VpnMode;->listOne(Ljava/io/File;)V
     :try_end
     .catch Ljava/lang/Throwable; {:try_start .. :try_end} :done
     :done
