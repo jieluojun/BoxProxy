@@ -373,6 +373,11 @@
     const-string v3, "run"
     invoke-direct {v2, v1, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
     invoke-static {v2}, Lcom/box/app/vpn/VpnMode;->listOne(Ljava/io/File;)V
+    new-instance v3, Ljava/io/File;
+    const-string v0, "state"
+    invoke-direct {v3, v2, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-static {v3}, Lcom/box/app/vpn/VpnMode;->listOne(Ljava/io/File;)V
+    invoke-static {v3}, Lcom/box/app/vpn/VpnMode;->dumpStateFiles(Ljava/io/File;)V
     :try_end
     .catch Ljava/lang/Throwable; {:try_start .. :try_end} :done
     :done
@@ -396,3 +401,83 @@
     return-void
 .end method
 
+.method private static dumpStateFiles(Ljava/io/File;)V
+    .locals 10
+
+    invoke-virtual {p0}, Ljava/io/File;->listFiles()[Ljava/io/File;
+
+    move-result-object v0
+
+    if-nez v0, :has_files
+
+    return-void
+
+    :has_files
+    array-length v1, v0
+
+    const/4 v2, 0x0
+
+    :loop
+    if-ge v2, v1, :end
+
+    aget-object v3, v0, v2
+
+    add-int/lit8 v2, v2, 0x1
+
+    invoke-virtual {v3}, Ljava/io/File;->isFile()Z
+
+    move-result v4
+
+    if-eqz v4, :loop
+
+    :try_start_0
+    new-instance v4, Ljava/io/FileInputStream;
+
+    invoke-direct {v4, v3}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+
+    const/16 v5, 0x200
+
+    new-array v5, v5, [B
+
+    invoke-virtual {v4, v5}, Ljava/io/FileInputStream;->read([B)I
+
+    move-result v6
+
+    invoke-virtual {v4}, Ljava/io/FileInputStream;->close()V
+
+    const/4 v4, 0x0
+
+    new-instance v7, Ljava/lang/String;
+
+    invoke-direct {v7, v5, v4, v6}, Ljava/lang/String;-><init>([BII)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :skip
+
+    invoke-virtual {v3}, Ljava/io/File;->getName()Ljava/lang/String;
+
+    move-result-object v8
+
+    const-string v9, "file "
+
+    invoke-virtual {v9, v8}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v8
+
+    const-string v9, ": "
+
+    invoke-virtual {v8, v9}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v8, v7}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-static {v8}, Lcom/box/app/vpn/VpnMode;->trace(Ljava/lang/String;)V
+
+    :skip
+    goto :loop
+
+    :end
+    return-void
+.end method
