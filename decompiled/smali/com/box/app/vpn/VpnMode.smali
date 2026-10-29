@@ -262,8 +262,8 @@
 .end method
 
 .method public static intercept(Ljava/lang/String;)Ljava/lang/String;
-    .locals 3
-    # BoxProxy 诊断：记录每一次进入 intercept 的动作字符串（null 也会记录）
+    .locals 4
+    # BoxProxy 诊断：记录每一次进入 intercept 的动作字符串
     invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
     move-result-object v1
     const-string v2, "intercept action="
@@ -273,77 +273,62 @@
 
     # 返回 null 表示不拦截，交给原始 boxctl 逻辑
     sget-object v0, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
-
     if-nez v0, :has_ctx
-
     const/4 v0, 0x0
-
     return-object v0
-
     :has_ctx
     invoke-static {v0}, Lcom/box/app/vpn/VpnMode;->isVpnActive(Landroid/content/Context;)Z
-
     move-result v1
-
     if-nez v1, :active
-
     const/4 v1, 0x0
-
     return-object v1
 
     :active
+    # start / up：启动 VPN（先经系统 VPN 授权页）
     const-string v1, "start"
-
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
     move-result v2
-
+    if-nez v2, :do_start
+    const-string v1, "up"
+    invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v2
     if-eqz v2, :not_start
-
+    :do_start
     invoke-static {v0}, Lcom/box/app/vpn/VpnMode;->requestStart(Landroid/content/Context;)V
-
     const-string v0, "true"
-
     return-object v0
 
     :not_start
+    # stop / down：停止 VPN 服务
     const-string v1, "stop"
-
     invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
     move-result v2
-
+    if-nez v2, :do_stop
+    const-string v1, "down"
+    invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v2
     if-eqz v2, :not_stop
-
+    :do_stop
     const-string v1, "com.box.app.vpn.action.STOP"
-
     invoke-static {v0, v1}, Lcom/box/app/vpn/VpnMode;->sendAction(Landroid/content/Context;Ljava/lang/String;)V
-
     const-string v0, "true"
-
     return-object v0
 
     :not_stop
-    const-string v1, "restart"
-
-    invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-eqz v2, :unknown
-
     # restart：服务端会在旧会话结束后按挂起的 START 重新拉起
+    const-string v1, "restart"
+    invoke-virtual {v1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v2
+    if-eqz v2, :other
     const-string v1, "com.box.app.vpn.action.RESTART"
-
     invoke-static {v0, v1}, Lcom/box/app/vpn/VpnMode;->sendAction(Landroid/content/Context;Ljava/lang/String;)V
-
     const-string v0, "true"
-
     return-object v0
 
-    :unknown
-    const/4 v0, 0x0
-
+    :other
+    # 其它 boxctl 动作（monitor / off / status 等）：VPN 模式下 boxctl 不可执行（外部存储 noexec），
+    # 统一视为成功的 no-op，避免报 Permission denied。
+    const-string v0, "true"
     return-object v0
 .end method
 
