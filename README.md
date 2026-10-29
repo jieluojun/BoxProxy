@@ -18,6 +18,8 @@ bash scripts/build.sh          # 需要 JDK 17，产物在 dist/
 `VPN` 显示在运行模式列表的最上方（TUN 之上），是本仓库新增的无 root 方案；
 **没有 root 时列表里只会出现 VPN 这一项**，其余模式全部隐藏。
 代理内核不会被内置进 APK，仍然使用用户自己导入的二进制。
+隧道只在用户显式操作（首页开关 / 选中 VPN 运行模式）后建立，**打开应用本身不会
+建立或抢占任何 VPN**，也不会影响其它代理软件的连接。
 
 完整设计、原理、`targetSdkVersion` 降级原因、改动清单与排查方法见
 [`docs/no-root-vpn-mode.md`](docs/no-root-vpn-mode.md)。

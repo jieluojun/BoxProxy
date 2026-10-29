@@ -201,9 +201,6 @@
     .line 11
     sput-object v0, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
 
-    # no-root VPN run mode: restore the tunnel for a persisted "vpn" run mode
-    invoke-static {}, Lcom/box/app/vpn/VpnMode;->syncAsync()V
-
     .line 12
     .line 13
     new-instance v0, Ltm;

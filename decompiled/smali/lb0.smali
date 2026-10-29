@@ -4760,6 +4760,29 @@
 .method public final r(ZLd81;)Ljava/lang/Object;
     .locals 34
 
+    # no-root VPN run mode: the home switch starts/stops BoxVpnService instead of
+    # asking boxctl (which needs root) to bring the core up.
+    invoke-static {}, Lcom/box/app/vpn/VpnMode;->vpnContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_vpn_not_ours
+
+    if-eqz p1, :cond_vpn_stop
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnMode;->start(Landroid/content/Context;)V
+
+    goto :cond_vpn_unit
+
+    :cond_vpn_stop
+    invoke-static {v0}, Lcom/box/app/vpn/VpnMode;->stop(Landroid/content/Context;)V
+
+    :cond_vpn_unit
+    sget-object v0, Ld07;->a:Ld07;
+
+    return-object v0
+
+    :cond_vpn_not_ours
     .line 1
     move-object/from16 v0, p0
 
