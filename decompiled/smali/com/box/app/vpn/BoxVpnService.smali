@@ -625,8 +625,17 @@
     const-string v2, "mihomo started on TUN fd 3"
 
     invoke-static {v1, v2}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;)I
+    const-string v2, "launch ok: mihomo started on TUN fd 3"
+    invoke-static {v2}, Lcom/box/app/vpn/VpnMode;->trace(Ljava/lang/String;)V
 
     invoke-virtual {v0}, Ljava/lang/Process;->waitFor()I
+    move-result v1
+    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    move-result-object v1
+    const-string v2, "mihomo exited code="
+    invoke-virtual {v2, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v1
+    invoke-static {v1}, Lcom/box/app/vpn/VpnMode;->trace(Ljava/lang/String;)V
 
     const-string v1, "BoxProxyVPN"
 
