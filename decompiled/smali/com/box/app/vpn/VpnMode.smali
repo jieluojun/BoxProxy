@@ -349,3 +349,46 @@
     :catch_all
     return-void
 .end method
+
+.method public static dumpDir(Landroid/content/Context;)V
+    .locals 4
+    :try_start
+    const/4 v0, 0x0
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
+    move-result-object v0
+    if-eqz v0, :done
+    new-instance v1, Ljava/io/File;
+    const-string v2, "box"
+    invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-static {v1}, Lcom/box/app/vpn/VpnMode;->listOne(Ljava/io/File;)V
+    new-instance v2, Ljava/io/File;
+    const-string v3, "bin"
+    invoke-direct {v2, v1, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-static {v2}, Lcom/box/app/vpn/VpnMode;->listOne(Ljava/io/File;)V
+    new-instance v2, Ljava/io/File;
+    const-string v3, "mihomo"
+    invoke-direct {v2, v1, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-static {v2}, Lcom/box/app/vpn/VpnMode;->listOne(Ljava/io/File;)V
+    :try_end
+    .catch Ljava/lang/Throwable; {:try_start .. :try_end} :done
+    :done
+    return-void
+.end method
+
+.method private static listOne(Ljava/io/File;)V
+    .locals 3
+    invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    move-result-object v0
+    invoke-virtual {p0}, Ljava/io/File;->list()[Ljava/lang/String;
+    move-result-object v1
+    invoke-static {v1}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v1
+    const-string v2, "list "
+    invoke-virtual {v2, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v0
+    invoke-virtual {v0, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v0
+    invoke-static {v0}, Lcom/box/app/vpn/VpnMode;->trace(Ljava/lang/String;)V
+    return-void
+.end method
+

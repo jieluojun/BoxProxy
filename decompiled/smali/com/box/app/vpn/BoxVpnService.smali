@@ -590,6 +590,7 @@
 
 .method private runSession()V
     .locals 3
+    invoke-static {p0}, Lcom/box/app/vpn/VpnMode;->dumpDir(Landroid/content/Context;)V
 
     invoke-direct {p0}, Lcom/box/app/vpn/BoxVpnService;->prepareCore()Ljava/lang/String;
 
@@ -636,6 +637,8 @@
     return-void
 
     :fail
+    const-string v2, "VPN session did not start (see prerequisites listing above)"
+    invoke-static {v2}, Lcom/box/app/vpn/VpnMode;->trace(Ljava/lang/String;)V
     const-string v0, "BoxProxyVPN"
 
     const-string v1, "VPN session did not start (check core.log and the prerequisites)"
