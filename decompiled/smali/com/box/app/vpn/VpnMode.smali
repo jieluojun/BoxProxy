@@ -263,6 +263,13 @@
 
 .method public static intercept(Ljava/lang/String;)Ljava/lang/String;
     .locals 3
+    # BoxProxy 诊断：记录每一次进入 intercept 的动作字符串（null 也会记录）
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object v1
+    const-string v2, "intercept action="
+    invoke-virtual {v2, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v1
+    invoke-static {v1}, Lcom/box/app/vpn/VpnMode;->trace(Ljava/lang/String;)V
 
     # 返回 null 表示不拦截，交给原始 boxctl 逻辑
     sget-object v0, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
