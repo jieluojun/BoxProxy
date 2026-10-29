@@ -183,6 +183,9 @@
     .line 1
     invoke-super {p0}, Landroid/app/Application;->onCreate()V
 
+    # BoxProxy 诊断补丁：安装崩溃日志记录器（写 last_crash.txt）
+    invoke-static {p0}, Lcom/box/app/CrashLogger;->install(Landroid/content/Context;)V
+
     .line 2
     .line 3
     .line 4
