@@ -60,13 +60,9 @@
 
     invoke-direct {v2, v1}, Ljava/io/FileWriter;-><init>(Ljava/io/File;)V
 
-    move-result-object v2
-
     new-instance v3, Ljava/io/PrintWriter;
 
     invoke-direct {v3, v2}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
-
-    move-result-object v3
 
     invoke-virtual {v3, p1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
@@ -86,13 +82,9 @@
 
     invoke-direct {v0}, Ljava/io/StringWriter;-><init>()V
 
-    move-result-object v0
-
     new-instance v1, Ljava/io/PrintWriter;
 
     invoke-direct {v1, v0}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
-
-    move-result-object v1
 
     invoke-virtual {p2, v1}, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintWriter;)V
 
