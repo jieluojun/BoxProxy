@@ -80,35 +80,34 @@
 
 .method public static isVpnActive(Landroid/content/Context;)Z
     .locals 3
-
     # 无 Root：永远处于 VPN 模式（Mishka 行为）
     invoke-static {}, Lcom/box/app/vpn/VpnMode;->isRootAvailable()Z
-
     move-result v0
-
     if-nez v0, :with_root
-
     const/4 v0, 0x1
-
     return v0
-
     :with_root
-    const-string v0, "boxproxy_vpn"
-
-    const/4 v1, 0x0
-
-    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
+    # 有 Root：以已保存的运行模式为准（lb0.g().b 经 Lr25;->i 解析），
+    # 不再只依赖 onModeSelected 写入的偏好标志（该标志在未经 UI 切换时不会写入）
+    invoke-static {}, Llb0;->g()Lya0;
     move-result-object v0
-
+    iget-object v0, v0, Lya0;->b:Ljava/lang/String;
+    if-eqz v0, :mode_fallback
+    invoke-static {v0}, Lr25;->i(Ljava/lang/String;)Lv25;
+    move-result-object v0
+    sget-object v1, Lv25;->t:Lv25;
+    if-ne v0, v1, :mode_fallback
+    const/4 v0, 0x1
+    return v0
+    :mode_fallback
+    const-string v0, "boxproxy_vpn"
+    const/4 v1, 0x0
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    move-result-object v0
     const-string v1, "vpn_selected"
-
     const/4 v2, 0x0
-
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
     move-result v0
-
     return v0
 .end method
 
