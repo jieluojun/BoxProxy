@@ -6,6 +6,16 @@
 # static fields
 .field public static volatile j:Landroid/content/Context;
 
+.method static constructor <clinit>()V
+    .locals 0
+
+    # Debugging aid: install the crash dumper while the Application class loads,
+    # i.e. before <init> and onCreate run.
+    invoke-static {}, Lcom/box/app/vpn/CrashHandler;->install()V
+
+    return-void
+.end method
+
 
 # direct methods
 .method public constructor <init>()V
@@ -179,9 +189,6 @@
 # virtual methods
 .method public final onCreate()V
     .locals 6
-
-    # Debugging aid: dump uncaught exceptions to <externalFilesDir>/box_crash.txt
-    invoke-static {p0}, Lcom/box/app/vpn/CrashHandler;->install(Landroid/content/Context;)V
 
     .line 1
     invoke-super {p0}, Landroid/app/Application;->onCreate()V

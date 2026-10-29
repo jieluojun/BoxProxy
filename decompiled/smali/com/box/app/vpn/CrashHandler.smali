@@ -3,20 +3,18 @@
 
 .implements Ljava/lang/Thread$UncaughtExceptionHandler;
 
-# Debugging aid: BoxProxy VPN work. Writes the uncaught exception stack to
-# <externalFilesDir>/box_crash.txt before handing back to the previous handler,
-# so a crash can be read off the device without adb. Not part of any feature.
-
-.field public static ctx:Landroid/content/Context;
+# Debugging aid: dumps the uncaught exception stack into the app's own internal
+# files dir (/data/data/com.boxproxy.box/files) before handing back to the
+# previous handler. Installed from AppApplication.<clinit> so it is active for
+# anything that runs after the Application class is loaded, including its
+# constructor and onCreate. Remove once the launch crash is diagnosed.
 
 .field private static previous:Ljava/lang/Thread$UncaughtExceptionHandler;
 
 
 # direct methods
-.method public static install(Landroid/content/Context;)V
-    .locals 3
-
-    sput-object p0, Lcom/box/app/vpn/CrashHandler;->ctx:Landroid/content/Context;
+.method public static install()V
+    .locals 2
 
     invoke-static {}, Ljava/lang/Thread;->getDefaultUncaughtExceptionHandler()Ljava/lang/Thread$UncaughtExceptionHandler;
 
@@ -41,51 +39,82 @@
     return-void
 .end method
 
+.method private static write(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 5
 
-# virtual methods
-.method public uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
-    .locals 7
+    new-instance v0, Ljava/io/File;
 
-    sget-object v0, Lcom/box/app/vpn/CrashHandler;->ctx:Landroid/content/Context;
+    const-string v1, "/data/data/com.boxproxy.box/files"
 
-    if-nez v0, :cond_handoff
+    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    sget-object v1, Lcom/box/app/vpn/CrashHandler;->ctx:Landroid/content/Context;
+    invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
-    invoke-virtual {v1}, Landroid/content/Context;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
+    pop
 
-    move-result-object v1
+    new-instance v1, Ljava/io/File;
 
-    new-instance v2, Ljava/io/File;
+    invoke-direct {v1, v0, p0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    const-string v3, "box_crash.txt"
+    new-instance v2, Ljava/io/FileWriter;
 
-    invoke-direct {v2, v1, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v2, v1}, Ljava/io/FileWriter;-><init>(Ljava/io/File;)V
 
-    new-instance v3, Ljava/io/FileWriter;
+    move-result-object v2
 
-    invoke-direct {v3, v2}, Ljava/io/FileWriter;-><init>(Ljava/io/File;)V
+    new-instance v3, Ljava/io/PrintWriter;
+
+    invoke-direct {v3, v2}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
 
     move-result-object v3
 
-    new-instance v4, Ljava/io/PrintWriter;
+    invoke-virtual {v3, p1}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    invoke-direct {v4, v3}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
+    invoke-virtual {v3}, Ljava/io/PrintWriter;->flush()V
 
-    move-result-object v4
+    invoke-virtual {v2}, Ljava/io/FileWriter;->close()V
 
-    invoke-virtual {p2, v4}, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintWriter;)V
+    return-void
+.end method
 
-    invoke-virtual {v4}, Ljava/io/PrintWriter;->flush()V
 
-    invoke-virtual {v3}, Ljava/io/FileWriter;->close()V
+# virtual methods
+.method public uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
+    .locals 5
 
-    :cond_handoff
-    sget-object v5, Lcom/box/app/vpn/CrashHandler;->previous:Ljava/lang/Thread$UncaughtExceptionHandler;
+    new-instance v0, Ljava/io/StringWriter;
 
-    if-nez v5, :cond_done
+    invoke-direct {v0}, Ljava/io/StringWriter;-><init>()V
 
-    invoke-interface {v5, p1, p2}, Ljava/lang/Thread$UncaughtExceptionHandler;->uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
+    move-result-object v0
+
+    new-instance v1, Ljava/io/PrintWriter;
+
+    invoke-direct {v1, v0}, Ljava/io/PrintWriter;-><init>(Ljava/io/Writer;)V
+
+    move-result-object v1
+
+    invoke-virtual {p2, v1}, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintWriter;)V
+
+    invoke-virtual {v0}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "box_crash.txt"
+
+    invoke-static {v1, v0}, Lcom/box/app/vpn/CrashHandler;->write(Ljava/lang/String;Ljava/lang/String;)V
+
+    const-string v2, "box_started.txt"
+
+    const-string v3, "handler ran"
+
+    invoke-static {v2, v3}, Lcom/box/app/vpn/CrashHandler;->write(Ljava/lang/String;Ljava/lang/String;)V
+
+    sget-object v4, Lcom/box/app/vpn/CrashHandler;->previous:Ljava/lang/Thread$UncaughtExceptionHandler;
+
+    if-nez v4, :cond_done
+
+    invoke-interface {v4, p1, p2}, Ljava/lang/Thread$UncaughtExceptionHandler;->uncaughtException(Ljava/lang/Thread;Ljava/lang/Throwable;)V
 
     :cond_done
     return-void
