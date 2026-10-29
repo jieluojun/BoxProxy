@@ -234,12 +234,8 @@
     return-object v1
 
     :has_ext
-    new-instance v1, Ljava/io/File;
-
-    const-string v2, "box/mihomo/config.yaml"
-
-    invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
+    invoke-static {v0}, Lcom/box/app/vpn/BoxVpnService;->selectConfig(Ljava/io/File;)Ljava/io/File;
+    move-result-object v1
     invoke-virtual {v1}, Ljava/io/File;->isFile()Z
 
     move-result v3
@@ -501,13 +497,14 @@
 
     invoke-virtual {v6, v7}, Ljava/lang/ProcessBuilder;->redirectErrorStream(Z)Ljava/lang/ProcessBuilder;
 
-    new-instance v7, Ljava/io/File;
+    invoke-static {}, Llb0;->k()Lab0;
+    move-result-object v7
+    iget-object v7, v7, Lab0;->c:Ljava/io/File;
+    new-instance v8, Ljava/io/File;
+    const-string v0, "mihomo.log"
+    invoke-direct {v8, v7, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    const-string v8, "core.log"
-
-    invoke-direct {v7, v3, v8}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    invoke-static {v7}, Ljava/lang/ProcessBuilder$Redirect;->appendTo(Ljava/io/File;)Ljava/lang/ProcessBuilder$Redirect;
+    invoke-static {v8}, Ljava/lang/ProcessBuilder$Redirect;->appendTo(Ljava/io/File;)Ljava/lang/ProcessBuilder$Redirect;
 
     move-result-object v7
 
@@ -824,4 +821,92 @@
     invoke-super {p0}, Landroid/net/VpnService;->onDestroy()V
 
     return-void
+.end method
+
+.method private static selectConfig(Ljava/io/File;)Ljava/io/File;
+    .locals 4
+
+    # 用户选中的配置文件：box/mihomo/<config_name>，config_name 即运行配置 ya0.h
+    invoke-static {}, Llb0;->g()Lya0;
+
+    move-result-object v1
+
+    iget-object v1, v1, Lya0;->h:Ljava/lang/String;
+
+    if-eqz v1, :default
+
+    invoke-virtual {v1}, Ljava/lang/String;->isEmpty()Z
+
+    move-result v2
+
+    if-nez v2, :default
+
+    new-instance v2, Ljava/io/File;
+
+    const-string v3, "box"
+
+    invoke-direct {v2, p0, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    new-instance v3, Ljava/io/File;
+
+    const-string v0, "mihomo"
+
+    invoke-direct {v3, v2, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    new-instance v2, Ljava/io/File;
+
+    invoke-direct {v2, v3, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Ljava/io/File;->isFile()Z
+
+    move-result v0
+
+    if-eqz v0, :default
+
+    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "config selected: "
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnMode;->trace(Ljava/lang/String;)V
+
+    return-object v2
+
+    :default
+    new-instance v2, Ljava/io/File;
+
+    const-string v3, "box"
+
+    invoke-direct {v2, p0, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    new-instance v3, Ljava/io/File;
+
+    const-string v0, "mihomo"
+
+    invoke-direct {v3, v2, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    new-instance v2, Ljava/io/File;
+
+    const-string v0, "config.yaml"
+
+    invoke-direct {v2, v3, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "config selected (fallback): "
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnMode;->trace(Ljava/lang/String;)V
+
+    return-object v2
 .end method
