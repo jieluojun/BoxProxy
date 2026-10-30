@@ -5230,6 +5230,28 @@
 .method public final u(Ld81;)Ljava/lang/Object;
     .locals 10
 
+    # VPN mode has no boxctl monitor / Clash API history service (root only):
+    # nothing to apply, report success instead of a root-shell error.
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_vpn_root
+
+    new-instance p0, Lza0;
+
+    sget-object p1, Ld07;->a:Ld07;
+
+    const/4 v0, 0x2
+
+    const/4 v1, 0x0
+
+    invoke-direct {p0, v0, p1, v1}, Lza0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
+
+    return-object p0
+
+    :cond_vpn_root
+
     .line 1
     instance-of v0, p1, Ljb0;
 
