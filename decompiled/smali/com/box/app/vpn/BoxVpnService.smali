@@ -657,7 +657,7 @@
 
     if-eqz v2, :cond_died
 
-    const/16 v2, 0xc
+    const/16 v2, 0x6
 
     if-ge v1, v2, :cond_alive
 

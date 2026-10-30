@@ -67,7 +67,7 @@ rewrite_config() {
       _key=${_line%%:*}
       _key=${_key%% *}
       case "$_key" in
-        tun|routing-mark|find-process-mode|interface-name|redir-port|tproxy-port|iptables|log-level)
+        tun|routing-mark|find-process-mode|interface-name|redir-port|tproxy-port|iptables)
           _skip=1 ;;
         *)
           _skip=0
@@ -78,7 +78,6 @@ rewrite_config() {
       esac
     done < "$1"
     printf '\n# --- added by BoxProxy VPN mode ---\n'
-    printf 'log-level: info\n'
     printf 'find-process-mode: off\n'
     printf 'tun:\n'
     printf '  enable: true\n'
@@ -97,6 +96,7 @@ rewrite_config() {
       printf '  inet6-address:\n'
       printf '    - fdfe:dcba:9876::1/126\n'
     fi
+    printf '# box-vpn-cfg v3 ipv6=%s src=%s\n' "$IPV6" "$1"
   } > "$2"
 }
 
@@ -110,7 +110,7 @@ case "$cmd" in
     : > "$rundir/mihomo.log" 2>/dev/null
     # stray shell diagnostics go to runs.log; stdout carries only the result
     exec 2>>"$RUNS"
-    note() { echo "[$(date '+%F %T' 2>/dev/null)] [vpn] $*" >> "$RUNS"; }
+    note() { echo "[$(date '+%F %T.%N' 2>/dev/null)] [vpn] $*" >> "$RUNS"; }
     note "prepare uid=$(id -u 2>/dev/null)"
     mkdir -p "$work/tmp" || { echo "ERR:cannot create $work"; exit 1; }
     kill_core "$work" "$pf"
@@ -119,8 +119,8 @@ case "$cmd" in
     mkdir -p "$home" 2>/dev/null
     need=1
     if [ -f "$work/core" ] && [ ! "$src" -nt "$work/core" ]; then
-      s1=$(wc -c < "$src")
-      s2=$(wc -c < "$work/core")
+      s1=$(stat -c %s "$src" 2>/dev/null) || s1=$(wc -c < "$src")
+      s2=$(stat -c %s "$work/core" 2>/dev/null) || s2=$(wc -c < "$work/core")
       [ "$(echo $s1)" = "$(echo $s2)" ] && need=0
     fi
     if [ "$need" = 1 ]; then
@@ -130,7 +130,15 @@ case "$cmd" in
         || { echo "ERR:cannot copy core"; exit 1; }
       note "core copied"
     fi
-    rewrite_config "$cfg" "$work/config.yaml" || { echo "ERR:cannot write config"; exit 1; }
+    _last=
+    [ -f "$work/config.yaml" ] && [ ! "$cfg" -nt "$work/config.yaml" ] && _last=$(tail -n 1 "$work/config.yaml" 2>/dev/null)
+    case "$_last" in
+      "# box-vpn-cfg v3 ipv6=0 src=$cfg") IPV6=0; note "config unchanged, reusing" ;;
+      "# box-vpn-cfg v3 ipv6=1 src=$cfg") IPV6=1; note "config unchanged, reusing" ;;
+      *)
+        rewrite_config "$cfg" "$work/config.yaml" || { echo "ERR:cannot write config"; exit 1; }
+        note "config rewritten" ;;
+    esac
     note "prepare ok: core=$src cfg=$cfg ipv6=$IPV6 copied=$need"
     echo "OK ipv6=$IPV6"
     ;;
@@ -138,7 +146,7 @@ case "$cmd" in
     home=$1; work=$2; pf=$3
     rundir=${pf%/*}
     RUNS=$rundir/runs.log
-    note() { echo "[$(date '+%F %T' 2>/dev/null)] [vpn] $*" >> "$RUNS"; }
+    note() { echo "[$(date '+%F %T.%N' 2>/dev/null)] [vpn] $*" >> "$RUNS"; }
     note "run pid=$$ home=$home core.patched=$([ -f "$work/core.patched" ] && echo yes || echo no)"
     note "fds before exec (0 must be the TUN): $(ls -l /proc/$$/fd/0 2>&1)"
     echo $$ > "$work/core.pid"
