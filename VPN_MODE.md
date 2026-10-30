@@ -54,3 +54,22 @@
   2. TUN 描述符改由应用读取（`VpnPump`），对每条新连接调用 `ConnectivityManager.getConnectionOwnerUid()` 得到 UID，再把该包的源地址 `172.19.0.1` 改写成该应用对应的标签地址 `172.19.200.N`（重算 IP/TCP/UDP 校验和）后，经 SEQPACKET socketpair 交给内核；内核回包的目的地址再改回 `172.19.0.1`。
   3. 内核按 `SRC-IP-CIDR` 命中规则，所以可以指定任意策略组。
   限制：只处理 IPv4（使用该功能时 VPN 不再声明 IPv6）；分片包、ICMP 不打标记；`PROCESS-PATH*`、`rule-providers` 里的 PROCESS 规则不翻译；应用清单在启动时读取，新装应用需重启 VPN；数据多经过一次 Java 层，大流量下比不用 PROCESS 规则时耗电更多；配置里没有 PROCESS 规则时完全不启用这一层。排查：`runs.log` 里 `[pump]` 开头的行会列出翻译结果和前 40 条连接的 uid/标签。
+
+## 自动覆写（启动配置）在 VPN 模式下的生效方式
+
+root 模式下，打开「自动覆写」后由 `boxctl config sync` 把用户配置、覆写脚本（JS/YAML）、
+订阅与数据库里的设置合成 `<files>/box/run/state/config/startup-config`，再交给内核。
+VPN 模式以前直接使用原始配置文件，所以覆写不生效。
+
+现在每次 VPN 启动（`box-vpn.sh prepare`）时，如果「自动覆写」开着：
+
+1. 把 `boxctl` 拷到 `files/vpn/boxctl`（私有目录），用 `/system/bin/linker64` 以普通应用身份运行
+   `boxctl --db <box.db> config sync`（环境变量 `BOX_MODE=tun BOX_CORE=mihomo`，30 秒超时）；
+2. 成功且生成了 `startup-config` 时，用它作为 VPN 配置的来源（之后仍会强制写入 VPN 需要的 tun 段、
+   `find-process-mode: off`，并去掉 tun/redir/iptables 相关键）；
+3. 任何一步失败都回退到原始配置文件，并在 `runs.log` 里写明原因（`boxctl config sync rc=…`、
+   `auto overwrite failed…`），不影响 VPN 正常启动。
+
+启动配置页面的「重新生成」按钮在 VPN 模式下走同一条非 root 路径（`box-vpn.sh sync`）。
+
+注意：boxctl 无法在开发环境运行，该流程需在真机验证；关闭「自动覆写」时行为与以前一致。

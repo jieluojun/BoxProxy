@@ -552,6 +552,42 @@
 
     invoke-static {v0, v9}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
 
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->ensureBoxctl()V
+
+    iget-object v10, v3, Lab0;->f:Ljava/io/File;
+
+    invoke-static {v0, v10}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
+
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->syncDb()Ljava/io/File;
+
+    move-result-object v10
+
+    invoke-static {v0, v10}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
+
+    invoke-virtual {v3}, Lab0;->d()Ljava/io/File;
+
+    move-result-object v10
+
+    invoke-static {v0, v10}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
+
+    invoke-static {}, Llb0;->g()Lya0;
+
+    move-result-object v10
+
+    iget-boolean v10, v10, Lya0;->d:Z
+
+    if-eqz v10, :cond_sync_off
+
+    const-string v10, "1"
+
+    goto :goto_sync_done
+
+    :cond_sync_off
+    const-string v10, "0"
+
+    :goto_sync_done
+    invoke-virtual {v0, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
     invoke-static {v0}, Lcom/box/app/vpn/VpnShell;->output(Ljava/util/List;)Ljava/lang/String;
 
     move-result-object v0
