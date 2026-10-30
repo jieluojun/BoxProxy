@@ -6,6 +6,10 @@
 # static fields
 .field private static final NO:I = 0x2
 
+.field private static final RECHECK_NO:J = 0xea60L
+
+.field private static final RECHECK_YES:J = 0x3a98L
+
 .field private static final UNKNOWN:I = 0x0
 
 .field private static final YES:I = 0x1
@@ -27,7 +31,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 16
+    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,7 +40,7 @@
 .method static synthetic access$0(J)V
     .registers 2
 
-    .line 14
+    .line 18
     sput-wide p0, Lcom/box/app/vpn/VpnRoot;->last:J
 
     return-void
@@ -45,40 +49,40 @@
 .method static synthetic access$1(Z)V
     .registers 1
 
-    .line 13
+    .line 17
     sput-boolean p0, Lcom/box/app/vpn/VpnRoot;->running:Z
 
     return-void
 .end method
 
-.method static synthetic access$2()Z
-    .registers 1
+.method static synthetic access$2(J)I
+    .registers 2
 
-    .line 49
-    invoke-static {}, Lcom/box/app/vpn/VpnRoot;->check()Z
+    .line 98
+    invoke-static {p0, p1}, Lcom/box/app/vpn/VpnRoot;->check(J)I
 
-    move-result v0
+    move-result p0
 
-    return v0
+    return p0
 .end method
 
 .method static synthetic access$3(I)V
     .registers 1
 
-    .line 12
+    .line 16
     sput p0, Lcom/box/app/vpn/VpnRoot;->state:I
 
     return-void
 .end method
 
-.method private static check()Z
-    .registers 8
+.method private static check(J)I
+    .registers 9
 
-    const/4 v0, 0x0
+    const/4 v0, 0x2
 
     const/4 v1, 0x0
 
-    .line 52
+    .line 101
     :try_start_2
     new-instance v2, Ljava/lang/ProcessBuilder;
 
@@ -104,21 +108,21 @@
 
     move-result-object v2
     :try_end_1a
-    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_1a} :catch_6e
-    .catchall {:try_start_2 .. :try_end_1a} :catchall_66
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_1a} :catch_6a
+    .catchall {:try_start_2 .. :try_end_1a} :catchall_62
 
-    .line 53
+    .line 102
     :try_start_1a
     invoke-virtual {v2}, Ljava/lang/Process;->getInputStream()Ljava/io/InputStream;
 
     move-result-object v1
 
-    .line 54
+    .line 103
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 55
+    .line 104
     new-instance v5, Ljava/lang/Thread;
 
     new-instance v6, Lcom/box/app/vpn/VpnRoot$2;
@@ -127,139 +131,279 @@
 
     invoke-direct {v5, v6}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
-    .line 68
+    .line 117
     invoke-virtual {v5, v3}, Ljava/lang/Thread;->setDaemon(Z)V
 
-    .line 69
+    .line 118
     invoke-virtual {v5}, Ljava/lang/Thread;->start()V
 
-    const-wide/16 v6, 0x3a98
+    .line 119
+    invoke-static {v2, p0, p1}, Lcom/box/app/vpn/VpnRoot;->waitFor(Ljava/lang/Process;J)Z
 
-    .line 71
-    invoke-static {v2, v6, v7}, Lcom/box/app/vpn/VpnRoot;->waitFor(Ljava/lang/Process;J)Z
+    move-result p0
+    :try_end_37
+    .catch Ljava/lang/Throwable; {:try_start_1a .. :try_end_37} :catch_60
+    .catchall {:try_start_1a .. :try_end_37} :catchall_5e
 
-    move-result v1
+    if-nez p0, :cond_40
 
-    if-nez v1, :cond_44
+    if-eqz v2, :cond_3e
 
-    .line 73
-    invoke-virtual {v2}, Ljava/lang/Process;->destroy()V
-    :try_end_3e
-    .catch Ljava/lang/Throwable; {:try_start_1a .. :try_end_3e} :catch_64
-    .catchall {:try_start_1a .. :try_end_3e} :catchall_62
-
-    if-eqz v2, :cond_43
-
-    .line 82
+    .line 128
     invoke-virtual {v2}, Ljava/lang/Process;->destroy()V
 
-    :cond_43
-    return v0
+    :cond_3e
+    const/4 p0, 0x0
 
-    :cond_44
-    const-wide/16 v6, 0x1f4
+    return p0
 
-    .line 76
-    :try_start_46
-    invoke-virtual {v5, v6, v7}, Ljava/lang/Thread;->join(J)V
+    :cond_40
+    const-wide/16 p0, 0x1f4
 
-    .line 77
+    .line 122
+    :try_start_42
+    invoke-virtual {v5, p0, p1}, Ljava/lang/Thread;->join(J)V
+
+    .line 123
     invoke-virtual {v2}, Ljava/lang/Process;->exitValue()I
 
-    move-result v1
+    move-result p0
 
-    if-nez v1, :cond_5c
+    if-nez p0, :cond_58
 
     invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    const-string v4, "uid=0"
+    const-string p1, "uid=0"
 
-    invoke-virtual {v1, v4}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {p0, p1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v1
-    :try_end_59
-    .catch Ljava/lang/Throwable; {:try_start_46 .. :try_end_59} :catch_64
-    .catchall {:try_start_46 .. :try_end_59} :catchall_62
+    move-result p0
+    :try_end_55
+    .catch Ljava/lang/Throwable; {:try_start_42 .. :try_end_55} :catch_60
+    .catchall {:try_start_42 .. :try_end_55} :catchall_5e
 
-    if-eqz v1, :cond_5c
+    if-eqz p0, :cond_58
 
     const/4 v0, 0x1
 
-    :cond_5c
-    if-eqz v2, :cond_61
+    :cond_58
+    if-eqz v2, :cond_5d
 
-    .line 82
+    .line 128
     invoke-virtual {v2}, Ljava/lang/Process;->destroy()V
 
-    :cond_61
+    :cond_5d
     return v0
 
-    :catchall_62
-    move-exception v0
+    :catchall_5e
+    move-exception p0
 
-    goto :goto_68
+    goto :goto_64
 
-    :catch_64
+    :catch_60
     move-object v1, v2
 
-    goto :goto_6e
+    goto :goto_6a
 
-    :catchall_66
-    move-exception v0
+    :catchall_62
+    move-exception p0
 
     move-object v2, v1
 
-    :goto_68
-    if-eqz v2, :cond_6d
+    :goto_64
+    if-eqz v2, :cond_69
 
     invoke-virtual {v2}, Ljava/lang/Process;->destroy()V
 
-    .line 84
-    :cond_6d
-    throw v0
+    .line 130
+    :cond_69
+    throw p0
 
-    :catch_6e
-    :goto_6e
-    if-eqz v1, :cond_73
+    :catch_6a
+    :goto_6a
+    if-eqz v1, :cond_6f
 
-    .line 82
+    .line 128
     invoke-virtual {v1}, Ljava/lang/Process;->destroy()V
 
-    :cond_73
+    :cond_6f
+    return v0
+.end method
+
+.method public static noRoot()Z
+    .registers 8
+
+    .line 56
+    sget v0, Lcom/box/app/vpn/VpnRoot;->state:I
+
+    .line 57
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v1
+
+    sget-wide v3, Lcom/box/app/vpn/VpnRoot;->last:J
+
+    sub-long/2addr v1, v3
+
+    const/4 v3, 0x2
+
+    const/4 v4, 0x1
+
+    if-ne v0, v3, :cond_1a
+
+    const-wide v5, 0xea60
+
+    cmp-long v0, v1, v5
+
+    if-lez v0, :cond_19
+
+    .line 60
+    invoke-static {}, Lcom/box/app/vpn/VpnRoot;->probe()V
+
+    :cond_19
+    return v4
+
+    :cond_1a
+    const/4 v5, 0x0
+
+    if-ne v0, v4, :cond_4f
+
+    const-wide/16 v6, 0x3a98
+
+    cmp-long v0, v1, v6
+
+    if-lez v0, :cond_4f
+
+    .line 64
+    sget-boolean v0, Lcom/box/app/vpn/VpnRoot;->running:Z
+
+    if-nez v0, :cond_4f
+
+    .line 65
+    invoke-static {}, Lcom/box/app/vpn/VpnRoot;->onMainThread()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_31
+
+    .line 66
+    invoke-static {}, Lcom/box/app/vpn/VpnRoot;->probe()V
+
+    goto :goto_4f
+
+    .line 68
+    :cond_31
+    sput-boolean v4, Lcom/box/app/vpn/VpnRoot;->running:Z
+
+    const-wide/16 v0, 0xbb8
+
+    .line 70
+    :try_start_35
+    invoke-static {v0, v1}, Lcom/box/app/vpn/VpnRoot;->check(J)I
+
+    move-result v0
+
+    if-eqz v0, :cond_3d
+
+    .line 72
+    sput v0, Lcom/box/app/vpn/VpnRoot;->state:I
+
+    .line 74
+    :cond_3d
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v0
+
+    sput-wide v0, Lcom/box/app/vpn/VpnRoot;->last:J
+    :try_end_43
+    .catchall {:try_start_35 .. :try_end_43} :catchall_4b
+
+    .line 76
+    sput-boolean v5, Lcom/box/app/vpn/VpnRoot;->running:Z
+
+    .line 78
+    sget v0, Lcom/box/app/vpn/VpnRoot;->state:I
+
+    if-ne v0, v3, :cond_4a
+
+    return v4
+
+    :cond_4a
+    return v5
+
+    :catchall_4b
+    move-exception v0
+
+    .line 76
+    sput-boolean v5, Lcom/box/app/vpn/VpnRoot;->running:Z
+
+    .line 77
+    throw v0
+
+    :cond_4f
+    :goto_4f
+    return v5
+.end method
+
+.method private static onMainThread()Z
+    .registers 3
+
+    const/4 v0, 0x0
+
+    .line 91
+    :try_start_1
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/os/Looper;->getThread()Ljava/lang/Thread;
+
+    move-result-object v1
+
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
+
+    move-result-object v2
+    :try_end_d
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_d} :catch_11
+
+    if-ne v1, v2, :cond_10
+
+    const/4 v0, 0x1
+
+    :cond_10
+    return v0
+
+    :catch_11
     return v0
 .end method
 
 .method public static probe()V
     .registers 4
 
-    .line 21
+    .line 25
     sget-boolean v0, Lcom/box/app/vpn/VpnRoot;->running:Z
 
-    if-nez v0, :cond_25
+    if-eqz v0, :cond_5
 
-    sget v0, Lcom/box/app/vpn/VpnRoot;->state:I
+    return-void
 
-    const/4 v1, 0x1
+    :cond_5
+    const/4 v0, 0x1
 
-    if-ne v0, v1, :cond_a
+    .line 28
+    sput-boolean v0, Lcom/box/app/vpn/VpnRoot;->running:Z
 
-    goto :goto_25
-
-    .line 24
-    :cond_a
-    sput-boolean v1, Lcom/box/app/vpn/VpnRoot;->running:Z
-
-    .line 25
+    .line 29
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v2
+    move-result-wide v1
 
-    sput-wide v2, Lcom/box/app/vpn/VpnRoot;->last:J
+    sput-wide v1, Lcom/box/app/vpn/VpnRoot;->last:J
 
-    .line 26
-    new-instance v0, Ljava/lang/Thread;
+    .line 30
+    new-instance v1, Ljava/lang/Thread;
 
     new-instance v2, Lcom/box/app/vpn/VpnRoot$1;
 
@@ -267,60 +411,58 @@
 
     const-string v3, "box-root-probe"
 
-    invoke-direct {v0, v2, v3}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+    invoke-direct {v1, v2, v3}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
 
-    .line 36
-    invoke-virtual {v0, v1}, Ljava/lang/Thread;->setDaemon(Z)V
+    .line 41
+    invoke-virtual {v1, v0}, Ljava/lang/Thread;->setDaemon(Z)V
 
-    .line 37
-    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
+    .line 42
+    invoke-virtual {v1}, Ljava/lang/Thread;->start()V
 
-    return-void
-
-    :cond_25
-    :goto_25
     return-void
 .end method
 
 .method public static rootModes()Z
-    .registers 6
+    .registers 1
 
-    .line 42
-    sget v0, Lcom/box/app/vpn/VpnRoot;->state:I
+    .line 47
+    invoke-static {}, Lcom/box/app/vpn/VpnRoot;->noRoot()Z
 
-    const/4 v1, 0x2
+    move-result v0
 
-    if-ne v0, v1, :cond_18
-
-    .line 43
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v2
-
-    sget-wide v4, Lcom/box/app/vpn/VpnRoot;->last:J
-
-    sub-long/2addr v2, v4
-
-    const-wide v4, 0xea60
-
-    cmp-long v2, v2, v4
-
-    if-lez v2, :cond_18
-
-    .line 44
-    invoke-static {}, Lcom/box/app/vpn/VpnRoot;->probe()V
-
-    :cond_18
-    if-eq v0, v1, :cond_1c
-
-    const/4 v0, 0x1
+    xor-int/lit8 v0, v0, 0x1
 
     return v0
+.end method
 
-    :cond_1c
-    const/4 v0, 0x0
+.method public static skip(Ljava/lang/String;)Z
+    .registers 2
 
-    return v0
+    if-eqz p0, :cond_12
+
+    const-string v0, " --db "
+
+    .line 86
+    invoke-virtual {p0, v0}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+
+    move-result p0
+
+    if-ltz p0, :cond_12
+
+    invoke-static {}, Lcom/box/app/vpn/VpnRoot;->noRoot()Z
+
+    move-result p0
+
+    if-eqz p0, :cond_12
+
+    const/4 p0, 0x1
+
+    return p0
+
+    :cond_12
+    const/4 p0, 0x0
+
+    return p0
 .end method
 
 .method private static waitFor(Ljava/lang/Process;J)Z
@@ -331,14 +473,14 @@
         }
     .end annotation
 
-    .line 88
+    .line 134
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
     add-long/2addr v0, p1
 
-    .line 89
+    .line 135
     :goto_5
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -352,7 +494,7 @@
 
     return p0
 
-    .line 91
+    .line 137
     :cond_f
     :try_start_f
     invoke-virtual {p0}, Ljava/lang/Process;->exitValue()I
@@ -366,7 +508,7 @@
     :catch_14
     const-wide/16 p1, 0x32
 
-    .line 94
+    .line 140
     invoke-static {p1, p2}, Ljava/lang/Thread;->sleep(J)V
 
     goto :goto_5

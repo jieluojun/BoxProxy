@@ -25,6 +25,8 @@
 
 * 五种内核都有 `VPN` 选项：`mihomo` 走 `tun.file-descriptor`，其余（`sing-box` / `xray` / `v2fly` / `hysteria`）走应用自带的 TUN→本地代理转发（见下文）。
 * 没有 root（`su -c id` 在 15 秒内没有返回 `uid=0`，检测方式同 Mishka 的 `RootHelper.hasRootAccess`）时，运行模式列表里只显示 `VPN`；检测在后台进行，出结果前不隐藏任何模式，检测失败后每 60 秒最多重试一次。
+  确认过的 root 每 15 秒左右（只在后台线程、最多 3 秒、只有明确被拒绝才算失效）复查一次，所以运行中撤销 root 也会被发现。
+  确认没有 root 时：`VpnBridge.isVpnMode()` 一律按 VPN 处理（启动/停止/重启走 VPN），`wc5.f`（libsu 命令执行）会跳过所有 boxctl 命令（`... --db ...`）并直接返回成功，避免 root 模式的残留流程（mode renew、network-match apply 等）在非 root shell 里报 `sh: <stdin>[N]: ...`。
 * 开机自启、root 专属功能（Redirect/TPROXY/eBPF、模块脚本等）在 VPN 模式下不可用。
 * 日志：`<run 目录>/runs.log`（脚本事件、fd 诊断）和 `<run 目录>/<内核名>.log`（内核输出，如 `mihomo.log` / `sing-box.log` / `xray.log`），日志查看里可直接看到。
 * 安卓版 mihomo（GOOS=android）启动 TUN 前会无条件读取 `/data/system/packages.xml`（无 root 读不到，报 `build android rules: read packages list ... permission denied`，TUN 不会启动）。VPN 模式在应用私有目录的内核副本里，把这个字面量等长替换成 `/dev/////////////////null`（即 /dev/null，空文件可被正常解析），用户原内核文件不改动，也不会产生额外文件。

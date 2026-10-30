@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .registers 1
 
-    .line 26
+    .line 30
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,55 +30,57 @@
 
 # virtual methods
 .method public run()V
-    .registers 5
+    .registers 6
 
-    const/4 v0, 0x0
+    const-wide/16 v0, 0x3a98
 
-    .line 29
-    :try_start_1
-    invoke-static {}, Lcom/box/app/vpn/VpnRoot;->access$2()Z
+    const/4 v2, 0x0
 
-    move-result v1
+    .line 34
+    :try_start_3
+    invoke-static {v0, v1}, Lcom/box/app/vpn/VpnRoot;->access$2(J)I
 
-    if-eqz v1, :cond_9
+    move-result v0
 
     const/4 v1, 0x1
 
-    goto :goto_a
+    if-ne v0, v1, :cond_b
 
-    :cond_9
+    goto :goto_c
+
+    :cond_b
     const/4 v1, 0x2
 
-    :goto_a
+    :goto_c
     invoke-static {v1}, Lcom/box/app/vpn/VpnRoot;->access$3(I)V
-    :try_end_d
-    .catchall {:try_start_1 .. :try_end_d} :catchall_18
+    :try_end_f
+    .catchall {:try_start_3 .. :try_end_f} :catchall_1a
 
-    .line 31
+    .line 36
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v1
+    move-result-wide v0
 
-    invoke-static {v1, v2}, Lcom/box/app/vpn/VpnRoot;->access$0(J)V
+    invoke-static {v0, v1}, Lcom/box/app/vpn/VpnRoot;->access$0(J)V
 
-    .line 32
-    invoke-static {v0}, Lcom/box/app/vpn/VpnRoot;->access$1(Z)V
+    .line 37
+    invoke-static {v2}, Lcom/box/app/vpn/VpnRoot;->access$1(Z)V
 
     return-void
 
-    :catchall_18
-    move-exception v1
+    :catchall_1a
+    move-exception v0
 
-    .line 31
+    .line 36
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v2
+    move-result-wide v3
 
-    invoke-static {v2, v3}, Lcom/box/app/vpn/VpnRoot;->access$0(J)V
+    invoke-static {v3, v4}, Lcom/box/app/vpn/VpnRoot;->access$0(J)V
 
-    .line 32
-    invoke-static {v0}, Lcom/box/app/vpn/VpnRoot;->access$1(Z)V
+    .line 37
+    invoke-static {v2}, Lcom/box/app/vpn/VpnRoot;->access$1(Z)V
 
-    .line 33
-    throw v1
+    .line 38
+    throw v0
 .end method

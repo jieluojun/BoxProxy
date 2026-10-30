@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/box/app/vpn/VpnRoot;->check()Z
+    value = Lcom/box/app/vpn/VpnRoot;->check(J)I
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
 .method constructor <init>(Ljava/io/InputStream;Ljava/lang/StringBuilder;)V
     .registers 3
 
-    .line 55
+    .line 104
     iput-object p1, p0, Lcom/box/app/vpn/VpnRoot$2;->val$in:Ljava/io/InputStream;
 
     iput-object p2, p0, Lcom/box/app/vpn/VpnRoot$2;->val$out:Ljava/lang/StringBuilder;
@@ -44,11 +44,11 @@
 
     const/16 v0, 0x200
 
-    .line 58
+    .line 107
     :try_start_2
     new-array v0, v0, [B
 
-    .line 60
+    .line 109
     :goto_4
     iget-object v1, p0, Lcom/box/app/vpn/VpnRoot$2;->val$in:Ljava/io/InputStream;
 
@@ -70,7 +70,7 @@
 
     goto :goto_25
 
-    .line 61
+    .line 110
     :cond_17
     iget-object v2, p0, Lcom/box/app/vpn/VpnRoot$2;->val$out:Ljava/lang/StringBuilder;
 
