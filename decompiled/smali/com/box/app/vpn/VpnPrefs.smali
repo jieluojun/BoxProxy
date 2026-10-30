@@ -876,25 +876,25 @@
 
     const/4 v15, 0x0
 
-    const/4 v16, 0x0
+    const/16 v16, 0x0
 
-    const/4 v17, 0x0
+    const/16 v17, 0x0
 
-    const/4 v18, 0x0
+    const/16 v18, 0x0
 
-    const/4 v19, 0x0
+    const/16 v19, 0x0
 
-    const/4 v20, 0x0
+    const/16 v20, 0x0
 
-    const/4 v21, 0x0
+    const/16 v21, 0x0
 
-    const/4 v22, 0x0
+    const/16 v22, 0x0
 
-    const/4 v23, 0x0
+    const/16 v23, 0x0
 
-    const/4 v24, 0x0
+    const/16 v24, 0x0
 
-    const/4 v25, 0x0
+    const/16 v25, 0x0
 
     const-string v4, "vpn"
 
