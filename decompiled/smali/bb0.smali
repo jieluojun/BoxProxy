@@ -3244,6 +3244,32 @@
 
     .line 1285
     :cond_58
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_58_root
+
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->syncNow()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-nez v1, :cond_58_fail
+
+    new-instance v15, Lza0;
+
+    invoke-direct {v15, v4, v12, v5}, Lza0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
+
+    goto/16 :goto_24
+
+    :cond_58_fail
+    new-instance v15, Lza0;
+
+    invoke-direct {v15, v3, v5, v1}, Lza0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
+
+    goto/16 :goto_24
+
+    :cond_58_root
     sget-object v1, Lwc5;->a:Lwc5;
 
     .line 1286

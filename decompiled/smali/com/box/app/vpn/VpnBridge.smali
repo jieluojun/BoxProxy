@@ -723,3 +723,136 @@
 
     return v1
 .end method
+
+# Makes sure the boxctl binary of the app exists (root modes normally extract it).
+.method public static ensureBoxctl()V
+    .locals 4
+
+    :try_start_0
+    invoke-static {}, Llb0;->k()Lab0;
+
+    move-result-object v0
+
+    iget-object v1, v0, Lab0;->f:Ljava/io/File;
+
+    invoke-virtual {v1}, Ljava/io/File;->isFile()Z
+
+    move-result v2
+
+    if-nez v2, :cond_done
+
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->ctx()Landroid/content/Context;
+
+    move-result-object v2
+
+    const-string v3, "boxctl/arm64-v8a/boxctl"
+
+    invoke-static {v2, v3, v1}, Lcom/box/app/vpn/VpnShell;->copyAsset(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;)Z
+
+    :cond_done
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    return-void
+.end method
+
+# Regenerates the startup config without root (startup-config page, VPN mode).
+# Returns null on success, otherwise the error text.
+.method public static syncNow()Ljava/lang/String;
+    .locals 8
+
+    :try_start_0
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->ensureBoxctl()V
+
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->ctx()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/box/app/vpn/BoxVpnService;->workDir(Landroid/content/Context;)Ljava/io/File;
+
+    move-result-object v1
+
+    new-instance v2, Ljava/io/File;
+
+    const-string v3, "box-vpn.sh"
+
+    invoke-direct {v2, v1, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    const-string v3, "vpn/box-vpn.sh"
+
+    invoke-static {v0, v3, v2}, Lcom/box/app/vpn/VpnShell;->copyAsset(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_err
+
+    invoke-static {}, Llb0;->k()Lab0;
+
+    move-result-object v3
+
+    iget-object v4, v3, Lab0;->c:Ljava/io/File;
+
+    new-instance v5, Ljava/io/File;
+
+    const-string v6, "box.pid"
+
+    invoke-direct {v5, v4, v6}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    const-string v4, "sync"
+
+    invoke-static {v2, v4}, Lcom/box/app/vpn/VpnShell;->base(Ljava/io/File;Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v4
+
+    invoke-static {v4, v1}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
+
+    invoke-static {v4, v5}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
+
+    iget-object v5, v3, Lab0;->f:Ljava/io/File;
+
+    invoke-static {v4, v5}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
+
+    iget-object v5, v3, Lab0;->e:Ljava/io/File;
+
+    invoke-static {v4, v5}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
+
+    invoke-virtual {v3}, Lab0;->d()Ljava/io/File;
+
+    move-result-object v5
+
+    invoke-static {v4, v5}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
+
+    invoke-static {v4}, Lcom/box/app/vpn/VpnShell;->output(Ljava/util/List;)Ljava/lang/String;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_err
+
+    const-string v5, "OK"
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_err
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    :cond_err
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    const-string v0, "\u542f\u52a8\u914d\u7f6e\u751f\u6210\u5931\u8d25\uff08VPN \u6a21\u5f0f\uff09\uff0c\u8be6\u89c1 runs.log"
+
+    const-string v1, "Startup config generation failed (VPN mode), see runs.log"
+
+    invoke-static {v0, v1}, Lcom/box/app/vpn/VpnBridge;->tr(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+.end method
