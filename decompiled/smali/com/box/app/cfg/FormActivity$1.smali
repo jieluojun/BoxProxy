@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/box/app/cfg/FormActivity;)V
     .registers 2
 
-    .line 148
+    .line 161
     iput-object p1, p0, Lcom/box/app/cfg/FormActivity$1;->this$0:Lcom/box/app/cfg/FormActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .registers 1
 
-    .line 151
+    .line 164
     iget-object p0, p0, Lcom/box/app/cfg/FormActivity$1;->this$0:Lcom/box/app/cfg/FormActivity;
 
     invoke-static {p0}, Lcom/box/app/cfg/FormActivity;->access$0(Lcom/box/app/cfg/FormActivity;)V

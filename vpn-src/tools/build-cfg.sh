@@ -22,9 +22,5 @@ rm -f "$tmp/cls/com/box/app/cfg/CfgGlue.class"   # 真实类是手写 smali
 "$JAVA" -cp "$ECJ_JAR" org.eclipse.jdt.internal.compiler.batch.Main -1.8 -proc:none -nowarn \
   -cp "$APKTOOL_JAR" -d "$tmp/tools" "$here/tools/Bk.java"
 "$JAVA" -cp "$tmp/tools:$APKTOOL_JAR" Bk "$tmp/dex/classes.dex" "$tmp/sm"
-# 先清掉上一轮生成的（手写的四个除外），避免改名 / 删类后留下孤儿 smali
-for f in "$root"/decompiled/smali/com/box/app/cfg/*.smali; do
-  case "$(basename "$f")" in CfgGlue.smali|CfgClick.smali|CfgLabel.smali|CfgNav.smali) ;; *) rm -f "$f" ;; esac
-done
 cp "$tmp/sm"/com/box/app/cfg/*.smali "$root/decompiled/smali/com/box/app/cfg/"
 echo "ok: $(ls "$tmp/sm"/com/box/app/cfg | wc -l) 个 smali（手写的 CfgNav / CfgLabel / CfgClick / CfgGlue 不受影响）"

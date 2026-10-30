@@ -2077,7 +2077,7 @@
     return p2
 .end method
 
-.method static eol(Ljava/util/List;)Ljava/lang/String;
+.method private static eol(Ljava/util/List;)Ljava/lang/String;
     .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -3047,7 +3047,7 @@
     goto :goto_0
 .end method
 
-.method static isBlank(Ljava/lang/String;)Z
+.method private static isBlank(Ljava/lang/String;)Z
     .registers 1
 
     .line 151
@@ -5649,7 +5649,7 @@
     return-object p0
 .end method
 
-.method static spaces(I)Ljava/lang/String;
+.method private static spaces(I)Ljava/lang/String;
     .registers 4
 
     .line 792
@@ -5680,7 +5680,7 @@
     goto :goto_6
 .end method
 
-.method static splitFlow(Ljava/lang/String;)Ljava/util/List;
+.method private static splitFlow(Ljava/lang/String;)Ljava/util/List;
     .registers 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -5997,7 +5997,7 @@
     goto/16 :goto_6
 .end method
 
-.method static stripCr(Ljava/lang/String;)Ljava/lang/String;
+.method private static stripCr(Ljava/lang/String;)Ljava/lang/String;
     .registers 3
 
     const-string v0, "\r"

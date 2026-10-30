@@ -147,7 +147,7 @@ public final class Yaml {
         return i;
     }
 
-    static boolean isBlank(String s) {
+    private static boolean isBlank(String s) {
         return s.trim().length() == 0;
     }
 
@@ -754,7 +754,7 @@ public final class Yaml {
         return last;
     }
 
-    static String stripCr(String s) {
+    private static String stripCr(String s) {
         return s.endsWith("\r") ? s.substring(0, s.length() - 1) : s;
     }
 
@@ -783,12 +783,12 @@ public final class Yaml {
         return findKey(lines(text), path.split("\\.")) >= 0;
     }
 
-    static String eol(List<String> lines) {
+    private static String eol(List<String> lines) {
         for (String l : lines) if (l.endsWith("\r")) return "\r";
         return "";
     }
 
-    static String spaces(int n) {
+    private static String spaces(int n) {
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < n; i++) sb.append(' ');
         return sb.toString();
@@ -936,7 +936,7 @@ public final class Yaml {
         return out;
     }
 
-    static List<String> splitFlow(String s) {
+    private static List<String> splitFlow(String s) {
         List<String> out = new ArrayList<String>();
         StringBuilder cur = new StringBuilder();
         char quote = 0;
