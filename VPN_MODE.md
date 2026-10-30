@@ -94,3 +94,9 @@ VPN 模式以前直接使用原始配置文件，所以覆写不生效。
 限制：直接用 Socket 或 Cronet 的请求不走该选择器；配置里启用了 `authentication` 且 127.0.0.1 不在
 `skip-auth-prefixes` 时，App 自己的请求会被内核拒绝；配置开了 `allow-lan: true` 且没有端口而由我们补了
 `mixed-port` 时，该端口也会对局域网开放。需在真机验证。
+
+## 首页网速（本地模式）
+
+「本地模式」靠 `TrafficStats` 的整机收发字节数算速度，VPN 模式下读出来是 0（API 模式走内核接口，不受影响）。
+VPN 运行期间改读本应用 UID 的计数（`TrafficStats.getUidRxBytes/getUidTxBytes`）：内核以本应用 UID 运行，
+它转发的流量都从这个 UID 出去，所以等于经过 VPN 的实际流量；读不到时回退到整机总量。VPN 启停的那一瞬间可能出现一次跳变。

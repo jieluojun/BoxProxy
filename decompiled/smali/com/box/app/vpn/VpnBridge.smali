@@ -1077,3 +1077,70 @@
     :catch_0
     return-object v1
 .end method
+
+# Local-mode network speed (home page): the device-wide TrafficStats total does not
+# move with the tunnel in VPN mode. The core runs under the app uid and everything it
+# forwards leaves through that uid, so while the VPN runs use the uid counters.
+.method public static rx(J)J
+    .locals 4
+
+    sget-boolean v0, Lcom/box/app/vpn/BoxVpnService;->running:Z
+
+    if-eqz v0, :cond_total
+
+    :try_start_0
+    invoke-static {}, Landroid/os/Process;->myUid()I
+
+    move-result v0
+
+    invoke-static {v0}, Landroid/net/TrafficStats;->getUidRxBytes(I)J
+
+    move-result-wide v1
+
+    const-wide/16 v3, 0x0
+
+    cmp-long v0, v1, v3
+
+    if-ltz v0, :cond_total
+
+    return-wide v1
+
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    :cond_total
+    return-wide p0
+.end method
+
+.method public static tx(J)J
+    .locals 4
+
+    sget-boolean v0, Lcom/box/app/vpn/BoxVpnService;->running:Z
+
+    if-eqz v0, :cond_total
+
+    :try_start_0
+    invoke-static {}, Landroid/os/Process;->myUid()I
+
+    move-result v0
+
+    invoke-static {v0}, Landroid/net/TrafficStats;->getUidTxBytes(I)J
+
+    move-result-wide v1
+
+    const-wide/16 v3, 0x0
+
+    cmp-long v0, v1, v3
+
+    if-ltz v0, :cond_total
+
+    return-wide v1
+
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    :cond_total
+    return-wide p0
+.end method
