@@ -139,7 +139,8 @@ public final class VpnPump implements Runnable {
             return tun;
         }
         try {
-            FileDescriptor[] sp = Os.socketpair(OsConstants.AF_UNIX, OsConstants.SOCK_SEQPACKET, 0);
+            FileDescriptor[] sp = new FileDescriptor[] { new FileDescriptor(), new FileDescriptor() };
+            Os.socketpair(OsConstants.AF_UNIX, OsConstants.SOCK_SEQPACKET, 0, sp[0], sp[1]);
             for (int i = 0; i < 2; i++) {
                 try {
                     Os.setsockoptInt(sp[i], OsConstants.SOL_SOCKET, OsConstants.SO_SNDBUF, 2 * 1024 * 1024);

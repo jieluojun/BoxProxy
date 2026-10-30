@@ -114,17 +114,17 @@
 .method public static afterSpawn()V
     .registers 2
 
-    .line 179
+    .line 180
     sget-object v0, Lcom/box/app/vpn/VpnPump;->coreEnd:Ljava/io/FileDescriptor;
 
     const/4 v1, 0x0
 
-    .line 180
+    .line 181
     sput-object v1, Lcom/box/app/vpn/VpnPump;->coreEnd:Ljava/io/FileDescriptor;
 
     if-eqz v0, :cond_a
 
-    .line 183
+    .line 184
     :try_start_7
     invoke-static {v0}, Landroid/system/Os;->close(Ljava/io/FileDescriptor;)V
     :try_end_a
@@ -138,10 +138,10 @@
 .method private clean(J)V
     .registers 6
 
-    .line 469
+    .line 470
     iput-wide p1, p0, Lcom/box/app/vpn/VpnPump;->lastClean:J
 
-    .line 470
+    .line 471
     iget-object v0, p0, Lcom/box/app/vpn/VpnPump;->tcp:Ljava/util/HashMap;
 
     const-wide v1, 0x927c0
@@ -150,7 +150,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/box/app/vpn/VpnPump;->clean(Ljava/util/HashMap;J)V
 
-    .line 471
+    .line 472
     iget-object v0, p0, Lcom/box/app/vpn/VpnPump;->udp:Ljava/util/HashMap;
 
     const-wide v1, 0x1d4c0
@@ -159,7 +159,7 @@
 
     invoke-static {v0, p1, p2}, Lcom/box/app/vpn/VpnPump;->clean(Ljava/util/HashMap;J)V
 
-    .line 472
+    .line 473
     iget-object p1, p0, Lcom/box/app/vpn/VpnPump;->tcp:Ljava/util/HashMap;
 
     invoke-virtual {p1}, Ljava/util/HashMap;->size()I
@@ -170,12 +170,12 @@
 
     if-le p1, p2, :cond_28
 
-    .line 473
+    .line 474
     iget-object p1, p0, Lcom/box/app/vpn/VpnPump;->tcp:Ljava/util/HashMap;
 
     invoke-virtual {p1}, Ljava/util/HashMap;->clear()V
 
-    .line 475
+    .line 476
     :cond_28
     iget-object p1, p0, Lcom/box/app/vpn/VpnPump;->udp:Ljava/util/HashMap;
 
@@ -185,7 +185,7 @@
 
     if-le p1, p2, :cond_35
 
-    .line 476
+    .line 477
     iget-object p1, p0, Lcom/box/app/vpn/VpnPump;->udp:Ljava/util/HashMap;
 
     invoke-virtual {p1}, Ljava/util/HashMap;->clear()V
@@ -206,7 +206,7 @@
         }
     .end annotation
 
-    .line 481
+    .line 482
     invoke-virtual {p0}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
 
     move-result-object p0
@@ -215,7 +215,7 @@
 
     move-result-object p0
 
-    .line 482
+    .line 483
     :cond_8
     :goto_8
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
@@ -226,7 +226,7 @@
 
     return-void
 
-    .line 483
+    .line 484
     :cond_f
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -246,14 +246,14 @@
 
     if-gez v0, :cond_8
 
-    .line 484
+    .line 485
     invoke-interface {p0}, Ljava/util/Iterator;->remove()V
 
     goto :goto_8
 .end method
 
 .method public static coreFd(Landroid/content/Context;Landroid/os/ParcelFileDescriptor;)Ljava/io/FileDescriptor;
-    .registers 9
+    .registers 10
 
     .line 137
     invoke-virtual {p1}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
@@ -268,141 +268,158 @@
     return-object p1
 
     :cond_9
-    const/4 v0, 0x5
+    const/4 v0, 0x2
 
     const/4 v1, 0x0
 
-    const/4 v2, 0x1
-
     .line 142
-    :try_start_c
-    invoke-static {v2, v0, v1}, Landroid/system/Os;->socketpair(III)[Ljava/io/FileDescriptor;
+    :try_start_b
+    new-array v2, v0, [Ljava/io/FileDescriptor;
 
-    move-result-object v0
+    new-instance v3, Ljava/io/FileDescriptor;
+
+    invoke-direct {v3}, Ljava/io/FileDescriptor;-><init>()V
+
+    aput-object v3, v2, v1
+
+    new-instance v3, Ljava/io/FileDescriptor;
+
+    invoke-direct {v3}, Ljava/io/FileDescriptor;-><init>()V
+
+    const/4 v4, 0x1
+
+    aput-object v3, v2, v4
+
+    const/4 v3, 0x5
+
+    .line 143
+    aget-object v5, v2, v1
+
+    aget-object v6, v2, v4
+
+    invoke-static {v4, v3, v1, v5, v6}, Landroid/system/Os;->socketpair(IIILjava/io/FileDescriptor;Ljava/io/FileDescriptor;)V
 
     const/4 v3, 0x0
 
-    :goto_11
-    const/4 v4, 0x2
+    :goto_25
+    if-lt v3, v0, :cond_75
 
-    if-lt v3, v4, :cond_62
+    const-string v0, "connectivity"
 
-    const-string v3, "connectivity"
-
-    .line 151
-    invoke-virtual {p0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    .line 152
+    invoke-virtual {p0, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     move-result-object p0
 
     check-cast p0, Landroid/net/ConnectivityManager;
 
-    .line 152
-    new-instance v3, Lcom/box/app/vpn/VpnPump;
-
-    aget-object v4, v0, v1
-
-    invoke-direct {v3, p1, v4, p0, v2}, Lcom/box/app/vpn/VpnPump;-><init>(Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;Landroid/net/ConnectivityManager;Z)V
-
     .line 153
-    new-instance v4, Lcom/box/app/vpn/VpnPump;
+    new-instance v0, Lcom/box/app/vpn/VpnPump;
 
-    aget-object v5, v0, v1
+    aget-object v3, v2, v1
 
-    invoke-direct {v4, p1, v5, p0, v1}, Lcom/box/app/vpn/VpnPump;-><init>(Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;Landroid/net/ConnectivityManager;Z)V
+    invoke-direct {v0, p1, v3, p0, v4}, Lcom/box/app/vpn/VpnPump;-><init>(Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;Landroid/net/ConnectivityManager;Z)V
 
     .line 154
-    iput-object v4, v3, Lcom/box/app/vpn/VpnPump;->peer:Lcom/box/app/vpn/VpnPump;
+    new-instance v3, Lcom/box/app/vpn/VpnPump;
+
+    aget-object v5, v2, v1
+
+    invoke-direct {v3, p1, v5, p0, v1}, Lcom/box/app/vpn/VpnPump;-><init>(Ljava/io/FileDescriptor;Ljava/io/FileDescriptor;Landroid/net/ConnectivityManager;Z)V
 
     .line 155
-    iput-object v3, v4, Lcom/box/app/vpn/VpnPump;->peer:Lcom/box/app/vpn/VpnPump;
+    iput-object v3, v0, Lcom/box/app/vpn/VpnPump;->peer:Lcom/box/app/vpn/VpnPump;
 
     .line 156
+    iput-object v0, v3, Lcom/box/app/vpn/VpnPump;->peer:Lcom/box/app/vpn/VpnPump;
+
+    .line 157
     new-instance p0, Ljava/lang/Thread;
 
     const-string v5, "box-pump-up"
+
+    invoke-direct {p0, v0, v5}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+
+    iput-object p0, v0, Lcom/box/app/vpn/VpnPump;->thread:Ljava/lang/Thread;
+
+    .line 158
+    new-instance p0, Ljava/lang/Thread;
+
+    const-string v5, "box-pump-down"
 
     invoke-direct {p0, v3, v5}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
 
     iput-object p0, v3, Lcom/box/app/vpn/VpnPump;->thread:Ljava/lang/Thread;
 
-    .line 157
-    new-instance p0, Ljava/lang/Thread;
-
-    const-string v5, "box-pump-down"
-
-    invoke-direct {p0, v4, v5}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
-
-    iput-object p0, v4, Lcom/box/app/vpn/VpnPump;->thread:Ljava/lang/Thread;
-
-    .line 158
-    iget-object p0, v3, Lcom/box/app/vpn/VpnPump;->thread:Ljava/lang/Thread;
-
-    invoke-virtual {p0, v2}, Ljava/lang/Thread;->setDaemon(Z)V
-
     .line 159
-    iget-object p0, v4, Lcom/box/app/vpn/VpnPump;->thread:Ljava/lang/Thread;
+    iget-object p0, v0, Lcom/box/app/vpn/VpnPump;->thread:Ljava/lang/Thread;
 
-    invoke-virtual {p0, v2}, Ljava/lang/Thread;->setDaemon(Z)V
+    invoke-virtual {p0, v4}, Ljava/lang/Thread;->setDaemon(Z)V
 
     .line 160
-    aget-object p0, v0, v2
+    iget-object p0, v3, Lcom/box/app/vpn/VpnPump;->thread:Ljava/lang/Thread;
+
+    invoke-virtual {p0, v4}, Ljava/lang/Thread;->setDaemon(Z)V
+
+    .line 161
+    aget-object p0, v2, v4
 
     sput-object p0, Lcom/box/app/vpn/VpnPump;->coreEnd:Ljava/io/FileDescriptor;
 
-    .line 161
-    sput-object v3, Lcom/box/app/vpn/VpnPump;->cur:Lcom/box/app/vpn/VpnPump;
-
     .line 162
-    iget-object p0, v3, Lcom/box/app/vpn/VpnPump;->thread:Ljava/lang/Thread;
+    sput-object v0, Lcom/box/app/vpn/VpnPump;->cur:Lcom/box/app/vpn/VpnPump;
+
+    .line 163
+    iget-object p0, v0, Lcom/box/app/vpn/VpnPump;->thread:Ljava/lang/Thread;
 
     invoke-virtual {p0}, Ljava/lang/Thread;->start()V
 
-    .line 163
-    iget-object p0, v4, Lcom/box/app/vpn/VpnPump;->thread:Ljava/lang/Thread;
+    .line 164
+    iget-object p0, v3, Lcom/box/app/vpn/VpnPump;->thread:Ljava/lang/Thread;
 
     invoke-virtual {p0}, Ljava/lang/Thread;->start()V
 
     const-string p0, "pump started"
 
-    .line 164
+    .line 165
     invoke-static {p0}, Lcom/box/app/vpn/VpnPump;->log(Ljava/lang/String;)V
 
-    .line 165
-    aget-object p0, v0, v2
-    :try_end_61
-    .catch Ljava/lang/Throwable; {:try_start_c .. :try_end_61} :catch_74
+    .line 166
+    aget-object p0, v2, v4
+    :try_end_74
+    .catch Ljava/lang/Throwable; {:try_start_b .. :try_end_74} :catch_87
 
     return-object p0
 
-    .line 145
-    :cond_62
-    :try_start_62
-    aget-object v4, v0, v3
-
-    const/4 v5, 0x7
-
-    const/high16 v6, 0x200000
-
-    invoke-static {v4, v2, v5, v6}, Landroid/system/Os;->setsockoptInt(Ljava/io/FileDescriptor;III)V
-
     .line 146
-    aget-object v4, v0, v3
+    :cond_75
+    :try_start_75
+    aget-object v5, v2, v3
 
-    const/16 v5, 0x8
+    const/4 v6, 0x7
 
-    invoke-static {v4, v2, v5, v6}, Landroid/system/Os;->setsockoptInt(Ljava/io/FileDescriptor;III)V
-    :try_end_71
-    .catch Ljava/lang/Throwable; {:try_start_62 .. :try_end_71} :catch_71
+    const/high16 v7, 0x200000
 
-    :catch_71
+    invoke-static {v5, v4, v6, v7}, Landroid/system/Os;->setsockoptInt(Ljava/io/FileDescriptor;III)V
+
+    .line 147
+    aget-object v5, v2, v3
+
+    const/16 v6, 0x8
+
+    invoke-static {v5, v4, v6, v7}, Landroid/system/Os;->setsockoptInt(Ljava/io/FileDescriptor;III)V
+    :try_end_84
+    .catch Ljava/lang/Throwable; {:try_start_75 .. :try_end_84} :catch_84
+
+    :catch_84
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_11
+    goto :goto_25
 
-    :catch_74
+    :catch_87
     move-exception p0
 
-    .line 167
+    .line 168
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v2, "pump start failed, process rules will not match: "
@@ -417,20 +434,20 @@
 
     invoke-static {p0}, Lcom/box/app/vpn/VpnPump;->log(Ljava/lang/String;)V
 
-    .line 168
+    .line 169
     sput-boolean v1, Lcom/box/app/vpn/VpnPump;->active:Z
 
     const/4 p0, 0x0
 
-    .line 169
+    .line 170
     sput-object p0, Lcom/box/app/vpn/VpnPump;->tags:Lcom/box/app/vpn/VpnTags;
 
-    .line 170
+    .line 171
     sget-object p0, Lcom/box/app/vpn/VpnPump;->workDir:Ljava/io/File;
 
-    if-eqz p0, :cond_9b
+    if-eqz p0, :cond_ae
 
-    .line 171
+    .line 172
     new-instance p0, Ljava/io/File;
 
     sget-object v0, Lcom/box/app/vpn/VpnPump;->workDir:Ljava/io/File;
@@ -441,14 +458,14 @@
 
     invoke-virtual {p0}, Ljava/io/File;->delete()Z
 
-    :cond_9b
+    :cond_ae
     return-object p1
 .end method
 
 .method private static csumFix([BIIIZ)V
     .registers 7
 
-    .line 337
+    .line 338
     invoke-static {p0, p1}, Lcom/box/app/vpn/VpnPump;->u16([BI)I
 
     move-result v0
@@ -487,14 +504,14 @@
 
     int-to-byte p3, p3
 
-    .line 346
+    .line 347
     aput-byte p3, p0, p1
 
     add-int/lit8 p1, p1, 0x1
 
     int-to-byte p2, p2
 
-    .line 347
+    .line 348
     aput-byte p2, p0, p1
 
     return-void
@@ -510,14 +527,14 @@
 .method private fatal(Ljava/lang/Throwable;)V
     .registers 5
 
-    .line 225
+    .line 226
     iget-boolean v0, p0, Lcom/box/app/vpn/VpnPump;->running:Z
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 228
+    .line 229
     :cond_5
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -553,20 +570,20 @@
 
     const/4 v0, 0x0
 
-    .line 229
+    .line 230
     iput-boolean v0, p0, Lcom/box/app/vpn/VpnPump;->running:Z
 
-    .line 230
+    .line 231
     iget-object v1, p0, Lcom/box/app/vpn/VpnPump;->peer:Lcom/box/app/vpn/VpnPump;
 
     iput-boolean v0, v1, Lcom/box/app/vpn/VpnPump;->running:Z
 
-    .line 231
+    .line 232
     sget-object v0, Lcom/box/app/vpn/BoxVpnService;->instance:Lcom/box/app/vpn/BoxVpnService;
 
     if-eqz v0, :cond_44
 
-    .line 233
+    .line 234
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "pump: "
@@ -581,7 +598,7 @@
 
     sput-object p1, Lcom/box/app/vpn/BoxVpnService;->lastError:Ljava/lang/String;
 
-    .line 234
+    .line 235
     invoke-virtual {v0}, Lcom/box/app/vpn/BoxVpnService;->stopVpn()V
 
     :cond_44
@@ -603,7 +620,7 @@
 
     const/4 v3, 0x0
 
-    .line 351
+    .line 352
     aget-byte v4, v1, v3
 
     and-int/lit16 v4, v4, 0xf0
@@ -614,7 +631,7 @@
 
     goto/16 :goto_156
 
-    .line 354
+    .line 355
     :cond_15
     aget-byte v4, v1, v3
 
@@ -637,7 +654,7 @@
     :cond_26
     const/16 v6, 0x9
 
-    .line 358
+    .line 359
     aget-byte v6, v1, v6
 
     and-int/lit16 v6, v6, 0xff
@@ -652,7 +669,7 @@
 
     return-void
 
-    .line 362
+    .line 363
     :cond_34
     aget-byte v9, v1, v8
 
@@ -683,7 +700,7 @@
     :cond_4b
     const/16 v9, 0xc
 
-    .line 365
+    .line 366
     aget-byte v9, v1, v9
 
     const/16 v11, -0x54
@@ -722,7 +739,7 @@
     :cond_6c
     const/4 v12, 0x0
 
-    .line 369
+    .line 370
     :goto_6d
     invoke-static {v1, v4}, Lcom/box/app/vpn/VpnPump;->u16([BI)I
 
@@ -730,14 +747,14 @@
 
     add-int/lit8 v15, v4, 0x2
 
-    .line 370
+    .line 371
     invoke-static {v1, v15}, Lcom/box/app/vpn/VpnPump;->u16([BI)I
 
     move-result v15
 
     const/16 v16, 0x10
 
-    .line 371
+    .line 372
     aget-byte v13, v1, v16
 
     and-int/lit16 v13, v13, 0xff
@@ -794,7 +811,7 @@
 
     if-eqz v12, :cond_a7
 
-    .line 373
+    .line 374
     iget-object v8, v0, Lcom/box/app/vpn/VpnPump;->tcp:Ljava/util/HashMap;
 
     goto :goto_a9
@@ -802,13 +819,13 @@
     :cond_a7
     iget-object v8, v0, Lcom/box/app/vpn/VpnPump;->udp:Ljava/util/HashMap;
 
-    .line 374
+    .line 375
     :goto_a9
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v9
 
-    .line 375
+    .line 376
     invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v11
@@ -827,7 +844,7 @@
 
     add-int/lit8 v13, v4, 0xd
 
-    .line 376
+    .line 377
     aget-byte v13, v1, v13
 
     and-int/2addr v7, v13
@@ -850,7 +867,7 @@
 
     move/from16 v18, v4
 
-    .line 377
+    .line 378
     iget-wide v3, v11, Lcom/box/app/vpn/VpnPump$Flow;->last:J
 
     sub-long v3, v9, v3
@@ -871,7 +888,7 @@
     :cond_dc
     move/from16 v18, v4
 
-    .line 378
+    .line 379
     :goto_de
     new-instance v11, Lcom/box/app/vpn/VpnPump$Flow;
 
@@ -881,26 +898,26 @@
 
     move/from16 v3, v17
 
-    .line 379
+    .line 380
     invoke-direct {v0, v3, v1, v14, v15}, Lcom/box/app/vpn/VpnPump;->lookup(I[BII)I
 
     move-result v3
 
     iput v3, v11, Lcom/box/app/vpn/VpnPump$Flow;->tag:I
 
-    .line 380
+    .line 381
     invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
 
     invoke-virtual {v8, v3, v11}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 382
+    .line 383
     :cond_f3
     :goto_f3
     iput-wide v9, v11, Lcom/box/app/vpn/VpnPump$Flow;->last:J
 
-    .line 383
+    .line 384
     iget-wide v3, v0, Lcom/box/app/vpn/VpnPump;->lastClean:J
 
     sub-long v3, v9, v3
@@ -911,7 +928,7 @@
 
     if-lez v3, :cond_102
 
-    .line 384
+    .line 385
     invoke-direct {v0, v9, v10}, Lcom/box/app/vpn/VpnPump;->clean(J)V
 
     :cond_102
@@ -923,7 +940,7 @@
 
     add-int/lit8 v4, v18, 0xd
 
-    .line 386
+    .line 387
     aget-byte v3, v1, v4
 
     and-int/lit8 v3, v3, 0x4
@@ -937,13 +954,13 @@
     :cond_112
     const/4 v3, 0x0
 
-    .line 387
+    .line 388
     :goto_113
     iget v4, v11, Lcom/box/app/vpn/VpnPump$Flow;->tag:I
 
     if-eqz v3, :cond_11e
 
-    .line 389
+    .line 390
     invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
@@ -958,7 +975,7 @@
     :cond_121
     const/16 v3, 0xe
 
-    .line 394
+    .line 395
     invoke-static {v1, v3}, Lcom/box/app/vpn/VpnPump;->u16([BI)I
 
     move-result v5
@@ -969,19 +986,19 @@
 
     const/16 v7, -0x38
 
-    .line 396
+    .line 397
     aput-byte v7, v1, v3
 
     int-to-byte v3, v4
 
     const/16 v4, 0xf
 
-    .line 397
+    .line 398
     aput-byte v3, v1, v4
 
     move/from16 v4, v18
 
-    .line 398
+    .line 399
     invoke-static {v1, v4}, Lcom/box/app/vpn/VpnPump;->ipCsum([BI)V
 
     if-eqz v12, :cond_146
@@ -994,7 +1011,7 @@
 
     const/4 v2, 0x0
 
-    .line 401
+    .line 402
     invoke-static {v1, v4, v5, v6, v2}, Lcom/box/app/vpn/VpnPump;->csumFix([BIIIZ)V
 
     goto :goto_152
@@ -1004,7 +1021,7 @@
 
     add-int/2addr v4, v2
 
-    .line 403
+    .line 404
     invoke-static {v1, v4}, Lcom/box/app/vpn/VpnPump;->u16([BI)I
 
     move-result v2
@@ -1013,7 +1030,7 @@
 
     const/4 v2, 0x1
 
-    .line 404
+    .line 405
     invoke-static {v1, v4, v5, v6, v2}, Lcom/box/app/vpn/VpnPump;->csumFix([BIIIZ)V
 
     :cond_152
@@ -1044,12 +1061,12 @@
 
     const/4 v1, 0x0
 
-    .line 321
+    .line 322
     aput-byte v1, p0, v0
 
     const/16 v2, 0xb
 
-    .line 322
+    .line 323
     aput-byte v1, p0, v2
 
     const/4 v3, 0x0
@@ -1072,12 +1089,12 @@
 
     int-to-byte v1, v1
 
-    .line 331
+    .line 332
     aput-byte v1, p0, v0
 
     int-to-byte p1, p1
 
-    .line 332
+    .line 333
     aput-byte p1, p0, v2
 
     return-void
@@ -1089,7 +1106,7 @@
 
     goto :goto_c
 
-    .line 325
+    .line 326
     :cond_22
     invoke-static {p0, v1}, Lcom/box/app/vpn/VpnPump;->u16([BI)I
 
@@ -1119,12 +1136,12 @@
 .method private static join(Lcom/box/app/vpn/VpnPump;)V
     .registers 3
 
-    .line 213
+    .line 214
     iget-object p0, p0, Lcom/box/app/vpn/VpnPump;->thread:Ljava/lang/Thread;
 
     if-eqz p0, :cond_11
 
-    .line 214
+    .line 215
     invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     move-result-object v0
@@ -1136,7 +1153,7 @@
     :cond_b
     const-wide/16 v0, 0x5dc
 
-    .line 218
+    .line 219
     :try_start_d
     invoke-virtual {p0, v0, v1}, Ljava/lang/Thread;->join(J)V
     :try_end_10
@@ -1254,14 +1271,14 @@
 
     move/from16 v5, p4
 
-    .line 436
+    .line 437
     sget-object v6, Lcom/box/app/vpn/VpnPump;->tags:Lcom/box/app/vpn/VpnTags;
 
     const/4 v7, 0x0
 
     if-eqz v6, :cond_114
 
-    .line 437
+    .line 438
     iget-object v8, v1, Lcom/box/app/vpn/VpnPump;->cm:Landroid/net/ConnectivityManager;
 
     if-nez v8, :cond_13
@@ -1273,7 +1290,7 @@
 
     const/4 v10, 0x1
 
-    .line 442
+    .line 443
     :try_start_15
     new-array v11, v9, [B
 
@@ -1305,7 +1322,7 @@
 
     aput-byte v12, v11, v14
 
-    .line 443
+    .line 444
     new-array v9, v9, [B
 
     const/16 v12, 0x10
@@ -1332,7 +1349,7 @@
 
     aput-byte v17, v9, v14
 
-    .line 444
+    .line 445
     new-instance v8, Ljava/net/InetSocketAddress;
 
     invoke-static {v11}, Ljava/net/InetAddress;->getByAddress([B)Ljava/net/InetAddress;
@@ -1341,7 +1358,7 @@
 
     invoke-direct {v8, v11, v4}, Ljava/net/InetSocketAddress;-><init>(Ljava/net/InetAddress;I)V
 
-    .line 445
+    .line 446
     new-instance v11, Ljava/net/InetSocketAddress;
 
     invoke-static {v9}, Ljava/net/InetAddress;->getByAddress([B)Ljava/net/InetAddress;
@@ -1361,7 +1378,7 @@
 
     goto :goto_77
 
-    .line 447
+    .line 448
     :cond_64
     iget-object v13, v1, Lcom/box/app/vpn/VpnPump;->cm:Landroid/net/ConnectivityManager;
 
@@ -1373,7 +1390,7 @@
 
     const-wide/16 v14, 0x2
 
-    .line 449
+    .line 450
     invoke-static {v14, v15}, Ljava/lang/Thread;->sleep(J)V
     :try_end_71
     .catch Ljava/lang/Throwable; {:try_start_15 .. :try_end_71} :catch_f6
@@ -1393,13 +1410,13 @@
 
     goto :goto_7e
 
-    .line 459
+    .line 460
     :cond_7a
     invoke-virtual {v6, v13, v7}, Lcom/box/app/vpn/VpnTags;->tagFor(IZ)I
 
     move-result v7
 
-    .line 460
+    .line 461
     :goto_7e
     iget v6, v1, Lcom/box/app/vpn/VpnPump;->logged:I
 
@@ -1407,14 +1424,14 @@
 
     if-ge v6, v8, :cond_f5
 
-    .line 461
+    .line 462
     iget v6, v1, Lcom/box/app/vpn/VpnPump;->logged:I
 
     add-int/2addr v6, v10
 
     iput v6, v1, Lcom/box/app/vpn/VpnPump;->logged:I
 
-    .line 462
+    .line 463
     new-instance v6, Ljava/lang/StringBuilder;
 
     const/4 v8, 0x6
@@ -1467,7 +1484,7 @@
 
     invoke-virtual {v6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 463
+    .line 464
     aget-byte v2, p2, v16
 
     and-int/lit16 v2, v2, 0xff
@@ -1504,7 +1521,7 @@
 
     invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 462
+    .line 463
     invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -1519,21 +1536,21 @@
 
     move-object v2, v0
 
-    .line 453
+    .line 454
     iget v3, v1, Lcom/box/app/vpn/VpnPump;->logged:I
 
     const/4 v4, 0x5
 
     if-ge v3, v4, :cond_113
 
-    .line 454
+    .line 455
     iget v3, v1, Lcom/box/app/vpn/VpnPump;->logged:I
 
     add-int/2addr v3, v10
 
     iput v3, v1, Lcom/box/app/vpn/VpnPump;->logged:I
 
-    .line 455
+    .line 456
     new-instance v3, Ljava/lang/StringBuilder;
 
     const-string v4, "getConnectionOwnerUid failed: "
@@ -1753,7 +1770,7 @@
 
     const/4 v1, 0x0
 
-    .line 409
+    .line 410
     aget-byte v2, p1, v1
 
     and-int/lit16 v2, v2, 0xf0
@@ -1767,7 +1784,7 @@
     :cond_f
     const/16 v2, 0x10
 
-    .line 412
+    .line 413
     aget-byte v3, p1, v2
 
     const/16 v4, -0x54
@@ -1792,7 +1809,7 @@
 
     goto :goto_77
 
-    .line 415
+    .line 416
     :cond_28
     aget-byte v6, p1, v1
 
@@ -1806,33 +1823,33 @@
 
     goto :goto_76
 
-    .line 419
+    .line 420
     :cond_33
     invoke-static {p1, v4}, Lcom/box/app/vpn/VpnPump;->u16([BI)I
 
     move-result v0
 
-    .line 420
+    .line 421
     aput-byte v1, p1, v4
 
     const/4 v4, 0x1
 
-    .line 421
+    .line 422
     aput-byte v4, p1, v5
 
     const/16 v5, 0x9
 
-    .line 422
+    .line 423
     aget-byte v5, p1, v5
 
     and-int/lit16 v5, v5, 0xff
 
-    .line 423
+    .line 424
     invoke-static {p1, v6}, Lcom/box/app/vpn/VpnPump;->ipCsum([BI)V
 
     const/4 v7, 0x6
 
-    .line 424
+    .line 425
     aget-byte v8, p1, v7
 
     and-int/lit8 v8, v8, 0x1f
@@ -1870,7 +1887,7 @@
 
     add-int/2addr v6, v2
 
-    .line 429
+    .line 430
     invoke-static {p1, v6, v0, v4, v1}, Lcom/box/app/vpn/VpnPump;->csumFix([BIIIZ)V
 
     goto :goto_75
@@ -1884,14 +1901,14 @@
 
     add-int/2addr v6, v7
 
-    .line 430
+    .line 431
     invoke-static {p1, v6}, Lcom/box/app/vpn/VpnPump;->u16([BI)I
 
     move-result p2
 
     if-eqz p2, :cond_75
 
-    .line 431
+    .line 432
     invoke-static {p1, v6, v0, v4, v4}, Lcom/box/app/vpn/VpnPump;->csumFix([BIIIZ)V
 
     :cond_75
@@ -1914,40 +1931,40 @@
 .method public static stop()V
     .registers 3
 
-    .line 192
+    .line 193
     sget-object v0, Lcom/box/app/vpn/VpnPump;->cur:Lcom/box/app/vpn/VpnPump;
 
     const/4 v1, 0x0
 
-    .line 193
+    .line 194
     sput-object v1, Lcom/box/app/vpn/VpnPump;->cur:Lcom/box/app/vpn/VpnPump;
 
     const/4 v1, 0x0
 
-    .line 194
+    .line 195
     sput-boolean v1, Lcom/box/app/vpn/VpnPump;->active:Z
 
     if-nez v0, :cond_b
 
     return-void
 
-    .line 198
+    .line 199
     :cond_b
     iget-object v2, v0, Lcom/box/app/vpn/VpnPump;->peer:Lcom/box/app/vpn/VpnPump;
 
-    .line 199
+    .line 200
     iput-boolean v1, v0, Lcom/box/app/vpn/VpnPump;->running:Z
 
-    .line 200
+    .line 201
     iput-boolean v1, v2, Lcom/box/app/vpn/VpnPump;->running:Z
 
-    .line 201
+    .line 202
     invoke-static {v0}, Lcom/box/app/vpn/VpnPump;->join(Lcom/box/app/vpn/VpnPump;)V
 
-    .line 202
+    .line 203
     invoke-static {v2}, Lcom/box/app/vpn/VpnPump;->join(Lcom/box/app/vpn/VpnPump;)V
 
-    .line 204
+    .line 205
     :try_start_17
     iget-object v0, v0, Lcom/box/app/vpn/VpnPump;->pumpEnd:Ljava/io/FileDescriptor;
 
@@ -1955,13 +1972,13 @@
     :try_end_1c
     .catch Ljava/lang/Throwable; {:try_start_17 .. :try_end_1c} :catch_1c
 
-    .line 208
+    .line 209
     :catch_1c
     invoke-static {}, Lcom/box/app/vpn/VpnPump;->afterSpawn()V
 
     const-string v0, "pump stopped"
 
-    .line 209
+    .line 210
     invoke-static {v0}, Lcom/box/app/vpn/VpnPump;->log(Ljava/lang/String;)V
 
     return-void
@@ -1970,7 +1987,7 @@
 .method private static u16([BI)I
     .registers 3
 
-    .line 317
+    .line 318
     aget-byte v0, p0, p1
 
     and-int/lit16 v0, v0, 0xff
@@ -1993,7 +2010,7 @@
 .method public run()V
     .registers 13
 
-    .line 241
+    .line 242
     iget-boolean v0, p0, Lcom/box/app/vpn/VpnPump;->toCore:Z
 
     if-eqz v0, :cond_7
@@ -2005,7 +2022,7 @@
     :cond_7
     iget-object v0, p0, Lcom/box/app/vpn/VpnPump;->pumpEnd:Ljava/io/FileDescriptor;
 
-    .line 242
+    .line 243
     :goto_9
     iget-boolean v1, p0, Lcom/box/app/vpn/VpnPump;->toCore:Z
 
@@ -2021,15 +2038,15 @@
     :goto_12
     const/high16 v2, 0x10000
 
-    .line 243
+    .line 244
     new-array v2, v2, [B
 
     const/4 v3, 0x1
 
-    .line 244
+    .line 245
     new-array v4, v3, [Landroid/system/StructPollfd;
 
-    .line 245
+    .line 246
     new-instance v5, Landroid/system/StructPollfd;
 
     invoke-direct {v5}, Landroid/system/StructPollfd;-><init>()V
@@ -2038,24 +2055,24 @@
 
     aput-object v5, v4, v6
 
-    .line 246
+    .line 247
     aget-object v5, v4, v6
 
     iput-object v0, v5, Landroid/system/StructPollfd;->fd:Ljava/io/FileDescriptor;
 
-    .line 247
+    .line 248
     aget-object v5, v4, v6
 
     iput-short v3, v5, Landroid/system/StructPollfd;->events:S
 
-    .line 248
+    .line 249
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v7
 
     iput-wide v7, p0, Lcom/box/app/vpn/VpnPump;->lastClean:J
 
-    .line 250
+    .line 251
     :cond_2f
     :goto_2f
     :try_start_2f
@@ -2065,7 +2082,7 @@
 
     goto/16 :goto_c2
 
-    .line 251
+    .line 252
     :cond_35
     aget-object v5, v4, v6
 
@@ -2077,7 +2094,7 @@
 
     const/4 v7, 0x4
 
-    .line 254
+    .line 255
     :try_start_3c
     invoke-static {v4, v5}, Landroid/system/Os;->poll([Landroid/system/StructPollfd;I)I
 
@@ -2090,7 +2107,7 @@
 
     goto :goto_2f
 
-    .line 264
+    .line 265
     :cond_43
     :try_start_43
     aget-object v5, v4, v6
@@ -2101,7 +2118,7 @@
 
     if-nez v5, :cond_73
 
-    .line 265
+    .line 266
     aget-object v5, v4, v6
 
     iget-short v5, v5, Landroid/system/StructPollfd;->revents:S
@@ -2110,12 +2127,12 @@
 
     if-eqz v5, :cond_2f
 
-    .line 266
+    .line 267
     iget-boolean v0, p0, Lcom/box/app/vpn/VpnPump;->running:Z
 
     if-eqz v0, :cond_c2
 
-    .line 267
+    .line 268
     new-instance v0, Ljava/lang/RuntimeException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -2147,7 +2164,7 @@
     :cond_73
     const/16 v5, 0xb
 
-    .line 275
+    .line 276
     :try_start_75
     array-length v8, v2
 
@@ -2162,19 +2179,19 @@
 
     goto :goto_2f
 
-    .line 285
+    .line 286
     :cond_7d
     :try_start_7d
     iget-boolean v9, p0, Lcom/box/app/vpn/VpnPump;->toCore:Z
 
     if-eqz v9, :cond_85
 
-    .line 286
+    .line 287
     invoke-direct {p0, v2, v8}, Lcom/box/app/vpn/VpnPump;->forward([BI)V
 
     goto :goto_88
 
-    .line 288
+    .line 289
     :cond_85
     invoke-direct {p0, v2, v8}, Lcom/box/app/vpn/VpnPump;->reverse([BI)V
     :try_end_88
@@ -2191,7 +2208,7 @@
     :cond_8c
     sub-int v10, v8, v9
 
-    .line 293
+    .line 294
     :try_start_8e
     invoke-static {v1, v2, v9, v10}, Landroid/system/Os;->write(Ljava/io/FileDescriptor;[BII)I
 
@@ -2207,7 +2224,7 @@
     :catch_94
     move-exception v10
 
-    .line 295
+    .line 296
     :try_start_95
     iget v11, v10, Landroid/system/ErrnoException;->errno:I
 
@@ -2215,13 +2232,13 @@
 
     goto :goto_89
 
-    .line 298
+    .line 299
     :cond_9a
     iget v11, v10, Landroid/system/ErrnoException;->errno:I
 
     if-ne v11, v5, :cond_a9
 
-    .line 299
+    .line 300
     iget-boolean v10, p0, Lcom/box/app/vpn/VpnPump;->running:Z
 
     if-nez v10, :cond_a3
@@ -2231,19 +2248,19 @@
     :cond_a3
     const-wide/16 v10, 0x1
 
-    .line 302
+    .line 303
     invoke-static {v10, v11}, Ljava/lang/Thread;->sleep(J)V
 
     goto :goto_89
 
-    .line 305
+    .line 306
     :cond_a9
     throw v10
 
     :catch_aa
     move-exception v8
 
-    .line 277
+    .line 278
     iget v9, v8, Landroid/system/ErrnoException;->errno:I
 
     if-eq v9, v5, :cond_2f
@@ -2254,21 +2271,21 @@
 
     goto/16 :goto_2f
 
-    .line 280
+    .line 281
     :cond_b5
     throw v8
 
     :catch_b6
     move-exception v5
 
-    .line 256
+    .line 257
     iget v8, v5, Landroid/system/ErrnoException;->errno:I
 
     if-ne v8, v7, :cond_bd
 
     goto/16 :goto_2f
 
-    .line 259
+    .line 260
     :cond_bd
     throw v5
     :try_end_be
@@ -2277,7 +2294,7 @@
     :catch_be
     move-exception v0
 
-    .line 310
+    .line 311
     invoke-direct {p0, v0}, Lcom/box/app/vpn/VpnPump;->fatal(Ljava/lang/Throwable;)V
 
     :cond_c2
