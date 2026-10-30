@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
  * address (172.19.200.N) that stands for the set of rules the owning app
  * matches, and the rules of the core are rewritten to match those tags.
  */
-public final class VpnTags {
+public final class VpnTags implements SbConfig.Tags {
     /** Tag addresses are 172.19.200.1 .. 172.19.200.MAX_TAGS. */
     public static final int MAX_TAGS = 250;
 
@@ -205,6 +205,26 @@ public final class VpnTags {
             i++;
         }
         return changed ? sb.toString() : null;
+    }
+
+    /** Registers (or finds) a package-name clause; used by the sing-box rewriter. */
+    public int addClause(boolean isRegex, String value) {
+        return clause(isRegex, value);
+    }
+
+    /** Assigns tags to every installed app matching a registered clause. */
+    public void build() {
+        buildTags();
+    }
+
+    /** Tags of the apps matching the clause, valid after build(). */
+    public int[] tagsOf(int id) {
+        ArrayList<Integer> l = clauseTags.get(id);
+        int[] r = new int[l.size()];
+        for (int i = 0; i < r.length; i++) {
+            r[i] = l.get(i).intValue();
+        }
+        return r;
     }
 
     private int clause(boolean isRegex, String value) {

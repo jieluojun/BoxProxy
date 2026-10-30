@@ -64,6 +64,10 @@ public final class VpnPump implements Runnable {
 
     // ------------------------------------------------------------- logging
 
+    static void setLog(File f) {
+        runsLog = f;
+    }
+
     static void log(String msg) {
         File f = runsLog;
         if (f == null) {
@@ -95,6 +99,10 @@ public final class VpnPump implements Runnable {
         workDir = work;
         File dir = pidFile.getParentFile();
         runsLog = dir == null ? null : new File(dir, "runs.log");
+        if (VpnSb.on) {
+            // sing-box: VpnSb has prepared the configuration, VpnNet handles the packets
+            return false;
+        }
         File out = new File(work, "config.run.yaml");
         out.delete();
         try {
@@ -129,12 +137,15 @@ public final class VpnPump implements Runnable {
 
     /** IPv6 is not tagged, so it is switched off while the pump is active. */
     public static boolean ipv6(boolean wanted) {
-        return active ? false : wanted;
+        return active || VpnSb.on ? false : wanted;
     }
 
     /** Returns the descriptor the core must use as its TUN. */
     public static FileDescriptor coreFd(Context ctx, ParcelFileDescriptor pfd) {
         FileDescriptor tun = pfd.getFileDescriptor();
+        if (VpnSb.on) {
+            return VpnSb.startNet(ctx, pfd);
+        }
         if (!active) {
             return tun;
         }
@@ -190,6 +201,7 @@ public final class VpnPump implements Runnable {
 
     /** Stops the threads; must run before the TUN descriptor is closed. */
     public static void stop() {
+        VpnSb.stopNet();
         VpnPump up = cur;
         cur = null;
         active = false;

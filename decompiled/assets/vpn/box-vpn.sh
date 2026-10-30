@@ -1,16 +1,18 @@
 #!/system/bin/sh
 # BoxProxy "VPN" run mode helper (runs as the app user, no root needed).
 #
-#   box-vpn.sh prepare CORE_SRC HOME_DIR CFG_SRC WORK_DIR PID_FILE
+#   box-vpn.sh prepare CORE_SRC HOME_DIR CFG_SRC WORK_DIR PID_FILE BOXCTL DB STARTUP SYNC [CORE]
 #       Stops stale cores, copies the user supplied core into the app's private
 #       (executable) storage and writes a VPN-ready copy of the active config.
-#       Prints "OK ipv6=<0|1>" or "ERR:<reason>".
-#   box-vpn.sh sync WORK_DIR PID_FILE BOXCTL DB_FILE STARTUP_FILE
+#       Prints "OK ipv6=<0|1>" or "ERR:<reason>". For sing-box (CORE) the chosen
+#       config is only copied to WORK_DIR/config.src: the app rewrites it (config.run.json).
+#   box-vpn.sh sync WORK_DIR PID_FILE BOXCTL DB_FILE STARTUP_FILE [CORE]
 #       Regenerates the startup config with boxctl (no root). "OK" or "ERR:<reason>".
-#   box-vpn.sh run HOME_DIR WORK_DIR PID_FILE
-#       Launches the core. stdin (fd 0) must be the TUN descriptor handed over
+#   box-vpn.sh run HOME_DIR WORK_DIR PID_FILE [CORE]
+#       Launches the core. mihomo: stdin (fd 0) must be the TUN descriptor handed over
 #       by VpnService; it is moved to fd 3 (== tun.file-descriptor in the config).
-#       Script events go to <run dir>/runs.log, the core's output to <run dir>/mihomo.log.
+#       sing-box: the app forwards the VPN packets to a local SOCKS inbound itself.
+#       Script events go to <run dir>/runs.log, the core's output to <run dir>/<core>.log.
 #   box-vpn.sh stop WORK_DIR PID_FILE
 #       Stops the core started by "run".
 #
@@ -143,6 +145,7 @@ rewrite_config() {
 # private copy). Returns 0 when STARTUP_FILE was produced, 1 otherwise.
 sync_startup() {
   _w=$1; _bx=$2; _db=$3; _st=$4
+  _core=${5:-mihomo}
   if [ ! -f "$_bx" ] || [ ! -f "$_db" ]; then
     note "auto overwrite: boxctl or database missing, using the config file"
     return 1
@@ -168,7 +171,7 @@ sync_startup() {
   fi
   _T=
   command -v timeout >/dev/null 2>&1 && _T="timeout 30"
-  BOX_MODE=tun BOX_CORE=mihomo BOXCTL_STDOUT_LOG_LINE=1 HOME="$_w" TMPDIR="$_w/tmp" \
+  BOX_MODE=tun BOX_CORE=$_core BOXCTL_STDOUT_LOG_LINE=1 HOME="$_w" TMPDIR="$_w/tmp" \
     $_T "$_L" "$_w/boxctl" --home "${_st%/run/state/config/startup-config}" --db "$_db" config sync >> "$RUNS" 2>&1 < /dev/null
   _rc=$?
   note "boxctl config sync rc=$_rc"
@@ -182,14 +185,14 @@ sync_startup() {
 
 case "$cmd" in
   sync)
-    work=$1; pf=$2; bx=$3; db=$4; startup=$5
+    work=$1; pf=$2; bx=$3; db=$4; startup=$5; core=${6:-mihomo}
     rundir=${pf%/*}
     RUNS=$rundir/runs.log
     mkdir -p "$rundir" "$work" 2>/dev/null
     exec 2>>"$RUNS"
     note() { echo "[$(date '+%F %T.%N' 2>/dev/null)] [vpn] $*" >> "$RUNS"; }
     note "manual config sync uid=$(id -u 2>/dev/null)"
-    if sync_startup "$work" "$bx" "$db" "$startup"; then
+    if sync_startup "$work" "$bx" "$db" "$startup" "$core"; then
       echo "OK"
     else
       echo "ERR:boxctl config sync failed, see runs.log"
@@ -197,12 +200,12 @@ case "$cmd" in
     fi
     ;;
   prepare)
-    src=$1; home=$2; cfg=$3; work=$4; pf=$5; bx=$6; db=$7; startup=$8; sync=$9
+    src=$1; home=$2; cfg=$3; work=$4; pf=$5; bx=$6; db=$7; startup=$8; sync=$9; core=${10:-mihomo}
     rundir=${pf%/*}
     RUNS=$rundir/runs.log
     mkdir -p "$rundir" 2>/dev/null
     : > "$RUNS" 2>/dev/null
-    : > "$rundir/mihomo.log" 2>/dev/null
+    : > "$rundir/$core.log" 2>/dev/null
     # stray shell diagnostics go to runs.log; stdout carries only the result
     exec 2>>"$RUNS"
     note() { echo "[$(date '+%F %T.%N' 2>/dev/null)] [vpn] $*" >> "$RUNS"; }
@@ -212,7 +215,7 @@ case "$cmd" in
     [ -f "$src" ] || { echo "ERR:core not found: $src"; exit 1; }
     [ -f "$cfg" ] || { echo "ERR:config not found: $cfg"; exit 1; }
     mkdir -p "$home" 2>/dev/null
-    rm -f "$work/config.run.yaml"
+    rm -f "$work/config.run.yaml" "$work/config.run.json"
     # core patched by an older version with the /dev/null replacement path is already fine
     [ -f "$work/core.patched2" ] && [ ! -f "$work/core.patched4" ] && mv -f "$work/core.patched2" "$work/core.patched4"
     need=1
@@ -233,9 +236,17 @@ case "$cmd" in
     # that as the source of the VPN config. Any failure falls back to the plain file.
     use=$cfg
     if [ "$sync" = 1 ]; then
-      if sync_startup "$work" "$bx" "$db" "$startup"; then
+      if sync_startup "$work" "$bx" "$db" "$startup" "$core"; then
         use=$startup
       fi
+    fi
+    if [ "$core" = sing-box ]; then
+      # the app turns config.src into config.run.json (inbounds, package rules)
+      cp "$use" "$work/config.src.tmp" && mv -f "$work/config.src.tmp" "$work/config.src" \
+        || { echo "ERR:cannot write config"; exit 1; }
+      note "prepare ok: core=$src cfg=$use copied=$need (sing-box)"
+      echo "OK ipv6=0"
+      exit 0
     fi
     _last=
     [ -f "$work/config.yaml" ] && [ ! "$use" -nt "$work/config.yaml" ] && [ ! "$cfg" -nt "$work/config.yaml" ] && _last=$(tail -n 1 "$work/config.yaml" 2>/dev/null)
@@ -250,7 +261,7 @@ case "$cmd" in
     echo "OK ipv6=$IPV6 $(app_proxy "$work/config.yaml")"
     ;;
   run)
-    home=$1; work=$2; pf=$3
+    home=$1; work=$2; pf=$3; core=${4:-mihomo}
     rundir=${pf%/*}
     RUNS=$rundir/runs.log
     note() { echo "[$(date '+%F %T.%N' 2>/dev/null)] [vpn] $*" >> "$RUNS"; }
@@ -267,6 +278,14 @@ case "$cmd" in
     ( sleep 3
       note "core fd 3 after exec (must be the TUN): $(ls -l /proc/$_me/fd/3 2>&1)"
       note "core cmdline: $(tr '\0' ' ' < /proc/$_me/cmdline 2>/dev/null)" ) </dev/null >/dev/null 2>&1 &
+    if [ "$core" = sing-box ]; then
+      [ -f "$work/config.run.json" ] || { note "config.run.json missing"; exit 1; }
+      note "config: $work/config.run.json"
+      for l in /system/bin/linker64 /system/bin/linker; do
+        [ -x "$l" ] && exec "$l" "$work/core" run -D "$home" -c "$work/config.run.json" 0</dev/null
+      done
+      exec "$work/core" run -D "$home" -c "$work/config.run.json" 0</dev/null
+    fi
     # The 3<&0 is attached to the exec itself: a standalone "exec 3<&0" would be
     # close-on-exec in mksh and the core would never see the descriptor.
     # config.run.yaml (written by the app) carries the translated PROCESS rules

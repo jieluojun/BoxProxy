@@ -23,9 +23,9 @@
 
 ## 限制
 
-* 仅支持 `mihomo` 内核（需要 `tun.file-descriptor`）；其它内核不会出现 `VPN` 选项。
+* 仅支持 `mihomo` 和 `sing-box` 内核；Xray / V2fly / Hysteria 不会出现 `VPN` 选项（见下文 sing-box 一节）。
 * 开机自启、root 专属功能（Redirect/TPROXY/eBPF、模块脚本等）在 VPN 模式下不可用。
-* 日志：`<run 目录>/runs.log`（脚本事件、fd 诊断）和 `<run 目录>/mihomo.log`（内核输出），日志查看里可直接看到。
+* 日志：`<run 目录>/runs.log`（脚本事件、fd 诊断）和 `<run 目录>/mihomo.log` / `sing-box.log`（内核输出），日志查看里可直接看到。
 * 安卓版 mihomo（GOOS=android）启动 TUN 前会无条件读取 `/data/system/packages.xml`（无 root 读不到，报 `build android rules: read packages list ... permission denied`，TUN 不会启动）。VPN 模式在应用私有目录的内核副本里，把这个字面量等长替换成 `/dev/////////////////null`（即 /dev/null，空文件可被正常解析），用户原内核文件不改动，也不会产生额外文件。
 
 ## 代码位置
@@ -94,3 +94,28 @@ VPN 模式以前直接使用原始配置文件，所以覆写不生效。
 限制：直接用 Socket 或 Cronet 的请求不走该选择器；配置里启用了 `authentication` 且 127.0.0.1 不在
 `skip-auth-prefixes` 时，App 自己的请求会被内核拒绝；配置开了 `allow-lan: true` 且没有端口而由我们补了
 `mixed-port` 时，该端口也会对局域网开放。需在真机验证。
+
+## sing-box 内核（实验性）
+
+独立的 sing-box 没有「接收 VPN 描述符」的 tun 选项（只有 libbox 的 `PlatformInterface` 才有），所以 VPN 模式下
+**由应用自己做 TUN → 本地代理的转发**，内核只当普通代理用：
+
+1. `VpnNet`（`vpn-src/src/com/box/app/vpn/VpnNet.java`，纯 Java 用户态协议栈）读取 VPN 描述符里的 IPv4 包：
+   * TCP：自己实现握手、窗口、重传、半关闭等，每条连接对应一条到内核本地 SOCKS5 入站的连接；
+   * UDP：SOCKS5 UDP ASSOCIATE；
+   * DNS（发往 `172.19.0.2`）：本地应答 fake-IP（`198.18.0.0/15`），之后 CONNECT 时把 fake-IP 还原成域名交给内核，
+     所以内核的域名规则 / 内核自己的 DNS 照常生效；
+   * IPv6 不进 VPN（与 mihomo 的包名规则模式一致），ICMP 丢弃。
+2. `SbConfig` 在应用里改写 sing-box JSON 配置（只写到应用私有目录 `files/vpn/config.run.json`，不改用户文件）：
+   删除 `tun` / `redirect` / `tproxy` 入站，加一个监听 `127.0.0.1` 随机端口的 SOCKS5 入站（沿用被删 tun 入站的 `tag`，
+   所以写给它的规则继续有效）；删除 `routing_mark`、`bind_interface`、`auto_detect_interface`、`find_process` 等
+   只对 root 模式有意义的项；没有无认证的 mixed/http/socks 入站时补一个 `mixed`（优先 7890）给应用自身请求用。
+3. **包名规则**：`package_name` / `process_name` / `package_name_regex`（含嵌套 `logical` 规则）被翻译成 `auth_user`。
+   应用对每条新连接用 `getConnectionOwnerUid()` 查到所属应用，用 SOCKS5 用户名 `t<N>` 告诉内核（`t0` = 不命中任何规则）；
+   规则里的包名在翻译时展开成 `auth_user: ["t1","t2",…]`，同一规则里多个字段取交集，没有命中的写成 `["__none__"]`。
+   `dns.rules` 里带包名字段的规则无法匹配（DNS 查询不带应用信息），会被删除。
+4. 只支持 JSON 配置（`.json` / `.jsonc`，需要 sing-box 能解析的 JSON）；YAML 配置会报错。「自动覆写」同样可用（`boxctl config sync`，`BOX_CORE=sing-box`）。
+5. 与 mihomo 的区别：mihomo 沿用 `tun.file-descriptor` + 源地址标签；sing-box 走上述自带转发，性能取决于 Java 协议栈。
+   没有在真机上验证过，属于实验功能。
+
+测试：`vpn-src/test/` 里有主机侧的协议栈测试（TUN 设备桥 + SOCKS5 测试服务 + 丢包注入）和 `SbConfigTest`，不会进 APK。

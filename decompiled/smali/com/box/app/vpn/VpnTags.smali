@@ -2,6 +2,9 @@
 .super Ljava/lang/Object;
 .source "VpnTags.java"
 
+# interfaces
+.implements Lcom/box/app/vpn/SbConfig$Tags;
+
 
 # static fields
 .field public static final MAX_TAGS:I = 0xfa
@@ -173,7 +176,7 @@
 .method private buildTags()V
     .registers 5
 
-    .line 259
+    .line 279
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -184,7 +187,7 @@
 
     const/4 v1, 0x0
 
-    .line 260
+    .line 280
     :goto_9
     iget-object v2, p0, Lcom/box/app/vpn/VpnTags;->values:Ljava/util/ArrayList;
 
@@ -194,12 +197,12 @@
 
     if-lt v1, v2, :cond_4f
 
-    .line 263
+    .line 283
     new-instance v1, Ljava/util/HashSet;
 
     invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
 
-    .line 265
+    .line 285
     :try_start_16
     iget-object v2, p0, Lcom/box/app/vpn/VpnTags;->pm:Landroid/content/pm/PackageManager;
 
@@ -207,7 +210,7 @@
 
     move-result-object v2
 
-    .line 266
+    .line 286
     :goto_1c
     invoke-interface {v2}, Ljava/util/List;->size()I
 
@@ -217,7 +220,7 @@
 
     goto :goto_35
 
-    .line 267
+    .line 287
     :cond_23
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -239,7 +242,7 @@
 
     goto :goto_1c
 
-    .line 272
+    .line 292
     :catch_35
     :goto_35
     invoke-virtual {v1}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
@@ -262,7 +265,7 @@
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 273
+    .line 293
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -273,7 +276,7 @@
 
     goto :goto_39
 
-    .line 261
+    .line 281
     :cond_4f
     iget-object v2, p0, Lcom/box/app/vpn/VpnTags;->clauseTags:Ljava/util/ArrayList;
 
@@ -291,7 +294,7 @@
 .method private clause(ZLjava/lang/String;)I
     .registers 7
 
-    .line 211
+    .line 231
     new-instance v0, Ljava/lang/StringBuilder;
 
     if-eqz p1, :cond_7
@@ -316,7 +319,7 @@
 
     move-result-object v0
 
-    .line 212
+    .line 232
     iget-object v1, p0, Lcom/box/app/vpn/VpnTags;->clauseIds:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -327,14 +330,14 @@
 
     if-eqz v1, :cond_26
 
-    .line 214
+    .line 234
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
     return p1
 
-    .line 216
+    .line 236
     :cond_26
     iget-object v1, p0, Lcom/box/app/vpn/VpnTags;->values:Ljava/util/ArrayList;
 
@@ -342,7 +345,7 @@
 
     move-result v1
 
-    .line 217
+    .line 237
     iget-object v2, p0, Lcom/box/app/vpn/VpnTags;->clauseIds:Ljava/util/HashMap;
 
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -351,12 +354,12 @@
 
     invoke-virtual {v2, v0, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 218
+    .line 238
     iget-object v0, p0, Lcom/box/app/vpn/VpnTags;->values:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 219
+    .line 239
     iget-object v0, p0, Lcom/box/app/vpn/VpnTags;->regex:Ljava/util/ArrayList;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -371,7 +374,7 @@
 
     const/4 p1, 0x2
 
-    .line 223
+    .line 243
     :try_start_47
     invoke-static {p2, p1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;I)Ljava/util/regex/Pattern;
 
@@ -381,7 +384,7 @@
 
     move-object v0, p1
 
-    .line 228
+    .line 248
     :catch_4c
     :cond_4c
     iget-object p1, p0, Lcom/box/app/vpn/VpnTags;->patterns:Ljava/util/ArrayList;
@@ -394,7 +397,7 @@
 .method private expr(I)Ljava/lang/String;
     .registers 5
 
-    .line 238
+    .line 258
     iget-object v0, p0, Lcom/box/app/vpn/VpnTags;->clauseTags:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -403,7 +406,7 @@
 
     check-cast p1, Ljava/util/ArrayList;
 
-    .line 239
+    .line 259
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
@@ -414,7 +417,7 @@
 
     return-object p1
 
-    .line 242
+    .line 262
     :cond_11
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -426,7 +429,7 @@
 
     if-ne v0, v2, :cond_3b
 
-    .line 243
+    .line 263
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v2, "SRC-IP-CIDR,"
@@ -459,7 +462,7 @@
 
     return-object p1
 
-    .line 245
+    .line 265
     :cond_3b
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -467,7 +470,7 @@
 
     invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 246
+    .line 266
     :goto_42
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -477,10 +480,10 @@
 
     const/16 p1, 0x29
 
-    .line 252
+    .line 272
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 253
+    .line 273
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
@@ -492,13 +495,13 @@
 
     const/16 v2, 0x2c
 
-    .line 248
+    .line 268
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     :cond_59
     const-string v2, "(SRC-IP-CIDR,"
 
-    .line 250
+    .line 270
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -582,7 +585,7 @@
 .method private static ip(I)Ljava/lang/String;
     .registers 3
 
-    .line 233
+    .line 253
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "172.19.200."
@@ -1354,7 +1357,7 @@
 .method private signature(I)Ljava/lang/String;
     .registers 8
 
-    .line 280
+    .line 300
     :try_start_0
     iget-object v0, p0, Lcom/box/app/vpn/VpnTags;->pm:Landroid/content/pm/PackageManager;
 
@@ -1376,7 +1379,7 @@
 
     return-object p1
 
-    .line 287
+    .line 307
     :cond_d
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1386,7 +1389,7 @@
 
     const/4 v2, 0x0
 
-    .line 288
+    .line 308
     :goto_14
     iget-object v3, p0, Lcom/box/app/vpn/VpnTags;->values:Ljava/util/ArrayList;
 
@@ -1396,7 +1399,7 @@
 
     if-lt v2, v3, :cond_21
 
-    .line 306
+    .line 326
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p1
@@ -1408,7 +1411,7 @@
 
     const/4 v4, 0x0
 
-    .line 290
+    .line 310
     :goto_23
     array-length v5, p1
 
@@ -1418,11 +1421,11 @@
 
     goto :goto_60
 
-    .line 291
+    .line 311
     :cond_29
     aget-object v4, p1, v3
 
-    .line 292
+    .line 312
     iget-object v5, p0, Lcom/box/app/vpn/VpnTags;->regex:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1437,7 +1440,7 @@
 
     if-eqz v5, :cond_51
 
-    .line 293
+    .line 313
     iget-object v5, p0, Lcom/box/app/vpn/VpnTags;->patterns:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1448,7 +1451,7 @@
 
     if-eqz v5, :cond_4f
 
-    .line 294
+    .line 314
     invoke-virtual {v5, v4}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     move-result-object v4
@@ -1468,7 +1471,7 @@
 
     goto :goto_5d
 
-    .line 296
+    .line 316
     :cond_51
     iget-object v5, p0, Lcom/box/app/vpn/VpnTags;->values:Ljava/util/ArrayList;
 
@@ -1491,7 +1494,7 @@
     :goto_60
     if-eqz v4, :cond_70
 
-    .line 300
+    .line 320
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result v3
@@ -1500,10 +1503,10 @@
 
     const/16 v3, 0x2c
 
-    .line 301
+    .line 321
     invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 303
+    .line 323
     :cond_6d
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
@@ -1515,6 +1518,26 @@
 
 
 # virtual methods
+.method public addClause(ZLjava/lang/String;)I
+    .registers 3
+
+    .line 212
+    invoke-direct {p0, p1, p2}, Lcom/box/app/vpn/VpnTags;->clause(ZLjava/lang/String;)I
+
+    move-result p1
+
+    return p1
+.end method
+
+.method public build()V
+    .registers 1
+
+    .line 217
+    invoke-direct {p0}, Lcom/box/app/vpn/VpnTags;->buildTags()V
+
+    return-void
+.end method
+
 .method public clauseCount()I
     .registers 2
 
@@ -1531,14 +1554,14 @@
 .method public describe()Ljava/lang/String;
     .registers 4
 
-    .line 336
+    .line 356
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     const/4 v1, 0x0
 
-    .line 337
+    .line 357
     :goto_6
     iget-object v2, p0, Lcom/box/app/vpn/VpnTags;->values:Ljava/util/ArrayList;
 
@@ -1550,7 +1573,7 @@
 
     const-string v1, " tags="
 
-    .line 342
+    .line 362
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v1, p0, Lcom/box/app/vpn/VpnTags;->tagSig:Ljava/util/ArrayList;
@@ -1561,7 +1584,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 343
+    .line 363
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
@@ -1571,7 +1594,7 @@
     :cond_21
     const-string v2, " clause"
 
-    .line 338
+    .line 358
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
@@ -1580,7 +1603,7 @@
 
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 339
+    .line 359
     iget-object v2, p0, Lcom/box/app/vpn/VpnTags;->regex:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1605,7 +1628,7 @@
     :goto_41
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 340
+    .line 360
     iget-object v2, p0, Lcom/box/app/vpn/VpnTags;->values:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1637,7 +1660,7 @@
 .method public tagFor(IZ)I
     .registers 7
 
-    .line 311
+    .line 331
     iget-object v0, p0, Lcom/box/app/vpn/VpnTags;->uidTag:Ljava/util/HashMap;
 
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1652,20 +1675,20 @@
 
     if-eqz v0, :cond_13
 
-    .line 313
+    .line 333
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result p1
 
     return p1
 
-    .line 315
+    .line 335
     :cond_13
     invoke-direct {p0, p1}, Lcom/box/app/vpn/VpnTags;->signature(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 317
+    .line 337
     invoke-virtual {v0}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -1674,7 +1697,7 @@
 
     if-lez v1, :cond_72
 
-    .line 318
+    .line 338
     iget-object v1, p0, Lcom/box/app/vpn/VpnTags;->sigTag:Ljava/util/HashMap;
 
     invoke-virtual {v1, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1685,7 +1708,7 @@
 
     if-eqz v1, :cond_2d
 
-    .line 320
+    .line 340
     invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
 
     move-result v2
@@ -1695,7 +1718,7 @@
     :cond_2d
     if-eqz p2, :cond_72
 
-    .line 321
+    .line 341
     iget-object p2, p0, Lcom/box/app/vpn/VpnTags;->tagSig:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
@@ -1706,7 +1729,7 @@
 
     if-ge p2, v1, :cond_72
 
-    .line 322
+    .line 342
     iget-object p2, p0, Lcom/box/app/vpn/VpnTags;->tagSig:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
@@ -1715,7 +1738,7 @@
 
     add-int/lit8 p2, p2, 0x1
 
-    .line 323
+    .line 343
     iget-object v1, p0, Lcom/box/app/vpn/VpnTags;->sigTag:Ljava/util/HashMap;
 
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -1724,19 +1747,19 @@
 
     invoke-virtual {v1, v0, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 324
+    .line 344
     iget-object v1, p0, Lcom/box/app/vpn/VpnTags;->tagSig:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     const-string v1, ","
 
-    .line 325
+    .line 345
     invoke-virtual {v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v0
 
-    .line 326
+    .line 346
     :goto_55
     array-length v1, v0
 
@@ -1746,7 +1769,7 @@
 
     goto :goto_72
 
-    .line 327
+    .line 347
     :cond_5a
     iget-object v1, p0, Lcom/box/app/vpn/VpnTags;->clauseTags:Ljava/util/ArrayList;
 
@@ -1772,7 +1795,7 @@
 
     goto :goto_55
 
-    .line 331
+    .line 351
     :cond_72
     :goto_72
     iget-object p2, p0, Lcom/box/app/vpn/VpnTags;->uidTag:Ljava/util/HashMap;
@@ -1788,6 +1811,54 @@
     invoke-virtual {p2, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     return v2
+.end method
+
+.method public tagsOf(I)[I
+    .registers 5
+
+    .line 222
+    iget-object v0, p0, Lcom/box/app/vpn/VpnTags;->clauseTags:Ljava/util/ArrayList;
+
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/util/ArrayList;
+
+    .line 223
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+
+    move-result v0
+
+    new-array v0, v0, [I
+
+    const/4 v1, 0x0
+
+    .line 224
+    :goto_f
+    array-length v2, v0
+
+    if-lt v1, v2, :cond_13
+
+    return-object v0
+
+    .line 225
+    :cond_13
+    invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/Integer;
+
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
+
+    move-result v2
+
+    aput v2, v0, v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    goto :goto_f
 .end method
 
 .method public translate(Ljava/lang/String;)Ljava/lang/String;

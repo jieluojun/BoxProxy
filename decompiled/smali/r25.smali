@@ -156,6 +156,10 @@
 
     sget-object v4, Lu25;->n:Lu25;
 
+    if-eq p0, v4, :cond_vpn_ok
+
+    sget-object v4, Lu25;->o:Lu25;
+
     if-ne p0, v4, :cond_0
 
     :cond_vpn_ok
