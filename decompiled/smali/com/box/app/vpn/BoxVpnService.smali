@@ -566,9 +566,9 @@
     return-void
 
     :cond_has_out
-    const-string v1, "OK"
+    const-string v1, "OK ipv6="
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result v1
 
@@ -616,11 +616,13 @@
 
     new-instance v10, Ljava/io/File;
 
-    const-string v1, "core.log"
+    invoke-virtual {v9}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
-    invoke-direct {v10, v7, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    move-result-object v1
 
-    invoke-virtual {v10}, Ljava/io/File;->delete()Z
+    const-string v2, "vpn.log"
+
+    invoke-direct {v10, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     const-string v1, "run"
 
