@@ -1,5 +1,7 @@
 .class public final Lcom/box/app/vpn/VpnBridge;
 .super Ljava/lang/Object;
+
+.field private static st:[J
 .source "VpnBridge.java"
 
 # Glue between the existing (root based) app code and the non-root VPN run mode.
@@ -1078,9 +1080,11 @@
     return-object v1
 .end method
 
-# Local-mode network speed (home page): the device-wide TrafficStats total does not
-# move with the tunnel in VPN mode. The core runs under the app uid and everything it
-# forwards leaves through that uid, so while the VPN runs use the uid counters.
+# Local-mode network speed (home page): the device-wide TrafficStats total is not a
+# usable source in VPN mode. The core runs under the app uid and everything it forwards
+# leaves through that uid, so the uid counters are preferred; the device total is the
+# fallback when the uid counters do not move. Both feed one synthetic cumulative counter
+# so the caller (which diffs consecutive readings) keeps working.
 # uid(true) = rx, uid(false) = tx; -1 when the VPN is not running or the value is unavailable.
 .method public static uid(Z)J
     .locals 4
@@ -1120,44 +1124,236 @@
     return-wide v1
 .end method
 
-.method public static rx(J)J
-    .locals 4
+.method public static dbg(JJ)V
+    .locals 3
 
-    const/4 v0, 0x1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    invoke-static {v0}, Lcom/box/app/vpn/VpnBridge;->uid(Z)J
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    move-result-wide v0
+    const-string v1, "[speed] total_rx="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p0, p1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    const-string v1, " uid_rx="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p2, p3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnAppProxy;->log(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+# step(isRx, total): returns the cumulative counter to use for this reading.
+# st = [rxInit, rxLastTotal, rxLastUid, rxSyn, txInit, txLastTotal, txLastUid, txSyn, logCount]
+.method public static step(ZJ)J
+    .locals 12
+
+    sget-object v0, Lcom/box/app/vpn/VpnBridge;->st:[J
+
+    if-nez v0, :cond_have
+
+    const/16 v1, 0x9
+
+    new-array v0, v1, [J
+
+    sput-object v0, Lcom/box/app/vpn/VpnBridge;->st:[J
+
+    :cond_have
+    sget-boolean v1, Lcom/box/app/vpn/BoxVpnService;->running:Z
+
+    if-nez v1, :cond_run
 
     const-wide/16 v2, 0x0
 
-    cmp-long v2, v0, v2
+    const/4 v1, 0x0
 
-    if-ltz v2, :cond_total
+    aput-wide v2, v0, v1
+
+    const/4 v1, 0x4
+
+    aput-wide v2, v0, v1
+
+    return-wide p1
+
+    :cond_run
+    if-eqz p0, :cond_txbase
+
+    const/4 v1, 0x0
+
+    goto :cond_base
+
+    :cond_txbase
+    const/4 v1, 0x4
+
+    :cond_base
+    invoke-static {p0}, Lcom/box/app/vpn/VpnBridge;->uid(Z)J
+
+    move-result-wide v2
+
+    aget-wide v4, v0, v1
+
+    const-wide/16 v6, 0x0
+
+    cmp-long v8, v4, v6
+
+    if-nez v8, :cond_inited
+
+    const-wide/16 v4, 0x1
+
+    aput-wide v4, v0, v1
+
+    add-int/lit8 v8, v1, 0x1
+
+    aput-wide p1, v0, v8
+
+    add-int/lit8 v8, v1, 0x2
+
+    aput-wide v2, v0, v8
+
+    add-int/lit8 v8, v1, 0x3
+
+    aput-wide p1, v0, v8
+
+    return-wide p1
+
+    :cond_inited
+    add-int/lit8 v8, v1, 0x1
+
+    aget-wide v4, v0, v8
+
+    sub-long v4, p1, v4
+
+    const-wide/16 v10, 0x0
+
+    cmp-long v9, v4, v10
+
+    if-gez v9, :cond_dt
+
+    move-wide v4, v10
+
+    :cond_dt
+    aput-wide p1, v0, v8
+
+    add-int/lit8 v8, v1, 0x2
+
+    aget-wide v6, v0, v8
+
+    cmp-long v9, v2, v10
+
+    if-ltz v9, :cond_nouid
+
+    cmp-long v9, v6, v10
+
+    if-ltz v9, :cond_setuid
+
+    sub-long v6, v2, v6
+
+    cmp-long v9, v6, v10
+
+    if-gez v9, :cond_du
+
+    move-wide v6, v10
+
+    :cond_du
+    aput-wide v2, v0, v8
+
+    goto :cond_pick
+
+    :cond_setuid
+    aput-wide v2, v0, v8
+
+    move-wide v6, v10
+
+    goto :cond_pick
+
+    :cond_nouid
+    move-wide v6, v10
+
+    :cond_pick
+    cmp-long v9, v6, v10
+
+    if-lez v9, :cond_usetot
+
+    move-wide v4, v6
+
+    :cond_usetot
+    add-int/lit8 v8, v1, 0x3
+
+    aget-wide v6, v0, v8
+
+    add-long/2addr v6, v4
+
+    aput-wide v6, v0, v8
+
+    if-nez v1, :cond_ret
+
+    const/16 v8, 0x8
+
+    aget-wide v10, v0, v8
+
+    const-wide/16 v4, 0x1
+
+    add-long/2addr v10, v4
+
+    aput-wide v10, v0, v8
+
+    const-wide/16 v4, 0x5
+
+    rem-long/2addr v10, v4
+
+    const-wide/16 v4, 0x0
+
+    cmp-long v8, v10, v4
+
+    if-nez v8, :cond_ret
+
+    invoke-static {p1, p2, v2, v3}, Lcom/box/app/vpn/VpnBridge;->dbg(JJ)V
+
+    :cond_ret
+    return-wide v6
+.end method
+
+.method public static rx(J)J
+    .locals 2
+
+    const/4 v0, 0x1
+
+    :try_start_0
+    invoke-static {v0, p0, p1}, Lcom/box/app/vpn/VpnBridge;->step(ZJ)J
+
+    move-result-wide v0
 
     return-wide v0
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_total
+    :catch_0
     return-wide p0
 .end method
 
 .method public static tx(J)J
-    .locals 4
+    .locals 2
 
     const/4 v0, 0x0
 
-    invoke-static {v0}, Lcom/box/app/vpn/VpnBridge;->uid(Z)J
+    :try_start_0
+    invoke-static {v0, p0, p1}, Lcom/box/app/vpn/VpnBridge;->step(ZJ)J
 
     move-result-wide v0
 
-    const-wide/16 v2, 0x0
-
-    cmp-long v2, v0, v2
-
-    if-ltz v2, :cond_total
-
     return-wide v0
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    :cond_total
+    :catch_0
     return-wide p0
 .end method

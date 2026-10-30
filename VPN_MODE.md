@@ -98,5 +98,7 @@ VPN 模式以前直接使用原始配置文件，所以覆写不生效。
 ## 首页网速（本地模式）
 
 「本地模式」靠 `TrafficStats` 的整机收发字节数算速度，VPN 模式下读出来是 0（API 模式走内核接口，不受影响）。
-VPN 运行期间改读本应用 UID 的计数（`TrafficStats.getUidRxBytes/getUidTxBytes`）：内核以本应用 UID 运行，
-它转发的流量都从这个 UID 出去，所以等于经过 VPN 的实际流量；读不到时回退到整机总量。VPN 启停的那一瞬间可能出现一次跳变。
+VPN 运行期间改用 `VpnBridge.step` 合成一个累计计数：优先取本应用 UID 的增量
+（`TrafficStats.getUidRxBytes/getUidTxBytes`：内核以本应用 UID 运行，转发的流量都从这个 UID 出去），
+UID 计数没有增长时退回整机总量的增量，原调用方照旧对相邻两次读数做差。VPN 启停的那一瞬间可能出现一次跳变。
+诊断：`runs.log` 里每约 5 秒一行 `[app-proxy] [speed] total_rx=… uid_rx=…`（两个原始累计值）。
