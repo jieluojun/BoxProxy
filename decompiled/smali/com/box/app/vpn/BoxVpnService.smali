@@ -1121,9 +1121,29 @@
 .end method
 
 .method public onTaskRemoved(Landroid/content/Intent;)V
-    .locals 0
+    .locals 2
 
     invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->taskRemoved()V
+
+    # The swipe kills the process; the system then re-creates this service just to call
+    # onTaskRemoved (and the sticky restart may be delayed or skipped by the vendor ROM). Use this
+    # call to bring the VPN back: same path as the null-intent restart (worker thread checks the
+    # settings, doStart is guarded by running/starting).
+    sget-boolean v0, Lcom/box/app/vpn/BoxVpnService;->running:Z
+
+    if-nez v0, :cond_alive
+
+    const-string v0, "service re-created after the swipe: trying to restart the VPN from onTaskRemoved"
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1, v1}, Lcom/box/app/vpn/BoxVpnService;->onStartCommand(Landroid/content/Intent;II)I
+
+    :cond_alive
 
     invoke-super {p0, p1}, Landroid/app/Service;->onTaskRemoved(Landroid/content/Intent;)V
 

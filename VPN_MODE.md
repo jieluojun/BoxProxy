@@ -172,3 +172,7 @@ VPN 模式下「开机自启」开着时，划掉应用卡片 / 进程被杀后�
   `onTaskRemoved` 写 `task removed`。这几行能区分「系统根本没重启进程」和「重启了但服务没拉起」。
 - VPN 模式下打开「开机自启」时，会弹系统的「忽略电池优化」请求（参考 Bettbox，已声明
   `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS`），减少后台被系统限制 / 清理。
+- 实测（HyperOS）：滑掉卡片时进程被系统以 `SwipeUpClean` 杀掉，约 1.5 秒后系统会新建进程、重建服务，
+  只调用 `onCreate` 和 `onTaskRemoved`，不调用 `onStartCommand`。所以 `onTaskRemoved` 在服务未运行时
+  也会走与「粘性重启」相同的路径（工作线程检查设置，`running`/`starting` 防重复启动）把 VPN 拉起来。
+
