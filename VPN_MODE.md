@@ -26,7 +26,7 @@
 * 仅支持 `mihomo` 内核（需要 `tun.file-descriptor`）；其它内核不会出现 `VPN` 选项。
 * 开机自启、root 专属功能（Redirect/TPROXY/eBPF、模块脚本等）在 VPN 模式下不可用。
 * 日志：`<run 目录>/runs.log`（脚本事件、fd 诊断）和 `<run 目录>/mihomo.log`（内核输出），日志查看里可直接看到。
-* 安卓版 mihomo（GOOS=android）启动 TUN 前会无条件读取 `/data/system/packages.xml`（无 root 读不到，报 `build android rules: read packages list ... permission denied`，TUN 不会启动）。VPN 模式在应用私有目录的内核副本里，把这个字面量等长替换成 `/dev/null`（用 17 个斜杠凑成等长路径；读到空内容即可通过，不再生成任何替身文件），用户原内核文件不改动。
+* 安卓版 mihomo（GOOS=android）启动 TUN 前会无条件读取 `/data/system/packages.xml`（无 root 读不到，报 `build android rules: read packages list ... permission denied`，TUN 不会启动）。VPN 模式在应用私有目录的内核副本里，把这个字面量等长替换成 `/proc/self/cwd//.pkgs.xml`（内核 cwd 为私有目录 `files/vpn/`，该目录下的 `.pkgs.xml` 平时是空的 packages 文件；配置里含 `PROCESS-` 规则时由应用写入已安装应用的包名/UID 列表），用户原内核文件不改动。
 
 ## 代码位置
 
@@ -49,4 +49,4 @@
 * 本应用自身始终排除在隧道之外（内核以本应用 UID 运行，否则会回环）。
 * 只能处理当前用户（主用户）的应用；分身/其他用户的 UID、GID 规则、`cnip_force_*` 在 VPN 模式下不生效。
 * 修改勾选后需重启 VPN 才会应用。
-* 配置里的 `PROCESS-NAME` / 包名规则：无 root 的独立内核无法按连接查询所属应用，所以 `find-process-mode` 为 off，这类规则不会命中（见上方说明）。
+* 配置里的 `PROCESS-NAME` / `PROCESS-NAME-REGEX` 规则（实验性）：不再强制 `find-process-mode: off`，沿用配置自己的值；配置含 `PROCESS-` 规则时应用会生成包名↔UID 列表供内核换算包名。内核要靠 netlink INET_DIAG 查连接属主 UID，能否在无 root 设备上成功取决于系统（Android 10+ 可能被拒），失败时规则不命中，日志里 debug 级别会有 `[Process] find process error`。
