@@ -461,6 +461,8 @@
 
     :try_start_0
     # keeps the SharedPreferences mirror of "boot auto-start" / "VPN mode" fresh for the restart logic
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->adoptVpnMode()V
+
     invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->sync()V
 
     invoke-static {}, Llb0;->g()Lya0;

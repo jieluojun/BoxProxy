@@ -826,6 +826,112 @@
 .end method
 
 # Process start: why did the previous process die (ApplicationExitInfo, Android 11+)?
+# Without root the VPN is forced as the run mode while the saved mode may still be a root mode (TUN).
+# When the VPN is started like that, save "VPN" as the run mode (database only, no mode-switch side
+# effects), so that granting root later keeps the VPN as the current mode instead of falling back to
+# the saved root mode (whose stop path needs su).
+.method public static adoptVpnMode()V
+    .locals 27
+
+    :try_start_0
+    invoke-static {}, Lcom/box/app/vpn/VpnRoot;->noRoot()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_end
+
+    invoke-static {}, Llb0;->g()Lya0;
+
+    move-result-object v2
+
+    iget-object v0, v2, Lya0;->b:Ljava/lang/String;
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnBridge;->isVpn(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_end
+
+    const/4 v3, 0x0
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const/4 v7, 0x0
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x0
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
+    const/4 v12, 0x0
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x0
+
+    const/4 v15, 0x0
+
+    const/4 v16, 0x0
+
+    const/4 v17, 0x0
+
+    const/4 v18, 0x0
+
+    const/4 v19, 0x0
+
+    const/4 v20, 0x0
+
+    const/4 v21, 0x0
+
+    const/4 v22, 0x0
+
+    const/4 v23, 0x0
+
+    const/4 v24, 0x0
+
+    const/4 v25, 0x0
+
+    const-string v4, "vpn"
+
+    const v26, 0x7ffffd
+
+    invoke-static/range {v2 .. v26}, Lya0;->a(Lya0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/String;ZZI)Lya0;
+
+    move-result-object v2
+
+    invoke-static {}, Llb0;->k()Lab0;
+
+    move-result-object v0
+
+    invoke-static {v0}, Llb0;->d(Lab0;)V
+
+    sget-object v0, Lca0;->a:Lca0;
+
+    new-instance v1, Lr2;
+
+    const/16 v3, 0x1d
+
+    invoke-direct {v1, v2, v3}, Lr2;-><init>(Ljava/lang/Object;B)V
+
+    invoke-virtual {v0, v1}, Lca0;->o(Lr52;)Ljava/lang/Object;
+
+    const-string v0, "no root: the run mode was saved as VPN"
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
+    :cond_end
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    return-void
+.end method
+
 # Every new process starts a fresh autostart.log (like runs.log): the previous process's exit reason
 # is written right after, from ApplicationExitInfo.
 .method public static clearLog()V

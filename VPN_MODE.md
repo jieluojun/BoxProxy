@@ -185,3 +185,13 @@ VPN 模式下「开机自启」开着时，划掉应用卡片 / 进程被杀后�
 - `autostart.log` 在每个新进程启动时清空重写（和 `runs.log` 每次启动清空一样），第一行是 `process started`，
   接着是上一个进程的退出原因。同一个进程内的服务重启不会清。
 
+## 无 root 启动 VPN 后再授予 root：保持 VPN 模式
+
+没有 root 时应用把运行模式强制按 VPN 处理，但数据库里保存的运行模式可能还是默认的 TUN。
+此时运行中再授予 root，强制规则失效，运行模式就变回已保存的 TUN，停止代理会走 root 的流程，
+在非 root 的进程里失败并弹出 `su` 相关通知。
+
+现在无 root 时 VPN 一启动（`BoxVpnService.doStart`），就把运行模式**直接写入数据库**为 `vpn`
+（`VpnPrefs.adoptVpnMode`，不触发运行模式切换的副作用，日志 `no root: the run mode was saved as VPN`）。
+之后授予 root，当前运行模式仍是 VPN，停止/重启走 VPN 流程；想用 root 模式再手动切换。
+
