@@ -74,24 +74,54 @@ app_proxy() {
   fi
 }
 
+# ms_now -> sets MS to a millisecond counter. Android's mksh has 32-bit arithmetic, so only
+# the last 8 digits of the epoch milliseconds are kept (prefixed with 1 so they are never
+# taken for octal); ms_since START -> sets D to the elapsed milliseconds (0 without date %N).
+ms_now() {
+  MS=$(date +%s%N 2>/dev/null)
+  case "$MS" in
+    ''|*[!0-9]*|?????????) MS=0 ;;
+    *) MS=${MS%??????}; MS=1${MS#${MS%????????}} ;;
+  esac
+}
+ms_since() {
+  ms_now
+  D=$((MS - $1))
+  [ "$D" -lt 0 ] && D=$((D + 100000000))
+  [ "$1" = 0 ] && D=0
+}
+
 # rewrite_config SRC DST
 # Drops everything that only makes sense for the root modes (routing marks,
 # redirect/tproxy listeners, bound interface, old tun block) and appends a tun
 # section that uses the descriptor passed in by VpnService.
 rewrite_config() {
+  # The loop below reads one byte per read(2); on the emulated storage (FUSE) that took
+  # seconds for a few hundred lines. Read a private copy (made with big reads) instead.
+  _in=$1
+  ms_now; _c0=$MS
+  if cp "$1" "$work/tmp/rewrite.in" 2>/dev/null; then _in=$work/tmp/rewrite.in; fi
+  ms_since $_c0
+  note "rewrite: source copied in $D ms"
   _skip=0
   IPV6=0
   HASPORT=0
   _cr=$(printf '\r')
+  # Collect the lines in a variable and write them once: a printf per line cost ~7 ms each
+  # on the phone (3.5 s for 471 lines), probably because it is not a shell builtin there.
+  _nl='
+'
+  _buf=
+  ms_now; _l0=$MS
   {
     while IFS= read -r _line || [ -n "$_line" ]; do
       _line=${_line%"$_cr"}
       case "$_line" in
         ''|'#'*)
-          [ "$_skip" = 1 ] || printf '%s\n' "$_line"
+          [ "$_skip" = 1 ] || _buf=$_buf$_line$_nl
           continue ;;
         ' '*|"	"*|'-'*)
-          [ "$_skip" = 1 ] || printf '%s\n' "$_line"
+          [ "$_skip" = 1 ] || _buf=$_buf$_line$_nl
           continue ;;
       esac
       _key=${_line%%:*}
@@ -107,16 +137,17 @@ rewrite_config() {
           else
             _skip=0
             HASPORT=1
-            printf '%s\n' "$_line"
+            _buf=$_buf$_line$_nl
           fi ;;
         *)
           _skip=0
           case "$_line" in
             'ipv6:'*true*) IPV6=1 ;;
           esac
-          printf '%s\n' "$_line" ;;
+          _buf=$_buf$_line$_nl ;;
       esac
-    done < "$1"
+    done < "$_in"
+    printf '%s' "$_buf"
     printf '\n# --- added by BoxProxy VPN mode ---\n'
     printf 'find-process-mode: off\n'
     [ "$HASPORT" = 1 ] || printf 'mixed-port: 7890\n'
@@ -139,6 +170,8 @@ rewrite_config() {
     fi
     printf '# box-vpn-cfg v8 ipv6=%s src=%s\n' "$IPV6" "$1"
   } > "$2"
+  ms_since $_l0
+  note "rewrite: filtered and written in $D ms"
 }
 
 # sync_startup WORK BOXCTL DB STARTUP_FILE   (needs note() and $RUNS)
@@ -172,10 +205,20 @@ sync_startup() {
   fi
   _T=
   command -v timeout >/dev/null 2>&1 && _T="timeout 30"
+  # boxctl appends its own log lines to <run>/runs.log (the file $RUNS), and with
+  # BOXCTL_STDOUT_LOG_LINE=1 prints the same lines to stdout: keep stdout out of the log
+  # (every line was there twice) and only add it when the sync failed.
+  _out="$_w/tmp/boxctl-sync.out"
+  ms_now; _t0=$MS
   BOX_MODE=tun BOX_CORE=$_core BOXCTL_STDOUT_LOG_LINE=1 HOME="$_w" TMPDIR="$_w/tmp" \
-    $_T "$_L" "$_w/boxctl" --home "${_st%/run/state/config/startup-config}" --db "$_db" config sync >> "$RUNS" 2>&1 < /dev/null
+    $_T "$_L" "$_w/boxctl" --home "${_st%/run/state/config/startup-config}" --db "$_db" config sync > "$_out" 2>&1 < /dev/null
   _rc=$?
-  note "boxctl config sync rc=$_rc"
+  ms_since $_t0
+  note "boxctl config sync rc=$_rc took $D ms"
+  if [ "$_rc" != 0 ] && [ -s "$_out" ]; then
+    cat "$_out" >> "$RUNS" 2>/dev/null
+  fi
+  rm -f "$_out" 2>/dev/null
   if [ "$_rc" = 0 ] && [ -s "$_st" ]; then
     note "auto overwrite: using $_st"
     return 0
@@ -211,6 +254,7 @@ case "$cmd" in
     exec 2>>"$RUNS"
     note() { echo "[$(date '+%F %T.%N' 2>/dev/null)] [vpn] $*" >> "$RUNS"; }
     note "prepare uid=$(id -u 2>/dev/null) auto_overwrite=$sync"
+    ms_now; _p0=$MS
     mkdir -p "$work/tmp" || { echo "ERR:cannot create $work"; exit 1; }
     kill_core "$work" "$pf"
     [ -f "$src" ] || { echo "ERR:core not found: $src"; exit 1; }
@@ -255,10 +299,13 @@ case "$cmd" in
       "# box-vpn-cfg v8 ipv6=0 src=$use") IPV6=0; note "config unchanged, reusing" ;;
       "# box-vpn-cfg v8 ipv6=1 src=$use") IPV6=1; note "config unchanged, reusing" ;;
       *)
+        ms_now; _r0=$MS
         rewrite_config "$use" "$work/config.yaml" || { echo "ERR:cannot write config"; exit 1; }
-        note "config rewritten from $use" ;;
+        ms_since $_r0
+        note "config rewritten from $use ($(wc -l < "$use" 2>/dev/null | tr -d ' ') lines, $D ms)" ;;
     esac
-    note "prepare ok: core=$src cfg=$cfg ipv6=$IPV6 copied=$need"
+    ms_since $_p0
+    note "prepare ok: core=$src cfg=$cfg ipv6=$IPV6 copied=$need, prepare took $D ms"
     echo "OK ipv6=$IPV6 $(app_proxy "$work/config.yaml")"
     ;;
   run)
