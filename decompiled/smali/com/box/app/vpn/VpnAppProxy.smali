@@ -10,6 +10,8 @@
 .field public static volatile gen:I
 .field public static volatile port:I
 .field public static volatile socks:Z
+.field public static volatile nfail:I
+.field public static volatile nsel:I
 .field public static wvOn:Z
 .field public static orig:Ljava/net/ProxySelector;
 .field public static final INSTANCE:Lcom/box/app/vpn/VpnAppProxy;
@@ -51,8 +53,53 @@
 .end method
 
 .method public connectFailed(Ljava/net/URI;Ljava/net/SocketAddress;Ljava/io/IOException;)V
-    .locals 0
+    .locals 3
 
+    sget-boolean v0, Lcom/box/app/vpn/VpnAppProxy;->active:Z
+
+    if-eqz v0, :cond_ret
+
+    sget v0, Lcom/box/app/vpn/VpnAppProxy;->nfail:I
+
+    const/16 v1, 0x14
+
+    if-ge v0, v1, :cond_ret
+
+    add-int/lit8 v0, v0, 0x1
+
+    sput v0, Lcom/box/app/vpn/VpnAppProxy;->nfail:I
+
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "request failed: "
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1}, Ljava/net/URI;->getHost()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, " via "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    const-string v1, ": "
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnAppProxy;->log(Ljava/lang/String;)V
+
+    :cond_ret
     return-void
 .end method
 
@@ -152,6 +199,31 @@
     sget-object v2, Ljava/net/Proxy$Type;->SOCKS:Ljava/net/Proxy$Type;
 
     :cond_http
+    sget v3, Lcom/box/app/vpn/VpnAppProxy;->nsel:I
+
+    const/16 v4, 0xc
+
+    if-ge v3, v4, :cond_nolog
+
+    add-int/lit8 v3, v3, 0x1
+
+    sput v3, Lcom/box/app/vpn/VpnAppProxy;->nsel:I
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "proxying "
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-static {v3}, Lcom/box/app/vpn/VpnAppProxy;->log(Ljava/lang/String;)V
+
+    :cond_nolog
     new-instance v3, Ljava/net/InetSocketAddress;
 
     const-string v4, "127.0.0.1"
@@ -301,6 +373,12 @@
     return-void
 
     :cond_go
+    const/4 v0, 0x0
+
+    sput v0, Lcom/box/app/vpn/VpnAppProxy;->nsel:I
+
+    sput v0, Lcom/box/app/vpn/VpnAppProxy;->nfail:I
+
     sget v0, Lcom/box/app/vpn/VpnAppProxy;->gen:I
 
     add-int/lit8 v0, v0, 0x1
@@ -360,7 +438,9 @@
 
     invoke-static {v1}, Lcom/box/app/vpn/VpnAppProxy;->log(Ljava/lang/String;)V
 
-    invoke-static {v0}, Lcom/box/app/vpn/VpnAppProxy;->webview(Z)V
+    const/4 v0, 0x2
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnAppProxy;->post(I)V
 
     return-void
 .end method
@@ -393,13 +473,37 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    sget-boolean v1, Lcom/box/app/vpn/VpnAppProxy;->wvOn:Z
+    const/4 v1, 0x3
 
-    if-eqz v1, :cond_done
+    invoke-static {v1}, Lcom/box/app/vpn/VpnAppProxy;->post(I)V
 
-    invoke-static {v0}, Lcom/box/app/vpn/VpnAppProxy;->webview(Z)V
+    return-void
+.end method
 
-    :cond_done
+# Runs T(mode) on the main thread (WebView must be touched from the UI thread first).
+.method public static post(I)V
+    .locals 4
+
+    :try_start_0
+    new-instance v0, Landroid/os/Handler;
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
+    new-instance v1, Lcom/box/app/vpn/VpnAppProxy$T;
+
+    const/4 v2, 0x0
+
+    invoke-direct {v1, p0, v2}, Lcom/box/app/vpn/VpnAppProxy$T;-><init>(II)V
+
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
     return-void
 .end method
 

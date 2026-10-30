@@ -3,7 +3,7 @@
 .implements Ljava/lang/Runnable;
 .source "VpnAppProxy.java"
 
-# mode 0: no-op callback (WebView proxy override). mode 1: waits until the
+# mode 0: no-op callback (WebView proxy override). mode 2/3: set/clear the WebView proxy (runs on the main thread). mode 1: waits until the
 # core's local proxy port accepts connections, then switches the proxy on.
 
 .field final gen:I
@@ -31,6 +31,24 @@
 
     if-eq v0, v1, :cond_wait
 
+    const/4 v1, 0x2
+
+    if-ne v0, v1, :cond_not2
+
+    invoke-static {v1}, Lcom/box/app/vpn/VpnAppProxy;->webview(Z)V
+
+    return-void
+
+    :cond_not2
+    const/4 v1, 0x3
+
+    if-ne v0, v1, :cond_nop
+
+    const/4 v1, 0x0
+
+    invoke-static {v1}, Lcom/box/app/vpn/VpnAppProxy;->webview(Z)V
+
+    :cond_nop
     return-void
 
     :cond_wait
