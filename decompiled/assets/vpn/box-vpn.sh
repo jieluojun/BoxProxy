@@ -74,6 +74,12 @@ app_proxy() {
   fi
 }
 
+# ms_now -> sets MS to the current time in milliseconds (0 when date has no %N)
+ms_now() {
+  MS=$(date +%s%N 2>/dev/null)
+  case "$MS" in ''|*[!0-9]*) MS=0 ;; *) MS=$((MS / 1000000)) ;; esac
+}
+
 # rewrite_config SRC DST
 # Drops everything that only makes sense for the root modes (routing marks,
 # redirect/tproxy listeners, bound interface, old tun block) and appends a tun
@@ -176,10 +182,12 @@ sync_startup() {
   # BOXCTL_STDOUT_LOG_LINE=1 prints the same lines to stdout: keep stdout out of the log
   # (every line was there twice) and only add it when the sync failed.
   _out="$_w/tmp/boxctl-sync.out"
+  ms_now; _t0=$MS
   BOX_MODE=tun BOX_CORE=$_core BOXCTL_STDOUT_LOG_LINE=1 HOME="$_w" TMPDIR="$_w/tmp" \
     $_T "$_L" "$_w/boxctl" --home "${_st%/run/state/config/startup-config}" --db "$_db" config sync > "$_out" 2>&1 < /dev/null
   _rc=$?
-  note "boxctl config sync rc=$_rc"
+  ms_now
+  note "boxctl config sync rc=$_rc took $((MS - _t0)) ms"
   if [ "$_rc" != 0 ] && [ -s "$_out" ]; then
     cat "$_out" >> "$RUNS" 2>/dev/null
   fi
@@ -219,6 +227,7 @@ case "$cmd" in
     exec 2>>"$RUNS"
     note() { echo "[$(date '+%F %T.%N' 2>/dev/null)] [vpn] $*" >> "$RUNS"; }
     note "prepare uid=$(id -u 2>/dev/null) auto_overwrite=$sync"
+    ms_now; _p0=$MS
     mkdir -p "$work/tmp" || { echo "ERR:cannot create $work"; exit 1; }
     kill_core "$work" "$pf"
     [ -f "$src" ] || { echo "ERR:core not found: $src"; exit 1; }
@@ -263,10 +272,13 @@ case "$cmd" in
       "# box-vpn-cfg v8 ipv6=0 src=$use") IPV6=0; note "config unchanged, reusing" ;;
       "# box-vpn-cfg v8 ipv6=1 src=$use") IPV6=1; note "config unchanged, reusing" ;;
       *)
+        ms_now; _r0=$MS
         rewrite_config "$use" "$work/config.yaml" || { echo "ERR:cannot write config"; exit 1; }
-        note "config rewritten from $use" ;;
+        ms_now
+        note "config rewritten from $use ($(wc -l < "$use" 2>/dev/null | tr -d ' ') lines, $((MS - _r0)) ms)" ;;
     esac
-    note "prepare ok: core=$src cfg=$cfg ipv6=$IPV6 copied=$need"
+    ms_now
+    note "prepare ok: core=$src cfg=$cfg ipv6=$IPV6 copied=$need, prepare took $((MS - _p0)) ms"
     echo "OK ipv6=$IPV6 $(app_proxy "$work/config.yaml")"
     ;;
   run)
