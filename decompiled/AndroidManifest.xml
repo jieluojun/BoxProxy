@@ -88,6 +88,7 @@
             <intent-filter>
                 <action android:name="android.net.VpnService"/>
             </intent-filter>
+            <meta-data android:name="android.net.VpnService.SUPPORTS_ALWAYS_ON" android:value="true"/>
             <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="non_root_vpn_proxy_service"/>
         </service>
         <receiver android:enabled="true" android:exported="true" android:name="com.box.app.vpn.BootReceiver">
