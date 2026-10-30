@@ -148,5 +148,7 @@ v2fly 原生 v5 格式（非 v4 风格）的 JSON 暂不支持；Hysteria 1（JS
   开机后由 `BootReceiver`（`RECEIVE_BOOT_COMPLETED`，参考 Bettbox）在后台线程里读 `boot_auto_start` 和运行模式，
   VPN 模式且 `VpnService.prepare()` 返回 null（已授权过 VPN）时等 3 秒再 `startForegroundService` 拉起 `BoxVpnService`。
   每一步写入 `runs.log`（`[app-proxy] boot …`）。root 模式仍由 root 开机脚本启动；
-  从 VPN 模式切回 root 模式后，需要把开关关了再开一次，重新安装开机脚本。
+  开机自启开着时，root 开机脚本跟着运行模式走（`BootSync`，在 `VpnBridge.beforeSave` 里触发）：
+  VPN → root 自动重新安装脚本（等价于把开关重新打开一次，即 `lb0.r(true)`），root → VPN 自动删除脚本
+  （开机由 `BootReceiver` 启动 VPN，避免和 root 脚本重复启动）。结果写入 `runs.log`。
   需要系统里给应用打开「自启动」权限；不做「划掉卡片后自动重启」。

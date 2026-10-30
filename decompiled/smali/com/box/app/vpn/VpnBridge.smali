@@ -667,6 +667,9 @@
 
     if-eq v2, v3, :cond_end
 
+    # the root boot script follows the run mode (installed for root modes, removed for the VPN mode)
+    invoke-static {v3}, Lcom/box/app/vpn/BootSync;->start(Z)V
+
     if-eqz v3, :cond_to_root
 
     invoke-static {}, Lcom/box/app/vpn/VpnBridge;->rootRunning()Z
