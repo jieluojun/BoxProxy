@@ -73,3 +73,24 @@ VPN 模式以前直接使用原始配置文件，所以覆写不生效。
 启动配置页面的「重新生成」按钮在 VPN 模式下走同一条非 root 路径（`box-vpn.sh sync`）。
 
 注意：boxctl 无法在开发环境运行，该流程需在真机验证；关闭「自动覆写」时行为与以前一致。
+
+## App 自身流量（延迟检测 / IP 检测 / Web 面板）
+
+内核与 App 同一个 UID，必须把 App 排除在 VPN 之外，否则内核的出站连接会绕回 VPN。
+副作用是 App 自己发的请求（首页延迟、WAN 检测、Web 面板里的延迟/网络信息）直连，不走代理。
+
+处理方式：VPN 运行期间，把 App 自己的请求指向内核的本地代理端口，VPN 仍然排除 App。
+
+- `box-vpn.sh prepare` 在输出里带上 `proxy=<m|h|s>:<端口>`（取配置里的 `mixed-port` > `port` > `socks-port`）。
+  配置里没有可用端口（没写或为 0）时，改写配置会补一个 `mixed-port: 17890`。
+- `VpnAppProxy`：
+  - 内核存活后等本地端口可连接，再启用（日志 `[app-proxy] …` 写入 `runs.log`）；
+  - `ProxySelector`：App 内置的 OkHttp（`z84` 构建时改用 `VpnAppProxy.sel()`）和 `HttpURLConnection` 都走它，
+    127.x / localhost / 172.19.x 直连（面板 API 不套娃）；
+  - WebView：通过 `ProxyController` 的同一套边界接口做代理覆盖（`127.0.0.1`、`localhost`、`<local>` 直连），
+    Web 面板里的请求也走内核。
+- 停止 VPN 时恢复原来的 `ProxySelector` 并清除 WebView 代理覆盖。root 模式不受影响。
+
+限制：直接用 Socket 或 Cronet 的请求不走该选择器；配置里启用了 `authentication` 且 127.0.0.1 不在
+`skip-auth-prefixes` 时，App 自己的请求会被内核拒绝；配置开了 `allow-lan: true` 且没有端口而由我们补了
+`mixed-port` 时，该端口也会对局域网开放。需在真机验证。

@@ -47,6 +47,30 @@ kill_core() {
   return 0
 }
 
+# _num VALUE -> sets _n to the digits of a YAML port value, or '' when it is empty/0/invalid
+_num() {
+  _n=${1%%#*}
+  _n=$(printf '%s' "$_n" | tr -d ' \t\r"'"'"'')
+  case "$_n" in ''|*[!0-9]*|0) _n= ;; esac
+}
+
+# app_proxy CONFIG -> prints "proxy=<m|h|s>:<port>" for the core's local proxy port
+# (the app itself is outside the VPN and uses it for its own requests)
+app_proxy() {
+  _pm=; _ph=; _ps=
+  while IFS= read -r _l || [ -n "$_l" ]; do
+    case "$_l" in
+      mixed-port:*) _num "${_l#*:}"; _pm=$_n ;;
+      port:*) _num "${_l#*:}"; _ph=$_n ;;
+      socks-port:*) _num "${_l#*:}"; _ps=$_n ;;
+    esac
+  done < "$1"
+  if [ -n "$_pm" ]; then printf 'proxy=m:%s' "$_pm"
+  elif [ -n "$_ph" ]; then printf 'proxy=h:%s' "$_ph"
+  elif [ -n "$_ps" ]; then printf 'proxy=s:%s' "$_ps"
+  fi
+}
+
 # rewrite_config SRC DST
 # Drops everything that only makes sense for the root modes (routing marks,
 # redirect/tproxy listeners, bound interface, old tun block) and appends a tun
@@ -54,6 +78,7 @@ kill_core() {
 rewrite_config() {
   _skip=0
   IPV6=0
+  HASPORT=0
   _cr=$(printf '\r')
   {
     while IFS= read -r _line || [ -n "$_line" ]; do
@@ -71,6 +96,16 @@ rewrite_config() {
       case "$_key" in
         tun|routing-mark|find-process-mode|interface-name|redir-port|tproxy-port|iptables)
           _skip=1 ;;
+        mixed-port|port|socks-port)
+          # a disabled (0) or unusable port is dropped; one is injected below when none is left
+          _num "${_line#*:}"
+          if [ -z "$_n" ]; then
+            _skip=1
+          else
+            _skip=0
+            HASPORT=1
+            printf '%s\n' "$_line"
+          fi ;;
         *)
           _skip=0
           case "$_line" in
@@ -81,6 +116,7 @@ rewrite_config() {
     done < "$1"
     printf '\n# --- added by BoxProxy VPN mode ---\n'
     printf 'find-process-mode: off\n'
+    [ "$HASPORT" = 1 ] || printf 'mixed-port: 17890\n'
     printf 'tun:\n'
     printf '  enable: true\n'
     printf '  stack: gvisor\n'
@@ -98,7 +134,7 @@ rewrite_config() {
       printf '  inet6-address:\n'
       printf '    - fdfe:dcba:9876::1/126\n'
     fi
-    printf '# box-vpn-cfg v6 ipv6=%s src=%s\n' "$IPV6" "$1"
+    printf '# box-vpn-cfg v7 ipv6=%s src=%s\n' "$IPV6" "$1"
   } > "$2"
 }
 
@@ -204,14 +240,14 @@ case "$cmd" in
     _last=
     [ -f "$work/config.yaml" ] && [ ! "$use" -nt "$work/config.yaml" ] && [ ! "$cfg" -nt "$work/config.yaml" ] && _last=$(tail -n 1 "$work/config.yaml" 2>/dev/null)
     case "$_last" in
-      "# box-vpn-cfg v6 ipv6=0 src=$use") IPV6=0; note "config unchanged, reusing" ;;
-      "# box-vpn-cfg v6 ipv6=1 src=$use") IPV6=1; note "config unchanged, reusing" ;;
+      "# box-vpn-cfg v7 ipv6=0 src=$use") IPV6=0; note "config unchanged, reusing" ;;
+      "# box-vpn-cfg v7 ipv6=1 src=$use") IPV6=1; note "config unchanged, reusing" ;;
       *)
         rewrite_config "$use" "$work/config.yaml" || { echo "ERR:cannot write config"; exit 1; }
         note "config rewritten from $use" ;;
     esac
     note "prepare ok: core=$src cfg=$cfg ipv6=$IPV6 copied=$need"
-    echo "OK ipv6=$IPV6"
+    echo "OK ipv6=$IPV6 $(app_proxy "$work/config.yaml")"
     ;;
   run)
     home=$1; work=$2; pf=$3
