@@ -485,3 +485,213 @@
     :cond_ret
     return v1
 .end method
+
+# Applies the per-app selection of the app management screen (runtime_profile
+# proxy_mode = blacklist / whitelist, table app_selection holds the UIDs) to the
+# VPN: blacklist -> addDisallowedApplication, whitelist -> addAllowedApplication.
+# This app itself is always kept out of the tunnel (the core runs under its UID).
+# Returns false (and sets BoxVpnService.lastError) when the whitelist is empty.
+.method public static applyApps(Landroid/net/VpnService$Builder;Landroid/content/Context;)Z
+    .locals 12
+
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {}, Llb0;->g()Lya0;
+
+    move-result-object v1
+
+    iget-object v1, v1, Lya0;->c:Ljava/lang/String;
+
+    const-string v2, "whitelist"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    const-string v3, "blacklist"
+
+    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    or-int v4, v2, v3
+
+    if-nez v4, :cond_sel
+
+    invoke-virtual {p0, v0}, Landroid/net/VpnService$Builder;->addDisallowedApplication(Ljava/lang/String;)Landroid/net/VpnService$Builder;
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_sel
+    invoke-static {}, Lcom/box/app/vpn/VpnShell;->readUids()Ljava/util/ArrayList;
+
+    move-result-object v4
+
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v5
+
+    invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    const/4 v6, 0x0
+
+    :loop
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v7
+
+    if-eqz v7, :done
+
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v7
+
+    check-cast v7, Ljava/lang/Integer;
+
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
+
+    move-result v7
+
+    invoke-virtual {v5, v7}, Landroid/content/pm/PackageManager;->getPackagesForUid(I)[Ljava/lang/String;
+
+    move-result-object v7
+
+    if-eqz v7, :loop
+
+    array-length v8, v7
+
+    const/4 v9, 0x0
+
+    :inner
+    if-ge v9, v8, :loop
+
+    aget-object v10, v7, v9
+
+    add-int/lit8 v9, v9, 0x1
+
+    invoke-virtual {v0, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v11
+
+    if-nez v11, :inner
+
+    :try_start_0
+    if-eqz v2, :cond_black
+
+    invoke-virtual {p0, v10}, Landroid/net/VpnService$Builder;->addAllowedApplication(Ljava/lang/String;)Landroid/net/VpnService$Builder;
+
+    goto :cnt
+
+    :cond_black
+    invoke-virtual {p0, v10}, Landroid/net/VpnService$Builder;->addDisallowedApplication(Ljava/lang/String;)Landroid/net/VpnService$Builder;
+
+    :cnt
+    add-int/lit8 v6, v6, 0x1
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    goto :inner
+
+    :catch_0
+    goto :inner
+
+    :done
+    if-nez v2, :cond_white_end
+
+    invoke-virtual {p0, v0}, Landroid/net/VpnService$Builder;->addDisallowedApplication(Ljava/lang/String;)Landroid/net/VpnService$Builder;
+
+    goto :ok
+
+    :cond_white_end
+    if-nez v6, :ok
+
+    const-string v0, "\u767d\u540d\u5355\u4e3a\u7a7a\uff1a\u8bf7\u5148\u5728\u5e94\u7528\u7ba1\u7406\u91cc\u9009\u62e9\u8981\u8d70\u4ee3\u7406\u7684\u5e94\u7528"
+
+    const-string v1, "The app whitelist is empty: pick the apps to proxy in app management first"
+
+    invoke-static {v0, v1}, Lcom/box/app/vpn/VpnBridge;->tr(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/box/app/vpn/BoxVpnService;->lastError:Ljava/lang/String;
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :ok
+    const/4 v0, 0x1
+
+    return v0
+.end method
+
+# UIDs ticked in the app management screen (table app_selection of box.db).
+.method public static readUids()Ljava/util/ArrayList;
+    .locals 6
+
+    new-instance v0, Ljava/util/ArrayList;
+
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    :try_start_0
+    invoke-static {}, Llb0;->k()Lab0;
+
+    move-result-object v1
+
+    iget-object v1, v1, Lab0;->e:Ljava/io/File;
+
+    invoke-virtual {v1}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object v1
+
+    const/4 v2, 0x0
+
+    const/4 v3, 0x1
+
+    invoke-static {v1, v2, v3}, Landroid/database/sqlite/SQLiteDatabase;->openDatabase(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)Landroid/database/sqlite/SQLiteDatabase;
+
+    move-result-object v1
+
+    const-string v3, "SELECT uid FROM app_selection"
+
+    invoke-virtual {v1, v3, v2}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
+
+    move-result-object v2
+
+    :goto_row
+    invoke-interface {v2}, Landroid/database/Cursor;->moveToNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_end
+
+    const/4 v3, 0x0
+
+    invoke-interface {v2, v3}, Landroid/database/Cursor;->getInt(I)I
+
+    move-result v3
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_row
+
+    :cond_end
+    invoke-interface {v2}, Landroid/database/Cursor;->close()V
+
+    invoke-virtual {v1}, Landroid/database/sqlite/SQLiteDatabase;->close()V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    return-object v0
+.end method

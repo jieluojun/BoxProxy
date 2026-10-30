@@ -404,12 +404,17 @@
     invoke-virtual {v0, v1, v2}, Landroid/net/VpnService$Builder;->addRoute(Ljava/lang/String;I)Landroid/net/VpnService$Builder;
 
     :cond_no6
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    invoke-static {v0, p0}, Lcom/box/app/vpn/VpnShell;->applyApps(Landroid/net/VpnService$Builder;Landroid/content/Context;)Z
 
-    move-result-object v1
+    move-result v1
 
-    invoke-virtual {v0, v1}, Landroid/net/VpnService$Builder;->addDisallowedApplication(Ljava/lang/String;)Landroid/net/VpnService$Builder;
+    if-nez v1, :cond_apps_ok
 
+    const/4 v0, 0x0
+
+    return-object v0
+
+    :cond_apps_ok
     invoke-virtual {v0}, Landroid/net/VpnService$Builder;->establish()Landroid/os/ParcelFileDescriptor;
 
     move-result-object v0
@@ -601,6 +606,15 @@
 
     if-nez v0, :cond_est_ok
 
+    sget-object v0, Lcom/box/app/vpn/BoxVpnService;->lastError:Ljava/lang/String;
+
+    if-eqz v0, :cond_est_generic
+
+    invoke-direct {p0, v0}, Lcom/box/app/vpn/BoxVpnService;->fail(Ljava/lang/String;)V
+
+    return-void
+
+    :cond_est_generic
     const-string v0, "VPN \u6743\u9650\u672a\u6388\u4e88\u6216\u5df2\u88ab\u64a4\u9500"
 
     const-string v1, "VPN permission was not granted or has been revoked"

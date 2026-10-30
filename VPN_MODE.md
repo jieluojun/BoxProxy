@@ -40,3 +40,13 @@
 | `smali/v25.smali`, `r25.smali`, `pv4.smali`, `wf2.smali`, `ve3.smali` | 新增 `Vpn` 模式枚举及其在列表中的显示 |
 
 > 注意：本仓库为 apktool 反编译产物，新增代码以 smali 手写，未在真机上验证，请通过 CI 构建后实机测试。
+
+## 应用管理（黑/白名单）在 VPN 模式下的生效方式
+
+* 读取与 root 模式同一份设置：`runtime_profile.proxy_mode`（`core` / `blacklist` / `whitelist`）和 `app_selection` 表里勾选的 UID。
+* 黑名单：勾选的应用 → `VpnService.Builder.addDisallowedApplication`（绕过 VPN，直连）。
+* 白名单：勾选的应用 → `addAllowedApplication`（只有它们进 VPN）；白名单为空时启动会提示先选择应用。
+* 本应用自身始终排除在隧道之外（内核以本应用 UID 运行，否则会回环）。
+* 只能处理当前用户（主用户）的应用；分身/其他用户的 UID、GID 规则、`cnip_force_*` 在 VPN 模式下不生效。
+* 修改勾选后需重启 VPN 才会应用。
+* 配置里的 `PROCESS-NAME` / 包名规则：无 root 的独立内核无法按连接查询所属应用，所以 `find-process-mode` 为 off，这类规则不会命中（见上方说明）。
