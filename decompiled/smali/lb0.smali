@@ -452,6 +452,8 @@
 
     .line 77
     :cond_1
+    invoke-static {p0}, Lcom/box/app/vpn/VpnSeed;->run(Lab0;)V
+
     const-string v0, "box/mihomo/config.yaml"
 
     .line 78
