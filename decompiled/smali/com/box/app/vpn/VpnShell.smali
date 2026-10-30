@@ -305,3 +305,183 @@
 
     goto :goto_ret
 .end method
+
+
+# The android build of mihomo insists on reading /data/system/packages.xml
+# (needs root/system uid) before it brings the TUN up. Both the read and the
+# inotify watch use that one hard coded literal, so in the private copy of the
+# core it is replaced by a same-length path ("/proc/self/cwd//.pkgs.xml") that
+# resolves to a harmless file in the core's working directory.
+# Returns the number of replaced occurrences (-1 on error).
+.method public static patch(Ljava/io/File;)I
+    .locals 14
+
+    const/4 v0, 0x0
+
+    :try_start_0
+    new-instance v1, Ljava/io/RandomAccessFile;
+
+    const-string v2, "rw"
+
+    invoke-direct {v1, p0, v2}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    const-string v2, "/data/system/packages.xml"
+
+    invoke-virtual {v2}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v2
+
+    const-string v3, "/proc/self/cwd//.pkgs.xml"
+
+    invoke-virtual {v3}, Ljava/lang/String;->getBytes()[B
+
+    move-result-object v3
+
+    const v4, 0x400018
+
+    new-array v5, v4, [B
+
+    const-wide/16 v6, 0x0
+
+    :loop
+    invoke-virtual {v1, v6, v7}, Ljava/io/RandomAccessFile;->seek(J)V
+
+    const/4 v8, 0x0
+
+    invoke-virtual {v1, v5, v8, v4}, Ljava/io/RandomAccessFile;->read([BII)I
+
+    move-result v8
+
+    const/16 v9, 0x19
+
+    if-lt v8, v9, :done
+
+    add-int/lit8 v9, v8, -0x18
+
+    const/high16 v10, 0x400000
+
+    if-le v9, v10, :lim_ok
+
+    move v9, v10
+
+    :lim_ok
+    const/4 v10, 0x0
+
+    :scan
+    if-ge v10, v9, :scan_end
+
+    aget-byte v11, v5, v10
+
+    const/16 v12, 0x2f
+
+    if-ne v11, v12, :next
+
+    const/4 v11, 0x1
+
+    :cmp
+    const/16 v12, 0x19
+
+    if-ge v11, v12, :match
+
+    add-int v12, v10, v11
+
+    aget-byte v12, v5, v12
+
+    aget-byte v13, v2, v11
+
+    if-ne v12, v13, :next
+
+    add-int/lit8 v11, v11, 0x1
+
+    goto :cmp
+
+    :match
+    int-to-long v12, v10
+
+    add-long/2addr v12, v6
+
+    invoke-virtual {v1, v12, v13}, Ljava/io/RandomAccessFile;->seek(J)V
+
+    invoke-virtual {v1, v3}, Ljava/io/RandomAccessFile;->write([B)V
+
+    add-int/lit8 v0, v0, 0x1
+
+    add-int/lit8 v10, v10, 0x19
+
+    goto :scan
+
+    :next
+    add-int/lit8 v10, v10, 0x1
+
+    goto :scan
+
+    :scan_end
+    if-lt v8, v4, :done
+
+    const/high16 v9, 0x400000
+
+    int-to-long v12, v9
+
+    add-long/2addr v6, v12
+
+    goto :loop
+
+    :done
+    invoke-virtual {v1}, Ljava/io/RandomAccessFile;->close()V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_ret
+    return v0
+
+    :catch_0
+    move-exception v1
+
+    const/4 v0, -0x1
+
+    goto :goto_ret
+.end method
+
+# Patches WORK/core once (marker file WORK/core.patched). Returns the number of
+# replacements done now, 0 when nothing was needed / found, -1 on error.
+.method public static ensurePatched(Ljava/io/File;)I
+    .locals 4
+
+    new-instance v0, Ljava/io/File;
+
+    const-string v1, "core.patched"
+
+    invoke-direct {v0, p0, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/io/File;->exists()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_do
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_do
+    new-instance v1, Ljava/io/File;
+
+    const-string v2, "core"
+
+    invoke-direct {v1, p0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-static {v1}, Lcom/box/app/vpn/VpnShell;->patch(Ljava/io/File;)I
+
+    move-result v1
+
+    if-lez v1, :cond_ret
+
+    :try_start_0
+    invoke-virtual {v0}, Ljava/io/File;->createNewFile()Z
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    :cond_ret
+    return v1
+.end method

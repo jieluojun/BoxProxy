@@ -587,6 +587,8 @@
     return-void
 
     :cond_prep_ok
+
+    invoke-static {v7}, Lcom/box/app/vpn/VpnShell;->ensurePatched(Ljava/io/File;)I
     const-string v1, "ipv6=1"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -620,7 +622,7 @@
 
     move-result-object v1
 
-    const-string v2, "vpn.log"
+    const-string v2, "mihomo.log"
 
     invoke-direct {v10, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -655,7 +657,7 @@
 
     if-eqz v2, :cond_died
 
-    const/16 v2, 0x19
+    const/16 v2, 0xc
 
     if-ge v1, v2, :cond_alive
 

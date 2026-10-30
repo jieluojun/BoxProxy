@@ -8,7 +8,7 @@
 #   box-vpn.sh run HOME_DIR WORK_DIR PID_FILE
 #       Launches the core. stdin (fd 0) must be the TUN descriptor handed over
 #       by VpnService; it is moved to fd 3 (== tun.file-descriptor in the config).
-#       Output goes to <run dir>/vpn.log, which the in-app log viewer lists.
+#       Script events go to <run dir>/runs.log, the core's output to <run dir>/mihomo.log.
 #   box-vpn.sh stop WORK_DIR PID_FILE
 #       Stops the core started by "run".
 #
@@ -25,7 +25,8 @@ kill_core() {
   _pid=
   [ -f "$_work/core.pid" ] && read -r _pid < "$_work/core.pid"
   case "$_pid" in ''|*[!0-9]*) rm -f "$_work/core.pid"; return 0 ;; esac
-  _c=$(tr '\0' ' ' < "/proc/$_pid/cmdline" 2>/dev/null)
+  _c=
+  [ -r "/proc/$_pid/cmdline" ] && _c=$(tr '\0' ' ' < "/proc/$_pid/cmdline" 2>/dev/null)
   case "$_c" in
     *"$_work/core"*)
       kill -TERM "$_pid" 2>/dev/null
@@ -102,12 +103,15 @@ rewrite_config() {
 case "$cmd" in
   prepare)
     src=$1; home=$2; cfg=$3; work=$4; pf=$5
-    LOG=${pf%/*}/vpn.log
-    mkdir -p "${pf%/*}" 2>/dev/null
-    : > "$LOG" 2>/dev/null
-    # stray shell diagnostics go to the log; stdout carries only the result
-    exec 2>>"$LOG"
-    echo "[box-vpn] prepare $(date 2>/dev/null) uid=$(id -u 2>/dev/null)" >> "$LOG"
+    rundir=${pf%/*}
+    RUNS=$rundir/runs.log
+    mkdir -p "$rundir" 2>/dev/null
+    : > "$RUNS" 2>/dev/null
+    : > "$rundir/mihomo.log" 2>/dev/null
+    # stray shell diagnostics go to runs.log; stdout carries only the result
+    exec 2>>"$RUNS"
+    note() { echo "[$(date '+%F %T' 2>/dev/null)] [vpn] $*" >> "$RUNS"; }
+    note "prepare uid=$(id -u 2>/dev/null)"
     mkdir -p "$work/tmp" || { echo "ERR:cannot create $work"; exit 1; }
     kill_core "$work" "$pf"
     [ -f "$src" ] || { echo "ERR:core not found: $src"; exit 1; }
@@ -120,29 +124,35 @@ case "$cmd" in
       [ "$(echo $s1)" = "$(echo $s2)" ] && need=0
     fi
     if [ "$need" = 1 ]; then
-      rm -f "$work/core.tmp"
+      note "copying core to private storage"
+      rm -f "$work/core.tmp" "$work/core.patched"
       cp "$src" "$work/core.tmp" && chmod 700 "$work/core.tmp" && mv -f "$work/core.tmp" "$work/core" \
         || { echo "ERR:cannot copy core"; exit 1; }
+      note "core copied"
     fi
     rewrite_config "$cfg" "$work/config.yaml" || { echo "ERR:cannot write config"; exit 1; }
-    echo "[box-vpn] prepare ok: core=$src ($(wc -c < "$work/core" 2>/dev/null) bytes) cfg=$cfg ipv6=$IPV6" >> "$LOG"
+    note "prepare ok: core=$src cfg=$cfg ipv6=$IPV6 copied=$need"
     echo "OK ipv6=$IPV6"
     ;;
   run)
     home=$1; work=$2; pf=$3
-    echo "[box-vpn] run pid=$$ home=$home" 
-    echo "[box-vpn] fds before exec (0 must be the TUN):"
-    ls -l /proc/$$/fd 2>&1
+    rundir=${pf%/*}
+    RUNS=$rundir/runs.log
+    note() { echo "[$(date '+%F %T' 2>/dev/null)] [vpn] $*" >> "$RUNS"; }
+    note "run pid=$$ home=$home core.patched=$([ -f "$work/core.patched" ] && echo yes || echo no)"
+    note "fds before exec (0 must be the TUN): $(ls -l /proc/$$/fd/0 2>&1)"
     echo $$ > "$work/core.pid"
     echo $$ > "$pf"
     export TMPDIR="$work/tmp" HOME="$work"
-    cd "$home" || { echo "[box-vpn] cannot cd $home"; exit 1; }
+    cd "$home" || { note "cannot cd $home"; exit 1; }
+    # Stand-in for /data/system/packages.xml, which the core was patched to read
+    # as ./.pkgs.xml (the real file is not readable without root).
+    printf '<?xml version="1.0" encoding="utf-8"?>\n<packages>\n</packages>\n' > "$home/.pkgs.xml" 2>/dev/null
     # Report which descriptors the core really ended up with (pid stays the same across exec).
     _me=$$
     ( sleep 3
-      echo "[box-vpn] core fds after exec (3 must be the TUN):"
-      ls -l /proc/$_me/fd 2>&1
-      echo "[box-vpn] core cmdline: $(tr '\0' ' ' < /proc/$_me/cmdline 2>/dev/null)" ) </dev/null &
+      note "core fd 3 after exec (must be the TUN): $(ls -l /proc/$_me/fd/3 2>&1)"
+      note "core cmdline: $(tr '\0' ' ' < /proc/$_me/cmdline 2>/dev/null)" ) </dev/null >/dev/null 2>&1 &
     # The 3<&0 is attached to the exec itself: a standalone "exec 3<&0" would be
     # close-on-exec in mksh and the core would never see the descriptor.
     for l in /system/bin/linker64 /system/bin/linker; do
