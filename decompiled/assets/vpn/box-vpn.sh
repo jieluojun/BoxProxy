@@ -107,15 +107,21 @@ rewrite_config() {
   IPV6=0
   HASPORT=0
   _cr=$(printf '\r')
+  # Collect the lines in a variable and write them once: a printf per line cost ~7 ms each
+  # on the phone (3.5 s for 471 lines), probably because it is not a shell builtin there.
+  _nl='
+'
+  _buf=
+  ms_now; _l0=$MS
   {
     while IFS= read -r _line || [ -n "$_line" ]; do
       _line=${_line%"$_cr"}
       case "$_line" in
         ''|'#'*)
-          [ "$_skip" = 1 ] || printf '%s\n' "$_line"
+          [ "$_skip" = 1 ] || _buf=$_buf$_line$_nl
           continue ;;
         ' '*|"	"*|'-'*)
-          [ "$_skip" = 1 ] || printf '%s\n' "$_line"
+          [ "$_skip" = 1 ] || _buf=$_buf$_line$_nl
           continue ;;
       esac
       _key=${_line%%:*}
@@ -131,16 +137,17 @@ rewrite_config() {
           else
             _skip=0
             HASPORT=1
-            printf '%s\n' "$_line"
+            _buf=$_buf$_line$_nl
           fi ;;
         *)
           _skip=0
           case "$_line" in
             'ipv6:'*true*) IPV6=1 ;;
           esac
-          printf '%s\n' "$_line" ;;
+          _buf=$_buf$_line$_nl ;;
       esac
     done < "$_in"
+    printf '%s' "$_buf"
     printf '\n# --- added by BoxProxy VPN mode ---\n'
     printf 'find-process-mode: off\n'
     [ "$HASPORT" = 1 ] || printf 'mixed-port: 7890\n'
@@ -163,6 +170,8 @@ rewrite_config() {
     fi
     printf '# box-vpn-cfg v8 ipv6=%s src=%s\n' "$IPV6" "$1"
   } > "$2"
+  ms_since $_l0
+  note "rewrite: filtered and written in $D ms"
 }
 
 # sync_startup WORK BOXCTL DB STARTUP_FILE   (needs note() and $RUNS)
