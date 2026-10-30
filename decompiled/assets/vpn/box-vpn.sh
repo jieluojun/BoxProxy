@@ -152,10 +152,12 @@ case "$cmd" in
     echo $$ > "$work/core.pid"
     echo $$ > "$pf"
     export TMPDIR="$work/tmp" HOME="$work"
-    cd "$home" || { note "cannot cd $home"; exit 1; }
-    # Stand-in for /data/system/packages.xml, which the core was patched to read
-    # as ./.pkgs.xml (the real file is not readable without root).
-    printf '<?xml version="1.0" encoding="utf-8"?>\n<packages>\n</packages>\n' > "$home/.pkgs.xml" 2>/dev/null
+    # cwd = private work dir: the core was patched to read ./.pkgs.xml instead of
+    # /data/system/packages.xml (not readable without root), so the stand-in file
+    # lives here and not in the user's core directory. The core still gets -d $home.
+    cd "$work" || { note "cannot cd $work"; exit 1; }
+    rm -f "$home/.pkgs.xml" 2>/dev/null
+    printf '<?xml version="1.0" encoding="utf-8"?>\n<packages>\n</packages>\n' > "$work/.pkgs.xml" 2>/dev/null
     # Report which descriptors the core really ended up with (pid stays the same across exec).
     _me=$$
     ( sleep 3
