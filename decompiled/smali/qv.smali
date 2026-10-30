@@ -30405,6 +30405,10 @@
     .line 1653
     iget-boolean v14, v0, Lqu;->K:Z
 
+    invoke-static {v14}, Lcom/box/app/vpn/VpnBridge;->api(Z)Z
+
+    move-result v14
+
     .line 1654
     .line 1655
     and-int v2, v11, v29

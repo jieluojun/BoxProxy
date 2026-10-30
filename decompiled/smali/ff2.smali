@@ -1151,16 +1151,6 @@
     .line 12
     move-result-wide v3
 
-    # VPN mode: the device total does not reflect the tunnel, use the core's own (app uid) traffic
-    invoke-static {v1, v2}, Lcom/box/app/vpn/VpnBridge;->rx(J)J
-
-    move-result-wide v1
-
-    invoke-static {v3, v4}, Lcom/box/app/vpn/VpnBridge;->tx(J)J
-
-    move-result-wide v3
-
-
     .line 13
     const-wide/16 v7, -0x1
 
