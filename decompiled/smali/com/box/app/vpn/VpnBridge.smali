@@ -47,7 +47,7 @@
     return v1
 .end method
 
-# True when the saved run mode is "VPN".
+# True when the saved run mode is "VPN" (or when the app has no root).
 .method public static isVpnMode()Z
     .locals 2
 
@@ -68,6 +68,14 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
+    if-nez v1, :cond_vpn_done
+
+    # without root the VPN is the only run mode that can work
+    invoke-static {}, Lcom/box/app/vpn/VpnRoot;->noRoot()Z
+
+    move-result v1
+
+    :cond_vpn_done
     return v1
 .end method
 
@@ -824,6 +832,14 @@
     move-result-object v5
 
     invoke-static {v4, v5}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
+
+    invoke-static {}, Llb0;->g()Lya0;
+
+    move-result-object v5
+
+    iget-object v5, v5, Lya0;->a:Ljava/lang/String;
+
+    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     invoke-static {v4}, Lcom/box/app/vpn/VpnShell;->output(Ljava/util/List;)Ljava/lang/String;
 

@@ -260,6 +260,25 @@
 .method public static f(JLc81;Ljava/lang/String;)Ljava/lang/Object;
     .locals 3
 
+    # no root: the boxctl commands of the root modes cannot work, report success
+    invoke-static {p3}, Lcom/box/app/vpn/VpnRoot;->skip(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_vpn_run
+
+    new-instance v0, Lnc5;
+
+    const/4 v1, 0x0
+
+    const-string v2, ""
+
+    invoke-direct {v0, v1, v2, v2}, Lnc5;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    return-object v0
+
+    :cond_vpn_run
+
     .line 1
     invoke-static {p3}, Lra7;->R(Ljava/lang/Object;)Ljava/util/List;
 

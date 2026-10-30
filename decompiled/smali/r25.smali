@@ -152,11 +152,13 @@
 
     sget-object v4, Lv25;->t:Lv25;
 
-    if-ne v3, v4, :cond_vpn_ok
+    if-eq v3, v4, :cond_vpn_ok
 
-    sget-object v4, Lu25;->n:Lu25;
+    invoke-static {}, Lcom/box/app/vpn/VpnRoot;->rootModes()Z
 
-    if-ne p0, v4, :cond_0
+    move-result v4
+
+    if-eqz v4, :cond_0
 
     :cond_vpn_ok
     .line 32

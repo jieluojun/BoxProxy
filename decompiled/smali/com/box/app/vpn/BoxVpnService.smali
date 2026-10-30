@@ -4,7 +4,7 @@
 
 # Non-root "VPN" run mode.
 #
-# The user supplied mihomo core (the same one the root modes use, nothing is
+# The user supplied mihomo / sing-box core (the same one the root modes use, nothing is
 # bundled) is started as a child process of this app. The TUN descriptor
 # produced by VpnService is handed over to the core (tun.file-descriptor), the
 # app itself is excluded from the VPN so the core's own traffic can never loop.
@@ -468,17 +468,15 @@
 
     iget-object v2, v0, Lya0;->h:Ljava/lang/String;
 
-    const-string v3, "mihomo"
-
-    invoke-virtual {v3, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {v1}, Lcom/box/app/vpn/VpnSb;->supported(Ljava/lang/String;)Z
 
     move-result v3
 
     if-nez v3, :cond_core_ok
 
-    const-string v0, "VPN \u6a21\u5f0f\u76ee\u524d\u4ec5\u652f\u6301 mihomo \u5185\u6838"
+    const-string v0, "VPN \u6a21\u5f0f\u76ee\u524d\u4ec5\u652f\u6301 mihomo / sing-box / xray / v2fly / hysteria \u5185\u6838"
 
-    const-string v1, "VPN mode currently supports the mihomo core only"
+    const-string v1, "VPN mode currently supports the mihomo, sing-box, xray, v2fly and hysteria cores only"
 
     invoke-static {v0, v1}, Lcom/box/app/vpn/VpnBridge;->tr(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
@@ -588,6 +586,8 @@
     :goto_sync_done
     invoke-virtual {v0, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
     invoke-static {v0}, Lcom/box/app/vpn/VpnShell;->output(Ljava/util/List;)Ljava/lang/String;
 
     move-result-object v0
@@ -607,6 +607,10 @@
     return-void
 
     :cond_has_out
+    invoke-static {p0, v7, v9, v0}, Lcom/box/app/vpn/VpnSb;->after(Landroid/content/Context;Ljava/io/File;Ljava/io/File;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
     const-string v1, "OK ipv6="
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
@@ -631,7 +635,7 @@
     invoke-static {v0}, Lcom/box/app/vpn/VpnAppProxy;->remember(Ljava/lang/String;)V
 
 
-    invoke-static {v7}, Lcom/box/app/vpn/VpnShell;->ensurePatched(Ljava/io/File;)I
+    invoke-static {v7}, Lcom/box/app/vpn/VpnSb;->patch(Ljava/io/File;)I
 
     invoke-static {p0, v7, v9}, Lcom/box/app/vpn/VpnPump;->prepare(Landroid/content/Context;Ljava/io/File;Ljava/io/File;)Z
 
@@ -681,7 +685,9 @@
 
     move-result-object v1
 
-    const-string v2, "mihomo.log"
+    invoke-static {}, Lcom/box/app/vpn/VpnSb;->logName()Ljava/lang/String;
+
+    move-result-object v2
 
     invoke-direct {v10, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -696,6 +702,14 @@
     invoke-static {v1, v7}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
 
     invoke-static {v1, v9}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
+
+    invoke-static {}, Llb0;->g()Lya0;
+
+    move-result-object v2
+
+    iget-object v2, v2, Lya0;->a:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     invoke-static {p0, v0}, Lcom/box/app/vpn/VpnPump;->coreFd(Landroid/content/Context;Landroid/os/ParcelFileDescriptor;)Ljava/io/FileDescriptor;
 
