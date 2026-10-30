@@ -12,7 +12,7 @@ public class SbConfigTest {
     }
 
     /** apps: com.a -> tag 1, com.b -> tag 2, com.c -> tag 3 (also matches regex "^com\\.[bc]$" -> 2,3). */
-    static class FakeTags implements SbConfig.Tags {
+    public static class FakeTags implements SbConfig.Tags {
         List<String> v = new ArrayList<String>();
         List<Boolean> rg = new ArrayList<Boolean>();
         public int addClause(boolean r, String s) {

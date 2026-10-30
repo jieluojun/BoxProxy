@@ -27,12 +27,12 @@
 .method constructor <init>(Ljava/io/FileDescriptor;)V
     .registers 6
 
-    .line 185
+    .line 200
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x1
 
-    .line 183
+    .line 198
     new-array v1, v0, [Landroid/system/StructPollfd;
 
     new-instance v2, Landroid/system/StructPollfd;
@@ -45,17 +45,17 @@
 
     iput-object v1, p0, Lcom/box/app/vpn/VpnSb$OsTun;->pf:[Landroid/system/StructPollfd;
 
-    .line 186
+    .line 201
     iput-object p1, p0, Lcom/box/app/vpn/VpnSb$OsTun;->fd:Ljava/io/FileDescriptor;
 
-    .line 187
+    .line 202
     iget-object v1, p0, Lcom/box/app/vpn/VpnSb$OsTun;->pf:[Landroid/system/StructPollfd;
 
     aget-object v1, v1, v3
 
     iput-object p1, v1, Landroid/system/StructPollfd;->fd:Ljava/io/FileDescriptor;
 
-    .line 188
+    .line 203
     iget-object p1, p0, Lcom/box/app/vpn/VpnSb$OsTun;->pf:[Landroid/system/StructPollfd;
 
     aget-object p1, p1, v3
@@ -77,7 +77,7 @@
 
     const/4 v0, 0x0
 
-    .line 193
+    .line 208
     :try_start_1
     iget-object v1, p0, Lcom/box/app/vpn/VpnSb$OsTun;->pf:[Landroid/system/StructPollfd;
 
@@ -85,7 +85,7 @@
 
     iput-short v0, v1, Landroid/system/StructPollfd;->revents:S
 
-    .line 194
+    .line 209
     iget-object v1, p0, Lcom/box/app/vpn/VpnSb$OsTun;->pf:[Landroid/system/StructPollfd;
 
     const/16 v2, 0x12c
@@ -98,7 +98,7 @@
 
     return v0
 
-    .line 198
+    .line 213
     :cond_12
     iget-object v1, p0, Lcom/box/app/vpn/VpnSb$OsTun;->pf:[Landroid/system/StructPollfd;
 
@@ -110,7 +110,7 @@
 
     if-nez v1, :cond_28
 
-    .line 199
+    .line 214
     iget-object p1, p0, Lcom/box/app/vpn/VpnSb$OsTun;->pf:[Landroid/system/StructPollfd;
 
     aget-object p1, p1, v0
@@ -126,7 +126,7 @@
     :cond_27
     return v0
 
-    .line 201
+    .line 216
     :cond_28
     iget-object v1, p0, Lcom/box/app/vpn/VpnSb$OsTun;->fd:Ljava/io/FileDescriptor;
 
@@ -148,7 +148,7 @@
     :catch_33
     move-exception p1
 
-    .line 204
+    .line 219
     iget v1, p1, Landroid/system/ErrnoException;->errno:I
 
     const/4 v2, 0x4
@@ -163,7 +163,7 @@
 
     goto :goto_4a
 
-    .line 207
+    .line 222
     :cond_40
     new-instance v0, Ljava/io/IOException;
 
@@ -195,7 +195,7 @@
 
     if-lt v0, v1, :cond_d
 
-    .line 230
+    .line 245
     new-instance p1, Ljava/io/IOException;
 
     const-string p2, "tun write would block"
@@ -204,7 +204,7 @@
 
     throw p1
 
-    .line 214
+    .line 229
     :cond_d
     :try_start_d
     iget-object v1, p0, Lcom/box/app/vpn/VpnSb$OsTun;->fd:Ljava/io/FileDescriptor;
@@ -218,7 +218,7 @@
     :catch_13
     move-exception v1
 
-    .line 217
+    .line 232
     iget v2, v1, Landroid/system/ErrnoException;->errno:I
 
     const/4 v3, 0x4
@@ -227,7 +227,7 @@
 
     goto :goto_2f
 
-    .line 220
+    .line 235
     :cond_1a
     iget v2, v1, Landroid/system/ErrnoException;->errno:I
 
@@ -235,7 +235,7 @@
 
     if-eq v2, v3, :cond_2a
 
-    .line 221
+    .line 236
     new-instance p1, Ljava/io/IOException;
 
     invoke-virtual {v1}, Landroid/system/ErrnoException;->toString()Ljava/lang/String;
@@ -249,7 +249,7 @@
     :cond_2a
     const-wide/16 v1, 0x1
 
-    .line 224
+    .line 239
     :try_start_2c
     invoke-static {v1, v2}, Ljava/lang/Thread;->sleep(J)V
     :try_end_2f
@@ -260,7 +260,7 @@
 
     goto :goto_1
 
-    .line 226
+    .line 241
     :catch_32
     new-instance p1, Ljava/io/IOException;
 

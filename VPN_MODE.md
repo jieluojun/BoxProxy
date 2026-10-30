@@ -23,9 +23,10 @@
 
 ## 限制
 
-* 仅支持 `mihomo` 和 `sing-box` 内核；Xray / V2fly / Hysteria 不会出现 `VPN` 选项（见下文 sing-box 一节）。
+* 五种内核都有 `VPN` 选项：`mihomo` 走 `tun.file-descriptor`，其余（`sing-box` / `xray` / `v2fly` / `hysteria`）走应用自带的 TUN→本地代理转发（见下文）。
+* 没有 root（`su -c id` 在 15 秒内没有返回 `uid=0`，检测方式同 Mishka 的 `RootHelper.hasRootAccess`）时，运行模式列表里只显示 `VPN`；检测在后台进行，出结果前不隐藏任何模式，检测失败后每 60 秒最多重试一次。
 * 开机自启、root 专属功能（Redirect/TPROXY/eBPF、模块脚本等）在 VPN 模式下不可用。
-* 日志：`<run 目录>/runs.log`（脚本事件、fd 诊断）和 `<run 目录>/mihomo.log` / `sing-box.log`（内核输出），日志查看里可直接看到。
+* 日志：`<run 目录>/runs.log`（脚本事件、fd 诊断）和 `<run 目录>/<内核名>.log`（内核输出，如 `mihomo.log` / `sing-box.log` / `xray.log`），日志查看里可直接看到。
 * 安卓版 mihomo（GOOS=android）启动 TUN 前会无条件读取 `/data/system/packages.xml`（无 root 读不到，报 `build android rules: read packages list ... permission denied`，TUN 不会启动）。VPN 模式在应用私有目录的内核副本里，把这个字面量等长替换成 `/dev/////////////////null`（即 /dev/null，空文件可被正常解析），用户原内核文件不改动，也不会产生额外文件。
 
 ## 代码位置
@@ -95,7 +96,7 @@ VPN 模式以前直接使用原始配置文件，所以覆写不生效。
 `skip-auth-prefixes` 时，App 自己的请求会被内核拒绝；配置开了 `allow-lan: true` 且没有端口而由我们补了
 `mixed-port` 时，该端口也会对局域网开放。需在真机验证。
 
-## sing-box 内核（实验性）
+## sing-box / xray / v2fly / hysteria 内核（实验性）
 
 独立的 sing-box 没有「接收 VPN 描述符」的 tun 选项（只有 libbox 的 `PlatformInterface` 才有），所以 VPN 模式下
 **由应用自己做 TUN → 本地代理的转发**，内核只当普通代理用：
@@ -119,3 +120,17 @@ VPN 模式以前直接使用原始配置文件，所以覆写不生效。
    没有在真机上验证过，属于实验功能。
 
 测试：`vpn-src/test/` 里有主机侧的协议栈测试（TUN 设备桥 + SOCKS5 测试服务 + 丢包注入）和 `SbConfigTest`，不会进 APK。
+
+### 其它内核的配置改写
+
+转发部分（`VpnNet`）对所有内核相同，区别只在配置改写和启动命令：
+
+| 内核 | 配置 | 改写 | 启动命令 | 包名规则 |
+|---|---|---|---|---|
+| sing-box | JSON | `SbConfig`（见上） | `run -D <home> -c config.run.json` | `package_name` / `process_name` / `package_name_regex` → `auth_user` |
+| xray | JSON | `XrConfig`：删 `tun` 和透明（`tproxy`/`followRedirect`）`dokodemo-door` 入站，加本地 `socks` 入站；去掉 `sockopt.mark/interface/tproxy`；没有无账号的 http/socks 入站时补一个 `http`（优先 7890） | `run -c config.run.json`（`XRAY_LOCATION_ASSET=<home>`） | 规则里的 `process` → `user`（SOCKS 用户名即 Xray 的 user email） |
+| v2fly | v4 风格 JSON | 同 xray | v4：`-c`；v5：`run -format jsonv4 -c`（用 `-version` 判断） | 无（v2fly 路由没有进程字段） |
+| hysteria | Hysteria 2 YAML | `HyConfig`：删 `tun`/`tcpRedirect`/`tcpTProxy`/`udpTProxy`/`tcpForwarding`/`udpForwarding`/`socks5`/`http`，加本地 `socks5` 和 `http` 监听 | `client -c config.run.yaml` | 无（Hysteria 没有路由） |
+
+xray / v2fly / hysteria 的「自动覆写」不适用（boxctl 只为 mihomo / sing-box 生成启动配置），VPN 模式直接用所选配置文件。
+v2fly 原生 v5 格式（非 v4 风格）的 JSON 暂不支持；Hysteria 1（JSON）不支持。

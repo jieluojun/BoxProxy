@@ -18,14 +18,16 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 
 /**
- * VPN mode for cores that cannot take a VPN descriptor themselves (sing-box): the
- * packets of the VPN are handled by {@link VpnNet} and forwarded to a loopback SOCKS5
- * inbound of the core; {@link SbConfig} prepares the core configuration.
+ * VPN mode for cores that cannot take a VPN descriptor themselves (sing-box, Xray, V2Fly,
+ * Hysteria): the packets of the VPN are handled by {@link VpnNet} and forwarded to a
+ * loopback SOCKS5 inbound of the core; {@link SbConfig}, {@link XrConfig} and
+ * {@link HyConfig} prepare the core configuration.
  */
 public final class VpnSb {
     /** True while the selected core is handled here. */
     public static volatile boolean on;
 
+    private static volatile String core = "";
     private static volatile VpnNet net;
     private static volatile int relayPort;
     private static volatile boolean auth;
@@ -36,13 +38,14 @@ public final class VpnSb {
     }
 
     /** Whether the core can run in VPN mode; also selects the code path. */
-    public static boolean supported(String core) {
-        on = "sing-box".equals(core);
+    public static boolean supported(String name) {
+        core = name == null ? "" : name;
+        on = "sing-box".equals(core) || "xray".equals(core) || "v2fly".equals(core) || "hysteria".equals(core);
         return on || "mihomo".equals(core);
     }
 
     public static String logName() {
-        return on ? "sing-box.log" : "mihomo.log";
+        return on ? core + ".log" : "mihomo.log";
     }
 
     /** mihomo needs its packages.xml patch, the others do not. */
@@ -51,8 +54,9 @@ public final class VpnSb {
     }
 
     /**
-     * Called with the output of "box-vpn.sh prepare". For sing-box it turns
-     * WORK/config.src into WORK/config.run.json and returns the final status line.
+     * Called with the output of "box-vpn.sh prepare". For the cores handled here it turns
+     * WORK/config.src into WORK/config.run.json (Hysteria: config.run.yaml) and returns the
+     * final status line.
      */
     public static String after(Context ctx, File work, File pidFile, String out) {
         if (!on || out == null || !out.contains("OK ipv6=")) {
@@ -62,21 +66,32 @@ public final class VpnSb {
         auth = false;
         File dir = pidFile.getParentFile();
         VpnPump.setLog(dir == null ? null : new File(dir, "runs.log"));
-        File dst = new File(work, "config.run.json");
+        boolean hy = "hysteria".equals(core);
+        new File(work, hy ? "config.run.json" : "config.run.yaml").delete();
+        File dst = new File(work, hy ? "config.run.yaml" : "config.run.json");
         dst.delete();
         try {
             String text = read(new File(work, "config.src"));
             if (text.length() > 0 && text.charAt(0) == '\uFEFF') {
                 text = text.substring(1);
             }
-            String t = text.trim();
-            if (!t.startsWith("{")) {
-                return "ERR:" + VpnBridge.tr("sing-box \u914d\u7f6e\u4e0d\u662f JSON \u683c\u5f0f\uff08VPN \u6a21\u5f0f\u9700\u8981 JSON\uff0c\u53ef\u5f00\u542f\u81ea\u52a8\u8986\u5199\u751f\u6210\uff09",
-                        "The sing-box config is not JSON (VPN mode needs JSON; turn on auto overwrite to generate it)");
+            boolean json = text.trim().startsWith("{");
+            if (hy == json) {
+                return "ERR:" + (hy
+                        ? VpnBridge.tr("Hysteria \u914d\u7f6e\u9700\u8981\u662f Hysteria 2 \u7684 YAML \u683c\u5f0f", "The Hysteria config must be a Hysteria 2 YAML file")
+                        : VpnBridge.tr(core + " \u914d\u7f6e\u4e0d\u662f JSON \u683c\u5f0f\uff08VPN \u6a21\u5f0f\u9700\u8981 JSON\uff09",
+                                "The " + core + " config is not JSON (VPN mode needs JSON)"));
             }
             VpnTags vt = new VpnTags(ctx);
             String p = randomPass();
-            SbConfig.Result r = SbConfig.rewrite(text, vt, p);
+            SbConfig.Result r;
+            if ("sing-box".equals(core)) {
+                r = SbConfig.rewrite(text, vt, p);
+            } else if (hy) {
+                r = HyConfig.rewrite(text);
+            } else {
+                r = XrConfig.rewrite(text, vt, p, "xray".equals(core));
+            }
             FileOutputStream fo = new FileOutputStream(dst);
             try {
                 fo.write(r.json.getBytes("UTF-8"));
@@ -87,13 +102,13 @@ public final class VpnSb {
             auth = r.auth;
             pass = p;
             tags = r.auth ? vt : null;
-            VpnPump.log("sing-box config prepared: relay=127.0.0.1:" + r.relayPort + (r.auth ? " rules:" + vt.describe() : "")
+            VpnPump.log(core + " config prepared: relay=127.0.0.1:" + r.relayPort + (r.auth ? " rules:" + vt.describe() : "")
                     + " " + r.proxy);
             return "OK ipv6=0 " + r.proxy;
         } catch (Throwable e) {
             dst.delete();
-            VpnPump.log("sing-box config failed: " + e);
-            return "ERR:" + VpnBridge.tr("sing-box \u914d\u7f6e\u5904\u7406\u5931\u8d25\uff1a", "sing-box config failed: ") + e;
+            VpnPump.log(core + " config failed: " + e);
+            return "ERR:" + VpnBridge.tr(core + " \u914d\u7f6e\u5904\u7406\u5931\u8d25\uff1a", core + " config failed: ") + e;
         }
     }
 

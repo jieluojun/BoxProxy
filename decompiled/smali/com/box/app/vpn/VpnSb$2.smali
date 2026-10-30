@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .registers 1
 
-    .line 128
+    .line 143
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public log(Ljava/lang/String;)V
     .registers 4
 
-    .line 130
+    .line 145
     new-instance v0, Ljava/lang/StringBuilder;
 
     const-string v1, "[net] "

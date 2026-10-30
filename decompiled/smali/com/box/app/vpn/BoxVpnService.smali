@@ -474,9 +474,9 @@
 
     if-nez v3, :cond_core_ok
 
-    const-string v0, "VPN \u6a21\u5f0f\u76ee\u524d\u4ec5\u652f\u6301 mihomo \u548c sing-box \u5185\u6838"
+    const-string v0, "VPN \u6a21\u5f0f\u76ee\u524d\u4ec5\u652f\u6301 mihomo / sing-box / xray / v2fly / hysteria \u5185\u6838"
 
-    const-string v1, "VPN mode currently supports the mihomo and sing-box cores only"
+    const-string v1, "VPN mode currently supports the mihomo, sing-box, xray, v2fly and hysteria cores only"
 
     invoke-static {v0, v1}, Lcom/box/app/vpn/VpnBridge;->tr(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 

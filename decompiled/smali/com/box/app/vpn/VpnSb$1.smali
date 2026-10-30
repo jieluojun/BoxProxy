@@ -27,7 +27,7 @@
 .method constructor <init>(Lcom/box/app/vpn/VpnTags;Landroid/net/ConnectivityManager;)V
     .registers 3
 
-    .line 106
+    .line 121
     iput-object p1, p0, Lcom/box/app/vpn/VpnSb$1;->val$vt:Lcom/box/app/vpn/VpnTags;
 
     iput-object p2, p0, Lcom/box/app/vpn/VpnSb$1;->val$cm:Landroid/net/ConnectivityManager;
@@ -42,7 +42,7 @@
 .method public user(IIII)Ljava/lang/String;
     .registers 12
 
-    .line 108
+    .line 123
     iget-object v0, p0, Lcom/box/app/vpn/VpnSb$1;->val$vt:Lcom/box/app/vpn/VpnTags;
 
     if-eqz v0, :cond_71
@@ -58,7 +58,7 @@
 
     const/4 v1, 0x0
 
-    .line 113
+    .line 128
     :try_start_b
     new-instance v2, Ljava/net/InetSocketAddress;
 
@@ -86,7 +86,7 @@
 
     invoke-direct {v2, v4, p2}, Ljava/net/InetSocketAddress;-><init>(Ljava/net/InetAddress;I)V
 
-    .line 114
+    .line 129
     new-instance p2, Ljava/net/InetSocketAddress;
 
     new-array v3, v3, [B
@@ -132,7 +132,7 @@
 
     goto :goto_59
 
-    .line 117
+    .line 132
     :cond_48
     iget-object p4, p0, Lcom/box/app/vpn/VpnSb$1;->val$cm:Landroid/net/ConnectivityManager;
 
@@ -144,7 +144,7 @@
 
     const-wide/16 v3, 0x2
 
-    .line 119
+    .line 134
     invoke-static {v3, v4}, Ljava/lang/Thread;->sleep(J)V
     :try_end_55
     .catch Ljava/lang/Throwable; {:try_start_b .. :try_end_55} :catch_58
@@ -157,7 +157,7 @@
     :catch_58
     const/4 p4, -0x1
 
-    .line 125
+    .line 140
     :cond_59
     :goto_59
     new-instance p1, Ljava/lang/StringBuilder;

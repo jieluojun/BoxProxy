@@ -4,14 +4,15 @@
 #   box-vpn.sh prepare CORE_SRC HOME_DIR CFG_SRC WORK_DIR PID_FILE BOXCTL DB STARTUP SYNC [CORE]
 #       Stops stale cores, copies the user supplied core into the app's private
 #       (executable) storage and writes a VPN-ready copy of the active config.
-#       Prints "OK ipv6=<0|1>" or "ERR:<reason>". For sing-box (CORE) the chosen
-#       config is only copied to WORK_DIR/config.src: the app rewrites it (config.run.json).
+#       Prints "OK ipv6=<0|1>" or "ERR:<reason>". For every core except mihomo (sing-box,
+#       xray, v2fly, hysteria) the chosen config is only copied to WORK_DIR/config.src:
+#       the app rewrites it (config.run.json, hysteria: config.run.yaml).
 #   box-vpn.sh sync WORK_DIR PID_FILE BOXCTL DB_FILE STARTUP_FILE [CORE]
 #       Regenerates the startup config with boxctl (no root). "OK" or "ERR:<reason>".
 #   box-vpn.sh run HOME_DIR WORK_DIR PID_FILE [CORE]
 #       Launches the core. mihomo: stdin (fd 0) must be the TUN descriptor handed over
 #       by VpnService; it is moved to fd 3 (== tun.file-descriptor in the config).
-#       sing-box: the app forwards the VPN packets to a local SOCKS inbound itself.
+#       other cores: the app forwards the VPN packets to a local SOCKS inbound itself.
 #       Script events go to <run dir>/runs.log, the core's output to <run dir>/<core>.log.
 #   box-vpn.sh stop WORK_DIR PID_FILE
 #       Stops the core started by "run".
@@ -215,7 +216,7 @@ case "$cmd" in
     [ -f "$src" ] || { echo "ERR:core not found: $src"; exit 1; }
     [ -f "$cfg" ] || { echo "ERR:config not found: $cfg"; exit 1; }
     mkdir -p "$home" 2>/dev/null
-    rm -f "$work/config.run.yaml" "$work/config.run.json"
+    rm -f "$work/config.run.yaml" "$work/config.run.json" "$work/config.src"
     # core patched by an older version with the /dev/null replacement path is already fine
     [ -f "$work/core.patched2" ] && [ ! -f "$work/core.patched4" ] && mv -f "$work/core.patched2" "$work/core.patched4"
     need=1
@@ -235,16 +236,16 @@ case "$cmd" in
     # (override scripts, BoxProxy settings) exactly like the root modes do and use
     # that as the source of the VPN config. Any failure falls back to the plain file.
     use=$cfg
-    if [ "$sync" = 1 ]; then
+    if [ "$sync" = 1 ] && { [ "$core" = mihomo ] || [ "$core" = sing-box ]; }; then
       if sync_startup "$work" "$bx" "$db" "$startup" "$core"; then
         use=$startup
       fi
     fi
-    if [ "$core" = sing-box ]; then
+    if [ "$core" != mihomo ]; then
       # the app turns config.src into config.run.json (inbounds, package rules)
       cp "$use" "$work/config.src.tmp" && mv -f "$work/config.src.tmp" "$work/config.src" \
         || { echo "ERR:cannot write config"; exit 1; }
-      note "prepare ok: core=$src cfg=$use copied=$need (sing-box)"
+      note "prepare ok: core=$src cfg=$use copied=$need ($core)"
       echo "OK ipv6=0"
       exit 0
     fi
@@ -275,16 +276,37 @@ case "$cmd" in
     rm -f "$home/.pkgs.xml" "$work/.pkgs.xml" 2>/dev/null
     # Report which descriptors the core really ended up with (pid stays the same across exec).
     _me=$$
-    ( sleep 3
-      note "core fd 3 after exec (must be the TUN): $(ls -l /proc/$_me/fd/3 2>&1)"
-      note "core cmdline: $(tr '\0' ' ' < /proc/$_me/cmdline 2>/dev/null)" ) </dev/null >/dev/null 2>&1 &
-    if [ "$core" = sing-box ]; then
-      [ -f "$work/config.run.json" ] || { note "config.run.json missing"; exit 1; }
-      note "config: $work/config.run.json"
+    if [ "$core" = mihomo ]; then
+      ( sleep 3
+        note "core fd 3 after exec (must be the TUN): $(ls -l /proc/$_me/fd/3 2>&1)"
+        note "core cmdline: $(tr '\0' ' ' < /proc/$_me/cmdline 2>/dev/null)" ) </dev/null >/dev/null 2>&1 &
+    fi
+    if [ "$core" != mihomo ]; then
+      cfgf="$work/config.run.json"
+      [ "$core" = hysteria ] && cfgf="$work/config.run.yaml"
+      [ -f "$cfgf" ] || { note "$cfgf missing"; exit 1; }
+      note "config: $cfgf"
+      LNK=
       for l in /system/bin/linker64 /system/bin/linker; do
-        [ -x "$l" ] && exec "$l" "$work/core" run -D "$home" -c "$work/config.run.json" 0</dev/null
+        [ -x "$l" ] && { LNK=$l; break; }
       done
-      exec "$work/core" run -D "$home" -c "$work/config.run.json" 0</dev/null
+      case "$core" in
+        sing-box) set -- run -D "$home" -c "$cfgf" ;;
+        xray) export XRAY_LOCATION_ASSET="$home"; set -- run -c "$cfgf" ;;
+        hysteria) set -- client -c "$cfgf" ;;
+        v2fly)
+          export V2RAY_LOCATION_ASSET="$home"
+          # v4 takes -c directly, v5 needs "run" (and the v4 style JSON format)
+          _vv=$($LNK "$work/core" -version 2>&1 < /dev/null | head -n 3)
+          case "$_vv" in
+            *"V2Ray 4."*) set -- -c "$cfgf" ;;
+            *) set -- run -format jsonv4 -c "$cfgf" ;;
+          esac ;;
+        *) note "unsupported core $core"; exit 1 ;;
+      esac
+      note "exec: $core $*"
+      if [ -n "$LNK" ]; then exec "$LNK" "$work/core" "$@" 0</dev/null; fi
+      exec "$work/core" "$@" 0</dev/null
     fi
     # The 3<&0 is attached to the exec itself: a standalone "exec 3<&0" would be
     # close-on-exec in mksh and the core would never see the descriptor.

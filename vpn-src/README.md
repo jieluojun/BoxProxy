@@ -1,6 +1,6 @@
 # vpn-src
 
-`decompiled/smali/com/box/app/vpn/` 里的 `VpnPump*`、`VpnTags`、`VpnNet*`、`VpnSb*`、`SbConfig*` 的 smali 是由这里的 Java 源码生成的
+`decompiled/smali/com/box/app/vpn/` 里的 `VpnPump*`、`VpnTags`、`VpnNet*`、`VpnSb*`、`VpnRoot*`、`SbConfig*`、`XrConfig`、`HyConfig` 的 smali 是由这里的 Java 源码生成的
 （apktool 工程里没有 Java 编译步骤，所以提交的是生成物）。
 
 重新生成：
@@ -14,6 +14,6 @@
 
 `stubs/com/box/app/vpn/BoxVpnService.java` 只是编译用的占位，真实类是手写 smali。
 
-`test/`：主机侧测试，不进 APK。`SbConfigTest.java` 测 sing-box 配置改写（用 stleary org.json）；
+`test/`：主机侧测试，不进 APK。`SbConfigTest.java` / `CoreCfgTest.java` 测各内核的配置改写（用 stleary org.json）；
 `NetTest.java` + `bridge.py`（`TUNSETIFF` 的 TUN 桥，环境变量 `LOSS` 可丢包）+ `socks.py`（SOCKS5 测试服务，含 UDP）
 一起在 Linux 上跑 `VpnNet`（需要 root 建 `tt0`，路由 `203.0.113.0/24`、`198.18.0.0/15` 到它）。

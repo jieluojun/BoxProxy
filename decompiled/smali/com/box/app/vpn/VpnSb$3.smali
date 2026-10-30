@@ -21,7 +21,7 @@
 .method constructor <init>()V
     .registers 1
 
-    .line 133
+    .line 148
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -32,17 +32,17 @@
 .method public run()V
     .registers 3
 
-    .line 135
+    .line 150
     sget-object v0, Lcom/box/app/vpn/BoxVpnService;->instance:Lcom/box/app/vpn/BoxVpnService;
 
     const-string v1, "VPN packet handler stopped"
 
-    .line 136
+    .line 151
     sput-object v1, Lcom/box/app/vpn/BoxVpnService;->lastError:Ljava/lang/String;
 
     if-eqz v0, :cond_b
 
-    .line 138
+    .line 153
     invoke-virtual {v0}, Lcom/box/app/vpn/BoxVpnService;->stopVpn()V
 
     :cond_b
