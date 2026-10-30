@@ -54,6 +54,28 @@
     return v0
 .end method
 
+# get() with a default for a missing key
+.method public static getd(Ljava/lang/String;Z)Z
+    .locals 2
+
+    :try_start_0
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->sp()Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    invoke-interface {v0, p0, p1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v0
+
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v0
+
+    :catch_0
+    return p1
+.end method
+
 .method public static put(Ljava/lang/String;Z)V
     .locals 2
 
@@ -570,9 +592,12 @@
 
     move-result v1
 
+    # a missing value counts as "wanted": only an explicit stop / revoke clears it
     const-string v0, "vpn_wanted"
 
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->get(Ljava/lang/String;)Z
+    const/4 v2, 0x1
+
+    invoke-static {v0, v2}, Lcom/box/app/vpn/VpnPrefs;->getd(Ljava/lang/String;Z)Z
 
     move-result v2
 
