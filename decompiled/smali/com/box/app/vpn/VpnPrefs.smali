@@ -487,24 +487,92 @@
     return-object p0
 .end method
 
-# Writes a diagnostic line to runs.log ("[app-proxy] <text>").
+# Appends a line to <run dir>/autostart.log (runs.log is truncated by every VPN start, so the
+# restart diagnostics get their own file; capped at 100 KB).
 .method public static note(Ljava/lang/String;)V
-    .locals 2
+    .locals 8
 
     :try_start_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, ""
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {}, Llb0;->k()Lab0;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/box/app/vpn/VpnAppProxy;->log(Ljava/lang/String;)V
+    iget-object v0, v0, Lab0;->c:Ljava/io/File;
+
+    new-instance v1, Ljava/io/File;
+
+    const-string v2, "autostart.log"
+
+    invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Ljava/io/File;->length()J
+
+    move-result-wide v2
+
+    const-wide/32 v4, 0x19000
+
+    cmp-long v2, v2, v4
+
+    if-lez v2, :cond_size_ok
+
+    invoke-virtual {v1}, Ljava/io/File;->delete()Z
+
+    :cond_size_ok
+    new-instance v0, Ljava/io/FileWriter;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v0, v1, v2}, Ljava/io/FileWriter;-><init>(Ljava/io/File;Z)V
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v4, "["
+
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    new-instance v4, Ljava/text/SimpleDateFormat;
+
+    const-string v5, "yyyy-MM-dd HH:mm:ss.SSS"
+
+    invoke-direct {v4, v5}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;)V
+
+    new-instance v5, Ljava/util/Date;
+
+    invoke-direct {v5}, Ljava/util/Date;-><init>()V
+
+    invoke-virtual {v4, v5}, Ljava/text/SimpleDateFormat;->format(Ljava/util/Date;)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v4, "] [pid "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {}, Landroid/os/Process;->myPid()I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v4, "] "
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v4, "\n"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v0, v3}, Ljava/io/FileWriter;->write(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/io/FileWriter;->close()V
 
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
@@ -582,7 +650,7 @@
 .end method
 
 # True when the VPN should come back by itself: "Auto Start On Boot" on, VPN run mode, VPN not
-# stopped by the user.  The three conditions are written to runs.log.
+# stopped by the user.  The three conditions are written to autostart.log.
 .method public static restartOk()Z
     .locals 5
 

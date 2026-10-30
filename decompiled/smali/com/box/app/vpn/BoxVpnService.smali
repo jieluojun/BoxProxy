@@ -967,23 +967,18 @@
     # Restart after the app card was swiped away / the process was killed (needs "Auto Start On Boot"
     # on and the VPN mode): a null intent is the system restarting the sticky service, "...AUTO" is
     # the system binding the service (always-on VPN).
+    const/4 v3, 0x0
+
     if-nez p1, :cond_has_intent
 
     const-string v0, "service restarted by the system (null intent)"
 
     invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
 
-    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->restartOk()Z
+    # the settings (database) are checked on the worker thread: VpnTask 4 = autoStart()
+    const/4 v3, 0x1
 
-    move-result v0
-
-    if-nez v0, :cond_go
-
-    invoke-virtual {p0}, Landroid/app/Service;->stopSelf()V
-
-    const/4 v0, 0x2
-
-    return v0
+    goto :cond_go
 
     :cond_has_intent
     invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
@@ -1046,7 +1041,7 @@
 
     new-instance v0, Lcom/box/app/vpn/VpnTask;
 
-    const/4 v1, 0x0
+    mul-int/lit8 v1, v3, 0x4
 
     invoke-direct {v0, p0, v1}, Lcom/box/app/vpn/VpnTask;-><init>(Ljava/lang/Object;I)V
 
@@ -1060,6 +1055,51 @@
     const/4 v0, 0x1
 
     return v0
+.end method
+
+.method public final autoStart()V
+    .locals 1
+
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->sync()V
+
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->restartOk()Z
+
+    move-result v0
+
+    if-nez v0, :cond_go
+
+    const-string v0, "restart not wanted: stopping the service"
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    sput-boolean v0, Lcom/box/app/vpn/BoxVpnService;->starting:Z
+
+    invoke-virtual {p0}, Landroid/app/Service;->stopSelf()V
+
+    return-void
+
+    :cond_go
+    const-string v0, "restarting the VPN"
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Lcom/box/app/vpn/BoxVpnService;->doStart()V
+
+    return-void
+.end method
+
+.method public onCreate()V
+    .locals 1
+
+    invoke-super {p0}, Landroid/net/VpnService;->onCreate()V
+
+    const-string v0, "service created"
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
+    return-void
 .end method
 
 .method public onRevoke()V
@@ -1102,6 +1142,10 @@
 
 .method public onDestroy()V
     .locals 1
+
+    const-string v0, "service destroyed"
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
 
     sget-object v0, Lcom/box/app/vpn/BoxVpnService;->instance:Lcom/box/app/vpn/BoxVpnService;
 
