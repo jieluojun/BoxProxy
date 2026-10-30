@@ -845,7 +845,7 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="service_accelerated_download_prefix_title">Accelerated URL Prefix</string>
     <string name="service_accelerated_download_subtitle">Use an accelerated channel for downloads</string>
     <string name="service_accelerated_download_title">Accelerated Download</string>
-    <string name="service_auto_start_subtitle">Install a root boot script to start the service after boot</string>
+    <string name="service_auto_start_subtitle">Root modes: install a boot script to start the service after boot. VPN mode: start the VPN after boot (the VPN permission must have been granted once)</string>
     <string name="service_auto_start_title">Auto Start On Boot</string>
     <string name="settings_backup_action">Backup</string>
     <string name="settings_backup_cleanup_failed">Failed to clean old files before restore</string>
@@ -1094,6 +1094,4 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="wifi_match_picker_permission_required">Wi-Fi permission required</string>
     <string name="wifi_match_ssid_hint">SSID</string>
     <string name="proxy_selector_hide_unavailable">Hide unavailable nodes</string>
-    <string name="settings_vpn_bg_autostart_title">Background auto-start</string>
-    <string name="settings_vpn_bg_autostart_subtitle">VPN run mode only: restart the proxy automatically after the app card is swiped away (the system auto-start permission is required)</string>
 </resources>

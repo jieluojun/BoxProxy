@@ -2,20 +2,12 @@
 .super Ljava/lang/Object;
 .source "VpnPrefs.java"
 
-# UI switches added with the VPN mode: panel page "Hide unavailable nodes" and settings page
-# "Background auto-start".  The switches live in compose states (so the screens recompose when
-# they change) and are persisted in the "box_vpn_ui" SharedPreferences.
-#
-# Background auto-start: when the task is swiped away (BoxVpnService.onTaskRemoved) or the
-# process is killed (START_STICKY), a running VPN that was started by the user is started again.
+# Panel page "Hide unavailable nodes" switch (a compose state, so the node list recomputes when it
+# changes, persisted in the "box_vpn_ui" SharedPreferences) plus small helpers.
 
 
 # static fields
-.field private static auto:Llk4;
-
 .field private static hide:Llk4;
-
-.field private static mode:Llk4;
 
 
 # direct methods
@@ -104,21 +96,9 @@
 .method private static declared-synchronized init()V
     .locals 2
 
-    sget-object v1, Lcom/box/app/vpn/VpnPrefs;->mode:Llk4;
+    sget-object v1, Lcom/box/app/vpn/VpnPrefs;->hide:Llk4;
 
     if-nez v1, :cond_done
-
-    const-string v1, "bg_autostart"
-
-    invoke-static {v1}, Lcom/box/app/vpn/VpnPrefs;->get(Ljava/lang/String;)Z
-
-    move-result v1
-
-    invoke-static {v1}, Lcom/box/app/vpn/VpnPrefs;->bool(Z)Llk4;
-
-    move-result-object v1
-
-    sput-object v1, Lcom/box/app/vpn/VpnPrefs;->auto:Llk4;
 
     const-string v1, "hide_unavailable"
 
@@ -131,16 +111,6 @@
     move-result-object v1
 
     sput-object v1, Lcom/box/app/vpn/VpnPrefs;->hide:Llk4;
-
-    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z
-
-    move-result v1
-
-    invoke-static {v1}, Lcom/box/app/vpn/VpnPrefs;->bool(Z)Llk4;
-
-    move-result-object v1
-
-    sput-object v1, Lcom/box/app/vpn/VpnPrefs;->mode:Llk4;
 
     :cond_done
     return-void
@@ -495,99 +465,14 @@
     return-object p0
 .end method
 
-# ---- settings page: background auto-start (VPN run mode only)
-
-.method public static autoOn()Z
-    .locals 1
-
-    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->init()V
-
-    sget-object v0, Lcom/box/app/vpn/VpnPrefs;->auto:Llk4;
-
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->read(Llk4;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public static autoSet(Z)V
-    .locals 2
-
-    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->init()V
-
-    sget-object v0, Lcom/box/app/vpn/VpnPrefs;->auto:Llk4;
-
-    invoke-static {v0, p0}, Lcom/box/app/vpn/VpnPrefs;->write(Llk4;Z)V
-
-    const-string v0, "bg_autostart"
-
-    invoke-static {v0, p0}, Lcom/box/app/vpn/VpnPrefs;->put(Ljava/lang/String;Z)V
-
-    return-void
-.end method
-
-# The switch can only be used while the VPN run mode is selected (locked in the root modes).
-.method public static autoEnabled()Z
-    .locals 1
-
-    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->init()V
-
-    sget-object v0, Lcom/box/app/vpn/VpnPrefs;->mode:Llk4;
-
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->read(Llk4;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-# Called with the run mode that is being saved (true = VPN).
-.method public static modeSet(Z)V
-    .locals 1
-
-    :try_start_0
-    sget-object v0, Lcom/box/app/vpn/VpnPrefs;->mode:Llk4;
-
-    if-eqz v0, :cond_end
-
-    # without root the VPN is the only mode that can work
-    if-nez p0, :cond_set
-
-    invoke-static {}, Lcom/box/app/vpn/VpnRoot;->noRoot()Z
-
-    move-result p0
-
-    :cond_set
-    invoke-static {v0, p0}, Lcom/box/app/vpn/VpnPrefs;->write(Llk4;Z)V
-
-    :cond_end
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    return-void
-.end method
-
-# "the VPN was started by the user and not stopped explicitly"
-.method public static wantedSet(Z)V
-    .locals 1
-
-    const-string v0, "vpn_wanted"
-
-    invoke-static {v0, p0}, Lcom/box/app/vpn/VpnPrefs;->put(Ljava/lang/String;Z)V
-
-    return-void
-.end method
-
-# Writes a diagnostic line to runs.log ("[app-proxy] autostart: ...").
+# Writes a diagnostic line to runs.log ("[app-proxy] <text>").
 .method public static note(Ljava/lang/String;)V
     .locals 2
 
     :try_start_0
     new-instance v0, Ljava/lang/StringBuilder;
 
-    const-string v1, "autostart: "
+    const-string v1, ""
 
     invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -599,182 +484,6 @@
 
     invoke-static {v0}, Lcom/box/app/vpn/VpnAppProxy;->log(Ljava/lang/String;)V
 
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    return-void
-.end method
-
-# True when the VPN should come back by itself (switch on, VPN run mode, not stopped by the user).
-# The three conditions are written to runs.log.
-.method public static restartOk()Z
-    .locals 5
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    :try_start_0
-    const-string v0, "bg_autostart"
-
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->get(Ljava/lang/String;)Z
-
-    move-result v1
-
-    const-string v0, "vpn_wanted"
-
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->get(Ljava/lang/String;)Z
-
-    move-result v2
-
-    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z
-
-    move-result v3
-
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v4, "check switch="
-
-    invoke-direct {v0, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v4, " wanted="
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v4, " vpnMode="
-
-    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
-
-    if-eqz v1, :cond_no
-
-    if-eqz v2, :cond_no
-
-    if-eqz v3, :cond_no
-
-    const/4 v0, 0x1
-
-    return v0
-
-    :cond_no
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
-# Schedules a restart of the VPN service (the process usually dies together with the task).
-# setAlarmClock first: its PendingIntent may start a foreground service from the background
-# (Android 12+), which inexact alarms may not.
-.method public static scheduleRestart(Landroid/content/Context;)V
-    .locals 9
-
-    :try_start_0
-    sget-boolean v0, Lcom/box/app/vpn/BoxVpnService;->running:Z
-
-    if-nez v0, :cond_running
-
-    const-string v0, "task removed, VPN not running: nothing to do"
-
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
-
-    goto :cond_end
-
-    :cond_running
-    const-string v0, "task removed while the VPN runs"
-
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
-
-    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->restartOk()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_end
-
-    new-instance v0, Landroid/content/Intent;
-
-    const-class v1, Lcom/box/app/vpn/BoxVpnService;
-
-    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    const-string v1, "com.boxproxy.box.vpn.AUTO"
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    const/4 v1, 0x0
-
-    const/high16 v2, 0xc000000
-
-    invoke-static {p0, v1, v0, v2}, Landroid/app/PendingIntent;->getForegroundService(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
-
-    move-result-object v3
-
-    const-string v4, "alarm"
-
-    invoke-virtual {p0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/app/AlarmManager;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v5
-
-    const-wide/16 v7, 0x5dc
-
-    add-long/2addr v5, v7
-
-    :try_start_1
-    new-instance v7, Landroid/app/AlarmManager$AlarmClockInfo;
-
-    invoke-direct {v7, v5, v6, v3}, Landroid/app/AlarmManager$AlarmClockInfo;-><init>(JLandroid/app/PendingIntent;)V
-
-    invoke-virtual {v4, v7, v3}, Landroid/app/AlarmManager;->setAlarmClock(Landroid/app/AlarmManager$AlarmClockInfo;Landroid/app/PendingIntent;)V
-
-    const-string v0, "alarm clock set (1.5 s)"
-
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
-    :try_end_1
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
-
-    goto :cond_end
-
-    :catch_1
-    move-exception v0
-
-    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v4, v2, v5, v6, v3}, Landroid/app/AlarmManager;->setAndAllowWhileIdle(IJLandroid/app/PendingIntent;)V
-
-    const-string v0, "inexact alarm set"
-
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
-
-    :cond_end
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 

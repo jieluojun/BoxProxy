@@ -843,7 +843,7 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="service_accelerated_download_prefix_title">加速位址</string>
     <string name="service_accelerated_download_subtitle">為下載資源啟用加速通道</string>
     <string name="service_accelerated_download_title">加速下載</string>
-    <string name="service_auto_start_subtitle">安裝 Root 開機腳本，開機後自動啟動服務</string>
+    <string name="service_auto_start_subtitle">Root 模式：安裝開機腳本，開機後自動啟動服務；VPN 模式：開機後自動啟動 VPN（需先授權過一次 VPN）</string>
     <string name="service_auto_start_title">開機自啟</string>
     <string name="settings_backup_action">備份</string>
     <string name="settings_backup_cleanup_failed">還原前清理舊檔案失敗</string>
@@ -1088,6 +1088,4 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="wifi_match_picker_permission_required">需要 Wi-Fi 權限</string>
     <string name="wifi_match_ssid_hint">SSID</string>
     <string name="proxy_selector_hide_unavailable">隱藏不可用節點</string>
-    <string name="settings_vpn_bg_autostart_title">背景自啟</string>
-    <string name="settings_vpn_bg_autostart_subtitle">僅 VPN 執行模式使用：滑掉背景卡片後自動重新啟動代理（需授予應用程式自啟動權限）</string>
 </resources>

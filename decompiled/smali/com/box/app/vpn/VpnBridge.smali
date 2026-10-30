@@ -251,15 +251,6 @@
 .method public static stopVpn()V
     .locals 1
 
-    # an explicit stop: no automatic restart after the task is swiped away
-    const-string v0, "VPN stopped explicitly (wanted=false)"
-
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
-
-    const/4 v0, 0x0
-
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->wantedSet(Z)V
-
     sget-object v0, Lcom/box/app/vpn/BoxVpnService;->instance:Lcom/box/app/vpn/BoxVpnService;
 
     if-eqz v0, :cond_orphan
@@ -673,9 +664,6 @@
     invoke-static {v1}, Lcom/box/app/vpn/VpnBridge;->isVpn(Ljava/lang/String;)Z
 
     move-result v3
-
-    # keeps the lock of the "background auto-start" switch in step with the selected run mode
-    invoke-static {v3}, Lcom/box/app/vpn/VpnPrefs;->modeSet(Z)V
 
     if-eq v2, v3, :cond_end
 
