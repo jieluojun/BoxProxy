@@ -369,6 +369,17 @@
     .line 141
     iget-object v1, p2, Lm25;->b:Lv25;
 
+    invoke-static {v1}, Lcom/box/app/vpn/VpnBridge;->modeRes(Lv25;)I
+
+    move-result v1
+
+    if-eqz v1, :cond_wf_novpn
+
+    goto :goto_3
+
+    :cond_wf_novpn
+    iget-object v1, p2, Lm25;->b:Lv25;
+
     .line 142
     .line 143
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I

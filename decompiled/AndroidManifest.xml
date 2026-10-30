@@ -83,6 +83,13 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service>
+        <service android:exported="false" android:foregroundServiceType="specialUse" android:name="com.box.app.vpn.BoxVpnService" android:permission="android.permission.BIND_VPN_SERVICE" android:stopWithTask="false">
+            <intent-filter>
+                <action android:name="android.net.VpnService"/>
+            </intent-filter>
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="non_root_vpn_proxy_service"/>
+        </service>
+        <activity android:excludeFromRecents="true" android:exported="false" android:name="com.box.app.vpn.VpnPrepareActivity" android:noHistory="true" android:taskAffinity="" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
         <service android:enabled="true" android:exported="false" android:foregroundServiceType="specialUse" android:name="com.box.app.notification.BoxPersistentNotificationService" android:stopWithTask="false">
             <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="persistent_box_service_status_notification"/>
         </service>

@@ -281,7 +281,7 @@
     move-result v11
 
     .line 102
-    invoke-virtual {v7}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {v7}, Lcom/box/app/vpn/VpnBridge;->key(Lv25;)I
 
     .line 103
     .line 104

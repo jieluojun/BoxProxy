@@ -11946,7 +11946,7 @@
 
     .line 82
     :cond_4
-    sget-object p0, Ljc5;->l:Ljc5;
+    sget-object p0, Ljc5;->k:Ljc5;
 
     .line 83
     .line 84
@@ -12703,7 +12703,7 @@
 
     .line 72
     :cond_4
-    sget-object p0, Ljc5;->l:Ljc5;
+    sget-object p0, Ljc5;->k:Ljc5;
 
     .line 73
     .line 74

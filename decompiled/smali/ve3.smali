@@ -18306,6 +18306,23 @@
     .line 2
     .line 3
     .line 4
+    sget-object v0, Lv25;->t:Lv25;
+
+    if-ne p0, v0, :cond_notvpn
+
+    const p0, -0x5fdcc4fd
+
+    const v1, 0x7f0f02d1
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, p0, v1, p1, v0}, Lv66;->n(Lv62;IILv62;Z)Ljava/lang/String;
+
+    const-string p0, "VPN"
+
+    return-object p0
+
+    :cond_notvpn
     invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
 
     .line 5

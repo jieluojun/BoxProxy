@@ -747,6 +747,20 @@
     .line 318
     check-cast v11, Lv25;
 
+    invoke-static {v11}, Lcom/box/app/vpn/VpnBridge;->modeRes(Lv25;)I
+
+    move-result v14
+
+    if-eqz v14, :cond_pv_novpn
+
+    const v11, -0x1c301169
+
+    const/4 v15, 0x0
+
+    goto :goto_7
+
+    :cond_pv_novpn
+
     .line 319
     .line 320
     invoke-virtual {v11}, Ljava/lang/Object;->getClass()Ljava/lang/Class;

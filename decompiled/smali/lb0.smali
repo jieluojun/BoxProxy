@@ -1584,6 +1584,8 @@
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    invoke-static {p0}, Lcom/box/app/vpn/VpnBridge;->beforeSave(Lya0;)V
+
     .line 2
     .line 3
     .line 4
