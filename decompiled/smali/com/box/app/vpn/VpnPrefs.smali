@@ -826,10 +826,39 @@
 .end method
 
 # Process start: why did the previous process die (ApplicationExitInfo, Android 11+)?
+# Every new process starts a fresh autostart.log (like runs.log): the previous process's exit reason
+# is written right after, from ApplicationExitInfo.
+.method public static clearLog()V
+    .locals 3
+
+    :try_start_0
+    invoke-static {}, Llb0;->k()Lab0;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lab0;->c:Ljava/io/File;
+
+    new-instance v1, Ljava/io/File;
+
+    const-string v2, "autostart.log"
+
+    invoke-direct {v1, v0, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Ljava/io/File;->delete()Z
+
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    return-void
+.end method
+
 .method public static processStart()V
     .locals 8
 
     :try_start_0
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->clearLog()V
+
     const-string v0, "process started"
 
     invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V

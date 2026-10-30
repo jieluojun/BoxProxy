@@ -182,4 +182,6 @@ VPN 模式下「开机自启」开着时，划掉应用卡片 / 进程被杀后�
 - 自启（开机 / 滑掉后台重启）时没有打开应用界面，Box 状态通知（运行中、网速、CPU/RAM、重新加载/停止/重启）
   原来要打开应用才出现。现在 VPN 起来后会直接启动 `BoxPersistentNotificationService`（`ACTION_SYNC`），
   并遵循应用里「常驻通知」的开关。
+- `autostart.log` 在每个新进程启动时清空重写（和 `runs.log` 每次启动清空一样），第一行是 `process started`，
+  接着是上一个进程的退出原因。同一个进程内的服务重启不会清。
 
