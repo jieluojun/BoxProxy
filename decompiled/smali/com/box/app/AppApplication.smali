@@ -201,6 +201,9 @@
     .line 11
     sput-object v0, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
 
+    # diagnostics for the restart-after-swipe logic (run/autostart.log)
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->processStart()V
+
     .line 12
     .line 13
     new-instance v0, Ltm;

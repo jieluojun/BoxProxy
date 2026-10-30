@@ -5084,6 +5084,29 @@
 
     .line 145
     :cond_5
+    # VPN run mode: no root boot script to install / remove (BootReceiver starts the VPN at boot)
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_notvpn
+
+    # switch turned on: ask for the battery-optimization exemption (like Bettbox), so the system
+    # does not kill / restrict the app in the background
+    if-eqz p1, :cond_nobat
+
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->askBattery()V
+
+    :cond_nobat
+    new-instance v3, Lza0;
+
+    sget-object v1, Ld07;->a:Ld07;
+
+    invoke-direct {v3, v6, v1, v8}, Lza0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
+
+    return-object v3
+
+    :cond_notvpn
     sget-object v1, Lgb1;->j:Lgb1;
 
     .line 146

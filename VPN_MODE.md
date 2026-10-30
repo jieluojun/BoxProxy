@@ -136,3 +136,52 @@ VPN 模式以前直接使用原始配置文件，所以覆写不生效。
 
 xray / v2fly / hysteria 的「自动覆写」不适用（boxctl 只为 mihomo / sing-box 生成启动配置），VPN 模式直接用所选配置文件。
 v2fly 原生 v5 格式（非 v4 风格）的 JSON 暂不支持；Hysteria 1（JSON）不支持。
+
+## 面板页「隐藏不可用节点」和 VPN 模式的开机自启
+
+- **隐藏不可用节点**（面板页排序/筛选菜单，「节点根据提供商分组」下面）：开启后，已知不可用的节点不再显示。
+  判定：应用内测速结果优先（≤0 / 超时 = 不可用）；否则看内核 API 返回的 `alive=false`、最近一次延迟 ≤ 0、历史延迟全部失败。
+  还没有测过速（没有任何结果）的节点、策略组、有正延迟的节点一律保留。开关保存在 `box_vpn_ui` 的 `hide_unavailable`，
+  由 `k53.L`（节点分组/排序入口）调用 `VpnPrefs.filter`，状态是 compose state，切换后列表立即刷新。
+- **开机自启（VPN 模式）**：原来的「开机自启」开关只会安装 root 开机脚本，没有 root 时装不上。
+  现在 VPN 模式下：开关只保存设置（`lb0.r` 在 VPN 模式直接成功，不再装/删开机脚本），
+  开机后由 `BootReceiver`（`RECEIVE_BOOT_COMPLETED`，参考 Bettbox）在后台线程里读 `boot_auto_start` 和运行模式，
+  VPN 模式且 `VpnService.prepare()` 返回 null（已授权过 VPN）时等 3 秒再 `startForegroundService` 拉起 `BoxVpnService`。
+  每一步写入 `runs.log`（`[app-proxy] boot …`）。root 模式仍由 root 开机脚本启动；
+  开机自启开着时，root 开机脚本跟着运行模式走（`BootSync`，在 `VpnBridge.beforeSave` 里触发）：
+  VPN → root 自动重新安装脚本（等价于把开关重新打开一次，即 `lb0.r(true)`），root → VPN 自动删除脚本
+  （开机由 `BootReceiver` 启动 VPN，避免和 root 脚本重复启动）。结果写入 `runs.log`。
+  需要系统里给应用打开「自启动」权限；不做「划掉卡片后自动重启」。
+
+### 划掉后台卡片后自动重启（跟随「开机自启」开关）
+
+VPN 模式下「开机自启」开着时，划掉应用卡片 / 进程被杀后会尝试把 VPN 重新拉起来：
+
+- `BoxVpnService` 返回 `START_STICKY`（系统重建服务时收到 null intent，和 Bettbox 一样，不使用闹钟；工作线程先从数据库刷新设置再决定要不要启动），系统绑定 VpnService（系统设置里的「始终开启的 VPN」，已声明 `SUPPORTS_ALWAYS_ON`）时
+  `onBind` 也会拉起。
+- 条件（主线程不能读数据库，所以镜像在 SharedPreferences `box_vpn_ui`）：`boot_auto`（开机自启开关）+ `vpn_mode` +
+  `vpn_wanted`（用户启动过且没手动停止）。镜像在保存设置（`VpnBridge.beforeSave`）和每次启动 VPN（`doStart`）时刷新。
+  升级后需要手动重新启动一次 VPN，镜像才会生效。
+- 每一步写入 `run/autostart.log`（和 `runs.log` 同目录；`runs.log` 每次启动都会被清空，所以单独放一个文件；
+  每行带进程号 `[pid N]`，能看出是不是新进程）：`service created`、`task removed…`、`restart check: boot-auto-start=… wanted=… vpnMode=…`、
+  `service restarted by the system`…），用来判断系统到底有没有杀进程 / 有没有拉起。
+- 限制：澎湃 OS / MIUI 的「清理后台」常常等同强制停止，强制停止会清掉，也不会重建服务，
+  这种情况下应用自己做不到；只有系统设置里的「始终开启的 VPN」能让系统重新拉起。
+- 排查用：`AppApplication.onCreate` 在进程启动时写 `process started`，并用 `ApplicationExitInfo` 记录上一个进程的退出原因
+  （`previous process: pid=… reason=… desc=…`，reason 10 = 用户强制停止，13 = 被系统清理等），
+  `onTaskRemoved` 写 `task removed`。这几行能区分「系统根本没重启进程」和「重启了但服务没拉起」。
+- VPN 模式下打开「开机自启」时，会弹系统的「忽略电池优化」请求（参考 Bettbox，已声明
+  `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS`），减少后台被系统限制 / 清理。
+- 实测（HyperOS）：滑掉卡片时进程被系统以 `SwipeUpClean` 杀掉，约 1.5 秒后系统会新建进程、重建服务，
+  只调用 `onCreate` 和 `onTaskRemoved`，不调用 `onStartCommand`。所以 `onTaskRemoved` 在服务未运行时
+  也会走与「粘性重启」相同的路径（工作线程检查设置，`running`/`starting` 防重复启动）把 VPN 拉起来。
+- 实测：onTaskRemoved 路径已能触发重启检查，但新进程里读到 `vpnMode=false`（旧进程里是 VPN 模式）。
+  现在重启条件改为「开机自启开 + 用户没有显式停止（wanted）」，`vpnMode` 仅写入日志；
+  切换到 root 模式或手动停止都会走 `VpnBridge.stopVpn` 清掉 wanted。`sync()` 会把读到的
+  运行模式 / 开机自启写进 `autostart.log`（`settings read: run mode=… `），读取失败也会记录。
+- 自启（开机 / 滑掉后台重启）时没有打开应用界面，Box 状态通知（运行中、网速、CPU/RAM、重新加载/停止/重启）
+  原来要打开应用才出现。现在 VPN 起来后会直接启动 `BoxPersistentNotificationService`（`ACTION_SYNC`），
+  并遵循应用里「常驻通知」的开关。
+- `autostart.log` 在每个新进程启动时清空重写（和 `runs.log` 每次启动清空一样），第一行是 `process started`，
+  接着是上一个进程的退出原因。同一个进程内的服务重启不会清。
+

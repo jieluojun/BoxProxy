@@ -2795,6 +2795,11 @@
 .method public static final L(Ljava/util/List;ZLg15;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)Ljava/util/List;
     .locals 6
 
+    # "Hide unavailable nodes" (a no-op when the option is off)
+    invoke-static {p0, p3, p5}, Lcom/box/app/vpn/VpnPrefs;->filter(Ljava/util/List;Ljava/util/Map;Ljava/util/Map;)Ljava/util/List;
+
+    move-result-object p0
+
     .line 1
     sget-object v0, Lg15;->l:Lg15;
 

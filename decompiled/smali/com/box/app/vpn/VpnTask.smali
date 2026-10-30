@@ -29,6 +29,7 @@
 # virtual methods
 # 0: BoxVpnService.doStart()   1: BoxVpnService.watch()
 # 2: VpnBridge.control0(action) 3: VpnBridge.restartRootWhenSaved(mode)
+# 4: BoxVpnService.autoStart() (restart by the system: checks the settings first)
 .method public final run()V
     .locals 3
 
@@ -68,6 +69,17 @@
     goto :goto_end
 
     :cond_3
+    const/4 v2, 0x4
+
+    if-ne v0, v2, :cond_4
+
+    check-cast v1, Lcom/box/app/vpn/BoxVpnService;
+
+    invoke-virtual {v1}, Lcom/box/app/vpn/BoxVpnService;->autoStart()V
+
+    goto :goto_end
+
+    :cond_4
     check-cast v1, Ljava/lang/String;
 
     invoke-static {v1}, Lcom/box/app/vpn/VpnBridge;->restartRootWhenSaved(Ljava/lang/String;)V

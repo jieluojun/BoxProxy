@@ -251,6 +251,15 @@
 .method public static stopVpn()V
     .locals 1
 
+    # an explicit stop: no automatic restart after the task is swiped away
+    const-string v0, "VPN stopped explicitly (wanted=false)"
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->wantedSet(Z)V
+
     sget-object v0, Lcom/box/app/vpn/BoxVpnService;->instance:Lcom/box/app/vpn/BoxVpnService;
 
     if-eqz v0, :cond_orphan
@@ -665,7 +674,13 @@
 
     move-result v3
 
+    # mirror of "boot auto-start" and the run mode for the restart logic (read on the main thread)
+    invoke-static {p0, v3}, Lcom/box/app/vpn/VpnPrefs;->mirror(Lya0;Z)V
+
     if-eq v2, v3, :cond_end
+
+    # the root boot script follows the run mode (installed for root modes, removed for the VPN mode)
+    invoke-static {v3}, Lcom/box/app/vpn/BootSync;->start(Z)V
 
     if-eqz v3, :cond_to_root
 
