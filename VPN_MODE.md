@@ -82,7 +82,7 @@ VPN 模式以前直接使用原始配置文件，所以覆写不生效。
 处理方式：VPN 运行期间，把 App 自己的请求指向内核的本地代理端口，VPN 仍然排除 App。
 
 - `box-vpn.sh prepare` 在输出里带上 `proxy=<m|h|s>:<端口>`（取配置里的 `mixed-port` > `port` > `socks-port`）。
-  配置里没有可用端口（没写或为 0）时，改写配置会补一个 `mixed-port: 17890`。
+  配置里没有可用端口（没写或为 0）时，改写配置会补一个 `mixed-port: 7890`。
 - `VpnAppProxy`：
   - 内核存活后等本地端口可连接，再启用（日志 `[app-proxy] …` 写入 `runs.log`）；
   - `ProxySelector`：App 内置的 OkHttp（`z84` 构建时改用 `VpnAppProxy.sel()`）和 `HttpURLConnection` 都走它，

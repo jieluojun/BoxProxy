@@ -116,7 +116,7 @@ rewrite_config() {
     done < "$1"
     printf '\n# --- added by BoxProxy VPN mode ---\n'
     printf 'find-process-mode: off\n'
-    [ "$HASPORT" = 1 ] || printf 'mixed-port: 17890\n'
+    [ "$HASPORT" = 1 ] || printf 'mixed-port: 7890\n'
     printf 'tun:\n'
     printf '  enable: true\n'
     printf '  stack: gvisor\n'
@@ -134,7 +134,7 @@ rewrite_config() {
       printf '  inet6-address:\n'
       printf '    - fdfe:dcba:9876::1/126\n'
     fi
-    printf '# box-vpn-cfg v7 ipv6=%s src=%s\n' "$IPV6" "$1"
+    printf '# box-vpn-cfg v8 ipv6=%s src=%s\n' "$IPV6" "$1"
   } > "$2"
 }
 
@@ -240,8 +240,8 @@ case "$cmd" in
     _last=
     [ -f "$work/config.yaml" ] && [ ! "$use" -nt "$work/config.yaml" ] && [ ! "$cfg" -nt "$work/config.yaml" ] && _last=$(tail -n 1 "$work/config.yaml" 2>/dev/null)
     case "$_last" in
-      "# box-vpn-cfg v7 ipv6=0 src=$use") IPV6=0; note "config unchanged, reusing" ;;
-      "# box-vpn-cfg v7 ipv6=1 src=$use") IPV6=1; note "config unchanged, reusing" ;;
+      "# box-vpn-cfg v8 ipv6=0 src=$use") IPV6=0; note "config unchanged, reusing" ;;
+      "# box-vpn-cfg v8 ipv6=1 src=$use") IPV6=1; note "config unchanged, reusing" ;;
       *)
         rewrite_config "$use" "$work/config.yaml" || { echo "ERR:cannot write config"; exit 1; }
         note "config rewritten from $use" ;;
