@@ -11,6 +11,8 @@
 
 
 # Picks the Chinese or English text depending on the UI language.
+.field public static volatile vm:I
+
 .method public static tr(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 2
 
@@ -642,6 +644,14 @@
     .locals 6
 
     :try_start_0
+    iget-object v0, p0, Lya0;->b:Ljava/lang/String;
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnBridge;->isVpn(Ljava/lang/String;)Z
+
+    move-result v0
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnBridge;->setVm(Z)V
+
     invoke-static {}, Llb0;->g()Lya0;
 
     move-result-object v0
@@ -1080,10 +1090,12 @@
 .end method
 
 # Home page network speed. "Local mode" (device TrafficStats) is not usable in VPN mode,
-# so while the VPN runs the home page uses the core's API data (the "API mode" source)
-# whatever the setting says. Hooked into Lqv;->m where Lqu;->K (API mode) is read.
+# so while VPN mode is selected the home page uses the core's API data (the "API mode"
+# source) whatever the setting says. Keyed on the saved run mode (cached in vm) rather than
+# on the service state, so the very first composition already picks the right source.
+# Hooked into Lqv;->m where Lqu;->K (API mode) is read.
 .method public static api(Z)Z
-    .locals 1
+    .locals 2
 
     if-eqz p0, :cond_chk
 
@@ -1092,7 +1104,45 @@
     return v0
 
     :cond_chk
-    sget-boolean v0, Lcom/box/app/vpn/BoxVpnService;->running:Z
+    sget v0, Lcom/box/app/vpn/VpnBridge;->vm:I
 
-    return v0
+    if-nez v0, :cond_known
+
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z
+
+    move-result v1
+
+    invoke-static {v1}, Lcom/box/app/vpn/VpnBridge;->setVm(Z)V
+
+    sget v0, Lcom/box/app/vpn/VpnBridge;->vm:I
+
+    :cond_known
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_no
+
+    return v1
+
+    :cond_no
+    const/4 v1, 0x0
+
+    return v1
+.end method
+
+.method public static setVm(Z)V
+    .locals 1
+
+    if-eqz p0, :cond_no
+
+    const/4 v0, 0x1
+
+    goto :cond_set
+
+    :cond_no
+    const/4 v0, 0x2
+
+    :cond_set
+    sput v0, Lcom/box/app/vpn/VpnBridge;->vm:I
+
+    return-void
 .end method
