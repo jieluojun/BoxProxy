@@ -67,7 +67,7 @@ rewrite_config() {
       _key=${_line%%:*}
       _key=${_key%% *}
       case "$_key" in
-        tun|routing-mark|interface-name|redir-port|tproxy-port|iptables)
+        tun|routing-mark|find-process-mode|interface-name|redir-port|tproxy-port|iptables)
           _skip=1 ;;
         *)
           _skip=0
@@ -78,6 +78,7 @@ rewrite_config() {
       esac
     done < "$1"
     printf '\n# --- added by BoxProxy VPN mode ---\n'
+    printf 'find-process-mode: off\n'
     printf 'tun:\n'
     printf '  enable: true\n'
     printf '  stack: gvisor\n'
@@ -95,7 +96,7 @@ rewrite_config() {
       printf '  inet6-address:\n'
       printf '    - fdfe:dcba:9876::1/126\n'
     fi
-    printf '# box-vpn-cfg v4 ipv6=%s src=%s\n' "$IPV6" "$1"
+    printf '# box-vpn-cfg v5 ipv6=%s src=%s\n' "$IPV6" "$1"
   } > "$2"
 }
 
@@ -116,8 +117,8 @@ case "$cmd" in
     [ -f "$src" ] || { echo "ERR:core not found: $src"; exit 1; }
     [ -f "$cfg" ] || { echo "ERR:config not found: $cfg"; exit 1; }
     mkdir -p "$home" 2>/dev/null
-    # core patched by an older version (different replacement path): start over from the original
-    [ -f "$work/core.patched" ] || [ -f "$work/core.patched2" ] && rm -f "$work/core" "$work/core.patched" "$work/core.patched2"
+    # core patched by an older version with the /dev/null replacement path is already fine
+    [ -f "$work/core.patched2" ] && [ ! -f "$work/core.patched4" ] && mv -f "$work/core.patched2" "$work/core.patched4"
     need=1
     if [ -f "$work/core" ] && [ ! "$src" -nt "$work/core" ]; then
       s1=$(stat -c %s "$src" 2>/dev/null) || s1=$(wc -c < "$src")
@@ -126,7 +127,7 @@ case "$cmd" in
     fi
     if [ "$need" = 1 ]; then
       note "copying core to private storage"
-      rm -f "$work/core.tmp" "$work/core.patched" "$work/core.patched2" "$work/core.patched3"
+      rm -f "$work/core.tmp" "$work/core.patched" "$work/core.patched2" "$work/core.patched3" "$work/core.patched4"
       cp "$src" "$work/core.tmp" && chmod 700 "$work/core.tmp" && mv -f "$work/core.tmp" "$work/core" \
         || { echo "ERR:cannot copy core"; exit 1; }
       note "core copied"
@@ -134,35 +135,28 @@ case "$cmd" in
     _last=
     [ -f "$work/config.yaml" ] && [ ! "$cfg" -nt "$work/config.yaml" ] && _last=$(tail -n 1 "$work/config.yaml" 2>/dev/null)
     case "$_last" in
-      "# box-vpn-cfg v4 ipv6=0 src=$cfg") IPV6=0; note "config unchanged, reusing" ;;
-      "# box-vpn-cfg v4 ipv6=1 src=$cfg") IPV6=1; note "config unchanged, reusing" ;;
+      "# box-vpn-cfg v5 ipv6=0 src=$cfg") IPV6=0; note "config unchanged, reusing" ;;
+      "# box-vpn-cfg v5 ipv6=1 src=$cfg") IPV6=1; note "config unchanged, reusing" ;;
       *)
         rewrite_config "$cfg" "$work/config.yaml" || { echo "ERR:cannot write config"; exit 1; }
         note "config rewritten" ;;
     esac
-    # package-name / process rules need uid->package data (written by the app)
-    P=0
-    grep -q 'PROCESS-' "$cfg" 2>/dev/null && P=1
-    [ "$P" = 1 ] || rm -f "$work/.pkgs.xml"
-    note "prepare ok: core=$src cfg=$cfg ipv6=$IPV6 pkgs=$P copied=$need"
-    echo "OK ipv6=$IPV6 pkgs=$P"
+    note "prepare ok: core=$src cfg=$cfg ipv6=$IPV6 copied=$need"
+    echo "OK ipv6=$IPV6"
     ;;
   run)
     home=$1; work=$2; pf=$3
     rundir=${pf%/*}
     RUNS=$rundir/runs.log
     note() { echo "[$(date '+%F %T.%N' 2>/dev/null)] [vpn] $*" >> "$RUNS"; }
-    note "run pid=$$ home=$home core.patched=$([ -f "$work/core.patched3" ] && echo yes || echo no)"
+    note "run pid=$$ home=$home core.patched=$([ -f "$work/core.patched4" ] && echo yes || echo no)"
     note "fds before exec (0 must be the TUN): $(ls -l /proc/$$/fd/0 2>&1)"
     echo $$ > "$work/core.pid"
     echo $$ > "$pf"
     export TMPDIR="$work/tmp" HOME="$work"
-    # cwd = private work dir: the core's hard coded packages-list path was patched to
-    # /proc/self/cwd//.pkgs.xml. The app fills it with the installed packages when the
-    # config has PROCESS-* rules, otherwise it is an empty stand-in (core still gets -d $home).
-    cd "$work" || { note "cannot cd $work"; exit 1; }
-    rm -f "$home/.pkgs.xml" 2>/dev/null
-    [ -s "$work/.pkgs.xml" ] || printf '<?xml version="1.0" encoding="utf-8"?>\n<packages>\n</packages>\n' > "$work/.pkgs.xml" 2>/dev/null
+    cd "$home" || { note "cannot cd $home"; exit 1; }
+    # leftovers of earlier versions that used a stand-in packages file
+    rm -f "$home/.pkgs.xml" "$work/.pkgs.xml" 2>/dev/null
     # Report which descriptors the core really ended up with (pid stays the same across exec).
     _me=$$
     ( sleep 3

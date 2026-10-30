@@ -595,23 +595,6 @@
 
     invoke-static {v7}, Lcom/box/app/vpn/VpnShell;->ensurePatched(Ljava/io/File;)I
 
-    const-string v1, "pkgs=1"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_no_pkgs
-
-    new-instance v1, Ljava/io/File;
-
-    const-string v2, ".pkgs.xml"
-
-    invoke-direct {v1, v7, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    invoke-static {p0, v1}, Lcom/box/app/vpn/VpnShell;->writePackages(Landroid/content/Context;Ljava/io/File;)V
-
-    :cond_no_pkgs
     const-string v1, "ipv6=1"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z

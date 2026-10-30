@@ -310,10 +310,10 @@
 # The android build of mihomo insists on reading /data/system/packages.xml
 # (needs root/system uid) before it brings the TUN up. Both the read and the
 # inotify watch use that one hard coded literal, so in the private copy of the
-# core it is replaced by a same-length path ("/proc/self/cwd//.pkgs.xml") that
+# core it is replaced by a same-length path ("/dev/////////////////null", i.e. /dev/null) that
 # resolves to a harmless file in the core's working directory.
 # Returns the number of replaced occurrences (-1 on error).
-.method public static patch(Ljava/io/File;)I
+.method public static patchWith(Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)I
     .locals 14
 
     const/4 v0, 0x0
@@ -325,13 +325,11 @@
 
     invoke-direct {v1, p0, v2}, Ljava/io/RandomAccessFile;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    const-string v2, "/data/system/packages.xml"
-
-    invoke-virtual {v2}, Ljava/lang/String;->getBytes()[B
+    invoke-virtual {p1}, Ljava/lang/String;->getBytes()[B
 
     move-result-object v2
 
-    const-string v3, "/proc/self/cwd//.pkgs.xml"
+    move-object/from16 v3, p2
 
     invoke-virtual {v3}, Ljava/lang/String;->getBytes()[B
 
@@ -442,14 +440,38 @@
     goto :goto_ret
 .end method
 
-# Patches WORK/core once (marker file WORK/core.patched3). Returns the number of
+# Replaces the packages-list path (and the stand-in path used by an earlier
+# version) by /dev/null; returns the total number of replacements.
+.method public static patch(Ljava/io/File;)I
+    .locals 4
+
+    const-string v0, "/data/system/packages.xml"
+
+    const-string v1, "/dev/////////////////null"
+
+    invoke-static {p0, v0, v1}, Lcom/box/app/vpn/VpnShell;->patchWith(Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v2
+
+    const-string v0, "/proc/self/cwd//.pkgs.xml"
+
+    invoke-static {p0, v0, v1}, Lcom/box/app/vpn/VpnShell;->patchWith(Ljava/io/File;Ljava/lang/String;Ljava/lang/String;)I
+
+    move-result v3
+
+    add-int/2addr v2, v3
+
+    return v2
+.end method
+
+# Patches WORK/core once (marker file WORK/core.patched4). Returns the number of
 # replacements done now, 0 when nothing was needed / found, -1 on error.
 .method public static ensurePatched(Ljava/io/File;)I
     .locals 4
 
     new-instance v0, Ljava/io/File;
 
-    const-string v1, "core.patched3"
+    const-string v1, "core.patched4"
 
     invoke-direct {v0, p0, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
@@ -694,98 +716,4 @@
 
     :catch_0
     return-object v0
-.end method
-
-# Writes a minimal packages.xml (package name + app id) for the core's package
-# resolver, so PROCESS-NAME rules can turn a socket owner uid into a package name.
-.method public static writePackages(Landroid/content/Context;Ljava/io/File;)V
-    .locals 8
-
-    :try_start_0
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->getInstalledApplications(I)Ljava/util/List;
-
-    move-result-object v0
-
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v2, "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n<packages>\n"
-
-    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :loop
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v2
-
-    if-eqz v2, :done
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/content/pm/ApplicationInfo;
-
-    const-string v3, "<package name=\""
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget-object v3, v2, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v3, "\" userId=\""
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v3, v2, Landroid/content/pm/ApplicationInfo;->uid:I
-
-    const v4, 0x186a0
-
-    rem-int/2addr v3, v4
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v3, "\" />\n"
-
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    goto :loop
-
-    :done
-    const-string v0, "</packages>\n"
-
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
-
-    move-result-object v0
-
-    new-instance v1, Ljava/io/FileOutputStream;
-
-    invoke-direct {v1, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
-
-    invoke-virtual {v1, v0}, Ljava/io/FileOutputStream;->write([B)V
-
-    invoke-virtual {v1}, Ljava/io/FileOutputStream;->close()V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
-    return-void
 .end method
