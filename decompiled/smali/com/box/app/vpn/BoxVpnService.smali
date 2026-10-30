@@ -966,6 +966,10 @@
     # switch is on, the VPN mode is selected and the user has not stopped the VPN.
     if-nez p1, :cond_has_intent
 
+    const-string v0, "service restarted by the system (null intent)"
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
     invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->restartOk()Z
 
     move-result v0
@@ -991,6 +995,10 @@
 
     if-eqz v0, :cond_user
 
+    const-string v0, "service started by the restart alarm"
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
     invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->restartOk()Z
 
     move-result v0
@@ -1005,6 +1013,10 @@
 
     :cond_user
     # started by the user (or by switching the run mode): a swiped-away task brings it back
+    const-string v0, "VPN started by the user (wanted=true)"
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
     const/4 v0, 0x1
 
     invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->wantedSet(Z)V

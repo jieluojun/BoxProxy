@@ -252,6 +252,10 @@
     .locals 1
 
     # an explicit stop: no automatic restart after the task is swiped away
+    const-string v0, "VPN stopped explicitly (wanted=false)"
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
     const/4 v0, 0x0
 
     invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->wantedSet(Z)V
