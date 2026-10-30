@@ -172,10 +172,18 @@ sync_startup() {
   fi
   _T=
   command -v timeout >/dev/null 2>&1 && _T="timeout 30"
+  # boxctl appends its own log lines to <run>/runs.log (the file $RUNS), and with
+  # BOXCTL_STDOUT_LOG_LINE=1 prints the same lines to stdout: keep stdout out of the log
+  # (every line was there twice) and only add it when the sync failed.
+  _out="$_w/tmp/boxctl-sync.out"
   BOX_MODE=tun BOX_CORE=$_core BOXCTL_STDOUT_LOG_LINE=1 HOME="$_w" TMPDIR="$_w/tmp" \
-    $_T "$_L" "$_w/boxctl" --home "${_st%/run/state/config/startup-config}" --db "$_db" config sync >> "$RUNS" 2>&1 < /dev/null
+    $_T "$_L" "$_w/boxctl" --home "${_st%/run/state/config/startup-config}" --db "$_db" config sync > "$_out" 2>&1 < /dev/null
   _rc=$?
   note "boxctl config sync rc=$_rc"
+  if [ "$_rc" != 0 ] && [ -s "$_out" ]; then
+    cat "$_out" >> "$RUNS" 2>/dev/null
+  fi
+  rm -f "$_out" 2>/dev/null
   if [ "$_rc" = 0 ] && [ -s "$_st" ]; then
     note "auto overwrite: using $_st"
     return 0
