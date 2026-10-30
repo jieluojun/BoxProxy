@@ -808,6 +808,8 @@
 
     invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->start()V
 
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->notifyStatus()V
+
     new-instance v0, Lcom/box/app/vpn/VpnTask;
 
     const/4 v1, 0x1

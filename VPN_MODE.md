@@ -179,4 +179,7 @@ VPN 模式下「开机自启」开着时，划掉应用卡片 / 进程被杀后�
   现在重启条件改为「开机自启开 + 用户没有显式停止（wanted）」，`vpnMode` 仅写入日志；
   切换到 root 模式或手动停止都会走 `VpnBridge.stopVpn` 清掉 wanted。`sync()` 会把读到的
   运行模式 / 开机自启写进 `autostart.log`（`settings read: run mode=… `），读取失败也会记录。
+- 自启（开机 / 滑掉后台重启）时没有打开应用界面，Box 状态通知（运行中、网速、CPU/RAM、重新加载/停止/重启）
+  原来要打开应用才出现。现在 VPN 起来后会直接启动 `BoxPersistentNotificationService`（`ACTION_SYNC`），
+  并遵循应用里「常驻通知」的开关。
 

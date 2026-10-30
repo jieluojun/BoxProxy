@@ -951,6 +951,83 @@
     return-void
 .end method
 
+# After the VPN came up without the app UI (boot / swipe restart): start the status notification
+# service ("running, speed, CPU/RAM, reload/stop/restart"), which otherwise only the opened app does.
+# Honours the app's own "persistent notification" setting (qu.g).
+.method public static notifyStatus()V
+    .locals 4
+
+    :try_start_0
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->ctx()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    sget-object v1, Ltu;->f:Lw8;
+
+    invoke-virtual {v1, v0}, Lw8;->u(Landroid/content/Context;)Ltu;
+
+    move-result-object v1
+
+    iget-object v1, v1, Ltu;->e:Lg65;
+
+    iget-object v1, v1, Lg65;->j:Ll86;
+
+    invoke-virtual {v1}, Ll86;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lqu;
+
+    iget-boolean v1, v1, Lqu;->g:Z
+
+    if-eqz v1, :cond_end
+
+    new-instance v1, Landroid/content/Intent;
+
+    const-class v2, Lcom/box/app/notification/BoxPersistentNotificationService;
+
+    invoke-direct {v1, v0, v2}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    const-string v2, "com.boxproxy.box.notification.ACTION_SYNC"
+
+    invoke-virtual {v1, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->startForegroundService(Landroid/content/Intent;)Landroid/content/ComponentName;
+
+    const-string v0, "started the status notification service"
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
+    :cond_end
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "status notification service not started: "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
+    return-void
+.end method
+
 # Asks the user to exempt the app from battery optimization (system dialog), once per call.
 .method public static askBattery()V
     .locals 4
