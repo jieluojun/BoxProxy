@@ -8391,12 +8391,16 @@
 
     .line 646
     .line 647
+    const/4 v7, 0x1
+
     invoke-interface {v6, v0, v7}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     .line 648
     .line 649
     .line 650
     move-result v45
+
+    const/4 v7, 0x0
 
     .line 651
     const-string v0, "speed_test_source"
