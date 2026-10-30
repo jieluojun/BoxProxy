@@ -628,6 +628,8 @@
     return-void
 
     :cond_prep_ok
+    invoke-static {v0}, Lcom/box/app/vpn/VpnAppProxy;->remember(Ljava/lang/String;)V
+
 
     invoke-static {v7}, Lcom/box/app/vpn/VpnShell;->ensurePatched(Ljava/io/File;)I
 
@@ -787,6 +789,8 @@
 
     invoke-direct {p0, v0}, Lcom/box/app/vpn/BoxVpnService;->updateNotif(Ljava/lang/String;)V
 
+    invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->start()V
+
     new-instance v0, Lcom/box/app/vpn/VpnTask;
 
     const/4 v1, 0x1
@@ -870,6 +874,12 @@
 
     iput-boolean v0, p0, Lcom/box/app/vpn/BoxVpnService;->stopping:Z
 
+    :try_start_apx
+    invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->stop()V
+    :try_end_apx
+    .catch Ljava/lang/Throwable; {:try_start_apx .. :try_end_apx} :catch_apx
+
+    :catch_apx
     :try_start_0
     invoke-static {}, Lcom/box/app/vpn/VpnPump;->stop()V
 

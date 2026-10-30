@@ -258,7 +258,7 @@
 
     .line 59
     .line 60
-    invoke-static {}, Ljava/net/ProxySelector;->getDefault()Ljava/net/ProxySelector;
+    invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->sel()Ljava/net/ProxySelector;
 
     .line 61
     .line 62

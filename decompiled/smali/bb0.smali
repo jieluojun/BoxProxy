@@ -3770,9 +3770,33 @@
     :cond_6b
     invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
 
-    .line 1522
-    .line 1523
-    .line 1524
+    # VPN mode: nothing to apply through boxctl (needs root); restart the VPN instead
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_6b_root
+
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->applyNow()Ljava/lang/String;
+
+    move-result-object v1
+
+    if-nez v1, :cond_6b_fail
+
+    new-instance v15, Lza0;
+
+    invoke-direct {v15, v4, v12, v5}, Lza0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
+
+    goto/16 :goto_2d
+
+    :cond_6b_fail
+    new-instance v15, Lza0;
+
+    invoke-direct {v15, v3, v5, v1}, Lza0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
+
+    goto/16 :goto_2d
+
+    :cond_6b_root
     iput-byte v3, v0, Lbb0;->k:B
 
     .line 1525

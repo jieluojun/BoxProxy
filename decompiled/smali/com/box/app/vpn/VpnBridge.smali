@@ -1037,3 +1037,43 @@
     :catch_0
     return-object v1
 .end method
+
+# Settings changed (app list, ...): in root modes boxctl re-applies and restarts the
+# core; in VPN mode the lists are read when the VPN is established, so restart it when
+# it is running. Returns null on success, otherwise the error text.
+.method public static applyNow()Ljava/lang/String;
+    .locals 3
+
+    sget-boolean v0, Lcom/box/app/vpn/BoxVpnService;->running:Z
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_do
+
+    return-object v1
+
+    :cond_do
+    :try_start_0
+    const-string v0, "restart"
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnBridge;->control(Ljava/lang/String;)Lcg2;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_ok
+
+    iget-boolean v2, v0, Lcg2;->a:Z
+
+    if-nez v2, :cond_ok
+
+    iget-object v0, v0, Lcg2;->b:Ljava/lang/String;
+
+    return-object v0
+
+    :cond_ok
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    return-object v1
+.end method

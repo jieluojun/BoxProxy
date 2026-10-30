@@ -48,7 +48,7 @@
 * 白名单：勾选的应用 → `addAllowedApplication`（只有它们进 VPN）；白名单为空时启动会提示先选择应用。
 * 本应用自身始终排除在隧道之外（内核以本应用 UID 运行，否则会回环）。
 * 只能处理当前用户（主用户）的应用；分身/其他用户的 UID、GID 规则、`cnip_force_*` 在 VPN 模式下不生效。
-* 修改勾选后需重启 VPN 才会应用。
+* 修改勾选后需重启 VPN 才会应用：在应用管理里保存（以及其它触发「应用并重启」的设置保存）时，VPN 正在运行则自动重启 VPN；不再调用需要 root 的 `boxctl`（之前会弹出 `sh: <stdin>[..]` 的报错）。
 * 配置里的 `PROCESS-NAME` / `PROCESS-NAME-REGEX`（含 `AND/OR/NOT` 里嵌套的）在 VPN 模式下**由应用翻译后生效**（实验性）。独立运行的 mihomo 在无 root 的安卓上查不到连接属主（`process not found`），所以 `find-process-mode` 仍强制 `off`，改由应用自己判断：
   1. 启动时应用读取 `files/vpn/config.yaml`，把每个 PROCESS 子句换成对应的 `SRC-IP-CIDR,172.19.200.N/32`，结果写到 `files/vpn/config.run.yaml`（核心用这个文件启动，原配置不改动）。包名按本机已安装应用匹配：`PROCESS-NAME` 按包名忽略大小写相等，`PROCESS-NAME-REGEX` 用 Java 正则（忽略大小写、部分匹配）。
   2. TUN 描述符改由应用读取（`VpnPump`），对每条新连接调用 `ConnectivityManager.getConnectionOwnerUid()` 得到 UID，再把该包的源地址 `172.19.0.1` 改写成该应用对应的标签地址 `172.19.200.N`（重算 IP/TCP/UDP 校验和）后，经 SEQPACKET socketpair 交给内核；内核回包的目的地址再改回 `172.19.0.1`。
@@ -73,3 +73,24 @@ VPN 模式以前直接使用原始配置文件，所以覆写不生效。
 启动配置页面的「重新生成」按钮在 VPN 模式下走同一条非 root 路径（`box-vpn.sh sync`）。
 
 注意：boxctl 无法在开发环境运行，该流程需在真机验证；关闭「自动覆写」时行为与以前一致。
+
+## App 自身流量（延迟检测 / IP 检测 / Web 面板）
+
+内核与 App 同一个 UID，必须把 App 排除在 VPN 之外，否则内核的出站连接会绕回 VPN。
+副作用是 App 自己发的请求（首页延迟、WAN 检测、Web 面板里的延迟/网络信息）直连，不走代理。
+
+处理方式：VPN 运行期间，把 App 自己的请求指向内核的本地代理端口，VPN 仍然排除 App。
+
+- `box-vpn.sh prepare` 在输出里带上 `proxy=<m|h|s>:<端口>`（取配置里的 `mixed-port` > `port` > `socks-port`）。
+  配置里没有可用端口（没写或为 0）时，改写配置会补一个 `mixed-port: 7890`。
+- `VpnAppProxy`：
+  - 内核存活后等本地端口可连接，再启用（日志 `[app-proxy] …` 写入 `runs.log`）；
+  - `ProxySelector`：App 内置的 OkHttp（`z84` 构建时改用 `VpnAppProxy.sel()`）和 `HttpURLConnection` 都走它，
+    127.x / localhost / 172.19.x 直连（面板 API 不套娃）；
+  - WebView：通过 `ProxyController` 的同一套边界接口做代理覆盖（`127.0.0.1`、`localhost`、`<local>` 直连），
+    Web 面板里的请求也走内核。
+- 停止 VPN 时恢复原来的 `ProxySelector` 并清除 WebView 代理覆盖。root 模式不受影响。
+
+限制：直接用 Socket 或 Cronet 的请求不走该选择器；配置里启用了 `authentication` 且 127.0.0.1 不在
+`skip-auth-prefixes` 时，App 自己的请求会被内核拒绝；配置开了 `allow-lan: true` 且没有端口而由我们补了
+`mixed-port` 时，该端口也会对局域网开放。需在真机验证。
