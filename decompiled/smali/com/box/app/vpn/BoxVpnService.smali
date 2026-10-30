@@ -961,6 +961,55 @@
 .method public onStartCommand(Landroid/content/Intent;II)I
     .locals 4
 
+    # Background auto-start: a null intent is the system restarting the sticky service after the
+    # process was killed, "...AUTO" is the alarm set by onTaskRemoved.  Both only count while the
+    # switch is on, the VPN mode is selected and the user has not stopped the VPN.
+    if-nez p1, :cond_has_intent
+
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->restartOk()Z
+
+    move-result v0
+
+    if-nez v0, :cond_go
+
+    invoke-virtual {p0}, Landroid/app/Service;->stopSelf()V
+
+    const/4 v0, 0x2
+
+    return v0
+
+    :cond_has_intent
+    invoke-virtual {p1}, Landroid/content/Intent;->getAction()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "com.boxproxy.box.vpn.AUTO"
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_user
+
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->restartOk()Z
+
+    move-result v0
+
+    if-nez v0, :cond_go
+
+    invoke-virtual {p0}, Landroid/app/Service;->stopSelf()V
+
+    const/4 v0, 0x2
+
+    return v0
+
+    :cond_user
+    # started by the user (or by switching the run mode): a swiped-away task brings it back
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->wantedSet(Z)V
+
+    :cond_go
     sput-object p0, Lcom/box/app/vpn/BoxVpnService;->instance:Lcom/box/app/vpn/BoxVpnService;
 
     const-string v0, "\u6b63\u5728\u542f\u52a8 VPN\u2026"
@@ -971,7 +1020,12 @@
 
     move-result-object v0
 
+    :try_start_fg
     invoke-direct {p0, v0}, Lcom/box/app/vpn/BoxVpnService;->foreground(Ljava/lang/String;)V
+    :try_end_fg
+    .catch Ljava/lang/Throwable; {:try_start_fg .. :try_end_fg} :catch_fg
+
+    :catch_fg
 
     sget-boolean v0, Lcom/box/app/vpn/BoxVpnService;->running:Z
 
@@ -1002,7 +1056,7 @@
     invoke-virtual {v1}, Ljava/lang/Thread;->start()V
 
     :cond_done
-    const/4 v0, 0x2
+    const/4 v0, 0x1
 
     return v0
 .end method
@@ -1010,9 +1064,23 @@
 .method public onRevoke()V
     .locals 1
 
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->wantedSet(Z)V
+
     invoke-virtual {p0}, Lcom/box/app/vpn/BoxVpnService;->stopVpn()V
 
     invoke-super {p0}, Landroid/net/VpnService;->onRevoke()V
+
+    return-void
+.end method
+
+.method public onTaskRemoved(Landroid/content/Intent;)V
+    .locals 0
+
+    invoke-static {p0}, Lcom/box/app/vpn/VpnPrefs;->scheduleRestart(Landroid/content/Context;)V
+
+    invoke-super {p0, p1}, Landroid/app/Service;->onTaskRemoved(Landroid/content/Intent;)V
 
     return-void
 .end method

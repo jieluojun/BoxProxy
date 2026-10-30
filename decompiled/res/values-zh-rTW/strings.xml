@@ -1087,4 +1087,7 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="wifi_match_picker_location_required">請開啟定位以掃描 Wi-Fi</string>
     <string name="wifi_match_picker_permission_required">需要 Wi-Fi 權限</string>
     <string name="wifi_match_ssid_hint">SSID</string>
+    <string name="proxy_selector_hide_unavailable">隱藏不可用節點</string>
+    <string name="settings_vpn_bg_autostart_title">背景自啟</string>
+    <string name="settings_vpn_bg_autostart_subtitle">僅 VPN 執行模式使用：滑掉背景卡片後自動重新啟動代理（需授予應用程式自啟動權限）</string>
 </resources>

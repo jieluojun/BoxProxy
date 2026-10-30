@@ -1086,4 +1086,7 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="wifi_match_picker_location_required">请开启定位以扫描 Wi-Fi</string>
     <string name="wifi_match_picker_permission_required">需要 Wi-Fi 权限</string>
     <string name="wifi_match_ssid_hint">SSID</string>
+    <string name="proxy_selector_hide_unavailable">隐藏不可用节点</string>
+    <string name="settings_vpn_bg_autostart_title">后台自启</string>
+    <string name="settings_vpn_bg_autostart_subtitle">仅 VPN 运行模式使用：划掉后台卡片后自动重新启动代理（需授予应用自启动权限）</string>
 </resources>

@@ -5272,6 +5272,17 @@
     .line 1185
     move-result-object v0
 
+    # "Hide unavailable nodes" (v1 is dead here: it is reassigned below)
+    const v1, 0x7f0f04a9
+
+    invoke-static {v1, v11}, Lk53;->c0(ILz01;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v0, v1}, Lcom/box/app/vpn/VpnPrefs;->items(Ljava/util/List;Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v0
+
     .line 1186
     new-instance v12, Lko1;
 

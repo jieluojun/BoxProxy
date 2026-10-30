@@ -136,3 +136,17 @@ VPN 模式以前直接使用原始配置文件，所以覆写不生效。
 
 xray / v2fly / hysteria 的「自动覆写」不适用（boxctl 只为 mihomo / sing-box 生成启动配置），VPN 模式直接用所选配置文件。
 v2fly 原生 v5 格式（非 v4 风格）的 JSON 暂不支持；Hysteria 1（JSON）不支持。
+
+## 面板页「隐藏不可用节点」和设置页「后台自启」
+
+- **隐藏不可用节点**（面板页排序/筛选菜单，「节点根据提供商分组」下面）：开启后，已知不可用的节点不再显示。
+  判定：应用内测速结果优先（≤0 / 超时 = 不可用）；否则看内核 API 返回的 `alive=false`、最近一次延迟 ≤ 0、历史延迟全部失败。
+  还没有测过速（没有任何结果）的节点、策略组、有正延迟的节点一律保留。开关保存在 `box_vpn_ui` 的 `hide_unavailable`，
+  由 `k53.L`（节点分组/排序入口）调用 `VpnPrefs.filter`，状态是 compose state，切换后列表立即刷新。
+- **后台自启**（设置页，「启动时打开面板」下面）：仅 VPN 运行模式使用；选了 root 运行模式时开关置灰锁定
+  （`VpnBridge.beforeSave` 通知 `VpnPrefs.modeSet`，不用重进页面）。
+  开启后：`BoxVpnService` 在 `onStartCommand` 返回 `START_STICKY`，并在 `onTaskRemoved`（划掉后台卡片）里用
+  `AlarmManager` 约 1.5 s 后拉起自己；无论是系统重建服务还是闹钟，都只在「开关开启 + 当前是 VPN 模式 +
+  用户没有手动停止」时重新启动（用户停止 / 系统撤销 VPN 会清掉 `vpn_wanted`）。
+  系统对「划掉后台卡片」的处理因厂商而异，需要在系统里给本应用打开「自启动」权限（并建议电池选择「无限制」）；
+  不做开机自启。

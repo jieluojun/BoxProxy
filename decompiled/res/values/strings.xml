@@ -1093,4 +1093,7 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="wifi_match_picker_location_required">Enable location to scan Wi-Fi</string>
     <string name="wifi_match_picker_permission_required">Wi-Fi permission required</string>
     <string name="wifi_match_ssid_hint">SSID</string>
+    <string name="proxy_selector_hide_unavailable">Hide unavailable nodes</string>
+    <string name="settings_vpn_bg_autostart_title">Background auto-start</string>
+    <string name="settings_vpn_bg_autostart_subtitle">VPN run mode only: restart the proxy automatically after the app card is swiped away (the system auto-start permission is required)</string>
 </resources>

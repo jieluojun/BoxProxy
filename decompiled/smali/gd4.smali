@@ -680,9 +680,46 @@
     .line 266
     invoke-static/range {v16 .. v25}, Lu43;->g(ZLr52;Ljava/lang/String;Ljava/lang/String;Lty0;ZLz01;III)V
 
-    .line 267
-    .line 268
-    .line 269
+    # Background auto-start (VPN run mode only), right below "Open Panel on launch".
+    # The switch is locked (explicit enabled flag, bit 0x2000 of the mask cleared) in the root modes.
+    const v0, 0x7f0f04aa
+
+    invoke-static {v0, v2}, Lk53;->c0(ILz01;)Ljava/lang/String;
+
+    move-result-object v18
+
+    const v0, 0x7f0f04ab
+
+    invoke-static {v0, v2}, Lk53;->c0(ILz01;)Ljava/lang/String;
+
+    move-result-object v19
+
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->autoOn()Z
+
+    move-result v16
+
+    new-instance v0, Lcom/box/app/vpn/AutoToggle;
+
+    invoke-direct {v0}, Lcom/box/app/vpn/AutoToggle;-><init>()V
+
+    move-object/from16 v17, v0
+
+    sget-object v20, Lzc7;->p0:Lty0;
+
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->autoEnabled()Z
+
+    move-result v21
+
+    move-object/from16 v22, v2
+
+    const/high16 v23, 0xc00000
+
+    const/16 v24, 0x0
+
+    const/16 v25, 0x1f58
+
+    invoke-static/range {v16 .. v25}, Lu43;->g(ZLr52;Ljava/lang/String;Ljava/lang/String;Lty0;ZLz01;III)V
+
     goto :goto_0
 
     .line 270
