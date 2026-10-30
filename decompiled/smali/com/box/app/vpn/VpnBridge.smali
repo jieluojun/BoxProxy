@@ -1081,34 +1081,62 @@
 # Local-mode network speed (home page): the device-wide TrafficStats total does not
 # move with the tunnel in VPN mode. The core runs under the app uid and everything it
 # forwards leaves through that uid, so while the VPN runs use the uid counters.
-.method public static rx(J)J
+# uid(true) = rx, uid(false) = tx; -1 when the VPN is not running or the value is unavailable.
+.method public static uid(Z)J
     .locals 4
+
+    const-wide/16 v1, -0x1
 
     sget-boolean v0, Lcom/box/app/vpn/BoxVpnService;->running:Z
 
-    if-eqz v0, :cond_total
+    if-eqz v0, :cond_ret
 
     :try_start_0
     invoke-static {}, Landroid/os/Process;->myUid()I
 
     move-result v0
 
+    if-eqz p0, :cond_tx
+
     invoke-static {v0}, Landroid/net/TrafficStats;->getUidRxBytes(I)J
 
     move-result-wide v1
 
-    const-wide/16 v3, 0x0
+    goto :cond_ret
 
-    cmp-long v0, v1, v3
+    :cond_tx
+    invoke-static {v0}, Landroid/net/TrafficStats;->getUidTxBytes(I)J
 
-    if-ltz v0, :cond_total
-
-    return-wide v1
-
+    move-result-wide v1
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
+    :cond_ret
+    return-wide v1
+
     :catch_0
+    const-wide/16 v1, -0x1
+
+    return-wide v1
+.end method
+
+.method public static rx(J)J
+    .locals 4
+
+    const/4 v0, 0x1
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnBridge;->uid(Z)J
+
+    move-result-wide v0
+
+    const-wide/16 v2, 0x0
+
+    cmp-long v2, v0, v2
+
+    if-ltz v2, :cond_total
+
+    return-wide v0
+
     :cond_total
     return-wide p0
 .end method
@@ -1116,31 +1144,20 @@
 .method public static tx(J)J
     .locals 4
 
-    sget-boolean v0, Lcom/box/app/vpn/BoxVpnService;->running:Z
+    const/4 v0, 0x0
 
-    if-eqz v0, :cond_total
+    invoke-static {v0}, Lcom/box/app/vpn/VpnBridge;->uid(Z)J
 
-    :try_start_0
-    invoke-static {}, Landroid/os/Process;->myUid()I
+    move-result-wide v0
 
-    move-result v0
+    const-wide/16 v2, 0x0
 
-    invoke-static {v0}, Landroid/net/TrafficStats;->getUidTxBytes(I)J
+    cmp-long v2, v0, v2
 
-    move-result-wide v1
+    if-ltz v2, :cond_total
 
-    const-wide/16 v3, 0x0
+    return-wide v0
 
-    cmp-long v0, v1, v3
-
-    if-ltz v0, :cond_total
-
-    return-wide v1
-
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    :catch_0
     :cond_total
     return-wide p0
 .end method
