@@ -24,7 +24,7 @@
 `src/com/box/app/cfg/` 是 Java 源码（原生 View，无 lambda，方便 D8 `--no-desugaring`），生成物在
 `decompiled/smali/com/box/app/cfg/`；一键重新生成：`tools/build-cfg.sh`（环境变量见脚本头部）。
 `stubs/com/box/app/cfg/CfgGlue.java` 只是编译占位，真实的 `CfgGlue`、`CfgNav`、`CfgLabel`、`CfgClick` 是手写 smali
-（要碰混淆后的 Compose 与编辑器视图模型 `Lmj5`）。主机侧测试：`test/YamlTest.java`（`Yaml` 的锚点与按路径读写）。
+（要碰混淆后的 Compose 与编辑器视图模型 `Lmj5`）。主机侧测试：`test/YamlTest.java`（`Yaml` 的锚点与按路径读写）、`test/EntriesTest.java`（条目增删改移、规则解析、引用扫描与改名同步、`Tidy`、`DefRows`）。
 
 ### 工具链（不提交二进制）
 

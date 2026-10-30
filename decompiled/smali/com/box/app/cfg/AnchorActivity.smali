@@ -89,6 +89,24 @@
     return-void
 .end method
 
+.method static synthetic access$13(Lcom/box/app/cfg/AnchorActivity;Landroid/widget/LinearLayout;Ljava/util/ArrayList;Lcom/box/app/cfg/DefRows$Row;Lcom/box/app/cfg/DefRows;)V
+    .registers 5
+
+    .line 414
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/box/app/cfg/AnchorActivity;->addDefRow(Landroid/widget/LinearLayout;Ljava/util/ArrayList;Lcom/box/app/cfg/DefRows$Row;Lcom/box/app/cfg/DefRows;)V
+
+    return-void
+.end method
+
+.method static synthetic access$14(Lcom/box/app/cfg/AnchorActivity;Lcom/box/app/cfg/Yaml$Anchor;Lcom/box/app/cfg/Yaml$Loc;ILjava/lang/String;)V
+    .registers 5
+
+    .line 440
+    invoke-direct {p0, p1, p2, p3, p4}, Lcom/box/app/cfg/AnchorActivity;->rawDefDialog(Lcom/box/app/cfg/Yaml$Anchor;Lcom/box/app/cfg/Yaml$Loc;ILjava/lang/String;)V
+
+    return-void
+.end method
+
 .method static synthetic access$2(Lcom/box/app/cfg/AnchorActivity;)Ljava/util/ArrayList;
     .registers 1
 
@@ -119,7 +137,7 @@
 .method static synthetic access$5(Lcom/box/app/cfg/AnchorActivity;)V
     .registers 1
 
-    .line 427
+    .line 515
     invoke-direct {p0}, Lcom/box/app/cfg/AnchorActivity;->createDialog()V
 
     return-void
@@ -146,7 +164,7 @@
 .method static synthetic access$8(Lcom/box/app/cfg/AnchorActivity;Lcom/box/app/cfg/Yaml$Anchor;)V
     .registers 2
 
-    .line 371
+    .line 459
     invoke-direct {p0, p1}, Lcom/box/app/cfg/AnchorActivity;->dropDialog(Lcom/box/app/cfg/Yaml$Anchor;)V
 
     return-void
@@ -155,8 +173,177 @@
 .method static synthetic access$9(Lcom/box/app/cfg/AnchorActivity;Lcom/box/app/cfg/Yaml$Anchor;Lcom/box/app/cfg/Yaml$Loc;Lcom/box/app/cfg/Yaml$Graph;)V
     .registers 4
 
-    .line 393
+    .line 481
     invoke-direct {p0, p1, p2, p3}, Lcom/box/app/cfg/AnchorActivity;->rebindDialog(Lcom/box/app/cfg/Yaml$Anchor;Lcom/box/app/cfg/Yaml$Loc;Lcom/box/app/cfg/Yaml$Graph;)V
+
+    return-void
+.end method
+
+.method private addDefRow(Landroid/widget/LinearLayout;Ljava/util/ArrayList;Lcom/box/app/cfg/DefRows$Row;Lcom/box/app/cfg/DefRows;)V
+    .registers 12
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/widget/LinearLayout;",
+            "Ljava/util/ArrayList<",
+            "[",
+            "Landroid/view/View;",
+            ">;",
+            "Lcom/box/app/cfg/DefRows$Row;",
+            "Lcom/box/app/cfg/DefRows;",
+            ")V"
+        }
+    .end annotation
+
+    .line 415
+    iget-object v0, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    invoke-virtual {v0}, Lcom/box/app/cfg/Ui;->hbox()Landroid/widget/LinearLayout;
+
+    move-result-object v0
+
+    .line 416
+    iget-object v1, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    const-string v2, "\u952e"
+
+    iget-object v3, p3, Lcom/box/app/cfg/DefRows$Row;->key:Ljava/lang/String;
+
+    const/4 v4, 0x1
+
+    const/4 v5, 0x0
+
+    invoke-virtual {v1, v2, v3, v5, v4}, Lcom/box/app/cfg/Ui;->edit(Ljava/lang/String;Ljava/lang/String;ZZ)Landroid/widget/EditText;
+
+    move-result-object v1
+
+    .line 417
+    invoke-virtual {v1, p3}, Landroid/widget/EditText;->setTag(Ljava/lang/Object;)V
+
+    .line 419
+    invoke-virtual {p4, p3}, Lcom/box/app/cfg/DefRows;->isNested(Lcom/box/app/cfg/DefRows$Row;)Z
+
+    move-result p4
+
+    if-eqz p4, :cond_40
+
+    .line 420
+    iget-object p4, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    const-string v2, ""
+
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    const-string v6, "\uff08\u5d4c\u5957 "
+
+    invoke-direct {v3, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object p3, p3, Lcom/box/app/cfg/DefRows$Row;->nested:Ljava/util/List;
+
+    invoke-interface {p3}, Ljava/util/List;->size()I
+
+    move-result p3
+
+    invoke-virtual {v3, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string p3, " \u884c\uff0c\u7528\u300c\u539f\u6587\u300d\u6539\uff09"
+
+    invoke-virtual {v3, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p3
+
+    invoke-virtual {p4, v2, p3, v5, v4}, Lcom/box/app/cfg/Ui;->edit(Ljava/lang/String;Ljava/lang/String;ZZ)Landroid/widget/EditText;
+
+    move-result-object p3
+
+    .line 421
+    invoke-virtual {p3, v5}, Landroid/widget/EditText;->setEnabled(Z)V
+
+    goto :goto_4a
+
+    .line 423
+    :cond_40
+    iget-object p4, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    const-string v2, "\u503c"
+
+    iget-object p3, p3, Lcom/box/app/cfg/DefRows$Row;->value:Ljava/lang/String;
+
+    invoke-virtual {p4, v2, p3, v5, v4}, Lcom/box/app/cfg/Ui;->edit(Ljava/lang/String;Ljava/lang/String;ZZ)Landroid/widget/EditText;
+
+    move-result-object p3
+
+    .line 425
+    :goto_4a
+    iget-object p4, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    const-string v2, "\u2715"
+
+    iget-object v3, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    iget v3, v3, Lcom/box/app/cfg/Ui;->danger:I
+
+    const/4 v6, 0x0
+
+    invoke-virtual {p4, v2, v3, v6}, Lcom/box/app/cfg/Ui;->btn(Ljava/lang/String;ILandroid/view/View$OnClickListener;)Landroid/widget/TextView;
+
+    move-result-object p4
+
+    .line 426
+    iget-object v2, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    const/4 v3, 0x4
+
+    const/4 v6, 0x2
+
+    invoke-virtual {v2, v5, v6, v3, v6}, Lcom/box/app/cfg/Ui;->weight(IIII)Landroid/widget/LinearLayout$LayoutParams;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 427
+    iget-object v2, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    invoke-virtual {v2, v5, v6, v3, v6}, Lcom/box/app/cfg/Ui;->weight(IIII)Landroid/widget/LinearLayout$LayoutParams;
+
+    move-result-object v2
+
+    invoke-virtual {v0, p3, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 428
+    iget-object v2, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    invoke-virtual {v2, v5, v6, v5, v6}, Lcom/box/app/cfg/Ui;->wrap(IIII)Landroid/widget/LinearLayout$LayoutParams;
+
+    move-result-object v2
+
+    invoke-virtual {v0, p4, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 429
+    new-instance v2, Lcom/box/app/cfg/AnchorActivity$18;
+
+    invoke-direct {v2, p0, p4, v0}, Lcom/box/app/cfg/AnchorActivity$18;-><init>(Lcom/box/app/cfg/AnchorActivity;Landroid/view/View;Landroid/widget/LinearLayout;)V
+
+    invoke-virtual {p4, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    const/4 p0, 0x3
+
+    .line 436
+    new-array p0, p0, [Landroid/view/View;
+
+    aput-object v1, p0, v5
+
+    aput-object p3, p0, v4
+
+    aput-object p4, p0, v6
+
+    invoke-virtual {p2, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 437
+    invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
     return-void
 .end method
@@ -1344,7 +1531,7 @@
 .method private createDialog()V
     .registers 10
 
-    .line 428
+    .line 516
     iget-object v0, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
 
     const-string v1, "\u9876\u5c42\u6761\u76ee\u540d\uff08\u4f8b\u5982 \u4ee3\u7406\u5408\u96c6\uff09"
@@ -1357,7 +1544,7 @@
 
     move-result-object v0
 
-    .line 429
+    .line 517
     iget-object v1, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
 
     const-string v2, "\u951a\u70b9\u540d\uff08\u4f8b\u5982 base\uff0c\u5b57\u6bcd/\u6570\u5b57/_ . -\uff09"
@@ -1368,7 +1555,7 @@
 
     move-result-object v1
 
-    .line 430
+    .line 518
     iget-object v2, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
 
     const-string v4, "\u5185\u5bb9\uff1a\u6bcf\u884c\u4e00\u4e2a\u300c\u952e: \u503c\u300d"
@@ -1381,14 +1568,14 @@
 
     move-result-object v2
 
-    .line 431
+    .line 519
     iget-object v4, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
 
     invoke-virtual {v4}, Lcom/box/app/cfg/Ui;->vbox()Landroid/widget/LinearLayout;
 
     move-result-object v4
 
-    .line 432
+    .line 520
     iget-object v5, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
 
     const/16 v6, 0x14
@@ -1413,7 +1600,7 @@
 
     invoke-virtual {v4, v5, v7, v6, v3}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 433
+    .line 521
     iget-object v5, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
 
     const/4 v6, 0x6
@@ -1426,7 +1613,7 @@
 
     invoke-virtual {v4, v0, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 434
+    .line 522
     iget-object v5, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
 
     invoke-virtual {v5, v3, v3, v3, v6}, Lcom/box/app/cfg/Ui;->match(IIII)Landroid/widget/LinearLayout$LayoutParams;
@@ -1435,7 +1622,7 @@
 
     invoke-virtual {v4, v1, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 435
+    .line 523
     iget-object v5, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
 
     invoke-virtual {v5, v3, v3, v3, v3}, Lcom/box/app/cfg/Ui;->match(IIII)Landroid/widget/LinearLayout$LayoutParams;
@@ -1444,7 +1631,7 @@
 
     invoke-virtual {v4, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 436
+    .line 524
     iget-object v3, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
 
     invoke-virtual {v3}, Lcom/box/app/cfg/Ui;->dialog()Landroid/app/AlertDialog$Builder;
@@ -1463,10 +1650,10 @@
 
     const-string v4, "\u521b\u5efa"
 
-    .line 437
-    new-instance v5, Lcom/box/app/cfg/AnchorActivity$18;
+    .line 525
+    new-instance v5, Lcom/box/app/cfg/AnchorActivity$22;
 
-    invoke-direct {v5, p0, v0, v1, v2}, Lcom/box/app/cfg/AnchorActivity$18;-><init>(Lcom/box/app/cfg/AnchorActivity;Landroid/widget/EditText;Landroid/widget/EditText;Landroid/widget/EditText;)V
+    invoke-direct {v5, p0, v0, v1, v2}, Lcom/box/app/cfg/AnchorActivity$22;-><init>(Lcom/box/app/cfg/AnchorActivity;Landroid/widget/EditText;Landroid/widget/EditText;Landroid/widget/EditText;)V
 
     invoke-virtual {v3, v4, v5}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1476,7 +1663,7 @@
 
     const/4 v1, 0x0
 
-    .line 465
+    .line 553
     invoke-virtual {p0, v0, v1}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object p0
@@ -1615,7 +1802,7 @@
 .method private dropDialog(Lcom/box/app/cfg/Yaml$Anchor;)V
     .registers 5
 
-    .line 372
+    .line 460
     iget-object v0, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
 
     invoke-virtual {v0}, Lcom/box/app/cfg/Ui;->dialog()Landroid/app/AlertDialog$Builder;
@@ -1640,7 +1827,7 @@
 
     move-result-object v0
 
-    .line 373
+    .line 461
     new-instance v1, Ljava/lang/StringBuilder;
 
     const-string v2, "\u5982\u679c\u5b83\u662f mihomo \u7684\u914d\u7f6e\u6bb5\uff08dns / proxies \u2026\uff09\u53ea\u6458\u6389 &"
@@ -1653,7 +1840,7 @@
 
     const-string v2, "\uff0c\u5757\u4f53\u4fdd\u7559\uff1b\u81ea\u5efa\u7684\u5bb9\u5668\u952e\u4f1a\u6574\u5757\u5220\u9664\u3002\n\n\u73b0\u6709\u7684 "
 
-    .line 374
+    .line 462
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     iget-object v2, p1, Lcom/box/app/cfg/Yaml$Anchor;->refs:Ljava/util/List;
@@ -1666,10 +1853,10 @@
 
     const-string v2, " \u5904\u5f15\u7528\u4e0d\u4f1a\u88ab\u5220\uff0c\u4f1a\u53d8\u6210\u60ac\u7a7a\u522b\u540d\uff08\u9762\u677f\u4f1a\u63d0\u793a\uff09\uff0c\u53ef\u4ee5\u5148\u300c\u5c55\u5f00\u300d\u518d\u5220\u3002"
 
-    .line 375
+    .line 463
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 373
+    .line 461
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
@@ -1680,10 +1867,10 @@
 
     const-string v1, "\u5220\u9664"
 
-    .line 376
-    new-instance v2, Lcom/box/app/cfg/AnchorActivity$16;
+    .line 464
+    new-instance v2, Lcom/box/app/cfg/AnchorActivity$20;
 
-    invoke-direct {v2, p0, p1}, Lcom/box/app/cfg/AnchorActivity$16;-><init>(Lcom/box/app/cfg/AnchorActivity;Lcom/box/app/cfg/Yaml$Anchor;)V
+    invoke-direct {v2, p0, p1}, Lcom/box/app/cfg/AnchorActivity$20;-><init>(Lcom/box/app/cfg/AnchorActivity;Lcom/box/app/cfg/Yaml$Anchor;)V
 
     invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -1693,7 +1880,7 @@
 
     const/4 v0, 0x0
 
-    .line 390
+    .line 478
     invoke-virtual {p0, p1, v0}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object p0
@@ -1704,7 +1891,7 @@
 .end method
 
 .method private editDefDialog(Lcom/box/app/cfg/Yaml$Anchor;Lcom/box/app/cfg/Yaml$Loc;)V
-    .registers 13
+    .registers 12
 
     .line 346
     iget-object v0, p0, Lcom/box/app/cfg/AnchorActivity;->text:Ljava/lang/String;
@@ -1716,15 +1903,13 @@
     .line 347
     iget v1, p2, Lcom/box/app/cfg/Yaml$Loc;->line:I
 
-    const/4 v2, 0x1
+    add-int/lit8 v1, v1, -0x1
 
-    sub-int/2addr v1, v2
+    iget-object v2, p1, Lcom/box/app/cfg/Yaml$Anchor;->name:Ljava/lang/String;
 
-    iget-object v3, p1, Lcom/box/app/cfg/Yaml$Anchor;->name:Ljava/lang/String;
+    invoke-static {v0, v1, v2}, Lcom/box/app/cfg/Yaml;->blockEndIndex(Ljava/util/List;ILjava/lang/String;)I
 
-    invoke-static {v0, v1, v3}, Lcom/box/app/cfg/Yaml;->blockEndIndex(Ljava/util/List;ILjava/lang/String;)I
-
-    move-result v9
+    move-result v6
 
     .line 348
     new-instance v1, Ljava/lang/StringBuilder;
@@ -1732,159 +1917,114 @@
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 349
-    iget v3, p2, Lcom/box/app/cfg/Yaml$Loc;->line:I
+    iget v2, p2, Lcom/box/app/cfg/Yaml$Loc;->line:I
 
-    sub-int/2addr v3, v2
+    add-int/lit8 v2, v2, -0x1
 
-    :goto_18
-    if-gt v3, v9, :cond_40
+    :goto_19
+    if-gt v2, v6, :cond_41
 
     invoke-interface {v0}, Ljava/util/List;->size()I
 
-    move-result v4
+    move-result v3
 
-    if-lt v3, v4, :cond_21
+    if-lt v2, v3, :cond_22
 
-    goto :goto_40
+    goto :goto_41
 
     .line 350
-    :cond_21
+    :cond_22
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
-    move-result v4
+    move-result v3
 
-    if-lez v4, :cond_2c
+    if-lez v3, :cond_2d
 
-    const/16 v4, 0xa
+    const/16 v3, 0xa
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 351
-    :cond_2c
-    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    :cond_2d
+    invoke-interface {v0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v3
 
-    check-cast v4, Ljava/lang/String;
+    check-cast v3, Ljava/lang/String;
 
-    const-string v5, "\r"
+    const-string v4, "\r"
 
-    const-string v6, ""
+    const-string v5, ""
 
-    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+    invoke-virtual {v3, v4, v5}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v2, v2, 0x1
 
-    goto :goto_18
+    goto :goto_19
 
     .line 353
-    :cond_40
-    :goto_40
-    iget-object v0, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
-
-    const-string v3, "\u5b9a\u4e49\u5757"
-
+    :cond_41
+    :goto_41
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-virtual {v0, v3, v1, v2, v2}, Lcom/box/app/cfg/Ui;->edit(Ljava/lang/String;Ljava/lang/String;ZZ)Landroid/widget/EditText;
-
-    move-result-object v6
-
-    const/4 v0, 0x6
+    move-result-object v7
 
     .line 354
-    invoke-virtual {v6, v0}, Landroid/widget/EditText;->setMinLines(I)V
+    invoke-static {v7}, Lcom/box/app/cfg/DefRows;->parse(Ljava/lang/String;)Lcom/box/app/cfg/DefRows;
+
+    move-result-object v8
+
+    if-eqz v8, :cond_69
+
+    const-string v0, "\n"
+
+    const/4 v1, -0x1
 
     .line 355
-    invoke-direct {p0, v6}, Lcom/box/app/cfg/AnchorActivity;->padded(Landroid/view/View;)Landroid/widget/LinearLayout;
+    invoke-virtual {v7, v0, v1}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
 
     move-result-object v0
+
+    const/4 v1, 0x0
+
+    aget-object v0, v0, v1
+
+    invoke-static {v0}, Lcom/box/app/cfg/Yaml;->defsOnLine(Ljava/lang/String;)Ljava/util/List;
+
+    move-result-object v0
+
+    iget-object v1, p1, Lcom/box/app/cfg/Yaml$Anchor;->name:Ljava/lang/String;
+
+    invoke-interface {v0, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_62
+
+    goto :goto_69
+
+    :cond_62
+    move-object v3, p0
+
+    move-object v4, p1
+
+    move-object v5, p2
+
+    .line 358
+    invoke-direct/range {v3 .. v8}, Lcom/box/app/cfg/AnchorActivity;->rowsDefDialog(Lcom/box/app/cfg/Yaml$Anchor;Lcom/box/app/cfg/Yaml$Loc;ILjava/lang/String;Lcom/box/app/cfg/DefRows;)V
+
+    goto :goto_6c
 
     .line 356
-    iget-object v1, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+    :cond_69
+    :goto_69
+    invoke-direct {p0, p1, p2, v6, v7}, Lcom/box/app/cfg/AnchorActivity;->rawDefDialog(Lcom/box/app/cfg/Yaml$Anchor;Lcom/box/app/cfg/Yaml$Loc;ILjava/lang/String;)V
 
-    invoke-virtual {v1}, Lcom/box/app/cfg/Ui;->dialog()Landroid/app/AlertDialog$Builder;
-
-    move-result-object v1
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    const-string v3, "\u7f16\u8f91 &"
-
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    iget-object v3, p1, Lcom/box/app/cfg/Yaml$Anchor;->name:Ljava/lang/String;
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v3, " \u7684\u5b9a\u4e49\u5757\uff08L"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    iget v3, p2, Lcom/box/app/cfg/Yaml$Loc;->line:I
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v3, "\u2013L"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    add-int/lit8 v3, v9, 0x1
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    const-string v3, "\uff09"
-
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    invoke-virtual {v1, v2}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v1
-
-    invoke-virtual {v1, v0}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object v0
-
-    const-string v1, "\u786e\u5b9a"
-
-    .line 357
-    new-instance v2, Lcom/box/app/cfg/AnchorActivity$15;
-
-    move-object v4, v2
-
-    move-object v5, p0
-
-    move-object v7, p1
-
-    move-object v8, p2
-
-    invoke-direct/range {v4 .. v9}, Lcom/box/app/cfg/AnchorActivity$15;-><init>(Lcom/box/app/cfg/AnchorActivity;Landroid/widget/EditText;Lcom/box/app/cfg/Yaml$Anchor;Lcom/box/app/cfg/Yaml$Loc;I)V
-
-    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object p0
-
-    const-string p1, "\u53d6\u6d88"
-
-    const/4 p2, 0x0
-
-    .line 368
-    invoke-virtual {p0, p1, p2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
-
+    :goto_6c
     return-void
 .end method
 
@@ -1964,14 +2104,14 @@
 .method private padded(Landroid/view/View;)Landroid/widget/LinearLayout;
     .registers 7
 
-    .line 469
+    .line 557
     iget-object v0, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
 
     invoke-virtual {v0}, Lcom/box/app/cfg/Ui;->vbox()Landroid/widget/LinearLayout;
 
     move-result-object v0
 
-    .line 470
+    .line 558
     iget-object v1, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
 
     const/16 v2, 0x14
@@ -1998,7 +2138,7 @@
 
     invoke-virtual {v0, v1, v3, v2, v4}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 471
+    .line 559
     iget-object p0, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
 
     invoke-virtual {p0, v4, v4, v4, v4}, Lcom/box/app/cfg/Ui;->match(IIII)Landroid/widget/LinearLayout$LayoutParams;
@@ -2010,15 +2150,123 @@
     return-object v0
 .end method
 
+.method private rawDefDialog(Lcom/box/app/cfg/Yaml$Anchor;Lcom/box/app/cfg/Yaml$Loc;ILjava/lang/String;)V
+    .registers 14
+
+    .line 441
+    iget-object v0, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    const-string v1, "\u5b9a\u4e49\u5757"
+
+    const/4 v2, 0x1
+
+    invoke-virtual {v0, v1, p4, v2, v2}, Lcom/box/app/cfg/Ui;->edit(Ljava/lang/String;Ljava/lang/String;ZZ)Landroid/widget/EditText;
+
+    move-result-object v5
+
+    const/4 p4, 0x6
+
+    .line 442
+    invoke-virtual {v5, p4}, Landroid/widget/EditText;->setMinLines(I)V
+
+    .line 443
+    invoke-direct {p0, v5}, Lcom/box/app/cfg/AnchorActivity;->padded(Landroid/view/View;)Landroid/widget/LinearLayout;
+
+    move-result-object p4
+
+    .line 444
+    iget-object v0, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    invoke-virtual {v0}, Lcom/box/app/cfg/Ui;->dialog()Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "\u7f16\u8f91 &"
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v2, p1, Lcom/box/app/cfg/Yaml$Anchor;->name:Ljava/lang/String;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, " \u7684\u5b9a\u4e49\u5757\uff08L"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget v2, p2, Lcom/box/app/cfg/Yaml$Loc;->line:I
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, "\u2013L"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v2, p3, 0x1
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v2, "\uff09"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p4}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object p4
+
+    const-string v0, "\u786e\u5b9a"
+
+    .line 445
+    new-instance v1, Lcom/box/app/cfg/AnchorActivity$19;
+
+    move-object v3, v1
+
+    move-object v4, p0
+
+    move-object v6, p1
+
+    move-object v7, p2
+
+    move v8, p3
+
+    invoke-direct/range {v3 .. v8}, Lcom/box/app/cfg/AnchorActivity$19;-><init>(Lcom/box/app/cfg/AnchorActivity;Landroid/widget/EditText;Lcom/box/app/cfg/Yaml$Anchor;Lcom/box/app/cfg/Yaml$Loc;I)V
+
+    invoke-virtual {p4, v0, v1}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object p0
+
+    const-string p1, "\u53d6\u6d88"
+
+    const/4 p2, 0x0
+
+    .line 456
+    invoke-virtual {p0, p1, p2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object p0
+
+    invoke-virtual {p0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+
+    return-void
+.end method
+
 .method private rebindDialog(Lcom/box/app/cfg/Yaml$Anchor;Lcom/box/app/cfg/Yaml$Loc;Lcom/box/app/cfg/Yaml$Graph;)V
     .registers 9
 
-    .line 394
+    .line 482
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 395
+    .line 483
     iget-object p3, p3, Lcom/box/app/cfg/Yaml$Graph;->anchors:Ljava/util/List;
 
     invoke-interface {p3}, Ljava/util/List;->iterator()Ljava/util/Iterator;
@@ -2033,10 +2281,10 @@
 
     if-nez v1, :cond_a7
 
-    .line 402
+    .line 490
     iget-boolean v1, p2, Lcom/box/app/cfg/Yaml$Loc;->merge:Z
 
-    .line 403
+    .line 491
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
@@ -2045,10 +2293,10 @@
 
     const-string p1, "\uff08\u4e0d\u7ee7\u627f\uff1a\u5220\u6389\u8fd9\u4e00\u884c\uff09"
 
-    .line 404
+    .line 492
     invoke-virtual {v2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 405
+    .line 493
     :cond_1f
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
@@ -2061,14 +2309,14 @@
 
     if-nez p1, :cond_8e
 
-    .line 406
+    .line 494
     invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p1
 
     if-eqz p1, :cond_52
 
-    .line 407
+    .line 495
     iget-object p0, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -2105,7 +2353,7 @@
 
     return-void
 
-    .line 410
+    .line 498
     :cond_52
     iget-object p1, p0, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
 
@@ -2137,7 +2385,7 @@
 
     const/4 p3, 0x0
 
-    .line 411
+    .line 499
     new-array p3, p3, [Ljava/lang/String;
 
     invoke-virtual {v2, p3}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
@@ -2146,9 +2394,9 @@
 
     check-cast p3, [Ljava/lang/CharSequence;
 
-    new-instance v2, Lcom/box/app/cfg/AnchorActivity$17;
+    new-instance v2, Lcom/box/app/cfg/AnchorActivity$21;
 
-    invoke-direct {v2, p0, v1, v0, p2}, Lcom/box/app/cfg/AnchorActivity$17;-><init>(Lcom/box/app/cfg/AnchorActivity;ZLjava/util/ArrayList;Lcom/box/app/cfg/Yaml$Loc;)V
+    invoke-direct {v2, p0, v1, v0, p2}, Lcom/box/app/cfg/AnchorActivity$21;-><init>(Lcom/box/app/cfg/AnchorActivity;ZLjava/util/ArrayList;Lcom/box/app/cfg/Yaml$Loc;)V
 
     invoke-virtual {p1, p3, v2}, Landroid/app/AlertDialog$Builder;->setItems([Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
@@ -2158,7 +2406,7 @@
 
     const/4 p2, 0x0
 
-    .line 424
+    .line 512
     invoke-virtual {p0, p1, p2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
 
     move-result-object p0
@@ -2167,7 +2415,7 @@
 
     return-void
 
-    .line 405
+    .line 493
     :cond_8e
     invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2191,7 +2439,7 @@
 
     goto/16 :goto_23
 
-    .line 395
+    .line 483
     :cond_a7
     invoke-interface {p3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -2199,7 +2447,7 @@
 
     check-cast v1, Lcom/box/app/cfg/Yaml$Anchor;
 
-    .line 396
+    .line 484
     iget-object v2, v1, Lcom/box/app/cfg/Yaml$Anchor;->name:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/box/app/cfg/Yaml$Anchor;->name:Ljava/lang/String;
@@ -2212,7 +2460,7 @@
 
     goto/16 :goto_b
 
-    .line 397
+    .line 485
     :cond_b9
     invoke-virtual {v1}, Lcom/box/app/cfg/Yaml$Anchor;->primaryDef()Lcom/box/app/cfg/Yaml$Loc;
 
@@ -2220,7 +2468,7 @@
 
     if-eqz v2, :cond_b
 
-    .line 398
+    .line 486
     iget v2, v2, Lcom/box/app/cfg/Yaml$Loc;->line:I
 
     iget v3, p2, Lcom/box/app/cfg/Yaml$Loc;->line:I
@@ -2229,7 +2477,7 @@
 
     goto/16 :goto_b
 
-    .line 399
+    .line 487
     :cond_c7
     iget-boolean v2, p2, Lcom/box/app/cfg/Yaml$Loc;->merge:Z
 
@@ -2245,7 +2493,7 @@
 
     goto/16 :goto_b
 
-    .line 400
+    .line 488
     :cond_d5
     iget-object v1, v1, Lcom/box/app/cfg/Yaml$Anchor;->name:Ljava/lang/String;
 
@@ -2926,6 +3174,273 @@
     invoke-virtual {p0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
 
     return-void
+.end method
+
+.method private rowsDefDialog(Lcom/box/app/cfg/Yaml$Anchor;Lcom/box/app/cfg/Yaml$Loc;ILjava/lang/String;Lcom/box/app/cfg/DefRows;)V
+    .registers 20
+
+    move-object v7, p0
+
+    move-object/from16 v3, p5
+
+    .line 365
+    iget-object v0, v7, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    invoke-virtual {v0}, Lcom/box/app/cfg/Ui;->vbox()Landroid/widget/LinearLayout;
+
+    move-result-object v0
+
+    .line 366
+    iget-object v1, v7, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    const/16 v2, 0x10
+
+    invoke-virtual {v1, v2}, Lcom/box/app/cfg/Ui;->dp(I)I
+
+    move-result v1
+
+    iget-object v4, v7, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    const/16 v5, 0x8
+
+    invoke-virtual {v4, v5}, Lcom/box/app/cfg/Ui;->dp(I)I
+
+    move-result v4
+
+    iget-object v6, v7, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    invoke-virtual {v6, v2}, Lcom/box/app/cfg/Ui;->dp(I)I
+
+    move-result v2
+
+    const/4 v6, 0x0
+
+    invoke-virtual {v0, v1, v4, v2, v6}, Landroid/widget/LinearLayout;->setPadding(IIII)V
+
+    .line 367
+    new-instance v2, Ljava/util/ArrayList;
+
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 368
+    iget-object v1, v7, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    invoke-virtual {v1}, Lcom/box/app/cfg/Ui;->vbox()Landroid/widget/LinearLayout;
+
+    move-result-object v1
+
+    .line 369
+    iget-object v4, v7, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    iget-boolean v8, v3, Lcom/box/app/cfg/DefRows;->flow:Z
+
+    if-eqz v8, :cond_37
+
+    const-string v8, "\u884c\u5185\u5199\u6cd5 { \u2026 }\uff0c\u4fdd\u5b58\u540e\u4ecd\u662f\u4e00\u884c"
+
+    goto :goto_39
+
+    :cond_37
+    const-string v8, "\u5757\u5199\u6cd5\uff0c\u6bcf\u4e2a\u952e\u5360\u4e00\u884c"
+
+    :goto_39
+    const/16 v9, 0xb
+
+    iget-object v10, v7, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    iget v10, v10, Lcom/box/app/cfg/Ui;->sub:I
+
+    invoke-virtual {v4, v8, v9, v10, v6}, Lcom/box/app/cfg/Ui;->tv(Ljava/lang/String;IIZ)Landroid/widget/TextView;
+
+    move-result-object v4
+
+    .line 370
+    iget-object v8, v7, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    const/4 v9, 0x6
+
+    invoke-virtual {v8, v6, v6, v6, v9}, Lcom/box/app/cfg/Ui;->match(IIII)Landroid/widget/LinearLayout$LayoutParams;
+
+    move-result-object v8
+
+    .line 369
+    invoke-virtual {v0, v4, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 371
+    invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 372
+    iget-object v4, v3, Lcom/box/app/cfg/DefRows;->rows:Ljava/util/List;
+
+    invoke-interface {v4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    move-result-object v4
+
+    :goto_56
+    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v8
+
+    if-nez v8, :cond_e6
+
+    .line 373
+    iget-object v4, v7, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    const-string v8, "\uff0b \u6dfb\u52a0\u952e"
+
+    iget-object v9, v7, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    iget v9, v9, Lcom/box/app/cfg/Ui;->accent:I
+
+    new-instance v10, Lcom/box/app/cfg/AnchorActivity$15;
+
+    invoke-direct {v10, v7, v1, v2, v3}, Lcom/box/app/cfg/AnchorActivity$15;-><init>(Lcom/box/app/cfg/AnchorActivity;Landroid/widget/LinearLayout;Ljava/util/ArrayList;Lcom/box/app/cfg/DefRows;)V
+
+    invoke-virtual {v4, v8, v9, v10}, Lcom/box/app/cfg/Ui;->btn(Ljava/lang/String;ILandroid/view/View$OnClickListener;)Landroid/widget/TextView;
+
+    move-result-object v1
+
+    .line 378
+    iget-object v4, v7, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    invoke-virtual {v4, v6, v5, v6, v6}, Lcom/box/app/cfg/Ui;->wrap(IIII)Landroid/widget/LinearLayout$LayoutParams;
+
+    move-result-object v4
+
+    .line 373
+    invoke-virtual {v0, v1, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 379
+    new-instance v1, Landroid/widget/ScrollView;
+
+    invoke-direct {v1, v7}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
+
+    .line 380
+    invoke-virtual {v1, v0}, Landroid/widget/ScrollView;->addView(Landroid/view/View;)V
+
+    .line 381
+    iget-object v0, v7, Lcom/box/app/cfg/AnchorActivity;->ui:Lcom/box/app/cfg/Ui;
+
+    invoke-virtual {v0}, Lcom/box/app/cfg/Ui;->dialog()Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    new-instance v4, Ljava/lang/StringBuilder;
+
+    const-string v5, "\u7f16\u8f91 &"
+
+    invoke-direct {v4, v5}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    move-object v8, p1
+
+    iget-object v5, v8, Lcom/box/app/cfg/Yaml$Anchor;->name:Ljava/lang/String;
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v5, "\uff08L"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-object/from16 v9, p2
+
+    iget v5, v9, Lcom/box/app/cfg/Yaml$Loc;->line:I
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, "\u2013L"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    add-int/lit8 v5, p3, 0x1
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    const-string v5, "\uff09"
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v0, v4}, Landroid/app/AlertDialog$Builder;->setTitle(Ljava/lang/CharSequence;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/app/AlertDialog$Builder;->setView(Landroid/view/View;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v11
+
+    const-string v12, "\u786e\u5b9a"
+
+    .line 382
+    new-instance v13, Lcom/box/app/cfg/AnchorActivity$16;
+
+    move-object v0, v13
+
+    move-object v1, v7
+
+    move-object v4, v9
+
+    move/from16 v5, p3
+
+    move-object v6, v8
+
+    invoke-direct/range {v0 .. v6}, Lcom/box/app/cfg/AnchorActivity$16;-><init>(Lcom/box/app/cfg/AnchorActivity;Ljava/util/ArrayList;Lcom/box/app/cfg/DefRows;Lcom/box/app/cfg/Yaml$Loc;ILcom/box/app/cfg/Yaml$Anchor;)V
+
+    invoke-virtual {v11, v12, v13}, Landroid/app/AlertDialog$Builder;->setPositiveButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v6
+
+    const-string v11, "\u539f\u6587"
+
+    .line 405
+    new-instance v12, Lcom/box/app/cfg/AnchorActivity$17;
+
+    move-object v0, v12
+
+    move-object v2, v8
+
+    move-object v3, v9
+
+    move/from16 v4, p3
+
+    move-object/from16 v5, p4
+
+    invoke-direct/range {v0 .. v5}, Lcom/box/app/cfg/AnchorActivity$17;-><init>(Lcom/box/app/cfg/AnchorActivity;Lcom/box/app/cfg/Yaml$Anchor;Lcom/box/app/cfg/Yaml$Loc;ILjava/lang/String;)V
+
+    invoke-virtual {v6, v11, v12}, Landroid/app/AlertDialog$Builder;->setNeutralButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    const-string v1, "\u53d6\u6d88"
+
+    const/4 v2, 0x0
+
+    .line 411
+    invoke-virtual {v0, v1, v2}, Landroid/app/AlertDialog$Builder;->setNegativeButton(Ljava/lang/CharSequence;Landroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/app/AlertDialog$Builder;->show()Landroid/app/AlertDialog;
+
+    return-void
+
+    :cond_e6
+    move-object v8, p1
+
+    move-object/from16 v9, p2
+
+    .line 372
+    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v11
+
+    check-cast v11, Lcom/box/app/cfg/DefRows$Row;
+
+    invoke-direct {v7, v1, v2, v11, v3}, Lcom/box/app/cfg/AnchorActivity;->addDefRow(Landroid/widget/LinearLayout;Ljava/util/ArrayList;Lcom/box/app/cfg/DefRows$Row;Lcom/box/app/cfg/DefRows;)V
+
+    goto/16 :goto_56
 .end method
 
 

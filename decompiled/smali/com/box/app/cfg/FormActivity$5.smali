@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/box/app/cfg/FormActivity;)V
     .registers 2
 
-    .line 236
+    .line 223
     iput-object p1, p0, Lcom/box/app/cfg/FormActivity$5;->this$0:Lcom/box/app/cfg/FormActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,27 +38,23 @@
 .method public onClick(Landroid/view/View;)V
     .registers 2
 
-    .line 239
+    .line 226
     iget-object p1, p0, Lcom/box/app/cfg/FormActivity$5;->this$0:Lcom/box/app/cfg/FormActivity;
 
-    invoke-static {p1}, Lcom/box/app/cfg/FormActivity;->access$2(Lcom/box/app/cfg/FormActivity;)I
+    invoke-static {p1}, Lcom/box/app/cfg/FormActivity;->access$2(Lcom/box/app/cfg/FormActivity;)Ljava/lang/Runnable;
 
-    move-result p1
+    move-result-object p1
 
-    if-ltz p1, :cond_e
+    if-eqz p1, :cond_11
 
     iget-object p0, p0, Lcom/box/app/cfg/FormActivity$5;->this$0:Lcom/box/app/cfg/FormActivity;
 
-    invoke-static {p0}, Lcom/box/app/cfg/FormActivity;->access$3(Lcom/box/app/cfg/FormActivity;)V
+    invoke-static {p0}, Lcom/box/app/cfg/FormActivity;->access$2(Lcom/box/app/cfg/FormActivity;)Ljava/lang/Runnable;
 
-    goto :goto_13
+    move-result-object p0
 
-    .line 240
-    :cond_e
-    iget-object p0, p0, Lcom/box/app/cfg/FormActivity$5;->this$0:Lcom/box/app/cfg/FormActivity;
+    invoke-interface {p0}, Ljava/lang/Runnable;->run()V
 
-    invoke-static {p0}, Lcom/box/app/cfg/FormActivity;->access$1(Lcom/box/app/cfg/FormActivity;)V
-
-    :goto_13
+    :cond_11
     return-void
 .end method

@@ -25,7 +25,7 @@
 .method constructor <init>(Lcom/box/app/cfg/FormActivity;)V
     .registers 2
 
-    .line 196
+    .line 183
     iput-object p1, p0, Lcom/box/app/cfg/FormActivity$3;->this$0:Lcom/box/app/cfg/FormActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onClick(Landroid/content/DialogInterface;I)V
     .registers 3
 
-    .line 199
+    .line 186
     iget-object p0, p0, Lcom/box/app/cfg/FormActivity$3;->this$0:Lcom/box/app/cfg/FormActivity;
 
     invoke-virtual {p0}, Lcom/box/app/cfg/FormActivity;->finish()V

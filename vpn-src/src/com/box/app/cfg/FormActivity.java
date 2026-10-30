@@ -7,51 +7,28 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
- * mihomo 可视化修改（移植自 Mishka 的 ConfigFormPanel 的「全局 / DNS / 嗅探 / TUN / NTP」部分）：
- * 每个字段直接对应配置里的一个键，用开关 / 下拉 / 输入框改，写回时只重写那一行（保留注释、锚点、其余原文）。
- * 「未设置」= 配置里没有这个键，选回「未设置」会把键删掉。
+ * mihomo 可视化修改（移植自 Mishka 的 ConfigFormPanel）：
+ * 首页 = 全局 / DNS / 嗅探 / TUN / NTP / 实验性 的字段表单 + 节点、代理组、订阅、规则、规则集、
+ * 子规则、入站、隧道 的条目列表（见 {@link EntryPages}）+ 字段整理。
+ * 每个字段直接对应配置里的一个键，写回时只重写变了的行（保留注释、锚点、其余原文）。
  */
 public class FormActivity extends Activity {
-    private static final int STR = 0;
-    private static final int INT = 1;
-    private static final int BOOL = 2;
-    private static final int ENUM = 3;
-    private static final int LIST = 4;
-    private static final String UNSET = "（未设置）";
-
-    private static final class F {
-        final String path;
-        final String label;
-        final int type;
-        final String[] opts;
-
-        F(String path, String label, int type, String... opts) {
-            this.path = path;
-            this.label = label;
-            this.type = type;
-            this.opts = opts;
-        }
-    }
-
-    private static final class S {
+    static final class S {
         final String title;
         final String enablePath;
-        final F[] fields;
+        final Field[] fields;
 
-        S(String title, String enablePath, F... fields) {
+        S(String title, String enablePath, Field... fields) {
             this.title = title;
             this.enablePath = enablePath;
             this.fields = fields;
@@ -60,89 +37,98 @@ public class FormActivity extends Activity {
 
     private static final S[] SECTIONS = new S[] {
         new S("全局配置", null,
-            new F("mixed-port", "混合端口", INT),
-            new F("port", "HTTP 端口", INT),
-            new F("socks-port", "SOCKS 端口", INT),
-            new F("redir-port", "Redirect 端口", INT),
-            new F("tproxy-port", "TProxy 端口", INT),
-            new F("allow-lan", "允许局域网连接", BOOL),
-            new F("bind-address", "监听地址", STR),
-            new F("mode", "运行模式", ENUM, "rule", "global", "direct"),
-            new F("log-level", "日志级别", ENUM, "silent", "error", "warning", "info", "debug"),
-            new F("ipv6", "IPv6", BOOL),
-            new F("unified-delay", "统一延迟", BOOL),
-            new F("tcp-concurrent", "TCP 并发", BOOL),
-            new F("find-process-mode", "进程匹配模式", ENUM, "always", "strict", "off"),
-            new F("global-client-fingerprint", "全局 uTLS 指纹", ENUM, "chrome", "firefox", "safari", "ios",
+            new Field("mixed-port", "混合端口", Field.INT),
+            new Field("port", "HTTP 端口", Field.INT),
+            new Field("socks-port", "SOCKS 端口", Field.INT),
+            new Field("redir-port", "Redirect 端口", Field.INT),
+            new Field("tproxy-port", "TProxy 端口", Field.INT),
+            new Field("allow-lan", "允许局域网连接", Field.BOOL),
+            new Field("bind-address", "监听地址", Field.STR),
+            new Field("mode", "运行模式", Field.ENUM, "rule", "global", "direct"),
+            new Field("log-level", "日志级别", Field.ENUM, "silent", "error", "warning", "info", "debug"),
+            new Field("ipv6", "IPv6", Field.BOOL),
+            new Field("unified-delay", "统一延迟", Field.BOOL),
+            new Field("tcp-concurrent", "TCP 并发", Field.BOOL),
+            new Field("find-process-mode", "进程匹配模式", Field.ENUM, "always", "strict", "off"),
+            new Field("global-client-fingerprint", "全局 uTLS 指纹", Field.ENUM, "chrome", "firefox", "safari", "ios",
                 "android", "edge", "360", "qq", "random"),
-            new F("keep-alive-interval", "TCP Keep-Alive 间隔（秒）", INT),
-            new F("keep-alive-idle", "TCP Keep-Alive 空闲（秒）", INT),
-            new F("interface-name", "出站网卡 interface-name", STR),
-            new F("routing-mark", "路由标记 routing-mark", INT),
-            new F("external-controller", "外部控制器 external-controller", STR),
-            new F("external-ui", "外部面板目录 external-ui", STR),
-            new F("secret", "外部控制密钥 secret", STR),
-            new F("geodata-mode", "GeoData 使用 dat 格式", BOOL),
-            new F("geodata-loader", "GeoData 加载器", ENUM, "standard", "memconservative"),
-            new F("geo-auto-update", "GeoData 自动更新", BOOL),
-            new F("geo-update-interval", "GeoData 更新间隔（小时）", INT),
-            new F("profile.store-selected", "记住代理组选择 store-selected", BOOL),
-            new F("profile.store-fake-ip", "持久化 FakeIP store-fake-ip", BOOL)),
+            new Field("keep-alive-interval", "TCP Keep-Alive 间隔（秒）", Field.INT),
+            new Field("keep-alive-idle", "TCP Keep-Alive 空闲（秒）", Field.INT),
+            new Field("interface-name", "出站网卡 interface-name", Field.STR),
+            new Field("routing-mark", "路由标记 routing-mark", Field.INT),
+            new Field("external-controller", "外部控制器 external-controller", Field.STR),
+            new Field("external-ui", "外部面板目录 external-ui", Field.STR),
+            new Field("secret", "外部控制密钥 secret", Field.STR),
+            new Field("geodata-mode", "GeoData 使用 dat 格式", Field.BOOL),
+            new Field("geodata-loader", "GeoData 加载器", Field.ENUM, "standard", "memconservative"),
+            new Field("geo-auto-update", "GeoData 自动更新", Field.BOOL),
+            new Field("geo-update-interval", "GeoData 更新间隔（小时）", Field.INT),
+            new Field("profile.store-selected", "记住代理组选择 store-selected", Field.BOOL),
+            new Field("profile.store-fake-ip", "持久化 FakeIP store-fake-ip", Field.BOOL)),
         new S("DNS", "dns.enable",
-            new F("dns.enable", "启用 DNS", BOOL),
-            new F("dns.listen", "监听地址 listen", STR),
-            new F("dns.ipv6", "DNS 返回 IPv6", BOOL),
-            new F("dns.enhanced-mode", "增强模式 enhanced-mode", ENUM, "normal", "fake-ip", "redir-host", "mapping"),
-            new F("dns.fake-ip-range", "FakeIP 网段 fake-ip-range", STR),
-            new F("dns.fake-ip-filter-mode", "FakeIP 过滤模式", ENUM, "blacklist", "whitelist", "rule"),
-            new F("dns.use-hosts", "使用 hosts", BOOL),
-            new F("dns.use-system-hosts", "使用系统 hosts", BOOL),
-            new F("dns.respect-rules", "DNS 遵循路由规则 respect-rules", BOOL),
-            new F("dns.prefer-h3", "优先 HTTP/3", BOOL),
-            new F("dns.cache-algorithm", "缓存算法", ENUM, "lru", "arc"),
-            new F("dns.default-nameserver", "default-nameserver（解析 DNS 域名用，每行一项）", LIST),
-            new F("dns.nameserver", "nameserver（每行一项）", LIST),
-            new F("dns.fallback", "fallback（每行一项）", LIST),
-            new F("dns.proxy-server-nameserver", "proxy-server-nameserver（每行一项）", LIST),
-            new F("dns.direct-nameserver", "direct-nameserver（每行一项）", LIST),
-            new F("dns.fake-ip-filter", "fake-ip-filter（每行一项）", LIST)),
+            new Field("dns.enable", "启用 DNS", Field.BOOL),
+            new Field("dns.listen", "监听地址 listen", Field.STR),
+            new Field("dns.ipv6", "DNS 返回 IPv6", Field.BOOL),
+            new Field("dns.enhanced-mode", "增强模式 enhanced-mode", Field.ENUM, "normal", "fake-ip", "redir-host", "mapping"),
+            new Field("dns.fake-ip-range", "FakeIP 网段 fake-ip-range", Field.STR),
+            new Field("dns.fake-ip-filter-mode", "FakeIP 过滤模式", Field.ENUM, "blacklist", "whitelist", "rule"),
+            new Field("dns.use-hosts", "使用 hosts", Field.BOOL),
+            new Field("dns.use-system-hosts", "使用系统 hosts", Field.BOOL),
+            new Field("dns.respect-rules", "DNS 遵循路由规则 respect-rules", Field.BOOL),
+            new Field("dns.prefer-h3", "优先 HTTP/3", Field.BOOL),
+            new Field("dns.cache-algorithm", "缓存算法", Field.ENUM, "lru", "arc"),
+            new Field("dns.default-nameserver", "default-nameserver（解析 DNS 域名用，每行一项）", Field.LIST),
+            new Field("dns.nameserver", "nameserver（每行一项）", Field.LIST),
+            new Field("dns.fallback", "fallback（每行一项）", Field.LIST),
+            new Field("dns.proxy-server-nameserver", "proxy-server-nameserver（每行一项）", Field.LIST),
+            new Field("dns.direct-nameserver", "direct-nameserver（每行一项）", Field.LIST),
+            new Field("dns.fake-ip-filter", "fake-ip-filter（每行一项）", Field.LIST)),
         new S("域名嗅探", "sniffer.enable",
-            new F("sniffer.enable", "启用嗅探", BOOL),
-            new F("sniffer.force-dns-mapping", "对 redir-host 映射嗅探", BOOL),
-            new F("sniffer.parse-pure-ip", "对纯 IP 连接嗅探", BOOL),
-            new F("sniffer.override-destination", "用嗅探结果覆盖目标地址", BOOL),
-            new F("sniffer.force-domain", "强制嗅探的域名 force-domain（每行一项）", LIST),
-            new F("sniffer.skip-domain", "跳过嗅探的域名 skip-domain（每行一项）", LIST)),
+            new Field("sniffer.enable", "启用嗅探", Field.BOOL),
+            new Field("sniffer.force-dns-mapping", "对 redir-host 映射嗅探", Field.BOOL),
+            new Field("sniffer.parse-pure-ip", "对纯 IP 连接嗅探", Field.BOOL),
+            new Field("sniffer.override-destination", "用嗅探结果覆盖目标地址", Field.BOOL),
+            new Field("sniffer.force-domain", "强制嗅探的域名 force-domain（每行一项）", Field.LIST),
+            new Field("sniffer.skip-domain", "跳过嗅探的域名 skip-domain（每行一项）", Field.LIST)),
         new S("TUN", "tun.enable",
-            new F("tun.enable", "启用 TUN", BOOL),
-            new F("tun.stack", "协议栈 stack", ENUM, "system", "gvisor", "mixed"),
-            new F("tun.device", "网卡名 device", STR),
-            new F("tun.auto-route", "自动路由 auto-route", BOOL),
-            new F("tun.auto-redirect", "auto-redirect", BOOL),
-            new F("tun.auto-detect-interface", "自动检测出口网卡", BOOL),
-            new F("tun.strict-route", "严格路由 strict-route", BOOL),
-            new F("tun.mtu", "MTU", INT),
-            new F("tun.dns-hijack", "DNS 劫持 dns-hijack（每行一项）", LIST)),
+            new Field("tun.enable", "启用 TUN", Field.BOOL),
+            new Field("tun.stack", "协议栈 stack", Field.ENUM, "system", "gvisor", "mixed"),
+            new Field("tun.device", "网卡名 device", Field.STR),
+            new Field("tun.auto-route", "自动路由 auto-route", Field.BOOL),
+            new Field("tun.auto-redirect", "auto-redirect", Field.BOOL),
+            new Field("tun.auto-detect-interface", "自动检测出口网卡", Field.BOOL),
+            new Field("tun.strict-route", "严格路由 strict-route", Field.BOOL),
+            new Field("tun.mtu", "MTU", Field.INT),
+            new Field("tun.dns-hijack", "DNS 劫持 dns-hijack（每行一项）", Field.LIST)),
         new S("NTP", "ntp.enable",
-            new F("ntp.enable", "启用 NTP", BOOL),
-            new F("ntp.server", "服务器 server", STR),
-            new F("ntp.port", "端口 port", INT),
-            new F("ntp.interval", "同步间隔（分钟）", INT),
-            new F("ntp.write-to-system", "写入系统时间", BOOL)),
+            new Field("ntp.enable", "启用 NTP", Field.BOOL),
+            new Field("ntp.server", "服务器 server", Field.STR),
+            new Field("ntp.port", "端口 port", Field.INT),
+            new Field("ntp.interval", "同步间隔（分钟）", Field.INT),
+            new Field("ntp.write-to-system", "写入系统时间", Field.BOOL)),
+        new S("实验性", null,
+            new Field("experimental.quic-go-disable-gso", "QUIC 禁用 GSO", Field.BOOL),
+            new Field("experimental.quic-go-disable-ecn", "QUIC 禁用 ECN", Field.BOOL),
+            new Field("experimental.dialer-ip4p-convert", "dialer 转换 IP4P", Field.BOOL),
+            new Field("tls.certificate", "TLS 证书 certificate（路径）", Field.STR),
+            new Field("tls.private-key", "TLS 私钥 private-key（路径）", Field.STR)),
     };
 
-    private Ui ui;
+
+    Ui ui;
     private String original;
-    private String text;
-    private LinearLayout body;
+    String text;
+    LinearLayout body;
     private TextView title;
     private TextView leftBtn;
     private TextView rightBtn;
-    private int section = -1; // -1 = 首页
+    private Runnable rightAction;
+    private Runnable backAction;
+    private EntryPages entries;
 
-    // 当前小节的控件
-    private View[] widgets;
-    private String[] initial;
+    // 当前小节的表单
+    private FieldForm form;
+    private int section = -1;
 
     @Override
     protected void onCreate(Bundle b) {
@@ -155,6 +141,7 @@ public class FormActivity extends Activity {
         ui = new Ui(this);
         original = CfgSession.text;
         text = original;
+        entries = new EntryPages(this);
         build();
         showHome();
         if (Build.VERSION.SDK_INT >= 33) {
@@ -172,13 +159,13 @@ public class FormActivity extends Activity {
         handleBack();
     }
 
-    private boolean changed() {
+    boolean changed() {
         return !text.equals(original);
     }
 
     private void handleBack() {
-        if (section >= 0) {
-            showHome();
+        if (backAction != null) {
+            backAction.run();
             return;
         }
         if (!changed()) {
@@ -236,8 +223,7 @@ public class FormActivity extends Activity {
         rightBtn = ui.btn("完成", ui.accent, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (section >= 0) saveSection();
-                else applyAndFinish();
+                if (rightAction != null) rightAction.run();
             }
         });
         bar.addView(rightBtn);
@@ -253,17 +239,50 @@ public class FormActivity extends Activity {
         root.addView(sv, svp);
         setContentView(root);
         ui.insets(root);
+        scroll = sv;
+    }
+
+    private ScrollView scroll;
+
+    /** 换一页：设标题、右上按钮、返回动作，清空内容。back 为 null = 首页行为。 */
+    void page(String t, String rightLabel, Runnable right, Runnable back) {
+        title.setText(t);
+        rightBtn.setText(rightLabel);
+        rightBtn.setVisibility(rightLabel == null ? View.INVISIBLE : View.VISIBLE);
+        rightAction = right;
+        backAction = back;
+        body.removeAllViews();
+        scroll.scrollTo(0, 0);
+    }
+
+    /** 各处「候选」：节点 + 组 + 内置出站 / 订阅 / 规则集 / 子规则。 */
+    Map<String, List<String>> picks() {
+        Map<String, List<String>> m = new LinkedHashMap<String, List<String>>();
+        List<String> px = new ArrayList<String>();
+        px.addAll(Entries.names(text, "proxy-groups"));
+        px.add("DIRECT");
+        px.add("REJECT");
+        px.add("REJECT-DROP");
+        px.add("PASS");
+        for (String n : Entries.names(text, "proxies")) if (!px.contains(n)) px.add(n);
+        m.put("proxies", px);
+        m.put("providers", Entries.names(text, "proxy-providers"));
+        m.put("rulesets", Entries.names(text, "rule-providers"));
+        m.put("subrules", Entries.names(text, "sub-rules"));
+        return m;
     }
 
     // ------------------------------------------------------------ 首页
 
-    private void showHome() {
+    void showHome() {
         section = -1;
-        widgets = null;
-        initial = null;
-        title.setText("可视化修改");
-        rightBtn.setText("完成");
-        body.removeAllViews();
+        form = null;
+        page("可视化修改", "完成", new Runnable() {
+            @Override
+            public void run() {
+                applyAndFinish();
+            }
+        }, null);
         TextView hint = ui.tv("选一个分组修改；改动只会重写对应的那几行，注释和其它内容原样保留。"
                 + "点右上「完成」写回编辑器（再点编辑器的 ✓ 保存）。" + (changed() ? "\n当前有未写回的修改。" : ""),
                 12, ui.sub, false);
@@ -292,25 +311,54 @@ public class FormActivity extends Activity {
             c.addView(ui.tv(sectionSummary(s), 12, ui.sub, false), ui.match(0, 4, 0, 0));
             body.addView(c);
         }
-        LinearLayout stat = ui.cardBox();
-        stat.addView(ui.tv("配置概览（只读）", 14, ui.fg, true));
-        stat.addView(ui.tv(count("proxies", "代理节点") + " · " + count("proxy-groups", "代理组") + " · "
-                + count("proxy-providers", "订阅") + "\n" + count("rules", "条规则") + " · "
-                + count("rule-providers", "规则集") + " · " + count("listeners", "监听器"), 12, ui.sub, false),
-                ui.match(0, 4, 0, 0));
-        stat.addView(ui.tv("节点、代理组、规则请在文本编辑器里改；锚点（&/*）请用「锚点」面板。", 12, ui.sub, false),
-                ui.match(0, 6, 0, 0));
-        body.addView(stat);
+        TextView lh = ui.tv("条目", 13, ui.sub, true);
+        lh.setPadding(ui.dp(4), ui.dp(6), ui.dp(4), ui.dp(6));
+        body.addView(lh);
+        for (final Schemas.Sec sec : Schemas.LISTS) {
+            LinearLayout c = ui.cardBox();
+            c.setClickable(true);
+            c.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    entries.showList(sec, "", 0);
+                }
+            });
+            LinearLayout h = ui.hbox();
+            h.addView(ui.tv(sec.title, 16, ui.fg, true), ui.weight(0, 0, 8, 0));
+            int n = Yaml.countItems(text, sec.key);
+            h.addView(ui.tv((n < 0 ? 0 : n) + "  ›", 13, ui.sub, false));
+            c.addView(h);
+            body.addView(c);
+        }
+        LinearLayout tidy = ui.cardBox();
+        tidy.addView(ui.tv("整理字段顺序", 16, ui.fg, true));
+        tidy.addView(ui.tv("只调换字段先后（按 mihomo 官方文档的顺序），不改格式、注释和锚点；"
+                + "顶层锚点定义块排到最前。整理后仍会校验，不通过则保持原样。", 12, ui.sub, false), ui.match(0, 4, 0, 8));
+        tidy.addView(ui.btn("整理", ui.accent, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                doTidy();
+            }
+        }), ui.wrap(0, 0, 0, 0));
+        body.addView(tidy);
     }
 
-    private String count(String key, String unit) {
-        int n = Yaml.countItems(text, key);
-        return unit + " " + (n < 0 ? "0" : String.valueOf(n));
+    private void doTidy() {
+        Tidy.Outcome o = Tidy.apply(text);
+        if (o.status == Tidy.UNCHANGED) {
+            ui.toast("字段顺序已经符合官方规范，无需整理", false);
+        } else if (o.status == Tidy.TIDIED) {
+            text = o.text;
+            ui.toast("已整理字段顺序（点右上「完成」写回编辑器）", false);
+            showHome();
+        } else {
+            ui.toast("整理失败：" + o.detail, true);
+        }
     }
 
     private String sectionSummary(S s) {
         int set = 0;
-        for (F f : s.fields) if (Yaml.hasKey(text, f.path)) set++;
+        for (Field f : s.fields) if (Yaml.hasKey(text, f.path)) set++;
         return "已设置 " + set + " / " + s.fields.length + " 项";
     }
 
@@ -318,143 +366,34 @@ public class FormActivity extends Activity {
 
     private void showSection(int idx) {
         section = idx;
-        S s = SECTIONS[idx];
-        title.setText(s.title);
-        rightBtn.setText("确定");
-        body.removeAllViews();
-        widgets = new View[s.fields.length];
-        initial = new String[s.fields.length];
-        for (int i = 0; i < s.fields.length; i++) {
-            F f = s.fields[i];
-            LinearLayout c = ui.cardBox();
-            c.addView(ui.tv(f.label, 14, ui.fg, false));
-            c.addView(ui.mono(f.path, 10, ui.sub), ui.match(0, 0, 0, 6));
-            View w = null;
-            String init = "";
-            if (f.type == BOOL || f.type == ENUM) {
-                String[] base = f.type == BOOL ? new String[] {"true", "false"} : f.opts;
-                String cur = Yaml.getScalar(text, f.path);
-                ArrayList<String> items = new ArrayList<String>();
-                items.add(UNSET);
-                items.addAll(Arrays.asList(base));
-                int sel = 0;
-                if (cur != null) {
-                    int at = items.indexOf(cur);
-                    if (at < 0) {
-                        items.add(cur);
-                        at = items.size() - 1;
-                    }
-                    sel = at;
-                }
-                Spinner sp = new Spinner(this);
-                ArrayAdapter<String> ad = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, items);
-                ad.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                sp.setAdapter(ad);
-                sp.setSelection(sel);
-                if (cur != null && cur.startsWith("*")) sp.setEnabled(false);
-                w = sp;
-                init = cur == null ? "" : cur;
-            } else if (f.type == LIST) {
-                List<String> cur = Yaml.getList(text, f.path);
-                EditText e;
-                if (cur == null) {
-                    e = ui.edit("", "（写法特殊，请在文本编辑器里改）", true, true);
-                    e.setEnabled(false);
-                    init = null;
-                } else {
-                    StringBuilder sb = new StringBuilder();
-                    for (String x : cur) {
-                        if (sb.length() > 0) sb.append('\n');
-                        sb.append(x);
-                    }
-                    init = sb.toString();
-                    e = ui.edit("未设置（每行一项）", init, true, true);
-                }
-                w = e;
-            } else {
-                String cur = Yaml.getScalar(text, f.path);
-                EditText e = ui.edit("未设置", cur == null ? "" : cur, false, false);
-                if (f.type == INT) {
-                    e.setInputType(android.text.InputType.TYPE_CLASS_NUMBER | android.text.InputType.TYPE_NUMBER_FLAG_SIGNED);
-                }
-                if (cur != null && cur.startsWith("*")) e.setEnabled(false);
-                w = e;
-                init = cur == null ? "" : cur;
+        final S s = SECTIONS[idx];
+        page(s.title, "确定", new Runnable() {
+            @Override
+            public void run() {
+                saveSection();
             }
-            widgets[i] = w;
-            initial[i] = init;
-            c.addView(w, ui.match(0, 0, 0, 0));
-            body.addView(c);
-        }
+        }, new Runnable() {
+            @Override
+            public void run() {
+                showHome();
+            }
+        });
+        form = new FieldForm(ui, picks());
+        form.build(body, s.fields, text, null);
         findViewById(android.R.id.content).requestFocus();
     }
 
-    private String valueOf(F f, View w) {
-        if (f.type == BOOL || f.type == ENUM) {
-            Spinner sp = (Spinner) w;
-            Object o = sp.getSelectedItem();
-            String s = o == null ? "" : o.toString();
-            return UNSET.equals(s) ? "" : s;
-        }
-        return ((EditText) w).getText().toString();
-    }
-
     private void saveSection() {
-        S s = SECTIONS[section];
-        String t = text;
-        ArrayList<String> failed = new ArrayList<String>();
-        int n = 0;
-        for (int i = 0; i < s.fields.length; i++) {
-            F f = s.fields[i];
-            if (initial[i] == null) continue; // 写法特殊的字段不动
-            View w = widgets[i];
-            if (!w.isEnabled()) continue;
-            String cur = valueOf(f, w);
-            if (f.type == LIST) {
-                ArrayList<String> items = new ArrayList<String>();
-                for (String ln : cur.split("\n")) {
-                    String x = ln.trim();
-                    if (x.startsWith("- ")) x = x.substring(2).trim();
-                    if (x.length() > 0) items.add(x);
-                }
-                StringBuilder sb = new StringBuilder();
-                for (String x : items) {
-                    if (sb.length() > 0) sb.append('\n');
-                    sb.append(x);
-                }
-                if (sb.toString().equals(initial[i])) continue;
-                String r = Yaml.setList(t, f.path, items);
-                if (r == null) failed.add(f.path);
-                else {
-                    t = r;
-                    n++;
-                }
-                continue;
-            }
-            cur = cur.trim();
-            if (cur.equals(initial[i])) continue;
-            String r;
-            if (cur.length() == 0) {
-                r = Yaml.removeKey(t, f.path);
-            } else {
-                if (f.type == INT && !cur.matches("-?\\d+")) {
-                    ui.toast(f.label + " 需要是整数", true);
-                    return;
-                }
-                String v = f.type == STR ? Yaml.quoteIfNeeded(cur) : cur;
-                r = Yaml.setScalar(t, f.path, v);
-            }
-            if (r == null) failed.add(f.path);
-            else {
-                t = r;
-                n++;
-            }
+        FieldForm.Result r = form.collect(text);
+        if (r.error != null) {
+            ui.toast(r.error, true);
+            return;
         }
-        text = t;
-        if (!failed.isEmpty()) {
-            ui.toast("这些键无法在表单里写入（父键是行内写法、别名或块）：" + failed + "，请在文本编辑器里改", true);
+        text = r.text;
+        if (!r.failed.isEmpty()) {
+            ui.toast("这些键无法在表单里写入（父键是行内写法、别名或块）：" + r.failed + "，请在文本编辑器里改", true);
         } else {
-            ui.toast(n == 0 ? "没有修改" : "已修改 " + n + " 项", false);
+            ui.toast(r.changed == 0 ? "没有修改" : "已修改 " + r.changed + " 项", false);
         }
         showHome();
     }

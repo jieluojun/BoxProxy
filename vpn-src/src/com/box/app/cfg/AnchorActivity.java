@@ -350,7 +350,95 @@ public class AnchorActivity extends Activity {
             if (sb.length() > 0) sb.append('\n');
             sb.append(lines.get(i).replace("\r", ""));
         }
-        final EditText e = ui.edit("定义块", sb.toString(), true, true);
+        final String block = sb.toString();
+        DefRows dr = DefRows.parse(block);
+        if (dr == null || !Yaml.defsOnLine(block.split("\n", -1)[0]).contains(a.name)) {
+            rawDefDialog(a, d, end, block);
+        } else {
+            rowsDefDialog(a, d, end, block, dr);
+        }
+    }
+
+    /** 键 / 值行编辑（每个顶层键一行；嵌套的子块不展开，只能删或用原文改）。 */
+    private void rowsDefDialog(final Yaml.Anchor a, final Yaml.Loc d, final int end, final String block,
+                               final DefRows dr) {
+        final LinearLayout box = ui.vbox();
+        box.setPadding(ui.dp(16), ui.dp(8), ui.dp(16), 0);
+        final ArrayList<View[]> rows = new ArrayList<View[]>();
+        final LinearLayout list = ui.vbox();
+        box.addView(ui.tv(dr.flow ? "行内写法 { … }，保存后仍是一行" : "块写法，每个键占一行", 11, ui.sub, false),
+                ui.match(0, 0, 0, 6));
+        box.addView(list);
+        for (DefRows.Row r : dr.rows) addDefRow(list, rows, r, dr);
+        box.addView(ui.btn("＋ 添加键", ui.accent, new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                addDefRow(list, rows, new DefRows.Row(), dr);
+            }
+        }), ui.wrap(0, 8, 0, 0));
+        android.widget.ScrollView sv = new android.widget.ScrollView(this);
+        sv.addView(box);
+        ui.dialog().setTitle("编辑 &" + a.name + "（L" + d.line + "–L" + (end + 1) + "）").setView(sv)
+                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dd, int w) {
+                        ArrayList<DefRows.Row> out = new ArrayList<DefRows.Row>();
+                        for (View[] vv : rows) {
+                            if (vv[2].getTag() == Boolean.TRUE) continue; // 已删除
+                            DefRows.Row r = (DefRows.Row) vv[0].getTag();
+                            r.key = ((EditText) vv[0]).getText().toString().trim();
+                            if (vv[1] instanceof EditText && vv[1].isEnabled()) {
+                                r.value = ((EditText) vv[1]).getText().toString().trim();
+                            }
+                            if (r.key.length() == 0) continue;
+                            if (r.key.matches(".*[\\s:#].*") && !r.key.startsWith("\"") && !r.key.startsWith("'")) {
+                                ui.toast("键「" + r.key + "」含空格或冒号，请用原文编辑", true);
+                                return;
+                            }
+                            out.add(r);
+                        }
+                        dr.rows.clear();
+                        dr.rows.addAll(out);
+                        commit(Yaml.replaceLines(text, d.line, end + 1, dr.build()), "已更新 &" + a.name + " 的定义块");
+                    }
+                })
+                .setNeutralButton("原文", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dd, int w) {
+                        rawDefDialog(a, d, end, block);
+                    }
+                })
+                .setNegativeButton("取消", null).show();
+    }
+
+    private void addDefRow(final LinearLayout list, final ArrayList<View[]> rows, final DefRows.Row r, DefRows dr) {
+        final LinearLayout line = ui.hbox();
+        EditText k = ui.edit("键", r.key, false, true);
+        k.setTag(r);
+        EditText v;
+        if (dr.isNested(r)) {
+            v = ui.edit("", "（嵌套 " + r.nested.size() + " 行，用「原文」改）", false, true);
+            v.setEnabled(false);
+        } else {
+            v = ui.edit("值", r.value, false, true);
+        }
+        final View del = ui.btn("✕", ui.danger, null);
+        line.addView(k, ui.weight(0, 2, 4, 2));
+        line.addView(v, ui.weight(0, 2, 4, 2));
+        line.addView(del, ui.wrap(0, 2, 0, 2));
+        del.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View x) {
+                del.setTag(Boolean.TRUE);
+                line.setVisibility(View.GONE);
+            }
+        });
+        rows.add(new View[] {k, v, del});
+        list.addView(line);
+    }
+
+    private void rawDefDialog(final Yaml.Anchor a, final Yaml.Loc d, final int end, String block) {
+        final EditText e = ui.edit("定义块", block, true, true);
         e.setMinLines(6);
         LinearLayout box = padded(e);
         ui.dialog().setTitle("编辑 &" + a.name + " 的定义块（L" + d.line + "–L" + (end + 1) + "）").setView(box)

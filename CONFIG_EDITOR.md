@@ -32,10 +32,38 @@
 父键是行内写法（`dns: {…}`）、值是别名（`*x`）、或值是块时，该字段无法在表单里写，会点名提示并让你去文本里改。
 字符串里有 `*` `&` `: ` 之类时自动加双引号。首页还有只读的概览（节点 / 代理组 / 订阅 / 规则数量）。
 
-## 没有移植的部分（Mishka 里有）
+## 条目编辑（可视首页的「条目」区）
 
-节点、代理组、订阅、规则、规则集、子规则、监听器的**逐项表单编辑**；`ConfigTidy`（配置整理）；`AnchorInheritance` 的可视化继承编辑器。
-这些仍然请在文本编辑器里改，锚点相关的可以用锚点面板。
+节点 / 代理组 / 代理集合（订阅）/ 规则 / 规则集合 / 子规则 / 入站监听 / 隧道 各一个列表页：
+
+* 列表：名称 + 摘要（类型、服务器:端口、节点数 …）；搜索（名称/内容）；每页 40 条；每条有 ↑ ↓（搜索时不显示）、复制、原文、删除，点条目进入编辑页；「＋ 新增」。规则新增时放在最后一条 `MATCH` 之前。
+* 编辑页（节点 / 组 / 订阅 / 规则集 / 监听器）：按 `type` 显示对应字段（节点支持 ss / ssr / vmess / vless / trojan / hysteria / hysteria2 / tuic / wireguard / socks5 / http / snell / anytls / ssh / mieru / direct / dns；改 type 会换一套字段，已有的值保留）。
+  开关 / 下拉 / 输入框 / 列表框；出站、订阅、组名这类字段有「选择…」。没有表单项的键用「原文编辑」。
+  条目先抽成一份顶格草稿，改完一次性拼回原文：块写法保持块写法，行内 `{ … }` 能写回行内就写回行内（否则展开成块）；条目前面的注释跟着条目走；`CRLF` 保持。
+* 规则编辑页：类型（下拉）/ 内容 / 目标（可选组、节点、DIRECT、REJECT…）/ 附加参数；AND / OR / NOT 的内容写 `(条件1),(条件2)`；另有「完整一行」可直接改。
+* 子规则：名称 + 每行一条规则。隧道：`网络,监听,目标,出站` 四段（字符串写法），或 map 写法走表单。
+* **改名同步**：改节点 / 代理组名 → 其它组的 `proxies`、`dialer-proxy`、各处 `proxy:`、规则和子规则的目标；改订阅名 → 组的 `use`；改规则集名 → `RULE-SET,名`（含 AND/OR 里嵌套的）和 DNS 里的 `rule-set:名`；改子规则名 → `SUB-RULE` 目标和监听器 `rule`。
+  同名的节点和组同时存在时不自动同步（会提示）。
+* **删除安全**：删除前扫描引用，列出位置，给「仍然删除 / 取消」。
+* **锚点继承**（每个映射条目编辑页里，文档里有锚点时出现）：整条继承 `<<: *x`（单来源：继承 / 换一个 / 取消；多来源 `<<: [*a, *b]` 锁定，用原文改；代理组里 `<<` 放在 `name` 下面，其它放最前）；
+  字段级 `键: *x`：换一个 / 摘除字段 / 让某个字段引用锚点。只能选定义在本条目之前的锚点，`<<` 只列映射型锚点。
+* 实验性：`experimental.*`、`tls.certificate / private-key` 的表单。
+
+## 字段整理
+
+可视首页最下方「整理」：只调换字段先后，不改格式 / 注释 / 空行 / 锚点；算法与 Mishka 的 `ConfigTidy` 一致
+（顶层按官方顺序，未知键排后并保持相对顺序；顶层锚点定义块排最前并空一行；dns / tun / sniffer / ntp / profile /
+experimental / health-check 等段内按官方顺序；proxies / proxy-groups / providers 逐条目排序，代理组的 `<<` 贴在 `name` 下，
+行内 `{…}` 就地重排；文件头 / 尾注释留原位；CRLF 与结尾换行保持）。整理后再校验（字符集合与顶层键集合不变），不通过就保持原样并提示。
+
+## 锚点面板：键 / 值行编辑
+
+「编辑定义」对 `名: &锚点 { a: 1, b: 2 }`（行内）与 `名: &锚点` + 缩进键值（块）显示成一行一个键的表单：改键、改值、删、添加；
+嵌套子块（例如 `override:` 下面还有内容）不展开，原样保留（只能删或用「原文」改）。别的写法（序列、标量）直接进原文编辑。
+
+## 仍未移植
+
+Mishka 里的 Compose 视觉与动画、按条目的拖拽排序；监听器里 `users` 之类深层嵌套结构、`proxies` 里 `smux` 的细项、各协议的冷门参数——这些用条目的「原文编辑」改。
 
 ## 实现
 
@@ -43,5 +71,6 @@
 * `com/box/app/cfg/CfgNav`（手写 smali，实现 `Lv52`）：先原样画返回键，再用 `ra7.d`（IconButton）画两个文字按钮，用 padding-start 错开
   （navigationIcon 槽是一个 layoutId 容器，子项叠放）；守卫 `Lv62.T/W` 照原 lambda 的写法。
 * `CfgGlue`（手写 smali）：`mj5.b()` 读实时文本、`mj5.m(String)` 整篇替换。
-* `Yaml` / `AnchorActivity` / `FormActivity` / `Ui`：Java 生成的 smali，见 `vpn-src/README.md`。
+* `Yaml`（行手术）/ `Entries`（条目列表读写、规则解析、引用扫描与改名同步）/ `Tidy`（字段整理）/ `DefRows`（锚点定义的键值行）/ `Field`·`FieldForm`·`Schemas`（表单与字段表）/ `EntryPages`·`MapEditor`·`ScalarEditor`·`SubRuleEditor`（条目页）/ `AnchorActivity` / `FormActivity` / `Ui`：Java 生成的 smali，见 `vpn-src/README.md`。
+* 宿主测试：`vpn-src/test/YamlTest.java`、`EntriesTest.java`（用 ECJ 编译 `Yaml/Entries/Tidy/DefRows` 后在 JVM 上跑，不进 APK）。
 * 面板是独立 Activity（`AndroidManifest.xml` 里已注册，`exported=false`），启用了预测性返回的兼容（`BackCompat`）。

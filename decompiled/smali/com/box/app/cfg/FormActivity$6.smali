@@ -3,7 +3,7 @@
 .source "FormActivity.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -20,17 +20,13 @@
 # instance fields
 .field final synthetic this$0:Lcom/box/app/cfg/FormActivity;
 
-.field private final synthetic val$idx:I
-
 
 # direct methods
-.method constructor <init>(Lcom/box/app/cfg/FormActivity;I)V
-    .registers 3
+.method constructor <init>(Lcom/box/app/cfg/FormActivity;)V
+    .registers 2
 
-    .line 277
+    .line 280
     iput-object p1, p0, Lcom/box/app/cfg/FormActivity$6;->this$0:Lcom/box/app/cfg/FormActivity;
-
-    iput p2, p0, Lcom/box/app/cfg/FormActivity$6;->val$idx:I
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -39,15 +35,13 @@
 
 
 # virtual methods
-.method public onClick(Landroid/view/View;)V
-    .registers 2
+.method public run()V
+    .registers 1
 
-    .line 280
-    iget-object p1, p0, Lcom/box/app/cfg/FormActivity$6;->this$0:Lcom/box/app/cfg/FormActivity;
+    .line 283
+    iget-object p0, p0, Lcom/box/app/cfg/FormActivity$6;->this$0:Lcom/box/app/cfg/FormActivity;
 
-    iget p0, p0, Lcom/box/app/cfg/FormActivity$6;->val$idx:I
-
-    invoke-static {p1, p0}, Lcom/box/app/cfg/FormActivity;->access$4(Lcom/box/app/cfg/FormActivity;I)V
+    invoke-static {p0}, Lcom/box/app/cfg/FormActivity;->access$1(Lcom/box/app/cfg/FormActivity;)V
 
     return-void
 .end method
