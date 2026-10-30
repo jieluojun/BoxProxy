@@ -133,7 +133,7 @@ sync_startup() {
   _T=
   command -v timeout >/dev/null 2>&1 && _T="timeout 30"
   BOX_MODE=tun BOX_CORE=mihomo BOXCTL_STDOUT_LOG_LINE=1 HOME="$_w" TMPDIR="$_w/tmp" \
-    $_T "$_L" "$_w/boxctl" --db "$_db" config sync >> "$RUNS" 2>&1 < /dev/null
+    $_T "$_L" "$_w/boxctl" --home "${_st%/run/state/config/startup-config}" --db "$_db" config sync >> "$RUNS" 2>&1 < /dev/null
   _rc=$?
   note "boxctl config sync rc=$_rc"
   if [ "$_rc" = 0 ] && [ -s "$_st" ]; then
@@ -170,7 +170,7 @@ case "$cmd" in
     # stray shell diagnostics go to runs.log; stdout carries only the result
     exec 2>>"$RUNS"
     note() { echo "[$(date '+%F %T.%N' 2>/dev/null)] [vpn] $*" >> "$RUNS"; }
-    note "prepare uid=$(id -u 2>/dev/null)"
+    note "prepare uid=$(id -u 2>/dev/null) auto_overwrite=$sync"
     mkdir -p "$work/tmp" || { echo "ERR:cannot create $work"; exit 1; }
     kill_core "$work" "$pf"
     [ -f "$src" ] || { echo "ERR:core not found: $src"; exit 1; }

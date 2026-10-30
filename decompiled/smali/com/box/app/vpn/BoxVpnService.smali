@@ -558,7 +558,9 @@
 
     invoke-static {v0, v10}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
 
-    iget-object v10, v3, Lab0;->e:Ljava/io/File;
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->syncDb()Ljava/io/File;
+
+    move-result-object v10
 
     invoke-static {v0, v10}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
 
