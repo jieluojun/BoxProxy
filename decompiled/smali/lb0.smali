@@ -5091,6 +5091,13 @@
 
     if-eqz v1, :cond_notvpn
 
+    # switch turned on: ask for the battery-optimization exemption (like Bettbox), so the system
+    # does not kill / restrict the app in the background
+    if-eqz p1, :cond_nobat
+
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->askBattery()V
+
+    :cond_nobat
     new-instance v3, Lza0;
 
     sget-object v1, Ld07;->a:Ld07;

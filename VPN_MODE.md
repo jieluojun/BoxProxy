@@ -167,3 +167,8 @@ VPN 模式下「开机自启」开着时，划掉应用卡片 / 进程被杀后�
   `service restarted by the system`…），用来判断系统到底有没有杀进程 / 有没有拉起。
 - 限制：澎湃 OS / MIUI 的「清理后台」常常等同强制停止，强制停止会清掉，也不会重建服务，
   这种情况下应用自己做不到；只有系统设置里的「始终开启的 VPN」能让系统重新拉起。
+- 排查用：`AppApplication.onCreate` 在进程启动时写 `process started`，并用 `ApplicationExitInfo` 记录上一个进程的退出原因
+  （`previous process: pid=… reason=… desc=…`，reason 10 = 用户强制停止，13 = 被系统清理等），
+  `onTaskRemoved` 写 `task removed`。这几行能区分「系统根本没重启进程」和「重启了但服务没拉起」。
+- VPN 模式下打开「开机自启」时，会弹系统的「忽略电池优化」请求（参考 Bettbox，已声明
+  `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS`），减少后台被系统限制 / 清理。

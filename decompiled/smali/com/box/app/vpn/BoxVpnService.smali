@@ -1001,6 +1001,10 @@
 
     :cond_user
     # started by the user (or by switching the run mode): a swiped-away task brings it back
+    const-string v0, "service started by the user (wanted=true)"
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
     const/4 v0, 0x1
 
     invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->wantedSet(Z)V
