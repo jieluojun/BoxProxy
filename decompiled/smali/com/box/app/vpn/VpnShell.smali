@@ -310,7 +310,7 @@
 # The android build of mihomo insists on reading /data/system/packages.xml
 # (needs root/system uid) before it brings the TUN up. Both the read and the
 # inotify watch use that one hard coded literal, so in the private copy of the
-# core it is replaced by a same-length path ("/proc/self/cwd//.pkgs.xml") that
+# core it is replaced by a same-length path ("/dev/////////////////null") that
 # resolves to a harmless file in the core's working directory.
 # Returns the number of replaced occurrences (-1 on error).
 .method public static patch(Ljava/io/File;)I
@@ -331,7 +331,7 @@
 
     move-result-object v2
 
-    const-string v3, "/proc/self/cwd//.pkgs.xml"
+    const-string v3, "/dev/////////////////null"
 
     invoke-virtual {v3}, Ljava/lang/String;->getBytes()[B
 
@@ -442,14 +442,14 @@
     goto :goto_ret
 .end method
 
-# Patches WORK/core once (marker file WORK/core.patched). Returns the number of
+# Patches WORK/core once (marker file WORK/core.patched2). Returns the number of
 # replacements done now, 0 when nothing was needed / found, -1 on error.
 .method public static ensurePatched(Ljava/io/File;)I
     .locals 4
 
     new-instance v0, Ljava/io/File;
 
-    const-string v1, "core.patched"
+    const-string v1, "core.patched2"
 
     invoke-direct {v0, p0, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 

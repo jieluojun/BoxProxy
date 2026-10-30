@@ -117,6 +117,8 @@ case "$cmd" in
     [ -f "$src" ] || { echo "ERR:core not found: $src"; exit 1; }
     [ -f "$cfg" ] || { echo "ERR:config not found: $cfg"; exit 1; }
     mkdir -p "$home" 2>/dev/null
+    # core patched by an older version (different replacement path): start over from the original
+    [ -f "$work/core.patched" ] && rm -f "$work/core" "$work/core.patched"
     need=1
     if [ -f "$work/core" ] && [ ! "$src" -nt "$work/core" ]; then
       s1=$(stat -c %s "$src" 2>/dev/null) || s1=$(wc -c < "$src")
@@ -125,7 +127,7 @@ case "$cmd" in
     fi
     if [ "$need" = 1 ]; then
       note "copying core to private storage"
-      rm -f "$work/core.tmp" "$work/core.patched"
+      rm -f "$work/core.tmp" "$work/core.patched" "$work/core.patched2"
       cp "$src" "$work/core.tmp" && chmod 700 "$work/core.tmp" && mv -f "$work/core.tmp" "$work/core" \
         || { echo "ERR:cannot copy core"; exit 1; }
       note "core copied"
@@ -147,17 +149,14 @@ case "$cmd" in
     rundir=${pf%/*}
     RUNS=$rundir/runs.log
     note() { echo "[$(date '+%F %T.%N' 2>/dev/null)] [vpn] $*" >> "$RUNS"; }
-    note "run pid=$$ home=$home core.patched=$([ -f "$work/core.patched" ] && echo yes || echo no)"
+    note "run pid=$$ home=$home core.patched=$([ -f "$work/core.patched2" ] && echo yes || echo no)"
     note "fds before exec (0 must be the TUN): $(ls -l /proc/$$/fd/0 2>&1)"
     echo $$ > "$work/core.pid"
     echo $$ > "$pf"
     export TMPDIR="$work/tmp" HOME="$work"
-    # cwd = private work dir: the core was patched to read ./.pkgs.xml instead of
-    # /data/system/packages.xml (not readable without root), so the stand-in file
-    # lives here and not in the user's core directory. The core still gets -d $home.
-    cd "$work" || { note "cannot cd $work"; exit 1; }
-    rm -f "$home/.pkgs.xml" 2>/dev/null
-    printf '<?xml version="1.0" encoding="utf-8"?>\n<packages>\n</packages>\n' > "$work/.pkgs.xml" 2>/dev/null
+    cd "$home" || { note "cannot cd $home"; exit 1; }
+    # leftovers of earlier versions that used a stand-in packages file
+    rm -f "$home/.pkgs.xml" "$work/.pkgs.xml" 2>/dev/null
     # Report which descriptors the core really ended up with (pid stays the same across exec).
     _me=$$
     ( sleep 3
