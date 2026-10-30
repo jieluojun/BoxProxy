@@ -595,9 +595,15 @@
 
     invoke-static {v7}, Lcom/box/app/vpn/VpnShell;->ensurePatched(Ljava/io/File;)I
 
+    invoke-static {p0, v7, v9}, Lcom/box/app/vpn/VpnPump;->prepare(Landroid/content/Context;Ljava/io/File;Ljava/io/File;)Z
+
     const-string v1, "ipv6=1"
 
     invoke-virtual {v0, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    invoke-static {v1}, Lcom/box/app/vpn/VpnPump;->ipv6(Z)Z
 
     move-result v1
 
@@ -653,13 +659,15 @@
 
     invoke-static {v1, v9}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
 
-    invoke-virtual {v0}, Landroid/os/ParcelFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
+    invoke-static {p0, v0}, Lcom/box/app/vpn/VpnPump;->coreFd(Landroid/content/Context;Landroid/os/ParcelFileDescriptor;)Ljava/io/FileDescriptor;
 
     move-result-object v0
 
     invoke-static {v1, v0, v10}, Lcom/box/app/vpn/BoxVpnService;->spawn(Ljava/util/List;Ljava/io/FileDescriptor;Ljava/io/File;)Ljava/lang/Process;
 
     move-result-object v0
+
+    invoke-static {}, Lcom/box/app/vpn/VpnPump;->afterSpawn()V
 
     iput-object v0, p0, Lcom/box/app/vpn/BoxVpnService;->proc:Ljava/lang/Process;
 
@@ -827,6 +835,8 @@
     iput-boolean v0, p0, Lcom/box/app/vpn/BoxVpnService;->stopping:Z
 
     :try_start_0
+    invoke-static {}, Lcom/box/app/vpn/VpnPump;->stop()V
+
     invoke-static {p0}, Lcom/box/app/vpn/BoxVpnService;->runStop(Landroid/content/Context;)V
 
     :try_end_0

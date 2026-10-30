@@ -117,6 +117,7 @@ case "$cmd" in
     [ -f "$src" ] || { echo "ERR:core not found: $src"; exit 1; }
     [ -f "$cfg" ] || { echo "ERR:config not found: $cfg"; exit 1; }
     mkdir -p "$home" 2>/dev/null
+    rm -f "$work/config.run.yaml"
     # core patched by an older version with the /dev/null replacement path is already fine
     [ -f "$work/core.patched2" ] && [ ! -f "$work/core.patched4" ] && mv -f "$work/core.patched2" "$work/core.patched4"
     need=1
@@ -164,10 +165,14 @@ case "$cmd" in
       note "core cmdline: $(tr '\0' ' ' < /proc/$_me/cmdline 2>/dev/null)" ) </dev/null >/dev/null 2>&1 &
     # The 3<&0 is attached to the exec itself: a standalone "exec 3<&0" would be
     # close-on-exec in mksh and the core would never see the descriptor.
+    # config.run.yaml (written by the app) carries the translated PROCESS rules
+    cfgf="$work/config.yaml"
+    [ -f "$work/config.run.yaml" ] && cfgf="$work/config.run.yaml"
+    note "config: $cfgf"
     for l in /system/bin/linker64 /system/bin/linker; do
-      [ -x "$l" ] && exec "$l" "$work/core" -d "$home" -f "$work/config.yaml" 3<&0 0</dev/null
+      [ -x "$l" ] && exec "$l" "$work/core" -d "$home" -f "$cfgf" 3<&0 0</dev/null
     done
-    exec "$work/core" -d "$home" -f "$work/config.yaml" 3<&0 0</dev/null
+    exec "$work/core" -d "$home" -f "$cfgf" 3<&0 0</dev/null
     ;;
   stop)
     kill_core "$1" "$2"

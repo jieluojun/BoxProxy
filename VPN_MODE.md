@@ -49,4 +49,8 @@
 * 本应用自身始终排除在隧道之外（内核以本应用 UID 运行，否则会回环）。
 * 只能处理当前用户（主用户）的应用；分身/其他用户的 UID、GID 规则、`cnip_force_*` 在 VPN 模式下不生效。
 * 修改勾选后需重启 VPN 才会应用。
-* 配置里的 `PROCESS-NAME` / `PROCESS-NAME-REGEX` 规则在 VPN 模式下**不生效**：独立运行的 mihomo 在无 root 的安卓上查不到其他应用的连接属主（实测每条连接都是 `[Process] find process error ... process not found`），所以 VPN 模式强制 `find-process-mode: off`，这类规则永远不命中。请改用 `DST-PORT`/`IP-CIDR`，或用应用管理（黑/白名单）决定哪些应用走 VPN。
+* 配置里的 `PROCESS-NAME` / `PROCESS-NAME-REGEX`（含 `AND/OR/NOT` 里嵌套的）在 VPN 模式下**由应用翻译后生效**（实验性）。独立运行的 mihomo 在无 root 的安卓上查不到连接属主（`process not found`），所以 `find-process-mode` 仍强制 `off`，改由应用自己判断：
+  1. 启动时应用读取 `files/vpn/config.yaml`，把每个 PROCESS 子句换成对应的 `SRC-IP-CIDR,172.19.200.N/32`，结果写到 `files/vpn/config.run.yaml`（核心用这个文件启动，原配置不改动）。包名按本机已安装应用匹配：`PROCESS-NAME` 按包名忽略大小写相等，`PROCESS-NAME-REGEX` 用 Java 正则（忽略大小写、部分匹配）。
+  2. TUN 描述符改由应用读取（`VpnPump`），对每条新连接调用 `ConnectivityManager.getConnectionOwnerUid()` 得到 UID，再把该包的源地址 `172.19.0.1` 改写成该应用对应的标签地址 `172.19.200.N`（重算 IP/TCP/UDP 校验和）后，经 SEQPACKET socketpair 交给内核；内核回包的目的地址再改回 `172.19.0.1`。
+  3. 内核按 `SRC-IP-CIDR` 命中规则，所以可以指定任意策略组。
+  限制：只处理 IPv4（使用该功能时 VPN 不再声明 IPv6）；分片包、ICMP 不打标记；`PROCESS-PATH*`、`rule-providers` 里的 PROCESS 规则不翻译；应用清单在启动时读取，新装应用需重启 VPN；数据多经过一次 Java 层，大流量下比不用 PROCESS 规则时耗电更多；配置里没有 PROCESS 规则时完全不启用这一层。排查：`runs.log` 里 `[pump]` 开头的行会列出翻译结果和前 40 条连接的 uid/标签。
