@@ -157,13 +157,12 @@ v2fly 原生 v5 格式（非 v4 风格）的 JSON 暂不支持；Hysteria 1（JS
 
 VPN 模式下「开机自启」开着时，划掉应用卡片 / 进程被杀后会尝试把 VPN 重新拉起来：
 
-- `BoxVpnService` 返回 `START_STICKY`（系统重建服务时收到 null intent），`onTaskRemoved` 里用 `setAlarmClock`
-  约 1.5 s 后再拉起一次，系统绑定 VpnService（系统设置里的「始终开启的 VPN」，已声明 `SUPPORTS_ALWAYS_ON`）时
+- `BoxVpnService` 返回 `START_STICKY`（系统重建服务时收到 null intent，和 Bettbox 一样，不使用闹钟），系统绑定 VpnService（系统设置里的「始终开启的 VPN」，已声明 `SUPPORTS_ALWAYS_ON`）时
   `onBind` 也会拉起。
 - 条件（主线程不能读数据库，所以镜像在 SharedPreferences `box_vpn_ui`）：`boot_auto`（开机自启开关）+ `vpn_mode` +
   `vpn_wanted`（用户启动过且没手动停止）。镜像在保存设置（`VpnBridge.beforeSave`）和每次启动 VPN（`doStart`）时刷新。
   升级后需要手动重新启动一次 VPN，镜像才会生效。
 - 每一步写入 `runs.log`（`[app-proxy] …`：`task removed…`、`restart check: boot-auto-start=… wanted=… vpnMode=…`、
-  `alarm clock set`、`service restarted by the system`…），用来判断系统到底有没有杀进程 / 有没有拉起。
-- 限制：澎湃 OS / MIUI 的「清理后台」常常等同强制停止，强制停止会清掉闹钟，也不会重建服务，
+  `service restarted by the system`…），用来判断系统到底有没有杀进程 / 有没有拉起。
+- 限制：澎湃 OS / MIUI 的「清理后台」常常等同强制停止，强制停止会清掉，也不会重建服务，
   这种情况下应用自己做不到；只有系统设置里的「始终开启的 VPN」能让系统重新拉起。

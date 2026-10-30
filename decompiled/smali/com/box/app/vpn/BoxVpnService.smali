@@ -966,7 +966,7 @@
 
     # Restart after the app card was swiped away / the process was killed (needs "Auto Start On Boot"
     # on and the VPN mode): a null intent is the system restarting the sticky service, "...AUTO" is
-    # the alarm set by onTaskRemoved or the system binding the service (always-on VPN).
+    # the system binding the service (always-on VPN).
     if-nez p1, :cond_has_intent
 
     const-string v0, "service restarted by the system (null intent)"
@@ -998,7 +998,7 @@
 
     if-eqz v0, :cond_user
 
-    const-string v0, "service started by the restart alarm / system bind"
+    const-string v0, "service started by the system bind (always-on VPN)"
 
     invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
 
@@ -1079,7 +1079,7 @@
 .method public onTaskRemoved(Landroid/content/Intent;)V
     .locals 0
 
-    invoke-static {p0}, Lcom/box/app/vpn/VpnPrefs;->scheduleRestart(Landroid/content/Context;)V
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->taskRemoved()V
 
     invoke-super {p0, p1}, Landroid/app/Service;->onTaskRemoved(Landroid/content/Intent;)V
 

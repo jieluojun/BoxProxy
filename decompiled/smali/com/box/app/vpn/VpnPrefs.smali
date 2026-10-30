@@ -513,7 +513,7 @@
     return-void
 .end method
 
-# ---- restart of the VPN after the app card is swiped away (needs "Auto Start On Boot")
+# ---- restart of the VPN after the app card is swiped away (needs "Auto Start On Boot", sticky service, no alarms)
 #
 # The settings live in a database (not readable on the main thread), so "boot auto-start" and the
 # VPN run mode are mirrored into SharedPreferences ("boot_auto", "vpn_mode") whenever the settings
@@ -709,98 +709,21 @@
     return-void
 .end method
 
-# Schedules a restart of the VPN service (the process usually dies together with the task).
-# setAlarmClock: its PendingIntent may start a foreground service from the background (Android 12+).
-.method public static scheduleRestart(Landroid/content/Context;)V
-    .locals 9
+# Diagnostics only (no alarm): the app card was swiped away.  The restart itself is done by the
+# system recreating the sticky service (BoxVpnService.onStartCommand with a null intent).
+.method public static taskRemoved()V
+    .locals 2
 
     :try_start_0
     sget-boolean v0, Lcom/box/app/vpn/BoxVpnService;->running:Z
 
-    if-nez v0, :cond_running
+    if-eqz v0, :cond_end
 
-    const-string v0, "task removed, VPN not running: nothing to do"
-
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
-
-    goto :cond_end
-
-    :cond_running
     const-string v0, "task removed while the VPN runs"
 
     invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
 
     invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->restartOk()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_end
-
-    new-instance v0, Landroid/content/Intent;
-
-    const-class v1, Lcom/box/app/vpn/BoxVpnService;
-
-    invoke-direct {v0, p0, v1}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
-
-    const-string v1, "com.boxproxy.box.vpn.AUTO"
-
-    invoke-virtual {v0, v1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
-
-    const/4 v1, 0x0
-
-    const/high16 v2, 0xc000000
-
-    invoke-static {p0, v1, v0, v2}, Landroid/app/PendingIntent;->getForegroundService(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
-
-    move-result-object v3
-
-    const-string v4, "alarm"
-
-    invoke-virtual {p0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Landroid/app/AlarmManager;
-
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v5
-
-    const-wide/16 v7, 0x5dc
-
-    add-long/2addr v5, v7
-
-    :try_start_1
-    new-instance v7, Landroid/app/AlarmManager$AlarmClockInfo;
-
-    invoke-direct {v7, v5, v6, v3}, Landroid/app/AlarmManager$AlarmClockInfo;-><init>(JLandroid/app/PendingIntent;)V
-
-    invoke-virtual {v4, v7, v3}, Landroid/app/AlarmManager;->setAlarmClock(Landroid/app/AlarmManager$AlarmClockInfo;Landroid/app/PendingIntent;)V
-
-    const-string v0, "alarm clock set (1.5 s)"
-
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
-    :try_end_1
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
-
-    goto :cond_end
-
-    :catch_1
-    move-exception v0
-
-    invoke-virtual {v0}, Ljava/lang/Throwable;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
-
-    const/4 v2, 0x0
-
-    invoke-virtual {v4, v2, v5, v6, v3}, Landroid/app/AlarmManager;->setAndAllowWhileIdle(IJLandroid/app/PendingIntent;)V
-
-    const-string v0, "inexact alarm set"
-
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
 
     :cond_end
     :try_end_0
