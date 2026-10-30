@@ -729,6 +729,16 @@
     :cond_4
     invoke-static {v0}, Lc33;->N(Ljava/lang/Object;)V
 
+    invoke-static/range {p1 .. p1}, Lcom/box/app/vpn/VpnBridge;->control(Ljava/lang/String;)Lcg2;
+
+    move-result-object v9
+
+    if-eqz v9, :cond_vpn_none
+
+    return-object v9
+
+    :cond_vpn_none
+
     .line 79
     .line 80
     .line 81

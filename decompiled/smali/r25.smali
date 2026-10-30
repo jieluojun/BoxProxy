@@ -150,6 +150,15 @@
     .line 31
     check-cast v3, Lv25;
 
+    sget-object v4, Lv25;->t:Lv25;
+
+    if-ne v3, v4, :cond_vpn_ok
+
+    sget-object v4, Lu25;->n:Lu25;
+
+    if-ne p0, v4, :cond_0
+
+    :cond_vpn_ok
     .line 32
     .line 33
     sget-object v4, Lv25;->n:Lv25;

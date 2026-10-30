@@ -704,7 +704,7 @@
 
     .line 245
     .line 246
-    invoke-virtual {v14}, Ljava/lang/Enum;->ordinal()I
+    invoke-static {v14}, Lcom/box/app/vpn/VpnBridge;->key(Lv25;)I
 
     .line 247
     .line 248
