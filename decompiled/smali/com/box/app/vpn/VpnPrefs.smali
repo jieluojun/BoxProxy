@@ -619,7 +619,7 @@
 
 # Worker threads only (reads the database).
 .method public static sync()V
-    .locals 2
+    .locals 4
 
     :try_start_0
     invoke-static {}, Llb0;->g()Lya0;
@@ -630,12 +630,60 @@
 
     move-result v1
 
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    const-string v3, "settings read: run mode="
+
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v3, v0, Lya0;->b:Ljava/lang/String;
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, " boot-auto-start="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-boolean v3, v0, Lya0;->w:Z
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v3, " vpnMode="
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
     invoke-static {v0, v1}, Lcom/box/app/vpn/VpnPrefs;->mirror(Lya0;Z)V
 
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
+    return-void
+
     :catch_0
+    move-exception v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    const-string v2, "settings read failed: "
+
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
     return-void
 .end method
 
@@ -705,8 +753,8 @@
 
     if-eqz v2, :cond_no
 
-    if-eqz v3, :cond_no
-
+    # vpnMode is only logged: it read false in a freshly started process although the VPN had been
+    # started; "wanted" (set by the user's start, cleared by an explicit stop) is what counts
     const/4 v0, 0x1
 
     return v0

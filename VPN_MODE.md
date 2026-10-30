@@ -175,4 +175,8 @@ VPN 模式下「开机自启」开着时，划掉应用卡片 / 进程被杀后�
 - 实测（HyperOS）：滑掉卡片时进程被系统以 `SwipeUpClean` 杀掉，约 1.5 秒后系统会新建进程、重建服务，
   只调用 `onCreate` 和 `onTaskRemoved`，不调用 `onStartCommand`。所以 `onTaskRemoved` 在服务未运行时
   也会走与「粘性重启」相同的路径（工作线程检查设置，`running`/`starting` 防重复启动）把 VPN 拉起来。
+- 实测：onTaskRemoved 路径已能触发重启检查，但新进程里读到 `vpnMode=false`（旧进程里是 VPN 模式）。
+  现在重启条件改为「开机自启开 + 用户没有显式停止（wanted）」，`vpnMode` 仅写入日志；
+  切换到 root 模式或手动停止都会走 `VpnBridge.stopVpn` 清掉 wanted。`sync()` 会把读到的
+  运行模式 / 开机自启写进 `autostart.log`（`settings read: run mode=… `），读取失败也会记录。
 
