@@ -1218,6 +1218,20 @@
     .line 23
     if-eqz v0, :cond_2
 
+    const-string v2, "vpn"
+
+    invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_novpn
+
+    const-string v1, "vpn"
+
+    return-object v1
+
+    :cond_novpn
+
     .line 24
     .line 25
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
