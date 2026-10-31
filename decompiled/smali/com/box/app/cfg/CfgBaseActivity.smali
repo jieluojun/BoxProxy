@@ -335,19 +335,19 @@
         message = "Deprecated in Java"
     .end annotation
 
-    .line 132
+    .line 133
     invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onActivityResult(IILandroid/content/Intent;)V
 
     const/16 p0, 0x1b63
 
     if-ne p1, p0, :cond_1a
 
-    .line 134
+    .line 135
     sget-object p0, Lcom/box/app/cfg/Cx;->onPick:Lkotlin/jvm/functions/Function1;
 
     const/4 p1, 0x0
 
-    .line 135
+    .line 136
     sput-object p1, Lcom/box/app/cfg/Cx;->onPick:Lkotlin/jvm/functions/Function1;
 
     if-eqz p0, :cond_1a
@@ -358,7 +358,7 @@
 
     if-eqz p3, :cond_17
 
-    .line 136
+    .line 137
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object p1
@@ -648,6 +648,11 @@
 
     .line 127
     :cond_7
+    sget-object v0, Lcom/box/app/cfg/FullToast;->INSTANCE:Lcom/box/app/cfg/FullToast;
+
+    invoke-virtual {v0}, Lcom/box/app/cfg/FullToast;->dismiss()V
+
+    .line 128
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
     return-void

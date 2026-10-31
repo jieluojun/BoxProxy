@@ -170,7 +170,7 @@
 .method static constructor <clinit>()V
     .registers 3
 
-    .line 73
+    .line 130
     new-instance v0, Lcom/box/app/cfg/Ic;
 
     const-string v1, "BACK"
@@ -328,7 +328,7 @@
         }
     .end annotation
 
-    .line 73
+    .line 130
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void

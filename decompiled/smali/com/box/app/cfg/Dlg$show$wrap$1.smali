@@ -50,7 +50,7 @@
 
     iput p1, p0, Lcom/box/app/cfg/Dlg$show$wrap$1;->$maxPx:I
 
-    .line 357
+    .line 414
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -59,7 +59,7 @@
 .method protected onMeasure(II)V
     .registers 4
 
-    .line 359
+    .line 416
     iget p2, p0, Lcom/box/app/cfg/Dlg$show$wrap$1;->$maxPx:I
 
     const/high16 v0, -0x80000000

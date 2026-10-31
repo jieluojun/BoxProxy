@@ -68,7 +68,7 @@
 .method public final invoke()Landroid/view/View;
     .registers 1
 
-    .line 500
+    .line 557
     iget-object p0, p0, Lcom/box/app/cfg/DragSort$handle$1;->$rowView:Landroid/view/View;
 
     return-object p0
@@ -77,7 +77,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 500
+    .line 557
     invoke-virtual {p0}, Lcom/box/app/cfg/DragSort$handle$1;->invoke()Landroid/view/View;
 
     move-result-object p0

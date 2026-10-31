@@ -70,7 +70,7 @@
         .end annotation
     .end param
 
-    .line 284
+    .line 341
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/box/app/cfg/Opt;->value:Ljava/lang/String;
@@ -91,7 +91,7 @@
 
     const/4 p3, 0x0
 
-    .line 284
+    .line 341
     :cond_5
     invoke-direct {p0, p1, p2, p3}, Lcom/box/app/cfg/Opt;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
@@ -103,7 +103,7 @@
     .annotation build Lorg/jetbrains/annotations/Nullable;
     .end annotation
 
-    .line 284
+    .line 341
     iget-object p0, p0, Lcom/box/app/cfg/Opt;->summary:Ljava/lang/String;
 
     return-object p0
@@ -114,7 +114,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 284
+    .line 341
     iget-object p0, p0, Lcom/box/app/cfg/Opt;->title:Ljava/lang/String;
 
     return-object p0
@@ -125,7 +125,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 284
+    .line 341
     iget-object p0, p0, Lcom/box/app/cfg/Opt;->value:Ljava/lang/String;
 
     return-object p0

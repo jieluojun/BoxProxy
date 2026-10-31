@@ -61,3 +61,13 @@ CI 只能证明 smali 能汇编，证明不了面板能打开。`vpn-src/cfg/har
 其余行 FLIP 滑移（260ms，cubic-bezier(.2,.8,.25,1)）；被拖行即换即到位；上下边缘自动翻滚（E = clamp(15%, 44dp, 88dp)，1~14 dp/帧）；
 拖动行 .55 透明 + 强调色淡底 + 虚线描边 + 阴影；数据只在松手时 `onMove(from, to)` 一次。
 被拖行自己不会被 `removeView`（否则 ViewGroup 会给把手发 ACTION_CANCEL），换位时挪的是它旁边的行。
+
+## 提示（Toast）
+
+系统 Toast 在 HyperOS 等 ROM 上会把长文本截成「…」。面板里的提示改成 `FullToast`：一个不抢焦点、不挡触摸的小窗口，
+**显示完整文本**（自动换行，点一下关掉，时长随字数增加，最长 12 秒）；拿不到 Activity 时才退回系统 Toast。
+
+## 方法级裁剪的坑
+
+`prune_smali.py` 的方法名正则曾不认 `-`，把 `kotlin.Result.constructor-impl`（内联类的 `-impl` 静态方法）等裁没了，
+`整理配置` 里的 `runCatching` 运行时 `NoSuchMethodError`。已修；`vpn-src/tools/verify_smali.py` 会静态检查每个引用的方法是否存在（4 条已知误报见脚本头）。

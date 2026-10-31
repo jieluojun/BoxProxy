@@ -28,7 +28,7 @@ for r, _, fs in os.walk(d):
 def sig(m):
     h = m[0].split()
     return h[-1], 'static' in h[1:-1], 'abstract' in h or 'native' in h
-REF = re.compile(r'L([\w/$]+);->([\w$<>]+)\(([^)]*)\)')
+REF = re.compile(r'L([\w/$]+);->([\w$<>-]+)\(([^)]*)\)')
 TY = re.compile(r'L([\w/$]+);')
 live = set(); keep = set()   # keep: (cls, sig)
 work = []

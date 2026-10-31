@@ -64,8 +64,65 @@ fun shape(c: Context, color: Int, radiusDp: Int): GradientDrawable =
 fun withRipple(c: Context, base: android.graphics.drawable.Drawable?): android.graphics.drawable.Drawable =
     RippleDrawable(ColorStateList.valueOf(if (Th.dark) 0x33FFFFFF else 0x14000000), base, if (base == null) ColorDrawable(Color.WHITE) else null)
 
+/** 提示：系统 Toast 在 HyperOS 等 ROM 上会把长文本截成「…」（整理失败的报错看不全），
+ *  所以有 Activity 时改用一个不抢焦点、不挡触摸的小窗口显示**完整文本**（自动换行，点一下关掉，时长随字数增加）；
+ *  没有 Activity 才退回系统 Toast。 */
 fun toast(c: Context, msg: String, long: Boolean = false) {
+    val a = actOf(c)
+    if (a != null && !a.isFinishing) {
+        try { FullToast.show(a, msg, long); return } catch (_: Throwable) {}
+    }
     Toast.makeText(c, msg, if (long) Toast.LENGTH_LONG else Toast.LENGTH_SHORT).show()
+}
+
+fun actOf(c0: Context?): Activity? {
+    var c = c0
+    var guard = 0
+    while (c != null && guard++ < 10) {
+        if (c is Activity) return c
+        c = (c as? android.content.ContextWrapper)?.baseContext
+    }
+    return null
+}
+
+object FullToast {
+    private var cur: Dialog? = null
+
+    fun dismiss() {
+        val d = cur; cur = null
+        if (d != null) try { d.dismiss() } catch (_: Throwable) {}
+    }
+
+    fun show(a: Activity, msg: String, long: Boolean) {
+        dismiss()
+        val d = Dialog(a)
+        d.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        val tv = TextView(a)
+        tv.text = msg
+        tv.textSize = 14f
+        tv.setTextColor(0xFFFFFFFF.toInt())
+        tv.setLineSpacing(0f, 1.12f)
+        tv.setPadding(a.dp(18), a.dp(12), a.dp(18), a.dp(12))
+        tv.background = shape(a, 0xF0262626.toInt(), 18)
+        val box = FrameLayout(a)
+        box.addView(tv, FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER))
+        d.setContentView(box)
+        d.setCanceledOnTouchOutside(false)
+        val w = d.window!!
+        w.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        w.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND)
+        w.addFlags(WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL)
+        w.setGravity(Gravity.BOTTOM or Gravity.CENTER_HORIZONTAL)
+        w.setLayout((a.resources.displayMetrics.widthPixels * 0.92f).toInt(), WindowManager.LayoutParams.WRAP_CONTENT)
+        val lp = w.attributes
+        lp.y = a.dp(72)
+        w.attributes = lp
+        tv.setOnClickListener { dismiss() }
+        cur = d
+        d.show()
+        val ms = ((if (long) 4000 else 2500) + msg.length * 45).coerceAtMost(12000)
+        tv.postDelayed(object : Runnable { override fun run() { if (cur === d) dismiss() } }, ms.toLong())
+    }
 }
 
 // ------------------------------------------------------------------ 图标

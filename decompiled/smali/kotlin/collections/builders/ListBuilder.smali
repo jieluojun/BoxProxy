@@ -360,6 +360,15 @@
     return p0
 .end method
 
+.method public static final synthetic access$getModCount$p$s-2084097795(Lkotlin/collections/builders/ListBuilder;)I
+    .registers 1
+
+    .line 12
+    iget p0, p0, Lkotlin/collections/builders/ListBuilder;->modCount:I
+
+    return p0
+.end method
+
 .method public static final synthetic access$getOffset$p(Lkotlin/collections/builders/ListBuilder;)I
     .registers 1
 

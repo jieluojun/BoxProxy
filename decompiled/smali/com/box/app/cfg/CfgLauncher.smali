@@ -119,7 +119,7 @@
 
     move-result v3
 
-    if-nez v3, :cond_35
+    if-nez v3, :cond_2f
 
     const-string v3, ".yml"
 
@@ -127,23 +127,17 @@
 
     move-result v2
 
-    if-nez v2, :cond_35
+    if-nez v2, :cond_2f
 
     const-string p0, "\u53ef\u89c6\u5316\u4fee\u6539 / \u951a\u70b9\u9762\u677f\u53ea\u652f\u6301 YAML \u914d\u7f6e\uff08.yaml / .yml\uff09"
 
     .line 29
-    check-cast p0, Ljava/lang/CharSequence;
-
-    invoke-static {p2, p0, v0}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
+    invoke-static {p2, p0, v0}, Lcom/box/app/cfg/UiKt;->toast(Landroid/content/Context;Ljava/lang/String;Z)V
 
     return-void
 
     .line 32
-    :cond_35
+    :cond_2f
     sget-object v2, Lcom/box/app/cfg/CfgSession;->INSTANCE:Lcom/box/app/cfg/CfgSession;
 
     sput-object p1, Lcom/box/app/cfg/CfgSession;->token:Ljava/lang/Object;
@@ -155,11 +149,11 @@
 
     move-result-object p1
 
-    if-nez p1, :cond_43
+    if-nez p1, :cond_3d
 
     const-string p1, ""
 
-    :cond_43
+    :cond_3d
     sput-object p1, Lcom/box/app/cfg/CfgSession;->text:Ljava/lang/String;
 
     .line 34
@@ -177,16 +171,16 @@
 
     move-result-object v1
 
-    if-nez p0, :cond_57
+    if-nez p0, :cond_51
 
     const-string p0, "com.box.app.cfg.AnchorActivity"
 
-    goto :goto_59
+    goto :goto_53
 
-    :cond_57
+    :cond_51
     const-string p0, "com.box.app.cfg.FormActivity"
 
-    :goto_59
+    :goto_53
     invoke-virtual {p1, v1, p0}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 37
@@ -198,21 +192,21 @@
 
     instance-of p0, p0, Landroid/app/Activity;
 
-    if-nez p0, :cond_6b
+    if-nez p0, :cond_65
 
     const/high16 p0, 0x10000000
 
     invoke-virtual {p1, p0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     .line 38
-    :cond_6b
+    :cond_65
     invoke-virtual {p2, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-    :try_end_6e
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_6e} :catch_6f
+    :try_end_68
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_68} :catch_69
 
-    goto :goto_8a
+    goto :goto_7e
 
-    :catch_6f
+    :catch_69
     move-exception p0
 
     .line 40
@@ -230,15 +224,9 @@
 
     move-result-object p0
 
-    check-cast p0, Ljava/lang/CharSequence;
+    invoke-static {p2, p0, v0}, Lcom/box/app/cfg/UiKt;->toast(Landroid/content/Context;Ljava/lang/String;Z)V
 
-    invoke-static {p2, p0, v0}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
-    move-result-object p0
-
-    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
-
-    :goto_8a
+    :goto_7e
     return-void
 .end method
 

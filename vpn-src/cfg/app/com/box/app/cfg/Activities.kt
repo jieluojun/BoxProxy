@@ -26,7 +26,7 @@ object CfgLauncher {
             val path = CfgGlue.getPath(token)
             val p = (path ?: "").lowercase()
             if (!(p.endsWith(".yaml") || p.endsWith(".yml"))) {
-                Toast.makeText(ctx, "可视化修改 / 锚点面板只支持 YAML 配置（.yaml / .yml）", Toast.LENGTH_LONG).show()
+                toast(ctx, "可视化修改 / 锚点面板只支持 YAML 配置（.yaml / .yml）", true)
                 return
             }
             CfgSession.token = token
@@ -37,7 +37,7 @@ object CfgLauncher {
             if (unwrap(ctx) !is Activity) i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             ctx.startActivity(i)
         } catch (t: Throwable) {
-            Toast.makeText(ctx, "打开失败：$t", Toast.LENGTH_LONG).show()
+            toast(ctx, "打开失败：$t", true)
         }
     }
 
@@ -124,6 +124,7 @@ abstract class CfgBaseActivity : Activity() {
 
     override fun onDestroy() {
         if (Cx.act === this) Cx.act = null
+        FullToast.dismiss()
         super.onDestroy()
     }
 

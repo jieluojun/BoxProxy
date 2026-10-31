@@ -61,7 +61,7 @@
 .method public final run()V
     .registers 3
 
-    .line 466
+    .line 523
     iget-object v0, p0, Lcom/box/app/cfg/Scaffold$setPage$1;->$sv:Landroid/widget/ScrollView;
 
     iget p0, p0, Lcom/box/app/cfg/Scaffold$setPage$1;->$oldY:I

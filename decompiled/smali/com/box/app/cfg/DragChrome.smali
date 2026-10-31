@@ -71,12 +71,12 @@
         .end annotation
     .end param
 
-    .line 629
+    .line 686
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
     iput-object p1, p0, Lcom/box/app/cfg/DragChrome;->c:Landroid/content/Context;
 
-    .line 630
+    .line 687
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 v0, 0x1
@@ -85,21 +85,21 @@
 
     iput-object p1, p0, Lcom/box/app/cfg/DragChrome;->fill:Landroid/graphics/Paint;
 
-    .line 631
+    .line 688
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1, v0}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object p1, p0, Lcom/box/app/cfg/DragChrome;->stroke:Landroid/graphics/Paint;
 
-    .line 633
+    .line 690
     iget-object p1, p0, Lcom/box/app/cfg/DragChrome;->fill:Landroid/graphics/Paint;
 
     sget-object v0, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 634
+    .line 691
     iget-object p1, p0, Lcom/box/app/cfg/DragChrome;->fill:Landroid/graphics/Paint;
 
     sget-object v0, Lcom/box/app/cfg/Th;->INSTANCE:Lcom/box/app/cfg/Th;
@@ -118,14 +118,14 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 635
+    .line 692
     iget-object p1, p0, Lcom/box/app/cfg/DragChrome;->stroke:Landroid/graphics/Paint;
 
     sget-object v0, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 636
+    .line 693
     iget-object p1, p0, Lcom/box/app/cfg/DragChrome;->stroke:Landroid/graphics/Paint;
 
     iget-object v0, p0, Lcom/box/app/cfg/DragChrome;->c:Landroid/content/Context;
@@ -138,7 +138,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 637
+    .line 694
     iget-object p1, p0, Lcom/box/app/cfg/DragChrome;->stroke:Landroid/graphics/Paint;
 
     sget-object v0, Lcom/box/app/cfg/Th;->INSTANCE:Lcom/box/app/cfg/Th;
@@ -149,7 +149,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 638
+    .line 695
     iget-object p0, p0, Lcom/box/app/cfg/DragChrome;->stroke:Landroid/graphics/Paint;
 
     new-instance p1, Landroid/graphics/DashPathEffect;
@@ -184,12 +184,12 @@
         .end annotation
     .end param
 
-    .line 641
+    .line 698
     invoke-virtual {p0}, Lcom/box/app/cfg/DragChrome;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 642
+    .line 699
     iget-object v1, p0, Lcom/box/app/cfg/DragChrome;->c:Landroid/content/Context;
 
     const/high16 v2, 0x41800000    # 16.0f
@@ -198,7 +198,7 @@
 
     move-result v1
 
-    .line 643
+    .line 700
     new-instance v2, Landroid/graphics/RectF;
 
     invoke-direct {v2, v0}, Landroid/graphics/RectF;-><init>(Landroid/graphics/Rect;)V
@@ -207,7 +207,7 @@
 
     invoke-virtual {p1, v2, v1, v1, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 644
+    .line 701
     iget-object v2, p0, Lcom/box/app/cfg/DragChrome;->c:Landroid/content/Context;
 
     const/high16 v3, 0x40200000    # 2.5f
@@ -216,7 +216,7 @@
 
     move-result v2
 
-    .line 645
+    .line 702
     new-instance v3, Landroid/graphics/RectF;
 
     iget v4, v0, Landroid/graphics/Rect;->left:I
@@ -259,7 +259,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 629
+    .line 686
     iget-object p0, p0, Lcom/box/app/cfg/DragChrome;->c:Landroid/content/Context;
 
     return-object p0

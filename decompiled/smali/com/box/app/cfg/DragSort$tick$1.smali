@@ -50,7 +50,7 @@
 
     iput-object p1, p0, Lcom/box/app/cfg/DragSort$tick$1;->this$0:Lcom/box/app/cfg/DragSort;
 
-    .line 492
+    .line 549
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -59,7 +59,7 @@
 .method public run()V
     .registers 2
 
-    .line 494
+    .line 551
     iget-object v0, p0, Lcom/box/app/cfg/DragSort$tick$1;->this$0:Lcom/box/app/cfg/DragSort;
 
     invoke-static {v0}, Lcom/box/app/cfg/DragSort;->access$getDragging$p(Lcom/box/app/cfg/DragSort;)Landroid/view/View;
@@ -76,7 +76,7 @@
 
     return-void
 
-    .line 495
+    .line 552
     :cond_f
     :try_start_f
     iget-object v0, p0, Lcom/box/app/cfg/DragSort$tick$1;->this$0:Lcom/box/app/cfg/DragSort;
@@ -85,7 +85,7 @@
     :try_end_14
     .catch Ljava/lang/Throwable; {:try_start_f .. :try_end_14} :catch_14
 
-    .line 496
+    .line 553
     :catch_14
     iget-object v0, p0, Lcom/box/app/cfg/DragSort$tick$1;->this$0:Lcom/box/app/cfg/DragSort;
 

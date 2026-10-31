@@ -75,7 +75,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 563
+    .line 620
     check-cast p1, Ljava/lang/Number;
 
     invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
@@ -92,7 +92,7 @@
 .method public final invoke(I)Ltop/yukonga/mishka/custom/forms/DragRowSpan;
     .registers 6
 
-    .line 564
+    .line 621
     iget-object v0, p0, Lcom/box/app/cfg/DragSort$step$at$1;->this$0:Lcom/box/app/cfg/DragSort;
 
     invoke-virtual {v0}, Lcom/box/app/cfg/DragSort;->getBox()Landroid/widget/LinearLayout;
@@ -103,7 +103,7 @@
 
     move-result-object p1
 
-    .line 565
+    .line 622
     new-instance v0, Ltop/yukonga/mishka/custom/forms/DragRowSpan;
 
     iget-object v1, p0, Lcom/box/app/cfg/DragSort$step$at$1;->$boxLoc:[I

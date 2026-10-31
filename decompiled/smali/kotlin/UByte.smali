@@ -305,6 +305,59 @@
     return p0
 .end method
 
+.method public static equals-impl(BLjava/lang/Object;)Z
+    .registers 4
+
+    instance-of v0, p1, Lkotlin/UByte;
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_6
+
+    return v1
+
+    :cond_6
+    check-cast p1, Lkotlin/UByte;
+
+    invoke-virtual {p1}, Lkotlin/UByte;->unbox-impl()B
+
+    move-result p1
+
+    if-eq p0, p1, :cond_f
+
+    return v1
+
+    :cond_f
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public static hashCode-impl(B)I
+    .registers 1
+
+    invoke-static {p0}, Ljava/lang/Byte;->hashCode(B)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static toString-impl(B)Ljava/lang/String;
+    .registers 1
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    and-int/lit16 p0, p0, 0xff
+
+    .line 353
+    invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I
     .registers 2
 

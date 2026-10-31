@@ -291,6 +291,16 @@
     return-void
 .end method
 
+.method public static final synthetic box-impl(I)Lkotlin/UInt;
+    .registers 2
+
+    new-instance v0, Lkotlin/UInt;
+
+    invoke-direct {v0, p0}, Lkotlin/UInt;-><init>(I)V
+
+    return-object v0
+.end method
+
 .method private compareTo-WZ4Q5Ns(I)I
     .registers 2
     .annotation build Lkotlin/internal/InlineOnly;
@@ -306,6 +316,74 @@
     move-result p0
 
     return p0
+.end method
+
+.method public static constructor-impl(I)I
+    .registers 1
+    .annotation build Lkotlin/PublishedApi;
+    .end annotation
+
+    .annotation build Lkotlin/internal/IntrinsicConstEvaluation;
+    .end annotation
+
+    return p0
+.end method
+
+.method public static equals-impl(ILjava/lang/Object;)Z
+    .registers 4
+
+    instance-of v0, p1, Lkotlin/UInt;
+
+    const/4 v1, 0x0
+
+    if-nez v0, :cond_6
+
+    return v1
+
+    :cond_6
+    check-cast p1, Lkotlin/UInt;
+
+    invoke-virtual {p1}, Lkotlin/UInt;->unbox-impl()I
+
+    move-result p1
+
+    if-eq p0, p1, :cond_f
+
+    return v1
+
+    :cond_f
+    const/4 p0, 0x1
+
+    return p0
+.end method
+
+.method public static hashCode-impl(I)I
+    .registers 1
+
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static toString-impl(I)Ljava/lang/String;
+    .registers 5
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    int-to-long v0, p0
+
+    const-wide v2, 0xffffffffL
+
+    and-long/2addr v0, v2
+
+    .line 375
+    invoke-static {v0, v1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
 .method public bridge synthetic compareTo(Ljava/lang/Object;)I

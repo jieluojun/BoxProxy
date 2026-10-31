@@ -189,7 +189,7 @@
         }
     .end annotation
 
-    .line 485
+    .line 542
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/box/app/cfg/DragSort;->c:Landroid/content/Context;
@@ -202,10 +202,10 @@
 
     const/4 p1, -0x1
 
-    .line 487
+    .line 544
     iput p1, p0, Lcom/box/app/cfg/DragSort;->startIdx:I
 
-    .line 492
+    .line 549
     new-instance p1, Lcom/box/app/cfg/DragSort$tick$1;
 
     invoke-direct {p1, p0}, Lcom/box/app/cfg/DragSort$tick$1;-><init>(Lcom/box/app/cfg/DragSort;)V
@@ -218,7 +218,7 @@
 .method public static final synthetic access$autoScroll(Lcom/box/app/cfg/DragSort;)V
     .registers 1
 
-    .line 485
+    .line 542
     invoke-direct {p0}, Lcom/box/app/cfg/DragSort;->autoScroll()V
 
     return-void
@@ -227,7 +227,7 @@
 .method public static final synthetic access$chrome(Lcom/box/app/cfg/DragSort;Landroid/view/View;Z)V
     .registers 3
 
-    .line 485
+    .line 542
     invoke-direct {p0, p1, p2}, Lcom/box/app/cfg/DragSort;->chrome(Landroid/view/View;Z)V
 
     return-void
@@ -236,7 +236,7 @@
 .method public static final synthetic access$getDragging$p(Lcom/box/app/cfg/DragSort;)Landroid/view/View;
     .registers 1
 
-    .line 485
+    .line 542
     iget-object p0, p0, Lcom/box/app/cfg/DragSort;->dragging:Landroid/view/View;
 
     return-object p0
@@ -245,7 +245,7 @@
 .method public static final synthetic access$getStartIdx$p(Lcom/box/app/cfg/DragSort;)I
     .registers 1
 
-    .line 485
+    .line 542
     iget p0, p0, Lcom/box/app/cfg/DragSort;->startIdx:I
 
     return p0
@@ -254,7 +254,7 @@
 .method public static final synthetic access$getTick$p(Lcom/box/app/cfg/DragSort;)Lcom/box/app/cfg/DragSort$tick$1;
     .registers 1
 
-    .line 485
+    .line 542
     iget-object p0, p0, Lcom/box/app/cfg/DragSort;->tick:Lcom/box/app/cfg/DragSort$tick$1;
 
     return-object p0
@@ -263,7 +263,7 @@
 .method public static final synthetic access$getTicking$p(Lcom/box/app/cfg/DragSort;)Z
     .registers 1
 
-    .line 485
+    .line 542
     iget-boolean p0, p0, Lcom/box/app/cfg/DragSort;->ticking:Z
 
     return p0
@@ -272,7 +272,7 @@
 .method public static final synthetic access$setDragging$p(Lcom/box/app/cfg/DragSort;Landroid/view/View;)V
     .registers 2
 
-    .line 485
+    .line 542
     iput-object p1, p0, Lcom/box/app/cfg/DragSort;->dragging:Landroid/view/View;
 
     return-void
@@ -281,7 +281,7 @@
 .method public static final synthetic access$setFingerY$p(Lcom/box/app/cfg/DragSort;F)V
     .registers 2
 
-    .line 485
+    .line 542
     iput p1, p0, Lcom/box/app/cfg/DragSort;->fingerY:F
 
     return-void
@@ -290,7 +290,7 @@
 .method public static final synthetic access$setPending$p(Lcom/box/app/cfg/DragSort;Z)V
     .registers 2
 
-    .line 485
+    .line 542
     iput-boolean p1, p0, Lcom/box/app/cfg/DragSort;->pending:Z
 
     return-void
@@ -299,7 +299,7 @@
 .method public static final synthetic access$setStartIdx$p(Lcom/box/app/cfg/DragSort;I)V
     .registers 2
 
-    .line 485
+    .line 542
     iput p1, p0, Lcom/box/app/cfg/DragSort;->startIdx:I
 
     return-void
@@ -308,7 +308,7 @@
 .method public static final synthetic access$setTicking$p(Lcom/box/app/cfg/DragSort;Z)V
     .registers 2
 
-    .line 485
+    .line 542
     iput-boolean p1, p0, Lcom/box/app/cfg/DragSort;->ticking:Z
 
     return-void
@@ -317,7 +317,7 @@
 .method public static final synthetic access$step(Lcom/box/app/cfg/DragSort;)V
     .registers 1
 
-    .line 485
+    .line 542
     invoke-direct {p0}, Lcom/box/app/cfg/DragSort;->step()V
 
     return-void
@@ -326,14 +326,14 @@
 .method private final autoScroll()V
     .registers 10
 
-    .line 603
+    .line 660
     iget-object v0, p0, Lcom/box/app/cfg/DragSort;->dragging:Landroid/view/View;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 604
+    .line 661
     :cond_5
     iget-object v0, p0, Lcom/box/app/cfg/DragSort;->sv:Lkotlin/jvm/functions/Function0;
 
@@ -347,7 +347,7 @@
 
     return-void
 
-    .line 605
+    .line 662
     :cond_10
     invoke-direct {p0}, Lcom/box/app/cfg/DragSort;->visibleRange()[F
 
@@ -355,7 +355,7 @@
 
     const/4 v2, 0x1
 
-    .line 606
+    .line 663
     aget v3, v1, v2
 
     const/4 v4, 0x0
@@ -377,7 +377,7 @@
 
     mul-float/2addr v3, v6
 
-    .line 608
+    .line 665
     iget-object v6, p0, Lcom/box/app/cfg/DragSort;->c:Landroid/content/Context;
 
     const/high16 v7, 0x42300000    # 44.0f
@@ -398,7 +398,7 @@
 
     move-result v3
 
-    .line 609
+    .line 666
     aget v6, v1, v4
 
     add-float/2addr v6, v3
@@ -407,7 +407,7 @@
 
     sub-float/2addr v6, v7
 
-    .line 610
+    .line 667
     iget v7, p0, Lcom/box/app/cfg/DragSort;->fingerY:F
 
     aget v1, v1, v2
@@ -426,7 +426,7 @@
 
     return-void
 
-    .line 612
+    .line 669
     :cond_4e
     invoke-static {v6, v7}, Ljava/lang/Math;->max(FF)F
 
@@ -436,7 +436,7 @@
 
     move-result v1
 
-    .line 613
+    .line 670
     iget-object v2, p0, Lcom/box/app/cfg/DragSort;->c:Landroid/content/Context;
 
     const/high16 v5, 0x3f800000    # 1.0f
@@ -459,7 +459,7 @@
 
     add-float/2addr v2, v1
 
-    .line 614
+    .line 671
     invoke-direct {p0}, Lcom/box/app/cfg/DragSort;->step()V
 
     cmpl-float p0, v6, v7
@@ -471,7 +471,7 @@
     :cond_71
     float-to-int p0, v2
 
-    .line 615
+    .line 672
     invoke-virtual {v0, v4, p0}, Landroid/widget/ScrollView;->scrollBy(II)V
 
     return-void
@@ -482,7 +482,7 @@
 
     if-eqz p2, :cond_b
 
-    .line 620
+    .line 677
     iget-object v0, p0, Lcom/box/app/cfg/DragSort;->c:Landroid/content/Context;
 
     const/high16 v1, 0x40c00000    # 6.0f
@@ -501,7 +501,7 @@
 
     if-eqz p2, :cond_1b
 
-    .line 621
+    .line 678
     new-instance v0, Lcom/box/app/cfg/DragChrome;
 
     iget-object p0, p0, Lcom/box/app/cfg/DragSort;->c:Landroid/content/Context;
@@ -518,7 +518,7 @@
     :goto_1c
     invoke-virtual {p1, v0}, Landroid/view/View;->setForeground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 622
+    .line 679
     instance-of p0, p1, Landroid/view/ViewGroup;
 
     const/high16 v0, 0x3f800000    # 1.0f
@@ -529,7 +529,7 @@
 
     const/4 p0, 0x0
 
-    .line 623
+    .line 680
     check-cast p1, Landroid/view/ViewGroup;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
@@ -564,7 +564,7 @@
 
     move v0, v1
 
-    .line 624
+    .line 681
     :cond_43
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
@@ -575,19 +575,19 @@
 .method private final moveRow(Landroid/view/View;I)V
     .registers 9
 
-    .line 572
+    .line 629
     iget-object v0, p0, Lcom/box/app/cfg/DragSort;->box:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->getChildCount()I
 
     move-result v0
 
-    .line 573
+    .line 630
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 574
+    .line 631
     new-array v2, v0, [F
 
     const/4 v3, 0x0
@@ -595,7 +595,7 @@
     :goto_e
     if-ge v3, v0, :cond_28
 
-    .line 575
+    .line 632
     iget-object v4, p0, Lcom/box/app/cfg/DragSort;->box:Landroid/widget/LinearLayout;
 
     invoke-virtual {v4, v3}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
@@ -622,7 +622,7 @@
 
     goto :goto_e
 
-    .line 577
+    .line 634
     :cond_28
     iget-object v0, p0, Lcom/box/app/cfg/DragSort;->box:Landroid/widget/LinearLayout;
 
@@ -633,7 +633,7 @@
     :goto_2e
     if-ge p1, p2, :cond_44
 
-    .line 578
+    .line 635
     iget-object v0, p0, Lcom/box/app/cfg/DragSort;->box:Landroid/widget/LinearLayout;
 
     add-int/lit8 v3, p1, 0x1
@@ -658,7 +658,7 @@
     :goto_44
     if-le p1, p2, :cond_5b
 
-    .line 579
+    .line 636
     iget-object v0, p0, Lcom/box/app/cfg/DragSort;->box:Landroid/widget/LinearLayout;
 
     add-int/lit8 v3, p1, -0x1
@@ -682,7 +682,7 @@
     :cond_5b
     const/4 p1, 0x1
 
-    .line 580
+    .line 637
     iput-boolean p1, p0, Lcom/box/app/cfg/DragSort;->pending:Z
 
     invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
@@ -691,7 +691,7 @@
 
     iput-wide p1, p0, Lcom/box/app/cfg/DragSort;->pendingAt:J
 
-    .line 581
+    .line 638
     iget-object p1, p0, Lcom/box/app/cfg/DragSort;->box:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1}, Landroid/widget/LinearLayout;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -712,14 +712,14 @@
 .method private final step()V
     .registers 12
 
-    .line 553
+    .line 610
     iget-object v0, p0, Lcom/box/app/cfg/DragSort;->dragging:Landroid/view/View;
 
     if-nez v0, :cond_5
 
     return-void
 
-    .line 554
+    .line 611
     :cond_5
     iget-boolean v1, p0, Lcom/box/app/cfg/DragSort;->pending:Z
 
@@ -741,7 +741,7 @@
 
     return-void
 
-    .line 555
+    .line 612
     :cond_17
     iget-object v1, p0, Lcom/box/app/cfg/DragSort;->box:Landroid/widget/LinearLayout;
 
@@ -749,7 +749,7 @@
 
     move-result v1
 
-    .line 556
+    .line 613
     iget-object v2, p0, Lcom/box/app/cfg/DragSort;->box:Landroid/widget/LinearLayout;
 
     invoke-virtual {v2}, Landroid/widget/LinearLayout;->getChildCount()I
@@ -764,20 +764,20 @@
 
     goto :goto_74
 
-    .line 558
+    .line 615
     :cond_29
     invoke-direct {p0}, Lcom/box/app/cfg/DragSort;->visibleRange()[F
 
     move-result-object v4
 
-    .line 559
+    .line 616
     new-array v3, v3, [I
 
     iget-object v5, p0, Lcom/box/app/cfg/DragSort;->box:Landroid/widget/LinearLayout;
 
     invoke-virtual {v5, v3}, Landroid/widget/LinearLayout;->getLocationOnScreen([I)V
 
-    .line 560
+    .line 617
     iget v5, p0, Lcom/box/app/cfg/DragSort;->fingerY:F
 
     const/4 v6, 0x0
@@ -792,7 +792,7 @@
 
     move-result v5
 
-    .line 561
+    .line 618
     new-instance v7, Ljava/util/ArrayList;
 
     invoke-direct {v7, v2}, Ljava/util/ArrayList;-><init>(I)V
@@ -802,7 +802,7 @@
     :goto_46
     if-ge v9, v2, :cond_52
 
-    .line 562
+    .line 619
     invoke-static {v9}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v10
@@ -813,7 +813,7 @@
 
     goto :goto_46
 
-    .line 563
+    .line 620
     :cond_52
     move-object v2, v7
 
@@ -851,7 +851,7 @@
 
     goto :goto_73
 
-    .line 568
+    .line 625
     :cond_6f
     invoke-direct {p0, v0, v2}, Lcom/box/app/cfg/DragSort;->moveRow(Landroid/view/View;I)V
 
@@ -869,7 +869,7 @@
 .method private final visibleRange()[F
     .registers 7
 
-    .line 542
+    .line 599
     iget-object v0, p0, Lcom/box/app/cfg/DragSort;->sv:Lkotlin/jvm/functions/Function0;
 
     invoke-interface {v0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
@@ -880,7 +880,7 @@
 
     const/4 v1, 0x2
 
-    .line 543
+    .line 600
     new-array v2, v1, [I
 
     const/4 v3, 0x0
@@ -889,14 +889,14 @@
 
     if-eqz v0, :cond_2a
 
-    .line 544
+    .line 601
     invoke-virtual {v0}, Landroid/widget/ScrollView;->getHeight()I
 
     move-result v5
 
     if-lez v5, :cond_2a
 
-    .line 545
+    .line 602
     invoke-virtual {v0, v2}, Landroid/widget/ScrollView;->getLocationOnScreen([I)V
 
     new-array p0, v1, [F
@@ -921,7 +921,7 @@
 
     goto :goto_43
 
-    .line 547
+    .line 604
     :cond_2a
     iget-object v0, p0, Lcom/box/app/cfg/DragSort;->box:Landroid/widget/LinearLayout;
 
@@ -960,7 +960,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 485
+    .line 542
     iget-object p0, p0, Lcom/box/app/cfg/DragSort;->box:Landroid/widget/LinearLayout;
 
     return-object p0
@@ -971,7 +971,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 485
+    .line 542
     iget-object p0, p0, Lcom/box/app/cfg/DragSort;->c:Landroid/content/Context;
 
     return-object p0
@@ -993,7 +993,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 485
+    .line 542
     iget-object p0, p0, Lcom/box/app/cfg/DragSort;->onMove:Lkotlin/jvm/functions/Function2;
 
     return-object p0
@@ -1013,7 +1013,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 485
+    .line 542
     iget-object p0, p0, Lcom/box/app/cfg/DragSort;->sv:Lkotlin/jvm/functions/Function0;
 
     return-object p0
@@ -1028,7 +1028,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 500
+    .line 557
     new-instance v0, Lcom/box/app/cfg/DragSort$handle$1;
 
     invoke-direct {v0, p1}, Lcom/box/app/cfg/DragSort$handle$1;-><init>(Landroid/view/View;)V
@@ -1062,14 +1062,14 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 503
+    .line 560
     new-instance v0, Landroid/widget/FrameLayout;
 
     iget-object v1, p0, Lcom/box/app/cfg/DragSort;->c:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 504
+    .line 561
     new-instance v1, Lcom/box/app/cfg/IconView;
 
     iget-object v2, p0, Lcom/box/app/cfg/DragSort;->c:Landroid/content/Context;
@@ -1110,7 +1110,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 505
+    .line 562
     new-instance v1, Landroid/widget/LinearLayout$LayoutParams;
 
     iget-object v2, p0, Lcom/box/app/cfg/DragSort;->c:Landroid/content/Context;
@@ -1135,7 +1135,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 506
+    .line 563
     new-instance v1, Lcom/box/app/cfg/DragSort$handleL$1;
 
     invoke-direct {v1, p1, p0}, Lcom/box/app/cfg/DragSort$handleL$1;-><init>(Lkotlin/jvm/functions/Function0;Lcom/box/app/cfg/DragSort;)V
@@ -1144,7 +1144,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
-    .line 537
+    .line 594
     check-cast v0, Landroid/view/View;
 
     return-object v0

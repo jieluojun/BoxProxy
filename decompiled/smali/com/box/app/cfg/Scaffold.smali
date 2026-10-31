@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/Scaffold\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,652:1\n1#2:653\n*E\n"
+    value = "SMAP\nUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/Scaffold\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,709:1\n1#2:710\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -64,7 +64,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/Scaffold\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,652:1\n1#2:653\n*E\n"
+        "SMAP\nUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/Scaffold\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,709:1\n1#2:710\n*E\n"
     }
 .end annotation
 
@@ -124,12 +124,12 @@
         .end annotation
     .end param
 
-    .line 403
+    .line 460
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/box/app/cfg/Scaffold;->act:Landroid/app/Activity;
 
-    .line 404
+    .line 461
     new-instance p1, Landroid/widget/LinearLayout;
 
     iget-object v0, p0, Lcom/box/app/cfg/Scaffold;->act:Landroid/app/Activity;
@@ -140,7 +140,7 @@
 
     iput-object p1, p0, Lcom/box/app/cfg/Scaffold;->root:Landroid/widget/LinearLayout;
 
-    .line 405
+    .line 462
     new-instance p1, Landroid/widget/LinearLayout;
 
     iget-object v0, p0, Lcom/box/app/cfg/Scaffold;->act:Landroid/app/Activity;
@@ -151,7 +151,7 @@
 
     iput-object p1, p0, Lcom/box/app/cfg/Scaffold;->bar:Landroid/widget/LinearLayout;
 
-    .line 407
+    .line 464
     new-instance p1, Landroid/widget/LinearLayout;
 
     iget-object v0, p0, Lcom/box/app/cfg/Scaffold;->act:Landroid/app/Activity;
@@ -162,7 +162,7 @@
 
     iput-object p1, p0, Lcom/box/app/cfg/Scaffold;->actions:Landroid/widget/LinearLayout;
 
-    .line 409
+    .line 466
     new-instance p1, Landroid/widget/FrameLayout;
 
     iget-object v0, p0, Lcom/box/app/cfg/Scaffold;->act:Landroid/app/Activity;
@@ -173,14 +173,14 @@
 
     iput-object p1, p0, Lcom/box/app/cfg/Scaffold;->host:Landroid/widget/FrameLayout;
 
-    .line 413
+    .line 470
     iget-object p1, p0, Lcom/box/app/cfg/Scaffold;->root:Landroid/widget/LinearLayout;
 
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 414
+    .line 471
     iget-object p1, p0, Lcom/box/app/cfg/Scaffold;->root:Landroid/widget/LinearLayout;
 
     sget-object v1, Lcom/box/app/cfg/Th;->INSTANCE:Lcom/box/app/cfg/Th;
@@ -191,21 +191,21 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
 
-    .line 415
+    .line 472
     iget-object p1, p0, Lcom/box/app/cfg/Scaffold;->bar:Landroid/widget/LinearLayout;
 
     const/4 v1, 0x0
 
     invoke-virtual {p1, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 416
+    .line 473
     iget-object p1, p0, Lcom/box/app/cfg/Scaffold;->bar:Landroid/widget/LinearLayout;
 
     const/16 v2, 0x10
 
     invoke-virtual {p1, v2}, Landroid/widget/LinearLayout;->setGravity(I)V
 
-    .line 417
+    .line 474
     iget-object p1, p0, Lcom/box/app/cfg/Scaffold;->bar:Landroid/widget/LinearLayout;
 
     iget-object v3, p0, Lcom/box/app/cfg/Scaffold;->act:Landroid/app/Activity;
@@ -230,7 +230,7 @@
 
     invoke-virtual {p1, v3, v1, v4, v1}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 418
+    .line 475
     new-instance p1, Landroid/widget/FrameLayout;
 
     iget-object v3, p0, Lcom/box/app/cfg/Scaffold;->act:Landroid/app/Activity;
@@ -239,7 +239,7 @@
 
     invoke-direct {p1, v3}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 419
+    .line 476
     new-instance v3, Lcom/box/app/cfg/IconView;
 
     iget-object v4, p0, Lcom/box/app/cfg/Scaffold;->act:Landroid/app/Activity;
@@ -286,7 +286,7 @@
 
     invoke-virtual {p1, v3, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 420
+    .line 477
     iget-object v3, p0, Lcom/box/app/cfg/Scaffold;->act:Landroid/app/Activity;
 
     check-cast v3, Landroid/content/Context;
@@ -299,15 +299,15 @@
 
     invoke-virtual {p1, v3}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 421
+    .line 478
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setClickable(Z)V
 
-    .line 418
+    .line 475
     check-cast p1, Landroid/view/View;
 
     iput-object p1, p0, Lcom/box/app/cfg/Scaffold;->backBtn:Landroid/view/View;
 
-    .line 423
+    .line 480
     iget-object p1, p0, Lcom/box/app/cfg/Scaffold;->bar:Landroid/widget/LinearLayout;
 
     iget-object v3, p0, Lcom/box/app/cfg/Scaffold;->backBtn:Landroid/view/View;
@@ -340,7 +340,7 @@
 
     invoke-virtual {p1, v3, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 424
+    .line 481
     iget-object p1, p0, Lcom/box/app/cfg/Scaffold;->act:Landroid/app/Activity;
 
     move-object v3, p1
@@ -375,7 +375,7 @@
 
     iput-object p1, p0, Lcom/box/app/cfg/Scaffold;->titleV:Landroid/widget/TextView;
 
-    .line 425
+    .line 482
     iget-object p1, p0, Lcom/box/app/cfg/Scaffold;->titleV:Landroid/widget/TextView;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setMaxLines(I)V
@@ -386,7 +386,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 426
+    .line 483
     iget-object p1, p0, Lcom/box/app/cfg/Scaffold;->bar:Landroid/widget/LinearLayout;
 
     iget-object v0, p0, Lcom/box/app/cfg/Scaffold;->titleV:Landroid/widget/TextView;
@@ -419,7 +419,7 @@
 
     invoke-virtual {p1, v0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 427
+    .line 484
     iget-object p1, p0, Lcom/box/app/cfg/Scaffold;->actions:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
@@ -428,7 +428,7 @@
 
     invoke-virtual {p1, v2}, Landroid/widget/LinearLayout;->setGravity(I)V
 
-    .line 428
+    .line 485
     iget-object p1, p0, Lcom/box/app/cfg/Scaffold;->bar:Landroid/widget/LinearLayout;
 
     iget-object v0, p0, Lcom/box/app/cfg/Scaffold;->actions:Landroid/widget/LinearLayout;
@@ -443,7 +443,7 @@
 
     invoke-virtual {p1, v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 429
+    .line 486
     iget-object p1, p0, Lcom/box/app/cfg/Scaffold;->root:Landroid/widget/LinearLayout;
 
     iget-object v0, p0, Lcom/box/app/cfg/Scaffold;->bar:Landroid/widget/LinearLayout;
@@ -470,7 +470,7 @@
 
     invoke-virtual {p1, v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 430
+    .line 487
     iget-object p1, p0, Lcom/box/app/cfg/Scaffold;->root:Landroid/widget/LinearLayout;
 
     iget-object v0, p0, Lcom/box/app/cfg/Scaffold;->host:Landroid/widget/FrameLayout;
@@ -485,7 +485,7 @@
 
     invoke-virtual {p1, v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 431
+    .line 488
     iget-object p0, p0, Lcom/box/app/cfg/Scaffold;->root:Landroid/widget/LinearLayout;
 
     sget-object p1, Lcom/box/app/cfg/Scaffold$3;->INSTANCE:Lcom/box/app/cfg/Scaffold$3;
@@ -504,7 +504,7 @@
 
     if-eqz p7, :cond_8
 
-    .line 447
+    .line 504
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object p4
@@ -549,7 +549,7 @@
         }
     .end annotation
 
-    .line 444
+    .line 501
     iget-object p0, p0, Lcom/box/app/cfg/Scaffold;->backBtn:Landroid/view/View;
 
     new-instance v0, Lcom/box/app/cfg/Scaffold$back$1;
@@ -568,7 +568,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 403
+    .line 460
     iget-object p0, p0, Lcom/box/app/cfg/Scaffold;->act:Landroid/app/Activity;
 
     return-object p0
@@ -579,7 +579,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 404
+    .line 461
     iget-object p0, p0, Lcom/box/app/cfg/Scaffold;->root:Landroid/widget/LinearLayout;
 
     return-object p0
@@ -590,7 +590,7 @@
     .annotation build Lorg/jetbrains/annotations/Nullable;
     .end annotation
 
-    .line 410
+    .line 467
     iget-object p0, p0, Lcom/box/app/cfg/Scaffold;->scroll:Landroid/widget/ScrollView;
 
     return-object p0
@@ -633,7 +633,7 @@
 
     if-eqz p3, :cond_c
 
-    .line 448
+    .line 505
     iget-object p3, p0, Lcom/box/app/cfg/Scaffold;->scroll:Landroid/widget/ScrollView;
 
     if-eqz p3, :cond_c
@@ -647,7 +647,7 @@
     :cond_c
     move p3, v0
 
-    .line 449
+    .line 506
     :goto_d
     iget-object v1, p0, Lcom/box/app/cfg/Scaffold;->titleV:Landroid/widget/TextView;
 
@@ -655,12 +655,12 @@
 
     invoke-virtual {v1, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 450
+    .line 507
     iget-object p1, p0, Lcom/box/app/cfg/Scaffold;->actions:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1}, Landroid/widget/LinearLayout;->removeAllViews()V
 
-    .line 451
+    .line 508
     invoke-interface {p4}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -684,13 +684,13 @@
 
     goto :goto_1d
 
-    .line 452
+    .line 509
     :cond_2f
     iget-object p1, p0, Lcom/box/app/cfg/Scaffold;->host:Landroid/widget/FrameLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->removeAllViews()V
 
-    .line 453
+    .line 510
     new-instance p1, Landroid/widget/LinearLayout;
 
     iget-object p4, p0, Lcom/box/app/cfg/Scaffold;->act:Landroid/app/Activity;
@@ -703,7 +703,7 @@
 
     invoke-virtual {p1, p4}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 454
+    .line 511
     check-cast p2, Landroid/view/View;
 
     const/4 v1, 0x0
@@ -718,7 +718,7 @@
 
     invoke-virtual {p1, p2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 455
+    .line 512
     iget-object p2, p0, Lcom/box/app/cfg/Scaffold;->act:Landroid/app/Activity;
 
     check-cast p2, Landroid/content/Context;
@@ -731,7 +731,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 456
+    .line 513
     new-instance p2, Landroid/widget/ScrollView;
 
     iget-object v3, p0, Lcom/box/app/cfg/Scaffold;->act:Landroid/app/Activity;
@@ -740,18 +740,18 @@
 
     invoke-direct {p2, v3}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 457
+    .line 514
     invoke-virtual {p2, v0}, Landroid/widget/ScrollView;->setFillViewport(Z)V
 
-    .line 458
+    .line 515
     invoke-virtual {p2, v0}, Landroid/widget/ScrollView;->setClipToPadding(Z)V
 
     const/4 v3, 0x2
 
-    .line 459
+    .line 516
     invoke-virtual {p2, v3}, Landroid/widget/ScrollView;->setOverScrollMode(I)V
 
-    .line 460
+    .line 517
     check-cast p1, Landroid/view/View;
 
     new-instance v3, Landroid/widget/FrameLayout$LayoutParams;
@@ -766,10 +766,10 @@
 
     invoke-virtual {p2, p1, v3}, Landroid/widget/ScrollView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 461
+    .line 518
     iput-object p2, p0, Lcom/box/app/cfg/Scaffold;->scroll:Landroid/widget/ScrollView;
 
-    .line 462
+    .line 519
     new-instance p1, Landroid/widget/LinearLayout;
 
     iget-object v3, p0, Lcom/box/app/cfg/Scaffold;->act:Landroid/app/Activity;
@@ -780,7 +780,7 @@
 
     invoke-virtual {p1, p4}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 463
+    .line 520
     move-object p4, p2
 
     check-cast p4, Landroid/view/View;
@@ -797,7 +797,7 @@
 
     if-eqz p5, :cond_a4
 
-    .line 464
+    .line 521
     invoke-static {v0, v0, v2, v1}, Lcom/box/app/cfg/UiKt;->lp$default(IIILjava/lang/Object;)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object p4
@@ -806,7 +806,7 @@
 
     invoke-virtual {p1, p5, p4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 465
+    .line 522
     :cond_a4
     iget-object p0, p0, Lcom/box/app/cfg/Scaffold;->host:Landroid/widget/FrameLayout;
 
@@ -822,7 +822,7 @@
 
     if-lez p3, :cond_be
 
-    .line 466
+    .line 523
     new-instance p0, Lcom/box/app/cfg/Scaffold$setPage$1;
 
     invoke-direct {p0, p2, p3}, Lcom/box/app/cfg/Scaffold$setPage$1;-><init>(Landroid/widget/ScrollView;I)V
@@ -842,7 +842,7 @@
         .end annotation
     .end param
 
-    .line 410
+    .line 467
     iput-object p1, p0, Lcom/box/app/cfg/Scaffold;->scroll:Landroid/widget/ScrollView;
 
     return-void
