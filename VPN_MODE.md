@@ -255,18 +255,14 @@ App 在后台或没有前台 Activity（比如 VPN 服务里弹的）时回退�
 
 ## 内置免流配置（mihomo / sing-box）
 
-每次安装（包括覆盖安装、升级）后第一次启动时（`lb0.d` → `VpnSeed.run`），把内置配置重新写一份到对应核心目录。
-「每次安装」用 `PackageInfo.lastUpdateTime` 判断（覆盖安装同一版本它也会变），记在 `SharedPreferences box_seed` 的 `seed_t_yaml` / `seed_t_json`：
+首次启动时（`lb0.d` → `VpnSeed.run`），把内置配置各复制一份到对应核心目录，已有同名文件不覆盖，
+用 `SharedPreferences box_seed` 的标记保证用户删掉后不会再冒出来：
 
-| 资源 | 目标 |
-|---|---|
-| `assets/box/mihomo/mianliu.yaml` | `box/mihomo/免流.yaml` |
-| `assets/box/sing-box/mianliu.json` | `box/sing-box/免流.json` |
+| 资源 | 目标 | 标记 |
+|---|---|---|
+| `assets/box/mihomo/mianliu.yaml` | `box/mihomo/免流.yaml` | `mianliu_yaml` |
+| `assets/box/sing-box/mianliu.json` | `box/sing-box/免流.json` | `mianliu_json` |
 
-- 文件不存在（从没生成过，或被用户手动删了）→ 生成最新的；
-- 文件存在但和最新内置版不一样（旧内置版，或用户改过）→ 旧文件先改名为 `免流.yaml.bak` / `免流.json.bak`（已有的 .bak 会被替换），再写入最新版；
-- 文件和最新内置版一样 → 不动。
-
-同一次安装内不会再动：用户删掉或改了，在下次覆盖安装前都保持原样。写入失败（比如存储暂时不可用）不记标记，下次启动重试。
+升级时不会自动覆盖已有的文件（也不会改用户改过的内容）。老用户升级后会补上 sing-box 的这份（标记是新的）。
 sing-box 版是 1.15 的 providers 格式（`type: remote` 的 `免流订阅` / `CNS订阅` / `百度直连` / `钉钉直连`），
 需要 sing-box Smart + eBPF + 钉钉直连 那个核心才支持（可在工具页「更新核心」里装）。
