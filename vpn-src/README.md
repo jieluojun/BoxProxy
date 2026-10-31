@@ -43,3 +43,11 @@
 入口由 `CfgNav` 在 `CfgGlue.isSingBox` → `EditorGlue.isSingBox(path)`（`.json`/`.jsonc` + 目录 `sing-box`）为真时只挂「可视」图标；`CfgLauncher` 按扩展名分流到 `SbFormActivity`。
 schema 由 `tools/gen_sb_schema.py` 从 fork 的 `docs/schema.json` + `option/*.go` + 中文文档生成到 `decompiled/assets/schema/sing-box-fork{,-hints}.json`。
 harness：`build.sh` 里的 `SbTest` / `sbflow` / `sb` 随机点击；`pruned.sh` 也跑 `sb`。
+
+## root 模式：boxctl 在外部存储上「can't execute: Permission denied」
+
+`boxctl` 放在 `Android/data/<包名>/files/box/bin/`（外部存储）。部分机型 / root 方案下 su 看到的是 FUSE 视图（noexec 或没有执行位），直接执行会报
+`/system/bin/sh: <stdin>[17]: …/boxctl: can't execute: Permission denied`（exit 126）。`lb0.c`（拼 boxctl 命令的唯一入口）现在经
+`com.box.app.vpn.BoxctlFix.wrap` 加了回退：能执行就原样运行；否则改走真实路径 `/data/media/<用户>/…`（chmod 755）；再不行复制到 `/data/local/tmp/.boxproxy-boxctl`；
+`-x` 通过但实际仍 126（SELinux）时也会复制后重试一次（126 发生在 boxctl 真正运行之前，重试没有副作用）。开机脚本里同样处理（等待条件由 `-x` 改成 `-f`）。
+注意：这只解决 boxctl 自己；如果该机型上核心二进制（同样在外部存储）也不能执行，boxctl 起核心时会报下一个错，需要再处理。**未在受影响的真机上验证。**
