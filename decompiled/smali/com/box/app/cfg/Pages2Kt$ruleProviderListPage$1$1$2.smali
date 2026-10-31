@@ -87,7 +87,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 492
+    .line 511
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$1$1$2;->invoke(Ljava/lang/String;)V
@@ -100,7 +100,7 @@
 .method public final invoke(Ljava/lang/String;)V
     .registers 2
 
-    .line 492
+    .line 511
     iget-object p0, p0, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$1$1$2;->$format:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iput-object p1, p0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;

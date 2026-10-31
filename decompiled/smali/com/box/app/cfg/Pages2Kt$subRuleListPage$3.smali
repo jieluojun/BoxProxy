@@ -71,7 +71,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 570
+    .line 589
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/Pages2Kt$subRuleListPage$3;->invoke(Ljava/lang/String;)V
@@ -84,7 +84,7 @@
 .method public final invoke(Ljava/lang/String;)V
     .registers 6
 
-    .line 582
+    .line 601
     iget-object p0, p0, Lcom/box/app/cfg/Pages2Kt$subRuleListPage$3;->$this_subRuleListPage:Lcom/box/app/cfg/FormUi;
 
     new-instance v0, Lcom/box/app/cfg/FormRoute$Rules;

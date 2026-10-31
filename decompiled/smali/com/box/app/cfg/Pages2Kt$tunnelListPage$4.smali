@@ -74,7 +74,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    .line 592
+    .line 611
     check-cast p1, Ljava/lang/Number;
 
     invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
@@ -93,7 +93,7 @@
 .method public final invoke(ILtop/yukonga/mishka/custom/forms/YamlNode;)V
     .registers 3
 
-    .line 614
+    .line 633
     iget-object p0, p0, Lcom/box/app/cfg/Pages2Kt$tunnelListPage$4;->$this_tunnelListPage:Lcom/box/app/cfg/FormUi;
 
     new-instance p2, Lcom/box/app/cfg/FormRoute$Tunnel;

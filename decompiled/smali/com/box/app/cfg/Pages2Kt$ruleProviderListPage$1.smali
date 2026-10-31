@@ -105,7 +105,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 487
+    .line 506
     invoke-virtual {p0}, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$1;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -116,7 +116,7 @@
 .method public final invoke()V
     .registers 14
 
-    .line 488
+    .line 507
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$1;->$behavior:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     const-string v1, "domain"
@@ -129,7 +129,7 @@
 
     iput-object v1, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 489
+    .line 508
     iget-object v2, p0, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$1;->$this_ruleProviderListPage:Lcom/box/app/cfg/FormUi;
 
     const-string v3, "\u65b0\u5efa\u89c4\u5219\u96c6\u5408"

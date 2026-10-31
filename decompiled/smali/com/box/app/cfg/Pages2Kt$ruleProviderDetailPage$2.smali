@@ -90,7 +90,7 @@
 .method public final invoke()Landroid/view/View;
     .registers 3
 
-    .line 552
+    .line 571
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$2;->$this_ruleProviderDetailPage:Lcom/box/app/cfg/FormUi;
 
     const-string v1, "rule-providers"
@@ -107,7 +107,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 550
+    .line 569
     invoke-virtual {p0}, Lcom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$2;->invoke()Landroid/view/View;
 
     move-result-object p0

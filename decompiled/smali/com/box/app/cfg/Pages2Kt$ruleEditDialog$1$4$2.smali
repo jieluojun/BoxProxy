@@ -104,7 +104,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 443
+    .line 448
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$4$2;->invoke(Ljava/lang/String;)V
@@ -117,7 +117,7 @@
 .method public final invoke(Ljava/lang/String;)V
     .registers 3
 
-    .line 443
+    .line 448
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$4$2;->$type:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iput-object p1, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;

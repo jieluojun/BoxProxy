@@ -75,7 +75,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 682
+    .line 701
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/Pages2Kt$tunnelDetailPage$editRaw$1;->invoke(Ljava/lang/String;)V
@@ -88,7 +88,7 @@
 .method public final invoke(Ljava/lang/String;)V
     .registers 5
 
-    .line 683
+    .line 702
     sget-object v0, Ltop/yukonga/mishka/custom/forms/TunnelText;->INSTANCE:Ltop/yukonga/mishka/custom/forms/TunnelText;
 
     invoke-virtual {v0, p1}, Ltop/yukonga/mishka/custom/forms/TunnelText;->validateLine(Ljava/lang/String;)Ljava/lang/String;
@@ -99,7 +99,7 @@
 
     const/4 p0, 0x1
 
-    .line 684
+    .line 703
     invoke-static {v0, p0}, Lcom/box/app/cfg/FormHostKt;->showToast(Ljava/lang/String;Z)V
 
     goto :goto_1e

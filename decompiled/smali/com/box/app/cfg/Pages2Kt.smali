@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,695:1\n1#2:696\n1864#3,3:697\n766#3:700\n857#3,2:701\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt\n*L\n203#1:697,3\n407#1:700\n407#1:701,2\n*E\n"
+    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,714:1\n1#2:715\n1864#3,3:716\n766#3:719\n857#3,2:720\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt\n*L\n203#1:716,3\n407#1:719\n407#1:720,2\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -102,7 +102,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,695:1\n1#2:696\n1864#3,3:697\n766#3:700\n857#3,2:701\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt\n*L\n203#1:697,3\n407#1:700\n407#1:701,2\n*E\n"
+        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,714:1\n1#2:715\n1864#3,3:716\n766#3:719\n857#3,2:720\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt\n*L\n203#1:716,3\n407#1:719\n407#1:720,2\n*E\n"
     }
 .end annotation
 
@@ -2891,7 +2891,7 @@
         }
     .end annotation
 
-    .line 618
+    .line 637
     new-instance v11, Lkotlin/jvm/internal/Ref$BooleanRef;
 
     invoke-direct {v11}, Lkotlin/jvm/internal/Ref$BooleanRef;-><init>()V
@@ -2900,7 +2900,7 @@
 
     iput-boolean v0, v11, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
 
-    .line 619
+    .line 638
     new-instance v12, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v12}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
@@ -2909,19 +2909,19 @@
 
     iput-object v1, v12, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 620
+    .line 639
     new-instance v13, Lkotlin/jvm/internal/Ref$BooleanRef;
 
     invoke-direct {v13}, Lkotlin/jvm/internal/Ref$BooleanRef;-><init>()V
 
     iput-boolean v0, v13, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
 
-    .line 621
+    .line 640
     new-instance v14, Lkotlin/jvm/internal/Ref$BooleanRef;
 
     invoke-direct {v14}, Lkotlin/jvm/internal/Ref$BooleanRef;-><init>()V
 
-    .line 622
+    .line 641
     new-instance v15, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v15}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
@@ -2930,7 +2930,7 @@
 
     iput-object v0, v15, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 623
+    .line 642
     new-instance v10, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v10}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
@@ -2939,7 +2939,7 @@
 
     iput-object v0, v10, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 624
+    .line 643
     new-instance v9, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v9}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
@@ -2948,7 +2948,7 @@
 
     iput-object v0, v9, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 625
+    .line 644
     new-instance v0, Lcom/box/app/cfg/Dlg;
 
     invoke-virtual/range {p0 .. p0}, Lcom/box/app/cfg/FormUi;->getC()Landroid/app/Activity;
@@ -2973,7 +2973,7 @@
 
     move-result-object v8
 
-    .line 626
+    .line 645
     invoke-virtual/range {p0 .. p0}, Lcom/box/app/cfg/FormUi;->getC()Landroid/app/Activity;
 
     move-result-object v0
@@ -2984,7 +2984,7 @@
 
     move-result-object v1
 
-    .line 627
+    .line 646
     move-object v0, v1
 
     check-cast v0, Landroid/view/View;
@@ -2997,12 +2997,12 @@
 
     invoke-static {v8, v0, v2, v3, v7}, Lcom/box/app/cfg/Dlg;->add$default(Lcom/box/app/cfg/Dlg;Landroid/view/View;IILjava/lang/Object;)Lcom/box/app/cfg/Dlg;
 
-    .line 628
+    .line 647
     new-instance v6, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v6}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
 
-    .line 629
+    .line 648
     new-instance v5, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;
 
     move-object v0, v5
@@ -3045,7 +3045,7 @@
 
     iput-object v13, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 649
+    .line 668
     iget-object v1, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     if-nez v1, :cond_97
@@ -3076,7 +3076,7 @@
 
     const/16 v20, 0x0
 
-    .line 650
+    .line 669
     new-instance v16, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$2;
 
     move-object/from16 v0, v16
@@ -3119,7 +3119,7 @@
 
     move-object/from16 v0, v26
 
-    .line 663
+    .line 682
     invoke-virtual {v0}, Lcom/box/app/cfg/Dlg;->show()Lcom/box/app/cfg/Dlg;
 
     return-void
@@ -3926,7 +3926,7 @@
 
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 698
+    .line 717
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v13
@@ -4156,9 +4156,9 @@
 
     .line 403
     :goto_d
-    new-instance v14, Lkotlin/jvm/internal/Ref$ObjectRef;
+    new-instance v15, Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    invoke-direct {v14}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
+    invoke-direct {v15}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
 
     if-eqz v2, :cond_1a
 
@@ -4184,12 +4184,12 @@
     move-result-object v3
 
     :cond_28
-    iput-object v3, v14, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
+    iput-object v3, v15, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     .line 404
-    new-instance v15, Lkotlin/jvm/internal/Ref$ObjectRef;
+    new-instance v14, Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    invoke-direct {v15}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
+    invoke-direct {v14}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
 
     if-eqz v2, :cond_36
 
@@ -4208,7 +4208,7 @@
     const-string v3, ""
 
     :cond_3b
-    iput-object v3, v15, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
+    iput-object v3, v14, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     .line 405
     new-instance v13, Lkotlin/jvm/internal/Ref$ObjectRef;
@@ -4271,14 +4271,14 @@
 
     check-cast v2, Ljava/lang/Iterable;
 
-    .line 700
+    .line 719
     new-instance v5, Ljava/util/ArrayList;
 
     invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
 
     check-cast v5, Ljava/util/Collection;
 
-    .line 701
+    .line 720
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -4310,12 +4310,12 @@
 
     if-eqz v7, :cond_7c
 
-    .line 701
+    .line 720
     invoke-interface {v5, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_7c
 
-    .line 702
+    .line 721
     :cond_96
     check-cast v5, Ljava/util/List;
 
@@ -4394,65 +4394,77 @@
 
     invoke-static {v4}, Lcom/box/app/cfg/UiKt;->column(Landroid/content/Context;)Landroid/widget/LinearLayout;
 
-    move-result-object v6
+    move-result-object v8
 
     .line 412
-    move-object v4, v6
+    move-object v4, v8
 
     check-cast v4, Landroid/view/View;
 
     invoke-static {v0, v4, v3, v5, v1}, Lcom/box/app/cfg/Dlg;->add$default(Lcom/box/app/cfg/Dlg;Landroid/view/View;IILjava/lang/Object;)Lcom/box/app/cfg/Dlg;
 
-    .line 417
+    .line 418
+    new-instance v4, Lkotlin/jvm/internal/Ref$ObjectRef;
+
+    invoke-direct {v4}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
+
+    .line 419
+    new-instance v5, Lkotlin/jvm/internal/Ref$ObjectRef;
+
+    invoke-direct {v5}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
+
+    .line 420
     new-instance v9, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v9}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
 
-    .line 418
-    new-instance v8, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1;
+    .line 421
+    new-instance v7, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1;
 
-    move-object v3, v8
+    move-object v3, v7
 
-    move-object v4, v14
+    move-object v6, v15
 
-    move-object/from16 v5, p0
+    move-object v1, v7
 
-    move-object v7, v2
-
-    move-object v1, v8
-
-    move-object v8, v10
+    move-object/from16 v7, p0
 
     move-object/from16 v24, v9
 
-    move-object v9, v15
+    move-object v9, v2
 
     move-object/from16 v16, v10
 
-    move-object v10, v13
-
     move-object/from16 v17, v11
 
-    move-object v11, v12
+    move-object v11, v14
 
     move-object/from16 v18, v12
 
-    move-object/from16 v12, v17
+    move-object v12, v13
 
     move-object/from16 v19, v13
 
-    move-object/from16 v13, v24
+    move-object/from16 v13, v18
 
-    invoke-direct/range {v3 .. v13}, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1;-><init>(Lkotlin/jvm/internal/Ref$ObjectRef;Lcom/box/app/cfg/FormUi;Landroid/widget/LinearLayout;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;)V
+    move-object/from16 v20, v14
+
+    move-object/from16 v14, v17
+
+    move-object/from16 v21, v15
+
+    move-object/from16 v15, v24
+
+    invoke-direct/range {v3 .. v15}, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1;-><init>(Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lcom/box/app/cfg/FormUi;Landroid/widget/LinearLayout;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;)V
 
     move-object/from16 v3, v24
 
     iput-object v1, v3, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 463
+    .line 482
     iget-object v1, v3, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    if-nez v1, :cond_10f
+    if-nez v1, :cond_11d
 
     const-string v1, "render"
 
@@ -4460,30 +4472,30 @@
 
     const/4 v1, 0x0
 
-    goto :goto_113
+    goto :goto_121
 
-    :cond_10f
+    :cond_11d
     iget-object v1, v3, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     check-cast v1, Lkotlin/jvm/functions/Function0;
 
-    :goto_113
+    :goto_121
     invoke-interface {v1}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;
 
     const/4 v1, 0x0
 
     const/4 v13, 0x0
 
-    const/16 v20, 0x0
+    const/4 v14, 0x0
 
-    const/16 v21, 0x0
+    const/4 v15, 0x0
 
-    .line 464
+    .line 483
     new-instance v22, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$2;
 
     move-object/from16 v3, v22
 
-    move-object v4, v14
+    move-object/from16 v4, v21
 
     move-object v5, v2
 
@@ -4493,7 +4505,7 @@
 
     move-object/from16 v8, p2
 
-    move-object v9, v15
+    move-object/from16 v9, v20
 
     move-object/from16 v10, v19
 
@@ -4503,9 +4515,9 @@
 
     invoke-direct/range {v3 .. v12}, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$2;-><init>(Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lcom/box/app/cfg/Dlg;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$ObjectRef;)V
 
-    move-object/from16 v2, v22
+    move-object/from16 v21, v22
 
-    check-cast v2, Lkotlin/jvm/functions/Function0;
+    check-cast v21, Lkotlin/jvm/functions/Function0;
 
     const/16 v22, 0xf
 
@@ -4517,15 +4529,13 @@
 
     move-object/from16 v18, v13
 
-    move-object/from16 v19, v20
+    move-object/from16 v19, v14
 
-    move-object/from16 v20, v21
-
-    move-object/from16 v21, v2
+    move-object/from16 v20, v15
 
     invoke-static/range {v16 .. v23}, Lcom/box/app/cfg/Dlg;->buttons$default(Lcom/box/app/cfg/Dlg;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/box/app/cfg/Dlg;
 
-    .line 477
+    .line 496
     invoke-virtual {v0}, Lcom/box/app/cfg/Dlg;->show()Lcom/box/app/cfg/Dlg;
 
     return-void
@@ -4952,12 +4962,12 @@
 
     move-object/from16 v7, p0
 
-    .line 519
+    .line 538
     invoke-virtual/range {p0 .. p0}, Lcom/box/app/cfg/FormUi;->getDoc()Ltop/yukonga/mishka/custom/forms/YamlDoc;
 
     move-result-object v6
 
-    .line 520
+    .line 539
     invoke-static {}, Ltop/yukonga/mishka/custom/forms/FlowFormPagesLogicKt;->getRULE_PROVIDERS_PATH()Ljava/util/List;
 
     move-result-object v0
@@ -4970,14 +4980,14 @@
 
     move-result-object v9
 
-    .line 521
+    .line 540
     invoke-virtual {v6, v9}, Ltop/yukonga/mishka/custom/forms/YamlDoc;->get(Ljava/util/List;)Ltop/yukonga/mishka/custom/forms/YamlNode;
 
     move-result-object v0
 
     if-eqz v0, :cond_c9
 
-    .line 522
+    .line 541
     invoke-virtual {v0}, Ltop/yukonga/mishka/custom/forms/YamlNode;->getKind()Ltop/yukonga/mishka/custom/forms/YamlNode$Kind;
 
     move-result-object v0
@@ -4988,7 +4998,7 @@
 
     goto/16 :goto_c9
 
-    .line 523
+    .line 542
     :cond_22
     sget-object v0, Ltop/yukonga/mishka/custom/forms/FormValues;->INSTANCE:Ltop/yukonga/mishka/custom/forms/FormValues;
 
@@ -5043,7 +5053,7 @@
     :cond_4f
     move-object v10, v0
 
-    .line 524
+    .line 543
     sget-object v0, Ltop/yukonga/mishka/custom/forms/FormValues;->INSTANCE:Ltop/yukonga/mishka/custom/forms/FormValues;
 
     const-string v3, "format"
@@ -5091,7 +5101,7 @@
     :cond_79
     move-object v11, v0
 
-    .line 525
+    .line 544
     new-instance v12, Lcom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$intercept$1;
 
     move-object v0, v12
@@ -5110,7 +5120,7 @@
 
     check-cast v12, Lkotlin/jvm/functions/Function3;
 
-    .line 550
+    .line 569
     invoke-static {}, Ltop/yukonga/mishka/custom/forms/FormSpecsP2Kt;->getRULE_PROVIDER_SECTIONS()Ljava/util/List;
 
     move-result-object v13
@@ -5203,7 +5213,7 @@
     :goto_c9
     const-string v0, "\u8fd9\u4e2a\u89c4\u5219\u96c6\u5408\u5df2\u7ecf\u4e0d\u5728\u4e86\uff08\u6216\u4e0d\u662f\u6620\u5c04\uff09"
 
-    .line 522
+    .line 541
     invoke-static {v7, v0}, Lcom/box/app/cfg/PagesKt;->missing(Lcom/box/app/cfg/FormUi;Ljava/lang/String;)Landroid/widget/LinearLayout;
 
     move-result-object v0
@@ -5230,7 +5240,7 @@
 
     move-object/from16 v1, p1
 
-    .line 542
+    .line 561
     move-object v2, v1
 
     check-cast v2, Ljava/util/Collection;
@@ -5247,7 +5257,7 @@
 
     if-eqz v3, :cond_24
 
-    .line 543
+    .line 562
     invoke-virtual {v0, v3}, Ltop/yukonga/mishka/custom/forms/YamlDoc;->isNullText(Ltop/yukonga/mishka/custom/forms/YamlNode;)Z
 
     move-result v4
@@ -5273,7 +5283,7 @@
     :goto_24
     const/4 v3, 0x1
 
-    .line 544
+    .line 563
     :goto_25
     invoke-virtual/range {p2 .. p2}, Lcom/box/app/cfg/FormUi;->getC()Landroid/app/Activity;
 
@@ -5311,7 +5321,7 @@
 
     const/4 v8, 0x0
 
-    .line 545
+    .line 564
     sget-object v4, Ltop/yukonga/mishka/custom/forms/FormValues;->INSTANCE:Ltop/yukonga/mishka/custom/forms/FormValues;
 
     const-string v9, "payload"
@@ -5356,7 +5366,7 @@
 
     const/4 v13, 0x1
 
-    .line 544
+    .line 563
     new-instance v0, Lcom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$payload$1;
 
     move-object/from16 v2, p2
@@ -5391,7 +5401,7 @@
         }
     .end annotation
 
-    .line 538
+    .line 557
     invoke-virtual {p0}, Lcom/box/app/cfg/FormUi;->getC()Landroid/app/Activity;
 
     move-result-object v0
@@ -5446,12 +5456,12 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 483
+    .line 502
     invoke-virtual {p0}, Lcom/box/app/cfg/FormUi;->getDoc()Ltop/yukonga/mishka/custom/forms/YamlDoc;
 
     move-result-object v1
 
-    .line 484
+    .line 503
     new-instance v2, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v2}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
@@ -5460,7 +5470,7 @@
 
     iput-object v3, v2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 485
+    .line 504
     new-instance v3, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v3}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
@@ -5469,7 +5479,7 @@
 
     iput-object v4, v3, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 486
+    .line 505
     invoke-static {}, Ltop/yukonga/mishka/custom/forms/FlowFormPagesLogicKt;->getRULE_PROVIDERS_PATH()Ljava/util/List;
 
     move-result-object v4
@@ -5480,7 +5490,7 @@
 
     const-string v7, "\u65b0\u589e\u89c4\u5219\u96c6"
 
-    .line 487
+    .line 506
     new-instance v8, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$1;
 
     invoke-direct {v8, v2, v3, p0}, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$1;-><init>(Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lcom/box/app/cfg/FormUi;)V
@@ -5493,7 +5503,7 @@
 
     move-result-object v7
 
-    .line 486
+    .line 505
     new-instance v2, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$2;
 
     invoke-direct {v2, v1}, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$2;-><init>(Ltop/yukonga/mishka/custom/forms/YamlDoc;)V
@@ -5595,12 +5605,12 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 569
+    .line 588
     invoke-virtual {p0}, Lcom/box/app/cfg/FormUi;->getDoc()Ltop/yukonga/mishka/custom/forms/YamlDoc;
 
     move-result-object v0
 
-    .line 570
+    .line 589
     invoke-static {}, Ltop/yukonga/mishka/custom/forms/FlowFormPagesLogicKt;->getSUB_RULES_PATH()Ljava/util/List;
 
     move-result-object v2
@@ -5611,7 +5621,7 @@
 
     const-string v1, "\u65b0\u589e\u5b50\u89c4\u5219"
 
-    .line 571
+    .line 590
     new-instance v5, Lcom/box/app/cfg/Pages2Kt$subRuleListPage$1;
 
     invoke-direct {v5, p0}, Lcom/box/app/cfg/Pages2Kt$subRuleListPage$1;-><init>(Lcom/box/app/cfg/FormUi;)V
@@ -5624,7 +5634,7 @@
 
     move-result-object v5
 
-    .line 570
+    .line 589
     new-instance v1, Lcom/box/app/cfg/Pages2Kt$subRuleListPage$2;
 
     invoke-direct {v1, v0}, Lcom/box/app/cfg/Pages2Kt$subRuleListPage$2;-><init>(Ltop/yukonga/mishka/custom/forms/YamlDoc;)V
@@ -5681,12 +5691,12 @@
 
     move/from16 v9, p1
 
-    .line 667
+    .line 686
     invoke-virtual/range {p0 .. p0}, Lcom/box/app/cfg/FormUi;->getDoc()Ltop/yukonga/mishka/custom/forms/YamlDoc;
 
     move-result-object v0
 
-    .line 668
+    .line 687
     invoke-static {}, Ltop/yukonga/mishka/custom/forms/FlowFormPagesLogicKt;->getTUNNELS_PATH()Ljava/util/List;
 
     move-result-object v1
@@ -5701,7 +5711,7 @@
 
     move-result-object v10
 
-    .line 669
+    .line 688
     invoke-virtual {v0, v10}, Ltop/yukonga/mishka/custom/forms/YamlDoc;->get(Ljava/util/List;)Ltop/yukonga/mishka/custom/forms/YamlNode;
 
     move-result-object v1
@@ -5716,7 +5726,7 @@
 
     return-object v0
 
-    .line 671
+    .line 690
     :cond_23
     invoke-virtual {v1}, Ltop/yukonga/mishka/custom/forms/YamlNode;->getKind()Ltop/yukonga/mishka/custom/forms/YamlNode$Kind;
 
@@ -5726,7 +5736,7 @@
 
     if-ne v2, v3, :cond_4f
 
-    .line 672
+    .line 691
     invoke-static {}, Ltop/yukonga/mishka/custom/forms/FormSpecsP2Kt;->getTUNNEL_SECTIONS()Ljava/util/List;
 
     move-result-object v1
@@ -5777,7 +5787,7 @@
 
     return-object v0
 
-    .line 680
+    .line 699
     :cond_4f
     sget-object v2, Ltop/yukonga/mishka/custom/forms/FormValues;->INSTANCE:Ltop/yukonga/mishka/custom/forms/FormValues;
 
@@ -5792,14 +5802,14 @@
     :cond_59
     move-object v11, v0
 
-    .line 681
+    .line 700
     sget-object v0, Ltop/yukonga/mishka/custom/forms/TunnelText;->INSTANCE:Ltop/yukonga/mishka/custom/forms/TunnelText;
 
     invoke-virtual {v0, v11}, Ltop/yukonga/mishka/custom/forms/TunnelText;->parse(Ljava/lang/String;)Ltop/yukonga/mishka/custom/forms/TunnelText$Parts;
 
     move-result-object v12
 
-    .line 686
+    .line 705
     invoke-virtual/range {p0 .. p0}, Lcom/box/app/cfg/FormUi;->getC()Landroid/app/Activity;
 
     move-result-object v0
@@ -5812,7 +5822,7 @@
 
     if-eqz v12, :cond_75
 
-    .line 687
+    .line 706
     invoke-virtual {v12}, Ltop/yukonga/mishka/custom/forms/TunnelText$Parts;->getAddress()Ljava/lang/String;
 
     move-result-object v0
@@ -5896,12 +5906,12 @@
 
     invoke-virtual {v13, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 688
+    .line 707
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 689
+    .line 708
     invoke-virtual/range {p0 .. p0}, Lcom/box/app/cfg/FormUi;->getC()Landroid/app/Activity;
 
     move-result-object v1
@@ -6003,7 +6013,7 @@
 
     if-eqz v12, :cond_153
 
-    .line 690
+    .line 709
     invoke-virtual/range {p0 .. p0}, Lcom/box/app/cfg/FormUi;->getC()Landroid/app/Activity;
 
     move-result-object v1
@@ -6058,7 +6068,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 692
+    .line 711
     :cond_153
     invoke-virtual/range {p0 .. p0}, Lcom/box/app/cfg/FormUi;->getC()Landroid/app/Activity;
 
@@ -6092,7 +6102,7 @@
         }
     .end annotation
 
-    .line 670
+    .line 689
     invoke-virtual {p0}, Lcom/box/app/cfg/FormUi;->getC()Landroid/app/Activity;
 
     move-result-object v0
@@ -6157,7 +6167,7 @@
         }
     .end annotation
 
-    .line 682
+    .line 701
     invoke-virtual {p0}, Lcom/box/app/cfg/FormUi;->getC()Landroid/app/Activity;
 
     move-result-object v0
@@ -6228,12 +6238,12 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 591
+    .line 610
     invoke-virtual {p0}, Lcom/box/app/cfg/FormUi;->getDoc()Ltop/yukonga/mishka/custom/forms/YamlDoc;
 
     move-result-object v0
 
-    .line 592
+    .line 611
     invoke-static {}, Ltop/yukonga/mishka/custom/forms/FlowFormPagesLogicKt;->getTUNNELS_PATH()Ljava/util/List;
 
     move-result-object v2
@@ -6244,7 +6254,7 @@
 
     const-string v1, "\u65b0\u589e\u96a7\u9053"
 
-    .line 593
+    .line 612
     new-instance v5, Lcom/box/app/cfg/Pages2Kt$tunnelListPage$1;
 
     invoke-direct {v5, p0}, Lcom/box/app/cfg/Pages2Kt$tunnelListPage$1;-><init>(Lcom/box/app/cfg/FormUi;)V
@@ -6257,7 +6267,7 @@
 
     move-result-object v5
 
-    .line 592
+    .line 611
     new-instance v1, Lcom/box/app/cfg/Pages2Kt$tunnelListPage$2;
 
     invoke-direct {v1, v0}, Lcom/box/app/cfg/Pages2Kt$tunnelListPage$2;-><init>(Ltop/yukonga/mishka/custom/forms/YamlDoc;)V

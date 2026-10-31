@@ -1,4 +1,4 @@
-.class final Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9;
+.class final Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8;
 .super Lkotlin/jvm/internal/Lambda;
 .source "Pages2.kt"
 
@@ -106,15 +106,15 @@
         }
     .end annotation
 
-    iput-object p1, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9;->$this_ruleEditDialog:Lcom/box/app/cfg/FormUi;
+    iput-object p1, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8;->$this_ruleEditDialog:Lcom/box/app/cfg/FormUi;
 
-    iput-boolean p2, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9;->$subRule:Z
+    iput-boolean p2, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8;->$subRule:Z
 
-    iput-object p3, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9;->$policyCandidates:Ljava/util/List;
+    iput-object p3, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8;->$policyCandidates:Ljava/util/List;
 
-    iput-object p4, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9;->$policy:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iput-object p4, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8;->$policy:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    iput-object p5, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9;->$render:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iput-object p5, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8;->$render:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     const/4 p1, 0x0
 
@@ -126,8 +126,8 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 450
-    invoke-virtual {p0}, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9;->invoke()V
+    .line 466
+    invoke-virtual {p0}, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
@@ -137,8 +137,8 @@
 .method public final invoke()V
     .registers 10
 
-    .line 450
-    iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9;->$this_ruleEditDialog:Lcom/box/app/cfg/FormUi;
+    .line 466
+    iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8;->$this_ruleEditDialog:Lcom/box/app/cfg/FormUi;
 
     invoke-virtual {v0}, Lcom/box/app/cfg/FormUi;->getC()Landroid/app/Activity;
 
@@ -148,7 +148,7 @@
 
     check-cast v1, Landroid/content/Context;
 
-    iget-boolean v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9;->$subRule:Z
+    iget-boolean v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8;->$subRule:Z
 
     if-eqz v0, :cond_11
 
@@ -165,9 +165,9 @@
     goto :goto_f
 
     :goto_14
-    iget-object v3, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9;->$policyCandidates:Ljava/util/List;
+    iget-object v3, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8;->$policyCandidates:Ljava/util/List;
 
-    iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9;->$policy:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8;->$policy:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iget-object v0, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
@@ -177,13 +177,13 @@
 
     const/4 v5, 0x0
 
-    new-instance v0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9$1;
+    new-instance v0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8$1;
 
-    iget-object v6, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9;->$policy:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iget-object v6, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8;->$policy:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    iget-object p0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9;->$render:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iget-object p0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8;->$render:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    invoke-direct {v0, v6, p0}, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9$1;-><init>(Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;)V
+    invoke-direct {v0, v6, p0}, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8$1;-><init>(Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;)V
 
     move-object v6, v0
 

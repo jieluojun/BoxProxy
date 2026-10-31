@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$renderBody$3$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,695:1\n777#2:696\n788#2:697\n1864#2,2:698\n789#2,2:700\n1866#2:702\n791#2:703\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$renderBody$3$2\n*L\n207#1:696\n207#1:697\n207#1:698,2\n207#1:700,2\n207#1:702\n207#1:703\n*E\n"
+    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$renderBody$3$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,714:1\n777#2:715\n788#2:716\n1864#2,2:717\n789#2,2:719\n1866#2:721\n791#2:722\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$renderBody$3$2\n*L\n207#1:715\n207#1:716\n207#1:717,2\n207#1:719,2\n207#1:721\n207#1:722\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,7 +49,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$renderBody$3$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,695:1\n777#2:696\n788#2:697\n1864#2,2:698\n789#2,2:700\n1866#2:702\n791#2:703\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$renderBody$3$2\n*L\n207#1:696\n207#1:697\n207#1:698,2\n207#1:700,2\n207#1:702\n207#1:703\n*E\n"
+        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$renderBody$3$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,714:1\n777#2:715\n788#2:716\n1864#2,2:717\n789#2,2:719\n1866#2:721\n791#2:722\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$renderBody$3$2\n*L\n207#1:715\n207#1:716\n207#1:717,2\n207#1:719,2\n207#1:721\n207#1:722\n*E\n"
     }
 .end annotation
 
@@ -171,14 +171,14 @@
 
     iget v1, p0, Lcom/box/app/cfg/Pages2Kt$renderBody$3$2;->$i:I
 
-    .line 696
+    .line 715
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     check-cast v2, Ljava/util/Collection;
 
-    .line 699
+    .line 718
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -204,7 +204,7 @@
 
     invoke-static {}, Lkotlin/collections/CollectionsKt;->throwIndexOverflow()V
 
-    .line 700
+    .line 719
     :cond_24
     move-object v7, v5
 
@@ -229,7 +229,7 @@
 
     goto :goto_13
 
-    .line 703
+    .line 722
     :cond_33
     move-object v10, v2
 

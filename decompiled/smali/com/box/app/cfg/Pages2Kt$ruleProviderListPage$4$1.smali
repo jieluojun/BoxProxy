@@ -79,7 +79,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 515
+    .line 534
     invoke-virtual {p0}, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$4$1;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

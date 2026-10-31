@@ -179,7 +179,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 464
+    .line 483
     invoke-virtual {p0}, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$2;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -190,7 +190,7 @@
 .method public final invoke()V
     .registers 8
 
-    .line 465
+    .line 484
     sget-object v0, Ltop/yukonga/mishka/custom/forms/RuleText;->INSTANCE:Ltop/yukonga/mishka/custom/forms/RuleText;
 
     iget-object v1, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$2;->$type:Lkotlin/jvm/internal/Ref$ObjectRef;
@@ -203,7 +203,7 @@
 
     move-result-object v0
 
-    .line 466
+    .line 485
     iget-object v1, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$2;->$type:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iget-object v1, v1, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
@@ -254,7 +254,7 @@
 
     if-eqz v0, :cond_33
 
-    .line 467
+    .line 486
     invoke-virtual {v0}, Ltop/yukonga/mishka/custom/forms/RuleTypeSpec;->getTargetKind()Ljava/lang/String;
 
     move-result-object v0
@@ -271,7 +271,7 @@
 
     move-result v0
 
-    .line 468
+    .line 487
     iget-object v5, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$2;->$rawMode:Lkotlin/jvm/internal/Ref$BooleanRef;
 
     iget-boolean v5, v5, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
@@ -280,7 +280,7 @@
 
     if-eqz v5, :cond_70
 
-    .line 469
+    .line 488
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$2;->$raw:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iget-object v0, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
@@ -297,7 +297,7 @@
 
     move-result-object v0
 
-    .line 470
+    .line 489
     move-object v1, v0
 
     check-cast v1, Ljava/lang/CharSequence;
@@ -336,7 +336,7 @@
     :cond_70
     if-nez v1, :cond_95
 
-    .line 472
+    .line 491
     iget-object v1, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$2;->$value:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iget-object v1, v1, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
@@ -377,7 +377,7 @@
 
     goto :goto_d4
 
-    .line 473
+    .line 492
     :cond_95
     iget-object v1, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$2;->$policy:Lkotlin/jvm/internal/Ref$ObjectRef;
 
@@ -425,7 +425,7 @@
 
     goto :goto_d4
 
-    .line 474
+    .line 493
     :cond_bc
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$2;->$d:Lcom/box/app/cfg/Dlg;
 

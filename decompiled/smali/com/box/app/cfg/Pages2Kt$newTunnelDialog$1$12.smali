@@ -106,7 +106,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 641
+    .line 660
     invoke-virtual {p0}, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1$12;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -117,7 +117,7 @@
 .method public final invoke()V
     .registers 10
 
-    .line 642
+    .line 661
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1$12;->$this_newTunnelDialog:Lcom/box/app/cfg/FormUi;
 
     invoke-virtual {v0}, Lcom/box/app/cfg/FormUi;->getC()Landroid/app/Activity;

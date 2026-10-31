@@ -76,7 +76,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 551
+    .line 570
     invoke-virtual {p0}, Lcom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$1$2;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -87,7 +87,7 @@
 .method public final invoke()V
     .registers 5
 
-    .line 551
+    .line 570
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$1$2;->$this_ruleProviderDetailPage:Lcom/box/app/cfg/FormUi;
 
     iget-object v1, p0, Lcom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$1$2;->$d:Ltop/yukonga/mishka/custom/forms/YamlDoc;

@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$3\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,695:1\n1#2:696\n*E\n"
+    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$3\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,714:1\n1#2:715\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -52,7 +52,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$3\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,695:1\n1#2:696\n*E\n"
+        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$3\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,714:1\n1#2:715\n*E\n"
     }
 .end annotation
 
@@ -126,14 +126,14 @@
 
     move-object/from16 v0, p0
 
-    .line 554
+    .line 573
     invoke-virtual/range {p1 .. p1}, Ltop/yukonga/mishka/custom/forms/FormCustomRow;->getKind()Ljava/lang/String;
 
     move-result-object v1
 
     const-string v2, "rule-provider-payload"
 
-    .line 555
+    .line 574
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -158,7 +158,7 @@
 
     move-result-object v1
 
-    .line 556
+    .line 575
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -191,7 +191,7 @@
 
     move-result-object v2
 
-    .line 555
+    .line 574
     move-object v3, v1
 
     check-cast v3, Landroid/content/Context;
@@ -202,7 +202,7 @@
 
     check-cast v4, Ljava/lang/CharSequence;
 
-    .line 556
+    .line 575
     move-object v5, v2
 
     check-cast v5, Ljava/lang/CharSequence;
@@ -211,7 +211,7 @@
 
     const/4 v7, 0x0
 
-    .line 555
+    .line 574
     new-instance v1, Lcom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$3$1;
 
     iget-object v2, v0, Lcom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$3;->$d:Ltop/yukonga/mishka/custom/forms/YamlDoc;
@@ -253,7 +253,7 @@
 
     goto/16 :goto_e9
 
-    .line 557
+    .line 576
     :cond_71
     new-instance v1, Landroid/view/View;
 
@@ -274,7 +274,7 @@
     :cond_82
     const-string v2, "rule-provider-file-ops"
 
-    .line 558
+    .line 577
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
@@ -339,7 +339,7 @@
 
     goto :goto_6e
 
-    .line 560
+    .line 579
     :cond_c8
     new-instance v1, Landroid/view/View;
 
@@ -357,7 +357,7 @@
 
     goto :goto_e9
 
-    .line 561
+    .line 580
     :cond_d9
     new-instance v1, Landroid/view/View;
 
@@ -380,7 +380,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 550
+    .line 569
     check-cast p1, Ltop/yukonga/mishka/custom/forms/FormCustomRow;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$3;->invoke(Ltop/yukonga/mishka/custom/forms/FormCustomRow;)Landroid/view/View;

@@ -31,7 +31,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$mapListFieldDialog$6$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,640:1\n1747#2,3:641\n1#3:644\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$mapListFieldDialog$6$1\n*L\n304#1:641,3\n*E\n"
+    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$mapListFieldDialog$6$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,642:1\n1747#2,3:643\n1#3:646\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$mapListFieldDialog$6$1\n*L\n306#1:643,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -58,7 +58,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$mapListFieldDialog$6$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,640:1\n1747#2,3:641\n1#3:644\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$mapListFieldDialog$6$1\n*L\n304#1:641,3\n*E\n"
+        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$mapListFieldDialog$6$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,642:1\n1747#2,3:643\n1#3:646\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$mapListFieldDialog$6$1\n*L\n306#1:643,3\n*E\n"
     }
 .end annotation
 
@@ -122,7 +122,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    .line 303
+    .line 305
     check-cast p1, Ljava/lang/String;
 
     check-cast p2, Ljava/util/List;
@@ -147,7 +147,7 @@
         }
     .end annotation
 
-    .line 304
+    .line 306
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$mapListFieldDialog$6$1;->$rows:Ljava/util/ArrayList;
 
     check-cast v0, Ljava/util/Collection;
@@ -162,7 +162,7 @@
 
     iget-object v2, p0, Lcom/box/app/cfg/FormDialogsKt$mapListFieldDialog$6$1;->$rows:Ljava/util/ArrayList;
 
-    .line 641
+    .line 643
     instance-of v3, v0, Ljava/util/Collection;
 
     const/4 v4, 0x1
@@ -186,7 +186,7 @@
 
     goto :goto_48
 
-    .line 642
+    .line 644
     :cond_1f
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -209,7 +209,7 @@
 
     if-eq v3, v1, :cond_44
 
-    .line 304
+    .line 306
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -269,7 +269,7 @@
 
     goto :goto_a2
 
-    .line 305
+    .line 307
     :cond_68
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$mapListFieldDialog$6$1;->$rows:Ljava/util/ArrayList;
 
