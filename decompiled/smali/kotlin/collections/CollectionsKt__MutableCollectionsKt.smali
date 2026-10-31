@@ -149,6 +149,52 @@
     return v0
 .end method
 
+.method public static final convertToListIfNotCollection(Ljava/lang/Iterable;)Ljava/util/Collection;
+    .registers 2
+    .param p0    # Ljava/lang/Iterable;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Iterable<",
+            "+TT;>;)",
+            "Ljava/util/Collection<",
+            "TT;>;"
+        }
+    .end annotation
+
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 147
+    instance-of v0, p0, Ljava/util/Collection;
+
+    if-eqz v0, :cond_c
+
+    :goto_9
+    check-cast p0, Ljava/util/Collection;
+
+    goto :goto_11
+
+    :cond_c
+    invoke-static {p0}, Lkotlin/collections/CollectionsKt;->toList(Ljava/lang/Iterable;)Ljava/util/List;
+
+    move-result-object p0
+
+    goto :goto_9
+
+    :goto_11
+    return-object p0
+.end method
+
 .method private static final filterInPlace$CollectionsKt__MutableCollectionsKt(Ljava/lang/Iterable;Lkotlin/jvm/functions/Function1;Z)Z
     .registers 5
     .annotation system Ldalvik/annotation/Signature;
@@ -245,6 +291,48 @@
 
     .line 218
     invoke-static {p0, p1, v0}, Lkotlin/collections/CollectionsKt__MutableCollectionsKt;->filterInPlace$CollectionsKt__MutableCollectionsKt(Ljava/lang/Iterable;Lkotlin/jvm/functions/Function1;Z)Z
+
+    move-result p0
+
+    return p0
+.end method
+
+.method public static final retainAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
+    .registers 3
+    .param p0    # Ljava/util/Collection;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/Iterable;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Collection<",
+            "-TT;>;",
+            "Ljava/lang/Iterable<",
+            "+TT;>;)Z"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "elements"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 175
+    invoke-static {p1}, Lkotlin/collections/CollectionsKt;->convertToListIfNotCollection(Ljava/lang/Iterable;)Ljava/util/Collection;
+
+    move-result-object p1
+
+    invoke-interface {p0, p1}, Ljava/util/Collection;->retainAll(Ljava/util/Collection;)Z
 
     move-result p0
 

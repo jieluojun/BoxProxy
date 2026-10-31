@@ -25,15 +25,21 @@ object CfgLauncher {
         try {
             val path = CfgGlue.getPath(token)
             val p = (path ?: "").lowercase()
-            if (!(p.endsWith(".yaml") || p.endsWith(".yml"))) {
-                toast(ctx, "可视化修改 / 锚点面板只支持 YAML 配置（.yaml / .yml）", true)
+            val yaml = p.endsWith(".yaml") || p.endsWith(".yml")
+            val json = p.endsWith(".json") || p.endsWith(".jsonc")
+            if (kind == 0 && !yaml) {
+                toast(ctx, "锚点面板只支持 mihomo 的 YAML 配置（.yaml / .yml）", true)
+                return
+            }
+            if (kind != 0 && !yaml && !json) {
+                toast(ctx, "可视化修改只支持 YAML（mihomo）和 JSON（sing-box）配置", true)
                 return
             }
             CfgSession.token = token
             CfgSession.text = CfgGlue.getText(token) ?: ""
             CfgSession.path = path
             val i = Intent()
-            i.setClassName(ctx.packageName, if (kind == 0) "com.box.app.cfg.AnchorActivity" else "com.box.app.cfg.FormActivity")
+            i.setClassName(ctx.packageName, if (kind == 0) "com.box.app.cfg.AnchorActivity" else if (json) "com.box.app.cfg.SbFormActivity" else "com.box.app.cfg.FormActivity")
             if (unwrap(ctx) !is Activity) i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             ctx.startActivity(i)
         } catch (t: Throwable) {
@@ -154,6 +160,21 @@ class FormActivity : CfgBaseActivity() {
     override fun build(token: Any, text: String, path: String) {
         val f = File(path)
         ui = FormUi(this, sc, text, f.name, f.parent) { t -> CfgGlue.setText(token, t) }.also { it.render(false) }
+    }
+
+    override fun onBackAction() {
+        val u = ui
+        if (u == null || !u.pop()) finish()
+    }
+}
+
+/** sing-box（JSON / JSONC）的可视化修改：按 fork 的 schema 画表单，写回只替换被改的那一段文本。 */
+class SbFormActivity : CfgBaseActivity() {
+    private var ui: SbUi? = null
+
+    override fun build(token: Any, text: String, path: String) {
+        val f = File(path)
+        ui = SbUi(this, sc, text, f.name) { t -> CfgGlue.setText(token, t) }.also { it.render(false) }
     }
 
     override fun onBackAction() {

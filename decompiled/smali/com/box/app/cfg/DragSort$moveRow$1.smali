@@ -75,7 +75,7 @@
 
     iput-object p3, p0, Lcom/box/app/cfg/DragSort$moveRow$1;->$oldTop:[F
 
-    .line 638
+    .line 640
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -84,7 +84,7 @@
 .method public onPreDraw()Z
     .registers 10
 
-    .line 640
+    .line 642
     iget-object v0, p0, Lcom/box/app/cfg/DragSort$moveRow$1;->this$0:Lcom/box/app/cfg/DragSort;
 
     invoke-virtual {v0}, Lcom/box/app/cfg/DragSort;->getBox()Landroid/widget/LinearLayout;
@@ -95,7 +95,7 @@
 
     move-result-object v0
 
-    .line 641
+    .line 643
     invoke-virtual {v0}, Landroid/view/ViewTreeObserver;->isAlive()Z
 
     move-result v1
@@ -108,7 +108,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 642
+    .line 644
     :cond_16
     iget-object v0, p0, Lcom/box/app/cfg/DragSort$moveRow$1;->this$0:Lcom/box/app/cfg/DragSort;
 
@@ -116,7 +116,7 @@
 
     invoke-static {v0, v1}, Lcom/box/app/cfg/DragSort;->access$setPending$p(Lcom/box/app/cfg/DragSort;Z)V
 
-    .line 643
+    .line 645
     iget-object v0, p0, Lcom/box/app/cfg/DragSort$moveRow$1;->$views:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -130,7 +130,7 @@
 
     if-ge v2, v0, :cond_89
 
-    .line 644
+    .line 646
     iget-object v4, p0, Lcom/box/app/cfg/DragSort$moveRow$1;->$views:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -139,7 +139,7 @@
 
     check-cast v4, Landroid/view/View;
 
-    .line 645
+    .line 647
     iget-object v5, p0, Lcom/box/app/cfg/DragSort$moveRow$1;->this$0:Lcom/box/app/cfg/DragSort;
 
     invoke-static {v5}, Lcom/box/app/cfg/DragSort;->access$getDragging$p(Lcom/box/app/cfg/DragSort;)Landroid/view/View;
@@ -162,7 +162,7 @@
 
     goto :goto_86
 
-    .line 646
+    .line 648
     :cond_43
     iget-object v5, p0, Lcom/box/app/cfg/DragSort$moveRow$1;->$oldTop:[F
 
@@ -190,17 +190,17 @@
     :goto_54
     if-nez v3, :cond_86
 
-    .line 648
+    .line 650
     invoke-virtual {v4}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v3
 
     invoke-virtual {v3}, Landroid/view/ViewPropertyAnimator;->cancel()V
 
-    .line 649
+    .line 651
     invoke-virtual {v4, v5}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 650
+    .line 652
     invoke-virtual {v4}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object v3
@@ -215,7 +215,7 @@
 
     move-result-object v3
 
-    .line 651
+    .line 653
     new-instance v4, Landroid/view/animation/PathInterpolator;
 
     const v5, 0x3e4ccccd    # 0.2f

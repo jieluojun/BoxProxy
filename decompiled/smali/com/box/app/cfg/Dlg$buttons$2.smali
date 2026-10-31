@@ -84,7 +84,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 403
+    .line 405
     invoke-virtual {p0}, Lcom/box/app/cfg/Dlg$buttons$2;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -95,7 +95,7 @@
 .method public final invoke()V
     .registers 1
 
-    .line 403
+    .line 405
     iget-object p0, p0, Lcom/box/app/cfg/Dlg$buttons$2;->$onExtra:Lkotlin/jvm/functions/Function0;
 
     if-eqz p0, :cond_7

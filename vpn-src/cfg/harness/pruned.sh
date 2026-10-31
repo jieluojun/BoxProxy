@@ -14,6 +14,6 @@ $J -Xverify:none -cp $W/rl:$T/d8fix.jar Reloc $W/hk.jar $T/k19/package/lib/kotli
 (cd "$ENJARIFY" && python3 -O -m enjarify.main "$root/decompiled/build/apk/classes.dex" -o $W/app_real.jar -f | tail -1)
 cp "$here/user.yaml" /tmp/fkdata/user.yaml
 CP=$W/android-lite.jar:$W/hk.jar:$W/app_real.jar
-for s in ${@:-1 2 3}; do for k in form anchor; do
-  $J -Dfile.encoding=UTF-8 -Xverify:none -cp $CP MainKt 34 6000 $s $k /tmp/fkdata/user.yaml /tmp/fkdata/full.yaml 2>&1 | grep -v "OpenJDK\|distinct toasts" | cut -c1-260 | head -20
+for s in ${@:-1 2 3}; do for k in form anchor sb; do
+  $J -Dfile.encoding=UTF-8 -Xverify:none -cp $CP MainKt 34 6000 $s $k $([ $k = sb ] && echo /tmp/fkdata/sb.json || echo "/tmp/fkdata/user.yaml /tmp/fkdata/full.yaml") 2>&1 | grep -v "OpenJDK\|distinct toasts" | cut -c1-260 | head -20
 done; done

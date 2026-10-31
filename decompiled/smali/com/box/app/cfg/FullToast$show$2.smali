@@ -50,7 +50,7 @@
 
     iput-object p1, p0, Lcom/box/app/cfg/FullToast$show$2;->$d:Landroid/app/Dialog;
 
-    .line 124
+    .line 126
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -59,7 +59,7 @@
 .method public run()V
     .registers 2
 
-    .line 124
+    .line 126
     invoke-static {}, Lcom/box/app/cfg/FullToast;->access$getCur$p()Landroid/app/Dialog;
 
     move-result-object v0

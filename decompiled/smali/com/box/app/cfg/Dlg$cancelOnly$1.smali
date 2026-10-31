@@ -68,7 +68,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 394
+    .line 396
     invoke-virtual {p0}, Lcom/box/app/cfg/Dlg$cancelOnly$1;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -79,7 +79,7 @@
 .method public final invoke()V
     .registers 1
 
-    .line 394
+    .line 396
     iget-object p0, p0, Lcom/box/app/cfg/Dlg$cancelOnly$1;->this$0:Lcom/box/app/cfg/Dlg;
 
     invoke-virtual {p0}, Lcom/box/app/cfg/Dlg;->dismiss()V

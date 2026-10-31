@@ -8,7 +8,7 @@ object EditorGlue {
 
     /**
      * 这份配置是不是 mihomo 的：看配置文件所在的「工作目录名」——从文件往上找第一个叫核心名的目录，
-     * 是 mihomo 且文件是 .yaml/.yml 才算（sing-box / xray / v2fly / hysteria 以及认不出的目录都不是）。以后加 sing-box 的可视化就在这里放开。
+     * 是 mihomo 且文件是 .yaml/.yml 才算（sing-box / xray / v2fly / hysteria 以及认不出的目录都不是）。sing-box 的可视化见 [isSingBox]。
      */
     @JvmStatic
     fun isMihomo(path: String?): Boolean {
@@ -20,6 +20,25 @@ object EditorGlue {
         while (i >= 0) {
             val n = parts[i].lowercase()
             for (k in CORE_DIRS) if (n == k) return k == "mihomo"
+            i--
+        }
+        return false
+    }
+
+    /**
+     * 这份配置是不是 sing-box 的：.json / .jsonc，且从文件往上第一个叫核心名的目录是 sing-box / singbox。
+     * 只给「可视化修改」入口用（锚点面板是 mihomo 专属，sing-box 不显示）。
+     */
+    @JvmStatic
+    fun isSingBox(path: String?): Boolean {
+        if (path == null) return false
+        val low = path.lowercase()
+        if (!(low.endsWith(".json") || low.endsWith(".jsonc"))) return false
+        val parts = path.replace('\\', '/').split('/')
+        var i = parts.size - 2
+        while (i >= 0) {
+            val n = parts[i].lowercase()
+            for (k in CORE_DIRS) if (n == k) return k == "sing-box" || k == "singbox"
             i--
         }
         return false

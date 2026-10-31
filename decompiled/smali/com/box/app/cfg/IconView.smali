@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/IconView\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,709:1\n1#2:710\n*E\n"
+    value = "SMAP\nUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/IconView\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,711:1\n1#2:712\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -51,7 +51,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/IconView\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,709:1\n1#2:710\n*E\n"
+        "SMAP\nUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/IconView\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,711:1\n1#2:712\n*E\n"
     }
 .end annotation
 
@@ -89,7 +89,7 @@
         .end annotation
     .end param
 
-    .line 132
+    .line 134
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     iput-object p2, p0, Lcom/box/app/cfg/IconView;->kind:Lcom/box/app/cfg/Ic;
@@ -98,7 +98,7 @@
 
     iput p4, p0, Lcom/box/app/cfg/IconView;->sizeDp:I
 
-    .line 133
+    .line 135
     new-instance p2, Landroid/graphics/Paint;
 
     const/4 p3, 0x1
@@ -119,7 +119,7 @@
 
     iput-object p2, p0, Lcom/box/app/cfg/IconView;->p:Landroid/graphics/Paint;
 
-    .line 134
+    .line 136
     iget p2, p0, Lcom/box/app/cfg/IconView;->sizeDp:I
 
     invoke-static {p1, p2}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
@@ -146,7 +146,7 @@
 
     if-eqz p6, :cond_a
 
-    .line 132
+    .line 134
     sget-object p3, Lcom/box/app/cfg/Th;->INSTANCE:Lcom/box/app/cfg/Th;
 
     invoke-virtual {p3}, Lcom/box/app/cfg/Th;->getSub()I
@@ -177,7 +177,7 @@
 
     move-object/from16 v7, p1
 
-    .line 140
+    .line 142
     invoke-virtual/range {p0 .. p0}, Lcom/box/app/cfg/IconView;->getWidth()I
 
     move-result v1
@@ -188,7 +188,7 @@
 
     div-float v8, v1, v2
 
-    .line 142
+    .line 144
     iget-object v1, v0, Lcom/box/app/cfg/IconView;->p:Landroid/graphics/Paint;
 
     iget v2, v0, Lcom/box/app/cfg/IconView;->tint:I
@@ -209,12 +209,12 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 143
+    .line 145
     new-instance v9, Landroid/graphics/Path;
 
     invoke-direct {v9}, Landroid/graphics/Path;-><init>()V
 
-    .line 144
+    .line 146
     iget-object v1, v0, Lcom/box/app/cfg/IconView;->kind:Lcom/box/app/cfg/Ic;
 
     sget-object v2, Lcom/box/app/cfg/IconView$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -268,7 +268,7 @@
 
     mul-float/2addr v1, v8
 
-    .line 169
+    .line 171
     iget-object v2, v0, Lcom/box/app/cfg/IconView;->p:Landroid/graphics/Paint;
 
     invoke-virtual {v7, v4, v4, v1, v2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
@@ -296,7 +296,7 @@
 
     mul-float v1, v8, v18
 
-    .line 164
+    .line 166
     invoke-virtual {v9, v15, v1}, Landroid/graphics/Path;->moveTo(FF)V
 
     const/high16 v1, 0x40900000    # 4.5f
@@ -311,12 +311,12 @@
 
     invoke-virtual {v9, v15, v1}, Landroid/graphics/Path;->lineTo(FF)V
 
-    .line 165
+    .line 167
     iget-object v1, v0, Lcom/box/app/cfg/IconView;->p:Landroid/graphics/Paint;
 
     invoke-virtual {v7, v9, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 166
+    .line 168
     new-instance v1, Landroid/graphics/Path;
 
     invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
@@ -347,14 +347,14 @@
 
     invoke-virtual/range {v18 .. v24}, Landroid/graphics/Path;->cubicTo(FFFFFF)V
 
-    .line 167
+    .line 169
     iget-object v0, v0, Lcom/box/app/cfg/IconView;->p:Landroid/graphics/Paint;
 
     invoke-virtual {v7, v1, v0}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
     goto/16 :goto_1e5
 
-    .line 162
+    .line 164
     :pswitch_ae
     iget-object v1, v0, Lcom/box/app/cfg/IconView;->p:Landroid/graphics/Paint;
 
@@ -405,7 +405,7 @@
 
     mul-float v4, v8, v14
 
-    .line 161
+    .line 163
     iget-object v6, v0, Lcom/box/app/cfg/IconView;->p:Landroid/graphics/Paint;
 
     move-object v1, v7
@@ -423,7 +423,7 @@
 
     mul-float/2addr v15, v8
 
-    .line 160
+    .line 162
     invoke-virtual {v9, v1, v15}, Landroid/graphics/Path;->moveTo(FF)V
 
     mul-float/2addr v5, v8
@@ -447,7 +447,7 @@
 
     mul-float v2, v8, v17
 
-    .line 159
+    .line 161
     invoke-virtual {v9, v1, v2}, Landroid/graphics/Path;->moveTo(FF)V
 
     mul-float/2addr v5, v8
@@ -473,7 +473,7 @@
 
     mul-float/2addr v1, v8
 
-    .line 158
+    .line 160
     invoke-virtual {v9, v6, v1}, Landroid/graphics/Path;->moveTo(FF)V
 
     const/high16 v1, 0x41200000    # 10.0f
@@ -505,7 +505,7 @@
 
     mul-float v8, v8, v16
 
-    .line 157
+    .line 159
     iget-object v6, v0, Lcom/box/app/cfg/IconView;->p:Landroid/graphics/Paint;
 
     move-object v1, v7
@@ -537,7 +537,7 @@
 
     mul-float v1, v8, v16
 
-    .line 154
+    .line 156
     invoke-virtual {v9, v6, v1}, Landroid/graphics/Path;->moveTo(FF)V
 
     const v1, 0x40b33333    # 5.6f
@@ -562,7 +562,7 @@
 
     invoke-virtual {v9}, Landroid/graphics/Path;->close()V
 
-    .line 155
+    .line 157
     iget-object v0, v0, Lcom/box/app/cfg/IconView;->p:Landroid/graphics/Paint;
 
     invoke-virtual {v7, v9, v0}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
@@ -578,7 +578,7 @@
 
     mul-float v14, v8, v16
 
-    .line 149
+    .line 151
     iget-object v6, v0, Lcom/box/app/cfg/IconView;->p:Landroid/graphics/Paint;
 
     move-object v1, v7
@@ -593,7 +593,7 @@
 
     mul-float/2addr v13, v8
 
-    .line 150
+    .line 152
     invoke-virtual {v9, v13, v11}, Landroid/graphics/Path;->moveTo(FF)V
 
     mul-float/2addr v15, v8
@@ -622,7 +622,7 @@
 
     mul-float v3, v8, v12
 
-    .line 151
+    .line 153
     iget-object v5, v0, Lcom/box/app/cfg/IconView;->p:Landroid/graphics/Paint;
 
     move-object v0, v7
@@ -638,7 +638,7 @@
 
     mul-float/2addr v8, v14
 
-    .line 147
+    .line 149
     iget-object v6, v0, Lcom/box/app/cfg/IconView;->p:Landroid/graphics/Paint;
 
     move-object v1, v7
@@ -668,7 +668,7 @@
 
     mul-float v1, v8, v18
 
-    .line 146
+    .line 148
     invoke-virtual {v9, v15, v1}, Landroid/graphics/Path;->moveTo(FF)V
 
     mul-float v1, v8, v17
@@ -692,7 +692,7 @@
 
     mul-float/2addr v6, v8
 
-    .line 145
+    .line 147
     invoke-virtual {v9, v1, v6}, Landroid/graphics/Path;->moveTo(FF)V
 
     mul-float/2addr v13, v8
@@ -734,7 +734,7 @@
 .method protected onMeasure(II)V
     .registers 3
 
-    .line 136
+    .line 138
     invoke-virtual {p0}, Lcom/box/app/cfg/IconView;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -745,7 +745,7 @@
 
     move-result p1
 
-    .line 137
+    .line 139
     invoke-virtual {p0, p1, p1}, Lcom/box/app/cfg/IconView;->setMeasuredDimension(II)V
 
     return-void

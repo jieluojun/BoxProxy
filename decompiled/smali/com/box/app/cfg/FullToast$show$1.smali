@@ -71,7 +71,7 @@
 .method public final onClick(Landroid/view/View;)V
     .registers 2
 
-    .line 120
+    .line 122
     sget-object p0, Lcom/box/app/cfg/FullToast;->INSTANCE:Lcom/box/app/cfg/FullToast;
 
     invoke-virtual {p0}, Lcom/box/app/cfg/FullToast;->dismiss()V

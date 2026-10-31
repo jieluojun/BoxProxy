@@ -125,6 +125,59 @@
     return-void
 .end method
 
+.method public static final varargs arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
+    .registers 4
+    .param p0    # [Ljava/lang/Object;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">([TT;)",
+            "Ljava/util/ArrayList<",
+            "TT;>;"
+        }
+    .end annotation
+
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    const-string v0, "elements"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 125
+    array-length v0, p0
+
+    if-nez v0, :cond_e
+
+    new-instance p0, Ljava/util/ArrayList;
+
+    invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
+
+    goto :goto_1c
+
+    :cond_e
+    new-instance v0, Ljava/util/ArrayList;
+
+    new-instance v1, Lkotlin/collections/ArrayAsCollection;
+
+    const/4 v2, 0x1
+
+    invoke-direct {v1, p0, v2}, Lkotlin/collections/ArrayAsCollection;-><init>([Ljava/lang/Object;Z)V
+
+    check-cast v1, Ljava/util/Collection;
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    move-object p0, v0
+
+    :goto_1c
+    return-object p0
+.end method
+
 .method public static final asCollection([Ljava/lang/Object;)Ljava/util/Collection;
     .registers 3
     .param p0    # [Ljava/lang/Object;

@@ -38,3 +38,8 @@
 * D8（JVM 版）：沙箱里没有现成的，办法是 npm `d8-termux` 的 `d8.jar`（其实是 dex 版 D8）→ `google/enjarify`
   翻成 JVM jar → `tools/fix_d8_jar.py` 修 class 版本与 InterfaceMethodref → `java -Xverify:none -cp d8fix.jar com.android.tools.r8.D8 …`。
   能用的 D8 jar（Android SDK build-tools 的 `lib/d8.jar`、r8.jar 等）直接用就行。
+
+**sing-box 可视化修改**：`cfg/app/com/box/app/cfg/Sb{Json,Schema,Dialogs,Ui}.kt` + `SbFormActivity`（`Activities.kt`，`AndroidManifest.xml` 里注册）。
+入口由 `CfgNav` 在 `CfgGlue.isSingBox` → `EditorGlue.isSingBox(path)`（`.json`/`.jsonc` + 目录 `sing-box`）为真时只挂「可视」图标；`CfgLauncher` 按扩展名分流到 `SbFormActivity`。
+schema 由 `tools/gen_sb_schema.py` 从 fork 的 `docs/schema.json` + `option/*.go` + 中文文档生成到 `decompiled/assets/schema/sing-box-fork{,-hints}.json`。
+harness：`build.sh` 里的 `SbTest` / `sbflow` / `sb` 随机点击；`pruned.sh` 也跑 `sb`。

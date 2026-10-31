@@ -51,7 +51,7 @@
 
     iput-object p1, p0, Lcom/box/app/cfg/UiKt$card$1;->$c:Landroid/content/Context;
 
-    .line 313
+    .line 315
     invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
     return-void
@@ -60,7 +60,7 @@
 .method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .registers 9
 
-    .line 314
+    .line 316
     invoke-virtual {p1}, Landroid/view/View;->getWidth()I
 
     move-result v3

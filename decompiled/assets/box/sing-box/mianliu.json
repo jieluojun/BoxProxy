@@ -30,6 +30,9 @@
         "enabled": true,
         "interval": "1m0s",
         "timeout": "5s"
+      },
+      "override_transport": {
+        "host": "m.youku.com"
       }
     },
     {
@@ -42,6 +45,9 @@
         "enabled": true,
         "interval": "1m0s",
         "timeout": "5s"
+      },
+      "override_transport": {
+        "host": "m.youku.com"
       }
     },
     {
@@ -68,6 +74,9 @@
         "enabled": true,
         "interval": "1m0s",
         "timeout": "5s"
+      },
+      "override_transport": {
+        "path": "@gw.alicdn.com"
       }
     }
   ],

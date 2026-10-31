@@ -65,7 +65,7 @@
 .end method
 
 .method public static final open(ILjava/lang/Object;Landroid/content/Context;)V
-    .registers 10
+    .registers 11
     .param p1    # Ljava/lang/Object;
         .annotation build Lorg/jetbrains/annotations/Nullable;
         .end annotation
@@ -119,71 +119,129 @@
 
     move-result v3
 
-    if-nez v3, :cond_2f
+    if-nez v3, :cond_2c
 
     const-string v3, ".yml"
 
     invoke-static {v2, v3, v6, v5, v4}, Lkotlin/text/StringsKt;->endsWith$default(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)Z
 
-    move-result v2
+    move-result v3
 
-    if-nez v2, :cond_2f
+    if-eqz v3, :cond_2a
 
-    const-string p0, "\u53ef\u89c6\u5316\u4fee\u6539 / \u951a\u70b9\u9762\u677f\u53ea\u652f\u6301 YAML \u914d\u7f6e\uff08.yaml / .yml\uff09"
+    goto :goto_2c
+
+    :cond_2a
+    move v3, v6
+
+    goto :goto_2d
+
+    :cond_2c
+    :goto_2c
+    move v3, v0
+
+    :goto_2d
+    const-string v7, ".json"
 
     .line 29
+    invoke-static {v2, v7, v6, v5, v4}, Lkotlin/text/StringsKt;->endsWith$default(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)Z
+
+    move-result v7
+
+    if-nez v7, :cond_3d
+
+    const-string v7, ".jsonc"
+
+    invoke-static {v2, v7, v6, v5, v4}, Lkotlin/text/StringsKt;->endsWith$default(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_3e
+
+    :cond_3d
+    move v6, v0
+
+    :cond_3e
+    if-nez p0, :cond_48
+
+    if-nez v3, :cond_48
+
+    const-string p0, "\u951a\u70b9\u9762\u677f\u53ea\u652f\u6301 mihomo \u7684 YAML \u914d\u7f6e\uff08.yaml / .yml\uff09"
+
+    .line 31
     invoke-static {p2, p0, v0}, Lcom/box/app/cfg/UiKt;->toast(Landroid/content/Context;Ljava/lang/String;Z)V
 
     return-void
 
-    .line 32
-    :cond_2f
+    :cond_48
+    if-eqz p0, :cond_54
+
+    if-nez v3, :cond_54
+
+    if-nez v6, :cond_54
+
+    const-string p0, "\u53ef\u89c6\u5316\u4fee\u6539\u53ea\u652f\u6301 YAML\uff08mihomo\uff09\u548c JSON\uff08sing-box\uff09\u914d\u7f6e"
+
+    .line 35
+    invoke-static {p2, p0, v0}, Lcom/box/app/cfg/UiKt;->toast(Landroid/content/Context;Ljava/lang/String;Z)V
+
+    return-void
+
+    .line 38
+    :cond_54
     sget-object v2, Lcom/box/app/cfg/CfgSession;->INSTANCE:Lcom/box/app/cfg/CfgSession;
 
     sput-object p1, Lcom/box/app/cfg/CfgSession;->token:Ljava/lang/Object;
 
-    .line 33
+    .line 39
     sget-object v2, Lcom/box/app/cfg/CfgSession;->INSTANCE:Lcom/box/app/cfg/CfgSession;
 
     invoke-static {p1}, Lcom/box/app/cfg/CfgGlue;->getText(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
-    if-nez p1, :cond_3d
+    if-nez p1, :cond_62
 
     const-string p1, ""
 
-    :cond_3d
+    :cond_62
     sput-object p1, Lcom/box/app/cfg/CfgSession;->text:Ljava/lang/String;
 
-    .line 34
+    .line 40
     sget-object p1, Lcom/box/app/cfg/CfgSession;->INSTANCE:Lcom/box/app/cfg/CfgSession;
 
     sput-object v1, Lcom/box/app/cfg/CfgSession;->path:Ljava/lang/String;
 
-    .line 35
+    .line 41
     new-instance p1, Landroid/content/Intent;
 
     invoke-direct {p1}, Landroid/content/Intent;-><init>()V
 
-    .line 36
+    .line 42
     invoke-virtual {p2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v1
 
-    if-nez p0, :cond_51
+    if-nez p0, :cond_76
 
     const-string p0, "com.box.app.cfg.AnchorActivity"
 
-    goto :goto_53
+    goto :goto_7d
 
-    :cond_51
+    :cond_76
+    if-eqz v6, :cond_7b
+
+    const-string p0, "com.box.app.cfg.SbFormActivity"
+
+    goto :goto_7d
+
+    :cond_7b
     const-string p0, "com.box.app.cfg.FormActivity"
 
-    :goto_53
+    :goto_7d
     invoke-virtual {p1, v1, p0}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 37
+    .line 43
     sget-object p0, Lcom/box/app/cfg/CfgLauncher;->INSTANCE:Lcom/box/app/cfg/CfgLauncher;
 
     invoke-direct {p0, p2}, Lcom/box/app/cfg/CfgLauncher;->unwrap(Landroid/content/Context;)Landroid/content/Context;
@@ -192,24 +250,24 @@
 
     instance-of p0, p0, Landroid/app/Activity;
 
-    if-nez p0, :cond_65
+    if-nez p0, :cond_8f
 
     const/high16 p0, 0x10000000
 
     invoke-virtual {p1, p0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 38
-    :cond_65
+    .line 44
+    :cond_8f
     invoke-virtual {p2, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-    :try_end_68
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_68} :catch_69
+    :try_end_92
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_92} :catch_93
 
-    goto :goto_7e
+    goto :goto_a8
 
-    :catch_69
+    :catch_93
     move-exception p0
 
-    .line 40
+    .line 46
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -226,7 +284,7 @@
 
     invoke-static {p2, p0, v0}, Lcom/box/app/cfg/UiKt;->toast(Landroid/content/Context;Ljava/lang/String;Z)V
 
-    :goto_7e
+    :goto_a8
     return-void
 .end method
 
@@ -235,7 +293,7 @@
 
     const/4 p0, 0x0
 
-    .line 47
+    .line 53
     :goto_1
     instance-of v0, p1, Landroid/content/ContextWrapper;
 

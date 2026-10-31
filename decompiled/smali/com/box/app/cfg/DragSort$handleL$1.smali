@@ -85,7 +85,7 @@
 .method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .registers 8
 
-    .line 564
+    .line 566
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
 
     move-result v0
@@ -98,7 +98,7 @@
 
     goto/16 :goto_d6
 
-    .line 578
+    .line 580
     :pswitch_b
     iget-object p1, p0, Lcom/box/app/cfg/DragSort$handleL$1;->this$0:Lcom/box/app/cfg/DragSort;
 
@@ -122,7 +122,7 @@
 
     goto/16 :goto_d6
 
-    .line 582
+    .line 584
     :pswitch_23
     iget-object p1, p0, Lcom/box/app/cfg/DragSort$handleL$1;->this$0:Lcom/box/app/cfg/DragSort;
 
@@ -130,7 +130,7 @@
 
     move-result-object p1
 
-    .line 583
+    .line 585
     iget-object p2, p0, Lcom/box/app/cfg/DragSort$handleL$1;->this$0:Lcom/box/app/cfg/DragSort;
 
     const/4 v0, 0x0
@@ -143,12 +143,12 @@
 
     if-eqz p1, :cond_d6
 
-    .line 585
+    .line 587
     iget-object p2, p0, Lcom/box/app/cfg/DragSort$handleL$1;->this$0:Lcom/box/app/cfg/DragSort;
 
     invoke-static {p2, p1, v1}, Lcom/box/app/cfg/DragSort;->access$chrome(Lcom/box/app/cfg/DragSort;Landroid/view/View;Z)V
 
-    .line 586
+    .line 588
     iget-object p2, p0, Lcom/box/app/cfg/DragSort$handleL$1;->this$0:Lcom/box/app/cfg/DragSort;
 
     invoke-virtual {p2}, Lcom/box/app/cfg/DragSort;->getBox()Landroid/widget/LinearLayout;
@@ -161,7 +161,7 @@
 
     if-ltz p1, :cond_d6
 
-    .line 587
+    .line 589
     iget-object p2, p0, Lcom/box/app/cfg/DragSort$handleL$1;->this$0:Lcom/box/app/cfg/DragSort;
 
     invoke-static {p2}, Lcom/box/app/cfg/DragSort;->access$getStartIdx$p(Lcom/box/app/cfg/DragSort;)I
@@ -202,7 +202,7 @@
 
     goto :goto_d6
 
-    .line 566
+    .line 568
     :pswitch_6f
     iget-object v0, p0, Lcom/box/app/cfg/DragSort$handleL$1;->$rv:Lkotlin/jvm/functions/Function0;
 
@@ -212,7 +212,7 @@
 
     check-cast v0, Landroid/view/View;
 
-    .line 567
+    .line 569
     iget-object v3, p0, Lcom/box/app/cfg/DragSort$handleL$1;->this$0:Lcom/box/app/cfg/DragSort;
 
     invoke-virtual {v3}, Lcom/box/app/cfg/DragSort;->getBox()Landroid/widget/LinearLayout;
@@ -225,7 +225,7 @@
 
     if-ltz v3, :cond_d6
 
-    .line 569
+    .line 571
     iget-object v4, p0, Lcom/box/app/cfg/DragSort$handleL$1;->this$0:Lcom/box/app/cfg/DragSort;
 
     invoke-static {v4, v0}, Lcom/box/app/cfg/DragSort;->access$setDragging$p(Lcom/box/app/cfg/DragSort;Landroid/view/View;)V
@@ -246,14 +246,14 @@
 
     invoke-static {p2, v1}, Lcom/box/app/cfg/DragSort;->access$setPending$p(Lcom/box/app/cfg/DragSort;Z)V
 
-    .line 570
+    .line 572
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
 
     invoke-interface {p1, v2}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 571
+    .line 573
     iget-object p1, p0, Lcom/box/app/cfg/DragSort$handleL$1;->this$0:Lcom/box/app/cfg/DragSort;
 
     invoke-virtual {p1}, Lcom/box/app/cfg/DragSort;->getSv()Lkotlin/jvm/functions/Function0;
@@ -270,13 +270,13 @@
 
     invoke-virtual {p1, v2}, Landroid/widget/ScrollView;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 572
+    .line 574
     :cond_b3
     iget-object p1, p0, Lcom/box/app/cfg/DragSort$handleL$1;->this$0:Lcom/box/app/cfg/DragSort;
 
     invoke-static {p1, v0, v2}, Lcom/box/app/cfg/DragSort;->access$chrome(Lcom/box/app/cfg/DragSort;Landroid/view/View;Z)V
 
-    .line 573
+    .line 575
     iget-object p1, p0, Lcom/box/app/cfg/DragSort$handleL$1;->this$0:Lcom/box/app/cfg/DragSort;
 
     invoke-static {p1}, Lcom/box/app/cfg/DragSort;->access$getTicking$p(Lcom/box/app/cfg/DragSort;)Z
