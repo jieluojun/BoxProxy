@@ -13,8 +13,10 @@
 
 .field private final c:Ljava/lang/String;
 
+.field private final d:Z
 
-.method private constructor <init>(Lfz5;Lr52;Ljava/lang/String;)V
+
+.method private constructor <init>(Lfz5;Lr52;Ljava/lang/String;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -24,6 +26,8 @@
     iput-object p2, p0, Lcom/box/app/cfg/CfgDefer;->b:Lr52;
 
     iput-object p3, p0, Lcom/box/app/cfg/CfgDefer;->c:Ljava/lang/String;
+
+    iput-boolean p4, p0, Lcom/box/app/cfg/CfgDefer;->d:Z
 
     return-void
 .end method
@@ -39,9 +43,30 @@
     return-void
 
     :cond_delay
+    const/4 v0, 0x0
+
+    invoke-static {p0, p1, p2, v0}, Lcom/box/app/cfg/CfgDefer;->later(Lfz5;Lr52;Ljava/lang/String;Z)V
+
+    return-void
+.end method
+
+# 日志页：进入时的首次刷新 / 自动刷新循环同理，用 Fz5.d（replace=false 的那个入口）
+.method public static postD(Lfz5;Lr52;Ljava/lang/String;)V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    invoke-static {p0, p1, p2, v0}, Lcom/box/app/cfg/CfgDefer;->later(Lfz5;Lr52;Ljava/lang/String;Z)V
+
+    return-void
+.end method
+
+.method private static later(Lfz5;Lr52;Ljava/lang/String;Z)V
+    .locals 4
+
     new-instance v0, Lcom/box/app/cfg/CfgDefer;
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/box/app/cfg/CfgDefer;-><init>(Lfz5;Lr52;Ljava/lang/String;)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lcom/box/app/cfg/CfgDefer;-><init>(Lfz5;Lr52;Ljava/lang/String;Z)V
 
     new-instance v1, Landroid/os/Handler;
 
@@ -68,6 +93,15 @@
 
     iget-object v2, p0, Lcom/box/app/cfg/CfgDefer;->c:Ljava/lang/String;
 
+    iget-boolean p0, p0, Lcom/box/app/cfg/CfgDefer;->d:Z
+
+    if-eqz p0, :cond_e
+
+    invoke-virtual {v0, v1, v2}, Lfz5;->d(Lr52;Ljava/lang/String;)V
+
+    return-void
+
+    :cond_e
     invoke-virtual {v0, v1, v2}, Lfz5;->e(Lr52;Ljava/lang/String;)V
 
     return-void
