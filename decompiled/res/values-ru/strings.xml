@@ -610,7 +610,7 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="proxy_core_hysteria">Hysteria</string>
     <string name="proxy_core_mihomo">Mihomo</string>
     <string name="proxy_core_mihomo_smart">Mihomo Smart</string>
-    <string name="proxy_core_mihomo_dingtalk">Mihomo（钉钉直连）</string>
+    <string name="proxy_core_mihomo_dingtalk">Mihomo Smart + eBPF + 钉钉直连</string>
     <string name="proxy_core_sing_box">Sing-Box</string>
     <string name="proxy_core_sing_box_ref1nd">Sing-Box reF1nd</string>
     <string name="proxy_core_title">Ядро</string>

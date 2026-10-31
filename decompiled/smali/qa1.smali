@@ -3170,7 +3170,7 @@
 
     const-string v2, "mihomo"
 
-    const-string v3, "Mihomo\uff08\u9489\u9489\u76f4\u8fde\uff09"
+    const-string v3, "Mihomo Smart + eBPF + \u9489\u9489\u76f4\u8fde"
 
     invoke-direct/range {v0 .. v7}, Lga1;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lb91;Li81;Ljava/lang/String;)V
 
