@@ -20,10 +20,11 @@ for r,_,fs in os.walk('.'):
 $J -Xverify:none -cp $W/lite:$T/d8fix.jar Lite $AJ $W/fakes.jar $W/android-lite.jar 2>/dev/null
 kc -cp $STD:$AJ -d $W/app $cfg/mishka $cfg/mishka-logic $cfg/stubs $cfg/app 2>&1 | grep -i "error" || true
 ecj -1.8 -cp $W/android-lite.jar -d $W/hc $here/CfgGlue.java
-kc -Xfriend-paths=$W/app -cp $STD:$W/android-lite.jar:$W/app:$W/hc -d $W/hc $here/Main.kt $here/DragTest.kt 2>&1 | grep -i "error" || true
+kc -Xfriend-paths=$W/app -cp $STD:$W/android-lite.jar:$W/app:$W/hc -d $W/hc $here/Main.kt $here/DragTest.kt $here/EditTest.kt 2>&1 | grep -i "error" || true
 CP=$W/hc:$W/app:$W/android-lite.jar:$STD
 mkdir -p /tmp/fkdata; cp $here/full.yaml /tmp/fkdata/full.yaml; : > /tmp/fkdata/a.txt
 echo "== 拖动排序"; $J -Xverify:none -cp $CP DragTestKt 2>&1 | grep -v OpenJDK
+echo "== 编辑器差量替换 / mihomo 判断"; $J -Dfile.encoding=UTF-8 -Xverify:none -cp $CP EditTestKt 2>&1 | grep -v OpenJDK
 STEPS=${1:-4000}; shift || true
 for k in form anchor; do for s in ${@:-1 2 3}; do for sdk in 29 34; do
   $J -Dfile.encoding=UTF-8 -Xverify:none -cp $CP MainKt $sdk $STEPS $s $k /tmp/fkdata/full.yaml 2>&1 | grep -v "OpenJDK\|distinct toasts" | cut -c1-240 | head -30

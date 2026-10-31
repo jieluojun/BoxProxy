@@ -82,3 +82,12 @@ CI 只能证明 smali 能汇编，证明不了面板能打开。`vpn-src/cfg/har
 改成 `CfgGlue.replaceKeep`：在原内容上做一次 `replace(0,0 → 末行末列, 新文本)`，和打字一样记入撤销栈（一次替换 = 一步撤销，
 且面板里的多次改动各是一步）。出任何异常就退回原来的 `setText`。「还原」「重新载入」同样变成可撤销。
 已用真实的 `Content`（r61）在 JVM 上验证：空/多行/CRLF/中文文本替换结果正确，撤销栈 +1。**界面上的撤销按钮未在真机验证。**
+
+## 只在 mihomo 的配置里显示 & 回到编辑器后的光标位置
+
+- 顶栏的「可视化修改 / 锚点面板」两个图标只在**mihomo 的配置**里出现：`EditorGlue.isMihomo(path)` 从配置文件往上找第一个叫核心名
+  （mihomo / sing-box / xray / v2fly / hysteria）的工作目录，是 `mihomo` 才显示；其它核心和认不出的目录都不显示。
+  以后加 sing-box 的可视化修改，在 `EditorGlue` 里放开对应判断、`CfgNav` 里按核心挂不同入口即可。
+- 面板改完写回编辑器时，`CfgGlue.replaceKeep` 现在只替换**真正变了的那一段**（`EditorGlue.plan` 算公共前后缀，不拆 `\r\n`），
+  然后把光标 / 滚动定位到改动所在的行（多行插入定位到新内容的第一行），不再被整篇替换带到文末。一次替换仍是撤销栈里的一步。
+  逻辑由 `harness/EditTest.kt` 覆盖（随机往返 3000 例 + 行号 + CRLF + 目录判断）。

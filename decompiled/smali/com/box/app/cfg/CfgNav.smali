@@ -153,6 +153,12 @@
 
     iget-object v7, v0, Lcom/box/app/cfg/CfgNav;->b:Ljava/lang/Object;
 
+    invoke-static {v7}, Lcom/box/app/cfg/CfgGlue;->isMihomo(Ljava/lang/Object;)Z
+
+    move-result v3
+
+    if-eqz v3, :goto_done
+
     iget-object v8, v0, Lcom/box/app/cfg/CfgNav;->c:Landroid/content/Context;
 
     const/4 v9, 0x1

@@ -40,11 +40,11 @@
     return-void
 .end method
 
-# 编辑器内容被程序整篇替换（可视化修改 / 还原 / 重新载入 → mj5.m 把版本号 +1）时，原来走 CodeEditor.setText，会把撤销栈清空，
-# 右下角的「回退」就回不去了。这里改成在原内容上做一次 replace(0,0 → 末行末列, 新文本)：和打字一样记入撤销栈（一步撤销整次替换）。
-# 任何异常都退回 setText，行为和以前一样。
+# 编辑器内容被程序整篇替换（可视化修改 / 还原 / 重新载入 → mj5.m 把版本号 +1）时，原来走 CodeEditor.setText：撤销栈被清空，光标也回到起点。
+# 现在：EditorGlue.plan 算出真正变了的那一段（公共前后缀不动），只对这一段做 Content.replace（和打字一样记入撤销栈，一步撤销），
+# 再 setSelection 到改动所在的行并滚动到可见。任何异常（替换阶段）退回 setText，行为和以前一样；光标阶段的异常忽略。
 .method public static replaceKeep(Ljava/lang/Object;Ljava/lang/String;)V
-    .locals 8
+    .locals 10
 
     check-cast p0, Lvt0;
 
@@ -53,32 +53,65 @@
 
     move-result-object v0
 
-    iget-object v1, v0, Lr61;->j:Ljava/util/ArrayList;
-
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
-
-    move-result v4
-
-    add-int/lit8 v4, v4, -0x1
-
-    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0}, Lr61;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    check-cast v1, Li71;
+    invoke-static {v1, p1}, Lcom/box/app/cfg/EditorGlue;->plan(Ljava/lang/String;Ljava/lang/String;)[I
 
-    iget v5, v1, Li71;->l:I
+    move-result-object v2
 
-    const/4 v1, 0x0
+    if-eqz v2, :cond_done
 
-    const/4 v2, 0x0
+    const/4 v9, 0x0
 
-    move-object v3, p1
+    aget v4, v2, v9
 
-    invoke-virtual/range {v0 .. v5}, Lr61;->x(IILjava/lang/CharSequence;II)V
+    const/4 v9, 0x1
+
+    aget v5, v2, v9
+
+    const/4 v9, 0x4
+
+    aget v6, v2, v9
+
+    const/4 v9, 0x5
+
+    aget v7, v2, v9
+
+    invoke-virtual {p1, v6, v7}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v6
+
+    const/4 v9, 0x2
+
+    aget v7, v2, v9
+
+    const/4 v9, 0x3
+
+    aget v8, v2, v9
+
+    move-object v3, v0
+
+    invoke-virtual/range {v3 .. v8}, Lr61;->x(IILjava/lang/CharSequence;II)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
+    :try_start_1
+    const/4 v9, 0x6
+
+    aget v4, v2, v9
+
+    const/4 v9, 0x7
+
+    aget v5, v2, v9
+
+    invoke-virtual {p0, v4, v5}, Lvt0;->l0(II)V
+    :try_end_1
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
+
+    :cond_done
+    :goto_end
     return-void
 
     :catch_0
@@ -87,4 +120,34 @@
     invoke-virtual {p0, p1}, Lvt0;->setText(Ljava/lang/CharSequence;)V
 
     return-void
+
+    :catch_1
+    move-exception v0
+
+    goto :goto_end
+.end method
+
+# 这份配置是不是 mihomo 的（按配置文件所在的工作目录名判断；目前只有 mihomo 有可视化修改 / 锚点面板）。参数是 mj5。
+.method public static isMihomo(Ljava/lang/Object;)Z
+    .locals 1
+
+    :try_start_0
+    check-cast p0, Lmj5;
+
+    iget-object v0, p0, Lmj5;->a:Ljava/lang/String;
+
+    invoke-static {v0}, Lcom/box/app/cfg/EditorGlue;->isMihomo(Ljava/lang/String;)Z
+
+    move-result v0
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    const/4 v0, 0x0
+
+    return v0
 .end method
