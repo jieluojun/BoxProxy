@@ -60,6 +60,9 @@
 
     move/from16 v2, p3
 
+    # 图标与功能对调：可视化修改（kind 1）用锚点图标，锚点面板（kind 0）用滑块图标
+    xor-int/lit8 v2, v2, 0x1
+
     invoke-direct {v13, v2}, Lcom/box/app/cfg/CfgIcon;-><init>(I)V
 
     move-object v4, v0
