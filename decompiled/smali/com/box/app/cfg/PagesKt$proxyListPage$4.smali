@@ -104,7 +104,7 @@
 
     const-string p0, "\uff08\u522b\u540d / \u975e\u6620\u5c04\u9879\uff0c\u53ea\u80fd\u5728\u7f16\u8f91\u5668\u91cc\u6539\uff09"
 
-    goto/16 :goto_88
+    goto/16 :goto_8d
 
     .line 184
     :cond_c
@@ -253,6 +253,10 @@
 
     move-result-object p0
 
-    :goto_88
+    const-string p1, "toString(...)"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :goto_8d
     return-object p0
 .end method

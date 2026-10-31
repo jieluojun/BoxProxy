@@ -15,22 +15,17 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRegex.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Regex.kt\nkotlin/text/Regex\n+ 2 Regex.kt\nkotlin/text/RegexKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,420:1\n24#2,3:421\n1#3:424\n*S KotlinDebug\n*F\n+ 1 Regex.kt\nkotlin/text/Regex\n*L\n105#1:421,3\n*E\n"
+    value = "SMAP\nRegex.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Regex.kt\nkotlin/text/Regex\n+ 2 Regex.kt\nkotlin/text/RegexKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,397:1\n22#2,3:398\n1#3:401\n*S KotlinDebug\n*F\n+ 1 Regex.kt\nkotlin/text/Regex\n*L\n103#1:398,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000\u0080\u0001\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\"\n\u0002\u0008\u0007\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\r\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0008\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0006\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010 \n\u0002\u0008\u0006\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0018\u0000 :2\u00060\u0001j\u0002`\u0002:\u00029:B\u0015\u0008A\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u001a\u0002\u0008\u0007\u00a2\u0006\u0004\u0008\u0005\u0010\u0006B\u0011\u0008V\u0012\u0006\u0010\u0008\u001a\u00020\t\u00a2\u0006\u0004\u0008\u0005\u0010\nB\u0019\u0008V\u0012\u0006\u0010\u0008\u001a\u00020\t\u0012\u0006\u0010\u000b\u001a\u00020\u000c\u00a2\u0006\u0004\u0008\u0005\u0010\rB\u001f\u0008V\u0012\u0006\u0010\u0008\u001a\u00020\t\u0012\u000c\u0010\u000e\u001a\u0008\u0012\u0004\u0012\u00020\u000c0\u000f\u00a2\u0006\u0004\u0008\u0005\u0010\u0010J\u0012\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0019H\u0086\u0084\u0004J\u0012\u0010\u001a\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u0019H\u0086\u0080\u0004J\u001e\u0010\u001b\u001a\u0004\u0018\u00010\u001c2\u0006\u0010\u0018\u001a\u00020\u00192\u0008\u0008\u0002\u0010\u001d\u001a\u00020\u001eH\u0086\u0080\u0004J\"\u0010\u001f\u001a\u0008\u0012\u0004\u0012\u00020\u001c0 2\u0006\u0010\u0018\u001a\u00020\u00192\u0008\u0008\u0002\u0010\u001d\u001a\u00020\u001eH\u0086\u0080\u0004J\u0014\u0010!\u001a\u0004\u0018\u00010\u001c2\u0006\u0010\u0018\u001a\u00020\u0019H\u0086\u0080\u0004J*\u0010\"\u001a\u0004\u0018\u00010\u001c2\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010#\u001a\u00020\u001eH\u0087\u0080\u0004b\u000c\u0008$\u0012\u0008\u0008%\u0012\u0004\u0008\u0008(&J(\u0010\'\u001a\u00020\u00172\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010#\u001a\u00020\u001eH\u0087\u0080\u0004b\u000c\u0008$\u0012\u0008\u0008%\u0012\u0004\u0008\u0008(&J\u001a\u0010(\u001a\u00020\t2\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010)\u001a\u00020\tH\u0086\u0080\u0004J&\u0010(\u001a\u00020\t2\u0006\u0010\u0018\u001a\u00020\u00192\u0012\u0010*\u001a\u000e\u0012\u0004\u0012\u00020\u001c\u0012\u0004\u0012\u00020\u00190+H\u0086\u0080\u0004J\u001a\u0010,\u001a\u00020\t2\u0006\u0010\u0018\u001a\u00020\u00192\u0006\u0010)\u001a\u00020\tH\u0086\u0080\u0004J\"\u0010-\u001a\u0008\u0012\u0004\u0012\u00020\t0.2\u0006\u0010\u0018\u001a\u00020\u00192\u0008\u0008\u0002\u0010/\u001a\u00020\u001eH\u0086\u0080\u0004J0\u00100\u001a\u0008\u0012\u0004\u0012\u00020\t0 2\u0006\u0010\u0018\u001a\u00020\u00192\u0008\u0008\u0002\u0010/\u001a\u00020\u001eH\u0087\u0080\u0004b\u000c\u0008$\u0012\u0008\u0008%\u0012\u0004\u0008\u0008(1J\n\u00102\u001a\u00020\tH\u0096\u0080\u0004J\n\u00103\u001a\u00020\u0004H\u0086\u0080\u0004J\n\u00104\u001a\u000205H\u0082\u0080\u0004J\u0012\u00106\u001a\u0002072\u0006\u0010\u0018\u001a\u000208H\u0082\u0080\u0004R\u000f\u0010\u0003\u001a\u00020\u0004X\u0082\u0084\u0008\u00a2\u0006\u0002\n\u0000R\u0015\u0010\u0008\u001a\u00020\t8FX\u0086\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\u0011\u0010\u0012R\u0017\u0010\u0013\u001a\n\u0012\u0004\u0012\u00020\u000c\u0018\u00010\u000fX\u0082\u008e\u0008\u00a2\u0006\u0002\n\u0000R\u001b\u0010\u000e\u001a\u0008\u0012\u0004\u0012\u00020\u000c0\u000f8FX\u0086\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\u0014\u0010\u0015\u00a8\u0006;"
+        "\u0000f\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\"\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0007\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\r\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0008\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0007\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0010 \n\u0002\u0008\u0005\n\u0002\u0010\u0000\n\u0002\u0008\u0003\u0018\u0000 02\u00060\u0001j\u0002`\u0002:\u000201B\u000f\u0008\u0016\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u00a2\u0006\u0002\u0010\u0005B\u0017\u0008\u0016\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u0006\u0010\u0006\u001a\u00020\u0007\u00a2\u0006\u0002\u0010\u0008B\u001d\u0008\u0016\u0012\u0006\u0010\u0003\u001a\u00020\u0004\u0012\u000c\u0010\t\u001a\u0008\u0012\u0004\u0012\u00020\u00070\n\u00a2\u0006\u0002\u0010\u000bB\u000f\u0008\u0001\u0012\u0006\u0010\u000c\u001a\u00020\r\u00a2\u0006\u0002\u0010\u000eJ\u000e\u0010\u0014\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017J\u001a\u0010\u0018\u001a\u0004\u0018\u00010\u00192\u0006\u0010\u0016\u001a\u00020\u00172\u0008\u0008\u0002\u0010\u001a\u001a\u00020\u001bJ\u001e\u0010\u001c\u001a\u0008\u0012\u0004\u0012\u00020\u00190\u001d2\u0006\u0010\u0016\u001a\u00020\u00172\u0008\u0008\u0002\u0010\u001a\u001a\u00020\u001bJ\u001a\u0010\u001e\u001a\u0004\u0018\u00010\u00192\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u001f\u001a\u00020\u001bH\u0007J\u0010\u0010 \u001a\u0004\u0018\u00010\u00192\u0006\u0010\u0016\u001a\u00020\u0017J\u0011\u0010!\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u0017H\u0086\u0004J\u0018\u0010\"\u001a\u00020\u00152\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010\u001f\u001a\u00020\u001bH\u0007J\"\u0010#\u001a\u00020\u00042\u0006\u0010\u0016\u001a\u00020\u00172\u0012\u0010$\u001a\u000e\u0012\u0004\u0012\u00020\u0019\u0012\u0004\u0012\u00020\u00170%J\u0016\u0010#\u001a\u00020\u00042\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010&\u001a\u00020\u0004J\u0016\u0010\'\u001a\u00020\u00042\u0006\u0010\u0016\u001a\u00020\u00172\u0006\u0010&\u001a\u00020\u0004J\u001e\u0010(\u001a\u0008\u0012\u0004\u0012\u00020\u00040)2\u0006\u0010\u0016\u001a\u00020\u00172\u0008\u0008\u0002\u0010*\u001a\u00020\u001bJ \u0010+\u001a\u0008\u0012\u0004\u0012\u00020\u00040\u001d2\u0006\u0010\u0016\u001a\u00020\u00172\u0008\u0008\u0002\u0010*\u001a\u00020\u001bH\u0007J\u0006\u0010,\u001a\u00020\rJ\u0008\u0010-\u001a\u00020\u0004H\u0016J\u0008\u0010.\u001a\u00020/H\u0002R\u0016\u0010\u000f\u001a\n\u0012\u0004\u0012\u00020\u0007\u0018\u00010\nX\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u000c\u001a\u00020\rX\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u0017\u0010\t\u001a\u0008\u0012\u0004\u0012\u00020\u00070\n8F\u00a2\u0006\u0006\u001a\u0004\u0008\u0010\u0010\u0011R\u0011\u0010\u0003\u001a\u00020\u00048F\u00a2\u0006\u0006\u001a\u0004\u0008\u0012\u0010\u0013\u00a8\u00062"
     }
     d2 = {
         "Lkotlin/text/Regex;",
         "Ljava/io/Serializable;",
         "Lkotlin/io/Serializable;",
-        "nativePattern",
-        "Ljava/util/regex/Pattern;",
-        "<init>",
-        "(Ljava/util/regex/Pattern;)V",
-        "Lkotlin/PublishedApi;",
         "pattern",
         "",
         "(Ljava/lang/String;)V",
@@ -40,54 +35,50 @@
         "options",
         "",
         "(Ljava/lang/String;Ljava/util/Set;)V",
-        "getPattern",
-        "()Ljava/lang/String;",
+        "nativePattern",
+        "Ljava/util/regex/Pattern;",
+        "(Ljava/util/regex/Pattern;)V",
         "_options",
         "getOptions",
         "()Ljava/util/Set;",
-        "matches",
+        "getPattern",
+        "()Ljava/lang/String;",
+        "containsMatchIn",
         "",
         "input",
         "",
-        "containsMatchIn",
         "find",
         "Lkotlin/text/MatchResult;",
         "startIndex",
         "",
         "findAll",
         "Lkotlin/sequences/Sequence;",
-        "matchEntire",
         "matchAt",
         "index",
-        "Lkotlin/SinceKotlin;",
-        "version",
-        "1.7",
+        "matchEntire",
+        "matches",
         "matchesAt",
         "replace",
-        "replacement",
         "transform",
         "Lkotlin/Function1;",
+        "replacement",
         "replaceFirst",
         "split",
         "",
         "limit",
         "splitToSequence",
-        "1.6",
-        "toString",
         "toPattern",
+        "toString",
         "writeReplace",
         "",
-        "readObject",
-        "",
-        "Ljava/io/ObjectInputStream;",
-        "Serialized",
         "Companion",
+        "Serialized",
         "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -95,7 +86,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nRegex.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Regex.kt\nkotlin/text/Regex\n+ 2 Regex.kt\nkotlin/text/RegexKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,420:1\n24#2,3:421\n1#3:424\n*S KotlinDebug\n*F\n+ 1 Regex.kt\nkotlin/text/Regex\n*L\n105#1:421,3\n*E\n"
+        "SMAP\nRegex.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Regex.kt\nkotlin/text/Regex\n+ 2 Regex.kt\nkotlin/text/RegexKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,397:1\n22#2,3:398\n1#3:401\n*S KotlinDebug\n*F\n+ 1 Regex.kt\nkotlin/text/Regex\n*L\n103#1:398,3\n*E\n"
     }
 .end annotation
 
@@ -141,8 +132,6 @@
 
 
 
-
-
 # virtual methods
 
 .method static constructor <clinit>()V
@@ -170,7 +159,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 90
+    .line 88
     invoke-static {p1}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
     move-result-object p1
@@ -213,7 +202,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 96
+    .line 94
     sget-object v0, Lkotlin/text/Regex;->Companion:Lkotlin/text/Regex$Companion;
 
     check-cast p2, Ljava/lang/Iterable;
@@ -258,7 +247,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 93
+    .line 91
     sget-object v0, Lkotlin/text/Regex;->Companion:Lkotlin/text/Regex$Companion;
 
     invoke-virtual {p2}, Lkotlin/text/RegexOption;->getValue()I
@@ -295,10 +284,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 83
+    .line 81
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 86
+    .line 84
     iput-object p1, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
 
     return-void
@@ -307,7 +296,7 @@
 .method public static final synthetic access$getNativePattern$p(Lkotlin/text/Regex;)Ljava/util/regex/Pattern;
     .registers 1
 
-    .line 83
+    .line 81
     iget-object p0, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
 
     return-object p0
@@ -322,7 +311,7 @@
 
     const/4 p2, 0x0
 
-    .line 122
+    .line 120
     :cond_5
     invoke-virtual {p0, p1, p2}, Lkotlin/text/Regex;->find(Ljava/lang/CharSequence;I)Lkotlin/text/MatchResult;
 
@@ -340,7 +329,7 @@
 
     const/4 p2, 0x0
 
-    .line 133
+    .line 131
     :cond_5
     invoke-virtual {p0, p1, p2}, Lkotlin/text/Regex;->findAll(Ljava/lang/CharSequence;I)Lkotlin/sequences/Sequence;
 
@@ -349,34 +338,10 @@
     return-object p0
 .end method
 
-.method private static final findAll$lambda$0(Lkotlin/text/Regex;Ljava/lang/CharSequence;I)Lkotlin/text/MatchResult;
-    .registers 3
-
-    .line 137
-    invoke-virtual {p0, p1, p2}, Lkotlin/text/Regex;->find(Ljava/lang/CharSequence;I)Lkotlin/text/MatchResult;
-
-    move-result-object p0
-
-    return-object p0
-.end method
-
-.method private final readObject(Ljava/io/ObjectInputStream;)V
-    .registers 2
-
-    .line 329
-    new-instance p0, Ljava/io/InvalidObjectException;
-
-    const-string p1, "Deserialization is supported via proxy only"
-
-    invoke-direct {p0, p1}, Ljava/io/InvalidObjectException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
 .method private final writeReplace()Ljava/lang/Object;
     .registers 4
 
-    .line 327
+    .line 306
     new-instance v0, Lkotlin/text/Regex$Serialized;
 
     iget-object v1, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
@@ -411,7 +376,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 111
+    .line 109
     iget-object p0, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {p0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -438,7 +403,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 123
+    .line 121
     iget-object p0, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {p0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -480,36 +445,38 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    if-ltz p2, :cond_1b
+    if-ltz p2, :cond_1e
 
-    .line 134
+    .line 132
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
 
     if-le p2, v0, :cond_e
 
-    goto :goto_1b
+    goto :goto_1e
 
-    .line 137
+    .line 135
     :cond_e
-    invoke-custom {p0, p1, p2}, call_site_10("invoke", (Lkotlin/text/Regex;Ljava/lang/CharSequence;I)Lkotlin/jvm/functions/Function0;, ()Ljava/lang/Object;, invoke-static@Lkotlin/text/Regex;->findAll$lambda$0(Lkotlin/text/Regex;Ljava/lang/CharSequence;I)Lkotlin/text/MatchResult;, ()Lkotlin/text/MatchResult;)@Ljava/lang/invoke/LambdaMetafactory;->metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    new-instance v0, Lkotlin/text/Regex$findAll$1;
 
-    move-result-object p0
+    invoke-direct {v0, p0, p1, p2}, Lkotlin/text/Regex$findAll$1;-><init>(Lkotlin/text/Regex;Ljava/lang/CharSequence;I)V
 
-    sget-object p1, Lkotlin/text/Regex$findAll$2;->INSTANCE:Lkotlin/text/Regex$findAll$2;
+    check-cast v0, Lkotlin/jvm/functions/Function0;
 
-    check-cast p1, Lkotlin/jvm/functions/Function1;
+    sget-object p0, Lkotlin/text/Regex$findAll$2;->INSTANCE:Lkotlin/text/Regex$findAll$2;
 
-    invoke-static {p0, p1}, Lkotlin/sequences/SequencesKt;->generateSequence(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
+    check-cast p0, Lkotlin/jvm/functions/Function1;
+
+    invoke-static {v0, p0}, Lkotlin/sequences/SequencesKt;->generateSequence(Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
 
     move-result-object p0
 
     return-object p0
 
-    .line 135
-    :cond_1b
-    :goto_1b
+    .line 133
+    :cond_1e
+    :goto_1e
     new-instance p0, Ljava/lang/IndexOutOfBoundsException;
 
     new-instance v0, Ljava/lang/StringBuilder;
@@ -555,7 +522,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 105
+    .line 103
     iget-object v0, p0, Lkotlin/text/Regex;->_options:Ljava/util/Set;
 
     if-nez v0, :cond_2d
@@ -566,14 +533,14 @@
 
     move-result v0
 
-    .line 421
     const-class v1, Lkotlin/text/RegexOption;
 
+    .line 398
     invoke-static {v1}, Ljava/util/EnumSet;->allOf(Ljava/lang/Class;)Ljava/util/EnumSet;
 
     move-result-object v1
 
-    .line 422
+    .line 399
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     move-object v2, v1
@@ -588,7 +555,7 @@
 
     invoke-static {v2, v3}, Lkotlin/collections/CollectionsKt;->retainAll(Ljava/lang/Iterable;Lkotlin/jvm/functions/Function1;)Z
 
-    .line 421
+    .line 398
     check-cast v1, Ljava/util/Set;
 
     invoke-static {v1}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
@@ -599,7 +566,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 105
+    .line 103
     iput-object v0, p0, Lkotlin/text/Regex;->_options:Ljava/util/Set;
 
     :cond_2d
@@ -611,7 +578,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 101
+    .line 99
     iget-object p0, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {p0}, Ljava/util/regex/Pattern;->pattern()Ljava/lang/String;
@@ -635,6 +602,12 @@
         version = "1.7"
     .end annotation
 
+    .annotation build Lkotlin/WasExperimental;
+        markerClass = {
+            Lkotlin/ExperimentalStdlibApi;
+        }
+    .end annotation
+
     .annotation build Lorg/jetbrains/annotations/Nullable;
     .end annotation
 
@@ -642,7 +615,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 149
+    .line 148
     iget-object p0, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {p0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -669,7 +642,7 @@
 
     move-result-object p0
 
-    .line 150
+    .line 149
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->lookingAt()Z
 
     move-result p2
@@ -687,7 +660,7 @@
     :cond_2c
     const/4 p2, 0x0
 
-    .line 149
+    .line 148
     :goto_2d
     check-cast p2, Lkotlin/text/MatchResult;
 
@@ -707,7 +680,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 145
+    .line 143
     iget-object p0, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {p0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -736,7 +709,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 108
+    .line 106
     iget-object p0, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {p0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -758,6 +731,12 @@
     .end param
     .annotation build Lkotlin/SinceKotlin;
         version = "1.7"
+    .end annotation
+
+    .annotation build Lkotlin/WasExperimental;
+        markerClass = {
+            Lkotlin/ExperimentalStdlibApi;
+        }
     .end annotation
 
     const-string v0, "input"
@@ -819,7 +798,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 180
+    .line 178
     iget-object p0, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {p0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -878,7 +857,7 @@
 
     const/4 v2, 0x0
 
-    .line 188
+    .line 186
     invoke-static {p0, p1, v0, v1, v2}, Lkotlin/text/Regex;->find$default(Lkotlin/text/Regex;Ljava/lang/CharSequence;IILjava/lang/Object;)Lkotlin/text/MatchResult;
 
     move-result-object p0
@@ -891,18 +870,18 @@
 
     return-object p0
 
-    .line 191
+    .line 189
     :cond_18
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
 
-    .line 192
+    .line 190
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2, v1}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 195
+    .line 193
     :cond_21
     invoke-interface {p0}, Lkotlin/text/MatchResult;->getRange()Lkotlin/ranges/IntRange;
 
@@ -918,7 +897,7 @@
 
     invoke-virtual {v2, p1, v0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
 
-    .line 196
+    .line 194
     invoke-interface {p2, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v0
@@ -927,7 +906,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
 
-    .line 197
+    .line 195
     invoke-interface {p0}, Lkotlin/text/MatchResult;->getRange()Lkotlin/ranges/IntRange;
 
     move-result-object v0
@@ -942,7 +921,7 @@
 
     add-int/lit8 v0, v0, 0x1
 
-    .line 198
+    .line 196
     invoke-interface {p0}, Lkotlin/text/MatchResult;->next()Lkotlin/text/MatchResult;
 
     move-result-object p0
@@ -954,10 +933,10 @@
     :cond_4f
     if-ge v0, v1, :cond_54
 
-    .line 202
+    .line 200
     invoke-virtual {v2, p1, v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;II)Ljava/lang/StringBuilder;
 
-    .line 205
+    .line 203
     :cond_54
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -991,7 +970,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 232
+    .line 228
     iget-object p0, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {p0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -1033,10 +1012,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 253
+    .line 239
     invoke-static {p2}, Lkotlin/text/StringsKt;->requireNonNegativeLimit(I)V
 
-    .line 255
+    .line 241
     iget-object p0, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {p0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
@@ -1047,7 +1026,7 @@
 
     if-eq p2, v0, :cond_5a
 
-    .line 256
+    .line 242
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
 
     move-result v1
@@ -1056,7 +1035,7 @@
 
     goto :goto_5a
 
-    .line 258
+    .line 244
     :cond_18
     new-instance v1, Ljava/util/ArrayList;
 
@@ -1075,7 +1054,7 @@
 
     sub-int/2addr p2, v0
 
-    .line 263
+    .line 249
     :cond_27
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->start()I
 
@@ -1091,21 +1070,21 @@
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 264
+    .line 250
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->end()I
 
     move-result v2
 
     if-ltz p2, :cond_42
 
-    .line 265
+    .line 251
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
     if-eq v0, p2, :cond_48
 
-    .line 266
+    .line 252
     :cond_42
     invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
 
@@ -1113,7 +1092,7 @@
 
     if-nez v0, :cond_27
 
-    .line 268
+    .line 254
     :cond_48
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
@@ -1129,12 +1108,12 @@
 
     invoke-virtual {v1, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 270
+    .line 256
     check-cast v1, Ljava/util/List;
 
     return-object v1
 
-    .line 256
+    .line 242
     :cond_5a
     :goto_5a
     invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
@@ -1169,6 +1148,12 @@
         version = "1.6"
     .end annotation
 
+    .annotation build Lkotlin/WasExperimental;
+        markerClass = {
+            Lkotlin/ExperimentalStdlibApi;
+        }
+    .end annotation
+
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
@@ -1176,10 +1161,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 291
+    .line 270
     invoke-static {p2}, Lkotlin/text/StringsKt;->requireNonNegativeLimit(I)V
 
-    .line 293
+    .line 272
     new-instance v0, Lkotlin/text/Regex$splitToSequence$1;
 
     const/4 v1, 0x0
@@ -1200,7 +1185,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 325
+    .line 304
     iget-object p0, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
 
     return-object p0
@@ -1211,7 +1196,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 318
+    .line 297
     iget-object p0, p0, Lkotlin/text/Regex;->nativePattern:Ljava/util/regex/Pattern;
 
     invoke-virtual {p0}, Ljava/util/regex/Pattern;->toString()Ljava/lang/String;

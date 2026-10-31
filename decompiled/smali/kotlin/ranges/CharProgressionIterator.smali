@@ -6,7 +6,7 @@
 # annotations
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000\"\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000c\n\u0002\u0008\u0002\n\u0002\u0010\u0008\n\u0002\u0008\u0006\n\u0002\u0010\u000b\n\u0002\u0008\u0003\u0008\u0000\u0018\u00002\u00020\u0001B!\u0008F\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u00a2\u0006\u0004\u0008\u0007\u0010\u0008J\n\u0010\u000c\u001a\u00020\rH\u0096\u0082\u0004J\n\u0010\u000f\u001a\u00020\u0003H\u0096\u0080\u0004R\u0015\u0010\u0005\u001a\u00020\u0006X\u0086\u0084\u0008\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\t\u0010\nR\u000f\u0010\u000b\u001a\u00020\u0006X\u0082\u0084\u0008\u00a2\u0006\u0002\n\u0000R\u000f\u0010\u000c\u001a\u00020\rX\u0082\u008e\u0008\u00a2\u0006\u0002\n\u0000R\u000f\u0010\u000e\u001a\u00020\u0006X\u0082\u008e\u0008\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u0010"
+        "\u0000\"\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000c\n\u0002\u0008\u0002\n\u0002\u0010\u0008\n\u0002\u0008\u0003\n\u0002\u0010\u000b\n\u0002\u0008\u0005\u0008\u0000\u0018\u00002\u00020\u0001B\u001d\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0003\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u00a2\u0006\u0002\u0010\u0007J\t\u0010\t\u001a\u00020\nH\u0096\u0002J\u0008\u0010\u000e\u001a\u00020\u0003H\u0016R\u000e\u0010\u0008\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u000e\u0010\t\u001a\u00020\nX\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u000b\u001a\u00020\u0006X\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u0011\u0010\u0005\u001a\u00020\u0006\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u000c\u0010\r\u00a8\u0006\u000f"
     }
     d2 = {
         "Lkotlin/ranges/CharProgressionIterator;",
@@ -16,21 +16,20 @@
         "last",
         "step",
         "",
-        "<init>",
         "(CCI)V",
-        "getStep",
-        "()I",
         "finalElement",
         "hasNext",
         "",
         "next",
+        "getStep",
+        "()I",
         "nextChar",
         "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -55,50 +54,58 @@
 .method public constructor <init>(CCI)V
     .registers 6
 
-    .line 16
+    .line 14
     invoke-direct {p0}, Lkotlin/collections/CharIterator;-><init>()V
 
     iput p3, p0, Lkotlin/ranges/CharProgressionIterator;->step:I
 
-    .line 17
+    .line 15
     iput p2, p0, Lkotlin/ranges/CharProgressionIterator;->finalElement:I
 
-    .line 18
+    .line 16
     iget p3, p0, Lkotlin/ranges/CharProgressionIterator;->step:I
 
     const/4 v0, 0x0
 
     const/4 v1, 0x1
 
-    if-lez p3, :cond_11
+    if-lez p3, :cond_15
 
-    if-gt p1, p2, :cond_14
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->compare(II)I
 
-    :goto_f
+    move-result p2
+
+    if-gtz p2, :cond_1c
+
+    :goto_13
     move v0, v1
 
-    goto :goto_14
+    goto :goto_1c
 
-    :cond_11
-    if-lt p1, p2, :cond_14
+    :cond_15
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->compare(II)I
 
-    goto :goto_f
+    move-result p2
 
-    :cond_14
-    :goto_14
+    if-ltz p2, :cond_1c
+
+    goto :goto_13
+
+    :cond_1c
+    :goto_1c
     iput-boolean v0, p0, Lkotlin/ranges/CharProgressionIterator;->hasNext:Z
 
-    .line 19
+    .line 17
     iget-boolean p2, p0, Lkotlin/ranges/CharProgressionIterator;->hasNext:Z
 
-    if-eqz p2, :cond_1b
+    if-eqz p2, :cond_23
 
-    goto :goto_1d
+    goto :goto_25
 
-    :cond_1b
+    :cond_23
     iget p1, p0, Lkotlin/ranges/CharProgressionIterator;->finalElement:I
 
-    :goto_1d
+    :goto_25
     iput p1, p0, Lkotlin/ranges/CharProgressionIterator;->next:I
 
     return-void
@@ -107,7 +114,7 @@
 .method public final getStep()I
     .registers 1
 
-    .line 16
+    .line 14
     iget p0, p0, Lkotlin/ranges/CharProgressionIterator;->step:I
 
     return p0
@@ -116,7 +123,7 @@
 .method public hasNext()Z
     .registers 1
 
-    .line 21
+    .line 19
     iget-boolean p0, p0, Lkotlin/ranges/CharProgressionIterator;->hasNext:Z
 
     return p0
@@ -125,15 +132,15 @@
 .method public nextChar()C
     .registers 4
 
-    .line 24
+    .line 22
     iget v0, p0, Lkotlin/ranges/CharProgressionIterator;->next:I
 
-    .line 25
+    .line 23
     iget v1, p0, Lkotlin/ranges/CharProgressionIterator;->finalElement:I
 
     if-ne v0, v1, :cond_14
 
-    .line 26
+    .line 24
     iget-boolean v1, p0, Lkotlin/ranges/CharProgressionIterator;->hasNext:Z
 
     if-nez v1, :cond_10
@@ -147,12 +154,12 @@
     :cond_10
     const/4 v1, 0x0
 
-    .line 27
+    .line 25
     iput-boolean v1, p0, Lkotlin/ranges/CharProgressionIterator;->hasNext:Z
 
     goto :goto_1b
 
-    .line 30
+    .line 28
     :cond_14
     iget v1, p0, Lkotlin/ranges/CharProgressionIterator;->next:I
 

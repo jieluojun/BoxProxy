@@ -28,12 +28,11 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010(\n\u0002\u0008\u0003\n\u0002\u0010\u0008\n\u0002\u0008\u0005\n\u0002\u0010\u000b\n\u0002\u0008\u0003\u0008\u0092\u0004\u0018\u00002\u0008\u0012\u0004\u0012\u00028\u00000\u0001B\t\u0008F\u00a2\u0006\u0004\u0008\u0002\u0010\u0003J\n\u0010\n\u001a\u00020\u000bH\u0096\u0082\u0004J\u000f\u0010\u000c\u001a\u00028\u0000H\u0096\u0082\u0004\u00a2\u0006\u0002\u0010\rR\u001b\u0010\u0004\u001a\u00020\u0005X\u0084\u008e\u0008\u00a2\u0006\u000e\n\u0000\u001a\u0004\u0008\u0006\u0010\u0007\"\u0004\u0008\u0008\u0010\t\u00a8\u0006\u000e"
+        "\u0000\u001c\n\u0002\u0018\u0002\n\u0002\u0010(\n\u0002\u0008\u0002\n\u0002\u0010\u0008\n\u0002\u0008\u0005\n\u0002\u0010\u000b\n\u0002\u0008\u0003\u0008\u0092\u0004\u0018\u00002\u0008\u0012\u0004\u0012\u00028\u00000\u0001B\u0005\u00a2\u0006\u0002\u0010\u0002J\t\u0010\t\u001a\u00020\nH\u0096\u0002J\u000e\u0010\u000b\u001a\u00028\u0000H\u0096\u0002\u00a2\u0006\u0002\u0010\u000cR\u001a\u0010\u0003\u001a\u00020\u0004X\u0084\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\u0008\u0005\u0010\u0006\"\u0004\u0008\u0007\u0010\u0008\u00a8\u0006\r"
     }
     d2 = {
         "Lkotlin/collections/AbstractList$IteratorImpl;",
         "",
-        "<init>",
         "(Lkotlin/collections/AbstractList;)V",
         "index",
         "",
@@ -49,8 +48,8 @@
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -83,7 +82,7 @@
         }
     .end annotation
 
-    .line 81
+    .line 71
     iput-object p1, p0, Lkotlin/collections/AbstractList$IteratorImpl;->this$0:Lkotlin/collections/AbstractList;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -94,7 +93,7 @@
 .method protected final getIndex()I
     .registers 1
 
-    .line 83
+    .line 73
     iget p0, p0, Lkotlin/collections/AbstractList$IteratorImpl;->index:I
 
     return p0
@@ -103,7 +102,7 @@
 .method public hasNext()Z
     .registers 2
 
-    .line 85
+    .line 75
     iget v0, p0, Lkotlin/collections/AbstractList$IteratorImpl;->index:I
 
     iget-object p0, p0, Lkotlin/collections/AbstractList$IteratorImpl;->this$0:Lkotlin/collections/AbstractList;
@@ -133,7 +132,7 @@
         }
     .end annotation
 
-    .line 88
+    .line 78
     invoke-virtual {p0}, Lkotlin/collections/AbstractList$IteratorImpl;->hasNext()Z
 
     move-result v0
@@ -146,7 +145,7 @@
 
     throw p0
 
-    .line 89
+    .line 79
     :cond_c
     iget-object v0, p0, Lkotlin/collections/AbstractList$IteratorImpl;->this$0:Lkotlin/collections/AbstractList;
 
@@ -178,7 +177,7 @@
 .method protected final setIndex(I)V
     .registers 2
 
-    .line 83
+    .line 73
     iput p1, p0, Lkotlin/collections/AbstractList$IteratorImpl;->index:I
 
     return-void

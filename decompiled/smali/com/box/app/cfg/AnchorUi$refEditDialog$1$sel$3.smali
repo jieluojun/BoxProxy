@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAnchorUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnchorUi.kt\ncom/box/app/cfg/AnchorUi$refEditDialog$1$sel$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,561:1\n2199#2,2:562\n*S KotlinDebug\n*F\n+ 1 AnchorUi.kt\ncom/box/app/cfg/AnchorUi$refEditDialog$1$sel$3\n*L\n362#1:562,2\n*E\n"
+    value = "SMAP\nAnchorUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnchorUi.kt\ncom/box/app/cfg/AnchorUi$refEditDialog$1$sel$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,561:1\n1855#2,2:562\n*S KotlinDebug\n*F\n+ 1 AnchorUi.kt\ncom/box/app/cfg/AnchorUi$refEditDialog$1$sel$3\n*L\n362#1:562,2\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,7 +49,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nAnchorUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnchorUi.kt\ncom/box/app/cfg/AnchorUi$refEditDialog$1$sel$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,561:1\n2199#2,2:562\n*S KotlinDebug\n*F\n+ 1 AnchorUi.kt\ncom/box/app/cfg/AnchorUi$refEditDialog$1$sel$3\n*L\n362#1:562,2\n*E\n"
+        "SMAP\nAnchorUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnchorUi.kt\ncom/box/app/cfg/AnchorUi$refEditDialog$1$sel$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,561:1\n1855#2,2:562\n*S KotlinDebug\n*F\n+ 1 AnchorUi.kt\ncom/box/app/cfg/AnchorUi$refEditDialog$1$sel$3\n*L\n362#1:562,2\n*E\n"
     }
 .end annotation
 

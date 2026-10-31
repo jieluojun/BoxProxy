@@ -34,8 +34,8 @@
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -50,7 +50,7 @@
 .method constructor <init>()V
     .registers 1
 
-    .line 52
+    .line 51
     invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
 
     return-void
@@ -59,7 +59,7 @@
 .method public bridge synthetic initialValue()Ljava/lang/Object;
     .registers 1
 
-    .line 52
+    .line 51
     invoke-virtual {p0}, Lkotlin/random/FallbackThreadLocalRandom$implStorage$1;->initialValue()Ljava/util/Random;
 
     move-result-object p0
@@ -69,8 +69,10 @@
 
 .method protected initialValue()Ljava/util/Random;
     .registers 1
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
 
-    .line 53
+    .line 52
     new-instance p0, Ljava/util/Random;
 
     invoke-direct {p0}, Ljava/util/Random;-><init>()V

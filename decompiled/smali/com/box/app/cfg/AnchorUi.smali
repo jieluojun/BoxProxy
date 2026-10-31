@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAnchorUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnchorUi.kt\ncom/box/app/cfg/AnchorUi\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,561:1\n296#2:562\n2091#2,3:563\n297#2:566\n2199#2,2:568\n2208#2,3:570\n2199#2,2:573\n777#2:575\n873#2:576\n2091#2,3:577\n874#2:580\n777#2:581\n873#2,2:582\n1745#2:584\n1820#2,3:585\n2208#2,3:588\n1#3:567\n*S KotlinDebug\n*F\n+ 1 AnchorUi.kt\ncom/box/app/cfg/AnchorUi\n*L\n34#1:562\n34#1:563,3\n34#1:566\n130#1:568,2\n184#1:570,3\n219#1:573,2\n87#1:575\n87#1:576\n87#1:577,3\n87#1:580\n88#1:581\n88#1:582,2\n89#1:584\n89#1:585,3\n238#1:588,3\n*E\n"
+    value = "SMAP\nAnchorUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnchorUi.kt\ncom/box/app/cfg/AnchorUi\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,561:1\n288#2:562\n1747#2,3:563\n289#2:566\n1855#2,2:568\n1864#2,3:570\n1855#2,2:573\n766#2:575\n857#2:576\n1747#2,3:577\n858#2:580\n766#2:581\n857#2,2:582\n1549#2:584\n1620#2,3:585\n1864#2,3:588\n1#3:567\n*S KotlinDebug\n*F\n+ 1 AnchorUi.kt\ncom/box/app/cfg/AnchorUi\n*L\n34#1:562\n34#1:563,3\n34#1:566\n130#1:568,2\n184#1:570,3\n219#1:573,2\n87#1:575\n87#1:576\n87#1:577,3\n87#1:580\n88#1:581\n88#1:582,2\n89#1:584\n89#1:585,3\n238#1:588,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -115,7 +115,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nAnchorUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnchorUi.kt\ncom/box/app/cfg/AnchorUi\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,561:1\n296#2:562\n2091#2,3:563\n297#2:566\n2199#2,2:568\n2208#2,3:570\n2199#2,2:573\n777#2:575\n873#2:576\n2091#2,3:577\n874#2:580\n777#2:581\n873#2,2:582\n1745#2:584\n1820#2,3:585\n2208#2,3:588\n1#3:567\n*S KotlinDebug\n*F\n+ 1 AnchorUi.kt\ncom/box/app/cfg/AnchorUi\n*L\n34#1:562\n34#1:563,3\n34#1:566\n130#1:568,2\n184#1:570,3\n219#1:573,2\n87#1:575\n87#1:576\n87#1:577,3\n87#1:580\n88#1:581\n88#1:582,2\n89#1:584\n89#1:585,3\n238#1:588,3\n*E\n"
+        "SMAP\nAnchorUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AnchorUi.kt\ncom/box/app/cfg/AnchorUi\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,561:1\n288#2:562\n1747#2,3:563\n289#2:566\n1855#2,2:568\n1864#2,3:570\n1855#2,2:573\n766#2:575\n857#2:576\n1747#2,3:577\n858#2:580\n766#2:581\n857#2,2:582\n1549#2:584\n1620#2,3:585\n1864#2,3:588\n1#3:567\n*S KotlinDebug\n*F\n+ 1 AnchorUi.kt\ncom/box/app/cfg/AnchorUi\n*L\n34#1:562\n34#1:563,3\n34#1:566\n130#1:568,2\n184#1:570,3\n219#1:573,2\n87#1:575\n87#1:576\n87#1:577,3\n87#1:580\n88#1:581\n88#1:582,2\n89#1:584\n89#1:585,3\n238#1:588,3\n*E\n"
     }
 .end annotation
 
@@ -5290,7 +5290,7 @@
 
     const-string v5, "\u914d\u7f6e\u91cc\u8fd8\u6ca1\u6709\u951a\u70b9"
 
-    goto/16 :goto_157
+    goto/16 :goto_15c
 
     :cond_c1
     new-instance v5, Ljava/lang/StringBuilder;
@@ -5441,7 +5441,11 @@
 
     move-result-object v5
 
-    :goto_157
+    const-string v11, "toString(...)"
+
+    invoke-static {v5, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :goto_15c
     move-object v11, v5
 
     check-cast v11, Ljava/lang/CharSequence;
@@ -5561,7 +5565,7 @@
 
     move-result v0
 
-    if-eqz v0, :cond_1d8
+    if-eqz v0, :cond_1dd
 
     invoke-virtual/range {p0 .. p0}, Lcom/box/app/cfg/AnchorUi;->getC()Landroid/app/Activity;
 
@@ -5578,7 +5582,7 @@
     invoke-virtual {v7, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
     .line 80
-    :cond_1d8
+    :cond_1dd
     iget-object v0, v6, Lcom/box/app/cfg/AnchorUi;->text:Ljava/lang/String;
 
     move-object v10, v0
@@ -5612,12 +5616,12 @@
 
     move-result-object v11
 
-    :goto_1f3
+    :goto_1f8
     invoke-interface {v11}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v0
 
-    if-eqz v0, :cond_22f
+    if-eqz v0, :cond_234
 
     invoke-interface {v11}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -5631,7 +5635,7 @@
 
     move-result-object v0
 
-    if-eqz v0, :cond_214
+    if-eqz v0, :cond_219
 
     invoke-virtual {v2}, Ltop/yukonga/mishka/custom/anchor/AnchorInfo;->getName()Ljava/lang/String;
 
@@ -5647,12 +5651,12 @@
 
     move-object v3, v0
 
-    goto :goto_215
+    goto :goto_21a
 
-    :cond_214
+    :cond_219
     move-object v3, v8
 
-    :goto_215
+    :goto_21a
     new-instance v0, Lcom/box/app/cfg/AnchorUi$page$4;
 
     invoke-direct {v0, v10}, Lcom/box/app/cfg/AnchorUi$page$4;-><init>(Ljava/util/List;)V
@@ -5679,10 +5683,10 @@
 
     invoke-virtual {v7, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    goto :goto_1f3
+    goto :goto_1f8
 
     .line 91
-    :cond_22f
+    :cond_234
     invoke-virtual {v9}, Ltop/yukonga/mishka/custom/anchor/AnchorGraph;->getDanglers()Ljava/util/List;
 
     move-result-object v0
@@ -5691,12 +5695,12 @@
 
     move-result-object v0
 
-    :goto_237
+    :goto_23c
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     move-result v1
 
-    if-eqz v1, :cond_252
+    if-eqz v1, :cond_257
 
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -5716,9 +5720,9 @@
 
     invoke-virtual {v7, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    goto :goto_237
+    goto :goto_23c
 
-    :cond_252
+    :cond_257
     return-object v7
 .end method
 

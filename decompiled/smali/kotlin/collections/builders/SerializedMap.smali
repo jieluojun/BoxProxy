@@ -15,32 +15,31 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000.\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010$\n\u0002\u0008\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0008\u0002\u0008\u0002\u0018\u0000 \u00102\u00020\u0001:\u0001\u0010B\u0019\u0008F\u0012\u000e\u0010\u0002\u001a\n\u0012\u0002\u0008\u0003\u0012\u0002\u0008\u00030\u0003\u00a2\u0006\u0004\u0008\u0004\u0010\u0005B\t\u0008V\u00a2\u0006\u0004\u0008\u0004\u0010\u0006J\u0010\u0010\u0007\u001a\u00020\u00082\u0006\u0010\t\u001a\u00020\nH\u0016J\u0010\u0010\u000b\u001a\u00020\u00082\u0006\u0010\u000c\u001a\u00020\rH\u0016J\n\u0010\u000e\u001a\u00020\u000fH\u0082\u0080\u0004R\u0017\u0010\u0002\u001a\n\u0012\u0002\u0008\u0003\u0012\u0002\u0008\u00030\u0003X\u0082\u008e\u0008\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u0011"
+        "\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010$\n\u0002\u0008\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\u0008\u0002\u0018\u0000 \u000f2\u00020\u0001:\u0001\u000fB\u0007\u0008\u0016\u00a2\u0006\u0002\u0010\u0002B\u0015\u0012\u000e\u0010\u0003\u001a\n\u0012\u0002\u0008\u0003\u0012\u0002\u0008\u00030\u0004\u00a2\u0006\u0002\u0010\u0005J\u0010\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0008\u001a\u00020\tH\u0016J\u0008\u0010\n\u001a\u00020\u000bH\u0002J\u0010\u0010\u000c\u001a\u00020\u00072\u0006\u0010\r\u001a\u00020\u000eH\u0016R\u0016\u0010\u0003\u001a\n\u0012\u0002\u0008\u0003\u0012\u0002\u0008\u00030\u0004X\u0082\u000e\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u0010"
     }
     d2 = {
         "Lkotlin/collections/builders/SerializedMap;",
         "Ljava/io/Externalizable;",
+        "()V",
         "map",
         "",
-        "<init>",
         "(Ljava/util/Map;)V",
-        "()V",
-        "writeExternal",
-        "",
-        "output",
-        "Ljava/io/ObjectOutput;",
         "readExternal",
+        "",
         "input",
         "Ljava/io/ObjectInput;",
         "readResolve",
         "",
+        "writeExternal",
+        "output",
+        "Ljava/io/ObjectOutput;",
         "Companion",
         "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -95,7 +94,7 @@
 .method public constructor <init>()V
     .registers 2
 
-    .line 701
+    .line 694
     invoke-static {}, Lkotlin/collections/MapsKt;->emptyMap()Ljava/util/Map;
 
     move-result-object v0
@@ -123,10 +122,10 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 697
+    .line 690
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 698
+    .line 691
     iput-object p1, p0, Lkotlin/collections/builders/SerializedMap;->map:Ljava/util/Map;
 
     return-void
@@ -135,7 +134,7 @@
 .method private final readResolve()Ljava/lang/Object;
     .registers 1
 
-    .line 728
+    .line 721
     iget-object p0, p0, Lkotlin/collections/builders/SerializedMap;->map:Ljava/util/Map;
 
     return-object p0
@@ -152,14 +151,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 713
+    .line 706
     invoke-interface {p1}, Ljava/io/ObjectInput;->readByte()B
 
     move-result v0
 
     if-eqz v0, :cond_22
 
-    .line 715
+    .line 708
     new-instance p0, Ljava/io/InvalidObjectException;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -180,7 +179,7 @@
 
     throw p0
 
-    .line 717
+    .line 710
     :cond_22
     invoke-interface {p1}, Ljava/io/ObjectInput;->readInt()I
 
@@ -188,7 +187,7 @@
 
     if-gez v0, :cond_44
 
-    .line 718
+    .line 711
     new-instance p0, Ljava/io/InvalidObjectException;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -213,7 +212,7 @@
 
     throw p0
 
-    .line 719
+    .line 712
     :cond_44
     invoke-static {v0}, Lkotlin/collections/MapsKt;->createMapBuilder(I)Ljava/util/Map;
 
@@ -224,24 +223,24 @@
     :goto_49
     if-ge v2, v0, :cond_59
 
-    .line 721
+    .line 714
     invoke-interface {p1}, Ljava/io/ObjectInput;->readObject()Ljava/lang/Object;
 
     move-result-object v3
 
-    .line 722
+    .line 715
     invoke-interface {p1}, Ljava/io/ObjectInput;->readObject()Ljava/lang/Object;
 
     move-result-object v4
 
-    .line 723
+    .line 716
     invoke-interface {v1, v3, v4}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_49
 
-    .line 719
+    .line 712
     :cond_59
     invoke-static {v1}, Lkotlin/collections/MapsKt;->build(Ljava/util/Map;)Ljava/util/Map;
 
@@ -265,10 +264,10 @@
 
     const/4 v0, 0x0
 
-    .line 704
+    .line 697
     invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeByte(I)V
 
-    .line 705
+    .line 698
     iget-object v0, p0, Lkotlin/collections/builders/SerializedMap;->map:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->size()I
@@ -277,7 +276,7 @@
 
     invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeInt(I)V
 
-    .line 706
+    .line 699
     iget-object p0, p0, Lkotlin/collections/builders/SerializedMap;->map:Ljava/util/Map;
 
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -301,14 +300,14 @@
 
     check-cast v0, Ljava/util/Map$Entry;
 
-    .line 707
+    .line 700
     invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v1
 
     invoke-interface {p1, v1}, Ljava/io/ObjectOutput;->writeObject(Ljava/lang/Object;)V
 
-    .line 708
+    .line 701
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v0

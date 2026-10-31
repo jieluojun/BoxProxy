@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPages3.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages3.kt\ncom/box/app/cfg/Pages3Kt$fieldAnchorDialog$1$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,499:1\n1745#2:500\n1820#2,2:501\n1822#2:504\n1#3:503\n*S KotlinDebug\n*F\n+ 1 Pages3.kt\ncom/box/app/cfg/Pages3Kt$fieldAnchorDialog$1$1\n*L\n366#1:500\n366#1:501,2\n366#1:504\n*E\n"
+    value = "SMAP\nPages3.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages3.kt\ncom/box/app/cfg/Pages3Kt$fieldAnchorDialog$1$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,499:1\n1549#2:500\n1620#2,2:501\n1622#2:504\n1#3:503\n*S KotlinDebug\n*F\n+ 1 Pages3.kt\ncom/box/app/cfg/Pages3Kt$fieldAnchorDialog$1$1\n*L\n366#1:500\n366#1:501,2\n366#1:504\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,7 +49,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nPages3.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages3.kt\ncom/box/app/cfg/Pages3Kt$fieldAnchorDialog$1$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,499:1\n1745#2:500\n1820#2,2:501\n1822#2:504\n1#3:503\n*S KotlinDebug\n*F\n+ 1 Pages3.kt\ncom/box/app/cfg/Pages3Kt$fieldAnchorDialog$1$1\n*L\n366#1:500\n366#1:501,2\n366#1:504\n*E\n"
+        "SMAP\nPages3.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages3.kt\ncom/box/app/cfg/Pages3Kt$fieldAnchorDialog$1$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,499:1\n1549#2:500\n1620#2,2:501\n1622#2:504\n1#3:503\n*S KotlinDebug\n*F\n+ 1 Pages3.kt\ncom/box/app/cfg/Pages3Kt$fieldAnchorDialog$1$1\n*L\n366#1:500\n366#1:501,2\n366#1:504\n*E\n"
     }
 .end annotation
 
@@ -216,7 +216,7 @@
 
     move-result v6
 
-    if-eqz v6, :cond_d8
+    if-eqz v6, :cond_dd
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
@@ -373,6 +373,10 @@
 
     move-result-object v7
 
+    const-string v8, "toString(...)"
+
+    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     .line 373
     new-instance v8, Ltop/yukonga/mishka/custom/forms/FormOption;
 
@@ -396,7 +400,7 @@
     goto/16 :goto_24
 
     .line 504
-    :cond_d8
+    :cond_dd
     move-object v4, v5
 
     check-cast v4, Ljava/util/List;

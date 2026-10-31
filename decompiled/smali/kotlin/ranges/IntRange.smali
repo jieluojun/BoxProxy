@@ -28,7 +28,7 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000L\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0008\n\u0002\u0018\u0002\n\u0002\u0008\u000b\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\u0008\u0004\n\u0002\u0010\u0000\n\u0002\u0008\u0002\n\u0002\u0010\u000e\n\u0002\u0008\u0002\u0018\u0000 #2\u00020\u00012\u0008\u0012\u0004\u0012\u00020\u00030\u00022\u0008\u0012\u0004\u0012\u00020\u00030\u0004:\u0001#B\u0019\u0008F\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u00a2\u0006\u0004\u0008\u0007\u0010\u0008J\u0012\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u0003H\u0096\u0082\u0004J\n\u0010\u001c\u001a\u00020\u001aH\u0096\u0080\u0004J\u0014\u0010\u001d\u001a\u00020\u001a2\u0008\u0010\u001e\u001a\u0004\u0018\u00010\u001fH\u0096\u0082\u0004J\n\u0010 \u001a\u00020\u0003H\u0096\u0080\u0004J\n\u0010!\u001a\u00020\"H\u0096\u0080\u0004R\u0015\u0010\u0005\u001a\u00020\u00038VX\u0096\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\t\u0010\nR\u0015\u0010\u0006\u001a\u00020\u00038VX\u0096\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\u000b\u0010\nRI\u0010\u000c\u001a\u00020\u00038VX\u0097\u0084\u0008r\u000c\u0008\u0010\u0012\u0008\u0008\u0011\u0012\u0004\u0008\u0008(\u0012r\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u0015r\u0010\u0008\u0016\u0012\u000c\u0008\u0017\u0012\u0008\u0008\u000cJ\u0004\u0008\t0\u0018\u00a2\u0006\u000c\u0012\u0004\u0008\r\u0010\u000e\u001a\u0004\u0008\u000f\u0010\n\u00a8\u0006$"
+        "\u00000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0008\n\u0002\u0018\u0002\n\u0002\u0008\u000b\n\u0002\u0010\u000b\n\u0002\u0008\u0003\n\u0002\u0010\u0000\n\u0002\u0008\u0003\n\u0002\u0010\u000e\n\u0002\u0008\u0002\u0018\u0000 \u00192\u00020\u00012\u0008\u0012\u0004\u0012\u00020\u00030\u00022\u0008\u0012\u0004\u0012\u00020\u00030\u0004:\u0001\u0019B\u0015\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0007J\u0011\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0003H\u0096\u0002J\u0013\u0010\u0012\u001a\u00020\u00102\u0008\u0010\u0013\u001a\u0004\u0018\u00010\u0014H\u0096\u0002J\u0008\u0010\u0015\u001a\u00020\u0003H\u0016J\u0008\u0010\u0016\u001a\u00020\u0010H\u0016J\u0008\u0010\u0017\u001a\u00020\u0018H\u0016R\u001a\u0010\u0008\u001a\u00020\u00038VX\u0097\u0004\u00a2\u0006\u000c\u0012\u0004\u0008\t\u0010\n\u001a\u0004\u0008\u000b\u0010\u000cR\u0014\u0010\u0006\u001a\u00020\u00038VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\r\u0010\u000cR\u0014\u0010\u0005\u001a\u00020\u00038VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u000e\u0010\u000c\u00a8\u0006\u001a"
     }
     d2 = {
         "Lkotlin/ranges/IntRange;",
@@ -38,32 +38,22 @@
         "Lkotlin/ranges/OpenEndRange;",
         "start",
         "endInclusive",
-        "<init>",
         "(II)V",
-        "getStart",
-        "()Ljava/lang/Integer;",
-        "getEndInclusive",
         "endExclusive",
         "getEndExclusive$annotations",
         "()V",
         "getEndExclusive",
-        "Lkotlin/Deprecated;",
-        "message",
-        "Can throw an exception when it\'s impossible to represent the value with Int type, for example, when the range includes MAX_VALUE. It\'s recommended to use \'endInclusive\' property that doesn\'t throw.",
-        "Lkotlin/SinceKotlin;",
-        "version",
-        "1.9",
-        "Lkotlin/WasExperimental;",
-        "markerClass",
-        "Lkotlin/ExperimentalStdlibApi;",
+        "()Ljava/lang/Integer;",
+        "getEndInclusive",
+        "getStart",
         "contains",
         "",
         "value",
-        "isEmpty",
         "equals",
         "other",
         "",
         "hashCode",
+        "isEmpty",
         "toString",
         "",
         "Companion",
@@ -71,8 +61,8 @@
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -110,7 +100,7 @@
 
     sput-object v0, Lkotlin/ranges/IntRange;->Companion:Lkotlin/ranges/IntRange$Companion;
 
-    .line 86
+    .line 84
     new-instance v0, Lkotlin/ranges/IntRange;
 
     const/4 v1, 0x1
@@ -129,7 +119,7 @@
 
     const/4 v0, 0x1
 
-    .line 54
+    .line 52
     invoke-direct {p0, p1, p2, v0}, Lkotlin/ranges/IntProgression;-><init>(III)V
 
     return-void
@@ -138,7 +128,7 @@
 .method public static final synthetic access$getEMPTY$cp()Lkotlin/ranges/IntRange;
     .registers 1
 
-    .line 54
+    .line 52
     sget-object v0, Lkotlin/ranges/IntRange;->EMPTY:Lkotlin/ranges/IntRange;
 
     return-object v0
@@ -147,7 +137,7 @@
 .method public contains(I)Z
     .registers 3
 
-    .line 66
+    .line 64
     invoke-virtual {p0}, Lkotlin/ranges/IntRange;->getFirst()I
 
     move-result v0
@@ -174,7 +164,7 @@
 .method public bridge synthetic contains(Ljava/lang/Comparable;)Z
     .registers 2
 
-    .line 54
+    .line 52
     check-cast p1, Ljava/lang/Number;
 
     invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
@@ -195,7 +185,7 @@
         .end annotation
     .end param
 
-    .line 76
+    .line 74
     instance-of v0, p1, Lkotlin/ranges/IntRange;
 
     if-eqz v0, :cond_2b
@@ -216,7 +206,7 @@
 
     if-nez v0, :cond_29
 
-    .line 77
+    .line 75
     :cond_13
     invoke-virtual {p0}, Lkotlin/ranges/IntRange;->getFirst()I
 
@@ -255,7 +245,7 @@
 .method public bridge synthetic getEndExclusive()Ljava/lang/Comparable;
     .registers 1
 
-    .line 54
+    .line 52
     invoke-virtual {p0}, Lkotlin/ranges/IntRange;->getEndExclusive()Ljava/lang/Integer;
 
     move-result-object p0
@@ -270,7 +260,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 62
+    .line 60
     invoke-virtual {p0}, Lkotlin/ranges/IntRange;->getLast()I
 
     move-result v0
@@ -291,7 +281,7 @@
 
     throw p0
 
-    .line 63
+    .line 61
     :cond_15
     invoke-virtual {p0}, Lkotlin/ranges/IntRange;->getLast()I
 
@@ -309,7 +299,7 @@
 .method public bridge synthetic getEndInclusive()Ljava/lang/Comparable;
     .registers 1
 
-    .line 54
+    .line 52
     invoke-virtual {p0}, Lkotlin/ranges/IntRange;->getEndInclusive()Ljava/lang/Integer;
 
     move-result-object p0
@@ -324,7 +314,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 56
+    .line 54
     invoke-virtual {p0}, Lkotlin/ranges/IntRange;->getLast()I
 
     move-result p0
@@ -339,7 +329,7 @@
 .method public bridge synthetic getStart()Ljava/lang/Comparable;
     .registers 1
 
-    .line 54
+    .line 52
     invoke-virtual {p0}, Lkotlin/ranges/IntRange;->getStart()Ljava/lang/Integer;
 
     move-result-object p0
@@ -354,7 +344,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 55
+    .line 53
     invoke-virtual {p0}, Lkotlin/ranges/IntRange;->getFirst()I
 
     move-result p0
@@ -369,7 +359,7 @@
 .method public hashCode()I
     .registers 2
 
-    .line 80
+    .line 78
     invoke-virtual {p0}, Lkotlin/ranges/IntRange;->isEmpty()Z
 
     move-result v0
@@ -400,7 +390,7 @@
 .method public isEmpty()Z
     .registers 2
 
-    .line 73
+    .line 71
     invoke-virtual {p0}, Lkotlin/ranges/IntRange;->getFirst()I
 
     move-result v0
@@ -427,7 +417,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 82
+    .line 80
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

@@ -30,7 +30,7 @@
 .method static constructor <clinit>()V
     .registers 1
 
-    .line 54
+    .line 52
     new-instance v0, Lkotlin/jvm/internal/CallableReference$NoReceiver;
 
     invoke-direct {v0}, Lkotlin/jvm/internal/CallableReference$NoReceiver;-><init>()V
@@ -43,7 +43,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 53
+    .line 51
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -52,7 +52,7 @@
 .method static synthetic access$000()Lkotlin/jvm/internal/CallableReference$NoReceiver;
     .registers 1
 
-    .line 53
+    .line 51
     sget-object v0, Lkotlin/jvm/internal/CallableReference$NoReceiver;->INSTANCE:Lkotlin/jvm/internal/CallableReference$NoReceiver;
 
     return-object v0
@@ -66,7 +66,7 @@
         }
     .end annotation
 
-    .line 57
+    .line 55
     sget-object p0, Lkotlin/jvm/internal/CallableReference$NoReceiver;->INSTANCE:Lkotlin/jvm/internal/CallableReference$NoReceiver;
 
     return-object p0

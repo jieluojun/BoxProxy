@@ -35,7 +35,7 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u00002\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0008\n\u0002\u0018\u0002\u0008\u0087\u0002\u0018\u00002\u00020\u0001B@\u0008F\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\"\u0008\u0002\u0010\u0004\u001a\u00020\u0005B\u0018\u0008\u000bB\u0014\u0008\u0005\u0012\u0008\u0008\u0006\u0012\u0004\u0008\u0008(\u0007\u0012\u0006\u0008\u0008\u0012\u0002\u0008\u000c\u0012\u0010\u0008\u0002\u0010\t\u001a\u00020\nB\u0006\u0008\n0\n8\u000bR\u0013\u0010\u0002\u001a\u00020\u0003X\u0086\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\u0002\u0010\u000cR\u0013\u0010\u0004\u001a\u00020\u0005X\u0086\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\u0004\u0010\rR\u0013\u0010\t\u001a\u00020\nX\u0086\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\t\u0010\u000e\u00ca\u0001J\u0008\u0010\u0012F\u0008\u0011\u0012B\u0008\u000cJ\u0006\u0008\n0\u00128\u0013J\u0006\u0008\n0\u00128\u0014J\u0006\u0008\n0\u00128\u0015J\u0006\u0008\n0\u00128\u0016J\u0006\u0008\n0\u00128\u0017J\u0006\u0008\n0\u00128\u0018J\u0006\u0008\n0\u00128\u0019J\u0006\u0008\n0\u00128\u001a\u00ca\u0001\u0002\u0008\u001b\u00a8\u0006\u000f"
+        "\u0000\u001e\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0004\u0008\u0087\u0002\u0018\u00002\u00020\u0001B\u001c\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0008\u0008\u0002\u0010\u0004\u001a\u00020\u0005\u0012\u0008\u0008\u0002\u0010\u0006\u001a\u00020\u0007R\u000f\u0010\u0006\u001a\u00020\u0007\u00a2\u0006\u0006\u001a\u0004\u0008\u0006\u0010\u0008R\u000f\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0006\u001a\u0004\u0008\u0002\u0010\tR\u000f\u0010\u0004\u001a\u00020\u0005\u00a2\u0006\u0006\u001a\u0004\u0008\u0004\u0010\n\u00a8\u0006\u000b"
     }
     d2 = {
         "Lkotlin/Deprecated;",
@@ -44,33 +44,17 @@
         "",
         "replaceWith",
         "Lkotlin/ReplaceWith;",
-        "expression",
-        "",
-        "imports",
         "level",
         "Lkotlin/DeprecationLevel;",
-        "WARNING",
+        "()Lkotlin/DeprecationLevel;",
         "()Ljava/lang/String;",
         "()Lkotlin/ReplaceWith;",
-        "()Lkotlin/DeprecationLevel;",
-        "kotlin-stdlib",
-        "Lkotlin/annotation/Target;",
-        "allowedTargets",
-        "Lkotlin/annotation/AnnotationTarget;",
-        "CLASS",
-        "FUNCTION",
-        "PROPERTY",
-        "ANNOTATION_CLASS",
-        "CONSTRUCTOR",
-        "PROPERTY_SETTER",
-        "PROPERTY_GETTER",
-        "TYPEALIAS",
-        "Lkotlin/annotation/MustBeDocumented;"
+        "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30

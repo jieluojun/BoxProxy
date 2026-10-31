@@ -35,7 +35,7 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u0001*\u0008\u0012\u0004\u0012\u00020\u00030\u0002H\n"
+        "\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u000e\u0010\u0000\u001a\u00020\u0001*\u0008\u0012\u0004\u0012\u00020\u00030\u0002H\u008a@"
     }
     d2 = {
         "<anonymous>",
@@ -45,64 +45,37 @@
     }
     k = 0x3
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
-    xi = 0x530
+    xi = 0x30
 .end annotation
 
 .annotation runtime Lkotlin/coroutines/jvm/internal/DebugMetadata;
     c = "kotlin.text.Regex$splitToSequence$1"
     f = "Regex.kt"
     i = {
-        0x0,
-        0x0,
         0x1,
         0x1,
-        0x1,
-        0x1,
-        0x2,
-        0x2,
-        0x2,
-        0x2
+        0x1
     }
     l = {
-        0x128,
-        0x130,
-        0x134
+        0x113,
+        0x11b,
+        0x11f
     }
     m = "invokeSuspend"
     n = {
         "$this$sequence",
         "matcher",
-        "$this$sequence",
-        "matcher",
-        "nextStart",
-        "splitCount",
-        "$this$sequence",
-        "matcher",
-        "nextStart",
         "splitCount"
-    }
-    nl = {
-        0x129,
-        0x131,
-        0x135
     }
     s = {
         "L$0",
         "L$1",
-        "L$0",
-        "L$1",
-        "I$0",
-        "I$1",
-        "L$0",
-        "L$1",
-        "I$0",
-        "I$1"
+        "I$0"
     }
-    v = 0x2
 .end annotation
 
 
@@ -112,8 +85,6 @@
 .field final synthetic $limit:I
 
 .field I$0:I
-
-.field I$1:I
 
 .field private synthetic L$0:Ljava/lang/Object;
 
@@ -159,6 +130,14 @@
 
 .method public final create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
     .registers 6
+    .param p1    # Ljava/lang/Object;
+        .annotation build Lorg/jetbrains/annotations/Nullable;
+        .end annotation
+    .end param
+    .param p2    # Lkotlin/coroutines/Continuation;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -169,6 +148,9 @@
             "Lkotlin/Unit;",
             ">;"
         }
+    .end annotation
+
+    .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
     new-instance v0, Lkotlin/text/Regex$splitToSequence$1;
@@ -204,6 +186,14 @@
 
 .method public final invoke(Lkotlin/sequences/SequenceScope;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
     .registers 3
+    .param p1    # Lkotlin/sequences/SequenceScope;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p2    # Lkotlin/coroutines/Continuation;
+        .annotation build Lorg/jetbrains/annotations/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -217,6 +207,9 @@
             ">;)",
             "Ljava/lang/Object;"
         }
+    .end annotation
+
+    .annotation build Lorg/jetbrains/annotations/Nullable;
     .end annotation
 
     invoke-virtual {p0, p1, p2}, Lkotlin/text/Regex$splitToSequence$1;->create(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Lkotlin/coroutines/Continuation;
@@ -236,23 +229,25 @@
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 9
-
-    iget-object v0, p0, Lkotlin/text/Regex$splitToSequence$1;->L$0:Ljava/lang/Object;
-
-    check-cast v0, Lkotlin/sequences/SequenceScope;
+    .param p1    # Ljava/lang/Object;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .annotation build Lorg/jetbrains/annotations/Nullable;
+    .end annotation
 
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
-    move-result-object v1
+    move-result-object v0
 
-    .line 293
-    iget v2, p0, Lkotlin/text/Regex$splitToSequence$1;->label:I
+    .line 272
+    iget v1, p0, Lkotlin/text/Regex$splitToSequence$1;->label:I
 
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
-    const/4 v4, 0x1
+    const/4 v3, 0x1
 
-    packed-switch v2, :pswitch_data_da
+    packed-switch v1, :pswitch_data_b8
 
     new-instance p0, Ljava/lang/IllegalStateException;
 
@@ -262,243 +257,215 @@
 
     throw p0
 
-    :pswitch_17
-    iget v0, p0, Lkotlin/text/Regex$splitToSequence$1;->I$1:I
+    :pswitch_13
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    iget v0, p0, Lkotlin/text/Regex$splitToSequence$1;->I$0:I
+    goto/16 :goto_a0
 
-    iget-object p0, p0, Lkotlin/text/Regex$splitToSequence$1;->L$1:Ljava/lang/Object;
+    :pswitch_18
+    iget v1, p0, Lkotlin/text/Regex$splitToSequence$1;->I$0:I
 
-    check-cast p0, Ljava/util/regex/Matcher;
+    iget-object v2, p0, Lkotlin/text/Regex$splitToSequence$1;->L$1:Ljava/lang/Object;
 
+    check-cast v2, Ljava/util/regex/Matcher;
+
+    iget-object v4, p0, Lkotlin/text/Regex$splitToSequence$1;->L$0:Ljava/lang/Object;
+
+    check-cast v4, Lkotlin/sequences/SequenceScope;
+
+    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+
+    move p1, v1
+
+    move-object v1, v2
+
+    goto :goto_6e
+
+    :pswitch_28
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
     goto/16 :goto_b5
 
-    :pswitch_24
-    iget v2, p0, Lkotlin/text/Regex$splitToSequence$1;->I$1:I
-
-    iget v3, p0, Lkotlin/text/Regex$splitToSequence$1;->I$0:I
-
-    iget-object v3, p0, Lkotlin/text/Regex$splitToSequence$1;->L$1:Ljava/lang/Object;
-
-    check-cast v3, Ljava/util/regex/Matcher;
-
+    :pswitch_2d
     invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
 
-    move-object p1, v3
+    iget-object p1, p0, Lkotlin/text/Regex$splitToSequence$1;->L$0:Ljava/lang/Object;
 
-    goto :goto_78
+    check-cast p1, Lkotlin/sequences/SequenceScope;
 
-    :pswitch_31
-    iget-object p0, p0, Lkotlin/text/Regex$splitToSequence$1;->L$1:Ljava/lang/Object;
+    .line 273
+    iget-object v1, p0, Lkotlin/text/Regex$splitToSequence$1;->this$0:Lkotlin/text/Regex;
 
-    check-cast p0, Ljava/util/regex/Matcher;
+    invoke-static {v1}, Lkotlin/text/Regex;->access$getNativePattern$p(Lkotlin/text/Regex;)Ljava/util/regex/Pattern;
 
-    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+    move-result-object v1
 
-    goto/16 :goto_d6
+    iget-object v4, p0, Lkotlin/text/Regex$splitToSequence$1;->$input:Ljava/lang/CharSequence;
 
-    :pswitch_3a
-    invoke-static {p1}, Lkotlin/ResultKt;->throwOnFailure(Ljava/lang/Object;)V
+    invoke-virtual {v1, v4}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    .line 294
-    iget-object p1, p0, Lkotlin/text/Regex$splitToSequence$1;->this$0:Lkotlin/text/Regex;
+    move-result-object v1
 
-    invoke-static {p1}, Lkotlin/text/Regex;->access$getNativePattern$p(Lkotlin/text/Regex;)Ljava/util/regex/Pattern;
+    .line 274
+    iget v4, p0, Lkotlin/text/Regex$splitToSequence$1;->$limit:I
 
-    move-result-object p1
+    if-eq v4, v3, :cond_a3
 
-    iget-object v2, p0, Lkotlin/text/Regex$splitToSequence$1;->$input:Ljava/lang/CharSequence;
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
 
-    invoke-virtual {p1, v2}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    move-result v4
 
-    move-result-object p1
+    if-nez v4, :cond_4b
 
-    .line 295
-    iget v2, p0, Lkotlin/text/Regex$splitToSequence$1;->$limit:I
+    goto :goto_a3
 
-    if-eq v2, v4, :cond_b8
+    :cond_4b
+    move-object v4, p1
 
-    invoke-virtual {p1}, Ljava/util/regex/Matcher;->find()Z
+    move p1, v2
 
-    move-result v2
-
-    if-nez v2, :cond_54
-
-    goto :goto_b8
-
-    :cond_54
-    move v2, v3
-
-    .line 304
-    :cond_55
+    .line 283
+    :cond_4d
     iget-object v5, p0, Lkotlin/text/Regex$splitToSequence$1;->$input:Ljava/lang/CharSequence;
 
-    invoke-virtual {p1}, Ljava/util/regex/Matcher;->start()I
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->start()I
 
     move-result v6
 
-    invoke-interface {v5, v3, v6}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
+    invoke-interface {v5, v2, v6}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
 
-    move-result-object v5
+    move-result-object v2
 
-    invoke-virtual {v5}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    move-result-object v5
-
-    move-object v6, p0
-
-    check-cast v6, Lkotlin/coroutines/Continuation;
-
-    iput-object v0, p0, Lkotlin/text/Regex$splitToSequence$1;->L$0:Ljava/lang/Object;
-
-    iput-object p1, p0, Lkotlin/text/Regex$splitToSequence$1;->L$1:Ljava/lang/Object;
-
-    iput v3, p0, Lkotlin/text/Regex$splitToSequence$1;->I$0:I
-
-    iput v2, p0, Lkotlin/text/Regex$splitToSequence$1;->I$1:I
-
-    const/4 v3, 0x2
-
-    iput v3, p0, Lkotlin/text/Regex$splitToSequence$1;->label:I
-
-    invoke-virtual {v0, v5, v6}, Lkotlin/sequences/SequenceScope;->yield(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object v3
-
-    if-ne v3, v1, :cond_78
-
-    return-object v1
-
-    .line 305
-    :cond_78
-    :goto_78
-    invoke-virtual {p1}, Ljava/util/regex/Matcher;->end()I
-
-    move-result v3
-
-    add-int/2addr v2, v4
-
-    .line 306
-    iget v5, p0, Lkotlin/text/Regex$splitToSequence$1;->$limit:I
-
-    sub-int/2addr v5, v4
-
-    if-eq v2, v5, :cond_88
-
-    invoke-virtual {p1}, Ljava/util/regex/Matcher;->find()Z
-
-    move-result v5
-
-    if-nez v5, :cond_55
-
-    .line 308
-    :cond_88
-    iget-object v4, p0, Lkotlin/text/Regex$splitToSequence$1;->$input:Ljava/lang/CharSequence;
-
-    iget-object v5, p0, Lkotlin/text/Regex$splitToSequence$1;->$input:Ljava/lang/CharSequence;
-
-    invoke-interface {v5}, Ljava/lang/CharSequence;->length()I
-
-    move-result v5
-
-    invoke-interface {v4, v3, v5}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v4
+    move-result-object v2
 
     move-object v5, p0
 
     check-cast v5, Lkotlin/coroutines/Continuation;
 
-    invoke-static {v0}, Lkotlin/coroutines/jvm/internal/SpillingKt;->nullOutSpilledVariable(Ljava/lang/Object;)Ljava/lang/Object;
+    iput-object v4, p0, Lkotlin/text/Regex$splitToSequence$1;->L$0:Ljava/lang/Object;
 
-    move-result-object v6
+    iput-object v1, p0, Lkotlin/text/Regex$splitToSequence$1;->L$1:Ljava/lang/Object;
 
-    iput-object v6, p0, Lkotlin/text/Regex$splitToSequence$1;->L$0:Ljava/lang/Object;
+    iput p1, p0, Lkotlin/text/Regex$splitToSequence$1;->I$0:I
 
-    invoke-static {p1}, Lkotlin/coroutines/jvm/internal/SpillingKt;->nullOutSpilledVariable(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v6, 0x2
+
+    iput v6, p0, Lkotlin/text/Regex$splitToSequence$1;->label:I
+
+    invoke-virtual {v4, v2, v5}, Lkotlin/sequences/SequenceScope;->yield(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    if-ne v2, v0, :cond_6e
+
+    return-object v0
+
+    .line 284
+    :cond_6e
+    :goto_6e
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->end()I
+
+    move-result v2
+
+    add-int/2addr p1, v3
+
+    .line 285
+    iget v5, p0, Lkotlin/text/Regex$splitToSequence$1;->$limit:I
+
+    sub-int/2addr v5, v3
+
+    if-eq p1, v5, :cond_7e
+
+    invoke-virtual {v1}, Ljava/util/regex/Matcher;->find()Z
+
+    move-result v5
+
+    if-nez v5, :cond_4d
+
+    .line 287
+    :cond_7e
+    iget-object p1, p0, Lkotlin/text/Regex$splitToSequence$1;->$input:Ljava/lang/CharSequence;
+
+    iget-object v1, p0, Lkotlin/text/Regex$splitToSequence$1;->$input:Ljava/lang/CharSequence;
+
+    invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
+
+    move-result v1
+
+    invoke-interface {p1, v2, v1}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
 
     move-result-object p1
 
-    iput-object p1, p0, Lkotlin/text/Regex$splitToSequence$1;->L$1:Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-    iput v3, p0, Lkotlin/text/Regex$splitToSequence$1;->I$0:I
+    move-result-object p1
 
-    iput v2, p0, Lkotlin/text/Regex$splitToSequence$1;->I$1:I
+    move-object v1, p0
 
-    const/4 p1, 0x3
+    check-cast v1, Lkotlin/coroutines/Continuation;
 
-    iput p1, p0, Lkotlin/text/Regex$splitToSequence$1;->label:I
+    const/4 v2, 0x0
 
-    invoke-virtual {v0, v4, v5}, Lkotlin/sequences/SequenceScope;->yield(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+    iput-object v2, p0, Lkotlin/text/Regex$splitToSequence$1;->L$0:Ljava/lang/Object;
+
+    iput-object v2, p0, Lkotlin/text/Regex$splitToSequence$1;->L$1:Ljava/lang/Object;
+
+    const/4 v2, 0x3
+
+    iput v2, p0, Lkotlin/text/Regex$splitToSequence$1;->label:I
+
+    invoke-virtual {v4, p1, v1}, Lkotlin/sequences/SequenceScope;->yield(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
 
     move-result-object p0
 
-    if-ne p0, v1, :cond_b5
+    if-ne p0, v0, :cond_a0
 
-    return-object v1
+    return-object v0
 
-    .line 309
+    .line 288
+    :cond_a0
+    :goto_a0
+    sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+
+    return-object p0
+
+    .line 275
+    :cond_a3
+    :goto_a3
+    iget-object v1, p0, Lkotlin/text/Regex$splitToSequence$1;->$input:Ljava/lang/CharSequence;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    move-object v2, p0
+
+    check-cast v2, Lkotlin/coroutines/Continuation;
+
+    iput v3, p0, Lkotlin/text/Regex$splitToSequence$1;->label:I
+
+    invoke-virtual {p1, v1, v2}, Lkotlin/sequences/SequenceScope;->yield(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-ne p0, v0, :cond_b5
+
+    return-object v0
+
+    .line 276
     :cond_b5
     :goto_b5
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 
-    .line 296
-    :cond_b8
-    :goto_b8
-    iget-object v2, p0, Lkotlin/text/Regex$splitToSequence$1;->$input:Ljava/lang/CharSequence;
-
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v2
-
-    move-object v3, p0
-
-    check-cast v3, Lkotlin/coroutines/Continuation;
-
-    invoke-static {v0}, Lkotlin/coroutines/jvm/internal/SpillingKt;->nullOutSpilledVariable(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v5
-
-    iput-object v5, p0, Lkotlin/text/Regex$splitToSequence$1;->L$0:Ljava/lang/Object;
-
-    invoke-static {p1}, Lkotlin/coroutines/jvm/internal/SpillingKt;->nullOutSpilledVariable(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lkotlin/text/Regex$splitToSequence$1;->L$1:Ljava/lang/Object;
-
-    iput v4, p0, Lkotlin/text/Regex$splitToSequence$1;->label:I
-
-    invoke-virtual {v0, v2, v3}, Lkotlin/sequences/SequenceScope;->yield(Ljava/lang/Object;Lkotlin/coroutines/Continuation;)Ljava/lang/Object;
-
-    move-result-object p0
-
-    if-ne p0, v1, :cond_d6
-
-    return-object v1
-
-    .line 297
-    :cond_d6
-    :goto_d6
-    sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    return-object p0
-
-    nop
-
-    :pswitch_data_da
+    :pswitch_data_b8
     .packed-switch 0x0
-        :pswitch_3a
-        :pswitch_31
-        :pswitch_24
-        :pswitch_17
+        :pswitch_2d
+        :pswitch_28
+        :pswitch_18
+        :pswitch_13
     .end packed-switch
 .end method

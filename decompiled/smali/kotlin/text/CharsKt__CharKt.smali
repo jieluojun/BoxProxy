@@ -5,40 +5,36 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nChar.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Char.kt\nkotlin/text/CharsKt__CharKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,339:1\n1#2:340\n*E\n"
+    value = "SMAP\nChar.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Char.kt\nkotlin/text/CharsKt__CharKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,344:1\n1#2:345\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000(\n\u0000\n\u0002\u0010\u0008\n\u0002\u0010\u000c\n\u0002\u0018\u0002\n\u0002\u0008\u0008\n\u0002\u0010\u000e\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\u0008\u0003\u001a\u001c\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0087\u0080\u0004b\u000c\u0008\u0003\u0012\u0008\u0008\u0004\u0012\u0004\u0008\u0008(\u0005\u001a$\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u0001H\u0087\u0080\u0004b\u000c\u0008\u0003\u0012\u0008\u0008\u0004\u0012\u0004\u0008\u0008(\u0005\u001a#\u0010\u0007\u001a\u0004\u0018\u00010\u0001*\u00020\u0002H\u0087\u0080\u0004b\u000c\u0008\u0003\u0012\u0008\u0008\u0004\u0012\u0004\u0008\u0008(\u0005\u00a2\u0006\u0002\u0010\u0008\u001a+\u0010\u0007\u001a\u0004\u0018\u00010\u0001*\u00020\u00022\u0006\u0010\u0006\u001a\u00020\u0001H\u0087\u0080\u0004b\u000c\u0008\u0003\u0012\u0008\u0008\u0004\u0012\u0004\u0008\u0008(\u0005\u00a2\u0006\u0002\u0010\t\u001a\u001c\u0010\n\u001a\u00020\u0002*\u00020\u0001H\u0087\u0080\u0004b\u000c\u0008\u0003\u0012\u0008\u0008\u0004\u0012\u0004\u0008\u0008(\u0005\u001a$\u0010\n\u001a\u00020\u0002*\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u0001H\u0087\u0080\u0004b\u000c\u0008\u0003\u0012\u0008\u0008\u0004\u0012\u0004\u0008\u0008(\u0005\u001a\u001c\u0010\u000b\u001a\u00020\u000c*\u00020\u0002H\u0087\u0080\u0004b\u000c\u0008\u0003\u0012\u0008\u0008\u0004\u0012\u0004\u0008\u0008(\u0005\u001a\u001a\u0010\r\u001a\u00020\u000c*\u00020\u00022\u0006\u0010\u000e\u001a\u00020\u000cH\u0087\u008a\u0004b\u0002\u0008\u000f\u001a \u0010\u0010\u001a\u00020\u0011*\u00020\u00022\u0006\u0010\u000e\u001a\u00020\u00022\u0008\u0008\u0002\u0010\u0012\u001a\u00020\u0011H\u0086\u0080\u0004\u001a\u000e\u0010\u0013\u001a\u00020\u0011*\u00020\u0002H\u0086\u0080\u0004\u00a8\u0006\u0014"
+        "\u0000\u001e\n\u0000\n\u0002\u0010\u000c\n\u0002\u0010\u0008\n\u0002\u0008\u0006\n\u0002\u0010\u000b\n\u0002\u0008\u0004\n\u0002\u0010\u000e\n\u0002\u0008\u0002\u001a\u000c\u0010\u0000\u001a\u00020\u0001*\u00020\u0002H\u0007\u001a\u0014\u0010\u0000\u001a\u00020\u0001*\u00020\u00022\u0006\u0010\u0003\u001a\u00020\u0002H\u0007\u001a\u000c\u0010\u0004\u001a\u00020\u0002*\u00020\u0001H\u0007\u001a\u0014\u0010\u0004\u001a\u00020\u0002*\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0002H\u0007\u001a\u0013\u0010\u0005\u001a\u0004\u0018\u00010\u0002*\u00020\u0001H\u0007\u00a2\u0006\u0002\u0010\u0006\u001a\u001b\u0010\u0005\u001a\u0004\u0018\u00010\u0002*\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0002H\u0007\u00a2\u0006\u0002\u0010\u0007\u001a\u001c\u0010\u0008\u001a\u00020\t*\u00020\u00012\u0006\u0010\n\u001a\u00020\u00012\u0008\u0008\u0002\u0010\u000b\u001a\u00020\t\u001a\n\u0010\u000c\u001a\u00020\t*\u00020\u0001\u001a\u0015\u0010\r\u001a\u00020\u000e*\u00020\u00012\u0006\u0010\n\u001a\u00020\u000eH\u0087\n\u001a\u000c\u0010\u000f\u001a\u00020\u000e*\u00020\u0001H\u0007\u00a8\u0006\u0010"
     }
     d2 = {
-        "digitToInt",
+        "digitToChar",
         "",
         "",
-        "Lkotlin/SinceKotlin;",
-        "version",
-        "1.5",
         "radix",
+        "digitToInt",
         "digitToIntOrNull",
         "(C)Ljava/lang/Integer;",
         "(CI)Ljava/lang/Integer;",
-        "digitToChar",
-        "titlecase",
-        "",
-        "plus",
-        "other",
-        "Lkotlin/internal/InlineOnly;",
         "equals",
         "",
+        "other",
         "ignoreCase",
         "isSurrogate",
+        "plus",
+        "",
+        "titlecase",
         "kotlin-stdlib"
     }
     k = 0x5
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x31
@@ -47,7 +43,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nChar.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Char.kt\nkotlin/text/CharsKt__CharKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,339:1\n1#2:340\n*E\n"
+        "SMAP\nChar.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Char.kt\nkotlin/text/CharsKt__CharKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,344:1\n1#2:345\n*E\n"
     }
 .end annotation
 
@@ -68,16 +64,22 @@
         version = "1.5"
     .end annotation
 
+    .annotation build Lkotlin/WasExperimental;
+        markerClass = {
+            Lkotlin/ExperimentalStdlibApi;
+        }
+    .end annotation
+
     const/16 v0, 0xa
 
-    .line 22
+    .line 23
     invoke-static {p0, v0}, Lkotlin/text/CharsKt;->digitOf(CI)I
 
     move-result v0
 
     if-gez v0, :cond_24
 
-    .line 23
+    .line 24
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -122,20 +124,20 @@
 
     return v1
 
-    .line 227
+    .line 237
     :cond_8
     invoke-static {p0}, Ljava/lang/Character;->toUpperCase(C)C
 
     move-result p0
 
-    .line 228
+    .line 238
     invoke-static {p1}, Ljava/lang/Character;->toUpperCase(C)C
 
     move-result p1
 
     if-eq p0, p1, :cond_1e
 
-    .line 230
+    .line 240
     invoke-static {p0}, Ljava/lang/Character;->toLowerCase(C)C
 
     move-result p0

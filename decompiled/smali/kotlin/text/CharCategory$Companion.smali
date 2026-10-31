@@ -15,12 +15,11 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0008\n\u0000\u0008\u0086\u0003\u0018\u00002\u00020\u0001B\t\u0008B\u00a2\u0006\u0004\u0008\u0002\u0010\u0003J\u0012\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0086\u0080\u0004\u00a8\u0006\u0008"
+        "\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0008\n\u0000\u0008\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\u0008\u0002\u00a2\u0006\u0002\u0010\u0002J\u000e\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006\u00a8\u0006\u0007"
     }
     d2 = {
         "Lkotlin/text/CharCategory$Companion;",
         "",
-        "<init>",
         "()V",
         "valueOf",
         "Lkotlin/text/CharCategory;",
@@ -30,8 +29,8 @@
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -66,27 +65,21 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    const/4 p0, 0x1
+    .line 172
+    new-instance p0, Lkotlin/ranges/IntRange;
 
     const/4 v0, 0x0
 
-    if-ltz p1, :cond_a
+    const/16 v1, 0x10
 
-    const/16 v1, 0x11
+    invoke-direct {p0, v0, v1}, Lkotlin/ranges/IntRange;-><init>(II)V
 
-    if-ge p1, v1, :cond_a
+    invoke-virtual {p0, p1}, Lkotlin/ranges/IntRange;->contains(I)Z
 
-    move v1, p0
+    move-result p0
 
-    goto :goto_b
+    if-eqz p0, :cond_19
 
-    :cond_a
-    move v1, v0
-
-    :goto_b
-    if-eqz v1, :cond_18
-
-    .line 172
     invoke-static {}, Lkotlin/text/CharCategory;->getEntries()Lkotlin/enums/EnumEntries;
 
     move-result-object p0
@@ -97,40 +90,41 @@
 
     check-cast p0, Lkotlin/text/CharCategory;
 
-    goto :goto_2e
-
-    :cond_18
-    const/16 v1, 0x12
-
-    if-gt v1, p1, :cond_21
-
-    const/16 v1, 0x1f
-
-    if-ge p1, v1, :cond_21
-
-    move v0, p0
-
-    :cond_21
-    if-eqz v0, :cond_2f
+    goto :goto_34
 
     .line 173
+    :cond_19
+    new-instance p0, Lkotlin/ranges/IntRange;
+
+    const/16 v0, 0x12
+
+    const/16 v1, 0x1e
+
+    invoke-direct {p0, v0, v1}, Lkotlin/ranges/IntRange;-><init>(II)V
+
+    invoke-virtual {p0, p1}, Lkotlin/ranges/IntRange;->contains(I)Z
+
+    move-result p0
+
+    if-eqz p0, :cond_35
+
     invoke-static {}, Lkotlin/text/CharCategory;->getEntries()Lkotlin/enums/EnumEntries;
 
-    move-result-object v0
+    move-result-object p0
 
-    sub-int/2addr p1, p0
+    add-int/lit8 p1, p1, -0x1
 
-    invoke-interface {v0, p1}, Lkotlin/enums/EnumEntries;->get(I)Ljava/lang/Object;
+    invoke-interface {p0, p1}, Lkotlin/enums/EnumEntries;->get(I)Ljava/lang/Object;
 
     move-result-object p0
 
     check-cast p0, Lkotlin/text/CharCategory;
 
-    :goto_2e
+    :goto_34
     return-object p0
 
     .line 174
-    :cond_2f
+    :cond_35
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     new-instance v0, Ljava/lang/StringBuilder;

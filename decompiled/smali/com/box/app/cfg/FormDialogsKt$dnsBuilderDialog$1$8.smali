@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$8\n+ 2 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,631:1\n441#2:632\n517#2,5:633\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$8\n*L\n421#1:632\n421#1:633,5\n*E\n"
+    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$8\n+ 2 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,631:1\n429#2:632\n502#2,5:633\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$8\n*L\n421#1:632\n421#1:633,5\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -52,7 +52,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$8\n+ 2 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,631:1\n441#2:632\n517#2,5:633\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$8\n*L\n421#1:632\n421#1:633,5\n*E\n"
+        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$8\n+ 2 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,631:1\n429#2:632\n502#2,5:633\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$8\n*L\n421#1:632\n421#1:633,5\n*E\n"
     }
 .end annotation
 
@@ -305,6 +305,10 @@
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
+
+    const-string v3, "toString(...)"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/4 v3, 0x5
 

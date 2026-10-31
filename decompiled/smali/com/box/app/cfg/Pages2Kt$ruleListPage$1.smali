@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleListPage$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,695:1\n1801#2,10:696\n2199#2:706\n2200#2:708\n1811#2:709\n1#3:707\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleListPage$1\n*L\n388#1:696,10\n388#1:706\n388#1:708\n388#1:709\n388#1:707\n*E\n"
+    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleListPage$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,695:1\n1603#2,9:696\n1855#2:705\n1856#2:707\n1612#2:708\n1#3:706\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleListPage$1\n*L\n388#1:696,9\n388#1:705\n388#1:707\n388#1:708\n388#1:706\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,7 +49,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleListPage$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,695:1\n1801#2,10:696\n2199#2:706\n2200#2:708\n1811#2:709\n1#3:707\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleListPage$1\n*L\n388#1:696,10\n388#1:706\n388#1:708\n388#1:709\n388#1:707\n*E\n"
+        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleListPage$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,695:1\n1603#2,9:696\n1855#2:705\n1856#2:707\n1612#2:708\n1#3:706\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleListPage$1\n*L\n388#1:696,9\n388#1:705\n388#1:707\n388#1:708\n388#1:706\n*E\n"
     }
 .end annotation
 
@@ -200,7 +200,7 @@
 
     check-cast v6, Ljava/util/Collection;
 
-    .line 706
+    .line 705
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -217,7 +217,7 @@
 
     move-result-object v7
 
-    .line 705
+    .line 704
     check-cast v7, Ltop/yukonga/mishka/custom/forms/YamlNode;
 
     .line 388
@@ -227,12 +227,12 @@
 
     if-eqz v7, :cond_46
 
-    .line 705
+    .line 704
     invoke-interface {v6, v7}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_46
 
-    .line 709
+    .line 708
     :cond_5c
     check-cast v6, Ljava/util/List;
 

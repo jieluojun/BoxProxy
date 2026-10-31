@@ -201,19 +201,11 @@
     move-result-object v0
 
     .line 624
-    new-instance v1, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8$run$$inlined$compareBy$1;
-
-    invoke-direct {v1}, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8$run$$inlined$compareBy$1;-><init>()V
+    sget-object v1, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8$rows$4;->INSTANCE:Lcom/box/app/cfg/FormDialogsKt$appListDialog$8$rows$4;
 
     check-cast v1, Ljava/util/Comparator;
 
-    new-instance v2, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8$run$$inlined$thenBy$1;
-
-    invoke-direct {v2, v1}, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8$run$$inlined$thenBy$1;-><init>(Ljava/util/Comparator;)V
-
-    check-cast v2, Ljava/util/Comparator;
-
-    invoke-static {v0, v2}, Lkotlin/sequences/SequencesKt;->sortedWith(Lkotlin/sequences/Sequence;Ljava/util/Comparator;)Lkotlin/sequences/Sequence;
+    invoke-static {v0, v1}, Lkotlin/sequences/SequencesKt;->sortedWith(Lkotlin/sequences/Sequence;Ljava/util/Comparator;)Lkotlin/sequences/Sequence;
 
     move-result-object v0
 
@@ -255,12 +247,12 @@
     check-cast v14, Ljava/lang/Runnable;
 
     invoke-virtual {v0, v14}, Landroid/widget/EditText;->post(Ljava/lang/Runnable;)Z
-    :try_end_6b
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_6b} :catch_6c
+    :try_end_61
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_61} :catch_62
 
-    goto :goto_91
+    goto :goto_87
 
-    :catch_6c
+    :catch_62
     move-exception v0
 
     move-object v3, v0
@@ -300,6 +292,6 @@
 
     invoke-virtual {v0, v14}, Landroid/widget/EditText;->post(Ljava/lang/Runnable;)Z
 
-    :goto_91
+    :goto_87
     return-void
 .end method

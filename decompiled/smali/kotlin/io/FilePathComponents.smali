@@ -4,12 +4,9 @@
 
 
 # annotations
-.annotation build Lkotlin/ConsistentCopyVisibility;
-.end annotation
-
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0008\u0007\n\u0002\u0010\u000e\n\u0002\u0008\u0003\n\u0002\u0010\u000b\n\u0002\u0008\u0002\n\u0002\u0010\u0008\n\u0002\u0008\u000e\n\u0002\u0018\u0002\u0008\u0081\u0008\u0018\u00002\u00020\u0001B\u001f\u0008@\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u000c\u0010\u0004\u001a\u0008\u0012\u0004\u0012\u00020\u00030\u0005\u00a2\u0006\u0004\u0008\u0006\u0010\u0007J\u001a\u0010\u0017\u001a\u00020\u00032\u0006\u0010\u0018\u001a\u00020\u00142\u0006\u0010\u0019\u001a\u00020\u0014H\u0086\u0080\u0004J\n\u0010\u001a\u001a\u00020\u0003H\u00c6\u0083\u0004J\u0010\u0010\u001b\u001a\u0008\u0012\u0004\u0012\u00020\u00030\u0005H\u00c6\u0083\u0004J)\u0010\u001c\u001a\u00020\u00002\u0008\u0008\u0002\u0010\u0002\u001a\u00020\u00032\u000e\u0008\u0002\u0010\u0004\u001a\u0008\u0012\u0004\u0012\u00020\u00030\u0005H\u00c0\u0081\u0004\u00a2\u0006\u0002\u0008\u001dJ\u0014\u0010\u001e\u001a\u00020\u00112\u0008\u0010\u001f\u001a\u0004\u0018\u00010\u0001H\u00d6\u0083\u0004J\n\u0010 \u001a\u00020\u0014H\u00d6\u0081\u0004J\n\u0010!\u001a\u00020\rH\u00d6\u0081\u0004R\u0015\u0010\u0002\u001a\u00020\u0003X\u0086\u0084\u0008\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u0008\u0010\tR\u001b\u0010\u0004\u001a\u0008\u0012\u0004\u0012\u00020\u00030\u0005X\u0086\u0084\u0008\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\n\u0010\u000bR\u0015\u0010\u000c\u001a\u00020\r8FX\u0086\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\u000e\u0010\u000fR\u0015\u0010\u0010\u001a\u00020\u00118FX\u0086\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\u0010\u0010\u0012R\u0015\u0010\u0013\u001a\u00020\u00148FX\u0086\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\u0015\u0010\u0016\u00ca\u0001\u0002\u0008#\u00a8\u0006\""
+        "\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010 \n\u0002\u0008\u0002\n\u0002\u0010\u000b\n\u0002\u0008\u0004\n\u0002\u0010\u000e\n\u0002\u0008\u0005\n\u0002\u0010\u0008\n\u0002\u0008\r\u0008\u0080\u0008\u0018\u00002\u00020\u0001B\u001d\u0008\u0000\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u000c\u0010\u0004\u001a\u0008\u0012\u0004\u0012\u00020\u00030\u0005\u00a2\u0006\u0002\u0010\u0006J\t\u0010\u0016\u001a\u00020\u0003H\u00c6\u0003J\u000f\u0010\u0017\u001a\u0008\u0012\u0004\u0012\u00020\u00030\u0005H\u00c6\u0003J#\u0010\u0018\u001a\u00020\u00002\u0008\u0008\u0002\u0010\u0002\u001a\u00020\u00032\u000e\u0008\u0002\u0010\u0004\u001a\u0008\u0012\u0004\u0012\u00020\u00030\u0005H\u00c6\u0001J\u0013\u0010\u0019\u001a\u00020\u00082\u0008\u0010\u001a\u001a\u0004\u0018\u00010\u0001H\u00d6\u0003J\t\u0010\u001b\u001a\u00020\u0013H\u00d6\u0001J\u0016\u0010\u001c\u001a\u00020\u00032\u0006\u0010\u001d\u001a\u00020\u00132\u0006\u0010\u001e\u001a\u00020\u0013J\t\u0010\u001f\u001a\u00020\rH\u00d6\u0001R\u0011\u0010\u0007\u001a\u00020\u00088F\u00a2\u0006\u0006\u001a\u0004\u0008\u0007\u0010\tR\u0011\u0010\u0002\u001a\u00020\u0003\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\n\u0010\u000bR\u0011\u0010\u000c\u001a\u00020\r8F\u00a2\u0006\u0006\u001a\u0004\u0008\u000e\u0010\u000fR\u0017\u0010\u0004\u001a\u0008\u0012\u0004\u0012\u00020\u00030\u0005\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u0010\u0010\u0011R\u0011\u0010\u0012\u001a\u00020\u00138F\u00a2\u0006\u0006\u001a\u0004\u0008\u0014\u0010\u0015\u00a8\u0006 "
     }
     d2 = {
         "Lkotlin/io/FilePathComponents;",
@@ -18,41 +15,38 @@
         "Ljava/io/File;",
         "segments",
         "",
-        "<init>",
         "(Ljava/io/File;Ljava/util/List;)V",
+        "isRooted",
+        "",
+        "()Z",
         "getRoot",
         "()Ljava/io/File;",
-        "getSegments",
-        "()Ljava/util/List;",
         "rootName",
         "",
         "getRootName",
         "()Ljava/lang/String;",
-        "isRooted",
-        "",
-        "()Z",
+        "getSegments",
+        "()Ljava/util/List;",
         "size",
         "",
         "getSize",
         "()I",
-        "subPath",
-        "beginIndex",
-        "endIndex",
         "component1",
         "component2",
         "copy",
-        "copy$kotlin_stdlib",
         "equals",
         "other",
         "hashCode",
+        "subPath",
+        "beginIndex",
+        "endIndex",
         "toString",
-        "kotlin-stdlib",
-        "Lkotlin/ConsistentCopyVisibility;"
+        "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -117,7 +111,7 @@
     .line 94
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 96
+    .line 95
     iput-object p1, p0, Lkotlin/io/FilePathComponents;->root:Ljava/io/File;
 
     iput-object p2, p0, Lkotlin/io/FilePathComponents;->segments:Ljava/util/List;
@@ -154,7 +148,7 @@
     return-object p0
 .end method
 
-.method public final copy$kotlin_stdlib(Ljava/io/File;Ljava/util/List;)Lkotlin/io/FilePathComponents;
+.method public final copy(Ljava/io/File;Ljava/util/List;)Lkotlin/io/FilePathComponents;
     .registers 3
     .param p1    # Ljava/io/File;
         .annotation build Lorg/jetbrains/annotations/NotNull;
@@ -253,7 +247,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 96
+    .line 95
     iget-object p0, p0, Lkotlin/io/FilePathComponents;->root:Ljava/io/File;
 
     return-object p0
@@ -264,7 +258,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 101
+    .line 100
     iget-object p0, p0, Lkotlin/io/FilePathComponents;->root:Ljava/io/File;
 
     invoke-virtual {p0}, Ljava/io/File;->getPath()Ljava/lang/String;
@@ -292,7 +286,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 96
+    .line 95
     iget-object p0, p0, Lkotlin/io/FilePathComponents;->segments:Ljava/util/List;
 
     return-object p0
@@ -301,7 +295,7 @@
 .method public final getSize()I
     .registers 1
 
-    .line 111
+    .line 110
     iget-object p0, p0, Lkotlin/io/FilePathComponents;->segments:Ljava/util/List;
 
     invoke-interface {p0}, Ljava/util/List;->size()I
@@ -336,7 +330,7 @@
 .method public final isRooted()Z
     .registers 2
 
-    .line 106
+    .line 105
     iget-object p0, p0, Lkotlin/io/FilePathComponents;->root:Ljava/io/File;
 
     invoke-virtual {p0}, Ljava/io/File;->getPath()Ljava/lang/String;
@@ -375,7 +369,7 @@
 
     if-gt p1, p2, :cond_30
 
-    .line 118
+    .line 117
     invoke-virtual {p0}, Lkotlin/io/FilePathComponents;->getSize()I
 
     move-result v0
@@ -384,7 +378,7 @@
 
     goto :goto_30
 
-    .line 121
+    .line 120
     :cond_b
     new-instance v0, Ljava/io/File;
 
@@ -430,7 +424,7 @@
 
     return-object v0
 
-    .line 119
+    .line 118
     :cond_30
     :goto_30
     new-instance p0, Ljava/lang/IllegalArgumentException;

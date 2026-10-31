@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPages3.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages3.kt\ncom/box/app/cfg/Pages3Kt$fieldAnchorDialog$1$4\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,499:1\n777#2:500\n873#2,2:501\n1745#2:503\n1820#2,3:504\n*S KotlinDebug\n*F\n+ 1 Pages3.kt\ncom/box/app/cfg/Pages3Kt$fieldAnchorDialog$1$4\n*L\n382#1:500\n382#1:501,2\n382#1:503\n382#1:504,3\n*E\n"
+    value = "SMAP\nPages3.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages3.kt\ncom/box/app/cfg/Pages3Kt$fieldAnchorDialog$1$4\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,499:1\n766#2:500\n857#2,2:501\n1549#2:503\n1620#2,3:504\n*S KotlinDebug\n*F\n+ 1 Pages3.kt\ncom/box/app/cfg/Pages3Kt$fieldAnchorDialog$1$4\n*L\n382#1:500\n382#1:501,2\n382#1:503\n382#1:504,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,7 +49,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nPages3.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages3.kt\ncom/box/app/cfg/Pages3Kt$fieldAnchorDialog$1$4\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,499:1\n777#2:500\n873#2,2:501\n1745#2:503\n1820#2,3:504\n*S KotlinDebug\n*F\n+ 1 Pages3.kt\ncom/box/app/cfg/Pages3Kt$fieldAnchorDialog$1$4\n*L\n382#1:500\n382#1:501,2\n382#1:503\n382#1:504,3\n*E\n"
+        "SMAP\nPages3.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages3.kt\ncom/box/app/cfg/Pages3Kt$fieldAnchorDialog$1$4\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,499:1\n766#2:500\n857#2,2:501\n1549#2:503\n1620#2,3:504\n*S KotlinDebug\n*F\n+ 1 Pages3.kt\ncom/box/app/cfg/Pages3Kt$fieldAnchorDialog$1$4\n*L\n382#1:500\n382#1:501,2\n382#1:503\n382#1:504,3\n*E\n"
     }
 .end annotation
 

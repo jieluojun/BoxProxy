@@ -13,7 +13,7 @@ Mishka 的界面是 Compose + Miuix，没法直接放进这个 apktool 工程，
 
 ## 入口
 
-编辑 mihomo 配置（`.yaml` / `.yml`）的页面，左上角返回键右边多了两个按钮「可视」和「锚点」。打开时拿的是编辑器里**当前的实时文本**
+编辑 mihomo 配置（`.yaml` / `.yml`）的页面，左上角返回键右边多了两个图标按钮：滑杆图标 = 可视化修改，船锚图标 = 锚点面板。打开时拿的是编辑器里**当前的实时文本**
 （包括没保存的改动）；面板里每一步改动都立即写回编辑器草稿（可在顶栏撤销），**仍然要在编辑器里点保存**才落盘。非 YAML 文件会提示不支持。
 
 ## 锚点面板
@@ -38,7 +38,7 @@ Mishka 的界面是 Compose + Miuix，没法直接放进这个 apktool 工程，
 ## 实现
 
 * `decompiled/smali/yi5.smali`：顶栏 navigationIcon 的两处 `new Lm05(onBack, B)` 后面各加一次 `CfgNav.wrap(...)`。
-* `com/box/app/cfg/CfgNav`（手写 smali，实现 `Lv52`）：先原样画返回键，再画「可视」「锚点」两个按钮（navigationIcon 槽子项叠放，用 padding-start 错开）。
-* `CfgGlue`（手写 smali）：`mj5.b()` 读实时文本、`mj5.m(String)` + `mj5.k()` 整篇替换；`CfgClick` / `CfgLabel` 同属胶水层。
+* `com/box/app/cfg/CfgNav`（手写 smali，实现 `Lv52`）：先原样画返回键，再画两个图标按钮（`CfgIcon`：用 `moveTo/lineTo/close` 拼的实心 `ImageVector`，经 Icon composable 画出）（navigationIcon 槽子项叠放，用 padding-start 错开）。
+* `CfgGlue`（手写 smali）：`mj5.b()` 读实时文本、`mj5.m(String)` + `mj5.k()` 整篇替换；`CfgClick` / `CfgIcon` 同属胶水层。
 * `CfgLauncher.open(kind, token, ctx)`：0 = `AnchorActivity`，1 = `FormActivity`；两个 Activity 已在 `AndroidManifest.xml` 注册（`exported=false`）。
 * 其余 `com/box/app/cfg/*`、`top/yukonga/*`、`kotlin/*`、`androidx/compose/runtime/Immutable` 是 `vpn-src/tools/build-cfg.sh` 的生成物，见 `vpn-src/README.md`。

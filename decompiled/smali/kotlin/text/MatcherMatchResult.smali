@@ -9,7 +9,7 @@
 # annotations
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\r\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0010\u000e\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0010 \n\u0002\u0008\u0005\u0008\u0002\u0018\u00002\u00020\u0001B\u0019\u0008F\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u00a2\u0006\u0004\u0008\u0006\u0010\u0007J\u000c\u0010\u001d\u001a\u0004\u0018\u00010\u0001H\u0096\u0080\u0004R\u000f\u0010\u0002\u001a\u00020\u0003X\u0082\u0084\u0008\u00a2\u0006\u0002\n\u0000R\u000f\u0010\u0004\u001a\u00020\u0005X\u0082\u0084\u0008\u00a2\u0006\u0002\n\u0000R\u0015\u0010\u0008\u001a\u00020\t8BX\u0082\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\n\u0010\u000bR\u0015\u0010\u000c\u001a\u00020\r8VX\u0096\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\u000e\u0010\u000fR\u0015\u0010\u0010\u001a\u00020\u00118VX\u0096\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\u0012\u0010\u0013R\u0015\u0010\u0014\u001a\u00020\u0015X\u0096\u0084\u0008\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u0016\u0010\u0017R\u0017\u0010\u0018\u001a\n\u0012\u0004\u0012\u00020\u0011\u0018\u00010\u0019X\u0082\u008e\u0008\u00a2\u0006\u0002\n\u0000R\u001b\u0010\u001a\u001a\u0008\u0012\u0004\u0012\u00020\u00110\u00198VX\u0096\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\u001b\u0010\u001c\u00a8\u0006\u001e"
+        "\u0000<\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\r\n\u0002\u0008\u0002\n\u0002\u0010 \n\u0002\u0010\u000e\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0007\u0008\u0002\u0018\u00002\u00020\u0001B\u0015\u0012\u0006\u0010\u0002\u001a\u00020\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u00a2\u0006\u0002\u0010\u0006J\n\u0010\u001c\u001a\u0004\u0018\u00010\u0001H\u0016R\u001a\u0010\u0007\u001a\u0008\u0012\u0004\u0012\u00020\t0\u00088VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\n\u0010\u000bR\u0016\u0010\u000c\u001a\n\u0012\u0004\u0012\u00020\t\u0018\u00010\u0008X\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u0014\u0010\r\u001a\u00020\u000eX\u0096\u0004\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u000f\u0010\u0010R\u000e\u0010\u0004\u001a\u00020\u0005X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u0014\u0010\u0011\u001a\u00020\u00128BX\u0082\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u0013\u0010\u0014R\u000e\u0010\u0002\u001a\u00020\u0003X\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u0014\u0010\u0015\u001a\u00020\u00168VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u0017\u0010\u0018R\u0014\u0010\u0019\u001a\u00020\t8VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u001a\u0010\u001b\u00a8\u0006\u001d"
     }
     d2 = {
         "Lkotlin/text/MatcherMatchResult;",
@@ -18,8 +18,17 @@
         "Ljava/util/regex/Matcher;",
         "input",
         "",
-        "<init>",
         "(Ljava/util/regex/Matcher;Ljava/lang/CharSequence;)V",
+        "groupValues",
+        "",
+        "",
+        "getGroupValues",
+        "()Ljava/util/List;",
+        "groupValues_",
+        "groups",
+        "Lkotlin/text/MatchGroupCollection;",
+        "getGroups",
+        "()Lkotlin/text/MatchGroupCollection;",
         "matchResult",
         "Ljava/util/regex/MatchResult;",
         "getMatchResult",
@@ -29,25 +38,15 @@
         "getRange",
         "()Lkotlin/ranges/IntRange;",
         "value",
-        "",
         "getValue",
         "()Ljava/lang/String;",
-        "groups",
-        "Lkotlin/text/MatchGroupCollection;",
-        "getGroups",
-        "()Lkotlin/text/MatchGroupCollection;",
-        "groupValues_",
-        "",
-        "groupValues",
-        "getGroupValues",
-        "()Ljava/util/List;",
         "next",
         "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -110,14 +109,14 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 373
+    .line 350
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lkotlin/text/MatcherMatchResult;->matcher:Ljava/util/regex/Matcher;
 
     iput-object p2, p0, Lkotlin/text/MatcherMatchResult;->input:Ljava/lang/CharSequence;
 
-    .line 380
+    .line 357
     new-instance p1, Lkotlin/text/MatcherMatchResult$groups$1;
 
     invoke-direct {p1, p0}, Lkotlin/text/MatcherMatchResult$groups$1;-><init>(Lkotlin/text/MatcherMatchResult;)V
@@ -132,7 +131,7 @@
 .method public static final synthetic access$getMatchResult(Lkotlin/text/MatcherMatchResult;)Ljava/util/regex/MatchResult;
     .registers 1
 
-    .line 373
+    .line 350
     invoke-direct {p0}, Lkotlin/text/MatcherMatchResult;->getMatchResult()Ljava/util/regex/MatchResult;
 
     move-result-object p0
@@ -143,7 +142,7 @@
 .method private final getMatchResult()Ljava/util/regex/MatchResult;
     .registers 1
 
-    .line 374
+    .line 351
     iget-object p0, p0, Lkotlin/text/MatcherMatchResult;->matcher:Ljava/util/regex/Matcher;
 
     check-cast p0, Ljava/util/regex/MatchResult;
@@ -151,12 +150,12 @@
     return-object p0
 .end method
 
-.method public bridge getDestructured()Lkotlin/text/MatchResult$Destructured;
+.method public getDestructured()Lkotlin/text/MatchResult$Destructured;
     .registers 1
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 373
+    .line 350
     invoke-static {p0}, Lkotlin/text/MatchResult$DefaultImpls;->getDestructured(Lkotlin/text/MatchResult;)Lkotlin/text/MatchResult$Destructured;
 
     move-result-object p0
@@ -178,12 +177,12 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 402
+    .line 379
     iget-object v0, p0, Lkotlin/text/MatcherMatchResult;->groupValues_:Ljava/util/List;
 
     if-nez v0, :cond_d
 
-    .line 403
+    .line 380
     new-instance v0, Lkotlin/text/MatcherMatchResult$groupValues$1;
 
     invoke-direct {v0, p0}, Lkotlin/text/MatcherMatchResult$groupValues$1;-><init>(Lkotlin/text/MatcherMatchResult;)V
@@ -192,7 +191,7 @@
 
     iput-object v0, p0, Lkotlin/text/MatcherMatchResult;->groupValues_:Ljava/util/List;
 
-    .line 408
+    .line 385
     :cond_d
     iget-object p0, p0, Lkotlin/text/MatcherMatchResult;->groupValues_:Ljava/util/List;
 
@@ -206,7 +205,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 380
+    .line 357
     iget-object p0, p0, Lkotlin/text/MatcherMatchResult;->groups:Lkotlin/text/MatchGroupCollection;
 
     return-object p0
@@ -217,7 +216,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 376
+    .line 353
     invoke-direct {p0}, Lkotlin/text/MatcherMatchResult;->getMatchResult()Ljava/util/regex/MatchResult;
 
     move-result-object p0
@@ -234,7 +233,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 378
+    .line 355
     invoke-direct {p0}, Lkotlin/text/MatcherMatchResult;->getMatchResult()Ljava/util/regex/MatchResult;
 
     move-result-object p0
@@ -255,7 +254,7 @@
     .annotation build Lorg/jetbrains/annotations/Nullable;
     .end annotation
 
-    .line 412
+    .line 389
     invoke-direct {p0}, Lkotlin/text/MatcherMatchResult;->getMatchResult()Ljava/util/regex/MatchResult;
 
     move-result-object v0
@@ -292,7 +291,7 @@
     :goto_1d
     add-int/2addr v0, v1
 
-    .line 413
+    .line 390
     iget-object v1, p0, Lkotlin/text/MatcherMatchResult;->input:Ljava/lang/CharSequence;
 
     invoke-interface {v1}, Ljava/lang/CharSequence;->length()I

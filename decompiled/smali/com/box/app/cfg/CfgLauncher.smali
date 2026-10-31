@@ -58,7 +58,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 21
+    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -79,7 +79,7 @@
 
     const/4 v0, 0x1
 
-    .line 25
+    .line 26
     :try_start_1
     invoke-static {p1}, Lcom/box/app/cfg/CfgGlue;->getPath(Ljava/lang/Object;)Ljava/lang/String;
 
@@ -94,7 +94,7 @@
     :cond_a
     move-object v2, v1
 
-    .line 26
+    .line 27
     :goto_b
     sget-object v3, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
@@ -114,7 +114,7 @@
 
     const/4 v6, 0x0
 
-    .line 27
+    .line 28
     invoke-static {v2, v3, v6, v5, v4}, Lkotlin/text/StringsKt;->endsWith$default(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)Z
 
     move-result v3
@@ -131,7 +131,7 @@
 
     const-string p0, "\u53ef\u89c6\u5316\u4fee\u6539 / \u951a\u70b9\u9762\u677f\u53ea\u652f\u6301 YAML \u914d\u7f6e\uff08.yaml / .yml\uff09"
 
-    .line 28
+    .line 29
     check-cast p0, Ljava/lang/CharSequence;
 
     invoke-static {p2, p0, v0}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
@@ -142,13 +142,13 @@
 
     return-void
 
-    .line 31
+    .line 32
     :cond_35
     sget-object v2, Lcom/box/app/cfg/CfgSession;->INSTANCE:Lcom/box/app/cfg/CfgSession;
 
     sput-object p1, Lcom/box/app/cfg/CfgSession;->token:Ljava/lang/Object;
 
-    .line 32
+    .line 33
     sget-object v2, Lcom/box/app/cfg/CfgSession;->INSTANCE:Lcom/box/app/cfg/CfgSession;
 
     invoke-static {p1}, Lcom/box/app/cfg/CfgGlue;->getText(Ljava/lang/Object;)Ljava/lang/String;
@@ -162,17 +162,17 @@
     :cond_43
     sput-object p1, Lcom/box/app/cfg/CfgSession;->text:Ljava/lang/String;
 
-    .line 33
+    .line 34
     sget-object p1, Lcom/box/app/cfg/CfgSession;->INSTANCE:Lcom/box/app/cfg/CfgSession;
 
     sput-object v1, Lcom/box/app/cfg/CfgSession;->path:Ljava/lang/String;
 
-    .line 34
+    .line 35
     new-instance p1, Landroid/content/Intent;
 
     invoke-direct {p1}, Landroid/content/Intent;-><init>()V
 
-    .line 35
+    .line 36
     invoke-virtual {p2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     move-result-object v1
@@ -189,7 +189,7 @@
     :goto_59
     invoke-virtual {p1, v1, p0}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 36
+    .line 37
     sget-object p0, Lcom/box/app/cfg/CfgLauncher;->INSTANCE:Lcom/box/app/cfg/CfgLauncher;
 
     invoke-direct {p0, p2}, Lcom/box/app/cfg/CfgLauncher;->unwrap(Landroid/content/Context;)Landroid/content/Context;
@@ -204,7 +204,7 @@
 
     invoke-virtual {p1, p0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 37
+    .line 38
     :cond_6b
     invoke-virtual {p2, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_6e
@@ -215,7 +215,7 @@
     :catch_6f
     move-exception p0
 
-    .line 39
+    .line 40
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -247,7 +247,7 @@
 
     const/4 p0, 0x0
 
-    .line 46
+    .line 47
     :goto_1
     instance-of v0, p1, Landroid/content/ContextWrapper;
 

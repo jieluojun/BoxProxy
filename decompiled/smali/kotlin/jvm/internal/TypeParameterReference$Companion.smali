@@ -21,12 +21,11 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0003\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\u0008\u0086\u0003\u0018\u00002\u00020\u0001B\t\u0008B\u00a2\u0006\u0004\u0008\u0002\u0010\u0003J\u0012\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0007H\u0086\u0080\u0004\u00a8\u0006\u0008"
+        "\u0000\u0018\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0018\u0002\n\u0000\u0008\u0086\u0003\u0018\u00002\u00020\u0001B\u0007\u0008\u0002\u00a2\u0006\u0002\u0010\u0002J\u000e\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0006\u00a8\u0006\u0007"
     }
     d2 = {
         "Lkotlin/jvm/internal/TypeParameterReference$Companion;",
         "",
-        "<init>",
         "()V",
         "toString",
         "",
@@ -36,8 +35,8 @@
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -53,7 +52,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 36
+    .line 44
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -80,12 +79,12 @@
 
     invoke-static {p1, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 38
+    .line 46
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 39
+    .line 47
     invoke-interface {p1}, Lkotlin/reflect/KTypeParameter;->getVariance()Lkotlin/reflect/KVariance;
 
     move-result-object v0
@@ -98,55 +97,48 @@
 
     aget v0, v1, v0
 
-    packed-switch v0, :pswitch_data_3a
+    packed-switch v0, :pswitch_data_36
 
-    new-instance p0, Lkotlin/NoWhenBranchMatchedException;
+    goto :goto_25
 
-    invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
-
-    throw p0
-
-    :pswitch_1f
+    :pswitch_1a
     const-string v0, "out "
 
-    .line 43
+    .line 51
     invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_2d
+    goto :goto_25
 
-    :pswitch_25
+    :pswitch_20
     const-string v0, "in "
 
-    .line 42
+    .line 50
     invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    goto :goto_2d
-
-    .line 39
-    :pswitch_2b
-    sget-object v0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
-
-    .line 46
-    :goto_2d
+    .line 54
+    :goto_25
+    :pswitch_25
     invoke-interface {p1}, Lkotlin/reflect/KTypeParameter;->getName()Ljava/lang/String;
 
     move-result-object p1
 
     invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 38
+    .line 46
     invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
 
+    const-string p1, "toString(...)"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     return-object p0
 
-    nop
-
-    :pswitch_data_3a
+    :pswitch_data_36
     .packed-switch 0x1
-        :pswitch_2b
         :pswitch_25
-        :pswitch_1f
+        :pswitch_20
+        :pswitch_1a
     .end packed-switch
 .end method

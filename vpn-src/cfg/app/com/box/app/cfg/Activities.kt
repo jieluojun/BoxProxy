@@ -7,6 +7,7 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import java.io.File
 
@@ -61,27 +62,53 @@ abstract class CfgBaseActivity : Activity() {
         super.onCreate(b)
         Th.init(this)
         Cx.act = this
-        val token = CfgSession.token
-        val text = CfgSession.text
-        if (token == null || text == null) { finish(); return }
-        window.setBackgroundDrawable(android.graphics.drawable.ColorDrawable(Th.bg))
-        @Suppress("DEPRECATION")
-        run {
-            window.statusBarColor = Th.bg
-            window.navigationBarColor = Th.bg
-            if (Build.VERSION.SDK_INT >= 30) {
-                window.setDecorFitsSystemWindows(false)
-                val m = android.view.WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS or android.view.WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
-                window.insetsController?.setSystemBarsAppearance(if (night) 0 else m, m)
-            } else if (!night) {
-                window.decorView.systemUiVisibility = window.decorView.systemUiVisibility or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+        try {
+            val token = CfgSession.token
+            val text = CfgSession.text
+            if (token == null || text == null) { finish(); return }
+            window.setBackgroundDrawable(android.graphics.drawable.ColorDrawable(Th.bg))
+            @Suppress("DEPRECATION")
+            run {
+                window.statusBarColor = Th.bg
+                window.navigationBarColor = Th.bg
+                if (Build.VERSION.SDK_INT >= 30) {
+                    window.setDecorFitsSystemWindows(false)
+                    val m = android.view.WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS or android.view.WindowInsetsController.APPEARANCE_LIGHT_NAVIGATION_BARS
+                    window.insetsController?.setSystemBarsAppearance(if (night) 0 else m, m)
+                } else if (!night) {
+                    window.decorView.systemUiVisibility = window.decorView.systemUiVisibility or View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
+                }
             }
+            sc = Scaffold(this)
+            sc.back { onBackAction() }
+            setContentView(sc.root)
+            build(token, text, CfgSession.path.orEmpty())
+        } catch (t: Throwable) {
+            showFailure(t)
+            return
         }
-        sc = Scaffold(this)
-        sc.back { onBackAction() }
-        setContentView(sc.root)
-        build(token, text, CfgSession.path.orEmpty())
-        if (Build.VERSION.SDK_INT >= 33) BackCompat.register(this) { onBackAction() }
+        if (Build.VERSION.SDK_INT >= 33) {
+            try { BackCompat.register(this) { onBackAction() } } catch (_: Throwable) {}
+        }
+    }
+
+    /** 画面出不来时不要闪退：把异常栈直接显示出来（可长按选择复制），方便反馈。 */
+    private fun showFailure(t: Throwable) {
+        try {
+            android.util.Log.e("BoxCfg", "panel failed", t)
+            val sw = java.io.StringWriter()
+            t.printStackTrace(java.io.PrintWriter(sw))
+            val v = TextView(this)
+            v.text = "这个面板打不开：\n\n$sw"
+            v.setTextIsSelectable(true)
+            v.textSize = 12f
+            v.setPadding(dp(16), dp(48), dp(16), dp(16))
+            val sv = android.widget.ScrollView(this)
+            sv.addView(v)
+            setContentView(sv)
+        } catch (_: Throwable) {
+            finish()
+        }
     }
 
     @Deprecated("Deprecated in Java")

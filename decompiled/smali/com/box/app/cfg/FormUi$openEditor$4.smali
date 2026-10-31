@@ -30,7 +30,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFormUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormUi.kt\ncom/box/app/cfg/FormUi$openEditor$4\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,359:1\n1745#2:360\n1820#2,3:361\n*S KotlinDebug\n*F\n+ 1 FormUi.kt\ncom/box/app/cfg/FormUi$openEditor$4\n*L\n296#1:360\n296#1:361,3\n*E\n"
+    value = "SMAP\nFormUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormUi.kt\ncom/box/app/cfg/FormUi$openEditor$4\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,359:1\n1549#2:360\n1620#2,3:361\n*S KotlinDebug\n*F\n+ 1 FormUi.kt\ncom/box/app/cfg/FormUi$openEditor$4\n*L\n296#1:360\n296#1:361,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -56,7 +56,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nFormUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormUi.kt\ncom/box/app/cfg/FormUi$openEditor$4\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,359:1\n1745#2:360\n1820#2,3:361\n*S KotlinDebug\n*F\n+ 1 FormUi.kt\ncom/box/app/cfg/FormUi$openEditor$4\n*L\n296#1:360\n296#1:361,3\n*E\n"
+        "SMAP\nFormUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormUi.kt\ncom/box/app/cfg/FormUi$openEditor$4\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,359:1\n1549#2:360\n1620#2,3:361\n*S KotlinDebug\n*F\n+ 1 FormUi.kt\ncom/box/app/cfg/FormUi$openEditor$4\n*L\n296#1:360\n296#1:361,3\n*E\n"
     }
 .end annotation
 

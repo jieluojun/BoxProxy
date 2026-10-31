@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x1018
+    accessFlags = 0x1000
     name = null
 .end annotation
 
@@ -29,11 +29,11 @@
 .annotation runtime Lkotlin/Metadata;
     k = 0x3
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
-    xi = 0x530
+    xi = 0x30
 .end annotation
 
 
@@ -82,7 +82,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 137
+    .line 135
     check-cast p1, Lkotlin/text/MatchResult;
 
     invoke-virtual {p0, p1}, Lkotlin/text/Regex$findAll$2;->invoke(Lkotlin/text/MatchResult;)Lkotlin/text/MatchResult;
@@ -94,12 +94,18 @@
 
 .method public final invoke(Lkotlin/text/MatchResult;)Lkotlin/text/MatchResult;
     .registers 2
+    .param p1    # Lkotlin/text/MatchResult;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .annotation build Lorg/jetbrains/annotations/Nullable;
+    .end annotation
 
     const-string p0, "p0"
 
     invoke-static {p1, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 137
+    .line 135
     invoke-interface {p1}, Lkotlin/text/MatchResult;->next()Lkotlin/text/MatchResult;
 
     move-result-object p0

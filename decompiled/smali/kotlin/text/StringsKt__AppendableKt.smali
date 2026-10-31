@@ -6,44 +6,36 @@
 # annotations
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000P\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\r\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000c\n\u0002\u0008\u0002\n\u0002\u0010\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\u001aK\u0010\u0000\u001a\u0002H\u0001\"\u000c\u0008\u0000\u0010\u0001*\u00060\u0002j\u0002`\u0003*\u0002H\u00012\u0006\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u00072\u0006\u0010\u0008\u001a\u00020\u0007H\u0087\u0080\u0008b\u000c\u0008\n\u0012\u0008\u0008\u000b\u0012\u0004\u0008\u0008(\u000cb\u0002\u0008\r\u00a2\u0006\u0002\u0010\t\u001a=\u0010\u000e\u001a\u0002H\u0001\"\u000c\u0008\u0000\u0010\u0001*\u00060\u0002j\u0002`\u0003*\u0002H\u00012\u0016\u0010\u0004\u001a\u000c\u0012\u0008\u0008\u0001\u0012\u0004\u0018\u00010\u00050\u000f\"\u0004\u0018\u00010\u0005H\u0087\u0080\u0008b\u0002\u0008\r\u00a2\u0006\u0002\u0010\u0010\u001a1\u0010\u0011\u001a\u00060\u0002j\u0002`\u0003*\u00060\u0002j\u0002`\u0003H\u0087\u0088\u0008b\u000c\u0008\n\u0012\u0008\u0008\u000b\u0012\u0004\u0008\u0008(\u000cb\u0002\u0008\u0013b\u0002\u0008\r\u00a2\u0006\u0002\u0010\u0012\u001a;\u0010\u0011\u001a\u00060\u0002j\u0002`\u0003*\u00060\u0002j\u0002`\u00032\u0008\u0010\u0004\u001a\u0004\u0018\u00010\u0005H\u0087\u0088\u0008b\u000c\u0008\n\u0012\u0008\u0008\u000b\u0012\u0004\u0008\u0008(\u000cb\u0002\u0008\u0013b\u0002\u0008\r\u00a2\u0006\u0002\u0010\u0014\u001a9\u0010\u0011\u001a\u00060\u0002j\u0002`\u0003*\u00060\u0002j\u0002`\u00032\u0006\u0010\u0004\u001a\u00020\u0015H\u0087\u0088\u0008b\u000c\u0008\n\u0012\u0008\u0008\u000b\u0012\u0004\u0008\u0008(\u000cb\u0002\u0008\u0013b\u0002\u0008\r\u00a2\u0006\u0002\u0010\u0016\u001a;\u0010\u0017\u001a\u00020\u0018\"\u0004\u0008\u0000\u0010\u0001*\u00060\u0002j\u0002`\u00032\u0006\u0010\u0019\u001a\u0002H\u00012\u0014\u0010\u001a\u001a\u0010\u0012\u0004\u0012\u0002H\u0001\u0012\u0004\u0012\u00020\u0005\u0018\u00010\u001bH\u0080\u0080\u0004\u00a2\u0006\u0002\u0010\u001c\u00a8\u0006\u001d"
+        "\u0000:\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0010\r\n\u0002\u0008\u0002\n\u0002\u0010\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u000c\n\u0002\u0008\u0002\n\u0002\u0010\u0008\n\u0002\u0008\u0003\u001a5\u0010\u0000\u001a\u0002H\u0001\"\u000c\u0008\u0000\u0010\u0001*\u00060\u0002j\u0002`\u0003*\u0002H\u00012\u0016\u0010\u0004\u001a\u000c\u0012\u0008\u0008\u0001\u0012\u0004\u0018\u00010\u00060\u0005\"\u0004\u0018\u00010\u0006\u00a2\u0006\u0002\u0010\u0007\u001a9\u0010\u0008\u001a\u00020\t\"\u0004\u0008\u0000\u0010\u0001*\u00060\u0002j\u0002`\u00032\u0006\u0010\n\u001a\u0002H\u00012\u0014\u0010\u000b\u001a\u0010\u0012\u0004\u0012\u0002H\u0001\u0012\u0004\u0012\u00020\u0006\u0018\u00010\u000cH\u0000\u00a2\u0006\u0002\u0010\r\u001a\u0015\u0010\u000e\u001a\u00060\u0002j\u0002`\u0003*\u00060\u0002j\u0002`\u0003H\u0087\u0008\u001a\u001d\u0010\u000e\u001a\u00060\u0002j\u0002`\u0003*\u00060\u0002j\u0002`\u00032\u0006\u0010\u0004\u001a\u00020\u000fH\u0087\u0008\u001a\u001f\u0010\u000e\u001a\u00060\u0002j\u0002`\u0003*\u00060\u0002j\u0002`\u00032\u0008\u0010\u0004\u001a\u0004\u0018\u00010\u0006H\u0087\u0008\u001a7\u0010\u0010\u001a\u0002H\u0001\"\u000c\u0008\u0000\u0010\u0001*\u00060\u0002j\u0002`\u0003*\u0002H\u00012\u0006\u0010\u0004\u001a\u00020\u00062\u0006\u0010\u0011\u001a\u00020\u00122\u0006\u0010\u0013\u001a\u00020\u0012H\u0007\u00a2\u0006\u0002\u0010\u0014\u00a8\u0006\u0015"
     }
     d2 = {
-        "appendRange",
+        "append",
         "T",
         "Ljava/lang/Appendable;",
         "Lkotlin/text/Appendable;",
         "value",
         "",
-        "startIndex",
-        "",
-        "endIndex",
-        "(Ljava/lang/Appendable;Ljava/lang/CharSequence;II)Ljava/lang/Appendable;",
-        "Lkotlin/SinceKotlin;",
-        "version",
-        "1.4",
-        "Lkotlin/IgnorableReturnValue;",
-        "append",
         "",
         "(Ljava/lang/Appendable;[Ljava/lang/CharSequence;)Ljava/lang/Appendable;",
-        "appendLine",
-        "(Ljava/lang/Appendable;)Ljava/lang/Appendable;",
-        "Lkotlin/internal/InlineOnly;",
-        "(Ljava/lang/Appendable;Ljava/lang/CharSequence;)Ljava/lang/Appendable;",
-        "",
-        "(Ljava/lang/Appendable;C)Ljava/lang/Appendable;",
         "appendElement",
         "",
         "element",
         "transform",
         "Lkotlin/Function1;",
         "(Ljava/lang/Appendable;Ljava/lang/Object;Lkotlin/jvm/functions/Function1;)V",
+        "appendLine",
+        "",
+        "appendRange",
+        "startIndex",
+        "",
+        "endIndex",
+        "(Ljava/lang/Appendable;Ljava/lang/CharSequence;II)Ljava/lang/Appendable;",
         "kotlin-stdlib"
     }
     k = 0x5
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x31
@@ -91,7 +83,7 @@
 
     if-eqz p2, :cond_11
 
-    .line 92
+    .line 85
     invoke-interface {p2, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
@@ -109,7 +101,7 @@
 
     goto :goto_17
 
-    .line 93
+    .line 86
     :cond_15
     instance-of p2, p1, Ljava/lang/CharSequence;
 
@@ -122,7 +114,7 @@
 
     goto :goto_36
 
-    .line 94
+    .line 87
     :cond_1f
     instance-of p2, p1, Ljava/lang/Character;
 
@@ -138,9 +130,9 @@
 
     goto :goto_36
 
-    .line 95
+    .line 88
     :cond_2d
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 

@@ -26,7 +26,7 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u001c\n\u0002\u0010\u0008\n\u0002\u0008\u000c\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\u0008\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0002\n\u0002\u0010\u000e\n\u0002\u0008\u0002\u0008\u0016\u0018\u0000 \u00182\u0008\u0012\u0004\u0012\u00020\u00020\u0001:\u0001\u0018B!\u0008@\u0012\u0006\u0010\u0003\u001a\u00020\u0002\u0012\u0006\u0010\u0004\u001a\u00020\u0002\u0012\u0006\u0010\u0005\u001a\u00020\u0002\u00a2\u0006\u0004\u0008\u0006\u0010\u0007J\n\u0010\u000e\u001a\u00020\u000fH\u0096\u0082\u0004J\n\u0010\u0010\u001a\u00020\u0011H\u0096\u0080\u0004J\u0014\u0010\u0012\u001a\u00020\u00112\u0008\u0010\u0013\u001a\u0004\u0018\u00010\u0014H\u0096\u0082\u0004J\n\u0010\u0015\u001a\u00020\u0002H\u0096\u0080\u0004J\n\u0010\u0016\u001a\u00020\u0017H\u0096\u0080\u0004R\u0015\u0010\u0008\u001a\u00020\u0002X\u0086\u0084\u0008\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\t\u0010\nR\u0015\u0010\u000b\u001a\u00020\u0002X\u0086\u0084\u0008\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u000c\u0010\nR\u0015\u0010\u0005\u001a\u00020\u0002X\u0086\u0084\u0008\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\r\u0010\n\u00a8\u0006\u0019"
+        "\u0000,\n\u0002\u0018\u0002\n\u0002\u0010\u001c\n\u0002\u0010\u0008\n\u0002\u0008\u000b\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\u0008\u0002\u0008\u0016\u0018\u0000 \u00172\u0008\u0012\u0004\u0012\u00020\u00020\u0001:\u0001\u0017B\u001f\u0008\u0000\u0012\u0006\u0010\u0003\u001a\u00020\u0002\u0012\u0006\u0010\u0004\u001a\u00020\u0002\u0012\u0006\u0010\u0005\u001a\u00020\u0002\u00a2\u0006\u0002\u0010\u0006J\u0013\u0010\r\u001a\u00020\u000e2\u0008\u0010\u000f\u001a\u0004\u0018\u00010\u0010H\u0096\u0002J\u0008\u0010\u0011\u001a\u00020\u0002H\u0016J\u0008\u0010\u0012\u001a\u00020\u000eH\u0016J\t\u0010\u0013\u001a\u00020\u0014H\u0096\u0002J\u0008\u0010\u0015\u001a\u00020\u0016H\u0016R\u0011\u0010\u0007\u001a\u00020\u0002\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u0008\u0010\tR\u0011\u0010\n\u001a\u00020\u0002\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u000b\u0010\tR\u0011\u0010\u0005\u001a\u00020\u0002\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u000c\u0010\t\u00a8\u0006\u0018"
     }
     d2 = {
         "Lkotlin/ranges/IntProgression;",
@@ -35,7 +35,6 @@
         "start",
         "endInclusive",
         "step",
-        "<init>",
         "(III)V",
         "first",
         "getFirst",
@@ -43,14 +42,14 @@
         "last",
         "getLast",
         "getStep",
-        "iterator",
-        "Lkotlin/collections/IntIterator;",
-        "isEmpty",
-        "",
         "equals",
+        "",
         "other",
         "",
         "hashCode",
+        "isEmpty",
+        "iterator",
+        "Lkotlin/collections/IntIterator;",
         "toString",
         "",
         "Companion",
@@ -58,8 +57,8 @@
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -104,12 +103,12 @@
 .method public constructor <init>(III)V
     .registers 5
 
-    .line 79
+    .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     if-nez p3, :cond_d
 
-    .line 87
+    .line 85
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "Step must be non-zero."
@@ -123,7 +122,7 @@
 
     if-ne p3, v0, :cond_19
 
-    .line 88
+    .line 86
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "Step must be greater than Int.MIN_VALUE to avoid overflow on negation."
@@ -132,18 +131,18 @@
 
     throw p0
 
-    .line 94
+    .line 92
     :cond_19
     iput p1, p0, Lkotlin/ranges/IntProgression;->first:I
 
-    .line 99
+    .line 97
     invoke-static {p1, p2, p3}, Lkotlin/internal/ProgressionUtilKt;->getProgressionLastElement(III)I
 
     move-result p1
 
     iput p1, p0, Lkotlin/ranges/IntProgression;->last:I
 
-    .line 104
+    .line 102
     iput p3, p0, Lkotlin/ranges/IntProgression;->step:I
 
     return-void
@@ -156,7 +155,7 @@
         .end annotation
     .end param
 
-    .line 117
+    .line 115
     instance-of v0, p1, Lkotlin/ranges/IntProgression;
 
     if-eqz v0, :cond_29
@@ -177,7 +176,7 @@
 
     if-nez v0, :cond_27
 
-    .line 118
+    .line 116
     :cond_13
     iget v0, p0, Lkotlin/ranges/IntProgression;->first:I
 
@@ -214,7 +213,7 @@
 .method public final getFirst()I
     .registers 1
 
-    .line 94
+    .line 92
     iget p0, p0, Lkotlin/ranges/IntProgression;->first:I
 
     return p0
@@ -223,7 +222,7 @@
 .method public final getLast()I
     .registers 1
 
-    .line 99
+    .line 97
     iget p0, p0, Lkotlin/ranges/IntProgression;->last:I
 
     return p0
@@ -232,7 +231,7 @@
 .method public final getStep()I
     .registers 1
 
-    .line 104
+    .line 102
     iget p0, p0, Lkotlin/ranges/IntProgression;->step:I
 
     return p0
@@ -241,7 +240,7 @@
 .method public hashCode()I
     .registers 3
 
-    .line 121
+    .line 119
     invoke-virtual {p0}, Lkotlin/ranges/IntProgression;->isEmpty()Z
 
     move-result v0
@@ -274,7 +273,7 @@
 .method public isEmpty()Z
     .registers 4
 
-    .line 114
+    .line 112
     iget v0, p0, Lkotlin/ranges/IntProgression;->step:I
 
     const/4 v1, 0x0
@@ -311,7 +310,7 @@
 .method public bridge synthetic iterator()Ljava/util/Iterator;
     .registers 1
 
-    .line 79
+    .line 77
     invoke-virtual {p0}, Lkotlin/ranges/IntProgression;->iterator()Lkotlin/collections/IntIterator;
 
     move-result-object p0
@@ -326,7 +325,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 106
+    .line 104
     new-instance v0, Lkotlin/ranges/IntProgressionIterator;
 
     iget v1, p0, Lkotlin/ranges/IntProgression;->first:I
@@ -347,7 +346,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 123
+    .line 121
     iget v0, p0, Lkotlin/ranges/IntProgression;->step:I
 
     if-lez v0, :cond_27

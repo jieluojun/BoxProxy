@@ -24,32 +24,17 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\u0008\u0087\u0002\u0018\u00002\u00020\u0001B\u0002\u0008F\u00ca\u0001*\u0008\u0003\u0012&\u0008\u0004\u0012\"\u0008\u000cJ\u0006\u0008\n0\u00058\u0006J\u0006\u0008\n0\u00058\u0007J\u0006\u0008\n0\u00058\u0008J\u0006\u0008\n0\u00058\t\u00ca\u0001\u000e\u0008\n\u0012\n\u0008\u000b\u0012\u0006\u0008\n0\u000c8\r\u00ca\u0001\u0002\u0008\u000e\u00ca\u0001\u000c\u0008\u000f\u0012\u0008\u0008\u0010\u0012\u0004\u0008\u0008(\u0011\u00a8\u0006\u0002"
+        "\u0000\n\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\u0008\u0087\u0002\u0018\u00002\u00020\u0001B\u0000\u00a8\u0006\u0002"
     }
     d2 = {
         "Lkotlin/PublishedApi;",
         "",
-        "kotlin-stdlib",
-        "Lkotlin/annotation/Target;",
-        "allowedTargets",
-        "Lkotlin/annotation/AnnotationTarget;",
-        "CLASS",
-        "CONSTRUCTOR",
-        "FUNCTION",
-        "PROPERTY",
-        "Lkotlin/annotation/Retention;",
-        "value",
-        "Lkotlin/annotation/AnnotationRetention;",
-        "BINARY",
-        "Lkotlin/annotation/MustBeDocumented;",
-        "Lkotlin/SinceKotlin;",
-        "version",
-        "1.1"
+        "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30

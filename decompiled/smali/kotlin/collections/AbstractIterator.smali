@@ -8,6 +8,12 @@
 
 
 # annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lkotlin/collections/AbstractIterator$WhenMappings;
+    }
+.end annotation
+
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "<T:",
@@ -22,35 +28,34 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000&\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010(\n\u0002\u0008\u0003\n\u0002\u0010\u0008\n\u0002\u0008\u0003\n\u0002\u0010\u000b\n\u0002\u0008\u0004\n\u0002\u0010\u0002\n\u0002\u0008\u0005\u0008&\u0018\u0000*\u0004\u0008\u0000\u0010\u00012\u0008\u0012\u0004\u0012\u0002H\u00010\u0002B\t\u0008F\u00a2\u0006\u0004\u0008\u0003\u0010\u0004J\n\u0010\t\u001a\u00020\nH\u0096\u0082\u0004J\u000f\u0010\u000b\u001a\u00028\u0000H\u0096\u0082\u0004\u00a2\u0006\u0002\u0010\u000cJ\n\u0010\r\u001a\u00020\nH\u0082\u0080\u0004J\n\u0010\u000e\u001a\u00020\u000fH\u00a4\u0080\u0004J\u0017\u0010\u0010\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00028\u0000H\u0084\u0080\u0004\u00a2\u0006\u0002\u0010\u0012J\n\u0010\u0013\u001a\u00020\u000fH\u0084\u0080\u0004R\u000f\u0010\u0005\u001a\u00020\u0006X\u0082\u008e\u0008\u00a2\u0006\u0002\n\u0000R\u0013\u0010\u0007\u001a\u0004\u0018\u00018\u0000X\u0082\u008e\u0008\u00a2\u0006\u0004\n\u0002\u0010\u0008\u00a8\u0006\u0014"
+        "\u0000$\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010(\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u000b\n\u0002\u0008\u0007\u0008&\u0018\u0000*\u0004\u0008\u0000\u0010\u00012\u0008\u0012\u0004\u0012\u0002H\u00010\u0002B\u0005\u00a2\u0006\u0002\u0010\u0003J\u0008\u0010\u0008\u001a\u00020\tH$J\u0008\u0010\n\u001a\u00020\tH\u0004J\t\u0010\u000b\u001a\u00020\u000cH\u0096\u0002J\u000e\u0010\r\u001a\u00028\u0000H\u0096\u0002\u00a2\u0006\u0002\u0010\u000eJ\u0015\u0010\u000f\u001a\u00020\t2\u0006\u0010\u0010\u001a\u00028\u0000H\u0004\u00a2\u0006\u0002\u0010\u0011J\u0008\u0010\u0012\u001a\u00020\u000cH\u0002R\u0012\u0010\u0004\u001a\u0004\u0018\u00018\u0000X\u0082\u000e\u00a2\u0006\u0004\n\u0002\u0010\u0005R\u000e\u0010\u0006\u001a\u00020\u0007X\u0082\u000e\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u0013"
     }
     d2 = {
         "Lkotlin/collections/AbstractIterator;",
         "T",
         "",
-        "<init>",
         "()V",
-        "state",
-        "",
         "nextValue",
         "Ljava/lang/Object;",
+        "state",
+        "Lkotlin/collections/State;",
+        "computeNext",
+        "",
+        "done",
         "hasNext",
         "",
         "next",
         "()Ljava/lang/Object;",
-        "tryToComputeNext",
-        "computeNext",
-        "",
         "setNext",
         "value",
         "(Ljava/lang/Object;)V",
-        "done",
+        "tryToComputeNext",
         "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -69,7 +74,10 @@
     .end annotation
 .end field
 
-.field private state:I
+.field private state:Lkotlin/collections/State;
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+.end field
 
 
 # direct methods
@@ -79,10 +87,15 @@
 # virtual methods
 
 .method public constructor <init>()V
-    .registers 1
+    .registers 2
 
-    .line 26
+    .line 20
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 21
+    sget-object v0, Lkotlin/collections/State;->NotReady:Lkotlin/collections/State;
+
+    iput-object v0, p0, Lkotlin/collections/AbstractIterator;->state:Lkotlin/collections/State;
 
     return-void
 .end method
@@ -90,28 +103,30 @@
 .method private final tryToComputeNext()Z
     .registers 2
 
-    const/4 v0, 0x3
+    .line 41
+    sget-object v0, Lkotlin/collections/State;->Failed:Lkotlin/collections/State;
 
-    .line 54
-    iput v0, p0, Lkotlin/collections/AbstractIterator;->state:I
+    iput-object v0, p0, Lkotlin/collections/AbstractIterator;->state:Lkotlin/collections/State;
 
-    .line 55
+    .line 42
     invoke-virtual {p0}, Lkotlin/collections/AbstractIterator;->computeNext()V
 
-    .line 56
-    iget p0, p0, Lkotlin/collections/AbstractIterator;->state:I
+    .line 43
+    iget-object p0, p0, Lkotlin/collections/AbstractIterator;->state:Lkotlin/collections/State;
 
-    const/4 v0, 0x1
+    sget-object v0, Lkotlin/collections/State;->Ready:Lkotlin/collections/State;
 
-    if-ne p0, v0, :cond_c
+    if-ne p0, v0, :cond_f
 
-    goto :goto_d
+    const/4 p0, 0x1
 
-    :cond_c
-    const/4 v0, 0x0
+    goto :goto_10
 
-    :goto_d
-    return v0
+    :cond_f
+    const/4 p0, 0x0
+
+    :goto_10
+    return p0
 .end method
 
 .method protected abstract computeNext()V
@@ -120,116 +135,118 @@
 .method protected final done()V
     .registers 2
 
-    const/4 v0, 0x2
+    .line 70
+    sget-object v0, Lkotlin/collections/State;->Done:Lkotlin/collections/State;
 
-    .line 83
-    iput v0, p0, Lkotlin/collections/AbstractIterator;->state:I
+    iput-object v0, p0, Lkotlin/collections/AbstractIterator;->state:Lkotlin/collections/State;
 
     return-void
 .end method
 
 .method public hasNext()Z
-    .registers 2
+    .registers 5
 
-    .line 31
-    iget v0, p0, Lkotlin/collections/AbstractIterator;->state:I
+    .line 25
+    iget-object v0, p0, Lkotlin/collections/AbstractIterator;->state:Lkotlin/collections/State;
 
-    packed-switch v0, :pswitch_data_16
+    sget-object v1, Lkotlin/collections/State;->Failed:Lkotlin/collections/State;
 
-    .line 35
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    const/4 v2, 0x0
 
-    const-string v0, "hasNext called when the iterator is in the FAILED state."
+    const/4 v3, 0x1
 
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    if-eq v0, v1, :cond_a
 
-    throw p0
+    move v0, v3
 
-    :pswitch_d
-    const/4 p0, 0x0
+    goto :goto_b
 
-    goto :goto_15
+    :cond_a
+    move v0, v2
 
-    :pswitch_f
-    const/4 p0, 0x1
+    :goto_b
+    if-nez v0, :cond_19
 
-    goto :goto_15
+    const-string p0, "Failed requirement."
 
-    .line 34
-    :pswitch_11
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 26
+    :cond_19
+    iget-object v0, p0, Lkotlin/collections/AbstractIterator;->state:Lkotlin/collections/State;
+
+    sget-object v1, Lkotlin/collections/AbstractIterator$WhenMappings;->$EnumSwitchMapping$0:[I
+
+    invoke-virtual {v0}, Lkotlin/collections/State;->ordinal()I
+
+    move-result v0
+
+    aget v0, v1, v0
+
+    packed-switch v0, :pswitch_data_2e
+
+    .line 29
     invoke-direct {p0}, Lkotlin/collections/AbstractIterator;->tryToComputeNext()Z
 
-    move-result p0
+    move-result v2
 
-    :goto_15
-    return p0
+    goto :goto_2c
 
-    :pswitch_data_16
-    .packed-switch 0x0
-        :pswitch_11
-        :pswitch_f
-        :pswitch_d
+    :pswitch_2b
+    move v2, v3
+
+    :goto_2c
+    :pswitch_2c
+    return v2
+
+    nop
+
+    :pswitch_data_2e
+    .packed-switch 0x1
+        :pswitch_2c
+        :pswitch_2b
     .end packed-switch
 .end method
 
 .method public next()Ljava/lang/Object;
-    .registers 4
+    .registers 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()TT;"
         }
     .end annotation
 
-    .line 40
-    iget v0, p0, Lkotlin/collections/AbstractIterator;->state:I
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    if-ne v0, v2, :cond_b
-
-    .line 41
-    iput v1, p0, Lkotlin/collections/AbstractIterator;->state:I
-
-    .line 43
-    iget-object p0, p0, Lkotlin/collections/AbstractIterator;->nextValue:Ljava/lang/Object;
-
-    return-object p0
-
-    .line 45
-    :cond_b
-    iget v0, p0, Lkotlin/collections/AbstractIterator;->state:I
-
-    const/4 v2, 0x2
-
-    if-eq v0, v2, :cond_1c
-
-    invoke-direct {p0}, Lkotlin/collections/AbstractIterator;->tryToComputeNext()Z
+    .line 34
+    invoke-virtual {p0}, Lkotlin/collections/AbstractIterator;->hasNext()Z
 
     move-result v0
 
-    if-nez v0, :cond_17
+    if-nez v0, :cond_c
 
-    goto :goto_1c
-
-    .line 48
-    :cond_17
-    iput v1, p0, Lkotlin/collections/AbstractIterator;->state:I
-
-    .line 50
-    iget-object p0, p0, Lkotlin/collections/AbstractIterator;->nextValue:Ljava/lang/Object;
-
-    return-object p0
-
-    .line 46
-    :cond_1c
-    :goto_1c
     new-instance p0, Ljava/util/NoSuchElementException;
 
     invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
 
     throw p0
+
+    .line 35
+    :cond_c
+    sget-object v0, Lkotlin/collections/State;->NotReady:Lkotlin/collections/State;
+
+    iput-object v0, p0, Lkotlin/collections/AbstractIterator;->state:Lkotlin/collections/State;
+
+    .line 37
+    iget-object p0, p0, Lkotlin/collections/AbstractIterator;->nextValue:Ljava/lang/Object;
+
+    return-object p0
 .end method
 
 .method public remove()V
@@ -252,13 +269,13 @@
         }
     .end annotation
 
-    .line 75
+    .line 62
     iput-object p1, p0, Lkotlin/collections/AbstractIterator;->nextValue:Ljava/lang/Object;
 
-    const/4 p1, 0x1
+    .line 63
+    sget-object p1, Lkotlin/collections/State;->Ready:Lkotlin/collections/State;
 
-    .line 76
-    iput p1, p0, Lkotlin/collections/AbstractIterator;->state:I
+    iput-object p1, p0, Lkotlin/collections/AbstractIterator;->state:Lkotlin/collections/State;
 
     return-void
 .end method

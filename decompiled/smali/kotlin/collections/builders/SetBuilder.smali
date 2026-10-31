@@ -31,7 +31,7 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000Z\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010#\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0010\u0008\n\u0002\u0008\u0002\n\u0002\u0010\"\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0004\n\u0002\u0010\u000b\n\u0002\u0008\u0007\n\u0002\u0010)\n\u0002\u0008\u0002\n\u0002\u0010\u001e\n\u0002\u0008\u0004\u0008\u0000\u0018\u0000 (*\u0004\u0008\u0000\u0010\u00012\u0008\u0012\u0004\u0012\u0002H\u00010\u00022\u0008\u0012\u0004\u0012\u0002H\u00010\u00032\u00060\u0004j\u0002`\u0005:\u0001(B\u001b\u0008@\u0012\u0010\u0010\u0006\u001a\u000c\u0012\u0004\u0012\u00028\u0000\u0012\u0002\u0008\u00030\u0007\u00a2\u0006\u0004\u0008\u0008\u0010\tB\t\u0008V\u00a2\u0006\u0004\u0008\u0008\u0010\nB\u0011\u0008V\u0012\u0006\u0010\u000b\u001a\u00020\u000c\u00a2\u0006\u0004\u0008\u0008\u0010\rJ\u0010\u0010\u000e\u001a\u0008\u0012\u0004\u0012\u00028\u00000\u000fH\u0086\u0080\u0004J\n\u0010\u0010\u001a\u00020\u0011H\u0082\u0080\u0004J\u0012\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0015H\u0082\u0080\u0004J\n\u0010\u0019\u001a\u00020\u001aH\u0096\u0080\u0004J\u0017\u0010\u001b\u001a\u00020\u001a2\u0006\u0010\u001c\u001a\u00028\u0000H\u0096\u0082\u0004\u00a2\u0006\u0002\u0010\u001dJ\n\u0010\u001e\u001a\u00020\u0013H\u0096\u0080\u0004J\u0017\u0010\u001f\u001a\u00020\u001a2\u0006\u0010\u001c\u001a\u00028\u0000H\u0096\u0080\u0008\u00a2\u0006\u0002\u0010\u001dJ\u0017\u0010 \u001a\u00020\u001a2\u0006\u0010\u001c\u001a\u00028\u0000H\u0096\u0080\u0008\u00a2\u0006\u0002\u0010\u001dJ\u0010\u0010!\u001a\u0008\u0012\u0004\u0012\u00028\u00000\"H\u0096\u0082\u0004J\u0018\u0010#\u001a\u00020\u001a2\u000c\u0010$\u001a\u0008\u0012\u0004\u0012\u00028\u00000%H\u0096\u0080\u0008J\u0018\u0010&\u001a\u00020\u001a2\u000c\u0010$\u001a\u0008\u0012\u0004\u0012\u00028\u00000%H\u0096\u0080\u0008J\u0018\u0010\'\u001a\u00020\u001a2\u000c\u0010$\u001a\u0008\u0012\u0004\u0012\u00028\u00000%H\u0096\u0080\u0008R\u0019\u0010\u0006\u001a\u000c\u0012\u0004\u0012\u00028\u0000\u0012\u0002\u0008\u00030\u0007X\u0082\u0084\u0008\u00a2\u0006\u0002\n\u0000R\u0015\u0010\u0016\u001a\u00020\u000c8VX\u0096\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\u0017\u0010\u0018\u00a8\u0006)"
+        "\u0000V\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010#\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u0008\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0010\u000b\n\u0002\u0008\u0004\n\u0002\u0010\u001e\n\u0000\n\u0002\u0010\"\n\u0000\n\u0002\u0010\u0002\n\u0002\u0008\u0003\n\u0002\u0010)\n\u0002\u0008\u0004\n\u0002\u0010\u0000\n\u0002\u0008\u0002\u0008\u0000\u0018\u0000 $*\u0004\u0008\u0000\u0010\u00012\u0008\u0012\u0004\u0012\u0002H\u00010\u00022\u0008\u0012\u0004\u0012\u0002H\u00010\u00032\u00060\u0004j\u0002`\u0005:\u0001$B\u0007\u0008\u0016\u00a2\u0006\u0002\u0010\u0006B\u000f\u0008\u0016\u0012\u0006\u0010\u0007\u001a\u00020\u0008\u00a2\u0006\u0002\u0010\tB\u0019\u0008\u0000\u0012\u0010\u0010\n\u001a\u000c\u0012\u0004\u0012\u00028\u0000\u0012\u0002\u0008\u00030\u000b\u00a2\u0006\u0002\u0010\u000cJ\u0015\u0010\u0010\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00028\u0000H\u0016\u00a2\u0006\u0002\u0010\u0013J\u0016\u0010\u0014\u001a\u00020\u00112\u000c\u0010\u0015\u001a\u0008\u0012\u0004\u0012\u00028\u00000\u0016H\u0016J\u000c\u0010\u0017\u001a\u0008\u0012\u0004\u0012\u00028\u00000\u0018J\u0008\u0010\u0019\u001a\u00020\u001aH\u0016J\u0016\u0010\u001b\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00028\u0000H\u0096\u0002\u00a2\u0006\u0002\u0010\u0013J\u0008\u0010\u001c\u001a\u00020\u0011H\u0016J\u000f\u0010\u001d\u001a\u0008\u0012\u0004\u0012\u00028\u00000\u001eH\u0096\u0002J\u0015\u0010\u001f\u001a\u00020\u00112\u0006\u0010\u0012\u001a\u00028\u0000H\u0016\u00a2\u0006\u0002\u0010\u0013J\u0016\u0010 \u001a\u00020\u00112\u000c\u0010\u0015\u001a\u0008\u0012\u0004\u0012\u00028\u00000\u0016H\u0016J\u0016\u0010!\u001a\u00020\u00112\u000c\u0010\u0015\u001a\u0008\u0012\u0004\u0012\u00028\u00000\u0016H\u0016J\u0008\u0010\"\u001a\u00020#H\u0002R\u0018\u0010\n\u001a\u000c\u0012\u0004\u0012\u00028\u0000\u0012\u0002\u0008\u00030\u000bX\u0082\u0004\u00a2\u0006\u0002\n\u0000R\u0014\u0010\r\u001a\u00020\u00088VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u000e\u0010\u000f\u00a8\u0006%"
     }
     d2 = {
         "Lkotlin/collections/builders/SetBuilder;",
@@ -40,47 +40,43 @@
         "Lkotlin/collections/AbstractMutableSet;",
         "Ljava/io/Serializable;",
         "Lkotlin/io/Serializable;",
-        "backing",
-        "Lkotlin/collections/builders/MapBuilder;",
-        "<init>",
-        "(Lkotlin/collections/builders/MapBuilder;)V",
         "()V",
         "initialCapacity",
         "",
         "(I)V",
-        "build",
-        "",
-        "writeReplace",
-        "",
-        "readObject",
-        "",
-        "input",
-        "Ljava/io/ObjectInputStream;",
+        "backing",
+        "Lkotlin/collections/builders/MapBuilder;",
+        "(Lkotlin/collections/builders/MapBuilder;)V",
         "size",
         "getSize",
         "()I",
-        "isEmpty",
+        "add",
         "",
-        "contains",
         "element",
         "(Ljava/lang/Object;)Z",
-        "clear",
-        "add",
-        "remove",
-        "iterator",
-        "",
         "addAll",
         "elements",
         "",
+        "build",
+        "",
+        "clear",
+        "",
+        "contains",
+        "isEmpty",
+        "iterator",
+        "",
+        "remove",
         "removeAll",
         "retainAll",
+        "writeReplace",
+        "",
         "Companion",
         "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -120,7 +116,6 @@
 
 
 
-
 # virtual methods
 
 .method static constructor <clinit>()V
@@ -134,7 +129,7 @@
 
     sput-object v0, Lkotlin/collections/builders/SetBuilder;->Companion:Lkotlin/collections/builders/SetBuilder$Companion;
 
-    .line 16
+    .line 14
     new-instance v0, Lkotlin/collections/builders/SetBuilder;
 
     sget-object v1, Lkotlin/collections/builders/MapBuilder;->Companion:Lkotlin/collections/builders/MapBuilder$Companion;
@@ -153,7 +148,7 @@
 .method public constructor <init>()V
     .registers 2
 
-    .line 19
+    .line 17
     new-instance v0, Lkotlin/collections/builders/MapBuilder;
 
     invoke-direct {v0}, Lkotlin/collections/builders/MapBuilder;-><init>()V
@@ -166,7 +161,7 @@
 .method public constructor <init>(I)V
     .registers 3
 
-    .line 21
+    .line 19
     new-instance v0, Lkotlin/collections/builders/MapBuilder;
 
     invoke-direct {v0, p1}, Lkotlin/collections/builders/MapBuilder;-><init>(I)V
@@ -197,29 +192,16 @@
     .line 12
     invoke-direct {p0}, Lkotlin/collections/AbstractMutableSet;-><init>()V
 
-    .line 13
+    .line 11
     iput-object p1, p0, Lkotlin/collections/builders/SetBuilder;->backing:Lkotlin/collections/builders/MapBuilder;
 
     return-void
 .end method
 
-.method private final readObject(Ljava/io/ObjectInputStream;)V
-    .registers 2
-
-    .line 34
-    new-instance p0, Ljava/io/InvalidObjectException;
-
-    const-string p1, "Deserialization is supported via proxy only"
-
-    invoke-direct {p0, p1}, Ljava/io/InvalidObjectException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
 .method private final writeReplace()Ljava/lang/Object;
     .registers 3
 
-    .line 29
+    .line 27
     iget-object v0, p0, Lkotlin/collections/builders/SetBuilder;->backing:Lkotlin/collections/builders/MapBuilder;
 
     invoke-virtual {v0}, Lkotlin/collections/builders/MapBuilder;->isReadOnly$kotlin_stdlib()Z
@@ -228,7 +210,7 @@
 
     if-eqz v0, :cond_11
 
-    .line 30
+    .line 28
     new-instance v0, Lkotlin/collections/builders/SerializedCollection;
 
     check-cast p0, Ljava/util/Collection;
@@ -239,7 +221,7 @@
 
     return-object v0
 
-    .line 32
+    .line 30
     :cond_11
     new-instance p0, Ljava/io/NotSerializableException;
 
@@ -258,7 +240,7 @@
         }
     .end annotation
 
-    .line 40
+    .line 36
     iget-object p0, p0, Lkotlin/collections/builders/SetBuilder;->backing:Lkotlin/collections/builders/MapBuilder;
 
     invoke-virtual {p0, p1}, Lkotlin/collections/builders/MapBuilder;->addKey$kotlin_stdlib(Ljava/lang/Object;)I
@@ -296,12 +278,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 45
+    .line 41
     iget-object v0, p0, Lkotlin/collections/builders/SetBuilder;->backing:Lkotlin/collections/builders/MapBuilder;
 
     invoke-virtual {v0}, Lkotlin/collections/builders/MapBuilder;->checkIsMutable$kotlin_stdlib()V
 
-    .line 46
+    .line 42
     invoke-super {p0, p1}, Lkotlin/collections/AbstractMutableSet;->addAll(Ljava/util/Collection;)Z
 
     move-result p0
@@ -322,12 +304,12 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 24
+    .line 22
     iget-object v0, p0, Lkotlin/collections/builders/SetBuilder;->backing:Lkotlin/collections/builders/MapBuilder;
 
     invoke-virtual {v0}, Lkotlin/collections/builders/MapBuilder;->build()Ljava/util/Map;
 
-    .line 25
+    .line 23
     invoke-virtual {p0}, Lkotlin/collections/builders/SetBuilder;->size()I
 
     move-result v0
@@ -351,7 +333,7 @@
 .method public clear()V
     .registers 1
 
-    .line 39
+    .line 35
     iget-object p0, p0, Lkotlin/collections/builders/SetBuilder;->backing:Lkotlin/collections/builders/MapBuilder;
 
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder;->clear()V
@@ -362,7 +344,7 @@
 .method public contains(Ljava/lang/Object;)Z
     .registers 2
 
-    .line 38
+    .line 34
     iget-object p0, p0, Lkotlin/collections/builders/SetBuilder;->backing:Lkotlin/collections/builders/MapBuilder;
 
     invoke-virtual {p0, p1}, Lkotlin/collections/builders/MapBuilder;->containsKey(Ljava/lang/Object;)Z
@@ -375,7 +357,7 @@
 .method public getSize()I
     .registers 1
 
-    .line 36
+    .line 32
     iget-object p0, p0, Lkotlin/collections/builders/SetBuilder;->backing:Lkotlin/collections/builders/MapBuilder;
 
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder;->size()I
@@ -388,7 +370,7 @@
 .method public isEmpty()Z
     .registers 1
 
-    .line 37
+    .line 33
     iget-object p0, p0, Lkotlin/collections/builders/SetBuilder;->backing:Lkotlin/collections/builders/MapBuilder;
 
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder;->isEmpty()Z
@@ -411,7 +393,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 42
+    .line 38
     iget-object p0, p0, Lkotlin/collections/builders/SetBuilder;->backing:Lkotlin/collections/builders/MapBuilder;
 
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder;->keysIterator$kotlin_stdlib()Lkotlin/collections/builders/MapBuilder$KeysItr;
@@ -426,13 +408,23 @@
 .method public remove(Ljava/lang/Object;)Z
     .registers 2
 
-    .line 41
+    .line 37
     iget-object p0, p0, Lkotlin/collections/builders/SetBuilder;->backing:Lkotlin/collections/builders/MapBuilder;
 
-    invoke-virtual {p0, p1}, Lkotlin/collections/builders/MapBuilder;->removeKey$kotlin_stdlib(Ljava/lang/Object;)Z
+    invoke-virtual {p0, p1}, Lkotlin/collections/builders/MapBuilder;->removeKey$kotlin_stdlib(Ljava/lang/Object;)I
 
     move-result p0
 
+    if-ltz p0, :cond_a
+
+    const/4 p0, 0x1
+
+    goto :goto_b
+
+    :cond_a
+    const/4 p0, 0x0
+
+    :goto_b
     return p0
 .end method
 
@@ -446,7 +438,9 @@
         value = {
             "(",
             "Ljava/util/Collection<",
-            "*>;)Z"
+            "+",
+            "Ljava/lang/Object;",
+            ">;)Z"
         }
     .end annotation
 
@@ -454,12 +448,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 50
+    .line 46
     iget-object v0, p0, Lkotlin/collections/builders/SetBuilder;->backing:Lkotlin/collections/builders/MapBuilder;
 
     invoke-virtual {v0}, Lkotlin/collections/builders/MapBuilder;->checkIsMutable$kotlin_stdlib()V
 
-    .line 51
+    .line 47
     invoke-super {p0, p1}, Lkotlin/collections/AbstractMutableSet;->removeAll(Ljava/util/Collection;)Z
 
     move-result p0
@@ -477,7 +471,9 @@
         value = {
             "(",
             "Ljava/util/Collection<",
-            "*>;)Z"
+            "+",
+            "Ljava/lang/Object;",
+            ">;)Z"
         }
     .end annotation
 
@@ -485,12 +481,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 55
+    .line 51
     iget-object v0, p0, Lkotlin/collections/builders/SetBuilder;->backing:Lkotlin/collections/builders/MapBuilder;
 
     invoke-virtual {v0}, Lkotlin/collections/builders/MapBuilder;->checkIsMutable$kotlin_stdlib()V
 
-    .line 56
+    .line 52
     invoke-super {p0, p1}, Lkotlin/collections/AbstractMutableSet;->retainAll(Ljava/util/Collection;)Z
 
     move-result p0

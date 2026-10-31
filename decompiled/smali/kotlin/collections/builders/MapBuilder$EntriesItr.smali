@@ -35,7 +35,7 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000<\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0010)\n\u0002\u0010\'\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u0008\u0000\u0018\u0000*\u0004\u0008\u0002\u0010\u0001*\u0004\u0008\u0003\u0010\u00022\u000e\u0012\u0004\u0012\u0002H\u0001\u0012\u0004\u0012\u0002H\u00020\u00032\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002H\u0001\u0012\u0004\u0012\u0002H\u00020\u00050\u0004B\u001d\u0008F\u0012\u0012\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00028\u0002\u0012\u0004\u0012\u00028\u00030\u0007\u00a2\u0006\u0004\u0008\u0008\u0010\tJ\u0016\u0010\n\u001a\u000e\u0012\u0004\u0012\u00028\u0002\u0012\u0004\u0012\u00028\u00030\u000bH\u0096\u0082\u0004J\u000f\u0010\u000c\u001a\u00020\rH\u0080\u0080\u0004\u00a2\u0006\u0002\u0008\u000eJ\u0016\u0010\u000f\u001a\u00020\u00102\n\u0010\u0011\u001a\u00060\u0012j\u0002`\u0013H\u0086\u0080\u0004\u00a8\u0006\u0014"
+        "\u0000<\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0010)\n\u0002\u0010\'\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0002\u0008\u0000\u0018\u0000*\u0004\u0008\u0002\u0010\u0001*\u0004\u0008\u0003\u0010\u00022\u000e\u0012\u0004\u0012\u0002H\u0001\u0012\u0004\u0012\u0002H\u00020\u00032\u0014\u0012\u0010\u0012\u000e\u0012\u0004\u0012\u0002H\u0001\u0012\u0004\u0012\u0002H\u00020\u00050\u0004B\u0019\u0012\u0012\u0010\u0006\u001a\u000e\u0012\u0004\u0012\u00028\u0002\u0012\u0004\u0012\u00028\u00030\u0007\u00a2\u0006\u0002\u0010\u0008J\u0015\u0010\t\u001a\u000e\u0012\u0004\u0012\u00028\u0002\u0012\u0004\u0012\u00028\u00030\nH\u0096\u0002J\u0012\u0010\u000b\u001a\u00020\u000c2\n\u0010\r\u001a\u00060\u000ej\u0002`\u000fJ\r\u0010\u0010\u001a\u00020\u0011H\u0000\u00a2\u0006\u0002\u0008\u0012\u00a8\u0006\u0013"
     }
     d2 = {
         "Lkotlin/collections/builders/MapBuilder$EntriesItr;",
@@ -46,24 +46,23 @@
         "",
         "map",
         "Lkotlin/collections/builders/MapBuilder;",
-        "<init>",
         "(Lkotlin/collections/builders/MapBuilder;)V",
         "next",
         "Lkotlin/collections/builders/MapBuilder$EntryRef;",
-        "nextHashCode",
-        "",
-        "nextHashCode$kotlin_stdlib",
         "nextAppendString",
         "",
         "sb",
         "Ljava/lang/StringBuilder;",
         "Lkotlin/text/StringBuilder;",
+        "nextHashCode",
+        "",
+        "nextHashCode$kotlin_stdlib",
         "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -93,7 +92,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 544
+    .line 551
     invoke-direct {p0, p1}, Lkotlin/collections/builders/MapBuilder$Itr;-><init>(Lkotlin/collections/builders/MapBuilder;)V
 
     return-void
@@ -102,7 +101,7 @@
 .method public bridge synthetic next()Ljava/lang/Object;
     .registers 1
 
-    .line 544
+    .line 551
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->next()Lkotlin/collections/builders/MapBuilder$EntryRef;
 
     move-result-object p0
@@ -123,10 +122,10 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 547
+    .line 554
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->checkForComodification$kotlin_stdlib()V
 
-    .line 548
+    .line 555
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->getIndex$kotlin_stdlib()I
 
     move-result v0
@@ -147,7 +146,7 @@
 
     throw p0
 
-    .line 549
+    .line 556
     :cond_17
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->getIndex$kotlin_stdlib()I
 
@@ -159,7 +158,7 @@
 
     invoke-virtual {p0, v0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->setLastIndex$kotlin_stdlib(I)V
 
-    .line 550
+    .line 557
     new-instance v0, Lkotlin/collections/builders/MapBuilder$EntryRef;
 
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->getMap$kotlin_stdlib()Lkotlin/collections/builders/MapBuilder;
@@ -172,7 +171,7 @@
 
     invoke-direct {v0, v1, v2}, Lkotlin/collections/builders/MapBuilder$EntryRef;-><init>(Lkotlin/collections/builders/MapBuilder;I)V
 
-    .line 551
+    .line 558
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->initNext$kotlin_stdlib()V
 
     return-object v0
@@ -189,7 +188,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 564
+    .line 571
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->getIndex$kotlin_stdlib()I
 
     move-result v0
@@ -210,7 +209,7 @@
 
     throw p0
 
-    .line 565
+    .line 572
     :cond_19
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->getIndex$kotlin_stdlib()I
 
@@ -222,7 +221,7 @@
 
     invoke-virtual {p0, v0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->setLastIndex$kotlin_stdlib(I)V
 
-    .line 566
+    .line 573
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->getMap$kotlin_stdlib()Lkotlin/collections/builders/MapBuilder;
 
     move-result-object v0
@@ -237,7 +236,7 @@
 
     aget-object v0, v0, v1
 
-    .line 567
+    .line 574
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->getMap$kotlin_stdlib()Lkotlin/collections/builders/MapBuilder;
 
     move-result-object v1
@@ -256,10 +255,10 @@
     :goto_42
     const/16 v0, 0x3d
 
-    .line 568
+    .line 575
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-    .line 569
+    .line 576
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->getMap$kotlin_stdlib()Lkotlin/collections/builders/MapBuilder;
 
     move-result-object v0
@@ -276,7 +275,7 @@
 
     aget-object v0, v0, v1
 
-    .line 570
+    .line 577
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->getMap$kotlin_stdlib()Lkotlin/collections/builders/MapBuilder;
 
     move-result-object v1
@@ -292,7 +291,7 @@
     :cond_64
     invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 571
+    .line 578
     :goto_67
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->initNext$kotlin_stdlib()V
 
@@ -302,7 +301,7 @@
 .method public final nextHashCode$kotlin_stdlib()I
     .registers 5
 
-    .line 556
+    .line 563
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->getIndex$kotlin_stdlib()I
 
     move-result v0
@@ -323,7 +322,7 @@
 
     throw p0
 
-    .line 557
+    .line 564
     :cond_14
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->getIndex$kotlin_stdlib()I
 
@@ -335,7 +334,7 @@
 
     invoke-virtual {p0, v0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->setLastIndex$kotlin_stdlib(I)V
 
-    .line 558
+    .line 565
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->getMap$kotlin_stdlib()Lkotlin/collections/builders/MapBuilder;
 
     move-result-object v0
@@ -389,7 +388,7 @@
     :cond_4e
     xor-int/2addr v0, v1
 
-    .line 559
+    .line 566
     invoke-virtual {p0}, Lkotlin/collections/builders/MapBuilder$EntriesItr;->initNext$kotlin_stdlib()V
 
     return v0

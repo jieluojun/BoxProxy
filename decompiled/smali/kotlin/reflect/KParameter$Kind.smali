@@ -23,24 +23,21 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000\u0014\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u0008\u0086\u0081\u0002\u0018\u00002\u0008\u0012\u0004\u0012\u00020\u00000\u0001B\t\u0008B\u00a2\u0006\u0004\u0008\u0002\u0010\u0003j\u0002\u0008\u0004j\u0006\u0008\u0005\u0012\u0002\u0008\u0006j\u0002\u0008\u0007j\u0002\u0008\u0008\u00a8\u0006\t"
+        "\u0000\u000c\n\u0002\u0018\u0002\n\u0002\u0010\u0010\n\u0002\u0008\u0005\u0008\u0086\u0081\u0002\u0018\u00002\u0008\u0012\u0004\u0012\u00020\u00000\u0001B\u0007\u0008\u0002\u00a2\u0006\u0002\u0010\u0002j\u0002\u0008\u0003j\u0002\u0008\u0004j\u0002\u0008\u0005\u00a8\u0006\u0006"
     }
     d2 = {
         "Lkotlin/reflect/KParameter$Kind;",
         "",
-        "<init>",
         "(Ljava/lang/String;I)V",
         "INSTANCE",
-        "CONTEXT",
-        "Lkotlin/ExperimentalContextParameters;",
         "EXTENSION_RECEIVER",
         "VALUE",
         "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -51,11 +48,6 @@
 .field private static final synthetic $ENTRIES:Lkotlin/enums/EnumEntries;
 
 .field private static final synthetic $VALUES:[Lkotlin/reflect/KParameter$Kind;
-
-.field public static final enum CONTEXT:Lkotlin/reflect/KParameter$Kind;
-    .annotation build Lkotlin/ExperimentalContextParameters;
-    .end annotation
-.end field
 
 .field public static final enum EXTENSION_RECEIVER:Lkotlin/reflect/KParameter$Kind;
 
@@ -69,7 +61,7 @@
 .method private static final synthetic $values()[Lkotlin/reflect/KParameter$Kind;
     .registers 3
 
-    const/4 v0, 0x4
+    const/4 v0, 0x3
 
     new-array v0, v0, [Lkotlin/reflect/KParameter$Kind;
 
@@ -79,21 +71,15 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lkotlin/reflect/KParameter$Kind;->CONTEXT:Lkotlin/reflect/KParameter$Kind;
+    sget-object v1, Lkotlin/reflect/KParameter$Kind;->EXTENSION_RECEIVER:Lkotlin/reflect/KParameter$Kind;
 
     const/4 v2, 0x1
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lkotlin/reflect/KParameter$Kind;->EXTENSION_RECEIVER:Lkotlin/reflect/KParameter$Kind;
-
-    const/4 v2, 0x2
-
-    aput-object v1, v0, v2
-
     sget-object v1, Lkotlin/reflect/KParameter$Kind;->VALUE:Lkotlin/reflect/KParameter$Kind;
 
-    const/4 v2, 0x3
+    const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
@@ -117,31 +103,20 @@
     .line 58
     new-instance v0, Lkotlin/reflect/KParameter$Kind;
 
-    const-string v1, "CONTEXT"
+    const-string v1, "EXTENSION_RECEIVER"
 
     const/4 v2, 0x1
 
     invoke-direct {v0, v1, v2}, Lkotlin/reflect/KParameter$Kind;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lkotlin/reflect/KParameter$Kind;->CONTEXT:Lkotlin/reflect/KParameter$Kind;
-
-    .line 62
-    new-instance v0, Lkotlin/reflect/KParameter$Kind;
-
-    const-string v1, "EXTENSION_RECEIVER"
-
-    const/4 v2, 0x2
-
-    invoke-direct {v0, v1, v2}, Lkotlin/reflect/KParameter$Kind;-><init>(Ljava/lang/String;I)V
-
     sput-object v0, Lkotlin/reflect/KParameter$Kind;->EXTENSION_RECEIVER:Lkotlin/reflect/KParameter$Kind;
 
-    .line 65
+    .line 61
     new-instance v0, Lkotlin/reflect/KParameter$Kind;
 
     const-string v1, "VALUE"
 
-    const/4 v2, 0x3
+    const/4 v2, 0x2
 
     invoke-direct {v0, v1, v2}, Lkotlin/reflect/KParameter$Kind;-><init>(Ljava/lang/String;I)V
 

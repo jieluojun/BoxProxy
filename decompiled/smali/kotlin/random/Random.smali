@@ -11,49 +11,44 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nRandom.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Random.kt\nkotlin/random/Random\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,392:1\n1#2:393\n*E\n"
+    value = "SMAP\nRandom.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Random.kt\nkotlin/random/Random\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,383:1\n1#2:384\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000D\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0003\n\u0002\u0010\u0008\n\u0002\u0008\u0005\n\u0002\u0010\t\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0006\n\u0000\n\u0002\u0010\u0007\n\u0000\n\u0002\u0010\u0012\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0002\u0008\'\u0018\u0000 \u00192\u00020\u0001:\u0001\u0019B\t\u0008F\u00a2\u0006\u0004\u0008\u0002\u0010\u0003J\u0012\u0010\u0004\u001a\u00020\u00052\u0006\u0010\u0006\u001a\u00020\u0005H\u00a6\u0080\u0004J\n\u0010\u0007\u001a\u00020\u0005H\u0096\u0080\u0004J\u0012\u0010\u0007\u001a\u00020\u00052\u0006\u0010\u0008\u001a\u00020\u0005H\u0096\u0080\u0004J\u001a\u0010\u0007\u001a\u00020\u00052\u0006\u0010\t\u001a\u00020\u00052\u0006\u0010\u0008\u001a\u00020\u0005H\u0096\u0080\u0004J\n\u0010\n\u001a\u00020\u000bH\u0096\u0080\u0004J\u0012\u0010\n\u001a\u00020\u000b2\u0006\u0010\u0008\u001a\u00020\u000bH\u0096\u0080\u0004J\u001a\u0010\n\u001a\u00020\u000b2\u0006\u0010\t\u001a\u00020\u000b2\u0006\u0010\u0008\u001a\u00020\u000bH\u0096\u0080\u0004J\n\u0010\u000c\u001a\u00020\rH\u0096\u0080\u0004J\n\u0010\u000e\u001a\u00020\u000fH\u0096\u0080\u0004J\u0012\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0008\u001a\u00020\u000fH\u0096\u0080\u0004J\u001a\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\t\u001a\u00020\u000f2\u0006\u0010\u0008\u001a\u00020\u000fH\u0096\u0080\u0004J\n\u0010\u0010\u001a\u00020\u0011H\u0096\u0080\u0004J*\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u00132\u0008\u0008\u0002\u0010\u0015\u001a\u00020\u00052\u0008\u0008\u0002\u0010\u0016\u001a\u00020\u0005H\u0097\u0080\u0008b\u0002\u0008\u0017J\u0016\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0014\u001a\u00020\u0013H\u0097\u0080\u0008b\u0002\u0008\u0017J\u0012\u0010\u0012\u001a\u00020\u00132\u0006\u0010\u0018\u001a\u00020\u0005H\u0096\u0080\u0004\u00ca\u0001\u000c\u0008\u001b\u0012\u0008\u0008\u001c\u0012\u0004\u0008\u0008(\u001d\u00a8\u0006\u001a"
+        "\u0000:\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0002\n\u0002\u0010\u0008\n\u0002\u0008\u0002\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0012\n\u0002\u0008\u0005\n\u0002\u0010\u0006\n\u0002\u0008\u0003\n\u0002\u0010\u0007\n\u0002\u0008\u0002\n\u0002\u0010\t\n\u0002\u0008\u0002\u0008\'\u0018\u0000 \u00172\u00020\u0001:\u0001\u0017B\u0005\u00a2\u0006\u0002\u0010\u0002J\u0010\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0005\u001a\u00020\u0004H&J\u0008\u0010\u0006\u001a\u00020\u0007H\u0016J\u0010\u0010\u0008\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\tH\u0016J$\u0010\u0008\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\t2\u0008\u0008\u0002\u0010\u000b\u001a\u00020\u00042\u0008\u0008\u0002\u0010\u000c\u001a\u00020\u0004H\u0016J\u0010\u0010\u0008\u001a\u00020\t2\u0006\u0010\r\u001a\u00020\u0004H\u0016J\u0008\u0010\u000e\u001a\u00020\u000fH\u0016J\u0010\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u000fH\u0016J\u0018\u0010\u000e\u001a\u00020\u000f2\u0006\u0010\u0011\u001a\u00020\u000f2\u0006\u0010\u0010\u001a\u00020\u000fH\u0016J\u0008\u0010\u0012\u001a\u00020\u0013H\u0016J\u0008\u0010\u0014\u001a\u00020\u0004H\u0016J\u0010\u0010\u0014\u001a\u00020\u00042\u0006\u0010\u0010\u001a\u00020\u0004H\u0016J\u0018\u0010\u0014\u001a\u00020\u00042\u0006\u0010\u0011\u001a\u00020\u00042\u0006\u0010\u0010\u001a\u00020\u0004H\u0016J\u0008\u0010\u0015\u001a\u00020\u0016H\u0016J\u0010\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0010\u001a\u00020\u0016H\u0016J\u0018\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0011\u001a\u00020\u00162\u0006\u0010\u0010\u001a\u00020\u0016H\u0016\u00a8\u0006\u0018"
     }
     d2 = {
         "Lkotlin/random/Random;",
         "",
-        "<init>",
         "()V",
         "nextBits",
         "",
         "bitCount",
-        "nextInt",
-        "until",
-        "from",
-        "nextLong",
-        "",
         "nextBoolean",
-        "",
-        "nextDouble",
-        "",
-        "nextFloat",
         "",
         "nextBytes",
         "",
         "array",
         "fromIndex",
         "toIndex",
-        "Lkotlin/IgnorableReturnValue;",
         "size",
+        "nextDouble",
+        "",
+        "until",
+        "from",
+        "nextFloat",
+        "",
+        "nextInt",
+        "nextLong",
+        "",
         "Default",
-        "kotlin-stdlib",
-        "Lkotlin/SinceKotlin;",
-        "version",
-        "1.3"
+        "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -65,7 +60,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nRandom.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Random.kt\nkotlin/random/Random\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,392:1\n1#2:393\n*E\n"
+        "SMAP\nRandom.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Random.kt\nkotlin/random/Random\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,383:1\n1#2:384\n*E\n"
     }
 .end annotation
 
@@ -101,7 +96,7 @@
 
     sput-object v0, Lkotlin/random/Random;->Default:Lkotlin/random/Random$Default;
 
-    .line 277
+    .line 271
     sget-object v0, Lkotlin/internal/PlatformImplementationsKt;->IMPLEMENTATIONS:Lkotlin/internal/PlatformImplementations;
 
     invoke-virtual {v0}, Lkotlin/internal/PlatformImplementations;->defaultPlatformRandom()Lkotlin/random/Random;
@@ -116,7 +111,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 21
+    .line 19
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -125,7 +120,7 @@
 .method public static final synthetic access$getDefaultRandom$cp()Lkotlin/random/Random;
     .registers 1
 
-    .line 21
+    .line 19
     sget-object v0, Lkotlin/random/Random;->defaultRandom:Lkotlin/random/Random;
 
     return-object v0
@@ -139,7 +134,7 @@
 
     const/4 v0, 0x1
 
-    .line 165
+    .line 163
     invoke-virtual {p0, v0}, Lkotlin/random/Random;->nextBits(I)I
 
     move-result p0
@@ -160,7 +155,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 266
+    .line 260
     new-array p1, p1, [B
 
     invoke-virtual {p0, p1}, Lkotlin/random/Random;->nextBytes([B)[B
@@ -176,9 +171,6 @@
         .annotation build Lorg/jetbrains/annotations/NotNull;
         .end annotation
     .end param
-    .annotation runtime Lkotlin/IgnorableReturnValue;
-    .end annotation
-
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
@@ -186,7 +178,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 259
+    .line 253
     array-length v0, p1
 
     const/4 v1, 0x0
@@ -204,9 +196,6 @@
         .annotation build Lorg/jetbrains/annotations/NotNull;
         .end annotation
     .end param
-    .annotation runtime Lkotlin/IgnorableReturnValue;
-    .end annotation
-
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
@@ -214,52 +203,44 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v0, 0x1
+    .line 222
+    new-instance v0, Lkotlin/ranges/IntRange;
 
-    const/4 v1, 0x0
+    array-length v1, p1
 
-    if-ltz p2, :cond_e
+    const/4 v2, 0x0
 
-    .line 227
-    array-length v2, p1
+    invoke-direct {v0, v2, v1}, Lkotlin/ranges/IntRange;-><init>(II)V
 
-    if-gt p2, v2, :cond_e
+    invoke-virtual {v0, p2}, Lkotlin/ranges/IntRange;->contains(I)Z
 
-    move v2, v0
+    move-result v0
 
-    goto :goto_f
+    const/4 v1, 0x1
 
-    :cond_e
-    move v2, v1
+    if-eqz v0, :cond_21
 
-    :goto_f
-    if-eqz v2, :cond_1d
+    new-instance v0, Lkotlin/ranges/IntRange;
 
-    if-ltz p3, :cond_18
+    array-length v3, p1
 
-    array-length v2, p1
+    invoke-direct {v0, v2, v3}, Lkotlin/ranges/IntRange;-><init>(II)V
 
-    if-gt p3, v2, :cond_18
+    invoke-virtual {v0, p3}, Lkotlin/ranges/IntRange;->contains(I)Z
 
-    move v2, v0
+    move-result v0
 
-    goto :goto_19
+    if-eqz v0, :cond_21
 
-    :cond_18
-    move v2, v1
+    move v0, v1
 
-    :goto_19
-    if-eqz v2, :cond_1d
+    goto :goto_22
 
-    move v2, v0
+    :cond_21
+    move v0, v2
 
-    goto :goto_1e
-
-    :cond_1d
-    move v2, v1
-
-    :goto_1e
-    if-nez v2, :cond_51
+    :goto_22
+    if-nez v0, :cond_55
 
     new-instance p0, Ljava/lang/StringBuilder;
 
@@ -303,18 +284,18 @@
 
     throw p1
 
-    :cond_51
-    if-gt p2, p3, :cond_54
+    :cond_55
+    if-gt p2, p3, :cond_58
 
-    goto :goto_55
+    goto :goto_59
 
-    :cond_54
-    move v0, v1
+    :cond_58
+    move v1, v2
 
-    :goto_55
-    if-nez v0, :cond_7f
+    :goto_59
+    if-nez v1, :cond_83
 
-    .line 228
+    .line 223
     new-instance p0, Ljava/lang/StringBuilder;
 
     invoke-direct {p0}, Ljava/lang/StringBuilder;-><init>()V
@@ -349,91 +330,91 @@
 
     throw p1
 
-    :cond_7f
+    :cond_83
     sub-int v0, p3, p2
 
-    .line 230
+    .line 225
     div-int/lit8 v0, v0, 0x4
 
-    move v2, p2
+    move v1, p2
 
-    move p2, v1
+    move p2, v2
 
-    :goto_85
-    if-ge p2, v0, :cond_a8
+    :goto_89
+    if-ge p2, v0, :cond_ac
 
-    .line 234
+    .line 229
     invoke-virtual {p0}, Lkotlin/random/Random;->nextInt()I
 
     move-result v3
 
     int-to-byte v4, v3
 
-    .line 235
-    aput-byte v4, p1, v2
+    .line 230
+    aput-byte v4, p1, v1
 
-    add-int/lit8 v4, v2, 0x1
+    add-int/lit8 v4, v1, 0x1
 
     ushr-int/lit8 v5, v3, 0x8
 
     int-to-byte v5, v5
 
-    .line 236
+    .line 231
     aput-byte v5, p1, v4
 
-    add-int/lit8 v4, v2, 0x2
+    add-int/lit8 v4, v1, 0x2
 
     ushr-int/lit8 v5, v3, 0x10
 
     int-to-byte v5, v5
 
-    .line 237
+    .line 232
     aput-byte v5, p1, v4
 
-    add-int/lit8 v4, v2, 0x3
+    add-int/lit8 v4, v1, 0x3
 
     ushr-int/lit8 v3, v3, 0x18
 
     int-to-byte v3, v3
 
-    .line 238
+    .line 233
     aput-byte v3, p1, v4
 
-    add-int/lit8 v2, v2, 0x4
+    add-int/lit8 v1, v1, 0x4
 
     add-int/lit8 p2, p2, 0x1
 
-    goto :goto_85
+    goto :goto_89
 
-    :cond_a8
-    sub-int/2addr p3, v2
+    :cond_ac
+    sub-int/2addr p3, v1
 
     mul-int/lit8 p2, p3, 0x8
 
-    .line 243
+    .line 238
     invoke-virtual {p0, p2}, Lkotlin/random/Random;->nextBits(I)I
 
     move-result p0
 
-    :goto_af
-    if-ge v1, p3, :cond_bd
+    :goto_b3
+    if-ge v2, p3, :cond_c1
 
-    add-int p2, v2, v1
+    add-int p2, v1, v2
 
-    mul-int/lit8 v0, v1, 0x8
+    mul-int/lit8 v0, v2, 0x8
 
     ushr-int v0, p0, v0
 
     int-to-byte v0, v0
 
-    .line 245
+    .line 240
     aput-byte v0, p1, p2
 
-    add-int/lit8 v1, v1, 0x1
+    add-int/lit8 v2, v2, 0x1
 
-    goto :goto_af
+    goto :goto_b3
 
-    :cond_bd
+    :cond_c1
     return-object p1
 .end method
 
@@ -442,7 +423,7 @@
 
     const/16 v0, 0x1a
 
-    .line 172
+    .line 170
     invoke-virtual {p0, v0}, Lkotlin/random/Random;->nextBits(I)I
 
     move-result v0
@@ -465,7 +446,7 @@
 
     const-wide/16 v0, 0x0
 
-    .line 185
+    .line 181
     invoke-virtual {p0, v0, v1, p1, p2}, Lkotlin/random/Random;->nextDouble(DD)D
 
     move-result-wide p0
@@ -474,58 +455,64 @@
 .end method
 
 .method public nextDouble(DD)D
-    .registers 14
+    .registers 11
 
-    .line 199
+    .line 195
     invoke-static {p1, p2, p3, p4}, Lkotlin/random/RandomKt;->checkRangeBounds(DD)V
 
     sub-double v0, p3, p1
 
-    .line 201
+    .line 197
     invoke-static {v0, v1}, Ljava/lang/Double;->isInfinite(D)Z
 
     move-result v2
 
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_3c
 
-    invoke-static {p1, p2}, Ljava/lang/Math;->abs(D)D
+    invoke-static {p1, p2}, Ljava/lang/Double;->isInfinite(D)Z
 
-    move-result-wide v2
-
-    const-wide v4, 0x7fefffffffffffffL    # Double.MAX_VALUE
-
-    cmpg-double v2, v2, v4
+    move-result v2
 
     const/4 v3, 0x0
 
-    const/4 v6, 0x1
+    const/4 v4, 0x1
 
-    if-gtz v2, :cond_1c
+    if-nez v2, :cond_1b
 
-    move v2, v6
+    invoke-static {p1, p2}, Ljava/lang/Double;->isNaN(D)Z
 
-    goto :goto_1d
+    move-result v2
 
-    :cond_1c
+    if-nez v2, :cond_1b
+
+    move v2, v4
+
+    goto :goto_1c
+
+    :cond_1b
     move v2, v3
 
-    :goto_1d
-    if-eqz v2, :cond_39
+    :goto_1c
+    if-eqz v2, :cond_3c
 
-    invoke-static {p3, p4}, Ljava/lang/Math;->abs(D)D
+    invoke-static {p3, p4}, Ljava/lang/Double;->isInfinite(D)Z
 
-    move-result-wide v7
+    move-result v2
 
-    cmpg-double v2, v7, v4
+    if-nez v2, :cond_2b
 
-    if-gtz v2, :cond_28
+    invoke-static {p3, p4}, Ljava/lang/Double;->isNaN(D)Z
 
-    move v3, v6
+    move-result v2
 
-    :cond_28
-    if-eqz v3, :cond_39
+    if-nez v2, :cond_2b
 
-    .line 202
+    move v3, v4
+
+    :cond_2b
+    if-eqz v3, :cond_3c
+
+    .line 198
     invoke-virtual {p0}, Lkotlin/random/Random;->nextDouble()D
 
     move-result-wide v0
@@ -546,10 +533,10 @@
 
     add-double/2addr p1, v0
 
-    goto :goto_3f
+    goto :goto_42
 
-    .line 205
-    :cond_39
+    .line 201
+    :cond_3c
     invoke-virtual {p0}, Lkotlin/random/Random;->nextDouble()D
 
     move-result-wide v2
@@ -558,19 +545,19 @@
 
     add-double/2addr p1, v2
 
-    :goto_3f
+    :goto_42
     cmpl-double p0, p1, p3
 
-    if-ltz p0, :cond_49
+    if-ltz p0, :cond_4c
 
     const-wide/high16 p0, -0x10000000000000L    # Double.NEGATIVE_INFINITY
 
-    .line 207
+    .line 203
     invoke-static {p3, p4, p0, p1}, Ljava/lang/Math;->nextAfter(DD)D
 
     move-result-wide p1
 
-    :cond_49
+    :cond_4c
     return-wide p1
 .end method
 
@@ -579,7 +566,7 @@
 
     const/16 v0, 0x18
 
-    .line 215
+    .line 211
     invoke-virtual {p0, v0}, Lkotlin/random/Random;->nextBits(I)I
 
     move-result p0
@@ -598,7 +585,7 @@
 
     const/16 v0, 0x20
 
-    .line 42
+    .line 40
     invoke-virtual {p0, v0}, Lkotlin/random/Random;->nextBits(I)I
 
     move-result p0
@@ -611,7 +598,7 @@
 
     const/4 v0, 0x0
 
-    .line 55
+    .line 53
     invoke-virtual {p0, v0, p1}, Lkotlin/random/Random;->nextInt(II)I
 
     move-result p0
@@ -622,7 +609,7 @@
 .method public nextInt(II)I
     .registers 7
 
-    .line 67
+    .line 65
     invoke-static {p1, p2}, Lkotlin/random/RandomKt;->checkRangeBounds(II)V
 
     sub-int v0, p2, p1
@@ -637,7 +624,7 @@
 
     goto :goto_1a
 
-    .line 84
+    .line 82
     :cond_d
     invoke-virtual {p0}, Lkotlin/random/Random;->nextInt()I
 
@@ -664,19 +651,19 @@
 
     if-ne p2, v0, :cond_27
 
-    .line 71
+    .line 69
     invoke-static {v0}, Lkotlin/random/RandomKt;->fastLog2(I)I
 
     move-result p2
 
-    .line 72
+    .line 70
     invoke-virtual {p0, p2}, Lkotlin/random/Random;->nextBits(I)I
 
     move-result p0
 
     goto :goto_35
 
-    .line 76
+    .line 74
     :cond_27
     invoke-virtual {p0}, Lkotlin/random/Random;->nextInt()I
 
@@ -684,7 +671,7 @@
 
     ushr-int/2addr p2, v1
 
-    .line 77
+    .line 75
     rem-int v2, p2, v0
 
     sub-int/2addr p2, v2
@@ -706,7 +693,7 @@
 .method public nextLong()J
     .registers 5
 
-    .line 97
+    .line 95
     invoke-virtual {p0}, Lkotlin/random/Random;->nextInt()I
 
     move-result v0
@@ -733,7 +720,7 @@
 
     const-wide/16 v0, 0x0
 
-    .line 110
+    .line 108
     invoke-virtual {p0, v0, v1, p1, p2}, Lkotlin/random/Random;->nextLong(JJ)J
 
     move-result-wide p0
@@ -744,7 +731,7 @@
 .method public nextLong(JJ)J
     .registers 15
 
-    .line 122
+    .line 120
     invoke-static {p1, p2, p3, p4}, Lkotlin/random/RandomKt;->checkRangeBounds(JJ)V
 
     sub-long v0, p3, p1
@@ -777,12 +764,12 @@
 
     if-eqz p3, :cond_29
 
-    .line 131
+    .line 129
     invoke-static {p3}, Lkotlin/random/RandomKt;->fastLog2(I)I
 
     move-result p3
 
-    .line 133
+    .line 131
     invoke-virtual {p0, p3}, Lkotlin/random/Random;->nextBits(I)I
 
     move-result p0
@@ -796,7 +783,7 @@
     :cond_29
     if-ne v0, v5, :cond_32
 
-    .line 137
+    .line 135
     invoke-virtual {p0}, Lkotlin/random/Random;->nextInt()I
 
     move-result p0
@@ -807,13 +794,13 @@
 
     goto :goto_58
 
-    .line 139
+    .line 137
     :cond_32
     invoke-static {v0}, Lkotlin/random/RandomKt;->fastLog2(I)I
 
     move-result p3
 
-    .line 140
+    .line 138
     invoke-virtual {p0, p3}, Lkotlin/random/Random;->nextBits(I)I
 
     move-result p3
@@ -834,7 +821,7 @@
 
     goto :goto_58
 
-    .line 146
+    .line 144
     :cond_46
     invoke-virtual {p0}, Lkotlin/random/Random;->nextLong()J
 
@@ -842,7 +829,7 @@
 
     ushr-long/2addr p3, v5
 
-    .line 147
+    .line 145
     rem-long v6, p3, v0
 
     sub-long/2addr p3, v6
@@ -864,7 +851,7 @@
 
     return-wide p1
 
-    .line 154
+    .line 152
     :cond_5a
     invoke-virtual {p0}, Lkotlin/random/Random;->nextLong()J
 

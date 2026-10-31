@@ -28,7 +28,7 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000P\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u000b\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\u0008\u0006\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0008\n\u0000\n\u0002\u0010\u000e\n\u0002\u0008\u0003\u0008\u0007\u0018\u0000 &2\u00020\u00012\u0008\u0012\u0004\u0012\u00020\u00030\u00022\u0008\u0012\u0004\u0012\u00020\u00030\u0004:\u0001&B\u0019\u0008F\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u00a2\u0006\u0004\u0008\u0007\u0010\u0008J\u0019\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u0003H\u0096\u0082\u0004\u00a2\u0006\u0004\u0008\u001c\u0010\u001dJ\n\u0010\u001e\u001a\u00020\u001aH\u0096\u0080\u0004J\u0014\u0010\u001f\u001a\u00020\u001a2\u0008\u0010 \u001a\u0004\u0018\u00010!H\u0096\u0082\u0004J\n\u0010\"\u001a\u00020#H\u0096\u0080\u0004J\n\u0010$\u001a\u00020%H\u0096\u0080\u0004R\u0015\u0010\u0005\u001a\u00020\u00038VX\u0096\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\t\u0010\nR\u0015\u0010\u0006\u001a\u00020\u00038VX\u0096\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\u000b\u0010\nRI\u0010\u000c\u001a\u00020\u00038VX\u0097\u0084\u0008r\u000c\u0008\u0010\u0012\u0008\u0008\u0011\u0012\u0004\u0008\u0008(\u0012r\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u0015r\u0010\u0008\u0016\u0012\u000c\u0008\u0017\u0012\u0008\u0008\u000cJ\u0004\u0008\t0\u0018\u00a2\u0006\u000c\u0012\u0004\u0008\r\u0010\u000e\u001a\u0004\u0008\u000f\u0010\n\u00ca\u0001\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008((\u00a8\u0006\'"
+        "\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u000b\n\u0002\u0010\u000b\n\u0002\u0008\u0005\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0002\n\u0002\u0010\u000e\n\u0002\u0008\u0002\u0008\u0007\u0018\u0000 \u001c2\u00020\u00012\u0008\u0012\u0004\u0012\u00020\u00030\u00022\u0008\u0012\u0004\u0012\u00020\u00030\u0004:\u0001\u001cB\u0015\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0007J\u0018\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0003H\u0096\u0002\u00a2\u0006\u0004\u0008\u0012\u0010\u0013J\u0013\u0010\u0014\u001a\u00020\u00102\u0008\u0010\u0015\u001a\u0004\u0018\u00010\u0016H\u0096\u0002J\u0008\u0010\u0017\u001a\u00020\u0018H\u0016J\u0008\u0010\u0019\u001a\u00020\u0010H\u0016J\u0008\u0010\u001a\u001a\u00020\u001bH\u0016R\u001d\u0010\u0008\u001a\u00020\u00038VX\u0097\u0004\u00f8\u0001\u0000\u00a2\u0006\u000c\u0012\u0004\u0008\t\u0010\n\u001a\u0004\u0008\u000b\u0010\u000cR\u0017\u0010\u0006\u001a\u00020\u00038VX\u0096\u0004\u00f8\u0001\u0000\u00a2\u0006\u0006\u001a\u0004\u0008\r\u0010\u000cR\u0017\u0010\u0005\u001a\u00020\u00038VX\u0096\u0004\u00f8\u0001\u0000\u00a2\u0006\u0006\u001a\u0004\u0008\u000e\u0010\u000c\u0082\u0002\u0004\n\u0002\u0008!\u00a8\u0006\u001d"
     }
     d2 = {
         "Lkotlin/ranges/ULongRange;",
@@ -38,45 +38,34 @@
         "Lkotlin/ranges/OpenEndRange;",
         "start",
         "endInclusive",
-        "<init>",
         "(JJLkotlin/jvm/internal/DefaultConstructorMarker;)V",
-        "getStart-s-VKNKU",
-        "()J",
-        "getEndInclusive-s-VKNKU",
         "endExclusive",
         "getEndExclusive-s-VKNKU$annotations",
         "()V",
         "getEndExclusive-s-VKNKU",
-        "Lkotlin/Deprecated;",
-        "message",
-        "Can throw an exception when it\'s impossible to represent the value with ULong type, for example, when the range includes MAX_VALUE. It\'s recommended to use \'endInclusive\' property that doesn\'t throw.",
-        "Lkotlin/SinceKotlin;",
-        "version",
-        "1.9",
-        "Lkotlin/WasExperimental;",
-        "markerClass",
-        "Lkotlin/ExperimentalStdlibApi;",
+        "()J",
+        "getEndInclusive-s-VKNKU",
+        "getStart-s-VKNKU",
         "contains",
         "",
         "value",
         "contains-VKZWuLQ",
         "(J)Z",
-        "isEmpty",
         "equals",
         "other",
         "",
         "hashCode",
         "",
+        "isEmpty",
         "toString",
         "",
         "Companion",
-        "kotlin-stdlib",
-        "1.5"
+        "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -84,6 +73,12 @@
 
 .annotation build Lkotlin/SinceKotlin;
     version = "1.5"
+.end annotation
+
+.annotation build Lkotlin/WasExperimental;
+    markerClass = {
+        Lkotlin/ExperimentalUnsignedTypes;
+    }
 .end annotation
 
 
@@ -150,7 +145,7 @@
 
     move-wide v3, p3
 
-    .line 18
+    .line 19
     invoke-direct/range {v0 .. v7}, Lkotlin/ranges/ULongProgression;-><init>(JJJLkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void
@@ -167,7 +162,7 @@
 .method public static final synthetic access$getEMPTY$cp()Lkotlin/ranges/ULongRange;
     .registers 1
 
-    .line 18
+    .line 17
     sget-object v0, Lkotlin/ranges/ULongRange;->EMPTY:Lkotlin/ranges/ULongRange;
 
     return-object v0
@@ -176,7 +171,7 @@
 .method public bridge synthetic contains(Ljava/lang/Comparable;)Z
     .registers 4
 
-    .line 18
+    .line 17
     check-cast p1, Lkotlin/ULong;
 
     invoke-virtual {p1}, Lkotlin/ULong;->unbox-impl()J
@@ -296,7 +291,7 @@
 .method public bridge synthetic getEndExclusive()Ljava/lang/Comparable;
     .registers 3
 
-    .line 18
+    .line 17
     invoke-virtual {p0}, Lkotlin/ranges/ULongRange;->getEndExclusive-s-VKNKU()J
 
     move-result-wide v0
@@ -364,7 +359,7 @@
 .method public bridge synthetic getEndInclusive()Ljava/lang/Comparable;
     .registers 3
 
-    .line 18
+    .line 17
     invoke-virtual {p0}, Lkotlin/ranges/ULongRange;->getEndInclusive-s-VKNKU()J
 
     move-result-wide v0
@@ -390,7 +385,7 @@
 .method public bridge synthetic getStart()Ljava/lang/Comparable;
     .registers 3
 
-    .line 18
+    .line 17
     invoke-virtual {p0}, Lkotlin/ranges/ULongRange;->getStart-s-VKNKU()J
 
     move-result-wide v0

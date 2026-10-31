@@ -6,28 +6,26 @@
 # annotations
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000\u001c\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0002\n\u0002\u0010\t\n\u0002\u0008\u0006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\u001a\u001a\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0001H\u0082\u0080\u0004\u001a\u001a\u0010\u0000\u001a\u00020\u00042\u0006\u0010\u0002\u001a\u00020\u00042\u0006\u0010\u0003\u001a\u00020\u0004H\u0082\u0080\u0004\u001a\"\u0010\u0005\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u00012\u0006\u0010\u0006\u001a\u00020\u0001H\u0082\u0080\u0004\u001a\"\u0010\u0005\u001a\u00020\u00042\u0006\u0010\u0002\u001a\u00020\u00042\u0006\u0010\u0003\u001a\u00020\u00042\u0006\u0010\u0006\u001a\u00020\u0004H\u0082\u0080\u0004\u001a*\u0010\u0007\u001a\u00020\u00012\u0006\u0010\u0008\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\u00012\u0006\u0010\n\u001a\u00020\u0001H\u0081\u0080\u0004b\u0002\u0008\u000bb\u0002\u0008\u000c\u001a*\u0010\u0007\u001a\u00020\u00042\u0006\u0010\u0008\u001a\u00020\u00042\u0006\u0010\t\u001a\u00020\u00042\u0006\u0010\n\u001a\u00020\u0004H\u0081\u0080\u0004b\u0002\u0008\u000bb\u0002\u0008\u000c\u00a8\u0006\r"
+        "\u0000\u0012\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0003\n\u0002\u0010\t\n\u0002\u0008\u0006\u001a \u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u00012\u0006\u0010\u0004\u001a\u00020\u0001H\u0002\u001a \u0010\u0000\u001a\u00020\u00052\u0006\u0010\u0002\u001a\u00020\u00052\u0006\u0010\u0003\u001a\u00020\u00052\u0006\u0010\u0004\u001a\u00020\u0005H\u0002\u001a \u0010\u0006\u001a\u00020\u00012\u0006\u0010\u0007\u001a\u00020\u00012\u0006\u0010\u0008\u001a\u00020\u00012\u0006\u0010\t\u001a\u00020\u0001H\u0001\u001a \u0010\u0006\u001a\u00020\u00052\u0006\u0010\u0007\u001a\u00020\u00052\u0006\u0010\u0008\u001a\u00020\u00052\u0006\u0010\t\u001a\u00020\u0005H\u0001\u001a\u0018\u0010\n\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u00012\u0006\u0010\u0003\u001a\u00020\u0001H\u0002\u001a\u0018\u0010\n\u001a\u00020\u00052\u0006\u0010\u0002\u001a\u00020\u00052\u0006\u0010\u0003\u001a\u00020\u0005H\u0002\u00a8\u0006\u000b"
     }
     d2 = {
-        "mod",
+        "differenceModulo",
         "",
         "a",
         "b",
-        "",
-        "differenceModulo",
         "c",
+        "",
         "getProgressionLastElement",
         "start",
         "end",
         "step",
-        "Lkotlin/PublishedApi;",
-        "Lkotlin/internal/UsedFromCompilerGeneratedCode;",
+        "mod",
         "kotlin-stdlib"
     }
     k = 0x2
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -83,16 +81,13 @@
     .annotation build Lkotlin/PublishedApi;
     .end annotation
 
-    .annotation build Lkotlin/internal/UsedFromCompilerGeneratedCode;
-    .end annotation
-
     if-lez p2, :cond_b
 
     if-lt p0, p1, :cond_5
 
     goto :goto_16
 
-    .line 47
+    .line 46
     :cond_5
     invoke-static {p1, p0, p2}, Lkotlin/internal/ProgressionUtilKt;->differenceModulo(III)I
 
@@ -112,7 +107,7 @@
     :cond_10
     neg-int p2, p2
 
-    .line 48
+    .line 47
     invoke-static {p0, p1, p2}, Lkotlin/internal/ProgressionUtilKt;->differenceModulo(III)I
 
     move-result p0
@@ -122,7 +117,7 @@
     :goto_16
     return p1
 
-    .line 49
+    .line 48
     :cond_17
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
@@ -136,9 +131,6 @@
 .method public static final getProgressionLastElement(JJJ)J
     .registers 13
     .annotation build Lkotlin/PublishedApi;
-    .end annotation
-
-    .annotation build Lkotlin/internal/UsedFromCompilerGeneratedCode;
     .end annotation
 
     const-wide/16 v0, 0x0
@@ -160,7 +152,7 @@
 
     move-wide v4, p4
 
-    .line 71
+    .line 69
     invoke-static/range {v0 .. v5}, Lkotlin/internal/ProgressionUtilKt;->differenceModulo(JJJ)J
 
     move-result-wide p0
@@ -185,7 +177,7 @@
 
     move-wide v3, p2
 
-    .line 72
+    .line 70
     invoke-static/range {v1 .. v6}, Lkotlin/internal/ProgressionUtilKt;->differenceModulo(JJJ)J
 
     move-result-wide p0
@@ -195,7 +187,7 @@
     :goto_23
     return-wide p2
 
-    .line 73
+    .line 71
     :cond_24
     new-instance p0, Ljava/lang/IllegalArgumentException;
 

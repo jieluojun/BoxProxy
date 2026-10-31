@@ -10,6 +10,12 @@
 # instance fields
 .field private final arity:I
 
+.field private final flags:I
+    .annotation build Lkotlin/SinceKotlin;
+        version = "1.4"
+    .end annotation
+.end field
+
 
 # direct methods
 
@@ -21,7 +27,7 @@
 .method public constructor <init>(I)V
     .registers 9
 
-    .line 17
+    .line 40
     sget-object v2, Lkotlin/jvm/internal/FunctionReference;->NO_RECEIVER:Ljava/lang/Object;
 
     const/4 v3, 0x0
@@ -61,50 +67,54 @@
 
     move-object v2, p2
 
-    .line 22
+    .line 45
     invoke-direct/range {v0 .. v6}, Lkotlin/jvm/internal/FunctionReference;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
     return-void
 .end method
 
 .method public constructor <init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-    .registers 14
+    .registers 15
     .annotation build Lkotlin/SinceKotlin;
         version = "1.4"
     .end annotation
 
-    const/4 v0, 0x1
+    and-int/lit8 v0, p6, 0x1
 
-    and-int/2addr p6, v0
+    const/4 v1, 0x1
 
-    if-ne p6, v0, :cond_6
+    if-ne v0, v1, :cond_7
 
-    :goto_4
-    move v6, v0
+    move v7, v1
 
-    goto :goto_8
+    goto :goto_9
 
-    :cond_6
+    :cond_7
     const/4 v0, 0x0
 
-    goto :goto_4
+    move v7, v0
 
-    :goto_8
-    move-object v1, p0
+    :goto_9
+    move-object v2, p0
 
-    move-object v2, p2
+    move-object v3, p2
 
-    move-object v3, p3
+    move-object v4, p3
 
-    move-object v4, p4
+    move-object v5, p4
 
-    move-object v5, p5
+    move-object v6, p5
 
-    .line 27
-    invoke-direct/range {v1 .. v6}, Lkotlin/jvm/internal/CallableReference;-><init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;Z)V
+    .line 50
+    invoke-direct/range {v2 .. v7}, Lkotlin/jvm/internal/CallableReference;-><init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 28
+    .line 51
     iput p1, p0, Lkotlin/jvm/internal/FunctionReference;->arity:I
+
+    shr-int/lit8 p1, p6, 0x1
+
+    .line 52
+    iput p1, p0, Lkotlin/jvm/internal/FunctionReference;->flags:I
 
     return-void
 .end method
@@ -115,7 +125,7 @@
         version = "1.1"
     .end annotation
 
-    .line 45
+    .line 69
     invoke-static {p0}, Lkotlin/jvm/internal/Reflection;->function(Lkotlin/jvm/internal/FunctionReference;)Lkotlin/reflect/KFunction;
 
     move-result-object p0
@@ -132,18 +142,18 @@
 
     return v0
 
-    .line 81
+    .line 105
     :cond_4
     instance-of v1, p1, Lkotlin/jvm/internal/FunctionReference;
 
     const/4 v2, 0x0
 
-    if-eqz v1, :cond_46
+    if-eqz v1, :cond_52
 
-    .line 82
+    .line 106
     check-cast p1, Lkotlin/jvm/internal/FunctionReference;
 
-    .line 84
+    .line 108
     invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getName()Ljava/lang/String;
 
     move-result-object v1
@@ -156,9 +166,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_50
 
-    .line 85
+    .line 109
     invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getSignature()Ljava/lang/String;
 
     move-result-object v1
@@ -171,9 +181,21 @@
 
     move-result v1
 
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_50
 
-    .line 86
+    iget v1, p0, Lkotlin/jvm/internal/FunctionReference;->flags:I
+
+    iget v3, p1, Lkotlin/jvm/internal/FunctionReference;->flags:I
+
+    if-ne v1, v3, :cond_50
+
+    iget v1, p0, Lkotlin/jvm/internal/FunctionReference;->arity:I
+
+    iget v3, p1, Lkotlin/jvm/internal/FunctionReference;->arity:I
+
+    if-ne v1, v3, :cond_50
+
+    .line 112
     invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getBoundReceiver()Ljava/lang/Object;
 
     move-result-object v1
@@ -186,9 +208,9 @@
 
     move-result v1
 
-    if-eqz v1, :cond_44
+    if-eqz v1, :cond_50
 
-    .line 87
+    .line 113
     invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getOwner()Lkotlin/reflect/KDeclarationContainer;
 
     move-result-object p0
@@ -201,23 +223,23 @@
 
     move-result p0
 
-    if-eqz p0, :cond_44
+    if-eqz p0, :cond_50
 
-    goto :goto_45
+    goto :goto_51
 
-    :cond_44
+    :cond_50
     move v0, v2
 
-    :goto_45
+    :goto_51
     return v0
 
-    .line 89
-    :cond_46
+    .line 115
+    :cond_52
     instance-of v0, p1, Lkotlin/reflect/KFunction;
 
-    if-eqz v0, :cond_53
+    if-eqz v0, :cond_5f
 
-    .line 90
+    .line 116
     invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->compute()Lkotlin/reflect/KCallable;
 
     move-result-object p0
@@ -228,14 +250,14 @@
 
     return p0
 
-    :cond_53
+    :cond_5f
     return v2
 .end method
 
 .method public getArity()I
     .registers 1
 
-    .line 33
+    .line 57
     iget p0, p0, Lkotlin/jvm/internal/FunctionReference;->arity:I
 
     return p0
@@ -261,7 +283,7 @@
         version = "1.1"
     .end annotation
 
-    .line 39
+    .line 63
     invoke-super {p0}, Lkotlin/jvm/internal/CallableReference;->getReflected()Lkotlin/reflect/KCallable;
 
     move-result-object p0
@@ -274,7 +296,7 @@
 .method public hashCode()I
     .registers 3
 
-    .line 97
+    .line 123
     invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getOwner()Lkotlin/reflect/KDeclarationContainer;
 
     move-result-object v0
@@ -328,7 +350,7 @@
         version = "1.1"
     .end annotation
 
-    .line 57
+    .line 81
     invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getReflected()Lkotlin/reflect/KFunction;
 
     move-result-object p0
@@ -346,7 +368,7 @@
         version = "1.1"
     .end annotation
 
-    .line 69
+    .line 93
     invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getReflected()Lkotlin/reflect/KFunction;
 
     move-result-object p0
@@ -364,7 +386,7 @@
         version = "1.1"
     .end annotation
 
-    .line 51
+    .line 75
     invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getReflected()Lkotlin/reflect/KFunction;
 
     move-result-object p0
@@ -382,7 +404,7 @@
         version = "1.1"
     .end annotation
 
-    .line 63
+    .line 87
     invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getReflected()Lkotlin/reflect/KFunction;
 
     move-result-object p0
@@ -400,7 +422,7 @@
         version = "1.1"
     .end annotation
 
-    .line 75
+    .line 99
     invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getReflected()Lkotlin/reflect/KFunction;
 
     move-result-object p0
@@ -415,14 +437,14 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 102
+    .line 128
     invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->compute()Lkotlin/reflect/KCallable;
 
     move-result-object v0
 
     if-eq v0, p0, :cond_b
 
-    .line 104
+    .line 130
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p0
@@ -432,7 +454,7 @@
     :cond_b
     const-string v0, "<init>"
 
-    .line 108
+    .line 134
     invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getName()Ljava/lang/String;
 
     move-result-object v1
@@ -456,7 +478,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 110
+    .line 136
     invoke-virtual {p0}, Lkotlin/jvm/internal/FunctionReference;->getName()Ljava/lang/String;
 
     move-result-object p0

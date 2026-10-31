@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/UiKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,533:1\n1#2:534\n2208#3,3:535\n*S KotlinDebug\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/UiKt\n*L\n257#1:535,3\n*E\n"
+    value = "SMAP\nUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/UiKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,533:1\n1#2:534\n1864#3,3:535\n*S KotlinDebug\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/UiKt\n*L\n257#1:535,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -117,7 +117,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/UiKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,533:1\n1#2:534\n2208#3,3:535\n*S KotlinDebug\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/UiKt\n*L\n257#1:535,3\n*E\n"
+        "SMAP\nUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/UiKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,533:1\n1#2:534\n1864#3,3:535\n*S KotlinDebug\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/UiKt\n*L\n257#1:535,3\n*E\n"
     }
 .end annotation
 

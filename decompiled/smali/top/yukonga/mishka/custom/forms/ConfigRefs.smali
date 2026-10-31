@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nConfigRefs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ConfigRefs.kt\ntop/yukonga/mishka/custom/forms/ConfigRefs\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,552:1\n777#2:553\n873#2,2:554\n*S KotlinDebug\n*F\n+ 1 ConfigRefs.kt\ntop/yukonga/mishka/custom/forms/ConfigRefs\n*L\n367#1:553\n367#1:554,2\n*E\n"
+    value = "SMAP\nConfigRefs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ConfigRefs.kt\ntop/yukonga/mishka/custom/forms/ConfigRefs\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,552:1\n766#2:553\n857#2,2:554\n*S KotlinDebug\n*F\n+ 1 ConfigRefs.kt\ntop/yukonga/mishka/custom/forms/ConfigRefs\n*L\n367#1:553\n367#1:554,2\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -74,7 +74,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nConfigRefs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ConfigRefs.kt\ntop/yukonga/mishka/custom/forms/ConfigRefs\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,552:1\n777#2:553\n873#2,2:554\n*S KotlinDebug\n*F\n+ 1 ConfigRefs.kt\ntop/yukonga/mishka/custom/forms/ConfigRefs\n*L\n367#1:553\n367#1:554,2\n*E\n"
+        "SMAP\nConfigRefs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ConfigRefs.kt\ntop/yukonga/mishka/custom/forms/ConfigRefs\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,552:1\n766#2:553\n857#2,2:554\n*S KotlinDebug\n*F\n+ 1 ConfigRefs.kt\ntop/yukonga/mishka/custom/forms/ConfigRefs\n*L\n367#1:553\n367#1:554,2\n*E\n"
     }
 .end annotation
 
@@ -722,7 +722,7 @@
 
     if-eq v3, v4, :cond_55
 
-    packed-switch v3, :pswitch_data_72
+    packed-switch v3, :pswitch_data_76
 
     const/16 v4, 0x20
 
@@ -816,11 +816,13 @@
 
     move-result-object p0
 
+    const-string p1, "toString(...)"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
     return-object p0
 
-    nop
-
-    :pswitch_data_72
+    :pswitch_data_76
     .packed-switch 0x9
         :pswitch_4f
         :pswitch_49

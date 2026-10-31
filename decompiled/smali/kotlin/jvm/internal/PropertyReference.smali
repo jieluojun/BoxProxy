@@ -101,7 +101,7 @@
 .method public compute()Lkotlin/reflect/KCallable;
     .registers 2
 
-    .line 48
+    .line 47
     iget-boolean v0, p0, Lkotlin/jvm/internal/PropertyReference;->syntheticJavaProperty:Z
 
     if-eqz v0, :cond_5
@@ -126,7 +126,7 @@
 
     return v0
 
-    .line 66
+    .line 65
     :cond_4
     instance-of v1, p1, Lkotlin/jvm/internal/PropertyReference;
 
@@ -134,10 +134,10 @@
 
     if-eqz v1, :cond_46
 
-    .line 67
+    .line 66
     check-cast p1, Lkotlin/jvm/internal/PropertyReference;
 
-    .line 68
+    .line 67
     invoke-virtual {p0}, Lkotlin/jvm/internal/PropertyReference;->getOwner()Lkotlin/reflect/KDeclarationContainer;
 
     move-result-object v1
@@ -152,7 +152,7 @@
 
     if-eqz v1, :cond_44
 
-    .line 69
+    .line 68
     invoke-virtual {p0}, Lkotlin/jvm/internal/PropertyReference;->getName()Ljava/lang/String;
 
     move-result-object v1
@@ -167,7 +167,7 @@
 
     if-eqz v1, :cond_44
 
-    .line 70
+    .line 69
     invoke-virtual {p0}, Lkotlin/jvm/internal/PropertyReference;->getSignature()Ljava/lang/String;
 
     move-result-object v1
@@ -182,7 +182,7 @@
 
     if-eqz v1, :cond_44
 
-    .line 71
+    .line 70
     invoke-virtual {p0}, Lkotlin/jvm/internal/PropertyReference;->getBoundReceiver()Ljava/lang/Object;
 
     move-result-object p0
@@ -205,13 +205,13 @@
     :goto_45
     return v0
 
-    .line 73
+    .line 72
     :cond_46
     instance-of v0, p1, Lkotlin/reflect/KProperty;
 
     if-eqz v0, :cond_53
 
-    .line 74
+    .line 73
     invoke-virtual {p0}, Lkotlin/jvm/internal/PropertyReference;->compute()Lkotlin/reflect/KCallable;
 
     move-result-object p0
@@ -254,13 +254,13 @@
     .line 40
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    const-string v0, "Kotlin reflection is not yet supported for synthetic Java properties. Please follow/upvote https://youtrack.jetbrains.com/issue/KT-55980"
+    const-string v0, "Kotlin reflection is not yet supported for synthetic Java properties"
 
     invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     throw p0
 
-    .line 43
+    .line 42
     :cond_c
     invoke-super {p0}, Lkotlin/jvm/internal/CallableReference;->getReflected()Lkotlin/reflect/KCallable;
 
@@ -274,7 +274,7 @@
 .method public hashCode()I
     .registers 3
 
-    .line 81
+    .line 80
     invoke-virtual {p0}, Lkotlin/jvm/internal/PropertyReference;->getOwner()Lkotlin/reflect/KDeclarationContainer;
 
     move-result-object v0
@@ -316,7 +316,7 @@
         version = "1.1"
     .end annotation
 
-    .line 60
+    .line 59
     invoke-virtual {p0}, Lkotlin/jvm/internal/PropertyReference;->getReflected()Lkotlin/reflect/KProperty;
 
     move-result-object p0
@@ -334,7 +334,7 @@
         version = "1.1"
     .end annotation
 
-    .line 54
+    .line 53
     invoke-virtual {p0}, Lkotlin/jvm/internal/PropertyReference;->getReflected()Lkotlin/reflect/KProperty;
 
     move-result-object p0
@@ -349,21 +349,21 @@
 .method public toString()Ljava/lang/String;
     .registers 3
 
-    .line 86
+    .line 85
     invoke-virtual {p0}, Lkotlin/jvm/internal/PropertyReference;->compute()Lkotlin/reflect/KCallable;
 
     move-result-object v0
 
     if-eq v0, p0, :cond_b
 
-    .line 88
+    .line 87
     invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 91
+    .line 90
     :cond_b
     new-instance v0, Ljava/lang/StringBuilder;
 

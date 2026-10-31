@@ -4,7 +4,6 @@
 
 # interfaces
 .implements Lkotlin/enums/EnumEntries;
-.implements Ljava/util/RandomAccess;
 .implements Ljava/io/Serializable;
 
 
@@ -18,14 +17,13 @@
         "TT;>;",
         "Lkotlin/enums/EnumEntries<",
         "TT;>;",
-        "Ljava/util/RandomAccess;",
         "Ljava/io/Serializable;"
     }
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000\\\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0010\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0008\u0004\n\u0002\u0010\u0008\n\u0002\u0008\u0006\n\u0002\u0010\u000b\n\u0002\u0008\u0006\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\u0008\u0003\u0018\u0000*\u000e\u0008\u0000\u0010\u0001*\u0008\u0012\u0004\u0012\u0002H\u00010\u00022\u0008\u0012\u0004\u0012\u0002H\u00010\u00032\u0008\u0012\u0004\u0012\u0002H\u00010\u00042\u00060\u0005j\u0002`\u00062\u00060\u0007j\u0002`\u0008B\u0017\u0008F\u0012\u000c\u0010\t\u001a\u0008\u0012\u0004\u0012\u00028\u00000\n\u00a2\u0006\u0004\u0008\u000b\u0010\u000cJ\u0017\u0010\u0012\u001a\u00028\u00002\u0006\u0010\u0013\u001a\u00020\u000fH\u0096\u0082\u0004\u00a2\u0006\u0002\u0010\u0014J\u0017\u0010\u0015\u001a\u00020\u00162\u0006\u0010\u0017\u001a\u00028\u0000H\u0096\u0082\u0004\u00a2\u0006\u0002\u0010\u0018J\u0017\u0010\u0019\u001a\u00020\u000f2\u0006\u0010\u0017\u001a\u00028\u0000H\u0096\u0080\u0004\u00a2\u0006\u0002\u0010\u001aJ\u0017\u0010\u001b\u001a\u00020\u000f2\u0006\u0010\u0017\u001a\u00028\u0000H\u0096\u0080\u0004\u00a2\u0006\u0002\u0010\u001aJ\n\u0010\u001c\u001a\u00020\u001dH\u0082\u0080\u0004J\u001b\u0010\u001e\u001a\u00020\u001f2\n\u0010 \u001a\u00060!j\u0002`\"H\u0082\u0080\u0004\u00a2\u0006\u0002\u0010#R\u0017\u0010\t\u001a\u0008\u0012\u0004\u0012\u00028\u00000\nX\u0082\u0084\u0008\u00a2\u0006\u0004\n\u0002\u0010\rR\u0015\u0010\u000e\u001a\u00020\u000f8VX\u0096\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\u0010\u0010\u0011\u00ca\u0001\u000c\u0008%\u0012\u0008\u0008&\u0012\u0004\u0008\u0008(\'\u00a8\u0006$"
+        "\u0000:\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0010\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0011\n\u0002\u0008\u0003\n\u0002\u0010\u0008\n\u0002\u0008\u0003\n\u0002\u0010\u000b\n\u0002\u0008\t\n\u0002\u0010\u0000\n\u0000\u0008\u0003\u0018\u0000*\u000e\u0008\u0000\u0010\u0001*\u0008\u0012\u0004\u0012\u0002H\u00010\u00022\u0008\u0012\u0004\u0012\u0002H\u00010\u00032\u0008\u0012\u0004\u0012\u0002H\u00010\u00042\u00060\u0005j\u0002`\u0006B\u0013\u0012\u000c\u0010\u0007\u001a\u0008\u0012\u0004\u0012\u00028\u00000\u0008\u00a2\u0006\u0002\u0010\tJ\u0016\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00028\u0000H\u0096\u0002\u00a2\u0006\u0002\u0010\u0012J\u0016\u0010\u0013\u001a\u00028\u00002\u0006\u0010\u0014\u001a\u00020\u000cH\u0096\u0002\u00a2\u0006\u0002\u0010\u0015J\u0015\u0010\u0016\u001a\u00020\u000c2\u0006\u0010\u0011\u001a\u00028\u0000H\u0016\u00a2\u0006\u0002\u0010\u0017J\u0015\u0010\u0018\u001a\u00020\u000c2\u0006\u0010\u0011\u001a\u00028\u0000H\u0016\u00a2\u0006\u0002\u0010\u0017J\u0008\u0010\u0019\u001a\u00020\u001aH\u0002R\u0016\u0010\u0007\u001a\u0008\u0012\u0004\u0012\u00028\u00000\u0008X\u0082\u0004\u00a2\u0006\u0004\n\u0002\u0010\nR\u0014\u0010\u000b\u001a\u00020\u000c8VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\r\u0010\u000e\u00a8\u0006\u001b"
     }
     d2 = {
         "Lkotlin/enums/EnumEntriesList;",
@@ -33,46 +31,34 @@
         "",
         "Lkotlin/enums/EnumEntries;",
         "Lkotlin/collections/AbstractList;",
-        "Ljava/util/RandomAccess;",
-        "Lkotlin/collections/RandomAccess;",
         "Ljava/io/Serializable;",
         "Lkotlin/io/Serializable;",
         "entries",
         "",
-        "<init>",
         "([Ljava/lang/Enum;)V",
         "[Ljava/lang/Enum;",
         "size",
         "",
         "getSize",
         "()I",
-        "get",
-        "index",
-        "(I)Ljava/lang/Enum;",
         "contains",
         "",
         "element",
         "(Ljava/lang/Enum;)Z",
+        "get",
+        "index",
+        "(I)Ljava/lang/Enum;",
         "indexOf",
         "(Ljava/lang/Enum;)I",
         "lastIndexOf",
         "writeReplace",
         "",
-        "readObject",
-        "",
-        "input",
-        "Ljava/io/ObjectInputStream;",
-        "Lkotlin/internal/ReadObjectParameterType;",
-        "(Ljava/io/ObjectInputStream;)V",
-        "kotlin-stdlib",
-        "Lkotlin/SinceKotlin;",
-        "version",
-        "1.8"
+        "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -100,7 +86,6 @@
 
 
 
-
 # virtual methods
 
 .method public constructor <init>([Ljava/lang/Enum;)V
@@ -119,32 +104,18 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 53
+    .line 47
     invoke-direct {p0}, Lkotlin/collections/AbstractList;-><init>()V
 
-    .line 54
     iput-object p1, p0, Lkotlin/enums/EnumEntriesList;->entries:[Ljava/lang/Enum;
 
     return-void
 .end method
 
-.method private final readObject(Ljava/io/ObjectInputStream;)V
-    .registers 2
-
-    .line 97
-    new-instance p0, Ljava/io/InvalidObjectException;
-
-    const-string p1, "Deserialization is supported via proxy only"
-
-    invoke-direct {p0, p1}, Ljava/io/InvalidObjectException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
 .method private final writeReplace()Ljava/lang/Object;
     .registers 2
 
-    .line 93
+    .line 86
     new-instance v0, Lkotlin/enums/EnumEntriesSerializationProxy;
 
     iget-object p0, p0, Lkotlin/enums/EnumEntriesList;->entries:[Ljava/lang/Enum;
@@ -170,7 +141,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 75
+    .line 68
     iget-object p0, p0, Lkotlin/enums/EnumEntriesList;->entries:[Ljava/lang/Enum;
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -199,7 +170,7 @@
 .method public final bridge contains(Ljava/lang/Object;)Z
     .registers 3
 
-    .line 53
+    .line 46
     instance-of v0, p1, Ljava/lang/Enum;
 
     if-nez v0, :cond_6
@@ -229,7 +200,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 64
+    .line 57
     sget-object v0, Lkotlin/collections/AbstractList;->Companion:Lkotlin/collections/AbstractList$Companion;
 
     iget-object v1, p0, Lkotlin/enums/EnumEntriesList;->entries:[Ljava/lang/Enum;
@@ -238,7 +209,7 @@
 
     invoke-virtual {v0, p1, v1}, Lkotlin/collections/AbstractList$Companion;->checkElementIndex$kotlin_stdlib(II)V
 
-    .line 65
+    .line 58
     iget-object p0, p0, Lkotlin/enums/EnumEntriesList;->entries:[Ljava/lang/Enum;
 
     aget-object p0, p0, p1
@@ -249,7 +220,7 @@
 .method public bridge synthetic get(I)Ljava/lang/Object;
     .registers 2
 
-    .line 53
+    .line 46
     invoke-virtual {p0, p1}, Lkotlin/enums/EnumEntriesList;->get(I)Ljava/lang/Enum;
 
     move-result-object p0
@@ -260,7 +231,7 @@
 .method public getSize()I
     .registers 1
 
-    .line 61
+    .line 54
     iget-object p0, p0, Lkotlin/enums/EnumEntriesList;->entries:[Ljava/lang/Enum;
 
     array-length p0, p0
@@ -284,12 +255,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 83
+    .line 76
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v0
 
-    .line 84
+    .line 77
     iget-object p0, p0, Lkotlin/enums/EnumEntriesList;->entries:[Ljava/lang/Enum;
 
     invoke-static {p0, v0}, Lkotlin/collections/ArraysKt;->getOrNull([Ljava/lang/Object;I)Ljava/lang/Object;
@@ -312,7 +283,7 @@
 .method public final bridge indexOf(Ljava/lang/Object;)I
     .registers 3
 
-    .line 53
+    .line 46
     instance-of v0, p1, Ljava/lang/Enum;
 
     if-nez v0, :cond_6
@@ -347,8 +318,8 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 88
-    invoke-virtual {p0, p1}, Lkotlin/enums/EnumEntriesList;->indexOf(Ljava/lang/Enum;)I
+    .line 81
+    invoke-virtual {p0, p1}, Lkotlin/enums/EnumEntriesList;->indexOf(Ljava/lang/Object;)I
 
     move-result p0
 
@@ -358,7 +329,7 @@
 .method public final bridge lastIndexOf(Ljava/lang/Object;)I
     .registers 3
 
-    .line 53
+    .line 46
     instance-of v0, p1, Ljava/lang/Enum;
 
     if-nez v0, :cond_6

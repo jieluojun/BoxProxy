@@ -88,7 +88,7 @@
 .method public final invoke(Ljava/lang/String;Ltop/yukonga/mishka/custom/forms/YamlNode;)Ljava/lang/String;
     .registers 7
 
-    if-eqz p2, :cond_e2
+    if-eqz p2, :cond_e7
 
     .line 79
     invoke-virtual {p2}, Ltop/yukonga/mishka/custom/forms/YamlNode;->getKind()Ltop/yukonga/mishka/custom/forms/YamlNode$Kind;
@@ -99,7 +99,7 @@
 
     if-eq v0, v1, :cond_c
 
-    goto/16 :goto_e2
+    goto/16 :goto_e7
 
     .line 81
     :cond_c
@@ -332,12 +332,16 @@
 
     move-result-object p0
 
-    goto :goto_e4
+    const-string p1, "toString(...)"
 
-    :cond_e2
-    :goto_e2
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    goto :goto_e9
+
+    :cond_e7
+    :goto_e7
     const-string p0, "\uff08\u4e0d\u662f\u6620\u5c04\uff0c\u53ea\u80fd\u5728\u7f16\u8f91\u5668\u91cc\u6539\uff09"
 
-    :goto_e4
+    :goto_e9
     return-object p0
 .end method

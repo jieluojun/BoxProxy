@@ -21,7 +21,7 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u00000\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u0008\u0081\u0002\u0018\u00002\u00020\u0001B&\u0008F\u0012\"\u0010\u0002\u001a\u0012\u0012\u000e\u0008\u0001\u0012\n\u0012\u0006\u0008\u0001\u0012\u00020\u00010\u00040\u0003\"\n\u0012\u0006\u0008\u0001\u0012\u00020\u00010\u0004R#\u0010\u0002\u001a\u0012\u0012\u000e\u0008\u0001\u0012\n\u0012\u0006\u0008\u0001\u0012\u00020\u00010\u00040\u0003X\u0086\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\u0002\u0010\u0005\u00ca\u00012\u0008\u0007\u0012.\u0008\u0008\u0012*\u0008\u000cJ\u0006\u0008\n0\t8\nJ\u0006\u0008\n0\t8\u000bJ\u0006\u0008\n0\t8\u000cJ\u0006\u0008\n0\t8\rJ\u0006\u0008\n0\t8\u000e\u00ca\u0001\u000e\u0008\u000f\u0012\n\u0008\u0010\u0012\u0006\u0008\n0\u00118\u0012\u00a8\u0006\u0006"
+        "\u0000\u0016\n\u0002\u0018\u0002\n\u0002\u0010\u001b\n\u0000\n\u0002\u0010\u0011\n\u0002\u0018\u0002\n\u0002\u0008\u0002\u0008\u0081\u0002\u0018\u00002\u00020\u0001B$\u0012\"\u0010\u0002\u001a\u0012\u0012\u000e\u0008\u0001\u0012\n\u0012\u0006\u0008\u0001\u0012\u00020\u00010\u00040\u0003\"\n\u0012\u0006\u0008\u0001\u0012\u00020\u00010\u0004R\u001f\u0010\u0002\u001a\u0012\u0012\u000e\u0008\u0001\u0012\n\u0012\u0006\u0008\u0001\u0012\u00020\u00010\u00040\u0003\u00a2\u0006\u0006\u001a\u0004\u0008\u0002\u0010\u0005\u00a8\u0006\u0006"
     }
     d2 = {
         "Lkotlin/WasExperimental;",
@@ -30,24 +30,12 @@
         "",
         "Lkotlin/reflect/KClass;",
         "()[Ljava/lang/Class;",
-        "kotlin-stdlib",
-        "Lkotlin/annotation/Target;",
-        "allowedTargets",
-        "Lkotlin/annotation/AnnotationTarget;",
-        "CLASS",
-        "PROPERTY",
-        "CONSTRUCTOR",
-        "FUNCTION",
-        "TYPEALIAS",
-        "Lkotlin/annotation/Retention;",
-        "value",
-        "Lkotlin/annotation/AnnotationRetention;",
-        "BINARY"
+        "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30

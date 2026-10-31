@@ -584,8 +584,8 @@ internal fun appListDialog(c: Context, field: FormField, current: List<String>, 
         val query = q.text.toString().trim(); val needle = query.lowercase()
         fun matches(pkg: String) = needle.isEmpty() || pkg.lowercase().contains(needle) || (labelOf[pkg] ?: "").lowercase().contains(needle)
         val visible = installed.filter { showSystem || !it.system }
-        val selRows = selected.filter { matches(it) }.map { AppPickRow(it, labelOf[it] ?: it, it in installedNames) }.sortedWith(compareBy({ it.label.lowercase() }, { it.packageName }))
-        val others = visible.filter { it.packageName !in selected && matches(it.packageName) }.map { AppPickRow(it.packageName, it.label, true) }.sortedWith(compareBy({ it.label.lowercase() }, { it.packageName }))
+        val selRows = selected.filter { matches(it) }.map { AppPickRow(it, labelOf[it] ?: it, it in installedNames) }.sortedWith(Comparator<AppPickRow> { a, b -> val c = a.label.lowercase().compareTo(b.label.lowercase()); if (c != 0) c else a.packageName.compareTo(b.packageName) })
+        val others = visible.filter { it.packageName !in selected && matches(it.packageName) }.map { AppPickRow(it.packageName, it.label, true) }.sortedWith(Comparator<AppPickRow> { a, b -> val c = a.label.lowercase().compareTo(b.label.lowercase()); if (c != 0) c else a.packageName.compareTo(b.packageName) })
         fun rowOf(r: AppPickRow, on: Boolean): View = row(c, r.label, if (r.installed) r.packageName else "${r.packageName} · 未安装 · 仍会保留",
             end = if (on) cur(c) else null, titleColor = if (on) Th.primary else Th.text, onClick = {
                 if (on) selected.remove(r.packageName) else selected.add(r.packageName)
@@ -621,7 +621,7 @@ internal fun appListDialog(c: Context, field: FormField, current: List<String>, 
                     val sys = app.flags and ApplicationInfo.FLAG_SYSTEM != 0 && app.flags and ApplicationInfo.FLAG_UPDATED_SYSTEM_APP == 0
                     InstalledAppRow(app.packageName, app.loadLabel(pm).toString(), sys)
                 }.distinctBy { it.packageName }
-                .sortedWith(compareBy<InstalledAppRow> { it.label.lowercase() }.thenBy { it.packageName }).toList()
+                .sortedWith(Comparator<InstalledAppRow> { a, b -> val c = a.label.lowercase().compareTo(b.label.lowercase()); if (c != 0) c else a.packageName.compareTo(b.packageName) }).toList()
             q.post { installed = rows; loading = false; refresh() }
         } catch (t: Throwable) {
             q.post { loadError = t.message ?: "读取应用列表失败"; loading = false; refresh() }

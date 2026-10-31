@@ -27,7 +27,7 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000/\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0003\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010(\n\u0002\u0008\u0003\n\u0002\u0010\u000e\n\u0000*\u0001\u0000\u0008\n\u0018\u00002\u00020\u00012\n\u0012\u0006\u0012\u0004\u0018\u00010\u00030\u0002J\n\u0010\u0008\u001a\u00020\tH\u0096\u0080\u0004J\u0012\u0010\n\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00030\u000bH\u0096\u0082\u0004J\u0014\u0010\u000c\u001a\u0004\u0018\u00010\u00032\u0006\u0010\r\u001a\u00020\u0005H\u0096\u0082\u0004J\u0014\u0010\u000c\u001a\u0004\u0018\u00010\u00032\u0006\u0010\u000e\u001a\u00020\u000fH\u0096\u0082\u0004R\u0015\u0010\u0004\u001a\u00020\u00058VX\u0096\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\u0006\u0010\u0007\u00a8\u0006\u0010"
+        "\u0000-\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0005\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010(\n\u0000*\u0001\u0000\u0008\n\u0018\u00002\u00020\u00012\n\u0012\u0006\u0012\u0004\u0018\u00010\u00030\u0002J\u0013\u0010\u0008\u001a\u0004\u0018\u00010\u00032\u0006\u0010\t\u001a\u00020\u0005H\u0096\u0002J\u0013\u0010\u0008\u001a\u0004\u0018\u00010\u00032\u0006\u0010\n\u001a\u00020\u000bH\u0096\u0002J\u0008\u0010\u000c\u001a\u00020\rH\u0016J\u0011\u0010\u000e\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00030\u000fH\u0096\u0002R\u0014\u0010\u0004\u001a\u00020\u00058VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u0006\u0010\u0007\u00a8\u0006\u0010"
     }
     d2 = {
         "kotlin/text/MatcherMatchResult$groups$1",
@@ -38,20 +38,20 @@
         "",
         "getSize",
         "()I",
-        "isEmpty",
-        "",
-        "iterator",
-        "",
         "get",
         "index",
         "name",
+        "",
+        "isEmpty",
+        "",
+        "iterator",
         "",
         "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -65,7 +65,6 @@
 # direct methods
 
 
-
 # virtual methods
 
 .method constructor <init>(Lkotlin/text/MatcherMatchResult;)V
@@ -73,21 +72,10 @@
 
     iput-object p1, p0, Lkotlin/text/MatcherMatchResult$groups$1;->this$0:Lkotlin/text/MatcherMatchResult;
 
-    .line 380
+    .line 357
     invoke-direct {p0}, Lkotlin/collections/AbstractCollection;-><init>()V
 
     return-void
-.end method
-
-.method private static final iterator$lambda$0(Lkotlin/text/MatcherMatchResult$groups$1;I)Lkotlin/text/MatchGroup;
-    .registers 2
-
-    .line 384
-    invoke-virtual {p0, p1}, Lkotlin/text/MatcherMatchResult$groups$1;->get(I)Lkotlin/text/MatchGroup;
-
-    move-result-object p0
-
-    return-object p0
 .end method
 
 .method public final bridge contains(Ljava/lang/Object;)Z
@@ -99,7 +87,7 @@
 
     goto :goto_6
 
-    .line 380
+    .line 357
     :cond_4
     instance-of v0, p1, Lkotlin/text/MatchGroup;
 
@@ -123,7 +111,7 @@
 .method public bridge contains(Lkotlin/text/MatchGroup;)Z
     .registers 2
 
-    .line 380
+    .line 357
     invoke-super {p0, p1}, Lkotlin/collections/AbstractCollection;->contains(Ljava/lang/Object;)Z
 
     move-result p0
@@ -133,8 +121,10 @@
 
 .method public get(I)Lkotlin/text/MatchGroup;
     .registers 4
+    .annotation build Lorg/jetbrains/annotations/Nullable;
+    .end annotation
 
-    .line 386
+    .line 363
     iget-object v0, p0, Lkotlin/text/MatcherMatchResult$groups$1;->this$0:Lkotlin/text/MatcherMatchResult;
 
     invoke-static {v0}, Lkotlin/text/MatcherMatchResult;->access$getMatchResult(Lkotlin/text/MatcherMatchResult;)Ljava/util/regex/MatchResult;
@@ -145,7 +135,7 @@
 
     move-result-object v0
 
-    .line 387
+    .line 364
     invoke-virtual {v0}, Lkotlin/ranges/IntRange;->getStart()Ljava/lang/Integer;
 
     move-result-object v1
@@ -156,7 +146,7 @@
 
     if-ltz v1, :cond_29
 
-    .line 388
+    .line 365
     new-instance v1, Lkotlin/text/MatchGroup;
 
     iget-object p0, p0, Lkotlin/text/MatcherMatchResult$groups$1;->this$0:Lkotlin/text/MatcherMatchResult;
@@ -186,12 +176,18 @@
 
 .method public get(Ljava/lang/String;)Lkotlin/text/MatchGroup;
     .registers 3
+    .param p1    # Ljava/lang/String;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .annotation build Lorg/jetbrains/annotations/Nullable;
+    .end annotation
 
     const-string v0, "name"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 394
+    .line 371
     sget-object v0, Lkotlin/internal/PlatformImplementationsKt;->IMPLEMENTATIONS:Lkotlin/internal/PlatformImplementations;
 
     iget-object p0, p0, Lkotlin/text/MatcherMatchResult$groups$1;->this$0:Lkotlin/text/MatcherMatchResult;
@@ -210,7 +206,7 @@
 .method public getSize()I
     .registers 1
 
-    .line 381
+    .line 358
     iget-object p0, p0, Lkotlin/text/MatcherMatchResult$groups$1;->this$0:Lkotlin/text/MatcherMatchResult;
 
     invoke-static {p0}, Lkotlin/text/MatcherMatchResult;->access$getMatchResult(Lkotlin/text/MatcherMatchResult;)Ljava/util/regex/MatchResult;
@@ -235,7 +231,7 @@
 .end method
 
 .method public iterator()Ljava/util/Iterator;
-    .registers 2
+    .registers 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -245,7 +241,10 @@
         }
     .end annotation
 
-    .line 384
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 361
     move-object v0, p0
 
     check-cast v0, Ljava/util/Collection;
@@ -260,11 +259,13 @@
 
     move-result-object v0
 
-    invoke-custom {p0}, call_site_66("invoke", (Lkotlin/text/MatcherMatchResult$groups$1;)Lkotlin/jvm/functions/Function1;, (Ljava/lang/Object;)Ljava/lang/Object;, invoke-static@Lkotlin/text/MatcherMatchResult$groups$1;->iterator$lambda$0(Lkotlin/text/MatcherMatchResult$groups$1;I)Lkotlin/text/MatchGroup;, (Ljava/lang/Integer;)Lkotlin/text/MatchGroup;)@Ljava/lang/invoke/LambdaMetafactory;->metafactory(Ljava/lang/invoke/MethodHandles$Lookup;Ljava/lang/String;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodType;Ljava/lang/invoke/MethodHandle;Ljava/lang/invoke/MethodType;)Ljava/lang/invoke/CallSite;
+    new-instance v1, Lkotlin/text/MatcherMatchResult$groups$1$iterator$1;
 
-    move-result-object p0
+    invoke-direct {v1, p0}, Lkotlin/text/MatcherMatchResult$groups$1$iterator$1;-><init>(Lkotlin/text/MatcherMatchResult$groups$1;)V
 
-    invoke-static {v0, p0}, Lkotlin/sequences/SequencesKt;->map(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
+    check-cast v1, Lkotlin/jvm/functions/Function1;
+
+    invoke-static {v0, v1}, Lkotlin/sequences/SequencesKt;->map(Lkotlin/sequences/Sequence;Lkotlin/jvm/functions/Function1;)Lkotlin/sequences/Sequence;
 
     move-result-object p0
 

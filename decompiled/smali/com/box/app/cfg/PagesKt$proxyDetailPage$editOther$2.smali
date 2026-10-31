@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPages.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages.kt\ncom/box/app/cfg/PagesKt$proxyDetailPage$editOther$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,344:1\n2091#2,3:345\n*S KotlinDebug\n*F\n+ 1 Pages.kt\ncom/box/app/cfg/PagesKt$proxyDetailPage$editOther$2\n*L\n305#1:345,3\n*E\n"
+    value = "SMAP\nPages.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages.kt\ncom/box/app/cfg/PagesKt$proxyDetailPage$editOther$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,344:1\n1747#2,3:345\n*S KotlinDebug\n*F\n+ 1 Pages.kt\ncom/box/app/cfg/PagesKt$proxyDetailPage$editOther$2\n*L\n305#1:345,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -52,7 +52,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nPages.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages.kt\ncom/box/app/cfg/PagesKt$proxyDetailPage$editOther$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,344:1\n2091#2,3:345\n*S KotlinDebug\n*F\n+ 1 Pages.kt\ncom/box/app/cfg/PagesKt$proxyDetailPage$editOther$2\n*L\n305#1:345,3\n*E\n"
+        "SMAP\nPages.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages.kt\ncom/box/app/cfg/PagesKt$proxyDetailPage$editOther$2\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,344:1\n1747#2,3:345\n*S KotlinDebug\n*F\n+ 1 Pages.kt\ncom/box/app/cfg/PagesKt$proxyDetailPage$editOther$2\n*L\n305#1:345,3\n*E\n"
     }
 .end annotation
 

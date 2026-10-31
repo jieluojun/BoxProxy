@@ -25,11 +25,13 @@
 `stubs/` 是编译占位（`CfgGlue`、`Toast`、`Immutable`）、`app/` 是原生 View 界面。生成物在 `decompiled/smali/`
 （`com/box/app/cfg`、`top/yukonga`、`kotlin`、`androidx/compose/runtime`）；一键重新生成：`tools/build-cfg.sh`（环境变量见脚本头部）。
 流程：kotlinc（`-Xlambdas=class -Xsam-conversions=class`）→ `prune.py` 裁 stdlib 类 → D8（`--no-desugaring`）→ baksmali（`tools/Bk.java`）→ `prune_smali.py` 方法级裁剪。
-真实的 `CfgGlue`、`CfgNav`、`CfgLabel`、`CfgClick` 是手写 smali（要碰混淆后的 Compose 与编辑器视图模型 `Lmj5`），不会被脚本覆盖。
+真实的 `CfgGlue`、`CfgNav`、`CfgIcon`、`CfgClick` 是手写 smali（要碰混淆后的 Compose 与编辑器视图模型 `Lmj5`），不会被脚本覆盖。
 
 ### 工具链（不提交二进制）
 
-* Kotlin 编译器：npm `kotlin-compiler`（2.4.x，`package/lib`），用 jdk4py 的 JRE 跑。
+* Kotlin 编译器：npm `kotlin-compiler`（2.4.x，`package/lib`），用 jdk4py 的 JRE 跑（`KOTLIN_LIB`）。
+* 打进 APK 的 stdlib：**npm `kotlin-compiler@1.9.24` 的 `lib/kotlin-stdlib.jar`**（`KOTLIN_STDLIB`）。2.x 的 stdlib 里有 `invokedynamic`（`split` / `lines` / `Regex.findAll` 等），
+  `--no-desugaring` 的 D8 不转换、ART 也不支持，运行到就崩；1.9.x 里只剩 `compareBy(vararg)` 一处，源码里避开它即可（`build-cfg.sh` 之后可以 `grep -r invoke-custom decompiled/smali/{kotlin,top,com/box/app/cfg}` 自检）。
 * ECJ：npm `@ctxo/lang-java-analyzer` 里的 `jar/ctxo-jdt-analyzer-17.jar`（Eclipse JDT core，带 `batch.Main`，只用来编译 `Bk.java`）。
 * android.jar：GitHub `Sable/android-platforms`（`android-33/android.jar`，是真文件不是 LFS）。
 * baksmali：npm `apktool-jar@2.4.1` 的 `bin/apktool_2.4.1.jar`（`tools/Bk.java` 调它的 API；`org.jf.baksmali.Main` 没有 main）。

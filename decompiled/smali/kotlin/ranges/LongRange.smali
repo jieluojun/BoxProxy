@@ -28,7 +28,7 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000P\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\t\n\u0002\u0018\u0002\n\u0002\u0008\u000b\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\u0008\u0004\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0008\n\u0000\n\u0002\u0010\u000e\n\u0002\u0008\u0002\u0018\u0000 $2\u00020\u00012\u0008\u0012\u0004\u0012\u00020\u00030\u00022\u0008\u0012\u0004\u0012\u00020\u00030\u0004:\u0001$B\u0019\u0008F\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u00a2\u0006\u0004\u0008\u0007\u0010\u0008J\u0012\u0010\u0019\u001a\u00020\u001a2\u0006\u0010\u001b\u001a\u00020\u0003H\u0096\u0082\u0004J\n\u0010\u001c\u001a\u00020\u001aH\u0096\u0080\u0004J\u0014\u0010\u001d\u001a\u00020\u001a2\u0008\u0010\u001e\u001a\u0004\u0018\u00010\u001fH\u0096\u0082\u0004J\n\u0010 \u001a\u00020!H\u0096\u0080\u0004J\n\u0010\"\u001a\u00020#H\u0096\u0080\u0004R\u0015\u0010\u0005\u001a\u00020\u00038VX\u0096\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\t\u0010\nR\u0015\u0010\u0006\u001a\u00020\u00038VX\u0096\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\u000b\u0010\nRI\u0010\u000c\u001a\u00020\u00038VX\u0097\u0084\u0008r\u000c\u0008\u0010\u0012\u0008\u0008\u0011\u0012\u0004\u0008\u0008(\u0012r\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u0015r\u0010\u0008\u0016\u0012\u000c\u0008\u0017\u0012\u0008\u0008\u000cJ\u0004\u0008\t0\u0018\u00a2\u0006\u000c\u0012\u0004\u0008\r\u0010\u000e\u001a\u0004\u0008\u000f\u0010\n\u00a8\u0006%"
+        "\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\t\n\u0002\u0018\u0002\n\u0002\u0008\u000b\n\u0002\u0010\u000b\n\u0002\u0008\u0003\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0002\n\u0002\u0010\u000e\n\u0002\u0008\u0002\u0018\u0000 \u001a2\u00020\u00012\u0008\u0012\u0004\u0012\u00020\u00030\u00022\u0008\u0012\u0004\u0012\u00020\u00030\u0004:\u0001\u001aB\u0015\u0012\u0006\u0010\u0005\u001a\u00020\u0003\u0012\u0006\u0010\u0006\u001a\u00020\u0003\u00a2\u0006\u0002\u0010\u0007J\u0011\u0010\u000f\u001a\u00020\u00102\u0006\u0010\u0011\u001a\u00020\u0003H\u0096\u0002J\u0013\u0010\u0012\u001a\u00020\u00102\u0008\u0010\u0013\u001a\u0004\u0018\u00010\u0014H\u0096\u0002J\u0008\u0010\u0015\u001a\u00020\u0016H\u0016J\u0008\u0010\u0017\u001a\u00020\u0010H\u0016J\u0008\u0010\u0018\u001a\u00020\u0019H\u0016R\u001a\u0010\u0008\u001a\u00020\u00038VX\u0097\u0004\u00a2\u0006\u000c\u0012\u0004\u0008\t\u0010\n\u001a\u0004\u0008\u000b\u0010\u000cR\u0014\u0010\u0006\u001a\u00020\u00038VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\r\u0010\u000cR\u0014\u0010\u0005\u001a\u00020\u00038VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u000e\u0010\u000c\u00a8\u0006\u001b"
     }
     d2 = {
         "Lkotlin/ranges/LongRange;",
@@ -38,33 +38,23 @@
         "Lkotlin/ranges/OpenEndRange;",
         "start",
         "endInclusive",
-        "<init>",
         "(JJ)V",
-        "getStart",
-        "()Ljava/lang/Long;",
-        "getEndInclusive",
         "endExclusive",
         "getEndExclusive$annotations",
         "()V",
         "getEndExclusive",
-        "Lkotlin/Deprecated;",
-        "message",
-        "Can throw an exception when it\'s impossible to represent the value with Long type, for example, when the range includes MAX_VALUE. It\'s recommended to use \'endInclusive\' property that doesn\'t throw.",
-        "Lkotlin/SinceKotlin;",
-        "version",
-        "1.9",
-        "Lkotlin/WasExperimental;",
-        "markerClass",
-        "Lkotlin/ExperimentalStdlibApi;",
+        "()Ljava/lang/Long;",
+        "getEndInclusive",
+        "getStart",
         "contains",
         "",
         "value",
-        "isEmpty",
         "equals",
         "other",
         "",
         "hashCode",
         "",
+        "isEmpty",
         "toString",
         "",
         "Companion",
@@ -72,8 +62,8 @@
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -111,7 +101,7 @@
 
     sput-object v0, Lkotlin/ranges/LongRange;->Companion:Lkotlin/ranges/LongRange$Companion;
 
-    .line 125
+    .line 123
     new-instance v0, Lkotlin/ranges/LongRange;
 
     const-wide/16 v1, 0x1
@@ -136,7 +126,7 @@
 
     move-wide v3, p3
 
-    .line 93
+    .line 91
     invoke-direct/range {v0 .. v6}, Lkotlin/ranges/LongProgression;-><init>(JJJ)V
 
     return-void
@@ -145,7 +135,7 @@
 .method public static final synthetic access$getEMPTY$cp()Lkotlin/ranges/LongRange;
     .registers 1
 
-    .line 93
+    .line 91
     sget-object v0, Lkotlin/ranges/LongRange;->EMPTY:Lkotlin/ranges/LongRange;
 
     return-object v0
@@ -154,7 +144,7 @@
 .method public contains(J)Z
     .registers 5
 
-    .line 105
+    .line 103
     invoke-virtual {p0}, Lkotlin/ranges/LongRange;->getFirst()J
 
     move-result-wide v0
@@ -185,7 +175,7 @@
 .method public bridge synthetic contains(Ljava/lang/Comparable;)Z
     .registers 4
 
-    .line 93
+    .line 91
     check-cast p1, Ljava/lang/Number;
 
     invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
@@ -206,7 +196,7 @@
         .end annotation
     .end param
 
-    .line 115
+    .line 113
     instance-of v0, p1, Lkotlin/ranges/LongRange;
 
     if-eqz v0, :cond_2f
@@ -227,7 +217,7 @@
 
     if-nez v0, :cond_2d
 
-    .line 116
+    .line 114
     :cond_13
     invoke-virtual {p0}, Lkotlin/ranges/LongRange;->getFirst()J
 
@@ -270,7 +260,7 @@
 .method public bridge synthetic getEndExclusive()Ljava/lang/Comparable;
     .registers 1
 
-    .line 93
+    .line 91
     invoke-virtual {p0}, Lkotlin/ranges/LongRange;->getEndExclusive()Ljava/lang/Long;
 
     move-result-object p0
@@ -285,7 +275,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 101
+    .line 99
     invoke-virtual {p0}, Lkotlin/ranges/LongRange;->getLast()J
 
     move-result-wide v0
@@ -308,7 +298,7 @@
 
     throw p0
 
-    .line 102
+    .line 100
     :cond_19
     invoke-virtual {p0}, Lkotlin/ranges/LongRange;->getLast()J
 
@@ -328,7 +318,7 @@
 .method public bridge synthetic getEndInclusive()Ljava/lang/Comparable;
     .registers 1
 
-    .line 93
+    .line 91
     invoke-virtual {p0}, Lkotlin/ranges/LongRange;->getEndInclusive()Ljava/lang/Long;
 
     move-result-object p0
@@ -343,7 +333,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 95
+    .line 93
     invoke-virtual {p0}, Lkotlin/ranges/LongRange;->getLast()J
 
     move-result-wide v0
@@ -358,7 +348,7 @@
 .method public bridge synthetic getStart()Ljava/lang/Comparable;
     .registers 1
 
-    .line 93
+    .line 91
     invoke-virtual {p0}, Lkotlin/ranges/LongRange;->getStart()Ljava/lang/Long;
 
     move-result-object p0
@@ -373,7 +363,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 94
+    .line 92
     invoke-virtual {p0}, Lkotlin/ranges/LongRange;->getFirst()J
 
     move-result-wide v0
@@ -386,9 +376,9 @@
 .end method
 
 .method public hashCode()I
-    .registers 4
+    .registers 8
 
-    .line 119
+    .line 117
     invoke-virtual {p0}, Lkotlin/ranges/LongRange;->isEmpty()Z
 
     move-result v0
@@ -397,37 +387,53 @@
 
     const/4 p0, -0x1
 
-    goto :goto_1b
+    goto :goto_24
 
     :cond_8
+    const/16 v0, 0x1f
+
+    int-to-long v0, v0
+
     invoke-virtual {p0}, Lkotlin/ranges/LongRange;->getFirst()J
 
-    move-result-wide v0
+    move-result-wide v2
 
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    invoke-virtual {p0}, Lkotlin/ranges/LongRange;->getFirst()J
 
-    move-result v0
+    move-result-wide v4
 
-    mul-int/lit8 v0, v0, 0x1f
+    const/16 v6, 0x20
+
+    ushr-long/2addr v4, v6
+
+    xor-long/2addr v2, v4
+
+    mul-long/2addr v0, v2
 
     invoke-virtual {p0}, Lkotlin/ranges/LongRange;->getLast()J
 
-    move-result-wide v1
+    move-result-wide v2
 
-    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
+    invoke-virtual {p0}, Lkotlin/ranges/LongRange;->getLast()J
 
-    move-result p0
+    move-result-wide v4
 
-    add-int/2addr p0, v0
+    ushr-long/2addr v4, v6
 
-    :goto_1b
+    xor-long/2addr v2, v4
+
+    add-long/2addr v0, v2
+
+    long-to-int p0, v0
+
+    :goto_24
     return p0
 .end method
 
 .method public isEmpty()Z
     .registers 5
 
-    .line 112
+    .line 110
     invoke-virtual {p0}, Lkotlin/ranges/LongRange;->getFirst()J
 
     move-result-wide v0
@@ -456,7 +462,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 121
+    .line 119
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

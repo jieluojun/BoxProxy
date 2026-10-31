@@ -14,39 +14,38 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nListBuilder.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ListBuilder.kt\nkotlin/collections/builders/SerializedCollection\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,724:1\n1#2:725\n*E\n"
+    value = "SMAP\nListBuilder.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ListBuilder.kt\nkotlin/collections/builders/SerializedCollection\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,487:1\n1#2:488\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u00004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u001e\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0004\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0008\u0002\u0008\u0000\u0018\u0000 \u00122\u00020\u0001:\u0001\u0012B\u001d\u0008F\u0012\n\u0010\u0002\u001a\u0006\u0012\u0002\u0008\u00030\u0003\u0012\u0006\u0010\u0004\u001a\u00020\u0005\u00a2\u0006\u0004\u0008\u0006\u0010\u0007B\t\u0008V\u00a2\u0006\u0004\u0008\u0006\u0010\u0008J\u0010\u0010\t\u001a\u00020\n2\u0006\u0010\u000b\u001a\u00020\u000cH\u0016J\u0010\u0010\r\u001a\u00020\n2\u0006\u0010\u000e\u001a\u00020\u000fH\u0016J\n\u0010\u0010\u001a\u00020\u0011H\u0082\u0080\u0004R\u0013\u0010\u0002\u001a\u0006\u0012\u0002\u0008\u00030\u0003X\u0082\u008e\u0008\u00a2\u0006\u0002\n\u0000R\u000f\u0010\u0004\u001a\u00020\u0005X\u0082\u0084\u0008\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u0013"
+        "\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u001e\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0002\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\u0008\u0000\u0018\u0000 \u00112\u00020\u0001:\u0001\u0011B\u0007\u0008\u0016\u00a2\u0006\u0002\u0010\u0002B\u0019\u0012\n\u0010\u0003\u001a\u0006\u0012\u0002\u0008\u00030\u0004\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u00a2\u0006\u0002\u0010\u0007J\u0010\u0010\u0008\u001a\u00020\t2\u0006\u0010\n\u001a\u00020\u000bH\u0016J\u0008\u0010\u000c\u001a\u00020\rH\u0002J\u0010\u0010\u000e\u001a\u00020\t2\u0006\u0010\u000f\u001a\u00020\u0010H\u0016R\u0012\u0010\u0003\u001a\u0006\u0012\u0002\u0008\u00030\u0004X\u0082\u000e\u00a2\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0006X\u0082\u0004\u00a2\u0006\u0002\n\u0000\u00a8\u0006\u0012"
     }
     d2 = {
         "Lkotlin/collections/builders/SerializedCollection;",
         "Ljava/io/Externalizable;",
+        "()V",
         "collection",
         "",
         "tag",
         "",
-        "<init>",
         "(Ljava/util/Collection;I)V",
-        "()V",
-        "writeExternal",
-        "",
-        "output",
-        "Ljava/io/ObjectOutput;",
         "readExternal",
+        "",
         "input",
         "Ljava/io/ObjectInput;",
         "readResolve",
         "",
+        "writeExternal",
+        "output",
+        "Ljava/io/ObjectOutput;",
         "Companion",
         "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -54,7 +53,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nListBuilder.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ListBuilder.kt\nkotlin/collections/builders/SerializedCollection\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,724:1\n1#2:725\n*E\n"
+        "SMAP\nListBuilder.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ListBuilder.kt\nkotlin/collections/builders/SerializedCollection\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,487:1\n1#2:488\n*E\n"
     }
 .end annotation
 
@@ -113,7 +112,7 @@
 .method public constructor <init>()V
     .registers 3
 
-    .line 685
+    .line 449
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object v0
@@ -145,13 +144,13 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 680
+    .line 444
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 681
+    .line 445
     iput-object p1, p0, Lkotlin/collections/builders/SerializedCollection;->collection:Ljava/util/Collection;
 
-    .line 682
+    .line 446
     iput p2, p0, Lkotlin/collections/builders/SerializedCollection;->tag:I
 
     return-void
@@ -160,7 +159,7 @@
 .method private final readResolve()Ljava/lang/Object;
     .registers 1
 
-    .line 716
+    .line 480
     iget-object p0, p0, Lkotlin/collections/builders/SerializedCollection;->collection:Ljava/util/Collection;
 
     return-object p0
@@ -177,7 +176,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 696
+    .line 460
     invoke-interface {p1}, Ljava/io/ObjectInput;->readByte()B
 
     move-result v0
@@ -190,7 +189,7 @@
 
     if-eqz v2, :cond_2b
 
-    .line 700
+    .line 464
     new-instance p0, Ljava/io/InvalidObjectException;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -213,7 +212,7 @@
 
     throw p0
 
-    .line 702
+    .line 466
     :cond_2b
     invoke-interface {p1}, Ljava/io/ObjectInput;->readInt()I
 
@@ -221,7 +220,7 @@
 
     if-gez v0, :cond_4b
 
-    .line 703
+    .line 467
     new-instance p0, Ljava/io/InvalidObjectException;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -249,7 +248,7 @@
 
     packed-switch v1, :pswitch_data_9a
 
-    .line 712
+    .line 476
     new-instance p0, Ljava/io/InvalidObjectException;
 
     new-instance p1, Ljava/lang/StringBuilder;
@@ -272,7 +271,7 @@
 
     throw p0
 
-    .line 708
+    .line 472
     :pswitch_69
     invoke-static {v0}, Lkotlin/collections/SetsKt;->createSetBuilder(I)Ljava/util/Set;
 
@@ -281,7 +280,7 @@
     :goto_6d
     if-ge v2, v0, :cond_79
 
-    .line 709
+    .line 473
     invoke-interface {p1}, Ljava/io/ObjectInput;->readObject()Ljava/lang/Object;
 
     move-result-object v3
@@ -292,7 +291,7 @@
 
     goto :goto_6d
 
-    .line 708
+    .line 472
     :cond_79
     invoke-static {v1}, Lkotlin/collections/SetsKt;->build(Ljava/util/Set;)Ljava/util/Set;
 
@@ -302,7 +301,7 @@
 
     goto :goto_96
 
-    .line 705
+    .line 469
     :pswitch_80
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->createListBuilder(I)Ljava/util/List;
 
@@ -311,7 +310,7 @@
     :goto_84
     if-ge v2, v0, :cond_90
 
-    .line 706
+    .line 470
     invoke-interface {p1}, Ljava/io/ObjectInput;->readObject()Ljava/lang/Object;
 
     move-result-object v3
@@ -322,7 +321,7 @@
 
     goto :goto_84
 
-    .line 705
+    .line 469
     :cond_90
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->build(Ljava/util/List;)Ljava/util/List;
 
@@ -330,7 +329,7 @@
 
     check-cast p1, Ljava/util/Collection;
 
-    .line 704
+    .line 468
     :goto_96
     iput-object p1, p0, Lkotlin/collections/builders/SerializedCollection;->collection:Ljava/util/Collection;
 
@@ -356,12 +355,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 688
+    .line 452
     iget v0, p0, Lkotlin/collections/builders/SerializedCollection;->tag:I
 
     invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeByte(I)V
 
-    .line 689
+    .line 453
     iget-object v0, p0, Lkotlin/collections/builders/SerializedCollection;->collection:Ljava/util/Collection;
 
     invoke-interface {v0}, Ljava/util/Collection;->size()I
@@ -370,7 +369,7 @@
 
     invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeInt(I)V
 
-    .line 690
+    .line 454
     iget-object p0, p0, Lkotlin/collections/builders/SerializedCollection;->collection:Ljava/util/Collection;
 
     invoke-interface {p0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
@@ -388,7 +387,7 @@
 
     move-result-object v0
 
-    .line 691
+    .line 455
     invoke-interface {p1, v0}, Ljava/io/ObjectOutput;->writeObject(Ljava/lang/Object;)V
 
     goto :goto_19

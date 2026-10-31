@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFlowText.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FlowText.kt\ntop/yukonga/mishka/custom/forms/RuleText\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,121:1\n296#2,2:122\n1#3:124\n*S KotlinDebug\n*F\n+ 1 FlowText.kt\ntop/yukonga/mishka/custom/forms/RuleText\n*L\n23#1:122,2\n*E\n"
+    value = "SMAP\nFlowText.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FlowText.kt\ntop/yukonga/mishka/custom/forms/RuleText\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,121:1\n288#2,2:122\n1#3:124\n*S KotlinDebug\n*F\n+ 1 FlowText.kt\ntop/yukonga/mishka/custom/forms/RuleText\n*L\n23#1:122,2\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -61,7 +61,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nFlowText.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FlowText.kt\ntop/yukonga/mishka/custom/forms/RuleText\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,121:1\n296#2,2:122\n1#3:124\n*S KotlinDebug\n*F\n+ 1 FlowText.kt\ntop/yukonga/mishka/custom/forms/RuleText\n*L\n23#1:122,2\n*E\n"
+        "SMAP\nFlowText.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FlowText.kt\ntop/yukonga/mishka/custom/forms/RuleText\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,121:1\n288#2,2:122\n1#3:124\n*S KotlinDebug\n*F\n+ 1 FlowText.kt\ntop/yukonga/mishka/custom/forms/RuleText\n*L\n23#1:122,2\n*E\n"
     }
 .end annotation
 
@@ -950,6 +950,10 @@
     invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
+
+    const-string p1, "toString(...)"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
 .end method

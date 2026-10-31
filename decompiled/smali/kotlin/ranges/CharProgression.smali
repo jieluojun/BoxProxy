@@ -26,7 +26,7 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u00006\n\u0002\u0018\u0002\n\u0002\u0010\u001c\n\u0002\u0010\u000c\n\u0002\u0008\u0003\n\u0002\u0010\u0008\n\u0002\u0008\n\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\u0008\u0002\n\u0002\u0010\u0000\n\u0002\u0008\u0002\n\u0002\u0010\u000e\n\u0002\u0008\u0002\u0008\u0016\u0018\u0000 \u001a2\u0008\u0012\u0004\u0012\u00020\u00020\u0001:\u0001\u001aB!\u0008@\u0012\u0006\u0010\u0003\u001a\u00020\u0002\u0012\u0006\u0010\u0004\u001a\u00020\u0002\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u00a2\u0006\u0004\u0008\u0007\u0010\u0008J\n\u0010\u0010\u001a\u00020\u0011H\u0096\u0082\u0004J\n\u0010\u0012\u001a\u00020\u0013H\u0096\u0080\u0004J\u0014\u0010\u0014\u001a\u00020\u00132\u0008\u0010\u0015\u001a\u0004\u0018\u00010\u0016H\u0096\u0082\u0004J\n\u0010\u0017\u001a\u00020\u0006H\u0096\u0080\u0004J\n\u0010\u0018\u001a\u00020\u0019H\u0096\u0080\u0004R\u0015\u0010\t\u001a\u00020\u0002X\u0086\u0084\u0008\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\n\u0010\u000bR\u0015\u0010\u000c\u001a\u00020\u0002X\u0086\u0084\u0008\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\r\u0010\u000bR\u0015\u0010\u0005\u001a\u00020\u0006X\u0086\u0084\u0008\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u000e\u0010\u000f\u00a8\u0006\u001b"
+        "\u00004\n\u0002\u0018\u0002\n\u0002\u0010\u001c\n\u0002\u0010\u000c\n\u0002\u0008\u0003\n\u0002\u0010\u0008\n\u0002\u0008\t\n\u0002\u0010\u000b\n\u0000\n\u0002\u0010\u0000\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u000e\n\u0002\u0008\u0002\u0008\u0016\u0018\u0000 \u00192\u0008\u0012\u0004\u0012\u00020\u00020\u0001:\u0001\u0019B\u001f\u0008\u0000\u0012\u0006\u0010\u0003\u001a\u00020\u0002\u0012\u0006\u0010\u0004\u001a\u00020\u0002\u0012\u0006\u0010\u0005\u001a\u00020\u0006\u00a2\u0006\u0002\u0010\u0007J\u0013\u0010\u000f\u001a\u00020\u00102\u0008\u0010\u0011\u001a\u0004\u0018\u00010\u0012H\u0096\u0002J\u0008\u0010\u0013\u001a\u00020\u0006H\u0016J\u0008\u0010\u0014\u001a\u00020\u0010H\u0016J\t\u0010\u0015\u001a\u00020\u0016H\u0096\u0002J\u0008\u0010\u0017\u001a\u00020\u0018H\u0016R\u0011\u0010\u0008\u001a\u00020\u0002\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\t\u0010\nR\u0011\u0010\u000b\u001a\u00020\u0002\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u000c\u0010\nR\u0011\u0010\u0005\u001a\u00020\u0006\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\r\u0010\u000e\u00a8\u0006\u001a"
     }
     d2 = {
         "Lkotlin/ranges/CharProgression;",
@@ -36,7 +36,6 @@
         "endInclusive",
         "step",
         "",
-        "<init>",
         "(CCI)V",
         "first",
         "getFirst",
@@ -45,14 +44,14 @@
         "getLast",
         "getStep",
         "()I",
-        "iterator",
-        "Lkotlin/collections/CharIterator;",
-        "isEmpty",
-        "",
         "equals",
+        "",
         "other",
         "",
         "hashCode",
+        "isEmpty",
+        "iterator",
+        "Lkotlin/collections/CharIterator;",
         "toString",
         "",
         "Companion",
@@ -60,8 +59,8 @@
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -106,12 +105,12 @@
 .method public constructor <init>(CCI)V
     .registers 5
 
-    .line 17
+    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     if-nez p3, :cond_d
 
-    .line 25
+    .line 23
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "Step must be non-zero."
@@ -125,7 +124,7 @@
 
     if-ne p3, v0, :cond_19
 
-    .line 26
+    .line 24
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
     const-string p1, "Step must be greater than Int.MIN_VALUE to avoid overflow on negation."
@@ -134,11 +133,11 @@
 
     throw p0
 
-    .line 32
+    .line 30
     :cond_19
     iput-char p1, p0, Lkotlin/ranges/CharProgression;->first:C
 
-    .line 37
+    .line 35
     invoke-static {p1, p2, p3}, Lkotlin/internal/ProgressionUtilKt;->getProgressionLastElement(III)I
 
     move-result p1
@@ -147,7 +146,7 @@
 
     iput-char p1, p0, Lkotlin/ranges/CharProgression;->last:C
 
-    .line 42
+    .line 40
     iput p3, p0, Lkotlin/ranges/CharProgression;->step:I
 
     return-void
@@ -160,7 +159,7 @@
         .end annotation
     .end param
 
-    .line 55
+    .line 53
     instance-of v0, p1, Lkotlin/ranges/CharProgression;
 
     if-eqz v0, :cond_29
@@ -181,7 +180,7 @@
 
     if-nez v0, :cond_27
 
-    .line 56
+    .line 54
     :cond_13
     iget-char v0, p0, Lkotlin/ranges/CharProgression;->first:C
 
@@ -218,7 +217,7 @@
 .method public final getFirst()C
     .registers 1
 
-    .line 32
+    .line 30
     iget-char p0, p0, Lkotlin/ranges/CharProgression;->first:C
 
     return p0
@@ -227,7 +226,7 @@
 .method public final getLast()C
     .registers 1
 
-    .line 37
+    .line 35
     iget-char p0, p0, Lkotlin/ranges/CharProgression;->last:C
 
     return p0
@@ -236,7 +235,7 @@
 .method public final getStep()I
     .registers 1
 
-    .line 42
+    .line 40
     iget p0, p0, Lkotlin/ranges/CharProgression;->step:I
 
     return p0
@@ -245,7 +244,7 @@
 .method public hashCode()I
     .registers 3
 
-    .line 59
+    .line 57
     invoke-virtual {p0}, Lkotlin/ranges/CharProgression;->isEmpty()Z
 
     move-result v0
@@ -278,44 +277,52 @@
 .method public isEmpty()Z
     .registers 4
 
-    .line 52
+    .line 50
     iget v0, p0, Lkotlin/ranges/CharProgression;->step:I
 
     const/4 v1, 0x0
 
     const/4 v2, 0x1
 
-    if-lez v0, :cond_e
+    if-lez v0, :cond_12
 
     iget-char v0, p0, Lkotlin/ranges/CharProgression;->first:C
 
     iget-char p0, p0, Lkotlin/ranges/CharProgression;->last:C
 
-    if-le v0, p0, :cond_15
+    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->compare(II)I
 
-    :goto_c
+    move-result p0
+
+    if-lez p0, :cond_1d
+
+    :goto_10
     move v1, v2
 
-    goto :goto_15
+    goto :goto_1d
 
-    :cond_e
+    :cond_12
     iget-char v0, p0, Lkotlin/ranges/CharProgression;->first:C
 
     iget-char p0, p0, Lkotlin/ranges/CharProgression;->last:C
 
-    if-ge v0, p0, :cond_15
+    invoke-static {v0, p0}, Lkotlin/jvm/internal/Intrinsics;->compare(II)I
 
-    goto :goto_c
+    move-result p0
 
-    :cond_15
-    :goto_15
+    if-gez p0, :cond_1d
+
+    goto :goto_10
+
+    :cond_1d
+    :goto_1d
     return v1
 .end method
 
 .method public bridge synthetic iterator()Ljava/util/Iterator;
     .registers 1
 
-    .line 17
+    .line 15
     invoke-virtual {p0}, Lkotlin/ranges/CharProgression;->iterator()Lkotlin/collections/CharIterator;
 
     move-result-object p0
@@ -330,7 +337,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 44
+    .line 42
     new-instance v0, Lkotlin/ranges/CharProgressionIterator;
 
     iget-char v1, p0, Lkotlin/ranges/CharProgression;->first:C
@@ -351,7 +358,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 61
+    .line 59
     iget v0, p0, Lkotlin/ranges/CharProgression;->step:I
 
     if-lez v0, :cond_27

@@ -23,7 +23,7 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000\u0017\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0005*\u0001\u0000\u0008\n\u0018\u00002\u0008\u0012\u0004\u0012\u00020\u00020\u0001J\u0012\u0010\u0007\u001a\u00020\u00022\u0006\u0010\u0008\u001a\u00020\u0004H\u0096\u0082\u0004R\u0015\u0010\u0003\u001a\u00020\u00048VX\u0096\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\u0005\u0010\u0006\u00a8\u0006\t"
+        "\u0000\u0017\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u000e\n\u0000\n\u0002\u0010\u0008\n\u0002\u0008\u0005*\u0001\u0000\u0008\n\u0018\u00002\u0008\u0012\u0004\u0012\u00020\u00020\u0001J\u0011\u0010\u0007\u001a\u00020\u00022\u0006\u0010\u0008\u001a\u00020\u0004H\u0096\u0002R\u0014\u0010\u0003\u001a\u00020\u00048VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u0005\u0010\u0006\u00a8\u0006\t"
     }
     d2 = {
         "kotlin/text/MatcherMatchResult$groupValues$1",
@@ -39,8 +39,8 @@
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -61,7 +61,7 @@
 
     iput-object p1, p0, Lkotlin/text/MatcherMatchResult$groupValues$1;->this$0:Lkotlin/text/MatcherMatchResult;
 
-    .line 403
+    .line 380
     invoke-direct {p0}, Lkotlin/collections/AbstractList;-><init>()V
 
     return-void
@@ -70,7 +70,7 @@
 .method public final bridge contains(Ljava/lang/Object;)Z
     .registers 3
 
-    .line 403
+    .line 380
     instance-of v0, p1, Ljava/lang/String;
 
     if-nez v0, :cond_6
@@ -92,7 +92,7 @@
 .method public bridge contains(Ljava/lang/String;)Z
     .registers 2
 
-    .line 403
+    .line 380
     invoke-super {p0, p1}, Lkotlin/collections/AbstractList;->contains(Ljava/lang/Object;)Z
 
     move-result p0
@@ -103,7 +103,7 @@
 .method public bridge synthetic get(I)Ljava/lang/Object;
     .registers 2
 
-    .line 403
+    .line 380
     invoke-virtual {p0, p1}, Lkotlin/text/MatcherMatchResult$groupValues$1;->get(I)Ljava/lang/String;
 
     move-result-object p0
@@ -113,8 +113,10 @@
 
 .method public get(I)Ljava/lang/String;
     .registers 2
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
 
-    .line 405
+    .line 382
     iget-object p0, p0, Lkotlin/text/MatcherMatchResult$groupValues$1;->this$0:Lkotlin/text/MatcherMatchResult;
 
     invoke-static {p0}, Lkotlin/text/MatcherMatchResult;->access$getMatchResult(Lkotlin/text/MatcherMatchResult;)Ljava/util/regex/MatchResult;
@@ -136,7 +138,7 @@
 .method public getSize()I
     .registers 1
 
-    .line 404
+    .line 381
     iget-object p0, p0, Lkotlin/text/MatcherMatchResult$groupValues$1;->this$0:Lkotlin/text/MatcherMatchResult;
 
     invoke-static {p0}, Lkotlin/text/MatcherMatchResult;->access$getMatchResult(Lkotlin/text/MatcherMatchResult;)Ljava/util/regex/MatchResult;
@@ -155,7 +157,7 @@
 .method public final bridge indexOf(Ljava/lang/Object;)I
     .registers 3
 
-    .line 403
+    .line 380
     instance-of v0, p1, Ljava/lang/String;
 
     if-nez v0, :cond_6
@@ -177,7 +179,7 @@
 .method public bridge indexOf(Ljava/lang/String;)I
     .registers 2
 
-    .line 403
+    .line 380
     invoke-super {p0, p1}, Lkotlin/collections/AbstractList;->indexOf(Ljava/lang/Object;)I
 
     move-result p0
@@ -188,7 +190,7 @@
 .method public final bridge lastIndexOf(Ljava/lang/Object;)I
     .registers 3
 
-    .line 403
+    .line 380
     instance-of v0, p1, Ljava/lang/String;
 
     if-nez v0, :cond_6
@@ -210,7 +212,7 @@
 .method public bridge lastIndexOf(Ljava/lang/String;)I
     .registers 2
 
-    .line 403
+    .line 380
     invoke-super {p0, p1}, Lkotlin/collections/AbstractList;->lastIndexOf(Ljava/lang/Object;)I
 
     move-result p0

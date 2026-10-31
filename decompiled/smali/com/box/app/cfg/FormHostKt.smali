@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFormHost.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormHost.kt\ncom/box/app/cfg/FormHostKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,333:1\n1#2:334\n1745#3:335\n1820#3,3:336\n*S KotlinDebug\n*F\n+ 1 FormHost.kt\ncom/box/app/cfg/FormHostKt\n*L\n38#1:335\n38#1:336,3\n*E\n"
+    value = "SMAP\nFormHost.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormHost.kt\ncom/box/app/cfg/FormHostKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,333:1\n1#2:334\n1549#3:335\n1620#3,3:336\n*S KotlinDebug\n*F\n+ 1 FormHost.kt\ncom/box/app/cfg/FormHostKt\n*L\n38#1:335\n38#1:336,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -64,7 +64,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nFormHost.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormHost.kt\ncom/box/app/cfg/FormHostKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,333:1\n1#2:334\n1745#3:335\n1820#3,3:336\n*S KotlinDebug\n*F\n+ 1 FormHost.kt\ncom/box/app/cfg/FormHostKt\n*L\n38#1:335\n38#1:336,3\n*E\n"
+        "SMAP\nFormHost.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormHost.kt\ncom/box/app/cfg/FormHostKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,333:1\n1#2:334\n1549#3:335\n1620#3,3:336\n*S KotlinDebug\n*F\n+ 1 FormHost.kt\ncom/box/app/cfg/FormHostKt\n*L\n38#1:335\n38#1:336,3\n*E\n"
     }
 .end annotation
 
@@ -843,6 +843,10 @@
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object p0
+
+    const-string v0, "toString(...)"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
 .end method

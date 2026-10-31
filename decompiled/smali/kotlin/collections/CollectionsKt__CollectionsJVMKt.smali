@@ -5,55 +5,43 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCollectionsJVM.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CollectionsJVM.kt\nkotlin/collections/CollectionsKt__CollectionsJVMKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,133:1\n1#2:134\n*E\n"
+    value = "SMAP\nCollectionsJVM.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CollectionsJVM.kt\nkotlin/collections/CollectionsKt__CollectionsJVMKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,131:1\n1#2:132\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000v\n\u0000\n\u0002\u0010 \n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0011\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0010!\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0003\n\u0002\u0010\u0008\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u001c\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u001e\n\u0002\u0008\u0008\n\u0002\u0010\u000b\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0003\u001a#\u0010\u0000\u001a\u0008\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\u0008\u0000\u0010\u00022\u0006\u0010\u0003\u001a\u0002H\u0002H\u0086\u0080\u0004\u00a2\u0006\u0002\u0010\u0004\u001a5\u0010\u0005\u001a\u0012\u0012\u0004\u0012\u0002H\u00020\u0006j\u0008\u0012\u0004\u0012\u0002H\u0002`\u0007\"\u0004\u0008\u0000\u0010\u0002*\n\u0012\u0006\u0008\u0001\u0012\u0002H\u00020\u0008H\u0081\u0088\u0004b\u0002\u0008\n\u00a2\u0006\u0002\u0010\t\u001aN\u0010\u000b\u001a\u0008\u0012\u0004\u0012\u0002H\u000c0\u0001\"\u0004\u0008\u0000\u0010\u000c2\u001d\u0010\r\u001a\u0019\u0012\n\u0012\u0008\u0012\u0004\u0012\u0002H\u000c0\u000f\u0012\u0004\u0012\u00020\u00100\u000e\u00a2\u0006\u0002\u0008\u0011H\u0081\u0088\u0004b\u0002\u0008\u0012b\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u0015b\u0002\u0008\n\u00f8\u0001\u0000\u001aV\u0010\u000b\u001a\u0008\u0012\u0004\u0012\u0002H\u000c0\u0001\"\u0004\u0008\u0000\u0010\u000c2\u0006\u0010\u0016\u001a\u00020\u00172\u001d\u0010\r\u001a\u0019\u0012\n\u0012\u0008\u0012\u0004\u0012\u0002H\u000c0\u000f\u0012\u0004\u0012\u00020\u00100\u000e\u00a2\u0006\u0002\u0008\u0011H\u0081\u0088\u0004b\u0002\u0008\u0012b\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u0015b\u0002\u0008\n\u00f8\u0001\u0000\u001a(\u0010\u0018\u001a\u0008\u0012\u0004\u0012\u0002H\u000c0\u000f\"\u0004\u0008\u0000\u0010\u000cH\u0081\u0080\u0004b\u0002\u0008\u0012b\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u0015\u001a0\u0010\u0018\u001a\u0008\u0012\u0004\u0012\u0002H\u000c0\u000f\"\u0004\u0008\u0000\u0010\u000c2\u0006\u0010\u0016\u001a\u00020\u0017H\u0081\u0080\u0004b\u0002\u0008\u0012b\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u0015\u001a6\u0010\u0019\u001a\u0008\u0012\u0004\u0012\u0002H\u000c0\u0001\"\u0004\u0008\u0000\u0010\u000c2\u000c\u0010\u001a\u001a\u0008\u0012\u0004\u0012\u0002H\u000c0\u000fH\u0081\u0080\u0004b\u0002\u0008\u0012b\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u0015\u001a$\u0010\u001b\u001a\u0008\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\u0008\u0000\u0010\u0002*\u0008\u0012\u0004\u0012\u0002H\u00020\u001cH\u0087\u0088\u0004b\u0002\u0008\n\u001a.\u0010\u001d\u001a\u0008\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\u0008\u0000\u0010\u0002*\u0008\u0012\u0004\u0012\u0002H\u00020\u001eH\u0087\u0080\u0004b\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u001f\u001a6\u0010\u001d\u001a\u0008\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\u0008\u0000\u0010\u0002*\u0008\u0012\u0004\u0012\u0002H\u00020\u001e2\u0006\u0010 \u001a\u00020!H\u0087\u0080\u0004b\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u001f\u001a\'\u0010\"\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010#0\u00082\n\u0010$\u001a\u0006\u0012\u0002\u0008\u00030%H\u0081\u0088\u0004b\u0002\u0008\n\u00a2\u0006\u0002\u0010&\u001a9\u0010\"\u001a\u0008\u0012\u0004\u0012\u0002H\u00020\u0008\"\u0004\u0008\u0000\u0010\u00022\n\u0010$\u001a\u0006\u0012\u0002\u0008\u00030%2\u000c\u0010\'\u001a\u0008\u0012\u0004\u0012\u0002H\u00020\u0008H\u0081\u0088\u0004b\u0002\u0008\n\u00a2\u0006\u0002\u0010(\u001a1\u0010)\u001a\u0008\u0012\u0004\u0012\u0002H\u00020\u0008\"\u0004\u0008\u0000\u0010\u00022\u0006\u0010*\u001a\u00020\u00172\u000c\u0010\'\u001a\u0008\u0012\u0004\u0012\u0002H\u00020\u0008H\u0080\u0080\u0004\u00a2\u0006\u0002\u0010+\u001a3\u0010,\u001a\u000c\u0012\u0008\u0008\u0001\u0012\u0004\u0018\u00010#0\u0008\"\u0004\u0008\u0000\u0010\u0002*\n\u0012\u0006\u0008\u0001\u0012\u0002H\u00020\u00082\u0006\u0010-\u001a\u00020.H\u0080\u0080\u0004\u00a2\u0006\u0002\u0010/\u001a,\u00100\u001a\u00020\u00172\u0006\u00101\u001a\u00020\u0017H\u0081\u0088\u0008b\u0002\u0008\u0012b\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u0015b\u0002\u0008\nb\u0002\u00082\u001a,\u00103\u001a\u00020\u00172\u0006\u00104\u001a\u00020\u0017H\u0081\u0088\u0008b\u0002\u0008\u0012b\u000c\u0008\u0013\u0012\u0008\u0008\u0014\u0012\u0004\u0008\u0008(\u0015b\u0002\u0008\nb\u0002\u00082\u0082\u0002\u0007\n\u0005\u0008\u009920\u0001\u00a8\u00065"
+        "\u0000T\n\u0000\n\u0002\u0010 \n\u0002\u0008\u0002\n\u0002\u0010!\n\u0002\u0008\u0002\n\u0002\u0010\u0008\n\u0000\n\u0002\u0018\u0002\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0010\u0011\n\u0002\u0010\u0000\n\u0000\n\u0002\u0010\u001e\n\u0002\u0008\r\n\u0002\u0010\u000b\n\u0002\u0008\u0002\n\u0002\u0010\u001c\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\u001a\"\u0010\u0000\u001a\u0008\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\u0008\u0000\u0010\u00022\u000c\u0010\u0003\u001a\u0008\u0012\u0004\u0012\u0002H\u00020\u0004H\u0001\u001a?\u0010\u0005\u001a\u0008\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\u0008\u0000\u0010\u00022\u0006\u0010\u0006\u001a\u00020\u00072\u001d\u0010\u0008\u001a\u0019\u0012\n\u0012\u0008\u0012\u0004\u0012\u0002H\u00020\u0004\u0012\u0004\u0012\u00020\n0\t\u00a2\u0006\u0002\u0008\u000bH\u0081\u0008\u00f8\u0001\u0000\u001a7\u0010\u0005\u001a\u0008\u0012\u0004\u0012\u0002H\u00020\u0001\"\u0004\u0008\u0000\u0010\u00022\u001d\u0010\u0008\u001a\u0019\u0012\n\u0012\u0008\u0012\u0004\u0012\u0002H\u00020\u0004\u0012\u0004\u0012\u00020\n0\t\u00a2\u0006\u0002\u0008\u000bH\u0081\u0008\u00f8\u0001\u0000\u001a\u0011\u0010\u000c\u001a\u00020\u00072\u0006\u0010\r\u001a\u00020\u0007H\u0081\u0008\u001a\u0011\u0010\u000e\u001a\u00020\u00072\u0006\u0010\u000f\u001a\u00020\u0007H\u0081\u0008\u001a\"\u0010\u0010\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00120\u00112\n\u0010\u0013\u001a\u0006\u0012\u0002\u0008\u00030\u0014H\u0081\u0008\u00a2\u0006\u0002\u0010\u0015\u001a4\u0010\u0010\u001a\u0008\u0012\u0004\u0012\u0002H\u00160\u0011\"\u0004\u0008\u0000\u0010\u00162\n\u0010\u0013\u001a\u0006\u0012\u0002\u0008\u00030\u00142\u000c\u0010\u0017\u001a\u0008\u0012\u0004\u0012\u0002H\u00160\u0011H\u0081\u0008\u00a2\u0006\u0002\u0010\u0018\u001a\u0014\u0010\u0019\u001a\u0008\u0012\u0004\u0012\u0002H\u00020\u0004\"\u0004\u0008\u0000\u0010\u0002H\u0001\u001a\u001c\u0010\u0019\u001a\u0008\u0012\u0004\u0012\u0002H\u00020\u0004\"\u0004\u0008\u0000\u0010\u00022\u0006\u0010\u0006\u001a\u00020\u0007H\u0001\u001a\u001f\u0010\u001a\u001a\u0008\u0012\u0004\u0012\u0002H\u00160\u0001\"\u0004\u0008\u0000\u0010\u00162\u0006\u0010\u001b\u001a\u0002H\u0016\u00a2\u0006\u0002\u0010\u001c\u001a/\u0010\u001d\u001a\u0008\u0012\u0004\u0012\u0002H\u00160\u0011\"\u0004\u0008\u0000\u0010\u00162\u0006\u0010\u001e\u001a\u00020\u00072\u000c\u0010\u0017\u001a\u0008\u0012\u0004\u0012\u0002H\u00160\u0011H\u0000\u00a2\u0006\u0002\u0010\u001f\u001a1\u0010 \u001a\u000c\u0012\u0008\u0008\u0001\u0012\u0004\u0018\u00010\u00120\u0011\"\u0004\u0008\u0000\u0010\u0016*\n\u0012\u0006\u0008\u0001\u0012\u0002H\u00160\u00112\u0006\u0010!\u001a\u00020\"H\u0000\u00a2\u0006\u0002\u0010#\u001a\u001e\u0010$\u001a\u0008\u0012\u0004\u0012\u0002H\u00160\u0001\"\u0004\u0008\u0000\u0010\u0016*\u0008\u0012\u0004\u0012\u0002H\u00160%H\u0007\u001a&\u0010$\u001a\u0008\u0012\u0004\u0012\u0002H\u00160\u0001\"\u0004\u0008\u0000\u0010\u0016*\u0008\u0012\u0004\u0012\u0002H\u00160%2\u0006\u0010&\u001a\u00020\'H\u0007\u001a\u001f\u0010(\u001a\u0008\u0012\u0004\u0012\u0002H\u00160\u0001\"\u0004\u0008\u0000\u0010\u0016*\u0008\u0012\u0004\u0012\u0002H\u00160)H\u0087\u0008\u0082\u0002\u0007\n\u0005\u0008\u009920\u0001\u00a8\u0006*"
     }
     d2 = {
-        "listOf",
+        "build",
         "",
-        "T",
-        "element",
-        "(Ljava/lang/Object;)Ljava/util/List;",
-        "asArrayList",
-        "Ljava/util/ArrayList;",
-        "Lkotlin/collections/ArrayList;",
-        "",
-        "([Ljava/lang/Object;)Ljava/util/ArrayList;",
-        "Lkotlin/internal/InlineOnly;",
-        "buildListInternal",
         "E",
+        "builder",
+        "",
+        "buildListInternal",
+        "capacity",
+        "",
         "builderAction",
         "Lkotlin/Function1;",
         "",
-        "",
         "Lkotlin/ExtensionFunctionType;",
-        "Lkotlin/PublishedApi;",
-        "Lkotlin/SinceKotlin;",
-        "version",
-        "1.3",
-        "capacity",
-        "",
-        "createListBuilder",
-        "build",
-        "builder",
-        "toList",
-        "Ljava/util/Enumeration;",
-        "shuffled",
-        "",
-        "1.2",
-        "random",
-        "Ljava/util/Random;",
+        "checkCountOverflow",
+        "count",
+        "checkIndexOverflow",
+        "index",
         "collectionToArray",
+        "",
         "",
         "collection",
         "",
         "(Ljava/util/Collection;)[Ljava/lang/Object;",
+        "T",
         "array",
         "(Ljava/util/Collection;[Ljava/lang/Object;)[Ljava/lang/Object;",
+        "createListBuilder",
+        "listOf",
+        "element",
+        "(Ljava/lang/Object;)Ljava/util/List;",
         "terminateCollectionToArray",
         "collectionSize",
         "(I[Ljava/lang/Object;)[Ljava/lang/Object;",
@@ -61,17 +49,18 @@
         "isVarargs",
         "",
         "([Ljava/lang/Object;Z)[Ljava/lang/Object;",
-        "checkIndexOverflow",
-        "index",
-        "Lkotlin/IgnorableReturnValue;",
-        "checkCountOverflow",
-        "count",
+        "shuffled",
+        "",
+        "random",
+        "Ljava/util/Random;",
+        "toList",
+        "Ljava/util/Enumeration;",
         "kotlin-stdlib"
     }
     k = 0x5
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x31
@@ -80,7 +69,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nCollectionsJVM.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CollectionsJVM.kt\nkotlin/collections/CollectionsKt__CollectionsJVMKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,133:1\n1#2:134\n*E\n"
+        "SMAP\nCollectionsJVM.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CollectionsJVM.kt\nkotlin/collections/CollectionsKt__CollectionsJVMKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,131:1\n1#2:132\n*E\n"
     }
 .end annotation
 
@@ -127,7 +116,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 59
+    .line 53
     check-cast p0, Lkotlin/collections/builders/ListBuilder;
 
     invoke-virtual {p0}, Lkotlin/collections/builders/ListBuilder;->build()Ljava/util/List;
@@ -137,8 +126,65 @@
     return-object p0
 .end method
 
+.method public static final copyToArrayOfAny([Ljava/lang/Object;Z)[Ljava/lang/Object;
+    .registers 3
+    .param p0    # [Ljava/lang/Object;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">([TT;Z)[",
+            "Ljava/lang/Object;"
+        }
+    .end annotation
+
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    if-eqz p1, :cond_14
+
+    .line 99
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    move-result-object p1
+
+    const-class v0, [Ljava/lang/Object;
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_14
+
+    goto :goto_20
+
+    .line 103
+    :cond_14
+    array-length p1, p0
+
+    const-class v0, [Ljava/lang/Object;
+
+    invoke-static {p0, p1, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;ILjava/lang/Class;)[Ljava/lang/Object;
+
+    move-result-object p0
+
+    const-string p1, "copyOf(...)"
+
+    invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    :goto_20
+    return-object p0
+.end method
+
 .method public static final createListBuilder()Ljava/util/List;
-    .registers 4
+    .registers 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<E:",
@@ -159,16 +205,10 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 47
+    .line 41
     new-instance v0, Lkotlin/collections/builders/ListBuilder;
 
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    const/4 v3, 0x0
-
-    invoke-direct {v0, v1, v2, v3}, Lkotlin/collections/builders/ListBuilder;-><init>(IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    invoke-direct {v0}, Lkotlin/collections/builders/ListBuilder;-><init>()V
 
     check-cast v0, Ljava/util/List;
 
@@ -197,7 +237,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 53
+    .line 47
     new-instance v0, Lkotlin/collections/builders/ListBuilder;
 
     invoke-direct {v0, p0}, Lkotlin/collections/builders/ListBuilder;-><init>(I)V
@@ -222,7 +262,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 21
+    .line 22
     invoke-static {p0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p0
@@ -255,14 +295,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 96
+    .line 90
     array-length v0, p1
 
     if-ge p0, v0, :cond_b
 
     const/4 v0, 0x0
 
-    .line 98
+    .line 92
     aput-object v0, p1, p0
 
     :cond_b

@@ -2,8 +2,8 @@
 .super Ljava/lang/Object;
 .source "CfgNav.java"
 
-# 配置编辑器顶栏 navigationIcon 的包装：先原样画返回键 (m05)，再在它右边多画两个文字按钮
-# （「可视」= 可视化修改，「锚点」= 锚点面板）。navigationIcon 槽只有一个 layoutId 容器（Box 叠放），
+# 配置编辑器顶栏 navigationIcon 的包装：先原样画返回键 (m05)，再在它右边多画两个图标按钮
+# （图标按钮：「可视」= 可视化修改（滑杆图标），「锚点」= 锚点面板（船锚图标））。navigationIcon 槽只有一个 layoutId 容器（Box 叠放），
 # 所以额外的按钮用 padding-start 错开。守卫 (Lv62;->T / W) 照 m05 的写法抄，避免 skipToGroupEnd 后再发射。
 
 # interfaces
@@ -56,11 +56,11 @@
 
     move-result-object v1
 
-    new-instance v13, Lcom/box/app/cfg/CfgLabel;
+    new-instance v13, Lcom/box/app/cfg/CfgIcon;
 
-    move-object/from16 v2, p4
+    move/from16 v2, p3
 
-    invoke-direct {v13, v2}, Lcom/box/app/cfg/CfgLabel;-><init>(Ljava/lang/String;)V
+    invoke-direct {v13, v2}, Lcom/box/app/cfg/CfgIcon;-><init>(I)V
 
     move-object v4, v0
 
@@ -156,7 +156,7 @@
 
     const-string v10, "\u53ef\u89c6"
 
-    const/high16 v11, 0x42300000    # 44.0f
+    const/high16 v11, 0x42400000    # 48.0f
 
     invoke-static/range {v6 .. v11}, Lcom/box/app/cfg/CfgNav;->e(Lv62;Ljava/lang/Object;Landroid/content/Context;ILjava/lang/String;F)V
 
@@ -164,7 +164,7 @@
 
     const-string v10, "\u951a\u70b9"
 
-    const/high16 v11, 0x42b00000    # 88.0f
+    const/high16 v11, 0x42c00000    # 96.0f
 
     invoke-static/range {v6 .. v11}, Lcom/box/app/cfg/CfgNav;->e(Lv62;Ljava/lang/Object;Landroid/content/Context;ILjava/lang/String;F)V
 

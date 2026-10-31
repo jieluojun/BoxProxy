@@ -13,7 +13,7 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u00008\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0007\n\u0002\u0010\u000e\n\u0002\u0008\u0004\n\u0002\u0010\u000b\n\u0002\u0008\u0002\n\u0002\u0010\u0008\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\u0008\u0087\u0008\u0018\u0000 \u00162\u00020\u0001:\u0001\u0016B\u001d\u0008F\u0012\u0008\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\u0008\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u00a2\u0006\u0004\u0008\u0006\u0010\u0007J\n\u0010\u000c\u001a\u00020\rH\u0096\u0080\u0004J\u000c\u0010\u000e\u001a\u0004\u0018\u00010\u0003H\u00c6\u0083\u0004J\u000c\u0010\u000f\u001a\u0004\u0018\u00010\u0005H\u00c6\u0083\u0004J\"\u0010\u0010\u001a\u00020\u00002\n\u0008\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\u0008\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005H\u00c6\u0081\u0004J\u0014\u0010\u0011\u001a\u00020\u00122\u0008\u0010\u0013\u001a\u0004\u0018\u00010\u0001H\u00d6\u0083\u0004J\n\u0010\u0014\u001a\u00020\u0015H\u00d6\u0081\u0004R\u0017\u0010\u0002\u001a\u0004\u0018\u00010\u0003X\u0086\u0084\u0008\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u0008\u0010\tR\u0017\u0010\u0004\u001a\u0004\u0018\u00010\u0005X\u0086\u0084\u0008\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\n\u0010\u000b\u00ca\u0001\u000c\u0008\u0018\u0012\u0008\u0008\u0019\u0012\u0004\u0008\u0008(\u001a\u00a8\u0006\u0017"
+        "\u0000.\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\t\n\u0002\u0010\u000b\n\u0002\u0008\u0002\n\u0002\u0010\u0008\n\u0000\n\u0002\u0010\u000e\n\u0002\u0008\u0002\u0008\u0087\u0008\u0018\u0000 \u00152\u00020\u0001:\u0001\u0015B\u0019\u0012\u0008\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u0012\u0008\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u00a2\u0006\u0002\u0010\u0006J\u000b\u0010\u000b\u001a\u0004\u0018\u00010\u0003H\u00c6\u0003J\u000b\u0010\u000c\u001a\u0004\u0018\u00010\u0005H\u00c6\u0003J!\u0010\r\u001a\u00020\u00002\n\u0008\u0002\u0010\u0002\u001a\u0004\u0018\u00010\u00032\n\u0008\u0002\u0010\u0004\u001a\u0004\u0018\u00010\u0005H\u00c6\u0001J\u0013\u0010\u000e\u001a\u00020\u000f2\u0008\u0010\u0010\u001a\u0004\u0018\u00010\u0001H\u00d6\u0003J\t\u0010\u0011\u001a\u00020\u0012H\u00d6\u0001J\u0008\u0010\u0013\u001a\u00020\u0014H\u0016R\u0013\u0010\u0004\u001a\u0004\u0018\u00010\u0005\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u0007\u0010\u0008R\u0013\u0010\u0002\u001a\u0004\u0018\u00010\u0003\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\t\u0010\n\u00a8\u0006\u0016"
     }
     d2 = {
         "Lkotlin/reflect/KTypeProjection;",
@@ -22,14 +22,11 @@
         "Lkotlin/reflect/KVariance;",
         "type",
         "Lkotlin/reflect/KType;",
-        "<init>",
         "(Lkotlin/reflect/KVariance;Lkotlin/reflect/KType;)V",
-        "getVariance",
-        "()Lkotlin/reflect/KVariance;",
         "getType",
         "()Lkotlin/reflect/KType;",
-        "toString",
-        "",
+        "getVariance",
+        "()Lkotlin/reflect/KVariance;",
         "component1",
         "component2",
         "copy",
@@ -38,16 +35,15 @@
         "other",
         "hashCode",
         "",
+        "toString",
+        "",
         "Companion",
-        "kotlin-stdlib",
-        "Lkotlin/SinceKotlin;",
-        "version",
-        "1.1"
+        "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -106,7 +102,7 @@
 
     sput-object v0, Lkotlin/reflect/KTypeProjection;->Companion:Lkotlin/reflect/KTypeProjection$Companion;
 
-    .line 56
+    .line 54
     new-instance v0, Lkotlin/reflect/KTypeProjection;
 
     invoke-direct {v0, v1, v1}, Lkotlin/reflect/KTypeProjection;-><init>(Lkotlin/reflect/KVariance;Lkotlin/reflect/KType;)V
@@ -127,16 +123,16 @@
         .end annotation
     .end param
 
-    .line 24
+    .line 22
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 29
+    .line 27
     iput-object p1, p0, Lkotlin/reflect/KTypeProjection;->variance:Lkotlin/reflect/KVariance;
 
-    .line 33
+    .line 31
     iput-object p2, p0, Lkotlin/reflect/KTypeProjection;->type:Lkotlin/reflect/KType;
 
-    .line 37
+    .line 35
     iget-object p1, p0, Lkotlin/reflect/KTypeProjection;->variance:Lkotlin/reflect/KVariance;
 
     const/4 p2, 0x0
@@ -172,7 +168,7 @@
     :cond_1a
     if-nez p2, :cond_45
 
-    .line 38
+    .line 36
     iget-object p1, p0, Lkotlin/reflect/KTypeProjection;->variance:Lkotlin/reflect/KVariance;
 
     if-nez p1, :cond_23
@@ -181,7 +177,7 @@
 
     goto :goto_3b
 
-    .line 41
+    .line 39
     :cond_23
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -203,7 +199,7 @@
 
     move-result-object p0
 
-    .line 37
+    .line 35
     :goto_3b
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
@@ -314,7 +310,7 @@
     .annotation build Lorg/jetbrains/annotations/Nullable;
     .end annotation
 
-    .line 33
+    .line 31
     iget-object p0, p0, Lkotlin/reflect/KTypeProjection;->type:Lkotlin/reflect/KType;
 
     return-object p0
@@ -325,7 +321,7 @@
     .annotation build Lorg/jetbrains/annotations/Nullable;
     .end annotation
 
-    .line 29
+    .line 27
     iget-object p0, p0, Lkotlin/reflect/KTypeProjection;->variance:Lkotlin/reflect/KVariance;
 
     return-object p0
@@ -378,7 +374,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 45
+    .line 43
     iget-object v0, p0, Lkotlin/reflect/KTypeProjection;->variance:Lkotlin/reflect/KVariance;
 
     const/4 v1, -0x1
@@ -403,13 +399,13 @@
 
     packed-switch v0, :pswitch_data_4c
 
+    .line 47
     new-instance p0, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {p0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
 
     throw p0
 
-    .line 49
     :pswitch_1a
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -429,7 +425,7 @@
 
     goto :goto_4b
 
-    .line 48
+    .line 46
     :pswitch_2e
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -449,7 +445,7 @@
 
     goto :goto_4b
 
-    .line 47
+    .line 45
     :pswitch_42
     iget-object p0, p0, Lkotlin/reflect/KTypeProjection;->type:Lkotlin/reflect/KType;
 

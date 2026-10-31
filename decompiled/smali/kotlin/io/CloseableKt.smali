@@ -6,32 +6,26 @@
 # annotations
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u00002\n\u0002\u0008\u0003\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u0003\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0000\u001aQ\u0010\u0000\u001a\u0002H\u0001\"\n\u0008\u0000\u0010\u0002*\u0004\u0018\u00010\u0003\"\u0004\u0008\u0001\u0010\u0001*\u0002H\u00022\u0012\u0010\u0004\u001a\u000e\u0012\u0004\u0012\u0002H\u0002\u0012\u0004\u0012\u0002H\u00010\u0005H\u0087\u0088\u0008b\u0002\u0008\u0007b\u0002\u0008\u0008\u00f8\u0001\u0000\u0082\u0002\n\n\u0008\u0008\u0001\u0012\u0002\u0010\u0001 \u0001\u00a2\u0006\u0002\u0010\u0006\u001a,\u0010\t\u001a\u00020\n*\u0004\u0018\u00010\u00032\u0008\u0010\u000b\u001a\u0004\u0018\u00010\u000cH\u0081\u0080\u0004b\u000c\u0008\r\u0012\u0008\u0008\u000e\u0012\u0004\u0008\u0008(\u000fb\u0002\u0008\u0010\u0082\u0002\u0007\n\u0005\u0008\u009920\u0001\u00a8\u0006\u0011"
+        "\u0000\u001c\n\u0000\n\u0002\u0010\u0002\n\u0002\u0018\u0002\n\u0000\n\u0002\u0010\u0003\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0002\u0008\u0002\u001a\u0018\u0010\u0000\u001a\u00020\u0001*\u0004\u0018\u00010\u00022\u0008\u0010\u0003\u001a\u0004\u0018\u00010\u0004H\u0001\u001aH\u0010\u0005\u001a\u0002H\u0006\"\n\u0008\u0000\u0010\u0007*\u0004\u0018\u00010\u0002\"\u0004\u0008\u0001\u0010\u0006*\u0002H\u00072\u0012\u0010\u0008\u001a\u000e\u0012\u0004\u0012\u0002H\u0007\u0012\u0004\u0012\u0002H\u00060\tH\u0087\u0008\u00f8\u0001\u0000\u0082\u0002\n\n\u0008\u0008\u0001\u0012\u0002\u0010\u0001 \u0001\u00a2\u0006\u0002\u0010\n\u0082\u0002\u0007\n\u0005\u0008\u009920\u0001\u00a8\u0006\u000b"
     }
     d2 = {
+        "closeFinally",
+        "",
+        "Ljava/io/Closeable;",
+        "cause",
+        "",
         "use",
         "R",
         "T",
-        "Ljava/io/Closeable;",
         "block",
         "Lkotlin/Function1;",
         "(Ljava/io/Closeable;Lkotlin/jvm/functions/Function1;)Ljava/lang/Object;",
-        "Lkotlin/internal/InlineOnly;",
-        "Lkotlin/IgnorableReturnValue;",
-        "closeFinally",
-        "",
-        "cause",
-        "",
-        "Lkotlin/SinceKotlin;",
-        "version",
-        "1.1",
-        "Lkotlin/PublishedApi;",
         "kotlin-stdlib"
     }
     k = 0x2
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -65,12 +59,12 @@
 
     if-nez p1, :cond_8
 
-    .line 47
+    .line 56
     invoke-interface {p0}, Ljava/io/Closeable;->close()V
 
     goto :goto_10
 
-    .line 50
+    .line 59
     :cond_8
     :try_start_8
     invoke-interface {p0}, Ljava/io/Closeable;->close()V
@@ -82,7 +76,7 @@
     :catch_c
     move-exception p0
 
-    .line 52
+    .line 61
     invoke-static {p1, p0}, Lkotlin/ExceptionsKt;->addSuppressed(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
     :cond_10

@@ -28,7 +28,7 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000#\n\u0000\n\u0002\u0010(\n\u0002\u0008\u0007\n\u0002\u0010\u0008\n\u0002\u0008\u0005\n\u0002\u0010\u0002\n\u0002\u0008\u0002\n\u0002\u0010\u000b\n\u0000*\u0001\u0000\u0008\n\u0018\u00002\u0008\u0012\u0004\u0012\u00028\u00000\u0001J\n\u0010\u000e\u001a\u00020\u000fH\u0082\u0080\u0004J\u000f\u0010\u0010\u001a\u00028\u0000H\u0096\u0082\u0004\u00a2\u0006\u0002\u0010\u0004J\n\u0010\u0011\u001a\u00020\u0012H\u0096\u0082\u0004R\u001f\u0010\u0002\u001a\u0004\u0018\u00018\u0000X\u0086\u008e\u0008\u00a2\u0006\u0010\n\u0002\u0010\u0007\u001a\u0004\u0008\u0003\u0010\u0004\"\u0004\u0008\u0005\u0010\u0006R\u001b\u0010\u0008\u001a\u00020\tX\u0086\u008e\u0008\u00a2\u0006\u000e\n\u0000\u001a\u0004\u0008\n\u0010\u000b\"\u0004\u0008\u000c\u0010\r\u00a8\u0006\u0013"
+        "\u0000#\n\u0000\n\u0002\u0010(\n\u0002\u0008\u0007\n\u0002\u0010\u0008\n\u0002\u0008\u0005\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000b\n\u0002\u0008\u0002*\u0001\u0000\u0008\n\u0018\u00002\u0008\u0012\u0004\u0012\u00028\u00000\u0001J\u0008\u0010\u000e\u001a\u00020\u000fH\u0002J\t\u0010\u0010\u001a\u00020\u0011H\u0096\u0002J\u000e\u0010\u0012\u001a\u00028\u0000H\u0096\u0002\u00a2\u0006\u0002\u0010\u0004R\u001e\u0010\u0002\u001a\u0004\u0018\u00018\u0000X\u0086\u000e\u00a2\u0006\u0010\n\u0002\u0010\u0007\u001a\u0004\u0008\u0003\u0010\u0004\"\u0004\u0008\u0005\u0010\u0006R\u001a\u0010\u0008\u001a\u00020\tX\u0086\u000e\u00a2\u0006\u000e\n\u0000\u001a\u0004\u0008\n\u0010\u000b\"\u0004\u0008\u000c\u0010\r\u00a8\u0006\u0013"
     }
     d2 = {
         "kotlin/sequences/GeneratorSequence$iterator$1",
@@ -47,15 +47,15 @@
         "(I)V",
         "calcNext",
         "",
-        "next",
         "hasNext",
         "",
+        "next",
         "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
@@ -68,6 +68,9 @@
         value = {
             "TT;"
         }
+    .end annotation
+
+    .annotation build Lorg/jetbrains/annotations/Nullable;
     .end annotation
 .end field
 
@@ -101,12 +104,12 @@
 
     iput-object p1, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->this$0:Lkotlin/sequences/GeneratorSequence;
 
-    .line 637
+    .line 586
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, -0x2
 
-    .line 639
+    .line 588
     iput p1, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextState:I
 
     return-void
@@ -115,7 +118,7 @@
 .method private final calcNext()V
     .registers 3
 
-    .line 642
+    .line 591
     iget v0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextState:I
 
     const/4 v1, -0x2
@@ -152,7 +155,7 @@
     :goto_1f
     iput-object v0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextItem:Ljava/lang/Object;
 
-    .line 643
+    .line 592
     iget-object v0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextItem:Ljava/lang/Object;
 
     if-nez v0, :cond_27
@@ -178,7 +181,10 @@
         }
     .end annotation
 
-    .line 638
+    .annotation build Lorg/jetbrains/annotations/Nullable;
+    .end annotation
+
+    .line 587
     iget-object p0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextItem:Ljava/lang/Object;
 
     return-object p0
@@ -187,7 +193,7 @@
 .method public final getNextState()I
     .registers 1
 
-    .line 639
+    .line 588
     iget p0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextState:I
 
     return p0
@@ -196,15 +202,15 @@
 .method public hasNext()Z
     .registers 2
 
-    .line 659
+    .line 608
     iget v0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextState:I
 
     if-gez v0, :cond_7
 
-    .line 660
+    .line 609
     invoke-direct {p0}, Lkotlin/sequences/GeneratorSequence$iterator$1;->calcNext()V
 
-    .line 661
+    .line 610
     :cond_7
     iget p0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextState:I
 
@@ -229,28 +235,31 @@
         }
     .end annotation
 
-    .line 647
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    .line 596
     iget v0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextState:I
 
     if-gez v0, :cond_7
 
-    .line 648
+    .line 597
     invoke-direct {p0}, Lkotlin/sequences/GeneratorSequence$iterator$1;->calcNext()V
 
-    .line 650
+    .line 599
     :cond_7
     iget v0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextState:I
 
     if-nez v0, :cond_11
 
-    .line 651
+    .line 600
     new-instance p0, Ljava/util/NoSuchElementException;
 
     invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
 
     throw p0
 
-    .line 652
+    .line 601
     :cond_11
     iget-object v0, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextItem:Ljava/lang/Object;
 
@@ -260,7 +269,7 @@
 
     const/4 v1, -0x1
 
-    .line 654
+    .line 603
     iput v1, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextState:I
 
     return-object v0
@@ -280,13 +289,17 @@
 
 .method public final setNextItem(Ljava/lang/Object;)V
     .registers 2
+    .param p1    # Ljava/lang/Object;
+        .annotation build Lorg/jetbrains/annotations/Nullable;
+        .end annotation
+    .end param
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(TT;)V"
         }
     .end annotation
 
-    .line 638
+    .line 587
     iput-object p1, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextItem:Ljava/lang/Object;
 
     return-void
@@ -295,7 +308,7 @@
 .method public final setNextState(I)V
     .registers 2
 
-    .line 639
+    .line 588
     iput p1, p0, Lkotlin/sequences/GeneratorSequence$iterator$1;->nextState:I
 
     return-void

@@ -22,7 +22,7 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000@\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0006\n\u0002\u0010\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0007\n\u0002\u0010\u000e\n\u0002\u0008\u0004\n\u0002\u0018\u0002\n\u0000\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\u0008!\u0018\u00002\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u00012\u00020\u00032\u00020\u0004B\u001b\u0008F\u0012\u0010\u0010\u0005\u001a\u000c\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0018\u00010\u0001\u00a2\u0006\u0004\u0008\u0006\u0010\u0007J\u001f\u0010\n\u001a\u00020\u000b2\u000e\u0010\u000c\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\rH\u0086\u0080\u0004\u00a2\u0006\u0002\u0010\u000eJ!\u0010\u000f\u001a\u0004\u0018\u00010\u00022\u000e\u0010\u000c\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\rH\u00a4\u0080\u0004\u00a2\u0006\u0002\u0010\u0010J\n\u0010\u0011\u001a\u00020\u000bH\u0094\u0080\u0004J\u001c\u0010\u0012\u001a\u0008\u0012\u0004\u0012\u00020\u000b0\u00012\n\u0010\u0005\u001a\u0006\u0012\u0002\u0008\u00030\u0001H\u0096\u0080\u0004J&\u0010\u0012\u001a\u0008\u0012\u0004\u0012\u00020\u000b0\u00012\u0008\u0010\u0013\u001a\u0004\u0018\u00010\u00022\n\u0010\u0005\u001a\u0006\u0012\u0002\u0008\u00030\u0001H\u0096\u0080\u0004J\n\u0010\u0014\u001a\u00020\u0015H\u0096\u0080\u0004J\u000c\u0010\u0019\u001a\u0004\u0018\u00010\u001aH\u0096\u0080\u0004R\u001f\u0010\u0005\u001a\u000c\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0018\u00010\u0001X\u0086\u0084\u0008\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\u0008\u0010\tR\u0017\u0010\u0016\u001a\u0004\u0018\u00010\u00038VX\u0096\u0084\u0008\u00a2\u0006\u0006\u001a\u0004\u0008\u0017\u0010\u0018\u00ca\u0001\u000c\u0008\u001c\u0012\u0008\u0008\u001d\u0012\u0004\u0008\u0008(\u001e\u00ca\u0001\u0002\u0008\u001f\u00a8\u0006\u001b"
+        "\u00006\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\u0018\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0008\n\u0002\u0010\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0002\n\u0002\u0018\u0002\n\u0002\u0008\u0005\n\u0002\u0010\u000e\n\u0000\u0008!\u0018\u00002\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u00012\u00020\u00032\u00020\u0004B\u0017\u0012\u0010\u0010\u0005\u001a\u000c\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0018\u00010\u0001\u00a2\u0006\u0002\u0010\u0006J$\u0010\u000c\u001a\u0008\u0012\u0004\u0012\u00020\r0\u00012\u0008\u0010\u000e\u001a\u0004\u0018\u00010\u00022\n\u0010\u0005\u001a\u0006\u0012\u0002\u0008\u00030\u0001H\u0016J\u001a\u0010\u000c\u001a\u0008\u0012\u0004\u0012\u00020\r0\u00012\n\u0010\u0005\u001a\u0006\u0012\u0002\u0008\u00030\u0001H\u0016J\n\u0010\u000f\u001a\u0004\u0018\u00010\u0010H\u0016J\u001f\u0010\u0011\u001a\u0004\u0018\u00010\u00022\u000e\u0010\u0012\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0013H$\u00a2\u0006\u0002\u0010\u0014J\u0008\u0010\u0015\u001a\u00020\rH\u0014J\u001b\u0010\u0016\u001a\u00020\r2\u000e\u0010\u0012\u001a\n\u0012\u0006\u0012\u0004\u0018\u00010\u00020\u0013\u00a2\u0006\u0002\u0010\u0017J\u0008\u0010\u0018\u001a\u00020\u0019H\u0016R\u0016\u0010\u0007\u001a\u0004\u0018\u00010\u00038VX\u0096\u0004\u00a2\u0006\u0006\u001a\u0004\u0008\u0008\u0010\tR\u001b\u0010\u0005\u001a\u000c\u0012\u0006\u0012\u0004\u0018\u00010\u0002\u0018\u00010\u0001\u00a2\u0006\u0008\n\u0000\u001a\u0004\u0008\n\u0010\u000b\u00a8\u0006\u001a"
     }
     d2 = {
         "Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;",
@@ -31,43 +31,35 @@
         "Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;",
         "Ljava/io/Serializable;",
         "completion",
-        "<init>",
         "(Lkotlin/coroutines/Continuation;)V",
-        "getCompletion",
-        "()Lkotlin/coroutines/Continuation;",
-        "resumeWith",
-        "",
-        "result",
-        "Lkotlin/Result;",
-        "(Ljava/lang/Object;)V",
-        "invokeSuspend",
-        "(Ljava/lang/Object;)Ljava/lang/Object;",
-        "releaseIntercepted",
-        "create",
-        "value",
-        "toString",
-        "",
         "callerFrame",
         "getCallerFrame",
         "()Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;",
+        "getCompletion",
+        "()Lkotlin/coroutines/Continuation;",
+        "create",
+        "",
+        "value",
         "getStackTraceElement",
         "Ljava/lang/StackTraceElement;",
-        "kotlin-stdlib",
-        "Lkotlin/SinceKotlin;",
-        "version",
-        "1.3",
-        "Lkotlin/PublishedApi;"
+        "invokeSuspend",
+        "result",
+        "Lkotlin/Result;",
+        "(Ljava/lang/Object;)Ljava/lang/Object;",
+        "releaseIntercepted",
+        "resumeWith",
+        "(Ljava/lang/Object;)V",
+        "toString",
+        "",
+        "kotlin-stdlib"
     }
     k = 0x1
     mv = {
-        0x2,
-        0x4,
+        0x1,
+        0x9,
         0x0
     }
     xi = 0x30
-.end annotation
-
-.annotation build Lkotlin/PublishedApi;
 .end annotation
 
 .annotation build Lkotlin/SinceKotlin;
@@ -113,7 +105,7 @@
     .line 14
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 19
+    .line 18
     iput-object p1, p0, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;->completion:Lkotlin/coroutines/Continuation;
 
     return-void
@@ -148,7 +140,7 @@
 
     invoke-static {p2, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 65
+    .line 64
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string p1, "create(Any?;Continuation) has not been overridden"
@@ -182,7 +174,7 @@
 
     invoke-static {p1, p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 61
+    .line 60
     new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     const-string p1, "create(Continuation) has not been overridden"
@@ -197,7 +189,7 @@
     .annotation build Lorg/jetbrains/annotations/Nullable;
     .end annotation
 
-    .line 74
+    .line 73
     iget-object p0, p0, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;->completion:Lkotlin/coroutines/Continuation;
 
     instance-of v0, p0, Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;
@@ -229,7 +221,7 @@
     .annotation build Lorg/jetbrains/annotations/Nullable;
     .end annotation
 
-    .line 19
+    .line 18
     iget-object p0, p0, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;->completion:Lkotlin/coroutines/Continuation;
 
     return-object p0
@@ -240,7 +232,7 @@
     .annotation build Lorg/jetbrains/annotations/Nullable;
     .end annotation
 
-    .line 77
+    .line 76
     invoke-static {p0}, Lkotlin/coroutines/jvm/internal/DebugMetadataKt;->getStackTraceElement(Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;)Ljava/lang/StackTraceElement;
 
     move-result-object p0
@@ -270,7 +262,7 @@
         .end annotation
     .end param
 
-    .line 29
+    .line 28
     :goto_0
     move-object v0, p0
 
@@ -278,21 +270,21 @@
 
     invoke-static {v0}, Lkotlin/coroutines/jvm/internal/DebugProbesKt;->probeCoroutineResumed(Lkotlin/coroutines/Continuation;)V
 
-    .line 30
+    .line 29
     check-cast p0, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;
 
-    .line 31
+    .line 30
     iget-object v0, p0, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;->completion:Lkotlin/coroutines/Continuation;
 
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    .line 34
+    .line 33
     :try_start_d
     invoke-virtual {p0, p1}, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p1
 
-    .line 35
+    .line 34
     invoke-static {}, Lkotlin/coroutines/intrinsics/IntrinsicsKt;->getCOROUTINE_SUSPENDED()Ljava/lang/Object;
 
     move-result-object v1
@@ -301,7 +293,7 @@
 
     return-void
 
-    .line 36
+    .line 35
     :cond_18
     sget-object v1, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
 
@@ -316,7 +308,7 @@
     :catch_1f
     move-exception p1
 
-    .line 38
+    .line 37
     sget-object v1, Lkotlin/Result;->Companion:Lkotlin/Result$Companion;
 
     invoke-static {p1}, Lkotlin/ResultKt;->createFailure(Ljava/lang/Throwable;)Ljava/lang/Object;
@@ -327,11 +319,11 @@
 
     move-result-object p1
 
-    .line 40
+    .line 39
     :goto_2a
     invoke-virtual {p0}, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;->releaseIntercepted()V
 
-    .line 41
+    .line 40
     instance-of p0, v0, Lkotlin/coroutines/jvm/internal/BaseContinuationImpl;
 
     if-eqz p0, :cond_33
@@ -340,7 +332,7 @@
 
     goto :goto_0
 
-    .line 47
+    .line 46
     :cond_33
     invoke-interface {v0, p1}, Lkotlin/coroutines/Continuation;->resumeWith(Ljava/lang/Object;)V
 
@@ -352,7 +344,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 69
+    .line 68
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -365,17 +357,26 @@
 
     move-result-object v1
 
-    if-nez v1, :cond_18
+    if-eqz v1, :cond_13
 
+    check-cast v1, Ljava/io/Serializable;
+
+    goto :goto_1e
+
+    :cond_13
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     move-result-object p0
 
     invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object p0
 
-    :cond_18
+    move-object v1, p0
+
+    check-cast v1, Ljava/io/Serializable;
+
+    :goto_1e
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
