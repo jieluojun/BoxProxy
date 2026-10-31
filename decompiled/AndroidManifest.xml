@@ -97,8 +97,6 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
-        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.box.app.cfg.AnchorActivity" android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar" android:windowSoftInputMode="adjustResize"/>
-        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.box.app.cfg.FormActivity" android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar" android:windowSoftInputMode="adjustResize"/>
         <activity android:excludeFromRecents="true" android:exported="false" android:name="com.box.app.vpn.VpnPrepareActivity" android:noHistory="true" android:taskAffinity="" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
         <service android:enabled="true" android:exported="false" android:foregroundServiceType="specialUse" android:name="com.box.app.notification.BoxPersistentNotificationService" android:stopWithTask="false">
             <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="persistent_box_service_status_notification"/>

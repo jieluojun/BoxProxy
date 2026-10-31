@@ -1,2 +1,0 @@
-#!/bin/sh
-exec /tmp/x/jdk4py/java-runtime/bin/java -Xmx3g --enable-native-access=ALL-UNNAMED -cp /tmp/kc/package/lib/kotlin-compiler.jar:/tmp/kc/package/lib/kotlin-stdlib.jar:/tmp/kc/package/lib/kotlin-script-runtime.jar:/tmp/kc/package/lib/kotlin-reflect.jar:/tmp/kc/package/lib/annotations-13.0.jar:/tmp/kc/package/lib/kotlin-daemon.jar:/tmp/kc/package/lib/kotlinx-coroutines-core-jvm.jar org.jetbrains.kotlin.cli.jvm.K2JVMCompiler -no-stdlib -no-reflect -jvm-target 1.8 -nowarn "$@"

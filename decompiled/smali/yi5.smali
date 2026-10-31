@@ -559,12 +559,6 @@
     .line 141
     invoke-direct {v4, v8, v10}, Lm05;-><init>(Lg52;B)V
 
-    iget-object v6, v0, Lyi5;->p:Landroid/content/Context;
-
-    invoke-static {v4, v3, v6}, Lcom/box/app/cfg/CfgNav;->wrap(Lv52;Lmj5;Landroid/content/Context;)Lv52;
-
-    move-result-object v4
-
     .line 142
     .line 143
     .line 144
@@ -1364,12 +1358,6 @@
     .line 540
     .line 541
     invoke-direct {v2, v8, v9}, Lm05;-><init>(Lg52;B)V
-
-    iget-object v4, v0, Lyi5;->p:Landroid/content/Context;
-
-    invoke-static {v2, v3, v4}, Lcom/box/app/cfg/CfgNav;->wrap(Lv52;Lmj5;Landroid/content/Context;)Lv52;
-
-    move-result-object v2
 
     .line 542
     .line 543
