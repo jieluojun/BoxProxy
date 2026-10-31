@@ -118,7 +118,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 556
+    .line 563
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/FormDialogsKt$ruleSetPickDialog$1;->invoke(Ljava/lang/String;)V
@@ -131,7 +131,7 @@
 .method public final invoke(Ljava/lang/String;)V
     .registers 5
 
-    .line 556
+    .line 563
     iget-object p1, p0, Lcom/box/app/cfg/FormDialogsKt$ruleSetPickDialog$1;->$list:Landroid/widget/LinearLayout;
 
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$ruleSetPickDialog$1;->$q:Landroid/widget/EditText;

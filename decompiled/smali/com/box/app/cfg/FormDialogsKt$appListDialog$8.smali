@@ -146,7 +146,7 @@
 .method public final run()V
     .registers 16
 
-    .line 618
+    .line 625
     :try_start_0
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8;->$c:Landroid/content/Context;
 
@@ -156,7 +156,7 @@
 
     const/high16 v1, 0x20000
 
-    .line 620
+    .line 627
     invoke-virtual {v0, v1}, Landroid/content/pm/PackageManager;->getInstalledApplications(I)Ljava/util/List;
 
     move-result-object v1
@@ -167,7 +167,7 @@
 
     move-result-object v1
 
-    .line 621
+    .line 628
     new-instance v2, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8$rows$1;
 
     iget-object v3, p0, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8;->$c:Landroid/content/Context;
@@ -180,7 +180,7 @@
 
     move-result-object v1
 
-    .line 622
+    .line 629
     new-instance v2, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8$rows$2;
 
     invoke-direct {v2, v0}, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8$rows$2;-><init>(Landroid/content/pm/PackageManager;)V
@@ -191,7 +191,7 @@
 
     move-result-object v0
 
-    .line 625
+    .line 632
     sget-object v1, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8$rows$3;->INSTANCE:Lcom/box/app/cfg/FormDialogsKt$appListDialog$8$rows$3;
 
     check-cast v1, Lkotlin/jvm/functions/Function1;
@@ -200,7 +200,7 @@
 
     move-result-object v0
 
-    .line 626
+    .line 633
     sget-object v1, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8$rows$4;->INSTANCE:Lcom/box/app/cfg/FormDialogsKt$appListDialog$8$rows$4;
 
     check-cast v1, Ljava/util/Comparator;
@@ -213,7 +213,7 @@
 
     move-result-object v3
 
-    .line 627
+    .line 634
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8;->$q:Landroid/widget/EditText;
 
     new-instance v14, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8$1;
@@ -257,7 +257,7 @@
 
     move-object v3, v0
 
-    .line 629
+    .line 636
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8;->$q:Landroid/widget/EditText;
 
     new-instance v14, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8$2;

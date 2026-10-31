@@ -151,7 +151,7 @@
 
     move-object/from16 v0, p0
 
-    .line 603
+    .line 610
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$appListDialog$3;->$q:Landroid/widget/EditText;
 
     invoke-virtual {v1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
@@ -172,7 +172,7 @@
 
     move-result-object v1
 
-    .line 605
+    .line 612
     sget-object v2, Ltop/yukonga/mishka/custom/runtime/TproxyAppFilter;->Companion:Ltop/yukonga/mishka/custom/runtime/TproxyAppFilter$Companion;
 
     invoke-virtual {v2, v1}, Ltop/yukonga/mishka/custom/runtime/TproxyAppFilter$Companion;->isPackageName(Ljava/lang/String;)Z
@@ -193,7 +193,7 @@
 
     goto :goto_72
 
-    .line 606
+    .line 613
     :cond_27
     iget-object v2, v0, Lcom/box/app/cfg/FormDialogsKt$appListDialog$3;->$selected:Ljava/util/LinkedHashSet;
 
@@ -209,7 +209,7 @@
 
     goto :goto_72
 
-    .line 607
+    .line 614
     :cond_35
     iget-object v2, v0, Lcom/box/app/cfg/FormDialogsKt$appListDialog$3;->$selected:Ljava/util/LinkedHashSet;
 

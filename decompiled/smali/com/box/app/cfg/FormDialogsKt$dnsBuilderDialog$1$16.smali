@@ -228,7 +228,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 433
+    .line 440
     check-cast p1, Ljava/lang/Boolean;
 
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
@@ -247,7 +247,7 @@
 
     move-object/from16 v0, p0
 
-    .line 433
+    .line 440
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$16;->$disableIpv4:Lkotlin/jvm/internal/Ref$BooleanRef;
 
     move/from16 v2, p1

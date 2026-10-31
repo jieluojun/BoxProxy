@@ -120,7 +120,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 561
+    .line 568
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$ruleSetPickDialog$2;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -131,7 +131,7 @@
 .method public final invoke()V
     .registers 5
 
-    .line 561
+    .line 568
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$ruleSetPickDialog$2;->$m:Landroid/widget/EditText;
 
     invoke-virtual {v0}, Landroid/widget/EditText;->getText()Landroid/text/Editable;

@@ -160,7 +160,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 612
+    .line 619
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/FormDialogsKt$appListDialog$5;->invoke(Ljava/lang/String;)V
@@ -173,7 +173,7 @@
 .method public final invoke(Ljava/lang/String;)V
     .registers 13
 
-    .line 612
+    .line 619
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$appListDialog$5;->$list:Landroid/widget/LinearLayout;
 
     iget-object v1, p0, Lcom/box/app/cfg/FormDialogsKt$appListDialog$5;->$status:Landroid/view/View;

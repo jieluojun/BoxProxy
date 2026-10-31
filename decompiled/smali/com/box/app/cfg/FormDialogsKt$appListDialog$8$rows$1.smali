@@ -73,7 +73,7 @@
 .method public final invoke(Landroid/content/pm/ApplicationInfo;)Ljava/lang/Boolean;
     .registers 2
 
-    .line 621
+    .line 628
     iget-object p1, p1, Landroid/content/pm/ApplicationInfo;->packageName:Ljava/lang/String;
 
     iget-object p0, p0, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8$rows$1;->$c:Landroid/content/Context;
@@ -98,7 +98,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 621
+    .line 628
     check-cast p1, Landroid/content/pm/ApplicationInfo;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8$rows$1;->invoke(Landroid/content/pm/ApplicationInfo;)Ljava/lang/Boolean;

@@ -72,7 +72,19 @@
     .end annotation
 .end field
 
+.field final synthetic $ecsHint:Landroid/widget/TextView;
+
 .field final synthetic $ecsOverride:Lkotlin/jvm/internal/Ref$BooleanRef;
+
+.field final synthetic $ecsRow:Lkotlin/jvm/internal/Ref$ObjectRef;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/jvm/internal/Ref$ObjectRef<",
+            "Landroid/view/View;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field final synthetic $h3:Lkotlin/jvm/internal/Ref$BooleanRef;
 
@@ -148,14 +160,18 @@
 
 # virtual methods
 
-.method constructor <init>(Lkotlin/jvm/internal/Ref$ObjectRef;Landroid/widget/TextView;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$BooleanRef;Ltop/yukonga/mishka/custom/forms/DnsServerParts;)V
-    .registers 16
+.method constructor <init>(Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Landroid/widget/TextView;Landroid/widget/TextView;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$BooleanRef;Ltop/yukonga/mishka/custom/forms/DnsServerParts;)V
+    .registers 20
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Lkotlin/jvm/internal/Ref$ObjectRef<",
             "Ljava/lang/String;",
             ">;",
+            "Lkotlin/jvm/internal/Ref$ObjectRef<",
+            "Landroid/view/View;",
+            ">;",
+            "Landroid/widget/TextView;",
             "Landroid/widget/TextView;",
             "Lkotlin/jvm/internal/Ref$ObjectRef<",
             "Ljava/lang/String;",
@@ -188,39 +204,79 @@
         }
     .end annotation
 
-    iput-object p1, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$ecs:Lkotlin/jvm/internal/Ref$ObjectRef;
+    move-object v0, p0
 
-    iput-object p2, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$previewV:Landroid/widget/TextView;
+    move-object v1, p1
 
-    iput-object p3, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$protocol:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iput-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$ecs:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    iput-object p4, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$address:Lkotlin/jvm/internal/Ref$ObjectRef;
+    move-object v1, p2
 
-    iput-object p5, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$port:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iput-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$ecsRow:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    iput-object p6, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$path:Lkotlin/jvm/internal/Ref$ObjectRef;
+    move-object v1, p3
 
-    iput-object p7, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$rcode:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iput-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$ecsHint:Landroid/widget/TextView;
 
-    iput-object p8, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$proxy:Lkotlin/jvm/internal/Ref$ObjectRef;
+    move-object v1, p4
 
-    iput-object p9, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$h3:Lkotlin/jvm/internal/Ref$BooleanRef;
+    iput-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$previewV:Landroid/widget/TextView;
 
-    iput-object p10, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$skipCert:Lkotlin/jvm/internal/Ref$BooleanRef;
+    move-object v1, p5
 
-    iput-object p11, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$nameCert:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iput-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$protocol:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    iput-object p12, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$ecsOverride:Lkotlin/jvm/internal/Ref$BooleanRef;
+    move-object v1, p6
 
-    iput-object p13, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$disableIpv4:Lkotlin/jvm/internal/Ref$BooleanRef;
+    iput-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$address:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    iput-object p14, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$disableIpv6:Lkotlin/jvm/internal/Ref$BooleanRef;
+    move-object v1, p7
 
-    iput-object p15, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$parsed0:Ltop/yukonga/mishka/custom/forms/DnsServerParts;
+    iput-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$port:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    const/4 p1, 0x1
+    move-object v1, p8
 
-    invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
+    iput-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$path:Lkotlin/jvm/internal/Ref$ObjectRef;
+
+    move-object v1, p9
+
+    iput-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$rcode:Lkotlin/jvm/internal/Ref$ObjectRef;
+
+    move-object v1, p10
+
+    iput-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$proxy:Lkotlin/jvm/internal/Ref$ObjectRef;
+
+    move-object v1, p11
+
+    iput-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$h3:Lkotlin/jvm/internal/Ref$BooleanRef;
+
+    move-object v1, p12
+
+    iput-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$skipCert:Lkotlin/jvm/internal/Ref$BooleanRef;
+
+    move-object v1, p13
+
+    iput-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$nameCert:Lkotlin/jvm/internal/Ref$ObjectRef;
+
+    move-object/from16 v1, p14
+
+    iput-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$ecsOverride:Lkotlin/jvm/internal/Ref$BooleanRef;
+
+    move-object/from16 v1, p15
+
+    iput-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$disableIpv4:Lkotlin/jvm/internal/Ref$BooleanRef;
+
+    move-object/from16 v1, p16
+
+    iput-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$disableIpv6:Lkotlin/jvm/internal/Ref$BooleanRef;
+
+    move-object/from16 v1, p17
+
+    iput-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$parsed0:Ltop/yukonga/mishka/custom/forms/DnsServerParts;
+
+    const/4 v1, 0x1
+
+    invoke-direct {v0, v1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
@@ -228,7 +284,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 431
+    .line 435
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->invoke(Ljava/lang/String;)V
@@ -239,50 +295,62 @@
 .end method
 
 .method public final invoke(Ljava/lang/String;)V
-    .registers 19
+    .registers 21
 
     move-object/from16 v0, p0
 
-    .line 431
+    .line 435
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$ecs:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     move-object/from16 v2, p1
 
     iput-object v2, v1, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    iget-object v2, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$previewV:Landroid/widget/TextView;
+    iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$ecs:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    iget-object v3, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$protocol:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iget-object v2, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$ecsRow:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    iget-object v4, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$address:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iget-object v3, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$ecsHint:Landroid/widget/TextView;
 
-    iget-object v5, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$port:Lkotlin/jvm/internal/Ref$ObjectRef;
+    invoke-static {v1, v2, v3}, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->access$invoke$updEcs(Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Landroid/widget/TextView;)V
 
-    iget-object v6, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$path:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iget-object v4, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$previewV:Landroid/widget/TextView;
 
-    iget-object v7, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$rcode:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iget-object v5, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$protocol:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    iget-object v8, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$proxy:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iget-object v6, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$address:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    iget-object v9, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$h3:Lkotlin/jvm/internal/Ref$BooleanRef;
+    iget-object v7, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$port:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    iget-object v10, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$skipCert:Lkotlin/jvm/internal/Ref$BooleanRef;
+    iget-object v8, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$path:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    iget-object v11, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$nameCert:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iget-object v9, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$rcode:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    iget-object v12, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$ecs:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iget-object v10, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$proxy:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    iget-object v13, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$ecsOverride:Lkotlin/jvm/internal/Ref$BooleanRef;
+    iget-object v11, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$h3:Lkotlin/jvm/internal/Ref$BooleanRef;
 
-    iget-object v14, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$disableIpv4:Lkotlin/jvm/internal/Ref$BooleanRef;
+    iget-object v12, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$skipCert:Lkotlin/jvm/internal/Ref$BooleanRef;
 
-    iget-object v15, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$disableIpv6:Lkotlin/jvm/internal/Ref$BooleanRef;
+    iget-object v13, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$nameCert:Lkotlin/jvm/internal/Ref$ObjectRef;
+
+    iget-object v14, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$ecs:Lkotlin/jvm/internal/Ref$ObjectRef;
+
+    iget-object v15, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$ecsOverride:Lkotlin/jvm/internal/Ref$BooleanRef;
+
+    iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$disableIpv4:Lkotlin/jvm/internal/Ref$BooleanRef;
+
+    iget-object v2, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$disableIpv6:Lkotlin/jvm/internal/Ref$BooleanRef;
 
     iget-object v0, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$14;->$parsed0:Ltop/yukonga/mishka/custom/forms/DnsServerParts;
 
-    move-object/from16 v16, v0
+    move-object/from16 v16, v1
 
-    invoke-static/range {v2 .. v16}, Lcom/box/app/cfg/FormDialogsKt;->access$dnsBuilderDialog$updPreview(Landroid/widget/TextView;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$BooleanRef;Ltop/yukonga/mishka/custom/forms/DnsServerParts;)V
+    move-object/from16 v17, v2
+
+    move-object/from16 v18, v0
+
+    invoke-static/range {v4 .. v18}, Lcom/box/app/cfg/FormDialogsKt;->access$dnsBuilderDialog$updPreview(Landroid/widget/TextView;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$BooleanRef;Ltop/yukonga/mishka/custom/forms/DnsServerParts;)V
 
     return-void
 .end method

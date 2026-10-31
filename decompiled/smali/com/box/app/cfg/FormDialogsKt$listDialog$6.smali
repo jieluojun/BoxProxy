@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$listDialog$6\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,633:1\n1549#2:634\n1620#2,3:635\n766#2:638\n857#2,2:639\n1855#2,2:641\n1855#2,2:643\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$listDialog$6\n*L\n168#1:634\n168#1:635,3\n168#1:638\n168#1:639,2\n168#1:641,2\n169#1:643,2\n*E\n"
+    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$listDialog$6\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,640:1\n1549#2:641\n1620#2,3:642\n766#2:645\n857#2,2:646\n1855#2,2:648\n1855#2,2:650\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$listDialog$6\n*L\n168#1:641\n168#1:642,3\n168#1:645\n168#1:646,2\n168#1:648,2\n169#1:650,2\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,7 +49,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$listDialog$6\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,633:1\n1549#2:634\n1620#2,3:635\n766#2:638\n857#2,2:639\n1855#2,2:641\n1855#2,2:643\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$listDialog$6\n*L\n168#1:634\n168#1:635,3\n168#1:638\n168#1:639,2\n168#1:641,2\n169#1:643,2\n*E\n"
+        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$listDialog$6\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,640:1\n1549#2:641\n1620#2,3:642\n766#2:645\n857#2,2:646\n1855#2,2:648\n1855#2,2:650\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$listDialog$6\n*L\n168#1:641\n168#1:642,3\n168#1:645\n168#1:646,2\n168#1:648,2\n169#1:650,2\n*E\n"
     }
 .end annotation
 
@@ -212,7 +212,7 @@
 
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 634
+    .line 641
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -225,7 +225,7 @@
 
     check-cast v1, Ljava/util/Collection;
 
-    .line 635
+    .line 642
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -241,7 +241,7 @@
 
     move-result-object v2
 
-    .line 636
+    .line 643
     check-cast v2, Ljava/lang/String;
 
     .line 168
@@ -255,26 +255,26 @@
 
     move-result-object v2
 
-    .line 636
+    .line 643
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_4c
 
-    .line 637
+    .line 644
     :cond_66
     check-cast v1, Ljava/util/List;
 
-    .line 634
+    .line 641
     check-cast v1, Ljava/lang/Iterable;
 
-    .line 638
+    .line 645
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 639
+    .line 646
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -314,21 +314,21 @@
     :goto_8d
     if-eqz v3, :cond_75
 
-    .line 639
+    .line 646
     invoke-interface {v0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_75
 
-    .line 640
+    .line 647
     :cond_93
     check-cast v0, Ljava/util/List;
 
-    .line 638
+    .line 645
     check-cast v0, Ljava/lang/Iterable;
 
     iget-object v1, p0, Lcom/box/app/cfg/FormDialogsKt$listDialog$6;->$items:Ljava/util/ArrayList;
 
-    .line 641
+    .line 648
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -375,7 +375,7 @@
 
     iget-object v1, p0, Lcom/box/app/cfg/FormDialogsKt$listDialog$6;->$items:Ljava/util/ArrayList;
 
-    .line 643
+    .line 650
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0

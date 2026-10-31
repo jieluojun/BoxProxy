@@ -428,8 +428,15 @@ internal fun dnsBuilderDialog(c: Context, title: String, initial: String?, ipOnl
                     body.addView(tf("证书 DNSName（可选）", nameCert) { nameCert = it; updPreview() })
                 }
                 if (protocol == "https") body.addView(swRow("强制 HTTP/3", h3) { h3 = it; updPreview() })
-                body.addView(tf("ECS 子网（可选）", ecs) { ecs = it; updPreview() })
-                body.addView(swRow("强制覆盖 ECS", ecsOverride) { ecsOverride = it; updPreview() })
+                // mihomo（dns/util.go）只有 ecs 有效时才读 ecs-override，所以没填 ECS 子网时「强制覆盖」不会写进服务器串——这里把它灰掉并说明，别让人以为开关坏了
+                val ecsHint = note(c, "要先填写上面的「ECS 子网」，「强制覆盖 ECS」才会写入服务器串并生效（内核只在设置了 ECS 时才会用到它）。", 0) as android.widget.TextView
+                lateinit var ecsRow: View
+                fun updEcs() { val on = ecs.isNotBlank(); ecsRow.alpha = if (on) 1f else 0.45f; ecsHint.visibility = if (on) View.GONE else View.VISIBLE }
+                body.addView(tf("ECS 子网（可选）", ecs) { ecs = it; updEcs(); updPreview() })
+                ecsRow = swRow("强制覆盖 ECS", ecsOverride) { ecsOverride = it; updPreview() }
+                body.addView(ecsRow)
+                body.addView(ecsHint)
+                updEcs()
                 body.addView(swRow("丢弃 A 回应", disableIpv4) { disableIpv4 = it; updPreview() })
                 body.addView(swRow("丢弃 AAAA 回应", disableIpv6) { disableIpv6 = it; updPreview() })
             } else when (protocol) {

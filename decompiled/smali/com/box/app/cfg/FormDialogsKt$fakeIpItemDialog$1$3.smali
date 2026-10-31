@@ -151,7 +151,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 505
+    .line 512
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1$3;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -162,7 +162,7 @@
 .method public final invoke()V
     .registers 6
 
-    .line 506
+    .line 513
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1$3;->$raw:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iget-object v0, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
@@ -173,7 +173,7 @@
 
     move-result-object v0
 
-    .line 507
+    .line 514
     invoke-virtual {v0}, Ltop/yukonga/mishka/custom/forms/FakeIpRuleParts;->getRaw()Ljava/lang/String;
 
     move-result-object v1

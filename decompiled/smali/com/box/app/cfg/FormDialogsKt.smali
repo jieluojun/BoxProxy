@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,633:1\n1549#2:634\n1620#2,2:635\n1622#2:638\n1549#2:639\n1620#2,3:640\n1855#2,2:643\n1855#2:645\n1549#2:646\n1620#2,3:647\n1856#2:650\n1855#2,2:651\n1855#2,2:653\n1747#2,3:655\n1747#2,3:658\n766#2:661\n857#2,2:662\n1549#2:664\n1620#2,3:665\n766#2:668\n857#2,2:669\n1559#2:671\n1590#2,4:672\n1864#2,3:676\n1549#2:679\n1620#2,3:680\n766#2:683\n857#2,2:684\n1536#2:686\n1179#2,2:694\n1253#2,4:696\n1620#2,3:700\n766#2:703\n857#2,2:704\n766#2:706\n857#2,2:707\n1549#2:709\n1620#2,3:710\n766#2:713\n857#2,2:714\n1549#2:716\n1620#2,3:717\n1855#2,2:720\n1774#2,4:722\n1855#2,2:726\n2624#2,3:728\n1#3:637\n494#4,7:687\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt\n*L\n19#1:634\n19#1:635,2\n19#1:638\n26#1:639\n26#1:640,3\n204#1:643,2\n233#1:645\n233#1:646\n233#1:647,3\n233#1:650\n272#1:651,2\n297#1:653,2\n299#1:655,3\n318#1:658,3\n381#1:661\n381#1:662,2\n538#1:664\n538#1:665,3\n539#1:668\n539#1:669,2\n225#1:671\n225#1:672,4\n228#1:676,3\n256#1:679\n256#1:680,3\n256#1:683\n256#1:684,2\n257#1:686\n584#1:694,2\n584#1:696,4\n585#1:700,3\n588#1:703\n588#1:704,2\n589#1:706\n589#1:707,2\n589#1:709\n589#1:710,3\n590#1:713\n590#1:714,2\n590#1:716\n590#1:717,3\n596#1:720,2\n597#1:722,4\n598#1:726,2\n599#1:728,3\n257#1:687,7\n*E\n"
+    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,640:1\n1549#2:641\n1620#2,2:642\n1622#2:645\n1549#2:646\n1620#2,3:647\n1855#2,2:650\n1855#2:652\n1549#2:653\n1620#2,3:654\n1856#2:657\n1855#2,2:658\n1855#2,2:660\n1747#2,3:662\n1747#2,3:665\n766#2:668\n857#2,2:669\n1549#2:671\n1620#2,3:672\n766#2:675\n857#2,2:676\n1559#2:678\n1590#2,4:679\n1864#2,3:683\n1549#2:686\n1620#2,3:687\n766#2:690\n857#2,2:691\n1536#2:693\n1179#2,2:701\n1253#2,4:703\n1620#2,3:707\n766#2:710\n857#2,2:711\n766#2:713\n857#2,2:714\n1549#2:716\n1620#2,3:717\n766#2:720\n857#2,2:721\n1549#2:723\n1620#2,3:724\n1855#2,2:727\n1774#2,4:729\n1855#2,2:733\n2624#2,3:735\n1#3:644\n494#4,7:694\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt\n*L\n19#1:641\n19#1:642,2\n19#1:645\n26#1:646\n26#1:647,3\n204#1:650,2\n233#1:652\n233#1:653\n233#1:654,3\n233#1:657\n272#1:658,2\n297#1:660,2\n299#1:662,3\n318#1:665,3\n381#1:668\n381#1:669,2\n545#1:671\n545#1:672,3\n546#1:675\n546#1:676,2\n225#1:678\n225#1:679,4\n228#1:683,3\n256#1:686\n256#1:687,3\n256#1:690\n256#1:691,2\n257#1:693\n591#1:701,2\n591#1:703,4\n592#1:707,3\n595#1:710\n595#1:711,2\n596#1:713\n596#1:714,2\n596#1:716\n596#1:717,3\n597#1:720\n597#1:721,2\n597#1:723\n597#1:724,3\n603#1:727,2\n604#1:729,4\n605#1:733,2\n606#1:735,3\n257#1:694,7\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -99,7 +99,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,633:1\n1549#2:634\n1620#2,2:635\n1622#2:638\n1549#2:639\n1620#2,3:640\n1855#2,2:643\n1855#2:645\n1549#2:646\n1620#2,3:647\n1856#2:650\n1855#2,2:651\n1855#2,2:653\n1747#2,3:655\n1747#2,3:658\n766#2:661\n857#2,2:662\n1549#2:664\n1620#2,3:665\n766#2:668\n857#2,2:669\n1559#2:671\n1590#2,4:672\n1864#2,3:676\n1549#2:679\n1620#2,3:680\n766#2:683\n857#2,2:684\n1536#2:686\n1179#2,2:694\n1253#2,4:696\n1620#2,3:700\n766#2:703\n857#2,2:704\n766#2:706\n857#2,2:707\n1549#2:709\n1620#2,3:710\n766#2:713\n857#2,2:714\n1549#2:716\n1620#2,3:717\n1855#2,2:720\n1774#2,4:722\n1855#2,2:726\n2624#2,3:728\n1#3:637\n494#4,7:687\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt\n*L\n19#1:634\n19#1:635,2\n19#1:638\n26#1:639\n26#1:640,3\n204#1:643,2\n233#1:645\n233#1:646\n233#1:647,3\n233#1:650\n272#1:651,2\n297#1:653,2\n299#1:655,3\n318#1:658,3\n381#1:661\n381#1:662,2\n538#1:664\n538#1:665,3\n539#1:668\n539#1:669,2\n225#1:671\n225#1:672,4\n228#1:676,3\n256#1:679\n256#1:680,3\n256#1:683\n256#1:684,2\n257#1:686\n584#1:694,2\n584#1:696,4\n585#1:700,3\n588#1:703\n588#1:704,2\n589#1:706\n589#1:707,2\n589#1:709\n589#1:710,3\n590#1:713\n590#1:714,2\n590#1:716\n590#1:717,3\n596#1:720,2\n597#1:722,4\n598#1:726,2\n599#1:728,3\n257#1:687,7\n*E\n"
+        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 4 Maps.kt\nkotlin/collections/MapsKt__MapsKt\n*L\n1#1,640:1\n1549#2:641\n1620#2,2:642\n1622#2:645\n1549#2:646\n1620#2,3:647\n1855#2,2:650\n1855#2:652\n1549#2:653\n1620#2,3:654\n1856#2:657\n1855#2,2:658\n1855#2,2:660\n1747#2,3:662\n1747#2,3:665\n766#2:668\n857#2,2:669\n1549#2:671\n1620#2,3:672\n766#2:675\n857#2,2:676\n1559#2:678\n1590#2,4:679\n1864#2,3:683\n1549#2:686\n1620#2,3:687\n766#2:690\n857#2,2:691\n1536#2:693\n1179#2,2:701\n1253#2,4:703\n1620#2,3:707\n766#2:710\n857#2,2:711\n766#2:713\n857#2,2:714\n1549#2:716\n1620#2,3:717\n766#2:720\n857#2,2:721\n1549#2:723\n1620#2,3:724\n1855#2,2:727\n1774#2,4:729\n1855#2,2:733\n2624#2,3:735\n1#3:644\n494#4,7:694\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt\n*L\n19#1:641\n19#1:642,2\n19#1:645\n26#1:646\n26#1:647,3\n204#1:650,2\n233#1:652\n233#1:653\n233#1:654,3\n233#1:657\n272#1:658,2\n297#1:660,2\n299#1:662,3\n318#1:665,3\n381#1:668\n381#1:669,2\n545#1:671\n545#1:672,3\n546#1:675\n546#1:676,2\n225#1:678\n225#1:679,4\n228#1:683,3\n256#1:686\n256#1:687,3\n256#1:690\n256#1:691,2\n257#1:693\n591#1:701,2\n591#1:703,4\n592#1:707,3\n595#1:710\n595#1:711,2\n596#1:713\n596#1:714,2\n596#1:716\n596#1:717,3\n597#1:720\n597#1:721,2\n597#1:723\n597#1:724,3\n603#1:727,2\n604#1:729,4\n605#1:733,2\n606#1:735,3\n257#1:694,7\n*E\n"
     }
 .end annotation
 
@@ -276,7 +276,7 @@
 
     move-object/from16 v14, p0
 
-    .line 569
+    .line 576
     new-instance v15, Ljava/util/LinkedHashSet;
 
     move-object/from16 v0, p2
@@ -291,7 +291,7 @@
 
     invoke-direct {v15, v0}, Ljava/util/LinkedHashSet;-><init>(Ljava/util/Collection;)V
 
-    .line 570
+    .line 577
     new-instance v13, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v13}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
@@ -302,7 +302,7 @@
 
     iput-object v0, v13, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 571
+    .line 578
     new-instance v12, Lkotlin/jvm/internal/Ref$BooleanRef;
 
     invoke-direct {v12}, Lkotlin/jvm/internal/Ref$BooleanRef;-><init>()V
@@ -319,7 +319,7 @@
 
     invoke-direct {v10}, Lkotlin/jvm/internal/Ref$BooleanRef;-><init>()V
 
-    .line 572
+    .line 579
     new-instance v0, Lcom/box/app/cfg/Dlg;
 
     invoke-direct {v0, v14}, Lcom/box/app/cfg/Dlg;-><init>(Landroid/content/Context;)V
@@ -376,7 +376,7 @@
 
     move-object v0, v14
 
-    .line 573
+    .line 580
     invoke-static/range {v0 .. v7}, Lcom/box/app/cfg/UiKt;->field$default(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;ZZZILjava/lang/Object;)Landroid/widget/EditText;
 
     move-result-object v8
@@ -389,14 +389,14 @@
 
     invoke-virtual {v9, v0, v7}, Lcom/box/app/cfg/Dlg;->add(Landroid/view/View;I)Lcom/box/app/cfg/Dlg;
 
-    .line 574
+    .line 581
     invoke-static/range {p0 .. p0}, Lcom/box/app/cfg/UiKt;->hrow(Landroid/content/Context;)Landroid/widget/LinearLayout;
 
     move-result-object v6
 
     const-string v1, "\u6dfb\u52a0"
 
-    .line 575
+    .line 582
     sget-object v0, Lcom/box/app/cfg/FormDialogsKt$appListDialog$addBtn$1;->INSTANCE:Lcom/box/app/cfg/FormDialogsKt$appListDialog$addBtn$1;
 
     move-object v3, v0
@@ -415,7 +415,7 @@
 
     move-result-object v5
 
-    .line 576
+    .line 583
     new-instance v0, Lcom/box/app/cfg/FormDialogsKt$appListDialog$sysSw$1;
 
     invoke-direct {v0, v10}, Lcom/box/app/cfg/FormDialogsKt$appListDialog$sysSw$1;-><init>(Lkotlin/jvm/internal/Ref$BooleanRef;)V
@@ -440,7 +440,7 @@
 
     const-string v0, "\u663e\u793a\u7cfb\u7edf\u5e94\u7528"
 
-    .line 577
+    .line 584
     move-object v1, v0
 
     check-cast v1, Ljava/lang/CharSequence;
@@ -547,7 +547,7 @@
 
     const-string v0, "\u6b63\u5728\u8bfb\u53d6\u8bbe\u5907\u5e94\u7528\u5217\u8868\u2026"
 
-    .line 578
+    .line 585
     invoke-static {v14, v0, v12}, Lcom/box/app/cfg/UiKt;->note(Landroid/content/Context;Ljava/lang/String;I)Landroid/view/View;
 
     move-result-object v11
@@ -558,7 +558,7 @@
 
     invoke-static {v13, v11, v12, v9, v10}, Lcom/box/app/cfg/Dlg;->add$default(Lcom/box/app/cfg/Dlg;Landroid/view/View;IILjava/lang/Object;)Lcom/box/app/cfg/Dlg;
 
-    .line 579
+    .line 586
     invoke-static/range {p0 .. p0}, Lcom/box/app/cfg/UiKt;->column(Landroid/content/Context;)Landroid/widget/LinearLayout;
 
     move-result-object v21
@@ -569,7 +569,7 @@
 
     invoke-virtual {v13, v0, v1}, Lcom/box/app/cfg/Dlg;->add(Landroid/view/View;I)Lcom/box/app/cfg/Dlg;
 
-    .line 602
+    .line 609
     new-instance v22, Lcom/box/app/cfg/FormDialogsKt$appListDialog$3;
 
     move-object/from16 v0, v22
@@ -612,7 +612,7 @@
 
     invoke-virtual {v11, v0}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 610
+    .line 617
     move-object v5, v11
 
     check-cast v5, Landroid/view/View;
@@ -631,7 +631,7 @@
 
     invoke-static {v13, v6, v0, v1, v12}, Lcom/box/app/cfg/Dlg;->add$default(Lcom/box/app/cfg/Dlg;Landroid/view/View;IILjava/lang/Object;)Lcom/box/app/cfg/Dlg;
 
-    .line 611
+    .line 618
     new-instance v12, Lcom/box/app/cfg/FormDialogsKt$appListDialog$4;
 
     move-object v0, v12
@@ -666,7 +666,7 @@
 
     invoke-virtual {v0, v12}, Landroid/widget/Switch;->setOnCheckedChangeListener(Landroid/widget/CompoundButton$OnCheckedChangeListener;)V
 
-    .line 612
+    .line 619
     new-instance v12, Lcom/box/app/cfg/FormDialogsKt$appListDialog$5;
 
     move-object v0, v12
@@ -703,7 +703,7 @@
 
     invoke-virtual {v11, v0}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 613
+    .line 620
     invoke-virtual/range {p1 .. p1}, Ltop/yukonga/mishka/custom/forms/FormField;->getDesc()Ljava/lang/String;
 
     move-result-object v0
@@ -721,7 +721,7 @@
 
     const/4 v6, 0x0
 
-    .line 614
+    .line 621
     new-instance v0, Lcom/box/app/cfg/FormDialogsKt$appListDialog$7;
 
     move-object/from16 v1, p3
@@ -740,7 +740,7 @@
 
     invoke-static/range {v2 .. v9}, Lcom/box/app/cfg/Dlg;->buttons$default(Lcom/box/app/cfg/Dlg;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/box/app/cfg/Dlg;
 
-    .line 615
+    .line 622
     invoke-virtual {v13}, Lcom/box/app/cfg/Dlg;->show()Lcom/box/app/cfg/Dlg;
 
     move-object/from16 v0, v21
@@ -767,7 +767,7 @@
 
     invoke-static/range {v0 .. v10}, Lcom/box/app/cfg/FormDialogsKt;->appListDialog$refresh(Landroid/widget/LinearLayout;Landroid/view/View;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Landroid/widget/EditText;Ljava/util/LinkedHashSet;Landroid/content/Context;Lkotlin/jvm/internal/Ref$BooleanRef;Landroid/widget/TextView;Lcom/box/app/cfg/Dlg;)V
 
-    .line 616
+    .line 623
     new-instance v12, Ljava/lang/Thread;
 
     new-instance v22, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8;
@@ -804,7 +804,7 @@
 
     invoke-direct {v12, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
-    .line 631
+    .line 638
     invoke-virtual {v12}, Ljava/lang/Thread;->start()V
 
     return-void
@@ -853,10 +853,10 @@
 
     move-object/from16 v8, p8
 
-    .line 581
+    .line 588
     invoke-virtual/range {p0 .. p0}, Landroid/widget/LinearLayout;->removeAllViews()V
 
-    .line 582
+    .line 589
     iget-boolean v0, v15, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
 
     if-nez v0, :cond_1f
@@ -881,7 +881,7 @@
 
     const-string v0, "null cannot be cast to non-null type android.widget.TextView"
 
-    .line 583
+    .line 590
     invoke-static {v14, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     move-object v0, v14
@@ -927,14 +927,14 @@
     :goto_4f
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 584
+    .line 591
     iget-object v0, v11, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Iterable;
 
     const/16 v1, 0xa
 
-    .line 694
+    .line 701
     invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
 
     move-result v2
@@ -949,7 +949,7 @@
 
     move-result v2
 
-    .line 695
+    .line 702
     new-instance v3, Ljava/util/LinkedHashMap;
 
     invoke-direct {v3, v2}, Ljava/util/LinkedHashMap;-><init>(I)V
@@ -958,7 +958,7 @@
 
     check-cast v5, Ljava/util/Map;
 
-    .line 696
+    .line 703
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -974,10 +974,10 @@
 
     move-result-object v2
 
-    .line 697
+    .line 704
     check-cast v2, Ltop/yukonga/mishka/custom/forms/InstalledAppRow;
 
-    .line 584
+    .line 591
     invoke-virtual {v2}, Ltop/yukonga/mishka/custom/forms/InstalledAppRow;->getPackageName()Ljava/lang/String;
 
     move-result-object v3
@@ -990,7 +990,7 @@
 
     move-result-object v2
 
-    .line 697
+    .line 704
     invoke-virtual {v2}, Lkotlin/Pair;->getFirst()Ljava/lang/Object;
 
     move-result-object v3
@@ -1003,7 +1003,7 @@
 
     goto :goto_72
 
-    .line 585
+    .line 592
     :cond_96
     iget-object v0, v11, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
@@ -1015,7 +1015,7 @@
 
     check-cast v2, Ljava/util/Collection;
 
-    .line 700
+    .line 707
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1031,24 +1031,24 @@
 
     move-result-object v3
 
-    .line 701
+    .line 708
     check-cast v3, Ltop/yukonga/mishka/custom/forms/InstalledAppRow;
 
-    .line 585
+    .line 592
     invoke-virtual {v3}, Ltop/yukonga/mishka/custom/forms/InstalledAppRow;->getPackageName()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 701
+    .line 708
     invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_a5
 
-    .line 585
+    .line 592
     :cond_b9
     check-cast v2, Ljava/util/HashSet;
 
-    .line 586
+    .line 593
     invoke-virtual/range {p5 .. p5}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v0
@@ -1077,19 +1077,19 @@
 
     invoke-static {v3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 588
+    .line 595
     iget-object v0, v11, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 703
+    .line 710
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
     check-cast v6, Ljava/util/Collection;
 
-    .line 704
+    .line 711
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1111,7 +1111,7 @@
 
     move-object/from16 v21, v0
 
-    .line 588
+    .line 595
     iget-boolean v0, v8, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
 
     if-nez v0, :cond_104
@@ -1136,7 +1136,7 @@
     :goto_106
     if-eqz v19, :cond_10b
 
-    .line 704
+    .line 711
     invoke-interface {v6, v7}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     :cond_10b
@@ -1146,25 +1146,25 @@
 
     goto :goto_e7
 
-    .line 705
+    .line 712
     :cond_110
     move-object v7, v6
 
     check-cast v7, Ljava/util/List;
 
-    .line 589
+    .line 596
     move-object v0, v10
 
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 706
+    .line 713
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     check-cast v1, Ljava/util/Collection;
 
-    .line 707
+    .line 714
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1186,14 +1186,14 @@
 
     check-cast v0, Ljava/lang/String;
 
-    .line 589
+    .line 596
     invoke-static {v3, v5, v0}, Lcom/box/app/cfg/FormDialogsKt;->appListDialog$refresh$matches(Ljava/lang/String;Ljava/util/Map;Ljava/lang/String;)Z
 
     move-result v0
 
     if-eqz v0, :cond_139
 
-    .line 707
+    .line 714
     invoke-interface {v1, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     :cond_139
@@ -1201,14 +1201,14 @@
 
     goto :goto_121
 
-    .line 708
+    .line 715
     :cond_13c
     check-cast v1, Ljava/util/List;
 
-    .line 706
+    .line 713
     check-cast v1, Ljava/lang/Iterable;
 
-    .line 709
+    .line 716
     new-instance v0, Ljava/util/ArrayList;
 
     move-object/from16 v23, v4
@@ -1223,7 +1223,7 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 710
+    .line 717
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -1239,10 +1239,10 @@
 
     move-result-object v4
 
-    .line 711
+    .line 718
     check-cast v4, Ljava/lang/String;
 
-    .line 589
+    .line 596
     new-instance v6, Ltop/yukonga/mishka/custom/forms/AppPickRow;
 
     invoke-interface {v5, v4}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -1271,7 +1271,7 @@
 
     invoke-direct {v6, v4, v1, v8}, Ltop/yukonga/mishka/custom/forms/AppPickRow;-><init>(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 711
+    .line 718
     invoke-interface {v0, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     move-object/from16 v1, v24
@@ -1280,14 +1280,14 @@
 
     goto :goto_153
 
-    .line 712
+    .line 719
     :cond_180
     check-cast v0, Ljava/util/List;
 
-    .line 709
+    .line 716
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 589
+    .line 596
     sget-object v1, Lcom/box/app/cfg/FormDialogsKt$appListDialog$refresh$selRows$3;->INSTANCE:Lcom/box/app/cfg/FormDialogsKt$appListDialog$refresh$selRows$3;
 
     check-cast v1, Ljava/util/Comparator;
@@ -1296,19 +1296,19 @@
 
     move-result-object v8
 
-    .line 590
+    .line 597
     move-object v6, v7
 
     check-cast v6, Ljava/lang/Iterable;
 
-    .line 713
+    .line 720
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 714
+    .line 721
     invoke-interface {v6}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -1330,7 +1330,7 @@
 
     move-object/from16 v25, v1
 
-    .line 590
+    .line 597
     invoke-virtual {v4}, Ltop/yukonga/mishka/custom/forms/InstalledAppRow;->getPackageName()Ljava/lang/String;
 
     move-result-object v1
@@ -1361,7 +1361,7 @@
     :goto_1c0
     if-eqz v1, :cond_1c5
 
-    .line 714
+    .line 721
     invoke-interface {v0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     :cond_1c5
@@ -1369,14 +1369,14 @@
 
     goto :goto_19a
 
-    .line 715
+    .line 722
     :cond_1c8
     check-cast v0, Ljava/util/List;
 
-    .line 713
+    .line 720
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 716
+    .line 723
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -1389,7 +1389,7 @@
 
     check-cast v1, Ljava/util/Collection;
 
-    .line 717
+    .line 724
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -1405,10 +1405,10 @@
 
     move-result-object v2
 
-    .line 718
+    .line 725
     check-cast v2, Ltop/yukonga/mishka/custom/forms/InstalledAppRow;
 
-    .line 590
+    .line 597
     new-instance v4, Ltop/yukonga/mishka/custom/forms/AppPickRow;
 
     move-object/from16 v26, v0
@@ -1427,7 +1427,7 @@
 
     invoke-direct {v4, v0, v2, v3}, Ltop/yukonga/mishka/custom/forms/AppPickRow;-><init>(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 718
+    .line 725
     invoke-interface {v1, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     move-object/from16 v0, v26
@@ -1439,13 +1439,13 @@
     :cond_203
     move-object/from16 v27, v3
 
-    .line 719
+    .line 726
     check-cast v1, Ljava/util/List;
 
-    .line 716
+    .line 723
     check-cast v1, Ljava/lang/Iterable;
 
-    .line 590
+    .line 597
     sget-object v0, Lcom/box/app/cfg/FormDialogsKt$appListDialog$refresh$others$3;->INSTANCE:Lcom/box/app/cfg/FormDialogsKt$appListDialog$refresh$others$3;
 
     check-cast v0, Ljava/util/Comparator;
@@ -1454,7 +1454,7 @@
 
     move-result-object v17
 
-    .line 596
+    .line 603
     move-object v0, v8
 
     check-cast v0, Ljava/util/Collection;
@@ -1569,7 +1569,7 @@
 
     check-cast v8, Ljava/lang/Iterable;
 
-    .line 720
+    .line 727
     invoke-interface {v8}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v8
@@ -1621,7 +1621,7 @@
 
     move/from16 v12, v19
 
-    .line 596
+    .line 603
     invoke-static/range {v0 .. v12}, Lcom/box/app/cfg/FormDialogsKt;->appListDialog$refresh$rowOf(Landroid/content/Context;Ljava/util/LinkedHashSet;Lcom/box/app/cfg/Dlg;Landroid/widget/LinearLayout;Landroid/view/View;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Landroid/widget/EditText;Lkotlin/jvm/internal/Ref$BooleanRef;Landroid/widget/TextView;Ltop/yukonga/mishka/custom/forms/AppPickRow;Z)Landroid/view/View;
 
     move-result-object v0
@@ -1684,7 +1684,7 @@
 
     const/4 v15, 0x0
 
-    .line 597
+    .line 604
     :goto_2db
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -1761,7 +1761,7 @@
 
     move-object/from16 v9, v31
 
-    .line 722
+    .line 729
     instance-of v4, v9, Ljava/util/Collection;
 
     if-eqz v4, :cond_332
@@ -1780,7 +1780,7 @@
 
     goto :goto_359
 
-    .line 724
+    .line 731
     :cond_332
     invoke-interface {v9}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -1801,7 +1801,7 @@
 
     check-cast v5, Ltop/yukonga/mishka/custom/forms/InstalledAppRow;
 
-    .line 597
+    .line 604
     invoke-virtual {v5}, Ltop/yukonga/mishka/custom/forms/InstalledAppRow;->getPackageName()Ljava/lang/String;
 
     move-result-object v5
@@ -1818,7 +1818,7 @@
 
     if-gez v6, :cond_356
 
-    .line 724
+    .line 731
     invoke-static {}, Lkotlin/collections/CollectionsKt;->throwCountOverflow()V
 
     :cond_356
@@ -1826,7 +1826,7 @@
 
     goto :goto_337
 
-    .line 597
+    .line 604
     :cond_359
     :goto_359
     invoke-virtual {v3, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
@@ -1890,12 +1890,12 @@
 
     invoke-virtual {v13, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 598
+    .line 605
     move-object/from16 v0, v17
 
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 726
+    .line 733
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v6
@@ -1953,7 +1953,7 @@
 
     move/from16 v12, v18
 
-    .line 598
+    .line 605
     invoke-static/range {v0 .. v12}, Lcom/box/app/cfg/FormDialogsKt;->appListDialog$refresh$rowOf(Landroid/content/Context;Ljava/util/LinkedHashSet;Lcom/box/app/cfg/Dlg;Landroid/widget/LinearLayout;Landroid/view/View;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Landroid/widget/EditText;Lkotlin/jvm/internal/Ref$BooleanRef;Landroid/widget/TextView;Ltop/yukonga/mishka/custom/forms/AppPickRow;Z)Landroid/view/View;
 
     move-result-object v0
@@ -1995,7 +1995,7 @@
 
     move v1, v15
 
-    .line 599
+    .line 606
     sget-object v0, Ltop/yukonga/mishka/custom/runtime/TproxyAppFilter;->Companion:Ltop/yukonga/mishka/custom/runtime/TproxyAppFilter$Companion;
 
     move-object/from16 v2, v29
@@ -2008,7 +2008,7 @@
 
     move-object/from16 v7, v33
 
-    .line 728
+    .line 735
     instance-of v0, v7, Ljava/util/Collection;
 
     if-eqz v0, :cond_409
@@ -2028,7 +2028,7 @@
 
     goto :goto_424
 
-    .line 729
+    .line 736
     :cond_409
     invoke-interface {v7}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -2047,7 +2047,7 @@
 
     check-cast v3, Ltop/yukonga/mishka/custom/forms/InstalledAppRow;
 
-    .line 599
+    .line 606
     invoke-virtual {v3}, Ltop/yukonga/mishka/custom/forms/InstalledAppRow;->getPackageName()Ljava/lang/String;
 
     move-result-object v3
@@ -2088,7 +2088,7 @@
 
     move/from16 v1, v20
 
-    .line 600
+    .line 607
     :goto_43a
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
@@ -2110,7 +2110,7 @@
         }
     .end annotation
 
-    .line 587
+    .line 594
     check-cast p0, Ljava/lang/CharSequence;
 
     invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
@@ -2225,7 +2225,7 @@
 
     move-object/from16 v14, p0
 
-    .line 591
+    .line 598
     invoke-virtual/range {p11 .. p11}, Ltop/yukonga/mishka/custom/forms/AppPickRow;->getLabel()Ljava/lang/String;
 
     move-result-object v0
@@ -2264,7 +2264,7 @@
     :goto_26
     if-eqz p12, :cond_2d
 
-    .line 592
+    .line 599
     invoke-static/range {p0 .. p0}, Lcom/box/app/cfg/FormDialogsKt;->cur(Landroid/content/Context;)Lcom/box/app/cfg/IconView;
 
     move-result-object v3
@@ -2297,7 +2297,7 @@
 
     goto :goto_36
 
-    .line 591
+    .line 598
     :goto_3f
     move-object/from16 v16, v0
 
@@ -2307,14 +2307,14 @@
 
     check-cast v17, Ljava/lang/CharSequence;
 
-    .line 592
+    .line 599
     move-object/from16 v18, v3
 
     check-cast v18, Landroid/view/View;
 
     const/16 v19, 0x0
 
-    .line 591
+    .line 598
     new-instance v20, Lcom/box/app/cfg/FormDialogsKt$appListDialog$refresh$rowOf$1;
 
     move-object/from16 v0, v20
@@ -2383,7 +2383,7 @@
 
     const/4 v1, 0x6
 
-    .line 595
+    .line 602
     invoke-static {v14, v1}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
 
     move-result v2
@@ -2927,14 +2927,14 @@
 
     move-object/from16 v26, v1
 
-    .line 661
+    .line 668
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     check-cast v1, Ljava/util/Collection;
 
-    .line 662
+    .line 669
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -2993,7 +2993,7 @@
     :goto_102
     if-eqz v0, :cond_107
 
-    .line 662
+    .line 669
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     :cond_107
@@ -3010,7 +3010,7 @@
 
     move-object/from16 v29, v3
 
-    .line 663
+    .line 670
     move-object/from16 v16, v1
 
     check-cast v16, Ljava/util/List;
@@ -3161,7 +3161,7 @@
 
     iput-object v1, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 451
+    .line 458
     iget-object v1, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     if-nez v1, :cond_1ab
@@ -3192,7 +3192,7 @@
 
     const/16 v28, 0x0
 
-    .line 452
+    .line 459
     new-instance v39, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$2;
 
     move-object/from16 v0, v39
@@ -3259,7 +3259,7 @@
 
     move-object/from16 v0, v40
 
-    .line 466
+    .line 473
     invoke-virtual {v0}, Lcom/box/app/cfg/Dlg;->show()Lcom/box/app/cfg/Dlg;
 
     return-void
@@ -4477,12 +4477,12 @@
         }
     .end annotation
 
-    .line 494
+    .line 501
     invoke-static/range {p1 .. p1}, Ltop/yukonga/mishka/custom/forms/P3FormEditorsLogicKt;->parseFakeIpRule(Ljava/lang/String;)Ltop/yukonga/mishka/custom/forms/FakeIpRuleParts;
 
     move-result-object v1
 
-    .line 495
+    .line 502
     new-instance v11, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v11}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
@@ -4513,7 +4513,7 @@
 
     iput-object v2, v13, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 496
+    .line 503
     new-instance v14, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v14}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
@@ -4559,7 +4559,7 @@
     :goto_48
     iput-boolean v1, v15, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
 
-    .line 497
+    .line 504
     new-instance v1, Lcom/box/app/cfg/Dlg;
 
     move-object/from16 v5, p0
@@ -4584,7 +4584,7 @@
 
     move-result-object v0
 
-    .line 498
+    .line 505
     invoke-static/range {p0 .. p0}, Lcom/box/app/cfg/UiKt;->column(Landroid/content/Context;)Landroid/widget/LinearLayout;
 
     move-result-object v1
@@ -4595,12 +4595,12 @@
 
     invoke-static {v0, v4, v2, v3, v10}, Lcom/box/app/cfg/Dlg;->add$default(Lcom/box/app/cfg/Dlg;Landroid/view/View;IILjava/lang/Object;)Lcom/box/app/cfg/Dlg;
 
-    .line 499
+    .line 506
     new-instance v9, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v9}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
 
-    .line 500
+    .line 507
     new-instance v8, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1;
 
     move-object v2, v8
@@ -4631,7 +4631,7 @@
 
     iput-object v1, v2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 519
+    .line 526
     iget-object v1, v2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     if-nez v1, :cond_90
@@ -4662,7 +4662,7 @@
 
     const/16 v20, 0x0
 
-    .line 520
+    .line 527
     new-instance v1, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$2;
 
     move-object v2, v1
@@ -4695,7 +4695,7 @@
 
     invoke-static/range {v16 .. v23}, Lcom/box/app/cfg/Dlg;->buttons$default(Lcom/box/app/cfg/Dlg;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/box/app/cfg/Dlg;
 
-    .line 525
+    .line 532
     invoke-virtual {v0}, Lcom/box/app/cfg/Dlg;->show()Lcom/box/app/cfg/Dlg;
 
     return-void
@@ -4750,14 +4750,14 @@
 
     move-object/from16 v2, p3
 
-    .line 472
+    .line 479
     invoke-static {v2, v0, v1}, Lkotlin/text/StringsKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     move-result v0
 
     if-nez v0, :cond_1d
 
-    .line 473
+    .line 480
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object v3
@@ -4776,7 +4776,7 @@
 
     return-void
 
-    .line 476
+    .line 483
     :cond_1d
     new-instance v14, Ljava/util/ArrayList;
 
@@ -4786,7 +4786,7 @@
 
     invoke-direct {v14, v0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 477
+    .line 484
     new-instance v0, Lcom/box/app/cfg/Dlg;
 
     invoke-direct {v0, v13}, Lcom/box/app/cfg/Dlg;-><init>(Landroid/content/Context;)V
@@ -4803,15 +4803,15 @@
 
     const-string v0, "\u4ece\u4e0a\u5230\u4e0b\u5339\u914d\uff1b\u672b\u6761\u53ef\u7528 MATCH,fake-ip / MATCH,real-ip \u515c\u5e95\u3002\u672a\u7f16\u8f91\u7684\u89c4\u5219\u4fdd\u6301\u539f\u6587\u3002"
 
-    .line 478
+    .line 485
     invoke-virtual {v15, v0}, Lcom/box/app/cfg/Dlg;->addNote(Ljava/lang/String;)Lcom/box/app/cfg/Dlg;
 
-    .line 479
+    .line 486
     new-instance v12, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v12}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
 
-    .line 480
+    .line 487
     new-instance v11, Lcom/box/app/cfg/RowList;
 
     new-instance v0, Lcom/box/app/cfg/FormDialogsKt$fakeIpRulesDialog$1;
@@ -4838,7 +4838,7 @@
 
     check-cast v5, Lkotlin/jvm/functions/Function1;
 
-    .line 481
+    .line 488
     new-instance v0, Lcom/box/app/cfg/FormDialogsKt$fakeIpRulesDialog$4;
 
     invoke-direct {v0, v13, v14, v12}, Lcom/box/app/cfg/FormDialogsKt$fakeIpRulesDialog$4;-><init>(Landroid/content/Context;Ljava/util/ArrayList;Lkotlin/jvm/internal/Ref$ObjectRef;)V
@@ -4847,7 +4847,7 @@
 
     check-cast v6, Lkotlin/jvm/functions/Function1;
 
-    .line 482
+    .line 489
     new-instance v0, Lcom/box/app/cfg/FormDialogsKt$fakeIpRulesDialog$5;
 
     invoke-direct {v0, v14}, Lcom/box/app/cfg/FormDialogsKt$fakeIpRulesDialog$5;-><init>(Ljava/util/ArrayList;)V
@@ -4888,14 +4888,14 @@
 
     move-object/from16 v12, v17
 
-    .line 480
+    .line 487
     invoke-direct/range {v0 .. v12}, Lcom/box/app/cfg/RowList;-><init>(Landroid/content/Context;Lcom/box/app/cfg/Dlg;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function1;Lkotlin/jvm/functions/Function2;ZZILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     move-object/from16 v0, v18
 
     iput-object v0, v14, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 483
+    .line 490
     iget-object v0, v14, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
     const/4 v1, 0x0
@@ -4946,21 +4946,21 @@
     :goto_b3
     invoke-virtual {v1}, Lcom/box/app/cfg/RowList;->refresh()V
 
-    .line 484
+    .line 491
     invoke-static/range {p0 .. p0}, Lcom/box/app/cfg/UiKt;->hrow(Landroid/content/Context;)Landroid/widget/LinearLayout;
 
     move-result-object v6
 
     const v0, 0x800005
 
-    .line 485
+    .line 492
     invoke-virtual {v6, v0}, Landroid/widget/LinearLayout;->setGravity(I)V
 
     const-string v1, "\u6dfb\u52a0\u89c4\u5219"
 
     const/4 v2, 0x0
 
-    .line 486
+    .line 493
     new-instance v0, Lcom/box/app/cfg/FormDialogsKt$fakeIpRulesDialog$7;
 
     move-object/from16 v7, v19
@@ -4987,7 +4987,7 @@
 
     const-string v1, "MATCH \u515c\u5e95"
 
-    .line 487
+    .line 494
     new-instance v0, Lcom/box/app/cfg/FormDialogsKt$fakeIpRulesDialog$8;
 
     invoke-direct {v0, v7, v14}, Lcom/box/app/cfg/FormDialogsKt$fakeIpRulesDialog$8;-><init>(Ljava/util/ArrayList;Lkotlin/jvm/internal/Ref$ObjectRef;)V
@@ -5006,7 +5006,7 @@
 
     invoke-virtual {v6, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 488
+    .line 495
     check-cast v6, Landroid/view/View;
 
     const/4 v0, 0x6
@@ -5019,7 +5019,7 @@
 
     const/4 v0, 0x0
 
-    .line 489
+    .line 496
     new-instance v1, Lcom/box/app/cfg/FormDialogsKt$fakeIpRulesDialog$9;
 
     move-object/from16 v2, p4
@@ -5040,7 +5040,7 @@
 
     invoke-static/range {v3 .. v10}, Lcom/box/app/cfg/Dlg;->buttons$default(Lcom/box/app/cfg/Dlg;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/box/app/cfg/Dlg;
 
-    .line 490
+    .line 497
     invoke-virtual {v15}, Lcom/box/app/cfg/Dlg;->show()Lcom/box/app/cfg/Dlg;
 
     return-void
@@ -5189,7 +5189,7 @@
 
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 651
+    .line 658
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v7
@@ -5564,7 +5564,7 @@
     .line 256
     check-cast p0, Ljava/lang/Iterable;
 
-    .line 679
+    .line 686
     new-instance v0, Ljava/util/ArrayList;
 
     const/16 v1, 0xa
@@ -5577,7 +5577,7 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 680
+    .line 687
     invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p0
@@ -5593,7 +5593,7 @@
 
     move-result-object v1
 
-    .line 681
+    .line 688
     check-cast v1, Landroid/widget/EditText;
 
     .line 256
@@ -5615,26 +5615,26 @@
 
     move-result-object v1
 
-    .line 681
+    .line 688
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_13
 
-    .line 682
+    .line 689
     :cond_35
     check-cast v0, Ljava/util/List;
 
-    .line 679
+    .line 686
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 683
+    .line 690
     new-instance p0, Ljava/util/ArrayList;
 
     invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
 
     check-cast p0, Ljava/util/Collection;
 
-    .line 684
+    .line 691
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -5673,19 +5673,19 @@
     :cond_5c
     if-eqz v2, :cond_44
 
-    .line 684
+    .line 691
     invoke-interface {p0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_44
 
-    .line 685
+    .line 692
     :cond_62
     check-cast p0, Ljava/util/List;
 
     .line 257
     check-cast p0, Ljava/lang/Iterable;
 
-    .line 686
+    .line 693
     new-instance v0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$updateWarn$$inlined$groupingBy$1;
 
     invoke-direct {v0, p0}, Lcom/box/app/cfg/FormDialogsKt$headersDialog$updateWarn$$inlined$groupingBy$1;-><init>(Ljava/lang/Iterable;)V
@@ -5697,12 +5697,12 @@
 
     move-result-object p0
 
-    .line 687
+    .line 694
     new-instance v0, Ljava/util/LinkedHashMap;
 
     invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
-    .line 688
+    .line 695
     invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
 
     move-result-object p0
@@ -5725,7 +5725,7 @@
 
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 689
+    .line 696
     invoke-interface {v1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     move-result-object v4
@@ -5748,7 +5748,7 @@
     :goto_99
     if-eqz v4, :cond_7e
 
-    .line 690
+    .line 697
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v4
@@ -5761,7 +5761,7 @@
 
     goto :goto_7e
 
-    .line 693
+    .line 700
     :cond_a7
     check-cast v0, Ljava/util/Map;
 
@@ -7123,7 +7123,7 @@
 
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 643
+    .line 650
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v11
@@ -7603,7 +7603,7 @@
     .line 233
     check-cast p3, Ljava/lang/Iterable;
 
-    .line 645
+    .line 652
     invoke-interface {p3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p3
@@ -7626,7 +7626,7 @@
 
     check-cast v3, Ljava/lang/Iterable;
 
-    .line 646
+    .line 653
     new-instance v4, Ljava/util/ArrayList;
 
     const/16 v5, 0xa
@@ -7639,7 +7639,7 @@
 
     check-cast v4, Ljava/util/Collection;
 
-    .line 647
+    .line 654
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -7655,7 +7655,7 @@
 
     move-result-object v5
 
-    .line 648
+    .line 655
     check-cast v5, Lkotlin/Pair;
 
     invoke-virtual {v5}, Lkotlin/Pair;->component1()Ljava/lang/Object;
@@ -7675,13 +7675,13 @@
 
     const-string v5, ""
 
-    .line 648
+    .line 655
     :cond_8e
     invoke-interface {v4, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_72
 
-    .line 649
+    .line 656
     :cond_92
     check-cast v4, Ljava/util/List;
 
@@ -7797,7 +7797,7 @@
 
     check-cast v1, Ljava/lang/Iterable;
 
-    .line 671
+    .line 678
     new-instance v2, Ljava/util/ArrayList;
 
     const/16 v3, 0xa
@@ -7812,7 +7812,7 @@
 
     check-cast v11, Ljava/util/Collection;
 
-    .line 673
+    .line 680
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v12
@@ -7836,7 +7836,7 @@
 
     if-gez v1, :cond_2f
 
-    .line 674
+    .line 681
     invoke-static {}, Lkotlin/collections/CollectionsKt;->throwIndexOverflow()V
 
     :cond_2f
@@ -7875,14 +7875,14 @@
 
     move-result-object v1
 
-    .line 674
+    .line 681
     invoke-interface {v11, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     move v1, v14
 
     goto :goto_1e
 
-    .line 675
+    .line 682
     :cond_50
     check-cast v11, Ljava/util/List;
 
@@ -7899,7 +7899,7 @@
 
     check-cast v2, Ljava/lang/Iterable;
 
-    .line 677
+    .line 684
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -8067,7 +8067,7 @@
 
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 653
+    .line 660
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -8143,7 +8143,7 @@
 
     check-cast v12, Ljava/lang/Iterable;
 
-    .line 655
+    .line 662
     instance-of v11, v12, Ljava/util/Collection;
 
     const/4 v10, 0x1
@@ -8167,7 +8167,7 @@
 
     goto :goto_88
 
-    .line 656
+    .line 663
     :cond_66
     invoke-interface {v12}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -8469,7 +8469,7 @@
 
     move-object/from16 v0, v26
 
-    .line 658
+    .line 665
     move-object v12, v0
 
     check-cast v12, Ljava/util/Collection;
@@ -8485,7 +8485,7 @@
     :cond_17a
     move-object/from16 v0, v26
 
-    .line 659
+    .line 666
     :cond_17c
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -8703,7 +8703,7 @@
 
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 634
+    .line 641
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -8716,7 +8716,7 @@
 
     check-cast v1, Ljava/util/Collection;
 
-    .line 635
+    .line 642
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -8732,7 +8732,7 @@
 
     move-result-object v2
 
-    .line 636
+    .line 643
     check-cast v2, Ltop/yukonga/mishka/custom/forms/FormOption;
 
     .line 19
@@ -8770,12 +8770,12 @@
 
     invoke-direct {v2, v3, v4, v5}, Lcom/box/app/cfg/Opt;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 636
+    .line 643
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_15
 
-    .line 638
+    .line 645
     :cond_44
     move-object v8, v1
 
@@ -8878,7 +8878,7 @@
 
     move-object/from16 v9, p3
 
-    .line 537
+    .line 544
     new-instance v10, Ljava/util/LinkedHashSet;
 
     move-object/from16 v1, p2
@@ -8887,12 +8887,12 @@
 
     invoke-direct {v10, v1}, Ljava/util/LinkedHashSet;-><init>(Ljava/util/Collection;)V
 
-    .line 538
+    .line 545
     move-object v1, v9
 
     check-cast v1, Ljava/lang/Iterable;
 
-    .line 664
+    .line 671
     new-instance v2, Ljava/util/ArrayList;
 
     const/16 v3, 0xa
@@ -8905,7 +8905,7 @@
 
     check-cast v2, Ljava/util/Collection;
 
-    .line 665
+    .line 672
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -8921,44 +8921,44 @@
 
     move-result-object v3
 
-    .line 666
+    .line 673
     check-cast v3, Ltop/yukonga/mishka/custom/forms/FormOption;
 
-    .line 538
+    .line 545
     invoke-virtual {v3}, Ltop/yukonga/mishka/custom/forms/FormOption;->getValue()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 666
+    .line 673
     invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_21
 
-    .line 667
+    .line 674
     :cond_35
     check-cast v2, Ljava/util/List;
 
-    .line 664
+    .line 671
     check-cast v2, Ljava/lang/Iterable;
 
-    .line 538
+    .line 545
     invoke-static {v2}, Lkotlin/collections/CollectionsKt;->toSet(Ljava/lang/Iterable;)Ljava/util/Set;
 
     move-result-object v1
 
-    .line 539
+    .line 546
     move-object/from16 v0, p2
 
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 668
+    .line 675
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
     check-cast v2, Ljava/util/Collection;
 
-    .line 669
+    .line 676
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -8979,7 +8979,7 @@
 
     check-cast v4, Ljava/lang/String;
 
-    .line 539
+    .line 546
     invoke-interface {v1, v4}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result v4
@@ -8988,18 +8988,18 @@
 
     if-eqz v4, :cond_4c
 
-    .line 669
+    .line 676
     invoke-interface {v2, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_4c
 
-    .line 670
+    .line 677
     :cond_65
     move-object v11, v2
 
     check-cast v11, Ljava/util/List;
 
-    .line 540
+    .line 547
     new-instance v0, Lcom/box/app/cfg/Dlg;
 
     invoke-direct {v0, v8}, Lcom/box/app/cfg/Dlg;-><init>(Landroid/content/Context;)V
@@ -9050,7 +9050,7 @@
 
     move-object v0, v8
 
-    .line 541
+    .line 548
     invoke-static/range {v0 .. v7}, Lcom/box/app/cfg/UiKt;->field$default(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;ZZZILjava/lang/Object;)Landroid/widget/EditText;
 
     move-result-object v12
@@ -9063,7 +9063,7 @@
 
     invoke-virtual {v15, v0, v13}, Lcom/box/app/cfg/Dlg;->add(Landroid/view/View;I)Lcom/box/app/cfg/Dlg;
 
-    .line 542
+    .line 549
     invoke-interface/range {p3 .. p3}, Ljava/util/List;->isEmpty()Z
 
     move-result v0
@@ -9074,7 +9074,7 @@
 
     invoke-virtual {v15, v0}, Lcom/box/app/cfg/Dlg;->addNote(Ljava/lang/String;)Lcom/box/app/cfg/Dlg;
 
-    .line 543
+    .line 550
     :cond_af
     move-object v0, v11
 
@@ -9128,7 +9128,7 @@
 
     invoke-virtual {v15, v0}, Lcom/box/app/cfg/Dlg;->addNote(Ljava/lang/String;)Lcom/box/app/cfg/Dlg;
 
-    .line 544
+    .line 551
     :cond_e6
     invoke-static/range {p0 .. p0}, Lcom/box/app/cfg/UiKt;->column(Landroid/content/Context;)Landroid/widget/LinearLayout;
 
@@ -9140,7 +9140,7 @@
 
     invoke-virtual {v15, v0, v13}, Lcom/box/app/cfg/Dlg;->add(Landroid/view/View;I)Lcom/box/app/cfg/Dlg;
 
-    .line 556
+    .line 563
     new-instance v6, Lcom/box/app/cfg/FormDialogsKt$ruleSetPickDialog$1;
 
     move-object v0, v6
@@ -9165,10 +9165,10 @@
 
     invoke-virtual {v12, v0}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 557
+    .line 564
     invoke-static {v11, v12, v9, v10, v8}, Lcom/box/app/cfg/FormDialogsKt;->ruleSetPickDialog$refresh(Landroid/widget/LinearLayout;Landroid/widget/EditText;Ljava/util/List;Ljava/util/LinkedHashSet;Landroid/content/Context;)V
 
-    .line 558
+    .line 565
     invoke-static/range {p0 .. p0}, Lcom/box/app/cfg/UiKt;->hrow(Landroid/content/Context;)Landroid/widget/LinearLayout;
 
     move-result-object v14
@@ -9189,12 +9189,12 @@
 
     move-object v0, v8
 
-    .line 559
+    .line 566
     invoke-static/range {v0 .. v7}, Lcom/box/app/cfg/UiKt;->field$default(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;ZZZILjava/lang/Object;)Landroid/widget/EditText;
 
     move-result-object v1
 
-    .line 560
+    .line 567
     move-object v0, v1
 
     check-cast v0, Landroid/view/View;
@@ -9215,7 +9215,7 @@
 
     const/16 v16, 0x0
 
-    .line 561
+    .line 568
     new-instance v17, Lcom/box/app/cfg/FormDialogsKt$ruleSetPickDialog$2;
 
     move-object/from16 v0, v17
@@ -9254,12 +9254,12 @@
 
     invoke-virtual {v14, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 562
+    .line 569
     check-cast v14, Landroid/view/View;
 
     invoke-virtual {v15, v14, v13}, Lcom/box/app/cfg/Dlg;->add(Landroid/view/View;I)Lcom/box/app/cfg/Dlg;
 
-    .line 563
+    .line 570
     invoke-virtual/range {p1 .. p1}, Ltop/yukonga/mishka/custom/forms/FormField;->getDesc()Ljava/lang/String;
 
     move-result-object v0
@@ -9277,7 +9277,7 @@
 
     const/16 v16, 0x0
 
-    .line 564
+    .line 571
     new-instance v1, Lcom/box/app/cfg/FormDialogsKt$ruleSetPickDialog$4;
 
     move-object/from16 v2, p4
@@ -9300,7 +9300,7 @@
 
     invoke-static/range {v12 .. v19}, Lcom/box/app/cfg/Dlg;->buttons$default(Lcom/box/app/cfg/Dlg;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/box/app/cfg/Dlg;
 
-    .line 565
+    .line 572
     invoke-virtual {v1}, Lcom/box/app/cfg/Dlg;->show()Lcom/box/app/cfg/Dlg;
 
     return-void
@@ -9326,10 +9326,10 @@
 
     move-object/from16 v14, p4
 
-    .line 546
+    .line 553
     invoke-virtual/range {p0 .. p0}, Landroid/widget/LinearLayout;->removeAllViews()V
 
-    .line 547
+    .line 554
     invoke-virtual/range {p1 .. p1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object v0
@@ -9358,7 +9358,7 @@
 
     invoke-static {v15, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 548
+    .line 555
     invoke-interface/range {p2 .. p2}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v13
@@ -9379,7 +9379,7 @@
 
     check-cast v3, Ltop/yukonga/mishka/custom/forms/FormOption;
 
-    .line 549
+    .line 556
     move-object v0, v15
 
     check-cast v0, Ljava/lang/CharSequence;
@@ -9430,7 +9430,7 @@
 
     if-eqz v0, :cond_26
 
-    .line 550
+    .line 557
     :cond_5c
     invoke-virtual {v3}, Ltop/yukonga/mishka/custom/forms/FormOption;->getValue()Ljava/lang/String;
 
@@ -9442,7 +9442,7 @@
 
     move-result v1
 
-    .line 551
+    .line 558
     invoke-virtual {v3}, Ltop/yukonga/mishka/custom/forms/FormOption;->getValue()Ljava/lang/String;
 
     move-result-object v0
@@ -9580,7 +9580,7 @@
 
     const/16 v1, 0x8
 
-    .line 553
+    .line 560
     invoke-static {v14, v1}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
 
     move-result v2
@@ -9609,7 +9609,7 @@
 
     move-object/from16 v2, p0
 
-    .line 551
+    .line 558
     invoke-virtual {v2, v0, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     move-object/from16 v13, v16
@@ -9668,7 +9668,7 @@
 
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 639
+    .line 646
     new-instance v1, Ljava/util/ArrayList;
 
     const/16 v2, 0xa
@@ -9681,7 +9681,7 @@
 
     check-cast v1, Ljava/util/Collection;
 
-    .line 640
+    .line 647
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -9697,7 +9697,7 @@
 
     move-result-object v3
 
-    .line 641
+    .line 648
     check-cast v3, Ltop/yukonga/mishka/custom/forms/FormOption;
 
     .line 26
@@ -9705,16 +9705,16 @@
 
     move-result-object v3
 
-    .line 641
+    .line 648
     invoke-interface {v1, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_19
 
-    .line 642
+    .line 649
     :cond_2d
     check-cast v1, Ljava/util/List;
 
-    .line 639
+    .line 646
     check-cast v1, Ljava/lang/Iterable;
 
     .line 26
@@ -9726,7 +9726,7 @@
 
     check-cast v1, Ljava/lang/Iterable;
 
-    .line 639
+    .line 646
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-static {v1, v2}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
@@ -9737,7 +9737,7 @@
 
     check-cast v3, Ljava/util/Collection;
 
-    .line 640
+    .line 647
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -9753,7 +9753,7 @@
 
     move-result-object v2
 
-    .line 641
+    .line 648
     check-cast v2, Ltop/yukonga/mishka/custom/forms/FormOption;
 
     .line 26
@@ -9761,16 +9761,16 @@
 
     move-result-object v2
 
-    .line 641
+    .line 648
     invoke-interface {v3, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_48
 
-    .line 642
+    .line 649
     :cond_5c
     check-cast v3, Ljava/util/List;
 
-    .line 639
+    .line 646
     check-cast v3, Ljava/lang/Iterable;
 
     .line 26
@@ -10364,7 +10364,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 528
+    .line 535
     new-instance v0, Lcom/box/app/cfg/FormDialogsKt$simpleWatcher$1;
 
     invoke-direct {v0, p0}, Lcom/box/app/cfg/FormDialogsKt$simpleWatcher$1;-><init>(Lkotlin/jvm/functions/Function1;)V

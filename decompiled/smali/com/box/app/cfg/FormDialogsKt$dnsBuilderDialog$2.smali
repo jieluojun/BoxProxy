@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$2\n+ 2 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,633:1\n1083#2,2:634\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$2\n*L\n457#1:634,2\n*E\n"
+    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$2\n+ 2 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,640:1\n1083#2,2:641\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$2\n*L\n464#1:641,2\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,7 +49,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$2\n+ 2 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,633:1\n1083#2,2:634\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$2\n*L\n457#1:634,2\n*E\n"
+        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$2\n+ 2 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,640:1\n1083#2,2:641\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$2\n*L\n464#1:641,2\n*E\n"
     }
 .end annotation
 
@@ -317,7 +317,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 452
+    .line 459
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$2;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -328,7 +328,7 @@
 .method public final invoke()V
     .registers 16
 
-    .line 453
+    .line 460
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$2;->$rawMode:Lkotlin/jvm/internal/Ref$BooleanRef;
 
     iget-boolean v0, v0, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
@@ -386,7 +386,7 @@
 
     move-result-object v0
 
-    .line 454
+    .line 461
     :goto_37
     iget-object v1, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$2;->$rawMode:Lkotlin/jvm/internal/Ref$BooleanRef;
 
@@ -407,13 +407,13 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 455
+    .line 462
     :goto_48
     invoke-static {v1}, Lkotlin/text/StringsKt;->toIntOrNull(Ljava/lang/String;)Ljava/lang/Integer;
 
     move-result-object v2
 
-    .line 457
+    .line 464
     move-object v3, v0
 
     check-cast v3, Ljava/lang/CharSequence;
@@ -430,7 +430,7 @@
 
     move v6, v4
 
-    .line 634
+    .line 641
     :goto_58
     invoke-interface {v3}, Ljava/lang/CharSequence;->length()I
 
@@ -442,7 +442,7 @@
 
     move-result v7
 
-    .line 457
+    .line 464
     invoke-static {v7}, Lkotlin/text/CharsKt;->isWhitespace(C)Z
 
     move-result v7
@@ -478,7 +478,7 @@
 
     goto/16 :goto_14d
 
-    .line 458
+    .line 465
     :cond_7d
     iget-object v3, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$2;->$rawMode:Lkotlin/jvm/internal/Ref$BooleanRef;
 
@@ -518,7 +518,7 @@
 
     goto/16 :goto_152
 
-    .line 459
+    .line 466
     :cond_a4
     iget-boolean v3, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$2;->$ipOnly:Z
 
@@ -550,7 +550,7 @@
 
     goto/16 :goto_152
 
-    .line 460
+    .line 467
     :cond_c3
     iget-boolean v3, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$2;->$ipOnly:Z
 
@@ -588,7 +588,7 @@
 
     goto/16 :goto_152
 
-    .line 461
+    .line 468
     :cond_e5
     iget-object v3, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$2;->$rawMode:Lkotlin/jvm/internal/Ref$BooleanRef;
 
@@ -645,7 +645,7 @@
 
     goto :goto_152
 
-    .line 462
+    .line 469
     :cond_11b
     check-cast v1, Ljava/lang/CharSequence;
 
@@ -681,7 +681,7 @@
 
     goto :goto_152
 
-    .line 463
+    .line 470
     :cond_139
     iget-object v1, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$2;->$onConfirm:Lkotlin/jvm/functions/Function1;
 
@@ -707,7 +707,7 @@
     :goto_14d
     const-string p0, "DNS \u670d\u52a1\u5668\u4e32\u4e0d\u80fd\u4e3a\u7a7a\uff0c\u4e5f\u4e0d\u80fd\u5305\u542b\u7a7a\u683c\u6216\u4e2d\u6587\u9017\u53f7"
 
-    .line 457
+    .line 464
     invoke-static {p0, v5}, Lcom/box/app/cfg/FormHostKt;->showToast(Ljava/lang/String;Z)V
 
     :cond_152

@@ -85,7 +85,7 @@
 .method public final invoke()Ljava/lang/Integer;
     .registers 1
 
-    .line 480
+    .line 487
     iget-object p0, p0, Lcom/box/app/cfg/FormDialogsKt$fakeIpRulesDialog$1;->$rules:Ljava/util/ArrayList;
 
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
@@ -102,7 +102,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 480
+    .line 487
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$fakeIpRulesDialog$1;->invoke()Ljava/lang/Integer;
 
     move-result-object p0

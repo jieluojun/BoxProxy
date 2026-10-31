@@ -157,7 +157,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 520
+    .line 527
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$2;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -168,7 +168,7 @@
 .method public final invoke()V
     .registers 4
 
-    .line 521
+    .line 528
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$2;->$rawMode:Lkotlin/jvm/internal/Ref$BooleanRef;
 
     iget-boolean v0, v0, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
@@ -226,7 +226,7 @@
 
     move-result-object v0
 
-    .line 522
+    .line 529
     :goto_37
     move-object v1, v0
 
@@ -270,7 +270,7 @@
 
     goto :goto_6a
 
-    .line 523
+    .line 530
     :cond_5f
     iget-object v1, p0, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$2;->$d:Lcom/box/app/cfg/Dlg;
 
@@ -292,7 +292,7 @@
 
     const/4 v2, 0x0
 
-    .line 522
+    .line 529
     invoke-static {p0, v0, v1, v2}, Lcom/box/app/cfg/FormHostKt;->showToast$default(Ljava/lang/String;ZILjava/lang/Object;)V
 
     :goto_72
