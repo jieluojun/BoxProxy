@@ -202,6 +202,7 @@
       "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/China.png",
       "outbounds": [
         "百度直连",
+        "钉钉直连",
         "中国",
         "直连出口"
       ]
@@ -276,7 +277,8 @@
       "tag": "DNS出口",
       "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Static.png",
       "outbounds": [
-        "百度直连"
+        "百度直连",
+        "钉钉直连"
       ]
     }, 
     {
