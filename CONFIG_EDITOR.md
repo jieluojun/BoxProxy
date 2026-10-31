@@ -74,3 +74,11 @@ CI 只能证明 smali 能汇编，证明不了面板能打开。`vpn-src/cfg/har
 
 `vpn-src/cfg/harness/pruned.sh` 把真正进 APK 的（裁剪后的）classes.dex 翻回 JVM 再跑随机点击——裁剪误删方法会原样复现
 （用它在修复前的提交上复现了「节点详情页 NoSuchMethodError: ListBuilder.access$getModCount$p$s-…」，修复后 0 个错误）。
+
+## 撤销（回退）
+
+编辑器（Sora CodeEditor）自己有一份撤销栈，右下角「回退」读的就是它。以前面板写回草稿走 `mj5.m(文本)` → 版本号 +1 → 编辑器
+`setText(整篇)`，这会**清空撤销栈**，所以从可视化/锚点面板回来后「回退」是灰的。现在 `uj5`（编辑器视图的 update 回调）里那次 `setText`
+改成 `CfgGlue.replaceKeep`：在原内容上做一次 `replace(0,0 → 末行末列, 新文本)`，和打字一样记入撤销栈（一次替换 = 一步撤销，
+且面板里的多次改动各是一步）。出任何异常就退回原来的 `setText`。「还原」「重新载入」同样变成可撤销。
+已用真实的 `Content`（r61）在 JVM 上验证：空/多行/CRLF/中文文本替换结果正确，撤销栈 +1。**界面上的撤销按钮未在真机验证。**

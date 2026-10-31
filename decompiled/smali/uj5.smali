@@ -245,7 +245,7 @@
 
     .line 65
     .line 66
-    invoke-virtual {p1, v5}, Lvt0;->setText(Ljava/lang/CharSequence;)V
+    invoke-static {p1, v5}, Lcom/box/app/cfg/CfgGlue;->replaceKeep(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 67
     .line 68
