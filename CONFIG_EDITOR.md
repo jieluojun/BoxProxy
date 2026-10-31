@@ -71,3 +71,6 @@ CI 只能证明 smali 能汇编，证明不了面板能打开。`vpn-src/cfg/har
 
 `prune_smali.py` 的方法名正则曾不认 `-`，把 `kotlin.Result.constructor-impl`（内联类的 `-impl` 静态方法）等裁没了，
 `整理配置` 里的 `runCatching` 运行时 `NoSuchMethodError`。已修；`vpn-src/tools/verify_smali.py` 会静态检查每个引用的方法是否存在（4 条已知误报见脚本头）。
+
+`vpn-src/cfg/harness/pruned.sh` 把真正进 APK 的（裁剪后的）classes.dex 翻回 JVM 再跑随机点击——裁剪误删方法会原样复现
+（用它在修复前的提交上复现了「节点详情页 NoSuchMethodError: ListBuilder.access$getModCount$p$s-…」，修复后 0 个错误）。
