@@ -294,9 +294,17 @@
     .line 41
     move-result-object p0
 
-    const-string v1, "LD_LIBRARY_PATH=/apex/com.android.tethering/lib64:/apex/com.android.i18n/lib64:/apex/com.android.art/lib64:/apex/com.android.runtime/lib64:/apex/com.android.os.statsd/lib64${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH} "
+    invoke-static {}, Llb0;->k()Lab0;
 
-    invoke-virtual {v1, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v0
+
+    iget-object v0, v0, Lab0;->b:Ljava/io/File;
+
+    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0, p0}, Lcom/box/app/cfg/LdFix;->wrap(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
@@ -3022,7 +3030,7 @@
 
     .line 203
     .line 204
-    const-string v13, "\n            #!/system/bin/sh\n            (\n              export PATH=\"/data/adb/magisk:/data/adb/ksu/bin:/data/adb/ap/bin:/system/bin:/system/xbin:$PATH\"\n              export BOXCTL_STDOUT_LOG_LINE=1\n              export LD_LIBRARY_PATH=\"/apex/com.android.tethering/lib64:/apex/com.android.i18n/lib64:/apex/com.android.art/lib64:/apex/com.android.runtime/lib64:/apex/com.android.os.statsd/lib64${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}\"\n              run_dir="
+    const-string v13, "\n            #!/system/bin/sh\n            (\n              export PATH=\"/data/adb/magisk:/data/adb/ksu/bin:/data/adb/ap/bin:/system/bin:/system/xbin:$PATH\"\n              export BOXCTL_STDOUT_LOG_LINE=1\n              _ld=\"\"; for _c in /data/local/tmp/.boxproxy-ld-*; do [ -f \"$_c\" ] && _ld=\"${_ld:+$_ld:}$(sed -n 2p \"$_c\")\"; done; [ -n \"$_ld\" ] || _ld=\"/apex/com.android.tethering/lib64:/apex/com.android.i18n/lib64:/apex/com.android.art/lib64:/apex/com.android.runtime/lib64:/apex/com.android.os.statsd/lib64\"; export LD_LIBRARY_PATH=\"$_ld${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}\"\n              run_dir="
 
     .line 205
     .line 206
