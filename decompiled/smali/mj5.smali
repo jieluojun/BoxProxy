@@ -58,6 +58,8 @@
 
 .field public final y:Llk4;
 
+.field public cfgD:Z
+
 
 # direct methods
 .method static constructor <clinit>()V
@@ -1036,15 +1038,19 @@
     .line 28
     .line 29
     .line 30
+    iget-boolean v1, p0, Lmj5;->cfgD:Z
+
+    const/4 v0, 0x1
+
+    iput-boolean v0, p0, Lmj5;->cfgD:Z
+
+    xor-int/lit8 v1, v1, 0x1
+
     iget-object p0, p0, Lmj5;->k:Lfz5;
 
-    .line 31
-    .line 32
     const-string v0, "load"
 
-    .line 33
-    .line 34
-    invoke-virtual {p0, p1, v0}, Lfz5;->e(Lr52;Ljava/lang/String;)V
+    invoke-static {p0, p1, v0, v1}, Lcom/box/app/cfg/CfgDefer;->post(Lfz5;Lr52;Ljava/lang/String;Z)V
 
     .line 35
     .line 36

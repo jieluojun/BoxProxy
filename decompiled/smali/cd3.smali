@@ -223,7 +223,7 @@
 
     .line 23
     .line 24
-    invoke-virtual {p1, v0, p0}, Lfz5;->d(Lr52;Ljava/lang/String;)V
+    invoke-static {p1, v0, p0}, Lcom/box/app/cfg/CfgDefer;->postD(Lfz5;Lr52;Ljava/lang/String;)V
 
     .line 25
     .line 26
@@ -257,7 +257,9 @@
 
     .line 40
     .line 41
-    invoke-virtual {p1, v0, p0}, Lfz5;->e(Lr52;Ljava/lang/String;)V
+    const/4 v3, 0x1
+
+    invoke-static {p1, v0, p0, v3}, Lcom/box/app/cfg/CfgDefer;->post(Lfz5;Lr52;Ljava/lang/String;Z)V
 
     .line 42
     .line 43
