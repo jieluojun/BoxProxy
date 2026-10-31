@@ -1,0 +1,590 @@
+{
+  "log": {
+    "level": "info",
+    "output": "sing-box.log",
+    "timestamp": true
+  },
+  "providers": [
+    /*
+    {
+      "type": "local",
+      "tag": "非免节点",
+      "path": "./proxies/非免节点.txt",
+      "health_check": {
+        "enabled": true,
+        "interval": "1m0s",
+        "timeout": "5s"
+      },
+      "override_dialer": {
+        "detour": "链式代理"
+      }
+    },
+    */
+    {
+      "type": "remote",
+      "tag": "免流订阅",
+      "url": "https://gist.githubusercontent.com/jieluojun/d4b528ee3418740112357a80e940d912/raw/MLSub",
+      "path": "./proxies/免流订阅.json",
+      "update_interval": "3h",
+      "health_check": {
+        "enabled": true,
+        "interval": "1m0s",
+        "timeout": "5s"
+      }
+    },
+    {
+      "type": "remote",
+      "tag": "CNS订阅",
+      "url": "https://gist.githubusercontent.com/jieluojun/d4b528ee3418740112357a80e940d912/raw/SingBox-CNS",
+      "path": "./proxies/CNS订阅.json",
+      "update_interval": "3h",
+      "health_check": {
+        "enabled": true,
+        "interval": "1m0s",
+        "timeout": "5s"
+      }
+    },
+    {
+      "type": "remote",
+      "tag": "百度直连",
+      "url": "https://gist.githubusercontent.com/jieluojun/d4b528ee3418740112357a80e940d912/raw/BaiduDirect",
+      "path": "./proxies/百度直连.json",
+      "user_agent": "sing-box",
+      "update_interval": "3h",
+      "health_check": {
+        "enabled": true,
+        "interval": "1m0s",
+        "timeout": "5s"
+      }
+    },
+    {
+      "type": "remote",
+      "tag": "钉钉直连",
+      "url": "https://gist.githubusercontent.com/jieluojun/d4b528ee3418740112357a80e940d912/raw/SingBox-DingTalkDirect",
+      "path": "./proxies/钉钉直连.json",
+      "user_agent": "sing-box",
+      "update_interval": "3h",
+      "health_check": {
+        "enabled": true,
+        "interval": "1m0s",
+        "timeout": "5s"
+      }
+    }
+  ],
+  "dns": {
+    "servers": [
+      {
+        "type": "https",
+        "tag": "谷歌DNS",
+        "detour": "国外出口",
+        "server": "8.8.8.8"
+      },
+      {
+        "type": "https",
+        "tag": "CF-DNS",
+        "detour": "国外出口",
+        "server": "1.1.1.1"
+      },
+      {
+        "type": "https",
+        "tag": "腾讯DNS",
+        "detour": "DNS出口",
+        "server": "1.12.12.12"
+      },
+      {
+        "type": "https",
+        "tag": "阿里DNS",
+        "server": "223.5.5.5"
+      },
+      {
+        "type": "fakeip",
+        "tag": "虚拟DNS",
+        "inet4_range": "198.18.0.1/16",
+        "inet6_range": "fc00::/18"
+      }
+    ],
+    "rules": [
+      {
+        "clash_mode": "全局",
+        "server": "CF-DNS"
+      },
+      {
+        "clash_mode": "直连",
+        "server": "阿里DNS"
+      },
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "query_type": [
+              "A",
+              "AAAA"
+            ]
+          },
+          {
+            "domain": "cloudflare-ech.com",
+            "domain_suffix": [
+              ".9966338.xyz",
+              ".grpcendpoint.shop",
+              ".outsidemyheart.space"
+            ],
+            "domain_regex": "(^|\\.)(alt[1-8]-mtalk|mtalk|mtalk4)\\.google\\.com$",
+            "rule_set": [
+              "排除域名",
+              "大陆域名"
+            ],
+            "invert": true
+          }
+        ],
+        "server": "虚拟DNS",
+        "rewrite_ttl": 1
+      },
+      {
+        "domain": "cloudflare-ech.com",
+        "domain_suffix": [
+          ".9966338.xyz",
+          ".grpcendpoint.shop",
+          ".outsidemyheart.space"
+        ],
+        "domain_regex": "(^|\\.)(alt[1-8]-mtalk|mtalk|mtalk4)\\.google\\.com$",
+        "server": "腾讯DNS"
+      },
+      {
+        "rule_set": "海外域名",
+        "server": "谷歌DNS"
+      },
+      {
+        "clash_mode": "规则",
+        "rule_set": "大陆域名",
+        "server": "腾讯DNS"
+      }
+    ],
+    "final": "谷歌DNS",
+    "strategy": "prefer_ipv4",
+    "cache_capacity": 4096,
+    "optimistic": true
+  },
+  "inbounds": [
+    {
+      "type": "mixed",
+      "tag": "mixed-in",
+      "listen": "::",
+      "listen_port": 7890
+    },
+    {
+      "type": "tun",
+      "tag": "tun-in",
+      "interface_name": "sing",
+      "address": [
+        "172.18.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "mtu": 9000,
+      "stack": "system",
+      "auto_route": true
+    }
+  ],
+  "outbounds": [
+    {
+      "type": "direct",
+      "tag": "直连出口",
+      "domain_resolver": "阿里DNS"
+    },
+    {
+      "type": "block",
+      "tag": "流量拦截"
+    },
+    {
+      "type": "pass",
+      "tag": "跳过规则"
+    },
+    {
+      "type": "selector",
+      "tag": "国外出口",
+      "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Global.png",
+      "outbounds": [
+        "香港",
+        "台湾",
+        "日本",
+        "韩国",
+        "新加坡",
+        "美国"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "国内出口",
+      "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/China.png",
+      "outbounds": [
+        "百度直连",
+        "中国",
+        "直连出口"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "百度直连",
+      "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/baidu.png",
+      "include": "",
+      "providers": [
+        "百度直连"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "钉钉直连",
+      "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/dingtalk.png",
+      "include": "",
+      "providers": [
+        "钉钉直连"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "游戏UDP",
+      "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/GAME.png",
+      "outbounds": [
+        "中国",
+        "直连出口"
+      ],
+      "providers": [
+        "CNS订阅"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "全部UDP",
+      "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Kache.png",
+      "outbounds": [
+        "跳过规则",
+        "中国",
+        "直连出口"
+      ],
+      "providers": [
+        "CNS订阅"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "链式代理",
+      "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Final.png",
+      "outbounds": [
+        "百度直连",
+        "钉钉直连"
+      ],
+      "providers": [
+        "免流订阅"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "订阅更新",
+      "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Skicat.png",
+      "outbounds": [
+        "国外出口",
+        "国内出口",
+        "直连出口"
+      ]
+    },
+    {
+      "type": "selector",
+      "tag": "DNS出口",
+      "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Static.png",
+      "outbounds": [
+        "百度直连"
+      ]
+    }, 
+    {
+      "type": "selector",
+      "tag": "广告出口",
+      "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/Adblock.png",
+      "outbounds": [
+        "跳过规则",
+        "流量拦截"
+      ]
+    }, 
+    {
+      "type": "selector",
+      "tag": "中国",
+      "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/CN.png",
+      "include": "江苏|浙江|杭州|常州|南京|北京|上海|广东|广州|苏州|杭州|福州|扬州|贵州|兰州|徐州|郑州|广西|河南|河北|重庆|南宁|宿迁|沈阳|四川|安徽|深圳|辽宁|济南|九江|长沙|昆明|武汉|陕西|西宁|芜湖|天津|南昌|成都|山西|太原|保定|湖南|湖北|德阳|山东|十堰|青岛|合肥|云南|西安|内蒙古|青海",
+      "exclude_type": [
+        "direct",
+        "Http",
+        "Cns"
+      ],
+      "use_all_providers": true
+    },
+    {
+      "type": "selector",
+      "tag": "香港",
+      "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/HK.png",
+      "include": "(?i)港|hk|hongkong|hong kong",
+      "use_all_providers": true
+    },
+    {
+      "type": "selector",
+      "tag": "台湾",
+      "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/TW.png",
+      "include": "(?i)台|tw|taiwan",
+      "use_all_providers": true
+    },
+    {
+      "type": "selector",
+      "tag": "日本",
+      "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/JP.png",
+      "include": "(?i)日|jp|japan",
+      "use_all_providers": true
+    },
+    {
+      "type": "selector",
+      "tag": "韩国",
+      "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/KR.png",
+      "include": "(?i)韩|kr|korea",
+      "use_all_providers": true
+    },
+    {
+      "type": "selector",
+      "tag": "新加坡",
+      "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/SG.png",
+      "include": "(?i)新|sg|singapore",
+      "use_all_providers": true
+    },
+    {
+      "type": "selector",
+      "tag": "美国",
+      "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/US.png",
+      "include": "(?i)美|us|unitedstates|united states",
+      "use_all_providers": true
+    },
+    {
+      "type": "selector",
+      "tag": "其它",
+      "icon": "https://fastly.jsdelivr.net/gh/Orz-3/mini@master/Color/XD.png",
+      "exclude": "(?i)🇭🇰|🇨🇳|🇯🇵|🇰🇷|🇸🇬|🇺🇸|港|hk|hongkong|台|tw|taiwan|日|jp|japan|韩|kr|korea|新|sg|singapore|美|us|unitedstates|江苏|浙江|杭州|常州|南京|北京|上海|广东|广州|苏州|杭州|福州|扬州|贵州|兰州|徐州|郑州|广西|河南|河北|重庆|南宁|宿迁|沈阳|四川|安徽|深圳|辽宁|济南|九江|长沙|昆明|武汉|陕西|西宁|芜湖|天津|南昌|成都|山西|太原|保定|湖南|湖北|德阳|山东|十堰|青岛|合肥|云南|西安|内蒙古|青海",
+      "use_all_providers": true
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "action": "sniff"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "port": 53
+          },
+          {
+            "protocol": "dns"
+          }
+        ],
+        "action": "hijack-dns"
+      },
+      {
+        "clash_mode": "全局",
+        "outbound": "国外出口"
+      },
+      {
+        "clash_mode": "直连",
+        "outbound": "直连出口"
+      },
+      {
+        "rule_set": "广告域名",
+        "outbound": "广告出口"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "network": "udp",
+            "port": [
+              443,
+              3478,
+              5349
+            ]
+          },
+          {
+            "network": "udp",
+            "rule_set": "本地地址"
+          },
+          {
+            "protocol": "stun"
+          },
+          {
+            "domain": [
+              "cdnws.api.huya.com",
+              "wswup.cdn.huya.com"
+            ]
+          },
+          {
+            "domain_keyword": [
+              "p2p",
+              "stun",
+              "pcdn",
+              "mcdn",
+              "torrent",
+              "tracker",
+              "httpdns",
+              "playstation"
+            ]
+          }
+        ],
+        "action": "reject",
+        "method": "drop"
+      },
+      {
+        "network": "udp",
+        "package_name": [
+          "com.tencent.tmgp.cf",
+          "com.tencent.tmgp.sgame",
+          "com.tencent.ngr"
+        ],
+        "outbound": "游戏UDP"
+      },
+      {
+        "network": "udp",
+        "outbound": "全部UDP"
+      },
+      {
+        "domain_regex": "(^|\\.)(alt[1-8]-mtalk|mtalk|mtalk4)\\.google\\.com$",
+        "outbound": "国内出口"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "rule_set": "海外域名"
+          },
+          {
+            "domain_suffix": [
+              "right.com.cn",
+              "sgameglobal.com"
+            ]
+          },
+          {
+            "port": 446
+          }
+        ],
+        "outbound": "国外出口"
+      },
+      {
+        "domain_suffix": [
+          "xajtl.com",
+          "dlproxy.uk",
+          "steamcontent.com",
+          "xn--qfsx5xvnik06b.com"
+        ],
+        "clash_mode": "规则",
+        "outbound": "国内出口"
+      },
+      {
+        "clash_mode": "规则",
+        "rule_set": "大陆域名",
+        "outbound": "国内出口"
+      },
+      {
+        "rule_set": "本地地址",
+        "outbound": "直连出口"
+      },
+      {
+        "clash_mode": "规则",
+        "rule_set": "大陆地址",
+        "outbound": "国内出口"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "排除域名",
+        "path": "./rules/排除域名.srs",
+        "url": "https://v6.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/fakeip-filter.srs",
+        "update_interval": "24h"
+      },
+      {
+        "type": "remote",
+        "tag": "广告域名",
+        "path": "./rules/广告域名.srs",
+        "url": "https://v6.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/ads.srs",
+        "update_interval": "24h"
+      },
+      {
+        "type": "remote",
+        "tag": "海外域名",
+        "path": "./rules/海外域名.srs",
+        "url": "https://v6.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/proxy.srs",
+        "update_interval": "24h"
+      },
+      {
+        "type": "remote",
+        "tag": "大陆域名",
+        "path": "./rules/大陆域名.srs",
+        "url": "https://v6.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/cn.srs",
+        "update_interval": "24h"
+      },
+      {
+        "type": "remote",
+        "tag": "本地地址",
+        "path": "./rules/本地地址.srs",
+        "url": "https://v6.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/private.srs",
+        "update_interval": "24h"
+      },
+      {
+        "type": "remote",
+        "tag": "大陆地址",
+        "path": "./rules/大陆地址.srs",
+        "url": "https://v6.gh-proxy.org/https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/cnip.srs",
+        "update_interval": "24h"
+      }
+    ],
+    "final": "国外出口",
+    "find_process": true,
+    "auto_detect_interface": true,
+    "default_domain_resolver": "腾讯DNS",
+    "default_http_client": "远程下载"
+  },
+  "services": [
+    {
+      "type": "api",
+      "tag": "sing-box-api",
+      "listen": "0.0.0.0",
+      "listen_port": 9999,
+      "dashboard": {
+        "enabled": true,
+        "path": "sing-box-dashboard",
+        "download_url": "https://v6.gh-proxy.org/https://github.com/SagerNet/sing-box-dashboard/archive/refs/heads/gh-pages.zip",
+        "http_client": "远程下载"
+      }
+    }
+  ],
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "cache.db",
+      "store_fakeip": true,
+      "store_dns": true
+    },
+    "clash_api": {
+      "external_controller": "0.0.0.0:9090",
+      "external_ui": "ui",
+      "external_ui_download_url": "https://v6.gh-proxy.org/https://github.com/Zephyruso/zashboard/releases/latest/download/dist-no-fonts-singbox-native.zip",
+      "external_ui_http_client": "远程下载",
+      "default_mode": "规则"
+    },
+    "urltest_unified_delay": true
+  },
+  "http_clients": [
+    {
+      "tag": "远程下载",
+      "version": 2,
+      "detour": "订阅更新",
+      "stream_receive_window": 0,
+      "connection_receive_window": 0
+    }
+  ]
+}

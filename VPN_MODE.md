@@ -242,3 +242,37 @@ HyperOS / Android 12+ 的系统 Toast 会把长文字截成「…」（如「更
 `FToast` 继承 `Toast`，`show()` 改为在前台 Activity 上弹 `cfg.FullToast`（不抢焦点、点击穿透、按文字长度自动消失，完整显示全部文字；底色和系统 Toast 一致：浅色模式浅灰底深色字，夜间模式深底白字）。
 前台 Activity 由 `AppApplication.onCreate` 注册的 `ActivityLifecycleCallbacks` 跟踪（resume 记录，pause/destroy 清除）；
 App 在后台或没有前台 Activity（比如 VPN 服务里弹的）时回退到系统 Toast。`cfg` 包自己原有的 `FullToast` 路径不变。
+
+## 工具页「更新核心」：Sing-Box Smart + eBPF + 钉钉直连
+
+和 Mihomo 那一项同样的做法，加在 Sing-Box reF1nd 后面，id `sing-box_dingtalk`（名称资源 `proxy_core_sing_box_dingtalk`，`0x7f0f04ab`），
+目标核心仍是 `sing-box`（装进 `box/bin/sing-box`）：
+
+- 下载：`qa1.g` 新分支调 `g91.b("jieluojun/sing-box", false)`，取 `/releases?per_page=1`（该仓库只有 prerelease、没有 `latest`，
+  且每次构建 tag 都变，所以用「最新一条」），匹配资源 `sing-box-<版本>-android-arm64-v8a-ebpf.tar.gz`（不含 `-easytier` 的那个），按 TarGz 解出 `sing-box`；
+- id 映射回 `sing-box`：`lb0.h`（核心归一化，未知 id 默认回落 mihomo，所以必须加）、`qa1.f`、`l33.m`（版本文案）；
+- 显示的版本号是 release tag（和 reF1nd 一样）；已装版本是跑 `sing-box version` 得到的首行，只用于显示，不参与比较。
+
+## 内置免流配置（mihomo / sing-box）
+
+首次启动时（`lb0.d` → `VpnSeed.run`），把内置配置各复制一份到对应核心目录，已有同名文件不覆盖，
+用 `SharedPreferences box_seed` 的标记保证用户删掉后不会再冒出来：
+
+| 资源 | 目标 | 标记 |
+|---|---|---|
+| `assets/box/mihomo/mianliu.yaml` | `box/mihomo/免流.yaml` | `mianliu_yaml` |
+| `assets/box/sing-box/mianliu.json` | `box/sing-box/免流.json` | `mianliu_json` |
+
+升级时不会自动覆盖已有的文件（也不会改用户改过的内容）。老用户升级后会补上 sing-box 的这份（标记是新的）。
+sing-box 版是 1.15 的 providers 格式（`type: remote` 的 `免流订阅` / `CNS订阅` / `百度直连` / `钉钉直连`），
+需要 sing-box Smart + eBPF + 钉钉直连 那个核心才支持（可在工具页「更新核心」里装）。
+
+### 恢复默认配置（手动）
+
+基础代理配置页 →「配置选择」右侧「+」菜单最下面的「恢复默认配置」（`RestoreCfg.smali`）：
+
+- 当前核心是 Mihomo → 用内置的 `免流.yaml` 覆盖 `box/mihomo/免流.yaml`；是 sing-box → 覆盖 `box/sing-box/免流.json`；
+  其他核心没有内置配置，只弹提示。
+- 原文件（如果有）先改名为 `<原名>.bak`（已有的 `.bak` 会被替换）；列表按扩展名过滤，`.bak` 不会显示在配置列表里。
+- 通过页面原有的任务通道（`Lwt4` / `Lxt4.l`）执行，完成后列表自动刷新，并弹出完整文字提示。
+- 菜单项加在两处弹窗里：`hv4`（`Ls50.w`）和 `q.p`（`Lve3.C`），ViewModel 由 `ku4` / `rv4` 的构造函数登记到 `RestoreCfg.vm`。

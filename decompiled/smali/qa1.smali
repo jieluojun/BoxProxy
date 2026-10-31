@@ -526,6 +526,19 @@
     goto :goto_0
 
     :cond_dt
+    const-string v1, "sing-box_dingtalk"
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_dt3
+
+    const-string v0, "sing-box"
+
+    goto :goto_0
+
+    :cond_dt3
     const-string v1, "sing-box_ref1nd"
 
     .line 17
@@ -2034,6 +2047,11 @@
 
     goto/16 :goto_dd
 
+    :pswitch_10
+    invoke-static {v1}, Lc33;->N(Ljava/lang/Object;)V
+
+    goto/16 :goto_sd
+
     .line 67
     .line 68
     :pswitch_1
@@ -3176,6 +3194,63 @@
 
     return-object v0
 
+    :sswitch_8
+    const-string v1, "sing-box_dingtalk"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_c
+
+    const/16 v0, 0xa
+
+    iput v0, v3, Loa1;->m:I
+
+    const-string v0, "jieluojun/sing-box"
+
+    const/4 v1, 0x0
+
+    invoke-virtual {v2, v0, v1, v3}, Lg91;->b(Ljava/lang/String;ZLd81;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-ne v1, v4, :cond_sd
+
+    goto/16 :goto_d
+
+    :cond_sd
+    :goto_sd
+    check-cast v1, Lh91;
+
+    new-instance v2, Lgo2;
+
+    const-string v0, "sing-box-.+-android-arm64-v8a-ebpf\\.tar\\.gz"
+
+    invoke-direct {v2, v0}, Lgo2;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v2}, Lh91;->a(Lgo2;)Lb91;
+
+    move-result-object v19
+
+    new-instance v14, Lga1;
+
+    iget-object v0, v1, Lh91;->a:Ljava/lang/String;
+
+    const-string v21, "sing-box"
+
+    const-string v15, "sing-box_dingtalk"
+
+    const-string v16, "sing-box"
+
+    const-string v17, "Sing-Box Smart + eBPF + \u9489\u9489\u76f4\u8fde"
+
+    move-object/from16 v18, v0
+
+    invoke-direct/range {v14 .. v21}, Lga1;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lb91;Li81;Ljava/lang/String;)V
+
+    return-object v14
+
     :sswitch_6
     const-string v1, "sing-box_ref1nd"
 
@@ -3414,6 +3489,7 @@
         :pswitch_1
         :pswitch_0
         :pswitch_9
+        :pswitch_10
     .end packed-switch
 
     .line 704
@@ -3448,6 +3524,7 @@
         0x3844b2 -> :sswitch_2
         0x6971c77 -> :sswitch_1
         0x1e0bf18d -> :sswitch_0
+        0x3ba6411c -> :sswitch_8
     .end sparse-switch
 .end method
 

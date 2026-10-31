@@ -326,7 +326,19 @@
     .line 131
     .line 132
     .line 133
-    filled-new-array {v3, v1, v4}, [Lsj4;
+    const v8, 0x7f0f04ac
+
+    invoke-static {v8, v14}, Lk53;->c0(ILz01;)Ljava/lang/String;
+
+    move-result-object v8
+
+    sget-object v9, Lcom/box/app/vpn/RestoreCfg;->MENU:Lcom/box/app/vpn/RestoreCfg;
+
+    new-instance v10, Lsj4;
+
+    invoke-direct {v10, v8, v9}, Lsj4;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    filled-new-array {v3, v1, v4, v10}, [Lsj4;
 
     .line 134
     .line 135

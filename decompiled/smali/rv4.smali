@@ -88,6 +88,8 @@
     .line 20
     iput-object p9, p0, Lrv4;->r:Lxt4;
 
+    invoke-static {p9}, Lcom/box/app/vpn/RestoreCfg;->vm(Lxt4;)V
+
     .line 21
     .line 22
     iput-object p10, p0, Lrv4;->s:Landroid/content/Context;

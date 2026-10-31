@@ -614,6 +614,12 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="proxy_core_mihomo_dingtalk">Mihomo Smart + eBPF + 钉钉直连</string>
     <string name="proxy_core_sing_box">Sing-Box</string>
     <string name="proxy_core_sing_box_ref1nd">Sing-Box reF1nd</string>
+    <string name="proxy_core_sing_box_dingtalk">Sing-Box Smart + eBPF + 钉钉直连</string>
+    <string name="proxy_config_restore_default">Restore default config</string>
+    <string name="proxy_config_restore_done">Restored default config: %1$s</string>
+    <string name="proxy_config_restore_done_bak">Restored default config: %1$s (old file backed up as %1$s.bak)</string>
+    <string name="proxy_config_restore_failed">Failed to restore default config: %1$s</string>
+    <string name="proxy_config_restore_none">The current core has no built-in default config</string>
     <string name="proxy_core_title">Core</string>
     <string name="proxy_core_v2fly">V2Fly</string>
     <string name="proxy_core_xray">Xray</string>
