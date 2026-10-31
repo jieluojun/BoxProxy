@@ -1,12 +1,50 @@
 .class public final Lcom/box/app/vpn/VpnSeed;
 .super Ljava/lang/Object;
 
-# Seeds the built-in extra mihomo config (assets/box/mihomo/mianliu.yaml) into the
-# mihomo directory as "免流.yaml" once per install (a SharedPreferences flag keeps it
-# from coming back after the user deletes it). An existing file is never overwritten.
+# Seeds the built-in extra configs into the core directories once per install (a
+# SharedPreferences flag per file keeps them from coming back after the user deletes them).
+# An existing file is never overwritten:
+#   assets/box/mihomo/mianliu.yaml   -> mihomo/免流.yaml
+#   assets/box/sing-box/mianliu.json -> sing-box/免流.json
 # Hooked into Llb0;->d (runtime directory setup).
 
 .method public static run(Lab0;)V
+    .locals 5
+
+    :try_start_0
+    const-string v0, "mianliu_yaml"
+
+    const-string v1, "mihomo"
+
+    const-string v2, "\u514d\u6d41.yaml"
+
+    const-string v3, "box/mihomo/mianliu.yaml"
+
+    move-object v4, v3
+
+    invoke-static {p0, v0, v1, v2, v4}, Lcom/box/app/vpn/VpnSeed;->seed(Lab0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    :try_start_1
+    const-string v0, "mianliu_json"
+
+    const-string v1, "sing-box"
+
+    const-string v2, "\u514d\u6d41.json"
+
+    const-string v3, "box/sing-box/mianliu.json"
+
+    invoke-static {p0, v0, v1, v2, v3}, Lcom/box/app/vpn/VpnSeed;->seed(Lab0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_1
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
+
+    :catch_1
+    return-void
+.end method
+
+.method private static seed(Lab0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 8
 
     :try_start_0
@@ -22,7 +60,7 @@
 
     move-result-object v1
 
-    const-string v2, "mianliu_yaml"
+    move-object v2, p1
 
     const/4 v3, 0x0
 
@@ -32,11 +70,7 @@
 
     if-nez v3, :cond_done
 
-    const-string v3, "mihomo"
-
-    const-string v4, "\u514d\u6d41.yaml"
-
-    invoke-virtual {p0, v3, v4}, Lab0;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
+    invoke-virtual {p0, p2, p3}, Lab0;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v3
 
@@ -59,9 +93,7 @@
 
     move-result-object v4
 
-    const-string v5, "box/mihomo/mianliu.yaml"
-
-    invoke-virtual {v4, v5}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
+    invoke-virtual {v4, p4}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
 
     move-result-object v4
 

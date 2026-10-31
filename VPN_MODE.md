@@ -252,3 +252,16 @@ App 在后台或没有前台 Activity（比如 VPN 服务里弹的）时回退�
   且每次构建 tag 都变，所以用「最新一条」），匹配资源 `sing-box-<版本>-android-arm64-v8a-ebpf.tar.gz`（不含 `-easytier` 的那个），按 TarGz 解出 `sing-box`；
 - id 映射回 `sing-box`：`lb0.h`（核心归一化，未知 id 默认回落 mihomo，所以必须加）、`qa1.f`、`l33.m`（版本文案）；
 - 显示的版本号是 release tag（和 reF1nd 一样）；已装版本是跑 `sing-box version` 得到的首行，只用于显示，不参与比较。
+
+## 内置免流配置（mihomo / sing-box）
+
+首次启动时（`lb0.d` → `VpnSeed.run`），把内置配置各复制一份到对应核心目录，已有同名文件不覆盖，
+用 `SharedPreferences box_seed` 的标记保证用户删掉后不会再冒出来：
+
+| 资源 | 目标 | 标记 |
+|---|---|---|
+| `assets/box/mihomo/mianliu.yaml` | `box/mihomo/免流.yaml` | `mianliu_yaml` |
+| `assets/box/sing-box/mianliu.json` | `box/sing-box/免流.json` | `mianliu_json` |
+
+老用户升级后也会补上 sing-box 的这份（标记是新的）。sing-box 版是 1.15 的 providers 格式（`type: remote` 的 `免流订阅` / `CNS订阅` / `百度直连` / `钉钉直连`），
+需要 sing-box Smart + eBPF + 钉钉直连 那个核心才支持（可在工具页「更新核心」里装）。
