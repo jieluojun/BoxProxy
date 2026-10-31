@@ -90,7 +90,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 401
+    .line 403
     check-cast p1, Ljava/lang/Boolean;
 
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
@@ -107,7 +107,7 @@
 .method public final invoke(Z)V
     .registers 2
 
-    .line 401
+    .line 403
     iget-object p0, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$swRow$s$1;->$onChange:Lkotlin/jvm/functions/Function1;
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;

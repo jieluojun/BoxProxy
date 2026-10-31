@@ -11,7 +11,9 @@
    必须在 setContentView 之前）、Window（`getInsetsController` 在 setContentView 之前会抛 NPE）、Toast、Resources。
 3. `Main.kt`：反射 onCreate，然后随机 点击 / 切换开关 / 往输入框打字（含各种代理 URI）/ 返回 / 关弹窗，记录抛出的异常。
 
-跑法（工具路径见 `../../tools/build-cfg.sh` 的说明）：
+一键：`T=<工具目录> sh build.sh [steps] [seeds…]`（含 `DragTest.kt`：用假布局驱动 DragSort 的触摸序列，检查换位顺序 / 回调 / FLIP 动画被触发）。
+
+手动跑法（工具路径见 `../../tools/build-cfg.sh` 的说明）：
 ```
 java -Xverify:none -cp <Lite.class>:<d8.jar> Lite android.jar <fakes.jar> android-lite.jar
 kotlinc ... Main.kt ; java -Xverify:none -cp hc:app:android-lite.jar:kotlin-stdlib-1.9.jar MainKt <sdk> <steps> <seed> form|anchor a.yaml b.yaml

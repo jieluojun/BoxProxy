@@ -82,7 +82,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 623
+    .line 625
     check-cast p1, Ltop/yukonga/mishka/custom/forms/InstalledAppRow;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8$rows$3;->invoke(Ltop/yukonga/mishka/custom/forms/InstalledAppRow;)Ljava/lang/String;
@@ -95,7 +95,7 @@
 .method public final invoke(Ltop/yukonga/mishka/custom/forms/InstalledAppRow;)Ljava/lang/String;
     .registers 2
 
-    .line 623
+    .line 625
     invoke-virtual {p1}, Ltop/yukonga/mishka/custom/forms/InstalledAppRow;->getPackageName()Ljava/lang/String;
 
     move-result-object p0

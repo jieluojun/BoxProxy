@@ -102,10 +102,12 @@ internal class RowList(
         for (i in 0 until count()) {
             val r = row(c, title(i), summary(i), titleLines = 2, summaryLines = 2, titleMono = mono)
             val h = LinearLayout(c); h.orientation = LinearLayout.HORIZONTAL; h.gravity = Gravity.CENTER_VERTICAL
-            h.addView(sort.handle(r))
+            var rowvRef: LinearLayout? = null
+            h.addView(sort.handleL { rowvRef!! })
             if (numbered) h.addView(chip(c, (i + 1).toString()), lp(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT))
             val rowv = LinearLayout(c); rowv.orientation = LinearLayout.HORIZONTAL; rowv.gravity = Gravity.CENTER_VERTICAL
             rowv.setBackgroundColor(Th.card)
+            rowvRef = rowv
             rowv.addView(h)
             r.setPadding(c.dp(4), c.dp(8), c.dp(4), c.dp(8)); r.minimumHeight = 0
             rowv.addView(r, LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f))

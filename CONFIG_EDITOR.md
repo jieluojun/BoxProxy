@@ -54,3 +54,10 @@ CI 只能证明 smali 能汇编，证明不了面板能打开。`vpn-src/cfg/har
 - 「请求头」弹窗里有「暂无请求头」提示行时，删除一行用 `box.indexOfChild` 当下标，越界；改成按输入框自身查下标。
 
 它不覆盖：布局 / 触摸 / 主题、手写 smali（CfgNav / CfgIcon / CfgClick）、顶栏按钮的挂载点。
+
+## 拖动排序
+
+`DragSort`（`vpn-src/cfg/app/.../Ui.kt`）对齐 Mishka 的 `DragSort`：按住把手即拖；列表内**实时换位**（命中判定直接用 Mishka 的 `dragInsertIndex`）；
+其余行 FLIP 滑移（260ms，cubic-bezier(.2,.8,.25,1)）；被拖行即换即到位；上下边缘自动翻滚（E = clamp(15%, 44dp, 88dp)，1~14 dp/帧）；
+拖动行 .55 透明 + 强调色淡底 + 虚线描边 + 阴影；数据只在松手时 `onMove(from, to)` 一次。
+被拖行自己不会被 `removeView`（否则 ViewGroup 会给把手发 ACTION_CANCEL），换位时挪的是它旁边的行。

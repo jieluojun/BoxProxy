@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$entryDialog$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,631:1\n1549#2:632\n1620#2,3:633\n766#2:636\n857#2,2:637\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$entryDialog$1\n*L\n330#1:632\n330#1:633,3\n330#1:636\n330#1:637,2\n*E\n"
+    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$entryDialog$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,633:1\n1549#2:634\n1620#2,3:635\n766#2:638\n857#2,2:639\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$entryDialog$1\n*L\n332#1:634\n332#1:635,3\n332#1:638\n332#1:639,2\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,7 +49,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$entryDialog$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,631:1\n1549#2:632\n1620#2,3:633\n766#2:636\n857#2,2:637\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$entryDialog$1\n*L\n330#1:632\n330#1:633,3\n330#1:636\n330#1:637,2\n*E\n"
+        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$entryDialog$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,633:1\n1549#2:634\n1620#2,3:635\n766#2:638\n857#2,2:639\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$entryDialog$1\n*L\n332#1:634\n332#1:635,3\n332#1:638\n332#1:639,2\n*E\n"
     }
 .end annotation
 
@@ -86,7 +86,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 329
+    .line 331
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$entryDialog$1;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -97,7 +97,7 @@
 .method public final invoke()V
     .registers 11
 
-    .line 330
+    .line 332
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$entryDialog$1;->$c:Landroid/content/Context;
 
     new-instance v1, Ljava/lang/StringBuilder;
@@ -158,7 +158,7 @@
 
     check-cast v3, Ljava/lang/Iterable;
 
-    .line 632
+    .line 634
     new-instance v4, Ljava/util/ArrayList;
 
     const/16 v5, 0xa
@@ -171,7 +171,7 @@
 
     check-cast v4, Ljava/util/Collection;
 
-    .line 633
+    .line 635
     invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v3
@@ -187,10 +187,10 @@
 
     move-result-object v5
 
-    .line 634
+    .line 636
     check-cast v5, Ljava/lang/String;
 
-    .line 330
+    .line 332
     check-cast v5, Ljava/lang/CharSequence;
 
     invoke-static {v5}, Lkotlin/text/StringsKt;->trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
@@ -201,26 +201,26 @@
 
     move-result-object v5
 
-    .line 634
+    .line 636
     invoke-interface {v4, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_49
 
-    .line 635
+    .line 637
     :cond_63
     check-cast v4, Ljava/util/List;
 
-    .line 632
+    .line 634
     check-cast v4, Ljava/lang/Iterable;
 
-    .line 636
+    .line 638
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     check-cast v3, Ljava/util/Collection;
 
-    .line 637
+    .line 639
     invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
@@ -241,7 +241,7 @@
 
     check-cast v6, Ljava/lang/String;
 
-    .line 330
+    .line 332
     check-cast v6, Ljava/lang/CharSequence;
 
     invoke-interface {v6}, Ljava/lang/CharSequence;->length()I
@@ -260,18 +260,18 @@
     :goto_8a
     if-eqz v6, :cond_72
 
-    .line 637
+    .line 639
     invoke-interface {v3, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_72
 
-    .line 638
+    .line 640
     :cond_90
     check-cast v3, Ljava/util/List;
 
     const/4 v4, 0x0
 
-    .line 330
+    .line 332
     new-instance v2, Lcom/box/app/cfg/FormDialogsKt$entryDialog$1$3;
 
     iget-object p0, p0, Lcom/box/app/cfg/FormDialogsKt$entryDialog$1;->$vals:Landroid/widget/EditText;

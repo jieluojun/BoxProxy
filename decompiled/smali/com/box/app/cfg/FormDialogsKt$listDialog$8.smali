@@ -116,7 +116,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 175
+    .line 177
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$listDialog$8;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -127,7 +127,7 @@
 .method public final invoke()V
     .registers 4
 
-    .line 175
+    .line 177
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$listDialog$8;->$d:Lcom/box/app/cfg/Dlg;
 
     invoke-virtual {v0}, Lcom/box/app/cfg/Dlg;->dismiss()V

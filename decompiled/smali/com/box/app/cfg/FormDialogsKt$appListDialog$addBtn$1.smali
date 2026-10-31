@@ -79,7 +79,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 573
+    .line 575
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$appListDialog$addBtn$1;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;

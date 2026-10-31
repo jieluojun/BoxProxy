@@ -75,7 +75,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 330
+    .line 332
     check-cast p1, Ljava/util/List;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/FormDialogsKt$entryDialog$1$3;->invoke(Ljava/util/List;)V
@@ -96,7 +96,7 @@
         }
     .end annotation
 
-    .line 331
+    .line 333
     iget-object p0, p0, Lcom/box/app/cfg/FormDialogsKt$entryDialog$1$3;->$vals:Landroid/widget/EditText;
 
     move-object v0, p1

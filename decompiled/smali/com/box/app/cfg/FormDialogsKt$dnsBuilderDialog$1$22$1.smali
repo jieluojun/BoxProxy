@@ -289,7 +289,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 441
+    .line 443
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$22$1;->invoke(Ljava/lang/String;)V
@@ -302,7 +302,7 @@
 .method public final invoke(Ljava/lang/String;)V
     .registers 16
 
-    .line 441
+    .line 443
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$22$1;->$protocol:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iget-object v1, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$22$1;->$address:Lkotlin/jvm/internal/Ref$ObjectRef;

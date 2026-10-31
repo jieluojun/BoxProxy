@@ -19,6 +19,7 @@ public abstract class F_ViewGroup extends F_View {
     public void removeView(View v) { if (fKids.remove(v)) ((F_View) (Object) v).fParent = null; }
     public void removeViewAt(int i) { View v = fKids.remove(i); ((F_View) (Object) v).fParent = null; }
     public void removeAllViews() { for (View v : fKids) ((F_View) (Object) v).fParent = null; fKids.clear(); }
+    public int getHeight() { if (fKids.isEmpty()) return fH; int h = 0; for (View v : fKids) h += v.getHeight(); return h; }
     public int getChildCount() { return fKids.size(); }
     public View getChildAt(int i) { return i >= 0 && i < fKids.size() ? fKids.get(i) : null; }
     public int indexOfChild(View v) { return fKids.indexOf(v); }

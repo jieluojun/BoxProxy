@@ -124,7 +124,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 549
+    .line 551
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$ruleSetPickDialog$refresh$2;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -135,7 +135,7 @@
 .method public final invoke()V
     .registers 5
 
-    .line 550
+    .line 552
     iget-boolean v0, p0, Lcom/box/app/cfg/FormDialogsKt$ruleSetPickDialog$refresh$2;->$on:Z
 
     if-eqz v0, :cond_10

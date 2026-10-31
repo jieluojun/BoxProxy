@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$appListDialog$refresh$rowOf$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,631:1\n1#2:632\n*E\n"
+    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$appListDialog$refresh$rowOf$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,633:1\n1#2:634\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,7 +49,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$appListDialog$refresh$rowOf$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,631:1\n1#2:632\n*E\n"
+        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$appListDialog$refresh$rowOf$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,633:1\n1#2:634\n*E\n"
     }
 .end annotation
 
@@ -176,7 +176,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 589
+    .line 591
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$appListDialog$refresh$rowOf$1;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -187,7 +187,7 @@
 .method public final invoke()V
     .registers 13
 
-    .line 591
+    .line 593
     iget-boolean v0, p0, Lcom/box/app/cfg/FormDialogsKt$appListDialog$refresh$rowOf$1;->$on:Z
 
     if-eqz v0, :cond_10
@@ -215,7 +215,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/LinkedHashSet;->add(Ljava/lang/Object;)Z
 
-    .line 592
+    .line 594
     :goto_1b
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$appListDialog$refresh$rowOf$1;->$d:Lcom/box/app/cfg/Dlg;
 

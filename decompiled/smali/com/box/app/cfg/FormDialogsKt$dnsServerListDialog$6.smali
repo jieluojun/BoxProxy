@@ -89,7 +89,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    .line 358
+    .line 360
     check-cast p1, Ljava/lang/Number;
 
     invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
@@ -112,7 +112,7 @@
 .method public final invoke(II)V
     .registers 4
 
-    .line 358
+    .line 360
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$dnsServerListDialog$6;->$servers:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;

@@ -29,6 +29,8 @@ import android.widget.ScrollView
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
+import top.yukonga.mishka.custom.forms.DragRowSpan
+import top.yukonga.mishka.custom.forms.dragInsertIndex
 
 /**
  * 原生 View 版的「Miuix 味」控件：灰底 + 白色圆角卡片 + 分组行（标题 / 摘要 / 右侧控件）+ 圆角弹窗。
@@ -469,12 +471,31 @@ fun column(c: Context): LinearLayout = LinearLayout(c).also { it.orientation = L
 
 fun hrow(c: Context): LinearLayout = LinearLayout(c).also { it.orientation = LinearLayout.HORIZONTAL; it.gravity = Gravity.CENTER_VERTICAL }
 
-/** 拖动排序：按住把手拖动，松手时按落点回调 (from, to)。容器必须是竖直 LinearLayout，子项 = 各行。
- *  拖动中只平移被拖的行（其余不动），松手时数「中心点在被拖行上方」的行数得到目标位置——不依赖中途换位，稳。 */
+/** 拖动排序（对齐 Mishka 的 DragSort）：
+ *  - 按住把手即拖，没有长按等待；
+ *  - **列表内实时换位**：指尖落在哪一行的身位里、在该行中线的上半 / 下半，被拖行就当场挪到那一档
+ *    （命中判定用 Mishka 的 [dragInsertIndex]，取 layout 位置、不受动画位移影响）；
+ *  - 其余行补一段滑移（FLIP：先量旧位置，换位后 pre-draw 里把位移差设回去再动画归零，
+ *    260ms · cubic-bezier(.2,.8,.25,1)，与 Mishka 同一段缓动）；被拖行即换即到位，不补动画；
+ *  - 指尖进入容器上 / 下边缘自动翻滚：E = clamp(可见高×15%, 44dp, 88dp)，v = 1 + depth/E × 13 dp/帧；
+ *  - 拖动中的行：内容降到 .55 透明，叠强调色淡底 + 1.5dp 虚线描边 + 淡阴影；
+ *  - 数据只在松手时回调一次 onMove(from, to)（removeAt(from)+add(to) 口径）。
+ *  被拖行本身不会被 removeView（否则 ViewGroup 会向把手发 ACTION_CANCEL）——换位时挪的是它旁边的那几行。
+ *  容器必须是竖直 LinearLayout，子项 = 各行。 */
 class DragSort(val c: Context, val box: LinearLayout, val sv: () -> ScrollView?, val onMove: (Int, Int) -> Unit) {
     private var dragging: View? = null
-    private var from = -1
-    private var startY = 0f
+    private var startIdx = -1
+    private var fingerY = 0f
+    private var pending = false
+    private var pendingAt = 0L
+    private var ticking = false
+    private val tick = object : Runnable {
+        override fun run() {
+            if (dragging == null) { ticking = false; return }
+            try { autoScroll() } catch (_: Throwable) {}
+            box.postOnAnimation(this)
+        }
+    }
 
     fun handle(rowView: View): View = handleL { rowView }
 
@@ -485,42 +506,28 @@ class DragSort(val c: Context, val box: LinearLayout, val sv: () -> ScrollView?,
         h.setOnTouchListener { v, e ->
             when (e.actionMasked) {
                 MotionEvent.ACTION_DOWN -> {
-                    val rowView = rv(); dragging = rowView; from = box.indexOfChild(rowView); startY = e.rawY
-                    v.parent.requestDisallowInterceptTouchEvent(true)
-                    sv()?.requestDisallowInterceptTouchEvent(true)
-                    rowView.elevation = c.dpf(10f); rowView.alpha = 0.9f
+                    val row = rv()
+                    val i = box.indexOfChild(row)
+                    if (i >= 0) {
+                        dragging = row; startIdx = i; fingerY = e.rawY; pending = false
+                        v.parent.requestDisallowInterceptTouchEvent(true)
+                        sv()?.requestDisallowInterceptTouchEvent(true)
+                        chrome(row, true)
+                        if (!ticking) { ticking = true; box.postOnAnimation(tick) }
+                    }
                     true
                 }
                 MotionEvent.ACTION_MOVE -> {
-                    val d = dragging
-                    if (d != null) {
-                        d.translationY = e.rawY - startY
-                        val s = sv()
-                        if (s != null) {
-                            val loc = IntArray(2); s.getLocationOnScreen(loc)
-                            val before = s.scrollY
-                            if (e.rawY < loc[1] + c.dp(90)) s.scrollBy(0, -c.dp(12))
-                            else if (e.rawY > loc[1] + s.height - c.dp(90)) s.scrollBy(0, c.dp(12))
-                            startY -= (s.scrollY - before).toFloat()
-                            d.translationY = e.rawY - startY
-                        }
-                    }
+                    if (dragging != null) { fingerY = e.rawY; step() }
                     true
                 }
                 MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
                     val d = dragging
-                    dragging = null
+                    dragging = null; pending = false
                     if (d != null) {
-                        val center = d.top + d.height / 2f + d.translationY
-                        d.translationY = 0f; d.elevation = 0f; d.alpha = 1f
-                        if (e.actionMasked == MotionEvent.ACTION_UP && from >= 0) {
-                            var to = 0
-                            for (i in 0 until box.childCount) {
-                                val o = box.getChildAt(i)
-                                if (o !== d && o.top + o.height / 2f < center) to++
-                            }
-                            if (to != from) onMove(from, to)
-                        }
+                        chrome(d, false)
+                        val to = box.indexOfChild(d)
+                        if (to >= 0 && startIdx >= 0 && to != startIdx) onMove(startIdx, to)
                     }
                     true
                 }
@@ -529,4 +536,116 @@ class DragSort(val c: Context, val box: LinearLayout, val sv: () -> ScrollView?,
         }
         return h
     }
+
+    /** 容器的可见窗口（屏幕坐标）：有 ScrollView 取它的矩形，否则取容器自己。 */
+    private fun visibleRange(): FloatArray {
+        val s = sv()
+        val loc = IntArray(2)
+        return if (s != null && s.height > 0) {
+            s.getLocationOnScreen(loc); floatArrayOf(loc[1].toFloat(), (loc[1] + s.height).toFloat())
+        } else {
+            box.getLocationOnScreen(loc); floatArrayOf(loc[1].toFloat(), (loc[1] + box.height).toFloat())
+        }
+    }
+
+    /** 命中一次：指尖落在哪一档就把被拖行挪过去。上一次换位的布局还没出来（pre-draw 之前）就先等。 */
+    private fun step() {
+        val d = dragging ?: return
+        if (pending && android.os.SystemClock.uptimeMillis() - pendingAt < 150) return
+        val cur = box.indexOfChild(d)
+        val n = box.childCount
+        if (cur < 0 || n < 2) return
+        val vr = visibleRange()
+        val boxLoc = IntArray(2); box.getLocationOnScreen(boxLoc)
+        val y = fingerY.coerceIn(vr[0], vr[1])
+        val order = ArrayList<Int>(n)
+        for (i in 0 until n) order.add(i)
+        val at = dragInsertIndex(order, cur, y, vr[0], vr[1]) { i ->
+            val v = box.getChildAt(i)
+            DragRowSpan(boxLoc[1] + v.top.toFloat(), boxLoc[1] + v.bottom.toFloat())
+        }
+        if (at < 0 || at == cur) return
+        moveRow(d, at)
+    }
+
+    private fun moveRow(d: View, at: Int) {
+        val n = box.childCount
+        val views = ArrayList<View>(n)
+        val oldTop = FloatArray(n)
+        for (i in 0 until n) { val v = box.getChildAt(i); views.add(v); oldTop[i] = v.top + v.translationY }
+        // 被拖行不动，挪它旁边的行：向下拖 = 把它后面的行逐个挪到它前面；向上拖反之
+        var di = box.indexOfChild(d)
+        while (di < at) { val v = box.getChildAt(di + 1); box.removeViewAt(di + 1); box.addView(v, di); di++ }
+        while (di > at) { val v = box.getChildAt(di - 1); box.removeViewAt(di - 1); box.addView(v, di); di-- }
+        pending = true; pendingAt = android.os.SystemClock.uptimeMillis()
+        box.viewTreeObserver.addOnPreDrawListener(object : android.view.ViewTreeObserver.OnPreDrawListener {
+            override fun onPreDraw(): Boolean {
+                val o = box.viewTreeObserver
+                if (o.isAlive) o.removeOnPreDrawListener(this)
+                pending = false
+                for (i in 0 until views.size) {
+                    val v = views[i]
+                    if (v === dragging || v.parent !== box) continue
+                    val delta = oldTop[i] - v.top
+                    if (delta != 0f) {
+                        v.animate().cancel()
+                        v.translationY = delta
+                        v.animate().translationY(0f).setDuration(260L)
+                            .setInterpolator(android.view.animation.PathInterpolator(0.2f, 0.8f, 0.25f, 1f)).start()
+                    }
+                }
+                return true
+            }
+        })
+    }
+
+    private fun autoScroll() {
+        if (dragging == null) return
+        val s = sv() ?: return
+        val vr = visibleRange()
+        val span = vr[1] - vr[0]
+        if (span <= 0f) return
+        val edge = (span * 0.15f).coerceIn(c.dpf(44f), c.dpf(88f))
+        val up = (vr[0] + edge) - fingerY
+        val down = fingerY - (vr[1] - edge)
+        if (up <= 0f && down <= 0f) return
+        val depth = maxOf(up, down).coerceIn(0f, edge)
+        val v = c.dpf(1f) + depth / edge * c.dpf(13f)
+        step()
+        s.scrollBy(0, (if (up > down) -v else v).toInt())
+    }
+
+    /** 拖动中的行：内容 .55 透明 + 强调色淡底 + 虚线描边 + 淡阴影。 */
+    private fun chrome(row: View, on: Boolean) {
+        row.elevation = if (on) c.dpf(6f) else 0f
+        row.foreground = if (on) DragChrome(c) else null
+        if (row is ViewGroup) {
+            for (i in 0 until row.childCount) row.getChildAt(i).alpha = if (on) 0.55f else 1f
+        } else row.alpha = if (on) 0.55f else 1f
+    }
+}
+
+/** 拖动行的描边：强调色 12% 淡底 + 1.5dp 虚线圆角框（Mishka `dragChrome`）。 */
+private class DragChrome(val c: Context) : android.graphics.drawable.Drawable() {
+    private val fill = Paint(Paint.ANTI_ALIAS_FLAG)
+    private val stroke = Paint(Paint.ANTI_ALIAS_FLAG)
+    init {
+        fill.style = Paint.Style.FILL
+        fill.color = (Th.primary and 0x00FFFFFF) or (0x1F shl 24)
+        stroke.style = Paint.Style.STROKE
+        stroke.strokeWidth = c.dpf(1.5f)
+        stroke.color = Th.primary
+        stroke.pathEffect = android.graphics.DashPathEffect(floatArrayOf(9f, 6f), 0f)
+    }
+    override fun draw(canvas: Canvas) {
+        val b = bounds
+        val r = c.dpf(16f)
+        canvas.drawRoundRect(android.graphics.RectF(b), r, r, fill)
+        val i = c.dpf(2.5f)
+        canvas.drawRoundRect(android.graphics.RectF(b.left + i, b.top + i, b.right - i, b.bottom - i), r - i, r - i, stroke)
+    }
+    override fun setAlpha(alpha: Int) {}
+    override fun setColorFilter(cf: android.graphics.ColorFilter?) {}
+    @Suppress("OVERRIDE_DEPRECATION")
+    override fun getOpacity(): Int = android.graphics.PixelFormat.TRANSLUCENT
 }

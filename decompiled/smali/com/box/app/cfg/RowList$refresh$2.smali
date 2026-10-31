@@ -72,7 +72,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 113
+    .line 114
     invoke-virtual {p0}, Lcom/box/app/cfg/RowList$refresh$2;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -81,26 +81,22 @@
 .end method
 
 .method public final invoke()V
-    .registers 3
+    .registers 2
 
-    .line 113
+    .line 114
     iget-object v0, p0, Lcom/box/app/cfg/RowList$refresh$2;->this$0:Lcom/box/app/cfg/RowList;
 
-    invoke-virtual {v0}, Lcom/box/app/cfg/RowList;->getOnDelete()Lkotlin/jvm/functions/Function1;
+    invoke-virtual {v0}, Lcom/box/app/cfg/RowList;->getOnEdit()Lkotlin/jvm/functions/Function1;
 
     move-result-object v0
 
-    iget v1, p0, Lcom/box/app/cfg/RowList$refresh$2;->$i:I
+    iget p0, p0, Lcom/box/app/cfg/RowList$refresh$2;->$i:I
 
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v1
+    move-result-object p0
 
-    invoke-interface {v0, v1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    iget-object p0, p0, Lcom/box/app/cfg/RowList$refresh$2;->this$0:Lcom/box/app/cfg/RowList;
-
-    invoke-virtual {p0}, Lcom/box/app/cfg/RowList;->refresh()V
+    invoke-interface {v0, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
 .end method

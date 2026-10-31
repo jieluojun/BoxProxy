@@ -78,7 +78,7 @@
 
     iput-object p1, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$tf$1;->$onChange:Lkotlin/jvm/functions/Function1;
 
-    .line 392
+    .line 394
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -87,7 +87,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .registers 2
 
-    .line 393
+    .line 395
     iget-object p0, p0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$tf$1;->$onChange:Lkotlin/jvm/functions/Function1;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;

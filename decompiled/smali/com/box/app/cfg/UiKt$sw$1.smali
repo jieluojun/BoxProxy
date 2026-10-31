@@ -81,7 +81,7 @@
 .method public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .registers 3
 
-    .line 185
+    .line 187
     iget-object p0, p0, Lcom/box/app/cfg/UiKt$sw$1;->$onChange:Lkotlin/jvm/functions/Function1;
 
     invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;

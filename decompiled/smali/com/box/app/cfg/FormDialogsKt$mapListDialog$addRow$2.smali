@@ -112,7 +112,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 227
+    .line 229
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$mapListDialog$addRow$2;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -123,7 +123,7 @@
 .method public final invoke()V
     .registers 3
 
-    .line 227
+    .line 229
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$mapListDialog$addRow$2;->$box:Landroid/widget/LinearLayout;
 
     iget-object v1, p0, Lcom/box/app/cfg/FormDialogsKt$mapListDialog$addRow$2;->$r:Landroid/widget/LinearLayout;

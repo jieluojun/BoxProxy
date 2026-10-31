@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,631:1\n1#2:632\n*E\n"
+    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,633:1\n1#2:634\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,7 +49,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,631:1\n1#2:632\n*E\n"
+        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,633:1\n1#2:634\n*E\n"
     }
 .end annotation
 
@@ -171,7 +171,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 498
+    .line 500
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -184,12 +184,12 @@
 
     move-object/from16 v0, p0
 
-    .line 499
+    .line 501
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1;->$body:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1}, Landroid/widget/LinearLayout;->removeAllViews()V
 
-    .line 500
+    .line 502
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1;->$rawMode:Lkotlin/jvm/internal/Ref$BooleanRef;
 
     iget-boolean v1, v1, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
@@ -202,7 +202,7 @@
 
     if-eqz v1, :cond_77
 
-    .line 501
+    .line 503
     iget-object v5, v0, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1;->$c:Landroid/content/Context;
 
     const-string v6, "\u5b8c\u6574\u89c4\u5219\uff0c\u5982 GEOSITE,gfw,real-ip"
@@ -243,7 +243,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 502
+    .line 504
     iget-object v5, v0, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1;->$body:Landroid/widget/LinearLayout;
 
     check-cast v1, Landroid/view/View;
@@ -268,7 +268,7 @@
 
     invoke-virtual {v5, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 503
+    .line 505
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v2, v0, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1;->$c:Landroid/content/Context;
@@ -313,7 +313,7 @@
 
     goto/16 :goto_170
 
-    .line 508
+    .line 510
     :cond_77
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1;->$body:Landroid/widget/LinearLayout;
 
@@ -385,7 +385,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 509
+    .line 511
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1;->$type:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iget-object v1, v1, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
@@ -398,7 +398,7 @@
 
     if-nez v1, :cond_102
 
-    .line 510
+    .line 512
     iget-object v8, v0, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1;->$c:Landroid/content/Context;
 
     const-string v9, "\u5339\u914d\u503c"
@@ -439,7 +439,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/EditText;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 511
+    .line 513
     iget-object v5, v0, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1;->$body:Landroid/widget/LinearLayout;
 
     check-cast v1, Landroid/view/View;
@@ -464,7 +464,7 @@
 
     invoke-virtual {v5, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 513
+    .line 515
     :cond_102
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1;->$body:Landroid/widget/LinearLayout;
 
@@ -540,7 +540,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 514
+    .line 516
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v2, v0, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1;->$c:Landroid/content/Context;

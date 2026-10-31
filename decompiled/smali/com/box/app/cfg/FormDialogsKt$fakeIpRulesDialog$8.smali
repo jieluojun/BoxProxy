@@ -99,7 +99,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 485
+    .line 487
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$fakeIpRulesDialog$8;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -110,7 +110,7 @@
 .method public final invoke()V
     .registers 3
 
-    .line 485
+    .line 487
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$fakeIpRulesDialog$8;->$rules:Ljava/util/ArrayList;
 
     const-string v1, "MATCH,fake-ip"

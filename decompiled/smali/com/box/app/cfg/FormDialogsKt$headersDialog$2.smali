@@ -120,7 +120,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 272
+    .line 274
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$headersDialog$2;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -131,7 +131,7 @@
 .method public final invoke()V
     .registers 9
 
-    .line 272
+    .line 274
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$2;->$c:Landroid/content/Context;
 
     iget-object v1, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$2;->$field:Ltop/yukonga/mishka/custom/forms/FormField;

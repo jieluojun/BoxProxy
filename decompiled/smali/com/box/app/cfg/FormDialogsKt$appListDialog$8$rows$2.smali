@@ -72,7 +72,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 620
+    .line 622
     check-cast p1, Landroid/content/pm/ApplicationInfo;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/FormDialogsKt$appListDialog$8$rows$2;->invoke(Landroid/content/pm/ApplicationInfo;)Ltop/yukonga/mishka/custom/forms/InstalledAppRow;
@@ -85,7 +85,7 @@
 .method public final invoke(Landroid/content/pm/ApplicationInfo;)Ltop/yukonga/mishka/custom/forms/InstalledAppRow;
     .registers 5
 
-    .line 621
+    .line 623
     iget v0, p1, Landroid/content/pm/ApplicationInfo;->flags:I
 
     const/4 v1, 0x1
@@ -105,7 +105,7 @@
     :cond_d
     const/4 v1, 0x0
 
-    .line 622
+    .line 624
     :goto_e
     new-instance v0, Ltop/yukonga/mishka/custom/forms/InstalledAppRow;
 

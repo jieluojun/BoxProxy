@@ -576,7 +576,7 @@
     move v3, v2
 
     :goto_15
-    if-ge v3, v1, :cond_108
+    if-ge v3, v1, :cond_116
 
     .line 103
     iget-object v4, v0, Lcom/box/app/cfg/RowList;->c:Landroid/content/Context;
@@ -645,28 +645,37 @@
     invoke-virtual {v5, v6}, Landroid/widget/LinearLayout;->setGravity(I)V
 
     .line 105
-    iget-object v7, v0, Lcom/box/app/cfg/RowList;->sort:Lcom/box/app/cfg/DragSort;
+    new-instance v7, Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    move-object v8, v4
-
-    check-cast v8, Landroid/view/View;
-
-    invoke-virtual {v7, v8}, Lcom/box/app/cfg/DragSort;->handle(Landroid/view/View;)Landroid/view/View;
-
-    move-result-object v7
-
-    invoke-virtual {v5, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    invoke-direct {v7}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
 
     .line 106
-    iget-boolean v7, v0, Lcom/box/app/cfg/RowList;->numbered:Z
+    iget-object v8, v0, Lcom/box/app/cfg/RowList;->sort:Lcom/box/app/cfg/DragSort;
+
+    new-instance v9, Lcom/box/app/cfg/RowList$refresh$1;
+
+    invoke-direct {v9, v7}, Lcom/box/app/cfg/RowList$refresh$1;-><init>(Lkotlin/jvm/internal/Ref$ObjectRef;)V
+
+    check-cast v9, Lkotlin/jvm/functions/Function0;
+
+    invoke-virtual {v8, v9}, Lcom/box/app/cfg/DragSort;->handleL(Lkotlin/jvm/functions/Function0;)Landroid/view/View;
+
+    move-result-object v8
+
+    invoke-virtual {v5, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 107
+    iget-boolean v8, v0, Lcom/box/app/cfg/RowList;->numbered:Z
+
+    const/4 v9, 0x0
 
     const/4 v10, -0x2
 
     const/4 v11, 0x4
 
-    if-eqz v7, :cond_7b
+    if-eqz v8, :cond_85
 
-    iget-object v7, v0, Lcom/box/app/cfg/RowList;->c:Landroid/content/Context;
+    iget-object v8, v0, Lcom/box/app/cfg/RowList;->c:Landroid/content/Context;
 
     add-int/lit8 v12, v3, 0x1
 
@@ -674,11 +683,11 @@
 
     move-result-object v12
 
-    invoke-static {v7, v12, v2, v11, v9}, Lcom/box/app/cfg/UiKt;->chip$default(Landroid/content/Context;Ljava/lang/String;ZILjava/lang/Object;)Landroid/widget/TextView;
+    invoke-static {v8, v12, v2, v11, v9}, Lcom/box/app/cfg/UiKt;->chip$default(Landroid/content/Context;Ljava/lang/String;ZILjava/lang/Object;)Landroid/widget/TextView;
 
-    move-result-object v7
+    move-result-object v8
 
-    check-cast v7, Landroid/view/View;
+    check-cast v8, Landroid/view/View;
 
     invoke-static {v10, v10}, Lcom/box/app/cfg/UiKt;->lp(II)Landroid/widget/LinearLayout$LayoutParams;
 
@@ -686,35 +695,38 @@
 
     check-cast v12, Landroid/view/ViewGroup$LayoutParams;
 
-    invoke-virtual {v5, v7, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v5, v8, v12}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 107
-    :cond_7b
-    new-instance v7, Landroid/widget/LinearLayout;
+    .line 108
+    :cond_85
+    new-instance v8, Landroid/widget/LinearLayout;
 
     iget-object v12, v0, Lcom/box/app/cfg/RowList;->c:Landroid/content/Context;
 
-    invoke-direct {v7, v12}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {v8, v12}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    invoke-virtual {v7, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
+    invoke-virtual {v8, v2}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    invoke-virtual {v7, v6}, Landroid/widget/LinearLayout;->setGravity(I)V
+    invoke-virtual {v8, v6}, Landroid/widget/LinearLayout;->setGravity(I)V
 
-    .line 108
+    .line 109
     sget-object v6, Lcom/box/app/cfg/Th;->INSTANCE:Lcom/box/app/cfg/Th;
 
     invoke-virtual {v6}, Lcom/box/app/cfg/Th;->getCard()I
 
     move-result v6
 
-    invoke-virtual {v7, v6}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
-
-    .line 109
-    check-cast v5, Landroid/view/View;
-
-    invoke-virtual {v7, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v8, v6}, Landroid/widget/LinearLayout;->setBackgroundColor(I)V
 
     .line 110
+    iput-object v8, v7, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
+
+    .line 111
+    check-cast v5, Landroid/view/View;
+
+    invoke-virtual {v8, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    .line 112
     iget-object v5, v0, Lcom/box/app/cfg/RowList;->c:Landroid/content/Context;
 
     invoke-static {v5, v11}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
@@ -723,43 +735,45 @@
 
     iget-object v6, v0, Lcom/box/app/cfg/RowList;->c:Landroid/content/Context;
 
-    const/16 v12, 0x8
+    const/16 v7, 0x8
 
-    invoke-static {v6, v12}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
+    invoke-static {v6, v7}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
 
     move-result v6
 
-    iget-object v13, v0, Lcom/box/app/cfg/RowList;->c:Landroid/content/Context;
+    iget-object v12, v0, Lcom/box/app/cfg/RowList;->c:Landroid/content/Context;
 
-    invoke-static {v13, v11}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
+    invoke-static {v12, v11}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
 
     move-result v11
 
-    iget-object v13, v0, Lcom/box/app/cfg/RowList;->c:Landroid/content/Context;
+    iget-object v12, v0, Lcom/box/app/cfg/RowList;->c:Landroid/content/Context;
 
-    invoke-static {v13, v12}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
+    invoke-static {v12, v7}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
 
-    move-result v12
+    move-result v7
 
-    invoke-virtual {v4, v5, v6, v11, v12}, Landroid/widget/LinearLayout;->setPadding(IIII)V
+    invoke-virtual {v4, v5, v6, v11, v7}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
     invoke-virtual {v4, v2}, Landroid/widget/LinearLayout;->setMinimumHeight(I)V
 
-    .line 111
-    new-instance v4, Landroid/widget/LinearLayout$LayoutParams;
+    .line 113
+    check-cast v4, Landroid/view/View;
 
-    const/high16 v5, 0x3f800000    # 1.0f
+    new-instance v5, Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-direct {v4, v2, v10, v5}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
+    const/high16 v6, 0x3f800000    # 1.0f
 
-    check-cast v4, Landroid/view/ViewGroup$LayoutParams;
+    invoke-direct {v5, v2, v10, v6}, Landroid/widget/LinearLayout$LayoutParams;-><init>(IIF)V
 
-    invoke-virtual {v7, v8, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    check-cast v5, Landroid/view/ViewGroup$LayoutParams;
 
-    .line 112
+    invoke-virtual {v8, v4, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 114
     iget-object v4, v0, Lcom/box/app/cfg/RowList;->onEdit:Lkotlin/jvm/functions/Function1;
 
-    if-eqz v4, :cond_de
+    if-eqz v4, :cond_ec
 
     iget-object v4, v0, Lcom/box/app/cfg/RowList;->c:Landroid/content/Context;
 
@@ -771,20 +785,20 @@
 
     move-result v6
 
-    new-instance v8, Lcom/box/app/cfg/RowList$refresh$1;
+    new-instance v7, Lcom/box/app/cfg/RowList$refresh$2;
 
-    invoke-direct {v8, v0, v3}, Lcom/box/app/cfg/RowList$refresh$1;-><init>(Lcom/box/app/cfg/RowList;I)V
+    invoke-direct {v7, v0, v3}, Lcom/box/app/cfg/RowList$refresh$2;-><init>(Lcom/box/app/cfg/RowList;I)V
 
-    check-cast v8, Lkotlin/jvm/functions/Function0;
+    check-cast v7, Lkotlin/jvm/functions/Function0;
 
-    invoke-static {v4, v5, v6, v8}, Lcom/box/app/cfg/UiKt;->iconBtn(Landroid/content/Context;Lcom/box/app/cfg/Ic;ILkotlin/jvm/functions/Function0;)Landroid/view/View;
+    invoke-static {v4, v5, v6, v7}, Lcom/box/app/cfg/UiKt;->iconBtn(Landroid/content/Context;Lcom/box/app/cfg/Ic;ILkotlin/jvm/functions/Function0;)Landroid/view/View;
 
     move-result-object v4
 
-    invoke-virtual {v7, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v8, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 113
-    :cond_de
+    .line 115
+    :cond_ec
     iget-object v4, v0, Lcom/box/app/cfg/RowList;->c:Landroid/content/Context;
 
     sget-object v5, Lcom/box/app/cfg/Ic;->DELETE:Lcom/box/app/cfg/Ic;
@@ -795,22 +809,22 @@
 
     move-result v6
 
-    new-instance v8, Lcom/box/app/cfg/RowList$refresh$2;
+    new-instance v7, Lcom/box/app/cfg/RowList$refresh$3;
 
-    invoke-direct {v8, v0, v3}, Lcom/box/app/cfg/RowList$refresh$2;-><init>(Lcom/box/app/cfg/RowList;I)V
+    invoke-direct {v7, v0, v3}, Lcom/box/app/cfg/RowList$refresh$3;-><init>(Lcom/box/app/cfg/RowList;I)V
 
-    check-cast v8, Lkotlin/jvm/functions/Function0;
+    check-cast v7, Lkotlin/jvm/functions/Function0;
 
-    invoke-static {v4, v5, v6, v8}, Lcom/box/app/cfg/UiKt;->iconBtn(Landroid/content/Context;Lcom/box/app/cfg/Ic;ILkotlin/jvm/functions/Function0;)Landroid/view/View;
+    invoke-static {v4, v5, v6, v7}, Lcom/box/app/cfg/UiKt;->iconBtn(Landroid/content/Context;Lcom/box/app/cfg/Ic;ILkotlin/jvm/functions/Function0;)Landroid/view/View;
 
     move-result-object v4
 
-    invoke-virtual {v7, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v8, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 114
+    .line 116
     iget-object v4, v0, Lcom/box/app/cfg/RowList;->box:Landroid/widget/LinearLayout;
 
-    check-cast v7, Landroid/view/View;
+    check-cast v8, Landroid/view/View;
 
     const/4 v5, 0x3
 
@@ -820,12 +834,12 @@
 
     check-cast v5, Landroid/view/ViewGroup$LayoutParams;
 
-    invoke-virtual {v4, v7, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v4, v8, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     add-int/lit8 v3, v3, 0x1
 
     goto/16 :goto_15
 
-    :cond_108
+    :cond_116
     return-void
 .end method

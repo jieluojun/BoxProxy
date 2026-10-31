@@ -140,7 +140,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 142
+    .line 144
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$listDialog$candidatesView$3;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -151,7 +151,7 @@
 .method public final invoke()V
     .registers 9
 
-    .line 144
+    .line 146
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$listDialog$candidatesView$3;->$items:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lcom/box/app/cfg/FormDialogsKt$listDialog$candidatesView$3;->$cd:Ltop/yukonga/mishka/custom/forms/FormOption;
@@ -189,7 +189,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 145
+    .line 147
     :goto_25
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$listDialog$candidatesView$3;->$rl:Lkotlin/jvm/internal/Ref$ObjectRef;
 

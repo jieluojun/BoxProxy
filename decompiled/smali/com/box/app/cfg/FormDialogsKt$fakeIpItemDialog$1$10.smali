@@ -151,7 +151,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 514
+    .line 516
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1$10;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -162,7 +162,7 @@
 .method public final invoke()V
     .registers 5
 
-    .line 514
+    .line 516
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1$10;->$raw:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iget-object v1, p0, Lcom/box/app/cfg/FormDialogsKt$fakeIpItemDialog$1$10;->$type:Lkotlin/jvm/internal/Ref$ObjectRef;

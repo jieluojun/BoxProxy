@@ -134,12 +134,12 @@
         .end annotation
     .end param
 
-    .line 285
+    .line 287
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
 
-    .line 286
+    .line 288
     new-instance p1, Landroid/app/Dialog;
 
     iget-object v0, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
@@ -148,7 +148,7 @@
 
     iput-object p1, p0, Lcom/box/app/cfg/Dlg;->dialog:Landroid/app/Dialog;
 
-    .line 287
+    .line 289
     new-instance p1, Landroid/widget/LinearLayout;
 
     iget-object v0, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
@@ -157,7 +157,7 @@
 
     iput-object p1, p0, Lcom/box/app/cfg/Dlg;->root:Landroid/widget/LinearLayout;
 
-    .line 288
+    .line 290
     new-instance p1, Landroid/widget/LinearLayout;
 
     iget-object v0, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
@@ -166,7 +166,7 @@
 
     iput-object p1, p0, Lcom/box/app/cfg/Dlg;->body:Landroid/widget/LinearLayout;
 
-    .line 289
+    .line 291
     new-instance p1, Landroid/widget/ScrollView;
 
     iget-object v0, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
@@ -175,7 +175,7 @@
 
     iput-object p1, p0, Lcom/box/app/cfg/Dlg;->scroll:Landroid/widget/ScrollView;
 
-    .line 290
+    .line 292
     new-instance p1, Landroid/widget/LinearLayout;
 
     iget-object v0, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
@@ -186,22 +186,22 @@
 
     const/16 p1, 0x17c
 
-    .line 291
+    .line 293
     iput p1, p0, Lcom/box/app/cfg/Dlg;->maxBodyDp:I
 
-    .line 295
+    .line 297
     iget-object p1, p0, Lcom/box/app/cfg/Dlg;->dialog:Landroid/app/Dialog;
 
     const/4 v0, 0x1
 
     invoke-virtual {p1, v0}, Landroid/app/Dialog;->requestWindowFeature(I)Z
 
-    .line 296
+    .line 298
     iget-object p1, p0, Lcom/box/app/cfg/Dlg;->root:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 297
+    .line 299
     iget-object p1, p0, Lcom/box/app/cfg/Dlg;->root:Landroid/widget/LinearLayout;
 
     iget-object v1, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
@@ -222,7 +222,7 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/LinearLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 298
+    .line 300
     iget-object p1, p0, Lcom/box/app/cfg/Dlg;->root:Landroid/widget/LinearLayout;
 
     iget-object v1, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
@@ -245,12 +245,12 @@
 
     invoke-virtual {p1, v5, v1, v5, v3}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 299
+    .line 301
     iget-object p1, p0, Lcom/box/app/cfg/Dlg;->body:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 300
+    .line 302
     iget-object p1, p0, Lcom/box/app/cfg/Dlg;->body:Landroid/widget/LinearLayout;
 
     iget-object v0, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
@@ -267,7 +267,7 @@
 
     invoke-virtual {p1, v0, v5, v1, v5}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 301
+    .line 303
     iget-object p1, p0, Lcom/box/app/cfg/Dlg;->scroll:Landroid/widget/ScrollView;
 
     iget-object v0, p0, Lcom/box/app/cfg/Dlg;->body:Landroid/widget/LinearLayout;
@@ -276,17 +276,17 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/ScrollView;->addView(Landroid/view/View;)V
 
-    .line 302
+    .line 304
     iget-object p1, p0, Lcom/box/app/cfg/Dlg;->scroll:Landroid/widget/ScrollView;
 
     invoke-virtual {p1, v5}, Landroid/widget/ScrollView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 303
+    .line 305
     iget-object p1, p0, Lcom/box/app/cfg/Dlg;->btns:Landroid/widget/LinearLayout;
 
     invoke-virtual {p1, v5}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 304
+    .line 306
     iget-object p1, p0, Lcom/box/app/cfg/Dlg;->btns:Landroid/widget/LinearLayout;
 
     iget-object v0, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
@@ -309,7 +309,7 @@
 
     invoke-virtual {p1, v0, v1, v2, v5}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 305
+    .line 307
     iget-object p1, p0, Lcom/box/app/cfg/Dlg;->dialog:Landroid/app/Dialog;
 
     iget-object v0, p0, Lcom/box/app/cfg/Dlg;->root:Landroid/widget/LinearLayout;
@@ -318,7 +318,7 @@
 
     invoke-virtual {p1, v0}, Landroid/app/Dialog;->setContentView(Landroid/view/View;)V
 
-    .line 306
+    .line 308
     iget-object p1, p0, Lcom/box/app/cfg/Dlg;->dialog:Landroid/app/Dialog;
 
     new-instance v0, Lcom/box/app/cfg/Dlg$1;
@@ -341,7 +341,7 @@
 
     const/4 p2, 0x0
 
-    .line 321
+    .line 323
     :cond_5
     invoke-virtual {p0, p1, p2}, Lcom/box/app/cfg/Dlg;->add(Landroid/view/View;I)Lcom/box/app/cfg/Dlg;
 
@@ -401,7 +401,7 @@
 
     move-object v5, p5
 
-    .line 339
+    .line 341
     invoke-virtual/range {v0 .. v5}, Lcom/box/app/cfg/Dlg;->buttons(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;)Lcom/box/app/cfg/Dlg;
 
     move-result-object p0
@@ -418,7 +418,7 @@
 
     const-string p1, "\u53d6\u6d88"
 
-    .line 334
+    .line 336
     :cond_6
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/Dlg;->cancelOnly(Ljava/lang/String;)Lcom/box/app/cfg/Dlg;
 
@@ -436,7 +436,7 @@
 
     const/4 p2, 0x0
 
-    .line 309
+    .line 311
     :cond_5
     invoke-virtual {p0, p1, p2}, Lcom/box/app/cfg/Dlg;->title(Ljava/lang/String;Ljava/lang/String;)Lcom/box/app/cfg/Dlg;
 
@@ -460,7 +460,7 @@
 
     const/4 v2, 0x0
 
-    .line 322
+    .line 324
     invoke-static {v0, v0, v1, v2}, Lcom/box/app/cfg/UiKt;->lp$default(IIILjava/lang/Object;)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
@@ -491,7 +491,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 329
+    .line 331
     iget-object v0, p0, Lcom/box/app/cfg/Dlg;->body:Landroid/widget/LinearLayout;
 
     iget-object v1, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
@@ -532,7 +532,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 325
+    .line 327
     iget-object v0, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
 
     const/4 v1, 0x0
@@ -591,12 +591,12 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 340
+    .line 342
     sget-object v0, Lcom/box/app/cfg/Dlg$buttons$l$1;->INSTANCE:Lcom/box/app/cfg/Dlg$buttons$l$1;
 
     check-cast v0, Lkotlin/jvm/functions/Function0;
 
-    .line 341
+    .line 343
     iget-object v1, p0, Lcom/box/app/cfg/Dlg;->btns:Landroid/widget/LinearLayout;
 
     iget-object v2, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
@@ -627,7 +627,7 @@
 
     if-eqz p3, :cond_57
 
-    .line 343
+    .line 345
     iget-object v1, p0, Lcom/box/app/cfg/Dlg;->btns:Landroid/widget/LinearLayout;
 
     new-instance v2, Landroid/view/View;
@@ -652,7 +652,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 344
+    .line 346
     iget-object v1, p0, Lcom/box/app/cfg/Dlg;->btns:Landroid/widget/LinearLayout;
 
     iget-object v2, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
@@ -677,7 +677,7 @@
 
     invoke-virtual {v1, p3, p4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 346
+    .line 348
     :cond_57
     iget-object p3, p0, Lcom/box/app/cfg/Dlg;->btns:Landroid/widget/LinearLayout;
 
@@ -703,7 +703,7 @@
 
     invoke-virtual {p3, p4, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 347
+    .line 349
     iget-object p3, p0, Lcom/box/app/cfg/Dlg;->btns:Landroid/widget/LinearLayout;
 
     iget-object p4, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
@@ -740,7 +740,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 335
+    .line 337
     iget-object v0, p0, Lcom/box/app/cfg/Dlg;->btns:Landroid/widget/LinearLayout;
 
     iget-object v1, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
@@ -777,7 +777,7 @@
 .method public final dismiss()V
     .registers 1
 
-    .line 372
+    .line 374
     :try_start_0
     iget-object p0, p0, Lcom/box/app/cfg/Dlg;->dialog:Landroid/app/Dialog;
 
@@ -794,7 +794,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 285
+    .line 287
     iget-object p0, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
 
     return-object p0
@@ -805,7 +805,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 286
+    .line 288
     iget-object p0, p0, Lcom/box/app/cfg/Dlg;->dialog:Landroid/app/Dialog;
 
     return-object p0
@@ -825,7 +825,7 @@
     .annotation build Lorg/jetbrains/annotations/Nullable;
     .end annotation
 
-    .line 292
+    .line 294
     iget-object p0, p0, Lcom/box/app/cfg/Dlg;->onDismiss:Lkotlin/jvm/functions/Function0;
 
     return-object p0
@@ -836,7 +836,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 289
+    .line 291
     iget-object p0, p0, Lcom/box/app/cfg/Dlg;->scroll:Landroid/widget/ScrollView;
 
     return-object p0
@@ -847,7 +847,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 332
+    .line 334
     iput p1, p0, Lcom/box/app/cfg/Dlg;->maxBodyDp:I
 
     return-object p0
@@ -868,7 +868,7 @@
         }
     .end annotation
 
-    .line 292
+    .line 294
     iput-object p1, p0, Lcom/box/app/cfg/Dlg;->onDismiss:Lkotlin/jvm/functions/Function0;
 
     return-void
@@ -879,7 +879,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 353
+    .line 355
     iget-object v0, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -892,7 +892,7 @@
 
     iget v0, v0, Landroid/util/DisplayMetrics;->heightPixels:I
 
-    .line 354
+    .line 356
     iget-object v1, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
 
     iget v2, p0, Lcom/box/app/cfg/Dlg;->maxBodyDp:I
@@ -913,21 +913,21 @@
 
     move-result v0
 
-    .line 355
+    .line 357
     iget-object v1, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
 
     new-instance v2, Lcom/box/app/cfg/Dlg$show$wrap$1;
 
     invoke-direct {v2, v0, v1}, Lcom/box/app/cfg/Dlg$show$wrap$1;-><init>(ILandroid/content/Context;)V
 
-    .line 360
+    .line 362
     iget-object v0, p0, Lcom/box/app/cfg/Dlg;->scroll:Landroid/widget/ScrollView;
 
     check-cast v0, Landroid/view/View;
 
     invoke-virtual {v2, v0}, Lcom/box/app/cfg/Dlg$show$wrap$1;->addView(Landroid/view/View;)V
 
-    .line 361
+    .line 363
     iget-object v0, p0, Lcom/box/app/cfg/Dlg;->root:Landroid/widget/LinearLayout;
 
     check-cast v2, Landroid/view/View;
@@ -946,7 +946,7 @@
 
     invoke-virtual {v0, v2, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 362
+    .line 364
     iget-object v0, p0, Lcom/box/app/cfg/Dlg;->btns:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->getChildCount()I
@@ -969,7 +969,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 363
+    .line 365
     :cond_53
     iget-object v0, p0, Lcom/box/app/cfg/Dlg;->dialog:Landroid/app/Dialog;
 
@@ -979,7 +979,7 @@
 
     invoke-static {v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
-    .line 364
+    .line 366
     new-instance v1, Landroid/graphics/drawable/ColorDrawable;
 
     invoke-direct {v1, v4}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
@@ -988,7 +988,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 365
+    .line 367
     iget-object v1, p0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
@@ -1027,15 +1027,15 @@
 
     const/16 v1, 0x11
 
-    .line 366
+    .line 368
     invoke-virtual {v0, v1}, Landroid/view/Window;->setSoftInputMode(I)V
 
     const v1, 0x3ecccccd    # 0.4f
 
-    .line 367
+    .line 369
     invoke-virtual {v0, v1}, Landroid/view/Window;->setDimAmount(F)V
 
-    .line 368
+    .line 370
     iget-object v0, p0, Lcom/box/app/cfg/Dlg;->dialog:Landroid/app/Dialog;
 
     invoke-virtual {v0}, Landroid/app/Dialog;->show()V
@@ -1058,7 +1058,7 @@
 
     move-object v0, p0
 
-    .line 310
+    .line 312
     iget-object v1, v0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
 
     move-object/from16 v2, p1
@@ -1089,7 +1089,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 311
+    .line 313
     iget-object v2, v0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
 
     const/16 v3, 0x14
@@ -1108,7 +1108,7 @@
 
     invoke-virtual {v1, v2, v5, v4, v5}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 312
+    .line 314
     iget-object v2, v0, Lcom/box/app/cfg/Dlg;->root:Landroid/widget/LinearLayout;
 
     check-cast v1, Landroid/view/View;
@@ -1125,7 +1125,7 @@
 
     invoke-virtual {v2, v1, v5, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 313
+    .line 315
     move-object/from16 v8, p2
 
     check-cast v8, Ljava/lang/CharSequence;
@@ -1154,7 +1154,7 @@
     :goto_50
     if-nez v2, :cond_88
 
-    .line 314
+    .line 316
     iget-object v7, v0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
 
     const/high16 v9, 0x41480000    # 12.5f
@@ -1177,7 +1177,7 @@
 
     move-result-object v2
 
-    .line 315
+    .line 317
     iget-object v7, v0, Lcom/box/app/cfg/Dlg;->ctx:Landroid/content/Context;
 
     invoke-static {v7, v3}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
@@ -1200,7 +1200,7 @@
 
     invoke-virtual {v2, v7, v8, v3, v5}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 316
+    .line 318
     iget-object v3, v0, Lcom/box/app/cfg/Dlg;->root:Landroid/widget/LinearLayout;
 
     check-cast v2, Landroid/view/View;

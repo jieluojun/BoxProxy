@@ -89,7 +89,7 @@
 .method public bridge synthetic compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .registers 3
 
-    .line 624
+    .line 626
     check-cast p1, Ltop/yukonga/mishka/custom/forms/InstalledAppRow;
 
     check-cast p2, Ltop/yukonga/mishka/custom/forms/InstalledAppRow;
@@ -104,7 +104,7 @@
 .method public final compare(Ltop/yukonga/mishka/custom/forms/InstalledAppRow;Ltop/yukonga/mishka/custom/forms/InstalledAppRow;)I
     .registers 5
 
-    .line 624
+    .line 626
     invoke-virtual {p1}, Ltop/yukonga/mishka/custom/forms/InstalledAppRow;->getLabel()Ljava/lang/String;
 
     move-result-object p0

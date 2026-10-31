@@ -228,7 +228,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 420
+    .line 422
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$7;->invoke(Ljava/lang/String;)V
@@ -243,7 +243,7 @@
 
     move-object/from16 v0, p0
 
-    .line 420
+    .line 422
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$7;->$address:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     move-object/from16 v2, p1

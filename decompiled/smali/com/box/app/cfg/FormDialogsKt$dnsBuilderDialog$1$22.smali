@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$22\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,631:1\n766#2:632\n857#2,2:633\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$22\n*L\n440#1:632\n440#1:633,2\n*E\n"
+    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$22\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,633:1\n766#2:634\n857#2,2:635\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$22\n*L\n442#1:634\n442#1:635,2\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,7 +49,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$22\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,631:1\n766#2:632\n857#2,2:633\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$22\n*L\n440#1:632\n440#1:633,2\n*E\n"
+        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$22\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,633:1\n766#2:634\n857#2,2:635\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$22\n*L\n442#1:634\n442#1:635,2\n*E\n"
     }
 .end annotation
 
@@ -310,7 +310,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 439
+    .line 441
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$22;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -323,7 +323,7 @@
 
     move-object/from16 v0, p0
 
-    .line 440
+    .line 442
     invoke-static {}, Ltop/yukonga/mishka/custom/forms/P3FormEditorsLogicKt;->getDNS_PRESETS()Ljava/util/List;
 
     move-result-object v1
@@ -332,14 +332,14 @@
 
     iget-boolean v2, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$22;->$ipOnly:Z
 
-    .line 632
+    .line 634
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     check-cast v3, Ljava/util/Collection;
 
-    .line 633
+    .line 635
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -362,7 +362,7 @@
 
     if-eqz v2, :cond_39
 
-    .line 440
+    .line 442
     invoke-virtual {v5}, Ltop/yukonga/mishka/custom/forms/FormOption;->getValue()Ljava/lang/String;
 
     move-result-object v5
@@ -395,18 +395,18 @@
     :goto_3a
     if-eqz v5, :cond_15
 
-    .line 633
+    .line 635
     invoke-interface {v3, v4}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_15
 
-    .line 634
+    .line 636
     :cond_40
     move-object v8, v3
 
     check-cast v8, Ljava/util/List;
 
-    .line 441
+    .line 443
     iget-object v6, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$22;->$c:Landroid/content/Context;
 
     const-string v7, "\u9009\u62e9 DNS \u9884\u8bbe"

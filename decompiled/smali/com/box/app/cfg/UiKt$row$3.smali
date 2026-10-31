@@ -76,7 +76,7 @@
 .method public final onClick(Landroid/view/View;)V
     .registers 2
 
-    .line 243
+    .line 245
     iget-object p0, p0, Lcom/box/app/cfg/UiKt$row$3;->$onClick:Lkotlin/jvm/functions/Function0;
 
     invoke-interface {p0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;

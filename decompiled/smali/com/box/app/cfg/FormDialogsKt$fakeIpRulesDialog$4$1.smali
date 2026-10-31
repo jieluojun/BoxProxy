@@ -106,7 +106,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 479
+    .line 481
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/FormDialogsKt$fakeIpRulesDialog$4$1;->invoke(Ljava/lang/String;)V
@@ -119,7 +119,7 @@
 .method public final invoke(Ljava/lang/String;)V
     .registers 4
 
-    .line 479
+    .line 481
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$fakeIpRulesDialog$4$1;->$rules:Ljava/util/ArrayList;
 
     iget v1, p0, Lcom/box/app/cfg/FormDialogsKt$fakeIpRulesDialog$4$1;->$i:I

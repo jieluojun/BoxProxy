@@ -71,7 +71,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 574
+    .line 576
     check-cast p1, Ljava/lang/Boolean;
 
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
@@ -88,7 +88,7 @@
 .method public final invoke(Z)V
     .registers 2
 
-    .line 574
+    .line 576
     iget-object p0, p0, Lcom/box/app/cfg/FormDialogsKt$appListDialog$sysSw$1;->$showSystem:Lkotlin/jvm/internal/Ref$BooleanRef;
 
     iput-boolean p1, p0, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z

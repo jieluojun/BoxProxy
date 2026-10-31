@@ -151,7 +151,7 @@
 .method public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V
     .registers 14
 
-    .line 609
+    .line 611
     iget-object p1, p0, Lcom/box/app/cfg/FormDialogsKt$appListDialog$4;->$showSystem:Lkotlin/jvm/internal/Ref$BooleanRef;
 
     iput-boolean p2, p1, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z

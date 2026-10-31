@@ -22,5 +22,20 @@ public class F_View extends View {
     public Object getTag() { return fTag; }
     public boolean post(Runnable r) { r.run(); return true; }
     public boolean postDelayed(Runnable r, long d) { r.run(); return true; }
+    public float fTY; public int fH = 100; public View.OnTouchListener fTouch; static ViewTreeObserver fVto;
+    public float getTranslationY() { return fTY; }
+    public void setTranslationY(float f) { fTY = f; }
+    public void setOnTouchListener(View.OnTouchListener l) { fTouch = l; }
+    public int getHeight() { return fH; }
+    public int getTop() {
+        if (fParent == null) return 0;
+        int t = 0;
+        for (View k : fParent.fKids) { if (k == (View) (Object) this) return t; t += k.getHeight(); }
+        return 0;
+    }
+    public int getBottom() { return getTop() + getHeight(); }
+    public void getLocationOnScreen(int[] l) { l[0] = 0; l[1] = 0; }
+    public ViewPropertyAnimator animate() { return android.fk.U.make(ViewPropertyAnimator.class); }
+    public ViewTreeObserver getViewTreeObserver() { if (fVto == null) fVto = android.fk.U.make(ViewTreeObserver.class); return fVto; }
     public android.content.res.Resources getResources() { return fCtx.getResources(); }
 }

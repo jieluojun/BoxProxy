@@ -20,18 +20,18 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function0<",
-        "Lkotlin/Unit;",
+        "Landroid/view/View;",
         ">;"
     }
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000\u0008\n\u0000\n\u0002\u0010\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001H\n\u00a2\u0006\u0002\u0008\u0002"
+        "\u0000\u0008\n\u0000\n\u0002\u0018\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001H\n\u00a2\u0006\u0002\u0008\u0002"
     }
     d2 = {
         "<anonymous>",
-        "",
+        "Landroid/view/View;",
         "invoke"
     }
     k = 0x3
@@ -45,9 +45,15 @@
 
 
 # instance fields
-.field final synthetic $i:I
-
-.field final synthetic this$0:Lcom/box/app/cfg/RowList;
+.field final synthetic $rowvRef:Lkotlin/jvm/internal/Ref$ObjectRef;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Lkotlin/jvm/internal/Ref$ObjectRef<",
+            "Landroid/widget/LinearLayout;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # direct methods
@@ -55,12 +61,18 @@
 
 # virtual methods
 
-.method constructor <init>(Lcom/box/app/cfg/RowList;I)V
-    .registers 3
+.method constructor <init>(Lkotlin/jvm/internal/Ref$ObjectRef;)V
+    .registers 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlin/jvm/internal/Ref$ObjectRef<",
+            "Landroid/widget/LinearLayout;",
+            ">;)V"
+        }
+    .end annotation
 
-    iput-object p1, p0, Lcom/box/app/cfg/RowList$refresh$1;->this$0:Lcom/box/app/cfg/RowList;
-
-    iput p2, p0, Lcom/box/app/cfg/RowList$refresh$1;->$i:I
+    iput-object p1, p0, Lcom/box/app/cfg/RowList$refresh$1;->$rowvRef:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     const/4 p1, 0x0
 
@@ -69,34 +81,28 @@
     return-void
 .end method
 
-.method public bridge synthetic invoke()Ljava/lang/Object;
+.method public final invoke()Landroid/view/View;
     .registers 1
 
-    .line 112
-    invoke-virtual {p0}, Lcom/box/app/cfg/RowList$refresh$1;->invoke()V
+    .line 106
+    iget-object p0, p0, Lcom/box/app/cfg/RowList$refresh$1;->$rowvRef:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
+    iget-object p0, p0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
+
+    invoke-static {p0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+
+    check-cast p0, Landroid/view/View;
 
     return-object p0
 .end method
 
-.method public final invoke()V
-    .registers 2
+.method public bridge synthetic invoke()Ljava/lang/Object;
+    .registers 1
 
-    .line 112
-    iget-object v0, p0, Lcom/box/app/cfg/RowList$refresh$1;->this$0:Lcom/box/app/cfg/RowList;
-
-    invoke-virtual {v0}, Lcom/box/app/cfg/RowList;->getOnEdit()Lkotlin/jvm/functions/Function1;
-
-    move-result-object v0
-
-    iget p0, p0, Lcom/box/app/cfg/RowList$refresh$1;->$i:I
-
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 106
+    invoke-virtual {p0}, Lcom/box/app/cfg/RowList$refresh$1;->invoke()Landroid/view/View;
 
     move-result-object p0
 
-    invoke-interface {v0, p0}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    return-void
+    return-object p0
 .end method

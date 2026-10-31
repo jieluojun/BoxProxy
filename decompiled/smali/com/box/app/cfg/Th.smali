@@ -127,7 +127,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 37
+    .line 39
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -136,7 +136,7 @@
 .method public final getBg()I
     .registers 1
 
-    .line 39
+    .line 41
     sget p0, Lcom/box/app/cfg/Th;->bg:I
 
     return p0
@@ -145,7 +145,7 @@
 .method public final getCard()I
     .registers 1
 
-    .line 39
+    .line 41
     sget p0, Lcom/box/app/cfg/Th;->card:I
 
     return p0
@@ -154,7 +154,7 @@
 .method public final getChip()I
     .registers 1
 
-    .line 40
+    .line 42
     sget p0, Lcom/box/app/cfg/Th;->chip:I
 
     return p0
@@ -163,7 +163,7 @@
 .method public final getChipText()I
     .registers 1
 
-    .line 40
+    .line 42
     sget p0, Lcom/box/app/cfg/Th;->chipText:I
 
     return p0
@@ -172,7 +172,7 @@
 .method public final getDanger()I
     .registers 1
 
-    .line 39
+    .line 41
     sget p0, Lcom/box/app/cfg/Th;->danger:I
 
     return p0
@@ -181,7 +181,7 @@
 .method public final getDark()Z
     .registers 1
 
-    .line 38
+    .line 40
     sget-boolean p0, Lcom/box/app/cfg/Th;->dark:Z
 
     return p0
@@ -190,7 +190,7 @@
 .method public final getDivider()I
     .registers 1
 
-    .line 40
+    .line 42
     sget p0, Lcom/box/app/cfg/Th;->divider:I
 
     return p0
@@ -199,7 +199,7 @@
 .method public final getField()I
     .registers 1
 
-    .line 40
+    .line 42
     sget p0, Lcom/box/app/cfg/Th;->field:I
 
     return p0
@@ -208,7 +208,7 @@
 .method public final getOk()I
     .registers 1
 
-    .line 40
+    .line 42
     sget p0, Lcom/box/app/cfg/Th;->ok:I
 
     return p0
@@ -217,7 +217,7 @@
 .method public final getPrimary()I
     .registers 1
 
-    .line 39
+    .line 41
     sget p0, Lcom/box/app/cfg/Th;->primary:I
 
     return p0
@@ -226,7 +226,7 @@
 .method public final getSub()I
     .registers 1
 
-    .line 39
+    .line 41
     sget p0, Lcom/box/app/cfg/Th;->sub:I
 
     return p0
@@ -235,7 +235,7 @@
 .method public final getText()I
     .registers 1
 
-    .line 39
+    .line 41
     sget p0, Lcom/box/app/cfg/Th;->text:I
 
     return p0
@@ -244,7 +244,7 @@
 .method public final getWarn()I
     .registers 1
 
-    .line 40
+    .line 42
     sget p0, Lcom/box/app/cfg/Th;->warn:I
 
     return p0
@@ -257,7 +257,7 @@
         .end annotation
     .end param
 
-    .line 43
+    .line 45
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p0
@@ -284,14 +284,14 @@
     :goto_13
     sput-boolean p0, Lcom/box/app/cfg/Th;->dark:Z
 
-    .line 44
+    .line 46
     sget-boolean p0, Lcom/box/app/cfg/Th;->dark:Z
 
     if-eqz p0, :cond_54
 
     const/high16 p0, -0x1000000
 
-    .line 45
+    .line 47
     sput p0, Lcom/box/app/cfg/Th;->bg:I
 
     const p0, -0xe3e3e2
@@ -308,7 +308,7 @@
 
     const p0, -0xa46401
 
-    .line 46
+    .line 48
     sput p0, Lcom/box/app/cfg/Th;->primary:I
 
     const p0, -0x94a2
@@ -325,7 +325,7 @@
 
     const p0, -0xd9cab8
 
-    .line 47
+    .line 49
     sput p0, Lcom/box/app/cfg/Th;->chip:I
 
     const p0, -0x704701
@@ -345,7 +345,7 @@
     :cond_54
     const p0, -0x80809
 
-    .line 49
+    .line 51
     sput p0, Lcom/box/app/cfg/Th;->bg:I
 
     const/4 p0, -0x1
@@ -362,7 +362,7 @@
 
     const p0, -0xcb7d01
 
-    .line 50
+    .line 52
     sput p0, Lcom/box/app/cfg/Th;->primary:I
 
     const p1, -0x16b9cc
@@ -379,7 +379,7 @@
 
     const p1, -0x1c1101
 
-    .line 51
+    .line 53
     sput p1, Lcom/box/app/cfg/Th;->chip:I
 
     sput p0, Lcom/box/app/cfg/Th;->chipText:I
@@ -399,7 +399,7 @@
 .method public final setBg(I)V
     .registers 2
 
-    .line 39
+    .line 41
     sput p1, Lcom/box/app/cfg/Th;->bg:I
 
     return-void
@@ -408,7 +408,7 @@
 .method public final setCard(I)V
     .registers 2
 
-    .line 39
+    .line 41
     sput p1, Lcom/box/app/cfg/Th;->card:I
 
     return-void
@@ -417,7 +417,7 @@
 .method public final setChip(I)V
     .registers 2
 
-    .line 40
+    .line 42
     sput p1, Lcom/box/app/cfg/Th;->chip:I
 
     return-void
@@ -426,7 +426,7 @@
 .method public final setChipText(I)V
     .registers 2
 
-    .line 40
+    .line 42
     sput p1, Lcom/box/app/cfg/Th;->chipText:I
 
     return-void
@@ -435,7 +435,7 @@
 .method public final setDanger(I)V
     .registers 2
 
-    .line 39
+    .line 41
     sput p1, Lcom/box/app/cfg/Th;->danger:I
 
     return-void
@@ -444,7 +444,7 @@
 .method public final setDark(Z)V
     .registers 2
 
-    .line 38
+    .line 40
     sput-boolean p1, Lcom/box/app/cfg/Th;->dark:Z
 
     return-void
@@ -453,7 +453,7 @@
 .method public final setDivider(I)V
     .registers 2
 
-    .line 40
+    .line 42
     sput p1, Lcom/box/app/cfg/Th;->divider:I
 
     return-void
@@ -462,7 +462,7 @@
 .method public final setField(I)V
     .registers 2
 
-    .line 40
+    .line 42
     sput p1, Lcom/box/app/cfg/Th;->field:I
 
     return-void
@@ -471,7 +471,7 @@
 .method public final setOk(I)V
     .registers 2
 
-    .line 40
+    .line 42
     sput p1, Lcom/box/app/cfg/Th;->ok:I
 
     return-void
@@ -480,7 +480,7 @@
 .method public final setPrimary(I)V
     .registers 2
 
-    .line 39
+    .line 41
     sput p1, Lcom/box/app/cfg/Th;->primary:I
 
     return-void
@@ -489,7 +489,7 @@
 .method public final setSub(I)V
     .registers 2
 
-    .line 39
+    .line 41
     sput p1, Lcom/box/app/cfg/Th;->sub:I
 
     return-void
@@ -498,7 +498,7 @@
 .method public final setText(I)V
     .registers 2
 
-    .line 39
+    .line 41
     sput p1, Lcom/box/app/cfg/Th;->text:I
 
     return-void
@@ -507,7 +507,7 @@
 .method public final setWarn(I)V
     .registers 2
 
-    .line 40
+    .line 42
     sput p1, Lcom/box/app/cfg/Th;->warn:I
 
     return-void

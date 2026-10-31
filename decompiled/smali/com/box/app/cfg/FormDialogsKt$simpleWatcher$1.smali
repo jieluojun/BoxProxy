@@ -78,7 +78,7 @@
 
     iput-object p1, p0, Lcom/box/app/cfg/FormDialogsKt$simpleWatcher$1;->$f:Lkotlin/jvm/functions/Function1;
 
-    .line 526
+    .line 528
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -87,7 +87,7 @@
 .method public afterTextChanged(Landroid/text/Editable;)V
     .registers 2
 
-    .line 527
+    .line 529
     iget-object p0, p0, Lcom/box/app/cfg/FormDialogsKt$simpleWatcher$1;->$f:Lkotlin/jvm/functions/Function1;
 
     invoke-static {p1}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;

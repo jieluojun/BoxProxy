@@ -87,7 +87,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 300
+    .line 302
     check-cast p1, Ljava/lang/Number;
 
     invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
@@ -104,7 +104,7 @@
 .method public final invoke(I)Ljava/lang/String;
     .registers 2
 
-    .line 300
+    .line 302
     iget-object p0, p0, Lcom/box/app/cfg/FormDialogsKt$mapListFieldDialog$4;->$rows:Ljava/util/ArrayList;
 
     invoke-virtual {p0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

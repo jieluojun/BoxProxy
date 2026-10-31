@@ -68,7 +68,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 575
+    .line 577
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$appListDialog$1;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -79,7 +79,7 @@
 .method public final invoke()V
     .registers 1
 
-    .line 575
+    .line 577
     iget-object p0, p0, Lcom/box/app/cfg/FormDialogsKt$appListDialog$1;->$sysSw:Landroid/widget/Switch;
 
     invoke-virtual {p0}, Landroid/widget/Switch;->toggle()V

@@ -85,7 +85,7 @@
 .method public final invoke()Ljava/lang/Integer;
     .registers 1
 
-    .line 150
+    .line 152
     iget-object p0, p0, Lcom/box/app/cfg/FormDialogsKt$listDialog$1;->$items:Ljava/util/ArrayList;
 
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
@@ -102,7 +102,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 150
+    .line 152
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$listDialog$1;->invoke()Ljava/lang/Integer;
 
     move-result-object p0

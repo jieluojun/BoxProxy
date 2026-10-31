@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,631:1\n1#2:632\n288#3,2:633\n288#3,2:635\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1\n*L\n416#1:633,2\n435#1:635,2\n*E\n"
+    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,633:1\n1#2:634\n288#3,2:635\n288#3,2:637\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1\n*L\n418#1:635,2\n437#1:637,2\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,7 +49,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,631:1\n1#2:632\n288#3,2:633\n288#3,2:635\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1\n*L\n416#1:633,2\n435#1:635,2\n*E\n"
+        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,633:1\n1#2:634\n288#3,2:635\n288#3,2:637\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1\n*L\n418#1:635,2\n437#1:637,2\n*E\n"
     }
 .end annotation
 
@@ -346,7 +346,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 406
+    .line 408
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -359,12 +359,12 @@
 
     move-object/from16 v0, p0
 
-    .line 407
+    .line 409
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$body:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1}, Landroid/widget/LinearLayout;->removeAllViews()V
 
-    .line 408
+    .line 410
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$rawMode:Lkotlin/jvm/internal/Ref$BooleanRef;
 
     iget-boolean v1, v1, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
@@ -377,7 +377,7 @@
 
     if-eqz v1, :cond_a6
 
-    .line 409
+    .line 411
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v5, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$c:Landroid/content/Context;
@@ -410,7 +410,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 410
+    .line 412
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v5, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$c:Landroid/content/Context;
@@ -441,7 +441,7 @@
 
     invoke-virtual {v1, v5, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 411
+    .line 413
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v2, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$c:Landroid/content/Context;
@@ -532,7 +532,7 @@
 
     goto/16 :goto_778
 
-    .line 416
+    .line 418
     :cond_a6
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$body:Landroid/widget/LinearLayout;
 
@@ -542,7 +542,7 @@
 
     iget-object v6, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$protocol:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    .line 633
+    .line 635
     invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v5
@@ -562,7 +562,7 @@
 
     check-cast v8, Ltop/yukonga/mishka/custom/forms/FormOption;
 
-    .line 416
+    .line 418
     invoke-virtual {v8}, Ltop/yukonga/mishka/custom/forms/FormOption;->getValue()Ljava/lang/String;
 
     move-result-object v8
@@ -651,7 +651,7 @@
 
     iget-object v6, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$c:Landroid/content/Context;
 
-    .line 418
+    .line 420
     invoke-static {v6, v3}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
 
     move-result v7
@@ -666,10 +666,10 @@
 
     check-cast v5, Landroid/view/View;
 
-    .line 416
+    .line 418
     invoke-virtual {v1, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 419
+    .line 421
     invoke-static {}, Ltop/yukonga/mishka/custom/forms/P3FormEditorsLogicKt;->getDNS_NETWORK_PROTOCOLS()Ljava/util/Set;
 
     move-result-object v1
@@ -684,7 +684,7 @@
 
     if-eqz v1, :cond_53f
 
-    .line 420
+    .line 422
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v6, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$c:Landroid/content/Context;
@@ -806,7 +806,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 421
+    .line 423
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v2, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$c:Landroid/content/Context;
@@ -893,7 +893,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 422
+    .line 424
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$protocol:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iget-object v1, v1, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
@@ -1000,7 +1000,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 423
+    .line 425
     :cond_25a
     iget-boolean v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$ipOnly:Z
 
@@ -1107,7 +1107,7 @@
 
     const-string v3, "quic"
 
-    .line 424
+    .line 426
     filled-new-array {v1, v2, v3}, [Ljava/lang/String;
 
     move-result-object v1
@@ -1126,7 +1126,7 @@
 
     if-eqz v1, :cond_384
 
-    .line 425
+    .line 427
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v2, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$c:Landroid/content/Context;
@@ -1209,7 +1209,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 426
+    .line 428
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v2, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$c:Landroid/content/Context;
@@ -1304,7 +1304,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 428
+    .line 430
     :cond_384
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$protocol:Lkotlin/jvm/internal/Ref$ObjectRef;
 
@@ -1400,7 +1400,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 429
+    .line 431
     :cond_3e4
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$body:Landroid/widget/LinearLayout;
 
@@ -1496,7 +1496,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 430
+    .line 432
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v2, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$c:Landroid/content/Context;
@@ -1579,7 +1579,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 431
+    .line 433
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v2, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$c:Landroid/content/Context;
@@ -1662,7 +1662,7 @@
 
     invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 432
+    .line 434
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v2, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$c:Landroid/content/Context;
@@ -1747,7 +1747,7 @@
 
     goto/16 :goto_627
 
-    .line 433
+    .line 435
     :cond_53f
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$protocol:Lkotlin/jvm/internal/Ref$ObjectRef;
 
@@ -1757,7 +1757,7 @@
 
     const-string v2, "dhcp"
 
-    .line 434
+    .line 436
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v2
@@ -1863,7 +1863,7 @@
     :cond_5ac
     const-string v2, "rcode"
 
-    .line 435
+    .line 437
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
@@ -1880,7 +1880,7 @@
 
     iget-object v4, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$rcode:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    .line 635
+    .line 637
     invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -1900,7 +1900,7 @@
 
     check-cast v6, Ltop/yukonga/mishka/custom/forms/FormOption;
 
-    .line 435
+    .line 437
     invoke-virtual {v6}, Ltop/yukonga/mishka/custom/forms/FormOption;->getValue()Ljava/lang/String;
 
     move-result-object v6
@@ -1987,7 +1987,7 @@
 
     iget-object v4, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$c:Landroid/content/Context;
 
-    .line 437
+    .line 439
     invoke-static {v4, v3}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
 
     move-result v5
@@ -2002,10 +2002,10 @@
 
     check-cast v2, Landroid/view/View;
 
-    .line 435
+    .line 437
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 439
+    .line 441
     :cond_627
     :goto_627
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$body:Landroid/widget/LinearLayout;
@@ -2106,17 +2106,17 @@
 
     const v2, 0x800005
 
-    .line 442
+    .line 444
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setGravity(I)V
 
     check-cast v1, Landroid/view/View;
 
     move-object/from16 v2, v76
 
-    .line 439
+    .line 441
     invoke-virtual {v2, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 443
+    .line 445
     iget-object v3, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$previewV:Landroid/widget/TextView;
 
     iget-object v4, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$protocol:Lkotlin/jvm/internal/Ref$ObjectRef;
@@ -2153,7 +2153,7 @@
 
     invoke-static/range {v3 .. v17}, Lcom/box/app/cfg/FormDialogsKt;->access$dnsBuilderDialog$updPreview(Landroid/widget/TextView;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$BooleanRef;Lkotlin/jvm/internal/Ref$BooleanRef;Ltop/yukonga/mishka/custom/forms/DnsServerParts;)V
 
-    .line 444
+    .line 446
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v2, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$previewV:Landroid/widget/TextView;
@@ -2189,7 +2189,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 445
+    .line 447
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$parsed0:Ltop/yukonga/mishka/custom/forms/DnsServerParts;
 
     invoke-virtual {v1}, Ltop/yukonga/mishka/custom/forms/DnsServerParts;->getExtras()Ljava/util/List;
@@ -2268,7 +2268,7 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 446
+    .line 448
     :cond_71c
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1;->$body:Landroid/widget/LinearLayout;
 

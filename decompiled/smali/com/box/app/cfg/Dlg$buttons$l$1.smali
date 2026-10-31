@@ -79,7 +79,7 @@
 .method public final invoke()Landroid/widget/LinearLayout$LayoutParams;
     .registers 4
 
-    .line 340
+    .line 342
     new-instance p0, Landroid/widget/LinearLayout$LayoutParams;
 
     const/4 v0, 0x0
@@ -96,7 +96,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 340
+    .line 342
     invoke-virtual {p0}, Lcom/box/app/cfg/Dlg$buttons$l$1;->invoke()Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object p0

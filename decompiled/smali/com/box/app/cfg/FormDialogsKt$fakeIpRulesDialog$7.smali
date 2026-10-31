@@ -104,7 +104,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 484
+    .line 486
     invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$fakeIpRulesDialog$7;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -115,7 +115,7 @@
 .method public final invoke()V
     .registers 4
 
-    .line 484
+    .line 486
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$fakeIpRulesDialog$7;->$c:Landroid/content/Context;
 
     new-instance v1, Lcom/box/app/cfg/FormDialogsKt$fakeIpRulesDialog$7$1;
