@@ -108,7 +108,7 @@
 .end method
 
 .method public final show(Landroid/app/Activity;Ljava/lang/String;Z)V
-    .registers 11
+    .registers 13
     .param p1    # Landroid/app/Activity;
         .annotation build Lorg/jetbrains/annotations/NotNull;
         .end annotation
@@ -136,178 +136,171 @@
     invoke-virtual {p0, v1}, Landroid/app/Dialog;->requestWindowFeature(I)Z
 
     .line 100
-    new-instance v1, Landroid/widget/TextView;
+    new-instance v2, Landroid/widget/TextView;
 
-    invoke-direct {v1, v0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v2, v0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     .line 101
-    move-object v2, p2
+    move-object v3, p2
 
-    check-cast v2, Ljava/lang/CharSequence;
+    check-cast v3, Ljava/lang/CharSequence;
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const/high16 v2, 0x41600000    # 14.0f
+    const/high16 v3, 0x41600000    # 14.0f
 
     .line 102
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextSize(F)V
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object v2
-
-    iget v2, v2, Landroid/content/res/Configuration;->uiMode:I
-
-    and-int/lit8 v2, v2, 0x30
-
-    const/16 v3, 0x20
-
-    if-ne v2, v3, :fl_t
-
-    const/4 v2, -0x1
-
-    goto :fd_t
-
-    :fl_t
-    const v2, -0xcccccd
-
-    :fd_t
-
-    .line 103
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
-
-    const/4 v2, 0x0
-
-    const v3, 0x3f8f5c29    # 1.12f
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextSize(F)V
 
     .line 104
-    invoke-virtual {v1, v2, v3}, Landroid/widget/TextView;->setLineSpacing(FF)V
-
-    const/16 v2, 0x12
-
-    .line 105
-    invoke-static {v0, v2}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
-
-    move-result v3
-
-    const/16 v4, 0xc
-
-    invoke-static {v0, v4}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
-
-    move-result v5
-
-    invoke-static {v0, v2}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
-
-    move-result v6
-
-    invoke-static {v0, v4}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
-
-    move-result v4
-
-    invoke-virtual {v1, v3, v5, v6, v4}, Landroid/widget/TextView;->setPadding(IIII)V
-
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
-    move-result-object v4
-
-    iget v4, v4, Landroid/content/res/Configuration;->uiMode:I
-
-    and-int/lit8 v4, v4, 0x30
-
-    const/16 v5, 0x20
-
-    if-ne v4, v5, :fl_b
-
-    const v3, -0xfd9d9da
-
-    goto :fd_b
-
-    :fl_b
-    const v3, -0xd0a0a0b
-
-    :fd_b
-
-    .line 106
-    invoke-static {v0, v3, v2}, Lcom/box/app/cfg/UiKt;->shape(Landroid/content/Context;II)Landroid/graphics/drawable/GradientDrawable;
-
-    move-result-object v2
-
-    check-cast v2, Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    .line 107
-    new-instance v2, Landroid/widget/FrameLayout;
-
-    invoke-direct {v2, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
-
-    .line 108
-    move-object v3, v1
-
-    check-cast v3, Landroid/view/View;
-
-    new-instance v4, Landroid/widget/FrameLayout$LayoutParams;
-
-    const/4 v5, -0x2
-
-    const/16 v6, 0x11
-
-    invoke-direct {v4, v5, v5, v6}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
-
-    check-cast v4, Landroid/view/ViewGroup$LayoutParams;
-
-    invoke-virtual {v2, v3, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 109
-    check-cast v2, Landroid/view/View;
-
-    invoke-virtual {p0, v2}, Landroid/app/Dialog;->setContentView(Landroid/view/View;)V
-
-    const/4 v2, 0x0
-
-    .line 110
-    invoke-virtual {p0, v2}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
-
-    .line 111
-    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
+    invoke-virtual {p1}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v3
 
-    invoke-static {v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
+    invoke-virtual {v3}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v3
+
+    iget v3, v3, Landroid/content/res/Configuration;->uiMode:I
+
+    and-int/lit8 v3, v3, 0x30
+
+    const/4 v4, 0x0
+
+    const/16 v5, 0x20
+
+    if-ne v3, v5, :cond_31
+
+    goto :goto_32
+
+    :cond_31
+    move v1, v4
+
+    :goto_32
+    if-eqz v1, :cond_36
+
+    const/4 v3, -0x1
+
+    goto :goto_39
+
+    :cond_36
+    const v3, -0xcccccd
+
+    .line 105
+    :goto_39
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
+
+    const/4 v3, 0x0
+
+    const v5, 0x3f8f5c29    # 1.12f
+
+    .line 106
+    invoke-virtual {v2, v3, v5}, Landroid/widget/TextView;->setLineSpacing(FF)V
+
+    const/16 v3, 0x12
+
+    .line 107
+    invoke-static {v0, v3}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
+
+    move-result v5
+
+    const/16 v6, 0xc
+
+    invoke-static {v0, v6}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
+
+    move-result v7
+
+    invoke-static {v0, v3}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
+
+    move-result v8
+
+    invoke-static {v0, v6}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
+
+    move-result v6
+
+    invoke-virtual {v2, v5, v7, v8, v6}, Landroid/widget/TextView;->setPadding(IIII)V
+
+    if-eqz v1, :cond_60
+
+    const v1, -0xfd9d9da
+
+    goto :goto_63
+
+    :cond_60
+    const v1, -0xd0a0a0b
+
+    .line 108
+    :goto_63
+    invoke-static {v0, v1, v3}, Lcom/box/app/cfg/UiKt;->shape(Landroid/content/Context;II)Landroid/graphics/drawable/GradientDrawable;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v2, v1}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    .line 109
+    new-instance v1, Landroid/widget/FrameLayout;
+
+    invoke-direct {v1, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+    .line 110
+    move-object v3, v2
+
+    check-cast v3, Landroid/view/View;
+
+    new-instance v5, Landroid/widget/FrameLayout$LayoutParams;
+
+    const/16 v6, 0x11
+
+    const/4 v7, -0x2
+
+    invoke-direct {v5, v7, v7, v6}, Landroid/widget/FrameLayout$LayoutParams;-><init>(III)V
+
+    check-cast v5, Landroid/view/ViewGroup$LayoutParams;
+
+    invoke-virtual {v1, v3, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 111
+    check-cast v1, Landroid/view/View;
+
+    invoke-virtual {p0, v1}, Landroid/app/Dialog;->setContentView(Landroid/view/View;)V
 
     .line 112
-    new-instance v4, Landroid/graphics/drawable/ColorDrawable;
-
-    invoke-direct {v4, v2}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
-
-    check-cast v4, Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v3, v4}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    const/4 v2, 0x2
+    invoke-virtual {p0, v4}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
     .line 113
-    invoke-virtual {v3, v2}, Landroid/view/Window;->clearFlags(I)V
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
-    const/16 v2, 0x28
+    move-result-object v1
+
+    invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     .line 114
-    invoke-virtual {v3, v2}, Landroid/view/Window;->addFlags(I)V
+    new-instance v3, Landroid/graphics/drawable/ColorDrawable;
 
-    const/16 v2, 0x51
+    invoke-direct {v3, v4}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
+
+    check-cast v3, Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v1, v3}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    const/4 v3, 0x2
 
     .line 115
-    invoke-virtual {v3, v2}, Landroid/view/Window;->setGravity(I)V
+    invoke-virtual {v1, v3}, Landroid/view/Window;->clearFlags(I)V
+
+    const/16 v3, 0x28
 
     .line 116
+    invoke-virtual {v1, v3}, Landroid/view/Window;->addFlags(I)V
+
+    const/16 v3, 0x51
+
+    .line 117
+    invoke-virtual {v1, v3}, Landroid/view/Window;->setGravity(I)V
+
+    .line 118
     invoke-virtual {p1}, Landroid/app/Activity;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -320,55 +313,55 @@
 
     int-to-float p1, p1
 
-    const v2, 0x3f6b851f    # 0.92f
+    const v3, 0x3f6b851f    # 0.92f
 
-    mul-float/2addr p1, v2
+    mul-float/2addr p1, v3
 
     float-to-int p1, p1
 
-    invoke-virtual {v3, p1, v5}, Landroid/view/Window;->setLayout(II)V
+    invoke-virtual {v1, p1, v7}, Landroid/view/Window;->setLayout(II)V
 
-    .line 117
-    invoke-virtual {v3}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
+    .line 119
+    invoke-virtual {v1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object p1
 
-    const/16 v2, 0x48
+    const/16 v3, 0x48
 
-    .line 118
-    invoke-static {v0, v2}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
+    .line 120
+    invoke-static {v0, v3}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
 
     move-result v0
 
     iput v0, p1, Landroid/view/WindowManager$LayoutParams;->y:I
 
-    .line 119
-    invoke-virtual {v3, p1}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
+    .line 121
+    invoke-virtual {v1, p1}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
-    .line 120
+    .line 122
     sget-object p1, Lcom/box/app/cfg/FullToast$show$1;->INSTANCE:Lcom/box/app/cfg/FullToast$show$1;
 
     check-cast p1, Landroid/view/View$OnClickListener;
 
-    invoke-virtual {v1, p1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v2, p1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 121
+    .line 123
     sput-object p0, Lcom/box/app/cfg/FullToast;->cur:Landroid/app/Dialog;
 
-    .line 122
+    .line 124
     invoke-virtual {p0}, Landroid/app/Dialog;->show()V
 
-    if-eqz p3, :cond_bd
+    if-eqz p3, :cond_db
 
     const/16 p1, 0xfa0
 
-    goto :goto_bf
+    goto :goto_dd
 
-    :cond_bd
+    :cond_db
     const/16 p1, 0x9c4
 
-    .line 123
-    :goto_bf
+    .line 125
+    :goto_dd
     invoke-virtual {p2}, Ljava/lang/String;->length()I
 
     move-result p2
@@ -383,7 +376,7 @@
 
     move-result p1
 
-    .line 124
+    .line 126
     new-instance p2, Lcom/box/app/cfg/FullToast$show$2;
 
     invoke-direct {p2, p0}, Lcom/box/app/cfg/FullToast$show$2;-><init>(Landroid/app/Dialog;)V
@@ -392,7 +385,7 @@
 
     int-to-long p0, p1
 
-    invoke-virtual {v1, p2, p0, p1}, Landroid/widget/TextView;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v2, p2, p0, p1}, Landroid/widget/TextView;->postDelayed(Ljava/lang/Runnable;J)Z
 
     return-void
 .end method

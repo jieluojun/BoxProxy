@@ -157,8 +157,27 @@
 
     move-result v3
 
+    if-nez v3, :cond_mihomo
+
+    invoke-static {v7}, Lcom/box/app/cfg/CfgGlue;->isSingBox(Ljava/lang/Object;)Z
+
+    move-result v3
+
     if-eqz v3, :goto_done
 
+    iget-object v8, v0, Lcom/box/app/cfg/CfgNav;->c:Landroid/content/Context;
+
+    const/4 v9, 0x1
+
+    const-string v10, "\u53ef\u89c6"
+
+    const/high16 v11, 0x42400000    # 48.0f
+
+    invoke-static/range {v6 .. v11}, Lcom/box/app/cfg/CfgNav;->e(Lv62;Ljava/lang/Object;Landroid/content/Context;ILjava/lang/String;F)V
+
+    goto :goto_done
+
+    :cond_mihomo
     iget-object v8, v0, Lcom/box/app/cfg/CfgNav;->c:Landroid/content/Context;
 
     const/4 v9, 0x1

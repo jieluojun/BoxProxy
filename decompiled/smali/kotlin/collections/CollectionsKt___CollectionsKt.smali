@@ -1100,6 +1100,56 @@
     return p0
 .end method
 
+.method public static final intersect(Ljava/lang/Iterable;Ljava/lang/Iterable;)Ljava/util/Set;
+    .registers 3
+    .param p0    # Ljava/lang/Iterable;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .param p1    # Ljava/lang/Iterable;
+        .annotation build Lorg/jetbrains/annotations/NotNull;
+        .end annotation
+    .end param
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Iterable<",
+            "+TT;>;",
+            "Ljava/lang/Iterable<",
+            "+TT;>;)",
+            "Ljava/util/Set<",
+            "TT;>;"
+        }
+    .end annotation
+
+    .annotation build Lorg/jetbrains/annotations/NotNull;
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "other"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 1673
+    invoke-static {p0}, Lkotlin/collections/CollectionsKt;->toMutableSet(Ljava/lang/Iterable;)Ljava/util/Set;
+
+    move-result-object p0
+
+    .line 1674
+    move-object v0, p0
+
+    check-cast v0, Ljava/util/Collection;
+
+    invoke-static {v0, p1}, Lkotlin/collections/CollectionsKt;->retainAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
+
+    return-object p0
+.end method
+
 .method public static final joinTo(Ljava/lang/Iterable;Ljava/lang/Appendable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;)Ljava/lang/Appendable;
     .registers 10
     .param p0    # Ljava/lang/Iterable;

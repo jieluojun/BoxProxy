@@ -55,7 +55,7 @@
 .method private constructor <init>()V
     .registers 1
 
-    .line 142
+    .line 148
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -84,12 +84,12 @@
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
-    .line 145
+    .line 151
     invoke-virtual {p0}, Landroid/app/Activity;->getOnBackInvokedDispatcher()Landroid/window/OnBackInvokedDispatcher;
 
     move-result-object p0
 
-    .line 147
+    .line 153
     new-instance v0, Lcom/box/app/cfg/BackCompat$register$1;
 
     invoke-direct {v0, p1}, Lcom/box/app/cfg/BackCompat$register$1;-><init>(Lkotlin/jvm/functions/Function0;)V
@@ -98,7 +98,7 @@
 
     const/4 p1, 0x0
 
-    .line 145
+    .line 151
     invoke-interface {p0, p1, v0}, Landroid/window/OnBackInvokedDispatcher;->registerOnBackInvokedCallback(ILandroid/window/OnBackInvokedCallback;)V
 
     return-void

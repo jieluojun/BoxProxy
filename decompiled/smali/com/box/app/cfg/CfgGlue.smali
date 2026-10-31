@@ -151,3 +151,28 @@
 
     return v0
 .end method
+
+# 这份配置是不是 sing-box 的（.json/.jsonc 且所在工作目录是 sing-box）。只有可视化修改入口用它。参数是 mj5。
+.method public static isSingBox(Ljava/lang/Object;)Z
+    .locals 1
+
+    :try_start_0
+    check-cast p0, Lmj5;
+
+    iget-object v0, p0, Lmj5;->a:Ljava/lang/String;
+
+    invoke-static {v0}, Lcom/box/app/cfg/EditorGlue;->isSingBox(Ljava/lang/String;)Z
+
+    move-result v0
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v0
+
+    :catch_0
+    move-exception v0
+
+    const/4 v0, 0x0
+
+    return v0
+.end method

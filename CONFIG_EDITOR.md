@@ -87,7 +87,23 @@ CI 只能证明 smali 能汇编，证明不了面板能打开。`vpn-src/cfg/har
 
 - 顶栏的「可视化修改 / 锚点面板」两个图标只在**mihomo 的配置**里出现：`EditorGlue.isMihomo(path)` 从配置文件往上找第一个叫核心名
   （mihomo / sing-box / xray / v2fly / hysteria）的工作目录，是 `mihomo` 才显示；其它核心和认不出的目录都不显示。
-  以后加 sing-box 的可视化修改，在 `EditorGlue` 里放开对应判断、`CfgNav` 里按核心挂不同入口即可。
+  sing-box 的配置（`.json` / `.jsonc` 且目录是 `sing-box`，`EditorGlue.isSingBox`）只显示「可视化修改」一个图标（没有锚点概念）。
 - 面板改完写回编辑器时，`CfgGlue.replaceKeep` 现在只替换**真正变了的那一段**（`EditorGlue.plan` 算公共前后缀，不拆 `\r\n`），
   然后把光标 / 滚动定位到改动所在的行（多行插入定位到新内容的第一行），不再被整篇替换带到文末。一次替换仍是撤销栈里的一步。
   逻辑由 `harness/EditTest.kt` 覆盖（随机往返 3000 例 + 行号 + CRLF + 目录判断）。
+
+## sing-box 的可视化修改
+
+左上角同一位置的船锚图标，打开 `SbFormActivity`（`.json` / `.jsonc`，`CfgLauncher` 按扩展名分流）。**字段范围以 fork https://github.com/jieluojun/sing-box 为准**
+（含最新的 `3cc2bbf7`：`cns` 入站 / 出站、HTTP 出站的 CONNECT 相关字段、`providers`、`http_clients`、`certificate_providers`、`network_namespaces` 等）：
+
+- 数据来源是随 APK 带的 `assets/schema/sing-box-fork.json`（fork 的 `docs/schema.json`，补上了它没有的 `cns` / `del_host` / tun `stack`）
+  和 `sing-box-fork-hints.json`（从 fork 的 `docs/configuration/**/*.zh.md` 抽的中文字段说明）。两个文件由 `vpn-src/tools/gen_sb_schema.py` 生成，fork 更新后重新跑即可。
+  Go 里标了 `schema:"omit"` 的废弃字段不在 schema 里，会出现在页内的「未识别字段」行（可编辑 / 清除），不会丢。
+- 首页：全局（log / ntp / experimental / …）、入站、出站、端点、DNS（服务器 / 规则）、路由（规则 / 规则集 / 最终出口 …）、订阅（providers）等；列表页每项有摘要、
+  复制 / 移到最前 / 最后 / 删除；「原文新增」可直接粘一段 JSON。有判别键的对象（`type` / `action` / `version` …）切换类型时，新类型没有的字段会先提示再移除。
+- 标签联动：出站 / 入站 / DNS 服务器 / 规则集 / 订阅等的 `tag` 重命名会把配置里所有引用一起改；删除仍被引用的项会列出引用处并确认；引用字段给出现有标签的选项。
+- 字段多于 14 个的页面默认只显示已设置 + 必填的字段，点「显示其余 N 个字段」展开。
+- 写回只重写目标片段，保留注释、尾逗号、缩进与 CRLF（`SbJson.kt` 自带的 JSONC 解析 + 局部改写）；一次操作 = 编辑器撤销栈里的一步（`replaceKeep`），页内也有撤销。
+- 验证：`harness/SbTest.kt`（解析/改写/schema 形态）、`Main.kt sbflow`（重命名级联、复制、切换类型、撤销）、随机点击 `sb`（每步校验草稿仍是合法 JSONC），
+  以及 `pruned.sh` 在真实裁剪后的 dex 上跑。**界面未在真机验证。**

@@ -71,7 +71,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 156
+    .line 162
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/FormActivity$build$1;->invoke(Ljava/lang/String;)V
@@ -84,7 +84,7 @@
 .method public final invoke(Ljava/lang/String;)V
     .registers 2
 
-    .line 156
+    .line 162
     iget-object p0, p0, Lcom/box/app/cfg/FormActivity$build$1;->$token:Ljava/lang/Object;
 
     invoke-static {p0, p1}, Lcom/box/app/cfg/CfgGlue;->setText(Ljava/lang/Object;Ljava/lang/String;)V

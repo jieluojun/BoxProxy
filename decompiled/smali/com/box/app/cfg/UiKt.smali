@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/UiKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,709:1\n1#2:710\n1864#3,3:711\n*S KotlinDebug\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/UiKt\n*L\n316#1:711,3\n*E\n"
+    value = "SMAP\nUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/UiKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,711:1\n1#2:712\n1864#3,3:713\n*S KotlinDebug\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/UiKt\n*L\n318#1:713,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -120,7 +120,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/UiKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,709:1\n1#2:710\n1864#3,3:711\n*S KotlinDebug\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/UiKt\n*L\n316#1:711,3\n*E\n"
+        "SMAP\nUi.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/UiKt\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,711:1\n1#2:712\n1864#3,3:713\n*S KotlinDebug\n*F\n+ 1 Ui.kt\ncom/box/app/cfg/UiKt\n*L\n318#1:713,3\n*E\n"
     }
 .end annotation
 
@@ -217,17 +217,17 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 309
+    .line 311
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v1, 0x1
 
-    .line 310
+    .line 312
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 311
+    .line 313
     sget-object v2, Lcom/box/app/cfg/Th;->INSTANCE:Lcom/box/app/cfg/Th;
 
     invoke-virtual {v2}, Lcom/box/app/cfg/Th;->getCard()I
@@ -244,10 +244,10 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 312
+    .line 314
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setClipToOutline(Z)V
 
-    .line 313
+    .line 315
     new-instance v2, Lcom/box/app/cfg/UiKt$card$1;
 
     invoke-direct {v2, p0}, Lcom/box/app/cfg/UiKt$card$1;-><init>(Landroid/content/Context;)V
@@ -256,10 +256,10 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/LinearLayout;->setOutlineProvider(Landroid/view/ViewOutlineProvider;)V
 
-    .line 316
+    .line 318
     check-cast p1, Ljava/lang/Iterable;
 
-    .line 712
+    .line 714
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -294,7 +294,7 @@
 
     if-lez v4, :cond_66
 
-    .line 318
+    .line 320
     new-instance v4, Landroid/view/View;
 
     invoke-direct {v4, p0}, Landroid/view/View;-><init>(Landroid/content/Context;)V
@@ -309,7 +309,7 @@
 
     const/4 v9, -0x1
 
-    .line 319
+    .line 321
     invoke-static {v9, v1}, Lcom/box/app/cfg/UiKt;->lp(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v9
@@ -326,7 +326,7 @@
 
     invoke-virtual {v0, v4, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 321
+    .line 323
     :cond_66
     invoke-static {v2, v2, v7, v6}, Lcom/box/app/cfg/UiKt;->lp$default(IIILjava/lang/Object;)Landroid/widget/LinearLayout$LayoutParams;
 
@@ -340,7 +340,7 @@
 
     goto :goto_2f
 
-    .line 323
+    .line 325
     :cond_71
     invoke-static {v2, v2, v7, v6}, Lcom/box/app/cfg/UiKt;->lp$default(IIILjava/lang/Object;)Landroid/widget/LinearLayout$LayoutParams;
 
@@ -376,7 +376,7 @@
 
     iput p0, p1, Landroid/widget/LinearLayout$LayoutParams;->bottomMargin:I
 
-    .line 324
+    .line 326
     check-cast p1, Landroid/view/ViewGroup$LayoutParams;
 
     invoke-virtual {v0, p1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
@@ -397,7 +397,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 328
+    .line 330
     invoke-static {p1}, Lkotlin/collections/ArraysKt;->toList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
@@ -422,7 +422,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 214
+    .line 216
     move-object v1, p1
 
     check-cast v1, Ljava/lang/CharSequence;
@@ -468,7 +468,7 @@
 
     const/4 v0, 0x7
 
-    .line 215
+    .line 217
     invoke-static {p0, v0}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
 
     move-result v1
@@ -491,7 +491,7 @@
 
     if-eqz p2, :cond_47
 
-    .line 216
+    .line 218
     sget-object p2, Lcom/box/app/cfg/Th;->INSTANCE:Lcom/box/app/cfg/Th;
 
     invoke-virtual {p2}, Lcom/box/app/cfg/Th;->getDark()Z
@@ -529,7 +529,7 @@
 
     const/4 p0, 0x1
 
-    .line 217
+    .line 219
     invoke-virtual {p1, p0}, Landroid/widget/TextView;->setMaxLines(I)V
 
     return-object p1
@@ -544,7 +544,7 @@
 
     const/4 p2, 0x0
 
-    .line 213
+    .line 215
     :cond_5
     invoke-static {p0, p1, p2}, Lcom/box/app/cfg/UiKt;->chip(Landroid/content/Context;Ljava/lang/String;Z)Landroid/widget/TextView;
 
@@ -562,7 +562,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 527
+    .line 529
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
@@ -610,7 +610,7 @@
         }
     .end annotation
 
-    .line 435
+    .line 437
     new-instance p4, Lcom/box/app/cfg/Dlg;
 
     invoke-direct {p4, p0}, Lcom/box/app/cfg/Dlg;-><init>(Landroid/content/Context;)V
@@ -623,7 +623,7 @@
 
     move-result-object p1
 
-    .line 436
+    .line 438
     move-object v1, p2
 
     check-cast v1, Ljava/lang/CharSequence;
@@ -656,7 +656,7 @@
 
     invoke-virtual {p1, p0, p2}, Lcom/box/app/cfg/Dlg;->add(Landroid/view/View;I)Lcom/box/app/cfg/Dlg;
 
-    .line 437
+    .line 439
     new-instance p0, Lcom/box/app/cfg/UiKt$confirmDlg$1;
 
     invoke-direct {p0, p1, p5}, Lcom/box/app/cfg/UiKt$confirmDlg$1;-><init>(Lcom/box/app/cfg/Dlg;Lkotlin/jvm/functions/Function0;)V
@@ -681,7 +681,7 @@
 
     invoke-static/range {v2 .. v9}, Lcom/box/app/cfg/Dlg;->buttons$default(Lcom/box/app/cfg/Dlg;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lkotlin/jvm/functions/Function0;Lkotlin/jvm/functions/Function0;ILjava/lang/Object;)Lcom/box/app/cfg/Dlg;
 
-    .line 438
+    .line 440
     invoke-virtual {p1}, Lcom/box/app/cfg/Dlg;->show()Lcom/box/app/cfg/Dlg;
 
     return-void
@@ -716,7 +716,7 @@
 
     move-object v5, p5
 
-    .line 434
+    .line 436
     invoke-static/range {v0 .. v5}, Lcom/box/app/cfg/UiKt;->confirmDlg(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLkotlin/jvm/functions/Function0;)V
 
     return-void
@@ -793,12 +793,12 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 249
+    .line 251
     new-instance v0, Landroid/widget/EditText;
 
     invoke-direct {v0, p0}, Landroid/widget/EditText;-><init>(Landroid/content/Context;)V
 
-    .line 250
+    .line 252
     check-cast p1, Ljava/lang/CharSequence;
 
     invoke-virtual {v0, p1}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
@@ -811,7 +811,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/EditText;->setTextSize(F)V
 
-    .line 251
+    .line 253
     sget-object p1, Lcom/box/app/cfg/Th;->INSTANCE:Lcom/box/app/cfg/Th;
 
     invoke-virtual {p1}, Lcom/box/app/cfg/Th;->getText()I
@@ -830,7 +830,7 @@
 
     if-eqz p4, :cond_2d
 
-    .line 252
+    .line 254
     sget-object p1, Landroid/graphics/Typeface;->MONOSPACE:Landroid/graphics/Typeface;
 
     invoke-virtual {v0, p1}, Landroid/widget/EditText;->setTypeface(Landroid/graphics/Typeface;)V
@@ -842,7 +842,7 @@
 
     const/4 p2, 0x1
 
-    .line 253
+    .line 255
     invoke-virtual {v0, p2}, Landroid/widget/EditText;->setSingleLine(Z)V
 
     if-eqz p5, :cond_3a
@@ -862,7 +862,7 @@
     :cond_41
     const p2, 0xa0001
 
-    .line 254
+    .line 256
     invoke-virtual {v0, p2}, Landroid/widget/EditText;->setInputType(I)V
 
     const/4 p2, 0x3
@@ -875,7 +875,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/EditText;->setMaxLines(I)V
 
-    .line 255
+    .line 257
     :goto_54
     sget-object p2, Lcom/box/app/cfg/Th;->INSTANCE:Lcom/box/app/cfg/Th;
 
@@ -891,7 +891,7 @@
 
     invoke-virtual {v0, p2}, Landroid/widget/EditText;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 256
+    .line 258
     invoke-static {p0, p1}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
 
     move-result p2
@@ -966,7 +966,7 @@
 
     move-object v1, p1
 
-    .line 248
+    .line 250
     invoke-static/range {v0 .. v5}, Lcom/box/app/cfg/UiKt;->field(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;ZZZ)Landroid/widget/EditText;
 
     move-result-object p0
@@ -981,7 +981,7 @@
         .end annotation
     .end param
 
-    .line 454
+    .line 456
     invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
@@ -1018,7 +1018,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 529
+    .line 531
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
@@ -1064,14 +1064,14 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 175
+    .line 177
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-direct {v0, p0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/16 v1, 0x24
 
-    .line 176
+    .line 178
     invoke-static {p0, v1}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
 
     move-result v2
@@ -1084,7 +1084,7 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/FrameLayout;->setMinimumHeight(I)V
 
-    .line 177
+    .line 179
     new-instance v2, Lcom/box/app/cfg/IconView;
 
     const/16 v3, 0x14
@@ -1113,7 +1113,7 @@
 
     const/4 p2, 0x0
 
-    .line 178
+    .line 180
     invoke-static {p0, p2}, Lcom/box/app/cfg/UiKt;->withRipple(Landroid/content/Context;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
@@ -1122,10 +1122,10 @@
 
     const/4 p2, 0x1
 
-    .line 179
+    .line 181
     invoke-virtual {v0, p2}, Landroid/widget/FrameLayout;->setClickable(Z)V
 
-    .line 180
+    .line 182
     invoke-virtual {p1}, Lcom/box/app/cfg/Ic;->name()Ljava/lang/String;
 
     move-result-object p1
@@ -1134,7 +1134,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setContentDescription(Ljava/lang/CharSequence;)V
 
-    .line 181
+    .line 183
     new-instance p1, Lcom/box/app/cfg/UiKt$iconBtn$1;
 
     invoke-direct {p1, p3}, Lcom/box/app/cfg/UiKt$iconBtn$1;-><init>(Lkotlin/jvm/functions/Function0;)V
@@ -1143,7 +1143,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 182
+    .line 184
     new-instance p1, Landroid/widget/LinearLayout$LayoutParams;
 
     invoke-static {p0, v1}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
@@ -1160,7 +1160,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 183
+    .line 185
     check-cast v0, Landroid/view/View;
 
     return-object v0
@@ -1173,7 +1173,7 @@
 
     if-eqz p4, :cond_a
 
-    .line 174
+    .line 176
     sget-object p2, Lcom/box/app/cfg/Th;->INSTANCE:Lcom/box/app/cfg/Th;
 
     invoke-virtual {p2}, Lcom/box/app/cfg/Th;->getSub()I
@@ -1201,7 +1201,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 331
+    .line 333
     invoke-static {p1}, Lkotlin/collections/CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object p1
@@ -1218,7 +1218,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 196
+    .line 198
     new-instance v0, Landroid/widget/LinearLayout$LayoutParams;
 
     invoke-direct {v0, p0, p1}, Landroid/widget/LinearLayout$LayoutParams;-><init>(II)V
@@ -1242,7 +1242,7 @@
 
     const/4 p1, -0x2
 
-    .line 196
+    .line 198
     :cond_a
     invoke-static {p0, p1}, Lcom/box/app/cfg/UiKt;->lp(II)Landroid/widget/LinearLayout$LayoutParams;
 
@@ -1264,7 +1264,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 207
+    .line 209
     move-object v1, p1
 
     check-cast v1, Ljava/lang/CharSequence;
@@ -1291,7 +1291,7 @@
 
     move-result-object p1
 
-    .line 208
+    .line 210
     invoke-static {p0, p2}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
 
     move-result v0
@@ -1312,7 +1312,7 @@
 
     invoke-virtual {p1, v0, v2, p2, p0}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 209
+    .line 211
     check-cast p1, Landroid/view/View;
 
     return-object p1
@@ -1327,7 +1327,7 @@
 
     const/16 p2, 0x1c
 
-    .line 206
+    .line 208
     :cond_6
     invoke-static {p0, p1, p2}, Lcom/box/app/cfg/UiKt;->note(Landroid/content/Context;Ljava/lang/String;I)Landroid/view/View;
 
@@ -1349,7 +1349,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 334
+    .line 336
     move-object v1, p1
 
     check-cast v1, Ljava/lang/CharSequence;
@@ -1378,7 +1378,7 @@
 
     const/16 v0, 0x1c
 
-    .line 335
+    .line 337
     invoke-static {p0, v0}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
 
     move-result v1
@@ -1399,7 +1399,7 @@
 
     invoke-virtual {p1, v1, v3, v0, p0}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 336
+    .line 338
     check-cast p1, Landroid/view/View;
 
     return-object p1
@@ -1458,7 +1458,7 @@
 
     move-object/from16 v14, p0
 
-    .line 443
+    .line 445
     new-instance v0, Lcom/box/app/cfg/Dlg;
 
     invoke-direct {v0, v14}, Lcom/box/app/cfg/Dlg;-><init>(Landroid/content/Context;)V
@@ -1471,7 +1471,7 @@
 
     move-result-object v15
 
-    .line 444
+    .line 446
     new-instance v13, Landroid/widget/LinearLayout;
 
     invoke-direct {v13, v14}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
@@ -1480,7 +1480,7 @@
 
     invoke-virtual {v13, v12}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 445
+    .line 447
     move-object/from16 v0, p5
 
     check-cast v0, Ljava/util/Collection;
@@ -1512,7 +1512,7 @@
 
     check-cast v0, Lcom/box/app/cfg/Opt;
 
-    .line 446
+    .line 448
     invoke-virtual {v0}, Lcom/box/app/cfg/Opt;->getValue()Ljava/lang/String;
 
     move-result-object v1
@@ -1525,7 +1525,7 @@
 
     if-eqz v1, :cond_54
 
-    .line 447
+    .line 449
     new-instance v2, Lcom/box/app/cfg/IconView;
 
     sget-object v3, Lcom/box/app/cfg/Ic;->CHECK:Lcom/box/app/cfg/Ic;
@@ -1549,7 +1549,7 @@
     :cond_54
     move-object v3, v10
 
-    .line 448
+    .line 450
     :goto_55
     invoke-virtual {v0}, Lcom/box/app/cfg/Opt;->getTitle()Ljava/lang/String;
 
@@ -1667,7 +1667,7 @@
 
     move-object v14, v13
 
-    .line 450
+    .line 452
     move-object v13, v14
 
     check-cast v13, Landroid/view/View;
@@ -1703,7 +1703,7 @@
 
     if-eqz p4, :cond_e
 
-    .line 442
+    .line 444
     invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
 
     move-result-object p5
@@ -1756,7 +1756,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 231
+    .line 233
     move-object v1, p1
 
     check-cast v1, Ljava/lang/CharSequence;
@@ -1798,12 +1798,12 @@
 
     const/16 v0, 0x11
 
-    .line 232
+    .line 234
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setGravity(I)V
 
     const/16 v0, 0x10
 
-    .line 233
+    .line 235
     invoke-static {p0, v0}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
 
     move-result v1
@@ -1826,7 +1826,7 @@
 
     if-eqz p2, :cond_40
 
-    .line 234
+    .line 236
     sget-object p2, Lcom/box/app/cfg/Th;->INSTANCE:Lcom/box/app/cfg/Th;
 
     invoke-virtual {p2}, Lcom/box/app/cfg/Th;->getPrimary()I
@@ -1857,7 +1857,7 @@
 
     invoke-virtual {p1, p0}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 235
+    .line 237
     new-instance p0, Lcom/box/app/cfg/UiKt$pillBtn$1;
 
     invoke-direct {p0, p3}, Lcom/box/app/cfg/UiKt$pillBtn$1;-><init>(Lkotlin/jvm/functions/Function0;)V
@@ -1878,7 +1878,7 @@
 
     const/4 p2, 0x1
 
-    .line 230
+    .line 232
     :cond_5
     invoke-static {p0, p1, p2, p3}, Lcom/box/app/cfg/UiKt;->pillBtn(Landroid/content/Context;Ljava/lang/String;ZLkotlin/jvm/functions/Function0;)Landroid/widget/TextView;
 
@@ -1951,22 +1951,22 @@
 
     move-object/from16 v7, p11
 
-    .line 268
+    .line 270
     new-instance v12, Landroid/widget/LinearLayout;
 
     invoke-direct {v12, v8}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v13, 0x0
 
-    .line 269
+    .line 271
     invoke-virtual {v12, v13}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/16 v1, 0x10
 
-    .line 270
+    .line 272
     invoke-virtual {v12, v1}, Landroid/widget/LinearLayout;->setGravity(I)V
 
-    .line 271
+    .line 273
     invoke-static {v8, v1}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
 
     move-result v2
@@ -1989,7 +1989,7 @@
 
     const/16 v2, 0x38
 
-    .line 272
+    .line 274
     invoke-static {v8, v2}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
 
     move-result v2
@@ -2002,7 +2002,7 @@
 
     if-eqz v0, :cond_4e
 
-    .line 274
+    .line 276
     invoke-static {v15, v15}, Lcom/box/app/cfg/UiKt;->lp(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v2
@@ -2013,12 +2013,12 @@
 
     iput v3, v2, Landroid/widget/LinearLayout$LayoutParams;->rightMargin:I
 
-    .line 275
+    .line 277
     check-cast v2, Landroid/view/ViewGroup$LayoutParams;
 
     invoke-virtual {v12, v0, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 277
+    .line 279
     :cond_4e
     new-instance v5, Landroid/widget/LinearLayout;
 
@@ -2028,7 +2028,7 @@
 
     invoke-virtual {v5, v4}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 278
+    .line 280
     new-instance v3, Landroid/widget/LinearLayout;
 
     invoke-direct {v3, v8}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
@@ -2055,14 +2055,14 @@
 
     move/from16 v5, p8
 
-    .line 279
+    .line 281
     invoke-static/range {v0 .. v5}, Lcom/box/app/cfg/UiKt;->tv(Landroid/content/Context;Ljava/lang/CharSequence;FIZZ)Landroid/widget/TextView;
 
     move-result-object v0
 
     if-eqz p8, :cond_7b
 
-    .line 280
+    .line 282
     sget-object v1, Landroid/graphics/Typeface;->MONOSPACE:Landroid/graphics/Typeface;
 
     goto :goto_81
@@ -2079,14 +2079,14 @@
 
     if-lez v6, :cond_8e
 
-    .line 281
+    .line 283
     invoke-virtual {v0, v6}, Landroid/widget/TextView;->setMaxLines(I)V
 
     sget-object v1, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 282
+    .line 284
     :cond_8e
     check-cast v0, Landroid/view/View;
 
@@ -2106,7 +2106,7 @@
 
     if-eqz v7, :cond_b2
 
-    .line 283
+    .line 285
     invoke-static {v15, v15}, Lcom/box/app/cfg/UiKt;->lp(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
@@ -2123,7 +2123,7 @@
 
     invoke-virtual {v14, v7, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 284
+    .line 286
     :cond_b2
     move-object v3, v14
 
@@ -2145,7 +2145,7 @@
 
     if-eqz p2, :cond_cd
 
-    .line 285
+    .line 287
     invoke-interface/range {p2 .. p2}, Ljava/lang/CharSequence;->length()I
 
     move-result v0
@@ -2168,7 +2168,7 @@
 
     const/high16 v2, 0x41580000    # 13.5f
 
-    .line 286
+    .line 288
     sget-object v0, Lcom/box/app/cfg/Th;->INSTANCE:Lcom/box/app/cfg/Th;
 
     invoke-virtual {v0}, Lcom/box/app/cfg/Th;->getSub()I
@@ -2203,14 +2203,14 @@
 
     if-lez v11, :cond_f8
 
-    .line 287
+    .line 289
     invoke-virtual {v0, v11}, Landroid/widget/TextView;->setMaxLines(I)V
 
     sget-object v1, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 288
+    .line 290
     :cond_f8
     check-cast v0, Landroid/view/View;
 
@@ -2243,7 +2243,7 @@
 
     move-object v13, v7
 
-    .line 290
+    .line 292
     :goto_111
     move-object v5, v15
 
@@ -2263,7 +2263,7 @@
 
     if-eqz v9, :cond_134
 
-    .line 292
+    .line 294
     invoke-static {v2, v2}, Lcom/box/app/cfg/UiKt;->lp(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v0
@@ -2276,7 +2276,7 @@
 
     iput v1, v0, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
-    .line 293
+    .line 295
     check-cast v0, Landroid/view/ViewGroup$LayoutParams;
 
     invoke-virtual {v12, v9, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
@@ -2286,7 +2286,7 @@
 
     const/16 v0, 0x14
 
-    .line 296
+    .line 298
     invoke-static {v8, v0}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
 
     move-result v1
@@ -2307,7 +2307,7 @@
 
     iput v2, v1, Landroid/widget/LinearLayout$LayoutParams;->leftMargin:I
 
-    .line 297
+    .line 299
     new-instance v2, Lcom/box/app/cfg/IconView;
 
     sget-object v3, Lcom/box/app/cfg/Ic;->CHEVRON:Lcom/box/app/cfg/Ic;
@@ -2329,7 +2329,7 @@
     :cond_15f
     if-eqz v10, :cond_176
 
-    .line 300
+    .line 302
     invoke-static {v8, v13}, Lcom/box/app/cfg/UiKt;->withRipple(Landroid/content/Context;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
@@ -2338,10 +2338,10 @@
 
     const/4 v0, 0x1
 
-    .line 301
+    .line 303
     invoke-virtual {v12, v0}, Landroid/widget/LinearLayout;->setClickable(Z)V
 
-    .line 302
+    .line 304
     new-instance v0, Lcom/box/app/cfg/UiKt$row$3;
 
     invoke-direct {v0, v10}, Lcom/box/app/cfg/UiKt$row$3;-><init>(Lkotlin/jvm/functions/Function0;)V
@@ -2451,7 +2451,7 @@
 
     if-eqz v1, :cond_48
 
-    .line 266
+    .line 268
     sget-object v1, Lcom/box/app/cfg/Th;->INSTANCE:Lcom/box/app/cfg/Th;
 
     invoke-virtual {v1}, Lcom/box/app/cfg/Th;->getText()I
@@ -2494,7 +2494,7 @@
 
     move-object/from16 v4, p1
 
-    .line 263
+    .line 265
     invoke-static/range {v3 .. v14}, Lcom/box/app/cfg/UiKt;->row(Landroid/content/Context;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Landroid/view/View;Landroid/view/View;Lkotlin/jvm/functions/Function0;IIZIZLandroid/view/View;)Landroid/widget/LinearLayout;
 
     move-result-object v0
@@ -2542,7 +2542,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 201
+    .line 203
     move-object v1, p1
 
     check-cast v1, Ljava/lang/CharSequence;
@@ -2571,7 +2571,7 @@
 
     const/16 v0, 0x1c
 
-    .line 202
+    .line 204
     invoke-static {p0, v0}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
 
     move-result v0
@@ -2596,7 +2596,7 @@
 
     invoke-virtual {p1, v0, v1, v2, p0}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 203
+    .line 205
     check-cast p1, Landroid/view/View;
 
     return-object p1
@@ -2611,7 +2611,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 198
+    .line 200
     new-instance v0, Landroid/view/View;
 
     invoke-direct {v0, p0}, Landroid/view/View;-><init>(Landroid/content/Context;)V
@@ -2660,17 +2660,17 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 240
+    .line 242
     new-instance v0, Landroid/widget/Switch;
 
     invoke-direct {v0, p0}, Landroid/widget/Switch;-><init>(Landroid/content/Context;)V
 
-    .line 241
+    .line 243
     invoke-virtual {v0, p1}, Landroid/widget/Switch;->setChecked(Z)V
 
     invoke-virtual {v0, p2}, Landroid/widget/Switch;->setEnabled(Z)V
 
-    .line 242
+    .line 244
     new-instance p0, Landroid/content/res/ColorStateList;
 
     const/4 p1, 0x2
@@ -2701,7 +2701,7 @@
 
     invoke-virtual {v0, p0}, Landroid/widget/Switch;->setThumbTintList(Landroid/content/res/ColorStateList;)V
 
-    .line 243
+    .line 245
     new-instance p0, Landroid/content/res/ColorStateList;
 
     new-array p2, p1, [[I
@@ -2748,7 +2748,7 @@
 
     invoke-virtual {v0, p0}, Landroid/widget/Switch;->setTrackTintList(Landroid/content/res/ColorStateList;)V
 
-    .line 244
+    .line 246
     new-instance p0, Lcom/box/app/cfg/UiKt$sw$1;
 
     invoke-direct {p0, p3}, Lcom/box/app/cfg/UiKt$sw$1;-><init>(Lkotlin/jvm/functions/Function1;)V
@@ -2775,7 +2775,7 @@
 
     const/4 p2, 0x1
 
-    .line 239
+    .line 241
     :cond_5
     invoke-static {p0, p1, p2, p3}, Lcom/box/app/cfg/UiKt;->sw(Landroid/content/Context;ZZLkotlin/jvm/functions/Function1;)Landroid/widget/Switch;
 
@@ -2814,7 +2814,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 222
+    .line 224
     move-object v1, p1
 
     check-cast v1, Ljava/lang/CharSequence;
@@ -2860,12 +2860,12 @@
 
     const/16 p2, 0x11
 
-    .line 223
+    .line 225
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setGravity(I)V
 
     const/16 p2, 0xc
 
-    .line 224
+    .line 226
     invoke-static {p0, p2}, Lcom/box/app/cfg/UiKt;->dp(Landroid/content/Context;I)I
 
     move-result v0
@@ -2888,14 +2888,14 @@
 
     const/4 p2, 0x0
 
-    .line 225
+    .line 227
     invoke-static {p0, p2}, Lcom/box/app/cfg/UiKt;->withRipple(Landroid/content/Context;Landroid/graphics/drawable/Drawable;)Landroid/graphics/drawable/Drawable;
 
     move-result-object p0
 
     invoke-virtual {p1, p0}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 226
+    .line 228
     new-instance p0, Lcom/box/app/cfg/UiKt$textBtn$1;
 
     invoke-direct {p0, p3}, Lcom/box/app/cfg/UiKt$textBtn$1;-><init>(Lkotlin/jvm/functions/Function0;)V
@@ -2916,7 +2916,7 @@
 
     const/4 p2, 0x1
 
-    .line 221
+    .line 223
     :cond_5
     invoke-static {p0, p1, p2, p3}, Lcom/box/app/cfg/UiKt;->textBtn(Landroid/content/Context;Ljava/lang/String;ZLkotlin/jvm/functions/Function0;)Landroid/widget/TextView;
 
@@ -3003,12 +3003,12 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 189
+    .line 191
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 190
+    .line 192
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setTextSize(F)V
@@ -3017,7 +3017,7 @@
 
     if-eqz p4, :cond_1a
 
-    .line 191
+    .line 193
     sget-object p0, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
     const/4 p1, 0x1
@@ -3031,7 +3031,7 @@
     :cond_1a
     if-eqz p5, :cond_21
 
-    .line 192
+    .line 194
     sget-object p0, Landroid/graphics/Typeface;->MONOSPACE:Landroid/graphics/Typeface;
 
     invoke-virtual {v0, p0}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
@@ -3056,7 +3056,7 @@
 
     if-eqz p2, :cond_11
 
-    .line 188
+    .line 190
     sget-object p2, Lcom/box/app/cfg/Th;->INSTANCE:Lcom/box/app/cfg/Th;
 
     invoke-virtual {p2}, Lcom/box/app/cfg/Th;->getText()I
