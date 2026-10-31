@@ -204,6 +204,9 @@
     # diagnostics for the restart-after-swipe logic (run/autostart.log)
     invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->processStart()V
 
+    # long toasts without the system ellipsis (FToast -> cfg.FullToast on the foreground activity)
+    invoke-static {p0}, Lcom/box/app/vpn/FToast;->init(Landroid/app/Application;)V
+
     .line 12
     .line 13
     new-instance v0, Ltm;

@@ -234,3 +234,11 @@ shell 逻辑已用假的 linker64 在 dash / busybox sh 上跑通（缺 libicu �
   装进 `box/bin/mihomo`（同 Smart，目标核心仍是 `mihomo`）；
 - 把 id 映射回 `mihomo`：`qa1.f`（安装前停核/校验）、`l33.m`（版本文案）；`lb0.h` 和 `zt` 对未知 id 本来就回落到 mihomo；
 - 名称：`proxy_core_mihomo_dingtalk`（`0x7f0f04aa`）。
+
+## Toast 不再被省略号截断
+
+HyperOS / Android 12+ 的系统 Toast 会把长文字截成「…」（如「更新完成: smart-22290fb0-zero…」）。
+全 App 的 `Toast.makeText(...)`（共 24 个类、约 60 处）都改成 `com.box.app.vpn.FToast.makeText(...)`：
+`FToast` 继承 `Toast`，`show()` 改为在前台 Activity 上弹 `cfg.FullToast`（不抢焦点、点击穿透、按文字长度自动消失，完整显示全部文字）。
+前台 Activity 由 `AppApplication.onCreate` 注册的 `ActivityLifecycleCallbacks` 跟踪（resume 记录，pause/destroy 清除）；
+App 在后台或没有前台 Activity（比如 VPN 服务里弹的）时回退到系统 Toast。`cfg` 包自己原有的 `FullToast` 路径不变。
