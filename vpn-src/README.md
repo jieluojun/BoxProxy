@@ -56,7 +56,7 @@ boxctl 本来能执行就原样运行（不改变现有设备）；否则改用 
 ## 禁用系统 IPv6：移动网络改为修改 APN（`BoxctlFix`）
 
 `boxctl` 是闭源二进制，「禁用系统 IPv6」是它写 `/proc/sys/net/ipv6/conf/*/disable_ipv6` 实现的。
-`BoxctlFix.wrap` 生成的 shell 里加了 `_v6post`，在 `start|restart|boot|stop|reload|mode|network-match` 之后执行：
+`BoxctlFix.wrap` 生成的 shell 里加了 `_v6post`，在 `start|restart|boot|stop|reload|mode|network-match|up|down`（`up`/`down` 才是 App 里启动/停止实际发的子命令，`down` 按 stop 处理） 之后执行：
 
 - 判定是否处于“禁用系统 IPv6”：`conf/all` 或 `conf/default` 的 `disable_ipv6` 为 1（`boxctl` 刚写完的结果）。
 - 是：把移动网络接口（`rmnet*`、`r_rmnet*`、`ccmni*`、`ccemni*`、`ppp*`、`wwan*`、`seth_*`、`pdp*`）的 `disable_ipv6` 写回 0，WLAN 仍保持 `boxctl` 的禁用；
