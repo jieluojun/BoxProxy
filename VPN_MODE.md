@@ -203,5 +203,9 @@ VPN 模式下「开机自启」开着时，划掉应用卡片 / 进程被杀后�
 默认命名空间找不到它，于是内核连启动都启动不了（mihomo 是静态的，所以没事）。
 
 处理：给 root 命令（`lb0.c` 拼出来的所有 `boxctl --db … <命令>`，以及开机脚本）和 VPN 模式的 `box-vpn.sh` 在启动内核前加上
-`LD_LIBRARY_PATH=/apex/com.android.tethering/lib64[:原值]`。目录不存在时无副作用。**未在真机验证**：如果仍然报同样的错，
+`LD_LIBRARY_PATH=/apex/com.android.tethering/lib64:/apex/com.android.i18n/lib64:/apex/com.android.art/lib64:/apex/com.android.runtime/lib64:/apex/com.android.os.statsd/lib64[:原值]`。目录不存在时无副作用。**未在真机验证**：如果仍然报同样的错，
 说明默认命名空间不是「非隔离」的，需要把 sing-box 放到 `/data/local/tmp` 之类 linker 认的目录再试。
+
+第二层缺库：加了 tethering 之后，下一个报错是 `libicu.so not found: needed by libharfbuzz_ng.so`（在 i18n APEX）。`libandroid.so` 的整条依赖链
+会落到好几个 APEX（i18n 的 ICU、art / runtime 的 libnativeloader / libnativebridge、statsd 的 libstatssocket），逐个报错太慢，
+所以一次把这几个 APEX 的 `lib64` 都放进搜索路径（不放 bionic 子目录里的 libc/libm，不会换掉 libc）。

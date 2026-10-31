@@ -294,7 +294,7 @@
     .line 41
     move-result-object p0
 
-    const-string v1, "LD_LIBRARY_PATH=/apex/com.android.tethering/lib64${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH} "
+    const-string v1, "LD_LIBRARY_PATH=/apex/com.android.tethering/lib64:/apex/com.android.i18n/lib64:/apex/com.android.art/lib64:/apex/com.android.runtime/lib64:/apex/com.android.os.statsd/lib64${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH} "
 
     invoke-virtual {v1, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
