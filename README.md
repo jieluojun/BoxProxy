@@ -14,4 +14,6 @@
 
 - 工具页更新核心新增 Mihomo Smart + eBPF + 钉钉直连，来自 https://github.com/jieluojun/mihomo
 
+- 工具页更新核心新增 Sing-Box Smart + eBPF + 钉钉直连，来自 https://github.com/jieluojun/sing-box
+
 - 设置页开机自启支持 VPN 模式，参考了 (https://github.com/appshubcc/Bettbox)

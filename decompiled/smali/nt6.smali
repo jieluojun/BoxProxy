@@ -11,7 +11,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 9
+    .locals 11
 
     const-string v0, "mihomo"
 
@@ -23,13 +23,15 @@
 
     const-string v4, "sing-box_ref1nd"
 
-    const-string v5, "xray"
+    const-string v5, "sing-box_dingtalk"
 
-    const-string v6, "v2fly"
+    const-string v6, "xray"
 
-    const-string v7, "hysteria"
+    const-string v7, "v2fly"
 
-    filled-new-array/range {v0 .. v7}, [Ljava/lang/String;
+    const-string v8, "hysteria"
+
+    filled-new-array/range {v0 .. v8}, [Ljava/lang/String;
 
     move-result-object v0
 
@@ -69,25 +71,31 @@
 
     move-result-object v5
 
-    const v0, 0x7f0f02bd
+    const v0, 0x7f0f04ab
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v6
 
-    const v0, 0x7f0f02bc
+    const v0, 0x7f0f02bd
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v7
 
-    const v0, 0x7f0f02b6
+    const v0, 0x7f0f02bc
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v8
 
-    filled-new-array/range {v1 .. v8}, [Ljava/lang/Integer;
+    const v0, 0x7f0f02b6
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v9
+
+    filled-new-array/range {v1 .. v9}, [Ljava/lang/Integer;
 
     move-result-object v0
 

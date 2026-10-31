@@ -825,6 +825,14 @@
 
     .line 43
     :cond_3
+    const-string v0, "sing-box_dingtalk"
+
+    invoke-virtual {p0, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-nez v0, :goto_1
+
     const-string v0, "sing-box_ref1nd"
 
     .line 44
