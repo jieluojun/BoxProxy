@@ -217,6 +217,18 @@ def gen_hints(src):
         for k, v in d.items():
             if "." not in k:
                 common.setdefault(k, v)
+    # provider/override_*：这些页面的字段名（host / path / server_name …）和别处的同名字段撞车，
+    # 通用提示（"*"）会取到别的页面的说明。这里把它们按「override_x.字段」登记进 provider 上下文，
+    # SbUi.hintFor 先查 `<上一级键>.<字段>`，就不会再串到别处。
+    prov = hints.setdefault("provider", {})
+    for rel, d in list(hints.items()):
+        if rel.startswith("provider/override_"):
+            for k, v in d.items():
+                if "." not in k:
+                    prov["%s.%s" % (rel.split("/", 1)[1], k)] = v
+    # 手工校正（按使用者的说法写得更直白）
+    prov["override_transport.host"] = "覆写节点混淆（Host）。"
+    prov["override_transport.path"] = "覆写 HTTP 出站的请求路径。"
     hints["*"] = common
     return hints
 
