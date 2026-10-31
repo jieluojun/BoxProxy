@@ -47,7 +47,8 @@ harness：`build.sh` 里的 `SbTest` / `sbflow` / `sb` 随机点击；`pruned.sh
 ## root 模式：boxctl 在外部存储上「can't execute: Permission denied」
 
 `boxctl` 放在 `Android/data/<包名>/files/box/bin/`（外部存储）。部分机型 / root 方案下 su 看到的是 FUSE 视图（noexec 或没有执行位），直接执行会报
-`/system/bin/sh: <stdin>[17]: …/boxctl: can't execute: Permission denied`（exit 126）。`lb0.c`（拼 boxctl 命令的唯一入口）现在经
-`com.box.app.vpn.BoxctlFix.wrap` 加了回退：能执行就原样运行；否则改走真实路径 `/data/media/<用户>/…`（chmod 755）；再不行复制到 `/data/local/tmp/.boxproxy-boxctl`；
-`-x` 通过但实际仍 126（SELinux）时也会复制后重试一次（126 发生在 boxctl 真正运行之前，重试没有副作用）。开机脚本里同样处理（等待条件由 `-x` 改成 `-f`）。
+`/system/bin/sh: <stdin>[17]: …/boxctl: can't execute: Permission denied`（exit 126）。`lb0.c`（拼 boxctl 命令的唯一入口）现在经 `com.box.app.vpn.BoxctlFix.wrap` 加了回退：能执行就原样运行；否则改走真实路径 `/data/media/<用户>/…`（chmod 755）；
+再不行就照 **VPN 模式那套**（见 `assets/vpn/box-vpn.sh` 的 `sync_startup`）：复制到应用私有目录 `files/box-exec/boxctl`（chmod 700），用 `/system/bin/linker64` 加载运行
+（不依赖执行位、不受外部存储 noexec 影响），并显式带 `--home <box 目录>`（经 linker 运行时 boxctl 的 `/proc/self/exe` 不再是它自己）；
+`-x` 通过但实际仍 126（SELinux）时也会走这一步重试一次（126 发生在 boxctl 真正运行之前，重试没有副作用）。开机脚本里同样处理（等待条件由 `-x` 改成 `-f`）。
 注意：这只解决 boxctl 自己；如果该机型上核心二进制（同样在外部存储）也不能执行，boxctl 起核心时会报下一个错，需要再处理。**未在受影响的真机上验证。**
