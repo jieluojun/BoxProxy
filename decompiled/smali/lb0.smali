@@ -3022,7 +3022,7 @@
 
     .line 203
     .line 204
-    const-string v13, "\n            #!/system/bin/sh\n            (\n              export PATH=\"/data/adb/magisk:/data/adb/ksu/bin:/data/adb/ap/bin:/system/bin:/system/xbin:$PATH\"\n              export BOXCTL_STDOUT_LOG_LINE=1\n              export LD_LIBRARY_PATH=\"/apex/com.android.tethering/lib64${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}\"\n              run_dir="
+    const-string v13, "\n            #!/system/bin/sh\n            (\n              export PATH=\"/data/adb/magisk:/data/adb/ksu/bin:/data/adb/ap/bin:/system/bin:/system/xbin:$PATH\"\n              export BOXCTL_STDOUT_LOG_LINE=1\n              export LD_LIBRARY_PATH=\"/apex/com.android.tethering/lib64:/apex/com.android.i18n/lib64:/apex/com.android.art/lib64:/apex/com.android.runtime/lib64:/apex/com.android.os.statsd/lib64${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}\"\n              run_dir="
 
     .line 205
     .line 206
