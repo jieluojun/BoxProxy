@@ -95,7 +95,7 @@
 .end method
 
 .method public static final isMihomo(Ljava/lang/String;)Z
-    .registers 9
+    .registers 12
     .param p0    # Ljava/lang/String;
         .annotation build Lorg/jetbrains/annotations/Nullable;
         .end annotation
@@ -109,55 +109,90 @@
 
     return v0
 
-    :cond_4
-    const/16 v2, 0x5c
-
-    const/16 v3, 0x2f
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x4
-
-    const/4 v6, 0x0
-
-    move-object v1, p0
-
     .line 16
-    invoke-static/range {v1 .. v6}, Lkotlin/text/StringsKt;->replace$default(Ljava/lang/String;CCZILjava/lang/Object;)Ljava/lang/String;
+    :cond_4
+    sget-object v1, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
-    move-result-object p0
+    invoke-virtual {p0, v1}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
-    move-object v1, p0
+    move-result-object v1
 
-    check-cast v1, Ljava/lang/CharSequence;
+    const-string v2, "toLowerCase(...)"
 
-    const/4 p0, 0x1
+    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    new-array v2, p0, [C
-
-    const/16 p0, 0x2f
-
-    aput-char p0, v2, v0
+    const-string v2, ".yaml"
 
     const/4 v3, 0x0
 
-    const/4 v5, 0x6
+    const/4 v4, 0x2
 
-    invoke-static/range {v1 .. v6}, Lkotlin/text/StringsKt;->split$default(Ljava/lang/CharSequence;[CZIILjava/lang/Object;)Ljava/util/List;
+    .line 17
+    invoke-static {v1, v2, v0, v4, v3}, Lkotlin/text/StringsKt;->endsWith$default(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_22
+
+    const-string v2, ".yml"
+
+    invoke-static {v1, v2, v0, v4, v3}, Lkotlin/text/StringsKt;->endsWith$default(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_22
+
+    return v0
+
+    :cond_22
+    const/16 v6, 0x5c
+
+    const/16 v7, 0x2f
+
+    const/4 v8, 0x0
+
+    const/4 v9, 0x4
+
+    const/4 v10, 0x0
+
+    move-object v5, p0
+
+    .line 18
+    invoke-static/range {v5 .. v10}, Lkotlin/text/StringsKt;->replace$default(Ljava/lang/String;CCZILjava/lang/Object;)Ljava/lang/String;
 
     move-result-object p0
 
-    .line 17
+    move-object v5, p0
+
+    check-cast v5, Ljava/lang/CharSequence;
+
+    const/4 p0, 0x1
+
+    new-array v6, p0, [C
+
+    const/16 p0, 0x2f
+
+    aput-char p0, v6, v0
+
+    const/4 v7, 0x0
+
+    const/4 v9, 0x6
+
+    invoke-static/range {v5 .. v10}, Lkotlin/text/StringsKt;->split$default(Ljava/lang/CharSequence;[CZIILjava/lang/Object;)Ljava/util/List;
+
+    move-result-object p0
+
+    .line 19
     invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v1
 
-    add-int/lit8 v1, v1, -0x2
+    sub-int/2addr v1, v4
 
-    :goto_26
-    if-ltz v1, :cond_54
+    :goto_43
+    if-ltz v1, :cond_71
 
-    .line 19
+    .line 21
     invoke-interface {p0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -174,15 +209,15 @@
 
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 20
+    .line 22
     sget-object v3, Lcom/box/app/cfg/EditorGlue;->CORE_DIRS:[Ljava/lang/String;
 
     array-length v4, v3
 
     move v5, v0
 
-    :goto_3d
-    if-ge v5, v4, :cond_51
+    :goto_5a
+    if-ge v5, v4, :cond_6e
 
     aget-object v6, v3, v5
 
@@ -190,7 +225,7 @@
 
     move-result v7
 
-    if-eqz v7, :cond_4e
+    if-eqz v7, :cond_6b
 
     const-string p0, "mihomo"
 
@@ -200,17 +235,17 @@
 
     return p0
 
-    :cond_4e
+    :cond_6b
     add-int/lit8 v5, v5, 0x1
 
-    goto :goto_3d
+    goto :goto_5a
 
-    :cond_51
+    :cond_6e
     add-int/lit8 v1, v1, -0x1
 
-    goto :goto_26
+    goto :goto_43
 
-    :cond_54
+    :cond_71
     return v0
 .end method
 
@@ -228,7 +263,7 @@
     :goto_4
     if-ge v0, p2, :cond_15
 
-    .line 61
+    .line 63
     invoke-virtual {p1, v0}, Ljava/lang/String;->charAt(I)C
 
     move-result v3
@@ -249,7 +284,7 @@
     :cond_15
     const/4 p1, 0x2
 
-    .line 64
+    .line 66
     new-array p1, p1, [I
 
     aput v1, p1, p0
@@ -279,7 +314,7 @@
     .annotation build Lorg/jetbrains/annotations/Nullable;
     .end annotation
 
-    .line 33
+    .line 35
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
@@ -290,13 +325,13 @@
 
     return-object p0
 
-    .line 34
+    .line 36
     :cond_8
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0
 
-    .line 35
+    .line 37
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v1
@@ -318,7 +353,7 @@
     :goto_17
     if-ge v4, v2, :cond_26
 
-    .line 38
+    .line 40
     invoke-virtual {p0, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v5
@@ -349,7 +384,7 @@
 
     sub-int/2addr v5, v2
 
-    .line 40
+    .line 42
     invoke-virtual {p0, v5}, Ljava/lang/String;->charAt(I)C
 
     move-result v5
@@ -380,7 +415,7 @@
 
     add-int/lit8 v7, v4, -0x1
 
-    .line 42
+    .line 44
     invoke-virtual {p0, v7}, Ljava/lang/String;->charAt(I)C
 
     move-result v7
@@ -408,7 +443,7 @@
 
     add-int/lit8 v8, v7, -0x1
 
-    .line 45
+    .line 47
     invoke-virtual {p0, v8}, Ljava/lang/String;->charAt(I)C
 
     move-result v8
@@ -446,7 +481,7 @@
     :goto_7e
     if-ge v4, v2, :cond_93
 
-    .line 48
+    .line 50
     invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v7
@@ -470,7 +505,7 @@
     :cond_93
     if-ge v4, v2, :cond_9e
 
-    .line 49
+    .line 51
     invoke-virtual {p1, v4}, Ljava/lang/String;->charAt(I)C
 
     move-result v1
@@ -484,7 +519,7 @@
     :cond_9e
     move v1, v4
 
-    .line 50
+    .line 52
     :goto_9f
     sget-object v5, Lcom/box/app/cfg/EditorGlue;->INSTANCE:Lcom/box/app/cfg/EditorGlue;
 
@@ -492,14 +527,14 @@
 
     move-result-object v5
 
-    .line 51
+    .line 53
     sget-object v6, Lcom/box/app/cfg/EditorGlue;->INSTANCE:Lcom/box/app/cfg/EditorGlue;
 
     invoke-direct {v6, p0, v0}, Lcom/box/app/cfg/EditorGlue;->lineCol(Ljava/lang/String;I)[I
 
     move-result-object p0
 
-    .line 52
+    .line 54
     sget-object v0, Lcom/box/app/cfg/EditorGlue;->INSTANCE:Lcom/box/app/cfg/EditorGlue;
 
     invoke-direct {v0, p1, v1}, Lcom/box/app/cfg/EditorGlue;->lineCol(Ljava/lang/String;I)[I
@@ -508,7 +543,7 @@
 
     const/16 v0, 0x8
 
-    .line 53
+    .line 55
     new-array v0, v0, [I
 
     aget v1, v5, v3

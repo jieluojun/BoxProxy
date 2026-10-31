@@ -40,6 +40,8 @@ fun main() {
     ck("sing-box 目录不显示", !EditorGlue.isMihomo("$base/sing-box/config.json"))
     ck("xray / v2fly / hysteria 不显示", !EditorGlue.isMihomo("$base/xray/c.yaml") && !EditorGlue.isMihomo("$base/v2fly/c.yaml") && !EditorGlue.isMihomo("$base/hysteria/c.yaml"))
     ck("认不出的目录不显示", !EditorGlue.isMihomo("/sdcard/clash/a.yaml") && !EditorGlue.isMihomo(null))
-    ck("文件名叫 mihomo 不算（要看目录）", !EditorGlue.isMihomo("$base/sing-box/mihomo"))
+    ck("mihomo 目录里的 .json 不显示", !EditorGlue.isMihomo("$base/mihomo/config.json"))
+    ck(".yml 也算", EditorGlue.isMihomo("$base/mihomo/a.YML"))
+    ck("文件名叫 mihomo 不算（要看目录）", !EditorGlue.isMihomo("$base/sing-box/mihomo.yaml"))
     println(if (bad == 0) "EDIT OK" else "EDIT FAILED $bad")
 }

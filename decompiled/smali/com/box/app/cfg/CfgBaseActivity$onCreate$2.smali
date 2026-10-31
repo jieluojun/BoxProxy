@@ -68,7 +68,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 77
+    .line 76
     invoke-virtual {p0}, Lcom/box/app/cfg/CfgBaseActivity$onCreate$2;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -79,7 +79,7 @@
 .method public final invoke()V
     .registers 1
 
-    .line 77
+    .line 76
     iget-object p0, p0, Lcom/box/app/cfg/CfgBaseActivity$onCreate$2;->this$0:Lcom/box/app/cfg/CfgBaseActivity;
 
     invoke-virtual {p0}, Lcom/box/app/cfg/CfgBaseActivity;->onBackAction()V

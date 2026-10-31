@@ -8,11 +8,13 @@ object EditorGlue {
 
     /**
      * 这份配置是不是 mihomo 的：看配置文件所在的「工作目录名」——从文件往上找第一个叫核心名的目录，
-     * 是 mihomo 才算（sing-box / xray / v2fly / hysteria 以及认不出的目录都不是）。以后加 sing-box 的可视化就在这里放开。
+     * 是 mihomo 且文件是 .yaml/.yml 才算（sing-box / xray / v2fly / hysteria 以及认不出的目录都不是）。以后加 sing-box 的可视化就在这里放开。
      */
     @JvmStatic
     fun isMihomo(path: String?): Boolean {
         if (path == null) return false
+        val low = path.lowercase()
+        if (!(low.endsWith(".yaml") || low.endsWith(".yml"))) return false // 可视化 / 锚点只认 YAML；.json 等一律不显示按钮
         val parts = path.replace('\\', '/').split('/')
         var i = parts.size - 2
         while (i >= 0) {
