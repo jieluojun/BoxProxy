@@ -294,6 +294,11 @@
     .line 41
     move-result-object p0
 
+    # boxctl 在外部存储上不可执行时的回退（见 BoxctlFix）
+    invoke-static {v1, p0}, Lcom/box/app/vpn/BoxctlFix;->wrap(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
     invoke-static {}, Llb0;->k()Lab0;
 
     move-result-object v0
@@ -3063,11 +3068,11 @@
     .line 215
     .line 216
     .line 217
-    const-string p0, " 2>/dev/null || true\n              log -t BoxProxyBoot \'waiting for boot animation to stop\' 2>/dev/null || true\n\n              while [ \"$(getprop init.svc.bootanim 2>/dev/null)\" != \"stopped\" ]; do\n                sleep 10\n              done\n\n              log -t BoxProxyBoot \'waiting for runtime files\' 2>/dev/null || true\n              while [ ! -x \"$boxctl\" ] || [ ! -f \"$db\" ]; do\n                sleep 2\n              done\n              mkdir -p \"$run_dir\" 2>/dev/null || exit 1\n              : > \"$log_file\" 2>/dev/null || exit 1\n              boot_log "
+    const-string p0, " 2>/dev/null || true\n              log -t BoxProxyBoot \'waiting for boot animation to stop\' 2>/dev/null || true\n\n              while [ \"$(getprop init.svc.bootanim 2>/dev/null)\" != \"stopped\" ]; do\n                sleep 10\n              done\n\n              log -t BoxProxyBoot \'waiting for runtime files\' 2>/dev/null || true\n              while [ ! -f \"$boxctl\" ] || [ ! -f \"$db\" ]; do\n                sleep 2\n              done\n              mkdir -p \"$run_dir\" 2>/dev/null || exit 1\n              : > \"$log_file\" 2>/dev/null || exit 1\n              boot_log "
 
     .line 218
     .line 219
-    const-string v1, "\n              log -t BoxProxyBoot \'runtime files are ready\' 2>/dev/null || true\n\n              \"$boxctl\" --db \"$db\" boot >> \"$log_file\" 2>&1\n              start_code=$?\n              if [ \"$start_code\" -eq 0 ]; then\n                boot_log "
+    const-string v1, "\n              log -t BoxProxyBoot \'runtime files are ready\' 2>/dev/null || true\n\n              _bh=; if [ ! -x \"$boxctl\" ]; then case \"$boxctl\" in /storage/emulated/*) _ba=\"/data/media/${boxctl#/storage/emulated/}\"; if [ -f \"$_ba\" ]; then chmod 755 \"$_ba\" 2>/dev/null; if [ -x \"$_ba\" ]; then _bh=\"--home ${_ba%/bin/boxctl}\"; boxctl=\"$_ba\"; fi; fi;; esac; fi\n              \"$boxctl\" $_bh --db \"$db\" boot >> \"$log_file\" 2>&1\n              start_code=$?\n              if [ \"$start_code\" -eq 0 ]; then\n                boot_log "
 
     .line 220
     .line 221

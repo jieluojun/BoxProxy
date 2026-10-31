@@ -43,3 +43,12 @@
 入口由 `CfgNav` 在 `CfgGlue.isSingBox` → `EditorGlue.isSingBox(path)`（`.json`/`.jsonc` + 目录 `sing-box`）为真时只挂「可视」图标；`CfgLauncher` 按扩展名分流到 `SbFormActivity`。
 schema 由 `tools/gen_sb_schema.py` 从 fork 的 `docs/schema.json` + `option/*.go` + 中文文档生成到 `decompiled/assets/schema/sing-box-fork{,-hints}.json`。
 harness：`build.sh` 里的 `SbTest` / `sbflow` / `sb` 随机点击；`pruned.sh` 也跑 `sb`。
+
+## root 模式：外部存储上 boxctl / 核心「Permission denied」
+
+`boxctl` 和核心都在 `Android/data/<包名>/files/box/bin/`（外部存储）。部分机型 / root 方案下 su 看到的 `/storage/emulated/…` 不让执行，报
+`…/boxctl: can't execute: Permission denied`，或 boxctl 起核心时 `execute …/bin/mihomo failed: Permission denied (os error 13)`。
+同一批文件在真实路径 `/data/media/<用户>/…` 下可以执行。`lb0.c`（拼 boxctl 命令的唯一入口）经 `com.box.app.vpn.BoxctlFix.wrap` 处理：
+boxctl 本来能执行就原样运行（不改变现有设备）；否则改用 `/data/media/<用户>/…/bin/boxctl`（chmod 755），并给它 `--home /data/media/<用户>/…/box`，
+让它起核心时也走真实路径。开机脚本里同样处理（等待条件由 `-x` 改成 `-f`）。
+（早先还试过「复制到应用私有目录 + linker64」和「126 时重试」的回退，真机上只需要走真实路径，已去掉。）**只在一台受影响的真机上验证过。**
