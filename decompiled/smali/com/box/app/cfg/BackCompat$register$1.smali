@@ -73,7 +73,7 @@
 .method public final onBackInvoked()V
     .registers 1
 
-    .line 146
+    .line 147
     iget-object p0, p0, Lcom/box/app/cfg/BackCompat$register$1;->$r:Lkotlin/jvm/functions/Function0;
 
     invoke-interface {p0}, Lkotlin/jvm/functions/Function0;->invoke()Ljava/lang/Object;

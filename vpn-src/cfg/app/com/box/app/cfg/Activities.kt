@@ -26,7 +26,8 @@ object CfgLauncher {
             val path = CfgGlue.getPath(token)
             val p = (path ?: "").lowercase()
             if (!(p.endsWith(".yaml") || p.endsWith(".yml"))) {
-                return // 按钮本来就只在 mihomo 的 YAML 配置里显示（EditorGlue.isMihomo），这里只是兜底，不再弹提示
+                toast(ctx, "可视化修改 / 锚点面板只支持 YAML 配置（.yaml / .yml）", true)
+                return
             }
             CfgSession.token = token
             CfgSession.text = CfgGlue.getText(token) ?: ""

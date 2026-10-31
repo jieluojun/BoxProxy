@@ -73,7 +73,7 @@
 .method public constructor <init>()V
     .registers 1
 
-    .line 52
+    .line 53
     invoke-direct {p0}, Landroid/app/Activity;-><init>()V
 
     return-void
@@ -82,7 +82,7 @@
 .method private final applySystemBars(Z)V
     .registers 4
 
-    .line 92
+    .line 93
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1e
@@ -91,7 +91,7 @@
 
     const/16 v0, 0x18
 
-    .line 94
+    .line 95
     invoke-virtual {p0}, Lcom/box/app/cfg/CfgBaseActivity;->getWindow()Landroid/view/Window;
 
     move-result-object p0
@@ -123,7 +123,7 @@
     :cond_1f
     if-nez p1, :cond_3a
 
-    .line 96
+    .line 97
     invoke-virtual {p0}, Lcom/box/app/cfg/CfgBaseActivity;->getWindow()Landroid/view/Window;
 
     move-result-object p1
@@ -161,15 +161,15 @@
 
     const-string v1, "panel failed"
 
-    .line 103
+    .line 104
     invoke-static {v0, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 104
+    .line 105
     new-instance v0, Ljava/io/StringWriter;
 
     invoke-direct {v0}, Ljava/io/StringWriter;-><init>()V
 
-    .line 105
+    .line 106
     new-instance v1, Ljava/io/PrintWriter;
 
     move-object v2, v0
@@ -180,7 +180,7 @@
 
     invoke-virtual {p1, v1}, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintWriter;)V
 
-    .line 106
+    .line 107
     new-instance p1, Landroid/widget/TextView;
 
     move-object v1, p0
@@ -189,7 +189,7 @@
 
     invoke-direct {p1, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 107
+    .line 108
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -210,15 +210,15 @@
 
     const/4 v0, 0x1
 
-    .line 108
+    .line 109
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTextIsSelectable(Z)V
 
     const/high16 v0, 0x41400000    # 12.0f
 
-    .line 109
+    .line 110
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTextSize(F)V
 
-    .line 110
+    .line 111
     move-object v0, p0
 
     check-cast v0, Landroid/content/Context;
@@ -257,7 +257,7 @@
 
     invoke-virtual {p1, v0, v2, v3, v1}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 111
+    .line 112
     new-instance v0, Landroid/widget/ScrollView;
 
     move-object v1, p0
@@ -266,12 +266,12 @@
 
     invoke-direct {v0, v1}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 112
+    .line 113
     check-cast p1, Landroid/view/View;
 
     invoke-virtual {v0, p1}, Landroid/widget/ScrollView;->addView(Landroid/view/View;)V
 
-    .line 113
+    .line 114
     check-cast v0, Landroid/view/View;
 
     invoke-virtual {p0, v0}, Lcom/box/app/cfg/CfgBaseActivity;->setContentView(Landroid/view/View;)V
@@ -280,7 +280,7 @@
 
     goto :goto_77
 
-    .line 115
+    .line 116
     :catch_74
     invoke-virtual {p0}, Lcom/box/app/cfg/CfgBaseActivity;->finish()V
 
@@ -308,7 +308,7 @@
     .annotation build Lorg/jetbrains/annotations/NotNull;
     .end annotation
 
-    .line 53
+    .line 54
     iget-object p0, p0, Lcom/box/app/cfg/CfgBaseActivity;->sc:Lcom/box/app/cfg/Scaffold;
 
     if-eqz p0, :cond_5
@@ -335,19 +335,19 @@
         message = "Deprecated in Java"
     .end annotation
 
-    .line 132
+    .line 133
     invoke-super {p0, p1, p2, p3}, Landroid/app/Activity;->onActivityResult(IILandroid/content/Intent;)V
 
     const/16 p0, 0x1b63
 
     if-ne p1, p0, :cond_1a
 
-    .line 134
+    .line 135
     sget-object p0, Lcom/box/app/cfg/Cx;->onPick:Lkotlin/jvm/functions/Function1;
 
     const/4 p1, 0x0
 
-    .line 135
+    .line 136
     sput-object p1, Lcom/box/app/cfg/Cx;->onPick:Lkotlin/jvm/functions/Function1;
 
     if-eqz p0, :cond_1a
@@ -358,7 +358,7 @@
 
     if-eqz p3, :cond_17
 
-    .line 136
+    .line 137
     invoke-virtual {p3}, Landroid/content/Intent;->getData()Landroid/net/Uri;
 
     move-result-object p1
@@ -379,7 +379,7 @@
         message = "Deprecated in Java"
     .end annotation
 
-    .line 120
+    .line 121
     invoke-virtual {p0}, Lcom/box/app/cfg/CfgBaseActivity;->onBackAction()V
 
     return-void
@@ -392,7 +392,7 @@
         .end annotation
     .end param
 
-    .line 59
+    .line 60
     invoke-virtual {p0}, Lcom/box/app/cfg/CfgBaseActivity;->getResources()Landroid/content/res/Resources;
 
     move-result-object v0
@@ -428,14 +428,14 @@
     :cond_1a
     const v2, 0x103012c
 
-    .line 60
+    .line 61
     :goto_1d
     invoke-virtual {p0, v2}, Lcom/box/app/cfg/CfgBaseActivity;->setTheme(I)V
 
-    .line 61
+    .line 62
     invoke-super {p0, p1}, Landroid/app/Activity;->onCreate(Landroid/os/Bundle;)V
 
-    .line 62
+    .line 63
     sget-object p1, Lcom/box/app/cfg/Th;->INSTANCE:Lcom/box/app/cfg/Th;
 
     move-object v2, p0
@@ -444,18 +444,18 @@
 
     invoke-virtual {p1, v2}, Lcom/box/app/cfg/Th;->init(Landroid/content/Context;)V
 
-    .line 63
+    .line 64
     move-object p1, p0
 
     check-cast p1, Landroid/app/Activity;
 
     sput-object p1, Lcom/box/app/cfg/Cx;->act:Landroid/app/Activity;
 
-    .line 65
+    .line 66
     :try_start_30
     sget-object p1, Lcom/box/app/cfg/CfgSession;->token:Ljava/lang/Object;
 
-    .line 66
+    .line 67
     sget-object v2, Lcom/box/app/cfg/CfgSession;->text:Ljava/lang/String;
 
     if-eqz p1, :cond_be
@@ -464,7 +464,7 @@
 
     goto/16 :goto_be
 
-    .line 68
+    .line 69
     :cond_3a
     invoke-virtual {p0}, Lcom/box/app/cfg/CfgBaseActivity;->getWindow()Landroid/view/Window;
 
@@ -484,23 +484,10 @@
 
     invoke-virtual {v3, v4}, Landroid/view/Window;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 70
+    .line 71
     move-object v3, p0
 
     check-cast v3, Lcom/box/app/cfg/CfgBaseActivity;
-
-    .line 71
-    invoke-virtual {v3}, Lcom/box/app/cfg/CfgBaseActivity;->getWindow()Landroid/view/Window;
-
-    move-result-object v4
-
-    sget-object v5, Lcom/box/app/cfg/Th;->INSTANCE:Lcom/box/app/cfg/Th;
-
-    invoke-virtual {v5}, Lcom/box/app/cfg/Th;->getBg()I
-
-    move-result v5
-
-    invoke-virtual {v4, v5}, Landroid/view/Window;->setStatusBarColor(I)V
 
     .line 72
     invoke-virtual {v3}, Lcom/box/app/cfg/CfgBaseActivity;->getWindow()Landroid/view/Window;
@@ -513,9 +500,22 @@
 
     move-result v5
 
-    invoke-virtual {v4, v5}, Landroid/view/Window;->setNavigationBarColor(I)V
+    invoke-virtual {v4, v5}, Landroid/view/Window;->setStatusBarColor(I)V
 
     .line 73
+    invoke-virtual {v3}, Lcom/box/app/cfg/CfgBaseActivity;->getWindow()Landroid/view/Window;
+
+    move-result-object v4
+
+    sget-object v5, Lcom/box/app/cfg/Th;->INSTANCE:Lcom/box/app/cfg/Th;
+
+    invoke-virtual {v5}, Lcom/box/app/cfg/Th;->getBg()I
+
+    move-result v5
+
+    invoke-virtual {v4, v5}, Landroid/view/Window;->setNavigationBarColor(I)V
+
+    .line 74
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v5, 0x1e
@@ -528,7 +528,7 @@
 
     invoke-virtual {v3, v1}, Landroid/view/Window;->setDecorFitsSystemWindows(Z)V
 
-    .line 75
+    .line 76
     :cond_78
     new-instance v1, Lcom/box/app/cfg/Scaffold;
 
@@ -540,7 +540,7 @@
 
     invoke-virtual {p0, v1}, Lcom/box/app/cfg/CfgBaseActivity;->setSc(Lcom/box/app/cfg/Scaffold;)V
 
-    .line 76
+    .line 77
     invoke-virtual {p0}, Lcom/box/app/cfg/CfgBaseActivity;->getSc()Lcom/box/app/cfg/Scaffold;
 
     move-result-object v1
@@ -553,7 +553,7 @@
 
     invoke-virtual {v1, v3}, Lcom/box/app/cfg/Scaffold;->back(Lkotlin/jvm/functions/Function0;)V
 
-    .line 77
+    .line 78
     invoke-virtual {p0}, Lcom/box/app/cfg/CfgBaseActivity;->getSc()Lcom/box/app/cfg/Scaffold;
 
     move-result-object v1
@@ -568,13 +568,13 @@
     :try_end_9e
     .catch Ljava/lang/Throwable; {:try_start_30 .. :try_end_9e} :catch_c2
 
-    .line 79
+    .line 80
     :try_start_9e
     invoke-direct {p0, v0}, Lcom/box/app/cfg/CfgBaseActivity;->applySystemBars(Z)V
     :try_end_a1
     .catch Ljava/lang/Throwable; {:try_start_9e .. :try_end_a1} :catch_a1
 
-    .line 80
+    .line 81
     :catch_a1
     :try_start_a1
     sget-object v0, Lcom/box/app/cfg/CfgSession;->path:Ljava/lang/String;
@@ -588,14 +588,14 @@
     :try_end_aa
     .catch Ljava/lang/Throwable; {:try_start_a1 .. :try_end_aa} :catch_c2
 
-    .line 85
+    .line 86
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x21
 
     if-lt p1, v0, :cond_bd
 
-    .line 86
+    .line 87
     :try_start_b0
     move-object p1, p0
 
@@ -615,7 +615,7 @@
     :cond_bd
     return-void
 
-    .line 67
+    .line 68
     :cond_be
     :goto_be
     :try_start_be
@@ -628,7 +628,7 @@
     :catch_c2
     move-exception p1
 
-    .line 82
+    .line 83
     invoke-direct {p0, p1}, Lcom/box/app/cfg/CfgBaseActivity;->showFailure(Ljava/lang/Throwable;)V
 
     return-void
@@ -637,7 +637,7 @@
 .method protected onDestroy()V
     .registers 2
 
-    .line 125
+    .line 126
     sget-object v0, Lcom/box/app/cfg/Cx;->act:Landroid/app/Activity;
 
     if-ne v0, p0, :cond_7
@@ -646,13 +646,13 @@
 
     sput-object v0, Lcom/box/app/cfg/Cx;->act:Landroid/app/Activity;
 
-    .line 126
+    .line 127
     :cond_7
     sget-object v0, Lcom/box/app/cfg/FullToast;->INSTANCE:Lcom/box/app/cfg/FullToast;
 
     invoke-virtual {v0}, Lcom/box/app/cfg/FullToast;->dismiss()V
 
-    .line 127
+    .line 128
     invoke-super {p0}, Landroid/app/Activity;->onDestroy()V
 
     return-void
@@ -661,7 +661,7 @@
 .method protected onResume()V
     .registers 1
 
-    .line 122
+    .line 123
     invoke-super {p0}, Landroid/app/Activity;->onResume()V
 
     check-cast p0, Landroid/app/Activity;
@@ -678,7 +678,7 @@
         .end annotation
     .end param
 
-    .line 53
+    .line 54
     iput-object p1, p0, Lcom/box/app/cfg/CfgBaseActivity;->sc:Lcom/box/app/cfg/Scaffold;
 
     return-void

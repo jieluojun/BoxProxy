@@ -65,7 +65,7 @@
 .end method
 
 .method public static final open(ILjava/lang/Object;Landroid/content/Context;)V
-    .registers 9
+    .registers 10
     .param p1    # Ljava/lang/Object;
         .annotation build Lorg/jetbrains/annotations/Nullable;
         .end annotation
@@ -77,106 +77,113 @@
     .annotation runtime Lkotlin/jvm/JvmStatic;
     .end annotation
 
+    const/4 v0, 0x1
+
     .line 26
-    :try_start_0
+    :try_start_1
     invoke-static {p1}, Lcom/box/app/cfg/CfgGlue;->getPath(Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object v0
-
-    if-nez v0, :cond_9
-
-    const-string v1, ""
-
-    goto :goto_a
-
-    :cond_9
-    move-object v1, v0
-
-    .line 27
-    :goto_a
-    sget-object v2, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     move-result-object v1
 
-    const-string v2, "toLowerCase(...)"
+    if-nez v1, :cond_a
 
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v2, ""
 
-    const-string v2, ".yaml"
+    goto :goto_b
 
-    const/4 v3, 0x0
+    :cond_a
+    move-object v2, v1
 
-    const/4 v4, 0x2
+    .line 27
+    :goto_b
+    sget-object v3, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
-    const/4 v5, 0x0
+    invoke-virtual {v2, v3}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "toLowerCase(...)"
+
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v3, ".yaml"
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x2
+
+    const/4 v6, 0x0
 
     .line 28
-    invoke-static {v1, v2, v5, v4, v3}, Lkotlin/text/StringsKt;->endsWith$default(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)Z
+    invoke-static {v2, v3, v6, v5, v4}, Lkotlin/text/StringsKt;->endsWith$default(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_2f
+
+    const-string v3, ".yml"
+
+    invoke-static {v2, v3, v6, v5, v4}, Lkotlin/text/StringsKt;->endsWith$default(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)Z
 
     move-result v2
 
-    if-nez v2, :cond_29
+    if-nez v2, :cond_2f
 
-    const-string v2, ".yml"
+    const-string p0, "\u53ef\u89c6\u5316\u4fee\u6539 / \u951a\u70b9\u9762\u677f\u53ea\u652f\u6301 YAML \u914d\u7f6e\uff08.yaml / .yml\uff09"
 
-    invoke-static {v1, v2, v5, v4, v3}, Lkotlin/text/StringsKt;->endsWith$default(Ljava/lang/String;Ljava/lang/String;ZILjava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_29
+    .line 29
+    invoke-static {p2, p0, v0}, Lcom/box/app/cfg/UiKt;->toast(Landroid/content/Context;Ljava/lang/String;Z)V
 
     return-void
 
-    .line 31
-    :cond_29
-    sget-object v1, Lcom/box/app/cfg/CfgSession;->INSTANCE:Lcom/box/app/cfg/CfgSession;
+    .line 32
+    :cond_2f
+    sget-object v2, Lcom/box/app/cfg/CfgSession;->INSTANCE:Lcom/box/app/cfg/CfgSession;
 
     sput-object p1, Lcom/box/app/cfg/CfgSession;->token:Ljava/lang/Object;
 
-    .line 32
-    sget-object v1, Lcom/box/app/cfg/CfgSession;->INSTANCE:Lcom/box/app/cfg/CfgSession;
+    .line 33
+    sget-object v2, Lcom/box/app/cfg/CfgSession;->INSTANCE:Lcom/box/app/cfg/CfgSession;
 
     invoke-static {p1}, Lcom/box/app/cfg/CfgGlue;->getText(Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object p1
 
-    if-nez p1, :cond_37
+    if-nez p1, :cond_3d
 
     const-string p1, ""
 
-    :cond_37
+    :cond_3d
     sput-object p1, Lcom/box/app/cfg/CfgSession;->text:Ljava/lang/String;
 
-    .line 33
+    .line 34
     sget-object p1, Lcom/box/app/cfg/CfgSession;->INSTANCE:Lcom/box/app/cfg/CfgSession;
 
-    sput-object v0, Lcom/box/app/cfg/CfgSession;->path:Ljava/lang/String;
+    sput-object v1, Lcom/box/app/cfg/CfgSession;->path:Ljava/lang/String;
 
-    .line 34
+    .line 35
     new-instance p1, Landroid/content/Intent;
 
     invoke-direct {p1}, Landroid/content/Intent;-><init>()V
 
-    .line 35
+    .line 36
     invoke-virtual {p2}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    move-result-object v0
+    move-result-object v1
 
-    if-nez p0, :cond_4b
+    if-nez p0, :cond_51
 
     const-string p0, "com.box.app.cfg.AnchorActivity"
 
-    goto :goto_4d
+    goto :goto_53
 
-    :cond_4b
+    :cond_51
     const-string p0, "com.box.app.cfg.FormActivity"
 
-    :goto_4d
-    invoke-virtual {p1, v0, p0}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    :goto_53
+    invoke-virtual {p1, v1, p0}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    .line 36
+    .line 37
     sget-object p0, Lcom/box/app/cfg/CfgLauncher;->INSTANCE:Lcom/box/app/cfg/CfgLauncher;
 
     invoke-direct {p0, p2}, Lcom/box/app/cfg/CfgLauncher;->unwrap(Landroid/content/Context;)Landroid/content/Context;
@@ -185,31 +192,31 @@
 
     instance-of p0, p0, Landroid/app/Activity;
 
-    if-nez p0, :cond_5f
+    if-nez p0, :cond_65
 
     const/high16 p0, 0x10000000
 
     invoke-virtual {p1, p0}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    .line 37
-    :cond_5f
+    .line 38
+    :cond_65
     invoke-virtual {p2, p1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-    :try_end_62
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_62} :catch_63
+    :try_end_68
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_68} :catch_69
 
-    goto :goto_79
+    goto :goto_7e
 
-    :catch_63
+    :catch_69
     move-exception p0
 
-    .line 39
+    .line 40
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "\u6253\u5f00\u5931\u8d25\uff1a"
+    const-string v1, "\u6253\u5f00\u5931\u8d25\uff1a"
 
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
@@ -217,11 +224,9 @@
 
     move-result-object p0
 
-    const/4 p1, 0x1
+    invoke-static {p2, p0, v0}, Lcom/box/app/cfg/UiKt;->toast(Landroid/content/Context;Ljava/lang/String;Z)V
 
-    invoke-static {p2, p0, p1}, Lcom/box/app/cfg/UiKt;->toast(Landroid/content/Context;Ljava/lang/String;Z)V
-
-    :goto_79
+    :goto_7e
     return-void
 .end method
 
@@ -230,7 +235,7 @@
 
     const/4 p0, 0x0
 
-    .line 46
+    .line 47
     :goto_1
     instance-of v0, p1, Landroid/content/ContextWrapper;
 
