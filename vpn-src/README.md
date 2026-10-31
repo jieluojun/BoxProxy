@@ -17,3 +17,22 @@
 `test/`：主机侧测试，不进 APK。`SbConfigTest.java` / `CoreCfgTest.java` 测各内核的配置改写（用 stleary org.json）；
 `NetTest.java` + `bridge.py`（`TUNSETIFF` 的 TUN 桥，环境变量 `LOSS` 可丢包）+ `socks.py`（SOCKS5 测试服务，含 UDP）
 一起在 Linux 上跑 `VpnNet`（需要 root 建 `tt0`，路由 `203.0.113.0/24`、`198.18.0.0/15` 到它）。
+
+
+## 配置编辑器的「可视」/「锚点」按钮（`com.box.app.cfg`）
+
+源码在 `cfg/`（Kotlin）：`mishka/` 是 Mishka 引擎原样、`mishka-logic/` 是 `tools/extract_logic.py` 从 Mishka 的 Compose 文件抽出的纯逻辑（生成物，不手改）、
+`stubs/` 是编译占位（`CfgGlue`、`Toast`、`Immutable`）、`app/` 是原生 View 界面。生成物在 `decompiled/smali/`
+（`com/box/app/cfg`、`top/yukonga`、`kotlin`、`androidx/compose/runtime`）；一键重新生成：`tools/build-cfg.sh`（环境变量见脚本头部）。
+流程：kotlinc（`-Xlambdas=class -Xsam-conversions=class`）→ `prune.py` 裁 stdlib 类 → D8（`--no-desugaring`）→ baksmali（`tools/Bk.java`）→ `prune_smali.py` 方法级裁剪。
+真实的 `CfgGlue`、`CfgNav`、`CfgLabel`、`CfgClick` 是手写 smali（要碰混淆后的 Compose 与编辑器视图模型 `Lmj5`），不会被脚本覆盖。
+
+### 工具链（不提交二进制）
+
+* Kotlin 编译器：npm `kotlin-compiler`（2.4.x，`package/lib`），用 jdk4py 的 JRE 跑。
+* ECJ：npm `@ctxo/lang-java-analyzer` 里的 `jar/ctxo-jdt-analyzer-17.jar`（Eclipse JDT core，带 `batch.Main`，只用来编译 `Bk.java`）。
+* android.jar：GitHub `Sable/android-platforms`（`android-33/android.jar`，是真文件不是 LFS）。
+* baksmali：npm `apktool-jar@2.4.1` 的 `bin/apktool_2.4.1.jar`（`tools/Bk.java` 调它的 API；`org.jf.baksmali.Main` 没有 main）。
+* D8（JVM 版）：沙箱里没有现成的，办法是 npm `d8-termux` 的 `d8.jar`（其实是 dex 版 D8）→ `google/enjarify`
+  翻成 JVM jar → `tools/fix_d8_jar.py` 修 class 版本与 InterfaceMethodref → `java -Xverify:none -cp d8fix.jar com.android.tools.r8.D8 …`。
+  能用的 D8 jar（Android SDK build-tools 的 `lib/d8.jar`、r8.jar 等）直接用就行。
