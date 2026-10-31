@@ -65,3 +65,6 @@ boxctl 本来能执行就原样运行（不改变现有设备）；否则改用 
 - 否（模式改回启用/绕过，或执行了 `stop`）：如果有记录文件，把 APN 还原并删掉记录。
 
 没有改 boxctl 开机脚本（`lb0` 里的 boot 模板）：开机自启仍是 boxctl 原逻辑，下一次从 App 里启动/重启时才会换成 APN 方式。
+
+补充（第二版）：是否“禁用系统 IPv6”改为由 `BoxctlFix.mode` 读 `runtime_profile.ipv6_mode`（只读打开设置库，仅在 start/restart/boot/reload/mode/network-match 命令上读）后以 `_v6m` 传给 shell，读不到才退回 sysctl 状态判断。
+找当前 APN 依次试 `preferapn` → `preferapn/subId/<multi_sim_data_call>` → `carriers --where current=1`；写入后读回校验，失败把错误输出写进 `runs.log`；每次触发都会写一行 `移动网络 IPv6: <子命令>: mode=… 处理=…` 方便排查。
