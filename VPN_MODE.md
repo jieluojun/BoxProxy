@@ -195,3 +195,31 @@ VPN 模式下「开机自启」开着时，划掉应用卡片 / 进程被杀后�
 （`VpnPrefs.adoptVpnMode`，不触发运行模式切换的副作用，日志 `no root: the run mode was saved as VPN`）。
 之后授予 root，当前运行模式仍是 VPN，停止/重启走 VPN 流程；想用 root 模式再手动切换。
 
+
+## sing-box 等动态链接内核：`CANNOT LINK EXECUTABLE … libcom.android.tethering.connectivity_native.so not found`
+
+官方 sing-box 是动态链接的（依赖 `libandroid.so`）。Android 15+ 上 `libandroid.so` 又依赖 tethering APEX 里的
+`libcom.android.tethering.connectivity_native.so`；内核放在外部存储 / 应用私有目录（不属于 linker 配置里任何一个目录）时，
+默认命名空间找不到它，于是内核连启动都启动不了（mihomo 是静态的，所以没事）。
+
+处理：给 root 命令（`lb0.c` 拼出来的所有 `boxctl --db … <命令>`，以及开机脚本）和 VPN 模式的 `box-vpn.sh` 在启动内核前加上
+`LD_LIBRARY_PATH=/apex/com.android.tethering/lib64:/apex/com.android.i18n/lib64:/apex/com.android.art/lib64:/apex/com.android.runtime/lib64:/apex/com.android.os.statsd/lib64[:原值]`。目录不存在时无副作用。**未在真机验证**：如果仍然报同样的错，
+说明默认命名空间不是「非隔离」的，需要把 sing-box 放到 `/data/local/tmp` 之类 linker 认的目录再试。
+
+第二层缺库：加了 tethering 之后，下一个报错是 `libicu.so not found: needed by libharfbuzz_ng.so`（在 i18n APEX）。`libandroid.so` 的整条依赖链
+会落到好几个 APEX（i18n 的 ICU、art / runtime 的 libnativeloader / libnativebridge、statsd 的 libstatssocket），逐个报错太慢，
+所以一次把这几个 APEX 的 `lib64` 都放进搜索路径（不放 bionic 子目录里的 libc/libm，不会换掉 libc）。
+
+### 自动补库（取代手写目录清单）
+
+第三层缺库是 `libdolbyeffect.so needed by libhwui.so`（厂商自己加的），每家 ROM 都不一样，手写目录清单永远补不完。改成「缺什么补什么」：
+
+- **root 模式**：`lb0.c` 拼出的每条 `boxctl --db … <命令>` 前面加上 `LdFix.wrap`（`vpn-src/cfg/app/com/box/app/cfg/LdFix.kt`）：
+  对 `<home>/bin` 下的 sing-box / xray / v2fly / hysteria 用 `linker64` 试着加载，读 `library "X" not found`，
+  到 `/system_ext /product /odm /vendor /mi_ext /apex` 下找 `X` 所在的 `lib64`，加进 `LD_LIBRARY_PATH`，重复到能加载（最多 30 次）。
+  结果缓存在 `/data/local/tmp/.boxproxy-ld-<内核名>`（按内核文件大小 + 修改时间，换了内核会重新探测）。命令在子 shell 里跑，不污染常驻 su 会话。
+- **开机脚本**：读上面的缓存文件，没有缓存就用预置的几个 APEX 目录。（所以要先在 App 里启动过一次。）
+- **VPN 模式**（`box-vpn.sh`）：启动内核前同样探测，补到的目录写进 `runs.log`（`core needs libXXX.so, adding …`）。
+
+shell 逻辑已用假的 linker64 在 dash / busybox sh 上跑通（缺 libicu → 缺 libdolbyeffect → 成功，第二次直接命中缓存，mihomo 跳过）。
+**没有在真机验证**。如果还失败，看 runs.log 里最后一条 `core needs …` / `missing library …`。

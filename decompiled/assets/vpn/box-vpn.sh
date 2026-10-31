@@ -337,6 +337,25 @@ case "$cmd" in
       for l in /system/bin/linker64 /system/bin/linker; do
         [ -x "$l" ] && { LNK=$l; break; }
       done
+      # 官方 sing-box 等是动态链接（要 libandroid.so）。内核放在 /data/user/0 这类不属于任何 linker 命名空间配置的目录时，
+      # 默认命名空间找不到系统库依赖链上的库（tethering 的 libcom.android.tethering.connectivity_native.so → i18n 的 libicu.so →
+      # 各家 ROM 自己的 libdolbyeffect.so …）。用 linker64 试着加载一次，读 `library "X" not found`，到 APEX / system_ext /
+      # product / odm / vendor / mi_ext 下找 X 所在的 lib64 加进 LD_LIBRARY_PATH，重复到能加载（最多 30 次）。
+      _ld="/apex/com.android.tethering/lib64:/apex/com.android.i18n/lib64:/apex/com.android.art/lib64:/apex/com.android.runtime/lib64:/apex/com.android.os.statsd/lib64"
+      _la=version; [ "$core" = v2fly ] && _la=-version
+      _li=0
+      while [ -n "$LNK" ] && [ $_li -lt 30 ]; do
+        _lo=$(LD_LIBRARY_PATH="$_ld" "$LNK" "$work/core" $_la 2>&1 < /dev/null | head -n 5)
+        _ll=$(echo "$_lo" | sed -n 's/.*library "\([^"]*\)" not found.*/\1/p' | head -n 1)
+        [ -n "$_ll" ] || break
+        _lp=$(find /system_ext /product /odm /vendor /mi_ext /apex -maxdepth 3 -name "$_ll" 2>/dev/null | grep /lib64/ | head -n 1)
+        [ -n "$_lp" ] || { note "missing library $_ll not found anywhere"; break; }
+        _lq=$(dirname "$_lp")
+        case ":$_ld:" in *":$_lq:"*) break ;; esac
+        note "core needs $_ll, adding $_lq to LD_LIBRARY_PATH"
+        _ld="$_ld:$_lq"; _li=$((_li+1))
+      done
+      export LD_LIBRARY_PATH="$_ld${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
       case "$core" in
         sing-box) set -- run -D "$home" -c "$cfgf" ;;
         xray) export XRAY_LOCATION_ASSET="$home"; set -- run -c "$cfgf" ;;
