@@ -100,10 +100,12 @@ object FullToast {
         val tv = TextView(a)
         tv.text = msg
         tv.textSize = 14f
-        tv.setTextColor(0xFFFFFFFF.toInt())
+        // like the system toast: light card with dark text, dark card in night mode
+        val night = (a.resources.configuration.uiMode and 0x30) == 0x20
+        tv.setTextColor(if (night) 0xFFFFFFFF.toInt() else 0xFF333333.toInt())
         tv.setLineSpacing(0f, 1.12f)
         tv.setPadding(a.dp(18), a.dp(12), a.dp(18), a.dp(12))
-        tv.background = shape(a, 0xF0262626.toInt(), 18)
+        tv.background = shape(a, if (night) 0xF0262626.toInt() else 0xF2F5F5F5.toInt(), 18)
         val box = FrameLayout(a)
         box.addView(tv, FrameLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, Gravity.CENTER))
         d.setContentView(box)
