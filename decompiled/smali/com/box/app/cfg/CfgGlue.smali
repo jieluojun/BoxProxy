@@ -96,6 +96,8 @@
 
     move-object v3, v0
 
+    invoke-static {p0, v4, v5}, Lcom/box/app/cfg/CfgGlue;->preSel(Lvt0;II)V
+
     invoke-virtual/range {v3 .. v8}, Lr61;->x(IILjava/lang/CharSequence;II)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
@@ -224,6 +226,26 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     :cond_end
+    :goto_end
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    goto :goto_end
+.end method
+
+# 替换之前先把光标放到「要改的那一段的起点」。撤销栈里每一步记着「这一步之前的选区」（pz6.e → no6），回退时编辑器把光标还原到那里并滚过去；
+# 面板回来时光标通常还在文件开头（0,0），于是回退就跳到顶部。先把光标挪到改动处，回退就停在被改的那一行（和直接在编辑器里改一样）。
+# 替换完成后 replaceKeep 仍会再把光标放到新内容所在行。任何异常都忽略（不能影响后面的替换）。
+.method public static preSel(Lvt0;II)V
+    .locals 1
+
+    :try_start_0
+    invoke-virtual {p0, p1, p2}, Lvt0;->l0(II)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
     :goto_end
     return-void
 
