@@ -294,6 +294,12 @@
     .line 41
     move-result-object p0
 
+    const-string v1, "LD_LIBRARY_PATH=/apex/com.android.tethering/lib64${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH} "
+
+    invoke-virtual {v1, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
     .line 42
     return-object p0
 .end method
@@ -3016,7 +3022,7 @@
 
     .line 203
     .line 204
-    const-string v13, "\n            #!/system/bin/sh\n            (\n              export PATH=\"/data/adb/magisk:/data/adb/ksu/bin:/data/adb/ap/bin:/system/bin:/system/xbin:$PATH\"\n              export BOXCTL_STDOUT_LOG_LINE=1\n              run_dir="
+    const-string v13, "\n            #!/system/bin/sh\n            (\n              export PATH=\"/data/adb/magisk:/data/adb/ksu/bin:/data/adb/ap/bin:/system/bin:/system/xbin:$PATH\"\n              export BOXCTL_STDOUT_LOG_LINE=1\n              export LD_LIBRARY_PATH=\"/apex/com.android.tethering/lib64${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}\"\n              run_dir="
 
     .line 205
     .line 206

@@ -195,3 +195,13 @@ VPN 模式下「开机自启」开着时，划掉应用卡片 / 进程被杀后�
 （`VpnPrefs.adoptVpnMode`，不触发运行模式切换的副作用，日志 `no root: the run mode was saved as VPN`）。
 之后授予 root，当前运行模式仍是 VPN，停止/重启走 VPN 流程；想用 root 模式再手动切换。
 
+
+## sing-box 等动态链接内核：`CANNOT LINK EXECUTABLE … libcom.android.tethering.connectivity_native.so not found`
+
+官方 sing-box 是动态链接的（依赖 `libandroid.so`）。Android 15+ 上 `libandroid.so` 又依赖 tethering APEX 里的
+`libcom.android.tethering.connectivity_native.so`；内核放在外部存储 / 应用私有目录（不属于 linker 配置里任何一个目录）时，
+默认命名空间找不到它，于是内核连启动都启动不了（mihomo 是静态的，所以没事）。
+
+处理：给 root 命令（`lb0.c` 拼出来的所有 `boxctl --db … <命令>`，以及开机脚本）和 VPN 模式的 `box-vpn.sh` 在启动内核前加上
+`LD_LIBRARY_PATH=/apex/com.android.tethering/lib64[:原值]`。目录不存在时无副作用。**未在真机验证**：如果仍然报同样的错，
+说明默认命名空间不是「非隔离」的，需要把 sing-box 放到 `/data/local/tmp` 之类 linker 认的目录再试。

@@ -337,6 +337,10 @@ case "$cmd" in
       for l in /system/bin/linker64 /system/bin/linker; do
         [ -x "$l" ] && { LNK=$l; break; }
       done
+      # 官方 sing-box 等是动态链接（要 libandroid.so）。内核放在 /data/user/0 这类不属于任何 linker 命名空间配置的目录时，
+      # Android 15+ 的 libandroid.so 依赖 libcom.android.tethering.connectivity_native.so（在 tethering APEX 里），默认命名空间找不到。
+      # 把 APEX 的目录加进搜索路径（目录不存在时无副作用）。
+      export LD_LIBRARY_PATH="/apex/com.android.tethering/lib64${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
       case "$core" in
         sing-box) set -- run -D "$home" -c "$cfgf" ;;
         xray) export XRAY_LOCATION_ASSET="$home"; set -- run -c "$cfgf" ;;
