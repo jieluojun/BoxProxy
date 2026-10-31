@@ -513,6 +513,19 @@
 
     .line 16
     :cond_0
+    const-string v1, "mihomo_dingtalk"
+
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_dt
+
+    const-string v0, "mihomo"
+
+    goto :goto_0
+
+    :cond_dt
     const-string v1, "sing-box_ref1nd"
 
     .line 17
@@ -2016,6 +2029,11 @@
     .line 66
     goto/16 :goto_4
 
+    :pswitch_9
+    invoke-static {v1}, Lc33;->N(Ljava/lang/Object;)V
+
+    goto/16 :goto_dd
+
     .line 67
     .line 68
     :pswitch_1
@@ -3093,6 +3111,71 @@
     return-object v0
 
     .line 591
+    :sswitch_7
+    const-string v1, "mihomo_dingtalk"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_c
+
+    const/16 v0, 0x9
+
+    iput v0, v3, Loa1;->m:I
+
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    const-string v0, "https://api.github.com/repos/jieluojun/mihomo/releases/tags/Prerelease-Alpha"
+
+    invoke-virtual {v2, v0, v3}, Lg91;->c(Ljava/lang/String;Ld81;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    if-ne v1, v4, :cond_dd
+
+    goto/16 :goto_d
+
+    :cond_dd
+    :goto_dd
+    check-cast v1, Lh91;
+
+    new-instance v0, Lgo2;
+
+    const-string v2, "mihomo-android-arm64-v8-alpha-smart-[A-Za-z0-9._-]+\\.gz"
+
+    invoke-direct {v0, v2}, Lgo2;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v1, v0}, Lh91;->a(Lgo2;)Lb91;
+
+    move-result-object v5
+
+    new-instance v0, Lga1;
+
+    iget-object v1, v5, Lb91;->a:Ljava/lang/String;
+
+    const-string v2, "mihomo-android-arm64-v8-alpha-"
+
+    invoke-static {v1, v2}, Lw96;->E0(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1, v8}, Lw96;->F0(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    const-string v7, "mihomo"
+
+    const-string v1, "mihomo_dingtalk"
+
+    const-string v2, "mihomo"
+
+    const-string v3, "Mihomo Smart + eBPF + \u9489\u9489\u76f4\u8fde"
+
+    invoke-direct/range {v0 .. v7}, Lga1;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lb91;Li81;Ljava/lang/String;)V
+
+    return-object v0
+
     :sswitch_6
     const-string v1, "sing-box_ref1nd"
 
@@ -3330,6 +3413,7 @@
         :pswitch_2
         :pswitch_1
         :pswitch_0
+        :pswitch_9
     .end packed-switch
 
     .line 704
@@ -3356,6 +3440,7 @@
     .line 725
     :sswitch_data_0
     .sparse-switch
+        -0x7fc2cadc -> :sswitch_7
         -0x54707cda -> :sswitch_6
         -0x4cb56a71 -> :sswitch_5
         -0x40072b7b -> :sswitch_4

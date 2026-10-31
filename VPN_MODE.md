@@ -141,7 +141,7 @@ v2fly 原生 v5 格式（非 v4 风格）的 JSON 暂不支持；Hysteria 1（JS
 
 - **隐藏不可用节点**（面板页排序/筛选菜单，「节点根据提供商分组」下面）：开启后，已知不可用的节点不再显示。
   判定：应用内测速结果优先（≤0 / 超时 = 不可用）；否则看内核 API 返回的 `alive=false`、最近一次延迟 ≤ 0、历史延迟全部失败。
-  还没有测过速（没有任何结果）的节点、策略组、有正延迟的节点一律保留。开关保存在 `box_vpn_ui` 的 `hide_unavailable`，
+  还没有测过速（没有任何结果）的节点、策略组、有正延迟的节点一律保留；内置出站（类型或名字是 Direct / Reject / RejectDrop / Pass / Compatible / Dns / Block，不区分大小写，如「跳过规则」「流量拦截」「直连出口」）本来就不测速，永远保留。开关保存在 `box_vpn_ui` 的 `hide_unavailable`，
   由 `k53.L`（节点分组/排序入口）调用 `VpnPrefs.filter`，状态是 compose state，切换后列表立即刷新。
 - **开机自启（VPN 模式）**：原来的「开机自启」开关只会安装 root 开机脚本，没有 root 时装不上。
   现在 VPN 模式下：开关只保存设置（`lb0.r` 在 VPN 模式直接成功，不再装/删开机脚本），
@@ -223,3 +223,22 @@ VPN 模式下「开机自启」开着时，划掉应用卡片 / 进程被杀后�
 
 shell 逻辑已用假的 linker64 在 dash / busybox sh 上跑通（缺 libicu → 缺 libdolbyeffect → 成功，第二次直接命中缓存，mihomo 跳过）。
 **没有在真机验证**。如果还失败，看 runs.log 里最后一条 `core needs …` / `missing library …`。
+
+## 工具页「更新核心」：Mihomo Smart + eBPF + 钉钉直连
+
+工具页的核心列表在 `nt6`（`a` = 核心 id，`b` = 名称资源，顺序一一对应）。「Mihomo Smart + eBPF + 钉钉直连」id 为 `mihomo_dingtalk`，
+放在 `mihomo_smart` 后面，和 Mihomo Smart 一样只是 mihomo 的另一个下载源：
+
+- 下载：`qa1.g` 里新增分支，读 `https://api.github.com/repos/jieluojun/mihomo/releases/tags/Prerelease-Alpha`，
+  匹配 `mihomo-android-arm64-v8-alpha-smart-<任意字符>.gz`（该仓库的资源名带 `-zero`，vernesong 的不带，所以正则放宽），
+  装进 `box/bin/mihomo`（同 Smart，目标核心仍是 `mihomo`）；
+- 把 id 映射回 `mihomo`：`qa1.f`（安装前停核/校验）、`l33.m`（版本文案）；`lb0.h` 和 `zt` 对未知 id 本来就回落到 mihomo；
+- 名称：`proxy_core_mihomo_dingtalk`（`0x7f0f04aa`）。
+
+## Toast 不再被省略号截断
+
+HyperOS / Android 12+ 的系统 Toast 会把长文字截成「…」（如「更新完成: smart-22290fb0-zero…」）。
+全 App 的 `Toast.makeText(...)`（共 24 个类、约 60 处）都改成 `com.box.app.vpn.FToast.makeText(...)`：
+`FToast` 继承 `Toast`，`show()` 改为在前台 Activity 上弹 `cfg.FullToast`（不抢焦点、点击穿透、按文字长度自动消失，完整显示全部文字；底色和系统 Toast 一致：浅色模式浅灰底深色字，夜间模式深底白字）。
+前台 Activity 由 `AppApplication.onCreate` 注册的 `ActivityLifecycleCallbacks` 跟踪（resume 记录，pause/destroy 清除）；
+App 在后台或没有前台 Activity（比如 VPN 服务里弹的）时回退到系统 Toast。`cfg` 包自己原有的 `FullToast` 路径不变。

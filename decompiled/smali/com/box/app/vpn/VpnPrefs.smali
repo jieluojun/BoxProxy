@@ -245,6 +245,42 @@
     return-object p0
 .end method
 
+# True for the built-in outbound types / names (compared case-insensitively): they are never tested, so "no delay" does not mean "unavailable".
+.method private static builtin(Ljava/lang/String;)Z
+    .locals 3
+
+    if-nez p0, :cond_0
+
+    const/4 v0, 0x0
+
+    return v0
+
+    :cond_0
+    sget-object v0, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v0, ","
+
+    invoke-virtual {v0, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, ",direct,reject,reject-drop,rejectdrop,pass,compatible,dns,block,drop,"
+
+    invoke-virtual {v2, v1}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v0
+
+    return v0
+.end method
+
 # Drops the nodes that are known to be unavailable.  A node is kept when it has no test result
 # yet, a positive delay, or is a proxy group.  Results of the in-app speed test (p2, keyed by
 # node name) win over what the core API reported (alive / delay history).
@@ -363,6 +399,21 @@
     check-cast v5, Lq15;
 
     iget-object v6, v5, Lq15;->a:Ljava/lang/String;
+
+    # built-in outbounds (Direct / Reject / Pass / Compatible / Dns ...) have no delay by nature: never hidden
+    iget-object v0, v5, Lq15;->c:Ljava/lang/String;
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->builtin(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_keep
+
+    invoke-static {v6}, Lcom/box/app/vpn/VpnPrefs;->builtin(Ljava/lang/String;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_keep
 
     # proxy groups are never hidden
     if-eqz p1, :cond_chk

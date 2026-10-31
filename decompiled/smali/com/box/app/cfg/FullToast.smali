@@ -152,7 +152,30 @@
     .line 102
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextSize(F)V
 
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v2
+
+    iget v2, v2, Landroid/content/res/Configuration;->uiMode:I
+
+    and-int/lit8 v2, v2, 0x30
+
+    const/16 v3, 0x20
+
+    if-ne v2, v3, :fl_t
+
     const/4 v2, -0x1
+
+    goto :fd_t
+
+    :fl_t
+    const v2, -0xcccccd
+
+    :fd_t
 
     .line 103
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
@@ -187,7 +210,30 @@
 
     invoke-virtual {v1, v3, v5, v6, v4}, Landroid/widget/TextView;->setPadding(IIII)V
 
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v4
+
+    iget v4, v4, Landroid/content/res/Configuration;->uiMode:I
+
+    and-int/lit8 v4, v4, 0x30
+
+    const/16 v5, 0x20
+
+    if-ne v4, v5, :fl_b
+
     const v3, -0xfd9d9da
+
+    goto :fd_b
+
+    :fl_b
+    const v3, -0xd0a0a0b
+
+    :fd_b
 
     .line 106
     invoke-static {v0, v3, v2}, Lcom/box/app/cfg/UiKt;->shape(Landroid/content/Context;II)Landroid/graphics/drawable/GradientDrawable;
