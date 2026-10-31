@@ -70,3 +70,4 @@ boxctl 本来能执行就原样运行（不改变现有设备）；否则改用 
 找当前 APN 依次试 `preferapn` → `preferapn/subId/<multi_sim_data_call>` → `carriers --where current=1`；写入后读回校验，失败把错误输出写进 `runs.log`；每次触发都会写一行 `移动网络 IPv6: <子命令>: mode=… 处理=…` 方便排查。
 
 调试日志 `boxproxy-v6.log` 写在 `<home>/run/` 下（与 `runs.log` 同目录），不再写 `/data/local/tmp`。
+每次 \`up\`/\`start\`/\`restart\` 启动服务前先清空 \`boxproxy-v6.log\`。
