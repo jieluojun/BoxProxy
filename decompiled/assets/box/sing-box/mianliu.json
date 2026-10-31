@@ -113,40 +113,6 @@
         "server": "阿里DNS"
       },
       {
-        "type": "logical",
-        "mode": "and",
-        "rules": [
-          {
-            "query_type": [
-              "A",
-              "AAAA"
-            ]
-          },
-          {
-            "domain": "cloudflare-ech.com",
-            "domain_suffix": [
-              ".9966338.xyz",
-              ".grpcendpoint.shop",
-              ".outsidemyheart.space"
-            ],
-            "domain_regex": "(^|\\.)(alt[1-8]-mtalk|mtalk|mtalk4)\\.google\\.com$",
-            "rule_set": [
-              "排除域名",
-              "大陆域名"
-            ],
-            "invert": true
-          }
-        ],
-        "server": "虚拟DNS",
-        "rewrite_ttl": 1
-      },
-      {
-        "domain": "cloudflare-ech.com",
-        "domain_suffix": [
-          ".9966338.xyz",
-          ".grpcendpoint.shop",
-          ".outsidemyheart.space"
-        ],
         "domain_regex": "(^|\\.)(alt[1-8]-mtalk|mtalk|mtalk4)\\.google\\.com$",
         "server": "腾讯DNS"
       },
@@ -158,6 +124,14 @@
         "clash_mode": "规则",
         "rule_set": "大陆域名",
         "server": "腾讯DNS"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "虚拟DNS",
+        "rewrite_ttl": 1
       }
     ],
     "final": "谷歌DNS",
@@ -209,7 +183,8 @@
         "日本",
         "韩国",
         "新加坡",
-        "美国"
+        "美国",
+        "其它"
       ]
     },
     {
@@ -572,7 +547,7 @@
     "clash_api": {
       "external_controller": "0.0.0.0:9090",
       "external_ui": "ui",
-      "external_ui_download_url": "https://v6.gh-proxy.org/https://github.com/Zephyruso/zashboard/releases/latest/download/dist-no-fonts-singbox-native.zip",
+      "external_ui_download_url": "https://v6.gh-proxy.org/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages-no-fonts.zip",
       "external_ui_http_client": "远程下载",
       "default_mode": "规则"
     },
