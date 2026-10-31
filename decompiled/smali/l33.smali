@@ -22949,6 +22949,19 @@
 
     .line 167
     :cond_1
+    const-string v15, "mihomo_dingtalk"
+
+    invoke-virtual {v9, v15}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v15
+
+    if-eqz v15, :cond_dt1
+
+    move-object v15, v5
+
+    goto :goto_1
+
+    :cond_dt1
     invoke-virtual {v9, v13}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 168
@@ -23122,6 +23135,19 @@
 
     .line 242
     :cond_8
+    const-string v1, "mihomo_dingtalk"
+
+    invoke-virtual {v9, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_dt2
+
+    move-object v1, v5
+
+    goto :goto_6
+
+    :cond_dt2
     invoke-virtual {v9, v13}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 243

@@ -223,3 +223,14 @@ VPN 模式下「开机自启」开着时，划掉应用卡片 / 进程被杀后�
 
 shell 逻辑已用假的 linker64 在 dash / busybox sh 上跑通（缺 libicu → 缺 libdolbyeffect → 成功，第二次直接命中缓存，mihomo 跳过）。
 **没有在真机验证**。如果还失败，看 runs.log 里最后一条 `core needs …` / `missing library …`。
+
+## 工具页「更新核心」：Mihomo（钉钉直连）
+
+工具页的核心列表在 `nt6`（`a` = 核心 id，`b` = 名称资源，顺序一一对应）。「Mihomo（钉钉直连）」id 为 `mihomo_dingtalk`，
+放在 `mihomo_smart` 后面，和 Mihomo Smart 一样只是 mihomo 的另一个下载源：
+
+- 下载：`qa1.g` 里新增分支，读 `https://api.github.com/repos/jieluojun/mihomo/releases/tags/Prerelease-Alpha`，
+  匹配 `mihomo-android-arm64-v8-alpha-smart-<任意字符>.gz`（该仓库的资源名带 `-zero`，vernesong 的不带，所以正则放宽），
+  装进 `box/bin/mihomo`（同 Smart，目标核心仍是 `mihomo`）；
+- 把 id 映射回 `mihomo`：`qa1.f`（安装前停核/校验）、`l33.m`（版本文案）；`lb0.h` 和 `zt` 对未知 id 本来就回落到 mihomo；
+- 名称：`proxy_core_mihomo_dingtalk`（`0x7f0f04aa`）。
