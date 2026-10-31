@@ -79,6 +79,10 @@
 
     float-to-int v4, v4
 
+    const/4 v5, 0x2
+
+    if-eq v4, v5, :close
+
     add-int/lit8 v6, v1, 0x1
 
     aget v7, v0, v6
@@ -87,21 +91,16 @@
 
     aget v8, v0, v6
 
-    if-nez v4, :not_move
+    if-nez v4, :line
 
     invoke-virtual {v3, v7, v8}, Lsv;->h(FF)V
 
-    add-int/lit8 v1, v1, 0x3
+    goto :next
 
-    goto :loop
-
-    :not_move
-    const/4 v5, 0x1
-
-    if-ne v4, v5, :close
-
+    :line
     invoke-virtual {v3, v7, v8}, Lsv;->f(FF)V
 
+    :next
     add-int/lit8 v1, v1, 0x3
 
     goto :loop
@@ -474,6 +473,7 @@
 
     iget v0, p0, Lcom/box/app/cfg/CfgIcon;->k:I
 
+    :try_start_0
     if-nez v0, :use_anchor
 
     invoke-static {}, Lcom/box/app/cfg/CfgIcon;->vis()Llm2;
@@ -486,6 +486,9 @@
     invoke-static {}, Lcom/box/app/cfg/CfgIcon;->anc()Llm2;
 
     move-result-object v0
+
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :fail
 
     :have
     move-object v5, p1
@@ -513,6 +516,13 @@
     const/4 v7, 0x0
 
     invoke-static/range {v0 .. v7}, Lol2;->a(Llm2;Ljava/lang/String;Lxn3;JLz01;II)V
+
+    sget-object v0, Ld07;->a:Ld07;
+
+    return-object v0
+
+    :fail
+    move-exception v1
 
     sget-object v0, Ld07;->a:Ld07;
 
