@@ -217,10 +217,6 @@ def gen_hints(src):
         for k, v in d.items():
             if "." not in k:
                 common.setdefault(k, v)
-    # override_transport 的 With-At 是 with_at 的别名，文档只在 with_at 段里提了一句
-    ot = hints.get("provider/override_transport")
-    if ot and "with_at" in ot and "With-At" not in ot:
-        ot["With-At"] = "with_at 的别名（二者同时设置时以 with_at 为准）。" + ot["with_at"]
     hints["*"] = common
     return hints
 
@@ -233,6 +229,8 @@ def main():
     schema = json.load(open(os.path.join(src, "docs", "schema.json"), encoding="utf-8"))
     notes = patch(schema)
     schema.pop("description", None)
+    # override_transport 的 With-At 是 with_at 的别名，可视化里只保留 with_at
+    schema["$defs"].get("OverrideTransportOptions", {}).get("properties", {}).pop("With-At", None)
     with open(os.path.join(out, "sing-box-fork.json"), "w", encoding="utf-8") as f:
         json.dump(schema, f, ensure_ascii=False, separators=(",", ":"))
     hints = gen_hints(src)
