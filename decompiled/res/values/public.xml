@@ -1993,6 +1993,11 @@
     <public type="string" name="proxy_selector_hide_unavailable" id="0x7f0f04a9" />
     <public type="string" name="proxy_core_mihomo_dingtalk" id="0x7f0f04aa" />
     <public type="string" name="proxy_core_sing_box_dingtalk" id="0x7f0f04ab" />
+    <public type="string" name="proxy_config_restore_default" id="0x7f0f04ac" />
+    <public type="string" name="proxy_config_restore_done" id="0x7f0f04ad" />
+    <public type="string" name="proxy_config_restore_done_bak" id="0x7f0f04ae" />
+    <public type="string" name="proxy_config_restore_failed" id="0x7f0f04af" />
+    <public type="string" name="proxy_config_restore_none" id="0x7f0f04b0" />
     <public type="style" name="AlertDialog.AppCompat" id="0x7f100000" />
     <public type="style" name="AlertDialog.AppCompat.Light" id="0x7f100001" />
     <public type="style" name="Animation.AppCompat.Dialog" id="0x7f100002" />

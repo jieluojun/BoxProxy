@@ -614,6 +614,11 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="proxy_core_sing_box">Sing-Box</string>
     <string name="proxy_core_sing_box_ref1nd">Sing-Box reF1nd</string>
     <string name="proxy_core_sing_box_dingtalk">Sing-Box Smart + eBPF + 钉钉直连</string>
+    <string name="proxy_config_restore_default">Восстановить конфигурацию по умолчанию</string>
+    <string name="proxy_config_restore_done">Конфигурация по умолчанию восстановлена: %1$s</string>
+    <string name="proxy_config_restore_done_bak">Конфигурация по умолчанию восстановлена: %1$s (старый файл сохранён как %1$s.bak)</string>
+    <string name="proxy_config_restore_failed">Не удалось восстановить конфигурацию по умолчанию: %1$s</string>
+    <string name="proxy_config_restore_none">Для текущего ядра нет встроенной конфигурации по умолчанию</string>
     <string name="proxy_core_title">Ядро</string>
     <string name="proxy_core_v2fly">V2Fly</string>
     <string name="proxy_core_xray">Xray</string>

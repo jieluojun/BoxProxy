@@ -8090,7 +8090,19 @@
     .line 80
     .line 81
     .line 82
-    filled-new-array {p2, p3, v0}, [Lsj4;
+    const p1, 0x7f0f04ac
+
+    invoke-static {p1, v9}, Lk53;->c0(ILz01;)Ljava/lang/String;
+
+    move-result-object p1
+
+    sget-object v1, Lcom/box/app/vpn/RestoreCfg;->MENU:Lcom/box/app/vpn/RestoreCfg;
+
+    new-instance v2, Lsj4;
+
+    invoke-direct {v2, p1, v1}, Lsj4;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    filled-new-array {p2, p3, v0, v2}, [Lsj4;
 
     .line 83
     .line 84

@@ -614,6 +614,11 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="proxy_core_sing_box">Sing-Box</string>
     <string name="proxy_core_sing_box_ref1nd">Sing-Box reF1nd</string>
     <string name="proxy_core_sing_box_dingtalk">Sing-Box Smart + eBPF + 钉钉直连</string>
+    <string name="proxy_config_restore_default">恢復預設設定</string>
+    <string name="proxy_config_restore_done">已恢復預設設定：%1$s</string>
+    <string name="proxy_config_restore_done_bak">已恢復預設設定：%1$s（原檔案已備份為 %1$s.bak）</string>
+    <string name="proxy_config_restore_failed">恢復預設設定失敗：%1$s</string>
+    <string name="proxy_config_restore_none">目前核心沒有內建預設設定</string>
     <string name="proxy_core_title">核心選擇</string>
     <string name="proxy_core_v2fly">V2Fly</string>
     <string name="proxy_core_xray">Xray</string>
