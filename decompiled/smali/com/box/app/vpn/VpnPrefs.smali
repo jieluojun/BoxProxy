@@ -1563,90 +1563,143 @@
     return-void
 .end method
 
-# Switch turned off: the system has no API to revoke the exemption, so open a system page where the
-# user can change it: HyperOS / MIUI per-app battery strategy page first, then the standard
-# battery-optimization list, then the app details page.
-.method public static batteryList()V
+# Starts one MIUI / HyperOS "per-app battery detail" candidate (action and/or component, both may be
+# null) with the extras that page reads.  Returns true when startActivity did not throw.
+.method private static miui(Landroid/content/Context;Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
     .locals 6
+
+    :try_start_0
+    new-instance v0, Landroid/content/Intent;
+
+    invoke-direct {v0}, Landroid/content/Intent;-><init>()V
+
+    if-eqz p2, :cond_noact
+
+    invoke-virtual {v0, p2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    :cond_noact
+    if-eqz p3, :cond_nocomp
+
+    invoke-virtual {v0, p3, p4}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    :cond_nocomp
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "package_name"
+
+    invoke-virtual {v0, v2, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v2
+
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v2}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v3, "package_label"
+
+    invoke-virtual {v0, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    if-eqz p1, :cond_appctx
+
+    invoke-virtual {p1, v0}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+
+    goto :goto_started
+
+    :cond_appctx
+    const/high16 v2, 0x10000000
+
+    invoke-virtual {v0, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    :goto_started
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    const/4 v0, 0x1
+
+    return v0
+
+    :catch_0
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+# Switch tapped while the app is already exempt: the system has no API to revoke the exemption, so
+# open the page where the user can change it, best first: the per-app "电量详情" (省电策略) page of
+# HyperOS / MIUI, then the standard battery-optimization list, then the app details page.
+.method public static batteryList()V
+    .locals 8
 
     invoke-static {}, Lcom/box/app/vpn/VpnBridge;->ctx()Landroid/content/Context;
 
     move-result-object v0
 
-    :try_start_0
-    new-instance v1, Landroid/content/Intent;
+    sget-object v1, Lcom/box/app/vpn/FToast;->cur:Landroid/app/Activity;
 
-    const-string v2, "miui.intent.action.HIDDEN_APPS_CONFIG_ACTIVITY"
+    const/4 v2, 0x0
 
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    const-string v3, "com.miui.securitycenter"
 
-    const-string v2, "com.miui.powerkeeper"
+    const-string v4, "com.miui.powercenter.legacypowerrank.PowerDetailActivity"
 
-    const-string v3, "com.miui.powerkeeper.ui.HiddenAppsConfigActivity"
+    invoke-static {v0, v1, v2, v3, v4}, Lcom/box/app/vpn/VpnPrefs;->miui(Landroid/content/Context;Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
-    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    move-result v5
 
-    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+    if-nez v5, :cond_miui
 
-    move-result-object v2
+    const-string v3, "miui.intent.action.HIDDEN_APPS_CONFIG_ACTIVITY"
 
-    const-string v3, "package_name"
+    const/4 v4, 0x0
 
-    invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+    invoke-static {v0, v1, v3, v2, v4}, Lcom/box/app/vpn/VpnPrefs;->miui(Landroid/content/Context;Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
-    invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    move-result v5
 
-    move-result-object v3
+    if-nez v5, :cond_miui
 
-    invoke-virtual {v0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
+    const-string v4, "com.miui.powerkeeper"
 
-    move-result-object v4
+    const-string v6, "com.miui.powerkeeper.ui.HiddenAppsConfigActivity"
 
-    invoke-virtual {v4, v3}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
+    invoke-static {v0, v1, v3, v4, v6}, Lcom/box/app/vpn/VpnPrefs;->miui(Landroid/content/Context;Landroid/app/Activity;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Z
 
-    move-result-object v3
+    move-result v5
 
-    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    if-nez v5, :cond_miui
 
-    move-result-object v3
-
-    const-string v4, "package_label"
-
-    invoke-virtual {v1, v4, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    const/high16 v3, 0x10000000
-
-    invoke-virtual {v1, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    const-string v1, "opened the MIUI battery strategy page"
-
-    invoke-static {v1}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
-
-    return-void
-
-    :catch_0
     :try_start_1
-    new-instance v1, Landroid/content/Intent;
+    new-instance v3, Landroid/content/Intent;
 
-    const-string v2, "android.settings.IGNORE_BATTERY_OPTIMIZATION_SETTINGS"
+    const-string v4, "android.settings.IGNORE_BATTERY_OPTIMIZATION_SETTINGS"
 
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-direct {v3, v4}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    const/high16 v2, 0x10000000
+    const/high16 v4, 0x10000000
 
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+    invoke-virtual {v3, v4}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {v0, v3}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
 
-    const-string v1, "opened the battery-optimization list"
+    const-string v3, "opened the battery-optimization list"
 
-    invoke-static {v1}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+    invoke-static {v3}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
 
     return-void
 
@@ -1654,33 +1707,38 @@
     :try_start_2
     invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
-    move-result-object v1
+    move-result-object v3
 
-    const-string v2, "package"
+    const-string v4, "package"
 
-    const/4 v3, 0x0
+    invoke-static {v4, v3, v2}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
 
-    invoke-static {v2, v1, v3}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+    move-result-object v3
 
-    move-result-object v1
+    new-instance v4, Landroid/content/Intent;
 
-    new-instance v2, Landroid/content/Intent;
+    const-string v5, "android.settings.APPLICATION_DETAILS_SETTINGS"
 
-    const-string v3, "android.settings.APPLICATION_DETAILS_SETTINGS"
+    invoke-direct {v4, v5}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
 
-    invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v4, v3}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    invoke-virtual {v2, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+    const/high16 v3, 0x10000000
 
-    const/high16 v1, 0x10000000
+    invoke-virtual {v4, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
-    invoke-virtual {v2, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    invoke-virtual {v0, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    invoke-virtual {v0, v4}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_2
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_2
 
     :catch_2
+    return-void
+
+    :cond_miui
+    const-string v3, "opened the MIUI per-app battery page"
+
+    invoke-static {v3}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
     return-void
 .end method
 

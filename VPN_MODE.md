@@ -175,7 +175,7 @@ VPN 模式下「开机自启」开着时，划掉应用卡片 / 进程被杀后�
   不再跳电池优化页。
 - 设置页「开机自启」下方有独立的「电池优化无限制」开关（`BattToggle` + `VpnPrefs.battOn`）：状态取自
   `PowerManager.isIgnoringBatteryOptimizations`；打开 → 系统的「忽略电池优化」请求（已声明
-  `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS`）；点开关时按系统的真实状态决定动作（不看开关自己的显示状态）：已无限制 → 打开能改回去的系统页（HyperOS/MIUI 先开该应用的「省电策略」页，其次标准电池优化列表，最后应用详情页）；未无限制 → 弹系统请求。系统没有撤销接口，所以只能让用户在系统页里改。
+  `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS`）；点开关时按系统的真实状态决定动作（不看开关自己的显示状态）：已无限制 → 打开能改回去的系统页（HyperOS/MIUI 先直接开该应用的「电量详情」（省电策略）页——依次试 `com.miui.securitycenter/…legacypowerrank.PowerDetailActivity`、`miui.intent.action.HIDDEN_APPS_CONFIG_ACTIVITY`、`com.miui.powerkeeper` 的 HiddenAppsConfigActivity，其次标准电池优化列表，最后应用详情页）；未无限制 → 弹系统请求。系统没有撤销接口，所以只能让用户在系统页里改。
   从系统页面返回后开关会自动跟随系统状态（每 700 ms 同步一次，最多约 2 分钟）。
 - 实测（HyperOS）：滑掉卡片时进程被系统以 `SwipeUpClean` 杀掉，约 1.5 秒后系统会新建进程、重建服务，
   只调用 `onCreate` 和 `onTaskRemoved`，不调用 `onStartCommand`。所以 `onTaskRemoved` 在服务未运行时
