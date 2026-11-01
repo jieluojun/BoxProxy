@@ -171,11 +171,11 @@ VPN 模式下「开机自启」开着时，划掉应用卡片 / 进程被杀后�
   （`previous process: pid=… reason=… desc=…`，reason 10 = 用户强制停止，13 = 被系统清理等），
   `onTaskRemoved` 写 `task removed`。这几行能区分「系统根本没重启进程」和「重启了但服务没拉起」。
 - VPN 模式下打开「开机自启」时，跳转到系统的**自启动管理**页（`VpnPrefs.askAutostart`：按顺序尝试小米 / 华为 / 荣耀 /
-  OPPO / vivo / 三星 / 魅族 / 华硕 / 联想 / 传音等厂商的自启动管理页面，第一个能打开的生效；都没有就打开应用详情页），
+  OPPO / vivo / 三星 / 魅族 / 华硕 / 联想 / 传音等厂商的自启动管理页面，第一个能打开的生效；都没有就打开应用详情页；用 `NEW_TASK|CLEAR_TASK` 启动，不复用后台里残留的厂商页面任务，所以关闭再打开开关每次都会跳），
   不再跳电池优化页。
 - 设置页「开机自启」下方有独立的「电池优化无限制」开关（`BattToggle` + `VpnPrefs.battOn`）：状态取自
   `PowerManager.isIgnoringBatteryOptimizations`；打开 → 系统的「忽略电池优化」请求（已声明
-  `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS`）；系统没有撤销接口，所以关闭 → 打开系统的电池优化白名单列表。
+  `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS`）；点开关时按系统的真实状态决定：已经无限制 → 什么都不跳，只弹「电池优化已关闭」的 toast；还不是 → 弹系统请求。
   从系统页面返回后开关会自动跟随系统状态（每 700 ms 同步一次，最多约 2 分钟）。
 - 实测（HyperOS）：滑掉卡片时进程被系统以 `SwipeUpClean` 杀掉，约 1.5 秒后系统会新建进程、重建服务，
   只调用 `onCreate` 和 `onTaskRemoved`，不调用 `onStartCommand`。所以 `onTaskRemoved` 在服务未运行时

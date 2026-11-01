@@ -73,20 +73,20 @@
     .locals 3
 
     :try_start_0
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    # decide by the REAL system state (the switch's own state may be stale): already exempt ->
+    # open nothing, just show the "battery optimization is off" toast; otherwise ask for the exemption
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->isIgnoring()Z
 
     move-result v0
 
-    if-eqz v0, :cond_off
+    if-eqz v0, :cond_ask
 
-    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->askBattery()V
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->battToast()V
 
     goto :goto_poll
 
-    :cond_off
-    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->batteryList()V
+    :cond_ask
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->askBattery()V
 
     :goto_poll
     const/4 v0, 0x2

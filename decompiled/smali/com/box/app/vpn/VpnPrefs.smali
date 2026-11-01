@@ -1342,7 +1342,9 @@
 
     invoke-virtual {v7, v6, v5}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    const/high16 v5, 0x10000000
+    # NEW_TASK | CLEAR_TASK: never reuse a stale background task of the OEM page (the 2nd open used to be
+    # swallowed when the first one was still alive in the background)
+    const v5, 0x10008000
 
     invoke-virtual {v7, v5}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
@@ -1511,8 +1513,8 @@
     return-void
 .end method
 
-# Switch turned off: the system has no API to revoke the exemption, so open the system list.
-.method public static batteryList()V
+# Already exempt from battery optimization: nothing to open, just tell the user.
+.method public static battToast()V
     .locals 3
 
     :try_start_0
@@ -1520,17 +1522,13 @@
 
     move-result-object v0
 
-    new-instance v1, Landroid/content/Intent;
+    const v1, 0x7f0f04b3
 
-    const-string v2, "android.settings.IGNORE_BATTERY_OPTIMIZATION_SETTINGS"
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+    move-result-object v1
 
-    const/high16 v2, 0x10000000
-
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    invoke-static {v0, v1}, Lk53;->b0(Landroid/content/Context;Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 

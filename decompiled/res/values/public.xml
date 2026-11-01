@@ -2000,6 +2000,7 @@
     <public type="string" name="proxy_config_restore_none" id="0x7f0f04b0" />
     <public type="string" name="service_battery_unrestricted_title" id="0x7f0f04b1" />
     <public type="string" name="service_battery_unrestricted_subtitle" id="0x7f0f04b2" />
+    <public type="string" name="service_battery_unrestricted_already" id="0x7f0f04b3" />
     <public type="style" name="AlertDialog.AppCompat" id="0x7f100000" />
     <public type="style" name="AlertDialog.AppCompat.Light" id="0x7f100001" />
     <public type="style" name="Animation.AppCompat.Dialog" id="0x7f100002" />

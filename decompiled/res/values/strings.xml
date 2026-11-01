@@ -1103,4 +1103,5 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="proxy_selector_hide_unavailable">Hide unavailable nodes</string>
     <string name="service_battery_unrestricted_title">Unrestricted battery usage</string>
     <string name="service_battery_unrestricted_subtitle">Exempt the app from battery optimization so the system does not freeze or kill it in the background (turning it off opens the system settings page)</string>
+    <string name="service_battery_unrestricted_already">Battery optimization is already off</string>
 </resources>
