@@ -11,8 +11,6 @@
 
 .field private static batt:Llk4;
 
-.field private static lastAuto:Ljava/lang/String;
-
 
 # direct methods
 .method private static sp()Landroid/content/SharedPreferences;
@@ -1354,19 +1352,9 @@
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
 
-    sput-object v4, Lcom/box/app/vpn/VpnPrefs;->lastAuto:Ljava/lang/String;
-
-    const/4 v5, 0x4
-
-    const/4 v6, 0x0
-
-    const/16 v7, 0x4b0
-
-    invoke-static {v5, v6, v7}, Lcom/box/app/vpn/BattToggle;->post(III)V
-
     new-instance v5, Ljava/lang/StringBuilder;
 
-    const-string v6, "started the auto-start page (verifying it shows up): "
+    const-string v6, "opened the auto-start page: "
 
     invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
@@ -1420,119 +1408,6 @@
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_2
 
     :catch_2
-    return-void
-.end method
-
-# ~1.2 s after the OEM auto-start page was started: if our own activity is still the resumed one, the
-# system swallowed the background start (seen on HyperOS) -> start it again from the foreground activity.
-.method public static autoVerify()V
-    .locals 6
-
-    sget-object v0, Lcom/box/app/vpn/VpnPrefs;->lastAuto:Ljava/lang/String;
-
-    if-nez v0, :cond_have
-
-    return-void
-
-    :cond_have
-    const/4 v1, 0x0
-
-    sput-object v1, Lcom/box/app/vpn/VpnPrefs;->lastAuto:Ljava/lang/String;
-
-    sget-object v1, Lcom/box/app/vpn/FToast;->cur:Landroid/app/Activity;
-
-    if-nez v1, :cond_swallowed
-
-    const-string v2, "auto-start page is showing"
-
-    invoke-static {v2}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
-
-    return-void
-
-    :cond_swallowed
-    :try_start_0
-    const/16 v2, 0x2f
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v2
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v0, v3, v2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v3
-
-    add-int/lit8 v2, v2, 0x1
-
-    invoke-virtual {v0, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v2
-
-    new-instance v4, Landroid/content/Intent;
-
-    invoke-direct {v4}, Landroid/content/Intent;-><init>()V
-
-    invoke-virtual {v4, v3, v2}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    invoke-virtual {v1, v4}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
-
-    const-string v2, "auto-start page did not show up: retried from the foreground activity"
-
-    invoke-static {v2}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    return-void
-
-    :catch_0
-    move-exception v2
-
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    const-string v4, "auto-start page retry failed: "
-
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-static {v3}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
-
-    return-void
-.end method
-
-# Diagnostics: the 开机自启 switch was toggled (and in which run mode).
-.method public static noteSwitch(Z)V
-    .locals 3
-
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    const-string v1, "boot auto-start switch: on="
-
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    const-string v1, ", vpnMode="
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
-
     return-void
 .end method
 
