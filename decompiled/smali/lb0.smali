@@ -5134,6 +5134,10 @@
     return-object v3
 
     :cond_notvpn
+    const-string v1, "boot auto-start switch changed in root run mode: boot script only, no auto-start page (the page is for VPN run mode)"
+
+    invoke-static {v1}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
     sget-object v1, Lgb1;->j:Lgb1;
 
     .line 146
