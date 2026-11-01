@@ -279,7 +279,7 @@ sing-box 版是 1.15 的 providers 格式（`type: remote` 的 `免流订阅` / 
 
 ## 内置脚本：禁用 / 还原系统 IPv6
 
-「工具 → 脚本」页（`<box 目录>/scripts/`）首次启动会各放一份（`VpnSeed.seedScript`，每个文件只播种一次、不覆盖已有文件、删除后不再回来）：
+「工具 → 脚本」页（`<box 目录>/scripts/`）每次安装（含覆盖安装）后第一次启动都会重新生成并**覆盖**这两个文件（`VpnSeed.seedScript`，按 `PackageInfo.lastUpdateTime` 判断；同一次安装内不重复覆盖，所以装好之后你改脚本不会被冲掉，下次安装才会还原成内置版本）：
 
 - `禁用系统 IPv6.sh`（`assets/box/scripts/ipv6_disable.sh`）：建议设为「服务启动前」。非蜂窝网卡（WiFi）写 `disable_ipv6=1 / accept_ra=0 / autoconf=0`，原值先存到
   `/data/local/tmp/boxproxy-ipv6/sysctl.saved`；**蜂窝、`all`、`default`、`lo`、热点下游一律不写 sysctl**（写了会让 IMS 注册失败，状态栏出现 ×）。蜂窝改为把当前上网 APN
