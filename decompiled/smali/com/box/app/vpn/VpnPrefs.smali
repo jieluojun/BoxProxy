@@ -9,6 +9,8 @@
 # static fields
 .field private static hide:Llk4;
 
+.field private static batt:Llk4;
+
 
 # direct methods
 .method private static sp()Landroid/content/SharedPreferences;
@@ -1280,6 +1282,255 @@
     invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
 
     :cond_end
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    return-void
+.end method
+
+# ---- boot auto-start: open the OEM "auto-start management" page (the first component that exists
+# and can be started wins); fall back to the app-details page.  NOT the battery-optimization page.
+.method public static askAutostart()V
+    .locals 9
+
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->ctx()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string v1, "com.miui.securitycenter/com.miui.permcenter.autostart.AutoStartManagementActivity;com.huawei.systemmanager/com.huawei.systemmanager.startupmgr.ui.StartupNormalAppListActivity;com.huawei.systemmanager/com.huawei.systemmanager.appcontrol.activity.StartupAppControlActivity;com.huawei.systemmanager/com.huawei.systemmanager.optimize.process.ProtectActivity;com.hihonor.systemmanager/com.hihonor.systemmanager.startupmgr.ui.StartupNormalAppListActivity;com.coloros.safecenter/com.coloros.safecenter.permission.startup.StartupAppListActivity;com.coloros.safecenter/com.coloros.safecenter.startupapp.StartupAppListActivity;com.oppo.safe/com.oppo.safe.permission.startup.StartupAppListActivity;com.vivo.permissionmanager/com.vivo.permissionmanager.activity.BgStartUpManagerActivity;com.iqoo.secure/com.iqoo.secure.ui.phoneoptimize.BgStartUpManager;com.iqoo.secure/com.iqoo.secure.ui.phoneoptimize.AddWhiteListActivity;com.vivo.permissionmanager/com.vivo.permissionmanager.activity.PurviewTabActivity;com.samsung.android.sm_cn/com.samsung.android.sm.ui.ram.AutoRunActivity;com.samsung.android.lool/com.samsung.android.sm.ui.battery.BatteryActivity;com.meizu.safe/com.meizu.safe.permission.SmartBGActivity;com.asus.mobilemanager/com.asus.mobilemanager.autostart.AutoStartActivity;com.letv.android.letvsafe/com.letv.android.letvsafe.AutobootManageActivity;com.lenovo.security/com.lenovo.security.purebackground.PureBackgroundActivity;com.transsion.phonemaster/com.cyin.himgr.autostart.AutoStartActivity;com.htc.pitroad/com.htc.pitroad.landingpage.activity.LandingPageActivity"
+
+    const-string v2, ";"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+
+    move-result-object v1
+
+    array-length v2, v1
+
+    const/4 v3, 0x0
+
+    :loop
+    if-ge v3, v2, :fallback
+
+    aget-object v4, v1, v3
+
+    add-int/lit8 v3, v3, 0x1
+
+    :try_start_1
+    const/16 v5, 0x2f
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v5
+
+    const/4 v6, 0x0
+
+    invoke-virtual {v4, v6, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v6
+
+    add-int/lit8 v5, v5, 0x1
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    new-instance v7, Landroid/content/Intent;
+
+    invoke-direct {v7}, Landroid/content/Intent;-><init>()V
+
+    invoke-virtual {v7, v6, v5}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+
+    const/high16 v5, 0x10000000
+
+    invoke-virtual {v7, v5}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    invoke-virtual {v0, v7}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    :try_end_1
+    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    const-string v6, "opened the auto-start page: "
+
+    invoke-direct {v5, v6}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v5}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
+    return-void
+
+    :catch_1
+    move-exception v4
+
+    goto :loop
+
+    :fallback
+    :try_start_2
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v1
+
+    const-string v2, "package"
+
+    const/4 v3, 0x0
+
+    invoke-static {v2, v1, v3}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
+
+    move-result-object v1
+
+    new-instance v2, Landroid/content/Intent;
+
+    const-string v3, "android.settings.APPLICATION_DETAILS_SETTINGS"
+
+    invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
+
+    const/high16 v1, 0x10000000
+
+    invoke-virtual {v2, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    invoke-virtual {v0, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    const-string v1, "no OEM auto-start page found: opened the app details page"
+
+    invoke-static {v1}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+    :try_end_2
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_2
+
+    :catch_2
+    return-void
+.end method
+
+# ---- settings page: battery optimization "unrestricted" switch
+.method public static isIgnoring()Z
+    .locals 3
+
+    :try_start_0
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->ctx()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string v1, "power"
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/os/PowerManager;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/os/PowerManager;->isIgnoringBatteryOptimizations(Ljava/lang/String;)Z
+
+    move-result v0
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    return v0
+
+    :catch_0
+    const/4 v0, 0x0
+
+    return v0
+.end method
+
+# Read inside the composition; also schedules a re-sync so the switch follows the system state.
+.method public static battOn()Z
+    .locals 3
+
+    const-class v0, Lcom/box/app/vpn/VpnPrefs;
+
+    monitor-enter v0
+
+    :try_start_0
+    sget-object v1, Lcom/box/app/vpn/VpnPrefs;->batt:Llk4;
+
+    if-nez v1, :cond_have
+
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->isIgnoring()Z
+
+    move-result v1
+
+    invoke-static {v1}, Lcom/box/app/vpn/VpnPrefs;->bool(Z)Llk4;
+
+    move-result-object v1
+
+    sput-object v1, Lcom/box/app/vpn/VpnPrefs;->batt:Llk4;
+
+    :cond_have
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    sget-object v0, Lcom/box/app/vpn/VpnPrefs;->batt:Llk4;
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->read(Llk4;)Z
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v2, v2}, Lcom/box/app/vpn/BattToggle;->post(III)V
+
+    return v0
+
+    :catchall_0
+    move-exception v1
+
+    monitor-exit v0
+
+    throw v1
+.end method
+
+.method public static battSync()V
+    .locals 2
+
+    sget-object v0, Lcom/box/app/vpn/VpnPrefs;->batt:Llk4;
+
+    if-eqz v0, :cond_end
+
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->isIgnoring()Z
+
+    move-result v1
+
+    invoke-static {v0, v1}, Lcom/box/app/vpn/VpnPrefs;->write(Llk4;Z)V
+
+    :cond_end
+    return-void
+.end method
+
+# Switch turned off: the system has no API to revoke the exemption, so open the system list.
+.method public static batteryList()V
+    .locals 3
+
+    :try_start_0
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->ctx()Landroid/content/Context;
+
+    move-result-object v0
+
+    new-instance v1, Landroid/content/Intent;
+
+    const-string v2, "android.settings.IGNORE_BATTERY_OPTIMIZATION_SETTINGS"
+
+    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
+    const/high16 v2, 0x10000000
+
+    invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
+
+    invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 

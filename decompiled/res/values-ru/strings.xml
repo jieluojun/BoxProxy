@@ -1094,4 +1094,6 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="wifi_match_picker_location_required">Включите геолокацию для сканирования Wi-Fi</string>
     <string name="wifi_match_picker_permission_required">Требуется разрешение на Wi-Fi</string>
     <string name="wifi_match_ssid_hint">SSID</string>
+    <string name="service_battery_unrestricted_title">Без ограничений батареи</string>
+    <string name="service_battery_unrestricted_subtitle">Исключить приложение из оптимизации батареи, чтобы система не замораживала и не завершала его в фоне (отключение — на странице системных настроек)</string>
 </resources>

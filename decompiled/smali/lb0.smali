@@ -5118,11 +5118,11 @@
 
     if-eqz v1, :cond_notvpn
 
-    # switch turned on: ask for the battery-optimization exemption (like Bettbox), so the system
-    # does not kill / restrict the app in the background
+    # switch turned on: open the OEM auto-start management page (not the battery-optimization
+    # page: that has its own switch below the 开机自启 row)
     if-eqz p1, :cond_nobat
 
-    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->askBattery()V
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->askAutostart()V
 
     :cond_nobat
     new-instance v3, Lza0;
