@@ -1342,9 +1342,7 @@
 
     invoke-virtual {v7, v6, v5}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
-    # NEW_TASK | CLEAR_TASK: never reuse a stale background task of the OEM page (the 2nd open used to be
-    # swallowed when the first one was still alive in the background)
-    const v5, 0x10008000
+    const/high16 v5, 0x10000000
 
     invoke-virtual {v7, v5}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
