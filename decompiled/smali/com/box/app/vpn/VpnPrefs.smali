@@ -1563,73 +1563,15 @@
     return-void
 .end method
 
-# Switch turned off: the system has no API to revoke the exemption, so open a system page where the
-# user can change it: HyperOS / MIUI per-app battery strategy page first, then the standard
-# battery-optimization list, then the app details page.
+# Switch turned off: the system has no API to revoke the exemption, so open the system list.
 .method public static batteryList()V
-    .locals 6
+    .locals 3
 
+    :try_start_0
     invoke-static {}, Lcom/box/app/vpn/VpnBridge;->ctx()Landroid/content/Context;
 
     move-result-object v0
 
-    :try_start_0
-    new-instance v1, Landroid/content/Intent;
-
-    const-string v2, "miui.intent.action.HIDDEN_APPS_CONFIG_ACTIVITY"
-
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    const-string v2, "com.miui.powerkeeper"
-
-    const-string v3, "com.miui.powerkeeper.ui.HiddenAppsConfigActivity"
-
-    invoke-virtual {v1, v2, v3}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "package_name"
-
-    invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    move-result-object v3
-
-    invoke-virtual {v0}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v3}, Landroid/content/pm/ApplicationInfo;->loadLabel(Landroid/content/pm/PackageManager;)Ljava/lang/CharSequence;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    const-string v4, "package_label"
-
-    invoke-virtual {v1, v4, v3}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    const/high16 v3, 0x10000000
-
-    invoke-virtual {v1, v3}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    const-string v1, "opened the MIUI battery strategy page"
-
-    invoke-static {v1}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
-
-    return-void
-
-    :catch_0
-    :try_start_1
     new-instance v1, Landroid/content/Intent;
 
     const-string v2, "android.settings.IGNORE_BATTERY_OPTIMIZATION_SETTINGS"
@@ -1641,46 +1583,10 @@
     invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-    :try_end_1
-    .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
-    const-string v1, "opened the battery-optimization list"
-
-    invoke-static {v1}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
-
-    return-void
-
-    :catch_1
-    :try_start_2
-    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "package"
-
-    const/4 v3, 0x0
-
-    invoke-static {v2, v1, v3}, Landroid/net/Uri;->fromParts(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v1
-
-    new-instance v2, Landroid/content/Intent;
-
-    const-string v3, "android.settings.APPLICATION_DETAILS_SETTINGS"
-
-    invoke-direct {v2, v3}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    invoke-virtual {v2, v1}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
-
-    const/high16 v1, 0x10000000
-
-    invoke-virtual {v2, v1}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    invoke-virtual {v0, v2}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-    :try_end_2
-    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_2
-
-    :catch_2
+    :catch_0
     return-void
 .end method
 

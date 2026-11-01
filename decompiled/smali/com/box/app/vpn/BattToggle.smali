@@ -74,20 +74,20 @@
     .locals 3
 
     :try_start_0
-    # decide by the REAL system state, not by the switch's own (possibly stale) state:
-    # already exempt -> open the system page to change it; otherwise ask for the exemption
-    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->isIgnoring()Z
+    check-cast p1, Ljava/lang/Boolean;
+
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result v0
 
     if-eqz v0, :cond_off
 
-    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->batteryList()V
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->askBattery()V
 
     goto :goto_poll
 
     :cond_off
-    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->askBattery()V
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->batteryList()V
 
     :goto_poll
     const/4 v0, 0x2
