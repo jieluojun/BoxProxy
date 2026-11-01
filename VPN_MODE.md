@@ -285,6 +285,7 @@ sing-box 版是 1.15 的 providers 格式（`type: remote` 的 `免流订阅` / 
   `/data/local/tmp/boxproxy-ipv6/sysctl.saved`；**蜂窝、`all`、`default`、`lo`、热点下游一律不写 sysctl**（写了会让 IMS 注册失败，状态栏出现 ×）。蜂窝改为把当前上网 APN
   （跳过 IMS）的 `protocol / roaming_protocol` 改成 `IP`，原值存 `apn.state`；改不动（运营商锁定）只提示。
 - `还原系统 IPv6.sh`（`ipv6_restore.sh`）：建议设为「服务停止后」。按保存的原值还原 sysctl 和 APN；没有保存的状态就什么都不改。
+- 播种失败时原因写到 `<box 目录>/seed-error.log`。
 - 两个脚本都始终 `exit 0`，不会拦住服务启动 / 停止；需要 root；只在自己的状态目录写文件。
 - 若 IPv6 模式本身设成「禁用」，boxctl 自己也会写 sysctl（含蜂窝），× 仍会出现——用这两个脚本时把 IPv6 模式设为启用 / 绕过。
 - 已在 sandbox 里用伪造的 `/proc/sys/net/ipv6/conf` 和 `content` 命令测过禁用 → 重复禁用 → 还原；真机未验证。
