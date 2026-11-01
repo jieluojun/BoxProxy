@@ -1291,12 +1291,31 @@
 
 # ---- boot auto-start: open the OEM "auto-start management" page (the first component that exists
 # and can be started wins); fall back to the app-details page.  NOT the battery-optimization page.
+# Always runs on the main thread (BattToggle mode 3 -> doAutostart): the switch handler runs on a
+# worker thread, and a background-thread startActivity from the application context is what some
+# OEM ROMs silently block the second time.
 .method public static askAutostart()V
+    .locals 3
+
+    const/4 v0, 0x3
+
+    const/4 v1, 0x0
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Lcom/box/app/vpn/BattToggle;->post(III)V
+
+    return-void
+.end method
+
+.method public static doAutostart()V
     .locals 9
 
     invoke-static {}, Lcom/box/app/vpn/VpnBridge;->ctx()Landroid/content/Context;
 
     move-result-object v0
+
+    sget-object v8, Lcom/box/app/vpn/FToast;->cur:Landroid/app/Activity;
 
     const-string v1, "com.miui.securitycenter/com.miui.permcenter.autostart.AutoStartManagementActivity;com.huawei.systemmanager/com.huawei.systemmanager.startupmgr.ui.StartupNormalAppListActivity;com.huawei.systemmanager/com.huawei.systemmanager.appcontrol.activity.StartupAppControlActivity;com.huawei.systemmanager/com.huawei.systemmanager.optimize.process.ProtectActivity;com.hihonor.systemmanager/com.hihonor.systemmanager.startupmgr.ui.StartupNormalAppListActivity;com.coloros.safecenter/com.coloros.safecenter.permission.startup.StartupAppListActivity;com.coloros.safecenter/com.coloros.safecenter.startupapp.StartupAppListActivity;com.oppo.safe/com.oppo.safe.permission.startup.StartupAppListActivity;com.vivo.permissionmanager/com.vivo.permissionmanager.activity.BgStartUpManagerActivity;com.iqoo.secure/com.iqoo.secure.ui.phoneoptimize.BgStartUpManager;com.iqoo.secure/com.iqoo.secure.ui.phoneoptimize.AddWhiteListActivity;com.vivo.permissionmanager/com.vivo.permissionmanager.activity.PurviewTabActivity;com.samsung.android.sm_cn/com.samsung.android.sm.ui.ram.AutoRunActivity;com.samsung.android.lool/com.samsung.android.sm.ui.battery.BatteryActivity;com.meizu.safe/com.meizu.safe.permission.SmartBGActivity;com.asus.mobilemanager/com.asus.mobilemanager.autostart.AutoStartActivity;com.letv.android.letvsafe/com.letv.android.letvsafe.AutobootManageActivity;com.lenovo.security/com.lenovo.security.purebackground.PureBackgroundActivity;com.transsion.phonemaster/com.cyin.himgr.autostart.AutoStartActivity;com.htc.pitroad/com.htc.pitroad.landingpage.activity.LandingPageActivity"
 
@@ -1342,11 +1361,20 @@
 
     invoke-virtual {v7, v6, v5}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
+    if-eqz v8, :cond_appctx
+
+    invoke-virtual {v8, v7}, Landroid/app/Activity;->startActivity(Landroid/content/Intent;)V
+
+    goto :goto_started
+
+    :cond_appctx
     const/high16 v5, 0x10000000
 
     invoke-virtual {v7, v5}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
 
     invoke-virtual {v0, v7}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+
+    :goto_started
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -1367,7 +1395,31 @@
     return-void
 
     :catch_1
-    move-exception v4
+    move-exception v6
+
+    instance-of v5, v6, Landroid/content/ActivityNotFoundException;
+
+    if-nez v5, :loop
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    const-string v7, "auto-start page failed: "
+
+    invoke-direct {v5, v7}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v7, " "
+
+    invoke-virtual {v5, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-static {v5}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
 
     goto :loop
 
