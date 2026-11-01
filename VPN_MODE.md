@@ -170,13 +170,9 @@ VPN 模式下「开机自启」开着时，划掉应用卡片 / 进程被杀后�
 - 排查用：`AppApplication.onCreate` 在进程启动时写 `process started`，并用 `ApplicationExitInfo` 记录上一个进程的退出原因
   （`previous process: pid=… reason=… desc=…`，reason 10 = 用户强制停止，13 = 被系统清理等），
   `onTaskRemoved` 写 `task removed`。这几行能区分「系统根本没重启进程」和「重启了但服务没拉起」。
-- VPN 模式下打开「开机自启」时，跳转到系统的**自启动管理**页（`VpnPrefs.askAutostart`，不再跳电池优化页）。
-  候选依次是：小米 / HyperOS 参考 YumeBox（`XiaomiAutoStart.openSettings`）的 `miui.intent.action.OP_AUTO_START`
-  （`setPackage("com.miui.securitycenter")` + `CATEGORY_DEFAULT` + `extra_pkgname`）→ 安全中心的
-  `AutoStartManagementActivity` → 华为 / 荣耀 / OPPO / vivo / 三星 / 魅族 / 华硕 / 联想 / 传音等厂商页面 → 应用详情页。
-  每个候选先用应用上下文（NEW_TASK）启动、再用当前前台 Activity 启动；每次启动 1.3 秒后检查自己的界面是否真的离开了前台
-  （`FToast.cur` 还在 = 被系统悄悄拦了），被拦就自动换下一步，所以关闭再打开开关每次都会跳到某个页面。过程写进 `autostart.log`
-  （`boot auto-start turned on…` → `auto-start page: step N …` → `did not show up, trying the next step`）。
+- VPN 模式下打开「开机自启」时，跳转到系统的**自启动管理**页（`VpnPrefs.askAutostart`：按顺序尝试小米 / 华为 / 荣耀 /
+  OPPO / vivo / 三星 / 魅族 / 华硕 / 联想 / 传音等厂商的自启动管理页面，第一个能打开的生效；都没有就打开应用详情页。小米 / HyperOS 参考 YumeBox（`XiaomiAutoStart.openSettings`）：先发安全中心自己的 `miui.intent.action.OP_AUTO_START`（`setPackage("com.miui.securitycenter")` + `CATEGORY_DEFAULT` + `extra_pkgname`=本应用包名），失败再走上面的组件列表），
+  不再跳电池优化页。
 - 设置页「开机自启」下方有独立的「电池优化无限制」开关（`BattToggle` + `VpnPrefs.battOn`）：状态取自
   `PowerManager.isIgnoringBatteryOptimizations`；打开 → 系统的「忽略电池优化」请求（已声明
   `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS`）；点开关时按系统的真实状态决定：已经无限制 → 什么都不跳，只弹「电池优化已关闭」的 toast；还不是 → 弹系统请求。
