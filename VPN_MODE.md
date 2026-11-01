@@ -276,3 +276,15 @@ sing-box 版是 1.15 的 providers 格式（`type: remote` 的 `免流订阅` / 
 - 原文件（如果有）先改名为 `<原名>.bak`（已有的 `.bak` 会被替换）；列表按扩展名过滤，`.bak` 不会显示在配置列表里。
 - 通过页面原有的任务通道（`Lwt4` / `Lxt4.l`）执行，完成后列表自动刷新，并弹出完整文字提示。
 - 菜单项加在两处弹窗里：`hv4`（`Ls50.w`）和 `q.p`（`Lve3.C`），ViewModel 由 `ku4` / `rv4` 的构造函数登记到 `RestoreCfg.vm`。
+
+## 内置脚本：禁用 / 还原系统 IPv6
+
+「工具 → 脚本」页（`<box 目录>/scripts/`）每次安装（含覆盖安装）后第一次启动都会重新生成并**覆盖**这两个文件（`VpnSeed.seedScript`，按 `PackageInfo.lastUpdateTime` 判断；同一次安装内不重复覆盖，所以装好之后你改脚本不会被冲掉，下次安装才会还原成内置版本）：
+
+- `禁用系统 IPv6.sh`（`assets/box/scripts/ipv6_disable.sh`）：建议设为「服务启动前」。非蜂窝网卡（WiFi）写 `disable_ipv6=1 / accept_ra=0 / autoconf=0`，原值先存到
+  `/data/local/tmp/boxproxy-ipv6/sysctl.saved`；**蜂窝、`all`、`default`、`lo`、热点下游一律不写 sysctl**（写了会让 IMS 注册失败，状态栏出现 ×）。蜂窝改为把当前上网 APN
+  （跳过 IMS）的 `protocol / roaming_protocol` 改成 `IP`，原值存 `apn.state`；改不动（运营商锁定）只提示。
+- `还原系统 IPv6.sh`（`ipv6_restore.sh`）：建议设为「服务停止后」。按保存的原值还原 sysctl 和 APN；没有保存的状态就什么都不改。
+- 两个脚本都始终 `exit 0`，不会拦住服务启动 / 停止；需要 root；只在自己的状态目录写文件。
+- 若 IPv6 模式本身设成「禁用」，boxctl 自己也会写 sysctl（含蜂窝），× 仍会出现——用这两个脚本时把 IPv6 模式设为启用 / 绕过。
+- 已在 sandbox 里用伪造的 `/proc/sys/net/ipv6/conf` 和 `content` 命令测过禁用 → 重复禁用 → 还原；真机未验证。
