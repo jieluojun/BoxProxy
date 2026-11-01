@@ -6,6 +6,7 @@
 # An existing file is never overwritten:
 #   assets/box/mihomo/mianliu.yaml   -> mihomo/免流.yaml
 #   assets/box/sing-box/mianliu.json -> sing-box/免流.json
+#   assets/box/scripts/ipv6_disable.sh -> scripts/禁用系统 IPv6.sh, ipv6_restore.sh -> scripts/还原系统 IPv6.sh（seedScript）
 # Hooked into Llb0;->d (runtime directory setup).
 
 .method public static run(Lab0;)V
@@ -41,7 +42,124 @@
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
 
     :catch_1
+
+    :try_start_2
+    const-string v0, "script_ipv6_off"
+
+    const-string v1, "\u7981\u7528\u7cfb\u7edf IPv6.sh"
+
+    const-string v2, "box/scripts/ipv6_disable.sh"
+
+    invoke-static {p0, v0, v1, v2}, Lcom/box/app/vpn/VpnSeed;->seedScript(Lab0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_2
+    .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_2
+
+    :catch_2
+
+    :try_start_3
+    const-string v0, "script_ipv6_on"
+
+    const-string v1, "\u8fd8\u539f\u7cfb\u7edf IPv6.sh"
+
+    const-string v2, "box/scripts/ipv6_restore.sh"
+
+    invoke-static {p0, v0, v1, v2}, Lcom/box/app/vpn/VpnSeed;->seedScript(Lab0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    :try_end_3
+    .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_3
+
+    :catch_3
+
     return-void
+.end method
+
+# assets/box/scripts/*.sh -> <box home>/scripts/<name>：和 seed 一样每个文件只播种一次、不覆盖已有文件
+# （脚本页读的就是这个目录：i16.c = <home>/scripts）。
+.method private static seedScript(Lab0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 8
+
+    :try_start_0
+    invoke-static {}, Lsa7;->p()Landroid/content/Context;
+
+    move-result-object v0
+
+    const-string v1, "box_seed"
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v0, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    const/4 v3, 0x0
+
+    invoke-interface {v1, p1, v3}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v3
+
+    if-nez v3, :cond_done
+
+    new-instance v3, Ljava/io/File;
+
+    iget-object v4, p0, Lab0;->a:Ljava/io/File;
+
+    const-string v5, "scripts"
+
+    invoke-direct {v3, v4, v5}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {v3}, Ljava/io/File;->mkdirs()Z
+
+    new-instance v4, Ljava/io/File;
+
+    invoke-direct {v4, v3, p2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {v4}, Ljava/io/File;->exists()Z
+
+    move-result v3
+
+    if-nez v3, :cond_flag
+
+    invoke-virtual {v0}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
+
+    move-result-object v3
+
+    invoke-virtual {v3, p3}, Landroid/content/res/AssetManager;->open(Ljava/lang/String;)Ljava/io/InputStream;
+
+    move-result-object v3
+
+    new-instance v5, Ljava/io/FileOutputStream;
+
+    invoke-direct {v5, v4}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+
+    invoke-static {v3, v5}, Lqa7;->t(Ljava/io/InputStream;Ljava/io/OutputStream;)J
+
+    invoke-virtual {v5}, Ljava/io/FileOutputStream;->close()V
+
+    invoke-virtual {v3}, Ljava/io/InputStream;->close()V
+
+    :cond_flag
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    const/4 v3, 0x1
+
+    invoke-interface {v1, p1, v3}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    :cond_done
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_end
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    goto :goto_end
 .end method
 
 .method private static seed(Lab0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
