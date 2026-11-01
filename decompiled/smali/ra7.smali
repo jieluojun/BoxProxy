@@ -8529,16 +8529,32 @@
     .line 53
     move-result-object v3
 
-    .line 54
+    
     invoke-virtual {v3, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
-    .line 55
-    .line 56
-    .line 57
-    move-result v3
+    move-result v6
 
-    .line 58
-    if-eqz v3, :cond_7
+    if-nez v6, :boxproxy_match
+
+    const-string v6, "-"
+
+    invoke-virtual {p1, v6}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    invoke-virtual {v3, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_7
+
+    const-wide/32 v6, 0x100000
+
+    cmp-long v6, v4, v6
+
+    if-ltz v6, :cond_7
+
+    :boxproxy_match
 
     .line 59
     .line 60
