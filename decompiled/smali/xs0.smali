@@ -408,6 +408,48 @@
     .line 133
     invoke-virtual {v2, v12}, Lv62;->r(Z)V
 
+    # ---- new row below "开机自启": battery optimization unrestricted switch
+    const v4, 0x13f2fb70
+
+    invoke-virtual {v2, v4}, Lv62;->c0(I)V
+
+    const v4, 0x7f0f04b1
+
+    invoke-static {v4, v2}, Lk53;->c0(ILz01;)Ljava/lang/String;
+
+    move-result-object v19
+
+    const v4, 0x7f0f04b2
+
+    invoke-static {v4, v2}, Lk53;->c0(ILz01;)Ljava/lang/String;
+
+    move-result-object v20
+
+    sget-object v21, Lzc7;->j0:Lty0;
+
+    invoke-static {}, Lcom/box/app/vpn/BattToggle;->create()Lcom/box/app/vpn/BattToggle;
+
+    move-result-object v18
+
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->battOn()Z
+
+    move-result v17
+
+    const/16 v25, 0x0
+
+    const/16 v26, 0x3f58
+
+    const/16 v22, 0x0
+
+    const/high16 v24, 0xc00000
+
+    move-object/from16 v23, v2
+
+    invoke-static/range {v17 .. v26}, Lu43;->g(ZLr52;Ljava/lang/String;Ljava/lang/String;Lty0;ZLz01;III)V
+
+    invoke-virtual {v2, v12}, Lv62;->r(Z)V
+
+
     .line 134
     .line 135
     .line 136

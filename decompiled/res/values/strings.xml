@@ -1101,4 +1101,7 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="wifi_match_picker_permission_required">Wi-Fi permission required</string>
     <string name="wifi_match_ssid_hint">SSID</string>
     <string name="proxy_selector_hide_unavailable">Hide unavailable nodes</string>
+    <string name="service_battery_unrestricted_title">Unrestricted battery usage</string>
+    <string name="service_battery_unrestricted_subtitle">Exempt the app from battery optimization so the system does not freeze or kill it in the background (turning it off opens the system settings page)</string>
+    <string name="service_battery_unrestricted_already">Battery optimization is already off</string>
 </resources>

@@ -170,8 +170,13 @@ VPN 模式下「开机自启」开着时，划掉应用卡片 / 进程被杀后�
 - 排查用：`AppApplication.onCreate` 在进程启动时写 `process started`，并用 `ApplicationExitInfo` 记录上一个进程的退出原因
   （`previous process: pid=… reason=… desc=…`，reason 10 = 用户强制停止，13 = 被系统清理等），
   `onTaskRemoved` 写 `task removed`。这几行能区分「系统根本没重启进程」和「重启了但服务没拉起」。
-- VPN 模式下打开「开机自启」时，会弹系统的「忽略电池优化」请求（参考 Bettbox，已声明
-  `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS`），减少后台被系统限制 / 清理。
+- VPN 模式下打开「开机自启」时，跳转到系统的**自启动管理**页（`VpnPrefs.askAutostart`：按顺序尝试小米 / 华为 / 荣耀 /
+  OPPO / vivo / 三星 / 魅族 / 华硕 / 联想 / 传音等厂商的自启动管理页面，第一个能打开的生效；都没有就打开应用详情页），
+  不再跳电池优化页。
+- 设置页「开机自启」下方有独立的「电池优化无限制」开关（`BattToggle` + `VpnPrefs.battOn`）：状态取自
+  `PowerManager.isIgnoringBatteryOptimizations`；打开 → 系统的「忽略电池优化」请求（已声明
+  `REQUEST_IGNORE_BATTERY_OPTIMIZATIONS`）；点开关时按系统的真实状态决定：已经无限制 → 什么都不跳，只弹「电池优化已关闭」的 toast；还不是 → 弹系统请求。
+  从系统页面返回后开关会自动跟随系统状态（每 700 ms 同步一次，最多约 2 分钟）。
 - 实测（HyperOS）：滑掉卡片时进程被系统以 `SwipeUpClean` 杀掉，约 1.5 秒后系统会新建进程、重建服务，
   只调用 `onCreate` 和 `onTaskRemoved`，不调用 `onStartCommand`。所以 `onTaskRemoved` 在服务未运行时
   也会走与「粘性重启」相同的路径（工作线程检查设置，`running`/`starting` 防重复启动）把 VPN 拉起来。
@@ -288,3 +293,9 @@ sing-box 版是 1.15 的 providers 格式（`type: remote` 的 `免流订阅` / 
 - 两个脚本都始终 `exit 0`，不会拦住服务启动 / 停止；需要 root；只在自己的状态目录写文件。
 - 若 IPv6 模式本身设成「禁用」，boxctl 自己也会写 sysctl（含蜂窝），× 仍会出现——用这两个脚本时把 IPv6 模式设为启用 / 绕过。
 - 已在 sandbox 里用伪造的 `/proc/sys/net/ipv6/conf` 和 `content` 命令测过禁用 → 重复禁用 → 还原；真机未验证。
+
+## 核心压缩包安装：条目名匹配
+
+「更新核心」解压 tar.gz 时，原先只认文件名**恰好等于**核心名（如 `sing-box`）的条目。钉钉直连核心的发布包里只有一个带版本号的文件
+（`sing-box-1.15-alpha.13-<sha>-android-arm64-v8a-ebpf`），所以提示「压缩包内未找到核心文件: sing-box」。现在 `ra7.v` 额外接受
+「文件名以 `<核心名>-` 开头且大于 1 MiB」的条目（精确匹配仍然优先）。
