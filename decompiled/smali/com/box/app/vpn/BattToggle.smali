@@ -109,9 +109,57 @@
     .locals 4
 
     :try_start_0
-    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->battSync()V
-
     iget v0, p0, Lcom/box/app/vpn/BattToggle;->mode:I
+
+    const/4 v1, 0x4
+
+    if-ne v0, v1, :cond_not4
+
+    # auto-start page: start the step, then verify after 1.3 s that our window really lost the foreground
+    iget v0, p0, Lcom/box/app/vpn/BattToggle;->n:I
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->autoStep(I)I
+
+    move-result v0
+
+    if-ltz v0, :cond_end
+
+    add-int/lit8 v0, v0, 0x1
+
+    const/4 v1, 0x5
+
+    const/16 v2, 0x514
+
+    invoke-static {v1, v0, v2}, Lcom/box/app/vpn/BattToggle;->post(III)V
+
+    return-void
+
+    :cond_not4
+    const/4 v1, 0x5
+
+    if-ne v0, v1, :cond_not5
+
+    # still in the foreground = the system swallowed the start -> try the next step
+    sget-object v0, Lcom/box/app/vpn/FToast;->cur:Landroid/app/Activity;
+
+    if-eqz v0, :cond_end
+
+    const-string v0, "auto-start page did not show up, trying the next step"
+
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
+
+    iget v0, p0, Lcom/box/app/vpn/BattToggle;->n:I
+
+    const/4 v1, 0x4
+
+    const/4 v2, 0x0
+
+    invoke-static {v1, v0, v2}, Lcom/box/app/vpn/BattToggle;->post(III)V
+
+    return-void
+
+    :cond_not5
+    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->battSync()V
 
     const/4 v1, 0x2
 
