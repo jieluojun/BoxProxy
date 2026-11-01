@@ -5134,12 +5134,6 @@
     return-object v3
 
     :cond_notvpn
-    # root run mode: also open the auto-start page when the switch is turned on (YumeBox-style intent)
-    if-eqz p1, :cond_noask_root
-
-    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->askAutostart()V
-
-    :cond_noask_root
     sget-object v1, Lgb1;->j:Lgb1;
 
     .line 146
