@@ -3225,8 +3225,7 @@
 
     new-instance v2, Lgo2;
 
-    # fork release asset names: sing-box-<ver>-android_arm64-ebpf.tar.gz (current) / sing-box-<ver>-android-arm64-v8a-ebpf.tar.gz (old)
-    const-string v0, "sing-box-.+-android[-_]arm64(-v8a)?-ebpf\\.tar\\.gz"
+    const-string v0, "sing-box-.+-android-arm64-v8a-ebpf\\.tar\\.gz"
 
     invoke-direct {v2, v0}, Lgo2;-><init>(Ljava/lang/String;)V
 
