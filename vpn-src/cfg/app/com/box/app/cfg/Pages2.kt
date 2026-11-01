@@ -414,8 +414,13 @@ private fun FormUi.ruleEditDialog(initialRaw: String?, onConfirm: (String) -> Un
         val isMatch = type == "MATCH"
         return RuleText.format(type, value.trim(), policy.trim(), noResolve && !isMatch, keepFlags)
     }
+    // 预览 / 示例提示这两个 View 在每次 render 时重建；输入框的 watcher 通过它们实时刷新（之前只在 render 时算一次，边输入边不更新）
+    var previewView: TextView? = null
+    var placeholderView: TextView? = null
     lateinit var render: () -> Unit
     render = {
+        previewView = null
+        placeholderView = null
         val spec = RuleText.spec(type)
         val isMatch = type == "MATCH"
         val noValue = isMatch || spec?.noPayload == true
@@ -442,8 +447,19 @@ private fun FormUi.ruleEditDialog(initialRaw: String?, onConfirm: (String) -> Un
             body.addView(row(c, "类型", spec?.let { if (it.label == it.value) it.value else "${it.value} · ${it.label}" } ?: type, chevron = true,
                 onClick = { optionPicker(c, "类型", RULE_TYPES.map { FormOption(it.value, it.label) }, type) { type = it; render() } }).also { it.setPadding(0, c.dp(6), 0, c.dp(6)) })
             if (!noValue) {
-                body.addView(field(c, "匹配值", value, mono = true).also { it.addTextChangedListener(simpleWatcher { s -> value = s }) })
-                if (value.isEmpty()) spec?.placeholder?.let { body.addView(note(c, "例：$it", 0)) }
+                body.addView(field(c, "匹配值", value, mono = true).also {
+                    it.addTextChangedListener(simpleWatcher { s ->
+                        value = s
+                        previewView?.text = "预览：${preview()}"
+                        placeholderView?.visibility = if (s.isEmpty()) View.VISIBLE else View.GONE
+                    })
+                })
+                if (spec?.placeholder != null) {
+                    val ph = note(c, "例：${spec.placeholder}", 0) as TextView
+                    ph.visibility = if (value.isEmpty()) View.VISIBLE else View.GONE
+                    placeholderView = ph
+                    body.addView(ph)
+                }
             }
             body.addView(row(c, if (subRule) "目标子规则" else "目标策略", policy.ifEmpty { "（未选）" },
                 chevron = policyCandidates.isNotEmpty(),
@@ -457,7 +473,10 @@ private fun FormUi.ruleEditDialog(initialRaw: String?, onConfirm: (String) -> Un
                     onClick = { sw.toggle() }).also { it.setPadding(0, c.dp(6), 0, c.dp(6)) })
             }
             if (keepFlags.isNotEmpty()) body.addView(note(c, "原规则带有参数 ${keepFlags.joinToString(",")}，会原样保留在末尾", 0))
-            body.addView(note(c, "预览：${preview()}", 0).also { (it as? TextView)?.typeface = android.graphics.Typeface.MONOSPACE })
+            val pvv = note(c, "预览：${preview()}", 0) as TextView
+            pvv.typeface = android.graphics.Typeface.MONOSPACE
+            previewView = pvv
+            body.addView(pvv)
         }
     }
     render()

@@ -75,7 +75,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 486
+    .line 505
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$4;->invoke(Ljava/lang/String;)V
@@ -88,7 +88,7 @@
 .method public final invoke(Ljava/lang/String;)V
     .registers 4
 
-    .line 515
+    .line 534
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$4;->$this_ruleProviderListPage:Lcom/box/app/cfg/FormUi;
 
     iget-object p0, p0, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$4;->$d:Ltop/yukonga/mishka/custom/forms/YamlDoc;

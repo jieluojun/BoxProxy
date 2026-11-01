@@ -71,7 +71,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 570
+    .line 589
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/Pages2Kt$subRuleListPage$5;->invoke(Ljava/lang/String;)V
@@ -84,7 +84,7 @@
 .method public final invoke(Ljava/lang/String;)V
     .registers 9
 
-    .line 585
+    .line 604
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$subRuleListPage$5;->$this_subRuleListPage:Lcom/box/app/cfg/FormUi;
 
     invoke-virtual {v0}, Lcom/box/app/cfg/FormUi;->getC()Landroid/app/Activity;

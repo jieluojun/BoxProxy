@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleProviderListPage$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,695:1\n1#2:696\n*E\n"
+    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleProviderListPage$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,714:1\n1#2:715\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -54,7 +54,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleProviderListPage$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,695:1\n1#2:696\n*E\n"
+        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleProviderListPage$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,714:1\n1#2:715\n*E\n"
     }
 .end annotation
 
@@ -83,7 +83,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    .line 486
+    .line 505
     check-cast p1, Ljava/lang/String;
 
     check-cast p2, Ltop/yukonga/mishka/custom/forms/YamlNode;
@@ -100,7 +100,7 @@
 
     if-eqz p2, :cond_113
 
-    .line 498
+    .line 517
     invoke-virtual {p2}, Ltop/yukonga/mishka/custom/forms/YamlNode;->getKind()Ltop/yukonga/mishka/custom/forms/YamlNode$Kind;
 
     move-result-object v0
@@ -111,7 +111,7 @@
 
     goto/16 :goto_113
 
-    .line 500
+    .line 519
     :cond_c
     invoke-static {}, Ltop/yukonga/mishka/custom/forms/FlowFormPagesLogicKt;->getRULE_PROVIDERS_PATH()Ljava/util/List;
 
@@ -123,7 +123,7 @@
 
     move-result-object p1
 
-    .line 501
+    .line 520
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$2;->$d:Ltop/yukonga/mishka/custom/forms/YamlDoc;
 
     const-string v1, "type"
@@ -156,7 +156,7 @@
 
     const-string v0, ""
 
-    .line 502
+    .line 521
     :cond_35
     iget-object v1, p0, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$2;->$d:Ltop/yukonga/mishka/custom/forms/YamlDoc;
 
@@ -186,7 +186,7 @@
 
     move-result-object v1
 
-    .line 503
+    .line 522
     :cond_50
     iget-object v2, p0, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$2;->$d:Ltop/yukonga/mishka/custom/forms/YamlDoc;
 
@@ -216,7 +216,7 @@
 
     move-result-object v2
 
-    .line 504
+    .line 523
     :cond_6b
     iget-object v3, p0, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$2;->$d:Ltop/yukonga/mishka/custom/forms/YamlDoc;
 
@@ -275,12 +275,12 @@
     :cond_a0
     iget-object p0, p0, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$2;->$d:Ltop/yukonga/mishka/custom/forms/YamlDoc;
 
-    .line 505
+    .line 524
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 506
+    .line 525
     invoke-static {}, Ltop/yukonga/mishka/custom/forms/FormSpecsP2Kt;->getRULE_PROVIDER_TYPES()Ljava/util/List;
 
     move-result-object v4
@@ -295,7 +295,7 @@
 
     const-string v4, " \u00b7 "
 
-    .line 507
+    .line 526
     invoke-virtual {p2, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -305,7 +305,7 @@
 
     const-string v1, "/"
 
-    .line 508
+    .line 527
     invoke-virtual {p2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {p2, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
@@ -313,7 +313,7 @@
     :cond_c6
     const-string v1, "inline"
 
-    .line 509
+    .line 528
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v0
@@ -346,7 +346,7 @@
 
     goto :goto_109
 
-    .line 510
+    .line 529
     :cond_ea
     move-object p0, v3
 
@@ -386,7 +386,7 @@
 
     invoke-virtual {p2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 505
+    .line 524
     :cond_109
     :goto_109
     invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;

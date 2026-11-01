@@ -33,7 +33,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$groupDetailPage$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,695:1\n1620#2,3:696\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$groupDetailPage$3\n*L\n347#1:696,3\n*E\n"
+    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$groupDetailPage$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,714:1\n1620#2,3:715\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$groupDetailPage$3\n*L\n347#1:715,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -63,7 +63,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$groupDetailPage$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,695:1\n1620#2,3:696\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$groupDetailPage$3\n*L\n347#1:696,3\n*E\n"
+        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$groupDetailPage$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,714:1\n1620#2,3:715\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$groupDetailPage$3\n*L\n347#1:715,3\n*E\n"
     }
 .end annotation
 
@@ -217,7 +217,7 @@
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 696
+    .line 715
     invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object p2
@@ -233,7 +233,7 @@
 
     move-result-object v1
 
-    .line 697
+    .line 716
     check-cast v1, Ltop/yukonga/mishka/custom/forms/FormOption;
 
     .line 347
@@ -241,7 +241,7 @@
 
     move-result-object v1
 
-    .line 697
+    .line 716
     invoke-interface {v0, v1}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_43

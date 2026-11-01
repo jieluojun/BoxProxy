@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$newTunnelDialog$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,695:1\n1#2:696\n*E\n"
+    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$newTunnelDialog$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,714:1\n1#2:715\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,7 +49,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$newTunnelDialog$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,695:1\n1#2:696\n*E\n"
+        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$newTunnelDialog$1\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,714:1\n1#2:715\n*E\n"
     }
 .end annotation
 
@@ -181,7 +181,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 629
+    .line 648
     invoke-virtual {p0}, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -194,12 +194,12 @@
 
     move-object/from16 v0, p0
 
-    .line 630
+    .line 649
     iget-object v1, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$body:Landroid/widget/LinearLayout;
 
     invoke-virtual {v1}, Landroid/widget/LinearLayout;->removeAllViews()V
 
-    .line 631
+    .line 650
     iget-object v1, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v2, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$this_newTunnelDialog:Lcom/box/app/cfg/FormUi;
@@ -265,7 +265,7 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 632
+    .line 651
     iget-object v1, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$asMap:Lkotlin/jvm/internal/Ref$BooleanRef;
 
     iget-boolean v1, v1, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
@@ -274,17 +274,17 @@
 
     if-eqz v1, :cond_227
 
-    .line 633
+    .line 652
     new-instance v1, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v1}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
 
-    .line 634
+    .line 653
     new-instance v3, Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-direct {v3}, Lkotlin/jvm/internal/Ref$ObjectRef;-><init>()V
 
-    .line 635
+    .line 654
     iget-object v4, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$this_newTunnelDialog:Lcom/box/app/cfg/FormUi;
 
     invoke-virtual {v4}, Lcom/box/app/cfg/FormUi;->getC()Landroid/app/Activity;
@@ -321,7 +321,7 @@
 
     iput-object v4, v1, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 636
+    .line 655
     iget-object v4, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$this_newTunnelDialog:Lcom/box/app/cfg/FormUi;
 
     invoke-virtual {v4}, Lcom/box/app/cfg/FormUi;->getC()Landroid/app/Activity;
@@ -352,7 +352,7 @@
 
     iput-object v4, v3, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 637
+    .line 656
     iget-object v4, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v5, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$this_newTunnelDialog:Lcom/box/app/cfg/FormUi;
@@ -461,7 +461,7 @@
 
     invoke-virtual {v4, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 638
+    .line 657
     iget-object v1, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v4, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$this_newTunnelDialog:Lcom/box/app/cfg/FormUi;
@@ -564,7 +564,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 639
+    .line 658
     iget-object v1, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v3, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$this_newTunnelDialog:Lcom/box/app/cfg/FormUi;
@@ -617,7 +617,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 640
+    .line 659
     iget-object v1, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v3, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$this_newTunnelDialog:Lcom/box/app/cfg/FormUi;
@@ -688,7 +688,7 @@
 
     invoke-virtual {v1, v3, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 641
+    .line 660
     iget-object v1, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v3, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$this_newTunnelDialog:Lcom/box/app/cfg/FormUi;
@@ -778,7 +778,7 @@
 
     iget-object v0, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$this_newTunnelDialog:Lcom/box/app/cfg/FormUi;
 
-    .line 643
+    .line 662
     invoke-virtual {v0}, Lcom/box/app/cfg/FormUi;->getC()Landroid/app/Activity;
 
     move-result-object v4
@@ -803,12 +803,12 @@
 
     check-cast v3, Landroid/view/View;
 
-    .line 641
+    .line 660
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
     goto :goto_26d
 
-    .line 645
+    .line 664
     :cond_227
     iget-object v1, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$body:Landroid/widget/LinearLayout;
 
@@ -864,7 +864,7 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 646
+    .line 665
     iget-object v1, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$body:Landroid/widget/LinearLayout;
 
     iget-object v0, v0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1;->$this_newTunnelDialog:Lcom/box/app/cfg/FormUi;

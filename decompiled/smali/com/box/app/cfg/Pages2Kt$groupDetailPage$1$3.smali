@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$groupDetailPage$1$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,695:1\n1549#2:696\n1620#2,3:697\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$groupDetailPage$1$3\n*L\n358#1:696\n358#1:697,3\n*E\n"
+    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$groupDetailPage$1$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,714:1\n1549#2:715\n1620#2,3:716\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$groupDetailPage$1$3\n*L\n358#1:715\n358#1:716,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -51,7 +51,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$groupDetailPage$1$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,695:1\n1549#2:696\n1620#2,3:697\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$groupDetailPage$1$3\n*L\n358#1:696\n358#1:697,3\n*E\n"
+        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$groupDetailPage$1$3\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,714:1\n1549#2:715\n1620#2,3:716\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$groupDetailPage$1$3\n*L\n358#1:715\n358#1:716,3\n*E\n"
     }
 .end annotation
 
@@ -174,7 +174,7 @@
 
     check-cast v4, Ljava/lang/Iterable;
 
-    .line 696
+    .line 715
     new-instance v5, Ljava/util/ArrayList;
 
     const/16 v6, 0xa
@@ -187,7 +187,7 @@
 
     check-cast v5, Ljava/util/Collection;
 
-    .line 697
+    .line 716
     invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
@@ -203,7 +203,7 @@
 
     move-result-object v6
 
-    .line 698
+    .line 717
     check-cast v6, Ltop/yukonga/mishka/custom/forms/FormOption;
 
     .line 358
@@ -211,12 +211,12 @@
 
     move-result-object v6
 
-    .line 698
+    .line 717
     invoke-interface {v5, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_3d
 
-    .line 699
+    .line 718
     :cond_51
     check-cast v5, Ljava/util/List;
 

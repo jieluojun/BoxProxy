@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsServerListDialog$4$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,640:1\n1747#2,3:641\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsServerListDialog$4$1\n*L\n357#1:641,3\n*E\n"
+    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsServerListDialog$4$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,642:1\n1747#2,3:643\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsServerListDialog$4$1\n*L\n359#1:643,3\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -53,7 +53,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsServerListDialog$4$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,640:1\n1747#2,3:641\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsServerListDialog$4$1\n*L\n357#1:641,3\n*E\n"
+        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsServerListDialog$4$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,642:1\n1747#2,3:643\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsServerListDialog$4$1\n*L\n359#1:643,3\n*E\n"
     }
 .end annotation
 
@@ -117,7 +117,7 @@
 .method public final invoke(Ljava/lang/String;)Ljava/lang/Boolean;
     .registers 8
 
-    .line 357
+    .line 359
     iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$dnsServerListDialog$4$1;->$servers:Ljava/util/ArrayList;
 
     check-cast v0, Ljava/util/Collection;
@@ -132,7 +132,7 @@
 
     iget-object v2, p0, Lcom/box/app/cfg/FormDialogsKt$dnsServerListDialog$4$1;->$servers:Ljava/util/ArrayList;
 
-    .line 641
+    .line 643
     instance-of v3, v0, Ljava/util/Collection;
 
     const/4 v4, 0x1
@@ -156,7 +156,7 @@
 
     goto :goto_42
 
-    .line 642
+    .line 644
     :cond_1f
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
@@ -179,7 +179,7 @@
 
     if-eq v3, v1, :cond_3e
 
-    .line 357
+    .line 359
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -259,7 +259,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 356
+    .line 358
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/FormDialogsKt$dnsServerListDialog$4$1;->invoke(Ljava/lang/String;)Ljava/lang/Boolean;

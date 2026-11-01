@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleListPage$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,695:1\n1603#2,9:696\n1855#2:705\n1856#2:707\n1612#2:708\n1#3:706\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleListPage$1\n*L\n388#1:696,9\n388#1:705\n388#1:707\n388#1:708\n388#1:706\n*E\n"
+    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleListPage$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,714:1\n1603#2,9:715\n1855#2:724\n1856#2:726\n1612#2:727\n1#3:725\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleListPage$1\n*L\n388#1:715,9\n388#1:724\n388#1:726\n388#1:727\n388#1:725\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,7 +49,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleListPage$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,695:1\n1603#2,9:696\n1855#2:705\n1856#2:707\n1612#2:708\n1#3:706\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleListPage$1\n*L\n388#1:696,9\n388#1:705\n388#1:707\n388#1:708\n388#1:706\n*E\n"
+        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleListPage$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,714:1\n1603#2,9:715\n1855#2:724\n1856#2:726\n1612#2:727\n1#3:725\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleListPage$1\n*L\n388#1:715,9\n388#1:724\n388#1:726\n388#1:727\n388#1:725\n*E\n"
     }
 .end annotation
 
@@ -193,14 +193,14 @@
 
     iget-object v5, v0, Lcom/box/app/cfg/Pages2Kt$ruleListPage$1;->$d:Ltop/yukonga/mishka/custom/forms/YamlDoc;
 
-    .line 696
+    .line 715
     new-instance v6, Ljava/util/ArrayList;
 
     invoke-direct {v6}, Ljava/util/ArrayList;-><init>()V
 
     check-cast v6, Ljava/util/Collection;
 
-    .line 705
+    .line 724
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -217,7 +217,7 @@
 
     move-result-object v7
 
-    .line 704
+    .line 723
     check-cast v7, Ltop/yukonga/mishka/custom/forms/YamlNode;
 
     .line 388
@@ -227,16 +227,16 @@
 
     if-eqz v7, :cond_46
 
-    .line 704
+    .line 723
     invoke-interface {v6, v7}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_46
 
-    .line 708
+    .line 727
     :cond_5c
     check-cast v6, Ljava/util/List;
 
-    .line 696
+    .line 715
     move-object v7, v6
 
     check-cast v7, Ljava/lang/Iterable;

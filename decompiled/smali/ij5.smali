@@ -99,6 +99,11 @@
     .line 3
     invoke-virtual {v0}, Lmj5;->b()Ljava/lang/String;
 
+    # 读一下版本号（mj5.q）：面板 / 还原整篇替换编辑器后 CfgGlue.nudge 会把它 +1，让这里在替换（撤销栈已入栈）之后重新算一次 canUndo / canRedo
+    iget-object v1, v0, Lmj5;->q:Llk4;
+
+    invoke-virtual {v1}, Llk4;->getValue()Ljava/lang/Object;
+
     .line 4
     .line 5
     .line 6
@@ -200,6 +205,11 @@
     .line 2
     .line 3
     invoke-virtual {v0}, Lmj5;->b()Ljava/lang/String;
+
+    # 读一下版本号（mj5.q）：面板 / 还原整篇替换编辑器后 CfgGlue.nudge 会把它 +1，让这里在替换（撤销栈已入栈）之后重新算一次 canUndo / canRedo
+    iget-object v1, v0, Lmj5;->q:Llk4;
+
+    invoke-virtual {v1}, Llk4;->getValue()Ljava/lang/Object;
 
     .line 4
     .line 5

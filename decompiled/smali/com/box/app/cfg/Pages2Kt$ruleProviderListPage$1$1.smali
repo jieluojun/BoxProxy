@@ -107,7 +107,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 489
+    .line 508
     check-cast p1, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$1$1;->invoke(Landroid/widget/LinearLayout;)V
@@ -120,7 +120,7 @@
 .method public final invoke(Landroid/widget/LinearLayout;)V
     .registers 8
 
-    .line 491
+    .line 510
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$1$1;->$this_ruleProviderListPage:Lcom/box/app/cfg/FormUi;
 
     const-string v1, "\u89c4\u5219\u7c7b\u578b behavior"
@@ -159,7 +159,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
-    .line 492
+    .line 511
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$1$1;->$this_ruleProviderListPage:Lcom/box/app/cfg/FormUi;
 
     const-string v1, "\u6587\u4ef6\u683c\u5f0f format"

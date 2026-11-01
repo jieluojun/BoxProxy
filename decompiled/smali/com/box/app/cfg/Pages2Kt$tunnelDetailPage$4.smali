@@ -94,7 +94,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 687
+    .line 706
     invoke-virtual {p0}, Lcom/box/app/cfg/Pages2Kt$tunnelDetailPage$4;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -105,7 +105,7 @@
 .method public final invoke()V
     .registers 3
 
-    .line 687
+    .line 706
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$tunnelDetailPage$4;->$this_tunnelDetailPage:Lcom/box/app/cfg/FormUi;
 
     iget-object v1, p0, Lcom/box/app/cfg/Pages2Kt$tunnelDetailPage$4;->$base:Ljava/util/List;

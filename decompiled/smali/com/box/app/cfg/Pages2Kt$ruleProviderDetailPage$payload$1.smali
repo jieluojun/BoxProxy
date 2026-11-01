@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$payload$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,695:1\n1549#2:696\n1620#2,3:697\n766#2:700\n857#2,2:701\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$payload$1\n*L\n546#1:696\n546#1:697,3\n546#1:700\n546#1:701,2\n*E\n"
+    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$payload$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,714:1\n1549#2:715\n1620#2,3:716\n766#2:719\n857#2,2:720\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$payload$1\n*L\n565#1:715\n565#1:716,3\n565#1:719\n565#1:720,2\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -52,7 +52,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$payload$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,695:1\n1549#2:696\n1620#2,3:697\n766#2:700\n857#2,2:701\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$payload$1\n*L\n546#1:696\n546#1:697,3\n546#1:700\n546#1:701,2\n*E\n"
+        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$payload$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,714:1\n1549#2:715\n1620#2,3:716\n766#2:719\n857#2,2:720\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$payload$1\n*L\n565#1:715\n565#1:716,3\n565#1:719\n565#1:720,2\n*E\n"
     }
 .end annotation
 
@@ -107,7 +107,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 544
+    .line 563
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$payload$1;->invoke(Ljava/lang/String;)V
@@ -120,7 +120,7 @@
 .method public final invoke(Ljava/lang/String;)V
     .registers 10
 
-    .line 546
+    .line 565
     move-object v0, p1
 
     check-cast v0, Ljava/lang/CharSequence;
@@ -149,7 +149,7 @@
 
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 696
+    .line 715
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-static {v0, v6}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
@@ -160,7 +160,7 @@
 
     check-cast v1, Ljava/util/Collection;
 
-    .line 697
+    .line 716
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -176,10 +176,10 @@
 
     move-result-object v2
 
-    .line 698
+    .line 717
     check-cast v2, Ljava/lang/String;
 
-    .line 546
+    .line 565
     check-cast v2, Ljava/lang/CharSequence;
 
     invoke-static {v2}, Lkotlin/text/StringsKt;->trim(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
@@ -190,26 +190,26 @@
 
     move-result-object v2
 
-    .line 698
+    .line 717
     invoke-interface {v1, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_24
 
-    .line 699
+    .line 718
     :cond_3e
     check-cast v1, Ljava/util/List;
 
-    .line 696
+    .line 715
     check-cast v1, Ljava/lang/Iterable;
 
-    .line 700
+    .line 719
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     check-cast v0, Ljava/util/Collection;
 
-    .line 701
+    .line 720
     invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v1
@@ -230,7 +230,7 @@
 
     check-cast v3, Ljava/lang/String;
 
-    .line 546
+    .line 565
     check-cast v3, Ljava/lang/CharSequence;
 
     invoke-interface {v3}, Ljava/lang/CharSequence;->length()I
@@ -249,16 +249,16 @@
     :goto_65
     if-eqz v3, :cond_4d
 
-    .line 701
+    .line 720
     invoke-interface {v0, v2}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_4d
 
-    .line 702
+    .line 721
     :cond_6b
     check-cast v0, Ljava/util/List;
 
-    .line 547
+    .line 566
     iget-boolean v1, p0, Lcom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$payload$1;->$okList:Z
 
     if-nez v1, :cond_77

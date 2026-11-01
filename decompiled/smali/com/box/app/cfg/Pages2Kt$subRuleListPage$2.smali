@@ -73,7 +73,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 3
 
-    .line 570
+    .line 589
     check-cast p1, Ljava/lang/String;
 
     check-cast p2, Ltop/yukonga/mishka/custom/forms/YamlNode;
@@ -94,7 +94,7 @@
 
     goto :goto_3b
 
-    .line 579
+    .line 598
     :cond_5
     invoke-virtual {p2}, Ltop/yukonga/mishka/custom/forms/YamlNode;->getKind()Ltop/yukonga/mishka/custom/forms/YamlNode$Kind;
 
@@ -116,7 +116,7 @@
 
     goto :goto_3b
 
-    .line 580
+    .line 599
     :cond_18
     new-instance p2, Ljava/lang/StringBuilder;
 

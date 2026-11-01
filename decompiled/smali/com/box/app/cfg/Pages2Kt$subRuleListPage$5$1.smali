@@ -72,7 +72,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 585
+    .line 604
     invoke-virtual {p0}, Lcom/box/app/cfg/Pages2Kt$subRuleListPage$5$1;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -83,7 +83,7 @@
 .method public final invoke()V
     .registers 5
 
-    .line 585
+    .line 604
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$subRuleListPage$5$1;->$this_subRuleListPage:Lcom/box/app/cfg/FormUi;
 
     invoke-virtual {v0}, Lcom/box/app/cfg/FormUi;->getHost()Lcom/box/app/cfg/FormHost;

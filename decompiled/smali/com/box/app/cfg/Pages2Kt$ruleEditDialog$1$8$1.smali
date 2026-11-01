@@ -1,4 +1,4 @@
-.class final Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9$1;
+.class final Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8$1;
 .super Lkotlin/jvm/internal/Lambda;
 .source "Pages2.kt"
 
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9;->invoke()V
+    value = Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8;->invoke()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -90,9 +90,9 @@
         }
     .end annotation
 
-    iput-object p1, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9$1;->$policy:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iput-object p1, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8$1;->$policy:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    iput-object p2, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9$1;->$render:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iput-object p2, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8$1;->$render:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     const/4 p1, 0x1
 
@@ -104,10 +104,10 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 450
+    .line 466
     check-cast p1, Ljava/lang/String;
 
-    invoke-virtual {p0, p1}, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9$1;->invoke(Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8$1;->invoke(Ljava/lang/String;)V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
@@ -117,12 +117,12 @@
 .method public final invoke(Ljava/lang/String;)V
     .registers 3
 
-    .line 450
-    iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9$1;->$policy:Lkotlin/jvm/internal/Ref$ObjectRef;
+    .line 466
+    iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8$1;->$policy:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iput-object p1, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    iget-object p1, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9$1;->$render:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iget-object p1, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8$1;->$render:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iget-object p1, p1, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
@@ -137,7 +137,7 @@
     goto :goto_17
 
     :cond_11
-    iget-object p0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$9$1;->$render:Lkotlin/jvm/internal/Ref$ObjectRef;
+    iget-object p0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$8$1;->$render:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iget-object p0, p0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 

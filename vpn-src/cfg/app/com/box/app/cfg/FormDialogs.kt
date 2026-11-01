@@ -264,12 +264,14 @@ internal fun headersDialog(c: Context, field: FormField, current: List<Pair<Stri
     fun addRow(k: String, v: String) {
         val ke = field(c, "请求头名", k); val ve = field(c, if (field.arrayValues) "候选值" else "值", v)
         ks.add(ke); vs.add(ve)
+        ke.addTextChangedListener(simpleWatcher { updateWarn() })
         lateinit var r: LinearLayout
         r = kvRow(c, ke, ve, 0.4f, 0.6f) { val i = ks.indexOf(ke); box.removeView(r); if (i >= 0) { ks.removeAt(i); vs.removeAt(i) }; updateWarn() }
         box.addView(r, lp())
     }
     if (current.isEmpty()) box.addView(note(c, "暂无请求头，点击下方添加。", 0), lp())
     current.forEach { addRow(it.first, it.second) }
+    updateWarn()
     d.add(box, 6)
     d.add(textBtn(c, "添加请求头") { addRow("", ""); updateWarn() }.also { it.gravity = Gravity.END }, 4)
     d.add(warn)

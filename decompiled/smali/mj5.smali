@@ -1384,6 +1384,9 @@
 
     .line 12
     :cond_0
+    # 整篇替换文本（CfgGlue.replaceKeep 随后在编辑器里落地）：记下自己，替换完成后 CfgGlue.nudge 用它触发一次重组
+    sput-object p0, Lcom/box/app/cfg/CfgGlue;->sMj:Ljava/lang/Object;
+
     iget-object v0, p0, Lmj5;->p:Llk4;
 
     .line 13

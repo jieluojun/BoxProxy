@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleEditDialog$1$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,695:1\n766#2:696\n857#2,2:697\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleEditDialog$1$1\n*L\n432#1:696\n432#1:697,2\n*E\n"
+    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleEditDialog$1$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,714:1\n766#2:715\n857#2,2:716\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleEditDialog$1$1\n*L\n437#1:715\n437#1:716,2\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,7 +49,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleEditDialog$1$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,695:1\n766#2:696\n857#2,2:697\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleEditDialog$1$1\n*L\n432#1:696\n432#1:697,2\n*E\n"
+        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleEditDialog$1$1\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,714:1\n766#2:715\n857#2,2:716\n*S KotlinDebug\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$ruleEditDialog$1$1\n*L\n437#1:715\n437#1:716,2\n*E\n"
     }
 .end annotation
 
@@ -183,7 +183,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 426
+    .line 431
     invoke-virtual {p0}, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$1;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -194,7 +194,7 @@
 .method public final invoke()V
     .registers 9
 
-    .line 427
+    .line 432
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$1;->$rawMode:Lkotlin/jvm/internal/Ref$BooleanRef;
 
     iget-boolean v0, v0, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
@@ -203,7 +203,7 @@
 
     if-eqz v0, :cond_82
 
-    .line 428
+    .line 433
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$1;->$raw:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     iget-object v0, v0, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
@@ -220,7 +220,7 @@
 
     move-result-object v0
 
-    .line 429
+    .line 434
     move-object v2, v0
 
     check-cast v2, Ljava/lang/CharSequence;
@@ -243,14 +243,14 @@
     :goto_24
     if-eqz v2, :cond_7d
 
-    .line 430
+    .line 435
     sget-object v2, Ltop/yukonga/mishka/custom/forms/RuleText;->INSTANCE:Ltop/yukonga/mishka/custom/forms/RuleText;
 
     invoke-virtual {v2, v0}, Ltop/yukonga/mishka/custom/forms/RuleText;->parse(Ljava/lang/String;)Ltop/yukonga/mishka/custom/forms/RuleText$Parts;
 
     move-result-object v0
 
-    .line 431
+    .line 436
     iget-object v2, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$1;->$type:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-virtual {v0}, Ltop/yukonga/mishka/custom/forms/RuleText$Parts;->getType()Ljava/lang/String;
@@ -283,7 +283,7 @@
 
     iput-boolean v4, v2, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
 
-    .line 432
+    .line 437
     iget-object v2, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$1;->$keepFlags:Lkotlin/jvm/internal/Ref$ObjectRef;
 
     invoke-virtual {v0}, Ltop/yukonga/mishka/custom/forms/RuleText$Parts;->getFlags()Ljava/util/List;
@@ -292,14 +292,14 @@
 
     check-cast v0, Ljava/lang/Iterable;
 
-    .line 696
+    .line 715
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
     check-cast v4, Ljava/util/Collection;
 
-    .line 697
+    .line 716
     invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
@@ -322,7 +322,7 @@
 
     const-string v7, "no-resolve"
 
-    .line 432
+    .line 437
     invoke-static {v6, v7, v1}, Lkotlin/text/StringsKt;->equals(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     move-result v6
@@ -331,19 +331,19 @@
 
     if-eqz v6, :cond_5f
 
-    .line 697
+    .line 716
     invoke-interface {v4, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_5f
 
-    .line 698
+    .line 717
     :cond_79
     check-cast v4, Ljava/util/List;
 
-    .line 432
+    .line 437
     iput-object v4, v2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
 
-    .line 434
+    .line 439
     :cond_7d
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$1;->$rawMode:Lkotlin/jvm/internal/Ref$BooleanRef;
 
@@ -351,7 +351,7 @@
 
     goto :goto_98
 
-    .line 435
+    .line 440
     :cond_82
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$1;->$raw:Lkotlin/jvm/internal/Ref$ObjectRef;
 
@@ -375,7 +375,7 @@
 
     iput-boolean v1, v0, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
 
-    .line 436
+    .line 441
     :goto_98
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleEditDialog$1$1;->$render:Lkotlin/jvm/internal/Ref$ObjectRef;
 

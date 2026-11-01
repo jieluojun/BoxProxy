@@ -133,7 +133,7 @@
         }
     .end annotation
 
-    .line 526
+    .line 545
     invoke-virtual {p1}, Ltop/yukonga/mishka/custom/forms/FormField;->getPath()Ljava/lang/String;
 
     move-result-object v0
@@ -150,12 +150,12 @@
 
     if-eqz v0, :cond_eb
 
-    .line 527
+    .line 546
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 528
+    .line 547
     new-instance v1, Ltop/yukonga/mishka/custom/forms/BatchOp$Set;
 
     invoke-direct {v1, p2, p3}, Ltop/yukonga/mishka/custom/forms/BatchOp$Set;-><init>(Ljava/util/List;Ljava/lang/Object;)V
@@ -164,14 +164,14 @@
 
     const-string v1, "file"
 
-    .line 529
+    .line 548
     invoke-static {p3, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
     if-eqz v1, :cond_a5
 
-    .line 530
+    .line 549
     invoke-static {}, Ltop/yukonga/mishka/custom/forms/FormSpecsP2Kt;->getFILE_HIDDEN_KEYS()Ljava/util/Map;
 
     move-result-object v1
@@ -224,7 +224,7 @@
 
     goto :goto_3b
 
-    .line 531
+    .line 550
     :cond_58
     sget-object v1, Ltop/yukonga/mishka/custom/forms/FormValues;->INSTANCE:Ltop/yukonga/mishka/custom/forms/FormValues;
 
@@ -299,7 +299,7 @@
     :cond_a5
     const-string v1, "inline"
 
-    .line 533
+    .line 552
     invoke-static {p3, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result p3
@@ -344,7 +344,7 @@
 
     invoke-virtual {v0, p3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 534
+    .line 553
     :cond_d5
     iget-object p0, p0, Lcom/box/app/cfg/Pages2Kt$ruleProviderDetailPage$intercept$1;->$this_ruleProviderDetailPage:Lcom/box/app/cfg/FormUi;
 
@@ -377,7 +377,7 @@
     :cond_eb
     const/4 p0, 0x0
 
-    .line 536
+    .line 555
     :goto_ec
     invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
@@ -389,7 +389,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
 
-    .line 525
+    .line 544
     check-cast p1, Ltop/yukonga/mishka/custom/forms/FormField;
 
     check-cast p2, Ljava/util/List;

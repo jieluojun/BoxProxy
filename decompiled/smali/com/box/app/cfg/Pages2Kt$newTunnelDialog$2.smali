@@ -26,7 +26,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$newTunnelDialog$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,695:1\n1#2:696\n*E\n"
+    value = "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$newTunnelDialog$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,714:1\n1#2:715\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -49,7 +49,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$newTunnelDialog$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,695:1\n1#2:696\n*E\n"
+        "SMAP\nPages2.kt\nKotlin\n*S Kotlin\n*F\n+ 1 Pages2.kt\ncom/box/app/cfg/Pages2Kt$newTunnelDialog$2\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,714:1\n1#2:715\n*E\n"
     }
 .end annotation
 
@@ -177,7 +177,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 650
+    .line 669
     invoke-virtual {p0}, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$2;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -188,7 +188,7 @@
 .method public final invoke()V
     .registers 10
 
-    .line 651
+    .line 670
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$2;->$asMap:Lkotlin/jvm/internal/Ref$BooleanRef;
 
     iget-boolean v0, v0, Lkotlin/jvm/internal/Ref$BooleanRef;->element:Z
@@ -201,7 +201,7 @@
 
     iget-object v2, p0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$2;->$udp:Lkotlin/jvm/internal/Ref$BooleanRef;
 
-    .line 652
+    .line 671
     invoke-static {}, Lkotlin/collections/CollectionsKt;->createListBuilder()Ljava/util/List;
 
     move-result-object v3
@@ -228,7 +228,7 @@
 
     move-result-object v0
 
-    .line 654
+    .line 673
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
 
     move-result v2
@@ -247,7 +247,7 @@
 
     goto/16 :goto_101
 
-    .line 655
+    .line 674
     :cond_35
     iget-object v2, p0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$2;->$address:Lkotlin/jvm/internal/Ref$ObjectRef;
 
@@ -319,7 +319,7 @@
 
     goto :goto_c5
 
-    .line 656
+    .line 675
     :cond_70
     iget-object v2, p0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$2;->$d:Lcom/box/app/cfg/Dlg;
 
@@ -414,12 +414,12 @@
     :goto_c5
     const-string p0, "\u76d1\u542c\u5730\u5740\u548c\u76ee\u6807\u5730\u5740\u90fd\u8981\u586b"
 
-    .line 655
+    .line 674
     invoke-static {p0, v5, v3, v4}, Lcom/box/app/cfg/FormHostKt;->showToast$default(Ljava/lang/String;ZILjava/lang/Object;)V
 
     goto :goto_101
 
-    .line 659
+    .line 678
     :cond_cb
     sget-object v0, Ltop/yukonga/mishka/custom/forms/TunnelText;->INSTANCE:Ltop/yukonga/mishka/custom/forms/TunnelText;
 
@@ -445,7 +445,7 @@
 
     if-eqz v0, :cond_e7
 
-    .line 660
+    .line 679
     invoke-static {v0, v1}, Lcom/box/app/cfg/FormHostKt;->showToast(Ljava/lang/String;Z)V
 
     goto :goto_101

@@ -111,7 +111,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .registers 4
 
-    .line 489
+    .line 508
     check-cast p1, Ljava/lang/String;
 
     check-cast p2, Ljava/lang/String;
@@ -128,7 +128,7 @@
 .method public final invoke(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .registers 8
 
-    .line 494
+    .line 513
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$ruleProviderListPage$1$2;->$this_ruleProviderListPage:Lcom/box/app/cfg/FormUi;
 
     invoke-virtual {v0}, Lcom/box/app/cfg/FormUi;->getHost()Lcom/box/app/cfg/FormHost;

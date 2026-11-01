@@ -3,7 +3,7 @@
 .source "FormDialogs.kt"
 
 # interfaces
-.implements Lkotlin/jvm/functions/Function0;
+.implements Lkotlin/jvm/functions/Function1;
 
 
 # annotations
@@ -19,7 +19,8 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Lkotlin/jvm/internal/Lambda;",
-        "Lkotlin/jvm/functions/Function0<",
+        "Lkotlin/jvm/functions/Function1<",
+        "Ljava/lang/String;",
         "Lkotlin/Unit;",
         ">;"
     }
@@ -27,10 +28,12 @@
 
 .annotation runtime Lkotlin/Metadata;
     d1 = {
-        "\u0000\u0008\n\u0000\n\u0002\u0010\u0002\n\u0000\u0010\u0000\u001a\u00020\u0001H\n\u00a2\u0006\u0002\u0008\u0002"
+        "\u0000\u000e\n\u0000\n\u0002\u0010\u0002\n\u0000\n\u0002\u0010\u000e\n\u0000\u0010\u0000\u001a\u00020\u00012\u0006\u0010\u0002\u001a\u00020\u0003H\n\u00a2\u0006\u0002\u0008\u0004"
     }
     d2 = {
         "<anonymous>",
+        "",
+        "it",
         "",
         "invoke"
     }
@@ -45,33 +48,9 @@
 
 
 # instance fields
-.field final synthetic $box:Landroid/widget/LinearLayout;
-
 .field final synthetic $field:Ltop/yukonga/mishka/custom/forms/FormField;
 
-.field final synthetic $ke:Landroid/widget/EditText;
-
 .field final synthetic $ks:Ljava/util/ArrayList;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/ArrayList<",
-            "Landroid/widget/EditText;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field final synthetic $r:Lkotlin/jvm/internal/Ref$ObjectRef;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Lkotlin/jvm/internal/Ref$ObjectRef<",
-            "Landroid/widget/LinearLayout;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-.field final synthetic $vs:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/ArrayList<",
@@ -89,19 +68,11 @@
 
 # virtual methods
 
-.method constructor <init>(Ljava/util/ArrayList;Landroid/widget/EditText;Landroid/widget/LinearLayout;Lkotlin/jvm/internal/Ref$ObjectRef;Ljava/util/ArrayList;Landroid/view/View;Ltop/yukonga/mishka/custom/forms/FormField;)V
-    .registers 8
+.method constructor <init>(Ljava/util/ArrayList;Landroid/view/View;Ltop/yukonga/mishka/custom/forms/FormField;)V
+    .registers 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ljava/util/ArrayList<",
-            "Landroid/widget/EditText;",
-            ">;",
-            "Landroid/widget/EditText;",
-            "Landroid/widget/LinearLayout;",
-            "Lkotlin/jvm/internal/Ref$ObjectRef<",
-            "Landroid/widget/LinearLayout;",
-            ">;",
             "Ljava/util/ArrayList<",
             "Landroid/widget/EditText;",
             ">;",
@@ -113,94 +84,41 @@
 
     iput-object p1, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$ks:Ljava/util/ArrayList;
 
-    iput-object p2, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$ke:Landroid/widget/EditText;
+    iput-object p2, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$warn:Landroid/view/View;
 
-    iput-object p3, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$box:Landroid/widget/LinearLayout;
+    iput-object p3, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$field:Ltop/yukonga/mishka/custom/forms/FormField;
 
-    iput-object p4, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$r:Lkotlin/jvm/internal/Ref$ObjectRef;
-
-    iput-object p5, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$vs:Ljava/util/ArrayList;
-
-    iput-object p6, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$warn:Landroid/view/View;
-
-    iput-object p7, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$field:Ltop/yukonga/mishka/custom/forms/FormField;
-
-    const/4 p1, 0x0
+    const/4 p1, 0x1
 
     invoke-direct {p0, p1}, Lkotlin/jvm/internal/Lambda;-><init>(I)V
 
     return-void
 .end method
 
-.method public bridge synthetic invoke()Ljava/lang/Object;
-    .registers 1
+.method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .registers 2
 
-    .line 268
-    invoke-virtual {p0}, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->invoke()V
+    .line 267
+    check-cast p1, Ljava/lang/String;
+
+    invoke-virtual {p0, p1}, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->invoke(Ljava/lang/String;)V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
 
     return-object p0
 .end method
 
-.method public final invoke()V
-    .registers 4
+.method public final invoke(Ljava/lang/String;)V
+    .registers 3
 
-    .line 268
-    iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$ks:Ljava/util/ArrayList;
+    .line 267
+    iget-object p1, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$ks:Ljava/util/ArrayList;
 
-    iget-object v1, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$ke:Landroid/widget/EditText;
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
-
-    move-result v0
-
-    iget-object v1, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$box:Landroid/widget/LinearLayout;
-
-    iget-object v2, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$r:Lkotlin/jvm/internal/Ref$ObjectRef;
-
-    iget-object v2, v2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
-
-    if-nez v2, :cond_17
-
-    const-string v2, "r"
-
-    invoke-static {v2}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
-
-    const/4 v2, 0x0
-
-    goto :goto_1d
-
-    :cond_17
-    iget-object v2, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$r:Lkotlin/jvm/internal/Ref$ObjectRef;
-
-    iget-object v2, v2, Lkotlin/jvm/internal/Ref$ObjectRef;->element:Ljava/lang/Object;
-
-    check-cast v2, Landroid/widget/LinearLayout;
-
-    :goto_1d
-    check-cast v2, Landroid/view/View;
-
-    invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->removeView(Landroid/view/View;)V
-
-    if-ltz v0, :cond_2e
-
-    iget-object v1, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$ks:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
-
-    iget-object v1, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$vs:Ljava/util/ArrayList;
-
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
-
-    :cond_2e
-    iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$ks:Ljava/util/ArrayList;
-
-    iget-object v1, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$warn:Landroid/view/View;
+    iget-object v0, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$warn:Landroid/view/View;
 
     iget-object p0, p0, Lcom/box/app/cfg/FormDialogsKt$headersDialog$addRow$1;->$field:Ltop/yukonga/mishka/custom/forms/FormField;
 
-    invoke-static {v0, v1, p0}, Lcom/box/app/cfg/FormDialogsKt;->access$headersDialog$updateWarn(Ljava/util/ArrayList;Landroid/view/View;Ltop/yukonga/mishka/custom/forms/FormField;)V
+    invoke-static {p1, v0, p0}, Lcom/box/app/cfg/FormDialogsKt;->access$headersDialog$updateWarn(Ljava/util/ArrayList;Landroid/view/View;Ltop/yukonga/mishka/custom/forms/FormField;)V
 
     return-void
 .end method

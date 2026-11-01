@@ -6,6 +6,9 @@
 
 
 # direct methods
+# 最近一次整篇替换文本的编辑器视图模型 (mj5)；mj5.m 写入，replaceKeep 替换完成后 nudge 取走并清空
+.field public static sMj:Ljava/lang/Object;
+
 .method public static getPath(Ljava/lang/Object;)Ljava/lang/String;
     .locals 0
 
@@ -93,9 +96,13 @@
 
     move-object v3, v0
 
+    invoke-static {p0, v4, v5}, Lcom/box/app/cfg/CfgGlue;->preSel(Lvt0;II)V
+
     invoke-virtual/range {v3 .. v8}, Lr61;->x(IILjava/lang/CharSequence;II)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    invoke-static {}, Lcom/box/app/cfg/CfgGlue;->nudge()V
 
     :try_start_1
     const/4 v9, 0x6
@@ -175,4 +182,75 @@
     const/4 v0, 0x0
 
     return v0
+.end method
+
+# 程序整篇替换（Content.replace 已把改动记进撤销栈）之后，让底部栏重新算一次「回退 / 重做」是否可用。
+# 之前的问题：mj5.m 先把文本状态 p 设成新文本，底栏随之重组，那一刻编辑器里的替换还没发生（它在 AndroidView 的 update 里），
+# 栈是空的 → 回退灰掉；替换之后 ContentChangeEvent 又把同样的文本写回 p（x15），值没变 → Compose 不再重组 → 一直灰着，直到下一次打字。
+# 做法：把 mj5.q（版本号）再 +1（ij5.a / ij5.b 读它），下一帧底栏重组，读到的是替换之后的栈。不会造成再次替换：
+# 编辑器文本和 p 已一致，EditorGlue.plan 返回 null，replaceKeep 什么都不做，nudge 也就不会再被调用。
+.method public static nudge()V
+    .locals 3
+
+    :try_start_0
+    sget-object v0, Lcom/box/app/cfg/CfgGlue;->sMj:Ljava/lang/Object;
+
+    if-eqz v0, :cond_end
+
+    const/4 v1, 0x0
+
+    sput-object v1, Lcom/box/app/cfg/CfgGlue;->sMj:Ljava/lang/Object;
+
+    check-cast v0, Lmj5;
+
+    iget-object v0, v0, Lmj5;->q:Llk4;
+
+    invoke-virtual {v0}, Llk4;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Number;
+
+    invoke-virtual {v1}, Ljava/lang/Number;->intValue()I
+
+    move-result v1
+
+    add-int/lit8 v1, v1, 0x1
+
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Llk4;->setValue(Ljava/lang/Object;)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_end
+    :goto_end
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    goto :goto_end
+.end method
+
+# 替换之前先把光标放到「要改的那一段的起点」。撤销栈里每一步记着「这一步之前的选区」（pz6.e → no6），回退时编辑器把光标还原到那里并滚过去；
+# 面板回来时光标通常还在文件开头（0,0），于是回退就跳到顶部。先把光标挪到改动处，回退就停在被改的那一行（和直接在编辑器里改一样）。
+# 替换完成后 replaceKeep 仍会再把光标放到新内容所在行。任何异常都忽略（不能影响后面的替换）。
+.method public static preSel(Lvt0;II)V
+    .locals 1
+
+    :try_start_0
+    invoke-virtual {p0, p1, p2}, Lvt0;->l0(II)V
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_end
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    goto :goto_end
 .end method

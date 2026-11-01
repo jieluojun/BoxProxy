@@ -27,7 +27,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$8\n+ 2 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,640:1\n429#2:641\n502#2,5:642\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$8\n*L\n423#1:641\n423#1:642,5\n*E\n"
+    value = "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$8\n+ 2 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,642:1\n429#2:643\n502#2,5:644\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$8\n*L\n425#1:643\n425#1:644,5\n*E\n"
 .end annotation
 
 .annotation runtime Lkotlin/Metadata;
@@ -52,7 +52,7 @@
 
 .annotation build Lkotlin/jvm/internal/SourceDebugExtension;
     value = {
-        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$8\n+ 2 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,640:1\n429#2:641\n502#2,5:642\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$8\n*L\n423#1:641\n423#1:642,5\n*E\n"
+        "SMAP\nFormDialogs.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$8\n+ 2 _Strings.kt\nkotlin/text/StringsKt___StringsKt\n*L\n1#1,642:1\n429#2:643\n502#2,5:644\n*S KotlinDebug\n*F\n+ 1 FormDialogs.kt\ncom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$8\n*L\n425#1:643\n425#1:644,5\n*E\n"
     }
 .end annotation
 
@@ -238,7 +238,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 423
+    .line 425
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$8;->invoke(Ljava/lang/String;)V
@@ -253,10 +253,10 @@
 
     move-object/from16 v0, p0
 
-    .line 423
+    .line 425
     iget-object v1, v0, Lcom/box/app/cfg/FormDialogsKt$dnsBuilderDialog$1$8;->$port:Lkotlin/jvm/internal/Ref$ObjectRef;
 
-    .line 641
+    .line 643
     move-object/from16 v2, p1
 
     check-cast v2, Ljava/lang/CharSequence;
@@ -267,7 +267,7 @@
 
     check-cast v3, Ljava/lang/Appendable;
 
-    .line 642
+    .line 644
     invoke-interface {v2}, Ljava/lang/CharSequence;->length()I
 
     move-result v4
@@ -277,19 +277,19 @@
     :goto_14
     if-ge v5, v4, :cond_26
 
-    .line 643
+    .line 645
     invoke-interface {v2, v5}, Ljava/lang/CharSequence;->charAt(I)C
 
     move-result v6
 
-    .line 423
+    .line 425
     invoke-static {v6}, Ljava/lang/Character;->isDigit(C)Z
 
     move-result v7
 
     if-eqz v7, :cond_23
 
-    .line 644
+    .line 646
     invoke-interface {v3, v6}, Ljava/lang/Appendable;->append(C)Ljava/lang/Appendable;
 
     :cond_23
@@ -297,11 +297,11 @@
 
     goto :goto_14
 
-    .line 646
+    .line 648
     :cond_26
     check-cast v3, Ljava/lang/StringBuilder;
 
-    .line 641
+    .line 643
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v2
@@ -312,7 +312,7 @@
 
     const/4 v3, 0x5
 
-    .line 423
+    .line 425
     invoke-static {v2, v3}, Lkotlin/text/StringsKt;->take(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2

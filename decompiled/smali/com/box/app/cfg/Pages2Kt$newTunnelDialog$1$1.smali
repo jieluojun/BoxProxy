@@ -91,7 +91,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .registers 1
 
-    .line 631
+    .line 650
     invoke-virtual {p0}, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1$1;->invoke()V
 
     sget-object p0, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -102,7 +102,7 @@
 .method public final invoke()V
     .registers 3
 
-    .line 631
+    .line 650
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1$1;->$asMap:Lkotlin/jvm/internal/Ref$BooleanRef;
 
     iget-object v1, p0, Lcom/box/app/cfg/Pages2Kt$newTunnelDialog$1$1;->$asMap:Lkotlin/jvm/internal/Ref$BooleanRef;

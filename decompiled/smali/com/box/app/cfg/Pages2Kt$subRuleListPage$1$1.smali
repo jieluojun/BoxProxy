@@ -71,7 +71,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .registers 2
 
-    .line 572
+    .line 591
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lcom/box/app/cfg/Pages2Kt$subRuleListPage$1$1;->invoke(Ljava/lang/String;)V
@@ -84,7 +84,7 @@
 .method public final invoke(Ljava/lang/String;)V
     .registers 7
 
-    .line 573
+    .line 592
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$subRuleListPage$1$1;->$this_subRuleListPage:Lcom/box/app/cfg/FormUi;
 
     invoke-virtual {v0}, Lcom/box/app/cfg/FormUi;->getHost()Lcom/box/app/cfg/FormHost;
@@ -129,7 +129,7 @@
 
     goto :goto_81
 
-    .line 574
+    .line 593
     :cond_2f
     iget-object v0, p0, Lcom/box/app/cfg/Pages2Kt$subRuleListPage$1$1;->$this_subRuleListPage:Lcom/box/app/cfg/FormUi;
 

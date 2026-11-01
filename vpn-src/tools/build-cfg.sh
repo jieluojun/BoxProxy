@@ -43,7 +43,7 @@ python3 "$tools/prune_smali.py" "$tmp/sm" com/box/app/cfg,top/yukonga,androidx/c
 # 先清掉上一轮生成的（手写的几个除外），避免改名 / 删类后留下孤儿 smali
 sm="$root/decompiled/smali"
 for f in "$sm"/com/box/app/cfg/*.smali; do
-  case "$(basename "$f")" in CfgGlue.smali|CfgClick.smali|CfgIcon.smali|CfgNav.smali) ;; *) rm -f "$f" ;; esac
+  case "$(basename "$f")" in CfgGlue.smali|CfgClick.smali|CfgIcon.smali|CfgNav.smali|CfgDefer.smali) ;; *) rm -f "$f" ;; esac
 done
 rm -rf "$sm/top" "$sm/kotlin" "$sm/androidx/compose/runtime"
 mkdir -p "$sm/com/box/app/cfg"
