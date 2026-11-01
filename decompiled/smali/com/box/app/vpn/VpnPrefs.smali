@@ -1298,47 +1298,6 @@
 
     move-result-object v0
 
-    # YumeBox (YumeYucca/YumeBox XiaomiAutoStart.openSettings): MIUI / HyperOS first try the security
-    # center's own OP_AUTO_START action (package restricted, CATEGORY_DEFAULT, extra_pkgname = our package);
-    # the component / OEM list below is the fallback.
-    :try_start_op
-    new-instance v1, Landroid/content/Intent;
-
-    const-string v2, "miui.intent.action.OP_AUTO_START"
-
-    invoke-direct {v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    const-string v2, "com.miui.securitycenter"
-
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->setPackage(Ljava/lang/String;)Landroid/content/Intent;
-
-    const-string v2, "android.intent.category.DEFAULT"
-
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
-
-    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "extra_pkgname"
-
-    invoke-virtual {v1, v3, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    const/high16 v2, 0x10000000
-
-    invoke-virtual {v1, v2}, Landroid/content/Intent;->addFlags(I)Landroid/content/Intent;
-
-    invoke-virtual {v0, v1}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
-    :try_end_op
-    .catch Ljava/lang/Throwable; {:try_start_op .. :try_end_op} :catch_op
-
-    const-string v1, "opened the auto-start page: miui.intent.action.OP_AUTO_START"
-
-    invoke-static {v1}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
-
-    return-void
-
-    :catch_op
     const-string v1, "com.miui.securitycenter/com.miui.permcenter.autostart.AutoStartManagementActivity;com.huawei.systemmanager/com.huawei.systemmanager.startupmgr.ui.StartupNormalAppListActivity;com.huawei.systemmanager/com.huawei.systemmanager.appcontrol.activity.StartupAppControlActivity;com.huawei.systemmanager/com.huawei.systemmanager.optimize.process.ProtectActivity;com.hihonor.systemmanager/com.hihonor.systemmanager.startupmgr.ui.StartupNormalAppListActivity;com.coloros.safecenter/com.coloros.safecenter.permission.startup.StartupAppListActivity;com.coloros.safecenter/com.coloros.safecenter.startupapp.StartupAppListActivity;com.oppo.safe/com.oppo.safe.permission.startup.StartupAppListActivity;com.vivo.permissionmanager/com.vivo.permissionmanager.activity.BgStartUpManagerActivity;com.iqoo.secure/com.iqoo.secure.ui.phoneoptimize.BgStartUpManager;com.iqoo.secure/com.iqoo.secure.ui.phoneoptimize.AddWhiteListActivity;com.vivo.permissionmanager/com.vivo.permissionmanager.activity.PurviewTabActivity;com.samsung.android.sm_cn/com.samsung.android.sm.ui.ram.AutoRunActivity;com.samsung.android.lool/com.samsung.android.sm.ui.battery.BatteryActivity;com.meizu.safe/com.meizu.safe.permission.SmartBGActivity;com.asus.mobilemanager/com.asus.mobilemanager.autostart.AutoStartActivity;com.letv.android.letvsafe/com.letv.android.letvsafe.AutobootManageActivity;com.lenovo.security/com.lenovo.security.purebackground.PureBackgroundActivity;com.transsion.phonemaster/com.cyin.himgr.autostart.AutoStartActivity;com.htc.pitroad/com.htc.pitroad.landingpage.activity.LandingPageActivity"
 
     const-string v2, ";"
