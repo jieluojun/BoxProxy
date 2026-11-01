@@ -5111,6 +5111,8 @@
 
     .line 145
     :cond_5
+    invoke-static/range {p1 .. p1}, Lcom/box/app/vpn/VpnPrefs;->noteSwitch(Z)V
+
     # VPN run mode: no root boot script to install / remove (BootReceiver starts the VPN at boot)
     invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z
 
