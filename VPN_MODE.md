@@ -291,8 +291,16 @@ sing-box 版是 1.15 的 providers 格式（`type: remote` 的 `免流订阅` / 
   （跳过 IMS）的 `protocol / roaming_protocol` 改成 `IP`，原值存 `apn.state`；改不动（运营商锁定）只提示。
 - `还原系统 IPv6.sh`（`ipv6_restore.sh`）：建议设为「服务停止后」。按保存的原值还原 sysctl 和 APN；没有保存的状态就什么都不改。
 - 两个脚本都始终 `exit 0`，不会拦住服务启动 / 停止；需要 root；只在自己的状态目录写文件。
+- **速度**：每次 `content`（telephony 的命令行入口）都要起一个 `app_process`，是主要耗时。禁用脚本现在只查一次、写一次 APN，写入后的校验放到后台；
+  还原脚本的 sysctl 部分立刻完成，APN 部分放后台（输出重定向到 `/dev/null`，App 的脚本执行器不用等），所以「停止」不再被拖几秒。
+  sysctl 读写改用 shell 内建（`read`），不再为每块网卡起 `cat` / `grep`。
+- **APN 不生效的处理**：①查询除了「首选 APN」，查不到时再并行问各卡槽和 `carriers/current`（只取 default 类型）；
+  ②还原时先按保存的 id 找，找不到按 APN 名称找（在 APN 界面重置后 id 会变），都没有就当作已重置，丢弃过期状态而不是反复失败；
+  ③写入后后台校验，没生效的重试一次，仍失败的保留状态，下次还原再试；
+  ④禁用 / 还原的 APN 部分用目录锁串行（`lock.d`，最多等 12 秒、超过 2 分钟视为过期），后台还原时马上又启动不会互相覆盖。
+  后台部分的结果都写进 `/data/local/tmp/boxproxy-ipv6/log`。
 - 若 IPv6 模式本身设成「禁用」，boxctl 自己也会写 sysctl（含蜂窝），× 仍会出现——用这两个脚本时把 IPv6 模式设为启用 / 绕过。
-- 已在 sandbox 里用伪造的 `/proc/sys/net/ipv6/conf` 和 `content` 命令测过禁用 → 重复禁用 → 还原；真机未验证。
+- 已在 sandbox 里用伪造的 `/proc/sys/net/ipv6/conf` 和 `content` 命令测过：禁用 → 还原、重复禁用、首选 APN 查不到、APN id 变化、写入被锁定、还原时立刻再启动；真机未验证。
 
 ## 核心压缩包安装：条目名匹配
 
