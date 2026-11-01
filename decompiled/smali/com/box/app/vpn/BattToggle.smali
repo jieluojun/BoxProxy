@@ -5,7 +5,6 @@
 # "Battery optimization unrestricted" switch of the settings page.
 #   mode 0: the switch's onCheckedChange (Function1<Boolean, Unit>)
 #   mode 1: one-shot re-sync of the switch state with the system
-#   mode 3: open the OEM auto-start page (VpnPrefs.doAutostart) on the main thread
 #   mode 2: re-sync poll tick (every 700 ms for ~2 min after the system page was opened)
 .implements Lr52;
 .implements Ljava/lang/Runnable;
@@ -110,18 +109,9 @@
     .locals 4
 
     :try_start_0
-    iget v0, p0, Lcom/box/app/vpn/BattToggle;->mode:I
-
-    const/4 v1, 0x3
-
-    if-ne v0, v1, :cond_notauto
-
-    invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->doAutostart()V
-
-    return-void
-
-    :cond_notauto
     invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->battSync()V
+
+    iget v0, p0, Lcom/box/app/vpn/BattToggle;->mode:I
 
     const/4 v1, 0x2
 
