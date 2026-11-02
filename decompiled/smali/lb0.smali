@@ -1460,29 +1460,10 @@
     .line 6
     move-result-object v0
 
-    .line 7
-    const/4 v2, 0x0
-
-    .line 8
-    invoke-virtual {v0, v2}, Landroid/content/Context;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
-
-    .line 9
-    .line 10
-    .line 11
-    move-result-object v0
-
-    .line 12
-    if-nez v0, :cond_external_files_ready
-
-    invoke-static {}, Lsa7;->p()Landroid/content/Context;
+    invoke-static {v0}, Lcom/box/app/vpn/BoxDir;->base(Landroid/content/Context;)Ljava/io/File;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
-
-    move-result-object v0
-
-    :cond_external_files_ready
     new-instance v1, Ljava/io/File;
 
     .line 13

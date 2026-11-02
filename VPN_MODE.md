@@ -348,3 +348,22 @@ monitor 重新拉起自己 / 派生 worker 时如果只沿用 `--db`，工作目
 
 现在 `BoxctlFix` 在改用真实路径时，会把所有以 `/storage/emulated/` 开头的参数（包括 `--db`）一并改成 `/data/media/…`（同一份文件）；开机脚本里的 `--db` 同样处理。
 更新后需要让旧的 monitor 进程退出：重启手机，或「停止服务」后重新保存一次网络匹配设置 / 再启动一次服务。真机未验证。
+
+## 有 root / 无 root：工作目录完全独立（`BoxDir`）
+
+root 在外部存储（`/storage/emulated/0/Android/data/<包名>/files/box`，FUSE / sdcardfs，挂载带 `noexec`）上执行 boxctl / 内核会 `Permission denied`；
+应用私有目录在 `/data` 上没有这个问题。所以不再绕路径，而是两种情况各用各的目录：
+
+| 状态 | box 目录 |
+|---|---|
+| 没给 BoxProxy root 权限（VPN 模式） | `/storage/emulated/0/Android/data/<包名>/files/box` |
+| 给了 root 权限 | `/data/user/0/<包名>/files/box`（和最初没改工作目录时一样） |
+
+* 两边的 `box.db`（设置 / 订阅）、配置、脚本、内核（`bin`）互相独立；内置免流配置 / IPv6 脚本的「只种一次」标记也是各自一份（`box_seed` / `box_seed_i`），换目录后会在新目录里重新种。
+* 目录在进程启动时定下，不会运行中途切换（`box.db` 里存着设置，中途换会突然变成另一份）：本次进程用「上一次探测到的 root 状态」（`SharedPreferences box_dir/root`，没有记录按无 root）。
+  `VpnRoot` 每次探测到 root 状态（`su -c id`）就更新这个记录；和本次进程用的目录不一致时弹一次提示，**重新打开应用后切换**。
+  也就是说：第一次授予 root 的那次运行还是外部存储，下次打开应用起用私有目录；撤销 root 则反过来。
+* 第一次切到私有目录时（私有目录里还没有 `box.db`、外部存储里有），把外部存储 `box` 里的设置 / 配置 / 脚本复制到私有目录（不复制 `bin` / `run` / `cache` / `locks` / `runtime` / `monitor` / `state`）。
+  **内核（`bin`）不复制，需要在 root 模式下重新安装**（核心更新页）。原来外部存储里的文件不会删。
+* 私有目录里的路径不是 `/storage/emulated/…`，`BoxctlFix` / 开机脚本的 `/data/media` 真实路径逻辑自然不会触发（保留，供外部存储目录下的 root 使用，比如刚授予 root 的那次运行）。
+* 开机脚本是否重装、内置脚本是否重写都按各自目录的标记判断，切换到私有目录后的第一次启动会按新目录重新来一遍。真机未验证。
