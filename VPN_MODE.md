@@ -324,3 +324,14 @@ sing-box 版是 1.15 的 providers 格式（`type: remote` 的 `免流订阅` / 
 
 注意：已经在跑的 `boxctl monitor` 是旧进程，路径不会变，需要「停止服务 → 再启动」（或重启手机）后才换成新的启动方式。
 `/data/adb/service.d/` 下如果还留着 `boxproxy-box.sh.bak` 之类的备份副本，Magisk / KernelSU 也会把它当脚本执行（日志里每行出现两次就是这样），请手动删除。
+
+## 应用管理：MIUI / HyperOS 的「获取已安装的应用信息」权限
+
+小米 / HyperOS 对读取应用列表还有一层运行时权限 `com.android.permission.GET_INSTALLED_APPS`（由 `com.lbe.security.miui` 声明），没授予时系统只返回一个被裁剪的包列表，
+「应用管理」页几乎是空的。参照 YumeBox：进入「应用管理」（应用列表加载入口 `Lju;->b`）时，如果
+1. 这个权限是 `com.lbe.security.miui` 声明的（即确实是 MIUI / HyperOS），并且
+2. 还没授予，
+
+就弹系统的「允许 BoxProxy 获取已安装的应用信息？」对话框（`Activity.requestPermissions`，用最前台的 Activity）。选「允许」后后台线程发现权限已授予，主线程调用
+`Lju;->b(true, false, false)` 强制重新加载列表（绕过 2 分钟缓存）。选「拒绝」不会重新加载；每次再进「应用管理」会再问一次（系统自己会在「不再询问」后直接拒绝，不再弹窗）。
+非小米设备上这个权限不存在，整段逻辑直接跳过。实现：`com/box/app/vpn/AppPerm.smali`，清单里加了 `uses-permission com.android.permission.GET_INSTALLED_APPS`。真机未验证。
