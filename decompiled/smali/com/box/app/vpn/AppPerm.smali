@@ -5,7 +5,8 @@
 # MIUI / HyperOS "get installed apps" runtime permission (the "允许 xxx 获取已安装的应用信息?" dialog).
 # Without it the system hands the app a trimmed package list, so the 应用管理 page shows almost nothing.
 # Like YumeBox: opening the page (Lju;->b, the app-list loader) asks for it when
-#   1) the permission is declared by com.lbe.security.miui (i.e. this is MIUI / HyperOS), and
+#   1) the ROM defines it as a runtime permission (MIUI / HyperOS: com.lbe.security.miui; OPPO / Honor / Huawei ...:
+#      the same TAF-standard name, defined by the ROM; AOSP: not defined -> skipped), and
 #   2) it is not granted yet.
 # After the dialog is answered with "allow" the list is reloaded (force = true, bypasses the 2 min cache).
 #   mode 0: main thread  -> show the dialog on the resumed activity, then start the poll thread
@@ -35,7 +36,7 @@
 .end method
 
 .method private static supported(Landroid/content/Context;)Z
-    .locals 3
+    .locals 4
 
     :try_start_0
     invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
@@ -50,15 +51,36 @@
 
     move-result-object v0
 
-    iget-object v0, v0, Landroid/content/pm/PermissionInfo;->packageName:Ljava/lang/String;
+    # MIUI / HyperOS: declared by com.lbe.security.miui
+    iget-object v3, v0, Landroid/content/pm/PermissionInfo;->packageName:Ljava/lang/String;
 
     const-string v1, "com.lbe.security.miui"
 
-    invoke-virtual {v1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
+
+    if-nez v1, :cond_yes
+
+    # other ROMs (OPPO / OnePlus / realme / Honor / Huawei / vivo ...): same TAF-standard permission name,
+    # declared by the ROM itself as a runtime ("dangerous") permission
+    iget v0, v0, Landroid/content/pm/PermissionInfo;->protectionLevel:I
+
+    and-int/lit8 v0, v0, 0xf
+
+    const/4 v1, 0x1
+
+    if-ne v0, v1, :cond_no
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_yes
+    const/4 v0, 0x1
+
+    return v0
+
+    :cond_no
+    const/4 v0, 0x0
 
     return v0
 

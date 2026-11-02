@@ -335,3 +335,7 @@ sing-box 版是 1.15 的 providers 格式（`type: remote` 的 `免流订阅` / 
 就弹系统的「允许 BoxProxy 获取已安装的应用信息？」对话框（`Activity.requestPermissions`，用最前台的 Activity）。选「允许」后后台线程发现权限已授予，主线程调用
 `Lju;->b(true, false, false)` 强制重新加载列表（绕过 2 分钟缓存）。选「拒绝」不会重新加载；每次再进「应用管理」会再问一次（系统自己会在「不再询问」后直接拒绝，不再弹窗）。
 非小米设备上这个权限不存在，整段逻辑直接跳过。实现：`com/box/app/vpn/AppPerm.smali`，清单里加了 `uses-permission com.android.permission.GET_INSTALLED_APPS`。真机未验证。
+
+**其他品牌**：这个权限名来自国标（TAF）要求，OPPO / 一加 / realme（ColorOS）、荣耀（MagicOS）、华为等也用同一个名字 `com.android.permission.GET_INSTALLED_APPS`，只是由各自系统定义。
+所以判断改成：该权限存在且被系统定义为运行时（dangerous）权限就申请（MIUI 仍按 `com.lbe.security.miui` 判断）。AOSP / 未定义该权限的系统（含 vivo 等没有公开同名运行时权限的）会跳过。
+同一个清单声明对这些系统都生效，无需额外权限。
