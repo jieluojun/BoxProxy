@@ -3072,7 +3072,7 @@
 
     .line 218
     .line 219
-    const-string v1, "\n              log -t BoxProxyBoot \'runtime files are ready\' 2>/dev/null || true\n\n              _bh=; _bxp(){ if command -v timeout >/dev/null 2>&1; then timeout 5 \"$1\" -h </dev/null >/dev/null 2>&1; else \"$1\" -h </dev/null >/dev/null 2>&1; fi; [ $? -ne 126 ]; }\n              case \"$boxctl\" in /storage/emulated/*)\n                _ba=\"/data/media/${boxctl#/storage/emulated/}\"\n                if [ -f \"$_ba\" ]; then\n                  _bad=0; for _f in \"${boxctl%/*}\"/*; do [ -f \"$_f\" ] || continue; case \"${_f##*/}\" in boxctl|boxbpf|*.*) continue;; esac; _bxp \"$_f\" || _bad=1; done\n                  if [ \"$_bad\" = 0 ] && _bxp \"$boxctl\"; then :; else chmod 755 \"$_ba\" 2>/dev/null; if _bxp \"$_ba\"; then _bh=\"--home ${_ba%/bin/boxctl}\"; boxctl=\"$_ba\"; fi; fi\n                fi;; esac\n              \"$boxctl\" $_bh --db \"$db\" boot >> \"$log_file\" 2>&1\n              start_code=$?\n              if [ \"$start_code\" -eq 0 ]; then\n                boot_log "
+    const-string v1, "\n              log -t BoxProxyBoot \'runtime files are ready\' 2>/dev/null || true\n\n              _bh=; case \"$boxctl\" in /storage/emulated/*) _ba=\"/data/media/${boxctl#/storage/emulated/}\"; if [ -f \"$_ba\" ]; then chmod 755 \"$_ba\" 2>/dev/null; if [ -x \"$_ba\" ]; then _bh=\"--home ${_ba%/bin/boxctl}\"; boxctl=\"$_ba\"; fi; fi;; esac\n              \"$boxctl\" $_bh --db \"$db\" boot >> \"$log_file\" 2>&1\n              start_code=$?\n              if [ \"$start_code\" -eq 0 ]; then\n                boot_log "
 
     .line 220
     .line 221

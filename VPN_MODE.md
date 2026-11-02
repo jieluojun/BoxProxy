@@ -319,14 +319,8 @@ sing-box 版是 1.15 的 providers 格式（`type: remote` 的 `免流订阅` / 
    现在每次安装后第一次启动，如果「开机自启」开着且当前是 root 运行模式，会自动重装一次开机脚本（`VpnSeed.seedBoot` → `BootSync.start(false)`，
    按 `PackageInfo.lastUpdateTime` 判断，每次安装只做一次；`BootSync` 等运行模式确定后才动手，VPN 模式下不会装 root 脚本）。
 2. **`/storage/emulated/…` 下 boxctl 自己能执行，但它起核心时被拒**（核心是 boxctl 下载的，属主 root、`6755`）。原来的判断是「boxctl 本身不能执行才改用真实路径」，
-   这类设备上不会触发，boxctl 没带 `--home`，核心仍走 `/storage/emulated/…`。
-   现在 `BoxctlFix`（App 里所有 root 命令）和开机脚本都**先试运行再选路径**，不会让原来正常的设备变差：
-   - 原路径上的 boxctl 和 `bin/` 下已有的每个核心都能运行（`timeout 5 <文件> -h`，退出码不是 126，Go 程序的 `-h` 只打印用法）→ **原样运行，行为和以前完全一样**；
-   - 否则，真实路径 `/data/media/<用户>/…` 上的 boxctl（先 `chmod 755`）能运行 → 改用真实路径并带 `--home`，核心也走真实路径；
-   - 两边都不行 → 原样运行。
-   - App 里的结果按「开机 ID + 路径」缓存在 `/data/local/tmp/.boxproxy-exec-app`，每次开机只试一次；`bin/` 里还没有核心时不缓存（没东西可试）。开机脚本没有缓存，每次开机试一次。
-   - 走真实路径时 boxctl 如果返回 126（打不开），自动退回原路径再试一次。
-   - 在 sandbox 里用模拟目录测过：全部可运行 → 原路径；核心不可运行 → 真实路径；没有核心 → 原路径且不缓存；boxctl 不可运行 → 真实路径；缓存命中。
+   这类设备上不会触发，boxctl 没带 `--home`，核心仍走 `/storage/emulated/…`。现在 `BoxctlFix`（App 里所有 root 命令）和开机脚本都改成：
+   只要真实路径上有 boxctl 并且 `chmod 755` 后可执行，就一律用真实路径并带 `--home`，核心也走 `/data/media/<用户>/…/box/bin/…`；真实路径不存在才保持原样。
 
 注意：已经在跑的 `boxctl monitor` 是旧进程，路径不会变，需要「停止服务 → 再启动」（或重启手机）后才换成新的启动方式。
 `/data/adb/service.d/` 下如果还留着 `boxproxy-box.sh.bak` 之类的备份副本，Magisk / KernelSU 也会把它当脚本执行（日志里每行出现两次就是这样），请手动删除。
