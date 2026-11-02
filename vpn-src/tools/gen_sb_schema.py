@@ -227,8 +227,9 @@ def gen_hints(src):
                 if "." not in k:
                     prov["%s.%s" % (rel.split("/", 1)[1], k)] = v
     # 手工校正（按使用者的说法写得更直白）
-    prov["override_transport.host"] = "覆写节点混淆（Host）。"
-    prov["override_transport.path"] = "覆写 HTTP 出站的请求路径。"
+    # fork 2d1f5fad3：host / path / with_at 已从 override_transport 移到 override_dialer
+    prov["override_dialer.host"] = "覆写节点混淆（Host）。"
+    prov["override_dialer.path"] = "覆写 HTTP 出站的请求路径。"
     hints["*"] = common
     return hints
 
@@ -241,8 +242,9 @@ def main():
     schema = json.load(open(os.path.join(src, "docs", "schema.json"), encoding="utf-8"))
     notes = patch(schema)
     schema.pop("description", None)
-    # override_transport 的 With-At 是 with_at 的别名，可视化里只保留 with_at
-    schema["$defs"].get("OverrideTransportOptions", {}).get("properties", {}).pop("With-At", None)
+    # With-At 是 with_at 的别名（旧 fork 里在 override_transport，现在 override_dialer），可视化里只保留 with_at
+    for _n in ("OverrideDialerOptions", "OverrideTransportOptions"):
+        schema["$defs"].get(_n, {}).get("properties", {}).pop("With-At", None)
     with open(os.path.join(out, "sing-box-fork.json"), "w", encoding="utf-8") as f:
         json.dump(schema, f, ensure_ascii=False, separators=(",", ":"))
     hints = gen_hints(src)
