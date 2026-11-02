@@ -10,8 +10,7 @@
 # 目录要在进程启动时就定下来（box.db 里存着设置，运行中途换目录会让设置突然变成另一份），所以：
 #   * 本次进程用的目录 = 「上一次探测到的 root 状态」（SharedPreferences box_dir/root，没有记录按无 root = 外部存储）；
 #   * VpnRoot 每次得到 root 探测结果（su -c id）就调用 noteState 更新这个记录，与本次进程用的目录不一致时提示一次，下次打开应用生效。
-# 第一次切到私有目录时（私有目录里还没有 box.db、外部存储里有），把外部存储 box 里的设置 / 配置 / 脚本复制过去（不含 bin / run 等运行时
-# 目录：内核需要在 root 模式下重新安装）；之后两边互不影响。
+# 第一次切到私有目录时（私有目录里还没有 box.db、外部存储里有），把外部存储 box 整个复制过去（含 bin / run / cache / state 等）；之后两边互不影响。
 .implements Ljava/lang/Runnable;
 
 # static fields
@@ -253,7 +252,7 @@
     goto :goto_end
 .end method
 
-# 第一次切到私有目录：把外部存储 box 里的设置 / 配置 / 脚本复制过来（bin / run 等运行时目录不复制）
+# 第一次切到私有目录：把外部存储 box 整个复制过来（含 bin / run / cache / state 等；再把 bin 设成 755，外部存储文件没有执行位）
 .method private static migrate(Landroid/content/Context;)V
     .locals 8
 
@@ -308,7 +307,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "for f in \'"
+    const-string v3, "cp -r \'"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -318,7 +317,17 @@
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v1, "\'/*; do [ -e \"$f\" ] || continue; case \"${f##*/}\" in bin|run|cache|locks|runtime|monitor|state) ;; *) cp -r \"$f\" \'"
+    const-string v1, "\'/. \'"
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "\'/ >/dev/null 2>&1; chmod -R 755 \'"
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -328,7 +337,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, "\'/;; esac; done >/dev/null 2>&1"
+    const-string v0, "\'/bin >/dev/null 2>&1"
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
