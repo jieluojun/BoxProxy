@@ -101,7 +101,7 @@ Compose 不再重组，于是一直灰到下一次打字。修法：`mj5.m` 把�
 ## sing-box 的可视化修改
 
 左上角同一位置的船锚图标，打开 `SbFormActivity`（`.json` / `.jsonc`，`CfgLauncher` 按扩展名分流）。**字段范围以 fork https://github.com/jieluojun/sing-box 为准**
-（含最新的 `b272cc96`：订阅 `override_transport` 新增 `host` / `path` / `with_at`（别名 `With-At` 在可视化里不列出，保留 with_at）；以及 `3cc2bbf7`：`cns` 入站 / 出站、HTTP 出站的 CONNECT 相关字段、`providers`、`http_clients`、`certificate_providers`、`network_namespaces` 等）：
+（含最新的 `b272cc96`：订阅 `host` / `path` / `with_at`（别名 `With-At` 在可视化里不列出，保留 with_at；fork 的 `2e2223e3` 起这三个字段从 `override_transport` 迁到了 `override_dialer`，`override_transport` 只剩 `xhttp_download_enabled` / `xhttp_download_detour`；旧配置里还写在 `override_transport` 下的这三个字段，内核会拒绝，可视化里会显示在「未识别字段」行，需要手动移到 `override_dialer`）；以及 `3cc2bbf7`：`cns` 入站 / 出站、HTTP 出站的 CONNECT 相关字段、`providers`、`http_clients`、`certificate_providers`、`network_namespaces` 等）：
 
 - 数据来源是随 APK 带的 `assets/schema/sing-box-fork.json`（fork 的 `docs/schema.json`，补上了它没有的 `cns` / `del_host` / tun `stack`）
   和 `sing-box-fork-hints.json`（从 fork 的 `docs/configuration/**/*.zh.md` 抽的中文字段说明）。两个文件由 `vpn-src/tools/gen_sb_schema.py` 生成，fork 更新后重新跑即可。
