@@ -151,6 +151,9 @@
 .method public final b(ZZZ)V
     .locals 7
 
+    # MIUI / HyperOS: ask for the "get installed apps" permission when the list is (re)loaded
+    invoke-static {p0}, Lcom/box/app/vpn/AppPerm;->check(Lju;)V
+
     .line 1
     iget-boolean v0, p0, Lju;->h:Z
 

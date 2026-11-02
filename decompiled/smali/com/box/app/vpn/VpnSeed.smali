@@ -68,8 +68,82 @@
     .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_3
 
     :catch_3
+    invoke-static {}, Lcom/box/app/vpn/VpnSeed;->seedBoot()V
 
     return-void
+.end method
+
+# Root boot script (/data/adb/service.d/boxproxy-box.sh): an installed script keeps running the OLD
+# code after an app update (the "boxctl: Permission denied" / exit code 126 reports came from scripts
+# written by older builds).  Once per install (PackageInfo.lastUpdateTime) re-install it when "boot
+# auto-start" is on in a root run mode; BootSync checks the setting and the mode on its own thread.
+.method private static seedBoot()V
+    .locals 8
+
+    :try_start_0
+    invoke-static {}, Lsa7;->p()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v1
+
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, v2, v3}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+
+    move-result-object v1
+
+    iget-wide v4, v1, Landroid/content/pm/PackageInfo;->lastUpdateTime:J
+
+    const-string v1, "box_seed"
+
+    invoke-virtual {v0, v1, v3}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v1
+
+    const-string v2, "boot_script_at"
+
+    const-wide/16 v6, -0x1
+
+    invoke-interface {v1, v2, v6, v7}, Landroid/content/SharedPreferences;->getLong(Ljava/lang/String;J)J
+
+    move-result-wide v6
+
+    cmp-long v6, v6, v4
+
+    if-eqz v6, :cond_done
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    invoke-interface {v1, v2, v4, v5}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v1
+
+    invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    const/4 v0, 0x0
+
+    invoke-static {v0}, Lcom/box/app/vpn/BootSync;->start(Z)V
+
+    :cond_done
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :goto_end
+    return-void
+
+    :catch_0
+    move-exception v0
+
+    goto :goto_end
 .end method
 
 # assets/box/scripts/*.sh -> <box home>/scripts/<name>：每次安装（含覆盖安装）后第一次启动都重新生成并覆盖。

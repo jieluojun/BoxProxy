@@ -79,6 +79,21 @@
     goto :goto_loop
 
     :cond_go
+    # the mode may still not be the wanted one after the wait: then do nothing
+    invoke-static {}, Llb0;->g()Lya0;
+
+    move-result-object v1
+
+    iget-object v1, v1, Lya0;->b:Ljava/lang/String;
+
+    invoke-static {v1}, Lcom/box/app/vpn/VpnBridge;->isVpn(Ljava/lang/String;)Z
+
+    move-result v1
+
+    iget-boolean v2, p0, Lcom/box/app/vpn/BootSync;->a:Z
+
+    if-ne v1, v2, :cond_end
+
     invoke-static {}, Llb0;->g()Lya0;
 
     move-result-object v1
