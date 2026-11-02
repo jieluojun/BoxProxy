@@ -42,7 +42,7 @@
 
     invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "; _o=\"$_bx\"; _hm=; case \"$_o\" in /storage/emulated/*) _a=\"/data/media/${_o#/storage/emulated/}\"; if [ -f \"$_a\" ]; then chmod 755 \"$_a\" >/dev/null 2>&1; if [ -x \"$_a\" ]; then _bx=\"$_a\"; _hm=\"${_a%/bin/boxctl}\"; fi; fi;; esac; _bxe(){ if [ -n \"$_hm\" ]; then \"$_bx\" --home \"$_hm\" \"$@\"; else \"$_bx\" \"$@\"; fi; }; "
+    const-string v3, "; _o=\"$_bx\"; _hm=; case \"$_o\" in /storage/emulated/*) _a=\"/data/media/${_o#/storage/emulated/}\"; if [ -f \"$_a\" ]; then chmod 755 \"$_a\" >/dev/null 2>&1; if [ -x \"$_a\" ]; then _bx=\"$_a\"; _hm=\"${_a%/bin/boxctl}\"; fi; fi;; esac; _bxe(){ if [ -n \"$_hm\" ]; then _n=$#; while [ \"$_n\" -gt 0 ]; do _x=\"$1\"; shift; case \"$_x\" in /storage/emulated/*) _x=\"/data/media/${_x#/storage/emulated/}\";; esac; set -- \"$@\" \"$_x\"; _n=$((_n-1)); done; \"$_bx\" --home \"$_hm\" \"$@\"; else \"$_bx\" \"$@\"; fi; }; "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

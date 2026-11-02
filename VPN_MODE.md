@@ -339,3 +339,12 @@ sing-box 版是 1.15 的 providers 格式（`type: remote` 的 `免流订阅` / 
 **其他品牌**：这个权限名来自国标（TAF）要求，OPPO / 一加 / realme（ColorOS）、荣耀（MagicOS）、华为等也用同一个名字 `com.android.permission.GET_INSTALLED_APPS`，只是由各自系统定义。
 所以判断改成：该权限存在且被系统定义为运行时（dangerous）权限就申请（MIUI 仍按 `com.lbe.security.miui` 判断）。AOSP / 未定义该权限的系统（含 vivo 等没有公开同名运行时权限的）会跳过。
 同一个清单声明对这些系统都生效，无需额外权限。
+
+### 网络匹配「能停不能启」：`--db` 也要走真实路径
+
+现象：网络匹配命中「启动服务」时仍然 `start core failed: start /storage/emulated/0/…/bin/mihomo failed: Permission denied`，路径还是 `/storage/emulated/…`，说明常驻的 monitor 进程的工作目录没有换成真实路径。
+boxctl 的工作目录来自 `--home`，没有 `--home` 时取 `--db` 的上一级（"Box home directory requires --home or --db"）。之前只给 boxctl 加了 `--home`，`--db` 仍是 `/storage/emulated/…/box.db`，
+monitor 重新拉起自己 / 派生 worker 时如果只沿用 `--db`，工作目录就又回到了 `/storage/emulated`。
+
+现在 `BoxctlFix` 在改用真实路径时，会把所有以 `/storage/emulated/` 开头的参数（包括 `--db`）一并改成 `/data/media/…`（同一份文件）；开机脚本里的 `--db` 同样处理。
+更新后需要让旧的 monitor 进程退出：重启手机，或「停止服务」后重新保存一次网络匹配设置 / 再启动一次服务。真机未验证。

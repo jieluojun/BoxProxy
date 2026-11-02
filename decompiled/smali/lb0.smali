@@ -3072,7 +3072,7 @@
 
     .line 218
     .line 219
-    const-string v1, "\n              log -t BoxProxyBoot \'runtime files are ready\' 2>/dev/null || true\n\n              _bh=; case \"$boxctl\" in /storage/emulated/*) _ba=\"/data/media/${boxctl#/storage/emulated/}\"; if [ -f \"$_ba\" ]; then chmod 755 \"$_ba\" 2>/dev/null; if [ -x \"$_ba\" ]; then _bh=\"--home ${_ba%/bin/boxctl}\"; boxctl=\"$_ba\"; fi; fi;; esac\n              \"$boxctl\" $_bh --db \"$db\" boot >> \"$log_file\" 2>&1\n              start_code=$?\n              if [ \"$start_code\" -eq 0 ]; then\n                boot_log "
+    const-string v1, "\n              log -t BoxProxyBoot \'runtime files are ready\' 2>/dev/null || true\n\n              _bh=; case \"$boxctl\" in /storage/emulated/*) _ba=\"/data/media/${boxctl#/storage/emulated/}\"; if [ -f \"$_ba\" ]; then chmod 755 \"$_ba\" 2>/dev/null; if [ -x \"$_ba\" ]; then _bh=\"--home ${_ba%/bin/boxctl}\"; boxctl=\"$_ba\"; case \"$db\" in /storage/emulated/*) db=\"/data/media/${db#/storage/emulated/}\";; esac; fi; fi;; esac\n              \"$boxctl\" $_bh --db \"$db\" boot >> \"$log_file\" 2>&1\n              start_code=$?\n              if [ \"$start_code\" -eq 0 ]; then\n                boot_log "
 
     .line 220
     .line 221
