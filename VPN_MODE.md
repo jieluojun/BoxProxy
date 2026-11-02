@@ -307,3 +307,20 @@ sing-box 版是 1.15 的 providers 格式（`type: remote` 的 `免流订阅` / 
 「更新核心」解压 tar.gz 时，原先只认文件名**恰好等于**核心名（如 `sing-box`）的条目。钉钉直连核心的发布包里只有一个带版本号的文件
 （`sing-box-1.15-alpha.13-<sha>-android-arm64-v8a-ebpf`），所以提示「压缩包内未找到核心文件: sing-box」。现在 `ra7.v` 额外接受
 「文件名以 `<核心名>-` 开头且大于 1 MiB」的条目（精确匹配仍然优先）。
+
+## root 模式「Permission denied / exit code 126」（开机自启、网络匹配）
+
+现象：开机自启日志里 `/data/adb/service.d/boxproxy-box.sh: line 37: /storage/emulated/0/Android/data/…/bin/boxctl: Permission denied`、`启动失败: exit code 126`；
+网络匹配触发「启动服务」时 `start core failed: start …/bin/mihomo failed: Permission denied (os error 13)`。
+
+原因有两个：
+1. **已安装的开机脚本是旧版本写的**。`/data/adb/service.d/boxproxy-box.sh` 只在切换开关 / 切换运行模式时才重写，覆盖安装 APP 不会更新它，
+   所以修过的「真实路径 `/data/media/<用户>/…` 执行」逻辑一直没有进到设备上的脚本里（日志里的 `line 37` 是旧脚本的行号，新脚本是第 38 行）。
+   现在每次安装后第一次启动，如果「开机自启」开着且当前是 root 运行模式，会自动重装一次开机脚本（`VpnSeed.seedBoot` → `BootSync.start(false)`，
+   按 `PackageInfo.lastUpdateTime` 判断，每次安装只做一次；`BootSync` 等运行模式确定后才动手，VPN 模式下不会装 root 脚本）。
+2. **`/storage/emulated/…` 下 boxctl 自己能执行，但它起核心时被拒**（核心是 boxctl 下载的，属主 root、`6755`）。原来的判断是「boxctl 本身不能执行才改用真实路径」，
+   这类设备上不会触发，boxctl 没带 `--home`，核心仍走 `/storage/emulated/…`。现在 `BoxctlFix`（App 里所有 root 命令）和开机脚本都改成：
+   只要真实路径上有 boxctl 并且 `chmod 755` 后可执行，就一律用真实路径并带 `--home`，核心也走 `/data/media/<用户>/…/box/bin/…`；真实路径不存在才保持原样。
+
+注意：已经在跑的 `boxctl monitor` 是旧进程，路径不会变，需要「停止服务 → 再启动」（或重启手机）后才换成新的启动方式。
+`/data/adb/service.d/` 下如果还留着 `boxproxy-box.sh.bak` 之类的备份副本，Magisk / KernelSU 也会把它当脚本执行（日志里每行出现两次就是这样），请手动删除。

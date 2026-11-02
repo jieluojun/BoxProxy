@@ -5,8 +5,9 @@
 # root 模式的 boxctl 放在外部存储（/storage/emulated/0/Android/data/<包名>/files/box/bin/boxctl）。有些机型 / root 方案下
 # su 看到的 /storage/emulated/… 不让执行（"can't execute: Permission denied"，核心也一样：
 # "execute …/bin/mihomo failed: Permission denied"）。同一批文件在真实路径 /data/media/<用户>/… 下可以执行，所以：
-#   1) boxctl 本来就能执行 → 原样运行（不改变现有设备的行为）；
-#   2) 否则改用真实路径执行 boxctl（chmod 755），并给它 --home /data/media/<用户>/…/box，
+#   1) 真实路径上的 boxctl 存在且可执行 → 一律改用真实路径（即使 /storage/emulated 下 boxctl 自己能执行，
+#      它起核心时仍可能 Permission denied：部分机型 boxctl 能跑、核心被拒）；
+#   2) 否则原样运行；改用真实路径时执行 boxctl（chmod 755），并给它 --home /data/media/<用户>/…/box，
 #      让它起核心时也走真实路径（<home>/bin/mihomo）。
 
 .method private constructor <init>()V
@@ -41,7 +42,7 @@
 
     invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "; _o=\"$_bx\"; _hm=; if [ ! -x \"$_o\" ]; then case \"$_o\" in /storage/emulated/*) _a=\"/data/media/${_o#/storage/emulated/}\"; if [ -f \"$_a\" ]; then chmod 755 \"$_a\" >/dev/null 2>&1; if [ -x \"$_a\" ]; then _bx=\"$_a\"; _hm=\"${_a%/bin/boxctl}\"; fi; fi;; esac; fi; _bxe(){ if [ -n \"$_hm\" ]; then \"$_bx\" --home \"$_hm\" \"$@\"; else \"$_bx\" \"$@\"; fi; }; "
+    const-string v3, "; _o=\"$_bx\"; _hm=; case \"$_o\" in /storage/emulated/*) _a=\"/data/media/${_o#/storage/emulated/}\"; if [ -f \"$_a\" ]; then chmod 755 \"$_a\" >/dev/null 2>&1; if [ -x \"$_a\" ]; then _bx=\"$_a\"; _hm=\"${_a%/bin/boxctl}\"; fi; fi;; esac; _bxe(){ if [ -n \"$_hm\" ]; then \"$_bx\" --home \"$_hm\" \"$@\"; else \"$_bx\" \"$@\"; fi; }; "
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
