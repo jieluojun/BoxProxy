@@ -1464,6 +1464,14 @@
 
     move-result-object v0
 
+    invoke-static {}, Lsa7;->p()Landroid/content/Context;
+
+    move-result-object v8
+
+    invoke-static {v8}, Lcom/box/app/vpn/BoxDir;->ibox(Landroid/content/Context;)Ljava/io/File;
+
+    move-result-object v8
+
     new-instance v1, Ljava/io/File;
 
     .line 13
@@ -1484,7 +1492,7 @@
 
     .line 21
     .line 22
-    invoke-direct {v2, v1, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v2, v8, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     .line 23
     .line 24
@@ -1527,7 +1535,7 @@
 
     .line 44
     .line 45
-    invoke-direct {v5, v1, v6}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v5, v8, v6}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     .line 46
     .line 47
@@ -3053,7 +3061,7 @@
 
     .line 218
     .line 219
-    const-string v1, "\n              log -t BoxProxyBoot \'runtime files are ready\' 2>/dev/null || true\n\n              _bh=; case \"$boxctl\" in /storage/emulated/*) _ba=\"/data/media/${boxctl#/storage/emulated/}\"; if [ -f \"$_ba\" ]; then chmod 755 \"$_ba\" 2>/dev/null; if [ -x \"$_ba\" ]; then _bh=\"--home ${_ba%/bin/boxctl}\"; boxctl=\"$_ba\"; case \"$db\" in /storage/emulated/*) db=\"/data/media/${db#/storage/emulated/}\";; esac; fi; fi;; esac\n              \"$boxctl\" $_bh --db \"$db\" boot >> \"$log_file\" 2>&1\n              start_code=$?\n              if [ \"$start_code\" -eq 0 ]; then\n                boot_log "
+    const-string v1, "\n              log -t BoxProxyBoot \'runtime files are ready\' 2>/dev/null || true\n\n              _bh=; _ib=\"${boxctl%/*}\"; _ob=\"${_ib%/bin}\"; _rh=\"${run_dir%/run}\"; case \"$_rh\" in /storage/emulated/*) _rh=\"/data/media/${_rh#/storage/emulated/}\"; if [ -d \"$_rh\" ]; then _bh=\"--home $_rh\"; chmod 755 \"$boxctl\" 2>/dev/null; [ -L \"$_rh/bin\" ] || { [ -n \"$(ls -A \"$_ib\" 2>/dev/null)\" ] && rm -rf \"$_rh/bin\"; }; [ -e \"$_rh/bin\" ] || [ -L \"$_rh/bin\" ] || ln -s \"$_ib\" \"$_rh/bin\"; [ -L \"$_rh/box.db\" ] || { [ -f \"$_ob/box.db\" ] && rm -f \"$_rh/box.db\" \"$_rh/box.db-wal\" \"$_rh/box.db-shm\"; }; [ -e \"$_rh/box.db\" ] || [ -L \"$_rh/box.db\" ] || ln -s \"$_ob/box.db\" \"$_rh/box.db\"; fi;; esac\n              \"$boxctl\" $_bh --db \"$db\" boot >> \"$log_file\" 2>&1\n              start_code=$?\n              if [ \"$start_code\" -eq 0 ]; then\n                boot_log "
 
     .line 220
     .line 221

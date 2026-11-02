@@ -101,9 +101,7 @@
 
     iget-wide v4, v1, Landroid/content/pm/PackageInfo;->lastUpdateTime:J
 
-    invoke-static {}, Lcom/box/app/vpn/BoxDir;->seedPrefs()Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, "box_seed"
 
     invoke-virtual {v0, v1, v3}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
@@ -175,9 +173,7 @@
 
     iget-wide v4, v1, Landroid/content/pm/PackageInfo;->lastUpdateTime:J
 
-    invoke-static {}, Lcom/box/app/vpn/BoxDir;->seedPrefs()Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, "box_seed"
 
     invoke-virtual {v0, v1, v3}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
@@ -252,9 +248,7 @@
 
     move-result-object v0
 
-    invoke-static {}, Lcom/box/app/vpn/BoxDir;->seedPrefs()Ljava/lang/String;
-
-    move-result-object v1
+    const-string v1, "box_seed"
 
     const/4 v2, 0x0
 

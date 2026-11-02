@@ -349,25 +349,24 @@ monitor 重新拉起自己 / 派生 worker 时如果只沿用 `--db`，工作目
 现在 `BoxctlFix` 在改用真实路径时，会把所有以 `/storage/emulated/` 开头的参数（包括 `--db`）一并改成 `/data/media/…`（同一份文件）；开机脚本里的 `--db` 同样处理。
 更新后需要让旧的 monitor 进程退出：重启手机，或「停止服务」后重新保存一次网络匹配设置 / 再启动一次服务。真机未验证。
 
-## 有 root / 无 root：工作目录完全独立（`BoxDir`）
+## 有 root / 无 root：工作目录统一（`BoxDir`）
 
-root 在外部存储（`/storage/emulated/0/Android/data/<包名>/files/box`，FUSE / sdcardfs，挂载带 `noexec`）上执行 boxctl / 内核会 `Permission denied`；
-应用私有目录在 `/data` 上没有这个问题。所以不再绕路径，而是两种情况各用各的目录：
+root 在外部存储（FUSE / sdcardfs，挂载带 `noexec`）上执行 boxctl / 内核会 `Permission denied`，私有目录（`/data`）没有这个问题。
+所以不管有没有 root，目录都一样划分：
 
-| 状态 | box 目录 |
+| 内容 | 位置 |
 |---|---|
-| 没给 BoxProxy root 权限（VPN 模式） | `/storage/emulated/0/Android/data/<包名>/files/box` |
-| 给了 root 权限 | `/data/user/0/<包名>/files/box`（和最初没改工作目录时一样） |
+| `box.db`（设置 / 订阅）、`bin`（boxctl、内核） | `/data/user/0/<包名>/files/box/{box.db,bin}`（应用私有） |
+| 其余（`run` / `state` / 配置 / 脚本 / 各内核目录 …） | `/storage/emulated/0/Android/data/<包名>/files/box/…`（外部存储，文件管理器能看到） |
 
-* 两边的 `box.db`（设置 / 订阅）、配置、脚本、内核（`bin`）互相独立；内置免流配置 / IPv6 脚本的「只种一次」标记也是各自一份（`box_seed` / `box_seed_i`），换目录后会在新目录里重新种。
-* 目录在进程启动时定下，不会运行中途切换（`box.db` 里存着设置，中途换会突然变成另一份）：本次进程用「上一次探测到的 root 状态」（`SharedPreferences box_dir/root`，没有记录按无 root）。
-  `VpnRoot` 每次探测到 root 状态（`su -c id`）就更新这个记录；和本次进程用的目录不一致时弹一次提示，**重新打开应用后切换**。
-  也就是说：第一次授予 root 的那次运行还是外部存储，下次打开应用起用私有目录；撤销 root 则反过来。
-* 第一次切到私有目录时（只做一次，标记 `SharedPreferences box_dir/migrated2`），把外部存储 `box` **整个**复制到私有目录（`cp -rn box/. 私有/box/`，含 `bin` 内核、`run` / `cache` / `state` 等运行时目录），
-  再把私有目录的 `bin` 设成 755（外部存储上的文件没有执行位）。`-n` = 不覆盖已有文件、只补缺的：上一版（132）只复制了设置、没复制 `bin`，
-  私有目录里已经有 `box.db`，所以这一版仍会把缺的内核等补过去，而不会冲掉私有目录里已有的设置。原来外部存储里的文件不会删。复制在启动时同步完成，内核多、文件大时会多花几秒。
-* **有 root 时 VPN 模式写私有目录**：root 模式（boxctl / 内核以 root 运行）会在私有目录里留下 root 属主的 `run/`、`runs.log` 等，VPN 模式是应用身份运行，
-  报 `box-vpn.sh: can't create …/files/box/run/runs.log: Permission denied`。`box-vpn.sh` 的 `prepare` / `sync` 开头加了 `fix_own`：检测 `box/` 下（`bin/` 除外，
-  那里的内核 setuid root 位由 boxctl 维护）有没有应用写不了的文件，有就用一次 `su -c chown -R <应用uid>:<gid> …` 还给应用；没有 root 或都能写时什么都不做。
-* 私有目录里的路径不是 `/storage/emulated/…`，`BoxctlFix` / 开机脚本的 `/data/media` 真实路径逻辑自然不会触发（保留，供外部存储目录下的 root 使用，比如刚授予 root 的那次运行）。
-* 开机脚本是否重装、内置脚本是否重写都按各自目录的标记判断，切换到私有目录后的第一次启动会按新目录重新来一遍。真机未验证。
+* `lb0.k()`（`Lab0`）只此一处定路径：`a/c/d` 外部，`b/e/f/g`（bin、box.db、boxctl、boxbpf）私有；`ca0.a()` 直接取 `Lab0.e`，不再从 `run` 的上一级推 box.db。
+  没有外部存储时全部退回私有目录。**不再有按 root 状态切换目录的逻辑**（132–134 的 `box_dir/root`、`noteState` 全部撤掉，内置配置的「只种一次」标记回到单一的 `box_seed`）。
+* 迁移（只做一次，`SharedPreferences box_dir/migrated3`，在第一次 `lb0.k()` 时同步完成）：外部存储 `box/bin` → 私有 `bin`（`cp -rn`，不覆盖），
+  私有目录还没有 `box.db` 时把外部的 `box.db` / `-wal` / `-shm` 一起复制过去（已经有就保留私有的，比如 132–134 版 root 下用过的）；`bin` 设成 755。外部存储里的老文件应用不删。
+* root 模式：boxctl 要求 `box.db` / `bin` / `run` / `state` 在同一个 `--home` 下。所以 `BoxctlFix.wrap` 与开机脚本让 root 以外部存储的真实路径
+  （`/data/media/<用户>/Android/data/<包名>/files/box`）为 `--home`，并在那里建符号链接 `bin -> 私有 bin`、`box.db -> 私有 box.db`；
+  参数里 `/storage/emulated/…` 照旧改成 `/data/media/…`。私有 `bin` 里有内容时才会删掉外部存储里旧的真实 `bin` 目录；私有 `box.db` 存在时才会删掉旧的 `box.db{,-wal,-shm}`。
+  外部存储没有时（`--home` 省略）boxctl 取 `--db` 的上一级，即私有目录。符号链接只有 root 能建，文件管理器（FUSE）可能看不到，应用自己不依赖它们。
+* VPN 模式不经过 boxctl：`box-vpn.sh` 的参数来自 `Lab0`（内核路径 = 私有 `bin`，运行目录 = 外部），无需额外处理；它仍保留 `fix_own`（`prepare` / `sync` 开头，
+  有 root 且 `box/` 下除 `bin/` 外有应用写不了的文件时 `chown -R` 还给应用）。
+* 注意：root 模式留下的 root 属主文件在外部存储 FUSE 视图里属主被统一，通常应用可写；`bin` 里内核由 boxctl 设为 6755 root:3005，应用不 chown 它。真机未验证。

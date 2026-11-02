@@ -72,8 +72,6 @@
     .line 16
     sput p0, Lcom/box/app/vpn/VpnRoot;->state:I
 
-    invoke-static {p0}, Lcom/box/app/vpn/BoxDir;->noteState(I)V
-
     return-void
 .end method
 
@@ -311,8 +309,6 @@
 
     .line 72
     sput v0, Lcom/box/app/vpn/VpnRoot;->state:I
-
-    invoke-static {v0}, Lcom/box/app/vpn/BoxDir;->noteState(I)V
 
     .line 74
     :cond_3d

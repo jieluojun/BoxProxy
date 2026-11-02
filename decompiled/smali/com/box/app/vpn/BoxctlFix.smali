@@ -18,6 +18,72 @@
     return-void
 .end method
 
+# 外部存储 box 目录在 /data/media 下的真实路径（单引号包好）；没有外部存储 / 路径不在 /storage/emulated 下时返回 ''
+.method private static realHome()Ljava/lang/String;
+    .locals 3
+
+    :try_start_0
+    invoke-static {}, Llb0;->k()Lab0;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lab0;->a:Ljava/io/File;
+
+    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "/storage/emulated/"
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_none
+
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "\'/data/media/"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v0, "\'"
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_none
+    const-string v0, ""
+
+    return-object v0
+
+    :catch_0
+    move-exception v0
+
+    const-string v0, ""
+
+    return-object v0
+.end method
+
 # quoted = boxctl 的路径（已经 shell 引号包好），cmd = 原命令 `'<boxctl>' --db '<db>' <子命令>`
 .method public static wrap(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 4
@@ -42,8 +108,17 @@
 
     invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v3, "; _o=\"$_bx\"; _hm=; case \"$_o\" in /storage/emulated/*) _a=\"/data/media/${_o#/storage/emulated/}\"; if [ -f \"$_a\" ]; then chmod 755 \"$_a\" >/dev/null 2>&1; if [ -x \"$_a\" ]; then _bx=\"$_a\"; _hm=\"${_a%/bin/boxctl}\"; fi; fi;; esac; _bxe(){ if [ -n \"$_hm\" ]; then _n=$#; while [ \"$_n\" -gt 0 ]; do _x=\"$1\"; shift; case \"$_x\" in /storage/emulated/*) _x=\"/data/media/${_x#/storage/emulated/}\";; esac; set -- \"$@\" \"$_x\"; _n=$((_n-1)); done; \"$_bx\" --home \"$_hm\" \"$@\"; else \"$_bx\" \"$@\"; fi; }; "
+    const-string v3, "; _rh="
 
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-static {}, Lcom/box/app/vpn/BoxctlFix;->realHome()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v3, "; _ib=\"${_bx%/*}\"; _ob=\"${_ib%/bin}\"; _hm=; if [ -n \"$_rh\" ] && [ -d \"$_rh\" ]; then _hm=\"$_rh\"; chmod 755 \"$_bx\" >/dev/null 2>&1; [ -L \"$_rh/bin\" ] || { [ -n \"$(ls -A \"$_ib\" 2>/dev/null)\" ] && rm -rf \"$_rh/bin\"; }; [ -e \"$_rh/bin\" ] || [ -L \"$_rh/bin\" ] || ln -s \"$_ib\" \"$_rh/bin\" >/dev/null 2>&1; [ -L \"$_rh/box.db\" ] || { [ -f \"$_ob/box.db\" ] && rm -f \"$_rh/box.db\" \"$_rh/box.db-wal\" \"$_rh/box.db-shm\"; }; [ -e \"$_rh/box.db\" ] || [ -L \"$_rh/box.db\" ] || ln -s \"$_ob/box.db\" \"$_rh/box.db\" >/dev/null 2>&1; fi; _bxe(){ if [ -n \"$_hm\" ]; then _n=$#; while [ \"$_n\" -gt 0 ]; do _x=\"$1\"; shift; case \"$_x\" in /storage/emulated/*) _x=\"/data/media/${_x#/storage/emulated/}\";; esac; set -- \"$@\" \"$_x\"; _n=$((_n-1)); done; \"$_bx\" --home \"$_hm\" \"$@\"; else \"$_bx\" \"$@\"; fi; }; "
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
