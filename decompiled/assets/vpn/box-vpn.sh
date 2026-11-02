@@ -227,11 +227,44 @@ sync_startup() {
   return 1
 }
 
+# fix_own RUN_DIR
+# The app's private box dir (/data/user/0/<pkg>/files/box, used when BoxProxy has root) is shared with the root modes:
+# boxctl / the core run as root there and leave root-owned dirs / files (run/, runs.log, ...) that this script (app uid)
+# can't write ("can't create .../run/runs.log: Permission denied").  When something under <box> (bin/ excluded: boxctl
+# keeps the cores' setuid root bits there) isn't writable for us, hand it back to the app uid with one `su` call.
+# Without root (no `su`) or when everything is writable this does nothing.
+fix_own() {
+  _fr=$1
+  _fb=${_fr%/*}
+  _bad=
+  [ -d "$_fr" ] && { [ -w "$_fr" ] || _bad=1; }
+  if [ -z "$_bad" ]; then
+    for _f in "$_fb"/* "$_fb"/*/*; do
+      case "$_f" in "$_fb/bin"|"$_fb/bin/"*) continue ;; esac
+      [ -e "$_f" ] || continue
+      [ -w "$_f" ] || { _bad=1; break; }
+    done
+  fi
+  [ -n "$_bad" ] || return 0
+  command -v su >/dev/null 2>&1 || return 0
+  _u=$(id -u 2>/dev/null); _g=$(id -g 2>/dev/null)
+  [ -n "$_u" ] && [ -n "$_g" ] || return 0
+  _c=
+  for _d in "$_fb"/*; do
+    [ -e "$_d" ] || continue
+    case "${_d##*/}" in bin) continue ;; esac
+    _c="$_c chown -R $_u:$_g '$_d';"
+  done
+  [ -n "$_c" ] && su -c "$_c" >/dev/null 2>&1 </dev/null
+  return 0
+}
+
 case "$cmd" in
   sync)
     work=$1; pf=$2; bx=$3; db=$4; startup=$5; core=${6:-mihomo}
     rundir=${pf%/*}
     RUNS=$rundir/runs.log
+    fix_own "$rundir"
     mkdir -p "$rundir" "$work" 2>/dev/null
     exec 2>>"$RUNS"
     note() { echo "[$(date '+%F %T.%N' 2>/dev/null)] [vpn] $*" >> "$RUNS"; }
@@ -247,6 +280,7 @@ case "$cmd" in
     src=$1; home=$2; cfg=$3; work=$4; pf=$5; bx=$6; db=$7; startup=$8; sync=$9; core=${10:-mihomo}
     rundir=${pf%/*}
     RUNS=$rundir/runs.log
+    fix_own "$rundir"
     mkdir -p "$rundir" 2>/dev/null
     : > "$RUNS" 2>/dev/null
     : > "$rundir/$core.log" 2>/dev/null

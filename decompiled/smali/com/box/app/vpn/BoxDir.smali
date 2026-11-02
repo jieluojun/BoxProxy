@@ -10,7 +10,7 @@
 # 目录要在进程启动时就定下来（box.db 里存着设置，运行中途换目录会让设置突然变成另一份），所以：
 #   * 本次进程用的目录 = 「上一次探测到的 root 状态」（SharedPreferences box_dir/root，没有记录按无 root = 外部存储）；
 #   * VpnRoot 每次得到 root 探测结果（su -c id）就调用 noteState 更新这个记录，与本次进程用的目录不一致时提示一次，下次打开应用生效。
-# 第一次切到私有目录时（私有目录里还没有 box.db、外部存储里有），把外部存储 box 整个复制过去（含 bin / run / cache / state 等）；之后两边互不影响。
+# 第一次切到私有目录时（只做一次），把外部存储 box 整个复制过去（含 bin / run / cache / state 等；cp -n 不覆盖已有文件，只补缺的）；之后两边互不影响。
 .implements Ljava/lang/Runnable;
 
 # static fields
@@ -257,6 +257,35 @@
     .locals 8
 
     :try_start_0
+    # 只做一次（marker：box_dir/migrated2）。已经有的文件不覆盖（cp -n），只补缺的（比如上一版只复制了设置、没复制 bin）
+    const-string v0, "box_dir"
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v2, "migrated2"
+
+    invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
+
+    move-result v1
+
+    if-nez v1, :cond_end
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/content/Context;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
@@ -291,23 +320,13 @@
 
     invoke-direct {v0, v4, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    new-instance v2, Ljava/io/File;
-
-    invoke-direct {v2, v0, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    invoke-virtual {v2}, Ljava/io/File;->exists()Z
-
-    move-result v2
-
-    if-nez v2, :cond_end
-
     invoke-virtual {v0}, Ljava/io/File;->mkdirs()Z
 
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "cp -r \'"
+    const-string v3, "cp -rn \'"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
