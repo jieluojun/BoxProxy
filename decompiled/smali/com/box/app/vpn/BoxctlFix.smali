@@ -58,6 +58,51 @@
     return-object p0
 .end method
 
+# Like ld(), for the core-details script (qt0): the core's version is cached (size + mtime) in
+# /data/local/tmp/.boxproxy-ver-<hash>, so reopening the dialog does not start the core 2-3 times.
+.method public static ld2(Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
+
+    :try_start_0
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_root
+
+    return-object p0
+
+    :cond_root
+    const-string v0, "if [ -x \"$core_path\" ]; then"
+
+    const-string v1, "_ck=\"$(stat -c \'%s %Y\' \"$core_path\" 2>/dev/null)\"; _cf=\"${BPCACHE:-/data/local/tmp}/.boxproxy-ver-$(echo \"$core_path\" | cksum | cut -d\' \' -f1)\"; if [ -n \"$_ck\" ] && [ -f \"$_cf\" ] && [ \"$(sed -n 1p \"$_cf\")\" = \"$_ck\" ]; then core_version=\"$(sed -n 2p \"$_cf\")\"; elif [ -x \"$core_path\" ]; then"
+
+    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v2
+
+    const-string v0, "echo \"$core_version\""
+
+    const-string v1, "[ -n \"$core_version\" ] && [ -n \"$_ck\" ] && printf \'%s\\n%s\\n\' \"$_ck\" \"$core_version\" > \"$_cf\" 2>/dev/null; echo \"$core_version\""
+
+    invoke-virtual {v2, v0, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2}, Lcom/box/app/vpn/BoxctlFix;->ld(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    move-exception v0
+
+    return-object p0
+.end method
+
 .method public static wrap(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 4
 
