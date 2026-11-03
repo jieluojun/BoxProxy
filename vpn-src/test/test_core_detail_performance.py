@@ -18,13 +18,13 @@ class CoreDetailPerformanceTest(unittest.TestCase):
         return self.executable('sing-box',
                                'echo "$1" >> "$TEST_LOG"\necho ' + repr(version) + '\n')
 
-    def test_repeat_open_runs_version_once_without_linker_scan(self):
+    def test_repeat_open_queries_version_each_time_without_linker_scan(self):
         core = self.counted_core('sing-box version 1.14.0')
         for _ in range(3):
             self.assertEqual(self.run_probe(core), 'sing-box version 1.14.0')
-        self.assertEqual(self.log.read_text().splitlines(), ['version'])
+        self.assertEqual(self.log.read_text().splitlines(), ['version'] * 3)
         self.assertFalse((self.cache / '.boxproxy-ld-sing-box').exists())
-        self.assertTrue((self.cache / '.boxproxy-version-sing-box').exists())
+        self.assertFalse((self.cache / '.boxproxy-version-sing-box').exists())
 
     def test_dynamic_probe_never_runs_unrelated_installed_core(self):
         core = self.executable('sing-box', '''
@@ -38,9 +38,10 @@ echo 'sing-box dynamic version'
         self.assertNotIn('UNRELATED_CORE', before)
         self.assertFalse((self.cache / '.boxproxy-ld-xray').exists())
         self.assertEqual(self.run_probe(core), 'sing-box dynamic version')
-        self.assertEqual(self.log.read_text(), before)
+        self.assertGreater(len(self.log.read_text()), len(before))
+        self.assertNotIn('UNRELATED_CORE', self.log.read_text())
 
-    def test_atomic_same_size_same_mtime_binary_replacement_invalidates_version(self):
+    def test_replacement_version_is_queried_live(self):
         core = self.counted_core('sing-box version 1')
         self.assertEqual(self.run_probe(core), 'sing-box version 1')
         replacement = self.executable('replacement', core.read_text().split('\n', 1)[1].replace('version 1', 'version 2'))
@@ -50,7 +51,7 @@ echo 'sing-box dynamic version'
         self.assertEqual(self.run_probe(core), 'sing-box version 2')
         self.assertEqual(self.log.read_text().splitlines(), ['version', 'version'])
 
-    def test_in_place_same_size_write_invalidates_version(self):
+    def test_in_place_updated_version_is_queried_live(self):
         core = self.counted_core('sing-box version A')
         self.assertEqual(self.run_probe(core), 'sing-box version A')
         old = core.stat()
@@ -68,15 +69,29 @@ echo 'sing-box dynamic version'
         os.utime(other, ns=(core.stat().st_atime_ns, core.stat().st_mtime_ns))
         self.assertEqual(self.run_probe(other), 'sing-box version B')
 
-    def test_failed_probe_is_not_cached_and_next_attempt_recovers(self):
+    def test_failed_probe_next_attempt_recovers(self):
         core = self.executable('sing-box', "echo 'not a version'; exit 1\n")
         self.assertEqual(self.run_probe(core), '')
         self.assertFalse((self.cache / '.boxproxy-version-sing-box').exists())
         core = self.counted_core('sing-box recovered version')
         self.assertEqual(self.run_probe(core), 'sing-box recovered version')
 
-    def test_unwritable_cache_does_not_break_version(self):
+    def test_unwritable_library_cache_does_not_break_direct_version(self):
         self.cache = self.base / 'not-a-directory'
         self.cache.write_text('file')
         self.assertEqual(self.run_probe(self.counted_core('sing-box uncached version')),
                          'sing-box uncached version')
+
+    def test_legacy_version_cache_is_ignored_and_not_rewritten(self):
+        core = self.counted_core('sing-box live version')
+        cache = self.cache / '.boxproxy-version-sing-box'
+        import subprocess
+        identity = subprocess.check_output(['stat', '-c', '%d:%i:%s:%y:%z', str(core)], text=True).strip()
+        stale = f'v1|{core}|{identity}\nsing-box stale version\n'
+        cache.write_text(stale)
+        for _ in range(2):
+            self.assertEqual(self.run_probe(core), 'sing-box live version')
+        self.assertEqual(cache.read_text(), stale)
+        self.assertEqual(self.log.read_text().splitlines(), ['version'] * 2)
+        self.assertNotIn('_version_cache', self.fragment)
+        self.assertNotIn('mktemp', self.fragment)

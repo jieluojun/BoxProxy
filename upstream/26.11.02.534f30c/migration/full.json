@@ -98,7 +98,7 @@
     "smali/k37.smali": "db615dcd4e48ab62249a9da884a2423de8be01f2a33aeb5e5361095c2ffed70d",
     "smali/kc3.smali": "6d5da43bc75831878cc0543bfc2b8496054c6613f5cd63888cf5ac1f7a30de28",
     "smali/kf3.smali": "ad1c2cdd506a2655a4a85bb764c367eefe15e1e5db51f3317f66ee3c2620a8ab",
-    "smali/lt0.smali": "f7fd58e8a70c77098ba7ea5531f44d4ab9e3aaa64de7a80118fcca383bbef97d",
+    "smali/lt0.smali": "7a16174c95e34ac9a9b0b2baca28dcc109280eba113711ea58bfc4727d7b0897",
     "smali/lw4.smali": "dda06bde4b8704184a197959a9a1f26d2f42376c6b7a559585af5e703d6767e8",
     "smali/ma1.smali": "c5fcbd8032b131428834f77b2d4a4463ed6fde1268499a5153cb4308f2dfccc7",
     "smali/mk5.smali": "9954fb738ab2d00fc28725150d943be8b32cdb3ca71c77d4b6a0534ba2e82a30",
@@ -11085,7 +11085,7 @@
     },
     {
       "target": "Llt0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
-      "reason": "Reduce detail-popup work: immutable version cache with binary identity invalidation, direct execution fast path and active-core-only linker fallback; running process and CPU remain live"
+      "reason": "Read version live on every detail open without version-result caching; retain direct-execution fast path and active-core-only linker fallback; process/CPU remain live"
     }
   ]
 }
