@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'upstream/**'
+      - 'customizations/**'
       - 'scripts/**'
       - 'decompiled/**'
       - 'vpn-src/test/**'
@@ -55,6 +56,10 @@ jobs:
         env:
           PYTHONDONTWRITEBYTECODE: '1'
         run: python3 -m unittest discover -s vpn-src/test -p 'test_upstream_snapshot.py' -v
+      - name: Test feature bundles, reviewed bindings, conflicts and full 134 round trip
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python3 -m unittest discover -s vpn-src/test -p 'test_customization_bundle.py' -v
       - name: Test actual new model, migrated helpers, wiring and full smali assembly
         env:
           ECJ_JAR: .tools/ecj/package/jar/ctxo-jdt-analyzer-17.jar
@@ -85,3 +90,14 @@ jobs:
           java -jar .tools/apktool_2.9.3.jar b .tools/ported/decompiled \
             -p .tools/framework -o "$RUNNER_TEMP/full-migration-unsigned.apk"
           echo 'Full implementation and host regression checks passed. Physical Android/root/VPN and signature-compatible upgrade checks require devices and the original signing key.'
+      - name: Rebuild independently exported feature bundle (not a release)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/customization_bundle.py export --bundle .tools/current.boxpatch
+          python3 scripts/upstream_snapshot.py upstream/26.11.02.534f30c --extract .tools/feature-vanilla
+          python3 scripts/customization_bundle.py apply --bundle .tools/current.boxpatch \
+            --target .tools/feature-vanilla/decompiled --output .tools/feature-staged \
+            --report .tools/feature-report.json
+          java -jar .tools/apktool_2.9.3.jar b .tools/feature-staged/decompiled \
+            -p .tools/framework -o "$RUNNER_TEMP/feature-roundtrip-unsigned.apk"
