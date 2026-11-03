@@ -13,5 +13,11 @@
   "sourceArchiveSha256": "0cb992f5c45942d7d3aa30be71739abb55456d99f1824fe0f95d7ed3bf5ea923",
   "sourceFileCount": 9630,
   "sourceBytes": 114219488,
-  "status": "decoded-and-vanilla-rebuild-verified; customization-migration-incomplete"
+  "status": "decoded-and-vanilla-rebuild-verified; customization-migration-incomplete",
+  "migration": {
+    "status": "phase1-staged-and-host-verified; full-migration-incomplete",
+    "plan": "migration/phase1.json",
+    "runtimeProjectReplaced": false,
+    "androidDeviceVerified": false
+  }
 }

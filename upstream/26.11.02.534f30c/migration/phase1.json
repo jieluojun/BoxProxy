@@ -1,0 +1,103 @@
+{
+  "versionName": "26.11.02.534f30c",
+  "status": "partial-migration-not-for-release",
+  "reviewedContracts": [
+    {
+      "old": "Lya0;",
+      "new": "Lta0;",
+      "verified": "23 fields, unchanged constructor and copy$default argument layout; a=core, b=mode, h=config; bit 7 override"
+    },
+    {
+      "old": "Lab0;",
+      "new": "Lva0;",
+      "verified": "a(core, config) -> File; b=bin directory; e=box.db; f=boxctl"
+    },
+    {
+      "old": "Llb0;",
+      "new": "Lgb0;",
+      "verified": "h normalizes core keys, k returns paths, c builds quoted boxctl --db command"
+    },
+    {
+      "old": "Li40;",
+      "new": "Ld40;",
+      "verified": "settings update case reads uu6.P(db), invokes Lo52, then uu6.a0(db, result) in one transaction"
+    },
+    {
+      "old": "Lzt4;",
+      "new": "Lvu4;",
+      "verified": "core selection callback uses config argument v10; default mask 0x7fff7c"
+    },
+    {
+      "old": "Lqt0;",
+      "new": "Llt0;",
+      "verified": "root detail branch core_path + version/proc/cpu separators; wrapper before jb6.X trimIndent"
+    }
+  ],
+  "baseSha256": {
+    "smali/d40.smali": "da0bed23ffb4922170d4d73da9f320d96e21a90fa8f9a4a4a895163f7dca6c1f",
+    "smali/gb0.smali": "5b65f57148af78b7a86a5a3903417be4d826af5a0c1ceb2ed9289bff39e7f450",
+    "smali/lt0.smali": "040378a6cdd4c967a30e79f1ddfc23f9020acf4b10ce74f497983b82bae585e6",
+    "smali/ta0.smali": "2fff5894b78c5246097c11647eb4669c9f50ce27da134f06235700d94252f26a",
+    "smali/uu6.smali": "367757cf95f37a78eac14c1215f39ac289acb53b9c06c02401eba1afefa37cc5",
+    "smali/va0.smali": "dd6df79ffb9171f0e3bff8872b648e792c97d6fe3ec8c16cd4eb03a4d3e9b362",
+    "smali/vu4.smali": "0d63047a312669e5f0e2ba682a6478a1af136064f351a0c6fe777c9e983bb07a"
+  },
+  "edits": [
+    {
+      "path": "smali/d40.smali",
+      "before": "    check-cast p0, Lta0;\n\n    .line 569",
+      "after": "    check-cast p0, Lta0;\n\n    # v0 is the old model read by this SQLite transaction, p0 the callback result.\n    invoke-static {p1, v0, p0}, Lcom/box/app/vpn/CoreConfigHistory;->onUpdate(Landroid/database/sqlite/SQLiteDatabase;Lta0;Lta0;)Lta0;\n\n    move-result-object p0\n\n    .line 569",
+      "reason": "Restore target core config inside the existing transaction before a0 saves and returns it."
+    },
+    {
+      "path": "smali/vu4.smali",
+      "before": "    const-string v10, \"\"",
+      "after": "    # Keep selection on same-core taps; d40 restores history on different-core updates.\n    iget-object v10, v2, Lta0;->h:Ljava/lang/String;",
+      "reason": "Preserve current config when the selected canonical core did not change."
+    },
+    {
+      "path": "smali/gb0.smali",
+      "before": "    :cond_3\n    const-string v0, \"sing-box_ref1nd\"",
+      "after": "    :cond_3\n    const-string v0, \"sing-box_dingtalk\"\n\n    invoke-virtual {p0, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z\n\n    move-result v0\n\n    if-nez v0, :goto_1\n\n    const-string v0, \"sing-box_ref1nd\"",
+      "reason": "Use the existing sing-box directory/history key for the custom fork alias."
+    },
+    {
+      "path": "smali/lt0.smali",
+      "before": "    const-string v5, \"\\n            core_version=\\\"\\\"\\n            if [ -x \\\"$core_path\\\" ]; then\\n                core_version=\\\"$(\\\"$core_path\\\" --version 2>/dev/null | head -n 1)\\\"\\n                [ -z \\\"$core_version\\\" ] && core_version=\\\"$(\\\"$core_path\\\" -v 2>/dev/null | head -n 1)\\\"\\n                [ -z \\\"$core_version\\\" ] && core_version=\\\"$(\\\"$core_path\\\" version 2>/dev/null | head -n 1)\\\"\\n            fi\\n            echo \\\"$core_version\\\"\\n            echo \\'\\n---SEP---\\n\\'\\n            echo \"",
+      "after": "    const-string v5, \"\\n            # Match the root service's executable path (emulated storage may be noexec).\\n            case \\\"$core_path\\\" in\\n                /storage/emulated/*)\\n                    _real_core=\\\"/data/media/${core_path#/storage/emulated/}\\\"\\n                    if [ -f \\\"$_real_core\\\" ]; then\\n                        chmod 755 \\\"$_real_core\\\" >/dev/null 2>&1\\n                        [ -x \\\"$_real_core\\\" ] && core_path=\\\"$_real_core\\\"\\n                    fi\\n                    ;;\\n            esac\\n            core_version=\\\"\\\"\\n            if [ -x \\\"$core_path\\\" ]; then\\n                case \\\"${core_path##*/}\\\" in\\n                    sing-box|xray|v2fly|hysteria)\\n                        _lp=\\\"$(bpld \\\"$(dirname \\\"$core_path\\\")\\\" \\\"$_bp_seed\\\")\\\"\\n                        [ -n \\\"$_lp\\\" ] && export LD_LIBRARY_PATH=\\\"$_lp${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}\\\"\\n                        ;;\\n                esac\\n                # Check the command status before taking its first line: a usage/error\\n                # message from an unsupported flag must not suppress the next attempt.\\n                case \\\"${core_path##*/}\\\" in\\n                    sing-box|xray|hysteria) _version_args='version --version -v';;\\n                    v2fly) _version_args='-version version --version -v';;\\n                    *) _version_args='--version -v version';;\\n                esac\\n                for _arg in $_version_args; do\\n                    if _version_output=\\\"$(\\\"$core_path\\\" \\\"$_arg\\\" 2>/dev/null </dev/null)\\\"; then\\n                        core_version=\\\"$(printf '%s\\\\n' \\\"$_version_output\\\" | head -n 1)\\\"\\n                        [ -n \\\"$core_version\\\" ] && break\\n                    fi\\n                done\\n            fi\\n            echo \\\"$core_version\\\"\\n            echo '\\n---SEP---\\n'\\n            echo \"",
+      "reason": "Port version arguments, exit-status checking, dynamic-library discovery and executable-path fallback."
+    },
+    {
+      "path": "smali/lt0.smali",
+      "before": "    .line 1205\n    invoke-static {v1}, Ljb6;->X(Ljava/lang/String;)Ljava/lang/String;",
+      "after": "    invoke-static {v1}, Lcom/box/app/cfg/LdFix;->wrapProbe(Ljava/lang/String;)Ljava/lang/String;\n\n    move-result-object v1\n\n    .line 1205\n    invoke-static {v1}, Ljb6;->X(Ljava/lang/String;)Ljava/lang/String;",
+      "reason": "Keep resolver exports scoped to the probe subshell, before trimIndent and the existing shell call."
+    },
+    {
+      "path": "smali/gb0.smali",
+      "before": "    .line 42\n    return-object p0\n.end method\n\n.method public static d(Lva0;)V",
+      "after": "    invoke-static {v1, p0}, Lcom/box/app/vpn/BoxctlFix;->wrap(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;\n\n    move-result-object p0\n\n    invoke-static {}, Lgb0;->k()Lva0;\n\n    move-result-object v0\n\n    iget-object v0, v0, Lva0;->b:Ljava/io/File;\n\n    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;\n\n    move-result-object v0\n\n    invoke-static {v0, p0}, Lcom/box/app/cfg/LdFix;->wrap(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;\n\n    move-result-object p0\n\n    .line 42\n    return-object p0\n.end method\n\n.method public static d(Lva0;)V",
+      "reason": "Preserve boxctl --db command; prefer root real path and resolve dynamic libraries for spawned cores."
+    }
+  ],
+  "resultSha256": {
+    "smali/d40.smali": "8ffd3a12084436ee3834faaa6302d2bff65ef8cb50f13b9d9e727f54e2ee1c71",
+    "smali/gb0.smali": "c10dec554c871b1161a23b00d266ba5812618b11228aef89485ad634fd433f5b",
+    "smali/lt0.smali": "b4891c8bce52b55c10b27dc5695e3a882dc5826d720730cd509f459f2568191c",
+    "smali/vu4.smali": "d6a14939a27e1cedd7632c8242e27cf9ca1395ad12ea08219b77dc2c167535cf"
+  },
+  "additionsSha256": {
+    "smali/com/box/app/vpn/CoreConfigHistory.smali": "8926f2b46a36f09dfb1d2b0e780dffb2d131afa2743f3f513cbaada1e1c57ded",
+    "smali/com/box/app/vpn/BoxctlFix.smali": "2608d73221ed4b781769f6ae8c5b69cf8deaf5ecc522376f22586fa7c6990160",
+    "smali/com/box/app/cfg/LdFix.smali": "490bfd89e3651d0e56b2790bed7b2474063a1845fcebb9a0ca978e8a651752b1"
+  },
+  "pending": [
+    "external-storage workdir + data/bootstrap migration",
+    "root-free onboarding and shell fallback",
+    "VPN lifecycle/mode/permissions/boot/tile/notification",
+    "core download/import and fork selector",
+    "editor and resource IDs",
+    "built-in configs/schema/scripts",
+    "Android root/non-root device verification"
+  ]
+}

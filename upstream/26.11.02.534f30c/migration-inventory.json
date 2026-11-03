@@ -1,5 +1,5 @@
 {
-  "warning": "Heuristic class identity candidates only. Not a method/field mapping and not safe to apply automatically. No runtime patches have been migrated.",
+  "warning": "Initial heuristic class inventory only, not a method/field mapping and not safe to apply automatically. Reviewed first-batch contracts and executable patches are tracked separately in migration/phase1.json; full migration is incomplete.",
   "modifiedOriginalSmali": [
     {
       "status": "manual-identification-required",

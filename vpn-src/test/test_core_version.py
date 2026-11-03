@@ -30,8 +30,10 @@ def const(text, register, starts):
 class CoreVersionTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        qt = (ROOT / 'decompiled/smali/qt0.smali').read_text()
-        ld = (ROOT / 'decompiled/smali/com/box/app/cfg/LdFix.smali').read_text()
+        project = Path(os.environ.get('BOXPROXY_TEST_PROJECT', ROOT / 'decompiled'))
+        probe = os.environ.get('BOXPROXY_TEST_PROBE_CLASS', 'qt0')
+        qt = (project / 'smali' / (probe + '.smali')).read_text()
+        ld = (project / 'smali/com/box/app/cfg/LdFix.smali').read_text()
         cls.fragment = const(qt, 'v5', '\n            # Match')
         cls.func = string_literal(re.search(r'FUNC:Ljava/lang/String; = (".*")', ld)[1])
         method = ld.split('.method public static final wrapProbe(', 1)[1]
