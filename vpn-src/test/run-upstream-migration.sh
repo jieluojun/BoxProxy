@@ -48,6 +48,8 @@ mapfile -t sources < <(find "$tmp/src" -name '*.java' | sort)
 "$JAVA" -Dfile.encoding=UTF-8 -cp "$tmp/classes:$tmp/ported.jar" RootHelpersTest "$tmp/root-runtime"
 BOXPROXY_TEST_PROJECT="$project" BOXPROXY_TEST_PROBE_CLASS=lt0 \
     python3 -m unittest discover -s vpn-src/test -p 'test_core_version.py' -v
+BOXPROXY_TEST_PROJECT="$project" \
+    python3 -m unittest discover -s vpn-src/test -p 'test_core_update_version.py' -v
 python3 -m unittest discover -s vpn-src/test -p 'test_upstream_migration.py' -v
 python3 -m unittest discover -s vpn-src/test -p 'test_core_config_history.py' -v
 python3 -m unittest discover -s vpn-src/test -p 'test_full_migration.py' -v

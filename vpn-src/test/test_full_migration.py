@@ -59,6 +59,7 @@ class FullMigrationTest(unittest.TestCase):
 
     def test_unmodified_methods_including_new_upstream_features_preserved(self):
         allowed = {item['new'] for item in COVERAGE['completed']}
+        allowed.update(item['target'] for item in PLAN.get('followUpMethods', []))
         allowed.update({
             'Lxa4;->j(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;',
             'Lwa0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;',

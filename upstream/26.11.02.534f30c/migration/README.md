@@ -53,13 +53,13 @@ bash scripts/build.sh
 
 ## 已执行的验证
 
-- **36 项 Python 测试**：7 个实际版本查询 shell 回归、5 个 SQLite/事务检查、8 个快照安全检查、
+- **47 项 Python 测试**：7 个详情版本查询、11 个更新核心弹窗版本查询 shell 回归、5 个 SQLite/事务检查、8 个快照安全检查、
   8 个历史检查点回归、8 个完整迁移测试。
 - **40 项实际 smali 配置历史行为断言**和 **7 项实际 root helper 断言**：dex/enjarify 转 JVM 执行，
   数据库和路径使用测试替身，包含别名、文件丢失、空选择、shell 引号、参数保留和变量作用域。
 - **39 项实际 smali 配置改写断言**：sing-box、Xray、V2Fly、Hysteria 的 relay、认证、应用规则、
   原配置保留及监听清理；JSON-java 固定到 `f9b5587c87aaf02e4a5ed1991d48d6c05993624a`。
-- **9,669 个类 / 562,048 处成员引用**：工程内方法/字段和 static/instance 形式检查，**0 个错误**。
+- **9,669 个类 / 562,049 处成员引用**：工程内方法/字段和 static/instance 形式检查，**0 个错误**。
   外部 Android API / 外部祖先不是完整平台声明，检查器不声称能验证这些成员。
 - 完整迁移测试还逐方法检查修改文件：除列出的定制方法和 Toast 入口外，所有其他上游方法保留；
   校验所有原版 public 资源 ID、Manifest 组件存在性、增量文件和原子失败。
@@ -83,3 +83,12 @@ CI 的 `Validate full customized migration` 检查完整迁移及行为；`Build
 
 覆盖升级必须使用**同一签名密钥**。不能拿 CI 临时 debug 签名覆盖正式签名并据此宣称数据升级成功；
 也不要为测试而清空用户数据。未获得设备及原签名验证前，不宣称这些验收已通过。
+
+## 后续修复：更新核心弹窗的 Sing-Box 版本
+
+更新弹窗由 `ma1.d(File, continuation)` 独立查询，本次补齐动态库解析、外部存储真实路径、
+Sing-Box `version` 优先、失败退出状态检查和首个非空输出行；Mihomo 继续优先 `--version`，V2Fly 优先 `-version`。
+查询经 `LdFix.wrapProbe` 放到独立子 shell，避免 `exit` 或环境变量影响持久 root 会话。
+标准 Sing-Box、reF1nd 和 Smart 共用实际安装的 `sing-box` 路径，因此三项均能使用同一版本查询。
+只有确实无法取到版本时才保留原来的“已安装”回退，不编造版本号。
+这项局部修复单独记录在 `full.json.followUpMethods`，不扩大其他上游方法的允许修改范围。
