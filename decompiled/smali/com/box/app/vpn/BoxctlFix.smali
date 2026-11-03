@@ -58,6 +58,51 @@
     return-object p0
 .end method
 
+# Like ld(), for the core-details script (qt0): it also runs ps/awk/head/tr, which must NOT see the core's
+# LD_LIBRARY_PATH. Only the `$("$core_path" ...)` calls get the library path (as a per-command prefix).
+.method public static ld2(Ljava/lang/String;)Ljava/lang/String;
+    .locals 4
+
+    :try_start_0
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_root
+
+    return-object p0
+
+    :cond_root
+    const-string v0, "$(\"$core_path\" "
+
+    const-string v1, "$(LD_LIBRARY_PATH=\"$_lp${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}\" \"$core_path\" "
+
+    invoke-virtual {p0, v0, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/box/app/vpn/BoxctlFix;->ld(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    const-string v1, "export LD_LIBRARY_PATH=\"$_lp${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}\""
+
+    const-string v2, ":"
+
+    invoke-virtual {v0, v1, v2}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    move-exception v0
+
+    return-object p0
+.end method
+
 .method public static wrap(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 4
 

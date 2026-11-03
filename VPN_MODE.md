@@ -357,3 +357,8 @@ monitor 重新拉起自己 / 派生 worker 时如果只沿用 `--db`，工作目
 
 现在 `qt0` / `qa1` 的这两处在交给 `wc5.f` 之前用 `BoxctlFix.ld(脚本)`（= `LdFix.wrap(bin 目录, 脚本)`）包一层，和 root 启动核心时用同一套库路径（复用 `/data/local/tmp/.boxproxy-ld-*` 缓存）。
 VPN 模式（`isVpnMode`）不包：应用身份写不了 `/data/local/tmp` 缓存，每次都会重新探测（每次最多 30 轮 `find`），会拖慢并可能超时。真机未验证。
+
+### 运行详情脚本里 LD_LIBRARY_PATH 只给核心用（`BoxctlFix.ld2`）
+
+详情脚本除了跑核心取版本，还会跑 `ps` / `awk` / `head` / `tr` 取 CPU 信息。整段脚本被 `LdFix.wrap` 包装时，`LD_LIBRARY_PATH` 对这些系统命令也生效，可能让它们取不到值（CPU 核心分配 / 当前 CPU 显示「-」）。
+`ld2` 把 `export LD_LIBRARY_PATH=…` 去掉，改成只在 `$("$core_path" …)` 这几处用 `LD_LIBRARY_PATH=… "$core_path" …` 作前缀，其余命令环境不变。更新核心对话框（`qa1`）的脚本只跑核心，仍用 `ld`。
