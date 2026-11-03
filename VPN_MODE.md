@@ -357,22 +357,3 @@ monitor 重新拉起自己 / 派生 worker 时如果只沿用 `--db`，工作目
 
 现在 `qt0` / `qa1` 的这两处在交给 `wc5.f` 之前用 `BoxctlFix.ld(脚本)`（= `LdFix.wrap(bin 目录, 脚本)`）包一层，和 root 启动核心时用同一套库路径（复用 `/data/local/tmp/.boxproxy-ld-*` 缓存）。
 VPN 模式（`isVpnMode`）不包：应用身份写不了 `/data/local/tmp` 缓存，每次都会重新探测（每次最多 30 轮 `find`），会拖慢并可能超时。真机未验证。
-
-## 无 root 也能检测内核版本（`core-ver.sh` / `VpnBridge.coreVersion`）
-
-「核心运行详情」的版本、「更新核心」里的「当前本地版本」原本靠直接跑 `<核心> version`，无 root 时核心在外部存储上跑不起来，版本是空的（脚本里的 PID / 当前 CPU 等本来就能在无 root 下跑）。
-无 root（`VpnRoot.noRoot()`）时 `wc5.f` 在执行前用 `VpnRoot.verScript(脚本)` 把版本**拼进原脚本**，其余部分（PID、CPU 等）照旧执行：
-
-* 详情脚本（含 `core_version=`）：把 `core_version=""` 换成 `core_version='<版本>'`，并把 `if [ -x "$core_path" ]; then` 改成 `if [ -z "$core_version" ] && [ -x "$core_path" ]; then`（有版本就不再去跑核心）；
-* 更新对话框脚本（含 `for arg in --version -v version`）：整个换成 `printf '%s\n' '<版本>'`。
-* 版本取不到（还在后台算 / 失败）时脚本原样不动。
-
-版本来自 `VpnBridge.coreVersion(路径)`：
-
-1. 按「路径 + 大小 + 修改时间」查 `SharedPreferences core_ver` 缓存，命中直接返回；
-2. 没命中且在主线程：起一个后台线程（`VpnVer`）去算，这一次先返回空，下次打开就有；不在主线程：同步算并写缓存；
-3. 计算 = `assets/vpn/core-ver.sh 核心 工作目录`（应用身份）：把核心复制到应用私有目录（外部存储 noexec），用 `/system/bin/linker64` 运行，
-   动态链接的核心（sing-box 等）按 `library "X" not found` 的提示去系统各分区找库目录加进 `LD_LIBRARY_PATH`（和 `box-vpn.sh run` 同一套）；
-   版本参数按核心写死：mihomo `-v`，v2fly `-version` 再 `version`，其余 `version`（不用会直接启动核心的裸参数），带 `timeout 10`。取首行。
-
-第一次要复制一份核心（几十 MB），之后命中缓存；核心文件换了会重新算。有 root 时不走这条（仍用 root + `BoxctlFix.ld`）。真机未验证。

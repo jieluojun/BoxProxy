@@ -25,7 +25,7 @@
     .locals 2
 
     :try_start_0
-    invoke-static {}, Lcom/box/app/vpn/VpnRoot;->noRoot()Z
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z
 
     move-result v1
 

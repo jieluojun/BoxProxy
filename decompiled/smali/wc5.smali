@@ -279,11 +279,6 @@
 
     :cond_vpn_run
 
-    # no root: splice the core version into the version scripts (VpnRoot.verScript)
-    invoke-static {p3}, Lcom/box/app/vpn/VpnRoot;->verScript(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object p3
-
     .line 1
     invoke-static {p3}, Lra7;->R(Ljava/lang/Object;)Ljava/util/List;
 
