@@ -1,0 +1,17 @@
+{
+  "versionName": "26.11.02.534f30c",
+  "versionCode": 134,
+  "packageName": "com.boxproxy.box",
+  "abi": "arm64-v8a",
+  "inputFile": "BoxProxy-26.11.02.534f30c-arm64-v8a.apk.txt",
+  "inputSha256": "28898319e747daa3e27d3e3bf42c19fd827def32ca943971c2327061c3ba7708",
+  "apktoolVersion": "2.9.3",
+  "apktoolSha256": "7956eb04194300ce0d0a84ad18771eebc94b89fb8d1ddcce8ea4c056818646f4",
+  "baselineCommit": "c99d2a9",
+  "customizedCommit": "fda693fa7d80abf6c29cc2986095f17c6c37bc93",
+  "sourceArchive": "apktool-source.tar.gz",
+  "sourceArchiveSha256": "0cb992f5c45942d7d3aa30be71739abb55456d99f1824fe0f95d7ed3bf5ea923",
+  "sourceFileCount": 9630,
+  "sourceBytes": 114219488,
+  "status": "decoded-and-vanilla-rebuild-verified; customization-migration-incomplete"
+}
