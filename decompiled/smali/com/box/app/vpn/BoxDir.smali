@@ -3,14 +3,15 @@
 .source "BoxDir.java"
 
 # 工作目录的划分（有 root / 无 root 一样）：
-#   box.db 和 bin（boxctl、内核）  -> 应用私有目录  /data/user/0/<包名>/files/box/{box.db,bin}
-#   其余（run / state / 配置 / 脚本 / 各内核的目录 …） -> /storage/emulated/0/Android/data/<包名>/files/box/…（外部存储，文件管理器能看到）
+#   bin（boxctl、内核）、scripts（脚本） -> 应用私有目录  /data/user/0/<包名>/files/box/{bin,scripts}
+#   其余（box.db / run / state / 配置 / 各内核的目录 …） -> /storage/emulated/0/Android/data/<包名>/files/box/…（外部存储）
 # 外部存储（FUSE / sdcardfs）挂载带 noexec，root 在上面执行 boxctl / 内核会 Permission denied；私有目录在 /data 上没有这个限制。
-# root 模式下 boxctl 要求 box.db / bin / run / state 都在同一个 --home 下：BoxctlFix 与开机脚本会让 root 在外部存储的真实路径
-# （/data/media/<用户>/Android/data/<包名>/files/box）里建两个符号链接 bin -> 私有 bin、box.db -> 私有 box.db，并以这个目录为 --home。
+# root 模式下 boxctl 要求 bin / run / state 在同一个 --home 下：BoxctlFix 与开机脚本让 root 以外部存储的真实路径
+# （/data/media/<用户>/Android/data/<包名>/files/box）为 --home，并在那里建符号链接 bin -> 私有 bin。
 #
-# 第一次（marker box_dir/migrated4）：把外部存储 box 里的 bin 复制到私有 bin（cp -n，不覆盖）；私有目录里还没有 box.db 时把
-# 外部存储的 box.db（及 -wal / -shm）也复制过去。私有 box.db 确认存在（非空）后，外部存储里的 box.db{,-wal,-shm} 由这里删掉；老的 bin 目录由 root 那边在建符号链接时清掉。
+# 第一次（marker box_dir/migrated5）：外部 bin 复制到私有 bin（cp -n，不覆盖）；外部 scripts 复制到私有 scripts 后删掉外部的；
+# 135/136 版把 box.db 放在私有目录：私有 box.db 非空且外部没有（或是 root 建的符号链接）时，把它连同 -wal / -shm 复制回外部，
+# 复制一致（cmp）后删掉私有那份。
 
 # direct methods
 .method private constructor <init>()V
@@ -43,7 +44,22 @@
     return-object v0
 .end method
 
-# 私有目录里的 box 目录（放 box.db 和 bin）
+# 脚本目录（scripts）的父目录 = 私有 box 目录（au / ff / i16 里原来取 Lab0.a 的地方改取它）
+.method public static sdir()Ljava/io/File;
+    .locals 1
+
+    invoke-static {}, Lsa7;->p()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/box/app/vpn/BoxDir;->ibox(Landroid/content/Context;)Ljava/io/File;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+# 私有目录里的 box 目录（放 bin 和 scripts）
 .method public static ibox(Landroid/content/Context;)Ljava/io/File;
     .locals 3
 
@@ -72,7 +88,7 @@
 
     move-result-object v0
 
-    const-string v2, "migrated4"
+    const-string v2, "migrated5"
 
     invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -140,7 +156,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, "\'; mkdir -p \"$I/bin\"; [ -d \"$E/bin\" ] && cp -rn \"$E/bin/.\" \"$I/bin/\"; [ -e \"$I/box.db\" ] || { for f in box.db box.db-wal box.db-shm; do [ -f \"$E/$f\" ] && cp \"$E/$f\" \"$I/\"; done; }; chmod -R 755 \"$I/bin\"; [ -s \"$I/box.db\" ] && rm -f \"$E/box.db\" \"$E/box.db-wal\" \"$E/box.db-shm\"; true >/dev/null 2>&1"
+    const-string v0, "\'; mkdir -p \"$I/bin\" \"$I/scripts\"; [ -d \"$E/bin\" ] && cp -rn \"$E/bin/.\" \"$I/bin/\"; [ -d \"$E/scripts\" ] && cp -rn \"$E/scripts/.\" \"$I/scripts/\" && rm -rf \"$E/scripts\"; if [ -s \"$I/box.db\" ] && { [ -L \"$E/box.db\" ] || [ ! -e \"$E/box.db\" ]; }; then rm -f \"$E/box.db\"; [ -e \"$E/box.db\" ] || { for f in box.db box.db-wal box.db-shm; do [ -f \"$I/$f\" ] && cp \"$I/$f\" \"$E/$f\"; done; if [ ! -L \"$E/box.db\" ] && cmp -s \"$I/box.db\" \"$E/box.db\"; then rm -f \"$I/box.db\" \"$I/box.db-wal\" \"$I/box.db-shm\"; fi; }; fi; chmod -R 755 \"$I/bin\"; true >/dev/null 2>&1"
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
