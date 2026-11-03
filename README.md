@@ -7,6 +7,7 @@
 
 - [完整迁移范围、回归验证和限制](upstream/26.11.02.534f30c/migration/README.md)
 - [原版来源及不可变快照](upstream/26.11.02.534f30c/README.md)
+- [未来版本：按功能导出补丁、审核绑定与冲突、在新目录半自动迁移](docs/feature-migration.md)
 - [VPN / 编辑器源码与工具链](vpn-src/README.md)
 
 ```sh
