@@ -52,3 +52,19 @@ harness：`build.sh` 里的 `SbTest` / `sbflow` / `sb` 随机点击；`pruned.sh
 boxctl 本来能执行就原样运行（不改变现有设备）；否则改用 `/data/media/<用户>/…/bin/boxctl`（chmod 755），并给它 `--home /data/media/<用户>/…/box`，
 让它起核心时也走真实路径。开机脚本里同样处理（等待条件由 `-x` 改成 `-f`）。
 （早先还试过「复制到应用私有目录 + linker64」和「126 时重试」的回退，真机上只需要走真实路径，已去掉。）**只在一台受影响的真机上验证过。**
+
+## root 模式：详情页的内核版本探测
+
+`qt0.smali` 的系统详情探测原来直接运行内核，不经过 boxctl 命令入口，因此漏掉了启动时的真实路径和动态库处理。
+现在版本探测先尝试 `/storage/emulated/<用户>/…` 对应的 `/data/media/<用户>/…`（不存在或不可执行时保留原路径），
+再由 `LdFix.wrapProbe` 提供与启动共用的 `bpld` 函数和 seed，为动态内核补上 `LD_LIBRARY_PATH`。
+整个探测在子 shell 内运行，不污染常驻 su 会话。sing-box 优先调用 `version`，mihomo 保持 `--version` 优先；
+只有命令成功且首行非空才采用结果，避免失败命令的 stdout 阻止后续回退。详情字段的 `---SEP---` 分隔协议不变。
+
+主机回归测试（直接读取 APK 内的 shell 字符串，用假内核和 linker 模拟缺库、缓存、路径回退和命令参数）：
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s vpn-src/test -p 'test_core_version.py' -v
+```
+
+这些测试不代替 Android root 真机验证。
