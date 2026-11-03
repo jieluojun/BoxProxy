@@ -1247,6 +1247,12 @@
     .line 568
     check-cast p0, Lya0;
 
+    # Restore the target core's last config before persisting or publishing settings.
+    # p1 is this transaction's database; v0 still holds the previous settings.
+    invoke-static {p1, v0, p0}, Lcom/box/app/vpn/CoreConfigHistory;->onUpdate(Landroid/database/sqlite/SQLiteDatabase;Lya0;Lya0;)Lya0;
+
+    move-result-object p0
+
     .line 569
     .line 570
     invoke-static {p1, p0}, Lc;->Z(Landroid/database/sqlite/SQLiteDatabase;Lya0;)V

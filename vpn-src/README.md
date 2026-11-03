@@ -68,3 +68,32 @@ PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s vpn-src/test -p 'test_
 ```
 
 这些测试不代替 Android root 真机验证。
+
+## 切换内核后恢复上次选择的配置
+
+手写桥接 `com/box/app/vpn/CoreConfigHistory.smali` 在 `i40` 的设置更新事务内工作：
+读取旧设置 → 执行原更新回调 → 若核心改变，保存离开核心的 `configName`、恢复目标核心的历史选择 →
+保存并返回更新后的设置。记录按 `lb0.h` 的标准核心名存入现有 `box.db` 的附加表 `core_config_history`；
+和核心目录规则一致，sing-box 的别名共享同一条记录。没有独立的内存缓存或 SharedPreferences，
+事务失败时历史与设置一起回滚，重启应用后仍能恢复。升级后首次切换会自动记住当时已选的配置，不需要重新选择。
+
+`zt4` 的核心选择回调不再无条件清空 `configName`，因此重复选择当前核心不会丢失配置。
+第一次使用某个核心时没有历史就保持未选择；历史文件被删除、改名或变成目录时也不恢复。
+显式清空配置仍然有效（离开核心时会用空字符串覆盖之前的历史）。恢复只影响配置选择，不改变原本的模式、
+IPv6 等设置逻辑，也不新增自动启动或重载行为。
+
+验证：
+
+```sh
+# SQLite 持久化、绑定参数、回滚和事务接线检查（标准库，无额外依赖）
+PYTHONDONTWRITEBYTECODE=1 python3 -m unittest discover -s vpn-src/test -p 'test_core_config_history.py' -v
+
+# 实际 smali 的行为测试：smali → dex → enjarify → JVM，最后组装整个应用 smali
+JAVA=/path/to/java ECJ_JAR=/path/to/ctxo-jdt-analyzer-17.jar \
+APKTOOL_JAR=/path/to/apktool_2.4.1.jar ENJARIFY=/path/to/google/enjarify \
+  vpn-src/test/run-core-config-history.sh
+```
+
+后一项测试用的 Android 数据库 / 路径替身在 `test/history/`，不进 APK；核心历史桥接和不可变设置模型 `ya0` 则直接使用
+`decompiled/smali` 中的实际代码，检查来回切换、首次迁移、清空、不同核心隔离、文件有效性、别名以及全部其他字段保持不变。
+工具来源同上文「工具链」，另需 GitHub `google/enjarify`。主机验证不代替 Android 真机切换测试。
