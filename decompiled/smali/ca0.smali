@@ -233,15 +233,82 @@
 .end method
 
 .method public static a()Ljava/io/File;
-    .locals 1
+    .locals 3
 
-    # box.db lives in the app's private dir (Lab0->e), not next to run/
+    .line 1
+    sget-object v0, Llb0;->a:Llb0;
+
+    .line 2
+    .line 3
     invoke-static {}, Llb0;->k()Lab0;
 
+    .line 4
+    .line 5
+    .line 6
     move-result-object v0
 
-    iget-object v0, v0, Lab0;->e:Ljava/io/File;
+    .line 7
+    iget-object v0, v0, Lab0;->c:Ljava/io/File;
 
+    .line 8
+    .line 9
+    invoke-virtual {v0}, Ljava/io/File;->getParentFile()Ljava/io/File;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v0
+
+    .line 13
+    const-string v1, "box.db"
+
+    .line 14
+    .line 15
+    if-eqz v0, :cond_0
+
+    .line 16
+    .line 17
+    invoke-static {v0, v1}, Ljy1;->m0(Ljava/io/File;Ljava/lang/String;)Ljava/io/File;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object v0
+
+    .line 21
+    return-object v0
+
+    .line 22
+    :cond_0
+    new-instance v0, Ljava/io/File;
+
+    .line 23
+    .line 24
+    sget-object v2, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
+
+    .line 25
+    .line 26
+    invoke-static {}, Lsa7;->p()Landroid/content/Context;
+
+    .line 27
+    .line 28
+    .line 29
+    move-result-object v2
+
+    .line 30
+    invoke-virtual {v2}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
+
+    .line 31
+    .line 32
+    .line 33
+    move-result-object v2
+
+    .line 34
+    invoke-direct {v0, v2, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    .line 35
+    .line 36
+    .line 37
     return-object v0
 .end method
 

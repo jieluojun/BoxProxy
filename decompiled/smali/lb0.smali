@@ -1460,18 +1460,29 @@
     .line 6
     move-result-object v0
 
-    invoke-static {v0}, Lcom/box/app/vpn/BoxDir;->base(Landroid/content/Context;)Ljava/io/File;
+    .line 7
+    const/4 v2, 0x0
 
+    .line 8
+    invoke-virtual {v0, v2}, Landroid/content/Context;->getExternalFilesDir(Ljava/lang/String;)Ljava/io/File;
+
+    .line 9
+    .line 10
+    .line 11
     move-result-object v0
+
+    .line 12
+    if-nez v0, :cond_external_files_ready
 
     invoke-static {}, Lsa7;->p()Landroid/content/Context;
 
-    move-result-object v8
+    move-result-object v0
 
-    invoke-static {v8}, Lcom/box/app/vpn/BoxDir;->ibox(Landroid/content/Context;)Ljava/io/File;
+    invoke-virtual {v0}, Landroid/content/Context;->getFilesDir()Ljava/io/File;
 
-    move-result-object v8
+    move-result-object v0
 
+    :cond_external_files_ready
     new-instance v1, Ljava/io/File;
 
     .line 13
@@ -1492,7 +1503,7 @@
 
     .line 21
     .line 22
-    invoke-direct {v2, v8, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+    invoke-direct {v2, v1, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     .line 23
     .line 24
@@ -3061,7 +3072,7 @@
 
     .line 218
     .line 219
-    const-string v1, "\n              log -t BoxProxyBoot \'runtime files are ready\' 2>/dev/null || true\n\n              _bh=; _ib=\"${boxctl%/*}\"; _rh=\"${run_dir%/run}\"; case \"$_rh\" in /storage/emulated/*) _rh=\"/data/media/${_rh#/storage/emulated/}\"; if [ -d \"$_rh\" ]; then _bh=\"--home $_rh\"; chmod 755 \"$boxctl\" 2>/dev/null; [ -L \"$_rh/bin\" ] || { [ -n \"$(ls -A \"$_ib\" 2>/dev/null)\" ] && rm -rf \"$_rh/bin\"; }; [ -e \"$_rh/bin\" ] || [ -L \"$_rh/bin\" ] || ln -s \"$_ib\" \"$_rh/bin\"; case \"$db\" in /storage/emulated/*) db=\"/data/media/${db#/storage/emulated/}\";; esac; fi;; esac\n              \"$boxctl\" $_bh --db \"$db\" boot >> \"$log_file\" 2>&1\n              start_code=$?\n              if [ \"$start_code\" -eq 0 ]; then\n                boot_log "
+    const-string v1, "\n              log -t BoxProxyBoot \'runtime files are ready\' 2>/dev/null || true\n\n              _bh=; case \"$boxctl\" in /storage/emulated/*) _ba=\"/data/media/${boxctl#/storage/emulated/}\"; if [ -f \"$_ba\" ]; then chmod 755 \"$_ba\" 2>/dev/null; if [ -x \"$_ba\" ]; then _bh=\"--home ${_ba%/bin/boxctl}\"; boxctl=\"$_ba\"; case \"$db\" in /storage/emulated/*) db=\"/data/media/${db#/storage/emulated/}\";; esac; fi; fi;; esac\n              \"$boxctl\" $_bh --db \"$db\" boot >> \"$log_file\" 2>&1\n              start_code=$?\n              if [ \"$start_code\" -eq 0 ]; then\n                boot_log "
 
     .line 220
     .line 221
