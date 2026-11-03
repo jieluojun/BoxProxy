@@ -186,7 +186,9 @@
     const/4 v9, 0x0
 
     .line 69
-    const-string v10, ""
+    # Re-selecting the same core must not clear its current configuration.
+    # On a different core, CoreConfigHistory replaces this in the settings transaction.
+    iget-object v10, v2, Lya0;->h:Ljava/lang/String;
 
     .line 70
     .line 71
