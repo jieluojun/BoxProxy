@@ -54,6 +54,117 @@
     return-object v0
 .end method
 
+# 相对路径 "scripts" / "scripts/…" -> 私有 scripts 目录里的文件（规范化后必须仍在 scripts 目录里）；其它路径返回 null
+.method public static scriptFile(Ljava/lang/String;)Ljava/io/File;
+    .locals 6
+
+    const/4 v5, 0x0
+
+    if-nez p0, :cond_a
+
+    return-object v5
+
+    :cond_a
+    :try_start_0
+    invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object p0
+
+    const-string v0, "/"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_none
+
+    const-string v0, "scripts"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_go
+
+    const-string v0, "scripts/"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_none
+
+    :cond_go
+    invoke-static {}, Lcom/box/app/vpn/BoxDir;->sdir()Ljava/io/File;
+
+    move-result-object v2
+
+    new-instance v3, Ljava/io/File;
+
+    const-string v0, "scripts"
+
+    invoke-direct {v3, v2, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {v3}, Ljava/io/File;->getCanonicalFile()Ljava/io/File;
+
+    move-result-object v3
+
+    new-instance v4, Ljava/io/File;
+
+    invoke-direct {v4, v2, p0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    invoke-virtual {v4}, Ljava/io/File;->getCanonicalFile()Ljava/io/File;
+
+    move-result-object v4
+
+    invoke-virtual {v4}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v3}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_ok
+
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v1, "/"
+
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_none
+
+    :cond_ok
+    return-object v4
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :cond_none
+    return-object v5
+
+    :catch_0
+    move-exception v0
+
+    return-object v5
+.end method
+
 # 私有目录里的 box 目录（放 bin 和 scripts）
 .method public static ibox(Landroid/content/Context;)Ljava/io/File;
     .locals 3

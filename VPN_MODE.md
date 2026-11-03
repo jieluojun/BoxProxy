@@ -368,5 +368,6 @@ root 在外部存储（FUSE / sdcardfs，挂载带 `noexec`）上执行 boxctl /
   （`/data/media/<用户>/Android/data/<包名>/files/box`）为 `--home`，并在那里建符号链接 `bin -> 私有 bin`；
   参数里 `/storage/emulated/…`（含 `--db`）照旧改成 `/data/media/…`。私有 `bin` 里有内容时才会删掉外部旧的真实 `bin` 目录。**不再建 `box.db` 的链接。**
   root 之前建的 `box.db` 符号链接不会被清理，仍指向私有那份旧数据库；应用读写外部 `box.db` 时会经过这个链接，需要的话手动 `su -c rm` 删掉它。
+* 文件编辑器（脚本页点开脚本）按「相对 box 目录的路径」`scripts/<名字>.sh` 取文件：`qm5.o` 开头加了 `BoxDir.scriptFile`，`scripts` / `scripts/…` 改成解析到私有 `scripts`（规范化后必须仍在该目录内），其它路径不变。
 * **副作用**：`scripts` 不在外部 `box/` 下了，凡是以 `box/` 为根的功能（文件管理页的目录列表、备份 / 还原里的「脚本」项）不再包含它；脚本页本身照常。
 * VPN 模式不经过 boxctl：`box-vpn.sh` 的参数来自 `Lab0`（内核路径 = 私有 `bin`，运行目录 = 外部），无需额外处理；`fix_own` 保留。真机未验证。
