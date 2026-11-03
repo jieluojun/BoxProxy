@@ -361,8 +361,8 @@ root 在外部存储（FUSE / sdcardfs，挂载带 `noexec`）上执行 boxctl /
 
 * `lb0.k()`（`Lab0`）只此一处定路径：`a/c/d` 外部，`b/e/f/g`（bin、box.db、boxctl、boxbpf）私有；`ca0.a()` 直接取 `Lab0.e`，不再从 `run` 的上一级推 box.db。
   没有外部存储时全部退回私有目录。**不再有按 root 状态切换目录的逻辑**（132–134 的 `box_dir/root`、`noteState` 全部撤掉，内置配置的「只种一次」标记回到单一的 `box_seed`）。
-* 迁移（只做一次，`SharedPreferences box_dir/migrated3`，在第一次 `lb0.k()` 时同步完成）：外部存储 `box/bin` → 私有 `bin`（`cp -rn`，不覆盖），
-  私有目录还没有 `box.db` 时把外部的 `box.db` / `-wal` / `-shm` 一起复制过去（已经有就保留私有的，比如 132–134 版 root 下用过的）；`bin` 设成 755。外部存储里的老文件应用不删。
+* 迁移（只做一次，`SharedPreferences box_dir/migrated4`，在第一次 `lb0.k()` 时同步完成）：外部存储 `box/bin` → 私有 `bin`（`cp -rn`，不覆盖），
+  私有目录还没有 `box.db` 时把外部的 `box.db` / `-wal` / `-shm` 一起复制过去（已经有就保留私有的，比如 132–134 版 root 下用过的）；`bin` 设成 755。私有 `box.db` 存在且非空后，外部存储里的 `box.db` `-wal` `-shm` 会被删掉（它们已经没人用了，留着只会让人误以为还在用）；外部的老 `bin` 目录应用不删，由 root 建符号链接时清理。
 * root 模式：boxctl 要求 `box.db` / `bin` / `run` / `state` 在同一个 `--home` 下。所以 `BoxctlFix.wrap` 与开机脚本让 root 以外部存储的真实路径
   （`/data/media/<用户>/Android/data/<包名>/files/box`）为 `--home`，并在那里建符号链接 `bin -> 私有 bin`、`box.db -> 私有 box.db`；
   参数里 `/storage/emulated/…` 照旧改成 `/data/media/…`。私有 `bin` 里有内容时才会删掉外部存储里旧的真实 `bin` 目录；私有 `box.db` 存在时才会删掉旧的 `box.db{,-wal,-shm}`。

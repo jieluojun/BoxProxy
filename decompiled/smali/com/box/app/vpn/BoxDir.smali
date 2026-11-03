@@ -9,8 +9,8 @@
 # root 模式下 boxctl 要求 box.db / bin / run / state 都在同一个 --home 下：BoxctlFix 与开机脚本会让 root 在外部存储的真实路径
 # （/data/media/<用户>/Android/data/<包名>/files/box）里建两个符号链接 bin -> 私有 bin、box.db -> 私有 box.db，并以这个目录为 --home。
 #
-# 第一次（marker box_dir/migrated3）：把外部存储 box 里的 bin 复制到私有 bin（cp -n，不覆盖）；私有目录里还没有 box.db 时把
-# 外部存储的 box.db（及 -wal / -shm）也复制过去。外部存储里的老 bin / box.db 随后由 root 那边在建符号链接时清掉。
+# 第一次（marker box_dir/migrated4）：把外部存储 box 里的 bin 复制到私有 bin（cp -n，不覆盖）；私有目录里还没有 box.db 时把
+# 外部存储的 box.db（及 -wal / -shm）也复制过去。私有 box.db 确认存在（非空）后，外部存储里的 box.db{,-wal,-shm} 由这里删掉；老的 bin 目录由 root 那边在建符号链接时清掉。
 
 # direct methods
 .method private constructor <init>()V
@@ -72,7 +72,7 @@
 
     move-result-object v0
 
-    const-string v2, "migrated3"
+    const-string v2, "migrated4"
 
     invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
@@ -140,7 +140,7 @@
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v0, "\'; mkdir -p \"$I/bin\"; [ -d \"$E/bin\" ] && cp -rn \"$E/bin/.\" \"$I/bin/\"; [ -e \"$I/box.db\" ] || { for f in box.db box.db-wal box.db-shm; do [ -f \"$E/$f\" ] && cp \"$E/$f\" \"$I/\"; done; }; chmod -R 755 \"$I/bin\"; true >/dev/null 2>&1"
+    const-string v0, "\'; mkdir -p \"$I/bin\"; [ -d \"$E/bin\" ] && cp -rn \"$E/bin/.\" \"$I/bin/\"; [ -e \"$I/box.db\" ] || { for f in box.db box.db-wal box.db-shm; do [ -f \"$E/$f\" ] && cp \"$E/$f\" \"$I/\"; done; }; chmod -R 755 \"$I/bin\"; [ -s \"$I/box.db\" ] && rm -f \"$E/box.db\" \"$E/box.db-wal\" \"$E/box.db-shm\"; true >/dev/null 2>&1"
 
     invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
