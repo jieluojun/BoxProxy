@@ -188,6 +188,11 @@
     .line 69
     const-string v10, ""
 
+    # remember the config per core (CoreCfg): restore the one chosen last time for the new core
+    invoke-static {v2, v0}, Lcom/box/app/vpn/CoreCfg;->pick(Lya0;Lu25;)Ljava/lang/String;
+
+    move-result-object v10
+
     .line 70
     .line 71
     const/4 v11, 0x0
