@@ -890,6 +890,203 @@
     return-object v0
 .end method
 
+# Runs core-ver.sh (as the app user, no root) on a private copy of the core and returns the first line
+# of its version output, or "" when it could not be determined.
+.method public static verCompute(Ljava/lang/String;)Ljava/lang/String;
+    .locals 6
+
+    :try_start_0
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->ctx()Landroid/content/Context;
+
+    move-result-object v0
+
+    invoke-static {v0}, Lcom/box/app/vpn/BoxVpnService;->workDir(Landroid/content/Context;)Ljava/io/File;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
+
+    new-instance v2, Ljava/io/File;
+
+    const-string v3, "core-ver.sh"
+
+    invoke-direct {v2, v1, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    const-string v3, "vpn/core-ver.sh"
+
+    invoke-static {v0, v3, v2}, Lcom/box/app/vpn/VpnShell;->copyAsset(Landroid/content/Context;Ljava/lang/String;Ljava/io/File;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_empty
+
+    invoke-static {v2, p0}, Lcom/box/app/vpn/VpnShell;->base(Ljava/io/File;Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v4
+
+    invoke-static {v4, v1}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
+
+    invoke-static {v4}, Lcom/box/app/vpn/VpnShell;->output(Ljava/util/List;)Ljava/lang/String;
+
+    move-result-object v4
+
+    if-eqz v4, :cond_empty
+
+    const/16 v5, 0xa
+
+    invoke-virtual {v4, v5}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v5
+
+    if-ltz v5, :cond_whole
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v4, v3, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v4
+
+    :cond_whole
+    invoke-virtual {v4}, Ljava/lang/String;->trim()Ljava/lang/String;
+
+    move-result-object v4
+
+    return-object v4
+
+    :cond_empty
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    const-string v0, ""
+
+    return-object v0
+.end method
+
+# Version of the core file at PATH without root. Cached per (path, size, mtime) in SharedPreferences
+# "core_ver". On the main thread only the cache is read; a miss starts a background computation and
+# returns "" (the next call finds it in the cache).
+.method public static coreVersion(Ljava/lang/String;)Ljava/lang/String;
+    .locals 8
+
+    :try_start_0
+    new-instance v0, Ljava/io/File;
+
+    invoke-direct {v0, p0}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v0}, Ljava/io/File;->isFile()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_empty
+
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v2, "|"
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/io/File;->length()J
+
+    move-result-wide v3
+
+    invoke-virtual {v1, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/io/File;->lastModified()J
+
+    move-result-wide v3
+
+    invoke-virtual {v1, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->ctx()Landroid/content/Context;
+
+    move-result-object v2
+
+    const-string v3, "core_ver"
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v2, v3, v4}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    invoke-interface {v2, v1, v3}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    if-eqz v3, :cond_miss
+
+    return-object v3
+
+    :cond_miss
+    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+
+    move-result-object v3
+
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
+    move-result-object v4
+
+    if-ne v3, v4, :cond_bg
+
+    new-instance v3, Ljava/lang/Thread;
+
+    new-instance v4, Lcom/box/app/vpn/VpnVer;
+
+    invoke-direct {v4, p0}, Lcom/box/app/vpn/VpnVer;-><init>(Ljava/lang/String;)V
+
+    invoke-direct {v3, v4}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
+
+    invoke-virtual {v3}, Ljava/lang/Thread;->start()V
+
+    goto :cond_empty
+
+    :cond_bg
+    invoke-static {p0}, Lcom/box/app/vpn/VpnBridge;->verCompute(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v4
+
+    if-eqz v4, :cond_ret
+
+    invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v4
+
+    invoke-interface {v4, v1, v3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v4
+
+    invoke-interface {v4}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    :cond_ret
+    return-object v3
+
+    :cond_empty
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    const-string v0, ""
+
+    return-object v0
+.end method
+
 # Copies src to dst (replacing it). Returns false on any error.
 .method public static copyFile(Ljava/io/File;Ljava/io/File;)Z
     .locals 6

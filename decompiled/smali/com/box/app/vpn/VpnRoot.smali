@@ -435,6 +435,124 @@
     return v0
 .end method
 
+# Without root the core version scripts (details dialog / update dialog, which need su) are answered here:
+# the version comes from VpnBridge.coreVersion (private copy run through the linker, cached).
+# Returns null when SCRIPT is not one of those scripts or root is available.
+.method public static ver(Ljava/lang/String;)Lnc5;
+    .locals 7
+
+    if-nez p0, :cond_a
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    :cond_a
+    :try_start_0
+    invoke-static {}, Lcom/box/app/vpn/VpnRoot;->noRoot()Z
+
+    move-result v0
+
+    if-nez v0, :cond_b
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    :cond_b
+    const-string v0, "core_version="
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_m1
+
+    const/4 v2, 0x1
+
+    const-string v3, "core_path=\'"
+
+    goto :goto_m
+
+    :cond_m1
+    const-string v0, "for arg in --version -v version"
+
+    invoke-virtual {p0, v0}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_none
+
+    const/4 v2, 0x0
+
+    const-string v3, "core=\'"
+
+    :goto_m
+    invoke-virtual {p0, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;)I
+
+    move-result v4
+
+    if-ltz v4, :cond_none
+
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    add-int/2addr v4, v5
+
+    const-string v5, "\'"
+
+    invoke-virtual {p0, v5, v4}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
+
+    move-result v5
+
+    if-ltz v5, :cond_none
+
+    invoke-virtual {p0, v4, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-static {v4}, Lcom/box/app/vpn/VpnBridge;->coreVersion(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v4
+
+    if-eqz v2, :cond_out
+
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v4, "\n---SEP---\n\n---SEP---\n"
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    :cond_out
+    new-instance v5, Lnc5;
+
+    const/4 v6, 0x0
+
+    const-string v0, ""
+
+    invoke-direct {v5, v6, v4, v0}, Lnc5;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    return-object v5
+
+    :cond_none
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    const/4 v0, 0x0
+
+    return-object v0
+.end method
+
 .method public static skip(Ljava/lang/String;)Z
     .registers 2
 
