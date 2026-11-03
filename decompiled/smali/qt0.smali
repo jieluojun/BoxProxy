@@ -5476,7 +5476,7 @@
     move-result-object v1
 
     .line 1604
-    const-string v5, "\n            core_version=\"\"\n            if [ -x \"$core_path\" ]; then\n                core_version=\"$(\"$core_path\" --version 2>/dev/null | head -n 1)\"\n                [ -z \"$core_version\" ] && core_version=\"$(\"$core_path\" -v 2>/dev/null | head -n 1)\"\n                [ -z \"$core_version\" ] && core_version=\"$(\"$core_path\" version 2>/dev/null | head -n 1)\"\n            fi\n            echo \"$core_version\"\n            echo \'\n---SEP---\n\'\n            echo "
+    const-string v5, "\n            # Match the root service's executable path (emulated storage may be noexec).\n            case \"$core_path\" in\n                /storage/emulated/*)\n                    _real_core=\"/data/media/${core_path#/storage/emulated/}\"\n                    if [ -f \"$_real_core\" ]; then\n                        chmod 755 \"$_real_core\" >/dev/null 2>&1\n                        [ -x \"$_real_core\" ] && core_path=\"$_real_core\"\n                    fi\n                    ;;\n            esac\n            core_version=\"\"\n            if [ -x \"$core_path\" ]; then\n                case \"${core_path##*/}\" in\n                    sing-box|xray|v2fly|hysteria)\n                        _lp=\"$(bpld \"$(dirname \"$core_path\")\" \"$_bp_seed\")\"\n                        [ -n \"$_lp\" ] && export LD_LIBRARY_PATH=\"$_lp${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}\"\n                        ;;\n                esac\n                # Check the command status before taking its first line: a usage/error\n                # message from an unsupported flag must not suppress the next attempt.\n                case \"${core_path##*/}\" in\n                    sing-box|xray|hysteria) _version_args='version --version -v';;\n                    v2fly) _version_args='-version version --version -v';;\n                    *) _version_args='--version -v version';;\n                esac\n                for _arg in $_version_args; do\n                    if _version_output=\"$(\"$core_path\" \"$_arg\" 2>/dev/null </dev/null)\"; then\n                        core_version=\"$(printf '%s\\n' \"$_version_output\" | head -n 1)\"\n                        [ -n \"$core_version\" ] && break\n                    fi\n                done\n            fi\n            echo \"$core_version\"\n            echo '\n---SEP---\n'\n            echo "
 
     .line 1605
     .line 1606
@@ -5529,6 +5529,11 @@
     .line 1631
     .line 1632
     .line 1633
+    move-result-object v1
+
+    # Version probes need the same dynamic-library resolver as root core startup.
+    invoke-static {v1}, Lcom/box/app/cfg/LdFix;->wrapProbe(Ljava/lang/String;)Ljava/lang/String;
+
     move-result-object v1
 
     .line 1634

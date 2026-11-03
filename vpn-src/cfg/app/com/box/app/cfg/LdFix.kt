@@ -21,4 +21,10 @@ object LdFix {
         if (binDir == null) return cmd
         return FUNC + "; ( _lp=\"\$(bpld " + q(binDir) + " " + q(SEED) + ")\"; [ -n \"\$_lp\" ] && export LD_LIBRARY_PATH=\"\$_lp\${LD_LIBRARY_PATH:+:\$LD_LIBRARY_PATH}\"; " + cmd + " )"
     }
+
+    /** 详情页的版本探测：core_path 在 cmd 内赋值，解析真实路径后再调用 bpld。 */
+    @JvmStatic
+    fun wrapProbe(cmd: String): String =
+        FUNC + "; ( _bp_seed=" + q(SEED) + "; " + cmd + " )"
+
 }
