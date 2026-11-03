@@ -348,3 +348,12 @@ monitor 重新拉起自己 / 派生 worker 时如果只沿用 `--db`，工作目
 
 现在 `BoxctlFix` 在改用真实路径时，会把所有以 `/storage/emulated/` 开头的参数（包括 `--db`）一并改成 `/data/media/…`（同一份文件）；开机脚本里的 `--db` 同样处理。
 更新后需要让旧的 monitor 进程退出：重启手机，或「停止服务」后重新保存一次网络匹配设置 / 再启动一次服务。真机未验证。
+
+## root 模式下看不到 sing-box 版本号（`BoxctlFix.ld`）
+
+「核心运行详情」的版本、「更新核心」里的「当前本地版本」是用 root 直接跑 `<核心> --version / -v / version` 的首行（`qt0`、`qa1` 里的脚本，经 `wc5.f`）。
+官方 / fork 的 sing-box 是动态链接，依赖 `libandroid.so` 等（要靠 `LD_LIBRARY_PATH` 才找得到，boxctl 启动核心时由 `LdFix` 补上），
+而这两个脚本没带这个环境变量：`sing-box version` 报 `library "…" not found`（stderr 被丢掉）→ 输出为空 → 显示「-」/「已安装」。mihomo 是静态的，所以没问题。
+
+现在 `qt0` / `qa1` 的这两处在交给 `wc5.f` 之前用 `BoxctlFix.ld(脚本)`（= `LdFix.wrap(bin 目录, 脚本)`）包一层，和 root 启动核心时用同一套库路径（复用 `/data/local/tmp/.boxproxy-ld-*` 缓存）。
+VPN 模式（`isVpnMode`）不包：应用身份写不了 `/data/local/tmp` 缓存，每次都会重新探测（每次最多 30 轮 `find`），会拖慢并可能超时。真机未验证。

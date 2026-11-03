@@ -5568,6 +5568,10 @@
 
     .line 1651
     .line 1652
+    invoke-static {v1}, Lcom/box/app/vpn/BoxctlFix;->ld(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
+
     invoke-static {v6, v7, v0, v1}, Lwc5;->f(JLc81;Ljava/lang/String;)Ljava/lang/Object;
 
     .line 1653

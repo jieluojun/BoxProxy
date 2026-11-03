@@ -19,6 +19,45 @@
 .end method
 
 # quoted = boxctl 的路径（已经 shell 引号包好），cmd = 原命令 `'<boxctl>' --db '<db>' <子命令>`
+# 用 root 跑「核心版本」脚本时也带上 boxctl 启动核心时用的 LD_LIBRARY_PATH（LdFix）：
+# 官方 / fork 的 sing-box 是动态链接，缺 libandroid.so 等依赖时 `sing-box version` 什么都不输出（stderr 被丢掉），版本就显示成 "-" / 已安装。
+.method public static ld(Ljava/lang/String;)Ljava/lang/String;
+    .locals 2
+
+    :try_start_0
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_root
+
+    return-object p0
+
+    :cond_root
+    invoke-static {}, Llb0;->k()Lab0;
+
+    move-result-object v0
+
+    iget-object v0, v0, Lab0;->b:Ljava/io/File;
+
+    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-static {v0, p0}, Lcom/box/app/cfg/LdFix;->wrap(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
+
+    return-object v0
+    :try_end_0
+    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
+
+    :catch_0
+    move-exception v0
+
+    return-object p0
+.end method
+
 .method public static wrap(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
     .locals 4
 
