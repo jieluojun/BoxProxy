@@ -1,61 +1,57 @@
 .class public final Lyb5;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lzb5;
+.super Lau2;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+# instance fields
+.field public final n:Lrh0;
 
-    .line 1
-    const/4 v0, 0x1
 
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of p0, p1, Lyb5;
-
-    .line 6
-    .line 7
-    if-nez p0, :cond_1
-
-    .line 8
-    .line 9
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-
-    .line 11
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
+# direct methods
+.method public constructor <init>(Lrh0;)V
     .locals 0
 
     .line 1
-    const p0, 0x3dcccccd    # 0.1f
+    invoke-direct {p0}, Ltb3;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
+    iput-object p1, p0, Lyb5;->n:Lrh0;
 
     .line 5
     .line 6
-    .line 7
-    move-result p0
+    return-void
+.end method
 
-    .line 8
+
+# virtual methods
+.method public final m()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
     return p0
+.end method
+
+.method public final n(Ljava/lang/Throwable;)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lyb5;->n:Lrh0;
+
+    .line 2
+    .line 3
+    sget-object p1, Lk27;->a:Lk27;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0, p1}, Lrh0;->resumeWith(Ljava/lang/Object;)V
+
+    .line 6
+    .line 7
+    .line 8
+    return-void
 .end method

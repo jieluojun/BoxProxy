@@ -1,21 +1,22 @@
-.class public final synthetic Lo47;
+.class public final Lo47;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lq61;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic a:Lf26;
+.field public final a:Lhz1;
 
-.field public final synthetic b:Lnj4;
+.field public b:Lth;
 
-.field public final synthetic c:Liq3;
+.field public c:Lth;
+
+.field public d:Lth;
+
+.field public final e:F
 
 
 # direct methods
-.method public synthetic constructor <init>(Lf26;Lnj4;Liq3;)V
+.method public constructor <init>(Lhz1;)V
     .locals 0
 
     .line 1
@@ -24,80 +25,142 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lo47;->a:Lf26;
+    iput-object p1, p0, Lo47;->a:Lhz1;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lo47;->b:Lnj4;
+    invoke-interface {p1}, Lhz1;->h()F
 
     .line 7
     .line 8
-    iput-object p3, p0, Lo47;->c:Liq3;
-
     .line 9
+    move-result p1
+
     .line 10
+    iput p1, p0, Lo47;->e:F
+
+    .line 11
+    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(ILi71;Lyi1;)V
-    .locals 2
+.method public final a(JLth;Lth;)Lth;
+    .locals 5
 
     .line 1
-    const/4 p1, 0x0
+    iget-object v0, p0, Lo47;->c:Lth;
 
     .line 2
-    iget p3, p2, Li71;->l:I
-
     .line 3
+    if-nez v0, :cond_0
+
     .line 4
-    iget-object v0, p0, Lo47;->a:Lf26;
-
     .line 5
-    .line 6
-    iget-object v1, p0, Lo47;->b:Lnj4;
+    invoke-virtual {p3}, Lth;->c()Lth;
 
+    .line 6
     .line 7
     .line 8
-    invoke-virtual {v0, p2, p1, p3, v1}, Lf26;->b(Ljava/lang/CharSequence;IILnj4;)F
+    move-result-object v0
 
     .line 9
+    iput-object v0, p0, Lo47;->c:Lth;
+
     .line 10
     .line 11
-    move-result p1
+    :cond_0
+    invoke-virtual {v0}, Lth;->b()I
 
     .line 12
-    float-to-double p1, p1
-
     .line 13
-    invoke-static {p1, p2}, Ljava/lang/Math;->ceil(D)D
-
     .line 14
+    move-result v0
+
     .line 15
+    const/4 v1, 0x0
+
     .line 16
-    move-result-wide p1
+    :goto_0
+    iget-object v2, p0, Lo47;->c:Lth;
 
     .line 17
-    double-to-int p1, p1
-
     .line 18
-    iget-object p0, p0, Lo47;->c:Liq3;
+    const/4 v3, 0x0
 
     .line 19
+    const-string v4, "velocityVector"
+
     .line 20
-    iget p2, p0, Liq3;->a:I
-
     .line 21
+    if-ge v1, v0, :cond_2
+
     .line 22
-    if-le p1, p2, :cond_0
-
     .line 23
-    .line 24
-    iput p1, p0, Liq3;->a:I
+    if-eqz v2, :cond_1
 
+    .line 24
     .line 25
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 26
-    :cond_0
-    return-void
+    .line 27
+    .line 28
+    invoke-virtual {p4, v1}, Lth;->a(I)F
+
+    .line 29
+    .line 30
+    .line 31
+    move-result v3
+
+    .line 32
+    iget-object v4, p0, Lo47;->a:Lhz1;
+
+    .line 33
+    .line 34
+    invoke-interface {v4, p1, p2, v3}, Lhz1;->l(JF)F
+
+    .line 35
+    .line 36
+    .line 37
+    move-result v3
+
+    .line 38
+    invoke-virtual {v2, v1, v3}, Lth;->e(IF)V
+
+    .line 39
+    .line 40
+    .line 41
+    add-int/lit8 v1, v1, 0x1
+
+    .line 42
+    .line 43
+    goto :goto_0
+
+    .line 44
+    :cond_1
+    invoke-static {v4}, Lps2;->N(Ljava/lang/String;)V
+
+    .line 45
+    .line 46
+    .line 47
+    throw v3
+
+    .line 48
+    :cond_2
+    if-eqz v2, :cond_3
+
+    .line 49
+    .line 50
+    return-object v2
+
+    .line 51
+    :cond_3
+    invoke-static {v4}, Lps2;->N(Ljava/lang/String;)V
+
+    .line 52
+    .line 53
+    .line 54
+    throw v3
 .end method

@@ -1,9 +1,9 @@
 .class public final synthetic Lnr2;
-.super Lg62;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ld62;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lv52;
+.implements Ls52;
 
 
 # static fields
@@ -29,7 +29,7 @@
     const/4 v1, 0x2
 
     .line 7
-    const-class v2, Llh3;
+    const-class v2, Lai3;
 
     .line 8
     .line 9
@@ -37,7 +37,7 @@
 
     .line 10
     .line 11
-    invoke-direct/range {v0 .. v5}, Lg62;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct/range {v0 .. v5}, Ld62;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
     .line 12
     .line 13

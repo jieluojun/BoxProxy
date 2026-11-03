@@ -1,62 +1,80 @@
 .class public final Ln71;
-.super Lal4;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final o:Lr61;
+.field public final a:Lvu1;
+
+.field public final b:Lpw1;
+
+.field public final c:Lcl4;
+
+.field public d:Lp46;
 
 
 # direct methods
-.method public constructor <init>(Lr61;)V
-    .locals 2
+.method public constructor <init>(Lvu1;Lpw1;)V
+    .locals 3
 
     .line 1
-    const/4 v0, 0x0
+    new-instance v0, Luy0;
 
     .line 2
-    invoke-virtual {p1}, Lr61;->length()I
-
     .line 3
+    const/16 v1, 0xf
+
     .line 4
     .line 5
-    move-result v1
+    invoke-direct {v0, v1}, Luy0;-><init>(B)V
 
     .line 6
-    invoke-direct {p0, v0, v1, p1}, Lal4;-><init>(IILjava/lang/CharSequence;)V
-
     .line 7
     .line 8
-    .line 9
-    iput-object p1, p0, Ln71;->o:Lr61;
+    new-instance v1, Lp46;
 
+    .line 9
     .line 10
+    const/4 v2, 0x1
+
     .line 11
+    invoke-direct {v1, v2, v0}, Lp46;-><init>(ZLuy0;)V
+
+    .line 12
+    .line 13
+    .line 14
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 15
+    .line 16
+    .line 17
+    iput-object p1, p0, Ln71;->a:Lvu1;
+
+    .line 18
+    .line 19
+    iput-object p2, p0, Ln71;->b:Lpw1;
+
+    .line 20
+    .line 21
+    new-instance p1, Lcl4;
+
+    .line 22
+    .line 23
+    const/4 p2, 0x0
+
+    .line 24
+    invoke-direct {p1, p2}, Lcl4;-><init>(F)V
+
+    .line 25
+    .line 26
+    .line 27
+    iput-object p1, p0, Ln71;->c:Lcl4;
+
+    .line 28
+    .line 29
+    iput-object v1, p0, Ln71;->d:Lp46;
+
+    .line 30
+    .line 31
     return-void
-.end method
-
-
-# virtual methods
-.method public final charAt(I)C
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Lal4;->c()V
-
-    .line 2
-    .line 3
-    .line 4
-    iget-object p0, p0, Ln71;->o:Lr61;
-
-    .line 5
-    .line 6
-    invoke-virtual {p0, p1}, Lr61;->charAt(I)C
-
-    .line 7
-    .line 8
-    .line 9
-    move-result p0
-
-    .line 10
-    return p0
 .end method

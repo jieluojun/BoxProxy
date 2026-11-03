@@ -1,123 +1,87 @@
 .class public final Lox;
-.super Lwn3;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public x:Lir6;
-
-.field public final synthetic y:Lpx;
+# static fields
+.field public static final a:Lox;
 
 
 # direct methods
-.method public constructor <init>(Lpx;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lox;->y:Lpx;
+    new-instance v0, Lox;
 
     .line 2
     .line 3
-    invoke-direct {p0}, Lwn3;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
     .line 6
+    sput-object v0, Lox;->a:Lox;
+
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final w1()V
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
     .line 1
-    iget-object v0, p0, Lox;->y:Lpx;
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    iput-object p0, v0, Lpx;->j:Lox;
+    if-ne p0, p1, :cond_0
 
+    .line 3
     .line 4
+    return v0
+
     .line 5
-    iget-object v1, v0, Lpx;->k:Lmx0;
+    :cond_0
+    instance-of p0, p1, Lox;
 
     .line 6
     .line 7
-    if-eqz v1, :cond_0
+    if-nez p0, :cond_1
 
     .line 8
     .line 9
-    new-instance v1, Lh2;
+    const/4 p0, 0x0
 
     .line 10
+    return p0
+
     .line 11
-    const/16 v2, 0x8
-
-    .line 12
-    .line 13
-    invoke-direct {v1, p0, v0, v2}, Lh2;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
-
-    .line 14
-    .line 15
-    .line 16
-    invoke-static {p0, v1}, Ln43;->X(Lwn3;Lr52;)Lir6;
-
-    .line 17
-    .line 18
-    .line 19
-    move-result-object v0
-
-    .line 20
-    iput-object v0, p0, Lox;->x:Lir6;
-
-    .line 21
-    .line 22
-    :cond_0
-    return-void
+    :cond_1
+    return v0
 .end method
 
-.method public final x1()V
-    .locals 3
+.method public final hashCode()I
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lox;->y:Lpx;
+    const p0, 0x72e465b4
 
     .line 2
     .line 3
-    iget-object v1, v0, Lpx;->j:Lox;
-
     .line 4
-    .line 5
-    const/4 v2, 0x0
+    return p0
+.end method
 
-    .line 6
-    if-ne v1, p0, :cond_0
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    .line 7
-    .line 8
-    iput-object v2, v0, Lpx;->j:Lox;
+    .line 1
+    const-string p0, "Top"
 
-    .line 9
-    .line 10
-    :cond_0
-    iget-object v0, p0, Lox;->x:Lir6;
-
-    .line 11
-    .line 12
-    if-eqz v0, :cond_1
-
-    .line 13
-    .line 14
-    invoke-virtual {v0}, Lir6;->b()V
-
-    .line 15
-    .line 16
-    .line 17
-    :cond_1
-    iput-object v2, p0, Lox;->x:Lir6;
-
-    .line 18
-    .line 19
-    return-void
+    .line 2
+    .line 3
+    return-object p0
 .end method

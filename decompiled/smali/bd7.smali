@@ -1,97 +1,33 @@
 .class public abstract Lbd7;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final a:Ljava/util/logging/Logger;
+.field public static final a:Ljava/util/concurrent/atomic/AtomicReference;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    const-string v0, "okio.Okio"
-
-    .line 2
-    .line 3
-    invoke-static {v0}, Ljava/util/logging/Logger;->getLogger(Ljava/lang/String;)Ljava/util/logging/Logger;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    sput-object v0, Lbd7;->a:Ljava/util/logging/Logger;
-
-    .line 8
-    .line 9
-    return-void
-.end method
-
-.method public static final a(Ljava/lang/AssertionError;)Z
     .locals 2
 
     .line 1
-    invoke-virtual {p0}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
     .line 2
     .line 3
-    .line 4
-    move-result-object v0
+    sget-object v1, Lsc5;->Q:Lad7;
 
+    .line 4
     .line 5
-    const/4 v1, 0x0
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
 
     .line 6
-    if-eqz v0, :cond_1
-
     .line 7
     .line 8
-    invoke-virtual {p0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
+    sput-object v0, Lbd7;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
     .line 9
     .line 10
-    .line 11
-    move-result-object p0
-
-    .line 12
-    if-eqz p0, :cond_0
-
-    .line 13
-    .line 14
-    const-string v0, "getsockname failed"
-
-    .line 15
-    .line 16
-    invoke-static {p0, v0, v1}, Lw96;->j0(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Z
-
-    .line 17
-    .line 18
-    .line 19
-    move-result p0
-
-    .line 20
-    goto :goto_0
-
-    .line 21
-    :cond_0
-    move p0, v1
-
-    .line 22
-    :goto_0
-    if-eqz p0, :cond_1
-
-    .line 23
-    .line 24
-    const/4 p0, 0x1
-
-    .line 25
-    return p0
-
-    .line 26
-    :cond_1
-    return v1
+    return-void
 .end method

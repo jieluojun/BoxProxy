@@ -1,38 +1,47 @@
 .class public final Lu20;
-.super Lo01;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final c:F
+.field public a:Ljc;
 
-.field public final d:F
+.field public b:Lt9;
+
+.field public c:Lxh0;
+
+.field public d:Lzc;
 
 
 # direct methods
-.method public constructor <init>(FF)V
-    .locals 2
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
-    const/4 v0, 0x3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    const/4 v1, 0x0
-
     .line 3
-    invoke-direct {p0, v0, v1}, Lo01;-><init>(BZ)V
-
     .line 4
+    const/4 v0, 0x0
+
     .line 5
+    iput-object v0, p0, Lu20;->a:Ljc;
+
     .line 6
-    iput p1, p0, Lu20;->c:F
-
     .line 7
-    .line 8
-    iput p2, p0, Lu20;->d:F
+    iput-object v0, p0, Lu20;->b:Lt9;
 
+    .line 8
     .line 9
+    iput-object v0, p0, Lu20;->c:Lxh0;
+
     .line 10
+    .line 11
+    iput-object v0, p0, Lu20;->d:Lzc;
+
+    .line 12
+    .line 13
     return-void
 .end method
 
@@ -46,7 +55,7 @@
 
     .line 2
     .line 3
-    goto :goto_0
+    goto :goto_1
 
     .line 4
     :cond_0
@@ -58,7 +67,7 @@
 
     .line 7
     .line 8
-    goto :goto_1
+    goto :goto_0
 
     .line 9
     :cond_1
@@ -66,201 +75,333 @@
 
     .line 10
     .line 11
-    iget v0, p1, Lu20;->c:F
+    iget-object v0, p0, Lu20;->a:Ljc;
 
     .line 12
     .line 13
-    iget v1, p0, Lu20;->c:F
+    iget-object v1, p1, Lu20;->a:Ljc;
 
     .line 14
     .line 15
-    cmpg-float v0, v1, v0
+    invoke-static {v0, v1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 16
     .line 17
-    if-nez v0, :cond_2
-
     .line 18
+    move-result v0
+
     .line 19
-    iget p0, p0, Lu20;->d:F
+    if-nez v0, :cond_2
 
     .line 20
     .line 21
-    iget p1, p1, Lu20;->d:F
+    goto :goto_0
 
     .line 22
-    .line 23
-    cmpg-float p0, p0, p1
-
-    .line 24
-    .line 25
-    if-nez p0, :cond_2
-
-    .line 26
-    .line 27
-    :goto_0
-    const/4 p0, 0x1
-
-    .line 28
-    return p0
-
-    .line 29
     :cond_2
-    :goto_1
-    const/4 p0, 0x0
+    iget-object v0, p0, Lu20;->b:Lt9;
+
+    .line 23
+    .line 24
+    iget-object v1, p1, Lu20;->b:Lt9;
+
+    .line 25
+    .line 26
+    invoke-static {v0, v1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 27
+    .line 28
+    .line 29
+    move-result v0
 
     .line 30
+    if-nez v0, :cond_3
+
+    .line 31
+    .line 32
+    goto :goto_0
+
+    .line 33
+    :cond_3
+    iget-object v0, p0, Lu20;->c:Lxh0;
+
+    .line 34
+    .line 35
+    iget-object v1, p1, Lu20;->c:Lxh0;
+
+    .line 36
+    .line 37
+    invoke-static {v0, v1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 38
+    .line 39
+    .line 40
+    move-result v0
+
+    .line 41
+    if-nez v0, :cond_4
+
+    .line 42
+    .line 43
+    goto :goto_0
+
+    .line 44
+    :cond_4
+    iget-object p0, p0, Lu20;->d:Lzc;
+
+    .line 45
+    .line 46
+    iget-object p1, p1, Lu20;->d:Lzc;
+
+    .line 47
+    .line 48
+    invoke-static {p0, p1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 49
+    .line 50
+    .line 51
+    move-result p0
+
+    .line 52
+    if-nez p0, :cond_5
+
+    .line 53
+    .line 54
+    :goto_0
+    const/4 p0, 0x0
+
+    .line 55
+    return p0
+
+    .line 56
+    :cond_5
+    :goto_1
+    const/4 p0, 0x1
+
+    .line 57
     return p0
 .end method
 
-.method public final g()Landroid/graphics/RenderEffect;
+.method public final hashCode()I
     .locals 3
 
     .line 1
-    iget v0, p0, Lu20;->c:F
+    iget-object v0, p0, Lu20;->a:Ljc;
 
     .line 2
     .line 3
     const/4 v1, 0x0
 
     .line 4
-    cmpg-float v2, v0, v1
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
-    iget p0, p0, Lu20;->d:F
+    move v0, v1
 
     .line 7
+    goto :goto_0
+
     .line 8
-    if-nez v2, :cond_0
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     .line 9
     .line 10
-    cmpg-float v1, p0, v1
-
     .line 11
+    move-result v0
+
     .line 12
-    if-nez v1, :cond_0
+    :goto_0
+    mul-int/lit8 v0, v0, 0x1f
 
     .line 13
     .line 14
-    invoke-static {}, Ln95;->d()Landroid/graphics/RenderEffect;
+    iget-object v2, p0, Lu20;->b:Lt9;
 
     .line 15
     .line 16
-    .line 17
-    move-result-object p0
+    if-nez v2, :cond_1
 
+    .line 17
     .line 18
-    return-object p0
+    move v2, v1
 
     .line 19
-    :cond_0
-    const/4 v1, 0x3
+    goto :goto_1
 
     .line 20
-    invoke-static {v1}, Lsa7;->F(I)Landroid/graphics/Shader$TileMode;
+    :cond_1
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     .line 21
     .line 22
     .line 23
-    move-result-object v1
+    move-result v2
 
     .line 24
-    invoke-static {v0, p0, v1}, Ln95;->g(FFLandroid/graphics/Shader$TileMode;)Landroid/graphics/RenderEffect;
+    :goto_1
+    add-int/2addr v0, v2
 
     .line 25
+    mul-int/lit8 v0, v0, 0x1f
+
     .line 26
     .line 27
-    move-result-object p0
+    iget-object v2, p0, Lu20;->c:Lxh0;
 
     .line 28
-    return-object p0
-.end method
+    .line 29
+    if-nez v2, :cond_2
 
-.method public final hashCode()I
-    .locals 2
+    .line 30
+    .line 31
+    move v2, v1
 
-    .line 1
-    iget v0, p0, Lu20;->c:F
+    .line 32
+    goto :goto_2
 
-    .line 2
-    .line 3
-    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
+    .line 33
+    :cond_2
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
+    .line 34
+    .line 35
+    .line 36
+    move-result v2
 
-    .line 7
-    const/16 v1, 0x1f
+    .line 37
+    :goto_2
+    add-int/2addr v0, v2
 
-    .line 8
-    .line 9
-    mul-int/2addr v0, v1
+    .line 38
+    mul-int/lit8 v0, v0, 0x1f
 
-    .line 10
-    iget p0, p0, Lu20;->d:F
+    .line 39
+    .line 40
+    iget-object p0, p0, Lu20;->d:Lzc;
 
-    .line 11
-    .line 12
-    invoke-static {p0, v0, v1}, Lxu1;->c(FII)I
+    .line 41
+    .line 42
+    if-nez p0, :cond_3
 
-    .line 13
-    .line 14
-    .line 15
-    move-result p0
+    .line 43
+    .line 44
+    goto :goto_3
 
-    .line 16
-    const/4 v0, 0x3
+    .line 45
+    :cond_3
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    .line 17
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
+    .line 46
+    .line 47
+    .line 48
+    move-result v1
 
-    .line 18
-    .line 19
-    .line 20
-    move-result v0
+    .line 49
+    :goto_3
+    add-int/2addr v0, v1
 
-    .line 21
-    add-int/2addr v0, p0
-
-    .line 22
+    .line 50
     return v0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 4
+    .locals 5
 
     .line 1
-    const-string v0, ", radiusY="
+    iget-object v0, p0, Lu20;->a:Ljc;
 
     .line 2
     .line 3
-    const-string v1, ", edgeTreatment=Decal)"
+    iget-object v1, p0, Lu20;->b:Lt9;
 
     .line 4
     .line 5
-    const-string v2, "BlurEffect(renderEffect=null, radiusX="
+    iget-object v2, p0, Lu20;->c:Lxh0;
 
     .line 6
     .line 7
-    iget v3, p0, Lu20;->c:F
+    iget-object p0, p0, Lu20;->d:Lzc;
 
     .line 8
     .line 9
-    iget p0, p0, Lu20;->d:F
+    new-instance v3, Ljava/lang/StringBuilder;
 
     .line 10
     .line 11
-    invoke-static {v2, v3, v0, p0, v1}, Lv66;->p(Ljava/lang/String;FLjava/lang/String;FLjava/lang/String;)Ljava/lang/String;
+    const-string v4, "BorderCache(imageBitmap="
 
     .line 12
     .line 13
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
     .line 14
+    .line 15
+    .line 16
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 17
+    .line 18
+    .line 19
+    const-string v0, ", canvas="
+
+    .line 20
+    .line 21
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 22
+    .line 23
+    .line 24
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 25
+    .line 26
+    .line 27
+    const-string v0, ", canvasDrawScope="
+
+    .line 28
+    .line 29
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 30
+    .line 31
+    .line 32
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 33
+    .line 34
+    .line 35
+    const-string v0, ", borderPath="
+
+    .line 36
+    .line 37
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 38
+    .line 39
+    .line 40
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 41
+    .line 42
+    .line 43
+    const-string p0, ")"
+
+    .line 44
+    .line 45
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 46
+    .line 47
+    .line 48
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 49
+    .line 50
+    .line 51
     move-result-object p0
 
-    .line 15
+    .line 52
     return-object p0
 .end method

@@ -1,140 +1,137 @@
-.class public final enum Lwi1;
-.super Ljava/lang/Enum;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lwi1;
+.super Lpt6;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final enum j:Lwi1;
+# instance fields
+.field public final c:Ljava/lang/String;
 
-.field public static final enum k:Lwi1;
-
-.field public static final enum l:Lwi1;
-
-.field public static final synthetic m:[Lwi1;
+.field public final d:Ljava/util/Optional;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Ljava/lang/String;Ljava/util/Optional;Ljava/util/Optional;Ljava/util/Optional;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lwi1;
+    invoke-direct {p0, p3, p4}, Lpt6;-><init>(Ljava/util/Optional;Ljava/util/Optional;)V
 
     .line 2
     .line 3
-    const-string v1, "BEFORE"
-
     .line 4
-    .line 5
-    const/4 v2, 0x0
+    iput-object p1, p0, Lwi1;->c:Ljava/lang/String;
 
+    .line 5
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 7
     .line 8
     .line 9
-    sput-object v0, Lwi1;->j:Lwi1;
+    invoke-virtual {p2}, Ljava/util/Optional;->isPresent()Z
 
     .line 10
     .line 11
-    new-instance v1, Lwi1;
-
     .line 12
+    move-result p1
+
     .line 13
-    const-string v2, "ON"
+    if-eqz p1, :cond_1
 
     .line 14
     .line 15
-    const/4 v3, 0x1
+    invoke-virtual {p2}, Ljava/util/Optional;->get()Ljava/lang/Object;
 
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 17
     .line 18
+    move-result-object p1
+
     .line 19
-    sput-object v1, Lwi1;->k:Lwi1;
+    check-cast p1, Ljava/util/List;
 
     .line 20
     .line 21
-    new-instance v2, Lwi1;
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
     .line 22
     .line 23
-    const-string v3, "AFTER"
-
     .line 24
+    move-result p1
+
     .line 25
-    const/4 v4, 0x2
+    const/4 p3, 0x2
 
     .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    if-ne p1, p3, :cond_0
 
     .line 27
     .line 28
+    goto :goto_0
+
     .line 29
-    sput-object v2, Lwi1;->l:Lwi1;
+    :cond_0
+    new-instance p0, Lie7;
 
     .line 30
     .line 31
-    filled-new-array {v0, v1, v2}, [Lwi1;
+    invoke-virtual {p2}, Ljava/util/Optional;->get()Ljava/lang/Object;
 
     .line 32
     .line 33
     .line 34
-    move-result-object v0
+    move-result-object p1
 
     .line 35
-    sput-object v0, Lwi1;->m:[Lwi1;
+    check-cast p1, Ljava/util/List;
 
     .line 36
     .line 37
+    invoke-interface {p1}, Ljava/util/List;->size()I
+
+    .line 38
+    .line 39
+    .line 40
+    move-result p1
+
+    .line 41
+    const-string p2, "Two strings/integers must be provided instead of "
+
+    .line 42
+    .line 43
+    invoke-static {p1, p2}, Lqq5;->k(ILjava/lang/String;)Ljava/lang/String;
+
+    .line 44
+    .line 45
+    .line 46
+    move-result-object p1
+
+    .line 47
+    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    .line 48
+    .line 49
+    .line 50
+    throw p0
+
+    .line 51
+    :cond_1
+    :goto_0
+    iput-object p2, p0, Lwi1;->d:Ljava/util/Optional;
+
+    .line 52
+    .line 53
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lwi1;
-    .locals 1
+
+# virtual methods
+.method public final a()I
+    .locals 0
 
     .line 1
-    const-class v0, Lwi1;
+    const/4 p0, 0x7
 
     .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Lwi1;
-
-    .line 8
-    .line 9
-    return-object p0
-.end method
-
-.method public static values()[Lwi1;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lwi1;->m:[Lwi1;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [Lwi1;
-
-    .line 8
-    .line 9
-    return-object v0
+    return p0
 .end method

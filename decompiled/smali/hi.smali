@@ -1,228 +1,111 @@
-.class public final enum Lhi;
-.super Ljava/lang/Enum;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-
-# static fields
-.field public static final enum j:Lhi;
-
-.field public static final enum k:Lhi;
-
-.field public static final enum l:Lhi;
-
-.field public static final enum m:Lhi;
-
-.field public static final enum n:Lhi;
-
-.field public static final enum o:Lhi;
-
-.field public static final enum p:Lhi;
-
-.field public static final synthetic q:[Lhi;
+.class public abstract Lhi;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 9
+.method public static final a(Landroid/view/View;Lfp4;)V
+    .locals 1
 
     .line 1
-    new-instance v0, Lhi;
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     .line 2
     .line 3
-    const-string v1, "Paragraph"
-
     .line 4
+    move-result-object v0
+
     .line 5
-    const/4 v2, 0x0
+    invoke-static {v0, p1}, Lhi;->c(Landroid/content/Context;Lfp4;)Landroid/view/PointerIcon;
 
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 7
     .line 8
+    move-result-object p1
+
     .line 9
-    sput-object v0, Lhi;->j:Lhi;
+    invoke-virtual {p0}, Landroid/view/View;->getPointerIcon()Landroid/view/PointerIcon;
 
     .line 10
     .line 11
-    new-instance v1, Lhi;
-
     .line 12
+    move-result-object v0
+
     .line 13
-    const-string v2, "Span"
+    invoke-static {v0, p1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 14
     .line 15
-    const/4 v3, 0x1
-
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    move-result v0
+
+    .line 17
+    if-nez v0, :cond_0
+
+    .line 18
+    .line 19
+    invoke-virtual {p0, p1}, Landroid/view/View;->setPointerIcon(Landroid/view/PointerIcon;)V
+
+    .line 20
+    .line 21
+    .line 22
+    :cond_0
+    return-void
+.end method
+
+.method public static final b(Landroid/view/View;Lkl1;Lvz0;)Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    throw p0
+.end method
+
+.method public static final c(Landroid/content/Context;Lfp4;)Landroid/view/PointerIcon;
+    .locals 1
+
+    .line 1
+    instance-of v0, p1, Lfd;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    check-cast p1, Lfd;
+
+    .line 6
+    .line 7
+    iget-short p1, p1, Lfd;->b:S
+
+    .line 8
+    .line 9
+    invoke-static {p0, p1}, Landroid/view/PointerIcon;->getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    return-object p0
+
+    .line 14
+    :cond_0
+    const/16 p1, 0x3e8
+
+    .line 15
+    .line 16
+    invoke-static {p0, p1}, Landroid/view/PointerIcon;->getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
 
     .line 17
     .line 18
     .line 19
-    sput-object v1, Lhi;->k:Lhi;
-
-    .line 20
-    .line 21
-    new-instance v2, Lhi;
-
-    .line 22
-    .line 23
-    const-string v3, "VerbatimTts"
-
-    .line 24
-    .line 25
-    const/4 v4, 0x2
-
-    .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 27
-    .line 28
-    .line 29
-    sput-object v2, Lhi;->l:Lhi;
-
-    .line 30
-    .line 31
-    new-instance v3, Lhi;
-
-    .line 32
-    .line 33
-    const-string v4, "Url"
-
-    .line 34
-    .line 35
-    const/4 v5, 0x3
-
-    .line 36
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 37
-    .line 38
-    .line 39
-    sput-object v3, Lhi;->m:Lhi;
-
-    .line 40
-    .line 41
-    new-instance v4, Lhi;
-
-    .line 42
-    .line 43
-    const-string v5, "Link"
-
-    .line 44
-    .line 45
-    const/4 v6, 0x4
-
-    .line 46
-    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 47
-    .line 48
-    .line 49
-    sput-object v4, Lhi;->n:Lhi;
-
-    .line 50
-    .line 51
-    new-instance v5, Lhi;
-
-    .line 52
-    .line 53
-    const-string v6, "Clickable"
-
-    .line 54
-    .line 55
-    const/4 v7, 0x5
-
-    .line 56
-    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 57
-    .line 58
-    .line 59
-    sput-object v5, Lhi;->o:Lhi;
-
-    .line 60
-    .line 61
-    new-instance v6, Lhi;
-
-    .line 62
-    .line 63
-    const-string v7, "String"
-
-    .line 64
-    .line 65
-    const/4 v8, 0x6
-
-    .line 66
-    invoke-direct {v6, v7, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 67
-    .line 68
-    .line 69
-    sput-object v6, Lhi;->p:Lhi;
-
-    .line 70
-    .line 71
-    filled-new-array/range {v0 .. v6}, [Lhi;
-
-    .line 72
-    .line 73
-    .line 74
-    move-result-object v0
-
-    .line 75
-    sput-object v0, Lhi;->q:[Lhi;
-
-    .line 76
-    .line 77
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lhi;
-    .locals 1
-
-    .line 1
-    const-class v0, Lhi;
-
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    .line 4
-    .line 5
-    .line 6
     move-result-object p0
 
-    .line 7
-    check-cast p0, Lhi;
-
-    .line 8
-    .line 9
+    .line 20
     return-object p0
-.end method
-
-.method public static values()[Lhi;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lhi;->q:[Lhi;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [Lhi;
-
-    .line 8
-    .line 9
-    return-object v0
 .end method

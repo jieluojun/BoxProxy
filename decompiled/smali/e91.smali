@@ -1,28 +1,55 @@
 .class public final Le91;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljo3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lcw5;
 
 
 # instance fields
-.field public j:Lg91;
+.field public x:Z
 
-.field public synthetic k:Ljava/lang/Object;
+.field public final y:Z
 
-.field public final synthetic l:Lg91;
-
-.field public m:I
+.field public z:Lo52;
 
 
 # direct methods
-.method public constructor <init>(Lg91;Ld81;)V
+.method public constructor <init>(ZZLo52;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Le91;->l:Lg91;
+    invoke-direct {p0}, Ljo3;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
+    .line 4
+    iput-boolean p1, p0, Le91;->x:Z
+
+    .line 5
+    .line 6
+    iput-boolean p2, p0, Le91;->y:Z
+
+    .line 7
+    .line 8
+    iput-object p3, p0, Le91;->z:Lo52;
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+
+# virtual methods
+.method public final Q0(Llw5;)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Le91;->z:Lo52;
+
+    .line 2
+    .line 3
+    invoke-interface {p0, p1}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 4
     .line 5
@@ -30,45 +57,24 @@
     return-void
 .end method
 
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final V0()Z
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Le91;->k:Ljava/lang/Object;
+    iget-boolean p0, p0, Le91;->y:Z
 
     .line 2
     .line 3
-    iget p1, p0, Le91;->m:I
+    return p0
+.end method
 
-    .line 4
-    .line 5
-    const/high16 v0, -0x80000000
+.method public final W0()Z
+    .locals 0
 
-    .line 6
-    .line 7
-    or-int/2addr p1, v0
+    .line 1
+    iget-boolean p0, p0, Le91;->x:Z
 
-    .line 8
-    iput p1, p0, Le91;->m:I
-
-    .line 9
-    .line 10
-    iget-object p1, p0, Le91;->l:Lg91;
-
-    .line 11
-    .line 12
-    const/4 v0, 0x0
-
-    .line 13
-    invoke-virtual {p1, v0, p0}, Lg91;->c(Ljava/lang/String;Ld81;)Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p0
-
-    .line 17
-    return-object p0
+    .line 2
+    .line 3
+    return p0
 .end method

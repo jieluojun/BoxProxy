@@ -1,383 +1,346 @@
-.class public final synthetic Lcj3;
+.class public final Lcj3;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lv52;
+.implements Landroid/content/DialogInterface$OnKeyListener;
+.implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/content/DialogInterface$OnDismissListener;
+.implements Lck3;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public j:Laj3;
 
-.field public final synthetic k:Lg52;
+.field public k:Lp7;
 
-.field public final synthetic l:Lv52;
-
-.field public final synthetic m:Lxn3;
-
-.field public final synthetic n:Lv52;
-
-.field public final synthetic o:Z
-
-.field public final synthetic p:Lpi3;
-
-.field public final synthetic q:Lbv;
-
-.field public final synthetic r:Ldh4;
-
-.field public final synthetic s:I
-
-.field public final synthetic t:I
-
-.field public final synthetic u:Ljava/lang/Object;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lg52;Lv52;Lhx5;Lxn3;Lv52;ZLpi3;Lbv;Ldh4;II)V
-    .locals 1
-
-    .line 30
-    const/4 v0, 0x0
-
-    iput-byte v0, p0, Lcj3;->j:B
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lcj3;->k:Lg52;
-
-    iput-object p2, p0, Lcj3;->l:Lv52;
-
-    iput-object p3, p0, Lcj3;->u:Ljava/lang/Object;
-
-    iput-object p4, p0, Lcj3;->m:Lxn3;
-
-    iput-object p5, p0, Lcj3;->n:Lv52;
-
-    iput-boolean p6, p0, Lcj3;->o:Z
-
-    iput-object p7, p0, Lcj3;->p:Lpi3;
-
-    iput-object p8, p0, Lcj3;->q:Lbv;
-
-    iput-object p9, p0, Lcj3;->r:Ldh4;
-
-    iput p10, p0, Lcj3;->s:I
-
-    iput p11, p0, Lcj3;->t:I
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lg52;Lv52;Lxn3;Lv52;ZLpi3;Lsi3;Lbv;Ldh4;II)V
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    iput-byte v0, p0, Lcj3;->j:B
-
-    .line 3
-    .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 5
-    .line 6
-    .line 7
-    iput-object p1, p0, Lcj3;->k:Lg52;
-
-    .line 8
-    .line 9
-    iput-object p2, p0, Lcj3;->l:Lv52;
-
-    .line 10
-    .line 11
-    iput-object p3, p0, Lcj3;->m:Lxn3;
-
-    .line 12
-    .line 13
-    iput-object p4, p0, Lcj3;->n:Lv52;
-
-    .line 14
-    .line 15
-    iput-boolean p5, p0, Lcj3;->o:Z
-
-    .line 16
-    .line 17
-    iput-object p6, p0, Lcj3;->p:Lpi3;
-
-    .line 18
-    .line 19
-    iput-object p7, p0, Lcj3;->u:Ljava/lang/Object;
-
-    .line 20
-    .line 21
-    iput-object p8, p0, Lcj3;->q:Lbv;
-
-    .line 22
-    .line 23
-    iput-object p9, p0, Lcj3;->r:Ldh4;
-
-    .line 24
-    .line 25
-    iput p10, p0, Lcj3;->s:I
-
-    .line 26
-    .line 27
-    iput p11, p0, Lcj3;->t:I
-
-    .line 28
-    .line 29
-    return-void
-.end method
+.field public l:Lu93;
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 30
+.method public final a(Laj3;Z)V
+    .locals 0
 
     .line 1
-    move-object/from16 v0, p0
+    if-nez p2, :cond_0
 
     .line 2
     .line 3
-    iget-byte v1, v0, Lcj3;->j:B
+    iget-object p2, p0, Lcj3;->j:Laj3;
 
     .line 4
     .line 5
-    sget-object v2, Ld07;->a:Ld07;
+    if-ne p1, p2, :cond_1
 
     .line 6
     .line 7
-    iget v3, v0, Lcj3;->t:I
+    :cond_0
+    iget-object p0, p0, Lcj3;->k:Lp7;
 
     .line 8
     .line 9
-    iget v4, v0, Lcj3;->s:I
+    if-eqz p0, :cond_1
 
     .line 10
     .line 11
-    iget-object v5, v0, Lcj3;->u:Ljava/lang/Object;
+    invoke-virtual {p0}, Lp7;->dismiss()V
 
     .line 12
     .line 13
-    packed-switch v1, :pswitch_data_0
-
     .line 14
+    :cond_1
+    return-void
+.end method
+
+.method public final n(Laj3;)Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .locals 1
+
+    .line 1
+    iget-object p1, p0, Lcj3;->j:Laj3;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lcj3;->l:Lu93;
+
+    .line 4
+    .line 5
+    iget-object v0, p0, Lu93;->o:Lt93;
+
+    .line 6
+    .line 7
+    if-nez v0, :cond_0
+
+    .line 8
+    .line 9
+    new-instance v0, Lt93;
+
+    .line 10
+    .line 11
+    invoke-direct {v0, p0}, Lt93;-><init>(Lu93;)V
+
+    .line 12
+    .line 13
+    .line 14
+    iput-object v0, p0, Lu93;->o:Lt93;
+
     .line 15
     .line 16
-    move-object v12, v5
+    :cond_0
+    invoke-virtual {v0, p2}, Lt93;->b(I)Lgj3;
 
     .line 17
-    check-cast v12, Lsi3;
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    const/4 p2, 0x0
+
+    .line 21
+    const/4 v0, 0x0
+
+    .line 22
+    invoke-virtual {p1, p0, v0, p2}, Laj3;->q(Landroid/view/MenuItem;Ldk3;I)Z
+
+    .line 23
+    .line 24
+    .line 25
+    return-void
+.end method
+
+.method public final onDismiss(Landroid/content/DialogInterface;)V
+    .locals 1
+
+    .line 1
+    iget-object p1, p0, Lcj3;->l:Lu93;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lcj3;->j:Laj3;
+
+    .line 4
+    .line 5
+    const/4 v0, 0x1
+
+    .line 6
+    invoke-virtual {p1, p0, v0}, Lu93;->a(Laj3;Z)V
+
+    .line 7
+    .line 8
+    .line 9
+    return-void
+.end method
+
+.method public final onKey(Landroid/content/DialogInterface;ILandroid/view/KeyEvent;)Z
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lcj3;->j:Laj3;
+
+    .line 2
+    .line 3
+    const/16 v1, 0x52
+
+    .line 4
+    .line 5
+    if-eq p2, v1, :cond_0
+
+    .line 6
+    .line 7
+    const/4 v1, 0x4
+
+    .line 8
+    if-ne p2, v1, :cond_2
+
+    .line 9
+    .line 10
+    :cond_0
+    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
+
+    .line 11
+    .line 12
+    .line 13
+    move-result v1
+
+    .line 14
+    const/4 v2, 0x1
+
+    .line 15
+    if-nez v1, :cond_1
+
+    .line 16
+    .line 17
+    invoke-virtual {p3}, Landroid/view/KeyEvent;->getRepeatCount()I
 
     .line 18
     .line 19
-    move-object/from16 v15, p1
-
     .line 20
+    move-result v1
+
     .line 21
-    check-cast v15, Lz01;
+    if-nez v1, :cond_1
 
     .line 22
     .line 23
-    move-object/from16 v1, p2
+    iget-object p1, p0, Lcj3;->k:Lp7;
 
     .line 24
     .line 25
-    check-cast v1, Ljava/lang/Integer;
+    invoke-virtual {p1}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     .line 26
     .line 27
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 28
+    move-result-object p1
+
     .line 29
+    if-eqz p1, :cond_2
+
     .line 30
-    or-int/lit8 v1, v4, 0x1
-
     .line 31
-    .line 32
-    invoke-static {v1}, Lkr5;->i0(I)I
+    invoke-virtual {p1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
 
+    .line 32
     .line 33
     .line 34
+    move-result-object p1
+
     .line 35
-    move-result v16
+    if-eqz p1, :cond_2
 
     .line 36
-    invoke-static {v3}, Lkr5;->i0(I)I
-
     .line 37
+    invoke-virtual {p1}, Landroid/view/View;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
+
     .line 38
     .line 39
-    move-result v17
-
     .line 40
-    iget-object v6, v0, Lcj3;->k:Lg52;
+    move-result-object p1
 
     .line 41
+    if-eqz p1, :cond_2
+
     .line 42
-    iget-object v7, v0, Lcj3;->l:Lv52;
-
     .line 43
-    .line 44
-    iget-object v8, v0, Lcj3;->m:Lxn3;
+    invoke-virtual {p1, p3, p0}, Landroid/view/KeyEvent$DispatcherState;->startTracking(Landroid/view/KeyEvent;Ljava/lang/Object;)V
 
+    .line 44
     .line 45
     .line 46
-    iget-object v9, v0, Lcj3;->n:Lv52;
+    return v2
 
     .line 47
-    .line 48
-    iget-boolean v10, v0, Lcj3;->o:Z
+    :cond_1
+    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
+    .line 48
     .line 49
     .line 50
-    iget-object v11, v0, Lcj3;->p:Lpi3;
+    move-result v1
 
     .line 51
+    if-ne v1, v2, :cond_2
+
     .line 52
-    iget-object v13, v0, Lcj3;->q:Lbv;
-
     .line 53
-    .line 54
-    iget-object v14, v0, Lcj3;->r:Ldh4;
+    invoke-virtual {p3}, Landroid/view/KeyEvent;->isCanceled()Z
 
+    .line 54
     .line 55
     .line 56
-    invoke-static/range {v6 .. v17}, Lfj3;->d(Lg52;Lv52;Lxn3;Lv52;ZLpi3;Lsi3;Lbv;Ldh4;Lz01;II)V
+    move-result v1
 
     .line 57
+    if-nez v1, :cond_2
+
     .line 58
     .line 59
-    return-object v2
+    iget-object p0, p0, Lcj3;->k:Lp7;
 
     .line 60
-    :pswitch_0
-    move-object/from16 v20, v5
-
     .line 61
-    .line 62
-    check-cast v20, Lhx5;
+    invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
+    .line 62
     .line 63
     .line 64
-    move-object/from16 v27, p1
+    move-result-object p0
 
     .line 65
+    if-eqz p0, :cond_2
+
     .line 66
-    check-cast v27, Lz01;
-
     .line 67
-    .line 68
-    move-object/from16 v1, p2
+    invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
 
+    .line 68
     .line 69
     .line 70
-    check-cast v1, Ljava/lang/Integer;
+    move-result-object p0
 
     .line 71
-    .line 72
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-eqz p0, :cond_2
 
+    .line 72
     .line 73
+    invoke-virtual {p0}, Landroid/view/View;->getKeyDispatcherState()Landroid/view/KeyEvent$DispatcherState;
+
     .line 74
     .line 75
-    or-int/lit8 v1, v4, 0x1
-
     .line 76
+    move-result-object p0
+
     .line 77
-    invoke-static {v1}, Lkr5;->i0(I)I
+    if-eqz p0, :cond_2
 
     .line 78
     .line 79
+    invoke-virtual {p0, p3}, Landroid/view/KeyEvent$DispatcherState;->isTracking(Landroid/view/KeyEvent;)Z
+
     .line 80
-    move-result v28
-
     .line 81
-    invoke-static {v3}, Lkr5;->i0(I)I
-
     .line 82
-    .line 83
-    .line 84
-    move-result v29
+    move-result p0
 
+    .line 83
+    if-eqz p0, :cond_2
+
+    .line 84
     .line 85
-    iget-object v1, v0, Lcj3;->k:Lg52;
+    invoke-virtual {v0, v2}, Laj3;->c(Z)V
 
     .line 86
     .line 87
-    iget-object v3, v0, Lcj3;->l:Lv52;
-
     .line 88
-    .line 89
-    iget-object v4, v0, Lcj3;->m:Lxn3;
+    invoke-interface {p1}, Landroid/content/DialogInterface;->dismiss()V
 
+    .line 89
     .line 90
     .line 91
-    iget-object v5, v0, Lcj3;->n:Lv52;
+    return v2
 
     .line 92
+    :cond_2
+    const/4 p0, 0x0
+
     .line 93
-    iget-boolean v6, v0, Lcj3;->o:Z
+    invoke-virtual {v0, p2, p3, p0}, Laj3;->performShortcut(ILandroid/view/KeyEvent;I)Z
 
     .line 94
     .line 95
-    iget-object v7, v0, Lcj3;->p:Lpi3;
-
     .line 96
+    move-result p0
+
     .line 97
-    iget-object v8, v0, Lcj3;->q:Lbv;
-
-    .line 98
-    .line 99
-    iget-object v0, v0, Lcj3;->r:Ldh4;
-
-    .line 100
-    .line 101
-    move-object/from16 v26, v0
-
-    .line 102
-    .line 103
-    move-object/from16 v18, v1
-
-    .line 104
-    .line 105
-    move-object/from16 v19, v3
-
-    .line 106
-    .line 107
-    move-object/from16 v21, v4
-
-    .line 108
-    .line 109
-    move-object/from16 v22, v5
-
-    .line 110
-    .line 111
-    move/from16 v23, v6
-
-    .line 112
-    .line 113
-    move-object/from16 v24, v7
-
-    .line 114
-    .line 115
-    move-object/from16 v25, v8
-
-    .line 116
-    .line 117
-    invoke-static/range {v18 .. v29}, Lfj3;->c(Lg52;Lv52;Lhx5;Lxn3;Lv52;ZLpi3;Lbv;Ldh4;Lz01;II)V
-
-    .line 118
-    .line 119
-    .line 120
-    return-object v2
-
-    .line 121
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

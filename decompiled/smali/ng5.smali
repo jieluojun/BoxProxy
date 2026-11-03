@@ -1,197 +1,118 @@
-.class public final synthetic Lng5;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lr52;
+.class public final enum Lng5;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic j:B
+# static fields
+.field public static final enum j:Lng5;
 
-.field public final synthetic k:Luh5;
+.field public static final enum k:Lng5;
 
-.field public final synthetic l:Lp15;
+.field public static final synthetic l:[Lng5;
 
 
 # direct methods
-.method public synthetic constructor <init>(Luh5;Lp15;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    iput-byte p3, p0, Lng5;->j:B
+    new-instance v0, Lng5;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lng5;->k:Luh5;
+    const-string v1, "Mihomo"
 
     .line 4
     .line 5
-    iput-object p2, p0, Lng5;->l:Lp15;
+    const/4 v2, 0x0
 
     .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 7
     .line 8
     .line 9
-    .line 10
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    .line 1
-    iget-byte v0, p0, Lng5;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, Ld07;->a:Ld07;
-
-    .line 4
-    .line 5
-    iget-object v2, p0, Lng5;->l:Lp15;
-
-    .line 6
-    .line 7
-    iget-object p0, p0, Lng5;->k:Luh5;
-
-    .line 8
-    .line 9
-    check-cast p1, Lq15;
+    sput-object v0, Lng5;->j:Lng5;
 
     .line 10
     .line 11
-    packed-switch v0, :pswitch_data_0
+    new-instance v1, Lng5;
 
     .line 12
     .line 13
+    const-string v2, "SingBox"
+
     .line 14
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 15
-    .line 16
-    .line 17
-    invoke-virtual {p0, v2, p1}, Luh5;->e(Lp15;Lq15;)V
+    const/4 v3, 0x1
 
+    .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 17
     .line 18
     .line 19
-    .line 20
-    return-object v1
+    sput-object v1, Lng5;->k:Lng5;
 
+    .line 20
     .line 21
-    :pswitch_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    filled-new-array {v0, v1}, [Lng5;
 
     .line 22
     .line 23
     .line 24
-    invoke-virtual {p0, v2, p1}, Luh5;->k(Lp15;Lq15;)V
+    move-result-object v0
 
     .line 25
+    sput-object v0, Lng5;->l:[Lng5;
+
     .line 26
     .line 27
-    return-object v1
+    return-void
+.end method
 
-    .line 28
-    :pswitch_1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.method public static valueOf(Ljava/lang/String;)Lng5;
+    .locals 1
 
-    .line 29
-    .line 30
-    .line 31
-    invoke-virtual {p0, v2, p1}, Luh5;->k(Lp15;Lq15;)V
+    .line 1
+    const-class v0, Lng5;
 
-    .line 32
-    .line 33
-    .line 34
-    return-object v1
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    .line 35
-    :pswitch_2
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
 
-    .line 36
-    .line 37
-    .line 38
-    invoke-virtual {p0, v2, p1}, Luh5;->e(Lp15;Lq15;)V
+    .line 7
+    check-cast p0, Lng5;
 
-    .line 39
-    .line 40
-    .line 41
-    return-object v1
+    .line 8
+    .line 9
+    return-object p0
+.end method
 
-    .line 42
-    :pswitch_3
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.method public static values()[Lng5;
+    .locals 1
 
-    .line 43
-    .line 44
-    .line 45
-    invoke-virtual {p0, v2, p1}, Luh5;->k(Lp15;Lq15;)V
+    .line 1
+    sget-object v0, Lng5;->l:[Lng5;
 
-    .line 46
-    .line 47
-    .line 48
-    return-object v1
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    .line 49
-    :pswitch_4
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
 
-    .line 50
-    .line 51
-    .line 52
-    invoke-virtual {p0, v2, p1}, Luh5;->e(Lp15;Lq15;)V
+    .line 7
+    check-cast v0, [Lng5;
 
-    .line 53
-    .line 54
-    .line 55
-    return-object v1
-
-    .line 56
-    :pswitch_5
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 57
-    .line 58
-    .line 59
-    invoke-virtual {p0, v2, p1}, Luh5;->k(Lp15;Lq15;)V
-
-    .line 60
-    .line 61
-    .line 62
-    return-object v1
-
-    .line 63
-    :pswitch_6
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 64
-    .line 65
-    .line 66
-    invoke-virtual {p0, v2, p1}, Luh5;->e(Lp15;Lq15;)V
-
-    .line 67
-    .line 68
-    .line 69
-    return-object v1
-
-    .line 70
-    nop
-
-    .line 71
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 8
+    .line 9
+    return-object v0
 .end method

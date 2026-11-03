@@ -1,10 +1,10 @@
 .class public abstract Lpm3;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final a:Lmp1;
+.field public static final a:Lsf3;
 
 
 # direct methods
@@ -12,1584 +12,1636 @@
     .locals 3
 
     .line 1
-    new-instance v0, Lv43;
+    new-instance v0, Lsf3;
 
     .line 2
     .line 3
-    const/16 v1, 0x15
+    invoke-direct {v0}, Lsf3;-><init>()V
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Lv43;-><init>(B)V
-
     .line 6
+    const-string v1, "bin"
+
     .line 7
     .line 8
-    new-instance v1, Lmp1;
+    const-string v2, "application/octet-stream"
 
     .line 9
     .line 10
-    const/4 v2, 0x1
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 11
-    invoke-direct {v1, v0, v2}, Lmp1;-><init>(Lg52;B)V
-
     .line 12
     .line 13
+    const-string v1, "gz"
+
     .line 14
-    sput-object v1, Lpm3;->a:Lmp1;
-
     .line 15
-    .line 16
-    return-void
-.end method
+    const-string v2, "application/gzip"
 
-.method public static final a(Lxn3;FLdh4;Lgi0;Lcr4;ZLg52;Lg52;Lty0;Lz01;II)V
-    .locals 21
-
-    .line 1
-    move-object/from16 v8, p8
-
-    .line 2
-    .line 3
-    move/from16 v11, p10
-
-    .line 4
-    .line 5
-    move/from16 v12, p11
-
-    .line 6
-    .line 7
-    move-object/from16 v4, p9
-
-    .line 8
-    .line 9
-    check-cast v4, Lv62;
-
-    .line 10
-    .line 11
-    const v0, 0x6b274bc6
-
-    .line 12
-    .line 13
-    .line 14
-    invoke-virtual {v4, v0}, Lv62;->d0(I)Lz01;
-
-    .line 15
     .line 16
     .line 17
-    and-int/lit8 v0, v12, 0x1
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 18
     .line 19
-    if-eqz v0, :cond_0
-
     .line 20
+    const-string v1, "json"
+
     .line 21
-    or-int/lit8 v1, v11, 0x6
-
     .line 22
-    .line 23
-    move v2, v1
+    const-string v2, "application/json"
 
+    .line 23
     .line 24
-    move-object/from16 v1, p0
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 25
     .line 26
-    goto :goto_1
-
     .line 27
-    :cond_0
-    and-int/lit8 v1, v11, 0x6
+    const-string v1, "pdf"
 
     .line 28
     .line 29
-    if-nez v1, :cond_2
+    const-string v2, "application/pdf"
 
     .line 30
     .line 31
-    move-object/from16 v1, p0
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 32
     .line 33
-    invoke-virtual {v4, v1}, Lv62;->g(Ljava/lang/Object;)Z
-
     .line 34
+    const-string v1, "yaml"
+
     .line 35
     .line 36
-    move-result v2
+    const-string v2, "application/yaml"
 
     .line 37
-    if-eqz v2, :cond_1
-
     .line 38
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 39
-    const/4 v2, 0x4
-
     .line 40
-    goto :goto_0
-
     .line 41
-    :cond_1
-    const/4 v2, 0x2
+    const-string v1, "avif"
 
     .line 42
-    :goto_0
-    or-int/2addr v2, v11
-
     .line 43
-    goto :goto_1
+    const-string v2, "image/avif"
 
     .line 44
-    :cond_2
-    move-object/from16 v1, p0
-
     .line 45
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 46
-    move v2, v11
-
     .line 47
-    :goto_1
-    and-int/lit8 v3, v12, 0x2
-
     .line 48
+    const-string v1, "avifs"
+
     .line 49
-    if-eqz v3, :cond_4
-
     .line 50
-    .line 51
-    or-int/lit8 v2, v2, 0x30
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 51
     .line 52
     .line 53
-    :cond_3
-    move/from16 v5, p1
+    const-string v1, "bmp"
 
     .line 54
     .line 55
-    goto :goto_3
+    const-string v2, "image/bmp"
 
     .line 56
-    :cond_4
-    and-int/lit8 v5, v11, 0x30
-
     .line 57
-    .line 58
-    if-nez v5, :cond_3
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 58
     .line 59
     .line 60
-    move/from16 v5, p1
+    const-string v1, "cgm"
 
     .line 61
     .line 62
-    invoke-virtual {v4, v5}, Lv62;->d(F)Z
+    const-string v2, "image/cgm"
 
     .line 63
     .line 64
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 65
-    move-result v6
-
     .line 66
-    if-eqz v6, :cond_5
-
     .line 67
+    const-string v1, "g3"
+
     .line 68
-    const/16 v6, 0x20
-
     .line 69
-    .line 70
-    goto :goto_2
+    const-string v2, "image/g3fax"
 
+    .line 70
     .line 71
-    :cond_5
-    const/16 v6, 0x10
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 72
     .line 73
-    :goto_2
-    or-int/2addr v2, v6
-
     .line 74
-    :goto_3
-    and-int/lit8 v6, v12, 0x4
+    const-string v1, "gif"
 
     .line 75
     .line 76
-    if-eqz v6, :cond_7
+    const-string v2, "image/gif"
 
     .line 77
     .line 78
-    or-int/lit16 v2, v2, 0x180
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 79
     .line 80
-    :cond_6
-    move-object/from16 v7, p2
-
     .line 81
-    .line 82
-    goto :goto_5
+    const-string v1, "heif"
 
+    .line 82
     .line 83
-    :cond_7
-    and-int/lit16 v7, v11, 0x180
+    const-string v2, "image/heic"
 
     .line 84
     .line 85
-    if-nez v7, :cond_6
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 86
     .line 87
-    move-object/from16 v7, p2
-
     .line 88
-    .line 89
-    invoke-virtual {v4, v7}, Lv62;->g(Ljava/lang/Object;)Z
+    const-string v1, "heic"
 
+    .line 89
     .line 90
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 91
     .line 92
-    move-result v9
-
     .line 93
-    if-eqz v9, :cond_8
+    const-string v1, "ief"
 
     .line 94
     .line 95
-    const/16 v9, 0x100
+    const-string v2, "image/ief"
 
     .line 96
     .line 97
-    goto :goto_4
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 98
-    :cond_8
-    const/16 v9, 0x80
-
     .line 99
     .line 100
-    :goto_4
-    or-int/2addr v2, v9
+    const-string v1, "jpe"
 
     .line 101
-    :goto_5
-    and-int/lit16 v9, v11, 0xc00
-
     .line 102
+    const-string v2, "image/jpeg"
+
     .line 103
-    if-nez v9, :cond_b
-
     .line 104
-    .line 105
-    and-int/lit8 v9, v12, 0x8
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 105
     .line 106
     .line 107
-    if-nez v9, :cond_9
+    const-string v1, "jpeg"
 
     .line 108
     .line 109
-    move-object/from16 v9, p3
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 110
     .line 111
-    invoke-virtual {v4, v9}, Lv62;->g(Ljava/lang/Object;)Z
-
     .line 112
+    const-string v1, "jpg"
+
     .line 113
     .line 114
-    move-result v10
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 115
-    if-eqz v10, :cond_a
-
     .line 116
     .line 117
-    const/16 v10, 0x800
+    const-string v1, "pjpg"
 
     .line 118
     .line 119
-    goto :goto_6
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 120
-    :cond_9
-    move-object/from16 v9, p3
-
     .line 121
     .line 122
-    :cond_a
-    const/16 v10, 0x400
+    const-string v1, "jfif"
 
     .line 123
     .line 124
-    :goto_6
-    or-int/2addr v2, v10
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 125
-    goto :goto_7
-
     .line 126
-    :cond_b
-    move-object/from16 v9, p3
-
     .line 127
+    const-string v1, "jfif-tbnl"
+
     .line 128
-    :goto_7
-    and-int/lit8 v10, v12, 0x10
-
     .line 129
-    .line 130
-    if-eqz v10, :cond_c
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 130
     .line 131
     .line 132
-    or-int/lit16 v2, v2, 0x6000
+    const-string v1, "jif"
 
     .line 133
     .line 134
-    goto :goto_a
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 135
-    :cond_c
-    and-int/lit16 v13, v11, 0x6000
-
     .line 136
     .line 137
-    if-nez v13, :cond_f
+    const-string v1, "png"
 
     .line 138
     .line 139
-    if-nez p4, :cond_d
+    const-string v2, "image/png"
 
     .line 140
     .line 141
-    const/4 v13, -0x1
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 142
-    goto :goto_8
-
     .line 143
-    :cond_d
-    invoke-virtual/range {p4 .. p4}, Ljava/lang/Enum;->ordinal()I
-
     .line 144
+    const-string v1, "btif"
+
     .line 145
     .line 146
-    move-result v13
+    const-string v2, "image/prs.btif"
 
     .line 147
-    :goto_8
-    invoke-virtual {v4, v13}, Lv62;->e(I)Z
-
     .line 148
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 149
     .line 150
-    move-result v13
-
     .line 151
-    if-eqz v13, :cond_e
+    const-string v1, "svg"
 
     .line 152
     .line 153
-    const/16 v13, 0x4000
+    const-string v2, "image/svg+xml"
 
     .line 154
     .line 155
-    goto :goto_9
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 156
-    :cond_e
-    const/16 v13, 0x2000
-
     .line 157
     .line 158
-    :goto_9
-    or-int/2addr v2, v13
+    const-string v1, "svgz"
 
     .line 159
-    :cond_f
-    :goto_a
-    and-int/lit8 v13, v12, 0x20
-
     .line 160
-    .line 161
-    const/high16 v14, 0x30000
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 161
     .line 162
     .line 163
-    if-eqz v13, :cond_11
+    const-string v1, "tif"
 
     .line 164
     .line 165
-    or-int/2addr v2, v14
+    const-string v2, "image/tiff"
 
     .line 166
-    :cond_10
-    move/from16 v14, p5
-
     .line 167
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 168
-    goto :goto_c
-
     .line 169
-    :cond_11
-    and-int/2addr v14, v11
-
     .line 170
-    if-nez v14, :cond_10
+    const-string v1, "tiff"
 
     .line 171
     .line 172
-    move/from16 v14, p5
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 173
     .line 174
-    invoke-virtual {v4, v14}, Lv62;->h(Z)Z
-
     .line 175
+    const-string v1, "psd"
+
     .line 176
     .line 177
-    move-result v15
+    const-string v2, "image/vnd.adobe.photoshop"
 
     .line 178
-    if-eqz v15, :cond_12
-
     .line 179
-    .line 180
-    const/high16 v15, 0x20000
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 180
     .line 181
     .line 182
-    goto :goto_b
+    const-string v1, "djv"
 
     .line 183
-    :cond_12
-    const/high16 v15, 0x10000
-
     .line 184
-    .line 185
-    :goto_b
-    or-int/2addr v2, v15
+    const-string v2, "image/vnd.djvu"
 
+    .line 185
     .line 186
-    :goto_c
-    const/high16 v15, 0x180000
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 187
     .line 188
-    or-int/2addr v15, v2
-
     .line 189
-    move/from16 p9, v0
+    const-string v1, "djvu"
 
     .line 190
     .line 191
-    and-int/lit16 v0, v12, 0x80
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 192
     .line 193
-    if-eqz v0, :cond_14
-
     .line 194
+    const-string v1, "dwg"
+
     .line 195
-    const/high16 v15, 0xd80000
-
     .line 196
-    .line 197
-    or-int/2addr v15, v2
+    const-string v2, "image/vnd.dwg"
 
+    .line 197
     .line 198
-    :cond_13
-    move-object/from16 v2, p6
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 199
     .line 200
-    goto :goto_e
-
     .line 201
-    :cond_14
-    const/high16 v2, 0xc00000
+    const-string v1, "dxf"
 
     .line 202
     .line 203
-    and-int/2addr v2, v11
+    const-string v2, "image/vnd.dxf"
 
     .line 204
-    if-nez v2, :cond_13
-
     .line 205
-    .line 206
-    move-object/from16 v2, p6
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 206
     .line 207
     .line 208
-    invoke-virtual {v4, v2}, Lv62;->i(Ljava/lang/Object;)Z
+    const-string v1, "fbs"
 
     .line 209
     .line 210
-    .line 211
-    move-result v16
+    const-string v2, "image/vnd.fastbidsheet"
 
+    .line 211
     .line 212
-    if-eqz v16, :cond_15
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 213
     .line 214
-    const/high16 v16, 0x800000
-
     .line 215
-    .line 216
-    goto :goto_d
+    const-string v1, "fpx"
 
+    .line 216
     .line 217
-    :cond_15
-    const/high16 v16, 0x400000
+    const-string v2, "image/vnd.fpx"
 
     .line 218
     .line 219
-    :goto_d
-    or-int v15, v15, v16
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 220
     .line 221
-    :goto_e
-    move/from16 v16, v0
-
     .line 222
+    const-string v1, "fst"
+
     .line 223
-    and-int/lit16 v0, v12, 0x100
-
     .line 224
+    const-string v2, "image/vnd.fst"
+
     .line 225
-    const/high16 v17, 0x6000000
-
     .line 226
-    .line 227
-    if-eqz v0, :cond_17
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 227
     .line 228
     .line 229
-    or-int v15, v15, v17
+    const-string v1, "mmr"
 
     .line 230
     .line 231
-    :cond_16
-    move/from16 v17, v0
+    const-string v2, "image/vnd.fujixerox.edmics-mmr"
 
     .line 232
     .line 233
-    move-object/from16 v0, p7
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 234
     .line 235
-    goto :goto_10
-
     .line 236
-    :cond_17
-    and-int v17, v11, v17
+    const-string v1, "rlc"
 
     .line 237
     .line 238
-    if-nez v17, :cond_16
+    const-string v2, "image/vnd.fujixerox.edmics-rlc"
 
     .line 239
     .line 240
-    move/from16 v17, v0
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 241
     .line 242
-    move-object/from16 v0, p7
-
     .line 243
-    .line 244
-    invoke-virtual {v4, v0}, Lv62;->i(Ljava/lang/Object;)Z
+    const-string v1, "mdi"
 
+    .line 244
     .line 245
+    const-string v2, "image/vnd.ms-modi"
+
     .line 246
     .line 247
-    move-result v18
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 248
-    if-eqz v18, :cond_18
-
     .line 249
     .line 250
-    const/high16 v18, 0x4000000
+    const-string v1, "npx"
 
     .line 251
     .line 252
-    goto :goto_f
+    const-string v2, "image/vnd.net-fpx"
 
     .line 253
-    :cond_18
-    const/high16 v18, 0x2000000
-
     .line 254
-    .line 255
-    :goto_f
-    or-int v15, v15, v18
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 255
     .line 256
     .line 257
-    :goto_10
-    const/high16 v18, 0x30000000
+    const-string v1, "wbmp"
 
     .line 258
     .line 259
-    and-int v18, v11, v18
+    const-string v2, "image/vnd.wap.wbmp"
 
     .line 260
     .line 261
-    if-nez v18, :cond_1a
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 262
     .line 263
-    invoke-virtual {v4, v8}, Lv62;->i(Ljava/lang/Object;)Z
-
     .line 264
+    const-string v1, "xif"
+
     .line 265
     .line 266
-    move-result v18
+    const-string v2, "image/vnd.xiff"
 
     .line 267
-    if-eqz v18, :cond_19
-
     .line 268
-    .line 269
-    const/high16 v18, 0x20000000
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 269
     .line 270
     .line 271
-    goto :goto_11
+    const-string v1, "webp"
 
     .line 272
-    :cond_19
-    const/high16 v18, 0x10000000
-
     .line 273
+    const-string v2, "image/webp"
+
     .line 274
-    :goto_11
-    or-int v15, v15, v18
-
     .line 275
-    .line 276
-    :cond_1a
-    const v18, 0x12492493
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 276
     .line 277
     .line 278
+    const-string v1, "dng"
+
     .line 279
-    and-int v0, v15, v18
-
     .line 280
-    .line 281
-    const v1, 0x12492492
+    const-string v2, "image/x-adobe-dng"
 
+    .line 281
     .line 282
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 283
     .line 284
-    const/4 v2, 0x0
-
     .line 285
-    if-eq v0, v1, :cond_1b
+    const-string v1, "cr2"
 
     .line 286
     .line 287
-    const/4 v0, 0x1
+    const-string v2, "image/x-canon-cr2"
 
     .line 288
-    goto :goto_12
-
     .line 289
-    :cond_1b
-    move v0, v2
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 290
-    :goto_12
-    and-int/lit8 v1, v15, 0x1
-
     .line 291
     .line 292
-    invoke-virtual {v4, v1, v0}, Lv62;->T(IZ)Z
+    const-string v1, "crw"
 
     .line 293
     .line 294
-    .line 295
-    move-result v0
+    const-string v2, "image/x-canon-crw"
 
+    .line 295
     .line 296
-    if-eqz v0, :cond_28
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 297
     .line 298
-    invoke-virtual {v4}, Lv62;->Y()V
-
     .line 299
+    const-string v1, "ras"
+
     .line 300
     .line 301
-    and-int/lit8 v0, v11, 0x1
+    const-string v2, "image/x-cmu-raster"
 
     .line 302
     .line 303
-    if-eqz v0, :cond_1e
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 304
     .line 305
-    invoke-virtual {v4}, Lv62;->A()Z
-
     .line 306
+    const-string v1, "cmx"
+
     .line 307
     .line 308
-    move-result v0
+    const-string v2, "image/x-cmx"
 
     .line 309
-    if-eqz v0, :cond_1c
-
     .line 310
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 311
-    goto :goto_14
-
     .line 312
-    :cond_1c
-    invoke-virtual {v4}, Lv62;->W()V
-
     .line 313
+    const-string v1, "erf"
+
     .line 314
     .line 315
-    and-int/lit8 v0, v12, 0x8
+    const-string v2, "image/x-epson-erf"
 
     .line 316
     .line 317
-    if-eqz v0, :cond_1d
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 318
     .line 319
-    and-int/lit16 v15, v15, -0x1c01
-
     .line 320
+    const-string v1, "fh"
+
     .line 321
-    :cond_1d
-    move-object/from16 v18, p0
-
     .line 322
+    const-string v2, "image/x-freehand"
+
     .line 323
-    move-object/from16 v6, p6
-
     .line 324
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 325
-    move v0, v2
-
     .line 326
-    move v1, v5
-
     .line 327
-    move-object v2, v7
+    const-string v1, "fh4"
 
     .line 328
-    move-object v3, v9
-
     .line 329
-    move-object/from16 v5, p4
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 330
     .line 331
-    :goto_13
-    move-object/from16 v7, p7
-
     .line 332
+    const-string v1, "fh5"
+
     .line 333
-    goto/16 :goto_1a
-
     .line 334
-    .line 335
-    :cond_1e
-    :goto_14
-    if-eqz p9, :cond_1f
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 335
     .line 336
     .line 337
-    sget-object v0, Lun3;->j:Lun3;
+    const-string v1, "fh7"
 
     .line 338
     .line 339
-    move-object/from16 v18, v0
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 340
     .line 341
-    goto :goto_15
-
     .line 342
-    :cond_1f
-    move-object/from16 v18, p0
+    const-string v1, "fhc"
 
     .line 343
     .line 344
-    :goto_15
-    if-eqz v3, :cond_20
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 345
     .line 346
-    const/high16 v0, 0x41900000    # 18.0f
-
     .line 347
+    const-string v1, "raf"
+
     .line 348
-    move/from16 v19, v0
-
     .line 349
-    .line 350
-    goto :goto_16
+    const-string v2, "image/x-fuji-raf"
 
+    .line 350
     .line 351
-    :cond_20
-    move/from16 v19, v5
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 352
     .line 353
-    :goto_16
-    if-eqz v6, :cond_21
-
     .line 354
+    const-string v1, "icns"
+
     .line 355
-    new-instance v0, Lfh4;
-
     .line 356
-    .line 357
-    const/4 v1, 0x0
+    const-string v2, "image/x-icns"
 
+    .line 357
     .line 358
-    invoke-direct {v0, v1, v1, v1, v1}, Lfh4;-><init>(FFFF)V
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 359
     .line 360
     .line 361
-    move-object v7, v0
+    const-string v1, "ico"
 
     .line 362
-    :cond_21
-    and-int/lit8 v0, v12, 0x8
-
     .line 363
+    const-string v2, "image/x-icon"
+
     .line 364
-    if-eqz v0, :cond_22
-
     .line 365
-    .line 366
-    const/16 v5, 0x180
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 366
     .line 367
     .line 368
-    const/4 v6, 0x3
+    const-string v1, "dcr"
 
     .line 369
-    const-wide/16 v0, 0x0
-
     .line 370
-    .line 371
-    move v9, v2
+    const-string v2, "image/x-kodak-dcr"
 
+    .line 371
     .line 372
-    const-wide/16 v2, 0x0
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 373
     .line 374
-    invoke-static/range {v0 .. v6}, Lii0;->a(JJLz01;II)Lgi0;
-
     .line 375
+    const-string v1, "k25"
+
     .line 376
     .line 377
-    move-result-object v0
+    const-string v2, "image/x-kodak-k25"
 
     .line 378
-    and-int/lit16 v15, v15, -0x1c01
-
     .line 379
-    .line 380
-    move/from16 v20, v9
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 380
     .line 381
     .line 382
-    move-object v9, v0
+    const-string v1, "kdc"
 
     .line 383
-    move/from16 v0, v20
-
     .line 384
-    .line 385
-    goto :goto_17
+    const-string v2, "image/x-kodak-kdc"
 
+    .line 385
     .line 386
-    :cond_22
-    move v0, v2
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 387
-    :goto_17
-    if-eqz v10, :cond_23
-
     .line 388
     .line 389
-    sget-object v1, Lcr4;->j:Lcr4;
+    const-string v1, "mrw"
 
     .line 390
     .line 391
-    goto :goto_18
+    const-string v2, "image/x-minolta-mrw"
 
     .line 392
-    :cond_23
-    move-object/from16 v1, p4
-
     .line 393
-    .line 394
-    :goto_18
-    if-eqz v13, :cond_24
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 394
     .line 395
     .line 396
-    move v14, v0
+    const-string v1, "nef"
 
     .line 397
-    :cond_24
-    const/4 v2, 0x0
-
     .line 398
-    if-eqz v16, :cond_25
+    const-string v2, "image/x-nikon-nef"
 
     .line 399
     .line 400
-    move-object v3, v2
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 401
-    goto :goto_19
-
     .line 402
-    :cond_25
-    move-object/from16 v3, p6
-
     .line 403
+    const-string v1, "orf"
+
     .line 404
-    :goto_19
-    if-eqz v17, :cond_26
-
     .line 405
-    .line 406
-    move-object v5, v7
+    const-string v2, "image/x-olympus-orf"
 
+    .line 406
     .line 407
-    move-object v7, v2
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 408
-    move-object v2, v5
-
     .line 409
-    move-object v5, v1
-
     .line 410
-    move-object v6, v3
+    const-string v1, "raw"
 
     .line 411
-    move-object v3, v9
-
     .line 412
-    move/from16 v1, v19
+    const-string v2, "image/x-panasonic-raw"
 
     .line 413
     .line 414
-    goto :goto_1a
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 415
-    :cond_26
-    move-object v5, v1
-
     .line 416
-    move-object v6, v3
-
     .line 417
-    move-object v2, v7
+    const-string v1, "rw2"
 
     .line 418
-    move-object v3, v9
-
     .line 419
-    move/from16 v1, v19
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 420
     .line 421
-    goto :goto_13
-
     .line 422
-    :goto_1a
-    invoke-virtual {v4}, Lv62;->s()V
+    const-string v1, "rwl"
 
     .line 423
     .line 424
-    .line 425
-    if-nez v6, :cond_27
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 425
     .line 426
     .line 427
-    if-nez v7, :cond_27
+    const-string v1, "pcx"
 
     .line 428
     .line 429
-    const v9, -0x6e0d6e9a
+    const-string v2, "image/x-pcx"
 
     .line 430
     .line 431
-    .line 432
-    invoke-virtual {v4, v9}, Lv62;->c0(I)V
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 432
     .line 433
     .line 434
+    const-string v1, "pef"
+
     .line 435
-    and-int/lit16 v9, v15, 0x1ffe
-
     .line 436
+    const-string v2, "image/x-pentax-pef"
+
     .line 437
-    shr-int/lit8 v10, v15, 0xf
-
     .line 438
-    .line 439
-    const v13, 0xe000
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 439
     .line 440
     .line 441
-    .line 442
-    and-int/2addr v10, v13
+    const-string v1, "ptx"
 
+    .line 442
     .line 443
-    or-int/2addr v9, v10
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 444
-    new-instance v10, Ly80;
-
     .line 445
     .line 446
-    const/16 v13, 0x18
+    const-string v1, "pct"
 
     .line 447
     .line 448
-    invoke-direct {v10, v2, v8, v13}, Ly80;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
+    const-string v2, "image/x-pict"
 
     .line 449
     .line 450
-    .line 451
-    const v13, 0x65d02cfd
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 451
     .line 452
     .line 453
-    .line 454
-    invoke-static {v13, v10, v4}, Lu77;->M(ILd62;Lz01;)Lty0;
+    const-string v1, "pic"
 
+    .line 454
     .line 455
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 456
     .line 457
-    move-result-object v10
-
     .line 458
-    and-int/lit8 v13, v9, 0xe
+    const-string v1, "pnm"
 
     .line 459
     .line 460
-    or-int/lit16 v13, v13, 0xc00
+    const-string v2, "image/x-portable-anymap"
 
     .line 461
     .line 462
-    shr-int/lit8 v15, v9, 0x6
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 463
     .line 464
-    and-int/lit8 v15, v15, 0x70
-
     .line 465
-    .line 466
-    or-int/2addr v13, v15
+    const-string v1, "pbm"
 
+    .line 466
     .line 467
-    shl-int/lit8 v9, v9, 0x3
+    const-string v2, "image/x-portable-bitmap"
 
     .line 468
     .line 469
-    and-int/lit16 v9, v9, 0x380
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 470
     .line 471
-    or-int/2addr v9, v13
-
     .line 472
-    move/from16 p2, v1
+    const-string v1, "pgm"
 
     .line 473
     .line 474
-    move-object/from16 p1, v3
+    const-string v2, "image/x-portable-graymap"
 
     .line 475
     .line 476
-    move-object/from16 p4, v4
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 477
     .line 478
-    move/from16 p5, v9
-
     .line 479
+    const-string v1, "ppm"
+
     .line 480
-    move-object/from16 p3, v10
-
     .line 481
+    const-string v2, "image/x-portable-pixmap"
+
     .line 482
-    move-object/from16 p0, v18
-
     .line 483
-    .line 484
-    invoke-static/range {p0 .. p5}, Lr67;->b(Lxn3;Lgi0;FLty0;Lz01;I)V
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 484
     .line 485
     .line 486
-    .line 487
-    invoke-virtual {v4, v0}, Lv62;->r(Z)V
+    const-string v1, "rgb"
 
+    .line 487
     .line 488
+    const-string v2, "image/x-rgb"
+
     .line 489
     .line 490
-    move-object/from16 v0, v18
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 491
     .line 492
-    goto :goto_1b
-
     .line 493
-    :cond_27
-    const v9, -0x6e0a00cb
+    const-string v1, "x3f"
 
     .line 494
     .line 495
-    .line 496
-    invoke-virtual {v4, v9}, Lv62;->c0(I)V
+    const-string v2, "image/x-sigma-x3f"
 
+    .line 496
     .line 497
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 498
     .line 499
-    const v9, 0x7ffffffe
-
     .line 500
+    const-string v1, "arw"
+
     .line 501
     .line 502
-    and-int v10, v15, v9
+    const-string v2, "image/x-sony-arw"
 
     .line 503
     .line 504
-    move v13, v0
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 505
-    move-object v9, v4
-
     .line 506
-    move-object v4, v5
-
     .line 507
-    move v5, v14
+    const-string v1, "sr2"
 
     .line 508
-    move-object/from16 v0, v18
-
     .line 509
-    .line 510
-    invoke-static/range {v0 .. v10}, Lr67;->e(Lxn3;FLdh4;Lgi0;Lcr4;ZLg52;Lg52;Lty0;Lz01;I)V
+    const-string v2, "image/x-sony-sr2"
 
+    .line 510
     .line 511
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 512
     .line 513
-    move-object v5, v4
-
     .line 514
-    move-object v4, v9
+    const-string v1, "srf"
 
     .line 515
-    invoke-virtual {v4, v13}, Lv62;->r(Z)V
-
     .line 516
+    const-string v2, "image/x-sony-srf"
+
     .line 517
     .line 518
-    :goto_1b
-    move-object v9, v4
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 519
-    move-object v8, v7
-
     .line 520
-    move-object v4, v3
-
     .line 521
-    move-object v7, v6
+    const-string v1, "xbm"
 
     .line 522
-    move-object v3, v2
-
     .line 523
-    move v2, v1
+    const-string v2, "image/x-xbitmap"
 
     .line 524
-    move-object v1, v0
-
     .line 525
-    :goto_1c
-    move v6, v14
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 526
-    goto :goto_1d
-
     .line 527
-    :cond_28
-    invoke-virtual {v4}, Lv62;->W()V
-
     .line 528
+    const-string v1, "xpm"
+
     .line 529
     .line 530
-    move-object v1, v9
+    const-string v2, "image/x-xpixmap"
 
     .line 531
-    move-object v9, v4
-
     .line 532
-    move-object v4, v1
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 533
-    move-object/from16 v1, p0
-
     .line 534
     .line 535
-    move-object/from16 v8, p7
+    const-string v1, "xwd"
 
     .line 536
     .line 537
-    move v2, v5
+    const-string v2, "image/x-xwindowdump"
 
     .line 538
-    move-object v3, v7
-
     .line 539
-    move-object/from16 v5, p4
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 540
     .line 541
-    move-object/from16 v7, p6
-
     .line 542
-    .line 543
-    goto :goto_1c
+    const-string v1, "css"
 
+    .line 543
     .line 544
-    :goto_1d
-    invoke-virtual {v9}, Lv62;->u()Lj75;
+    const-string v2, "text/css"
 
     .line 545
     .line 546
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 547
-    move-result-object v13
-
     .line 548
-    if-eqz v13, :cond_29
-
     .line 549
+    const-string v1, "csv"
+
     .line 550
-    new-instance v0, Lom3;
-
     .line 551
+    const-string v2, "text/csv"
+
     .line 552
-    move-object/from16 v9, p8
-
     .line 553
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 554
-    move v10, v11
-
     .line 555
-    move v11, v12
-
     .line 556
-    invoke-direct/range {v0 .. v11}, Lom3;-><init>(Lxn3;FLdh4;Lgi0;Lcr4;ZLg52;Lg52;Lty0;II)V
+    const-string v1, "htm"
 
     .line 557
     .line 558
+    const-string v2, "text/html"
+
     .line 559
-    iput-object v0, v13, Lj75;->d:Lv52;
-
     .line 560
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 561
-    :cond_29
+    .line 562
+    .line 563
+    const-string v1, "html"
+
+    .line 564
+    .line 565
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 566
+    .line 567
+    .line 568
+    const-string v1, "ics"
+
+    .line 569
+    .line 570
+    const-string v2, "text/calendar"
+
+    .line 571
+    .line 572
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 573
+    .line 574
+    .line 575
+    const-string v1, "js"
+
+    .line 576
+    .line 577
+    const-string v2, "text/javascript"
+
+    .line 578
+    .line 579
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 580
+    .line 581
+    .line 582
+    const-string v1, "mjs"
+
+    .line 583
+    .line 584
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 585
+    .line 586
+    .line 587
+    const-string v1, "md"
+
+    .line 588
+    .line 589
+    const-string v2, "text/markdown"
+
+    .line 590
+    .line 591
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 592
+    .line 593
+    .line 594
+    const-string v1, "txt"
+
+    .line 595
+    .line 596
+    const-string v2, "text/plain"
+
+    .line 597
+    .line 598
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 599
+    .line 600
+    .line 601
+    const-string v1, "xml"
+
+    .line 602
+    .line 603
+    const-string v2, "text/xml"
+
+    .line 604
+    .line 605
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 606
+    .line 607
+    .line 608
+    const-string v1, "3gp"
+
+    .line 609
+    .line 610
+    const-string v2, "video/3gpp"
+
+    .line 611
+    .line 612
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 613
+    .line 614
+    .line 615
+    const-string v1, "3g2"
+
+    .line 616
+    .line 617
+    const-string v2, "video/3gpp2"
+
+    .line 618
+    .line 619
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 620
+    .line 621
+    .line 622
+    const-string v1, "h261"
+
+    .line 623
+    .line 624
+    const-string v2, "video/h261"
+
+    .line 625
+    .line 626
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 627
+    .line 628
+    .line 629
+    const-string v1, "h263"
+
+    .line 630
+    .line 631
+    const-string v2, "video/h263"
+
+    .line 632
+    .line 633
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 634
+    .line 635
+    .line 636
+    const-string v1, "h264"
+
+    .line 637
+    .line 638
+    const-string v2, "video/h264"
+
+    .line 639
+    .line 640
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 641
+    .line 642
+    .line 643
+    const-string v1, "jpgv"
+
+    .line 644
+    .line 645
+    const-string v2, "video/jpeg"
+
+    .line 646
+    .line 647
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 648
+    .line 649
+    .line 650
+    const-string v1, "jpgm"
+
+    .line 651
+    .line 652
+    const-string v2, "video/jpm"
+
+    .line 653
+    .line 654
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 655
+    .line 656
+    .line 657
+    const-string v1, "jpm"
+
+    .line 658
+    .line 659
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 660
+    .line 661
+    .line 662
+    const-string v1, "mj2"
+
+    .line 663
+    .line 664
+    const-string v2, "video/mj2"
+
+    .line 665
+    .line 666
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 667
+    .line 668
+    .line 669
+    const-string v1, "mjp2"
+
+    .line 670
+    .line 671
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 672
+    .line 673
+    .line 674
+    const-string v1, "ts"
+
+    .line 675
+    .line 676
+    const-string v2, "video/mp2t"
+
+    .line 677
+    .line 678
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 679
+    .line 680
+    .line 681
+    const-string v1, "mp4"
+
+    .line 682
+    .line 683
+    const-string v2, "video/mp4"
+
+    .line 684
+    .line 685
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 686
+    .line 687
+    .line 688
+    const-string v1, "mp4v"
+
+    .line 689
+    .line 690
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 691
+    .line 692
+    .line 693
+    const-string v1, "mpg4"
+
+    .line 694
+    .line 695
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 696
+    .line 697
+    .line 698
+    const-string v1, "m1v"
+
+    .line 699
+    .line 700
+    const-string v2, "video/mpeg"
+
+    .line 701
+    .line 702
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 703
+    .line 704
+    .line 705
+    const-string v1, "m2v"
+
+    .line 706
+    .line 707
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 708
+    .line 709
+    .line 710
+    const-string v1, "mpa"
+
+    .line 711
+    .line 712
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 713
+    .line 714
+    .line 715
+    const-string v1, "mpe"
+
+    .line 716
+    .line 717
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 718
+    .line 719
+    .line 720
+    const-string v1, "mpeg"
+
+    .line 721
+    .line 722
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 723
+    .line 724
+    .line 725
+    const-string v1, "mpg"
+
+    .line 726
+    .line 727
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 728
+    .line 729
+    .line 730
+    const-string v1, "ogv"
+
+    .line 731
+    .line 732
+    const-string v2, "video/ogg"
+
+    .line 733
+    .line 734
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 735
+    .line 736
+    .line 737
+    const-string v1, "mov"
+
+    .line 738
+    .line 739
+    const-string v2, "video/quicktime"
+
+    .line 740
+    .line 741
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 742
+    .line 743
+    .line 744
+    const-string v1, "qt"
+
+    .line 745
+    .line 746
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 747
+    .line 748
+    .line 749
+    const-string v1, "fvt"
+
+    .line 750
+    .line 751
+    const-string v2, "video/vnd.fvt"
+
+    .line 752
+    .line 753
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 754
+    .line 755
+    .line 756
+    const-string v1, "m4u"
+
+    .line 757
+    .line 758
+    const-string v2, "video/vnd.mpegurl"
+
+    .line 759
+    .line 760
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 761
+    .line 762
+    .line 763
+    const-string v1, "mxu"
+
+    .line 764
+    .line 765
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 766
+    .line 767
+    .line 768
+    const-string v1, "pyv"
+
+    .line 769
+    .line 770
+    const-string v2, "video/vnd.ms-playready.media.pyv"
+
+    .line 771
+    .line 772
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 773
+    .line 774
+    .line 775
+    const-string v1, "viv"
+
+    .line 776
+    .line 777
+    const-string v2, "video/vnd.vivo"
+
+    .line 778
+    .line 779
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 780
+    .line 781
+    .line 782
+    const-string v1, "webm"
+
+    .line 783
+    .line 784
+    const-string v2, "video/webm"
+
+    .line 785
+    .line 786
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 787
+    .line 788
+    .line 789
+    const-string v1, "f4v"
+
+    .line 790
+    .line 791
+    const-string v2, "video/x-f4v"
+
+    .line 792
+    .line 793
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 794
+    .line 795
+    .line 796
+    const-string v1, "fli"
+
+    .line 797
+    .line 798
+    const-string v2, "video/x-fli"
+
+    .line 799
+    .line 800
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 801
+    .line 802
+    .line 803
+    const-string v1, "flv"
+
+    .line 804
+    .line 805
+    const-string v2, "video/x-flv"
+
+    .line 806
+    .line 807
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 808
+    .line 809
+    .line 810
+    const-string v1, "m4v"
+
+    .line 811
+    .line 812
+    const-string v2, "video/x-m4v"
+
+    .line 813
+    .line 814
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 815
+    .line 816
+    .line 817
+    const-string v1, "mkv"
+
+    .line 818
+    .line 819
+    const-string v2, "video/x-matroska"
+
+    .line 820
+    .line 821
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 822
+    .line 823
+    .line 824
+    const-string v1, "asf"
+
+    .line 825
+    .line 826
+    const-string v2, "video/x-ms-asf"
+
+    .line 827
+    .line 828
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 829
+    .line 830
+    .line 831
+    const-string v1, "asx"
+
+    .line 832
+    .line 833
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 834
+    .line 835
+    .line 836
+    const-string v1, "wm"
+
+    .line 837
+    .line 838
+    const-string v2, "video/x-ms-wm"
+
+    .line 839
+    .line 840
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 841
+    .line 842
+    .line 843
+    const-string v1, "wmv"
+
+    .line 844
+    .line 845
+    const-string v2, "video/x-ms-wmv"
+
+    .line 846
+    .line 847
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 848
+    .line 849
+    .line 850
+    const-string v1, "wmx"
+
+    .line 851
+    .line 852
+    const-string v2, "video/x-ms-wmx"
+
+    .line 853
+    .line 854
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 855
+    .line 856
+    .line 857
+    const-string v1, "wvx"
+
+    .line 858
+    .line 859
+    const-string v2, "video/x-ms-wvx"
+
+    .line 860
+    .line 861
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 862
+    .line 863
+    .line 864
+    const-string v1, "avi"
+
+    .line 865
+    .line 866
+    const-string v2, "video/x-msvideo"
+
+    .line 867
+    .line 868
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 869
+    .line 870
+    .line 871
+    const-string v1, "movie"
+
+    .line 872
+    .line 873
+    const-string v2, "video/x-sgi-movie"
+
+    .line 874
+    .line 875
+    invoke-virtual {v0, v1, v2}, Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 876
+    .line 877
+    .line 878
+    invoke-virtual {v0}, Lsf3;->b()Lsf3;
+
+    .line 879
+    .line 880
+    .line 881
+    move-result-object v0
+
+    .line 882
+    sput-object v0, Lpm3;->a:Lsf3;
+
+    .line 883
+    .line 884
     return-void
-.end method
-
-.method public static final b(Lxn3;JFLz01;I)Lxn3;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    and-int/lit16 p5, p5, 0x3fe
-
-    .line 5
-    .line 6
-    invoke-static/range {p0 .. p5}, Lq76;->f(Lxn3;JFLz01;I)Lxn3;
-
-    .line 7
-    .line 8
-    .line 9
-    move-result-object p0
-
-    .line 10
-    return-object p0
-.end method
-
-.method public static final c(Lxn3;ZLg52;Lz01;II)Lxn3;
-    .locals 8
-
-    .line 1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 5
-    .line 6
-    .line 7
-    and-int/lit8 p4, p5, 0x1
-
-    .line 8
-    .line 9
-    const/4 v0, 0x1
-
-    .line 10
-    if-eqz p4, :cond_0
-
-    .line 11
-    .line 12
-    move v4, v0
-
-    .line 13
-    goto :goto_0
-
-    .line 14
-    :cond_0
-    move v4, p1
-
-    .line 15
-    :goto_0
-    and-int/lit8 p1, p5, 0x2
-
-    .line 16
-    .line 17
-    const/4 p4, 0x0
-
-    .line 18
-    if-eqz p1, :cond_1
-
-    .line 19
-    .line 20
-    move v0, p4
-
-    .line 21
-    :cond_1
-    check-cast p3, Lv62;
-
-    .line 22
-    .line 23
-    invoke-virtual {p3}, Lv62;->O()Ljava/lang/Object;
-
-    .line 24
-    .line 25
-    .line 26
-    move-result-object p1
-
-    .line 27
-    sget-object p5, Lx01;->a:Lw8;
-
-    .line 28
-    .line 29
-    if-ne p1, p5, :cond_2
-
-    .line 30
-    .line 31
-    invoke-static {p3}, Lv66;->i(Lv62;)Lnq3;
-
-    .line 32
-    .line 33
-    .line 34
-    move-result-object p1
-
-    .line 35
-    :cond_2
-    move-object v2, p1
-
-    .line 36
-    check-cast v2, Lnq3;
-
-    .line 37
-    .line 38
-    invoke-static {p2, p3}, Le43;->h0(Ljava/lang/Object;Lz01;)Lnr3;
-
-    .line 39
-    .line 40
-    .line 41
-    move-result-object p1
-
-    .line 42
-    const/4 p2, 0x0
-
-    .line 43
-    invoke-static {p2, p3}, Le43;->h0(Ljava/lang/Object;Lz01;)Lnr3;
-
-    .line 44
-    .line 45
-    .line 46
-    const/4 v5, 0x0
-
-    .line 47
-    if-eqz v0, :cond_3
-
-    .line 48
-    .line 49
-    const p2, 0x520327f
-
-    .line 50
-    .line 51
-    .line 52
-    invoke-virtual {p3, p2}, Lv62;->c0(I)V
-
-    .line 53
-    .line 54
-    .line 55
-    sget-object p2, Ljn2;->a:Lmp1;
-
-    .line 56
-    .line 57
-    invoke-virtual {p3, p2}, Lv62;->k(Lit4;)Ljava/lang/Object;
-
-    .line 58
-    .line 59
-    .line 60
-    move-result-object p2
-
-    .line 61
-    check-cast p2, Lmn2;
-
-    .line 62
-    .line 63
-    invoke-virtual {p3, p4}, Lv62;->r(Z)V
-
-    .line 64
-    .line 65
-    .line 66
-    move-object v3, p2
-
-    .line 67
-    goto :goto_1
-
-    .line 68
-    :cond_3
-    const p2, -0x6119b09b
-
-    .line 69
-    .line 70
-    .line 71
-    invoke-virtual {p3, p2}, Lv62;->c0(I)V
-
-    .line 72
-    .line 73
-    .line 74
-    invoke-virtual {p3, p4}, Lv62;->r(Z)V
-
-    .line 75
-    .line 76
-    .line 77
-    move-object v3, v5
-
-    .line 78
-    :goto_1
-    const p2, -0x61175512
-
-    .line 79
-    .line 80
-    .line 81
-    invoke-virtual {p3, p2}, Lv62;->c0(I)V
-
-    .line 82
-    .line 83
-    .line 84
-    invoke-virtual {p3, p4}, Lv62;->r(Z)V
-
-    .line 85
-    .line 86
-    .line 87
-    invoke-virtual {p3, p1}, Lv62;->g(Ljava/lang/Object;)Z
-
-    .line 88
-    .line 89
-    .line 90
-    move-result p2
-
-    .line 91
-    invoke-virtual {p3}, Lv62;->O()Ljava/lang/Object;
-
-    .line 92
-    .line 93
-    .line 94
-    move-result-object p4
-
-    .line 95
-    if-nez p2, :cond_4
-
-    .line 96
-    .line 97
-    if-ne p4, p5, :cond_5
-
-    .line 98
-    .line 99
-    :cond_4
-    new-instance p4, Lqb3;
-
-    .line 100
-    .line 101
-    const/16 p2, 0x1c
-
-    .line 102
-    .line 103
-    invoke-direct {p4, p1, p2}, Lqb3;-><init>(Lnr3;B)V
-
-    .line 104
-    .line 105
-    .line 106
-    invoke-virtual {p3, p4}, Lv62;->l0(Ljava/lang/Object;)V
-
-    .line 107
-    .line 108
-    .line 109
-    :cond_5
-    move-object v6, p4
-
-    .line 110
-    check-cast v6, Lg52;
-
-    .line 111
-    .line 112
-    const/16 v7, 0x1b8
-
-    .line 113
-    .line 114
-    move-object v1, p0
-
-    .line 115
-    invoke-static/range {v1 .. v7}, Lve3;->W(Lxn3;Lnq3;Lmn2;ZLg52;Lg52;I)Lxn3;
-
-    .line 116
-    .line 117
-    .line 118
-    move-result-object p0
-
-    .line 119
-    return-object p0
 .end method

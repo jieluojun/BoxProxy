@@ -1,150 +1,105 @@
-.class public final synthetic Lec7;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Ls53;
-.implements Le62;
-
-
-# instance fields
-.field public final synthetic a:Lj11;
+.class public final Lec7;
+.super Ldc7;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # direct methods
-.method public constructor <init>(Lj11;)V
+.method public constructor <init>(Lic7;Landroid/view/WindowInsets;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Ldc7;-><init>(Lic7;Landroid/view/WindowInsets;)V
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lec7;->a:Lj11;
+    return-void
+.end method
+
+.method public constructor <init>(Lic7;Lec7;)V
+    .locals 0
 
     .line 5
-    .line 6
+    invoke-direct {p0, p1, p2}, Ldc7;-><init>(Lic7;Ldc7;)V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()Ld62;
-    .locals 7
+.method public f(I)Ljava/util/List;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)",
+            "Ljava/util/List<",
+            "Landroid/graphics/Rect;",
+            ">;"
+        }
+    .end annotation
 
     .line 1
-    new-instance v0, Lg62;
+    iget-object p0, p0, Lxb7;->c:Landroid/view/WindowInsets;
 
     .line 2
     .line 3
-    const-string v5, "scheduleFrameEndCallback(Lkotlin/jvm/functions/Function0;)Landroidx/compose/runtime/CancellationHandle;"
+    invoke-static {p1}, Lhc7;->a(I)I
 
     .line 4
     .line 5
-    const/4 v6, 0x0
-
     .line 6
-    const/4 v1, 0x1
+    move-result p1
 
     .line 7
-    iget-object v2, p0, Lec7;->a:Lj11;
+    invoke-static {p0, p1}, Lun4;->a(Landroid/view/WindowInsets;I)Ljava/util/List;
 
     .line 8
     .line 9
-    const-class v3, Lj11;
-
     .line 10
-    .line 11
-    const-string v4, "scheduleFrameEndCallback"
-
-    .line 12
-    .line 13
-    invoke-direct/range {v0 .. v6}, Lg62;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 14
-    .line 15
-    .line 16
-    return-object v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    instance-of v0, p1, Ls53;
-
-    .line 2
-    .line 3
-    if-eqz v0, :cond_0
-
-    .line 4
-    .line 5
-    instance-of v0, p1, Le62;
-
-    .line 6
-    .line 7
-    if-eqz v0, :cond_0
-
-    .line 8
-    .line 9
-    invoke-virtual {p0}, Lec7;->b()Ld62;
-
-    .line 10
-    .line 11
-    .line 12
     move-result-object p0
 
-    .line 13
-    check-cast p1, Le62;
-
-    .line 14
-    .line 15
-    invoke-interface {p1}, Le62;->b()Ld62;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object p1
-
-    .line 19
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    .line 20
-    .line 21
-    .line 22
-    move-result p0
-
-    .line 23
-    return p0
-
-    .line 24
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 25
-    return p0
+    .line 11
+    return-object p0
 .end method
 
-.method public final hashCode()I
+.method public g(I)Ljava/util/List;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)",
+            "Ljava/util/List<",
+            "Landroid/graphics/Rect;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    iget-object p0, p0, Lxb7;->c:Landroid/view/WindowInsets;
+
+    .line 2
+    .line 3
+    invoke-static {p1}, Lhc7;->a(I)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p1
+
+    .line 7
+    invoke-static {p0, p1}, Lun4;->d(Landroid/view/WindowInsets;I)Ljava/util/List;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p0
+
+    .line 11
+    return-object p0
+.end method
+
+.method public q()V
     .locals 0
 
     .line 1
-    invoke-virtual {p0}, Lec7;->b()Ld62;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    .line 6
-    .line 7
-    .line 8
-    move-result p0
-
-    .line 9
-    return p0
+    return-void
 .end method

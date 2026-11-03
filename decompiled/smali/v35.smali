@@ -1,28 +1,26 @@
 .class public final Lv35;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public j:J
+.field public synthetic j:Ljava/lang/Object;
 
-.field public synthetic k:Ljava/lang/Object;
+.field public final synthetic k:Lw35;
 
-.field public final synthetic l:Lw35;
-
-.field public m:I
+.field public l:I
 
 
 # direct methods
-.method public constructor <init>(Lw35;Ld81;)V
+.method public constructor <init>(Lw35;Lz71;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lv35;->l:Lw35;
+    iput-object p1, p0, Lv35;->k:Lw35;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
     .line 4
     .line 5
@@ -33,14 +31,14 @@
 
 # virtual methods
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lv35;->k:Ljava/lang/Object;
+    iput-object p1, p0, Lv35;->j:Ljava/lang/Object;
 
     .line 2
     .line 3
-    iget p1, p0, Lv35;->m:I
+    iget p1, p0, Lv35;->l:I
 
     .line 4
     .line 5
@@ -51,32 +49,24 @@
     or-int/2addr p1, v0
 
     .line 8
-    iput p1, p0, Lv35;->m:I
+    iput p1, p0, Lv35;->l:I
 
     .line 9
     .line 10
-    const-wide/16 v1, 0x0
+    iget-object p1, p0, Lv35;->k:Lw35;
 
     .line 11
     .line 12
-    const-wide/16 v3, 0x0
+    const/4 v0, 0x0
 
     .line 13
-    .line 14
-    iget-object v0, p0, Lv35;->l:Lw35;
+    invoke-virtual {p1, v0, p0}, Lw35;->b(ZLz71;)Ljava/lang/Object;
 
+    .line 14
     .line 15
     .line 16
-    move-object v5, p0
-
-    .line 17
-    invoke-virtual/range {v0 .. v5}, Lw35;->P0(JJLc81;)Ljava/lang/Object;
-
-    .line 18
-    .line 19
-    .line 20
     move-result-object p0
 
-    .line 21
+    .line 17
     return-object p0
 .end method

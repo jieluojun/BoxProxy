@@ -1,3 +1,11 @@
-.class public final Li72;
-.super Lfb3;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public interface abstract Li72;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lmg1;
+
+
+# virtual methods
+.method public abstract H(Lm64;)V
+.end method

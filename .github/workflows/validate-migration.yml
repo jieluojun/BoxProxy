@@ -1,0 +1,87 @@
+name: Validate full customized migration
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'upstream/**'
+      - 'scripts/**'
+      - 'decompiled/**'
+      - 'vpn-src/test/**'
+      - '.github/workflows/validate-migration.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: upstream-migration-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  full-migration:
+    name: Full migration host checks and rebuild
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Check out pinned host dex translator
+        uses: actions/checkout@v7
+        with:
+          repository: google/enjarify
+          ref: f2db0563aa83885ce6e6acd5b7dc9a8a1a1e1987
+          path: .tools/enjarify
+          persist-credentials: false
+      - name: Check out pinned JSON dependency for actual config rewriter tests
+        uses: actions/checkout@v7
+        with:
+          repository: stleary/JSON-java
+          ref: f9b5587c87aaf02e4a5ed1991d48d6c05993624a
+          path: .tools/json-java
+          persist-credentials: false
+      - name: Install version-pinned host compiler and assembler
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p .tools/ecj .tools/apktool
+          npm pack @ctxo/lang-java-analyzer@0.13.0 apktool-jar@2.4.1 --pack-destination .tools --silent
+          tar -xzf .tools/ctxo-lang-java-analyzer-0.13.0.tgz -C .tools/ecj
+          tar -xzf .tools/apktool-jar-2.4.1.tgz -C .tools/apktool
+      - name: Test snapshot safety
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: python3 -m unittest discover -s vpn-src/test -p 'test_upstream_snapshot.py' -v
+      - name: Test actual new model, migrated helpers, wiring and full smali assembly
+        env:
+          ECJ_JAR: .tools/ecj/package/jar/ctxo-jdt-analyzer-17.jar
+          APKTOOL_JAR: .tools/apktool/package/bin/apktool_2.4.1.jar
+          ENJARIFY: .tools/enjarify
+        shell: bash
+        run: JAVA="$JAVA_HOME/bin/java" vpn-src/test/run-upstream-migration.sh
+      - name: Test shipped sing-box, Xray, V2Fly and Hysteria rewriter smali
+        env:
+          ECJ_JAR: .tools/ecj/package/jar/ctxo-jdt-analyzer-17.jar
+          APKTOOL_JAR: .tools/apktool/package/bin/apktool_2.4.1.jar
+          ENJARIFY: .tools/enjarify
+          JSON_JAVA: .tools/json-java
+        shell: bash
+        run: JAVA="$JAVA_HOME/bin/java" vpn-src/test/run-config-rewriters.sh
+      - name: Download official, hash-pinned apktool 2.9.3
+        shell: bash
+        run: |
+          set -euo pipefail
+          curl -fsSL --retry 3 -o .tools/apktool_2.9.3.jar \
+            https://github.com/iBotPeaches/Apktool/releases/download/v2.9.3/apktool_2.9.3.jar
+          echo '7956eb04194300ce0d0a84ad18771eebc94b89fb8d1ddcce8ea4c056818646f4  .tools/apktool_2.9.3.jar' | sha256sum -c -
+      - name: Rebuild complete pinned custom migration (unsigned)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/migrate_upstream.py --output .tools/ported
+          java -jar .tools/apktool_2.9.3.jar b .tools/ported/decompiled \
+            -p .tools/framework -o "$RUNNER_TEMP/full-migration-unsigned.apk"
+          echo 'Full implementation and host regression checks passed. Physical Android/root/VPN and signature-compatible upgrade checks require devices and the original signing key.'

@@ -1,129 +1,160 @@
 .class public final Lo42;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Ls13;
+.implements Lv67;
+.implements Lga4;
+.implements Lz6;
+.implements Llp5;
+
+
+# instance fields
+.field public final j:Lgo;
+
+.field public final k:Landroid/os/Handler;
+
+.field public final l:Lw42;
+
+.field public final synthetic m:Lgo;
+
+
+# direct methods
+.method public constructor <init>(Lgo;)V
+    .locals 2
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Lo42;->m:Lgo;
+
+    .line 5
+    .line 6
+    new-instance v0, Landroid/os/Handler;
+
+    .line 7
+    .line 8
+    invoke-direct {v0}, Landroid/os/Handler;-><init>()V
+
+    .line 9
+    .line 10
+    .line 11
+    new-instance v1, Lw42;
+
+    .line 12
+    .line 13
+    invoke-direct {v1}, Lw42;-><init>()V
+
+    .line 14
+    .line 15
+    .line 16
+    iput-object v1, p0, Lo42;->l:Lw42;
+
+    .line 17
+    .line 18
+    iput-object p1, p0, Lo42;->j:Lgo;
+
+    .line 19
+    .line 20
+    iput-object v0, p0, Lo42;->k:Landroid/os/Handler;
+
+    .line 21
+    .line 22
+    return-void
+.end method
 
 
 # virtual methods
-.method public final b(Lbh1;I)I
+.method public final b()Lfa4;
     .locals 0
 
     .line 1
-    int-to-float p0, p2
+    iget-object p0, p0, Lo42;->m:Lgo;
 
     .line 2
-    const/4 p1, 0x0
-
     .line 3
-    mul-float/2addr p0, p1
+    invoke-virtual {p0}, Lcy0;->b()Lfa4;
 
     .line 4
-    invoke-static {p0}, Llh3;->i0(F)I
-
     .line 5
     .line 6
-    .line 7
-    move-result p0
+    move-result-object p0
 
-    .line 8
-    return p0
+    .line 7
+    return-object p0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
+.method public final c()Lq72;
     .locals 0
 
     .line 1
-    instance-of p0, p1, Lo42;
+    iget-object p0, p0, Lo42;->m:Lgo;
 
     .line 2
     .line 3
-    if-eqz p0, :cond_0
+    iget-object p0, p0, Lcy0;->m:Lq72;
 
     .line 4
     .line 5
-    const/4 p0, 0x1
-
-    .line 6
-    return p0
-
-    .line 7
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 8
-    return p0
-.end method
-
-.method public final f(Lbh1;I)I
-    .locals 0
-
-    .line 1
-    int-to-float p0, p2
-
-    .line 2
-    const/high16 p1, 0x3f000000    # 0.5f
-
-    .line 3
-    .line 4
-    mul-float/2addr p0, p1
-
-    .line 5
-    invoke-static {p0}, Llh3;->i0(F)I
+    iget-object p0, p0, Lq72;->l:Ljava/lang/Object;
 
     .line 6
     .line 7
-    .line 8
-    move-result p0
-
-    .line 9
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    .line 1
-    const/high16 p0, 0x3f000000    # 0.5f
-
-    .line 2
-    .line 3
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    mul-int/lit8 p0, p0, 0x1f
+    check-cast p0, Lq72;
 
     .line 8
     .line 9
-    const/4 v0, 0x0
-
-    .line 10
-    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 11
-    .line 12
-    .line 13
-    move-result v0
-
-    .line 14
-    add-int/2addr v0, p0
-
-    .line 15
-    return v0
+    return-object p0
 .end method
 
-.method public final i()Z
+.method public final f()Lay0;
     .locals 0
 
     .line 1
-    const/4 p0, 0x0
+    iget-object p0, p0, Lo42;->m:Lgo;
 
     .line 2
-    return p0
+    .line 3
+    iget-object p0, p0, Lcy0;->q:Lay0;
+
+    .line 4
+    .line 5
+    return-object p0
+.end method
+
+.method public final g()Lu67;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lo42;->m:Lgo;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lcy0;->g()Lu67;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    return-object p0
+.end method
+
+.method public final h()Lh63;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lo42;->m:Lgo;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lgo;->E:Lh63;
+
+    .line 4
+    .line 5
+    return-object p0
 .end method

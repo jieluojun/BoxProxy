@@ -1,356 +1,129 @@
-.class public abstract synthetic Lnc;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final synthetic Lnc;
+.super Ld62;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lo52;
+
+
+# instance fields
+.field public final synthetic k:Lx43;
 
 
 # direct methods
-.method public static bridge synthetic A()Ljava/lang/Class;
-    .locals 1
+.method public constructor <init>(Lx43;)V
+    .locals 6
 
     .line 1
-    const-class v0, Landroid/view/inputmethod/InsertGesture;
+    iput-object p1, p0, Lnc;->k:Lx43;
 
     .line 2
     .line 3
-    return-object v0
-.end method
+    const-string v4, "startInput$localToScreen(Landroidx/compose/foundation/text/input/internal/LegacyPlatformTextInputServiceAdapter$LegacyPlatformTextInputNode;[F)V"
 
-.method public static bridge synthetic B()Ljava/lang/Class;
-    .locals 1
-
-    .line 1
-    const-class v0, Landroid/view/inputmethod/RemoveSpaceGesture;
-
-    .line 2
-    .line 3
-    return-object v0
-.end method
-
-.method public static bridge synthetic a(Landroid/view/ViewConfiguration;)I
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/ViewConfiguration;->getScaledHandwritingSlop()I
-
-    .line 2
-    .line 3
     .line 4
-    move-result p0
-
     .line 5
-    return p0
-.end method
+    const/4 v5, 0x0
 
-.method public static bridge synthetic b(Landroid/view/inputmethod/DeleteGesture;)I
-    .locals 0
+    .line 6
+    const/4 v1, 0x1
 
-    .line 1
-    invoke-virtual {p0}, Landroid/view/inputmethod/DeleteGesture;->getGranularity()I
+    .line 7
+    const-class v2, Los2;
 
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
+    .line 8
+    .line 9
+    const-string v3, "localToScreen"
 
-    .line 5
-    return p0
-.end method
+    .line 10
+    .line 11
+    move-object v0, p0
 
-.method public static bridge synthetic c(Landroid/view/inputmethod/DeleteRangeGesture;)I
-    .locals 0
+    .line 12
+    invoke-direct/range {v0 .. v5}, Ld62;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
-    .line 1
-    invoke-virtual {p0}, Landroid/view/inputmethod/DeleteRangeGesture;->getGranularity()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    return p0
-.end method
-
-.method public static bridge synthetic d(Landroid/view/inputmethod/SelectGesture;)I
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/inputmethod/SelectGesture;->getGranularity()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    return p0
-.end method
-
-.method public static bridge synthetic e(Landroid/view/inputmethod/SelectRangeGesture;)I
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/inputmethod/SelectRangeGesture;->getGranularity()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    return p0
-.end method
-
-.method public static bridge synthetic f()Landroid/graphics/ColorSpace$Named;
-    .locals 1
-
-    .line 1
-    sget-object v0, Landroid/graphics/ColorSpace$Named;->BT2020_HLG:Landroid/graphics/ColorSpace$Named;
-
-    .line 2
-    .line 3
-    return-object v0
-.end method
-
-.method public static bridge synthetic g(Landroid/view/inputmethod/DeleteGesture;)Landroid/graphics/RectF;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/inputmethod/DeleteGesture;->getDeletionArea()Landroid/graphics/RectF;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static bridge synthetic h(Landroid/view/inputmethod/DeleteRangeGesture;)Landroid/graphics/RectF;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/inputmethod/DeleteRangeGesture;->getDeletionStartArea()Landroid/graphics/RectF;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static bridge synthetic i(Landroid/view/inputmethod/SelectGesture;)Landroid/graphics/RectF;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/inputmethod/SelectGesture;->getSelectionArea()Landroid/graphics/RectF;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static bridge synthetic j(Ljava/lang/Object;)Landroid/view/inputmethod/InsertGesture;
-    .locals 0
-
-    .line 1
-    check-cast p0, Landroid/view/inputmethod/InsertGesture;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public static bridge synthetic k(Ljava/lang/Object;)Landroid/view/inputmethod/RemoveSpaceGesture;
-    .locals 0
-
-    .line 1
-    check-cast p0, Landroid/view/inputmethod/RemoveSpaceGesture;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public static bridge synthetic l(Ljava/lang/Object;)Landroid/view/inputmethod/SelectGesture;
-    .locals 0
-
-    .line 1
-    check-cast p0, Landroid/view/inputmethod/SelectGesture;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public static bridge synthetic m()Ljava/lang/Class;
-    .locals 1
-
-    .line 1
-    const-class v0, Landroid/view/inputmethod/SelectGesture;
-
-    .line 2
-    .line 3
-    return-object v0
-.end method
-
-.method public static bridge synthetic n(Landroid/view/inputmethod/CursorAnchorInfo$Builder;FFFF)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->addVisibleLineBounds(FFFF)Landroid/view/inputmethod/CursorAnchorInfo$Builder;
-
-    .line 2
-    .line 3
-    .line 4
+    .line 13
+    .line 14
+    .line 15
     return-void
 .end method
 
-.method public static bridge synthetic o(Landroid/view/inputmethod/EditorInfo;Ljava/util/List;)V
-    .locals 0
 
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/view/inputmethod/EditorInfo;->setSupportedHandwritingGestures(Ljava/util/List;)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic p(Landroid/view/inputmethod/EditorInfo;Ljava/util/Set;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/view/inputmethod/EditorInfo;->setSupportedHandwritingGesturePreviews(Ljava/util/Set;)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic q(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    instance-of p0, p0, Landroid/view/inputmethod/SelectGesture;
-
-    .line 2
-    .line 3
-    return p0
-.end method
-
-.method public static bridge synthetic r(Landroid/view/ViewConfiguration;)I
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/ViewConfiguration;->getScaledHandwritingGestureLineMargin()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    return p0
-.end method
-
-.method public static bridge synthetic s()Landroid/graphics/ColorSpace$Named;
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     .line 1
-    sget-object v0, Landroid/graphics/ColorSpace$Named;->BT2020_PQ:Landroid/graphics/ColorSpace$Named;
+    check-cast p1, Lbi3;
 
     .line 2
     .line 3
-    return-object v0
-.end method
+    iget-object p1, p1, Lbi3;->a:[F
 
-.method public static bridge synthetic t(Landroid/view/inputmethod/DeleteRangeGesture;)Landroid/graphics/RectF;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/inputmethod/DeleteRangeGesture;->getDeletionEndArea()Landroid/graphics/RectF;
-
-    .line 2
-    .line 3
     .line 4
+    .line 5
+    iget-object p0, p0, Lnc;->k:Lx43;
+
+    .line 6
+    .line 7
+    iget-object p0, p0, Lx43;->A:Lgl4;
+
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lgl4;->getValue()Ljava/lang/Object;
+
+    .line 10
+    .line 11
+    .line 12
     move-result-object p0
 
-    .line 5
+    .line 13
+    check-cast p0, Ljz2;
+
+    .line 14
+    .line 15
+    if-eqz p0, :cond_2
+
+    .line 16
+    .line 17
+    invoke-interface {p0}, Ljz2;->A()Z
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v0
+
+    .line 21
+    if-eqz v0, :cond_0
+
+    .line 22
+    .line 23
+    goto :goto_0
+
+    .line 24
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 25
+    :goto_0
+    if-nez p0, :cond_1
+
+    .line 26
+    .line 27
+    goto :goto_1
+
+    .line 28
+    :cond_1
+    invoke-interface {p0, p1}, Ljz2;->C([F)V
+
+    .line 29
+    .line 30
+    .line 31
+    :cond_2
+    :goto_1
+    sget-object p0, Lk27;->a:Lk27;
+
+    .line 32
+    .line 33
     return-object p0
-.end method
-
-.method public static bridge synthetic u()Ljava/lang/Class;
-    .locals 1
-
-    .line 1
-    const-class v0, Landroid/view/inputmethod/SelectRangeGesture;
-
-    .line 2
-    .line 3
-    return-object v0
-.end method
-
-.method public static bridge synthetic v(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    instance-of p0, p0, Landroid/view/inputmethod/InsertGesture;
-
-    .line 2
-    .line 3
-    return p0
-.end method
-
-.method public static bridge synthetic w()Ljava/lang/Class;
-    .locals 1
-
-    .line 1
-    const-class v0, Landroid/view/inputmethod/DeleteRangeGesture;
-
-    .line 2
-    .line 3
-    return-object v0
-.end method
-
-.method public static bridge synthetic x(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    instance-of p0, p0, Landroid/view/inputmethod/RemoveSpaceGesture;
-
-    .line 2
-    .line 3
-    return p0
-.end method
-
-.method public static bridge synthetic y()Ljava/lang/Class;
-    .locals 1
-
-    .line 1
-    const-class v0, Landroid/view/inputmethod/DeleteGesture;
-
-    .line 2
-    .line 3
-    return-object v0
-.end method
-
-.method public static bridge synthetic z()Ljava/lang/Class;
-    .locals 1
-
-    .line 1
-    const-class v0, Landroid/view/inputmethod/JoinOrSplitGesture;
-
-    .line 2
-    .line 3
-    return-object v0
 .end method

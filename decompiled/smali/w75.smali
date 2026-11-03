@@ -1,57 +1,99 @@
-.class public abstract Lw75;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lw75;
+.super Lqb5;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:J
+# instance fields
+.field public final k:Ljava/lang/String;
 
-.field public static final synthetic b:I
+.field public final l:J
+
+.field public final m:Le75;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Ljava/lang/String;JLe75;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Lw75;->k:Ljava/lang/String;
+
+    .line 5
+    .line 6
+    iput-wide p2, p0, Lw75;->l:J
+
+    .line 7
+    .line 8
+    iput-object p4, p0, Lw75;->m:Le75;
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+
+# virtual methods
+.method public final B()Lsd0;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lw75;->m:Le75;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public final c()J
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lw75;->l:J
+
+    .line 2
+    .line 3
+    return-wide v0
+.end method
+
+.method public final f()Lsi3;
+    .locals 2
 
     .line 1
     const/4 v0, 0x0
 
     .line 2
-    const/16 v1, 0x3ff
+    iget-object p0, p0, Lw75;->k:Ljava/lang/String;
 
     .line 3
     .line 4
-    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
+    if-eqz p0, :cond_0
 
     .line 5
     .line 6
-    .line 7
-    move-result v0
+    sget-object v1, Lsi3;->c:Lgo2;
 
+    .line 7
     .line 8
-    int-to-long v0, v0
+    :try_start_0
+    invoke-static {p0}, Ld43;->v(Ljava/lang/String;)Lsi3;
 
     .line 9
-    const/16 v2, 0x32
-
     .line 10
     .line 11
-    shl-long/2addr v0, v2
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 12
-    const-wide v2, 0x3ffffffffffffL    # 5.562684646268E-309
+    return-object p0
 
     .line 13
-    .line 14
-    .line 15
-    .line 16
-    .line 17
-    or-long/2addr v0, v2
-
-    .line 18
-    sput-wide v0, Lw75;->a:J
-
-    .line 19
-    .line 20
-    return-void
+    :catch_0
+    :cond_0
+    return-object v0
 .end method

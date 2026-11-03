@@ -1,126 +1,62 @@
 .class public final Loy;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Landroid/os/Parcelable;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Loy;",
-            ">;"
-        }
-    .end annotation
-.end field
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final j:Ljava/util/ArrayList;
+.field public j:Ldn;
 
-.field public final k:Ljava/util/ArrayList;
+.field public k:Ls52;
 
+.field public l:Ls52;
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.field public m:Ljava/lang/Object;
 
-    .line 1
-    new-instance v0, Lm6;
+.field public n:Ljava/lang/Throwable;
 
-    .line 2
-    .line 3
-    const/4 v1, 0x3
+.field public o:Ljava/lang/Throwable;
 
-    .line 4
-    invoke-direct {v0, v1}, Lm6;-><init>(B)V
+.field public p:I
 
-    .line 5
-    .line 6
-    .line 7
-    sput-object v0, Loy;->CREATOR:Landroid/os/Parcelable$Creator;
+.field public synthetic q:Ljava/lang/Object;
 
-    .line 8
-    .line 9
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcel;)V
-    .locals 1
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    invoke-virtual {p1}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
-
-    .line 5
-    .line 6
-    .line 7
-    move-result-object v0
-
-    .line 8
-    iput-object v0, p0, Loy;->j:Ljava/util/ArrayList;
-
-    .line 9
-    .line 10
-    sget-object v0, Lny;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    .line 11
-    .line 12
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->createTypedArrayList(Landroid/os/Parcelable$Creator;)Ljava/util/ArrayList;
-
-    .line 13
-    .line 14
-    .line 15
-    move-result-object p1
-
-    .line 16
-    iput-object p1, p0, Loy;->k:Ljava/util/ArrayList;
-
-    .line 17
-    .line 18
-    return-void
-.end method
+.field public r:I
 
 
 # virtual methods
-.method public final describeContents()I
-    .locals 0
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
-
-    .line 1
-    iget-object p2, p0, Loy;->j:Ljava/util/ArrayList;
+    iput-object p1, p0, Loy;->q:Ljava/lang/Object;
 
     .line 2
     .line 3
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
+    iget p1, p0, Loy;->r:I
 
     .line 4
     .line 5
-    .line 6
-    iget-object p0, p0, Loy;->k:Ljava/util/ArrayList;
+    const/high16 v0, -0x80000000
 
+    .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeTypedList(Ljava/util/List;)V
+    iput p1, p0, Loy;->r:I
 
     .line 9
     .line 10
+    const/4 p1, 0x0
+
     .line 11
-    return-void
+    invoke-static {p1, p1, p1, p1, p0}, Lam0;->L(Lcn;Ldn;Len;Lfn;Lz71;)Ljava/lang/Object;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    return-object p0
 .end method

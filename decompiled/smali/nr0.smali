@@ -1,19 +1,16 @@
 .class public final Lnr0;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lor0;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final j:F
+.field public final a:Ljava/util/List;
 
-.field public final k:F
+.field public final b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(FF)V
+.method public constructor <init>(Ljava/util/List;Ljava/lang/String;)V
     .locals 0
 
     .line 1
@@ -22,11 +19,11 @@
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Lnr0;->j:F
+    iput-object p1, p0, Lnr0;->a:Ljava/util/List;
 
     .line 5
     .line 6
-    iput p2, p0, Lnr0;->k:F
+    iput-object p2, p0, Lnr0;->b:Ljava/lang/String;
 
     .line 7
     .line 8
@@ -35,184 +32,90 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/Comparable;Ljava/lang/Comparable;)Z
-    .locals 0
-
-    .line 1
-    check-cast p1, Ljava/lang/Number;
-
-    .line 2
-    .line 3
-    invoke-virtual {p1}, Ljava/lang/Number;->floatValue()F
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    check-cast p2, Ljava/lang/Number;
-
-    .line 8
-    .line 9
-    invoke-virtual {p2}, Ljava/lang/Number;->floatValue()F
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p1
-
-    .line 13
-    cmpg-float p0, p0, p1
-
-    .line 14
-    .line 15
-    if-gtz p0, :cond_0
-
-    .line 16
-    .line 17
-    const/4 p0, 0x1
-
-    .line 18
-    return p0
-
-    .line 19
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 20
-    return p0
-.end method
-
-.method public final b()Ljava/lang/Comparable;
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lnr0;->j:F
-
-    .line 2
-    .line 3
-    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
-.end method
-
-.method public final c()Ljava/lang/Comparable;
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lnr0;->k:F
-
-    .line 2
-    .line 3
-    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
-.end method
-
 .method public final equals(Ljava/lang/Object;)Z
     .locals 2
 
     .line 1
-    instance-of v0, p1, Lnr0;
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
-    if-eqz v0, :cond_2
+    goto :goto_1
 
     .line 4
-    .line 5
-    invoke-virtual {p0}, Lnr0;->isEmpty()Z
+    :cond_0
+    instance-of v0, p1, Lnr0;
 
+    .line 5
     .line 6
+    if-nez v0, :cond_1
+
     .line 7
     .line 8
-    move-result v0
+    goto :goto_0
 
     .line 9
-    if-eqz v0, :cond_0
+    :cond_1
+    check-cast p1, Lnr0;
 
     .line 10
     .line 11
-    move-object v0, p1
+    iget-object v0, p0, Lnr0;->a:Ljava/util/List;
 
     .line 12
-    check-cast v0, Lnr0;
-
     .line 13
-    .line 14
-    invoke-virtual {v0}, Lnr0;->isEmpty()Z
+    iget-object v1, p1, Lnr0;->a:Ljava/util/List;
 
+    .line 14
     .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
     .line 16
     .line 17
+    .line 18
     move-result v0
 
-    .line 18
-    if-nez v0, :cond_1
-
     .line 19
-    .line 20
-    :cond_0
-    check-cast p1, Lnr0;
+    if-nez v0, :cond_2
 
+    .line 20
     .line 21
+    goto :goto_0
+
     .line 22
-    iget v0, p1, Lnr0;->j:F
+    :cond_2
+    iget-object p0, p0, Lnr0;->b:Ljava/lang/String;
 
     .line 23
     .line 24
-    iget v1, p0, Lnr0;->j:F
+    iget-object p1, p1, Lnr0;->b:Ljava/lang/String;
 
     .line 25
     .line 26
-    cmpg-float v0, v1, v0
+    invoke-static {p0, p1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 27
     .line 28
-    if-nez v0, :cond_2
-
     .line 29
+    move-result p0
+
     .line 30
-    iget p0, p0, Lnr0;->k:F
+    if-nez p0, :cond_3
 
     .line 31
     .line 32
-    iget p1, p1, Lnr0;->k:F
-
-    .line 33
-    .line 34
-    cmpg-float p0, p0, p1
-
-    .line 35
-    .line 36
-    if-nez p0, :cond_2
-
-    .line 37
-    .line 38
-    :cond_1
-    const/4 p0, 0x1
-
-    .line 39
-    return p0
-
-    .line 40
-    :cond_2
+    :goto_0
     const/4 p0, 0x0
 
-    .line 41
+    .line 33
+    return p0
+
+    .line 34
+    :cond_3
+    :goto_1
+    const/4 p0, 0x1
+
+    .line 35
     return p0
 .end method
 
@@ -220,90 +123,50 @@
     .locals 1
 
     .line 1
-    invoke-virtual {p0}, Lnr0;->isEmpty()Z
+    iget-object v0, p0, Lnr0;->a:Ljava/util/List;
 
     .line 2
     .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
     .line 4
+    .line 5
+    .line 6
     move-result v0
 
-    .line 5
-    if-eqz v0, :cond_0
-
-    .line 6
     .line 7
-    const/4 p0, -0x1
+    mul-int/lit8 v0, v0, 0x1f
 
     .line 8
-    return p0
-
     .line 9
-    :cond_0
-    iget v0, p0, Lnr0;->j:F
+    iget-object p0, p0, Lnr0;->b:Ljava/lang/String;
 
     .line 10
     .line 11
-    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
+    if-nez p0, :cond_0
 
     .line 12
     .line 13
+    const/4 p0, 0x0
+
     .line 14
-    move-result v0
+    goto :goto_0
 
     .line 15
-    mul-int/lit8 v0, v0, 0x1f
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     .line 16
     .line 17
-    iget p0, p0, Lnr0;->k:F
-
     .line 18
-    .line 19
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 20
-    .line 21
-    .line 22
     move-result p0
 
-    .line 23
-    add-int/2addr p0, v0
+    .line 19
+    :goto_0
+    add-int/2addr v0, p0
 
-    .line 24
-    return p0
-.end method
-
-.method public final isEmpty()Z
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lnr0;->j:F
-
-    .line 2
-    .line 3
-    iget p0, p0, Lnr0;->k:F
-
-    .line 4
-    .line 5
-    cmpg-float p0, v0, p0
-
-    .line 6
-    .line 7
-    if-lez p0, :cond_0
-
-    .line 8
-    .line 9
-    const/4 p0, 0x1
-
-    .line 10
-    return p0
-
-    .line 11
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 12
-    return p0
+    .line 20
+    return v0
 .end method
 
 .method public final toString()Ljava/lang/String;
@@ -314,45 +177,58 @@
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    const-string v1, "CnipAppPickerLoadResult(apps="
 
     .line 4
     .line 5
-    .line 6
-    iget v1, p0, Lnr0;->j:F
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    .line 6
     .line 7
     .line 8
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    iget-object v1, p0, Lnr0;->a:Ljava/util/List;
 
     .line 9
     .line 10
-    .line 11
-    const-string v1, ".."
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    .line 11
     .line 12
     .line 13
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v1, ", error="
 
     .line 14
     .line 15
-    .line 16
-    iget p0, p0, Lnr0;->k:F
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 16
     .line 17
     .line 18
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    iget-object p0, p0, Lnr0;->b:Ljava/lang/String;
 
     .line 19
     .line 20
-    .line 21
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 21
     .line 22
     .line 23
+    const-string p0, ")"
+
     .line 24
+    .line 25
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 26
+    .line 27
+    .line 28
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 29
+    .line 30
+    .line 31
     move-result-object p0
 
-    .line 25
+    .line 32
     return-object p0
 .end method

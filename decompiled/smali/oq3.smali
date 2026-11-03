@@ -1,9 +1,9 @@
 .class public final Loq3;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lok0;
+.implements Ljk0;
 
 
 # instance fields
@@ -11,40 +11,31 @@
 
 .field public final b:F
 
-.field public final c:Ljava/util/List;
+.field public final c:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public constructor <init>(DF)V
-    .locals 1
+.method public constructor <init>(DFLjava/util/ArrayList;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/util/ArrayList;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
     .line 4
+    iput-wide p1, p0, Loq3;->a:D
+
     .line 5
     .line 6
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p3, p0, Loq3;->b:F
 
     .line 7
     .line 8
+    iput-object p4, p0, Loq3;->c:Ljava/util/ArrayList;
+
     .line 9
-    iput-wide p1, p0, Loq3;->a:D
-
     .line 10
-    .line 11
-    iput p3, p0, Loq3;->b:F
-
-    .line 12
-    .line 13
-    iput-object v0, p0, Loq3;->c:Ljava/util/List;
-
-    .line 14
-    .line 15
     return-void
 .end method
 
@@ -148,11 +139,11 @@
 
     .line 33
     :cond_3
-    iget-object p0, p0, Loq3;->c:Ljava/util/List;
+    iget-object p0, p0, Loq3;->c:Ljava/util/ArrayList;
 
     .line 34
     .line 35
-    iget-object p1, p1, Loq3;->c:Ljava/util/List;
+    iget-object p1, p1, Loq3;->c:Ljava/util/ArrayList;
 
     .line 36
     .line 37
@@ -210,7 +201,7 @@
 
     .line 11
     .line 12
-    invoke-static {v2, v0, v1}, Lxu1;->c(FII)I
+    invoke-static {v2, v0, v1}, Lpb1;->d(FII)I
 
     .line 13
     .line 14
@@ -218,7 +209,7 @@
     move-result v0
 
     .line 16
-    iget-object p0, p0, Loq3;->c:Ljava/util/List;
+    iget-object p0, p0, Loq3;->c:Ljava/util/ArrayList;
 
     .line 17
     .line 18
@@ -244,7 +235,7 @@
 
     .line 2
     .line 3
-    const-string v1, "MutableLineCartesianLayerMarkerTarget(x="
+    const-string v1, "MutableColumnCartesianLayerMarkerTarget(x="
 
     .line 4
     .line 5
@@ -280,7 +271,7 @@
     .line 21
     .line 22
     .line 23
-    const-string v1, ", points="
+    const-string v1, ", columns="
 
     .line 24
     .line 25
@@ -289,7 +280,7 @@
     .line 26
     .line 27
     .line 28
-    iget-object p0, p0, Loq3;->c:Ljava/util/List;
+    iget-object p0, p0, Loq3;->c:Ljava/util/ArrayList;
 
     .line 29
     .line 30

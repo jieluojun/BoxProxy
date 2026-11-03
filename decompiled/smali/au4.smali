@@ -1,84 +1,49 @@
-.class public final synthetic Lau4;
-.super Lg62;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lau4;
+.super Ljava/util/ArrayList;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lr52;
-
-
-# static fields
-.field public static final k:Lau4;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 6
-
-    .line 1
-    new-instance v0, Lau4;
-
-    .line 2
-    .line 3
-    const-string v4, "isFile()Z"
-
-    .line 4
-    .line 5
-    const/4 v5, 0x0
-
-    .line 6
-    const/4 v1, 0x1
-
-    .line 7
-    const-class v2, Ljava/io/File;
-
-    .line 8
-    .line 9
-    const-string v3, "isFile"
-
-    .line 10
-    .line 11
-    invoke-direct/range {v0 .. v5}, Lg62;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 12
-    .line 13
-    .line 14
-    sput-object v0, Lau4;->k:Lau4;
-
-    .line 15
-    .line 16
-    return-void
-.end method
+.implements Lcu4;
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final setProperty(Ljava/lang/String;Ljava/lang/Object;)V
+    .locals 1
 
     .line 1
-    check-cast p1, Ljava/io/File;
+    invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
 
     .line 2
     .line 3
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 4
-    .line 5
-    .line 6
-    invoke-virtual {p1}, Ljava/io/File;->isFile()Z
+    move-result p1
 
+    .line 5
+    invoke-virtual {p0}, Ljava/util/AbstractCollection;->size()I
+
+    .line 6
     .line 7
     .line 8
+    move-result v0
+
     .line 9
-    move-result p0
+    if-ne p1, v0, :cond_0
 
     .line 10
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
     .line 11
+    invoke-virtual {p0, p2}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
+
     .line 12
     .line 13
-    move-result-object p0
-
     .line 14
-    return-object p0
+    return-void
+
+    .line 15
+    :cond_0
+    invoke-virtual {p0, p1, p2}, Ljava/util/AbstractList;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    .line 16
+    .line 17
+    .line 18
+    return-void
 .end method

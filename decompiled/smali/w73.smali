@@ -1,22 +1,58 @@
 .class public final Lw73;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Ljava/util/Iterator;
-.implements Lhw2;
+
+# static fields
+.field public static final d:Lw73;
 
 
 # instance fields
-.field public j:Ljava/lang/String;
+.field public final a:F
 
-.field public k:Z
+.field public final b:I
 
-.field public final synthetic l:Lxv;
+.field public final c:I
 
 
 # direct methods
-.method public constructor <init>(Lxv;)V
+.method static constructor <clinit>()V
+    .locals 4
+
+    .line 1
+    new-instance v0, Lw73;
+
+    .line 2
+    .line 3
+    const/high16 v1, -0x40800000    # -1.0f
+
+    .line 4
+    .line 5
+    invoke-static {v1}, Lt73;->a(F)V
+
+    .line 6
+    .line 7
+    .line 8
+    const/16 v2, 0x11
+
+    .line 9
+    .line 10
+    const/4 v3, 0x0
+
+    .line 11
+    invoke-direct {v0, v1, v2, v3}, Lw73;-><init>(FII)V
+
+    .line 12
+    .line 13
+    .line 14
+    sput-object v0, Lw73;->d:Lw73;
+
+    .line 15
+    .line 16
+    return-void
+.end method
+
+.method public constructor <init>(FII)V
     .locals 0
 
     .line 1
@@ -25,145 +61,320 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lw73;->l:Lxv;
+    iput p1, p0, Lw73;->a:F
 
     .line 5
     .line 6
+    iput p2, p0, Lw73;->b:I
+
+    .line 7
+    .line 8
+    iput p3, p0, Lw73;->c:I
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lw73;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Lw73;
+
+    .line 12
+    .line 13
+    iget v1, p1, Lw73;->a:F
+
+    .line 14
+    .line 15
+    iget v3, p0, Lw73;->a:F
+
+    .line 16
+    .line 17
+    invoke-static {v3, v1}, Ljava/lang/Float;->compare(FF)I
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v1
+
+    .line 21
+    if-nez v1, :cond_2
+
+    .line 22
+    .line 23
+    iget v1, p0, Lw73;->b:I
+
+    .line 24
+    .line 25
+    iget v3, p1, Lw73;->b:I
+
+    .line 26
+    .line 27
+    if-ne v1, v3, :cond_2
+
+    .line 28
+    .line 29
+    iget p0, p0, Lw73;->c:I
+
+    .line 30
+    .line 31
+    iget p1, p1, Lw73;->c:I
+
+    .line 32
+    .line 33
+    if-ne p0, p1, :cond_2
+
+    .line 34
+    .line 35
+    return v0
+
+    .line 36
+    :cond_2
+    return v2
+.end method
+
+.method public final hashCode()I
     .locals 3
 
     .line 1
-    iget-object v0, p0, Lw73;->j:Ljava/lang/String;
+    iget v0, p0, Lw73;->a:F
 
     .line 2
     .line 3
-    const/4 v1, 0x1
+    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
 
     .line 4
-    if-nez v0, :cond_0
-
     .line 5
     .line 6
-    iget-boolean v2, p0, Lw73;->k:Z
+    move-result v0
 
     .line 7
-    .line 8
-    if-nez v2, :cond_0
+    const/16 v1, 0x1f
 
+    .line 8
     .line 9
+    mul-int/2addr v0, v1
+
     .line 10
-    iget-object v0, p0, Lw73;->l:Lxv;
+    iget v2, p0, Lw73;->b:I
 
     .line 11
     .line 12
-    iget-object v0, v0, Lxv;->b:Ljava/lang/Object;
+    invoke-static {v2, v0, v1}, Lpb1;->e(III)I
 
     .line 13
     .line 14
-    check-cast v0, Ljava/io/BufferedReader;
-
     .line 15
+    move-result v0
+
     .line 16
-    invoke-virtual {v0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+    iget p0, p0, Lw73;->c:I
 
     .line 17
     .line 18
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
     .line 19
-    move-result-object v0
-
     .line 20
-    iput-object v0, p0, Lw73;->j:Ljava/lang/String;
-
     .line 21
+    move-result p0
+
     .line 22
-    if-nez v0, :cond_0
+    add-int/2addr p0, v0
 
     .line 23
-    .line 24
-    iput-boolean v1, p0, Lw73;->k:Z
-
-    .line 25
-    .line 26
-    :cond_0
-    if-eqz v0, :cond_1
-
-    .line 27
-    .line 28
-    return v1
-
-    .line 29
-    :cond_1
-    const/4 p0, 0x0
-
-    .line 30
     return p0
 .end method
 
-.method public final next()Ljava/lang/Object;
-    .locals 2
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
     .line 1
-    invoke-virtual {p0}, Lw73;->hasNext()Z
+    iget v0, p0, Lw73;->a:F
 
     .line 2
     .line 3
+    invoke-static {v0}, Lt73;->b(F)Ljava/lang/String;
+
     .line 4
-    move-result v0
-
     .line 5
-    const/4 v1, 0x0
-
     .line 6
-    if-eqz v0, :cond_0
+    move-result-object v0
 
     .line 7
+    const-string v1, "Invalid"
+
     .line 8
-    iget-object v0, p0, Lw73;->j:Ljava/lang/String;
-
     .line 9
-    .line 10
-    iput-object v1, p0, Lw73;->j:Ljava/lang/String;
+    iget v2, p0, Lw73;->b:I
 
+    .line 10
     .line 11
+    const/4 v3, 0x1
+
     .line 12
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-ne v2, v3, :cond_0
 
     .line 13
     .line 14
-    .line 15
-    return-object v0
+    const-string v2, "LineHeightStyle.Trim.FirstLineTop"
 
+    .line 15
     .line 16
-    :cond_0
-    invoke-static {}, Lyd1;->p()V
+    goto :goto_0
 
     .line 17
+    :cond_0
+    const/16 v4, 0x10
+
     .line 18
     .line 19
-    return-object v1
-.end method
+    if-ne v2, v4, :cond_1
 
-.method public final remove()V
-    .locals 1
+    .line 20
+    .line 21
+    const-string v2, "LineHeightStyle.Trim.LastLineBottom"
 
-    .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    .line 22
+    .line 23
+    goto :goto_0
 
-    .line 2
-    .line 3
-    const-string v0, "Operation is not supported for read-only collection"
+    .line 24
+    :cond_1
+    const/16 v4, 0x11
 
-    .line 4
-    .line 5
-    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    .line 25
+    .line 26
+    if-ne v2, v4, :cond_2
 
-    .line 6
-    .line 7
-    .line 8
-    throw p0
+    .line 27
+    .line 28
+    const-string v2, "LineHeightStyle.Trim.Both"
+
+    .line 29
+    .line 30
+    goto :goto_0
+
+    .line 31
+    :cond_2
+    if-nez v2, :cond_3
+
+    .line 32
+    .line 33
+    const-string v2, "LineHeightStyle.Trim.None"
+
+    .line 34
+    .line 35
+    goto :goto_0
+
+    .line 36
+    :cond_3
+    move-object v2, v1
+
+    .line 37
+    :goto_0
+    iget p0, p0, Lw73;->c:I
+
+    .line 38
+    .line 39
+    if-nez p0, :cond_4
+
+    .line 40
+    .line 41
+    const-string v1, "LineHeightStyle.Mode.Fixed"
+
+    .line 42
+    .line 43
+    goto :goto_1
+
+    .line 44
+    :cond_4
+    if-ne p0, v3, :cond_5
+
+    .line 45
+    .line 46
+    const-string v1, "LineHeightStyle.Mode.Minimum"
+
+    .line 47
+    .line 48
+    goto :goto_1
+
+    .line 49
+    :cond_5
+    const/4 v3, 0x2
+
+    .line 50
+    if-ne p0, v3, :cond_6
+
+    .line 51
+    .line 52
+    const-string v1, "LineHeightStyle.Mode.Tight"
+
+    .line 53
+    .line 54
+    :cond_6
+    :goto_1
+    const-string p0, ", trim="
+
+    .line 55
+    .line 56
+    const-string v3, ",mode="
+
+    .line 57
+    .line 58
+    const-string v4, "LineHeightStyle(alignment="
+
+    .line 59
+    .line 60
+    invoke-static {v4, v0, p0, v2, v3}, Lpb1;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 61
+    .line 62
+    .line 63
+    move-result-object p0
+
+    .line 64
+    const-string v0, ")"
+
+    .line 65
+    .line 66
+    invoke-static {p0, v1, v0}, Lh86;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 67
+    .line 68
+    .line 69
+    move-result-object p0
+
+    .line 70
+    return-object p0
 .end method

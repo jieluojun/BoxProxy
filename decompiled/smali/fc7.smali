@@ -1,10 +1,14 @@
-.class public abstract Lfc7;
+.class public Lfc7;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final a:Landroid/view/ViewGroup$LayoutParams;
+.field public static final b:Lic7;
+
+
+# instance fields
+.field public final a:Lic7;
 
 
 # direct methods
@@ -12,417 +16,746 @@
     .locals 2
 
     .line 1
-    new-instance v0, Landroid/view/ViewGroup$LayoutParams;
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     .line 2
     .line 3
-    const/4 v1, -0x2
+    const/16 v1, 0x24
 
     .line 4
-    invoke-direct {v0, v1, v1}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
-
     .line 5
-    .line 6
-    .line 7
-    sput-object v0, Lfc7;->a:Landroid/view/ViewGroup$LayoutParams;
-
-    .line 8
-    .line 9
-    return-void
-.end method
-
-.method public static final a(Lv2;Lt01;Lty0;)Lcc7;
-    .locals 7
-
-    .line 1
-    sget-object v0, Lm72;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
-
-    .line 2
-    .line 3
-    const/4 v1, 0x0
-
-    .line 4
-    const/4 v2, 0x1
-
-    .line 5
-    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->compareAndSet(ZZ)Z
+    if-lt v0, v1, :cond_0
 
     .line 6
     .line 7
-    .line 8
-    move-result v0
+    new-instance v0, Lvb7;
 
+    .line 8
     .line 9
-    const/4 v3, 0x0
+    invoke-direct {v0}, Lvb7;-><init>()V
 
     .line 10
-    if-eqz v0, :cond_0
-
     .line 11
     .line 12
-    const/4 v0, 0x6
+    goto :goto_0
 
     .line 13
-    invoke-static {v2, v0, v3}, Lc;->a(IILnd0;)Lsd0;
+    :cond_0
+    const/16 v1, 0x23
 
     .line 14
     .line 15
-    .line 16
-    move-result-object v0
+    if-lt v0, v1, :cond_1
 
+    .line 16
     .line 17
-    sget-object v4, Ljf;->v:Lze6;
+    new-instance v0, Lub7;
 
     .line 18
     .line 19
-    invoke-virtual {v4}, Lze6;->getValue()Ljava/lang/Object;
+    invoke-direct {v0}, Lub7;-><init>()V
 
     .line 20
     .line 21
     .line 22
-    move-result-object v4
+    goto :goto_0
 
     .line 23
-    check-cast v4, Lwa1;
+    :cond_1
+    const/16 v1, 0x22
 
     .line 24
     .line 25
-    invoke-static {v4}, Lr67;->f(Lwa1;)La81;
+    if-lt v0, v1, :cond_2
 
     .line 26
     .line 27
-    .line 28
-    move-result-object v4
+    new-instance v0, Ltb7;
 
+    .line 28
     .line 29
-    new-instance v5, Lk2;
+    invoke-direct {v0}, Ltb7;-><init>()V
 
     .line 30
     .line 31
-    const/16 v6, 0x1d
+    .line 32
+    goto :goto_0
+
+    .line 33
+    :cond_2
+    const/16 v1, 0x1f
+
+    .line 34
+    .line 35
+    if-lt v0, v1, :cond_3
+
+    .line 36
+    .line 37
+    new-instance v0, Lsb7;
+
+    .line 38
+    .line 39
+    invoke-direct {v0}, Lsb7;-><init>()V
+
+    .line 40
+    .line 41
+    .line 42
+    goto :goto_0
+
+    .line 43
+    :cond_3
+    const/16 v1, 0x1e
+
+    .line 44
+    .line 45
+    if-lt v0, v1, :cond_4
+
+    .line 46
+    .line 47
+    new-instance v0, Lrb7;
+
+    .line 48
+    .line 49
+    invoke-direct {v0}, Lrb7;-><init>()V
+
+    .line 50
+    .line 51
+    .line 52
+    goto :goto_0
+
+    .line 53
+    :cond_4
+    new-instance v0, Lqb7;
+
+    .line 54
+    .line 55
+    invoke-direct {v0}, Lqb7;-><init>()V
+
+    .line 56
+    .line 57
+    .line 58
+    :goto_0
+    invoke-virtual {v0}, Lwb7;->b()Lic7;
+
+    .line 59
+    .line 60
+    .line 61
+    move-result-object v0
+
+    .line 62
+    iget-object v0, v0, Lic7;->a:Lfc7;
+
+    .line 63
+    .line 64
+    invoke-virtual {v0}, Lfc7;->a()Lic7;
+
+    .line 65
+    .line 66
+    .line 67
+    move-result-object v0
+
+    .line 68
+    iget-object v0, v0, Lic7;->a:Lfc7;
+
+    .line 69
+    .line 70
+    invoke-virtual {v0}, Lfc7;->b()Lic7;
+
+    .line 71
+    .line 72
+    .line 73
+    move-result-object v0
+
+    .line 74
+    iget-object v0, v0, Lic7;->a:Lfc7;
+
+    .line 75
+    .line 76
+    invoke-virtual {v0}, Lfc7;->c()Lic7;
+
+    .line 77
+    .line 78
+    .line 79
+    move-result-object v0
+
+    .line 80
+    sput-object v0, Lfc7;->b:Lic7;
+
+    .line 81
+    .line 82
+    return-void
+.end method
+
+.method public constructor <init>(Lic7;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Lfc7;->a:Lic7;
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public A([[Landroid/graphics/Rect;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public B([[Landroid/graphics/Rect;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public a()Lic7;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lfc7;->a:Lic7;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public b()Lic7;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lfc7;->a:Lic7;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public c()Lic7;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lfc7;->a:Lic7;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public d(Landroid/view/View;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public e(Lic7;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lfc7;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Lfc7;
+
+    .line 12
+    .line 13
+    invoke-virtual {p0}, Lfc7;->t()Z
+
+    .line 14
+    .line 15
+    .line 16
+    move-result v1
+
+    .line 17
+    invoke-virtual {p1}, Lfc7;->t()Z
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v3
+
+    .line 21
+    if-ne v1, v3, :cond_2
+
+    .line 22
+    .line 23
+    invoke-virtual {p0}, Lfc7;->s()Z
+
+    .line 24
+    .line 25
+    .line 26
+    move-result v1
+
+    .line 27
+    invoke-virtual {p1}, Lfc7;->s()Z
+
+    .line 28
+    .line 29
+    .line 30
+    move-result v3
+
+    .line 31
+    if-ne v1, v3, :cond_2
 
     .line 32
     .line 33
-    invoke-direct {v5, v0, v3, v6}, Lk2;-><init>(Ljava/lang/Object;Lc81;B)V
+    invoke-virtual {p0}, Lfc7;->n()Lpp2;
 
     .line 34
     .line 35
     .line 36
-    const/4 v6, 0x3
+    move-result-object v1
 
     .line 37
-    invoke-static {v4, v3, v3, v5, v6}, Lf;->J(Lfb1;Lwa1;Lib1;Lv52;I)Ly76;
+    invoke-virtual {p1}, Lfc7;->n()Lpp2;
 
     .line 38
     .line 39
     .line 40
-    new-instance v4, Laa0;
+    move-result-object v3
 
     .line 41
-    .line 42
-    const/16 v5, 0x12
+    invoke-static {v1, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
+    .line 42
     .line 43
     .line 44
-    invoke-direct {v4, v0, v5}, Laa0;-><init>(Ljava/lang/Object;B)V
+    move-result v1
 
     .line 45
+    if-eqz v1, :cond_2
+
     .line 46
     .line 47
-    sget-object v0, Le56;->c:Ljava/lang/Object;
+    invoke-virtual {p0}, Lfc7;->l()Lpp2;
 
     .line 48
     .line 49
-    monitor-enter v0
-
     .line 50
-    :try_start_0
-    sget-object v5, Le56;->i:Ljava/util/List;
+    move-result-object v1
 
     .line 51
-    .line 52
-    invoke-static {v5, v4}, Lfu0;->T0(Ljava/util/Collection;Ljava/lang/Object;)Ljava/util/ArrayList;
+    invoke-virtual {p1}, Lfc7;->l()Lpp2;
 
+    .line 52
     .line 53
     .line 54
+    move-result-object v3
+
     .line 55
-    move-result-object v4
+    invoke-static {v1, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 56
-    sput-object v4, Le56;->i:Ljava/util/List;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
     .line 57
     .line 58
-    monitor-exit v0
+    move-result v1
 
     .line 59
-    invoke-static {}, Le56;->c()V
+    if-eqz v1, :cond_2
 
     .line 60
     .line 61
+    invoke-virtual {p0}, Lfc7;->h()Lmj1;
+
     .line 62
-    goto :goto_0
-
     .line 63
-    :catchall_0
-    move-exception p0
-
     .line 64
-    monitor-exit v0
+    move-result-object p0
 
     .line 65
-    throw p0
+    invoke-virtual {p1}, Lfc7;->h()Lmj1;
 
     .line 66
-    :cond_0
-    :goto_0
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
-
     .line 67
     .line 68
+    move-result-object p1
+
     .line 69
-    move-result v0
+    invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 70
-    if-lez v0, :cond_3
-
     .line 71
     .line 72
-    invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
+    move-result p0
 
     .line 73
+    if-eqz p0, :cond_2
+
     .line 74
     .line 75
-    move-result-object v0
+    return v0
 
     .line 76
-    instance-of v1, v0, Lra;
-
-    .line 77
-    .line 78
-    if-eqz v1, :cond_1
-
-    .line 79
-    .line 80
-    check-cast v0, Lra;
-
-    .line 81
-    .line 82
-    goto :goto_1
-
-    .line 83
-    :cond_1
-    move-object v0, v3
-
-    .line 84
-    :goto_1
-    if-eqz v0, :cond_2
-
-    .line 85
-    .line 86
-    invoke-virtual {v0, p1}, Lra;->setComposeViewContext(Lt01;)V
-
-    .line 87
-    .line 88
-    .line 89
-    goto :goto_3
-
-    .line 90
     :cond_2
-    :goto_2
-    move-object v0, v3
+    return v2
+.end method
 
-    .line 91
-    goto :goto_3
+.method public f(I)Ljava/util/List;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)",
+            "Ljava/util/List<",
+            "Landroid/graphics/Rect;",
+            ">;"
+        }
+    .end annotation
 
-    .line 92
-    :cond_3
-    invoke-virtual {p0}, Landroid/view/ViewGroup;->removeAllViews()V
+    .line 1
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
-    .line 93
-    .line 94
-    .line 95
-    goto :goto_2
+    .line 2
+    .line 3
+    return-object p0
+.end method
 
-    .line 96
-    :goto_3
-    if-nez v0, :cond_4
+.method public g(I)Ljava/util/List;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(I)",
+            "Ljava/util/List<",
+            "Landroid/graphics/Rect;",
+            ">;"
+        }
+    .end annotation
 
-    .line 97
-    .line 98
-    new-instance v0, Lra;
+    .line 1
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
 
-    .line 99
-    .line 100
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    .line 2
+    .line 3
+    return-object p0
+.end method
 
-    .line 101
-    .line 102
-    .line 103
+.method public h()Lmj1;
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return-object p0
+.end method
+
+.method public hashCode()I
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lfc7;->t()Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object v0
+
+    .line 9
+    invoke-virtual {p0}, Lfc7;->s()Z
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v1
+
+    .line 13
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 14
+    .line 15
+    .line 16
     move-result-object v1
 
-    .line 104
-    invoke-direct {v0, v1, p1}, Lra;-><init>(Landroid/content/Context;Lt01;)V
+    .line 17
+    invoke-virtual {p0}, Lfc7;->n()Lpp2;
 
-    .line 105
-    .line 106
-    .line 107
-    invoke-virtual {v0}, Lra;->getView()Landroid/view/View;
-
-    .line 108
-    .line 109
-    .line 110
-    move-result-object v1
-
-    .line 111
-    sget-object v4, Lfc7;->a:Landroid/view/ViewGroup$LayoutParams;
-
-    .line 112
-    .line 113
-    invoke-virtual {p0, v1, v4}, Lv2;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 114
-    .line 115
-    .line 116
-    :cond_4
-    invoke-virtual {v0, p1}, Lra;->setComposeViewContext(Lt01;)V
-
-    .line 117
-    .line 118
-    .line 119
-    invoke-virtual {p0}, Lv2;->getComposeViewContext$ui()Lt01;
-
-    .line 120
-    .line 121
-    .line 122
-    move-result-object p0
-
-    .line 123
-    if-eqz p0, :cond_5
-
-    .line 124
-    .line 125
-    invoke-virtual {p1}, Lt01;->e()V
-
-    .line 126
-    .line 127
-    .line 128
-    invoke-virtual {v0, v2}, Lra;->setComposeViewContextIncrementedDuringInit$ui(Z)V
-
-    .line 129
-    .line 130
-    .line 131
-    :cond_5
-    const p0, 0x7f0900e9
-
-    .line 132
-    .line 133
-    .line 134
-    invoke-virtual {v0, p0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
-
-    .line 135
-    .line 136
-    .line 137
-    move-result-object v1
-
-    .line 138
-    instance-of v2, v1, Lcc7;
-
-    .line 139
-    .line 140
-    if-eqz v2, :cond_6
-
-    .line 141
-    .line 142
-    move-object v3, v1
-
-    .line 143
-    check-cast v3, Lcc7;
-
-    .line 144
-    .line 145
-    :cond_6
-    if-nez v3, :cond_7
-
-    .line 146
-    .line 147
-    new-instance v3, Lcc7;
-
-    .line 148
-    .line 149
-    new-instance v1, Lzy6;
-
-    .line 150
-    .line 151
-    invoke-virtual {v0}, Lra;->getRoot()Lmz2;
-
-    .line 152
-    .line 153
-    .line 154
+    .line 18
+    .line 19
+    .line 20
     move-result-object v2
 
-    .line 155
-    invoke-direct {v1, v2}, Lzy6;-><init>(Lmz2;)V
+    .line 21
+    invoke-virtual {p0}, Lfc7;->l()Lpp2;
 
-    .line 156
-    .line 157
-    .line 158
-    invoke-virtual {p1}, Lt01;->c()Lj11;
+    .line 22
+    .line 23
+    .line 24
+    move-result-object v3
 
-    .line 159
-    .line 160
-    .line 161
-    move-result-object v2
+    .line 25
+    invoke-virtual {p0}, Lfc7;->h()Lmj1;
 
-    .line 162
-    new-instance v4, Lp11;
-
-    .line 163
-    .line 164
-    invoke-direct {v4, v2, v1}, Lp11;-><init>(Lj11;Lzy6;)V
-
-    .line 165
-    .line 166
-    .line 167
-    invoke-direct {v3, v0, v4}, Lcc7;-><init>(Lra;Lp11;)V
-
-    .line 168
-    .line 169
-    .line 170
-    invoke-virtual {v0, p0, v3}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
-
-    .line 171
-    .line 172
-    .line 173
-    :cond_7
-    invoke-virtual {v3, p2}, Lcc7;->b(Lv52;)V
-
-    .line 174
-    .line 175
-    .line 176
-    invoke-virtual {p1}, Lt01;->c()Lj11;
-
-    .line 177
-    .line 178
-    .line 179
+    .line 26
+    .line 27
+    .line 28
     move-result-object p0
 
-    .line 180
-    new-instance p1, Lec7;
+    .line 29
+    filled-new-array {v0, v1, v2, v3, p0}, [Ljava/lang/Object;
 
-    .line 181
-    .line 182
-    invoke-direct {p1, p0}, Lec7;-><init>(Lj11;)V
+    .line 30
+    .line 31
+    .line 32
+    move-result-object p0
 
-    .line 183
-    .line 184
-    .line 185
-    invoke-virtual {v0, p1}, Lra;->setFrameEndScheduler$ui(Ls53;)V
+    .line 33
+    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
 
-    .line 186
-    .line 187
-    .line 188
-    return-object v3
+    .line 34
+    .line 35
+    .line 36
+    move-result p0
+
+    .line 37
+    return p0
+.end method
+
+.method public i(I)Lpp2;
+    .locals 0
+
+    .line 1
+    sget-object p0, Lpp2;->e:Lpp2;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public j(I)Lpp2;
+    .locals 0
+
+    .line 1
+    and-int/lit8 p0, p1, 0x8
+
+    .line 2
+    .line 3
+    if-nez p0, :cond_0
+
+    .line 4
+    .line 5
+    sget-object p0, Lpp2;->e:Lpp2;
+
+    .line 6
+    .line 7
+    return-object p0
+
+    .line 8
+    :cond_0
+    const-string p0, "Unable to query the maximum insets for IME"
+
+    .line 9
+    .line 10
+    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+
+    .line 11
+    .line 12
+    .line 13
+    const/4 p0, 0x0
+
+    .line 14
+    return-object p0
+.end method
+
+.method public k()Lpp2;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Lfc7;->n()Lpp2;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method public l()Lpp2;
+    .locals 0
+
+    .line 1
+    sget-object p0, Lpp2;->e:Lpp2;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public m()Lpp2;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Lfc7;->n()Lpp2;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method public n()Lpp2;
+    .locals 0
+
+    .line 1
+    sget-object p0, Lpp2;->e:Lpp2;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public o()Lpp2;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Lfc7;->n()Lpp2;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method public p(Landroid/view/View;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public q()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public r(IIII)Lic7;
+    .locals 0
+
+    .line 1
+    sget-object p0, Lfc7;->b:Lic7;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public s()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public t()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public u(I)Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x1
+
+    .line 2
+    return p0
+.end method
+
+.method public v(Lpj1;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public w([Lpp2;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public x(Lpp2;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public y(Lic7;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public z(I)V
+    .locals 0
+
+    .line 1
+    return-void
 .end method

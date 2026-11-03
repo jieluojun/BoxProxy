@@ -1,1623 +1,496 @@
-.class public final Lsp1;
-.super Lyz6;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public abstract Lsp1;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final v:Lsp1;
+.field public static final a:Lub1;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 12
 
     .line 1
-    const/16 v0, 0x100
+    new-instance v0, Lub1;
 
     .line 2
     .line 3
-    new-array v5, v0, [I
+    const/high16 v1, 0x3e800000    # 0.25f
 
     .line 4
     .line 5
-    fill-array-data v5, :array_0
+    const v2, 0x3dcccccd    # 0.1f
 
     .line 6
     .line 7
     .line 8
-    new-array v1, v0, [I
+    const/high16 v3, 0x3f800000    # 1.0f
 
     .line 9
     .line 10
-    fill-array-data v1, :array_1
+    invoke-direct {v0, v1, v2, v1, v3}, Lub1;-><init>(FFFF)V
 
     .line 11
     .line 12
     .line 13
-    new-array v2, v0, [I
+    new-instance v0, Lub1;
 
     .line 14
     .line 15
-    fill-array-data v2, :array_2
+    const/4 v2, 0x0
 
     .line 16
+    const v4, 0x3f147ae1    # 0.58f
+
     .line 17
     .line 18
-    new-array v3, v0, [I
-
     .line 19
-    .line 20
-    fill-array-data v3, :array_3
+    invoke-direct {v0, v2, v2, v4, v3}, Lub1;-><init>(FFFF)V
 
+    .line 20
     .line 21
     .line 22
+    sput-object v0, Lsp1;->a:Lub1;
+
     .line 23
-    new-array v0, v0, [I
-
     .line 24
-    .line 25
-    fill-array-data v0, :array_4
+    new-instance v0, Lub1;
 
+    .line 25
     .line 26
+    const v5, 0x3ed70a3d    # 0.42f
+
     .line 27
     .line 28
-    filled-new-array {v1, v2, v3, v0}, [[I
-
     .line 29
+    invoke-direct {v0, v5, v2, v3, v3}, Lub1;-><init>(FFFF)V
+
     .line 30
     .line 31
-    move-result-object v6
-
     .line 32
-    new-instance v1, Lsp1;
+    new-instance v0, Lub1;
 
     .line 33
     .line 34
-    const/4 v4, 0x4
+    invoke-direct {v0, v5, v2, v4, v3}, Lub1;-><init>(FFFF)V
 
     .line 35
-    sget-object v7, Ls50;->a:[S
-
     .line 36
     .line 37
-    const-string v2, "EUC-TW"
+    new-instance v0, Lub1;
 
     .line 38
     .line 39
-    const/4 v3, 0x1
+    const v4, 0x3df5c28f    # 0.12f
 
     .line 40
-    invoke-direct/range {v1 .. v7}, Lyz6;-><init>(Ljava/lang/String;II[I[[I[S)V
-
     .line 41
     .line 42
-    .line 43
-    sput-object v1, Lsp1;->v:Lsp1;
+    const v5, 0x3ec7ae14    # 0.39f
 
+    .line 43
     .line 44
     .line 45
-    return-void
+    invoke-direct {v0, v4, v2, v5, v2}, Lub1;-><init>(FFFF)V
 
     .line 46
-    nop
-
     .line 47
-    :array_0
-    .array-data 4
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x4
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x2
-        0x1
-    .end array-data
-
     .line 48
+    new-instance v0, Lub1;
+
     .line 49
     .line 50
+    const v4, 0x3f1c28f6    # 0.61f
+
     .line 51
     .line 52
     .line 53
+    const v5, 0x3f6147ae    # 0.88f
+
     .line 54
     .line 55
     .line 56
+    invoke-direct {v0, v4, v3, v5, v3}, Lub1;-><init>(FFFF)V
+
     .line 57
     .line 58
     .line 59
+    new-instance v0, Lub1;
+
     .line 60
     .line 61
+    const v4, 0x3ebd70a4    # 0.37f
+
     .line 62
     .line 63
     .line 64
+    const v5, 0x3f2147ae    # 0.63f
+
     .line 65
     .line 66
     .line 67
+    invoke-direct {v0, v4, v2, v5, v3}, Lub1;-><init>(FFFF)V
+
     .line 68
     .line 69
     .line 70
+    new-instance v0, Lub1;
+
     .line 71
     .line 72
+    const v4, 0x3f2b851f    # 0.67f
+
     .line 73
     .line 74
     .line 75
+    const v5, 0x3ea3d70a    # 0.32f
+
     .line 76
     .line 77
     .line 78
+    invoke-direct {v0, v5, v2, v4, v2}, Lub1;-><init>(FFFF)V
+
     .line 79
     .line 80
     .line 81
+    new-instance v0, Lub1;
+
     .line 82
     .line 83
+    const v4, 0x3ea8f5c3    # 0.33f
+
     .line 84
     .line 85
     .line 86
+    const v6, 0x3f2e147b    # 0.68f
+
     .line 87
     .line 88
     .line 89
+    invoke-direct {v0, v4, v3, v6, v3}, Lub1;-><init>(FFFF)V
+
     .line 90
     .line 91
     .line 92
+    new-instance v0, Lub1;
+
     .line 93
     .line 94
+    const v4, 0x3f266666    # 0.65f
+
     .line 95
     .line 96
     .line 97
+    const v7, 0x3eb33333    # 0.35f
+
     .line 98
     .line 99
     .line 100
+    invoke-direct {v0, v4, v2, v7, v3}, Lub1;-><init>(FFFF)V
+
     .line 101
     .line 102
     .line 103
+    new-instance v0, Lub1;
+
     .line 104
     .line 105
+    const v4, 0x3f47ae14    # 0.78f
+
     .line 106
     .line 107
     .line 108
+    const v7, 0x3f23d70a    # 0.64f
+
     .line 109
     .line 110
     .line 111
-    :array_1
-    .array-data 4
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        -0x2
-    .end array-data
+    invoke-direct {v0, v7, v2, v4, v2}, Lub1;-><init>(FFFF)V
 
-    :array_2
-    .array-data 4
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x2
-    .end array-data
+    .line 112
+    .line 113
+    .line 114
+    new-instance v0, Lub1;
 
-    :array_3
-    .array-data 4
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        0x3
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-    .end array-data
+    .line 115
+    .line 116
+    const v4, 0x3e6147ae    # 0.22f
 
-    :array_4
-    .array-data 4
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        -0x2
-    .end array-data
-.end method
+    .line 117
+    .line 118
+    .line 119
+    const v8, 0x3eb851ec    # 0.36f
 
+    .line 120
+    .line 121
+    .line 122
+    invoke-direct {v0, v4, v3, v8, v3}, Lub1;-><init>(FFFF)V
 
-# virtual methods
-.method public final K(I)Z
-    .locals 0
+    .line 123
+    .line 124
+    .line 125
+    new-instance v0, Lub1;
 
-    .line 1
-    add-int/lit16 p1, p1, -0xa1
+    .line 126
+    .line 127
+    const v4, 0x3f547ae1    # 0.83f
 
-    .line 2
-    .line 3
-    and-int/lit16 p0, p1, 0xff
+    .line 128
+    .line 129
+    .line 130
+    const v9, 0x3e2e147b    # 0.17f
 
-    .line 4
-    .line 5
-    const/16 p1, 0x5d
+    .line 131
+    .line 132
+    .line 133
+    invoke-direct {v0, v4, v2, v9, v3}, Lub1;-><init>(FFFF)V
 
-    .line 6
-    .line 7
-    if-le p0, p1, :cond_0
+    .line 134
+    .line 135
+    .line 136
+    new-instance v0, Lub1;
 
-    .line 8
-    .line 9
-    const/4 p0, 0x1
+    .line 137
+    .line 138
+    const v4, 0x3f0ccccd    # 0.55f
 
-    .line 10
-    return p0
+    .line 139
+    .line 140
+    .line 141
+    const v9, 0x3ee66666    # 0.45f
 
-    .line 11
-    :cond_0
-    const/4 p0, 0x0
+    .line 142
+    .line 143
+    .line 144
+    invoke-direct {v0, v4, v2, v3, v9}, Lub1;-><init>(FFFF)V
 
-    .line 12
-    return p0
-.end method
+    .line 145
+    .line 146
+    .line 147
+    new-instance v0, Lub1;
 
-.method public final g(I)I
-    .locals 0
+    .line 148
+    .line 149
+    invoke-direct {v0, v2, v4, v9, v3}, Lub1;-><init>(FFFF)V
 
-    .line 1
-    const/high16 p0, -0x1000000
+    .line 150
+    .line 151
+    .line 152
+    new-instance v0, Lub1;
 
-    .line 2
-    .line 3
-    and-int/2addr p0, p1
+    .line 153
+    .line 154
+    const v10, 0x3f59999a    # 0.85f
 
-    .line 4
-    if-eqz p0, :cond_0
+    .line 155
+    .line 156
+    .line 157
+    const v11, 0x3e19999a    # 0.15f
 
-    .line 5
-    .line 6
-    const/4 p0, 0x4
+    .line 158
+    .line 159
+    .line 160
+    invoke-direct {v0, v10, v2, v11, v3}, Lub1;-><init>(FFFF)V
 
-    .line 7
-    return p0
+    .line 161
+    .line 162
+    .line 163
+    new-instance v0, Lub1;
 
-    .line 8
-    :cond_0
-    const/high16 p0, 0xff0000
+    .line 164
+    .line 165
+    const v10, 0x3de147ae    # 0.11f
 
-    .line 9
-    .line 10
-    and-int/2addr p0, p1
+    .line 166
+    .line 167
+    .line 168
+    const/high16 v11, 0x3f000000    # 0.5f
 
-    .line 11
-    if-eqz p0, :cond_1
+    .line 169
+    .line 170
+    invoke-direct {v0, v10, v2, v11, v2}, Lub1;-><init>(FFFF)V
 
-    .line 12
-    .line 13
-    const/4 p0, 0x3
+    .line 171
+    .line 172
+    .line 173
+    new-instance v0, Lub1;
 
-    .line 14
-    return p0
+    .line 174
+    .line 175
+    const v10, 0x3f63d70a    # 0.89f
 
-    .line 15
-    :cond_1
-    const p0, 0xff00
+    .line 176
+    .line 177
+    .line 178
+    invoke-direct {v0, v11, v3, v10, v3}, Lub1;-><init>(FFFF)V
 
-    .line 16
-    .line 17
-    .line 18
-    and-int/2addr p0, p1
+    .line 179
+    .line 180
+    .line 181
+    new-instance v0, Lub1;
 
-    .line 19
-    if-eqz p0, :cond_2
+    .line 182
+    .line 183
+    invoke-direct {v0, v9, v2, v4, v3}, Lub1;-><init>(FFFF)V
 
-    .line 20
-    .line 21
-    const/4 p0, 0x2
+    .line 184
+    .line 185
+    .line 186
+    new-instance v0, Lub1;
 
-    .line 22
-    return p0
+    .line 187
+    .line 188
+    const/high16 v4, 0x3f400000    # 0.75f
 
-    .line 23
-    :cond_2
-    const/4 p0, 0x1
+    .line 189
+    .line 190
+    invoke-direct {v0, v11, v2, v4, v2}, Lub1;-><init>(FFFF)V
 
-    .line 24
-    return p0
-.end method
+    .line 191
+    .line 192
+    .line 193
+    new-instance v0, Lub1;
 
-.method public final h(ILm8;)[I
-    .locals 0
+    .line 194
+    .line 195
+    invoke-direct {v0, v1, v3, v11, v3}, Lub1;-><init>(FFFF)V
 
-    .line 1
-    const/4 p0, 0x0
+    .line 196
+    .line 197
+    .line 198
+    new-instance v0, Lub1;
 
-    .line 2
-    return-object p0
-.end method
+    .line 199
+    .line 200
+    const v1, 0x3f428f5c    # 0.76f
 
-.method public final n([B)Z
-    .locals 1
+    .line 201
+    .line 202
+    .line 203
+    const v4, 0x3e75c28f    # 0.24f
 
-    .line 1
-    const/4 p0, 0x0
+    .line 204
+    .line 205
+    .line 206
+    invoke-direct {v0, v1, v2, v4, v3}, Lub1;-><init>(FFFF)V
 
-    .line 2
-    aget-byte p1, p1, p0
+    .line 207
+    .line 208
+    .line 209
+    new-instance v0, Lub1;
 
-    .line 3
-    .line 4
-    and-int/lit16 p1, p1, 0xff
+    .line 210
+    .line 211
+    const v1, 0x3f333333    # 0.7f
 
-    .line 5
-    .line 6
-    const/16 v0, 0x7e
+    .line 212
+    .line 213
+    .line 214
+    const v4, 0x3f570a3d    # 0.84f
 
-    .line 7
-    .line 8
-    if-gt p1, v0, :cond_0
+    .line 215
+    .line 216
+    .line 217
+    invoke-direct {v0, v1, v2, v4, v2}, Lub1;-><init>(FFFF)V
 
-    .line 9
-    .line 10
-    const/4 p0, 0x1
+    .line 218
+    .line 219
+    .line 220
+    new-instance v0, Lub1;
 
-    .line 11
-    :cond_0
-    return p0
-.end method
+    .line 221
+    .line 222
+    const v1, 0x3e23d70a    # 0.16f
 
-.method public final s(I[BLwr1;I[B)I
-    .locals 0
+    .line 223
+    .line 224
+    .line 225
+    const v4, 0x3e99999a    # 0.3f
 
-    .line 1
-    invoke-virtual {p0, p2, p3, p4, p5}, Lep3;->E([BLwr1;I[B)I
+    .line 226
+    .line 227
+    .line 228
+    invoke-direct {v0, v1, v3, v4, v3}, Lub1;-><init>(FFFF)V
 
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
+    .line 229
+    .line 230
+    .line 231
+    new-instance v0, Lub1;
 
-    .line 5
-    return p0
+    .line 232
+    .line 233
+    const v1, 0x3f5eb852    # 0.87f
+
+    .line 234
+    .line 235
+    .line 236
+    const v4, 0x3e051eb8    # 0.13f
+
+    .line 237
+    .line 238
+    .line 239
+    invoke-direct {v0, v1, v2, v4, v3}, Lub1;-><init>(FFFF)V
+
+    .line 240
+    .line 241
+    .line 242
+    new-instance v0, Lub1;
+
+    .line 243
+    .line 244
+    const v1, 0x3f28f5c3    # 0.66f
+
+    .line 245
+    .line 246
+    .line 247
+    const v4, -0x40f0a3d7    # -0.56f
+
+    .line 248
+    .line 249
+    .line 250
+    invoke-direct {v0, v8, v2, v1, v4}, Lub1;-><init>(FFFF)V
+
+    .line 251
+    .line 252
+    .line 253
+    new-instance v0, Lub1;
+
+    .line 254
+    .line 255
+    const v1, 0x3eae147b    # 0.34f
+
+    .line 256
+    .line 257
+    .line 258
+    const v2, 0x3fc7ae14    # 1.56f
+
+    .line 259
+    .line 260
+    .line 261
+    invoke-direct {v0, v1, v2, v7, v3}, Lub1;-><init>(FFFF)V
+
+    .line 262
+    .line 263
+    .line 264
+    new-instance v0, Lub1;
+
+    .line 265
+    .line 266
+    const v1, -0x40e66666    # -0.6f
+
+    .line 267
+    .line 268
+    .line 269
+    const v2, 0x3fcccccd    # 1.6f
+
+    .line 270
+    .line 271
+    .line 272
+    invoke-direct {v0, v6, v1, v5, v2}, Lub1;-><init>(FFFF)V
+
+    .line 273
+    .line 274
+    .line 275
+    return-void
 .end method

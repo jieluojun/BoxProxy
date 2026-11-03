@@ -1,80 +1,149 @@
-.class public abstract Le5;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Le5;
+.super Landroid/view/accessibility/AccessibilityNodeProvider;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# instance fields
+.field public final a:Lr77;
 
 
 # direct methods
-.method public static a(Landroid/view/accessibility/AccessibilityNodeInfo;)I
+.method public constructor <init>(Lr77;)V
     .locals 0
 
     .line 1
-    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->getChecked()I
+    invoke-direct {p0}, Landroid/view/accessibility/AccessibilityNodeProvider;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    move-result p0
+    iput-object p1, p0, Le5;->a:Lr77;
 
     .line 5
-    return p0
+    .line 6
+    return-void
 .end method
 
-.method public static b(Landroid/view/accessibility/AccessibilityNodeInfo;)I
-    .locals 0
 
-    .line 1
-    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->getExpandedState()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    return p0
-.end method
-
-.method public static c(Landroid/view/accessibility/AccessibilityNodeInfo;)Ljava/lang/CharSequence;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->getSupplementalDescription()Ljava/lang/CharSequence;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static d(Landroid/view/accessibility/AccessibilityNodeInfo;)Z
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->isFieldRequired()Z
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    return p0
-.end method
-
-.method public static e(Landroid/app/Notification$Builder;)V
+# virtual methods
+.method public final addExtraDataToAccessibilityNodeInfo(ILandroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;Landroid/os/Bundle;)V
     .locals 1
 
     .line 1
-    const/4 v0, 0x0
+    new-instance v0, Ld5;
 
     .line 2
-    invoke-virtual {p0, v0}, Landroid/app/Notification$Builder;->setShortCriticalText(Ljava/lang/String;)Landroid/app/Notification$Builder;
-
     .line 3
+    invoke-direct {v0, p2}, Ld5;-><init>(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+
     .line 4
     .line 5
+    .line 6
+    iget-object p0, p0, Le5;->a:Lr77;
+
+    .line 7
+    .line 8
+    invoke-virtual {p0, p1, v0, p3, p4}, Lr77;->c(ILd5;Ljava/lang/String;Landroid/os/Bundle;)V
+
+    .line 9
+    .line 10
+    .line 11
     return-void
+.end method
+
+.method public final createAccessibilityNodeInfo(I)Landroid/view/accessibility/AccessibilityNodeInfo;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Le5;->a:Lr77;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Lr77;->k(I)Ld5;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    if-nez p0, :cond_0
+
+    .line 8
+    .line 9
+    const/4 p0, 0x0
+
+    .line 10
+    return-object p0
+
+    .line 11
+    :cond_0
+    iget-object p0, p0, Ld5;->a:Landroid/view/accessibility/AccessibilityNodeInfo;
+
+    .line 12
+    .line 13
+    return-object p0
+.end method
+
+.method public final findAccessibilityNodeInfosByText(Ljava/lang/String;I)Ljava/util/List;
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return-object p0
+.end method
+
+.method public final findFocus(I)Landroid/view/accessibility/AccessibilityNodeInfo;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Le5;->a:Lr77;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Lr77;->p(I)Ld5;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    if-nez p0, :cond_0
+
+    .line 8
+    .line 9
+    const/4 p0, 0x0
+
+    .line 10
+    return-object p0
+
+    .line 11
+    :cond_0
+    iget-object p0, p0, Ld5;->a:Landroid/view/accessibility/AccessibilityNodeInfo;
+
+    .line 12
+    .line 13
+    return-object p0
+.end method
+
+.method public final performAction(IILandroid/os/Bundle;)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Le5;->a:Lr77;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1, p2, p3}, Lr77;->x(IILandroid/os/Bundle;)Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
 .end method

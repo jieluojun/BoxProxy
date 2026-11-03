@@ -1,24 +1,59 @@
-.class public interface abstract Ls11;
+.class public final synthetic Ls11;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ljava/util/concurrent/ThreadFactory;
 
 
-# static fields
-.field public static final e:Lr11;
+# instance fields
+.field public final synthetic a:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
     .line 1
-    sget-object v0, Lr11;->a:Lr11;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    sput-object v0, Ls11;->e:Lr11;
+    .line 4
+    iput-object p1, p0, Ls11;->a:Ljava/lang/String;
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+    .locals 1
+
+    .line 1
+    new-instance v0, Ljava/lang/Thread;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Ls11;->a:Ljava/lang/String;
 
     .line 4
     .line 5
-    return-void
+    invoke-direct {v0, p1, p0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    const/16 p0, 0xa
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, p0}, Ljava/lang/Thread;->setPriority(I)V
+
+    .line 11
+    .line 12
+    .line 13
+    return-object v0
 .end method

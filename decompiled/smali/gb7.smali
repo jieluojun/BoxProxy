@@ -1,19 +1,16 @@
-.class public final Lgb7;
+.class public abstract Lgb7;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Landroid/view/View$OnAttachStateChangeListener;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:Landroid/view/View;
+.field public j:Lic7;
 
-.field public final synthetic k:Lq75;
+.field public final k:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Lq75;)V
+.method public constructor <init>(I)V
     .locals 0
 
     .line 1
@@ -22,47 +19,31 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lgb7;->j:Landroid/view/View;
+    iput p1, p0, Lgb7;->k:I
 
     .line 5
     .line 6
-    iput-object p2, p0, Lgb7;->k:Lq75;
-
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final onViewAttachedToWindow(Landroid/view/View;)V
+.method public a(Lpb7;)V
     .locals 0
 
     .line 1
     return-void
 .end method
 
-.method public final onViewDetachedFromWindow(Landroid/view/View;)V
+.method public b(Lpb7;)V
     .locals 0
 
     .line 1
-    iget-object p1, p0, Lgb7;->j:Landroid/view/View;
-
-    .line 2
-    .line 3
-    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
-
-    .line 4
-    .line 5
-    .line 6
-    iget-object p0, p0, Lgb7;->k:Lq75;
-
-    .line 7
-    .line 8
-    invoke-virtual {p0}, Lq75;->A()V
-
-    .line 9
-    .line 10
-    .line 11
     return-void
+.end method
+
+.method public abstract c(Lic7;Ljava/util/List;)Lic7;
+.end method
+
+.method public abstract d(Lpb7;Ls06;)Ls06;
 .end method

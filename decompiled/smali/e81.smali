@@ -1,22 +1,32 @@
 .class public final enum Le81;
 .super Ljava/lang/Enum;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final synthetic j:[Le81;
+.field public static final enum j:Le81;
+
+.field public static final enum k:Le81;
+
+.field public static final enum l:Le81;
+
+.field public static final enum m:Le81;
+
+.field public static final enum n:Le81;
+
+.field public static final synthetic o:[Le81;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 7
 
     .line 1
     new-instance v0, Le81;
 
     .line 2
     .line 3
-    const-string v1, "Default"
+    const-string v1, "Gzip"
 
     .line 4
     .line 5
@@ -28,66 +38,102 @@
     .line 7
     .line 8
     .line 9
-    new-instance v1, Le81;
+    sput-object v0, Le81;->j:Le81;
 
     .line 10
     .line 11
-    const-string v2, "Medium"
+    new-instance v1, Le81;
 
     .line 12
     .line 13
-    const/4 v3, 0x1
+    const-string v2, "TarGz"
 
     .line 14
+    .line 15
+    const/4 v3, 0x1
+
+    .line 16
     invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 15
-    .line 16
     .line 17
-    new-instance v2, Le81;
-
     .line 18
     .line 19
-    const-string v3, "High"
+    sput-object v1, Le81;->k:Le81;
 
     .line 20
     .line 21
-    const/4 v4, 0x2
+    new-instance v2, Le81;
 
     .line 22
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 23
+    const-string v3, "Tar"
+
     .line 24
     .line 25
-    new-instance v3, Le81;
+    const/4 v4, 0x2
 
     .line 26
-    .line 27
-    const-string v4, "Reduced"
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 27
     .line 28
     .line 29
-    const/4 v5, 0x3
+    sput-object v2, Le81;->l:Le81;
 
     .line 30
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 31
+    new-instance v3, Le81;
+
     .line 32
     .line 33
-    filled-new-array {v0, v1, v2, v3}, [Le81;
+    const-string v4, "Zip"
 
     .line 34
     .line 35
+    const/4 v5, 0x3
+
     .line 36
-    move-result-object v0
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 37
-    sput-object v0, Le81;->j:[Le81;
-
     .line 38
     .line 39
+    sput-object v3, Le81;->m:Le81;
+
+    .line 40
+    .line 41
+    new-instance v4, Le81;
+
+    .line 42
+    .line 43
+    const-string v5, "Direct"
+
+    .line 44
+    .line 45
+    const/4 v6, 0x4
+
+    .line 46
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 47
+    .line 48
+    .line 49
+    sput-object v4, Le81;->n:Le81;
+
+    .line 50
+    .line 51
+    filled-new-array {v0, v1, v2, v3, v4}, [Le81;
+
+    .line 52
+    .line 53
+    .line 54
+    move-result-object v0
+
+    .line 55
+    sput-object v0, Le81;->o:[Le81;
+
+    .line 56
+    .line 57
     return-void
 .end method
 
@@ -118,7 +164,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Le81;->j:[Le81;
+    sget-object v0, Le81;->o:[Le81;
 
     .line 2
     .line 3

@@ -1,86 +1,76 @@
 .class public final Lqd5;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lpd5;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Lqd5;
+# instance fields
+.field public j:Lld5;
+
+.field public k:Lps3;
+
+.field public synthetic l:Ljava/lang/Object;
+
+.field public final synthetic m:Ltd5;
+
+.field public n:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Ltd5;Lz71;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lqd5;
+    iput-object p1, p0, Lqd5;->m:Ltd5;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
     .line 4
     .line 5
     .line 6
-    sput-object v0, Lqd5;->a:Lqd5;
-
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lxn3;Z)Lxn3;
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     .line 1
-    new-instance p0, Lc03;
+    iput-object p1, p0, Lqd5;->l:Ljava/lang/Object;
 
     .line 2
     .line 3
-    const/high16 v0, 0x3f800000    # 1.0f
+    iget p1, p0, Lqd5;->n:I
 
     .line 4
     .line 5
-    invoke-direct {p0, v0, p2}, Lc03;-><init>(FZ)V
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    invoke-interface {p1, p0}, Lxn3;->d0(Lxn3;)Lxn3;
+    iput p1, p0, Lqd5;->n:I
 
     .line 9
     .line 10
+    iget-object p1, p0, Lqd5;->m:Ltd5;
+
     .line 11
-    move-result-object p0
-
     .line 12
-    return-object p0
-.end method
+    const/4 v0, 0x0
 
-.method public final b(Lxn3;)Lxn3;
-    .locals 0
+    .line 13
+    invoke-virtual {p1, v0, p0}, Ltd5;->g(Lld5;Lz71;)Ljava/lang/Object;
 
-    .line 1
-    new-instance p0, Le37;
-
-    .line 2
-    .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    invoke-interface {p1, p0}, Lxn3;->d0(Lxn3;)Lxn3;
-
-    .line 7
-    .line 8
-    .line 9
+    .line 14
+    .line 15
+    .line 16
     move-result-object p0
 
-    .line 10
+    .line 17
     return-object p0
 .end method

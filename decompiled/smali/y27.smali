@@ -1,67 +1,106 @@
 .class public final Ly27;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lt03;
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public final a:[F
+.field public j:Ld52;
 
-.field public final b:[J
-
-.field public c:F
-
-.field public d:I
-
-.field public e:I
+.field public k:Ljava/lang/Object;
 
 
-# direct methods
-.method public constructor <init>()V
+# virtual methods
+.method public final getValue()Ljava/lang/Object;
     .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object v0, p0, Ly27;->k:Ljava/lang/Object;
 
     .line 2
     .line 3
+    sget-object v1, Lsc5;->M:Lsc5;
+
     .line 4
-    const/16 v0, 0x14
-
     .line 5
+    if-ne v0, v1, :cond_0
+
     .line 6
-    new-array v1, v0, [F
-
     .line 7
+    iget-object v0, p0, Ly27;->j:Ld52;
+
     .line 8
-    iput-object v1, p0, Ly27;->a:[F
-
     .line 9
-    .line 10
-    new-array v0, v0, [J
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 10
     .line 11
     .line 12
-    iput-object v0, p0, Ly27;->b:[J
+    invoke-interface {v0}, Ld52;->invoke()Ljava/lang/Object;
 
     .line 13
     .line 14
-    const/4 v0, 0x0
-
     .line 15
-    iput v0, p0, Ly27;->c:F
+    move-result-object v0
 
     .line 16
-    .line 17
-    const/4 v0, 0x0
+    iput-object v0, p0, Ly27;->k:Ljava/lang/Object;
 
+    .line 17
     .line 18
-    iput v0, p0, Ly27;->d:I
+    const/4 v1, 0x0
 
     .line 19
-    .line 20
-    iput v0, p0, Ly27;->e:I
+    iput-object v1, p0, Ly27;->j:Ld52;
 
+    .line 20
     .line 21
-    .line 22
-    return-void
+    :cond_0
+    return-object v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Ly27;->k:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    sget-object v1, Lsc5;->M:Lsc5;
+
+    .line 4
+    .line 5
+    if-eq v0, v1, :cond_0
+
+    .line 6
+    .line 7
+    invoke-virtual {p0}, Ly27;->getValue()Ljava/lang/Object;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p0
+
+    .line 11
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    return-object p0
+
+    .line 16
+    :cond_0
+    const-string p0, "Lazy value not initialized yet."
+
+    .line 17
+    .line 18
+    return-object p0
 .end method

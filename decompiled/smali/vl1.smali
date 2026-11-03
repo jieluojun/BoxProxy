@@ -1,25 +1,60 @@
 .class public final Lvl1;
-.super Lxl1;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:J
+.field public j:Lag6;
+
+.field public k:Lbp4;
+
+.field public l:Ly85;
+
+.field public m:Lp92;
+
+.field public n:I
+
+.field public o:F
+
+.field public synthetic p:Ljava/lang/Object;
+
+.field public q:I
 
 
-# direct methods
-.method public constructor <init>(J)V
-    .locals 0
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lvl1;->p:Ljava/lang/Object;
 
     .line 2
     .line 3
-    .line 4
-    iput-wide p1, p0, Lvl1;->a:J
+    iget p1, p0, Lvl1;->q:I
 
+    .line 4
     .line 5
+    const/high16 v0, -0x80000000
+
     .line 6
-    return-void
+    .line 7
+    or-int/2addr p1, v0
+
+    .line 8
+    iput p1, p0, Lvl1;->q:I
+
+    .line 9
+    .line 10
+    const/4 p1, 0x0
+
+    .line 11
+    invoke-static {p1, p1, p1, p0}, Lns6;->c(Lag6;Lip4;Lbp4;Lbz;)Ljava/lang/Object;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    return-object p0
 .end method

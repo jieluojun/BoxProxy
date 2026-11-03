@@ -1,81 +1,164 @@
-.class public abstract synthetic Lb21;
+.class public final Lb21;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final synthetic a:[I
+# instance fields
+.field public final a:Lcb5;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lcb5;)V
+    .locals 0
 
     .line 1
-    invoke-static {}, Ljava/net/Proxy$Type;->values()[Ljava/net/Proxy$Type;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    move-result-object v0
+    iput-object p1, p0, Lb21;->a:Lcb5;
 
     .line 5
-    array-length v0, v0
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lb21;
 
     .line 6
-    new-array v0, v0, [I
-
     .line 7
+    const/4 v2, 0x0
+
     .line 8
-    :try_start_0
-    sget-object v1, Ljava/net/Proxy$Type;->DIRECT:Ljava/net/Proxy$Type;
+    if-nez v1, :cond_1
 
     .line 9
     .line 10
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Lb21;
+
+    .line 12
+    .line 13
+    iget-object p0, p0, Lb21;->a:Lcb5;
+
+    .line 14
+    .line 15
+    iget-object p1, p1, Lb21;->a:Lcb5;
+
+    .line 16
+    .line 17
+    invoke-static {p0, p1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 18
+    .line 19
+    .line 20
+    move-result p0
+
+    .line 21
+    if-nez p0, :cond_2
+
+    .line 22
+    .line 23
+    return v2
+
+    .line 24
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lb21;->a:Lcb5;
+
+    .line 2
+    .line 3
+    if-nez p0, :cond_0
+
+    .line 4
+    .line 5
+    const/4 p0, 0x0
+
+    .line 6
+    return p0
+
+    .line 7
+    :cond_0
+    invoke-virtual {p0}, Lcb5;->hashCode()I
+
+    .line 8
+    .line 9
+    .line 10
+    move-result p0
+
+    .line 11
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "Lookup(value="
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object p0, p0, Lb21;->a:Lcb5;
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 11
     .line 12
     .line 13
-    move-result v1
+    const-string p0, ")"
 
     .line 14
-    const/4 v2, 0x1
-
     .line 15
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 16
     .line 17
-    :catch_0
-    :try_start_1
-    sget-object v1, Ljava/net/Proxy$Type;->HTTP:Ljava/net/Proxy$Type;
-
     .line 18
-    .line 19
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    .line 19
     .line 20
     .line 21
+    move-result-object p0
+
     .line 22
-    move-result v1
-
-    .line 23
-    const/4 v2, 0x2
-
-    .line 24
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    .line 25
-    .line 26
-    :catch_1
-    sput-object v0, Lb21;->a:[I
-
-    .line 27
-    .line 28
-    return-void
+    return-object p0
 .end method

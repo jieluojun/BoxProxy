@@ -1,120 +1,184 @@
-.class public final Liw6;
-.super Ljw6;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final enum Liw6;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic a:Ljw6;
+# static fields
+.field public static final enum j:Liw6;
+
+.field public static final enum k:Liw6;
+
+.field public static final enum l:Liw6;
+
+.field public static final enum m:Liw6;
+
+.field public static final enum n:Liw6;
+
+.field public static final synthetic o:[Liw6;
 
 
 # direct methods
-.method public constructor <init>(Ljw6;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 7
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Liw6;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Liw6;->a:Ljw6;
+    const-string v1, "Dns"
 
+    .line 4
     .line 5
+    const/4 v2, 0x0
+
     .line 6
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 7
+    .line 8
+    .line 9
+    sput-object v0, Liw6;->j:Liw6;
+
+    .line 10
+    .line 11
+    new-instance v1, Liw6;
+
+    .line 12
+    .line 13
+    const-string v2, "Tcp"
+
+    .line 14
+    .line 15
+    const/4 v3, 0x1
+
+    .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    sput-object v1, Liw6;->k:Liw6;
+
+    .line 20
+    .line 21
+    new-instance v2, Liw6;
+
+    .line 22
+    .line 23
+    const-string v3, "Tls"
+
+    .line 24
+    .line 25
+    const/4 v4, 0x2
+
+    .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 27
+    .line 28
+    .line 29
+    sput-object v2, Liw6;->l:Liw6;
+
+    .line 30
+    .line 31
+    new-instance v3, Liw6;
+
+    .line 32
+    .line 33
+    const-string v4, "Response"
+
+    .line 34
+    .line 35
+    const/4 v5, 0x3
+
+    .line 36
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 37
+    .line 38
+    .line 39
+    sput-object v3, Liw6;->m:Liw6;
+
+    .line 40
+    .line 41
+    new-instance v4, Liw6;
+
+    .line 42
+    .line 43
+    const-string v5, "FirstByte"
+
+    .line 44
+    .line 45
+    const/4 v6, 0x4
+
+    .line 46
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 47
+    .line 48
+    .line 49
+    sput-object v4, Liw6;->n:Liw6;
+
+    .line 50
+    .line 51
+    filled-new-array {v0, v1, v2, v3, v4}, [Liw6;
+
+    .line 52
+    .line 53
+    .line 54
+    move-result-object v0
+
+    .line 55
+    sput-object v0, Liw6;->o:[Liw6;
+
+    .line 56
+    .line 57
     return-void
 .end method
 
-
-# virtual methods
-.method public final b(Ltv2;)Ljava/lang/Object;
-    .locals 2
+.method public static valueOf(Ljava/lang/String;)Liw6;
+    .locals 1
 
     .line 1
-    invoke-virtual {p1}, Ltv2;->L()I
+    const-class v0, Liw6;
 
     .line 2
     .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
     .line 4
-    move-result v0
-
     .line 5
-    const/16 v1, 0x9
-
     .line 6
+    move-result-object p0
+
     .line 7
-    if-ne v0, v1, :cond_0
+    check-cast p0, Liw6;
 
     .line 8
     .line 9
-    invoke-virtual {p1}, Ltv2;->H()V
-
-    .line 10
-    .line 11
-    .line 12
-    const/4 p0, 0x0
-
-    .line 13
-    return-object p0
-
-    .line 14
-    :cond_0
-    iget-object p0, p0, Liw6;->a:Ljw6;
-
-    .line 15
-    .line 16
-    invoke-virtual {p0, p1}, Ljw6;->b(Ltv2;)Ljava/lang/Object;
-
-    .line 17
-    .line 18
-    .line 19
-    move-result-object p0
-
-    .line 20
     return-object p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public static values()[Liw6;
+    .locals 1
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    sget-object v0, Liw6;->o:[Liw6;
 
     .line 2
     .line 3
-    const-string v1, "NullSafeTypeAdapter["
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
     .line 6
+    move-result-object v0
+
     .line 7
+    check-cast v0, [Liw6;
+
     .line 8
-    iget-object p0, p0, Liw6;->a:Ljw6;
-
     .line 9
-    .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 11
-    .line 12
-    .line 13
-    const-string p0, "]"
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-object p0
-
-    .line 22
-    return-object p0
+    return-object v0
 .end method

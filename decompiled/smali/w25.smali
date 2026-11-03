@@ -1,24 +1,30 @@
 .class public final Lw25;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Z
+.field public j:Z
+
+.field public synthetic k:Ljava/lang/Object;
+
+.field public final synthetic l:Ly25;
+
+.field public m:I
 
 
 # direct methods
-.method public constructor <init>(Z)V
+.method public constructor <init>(Ly25;Lz71;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lw25;->l:Ly25;
 
     .line 2
     .line 3
-    .line 4
-    iput-boolean p1, p0, Lw25;->a:Z
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
+    .line 4
     .line 5
     .line 6
     return-void
@@ -26,120 +32,46 @@
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of v1, p1, Lw25;
-
-    .line 6
-    .line 7
-    const/4 v2, 0x0
-
-    .line 8
-    if-nez v1, :cond_1
-
-    .line 9
-    .line 10
-    return v2
-
-    .line 11
-    :cond_1
-    check-cast p1, Lw25;
-
-    .line 12
-    .line 13
-    iget-boolean p0, p0, Lw25;->a:Z
-
-    .line 14
-    .line 15
-    iget-boolean p1, p1, Lw25;->a:Z
-
-    .line 16
-    .line 17
-    if-eq p0, p1, :cond_2
-
-    .line 18
-    .line 19
-    return v2
-
-    .line 20
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    .line 1
-    iget-boolean p0, p0, Lw25;->a:Z
-
-    .line 2
-    .line 3
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 2
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    iput-object p1, p0, Lw25;->k:Ljava/lang/Object;
 
     .line 2
     .line 3
-    const-string v1, "ServiceSettings(bootAutoStartEnabled="
+    iget p1, p0, Lw25;->m:I
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    iget-boolean p0, p0, Lw25;->a:Z
+    iput p1, p0, Lw25;->m:I
 
     .line 9
     .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    const/4 p1, 0x0
 
     .line 11
+    const/4 v0, 0x0
+
     .line 12
+    iget-object v1, p0, Lw25;->l:Ly25;
+
     .line 13
-    const-string p0, ")"
-
     .line 14
-    .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, p1, p1, v0, p0}, Ly25;->k(Ljava/lang/String;Ljava/lang/String;ZLz71;)Ljava/lang/Object;
 
+    .line 15
     .line 16
     .line 17
-    .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 19
-    .line 20
-    .line 21
     move-result-object p0
 
-    .line 22
+    .line 18
     return-object p0
 .end method

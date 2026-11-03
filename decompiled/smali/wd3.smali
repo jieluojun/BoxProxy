@@ -1,144 +1,221 @@
-.class public final synthetic Lwd3;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lg52;
+.class public final Lwd3;
+.super Lss4;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic j:Lzd3;
-
-.field public final synthetic k:J
-
-.field public final synthetic l:J
-
-.field public final synthetic m:Ldn4;
+# static fields
+.field public static final c:Lwd3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lzd3;JJLdn4;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lwd3;
 
     .line 2
     .line 3
+    sget-object v1, Lhe3;->a:Lhe3;
+
     .line 4
-    iput-object p1, p0, Lwd3;->j:Lzd3;
-
     .line 5
-    .line 6
-    iput-wide p2, p0, Lwd3;->k:J
+    invoke-direct {v0, v1}, Lss4;-><init>(Lgx2;)V
 
+    .line 6
     .line 7
     .line 8
-    iput-wide p4, p0, Lwd3;->l:J
+    sput-object v0, Lwd3;->c:Lwd3;
 
     .line 9
     .line 10
-    iput-object p6, p0, Lwd3;->m:Ldn4;
-
-    .line 11
-    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 4
+.method public final h(Ljava/lang/Object;)I
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lwd3;->j:Lzd3;
+    check-cast p1, [J
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Lzd3;->d1()Lxd3;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 4
     .line 5
     .line 6
-    move-result-object v1
+    array-length p0, p1
 
     .line 7
-    const/4 v2, 0x0
+    return p0
+.end method
 
+.method public final j(Lc11;ILjava/lang/Object;)V
+    .locals 2
+
+    .line 1
+    check-cast p3, Lud3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object p0, p0, Lss4;->b:Lrs4;
+
+    .line 7
     .line 8
-    iput-boolean v2, v1, Lxd3;->k:Z
+    invoke-interface {p1, p0, p2}, Lc11;->l(Lrs4;I)J
 
     .line 9
     .line 10
-    invoke-virtual {v0}, Lzd3;->d1()Lxd3;
-
     .line 11
+    move-result-wide p0
+
+    .line 12
+    invoke-static {p3}, Lqs4;->c(Lqs4;)V
+
+    .line 13
+    .line 14
+    .line 15
+    iget-object p2, p3, Lud3;->a:[J
+
+    .line 16
+    .line 17
+    iget v0, p3, Lud3;->b:I
+
+    .line 18
+    .line 19
+    add-int/lit8 v1, v0, 0x1
+
+    .line 20
+    .line 21
+    iput v1, p3, Lud3;->b:I
+
+    .line 22
+    .line 23
+    aput-wide p0, p2, v0
+
+    .line 24
+    .line 25
+    return-void
+.end method
+
+.method public final k(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    check-cast p1, [J
+
+    .line 2
+    .line 3
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
+    .line 5
+    .line 6
+    new-instance p0, Lud3;
+
+    .line 7
+    .line 8
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 9
+    .line 10
+    .line 11
+    iput-object p1, p0, Lud3;->a:[J
+
     .line 12
     .line 13
-    move-result-object v1
+    array-length p1, p1
 
     .line 14
-    iget-wide v2, p0, Lwd3;->k:J
+    iput p1, p0, Lud3;->b:I
 
     .line 15
     .line 16
-    iput-wide v2, v1, Lxd3;->l:J
+    const/16 p1, 0xa
 
     .line 17
     .line 18
-    invoke-virtual {v0}, Lzd3;->d1()Lxd3;
+    invoke-virtual {p0, p1}, Lud3;->b(I)V
 
     .line 19
     .line 20
     .line 21
-    move-result-object v1
+    return-object p0
+.end method
 
+.method public final n()Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    new-array p0, p0, [J
+
+    .line 3
+    .line 4
+    return-object p0
+.end method
+
+.method public final o(Lya6;Ljava/lang/Object;I)V
+    .locals 4
+
+    .line 1
+    check-cast p2, [J
+
+    .line 2
+    .line 3
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
+    .line 5
+    .line 6
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 7
+    .line 8
+    .line 9
+    const/4 v0, 0x0
+
+    .line 10
+    :goto_0
+    if-ge v0, p3, :cond_0
+
+    .line 11
+    .line 12
+    aget-wide v1, p2, v0
+
+    .line 13
+    .line 14
+    iget-object v3, p0, Lss4;->b:Lrs4;
+
+    .line 15
+    .line 16
+    invoke-virtual {p1, v3, v0}, Lya6;->f(Lcx5;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    invoke-virtual {p1, v1, v2}, Lya6;->k(J)V
+
+    .line 20
+    .line 21
     .line 22
-    iget-wide v2, p0, Lwd3;->l:J
+    add-int/lit8 v0, v0, 0x1
 
     .line 23
     .line 24
-    iput-wide v2, v1, Lxd3;->m:J
+    goto :goto_0
 
     .line 25
-    .line 26
-    iget-object p0, p0, Lwd3;->m:Ldn4;
-
-    .line 27
-    .line 28
-    iget-object p0, p0, Ldn4;->j:Lth3;
-
-    .line 29
-    .line 30
-    invoke-interface {p0}, Lth3;->f()Lr52;
-
-    .line 31
-    .line 32
-    .line 33
-    move-result-object p0
-
-    .line 34
-    if-eqz p0, :cond_0
-
-    .line 35
-    .line 36
-    invoke-virtual {v0}, Lzd3;->d1()Lxd3;
-
-    .line 37
-    .line 38
-    .line 39
-    move-result-object v0
-
-    .line 40
-    invoke-interface {p0, v0}, Lr52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 41
-    .line 42
-    .line 43
     :cond_0
-    sget-object p0, Ld07;->a:Ld07;
-
-    .line 44
-    .line 45
-    return-object p0
+    return-void
 .end method

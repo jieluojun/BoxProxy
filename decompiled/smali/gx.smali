@@ -1,344 +1,235 @@
 .class public final Lgx;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lg52;
+.super Lau2;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final k:Lgx;
-
-.field public static final l:Lgx;
-
-.field public static final m:Lgx;
-
-.field public static final n:Lgx;
-
-.field public static final o:Lgx;
-
-.field public static final p:Lgx;
-
-.field public static final q:Lgx;
-
-.field public static final r:Lgx;
+.field public static final synthetic q:J
 
 
 # instance fields
-.field public final synthetic j:B
+.field private volatile synthetic _disposer$volatile:Ljava/lang/Object;
+
+.field public final n:Lrh0;
+
+.field public o:Lwj1;
+
+.field public final synthetic p:Lix;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    new-instance v0, Lgx;
+    sget-object v0, Lvv;->a:Lsun/misc/Unsafe;
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    const-class v1, Lgx;
 
     .line 4
-    invoke-direct {v0, v1}, Lgx;-><init>(B)V
-
     .line 5
+    const-string v2, "_disposer$volatile"
+
     .line 6
     .line 7
-    sput-object v0, Lgx;->k:Lgx;
+    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     .line 8
     .line 9
-    new-instance v0, Lgx;
-
     .line 10
+    move-result-object v1
+
     .line 11
-    const/4 v1, 0x1
+    invoke-virtual {v0, v1}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
 
     .line 12
-    invoke-direct {v0, v1}, Lgx;-><init>(B)V
-
     .line 13
     .line 14
+    move-result-wide v0
+
     .line 15
-    sput-object v0, Lgx;->l:Lgx;
+    sput-wide v0, Lgx;->q:J
 
     .line 16
     .line 17
-    new-instance v0, Lgx;
-
-    .line 18
-    .line 19
-    const/4 v1, 0x2
-
-    .line 20
-    invoke-direct {v0, v1}, Lgx;-><init>(B)V
-
-    .line 21
-    .line 22
-    .line 23
-    sput-object v0, Lgx;->m:Lgx;
-
-    .line 24
-    .line 25
-    new-instance v0, Lgx;
-
-    .line 26
-    .line 27
-    const/4 v1, 0x3
-
-    .line 28
-    invoke-direct {v0, v1}, Lgx;-><init>(B)V
-
-    .line 29
-    .line 30
-    .line 31
-    sput-object v0, Lgx;->n:Lgx;
-
-    .line 32
-    .line 33
-    new-instance v0, Lgx;
-
-    .line 34
-    .line 35
-    const/4 v1, 0x4
-
-    .line 36
-    invoke-direct {v0, v1}, Lgx;-><init>(B)V
-
-    .line 37
-    .line 38
-    .line 39
-    sput-object v0, Lgx;->o:Lgx;
-
-    .line 40
-    .line 41
-    new-instance v0, Lgx;
-
-    .line 42
-    .line 43
-    const/4 v1, 0x5
-
-    .line 44
-    invoke-direct {v0, v1}, Lgx;-><init>(B)V
-
-    .line 45
-    .line 46
-    .line 47
-    sput-object v0, Lgx;->p:Lgx;
-
-    .line 48
-    .line 49
-    new-instance v0, Lgx;
-
-    .line 50
-    .line 51
-    const/4 v1, 0x6
-
-    .line 52
-    invoke-direct {v0, v1}, Lgx;-><init>(B)V
-
-    .line 53
-    .line 54
-    .line 55
-    sput-object v0, Lgx;->q:Lgx;
-
-    .line 56
-    .line 57
-    new-instance v0, Lgx;
-
-    .line 58
-    .line 59
-    const/4 v1, 0x7
-
-    .line 60
-    invoke-direct {v0, v1}, Lgx;-><init>(B)V
-
-    .line 61
-    .line 62
-    .line 63
-    sput-object v0, Lgx;->r:Lgx;
-
-    .line 64
-    .line 65
     return-void
 .end method
 
-.method public synthetic constructor <init>(B)V
+.method public constructor <init>(Lix;Lrh0;)V
     .locals 0
 
     .line 1
-    iput-byte p1, p0, Lgx;->j:B
+    iput-object p1, p0, Lgx;->p:Lix;
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ltb3;-><init>()V
 
     .line 4
     .line 5
     .line 6
+    iput-object p2, p0, Lgx;->n:Lrh0;
+
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 2
+.method public final n(Ljava/lang/Throwable;)V
+    .locals 4
 
     .line 1
-    iget-byte p0, p0, Lgx;->j:B
+    const/4 v0, 0x0
 
     .line 2
+    iget-object v1, p0, Lgx;->n:Lrh0;
+
     .line 3
-    const-wide/high16 v0, -0x100000000000000L
-
     .line 4
-    .line 5
-    packed-switch p0, :pswitch_data_0
+    if-eqz p1, :cond_0
 
+    .line 5
     .line 6
+    new-instance v2, Lkx0;
+
     .line 7
     .line 8
-    new-instance p0, Ljava/lang/IllegalStateException;
+    invoke-direct {v2, p1, v0}, Lkx0;-><init>(Ljava/lang/Throwable;Z)V
 
     .line 9
     .line 10
-    const-string v0, "DynamicMaterialTheme not initialized"
-
     .line 11
+    const/4 p1, 0x0
+
     .line 12
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2, p1}, Lrh0;->E(Ljava/lang/Object;Lt52;)Lat1;
 
     .line 13
     .line 14
     .line 15
-    throw p0
+    move-result-object p1
 
     .line 16
-    :pswitch_0
-    const/4 p0, 0x0
+    if-eqz p1, :cond_2
 
     .line 17
-    sget-object v0, Ldv0;->u:Llb5;
-
     .line 18
-    .line 19
-    invoke-static {p0, p0, p0, p0, v0}, Lcd7;->a(FFFFLav0;)J
+    invoke-virtual {v1, p1}, Lrh0;->r(Ljava/lang/Object;)V
 
+    .line 19
     .line 20
     .line 21
-    .line 22
-    move-result-wide v0
+    sget-object p1, Lvv;->a:Lsun/misc/Unsafe;
 
+    .line 22
     .line 23
-    new-instance p0, Lmu0;
+    sget-wide v0, Lgx;->q:J
 
     .line 24
     .line 25
-    invoke-direct {p0, v0, v1}, Lmu0;-><init>(J)V
+    invoke-virtual {p1, p0, v0, v1}, Lsun/misc/Unsafe;->getObjectVolatile(Ljava/lang/Object;J)Ljava/lang/Object;
 
     .line 26
     .line 27
     .line 28
-    return-object p0
+    move-result-object p0
 
     .line 29
-    :pswitch_1
-    new-instance p0, Lmu0;
+    check-cast p0, Lhx;
 
     .line 30
     .line 31
-    invoke-direct {p0, v0, v1}, Lmu0;-><init>(J)V
+    if-eqz p0, :cond_2
 
     .line 32
     .line 33
+    invoke-virtual {p0}, Lhx;->a()V
+
     .line 34
-    return-object p0
-
     .line 35
-    :pswitch_2
-    new-instance p0, Lmu0;
-
     .line 36
+    return-void
+
     .line 37
-    invoke-direct {p0, v0, v1}, Lmu0;-><init>(J)V
+    :cond_0
+    sget-object p1, Lix;->b:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
     .line 38
     .line 39
-    .line 40
-    return-object p0
+    iget-object p0, p0, Lgx;->p:Lix;
 
+    .line 40
     .line 41
-    :pswitch_3
-    const/4 p0, 0x0
+    invoke-virtual {p1, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->decrementAndGet(Ljava/lang/Object;)I
 
     .line 42
-    return-object p0
-
     .line 43
-    :pswitch_4
-    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
     .line 44
+    move-result p1
+
     .line 45
-    invoke-static {p0}, Le43;->b0(Ljava/lang/Object;)Llk4;
+    if-nez p1, :cond_2
 
     .line 46
     .line 47
-    .line 48
-    move-result-object p0
+    iget-object p0, p0, Lix;->a:[Ldg1;
 
+    .line 48
     .line 49
-    return-object p0
+    new-instance p1, Ljava/util/ArrayList;
 
     .line 50
-    :pswitch_5
-    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
     .line 51
+    array-length v2, p0
+
     .line 52
-    invoke-static {p0}, Le43;->b0(Ljava/lang/Object;)Llk4;
+    invoke-direct {p1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 53
     .line 54
     .line 55
-    move-result-object p0
+    array-length v2, p0
 
     .line 56
-    return-object p0
+    :goto_0
+    if-ge v0, v2, :cond_1
 
     .line 57
-    :pswitch_6
-    new-instance p0, Lmu0;
-
     .line 58
-    .line 59
-    const-wide v0, 0x4dffeb3b00000000L    # 5.378318790100008E67
+    aget-object v3, p0, v0
 
+    .line 59
     .line 60
+    invoke-interface {v3}, Ldg1;->g()Ljava/lang/Object;
+
     .line 61
     .line 62
     .line 63
+    move-result-object v3
+
     .line 64
-    invoke-direct {p0, v0, v1}, Lmu0;-><init>(J)V
+    invoke-virtual {p1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 65
     .line 66
     .line 67
-    return-object p0
+    add-int/lit8 v0, v0, 0x1
 
     .line 68
-    nop
-
     .line 69
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    goto :goto_0
+
+    .line 70
+    :cond_1
+    invoke-virtual {v1, p1}, Lrh0;->resumeWith(Ljava/lang/Object;)V
+
+    .line 71
+    .line 72
+    .line 73
+    :cond_2
+    return-void
 .end method

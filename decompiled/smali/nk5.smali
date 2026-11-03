@@ -1,132 +1,214 @@
-.class public final synthetic Lnk5;
+.class public final Lnk5;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lr52;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final a:I
 
-.field public final synthetic k:Lwm5;
-
-.field public final synthetic l:Lvm5;
+.field public final b:Ljava/util/List;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lwm5;Lvm5;B)V
+.method public constructor <init>(ILjava/util/List;)V
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Lnk5;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lnk5;->k:Lwm5;
-
     .line 4
+    iput p1, p0, Lnk5;->a:I
+
     .line 5
-    iput-object p2, p0, Lnk5;->l:Lvm5;
-
     .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lnk5;->b:Ljava/util/List;
 
+    .line 7
     .line 8
-    .line 9
-    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
     .line 1
-    iget-byte v0, p0, Lnk5;->j:B
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
-    sget-object v1, Ld07;->a:Ld07;
+    goto :goto_1
 
     .line 4
-    .line 5
-    const/4 v2, 0x0
+    :cond_0
+    instance-of v0, p1, Lnk5;
 
+    .line 5
     .line 6
-    iget-object v3, p0, Lnk5;->l:Lvm5;
+    if-nez v0, :cond_1
 
     .line 7
     .line 8
-    iget-object p0, p0, Lnk5;->k:Lwm5;
+    goto :goto_0
 
     .line 9
+    :cond_1
+    check-cast p1, Lnk5;
+
     .line 10
-    check-cast p1, Landroid/net/Uri;
-
     .line 11
-    .line 12
-    packed-switch v0, :pswitch_data_0
+    iget v0, p0, Lnk5;->a:I
 
+    .line 12
     .line 13
+    iget v1, p1, Lnk5;->a:I
+
     .line 14
     .line 15
-    if-nez p1, :cond_0
+    if-eq v0, v1, :cond_2
 
     .line 16
     .line 17
-    iget-object p0, p0, Lwm5;->l:Lnr3;
-
-    .line 18
-    .line 19
-    invoke-interface {p0, v2}, Lnr3;->setValue(Ljava/lang/Object;)V
-
-    .line 20
-    .line 21
-    .line 22
     goto :goto_0
 
+    .line 18
+    :cond_2
+    iget-object p0, p0, Lnk5;->b:Ljava/util/List;
+
+    .line 19
+    .line 20
+    iget-object p1, p1, Lnk5;->b:Ljava/util/List;
+
+    .line 21
+    .line 22
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
     .line 23
-    :cond_0
-    invoke-virtual {v3, p1}, Lvm5;->e(Landroid/net/Uri;)V
+    .line 24
+    .line 25
+    move-result p0
+
+    .line 26
+    if-nez p0, :cond_3
+
+    .line 27
+    .line 28
+    :goto_0
+    const/4 p0, 0x0
+
+    .line 29
+    return p0
+
+    .line 30
+    :cond_3
+    :goto_1
+    const/4 p0, 0x1
+
+    .line 31
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lnk5;->a:I
+
+    .line 2
+    .line 3
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 8
+    .line 9
+    iget-object p0, p0, Lnk5;->b:Ljava/util/List;
+
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    add-int/2addr p0, v0
+
+    .line 16
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "RuntimeFileEditorMessage(resourceId="
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget v1, p0, Lnk5;->a:I
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const-string v1, ", arguments="
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    iget-object p0, p0, Lnk5;->b:Ljava/util/List;
+
+    .line 19
+    .line 20
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 21
+    .line 22
+    .line 23
+    const-string p0, ")"
 
     .line 24
     .line 25
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 26
-    :goto_0
-    return-object v1
-
     .line 27
-    :pswitch_0
-    if-nez p1, :cond_1
-
     .line 28
-    .line 29
-    iget-object p0, p0, Lwm5;->l:Lnr3;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    .line 29
     .line 30
     .line 31
-    invoke-interface {p0, v2}, Lnr3;->setValue(Ljava/lang/Object;)V
+    move-result-object p0
 
     .line 32
-    .line 33
-    .line 34
-    goto :goto_1
-
-    .line 35
-    :cond_1
-    invoke-virtual {v3, p1}, Lvm5;->e(Landroid/net/Uri;)V
-
-    .line 36
-    .line 37
-    .line 38
-    :goto_1
-    return-object v1
-
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

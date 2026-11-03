@@ -1,165 +1,148 @@
-.class public abstract Lfh3;
+.class public final synthetic Lfh3;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
-# static fields
-.field public static final a:Lya3;
+# instance fields
+.field public final synthetic j:Z
 
-.field public static final b:Lsa1;
+.field public final synthetic k:Ld52;
 
-.field public static final c:Lsa1;
+.field public final synthetic l:Lko3;
 
-.field public static final d:[F
+.field public final synthetic m:Lfr4;
 
-.field public static final e:[F
+.field public final synthetic n:Z
 
-.field public static f:Ldd5;
+.field public final synthetic o:Loy0;
 
-.field public static g:Ldd5;
+.field public final synthetic p:I
 
-.field public static h:Ldd5;
-
-.field public static i:Ldd5;
-
-.field public static j:Ldd5;
-
-.field public static k:Ldd5;
-
-.field public static l:Ldd5;
-
-.field public static m:Ldd5;
+.field public final synthetic q:B
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(ZLd52;Lko3;Lfr4;ZLoy0;II)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lya3;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/4 v1, 0x0
-
     .line 4
-    const/4 v2, 0x2
+    iput-boolean p1, p0, Lfh3;->j:Z
 
     .line 5
-    invoke-direct {v0, v2, v1}, Lya3;-><init>(BZ)V
-
     .line 6
+    iput-object p2, p0, Lfh3;->k:Ld52;
+
     .line 7
     .line 8
-    sput-object v0, Lfh3;->a:Lya3;
+    iput-object p3, p0, Lfh3;->l:Lko3;
 
     .line 9
     .line 10
-    new-instance v0, Lsa1;
+    iput-object p4, p0, Lfh3;->m:Lfr4;
 
     .line 11
     .line 12
-    const v1, 0x3e19999a    # 0.15f
+    iput-boolean p5, p0, Lfh3;->n:Z
 
     .line 13
     .line 14
-    .line 15
-    invoke-direct {v0, v2, v1}, Lsa1;-><init>(IF)V
+    iput-object p6, p0, Lfh3;->o:Loy0;
 
+    .line 15
     .line 16
+    iput p7, p0, Lfh3;->p:I
+
     .line 17
     .line 18
-    sput-object v0, Lfh3;->b:Lsa1;
+    iput-byte p8, p0, Lfh3;->q:B
 
     .line 19
     .line 20
-    new-instance v0, Lsa1;
+    return-void
+.end method
 
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 9
+
+    .line 1
+    move-object v6, p1
+
+    .line 2
+    check-cast v6, Lv01;
+
+    .line 3
+    .line 4
+    check-cast p2, Ljava/lang/Integer;
+
+    .line 5
+    .line 6
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 7
+    .line 8
+    .line 9
+    iget p1, p0, Lfh3;->p:I
+
+    .line 10
+    .line 11
+    or-int/lit8 p1, p1, 0x1
+
+    .line 12
+    .line 13
+    invoke-static {p1}, Lw23;->h0(I)I
+
+    .line 14
+    .line 15
+    .line 16
+    move-result v7
+
+    .line 17
+    iget-boolean v0, p0, Lfh3;->j:Z
+
+    .line 18
+    .line 19
+    iget-object v1, p0, Lfh3;->k:Ld52;
+
+    .line 20
     .line 21
+    iget-object v2, p0, Lfh3;->l:Lko3;
+
     .line 22
-    new-instance v0, Lsa1;
-
     .line 23
+    iget-object v3, p0, Lfh3;->m:Lfr4;
+
     .line 24
-    new-instance v0, Lsa1;
-
     .line 25
+    iget-boolean v4, p0, Lfh3;->n:Z
+
     .line 26
-    const/high16 v1, 0x3f000000    # 0.5f
-
     .line 27
-    .line 28
-    invoke-direct {v0, v2, v1}, Lsa1;-><init>(IF)V
+    iget-object v5, p0, Lfh3;->o:Loy0;
 
+    .line 28
     .line 29
+    iget-byte v8, p0, Lfh3;->q:B
+
     .line 30
     .line 31
-    sput-object v0, Lfh3;->c:Lsa1;
+    invoke-static/range {v0 .. v8}, Lkh3;->c(ZLd52;Lko3;Lfr4;ZLoy0;Lv01;II)V
 
     .line 32
     .line 33
-    new-instance v0, Lsa1;
-
     .line 34
+    sget-object p0, Lk27;->a:Lk27;
+
     .line 35
-    invoke-static {}, Lmh3;->a()[F
-
     .line 36
-    .line 37
-    .line 38
-    move-result-object v0
-
-    .line 39
-    const/high16 v1, -0x3dcc0000    # -45.0f
-
-    .line 40
-    .line 41
-    invoke-static {v0, v1}, Lmh3;->e([FF)V
-
-    .line 42
-    .line 43
-    .line 44
-    sput-object v0, Lfh3;->d:[F
-
-    .line 45
-    .line 46
-    invoke-static {}, Lmh3;->a()[F
-
-    .line 47
-    .line 48
-    .line 49
-    move-result-object v0
-
-    .line 50
-    const/high16 v1, -0x3d4c0000    # -90.0f
-
-    .line 51
-    .line 52
-    invoke-static {v0, v1}, Lmh3;->e([FF)V
-
-    .line 53
-    .line 54
-    .line 55
-    sput-object v0, Lfh3;->e:[F
-
-    .line 56
-    .line 57
-    invoke-static {}, Lmh3;->a()[F
-
-    .line 58
-    .line 59
-    .line 60
-    move-result-object v0
-
-    .line 61
-    const/high16 v1, -0x3cf90000    # -135.0f
-
-    .line 62
-    .line 63
-    invoke-static {v0, v1}, Lmh3;->e([FF)V
-
-    .line 64
-    .line 65
-    .line 66
-    return-void
+    return-object p0
 .end method

@@ -1,9 +1,9 @@
 .class public final synthetic Lqp2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lr52;
+.implements Lo52;
 
 
 # instance fields
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    check-cast p1, Lqv6;
+    check-cast p1, Lpx6;
 
     .line 6
     .line 7
@@ -65,11 +65,11 @@
 
     .line 14
     .line 15
-    iget-object p1, p1, Lrp2;->y:Li97;
+    iget-object p1, p1, Lrp2;->y:Lfb7;
 
     .line 16
     .line 17
-    iput-object p1, p0, Lrp2;->x:Li97;
+    iput-object p1, p0, Lrp2;->x:Lfb7;
 
     .line 18
     .line 19
@@ -90,15 +90,15 @@
 
     .line 26
     .line 27
-    iget-object p0, p0, Lrp2;->y:Li97;
+    iget-object p0, p0, Lrp2;->y:Lfb7;
 
     .line 28
     .line 29
-    iget-object v0, p1, Lrp2;->x:Li97;
+    iget-object v0, p1, Lrp2;->x:Lfb7;
 
     .line 30
     .line 31
-    invoke-static {v0, p0}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, p0}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 32
     .line 33
@@ -110,7 +110,7 @@
 
     .line 36
     .line 37
-    iput-object p0, p1, Lrp2;->x:Li97;
+    iput-object p0, p1, Lrp2;->x:Lfb7;
 
     .line 38
     .line 39
@@ -120,7 +120,7 @@
     .line 41
     .line 42
     :cond_0
-    sget-object p0, Lpv6;->k:Lpv6;
+    sget-object p0, Lox6;->k:Lox6;
 
     .line 43
     .line 44

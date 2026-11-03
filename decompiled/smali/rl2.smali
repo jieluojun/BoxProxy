@@ -1,6 +1,6 @@
 .class public interface abstract Lrl2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # direct methods
@@ -22,11 +22,11 @@
     move-object v0, p0
 
     .line 7
-    check-cast v0, Lmc;
+    check-cast v0, Ljc;
 
     .line 8
     .line 9
-    iget-object v0, v0, Lmc;->a:Landroid/graphics/Bitmap;
+    iget-object v0, v0, Ljc;->a:Landroid/graphics/Bitmap;
 
     .line 10
     .line 11
@@ -60,11 +60,11 @@
     move-object p4, p0
 
     .line 23
-    check-cast p4, Lmc;
+    check-cast p4, Ljc;
 
     .line 24
     .line 25
-    iget-object p4, p4, Lmc;->a:Landroid/graphics/Bitmap;
+    iget-object p4, p4, Ljc;->a:Landroid/graphics/Bitmap;
 
     .line 26
     .line 27
@@ -87,7 +87,7 @@
 
     .line 34
     :goto_1
-    check-cast p0, Lmc;
+    check-cast p0, Ljc;
 
     .line 35
     .line 36
@@ -96,7 +96,7 @@
     .line 37
     .line 38
     .line 39
-    invoke-static {p0}, Lf;->h(Lrl2;)Landroid/graphics/Bitmap;
+    invoke-static {p0}, Lx37;->g(Lrl2;)Landroid/graphics/Bitmap;
 
     .line 40
     .line 41

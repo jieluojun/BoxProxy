@@ -1,9 +1,9 @@
 .class public final Lzn2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lnk1;
+.implements Lkk1;
 
 
 # static fields
@@ -56,7 +56,7 @@
     .line 9
     .line 10
     .line 11
-    invoke-static {p0}, Lvv;->P0([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {p0}, Lqv;->R0([Ljava/lang/Object;)Ljava/util/List;
 
     .line 12
     .line 13

@@ -1,442 +1,228 @@
-.class public abstract Lei;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final enum Lei;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final a:Ldi;
+.field public static final enum j:Lei;
+
+.field public static final enum k:Lei;
+
+.field public static final enum l:Lei;
+
+.field public static final enum m:Lei;
+
+.field public static final enum n:Lei;
+
+.field public static final enum o:Lei;
+
+.field public static final enum p:Lei;
+
+.field public static final synthetic q:[Lei;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 9
 
     .line 1
-    new-instance v0, Ldi;
+    new-instance v0, Lei;
 
     .line 2
     .line 3
-    const-string v1, ""
+    const-string v1, "Paragraph"
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ldi;-><init>(Ljava/lang/String;)V
+    const/4 v2, 0x0
 
     .line 6
-    .line 7
-    .line 8
-    sput-object v0, Lei;->a:Ldi;
-
-    .line 9
-    .line 10
-    return-void
-.end method
-
-.method public static final a(Ldi;IILmg;)Ljava/util/List;
-    .locals 8
-
-    .line 1
-    if-ne p1, p2, :cond_0
-
-    .line 2
-    .line 3
-    goto :goto_0
-
-    .line 4
-    :cond_0
-    iget-object v0, p0, Ldi;->j:Ljava/util/List;
-
-    .line 5
-    .line 6
-    if-nez v0, :cond_1
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
-    :goto_0
-    const/4 p0, 0x0
-
     .line 9
-    return-object p0
+    sput-object v0, Lei;->j:Lei;
 
     .line 10
-    :cond_1
-    const/4 v1, 0x0
-
     .line 11
-    if-nez p1, :cond_5
+    new-instance v1, Lei;
 
     .line 12
     .line 13
-    iget-object p0, p0, Ldi;->k:Ljava/lang/String;
+    const-string v2, "Span"
 
     .line 14
     .line 15
-    invoke-virtual {p0}, Ljava/lang/String;->length()I
+    const/4 v3, 0x1
 
     .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 17
     .line 18
-    move-result p0
-
     .line 19
-    if-lt p2, p0, :cond_5
+    sput-object v1, Lei;->k:Lei;
 
     .line 20
     .line 21
-    if-nez p3, :cond_2
+    new-instance v2, Lei;
 
     .line 22
     .line 23
-    return-object v0
+    const-string v3, "VerbatimTts"
 
     .line 24
-    :cond_2
-    new-instance p0, Ljava/util/ArrayList;
-
     .line 25
+    const/4 v4, 0x2
+
     .line 26
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 27
     .line 28
     .line 29
-    move-result p1
+    sput-object v2, Lei;->l:Lei;
 
     .line 30
-    invoke-direct {p0, p1}, Ljava/util/ArrayList;-><init>(I)V
-
     .line 31
+    new-instance v3, Lei;
+
     .line 32
     .line 33
-    invoke-interface {v0}, Ljava/util/Collection;->size()I
+    const-string v4, "Url"
 
     .line 34
     .line 35
+    const/4 v5, 0x3
+
     .line 36
-    move-result p1
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 37
-    :goto_1
-    if-ge v1, p1, :cond_4
-
     .line 38
     .line 39
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    sput-object v3, Lei;->m:Lei;
 
     .line 40
     .line 41
-    .line 42
-    move-result-object p2
+    new-instance v4, Lei;
 
+    .line 42
     .line 43
-    move-object v2, p2
+    const-string v5, "Link"
 
     .line 44
-    check-cast v2, Lci;
-
     .line 45
+    const/4 v6, 0x4
+
     .line 46
-    iget-object v2, v2, Lci;->a:Ljava/lang/Object;
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 47
     .line 48
-    invoke-virtual {p3, v2}, Lmg;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 49
+    sput-object v4, Lei;->n:Lei;
+
     .line 50
     .line 51
-    move-result-object v2
+    new-instance v5, Lei;
 
     .line 52
-    check-cast v2, Ljava/lang/Boolean;
-
     .line 53
+    const-string v6, "Clickable"
+
     .line 54
-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
-
     .line 55
+    const/4 v7, 0x5
+
     .line 56
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 57
-    move-result v2
-
     .line 58
-    if-eqz v2, :cond_3
-
     .line 59
-    .line 60
-    invoke-virtual {p0, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    sput-object v5, Lei;->o:Lei;
 
+    .line 60
     .line 61
+    new-instance v6, Lei;
+
     .line 62
     .line 63
-    :cond_3
-    add-int/lit8 v1, v1, 0x1
+    const-string v7, "String"
 
     .line 64
     .line 65
-    goto :goto_1
+    const/4 v8, 0x6
 
     .line 66
-    :cond_4
-    return-object p0
+    invoke-direct {v6, v7, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 67
-    :cond_5
-    new-instance p0, Ljava/util/ArrayList;
-
     .line 68
     .line 69
-    invoke-interface {v0}, Ljava/util/List;->size()I
+    sput-object v6, Lei;->p:Lei;
 
     .line 70
     .line 71
+    filled-new-array/range {v0 .. v6}, [Lei;
+
     .line 72
-    move-result v2
-
     .line 73
-    invoke-direct {p0, v2}, Ljava/util/ArrayList;-><init>(I)V
-
     .line 74
+    move-result-object v0
+
     .line 75
+    sput-object v0, Lei;->q:[Lei;
+
     .line 76
-    invoke-interface {v0}, Ljava/util/Collection;->size()I
-
     .line 77
-    .line 78
-    .line 79
-    move-result v2
-
-    .line 80
-    :goto_2
-    if-ge v1, v2, :cond_8
-
-    .line 81
-    .line 82
-    invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    .line 83
-    .line 84
-    .line 85
-    move-result-object v3
-
-    .line 86
-    check-cast v3, Lci;
-
-    .line 87
-    .line 88
-    if-eqz p3, :cond_6
-
-    .line 89
-    .line 90
-    iget-object v4, v3, Lci;->a:Ljava/lang/Object;
-
-    .line 91
-    .line 92
-    invoke-virtual {p3, v4}, Lmg;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 93
-    .line 94
-    .line 95
-    move-result-object v4
-
-    .line 96
-    check-cast v4, Ljava/lang/Boolean;
-
-    .line 97
-    .line 98
-    invoke-virtual {v4}, Ljava/lang/Boolean;->booleanValue()Z
-
-    .line 99
-    .line 100
-    .line 101
-    move-result v4
-
-    .line 102
-    goto :goto_3
-
-    .line 103
-    :cond_6
-    const/4 v4, 0x1
-
-    .line 104
-    :goto_3
-    if-eqz v4, :cond_7
-
-    .line 105
-    .line 106
-    iget v4, v3, Lci;->b:I
-
-    .line 107
-    .line 108
-    iget v5, v3, Lci;->c:I
-
-    .line 109
-    .line 110
-    invoke-static {p1, p2, v4, v5}, Lei;->b(IIII)Z
-
-    .line 111
-    .line 112
-    .line 113
-    move-result v4
-
-    .line 114
-    if-eqz v4, :cond_7
-
-    .line 115
-    .line 116
-    iget-object v4, v3, Lci;->d:Ljava/lang/String;
-
-    .line 117
-    .line 118
-    iget-object v6, v3, Lci;->a:Ljava/lang/Object;
-
-    .line 119
-    .line 120
-    check-cast v6, Lzh;
-
-    .line 121
-    .line 122
-    iget v3, v3, Lci;->b:I
-
-    .line 123
-    .line 124
-    invoke-static {v3, p1, p2}, Ln43;->r(III)I
-
-    .line 125
-    .line 126
-    .line 127
-    move-result v3
-
-    .line 128
-    sub-int/2addr v3, p1
-
-    .line 129
-    invoke-static {v5, p1, p2}, Ln43;->r(III)I
-
-    .line 130
-    .line 131
-    .line 132
-    move-result v5
-
-    .line 133
-    sub-int/2addr v5, p1
-
-    .line 134
-    new-instance v7, Lci;
-
-    .line 135
-    .line 136
-    invoke-direct {v7, v6, v3, v5, v4}, Lci;-><init>(Ljava/lang/Object;IILjava/lang/String;)V
-
-    .line 137
-    .line 138
-    .line 139
-    invoke-virtual {p0, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 140
-    .line 141
-    .line 142
-    :cond_7
-    add-int/lit8 v1, v1, 0x1
-
-    .line 143
-    .line 144
-    goto :goto_2
-
-    .line 145
-    :cond_8
-    return-object p0
+    return-void
 .end method
 
-.method public static final b(IIII)Z
-    .locals 4
+.method public static valueOf(Ljava/lang/String;)Lei;
+    .locals 1
 
     .line 1
-    const/4 v0, 0x0
+    const-class v0, Lei;
 
     .line 2
-    const/4 v1, 0x1
-
     .line 3
-    if-ne p0, p1, :cond_0
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     .line 4
     .line 5
-    move v2, v1
-
     .line 6
-    goto :goto_0
+    move-result-object p0
 
     .line 7
-    :cond_0
-    move v2, v0
+    check-cast p0, Lei;
 
     .line 8
-    :goto_0
-    if-ne p2, p3, :cond_1
-
     .line 9
-    .line 10
-    move v3, v1
+    return-object p0
+.end method
 
-    .line 11
-    goto :goto_1
+.method public static values()[Lei;
+    .locals 1
 
-    .line 12
-    :cond_1
-    move v3, v0
+    .line 1
+    sget-object v0, Lei;->q:[Lei;
 
-    .line 13
-    :goto_1
-    or-int/2addr v2, v3
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    .line 14
-    if-ne p0, p2, :cond_2
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
 
-    .line 15
-    .line 16
-    move v3, v1
+    .line 7
+    check-cast v0, [Lei;
 
-    .line 17
-    goto :goto_2
-
-    .line 18
-    :cond_2
-    move v3, v0
-
-    .line 19
-    :goto_2
-    and-int/2addr v2, v3
-
-    .line 20
-    if-ge p0, p3, :cond_3
-
-    .line 21
-    .line 22
-    move p0, v1
-
-    .line 23
-    goto :goto_3
-
-    .line 24
-    :cond_3
-    move p0, v0
-
-    .line 25
-    :goto_3
-    if-ge p2, p1, :cond_4
-
-    .line 26
-    .line 27
-    move v0, v1
-
-    .line 28
-    :cond_4
-    and-int/2addr p0, v0
-
-    .line 29
-    or-int/2addr p0, v2
-
-    .line 30
-    return p0
+    .line 8
+    .line 9
+    return-object v0
 .end method

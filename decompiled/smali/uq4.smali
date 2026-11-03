@@ -1,37 +1,55 @@
-.class public abstract Luq4;
+.class public final Luq4;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# instance fields
+.field public final a:Lgl4;
+
+.field public final b:Lgl4;
 
 
 # direct methods
-.method public static final a(Ljava/lang/String;)V
+.method public constructor <init>()V
     .locals 1
 
     .line 1
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
     .line 4
+    const-string v0, ""
+
     .line 5
     .line 6
-    throw v0
-.end method
+    invoke-static {v0}, Lg23;->M(Ljava/lang/Object;)Lgl4;
 
-.method public static final b(Ljava/lang/String;)V
-    .locals 1
+    .line 7
+    .line 8
+    .line 9
+    move-result-object v0
 
-    .line 1
-    new-instance v0, Ljava/lang/IllegalStateException;
+    .line 10
+    iput-object v0, p0, Luq4;->a:Lgl4;
 
-    .line 2
-    .line 3
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    .line 11
+    .line 12
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-    .line 4
-    .line 5
-    .line 6
-    throw v0
+    .line 13
+    .line 14
+    invoke-static {v0}, Lg23;->M(Ljava/lang/Object;)Lgl4;
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-object v0
+
+    .line 18
+    iput-object v0, p0, Luq4;->b:Lgl4;
+
+    .line 19
+    .line 20
+    return-void
 .end method

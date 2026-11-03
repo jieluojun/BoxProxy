@@ -1,376 +1,140 @@
-.class public final Lza4;
-.super Lac4;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final enum Lza4;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final c:Lza4;
+.field public static final enum j:Lza4;
+
+.field public static final enum k:Lza4;
+
+.field public static final enum l:Lza4;
+
+.field public static final synthetic m:[Lza4;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 5
 
     .line 1
     new-instance v0, Lza4;
 
     .line 2
     .line 3
-    const/4 v1, 0x2
+    const-string v1, "Welcome"
 
     .line 4
-    const/4 v2, 0x1
-
     .line 5
-    const/4 v3, 0x0
+    const/4 v2, 0x0
 
     .line 6
-    invoke-direct {v0, v3, v1, v2}, Lac4;-><init>(III)V
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
     .line 9
-    sput-object v0, Lza4;->c:Lza4;
+    sput-object v0, Lza4;->j:Lza4;
 
     .line 10
     .line 11
-    return-void
-.end method
+    new-instance v1, Lza4;
 
-
-# virtual methods
-.method public final a(Lnp2;Lvu;Lk46;Lf95;Lcc4;)V
-    .locals 5
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    invoke-virtual {p1, p0}, Lnp2;->c(I)Ljava/lang/Object;
-
-    .line 3
-    .line 4
-    .line 5
-    move-result-object p4
-
-    .line 6
-    check-cast p4, Lwq2;
-
-    .line 7
-    .line 8
-    const/4 p5, 0x1
-
-    .line 9
-    invoke-virtual {p1, p5}, Lnp2;->c(I)Ljava/lang/Object;
-
-    .line 10
-    .line 11
     .line 12
-    move-result-object p1
-
     .line 13
-    check-cast p1, Lp62;
+    const-string v2, "Disclaimer"
 
     .line 14
     .line 15
-    invoke-virtual {p3, p1}, Lk46;->c(Lp62;)I
+    const/4 v3, 0x1
 
     .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 17
     .line 18
-    move-result p1
-
     .line 19
-    iget v0, p3, Lk46;->t:I
+    sput-object v1, Lza4;->k:Lza4;
 
     .line 20
     .line 21
-    const-string v1, "Check failed"
+    new-instance v2, Lza4;
 
     .line 22
     .line 23
-    if-ge v0, p1, :cond_0
+    const-string v3, "RootCheck"
 
     .line 24
     .line 25
-    goto :goto_0
+    const/4 v4, 0x2
 
     .line 26
-    :cond_0
-    invoke-static {v1}, Le11;->a(Ljava/lang/String;)V
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 27
     .line 28
     .line 29
-    :goto_0
-    invoke-static {p3, p2, p1}, Lkr5;->N(Lk46;Lvu;I)V
+    sput-object v2, Lza4;->l:Lza4;
 
     .line 30
     .line 31
-    .line 32
-    iget v0, p3, Lk46;->t:I
+    filled-new-array {v0, v1, v2}, [Lza4;
 
+    .line 32
     .line 33
     .line 34
-    iget v2, p3, Lk46;->v:I
-
-    .line 35
-    .line 36
-    :goto_1
-    if-ltz v2, :cond_1
-
-    .line 37
-    .line 38
-    invoke-virtual {p3, v2}, Lk46;->x(I)Z
-
-    .line 39
-    .line 40
-    .line 41
-    move-result v3
-
-    .line 42
-    if-nez v3, :cond_1
-
-    .line 43
-    .line 44
-    iget-object v3, p3, Lk46;->b:[I
-
-    .line 45
-    .line 46
-    invoke-virtual {p3, v3, v2}, Lk46;->F([II)I
-
-    .line 47
-    .line 48
-    .line 49
-    move-result v2
-
-    .line 50
-    goto :goto_1
-
-    .line 51
-    :cond_1
-    add-int/2addr v2, p5
-
-    .line 52
-    move v3, p0
-
-    .line 53
-    :goto_2
-    if-ge v2, v0, :cond_5
-
-    .line 54
-    .line 55
-    invoke-virtual {p3, v0, v2}, Lk46;->u(II)Z
-
-    .line 56
-    .line 57
-    .line 58
-    move-result v4
-
-    .line 59
-    if-eqz v4, :cond_3
-
-    .line 60
-    .line 61
-    invoke-virtual {p3, v2}, Lk46;->x(I)Z
-
-    .line 62
-    .line 63
-    .line 64
-    move-result v4
-
-    .line 65
-    if-eqz v4, :cond_2
-
-    .line 66
-    .line 67
-    move v3, p0
-
-    .line 68
-    :cond_2
-    add-int/lit8 v2, v2, 0x1
-
-    .line 69
-    .line 70
-    goto :goto_2
-
-    .line 71
-    :cond_3
-    invoke-virtual {p3, v2}, Lk46;->x(I)Z
-
-    .line 72
-    .line 73
-    .line 74
-    move-result v4
-
-    .line 75
-    if-eqz v4, :cond_4
-
-    .line 76
-    .line 77
-    move v4, p5
-
-    .line 78
-    goto :goto_3
-
-    .line 79
-    :cond_4
-    invoke-virtual {p3, v2}, Lk46;->E(I)I
-
-    .line 80
-    .line 81
-    .line 82
-    move-result v4
-
-    .line 83
-    :goto_3
-    add-int/2addr v3, v4
-
-    .line 84
-    invoke-virtual {p3, v2}, Lk46;->t(I)I
-
-    .line 85
-    .line 86
-    .line 87
-    move-result v4
-
-    .line 88
-    add-int/2addr v2, v4
-
-    .line 89
-    goto :goto_2
-
-    .line 90
-    :cond_5
-    :goto_4
-    iget v0, p3, Lk46;->t:I
-
-    .line 91
-    .line 92
-    if-ge v0, p1, :cond_8
-
-    .line 93
-    .line 94
-    invoke-virtual {p3, p1, v0}, Lk46;->u(II)Z
-
-    .line 95
-    .line 96
-    .line 97
-    move-result v0
-
-    .line 98
-    if-eqz v0, :cond_7
-
-    .line 99
-    .line 100
-    iget v0, p3, Lk46;->t:I
-
-    .line 101
-    .line 102
-    iget v2, p3, Lk46;->u:I
-
-    .line 103
-    .line 104
-    if-ge v0, v2, :cond_6
-
-    .line 105
-    .line 106
-    iget-object v2, p3, Lk46;->b:[I
-
-    .line 107
-    .line 108
-    invoke-virtual {p3, v0}, Lk46;->q(I)I
-
-    .line 109
-    .line 110
-    .line 111
-    move-result v0
-
-    .line 112
-    mul-int/lit8 v0, v0, 0x5
-
-    .line 113
-    .line 114
-    add-int/2addr v0, p5
-
-    .line 115
-    aget v0, v2, v0
-
-    .line 116
-    .line 117
-    const/high16 v2, 0x40000000    # 2.0f
-
-    .line 118
-    .line 119
-    and-int/2addr v0, v2
-
-    .line 120
-    if-eqz v0, :cond_6
-
-    .line 121
-    .line 122
-    iget v0, p3, Lk46;->t:I
-
-    .line 123
-    .line 124
-    invoke-virtual {p3, v0}, Lk46;->D(I)Ljava/lang/Object;
-
-    .line 125
-    .line 126
-    .line 127
     move-result-object v0
 
-    .line 128
-    invoke-interface {p2, v0}, Lvu;->i(Ljava/lang/Object;)V
+    .line 35
+    sput-object v0, Lza4;->m:[Lza4;
 
-    .line 129
-    .line 130
-    .line 131
-    move v3, p0
-
-    .line 132
-    :cond_6
-    invoke-virtual {p3}, Lk46;->Q()V
-
-    .line 133
-    .line 134
-    .line 135
-    goto :goto_4
-
-    .line 136
-    :cond_7
-    invoke-virtual {p3}, Lk46;->M()I
-
-    .line 137
-    .line 138
-    .line 139
-    move-result v0
-
-    .line 140
-    add-int/2addr v3, v0
-
-    .line 141
-    goto :goto_4
-
-    .line 142
-    :cond_8
-    if-ne v0, p1, :cond_9
-
-    .line 143
-    .line 144
-    goto :goto_5
-
-    .line 145
-    :cond_9
-    invoke-static {v1}, Le11;->a(Ljava/lang/String;)V
-
-    .line 146
-    .line 147
-    .line 148
-    :goto_5
-    iput v3, p4, Lwq2;->a:I
-
-    .line 149
-    .line 150
+    .line 36
+    .line 37
     return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lza4;
+    .locals 1
+
+    .line 1
+    const-class v0, Lza4;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lza4;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Lza4;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lza4;->m:[Lza4;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lza4;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

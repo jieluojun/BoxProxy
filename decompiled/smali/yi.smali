@@ -1,249 +1,325 @@
-.class public final synthetic Lyi;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final enum Lyi;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Lv52;
+
+# static fields
+.field public static final enum k:Lyi;
+
+.field public static final enum l:Lyi;
+
+.field public static final enum m:Lyi;
+
+.field public static final enum n:Lyi;
+
+.field public static final enum o:Lyi;
+
+.field public static final enum p:Lyi;
+
+.field public static final enum q:Lyi;
+
+.field public static final enum r:Lyi;
+
+.field public static final synthetic s:[Lyi;
+
+.field public static final synthetic t:Lzu1;
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Ljava/lang/String;
-
-.field public final synthetic l:Ljava/lang/String;
-
-.field public final synthetic m:Lxn3;
-
-.field public final synthetic n:Z
-
-.field public final synthetic o:Ljava/lang/String;
-
-.field public final synthetic p:J
-
-.field public final synthetic q:I
+.field public final j:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Lxn3;ZLjava/lang/String;JIB)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 11
 
     .line 1
-    iput-byte p9, p0, Lyi;->j:B
+    new-instance v0, Lyi;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lyi;->k:Ljava/lang/String;
+    const/4 v1, 0x0
 
     .line 4
-    .line 5
-    iput-object p2, p0, Lyi;->l:Ljava/lang/String;
+    const v2, 0x7f0f02ee
 
+    .line 5
     .line 6
     .line 7
-    iput-object p3, p0, Lyi;->m:Lxn3;
+    const-string v3, "Overview"
 
     .line 8
     .line 9
-    iput-boolean p4, p0, Lyi;->n:Z
-
-    .line 10
-    .line 11
-    iput-object p5, p0, Lyi;->o:Ljava/lang/String;
-
-    .line 12
-    .line 13
-    iput-wide p6, p0, Lyi;->p:J
-
-    .line 14
-    .line 15
-    iput p8, p0, Lyi;->q:I
-
-    .line 16
-    .line 17
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 18
-    .line 19
-    .line 20
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 22
-
-    .line 1
-    move-object/from16 v0, p0
-
-    .line 2
-    .line 3
-    iget-byte v1, v0, Lyi;->j:B
-
-    .line 4
-    .line 5
-    sget-object v2, Ld07;->a:Ld07;
-
-    .line 6
-    .line 7
-    iget v3, v0, Lyi;->q:I
-
-    .line 8
-    .line 9
-    packed-switch v1, :pswitch_data_0
+    invoke-direct {v0, v1, v3, v2}, Lyi;-><init>(ILjava/lang/String;I)V
 
     .line 10
     .line 11
     .line 12
-    move-object/from16 v11, p1
+    sput-object v0, Lyi;->k:Lyi;
 
     .line 13
     .line 14
-    check-cast v11, Lz01;
+    new-instance v1, Lyi;
 
     .line 15
     .line 16
-    move-object/from16 v1, p2
+    const/4 v2, 0x1
 
     .line 17
-    .line 18
-    check-cast v1, Ljava/lang/Integer;
+    const v3, 0x7f0f0210
 
+    .line 18
     .line 19
     .line 20
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-string v4, "ProxySelector"
 
     .line 21
     .line 22
-    .line 23
-    or-int/lit8 v1, v3, 0x1
+    invoke-direct {v1, v2, v4, v3}, Lyi;-><init>(ILjava/lang/String;I)V
 
+    .line 23
     .line 24
     .line 25
-    invoke-static {v1}, Lkr5;->i0(I)I
+    sput-object v1, Lyi;->l:Lyi;
 
     .line 26
     .line 27
-    .line 28
-    move-result v12
+    new-instance v2, Lyi;
 
+    .line 28
     .line 29
-    iget-object v4, v0, Lyi;->k:Ljava/lang/String;
+    const/4 v3, 0x2
 
     .line 30
-    .line 31
-    iget-object v5, v0, Lyi;->l:Ljava/lang/String;
+    const v4, 0x7f0f0151
 
+    .line 31
     .line 32
     .line 33
-    iget-object v6, v0, Lyi;->m:Lxn3;
+    const-string v5, "Subscription"
 
     .line 34
     .line 35
-    iget-boolean v7, v0, Lyi;->n:Z
+    invoke-direct {v2, v3, v5, v4}, Lyi;-><init>(ILjava/lang/String;I)V
 
     .line 36
     .line 37
-    iget-object v8, v0, Lyi;->o:Ljava/lang/String;
-
     .line 38
+    sput-object v2, Lyi;->m:Lyi;
+
     .line 39
-    iget-wide v9, v0, Lyi;->p:J
-
     .line 40
+    new-instance v3, Lyi;
+
     .line 41
-    invoke-static/range {v4 .. v12}, Lv47;->a(Ljava/lang/String;Ljava/lang/String;Lxn3;ZLjava/lang/String;JLz01;I)V
-
     .line 42
+    const/4 v4, 0x3
+
     .line 43
+    const v5, 0x7f0f02ed
+
     .line 44
-    return-object v2
-
     .line 45
-    :pswitch_0
-    move-object/from16 v20, p1
-
     .line 46
+    const-string v6, "Connections"
+
     .line 47
-    check-cast v20, Lz01;
-
     .line 48
-    .line 49
-    move-object/from16 v1, p2
+    invoke-direct {v3, v4, v6, v5}, Lyi;-><init>(ILjava/lang/String;I)V
 
+    .line 49
     .line 50
     .line 51
-    check-cast v1, Ljava/lang/Integer;
+    sput-object v3, Lyi;->n:Lyi;
 
     .line 52
     .line 53
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v4, Lyi;
 
     .line 54
     .line 55
+    const/4 v5, 0x4
+
     .line 56
-    or-int/lit8 v1, v3, 0x1
+    const v6, 0x7f0f0382
 
     .line 57
     .line 58
-    invoke-static {v1}, Lkr5;->i0(I)I
-
     .line 59
+    const-string v7, "Rules"
+
     .line 60
     .line 61
-    move-result v21
+    invoke-direct {v4, v5, v7, v6}, Lyi;-><init>(ILjava/lang/String;I)V
 
     .line 62
-    iget-object v13, v0, Lyi;->k:Ljava/lang/String;
-
     .line 63
     .line 64
-    iget-object v14, v0, Lyi;->l:Ljava/lang/String;
+    sput-object v4, Lyi;->o:Lyi;
 
     .line 65
     .line 66
-    iget-object v15, v0, Lyi;->m:Lxn3;
+    new-instance v5, Lyi;
 
     .line 67
     .line 68
-    iget-boolean v1, v0, Lyi;->n:Z
+    const/4 v6, 0x5
 
     .line 69
-    .line 70
-    iget-object v3, v0, Lyi;->o:Ljava/lang/String;
+    const v7, 0x7f0f038c
 
+    .line 70
     .line 71
     .line 72
-    iget-wide v4, v0, Lyi;->p:J
+    const-string v8, "RuleProviders"
 
     .line 73
     .line 74
-    move/from16 v16, v1
+    invoke-direct {v5, v6, v8, v7}, Lyi;-><init>(ILjava/lang/String;I)V
 
     .line 75
     .line 76
-    move-object/from16 v17, v3
-
     .line 77
+    sput-object v5, Lyi;->p:Lyi;
+
     .line 78
-    move-wide/from16 v18, v4
-
     .line 79
+    new-instance v6, Lyi;
+
     .line 80
-    invoke-static/range {v13 .. v21}, Lb27;->E(Ljava/lang/String;Ljava/lang/String;Lxn3;ZLjava/lang/String;JLz01;I)V
-
     .line 81
+    const/4 v7, 0x6
+
     .line 82
+    const v8, 0x7f0f0173
+
     .line 83
-    return-object v2
-
     .line 84
-    nop
-
     .line 85
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    const-string v9, "Logs"
+
+    .line 86
+    .line 87
+    invoke-direct {v6, v7, v9, v8}, Lyi;-><init>(ILjava/lang/String;I)V
+
+    .line 88
+    .line 89
+    .line 90
+    sput-object v6, Lyi;->q:Lyi;
+
+    .line 91
+    .line 92
+    new-instance v7, Lyi;
+
+    .line 93
+    .line 94
+    const/4 v8, 0x7
+
+    .line 95
+    const v9, 0x7f0f038d
+
+    .line 96
+    .line 97
+    .line 98
+    const-string v10, "Route"
+
+    .line 99
+    .line 100
+    invoke-direct {v7, v8, v10, v9}, Lyi;-><init>(ILjava/lang/String;I)V
+
+    .line 101
+    .line 102
+    .line 103
+    sput-object v7, Lyi;->r:Lyi;
+
+    .line 104
+    .line 105
+    filled-new-array/range {v0 .. v7}, [Lyi;
+
+    .line 106
+    .line 107
+    .line 108
+    move-result-object v0
+
+    .line 109
+    sput-object v0, Lyi;->s:[Lyi;
+
+    .line 110
+    .line 111
+    new-instance v1, Lzu1;
+
+    .line 112
+    .line 113
+    invoke-direct {v1, v0}, Lzu1;-><init>([Ljava/lang/Enum;)V
+
+    .line 114
+    .line 115
+    .line 116
+    sput-object v1, Lyi;->t:Lzu1;
+
+    .line 117
+    .line 118
+    return-void
+.end method
+
+.method public constructor <init>(ILjava/lang/String;I)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p2, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 2
+    .line 3
+    .line 4
+    iput p3, p0, Lyi;->j:I
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lyi;
+    .locals 1
+
+    .line 1
+    const-class v0, Lyi;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lyi;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Lyi;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lyi;->s:[Lyi;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lyi;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

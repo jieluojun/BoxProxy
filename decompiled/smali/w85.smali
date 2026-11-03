@@ -1,40 +1,31 @@
-.class public abstract Lw85;
+.class public final Lw85;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ljava/io/Serializable;
 
 
-# static fields
-.field public static final a:Lfd3;
+# instance fields
+.field public j:F
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
     .line 1
-    const-class v0, Lw85;
+    iget p0, p0, Lw85;->j:F
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    invoke-static {p0}, Ljava/lang/String;->valueOf(F)Ljava/lang/String;
 
     .line 4
     .line 5
     .line 6
-    move-result-object v0
+    move-result-object p0
 
     .line 7
-    invoke-static {v0}, Lfd3;->a(Ljava/lang/String;)Lfd3;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object v0
-
-    .line 11
-    sput-object v0, Lw85;->a:Lfd3;
-
-    .line 12
-    .line 13
-    return-void
+    return-object p0
 .end method

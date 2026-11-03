@@ -1,18 +1,29 @@
 .class public final Lo13;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lg10;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# virtual methods
-.method public final a()Z
-    .locals 0
+# static fields
+.field public static final a:Lo13;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    const/4 p0, 0x0
+    new-instance v0, Lo13;
 
     .line 2
-    return p0
+    .line 3
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    sput-object v0, Lo13;->a:Lo13;
+
+    .line 7
+    .line 8
+    return-void
 .end method

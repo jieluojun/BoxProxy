@@ -1,72 +1,23 @@
-.class public final Lee5;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-
-# instance fields
-.field public synthetic j:Ljava/lang/Object;
-
-.field public final synthetic k:Ljx1;
-
-.field public l:I
-
-
-# direct methods
-.method public constructor <init>(Ljx1;Ld81;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lee5;->k:Ljx1;
-
-    .line 2
-    .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
+.class public interface abstract Lee5;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public abstract a()Lee5;
+.end method
 
-    .line 1
-    iput-object p1, p0, Lee5;->j:Ljava/lang/Object;
+.method public abstract c()Lde5;
+.end method
 
-    .line 2
-    .line 3
-    iget p1, p0, Lee5;->l:I
+.method public abstract cancel()V
+.end method
 
-    .line 4
-    .line 5
-    const/high16 v0, -0x80000000
+.method public abstract d()Lj75;
+.end method
 
-    .line 6
-    .line 7
-    or-int/2addr p1, v0
+.method public abstract e()Z
+.end method
 
-    .line 8
-    iput p1, p0, Lee5;->l:I
-
-    .line 9
-    .line 10
-    iget-object p1, p0, Lee5;->k:Ljx1;
-
-    .line 11
-    .line 12
-    const/4 v0, 0x0
-
-    .line 13
-    invoke-virtual {p1, v0, v0, p0}, Ljx1;->c(Lue5;Ljava/lang/String;Ld81;)Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p0
-
-    .line 17
-    return-object p0
+.method public abstract g()Lde5;
 .end method

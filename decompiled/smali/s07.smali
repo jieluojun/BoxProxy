@@ -1,24 +1,17 @@
-.class final Ls07;
-.super Leo3;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Ls07;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Leo3;"
-    }
-.end annotation
+# interfaces
+.implements Ljava/lang/Comparable;
 
 
 # instance fields
-.field public final j:F
-
-.field public final k:F
+.field public final j:S
 
 
 # direct methods
-.method public constructor <init>(FF)V
+.method public synthetic constructor <init>(S)V
     .locals 0
 
     .line 1
@@ -27,80 +20,55 @@
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Ls07;->j:F
+    iput-short p1, p0, Ls07;->j:S
 
     .line 5
     .line 6
-    iput p2, p0, Ls07;->k:F
-
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lwn3;
-    .locals 2
-
-    .line 1
-    new-instance v0, Lt07;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Lwn3;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    iget v1, p0, Ls07;->j:F
-
-    .line 7
-    .line 8
-    iput v1, v0, Lt07;->x:F
-
-    .line 9
-    .line 10
-    iget p0, p0, Ls07;->k:F
-
-    .line 11
-    .line 12
-    iput p0, v0, Lt07;->y:F
-
-    .line 13
-    .line 14
-    return-object v0
-.end method
-
-.method public final b(Lwn3;)V
+.method public final synthetic compareTo(Ljava/lang/Object;)I
     .locals 1
 
     .line 1
-    check-cast p1, Lt07;
+    check-cast p1, Ls07;
 
     .line 2
     .line 3
-    iget v0, p0, Ls07;->j:F
+    iget-short p1, p1, Ls07;->j:S
 
     .line 4
     .line 5
-    iput v0, p1, Lt07;->x:F
+    iget-short p0, p0, Ls07;->j:S
 
     .line 6
     .line 7
-    iget p0, p0, Ls07;->k:F
+    const v0, 0xffff
 
     .line 8
     .line 9
-    iput p0, p1, Lt07;->y:F
-
     .line 10
+    and-int/2addr p0, v0
+
     .line 11
-    return-void
+    and-int/2addr p1, v0
+
+    .line 12
+    invoke-static {p0, p1}, Lps2;->y(II)I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result p0
+
+    .line 16
+    return p0
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 2
+    .locals 1
 
     .line 1
     instance-of v0, p1, Ls07;
@@ -119,94 +87,74 @@
 
     .line 7
     .line 8
-    iget v0, p1, Ls07;->j:F
+    iget-short p1, p1, Ls07;->j:S
 
     .line 9
     .line 10
-    iget v1, p0, Ls07;->j:F
+    iget-short p0, p0, Ls07;->j:S
 
     .line 11
     .line 12
-    invoke-static {v1, v0}, Lal1;->b(FF)Z
+    if-eq p0, p1, :cond_1
 
     .line 13
     .line 14
-    .line 15
-    move-result v0
-
-    .line 16
-    if-eqz v0, :cond_1
-
-    .line 17
-    .line 18
-    iget p0, p0, Ls07;->k:F
-
-    .line 19
-    .line 20
-    iget p1, p1, Ls07;->k:F
-
-    .line 21
-    .line 22
-    invoke-static {p0, p1}, Lal1;->b(FF)Z
-
-    .line 23
-    .line 24
-    .line 25
-    move-result p0
-
-    .line 26
-    if-eqz p0, :cond_1
-
-    .line 27
-    .line 28
-    const/4 p0, 0x1
-
-    .line 29
-    return p0
-
-    .line 30
-    :cond_1
     :goto_0
     const/4 p0, 0x0
 
-    .line 31
+    .line 15
+    return p0
+
+    .line 16
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 17
     return p0
 .end method
 
 .method public final hashCode()I
-    .locals 1
+    .locals 0
 
     .line 1
-    iget v0, p0, Ls07;->j:F
+    iget-short p0, p0, Ls07;->j:S
 
     .line 2
     .line 3
-    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
+    invoke-static {p0}, Ljava/lang/Short;->hashCode(S)I
 
     .line 4
     .line 5
     .line 6
-    move-result v0
+    move-result p0
 
     .line 7
-    mul-int/lit8 v0, v0, 0x1f
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-short p0, p0, Ls07;->j:S
+
+    .line 2
+    .line 3
+    const v0, 0xffff
+
+    .line 4
+    .line 5
+    .line 6
+    and-int/2addr p0, v0
+
+    .line 7
+    invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
     .line 8
     .line 9
-    iget p0, p0, Ls07;->k:F
-
     .line 10
+    move-result-object p0
+
     .line 11
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    add-int/2addr p0, v0
-
-    .line 16
-    return p0
+    return-object p0
 .end method

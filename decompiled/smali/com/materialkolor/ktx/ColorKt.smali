@@ -1,10 +1,10 @@
 .class public final Lcom/materialkolor/ktx/ColorKt;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final a:Li76;
+.field public static final a:Lu86;
 
 
 # direct methods
@@ -21,7 +21,7 @@
     const/4 v2, 0x0
 
     .line 4
-    invoke-static {v2, v2, v0, v1}, Lc;->S(FFLjava/lang/Object;I)Li76;
+    invoke-static {v2, v2, v0, v1}, Luu6;->T(FFLjava/lang/Object;I)Lu86;
 
     .line 5
     .line 6
@@ -29,24 +29,24 @@
     move-result-object v0
 
     .line 8
-    sput-object v0, Lcom/materialkolor/ktx/ColorKt;->a:Li76;
+    sput-object v0, Lcom/materialkolor/ktx/ColorKt;->a:Lu86;
 
     .line 9
     .line 10
     return-void
 .end method
 
-.method public static final animate-euL9pac(JLqh;Ljava/lang/String;Lr52;Lz01;II)Li86;
+.method public static final animate-euL9pac(JLnh;Ljava/lang/String;Lo52;Lv01;II)Lu96;
     .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(J",
-            "Lqh;",
+            "Lnh;",
             "Ljava/lang/String;",
-            "Lr52;",
-            "Lz01;",
+            "Lo52;",
+            "Lv01;",
             "II)",
-            "Li86;"
+            "Lu96;"
         }
     .end annotation
 
@@ -59,7 +59,7 @@
 
     .line 4
     .line 5
-    sget-object p2, Lcom/materialkolor/ktx/ColorKt;->a:Li76;
+    sget-object p2, Lcom/materialkolor/ktx/ColorKt;->a:Lu86;
 
     .line 6
     .line 7
@@ -84,7 +84,7 @@
     move-object v4, p5
 
     .line 15
-    invoke-static/range {v0 .. v6}, Lm26;->a(JLqh;Ljava/lang/String;Lz01;II)Lhg;
+    invoke-static/range {v0 .. v6}, Lz36;->a(JLnh;Ljava/lang/String;Lv01;II)Leg;
 
     .line 16
     .line 17
@@ -99,7 +99,7 @@
     .locals 7
 
     .line 1
-    invoke-static {p0, p1}, Lcom/materialkolor/ktx/HctKt;->toHct-8_81llA(J)Ll92;
+    invoke-static {p0, p1}, Lcom/materialkolor/ktx/HctKt;->toHct-8_81llA(J)Lm92;
 
     .line 2
     .line 3
@@ -107,14 +107,14 @@
     move-result-object v0
 
     .line 5
-    iget-wide v1, v0, Ll92;->d:D
+    iget-wide v1, v0, Lm92;->d:D
 
     .line 6
     .line 7
     float-to-double v3, p2
 
     .line 8
-    invoke-static {v1, v2, v3, v4}, Lw67;->p(DD)D
+    invoke-static {v1, v2, v3, v4}, Lt87;->p(DD)D
 
     .line 9
     .line 10
@@ -166,19 +166,19 @@
     move-result-wide v5
 
     .line 31
-    new-instance p0, Ll92;
+    new-instance p0, Lm92;
 
     .line 32
     .line 33
-    iget-wide v1, v0, Ll92;->b:D
+    iget-wide v1, v0, Lm92;->b:D
 
     .line 34
     .line 35
-    iget-wide v3, v0, Ll92;->c:D
+    iget-wide v3, v0, Lm92;->c:D
 
     .line 36
     .line 37
-    invoke-static/range {v1 .. v6}, Lqv;->a0(DDD)I
+    invoke-static/range {v1 .. v6}, Lq50;->W(DDD)I
 
     .line 38
     .line 39
@@ -186,12 +186,12 @@
     move-result p1
 
     .line 41
-    invoke-direct {p0, p1}, Ll92;-><init>(I)V
+    invoke-direct {p0, p1}, Lm92;-><init>(I)V
 
     .line 42
     .line 43
     .line 44
-    invoke-static {p0}, Lcom/materialkolor/ktx/HctKt;->toColor(Ll92;)J
+    invoke-static {p0}, Lcom/materialkolor/ktx/HctKt;->toColor(Lm92;)J
 
     .line 45
     .line 46
@@ -235,7 +235,7 @@
     .locals 0
 
     .line 1
-    invoke-static {p0, p1}, Lcom/materialkolor/ktx/HctKt;->toHct-8_81llA(J)Ll92;
+    invoke-static {p0, p1}, Lcom/materialkolor/ktx/HctKt;->toHct-8_81llA(J)Lm92;
 
     .line 2
     .line 3
@@ -243,7 +243,7 @@
     move-result-object p0
 
     .line 5
-    invoke-static {p0}, Lcd7;->v(Ll92;)Ll92;
+    invoke-static {p0}, Lmt6;->v(Lm92;)Lm92;
 
     .line 6
     .line 7
@@ -251,7 +251,7 @@
     move-result-object p0
 
     .line 9
-    invoke-static {p0}, Lcom/materialkolor/ktx/HctKt;->toColor(Ll92;)J
+    invoke-static {p0}, Lcom/materialkolor/ktx/HctKt;->toColor(Lm92;)J
 
     .line 10
     .line 11
@@ -270,7 +270,7 @@
 
     .line 2
     .line 3
-    invoke-static {v0}, Lfm0;->k(I)V
+    invoke-static {v0}, Lam0;->k(I)V
 
     .line 4
     .line 5
@@ -291,7 +291,7 @@
     const/4 v0, 0x2
 
     .line 14
-    invoke-static {v0, p0}, Lw96;->C0(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0}, Lib6;->H0(ILjava/lang/String;)Ljava/lang/String;
 
     .line 15
     .line 16
@@ -302,17 +302,17 @@
     return-object p0
 .end method
 
-.method public static final getDefaultColorSpring()Li76;
+.method public static final getDefaultColorSpring()Lu86;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Li76;"
+            "Lu86;"
         }
     .end annotation
 
     .line 1
-    sget-object v0, Lcom/materialkolor/ktx/ColorKt;->a:Li76;
+    sget-object v0, Lcom/materialkolor/ktx/ColorKt;->a:Lu86;
 
     .line 2
     .line 3
@@ -323,7 +323,7 @@
     .locals 8
 
     .line 1
-    invoke-static {p0, p1}, Lcom/materialkolor/ktx/HctKt;->toHct-8_81llA(J)Ll92;
+    invoke-static {p0, p1}, Lcom/materialkolor/ktx/HctKt;->toHct-8_81llA(J)Lm92;
 
     .line 2
     .line 3
@@ -336,7 +336,7 @@
     .line 6
     .line 7
     .line 8
-    iget-wide v0, p0, Ll92;->b:D
+    iget-wide v0, p0, Lm92;->b:D
 
     .line 9
     .line 10
@@ -395,7 +395,7 @@
 
     .line 37
     :goto_0
-    iget-wide v0, p0, Ll92;->c:D
+    iget-wide v0, p0, Lm92;->c:D
 
     .line 38
     .line 39
@@ -430,7 +430,7 @@
 
     .line 52
     :goto_1
-    iget-wide v4, p0, Ll92;->d:D
+    iget-wide v4, p0, Lm92;->d:D
 
     .line 53
     .line 54
@@ -499,7 +499,7 @@
 
     .line 2
     .line 3
-    invoke-static {p0, p1, v0, v1}, Ljy6;->a(JJ)Z
+    invoke-static {p0, p1, v0, v1}, Lm07;->a(JJ)Z
 
     .line 4
     .line 5
@@ -511,7 +511,7 @@
 
     .line 8
     .line 9
-    invoke-static {p0, p1}, Lcd7;->f0(J)I
+    invoke-static {p0, p1}, Lmt6;->e0(J)I
 
     .line 10
     .line 11
@@ -519,7 +519,7 @@
     move-result p0
 
     .line 13
-    invoke-static {p0}, Lns2;->s0(I)[D
+    invoke-static {p0}, Los2;->K(I)[D
 
     .line 14
     .line 15
@@ -567,7 +567,7 @@
     .locals 7
 
     .line 1
-    invoke-static {p0, p1}, Lcom/materialkolor/ktx/HctKt;->toHct-8_81llA(J)Ll92;
+    invoke-static {p0, p1}, Lcom/materialkolor/ktx/HctKt;->toHct-8_81llA(J)Lm92;
 
     .line 2
     .line 3
@@ -575,14 +575,14 @@
     move-result-object v0
 
     .line 5
-    iget-wide v1, v0, Ll92;->d:D
+    iget-wide v1, v0, Lm92;->d:D
 
     .line 6
     .line 7
     float-to-double v3, p2
 
     .line 8
-    invoke-static {v1, v2, v3, v4}, Lw67;->D(DD)D
+    invoke-static {v1, v2, v3, v4}, Lt87;->D(DD)D
 
     .line 9
     .line 10
@@ -634,19 +634,19 @@
     move-result-wide v5
 
     .line 31
-    new-instance p0, Ll92;
+    new-instance p0, Lm92;
 
     .line 32
     .line 33
-    iget-wide v1, v0, Ll92;->b:D
+    iget-wide v1, v0, Lm92;->b:D
 
     .line 34
     .line 35
-    iget-wide v3, v0, Ll92;->c:D
+    iget-wide v3, v0, Lm92;->c:D
 
     .line 36
     .line 37
-    invoke-static/range {v1 .. v6}, Lqv;->a0(DDD)I
+    invoke-static/range {v1 .. v6}, Lq50;->W(DDD)I
 
     .line 38
     .line 39
@@ -654,12 +654,12 @@
     move-result p1
 
     .line 41
-    invoke-direct {p0, p1}, Ll92;-><init>(I)V
+    invoke-direct {p0, p1}, Lm92;-><init>(I)V
 
     .line 42
     .line 43
     .line 44
-    invoke-static {p0}, Lcom/materialkolor/ktx/HctKt;->toColor(Ll92;)J
+    invoke-static {p0}, Lcom/materialkolor/ktx/HctKt;->toColor(Lm92;)J
 
     .line 45
     .line 46
@@ -702,7 +702,7 @@
     .locals 3
 
     .line 1
-    invoke-static {p0, p1}, Lc;->W(J)Llu0;
+    invoke-static {p0, p1}, Luu6;->X(J)Lgu0;
 
     .line 2
     .line 3
@@ -710,7 +710,7 @@
     move-result-object p0
 
     .line 5
-    invoke-interface {p0}, Llu0;->c()Lr82;
+    invoke-interface {p0}, Lgu0;->c()Ls82;
 
     .line 6
     .line 7
@@ -718,7 +718,7 @@
     move-result-object p0
 
     .line 9
-    invoke-static {p2, p3}, Lc;->W(J)Llu0;
+    invoke-static {p2, p3}, Luu6;->X(J)Lgu0;
 
     .line 10
     .line 11
@@ -726,7 +726,7 @@
     move-result-object p1
 
     .line 13
-    invoke-interface {p1}, Llu0;->c()Lr82;
+    invoke-interface {p1}, Lgu0;->c()Ls82;
 
     .line 14
     .line 15
@@ -734,19 +734,19 @@
     move-result-object p1
 
     .line 17
-    new-instance p2, Lr82;
+    new-instance p2, Ls82;
 
     .line 18
     .line 19
-    iget p0, p0, Lr82;->a:F
+    iget p0, p0, Ls82;->a:F
 
     .line 20
     .line 21
-    iget p3, p1, Lr82;->b:F
+    iget p3, p1, Ls82;->b:F
 
     .line 22
     .line 23
-    iget p1, p1, Lr82;->c:F
+    iget p1, p1, Ls82;->c:F
 
     .line 24
     .line 25
@@ -754,16 +754,16 @@
 
     .line 26
     .line 27
-    invoke-direct {p2, p0, p3, p1, v0}, Lr82;-><init>(FFFF)V
+    invoke-direct {p2, p0, p3, p1, v0}, Ls82;-><init>(FFFF)V
 
     .line 28
     .line 29
     .line 30
-    sget-object v1, Lr82;->e:Lm11;
+    sget-object v1, Ls82;->e:Li11;
 
     .line 31
     .line 32
-    sget-object v2, Lcn5;->k:Lcn5;
+    sget-object v2, Loo5;->k:Loo5;
 
     .line 33
     .line 34
@@ -771,7 +771,7 @@
 
     .line 35
     .line 36
-    sget-object v1, Ldv0;->e:Llb5;
+    sget-object v1, Lyu0;->e:Lic5;
 
     .line 37
     .line 38
@@ -779,7 +779,7 @@
 
     .line 39
     :cond_0
-    sget-object v2, Li55;->c:Lg55;
+    sget-object v2, Le65;->c:Ld65;
 
     .line 40
     .line 41
@@ -787,7 +787,7 @@
 
     .line 42
     .line 43
-    sget-object v1, Ldv0;->q:Llb5;
+    sget-object v1, Lyu0;->q:Lic5;
 
     .line 44
     .line 45
@@ -795,7 +795,7 @@
 
     .line 46
     :cond_1
-    sget-object v2, Li55;->d:Lg55;
+    sget-object v2, Le65;->d:Ld65;
 
     .line 47
     .line 48
@@ -803,7 +803,7 @@
 
     .line 49
     .line 50
-    sget-object v1, Ldv0;->r:Llb5;
+    sget-object v1, Lyu0;->r:Lic5;
 
     .line 51
     .line 52
@@ -811,7 +811,7 @@
 
     .line 53
     :cond_2
-    sget-object v2, Li55;->e:Lg55;
+    sget-object v2, Le65;->e:Ld65;
 
     .line 54
     .line 55
@@ -819,7 +819,7 @@
 
     .line 56
     .line 57
-    sget-object v1, Ldv0;->o:Llb5;
+    sget-object v1, Lyu0;->o:Lic5;
 
     .line 58
     .line 59
@@ -827,7 +827,7 @@
 
     .line 60
     :cond_3
-    sget-object v2, Li55;->f:Lg55;
+    sget-object v2, Le65;->f:Ld65;
 
     .line 61
     .line 62
@@ -835,7 +835,7 @@
 
     .line 63
     .line 64
-    sget-object v1, Ldv0;->j:Llb5;
+    sget-object v1, Lyu0;->j:Lic5;
 
     .line 65
     .line 66
@@ -843,7 +843,7 @@
 
     .line 67
     :cond_4
-    sget-object v2, Li55;->g:Lg55;
+    sget-object v2, Le65;->g:Ld65;
 
     .line 68
     .line 69
@@ -851,7 +851,7 @@
 
     .line 70
     .line 71
-    sget-object v1, Ldv0;->i:Llb5;
+    sget-object v1, Lyu0;->i:Lic5;
 
     .line 72
     .line 73
@@ -859,7 +859,7 @@
 
     .line 74
     :cond_5
-    sget-object v2, Lqx2;->a:Lpx2;
+    sget-object v2, Ley2;->a:Ldy2;
 
     .line 75
     .line 76
@@ -867,7 +867,7 @@
 
     .line 77
     .line 78
-    sget-object v1, Ldv0;->t:Lrx2;
+    sget-object v1, Lyu0;->t:Lfy2;
 
     .line 79
     .line 80
@@ -875,7 +875,7 @@
 
     .line 81
     :cond_6
-    sget-object v2, Lkc7;->b:Ljc7;
+    sget-object v2, Lge7;->b:Lfe7;
 
     .line 82
     .line 83
@@ -883,7 +883,7 @@
 
     .line 84
     .line 85
-    sget-object v1, Ldv0;->s:Lrx2;
+    sget-object v1, Lyu0;->s:Lfy2;
 
     .line 86
     .line 87
@@ -891,7 +891,7 @@
 
     .line 88
     :cond_7
-    sget-object v2, Li55;->h:Lg55;
+    sget-object v2, Le65;->h:Ld65;
 
     .line 89
     .line 90
@@ -899,7 +899,7 @@
 
     .line 91
     .line 92
-    sget-object v1, Ldv0;->k:Llb5;
+    sget-object v1, Lyu0;->k:Lic5;
 
     .line 93
     .line 94
@@ -907,7 +907,7 @@
 
     .line 95
     :cond_8
-    sget-object v2, Li55;->i:Lg55;
+    sget-object v2, Le65;->i:Ld65;
 
     .line 96
     .line 97
@@ -915,7 +915,7 @@
 
     .line 98
     .line 99
-    sget-object v1, Ldv0;->l:Llb5;
+    sget-object v1, Lyu0;->l:Lic5;
 
     .line 100
     .line 101
@@ -923,7 +923,7 @@
 
     .line 102
     :cond_9
-    sget-object v2, Li55;->b:Lg55;
+    sget-object v2, Le65;->b:Ld65;
 
     .line 103
     .line 104
@@ -931,7 +931,7 @@
 
     .line 105
     .line 106
-    sget-object v1, Ldv0;->f:Llb5;
+    sget-object v1, Lyu0;->f:Lic5;
 
     .line 107
     .line 108
@@ -939,7 +939,7 @@
 
     .line 109
     :cond_a
-    sget-object v2, Li55;->j:Lg55;
+    sget-object v2, Le65;->j:Ld65;
 
     .line 110
     .line 111
@@ -947,7 +947,7 @@
 
     .line 112
     .line 113
-    sget-object v1, Ldv0;->p:Llb5;
+    sget-object v1, Lyu0;->p:Lic5;
 
     .line 114
     .line 115
@@ -963,7 +963,7 @@
 
     .line 118
     .line 119
-    invoke-virtual {p2}, Lr82;->b()Lc55;
+    invoke-virtual {p2}, Ls82;->b()Lz55;
 
     .line 120
     .line 121
@@ -971,27 +971,27 @@
     move-result-object p0
 
     .line 123
-    iget p1, p0, Lc55;->a:F
+    iget p1, p0, Lz55;->a:F
 
     .line 124
     .line 125
-    iget p2, p0, Lc55;->b:F
+    iget p2, p0, Lz55;->b:F
 
     .line 126
     .line 127
-    iget p3, p0, Lc55;->c:F
+    iget p3, p0, Lz55;->c:F
 
     .line 128
     .line 129
-    iget p0, p0, Lc55;->d:F
+    iget p0, p0, Lz55;->d:F
 
     .line 130
     .line 131
-    sget-object v0, Ldv0;->e:Llb5;
+    sget-object v0, Lyu0;->e:Lic5;
 
     .line 132
     .line 133
-    invoke-static {p1, p2, p3, p0, v0}, Lcd7;->a(FFFFLav0;)J
+    invoke-static {p1, p2, p3, p0, v0}, Lmt6;->a(FFFFLvu0;)J
 
     .line 134
     .line 135
@@ -1054,7 +1054,7 @@
 
     .line 160
     .line 161
-    invoke-static {v0, p0, p3, p1, v1}, Lcd7;->a(FFFFLav0;)J
+    invoke-static {v0, p0, p3, p1, v1}, Lmt6;->a(FFFFLvu0;)J
 
     .line 162
     .line 163
@@ -1074,7 +1074,7 @@
     .line 2
     .line 3
     .line 4
-    invoke-static {p0, p1}, Lmu0;->d(J)F
+    invoke-static {p0, p1}, Lhu0;->d(J)F
 
     .line 5
     .line 6
@@ -1089,7 +1089,7 @@
     mul-float/2addr v0, v1
 
     .line 11
-    invoke-static {v0}, Llh3;->i0(F)I
+    invoke-static {v0}, Lai3;->E(F)I
 
     .line 12
     .line 13
@@ -1097,7 +1097,7 @@
     move-result v0
 
     .line 15
-    invoke-static {p0, p1}, Lmu0;->h(J)F
+    invoke-static {p0, p1}, Lhu0;->h(J)F
 
     .line 16
     .line 17
@@ -1108,7 +1108,7 @@
     mul-float/2addr v2, v1
 
     .line 20
-    invoke-static {v2}, Llh3;->i0(F)I
+    invoke-static {v2}, Lai3;->E(F)I
 
     .line 21
     .line 22
@@ -1116,7 +1116,7 @@
     move-result v2
 
     .line 24
-    invoke-static {p0, p1}, Lmu0;->g(J)F
+    invoke-static {p0, p1}, Lhu0;->g(J)F
 
     .line 25
     .line 26
@@ -1127,7 +1127,7 @@
     mul-float/2addr v3, v1
 
     .line 29
-    invoke-static {v3}, Llh3;->i0(F)I
+    invoke-static {v3}, Lai3;->E(F)I
 
     .line 30
     .line 31
@@ -1135,7 +1135,7 @@
     move-result v3
 
     .line 33
-    invoke-static {p0, p1}, Lmu0;->e(J)F
+    invoke-static {p0, p1}, Lhu0;->e(J)F
 
     .line 34
     .line 35
@@ -1146,7 +1146,7 @@
     mul-float/2addr p0, v1
 
     .line 38
-    invoke-static {p0}, Llh3;->i0(F)I
+    invoke-static {p0}, Lai3;->E(F)I
 
     .line 39
     .line 40
@@ -1319,15 +1319,15 @@
     return-object p0
 .end method
 
-.method public static final toTonalPalette-8_81llA(J)Lhs6;
+.method public static final toTonalPalette-8_81llA(J)Lut6;
     .locals 1
 
     .line 1
-    sget-object v0, Lhs6;->e:Lfs6;
+    sget-object v0, Lut6;->e:Lst6;
 
     .line 2
     .line 3
-    invoke-static {v0, p0, p1}, Lcom/materialkolor/ktx/TonalPaletteKt;->from-4WTKRHQ(Lfs6;J)Lhs6;
+    invoke-static {v0, p0, p1}, Lcom/materialkolor/ktx/TonalPaletteKt;->from-4WTKRHQ(Lst6;J)Lut6;
 
     .line 4
     .line 5

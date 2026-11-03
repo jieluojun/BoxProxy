@@ -1,442 +1,470 @@
-.class public final Lfc1;
+.class public final synthetic Lfc1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Ljava/lang/Runnable;
-.implements Lxv1;
+.implements Ls52;
 
 
 # instance fields
-.field public final j:Lvt0;
+.field public final synthetic j:B
 
-.field public k:Z
+.field public final synthetic k:Luw1;
 
-.field public l:Z
+.field public final synthetic l:Ld52;
 
-.field public m:J
+.field public final synthetic m:Lsp4;
 
-.field public n:I
-
-.field public o:[F
+.field public final synthetic n:Ljava/util/Map;
 
 
 # direct methods
-.method public constructor <init>(Lvt0;I)V
-    .locals 2
+.method public synthetic constructor <init>(Luw1;Ld52;Lsp4;Ljava/util/Map;B)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p5, p0, Lfc1;->j:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Lfc1;->k:Luw1;
+
     .line 4
-    const-wide/16 v0, 0x0
-
     .line 5
+    iput-object p2, p0, Lfc1;->l:Ld52;
+
     .line 6
-    iput-wide v0, p0, Lfc1;->m:J
-
     .line 7
-    .line 8
-    const/4 v0, 0x1
+    iput-object p3, p0, Lfc1;->m:Lsp4;
 
+    .line 8
     .line 9
-    iput-boolean v0, p0, Lfc1;->k:Z
+    iput-object p4, p0, Lfc1;->n:Ljava/util/Map;
 
     .line 10
     .line 11
-    iput-object p1, p0, Lfc1;->j:Lvt0;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 12
     .line 13
-    iput p2, p0, Lfc1;->n:I
-
     .line 14
-    .line 15
-    const-class p2, Lus5;
-
-    .line 16
-    .line 17
-    iget-object p1, p1, Lvt0;->r:Lwv1;
-
-    .line 18
-    .line 19
-    invoke-virtual {p1, p2, p0}, Lwv1;->f(Ljava/lang/Class;Lxv1;)Lid6;
-
-    .line 20
-    .line 21
-    .line 22
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljv1;Lo61;)V
-    .locals 0
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 19
 
     .line 1
-    check-cast p1, Lus5;
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    iget-byte v1, v0, Lfc1;->j:B
 
     .line 4
     .line 5
-    .line 6
-    move-result-wide p1
+    sget-object v2, Lk27;->a:Lk27;
 
+    .line 6
     .line 7
-    iput-wide p1, p0, Lfc1;->m:J
+    const/4 v3, 0x2
 
     .line 8
-    .line 9
-    const/4 p1, 0x1
-
-    .line 10
-    iput-boolean p1, p0, Lfc1;->k:Z
-
-    .line 11
-    .line 12
-    return-void
-.end method
-
-.method public final run()V
-    .locals 8
-
-    .line 1
-    iget-boolean v0, p0, Lfc1;->l:Z
-
-    .line 2
-    .line 3
-    const/4 v1, 0x1
-
-    .line 4
-    if-eqz v0, :cond_2
-
-    .line 5
-    .line 6
-    iget v0, p0, Lfc1;->n:I
-
-    .line 7
-    .line 8
-    if-lez v0, :cond_2
+    const/4 v4, 0x1
 
     .line 9
+    const/4 v5, 0x0
+
     .line 10
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    packed-switch v1, :pswitch_data_0
 
     .line 11
     .line 12
     .line 13
-    move-result-wide v2
+    move-object/from16 v1, p1
 
     .line 14
-    iget-wide v4, p0, Lfc1;->m:J
-
     .line 15
-    .line 16
-    sub-long/2addr v2, v4
+    check-cast v1, Lv01;
 
+    .line 16
     .line 17
-    iget v0, p0, Lfc1;->n:I
+    move-object/from16 v6, p2
 
     .line 18
     .line 19
-    int-to-long v4, v0
+    check-cast v6, Ljava/lang/Integer;
 
     .line 20
-    const-wide/16 v6, 0x2
-
     .line 21
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
     .line 22
-    mul-long/2addr v4, v6
-
     .line 23
-    cmp-long v0, v2, v4
-
     .line 24
+    move-result v6
+
     .line 25
-    iget-object v2, p0, Lfc1;->j:Lvt0;
+    and-int/lit8 v7, v6, 0x3
 
     .line 26
     .line 27
-    if-ltz v0, :cond_0
+    if-eq v7, v3, :cond_0
 
     .line 28
     .line 29
-    iget-boolean v0, p0, Lfc1;->k:Z
+    move v5, v4
 
     .line 30
-    .line 31
-    xor-int/2addr v0, v1
+    :cond_0
+    and-int/lit8 v3, v6, 0x1
 
+    .line 31
     .line 32
-    iput-boolean v0, p0, Lfc1;->k:Z
+    check-cast v1, Ls62;
 
     .line 33
     .line 34
-    invoke-virtual {v2}, Lvt0;->getCursor()Lzb1;
+    invoke-virtual {v1, v3, v5}, Ls62;->T(IZ)Z
 
     .line 35
     .line 36
     .line 37
-    move-result-object v0
+    move-result v3
 
     .line 38
-    iget-object v0, v0, Lzb1;->c:Lcn0;
+    if-eqz v3, :cond_1
 
     .line 39
     .line 40
-    invoke-virtual {v0}, Lcn0;->a()Lcn0;
+    invoke-static {v1}, Lj23;->D(Lv01;)Lko3;
 
     .line 41
     .line 42
     .line 43
-    move-result-object v0
+    move-result-object v6
 
     .line 44
-    invoke-virtual {v2}, Lvt0;->getLayout()Lsy2;
+    invoke-static {v1}, Lj23;->F(Lv01;)J
 
     .line 45
     .line 46
     .line 47
-    move-result-object v3
+    move-result-wide v8
 
     .line 48
-    iget v4, v0, Lcn0;->b:I
+    new-instance v10, Lfc1;
 
     .line 49
     .line 50
-    iget v0, v0, Lcn0;->c:I
+    const/4 v15, 0x0
 
     .line 51
+    iget-object v11, v0, Lfc1;->k:Luw1;
+
     .line 52
-    iget-object v5, p0, Lfc1;->o:[F
-
     .line 53
-    .line 54
-    invoke-interface {v3, v4, v0, v5}, Lsy2;->j(II[F)[F
+    iget-object v12, v0, Lfc1;->l:Ld52;
 
+    .line 54
     .line 55
+    iget-object v13, v0, Lfc1;->m:Lsp4;
+
     .line 56
     .line 57
-    move-result-object v0
+    iget-object v14, v0, Lfc1;->n:Ljava/util/Map;
 
     .line 58
-    iput-object v0, p0, Lfc1;->o:[F
-
     .line 59
-    .line 60
-    invoke-virtual {v2}, Lvt0;->getCursor()Lzb1;
+    invoke-direct/range {v10 .. v15}, Lfc1;-><init>(Luw1;Ld52;Lsp4;Ljava/util/Map;B)V
 
+    .line 60
     .line 61
     .line 62
+    const v0, 0x4a9c52e5    # 5122418.5f
+
     .line 63
-    move-result-object v0
-
     .line 64
-    invoke-virtual {v0}, Lzb1;->a()Z
-
     .line 65
+    invoke-static {v0, v10, v1}, Lr97;->M(ILa62;Lv01;)Loy0;
+
     .line 66
     .line 67
-    move-result v0
-
     .line 68
-    if-nez v0, :cond_1
+    move-result-object v15
 
     .line 69
+    const/high16 v17, 0xc00000
+
     .line 70
-    iget-object v0, p0, Lfc1;->o:[F
-
     .line 71
-    .line 72
-    const/4 v3, 0x0
+    const/16 v18, 0x7a
 
+    .line 72
     .line 73
-    aget v0, v0, v3
+    const/4 v7, 0x0
 
     .line 74
-    .line 75
-    invoke-virtual {v2}, Lvt0;->getOffsetY()I
+    const-wide/16 v10, 0x0
 
+    .line 75
     .line 76
+    const/4 v12, 0x0
+
     .line 77
+    const/4 v13, 0x0
+
     .line 78
-    move-result v4
+    const/4 v14, 0x0
 
     .line 79
-    int-to-float v4, v4
+    move-object/from16 v16, v1
 
     .line 80
-    cmpl-float v0, v0, v4
-
     .line 81
-    .line 82
-    if-ltz v0, :cond_1
+    invoke-static/range {v6 .. v18}, Lqf6;->a(Lko3;Lvy5;JJFFLa30;Loy0;Lv01;II)V
 
+    .line 82
     .line 83
     .line 84
-    iget-object v0, p0, Lfc1;->o:[F
+    goto :goto_0
 
     .line 85
+    :cond_1
+    move-object/from16 v16, v1
+
     .line 86
-    aget v0, v0, v3
-
     .line 87
-    .line 88
-    invoke-virtual {v2}, Lvt0;->getRowHeight()I
+    invoke-virtual/range {v16 .. v16}, Ls62;->W()V
 
+    .line 88
     .line 89
     .line 90
+    :goto_0
+    return-object v2
+
     .line 91
-    move-result v3
+    :pswitch_0
+    move-object/from16 v1, p1
 
     .line 92
-    int-to-float v3, v3
-
     .line 93
-    sub-float/2addr v0, v3
+    check-cast v1, Lv01;
 
     .line 94
-    invoke-virtual {v2}, Lvt0;->getOffsetY()I
-
     .line 95
+    move-object/from16 v6, p2
+
     .line 96
     .line 97
-    move-result v3
+    check-cast v6, Ljava/lang/Integer;
 
     .line 98
-    invoke-virtual {v2}, Landroid/view/View;->getHeight()I
-
     .line 99
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
     .line 100
     .line 101
-    move-result v4
-
     .line 102
-    add-int/2addr v4, v3
+    move-result v6
 
     .line 103
-    int-to-float v3, v4
+    and-int/lit8 v7, v6, 0x3
 
     .line 104
-    cmpg-float v0, v0, v3
-
     .line 105
-    .line 106
-    if-gtz v0, :cond_1
+    if-eq v7, v3, :cond_2
 
+    .line 106
     .line 107
+    move v3, v4
+
     .line 108
-    iget-object v0, p0, Lfc1;->o:[F
+    goto :goto_1
 
     .line 109
+    :cond_2
+    move v3, v5
+
     .line 110
-    aget v0, v0, v1
+    :goto_1
+    and-int/2addr v4, v6
 
     .line 111
-    .line 112
-    invoke-virtual {v2}, Lvt0;->getOffsetX()I
+    check-cast v1, Ls62;
 
+    .line 112
     .line 113
+    invoke-virtual {v1, v4, v3}, Ls62;->T(IZ)Z
+
     .line 114
     .line 115
+    .line 116
     move-result v3
 
-    .line 116
-    int-to-float v3, v3
-
     .line 117
-    cmpl-float v0, v0, v3
+    if-eqz v3, :cond_3
 
     .line 118
     .line 119
-    if-ltz v0, :cond_1
+    invoke-static {v1}, Lj23;->E(Lv01;)Llv6;
 
     .line 120
     .line 121
-    iget-object v0, p0, Lfc1;->o:[F
-
     .line 122
+    move-result-object v14
+
     .line 123
-    aget v0, v0, v1
+    sget-object v3, Lmc7;->w:Ljava/util/WeakHashMap;
 
     .line 124
     .line 125
-    const/high16 v1, 0x42c80000    # 100.0f
+    invoke-static {v1}, Lx07;->b(Lv01;)Lmc7;
 
     .line 126
     .line 127
-    sub-float/2addr v0, v1
-
     .line 128
-    invoke-virtual {v2}, Lvt0;->getOffsetX()I
+    move-result-object v3
 
     .line 129
+    iget-object v3, v3, Lmc7;->l:Lh27;
+
     .line 130
     .line 131
-    move-result v1
+    new-instance v13, Ls63;
 
     .line 132
-    invoke-virtual {v2}, Landroid/view/View;->getWidth()I
-
     .line 133
+    const/16 v4, 0x1f
+
     .line 134
     .line 135
-    move-result v3
+    invoke-direct {v13, v3, v4}, Ls63;-><init>(Lfb7;I)V
 
     .line 136
-    add-int/2addr v3, v1
-
     .line 137
-    int-to-float v1, v3
-
     .line 138
-    cmpg-float v0, v0, v1
+    sget-object v6, Lwe7;->n:Loy0;
 
     .line 139
     .line 140
-    if-gtz v0, :cond_1
+    new-instance v3, Lk;
 
     .line 141
     .line 142
-    invoke-virtual {v2}, Landroid/view/View;->postInvalidate()V
+    const/16 v4, 0x12
 
     .line 143
     .line 144
-    .line 145
-    goto :goto_0
+    iget-object v7, v0, Lfc1;->l:Ld52;
 
+    .line 145
     .line 146
-    :cond_0
-    iput-boolean v1, p0, Lfc1;->k:Z
+    invoke-direct {v3, v7, v4}, Lk;-><init>(Ld52;B)V
 
     .line 147
     .line 148
-    :cond_1
-    :goto_0
-    iget v0, p0, Lfc1;->n:I
-
     .line 149
+    const v4, -0x1eec51ac
+
     .line 150
-    int-to-long v0, v0
-
     .line 151
-    invoke-virtual {v2, v0, v1, p0}, Lvt0;->c0(JLjava/lang/Runnable;)V
-
     .line 152
+    invoke-static {v4, v3, v1}, Lr97;->M(ILa62;Lv01;)Loy0;
+
     .line 153
     .line 154
-    return-void
-
     .line 155
-    :cond_2
-    iput-boolean v1, p0, Lfc1;->k:Z
+    move-result-object v8
 
     .line 156
+    new-instance v3, Lsc1;
+
     .line 157
-    return-void
+    .line 158
+    iget-object v4, v0, Lfc1;->m:Lsp4;
+
+    .line 159
+    .line 160
+    iget-object v7, v0, Lfc1;->n:Ljava/util/Map;
+
+    .line 161
+    .line 162
+    invoke-direct {v3, v4, v7, v5}, Lsc1;-><init>(Lsp4;Ljava/util/Map;B)V
+
+    .line 163
+    .line 164
+    .line 165
+    const v4, -0x765fd2f5
+
+    .line 166
+    .line 167
+    .line 168
+    invoke-static {v4, v3, v1}, Lr97;->M(ILa62;Lv01;)Loy0;
+
+    .line 169
+    .line 170
+    .line 171
+    move-result-object v9
+
+    .line 172
+    const/16 v17, 0x6c06
+
+    .line 173
+    .line 174
+    const/16 v18, 0xe6
+
+    .line 175
+    .line 176
+    const/4 v7, 0x0
+
+    .line 177
+    const/4 v10, 0x0
+
+    .line 178
+    const/4 v11, 0x0
+
+    .line 179
+    const/4 v12, 0x0
+
+    .line 180
+    iget-object v15, v0, Lfc1;->k:Luw1;
+
+    .line 181
+    .line 182
+    move-object/from16 v16, v1
+
+    .line 183
+    .line 184
+    invoke-static/range {v6 .. v18}, Lao;->a(Ls52;Lko3;Ls52;Lt52;Lc8;FFLs63;Llv6;Luw1;Lv01;II)V
+
+    .line 185
+    .line 186
+    .line 187
+    goto :goto_2
+
+    .line 188
+    :cond_3
+    move-object/from16 v16, v1
+
+    .line 189
+    .line 190
+    invoke-virtual/range {v16 .. v16}, Ls62;->W()V
+
+    .line 191
+    .line 192
+    .line 193
+    :goto_2
+    return-object v2
+
+    .line 194
+    nop
+
+    .line 195
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

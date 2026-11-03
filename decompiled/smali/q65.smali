@@ -1,40 +1,27 @@
 .class public final Lq65;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lr65;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ljava/io/Serializable;
 
 
-# instance fields
-.field public final a:Lay1;
-
-.field public final b:Lfj1;
-
-
-# direct methods
-.method public constructor <init>(JLay1;Lbl4;)V
-    .locals 1
+# virtual methods
+.method public final c(II)I
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object p0, Lr65;->j:Ln3;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p3, p0, Lq65;->a:Lay1;
+    invoke-virtual {p0, p1, p2}, Lr65;->c(II)I
 
+    .line 4
     .line 5
     .line 6
-    new-instance v0, Lfj1;
+    move-result p0
 
     .line 7
-    .line 8
-    invoke-direct {v0, p1, p2, p3, p4}, Lfj1;-><init>(JLay1;Lbl4;)V
-
-    .line 9
-    .line 10
-    .line 11
-    iput-object v0, p0, Lq65;->b:Lfj1;
-
-    .line 12
-    .line 13
-    return-void
+    return p0
 .end method

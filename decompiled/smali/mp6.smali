@@ -1,45 +1,307 @@
-.class public abstract Lmp6;
+.class public final Lmp6;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Lmp1;
+# instance fields
+.field public final a:La86;
+
+.field public final b:La86;
+
+.field public final c:La86;
+
+.field public final d:La86;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(La86;La86;La86;La86;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lcy5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/16 v1, 0x19
-
     .line 4
-    .line 5
-    invoke-direct {v0, v1}, Lcy5;-><init>(B)V
+    iput-object p1, p0, Lmp6;->a:La86;
 
+    .line 5
     .line 6
+    iput-object p2, p0, Lmp6;->b:La86;
+
     .line 7
     .line 8
-    new-instance v1, Lmp1;
+    iput-object p3, p0, Lmp6;->c:La86;
 
     .line 9
     .line 10
-    const/4 v2, 0x1
+    iput-object p4, p0, Lmp6;->d:La86;
 
     .line 11
-    invoke-direct {v1, v0, v2}, Lmp1;-><init>(Lg52;B)V
+    .line 12
+    return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    const/4 v1, 0x0
+
+    .line 6
+    if-eqz p1, :cond_6
+
+    .line 7
+    .line 8
+    instance-of v2, p1, Lmp6;
+
+    .line 9
+    .line 10
+    if-nez v2, :cond_1
+
+    .line 11
+    .line 12
+    goto :goto_0
+
+    .line 13
+    :cond_1
+    check-cast p1, Lmp6;
+
+    .line 14
+    .line 15
+    iget-object v2, p1, Lmp6;->a:La86;
+
+    .line 16
+    .line 17
+    iget-object v3, p0, Lmp6;->a:La86;
+
+    .line 18
+    .line 19
+    invoke-static {v3, v2}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 20
+    .line 21
+    .line 22
+    move-result v2
+
+    .line 23
+    if-nez v2, :cond_2
+
+    .line 24
+    .line 25
+    return v1
+
+    .line 26
+    :cond_2
+    iget-object v2, p0, Lmp6;->b:La86;
+
+    .line 27
+    .line 28
+    iget-object v3, p1, Lmp6;->b:La86;
+
+    .line 29
+    .line 30
+    invoke-static {v2, v3}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 31
+    .line 32
+    .line 33
+    move-result v2
+
+    .line 34
+    if-nez v2, :cond_3
+
+    .line 35
+    .line 36
+    return v1
+
+    .line 37
+    :cond_3
+    iget-object v2, p0, Lmp6;->c:La86;
+
+    .line 38
+    .line 39
+    iget-object v3, p1, Lmp6;->c:La86;
+
+    .line 40
+    .line 41
+    invoke-static {v2, v3}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 42
+    .line 43
+    .line 44
+    move-result v2
+
+    .line 45
+    if-nez v2, :cond_4
+
+    .line 46
+    .line 47
+    return v1
+
+    .line 48
+    :cond_4
+    iget-object p0, p0, Lmp6;->d:La86;
+
+    .line 49
+    .line 50
+    iget-object p1, p1, Lmp6;->d:La86;
+
+    .line 51
+    .line 52
+    invoke-static {p0, p1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 53
+    .line 54
+    .line 55
+    move-result p0
+
+    .line 56
+    if-nez p0, :cond_5
+
+    .line 57
+    .line 58
+    return v1
+
+    .line 59
+    :cond_5
+    return v0
+
+    .line 60
+    :cond_6
+    :goto_0
+    return v1
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    iget-object v1, p0, Lmp6;->a:La86;
+
+    .line 3
+    .line 4
+    if-eqz v1, :cond_0
+
+    .line 5
+    .line 6
+    invoke-virtual {v1}, La86;->hashCode()I
+
+    .line 7
+    .line 8
+    .line 9
+    move-result v1
+
+    .line 10
+    goto :goto_0
+
+    .line 11
+    :cond_0
+    move v1, v0
 
     .line 12
+    :goto_0
+    mul-int/lit8 v1, v1, 0x1f
+
     .line 13
     .line 14
-    sput-object v1, Lmp6;->a:Lmp1;
+    iget-object v2, p0, Lmp6;->b:La86;
 
     .line 15
     .line 16
-    return-void
+    if-eqz v2, :cond_1
+
+    .line 17
+    .line 18
+    invoke-virtual {v2}, La86;->hashCode()I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v2
+
+    .line 22
+    goto :goto_1
+
+    .line 23
+    :cond_1
+    move v2, v0
+
+    .line 24
+    :goto_1
+    add-int/2addr v1, v2
+
+    .line 25
+    mul-int/lit8 v1, v1, 0x1f
+
+    .line 26
+    .line 27
+    iget-object v2, p0, Lmp6;->c:La86;
+
+    .line 28
+    .line 29
+    if-eqz v2, :cond_2
+
+    .line 30
+    .line 31
+    invoke-virtual {v2}, La86;->hashCode()I
+
+    .line 32
+    .line 33
+    .line 34
+    move-result v2
+
+    .line 35
+    goto :goto_2
+
+    .line 36
+    :cond_2
+    move v2, v0
+
+    .line 37
+    :goto_2
+    add-int/2addr v1, v2
+
+    .line 38
+    mul-int/lit8 v1, v1, 0x1f
+
+    .line 39
+    .line 40
+    iget-object p0, p0, Lmp6;->d:La86;
+
+    .line 41
+    .line 42
+    if-eqz p0, :cond_3
+
+    .line 43
+    .line 44
+    invoke-virtual {p0}, La86;->hashCode()I
+
+    .line 45
+    .line 46
+    .line 47
+    move-result v0
+
+    .line 48
+    :cond_3
+    add-int/2addr v1, v0
+
+    .line 49
+    return v1
 .end method

@@ -1,149 +1,203 @@
 .class public final Liz;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lz95;
+.super Landroid/text/style/MetricAffectingSpan;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final j:Lit2;
+.field public final synthetic j:B
+
+.field public final k:F
 
 
 # direct methods
-.method public synthetic constructor <init>(Lit2;)V
+.method public synthetic constructor <init>(FB)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p2, p0, Liz;->j:B
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Liz;->j:Lit2;
+    invoke-direct {p0}, Landroid/text/style/MetricAffectingSpan;-><init>()V
 
+    .line 4
     .line 5
     .line 6
+    iput p1, p0, Liz;->k:F
+
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final updateDrawState(Landroid/text/TextPaint;)V
+    .locals 3
 
     .line 1
-    instance-of v0, p1, Liz;
+    iget-byte v0, p0, Liz;->j:B
 
     .line 2
     .line 3
-    if-nez v0, :cond_0
+    iget p0, p0, Liz;->k:F
 
     .line 4
     .line 5
-    goto :goto_0
-
-    .line 6
-    :cond_0
-    check-cast p1, Liz;
-
-    .line 7
-    .line 8
-    iget-object p1, p1, Liz;->j:Lit2;
-
-    .line 9
-    .line 10
-    iget-object p0, p0, Liz;->j:Lit2;
-
-    .line 11
-    .line 12
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    .line 13
-    .line 14
-    .line 15
-    move-result p0
-
-    .line 16
-    if-nez p0, :cond_1
-
-    .line 17
-    .line 18
-    :goto_0
-    const/4 p0, 0x0
-
-    .line 19
-    return p0
-
-    .line 20
-    :cond_1
-    const/4 p0, 0x1
-
-    .line 21
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Liz;->j:Lit2;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v1, "BaseRequestDelegate(job="
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
     .line 8
-    iget-object p0, p0, Liz;->j:Lit2;
+    invoke-virtual {p1}, Landroid/graphics/Paint;->getTextSkewX()F
 
     .line 9
     .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
     .line 11
+    move-result v0
+
     .line 12
+    add-float/2addr v0, p0
+
     .line 13
-    const-string p0, ")"
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setTextSkewX(F)V
 
     .line 14
     .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 16
-    .line 17
-    .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    return-void
 
+    .line 17
+    :pswitch_0
+    iget v0, p1, Landroid/text/TextPaint;->baselineShift:I
+
+    .line 18
     .line 19
+    invoke-virtual {p1}, Landroid/graphics/Paint;->ascent()F
+
     .line 20
     .line 21
-    move-result-object p0
-
     .line 22
-    return-object p0
+    move-result v1
+
+    .line 23
+    mul-float/2addr v1, p0
+
+    .line 24
+    float-to-double v1, v1
+
+    .line 25
+    invoke-static {v1, v2}, Ljava/lang/Math;->ceil(D)D
+
+    .line 26
+    .line 27
+    .line 28
+    move-result-wide v1
+
+    .line 29
+    double-to-float p0, v1
+
+    .line 30
+    float-to-int p0, p0
+
+    .line 31
+    add-int/2addr v0, p0
+
+    .line 32
+    iput v0, p1, Landroid/text/TextPaint;->baselineShift:I
+
+    .line 33
+    .line 34
+    return-void
+
+    .line 35
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final updateMeasureState(Landroid/text/TextPaint;)V
+    .locals 3
+
+    .line 1
+    iget-byte v0, p0, Liz;->j:B
+
+    .line 2
+    .line 3
+    iget p0, p0, Liz;->k:F
+
+    .line 4
+    .line 5
+    packed-switch v0, :pswitch_data_0
+
+    .line 6
+    .line 7
+    .line 8
+    invoke-virtual {p1}, Landroid/graphics/Paint;->getTextSkewX()F
+
+    .line 9
+    .line 10
+    .line 11
+    move-result v0
+
+    .line 12
+    add-float/2addr v0, p0
+
+    .line 13
+    invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setTextSkewX(F)V
+
+    .line 14
+    .line 15
+    .line 16
+    return-void
+
+    .line 17
+    :pswitch_0
+    iget v0, p1, Landroid/text/TextPaint;->baselineShift:I
+
+    .line 18
+    .line 19
+    invoke-virtual {p1}, Landroid/graphics/Paint;->ascent()F
+
+    .line 20
+    .line 21
+    .line 22
+    move-result v1
+
+    .line 23
+    mul-float/2addr v1, p0
+
+    .line 24
+    float-to-double v1, v1
+
+    .line 25
+    invoke-static {v1, v2}, Ljava/lang/Math;->ceil(D)D
+
+    .line 26
+    .line 27
+    .line 28
+    move-result-wide v1
+
+    .line 29
+    double-to-float p0, v1
+
+    .line 30
+    float-to-int p0, p0
+
+    .line 31
+    add-int/2addr v0, p0
+
+    .line 32
+    iput v0, p1, Landroid/text/TextPaint;->baselineShift:I
+
+    .line 33
+    .line 34
+    return-void
+
+    .line 35
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

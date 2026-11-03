@@ -1,55 +1,28 @@
 .class public final Ln84;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lyg4;
-
-
-# static fields
-.field public static final k:La34;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final j:Lm84;
+.field public synthetic j:Ljava/lang/Object;
+
+.field public final synthetic k:Lo84;
+
+.field public l:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    .line 1
-    new-instance v0, La34;
-
-    .line 2
-    .line 3
-    const/16 v1, 0x11
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, La34;-><init>(B)V
-
-    .line 6
-    .line 7
-    .line 8
-    sput-object v0, Ln84;->k:La34;
-
-    .line 9
-    .line 10
-    return-void
-.end method
-
-.method public constructor <init>(Lm84;)V
+.method public constructor <init>(Lo84;Lz71;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ln84;->k:Lo84;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Ln84;->j:Lm84;
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
+    .line 4
     .line 5
     .line 6
     return-void
@@ -57,25 +30,43 @@
 
 
 # virtual methods
-.method public final P()Z
-    .locals 0
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    iget-object p0, p0, Ln84;->j:Lm84;
+    iput-object p1, p0, Ln84;->j:Ljava/lang/Object;
 
     .line 2
     .line 3
-    check-cast p0, Lwn3;
+    iget p1, p0, Ln84;->l:I
 
     .line 4
     .line 5
-    iget-object p0, p0, Lwn3;->j:Lwn3;
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
-    iget-boolean p0, p0, Lwn3;->w:Z
+    or-int/2addr p1, v0
 
     .line 8
+    iput p1, p0, Ln84;->l:I
+
     .line 9
-    return p0
+    .line 10
+    iget-object p1, p0, Ln84;->k:Lo84;
+
+    .line 11
+    .line 12
+    const/4 v0, 0x0
+
+    .line 13
+    invoke-virtual {p1, v0, p0}, Lo84;->n(ZLz71;)Ljava/lang/Object;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p0
+
+    .line 17
+    return-object p0
 .end method

@@ -1,118 +1,198 @@
-.class public final enum Lls2;
-.super Ljava/lang/Enum;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class final Lls2;
+.super Lro3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final enum j:Lls2;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lro3;"
+    }
+.end annotation
 
-.field public static final enum k:Lls2;
 
-.field public static final synthetic l:[Lls2;
+# instance fields
+.field public final j:Ljs2;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Ljs2;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lls2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const-string v1, "Width"
-
     .line 4
+    iput-object p1, p0, Lls2;->j:Ljs2;
+
     .line 5
-    const/4 v2, 0x0
-
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 7
-    .line 8
-    .line 9
-    sput-object v0, Lls2;->j:Lls2;
-
-    .line 10
-    .line 11
-    new-instance v1, Lls2;
-
-    .line 12
-    .line 13
-    const-string v2, "Height"
-
-    .line 14
-    .line 15
-    const/4 v3, 0x1
-
-    .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 17
-    .line 18
-    .line 19
-    sput-object v1, Lls2;->k:Lls2;
-
-    .line 20
-    .line 21
-    filled-new-array {v0, v1}, [Lls2;
-
-    .line 22
-    .line 23
-    .line 24
-    move-result-object v0
-
-    .line 25
-    sput-object v0, Lls2;->l:[Lls2;
-
-    .line 26
-    .line 27
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lls2;
-    .locals 1
+
+# virtual methods
+.method public final a()Ljo3;
+    .locals 2
 
     .line 1
-    const-class v0, Lls2;
+    new-instance v0, Lns2;
 
     .line 2
     .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    const/4 v1, 0x0
 
     .line 4
+    invoke-direct {v0, v1}, Lks2;-><init>(B)V
+
     .line 5
     .line 6
-    move-result-object p0
-
     .line 7
-    check-cast p0, Lls2;
+    iget-object p0, p0, Lls2;->j:Ljs2;
 
     .line 8
     .line 9
-    return-object p0
+    iput-object p0, v0, Lns2;->y:Ljs2;
+
+    .line 10
+    .line 11
+    const/4 p0, 0x1
+
+    .line 12
+    iput-boolean p0, v0, Lns2;->z:Z
+
+    .line 13
+    .line 14
+    return-object v0
 .end method
 
-.method public static values()[Lls2;
-    .locals 1
+.method public final b(Ljo3;)V
+    .locals 0
 
     .line 1
-    sget-object v0, Lls2;->l:[Lls2;
+    check-cast p1, Lns2;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    iget-object p0, p0, Lls2;->j:Ljs2;
+
+    .line 4
+    .line 5
+    iput-object p0, p1, Lns2;->y:Ljs2;
+
+    .line 6
+    .line 7
+    const/4 p0, 0x1
+
+    .line 8
+    iput-boolean p0, p1, Lns2;->z:Z
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lls2;
+
+    .line 6
+    .line 7
+    if-eqz v1, :cond_1
+
+    .line 8
+    .line 9
+    check-cast p1, Lls2;
+
+    .line 10
+    .line 11
+    goto :goto_0
+
+    .line 12
+    :cond_1
+    const/4 p1, 0x0
+
+    .line 13
+    :goto_0
+    if-nez p1, :cond_2
+
+    .line 14
+    .line 15
+    goto :goto_1
+
+    .line 16
+    :cond_2
+    iget-object p0, p0, Lls2;->j:Ljs2;
+
+    .line 17
+    .line 18
+    iget-object p1, p1, Lls2;->j:Ljs2;
+
+    .line 19
+    .line 20
+    if-ne p0, p1, :cond_3
+
+    .line 21
+    .line 22
+    return v0
+
+    .line 23
+    :cond_3
+    :goto_1
+    const/4 p0, 0x0
+
+    .line 24
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    .line 1
+    iget-object p0, p0, Lls2;->j:Ljs2;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     .line 4
     .line 5
     .line 6
-    move-result-object v0
+    move-result p0
 
     .line 7
-    check-cast v0, [Lls2;
+    mul-int/lit8 p0, p0, 0x1f
 
     .line 8
     .line 9
-    return-object v0
+    const/4 v0, 0x1
+
+    .line 10
+    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    .line 11
+    .line 12
+    .line 13
+    move-result v0
+
+    .line 14
+    add-int/2addr v0, p0
+
+    .line 15
+    return v0
 .end method

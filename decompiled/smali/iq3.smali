@@ -1,14 +1,14 @@
 .class public final Liq3;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public a:I
+.field public final a:Z
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>(Z)V
     .locals 0
 
     .line 1
@@ -17,7 +17,7 @@
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Liq3;->a:I
+    iput-boolean p1, p0, Liq3;->a:Z
 
     .line 5
     .line 6

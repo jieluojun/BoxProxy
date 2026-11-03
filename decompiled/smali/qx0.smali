@@ -1,3 +1,8 @@
-.class public final Lqx0;
-.super Ljava/lang/RuntimeException;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public interface abstract Lqx0;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# virtual methods
+.method public abstract a(Lwj0;FFFF)V
+.end method

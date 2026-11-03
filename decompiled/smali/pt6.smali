@@ -1,31 +1,16 @@
-.class public final synthetic Lpt6;
+.class public abstract Lpt6;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lv52;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:Ltt6;
+.field public final a:Ljava/util/Optional;
 
-.field public final synthetic k:Lxn3;
-
-.field public final synthetic l:F
-
-.field public final synthetic m:Lhx5;
-
-.field public final synthetic n:J
-
-.field public final synthetic o:J
-
-.field public final synthetic p:Lty0;
-
-.field public final synthetic q:I
+.field public final b:Ljava/util/Optional;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ltt6;Lxn3;FLhx5;JJLty0;I)V
+.method public constructor <init>(Ljava/util/Optional;Ljava/util/Optional;)V
     .locals 0
 
     .line 1
@@ -34,115 +19,253 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lpt6;->j:Ltt6;
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lpt6;->k:Lxn3;
-
     .line 7
-    .line 8
-    iput p3, p0, Lpt6;->l:F
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 8
     .line 9
     .line 10
-    iput-object p4, p0, Lpt6;->m:Lhx5;
+    iput-object p1, p0, Lpt6;->a:Ljava/util/Optional;
 
     .line 11
     .line 12
-    iput-wide p5, p0, Lpt6;->n:J
+    iput-object p2, p0, Lpt6;->b:Ljava/util/Optional;
 
     .line 13
     .line 14
-    iput-wide p7, p0, Lpt6;->o:J
-
-    .line 15
-    .line 16
-    iput-object p9, p0, Lpt6;->p:Lty0;
-
-    .line 17
-    .line 18
-    iput p10, p0, Lpt6;->q:I
-
-    .line 19
-    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 11
+.method public a()I
+    .locals 0
 
     .line 1
-    move-object v9, p1
+    const/4 p0, 0x1
 
     .line 2
-    check-cast v9, Lz01;
+    return p0
+.end method
 
+.method public toString()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Lpt6;->a()I
+
+    .line 2
     .line 3
     .line 4
-    check-cast p2, Ljava/lang/Integer;
+    move-result p0
 
     .line 5
-    .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    packed-switch p0, :pswitch_data_0
 
+    .line 6
     .line 7
     .line 8
+    const/4 p0, 0x0
+
     .line 9
-    iget p1, p0, Lpt6;->q:I
+    throw p0
 
     .line 10
-    .line 11
-    or-int/lit8 p1, p1, 0x1
+    :pswitch_0
+    const-string p0, ":"
 
+    .line 11
     .line 12
+    goto :goto_0
+
     .line 13
-    invoke-static {p1}, Lkr5;->i0(I)I
+    :pswitch_1
+    const-string p0, "#"
 
     .line 14
     .line 15
+    goto :goto_0
+
     .line 16
-    move-result v10
+    :pswitch_2
+    const-string p0, "<tag>"
 
     .line 17
-    iget-object v0, p0, Lpt6;->j:Ltt6;
-
     .line 18
+    goto :goto_0
+
     .line 19
-    iget-object v1, p0, Lpt6;->k:Lxn3;
+    :pswitch_3
+    const-string p0, "<stream start>"
 
     .line 20
     .line 21
-    iget v2, p0, Lpt6;->l:F
+    goto :goto_0
 
     .line 22
-    .line 23
-    iget-object v3, p0, Lpt6;->m:Lhx5;
+    :pswitch_4
+    const-string p0, "<stream end>"
 
+    .line 23
     .line 24
+    goto :goto_0
+
     .line 25
-    iget-wide v4, p0, Lpt6;->n:J
+    :pswitch_5
+    const-string p0, "<scalar>"
 
     .line 26
     .line 27
-    iget-wide v6, p0, Lpt6;->o:J
+    goto :goto_0
 
     .line 28
-    .line 29
-    iget-object v8, p0, Lpt6;->p:Lty0;
+    :pswitch_6
+    const-string p0, "?"
 
+    .line 29
     .line 30
+    goto :goto_0
+
     .line 31
-    invoke-static/range {v0 .. v10}, Lrt6;->a(Ltt6;Lxn3;FLhx5;JJLty0;Lz01;I)V
+    :pswitch_7
+    const-string p0, "["
 
     .line 32
     .line 33
+    goto :goto_0
+
     .line 34
-    sget-object p0, Ld07;->a:Ld07;
+    :pswitch_8
+    const-string p0, "]"
 
     .line 35
     .line 36
+    goto :goto_0
+
+    .line 37
+    :pswitch_9
+    const-string p0, "{"
+
+    .line 38
+    .line 39
+    goto :goto_0
+
+    .line 40
+    :pswitch_a
+    const-string p0, "}"
+
+    .line 41
+    .line 42
+    goto :goto_0
+
+    .line 43
+    :pswitch_b
+    const-string p0, ","
+
+    .line 44
+    .line 45
+    goto :goto_0
+
+    .line 46
+    :pswitch_c
+    const-string p0, "<document start>"
+
+    .line 47
+    .line 48
+    goto :goto_0
+
+    .line 49
+    :pswitch_d
+    const-string p0, "<document end>"
+
+    .line 50
+    .line 51
+    goto :goto_0
+
+    .line 52
+    :pswitch_e
+    const-string p0, "<directive>"
+
+    .line 53
+    .line 54
+    goto :goto_0
+
+    .line 55
+    :pswitch_f
+    const-string p0, "<block sequence start>"
+
+    .line 56
+    .line 57
+    goto :goto_0
+
+    .line 58
+    :pswitch_10
+    const-string p0, "<block mapping start>"
+
+    .line 59
+    .line 60
+    goto :goto_0
+
+    .line 61
+    :pswitch_11
+    const-string p0, "-"
+
+    .line 62
+    .line 63
+    goto :goto_0
+
+    .line 64
+    :pswitch_12
+    const-string p0, "<block end>"
+
+    .line 65
+    .line 66
+    goto :goto_0
+
+    .line 67
+    :pswitch_13
+    const-string p0, "<anchor>"
+
+    .line 68
+    .line 69
+    goto :goto_0
+
+    .line 70
+    :pswitch_14
+    const-string p0, "<alias>"
+
+    .line 71
+    .line 72
+    :goto_0
     return-object p0
+
+    .line 73
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

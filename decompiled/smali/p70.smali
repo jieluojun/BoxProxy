@@ -1,23 +1,25 @@
 .class public final Lp70;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lt80;
+.implements Lo80;
 
 
 # static fields
-.field public static final INSTANCE:Lp70;
+.field public static final Companion:Lo70;
 
-.field public static final synthetic a:Lf03;
+
+# instance fields
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
     .line 1
-    new-instance v0, Lp70;
+    new-instance v0, Lo70;
 
     .line 2
     .line 3
@@ -26,46 +28,79 @@
     .line 4
     .line 5
     .line 6
-    sput-object v0, Lp70;->INSTANCE:Lp70;
+    sput-object v0, Lp70;->Companion:Lo70;
 
     .line 7
     .line 8
-    new-instance v0, Lku;
+    return-void
+.end method
 
+.method public synthetic constructor <init>(ILjava/lang/String;)V
+    .locals 2
+
+    .line 1
+    and-int/lit8 v0, p1, 0x1
+
+    .line 2
+    .line 3
+    const/4 v1, 0x1
+
+    .line 4
+    if-ne v1, v0, :cond_0
+
+    .line 5
+    .line 6
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 7
+    .line 8
     .line 9
-    .line 10
-    const/16 v1, 0x1a
+    iput-object p2, p0, Lp70;->a:Ljava/lang/String;
 
+    .line 10
     .line 11
+    return-void
+
     .line 12
-    invoke-direct {v0, v1}, Lku;-><init>(B)V
+    :cond_0
+    sget-object p0, Ln70;->a:Ln70;
 
     .line 13
     .line 14
-    .line 15
-    sget-object v1, Lz33;->j:Lz33;
+    invoke-virtual {p0}, Ln70;->c()Lcx5;
 
+    .line 15
     .line 16
     .line 17
-    invoke-static {v1, v0}, Lra7;->Q(Lz33;Lg52;)Lf03;
+    move-result-object p0
 
     .line 18
+    invoke-static {p1, v1, p0}, Lv33;->Z(IILcx5;)V
+
     .line 19
     .line 20
-    move-result-object v0
-
     .line 21
-    sput-object v0, Lp70;->a:Lf03;
+    const/4 p0, 0x0
 
     .line 22
+    throw p0
+.end method
+
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
+
     .line 23
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lp70;->a:Ljava/lang/String;
+
     return-void
 .end method
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+    .locals 3
 
     .line 1
     const/4 v0, 0x1
@@ -79,21 +114,49 @@
 
     .line 5
     :cond_0
-    instance-of p0, p1, Lp70;
+    instance-of v1, p1, Lp70;
 
     .line 6
     .line 7
-    if-nez p0, :cond_1
+    const/4 v2, 0x0
 
     .line 8
-    .line 9
-    const/4 p0, 0x0
+    if-nez v1, :cond_1
 
+    .line 9
     .line 10
-    return p0
+    return v2
 
     .line 11
     :cond_1
+    check-cast p1, Lp70;
+
+    .line 12
+    .line 13
+    iget-object p0, p0, Lp70;->a:Ljava/lang/String;
+
+    .line 14
+    .line 15
+    iget-object p1, p1, Lp70;->a:Ljava/lang/String;
+
+    .line 16
+    .line 17
+    invoke-static {p0, p1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 18
+    .line 19
+    .line 20
+    move-result p0
+
+    .line 21
+    if-nez p0, :cond_2
+
+    .line 22
+    .line 23
+    return v2
+
+    .line 24
+    :cond_2
     return v0
 .end method
 
@@ -101,50 +164,44 @@
     .locals 0
 
     .line 1
-    const p0, 0x15f71209
+    iget-object p0, p0, Lp70;->a:Ljava/lang/String;
 
     .line 2
     .line 3
-    .line 4
-    return p0
-.end method
-
-.method public final serializer()Lsw2;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lsw2;"
-        }
-    .end annotation
-
-    .line 1
-    sget-object p0, Lp70;->a:Lf03;
-
-    .line 2
-    .line 3
-    invoke-interface {p0}, Lf03;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     .line 4
     .line 5
     .line 6
-    move-result-object p0
+    move-result p0
 
     .line 7
-    check-cast p0, Lsw2;
-
-    .line 8
-    .line 9
-    return-object p0
+    return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 0
+    .locals 2
 
     .line 1
-    const-string p0, "LatencyTargets"
+    const-string v0, "MihomoScripts(coreName="
 
     .line 2
     .line 3
+    const-string v1, ")"
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Lp70;->a:Ljava/lang/String;
+
+    .line 6
+    .line 7
+    invoke-static {v0, p0, v1}, Lpb1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p0
+
+    .line 11
     return-object p0
 .end method

@@ -1,423 +1,223 @@
 .class public final Lg85;
-.super Ll33;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final e:Ljava/lang/reflect/Method;
+.field public a:Lh85;
 
-.field public final f:Ljava/lang/reflect/Method;
+.field public b:I
 
-.field public final g:Ljava/lang/reflect/Method;
+.field public c:Lm62;
 
-.field public final h:Ljava/lang/reflect/Method;
+.field public d:Ls52;
+
+.field public e:I
+
+.field public f:Lir3;
+
+.field public g:Lur3;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 3
+.method public constructor <init>(Lh85;)V
+    .locals 0
 
     .line 1
-    const/16 v0, 0xf
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, v0}, Ll33;-><init>(B)V
-
     .line 4
+    iput-object p1, p0, Lg85;->a:Lh85;
+
     .line 5
     .line 6
-    const-class v0, Ljava/lang/Class;
-
-    .line 7
-    .line 8
-    const-string v1, "isRecord"
-
-    .line 9
-    .line 10
-    const/4 v2, 0x0
-
-    .line 11
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object v1
-
-    .line 15
-    iput-object v1, p0, Lg85;->e:Ljava/lang/reflect/Method;
-
-    .line 16
-    .line 17
-    const-string v1, "getRecordComponents"
-
-    .line 18
-    .line 19
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    .line 20
-    .line 21
-    .line 22
-    move-result-object v0
-
-    .line 23
-    iput-object v0, p0, Lg85;->f:Ljava/lang/reflect/Method;
-
-    .line 24
-    .line 25
-    const-string v0, "java.lang.reflect.RecordComponent"
-
-    .line 26
-    .line 27
-    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
-    .line 28
-    .line 29
-    .line 30
-    move-result-object v0
-
-    .line 31
-    const-string v1, "getName"
-
-    .line 32
-    .line 33
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    .line 34
-    .line 35
-    .line 36
-    move-result-object v1
-
-    .line 37
-    iput-object v1, p0, Lg85;->g:Ljava/lang/reflect/Method;
-
-    .line 38
-    .line 39
-    const-string v1, "getType"
-
-    .line 40
-    .line 41
-    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    .line 42
-    .line 43
-    .line 44
-    move-result-object v0
-
-    .line 45
-    iput-object v0, p0, Lg85;->h:Ljava/lang/reflect/Method;
-
-    .line 46
-    .line 47
     return-void
 .end method
 
 
 # virtual methods
-.method public final D(Ljava/lang/Class;)Z
-    .locals 1
+.method public final a()Z
+    .locals 2
 
     .line 1
-    :try_start_0
-    iget-object p0, p0, Lg85;->e:Ljava/lang/reflect/Method;
+    iget-object v0, p0, Lg85;->a:Lh85;
 
     .line 2
     .line 3
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
     .line 4
-    invoke-virtual {p0, p1, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz v0, :cond_1
 
     .line 5
     .line 6
-    .line 7
-    move-result-object p0
+    iget-object p0, p0, Lg85;->c:Lm62;
 
+    .line 7
     .line 8
-    check-cast p0, Ljava/lang/Boolean;
+    if-eqz p0, :cond_0
 
     .line 9
     .line 10
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-virtual {p0}, Lm62;->a()Z
 
     .line 11
     .line 12
     .line 13
     move-result p0
-    :try_end_0
-    .catch Ljava/lang/ReflectiveOperationException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 14
-    return p0
-
-    .line 15
-    :catch_0
-    move-exception p0
-
-    .line 16
-    const-string p1, "Unexpected ReflectiveOperationException occurred (Gson 2.13.2). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior."
-
-    .line 17
-    .line 18
-    invoke-static {p1, p0}, Lyd1;->j(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 19
-    .line 20
-    .line 21
-    const/4 p0, 0x0
-
-    .line 22
-    return p0
-.end method
-
-.method public final t(Ljava/lang/reflect/Field;Ljava/lang/Class;)Ljava/lang/reflect/Method;
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    :try_start_0
-    invoke-virtual {p1}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
-
-    .line 3
-    .line 4
-    .line 5
-    move-result-object p1
-
-    .line 6
-    invoke-virtual {p2, p1, p0}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    .line 7
-    .line 8
-    .line 9
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/ReflectiveOperationException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 10
-    return-object p0
-
-    .line 11
-    :catch_0
-    move-exception p1
-
-    .line 12
-    const-string p2, "Unexpected ReflectiveOperationException occurred (Gson 2.13.2). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior."
-
-    .line 13
-    .line 14
-    invoke-static {p2, p1}, Lyd1;->j(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 15
-    .line 16
-    .line 17
-    return-object p0
-.end method
-
-.method public final u(Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
-    .locals 6
-
-    .line 1
-    const/4 v0, 0x0
-
-    .line 2
-    :try_start_0
-    iget-object v1, p0, Lg85;->f:Ljava/lang/reflect/Method;
-
-    .line 3
-    .line 4
-    invoke-virtual {v1, p1, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 5
-    .line 6
-    .line 7
-    move-result-object v1
-
-    .line 8
-    check-cast v1, [Ljava/lang/Object;
-
-    .line 9
-    .line 10
-    array-length v2, v1
-
-    .line 11
-    new-array v2, v2, [Ljava/lang/Class;
-
-    .line 12
-    .line 13
-    const/4 v3, 0x0
-
-    .line 14
-    :goto_0
-    array-length v4, v1
-
-    .line 15
-    if-ge v3, v4, :cond_0
-
-    .line 16
-    .line 17
-    iget-object v4, p0, Lg85;->h:Ljava/lang/reflect/Method;
-
-    .line 18
-    .line 19
-    aget-object v5, v1, v3
-
-    .line 20
-    .line 21
-    invoke-virtual {v4, v5, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 22
-    .line 23
-    .line 24
-    move-result-object v4
-
-    .line 25
-    check-cast v4, Ljava/lang/Class;
-
-    .line 26
-    .line 27
-    aput-object v4, v2, v3
-
-    .line 28
-    .line 29
-    add-int/lit8 v3, v3, 0x1
-
-    .line 30
-    .line 31
     goto :goto_0
 
-    .line 32
-    :catch_0
-    move-exception p0
-
-    .line 33
-    goto :goto_1
-
-    .line 34
+    .line 15
     :cond_0
-    invoke-virtual {p1, v2}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    move p0, v1
 
-    .line 35
-    .line 36
-    .line 37
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/ReflectiveOperationException; {:try_start_0 .. :try_end_0} :catch_0
+    .line 16
+    :goto_0
+    if-eqz p0, :cond_1
 
-    .line 38
-    return-object p0
+    .line 17
+    .line 18
+    const/4 p0, 0x1
 
-    .line 39
-    :goto_1
-    const-string p1, "Unexpected ReflectiveOperationException occurred (Gson 2.13.2). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior."
+    .line 19
+    return p0
 
-    .line 40
-    .line 41
-    invoke-static {p1, p0}, Lyd1;->j(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 42
-    .line 43
-    .line 44
-    return-object v0
+    .line 20
+    :cond_1
+    return v1
 .end method
 
-.method public final w(Ljava/lang/Class;)[Ljava/lang/String;
-    .locals 5
+.method public final b(Ljava/lang/Object;)Lys2;
+    .locals 1
 
     .line 1
-    const/4 v0, 0x0
+    iget-object v0, p0, Lg85;->a:Lh85;
 
     .line 2
-    :try_start_0
-    iget-object v1, p0, Lg85;->f:Ljava/lang/reflect/Method;
-
     .line 3
-    .line 4
-    invoke-virtual {v1, p1, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    if-eqz v0, :cond_1
 
+    .line 4
     .line 5
+    invoke-interface {v0, p0, p1}, Lh85;->e(Lg85;Ljava/lang/Object;)Lys2;
+
     .line 6
     .line 7
-    move-result-object p1
-
     .line 8
-    check-cast p1, [Ljava/lang/Object;
+    move-result-object p0
 
     .line 9
-    .line 10
-    array-length v1, p1
+    if-nez p0, :cond_0
 
+    .line 10
     .line 11
-    new-array v1, v1, [Ljava/lang/String;
+    goto :goto_0
+
+    .line 12
+    :cond_0
+    return-object p0
+
+    .line 13
+    :cond_1
+    :goto_0
+    sget-object p0, Lys2;->j:Lys2;
+
+    .line 14
+    .line 15
+    return-object p0
+.end method
+
+.method public final c()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lg85;->a:Lh85;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {v0}, Lh85;->f()V
+
+    .line 6
+    .line 7
+    .line 8
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 9
+    iput-object v0, p0, Lg85;->a:Lh85;
+
+    .line 10
+    .line 11
+    iput-object v0, p0, Lg85;->f:Lir3;
 
     .line 12
     .line 13
-    const/4 v2, 0x0
+    iput-object v0, p0, Lg85;->g:Lur3;
 
     .line 14
-    :goto_0
-    array-length v3, p1
-
     .line 15
-    if-ge v2, v3, :cond_0
+    iput-object v0, p0, Lg85;->d:Ls52;
 
     .line 16
     .line 17
-    iget-object v3, p0, Lg85;->g:Ljava/lang/reflect/Method;
+    return-void
+.end method
 
-    .line 18
-    .line 19
-    aget-object v4, p1, v2
+.method public final d(Z)V
+    .locals 1
 
-    .line 20
-    .line 21
-    invoke-virtual {v3, v4, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    .line 1
+    iget v0, p0, Lg85;->b:I
 
-    .line 22
-    .line 23
-    .line 24
-    move-result-object v3
+    .line 2
+    .line 3
+    if-eqz p1, :cond_0
 
-    .line 25
-    check-cast v3, Ljava/lang/String;
+    .line 4
+    .line 5
+    or-int/lit8 p1, v0, 0x20
 
-    .line 26
-    .line 27
-    aput-object v3, v1, v2
-    :try_end_0
-    .catch Ljava/lang/ReflectiveOperationException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 28
-    .line 29
-    add-int/lit8 v2, v2, 0x1
-
-    .line 30
-    .line 31
+    .line 6
+    .line 7
     goto :goto_0
 
-    .line 32
-    :catch_0
-    move-exception p0
-
-    .line 33
-    goto :goto_1
-
-    .line 34
+    .line 8
     :cond_0
-    return-object v1
+    and-int/lit8 p1, v0, -0x21
 
-    .line 35
-    :goto_1
-    const-string p1, "Unexpected ReflectiveOperationException occurred (Gson 2.13.2). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior."
+    .line 9
+    .line 10
+    :goto_0
+    iput p1, p0, Lg85;->b:I
 
-    .line 36
-    .line 37
-    invoke-static {p1, p0}, Lyd1;->j(Ljava/lang/String;Ljava/lang/Throwable;)V
+    .line 11
+    .line 12
+    return-void
+.end method
 
-    .line 38
-    .line 39
-    .line 40
-    return-object v0
+.method public final e()V
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lg85;->b:I
+
+    .line 2
+    .line 3
+    or-int/lit8 v0, v0, 0x1
+
+    .line 4
+    .line 5
+    iput v0, p0, Lg85;->b:I
+
+    .line 6
+    .line 7
+    return-void
 .end method

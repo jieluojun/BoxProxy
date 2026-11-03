@@ -1,52 +1,103 @@
-.class public final Lxe0;
+.class public final synthetic Lxe0;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ld52;
 
 
 # instance fields
-.field public final a:Lnr3;
+.field public final synthetic j:B
 
-.field public final b:Lnr3;
-
-.field public final c:Lnr3;
+.field public final synthetic k:Loe0;
 
 
 # direct methods
-.method public constructor <init>(Lnr3;Lnr3;Lnr3;)V
+.method public synthetic constructor <init>(Loe0;B)V
     .locals 0
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-byte p2, p0, Lxe0;->j:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Lxe0;->k:Loe0;
+
     .line 4
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 6
+    .line 7
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
+
+    .line 1
+    iget-byte v0, p0, Lxe0;->j:B
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    sget-object v2, Lk27;->a:Lk27;
 
     .line 5
     .line 6
-    .line 7
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, Lxe0;->k:Loe0;
 
+    .line 7
     .line 8
+    packed-switch v0, :pswitch_data_0
+
     .line 9
     .line 10
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 11
+    invoke-virtual {p0}, Loe0;->e()V
+
     .line 12
     .line 13
-    iput-object p1, p0, Lxe0;->a:Lnr3;
-
     .line 14
+    return-object v2
+
     .line 15
-    iput-object p2, p0, Lxe0;->b:Lnr3;
+    :pswitch_0
+    invoke-virtual {p0, v1}, Loe0;->d(Z)V
 
     .line 16
     .line 17
-    iput-object p3, p0, Lxe0;->c:Lnr3;
-
     .line 18
+    return-object v2
+
     .line 19
-    return-void
+    :pswitch_1
+    invoke-virtual {p0, v1}, Loe0;->d(Z)V
+
+    .line 20
+    .line 21
+    .line 22
+    return-object v2
+
+    .line 23
+    :pswitch_2
+    invoke-virtual {p0}, Loe0;->e()V
+
+    .line 24
+    .line 25
+    .line 26
+    return-object v2
+
+    .line 27
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

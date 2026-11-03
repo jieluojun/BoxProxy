@@ -1,53 +1,755 @@
-.class public final synthetic Ll77;
+.class public final Ll77;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Lr52;
+
+# static fields
+.field public static final k:Ll77;
 
 
 # instance fields
-.field public final synthetic A:Lnr3;
+.field public final a:F
 
-.field public final synthetic B:Lnr3;
+.field public final b:F
 
-.field public final synthetic j:Landroid/view/ContextThemeWrapper;
+.field public final c:F
 
-.field public final synthetic k:Landroid/webkit/CookieManager;
+.field public final d:F
 
-.field public final synthetic l:Ljava/lang/String;
+.field public final e:F
 
-.field public final synthetic m:Landroid/webkit/WebViewClient;
+.field public final f:F
 
-.field public final synthetic n:Landroid/webkit/WebChromeClient;
+.field public final g:[F
 
-.field public final synthetic o:Z
+.field public final h:F
 
-.field public final synthetic p:Ljava/lang/String;
+.field public final i:F
 
-.field public final synthetic q:I
-
-.field public final synthetic r:I
-
-.field public final synthetic s:I
-
-.field public final synthetic t:Lfb1;
-
-.field public final synthetic u:Ljava/lang/String;
-
-.field public final synthetic v:Landroid/content/Context;
-
-.field public final synthetic w:Lnr3;
-
-.field public final synthetic x:Lr52;
-
-.field public final synthetic y:Ljava/lang/String;
-
-.field public final synthetic z:Lye3;
+.field public final j:F
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/view/ContextThemeWrapper;Landroid/webkit/CookieManager;Ljava/lang/String;Landroid/webkit/WebViewClient;Landroid/webkit/WebChromeClient;ZLjava/lang/String;IIILfb1;Ljava/lang/String;Landroid/content/Context;Lnr3;Lr52;Ljava/lang/String;Lye3;Lnr3;Lnr3;)V
+.method static constructor <clinit>()V
+    .locals 24
+
+    .line 1
+    sget-object v0, Los2;->e:[F
+
+    .line 2
+    .line 3
+    invoke-static {}, Los2;->L()F
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v1
+
+    .line 7
+    float-to-double v1, v1
+
+    .line 8
+    const-wide v3, 0x404fd4bbab8b494cL    # 63.66197723675813
+
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    mul-double/2addr v1, v3
+
+    .line 14
+    const-wide/high16 v3, 0x4059000000000000L    # 100.0
+
+    .line 15
+    .line 16
+    div-double/2addr v1, v3
+
+    .line 17
+    double-to-float v1, v1
+
+    .line 18
+    sget-object v2, Los2;->c:[[F
+
+    .line 19
+    .line 20
+    const/4 v5, 0x0
+
+    .line 21
+    aget v6, v0, v5
+
+    .line 22
+    .line 23
+    aget-object v7, v2, v5
+
+    .line 24
+    .line 25
+    aget v8, v7, v5
+
+    .line 26
+    .line 27
+    mul-float/2addr v8, v6
+
+    .line 28
+    const/4 v9, 0x1
+
+    .line 29
+    aget v10, v0, v9
+
+    .line 30
+    .line 31
+    aget v11, v7, v9
+
+    .line 32
+    .line 33
+    mul-float/2addr v11, v10
+
+    .line 34
+    add-float/2addr v11, v8
+
+    .line 35
+    const/4 v8, 0x2
+
+    .line 36
+    aget v12, v0, v8
+
+    .line 37
+    .line 38
+    aget v7, v7, v8
+
+    .line 39
+    .line 40
+    mul-float/2addr v7, v12
+
+    .line 41
+    add-float/2addr v7, v11
+
+    .line 42
+    aget-object v11, v2, v9
+
+    .line 43
+    .line 44
+    aget v13, v11, v5
+
+    .line 45
+    .line 46
+    mul-float/2addr v13, v6
+
+    .line 47
+    aget v14, v11, v9
+
+    .line 48
+    .line 49
+    mul-float/2addr v14, v10
+
+    .line 50
+    add-float/2addr v14, v13
+
+    .line 51
+    aget v11, v11, v8
+
+    .line 52
+    .line 53
+    mul-float/2addr v11, v12
+
+    .line 54
+    add-float/2addr v11, v14
+
+    .line 55
+    aget-object v2, v2, v8
+
+    .line 56
+    .line 57
+    aget v13, v2, v5
+
+    .line 58
+    .line 59
+    mul-float/2addr v6, v13
+
+    .line 60
+    aget v13, v2, v9
+
+    .line 61
+    .line 62
+    mul-float/2addr v10, v13
+
+    .line 63
+    add-float/2addr v10, v6
+
+    .line 64
+    aget v2, v2, v8
+
+    .line 65
+    .line 66
+    mul-float/2addr v12, v2
+
+    .line 67
+    add-float/2addr v12, v10
+
+    .line 68
+    neg-float v2, v1
+
+    .line 69
+    const/high16 v6, 0x42280000    # 42.0f
+
+    .line 70
+    .line 71
+    sub-float/2addr v2, v6
+
+    .line 72
+    const/high16 v6, 0x42b80000    # 92.0f
+
+    .line 73
+    .line 74
+    div-float/2addr v2, v6
+
+    .line 75
+    float-to-double v13, v2
+
+    .line 76
+    invoke-static {v13, v14}, Ljava/lang/Math;->exp(D)D
+
+    .line 77
+    .line 78
+    .line 79
+    move-result-wide v13
+
+    .line 80
+    double-to-float v2, v13
+
+    .line 81
+    const v6, 0x3e8e38e4
+
+    .line 82
+    .line 83
+    .line 84
+    mul-float/2addr v2, v6
+
+    .line 85
+    const/high16 v6, 0x3f800000    # 1.0f
+
+    .line 86
+    .line 87
+    sub-float v2, v6, v2
+
+    .line 88
+    .line 89
+    const/high16 v19, 0x3f800000    # 1.0f
+
+    .line 90
+    .line 91
+    mul-float v2, v2, v19
+
+    .line 92
+    .line 93
+    float-to-double v13, v2
+
+    .line 94
+    const-wide/high16 v15, 0x3ff0000000000000L    # 1.0
+
+    .line 95
+    .line 96
+    cmpl-double v10, v13, v15
+
+    .line 97
+    .line 98
+    if-lez v10, :cond_0
+
+    .line 99
+    .line 100
+    move v2, v6
+
+    .line 101
+    goto :goto_0
+
+    .line 102
+    :cond_0
+    const-wide/16 v15, 0x0
+
+    .line 103
+    .line 104
+    cmpg-double v10, v13, v15
+
+    .line 105
+    .line 106
+    if-gez v10, :cond_1
+
+    .line 107
+    .line 108
+    const/4 v2, 0x0
+
+    .line 109
+    :cond_1
+    :goto_0
+    const/high16 v10, 0x42c80000    # 100.0f
+
+    .line 110
+    .line 111
+    div-float v13, v10, v7
+
+    .line 112
+    .line 113
+    mul-float/2addr v13, v2
+
+    .line 114
+    add-float/2addr v13, v6
+
+    .line 115
+    sub-float/2addr v13, v2
+
+    .line 116
+    div-float v14, v10, v11
+
+    .line 117
+    .line 118
+    mul-float/2addr v14, v2
+
+    .line 119
+    add-float/2addr v14, v6
+
+    .line 120
+    sub-float/2addr v14, v2
+
+    .line 121
+    div-float/2addr v10, v12
+
+    .line 122
+    mul-float/2addr v10, v2
+
+    .line 123
+    add-float/2addr v10, v6
+
+    .line 124
+    sub-float/2addr v10, v2
+
+    .line 125
+    const/4 v2, 0x3
+
+    .line 126
+    new-array v15, v2, [F
+
+    .line 127
+    .line 128
+    aput v13, v15, v5
+
+    .line 129
+    .line 130
+    aput v14, v15, v9
+
+    .line 131
+    .line 132
+    aput v10, v15, v8
+
+    .line 133
+    .line 134
+    const/high16 v10, 0x40a00000    # 5.0f
+
+    .line 135
+    .line 136
+    mul-float/2addr v10, v1
+
+    .line 137
+    add-float/2addr v10, v6
+
+    .line 138
+    div-float v10, v6, v10
+
+    .line 139
+    .line 140
+    mul-float v13, v10, v10
+
+    .line 141
+    .line 142
+    mul-float/2addr v13, v10
+
+    .line 143
+    mul-float/2addr v13, v10
+
+    .line 144
+    sub-float/2addr v6, v13
+
+    .line 145
+    mul-float/2addr v13, v1
+
+    .line 146
+    const v10, 0x3dcccccd    # 0.1f
+
+    .line 147
+    .line 148
+    .line 149
+    mul-float/2addr v10, v6
+
+    .line 150
+    mul-float/2addr v10, v6
+
+    .line 151
+    const-wide/high16 v16, 0x4014000000000000L    # 5.0
+
+    .line 152
+    .line 153
+    move-wide/from16 v20, v3
+
+    .line 154
+    .line 155
+    float-to-double v3, v1
+
+    .line 156
+    mul-double v3, v3, v16
+
+    .line 157
+    .line 158
+    invoke-static {v3, v4}, Ljava/lang/Math;->cbrt(D)D
+
+    .line 159
+    .line 160
+    .line 161
+    move-result-wide v3
+
+    .line 162
+    double-to-float v1, v3
+
+    .line 163
+    mul-float/2addr v10, v1
+
+    .line 164
+    add-float/2addr v10, v13
+
+    .line 165
+    invoke-static {}, Los2;->L()F
+
+    .line 166
+    .line 167
+    .line 168
+    move-result v1
+
+    .line 169
+    aget v0, v0, v9
+
+    .line 170
+    .line 171
+    div-float v14, v1, v0
+
+    .line 172
+    .line 173
+    float-to-double v0, v14
+
+    .line 174
+    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
+
+    .line 175
+    .line 176
+    .line 177
+    move-result-wide v3
+
+    .line 178
+    double-to-float v3, v3
+
+    .line 179
+    const v4, 0x3fbd70a4    # 1.48f
+
+    .line 180
+    .line 181
+    .line 182
+    add-float v23, v3, v4
+
+    .line 183
+    .line 184
+    const-wide v3, 0x3fc999999999999aL    # 0.2
+
+    .line 185
+    .line 186
+    .line 187
+    .line 188
+    .line 189
+    invoke-static {v0, v1, v3, v4}, Ljava/lang/Math;->pow(DD)D
+
+    .line 190
+    .line 191
+    .line 192
+    move-result-wide v0
+
+    .line 193
+    double-to-float v0, v0
+
+    .line 194
+    const v1, 0x3f39999a    # 0.725f
+
+    .line 195
+    .line 196
+    .line 197
+    div-float v16, v1, v0
+
+    .line 198
+    .line 199
+    aget v0, v15, v5
+
+    .line 200
+    .line 201
+    mul-float/2addr v0, v10
+
+    .line 202
+    mul-float/2addr v0, v7
+
+    .line 203
+    float-to-double v0, v0
+
+    .line 204
+    div-double v0, v0, v20
+
+    .line 205
+    .line 206
+    const-wide v3, 0x3fdae147ae147ae1L    # 0.42
+
+    .line 207
+    .line 208
+    .line 209
+    .line 210
+    .line 211
+    invoke-static {v0, v1, v3, v4}, Ljava/lang/Math;->pow(DD)D
+
+    .line 212
+    .line 213
+    .line 214
+    move-result-wide v0
+
+    .line 215
+    double-to-float v0, v0
+
+    .line 216
+    aget v1, v15, v9
+
+    .line 217
+    .line 218
+    mul-float/2addr v1, v10
+
+    .line 219
+    mul-float/2addr v1, v11
+
+    .line 220
+    float-to-double v6, v1
+
+    .line 221
+    div-double v6, v6, v20
+
+    .line 222
+    .line 223
+    invoke-static {v6, v7, v3, v4}, Ljava/lang/Math;->pow(DD)D
+
+    .line 224
+    .line 225
+    .line 226
+    move-result-wide v6
+
+    .line 227
+    double-to-float v1, v6
+
+    .line 228
+    aget v6, v15, v8
+
+    .line 229
+    .line 230
+    mul-float/2addr v6, v10
+
+    .line 231
+    mul-float/2addr v6, v12
+
+    .line 232
+    float-to-double v6, v6
+
+    .line 233
+    div-double v6, v6, v20
+
+    .line 234
+    .line 235
+    invoke-static {v6, v7, v3, v4}, Ljava/lang/Math;->pow(DD)D
+
+    .line 236
+    .line 237
+    .line 238
+    move-result-wide v3
+
+    .line 239
+    double-to-float v3, v3
+
+    .line 240
+    new-array v4, v2, [F
+
+    .line 241
+    .line 242
+    aput v0, v4, v5
+
+    .line 243
+    .line 244
+    aput v1, v4, v9
+
+    .line 245
+    .line 246
+    aput v3, v4, v8
+
+    .line 247
+    .line 248
+    aget v0, v4, v5
+
+    .line 249
+    .line 250
+    const/high16 v1, 0x43c80000    # 400.0f
+
+    .line 251
+    .line 252
+    mul-float v3, v0, v1
+
+    .line 253
+    .line 254
+    const v6, 0x41d90a3d    # 27.13f
+
+    .line 255
+    .line 256
+    .line 257
+    add-float/2addr v0, v6
+
+    .line 258
+    div-float/2addr v3, v0
+
+    .line 259
+    aget v0, v4, v9
+
+    .line 260
+    .line 261
+    mul-float v7, v0, v1
+
+    .line 262
+    .line 263
+    add-float/2addr v0, v6
+
+    .line 264
+    div-float/2addr v7, v0
+
+    .line 265
+    aget v0, v4, v8
+
+    .line 266
+    .line 267
+    mul-float/2addr v1, v0
+
+    .line 268
+    add-float/2addr v0, v6
+
+    .line 269
+    div-float/2addr v1, v0
+
+    .line 270
+    new-array v0, v2, [F
+
+    .line 271
+    .line 272
+    aput v3, v0, v5
+
+    .line 273
+    .line 274
+    aput v7, v0, v9
+
+    .line 275
+    .line 276
+    aput v1, v0, v8
+
+    .line 277
+    .line 278
+    const/high16 v1, 0x40000000    # 2.0f
+
+    .line 279
+    .line 280
+    aget v2, v0, v5
+
+    .line 281
+    .line 282
+    mul-float/2addr v2, v1
+
+    .line 283
+    aget v1, v0, v9
+
+    .line 284
+    .line 285
+    add-float/2addr v2, v1
+
+    .line 286
+    const v1, 0x3d4ccccd    # 0.05f
+
+    .line 287
+    .line 288
+    .line 289
+    aget v0, v0, v8
+
+    .line 290
+    .line 291
+    mul-float/2addr v0, v1
+
+    .line 292
+    add-float/2addr v0, v2
+
+    .line 293
+    mul-float v0, v0, v16
+
+    .line 294
+    .line 295
+    new-instance v13, Ll77;
+
+    .line 296
+    .line 297
+    float-to-double v1, v10
+
+    .line 298
+    const-wide/high16 v3, 0x3fd0000000000000L    # 0.25
+
+    .line 299
+    .line 300
+    invoke-static {v1, v2, v3, v4}, Ljava/lang/Math;->pow(DD)D
+
+    .line 301
+    .line 302
+    .line 303
+    move-result-wide v1
+
+    .line 304
+    double-to-float v1, v1
+
+    .line 305
+    const v18, 0x3f30a3d7    # 0.69f
+
+    .line 306
+    .line 307
+    .line 308
+    move/from16 v17, v16
+
+    .line 309
+    .line 310
+    move/from16 v22, v1
+
+    .line 311
+    .line 312
+    move/from16 v21, v10
+
+    .line 313
+    .line 314
+    move-object/from16 v20, v15
+
+    .line 315
+    .line 316
+    move v15, v0
+
+    .line 317
+    invoke-direct/range {v13 .. v23}, Ll77;-><init>(FFFFFF[FFFF)V
+
+    .line 318
+    .line 319
+    .line 320
+    sput-object v13, Ll77;->k:Ll77;
+
+    .line 321
+    .line 322
+    return-void
+.end method
+
+.method public constructor <init>(FFFFFF[FFFF)V
     .locals 0
 
     .line 1
@@ -56,732 +758,45 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Ll77;->j:Landroid/view/ContextThemeWrapper;
+    iput p1, p0, Ll77;->f:F
 
     .line 5
     .line 6
-    iput-object p2, p0, Ll77;->k:Landroid/webkit/CookieManager;
+    iput p2, p0, Ll77;->a:F
 
     .line 7
     .line 8
-    iput-object p3, p0, Ll77;->l:Ljava/lang/String;
+    iput p3, p0, Ll77;->b:F
 
     .line 9
     .line 10
-    iput-object p4, p0, Ll77;->m:Landroid/webkit/WebViewClient;
+    iput p4, p0, Ll77;->c:F
 
     .line 11
     .line 12
-    iput-object p5, p0, Ll77;->n:Landroid/webkit/WebChromeClient;
+    iput p5, p0, Ll77;->d:F
 
     .line 13
     .line 14
-    iput-boolean p6, p0, Ll77;->o:Z
+    iput p6, p0, Ll77;->e:F
 
     .line 15
     .line 16
-    iput-object p7, p0, Ll77;->p:Ljava/lang/String;
+    iput-object p7, p0, Ll77;->g:[F
 
     .line 17
     .line 18
-    iput p8, p0, Ll77;->q:I
+    iput p8, p0, Ll77;->h:F
 
     .line 19
     .line 20
-    iput p9, p0, Ll77;->r:I
+    iput p9, p0, Ll77;->i:F
 
     .line 21
     .line 22
-    iput p10, p0, Ll77;->s:I
+    iput p10, p0, Ll77;->j:F
 
     .line 23
     .line 24
-    iput-object p11, p0, Ll77;->t:Lfb1;
-
-    .line 25
-    .line 26
-    iput-object p12, p0, Ll77;->u:Ljava/lang/String;
-
-    .line 27
-    .line 28
-    iput-object p13, p0, Ll77;->v:Landroid/content/Context;
-
-    .line 29
-    .line 30
-    iput-object p14, p0, Ll77;->w:Lnr3;
-
-    .line 31
-    .line 32
-    iput-object p15, p0, Ll77;->x:Lr52;
-
-    .line 33
-    .line 34
-    move-object/from16 p1, p16
-
-    .line 35
-    .line 36
-    iput-object p1, p0, Ll77;->y:Ljava/lang/String;
-
-    .line 37
-    .line 38
-    move-object/from16 p1, p17
-
-    .line 39
-    .line 40
-    iput-object p1, p0, Ll77;->z:Lye3;
-
-    .line 41
-    .line 42
-    move-object/from16 p1, p18
-
-    .line 43
-    .line 44
-    iput-object p1, p0, Ll77;->A:Lnr3;
-
-    .line 45
-    .line 46
-    move-object/from16 p1, p19
-
-    .line 47
-    .line 48
-    iput-object p1, p0, Ll77;->B:Lnr3;
-
-    .line 49
-    .line 50
     return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 18
-
-    .line 1
-    move-object/from16 v0, p0
-
-    .line 2
-    .line 3
-    move-object/from16 v1, p1
-
-    .line 4
-    .line 5
-    check-cast v1, Landroid/content/Context;
-
-    .line 6
-    .line 7
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 8
-    .line 9
-    .line 10
-    new-instance v1, Landroid/webkit/WebView;
-
-    .line 11
-    .line 12
-    iget-object v2, v0, Ll77;->j:Landroid/view/ContextThemeWrapper;
-
-    .line 13
-    .line 14
-    invoke-direct {v1, v2}, Landroid/webkit/WebView;-><init>(Landroid/content/Context;)V
-
-    .line 15
-    .line 16
-    .line 17
-    new-instance v2, Landroid/view/ViewGroup$LayoutParams;
-
-    .line 18
-    .line 19
-    const/4 v3, -0x1
-
-    .line 20
-    invoke-direct {v2, v3, v3}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
-
-    .line 21
-    .line 22
-    .line 23
-    invoke-virtual {v1, v2}, Landroid/webkit/WebView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 24
-    .line 25
-    .line 26
-    const/4 v2, 0x2
-
-    .line 27
-    invoke-virtual {v1, v2}, Landroid/webkit/WebView;->setOverScrollMode(I)V
-
-    .line 28
-    .line 29
-    .line 30
-    new-instance v4, Ln77;
-
-    .line 31
-    .line 32
-    invoke-direct {v4}, Ljava/lang/Object;-><init>()V
-
-    .line 33
-    .line 34
-    .line 35
-    invoke-virtual {v1, v4}, Landroid/view/View;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
-
-    .line 36
-    .line 37
-    .line 38
-    iget-object v4, v0, Ll77;->k:Landroid/webkit/CookieManager;
-
-    .line 39
-    .line 40
-    const/4 v5, 0x1
-
-    .line 41
-    invoke-virtual {v4, v5}, Landroid/webkit/CookieManager;->setAcceptCookie(Z)V
-
-    .line 42
-    .line 43
-    .line 44
-    invoke-virtual {v4, v1, v5}, Landroid/webkit/CookieManager;->setAcceptThirdPartyCookies(Landroid/webkit/WebView;Z)V
-
-    .line 45
-    .line 46
-    .line 47
-    iget-object v6, v0, Ll77;->l:Ljava/lang/String;
-
-    .line 48
-    .line 49
-    iget-object v8, v0, Ll77;->p:Ljava/lang/String;
-
-    .line 50
-    .line 51
-    iget-object v10, v0, Ll77;->x:Lr52;
-
-    .line 52
-    .line 53
-    iget-object v14, v0, Ll77;->y:Ljava/lang/String;
-
-    .line 54
-    .line 55
-    iget-object v15, v0, Ll77;->z:Lye3;
-
-    .line 56
-    .line 57
-    iget-object v7, v0, Ll77;->A:Lnr3;
-
-    .line 58
-    .line 59
-    const/4 v9, 0x0
-
-    .line 60
-    if-eqz v6, :cond_1
-
-    .line 61
-    .line 62
-    const-string v11, "WEB_MESSAGE_LISTENER"
-
-    .line 63
-    .line 64
-    invoke-static {v11}, Lz77;->a(Ljava/lang/String;)Z
-
-    .line 65
-    .line 66
-    .line 67
-    move-result v11
-
-    .line 68
-    if-eqz v11, :cond_1
-
-    .line 69
-    .line 70
-    invoke-static {v6}, Lcw5;->Q(Ljava/lang/Object;)Ljava/util/Set;
-
-    .line 71
-    .line 72
-    .line 73
-    move-result-object v6
-
-    .line 74
-    move-object/from16 v16, v7
-
-    .line 75
-    .line 76
-    new-instance v7, Lo77;
-
-    .line 77
-    .line 78
-    move-object v11, v8
-
-    .line 79
-    iget-object v8, v0, Ll77;->t:Lfb1;
-
-    .line 80
-    .line 81
-    move v12, v9
-
-    .line 82
-    iget-object v9, v0, Ll77;->u:Ljava/lang/String;
-
-    .line 83
-    .line 84
-    move-object v13, v10
-
-    .line 85
-    iget-object v10, v0, Ll77;->v:Landroid/content/Context;
-
-    .line 86
-    .line 87
-    move/from16 v17, v12
-
-    .line 88
-    .line 89
-    iget-object v12, v0, Ll77;->w:Lnr3;
-
-    .line 90
-    .line 91
-    move/from16 v4, v17
-
-    .line 92
-    .line 93
-    const/16 p1, 0x0
-
-    .line 94
-    .line 95
-    invoke-direct/range {v7 .. v16}, Lo77;-><init>(Lfb1;Ljava/lang/String;Landroid/content/Context;Ljava/lang/String;Lnr3;Lr52;Ljava/lang/String;Lye3;Lnr3;)V
-
-    .line 96
-    .line 97
-    .line 98
-    sget-object v8, Lh77;->a:Ljava/util/WeakHashMap;
-
-    .line 99
-    .line 100
-    sget-object v8, Lz77;->c:Laj;
-
-    .line 101
-    .line 102
-    invoke-virtual {v8}, Laj;->a()Z
-
-    .line 103
-    .line 104
-    .line 105
-    move-result v8
-
-    .line 106
-    if-eqz v8, :cond_0
-
-    .line 107
-    .line 108
-    invoke-static {v1}, Lh77;->a(Landroid/webkit/WebView;)Lb87;
-
-    .line 109
-    .line 110
-    .line 111
-    move-result-object v8
-
-    .line 112
-    new-array v9, v4, [Ljava/lang/String;
-
-    .line 113
-    .line 114
-    invoke-interface {v6, v9}, Ljava/util/Set;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-
-    .line 115
-    .line 116
-    .line 117
-    move-result-object v6
-
-    .line 118
-    check-cast v6, [Ljava/lang/String;
-
-    .line 119
-    .line 120
-    iget-object v8, v8, Lb87;->a:Lorg/chromium/support_lib_boundary/WebViewProviderBoundaryInterface;
-
-    .line 121
-    .line 122
-    new-instance v9, Lt57;
-
-    .line 123
-    .line 124
-    invoke-direct {v9, v7, v4}, Lt57;-><init>(Ljava/lang/Object;B)V
-
-    .line 125
-    .line 126
-    .line 127
-    new-instance v7, Lu50;
-
-    .line 128
-    .line 129
-    invoke-direct {v7, v9}, Lu50;-><init>(Lt57;)V
-
-    .line 130
-    .line 131
-    .line 132
-    const-string v9, "BoxAndroid"
-
-    .line 133
-    .line 134
-    invoke-interface {v8, v9, v6, v7}, Lorg/chromium/support_lib_boundary/WebViewProviderBoundaryInterface;->addWebMessageListener(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/reflect/InvocationHandler;)V
-
-    .line 135
-    .line 136
-    .line 137
-    goto :goto_0
-
-    .line 138
-    :cond_0
-    const-string v0, "This method is not supported by the current version of the framework and the current WebView APK"
-
-    .line 139
-    .line 140
-    invoke-static {v0}, Lyd1;->d(Ljava/lang/String;)V
-
-    .line 141
-    .line 142
-    .line 143
-    return-object p1
-
-    .line 144
-    :cond_1
-    move-object/from16 v16, v7
-
-    .line 145
-    .line 146
-    move-object v11, v8
-
-    .line 147
-    move v4, v9
-
-    .line 148
-    move-object v13, v10
-
-    .line 149
-    const/16 p1, 0x0
-
-    .line 150
-    .line 151
-    :goto_0
-    invoke-interface/range {v16 .. v16}, Li86;->getValue()Ljava/lang/Object;
-
-    .line 152
-    .line 153
-    .line 154
-    move-result-object v6
-
-    .line 155
-    check-cast v6, Ljava/lang/Boolean;
-
-    .line 156
-    .line 157
-    invoke-virtual {v6}, Ljava/lang/Boolean;->booleanValue()Z
-
-    .line 158
-    .line 159
-    .line 160
-    move-result v6
-
-    .line 161
-    if-eqz v6, :cond_2
-
-    .line 162
-    .line 163
-    new-instance v6, Lcom/box/app/ui/screen/web/ZashboardKsuBridge;
-
-    .line 164
-    .line 165
-    invoke-direct {v6}, Lcom/box/app/ui/screen/web/ZashboardKsuBridge;-><init>()V
-
-    .line 166
-    .line 167
-    .line 168
-    const-string v7, "ksu"
-
-    .line 169
-    .line 170
-    invoke-virtual {v1, v6, v7}, Landroid/webkit/WebView;->addJavascriptInterface(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 171
-    .line 172
-    .line 173
-    :cond_2
-    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
-
-    .line 174
-    .line 175
-    .line 176
-    move-result-object v6
-
-    .line 177
-    invoke-virtual {v6, v5}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
-
-    .line 178
-    .line 179
-    .line 180
-    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
-
-    .line 181
-    .line 182
-    .line 183
-    move-result-object v6
-
-    .line 184
-    invoke-virtual {v6, v5}, Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V
-
-    .line 185
-    .line 186
-    .line 187
-    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
-
-    .line 188
-    .line 189
-    .line 190
-    move-result-object v6
-
-    .line 191
-    invoke-virtual {v6, v3}, Landroid/webkit/WebSettings;->setCacheMode(I)V
-
-    .line 192
-    .line 193
-    .line 194
-    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
-
-    .line 195
-    .line 196
-    .line 197
-    move-result-object v6
-
-    .line 198
-    invoke-virtual {v6, v2}, Landroid/webkit/WebSettings;->setMixedContentMode(I)V
-
-    .line 199
-    .line 200
-    .line 201
-    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
-
-    .line 202
-    .line 203
-    .line 204
-    move-result-object v6
-
-    .line 205
-    invoke-virtual {v6, v4}, Landroid/webkit/WebSettings;->setAllowFileAccess(Z)V
-
-    .line 206
-    .line 207
-    .line 208
-    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
-
-    .line 209
-    .line 210
-    .line 211
-    move-result-object v6
-
-    .line 212
-    invoke-virtual {v6, v5}, Landroid/webkit/WebSettings;->setAllowContentAccess(Z)V
-
-    .line 213
-    .line 214
-    .line 215
-    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
-
-    .line 216
-    .line 217
-    .line 218
-    move-result-object v6
-
-    .line 219
-    invoke-virtual {v6, v5}, Landroid/webkit/WebSettings;->setJavaScriptCanOpenWindowsAutomatically(Z)V
-
-    .line 220
-    .line 221
-    .line 222
-    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
-
-    .line 223
-    .line 224
-    .line 225
-    move-result-object v6
-
-    .line 226
-    invoke-virtual {v6, v5}, Landroid/webkit/WebSettings;->setSupportMultipleWindows(Z)V
-
-    .line 227
-    .line 228
-    .line 229
-    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
-
-    .line 230
-    .line 231
-    .line 232
-    move-result-object v6
-
-    .line 233
-    invoke-virtual {v6, v4}, Landroid/webkit/WebSettings;->setBlockNetworkLoads(Z)V
-
-    .line 234
-    .line 235
-    .line 236
-    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
-
-    .line 237
-    .line 238
-    .line 239
-    move-result-object v6
-
-    .line 240
-    invoke-virtual {v6, v5}, Landroid/webkit/WebSettings;->setUseWideViewPort(Z)V
-
-    .line 241
-    .line 242
-    .line 243
-    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
-
-    .line 244
-    .line 245
-    .line 246
-    move-result-object v6
-
-    .line 247
-    invoke-virtual {v6, v5}, Landroid/webkit/WebSettings;->setLoadWithOverviewMode(Z)V
-
-    .line 248
-    .line 249
-    .line 250
-    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
-
-    .line 251
-    .line 252
-    .line 253
-    move-result-object v6
-
-    .line 254
-    invoke-virtual {v6, v5}, Landroid/webkit/WebSettings;->setLoadsImagesAutomatically(Z)V
-
-    .line 255
-    .line 256
-    .line 257
-    invoke-virtual {v1}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
-
-    .line 258
-    .line 259
-    .line 260
-    move-result-object v5
-
-    .line 261
-    invoke-virtual {v5, v4}, Landroid/webkit/WebSettings;->setMediaPlaybackRequiresUserGesture(Z)V
-
-    .line 262
-    .line 263
-    .line 264
-    iget-object v4, v0, Ll77;->m:Landroid/webkit/WebViewClient;
-
-    .line 265
-    .line 266
-    invoke-virtual {v1, v4}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
-
-    .line 267
-    .line 268
-    .line 269
-    iget-object v4, v0, Ll77;->n:Landroid/webkit/WebChromeClient;
-
-    .line 270
-    .line 271
-    invoke-virtual {v1, v4}, Landroid/webkit/WebView;->setWebChromeClient(Landroid/webkit/WebChromeClient;)V
-
-    .line 272
-    .line 273
-    .line 274
-    new-instance v7, Lp77;
-
-    .line 275
-    .line 276
-    iget-object v9, v0, Ll77;->B:Lnr3;
-
-    .line 277
-    .line 278
-    move-object v8, v11
-
-    .line 279
-    move-object v10, v13
-
-    .line 280
-    move-object v11, v14
-
-    .line 281
-    move-object v12, v15
-
-    .line 282
-    invoke-direct/range {v7 .. v12}, Lp77;-><init>(Ljava/lang/String;Lnr3;Lr52;Ljava/lang/String;Lye3;)V
-
-    .line 283
-    .line 284
-    .line 285
-    move-object v11, v8
-
-    .line 286
-    invoke-virtual {v1, v7}, Landroid/webkit/WebView;->setDownloadListener(Landroid/webkit/DownloadListener;)V
-
-    .line 287
-    .line 288
-    .line 289
-    sget-object v4, Lw77;->a:Lgo2;
-
-    .line 290
-    .line 291
-    move-object/from16 v4, p1
-
-    .line 292
-    .line 293
-    invoke-virtual {v1, v2, v4}, Landroid/webkit/WebView;->setLayerType(ILandroid/graphics/Paint;)V
-
-    .line 294
-    .line 295
-    .line 296
-    iget-boolean v2, v0, Ll77;->o:Z
-
-    .line 297
-    .line 298
-    if-eqz v2, :cond_3
-
-    .line 299
-    .line 300
-    const/high16 v3, -0x1000000
-
-    .line 301
-    .line 302
-    :cond_3
-    invoke-virtual {v1, v3}, Landroid/webkit/WebView;->setBackgroundColor(I)V
-
-    .line 303
-    .line 304
-    .line 305
-    invoke-virtual {v1, v11}, Landroid/webkit/WebView;->loadUrl(Ljava/lang/String;)V
-
-    .line 306
-    .line 307
-    .line 308
-    new-instance v2, Lx77;
-
-    .line 309
-    .line 310
-    iget v3, v0, Ll77;->q:I
-
-    .line 311
-    .line 312
-    iget v4, v0, Ll77;->r:I
-
-    .line 313
-    .line 314
-    iget v0, v0, Ll77;->s:I
-
-    .line 315
-    .line 316
-    invoke-direct {v2, v3, v4, v0, v11}, Lx77;-><init>(IIILjava/lang/String;)V
-
-    .line 317
-    .line 318
-    .line 319
-    invoke-virtual {v1, v2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
-
-    .line 320
-    .line 321
-    .line 322
-    return-object v1
 .end method

@@ -1,171 +1,162 @@
-.class public final Lyu3;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final enum Lyu3;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final a:J
+# static fields
+.field public static final enum j:Lyu3;
 
-.field public final b:J
+.field public static final enum k:Lyu3;
+
+.field public static final enum l:Lyu3;
+
+.field public static final synthetic m:[Lyu3;
 
 
 # direct methods
-.method public constructor <init>(JJ)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 7
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lyu3;
 
     .line 2
     .line 3
-    .line 4
-    iput-wide p1, p0, Lyu3;->a:J
+    const-string v1, "None"
 
+    .line 4
     .line 5
+    const/4 v2, 0x0
+
     .line 6
-    iput-wide p3, p0, Lyu3;->b:J
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    .line 1
-    if-ne p0, p1, :cond_0
-
-    .line 2
-    .line 3
-    goto :goto_1
-
-    .line 4
-    :cond_0
-    instance-of v0, p1, Lyu3;
-
-    .line 5
-    .line 6
-    if-nez v0, :cond_1
-
-    .line 7
-    .line 8
-    goto :goto_0
-
     .line 9
-    :cond_1
-    check-cast p1, Lyu3;
+    sput-object v0, Lyu3;->j:Lyu3;
 
     .line 10
     .line 11
-    iget-wide v0, p0, Lyu3;->a:J
+    new-instance v1, Lyu3;
 
     .line 12
     .line 13
-    iget-wide v2, p1, Lyu3;->a:J
+    const-string v2, "LeftToRight"
 
     .line 14
     .line 15
-    invoke-static {v0, v1, v2, v3}, Ljy6;->a(JJ)Z
+    const/4 v3, 0x1
 
     .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 17
     .line 18
-    move-result v0
-
     .line 19
-    if-nez v0, :cond_2
+    sput-object v1, Lyu3;->k:Lyu3;
 
     .line 20
     .line 21
-    goto :goto_0
+    new-instance v2, Lyu3;
 
     .line 22
-    :cond_2
-    iget-wide v0, p0, Lyu3;->b:J
-
     .line 23
-    .line 24
-    iget-wide p0, p1, Lyu3;->b:J
+    const-string v3, "RightToLeft"
 
+    .line 24
     .line 25
+    const/4 v4, 0x2
+
     .line 26
-    invoke-static {v0, v1, p0, p1}, Ljy6;->a(JJ)Z
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 27
     .line 28
     .line 29
-    move-result p0
+    sput-object v2, Lyu3;->l:Lyu3;
 
     .line 30
-    if-nez p0, :cond_3
-
     .line 31
-    .line 32
-    :goto_0
-    const/4 p0, 0x0
+    new-instance v3, Lyu3;
 
+    .line 32
     .line 33
-    return p0
+    const-string v4, "TopToBottom"
 
     .line 34
-    :cond_3
-    :goto_1
-    const/4 p0, 0x1
-
     .line 35
-    return p0
+    const/4 v5, 0x3
+
+    .line 36
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 37
+    .line 38
+    .line 39
+    new-instance v4, Lyu3;
+
+    .line 40
+    .line 41
+    const-string v5, "BottomToTop"
+
+    .line 42
+    .line 43
+    const/4 v6, 0x4
+
+    .line 44
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 45
+    .line 46
+    .line 47
+    filled-new-array {v0, v1, v2, v3, v4}, [Lyu3;
+
+    .line 48
+    .line 49
+    .line 50
+    move-result-object v0
+
+    .line 51
+    sput-object v0, Lyu3;->m:[Lyu3;
+
+    .line 52
+    .line 53
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 3
+.method public static valueOf(Ljava/lang/String;)Lyu3;
+    .locals 1
 
     .line 1
-    iget-wide v0, p0, Lyu3;->a:J
+    const-class v0, Lyu3;
 
     .line 2
     .line 3
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     .line 4
     .line 5
     .line 6
-    move-result v0
+    move-result-object p0
 
     .line 7
-    mul-int/lit8 v0, v0, 0x1f
+    check-cast p0, Lyu3;
 
     .line 8
     .line 9
-    iget-wide v1, p0, Lyu3;->b:J
-
-    .line 10
-    .line 11
-    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    add-int/2addr p0, v0
-
-    .line 16
-    return p0
+    return-object p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
+.method public static values()[Lyu3;
+    .locals 1
 
     .line 1
-    iget-wide v0, p0, Lyu3;->a:J
+    sget-object v0, Lyu3;->m:[Lyu3;
 
     .line 2
     .line 3
-    invoke-static {v0, v1}, Lmu0;->i(J)Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     .line 4
     .line 5
@@ -173,37 +164,9 @@
     move-result-object v0
 
     .line 7
-    iget-wide v1, p0, Lyu3;->b:J
+    check-cast v0, [Lyu3;
 
     .line 8
     .line 9
-    invoke-static {v1, v2}, Lmu0;->i(J)Ljava/lang/String;
-
-    .line 10
-    .line 11
-    .line 12
-    move-result-object p0
-
-    .line 13
-    const-string v1, ", selectedContentColor="
-
-    .line 14
-    .line 15
-    const-string v2, ")"
-
-    .line 16
-    .line 17
-    const-string v3, "NavigationBarItemColors(unselectedContentColor="
-
-    .line 18
-    .line 19
-    invoke-static {v3, v0, v1, p0, v2}, Lxu1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 20
-    .line 21
-    .line 22
-    move-result-object p0
-
-    .line 23
-    return-object p0
+    return-object v0
 .end method

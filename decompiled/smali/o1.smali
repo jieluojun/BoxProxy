@@ -1,246 +1,231 @@
 .class public final synthetic Lo1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lr52;
+.implements Ls52;
 
 
 # instance fields
-.field public final synthetic j:F
+.field public final synthetic j:B
 
-.field public final synthetic k:Lfh4;
+.field public final synthetic k:Landroid/content/Context;
 
-.field public final synthetic l:Lnr3;
-
-.field public final synthetic m:Lnr3;
-
-.field public final synthetic n:F
-
-.field public final synthetic o:Lmy2;
-
-.field public final synthetic p:Lt20;
-
-.field public final synthetic q:Z
-
-.field public final synthetic r:Lg52;
-
-.field public final synthetic s:Ljava/util/List;
-
-.field public final synthetic t:Lz07;
-
-.field public final synthetic u:Ljava/util/List;
-
-.field public final synthetic v:Lg52;
+.field public final synthetic l:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(FLfh4;Lnr3;Lnr3;FLmy2;Lt20;ZLg52;Ljava/util/List;Lz07;Ljava/util/List;Lg52;)V
+.method public synthetic constructor <init>(Landroid/content/Context;Ljava/lang/String;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p3, p0, Lo1;->j:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Lo1;->k:Landroid/content/Context;
+
     .line 4
-    iput p1, p0, Lo1;->j:F
-
     .line 5
+    iput-object p2, p0, Lo1;->l:Ljava/lang/String;
+
     .line 6
-    iput-object p2, p0, Lo1;->k:Lfh4;
-
     .line 7
-    .line 8
-    iput-object p3, p0, Lo1;->l:Lnr3;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 8
     .line 9
     .line 10
-    iput-object p4, p0, Lo1;->m:Lnr3;
-
-    .line 11
-    .line 12
-    iput p5, p0, Lo1;->n:F
-
-    .line 13
-    .line 14
-    iput-object p6, p0, Lo1;->o:Lmy2;
-
-    .line 15
-    .line 16
-    iput-object p7, p0, Lo1;->p:Lt20;
-
-    .line 17
-    .line 18
-    iput-boolean p8, p0, Lo1;->q:Z
-
-    .line 19
-    .line 20
-    iput-object p9, p0, Lo1;->r:Lg52;
-
-    .line 21
-    .line 22
-    iput-object p10, p0, Lo1;->s:Ljava/util/List;
-
-    .line 23
-    .line 24
-    iput-object p11, p0, Lo1;->t:Lz07;
-
-    .line 25
-    .line 26
-    iput-object p12, p0, Lo1;->u:Ljava/util/List;
-
-    .line 27
-    .line 28
-    iput-object p13, p0, Lo1;->v:Lg52;
-
-    .line 29
-    .line 30
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 14
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
     .line 1
-    check-cast p1, Lf33;
+    iget-byte v0, p0, Lo1;->j:B
 
     .line 2
     .line 3
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
     .line 5
+    const/4 v2, 0x0
+
     .line 6
-    new-instance v0, Lo60;
+    const/4 v3, 0x0
 
     .line 7
+    const-string v4, "clipboard"
+
     .line 8
-    iget v1, p0, Lo1;->j:F
-
     .line 9
+    iget-object v5, p0, Lo1;->l:Ljava/lang/String;
+
     .line 10
-    iget-object v2, p0, Lo1;->k:Lfh4;
-
     .line 11
+    iget-object p0, p0, Lo1;->k:Landroid/content/Context;
+
     .line 12
-    iget-object v3, p0, Lo1;->l:Lnr3;
-
     .line 13
+    check-cast p1, Ljava/lang/String;
+
     .line 14
-    iget-object v4, p0, Lo1;->m:Lnr3;
-
     .line 15
-    .line 16
-    invoke-direct {v0, v1, v2, v3, v4}, Lo60;-><init>(FLfh4;Lnr3;Lnr3;)V
+    check-cast p2, Ljava/lang/String;
 
+    .line 16
     .line 17
+    packed-switch v0, :pswitch_data_0
+
     .line 18
     .line 19
-    new-instance v1, Lty0;
-
     .line 20
-    .line 21
-    const v2, 0x60a530e8
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 21
     .line 22
     .line 23
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 24
-    const/4 v3, 0x1
-
     .line 25
-    invoke-direct {v1, v2, v3, v0}, Lty0;-><init>(IZLd62;)V
-
     .line 26
+    invoke-virtual {p0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
     .line 27
     .line 28
-    const/4 v0, 0x2
-
     .line 29
-    const-string v2, "logoSpacer"
+    move-result-object v0
 
     .line 30
-    .line 31
-    invoke-static {p1, v2, v1, v0}, Lf33;->a0(Lf33;Ljava/lang/String;Lw52;I)V
+    instance-of v4, v0, Landroid/content/ClipboardManager;
 
+    .line 31
     .line 32
+    if-eqz v4, :cond_0
+
     .line 33
     .line 34
-    new-instance v4, Lp1;
+    move-object v3, v0
 
     .line 35
+    check-cast v3, Landroid/content/ClipboardManager;
+
     .line 36
-    iget v5, p0, Lo1;->n:F
-
     .line 37
+    :cond_0
+    if-eqz v3, :cond_1
+
     .line 38
-    iget-object v6, p0, Lo1;->o:Lmy2;
-
     .line 39
-    .line 40
-    iget-object v7, p0, Lo1;->p:Lt20;
+    invoke-static {p1, p2}, Landroid/content/ClipData;->newPlainText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/ClipData;
 
+    .line 40
     .line 41
     .line 42
-    iget-boolean v8, p0, Lo1;->q:Z
+    move-result-object p1
 
     .line 43
-    .line 44
-    iget-object v9, p0, Lo1;->r:Lg52;
+    invoke-virtual {v3, p1}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
 
+    .line 44
     .line 45
     .line 46
-    iget-object v10, p0, Lo1;->s:Ljava/util/List;
+    :cond_1
+    invoke-static {p0, v5, v2}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     .line 47
     .line 48
-    iget-object v11, p0, Lo1;->t:Lz07;
-
     .line 49
+    move-result-object p0
+
     .line 50
-    iget-object v12, p0, Lo1;->u:Ljava/util/List;
+    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
 
     .line 51
     .line 52
-    iget-object v13, p0, Lo1;->v:Lg52;
-
     .line 53
+    return-object v1
+
     .line 54
-    invoke-direct/range {v4 .. v13}, Lp1;-><init>(FLmy2;Lt20;ZLg52;Ljava/util/List;Lz07;Ljava/util/List;Lg52;)V
+    :pswitch_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 55
     .line 56
     .line 57
-    new-instance p0, Lty0;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 58
     .line 59
-    const v0, 0x7a9e501f
-
     .line 60
+    invoke-virtual {p0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
     .line 61
     .line 62
-    invoke-direct {p0, v0, v3, v4}, Lty0;-><init>(IZLd62;)V
-
     .line 63
-    .line 64
-    .line 65
-    const/4 v0, 0x3
+    move-result-object v0
 
+    .line 64
+    instance-of v4, v0, Landroid/content/ClipboardManager;
+
+    .line 65
     .line 66
-    const/4 v1, 0x0
+    if-eqz v4, :cond_2
 
     .line 67
-    invoke-static {p1, v1, p0, v0}, Lf33;->a0(Lf33;Ljava/lang/String;Lw52;I)V
-
     .line 68
-    .line 69
-    .line 70
-    sget-object p0, Ld07;->a:Ld07;
+    move-object v3, v0
 
+    .line 69
+    check-cast v3, Landroid/content/ClipboardManager;
+
+    .line 70
     .line 71
+    :cond_2
+    if-eqz v3, :cond_3
+
     .line 72
-    return-object p0
+    .line 73
+    invoke-static {p1, p2}, Landroid/content/ClipData;->newPlainText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/ClipData;
+
+    .line 74
+    .line 75
+    .line 76
+    move-result-object p1
+
+    .line 77
+    invoke-virtual {v3, p1}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
+
+    .line 78
+    .line 79
+    .line 80
+    :cond_3
+    invoke-static {p0, v5, v2}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    .line 81
+    .line 82
+    .line 83
+    move-result-object p0
+
+    .line 84
+    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
+
+    .line 85
+    .line 86
+    .line 87
+    return-object v1
+
+    .line 88
+    nop
+
+    .line 89
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

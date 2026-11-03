@@ -1,89 +1,76 @@
 .class public final Lxq4;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final a:Ljk4;
+# static fields
+.field public static final a:Lxq4;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 3
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lxq4;
 
     .line 2
     .line 3
-    .line 4
-    new-instance v0, Ljk4;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
+    .line 4
     .line 5
     .line 6
-    const-wide/16 v1, 0x0
+    sput-object v0, Lxq4;->a:Lxq4;
 
     .line 7
     .line 8
-    invoke-direct {v0, v1, v2}, Ljk4;-><init>(J)V
-
-    .line 9
-    .line 10
-    .line 11
-    iput-object v0, p0, Lxq4;->a:Ljk4;
-
-    .line 12
-    .line 13
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(J)Z
-    .locals 2
+.method public final a(Landroid/view/WindowManager$LayoutParams;I)V
+    .locals 0
 
     .line 1
-    iget-object p0, p0, Lxq4;->a:Ljk4;
+    if-lez p2, :cond_0
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljk4;->g()J
+    iget p0, p1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     .line 4
     .line 5
-    .line 6
-    move-result-wide v0
+    or-int/lit8 p0, p0, 0x4
 
+    .line 6
     .line 7
-    cmp-long v0, v0, p1
+    iput p0, p1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     .line 8
     .line 9
-    if-eqz v0, :cond_0
+    goto :goto_0
 
     .line 10
-    .line 11
-    const/4 p0, 0x0
+    :cond_0
+    iget p0, p1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
+    .line 11
     .line 12
-    return p0
+    and-int/lit8 p0, p0, -0x5
 
     .line 13
-    :cond_0
-    const-wide/16 v0, 0x1
-
     .line 14
-    .line 15
-    add-long/2addr p1, v0
+    iput p0, p1, Landroid/view/WindowManager$LayoutParams;->flags:I
 
+    .line 15
     .line 16
-    invoke-virtual {p0, p1, p2}, Ljk4;->h(J)V
+    :goto_0
+    invoke-virtual {p1, p2}, Landroid/view/WindowManager$LayoutParams;->setBlurBehindRadius(I)V
 
     .line 17
     .line 18
     .line 19
-    const/4 p0, 0x1
-
-    .line 20
-    return p0
+    return-void
 .end method

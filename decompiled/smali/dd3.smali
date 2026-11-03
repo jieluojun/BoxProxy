@@ -1,179 +1,157 @@
-.class public final Ldd3;
-.super Ljava/io/Writer;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final synthetic Ldd3;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
 # instance fields
-.field public final j:Ljava/lang/StringBuilder;
+.field public final synthetic j:Lko3;
+
+.field public final synthetic k:Lac3;
+
+.field public final synthetic l:Z
+
+.field public final synthetic m:Ld52;
+
+.field public final synthetic n:Lo52;
+
+.field public final synthetic o:Lyb3;
+
+.field public final synthetic p:Ljava/lang/String;
+
+.field public final synthetic q:J
+
+.field public final synthetic r:Lbi0;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public synthetic constructor <init>(Lko3;Lac3;ZLd52;Lo52;Lyb3;Ljava/lang/String;JLbi0;I)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/io/Writer;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    new-instance v0, Ljava/lang/StringBuilder;
+    iput-object p1, p0, Ldd3;->j:Lko3;
 
     .line 5
     .line 6
-    const/16 v1, 0x80
+    iput-object p2, p0, Ldd3;->k:Lac3;
 
     .line 7
     .line 8
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+    iput-boolean p3, p0, Ldd3;->l:Z
 
     .line 9
     .line 10
-    .line 11
-    iput-object v0, p0, Ldd3;->j:Ljava/lang/StringBuilder;
+    iput-object p4, p0, Ldd3;->m:Ld52;
 
+    .line 11
     .line 12
+    iput-object p5, p0, Ldd3;->n:Lo52;
+
     .line 13
+    .line 14
+    iput-object p6, p0, Ldd3;->o:Lyb3;
+
+    .line 15
+    .line 16
+    iput-object p7, p0, Ldd3;->p:Ljava/lang/String;
+
+    .line 17
+    .line 18
+    iput-wide p8, p0, Ldd3;->q:J
+
+    .line 19
+    .line 20
+    iput-object p10, p0, Ldd3;->r:Lbi0;
+
+    .line 21
+    .line 22
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .locals 2
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 12
 
     .line 1
-    iget-object p0, p0, Ldd3;->j:Ljava/lang/StringBuilder;
+    move-object v10, p1
 
     .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->length()I
+    check-cast v10, Lv01;
 
+    .line 3
     .line 4
+    check-cast p2, Ljava/lang/Integer;
+
     .line 5
     .line 6
-    move-result v0
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 7
-    if-lez v0, :cond_0
-
     .line 8
     .line 9
-    const-string v0, "FragmentManager"
+    const/4 p1, 0x7
 
     .line 10
-    .line 11
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {p1}, Lw23;->h0(I)I
 
+    .line 11
     .line 12
     .line 13
+    move-result v11
+
     .line 14
-    move-result-object v1
+    iget-object v0, p0, Ldd3;->j:Lko3;
 
     .line 15
-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 16
+    iget-object v1, p0, Ldd3;->k:Lac3;
+
     .line 17
     .line 18
-    const/4 v0, 0x0
+    iget-boolean v2, p0, Ldd3;->l:Z
 
     .line 19
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->length()I
-
     .line 20
+    iget-object v3, p0, Ldd3;->m:Ld52;
+
     .line 21
     .line 22
-    move-result v1
+    iget-object v4, p0, Ldd3;->n:Lo52;
 
     .line 23
-    invoke-virtual {p0, v0, v1}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
-
     .line 24
+    iget-object v5, p0, Ldd3;->o:Lyb3;
+
     .line 25
     .line 26
-    :cond_0
-    return-void
-.end method
+    iget-object v6, p0, Ldd3;->p:Ljava/lang/String;
 
-.method public final close()V
-    .locals 0
+    .line 27
+    .line 28
+    iget-wide v7, p0, Ldd3;->q:J
 
-    .line 1
-    invoke-virtual {p0}, Ldd3;->b()V
+    .line 29
+    .line 30
+    iget-object v9, p0, Ldd3;->r:Lbi0;
 
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
+    .line 31
+    .line 32
+    invoke-static/range {v0 .. v11}, Lrd1;->B(Lko3;Lac3;ZLd52;Lo52;Lyb3;Ljava/lang/String;JLbi0;Lv01;I)V
 
-.method public final flush()V
-    .locals 0
+    .line 33
+    .line 34
+    .line 35
+    sget-object p0, Lk27;->a:Lk27;
 
-    .line 1
-    invoke-virtual {p0}, Ldd3;->b()V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public final write([CII)V
-    .locals 3
-
-    .line 1
-    const/4 v0, 0x0
-
-    .line 2
-    :goto_0
-    if-ge v0, p3, :cond_1
-
-    .line 3
-    .line 4
-    add-int v1, p2, v0
-
-    .line 5
-    .line 6
-    aget-char v1, p1, v1
-
-    .line 7
-    .line 8
-    const/16 v2, 0xa
-
-    .line 9
-    .line 10
-    if-ne v1, v2, :cond_0
-
-    .line 11
-    .line 12
-    invoke-virtual {p0}, Ldd3;->b()V
-
-    .line 13
-    .line 14
-    .line 15
-    goto :goto_1
-
-    .line 16
-    :cond_0
-    iget-object v2, p0, Ldd3;->j:Ljava/lang/StringBuilder;
-
-    .line 17
-    .line 18
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 19
-    .line 20
-    .line 21
-    :goto_1
-    add-int/lit8 v0, v0, 0x1
-
-    .line 22
-    .line 23
-    goto :goto_0
-
-    .line 24
-    :cond_1
-    return-void
+    .line 36
+    .line 37
+    return-object p0
 .end method

@@ -1,100 +1,90 @@
-.class public final Lry6;
-.super Lur4;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public Lry6;
+.super Lky6;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public a:[S
-
-.field public b:I
-
-
-# virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lry6;->a:[S
-
-    .line 2
-    .line 3
-    iget p0, p0, Lry6;->b:I
-
-    .line 4
-    .line 5
-    invoke-static {v0, p0}, Ljava/util/Arrays;->copyOf([SI)[S
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    new-instance v0, Lqy6;
-
-    .line 10
-    .line 11
-    invoke-direct {v0, p0}, Lqy6;-><init>([S)V
-
-    .line 12
-    .line 13
-    .line 14
-    return-object v0
-.end method
-
-.method public final b(I)V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lry6;->a:[S
-
-    .line 2
-    .line 3
-    array-length v1, v0
-
-    .line 4
-    if-ge v1, p1, :cond_1
-
-    .line 5
-    .line 6
-    array-length v1, v0
-
-    .line 7
-    mul-int/lit8 v1, v1, 0x2
-
-    .line 8
-    .line 9
-    if-ge p1, v1, :cond_0
-
-    .line 10
-    .line 11
-    move p1, v1
-
-    .line 12
-    :cond_0
-    invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([SI)[S
-
-    .line 13
-    .line 14
-    .line 15
-    move-result-object p1
-
-    .line 16
-    iput-object p1, p0, Lry6;->a:[S
-
-    .line 17
-    .line 18
-    :cond_1
-    return-void
-.end method
-
-.method public final d()I
+# direct methods
+.method public constructor <init>()V
     .locals 0
 
     .line 1
-    iget p0, p0, Lry6;->b:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    return p0
+    .line 4
+    return-void
+.end method
+
+
+# virtual methods
+.method public final b(Lhw2;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    invoke-virtual {p1}, Lhw2;->L()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    const/16 v0, 0x9
+
+    .line 6
+    .line 7
+    if-ne p0, v0, :cond_0
+
+    .line 8
+    .line 9
+    invoke-virtual {p1}, Lhw2;->H()V
+
+    .line 10
+    .line 11
+    .line 12
+    const/4 p0, 0x0
+
+    .line 13
+    return-object p0
+
+    .line 14
+    :cond_0
+    const/16 v0, 0x8
+
+    .line 15
+    .line 16
+    if-ne p0, v0, :cond_1
+
+    .line 17
+    .line 18
+    invoke-virtual {p1}, Lhw2;->w()Z
+
+    .line 19
+    .line 20
+    .line 21
+    move-result p0
+
+    .line 22
+    invoke-static {p0}, Ljava/lang/Boolean;->toString(Z)Ljava/lang/String;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object p0
+
+    .line 26
+    return-object p0
+
+    .line 27
+    :cond_1
+    invoke-virtual {p1}, Lhw2;->J()Ljava/lang/String;
+
+    .line 28
+    .line 29
+    .line 30
+    move-result-object p0
+
+    .line 31
+    return-object p0
 .end method

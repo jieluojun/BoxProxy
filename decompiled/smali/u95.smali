@@ -1,91 +1,76 @@
-.class public Lu95;
-.super Landroid/app/Fragment;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final synthetic Lu95;
+.super Ld62;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-
-# annotations
-.annotation system Ldalvik/annotation/MemberClasses;
-    value = {
-        Lu95$a;
-    }
-.end annotation
+# interfaces
+.implements Lo52;
 
 
 # static fields
-.field public static final synthetic j:I
+.field public static final k:Lu95;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
     .line 1
-    invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
+    new-instance v0, Lu95;
 
     .line 2
     .line 3
+    const-string v4, "next()Lkotlin/text/MatchResult;"
+
     .line 4
+    .line 5
+    const/4 v5, 0x0
+
+    .line 6
+    const/4 v1, 0x1
+
+    .line 7
+    const-class v2, Lug3;
+
+    .line 8
+    .line 9
+    const-string v3, "next"
+
+    .line 10
+    .line 11
+    invoke-direct/range {v0 .. v5}, Ld62;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 12
+    .line 13
+    .line 14
+    sput-object v0, Lu95;->k:Lu95;
+
+    .line 15
+    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public final onActivityCreated(Landroid/os/Bundle;)V
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     .line 1
-    invoke-super {p0, p1}, Landroid/app/Fragment;->onActivityCreated(Landroid/os/Bundle;)V
+    check-cast p1, Lug3;
 
     .line 2
     .line 3
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 4
-    return-void
-.end method
+    .line 5
+    .line 6
+    invoke-virtual {p1}, Lug3;->c()Lug3;
 
-.method public final onPause()V
-    .locals 0
+    .line 7
+    .line 8
+    .line 9
+    move-result-object p0
 
-    .line 1
-    invoke-super {p0}, Landroid/app/Fragment;->onPause()V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public final onResume()V
-    .locals 0
-
-    .line 1
-    invoke-super {p0}, Landroid/app/Fragment;->onResume()V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public final onStart()V
-    .locals 0
-
-    .line 1
-    invoke-super {p0}, Landroid/app/Fragment;->onStart()V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public final onStop()V
-    .locals 0
-
-    .line 1
-    invoke-super {p0}, Landroid/app/Fragment;->onStop()V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
+    .line 10
+    return-object p0
 .end method

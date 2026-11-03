@@ -1,17 +1,45 @@
 .class public final Li6;
-.super Lt73;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lc74;
 
 
-# instance fields
-.field public a:Z
+# static fields
+.field public static final j:Li6;
 
-.field public b:I
 
-.field public c:I
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
 
-.field public d:Z
+    .line 1
+    new-instance v0, Li6;
 
-.field public e:Z
+    .line 2
+    .line 3
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-.field public f:Z
+    .line 4
+    .line 5
+    .line 6
+    sput-object v0, Li6;->j:Li6;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    const-string p0, "Active"
+
+    .line 2
+    .line 3
+    return-object p0
+.end method

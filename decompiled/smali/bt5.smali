@@ -1,127 +1,86 @@
-.class public final synthetic Lbt5;
+.class public abstract Lbt5;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lg52;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic j:B
+# static fields
+.field public static final a:F
 
-.field public final synthetic k:Lct5;
+.field public static final b:J
+
+.field public static final c:F
+
+.field public static final d:F
+
+.field public static final e:F
+
+.field public static final f:F
 
 
 # direct methods
-.method public synthetic constructor <init>(Lct5;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    iput-byte p2, p0, Lbt5;->j:B
+    const/high16 v0, 0x41400000    # 12.0f
 
     .line 2
     .line 3
-    iput-object p1, p0, Lbt5;->k:Lct5;
+    const/4 v1, 0x0
 
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0, v1}, Lt87;->d(FF)J
 
+    .line 5
     .line 6
     .line 7
+    const/high16 v0, 0x42340000    # 45.0f
+
     .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iget-byte v0, p0, Lbt5;->j:B
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lbt5;->k:Lct5;
-
-    .line 4
-    .line 5
-    packed-switch v0, :pswitch_data_0
-
-    .line 6
-    .line 7
-    .line 8
-    iget-object p0, p0, Lct5;->d:Lgq6;
-
     .line 9
+    sput v0, Lbt5;->a:F
+
     .line 10
-    iget-object p0, p0, Lgq6;->k:Ljava/lang/Object;
-
     .line 11
+    const/16 v0, 0x11
+
     .line 12
-    check-cast p0, Lvy2;
-
     .line 13
+    invoke-static {v0}, Lg23;->G(I)J
+
     .line 14
-    return-object p0
-
     .line 15
-    :pswitch_0
-    iget-object p0, p0, Lct5;->d:Lgq6;
-
     .line 16
+    move-result-wide v0
+
     .line 17
-    iget-object p0, p0, Lgq6;->m:Ljava/lang/Object;
+    sput-wide v0, Lbt5;->b:J
 
     .line 18
     .line 19
-    check-cast p0, Lm23;
+    const/high16 v0, 0x41800000    # 16.0f
 
     .line 20
     .line 21
-    return-object p0
+    sput v0, Lbt5;->c:F
 
     .line 22
-    :pswitch_1
-    iget-object p0, p0, Lct5;->d:Lgq6;
-
     .line 23
+    const/high16 v1, 0x41000000    # 8.0f
+
     .line 24
-    iget-object p0, p0, Lgq6;->l:Ljava/lang/Object;
-
     .line 25
+    sput v1, Lbt5;->d:F
+
     .line 26
-    check-cast p0, Lvn6;
-
     .line 27
-    .line 28
-    return-object p0
+    sput v1, Lbt5;->e:F
 
+    .line 28
     .line 29
-    :pswitch_2
-    iget-object p0, p0, Lct5;->d:Lgq6;
+    sput v0, Lbt5;->f:F
 
     .line 30
     .line 31
-    iget-object p0, p0, Lgq6;->k:Ljava/lang/Object;
-
-    .line 32
-    .line 33
-    check-cast p0, Lvy2;
-
-    .line 34
-    .line 35
-    return-object p0
-
-    .line 36
-    nop
-
-    .line 37
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

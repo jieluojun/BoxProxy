@@ -1,86 +1,61 @@
 .class public final Luw1;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public j:J
+.field public final a:Law6;
 
-.field public k:J
+.field public final b:Lnh;
 
-.field public l:J
+.field public final c:Ltd1;
 
-.field public synthetic m:Ljava/lang/Object;
+.field public final d:Ld52;
 
-.field public final synthetic n:Lvw1;
-
-.field public o:I
+.field public final e:Lsw1;
 
 
 # direct methods
-.method public constructor <init>(Lvw1;Ld81;)V
+.method public constructor <init>(Law6;Lry1;Ltd1;Ld52;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Luw1;->n:Lvw1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
-
     .line 4
+    iput-object p1, p0, Luw1;->a:Law6;
+
     .line 5
     .line 6
-    return-void
-.end method
+    iput-object p2, p0, Luw1;->b:Lnh;
 
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
-
-    .line 1
-    iput-object p1, p0, Luw1;->m:Ljava/lang/Object;
-
-    .line 2
-    .line 3
-    iget p1, p0, Luw1;->o:I
-
-    .line 4
-    .line 5
-    const/high16 v0, -0x80000000
-
-    .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Luw1;->o:I
+    iput-object p3, p0, Luw1;->c:Ltd1;
 
     .line 9
     .line 10
-    const-wide/16 v1, 0x0
+    iput-object p4, p0, Luw1;->d:Ld52;
 
     .line 11
     .line 12
-    const-wide/16 v3, 0x0
+    new-instance p1, Lsw1;
 
     .line 13
     .line 14
-    iget-object v0, p0, Luw1;->n:Lvw1;
+    const/4 p2, 0x1
 
     .line 15
+    invoke-direct {p1, p0, p2}, Lsw1;-><init>(Ljava/lang/Object;B)V
+
     .line 16
-    move-object v5, p0
-
     .line 17
-    invoke-virtual/range {v0 .. v5}, Lvw1;->P0(JJLc81;)Ljava/lang/Object;
-
     .line 18
+    iput-object p1, p0, Luw1;->e:Lsw1;
+
     .line 19
     .line 20
-    move-result-object p0
-
-    .line 21
-    return-object p0
+    return-void
 .end method

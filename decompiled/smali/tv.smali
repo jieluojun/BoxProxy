@@ -1,143 +1,148 @@
-.class public Ltv;
+.class public final synthetic Ltv;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lkw6;
+.implements Lo52;
+
+
+# instance fields
+.field public final synthetic j:B
+
+.field public final synthetic k:Lkz2;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(Lkz2;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p2, p0, Ltv;->j:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Ltv;->k:Lkz2;
+
     .line 4
+    .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 6
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ll82;Lqx6;)Ljw6;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
 
     .line 1
-    iget-object p0, p2, Lqx6;->b:Ljava/lang/reflect/Type;
+    iget-byte v0, p0, Ltv;->j:B
 
     .line 2
     .line 3
-    instance-of p2, p0, Ljava/lang/reflect/GenericArrayType;
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
     .line 5
-    if-nez p2, :cond_1
+    const/high16 v2, 0x3f800000    # 1.0f
 
     .line 6
     .line 7
-    instance-of v0, p0, Ljava/lang/Class;
+    const/high16 v3, -0x40800000    # -1.0f
 
     .line 8
     .line 9
-    if-eqz v0, :cond_0
+    sget-object v4, Lkz2;->k:Lkz2;
 
     .line 10
     .line 11
-    move-object v0, p0
+    iget-object p0, p0, Ltv;->k:Lkz2;
 
     .line 12
-    check-cast v0, Ljava/lang/Class;
-
     .line 13
-    .line 14
-    invoke-virtual {v0}, Ljava/lang/Class;->isArray()Z
+    check-cast p1, Lb82;
 
+    .line 14
     .line 15
+    packed-switch v0, :pswitch_data_0
+
     .line 16
     .line 17
-    move-result v0
-
     .line 18
-    if-nez v0, :cond_1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 19
     .line 20
-    :cond_0
-    const/4 p0, 0x0
-
     .line 21
-    return-object p0
+    if-ne p0, v4, :cond_0
 
     .line 22
-    :cond_1
-    if-eqz p2, :cond_2
-
     .line 23
+    move v2, v3
+
     .line 24
-    check-cast p0, Ljava/lang/reflect/GenericArrayType;
+    :cond_0
+    invoke-interface {p1, v2}, Lb82;->a0(F)V
 
     .line 25
     .line 26
-    invoke-interface {p0}, Ljava/lang/reflect/GenericArrayType;->getGenericComponentType()Ljava/lang/reflect/Type;
-
     .line 27
+    return-object v1
+
     .line 28
+    :pswitch_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 29
-    move-result-object p0
-
     .line 30
-    goto :goto_0
-
     .line 31
-    :cond_2
-    check-cast p0, Ljava/lang/Class;
+    if-ne p0, v4, :cond_1
 
     .line 32
     .line 33
-    invoke-virtual {p0}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
+    move v2, v3
 
     .line 34
+    :cond_1
+    invoke-interface {p1, v2}, Lb82;->a0(F)V
+
     .line 35
     .line 36
-    move-result-object p0
-
     .line 37
-    :goto_0
-    new-instance p2, Lqx6;
+    return-object v1
 
     .line 38
-    .line 39
-    invoke-direct {p2, p0}, Lqx6;-><init>(Ljava/lang/reflect/Type;)V
+    :pswitch_1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 39
     .line 40
     .line 41
+    if-ne p0, v4, :cond_2
+
     .line 42
-    invoke-virtual {p1, p2}, Ll82;->b(Lqx6;)Ljw6;
-
     .line 43
+    move v2, v3
+
     .line 44
+    :cond_2
+    invoke-interface {p1, v2}, Lb82;->a0(F)V
+
     .line 45
-    move-result-object p2
-
     .line 46
-    new-instance v0, Luv;
-
     .line 47
+    return-object v1
+
     .line 48
-    invoke-static {p0}, Lve3;->a0(Ljava/lang/reflect/Type;)Ljava/lang/Class;
+    nop
 
     .line 49
-    .line 50
-    .line 51
-    move-result-object p0
-
-    .line 52
-    invoke-direct {v0, p1, p2, p0}, Luv;-><init>(Ll82;Ljw6;Ljava/lang/Class;)V
-
-    .line 53
-    .line 54
-    .line 55
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

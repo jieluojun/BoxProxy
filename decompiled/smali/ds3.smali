@@ -1,211 +1,235 @@
 .class public abstract Lds3;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-
-# static fields
-.field public static final a:[I
-
-.field public static final b:[I
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
+.method public static final a(ILjava/util/List;)V
+    .locals 0
 
     .line 1
-    sget-object v0, Lds3;->a:[I
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
     .line 2
     .line 3
-    if-eqz v0, :cond_0
+    .line 4
+    move-result p1
+
+    .line 5
+    if-ltz p0, :cond_1
+
+    .line 6
+    .line 7
+    if-lt p0, p1, :cond_0
+
+    .line 8
+    .line 9
+    goto :goto_0
+
+    .line 10
+    :cond_0
+    return-void
+
+    .line 11
+    :cond_1
+    :goto_0
+    invoke-static {p0, p1}, Lds3;->c(II)V
+
+    .line 12
+    .line 13
+    .line 14
+    return-void
+.end method
+
+.method public static final b(IILjava/util/List;)V
+    .locals 0
+
+    .line 1
+    if-le p0, p1, :cond_0
+
+    .line 2
+    .line 3
+    invoke-static {p0, p1}, Lds3;->f(II)V
 
     .line 4
     .line 5
-    goto :goto_1
-
     .line 6
     :cond_0
-    const/16 v0, 0x800
+    if-gez p0, :cond_1
 
     .line 7
     .line 8
-    new-array v1, v0, [I
+    invoke-static {p0}, Lds3;->d(I)V
 
     .line 9
     .line 10
-    sput-object v1, Lds3;->b:[I
-
     .line 11
-    .line 12
-    new-array v0, v0, [I
+    :cond_1
+    invoke-interface {p2}, Ljava/util/List;->size()I
 
+    .line 12
     .line 13
     .line 14
-    sput-object v0, Lds3;->a:[I
+    move-result p0
 
     .line 15
-    .line 16
-    const/4 v0, 0x0
+    if-le p1, p0, :cond_2
 
+    .line 16
     .line 17
-    invoke-static {v1, v0}, Ljava/util/Arrays;->fill([II)V
+    invoke-interface {p2}, Ljava/util/List;->size()I
 
     .line 18
     .line 19
     .line 20
-    sget-object v1, Lds3;->a:[I
+    move-result p0
 
     .line 21
-    .line 22
-    invoke-static {v1, v0}, Ljava/util/Arrays;->fill([II)V
+    invoke-static {p1, p0}, Lds3;->e(II)V
 
+    .line 22
     .line 23
     .line 24
-    .line 25
-    :goto_0
-    const v1, 0xffff
-
-    .line 26
-    .line 27
-    .line 28
-    if-gt v0, v1, :cond_3
-
-    .line 29
-    .line 30
-    int-to-char v1, v0
-
-    .line 31
-    invoke-static {v1}, Ljava/lang/Character;->isJavaIdentifierPart(C)Z
-
-    .line 32
-    .line 33
-    .line 34
-    move-result v2
-
-    .line 35
-    const/4 v3, 0x1
-
-    .line 36
-    if-eqz v2, :cond_1
-
-    .line 37
-    .line 38
-    sget-object v2, Lds3;->b:[I
-
-    .line 39
-    .line 40
-    div-int/lit8 v4, v0, 0x20
-
-    .line 41
-    .line 42
-    aget v5, v2, v4
-
-    .line 43
-    .line 44
-    rem-int/lit8 v6, v0, 0x20
-
-    .line 45
-    .line 46
-    shl-int v6, v3, v6
-
-    .line 47
-    .line 48
-    or-int/2addr v5, v6
-
-    .line 49
-    aput v5, v2, v4
-
-    .line 50
-    .line 51
-    :cond_1
-    invoke-static {v1}, Ljava/lang/Character;->isJavaIdentifierStart(C)Z
-
-    .line 52
-    .line 53
-    .line 54
-    move-result v1
-
-    .line 55
-    if-eqz v1, :cond_2
-
-    .line 56
-    .line 57
-    sget-object v1, Lds3;->a:[I
-
-    .line 58
-    .line 59
-    div-int/lit8 v2, v0, 0x20
-
-    .line 60
-    .line 61
-    aget v4, v1, v2
-
-    .line 62
-    .line 63
-    rem-int/lit8 v5, v0, 0x20
-
-    .line 64
-    .line 65
-    shl-int/2addr v3, v5
-
-    .line 66
-    or-int/2addr v3, v4
-
-    .line 67
-    aput v3, v1, v2
-
-    .line 68
-    .line 69
     :cond_2
-    add-int/lit8 v0, v0, 0x1
-
-    .line 70
-    .line 71
-    goto :goto_0
-
-    .line 72
-    :cond_3
-    :goto_1
     return-void
 .end method
 
-.method public static a([II)Z
-    .locals 1
+.method private static final c(II)V
+    .locals 4
 
     .line 1
-    div-int/lit8 v0, p1, 0x20
+    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
 
     .line 2
     .line 3
-    aget p0, p0, v0
+    const-string v1, " is out of bounds. The list has "
 
     .line 4
     .line 5
-    rem-int/lit8 p1, p1, 0x20
+    const-string v2, " elements."
 
     .line 6
     .line 7
-    const/4 v0, 0x1
+    const-string v3, "Index "
 
     .line 8
-    shl-int p1, v0, p1
+    .line 9
+    invoke-static {p0, p1, v3, v1, v2}, Lpb1;->l(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    invoke-direct {v0, p0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    .line 14
+    .line 15
+    .line 16
+    throw v0
+.end method
+
+.method private static final d(I)V
+    .locals 3
+
+    .line 1
+    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
+
+    .line 2
+    .line 3
+    const-string v1, "fromIndex ("
+
+    .line 4
+    .line 5
+    const-string v2, ") is less than 0."
+
+    .line 6
+    .line 7
+    invoke-static {p0, v1, v2}, Lpb1;->m(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 8
     .line 9
     .line 10
-    and-int/2addr p0, p1
+    move-result-object p0
 
     .line 11
-    if-eqz p0, :cond_0
+    invoke-direct {v0, p0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
 
     .line 12
     .line 13
-    return v0
+    .line 14
+    throw v0
+.end method
+
+.method private static final e(II)V
+    .locals 4
+
+    .line 1
+    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
+
+    .line 2
+    .line 3
+    const-string v1, ") is more than than the list size ("
+
+    .line 4
+    .line 5
+    const-string v2, ")"
+
+    .line 6
+    .line 7
+    const-string v3, "toIndex ("
+
+    .line 8
+    .line 9
+    invoke-static {p0, p1, v3, v1, v2}, Lpb1;->l(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    invoke-direct {v0, p0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
 
     .line 14
-    :cond_0
-    const/4 p0, 0x0
-
     .line 15
-    return p0
+    .line 16
+    throw v0
+.end method
+
+.method private static final f(II)V
+    .locals 4
+
+    .line 1
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    .line 2
+    .line 3
+    const-string v1, ") is greater than toIndex ("
+
+    .line 4
+    .line 5
+    const-string v2, ")."
+
+    .line 6
+    .line 7
+    const-string v3, "Indices are out of order. fromIndex ("
+
+    .line 8
+    .line 9
+    invoke-static {p0, p1, v3, v1, v2}, Lpb1;->l(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    .line 14
+    .line 15
+    .line 16
+    throw v0
 .end method

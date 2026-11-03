@@ -1,37 +1,32 @@
 .class public final Lkg3;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
 .field public final a:Ljava/lang/String;
 
-.field public final b:Ljava/lang/String;
+.field public final b:Lvq2;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Lvq2;)V
     .locals 0
 
     .line 1
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lkg3;->a:Ljava/lang/String;
 
     .line 5
     .line 6
+    iput-object p2, p0, Lkg3;->b:Lvq2;
+
     .line 7
-    iput-object p1, p0, Lkg3;->a:Ljava/lang/String;
-
     .line 8
-    .line 9
-    iput-object p2, p0, Lkg3;->b:Ljava/lang/String;
-
-    .line 10
-    .line 11
     return-void
 .end method
 
@@ -89,15 +84,15 @@
 
     .line 22
     :cond_2
-    iget-object p0, p0, Lkg3;->b:Ljava/lang/String;
+    iget-object p0, p0, Lkg3;->b:Lvq2;
 
     .line 23
     .line 24
-    iget-object p1, p1, Lkg3;->b:Ljava/lang/String;
+    iget-object p1, p1, Lkg3;->b:Lvq2;
 
     .line 25
     .line 26
-    invoke-static {p0, p1}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {p0, p1}, Lvq2;->equals(Ljava/lang/Object;)Z
 
     .line 27
     .line 28
@@ -144,11 +139,11 @@
 
     .line 8
     .line 9
-    iget-object p0, p0, Lkg3;->b:Ljava/lang/String;
+    iget-object p0, p0, Lkg3;->b:Lvq2;
 
     .line 10
     .line 11
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {p0}, Lvq2;->hashCode()I
 
     .line 12
     .line 13
@@ -163,36 +158,65 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 4
+    .locals 2
 
     .line 1
-    const-string v0, ", label="
+    new-instance v0, Ljava/lang/StringBuilder;
 
     .line 2
     .line 3
-    const-string v1, ")"
+    const-string v1, "MatchGroup(value="
 
     .line 4
     .line 5
-    const-string v2, "MaterialBreadcrumbItem(path="
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 6
     .line 7
-    iget-object v3, p0, Lkg3;->a:Ljava/lang/String;
-
     .line 8
+    iget-object v1, p0, Lkg3;->a:Ljava/lang/String;
+
     .line 9
-    iget-object p0, p0, Lkg3;->b:Ljava/lang/String;
-
     .line 10
-    .line 11
-    invoke-static {v2, v3, v0, p0, v1}, Lxu1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 11
     .line 12
     .line 13
+    const-string v1, ", range="
+
     .line 14
+    .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    iget-object p0, p0, Lkg3;->b:Lvq2;
+
+    .line 19
+    .line 20
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 21
+    .line 22
+    .line 23
+    const/16 p0, 0x29
+
+    .line 24
+    .line 25
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 26
+    .line 27
+    .line 28
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 29
+    .line 30
+    .line 31
     move-result-object p0
 
-    .line 15
+    .line 32
     return-object p0
 .end method

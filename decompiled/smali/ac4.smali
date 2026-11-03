@@ -1,138 +1,130 @@
-.class public abstract Lac4;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lac4;
+.super Lwc4;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final a:I
-
-.field public final b:I
+# static fields
+.field public static final c:Lac4;
 
 
 # direct methods
-.method public constructor <init>(II)V
-    .locals 0
-
-    .line 16
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput p1, p0, Lac4;->a:I
-
-    iput p2, p0, Lac4;->b:I
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(III)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    and-int/lit8 v0, p3, 0x1
+    new-instance v0, Lac4;
 
     .line 2
     .line 3
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_0
+    const/4 v2, 0x1
 
     .line 5
+    invoke-direct {v0, v1, v2, v2}, Lwc4;-><init>(III)V
+
     .line 6
-    move p1, v1
-
     .line 7
-    :cond_0
-    and-int/lit8 p3, p3, 0x2
-
     .line 8
+    sput-object v0, Lac4;->c:Lac4;
+
     .line 9
-    if-eqz p3, :cond_1
-
     .line 10
-    .line 11
-    move p2, v1
-
-    .line 12
-    :cond_1
-    invoke-direct {p0, p1, p2}, Lac4;-><init>(II)V
-
-    .line 13
-    .line 14
-    .line 15
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Lnp2;Lvu;Lk46;Lf95;Lcc4;)V
+.method public final a(Lnp2;Lqu;Lw56;Lca5;Lyc4;)V
     .locals 0
 
     .line 1
     const/4 p0, 0x0
 
     .line 2
-    invoke-virtual {p1, p0}, Lnp2;->b(I)I
+    invoke-virtual {p1, p0}, Lnp2;->c(I)Ljava/lang/Object;
 
     .line 3
     .line 4
     .line 5
-    move-result p0
+    move-result-object p0
 
     .line 6
-    invoke-virtual {p3, p0}, Lk46;->a(I)V
+    check-cast p0, Lg85;
 
     .line 7
     .line 8
-    .line 9
-    return-void
-.end method
-
-.method public b(Lnp2;)Lp62;
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return-object p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    invoke-static {p0}, Ld85;->a(Ljava/lang/Class;)Lvq0;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
+    iget-object p1, p4, Lca5;->i:Lur3;
 
     .line 9
-    invoke-virtual {p0}, Lvq0;->c()Ljava/lang/String;
-
     .line 10
+    if-eqz p1, :cond_1
+
     .line 11
     .line 12
-    move-result-object p0
+    invoke-virtual {p1, p0}, Lur3;->g(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 13
-    if-nez p0, :cond_0
-
     .line 14
     .line 15
-    const-string p0, ""
+    move-result-object p2
 
     .line 16
+    check-cast p2, Lum4;
+
     .line 17
+    .line 18
+    if-eqz p2, :cond_1
+
+    .line 19
+    .line 20
+    iget-object p2, p4, Lca5;->j:Ljava/util/ArrayList;
+
+    .line 21
+    .line 22
+    if-eqz p2, :cond_0
+
+    .line 23
+    .line 24
+    invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
+
+    .line 25
+    .line 26
+    .line 27
+    move-result p3
+
+    .line 28
+    add-int/lit8 p3, p3, -0x1
+
+    .line 29
+    .line 30
+    invoke-virtual {p2, p3}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+
+    .line 31
+    .line 32
+    .line 33
+    move-result-object p2
+
+    .line 34
+    check-cast p2, Lcs3;
+
+    .line 35
+    .line 36
+    if-eqz p2, :cond_0
+
+    .line 37
+    .line 38
+    iput-object p2, p4, Lca5;->e:Lcs3;
+
+    .line 39
+    .line 40
     :cond_0
-    return-object p0
+    invoke-virtual {p1, p0}, Lur3;->k(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 41
+    .line 42
+    .line 43
+    :cond_1
+    return-void
 .end method

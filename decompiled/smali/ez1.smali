@@ -1,56 +1,68 @@
-.class public abstract Lez1;
+.class public interface abstract Lez1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lnh;
 
 
-# static fields
-.field public static final a:F
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 4
+# virtual methods
+.method public a(Liy6;)Lk47;
+    .locals 0
 
     .line 1
-    const-wide v0, 0x3fe8f5c28f5c28f6L    # 0.78
+    new-instance p1, Lke1;
+
+    .line 2
+    .line 3
+    invoke-direct {p1, p0}, Lke1;-><init>(Lez1;)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-object p1
+.end method
+
+.method public abstract b(JFFF)F
+.end method
+
+.method public abstract c(JFFF)F
+.end method
+
+.method public abstract d(FFF)J
+.end method
+
+.method public e(FFF)F
+    .locals 6
+
+    .line 1
+    invoke-interface {p0, p1, p2, p3}, Lez1;->d(FFF)J
 
     .line 2
     .line 3
     .line 4
+    move-result-wide v1
+
     .line 5
+    move-object v0, p0
+
     .line 6
-    invoke-static {v0, v1}, Ljava/lang/Math;->log(D)D
+    move v3, p1
 
     .line 7
+    move v4, p2
+
     .line 8
+    move v5, p3
+
     .line 9
-    move-result-wide v0
+    invoke-interface/range {v0 .. v5}, Lez1;->c(JFFF)F
 
     .line 10
-    const-wide v2, 0x3feccccccccccccdL    # 0.9
-
     .line 11
     .line 12
+    move-result p0
+
     .line 13
-    .line 14
-    .line 15
-    invoke-static {v2, v3}, Ljava/lang/Math;->log(D)D
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-wide v2
-
-    .line 19
-    div-double/2addr v0, v2
-
-    .line 20
-    double-to-float v0, v0
-
-    .line 21
-    sput v0, Lez1;->a:F
-
-    .line 22
-    .line 23
-    return-void
+    return p0
 .end method

@@ -1,57 +1,83 @@
-.class public final Li85;
+.class public final synthetic Li85;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ld52;
 
 
 # instance fields
-.field public final a:Ljava/lang/reflect/Field;
+.field public final synthetic j:B
 
-.field public final b:Ljava/lang/String;
-
-.field public final synthetic c:Ljw6;
-
-.field public final synthetic d:Z
-
-.field public final synthetic e:Z
+.field public final synthetic k:Ln85;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/reflect/Field;Ljava/lang/reflect/Method;Ljw6;Ljw6;ZZ)V
+.method public synthetic constructor <init>(Ln85;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p2, p0, Li85;->j:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Li85;->k:Ln85;
+
     .line 4
-    iput-object p5, p0, Li85;->c:Ljw6;
-
     .line 5
-    .line 6
-    iput-boolean p6, p0, Li85;->d:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6
     .line 7
     .line 8
-    iput-boolean p7, p0, Li85;->e:Z
+    return-void
+.end method
 
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 2
+
+    .line 1
+    iget-byte v0, p0, Li85;->j:B
+
+    .line 2
+    .line 3
+    sget-object v1, Lk27;->a:Lk27;
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Li85;->k:Ln85;
+
+    .line 6
+    .line 7
+    packed-switch v0, :pswitch_data_0
+
+    .line 8
     .line 9
     .line 10
-    iput-object p2, p0, Li85;->a:Ljava/lang/reflect/Field;
+    invoke-virtual {p0}, Ln85;->I()V
 
     .line 11
     .line 12
-    invoke-virtual {p2}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
-
     .line 13
+    return-object v1
+
     .line 14
+    :pswitch_0
+    invoke-virtual {p0}, Ln85;->I()V
+
     .line 15
-    move-result-object p1
-
     .line 16
-    iput-object p1, p0, Li85;->b:Ljava/lang/String;
-
     .line 17
+    return-object v1
+
     .line 18
-    return-void
+    nop
+
+    .line 19
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

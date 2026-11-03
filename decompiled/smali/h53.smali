@@ -1,32 +1,59 @@
-.class public abstract Lh53;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lh53;
+.super Landroid/text/style/MetricAffectingSpan;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Ljava/util/concurrent/atomic/AtomicBoolean;
+# instance fields
+.field public final j:F
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(F)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    invoke-direct {p0}, Landroid/text/style/MetricAffectingSpan;-><init>()V
 
     .line 2
     .line 3
-    const/4 v1, 0x0
-
     .line 4
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+    iput p1, p0, Lh53;->j:F
 
     .line 5
     .line 6
-    .line 7
-    sput-object v0, Lh53;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    return-void
+.end method
 
-    .line 8
-    .line 9
+
+# virtual methods
+.method public final updateDrawState(Landroid/text/TextPaint;)V
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lh53;->j:F
+
+    .line 2
+    .line 3
+    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setLetterSpacing(F)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final updateMeasureState(Landroid/text/TextPaint;)V
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lh53;->j:F
+
+    .line 2
+    .line 3
+    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setLetterSpacing(F)V
+
+    .line 4
+    .line 5
+    .line 6
     return-void
 .end method

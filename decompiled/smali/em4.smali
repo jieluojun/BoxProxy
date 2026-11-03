@@ -1,163 +1,194 @@
 .class public final Lem4;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lrm4;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final c:F
 
-.field public final b:Ljava/lang/String;
+.field public final d:F
 
-.field public final c:[B
+.field public final e:F
+
+.field public final f:F
 
 
 # direct methods
-.method public constructor <init>([BLjava/lang/String;Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>(FFFF)V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x1
 
     .line 2
+    invoke-direct {p0, v0}, Lrm4;-><init>(I)V
+
     .line 3
     .line 4
-    iput-object p2, p0, Lem4;->a:Ljava/lang/String;
-
     .line 5
+    iput p1, p0, Lem4;->c:F
+
     .line 6
-    iput-object p3, p0, Lem4;->b:Ljava/lang/String;
-
     .line 7
-    .line 8
-    iput-object p1, p0, Lem4;->c:[B
+    iput p2, p0, Lem4;->d:F
 
+    .line 8
     .line 9
+    iput p3, p0, Lem4;->e:F
+
     .line 10
+    .line 11
+    iput p4, p0, Lem4;->f:F
+
+    .line 12
+    .line 13
     return-void
 .end method
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 2
+    .locals 4
 
     .line 1
-    if-ne p0, p1, :cond_0
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    goto :goto_1
+    if-ne p0, p1, :cond_0
 
+    .line 3
     .line 4
-    :cond_0
-    instance-of v0, p1, Lem4;
+    return v0
 
     .line 5
-    .line 6
-    if-nez v0, :cond_1
+    :cond_0
+    instance-of v1, p1, Lem4;
 
+    .line 6
     .line 7
+    const/4 v2, 0x0
+
     .line 8
-    goto :goto_0
+    if-nez v1, :cond_1
 
     .line 9
+    .line 10
+    return v2
+
+    .line 11
     :cond_1
     check-cast p1, Lem4;
 
-    .line 10
-    .line 11
-    iget-object v0, p0, Lem4;->a:Ljava/lang/String;
-
     .line 12
     .line 13
-    iget-object v1, p1, Lem4;->a:Ljava/lang/String;
+    iget v1, p0, Lem4;->c:F
 
     .line 14
     .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    iget v3, p1, Lem4;->c:F
 
     .line 16
     .line 17
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
+
     .line 18
-    move-result v0
-
     .line 19
-    if-nez v0, :cond_2
-
     .line 20
+    move-result v1
+
     .line 21
-    goto :goto_0
+    if-eqz v1, :cond_2
 
     .line 22
-    :cond_2
-    iget-object v0, p0, Lem4;->b:Ljava/lang/String;
-
     .line 23
+    return v2
+
     .line 24
-    iget-object v1, p1, Lem4;->b:Ljava/lang/String;
+    :cond_2
+    iget v1, p0, Lem4;->d:F
 
     .line 25
     .line 26
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    iget v3, p1, Lem4;->d:F
 
     .line 27
     .line 28
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
+
     .line 29
-    move-result v0
-
     .line 30
-    if-nez v0, :cond_3
-
     .line 31
+    move-result v1
+
     .line 32
-    goto :goto_0
+    if-eqz v1, :cond_3
 
     .line 33
-    :cond_3
-    iget-object p0, p0, Lem4;->c:[B
-
     .line 34
+    return v2
+
     .line 35
-    iget-object p1, p1, Lem4;->c:[B
+    :cond_3
+    iget v1, p0, Lem4;->e:F
 
     .line 36
     .line 37
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    iget v3, p1, Lem4;->e:F
 
     .line 38
     .line 39
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
+
     .line 40
-    move-result p0
-
     .line 41
-    if-nez p0, :cond_4
-
     .line 42
+    move-result v1
+
     .line 43
-    :goto_0
-    const/4 p0, 0x0
+    if-eqz v1, :cond_4
 
     .line 44
-    return p0
-
     .line 45
-    :cond_4
-    :goto_1
-    const/4 p0, 0x1
+    return v2
 
     .line 46
-    return p0
+    :cond_4
+    iget p0, p0, Lem4;->f:F
+
+    .line 47
+    .line 48
+    iget p1, p1, Lem4;->f:F
+
+    .line 49
+    .line 50
+    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
+
+    .line 51
+    .line 52
+    .line 53
+    move-result p0
+
+    .line 54
+    if-eqz p0, :cond_5
+
+    .line 55
+    .line 56
+    return v2
+
+    .line 57
+    :cond_5
+    return v0
 .end method
 
 .method public final hashCode()I
     .locals 3
 
     .line 1
-    iget-object v0, p0, Lem4;->a:Ljava/lang/String;
+    iget v0, p0, Lem4;->c:F
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
 
     .line 4
     .line 5
@@ -172,11 +203,11 @@
     mul-int/2addr v0, v1
 
     .line 10
-    iget-object v2, p0, Lem4;->b:Ljava/lang/String;
+    iget v2, p0, Lem4;->d:F
 
     .line 11
     .line 12
-    invoke-static {v0, v2, v1}, Lpa6;->e(ILjava/lang/String;I)I
+    invoke-static {v2, v0, v1}, Lpb1;->d(FII)I
 
     .line 13
     .line 14
@@ -184,21 +215,33 @@
     move-result v0
 
     .line 16
-    iget-object p0, p0, Lem4;->c:[B
+    iget v2, p0, Lem4;->e:F
 
     .line 17
     .line 18
-    invoke-static {p0}, Ljava/util/Arrays;->hashCode([B)I
+    invoke-static {v2, v0, v1}, Lpb1;->d(FII)I
 
     .line 19
     .line 20
     .line 21
-    move-result p0
+    move-result v0
 
     .line 22
-    add-int/2addr p0, v0
+    iget p0, p0, Lem4;->f:F
 
     .line 23
+    .line 24
+    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
+
+    .line 25
+    .line 26
+    .line 27
+    move-result p0
+
+    .line 28
+    add-int/2addr p0, v0
+
+    .line 29
     return p0
 .end method
 
@@ -206,57 +249,77 @@
     .locals 5
 
     .line 1
-    iget-object v0, p0, Lem4;->c:[B
+    const-string v0, ", y1="
 
     .line 2
     .line 3
-    invoke-static {v0}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
+    const-string v1, ", x2="
 
     .line 4
     .line 5
-    .line 6
-    move-result-object v0
+    const-string v2, "QuadTo(x1="
 
+    .line 6
     .line 7
-    const-string v1, ", mimeType="
+    iget v3, p0, Lem4;->c:F
 
     .line 8
     .line 9
-    const-string v2, ", bytes="
+    iget v4, p0, Lem4;->d:F
 
     .line 10
     .line 11
-    const-string v3, "PendingSave(displayName="
+    invoke-static {v2, v3, v0, v4, v1}, Lpb1;->u(Ljava/lang/String;FLjava/lang/String;FLjava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 12
     .line 13
-    iget-object v4, p0, Lem4;->a:Ljava/lang/String;
-
     .line 14
+    move-result-object v0
+
     .line 15
-    iget-object p0, p0, Lem4;->b:Ljava/lang/String;
+    iget v1, p0, Lem4;->e:F
 
     .line 16
     .line 17
-    invoke-static {v3, v4, v1, p0, v2}, Lxu1;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
     .line 18
     .line 19
     .line 20
-    move-result-object p0
+    const-string v1, ", y2="
 
     .line 21
-    const-string v1, ")"
-
     .line 22
-    .line 23
-    invoke-static {p0, v0, v1}, Lv66;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 23
     .line 24
     .line 25
+    iget p0, p0, Lem4;->f:F
+
     .line 26
+    .line 27
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    .line 28
+    .line 29
+    .line 30
+    const-string p0, ")"
+
+    .line 31
+    .line 32
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 33
+    .line 34
+    .line 35
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 36
+    .line 37
+    .line 38
     move-result-object p0
 
-    .line 27
+    .line 39
     return-object p0
 .end method

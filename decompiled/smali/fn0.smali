@@ -1,115 +1,71 @@
 .class public final Lfn0;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lsw2;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Lfn0;
+# instance fields
+.field public final a:Lzc;
 
-.field public static final b:Lyr4;
+.field public final b:Lad;
+
+.field public final c:Lzc;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 3
 
     .line 1
-    new-instance v0, Lfn0;
+    invoke-static {}, Lbd;->a()Lzc;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    move-result-object v0
+
     .line 5
+    new-instance v1, Lad;
+
     .line 6
-    sput-object v0, Lfn0;->a:Lfn0;
-
     .line 7
+    new-instance v2, Landroid/graphics/PathMeasure;
+
     .line 8
-    new-instance v0, Lyr4;
-
     .line 9
-    .line 10
-    const-string v1, "kotlin.Char"
+    invoke-direct {v2}, Landroid/graphics/PathMeasure;-><init>()V
 
+    .line 10
     .line 11
     .line 12
-    sget-object v2, Lxr4;->g:Lxr4;
+    invoke-direct {v1, v2}, Lad;-><init>(Landroid/graphics/PathMeasure;)V
 
     .line 13
     .line 14
-    invoke-direct {v0, v1, v2}, Lyr4;-><init>(Ljava/lang/String;Lxr4;)V
-
     .line 15
+    invoke-static {}, Lbd;->a()Lzc;
+
     .line 16
     .line 17
-    sput-object v0, Lfn0;->b:Lyr4;
-
     .line 18
+    move-result-object v2
+
     .line 19
-    return-void
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 20
+    .line 21
+    .line 22
+    iput-object v0, p0, Lfn0;->a:Lzc;
 
-# virtual methods
-.method public final b(Lae1;)Ljava/lang/Object;
-    .locals 0
+    .line 23
+    .line 24
+    iput-object v1, p0, Lfn0;->b:Lad;
 
-    .line 1
-    invoke-interface {p1}, Lae1;->f()C
+    .line 25
+    .line 26
+    iput-object v2, p0, Lfn0;->c:Lzc;
 
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    invoke-static {p0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    return-object p0
-.end method
-
-.method public final c()Lov5;
-    .locals 0
-
-    .line 1
-    sget-object p0, Lfn0;->b:Lyr4;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final d(Lm96;Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    check-cast p2, Ljava/lang/Character;
-
-    .line 2
-    .line 3
-    invoke-virtual {p2}, Ljava/lang/Character;->charValue()C
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    invoke-virtual {p1, p0}, Lm96;->d(C)V
-
-    .line 8
-    .line 9
-    .line 10
+    .line 27
+    .line 28
     return-void
 .end method

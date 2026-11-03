@@ -1,367 +1,200 @@
-.class public final synthetic Lyt6;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lv52;
+.class public final enum Lyt6;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic A:I
+# static fields
+.field public static final enum j:Lyt6;
 
-.field public final synthetic j:Ljava/lang/String;
+.field public static final enum k:Lyt6;
 
-.field public final synthetic k:J
+.field public static final enum l:Lyt6;
 
-.field public final synthetic l:J
+.field public static final enum m:Lyt6;
 
-.field public final synthetic m:J
+.field public static final enum n:Lyt6;
 
-.field public final synthetic n:Ljava/lang/String;
-
-.field public final synthetic o:J
-
-.field public final synthetic p:Lv52;
-
-.field public final synthetic q:Lty0;
-
-.field public final synthetic r:F
-
-.field public final synthetic s:F
-
-.field public final synthetic t:F
-
-.field public final synthetic u:Lww1;
-
-.field public final synthetic v:Lxn3;
-
-.field public final synthetic w:Ljava/lang/String;
-
-.field public final synthetic x:Z
-
-.field public final synthetic y:Lv52;
-
-.field public final synthetic z:I
+.field public static final synthetic o:[Lyt6;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;JJJLjava/lang/String;JLv52;Lty0;FFFLww1;Lxn3;Ljava/lang/String;ZLv52;II)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 8
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lyt6;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lyt6;->j:Ljava/lang/String;
+    const-string v1, "DARKER"
 
+    .line 4
     .line 5
+    const/4 v2, 0x0
+
     .line 6
-    iput-wide p2, p0, Lyt6;->k:J
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
-    iput-wide p4, p0, Lyt6;->l:J
-
     .line 9
+    sput-object v0, Lyt6;->j:Lyt6;
+
     .line 10
-    iput-wide p6, p0, Lyt6;->m:J
-
     .line 11
+    new-instance v1, Lyt6;
+
     .line 12
-    iput-object p8, p0, Lyt6;->n:Ljava/lang/String;
-
     .line 13
-    .line 14
-    iput-wide p9, p0, Lyt6;->o:J
+    const-string v2, "LIGHTER"
 
+    .line 14
     .line 15
+    const/4 v3, 0x1
+
     .line 16
-    iput-object p11, p0, Lyt6;->p:Lv52;
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
     .line 18
-    iput-object p12, p0, Lyt6;->q:Lty0;
-
     .line 19
+    sput-object v1, Lyt6;->k:Lyt6;
+
     .line 20
-    iput p13, p0, Lyt6;->r:F
-
     .line 21
+    new-instance v2, Lyt6;
+
     .line 22
-    iput p14, p0, Lyt6;->s:F
-
     .line 23
-    .line 24
-    iput p15, p0, Lyt6;->t:F
+    const-string v3, "RELATIVE_DARKER"
 
+    .line 24
     .line 25
+    const/4 v4, 0x2
+
     .line 26
-    move-object/from16 p1, p16
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 27
     .line 28
-    iput-object p1, p0, Lyt6;->u:Lww1;
-
     .line 29
+    sput-object v2, Lyt6;->l:Lyt6;
+
     .line 30
-    move-object/from16 p1, p17
-
     .line 31
+    new-instance v3, Lyt6;
+
     .line 32
-    iput-object p1, p0, Lyt6;->v:Lxn3;
-
     .line 33
-    .line 34
-    move-object/from16 p1, p18
+    const-string v4, "RELATIVE_LIGHTER"
 
+    .line 34
     .line 35
+    const/4 v5, 0x3
+
     .line 36
-    iput-object p1, p0, Lyt6;->w:Ljava/lang/String;
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 37
     .line 38
-    move/from16 p1, p19
-
     .line 39
+    sput-object v3, Lyt6;->m:Lyt6;
+
     .line 40
-    iput-boolean p1, p0, Lyt6;->x:Z
-
     .line 41
+    new-instance v4, Lyt6;
+
     .line 42
-    move-object/from16 p1, p20
-
     .line 43
-    .line 44
-    iput-object p1, p0, Lyt6;->y:Lv52;
+    const-string v5, "NEARER"
 
+    .line 44
     .line 45
+    const/4 v6, 0x4
+
     .line 46
-    move/from16 p1, p21
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 47
     .line 48
-    iput p1, p0, Lyt6;->z:I
-
     .line 49
+    sput-object v4, Lyt6;->n:Lyt6;
+
     .line 50
-    move/from16 p1, p22
-
     .line 51
-    .line 52
-    iput p1, p0, Lyt6;->A:I
+    new-instance v5, Lyt6;
 
+    .line 52
     .line 53
+    const-string v6, "FARTHER"
+
     .line 54
+    .line 55
+    const/4 v7, 0x5
+
+    .line 56
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 57
+    .line 58
+    .line 59
+    filled-new-array/range {v0 .. v5}, [Lyt6;
+
+    .line 60
+    .line 61
+    .line 62
+    move-result-object v0
+
+    .line 63
+    sput-object v0, Lyt6;->o:[Lyt6;
+
+    .line 64
+    .line 65
     return-void
 .end method
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 25
+.method public static valueOf(Ljava/lang/String;)Lyt6;
+    .locals 1
 
     .line 1
-    move-object/from16 v0, p0
+    const-class v0, Lyt6;
 
     .line 2
     .line 3
-    move-object/from16 v20, p1
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     .line 4
     .line 5
-    check-cast v20, Lz01;
-
     .line 6
+    move-result-object p0
+
     .line 7
-    move-object/from16 v1, p2
+    check-cast p0, Lyt6;
 
     .line 8
     .line 9
-    check-cast v1, Ljava/lang/Integer;
+    return-object p0
+.end method
 
-    .line 10
-    .line 11
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.method public static values()[Lyt6;
+    .locals 1
 
-    .line 12
-    .line 13
-    .line 14
-    iget v1, v0, Lyt6;->z:I
+    .line 1
+    sget-object v0, Lyt6;->o:[Lyt6;
 
-    .line 15
-    .line 16
-    or-int/lit8 v1, v1, 0x1
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    .line 17
-    .line 18
-    invoke-static {v1}, Lkr5;->i0(I)I
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
 
-    .line 19
-    .line 20
-    .line 21
-    move-result v21
+    .line 7
+    check-cast v0, [Lyt6;
 
-    .line 22
-    iget v1, v0, Lyt6;->A:I
-
-    .line 23
-    .line 24
-    invoke-static {v1}, Lkr5;->i0(I)I
-
-    .line 25
-    .line 26
-    .line 27
-    move-result v22
-
-    .line 28
-    iget-object v1, v0, Lyt6;->j:Ljava/lang/String;
-
-    .line 29
-    .line 30
-    move-object v3, v1
-
-    .line 31
-    iget-wide v1, v0, Lyt6;->k:J
-
-    .line 32
-    .line 33
-    move-object v5, v3
-
-    .line 34
-    iget-wide v3, v0, Lyt6;->l:J
-
-    .line 35
-    .line 36
-    move-object v7, v5
-
-    .line 37
-    iget-wide v5, v0, Lyt6;->m:J
-
-    .line 38
-    .line 39
-    move-object v8, v7
-
-    .line 40
-    iget-object v7, v0, Lyt6;->n:Ljava/lang/String;
-
-    .line 41
-    .line 42
-    move-object v10, v8
-
-    .line 43
-    iget-wide v8, v0, Lyt6;->o:J
-
-    .line 44
-    .line 45
-    move-object v11, v10
-
-    .line 46
-    iget-object v10, v0, Lyt6;->p:Lv52;
-
-    .line 47
-    .line 48
-    move-object v12, v11
-
-    .line 49
-    iget-object v11, v0, Lyt6;->q:Lty0;
-
-    .line 50
-    .line 51
-    move-object v13, v12
-
-    .line 52
-    iget v12, v0, Lyt6;->r:F
-
-    .line 53
-    .line 54
-    move-object v14, v13
-
-    .line 55
-    iget v13, v0, Lyt6;->s:F
-
-    .line 56
-    .line 57
-    move-object v15, v14
-
-    .line 58
-    iget v14, v0, Lyt6;->t:F
-
-    .line 59
-    .line 60
-    move-object/from16 v16, v15
-
-    .line 61
-    .line 62
-    iget-object v15, v0, Lyt6;->u:Lww1;
-
-    .line 63
-    .line 64
-    move-wide/from16 v17, v1
-
-    .line 65
-    .line 66
-    iget-object v1, v0, Lyt6;->v:Lxn3;
-
-    .line 67
-    .line 68
-    iget-object v2, v0, Lyt6;->w:Ljava/lang/String;
-
-    .line 69
-    .line 70
-    move-object/from16 v19, v1
-
-    .line 71
-    .line 72
-    iget-boolean v1, v0, Lyt6;->x:Z
-
-    .line 73
-    .line 74
-    iget-object v0, v0, Lyt6;->y:Lv52;
-
-    .line 75
-    .line 76
-    move-object/from16 v23, v19
-
-    .line 77
-    .line 78
-    move-object/from16 v19, v0
-
-    .line 79
-    .line 80
-    move-object/from16 v0, v16
-
-    .line 81
-    .line 82
-    move-object/from16 v16, v23
-
-    .line 83
-    .line 84
-    move-wide/from16 v23, v17
-
-    .line 85
-    .line 86
-    move/from16 v18, v1
-
-    .line 87
-    .line 88
-    move-object/from16 v17, v2
-
-    .line 89
-    .line 90
-    move-wide/from16 v1, v23
-
-    .line 91
-    .line 92
-    invoke-static/range {v0 .. v22}, Le43;->p(Ljava/lang/String;JJJLjava/lang/String;JLv52;Lty0;FFFLww1;Lxn3;Ljava/lang/String;ZLv52;Lz01;II)V
-
-    .line 93
-    .line 94
-    .line 95
-    sget-object v0, Ld07;->a:Ld07;
-
-    .line 96
-    .line 97
+    .line 8
+    .line 9
     return-object v0
 .end method

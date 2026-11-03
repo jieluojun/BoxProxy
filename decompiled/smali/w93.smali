@@ -1,286 +1,190 @@
 .class public abstract Lw93;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# static fields
+.field public static final a:Lu86;
+
+.field public static final b:Ley6;
+
+.field public static final c:Ley6;
+
+.field public static final d:Ley6;
+
+.field public static final e:Ley6;
+
+.field public static final f:Lu86;
+
+.field public static final g:F
+
+.field public static final h:F
+
+.field public static final i:Lc6;
 
 
 # direct methods
-.method public static a(Ljava/util/List;Ljava/lang/String;Lzi3;I)Ljava/lang/String;
-    .locals 6
+.method static constructor <clinit>()V
+    .locals 8
 
     .line 1
-    and-int/lit8 v0, p3, 0x1
+    const v0, 0x38d1b717    # 1.0E-4f
 
     .line 2
     .line 3
-    if-eqz v0, :cond_0
-
     .line 4
-    .line 5
-    const-string p1, ", "
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
+    .line 5
     .line 6
     .line 7
-    :cond_0
-    and-int/lit8 v0, p3, 0x2
+    move-result-object v0
 
     .line 8
+    new-instance v1, Lu86;
+
     .line 9
-    const-string v1, ""
-
     .line 10
-    .line 11
-    if-eqz v0, :cond_1
+    const v2, 0x3f51eb85    # 0.82f
 
+    .line 11
     .line 12
     .line 13
-    move-object v0, v1
+    const v3, 0x43b54000    # 362.5f
 
     .line 14
-    goto :goto_0
-
     .line 15
-    :cond_1
-    const-string v0, "[\n\t"
-
     .line 16
-    .line 17
-    :goto_0
-    and-int/lit8 v2, p3, 0x4
+    invoke-direct {v1, v2, v3, v0}, Lu86;-><init>(FFLjava/lang/Object;)V
 
+    .line 17
     .line 18
     .line 19
-    if-eqz v2, :cond_2
+    sput-object v1, Lw93;->a:Lu86;
 
     .line 20
     .line 21
-    goto :goto_1
+    const/16 v1, 0xc8
 
     .line 22
-    :cond_2
-    const-string v1, "\n]"
-
     .line 23
+    const/4 v4, 0x0
+
     .line 24
-    :goto_1
-    and-int/lit8 p3, p3, 0x20
+    const/4 v5, 0x0
 
     .line 25
+    const/4 v6, 0x6
+
     .line 26
-    if-eqz p3, :cond_3
+    invoke-static {v1, v4, v5, v6}, Luu6;->Y(IILrp1;I)Ley6;
 
     .line 27
     .line 28
-    const/4 p2, 0x0
-
     .line 29
-    :cond_3
-    new-instance p3, Ljava/lang/StringBuilder;
+    move-result-object v1
 
     .line 30
-    .line 31
-    invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
+    sput-object v1, Lw93;->b:Ley6;
 
+    .line 31
     .line 32
+    const/16 v1, 0x96
+
     .line 33
     .line 34
-    invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
+    invoke-static {v1, v4, v5, v6}, Luu6;->Y(IILrp1;I)Ley6;
 
     .line 35
     .line 36
     .line 37
-    invoke-interface {p0}, Ljava/util/Collection;->size()I
+    move-result-object v5
 
     .line 38
+    sput-object v5, Lw93;->c:Ley6;
+
     .line 39
     .line 40
-    move-result v0
+    sget-object v5, Lyd0;->Q:Ls94;
 
     .line 41
-    const/4 v2, 0x0
-
     .line 42
-    move v3, v2
+    const/16 v6, 0x12c
 
     .line 43
-    :goto_2
-    if-ge v2, v0, :cond_9
-
     .line 44
+    const/4 v7, 0x2
+
     .line 45
-    invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-static {v6, v4, v5, v7}, Luu6;->Y(IILrp1;I)Ley6;
 
     .line 46
     .line 47
     .line 48
-    move-result-object v4
+    move-result-object v6
 
     .line 49
-    const/4 v5, 0x1
+    sput-object v6, Lw93;->d:Ley6;
 
     .line 50
-    add-int/2addr v3, v5
-
     .line 51
-    if-le v3, v5, :cond_4
+    invoke-static {v1, v4, v5, v7}, Luu6;->Y(IILrp1;I)Ley6;
 
     .line 52
     .line 53
-    invoke-virtual {p3, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
-
     .line 54
+    move-result-object v1
+
     .line 55
+    sput-object v1, Lw93;->e:Ley6;
+
     .line 56
-    :cond_4
-    if-eqz p2, :cond_5
-
     .line 57
-    .line 58
-    invoke-virtual {p2, v4}, Lzi3;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v1, Lu86;
 
+    .line 58
     .line 59
+    invoke-direct {v1, v2, v3, v0}, Lu86;-><init>(FFLjava/lang/Object;)V
+
     .line 60
     .line 61
-    move-result-object v4
-
     .line 62
-    check-cast v4, Ljava/lang/CharSequence;
+    sput-object v1, Lw93;->f:Lu86;
 
     .line 63
     .line 64
-    invoke-virtual {p3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
+    const/high16 v0, 0x43480000    # 200.0f
 
     .line 65
     .line 66
-    .line 67
-    goto :goto_4
+    sput v0, Lw93;->g:F
 
+    .line 67
     .line 68
-    :cond_5
-    if-nez v4, :cond_6
+    const/high16 v0, 0x42480000    # 50.0f
 
     .line 69
     .line 70
-    goto :goto_3
+    sput v0, Lw93;->h:F
 
     .line 71
-    :cond_6
-    instance-of v5, v4, Ljava/lang/CharSequence;
-
     .line 72
+    new-instance v0, Lc6;
+
     .line 73
-    :goto_3
-    if-eqz v5, :cond_7
-
     .line 74
+    const/16 v1, 0x19
+
     .line 75
-    check-cast v4, Ljava/lang/CharSequence;
-
     .line 76
-    .line 77
-    invoke-virtual {p3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
+    invoke-direct {v0, v1}, Lc6;-><init>(B)V
 
+    .line 77
     .line 78
     .line 79
+    sput-object v0, Lw93;->i:Lc6;
+
     .line 80
-    goto :goto_4
-
     .line 81
-    :cond_7
-    instance-of v5, v4, Ljava/lang/Character;
-
-    .line 82
-    .line 83
-    if-eqz v5, :cond_8
-
-    .line 84
-    .line 85
-    check-cast v4, Ljava/lang/Character;
-
-    .line 86
-    .line 87
-    invoke-virtual {v4}, Ljava/lang/Character;->charValue()C
-
-    .line 88
-    .line 89
-    .line 90
-    move-result v4
-
-    .line 91
-    invoke-virtual {p3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/Appendable;
-
-    .line 92
-    .line 93
-    .line 94
-    goto :goto_4
-
-    .line 95
-    :cond_8
-    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    .line 96
-    .line 97
-    .line 98
-    move-result-object v4
-
-    .line 99
-    invoke-virtual {p3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
-
-    .line 100
-    .line 101
-    .line 102
-    :goto_4
-    add-int/lit8 v2, v2, 0x1
-
-    .line 103
-    .line 104
-    goto :goto_2
-
-    .line 105
-    :cond_9
-    invoke-virtual {p3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/Appendable;
-
-    .line 106
-    .line 107
-    .line 108
-    invoke-virtual {p3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 109
-    .line 110
-    .line 111
-    move-result-object p0
-
-    .line 112
-    return-object p0
-.end method
-
-.method public static final b(Ljava/lang/String;)Ljava/lang/Void;
-    .locals 1
-
-    .line 1
-    new-instance v0, Ljava/util/NoSuchElementException;
-
-    .line 2
-    .line 3
-    invoke-direct {v0, p0}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
-
-    .line 4
-    .line 5
-    .line 6
-    throw v0
-.end method
-
-.method public static final c(Ljava/lang/String;)V
-    .locals 1
-
-    .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    .line 2
-    .line 3
-    invoke-direct {v0, p0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    .line 4
-    .line 5
-    .line 6
-    throw v0
+    return-void
 .end method

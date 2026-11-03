@@ -1,142 +1,44 @@
-.class public abstract Ljz2;
+.class public interface abstract Ljz2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lsh3;
-
-
-# instance fields
-.field public final a:Ljava/lang/String;
-
-
-# direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p1, p0, Ljz2;->a:Ljava/lang/String;
-
-    .line 5
-    .line 6
-    return-void
-.end method
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # virtual methods
-.method public final a(Lgs2;Ljava/util/List;I)I
-    .locals 0
-
-    .line 1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Ljz2;->a:Ljava/lang/String;
-
-    .line 4
-    .line 5
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    .line 10
-    .line 11
-    .line 12
-    throw p1
+.method public abstract A()Z
 .end method
 
-.method public final b(Lgs2;Ljava/util/List;I)I
-    .locals 0
-
-    .line 1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Ljz2;->a:Ljava/lang/String;
-
-    .line 4
-    .line 5
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    .line 10
-    .line 11
-    .line 12
-    throw p1
+.method public abstract C([F)V
 .end method
 
-.method public final d(Lgs2;Ljava/util/List;I)I
-    .locals 0
-
-    .line 1
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Ljz2;->a:Ljava/lang/String;
-
-    .line 4
-    .line 5
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    .line 10
-    .line 11
-    .line 12
-    throw p1
+.method public abstract D(Ljz2;J)J
 .end method
 
-.method public final e(Lgs2;Ljava/util/List;I)I
-    .locals 0
+.method public abstract H(Ljz2;[F)V
+.end method
 
-    .line 1
-    new-instance p1, Ljava/lang/IllegalStateException;
+.method public abstract O(Ljz2;Z)Ls85;
+.end method
 
-    .line 2
-    .line 3
-    iget-object p0, p0, Ljz2;->a:Ljava/lang/String;
+.method public abstract Q()J
+.end method
 
-    .line 4
-    .line 5
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+.method public abstract T(J)J
+.end method
 
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
+.method public abstract d(J)J
+.end method
 
-    .line 9
-    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+.method public abstract g(J)J
+.end method
 
-    .line 10
-    .line 11
-    .line 12
-    throw p1
+.method public abstract i(J)J
+.end method
+
+.method public abstract o()Ljz2;
+.end method
+
+.method public abstract w(Ljz2;J)J
+.end method
+
+.method public abstract z(J)J
 .end method

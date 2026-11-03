@@ -1,130 +1,76 @@
 .class public final Lbf6;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Lbf6;
+# instance fields
+.field public j:Lta0;
+
+.field public k:Ljava/lang/String;
+
+.field public synthetic l:Ljava/lang/Object;
+
+.field public final synthetic m:Lcf6;
+
+.field public n:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lcf6;Lz71;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lbf6;
+    iput-object p1, p0, Lbf6;->m:Lcf6;
 
     .line 2
     .line 3
-    new-instance v1, Laf6;
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
     .line 4
     .line 5
-    const/4 v2, 0x0
-
     .line 6
-    invoke-direct {v1, v2}, Laf6;-><init>(B)V
-
-    .line 7
-    .line 8
-    .line 9
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 10
-    .line 11
-    .line 12
-    sput-object v0, Lbf6;->a:Lbf6;
-
-    .line 13
-    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)Z
-    .locals 0
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    const p0, -0x785ffc25
+    iput-object p1, p0, Lbf6;->l:Ljava/lang/Object;
 
     .line 2
     .line 3
-    .line 4
-    and-int/2addr p0, p1
+    iget p1, p0, Lbf6;->n:I
 
+    .line 4
     .line 5
-    if-eqz p0, :cond_0
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
-    const/4 p0, 0x1
+    or-int/2addr p1, v0
 
     .line 8
-    return p0
+    iput p1, p0, Lbf6;->n:I
 
     .line 9
-    :cond_0
-    const/4 p0, 0x0
-
     .line 10
-    return p0
-.end method
+    iget-object p1, p0, Lbf6;->m:Lcf6;
 
-.method public final b(I)Z
-    .locals 0
+    .line 11
+    .line 12
+    const/4 v0, 0x0
 
-    .line 1
-    const p0, 0x7ff7d556
+    .line 13
+    invoke-virtual {p1, v0, p0}, Lcf6;->f(Lwe6;Lz71;)Ljava/lang/Object;
 
-    .line 2
-    .line 3
-    .line 4
-    and-int/2addr p0, p1
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p0
 
-    .line 5
-    if-eqz p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public final c(I)Z
-    .locals 0
-
-    .line 1
-    const p0, -0x5d94c426
-
-    .line 2
-    .line 3
-    .line 4
-    and-int/2addr p0, p1
-
-    .line 5
-    if-eqz p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
+    .line 17
+    return-object p0
 .end method

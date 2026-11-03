@@ -1,54 +1,94 @@
-.class public final Lqg4;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public abstract synthetic Lqg4;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public j:Z
-
-.field public k:I
-
-.field public l:I
-
-.field public synthetic m:Ljava/lang/Object;
-
-.field public n:I
+# static fields
+.field public static final synthetic a:[I
 
 
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+# direct methods
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    iput-object p1, p0, Lqg4;->m:Ljava/lang/Object;
+    invoke-static {}, Lrg4;->values()[Lrg4;
 
     .line 2
     .line 3
-    iget p1, p0, Lqg4;->n:I
-
     .line 4
+    move-result-object v0
+
     .line 5
-    const/high16 v0, -0x80000000
+    array-length v0, v0
 
     .line 6
-    .line 7
-    or-int/2addr p1, v0
+    new-array v0, v0, [I
 
+    .line 7
     .line 8
-    iput p1, p0, Lqg4;->n:I
+    const/4 v1, 0x0
 
     .line 9
+    const/4 v2, 0x1
+
     .line 10
-    const/4 p1, 0x0
+    :try_start_0
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 11
-    invoke-static {p1, p0}, Lpx6;->d0(ZLd81;)Ljava/lang/Object;
-
     .line 12
-    .line 13
-    .line 14
-    move-result-object p0
+    :catch_0
+    const/4 v3, 0x2
 
+    .line 13
+    :try_start_1
+    aput v3, v0, v2
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    .line 14
     .line 15
-    return-object p0
+    :catch_1
+    sput-object v0, Lqg4;->a:[I
+
+    .line 16
+    .line 17
+    invoke-static {}, Lno0;->values()[Lno0;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object v0
+
+    .line 21
+    array-length v0, v0
+
+    .line 22
+    new-array v0, v0, [I
+
+    .line 23
+    .line 24
+    :try_start_2
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    .line 25
+    .line 26
+    :catch_2
+    const/4 v1, 0x4
+
+    .line 27
+    :try_start_3
+    aput v3, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+
+    .line 28
+    .line 29
+    :catch_3
+    return-void
 .end method

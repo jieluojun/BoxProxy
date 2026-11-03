@@ -1,473 +1,620 @@
-.class public abstract Lhc;
+.class public final Lhc;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Landroid/view/View$OnAttachStateChangeListener;
 
 
-# static fields
-.field public static final a:[F
+# instance fields
+.field public final synthetic j:B
+
+.field public final synthetic k:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 23
+.method public synthetic constructor <init>(Ljava/lang/Object;B)V
+    .locals 0
 
     .line 1
-    const/16 v0, 0x65
+    iput-byte p2, p0, Lhc;->j:B
 
     .line 2
     .line 3
-    new-array v1, v0, [F
+    iput-object p1, p0, Lhc;->k:Ljava/lang/Object;
 
     .line 4
     .line 5
-    sput-object v1, Lhc;->a:[F
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 6
     .line 7
-    new-array v0, v0, [F
+    .line 8
+    return-void
+.end method
+
+.method private final a(Landroid/view/View;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final b(Landroid/view/View;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final c(Landroid/view/View;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final d(Landroid/view/View;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onViewAttachedToWindow(Landroid/view/View;)V
+    .locals 1
+
+    .line 1
+    iget-byte v0, p0, Lhc;->j:B
+
+    .line 2
+    .line 3
+    packed-switch v0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    :pswitch_0
+    return-void
+
+    .line 7
+    :pswitch_1
+    iget-object p0, p0, Lhc;->k:Ljava/lang/Object;
 
     .line 8
     .line 9
-    const/4 v2, 0x0
+    check-cast p0, Lic;
 
     .line 10
-    const/4 v3, 0x0
-
     .line 11
-    move v4, v3
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     .line 12
-    move v3, v2
-
     .line 13
-    :goto_0
-    const/16 v5, 0x64
-
     .line 14
+    move-result-object p1
+
     .line 15
-    const/high16 v6, 0x3f800000    # 1.0f
+    iget-boolean v0, p0, Lic;->c:Z
 
     .line 16
     .line 17
-    if-ge v4, v5, :cond_4
+    if-nez v0, :cond_0
 
     .line 18
     .line 19
-    int-to-float v5, v4
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     .line 20
-    const/high16 v7, 0x42c80000    # 100.0f
-
     .line 21
     .line 22
-    div-float/2addr v5, v7
+    move-result-object p1
 
     .line 23
-    move v7, v6
+    iget-object v0, p0, Lic;->e:Lgc;
 
     .line 24
-    :goto_1
-    sub-float v8, v7, v2
-
     .line 25
-    .line 26
-    const/high16 v9, 0x40000000    # 2.0f
+    invoke-virtual {p1, v0}, Landroid/content/Context;->registerComponentCallbacks(Landroid/content/ComponentCallbacks;)V
 
+    .line 26
     .line 27
     .line 28
-    div-float/2addr v8, v9
+    const/4 p1, 0x1
 
     .line 29
-    add-float/2addr v8, v2
+    iput-boolean p1, p0, Lic;->c:Z
 
     .line 30
-    const/high16 v10, 0x40400000    # 3.0f
-
     .line 31
+    :cond_0
+    return-void
+
     .line 32
-    mul-float v11, v8, v10
+    nop
 
     .line 33
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final onViewDetachedFromWindow(Landroid/view/View;)V
+    .locals 6
+
+    .line 1
+    iget-byte v0, p0, Lhc;->j:B
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    const/4 v2, 0x0
+
+    .line 5
+    packed-switch v0, :pswitch_data_0
+
+    .line 6
+    .line 7
+    .line 8
+    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+
+    .line 9
+    .line 10
+    .line 11
+    iget-object p0, p0, Lhc;->k:Ljava/lang/Object;
+
+    .line 12
+    .line 13
+    check-cast p0, Lk96;
+
+    .line 14
+    .line 15
+    invoke-virtual {p0, v2}, Leu2;->c(Ljava/util/concurrent/CancellationException;)V
+
+    .line 16
+    .line 17
+    .line 18
+    return-void
+
+    .line 19
+    :pswitch_0
+    iget-object p0, p0, Lhc;->k:Ljava/lang/Object;
+
+    .line 20
+    .line 21
+    check-cast p0, Ls2;
+
+    .line 22
+    .line 23
+    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object p1
+
+    .line 27
+    sget-object v0, Li67;->k:Li67;
+
+    .line 28
+    .line 29
+    if-nez p1, :cond_0
+
+    .line 30
+    .line 31
+    sget-object p1, Lwt1;->a:Lwt1;
+
+    .line 32
+    .line 33
+    goto :goto_0
+
     .line 34
-    sub-float v12, v6, v8
+    :cond_0
+    new-instance v3, Lwg1;
 
     .line 35
     .line 36
-    mul-float/2addr v11, v12
+    new-instance v4, Luo5;
 
     .line 37
-    const v13, 0x3e333333    # 0.175f
-
     .line 38
-    .line 39
-    .line 40
-    mul-float v14, v12, v13
+    const/4 v5, 0x7
 
+    .line 39
+    invoke-direct {v4, p1, v5}, Luo5;-><init>(Ljava/lang/Object;B)V
+
+    .line 40
     .line 41
     .line 42
-    const v15, 0x3eb33334    # 0.35000002f
+    const/4 p1, 0x1
 
     .line 43
+    invoke-direct {v3, v4, v0, p1}, Lwg1;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
+
     .line 44
     .line 45
-    mul-float v16, v8, v15
-
     .line 46
+    move-object p1, v3
+
     .line 47
-    add-float v16, v16, v14
+    :goto_0
+    invoke-interface {p1}, Lvw5;->iterator()Ljava/util/Iterator;
 
     .line 48
     .line 49
-    mul-float v16, v16, v11
-
     .line 50
+    move-result-object p1
+
     .line 51
-    mul-float v14, v8, v8
+    :cond_1
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 52
     .line 53
-    mul-float/2addr v14, v8
-
     .line 54
-    add-float v16, v16, v14
+    move-result v0
 
     .line 55
+    if-eqz v0, :cond_4
+
     .line 56
-    sub-float v17, v16, v5
-
     .line 57
-    .line 58
-    move/from16 v18, v6
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
+    .line 58
     .line 59
     .line 60
-    invoke-static/range {v17 .. v17}, Ljava/lang/Math;->abs(F)F
+    move-result-object v0
 
     .line 61
+    check-cast v0, Landroid/view/ViewParent;
+
     .line 62
     .line 63
-    move-result v6
+    instance-of v3, v0, Landroid/view/View;
 
     .line 64
-    move/from16 v17, v9
-
     .line 65
+    if-eqz v3, :cond_1
+
     .line 66
-    move/from16 v19, v10
-
     .line 67
-    .line 68
-    float-to-double v9, v6
+    check-cast v0, Landroid/view/View;
 
+    .line 68
     .line 69
-    const-wide v20, 0x3ee4f8b588e368f1L    # 1.0E-5
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 70
     .line 71
     .line 72
+    const v3, 0x7f090079
+
     .line 73
     .line 74
-    cmpg-double v6, v9, v20
-
     .line 75
-    .line 76
-    if-ltz v6, :cond_1
+    invoke-virtual {v0, v3}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
+    .line 76
     .line 77
     .line 78
-    cmpl-float v6, v16, v5
+    move-result-object v0
 
     .line 79
+    instance-of v3, v0, Ljava/lang/Boolean;
+
     .line 80
-    if-lez v6, :cond_0
-
     .line 81
-    .line 82
-    move v7, v8
+    if-eqz v3, :cond_2
 
+    .line 82
     .line 83
-    :goto_2
-    move/from16 v6, v18
+    check-cast v0, Ljava/lang/Boolean;
 
     .line 84
     .line 85
     goto :goto_1
 
     .line 86
-    :cond_0
-    move v2, v8
+    :cond_2
+    move-object v0, v2
 
     .line 87
-    goto :goto_2
+    :goto_1
+    if-eqz v0, :cond_3
 
     .line 88
-    :cond_1
-    const/high16 v6, 0x3f000000    # 0.5f
-
     .line 89
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
     .line 90
-    mul-float/2addr v12, v6
-
     .line 91
-    add-float/2addr v12, v8
-
     .line 92
-    mul-float/2addr v12, v11
+    move-result v0
 
     .line 93
-    add-float/2addr v12, v14
+    goto :goto_2
 
     .line 94
-    aput v12, v1, v4
+    :cond_3
+    move v0, v1
 
     .line 95
-    .line 96
-    move/from16 v7, v18
+    :goto_2
+    if-eqz v0, :cond_1
 
+    .line 96
     .line 97
+    goto :goto_3
+
     .line 98
-    :goto_3
-    sub-float v8, v7, v3
+    :cond_4
+    invoke-virtual {p0}, Ls2;->f()V
 
     .line 99
     .line 100
-    div-float v8, v8, v17
-
     .line 101
+    :goto_3
+    return-void
+
     .line 102
-    add-float/2addr v8, v3
+    :pswitch_1
+    iget-object v0, p0, Lhc;->k:Ljava/lang/Object;
 
     .line 103
-    mul-float v10, v8, v19
-
     .line 104
+    check-cast v0, Lo96;
+
     .line 105
-    sub-float v9, v18, v8
-
     .line 106
-    .line 107
-    mul-float/2addr v10, v9
+    iget-object v1, v0, Lo96;->x:Landroid/view/ViewTreeObserver;
 
+    .line 107
     .line 108
-    mul-float v11, v9, v6
+    if-eqz v1, :cond_6
 
     .line 109
     .line 110
-    add-float/2addr v11, v8
+    invoke-virtual {v1}, Landroid/view/ViewTreeObserver;->isAlive()Z
 
     .line 111
-    mul-float/2addr v11, v10
-
     .line 112
-    mul-float v12, v8, v8
-
     .line 113
+    move-result v1
+
     .line 114
-    mul-float/2addr v12, v8
+    if-nez v1, :cond_5
 
     .line 115
-    add-float/2addr v11, v12
-
     .line 116
-    sub-float v14, v11, v5
+    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     .line 117
     .line 118
-    invoke-static {v14}, Ljava/lang/Math;->abs(F)F
-
     .line 119
-    .line 120
-    .line 121
-    move-result v14
+    move-result-object v1
 
+    .line 120
+    iput-object v1, v0, Lo96;->x:Landroid/view/ViewTreeObserver;
+
+    .line 121
     .line 122
-    move/from16 v22, v7
+    :cond_5
+    iget-object v1, v0, Lo96;->x:Landroid/view/ViewTreeObserver;
 
     .line 123
     .line 124
-    float-to-double v6, v14
+    iget-object v0, v0, Lo96;->r:Lsp;
 
     .line 125
-    cmpg-double v6, v6, v20
-
     .line 126
-    .line 127
-    if-ltz v6, :cond_3
+    invoke-virtual {v1, v0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
+    .line 127
     .line 128
     .line 129
-    cmpl-float v6, v11, v5
+    :cond_6
+    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
     .line 130
     .line 131
-    if-lez v6, :cond_2
-
     .line 132
+    return-void
+
     .line 133
-    move v7, v8
+    :pswitch_2
+    iget-object v0, p0, Lhc;->k:Ljava/lang/Object;
 
     .line 134
-    :goto_4
-    const/high16 v6, 0x3f000000    # 0.5f
-
     .line 135
-    .line 136
-    goto :goto_3
+    check-cast v0, Lhl0;
 
+    .line 136
     .line 137
-    :cond_2
-    move v3, v8
+    iget-object v1, v0, Lhl0;->G:Landroid/view/ViewTreeObserver;
 
     .line 138
-    move/from16 v7, v22
-
     .line 139
-    .line 140
-    goto :goto_4
+    if-eqz v1, :cond_8
 
+    .line 140
     .line 141
-    :cond_3
-    mul-float/2addr v9, v13
+    invoke-virtual {v1}, Landroid/view/ViewTreeObserver;->isAlive()Z
 
     .line 142
-    mul-float/2addr v8, v15
-
     .line 143
-    add-float/2addr v8, v9
-
     .line 144
-    mul-float/2addr v8, v10
+    move-result v1
 
     .line 145
-    add-float/2addr v8, v12
+    if-nez v1, :cond_7
 
     .line 146
-    aput v8, v0, v4
-
     .line 147
-    .line 148
-    add-int/lit8 v4, v4, 0x1
+    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
+    .line 148
     .line 149
     .line 150
-    goto/16 :goto_0
+    move-result-object v1
 
     .line 151
+    iput-object v1, v0, Lhl0;->G:Landroid/view/ViewTreeObserver;
+
     .line 152
-    :cond_4
-    move/from16 v18, v6
-
     .line 153
+    :cond_7
+    iget-object v1, v0, Lhl0;->G:Landroid/view/ViewTreeObserver;
+
     .line 154
-    aput v18, v0, v5
-
     .line 155
+    iget-object v0, v0, Lhl0;->r:Lsp;
+
     .line 156
-    aput v18, v1, v5
-
     .line 157
+    invoke-virtual {v1, v0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
     .line 158
+    .line 159
+    .line 160
+    :cond_8
+    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+
+    .line 161
+    .line 162
+    .line 163
     return-void
-.end method
 
-.method public static a(F)Lgc;
-    .locals 5
+    .line 164
+    :pswitch_3
+    iget-object p0, p0, Lhc;->k:Ljava/lang/Object;
 
-    .line 1
-    const/4 v0, 0x0
+    .line 165
+    .line 166
+    check-cast p0, Lic;
 
-    .line 2
-    const/high16 v1, 0x3f800000    # 1.0f
+    .line 167
+    .line 168
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    .line 3
-    .line 4
-    invoke-static {p0, v0, v1}, Ln43;->q(FFF)F
+    .line 169
+    .line 170
+    .line 171
+    move-result-object p1
 
-    .line 5
-    .line 6
-    .line 7
-    move-result p0
+    .line 172
+    iget-boolean v0, p0, Lic;->c:Z
 
-    .line 8
-    const/high16 v2, 0x42c80000    # 100.0f
+    .line 173
+    .line 174
+    if-eqz v0, :cond_9
 
-    .line 9
-    .line 10
-    mul-float v3, v2, p0
+    .line 175
+    .line 176
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    .line 11
-    .line 12
-    float-to-int v3, v3
+    .line 177
+    .line 178
+    .line 179
+    move-result-object p1
 
-    .line 13
-    const/16 v4, 0x64
+    .line 180
+    iget-object v0, p0, Lic;->e:Lgc;
 
-    .line 14
-    .line 15
-    if-ge v3, v4, :cond_0
+    .line 181
+    .line 182
+    invoke-virtual {p1, v0}, Landroid/content/Context;->unregisterComponentCallbacks(Landroid/content/ComponentCallbacks;)V
 
-    .line 16
-    .line 17
-    int-to-float v0, v3
+    .line 183
+    .line 184
+    .line 185
+    iput-boolean v1, p0, Lic;->c:Z
 
-    .line 18
-    div-float/2addr v0, v2
+    .line 186
+    .line 187
+    :cond_9
+    iget-object p1, p0, Lic;->d:Lfp2;
 
-    .line 19
-    add-int/lit8 v1, v3, 0x1
+    .line 188
+    .line 189
+    if-eqz p1, :cond_b
 
-    .line 20
-    .line 21
-    int-to-float v4, v1
+    .line 190
+    .line 191
+    monitor-enter p1
 
-    .line 22
-    div-float/2addr v4, v2
+    .line 192
+    :try_start_0
+    iget-object v0, p1, Lfp2;->k:Ljava/lang/Object;
 
-    .line 23
-    sget-object v2, Lhc;->a:[F
+    .line 193
+    .line 194
+    check-cast v0, Lur3;
 
-    .line 24
-    .line 25
-    aget v3, v2, v3
+    .line 195
+    .line 196
+    if-eqz v0, :cond_a
 
-    .line 26
-    .line 27
-    aget v1, v2, v1
+    .line 197
+    .line 198
+    invoke-virtual {v0}, Lur3;->a()V
 
-    .line 28
-    .line 29
-    sub-float/2addr v1, v3
+    .line 199
+    .line 200
+    .line 201
+    goto :goto_4
 
-    .line 30
-    sub-float/2addr v4, v0
+    .line 202
+    :catchall_0
+    move-exception p0
 
-    .line 31
-    div-float/2addr v1, v4
+    .line 203
+    goto :goto_5
 
-    .line 32
-    invoke-static {p0, v0, v1, v3}, Lv66;->c(FFFF)F
+    .line 204
+    :cond_a
+    :goto_4
+    iput-object v2, p1, Lfp2;->l:Ljava/lang/Object;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 33
-    .line 34
-    .line 35
-    move-result p0
+    .line 205
+    .line 206
+    monitor-exit p1
 
-    .line 36
-    move v0, v1
+    .line 207
+    goto :goto_6
 
-    .line 37
-    move v1, p0
+    .line 208
+    :goto_5
+    monitor-exit p1
 
-    .line 38
-    :cond_0
-    new-instance p0, Lgc;
+    .line 209
+    throw p0
 
-    .line 39
-    .line 40
-    invoke-direct {p0, v1, v0}, Lgc;-><init>(FF)V
+    .line 210
+    :cond_b
+    :goto_6
+    iput-object v2, p0, Lic;->d:Lfp2;
 
-    .line 41
-    .line 42
-    .line 43
-    return-object p0
+    .line 211
+    .line 212
+    return-void
+
+    .line 213
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

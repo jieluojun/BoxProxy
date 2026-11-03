@@ -1,14 +1,11 @@
 .class public interface abstract Lh66;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Ljava/io/Closeable;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # virtual methods
-.method public abstract a()Ltr6;
+.method public abstract q(FF)F
 .end method
 
-.method public abstract u(Lld0;J)J
+.method public abstract z(F)F
 .end method

@@ -1,29 +1,40 @@
-.class public final Lvu6;
+.class public final synthetic Lvu6;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
 # instance fields
-.field public final a:Llk4;
+.field public final synthetic j:Ld52;
 
-.field public final b:Lhk4;
+.field public final synthetic k:Ld52;
 
-.field public final c:Llk4;
+.field public final synthetic l:Ld52;
 
-.field public final d:Lhk4;
+.field public final synthetic m:Ld52;
 
-.field public final e:Llk4;
+.field public final synthetic n:Ld52;
 
-.field public final f:Llk4;
+.field public final synthetic o:Ld52;
 
-.field public final g:Llk4;
+.field public final synthetic p:Ld52;
 
-.field public final h:Llk4;
+.field public final synthetic q:Ld52;
+
+.field public final synthetic r:Ld52;
+
+.field public final synthetic s:Ld52;
+
+.field public final synthetic t:F
+
+.field public final synthetic u:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 4
+.method public synthetic constructor <init>(Ld52;Ld52;Ld52;Ld52;Ld52;Ld52;Ld52;Ld52;Ld52;Ld52;FII)V
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -31,361 +42,158 @@
     .line 2
     .line 3
     .line 4
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    iput-object p1, p0, Lvu6;->j:Ld52;
 
     .line 5
     .line 6
-    invoke-static {v0}, Le43;->b0(Ljava/lang/Object;)Llk4;
+    iput-object p2, p0, Lvu6;->k:Ld52;
 
     .line 7
     .line 8
-    .line 9
-    move-result-object v1
+    iput-object p3, p0, Lvu6;->l:Ld52;
 
+    .line 9
     .line 10
-    iput-object v1, p0, Lvu6;->a:Llk4;
+    iput-object p4, p0, Lvu6;->m:Ld52;
 
     .line 11
     .line 12
-    new-instance v1, Lhk4;
+    iput-object p5, p0, Lvu6;->n:Ld52;
 
     .line 13
     .line 14
-    const/high16 v2, 0x3f800000    # 1.0f
+    iput-object p6, p0, Lvu6;->o:Ld52;
 
     .line 15
     .line 16
-    invoke-direct {v1, v2}, Lhk4;-><init>(F)V
+    iput-object p7, p0, Lvu6;->p:Ld52;
 
     .line 17
     .line 18
+    iput-object p8, p0, Lvu6;->q:Ld52;
+
     .line 19
-    iput-object v1, p0, Lvu6;->b:Lhk4;
-
     .line 20
-    .line 21
-    invoke-static {v0}, Le43;->b0(Ljava/lang/Object;)Llk4;
+    iput-object p9, p0, Lvu6;->r:Ld52;
 
+    .line 21
     .line 22
+    iput-object p10, p0, Lvu6;->s:Ld52;
+
     .line 23
     .line 24
-    move-result-object v1
+    iput p11, p0, Lvu6;->t:F
 
     .line 25
-    iput-object v1, p0, Lvu6;->c:Llk4;
-
     .line 26
+    iput p13, p0, Lvu6;->u:I
+
     .line 27
-    new-instance v1, Lhk4;
-
     .line 28
-    .line 29
-    invoke-direct {v1, v2}, Lhk4;-><init>(F)V
-
-    .line 30
-    .line 31
-    .line 32
-    iput-object v1, p0, Lvu6;->d:Lhk4;
-
-    .line 33
-    .line 34
-    invoke-static {v0}, Le43;->b0(Ljava/lang/Object;)Llk4;
-
-    .line 35
-    .line 36
-    .line 37
-    move-result-object v1
-
-    .line 38
-    iput-object v1, p0, Lvu6;->e:Llk4;
-
-    .line 39
-    .line 40
-    const/high16 v1, 0x3f000000    # 0.5f
-
-    .line 41
-    .line 42
-    invoke-static {v1, v1}, Lk53;->m(FF)J
-
-    .line 43
-    .line 44
-    .line 45
-    move-result-wide v1
-
-    .line 46
-    new-instance v3, Luu6;
-
-    .line 47
-    .line 48
-    invoke-direct {v3, v1, v2}, Luu6;-><init>(J)V
-
-    .line 49
-    .line 50
-    .line 51
-    invoke-static {v3}, Le43;->b0(Ljava/lang/Object;)Llk4;
-
-    .line 52
-    .line 53
-    .line 54
-    move-result-object v1
-
-    .line 55
-    iput-object v1, p0, Lvu6;->f:Llk4;
-
-    .line 56
-    .line 57
-    invoke-static {v0}, Le43;->b0(Ljava/lang/Object;)Llk4;
-
-    .line 58
-    .line 59
-    .line 60
-    move-result-object v0
-
-    .line 61
-    iput-object v0, p0, Lvu6;->g:Llk4;
-
-    .line 62
-    .line 63
-    new-instance v0, Lmu0;
-
-    .line 64
-    .line 65
-    const-wide/16 v1, 0x0
-
-    .line 66
-    .line 67
-    invoke-direct {v0, v1, v2}, Lmu0;-><init>(J)V
-
-    .line 68
-    .line 69
-    .line 70
-    invoke-static {v0}, Le43;->b0(Ljava/lang/Object;)Llk4;
-
-    .line 71
-    .line 72
-    .line 73
-    move-result-object v0
-
-    .line 74
-    iput-object v0, p0, Lvu6;->h:Llk4;
-
-    .line 75
-    .line 76
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 0
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 14
 
     .line 1
-    iget-object p0, p0, Lvu6;->a:Llk4;
+    move-object v11, p1
 
     .line 2
-    .line 3
-    invoke-virtual {p0}, Llk4;->getValue()Ljava/lang/Object;
+    check-cast v11, Lv01;
 
+    .line 3
     .line 4
+    move-object/from16 v0, p2
+
     .line 5
     .line 6
-    move-result-object p0
+    check-cast v0, Ljava/lang/Integer;
 
     .line 7
-    check-cast p0, Ljava/lang/Boolean;
-
     .line 8
-    .line 9
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    return p0
-.end method
-
-.method public final b()Z
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lvu6;->c:Llk4;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Llk4;->getValue()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Ljava/lang/Boolean;
-
-    .line 8
-    .line 9
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    return p0
-.end method
-
-.method public final c()Z
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lvu6;->g:Llk4;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Llk4;->getValue()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Ljava/lang/Boolean;
-
-    .line 8
-    .line 9
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    return p0
-.end method
-
-.method public final d()V
-    .locals 4
-
-    .line 1
-    iget-object v0, p0, Lvu6;->b:Lhk4;
-
-    .line 2
-    .line 3
-    const/high16 v1, 0x3f800000    # 1.0f
-
-    .line 4
-    .line 5
-    invoke-virtual {v0, v1}, Lhk4;->h(F)V
-
-    .line 6
-    .line 7
-    .line 8
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 9
     .line 10
-    iget-object v2, p0, Lvu6;->a:Llk4;
-
     .line 11
+    const/4 v0, 0x1
+
     .line 12
-    invoke-virtual {v2, v0}, Llk4;->setValue(Ljava/lang/Object;)V
+    invoke-static {v0}, Lw23;->h0(I)I
 
     .line 13
     .line 14
     .line 15
-    iget-object v2, p0, Lvu6;->d:Lhk4;
+    move-result v12
 
     .line 16
-    .line 17
-    invoke-virtual {v2, v1}, Lhk4;->h(F)V
+    iget v0, p0, Lvu6;->u:I
 
+    .line 17
     .line 18
+    invoke-static {v0}, Lw23;->h0(I)I
+
     .line 19
     .line 20
-    iget-object v1, p0, Lvu6;->c:Llk4;
-
     .line 21
+    move-result v13
+
     .line 22
-    invoke-virtual {v1, v0}, Llk4;->setValue(Ljava/lang/Object;)V
+    iget-object v0, p0, Lvu6;->j:Ld52;
 
     .line 23
     .line 24
+    iget-object v1, p0, Lvu6;->k:Ld52;
+
     .line 25
-    const/high16 v1, 0x3f000000    # 0.5f
-
     .line 26
-    .line 27
-    invoke-static {v1, v1}, Lk53;->m(FF)J
+    iget-object v2, p0, Lvu6;->l:Ld52;
 
+    .line 27
     .line 28
+    iget-object v3, p0, Lvu6;->m:Ld52;
+
     .line 29
     .line 30
-    move-result-wide v1
+    iget-object v4, p0, Lvu6;->n:Ld52;
 
     .line 31
-    new-instance v3, Luu6;
-
     .line 32
-    .line 33
-    invoke-direct {v3, v1, v2}, Luu6;-><init>(J)V
+    iget-object v5, p0, Lvu6;->o:Ld52;
 
+    .line 33
     .line 34
+    iget-object v6, p0, Lvu6;->p:Ld52;
+
     .line 35
     .line 36
-    iget-object v1, p0, Lvu6;->f:Llk4;
+    iget-object v7, p0, Lvu6;->q:Ld52;
 
     .line 37
     .line 38
-    invoke-virtual {v1, v3}, Llk4;->setValue(Ljava/lang/Object;)V
+    iget-object v8, p0, Lvu6;->r:Ld52;
 
     .line 39
     .line 40
+    iget-object v9, p0, Lvu6;->s:Ld52;
+
     .line 41
-    iget-object v1, p0, Lvu6;->e:Llk4;
-
     .line 42
-    .line 43
-    invoke-virtual {v1, v0}, Llk4;->setValue(Ljava/lang/Object;)V
+    iget v10, p0, Lvu6;->t:F
 
+    .line 43
     .line 44
+    invoke-static/range {v0 .. v13}, Lzu6;->j(Ld52;Ld52;Ld52;Ld52;Ld52;Ld52;Ld52;Ld52;Ld52;Ld52;FLv01;II)V
+
     .line 45
     .line 46
-    new-instance v1, Lmu0;
-
     .line 47
+    sget-object p0, Lk27;->a:Lk27;
+
     .line 48
-    const-wide/16 v2, 0x0
-
     .line 49
-    .line 50
-    invoke-direct {v1, v2, v3}, Lmu0;-><init>(J)V
-
-    .line 51
-    .line 52
-    .line 53
-    iget-object v2, p0, Lvu6;->h:Llk4;
-
-    .line 54
-    .line 55
-    invoke-virtual {v2, v1}, Llk4;->setValue(Ljava/lang/Object;)V
-
-    .line 56
-    .line 57
-    .line 58
-    iget-object p0, p0, Lvu6;->g:Llk4;
-
-    .line 59
-    .line 60
-    invoke-virtual {p0, v0}, Llk4;->setValue(Ljava/lang/Object;)V
-
-    .line 61
-    .line 62
-    .line 63
-    return-void
+    return-object p0
 .end method

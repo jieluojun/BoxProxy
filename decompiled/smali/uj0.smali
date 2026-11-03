@@ -1,117 +1,114 @@
 .class public final Luj0;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lvj0;
 
 
-# instance fields
-.field public j:Ljava/lang/Object;
-
-.field public k:Lej0;
-
-.field public l:Lij0;
-
-.field public m:Lgj0;
-
-.field public n:Ldd2;
-
-.field public o:Ljj0;
-
-.field public p:Lgq3;
-
-.field public q:Lkj0;
-
-.field public r:Ldd2;
-
-.field public synthetic s:Ljava/lang/Object;
-
-.field public final synthetic t:Lyj0;
-
-.field public u:I
+# static fields
+.field public static final a:Luj0;
 
 
 # direct methods
-.method public constructor <init>(Lyj0;Ld81;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Luj0;->t:Lyj0;
+    new-instance v0, Luj0;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
     .line 6
+    sput-object v0, Luj0;->a:Luj0;
+
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 11
+.method public final a()D
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Luj0;->s:Ljava/lang/Object;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
     .line 2
     .line 3
-    iget p1, p0, Luj0;->u:I
+    const-string v0, "`CartesianRanges.Empty` shouldn\u2019t be used."
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Luj0;->u:I
+    throw p0
+.end method
 
-    .line 9
-    .line 10
-    const/4 v8, 0x0
+.method public final b()D
+    .locals 1
 
-    .line 11
-    const/4 v9, 0x0
+    .line 1
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    .line 12
-    iget-object v0, p0, Luj0;->t:Lyj0;
+    .line 2
+    .line 3
+    const-string v0, "`CartesianRanges.Empty` shouldn\u2019t be used."
 
-    .line 13
-    .line 14
-    const/4 v1, 0x0
+    .line 4
+    .line 5
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    .line 15
-    const/4 v2, 0x0
+    .line 6
+    .line 7
+    .line 8
+    throw p0
+.end method
 
-    .line 16
-    const/4 v3, 0x0
+.method public final c()D
+    .locals 1
 
-    .line 17
-    const/4 v4, 0x0
+    .line 1
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    .line 18
-    const/4 v5, 0x0
+    .line 2
+    .line 3
+    const-string v0, "`CartesianRanges.Empty` shouldn\u2019t be used."
 
-    .line 19
-    const/4 v6, 0x0
+    .line 4
+    .line 5
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    .line 20
-    const/4 v7, 0x0
+    .line 6
+    .line 7
+    .line 8
+    throw p0
+.end method
 
-    .line 21
-    move-object v10, p0
+.method public final d(Lrx;)Ljq3;
+    .locals 0
 
-    .line 22
-    invoke-virtual/range {v0 .. v10}, Lyj0;->a(Ljava/lang/Object;Lej0;Lij0;Lgj0;Ldd2;Ljj0;Lgq3;Lkj0;Ldd2;Ld81;)Ljava/lang/Object;
+    .line 1
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    .line 23
-    .line 24
-    .line 25
-    move-result-object p0
+    .line 2
+    .line 3
+    const-string p1, "`CartesianRanges.Empty` shouldn\u2019t be used."
 
-    .line 26
-    return-object p0
+    .line 4
+    .line 5
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
 .end method

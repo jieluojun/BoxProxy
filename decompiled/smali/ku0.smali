@@ -1,45 +1,133 @@
-.class public abstract Lku0;
-.super Lju0;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lku0;
+.super Liu0;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# direct methods
-.method public static s0(Ljava/util/Collection;Ljava/lang/Iterable;)V
-    .locals 1
+# instance fields
+.field public b:[F
+
+
+# virtual methods
+.method public final a()[F
+    .locals 2
 
     .line 1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v0, p0, Lku0;->b:[F
 
     .line 2
     .line 3
-    .line 4
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-nez v0, :cond_1
 
+    .line 4
     .line 5
+    iget-object v0, p0, Liu0;->a:Landroid/graphics/ColorFilter;
+
     .line 6
     .line 7
-    instance-of v0, p1, Ljava/util/Collection;
+    instance-of v1, v0, Landroid/graphics/ColorMatrixColorFilter;
 
     .line 8
     .line 9
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
-    check-cast p1, Ljava/util/Collection;
+    check-cast v0, Landroid/graphics/ColorMatrixColorFilter;
 
     .line 12
     .line 13
-    invoke-interface {p0, p1}, Ljava/util/Collection;->addAll(Ljava/util/Collection;)Z
+    new-instance v1, Landroid/graphics/ColorMatrix;
 
     .line 14
     .line 15
-    .line 16
-    return-void
+    invoke-direct {v1}, Landroid/graphics/ColorMatrix;-><init>()V
 
+    .line 16
     .line 17
+    .line 18
+    invoke-virtual {v0, v1}, Landroid/graphics/ColorMatrixColorFilter;->getColorMatrix(Landroid/graphics/ColorMatrix;)V
+
+    .line 19
+    .line 20
+    .line 21
+    invoke-virtual {v1}, Landroid/graphics/ColorMatrix;->getArray()[F
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object v0
+
+    .line 25
+    iput-object v0, p0, Lku0;->b:[F
+
+    .line 26
+    .line 27
+    return-object v0
+
+    .line 28
     :cond_0
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    const-string p0, "Unable to obtain ColorMatrix from Android ColorMatrixColorFilter. This method was invoked on an unsupported Android version"
+
+    .line 29
+    .line 30
+    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+
+    .line 31
+    .line 32
+    .line 33
+    const/4 p0, 0x0
+
+    .line 34
+    return-object p0
+
+    .line 35
+    :cond_1
+    return-object v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lku0;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    invoke-virtual {p0}, Lku0;->a()[F
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    check-cast p1, Lku0;
+
+    .line 16
+    .line 17
+    invoke-virtual {p1}, Lku0;->a()[F
 
     .line 18
     .line 19
@@ -47,335 +135,92 @@
     move-result-object p1
 
     .line 21
-    :goto_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    invoke-static {p0, p1}, Ljava/util/Arrays;->equals([F[F)Z
 
     .line 22
     .line 23
     .line 24
-    move-result v0
+    move-result p0
 
     .line 25
-    if-eqz v0, :cond_1
+    if-nez p0, :cond_2
 
     .line 26
     .line 27
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    return v2
 
     .line 28
-    .line 29
-    .line 30
-    move-result-object v0
-
-    .line 31
-    invoke-interface {p0, v0}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
-    .line 32
-    .line 33
-    .line 34
-    goto :goto_0
-
-    .line 35
-    :cond_1
-    return-void
-.end method
-
-.method public static t0(Ljava/util/List;Lr52;)V
-    .locals 6
-
-    .line 1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 5
-    .line 6
-    .line 7
-    instance-of v0, p0, Ljava/util/RandomAccess;
-
-    .line 8
-    .line 9
-    const/4 v1, 0x1
-
-    .line 10
-    if-nez v0, :cond_3
-
-    .line 11
-    .line 12
-    instance-of v0, p0, Lhw2;
-
-    .line 13
-    .line 14
-    if-eqz v0, :cond_1
-
-    .line 15
-    .line 16
-    instance-of v0, p0, Liw2;
-
-    .line 17
-    .line 18
-    if-eqz v0, :cond_0
-
-    .line 19
-    .line 20
-    goto :goto_0
-
-    .line 21
-    :cond_0
-    const-string p1, "kotlin.collections.MutableIterable"
-
-    .line 22
-    .line 23
-    invoke-static {p1, p0}, Lpx6;->l0(Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 24
-    .line 25
-    .line 26
-    const/4 p0, 0x0
-
-    .line 27
-    throw p0
-
-    .line 28
-    :cond_1
-    :goto_0
-    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    .line 29
-    .line 30
-    .line 31
-    move-result-object p0
-
-    .line 32
     :cond_2
-    :goto_1
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 33
-    .line 34
-    .line 35
-    move-result v0
-
-    .line 36
-    if-eqz v0, :cond_8
-
-    .line 37
-    .line 38
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 39
-    .line 40
-    .line 41
-    move-result-object v0
-
-    .line 42
-    invoke-interface {p1, v0}, Lr52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 43
-    .line 44
-    .line 45
-    move-result-object v0
-
-    .line 46
-    check-cast v0, Ljava/lang/Boolean;
-
-    .line 47
-    .line 48
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    .line 49
-    .line 50
-    .line 51
-    move-result v0
-
-    .line 52
-    if-ne v0, v1, :cond_2
-
-    .line 53
-    .line 54
-    invoke-interface {p0}, Ljava/util/Iterator;->remove()V
-
-    .line 55
-    .line 56
-    .line 57
-    goto :goto_1
-
-    .line 58
-    :cond_3
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    .line 59
-    .line 60
-    .line 61
-    move-result v0
-
-    .line 62
-    sub-int/2addr v0, v1
-
-    .line 63
-    const/4 v2, 0x0
-
-    .line 64
-    if-ltz v0, :cond_7
-
-    .line 65
-    .line 66
-    move v3, v2
-
-    .line 67
-    :goto_2
-    invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    .line 68
-    .line 69
-    .line 70
-    move-result-object v4
-
-    .line 71
-    invoke-interface {p1, v4}, Lr52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 72
-    .line 73
-    .line 74
-    move-result-object v5
-
-    .line 75
-    check-cast v5, Ljava/lang/Boolean;
-
-    .line 76
-    .line 77
-    invoke-virtual {v5}, Ljava/lang/Boolean;->booleanValue()Z
-
-    .line 78
-    .line 79
-    .line 80
-    move-result v5
-
-    .line 81
-    if-ne v5, v1, :cond_4
-
-    .line 82
-    .line 83
-    goto :goto_3
-
-    .line 84
-    :cond_4
-    if-eq v3, v2, :cond_5
-
-    .line 85
-    .line 86
-    invoke-interface {p0, v3, v4}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
-
-    .line 87
-    .line 88
-    .line 89
-    :cond_5
-    add-int/lit8 v3, v3, 0x1
-
-    .line 90
-    .line 91
-    :goto_3
-    if-eq v2, v0, :cond_6
-
-    .line 92
-    .line 93
-    add-int/lit8 v2, v2, 0x1
-
-    .line 94
-    .line 95
-    goto :goto_2
-
-    .line 96
-    :cond_6
-    move v2, v3
-
-    .line 97
-    :cond_7
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    .line 98
-    .line 99
-    .line 100
-    move-result p1
-
-    .line 101
-    if-ge v2, p1, :cond_8
-
-    .line 102
-    .line 103
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    .line 104
-    .line 105
-    .line 106
-    move-result p1
-
-    .line 107
-    sub-int/2addr p1, v1
-
-    .line 108
-    if-gt v2, p1, :cond_8
-
-    .line 109
-    .line 110
-    :goto_4
-    invoke-interface {p0, p1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
-
-    .line 111
-    .line 112
-    .line 113
-    if-eq p1, v2, :cond_8
-
-    .line 114
-    .line 115
-    add-int/lit8 p1, p1, -0x1
-
-    .line 116
-    .line 117
-    goto :goto_4
-
-    .line 118
-    :cond_8
-    return-void
+    return v0
 .end method
 
-.method public static u0(Ljava/util/List;)Ljava/lang/Object;
-    .locals 1
+.method public final hashCode()I
+    .locals 0
 
     .line 1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, Lku0;->b:[F
 
     .line 2
     .line 3
-    .line 4
-    invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
+    if-eqz p0, :cond_0
 
+    .line 4
     .line 5
+    invoke-static {p0}, Ljava/util/Arrays;->hashCode([F)I
+
     .line 6
     .line 7
-    move-result v0
-
     .line 8
-    if-nez v0, :cond_0
+    move-result p0
 
     .line 9
+    return p0
+
     .line 10
-    invoke-interface {p0}, Ljava/util/List;->size()I
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    iget-object p0, p0, Lku0;->b:[F
+
+    .line 2
+    .line 3
+    const-string v0, ")"
+
+    .line 4
+    .line 5
+    if-nez p0, :cond_0
+
+    .line 6
+    .line 7
+    const-string p0, "null"
+
+    .line 8
+    .line 9
+    goto :goto_0
+
+    .line 10
+    :cond_0
+    invoke-static {p0}, Ljava/util/Arrays;->toString([F)Ljava/lang/String;
 
     .line 11
     .line 12
     .line 13
-    move-result v0
+    move-result-object p0
 
     .line 14
-    add-int/lit8 v0, v0, -0x1
+    const-string v1, "ColorMatrix(values="
 
     .line 15
     .line 16
-    invoke-interface {p0, v0}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+    invoke-static {v1, p0, v0}, Lpb1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 17
     .line 18
@@ -383,72 +228,18 @@
     move-result-object p0
 
     .line 20
-    return-object p0
+    :goto_0
+    const-string v1, "ColorMatrixColorFilter(colorMatrix="
 
     .line 21
-    :cond_0
-    const-string p0, "List is empty."
-
     .line 22
-    .line 23
-    invoke-static {p0}, Lx84;->h(Ljava/lang/String;)V
+    invoke-static {v1, p0, v0}, Lpb1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
+    .line 23
     .line 24
     .line 25
-    .line 26
-    const/4 p0, 0x0
-
-    .line 27
-    return-object p0
-.end method
-
-.method public static v0(Ljava/util/List;)Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
-
-    .line 5
-    .line 6
-    .line 7
-    move-result v0
-
-    .line 8
-    if-eqz v0, :cond_0
-
-    .line 9
-    .line 10
-    const/4 p0, 0x0
-
-    .line 11
-    return-object p0
-
-    .line 12
-    :cond_0
-    invoke-interface {p0}, Ljava/util/List;->size()I
-
-    .line 13
-    .line 14
-    .line 15
-    move-result v0
-
-    .line 16
-    add-int/lit8 v0, v0, -0x1
-
-    .line 17
-    .line 18
-    invoke-interface {p0, v0}, Ljava/util/List;->remove(I)Ljava/lang/Object;
-
-    .line 19
-    .line 20
-    .line 21
     move-result-object p0
 
-    .line 22
+    .line 26
     return-object p0
 .end method

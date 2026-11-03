@@ -1,76 +1,86 @@
-.class public final Lu9;
+.class public abstract Lu9;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lfx;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final a:Lra;
-
-.field public final b:Ljx;
-
-.field public final c:Landroid/view/autofill/AutofillId;
+# static fields
+.field public static final a:Landroid/graphics/Canvas;
 
 
 # direct methods
-.method public constructor <init>(Lra;Ljx;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Landroid/graphics/Canvas;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lu9;->a:Lra;
+    invoke-direct {v0}, Landroid/graphics/Canvas;-><init>()V
 
+    .line 4
     .line 5
     .line 6
-    iput-object p2, p0, Lu9;->b:Ljx;
+    sput-object v0, Lu9;->a:Landroid/graphics/Canvas;
 
     .line 7
     .line 8
-    const/4 p2, 0x1
+    return-void
+.end method
+
+.method public static final a(Ljc;)Lt9;
+    .locals 2
+
+    .line 1
+    new-instance v0, Lt9;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Lt9;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    new-instance v1, Landroid/graphics/Canvas;
+
+    .line 7
+    .line 8
+    invoke-static {p0}, Lx37;->g(Lrl2;)Landroid/graphics/Bitmap;
 
     .line 9
-    invoke-virtual {p1, p2}, Landroid/view/View;->setImportantForAutofill(I)V
-
     .line 10
     .line 11
+    move-result-object p0
+
     .line 12
-    invoke-virtual {p1}, Landroid/view/View;->getAutofillId()Landroid/view/autofill/AutofillId;
+    invoke-direct {v1, p0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
     .line 13
     .line 14
     .line 15
-    move-result-object p1
+    iput-object v1, v0, Lt9;->a:Landroid/graphics/Canvas;
 
     .line 16
-    if-eqz p1, :cond_0
-
     .line 17
-    .line 18
-    iput-object p1, p0, Lu9;->c:Landroid/view/autofill/AutofillId;
+    return-object v0
+.end method
 
-    .line 19
-    .line 20
-    return-void
+.method public static final b(Lvh0;)Landroid/graphics/Canvas;
+    .locals 0
 
-    .line 21
-    :cond_0
-    const-string p0, "Required value was null."
+    .line 1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 22
-    .line 23
-    invoke-static {p0}, Lv66;->h(Ljava/lang/String;)Lrx0;
+    .line 2
+    .line 3
+    .line 4
+    check-cast p0, Lt9;
 
-    .line 24
-    .line 25
-    .line 26
-    move-result-object p0
+    .line 5
+    .line 6
+    iget-object p0, p0, Lt9;->a:Landroid/graphics/Canvas;
 
-    .line 27
-    throw p0
+    .line 7
+    .line 8
+    return-object p0
 .end method

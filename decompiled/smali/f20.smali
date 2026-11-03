@@ -1,45 +1,15 @@
 .class public final Lf20;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lp26;
+.super Lpt6;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # virtual methods
-.method public final a()Ltr6;
+.method public final a()I
     .locals 0
 
     .line 1
-    sget-object p0, Ltr6;->d:Lsr6;
+    const/4 p0, 0x4
 
     .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final close()V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method public final e(Lld0;J)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1, p2, p3}, Lld0;->I(J)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public final flush()V
-    .locals 0
-
-    .line 1
-    return-void
+    return p0
 .end method

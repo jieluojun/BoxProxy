@@ -1,71 +1,102 @@
 .class public final Lu66;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Ljava/io/Serializable;
+.super Lga6;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final j:I
-
-.field public final k:I
+.field public c:J
 
 
 # direct methods
-.method public constructor <init>(II)V
+.method public constructor <init>(JJ)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lga6;-><init>(J)V
 
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Lu66;->j:I
+    iput-wide p3, p0, Lu66;->c:J
 
     .line 5
     .line 6
-    iput p2, p0, Lu66;->k:I
-
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 4
+.method public final a(Lga6;)V
+    .locals 2
 
     .line 1
-    const-string v0, ", minor="
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    const-string v1, "}"
-
     .line 4
+    check-cast p1, Lu66;
+
     .line 5
-    iget v2, p0, Lu66;->j:I
+    .line 6
+    iget-wide v0, p1, Lu66;->c:J
+
+    .line 7
+    .line 8
+    iput-wide v0, p0, Lu66;->c:J
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+.method public final b()Lga6;
+    .locals 2
+
+    .line 1
+    invoke-static {}, Lq66;->h()Lj66;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, Lj66;->g()J
 
     .line 6
     .line 7
-    iget p0, p0, Lu66;->k:I
-
     .line 8
+    move-result-wide v0
+
     .line 9
-    const-string v3, "Version{major="
+    invoke-virtual {p0, v0, v1}, Lu66;->c(J)Lga6;
 
     .line 10
     .line 11
-    invoke-static {v2, p0, v3, v0, v1}, Lxu1;->k(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
     .line 12
-    .line 13
-    .line 14
     move-result-object p0
 
-    .line 15
+    .line 13
     return-object p0
+.end method
+
+.method public final c(J)Lga6;
+    .locals 3
+
+    .line 1
+    new-instance v0, Lu66;
+
+    .line 2
+    .line 3
+    iget-wide v1, p0, Lu66;->c:J
+
+    .line 4
+    .line 5
+    invoke-direct {v0, p1, p2, v1, v2}, Lu66;-><init>(JJ)V
+
+    .line 6
+    .line 7
+    .line 8
+    return-object v0
 .end method

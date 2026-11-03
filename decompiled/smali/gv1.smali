@@ -1,64 +1,44 @@
-.class public interface abstract Lgv1;
+.class public abstract Lgv1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Ljava/lang/String;
+# instance fields
+.field public final a:Lqt0;
 
-.field public static final b:Ljava/lang/String;
+.field public b:B
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lqt0;)V
+    .locals 0
 
     .line 1
-    sget-boolean v0, Lz11;->e:Z
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     .line 2
     .line 3
-    if-eqz v0, :cond_0
-
     .line 4
-    .line 5
-    const-string v1, "invalid backref number/name"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 5
     .line 6
     .line 7
-    goto :goto_0
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 8
-    :cond_0
-    const-string v1, "invalid backref number"
-
     .line 9
     .line 10
-    :goto_0
-    sput-object v1, Lgv1;->a:Ljava/lang/String;
+    iput-object p1, p0, Lgv1;->a:Lqt0;
 
     .line 11
     .line 12
-    if-eqz v0, :cond_1
+    const/4 p1, 0x0
 
     .line 13
+    iput-byte p1, p0, Lgv1;->b:B
+
     .line 14
-    const-string v0, "invalid char in group name <%n>"
-
     .line 15
-    .line 16
-    goto :goto_1
-
-    .line 17
-    :cond_1
-    const-string v0, "invalid char in group number <%n>"
-
-    .line 18
-    .line 19
-    :goto_1
-    sput-object v0, Lgv1;->b:Ljava/lang/String;
-
-    .line 20
-    .line 21
     return-void
 .end method

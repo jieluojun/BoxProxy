@@ -1,141 +1,138 @@
 .class public final Lhk1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lhv5;
-
-
-# instance fields
-.field public final synthetic a:B
-
-.field public final b:Lhv5;
-
-.field public final c:Lr52;
-
-
-# direct methods
-.method public constructor <init>(Lhv5;Lr52;)V
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    iput-byte v0, p0, Lhk1;->a:B
-
-    .line 3
-    .line 4
-    sget-object v0, Lnv5;->k:Lnv5;
-
-    .line 5
-    .line 6
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 7
-    .line 8
-    .line 9
-    iput-object p1, p0, Lhk1;->b:Lhv5;
-
-    .line 10
-    .line 11
-    iput-object p2, p0, Lhk1;->c:Lr52;
-
-    .line 12
-    .line 13
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lhv5;Lr52;B)V
-    .locals 0
-
-    .line 14
-    iput-byte p3, p0, Lhk1;->a:B
-
-    iput-object p1, p0, Lhk1;->b:Lhv5;
-
-    iput-object p2, p0, Lhk1;->c:Lr52;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
+.implements Lkk1;
 
 
 # virtual methods
-.method public final iterator()Ljava/util/Iterator;
+.method public final a(Ljava/lang/String;)Ljava/util/List;
     .locals 2
 
     .line 1
-    iget-byte v0, p0, Lhk1;->a:B
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_0
-
     .line 4
+    sget-object p0, Lbo4;->a:Lo9;
+
     .line 5
     .line 6
-    new-instance v0, Lav6;
+    sget-object p0, Lbo4;->a:Lo9;
 
     .line 7
     .line 8
-    invoke-direct {v0, p0}, Lav6;-><init>(Lhk1;)V
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 9
     .line 10
     .line 11
-    return-object v0
+    :try_start_0
+    invoke-static {p1}, Ljava/net/InetAddress;->getAllByName(Ljava/lang/String;)[Ljava/net/InetAddress;
 
     .line 12
-    :pswitch_0
-    new-instance v0, Lbz1;
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 16
+    .line 17
+    .line 18
+    invoke-static {p0}, Lqv;->R0([Ljava/lang/Object;)Ljava/util/List;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 22
+    return-object p0
+
+    .line 23
+    :catch_0
+    move-exception p0
+
+    .line 24
+    new-instance v0, Ljava/net/UnknownHostException;
+
+    .line 25
+    .line 26
+    const-string v1, "Broken system behaviour for dns lookup of "
+
+    .line 27
+    .line 28
+    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p1
+
+    .line 32
+    invoke-direct {v0, p1}, Ljava/net/UnknownHostException;-><init>(Ljava/lang/String;)V
+
+    .line 33
+    .line 34
+    .line 35
+    invoke-virtual {v0, p0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+
+    .line 36
+    .line 37
+    .line 38
+    throw v0
+.end method
+
+.method public final b(Ljk1;)Lxe3;
+    .locals 2
+
+    .line 1
+    sget-object p0, Lbo4;->a:Lo9;
+
+    .line 2
+    .line 3
+    sget-object p0, Lbo4;->a:Lo9;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 6
+    .line 7
+    .line 8
+    sget-object p0, Lzn2;->b:Lzn2;
+
+    .line 9
+    .line 10
+    new-instance v0, Lxe3;
+
+    .line 11
+    .line 12
+    sget-object v1, Ldj6;->l:Ldj6;
 
     .line 13
     .line 14
-    invoke-direct {v0, p0}, Lbz1;-><init>(Lhk1;)V
+    invoke-direct {v0, v1, p0, p1}, Lxe3;-><init>(Ldj6;Lkk1;Ljk1;)V
 
     .line 15
     .line 16
     .line 17
     return-object v0
+.end method
 
-    .line 18
-    :pswitch_1
-    new-instance v0, Lgk1;
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    .line 19
-    .line 20
-    iget-object v1, p0, Lhk1;->b:Lhv5;
+    .line 1
+    const-string p0, "Dns.SYSTEM"
 
-    .line 21
-    .line 22
-    invoke-interface {v1}, Lhv5;->iterator()Ljava/util/Iterator;
-
-    .line 23
-    .line 24
-    .line 25
-    move-result-object v1
-
-    .line 26
-    iget-object p0, p0, Lhk1;->c:Lr52;
-
-    .line 27
-    .line 28
-    invoke-direct {v0, v1, p0}, Lgk1;-><init>(Ljava/util/Iterator;Lr52;)V
-
-    .line 29
-    .line 30
-    .line 31
-    return-object v0
-
-    .line 32
-    nop
-
-    .line 33
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 2
+    .line 3
+    return-object p0
 .end method

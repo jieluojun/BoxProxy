@@ -1,32 +1,55 @@
 .class public abstract Loq2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ljava/util/Iterator;
+.implements Lvw2;
 
 
-# static fields
-.field public static final a:Lkq3;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+# virtual methods
+.method public final bridge synthetic next()Ljava/lang/Object;
+    .locals 0
 
     .line 1
-    new-instance v0, Lkq3;
+    invoke-virtual {p0}, Loq2;->nextInt()I
 
     .line 2
     .line 3
-    const/4 v1, 0x0
-
     .line 4
-    invoke-direct {v0, v1}, Lkq3;-><init>(I)V
+    move-result p0
 
     .line 5
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
     .line 6
     .line 7
-    sput-object v0, Loq2;->a:Lkq3;
-
     .line 8
+    move-result-object p0
+
     .line 9
-    return-void
+    return-object p0
+.end method
+
+.method public abstract nextInt()I
+.end method
+
+.method public final remove()V
+    .locals 1
+
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 2
+    .line 3
+    const-string v0, "Operation is not supported for read-only collection"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
 .end method

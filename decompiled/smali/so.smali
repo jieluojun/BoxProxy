@@ -1,398 +1,448 @@
-.class public final Lso;
-.super Landroid/widget/CheckedTextView;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public abstract Lso;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final j:Lto;
+# static fields
+.field public static final j:Lqo;
 
-.field public final k:Lno;
+.field public static final k:I
 
-.field public final l:Llq;
+.field public static l:Lqb3;
 
-.field public m:Lnp;
+.field public static m:Lqb3;
+
+.field public static n:Ljava/lang/Boolean;
+
+.field public static o:Z
+
+.field public static final p:Lmv;
+
+.field public static final q:Ljava/lang/Object;
+
+.field public static final r:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 8
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    const v5, 0x7f040050
+    new-instance v0, Lqo;
 
     .line 2
     .line 3
-    .line 4
-    invoke-direct {p0, p1, p2, v5}, Landroid/widget/CheckedTextView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    new-instance v1, Lro;
 
+    .line 4
     .line 5
+    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+
     .line 6
     .line 7
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
     .line 8
+    invoke-direct {v0, v1}, Lqo;-><init>(Lro;)V
+
     .line 9
     .line 10
-    move-result-object p1
-
     .line 11
-    invoke-static {p0, p1}, Lbr6;->a(Landroid/view/View;Landroid/content/Context;)V
+    sput-object v0, Lso;->j:Lqo;
 
     .line 12
     .line 13
+    const/16 v0, -0x64
+
     .line 14
-    new-instance p1, Llq;
-
     .line 15
+    sput v0, Lso;->k:I
+
     .line 16
-    invoke-direct {p1, p0}, Llq;-><init>(Landroid/widget/TextView;)V
-
     .line 17
+    const/4 v0, 0x0
+
     .line 18
+    sput-object v0, Lso;->l:Lqb3;
+
     .line 19
-    iput-object p1, p0, Lso;->l:Llq;
-
     .line 20
-    .line 21
-    invoke-virtual {p1, p2, v5}, Llq;->g(Landroid/util/AttributeSet;I)V
+    sput-object v0, Lso;->m:Lqb3;
 
+    .line 21
     .line 22
+    sput-object v0, Lso;->n:Ljava/lang/Boolean;
+
     .line 23
     .line 24
-    invoke-virtual {p1}, Llq;->b()V
+    const/4 v0, 0x0
 
     .line 25
+    sput-boolean v0, Lso;->o:Z
+
     .line 26
     .line 27
-    new-instance p1, Lno;
+    new-instance v1, Lmv;
 
     .line 28
     .line 29
-    invoke-direct {p1, p0}, Lno;-><init>(Landroid/view/View;)V
+    invoke-direct {v1, v0}, Lmv;-><init>(I)V
 
     .line 30
     .line 31
     .line 32
-    iput-object p1, p0, Lso;->k:Lno;
+    sput-object v1, Lso;->p:Lmv;
 
     .line 33
     .line 34
-    invoke-virtual {p1, p2, v5}, Lno;->q(Landroid/util/AttributeSet;I)V
+    new-instance v0, Ljava/lang/Object;
 
     .line 35
     .line 36
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
     .line 37
-    new-instance p1, Lto;
+    .line 38
+    .line 39
+    sput-object v0, Lso;->q:Ljava/lang/Object;
+
+    .line 40
+    .line 41
+    new-instance v0, Ljava/lang/Object;
+
+    .line 42
+    .line 43
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    .line 44
+    .line 45
+    .line 46
+    sput-object v0, Lso;->r:Ljava/lang/Object;
+
+    .line 47
+    .line 48
+    return-void
+.end method
+
+.method public static a()V
+    .locals 6
+
+    .line 1
+    sget-object v0, Lso;->p:Lmv;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
+    .line 5
+    .line 6
+    new-instance v1, Lfv;
+
+    .line 7
+    .line 8
+    invoke-direct {v1, v0}, Lfv;-><init>(Lmv;)V
+
+    .line 9
+    .line 10
+    .line 11
+    :cond_0
+    :goto_0
+    invoke-virtual {v1}, Lfv;->hasNext()Z
+
+    .line 12
+    .line 13
+    .line 14
+    move-result v0
+
+    .line 15
+    if-eqz v0, :cond_2
+
+    .line 16
+    .line 17
+    invoke-virtual {v1}, Lfv;->next()Ljava/lang/Object;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object v0
+
+    .line 21
+    check-cast v0, Ljava/lang/ref/WeakReference;
+
+    .line 22
+    .line 23
+    invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object v0
+
+    .line 27
+    check-cast v0, Lso;
+
+    .line 28
+    .line 29
+    if-eqz v0, :cond_0
+
+    .line 30
+    .line 31
+    check-cast v0, Lcp;
+
+    .line 32
+    .line 33
+    iget-object v2, v0, Lcp;->t:Landroid/content/Context;
+
+    .line 34
+    .line 35
+    invoke-static {v2}, Lso;->f(Landroid/content/Context;)Z
+
+    .line 36
+    .line 37
+    .line 38
+    move-result v3
+
+    .line 39
+    const/4 v4, 0x1
+
+    .line 40
+    if-eqz v3, :cond_1
+
+    .line 41
+    .line 42
+    sget-object v3, Lso;->l:Lqb3;
+
+    .line 43
+    .line 44
+    if-eqz v3, :cond_1
+
+    .line 45
+    .line 46
+    sget-object v5, Lso;->m:Lqb3;
+
+    .line 47
+    .line 48
+    invoke-virtual {v3, v5}, Lqb3;->equals(Ljava/lang/Object;)Z
+
+    .line 49
+    .line 50
+    .line 51
+    move-result v3
+
+    .line 52
+    if-nez v3, :cond_1
+
+    .line 53
+    .line 54
+    new-instance v3, Lpo;
+
+    .line 55
+    .line 56
+    invoke-direct {v3, v2, v4}, Lpo;-><init>(Landroid/content/Context;B)V
+
+    .line 57
+    .line 58
+    .line 59
+    sget-object v2, Lso;->j:Lqo;
+
+    .line 60
+    .line 61
+    invoke-virtual {v2, v3}, Lqo;->execute(Ljava/lang/Runnable;)V
+
+    .line 62
+    .line 63
+    .line 64
+    :cond_1
+    invoke-virtual {v0, v4, v4}, Lcp;->q(ZZ)Z
+
+    .line 65
+    .line 66
+    .line 67
+    goto :goto_0
+
+    .line 68
+    :cond_2
+    return-void
+.end method
+
+.method public static b()Lqb3;
+    .locals 3
+
+    .line 1
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 2
+    .line 3
+    const/16 v1, 0x21
+
+    .line 4
+    .line 5
+    if-lt v0, v1, :cond_0
+
+    .line 6
+    .line 7
+    invoke-static {}, Lso;->c()Ljava/lang/Object;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v0
+
+    .line 11
+    if-eqz v0, :cond_1
+
+    .line 12
+    .line 13
+    invoke-static {v0}, La5;->i(Ljava/lang/Object;)Landroid/os/LocaleList;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object v0
+
+    .line 17
+    new-instance v1, Lqb3;
+
+    .line 18
+    .line 19
+    new-instance v2, Lrb3;
+
+    .line 20
+    .line 21
+    invoke-direct {v2, v0}, Lrb3;-><init>(Landroid/os/LocaleList;)V
+
+    .line 22
+    .line 23
+    .line 24
+    invoke-direct {v1, v2}, Lqb3;-><init>(Lrb3;)V
+
+    .line 25
+    .line 26
+    .line 27
+    return-object v1
+
+    .line 28
+    :cond_0
+    sget-object v0, Lso;->l:Lqb3;
+
+    .line 29
+    .line 30
+    if-eqz v0, :cond_1
+
+    .line 31
+    .line 32
+    return-object v0
+
+    .line 33
+    :cond_1
+    sget-object v0, Lqb3;->b:Lqb3;
+
+    .line 34
+    .line 35
+    return-object v0
+.end method
+
+.method public static c()Ljava/lang/Object;
+    .locals 2
+
+    .line 1
+    sget-object v0, Lso;->p:Lmv;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
+    .line 5
+    .line 6
+    new-instance v1, Lfv;
+
+    .line 7
+    .line 8
+    invoke-direct {v1, v0}, Lfv;-><init>(Lmv;)V
+
+    .line 9
+    .line 10
+    .line 11
+    :cond_0
+    invoke-virtual {v1}, Lfv;->hasNext()Z
+
+    .line 12
+    .line 13
+    .line 14
+    move-result v0
+
+    .line 15
+    if-eqz v0, :cond_1
+
+    .line 16
+    .line 17
+    invoke-virtual {v1}, Lfv;->next()Ljava/lang/Object;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object v0
+
+    .line 21
+    check-cast v0, Ljava/lang/ref/WeakReference;
+
+    .line 22
+    .line 23
+    invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object v0
+
+    .line 27
+    check-cast v0, Lso;
+
+    .line 28
+    .line 29
+    if-eqz v0, :cond_0
+
+    .line 30
+    .line 31
+    check-cast v0, Lcp;
+
+    .line 32
+    .line 33
+    iget-object v0, v0, Lcp;->t:Landroid/content/Context;
+
+    .line 34
+    .line 35
+    if-eqz v0, :cond_0
+
+    .line 36
+    .line 37
+    const-string v1, "locale"
 
     .line 38
     .line 39
-    invoke-direct {p1, p0}, Lto;-><init>(Landroid/widget/TextView;)V
+    invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     .line 40
     .line 41
     .line 42
-    iput-object p1, p0, Lso;->j:Lto;
+    move-result-object v0
 
     .line 43
+    return-object v0
+
     .line 44
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    :cond_1
+    const/4 v0, 0x0
 
     .line 45
-    .line 46
-    .line 47
-    move-result-object p1
-
-    .line 48
-    sget-object v2, La55;->l:[I
-
-    .line 49
-    .line 50
-    invoke-static {p1, p2, v2, v5}, Lsn6;->f(Landroid/content/Context;Landroid/util/AttributeSet;[II)Lsn6;
-
-    .line 51
-    .line 52
-    .line 53
-    move-result-object p1
-
-    .line 54
-    iget-object v0, p1, Lsn6;->b:Ljava/lang/Object;
-
-    .line 55
-    .line 56
-    move-object v7, v0
-
-    .line 57
-    check-cast v7, Landroid/content/res/TypedArray;
-
-    .line 58
-    .line 59
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    .line 60
-    .line 61
-    .line 62
-    move-result-object v1
-
-    .line 63
-    iget-object v0, p1, Lsn6;->b:Ljava/lang/Object;
-
-    .line 64
-    .line 65
-    move-object v4, v0
-
-    .line 66
-    check-cast v4, Landroid/content/res/TypedArray;
-
-    .line 67
-    .line 68
-    sget-object v0, Lf47;->a:Ljava/util/WeakHashMap;
-
-    .line 69
-    .line 70
-    const/4 v6, 0x0
-
-    .line 71
-    move-object v0, p0
-
-    .line 72
-    move-object v3, p2
-
-    .line 73
-    invoke-static/range {v0 .. v6}, Lc47;->b(Landroid/view/View;Landroid/content/Context;[ILandroid/util/AttributeSet;Landroid/content/res/TypedArray;II)V
-
-    .line 74
-    .line 75
-    .line 76
-    const/4 p0, 0x1
-
-    .line 77
-    :try_start_0
-    invoke-virtual {v7, p0}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    .line 78
-    .line 79
-    .line 80
-    move-result p2
-
-    .line 81
-    const/4 v1, 0x0
-
-    .line 82
-    if-eqz p2, :cond_0
-
-    .line 83
-    .line 84
-    invoke-virtual {v7, p0, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    .line 85
-    .line 86
-    .line 87
-    move-result p0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 88
-    if-eqz p0, :cond_0
-
-    .line 89
-    .line 90
-    :try_start_1
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    .line 91
-    .line 92
-    .line 93
-    move-result-object p2
-
-    .line 94
-    invoke-static {p2, p0}, Lc;->x(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    .line 95
-    .line 96
-    .line 97
-    move-result-object p0
-
-    .line 98
-    invoke-virtual {v0, p0}, Lso;->setCheckMarkDrawable(Landroid/graphics/drawable/Drawable;)V
-    :try_end_1
-    .catch Landroid/content/res/Resources$NotFoundException; {:try_start_1 .. :try_end_1} :catch_0
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 99
-    .line 100
-    .line 101
-    goto :goto_0
-
-    .line 102
-    :catchall_0
-    move-exception v0
-
-    .line 103
-    move-object p0, v0
-
-    .line 104
-    goto :goto_1
-
-    .line 105
-    :catch_0
-    :cond_0
-    :try_start_2
-    invoke-virtual {v7, v1}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    .line 106
-    .line 107
-    .line 108
-    move-result p0
-
-    .line 109
-    if-eqz p0, :cond_1
-
-    .line 110
-    .line 111
-    invoke-virtual {v7, v1, v1}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
-    .line 112
-    .line 113
-    .line 114
-    move-result p0
-
-    .line 115
-    if-eqz p0, :cond_1
-
-    .line 116
-    .line 117
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    .line 118
-    .line 119
-    .line 120
-    move-result-object p2
-
-    .line 121
-    invoke-static {p2, p0}, Lc;->x(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    .line 122
-    .line 123
-    .line 124
-    move-result-object p0
-
-    .line 125
-    invoke-virtual {v0, p0}, Lso;->setCheckMarkDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 126
-    .line 127
-    .line 128
-    :cond_1
-    :goto_0
-    const/4 p0, 0x2
-
-    .line 129
-    invoke-virtual {v7, p0}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    .line 130
-    .line 131
-    .line 132
-    move-result p2
-
-    .line 133
-    if-eqz p2, :cond_2
-
-    .line 134
-    .line 135
-    invoke-virtual {p1, p0}, Lsn6;->a(I)Landroid/content/res/ColorStateList;
-
-    .line 136
-    .line 137
-    .line 138
-    move-result-object p0
-
-    .line 139
-    invoke-virtual {v0, p0}, Landroid/widget/CheckedTextView;->setCheckMarkTintList(Landroid/content/res/ColorStateList;)V
-
-    .line 140
-    .line 141
-    .line 142
-    :cond_2
-    const/4 p0, 0x3
-
-    .line 143
-    invoke-virtual {v7, p0}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    .line 144
-    .line 145
-    .line 146
-    move-result p2
-
-    .line 147
-    if-eqz p2, :cond_3
-
-    .line 148
-    .line 149
-    const/4 p2, -0x1
-
-    .line 150
-    invoke-virtual {v7, p0, p2}, Landroid/content/res/TypedArray;->getInt(II)I
-
-    .line 151
-    .line 152
-    .line 153
-    move-result p0
-
-    .line 154
-    const/4 p2, 0x0
-
-    .line 155
-    invoke-static {p0, p2}, Lun1;->b(ILandroid/graphics/PorterDuff$Mode;)Landroid/graphics/PorterDuff$Mode;
-
-    .line 156
-    .line 157
-    .line 158
-    move-result-object p0
-
-    .line 159
-    invoke-virtual {v0, p0}, Landroid/widget/CheckedTextView;->setCheckMarkTintMode(Landroid/graphics/PorterDuff$Mode;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 160
-    .line 161
-    .line 162
-    :cond_3
-    invoke-virtual {p1}, Lsn6;->g()V
-
-    .line 163
-    .line 164
-    .line 165
-    invoke-direct {v0}, Lso;->getEmojiTextViewHelper()Lnp;
-
-    .line 166
-    .line 167
-    .line 168
-    move-result-object p0
-
-    .line 169
-    invoke-virtual {p0, v3, v5}, Lnp;->a(Landroid/util/AttributeSet;I)V
-
-    .line 170
-    .line 171
-    .line 172
-    return-void
-
-    .line 173
-    :goto_1
-    invoke-virtual {p1}, Lsn6;->g()V
-
-    .line 174
-    .line 175
-    .line 176
-    throw p0
+    return-object v0
 .end method
 
-.method private getEmojiTextViewHelper()Lnp;
-    .locals 1
+.method public static f(Landroid/content/Context;)Z
+    .locals 3
 
     .line 1
-    iget-object v0, p0, Lso;->m:Lnp;
+    sget-object v0, Lso;->n:Ljava/lang/Boolean;
 
     .line 2
     .line 3
@@ -400,664 +450,458 @@
 
     .line 4
     .line 5
-    new-instance v0, Lnp;
+    :try_start_0
+    sget v0, Lbr;->j:I
 
     .line 6
     .line 7
-    invoke-direct {v0, p0}, Lnp;-><init>(Landroid/widget/TextView;)V
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     .line 8
     .line 9
     .line 10
-    iput-object v0, p0, Lso;->m:Lnp;
+    move-result-object v0
+
+    .line 11
+    new-instance v1, Landroid/content/ComponentName;
+
+    .line 12
+    .line 13
+    const-class v2, Lbr;
+
+    .line 14
+    .line 15
+    invoke-direct {v1, p0, v2}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+
+    .line 16
+    .line 17
+    .line 18
+    const/16 p0, 0x280
+
+    .line 19
+    .line 20
+    invoke-virtual {v0, v1, p0}, Landroid/content/pm/PackageManager;->getServiceInfo(Landroid/content/ComponentName;I)Landroid/content/pm/ServiceInfo;
+
+    .line 21
+    .line 22
+    .line 23
+    move-result-object p0
+
+    .line 24
+    iget-object p0, p0, Landroid/content/pm/ServiceInfo;->metaData:Landroid/os/Bundle;
+
+    .line 25
+    .line 26
+    if-eqz p0, :cond_0
+
+    .line 27
+    .line 28
+    const-string v0, "autoStoreLocales"
+
+    .line 29
+    .line 30
+    invoke-virtual {p0, v0}, Landroid/os/BaseBundle;->getBoolean(Ljava/lang/String;)Z
+
+    .line 31
+    .line 32
+    .line 33
+    move-result p0
+
+    .line 34
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 35
+    .line 36
+    .line 37
+    move-result-object p0
+
+    .line 38
+    sput-object p0, Lso;->n:Ljava/lang/Boolean;
+    :try_end_0
+    .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 39
+    .line 40
+    goto :goto_0
+
+    .line 41
+    :catch_0
+    const-string p0, "AppCompatDelegate"
+
+    .line 42
+    .line 43
+    const-string v0, "Checking for metadata for AppLocalesMetadataHolderService : Service not found"
+
+    .line 44
+    .line 45
+    invoke-static {p0, v0}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 46
+    .line 47
+    .line 48
+    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    .line 49
+    .line 50
+    sput-object p0, Lso;->n:Ljava/lang/Boolean;
+
+    .line 51
+    .line 52
+    :cond_0
+    :goto_0
+    sget-object p0, Lso;->n:Ljava/lang/Boolean;
+
+    .line 53
+    .line 54
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    .line 55
+    .line 56
+    .line 57
+    move-result p0
+
+    .line 58
+    return p0
+.end method
+
+.method public static j(Lcp;)V
+    .locals 3
+
+    .line 1
+    sget-object v0, Lso;->q:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    monitor-enter v0
+
+    .line 4
+    :try_start_0
+    sget-object v1, Lso;->p:Lmv;
+
+    .line 5
+    .line 6
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 7
+    .line 8
+    .line 9
+    new-instance v2, Lfv;
+
+    .line 10
+    .line 11
+    invoke-direct {v2, v1}, Lfv;-><init>(Lmv;)V
+
+    .line 12
+    .line 13
+    .line 14
+    :cond_0
+    :goto_0
+    invoke-virtual {v2}, Lfv;->hasNext()Z
+
+    .line 15
+    .line 16
+    .line 17
+    move-result v1
+
+    .line 18
+    if-eqz v1, :cond_2
+
+    .line 19
+    .line 20
+    invoke-virtual {v2}, Lfv;->next()Ljava/lang/Object;
+
+    .line 21
+    .line 22
+    .line 23
+    move-result-object v1
+
+    .line 24
+    check-cast v1, Ljava/lang/ref/WeakReference;
+
+    .line 25
+    .line 26
+    invoke-virtual {v1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
+    .line 27
+    .line 28
+    .line 29
+    move-result-object v1
+
+    .line 30
+    check-cast v1, Lso;
+
+    .line 31
+    .line 32
+    if-eq v1, p0, :cond_1
+
+    .line 33
+    .line 34
+    if-nez v1, :cond_0
+
+    .line 35
+    .line 36
+    :cond_1
+    invoke-virtual {v2}, Lfv;->remove()V
+
+    .line 37
+    .line 38
+    .line 39
+    goto :goto_0
+
+    .line 40
+    :catchall_0
+    move-exception p0
+
+    .line 41
+    goto :goto_1
+
+    .line 42
+    :cond_2
+    monitor-exit v0
+
+    .line 43
+    return-void
+
+    .line 44
+    :goto_1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 45
+    throw p0
+.end method
+
+.method public static p(Landroid/content/Context;)V
+    .locals 3
+
+    .line 1
+    invoke-static {p0}, Lso;->f(Landroid/content/Context;)Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    if-nez v0, :cond_0
+
+    .line 6
+    .line 7
+    goto :goto_0
+
+    .line 8
+    :cond_0
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 9
+    .line 10
+    const/16 v1, 0x21
 
     .line 11
     .line 12
-    :cond_0
-    return-object v0
+    if-lt v0, v1, :cond_2
+
+    .line 13
+    .line 14
+    sget-boolean v0, Lso;->o:Z
+
+    .line 15
+    .line 16
+    if-nez v0, :cond_1
+
+    .line 17
+    .line 18
+    sget-object v0, Lso;->j:Lqo;
+
+    .line 19
+    .line 20
+    new-instance v1, Lpo;
+
+    .line 21
+    .line 22
+    const/4 v2, 0x0
+
+    .line 23
+    invoke-direct {v1, p0, v2}, Lpo;-><init>(Landroid/content/Context;B)V
+
+    .line 24
+    .line 25
+    .line 26
+    invoke-virtual {v0, v1}, Lqo;->execute(Ljava/lang/Runnable;)V
+
+    .line 27
+    .line 28
+    .line 29
+    :cond_1
+    :goto_0
+    return-void
+
+    .line 30
+    :cond_2
+    sget-object v0, Lso;->r:Ljava/lang/Object;
+
+    .line 31
+    .line 32
+    monitor-enter v0
+
+    .line 33
+    :try_start_0
+    sget-object v1, Lso;->l:Lqb3;
+
+    .line 34
+    .line 35
+    if-nez v1, :cond_5
+
+    .line 36
+    .line 37
+    sget-object v1, Lso;->m:Lqb3;
+
+    .line 38
+    .line 39
+    if-nez v1, :cond_3
+
+    .line 40
+    .line 41
+    invoke-static {p0}, Lai3;->C(Landroid/content/Context;)Ljava/lang/String;
+
+    .line 42
+    .line 43
+    .line 44
+    move-result-object p0
+
+    .line 45
+    invoke-static {p0}, Lqb3;->a(Ljava/lang/String;)Lqb3;
+
+    .line 46
+    .line 47
+    .line 48
+    move-result-object v1
+
+    .line 49
+    sput-object v1, Lso;->m:Lqb3;
+
+    .line 50
+    .line 51
+    goto :goto_1
+
+    .line 52
+    :catchall_0
+    move-exception p0
+
+    .line 53
+    goto :goto_3
+
+    .line 54
+    :cond_3
+    :goto_1
+    invoke-virtual {v1}, Lqb3;->b()Z
+
+    .line 55
+    .line 56
+    .line 57
+    move-result p0
+
+    .line 58
+    if-eqz p0, :cond_4
+
+    .line 59
+    .line 60
+    monitor-exit v0
+
+    .line 61
+    return-void
+
+    .line 62
+    :cond_4
+    sget-object p0, Lso;->m:Lqb3;
+
+    .line 63
+    .line 64
+    sput-object p0, Lso;->l:Lqb3;
+
+    .line 65
+    .line 66
+    goto :goto_2
+
+    .line 67
+    :cond_5
+    sget-object v2, Lso;->m:Lqb3;
+
+    .line 68
+    .line 69
+    invoke-virtual {v1, v2}, Lqb3;->equals(Ljava/lang/Object;)Z
+
+    .line 70
+    .line 71
+    .line 72
+    move-result v1
+
+    .line 73
+    if-nez v1, :cond_6
+
+    .line 74
+    .line 75
+    sget-object v1, Lso;->l:Lqb3;
+
+    .line 76
+    .line 77
+    sput-object v1, Lso;->m:Lqb3;
+
+    .line 78
+    .line 79
+    invoke-virtual {v1}, Lqb3;->c()Ljava/lang/String;
+
+    .line 80
+    .line 81
+    .line 82
+    move-result-object v1
+
+    .line 83
+    invoke-static {p0, v1}, Lai3;->B(Landroid/content/Context;Ljava/lang/String;)V
+
+    .line 84
+    .line 85
+    .line 86
+    :cond_6
+    :goto_2
+    monitor-exit v0
+
+    .line 87
+    return-void
+
+    .line 88
+    :goto_3
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 89
+    throw p0
 .end method
 
 
 # virtual methods
-.method public final drawableStateChanged()V
-    .locals 1
-
-    .line 1
-    invoke-super {p0}, Landroid/widget/CheckedTextView;->drawableStateChanged()V
-
-    .line 2
-    .line 3
-    .line 4
-    iget-object v0, p0, Lso;->l:Llq;
-
-    .line 5
-    .line 6
-    if-eqz v0, :cond_0
-
-    .line 7
-    .line 8
-    invoke-virtual {v0}, Llq;->b()V
-
-    .line 9
-    .line 10
-    .line 11
-    :cond_0
-    iget-object v0, p0, Lso;->k:Lno;
-
-    .line 12
-    .line 13
-    if-eqz v0, :cond_1
-
-    .line 14
-    .line 15
-    invoke-virtual {v0}, Lno;->b()V
-
-    .line 16
-    .line 17
-    .line 18
-    :cond_1
-    iget-object p0, p0, Lso;->j:Lto;
-
-    .line 19
-    .line 20
-    if-eqz p0, :cond_2
-
-    .line 21
-    .line 22
-    invoke-virtual {p0}, Lto;->b()V
-
-    .line 23
-    .line 24
-    .line 25
-    :cond_2
-    return-void
+.method public abstract e()V
 .end method
 
-.method public getCustomSelectionActionModeCallback()Landroid/view/ActionMode$Callback;
-    .locals 0
-
-    .line 1
-    invoke-super {p0}, Landroid/widget/TextView;->getCustomSelectionActionModeCallback()Landroid/view/ActionMode$Callback;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
+.method public abstract g()V
 .end method
 
-.method public getSupportBackgroundTintList()Landroid/content/res/ColorStateList;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lso;->k:Lno;
-
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
-
-    .line 4
-    .line 5
-    invoke-virtual {p0}, Lno;->o()Landroid/content/res/ColorStateList;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    return-object p0
-
-    .line 10
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 11
-    return-object p0
+.method public abstract i()V
 .end method
 
-.method public getSupportBackgroundTintMode()Landroid/graphics/PorterDuff$Mode;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lso;->k:Lno;
-
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
-
-    .line 4
-    .line 5
-    invoke-virtual {p0}, Lno;->p()Landroid/graphics/PorterDuff$Mode;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    return-object p0
-
-    .line 10
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 11
-    return-object p0
+.method public abstract k(I)Z
 .end method
 
-.method public getSupportCheckMarkTintList()Landroid/content/res/ColorStateList;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lso;->j:Lto;
-
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
-
-    .line 4
-    .line 5
-    iget-object p0, p0, Lto;->a:Landroid/content/res/ColorStateList;
-
-    .line 6
-    .line 7
-    return-object p0
-
-    .line 8
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 9
-    return-object p0
+.method public abstract l(I)V
 .end method
 
-.method public getSupportCheckMarkTintMode()Landroid/graphics/PorterDuff$Mode;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lso;->j:Lto;
-
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
-
-    .line 4
-    .line 5
-    iget-object p0, p0, Lto;->b:Landroid/graphics/PorterDuff$Mode;
-
-    .line 6
-    .line 7
-    return-object p0
-
-    .line 8
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 9
-    return-object p0
+.method public abstract m(Landroid/view/View;)V
 .end method
 
-.method public getSupportCompoundDrawablesTintList()Landroid/content/res/ColorStateList;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lso;->l:Llq;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Llq;->e()Landroid/content/res/ColorStateList;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
+.method public abstract n(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 .end method
 
-.method public getSupportCompoundDrawablesTintMode()Landroid/graphics/PorterDuff$Mode;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lso;->l:Llq;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Llq;->f()Landroid/graphics/PorterDuff$Mode;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
-.end method
-
-.method public final onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
-    .locals 1
-
-    .line 1
-    invoke-super {p0, p1}, Landroid/view/View;->onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
-
-    .line 5
-    invoke-static {p1, v0, p0}, Lcd7;->Q(Landroid/view/inputmethod/EditorInfo;Landroid/view/inputmethod/InputConnection;Landroid/widget/TextView;)V
-
-    .line 6
-    .line 7
-    .line 8
-    return-object v0
-.end method
-
-.method public setAllCaps(Z)V
-    .locals 0
-
-    .line 1
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setAllCaps(Z)V
-
-    .line 2
-    .line 3
-    .line 4
-    invoke-direct {p0}, Lso;->getEmojiTextViewHelper()Lnp;
-
-    .line 5
-    .line 6
-    .line 7
-    move-result-object p0
-
-    .line 8
-    invoke-virtual {p0, p1}, Lnp;->b(Z)V
-
-    .line 9
-    .line 10
-    .line 11
-    return-void
-.end method
-
-.method public setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    .line 1
-    invoke-super {p0, p1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 2
-    .line 3
-    .line 4
-    iget-object p0, p0, Lso;->k:Lno;
-
-    .line 5
-    .line 6
-    if-eqz p0, :cond_0
-
-    .line 7
-    .line 8
-    invoke-virtual {p0}, Lno;->r()V
-
-    .line 9
-    .line 10
-    .line 11
-    :cond_0
-    return-void
-.end method
-
-.method public setBackgroundResource(I)V
-    .locals 0
-
-    .line 1
-    invoke-super {p0, p1}, Landroid/view/View;->setBackgroundResource(I)V
-
-    .line 2
-    .line 3
-    .line 4
-    iget-object p0, p0, Lso;->k:Lno;
-
-    .line 5
-    .line 6
-    if-eqz p0, :cond_0
-
-    .line 7
-    .line 8
-    invoke-virtual {p0, p1}, Lno;->s(I)V
-
-    .line 9
-    .line 10
-    .line 11
-    :cond_0
-    return-void
-.end method
-
-.method public setCheckMarkDrawable(I)V
-    .locals 1
-
-    .line 23
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lc;->x(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lso;->setCheckMarkDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    return-void
-.end method
-
-.method public setCheckMarkDrawable(Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    .line 1
-    invoke-super {p0, p1}, Landroid/widget/CheckedTextView;->setCheckMarkDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 2
-    .line 3
-    .line 4
-    iget-object p0, p0, Lso;->j:Lto;
-
-    .line 5
-    .line 6
-    if-eqz p0, :cond_1
-
-    .line 7
-    .line 8
-    iget-boolean p1, p0, Lto;->e:Z
-
-    .line 9
-    .line 10
-    if-eqz p1, :cond_0
-
-    .line 11
-    .line 12
-    const/4 p1, 0x0
-
-    .line 13
-    iput-boolean p1, p0, Lto;->e:Z
-
-    .line 14
-    .line 15
-    return-void
-
-    .line 16
-    :cond_0
-    const/4 p1, 0x1
-
-    .line 17
-    iput-boolean p1, p0, Lto;->e:Z
-
-    .line 18
-    .line 19
-    invoke-virtual {p0}, Lto;->b()V
-
-    .line 20
-    .line 21
-    .line 22
-    :cond_1
-    return-void
-.end method
-
-.method public final setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    .line 1
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    .line 2
-    .line 3
-    .line 4
-    iget-object p0, p0, Lso;->l:Llq;
-
-    .line 5
-    .line 6
-    if-eqz p0, :cond_0
-
-    .line 7
-    .line 8
-    invoke-virtual {p0}, Llq;->b()V
-
-    .line 9
-    .line 10
-    .line 11
-    :cond_0
-    return-void
-.end method
-
-.method public final setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    .line 1
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    .line 2
-    .line 3
-    .line 4
-    iget-object p0, p0, Lso;->l:Llq;
-
-    .line 5
-    .line 6
-    if-eqz p0, :cond_0
-
-    .line 7
-    .line 8
-    invoke-virtual {p0}, Llq;->b()V
-
-    .line 9
-    .line 10
-    .line 11
-    :cond_0
-    return-void
-.end method
-
-.method public setCustomSelectionActionModeCallback(Landroid/view/ActionMode$Callback;)V
-    .locals 0
-
-    .line 1
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setCustomSelectionActionModeCallback(Landroid/view/ActionMode$Callback;)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public setEmojiCompatEnabled(Z)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Lso;->getEmojiTextViewHelper()Lnp;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    invoke-virtual {p0, p1}, Lnp;->c(Z)V
-
-    .line 6
-    .line 7
-    .line 8
-    return-void
-.end method
-
-.method public setSupportBackgroundTintList(Landroid/content/res/ColorStateList;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lso;->k:Lno;
-
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
-
-    .line 4
-    .line 5
-    invoke-virtual {p0, p1}, Lno;->y(Landroid/content/res/ColorStateList;)V
-
-    .line 6
-    .line 7
-    .line 8
-    :cond_0
-    return-void
-.end method
-
-.method public setSupportBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lso;->k:Lno;
-
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
-
-    .line 4
-    .line 5
-    invoke-virtual {p0, p1}, Lno;->z(Landroid/graphics/PorterDuff$Mode;)V
-
-    .line 6
-    .line 7
-    .line 8
-    :cond_0
-    return-void
-.end method
-
-.method public setSupportCheckMarkTintList(Landroid/content/res/ColorStateList;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lso;->j:Lto;
-
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
-
-    .line 4
-    .line 5
-    iput-object p1, p0, Lto;->a:Landroid/content/res/ColorStateList;
-
-    .line 6
-    .line 7
-    const/4 p1, 0x1
-
-    .line 8
-    iput-boolean p1, p0, Lto;->c:Z
-
-    .line 9
-    .line 10
-    invoke-virtual {p0}, Lto;->b()V
-
-    .line 11
-    .line 12
-    .line 13
-    :cond_0
-    return-void
-.end method
-
-.method public setSupportCheckMarkTintMode(Landroid/graphics/PorterDuff$Mode;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lso;->j:Lto;
-
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
-
-    .line 4
-    .line 5
-    iput-object p1, p0, Lto;->b:Landroid/graphics/PorterDuff$Mode;
-
-    .line 6
-    .line 7
-    const/4 p1, 0x1
-
-    .line 8
-    iput-boolean p1, p0, Lto;->d:Z
-
-    .line 9
-    .line 10
-    invoke-virtual {p0}, Lto;->b()V
-
-    .line 11
-    .line 12
-    .line 13
-    :cond_0
-    return-void
-.end method
-
-.method public setSupportCompoundDrawablesTintList(Landroid/content/res/ColorStateList;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lso;->l:Llq;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Llq;->i(Landroid/content/res/ColorStateList;)V
-
-    .line 4
-    .line 5
-    .line 6
-    invoke-virtual {p0}, Llq;->b()V
-
-    .line 7
-    .line 8
-    .line 9
-    return-void
-.end method
-
-.method public setSupportCompoundDrawablesTintMode(Landroid/graphics/PorterDuff$Mode;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lso;->l:Llq;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Llq;->j(Landroid/graphics/PorterDuff$Mode;)V
-
-    .line 4
-    .line 5
-    .line 6
-    invoke-virtual {p0}, Llq;->b()V
-
-    .line 7
-    .line 8
-    .line 9
-    return-void
-.end method
-
-.method public final setTextAppearance(Landroid/content/Context;I)V
-    .locals 0
-
-    .line 1
-    invoke-super {p0, p1, p2}, Landroid/widget/TextView;->setTextAppearance(Landroid/content/Context;I)V
-
-    .line 2
-    .line 3
-    .line 4
-    iget-object p0, p0, Lso;->l:Llq;
-
-    .line 5
-    .line 6
-    if-eqz p0, :cond_0
-
-    .line 7
-    .line 8
-    invoke-virtual {p0, p1, p2}, Llq;->h(Landroid/content/Context;I)V
-
-    .line 9
-    .line 10
-    .line 11
-    :cond_0
-    return-void
+.method public abstract o(Ljava/lang/CharSequence;)V
 .end method

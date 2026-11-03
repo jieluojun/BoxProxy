@@ -1,89 +1,69 @@
 .class public abstract Lva5;
-.super Lua5;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lf62;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final j:B
+# static fields
+.field public static final a:Lta5;
 
 
 # direct methods
-.method public constructor <init>(ILc81;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0, p2}, Lua5;-><init>(Lc81;)V
+    sget-object v0, Lbg0;->m:Lbg0;
 
     .line 2
     .line 3
-    .line 4
-    iput-byte p1, p0, Lva5;->j:B
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 4
     .line 5
     .line 6
+    new-instance v1, Lta5;
+
+    .line 7
+    .line 8
+    invoke-direct {v1, v0}, Lta5;-><init>(Lbg0;)V
+
+    .line 9
+    .line 10
+    .line 11
+    sput-object v1, Lva5;->a:Lta5;
+
+    .line 12
+    .line 13
     return-void
 .end method
 
 
 # virtual methods
-.method public final getArity()I
+.method public abstract a()J
+.end method
+
+.method public b()Lsi3;
     .locals 0
 
     .line 1
-    iget-byte p0, p0, Lva5;->j:B
+    sget-object p0, Lsi3;->c:Lgo2;
 
     .line 2
     .line 3
-    return p0
-.end method
+    const-string p0, "application/octet-stream"
 
-.method public final toString()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Lgz;->getCompletion()Lc81;
-
-    .line 2
-    .line 3
     .line 4
-    move-result-object v0
-
     .line 5
-    if-nez v0, :cond_0
+    invoke-static {p0}, Ld43;->v(Ljava/lang/String;)Lsi3;
 
     .line 6
     .line 7
-    sget-object v0, Ld85;->a:Le85;
-
     .line 8
+    move-result-object p0
+
     .line 9
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 10
-    .line 11
-    .line 12
-    invoke-static {p0}, Le85;->a(Lf62;)Ljava/lang/String;
-
-    .line 13
-    .line 14
-    .line 15
-    move-result-object p0
-
-    .line 16
     return-object p0
+.end method
 
-    .line 17
-    :cond_0
-    invoke-super {p0}, Lgz;->toString()Ljava/lang/String;
-
-    .line 18
-    .line 19
-    .line 20
-    move-result-object p0
-
-    .line 21
-    return-object p0
+.method public abstract c(Ld75;)V
 .end method

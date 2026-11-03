@@ -1,56 +1,92 @@
-.class public Lx97;
-.super Lw97;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public abstract Lx97;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# static fields
+.field public static final a:Lz97;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .line 10
-    invoke-direct {p0}, Lw97;-><init>()V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lla7;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-direct {p0, p1}, Lw97;-><init>(Lla7;)V
+    :try_start_0
+    invoke-static {}, Ldy6;->e()Ljava/lang/reflect/InvocationHandler;
 
     .line 2
     .line 3
     .line 4
-    iget-object p0, p1, Lla7;->a:Lia7;
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
+    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 5
-    .line 6
-    invoke-virtual {p0}, Lia7;->s()Z
+    new-instance v1, Lgt4;
 
+    .line 6
     .line 7
+    const-class v2, Lorg/chromium/support_lib_boundary/WebViewProviderFactoryBoundaryInterface;
+
     .line 8
     .line 9
+    invoke-static {v2, v0}, Lq50;->G(Ljava/lang/Class;Ljava/lang/reflect/InvocationHandler;)Ljava/lang/Object;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v0
+
+    .line 13
+    check-cast v0, Lorg/chromium/support_lib_boundary/WebViewProviderFactoryBoundaryInterface;
+
+    .line 14
+    .line 15
+    invoke-direct {v1, v0}, Lgt4;-><init>(Ljava/lang/Object;)V
+
+    .line 16
+    .line 17
+    .line 18
+    goto :goto_0
+
+    .line 19
+    :catch_0
+    new-instance v1, Liv1;
+
+    .line 20
+    .line 21
+    const/4 v0, 0x5
+
+    .line 22
+    invoke-direct {v1, v0}, Liv1;-><init>(B)V
+
+    .line 23
+    .line 24
+    .line 25
+    :goto_0
+    sput-object v1, Lx97;->a:Lz97;
+
+    .line 26
+    .line 27
     return-void
-.end method
 
+    .line 28
+    :catch_1
+    move-exception v0
 
-# virtual methods
-.method public c(Lla7;)V
-    .locals 0
+    .line 29
+    new-instance v1, Ljava/lang/RuntimeException;
 
-    .line 1
-    return-void
-.end method
+    .line 30
+    .line 31
+    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
-.method public d(ILpp2;)V
-    .locals 0
-
-    .line 1
-    invoke-super {p0, p1, p2}, Lw97;->d(ILpp2;)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
+    .line 32
+    .line 33
+    .line 34
+    throw v1
 .end method

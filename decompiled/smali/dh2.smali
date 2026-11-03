@@ -1,26 +1,26 @@
 .class public final Ldh2;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
 .field public synthetic j:Ljava/lang/Object;
 
-.field public final synthetic k:Lgq6;
+.field public final synthetic k:Lsr6;
 
 .field public l:I
 
 
 # direct methods
-.method public constructor <init>(Lgq6;Ld81;)V
+.method public constructor <init>(Lsr6;Lz71;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Ldh2;->k:Lgq6;
+    iput-object p1, p0, Ldh2;->k:Lsr6;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
     .line 4
     .line 5
@@ -53,11 +53,11 @@
 
     .line 9
     .line 10
-    iget-object p1, p0, Ldh2;->k:Lgq6;
+    iget-object p1, p0, Ldh2;->k:Lsr6;
 
     .line 11
     .line 12
-    invoke-virtual {p1, p0}, Lgq6;->f0(Ld81;)Ljava/lang/Object;
+    invoke-virtual {p1, p0}, Lsr6;->f0(Lz71;)Ljava/lang/Object;
 
     .line 13
     .line 14

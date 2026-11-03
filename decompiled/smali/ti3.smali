@@ -1,19 +1,61 @@
 .class public final Lti3;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Landroid/view/ActionProvider$VisibilityListener;
+
+# static fields
+.field public static final b:Lti3;
+
+.field public static final c:Lti3;
 
 
 # instance fields
-.field public a:Lf6;
-
-.field public final b:Landroid/view/ActionProvider;
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lwi3;Landroid/view/ActionProvider;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    .line 1
+    new-instance v0, Lti3;
+
+    .line 2
+    .line 3
+    const-string v1, "text/*"
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Lti3;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    sput-object v0, Lti3;->b:Lti3;
+
+    .line 9
+    .line 10
+    new-instance v0, Lti3;
+
+    .line 11
+    .line 12
+    const-string v1, "*/*"
+
+    .line 13
+    .line 14
+    invoke-direct {v0, v1}, Lti3;-><init>(Ljava/lang/String;)V
+
+    .line 15
+    .line 16
+    .line 17
+    sput-object v0, Lti3;->c:Lti3;
+
+    .line 18
+    .line 19
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 0
 
     .line 1
@@ -22,7 +64,7 @@
     .line 2
     .line 3
     .line 4
-    iput-object p2, p0, Lti3;->b:Landroid/view/ActionProvider;
+    iput-object p1, p0, Lti3;->a:Ljava/lang/String;
 
     .line 5
     .line 6
@@ -31,42 +73,101 @@
 
 
 # virtual methods
-.method public final onActionProviderVisibilityChanged(Z)V
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
     .line 1
-    iget-object p0, p0, Lti3;->a:Lf6;
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
-    if-eqz p0, :cond_0
+    const/4 p0, 0x1
 
     .line 4
+    return p0
+
     .line 5
-    iget-object p0, p0, Lf6;->k:Ljava/lang/Object;
+    :cond_0
+    instance-of v0, p1, Lti3;
 
     .line 6
     .line 7
-    check-cast p0, Lri3;
+    if-nez v0, :cond_1
 
     .line 8
     .line 9
-    iget-object p0, p0, Lri3;->n:Lli3;
+    const/4 p0, 0x0
 
     .line 10
+    return p0
+
     .line 11
-    const/4 p1, 0x1
+    :cond_1
+    check-cast p1, Lti3;
 
     .line 12
-    iput-boolean p1, p0, Lli3;->h:Z
-
     .line 13
-    .line 14
-    invoke-virtual {p0, p1}, Lli3;->p(Z)V
+    iget-object p1, p1, Lti3;->a:Ljava/lang/String;
 
+    .line 14
     .line 15
+    iget-object p0, p0, Lti3;->a:Ljava/lang/String;
+
     .line 16
     .line 17
-    :cond_0
-    return-void
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    .line 18
+    .line 19
+    .line 20
+    move-result p0
+
+    .line 21
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lti3;->a:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    const-string v0, "MediaType(representation=\'"
+
+    .line 2
+    .line 3
+    const-string v1, "\')"
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Lti3;->a:Ljava/lang/String;
+
+    .line 6
+    .line 7
+    invoke-static {v0, p0, v1}, Lpb1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p0
+
+    .line 11
+    return-object p0
 .end method

@@ -1,6 +1,6 @@
 .class public final Ldg2;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
@@ -16,7 +16,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lgg2;Ld81;)V
+.method public constructor <init>(Lgg2;Lz71;)V
     .locals 0
 
     .line 1
@@ -24,7 +24,7 @@
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
     .line 4
     .line 5
@@ -68,7 +68,7 @@
 
     .line 14
     .line 15
-    invoke-virtual {v2, p1, v0, v1, p0}, Lgg2;->a(Ljava/lang/String;JLd81;)Ljava/lang/Object;
+    invoke-virtual {v2, p1, v0, v1, p0}, Lgg2;->a(Ljava/lang/String;JLz71;)Ljava/lang/Object;
 
     .line 16
     .line 17

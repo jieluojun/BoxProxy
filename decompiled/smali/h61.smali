@@ -1,63 +1,164 @@
-.class public final Lh61;
-.super Lc61;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class final Lh61;
+.super Lro3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# virtual methods
-.method public final a(Lk54;)Ljava/lang/Object;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lro3;"
+    }
+.end annotation
+
+
+# instance fields
+.field public final j:Lo52;
+
+
+# direct methods
+.method public constructor <init>(Lo52;)V
     .locals 0
 
     .line 1
-    check-cast p1, Lyo5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iget-object p0, p1, Lyo5;->e:Ljava/lang/String;
+    .line 4
+    iput-object p1, p0, Lh61;->j:Lo52;
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()Ljo3;
+    .locals 1
+
+    .line 1
+    new-instance v0, Li61;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Lrp2;-><init>()V
 
     .line 4
     .line 5
-    :try_start_0
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
+    .line 6
+    iget-object p0, p0, Lh61;->j:Lo52;
+
+    .line 7
+    .line 8
+    iput-object p0, v0, Li61;->z:Lo52;
+
+    .line 9
+    .line 10
+    return-object v0
+.end method
+
+.method public final b(Ljo3;)V
+    .locals 1
+
+    .line 1
+    check-cast p1, Li61;
+
+    .line 2
+    .line 3
+    iget-object v0, p1, Li61;->z:Lo52;
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Lh61;->j:Lo52;
 
     .line 6
     .line 7
-    .line 8
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+    if-eq p0, v0, :cond_0
 
+    .line 8
     .line 9
-    return-object p0
+    iput-object p0, p1, Li61;->z:Lo52;
 
     .line 10
-    :catch_0
-    :try_start_1
-    invoke-static {p0}, Ljava/lang/Long;->valueOf(Ljava/lang/String;)Ljava/lang/Long;
-
     .line 11
+    invoke-virtual {p1}, Lrp2;->F1()V
+
     .line 12
     .line 13
-    move-result-object p0
-    :try_end_1
-    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1
+    .line 14
+    :cond_0
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lh61;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Lh61;
+
+    .line 12
+    .line 13
+    iget-object p1, p1, Lh61;->j:Lo52;
 
     .line 14
-    goto :goto_0
-
     .line 15
-    :catch_1
-    new-instance p1, Ljava/math/BigInteger;
+    iget-object p0, p0, Lh61;->j:Lo52;
 
     .line 16
     .line 17
-    invoke-direct {p1, p0}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
+    if-ne p1, p0, :cond_2
 
     .line 18
     .line 19
-    .line 20
-    move-object p0, p1
+    return v0
 
-    .line 21
-    :goto_0
-    return-object p0
+    .line 20
+    :cond_2
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lh61;->j:Lo52;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
 .end method

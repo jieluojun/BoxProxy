@@ -1,76 +1,171 @@
-.class public final Lbq4;
+.class public final synthetic Lbq4;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
-# static fields
-.field public static final a:Lbq4;
+# instance fields
+.field public final synthetic j:B
+
+.field public final synthetic k:Ljava/util/List;
+
+.field public final synthetic l:Ld52;
+
+.field public final synthetic m:Lo52;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Ljava/util/List;Ld52;Lo52;IB)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lbq4;
+    iput-byte p5, p0, Lbq4;->j:B
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lbq4;->k:Ljava/util/List;
 
     .line 4
     .line 5
-    .line 6
-    sput-object v0, Lbq4;->a:Lbq4;
+    iput-object p2, p0, Lbq4;->l:Ld52;
 
+    .line 6
     .line 7
+    iput-object p3, p0, Lbq4;->m:Lo52;
+
     .line 8
+    .line 9
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 10
+    .line 11
+    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/view/WindowManager$LayoutParams;I)V
-    .locals 0
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
 
     .line 1
-    if-lez p2, :cond_0
+    iget-byte v0, p0, Lbq4;->j:B
 
     .line 2
     .line 3
-    iget p0, p1, Landroid/view/WindowManager$LayoutParams;->flags:I
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
     .line 5
-    or-int/lit8 p0, p0, 0x4
+    const/4 v2, 0x1
 
     .line 6
+    iget-object v3, p0, Lbq4;->m:Lo52;
+
     .line 7
-    iput p0, p1, Landroid/view/WindowManager$LayoutParams;->flags:I
-
     .line 8
-    .line 9
-    goto :goto_0
+    iget-object v4, p0, Lbq4;->l:Ld52;
 
+    .line 9
     .line 10
-    :cond_0
-    iget p0, p1, Landroid/view/WindowManager$LayoutParams;->flags:I
+    iget-object p0, p0, Lbq4;->k:Ljava/util/List;
 
     .line 11
     .line 12
-    and-int/lit8 p0, p0, -0x5
+    check-cast p1, Lv01;
 
     .line 13
     .line 14
-    iput p0, p1, Landroid/view/WindowManager$LayoutParams;->flags:I
+    check-cast p2, Ljava/lang/Integer;
 
     .line 15
     .line 16
-    :goto_0
-    invoke-virtual {p1, p2}, Landroid/view/WindowManager$LayoutParams;->setBlurBehindRadius(I)V
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 17
     .line 18
     .line 19
-    return-void
+    packed-switch v0, :pswitch_data_0
+
+    .line 20
+    .line 21
+    .line 22
+    invoke-static {v2}, Lw23;->h0(I)I
+
+    .line 23
+    .line 24
+    .line 25
+    move-result p2
+
+    .line 26
+    invoke-static {p0, v4, v3, p1, p2}, Le33;->f(Ljava/util/List;Ld52;Lo52;Lv01;I)V
+
+    .line 27
+    .line 28
+    .line 29
+    return-object v1
+
+    .line 30
+    :pswitch_0
+    invoke-static {v2}, Lw23;->h0(I)I
+
+    .line 31
+    .line 32
+    .line 33
+    move-result p2
+
+    .line 34
+    invoke-static {p0, v4, v3, p1, p2}, Le33;->e(Ljava/util/List;Ld52;Lo52;Lv01;I)V
+
+    .line 35
+    .line 36
+    .line 37
+    return-object v1
+
+    .line 38
+    :pswitch_1
+    invoke-static {v2}, Lw23;->h0(I)I
+
+    .line 39
+    .line 40
+    .line 41
+    move-result p2
+
+    .line 42
+    invoke-static {p0, v4, v3, p1, p2}, Lw23;->e(Ljava/util/List;Ld52;Lo52;Lv01;I)V
+
+    .line 43
+    .line 44
+    .line 45
+    return-object v1
+
+    .line 46
+    :pswitch_2
+    invoke-static {v2}, Lw23;->h0(I)I
+
+    .line 47
+    .line 48
+    .line 49
+    move-result p2
+
+    .line 50
+    invoke-static {p0, v4, v3, p1, p2}, Lw23;->f(Ljava/util/List;Ld52;Lo52;Lv01;I)V
+
+    .line 51
+    .line 52
+    .line 53
+    return-object v1
+
+    .line 54
+    nop
+
+    .line 55
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,6 +1,6 @@
 .class Lcom/sun/jna/ELFAnalyser$ArmAeabiAttributesTag;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # annotations
@@ -1280,7 +1280,7 @@
 
     .line 27
     .line 28
-    invoke-static {p0, v1}, Lpa6;->i(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v1}, Lqq5;->k(ILjava/lang/String;)Ljava/lang/String;
 
     .line 29
     .line 30
@@ -1545,7 +1545,7 @@
 
     .line 19
     .line 20
-    invoke-static {v1, v0, p0}, Lpa6;->l(Ljava/lang/String;Ljava/lang/StringBuilder;I)Ljava/lang/String;
+    invoke-static {v1, v0, p0}, Lqq5;->n(Ljava/lang/String;Ljava/lang/StringBuilder;I)Ljava/lang/String;
 
     .line 21
     .line 22

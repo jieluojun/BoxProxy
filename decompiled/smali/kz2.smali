@@ -1,6 +1,6 @@
 .class public final enum Lkz2;
 .super Ljava/lang/Enum;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
@@ -8,21 +8,19 @@
 
 .field public static final enum k:Lkz2;
 
-.field public static final enum l:Lkz2;
-
-.field public static final synthetic m:[Lkz2;
+.field public static final synthetic l:[Lkz2;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 4
 
     .line 1
     new-instance v0, Lkz2;
 
     .line 2
     .line 3
-    const-string v1, "InMeasureBlock"
+    const-string v1, "Ltr"
 
     .line 4
     .line 5
@@ -42,7 +40,7 @@
 
     .line 12
     .line 13
-    const-string v2, "InLayoutBlock"
+    const-string v2, "Rtl"
 
     .line 14
     .line 15
@@ -58,38 +56,18 @@
 
     .line 20
     .line 21
-    new-instance v2, Lkz2;
+    filled-new-array {v0, v1}, [Lkz2;
 
     .line 22
     .line 23
-    const-string v3, "NotUsed"
-
     .line 24
-    .line 25
-    const/4 v4, 0x2
-
-    .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 27
-    .line 28
-    .line 29
-    sput-object v2, Lkz2;->l:Lkz2;
-
-    .line 30
-    .line 31
-    filled-new-array {v0, v1, v2}, [Lkz2;
-
-    .line 32
-    .line 33
-    .line 34
     move-result-object v0
 
-    .line 35
-    sput-object v0, Lkz2;->m:[Lkz2;
+    .line 25
+    sput-object v0, Lkz2;->l:[Lkz2;
 
-    .line 36
-    .line 37
+    .line 26
+    .line 27
     return-void
 .end method
 
@@ -120,7 +98,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lkz2;->m:[Lkz2;
+    sget-object v0, Lkz2;->l:[Lkz2;
 
     .line 2
     .line 3

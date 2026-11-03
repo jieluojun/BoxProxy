@@ -1,162 +1,142 @@
-.class public final enum Lkf5;
-.super Ljava/lang/Enum;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lkf5;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lmf5;
 
 
-# static fields
-.field public static final enum j:Lkf5;
-
-.field public static final enum k:Lkf5;
-
-.field public static final enum l:Lkf5;
-
-.field public static final enum m:Lkf5;
-
-.field public static final synthetic n:[Lkf5;
+# instance fields
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lkf5;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    const-string v1, "Text"
-
     .line 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 5
-    const/4 v2, 0x0
-
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 7
+    iput-object p1, p0, Lkf5;->a:Ljava/lang/String;
+
     .line 8
     .line 9
-    sput-object v0, Lkf5;->j:Lkf5;
-
-    .line 10
-    .line 11
-    new-instance v1, Lkf5;
-
-    .line 12
-    .line 13
-    const-string v2, "Structured"
-
-    .line 14
-    .line 15
-    const/4 v3, 0x1
-
-    .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 17
-    .line 18
-    .line 19
-    sput-object v1, Lkf5;->k:Lkf5;
-
-    .line 20
-    .line 21
-    new-instance v2, Lkf5;
-
-    .line 22
-    .line 23
-    const-string v3, "Mrs"
-
-    .line 24
-    .line 25
-    const/4 v4, 0x2
-
-    .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 27
-    .line 28
-    .line 29
-    sput-object v2, Lkf5;->l:Lkf5;
-
-    .line 30
-    .line 31
-    new-instance v3, Lkf5;
-
-    .line 32
-    .line 33
-    const-string v4, "Binary"
-
-    .line 34
-    .line 35
-    const/4 v5, 0x3
-
-    .line 36
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 37
-    .line 38
-    .line 39
-    sput-object v3, Lkf5;->m:Lkf5;
-
-    .line 40
-    .line 41
-    filled-new-array {v0, v1, v2, v3}, [Lkf5;
-
-    .line 42
-    .line 43
-    .line 44
-    move-result-object v0
-
-    .line 45
-    sput-object v0, Lkf5;->n:[Lkf5;
-
-    .line 46
-    .line 47
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lkf5;
-    .locals 1
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
     .line 1
-    const-class v0, Lkf5;
+    const/4 v0, 0x1
 
     .line 2
+    if-ne p0, p1, :cond_0
+
     .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
     .line 4
-    .line 5
-    .line 6
-    move-result-object p0
+    return v0
 
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lkf5;
+
+    .line 6
     .line 7
-    check-cast p0, Lkf5;
+    const/4 v2, 0x0
 
     .line 8
+    if-nez v1, :cond_1
+
     .line 9
-    return-object p0
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Lkf5;
+
+    .line 12
+    .line 13
+    iget-object p0, p0, Lkf5;->a:Ljava/lang/String;
+
+    .line 14
+    .line 15
+    iget-object p1, p1, Lkf5;->a:Ljava/lang/String;
+
+    .line 16
+    .line 17
+    invoke-static {p0, p1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 18
+    .line 19
+    .line 20
+    move-result p0
+
+    .line 21
+    if-nez p0, :cond_2
+
+    .line 22
+    .line 23
+    return v2
+
+    .line 24
+    :cond_2
+    return v0
 .end method
 
-.method public static values()[Lkf5;
-    .locals 1
+.method public final hashCode()I
+    .locals 0
 
     .line 1
-    sget-object v0, Lkf5;->n:[Lkf5;
+    iget-object p0, p0, Lkf5;->a:Ljava/lang/String;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     .line 4
     .line 5
     .line 6
-    move-result-object v0
+    move-result p0
 
     .line 7
-    check-cast v0, [Lkf5;
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    const-string v0, "Unknown(reason="
+
+    .line 2
+    .line 3
+    const-string v1, ")"
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Lkf5;->a:Ljava/lang/String;
+
+    .line 6
+    .line 7
+    invoke-static {v0, p0, v1}, Lpb1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 8
     .line 9
-    return-object v0
+    .line 10
+    move-result-object p0
+
+    .line 11
+    return-object p0
 .end method

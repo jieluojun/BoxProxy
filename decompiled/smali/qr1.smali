@@ -1,172 +1,165 @@
-.class public final synthetic Lqr1;
+.class public abstract synthetic Lqr1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lso6;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic a:Lur1;
+# static fields
+.field public static final synthetic a:[I
 
-.field public final synthetic b:F
-
-.field public final synthetic c:Landroid/graphics/Canvas;
+.field public static final synthetic b:[I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lur1;FLandroid/graphics/Canvas;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Lwh1;->values()[Lwh1;
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lqr1;->a:Lur1;
+    move-result-object v0
 
     .line 5
+    array-length v0, v0
+
     .line 6
-    iput p2, p0, Lqr1;->b:F
+    new-array v0, v0, [I
 
     .line 7
     .line 8
-    iput-object p3, p0, Lqr1;->c:Landroid/graphics/Canvas;
+    sput-object v0, Lqr1;->b:[I
 
     .line 9
     .line 10
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(FF)Z
-    .locals 4
-
-    .line 1
-    iget-object v0, p0, Lqr1;->a:Lur1;
-
-    .line 2
-    .line 3
-    iget-object v1, v0, Lur1;->p:Lvt0;
-
-    .line 4
-    .line 5
-    iget-object v2, v0, Lur1;->e:Landroid/graphics/RectF;
-
-    .line 6
-    .line 7
-    iget v3, p0, Lqr1;->b:F
-
-    .line 8
-    .line 9
-    add-float/2addr p1, v3
-
-    .line 10
-    iput p1, v2, Landroid/graphics/RectF;->left:F
+    const/4 v1, 0x1
 
     .line 11
+    const/4 v2, 0x3
+
     .line 12
-    add-float/2addr v3, p2
+    :try_start_0
+    aput v1, v0, v2
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 13
-    iput v3, v2, Landroid/graphics/RectF;->right:F
-
     .line 14
+    :catch_0
+    const/4 v0, 0x2
+
     .line 15
-    const/4 p2, 0x0
+    :try_start_1
+    sget-object v3, Lqr1;->b:[I
 
     .line 16
-    cmpl-float p2, v3, p2
-
     .line 17
+    aput v0, v3, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
     .line 18
-    if-lez p2, :cond_0
-
     .line 19
-    .line 20
-    invoke-virtual {v1}, Landroid/view/View;->getWidth()I
+    :catch_1
+    :try_start_2
+    sget-object v3, Lqr1;->b:[I
 
+    .line 20
     .line 21
+    aput v2, v3, v0
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
     .line 22
     .line 23
-    move-result p2
+    :catch_2
+    invoke-static {}, Landroid/graphics/Paint$Align;->values()[Landroid/graphics/Paint$Align;
 
     .line 24
-    int-to-float p2, p2
-
     .line 25
-    cmpg-float p1, p1, p2
-
     .line 26
+    move-result-object v3
+
     .line 27
-    if-gez p1, :cond_0
+    array-length v3, v3
 
     .line 28
-    .line 29
-    invoke-virtual {v1}, Lvt0;->getColorScheme()Lsq1;
+    new-array v3, v3, [I
 
+    .line 29
     .line 30
+    sput-object v3, Lqr1;->a:[I
+
     .line 31
     .line 32
-    move-result-object p1
+    :try_start_3
+    sget-object v4, Landroid/graphics/Paint$Align;->LEFT:Landroid/graphics/Paint$Align;
 
     .line 33
-    const/16 p2, 0xa
-
     .line 34
-    .line 35
-    invoke-virtual {p1, p2}, Lsq1;->e(I)I
+    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
 
+    .line 35
     .line 36
     .line 37
+    move-result v4
+
     .line 38
-    move-result p1
+    aput v1, v3, v4
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
     .line 39
-    iget-object p0, p0, Lqr1;->c:Landroid/graphics/Canvas;
-
     .line 40
-    .line 41
-    invoke-virtual {v0, p0, p1, v2}, Lur1;->g(Landroid/graphics/Canvas;ILandroid/graphics/RectF;)V
+    :catch_3
+    :try_start_4
+    sget-object v1, Lqr1;->a:[I
 
+    .line 41
     .line 42
+    sget-object v3, Landroid/graphics/Paint$Align;->RIGHT:Landroid/graphics/Paint$Align;
+
     .line 43
     .line 44
-    :cond_0
-    iget p0, v2, Landroid/graphics/RectF;->right:F
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
 
     .line 45
     .line 46
-    invoke-virtual {v1}, Landroid/view/View;->getWidth()I
-
     .line 47
-    .line 48
-    .line 49
-    move-result p1
+    move-result v3
 
+    .line 48
+    aput v0, v1, v3
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+
+    .line 49
     .line 50
-    int-to-float p1, p1
+    :catch_4
+    :try_start_5
+    sget-object v0, Lqr1;->a:[I
 
     .line 51
-    cmpg-float p0, p0, p1
-
     .line 52
+    sget-object v1, Landroid/graphics/Paint$Align;->CENTER:Landroid/graphics/Paint$Align;
+
     .line 53
-    if-gez p0, :cond_1
-
     .line 54
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
     .line 55
-    const/4 p0, 0x1
-
     .line 56
-    return p0
-
     .line 57
-    :cond_1
-    const/4 p0, 0x0
+    move-result v1
 
     .line 58
-    return p0
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
+    .line 59
+    .line 60
+    :catch_5
+    return-void
 .end method

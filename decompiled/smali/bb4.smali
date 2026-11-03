@@ -1,82 +1,69 @@
 .class public final Lbb4;
-.super Lac4;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final c:Lbb4;
+# instance fields
+.field public synthetic j:Ljava/lang/Object;
+
+.field public final synthetic k:Liv1;
+
+.field public l:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Liv1;Lz71;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lbb4;
+    iput-object p1, p0, Lbb4;->k:Liv1;
 
     .line 2
     .line 3
-    const/4 v1, 0x2
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
     .line 4
-    const/4 v2, 0x1
-
     .line 5
-    const/4 v3, 0x0
-
     .line 6
-    invoke-direct {v0, v3, v1, v2}, Lac4;-><init>(III)V
-
-    .line 7
-    .line 8
-    .line 9
-    sput-object v0, Lbb4;->c:Lbb4;
-
-    .line 10
-    .line 11
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lnp2;Lvu;Lk46;Lf95;Lcc4;)V
-    .locals 0
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    const/4 p0, 0x0
+    iput-object p1, p0, Lbb4;->j:Ljava/lang/Object;
 
     .line 2
-    invoke-virtual {p1, p0}, Lnp2;->c(I)Ljava/lang/Object;
-
     .line 3
+    iget p1, p0, Lbb4;->l:I
+
     .line 4
     .line 5
-    move-result-object p0
+    const/high16 v0, -0x80000000
 
     .line 6
-    check-cast p0, Lr52;
-
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    const/4 p2, 0x1
+    iput p1, p0, Lbb4;->l:I
 
     .line 9
-    invoke-virtual {p1, p2}, Lnp2;->c(I)Ljava/lang/Object;
-
     .line 10
+    iget-object p1, p0, Lbb4;->k:Liv1;
+
     .line 11
     .line 12
-    move-result-object p1
+    invoke-virtual {p1, p0}, Liv1;->v(Lz71;)Ljava/lang/Enum;
 
     .line 13
-    check-cast p1, Li11;
-
     .line 14
     .line 15
-    invoke-interface {p0, p1}, Lr52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object p0
 
     .line 16
-    .line 17
-    .line 18
-    return-void
+    return-object p0
 .end method

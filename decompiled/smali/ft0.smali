@@ -1,52 +1,55 @@
 .class public final Lft0;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Lnr3;
+.field public j:Ljava/lang/String;
 
-.field public final b:Lnr3;
+.field public k:Ljava/lang/String;
 
-.field public final c:Lnr3;
+.field public synthetic l:Ljava/lang/Object;
+
+.field public m:I
 
 
-# direct methods
-.method public constructor <init>(Lnr3;Lnr3;Lnr3;)V
-    .locals 0
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object p1, p0, Lft0;->l:Ljava/lang/Object;
 
     .line 2
     .line 3
-    .line 4
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget p1, p0, Lft0;->m:I
 
+    .line 4
     .line 5
+    const/high16 v0, -0x80000000
+
     .line 6
     .line 7
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    or-int/2addr p1, v0
 
     .line 8
+    iput p1, p0, Lft0;->m:I
+
     .line 9
     .line 10
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 p1, 0x0
 
     .line 11
-    .line 12
-    .line 13
-    iput-object p1, p0, Lft0;->a:Lnr3;
+    const/4 v0, 0x0
 
+    .line 12
+    invoke-static {p1, v0, p1, p1, p0}, Lr87;->H(Landroid/content/Context;ZLjava/lang/String;Ljava/lang/String;Lz71;)Ljava/lang/Object;
+
+    .line 13
     .line 14
     .line 15
-    iput-object p2, p0, Lft0;->b:Lnr3;
+    move-result-object p0
 
     .line 16
-    .line 17
-    iput-object p3, p0, Lft0;->c:Lnr3;
-
-    .line 18
-    .line 19
-    return-void
+    return-object p0
 .end method

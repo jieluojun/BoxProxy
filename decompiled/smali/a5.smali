@@ -1,38 +1,153 @@
-.class public abstract synthetic La5;
+.class public abstract La5;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # direct methods
-.method public static bridge synthetic A(Landroid/window/OnBackInvokedDispatcher;Landroid/window/OnBackInvokedCallback;)V
-    .locals 0
+.method public static final a(Ljava/lang/String;)Lwd;
+    .locals 2
 
     .line 1
-    invoke-interface {p0, p1}, Landroid/window/OnBackInvokedDispatcher;->unregisterOnBackInvokedCallback(Landroid/window/OnBackInvokedCallback;)V
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
     .line 4
-    return-void
+    new-instance v0, Lwd;
+
+    .line 5
+    .line 6
+    new-instance v1, Landroid/graphics/RuntimeShader;
+
+    .line 7
+    .line 8
+    invoke-direct {v1, p0}, Landroid/graphics/RuntimeShader;-><init>(Ljava/lang/String;)V
+
+    .line 9
+    .line 10
+    .line 11
+    invoke-direct {v0, v1}, Lwd;-><init>(Landroid/graphics/RuntimeShader;)V
+
+    .line 12
+    .line 13
+    .line 14
+    return-object v0
 .end method
 
-.method public static bridge synthetic B(Ljava/lang/ref/Cleaner$Cleanable;)V
+.method public static b(Landroidx/appcompat/widget/Toolbar;)Landroid/window/OnBackInvokedDispatcher;
     .locals 0
 
     .line 1
-    invoke-interface {p0}, Ljava/lang/ref/Cleaner$Cleanable;->clean()V
+    invoke-virtual {p0}, Landroid/view/View;->findOnBackInvokedDispatcher()Landroid/window/OnBackInvokedDispatcher;
 
     .line 2
     .line 3
     .line 4
-    return-void
+    move-result-object p0
+
+    .line 5
+    return-object p0
 .end method
 
-.method public static bridge synthetic C(Landroid/text/BoringLayout;)Z
+.method public static c(Landroid/content/pm/PackageManager;Landroid/content/Context;)Landroid/content/pm/PackageInfo;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p1
+
+    .line 5
+    const-wide/16 v0, 0x0
+
+    .line 6
+    .line 7
+    invoke-static {v0, v1}, Landroid/content/pm/PackageManager$PackageInfoFlags;->of(J)Landroid/content/pm/PackageManager$PackageInfoFlags;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v0
+
+    .line 11
+    invoke-virtual {p0, p1, v0}, Landroid/content/pm/PackageManager;->getPackageInfo(Ljava/lang/String;Landroid/content/pm/PackageManager$PackageInfoFlags;)Landroid/content/pm/PackageInfo;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    return-object p0
+.end method
+
+.method public static d(Landroid/os/Bundle;Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
     .locals 0
 
     .line 1
-    invoke-virtual {p0}, Landroid/text/BoringLayout;->isFallbackLineSpacingEnabled()Z
+    invoke-virtual {p0, p1, p2}, Landroid/os/Bundle;->getParcelable(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method public static e(Landroid/view/accessibility/AccessibilityNodeInfo;)Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->getUniqueId()Ljava/lang/String;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method public static final f()Z
+    .locals 2
+
+    .line 1
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 2
+    .line 3
+    const/16 v1, 0x21
+
+    .line 4
+    .line 5
+    if-lt v0, v1, :cond_0
+
+    .line 6
+    .line 7
+    const/4 v0, 0x1
+
+    .line 8
+    return v0
+
+    .line 9
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 10
+    return v0
+.end method
+
+.method public static g(Lxn1;)Z
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Landroid/widget/AbsListView;->isSelectedChildViewEnabled()Z
 
     .line 2
     .line 3
@@ -43,261 +158,132 @@
     return p0
 .end method
 
-.method public static bridge synthetic D(Landroid/view/inputmethod/InputMethodManager;Landroid/view/View;)V
+.method public static h(Landroid/view/accessibility/AccessibilityNodeInfo;)Z
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1}, Landroid/view/inputmethod/InputMethodManager;->startStylusHandwriting(Landroid/view/View;)V
+    invoke-virtual {p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->isTextSelectable()Z
 
     .line 2
     .line 3
     .line 4
+    move-result p0
+
+    .line 5
+    return p0
+.end method
+
+.method public static i(Ljava/lang/Object;)Landroid/os/LocaleList;
+    .locals 0
+
+    .line 1
+    check-cast p0, Landroid/app/LocaleManager;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/app/LocaleManager;->getApplicationLocales()Landroid/os/LocaleList;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    return-object p0
+.end method
+
+.method public static j(Ljava/lang/Object;Landroid/os/LocaleList;)V
+    .locals 0
+
+    .line 1
+    check-cast p0, Landroid/app/LocaleManager;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Landroid/app/LocaleManager;->setApplicationLocales(Landroid/os/LocaleList;)V
+
+    .line 4
+    .line 5
+    .line 6
     return-void
 .end method
 
-.method public static bridge synthetic a()I
+.method public static final k(Lzq4;Ljava/lang/Object;)V
     .locals 1
 
     .line 1
-    invoke-static {}, Landroid/provider/MediaStore;->getPickImagesMaxLimit()I
+    instance-of v0, p1, Landroid/window/OnBackInvokedCallback;
 
     .line 2
     .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    return v0
-.end method
-
-.method public static bridge synthetic b(Ljava/lang/CharSequence;Landroid/text/TextPaint;Landroid/text/TextDirectionHeuristic;)Landroid/text/BoringLayout$Metrics;
-    .locals 2
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    const/4 v1, 0x0
-
-    .line 3
-    invoke-static {p0, p1, p2, v0, v1}, Landroid/text/BoringLayout;->isBoring(Ljava/lang/CharSequence;Landroid/text/TextPaint;Landroid/text/TextDirectionHeuristic;ZLandroid/text/BoringLayout$Metrics;)Landroid/text/BoringLayout$Metrics;
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
+    invoke-virtual {p0}, Landroid/view/View;->findOnBackInvokedDispatcher()Landroid/window/OnBackInvokedDispatcher;
+
     .line 6
+    .line 7
+    .line 8
     move-result-object p0
 
-    .line 7
-    return-object p0
-.end method
-
-.method public static synthetic c(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;Landroid/text/BoringLayout$Metrics;ZLandroid/text/TextUtils$TruncateAt;I)Landroid/text/BoringLayout;
-    .locals 12
-
-    .line 1
-    new-instance v0, Landroid/text/BoringLayout;
-
-    .line 2
-    .line 3
-    const/high16 v5, 0x3f800000    # 1.0f
-
-    .line 4
-    .line 5
-    const/4 v6, 0x0
-
-    .line 6
-    const/4 v11, 0x1
-
-    .line 7
-    move-object v1, p0
-
-    .line 8
-    move-object v2, p1
-
     .line 9
-    move v3, p2
+    if-eqz p0, :cond_0
 
     .line 10
-    move-object v4, p3
-
     .line 11
-    move-object/from16 v7, p4
+    const v0, 0xf4240
 
     .line 12
     .line 13
-    move/from16 v8, p5
-
     .line 14
+    check-cast p1, Landroid/window/OnBackInvokedCallback;
+
     .line 15
-    move-object/from16 v9, p6
-
     .line 16
-    .line 17
-    move/from16 v10, p7
+    invoke-interface {p0, v0, p1}, Landroid/window/OnBackInvokedDispatcher;->registerOnBackInvokedCallback(ILandroid/window/OnBackInvokedCallback;)V
 
+    .line 17
     .line 18
     .line 19
-    invoke-direct/range {v0 .. v11}, Landroid/text/BoringLayout;-><init>(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFLandroid/text/BoringLayout$Metrics;ZLandroid/text/TextUtils$TruncateAt;IZ)V
-
-    .line 20
-    .line 21
-    .line 22
-    return-object v0
+    :cond_0
+    return-void
 .end method
 
-.method public static bridge synthetic d()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-    .locals 1
+.method public static final l(Lzq4;Lpi;)V
+    .locals 0
 
     .line 1
-    sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SHOW_TEXT_SUGGESTIONS:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
-    return-object v0
-.end method
-
-.method public static synthetic e()Landroid/view/inputmethod/EditorBoundsInfo$Builder;
-    .locals 1
-
-    .line 1
-    new-instance v0, Landroid/view/inputmethod/EditorBoundsInfo$Builder;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Landroid/view/inputmethod/EditorBoundsInfo$Builder;-><init>()V
+    invoke-virtual {p0}, Landroid/view/View;->findOnBackInvokedDispatcher()Landroid/window/OnBackInvokedDispatcher;
 
     .line 4
     .line 5
     .line 6
-    return-object v0
-.end method
-
-.method public static synthetic f(Landroid/view/inputmethod/SurroundingText;III)Landroid/view/inputmethod/TextSnapshot;
-    .locals 1
-
-    .line 1
-    new-instance v0, Landroid/view/inputmethod/TextSnapshot;
-
-    .line 2
-    .line 3
-    invoke-direct {v0, p0, p1, p2, p3}, Landroid/view/inputmethod/TextSnapshot;-><init>(Landroid/view/inputmethod/SurroundingText;III)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-object v0
-.end method
-
-.method public static bridge synthetic g(Ljava/lang/Object;)Landroid/window/OnBackInvokedCallback;
-    .locals 0
-
-    .line 1
-    check-cast p0, Landroid/window/OnBackInvokedCallback;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public static bridge synthetic h(Lhy0;)Landroid/window/OnBackInvokedDispatcher;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/app/Activity;->getOnBackInvokedDispatcher()Landroid/window/OnBackInvokedDispatcher;
-
-    .line 2
-    .line 3
-    .line 4
     move-result-object p0
 
-    .line 5
-    return-object p0
+    .line 7
+    if-eqz p0, :cond_0
+
+    .line 8
+    .line 9
+    invoke-interface {p0, p1}, Landroid/window/OnBackInvokedDispatcher;->unregisterOnBackInvokedCallback(Landroid/window/OnBackInvokedCallback;)V
+
+    .line 10
+    .line 11
+    .line 12
+    :cond_0
+    return-void
 .end method
 
-.method public static bridge synthetic i(Lky0;)Landroid/window/OnBackInvokedDispatcher;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/app/Dialog;->getOnBackInvokedDispatcher()Landroid/window/OnBackInvokedDispatcher;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static bridge synthetic j(Landroid/app/Activity;)Landroid/window/OnBackInvokedDispatcher;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/app/Activity;->getOnBackInvokedDispatcher()Landroid/window/OnBackInvokedDispatcher;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static bridge synthetic k(Ljava/lang/Object;)Landroid/window/OnBackInvokedDispatcher;
-    .locals 0
-
-    .line 1
-    check-cast p0, Landroid/window/OnBackInvokedDispatcher;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public static bridge synthetic l(Landroid/content/Intent;)Ljava/lang/Object;
+.method public static final m(Landroid/view/inputmethod/CursorAnchorInfo$Builder;Ls85;)V
     .locals 2
 
     .line 1
-    const-string v0, "android.intent.extra.STREAM"
-
-    .line 2
-    .line 3
-    const-class v1, Landroid/net/Uri;
-
-    .line 4
-    .line 5
-    invoke-virtual {p0, v0, v1}, Landroid/content/Intent;->getParcelableExtra(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/Object;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    return-object p0
-.end method
-
-.method public static bridge synthetic m(Ljava/lang/ref/Cleaner;Ljava/lang/Object;Ljava/lang/Runnable;)Ljava/lang/ref/Cleaner$Cleanable;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1, p2}, Ljava/lang/ref/Cleaner;->register(Ljava/lang/Object;Ljava/lang/Runnable;)Ljava/lang/ref/Cleaner$Cleanable;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static bridge synthetic n()Ljava/lang/ref/Cleaner;
-    .locals 1
-
-    .line 1
-    invoke-static {}, Landroid/system/SystemCleaner;->cleaner()Ljava/lang/ref/Cleaner;
+    invoke-static {}, Lx4;->e()Landroid/view/inputmethod/EditorBoundsInfo$Builder;
 
     .line 2
     .line 3
@@ -305,169 +291,208 @@
     move-result-object v0
 
     .line 5
-    return-object v0
-.end method
+    invoke-static {p1}, Le33;->U(Ls85;)Landroid/graphics/RectF;
 
-.method public static bridge synthetic o(Landroid/graphics/BitmapShader;)V
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x2
-
-    .line 2
-    invoke-virtual {p0, v0}, Landroid/graphics/BitmapShader;->setFilterMode(I)V
-
-    .line 3
-    .line 4
-    .line 5
-    return-void
-.end method
-
-.method public static bridge synthetic p(Landroid/graphics/RuntimeShader;FF)V
-    .locals 1
-
-    .line 1
-    const-string v0, "size"
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, v0, p1, p2}, Landroid/graphics/RuntimeShader;->setFloatUniform(Ljava/lang/String;FF)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public static bridge synthetic q(Landroid/graphics/RuntimeShader;I)V
-    .locals 1
-
-    .line 1
-    const-string v0, "color"
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, v0, p1}, Landroid/graphics/RuntimeShader;->setColorUniform(Ljava/lang/String;I)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public static bridge synthetic r(Landroid/graphics/RuntimeShader;Landroid/graphics/Shader;)V
-    .locals 1
-
-    .line 1
-    const-string v0, "cornerSdf"
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, v0, p1}, Landroid/graphics/RuntimeShader;->setInputShader(Ljava/lang/String;Landroid/graphics/Shader;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public static bridge synthetic s(Landroid/graphics/RuntimeShader;Ljava/lang/String;F)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1, p2}, Landroid/graphics/RuntimeShader;->setFloatUniform(Ljava/lang/String;F)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic t(Landroid/graphics/RuntimeShader;Ljava/lang/String;FF)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1, p2, p3}, Landroid/graphics/RuntimeShader;->setFloatUniform(Ljava/lang/String;FF)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic u(Landroid/graphics/RuntimeShader;Ljava/lang/String;FFF)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/graphics/RuntimeShader;->setFloatUniform(Ljava/lang/String;FFF)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic v(Landroid/graphics/RuntimeShader;Ljava/lang/String;FFFF)V
-    .locals 0
-
-    .line 1
-    invoke-virtual/range {p0 .. p5}, Landroid/graphics/RuntimeShader;->setFloatUniform(Ljava/lang/String;FFFF)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic w(Landroid/graphics/RuntimeShader;Ljava/lang/String;I)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1, p2}, Landroid/graphics/RuntimeShader;->setColorUniform(Ljava/lang/String;I)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic x(Landroid/graphics/RuntimeShader;Ljava/lang/String;[F)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1, p2}, Landroid/graphics/RuntimeShader;->setFloatUniform(Ljava/lang/String;[F)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic y(Landroid/view/inputmethod/InputMethodManager;Landroid/view/View;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/view/inputmethod/InputMethodManager;->startStylusHandwriting(Landroid/view/View;)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic z(Landroid/window/OnBackInvokedDispatcher;Lsi;)V
-    .locals 1
-
-    .line 1
-    const v0, 0xf4240
-
-    .line 2
-    .line 3
-    .line 4
-    invoke-interface {p0, v0, p1}, Landroid/window/OnBackInvokedDispatcher;->registerOnBackInvokedCallback(ILandroid/window/OnBackInvokedCallback;)V
-
-    .line 5
     .line 6
     .line 7
+    .line 8
+    move-result-object v1
+
+    .line 9
+    invoke-virtual {v0, v1}, Landroid/view/inputmethod/EditorBoundsInfo$Builder;->setEditorBounds(Landroid/graphics/RectF;)Landroid/view/inputmethod/EditorBoundsInfo$Builder;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v0
+
+    .line 13
+    invoke-static {p1}, Le33;->U(Ls85;)Landroid/graphics/RectF;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p1
+
+    .line 17
+    invoke-virtual {v0, p1}, Landroid/view/inputmethod/EditorBoundsInfo$Builder;->setHandwritingBounds(Landroid/graphics/RectF;)Landroid/view/inputmethod/EditorBoundsInfo$Builder;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object p1
+
+    .line 21
+    invoke-virtual {p1}, Landroid/view/inputmethod/EditorBoundsInfo$Builder;->build()Landroid/view/inputmethod/EditorBoundsInfo;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object p1
+
+    .line 25
+    invoke-virtual {p0, p1}, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->setEditorBoundsInfo(Landroid/view/inputmethod/EditorBoundsInfo;)Landroid/view/inputmethod/CursorAnchorInfo$Builder;
+
+    .line 26
+    .line 27
+    .line 28
+    return-void
+.end method
+
+.method public static final n(Landroid/view/inputmethod/CursorAnchorInfo$Builder;Ls85;)V
+    .locals 2
+
+    .line 1
+    invoke-static {}, Lx4;->e()Landroid/view/inputmethod/EditorBoundsInfo$Builder;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-static {p1}, Le33;->U(Ls85;)Landroid/graphics/RectF;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object v1
+
+    .line 9
+    invoke-virtual {v0, v1}, Landroid/view/inputmethod/EditorBoundsInfo$Builder;->setEditorBounds(Landroid/graphics/RectF;)Landroid/view/inputmethod/EditorBoundsInfo$Builder;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v0
+
+    .line 13
+    invoke-static {p1}, Le33;->U(Ls85;)Landroid/graphics/RectF;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p1
+
+    .line 17
+    invoke-virtual {v0, p1}, Landroid/view/inputmethod/EditorBoundsInfo$Builder;->setHandwritingBounds(Landroid/graphics/RectF;)Landroid/view/inputmethod/EditorBoundsInfo$Builder;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object p1
+
+    .line 21
+    invoke-virtual {p1}, Landroid/view/inputmethod/EditorBoundsInfo$Builder;->build()Landroid/view/inputmethod/EditorBoundsInfo;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object p1
+
+    .line 25
+    invoke-virtual {p0, p1}, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->setEditorBoundsInfo(Landroid/view/inputmethod/EditorBoundsInfo;)Landroid/view/inputmethod/CursorAnchorInfo$Builder;
+
+    .line 26
+    .line 27
+    .line 28
+    return-void
+.end method
+
+.method public static final o(Landroid/text/StaticLayout$Builder;II)V
+    .locals 1
+
+    .line 1
+    new-instance v0, Landroid/graphics/text/LineBreakConfig$Builder;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Landroid/graphics/text/LineBreakConfig$Builder;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    invoke-virtual {v0, p1}, Landroid/graphics/text/LineBreakConfig$Builder;->setLineBreakStyle(I)Landroid/graphics/text/LineBreakConfig$Builder;
+
+    .line 7
+    .line 8
+    .line 9
+    move-result-object p1
+
+    .line 10
+    invoke-virtual {p1, p2}, Landroid/graphics/text/LineBreakConfig$Builder;->setLineBreakWordStyle(I)Landroid/graphics/text/LineBreakConfig$Builder;
+
+    .line 11
+    .line 12
+    .line 13
+    move-result-object p1
+
+    .line 14
+    invoke-virtual {p1}, Landroid/graphics/text/LineBreakConfig$Builder;->build()Landroid/graphics/text/LineBreakConfig;
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-object p1
+
+    .line 18
+    invoke-virtual {p0, p1}, Landroid/text/StaticLayout$Builder;->setLineBreakConfig(Landroid/graphics/text/LineBreakConfig;)Landroid/text/StaticLayout$Builder;
+
+    .line 19
+    .line 20
+    .line 21
+    return-void
+.end method
+
+.method public static p(Lxn1;Z)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0, p1}, Landroid/widget/AbsListView;->setSelectedChildViewEnabled(Z)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public static q(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 1
+
+    .line 1
+    check-cast p0, Landroid/window/OnBackInvokedDispatcher;
+
+    .line 2
+    .line 3
+    const v0, 0xf4240
+
+    .line 4
+    .line 5
+    .line 6
+    check-cast p1, Landroid/window/OnBackInvokedCallback;
+
+    .line 7
+    .line 8
+    invoke-interface {p0, v0, p1}, Landroid/window/OnBackInvokedDispatcher;->registerOnBackInvokedCallback(ILandroid/window/OnBackInvokedCallback;)V
+
+    .line 9
+    .line 10
+    .line 11
+    return-void
+.end method
+
+.method public static r(Ljava/lang/Object;Lpi;)V
+    .locals 0
+
+    .line 1
+    check-cast p0, Landroid/window/OnBackInvokedDispatcher;
+
+    .line 2
+    .line 3
+    invoke-interface {p0, p1}, Landroid/window/OnBackInvokedDispatcher;->unregisterOnBackInvokedCallback(Landroid/window/OnBackInvokedCallback;)V
+
+    .line 4
+    .line 5
+    .line 6
     return-void
 .end method

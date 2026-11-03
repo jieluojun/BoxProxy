@@ -1,64 +1,214 @@
 .class public final Lh21;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:S
+.field public final a:I
 
-.field public final b:Lg52;
-
-.field public final c:Lg21;
-
-.field public d:J
+.field public final b:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(ILjava/util/ArrayList;)V
+    .locals 0
 
     .line 1
-    sget-object v0, Ld21;->k:Ld21;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 4
+    iput p1, p0, Lh21;->a:I
+
+    .line 5
+    .line 6
+    iput-object p2, p0, Lh21;->b:Ljava/util/ArrayList;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    .line 1
+    if-ne p0, p1, :cond_0
+
+    .line 2
+    .line 3
+    goto :goto_1
+
+    .line 4
+    :cond_0
+    instance-of v0, p1, Lh21;
+
+    .line 5
+    .line 6
+    if-nez v0, :cond_1
+
+    .line 7
+    .line 8
+    goto :goto_0
+
+    .line 9
+    :cond_1
+    check-cast p1, Lh21;
+
+    .line 10
+    .line 11
+    iget v0, p0, Lh21;->a:I
+
+    .line 12
+    .line 13
+    iget v1, p1, Lh21;->a:I
+
+    .line 14
+    .line 15
+    if-eq v0, v1, :cond_2
+
+    .line 16
+    .line 17
+    goto :goto_0
+
+    .line 18
+    :cond_2
+    iget-object p0, p0, Lh21;->b:Ljava/util/ArrayList;
+
+    .line 19
+    .line 20
+    iget-object p1, p1, Lh21;->b:Ljava/util/ArrayList;
+
+    .line 21
+    .line 22
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    .line 23
+    .line 24
+    .line 25
+    move-result p0
+
+    .line 26
+    if-nez p0, :cond_3
+
+    .line 27
+    .line 28
+    :goto_0
+    const/4 p0, 0x0
+
+    .line 29
+    return p0
+
+    .line 30
+    :cond_3
+    :goto_1
+    const/4 p0, 0x1
+
+    .line 31
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lh21;->a:I
+
+    .line 2
+    .line 3
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
 
     .line 4
     .line 5
     .line 6
-    const/16 v1, 0x80
+    move-result v0
 
     .line 7
+    mul-int/lit8 v0, v0, 0x1f
+
     .line 8
-    iput-short v1, p0, Lh21;->a:S
+    .line 9
+    iget-object p0, p0, Lh21;->b:Ljava/util/ArrayList;
+
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    add-int/2addr p0, v0
+
+    .line 16
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "ConnectionDetailSection(titleRes="
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget v1, p0, Lh21;->a:I
 
     .line 9
     .line 10
-    iput-object v0, p0, Lh21;->b:Lg52;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 11
     .line 12
-    new-instance v0, Lg21;
-
     .line 13
-    .line 14
-    invoke-direct {v0, p0}, Lg21;-><init>(Lh21;)V
+    const-string v1, ", rows="
 
+    .line 14
     .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 16
     .line 17
-    iput-object v0, p0, Lh21;->c:Lg21;
-
     .line 18
+    iget-object p0, p0, Lh21;->b:Ljava/util/ArrayList;
+
     .line 19
-    const-wide/high16 v0, -0x8000000000000000L
-
     .line 20
-    .line 21
-    iput-wide v0, p0, Lh21;->d:J
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    .line 21
     .line 22
     .line 23
-    return-void
+    const-string p0, ")"
+
+    .line 24
+    .line 25
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 26
+    .line 27
+    .line 28
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    return-object p0
 .end method

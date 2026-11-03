@@ -1,41 +1,19 @@
 .class public final synthetic Lpg3;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lv52;
+.implements Lng3;
 
 
 # instance fields
-.field public final synthetic j:Lv52;
+.field public final synthetic a:Lrg3;
 
-.field public final synthetic k:Lg52;
-
-.field public final synthetic l:Lxn3;
-
-.field public final synthetic m:Lv52;
-
-.field public final synthetic n:Z
-
-.field public final synthetic o:B
-
-.field public final synthetic p:B
-
-.field public final synthetic q:Lsi3;
-
-.field public final synthetic r:Lpi3;
-
-.field public final synthetic s:Ldh4;
-
-.field public final synthetic t:I
-
-.field public final synthetic u:I
-
-.field public final synthetic v:S
+.field public final synthetic b:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lv52;Lg52;Lxn3;Lv52;ZIILsi3;Lpi3;Ldh4;III)V
+.method public synthetic constructor <init>(Lrg3;Ljava/util/ArrayList;)V
     .locals 0
 
     .line 1
@@ -44,167 +22,103 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lpg3;->j:Lv52;
+    iput-object p1, p0, Lpg3;->a:Lrg3;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lpg3;->k:Lg52;
+    iput-object p2, p0, Lpg3;->b:Ljava/util/ArrayList;
 
     .line 7
     .line 8
-    iput-object p3, p0, Lpg3;->l:Lxn3;
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Lpg3;->m:Lv52;
-
-    .line 11
-    .line 12
-    iput-boolean p5, p0, Lpg3;->n:Z
-
-    .line 13
-    .line 14
-    iput-byte p6, p0, Lpg3;->o:B
-
-    .line 15
-    .line 16
-    iput-byte p7, p0, Lpg3;->p:B
-
-    .line 17
-    .line 18
-    iput-object p8, p0, Lpg3;->q:Lsi3;
-
-    .line 19
-    .line 20
-    iput-object p9, p0, Lpg3;->r:Lpi3;
-
-    .line 21
-    .line 22
-    iput-object p10, p0, Lpg3;->s:Ldh4;
-
-    .line 23
-    .line 24
-    iput p11, p0, Lpg3;->t:I
-
-    .line 25
-    .line 26
-    iput p12, p0, Lpg3;->u:I
-
-    .line 27
-    .line 28
-    iput-short p13, p0, Lpg3;->v:S
-
-    .line 29
-    .line 30
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 14
+.method public final a(Ljava/lang/Object;)Z
+    .locals 4
 
     .line 1
-    move-object v10, p1
+    iget-object v0, p0, Lpg3;->a:Lrg3;
 
     .line 2
-    check-cast v10, Lz01;
-
     .line 3
+    iget-object v0, v0, Lrg3;->c:Liv1;
+
     .line 4
-    move-object/from16 v0, p2
-
     .line 5
-    .line 6
-    check-cast v0, Ljava/lang/Integer;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 6
     .line 7
     .line 8
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast p1, Ljava/util/List;
 
     .line 9
     .line 10
-    .line 11
-    iget v0, p0, Lpg3;->t:I
+    invoke-interface {p1}, Ljava/util/List;->size()I
 
+    .line 11
     .line 12
     .line 13
-    or-int/lit8 v0, v0, 0x1
+    move-result v1
 
     .line 14
-    .line 15
-    invoke-static {v0}, Lkr5;->i0(I)I
+    iget-object p0, p0, Lpg3;->b:Ljava/util/ArrayList;
 
+    .line 15
     .line 16
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
+
     .line 17
     .line 18
-    move-result v11
-
     .line 19
-    iget v0, p0, Lpg3;->u:I
+    move-result v2
 
     .line 20
+    const/4 v3, 0x0
+
     .line 21
-    invoke-static {v0}, Lkr5;->i0(I)I
+    if-ge v1, v2, :cond_0
 
     .line 22
     .line 23
+    return v3
+
     .line 24
-    move-result v12
+    :cond_0
+    filled-new-array {v3}, [I
 
     .line 25
-    iget-object v0, p0, Lpg3;->j:Lv52;
-
     .line 26
     .line 27
-    iget-object v1, p0, Lpg3;->k:Lg52;
+    move-result-object v1
 
     .line 28
-    .line 29
-    iget-object v2, p0, Lpg3;->l:Lxn3;
+    invoke-interface {p0}, Ljava/util/Collection;->stream()Ljava/util/stream/Stream;
 
+    .line 29
     .line 30
     .line 31
-    iget-object v3, p0, Lpg3;->m:Lv52;
+    move-result-object p0
 
     .line 32
+    new-instance v2, Lts3;
+
     .line 33
-    iget-boolean v4, p0, Lpg3;->n:Z
-
     .line 34
-    .line 35
-    iget-byte v5, p0, Lpg3;->o:B
+    invoke-direct {v2, v0, v1, p1}, Lts3;-><init>(Liv1;[ILjava/util/List;)V
 
+    .line 35
     .line 36
     .line 37
-    iget-byte v6, p0, Lpg3;->p:B
+    invoke-interface {p0, v2}, Ljava/util/stream/Stream;->allMatch(Ljava/util/function/Predicate;)Z
 
     .line 38
     .line 39
-    iget-object v7, p0, Lpg3;->q:Lsi3;
-
     .line 40
+    move-result p0
+
     .line 41
-    iget-object v8, p0, Lpg3;->r:Lpi3;
-
-    .line 42
-    .line 43
-    iget-object v9, p0, Lpg3;->s:Ldh4;
-
-    .line 44
-    .line 45
-    iget-short v13, p0, Lpg3;->v:S
-
-    .line 46
-    .line 47
-    invoke-static/range {v0 .. v13}, Lvg3;->e(Lv52;Lg52;Lxn3;Lv52;ZIILsi3;Lpi3;Ldh4;Lz01;III)V
-
-    .line 48
-    .line 49
-    .line 50
-    sget-object p0, Ld07;->a:Ld07;
-
-    .line 51
-    .line 52
-    return-object p0
+    return p0
 .end method

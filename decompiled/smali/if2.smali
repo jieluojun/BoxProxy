@@ -1,17 +1,17 @@
 .class public final synthetic Lif2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Ll53;
+.implements Lc63;
 
 
 # instance fields
 .field public final synthetic j:Z
 
-.field public final synthetic k:Ln53;
+.field public final synthetic k:Le63;
 
-.field public final synthetic l:Ly75;
+.field public final synthetic l:Lv85;
 
 .field public final synthetic m:Z
 
@@ -19,7 +19,7 @@
 
 
 # direct methods
-.method public synthetic constructor <init>(ZLn53;Ly75;ZLjava/lang/Object;)V
+.method public synthetic constructor <init>(ZLe63;Lv85;ZLjava/lang/Object;)V
     .locals 0
 
     .line 1
@@ -32,11 +32,11 @@
 
     .line 5
     .line 6
-    iput-object p2, p0, Lif2;->k:Ln53;
+    iput-object p2, p0, Lif2;->k:Le63;
 
     .line 7
     .line 8
-    iput-object p3, p0, Lif2;->l:Ly75;
+    iput-object p3, p0, Lif2;->l:Lv85;
 
     .line 9
     .line 10
@@ -53,7 +53,7 @@
 
 
 # virtual methods
-.method public final f(Ln53;Le53;)V
+.method public final f(Le63;Lw53;)V
     .locals 2
 
     .line 1
@@ -109,11 +109,11 @@
 
     .line 23
     .line 24
-    iget-object p2, p0, Lif2;->k:Ln53;
+    iget-object p2, p0, Lif2;->k:Le63;
 
     .line 25
     .line 26
-    iget-object v0, p0, Lif2;->l:Ly75;
+    iget-object v0, p0, Lif2;->l:Lv85;
 
     .line 27
     .line 28
@@ -125,7 +125,7 @@
 
     .line 31
     .line 32
-    invoke-static {p1, p2, v0, v1, p0}, Lsa7;->E(ZLn53;Ly75;ZLjava/lang/Object;)V
+    invoke-static {p1, p2, v0, v1, p0}, Lns6;->D(ZLe63;Lv85;ZLjava/lang/Object;)V
 
     .line 33
     .line 34

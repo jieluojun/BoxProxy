@@ -1,61 +1,57 @@
-.class public final Lp51;
+.class public abstract Lp51;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lkg1;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# virtual methods
-.method public final b(Ljavax/net/ssl/SSLSocket;)Z
-    .locals 0
+# static fields
+.field public static final a:D
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    sget-boolean p0, Lr51;->b:Z
+    const-wide/high16 v0, 0x4000000000000000L    # 2.0
 
     .line 2
     .line 3
-    if-eqz p0, :cond_0
+    invoke-static {v0, v1}, Ljava/lang/Math;->log(D)D
 
     .line 4
     .line 5
-    invoke-static {p1}, Lorg/conscrypt/Conscrypt;->isConscrypt(Ljavax/net/ssl/SSLSocket;)Z
-
     .line 6
-    .line 7
-    .line 8
-    move-result p0
+    move-result-wide v0
 
+    .line 7
+    sput-wide v0, Lp51;->a:D
+
+    .line 8
     .line 9
-    if-eqz p0, :cond_0
+    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
 
     .line 10
     .line 11
-    const/4 p0, 0x1
+    invoke-static {v0, v1}, Ljava/lang/Math;->ulp(D)D
 
     .line 12
-    return p0
-
     .line 13
-    :cond_0
-    const/4 p0, 0x0
-
     .line 14
-    return p0
-.end method
+    move-result-wide v0
 
-.method public final c(Ljavax/net/ssl/SSLSocket;)Ly56;
-    .locals 0
+    .line 15
+    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
 
-    .line 1
-    new-instance p0, Lr51;
+    .line 16
+    .line 17
+    .line 18
+    move-result-wide v0
 
-    .line 2
-    .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 19
+    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
 
-    .line 4
-    .line 5
-    .line 6
-    return-object p0
+    .line 20
+    .line 21
+    .line 22
+    return-void
 .end method

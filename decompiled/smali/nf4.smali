@@ -1,115 +1,81 @@
-.class public final synthetic Lnf4;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lv52;
+.class public final Lnf4;
+.super Lng1;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Lqo0;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lqo0;IB)V
-    .locals 0
-
-    .line 1
-    iput-byte p3, p0, Lnf4;->j:B
-
-    .line 2
-    .line 3
-    iput-object p1, p0, Lnf4;->k:Lqo0;
-
-    .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 6
-    .line 7
-    .line 8
-    return-void
-.end method
+.field public z:Lmg1;
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final w1()V
+    .locals 2
 
     .line 1
-    iget-byte v0, p0, Lnf4;->j:B
+    iget-object v0, p0, Lnf4;->z:Lmg1;
 
     .line 2
     .line 3
-    sget-object v1, Ld07;->a:Ld07;
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    const/4 v2, 0x1
+    move-object v1, v0
 
     .line 6
-    iget-object p0, p0, Lnf4;->k:Lqo0;
+    check-cast v1, Ljo3;
 
     .line 7
     .line 8
-    check-cast p1, Lz01;
+    iget-object v1, v1, Ljo3;->j:Ljo3;
 
     .line 9
     .line 10
-    check-cast p2, Ljava/lang/Integer;
+    iget-boolean v1, v1, Ljo3;->w:Z
 
     .line 11
     .line 12
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-nez v1, :cond_0
 
     .line 13
     .line 14
-    .line 15
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p0, v0}, Lng1;->E1(Lmg1;)V
 
+    .line 15
     .line 16
     .line 17
+    goto :goto_0
+
     .line 18
-    invoke-static {v2}, Lkr5;->i0(I)I
+    :cond_0
+    const/4 v0, 0x0
 
     .line 19
+    :goto_0
+    iput-object v0, p0, Lnf4;->z:Lmg1;
+
     .line 20
     .line 21
-    move-result p2
+    return-void
+.end method
 
-    .line 22
-    invoke-static {p0, p1, p2}, Lwh6;->C(Lqo0;Lz01;I)V
+.method public final x1()V
+    .locals 1
 
-    .line 23
-    .line 24
-    .line 25
-    return-object v1
+    .line 1
+    iget-object v0, p0, Lnf4;->z:Lmg1;
 
-    .line 26
-    :pswitch_0
-    invoke-static {v2}, Lkr5;->i0(I)I
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
 
-    .line 27
-    .line 28
-    .line 29
-    move-result p2
+    .line 4
+    .line 5
+    invoke-virtual {p0, v0}, Lng1;->F1(Lmg1;)V
 
-    .line 30
-    invoke-static {p0, p1, p2}, Llh3;->w(Lqo0;Lz01;I)V
-
-    .line 31
-    .line 32
-    .line 33
-    return-object v1
-
-    .line 34
-    nop
-
-    .line 35
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 6
+    .line 7
+    .line 8
+    :cond_0
+    return-void
 .end method

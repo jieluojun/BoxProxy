@@ -1,75 +1,178 @@
-.class public final Lt37;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public abstract Lt37;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public synthetic j:Ljava/lang/Object;
+# static fields
+.field public static final a:[Landroid/graphics/Bitmap$Config;
 
-.field public final synthetic k:Lv37;
-
-.field public l:I
+.field public static final b:Landroid/graphics/Bitmap$Config;
 
 
 # direct methods
-.method public constructor <init>(Lv37;Ld81;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lt37;->k:Lv37;
-
-    .line 2
-    .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.method static constructor <clinit>()V
     .locals 2
 
     .line 1
-    iput-object p1, p0, Lt37;->j:Ljava/lang/Object;
+    sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     .line 2
     .line 3
-    iget p1, p0, Lt37;->l:I
+    sget-object v1, Landroid/graphics/Bitmap$Config;->RGBA_F16:Landroid/graphics/Bitmap$Config;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    filled-new-array {v0, v1}, [Landroid/graphics/Bitmap$Config;
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lt37;->l:I
+    move-result-object v0
 
     .line 9
-    .line 10
-    const/4 p1, 0x0
+    sput-object v0, Lt37;->a:[Landroid/graphics/Bitmap$Config;
 
+    .line 10
     .line 11
-    const/4 v0, 0x0
+    sget-object v0, Landroid/graphics/Bitmap$Config;->HARDWARE:Landroid/graphics/Bitmap$Config;
 
     .line 12
-    iget-object v1, p0, Lt37;->k:Lv37;
+    .line 13
+    sput-object v0, Lt37;->b:Landroid/graphics/Bitmap$Config;
+
+    .line 14
+    .line 15
+    return-void
+.end method
+
+.method public static final a(Landroid/graphics/drawable/Drawable;)I
+    .locals 1
+
+    .line 1
+    instance-of v0, p0, Landroid/graphics/drawable/BitmapDrawable;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    move-object v0, p0
+
+    .line 6
+    check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
+
+    .line 7
+    .line 8
+    goto :goto_0
+
+    .line 9
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 10
+    :goto_0
+    if-eqz v0, :cond_1
+
+    .line 11
+    .line 12
+    invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
 
     .line 13
     .line 14
-    invoke-virtual {v1, p1, p1, v0, p0}, Lv37;->b(FFLbj0;Ld81;)Ljava/lang/Object;
-
     .line 15
-    .line 16
-    .line 17
-    move-result-object p0
+    move-result-object v0
 
+    .line 16
+    if-eqz v0, :cond_1
+
+    .line 17
     .line 18
-    return-object p0
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result p0
+
+    .line 22
+    return p0
+
+    .line 23
+    :cond_1
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+
+    .line 24
+    .line 25
+    .line 26
+    move-result p0
+
+    .line 27
+    return p0
+.end method
+
+.method public static final b(Landroid/graphics/drawable/Drawable;)I
+    .locals 1
+
+    .line 1
+    instance-of v0, p0, Landroid/graphics/drawable/BitmapDrawable;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    move-object v0, p0
+
+    .line 6
+    check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
+
+    .line 7
+    .line 8
+    goto :goto_0
+
+    .line 9
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 10
+    :goto_0
+    if-eqz v0, :cond_1
+
+    .line 11
+    .line 12
+    invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object v0
+
+    .line 16
+    if-eqz v0, :cond_1
+
+    .line 17
+    .line 18
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result p0
+
+    .line 22
+    return p0
+
+    .line 23
+    :cond_1
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    .line 24
+    .line 25
+    .line 26
+    move-result p0
+
+    .line 27
+    return p0
 .end method

@@ -1,81 +1,125 @@
 .class public final Lrx5;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public j:Lsx5;
+.field public a:I
 
-.field public k:Lj02;
-
-.field public l:Ltx5;
-
-.field public m:Lit2;
-
-.field public synthetic n:Ljava/lang/Object;
-
-.field public final synthetic o:Lsx5;
-
-.field public p:I
+.field public final b:[I
 
 
 # direct methods
-.method public constructor <init>(Lsx5;Lc81;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lrx5;->o:Lsx5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
-
     .line 4
+    const/16 v0, 0xa
+
     .line 5
     .line 6
+    new-array v0, v0, [I
+
+    .line 7
+    .line 8
+    iput-object v0, p0, Lrx5;->b:[I
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a()I
     .locals 1
 
     .line 1
-    iput-object p1, p0, Lrx5;->n:Ljava/lang/Object;
+    iget v0, p0, Lrx5;->a:I
 
     .line 2
     .line 3
-    iget p1, p0, Lrx5;->p:I
+    and-int/lit8 v0, v0, 0x10
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    iget-object p0, p0, Lrx5;->b:[I
 
     .line 8
-    iput p1, p0, Lrx5;->p:I
-
     .line 9
+    const/4 v0, 0x4
+
     .line 10
-    iget-object p1, p0, Lrx5;->o:Lsx5;
+    aget p0, p0, v0
 
     .line 11
     .line 12
-    const/4 v0, 0x0
+    return p0
 
     .line 13
-    invoke-static {p1, v0, p0}, Lsx5;->m(Lsx5;Lj02;Lc81;)V
+    :cond_0
+    const p0, 0xffff
 
     .line 14
     .line 15
     .line 16
-    sget-object p0, Lgb1;->j:Lgb1;
+    return p0
+.end method
+
+.method public final b(II)V
+    .locals 3
+
+    .line 1
+    if-ltz p1, :cond_1
+
+    .line 2
+    .line 3
+    iget-object v0, p0, Lrx5;->b:[I
+
+    .line 4
+    .line 5
+    array-length v1, v0
+
+    .line 6
+    if-lt p1, v1, :cond_0
+
+    .line 7
+    .line 8
+    goto :goto_0
+
+    .line 9
+    :cond_0
+    const/4 v1, 0x1
+
+    .line 10
+    shl-int/2addr v1, p1
+
+    .line 11
+    iget v2, p0, Lrx5;->a:I
+
+    .line 12
+    .line 13
+    or-int/2addr v1, v2
+
+    .line 14
+    iput v1, p0, Lrx5;->a:I
+
+    .line 15
+    .line 16
+    aput p2, v0, p1
 
     .line 17
     .line 18
-    return-object p0
+    :cond_1
+    :goto_0
+    return-void
 .end method

@@ -1,190 +1,196 @@
-.class public final Llf1;
+.class public abstract synthetic Llf1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Landroid/os/Parcelable;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Llf1;",
-            ">;"
-        }
-    .end annotation
-.end field
-
-
-# instance fields
-.field public final j:I
+.field public static final synthetic a:[I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
-
-    .line 1
-    new-instance v0, Lm6;
-
-    .line 2
-    .line 3
-    const/4 v1, 0x4
-
-    .line 4
-    invoke-direct {v0, v1}, Lm6;-><init>(B)V
-
-    .line 5
-    .line 6
-    .line 7
-    sput-object v0, Llf1;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    .line 8
-    .line 9
-    return-void
-.end method
-
-.method public constructor <init>(I)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput p1, p0, Llf1;->j:I
-
-    .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final describeContents()I
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
     .locals 3
 
     .line 1
-    const/4 v0, 0x1
+    invoke-static {}, Lw53;->values()[Lw53;
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
     .line 4
-    return v0
+    move-result-object v0
 
     .line 5
-    :cond_0
-    instance-of v1, p1, Llf1;
+    array-length v0, v0
 
     .line 6
-    .line 7
-    const/4 v2, 0x0
+    new-array v0, v0, [I
 
+    .line 7
     .line 8
-    if-nez v1, :cond_1
+    :try_start_0
+    sget-object v1, Lw53;->ON_CREATE:Lw53;
 
     .line 9
     .line 10
-    return v2
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     .line 11
-    :cond_1
-    check-cast p1, Llf1;
-
     .line 12
     .line 13
-    iget p0, p0, Llf1;->j:I
+    move-result v1
 
     .line 14
+    const/4 v2, 0x1
+
     .line 15
-    iget p1, p1, Llf1;->j:I
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 16
     .line 17
-    if-eq p0, p1, :cond_2
+    :catch_0
+    :try_start_1
+    sget-object v1, Lw53;->ON_START:Lw53;
 
     .line 18
     .line 19
-    return v2
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     .line 20
-    :cond_2
-    return v0
-.end method
+    .line 21
+    .line 22
+    move-result v1
 
-.method public final hashCode()I
-    .locals 0
+    .line 23
+    const/4 v2, 0x2
 
-    .line 1
-    iget p0, p0, Llf1;->j:I
+    .line 24
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 2
-    .line 3
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+    .line 25
+    .line 26
+    :catch_1
+    :try_start_2
+    sget-object v1, Lw53;->ON_RESUME:Lw53;
 
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
+    .line 27
+    .line 28
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    .line 7
-    return p0
-.end method
+    .line 29
+    .line 30
+    .line 31
+    move-result v1
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+    .line 32
+    const/4 v2, 0x3
 
-    .line 1
-    const-string v0, "DefaultLazyKey(index="
+    .line 33
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
-    .line 2
-    .line 3
-    const-string v1, ")"
+    .line 34
+    .line 35
+    :catch_2
+    :try_start_3
+    sget-object v1, Lw53;->ON_PAUSE:Lw53;
 
-    .line 4
-    .line 5
-    iget p0, p0, Llf1;->j:I
+    .line 36
+    .line 37
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    .line 6
-    .line 7
-    invoke-static {p0, v0, v1}, Lxu1;->l(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 38
+    .line 39
+    .line 40
+    move-result v1
 
-    .line 8
-    .line 9
-    .line 10
-    move-result-object p0
+    .line 41
+    const/4 v2, 0x4
 
-    .line 11
-    return-object p0
-.end method
+    .line 42
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
+    .line 43
+    .line 44
+    :catch_3
+    :try_start_4
+    sget-object v1, Lw53;->ON_STOP:Lw53;
 
-    .line 1
-    iget p0, p0, Llf1;->j:I
+    .line 45
+    .line 46
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    .line 2
-    .line 3
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+    .line 47
+    .line 48
+    .line 49
+    move-result v1
 
-    .line 4
-    .line 5
-    .line 6
+    .line 50
+    const/4 v2, 0x5
+
+    .line 51
+    aput v2, v0, v1
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+
+    .line 52
+    .line 53
+    :catch_4
+    :try_start_5
+    sget-object v1, Lw53;->ON_DESTROY:Lw53;
+
+    .line 54
+    .line 55
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    .line 56
+    .line 57
+    .line 58
+    move-result v1
+
+    .line 59
+    const/4 v2, 0x6
+
+    .line 60
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
+    .line 61
+    .line 62
+    :catch_5
+    :try_start_6
+    sget-object v1, Lw53;->ON_ANY:Lw53;
+
+    .line 63
+    .line 64
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    .line 65
+    .line 66
+    .line 67
+    move-result v1
+
+    .line 68
+    const/4 v2, 0x7
+
+    .line 69
+    aput v2, v0, v1
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
+
+    .line 70
+    .line 71
+    :catch_6
+    sput-object v0, Llf1;->a:[I
+
+    .line 72
+    .line 73
     return-void
 .end method

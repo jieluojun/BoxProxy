@@ -1,159 +1,94 @@
-.class public final synthetic Lte4;
+.class public final Lte4;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lr52;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Lwe4;
+.field public final a:Lgl4;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lwe4;B)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
-    iput-byte p2, p0, Lte4;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lte4;->k:Lwe4;
-
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
+    .line 5
     .line 6
+    invoke-static {v0}, Lg23;->M(Ljava/lang/Object;)Lgl4;
+
     .line 7
     .line 8
+    .line 9
+    move-result-object v0
+
+    .line 10
+    iput-object v0, p0, Lte4;->a:Lgl4;
+
+    .line 11
+    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+.method public final a()Z
+    .locals 0
 
     .line 1
-    iget-byte v0, p0, Lte4;->j:B
+    iget-object p0, p0, Lte4;->a:Lgl4;
 
     .line 2
     .line 3
-    sget-object v1, Ld07;->a:Ld07;
+    invoke-virtual {p0}, Lgl4;->getValue()Ljava/lang/Object;
 
     .line 4
     .line 5
-    iget-object p0, p0, Lte4;->k:Lwe4;
-
     .line 6
+    move-result-object p0
+
     .line 7
-    packed-switch v0, :pswitch_data_0
+    check-cast p0, Ljava/lang/Boolean;
+
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    return p0
+.end method
+
+.method public final b(Z)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lte4;->a:Lgl4;
+
+    .line 2
+    .line 3
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p1
+
+    .line 7
+    invoke-virtual {p0, p1}, Lgl4;->setValue(Ljava/lang/Object;)V
 
     .line 8
     .line 9
     .line 10
-    check-cast p1, Ljava/lang/Float;
-
-    .line 11
-    .line 12
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    .line 13
-    .line 14
-    .line 15
-    move-result p1
-
-    .line 16
-    invoke-virtual {p0, p1}, Lwe4;->K1(F)V
-
-    .line 17
-    .line 18
-    .line 19
-    return-object v1
-
-    .line 20
-    :pswitch_0
-    check-cast p1, La82;
-
-    .line 21
-    .line 22
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 23
-    .line 24
-    .line 25
-    iget-boolean v0, p0, Lwe4;->z:Z
-
-    .line 26
-    .line 27
-    iget p0, p0, Lwe4;->H:F
-
-    .line 28
-    .line 29
-    if-eqz v0, :cond_0
-
-    .line 30
-    .line 31
-    float-to-double v2, p0
-
-    .line 32
-    invoke-static {v2, v3}, Ljava/lang/Math;->rint(D)D
-
-    .line 33
-    .line 34
-    .line 35
-    move-result-wide v2
-
-    .line 36
-    double-to-float p0, v2
-
-    .line 37
-    invoke-interface {p1, p0}, La82;->S(F)V
-
-    .line 38
-    .line 39
-    .line 40
-    goto :goto_0
-
-    .line 41
-    :cond_0
-    float-to-double v2, p0
-
-    .line 42
-    invoke-static {v2, v3}, Ljava/lang/Math;->rint(D)D
-
-    .line 43
-    .line 44
-    .line 45
-    move-result-wide v2
-
-    .line 46
-    double-to-float p0, v2
-
-    .line 47
-    invoke-interface {p1, p0}, La82;->w0(F)V
-
-    .line 48
-    .line 49
-    .line 50
-    :goto_0
-    const/4 p0, 0x1
-
-    .line 51
-    invoke-interface {p1, p0}, La82;->m0(Z)V
-
-    .line 52
-    .line 53
-    .line 54
-    return-object v1
-
-    .line 55
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

@@ -1,280 +1,412 @@
-.class public final Lek5;
+.class public final synthetic Lek5;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
 # instance fields
-.field public final a:Lnr3;
+.field public final synthetic j:B
 
-.field public final b:Lnr3;
+.field public final synthetic k:Ljava/lang/String;
 
-.field public final c:Lnr3;
+.field public final synthetic l:Lxk5;
 
 
 # direct methods
-.method public constructor <init>(Lnr3;Lnr3;Lnr3;)V
+.method public synthetic constructor <init>(Ljava/lang/String;Lxk5;B)V
     .locals 0
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-byte p3, p0, Lek5;->j:B
 
     .line 2
     .line 3
-    .line 4
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object p1, p0, Lek5;->k:Ljava/lang/String;
 
+    .line 4
     .line 5
+    iput-object p2, p0, Lek5;->l:Lxk5;
+
     .line 6
     .line 7
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 8
     .line 9
     .line 10
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 11
-    .line 12
-    .line 13
-    iput-object p1, p0, Lek5;->a:Lnr3;
-
-    .line 14
-    .line 15
-    iput-object p2, p0, Lek5;->b:Lnr3;
-
-    .line 16
-    .line 17
-    iput-object p3, p0, Lek5;->c:Lnr3;
-
-    .line 18
-    .line 19
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;)Lfk5;
-    .locals 3
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 16
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
+    iget-byte v1, v0, Lek5;->j:B
+
     .line 4
-    new-instance v0, Lfk5;
-
     .line 5
-    .line 6
-    iget-object v1, p0, Lek5;->a:Lnr3;
+    sget-object v2, Lk27;->a:Lk27;
 
+    .line 6
     .line 7
+    const/4 v3, 0x2
+
     .line 8
-    invoke-interface {v1}, Li86;->getValue()Ljava/lang/Object;
+    const/4 v4, 0x0
 
     .line 9
-    .line 10
-    .line 11
-    move-result-object v1
+    const/4 v5, 0x1
 
+    .line 10
+    iget-object v6, v0, Lek5;->l:Lxk5;
+
+    .line 11
     .line 12
-    check-cast v1, Ljava/lang/String;
+    packed-switch v1, :pswitch_data_0
 
     .line 13
     .line 14
-    invoke-static {v1}, Lw96;->V0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-
     .line 15
+    move-object/from16 v1, p1
+
     .line 16
     .line 17
-    move-result-object v1
+    check-cast v1, Lv01;
 
     .line 18
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
     .line 19
+    move-object/from16 v7, p2
+
     .line 20
     .line 21
-    move-result-object v1
+    check-cast v7, Ljava/lang/Integer;
 
     .line 22
-    iget-object v2, p0, Lek5;->b:Lnr3;
-
     .line 23
-    .line 24
-    invoke-interface {v2}, Li86;->getValue()Ljava/lang/Object;
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
 
+    .line 24
     .line 25
     .line 26
+    move-result v7
+
     .line 27
-    move-result-object v2
+    and-int/lit8 v8, v7, 0x3
 
     .line 28
-    check-cast v2, Ljava/lang/String;
-
     .line 29
-    .line 30
-    invoke-static {v2}, Lw96;->V0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    if-eq v8, v3, :cond_0
 
+    .line 30
     .line 31
+    move v3, v5
+
     .line 32
+    goto :goto_0
+
     .line 33
-    move-result-object v2
+    :cond_0
+    move v3, v4
 
     .line 34
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    :goto_0
+    and-int/2addr v5, v7
 
     .line 35
-    .line 36
-    .line 37
-    move-result-object v2
+    move-object v12, v1
 
+    .line 36
+    check-cast v12, Ls62;
+
+    .line 37
     .line 38
-    iget-object p0, p0, Lek5;->c:Lnr3;
+    invoke-virtual {v12, v5, v3}, Ls62;->T(IZ)Z
 
     .line 39
     .line 40
-    invoke-interface {p0}, Li86;->getValue()Ljava/lang/Object;
-
     .line 41
-    .line 42
-    .line 43
-    move-result-object p0
+    move-result v1
 
+    .line 42
+    if-eqz v1, :cond_2
+
+    .line 43
     .line 44
-    check-cast p0, Ljava/lang/String;
+    invoke-static {}, Ld53;->C()Llm2;
 
     .line 45
     .line 46
-    invoke-direct {v0, v1, v2, p0}, Lfk5;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
     .line 47
-    .line 48
-    .line 49
-    invoke-static {v1}, Lw96;->v0(Ljava/lang/CharSequence;)Z
+    move-result-object v7
 
+    .line 48
+    invoke-virtual {v6}, Lxk5;->h()Z
+
+    .line 49
     .line 50
     .line 51
+    move-result v1
+
     .line 52
-    move-result p0
+    if-eqz v1, :cond_1
 
     .line 53
-    const/4 v1, 0x0
-
     .line 54
-    if-nez p0, :cond_0
+    const v1, 0x24fc1823
 
     .line 55
     .line 56
-    invoke-static {v2}, Lw96;->v0(Ljava/lang/CharSequence;)Z
-
     .line 57
+    invoke-virtual {v12, v1}, Ls62;->c0(I)V
+
     .line 58
     .line 59
-    move-result p0
-
     .line 60
-    if-nez p0, :cond_0
+    sget-object v1, Ltv0;->a:Lkp1;
 
     .line 61
     .line 62
-    goto :goto_0
+    invoke-virtual {v12, v1}, Ls62;->k(Leu4;)Ljava/lang/Object;
 
     .line 63
-    :cond_0
-    move-object v0, v1
-
     .line 64
-    :goto_0
-    if-nez v0, :cond_1
-
     .line 65
+    move-result-object v1
+
     .line 66
-    return-object v1
+    check-cast v1, Lsv0;
 
     .line 67
-    :cond_1
-    iget-object p0, v0, Lfk5;->c:Ljava/lang/String;
-
     .line 68
-    .line 69
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v1}, Lsv0;->m()J
 
+    .line 69
     .line 70
     .line 71
+    move-result-wide v5
+
     .line 72
-    const-string v1, "download_preferences"
+    invoke-virtual {v12, v4}, Ls62;->r(Z)V
 
     .line 73
     .line 74
-    const/4 v2, 0x0
-
     .line 75
-    invoke-virtual {p1, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+    :goto_1
+    move-wide v10, v5
 
     .line 76
+    goto :goto_2
+
     .line 77
+    :cond_1
+    const v1, 0x24fe34f1
+
     .line 78
-    move-result-object p1
-
     .line 79
-    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
     .line 80
+    invoke-virtual {v12, v1}, Ls62;->c0(I)V
+
     .line 81
     .line 82
-    move-result-object p1
-
     .line 83
-    invoke-static {p0}, Lw96;->V0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    sget-object v1, Ltv0;->a:Lkp1;
 
     .line 84
     .line 85
+    invoke-virtual {v12, v1}, Ls62;->k(Leu4;)Ljava/lang/Object;
+
     .line 86
-    move-result-object p0
-
     .line 87
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
     .line 88
-    .line 89
-    .line 90
-    move-result-object p0
+    move-result-object v1
 
+    .line 89
+    check-cast v1, Lsv0;
+
+    .line 90
     .line 91
-    invoke-static {p0}, Lw96;->v0(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v1}, Lsv0;->i()J
 
     .line 92
     .line 93
     .line 94
-    move-result v1
+    move-result-wide v5
 
     .line 95
-    if-eqz v1, :cond_2
+    invoke-virtual {v12, v4}, Ls62;->r(Z)V
 
     .line 96
     .line 97
-    const-string p0, "boxproxy"
-
     .line 98
+    goto :goto_1
+
     .line 99
-    :cond_2
-    const-string v1, "user_agent"
+    :goto_2
+    const/4 v13, 0x0
 
     .line 100
+    const/4 v14, 0x4
+
     .line 101
-    invoke-interface {p1, v1, p0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    iget-object v8, v0, Lek5;->k:Ljava/lang/String;
 
     .line 102
     .line 103
+    const/4 v9, 0x0
+
     .line 104
-    move-result-object p0
+    invoke-static/range {v7 .. v14}, Lnl2;->a(Llm2;Ljava/lang/String;Lko3;JLv01;II)V
 
     .line 105
-    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
-
     .line 106
     .line 107
+    goto :goto_3
+
     .line 108
-    return-object v0
+    :cond_2
+    invoke-virtual {v12}, Ls62;->W()V
+
+    .line 109
+    .line 110
+    .line 111
+    :goto_3
+    return-object v2
+
+    .line 112
+    :pswitch_0
+    move-object/from16 v1, p1
+
+    .line 113
+    .line 114
+    check-cast v1, Lv01;
+
+    .line 115
+    .line 116
+    move-object/from16 v7, p2
+
+    .line 117
+    .line 118
+    check-cast v7, Ljava/lang/Integer;
+
+    .line 119
+    .line 120
+    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
+
+    .line 121
+    .line 122
+    .line 123
+    move-result v7
+
+    .line 124
+    and-int/lit8 v8, v7, 0x3
+
+    .line 125
+    .line 126
+    if-eq v8, v3, :cond_3
+
+    .line 127
+    .line 128
+    move v3, v5
+
+    .line 129
+    goto :goto_4
+
+    .line 130
+    :cond_3
+    move v3, v4
+
+    .line 131
+    :goto_4
+    and-int/2addr v7, v5
+
+    .line 132
+    move-object v13, v1
+
+    .line 133
+    check-cast v13, Ls62;
+
+    .line 134
+    .line 135
+    invoke-virtual {v13, v7, v3}, Ls62;->T(IZ)Z
+
+    .line 136
+    .line 137
+    .line 138
+    move-result v1
+
+    .line 139
+    if-eqz v1, :cond_4
+
+    .line 140
+    .line 141
+    invoke-static {}, Ly43;->r()Llm2;
+
+    .line 142
+    .line 143
+    .line 144
+    move-result-object v8
+
+    .line 145
+    invoke-virtual {v6}, Lxk5;->h()Z
+
+    .line 146
+    .line 147
+    .line 148
+    move-result v1
+
+    .line 149
+    xor-int/2addr v1, v5
+
+    .line 150
+    invoke-static {v4, v1, v13, v5}, Lqx5;->N(ZZLv01;I)J
+
+    .line 151
+    .line 152
+    .line 153
+    move-result-wide v11
+
+    .line 154
+    const/4 v14, 0x0
+
+    .line 155
+    const/4 v15, 0x4
+
+    .line 156
+    iget-object v9, v0, Lek5;->k:Ljava/lang/String;
+
+    .line 157
+    .line 158
+    const/4 v10, 0x0
+
+    .line 159
+    invoke-static/range {v8 .. v15}, Lol2;->a(Llm2;Ljava/lang/String;Lko3;JLv01;II)V
+
+    .line 160
+    .line 161
+    .line 162
+    goto :goto_5
+
+    .line 163
+    :cond_4
+    invoke-virtual {v13}, Ls62;->W()V
+
+    .line 164
+    .line 165
+    .line 166
+    :goto_5
+    return-object v2
+
+    .line 167
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

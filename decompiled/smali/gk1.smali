@@ -1,135 +1,118 @@
-.class public final Lgk1;
-.super Lb3;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final synthetic Lgk1;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
 # instance fields
-.field public final l:Ljava/util/Iterator;
+.field public final synthetic j:Lko3;
 
-.field public final m:Lr52;
+.field public final synthetic k:F
 
-.field public final n:Ljava/util/HashSet;
+.field public final synthetic l:J
+
+.field public final synthetic m:B
+
+.field public final synthetic n:B
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Iterator;Lr52;)V
+.method public synthetic constructor <init>(Lko3;FJII)V
     .locals 0
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lgk1;->j:Lko3;
 
     .line 5
     .line 6
+    iput p2, p0, Lgk1;->k:F
+
     .line 7
-    iput-object p1, p0, Lgk1;->l:Ljava/util/Iterator;
-
     .line 8
+    iput-wide p3, p0, Lgk1;->l:J
+
     .line 9
-    iput-object p2, p0, Lgk1;->m:Lr52;
-
     .line 10
+    iput-byte p5, p0, Lgk1;->m:B
+
     .line 11
-    new-instance p1, Ljava/util/HashSet;
-
     .line 12
+    iput-byte p6, p0, Lgk1;->n:B
+
     .line 13
-    invoke-direct {p1}, Ljava/util/HashSet;-><init>()V
-
     .line 14
-    .line 15
-    .line 16
-    iput-object p1, p0, Lgk1;->n:Ljava/util/HashSet;
-
-    .line 17
-    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 7
 
     .line 1
-    :cond_0
-    iget-object v0, p0, Lgk1;->l:Ljava/util/Iterator;
+    move-object v4, p1
 
     .line 2
-    .line 3
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    check-cast v4, Lv01;
 
+    .line 3
     .line 4
+    check-cast p2, Ljava/lang/Integer;
+
     .line 5
     .line 6
-    move-result v1
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 7
-    if-eqz v1, :cond_1
-
     .line 8
     .line 9
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    iget-byte p1, p0, Lgk1;->m:B
 
     .line 10
     .line 11
-    .line 12
-    move-result-object v0
+    or-int/lit8 p1, p1, 0x1
 
+    .line 12
     .line 13
-    iget-object v1, p0, Lgk1;->m:Lr52;
+    invoke-static {p1}, Lw23;->h0(I)I
 
     .line 14
     .line 15
-    invoke-interface {v1, v0}, Lr52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 16
-    .line 17
-    .line 18
-    move-result-object v1
+    move-result v5
 
+    .line 17
+    iget-object v0, p0, Lgk1;->j:Lko3;
+
+    .line 18
     .line 19
-    iget-object v2, p0, Lgk1;->n:Ljava/util/HashSet;
+    iget v1, p0, Lgk1;->k:F
 
     .line 20
     .line 21
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+    iget-wide v2, p0, Lgk1;->l:J
 
     .line 22
     .line 23
-    .line 24
-    move-result v1
+    iget-byte v6, p0, Lgk1;->n:B
 
+    .line 24
     .line 25
-    if-eqz v1, :cond_0
+    invoke-static/range {v0 .. v6}, Llv;->B(Lko3;FJLv01;II)V
 
     .line 26
     .line 27
-    iput-object v0, p0, Lb3;->k:Ljava/lang/Object;
-
     .line 28
+    sget-object p0, Lk27;->a:Lk27;
+
     .line 29
-    const/4 v0, 0x1
-
     .line 30
-    iput-byte v0, p0, Lb3;->j:B
-
-    .line 31
-    .line 32
-    return-void
-
-    .line 33
-    :cond_1
-    const/4 v0, 0x2
-
-    .line 34
-    iput-byte v0, p0, Lb3;->j:B
-
-    .line 35
-    .line 36
-    return-void
+    return-object p0
 .end method

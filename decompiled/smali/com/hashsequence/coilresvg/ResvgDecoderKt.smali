@@ -1,6 +1,6 @@
 .class public final Lcom/hashsequence/coilresvg/ResvgDecoderKt;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
@@ -8,7 +8,7 @@
 
 
 # direct methods
-.method public static final computeSvgRenderSize(FFLhc4;)Lcom/hashsequence/coilresvg/SvgRenderSize;
+.method public static final computeSvgRenderSize(FFLdd4;)Lcom/hashsequence/coilresvg/SvgRenderSize;
     .locals 8
 
     .line 1
@@ -17,19 +17,19 @@
     .line 2
     .line 3
     .line 4
-    iget-object v0, p2, Lhc4;->c:Lbp5;
+    iget-object v0, p2, Ldd4;->c:Lpq5;
 
     .line 5
     .line 6
-    iget-object v1, p2, Lhc4;->b:Ls26;
+    iget-object v1, p2, Ldd4;->b:Lf46;
 
     .line 7
     .line 8
-    sget-object v2, Ls26;->c:Ls26;
+    sget-object v2, Lf46;->c:Lf46;
 
     .line 9
     .line 10
-    invoke-static {v1, v2}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v2}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 11
     .line 12
@@ -44,7 +44,7 @@
 
     .line 16
     .line 17
-    iget-object v2, p2, Lhc4;->a:Landroid/content/Context;
+    iget-object v2, p2, Ldd4;->a:Landroid/content/Context;
 
     .line 18
     .line 19
@@ -92,7 +92,7 @@
 
     .line 38
     .line 39
-    invoke-static {p0}, Llh3;->i0(F)I
+    invoke-static {p0}, Lai3;->E(F)I
 
     .line 40
     .line 41
@@ -116,7 +116,7 @@
 
     .line 48
     .line 49
-    invoke-static {p1}, Llh3;->i0(F)I
+    invoke-static {p1}, Lai3;->E(F)I
 
     .line 50
     .line 51
@@ -125,11 +125,11 @@
 
     .line 53
     :cond_3
-    sget-object v6, Lfm2;->b:Lt57;
+    sget-object v6, Lfm2;->b:Lr77;
 
     .line 54
     .line 55
-    invoke-static {p2, v6}, Lb27;->Y(Lhc4;Lt57;)Ljava/lang/Object;
+    invoke-static {p2, v6}, Lf47;->Y(Ldd4;Lr77;)Ljava/lang/Object;
 
     .line 56
     .line 57
@@ -137,11 +137,11 @@
     move-result-object p2
 
     .line 59
-    check-cast p2, Ls26;
+    check-cast p2, Lf46;
 
     .line 60
     .line 61
-    invoke-static {v5, v4, v1, v0, p2}, Lb27;->N(IILs26;Lbp5;Ls26;)J
+    invoke-static {v5, v4, v1, v0, p2}, Lf47;->N(IILf46;Lpq5;Lf46;)J
 
     .line 62
     .line 63
@@ -224,7 +224,7 @@
 
     .line 99
     :cond_4
-    invoke-static {}, Lyd1;->a()V
+    invoke-static {}, Lvd1;->a()V
 
     .line 100
     .line 101

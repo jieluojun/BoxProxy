@@ -1,198 +1,255 @@
-.class public final synthetic Lmd;
+.class public final Lmd;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lr52;
+.implements Luj1;
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Ldq4;
+.field public final synthetic a:B
 
 
 # direct methods
-.method public synthetic constructor <init>(Ldq4;B)V
+.method public synthetic constructor <init>(B)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lmd;->j:B
+    iput-byte p1, p0, Lmd;->a:B
 
     .line 2
     .line 3
-    iput-object p1, p0, Lmd;->k:Ldq4;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 6
-    .line 7
-    .line 8
+    return-void
+.end method
+
+.method private final b()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final c()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final d()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final e()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final f()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final g()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final h()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final i()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final j()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final k()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final l()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final m()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final n()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final o()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final p()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final q()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final r()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final s()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final t()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final u()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method private final v()V
+    .locals 0
+
+    .line 1
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a()V
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Lmd;->j:B
+    iget-byte p0, p0, Lmd;->a:B
 
     .line 2
     .line 3
-    sget-object v1, Ld07;->a:Ld07;
+    const/4 v0, 0x0
 
     .line 4
-    .line 5
-    iget-object p0, p0, Lmd;->k:Ldq4;
+    packed-switch p0, :pswitch_data_0
 
+    .line 5
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_0
+    :pswitch_0
+    return-void
 
     .line 8
+    :pswitch_1
+    sget-object p0, Lmq0;->a:Lmq0;
+
     .line 9
     .line 10
-    check-cast p1, Lg52;
+    invoke-virtual {p0, v0}, Lmq0;->e(Z)V
 
     .line 11
     .line 12
-    invoke-virtual {p0}, Landroid/view/View;->getHandler()Landroid/os/Handler;
-
     .line 13
-    .line 14
-    .line 15
-    move-result-object v0
+    :pswitch_2
+    return-void
 
+    .line 14
+    :pswitch_3
+    sget-object p0, Lmq0;->a:Lmq0;
+
+    .line 15
     .line 16
-    if-eqz v0, :cond_0
+    invoke-virtual {p0, v0}, Lmq0;->e(Z)V
 
     .line 17
     .line 18
-    invoke-virtual {v0}, Landroid/os/Handler;->getLooper()Landroid/os/Looper;
-
     .line 19
+    :pswitch_4
+    return-void
+
     .line 20
-    .line 21
-    move-result-object v0
-
-    .line 22
-    goto :goto_0
-
-    .line 23
-    :cond_0
-    const/4 v0, 0x0
-
-    .line 24
-    :goto_0
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
-
-    .line 25
-    .line 26
-    .line 27
-    move-result-object v2
-
-    .line 28
-    if-ne v0, v2, :cond_1
-
-    .line 29
-    .line 30
-    invoke-interface {p1}, Lg52;->invoke()Ljava/lang/Object;
-
-    .line 31
-    .line 32
-    .line 33
-    goto :goto_1
-
-    .line 34
-    :cond_1
-    invoke-virtual {p0}, Landroid/view/View;->getHandler()Landroid/os/Handler;
-
-    .line 35
-    .line 36
-    .line 37
-    move-result-object p0
-
-    .line 38
-    if-eqz p0, :cond_2
-
-    .line 39
-    .line 40
-    new-instance v0, Lea;
-
-    .line 41
-    .line 42
-    const/4 v2, 0x5
-
-    .line 43
-    invoke-direct {v0, p1, v2}, Lea;-><init>(Lg52;B)V
-
-    .line 44
-    .line 45
-    .line 46
-    invoke-virtual {p0, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 47
-    .line 48
-    .line 49
-    :cond_2
-    :goto_1
-    return-object v1
-
-    .line 50
-    :pswitch_0
-    check-cast p1, Lzq2;
-
-    .line 51
-    .line 52
-    invoke-virtual {p0, p1}, Ldq4;->setPopupContentSize-fhxjrPA(Lzq2;)V
-
-    .line 53
-    .line 54
-    .line 55
-    invoke-virtual {p0}, Ldq4;->s()V
-
-    .line 56
-    .line 57
-    .line 58
-    return-object v1
-
-    .line 59
-    :pswitch_1
-    check-cast p1, Lvy2;
-
-    .line 60
-    .line 61
-    invoke-interface {p1}, Lvy2;->o()Lvy2;
-
-    .line 62
-    .line 63
-    .line 64
-    move-result-object p1
-
-    .line 65
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 66
-    .line 67
-    .line 68
-    invoke-virtual {p0, p1}, Ldq4;->r(Lvy2;)V
-
-    .line 69
-    .line 70
-    .line 71
-    return-object v1
-
-    .line 72
     nop
 
-    .line 73
+    .line 21
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_4
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
         :pswitch_1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
         :pswitch_0
     .end packed-switch
 .end method

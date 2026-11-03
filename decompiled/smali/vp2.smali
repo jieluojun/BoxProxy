@@ -1,9 +1,9 @@
 .class public final synthetic Lvp2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lr52;
+.implements Lo52;
 
 
 # instance fields
@@ -11,13 +11,13 @@
 
 .field public final synthetic k:I
 
-.field public final synthetic l:Lcn4;
+.field public final synthetic l:Lxn4;
 
 .field public final synthetic m:I
 
 
 # direct methods
-.method public synthetic constructor <init>(ILcn4;I)V
+.method public synthetic constructor <init>(ILxn4;I)V
     .locals 1
 
     .line 1
@@ -37,7 +37,7 @@
 
     .line 8
     .line 9
-    iput-object p2, p0, Lvp2;->l:Lcn4;
+    iput-object p2, p0, Lvp2;->l:Lxn4;
 
     .line 10
     .line 11
@@ -48,13 +48,13 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lcn4;IIB)V
+.method public synthetic constructor <init>(Lxn4;IIB)V
     .locals 0
 
     .line 14
     iput-byte p4, p0, Lvp2;->j:B
 
-    iput-object p1, p0, Lvp2;->l:Lcn4;
+    iput-object p1, p0, Lvp2;->l:Lxn4;
 
     iput p2, p0, Lvp2;->k:I
 
@@ -75,7 +75,7 @@
 
     .line 2
     .line 3
-    sget-object v1, Ld07;->a:Ld07;
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
     .line 5
@@ -87,11 +87,11 @@
 
     .line 8
     .line 9
-    iget-object p0, p0, Lvp2;->l:Lcn4;
+    iget-object p0, p0, Lvp2;->l:Lxn4;
 
     .line 10
     .line 11
-    check-cast p1, Lbn4;
+    check-cast p1, Lwn4;
 
     .line 12
     .line 13
@@ -100,7 +100,7 @@
     .line 14
     .line 15
     .line 16
-    invoke-static {p1, p0, v3, v2}, Lbn4;->h(Lbn4;Lcn4;II)V
+    invoke-static {p1, p0, v3, v2}, Lwn4;->h(Lwn4;Lxn4;II)V
 
     .line 17
     .line 18
@@ -109,7 +109,7 @@
 
     .line 20
     :pswitch_0
-    iget v0, p0, Lcn4;->j:I
+    iget v0, p0, Lxn4;->j:I
 
     .line 21
     .line 22
@@ -126,7 +126,7 @@
     div-float/2addr v0, v3
 
     .line 27
-    invoke-static {v0}, Llh3;->i0(F)I
+    invoke-static {v0}, Lai3;->E(F)I
 
     .line 28
     .line 29
@@ -134,7 +134,7 @@
     move-result v0
 
     .line 31
-    iget v4, p0, Lcn4;->k:I
+    iget v4, p0, Lxn4;->k:I
 
     .line 32
     .line 33
@@ -147,7 +147,7 @@
     div-float/2addr v2, v3
 
     .line 36
-    invoke-static {v2}, Llh3;->i0(F)I
+    invoke-static {v2}, Lai3;->E(F)I
 
     .line 37
     .line 38
@@ -155,7 +155,7 @@
     move-result v2
 
     .line 40
-    invoke-static {p1, p0, v0, v2}, Lbn4;->h(Lbn4;Lcn4;II)V
+    invoke-static {p1, p0, v0, v2}, Lwn4;->h(Lwn4;Lxn4;II)V
 
     .line 41
     .line 42
@@ -164,7 +164,7 @@
 
     .line 44
     :pswitch_1
-    invoke-static {p1, p0, v3, v2}, Lbn4;->h(Lbn4;Lcn4;II)V
+    invoke-static {p1, p0, v3, v2}, Lwn4;->h(Lwn4;Lxn4;II)V
 
     .line 45
     .line 46

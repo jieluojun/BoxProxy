@@ -1,6 +1,6 @@
 .class public final Lokhttp3/internal/platform/PlatformInitializer;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
 .implements Lho2;
@@ -34,7 +34,7 @@
     .locals 0
 
     .line 1
-    sget-object p0, Lst1;->j:Lst1;
+    sget-object p0, Lqt1;->j:Lqt1;
 
     .line 2
     .line 3
@@ -50,11 +50,11 @@
     .line 2
     .line 3
     .line 4
-    sget-object p0, Lgn4;->a:Lr9;
+    sget-object p0, Lbo4;->a:Lo9;
 
     .line 5
     .line 6
-    sget-object p0, Lgn4;->a:Lr9;
+    sget-object p0, Lbo4;->a:Lo9;
 
     .line 7
     .line 8
@@ -74,12 +74,12 @@
 
     .line 13
     .line 14
-    iput-object p1, p0, Lr9;->c:Landroid/content/Context;
+    iput-object p1, p0, Lo9;->c:Landroid/content/Context;
 
     .line 15
     .line 16
     :cond_1
-    sget-object p0, Lgn4;->a:Lr9;
+    sget-object p0, Lbo4;->a:Lo9;
 
     .line 17
     .line 18

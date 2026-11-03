@@ -1,17 +1,19 @@
 .class public final Lig1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lwa1;
+.implements Lk76;
 
 
 # instance fields
-.field public final j:Lwa1;
+.field public final a:Lhg1;
+
+.field public b:Lk76;
 
 
 # direct methods
-.method public constructor <init>(Lwa1;)V
+.method public constructor <init>(Lhg1;)V
     .locals 0
 
     .line 1
@@ -20,7 +22,7 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lig1;->j:Lwa1;
+    iput-object p1, p0, Lig1;->a:Lhg1;
 
     .line 5
     .line 6
@@ -29,15 +31,49 @@
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final a(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lig1;->j:Lwa1;
+    invoke-virtual {p0, p1}, Lig1;->e(Ljavax/net/ssl/SSLSocket;)Lk76;
 
     .line 2
     .line 3
-    invoke-static {p0, p1}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .line 4
+    move-result-object p0
+
+    .line 5
+    if-eqz p0, :cond_0
+
+    .line 6
+    .line 7
+    invoke-interface {p0, p1}, Lk76;->a(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p0
+
+    .line 11
+    return-object p0
+
+    .line 12
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 13
+    return-object p0
+.end method
+
+.method public final b(Ljavax/net/ssl/SSLSocket;)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lig1;->a:Lhg1;
+
+    .line 2
+    .line 3
+    invoke-interface {p0, p1}, Lhg1;->b(Ljavax/net/ssl/SSLSocket;)Z
 
     .line 4
     .line 5
@@ -48,335 +84,119 @@
     return p0
 .end method
 
-.method public final hashCode()I
+.method public final c(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;Ljava/util/List;Lbg0;)V
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lig1;->j:Lwa1;
+    invoke-virtual {p0, p1}, Lig1;->e(Ljavax/net/ssl/SSLSocket;)Lk76;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
     .line 4
-    .line 5
-    .line 6
-    move-result p0
+    move-result-object p0
 
+    .line 5
+    if-eqz p0, :cond_0
+
+    .line 6
     .line 7
+    invoke-interface {p0, p1, p2, p3, p4}, Lk76;->c(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;Ljava/util/List;Lbg0;)V
+
+    .line 8
+    .line 9
+    .line 10
+    :cond_0
+    return-void
+.end method
+
+.method public final d()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x1
+
+    .line 2
     return p0
 .end method
 
-.method public final m(Lwa1;)Lwa1;
-    .locals 3
+.method public final declared-synchronized e(Ljavax/net/ssl/SSLSocket;)Lk76;
+    .locals 1
 
     .line 1
-    iget-object v0, p0, Lig1;->j:Lwa1;
+    monitor-enter p0
 
     .line 2
-    .line 3
-    invoke-interface {v0, p1}, Lwa1;->m(Lwa1;)Lwa1;
+    :try_start_0
+    iget-object v0, p0, Lig1;->b:Lk76;
 
+    .line 3
     .line 4
+    if-nez v0, :cond_0
+
     .line 5
     .line 6
-    move-result-object p1
+    iget-object v0, p0, Lig1;->a:Lhg1;
 
     .line 7
-    sget v0, Lf17;->b:I
-
     .line 8
-    .line 9
-    sget-object v0, Ls6;->Y:Ls6;
+    invoke-interface {v0, p1}, Lhg1;->b(Ljavax/net/ssl/SSLSocket;)Z
 
+    .line 9
     .line 10
     .line 11
-    invoke-virtual {p0, v0}, Lig1;->p(Lva1;)Lua1;
+    move-result v0
 
     .line 12
+    if-eqz v0, :cond_0
+
     .line 13
     .line 14
-    move-result-object p0
+    iget-object v0, p0, Lig1;->a:Lhg1;
 
     .line 15
-    instance-of v1, p0, Lya1;
-
     .line 16
+    invoke-interface {v0, p1}, Lhg1;->c(Ljavax/net/ssl/SSLSocket;)Lk76;
+
     .line 17
-    const/4 v2, 0x0
-
     .line 18
-    if-eqz v1, :cond_0
-
     .line 19
+    move-result-object p1
+
     .line 20
-    check-cast p0, Lya1;
+    iput-object p1, p0, Lig1;->b:Lk76;
 
     .line 21
     .line 22
     goto :goto_0
 
     .line 23
-    :cond_0
-    move-object p0, v2
+    :catchall_0
+    move-exception p1
 
     .line 24
-    :goto_0
-    invoke-interface {p1, v0}, Lwa1;->p(Lva1;)Lua1;
+    goto :goto_1
 
     .line 25
-    .line 26
-    .line 27
-    move-result-object v0
-
-    .line 28
-    instance-of v1, v0, Lya1;
-
-    .line 29
-    .line 30
-    if-eqz v1, :cond_1
-
-    .line 31
-    .line 32
-    move-object v2, v0
-
-    .line 33
-    check-cast v2, Lya1;
-
-    .line 34
-    .line 35
-    :cond_1
-    instance-of v0, p0, Ljg1;
-
-    .line 36
-    .line 37
-    if-eqz v0, :cond_2
-
-    .line 38
-    .line 39
-    if-eq p0, v2, :cond_2
-
-    .line 40
-    .line 41
-    check-cast p0, Ljg1;
-
-    .line 42
-    .line 43
-    const/4 v0, 0x0
-
-    .line 44
-    iput v0, p0, Ljg1;->m:I
-
-    .line 45
-    .line 46
-    :cond_2
-    new-instance p0, Lig1;
-
-    .line 47
-    .line 48
-    invoke-direct {p0, p1}, Lig1;-><init>(Lwa1;)V
-
-    .line 49
-    .line 50
-    .line 51
-    return-object p0
-.end method
-
-.method public final p(Lva1;)Lua1;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lig1;->j:Lwa1;
-
-    .line 2
-    .line 3
-    invoke-interface {p0, p1}, Lwa1;->p(Lva1;)Lua1;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v1, "ForwardingCoroutineContext(delegate="
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    iget-object p0, p0, Lig1;->j:Lwa1;
-
-    .line 9
-    .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 11
-    .line 12
-    .line 13
-    const-string p0, ")"
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-object p0
-
-    .line 22
-    return-object p0
-.end method
-
-.method public final v(Lv52;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lig1;->j:Lwa1;
-
-    .line 2
-    .line 3
-    invoke-interface {p0, p1, p2}, Lwa1;->v(Lv52;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
-.end method
-
-.method public final z(Lva1;)Lwa1;
-    .locals 3
-
-    .line 1
-    iget-object v0, p0, Lig1;->j:Lwa1;
-
-    .line 2
-    .line 3
-    invoke-interface {v0, p1}, Lwa1;->z(Lva1;)Lwa1;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p1
-
-    .line 7
-    sget v0, Lf17;->b:I
-
-    .line 8
-    .line 9
-    sget-object v0, Ls6;->Y:Ls6;
-
-    .line 10
-    .line 11
-    invoke-virtual {p0, v0}, Lig1;->p(Lva1;)Lua1;
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object p0
-
-    .line 15
-    instance-of v1, p0, Lya1;
-
-    .line 16
-    .line 17
-    const/4 v2, 0x0
-
-    .line 18
-    if-eqz v1, :cond_0
-
-    .line 19
-    .line 20
-    check-cast p0, Lya1;
-
-    .line 21
-    .line 22
-    goto :goto_0
-
-    .line 23
     :cond_0
-    move-object p0, v2
-
-    .line 24
     :goto_0
-    invoke-interface {p1, v0}, Lwa1;->p(Lva1;)Lua1;
+    iget-object p1, p0, Lig1;->b:Lk76;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 25
     .line 26
     .line 27
-    move-result-object v0
+    monitor-exit p0
 
     .line 28
-    instance-of v1, v0, Lya1;
+    return-object p1
 
     .line 29
+    :goto_1
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
     .line 30
-    if-eqz v1, :cond_1
-
-    .line 31
-    .line 32
-    move-object v2, v0
-
-    .line 33
-    check-cast v2, Lya1;
-
-    .line 34
-    .line 35
-    :cond_1
-    instance-of v0, p0, Ljg1;
-
-    .line 36
-    .line 37
-    if-eqz v0, :cond_2
-
-    .line 38
-    .line 39
-    if-eq p0, v2, :cond_2
-
-    .line 40
-    .line 41
-    check-cast p0, Ljg1;
-
-    .line 42
-    .line 43
-    const/4 v0, 0x0
-
-    .line 44
-    iput v0, p0, Ljg1;->m:I
-
-    .line 45
-    .line 46
-    :cond_2
-    new-instance p0, Lig1;
-
-    .line 47
-    .line 48
-    invoke-direct {p0, p1}, Lig1;-><init>(Lwa1;)V
-
-    .line 49
-    .line 50
-    .line 51
-    return-object p0
+    throw p1
 .end method

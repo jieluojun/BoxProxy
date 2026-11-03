@@ -1,241 +1,448 @@
 .class public final Luu;
-.super Leo3;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lmu5;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Leo3;",
-        "Lmu5;"
-    }
-.end annotation
+.implements Lwu;
 
 
 # instance fields
-.field public final j:Z
-
-.field public final k:Lr52;
+.field public final synthetic j:B
 
 
 # direct methods
-.method public constructor <init>(ZLr52;)V
+.method public synthetic constructor <init>(B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p1, p0, Luu;->j:B
 
     .line 2
     .line 3
-    .line 4
-    iput-boolean p1, p0, Luu;->j:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 4
     .line 5
     .line 6
-    iput-object p2, p0, Luu;->k:Lr52;
-
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lwn3;
-    .locals 3
+.method public final d(Lyg1;I[ILkz2;[I)V
+    .locals 2
 
     .line 1
-    new-instance v0, Li91;
+    iget-byte p0, p0, Luu;->j:B
 
     .line 2
     .line 3
+    sget-object p1, Lkz2;->j:Lkz2;
+
+    .line 4
+    .line 5
+    const/4 v0, -0x1
+
+    .line 6
     const/4 v1, 0x0
 
-    .line 4
-    iget-object v2, p0, Luu;->k:Lr52;
-
-    .line 5
-    .line 6
-    iget-boolean p0, p0, Luu;->j:Z
-
     .line 7
-    .line 8
-    invoke-direct {v0, p0, v1, v2}, Li91;-><init>(ZZLr52;)V
+    packed-switch p0, :pswitch_data_0
 
+    .line 8
     .line 9
     .line 10
-    .line 11
-    return-object v0
-.end method
-
-.method public final a1()Llu5;
-    .locals 2
-
-    .line 1
-    new-instance v0, Llu5;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Llu5;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    iget-boolean v1, p0, Luu;->j:Z
-
-    .line 7
-    .line 8
-    iput-boolean v1, v0, Llu5;->l:Z
-
-    .line 9
-    .line 10
-    iget-object p0, p0, Luu;->k:Lr52;
+    if-ne p4, p1, :cond_0
 
     .line 11
     .line 12
-    invoke-interface {p0, v0}, Lr52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    array-length p0, p3
 
     .line 13
-    .line 14
-    .line 15
-    return-object v0
-.end method
-
-.method public final b(Lwn3;)V
-    .locals 1
-
-    .line 1
-    check-cast p1, Li91;
-
-    .line 2
-    .line 3
-    iget-boolean v0, p0, Luu;->j:Z
-
-    .line 4
-    .line 5
-    iput-boolean v0, p1, Li91;->x:Z
-
-    .line 6
-    .line 7
-    iget-object p0, p0, Luu;->k:Lr52;
-
-    .line 8
-    .line 9
-    iput-object p0, p1, Li91;->z:Lr52;
-
-    .line 10
-    .line 11
-    return-void
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
-
-    .line 1
-    if-ne p0, p1, :cond_0
-
-    .line 2
-    .line 3
-    goto :goto_1
-
-    .line 4
-    :cond_0
-    instance-of v0, p1, Luu;
-
-    .line 5
-    .line 6
-    if-nez v0, :cond_1
-
-    .line 7
-    .line 8
-    goto :goto_0
-
-    .line 9
-    :cond_1
-    check-cast p1, Luu;
-
-    .line 10
-    .line 11
-    iget-boolean v0, p1, Luu;->j:Z
-
-    .line 12
-    .line 13
-    iget-boolean v1, p0, Luu;->j:Z
+    move p1, v1
 
     .line 14
+    move p2, p1
+
     .line 15
-    if-eq v1, v0, :cond_2
+    :goto_0
+    if-ge v1, p0, :cond_2
 
     .line 16
     .line 17
-    goto :goto_0
+    aget p4, p3, v1
 
     .line 18
-    :cond_2
-    iget-object p0, p0, Luu;->k:Lr52;
-
     .line 19
+    add-int/lit8 v0, p1, 0x1
+
     .line 20
-    iget-object p1, p1, Luu;->k:Lr52;
-
     .line 21
-    .line 22
-    if-eq p0, p1, :cond_3
+    aput p2, p5, p1
 
+    .line 22
     .line 23
+    add-int/2addr p2, p4
+
     .line 24
-    :goto_0
-    const/4 p0, 0x0
+    add-int/lit8 v1, v1, 0x1
 
     .line 25
-    return p0
-
     .line 26
-    :cond_3
-    :goto_1
-    const/4 p0, 0x1
+    move p1, v0
 
     .line 27
-    return p0
+    goto :goto_0
+
+    .line 28
+    :cond_0
+    array-length p0, p3
+
+    .line 29
+    move p1, v1
+
+    .line 30
+    :goto_1
+    if-ge v1, p0, :cond_1
+
+    .line 31
+    .line 32
+    aget p4, p3, v1
+
+    .line 33
+    .line 34
+    add-int/2addr p1, p4
+
+    .line 35
+    add-int/lit8 v1, v1, 0x1
+
+    .line 36
+    .line 37
+    goto :goto_1
+
+    .line 38
+    :cond_1
+    sub-int/2addr p2, p1
+
+    .line 39
+    array-length p0, p3
+
+    .line 40
+    add-int/lit8 p0, p0, -0x1
+
+    .line 41
+    .line 42
+    :goto_2
+    if-ge v0, p0, :cond_2
+
+    .line 43
+    .line 44
+    aget p1, p3, p0
+
+    .line 45
+    .line 46
+    aput p2, p5, p0
+
+    .line 47
+    .line 48
+    add-int/2addr p2, p1
+
+    .line 49
+    add-int/lit8 p0, p0, -0x1
+
+    .line 50
+    .line 51
+    goto :goto_2
+
+    .line 52
+    :cond_2
+    return-void
+
+    .line 53
+    :pswitch_0
+    if-ne p4, p1, :cond_4
+
+    .line 54
+    .line 55
+    array-length p0, p3
+
+    .line 56
+    move p1, v1
+
+    .line 57
+    move p4, p1
+
+    .line 58
+    :goto_3
+    if-ge p1, p0, :cond_3
+
+    .line 59
+    .line 60
+    aget v0, p3, p1
+
+    .line 61
+    .line 62
+    add-int/2addr p4, v0
+
+    .line 63
+    add-int/lit8 p1, p1, 0x1
+
+    .line 64
+    .line 65
+    goto :goto_3
+
+    .line 66
+    :cond_3
+    sub-int/2addr p2, p4
+
+    .line 67
+    array-length p0, p3
+
+    .line 68
+    move p1, v1
+
+    .line 69
+    :goto_4
+    if-ge v1, p0, :cond_5
+
+    .line 70
+    .line 71
+    aget p4, p3, v1
+
+    .line 72
+    .line 73
+    add-int/lit8 v0, p1, 0x1
+
+    .line 74
+    .line 75
+    aput p2, p5, p1
+
+    .line 76
+    .line 77
+    add-int/2addr p2, p4
+
+    .line 78
+    add-int/lit8 v1, v1, 0x1
+
+    .line 79
+    .line 80
+    move p1, v0
+
+    .line 81
+    goto :goto_4
+
+    .line 82
+    :cond_4
+    array-length p0, p3
+
+    .line 83
+    add-int/lit8 p0, p0, -0x1
+
+    .line 84
+    .line 85
+    :goto_5
+    if-ge v0, p0, :cond_5
+
+    .line 86
+    .line 87
+    aget p1, p3, p0
+
+    .line 88
+    .line 89
+    aput v1, p5, p0
+
+    .line 90
+    .line 91
+    add-int/2addr v1, p1
+
+    .line 92
+    add-int/lit8 p0, p0, -0x1
+
+    .line 93
+    .line 94
+    goto :goto_5
+
+    .line 95
+    :cond_5
+    return-void
+
+    .line 96
+    :pswitch_1
+    array-length p0, p3
+
+    .line 97
+    move p1, v1
+
+    .line 98
+    move p4, p1
+
+    .line 99
+    :goto_6
+    if-ge p1, p0, :cond_6
+
+    .line 100
+    .line 101
+    aget v0, p3, p1
+
+    .line 102
+    .line 103
+    add-int/2addr p4, v0
+
+    .line 104
+    add-int/lit8 p1, p1, 0x1
+
+    .line 105
+    .line 106
+    goto :goto_6
+
+    .line 107
+    :cond_6
+    sub-int/2addr p2, p4
+
+    .line 108
+    array-length p0, p3
+
+    .line 109
+    move p1, v1
+
+    .line 110
+    :goto_7
+    if-ge v1, p0, :cond_7
+
+    .line 111
+    .line 112
+    aget p4, p3, v1
+
+    .line 113
+    .line 114
+    add-int/lit8 v0, p1, 0x1
+
+    .line 115
+    .line 116
+    aput p2, p5, p1
+
+    .line 117
+    .line 118
+    add-int/2addr p2, p4
+
+    .line 119
+    add-int/lit8 v1, v1, 0x1
+
+    .line 120
+    .line 121
+    move p1, v0
+
+    .line 122
+    goto :goto_7
+
+    .line 123
+    :cond_7
+    return-void
+
+    .line 124
+    :pswitch_2
+    array-length p0, p3
+
+    .line 125
+    move p1, v1
+
+    .line 126
+    move p2, p1
+
+    .line 127
+    :goto_8
+    if-ge v1, p0, :cond_8
+
+    .line 128
+    .line 129
+    aget p4, p3, v1
+
+    .line 130
+    .line 131
+    add-int/lit8 v0, p1, 0x1
+
+    .line 132
+    .line 133
+    aput p2, p5, p1
+
+    .line 134
+    .line 135
+    add-int/2addr p2, p4
+
+    .line 136
+    add-int/lit8 v1, v1, 0x1
+
+    .line 137
+    .line 138
+    move p1, v0
+
+    .line 139
+    goto :goto_8
+
+    .line 140
+    :cond_8
+    return-void
+
+    .line 141
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final hashCode()I
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
     .line 1
-    iget-boolean v0, p0, Luu;->j:Z
+    iget-byte p0, p0, Luu;->j:B
 
     .line 2
     .line 3
-    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
+    packed-switch p0, :pswitch_data_0
 
     .line 4
     .line 5
     .line 6
-    move-result v0
+    const-string p0, "Arrangement#Start"
 
     .line 7
-    mul-int/lit8 v0, v0, 0x1f
-
     .line 8
+    return-object p0
+
     .line 9
-    iget-object p0, p0, Luu;->k:Lr52;
+    :pswitch_0
+    const-string p0, "Arrangement#End"
 
     .line 10
     .line 11
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    return-object p0
 
     .line 12
+    :pswitch_1
+    const-string p0, "AbsoluteArrangement#Right"
+
     .line 13
     .line 14
-    move-result p0
+    return-object p0
 
     .line 15
-    add-int/2addr p0, v0
+    :pswitch_2
+    const-string p0, "AbsoluteArrangement#Left"
 
     .line 16
-    return p0
+    .line 17
+    return-object p0
+
+    .line 18
+    nop
+
+    .line 19
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

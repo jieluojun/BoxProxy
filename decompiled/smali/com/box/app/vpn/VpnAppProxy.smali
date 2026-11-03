@@ -248,11 +248,11 @@
     .locals 4
 
     :try_start_0
-    invoke-static {}, Llb0;->k()Lab0;
+    invoke-static {}, Lgb0;->k()Lva0;
 
     move-result-object v0
 
-    iget-object v0, v0, Lab0;->c:Ljava/io/File;
+    iget-object v0, v0, Lva0;->c:Ljava/io/File;
 
     new-instance v1, Ljava/io/File;
 

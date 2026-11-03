@@ -1,27 +1,24 @@
-.class public final synthetic Lr62;
+.class public final Lr62;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lg52;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final synthetic a:B
 
-.field public final synthetic k:Lv62;
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lv62;B)V
+.method public synthetic constructor <init>(Ljava/lang/Object;B)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lr62;->j:B
+    iput-byte p2, p0, Lr62;->a:B
 
     .line 2
     .line 3
-    iput-object p1, p0, Lr62;->k:Lv62;
+    iput-object p1, p0, Lr62;->b:Ljava/lang/Object;
 
     .line 4
     .line 5
@@ -35,15 +32,15 @@
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
+.method public final a()V
     .locals 1
 
     .line 1
-    iget-byte v0, p0, Lr62;->j:B
+    iget-byte v0, p0, Lr62;->a:B
 
     .line 2
     .line 3
-    iget-object p0, p0, Lr62;->k:Lv62;
+    iget-object p0, p0, Lr62;->b:Ljava/lang/Object;
 
     .line 4
     .line 5
@@ -52,32 +49,113 @@
     .line 6
     .line 7
     .line 8
-    invoke-virtual {p0}, Lv62;->o()Ln01;
+    check-cast p0, Le76;
 
     .line 9
     .line 10
-    .line 11
-    move-result-object p0
+    iget v0, p0, Le76;->l:I
 
+    .line 11
     .line 12
-    return-object p0
+    add-int/lit8 v0, v0, -0x1
 
     .line 13
-    :pswitch_0
-    invoke-virtual {p0}, Lv62;->o()Ln01;
-
     .line 14
+    iput v0, p0, Le76;->l:I
+
     .line 15
     .line 16
-    move-result-object p0
+    return-void
 
     .line 17
-    return-object p0
+    :pswitch_0
+    check-cast p0, Ls62;
 
     .line 18
+    .line 19
+    iget v0, p0, Ls62;->A:I
+
+    .line 20
+    .line 21
+    add-int/lit8 v0, v0, -0x1
+
+    .line 22
+    .line 23
+    iput v0, p0, Ls62;->A:I
+
+    .line 24
+    .line 25
+    return-void
+
+    .line 26
     nop
 
+    .line 27
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final b()V
+    .locals 1
+
+    .line 1
+    iget-byte v0, p0, Lr62;->a:B
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lr62;->b:Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    packed-switch v0, :pswitch_data_0
+
+    .line 6
+    .line 7
+    .line 8
+    check-cast p0, Le76;
+
+    .line 9
+    .line 10
+    iget v0, p0, Le76;->l:I
+
+    .line 11
+    .line 12
+    add-int/lit8 v0, v0, 0x1
+
+    .line 13
+    .line 14
+    iput v0, p0, Le76;->l:I
+
+    .line 15
+    .line 16
+    return-void
+
+    .line 17
+    :pswitch_0
+    check-cast p0, Ls62;
+
+    .line 18
     .line 19
+    iget v0, p0, Ls62;->A:I
+
+    .line 20
+    .line 21
+    add-int/lit8 v0, v0, 0x1
+
+    .line 22
+    .line 23
+    iput v0, p0, Ls62;->A:I
+
+    .line 24
+    .line 25
+    return-void
+
+    .line 26
+    nop
+
+    .line 27
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

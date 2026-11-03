@@ -1,127 +1,204 @@
-.class public final synthetic Lfl5;
+.class public final Lfl5;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lg52;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final a:I
 
-.field public final synthetic k:Ldk5;
-
-.field public final synthetic l:Lgw2;
+.field public final b:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Ldk5;Lgw2;B)V
+.method public constructor <init>(IZ)V
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Lfl5;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lfl5;->k:Ldk5;
-
     .line 4
+    iput p1, p0, Lfl5;->a:I
+
     .line 5
-    iput-object p2, p0, Lfl5;->l:Lgw2;
-
     .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-boolean p2, p0, Lfl5;->b:Z
 
+    .line 7
     .line 8
-    .line 9
-    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
     .line 1
-    iget-byte v0, p0, Lfl5;->j:B
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    sget-object v1, Ld07;->a:Ld07;
+    if-ne p0, p1, :cond_0
 
+    .line 3
     .line 4
+    return v0
+
     .line 5
-    iget-object v2, p0, Lfl5;->l:Lgw2;
+    :cond_0
+    instance-of v1, p1, Lfl5;
 
     .line 6
     .line 7
-    iget-object p0, p0, Lfl5;->k:Ldk5;
+    const/4 v2, 0x0
 
     .line 8
+    if-nez v1, :cond_1
+
     .line 9
-    packed-switch v0, :pswitch_data_0
-
     .line 10
-    .line 11
-    .line 12
-    invoke-virtual {p0}, Ldk5;->n()V
+    return v2
 
+    .line 11
+    :cond_1
+    check-cast p1, Lfl5;
+
+    .line 12
     .line 13
+    iget v1, p0, Lfl5;->a:I
+
     .line 14
     .line 15
-    check-cast v2, Lg52;
+    iget v3, p1, Lfl5;->a:I
 
     .line 16
     .line 17
-    invoke-interface {v2}, Lg52;->invoke()Ljava/lang/Object;
+    if-eq v1, v3, :cond_2
 
     .line 18
     .line 19
+    return v2
+
     .line 20
-    return-object v1
+    :cond_2
+    iget-boolean p0, p0, Lfl5;->b:Z
 
     .line 21
-    :pswitch_0
-    invoke-virtual {p0}, Ldk5;->n()V
-
     .line 22
+    iget-boolean p1, p1, Lfl5;->b:Z
+
     .line 23
     .line 24
-    check-cast v2, Lg52;
+    if-eq p0, p1, :cond_3
 
     .line 25
     .line 26
-    invoke-interface {v2}, Lg52;->invoke()Ljava/lang/Object;
+    return v2
 
     .line 27
+    :cond_3
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lfl5;->a:I
+
+    .line 2
+    .line 3
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 8
+    .line 9
+    iget-boolean p0, p0, Lfl5;->b:Z
+
+    .line 10
+    .line 11
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    add-int/2addr p0, v0
+
+    .line 16
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "RuntimeFileIndentationStyle(width="
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget v1, p0, Lfl5;->a:I
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const-string v1, ", useTabs="
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    iget-boolean p0, p0, Lfl5;->b:Z
+
+    .line 19
+    .line 20
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    .line 21
+    .line 22
+    .line 23
+    const-string p0, ")"
+
+    .line 24
+    .line 25
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 26
+    .line 27
     .line 28
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
     .line 29
-    return-object v1
-
     .line 30
-    :pswitch_1
-    invoke-virtual {p0}, Ldk5;->n()V
-
     .line 31
+    move-result-object p0
+
     .line 32
-    .line 33
-    check-cast v2, Lg52;
-
-    .line 34
-    .line 35
-    invoke-interface {v2}, Lg52;->invoke()Ljava/lang/Object;
-
-    .line 36
-    .line 37
-    .line 38
-    return-object v1
-
-    .line 39
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

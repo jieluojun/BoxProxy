@@ -1,78 +1,100 @@
 .class public final Lu07;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lqs4;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public j:Ld62;
+.field public a:[S
 
-.field public k:Lg52;
-
-.field public l:F
-
-.field public synthetic m:Ljava/lang/Object;
-
-.field public final synthetic n:Lv07;
-
-.field public o:I
-
-
-# direct methods
-.method public constructor <init>(Lv07;Ld81;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lu07;->n:Lv07;
-
-    .line 2
-    .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
+.field public b:I
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a()Ljava/lang/Object;
     .locals 1
 
     .line 1
-    iput-object p1, p0, Lu07;->m:Ljava/lang/Object;
+    iget-object v0, p0, Lu07;->a:[S
 
     .line 2
     .line 3
-    iget p1, p0, Lu07;->o:I
+    iget p0, p0, Lu07;->b:I
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    invoke-static {v0, p0}, Ljava/util/Arrays;->copyOf([SI)[S
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lu07;->o:I
-
-    .line 9
-    .line 10
-    iget-object p1, p0, Lu07;->n:Lv07;
-
-    .line 11
-    .line 12
-    const/4 v0, 0x0
-
-    .line 13
-    invoke-virtual {p1, v0, v0, p0}, Lv07;->a(Lqf;Lss;Ld81;)Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
     move-result-object p0
 
+    .line 9
+    new-instance v0, Lt07;
+
+    .line 10
+    .line 11
+    invoke-direct {v0, p0}, Lt07;-><init>([S)V
+
+    .line 12
+    .line 13
+    .line 14
+    return-object v0
+.end method
+
+.method public final b(I)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lu07;->a:[S
+
+    .line 2
+    .line 3
+    array-length v1, v0
+
+    .line 4
+    if-ge v1, p1, :cond_1
+
+    .line 5
+    .line 6
+    array-length v1, v0
+
+    .line 7
+    mul-int/lit8 v1, v1, 0x2
+
+    .line 8
+    .line 9
+    if-ge p1, v1, :cond_0
+
+    .line 10
+    .line 11
+    move p1, v1
+
+    .line 12
+    :cond_0
+    invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([SI)[S
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p1
+
+    .line 16
+    iput-object p1, p0, Lu07;->a:[S
+
     .line 17
-    return-object p0
+    .line 18
+    :cond_1
+    return-void
+.end method
+
+.method public final d()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lu07;->b:I
+
+    .line 2
+    .line 3
+    return p0
 .end method

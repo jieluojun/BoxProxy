@@ -1,54 +1,69 @@
 .class public final Lf42;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# static fields
+.field public static final d:Lf42;
 
 
 # instance fields
-.field public final a:Landroid/net/Uri;
+.field public final a:Ljava/lang/String;
 
-.field public final b:I
+.field public final b:Ljava/lang/String;
 
-.field public final c:I
-
-.field public final d:Z
-
-.field public final e:Ljava/lang/String;
-
-.field public final f:I
+.field public final c:Z
 
 
 # direct methods
-.method public constructor <init>(Landroid/net/Uri;IIZLjava/lang/String;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
-    .line 39
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 1
+    new-instance v0, Lf42;
 
-    .line 40
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .line 2
+    .line 3
+    const-string v1, ""
 
-    .line 41
-    iput-object p1, p0, Lf42;->a:Landroid/net/Uri;
+    .line 4
+    .line 5
+    const/4 v2, 0x0
 
-    .line 42
-    iput p2, p0, Lf42;->b:I
+    .line 6
+    invoke-direct {v0, v1, v1, v2}, Lf42;-><init>(Ljava/lang/String;Ljava/lang/String;Z)V
 
-    .line 43
-    iput p3, p0, Lf42;->c:I
+    .line 7
+    .line 8
+    .line 9
+    sput-object v0, Lf42;->d:Lf42;
 
-    .line 44
-    iput-boolean p4, p0, Lf42;->d:Z
+    .line 10
+    .line 11
+    new-instance v0, Lf42;
 
-    .line 45
-    iput-object p5, p0, Lf42;->e:Ljava/lang/String;
+    .line 12
+    .line 13
+    const-string v1, "  "
 
-    .line 46
-    iput p6, p0, Lf42;->f:I
+    .line 14
+    .line 15
+    const/4 v2, 0x1
 
+    .line 16
+    const-string v3, "\n"
+
+    .line 17
+    .line 18
+    invoke-direct {v0, v3, v1, v2}, Lf42;-><init>(Ljava/lang/String;Ljava/lang/String;Z)V
+
+    .line 19
+    .line 20
+    .line 21
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Z)V
     .locals 2
 
     .line 1
@@ -57,73 +72,78 @@
     .line 2
     .line 3
     .line 4
-    new-instance v0, Landroid/net/Uri$Builder;
+    const-string v0, "[\r\n]*"
 
     .line 5
     .line 6
-    invoke-direct {v0}, Landroid/net/Uri$Builder;-><init>()V
+    invoke-virtual {p1, v0}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
 
     .line 7
     .line 8
     .line 9
-    const-string v1, "systemfont"
+    move-result v0
 
     .line 10
+    const/4 v1, 0x0
+
     .line 11
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->scheme(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    if-eqz v0, :cond_1
 
     .line 12
     .line 13
-    .line 14
-    move-result-object v0
+    const-string v0, "[ \t]*"
 
+    .line 14
     .line 15
-    invoke-virtual {v0, p1}, Landroid/net/Uri$Builder;->authority(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    invoke-virtual {p2, v0}, Ljava/lang/String;->matches(Ljava/lang/String;)Z
 
     .line 16
     .line 17
     .line 18
-    move-result-object p1
+    move-result v0
 
     .line 19
-    invoke-virtual {p1}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+    if-eqz v0, :cond_0
 
     .line 20
     .line 21
-    .line 22
-    move-result-object p1
+    iput-object p1, p0, Lf42;->a:Ljava/lang/String;
 
+    .line 22
     .line 23
-    iput-object p1, p0, Lf42;->a:Landroid/net/Uri;
+    iput-object p2, p0, Lf42;->b:Ljava/lang/String;
 
     .line 24
     .line 25
-    const/4 p1, 0x0
+    iput-boolean p3, p0, Lf42;->c:Z
 
     .line 26
-    iput p1, p0, Lf42;->b:I
-
     .line 27
+    return-void
+
     .line 28
-    const/16 v0, 0x190
+    :cond_0
+    const-string p0, "Only combinations of spaces and tabs are allowed in indent."
 
     .line 29
     .line 30
-    iput v0, p0, Lf42;->c:I
+    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
 
     .line 31
     .line 32
-    iput-boolean p1, p0, Lf42;->d:Z
-
     .line 33
+    throw v1
+
     .line 34
-    iput-object p2, p0, Lf42;->e:Ljava/lang/String;
+    :cond_1
+    const-string p0, "Only combinations of \\n and \\r are allowed in newline."
 
     .line 35
     .line 36
-    iput p1, p0, Lf42;->f:I
+    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
 
     .line 37
     .line 38
-    return-void
+    .line 39
+    throw v1
 .end method

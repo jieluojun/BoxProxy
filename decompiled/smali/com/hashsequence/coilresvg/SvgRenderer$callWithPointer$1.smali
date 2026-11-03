@@ -1,11 +1,11 @@
 .class public final synthetic Lcom/hashsequence/coilresvg/SvgRenderer$callWithPointer$1;
-.super Lct4;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lyt4;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/hashsequence/coilresvg/SvgRenderer;->callWithPointer$coil_resvg_release(Lr52;)Ljava/lang/Object;
+    value = Lcom/hashsequence/coilresvg/SvgRenderer;->callWithPointer$coil_resvg_release(Lo52;)Ljava/lang/Object;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -26,7 +26,7 @@
     const/4 v5, 0x0
 
     .line 4
-    const-class v2, Lvq0;
+    const-class v2, Lqq0;
 
     .line 5
     .line 6
@@ -40,7 +40,7 @@
     move-object v1, p1
 
     .line 10
-    invoke-direct/range {v0 .. v5}, Ldt4;-><init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    invoke-direct/range {v0 .. v5}, Lzt4;-><init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
     .line 11
     .line 12
@@ -54,15 +54,15 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lih0;->receiver:Ljava/lang/Object;
+    iget-object p0, p0, Ldh0;->receiver:Ljava/lang/Object;
 
     .line 2
     .line 3
-    check-cast p0, Lvq0;
+    check-cast p0, Lqq0;
 
     .line 4
     .line 5
-    invoke-virtual {p0}, Lvq0;->c()Ljava/lang/String;
+    invoke-virtual {p0}, Lqq0;->c()Ljava/lang/String;
 
     .line 6
     .line 7

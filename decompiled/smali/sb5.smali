@@ -1,40 +1,89 @@
 .class public abstract Lsb5;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lrb5;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lc62;
 
 
-# static fields
-.field public static final a:Lew6;
+# instance fields
+.field public final j:B
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(ILy71;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lew6;
+    invoke-direct {p0, p2}, Lrb5;-><init>(Ly71;)V
 
     .line 2
     .line 3
-    sget-object v1, Lvp1;->c:Lyd1;
-
     .line 4
+    iput-byte p1, p0, Lsb5;->j:B
+
     .line 5
-    const/4 v2, 0x0
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final getArity()I
+    .locals 0
+
+    .line 1
+    iget-byte p0, p0, Lsb5;->j:B
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, Lbz;->getCompletion()Ly71;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    if-nez v0, :cond_0
 
     .line 6
-    const/16 v3, 0xf
-
     .line 7
-    .line 8
-    invoke-direct {v0, v3, v2, v1}, Lew6;-><init>(IILtp1;)V
+    sget-object v0, La95;->a:Lb95;
 
+    .line 8
     .line 9
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 10
     .line 11
-    sput-object v0, Lsb5;->a:Lew6;
-
     .line 12
+    invoke-static {p0}, Lb95;->a(Lc62;)Ljava/lang/String;
+
     .line 13
-    return-void
+    .line 14
+    .line 15
+    move-result-object p0
+
+    .line 16
+    return-object p0
+
+    .line 17
+    :cond_0
+    invoke-super {p0}, Lbz;->toString()Ljava/lang/String;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object p0
+
+    .line 21
+    return-object p0
 .end method

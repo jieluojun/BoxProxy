@@ -1,293 +1,118 @@
-.class public abstract Ljs2;
-.super Lwn3;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lez2;
+.class public final enum Ljs2;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic x:B
+# static fields
+.field public static final enum j:Ljs2;
+
+.field public static final enum k:Ljs2;
+
+.field public static final synthetic l:[Ljs2;
 
 
 # direct methods
-.method public synthetic constructor <init>(B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    iput-byte p1, p0, Ljs2;->x:B
+    new-instance v0, Ljs2;
 
     .line 2
     .line 3
-    invoke-direct {p0}, Lwn3;-><init>()V
+    const-string v1, "Min"
 
     .line 4
     .line 5
+    const/4 v2, 0x0
+
     .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public abstract E1(Lnh3;J)J
-.end method
-
-.method public abstract F1()Z
-.end method
-
-.method public W(Lzd3;Lnh3;I)I
-    .locals 0
-
-    .line 1
-    iget-byte p0, p0, Ljs2;->x:B
-
-    .line 2
-    .line 3
-    packed-switch p0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    invoke-interface {p2, p3}, Lnh3;->j0(I)I
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
     .line 9
-    move-result p0
-
-    .line 10
-    return p0
-
-    .line 11
-    :pswitch_0
-    invoke-interface {p2, p3}, Lnh3;->j0(I)I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    return p0
-
-    .line 16
-    nop
-
-    .line 17
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public h(Lvh3;Lnh3;J)Lth3;
-    .locals 2
-
-    .line 1
-    invoke-virtual {p0, p2, p3, p4}, Ljs2;->E1(Lnh3;J)J
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-wide v0
-
-    .line 5
-    invoke-virtual {p0}, Ljs2;->F1()Z
-
-    .line 6
-    .line 7
-    .line 8
-    move-result p0
-
-    .line 9
-    if-eqz p0, :cond_0
+    sput-object v0, Ljs2;->j:Ljs2;
 
     .line 10
     .line 11
-    invoke-static {p3, p4, v0, v1}, Lx51;->e(JJ)J
+    new-instance v1, Ljs2;
 
     .line 12
     .line 13
-    .line 14
-    move-result-wide v0
+    const-string v2, "Max"
 
+    .line 14
     .line 15
-    :cond_0
-    invoke-interface {p2, v0, v1}, Lnh3;->e(J)Lcn4;
+    const/4 v3, 0x1
 
     .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 17
     .line 18
-    move-result-object p0
-
     .line 19
-    iget p2, p0, Lcn4;->j:I
+    sput-object v1, Ljs2;->k:Ljs2;
 
     .line 20
     .line 21
-    iget p3, p0, Lcn4;->k:I
+    filled-new-array {v0, v1}, [Ljs2;
 
     .line 22
     .line 23
-    new-instance p4, Lw2;
-
     .line 24
+    move-result-object v0
+
     .line 25
-    const/16 v0, 0xe
+    sput-object v0, Ljs2;->l:[Ljs2;
 
     .line 26
     .line 27
-    invoke-direct {p4, p0, v0}, Lw2;-><init>(Lcn4;B)V
+    return-void
+.end method
 
-    .line 28
-    .line 29
-    .line 30
-    sget-object p0, Ltt1;->j:Ltt1;
+.method public static valueOf(Ljava/lang/String;)Ljs2;
+    .locals 1
 
-    .line 31
-    .line 32
-    invoke-interface {p1, p2, p3, p0, p4}, Lvh3;->O0(IILjava/util/Map;Lr52;)Lth3;
+    .line 1
+    const-class v0, Ljs2;
 
-    .line 33
-    .line 34
-    .line 35
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
     move-result-object p0
 
-    .line 36
+    .line 7
+    check-cast p0, Ljs2;
+
+    .line 8
+    .line 9
     return-object p0
 .end method
 
-.method public l(Lzd3;Lnh3;I)I
-    .locals 0
+.method public static values()[Ljs2;
+    .locals 1
 
     .line 1
-    iget-byte p0, p0, Ljs2;->x:B
+    sget-object v0, Ljs2;->l:[Ljs2;
 
     .line 2
     .line 3
-    packed-switch p0, :pswitch_data_0
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     .line 4
     .line 5
     .line 6
-    invoke-interface {p2, p3}, Lnh3;->i0(I)I
+    move-result-object v0
 
     .line 7
+    check-cast v0, [Ljs2;
+
     .line 8
     .line 9
-    move-result p0
-
-    .line 10
-    return p0
-
-    .line 11
-    :pswitch_0
-    invoke-interface {p2, p3}, Lnh3;->i0(I)I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    return p0
-
-    .line 16
-    nop
-
-    .line 17
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public v0(Lzd3;Lnh3;I)I
-    .locals 0
-
-    .line 1
-    iget-byte p0, p0, Ljs2;->x:B
-
-    .line 2
-    .line 3
-    packed-switch p0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    invoke-interface {p2, p3}, Lnh3;->W(I)I
-
-    .line 7
-    .line 8
-    .line 9
-    move-result p0
-
-    .line 10
-    return p0
-
-    .line 11
-    :pswitch_0
-    invoke-interface {p2, p3}, Lnh3;->W(I)I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    return p0
-
-    .line 16
-    nop
-
-    .line 17
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public z(Lzd3;Lnh3;I)I
-    .locals 0
-
-    .line 1
-    iget-byte p0, p0, Ljs2;->x:B
-
-    .line 2
-    .line 3
-    packed-switch p0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    invoke-interface {p2, p3}, Lnh3;->f(I)I
-
-    .line 7
-    .line 8
-    .line 9
-    move-result p0
-
-    .line 10
-    return p0
-
-    .line 11
-    :pswitch_0
-    invoke-interface {p2, p3}, Lnh3;->f(I)I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    return p0
-
-    .line 16
-    nop
-
-    .line 17
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

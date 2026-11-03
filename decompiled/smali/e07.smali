@@ -1,135 +1,100 @@
 .class public final Le07;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lsw2;
-
-
-# static fields
-.field public static final b:Le07;
+.super Lqs4;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic a:Lk84;
+.field public a:[B
 
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Le07;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Le07;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    sput-object v0, Le07;->b:Le07;
-
-    .line 7
-    .line 8
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 3
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    new-instance v0, Lk84;
-
-    .line 5
-    .line 6
-    const-string v1, "kotlin.Unit"
-
-    .line 7
-    .line 8
-    sget-object v2, Ld07;->a:Ld07;
-
-    .line 9
-    .line 10
-    invoke-direct {v0, v1, v2}, Lk84;-><init>(Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 11
-    .line 12
-    .line 13
-    iput-object v0, p0, Le07;->a:Lk84;
-
-    .line 14
-    .line 15
-    return-void
-.end method
+.field public b:I
 
 
 # virtual methods
-.method public final b(Lae1;)Ljava/lang/Object;
-    .locals 0
+.method public final a()Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    iget-object p0, p0, Le07;->a:Lk84;
+    iget-object v0, p0, Le07;->a:[B
 
     .line 2
     .line 3
-    invoke-virtual {p0, p1}, Lk84;->b(Lae1;)Ljava/lang/Object;
+    iget p0, p0, Le07;->b:I
 
     .line 4
     .line 5
-    .line 6
-    sget-object p0, Ld07;->a:Ld07;
+    invoke-static {v0, p0}, Ljava/util/Arrays;->copyOf([BI)[B
 
+    .line 6
     .line 7
     .line 8
-    return-object p0
-.end method
-
-.method public final c()Lov5;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Le07;->a:Lk84;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lk84;->c()Lov5;
-
-    .line 4
-    .line 5
-    .line 6
     move-result-object p0
 
-    .line 7
-    return-object p0
+    .line 9
+    new-instance v0, Ld07;
+
+    .line 10
+    .line 11
+    invoke-direct {v0, p0}, Ld07;-><init>([B)V
+
+    .line 12
+    .line 13
+    .line 14
+    return-object v0
 .end method
 
-.method public final d(Lm96;Ljava/lang/Object;)V
-    .locals 0
+.method public final b(I)V
+    .locals 2
 
     .line 1
-    check-cast p2, Ld07;
+    iget-object v0, p0, Le07;->a:[B
 
     .line 2
     .line 3
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    array-length v1, v0
 
     .line 4
+    if-ge v1, p1, :cond_1
+
     .line 5
     .line 6
-    iget-object p0, p0, Le07;->a:Lk84;
+    array-length v1, v0
 
     .line 7
-    .line 8
-    invoke-virtual {p0, p1, p2}, Lk84;->d(Lm96;Ljava/lang/Object;)V
+    mul-int/lit8 v1, v1, 0x2
 
+    .line 8
     .line 9
+    if-ge p1, v1, :cond_0
+
     .line 10
     .line 11
+    move p1, v1
+
+    .line 12
+    :cond_0
+    invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([BI)[B
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p1
+
+    .line 16
+    iput-object p1, p0, Le07;->a:[B
+
+    .line 17
+    .line 18
+    :cond_1
     return-void
+.end method
+
+.method public final d()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Le07;->b:I
+
+    .line 2
+    .line 3
+    return p0
 .end method

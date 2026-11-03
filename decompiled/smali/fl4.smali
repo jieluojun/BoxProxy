@@ -1,445 +1,323 @@
 .class public final Lfl4;
-.super Lwl4;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Landroid/os/Parcelable$ClassLoaderCreator;
 
 
 # instance fields
-.field public final c:F
-
-.field public final d:F
-
-.field public final e:F
-
-.field public final f:F
-
-.field public final g:F
-
-.field public final h:F
+.field public final synthetic a:B
 
 
 # direct methods
-.method public constructor <init>(FFFFFF)V
-    .locals 1
+.method public synthetic constructor <init>(B)V
+    .locals 0
 
     .line 1
-    const/4 v0, 0x2
+    iput-byte p1, p0, Lfl4;->a:B
 
     .line 2
-    invoke-direct {p0, v0}, Lwl4;-><init>(I)V
-
     .line 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 4
     .line 5
-    iput p1, p0, Lfl4;->c:F
+    .line 6
+    return-void
+.end method
+
+.method public static a(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Lgl4;
+    .locals 2
+
+    .line 1
+    if-nez p1, :cond_0
+
+    .line 2
+    .line 3
+    const-class p1, Lfl4;
+
+    .line 4
+    .line 5
+    invoke-virtual {p1}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
 
     .line 6
     .line 7
-    iput p2, p0, Lfl4;->d:F
-
     .line 8
+    move-result-object p1
+
     .line 9
-    iput p3, p0, Lfl4;->e:F
+    :cond_0
+    invoke-virtual {p0, p1}, Landroid/os/Parcel;->readValue(Ljava/lang/ClassLoader;)Ljava/lang/Object;
 
     .line 10
     .line 11
-    iput p4, p0, Lfl4;->f:F
-
     .line 12
+    move-result-object p1
+
     .line 13
-    iput p5, p0, Lfl4;->g:F
+    invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 
     .line 14
     .line 15
-    iput p6, p0, Lfl4;->h:F
-
     .line 16
+    move-result p0
+
     .line 17
-    return-void
+    new-instance v0, Lgl4;
+
+    .line 18
+    .line 19
+    if-eqz p0, :cond_3
+
+    .line 20
+    .line 21
+    const/4 v1, 0x1
+
+    .line 22
+    if-eq p0, v1, :cond_2
+
+    .line 23
+    .line 24
+    const/4 v1, 0x2
+
+    .line 25
+    if-ne p0, v1, :cond_1
+
+    .line 26
+    .line 27
+    sget-object p0, Liv1;->M:Liv1;
+
+    .line 28
+    .line 29
+    goto :goto_0
+
+    .line 30
+    :cond_1
+    const-string p1, "Unsupported MutableState policy "
+
+    .line 31
+    .line 32
+    const-string v0, " was restored"
+
+    .line 33
+    .line 34
+    invoke-static {p0, p1, v0}, Lpb1;->m(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 35
+    .line 36
+    .line 37
+    move-result-object p0
+
+    .line 38
+    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
+
+    .line 39
+    .line 40
+    .line 41
+    const/4 p0, 0x0
+
+    .line 42
+    return-object p0
+
+    .line 43
+    :cond_2
+    sget-object p0, Lsc5;->F:Lsc5;
+
+    .line 44
+    .line 45
+    goto :goto_0
+
+    .line 46
+    :cond_3
+    sget-object p0, Liv1;->z:Liv1;
+
+    .line 47
+    .line 48
+    :goto_0
+    invoke-direct {v0, p1, p0}, Lgl4;-><init>(Ljava/lang/Object;Lx66;)V
+
+    .line 49
+    .line 50
+    .line 51
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
+    .locals 1
 
-    .line 1
-    const/4 v0, 0x1
+    iget-byte p0, p0, Lfl4;->a:B
 
-    .line 2
-    if-ne p0, p1, :cond_0
+    const/4 v0, 0x0
 
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of v1, p1, Lfl4;
-
-    .line 6
-    .line 7
-    const/4 v2, 0x0
-
-    .line 8
-    if-nez v1, :cond_1
-
-    .line 9
-    .line 10
-    return v2
-
-    .line 11
-    :cond_1
-    check-cast p1, Lfl4;
-
-    .line 12
-    .line 13
-    iget v1, p0, Lfl4;->c:F
-
-    .line 14
-    .line 15
-    iget v3, p1, Lfl4;->c:F
-
-    .line 16
-    .line 17
-    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
-
-    .line 18
-    .line 19
-    .line 20
-    move-result v1
-
-    .line 21
-    if-eqz v1, :cond_2
-
-    .line 22
-    .line 23
-    return v2
-
-    .line 24
-    :cond_2
-    iget v1, p0, Lfl4;->d:F
-
-    .line 25
-    .line 26
-    iget v3, p1, Lfl4;->d:F
-
-    .line 27
-    .line 28
-    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
-
-    .line 29
-    .line 30
-    .line 31
-    move-result v1
-
-    .line 32
-    if-eqz v1, :cond_3
+    packed-switch p0, :pswitch_data_0
 
     .line 33
-    .line 34
-    return v2
+    new-instance p0, Ldu6;
 
-    .line 35
-    :cond_3
-    iget v1, p0, Lfl4;->e:F
+    invoke-direct {p0, p1, v0}, Ldu6;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
 
-    .line 36
-    .line 37
-    iget v3, p1, Lfl4;->e:F
-
-    .line 38
-    .line 39
-    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
-
-    .line 40
-    .line 41
-    .line 42
-    move-result v1
-
-    .line 43
-    if-eqz v1, :cond_4
-
-    .line 44
-    .line 45
-    return v2
-
-    .line 46
-    :cond_4
-    iget v1, p0, Lfl4;->f:F
-
-    .line 47
-    .line 48
-    iget v3, p1, Lfl4;->f:F
-
-    .line 49
-    .line 50
-    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
-
-    .line 51
-    .line 52
-    .line 53
-    move-result v1
-
-    .line 54
-    if-eqz v1, :cond_5
-
-    .line 55
-    .line 56
-    return v2
-
-    .line 57
-    :cond_5
-    iget v1, p0, Lfl4;->g:F
-
-    .line 58
-    .line 59
-    iget v3, p1, Lfl4;->g:F
-
-    .line 60
-    .line 61
-    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
-
-    .line 62
-    .line 63
-    .line 64
-    move-result v1
-
-    .line 65
-    if-eqz v1, :cond_6
-
-    .line 66
-    .line 67
-    return v2
-
-    .line 68
-    :cond_6
-    iget p0, p0, Lfl4;->h:F
-
-    .line 69
-    .line 70
-    iget p1, p1, Lfl4;->h:F
-
-    .line 71
-    .line 72
-    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
-
-    .line 73
-    .line 74
-    .line 75
-    move-result p0
-
-    .line 76
-    if-eqz p0, :cond_7
-
-    .line 77
-    .line 78
-    return v2
-
-    .line 79
-    :cond_7
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    .line 1
-    iget v0, p0, Lfl4;->c:F
-
-    .line 2
-    .line 3
-    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    const/16 v1, 0x1f
-
-    .line 8
-    .line 9
-    mul-int/2addr v0, v1
-
-    .line 10
-    iget v2, p0, Lfl4;->d:F
-
-    .line 11
-    .line 12
-    invoke-static {v2, v0, v1}, Lxu1;->c(FII)I
-
-    .line 13
-    .line 14
-    .line 15
-    move-result v0
-
-    .line 16
-    iget v2, p0, Lfl4;->e:F
-
-    .line 17
-    .line 18
-    invoke-static {v2, v0, v1}, Lxu1;->c(FII)I
-
-    .line 19
-    .line 20
-    .line 21
-    move-result v0
-
-    .line 22
-    iget v2, p0, Lfl4;->f:F
-
-    .line 23
-    .line 24
-    invoke-static {v2, v0, v1}, Lxu1;->c(FII)I
-
-    .line 25
-    .line 26
-    .line 27
-    move-result v0
-
-    .line 28
-    iget v2, p0, Lfl4;->g:F
-
-    .line 29
-    .line 30
-    invoke-static {v2, v0, v1}, Lxu1;->c(FII)I
-
-    .line 31
-    .line 32
-    .line 33
-    move-result v0
+    return-object p0
 
     .line 34
-    iget p0, p0, Lfl4;->h:F
+    :pswitch_0
+    invoke-virtual {p1, v0}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
 
-    .line 35
-    .line 36
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 37
-    .line 38
-    .line 39
-    move-result p0
-
-    .line 40
-    add-int/2addr p0, v0
-
-    .line 41
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 5
-
-    .line 1
-    const-string v0, ", y1="
-
-    .line 2
-    .line 3
-    const-string v1, ", x2="
-
-    .line 4
-    .line 5
-    const-string v2, "CurveTo(x1="
-
-    .line 6
-    .line 7
-    iget v3, p0, Lfl4;->c:F
-
-    .line 8
-    .line 9
-    iget v4, p0, Lfl4;->d:F
-
-    .line 10
-    .line 11
-    invoke-static {v2, v3, v0, v4, v1}, Lxu1;->u(Ljava/lang/String;FLjava/lang/String;FLjava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object v0
-
-    .line 15
-    iget v1, p0, Lfl4;->e:F
-
-    .line 16
-    .line 17
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 18
-    .line 19
-    .line 20
-    const-string v1, ", y2="
-
-    .line 21
-    .line 22
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 23
-    .line 24
-    .line 25
-    iget v1, p0, Lfl4;->f:F
-
-    .line 26
-    .line 27
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 28
-    .line 29
-    .line 30
-    const-string v1, ", x3="
-
-    .line 31
-    .line 32
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 33
-    .line 34
-    .line 35
-    iget v1, p0, Lfl4;->g:F
-
-    .line 36
-    .line 37
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 38
-    .line 39
-    .line 40
-    const-string v1, ", y3="
-
-    .line 41
-    .line 42
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 43
-    .line 44
-    .line 45
-    iget p0, p0, Lfl4;->h:F
-
-    .line 46
-    .line 47
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 48
-    .line 49
-    .line 50
-    const-string p0, ")"
-
-    .line 51
-    .line 52
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 53
-    .line 54
-    .line 55
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 56
-    .line 57
-    .line 58
     move-result-object p0
 
-    .line 59
+    if-nez p0, :cond_0
+
+    .line 35
+    sget-object v0, Lb2;->k:La2;
+
+    goto :goto_0
+
+    .line 36
+    :cond_0
+    const-string p0, "superState must be null"
+
+    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
+
+    :goto_0
+    return-object v0
+
+    .line 37
+    :pswitch_1
+    invoke-static {p1, v0}, Lfl4;->a(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Lgl4;
+
+    move-result-object p0
+
     return-object p0
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final createFromParcel(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    iget-byte p0, p0, Lfl4;->a:B
+
+    .line 2
+    .line 3
+    packed-switch p0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    new-instance p0, Ldu6;
+
+    .line 7
+    .line 8
+    invoke-direct {p0, p1, p2}, Ldu6;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+
+    .line 9
+    .line 10
+    .line 11
+    return-object p0
+
+    .line 12
+    :pswitch_0
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->readParcelable(Ljava/lang/ClassLoader;)Landroid/os/Parcelable;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p0
+
+    .line 16
+    if-nez p0, :cond_0
+
+    .line 17
+    .line 18
+    sget-object p0, Lb2;->k:La2;
+
+    .line 19
+    .line 20
+    goto :goto_0
+
+    .line 21
+    :cond_0
+    const-string p0, "superState must be null"
+
+    .line 22
+    .line 23
+    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
+
+    .line 24
+    .line 25
+    .line 26
+    const/4 p0, 0x0
+
+    .line 27
+    :goto_0
+    return-object p0
+
+    .line 28
+    :pswitch_1
+    invoke-static {p1, p2}, Lfl4;->a(Landroid/os/Parcel;Ljava/lang/ClassLoader;)Lgl4;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    return-object p0
+
+    .line 33
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final newArray(I)[Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    iget-byte p0, p0, Lfl4;->a:B
+
+    .line 2
+    .line 3
+    packed-switch p0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    new-array p0, p1, [Ldu6;
+
+    .line 7
+    .line 8
+    return-object p0
+
+    .line 9
+    :pswitch_0
+    new-array p0, p1, [Lb2;
+
+    .line 10
+    .line 11
+    return-object p0
+
+    .line 12
+    :pswitch_1
+    new-array p0, p1, [Lgl4;
+
+    .line 13
+    .line 14
+    return-object p0
+
+    .line 15
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

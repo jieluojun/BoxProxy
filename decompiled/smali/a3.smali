@@ -1,74 +1,154 @@
-.class public final La3;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public abstract La3;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public j:Ldn5;
+.field public final j:Lc3;
 
-.field public synthetic k:Ljava/lang/Object;
-
-.field public final synthetic l:Lu02;
-
-.field public m:I
+.field public final synthetic k:Ld3;
 
 
 # direct methods
-.method public constructor <init>(Lu02;Lc81;)V
+.method public constructor <init>(Ld3;Lc3;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, La3;->l:Lu02;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
-
     .line 4
+    iput-object p1, p0, La3;->k:Ld3;
+
     .line 5
     .line 6
+    iput-object p2, p0, La3;->j:Lc3;
+
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public abstract a()Ljava/lang/Object;
+.end method
+
+.method public b()Z
+    .locals 0
 
     .line 1
-    iput-object p1, p0, La3;->k:Ljava/lang/Object;
+    iget-object p0, p0, La3;->k:Ld3;
 
     .line 2
     .line 3
-    iget p1, p0, La3;->m:I
+    iget-object p0, p0, Ld3;->j:Lqt0;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    if-eqz p0, :cond_0
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    const/4 p0, 0x1
 
     .line 8
-    iput p1, p0, La3;->m:I
+    return p0
 
     .line 9
+    :cond_0
+    const/4 p0, 0x0
+
     .line 10
-    iget-object p1, p0, La3;->l:Lu02;
+    return p0
+.end method
+
+.method public final run()V
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, La3;->b()Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    if-eqz v0, :cond_0
+
+    .line 6
+    .line 7
+    invoke-virtual {p0}, La3;->a()Ljava/lang/Object;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v0
 
     .line 11
-    .line 12
-    const/4 v0, 0x0
+    iget-object p0, p0, La3;->j:Lc3;
 
+    .line 12
     .line 13
-    invoke-virtual {p1, v0, p0}, Lu02;->a(Lj02;Lc81;)Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Lc3;->a(Ljava/lang/Object;)V
 
     .line 14
     .line 15
     .line 16
-    move-result-object p0
+    return-void
 
     .line 17
-    return-object p0
+    :cond_0
+    iget-object p0, p0, La3;->j:Lc3;
+
+    .line 18
+    .line 19
+    monitor-enter p0
+
+    .line 20
+    :try_start_0
+    iget v0, p0, Lc3;->e:I
+
+    .line 21
+    .line 22
+    add-int/lit8 v0, v0, 0x1
+
+    .line 23
+    .line 24
+    iput v0, p0, Lc3;->e:I
+
+    .line 25
+    .line 26
+    const/4 v0, 0x0
+
+    .line 27
+    invoke-virtual {p0, v0}, Lc3;->a(Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 28
+    .line 29
+    .line 30
+    monitor-exit p0
+
+    .line 31
+    return-void
+
+    .line 32
+    :catchall_0
+    move-exception v0
+
+    .line 33
+    :try_start_1
+    monitor-exit p0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 34
+    throw v0
 .end method

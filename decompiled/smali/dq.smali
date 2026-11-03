@@ -1,70 +1,167 @@
 .class public final Ldq;
-.super Landroid/view/View$BaseSavedState;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Ldq;",
-            ">;"
-        }
-    .end annotation
-.end field
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public j:Z
+.field public final a:Landroid/graphics/Typeface;
+
+.field public final b:Ljava/lang/String;
+
+.field public final c:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Landroid/graphics/Typeface;Ljava/lang/String;I)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lm6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/4 v1, 0x1
-
     .line 4
-    invoke-direct {v0, v1}, Lm6;-><init>(B)V
+    iput-object p1, p0, Ldq;->a:Landroid/graphics/Typeface;
 
     .line 5
     .line 6
-    .line 7
-    sput-object v0, Ldq;->CREATOR:Landroid/os/Parcelable$Creator;
+    iput-object p2, p0, Ldq;->b:Ljava/lang/String;
 
+    .line 7
     .line 8
+    iput p3, p0, Ldq;->c:I
+
     .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
     .line 1
-    invoke-super {p0, p1, p2}, Landroid/view/View$BaseSavedState;->writeToParcel(Landroid/os/Parcel;I)V
+    instance-of v0, p1, Ldq;
 
     .line 2
     .line 3
+    const/4 v1, 0x0
+
     .line 4
-    iget-boolean p0, p0, Ldq;->j:Z
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
-    int-to-byte p0, p0
+    return v1
 
     .line 7
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeByte(B)V
+    :cond_0
+    check-cast p1, Ldq;
 
     .line 8
     .line 9
+    iget v0, p0, Ldq;->c:I
+
     .line 10
-    return-void
+    .line 11
+    iget v2, p1, Ldq;->c:I
+
+    .line 12
+    .line 13
+    if-ne v0, v2, :cond_1
+
+    .line 14
+    .line 15
+    iget-object v0, p0, Ldq;->a:Landroid/graphics/Typeface;
+
+    .line 16
+    .line 17
+    iget-object v2, p1, Ldq;->a:Landroid/graphics/Typeface;
+
+    .line 18
+    .line 19
+    invoke-static {v0, v2}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 20
+    .line 21
+    .line 22
+    move-result v0
+
+    .line 23
+    if-eqz v0, :cond_1
+
+    .line 24
+    .line 25
+    iget-object p0, p0, Ldq;->b:Ljava/lang/String;
+
+    .line 26
+    .line 27
+    iget-object p1, p1, Ldq;->b:Ljava/lang/String;
+
+    .line 28
+    .line 29
+    invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 30
+    .line 31
+    .line 32
+    move-result p0
+
+    .line 33
+    if-eqz p0, :cond_1
+
+    .line 34
+    .line 35
+    const/4 p0, 0x1
+
+    .line 36
+    return p0
+
+    .line 37
+    :cond_1
+    return v1
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    .line 1
+    iget v0, p0, Ldq;->c:I
+
+    .line 2
+    .line 3
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    iget-object v1, p0, Ldq;->a:Landroid/graphics/Typeface;
+
+    .line 8
+    .line 9
+    iget-object p0, p0, Ldq;->b:Ljava/lang/String;
+
+    .line 10
+    .line 11
+    filled-new-array {v1, p0, v0}, [Ljava/lang/Object;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    return p0
 .end method

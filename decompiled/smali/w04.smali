@@ -1,141 +1,207 @@
 .class public final Lw04;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Lx04;
+
+# static fields
+.field public static final b:Lw04;
 
 
 # instance fields
-.field public final b:Ljava/util/List;
+.field public final a:Ljava/util/Map;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/util/LinkedHashMap;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    new-instance v1, Lw04;
+
+    .line 7
+    .line 8
+    invoke-static {v0}, Leg3;->W(Ljava/util/Map;)Ljava/util/Map;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object v0
+
+    .line 12
+    invoke-direct {v1, v0}, Lw04;-><init>(Ljava/util/Map;)V
+
+    .line 13
+    .line 14
+    .line 15
+    sput-object v1, Lw04;->b:Lw04;
+
+    .line 16
+    .line 17
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/util/Map;)V
     .locals 0
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lw04;->a:Ljava/util/Map;
 
     .line 5
     .line 6
-    .line 7
-    iput-object p1, p0, Lw04;->b:Ljava/util/List;
-
-    .line 8
-    .line 9
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lorg/json/JSONObject;
-    .locals 1
+.method public final a()Ljava/lang/String;
+    .locals 2
 
     .line 1
-    sget-object v0, Lt04;->a:Lt04;
+    sget-object v0, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     .line 2
     .line 3
-    sget-object v0, Lx04;->a:Lt04;
+    const-string v1, "Content-Type"
 
     .line 4
     .line 5
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v1, v0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     .line 6
     .line 7
     .line 8
-    const-string v0, "or"
+    move-result-object v0
 
     .line 9
-    .line 10
-    iget-object p0, p0, Lw04;->b:Ljava/util/List;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 10
     .line 11
     .line 12
-    invoke-static {v0, p0}, Lt04;->a(Ljava/lang/String;Ljava/util/List;)Lorg/json/JSONObject;
+    iget-object p0, p0, Lw04;->a:Ljava/util/Map;
 
     .line 13
     .line 14
+    invoke-interface {p0, v0}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 15
+    .line 16
+    .line 17
     move-result-object p0
 
-    .line 16
+    .line 18
+    check-cast p0, Ljava/util/List;
+
+    .line 19
+    .line 20
+    if-eqz p0, :cond_0
+
+    .line 21
+    .line 22
+    invoke-static {p0}, Lau0;->O0(Ljava/util/List;)Ljava/lang/Object;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object p0
+
+    .line 26
+    check-cast p0, Ljava/lang/String;
+
+    .line 27
+    .line 28
+    return-object p0
+
+    .line 29
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 30
     return-object p0
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+    .locals 1
 
     .line 1
-    const/4 v0, 0x1
-
-    .line 2
     if-ne p0, p1, :cond_0
 
+    .line 2
     .line 3
+    goto :goto_1
+
     .line 4
-    return v0
+    :cond_0
+    instance-of v0, p1, Lw04;
 
     .line 5
-    :cond_0
-    instance-of v1, p1, Lw04;
-
     .line 6
-    .line 7
-    const/4 v2, 0x0
+    if-nez v0, :cond_1
 
+    .line 7
     .line 8
-    if-nez v1, :cond_1
+    goto :goto_0
 
     .line 9
-    .line 10
-    return v2
-
-    .line 11
     :cond_1
     check-cast p1, Lw04;
 
+    .line 10
+    .line 11
+    iget-object p0, p0, Lw04;->a:Ljava/util/Map;
+
     .line 12
     .line 13
-    iget-object p0, p0, Lw04;->b:Ljava/util/List;
+    iget-object p1, p1, Lw04;->a:Ljava/util/Map;
 
     .line 14
     .line 15
-    iget-object p1, p1, Lw04;->b:Ljava/util/List;
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 16
     .line 17
-    invoke-static {p0, p1}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
     .line 18
-    .line 19
-    .line 20
     move-result p0
 
-    .line 21
+    .line 19
     if-nez p0, :cond_2
 
+    .line 20
+    .line 21
+    :goto_0
+    const/4 p0, 0x0
+
     .line 22
+    return p0
+
     .line 23
-    return v2
+    :cond_2
+    :goto_1
+    const/4 p0, 0x1
 
     .line 24
-    :cond_2
-    return v0
+    return p0
 .end method
 
 .method public final hashCode()I
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lw04;->b:Ljava/util/List;
+    iget-object p0, p0, Lw04;->a:Ljava/util/Map;
 
     .line 2
     .line 3
@@ -158,7 +224,7 @@
 
     .line 2
     .line 3
-    const-string v1, "Or(children="
+    const-string v1, "NetworkHeaders(data="
 
     .line 4
     .line 5
@@ -167,7 +233,7 @@
     .line 6
     .line 7
     .line 8
-    iget-object p0, p0, Lw04;->b:Ljava/util/List;
+    iget-object p0, p0, Lw04;->a:Ljava/util/Map;
 
     .line 9
     .line 10

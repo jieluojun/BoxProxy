@@ -1,56 +1,97 @@
-.class public interface abstract Llh;
+.class public final Llh;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# virtual methods
-.method public abstract a()Z
-.end method
+# instance fields
+.field public final a:Loh;
 
-.method public abstract b(J)Ljava/lang/Object;
-.end method
+.field public final b:Ljh;
 
-.method public abstract c()J
-.end method
 
-.method public abstract d()Lhw6;
-.end method
-
-.method public abstract e()Ljava/lang/Object;
-.end method
-
-.method public abstract f(J)Lwh;
-.end method
-
-.method public g(J)Z
-    .locals 2
+# direct methods
+.method public constructor <init>(Loh;Ljh;)V
+    .locals 0
 
     .line 1
-    invoke-interface {p0}, Llh;->c()J
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    move-result-wide v0
+    iput-object p1, p0, Llh;->a:Loh;
 
     .line 5
-    cmp-long p0, p1, v0
+    .line 6
+    iput-object p2, p0, Llh;->b:Ljh;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "AnimationResult(endReason="
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 6
     .line 7
-    if-ltz p0, :cond_0
-
     .line 8
-    .line 9
-    const/4 p0, 0x1
+    iget-object v1, p0, Llh;->b:Ljh;
 
+    .line 9
     .line 10
-    return p0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 11
-    :cond_0
-    const/4 p0, 0x0
-
     .line 12
-    return p0
+    .line 13
+    const-string v1, ", endState="
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    iget-object p0, p0, Llh;->a:Loh;
+
+    .line 19
+    .line 20
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 21
+    .line 22
+    .line 23
+    const-string p0, ")"
+
+    .line 24
+    .line 25
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 26
+    .line 27
+    .line 28
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    return-object p0
 .end method

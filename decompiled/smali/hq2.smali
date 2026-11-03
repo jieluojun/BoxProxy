@@ -1,6 +1,6 @@
 .class public final Lhq2;
-.super Li92;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lj92;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
@@ -12,7 +12,7 @@
     .locals 1
 
     .line 1
-    invoke-direct {p0}, Li92;-><init>()V
+    invoke-direct {p0}, Lj92;-><init>()V
 
     .line 2
     .line 3
@@ -27,11 +27,11 @@
     return-void
 .end method
 
-.method public constructor <init>(ILi92;Ljava/lang/Object;[ILi92;)V
+.method public constructor <init>(ILj92;Ljava/lang/Object;[ILj92;)V
     .locals 0
 
     .line 8
-    invoke-direct {p0, p1, p2, p3, p5}, Li92;-><init>(ILi92;Ljava/lang/Object;Li92;)V
+    invoke-direct {p0, p1, p2, p3, p5}, Lj92;-><init>(ILj92;Ljava/lang/Object;Lj92;)V
 
     .line 9
     iput-object p4, p0, Lhq2;->o:[I

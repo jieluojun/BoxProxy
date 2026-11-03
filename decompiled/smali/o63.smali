@@ -1,29 +1,50 @@
-.class public interface abstract Lo63;
+.class public final Lo63;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lkf1;
 
 
-# static fields
-.field public static final g:Ln63;
+# instance fields
+.field public final synthetic j:Lrh0;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lrh0;)V
+    .locals 0
 
     .line 1
-    sget-object v0, Ln63;->a:Ln63;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    sput-object v0, Lo63;->g:Ln63;
-
     .line 4
+    iput-object p1, p0, Lo63;->j:Lrh0;
+
     .line 5
+    .line 6
     return-void
 .end method
 
 
 # virtual methods
-.method public abstract g(Lbk0;Lcd;Ljava/util/ArrayList;Luq2;)V
+.method public final onStart(Le63;)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lo63;->j:Lrh0;
+
+    .line 2
+    .line 3
+    sget-object p1, Lk27;->a:Lk27;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0, p1}, Lrh0;->resumeWith(Ljava/lang/Object;)V
+
+    .line 6
+    .line 7
+    .line 8
+    return-void
 .end method

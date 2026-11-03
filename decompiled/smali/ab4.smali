@@ -1,84 +1,69 @@
 .class public final Lab4;
-.super Lac4;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final c:Lab4;
+# instance fields
+.field public synthetic j:Ljava/lang/Object;
+
+.field public final synthetic k:Liv1;
+
+.field public l:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Liv1;Lz71;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lab4;
+    iput-object p1, p0, Lab4;->k:Liv1;
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
     .line 4
-    const/4 v2, 0x1
-
     .line 5
-    invoke-direct {v0, v1, v2, v2}, Lac4;-><init>(III)V
-
     .line 6
-    .line 7
-    .line 8
-    sput-object v0, Lab4;->c:Lab4;
-
-    .line 9
-    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lnp2;Lvu;Lk46;Lf95;Lcc4;)V
-    .locals 0
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    const/4 p0, 0x0
+    iput-object p1, p0, Lab4;->j:Ljava/lang/Object;
 
     .line 2
-    invoke-virtual {p1, p0}, Lnp2;->c(I)Ljava/lang/Object;
-
     .line 3
+    iget p1, p0, Lab4;->l:I
+
     .line 4
     .line 5
-    move-result-object p1
+    const/high16 v0, -0x80000000
 
     .line 6
-    check-cast p1, [Ljava/lang/Object;
-
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    array-length p3, p1
+    iput p1, p0, Lab4;->l:I
 
     .line 9
-    :goto_0
-    if-ge p0, p3, :cond_0
-
     .line 10
+    iget-object p1, p0, Lab4;->k:Liv1;
+
     .line 11
-    aget-object p4, p1, p0
-
     .line 12
-    .line 13
-    invoke-interface {p2, p4}, Lvu;->i(Ljava/lang/Object;)V
+    invoke-virtual {p1, p0}, Liv1;->p(Lz71;)Ljava/lang/Enum;
 
+    .line 13
     .line 14
     .line 15
+    move-result-object p0
+
     .line 16
-    add-int/lit8 p0, p0, 0x1
-
-    .line 17
-    .line 18
-    goto :goto_0
-
-    .line 19
-    :cond_0
-    return-void
+    return-object p0
 .end method

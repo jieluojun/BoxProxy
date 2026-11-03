@@ -1,10 +1,10 @@
 .class public final enum Lmf2;
 .super Ljava/lang/Enum;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final k:Lm11;
+.field public static final k:Li11;
 
 .field public static final enum l:Lmf2;
 
@@ -22,7 +22,7 @@
 
 .field public static final synthetic s:[Lmf2;
 
-.field public static final synthetic t:Lcv1;
+.field public static final synthetic t:Lzu1;
 
 
 # instance fields
@@ -214,20 +214,20 @@
 
     .line 90
     .line 91
-    new-instance v1, Lcv1;
+    new-instance v1, Lzu1;
 
     .line 92
     .line 93
-    invoke-direct {v1, v0}, Lcv1;-><init>([Ljava/lang/Enum;)V
+    invoke-direct {v1, v0}, Lzu1;-><init>([Ljava/lang/Enum;)V
 
     .line 94
     .line 95
     .line 96
-    sput-object v1, Lmf2;->t:Lcv1;
+    sput-object v1, Lmf2;->t:Lzu1;
 
     .line 97
     .line 98
-    new-instance v0, Lm11;
+    new-instance v0, Li11;
 
     .line 99
     .line 100
@@ -235,12 +235,12 @@
 
     .line 101
     .line 102
-    invoke-direct {v0, v1}, Lm11;-><init>(B)V
+    invoke-direct {v0, v1}, Li11;-><init>(B)V
 
     .line 103
     .line 104
     .line 105
-    sput-object v0, Lmf2;->k:Lm11;
+    sput-object v0, Lmf2;->k:Li11;
 
     .line 106
     .line 107

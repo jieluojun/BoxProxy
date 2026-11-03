@@ -1,123 +1,135 @@
 .class public final Lg07;
-.super Lya1;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lgx2;
 
 
 # static fields
-.field public static final l:Lg07;
+.field public static final a:Lg07;
+
+.field public static final b:Llo2;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
     .line 1
     new-instance v0, Lg07;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Lya1;-><init>()V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
     .line 6
-    sput-object v0, Lg07;->l:Lg07;
+    sput-object v0, Lg07;->a:Lg07;
 
     .line 7
     .line 8
+    const-string v0, "kotlin.UByte"
+
+    .line 9
+    .line 10
+    sget-object v1, Lag0;->a:Lag0;
+
+    .line 11
+    .line 12
+    invoke-static {v0, v1}, Luu6;->j(Ljava/lang/String;Lgx2;)Llo2;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object v0
+
+    .line 16
+    sput-object v0, Lg07;->b:Llo2;
+
+    .line 17
+    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public final H(Lwa1;Ljava/lang/Runnable;)V
-    .locals 1
-
-    .line 1
-    sget-object p0, Lsf1;->m:Lsf1;
-
-    .line 2
-    .line 3
-    const/4 p1, 0x1
-
-    .line 4
-    iget-object p0, p0, Lsf1;->l:Leb1;
-
-    .line 5
-    .line 6
-    const/4 v0, 0x0
-
-    .line 7
-    invoke-virtual {p0, p2, p1, v0}, Leb1;->c(Ljava/lang/Runnable;ZZ)V
-
-    .line 8
-    .line 9
-    .line 10
-    return-void
-.end method
-
-.method public final I(Lwa1;Ljava/lang/Runnable;)V
+.method public final b(Lxd1;)Ljava/lang/Object;
     .locals 0
 
     .line 1
-    sget-object p0, Lsf1;->m:Lsf1;
+    sget-object p0, Lg07;->b:Llo2;
 
     .line 2
     .line 3
-    const/4 p1, 0x1
+    invoke-interface {p1, p0}, Lxd1;->w(Lcx5;)Lxd1;
 
     .line 4
-    iget-object p0, p0, Lsf1;->l:Leb1;
-
     .line 5
     .line 6
-    invoke-virtual {p0, p2, p1, p1}, Leb1;->c(Ljava/lang/Runnable;ZZ)V
-
-    .line 7
-    .line 8
-    .line 9
-    return-void
-.end method
-
-.method public final K(I)Lya1;
-    .locals 1
-
-    .line 1
-    invoke-static {p1}, Lf63;->n(I)V
-
-    .line 2
-    .line 3
-    .line 4
-    sget v0, Lth6;->d:I
-
-    .line 5
-    .line 6
-    if-lt p1, v0, :cond_0
-
-    .line 7
-    .line 8
-    return-object p0
-
-    .line 9
-    :cond_0
-    invoke-super {p0, p1}, Lya1;->K(I)Lya1;
-
-    .line 10
-    .line 11
-    .line 12
     move-result-object p0
 
+    .line 7
+    invoke-interface {p0}, Lxd1;->v()B
+
+    .line 8
+    .line 9
+    .line 10
+    move-result p0
+
+    .line 11
+    new-instance p1, Lc07;
+
+    .line 12
     .line 13
-    return-object p0
+    invoke-direct {p1, p0}, Lc07;-><init>(B)V
+
+    .line 14
+    .line 15
+    .line 16
+    return-object p1
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public final c()Lcx5;
     .locals 0
 
     .line 1
-    const-string p0, "Dispatchers.IO"
+    sget-object p0, Lg07;->b:Llo2;
 
     .line 2
     .line 3
     return-object p0
+.end method
+
+.method public final d(Lya6;Ljava/lang/Object;)V
+    .locals 0
+
+    .line 1
+    check-cast p2, Lc07;
+
+    .line 2
+    .line 3
+    iget-byte p0, p2, Lc07;->j:B
+
+    .line 4
+    .line 5
+    sget-object p2, Lg07;->b:Llo2;
+
+    .line 6
+    .line 7
+    invoke-virtual {p1, p2}, Lya6;->h(Lcx5;)Lya6;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p1
+
+    .line 11
+    invoke-virtual {p1, p0}, Lya6;->c(B)V
+
+    .line 12
+    .line 13
+    .line 14
+    return-void
 .end method

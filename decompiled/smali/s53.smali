@@ -1,3 +1,22 @@
-.class public interface abstract Ls53;
+.class public final Ls53;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# virtual methods
+.method public final serializer()Lgx2;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lgx2;"
+        }
+    .end annotation
+
+    .line 1
+    sget-object p0, Lr53;->a:Lr53;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method

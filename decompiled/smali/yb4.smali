@@ -1,6 +1,6 @@
 .class public final Lyb4;
-.super Lac4;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lwc4;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
@@ -9,7 +9,7 @@
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 3
 
     .line 1
     new-instance v0, Lyb4;
@@ -19,58 +19,31 @@
     const/4 v1, 0x0
 
     .line 4
-    const/4 v2, 0x2
+    const/4 v2, 0x3
 
     .line 5
-    const/4 v3, 0x1
+    invoke-direct {v0, v1, v1, v2}, Lwc4;-><init>(III)V
 
     .line 6
-    invoke-direct {v0, v3, v1, v2}, Lac4;-><init>(III)V
-
     .line 7
     .line 8
-    .line 9
     sput-object v0, Lyb4;->c:Lyb4;
 
+    .line 9
     .line 10
-    .line 11
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lnp2;Lvu;Lk46;Lf95;Lcc4;)V
+.method public final a(Lnp2;Lqu;Lw56;Lca5;Lyc4;)V
     .locals 0
 
     .line 1
-    const/4 p0, 0x0
+    invoke-virtual {p3}, Lw56;->i()V
 
     .line 2
-    invoke-virtual {p1, p0}, Lnp2;->b(I)I
-
     .line 3
     .line 4
-    .line 5
-    move-result p1
-
-    .line 6
-    :goto_0
-    if-ge p0, p1, :cond_0
-
-    .line 7
-    .line 8
-    invoke-interface {p2}, Lvu;->u()V
-
-    .line 9
-    .line 10
-    .line 11
-    add-int/lit8 p0, p0, 0x1
-
-    .line 12
-    .line 13
-    goto :goto_0
-
-    .line 14
-    :cond_0
     return-void
 .end method

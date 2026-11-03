@@ -1,6 +1,6 @@
 .class public final Lcom/box/app/CoreImportActivity;
-.super Llo;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lgo;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
@@ -8,7 +8,7 @@
 
 
 # instance fields
-.field public J:Ltu;
+.field public J:Lou;
 
 
 # direct methods
@@ -16,7 +16,7 @@
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Llo;-><init>()V
+    invoke-direct {p0}, Lgo;-><init>()V
 
     .line 2
     .line 3
@@ -35,7 +35,7 @@
     .line 2
     .line 3
     .line 4
-    invoke-static {p1}, Lr67;->i0(Landroid/content/Context;)Landroid/content/Context;
+    invoke-static {p1}, Lp87;->i0(Landroid/content/Context;)Landroid/content/Context;
 
     .line 5
     .line 6
@@ -43,7 +43,7 @@
     move-result-object p1
 
     .line 8
-    invoke-super {p0, p1}, Llo;->attachBaseContext(Landroid/content/Context;)V
+    invoke-super {p0, p1}, Lgo;->attachBaseContext(Landroid/content/Context;)V
 
     .line 9
     .line 10
@@ -55,11 +55,11 @@
     .locals 3
 
     .line 1
-    sget-object v0, Ltu;->f:Lw8;
+    sget-object v0, Lou;->f:Lt8;
 
     .line 2
     .line 3
-    invoke-virtual {v0, p0}, Lw8;->u(Landroid/content/Context;)Ltu;
+    invoke-virtual {v0, p0}, Lt8;->u(Landroid/content/Context;)Lou;
 
     .line 4
     .line 5
@@ -67,19 +67,19 @@
     move-result-object v0
 
     .line 7
-    iput-object v0, p0, Lcom/box/app/CoreImportActivity;->J:Ltu;
+    iput-object v0, p0, Lcom/box/app/CoreImportActivity;->J:Lou;
 
     .line 8
     .line 9
-    iget-object v0, v0, Ltu;->e:Lg65;
+    iget-object v0, v0, Lou;->e:Lc75;
 
     .line 10
     .line 11
-    iget-object v0, v0, Lg65;->j:Ll86;
+    iget-object v0, v0, Lc75;->j:Lx96;
 
     .line 12
     .line 13
-    invoke-virtual {v0}, Ll86;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lx96;->getValue()Ljava/lang/Object;
 
     .line 14
     .line 15
@@ -87,20 +87,20 @@
     move-result-object v0
 
     .line 17
-    check-cast v0, Lqu;
+    check-cast v0, Llu;
 
     .line 18
     .line 19
-    iget-object v0, v0, Lqu;->b:Lfr;
+    iget-object v0, v0, Llu;->b:Lar;
 
     .line 20
     .line 21
-    invoke-static {p0, v0}, Lr67;->v(Llo;Lfr;)V
+    invoke-static {p0, v0}, Lp87;->v(Lgo;Lar;)V
 
     .line 22
     .line 23
     .line 24
-    invoke-super {p0, p1}, Llo;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lgo;->onCreate(Landroid/os/Bundle;)V
 
     .line 25
     .line 26
@@ -265,7 +265,7 @@
 
     .line 106
     .line 107
-    invoke-static {p1}, La5;->l(Landroid/content/Intent;)Ljava/lang/Object;
+    invoke-static {p1}, Lx4;->l(Landroid/content/Intent;)Ljava/lang/Object;
 
     .line 108
     .line 109
@@ -315,7 +315,7 @@
 
     .line 128
     .line 129
-    const p1, 0x7f0f0111
+    const p1, 0x7f0f011b
 
     .line 130
     .line 131
@@ -333,7 +333,7 @@
     .line 137
     .line 138
     .line 139
-    invoke-static {p0, p1}, Lk53;->a0(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lh17;->e(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 140
     .line 141
@@ -347,19 +347,19 @@
 
     .line 146
     :cond_4
-    new-instance v0, Ld31;
+    new-instance v0, Lz21;
 
     .line 147
     .line 148
     const/4 v1, 0x3
 
     .line 149
-    invoke-direct {v0, p0, p1, v1}, Ld31;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
+    invoke-direct {v0, p0, p1, v1}, Lz21;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
 
     .line 150
     .line 151
     .line 152
-    new-instance p1, Lty0;
+    new-instance p1, Loy0;
 
     .line 153
     .line 154
@@ -371,12 +371,12 @@
     const/4 v2, 0x1
 
     .line 158
-    invoke-direct {p1, v1, v2, v0}, Lty0;-><init>(IZLd62;)V
+    invoke-direct {p1, v1, v2, v0}, Loy0;-><init>(IZLa62;)V
 
     .line 159
     .line 160
     .line 161
-    invoke-static {p0, p1}, Liy0;->a(Llo;Lty0;)V
+    invoke-static {p0, p1}, Ldy0;->a(Lgo;Loy0;)V
 
     .line 162
     .line 163

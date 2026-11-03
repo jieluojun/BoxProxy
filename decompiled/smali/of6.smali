@@ -1,165 +1,182 @@
-.class public final Lof6;
+.class public final synthetic Lof6;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
-# static fields
-.field public static final a:Lfd3;
+# instance fields
+.field public final synthetic j:Ld52;
 
-.field public static final b:Lof6;
+.field public final synthetic k:Lko3;
+
+.field public final synthetic l:Z
+
+.field public final synthetic m:Lvy5;
+
+.field public final synthetic n:J
+
+.field public final synthetic o:J
+
+.field public final synthetic p:F
+
+.field public final synthetic q:Lmn2;
+
+.field public final synthetic r:Loy0;
+
+.field public final synthetic s:I
+
+.field public final synthetic t:S
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Ld52;Lko3;ZLvy5;JJFLmn2;Loy0;II)V
+    .locals 0
 
     .line 1
-    const-class v0, Lof6;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    invoke-static {v0}, Lfd3;->a(Ljava/lang/String;)Lfd3;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object v0
-
-    .line 11
-    sput-object v0, Lof6;->a:Lfd3;
-
-    .line 12
-    .line 13
-    new-instance v0, Lof6;
-
-    .line 14
-    .line 15
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 16
-    .line 17
-    .line 18
-    sput-object v0, Lof6;->b:Lof6;
-
-    .line 19
-    .line 20
-    return-void
-.end method
-
-.method public static a(Ljava/io/StringReader;Lr25;)Lgt4;
-    .locals 3
-
-    .line 1
-    invoke-static {}, Ljavax/xml/parsers/SAXParserFactory;->newInstance()Ljavax/xml/parsers/SAXParserFactory;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    move-result-object v0
+    iput-object p1, p0, Lof6;->j:Ld52;
 
     .line 5
-    const/4 v1, 0x1
-
     .line 6
-    invoke-virtual {v0, v1}, Ljavax/xml/parsers/SAXParserFactory;->setNamespaceAware(Z)V
+    iput-object p2, p0, Lof6;->k:Lko3;
 
     .line 7
     .line 8
+    iput-boolean p3, p0, Lof6;->l:Z
+
     .line 9
-    const-string v1, "http://xml.org/sax/features/external-general-entities"
-
     .line 10
-    .line 11
-    const/4 v2, 0x0
+    iput-object p4, p0, Lof6;->m:Lvy5;
 
+    .line 11
     .line 12
-    invoke-virtual {v0, v1, v2}, Ljavax/xml/parsers/SAXParserFactory;->setFeature(Ljava/lang/String;Z)V
+    iput-wide p5, p0, Lof6;->n:J
 
     .line 13
     .line 14
+    iput-wide p7, p0, Lof6;->o:J
+
     .line 15
-    const-string v1, "http://xml.org/sax/features/external-parameter-entities"
-
     .line 16
-    .line 17
-    invoke-virtual {v0, v1, v2}, Ljavax/xml/parsers/SAXParserFactory;->setFeature(Ljava/lang/String;Z)V
+    iput p9, p0, Lof6;->p:F
 
+    .line 17
     .line 18
+    iput-object p10, p0, Lof6;->q:Lmn2;
+
     .line 19
     .line 20
-    invoke-virtual {v0}, Ljavax/xml/parsers/SAXParserFactory;->newSAXParser()Ljavax/xml/parsers/SAXParser;
+    iput-object p11, p0, Lof6;->r:Loy0;
 
     .line 21
     .line 22
-    .line 23
-    move-result-object v0
+    iput p12, p0, Lof6;->s:I
 
+    .line 23
     .line 24
-    invoke-virtual {v0}, Ljavax/xml/parsers/SAXParser;->getXMLReader()Lorg/xml/sax/XMLReader;
+    iput-short p13, p0, Lof6;->t:S
 
     .line 25
     .line 26
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 14
+
+    .line 1
+    move-object v11, p1
+
+    .line 2
+    check-cast v11, Lv01;
+
+    .line 3
+    .line 4
+    move-object/from16 v0, p2
+
+    .line 5
+    .line 6
+    check-cast v0, Ljava/lang/Integer;
+
+    .line 7
+    .line 8
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 9
+    .line 10
+    .line 11
+    iget v0, p0, Lof6;->s:I
+
+    .line 12
+    .line 13
+    or-int/lit8 v0, v0, 0x1
+
+    .line 14
+    .line 15
+    invoke-static {v0}, Lw23;->h0(I)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result v12
+
+    .line 19
+    iget-object v0, p0, Lof6;->j:Ld52;
+
+    .line 20
+    .line 21
+    iget-object v1, p0, Lof6;->k:Lko3;
+
+    .line 22
+    .line 23
+    iget-boolean v2, p0, Lof6;->l:Z
+
+    .line 24
+    .line 25
+    iget-object v3, p0, Lof6;->m:Lvy5;
+
+    .line 26
     .line 27
-    move-result-object v0
+    iget-wide v4, p0, Lof6;->n:J
 
     .line 28
-    new-instance v1, Llf6;
-
     .line 29
-    .line 30
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+    iget-wide v6, p0, Lof6;->o:J
 
+    .line 30
     .line 31
+    iget v8, p0, Lof6;->p:F
+
     .line 32
     .line 33
-    invoke-interface {v0, v1}, Lorg/xml/sax/XMLReader;->setEntityResolver(Lorg/xml/sax/EntityResolver;)V
+    iget-object v9, p0, Lof6;->q:Lmn2;
 
     .line 34
     .line 35
-    .line 36
-    invoke-virtual {p1}, Lr25;->h()Lgt4;
+    iget-object v10, p0, Lof6;->r:Loy0;
 
+    .line 36
     .line 37
+    iget-short v13, p0, Lof6;->t:S
+
     .line 38
     .line 39
-    move-result-object v1
+    invoke-static/range {v0 .. v13}, Ld53;->l(Ld52;Lko3;ZLvy5;JJFLmn2;Loy0;Lv01;II)V
 
     .line 40
-    new-instance v2, Lmf6;
-
     .line 41
     .line 42
-    invoke-direct {v2, v1, p1}, Lmf6;-><init>(Lgt4;Lr25;)V
+    sget-object p0, Lk27;->a:Lk27;
 
     .line 43
     .line 44
-    .line 45
-    invoke-interface {v0, v2}, Lorg/xml/sax/XMLReader;->setContentHandler(Lorg/xml/sax/ContentHandler;)V
-
-    .line 46
-    .line 47
-    .line 48
-    new-instance p1, Lorg/xml/sax/InputSource;
-
-    .line 49
-    .line 50
-    invoke-direct {p1, p0}, Lorg/xml/sax/InputSource;-><init>(Ljava/io/Reader;)V
-
-    .line 51
-    .line 52
-    .line 53
-    invoke-interface {v0, p1}, Lorg/xml/sax/XMLReader;->parse(Lorg/xml/sax/InputSource;)V
-
-    .line 54
-    .line 55
-    .line 56
-    return-object v1
+    return-object p0
 .end method

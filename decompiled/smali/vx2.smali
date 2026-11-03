@@ -1,155 +1,194 @@
-.class public final synthetic Lvx2;
+.class public final Lvx2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Ljava/util/function/Predicate;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic a:B
+.field public final a:I
 
 
 # direct methods
-.method public synthetic constructor <init>(B)V
+.method public synthetic constructor <init>(I)V
     .locals 0
 
     .line 1
-    iput-byte p1, p0, Lvx2;->a:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    iput p1, p0, Lvx2;->a:I
+
     .line 5
     .line 6
     return-void
 .end method
 
-
-# virtual methods
-.method public final test(Ljava/lang/Object;)Z
-    .locals 0
+.method public static a(I)Ljava/lang/String;
+    .locals 1
 
     .line 1
-    iget-byte p0, p0, Lvx2;->a:B
+    const/4 v0, -0x1
+
+    .line 2
+    if-ne p0, v0, :cond_0
+
+    .line 3
+    .line 4
+    const-string p0, "Unspecified"
+
+    .line 5
+    .line 6
+    return-object p0
+
+    .line 7
+    :cond_0
+    if-nez p0, :cond_1
+
+    .line 8
+    .line 9
+    const-string p0, "None"
+
+    .line 10
+    .line 11
+    return-object p0
+
+    .line 12
+    :cond_1
+    const/4 v0, 0x1
+
+    .line 13
+    if-ne p0, v0, :cond_2
+
+    .line 14
+    .line 15
+    const-string p0, "Characters"
+
+    .line 16
+    .line 17
+    return-object p0
+
+    .line 18
+    :cond_2
+    const/4 v0, 0x2
+
+    .line 19
+    if-ne p0, v0, :cond_3
+
+    .line 20
+    .line 21
+    const-string p0, "Words"
+
+    .line 22
+    .line 23
+    return-object p0
+
+    .line 24
+    :cond_3
+    const/4 v0, 0x3
+
+    .line 25
+    if-ne p0, v0, :cond_4
+
+    .line 26
+    .line 27
+    const-string p0, "Sentences"
+
+    .line 28
+    .line 29
+    return-object p0
+
+    .line 30
+    :cond_4
+    const-string p0, "Invalid"
+
+    .line 31
+    .line 32
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    instance-of v0, p1, Lvx2;
 
     .line 2
     .line 3
-    packed-switch p0, :pswitch_data_0
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
+    goto :goto_0
+
+    .line 6
+    :cond_0
+    check-cast p1, Lvx2;
+
+    .line 7
+    .line 8
+    iget p1, p1, Lvx2;->a:I
+
+    .line 9
+    .line 10
+    iget p0, p0, Lvx2;->a:I
+
+    .line 11
+    .line 12
+    if-eq p0, p1, :cond_1
+
+    .line 13
+    .line 14
+    :goto_0
+    const/4 p0, 0x0
+
+    .line 15
+    return p0
+
+    .line 16
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 17
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lvx2;->a:I
+
+    .line 2
+    .line 3
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
     .line 4
     .line 5
     .line 6
-    check-cast p1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;
+    move-result p0
 
     .line 7
-    .line 8
-    if-eqz p1, :cond_0
-
-    .line 9
-    .line 10
-    const/4 p0, 0x1
-
-    .line 11
-    goto :goto_0
-
-    .line 12
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 13
-    :goto_0
     return p0
+.end method
 
-    .line 14
-    :pswitch_0
-    check-cast p1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    .line 15
-    .line 16
-    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->m(Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;)Z
+    .line 1
+    iget p0, p0, Lvx2;->a:I
 
-    .line 17
-    .line 18
-    .line 19
-    move-result p0
+    .line 2
+    .line 3
+    invoke-static {p0}, Lvx2;->a(I)Ljava/lang/String;
 
-    .line 20
-    return p0
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
 
-    .line 21
-    :pswitch_1
-    check-cast p1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPair;
-
-    .line 22
-    .line 23
-    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->c(Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPair;)Z
-
-    .line 24
-    .line 25
-    .line 26
-    move-result p0
-
-    .line 27
-    return p0
-
-    .line 28
-    :pswitch_2
-    check-cast p1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;
-
-    .line 29
-    .line 30
-    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->j(Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;)Z
-
-    .line 31
-    .line 32
-    .line 33
-    move-result p0
-
-    .line 34
-    return p0
-
-    .line 35
-    :pswitch_3
-    check-cast p1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;
-
-    .line 36
-    .line 37
-    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->d(Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;)Z
-
-    .line 38
-    .line 39
-    .line 40
-    move-result p0
-
-    .line 41
-    return p0
-
-    .line 42
-    :pswitch_4
-    check-cast p1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPairConditional;
-
-    .line 43
-    .line 44
-    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->e(Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPairConditional;)Z
-
-    .line 45
-    .line 46
-    .line 47
-    move-result p0
-
-    .line 48
-    return p0
-
-    .line 49
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 7
+    return-object p0
 .end method

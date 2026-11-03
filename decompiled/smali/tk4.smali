@@ -1,288 +1,310 @@
-.class public final Ltk4;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final synthetic Ltk4;
+.super Ld62;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ld52;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final synthetic k:B
 
-.field public final b:Lib3;
+.field public final synthetic l:Lbb1;
 
-.field public final c:Ljava/lang/String;
+.field public final synthetic m:Las3;
+
+.field public final synthetic n:Las3;
+
+.field public final synthetic o:Las3;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lib3;Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>(Lbb1;Las3;Las3;Las3;B)V
+    .locals 6
 
     .line 1
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-byte p5, p0, Ltk4;->k:B
 
     .line 2
     .line 3
-    .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    packed-switch p5, :pswitch_data_0
 
+    .line 4
     .line 5
     .line 6
+    iput-object p1, p0, Ltk4;->l:Lbb1;
+
     .line 7
-    iput-object p1, p0, Ltk4;->a:Ljava/lang/String;
-
     .line 8
+    iput-object p2, p0, Ltk4;->m:Las3;
+
     .line 9
-    iput-object p2, p0, Ltk4;->b:Lib3;
-
     .line 10
-    .line 11
-    iput-object p3, p0, Ltk4;->c:Ljava/lang/String;
+    iput-object p3, p0, Ltk4;->n:Las3;
 
+    .line 11
     .line 12
+    iput-object p4, p0, Ltk4;->o:Las3;
+
     .line 13
+    .line 14
+    const-string p4, "PanelNotificationMiuixSheet$dismissSheet(Lkotlinx/coroutines/CoroutineScope;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/State;)V"
+
+    .line 15
+    .line 16
+    const/4 p5, 0x0
+
+    .line 17
+    const/4 p1, 0x0
+
+    .line 18
+    const-class p2, Los2;
+
+    .line 19
+    .line 20
+    const-string p3, "dismissSheet"
+
+    .line 21
+    .line 22
+    invoke-direct/range {p0 .. p5}, Ld62;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 23
+    .line 24
+    .line 25
     return-void
+
+    .line 26
+    :pswitch_0
+    move-object v0, p0
+
+    .line 27
+    iput-object p1, v0, Ltk4;->l:Lbb1;
+
+    .line 28
+    .line 29
+    iput-object p2, v0, Ltk4;->m:Las3;
+
+    .line 30
+    .line 31
+    iput-object p3, v0, Ltk4;->n:Las3;
+
+    .line 32
+    .line 33
+    iput-object p4, v0, Ltk4;->o:Las3;
+
+    .line 34
+    .line 35
+    const-string v4, "ProxySelectorMiuixPolicyBottomSheet$dismissSheet(Lkotlinx/coroutines/CoroutineScope;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/State;)V"
+
+    .line 36
+    .line 37
+    const/4 v5, 0x0
+
+    .line 38
+    const/4 v1, 0x0
+
+    .line 39
+    const-class v2, Los2;
+
+    .line 40
+    .line 41
+    const-string v3, "dismissSheet"
+
+    .line 42
+    .line 43
+    invoke-direct/range {v0 .. v5}, Ld62;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 44
+    .line 45
+    .line 46
+    return-void
+
+    .line 47
+    :pswitch_1
+    move-object v0, p0
+
+    .line 48
+    iput-object p1, v0, Ltk4;->l:Lbb1;
+
+    .line 49
+    .line 50
+    iput-object p2, v0, Ltk4;->m:Las3;
+
+    .line 51
+    .line 52
+    iput-object p3, v0, Ltk4;->n:Las3;
+
+    .line 53
+    .line 54
+    iput-object p4, v0, Ltk4;->o:Las3;
+
+    .line 55
+    .line 56
+    const-string v4, "PanelNotificationMiuixSheet$dismissSheet(Lkotlinx/coroutines/CoroutineScope;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/MutableState;Landroidx/compose/runtime/State;)V"
+
+    .line 57
+    .line 58
+    const/4 v5, 0x0
+
+    .line 59
+    const/4 v1, 0x0
+
+    .line 60
+    const-class v2, Los2;
+
+    .line 61
+    .line 62
+    const-string v3, "dismissSheet"
+
+    .line 63
+    .line 64
+    invoke-direct/range {v0 .. v5}, Ld62;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 65
+    .line 66
+    .line 67
+    return-void
+
+    .line 68
+    nop
+
+    .line 69
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
+.method public final invoke()Ljava/lang/Object;
+    .locals 5
 
     .line 1
-    if-ne p0, p1, :cond_0
+    iget-byte v0, p0, Ltk4;->k:B
 
     .line 2
     .line 3
-    goto :goto_1
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
-    :cond_0
-    instance-of v0, p1, Ltk4;
-
     .line 5
+    iget-object v2, p0, Ltk4;->o:Las3;
+
     .line 6
-    if-nez v0, :cond_1
-
     .line 7
-    .line 8
-    goto :goto_0
+    iget-object v3, p0, Ltk4;->n:Las3;
 
+    .line 8
     .line 9
-    :cond_1
-    check-cast p1, Ltk4;
+    iget-object v4, p0, Ltk4;->m:Las3;
 
     .line 10
     .line 11
-    iget-object v0, p0, Ltk4;->a:Ljava/lang/String;
+    iget-object p0, p0, Ltk4;->l:Lbb1;
 
     .line 12
     .line 13
-    iget-object v1, p1, Ltk4;->a:Ljava/lang/String;
+    packed-switch v0, :pswitch_data_0
 
     .line 14
     .line 15
-    invoke-static {v0, v1}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
     .line 16
+    invoke-interface {v4}, Lu96;->getValue()Ljava/lang/Object;
+
     .line 17
     .line 18
-    move-result v0
-
     .line 19
-    if-nez v0, :cond_2
+    move-result-object v0
 
     .line 20
-    .line 21
-    goto :goto_0
+    check-cast v0, Ljava/lang/Boolean;
 
+    .line 21
     .line 22
-    :cond_2
-    iget-object v0, p0, Ltk4;->b:Lib3;
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     .line 23
     .line 24
-    iget-object v1, p1, Ltk4;->b:Lib3;
-
     .line 25
+    move-result v0
+
     .line 26
-    if-eq v0, v1, :cond_3
+    if-eqz v0, :cond_0
 
     .line 27
     .line 28
     goto :goto_0
 
     .line 29
-    :cond_3
-    iget-object p0, p0, Ltk4;->c:Ljava/lang/String;
+    :cond_0
+    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     .line 30
     .line 31
-    iget-object p1, p1, Ltk4;->c:Ljava/lang/String;
+    invoke-interface {v4, v0}, Las3;->setValue(Ljava/lang/Object;)V
 
     .line 32
     .line 33
-    invoke-static {p0, p1}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
     .line 34
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
     .line 35
     .line 36
-    move-result p0
+    invoke-interface {v3, v0}, Las3;->setValue(Ljava/lang/Object;)V
 
     .line 37
-    if-nez p0, :cond_4
-
     .line 38
     .line 39
-    :goto_0
-    const/4 p0, 0x0
+    new-instance v0, Ljm;
 
     .line 40
-    return p0
-
     .line 41
-    :cond_4
-    :goto_1
-    const/4 p0, 0x1
+    const/4 v3, 0x5
 
     .line 42
-    return p0
-.end method
+    const/4 v4, 0x0
 
-.method public final hashCode()I
-    .locals 2
+    .line 43
+    invoke-direct {v0, v2, v4, v3}, Ljm;-><init>(Las3;Ly71;B)V
 
-    .line 1
-    iget-object v0, p0, Ltk4;->a:Ljava/lang/String;
+    .line 44
+    .line 45
+    .line 46
+    const/4 v2, 0x3
 
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
+    .line 47
+    invoke-static {p0, v4, v4, v0, v2}, Lx37;->J(Lbb1;Lsa1;Leb1;Ls52;I)Lk96;
 
-    .line 4
-    .line 5
-    const/4 v0, 0x0
-
-    .line 6
-    goto :goto_0
-
-    .line 7
-    :cond_0
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    .line 8
-    .line 9
-    .line 10
-    move-result v0
-
-    .line 11
+    .line 48
+    .line 49
+    .line 50
     :goto_0
-    mul-int/lit8 v0, v0, 0x1f
+    return-object v1
 
-    .line 12
-    .line 13
-    iget-object v1, p0, Ltk4;->b:Lib3;
+    .line 51
+    :pswitch_0
+    invoke-static {p0, v4, v3, v2}, Ld53;->f(Lbb1;Las3;Las3;Las3;)V
 
-    .line 14
-    .line 15
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+    .line 52
+    .line 53
+    .line 54
+    return-object v1
 
-    .line 16
-    .line 17
-    .line 18
-    move-result v1
+    .line 55
+    :pswitch_1
+    invoke-static {p0, v4, v3, v2}, Ld53;->f(Lbb1;Las3;Las3;Las3;)V
 
-    .line 19
-    add-int/2addr v1, v0
+    .line 56
+    .line 57
+    .line 58
+    return-object v1
 
-    .line 20
-    mul-int/lit8 v1, v1, 0x1f
-
-    .line 21
-    .line 22
-    iget-object p0, p0, Ltk4;->c:Ljava/lang/String;
-
-    .line 23
-    .line 24
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
-
-    .line 25
-    .line 26
-    .line 27
-    move-result p0
-
-    .line 28
-    add-int/2addr p0, v1
-
-    .line 29
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v1, "ParsedLogMetadata(timestampLabel="
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    iget-object v1, p0, Ltk4;->a:Ljava/lang/String;
-
-    .line 9
-    .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 11
-    .line 12
-    .line 13
-    const-string v1, ", level="
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    iget-object v1, p0, Ltk4;->b:Lib3;
-
-    .line 19
-    .line 20
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 21
-    .line 22
-    .line 23
-    const-string v1, ", body="
-
-    .line 24
-    .line 25
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 26
-    .line 27
-    .line 28
-    const-string v1, ")"
-
-    .line 29
-    .line 30
-    iget-object p0, p0, Ltk4;->c:Ljava/lang/String;
-
-    .line 31
-    .line 32
-    invoke-static {v0, p0, v1}, Lv66;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 33
-    .line 34
-    .line 35
-    move-result-object p0
-
-    .line 36
-    return-object p0
+    .line 59
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

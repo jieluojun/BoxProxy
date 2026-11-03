@@ -1,462 +1,395 @@
-.class public final Lmt4;
+.class public final synthetic Lmt4;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lo52;
 
 
 # instance fields
-.field public final a:Lu25;
+.field public final synthetic j:F
 
-.field public final b:Ljava/lang/String;
+.field public final synthetic k:F
 
-.field public final c:Ljava/lang/String;
+.field public final synthetic l:F
 
-.field public final d:Ljava/lang/String;
+.field public final synthetic m:J
 
-.field public final e:Ljava/lang/String;
-
-.field public final f:Landroid/content/Context;
+.field public final synthetic n:Lu96;
 
 
 # direct methods
-.method public constructor <init>(Lu25;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;)V
+.method public synthetic constructor <init>(FFFJLbo2;)V
     .locals 0
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput p1, p0, Lmt4;->j:F
 
     .line 5
     .line 6
-    .line 7
-    invoke-virtual {p5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput p2, p0, Lmt4;->k:F
 
+    .line 7
     .line 8
+    iput p3, p0, Lmt4;->l:F
+
     .line 9
     .line 10
-    invoke-virtual {p6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-wide p4, p0, Lmt4;->m:J
 
     .line 11
     .line 12
+    iput-object p6, p0, Lmt4;->n:Lu96;
+
     .line 13
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 14
-    .line 15
-    .line 16
-    iput-object p1, p0, Lmt4;->a:Lu25;
-
-    .line 17
-    .line 18
-    iput-object p2, p0, Lmt4;->b:Ljava/lang/String;
-
-    .line 19
-    .line 20
-    iput-object p3, p0, Lmt4;->c:Ljava/lang/String;
-
-    .line 21
-    .line 22
-    iput-object p4, p0, Lmt4;->d:Ljava/lang/String;
-
-    .line 23
-    .line 24
-    iput-object p5, p0, Lmt4;->e:Ljava/lang/String;
-
-    .line 25
-    .line 26
-    iput-object p6, p0, Lmt4;->f:Landroid/content/Context;
-
-    .line 27
-    .line 28
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 16
 
     .line 1
-    if-ne p0, p1, :cond_0
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
-    goto :goto_1
+    move-object/from16 v1, p1
 
     .line 4
-    :cond_0
-    instance-of v0, p1, Lmt4;
-
     .line 5
+    check-cast v1, Lin1;
+
     .line 6
-    if-nez v0, :cond_1
-
     .line 7
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 8
-    goto :goto_0
-
     .line 9
-    :cond_1
-    check-cast p1, Lmt4;
-
     .line 10
+    iget v2, v0, Lmt4;->j:F
+
     .line 11
-    iget-object v0, p0, Lmt4;->a:Lu25;
-
     .line 12
-    .line 13
-    iget-object v1, p1, Lmt4;->a:Lu25;
+    invoke-interface {v1, v2}, Lyg1;->N(F)F
 
+    .line 13
     .line 14
     .line 15
-    if-eq v0, v1, :cond_2
+    move-result v4
 
     .line 16
-    .line 17
-    goto :goto_0
+    iget v2, v0, Lmt4;->k:F
 
+    .line 17
     .line 18
-    :cond_2
-    iget-object v0, p0, Lmt4;->b:Ljava/lang/String;
+    invoke-interface {v1, v2}, Lyg1;->N(F)F
 
     .line 19
     .line 20
-    iget-object v1, p1, Lmt4;->b:Ljava/lang/String;
-
     .line 21
+    move-result v9
+
     .line 22
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-interface {v1}, Lin1;->b()J
 
     .line 23
     .line 24
     .line 25
-    move-result v0
+    move-result-wide v2
 
     .line 26
-    if-nez v0, :cond_3
+    const/16 v10, 0x20
 
     .line 27
     .line 28
-    goto :goto_0
+    shr-long/2addr v2, v10
 
     .line 29
-    :cond_3
-    iget-object v0, p0, Lmt4;->c:Ljava/lang/String;
+    long-to-int v2, v2
 
     .line 30
-    .line 31
-    iget-object v1, p1, Lmt4;->c:Ljava/lang/String;
+    invoke-static {v2}, Ljava/lang/Float;->intBitsToFloat(I)F
 
+    .line 31
     .line 32
     .line 33
-    invoke-static {v0, v1}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v2
 
     .line 34
+    const/high16 v11, 0x40000000    # 2.0f
+
     .line 35
     .line 36
-    move-result v0
+    div-float/2addr v2, v11
 
     .line 37
-    if-nez v0, :cond_4
+    invoke-interface {v1}, Lin1;->b()J
 
     .line 38
     .line 39
-    goto :goto_0
-
     .line 40
-    :cond_4
-    iget-object v0, p0, Lmt4;->d:Ljava/lang/String;
+    move-result-wide v5
 
     .line 41
-    .line 42
-    iget-object v1, p1, Lmt4;->d:Ljava/lang/String;
+    const-wide v12, 0xffffffffL
 
+    .line 42
     .line 43
     .line 44
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
     .line 45
     .line 46
+    and-long/2addr v5, v12
+
     .line 47
-    move-result v0
+    long-to-int v3, v5
 
     .line 48
-    if-nez v0, :cond_5
+    invoke-static {v3}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     .line 49
     .line 50
-    goto :goto_0
-
     .line 51
-    :cond_5
-    iget-object v0, p0, Lmt4;->e:Ljava/lang/String;
+    move-result v3
 
     .line 52
+    div-float/2addr v3, v11
+
     .line 53
-    iget-object v1, p1, Lmt4;->e:Ljava/lang/String;
+    invoke-static {v2}, Ljava/lang/Float;->floatToRawIntBits(F)I
 
     .line 54
     .line 55
-    invoke-static {v0, v1}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
     .line 56
+    move-result v2
+
     .line 57
+    int-to-long v5, v2
+
     .line 58
-    move-result v0
+    invoke-static {v3}, Ljava/lang/Float;->floatToRawIntBits(F)I
 
     .line 59
-    if-nez v0, :cond_6
-
     .line 60
     .line 61
-    goto :goto_0
+    move-result v2
 
     .line 62
-    :cond_6
-    iget-object p0, p0, Lmt4;->f:Landroid/content/Context;
+    int-to-long v2, v2
 
     .line 63
+    shl-long/2addr v5, v10
+
     .line 64
-    iget-object p1, p1, Lmt4;->f:Landroid/content/Context;
+    and-long/2addr v2, v12
 
     .line 65
-    .line 66
-    invoke-static {p0, p1}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    or-long v14, v5, v2
 
+    .line 66
     .line 67
+    iget v2, v0, Lmt4;->l:F
+
     .line 68
     .line 69
-    move-result p0
+    invoke-interface {v1, v2}, Lyg1;->N(F)F
 
     .line 70
-    if-nez p0, :cond_7
-
     .line 71
     .line 72
-    :goto_0
-    const/4 p0, 0x0
+    move-result v2
 
     .line 73
-    return p0
+    sub-float/2addr v2, v4
 
     .line 74
-    :cond_7
-    :goto_1
-    const/4 p0, 0x1
+    div-float/2addr v2, v11
 
     .line 75
-    return p0
-.end method
+    new-instance v3, Lqb6;
 
-.method public final hashCode()I
-    .locals 3
+    .line 76
+    .line 77
+    const/4 v7, 0x0
 
-    .line 1
-    iget-object v0, p0, Lmt4;->a:Lu25;
+    .line 78
+    const/16 v8, 0x1a
 
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    .line 79
+    .line 80
+    const/4 v5, 0x0
 
-    .line 4
-    .line 5
-    .line 6
+    .line 81
+    const/4 v6, 0x1
+
+    .line 82
+    invoke-direct/range {v3 .. v8}, Lqb6;-><init>(FFIII)V
+
+    .line 83
+    .line 84
+    .line 85
+    const/16 v8, 0x68
+
+    .line 86
+    .line 87
+    move v4, v2
+
+    .line 88
+    move-object v7, v3
+
+    .line 89
+    iget-wide v2, v0, Lmt4;->m:J
+
+    .line 90
+    .line 91
+    move-wide v5, v14
+
+    .line 92
+    invoke-static/range {v1 .. v8}, Lin1;->Y(Lin1;JFJLjn1;I)V
+
+    .line 93
+    .line 94
+    .line 95
+    mul-float/2addr v11, v9
+
+    .line 96
+    sub-float/2addr v4, v11
+
+    .line 97
+    iget-object v0, v0, Lmt4;->n:Lu96;
+
+    .line 98
+    .line 99
+    invoke-interface {v0}, Lu96;->getValue()Ljava/lang/Object;
+
+    .line 100
+    .line 101
+    .line 102
+    move-result-object v0
+
+    .line 103
+    check-cast v0, Ljava/lang/Number;
+
+    .line 104
+    .line 105
+    invoke-virtual {v0}, Ljava/lang/Number;->floatValue()F
+
+    .line 106
+    .line 107
+    .line 108
     move-result v0
 
-    .line 7
-    const/16 v1, 0x1f
+    .line 109
+    const v7, 0x3c8efa35
 
-    .line 8
-    .line 9
-    mul-int/2addr v0, v1
+    .line 110
+    .line 111
+    .line 112
+    mul-float/2addr v0, v7
 
-    .line 10
-    iget-object v2, p0, Lmt4;->b:Ljava/lang/String;
+    .line 113
+    float-to-double v7, v0
 
-    .line 11
-    .line 12
-    invoke-static {v0, v2, v1}, Lpa6;->e(ILjava/lang/String;I)I
+    .line 114
+    invoke-static {v7, v8}, Ljava/lang/Math;->cos(D)D
 
-    .line 13
-    .line 14
-    .line 15
+    .line 115
+    .line 116
+    .line 117
+    move-result-wide v14
+
+    .line 118
+    double-to-float v0, v14
+
+    .line 119
+    mul-float/2addr v0, v4
+
+    .line 120
+    invoke-static {v7, v8}, Ljava/lang/Math;->sin(D)D
+
+    .line 121
+    .line 122
+    .line 123
+    move-result-wide v7
+
+    .line 124
+    double-to-float v7, v7
+
+    .line 125
+    mul-float/2addr v4, v7
+
+    .line 126
+    invoke-static {v0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 127
+    .line 128
+    .line 129
     move-result v0
 
-    .line 16
-    iget-object v2, p0, Lmt4;->c:Ljava/lang/String;
+    .line 130
+    int-to-long v7, v0
 
-    .line 17
-    .line 18
-    invoke-static {v0, v2, v1}, Lpa6;->e(ILjava/lang/String;I)I
+    .line 131
+    invoke-static {v4}, Ljava/lang/Float;->floatToRawIntBits(F)I
 
-    .line 19
-    .line 20
-    .line 21
+    .line 132
+    .line 133
+    .line 134
     move-result v0
 
-    .line 22
-    iget-object v2, p0, Lmt4;->d:Ljava/lang/String;
+    .line 135
+    int-to-long v14, v0
 
-    .line 23
-    .line 24
-    invoke-static {v0, v2, v1}, Lpa6;->e(ILjava/lang/String;I)I
+    .line 136
+    shl-long/2addr v7, v10
 
-    .line 25
-    .line 26
-    .line 27
-    move-result v0
+    .line 137
+    and-long v10, v14, v12
 
-    .line 28
-    iget-object v2, p0, Lmt4;->e:Ljava/lang/String;
+    .line 138
+    .line 139
+    or-long/2addr v7, v10
 
-    .line 29
-    .line 30
-    invoke-static {v0, v2, v1}, Lpa6;->e(ILjava/lang/String;I)I
+    .line 140
+    invoke-static {v5, v6, v7, v8}, Lj94;->g(JJ)J
 
-    .line 31
-    .line 32
-    .line 33
-    move-result v0
+    .line 141
+    .line 142
+    .line 143
+    move-result-wide v4
 
-    .line 34
-    iget-object p0, p0, Lmt4;->f:Landroid/content/Context;
+    .line 144
+    const/4 v6, 0x0
 
-    .line 35
-    .line 36
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    .line 145
+    const/16 v7, 0x78
 
-    .line 37
-    .line 38
-    .line 39
-    move-result p0
+    .line 146
+    .line 147
+    move-object v0, v1
 
-    .line 40
-    add-int/2addr p0, v0
+    .line 148
+    move-wide v1, v2
 
-    .line 41
-    return p0
-.end method
+    .line 149
+    move v3, v9
 
-.method public final toString()Ljava/lang/String;
-    .locals 5
+    .line 150
+    invoke-static/range {v0 .. v7}, Lin1;->Y(Lin1;JFJLjn1;I)V
 
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 151
+    .line 152
+    .line 153
+    sget-object v0, Lk27;->a:Lk27;
 
-    .line 2
-    .line 3
-    const-string v1, "DownloadPending(core="
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    iget-object v1, p0, Lmt4;->a:Lu25;
-
-    .line 9
-    .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 11
-    .line 12
-    .line 13
-    const-string v1, ", url="
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    iget-object v1, p0, Lmt4;->b:Ljava/lang/String;
-
-    .line 19
-    .line 20
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 21
-    .line 22
-    .line 23
-    const-string v1, ", fileName="
-
-    .line 24
-    .line 25
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 26
-    .line 27
-    .line 28
-    const-string v1, ", userAgent="
-
-    .line 29
-    .line 30
-    const-string v2, ", coexistName="
-
-    .line 31
-    .line 32
-    iget-object v3, p0, Lmt4;->c:Ljava/lang/String;
-
-    .line 33
-    .line 34
-    iget-object v4, p0, Lmt4;->d:Ljava/lang/String;
-
-    .line 35
-    .line 36
-    invoke-static {v0, v3, v1, v4, v2}, Lxu1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 37
-    .line 38
-    .line 39
-    iget-object v1, p0, Lmt4;->e:Ljava/lang/String;
-
-    .line 40
-    .line 41
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 42
-    .line 43
-    .line 44
-    const-string v1, ", context="
-
-    .line 45
-    .line 46
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 47
-    .line 48
-    .line 49
-    iget-object p0, p0, Lmt4;->f:Landroid/content/Context;
-
-    .line 50
-    .line 51
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 52
-    .line 53
-    .line 54
-    const-string p0, ")"
-
-    .line 55
-    .line 56
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 57
-    .line 58
-    .line 59
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 60
-    .line 61
-    .line 62
-    move-result-object p0
-
-    .line 63
-    return-object p0
+    .line 154
+    .line 155
+    return-object v0
 .end method

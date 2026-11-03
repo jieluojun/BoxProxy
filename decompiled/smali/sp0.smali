@@ -1,476 +1,1040 @@
-.class public final synthetic Lsp0;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lsp0;
+.super Luf6;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lv52;
+.implements Ls52;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public j:Landroid/net/LocalSocket;
 
-.field public final synthetic k:Lib3;
+.field public k:Ljava/io/Closeable;
 
-.field public final synthetic l:Lr52;
+.field public l:Lup0;
 
-.field public final synthetic m:Lnr3;
+.field public m:Lrp0;
+
+.field public n:Ljava/io/BufferedReader;
+
+.field public o:J
+
+.field public p:Z
+
+.field public final synthetic q:Lup0;
+
+.field public final synthetic r:J
+
+.field public final synthetic s:Lrp0;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lib3;Lr52;Lnr3;B)V
+.method public constructor <init>(Lup0;JLrp0;Ly71;)V
     .locals 0
 
     .line 1
-    iput-byte p4, p0, Lsp0;->j:B
+    iput-object p1, p0, Lsp0;->q:Lup0;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lsp0;->k:Lib3;
+    iput-wide p2, p0, Lsp0;->r:J
 
     .line 4
     .line 5
-    iput-object p2, p0, Lsp0;->l:Lr52;
+    iput-object p4, p0, Lsp0;->s:Lrp0;
 
     .line 6
     .line 7
-    iput-object p3, p0, Lsp0;->m:Lnr3;
+    const/4 p1, 0x2
 
     .line 8
-    .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p5}, Luf6;-><init>(ILy71;)V
 
+    .line 9
     .line 10
     .line 11
-    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 19
+.method public final create(Ljava/lang/Object;Ly71;)Ly71;
+    .locals 6
 
     .line 1
-    move-object/from16 v0, p0
+    new-instance v0, Lsp0;
 
     .line 2
     .line 3
-    iget-byte v1, v0, Lsp0;->j:B
+    iget-wide v2, p0, Lsp0;->r:J
 
     .line 4
     .line 5
-    sget-object v2, Ld07;->a:Ld07;
+    iget-object v4, p0, Lsp0;->s:Lrp0;
 
     .line 6
     .line 7
-    const/4 v3, 0x2
+    iget-object v1, p0, Lsp0;->q:Lup0;
+
+    .line 8
+    .line 9
+    move-object v5, p2
+
+    .line 10
+    invoke-direct/range {v0 .. v5}, Lsp0;-><init>(Lup0;JLrp0;Ly71;)V
+
+    .line 11
+    .line 12
+    .line 13
+    return-object v0
+.end method
+
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    check-cast p1, Lbb1;
+
+    .line 2
+    .line 3
+    check-cast p2, Ly71;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0, p1, p2}, Lsp0;->create(Ljava/lang/Object;Ly71;)Ly71;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    check-cast p0, Lsp0;
+
+    .line 10
+    .line 11
+    sget-object p1, Lk27;->a:Lk27;
+
+    .line 12
+    .line 13
+    invoke-virtual {p0, p1}, Lsp0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p0
+
+    .line 17
+    return-object p0
+.end method
+
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 12
+
+    .line 1
+    const-string v0, "\n"
+
+    .line 2
+    .line 3
+    sget-object v1, Lcb1;->j:Lcb1;
+
+    .line 4
+    .line 5
+    iget-boolean v2, p0, Lsp0;->p:Z
+
+    .line 6
+    .line 7
+    const/4 v3, 0x1
 
     .line 8
     const/4 v4, 0x0
 
     .line 9
-    iget-object v5, v0, Lsp0;->m:Lnr3;
+    if-eqz v2, :cond_1
 
     .line 10
     .line 11
-    iget-object v6, v0, Lsp0;->l:Lr52;
+    if-ne v2, v3, :cond_0
 
     .line 12
     .line 13
-    iget-object v0, v0, Lsp0;->k:Lib3;
+    iget-wide v5, p0, Lsp0;->o:J
 
     .line 14
     .line 15
-    const/4 v7, 0x1
+    iget-object v0, p0, Lsp0;->n:Ljava/io/BufferedReader;
 
     .line 16
-    packed-switch v1, :pswitch_data_0
-
     .line 17
+    iget-object v2, p0, Lsp0;->m:Lrp0;
+
     .line 18
     .line 19
-    move-object/from16 v1, p1
+    iget-object v7, p0, Lsp0;->l:Lup0;
 
     .line 20
     .line 21
-    check-cast v1, Lz01;
+    iget-object v8, p0, Lsp0;->k:Ljava/io/Closeable;
 
     .line 22
     .line 23
-    move-object/from16 v8, p2
+    iget-object v9, p0, Lsp0;->j:Landroid/net/LocalSocket;
 
     .line 24
     .line 25
-    check-cast v8, Ljava/lang/Integer;
+    :try_start_0
+    invoke-static {p1}, Leg3;->S(Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 26
     .line 27
-    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
-
     .line 28
+    goto/16 :goto_4
+
     .line 29
     .line 30
-    move-result v8
+    :catchall_0
+    move-exception p1
 
     .line 31
-    and-int/lit8 v9, v8, 0x3
+    goto/16 :goto_8
 
     .line 32
     .line 33
-    if-eq v9, v3, :cond_0
+    :cond_0
+    const-string p0, "call to \'resume\' before \'invoke\' with coroutine"
 
     .line 34
     .line 35
-    move v3, v7
+    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
 
     .line 36
-    goto :goto_0
-
     .line 37
-    :cond_0
-    move v3, v4
-
     .line 38
-    :goto_0
-    and-int/2addr v8, v7
+    return-object v4
 
     .line 39
-    move-object v15, v1
+    :cond_1
+    invoke-static {p1}, Leg3;->S(Ljava/lang/Object;)V
 
     .line 40
-    check-cast v15, Lv62;
-
     .line 41
     .line 42
-    invoke-virtual {v15, v8, v3}, Lv62;->T(IZ)Z
+    new-instance p1, Landroid/net/LocalSocket;
 
     .line 43
     .line 44
+    invoke-direct {p1}, Landroid/net/LocalSocket;-><init>()V
+
     .line 45
-    move-result v1
-
     .line 46
-    if-eqz v1, :cond_6
-
     .line 47
+    :try_start_1
+    new-instance v2, Landroid/net/LocalSocketAddress;
+
     .line 48
-    sget-object v1, Lib3;->o:Lcv1;
-
     .line 49
-    .line 50
-    invoke-virtual {v1}, Lk3;->iterator()Ljava/util/Iterator;
+    iget-object v5, p0, Lsp0;->q:Lup0;
 
+    .line 50
     .line 51
+    iget-object v5, v5, Lup0;->b:Lpe0;
+
     .line 52
     .line 53
-    move-result-object v3
+    invoke-virtual {v5}, Lpe0;->invoke()Ljava/lang/Object;
 
     .line 54
-    move v12, v4
-
     .line 55
-    :goto_1
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
     .line 56
-    .line 57
-    .line 58
-    move-result v8
+    move-result-object v5
 
+    .line 57
+    check-cast v5, Ljava/lang/String;
+
+    .line 58
     .line 59
-    if-eqz v8, :cond_7
+    sget-object v6, Landroid/net/LocalSocketAddress$Namespace;->FILESYSTEM:Landroid/net/LocalSocketAddress$Namespace;
 
     .line 60
     .line 61
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-direct {v2, v5, v6}, Landroid/net/LocalSocketAddress;-><init>(Ljava/lang/String;Landroid/net/LocalSocketAddress$Namespace;)V
 
     .line 62
     .line 63
     .line 64
-    move-result-object v8
+    invoke-virtual {p1, v2}, Landroid/net/LocalSocket;->connect(Landroid/net/LocalSocketAddress;)V
 
     .line 65
-    add-int/lit8 v18, v12, 0x1
-
     .line 66
     .line 67
-    if-ltz v12, :cond_5
+    iget-object v2, p0, Lsp0;->q:Lup0;
 
     .line 68
     .line 69
-    check-cast v8, Lib3;
+    iget-wide v5, p0, Lsp0;->r:J
 
     .line 70
     .line 71
-    sget-object v9, Lib3;->l:Lib3;
+    iget-object v7, v2, Lup0;->d:Ljava/lang/Object;
 
     .line 72
     .line 73
-    if-ne v8, v9, :cond_1
+    monitor-enter v7
+    :try_end_1
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_3
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     .line 74
-    .line 75
-    const-string v9, "WARNING"
+    :try_start_2
+    invoke-virtual {v2, v5, v6}, Lup0;->b(J)Z
 
+    .line 75
     .line 76
     .line 77
-    goto :goto_2
+    move-result v2
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_a
 
     .line 78
-    :cond_1
-    invoke-virtual {v8}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    :try_start_3
+    monitor-exit v7
 
     .line 79
+    if-nez v2, :cond_3
+
     .line 80
     .line 81
-    move-result-object v9
+    invoke-virtual {p1}, Landroid/net/LocalSocket;->close()V
 
     .line 82
-    :goto_2
-    invoke-virtual {v1}, Ls2;->a()I
-
     .line 83
     .line 84
-    .line 85
-    move-result v10
+    sget-object v0, Lk27;->a:Lk27;
+    :try_end_3
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
+    .line 85
     .line 86
-    if-ne v0, v8, :cond_2
+    invoke-virtual {p1}, Landroid/net/LocalSocket;->close()V
 
     .line 87
     .line 88
-    move v11, v7
-
     .line 89
-    goto :goto_3
+    iget-object p0, p0, Lsp0;->q:Lup0;
 
     .line 90
-    :cond_2
-    move v11, v4
-
     .line 91
-    :goto_3
-    invoke-virtual {v15, v6}, Lv62;->g(Ljava/lang/Object;)Z
+    iget-object v1, p0, Lup0;->d:Ljava/lang/Object;
 
     .line 92
     .line 93
+    monitor-enter v1
+
     .line 94
-    move-result v13
+    :try_start_4
+    iget-object v2, p0, Lup0;->h:Landroid/net/LocalSocket;
 
     .line 95
-    invoke-virtual {v8}, Ljava/lang/Enum;->ordinal()I
-
     .line 96
+    if-ne v2, p1, :cond_2
+
     .line 97
     .line 98
-    move-result v14
+    iput-object v4, p0, Lup0;->h:Landroid/net/LocalSocket;
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 99
-    invoke-virtual {v15, v14}, Lv62;->e(I)Z
-
     .line 100
+    goto :goto_0
+
     .line 101
+    :catchall_1
+    move-exception p0
+
     .line 102
-    move-result v14
+    goto :goto_1
 
     .line 103
-    or-int/2addr v13, v14
+    :cond_2
+    :goto_0
+    monitor-exit v1
 
     .line 104
-    invoke-virtual {v15}, Lv62;->O()Ljava/lang/Object;
+    return-object v0
 
     .line 105
+    :goto_1
+    monitor-exit v1
+
     .line 106
+    throw p0
+
     .line 107
-    move-result-object v14
+    :catchall_2
+    move-exception v0
 
     .line 108
-    if-nez v13, :cond_3
+    goto/16 :goto_f
 
     .line 109
     .line 110
-    sget-object v13, Lx01;->a:Lw8;
+    :catch_0
+    move-exception v0
 
     .line 111
+    goto/16 :goto_e
+
     .line 112
-    if-ne v14, v13, :cond_4
-
     .line 113
-    .line 114
     :cond_3
-    new-instance v14, Lqf;
+    :try_start_5
+    iget-object v2, p0, Lsp0;->q:Lup0;
 
+    .line 114
     .line 115
+    iget-object v5, v2, Lup0;->d:Ljava/lang/Object;
+
     .line 116
-    const/16 v13, 0xa
-
     .line 117
+    iget-wide v6, p0, Lsp0;->r:J
+
     .line 118
-    invoke-direct {v14, v6, v8, v5, v13}, Lqf;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;B)V
-
     .line 119
-    .line 120
-    .line 121
-    invoke-virtual {v15, v14}, Lv62;->l0(Ljava/lang/Object;)V
+    monitor-enter v5
+    :try_end_5
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_5 .. :try_end_5} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_3
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
 
+    .line 120
+    :try_start_6
+    invoke-virtual {v2, v6, v7}, Lup0;->b(J)Z
+
+    .line 121
     .line 122
     .line 123
+    move-result v6
+
     .line 124
-    :cond_4
-    check-cast v14, Lr52;
+    if-eqz v6, :cond_4
 
     .line 125
     .line 126
-    const/16 v16, 0x0
+    iput-object p1, v2, Lup0;->h:Landroid/net/LocalSocket;
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_3
 
     .line 127
     .line 128
-    const/16 v17, 0x70
+    goto :goto_2
 
     .line 129
+    :catchall_3
+    move-exception v0
+
     .line 130
-    const/4 v13, 0x0
+    goto/16 :goto_9
 
     .line 131
-    invoke-static/range {v9 .. v17}, Loo1;->c(Ljava/lang/String;IZIZLr52;Lz01;II)V
-
     .line 132
-    .line 133
-    .line 134
-    move/from16 v12, v18
+    :cond_4
+    :goto_2
+    :try_start_7
+    monitor-exit v5
 
+    .line 133
+    invoke-virtual {p1}, Landroid/net/LocalSocket;->getOutputStream()Ljava/io/OutputStream;
+
+    .line 134
     .line 135
     .line 136
-    goto :goto_1
+    move-result-object v2
 
     .line 137
-    :cond_5
-    invoke-static {}, Lra7;->j0()V
+    iget-object v5, p0, Lsp0;->s:Lrp0;
 
     .line 138
     .line 139
+    invoke-virtual {v5}, Lrp0;->a()Ljava/lang/String;
+
     .line 140
-    const/4 v0, 0x0
-
     .line 141
-    throw v0
-
     .line 142
-    :cond_6
-    invoke-virtual {v15}, Lv62;->W()V
+    move-result-object v5
 
     .line 143
+    invoke-virtual {v5, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
     .line 144
     .line 145
-    :cond_7
-    return-object v2
-
     .line 146
-    :pswitch_0
-    move-object/from16 v1, p1
+    move-result-object v0
 
     .line 147
+    sget-object v5, Lcn0;->a:Ljava/nio/charset/Charset;
+
     .line 148
-    check-cast v1, Lz01;
-
     .line 149
-    .line 150
-    move-object/from16 v8, p2
+    invoke-virtual {v0, v5}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
+    .line 150
     .line 151
     .line 152
-    check-cast v8, Ljava/lang/Integer;
+    move-result-object v0
 
     .line 153
-    .line 154
-    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 154
     .line 155
     .line 156
+    invoke-virtual {v2, v0}, Ljava/io/OutputStream;->write([B)V
+
     .line 157
-    move-result v8
-
     .line 158
-    and-int/lit8 v9, v8, 0x3
-
     .line 159
-    .line 160
-    if-eq v9, v3, :cond_8
+    invoke-virtual {v2}, Ljava/io/OutputStream;->flush()V
 
+    .line 160
     .line 161
     .line 162
-    move v4, v7
+    new-instance v0, Ljava/io/BufferedReader;
 
     .line 163
-    :cond_8
-    and-int/lit8 v3, v8, 0x1
-
     .line 164
+    new-instance v2, Ljava/io/InputStreamReader;
+
     .line 165
-    check-cast v1, Lv62;
-
     .line 166
-    .line 167
-    invoke-virtual {v1, v3, v4}, Lv62;->T(IZ)Z
+    invoke-virtual {p1}, Landroid/net/LocalSocket;->getInputStream()Ljava/io/InputStream;
 
+    .line 167
     .line 168
     .line 169
+    move-result-object v6
+
     .line 170
-    move-result v3
+    invoke-direct {v2, v6, v5}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
 
     .line 171
-    if-eqz v3, :cond_9
-
     .line 172
     .line 173
-    new-instance v3, Lsp0;
+    invoke-direct {v0, v2}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
     .line 174
     .line 175
-    invoke-direct {v3, v0, v6, v5, v7}, Lsp0;-><init>(Lib3;Lr52;Lnr3;B)V
-
     .line 176
+    iget-object v2, p0, Lsp0;->q:Lup0;
+
     .line 177
     .line 178
-    const v0, -0x49aaa24b
+    iget-wide v5, p0, Lsp0;->r:J
 
     .line 179
     .line 180
-    .line 181
-    invoke-static {v0, v3, v1}, Lu77;->M(ILd62;Lz01;)Lty0;
+    iget-object v7, p0, Lsp0;->s:Lrp0;
+    :try_end_7
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_7 .. :try_end_7} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_3
+    .catchall {:try_start_7 .. :try_end_7} :catchall_2
 
+    .line 181
     .line 182
+    move-object v8, v7
+
     .line 183
+    move-object v7, v2
+
     .line 184
-    move-result-object v0
+    move-object v2, v8
 
     .line 185
-    const/4 v3, 0x6
+    move-object v9, p1
 
     .line 186
-    invoke-static {v0, v1, v3}, Ll33;->a(Lty0;Lz01;I)V
+    move-object v8, v0
 
     .line 187
+    :cond_5
+    :goto_3
+    :try_start_8
+    iget-object p1, v7, Lup0;->d:Ljava/lang/Object;
+
     .line 188
     .line 189
-    goto :goto_4
+    monitor-enter p1
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
     .line 190
-    :cond_9
-    invoke-virtual {v1}, Lv62;->W()V
+    :try_start_9
+    invoke-virtual {v7, v5, v6}, Lup0;->b(J)Z
 
     .line 191
     .line 192
     .line 193
-    :goto_4
-    return-object v2
+    move-result v10
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_8
 
     .line 194
-    nop
+    :try_start_a
+    monitor-exit p1
 
     .line 195
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    if-eqz v10, :cond_8
+
+    .line 196
+    .line 197
+    invoke-virtual {v0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+
+    .line 198
+    .line 199
+    .line 200
+    move-result-object p1
+
+    .line 201
+    if-nez p1, :cond_6
+
+    .line 202
+    .line 203
+    goto :goto_5
+
+    .line 204
+    :cond_6
+    invoke-static {p1}, Lib6;->A0(Ljava/lang/CharSequence;)Z
+
+    .line 205
+    .line 206
+    .line 207
+    move-result v10
+
+    .line 208
+    if-nez v10, :cond_5
+
+    .line 209
+    .line 210
+    iget-object v10, v7, Lup0;->d:Ljava/lang/Object;
+
+    .line 211
+    .line 212
+    monitor-enter v10
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_0
+
+    .line 213
+    :try_start_b
+    invoke-virtual {v7, v5, v6}, Lup0;->b(J)Z
+
+    .line 214
+    .line 215
+    .line 216
+    move-result v11
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_5
+
+    .line 217
+    :try_start_c
+    monitor-exit v10
+
+    .line 218
+    if-eqz v11, :cond_5
+
+    .line 219
+    .line 220
+    iget-object v10, v7, Lup0;->c:Lja;
+
+    .line 221
+    .line 222
+    iput-object v9, p0, Lsp0;->j:Landroid/net/LocalSocket;
+
+    .line 223
+    .line 224
+    iput-object v8, p0, Lsp0;->k:Ljava/io/Closeable;
+
+    .line 225
+    .line 226
+    iput-object v7, p0, Lsp0;->l:Lup0;
+
+    .line 227
+    .line 228
+    iput-object v2, p0, Lsp0;->m:Lrp0;
+
+    .line 229
+    .line 230
+    iput-object v0, p0, Lsp0;->n:Ljava/io/BufferedReader;
+
+    .line 231
+    .line 232
+    iput-wide v5, p0, Lsp0;->o:J
+
+    .line 233
+    .line 234
+    iput-boolean v3, p0, Lsp0;->p:Z
+
+    .line 235
+    .line 236
+    invoke-virtual {v10, v2, p1, p0}, Lja;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 237
+    .line 238
+    .line 239
+    move-result-object p1
+
+    .line 240
+    if-ne p1, v1, :cond_7
+
+    .line 241
+    .line 242
+    return-object v1
+
+    .line 243
+    :cond_7
+    :goto_4
+    iget-object p1, v7, Lup0;->d:Ljava/lang/Object;
+
+    .line 244
+    .line 245
+    monitor-enter p1
+    :try_end_c
+    .catchall {:try_start_c .. :try_end_c} :catchall_0
+
+    .line 246
+    const/4 v10, 0x0
+
+    .line 247
+    :try_start_d
+    iput v10, v7, Lup0;->k:I
+    :try_end_d
+    .catchall {:try_start_d .. :try_end_d} :catchall_4
+
+    .line 248
+    .line 249
+    :try_start_e
+    monitor-exit p1
+
+    .line 250
+    goto :goto_3
+
+    .line 251
+    :catchall_4
+    move-exception v0
+
+    .line 252
+    monitor-exit p1
+
+    .line 253
+    throw v0
+
+    .line 254
+    :catchall_5
+    move-exception p1
+
+    .line 255
+    monitor-exit v10
+
+    .line 256
+    throw p1
+    :try_end_e
+    .catchall {:try_start_e .. :try_end_e} :catchall_0
+
+    .line 257
+    :cond_8
+    :goto_5
+    :try_start_f
+    invoke-static {v8, v4}, Lp87;->z(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    :try_end_f
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_f .. :try_end_f} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_f .. :try_end_f} :catch_1
+    .catchall {:try_start_f .. :try_end_f} :catchall_7
+
+    .line 258
+    .line 259
+    .line 260
+    invoke-virtual {v9}, Landroid/net/LocalSocket;->close()V
+
+    .line 261
+    .line 262
+    .line 263
+    iget-object p1, p0, Lsp0;->q:Lup0;
+
+    .line 264
+    .line 265
+    iget-object v0, p1, Lup0;->d:Ljava/lang/Object;
+
+    .line 266
+    .line 267
+    monitor-enter v0
+
+    .line 268
+    :try_start_10
+    iget-object v1, p1, Lup0;->h:Landroid/net/LocalSocket;
+
+    .line 269
+    .line 270
+    if-ne v1, v9, :cond_9
+
+    .line 271
+    .line 272
+    iput-object v4, p1, Lup0;->h:Landroid/net/LocalSocket;
+    :try_end_10
+    .catchall {:try_start_10 .. :try_end_10} :catchall_6
+
+    .line 273
+    .line 274
+    goto :goto_6
+
+    .line 275
+    :catchall_6
+    move-exception p0
+
+    .line 276
+    goto :goto_7
+
+    .line 277
+    :cond_9
+    :goto_6
+    monitor-exit v0
+
+    .line 278
+    goto :goto_c
+
+    .line 279
+    :goto_7
+    monitor-exit v0
+
+    .line 280
+    throw p0
+
+    .line 281
+    :catchall_7
+    move-exception v0
+
+    .line 282
+    move-object p1, v9
+
+    .line 283
+    goto :goto_f
+
+    .line 284
+    :catch_1
+    move-object p1, v9
+
+    .line 285
+    goto :goto_a
+
+    .line 286
+    :catch_2
+    move-exception v0
+
+    .line 287
+    move-object p1, v9
+
+    .line 288
+    goto :goto_e
+
+    .line 289
+    :catchall_8
+    move-exception v0
+
+    .line 290
+    :try_start_11
+    monitor-exit p1
+
+    .line 291
+    throw v0
+    :try_end_11
+    .catchall {:try_start_11 .. :try_end_11} :catchall_0
+
+    .line 292
+    :goto_8
+    :try_start_12
+    throw p1
+    :try_end_12
+    .catchall {:try_start_12 .. :try_end_12} :catchall_9
+
+    .line 293
+    :catchall_9
+    move-exception v0
+
+    .line 294
+    :try_start_13
+    invoke-static {v8, p1}, Lp87;->z(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+
+    .line 295
+    .line 296
+    .line 297
+    throw v0
+    :try_end_13
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_13 .. :try_end_13} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_13} :catch_1
+    .catchall {:try_start_13 .. :try_end_13} :catchall_7
+
+    .line 298
+    :goto_9
+    :try_start_14
+    monitor-exit v5
+
+    .line 299
+    throw v0
+
+    .line 300
+    :catchall_a
+    move-exception v0
+
+    .line 301
+    monitor-exit v7
+
+    .line 302
+    throw v0
+    :try_end_14
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_14 .. :try_end_14} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_14 .. :try_end_14} :catch_3
+    .catchall {:try_start_14 .. :try_end_14} :catchall_2
+
+    .line 303
+    :catch_3
+    :goto_a
+    invoke-virtual {p1}, Landroid/net/LocalSocket;->close()V
+
+    .line 304
+    .line 305
+    .line 306
+    iget-object v0, p0, Lsp0;->q:Lup0;
+
+    .line 307
+    .line 308
+    iget-object v1, v0, Lup0;->d:Ljava/lang/Object;
+
+    .line 309
+    .line 310
+    monitor-enter v1
+
+    .line 311
+    :try_start_15
+    iget-object v2, v0, Lup0;->h:Landroid/net/LocalSocket;
+
+    .line 312
+    .line 313
+    if-ne v2, p1, :cond_a
+
+    .line 314
+    .line 315
+    iput-object v4, v0, Lup0;->h:Landroid/net/LocalSocket;
+    :try_end_15
+    .catchall {:try_start_15 .. :try_end_15} :catchall_b
+
+    .line 316
+    .line 317
+    goto :goto_b
+
+    .line 318
+    :catchall_b
+    move-exception p0
+
+    .line 319
+    goto :goto_d
+
+    .line 320
+    :cond_a
+    :goto_b
+    monitor-exit v1
+
+    .line 321
+    :goto_c
+    iget-object p1, p0, Lsp0;->q:Lup0;
+
+    .line 322
+    .line 323
+    iget-wide v0, p0, Lsp0;->r:J
+
+    .line 324
+    .line 325
+    invoke-virtual {p1, v0, v1}, Lup0;->d(J)V
+
+    .line 326
+    .line 327
+    .line 328
+    sget-object p0, Lk27;->a:Lk27;
+
+    .line 329
+    .line 330
+    return-object p0
+
+    .line 331
+    :goto_d
+    monitor-exit v1
+
+    .line 332
+    throw p0
+
+    .line 333
+    :goto_e
+    :try_start_16
+    throw v0
+    :try_end_16
+    .catchall {:try_start_16 .. :try_end_16} :catchall_2
+
+    .line 334
+    :goto_f
+    invoke-virtual {p1}, Landroid/net/LocalSocket;->close()V
+
+    .line 335
+    .line 336
+    .line 337
+    iget-object p0, p0, Lsp0;->q:Lup0;
+
+    .line 338
+    .line 339
+    iget-object v1, p0, Lup0;->d:Ljava/lang/Object;
+
+    .line 340
+    .line 341
+    monitor-enter v1
+
+    .line 342
+    :try_start_17
+    iget-object v2, p0, Lup0;->h:Landroid/net/LocalSocket;
+
+    .line 343
+    .line 344
+    if-ne v2, p1, :cond_b
+
+    .line 345
+    .line 346
+    iput-object v4, p0, Lup0;->h:Landroid/net/LocalSocket;
+    :try_end_17
+    .catchall {:try_start_17 .. :try_end_17} :catchall_c
+
+    .line 347
+    .line 348
+    goto :goto_10
+
+    .line 349
+    :catchall_c
+    move-exception p0
+
+    .line 350
+    goto :goto_11
+
+    .line 351
+    :cond_b
+    :goto_10
+    monitor-exit v1
+
+    .line 352
+    throw v0
+
+    .line 353
+    :goto_11
+    monitor-exit v1
+
+    .line 354
+    throw p0
 .end method

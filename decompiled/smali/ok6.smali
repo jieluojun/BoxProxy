@@ -1,51 +1,77 @@
-.class public final synthetic Lok6;
+.class public final Lok6;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Lv52;
+
+# static fields
+.field public static final b:Lok6;
+
+.field public static final c:Lok6;
+
+.field public static final d:Lok6;
 
 
 # instance fields
-.field public final synthetic A:I
-
-.field public final synthetic j:Lv52;
-
-.field public final synthetic k:Ljava/lang/CharSequence;
-
-.field public final synthetic l:Lv52;
-
-.field public final synthetic m:Lw52;
-
-.field public final synthetic n:Lv52;
-
-.field public final synthetic o:Lv52;
-
-.field public final synthetic p:Lv52;
-
-.field public final synthetic q:Lv52;
-
-.field public final synthetic r:Z
-
-.field public final synthetic s:Ldl6;
-
-.field public final synthetic t:Ltk6;
-
-.field public final synthetic u:Ltk6;
-
-.field public final synthetic v:Ltk6;
-
-.field public final synthetic w:Lty0;
-
-.field public final synthetic x:Lv52;
-
-.field public final synthetic y:Ldh4;
-
-.field public final synthetic z:I
+.field public final a:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lv52;Ljava/lang/CharSequence;Lv52;Lw52;Lv52;Lv52;Lv52;Lv52;ZLdl6;Ltk6;Ltk6;Ltk6;Lty0;Lv52;Ldh4;II)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    .line 1
+    new-instance v0, Lok6;
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    invoke-direct {v0, v1}, Lok6;-><init>(I)V
+
+    .line 5
+    .line 6
+    .line 7
+    sput-object v0, Lok6;->b:Lok6;
+
+    .line 8
+    .line 9
+    new-instance v0, Lok6;
+
+    .line 10
+    .line 11
+    const/4 v1, 0x1
+
+    .line 12
+    invoke-direct {v0, v1}, Lok6;-><init>(I)V
+
+    .line 13
+    .line 14
+    .line 15
+    sput-object v0, Lok6;->c:Lok6;
+
+    .line 16
+    .line 17
+    new-instance v0, Lok6;
+
+    .line 18
+    .line 19
+    const/4 v1, 0x2
+
+    .line 20
+    invoke-direct {v0, v1}, Lok6;-><init>(I)V
+
+    .line 21
+    .line 22
+    .line 23
+    sput-object v0, Lok6;->d:Lok6;
+
+    .line 24
+    .line 25
+    return-void
+.end method
+
+.method public constructor <init>(I)V
     .locals 0
 
     .line 1
@@ -54,277 +80,234 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lok6;->j:Lv52;
+    iput p1, p0, Lok6;->a:I
 
     .line 5
     .line 6
-    iput-object p2, p0, Lok6;->k:Ljava/lang/CharSequence;
-
-    .line 7
-    .line 8
-    iput-object p3, p0, Lok6;->l:Lv52;
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Lok6;->m:Lw52;
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Lok6;->n:Lv52;
-
-    .line 13
-    .line 14
-    iput-object p6, p0, Lok6;->o:Lv52;
-
-    .line 15
-    .line 16
-    iput-object p7, p0, Lok6;->p:Lv52;
-
-    .line 17
-    .line 18
-    iput-object p8, p0, Lok6;->q:Lv52;
-
-    .line 19
-    .line 20
-    iput-boolean p9, p0, Lok6;->r:Z
-
-    .line 21
-    .line 22
-    iput-object p10, p0, Lok6;->s:Ldl6;
-
-    .line 23
-    .line 24
-    iput-object p11, p0, Lok6;->t:Ltk6;
-
-    .line 25
-    .line 26
-    iput-object p12, p0, Lok6;->u:Ltk6;
-
-    .line 27
-    .line 28
-    iput-object p13, p0, Lok6;->v:Ltk6;
-
-    .line 29
-    .line 30
-    iput-object p14, p0, Lok6;->w:Lty0;
-
-    .line 31
-    .line 32
-    iput-object p15, p0, Lok6;->x:Lv52;
-
-    .line 33
-    .line 34
-    move-object/from16 p1, p16
-
-    .line 35
-    .line 36
-    iput-object p1, p0, Lok6;->y:Ldh4;
-
-    .line 37
-    .line 38
-    move/from16 p1, p17
-
-    .line 39
-    .line 40
-    iput p1, p0, Lok6;->z:I
-
-    .line 41
-    .line 42
-    move/from16 p1, p18
-
-    .line 43
-    .line 44
-    iput p1, p0, Lok6;->A:I
-
-    .line 45
-    .line 46
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 20
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
     .line 1
-    move-object/from16 v0, p0
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    move-object/from16 v16, p1
+    if-ne p0, p1, :cond_0
 
+    .line 3
     .line 4
+    return v0
+
     .line 5
-    check-cast v16, Lz01;
+    :cond_0
+    instance-of v1, p1, Lok6;
 
     .line 6
     .line 7
-    move-object/from16 v1, p2
+    const/4 v2, 0x0
 
     .line 8
-    .line 9
-    check-cast v1, Ljava/lang/Integer;
+    if-nez v1, :cond_1
 
+    .line 9
     .line 10
+    return v2
+
     .line 11
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :cond_1
+    check-cast p1, Lok6;
 
     .line 12
     .line 13
+    iget p1, p1, Lok6;->a:I
+
     .line 14
-    iget v1, v0, Lok6;->z:I
-
     .line 15
+    iget p0, p0, Lok6;->a:I
+
     .line 16
-    or-int/lit8 v1, v1, 0x1
-
     .line 17
-    .line 18
-    invoke-static {v1}, Lkr5;->i0(I)I
+    if-eq p0, p1, :cond_2
 
+    .line 18
     .line 19
+    return v2
+
+    .line 20
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lok6;->a:I
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    .line 1
+    iget p0, p0, Lok6;->a:I
+
+    .line 2
+    .line 3
+    if-nez p0, :cond_0
+
+    .line 4
+    .line 5
+    const-string p0, "TextDecoration.None"
+
+    .line 6
+    .line 7
+    return-object p0
+
+    .line 8
+    :cond_0
+    new-instance v0, Ljava/util/ArrayList;
+
+    .line 9
+    .line 10
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    .line 11
+    .line 12
+    .line 13
+    and-int/lit8 v1, p0, 0x1
+
+    .line 14
+    .line 15
+    if-eqz v1, :cond_1
+
+    .line 16
+    .line 17
+    const-string v1, "Underline"
+
+    .line 18
+    .line 19
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
     .line 20
     .line 21
-    move-result v17
-
     .line 22
-    iget v1, v0, Lok6;->A:I
+    :cond_1
+    and-int/lit8 p0, p0, 0x2
 
     .line 23
     .line 24
-    invoke-static {v1}, Lkr5;->i0(I)I
+    if-eqz p0, :cond_2
 
     .line 25
     .line 26
-    .line 27
-    move-result v18
+    const-string p0, "LineThrough"
 
+    .line 27
     .line 28
-    iget-object v1, v0, Lok6;->j:Lv52;
+    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 29
     .line 30
-    move-object v2, v1
-
     .line 31
-    iget-object v1, v0, Lok6;->k:Ljava/lang/CharSequence;
+    :cond_2
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     .line 32
     .line 33
-    move-object v3, v2
-
     .line 34
-    iget-object v2, v0, Lok6;->l:Lv52;
+    move-result p0
 
     .line 35
+    const/4 v1, 0x1
+
     .line 36
-    move-object v4, v3
+    if-ne p0, v1, :cond_3
 
     .line 37
-    iget-object v3, v0, Lok6;->m:Lw52;
-
     .line 38
+    const/4 p0, 0x0
+
     .line 39
-    move-object v5, v4
+    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     .line 40
-    iget-object v4, v0, Lok6;->n:Lv52;
-
     .line 41
     .line 42
-    move-object v6, v5
+    move-result-object p0
 
     .line 43
-    iget-object v5, v0, Lok6;->o:Lv52;
+    new-instance v0, Ljava/lang/StringBuilder;
 
     .line 44
     .line 45
-    move-object v7, v6
+    const-string v1, "TextDecoration."
 
     .line 46
-    iget-object v6, v0, Lok6;->p:Lv52;
-
     .line 47
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
     .line 48
-    move-object v8, v7
-
     .line 49
-    iget-object v7, v0, Lok6;->q:Lv52;
-
     .line 50
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
     .line 51
-    move-object v9, v8
-
     .line 52
-    iget-boolean v8, v0, Lok6;->r:Z
-
     .line 53
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
     .line 54
-    move-object v10, v9
-
     .line 55
-    iget-object v9, v0, Lok6;->s:Ldl6;
-
     .line 56
+    move-result-object p0
+
     .line 57
-    move-object v11, v10
+    return-object p0
 
     .line 58
-    iget-object v10, v0, Lok6;->t:Ltk6;
+    :cond_3
+    const/4 p0, 0x0
 
     .line 59
-    .line 60
-    move-object v12, v11
+    const/16 v1, 0x3e
 
+    .line 60
     .line 61
-    iget-object v11, v0, Lok6;->u:Ltk6;
+    const-string v2, ", "
 
     .line 62
     .line 63
-    move-object v13, v12
+    invoke-static {v0, v2, p0, v1}, Lla3;->a(Ljava/util/List;Ljava/lang/String;Lef3;I)Ljava/lang/String;
 
     .line 64
-    iget-object v12, v0, Lok6;->v:Ltk6;
-
     .line 65
     .line 66
-    move-object v14, v13
+    move-result-object p0
 
     .line 67
-    iget-object v13, v0, Lok6;->w:Lty0;
+    const-string v0, "TextDecoration["
 
     .line 68
     .line 69
-    move-object v15, v14
+    const-string v1, "]"
 
     .line 70
-    iget-object v14, v0, Lok6;->x:Lv52;
-
     .line 71
-    .line 72
-    iget-object v0, v0, Lok6;->y:Ldh4;
+    invoke-static {v0, p0, v1}, Lpb1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
+    .line 72
     .line 73
     .line 74
-    move-object/from16 v19, v15
+    move-result-object p0
 
     .line 75
-    .line 76
-    move-object v15, v0
-
-    .line 77
-    move-object/from16 v0, v19
-
-    .line 78
-    .line 79
-    invoke-static/range {v0 .. v18}, Ll23;->f(Lv52;Ljava/lang/CharSequence;Lv52;Lw52;Lv52;Lv52;Lv52;Lv52;ZLdl6;Ltk6;Ltk6;Ltk6;Lty0;Lv52;Ldh4;Lz01;II)V
-
-    .line 80
-    .line 81
-    .line 82
-    sget-object v0, Ld07;->a:Ld07;
-
-    .line 83
-    .line 84
-    return-object v0
+    return-object p0
 .end method

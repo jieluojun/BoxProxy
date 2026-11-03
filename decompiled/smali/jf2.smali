@@ -1,6 +1,6 @@
 .class public abstract synthetic Ljf2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
@@ -12,7 +12,7 @@
     .locals 3
 
     .line 1
-    invoke-static {}, Le53;->values()[Le53;
+    invoke-static {}, Lw53;->values()[Lw53;
 
     .line 2
     .line 3
@@ -28,7 +28,7 @@
     .line 7
     .line 8
     :try_start_0
-    sget-object v1, Le53;->ON_RESUME:Le53;
+    sget-object v1, Lw53;->ON_RESUME:Lw53;
 
     .line 9
     .line 10
@@ -51,7 +51,7 @@
     .line 17
     :catch_0
     :try_start_1
-    sget-object v1, Le53;->ON_PAUSE:Le53;
+    sget-object v1, Lw53;->ON_PAUSE:Lw53;
 
     .line 18
     .line 19
@@ -74,7 +74,7 @@
     .line 26
     :catch_1
     :try_start_2
-    sget-object v1, Le53;->ON_STOP:Le53;
+    sget-object v1, Lw53;->ON_STOP:Lw53;
 
     .line 27
     .line 28
@@ -97,7 +97,7 @@
     .line 35
     :catch_2
     :try_start_3
-    sget-object v1, Le53;->ON_DESTROY:Le53;
+    sget-object v1, Lw53;->ON_DESTROY:Lw53;
 
     .line 36
     .line 37

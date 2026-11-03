@@ -1,133 +1,45 @@
-.class public final Ldj1;
+.class public abstract Ldj1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Ljava/lang/AutoCloseable;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final j:Lcj1;
-
-.field public k:Z
-
-.field public final synthetic l:Lfj1;
+# static fields
+.field public static final a:Lkp1;
 
 
 # direct methods
-.method public constructor <init>(Lfj1;Lcj1;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p1, p0, Ldj1;->l:Lfj1;
-
-    .line 5
-    .line 6
-    iput-object p2, p0, Ldj1;->j:Lcj1;
-
-    .line 7
-    .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final close()V
+.method static constructor <clinit>()V
     .locals 3
 
     .line 1
-    iget-boolean v0, p0, Ldj1;->k:Z
+    new-instance v0, Let0;
 
     .line 2
     .line 3
-    if-nez v0, :cond_1
+    const/16 v1, 0x19
 
     .line 4
     .line 5
-    const/4 v0, 0x1
+    invoke-direct {v0, v1}, Let0;-><init>(B)V
 
     .line 6
-    iput-boolean v0, p0, Ldj1;->k:Z
-
     .line 7
     .line 8
-    iget-object v0, p0, Ldj1;->l:Lfj1;
+    new-instance v1, Lkp1;
 
     .line 9
     .line 10
-    iget-object v1, v0, Lfj1;->q:Ljava/lang/Object;
+    const/4 v2, 0x1
 
     .line 11
+    invoke-direct {v1, v0, v2}, Lkp1;-><init>(Ld52;B)V
+
     .line 12
-    monitor-enter v1
-
     .line 13
-    :try_start_0
-    iget-object p0, p0, Ldj1;->j:Lcj1;
-
     .line 14
+    sput-object v1, Ldj1;->a:Lkp1;
+
     .line 15
-    iget v2, p0, Lcj1;->h:I
-
     .line 16
-    .line 17
-    add-int/lit8 v2, v2, -0x1
-
-    .line 18
-    .line 19
-    iput v2, p0, Lcj1;->h:I
-
-    .line 20
-    .line 21
-    if-nez v2, :cond_0
-
-    .line 22
-    .line 23
-    iget-boolean v2, p0, Lcj1;->f:Z
-
-    .line 24
-    .line 25
-    if-eqz v2, :cond_0
-
-    .line 26
-    .line 27
-    invoke-virtual {v0, p0}, Lfj1;->t(Lcj1;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 28
-    .line 29
-    .line 30
-    goto :goto_0
-
-    .line 31
-    :catchall_0
-    move-exception p0
-
-    .line 32
-    goto :goto_1
-
-    .line 33
-    :cond_0
-    :goto_0
-    monitor-exit v1
-
-    .line 34
-    return-void
-
-    .line 35
-    :goto_1
-    monitor-exit v1
-
-    .line 36
-    throw p0
-
-    .line 37
-    :cond_1
     return-void
 .end method

@@ -1,104 +1,120 @@
-.class public abstract Lbt4;
-.super Ldt4;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final synthetic Lbt4;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lqw2;
+.implements Lo52;
+
+
+# instance fields
+.field public final synthetic j:Landroid/content/Context;
+
+.field public final synthetic k:Landroid/content/pm/ResolveInfo;
+
+.field public final synthetic l:Z
+
+.field public final synthetic m:Ljava/lang/CharSequence;
+
+.field public final synthetic n:J
+
+
+# direct methods
+.method public synthetic constructor <init>(Landroid/content/Context;Landroid/content/pm/ResolveInfo;ZLjava/lang/CharSequence;J)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Lbt4;->j:Landroid/content/Context;
+
+    .line 5
+    .line 6
+    iput-object p2, p0, Lbt4;->k:Landroid/content/pm/ResolveInfo;
+
+    .line 7
+    .line 8
+    iput-boolean p3, p0, Lbt4;->l:Z
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Lbt4;->m:Ljava/lang/CharSequence;
+
+    .line 11
+    .line 12
+    iput-wide p5, p0, Lbt4;->n:J
+
+    .line 13
+    .line 14
+    return-void
+.end method
 
 
 # virtual methods
-.method public computeReflected()Lew2;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
     .line 1
-    sget-object v0, Ld85;->a:Le85;
+    check-cast p1, Lkk6;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object v0, Lxa;->k0:Laz0;
 
     .line 4
     .line 5
-    .line 6
-    return-object p0
-.end method
-
-.method public getDelegate()Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Ldt4;->getReflected()Lrw2;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    check-cast p0, Lqw2;
+    iget-boolean v1, p0, Lbt4;->l:Z
 
     .line 6
     .line 7
-    invoke-interface {p0}, Lqw2;->getDelegate()Ljava/lang/Object;
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 8
     .line 9
     .line 10
-    move-result-object p0
+    move-result-object v3
 
     .line 11
-    return-object p0
-.end method
-
-.method public bridge synthetic getGetter()Low2;
-    .locals 0
+    new-instance v5, Laq6;
 
     .line 12
-    invoke-virtual {p0}, Lbt4;->getGetter()Lpw2;
+    .line 13
+    iget-wide v1, p0, Lbt4;->n:J
 
-    const/4 p0, 0x0
+    .line 14
+    .line 15
+    invoke-direct {v5, v1, v2}, Laq6;-><init>(J)V
 
-    return-object p0
-.end method
+    .line 16
+    .line 17
+    .line 18
+    iget-object v1, p0, Lbt4;->j:Landroid/content/Context;
 
-.method public getGetter()Lpw2;
-    .locals 0
+    .line 19
+    .line 20
+    iget-object v2, p0, Lbt4;->k:Landroid/content/pm/ResolveInfo;
 
-    .line 1
-    invoke-virtual {p0}, Ldt4;->getReflected()Lrw2;
+    .line 21
+    .line 22
+    iget-object v4, p0, Lbt4;->m:Ljava/lang/CharSequence;
 
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
+    .line 23
+    .line 24
+    invoke-virtual/range {v0 .. v5}, Laz0;->c(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 5
-    check-cast p0, Lqw2;
+    .line 25
+    .line 26
+    .line 27
+    invoke-interface {p1}, Lkk6;->close()V
 
-    .line 6
-    .line 7
-    invoke-interface {p0}, Lqw2;->getGetter()Lpw2;
+    .line 28
+    .line 29
+    .line 30
+    sget-object p0, Lk27;->a:Lk27;
 
-    .line 8
-    .line 9
-    .line 10
-    const/4 p0, 0x0
-
-    .line 11
-    return-object p0
-.end method
-
-.method public invoke()Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    invoke-interface {p0}, Lqw2;->get()Ljava/lang/Object;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
+    .line 31
+    .line 32
     return-object p0
 .end method

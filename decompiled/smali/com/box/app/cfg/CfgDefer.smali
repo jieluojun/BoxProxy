@@ -7,23 +7,23 @@
 
 .implements Ljava/lang/Runnable;
 
-.field private final a:Lfz5;
+.field private final a:Ls06;
 
-.field private final b:Lr52;
+.field private final b:Lo52;
 
 .field private final c:Ljava/lang/String;
 
 .field private final d:Z
 
 
-.method private constructor <init>(Lfz5;Lr52;Ljava/lang/String;Z)V
+.method private constructor <init>(Ls06;Lo52;Ljava/lang/String;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/box/app/cfg/CfgDefer;->a:Lfz5;
+    iput-object p1, p0, Lcom/box/app/cfg/CfgDefer;->a:Ls06;
 
-    iput-object p2, p0, Lcom/box/app/cfg/CfgDefer;->b:Lr52;
+    iput-object p2, p0, Lcom/box/app/cfg/CfgDefer;->b:Lo52;
 
     iput-object p3, p0, Lcom/box/app/cfg/CfgDefer;->c:Ljava/lang/String;
 
@@ -33,40 +33,40 @@
 .end method
 
 # first = true 时延后执行
-.method public static post(Lfz5;Lr52;Ljava/lang/String;Z)V
+.method public static post(Ls06;Lo52;Ljava/lang/String;Z)V
     .locals 4
 
     if-nez p3, :cond_delay
 
-    invoke-virtual {p0, p1, p2}, Lfz5;->e(Lr52;Ljava/lang/String;)V
+    invoke-virtual {p0, p1, p2}, Ls06;->e(Lo52;Ljava/lang/String;)V
 
     return-void
 
     :cond_delay
     const/4 v0, 0x0
 
-    invoke-static {p0, p1, p2, v0}, Lcom/box/app/cfg/CfgDefer;->later(Lfz5;Lr52;Ljava/lang/String;Z)V
+    invoke-static {p0, p1, p2, v0}, Lcom/box/app/cfg/CfgDefer;->later(Ls06;Lo52;Ljava/lang/String;Z)V
 
     return-void
 .end method
 
 # 日志页：进入时的首次刷新 / 自动刷新循环同理，用 Fz5.d（replace=false 的那个入口）
-.method public static postD(Lfz5;Lr52;Ljava/lang/String;)V
+.method public static postD(Ls06;Lo52;Ljava/lang/String;)V
     .locals 1
 
     const/4 v0, 0x1
 
-    invoke-static {p0, p1, p2, v0}, Lcom/box/app/cfg/CfgDefer;->later(Lfz5;Lr52;Ljava/lang/String;Z)V
+    invoke-static {p0, p1, p2, v0}, Lcom/box/app/cfg/CfgDefer;->later(Ls06;Lo52;Ljava/lang/String;Z)V
 
     return-void
 .end method
 
-.method private static later(Lfz5;Lr52;Ljava/lang/String;Z)V
+.method private static later(Ls06;Lo52;Ljava/lang/String;Z)V
     .locals 4
 
     new-instance v0, Lcom/box/app/cfg/CfgDefer;
 
-    invoke-direct {v0, p0, p1, p2, p3}, Lcom/box/app/cfg/CfgDefer;-><init>(Lfz5;Lr52;Ljava/lang/String;Z)V
+    invoke-direct {v0, p0, p1, p2, p3}, Lcom/box/app/cfg/CfgDefer;-><init>(Ls06;Lo52;Ljava/lang/String;Z)V
 
     new-instance v1, Landroid/os/Handler;
 
@@ -87,9 +87,9 @@
 .method public final run()V
     .locals 3
 
-    iget-object v0, p0, Lcom/box/app/cfg/CfgDefer;->a:Lfz5;
+    iget-object v0, p0, Lcom/box/app/cfg/CfgDefer;->a:Ls06;
 
-    iget-object v1, p0, Lcom/box/app/cfg/CfgDefer;->b:Lr52;
+    iget-object v1, p0, Lcom/box/app/cfg/CfgDefer;->b:Lo52;
 
     iget-object v2, p0, Lcom/box/app/cfg/CfgDefer;->c:Ljava/lang/String;
 
@@ -97,12 +97,12 @@
 
     if-eqz p0, :cond_e
 
-    invoke-virtual {v0, v1, v2}, Lfz5;->d(Lr52;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2}, Ls06;->d(Lo52;Ljava/lang/String;)V
 
     return-void
 
     :cond_e
-    invoke-virtual {v0, v1, v2}, Lfz5;->e(Lr52;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2}, Ls06;->e(Lo52;Ljava/lang/String;)V
 
     return-void
 .end method

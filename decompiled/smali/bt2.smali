@@ -1,31 +1,53 @@
 .class public final Lbt2;
-.super Ljava/util/concurrent/CancellationException;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lau2;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final j:I
-
-.field public final k:Lrh;
+.field public final n:Lo52;
 
 
 # direct methods
-.method public constructor <init>(ILrh;)V
+.method public constructor <init>(Lo52;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/util/concurrent/CancellationException;-><init>()V
+    invoke-direct {p0}, Ltb3;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Lbt2;->j:I
+    iput-object p1, p0, Lbt2;->n:Lo52;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lbt2;->k:Lrh;
+    return-void
+.end method
 
-    .line 7
-    .line 8
+
+# virtual methods
+.method public final m()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public final n(Ljava/lang/Throwable;)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lbt2;->n:Lo52;
+
+    .line 2
+    .line 3
+    invoke-interface {p0, p1}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
     return-void
 .end method

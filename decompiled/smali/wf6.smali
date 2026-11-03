@@ -1,148 +1,133 @@
-.class public final synthetic Lwf6;
+.class public abstract Lwf6;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lv52;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic j:Z
-
-.field public final synthetic k:Lg52;
-
-.field public final synthetic l:Lxn3;
-
-.field public final synthetic m:Z
-
-.field public final synthetic n:Lv52;
-
-.field public final synthetic o:J
-
-.field public final synthetic p:J
-
-.field public final synthetic q:S
+# static fields
+.field public static final a:Lap4;
 
 
 # direct methods
-.method public synthetic constructor <init>(ZLg52;Lxn3;ZLv52;JJII)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lap4;
 
     .line 2
     .line 3
-    .line 4
-    iput-boolean p1, p0, Lwf6;->j:Z
+    sget-object v1, Lqt1;->j:Lqt1;
 
+    .line 4
     .line 5
+    const/4 v2, 0x0
+
     .line 6
-    iput-object p2, p0, Lwf6;->k:Lg52;
+    invoke-direct {v0, v1, v2}, Lap4;-><init>(Ljava/util/List;Lmh2;)V
 
     .line 7
     .line 8
-    iput-object p3, p0, Lwf6;->l:Lxn3;
-
     .line 9
+    sput-object v0, Lwf6;->a:Lap4;
+
     .line 10
-    iput-boolean p4, p0, Lwf6;->m:Z
-
     .line 11
-    .line 12
-    iput-object p5, p0, Lwf6;->n:Lv52;
-
-    .line 13
-    .line 14
-    iput-wide p6, p0, Lwf6;->o:J
-
-    .line 15
-    .line 16
-    iput-wide p8, p0, Lwf6;->p:J
-
-    .line 17
-    .line 18
-    iput-short p11, p0, Lwf6;->q:S
-
-    .line 19
-    .line 20
     return-void
 .end method
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 12
+.method public static final a(Landroidx/compose/ui/input/pointer/PointerInputEventHandler;)Lbg6;
+    .locals 2
 
     .line 1
-    move-object v9, p1
+    new-instance v0, Lbg6;
 
     .line 2
-    check-cast v9, Lz01;
-
     .line 3
+    const/4 v1, 0x0
+
     .line 4
-    check-cast p2, Ljava/lang/Integer;
+    invoke-direct {v0, v1, v1, v1, p0}, Lbg6;-><init>(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;Landroidx/compose/ui/input/pointer/PointerInputEventHandler;)V
 
     .line 5
     .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .line 7
+    return-object v0
+.end method
+
+.method public static final b(Lko3;Ljava/lang/Object;Landroidx/compose/ui/input/pointer/PointerInputEventHandler;)Lko3;
+    .locals 6
+
+    .line 1
+    new-instance v0, Lvf6;
+
+    .line 2
+    .line 3
+    const/4 v3, 0x0
+
+    .line 4
+    const/4 v5, 0x6
+
+    .line 5
+    const/4 v2, 0x0
+
+    .line 6
+    move-object v1, p1
 
     .line 7
-    .line 8
-    .line 9
-    const/16 p1, 0x6001
+    move-object v4, p2
 
+    .line 8
+    invoke-direct/range {v0 .. v5}, Lvf6;-><init>(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;Landroidx/compose/ui/input/pointer/PointerInputEventHandler;I)V
+
+    .line 9
     .line 10
     .line 11
-    invoke-static {p1}, Lkr5;->i0(I)I
+    invoke-interface {p0, v0}, Lko3;->d0(Lko3;)Lko3;
 
     .line 12
     .line 13
     .line 14
-    move-result v10
+    move-result-object p0
 
     .line 15
-    iget-boolean v0, p0, Lwf6;->j:Z
+    return-object p0
+.end method
 
-    .line 16
-    .line 17
-    iget-object v1, p0, Lwf6;->k:Lg52;
+.method public static final c(Lko3;Ljava/lang/Object;Ljava/lang/Object;Landroidx/compose/ui/input/pointer/PointerInputEventHandler;)Lko3;
+    .locals 6
 
-    .line 18
-    .line 19
-    iget-object v2, p0, Lwf6;->l:Lxn3;
+    .line 1
+    new-instance v0, Lvf6;
 
-    .line 20
-    .line 21
-    iget-boolean v3, p0, Lwf6;->m:Z
+    .line 2
+    .line 3
+    const/4 v3, 0x0
 
-    .line 22
-    .line 23
-    iget-object v4, p0, Lwf6;->n:Lv52;
+    .line 4
+    const/4 v5, 0x4
 
-    .line 24
-    .line 25
-    iget-wide v5, p0, Lwf6;->o:J
+    .line 5
+    move-object v1, p1
 
-    .line 26
-    .line 27
-    iget-wide v7, p0, Lwf6;->p:J
+    .line 6
+    move-object v2, p2
 
-    .line 28
-    .line 29
-    iget-short v11, p0, Lwf6;->q:S
+    .line 7
+    move-object v4, p3
 
-    .line 30
-    .line 31
-    invoke-static/range {v0 .. v11}, Ll23;->m(ZLg52;Lxn3;ZLv52;JJLz01;II)V
+    .line 8
+    invoke-direct/range {v0 .. v5}, Lvf6;-><init>(Ljava/lang/Object;Ljava/lang/Object;[Ljava/lang/Object;Landroidx/compose/ui/input/pointer/PointerInputEventHandler;I)V
 
-    .line 32
-    .line 33
-    .line 34
-    sget-object p0, Ld07;->a:Ld07;
+    .line 9
+    .line 10
+    .line 11
+    invoke-interface {p0, v0}, Lko3;->d0(Lko3;)Lko3;
 
-    .line 35
-    .line 36
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
     return-object p0
 .end method

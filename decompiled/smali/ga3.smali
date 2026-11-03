@@ -1,127 +1,177 @@
-.class public final synthetic Lga3;
+.class public final Lga3;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lv52;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic j:Lg52;
+.field public final synthetic j:B
 
-.field public final synthetic k:Lxn3;
-
-.field public final synthetic l:J
-
-.field public final synthetic m:J
-
-.field public final synthetic n:Lhx5;
-
-.field public final synthetic o:Ljava/util/List;
+.field public final synthetic k:Lka3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lg52;Lxn3;JJLhx5;Ljava/util/List;I)V
+.method public synthetic constructor <init>(Lka3;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p2, p0, Lga3;->j:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Lga3;->k:Lka3;
+
     .line 4
-    iput-object p1, p0, Lga3;->j:Lg52;
-
     .line 5
-    .line 6
-    iput-object p2, p0, Lga3;->k:Lxn3;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6
     .line 7
     .line 8
-    iput-wide p3, p0, Lga3;->l:J
-
-    .line 9
-    .line 10
-    iput-wide p5, p0, Lga3;->m:J
-
-    .line 11
-    .line 12
-    iput-object p7, p0, Lga3;->n:Lhx5;
-
-    .line 13
-    .line 14
-    iput-object p8, p0, Lga3;->o:Ljava/util/List;
-
-    .line 15
-    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 10
+.method public final run()V
+    .locals 2
 
     .line 1
-    move-object v8, p1
+    iget-byte v0, p0, Lga3;->j:B
 
     .line 2
-    check-cast v8, Lz01;
-
     .line 3
+    iget-object p0, p0, Lga3;->k:Lka3;
+
     .line 4
-    check-cast p2, Ljava/lang/Integer;
-
     .line 5
-    .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    packed-switch v0, :pswitch_data_0
 
+    .line 6
     .line 7
     .line 8
-    .line 9
-    const/4 p1, 0x1
+    iget-object v0, p0, Lka3;->l:Lxn1;
 
+    .line 9
     .line 10
-    invoke-static {p1}, Lkr5;->i0(I)I
+    if-eqz v0, :cond_0
 
     .line 11
     .line 12
+    invoke-virtual {v0}, Landroid/view/View;->isAttachedToWindow()Z
+
     .line 13
-    move-result v9
-
     .line 14
-    iget-object v0, p0, Lga3;->j:Lg52;
-
     .line 15
+    move-result v0
+
     .line 16
-    iget-object v1, p0, Lga3;->k:Lxn3;
+    if-eqz v0, :cond_0
 
     .line 17
     .line 18
-    iget-wide v2, p0, Lga3;->l:J
+    iget-object v0, p0, Lka3;->l:Lxn1;
 
     .line 19
     .line 20
-    iget-wide v4, p0, Lga3;->m:J
+    invoke-virtual {v0}, Landroid/widget/AdapterView;->getCount()I
 
     .line 21
     .line 22
-    iget-object v6, p0, Lga3;->n:Lhx5;
-
     .line 23
+    move-result v0
+
     .line 24
-    iget-object v7, p0, Lga3;->o:Ljava/util/List;
+    iget-object v1, p0, Lka3;->l:Lxn1;
 
     .line 25
     .line 26
-    invoke-static/range {v0 .. v9}, Lzc7;->j(Lg52;Lxn3;JJLhx5;Ljava/util/List;Lz01;I)V
+    invoke-virtual {v1}, Landroid/view/ViewGroup;->getChildCount()I
 
     .line 27
     .line 28
     .line 29
-    sget-object p0, Ld07;->a:Ld07;
+    move-result v1
 
     .line 30
+    if-le v0, v1, :cond_0
+
     .line 31
-    return-object p0
+    .line 32
+    iget-object v0, p0, Lka3;->l:Lxn1;
+
+    .line 33
+    .line 34
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
+
+    .line 35
+    .line 36
+    .line 37
+    move-result v0
+
+    .line 38
+    iget v1, p0, Lka3;->v:I
+
+    .line 39
+    .line 40
+    if-gt v0, v1, :cond_0
+
+    .line 41
+    .line 42
+    iget-object v0, p0, Lka3;->H:Lmp;
+
+    .line 43
+    .line 44
+    const/4 v1, 0x2
+
+    .line 45
+    invoke-virtual {v0, v1}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
+
+    .line 46
+    .line 47
+    .line 48
+    invoke-virtual {p0}, Lka3;->d()V
+
+    .line 49
+    .line 50
+    .line 51
+    :cond_0
+    return-void
+
+    .line 52
+    :pswitch_0
+    iget-object p0, p0, Lka3;->l:Lxn1;
+
+    .line 53
+    .line 54
+    if-eqz p0, :cond_1
+
+    .line 55
+    .line 56
+    const/4 v0, 0x1
+
+    .line 57
+    invoke-virtual {p0, v0}, Lxn1;->setListSelectionHidden(Z)V
+
+    .line 58
+    .line 59
+    .line 60
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
+
+    .line 61
+    .line 62
+    .line 63
+    :cond_1
+    return-void
+
+    .line 64
+    nop
+
+    .line 65
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

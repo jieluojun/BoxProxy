@@ -1,201 +1,213 @@
-.class public final Lg61;
-.super Lc61;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final synthetic Lg61;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lb94;
 
 
-# virtual methods
-.method public final a(Lk54;)Ljava/lang/Object;
-    .locals 2
+# instance fields
+.field public final synthetic j:B
+
+.field public final synthetic k:Ljava/lang/reflect/Type;
+
+
+# direct methods
+.method public synthetic constructor <init>(Ljava/lang/reflect/Type;B)V
+    .locals 0
 
     .line 1
-    check-cast p1, Lyo5;
+    iput-byte p2, p0, Lg61;->j:B
 
     .line 2
     .line 3
-    iget-object p0, p1, Lyo5;->e:Ljava/lang/String;
+    iput-object p1, p0, Lg61;->k:Ljava/lang/reflect/Type;
 
     .line 4
     .line 5
-    const-string p1, ".inf"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 6
     .line 7
-    invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public final c()Ljava/lang/Object;
+    .locals 4
+
+    .line 1
+    iget-byte v0, p0, Lg61;->j:B
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    iget-object p0, p0, Lg61;->k:Ljava/lang/reflect/Type;
+
+    .line 5
+    .line 6
+    const/4 v2, 0x0
+
+    .line 7
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
     .line 10
-    move-result p1
+    instance-of v0, p0, Ljava/lang/reflect/ParameterizedType;
 
     .line 11
-    if-eqz p1, :cond_0
-
     .line 12
+    const-string v3, "Invalid EnumMap type: "
+
     .line 13
-    const-wide/high16 p0, 0x7ff0000000000000L    # Double.POSITIVE_INFINITY
-
     .line 14
+    if-eqz v0, :cond_1
+
     .line 15
-    invoke-static {p0, p1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
     .line 16
-    .line 17
-    .line 18
-    move-result-object p0
+    move-object v0, p0
 
+    .line 17
+    check-cast v0, Ljava/lang/reflect/ParameterizedType;
+
+    .line 18
     .line 19
-    return-object p0
+    invoke-interface {v0}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
 
     .line 20
-    :cond_0
-    const-string p1, "-.inf"
-
     .line 21
     .line 22
-    invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result-object v0
 
     .line 23
+    aget-object v0, v0, v1
+
     .line 24
     .line 25
-    move-result p1
+    instance-of v1, v0, Ljava/lang/Class;
 
     .line 26
-    if-eqz p1, :cond_1
-
     .line 27
+    if-eqz v1, :cond_0
+
     .line 28
-    const-wide/high16 p0, -0x10000000000000L    # Double.NEGATIVE_INFINITY
-
     .line 29
-    .line 30
-    invoke-static {p0, p1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    new-instance v2, Ljava/util/EnumMap;
 
+    .line 30
     .line 31
+    check-cast v0, Ljava/lang/Class;
+
     .line 32
     .line 33
-    move-result-object p0
+    invoke-direct {v2, v0}, Ljava/util/EnumMap;-><init>(Ljava/lang/Class;)V
 
     .line 34
-    return-object p0
-
     .line 35
-    :cond_1
-    const-string p1, ".nan"
-
     .line 36
+    goto :goto_0
+
     .line 37
-    invoke-virtual {p1, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    :cond_0
+    invoke-static {v3, p0}, Ljv1;->f(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 38
     .line 39
     .line 40
-    move-result p1
+    goto :goto_0
 
     .line 41
-    if-eqz p1, :cond_2
+    :cond_1
+    invoke-static {v3, p0}, Ljv1;->f(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 42
     .line 43
-    const-wide/high16 p0, 0x7ff8000000000000L    # Double.NaN
-
     .line 44
+    :goto_0
+    return-object v2
+
     .line 45
-    invoke-static {p0, p1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    :pswitch_0
+    instance-of v0, p0, Ljava/lang/reflect/ParameterizedType;
 
     .line 46
     .line 47
-    .line 48
-    move-result-object p0
+    const-string v3, "Invalid EnumSet type: "
 
+    .line 48
     .line 49
-    return-object p0
+    if-eqz v0, :cond_3
 
     .line 50
-    :cond_2
-    const/4 p1, 0x0
-
     .line 51
-    invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C
+    move-object v0, p0
 
     .line 52
+    check-cast v0, Ljava/lang/reflect/ParameterizedType;
+
     .line 53
     .line 54
-    move-result p1
+    invoke-interface {v0}, Ljava/lang/reflect/ParameterizedType;->getActualTypeArguments()[Ljava/lang/reflect/Type;
 
     .line 55
-    const/16 v0, 0x2d
-
     .line 56
     .line 57
-    const/4 v1, 0x1
+    move-result-object v0
 
     .line 58
-    if-ne p1, v0, :cond_3
+    aget-object v0, v0, v1
 
     .line 59
     .line 60
-    invoke-virtual {p0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    instance-of v1, v0, Ljava/lang/Class;
 
     .line 61
     .line 62
-    .line 63
-    move-result-object p0
+    if-eqz v1, :cond_2
 
+    .line 63
     .line 64
-    const/4 v1, -0x1
+    check-cast v0, Ljava/lang/Class;
 
     .line 65
-    goto :goto_0
-
     .line 66
-    :cond_3
-    const/16 v0, 0x2b
+    invoke-static {v0}, Ljava/util/EnumSet;->noneOf(Ljava/lang/Class;)Ljava/util/EnumSet;
 
     .line 67
     .line 68
-    if-ne p1, v0, :cond_4
-
     .line 69
+    move-result-object v2
+
     .line 70
-    invoke-virtual {p0, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    goto :goto_1
 
     .line 71
+    :cond_2
+    invoke-static {v3, p0}, Ljv1;->f(Ljava/lang/String;Ljava/lang/Object;)V
+
     .line 72
     .line 73
-    move-result-object p0
-
     .line 74
-    :cond_4
-    :goto_0
-    invoke-static {p0}, Ljava/lang/Double;->valueOf(Ljava/lang/String;)Ljava/lang/Double;
+    goto :goto_1
 
     .line 75
+    :cond_3
+    invoke-static {v3, p0}, Ljv1;->f(Ljava/lang/String;Ljava/lang/Object;)V
+
     .line 76
     .line 77
-    move-result-object p0
-
     .line 78
-    invoke-virtual {p0}, Ljava/lang/Double;->doubleValue()D
+    :goto_1
+    return-object v2
 
     .line 79
-    .line 80
-    .line 81
-    move-result-wide p0
-
-    .line 82
-    int-to-double v0, v1
-
-    .line 83
-    mul-double/2addr p0, v0
-
-    .line 84
-    invoke-static {p0, p1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    .line 85
-    .line 86
-    .line 87
-    move-result-object p0
-
-    .line 88
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

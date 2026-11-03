@@ -1,17 +1,17 @@
 .class public final Lzn4;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Lsn4;
+.field public final a:J
 
-.field public final b:Lln4;
+.field public final b:J
 
 
 # direct methods
-.method public constructor <init>(Lsn4;Lln4;)V
-    .locals 0
+.method public constructor <init>(JJ)V
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -19,21 +19,76 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lzn4;->a:Lsn4;
+    iput-wide p1, p0, Lzn4;->a:J
 
     .line 5
     .line 6
-    iput-object p2, p0, Lzn4;->b:Lln4;
+    iput-wide p3, p0, Lzn4;->b:J
 
     .line 7
     .line 8
+    const-wide v0, 0xff00000000L
+
+    .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    and-long p0, p1, v0
+
+    .line 14
+    .line 15
+    const-wide/16 v2, 0x0
+
+    .line 16
+    .line 17
+    cmp-long p0, p0, v2
+
+    .line 18
+    .line 19
+    if-nez p0, :cond_0
+
+    .line 20
+    .line 21
+    const-string p0, "width cannot be TextUnit.Unspecified"
+
+    .line 22
+    .line 23
+    invoke-static {p0}, Lqo2;->a(Ljava/lang/String;)V
+
+    .line 24
+    .line 25
+    .line 26
+    :cond_0
+    and-long p0, p3, v0
+
+    .line 27
+    .line 28
+    cmp-long p0, p0, v2
+
+    .line 29
+    .line 30
+    if-nez p0, :cond_1
+
+    .line 31
+    .line 32
+    const-string p0, "height cannot be TextUnit.Unspecified"
+
+    .line 33
+    .line 34
+    invoke-static {p0}, Lqo2;->a(Ljava/lang/String;)V
+
+    .line 35
+    .line 36
+    .line 37
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 5
 
     .line 1
     const/4 v0, 0x1
@@ -51,66 +106,67 @@
 
     .line 6
     .line 7
-    const/4 v2, 0x0
-
-    .line 8
     if-nez v1, :cond_1
 
+    .line 8
     .line 9
-    .line 10
-    return v2
+    goto :goto_0
 
-    .line 11
+    .line 10
     :cond_1
     check-cast p1, Lzn4;
 
+    .line 11
     .line 12
+    iget-wide v1, p1, Lzn4;->a:J
+
     .line 13
-    iget-object v1, p1, Lzn4;->b:Lln4;
-
     .line 14
+    iget-wide v3, p0, Lzn4;->a:J
+
     .line 15
-    iget-object v3, p0, Lzn4;->b:Lln4;
-
     .line 16
-    .line 17
-    invoke-static {v3, v1}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v3, v4, v1, v2}, Ldr6;->a(JJ)Z
 
+    .line 17
     .line 18
     .line 19
-    .line 20
     move-result v1
 
-    .line 21
+    .line 20
     if-nez v1, :cond_2
 
+    .line 21
     .line 22
+    goto :goto_0
+
     .line 23
-    return v2
+    :cond_2
+    iget-wide v1, p0, Lzn4;->b:J
 
     .line 24
-    :cond_2
-    iget-object p0, p0, Lzn4;->a:Lsn4;
-
     .line 25
+    iget-wide p0, p1, Lzn4;->b:J
+
     .line 26
-    iget-object p1, p1, Lzn4;->a:Lsn4;
-
     .line 27
-    .line 28
-    invoke-static {p0, p1}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v2, p0, p1}, Ldr6;->a(JJ)Z
 
+    .line 28
     .line 29
     .line 30
-    .line 31
     move-result p0
 
-    .line 32
+    .line 31
     if-nez p0, :cond_3
 
+    .line 32
     .line 33
+    :goto_0
+    const/4 p0, 0x0
+
     .line 34
-    return v2
+    return p0
 
     .line 35
     :cond_3
@@ -118,123 +174,104 @@
 .end method
 
 .method public final hashCode()I
-    .locals 2
+    .locals 4
 
     .line 1
-    const/4 v0, 0x0
+    iget-wide v0, p0, Lzn4;->a:J
 
     .line 2
-    iget-object v1, p0, Lzn4;->a:Lsn4;
-
     .line 3
-    .line 4
-    if-eqz v1, :cond_0
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
+    .line 4
     .line 5
     .line 6
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+    move-result v0
 
     .line 7
+    const/16 v1, 0x1f
+
     .line 8
     .line 9
-    move-result v1
+    mul-int/2addr v0, v1
 
     .line 10
-    goto :goto_0
+    iget-wide v2, p0, Lzn4;->b:J
 
     .line 11
-    :cond_0
-    move v1, v0
-
     .line 12
-    :goto_0
-    mul-int/lit8 v1, v1, 0x1f
+    invoke-static {v0, v1, v2, v3}, Lqq5;->d(IIJ)I
 
     .line 13
     .line 14
-    iget-object p0, p0, Lzn4;->b:Lln4;
-
     .line 15
+    move-result p0
+
     .line 16
-    if-eqz p0, :cond_1
+    const/4 v0, 0x7
 
     .line 17
-    .line 18
-    invoke-virtual {p0}, Lln4;->hashCode()I
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
 
+    .line 18
     .line 19
     .line 20
-    .line 21
     move-result v0
 
-    .line 22
-    :cond_1
-    add-int/2addr v1, v0
+    .line 21
+    add-int/2addr v0, p0
 
-    .line 23
-    return v1
+    .line 22
+    return v0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 2
+    .locals 4
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-wide v0, p0, Lzn4;->a:J
 
     .line 2
     .line 3
-    const-string v1, "PlatformTextStyle(spanStyle="
+    invoke-static {v0, v1}, Ldr6;->d(J)Ljava/lang/String;
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
     .line 6
+    move-result-object v0
+
     .line 7
+    iget-wide v1, p0, Lzn4;->b:J
+
     .line 8
-    iget-object v1, p0, Lzn4;->a:Lsn4;
-
     .line 9
-    .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v1, v2}, Ldr6;->d(J)Ljava/lang/String;
 
+    .line 10
     .line 11
     .line 12
+    move-result-object p0
+
     .line 13
-    const-string v1, ", paragraphSyle="
+    const-string v1, ", height="
 
     .line 14
     .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, ", placeholderVerticalAlign=TextCenter)"
 
     .line 16
     .line 17
+    const-string v3, "Placeholder(width="
+
     .line 18
-    iget-object p0, p0, Lzn4;->b:Lln4;
-
     .line 19
-    .line 20
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v3, v0, v1, p0, v2}, Lpb1;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
+    .line 20
     .line 21
     .line 22
-    .line 23
-    const-string p0, ")"
-
-    .line 24
-    .line 25
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 26
-    .line 27
-    .line 28
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 29
-    .line 30
-    .line 31
     move-result-object p0
 
-    .line 32
+    .line 23
     return-object p0
 .end method

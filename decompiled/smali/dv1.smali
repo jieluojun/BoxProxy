@@ -1,95 +1,64 @@
-.class public Ldv1;
+.class public interface abstract Ldv1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Lkw6;
+
+# static fields
+.field public static final a:Ljava/lang/String;
+
+.field public static final b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-boolean v0, Lv11;->e:Z
 
     .line 2
     .line 3
-    .line 4
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Ll82;Lqx6;)Ljw6;
-    .locals 0
-
-    .line 1
-    iget-object p0, p2, Lqx6;->a:Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    const-class p1, Ljava/lang/Enum;
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    invoke-virtual {p1, p0}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    const-string v1, "invalid backref number/name"
 
     .line 6
     .line 7
-    .line 8
-    move-result p2
-
-    .line 9
-    if-eqz p2, :cond_2
-
-    .line 10
-    .line 11
-    if-ne p0, p1, :cond_0
-
-    .line 12
-    .line 13
     goto :goto_0
 
-    .line 14
+    .line 8
     :cond_0
-    invoke-virtual {p0}, Ljava/lang/Class;->isEnum()Z
+    const-string v1, "invalid backref number"
+
+    .line 9
+    .line 10
+    :goto_0
+    sput-object v1, Ldv1;->a:Ljava/lang/String;
+
+    .line 11
+    .line 12
+    if-eqz v0, :cond_1
+
+    .line 13
+    .line 14
+    const-string v0, "invalid char in group name <%n>"
 
     .line 15
     .line 16
+    goto :goto_1
+
     .line 17
-    move-result p1
+    :cond_1
+    const-string v0, "invalid char in group number <%n>"
 
     .line 18
-    if-nez p1, :cond_1
-
     .line 19
+    :goto_1
+    sput-object v0, Ldv1;->b:Ljava/lang/String;
+
     .line 20
-    invoke-virtual {p0}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
-
     .line 21
-    .line 22
-    .line 23
-    move-result-object p0
-
-    .line 24
-    :cond_1
-    new-instance p1, Lev1;
-
-    .line 25
-    .line 26
-    invoke-direct {p1, p0}, Lev1;-><init>(Ljava/lang/Class;)V
-
-    .line 27
-    .line 28
-    .line 29
-    return-object p1
-
-    .line 30
-    :cond_2
-    :goto_0
-    const/4 p0, 0x0
-
-    .line 31
-    return-object p0
+    return-void
 .end method

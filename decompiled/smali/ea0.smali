@@ -1,85 +1,67 @@
-.class public final synthetic Lea0;
+.class public abstract Lea0;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lv52;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic j:Lxn3;
-
-.field public final synthetic k:B
+# static fields
+.field public static final a:Lkt3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lxn3;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Ljv3;->a:Liv3;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lea0;->j:Lxn3;
-
-    .line 5
-    .line 6
-    iput-byte p2, p0, Lea0;->k:B
-
-    .line 7
-    .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    check-cast p1, Lz01;
-
-    .line 2
-    .line 3
-    check-cast p2, Ljava/lang/Integer;
+    new-instance v1, Luy0;
 
     .line 4
     .line 5
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/16 v2, 0x13
 
     .line 6
     .line 7
-    .line 8
-    iget-byte p2, p0, Lea0;->k:B
+    invoke-direct {v1, v2}, Luy0;-><init>(B)V
 
+    .line 8
     .line 9
     .line 10
-    or-int/lit8 p2, p2, 0x1
+    const/16 v2, 0xe
 
     .line 11
     .line 12
-    invoke-static {p2}, Lkr5;->i0(I)I
+    const/high16 v3, 0x3f800000    # 1.0f
 
     .line 13
     .line 14
+    invoke-static {v3, v1, v2}, Ly43;->z(FLs52;I)Liv3;
+
     .line 15
-    move-result p2
-
     .line 16
-    iget-object p0, p0, Lea0;->j:Lxn3;
-
     .line 17
+    move-result-object v1
+
     .line 18
-    invoke-static {p0, p1, p2}, Lfa0;->a(Lxn3;Lz01;I)V
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 19
     .line 20
     .line 21
-    sget-object p0, Ld07;->a:Ld07;
+    new-instance v2, Lkt3;
 
     .line 22
     .line 23
-    return-object p0
+    invoke-direct {v2, v0, v0, v1}, Lkt3;-><init>(Lhv3;Lhv3;Liv3;)V
+
+    .line 24
+    .line 25
+    .line 26
+    sput-object v2, Lea0;->a:Lkt3;
+
+    .line 27
+    .line 28
+    return-void
 .end method

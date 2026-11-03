@@ -1,16 +1,16 @@
 .class public final Lti2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Lv52;
+.field public final a:Ls52;
 
 .field public final synthetic b:B
 
 
 # direct methods
-.method public constructor <init>(Lv52;B)V
+.method public constructor <init>(Ls52;B)V
     .locals 0
 
     .line 1
@@ -23,7 +23,7 @@
     .line 4
     .line 5
     .line 6
-    iput-object p1, p0, Lti2;->a:Lv52;
+    iput-object p1, p0, Lti2;->a:Ls52;
 
     .line 7
     .line 8
@@ -32,7 +32,7 @@
 
 
 # virtual methods
-.method public final a(FLvy2;Lvy2;)F
+.method public final a(FLjz2;Ljz2;)F
     .locals 6
 
     .line 1
@@ -60,7 +60,7 @@
     .line 13
     .line 14
     .line 15
-    invoke-interface {p2}, Lvy2;->Q()J
+    invoke-interface {p2}, Ljz2;->Q()J
 
     .line 16
     .line 17
@@ -111,7 +111,7 @@
     or-long/2addr p0, v4
 
     .line 36
-    invoke-interface {p3, p2, p0, p1}, Lvy2;->w(Lvy2;J)J
+    invoke-interface {p3, p2, p0, p1}, Ljz2;->w(Ljz2;J)J
 
     .line 37
     .line 38
@@ -137,7 +137,7 @@
 
     .line 47
     :pswitch_0
-    invoke-interface {p2}, Lvy2;->Q()J
+    invoke-interface {p2}, Ljz2;->Q()J
 
     .line 48
     .line 49
@@ -189,7 +189,7 @@
     or-long/2addr p0, v0
 
     .line 69
-    invoke-interface {p3, p2, p0, p1}, Lvy2;->w(Lvy2;J)J
+    invoke-interface {p3, p2, p0, p1}, Ljz2;->w(Ljz2;J)J
 
     .line 70
     .line 71

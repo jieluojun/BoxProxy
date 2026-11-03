@@ -1,65 +1,92 @@
 .class public final Lty1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Ljq1;
+.implements Lfb7;
 
 
 # virtual methods
-.method public final a(Llq1;)V
+.method public final a(Lyg1;)I
     .locals 0
 
     .line 1
-    const/4 p0, -0x1
+    const/4 p0, 0x0
 
     .line 2
-    iput p0, p1, Llq1;->d:I
+    return p0
+.end method
 
-    .line 3
-    .line 4
-    iput p0, p1, Llq1;->e:I
+.method public final b(Lyg1;)I
+    .locals 0
 
-    .line 5
-    .line 6
-    return-void
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public final c(Lyg1;Lkz2;)I
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public final d(Lyg1;Lkz2;)I
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 0
+    .locals 1
 
     .line 1
-    instance-of p0, p1, Lty1;
+    const/4 v0, 0x1
 
     .line 2
+    if-ne p0, p1, :cond_0
+
     .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of p0, p1, Lty1;
+
+    .line 6
+    .line 7
+    if-nez p0, :cond_1
+
+    .line 8
+    .line 9
+    const/4 p0, 0x0
+
+    .line 10
     return p0
+
+    .line 11
+    :cond_1
+    return v0
 .end method
 
 .method public final hashCode()I
     .locals 0
 
     .line 1
-    const-class p0, Lty1;
+    const/4 p0, 0x0
 
     .line 2
-    .line 3
-    invoke-static {p0}, Ld85;->a(Ljava/lang/Class;)Lvq0;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    invoke-virtual {p0}, Lvq0;->hashCode()I
-
-    .line 8
-    .line 9
-    .line 10
-    move-result p0
-
-    .line 11
     return p0
 .end method
 
@@ -67,7 +94,7 @@
     .locals 0
 
     .line 1
-    const-string p0, "FinishComposingTextCommand()"
+    const-string p0, "Insets(left=0, top=0, right=0, bottom=0)"
 
     .line 2
     .line 3

@@ -1,136 +1,120 @@
 .class public final Lym5;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lxm5;
+.implements Ld52;
 
 
 # instance fields
-.field public final j:Ljava/lang/Object;
+.field public final synthetic j:B
 
-.field public final k:Ljava/util/LinkedHashMap;
+.field public final synthetic k:Lg92;
+
+.field public final synthetic l:Lio5;
+
+.field public final synthetic m:Lsn5;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>(Lg92;Lio5;Lsn5;B)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p4, p0, Lym5;->j:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Lym5;->k:Lg92;
+
     .line 4
-    new-instance v0, Ljava/lang/Object;
-
     .line 5
-    .line 6
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lym5;->l:Lio5;
 
+    .line 6
     .line 7
+    iput-object p3, p0, Lym5;->m:Lsn5;
+
     .line 8
     .line 9
-    iput-object v0, p0, Lym5;->j:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 10
     .line 11
-    new-instance v0, Ljava/util/LinkedHashMap;
-
     .line 12
-    .line 13
-    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
-
-    .line 14
-    .line 15
-    .line 16
-    iput-object v0, p0, Lym5;->k:Ljava/util/LinkedHashMap;
-
-    .line 17
-    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(Ljava/lang/String;Ljava/lang/String;)Lzd;
-    .locals 2
+.method public final invoke()Ljava/lang/Object;
+    .locals 5
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-byte v0, p0, Lym5;->j:B
 
     .line 2
     .line 3
-    .line 4
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object v1, Lk27;->a:Lk27;
 
+    .line 4
     .line 5
+    iget-object v2, p0, Lym5;->m:Lsn5;
+
     .line 6
     .line 7
-    iget-object v0, p0, Lym5;->j:Ljava/lang/Object;
+    iget-object v3, p0, Lym5;->l:Lio5;
 
     .line 8
     .line 9
-    monitor-enter v0
+    const/4 v4, 0x0
 
     .line 10
-    :try_start_0
-    iget-object p0, p0, Lym5;->k:Ljava/util/LinkedHashMap;
+    iget-object p0, p0, Lym5;->k:Lg92;
 
     .line 11
     .line 12
-    invoke-virtual {p0, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
     .line 13
     .line 14
     .line 15
-    move-result-object v1
+    check-cast p0, Lco4;
 
     .line 16
-    if-nez v1, :cond_0
-
     .line 17
-    .line 18
-    invoke-static {p2}, Ld5;->a(Ljava/lang/String;)Lzd;
+    invoke-virtual {p0, v4}, Lco4;->a(I)V
 
+    .line 18
     .line 19
     .line 20
+    invoke-virtual {v3, v2}, Lio5;->d(Lsn5;)V
+
     .line 21
-    move-result-object v1
-
     .line 22
-    invoke-interface {p0, p1, v1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 23
-    .line 24
-    .line 25
-    goto :goto_0
-
-    .line 26
-    :catchall_0
-    move-exception p0
-
-    .line 27
-    goto :goto_1
-
-    .line 28
-    :cond_0
-    :goto_0
-    check-cast v1, Lzd;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 29
-    .line 30
-    monitor-exit v0
-
-    .line 31
     return-object v1
 
-    .line 32
-    :goto_1
-    monitor-exit v0
+    .line 24
+    :pswitch_0
+    check-cast p0, Lco4;
 
-    .line 33
-    throw p0
+    .line 25
+    .line 26
+    invoke-virtual {p0, v4}, Lco4;->a(I)V
+
+    .line 27
+    .line 28
+    .line 29
+    invoke-virtual {v3, v2}, Lio5;->d(Lsn5;)V
+
+    .line 30
+    .line 31
+    .line 32
+    return-object v1
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

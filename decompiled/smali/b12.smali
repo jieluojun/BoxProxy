@@ -1,38 +1,52 @@
-.class public abstract synthetic Lb12;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lb12;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final synthetic a:I
+# instance fields
+.field public j:Lz85;
+
+.field public k:Lgl;
+
+.field public synthetic l:Ljava/lang/Object;
+
+.field public m:I
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 7
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    const-wide/16 v3, 0x1
+    iput-object p1, p0, Lb12;->l:Ljava/lang/Object;
 
     .line 2
     .line 3
-    const-wide/32 v5, 0x7fffffff
+    iget p1, p0, Lb12;->m:I
 
     .line 4
     .line 5
-    .line 6
-    const-string v0, "kotlinx.coroutines.flow.defaultConcurrency"
+    const/high16 v0, -0x80000000
 
+    .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    const-wide/16 v1, 0x10
+    iput p1, p0, Lb12;->m:I
 
     .line 9
     .line 10
-    invoke-static/range {v0 .. v6}, Lf63;->M(Ljava/lang/String;JJJ)J
+    const/4 p1, 0x0
 
     .line 11
+    invoke-static {p1, p1, p0}, Lam0;->v(Lf02;Ls52;Lz71;)Ljava/lang/Object;
+
     .line 12
     .line 13
-    return-void
+    .line 14
+    move-result-object p0
+
+    .line 15
+    return-object p0
 .end method

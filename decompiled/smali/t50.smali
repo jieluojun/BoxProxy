@@ -1,216 +1,424 @@
 .class public final Lt50;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Ly56;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Lr50;
+# instance fields
+.field public final a:I
 
-.field public static final b:Z
+.field public final b:I
+
+.field public final c:I
+
+.field public final d:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 2
 
     .line 1
-    new-instance v0, Lr50;
+    new-instance v0, Lt50;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x0
 
     .line 4
+    invoke-direct {v0, v1, v1, v1, v1}, Lt50;-><init>(IIII)V
+
     .line 5
     .line 6
-    sput-object v0, Lt50;->a:Lr50;
+    .line 7
+    return-void
+.end method
+
+.method public constructor <init>(IIII)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput p1, p0, Lt50;->a:I
+
+    .line 5
+    .line 6
+    iput p2, p0, Lt50;->b:I
 
     .line 7
     .line 8
-    const/4 v0, 0x0
+    iput p3, p0, Lt50;->c:I
 
     .line 9
-    :try_start_0
-    const-string v1, "org.bouncycastle.jsse.provider.BouncyCastleJsseProvider"
-
     .line 10
+    iput p4, p0, Lt50;->d:I
+
     .line 11
-    const-class v2, Ls50;
-
     .line 12
-    .line 13
-    invoke-virtual {v2}, Ljava/lang/Class;->getClassLoader()Ljava/lang/ClassLoader;
+    if-gt p1, p3, :cond_1
 
+    .line 13
     .line 14
+    if-gt p2, p4, :cond_0
+
     .line 15
     .line 16
-    move-result-object v2
+    return-void
 
     .line 17
-    invoke-static {v1, v0, v2}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
-    :try_end_0
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    :cond_0
+    const-string p0, "top must be less than or equal to bottom, top: "
 
     .line 18
     .line 19
-    .line 20
-    const/4 v0, 0x1
+    const-string p1, ", bottom: "
 
+    .line 20
     .line 21
-    :catch_0
-    sput-boolean v0, Lt50;->b:Z
+    invoke-static {p2, p4, p0, p1}, Lqq5;->j(IILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 22
     .line 23
+    .line 24
+    move-result-object p0
+
+    .line 25
+    invoke-static {p0}, Ljv1;->d(Ljava/lang/Object;)V
+
+    .line 26
+    .line 27
+    .line 28
+    const/4 p0, 0x0
+
+    .line 29
+    throw p0
+
+    .line 30
+    :cond_1
+    const-string p0, "Left must be less than or equal to right, left: "
+
+    .line 31
+    .line 32
+    const-string p2, ", right: "
+
+    .line 33
+    .line 34
+    invoke-static {p1, p3, p0, p2}, Lqq5;->j(IILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 35
+    .line 36
+    .line 37
+    move-result-object p0
+
+    .line 38
+    invoke-static {p0}, Ljv1;->d(Ljava/lang/Object;)V
+
+    .line 39
+    .line 40
+    .line 41
+    const/4 p0, 0x0
+
+    .line 42
+    throw p0
+.end method
+
+.method public constructor <init>(Landroid/graphics/Rect;)V
+    .locals 3
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 43
+    iget v0, p1, Landroid/graphics/Rect;->left:I
+
+    iget v1, p1, Landroid/graphics/Rect;->top:I
+
+    iget v2, p1, Landroid/graphics/Rect;->right:I
+
+    iget p1, p1, Landroid/graphics/Rect;->bottom:I
+
+    invoke-direct {p0, v0, v1, v2, p1}, Lt50;-><init>(IIII)V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljavax/net/ssl/SSLSocket;)Ljava/lang/String;
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
     .line 1
-    check-cast p1, Lorg/bouncycastle/jsse/BCSSLSocket;
+    const/4 v0, 0x1
 
     .line 2
+    if-ne p0, p1, :cond_0
+
     .line 3
-    invoke-interface {p1}, Lorg/bouncycastle/jsse/BCSSLSocket;->getApplicationProtocol()Ljava/lang/String;
-
     .line 4
-    .line 5
-    .line 6
-    move-result-object p0
+    return v0
 
+    .line 5
+    :cond_0
+    if-eqz p1, :cond_1
+
+    .line 6
     .line 7
-    if-eqz p0, :cond_1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 8
     .line 9
-    const-string p1, ""
-
     .line 10
+    move-result-object v1
+
     .line 11
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p1
-
-    .line 15
-    if-eqz p1, :cond_0
-
-    .line 16
-    .line 17
     goto :goto_0
 
-    .line 18
-    :cond_0
-    return-object p0
-
-    .line 19
-    :cond_1
-    :goto_0
-    const/4 p0, 0x0
-
-    .line 20
-    return-object p0
-.end method
-
-.method public final b(Ljavax/net/ssl/SSLSocket;)Z
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final c(Ljavax/net/ssl/SSLSocket;Ljava/lang/String;Ljava/util/List;Lgg0;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Lt50;->b(Ljavax/net/ssl/SSLSocket;)Z
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    if-eqz p0, :cond_0
-
-    .line 6
-    .line 7
-    check-cast p1, Lorg/bouncycastle/jsse/BCSSLSocket;
-
-    .line 8
-    .line 9
-    invoke-interface {p1}, Lorg/bouncycastle/jsse/BCSSLSocket;->getParameters()Lorg/bouncycastle/jsse/BCSSLParameters;
-
-    .line 10
-    .line 11
     .line 12
-    move-result-object p0
+    :cond_1
+    const/4 v1, 0x0
 
     .line 13
-    sget-object p2, Lgn4;->a:Lr9;
+    :goto_0
+    const-class v2, Lt50;
 
     .line 14
     .line 15
-    invoke-static {p3}, Lya3;->l(Ljava/util/List;)Ljava/util/ArrayList;
+    invoke-virtual {v2, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 16
     .line 17
     .line 18
-    move-result-object p2
+    move-result v1
 
     .line 19
-    const/4 p3, 0x0
+    const/4 v2, 0x0
 
     .line 20
-    new-array p3, p3, [Ljava/lang/String;
+    if-nez v1, :cond_2
 
     .line 21
     .line 22
-    invoke-virtual {p2, p3}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    return v2
 
     .line 23
+    :cond_2
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 24
     .line 25
-    move-result-object p2
-
     .line 26
-    check-cast p2, [Ljava/lang/String;
+    check-cast p1, Lt50;
 
     .line 27
     .line 28
-    invoke-virtual {p0, p2}, Lorg/bouncycastle/jsse/BCSSLParameters;->setApplicationProtocols([Ljava/lang/String;)V
+    iget v1, p0, Lt50;->a:I
 
     .line 29
     .line 30
-    .line 31
-    invoke-interface {p1, p0}, Lorg/bouncycastle/jsse/BCSSLSocket;->setParameters(Lorg/bouncycastle/jsse/BCSSLParameters;)V
+    iget v3, p1, Lt50;->a:I
 
+    .line 31
     .line 32
+    if-eq v1, v3, :cond_3
+
     .line 33
     .line 34
-    :cond_0
-    return-void
+    return v2
+
+    .line 35
+    :cond_3
+    iget v1, p0, Lt50;->b:I
+
+    .line 36
+    .line 37
+    iget v3, p1, Lt50;->b:I
+
+    .line 38
+    .line 39
+    if-eq v1, v3, :cond_4
+
+    .line 40
+    .line 41
+    return v2
+
+    .line 42
+    :cond_4
+    iget v1, p0, Lt50;->c:I
+
+    .line 43
+    .line 44
+    iget v3, p1, Lt50;->c:I
+
+    .line 45
+    .line 46
+    if-eq v1, v3, :cond_5
+
+    .line 47
+    .line 48
+    return v2
+
+    .line 49
+    :cond_5
+    iget p0, p0, Lt50;->d:I
+
+    .line 50
+    .line 51
+    iget p1, p1, Lt50;->d:I
+
+    .line 52
+    .line 53
+    if-eq p0, p1, :cond_6
+
+    .line 54
+    .line 55
+    return v2
+
+    .line 56
+    :cond_6
+    return v0
 .end method
 
-.method public final d()Z
-    .locals 0
+.method public final hashCode()I
+    .locals 2
 
     .line 1
-    sget-boolean p0, Lt50;->b:Z
+    iget v0, p0, Lt50;->a:I
 
     .line 2
     .line 3
-    return p0
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 4
+    .line 5
+    iget v1, p0, Lt50;->b:I
+
+    .line 6
+    .line 7
+    add-int/2addr v0, v1
+
+    .line 8
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 9
+    .line 10
+    iget v1, p0, Lt50;->c:I
+
+    .line 11
+    .line 12
+    add-int/2addr v0, v1
+
+    .line 13
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 14
+    .line 15
+    iget p0, p0, Lt50;->d:I
+
+    .line 16
+    .line 17
+    add-int/2addr v0, p0
+
+    .line 18
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-class v1, Lt50;
+
+    .line 4
+    .line 5
+    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object v1
+
+    .line 9
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 10
+    .line 11
+    .line 12
+    const-string v1, " { ["
+
+    .line 13
+    .line 14
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 15
+    .line 16
+    .line 17
+    iget v1, p0, Lt50;->a:I
+
+    .line 18
+    .line 19
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 20
+    .line 21
+    .line 22
+    const/16 v1, 0x2c
+
+    .line 23
+    .line 24
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 25
+    .line 26
+    .line 27
+    iget v2, p0, Lt50;->b:I
+
+    .line 28
+    .line 29
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 30
+    .line 31
+    .line 32
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 33
+    .line 34
+    .line 35
+    iget v2, p0, Lt50;->c:I
+
+    .line 36
+    .line 37
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 38
+    .line 39
+    .line 40
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 41
+    .line 42
+    .line 43
+    iget p0, p0, Lt50;->d:I
+
+    .line 44
+    .line 45
+    const-string v1, "] }"
+
+    .line 46
+    .line 47
+    invoke-static {v1, v0, p0}, Lqq5;->n(Ljava/lang/String;Ljava/lang/StringBuilder;I)Ljava/lang/String;
+
+    .line 48
+    .line 49
+    .line 50
+    move-result-object p0
+
+    .line 51
+    return-object p0
 .end method

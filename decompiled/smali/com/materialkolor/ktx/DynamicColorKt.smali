@@ -1,10 +1,10 @@
 .class public final Lcom/materialkolor/ktx/DynamicColorKt;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # direct methods
-.method public static final getColor(Lap1;Lop1;)J
+.method public static final getColor(Lyo1;Lmp1;)J
     .locals 1
 
     .line 1
@@ -18,7 +18,7 @@
     .line 5
     .line 6
     .line 7
-    invoke-virtual {p0, p1}, Lap1;->a(Lop1;)I
+    invoke-virtual {p0, p1}, Lyo1;->a(Lmp1;)I
 
     .line 8
     .line 9

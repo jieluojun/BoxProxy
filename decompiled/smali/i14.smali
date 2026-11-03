@@ -1,93 +1,205 @@
-.class public final synthetic Li14;
+.class public final Li14;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lg52;
+.implements Lk14;
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Lr52;
-
-.field public final synthetic l:Lk04;
+.field public final b:Lk14;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lr52;Lk04;B)V
+.method public constructor <init>(Lk14;)V
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Li14;->j:B
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    iput-object p1, p0, Li14;->k:Lr52;
-
     .line 4
-    .line 5
-    iput-object p2, p0, Li14;->l:Lk04;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 5
     .line 6
     .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Li14;->b:Lk14;
 
     .line 8
     .line 9
-    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
+.method public final a()Lorg/json/JSONObject;
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Li14;->j:B
+    iget-object p0, p0, Li14;->b:Lk14;
 
     .line 2
     .line 3
-    sget-object v1, Ld07;->a:Ld07;
+    invoke-static {p0}, Loc7;->R(Ljava/lang/Object;)Ljava/util/List;
 
     .line 4
     .line 5
-    iget-object v2, p0, Li14;->l:Lk04;
-
     .line 6
+    move-result-object p0
+
     .line 7
-    iget-object p0, p0, Li14;->k:Lr52;
+    sget-object v0, Lg14;->a:Lg14;
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_0
+    sget-object v0, Lk14;->a:Lg14;
 
     .line 10
     .line 11
-    .line 12
-    invoke-interface {p0, v2}, Lr52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 12
     .line 13
     .line 14
-    .line 15
-    return-object v1
+    const-string v0, "not"
 
+    .line 15
     .line 16
-    :pswitch_0
-    invoke-interface {p0, v2}, Lr52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, p0}, Lg14;->a(Ljava/lang/String;Ljava/util/List;)Lorg/json/JSONObject;
 
     .line 17
     .line 18
     .line 19
-    return-object v1
+    move-result-object p0
 
     .line 20
-    nop
+    return-object p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Li14;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Li14;
+
+    .line 12
+    .line 13
+    iget-object p0, p0, Li14;->b:Lk14;
+
+    .line 14
+    .line 15
+    iget-object p1, p1, Li14;->b:Lk14;
+
+    .line 16
+    .line 17
+    invoke-static {p0, p1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 18
+    .line 19
+    .line 20
+    move-result p0
 
     .line 21
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    if-nez p0, :cond_2
+
+    .line 22
+    .line 23
+    return v2
+
+    .line 24
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Li14;->b:Lk14;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "Not(child="
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object p0, p0, Li14;->b:Lk14;
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const-string p0, ")"
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object p0
+
+    .line 22
+    return-object p0
 .end method

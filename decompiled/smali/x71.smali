@@ -1,296 +1,478 @@
 .class public final Lx71;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Landroid/content/ContextWrapper;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# static fields
+.field public static f:Landroid/content/res/Configuration;
 
 
 # instance fields
-.field public final a:Lp56;
+.field public a:I
+
+.field public b:Landroid/content/res/Resources$Theme;
+
+.field public c:Landroid/view/LayoutInflater;
+
+.field public d:Landroid/content/res/Configuration;
+
+.field public e:Landroid/content/res/Resources;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;I)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Landroid/content/ContextWrapper;-><init>(Landroid/content/Context;)V
 
     .line 2
     .line 3
     .line 4
-    new-instance v0, Lp56;
+    iput p2, p0, Lx71;->a:I
 
     .line 5
     .line 6
-    invoke-direct {v0}, Lp56;-><init>()V
-
-    .line 7
-    .line 8
-    .line 9
-    iput-object v0, p0, Lx71;->a:Lp56;
-
-    .line 10
-    .line 11
-    return-void
-.end method
-
-.method public static b(Lx71;Lv52;Lty0;Lg52;I)V
-    .locals 1
-
-    .line 1
-    and-int/lit8 p4, p4, 0x8
-
-    .line 2
-    .line 3
-    if-eqz p4, :cond_0
-
-    .line 4
-    .line 5
-    const/4 p2, 0x0
-
-    .line 6
-    :cond_0
-    iget-object p4, p0, Lx71;->a:Lp56;
-
-    .line 7
-    .line 8
-    new-instance v0, Lb0;
-
-    .line 9
-    .line 10
-    invoke-direct {v0, p1, p0, p2, p3}, Lb0;-><init>(Lv52;Lx71;Lw52;Lg52;)V
-
-    .line 11
-    .line 12
-    .line 13
-    new-instance p0, Lty0;
-
-    .line 14
-    .line 15
-    const p1, -0x6aa64e33
-
-    .line 16
-    .line 17
-    .line 18
-    const/4 p2, 0x1
-
-    .line 19
-    invoke-direct {p0, p1, p2, v0}, Lty0;-><init>(IZLd62;)V
-
-    .line 20
-    .line 21
-    .line 22
-    invoke-virtual {p4, p0}, Lp56;->add(Ljava/lang/Object;)Z
-
-    .line 23
-    .line 24
-    .line 25
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lv71;Lz01;I)V
-    .locals 7
+.method public final a(Landroid/content/res/Configuration;)V
+    .locals 1
 
     .line 1
-    check-cast p2, Lv62;
+    iget-object v0, p0, Lx71;->e:Landroid/content/res/Resources;
 
     .line 2
     .line 3
-    const v0, -0x2f9828e7
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
-    .line 6
-    invoke-virtual {p2, v0}, Lv62;->d0(I)Lz01;
+    iget-object v0, p0, Lx71;->d:Landroid/content/res/Configuration;
 
+    .line 6
     .line 7
+    if-nez v0, :cond_0
+
     .line 8
     .line 9
-    invoke-virtual {p2, p1}, Lv62;->g(Ljava/lang/Object;)Z
+    new-instance v0, Landroid/content/res/Configuration;
+
+    .line 10
+    .line 11
+    invoke-direct {v0, p1}, Landroid/content/res/Configuration;-><init>(Landroid/content/res/Configuration;)V
+
+    .line 12
+    .line 13
+    .line 14
+    iput-object v0, p0, Lx71;->d:Landroid/content/res/Configuration;
+
+    .line 15
+    .line 16
+    return-void
+
+    .line 17
+    :cond_0
+    const-string p0, "Override configuration has already been set"
+
+    .line 18
+    .line 19
+    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
+
+    .line 20
+    .line 21
+    .line 22
+    return-void
+
+    .line 23
+    :cond_1
+    const-string p0, "getResources() or getAssets() has already been called"
+
+    .line 24
+    .line 25
+    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
+
+    .line 26
+    .line 27
+    .line 28
+    return-void
+.end method
+
+.method public final attachBaseContext(Landroid/content/Context;)V
+    .locals 0
+
+    .line 1
+    invoke-super {p0, p1}, Landroid/content/ContextWrapper;->attachBaseContext(Landroid/content/Context;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public final b()V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lx71;->b:Landroid/content/res/Resources$Theme;
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Lx71;->getResources()Landroid/content/res/Resources;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object v0
+
+    .line 9
+    invoke-virtual {v0}, Landroid/content/res/Resources;->newTheme()Landroid/content/res/Resources$Theme;
 
     .line 10
     .line 11
     .line 12
-    move-result v0
+    move-result-object v0
 
     .line 13
-    const/4 v1, 0x2
+    iput-object v0, p0, Lx71;->b:Landroid/content/res/Resources$Theme;
 
     .line 14
-    if-eqz v0, :cond_0
-
     .line 15
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
+
     .line 16
-    const/4 v0, 0x4
-
     .line 17
-    goto :goto_0
-
     .line 18
-    :cond_0
-    move v0, v1
+    move-result-object v0
 
     .line 19
-    :goto_0
-    or-int/2addr v0, p3
+    invoke-virtual {v0}, Landroid/content/Context;->getTheme()Landroid/content/res/Resources$Theme;
 
     .line 20
-    invoke-virtual {p2, p0}, Lv62;->g(Ljava/lang/Object;)Z
-
     .line 21
     .line 22
+    move-result-object v0
+
     .line 23
-    move-result v2
+    if-eqz v0, :cond_0
 
     .line 24
-    if-eqz v2, :cond_1
-
     .line 25
+    iget-object v1, p0, Lx71;->b:Landroid/content/res/Resources$Theme;
+
     .line 26
-    const/16 v2, 0x20
-
     .line 27
+    invoke-virtual {v1, v0}, Landroid/content/res/Resources$Theme;->setTo(Landroid/content/res/Resources$Theme;)V
+
     .line 28
-    goto :goto_1
-
     .line 29
-    :cond_1
-    const/16 v2, 0x10
-
     .line 30
-    .line 31
-    :goto_1
-    or-int/2addr v0, v2
+    :cond_0
+    iget-object v0, p0, Lx71;->b:Landroid/content/res/Resources$Theme;
 
+    .line 31
     .line 32
-    and-int/lit8 v2, v0, 0x13
+    iget p0, p0, Lx71;->a:I
 
     .line 33
     .line 34
-    const/16 v3, 0x12
+    const/4 v1, 0x1
 
     .line 35
+    invoke-virtual {v0, p0, v1}, Landroid/content/res/Resources$Theme;->applyStyle(IZ)V
+
     .line 36
-    const/4 v4, 0x0
+    .line 37
+    .line 38
+    return-void
+.end method
+
+.method public final getAssets()Landroid/content/res/AssetManager;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Lx71;->getResources()Landroid/content/res/Resources;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-virtual {p0}, Landroid/content/res/Resources;->getAssets()Landroid/content/res/AssetManager;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    return-object p0
+.end method
+
+.method public final getResources()Landroid/content/res/Resources;
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lx71;->e:Landroid/content/res/Resources;
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_3
+
+    .line 4
+    .line 5
+    iget-object v0, p0, Lx71;->d:Landroid/content/res/Configuration;
+
+    .line 6
+    .line 7
+    if-eqz v0, :cond_2
+
+    .line 8
+    .line 9
+    sget-object v1, Lx71;->f:Landroid/content/res/Configuration;
+
+    .line 10
+    .line 11
+    if-nez v1, :cond_0
+
+    .line 12
+    .line 13
+    new-instance v1, Landroid/content/res/Configuration;
+
+    .line 14
+    .line 15
+    invoke-direct {v1}, Landroid/content/res/Configuration;-><init>()V
+
+    .line 16
+    .line 17
+    .line 18
+    const/4 v2, 0x0
+
+    .line 19
+    iput v2, v1, Landroid/content/res/Configuration;->fontScale:F
+
+    .line 20
+    .line 21
+    sput-object v1, Lx71;->f:Landroid/content/res/Configuration;
+
+    .line 22
+    .line 23
+    :cond_0
+    invoke-virtual {v0, v1}, Landroid/content/res/Configuration;->equals(Landroid/content/res/Configuration;)Z
+
+    .line 24
+    .line 25
+    .line 26
+    move-result v0
+
+    .line 27
+    if-eqz v0, :cond_1
+
+    .line 28
+    .line 29
+    goto :goto_0
+
+    .line 30
+    :cond_1
+    iget-object v0, p0, Lx71;->d:Landroid/content/res/Configuration;
+
+    .line 31
+    .line 32
+    invoke-virtual {p0, v0}, Landroid/content/Context;->createConfigurationContext(Landroid/content/res/Configuration;)Landroid/content/Context;
+
+    .line 33
+    .line 34
+    .line 35
+    move-result-object v0
+
+    .line 36
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     .line 37
-    if-eq v2, v3, :cond_2
-
     .line 38
     .line 39
-    const/4 v2, 0x1
+    move-result-object v0
 
     .line 40
-    goto :goto_2
+    iput-object v0, p0, Lx71;->e:Landroid/content/res/Resources;
 
     .line 41
-    :cond_2
-    move v2, v4
-
     .line 42
-    :goto_2
-    and-int/lit8 v3, v0, 0x1
+    return-object v0
 
     .line 43
-    .line 44
-    invoke-virtual {p2, v3, v2}, Lv62;->T(IZ)Z
+    :cond_2
+    :goto_0
+    invoke-super {p0}, Landroid/content/ContextWrapper;->getResources()Landroid/content/res/Resources;
 
+    .line 44
     .line 45
     .line 46
+    move-result-object v0
+
     .line 47
-    move-result v2
+    iput-object v0, p0, Lx71;->e:Landroid/content/res/Resources;
 
     .line 48
-    if-eqz v2, :cond_3
-
     .line 49
-    .line 50
-    iget-object v2, p0, Lx71;->a:Lp56;
-
-    .line 51
-    .line 52
-    invoke-virtual {v2}, Lp56;->size()I
-
-    .line 53
-    .line 54
-    .line 55
-    move-result v3
-
-    .line 56
-    :goto_3
-    if-ge v4, v3, :cond_4
-
-    .line 57
-    .line 58
-    invoke-virtual {v2, v4}, Lp56;->get(I)Ljava/lang/Object;
-
-    .line 59
-    .line 60
-    .line 61
-    move-result-object v5
-
-    .line 62
-    check-cast v5, Lw52;
-
-    .line 63
-    .line 64
-    and-int/lit8 v6, v0, 0xe
-
-    .line 65
-    .line 66
-    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 67
-    .line 68
-    .line 69
-    move-result-object v6
-
-    .line 70
-    invoke-interface {v5, p1, p2, v6}, Lw52;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 71
-    .line 72
-    .line 73
-    add-int/lit8 v4, v4, 0x1
-
-    .line 74
-    .line 75
-    goto :goto_3
-
-    .line 76
     :cond_3
-    invoke-virtual {p2}, Lv62;->W()V
+    return-object v0
+.end method
 
-    .line 77
-    .line 78
-    .line 79
-    :cond_4
-    invoke-virtual {p2}, Lv62;->u()Lj75;
+.method public final getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+    .locals 1
 
-    .line 80
-    .line 81
-    .line 82
-    move-result-object p2
+    .line 1
+    const-string v0, "layout_inflater"
 
-    .line 83
-    if-eqz p2, :cond_5
+    .line 2
+    .line 3
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 84
-    .line 85
-    new-instance v0, Ld31;
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
 
-    .line 86
-    .line 87
-    invoke-direct {v0, v1, p3, p0, p1}, Ld31;-><init>(BILjava/lang/Object;Ljava/lang/Object;)V
+    .line 7
+    if-eqz v0, :cond_1
 
-    .line 88
-    .line 89
-    .line 90
-    iput-object v0, p2, Lj75;->d:Lv52;
+    .line 8
+    .line 9
+    iget-object p1, p0, Lx71;->c:Landroid/view/LayoutInflater;
 
-    .line 91
-    .line 92
-    :cond_5
+    .line 10
+    .line 11
+    if-nez p1, :cond_0
+
+    .line 12
+    .line 13
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p1
+
+    .line 17
+    invoke-static {p1}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object p1
+
+    .line 21
+    invoke-virtual {p1, p0}, Landroid/view/LayoutInflater;->cloneInContext(Landroid/content/Context;)Landroid/view/LayoutInflater;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object p1
+
+    .line 25
+    iput-object p1, p0, Lx71;->c:Landroid/view/LayoutInflater;
+
+    .line 26
+    .line 27
+    :cond_0
+    return-object p1
+
+    .line 28
+    :cond_1
+    invoke-virtual {p0}, Landroid/content/ContextWrapper;->getBaseContext()Landroid/content/Context;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    invoke-virtual {p0, p1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 33
+    .line 34
+    .line 35
+    move-result-object p0
+
+    .line 36
+    return-object p0
+.end method
+
+.method public final getTheme()Landroid/content/res/Resources$Theme;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lx71;->b:Landroid/content/res/Resources$Theme;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    return-object v0
+
+    .line 6
+    :cond_0
+    iget v0, p0, Lx71;->a:I
+
+    .line 7
+    .line 8
+    if-nez v0, :cond_1
+
+    .line 9
+    .line 10
+    const v0, 0x7f100106
+
+    .line 11
+    .line 12
+    .line 13
+    iput v0, p0, Lx71;->a:I
+
+    .line 14
+    .line 15
+    :cond_1
+    invoke-virtual {p0}, Lx71;->b()V
+
+    .line 16
+    .line 17
+    .line 18
+    iget-object p0, p0, Lx71;->b:Landroid/content/res/Resources$Theme;
+
+    .line 19
+    .line 20
+    return-object p0
+.end method
+
+.method public final setTheme(I)V
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lx71;->a:I
+
+    .line 2
+    .line 3
+    if-eq v0, p1, :cond_0
+
+    .line 4
+    .line 5
+    iput p1, p0, Lx71;->a:I
+
+    .line 6
+    .line 7
+    invoke-virtual {p0}, Lx71;->b()V
+
+    .line 8
+    .line 9
+    .line 10
+    :cond_0
     return-void
 .end method

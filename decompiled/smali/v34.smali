@@ -1,74 +1,93 @@
 .class public final Lv34;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ld52;
 
 
 # instance fields
-.field public j:Lfb1;
+.field public final synthetic j:B
 
-.field public synthetic k:Ljava/lang/Object;
+.field public final synthetic k:Lr34;
 
-.field public final synthetic l:Ly34;
-
-.field public m:I
+.field public final synthetic l:Las3;
 
 
 # direct methods
-.method public constructor <init>(Ly34;Ld81;)V
+.method public synthetic constructor <init>(Lr34;Las3;B)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lv34;->l:Ly34;
+    iput-byte p3, p0, Lv34;->j:B
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
+    iput-object p1, p0, Lv34;->k:Lr34;
 
     .line 4
     .line 5
+    iput-object p2, p0, Lv34;->l:Las3;
+
     .line 6
+    .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 8
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
 
     .line 1
-    iput-object p1, p0, Lv34;->k:Ljava/lang/Object;
+    iget-byte v0, p0, Lv34;->j:B
 
     .line 2
     .line 3
-    iget p1, p0, Lv34;->m:I
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    iget-object v2, p0, Lv34;->k:Lr34;
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    iget-object p0, p0, Lv34;->l:Las3;
 
     .line 8
-    iput p1, p0, Lv34;->m:I
-
     .line 9
-    .line 10
-    iget-object p1, p0, Lv34;->l:Ly34;
+    packed-switch v0, :pswitch_data_0
 
+    .line 10
     .line 11
     .line 12
-    const/4 v0, 0x0
+    invoke-interface {p0, v2}, Las3;->setValue(Ljava/lang/Object;)V
 
     .line 13
-    invoke-virtual {p1, v0, p0}, Ly34;->j(Lfb1;Ld81;)Ljava/lang/Object;
-
     .line 14
     .line 15
+    return-object v1
+
     .line 16
-    move-result-object p0
+    :pswitch_0
+    invoke-interface {p0, v2}, Las3;->setValue(Ljava/lang/Object;)V
 
     .line 17
-    return-object p0
+    .line 18
+    .line 19
+    return-object v1
+
+    .line 20
+    nop
+
+    .line 21
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

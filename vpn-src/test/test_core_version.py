@@ -30,8 +30,10 @@ def const(text, register, starts):
 class CoreVersionTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        qt = (ROOT / 'decompiled/smali/qt0.smali').read_text()
-        ld = (ROOT / 'decompiled/smali/com/box/app/cfg/LdFix.smali').read_text()
+        project = Path(os.environ.get('BOXPROXY_TEST_PROJECT', ROOT / 'decompiled'))
+        probe = os.environ.get('BOXPROXY_TEST_PROBE_CLASS', 'lt0')
+        qt = (project / 'smali' / (probe + '.smali')).read_text()
+        ld = (project / 'smali/com/box/app/cfg/LdFix.smali').read_text()
         cls.fragment = const(qt, 'v5', '\n            # Match')
         cls.func = string_literal(re.search(r'FUNC:Ljava/lang/String; = (".*")', ld)[1])
         method = ld.split('.method public static final wrapProbe(', 1)[1]
@@ -90,7 +92,7 @@ esac
         self.assertEqual(parts[2].strip(), '3\nouter=unset')
         return parts[0].strip()
 
-    def test_dynamic_sing_box_and_cached_lookup(self):
+    def test_dynamic_sing_box_with_cached_library_paths(self):
         core = self.executable('sing-box', '''
 echo "$1" >> "$TEST_LOG"
 case ":$LD_LIBRARY_PATH:" in *":$TEST_LIB:"*) ;; *) exit 1;; esac
@@ -99,8 +101,11 @@ printf 'sing-box version 1.13.0-alpha.1\nEnvironment: go1.25 android/arm64\n'
 ''')
         self.assertEqual(self.run_probe(core), 'sing-box version 1.13.0-alpha.1')
         self.assertTrue((self.cache / '.boxproxy-ld-sing-box').exists())
+        first_calls = len(self.log.read_text().splitlines())
         self.assertEqual(self.run_probe(core), 'sing-box version 1.13.0-alpha.1')
-        self.assertEqual(self.log.read_text().splitlines(), ['version'] * 3)
+        calls = self.log.read_text().splitlines()
+        self.assertGreater(len(calls), first_calls)  # Library paths may be cached, version output must not be.
+        self.assertEqual(calls, ['version'] * len(calls))
 
     def test_static_mihomo_unchanged(self):
         core = self.executable('mihomo', '''

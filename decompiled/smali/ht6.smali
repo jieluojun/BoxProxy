@@ -1,199 +1,191 @@
-.class public final synthetic Lht6;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lht6;
+.super Ler5;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lv52;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic j:Lg52;
-
-.field public final synthetic k:Lg52;
-
-.field public final synthetic l:Lg52;
-
-.field public final synthetic m:Lg52;
-
-.field public final synthetic n:Lg52;
-
-.field public final synthetic o:Lg52;
-
-.field public final synthetic p:Lg52;
-
-.field public final synthetic q:Lg52;
-
-.field public final synthetic r:Lg52;
-
-.field public final synthetic s:Lg52;
-
-.field public final synthetic t:F
-
-.field public final synthetic u:I
+.field public final n:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lg52;Lg52;Lg52;Lg52;Lg52;Lg52;Lg52;Lg52;Lg52;Lg52;FII)V
-    .locals 0
+.method public constructor <init>(JLz71;)V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-interface {p3}, Ly71;->getContext()Lsa1;
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lht6;->j:Lg52;
+    move-result-object v0
 
     .line 5
-    .line 6
-    iput-object p2, p0, Lht6;->k:Lg52;
+    invoke-direct {p0, p3, v0}, Ler5;-><init>(Ly71;Lsa1;)V
 
+    .line 6
     .line 7
     .line 8
-    iput-object p3, p0, Lht6;->l:Lg52;
+    iput-wide p1, p0, Lht6;->n:J
 
     .line 9
     .line 10
-    iput-object p4, p0, Lht6;->m:Lg52;
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Lht6;->n:Lg52;
-
-    .line 13
-    .line 14
-    iput-object p6, p0, Lht6;->o:Lg52;
-
-    .line 15
-    .line 16
-    iput-object p7, p0, Lht6;->p:Lg52;
-
-    .line 17
-    .line 18
-    iput-object p8, p0, Lht6;->q:Lg52;
-
-    .line 19
-    .line 20
-    iput-object p9, p0, Lht6;->r:Lg52;
-
-    .line 21
-    .line 22
-    iput-object p10, p0, Lht6;->s:Lg52;
-
-    .line 23
-    .line 24
-    iput p11, p0, Lht6;->t:F
-
-    .line 25
-    .line 26
-    iput p13, p0, Lht6;->u:I
-
-    .line 27
-    .line 28
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 14
+.method public final W()Ljava/lang/String;
+    .locals 3
 
     .line 1
-    move-object v11, p1
+    new-instance v0, Ljava/lang/StringBuilder;
 
     .line 2
-    check-cast v11, Lz01;
-
     .line 3
-    .line 4
-    move-object/from16 v0, p2
+    invoke-super {p0}, Lu2;->W()Ljava/lang/String;
 
+    .line 4
     .line 5
     .line 6
-    check-cast v0, Ljava/lang/Integer;
+    move-result-object v1
 
     .line 7
-    .line 8
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    .line 8
     .line 9
     .line 10
-    .line 11
-    const/4 v0, 0x1
+    const-string v1, "(timeMillis="
 
+    .line 11
     .line 12
-    invoke-static {v0}, Lkr5;->i0(I)I
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 13
     .line 14
     .line 15
-    move-result v12
+    iget-wide v1, p0, Lht6;->n:J
 
     .line 16
-    iget v0, p0, Lht6;->u:I
+    .line 17
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    .line 18
+    .line 19
+    .line 20
+    const/16 p0, 0x29
+
+    .line 21
+    .line 22
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 23
+    .line 24
+    .line 25
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 26
+    .line 27
+    .line 28
+    move-result-object p0
+
+    .line 29
+    return-object p0
+.end method
+
+.method public final run()V
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lu2;->l:Lsa1;
+
+    .line 2
+    .line 3
+    invoke-static {v0}, Ls77;->z(Lsa1;)Lkg1;
+
+    .line 4
+    .line 5
+    .line 6
+    sget-object v1, Lxa1;->k:Li11;
+
+    .line 7
+    .line 8
+    invoke-interface {v0, v1}, Lsa1;->p(Lra1;)Lqa1;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object v0
+
+    .line 12
+    if-nez v0, :cond_0
+
+    .line 13
+    .line 14
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 15
+    .line 16
+    const-string v1, "Timed out waiting for "
 
     .line 17
     .line 18
-    invoke-static {v0}, Lkr5;->i0(I)I
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 19
     .line 20
     .line 21
-    move-result v13
+    iget-wide v1, p0, Lht6;->n:J
 
     .line 22
-    iget-object v0, p0, Lht6;->j:Lg52;
-
     .line 23
-    .line 24
-    iget-object v1, p0, Lht6;->k:Lg52;
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
+    .line 24
     .line 25
     .line 26
-    iget-object v2, p0, Lht6;->l:Lg52;
+    const-string v1, " ms"
 
     .line 27
     .line 28
-    iget-object v3, p0, Lht6;->m:Lg52;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 29
     .line 30
-    iget-object v4, p0, Lht6;->n:Lg52;
-
     .line 31
-    .line 32
-    iget-object v5, p0, Lht6;->o:Lg52;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    .line 32
     .line 33
     .line 34
-    iget-object v6, p0, Lht6;->p:Lg52;
+    move-result-object v0
 
     .line 35
+    new-instance v1, Lgt6;
+
     .line 36
-    iget-object v7, p0, Lht6;->q:Lg52;
-
     .line 37
-    .line 38
-    iget-object v8, p0, Lht6;->r:Lg52;
+    invoke-direct {v1, v0, p0}, Lgt6;-><init>(Ljava/lang/String;Lht6;)V
 
+    .line 38
     .line 39
     .line 40
-    iget-object v9, p0, Lht6;->s:Lg52;
+    invoke-virtual {p0, v1}, Leu2;->y(Ljava/lang/Object;)Z
 
     .line 41
     .line 42
-    iget v10, p0, Lht6;->t:F
-
     .line 43
+    return-void
+
     .line 44
-    invoke-static/range {v0 .. v13}, Lpx6;->S(Lg52;Lg52;Lg52;Lg52;Lg52;Lg52;Lg52;Lg52;Lg52;Lg52;FLz01;II)V
+    :cond_0
+    invoke-static {}, Lvd1;->t()V
 
     .line 45
     .line 46
     .line 47
-    sget-object p0, Ld07;->a:Ld07;
-
-    .line 48
-    .line 49
-    return-object p0
+    return-void
 .end method

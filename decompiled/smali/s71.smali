@@ -1,380 +1,743 @@
 .class public final Ls71;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ler4;
 
 
-# static fields
-.field public static final synthetic a:Ls71;
-
-.field public static final b:Lkb;
-
-.field public static final c:Lkb;
-
-.field public static final d:Lkb;
+# instance fields
+.field public final a:Ld52;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Ld52;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ls71;
+    iput-object p1, p0, Ls71;->a:Ld52;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
     .line 6
-    sput-object v0, Ls71;->a:Ls71;
+    return-void
+.end method
+
+.method public static d(J)F
+    .locals 2
+
+    .line 1
+    const-wide v0, 0xffffffffL
+
+    .line 2
+    .line 3
+    .line 4
+    .line 5
+    .line 6
+    and-long/2addr p0, v0
 
     .line 7
+    long-to-int p0, p0
+
     .line 8
-    const-string v0, "username"
+    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     .line 9
     .line 10
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
     .line 11
+    move-result p0
+
+    .line 12
+    return p0
+.end method
+
+
+# virtual methods
+.method public b(JJLwq2;Lkz2;)J
+    .locals 7
+
+    .line 1
+    iget-object p0, p0, Ls71;->a:Ld52;
+
+    .line 2
+    .line 3
+    invoke-interface {p0}, Ld52;->invoke()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lsq2;
+
+    .line 8
+    .line 9
+    iget-wide v0, p0, Lsq2;->a:J
+
+    .line 10
+    .line 11
+    iget p0, p5, Lwq2;->a:I
+
     .line 12
     .line 13
-    const-string v0, "password"
+    const/16 v2, 0x20
 
     .line 14
     .line 15
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
+    shr-long v3, v0, v2
 
     .line 16
     .line 17
+    long-to-int v3, v3
+
     .line 18
-    move-result-object v0
+    add-int/2addr p0, v3
 
     .line 19
-    sput-object v0, Ls71;->b:Lkb;
+    shr-long v3, p3, v2
 
     .line 20
     .line 21
-    const-string v0, "emailAddress"
+    long-to-int v3, v3
 
     .line 22
+    shr-long v4, p1, v2
+
     .line 23
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
     .line 24
-    .line 25
-    .line 26
-    move-result-object v0
+    long-to-int v4, v4
 
+    .line 25
+    sget-object v5, Lkz2;->j:Lkz2;
+
+    .line 26
     .line 27
-    sput-object v0, Ls71;->c:Lkb;
+    const/4 v6, 0x1
 
     .line 28
-    .line 29
-    const-string v0, "newUsername"
+    if-ne p6, v5, :cond_0
 
+    .line 29
     .line 30
+    move p6, v6
+
     .line 31
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
+    goto :goto_0
 
     .line 32
-    .line 33
-    .line 34
-    const-string v0, "newPassword"
+    :cond_0
+    const/4 p6, 0x0
 
+    .line 33
+    :goto_0
+    invoke-static {p0, v3, v4, p6}, Lp87;->u(IIIZ)I
+
+    .line 34
     .line 35
     .line 36
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
+    move-result p0
 
     .line 37
+    iget p5, p5, Lwq2;->b:I
+
     .line 38
     .line 39
-    const-string v0, "postalAddress"
+    const-wide v3, 0xffffffffL
 
     .line 40
     .line 41
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
     .line 42
     .line 43
     .line 44
-    const-string v0, "postalCode"
+    and-long/2addr v0, v3
 
     .line 45
+    long-to-int p6, v0
+
     .line 46
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
+    add-int/2addr p5, p6
 
     .line 47
+    and-long/2addr p3, v3
+
     .line 48
+    long-to-int p3, p3
+
     .line 49
-    const-string v0, "creditCardNumber"
+    and-long/2addr p1, v3
 
     .line 50
+    long-to-int p1, p1
+
     .line 51
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
+    invoke-static {p5, p3, p1, v6}, Lp87;->u(IIIZ)I
 
     .line 52
     .line 53
     .line 54
-    const-string v0, "creditCardSecurityCode"
+    move-result p1
+
+    .line 55
+    int-to-long p2, p0
+
+    .line 56
+    shl-long/2addr p2, v2
+
+    .line 57
+    int-to-long p0, p1
+
+    .line 58
+    and-long/2addr p0, v3
+
+    .line 59
+    or-long/2addr p0, p2
+
+    .line 60
+    return-wide p0
+.end method
+
+.method public c(J)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    invoke-static {p1, p2}, Ls71;->d(J)F
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    return-object p0
+.end method
+
+.method public e(Ljava/lang/Object;)J
+    .locals 0
+
+    .line 1
+    check-cast p1, Ljava/lang/Number;
+
+    .line 2
+    .line 3
+    invoke-virtual {p1}, Ljava/lang/Number;->floatValue()F
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 8
+    .line 9
+    .line 10
+    move-result p0
+
+    .line 11
+    int-to-long p0, p0
+
+    .line 12
+    return-wide p0
+.end method
+
+.method public f(J)Z
+    .locals 0
+
+    .line 1
+    invoke-static {p1, p2}, Ls71;->d(J)F
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    invoke-static {p0}, Ljava/lang/Math;->abs(F)F
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    const/high16 p1, 0x3f000000    # 0.5f
+
+    .line 10
+    .line 11
+    cmpg-float p0, p0, p1
+
+    .line 12
+    .line 13
+    if-gez p0, :cond_0
+
+    .line 14
+    .line 15
+    const/4 p0, 0x1
+
+    .line 16
+    return p0
+
+    .line 17
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 18
+    return p0
+.end method
+
+.method public g(JJ)J
+    .locals 0
+
+    .line 1
+    invoke-static {p1, p2}, Ls71;->d(J)F
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    invoke-static {p3, p4}, Ls71;->d(J)F
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p1
+
+    .line 9
+    sub-float/2addr p0, p1
+
+    .line 10
+    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 11
+    .line 12
+    .line 13
+    move-result p0
+
+    .line 14
+    int-to-long p0, p0
+
+    .line 15
+    return-wide p0
+.end method
+
+.method public h()Loh;
+    .locals 1
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    const/16 v0, 0x1e
+
+    .line 3
+    .line 4
+    invoke-static {p0, p0, v0}, Lzu6;->a(FFI)Loh;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object p0
+
+    .line 8
+    return-object p0
+.end method
+
+.method public i(J)J
+    .locals 0
+
+    .line 1
+    invoke-static {p1, p2}, Ls71;->d(J)F
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    invoke-static {p0}, Ljava/lang/Math;->signum(F)F
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    int-to-long p0, p0
+
+    .line 14
+    return-wide p0
+.end method
+
+.method public j(JJ)J
+    .locals 0
+
+    .line 1
+    invoke-static {p1, p2}, Ls71;->d(J)F
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    invoke-static {p3, p4}, Ls71;->d(J)F
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p1
+
+    .line 9
+    add-float/2addr p1, p0
+
+    .line 10
+    invoke-static {p1}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 11
+    .line 12
+    .line 13
+    move-result p0
+
+    .line 14
+    int-to-long p0, p0
+
+    .line 15
+    return-wide p0
+.end method
+
+.method public k(J)F
+    .locals 0
+
+    .line 1
+    invoke-static {p1, p2}, Ls71;->d(J)F
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    invoke-static {p0}, Ljava/lang/Math;->abs(F)F
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+.end method
+
+.method public l(JF)J
+    .locals 0
+
+    .line 1
+    invoke-static {p1, p2}, Ls71;->d(J)F
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    mul-float/2addr p0, p3
+
+    .line 6
+    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 7
+    .line 8
+    .line 9
+    move-result p0
+
+    .line 10
+    int-to-long p0, p0
+
+    .line 11
+    return-wide p0
+.end method
+
+.method public m(J)J
+    .locals 4
+
+    .line 1
+    invoke-static {p1, p2}, Ls71;->d(J)F
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p1
+
+    .line 5
+    iget-object p0, p0, Ls71;->a:Ld52;
+
+    .line 6
+    .line 7
+    invoke-interface {p0}, Ld52;->invoke()Ljava/lang/Object;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p0
+
+    .line 11
+    check-cast p0, Ljava/lang/Boolean;
+
+    .line 12
+    .line 13
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    .line 14
+    .line 15
+    .line 16
+    move-result p0
+
+    .line 17
+    const-wide v0, 0xffffffffL
+
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    const/16 p2, 0x20
+
+    .line 23
+    .line 24
+    const/4 v2, 0x0
+
+    .line 25
+    if-eqz p0, :cond_0
+
+    .line 26
+    .line 27
+    invoke-static {v2}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 28
+    .line 29
+    .line 30
+    move-result p0
+
+    .line 31
+    int-to-long v2, p0
+
+    .line 32
+    invoke-static {p1}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 33
+    .line 34
+    .line 35
+    move-result p0
+
+    .line 36
+    int-to-long p0, p0
+
+    .line 37
+    shl-long/2addr v2, p2
+
+    .line 38
+    and-long/2addr p0, v0
+
+    .line 39
+    or-long/2addr p0, v2
+
+    .line 40
+    return-wide p0
+
+    .line 41
+    :cond_0
+    invoke-static {p1}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 42
+    .line 43
+    .line 44
+    move-result p0
+
+    .line 45
+    int-to-long p0, p0
+
+    .line 46
+    invoke-static {v2}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 47
+    .line 48
+    .line 49
+    move-result v2
+
+    .line 50
+    int-to-long v2, v2
+
+    .line 51
+    shl-long/2addr p0, p2
+
+    .line 52
+    and-long/2addr v0, v2
+
+    .line 53
+    or-long/2addr p0, v0
+
+    .line 54
+    return-wide p0
+.end method
+
+.method public n(J)J
+    .locals 3
+
+    .line 1
+    iget-object p0, p0, Ls71;->a:Ld52;
+
+    .line 2
+    .line 3
+    invoke-interface {p0}, Ld52;->invoke()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Ljava/lang/Boolean;
+
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    const-wide v0, 0xffffffffL
+
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    and-long/2addr v0, p1
+
+    .line 19
+    long-to-int v0, v0
+
+    .line 20
+    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 21
+    .line 22
+    .line 23
+    move-result v1
+
+    .line 24
+    invoke-static {v1}, Ljava/lang/Math;->abs(F)F
+
+    .line 25
+    .line 26
+    .line 27
+    move-result v1
+
+    .line 28
+    const/16 v2, 0x20
+
+    .line 29
+    .line 30
+    shr-long/2addr p1, v2
+
+    .line 31
+    long-to-int p1, p1
+
+    .line 32
+    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 33
+    .line 34
+    .line 35
+    move-result p2
+
+    .line 36
+    invoke-static {p2}, Ljava/lang/Math;->abs(F)F
+
+    .line 37
+    .line 38
+    .line 39
+    move-result p2
+
+    .line 40
+    cmpl-float p2, v1, p2
+
+    .line 41
+    .line 42
+    const/4 v1, 0x0
+
+    .line 43
+    if-ltz p2, :cond_0
+
+    .line 44
+    .line 45
+    if-eqz p0, :cond_1
+
+    .line 46
+    .line 47
+    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 48
+    .line 49
+    .line 50
+    move-result v1
+
+    .line 51
+    goto :goto_0
+
+    .line 52
+    :cond_0
+    if-nez p0, :cond_1
+
+    .line 53
+    .line 54
+    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     .line 55
     .line 56
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
     .line 57
-    .line 58
-    .line 59
-    const-string v0, "creditCardExpirationDate"
+    move-result v1
 
+    .line 58
+    :cond_1
+    :goto_0
+    invoke-static {v1}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 59
     .line 60
     .line 61
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
+    move-result p0
 
     .line 62
+    int-to-long p0, p0
+
     .line 63
-    .line 64
-    const-string v0, "creditCardExpirationMonth"
-
-    .line 65
-    .line 66
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 67
-    .line 68
-    .line 69
-    const-string v0, "creditCardExpirationYear"
-
-    .line 70
-    .line 71
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 72
-    .line 73
-    .line 74
-    const-string v0, "creditCardExpirationDay"
-
-    .line 75
-    .line 76
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 77
-    .line 78
-    .line 79
-    const-string v0, "addressCountry"
-
-    .line 80
-    .line 81
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 82
-    .line 83
-    .line 84
-    const-string v0, "addressRegion"
-
-    .line 85
-    .line 86
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 87
-    .line 88
-    .line 89
-    const-string v0, "addressLocality"
-
-    .line 90
-    .line 91
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 92
-    .line 93
-    .line 94
-    const-string v0, "streetAddress"
-
-    .line 95
-    .line 96
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 97
-    .line 98
-    .line 99
-    const-string v0, "extendedAddress"
-
-    .line 100
-    .line 101
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 102
-    .line 103
-    .line 104
-    const-string v0, "extendedPostalCode"
-
-    .line 105
-    .line 106
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 107
-    .line 108
-    .line 109
-    const-string v0, "personName"
-
-    .line 110
-    .line 111
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 112
-    .line 113
-    .line 114
-    const-string v0, "personGivenName"
-
-    .line 115
-    .line 116
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 117
-    .line 118
-    .line 119
-    const-string v0, "personFamilyName"
-
-    .line 120
-    .line 121
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 122
-    .line 123
-    .line 124
-    const-string v0, "personMiddleName"
-
-    .line 125
-    .line 126
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 127
-    .line 128
-    .line 129
-    const-string v0, "personMiddleInitial"
-
-    .line 130
-    .line 131
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 132
-    .line 133
-    .line 134
-    const-string v0, "personNamePrefix"
-
-    .line 135
-    .line 136
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 137
-    .line 138
-    .line 139
-    const-string v0, "personNameSuffix"
-
-    .line 140
-    .line 141
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 142
-    .line 143
-    .line 144
-    const-string v0, "phoneNumber"
-
-    .line 145
-    .line 146
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 147
-    .line 148
-    .line 149
-    move-result-object v0
-
-    .line 150
-    sput-object v0, Ls71;->d:Lkb;
-
-    .line 151
-    .line 152
-    const-string v0, "phoneNumberDevice"
-
-    .line 153
-    .line 154
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 155
-    .line 156
-    .line 157
-    const-string v0, "phoneCountryCode"
-
-    .line 158
-    .line 159
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 160
-    .line 161
-    .line 162
-    const-string v0, "phoneNational"
-
-    .line 163
-    .line 164
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 165
-    .line 166
-    .line 167
-    const-string v0, "gender"
-
-    .line 168
-    .line 169
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 170
-    .line 171
-    .line 172
-    const-string v0, "birthDateFull"
-
-    .line 173
-    .line 174
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 175
-    .line 176
-    .line 177
-    const-string v0, "birthDateDay"
-
-    .line 178
-    .line 179
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 180
-    .line 181
-    .line 182
-    const-string v0, "birthDateMonth"
-
-    .line 183
-    .line 184
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 185
-    .line 186
-    .line 187
-    const-string v0, "birthDateYear"
-
-    .line 188
-    .line 189
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 190
-    .line 191
-    .line 192
-    const-string v0, "smsOTPCode"
-
-    .line 193
-    .line 194
-    invoke-static {v0}, Lv47;->j(Ljava/lang/String;)Lkb;
-
-    .line 195
-    .line 196
-    .line 197
-    return-void
+    return-wide p0
 .end method

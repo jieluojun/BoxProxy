@@ -1,17 +1,25 @@
-.class public interface abstract Lg71;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lg71;
+.super Lx37;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# virtual methods
-.method public abstract b()Landroid/view/ContentInfo;
-.end method
+# instance fields
+.field public final g:Landroid/content/res/AssetFileDescriptor;
 
-.method public abstract c()I
-.end method
 
-.method public abstract g()Landroid/content/ClipData;
-.end method
+# direct methods
+.method public constructor <init>(Landroid/content/res/AssetFileDescriptor;)V
+    .locals 0
 
-.method public abstract k()I
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Lg71;->g:Landroid/content/res/AssetFileDescriptor;
+
+    .line 5
+    .line 6
+    return-void
 .end method

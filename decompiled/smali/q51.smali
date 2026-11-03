@@ -1,111 +1,61 @@
 .class public abstract Lq51;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# static fields
+.field public static final a:[F
+
+.field public static final b:[F
 
 
 # direct methods
-.method public static a()Z
-    .locals 4
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-static {}, Lorg/conscrypt/Conscrypt;->version()Lorg/conscrypt/Conscrypt$Version;
+    const/16 v0, 0x9
 
     .line 2
     .line 3
-    .line 4
-    move-result-object v0
+    new-array v0, v0, [F
 
+    .line 4
     .line 5
-    if-nez v0, :cond_0
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
-    goto :goto_1
-
     .line 8
-    :cond_0
-    invoke-virtual {v0}, Lorg/conscrypt/Conscrypt$Version;->major()I
+    sput-object v0, Lq51;->a:[F
 
     .line 9
     .line 10
+    invoke-static {v0}, Lg33;->z([F)[F
+
     .line 11
-    move-result v1
-
     .line 12
-    const/4 v2, 0x2
-
     .line 13
-    const/4 v3, 0x1
+    move-result-object v0
 
     .line 14
-    if-eq v1, v2, :cond_1
+    sput-object v0, Lq51;->b:[F
 
     .line 15
     .line 16
-    invoke-virtual {v0}, Lorg/conscrypt/Conscrypt$Version;->major()I
+    return-void
 
     .line 17
-    .line 18
-    .line 19
-    move-result v0
-
-    .line 20
-    if-le v0, v2, :cond_3
-
-    .line 21
-    .line 22
-    goto :goto_0
-
-    .line 23
-    :cond_1
-    invoke-virtual {v0}, Lorg/conscrypt/Conscrypt$Version;->minor()I
-
-    .line 24
-    .line 25
-    .line 26
-    move-result v1
-
-    .line 27
-    if-eq v1, v3, :cond_2
-
-    .line 28
-    .line 29
-    invoke-virtual {v0}, Lorg/conscrypt/Conscrypt$Version;->minor()I
-
-    .line 30
-    .line 31
-    .line 32
-    move-result v0
-
-    .line 33
-    if-le v0, v3, :cond_3
-
-    .line 34
-    .line 35
-    goto :goto_0
-
-    .line 36
-    :cond_2
-    invoke-virtual {v0}, Lorg/conscrypt/Conscrypt$Version;->patch()I
-
-    .line 37
-    .line 38
-    .line 39
-    move-result v0
-
-    .line 40
-    if-ltz v0, :cond_3
-
-    .line 41
-    .line 42
-    :goto_0
-    return v3
-
-    .line 43
-    :cond_3
-    :goto_1
-    const/4 v0, 0x0
-
-    .line 44
-    return v0
+    :array_0
+    .array-data 4
+        0x3f3b98c8    # 0.7328f
+        0x3edbf488    # 0.4296f
+        -0x41d9b3d0    # -0.1624f
+        -0x40cbe0df    # -0.7036f
+        0x3fd947ae    # 1.6975f
+        0x3bc7e282    # 0.0061f
+        0x3b449ba6    # 0.003f
+        0x3c5ed289    # 0.0136f
+        0x3f7bc01a    # 0.9834f
+    .end array-data
 .end method

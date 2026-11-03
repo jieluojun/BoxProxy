@@ -1,119 +1,64 @@
-.class public final Lcx;
+.class public abstract Lcx;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final a:I
+# static fields
+.field public static final a:Lkp1;
+
+.field public static final b:Lkp1;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lfu;
 
     .line 2
     .line 3
-    .line 4
-    iput p1, p0, Lcx;->a:I
-
-    .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    instance-of v0, p1, Lcx;
-
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
+    const/16 v1, 0x9
 
     .line 4
     .line 5
-    goto :goto_0
+    invoke-direct {v0, v1}, Lfu;-><init>(B)V
 
     .line 6
-    :cond_0
-    check-cast p1, Lcx;
-
     .line 7
     .line 8
-    iget p1, p1, Lcx;->a:I
+    new-instance v1, Lkp1;
 
     .line 9
     .line 10
-    iget p0, p0, Lcx;->a:I
+    const/4 v2, 0x0
 
     .line 11
-    .line 12
-    if-eq p0, p1, :cond_1
+    invoke-direct {v1, v0, v2}, Lkp1;-><init>(Ld52;B)V
 
+    .line 12
     .line 13
     .line 14
-    :goto_0
-    const/4 p0, 0x0
+    sput-object v1, Lcx;->a:Lkp1;
 
     .line 15
-    return p0
-
     .line 16
-    :cond_1
-    const/4 p0, 0x1
+    sget-object v0, Lbx;->k:Lbx;
 
     .line 17
-    return p0
-.end method
+    .line 18
+    new-instance v1, Lkp1;
 
-.method public final hashCode()I
-    .locals 0
+    .line 19
+    .line 20
+    invoke-direct {v1, v0, v2}, Lkp1;-><init>(Ld52;B)V
 
-    .line 1
-    iget p0, p0, Lcx;->a:I
+    .line 21
+    .line 22
+    .line 23
+    sput-object v1, Lcx;->b:Lkp1;
 
-    .line 2
-    .line 3
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    const-string v0, "AutoClearFocusBehavior(value="
-
-    .line 2
-    .line 3
-    const-string v1, ")"
-
-    .line 4
-    .line 5
-    iget p0, p0, Lcx;->a:I
-
-    .line 6
-    .line 7
-    invoke-static {p0, v0, v1}, Lxu1;->l(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object p0
-
-    .line 11
-    return-object p0
+    .line 24
+    .line 25
+    return-void
 .end method

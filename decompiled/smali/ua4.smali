@@ -1,198 +1,271 @@
-.class public final Lua4;
-.super Lac4;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final synthetic Lua4;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
-# static fields
-.field public static final c:Lua4;
+# instance fields
+.field public final synthetic j:B
+
+.field public final synthetic k:Laz2;
+
+.field public final synthetic l:Z
+
+.field public final synthetic m:Z
+
+.field public final synthetic n:Ljava/util/List;
+
+.field public final synthetic o:Ljava/util/List;
+
+.field public final synthetic p:Ljava/util/List;
+
+.field public final synthetic q:Ld52;
+
+.field public final synthetic r:Ld52;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(Laz2;ZZLjava/util/List;Ljava/util/List;Ljava/util/List;Ld52;Ld52;IB)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lua4;
+    iput-byte p10, p0, Lua4;->j:B
 
     .line 2
     .line 3
-    const/4 v1, 0x2
+    iput-object p1, p0, Lua4;->k:Laz2;
 
     .line 4
-    const/4 v2, 0x1
-
     .line 5
-    const/4 v3, 0x0
+    iput-boolean p2, p0, Lua4;->l:Z
 
     .line 6
-    invoke-direct {v0, v3, v1, v2}, Lac4;-><init>(III)V
-
     .line 7
+    iput-boolean p3, p0, Lua4;->m:Z
+
     .line 8
     .line 9
-    sput-object v0, Lua4;->c:Lua4;
+    iput-object p4, p0, Lua4;->n:Ljava/util/List;
 
     .line 10
     .line 11
+    iput-object p5, p0, Lua4;->o:Ljava/util/List;
+
+    .line 12
+    .line 13
+    iput-object p6, p0, Lua4;->p:Ljava/util/List;
+
+    .line 14
+    .line 15
+    iput-object p7, p0, Lua4;->q:Ld52;
+
+    .line 16
+    .line 17
+    iput-object p8, p0, Lua4;->r:Ld52;
+
+    .line 18
+    .line 19
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 20
+    .line 21
+    .line 22
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lnp2;Lvu;Lk46;Lf95;Lcc4;)V
-    .locals 2
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 24
 
     .line 1
-    const/4 p0, 0x0
+    move-object/from16 v0, p0
 
     .line 2
-    invoke-virtual {p1, p0}, Lnp2;->c(I)Ljava/lang/Object;
-
     .line 3
+    iget-byte v1, v0, Lua4;->j:B
+
     .line 4
     .line 5
-    move-result-object p0
+    sget-object v2, Lk27;->a:Lk27;
 
     .line 6
-    check-cast p0, Lp62;
-
     .line 7
+    const/4 v3, 0x1
+
     .line 8
-    const/4 p2, 0x1
+    packed-switch v1, :pswitch_data_0
 
     .line 9
-    invoke-virtual {p1, p2}, Lnp2;->c(I)Ljava/lang/Object;
-
     .line 10
     .line 11
-    .line 12
-    move-result-object p1
+    move-object/from16 v12, p1
 
+    .line 12
     .line 13
-    instance-of p5, p1, Lh95;
+    check-cast v12, Lv01;
 
     .line 14
     .line 15
-    if-eqz p5, :cond_0
+    move-object/from16 v1, p2
 
     .line 16
     .line 17
-    move-object p5, p1
+    check-cast v1, Ljava/lang/Integer;
 
     .line 18
-    check-cast p5, Lh95;
-
     .line 19
-    .line 20
-    invoke-virtual {p4, p5}, Lf95;->h(Lh95;)V
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 20
     .line 21
     .line 22
-    .line 23
-    :cond_0
-    iget p4, p3, Lk46;->n:I
+    invoke-static {v3}, Lw23;->h0(I)I
 
+    .line 23
     .line 24
     .line 25
-    if-nez p4, :cond_1
+    move-result v13
 
     .line 26
-    .line 27
-    goto :goto_0
+    iget-object v4, v0, Lua4;->k:Laz2;
 
+    .line 27
     .line 28
-    :cond_1
-    const-string p4, "Can only append a slot if not current inserting"
+    iget-boolean v5, v0, Lua4;->l:Z
 
     .line 29
     .line 30
-    invoke-static {p4}, Le11;->a(Ljava/lang/String;)V
+    iget-boolean v6, v0, Lua4;->m:Z
 
     .line 31
     .line 32
+    iget-object v7, v0, Lua4;->n:Ljava/util/List;
+
     .line 33
-    :goto_0
-    iget p4, p3, Lk46;->i:I
-
     .line 34
+    iget-object v8, v0, Lua4;->o:Ljava/util/List;
+
     .line 35
-    iget p5, p3, Lk46;->j:I
-
     .line 36
-    .line 37
-    invoke-virtual {p3, p0}, Lk46;->c(Lp62;)I
+    iget-object v9, v0, Lua4;->p:Ljava/util/List;
 
+    .line 37
     .line 38
+    iget-object v10, v0, Lua4;->q:Ld52;
+
     .line 39
     .line 40
-    move-result p0
+    iget-object v11, v0, Lua4;->r:Ld52;
 
     .line 41
-    iget-object v0, p3, Lk46;->b:[I
-
     .line 42
-    .line 43
-    add-int/lit8 v1, p0, 0x1
+    invoke-static/range {v4 .. v13}, Lai3;->p(Laz2;ZZLjava/util/List;Ljava/util/List;Ljava/util/List;Ld52;Ld52;Lv01;I)V
 
+    .line 43
     .line 44
     .line 45
-    invoke-virtual {p3, v1}, Lk46;->q(I)I
+    return-object v2
 
     .line 46
+    :pswitch_0
+    move-object/from16 v22, p1
+
     .line 47
     .line 48
-    move-result v1
+    check-cast v22, Lv01;
 
     .line 49
-    invoke-virtual {p3, v0, v1}, Lk46;->f([II)I
-
     .line 50
+    move-object/from16 v1, p2
+
     .line 51
     .line 52
-    move-result v0
+    check-cast v1, Ljava/lang/Integer;
 
     .line 53
-    iput v0, p3, Lk46;->i:I
-
     .line 54
-    .line 55
-    iput v0, p3, Lk46;->j:I
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 55
     .line 56
     .line 57
-    invoke-virtual {p3, p2, p0}, Lk46;->w(II)V
+    invoke-static {v3}, Lw23;->h0(I)I
 
     .line 58
     .line 59
     .line 60
-    if-lt p4, v0, :cond_2
+    move-result v23
 
     .line 61
+    iget-object v14, v0, Lua4;->k:Laz2;
+
     .line 62
-    add-int/lit8 p4, p4, 0x1
-
     .line 63
+    iget-boolean v15, v0, Lua4;->l:Z
+
     .line 64
-    add-int/lit8 p5, p5, 0x1
-
     .line 65
+    iget-boolean v1, v0, Lua4;->m:Z
+
     .line 66
-    :cond_2
-    iget-object p0, p3, Lk46;->c:[Ljava/lang/Object;
-
     .line 67
+    iget-object v3, v0, Lua4;->n:Ljava/util/List;
+
     .line 68
-    aput-object p1, p0, v0
-
     .line 69
+    iget-object v4, v0, Lua4;->o:Ljava/util/List;
+
     .line 70
-    iput p4, p3, Lk46;->i:I
-
     .line 71
-    .line 72
-    iput p5, p3, Lk46;->j:I
+    iget-object v5, v0, Lua4;->p:Ljava/util/List;
 
+    .line 72
     .line 73
+    iget-object v6, v0, Lua4;->q:Ld52;
+
     .line 74
-    return-void
+    .line 75
+    iget-object v0, v0, Lua4;->r:Ld52;
+
+    .line 76
+    .line 77
+    move-object/from16 v21, v0
+
+    .line 78
+    .line 79
+    move/from16 v16, v1
+
+    .line 80
+    .line 81
+    move-object/from16 v17, v3
+
+    .line 82
+    .line 83
+    move-object/from16 v18, v4
+
+    .line 84
+    .line 85
+    move-object/from16 v19, v5
+
+    .line 86
+    .line 87
+    move-object/from16 v20, v6
+
+    .line 88
+    .line 89
+    invoke-static/range {v14 .. v23}, Lrd1;->m(Laz2;ZZLjava/util/List;Ljava/util/List;Ljava/util/List;Ld52;Ld52;Lv01;I)V
+
+    .line 90
+    .line 91
+    .line 92
+    return-object v2
+
+    .line 93
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

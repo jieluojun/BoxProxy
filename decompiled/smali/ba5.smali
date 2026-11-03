@@ -1,27 +1,28 @@
 .class public final Lba5;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Ljava/util/concurrent/Executor;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final j:Landroid/os/Handler;
+.field public synthetic j:Ljava/lang/Object;
+
+.field public final synthetic k:Lri2;
+
+.field public l:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/Handler;)V
+.method public constructor <init>(Lri2;Lz71;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lba5;->k:Lri2;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lba5;->j:Landroid/os/Handler;
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
+    .line 4
     .line 5
     .line 6
     return-void
@@ -29,74 +30,43 @@
 
 
 # virtual methods
-.method public final execute(Ljava/lang/Runnable;)V
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object p1, p0, Lba5;->j:Ljava/lang/Object;
 
     .line 2
     .line 3
+    iget p1, p0, Lba5;->l:I
+
     .line 4
-    iget-object p0, p0, Lba5;->j:Landroid/os/Handler;
-
     .line 5
+    const/high16 v0, -0x80000000
+
     .line 6
-    invoke-virtual {p0, p1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
     .line 7
-    .line 8
-    .line 9
-    move-result p1
+    or-int/2addr p1, v0
 
+    .line 8
+    iput p1, p0, Lba5;->l:I
+
+    .line 9
     .line 10
-    if-eqz p1, :cond_0
+    iget-object p1, p0, Lba5;->k:Lri2;
 
     .line 11
     .line 12
-    return-void
+    const/4 v0, 0x0
 
     .line 13
-    :cond_0
-    new-instance p1, Ljava/util/concurrent/RejectedExecutionException;
+    invoke-virtual {p1, v0, p0}, Lri2;->b(FLz71;)Ljava/lang/Object;
 
     .line 14
     .line 15
-    new-instance v0, Ljava/lang/StringBuilder;
-
     .line 16
-    .line 17
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 18
-    .line 19
-    .line 20
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 21
-    .line 22
-    .line 23
-    const-string p0, " is shutting down"
-
-    .line 24
-    .line 25
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 26
-    .line 27
-    .line 28
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 29
-    .line 30
-    .line 31
     move-result-object p0
 
-    .line 32
-    invoke-direct {p1, p0}, Ljava/util/concurrent/RejectedExecutionException;-><init>(Ljava/lang/String;)V
-
-    .line 33
-    .line 34
-    .line 35
-    throw p1
+    .line 17
+    return-object p0
 .end method

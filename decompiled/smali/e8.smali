@@ -1,23 +1,23 @@
-.class public final Le8;
-.super Lcs6;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public abstract Le8;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final c:Ln8;
+.field public final a:Ls52;
 
 
 # direct methods
-.method public constructor <init>(Ln8;Ljava/util/Optional;Ljava/util/Optional;)V
+.method public constructor <init>(Ls52;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p2, p3}, Lcs6;-><init>(Ljava/util/Optional;Ljava/util/Optional;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Le8;->c:Ln8;
+    iput-object p1, p0, Le8;->a:Ls52;
 
     .line 5
     .line 6

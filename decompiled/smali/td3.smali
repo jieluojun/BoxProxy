@@ -1,115 +1,125 @@
 .class public final Ltd3;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lsw2;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final a:Ltd3;
+.field public static final b:Ljava/util/WeakHashMap;
 
-.field public static final b:Lyr4;
+
+# instance fields
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    new-instance v0, Ljava/util/WeakHashMap;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    sput-object v0, Ltd3;->b:Ljava/util/WeakHashMap;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Ltd3;->a:Ljava/lang/String;
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public static declared-synchronized a(Ljava/lang/String;)Ltd3;
     .locals 3
 
     .line 1
-    new-instance v0, Ltd3;
+    const-class v0, Ltd3;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    monitor-enter v0
 
     .line 4
+    :try_start_0
+    sget-object v1, Ltd3;->b:Ljava/util/WeakHashMap;
+
     .line 5
     .line 6
-    sput-object v0, Ltd3;->a:Ltd3;
+    invoke-virtual {v1, p0}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 7
     .line 8
-    new-instance v0, Lyr4;
-
     .line 9
+    move-result-object v2
+
     .line 10
-    const-string v1, "kotlin.Long"
+    check-cast v2, Ltd3;
 
     .line 11
     .line 12
-    sget-object v2, Lxr4;->k:Lxr4;
+    if-nez v2, :cond_0
 
     .line 13
     .line 14
-    invoke-direct {v0, v1, v2}, Lyr4;-><init>(Ljava/lang/String;Lxr4;)V
+    new-instance v2, Ltd3;
 
     .line 15
     .line 16
-    .line 17
-    sput-object v0, Ltd3;->b:Lyr4;
+    invoke-direct {v2, p0}, Ltd3;-><init>(Ljava/lang/String;)V
 
+    .line 17
     .line 18
     .line 19
-    return-void
-.end method
+    invoke-virtual {v1, p0, v2}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
+    .line 20
+    .line 21
+    .line 22
+    goto :goto_0
 
-# virtual methods
-.method public final b(Lae1;)Ljava/lang/Object;
-    .locals 0
+    .line 23
+    :catchall_0
+    move-exception p0
 
-    .line 1
-    invoke-interface {p1}, Lae1;->b()J
+    .line 24
+    goto :goto_1
 
-    .line 2
-    .line 3
-    .line 4
-    move-result-wide p0
+    .line 25
+    :cond_0
+    :goto_0
+    monitor-exit v0
 
-    .line 5
-    invoke-static {p0, p1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    .line 26
+    return-object v2
 
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
+    .line 27
+    :goto_1
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 9
-    return-object p0
-.end method
-
-.method public final c()Lov5;
-    .locals 0
-
-    .line 1
-    sget-object p0, Ltd3;->b:Lyr4;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final d(Lm96;Ljava/lang/Object;)V
-    .locals 2
-
-    .line 1
-    check-cast p2, Ljava/lang/Number;
-
-    .line 2
-    .line 3
-    invoke-virtual {p2}, Ljava/lang/Number;->longValue()J
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-wide v0
-
-    .line 7
-    invoke-virtual {p1, v0, v1}, Lm96;->k(J)V
-
-    .line 8
-    .line 9
-    .line 10
-    return-void
+    .line 28
+    throw p0
 .end method

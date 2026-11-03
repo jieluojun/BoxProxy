@@ -1,37 +1,61 @@
 .class public final Lww;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# static fields
+.field public static final b:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
 
 # instance fields
-.field public final a:J
-
-.field public final b:J
-
-.field public final c:Ljava/lang/CharSequence;
+.field public volatile a:J
 
 
 # direct methods
-.method public constructor <init>(JJLjava/lang/CharSequence;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-class v0, Lww;
 
     .line 2
     .line 3
+    const-string v1, "a"
+
     .line 4
-    iput-wide p1, p0, Lww;->a:J
-
     .line 5
-    .line 6
-    iput-wide p3, p0, Lww;->b:J
+    invoke-static {v0, v1}, Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
+    .line 6
     .line 7
     .line 8
-    iput-object p5, p0, Lww;->c:Ljava/lang/CharSequence;
+    move-result-object v0
 
     .line 9
+    sput-object v0, Lww;->b:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+
     .line 10
+    .line 11
     return-void
+.end method
+
+
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lww;->a:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    return-object p0
 .end method

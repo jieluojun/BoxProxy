@@ -1,105 +1,109 @@
 .class public final Lr73;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Ly32;
+.super Lwy5;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:F
+.field public final j:F
 
 
 # direct methods
-.method public constructor <init>(F)V
-    .locals 0
+.method public constructor <init>(Lhy1;FLvy5;Lop2;Lhy1;FLjava/util/List;)V
+    .locals 7
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Lr73;->a:F
+    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 5
     .line 6
+    .line 7
+    invoke-virtual {p5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 8
+    .line 9
+    .line 10
+    invoke-virtual {p7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 11
+    .line 12
+    .line 13
+    move-object v0, p0
+
+    .line 14
+    move-object v1, p1
+
+    .line 15
+    move-object v2, p3
+
+    .line 16
+    move-object v3, p4
+
+    .line 17
+    move-object v4, p5
+
+    .line 18
+    move v5, p6
+
+    .line 19
+    move-object v6, p7
+
+    .line 20
+    invoke-direct/range {v0 .. v6}, Lwy5;-><init>(Lhy1;Lvy5;Lop2;Lhy1;FLjava/util/List;)V
+
+    .line 21
+    .line 22
+    .line 23
+    iput p2, v0, Lr73;->j:F
+
+    .line 24
+    .line 25
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(F)F
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lr73;->a:F
-
-    .line 2
-    .line 3
-    div-float/2addr p1, p0
-
-    .line 4
-    return p1
-.end method
-
-.method public final b(F)F
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lr73;->a:F
-
-    .line 2
-    .line 3
-    mul-float/2addr p1, p0
-
-    .line 4
-    return p1
-.end method
-
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+    .locals 1
 
     .line 1
-    const/4 v0, 0x1
+    invoke-super {p0, p1}, Lwy5;->equals(Ljava/lang/Object;)Z
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
     .line 4
-    return v0
+    move-result v0
 
     .line 5
-    :cond_0
-    instance-of v1, p1, Lr73;
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    const/4 v2, 0x0
+    instance-of v0, p1, Lr73;
 
     .line 8
-    if-nez v1, :cond_1
-
     .line 9
-    .line 10
-    return v2
+    if-eqz v0, :cond_0
 
+    .line 10
     .line 11
-    :cond_1
     check-cast p1, Lr73;
 
     .line 12
     .line 13
-    iget p0, p0, Lr73;->a:F
+    iget p1, p1, Lr73;->j:F
 
     .line 14
     .line 15
-    iget p1, p1, Lr73;->a:F
+    iget p0, p0, Lr73;->j:F
 
     .line 16
     .line 17
-    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
+    invoke-static {p0, p1}, Lxk1;->b(FF)Z
 
     .line 18
     .line 19
@@ -107,78 +111,53 @@
     move-result p0
 
     .line 21
-    if-eqz p0, :cond_2
+    if-eqz p0, :cond_0
 
     .line 22
     .line 23
-    return v2
+    const/4 p0, 0x1
 
     .line 24
-    :cond_2
-    return v0
-.end method
+    return p0
 
-.method public final hashCode()I
-    .locals 0
+    .line 25
+    :cond_0
+    const/4 p0, 0x0
 
-    .line 1
-    iget p0, p0, Lr73;->a:F
-
-    .line 2
-    .line 3
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
+    .line 26
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final hashCode()I
+    .locals 1
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-super {p0}, Lwy5;->hashCode()I
 
     .line 2
     .line 3
-    const-string v1, "LinearFontScaleConverter(fontScale="
-
     .line 4
+    move-result v0
+
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    mul-int/lit8 v0, v0, 0x1f
 
     .line 6
     .line 7
+    iget p0, p0, Lr73;->j:F
+
     .line 8
-    iget p0, p0, Lr73;->a:F
-
     .line 9
-    .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
 
+    .line 10
     .line 11
     .line 12
+    move-result p0
+
     .line 13
-    const-string p0, ")"
+    add-int/2addr p0, v0
 
     .line 14
-    .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-object p0
-
-    .line 22
-    return-object p0
+    return p0
 .end method

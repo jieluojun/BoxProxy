@@ -1,48 +1,52 @@
 .class public final Ln63;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final synthetic a:Ln63;
+# instance fields
+.field public j:Lh63;
 
-.field public static final b:Lm11;
+.field public k:Lz85;
+
+.field public synthetic l:Ljava/lang/Object;
+
+.field public m:I
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    new-instance v0, Ln63;
+    iput-object p1, p0, Ln63;->l:Ljava/lang/Object;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iget p1, p0, Ln63;->m:I
 
     .line 4
     .line 5
-    .line 6
-    sput-object v0, Ln63;->a:Ln63;
+    const/high16 v0, -0x80000000
 
+    .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    new-instance v0, Lm11;
+    iput p1, p0, Ln63;->m:I
 
     .line 9
     .line 10
-    const/16 v1, 0x1c
+    const/4 p1, 0x0
 
     .line 11
-    .line 12
-    invoke-direct {v0, v1}, Lm11;-><init>(B)V
+    invoke-static {p1, p0}, Lu23;->j(Lh63;Lz71;)Ljava/lang/Object;
 
+    .line 12
     .line 13
     .line 14
-    .line 15
-    sput-object v0, Ln63;->b:Lm11;
+    move-result-object p0
 
-    .line 16
-    .line 17
-    return-void
+    .line 15
+    return-object p0
 .end method
