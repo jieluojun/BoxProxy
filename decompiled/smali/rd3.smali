@@ -1,139 +1,179 @@
-.class public final synthetic Lrd3;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lr52;
+.class public final Lrd3;
+.super Ljava/io/Writer;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Lhj6;
+.field public final j:Ljava/lang/StringBuilder;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lhj6;B)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
     .line 1
-    iput-byte p2, p0, Lrd3;->j:B
+    invoke-direct {p0}, Ljava/io/Writer;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lrd3;->k:Lhj6;
-
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljava/lang/StringBuilder;
 
+    .line 5
     .line 6
+    const/16 v1, 0x80
+
     .line 7
     .line 8
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(I)V
+
+    .line 9
+    .line 10
+    .line 11
+    iput-object v0, p0, Lrd3;->j:Ljava/lang/StringBuilder;
+
+    .line 12
+    .line 13
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final b()V
+    .locals 2
 
     .line 1
-    iget-byte v0, p0, Lrd3;->j:B
+    iget-object p0, p0, Lrd3;->j:Ljava/lang/StringBuilder;
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->length()I
 
     .line 4
-    sget-object v2, Ld07;->a:Ld07;
-
     .line 5
     .line 6
-    iget-object p0, p0, Lrd3;->k:Lhj6;
+    move-result v0
 
     .line 7
-    .line 8
-    packed-switch v0, :pswitch_data_0
+    if-lez v0, :cond_0
 
+    .line 8
     .line 9
+    const-string v0, "FragmentManager"
+
     .line 10
     .line 11
-    check-cast p1, Lno4;
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 12
     .line 13
-    invoke-static {p1, v1}, Le43;->g0(Lno4;Z)J
-
     .line 14
+    move-result-object v1
+
     .line 15
+    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
     .line 16
-    move-result-wide v0
-
     .line 17
-    invoke-interface {p0, v0, v1}, Lhj6;->e(J)V
-
     .line 18
-    .line 19
-    .line 20
-    invoke-virtual {p1}, Lno4;->a()V
+    const/4 v0, 0x0
 
+    .line 19
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->length()I
+
+    .line 20
     .line 21
     .line 22
+    move-result v1
+
     .line 23
-    return-object v2
+    invoke-virtual {p0, v0, v1}, Ljava/lang/StringBuilder;->delete(II)Ljava/lang/StringBuilder;
 
     .line 24
-    :pswitch_0
-    check-cast p1, Lno4;
-
     .line 25
     .line 26
-    invoke-static {p1, v1}, Le43;->g0(Lno4;Z)J
+    :cond_0
+    return-void
+.end method
 
-    .line 27
-    .line 28
-    .line 29
-    move-result-wide v0
+.method public final close()V
+    .locals 0
 
-    .line 30
-    invoke-interface {p0, v0, v1}, Lhj6;->e(J)V
+    .line 1
+    invoke-virtual {p0}, Lrd3;->b()V
 
-    .line 31
-    .line 32
-    .line 33
-    invoke-virtual {p1}, Lno4;->a()V
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
 
-    .line 34
-    .line 35
-    .line 36
-    return-object v2
+.method public final flush()V
+    .locals 0
 
-    .line 37
-    :pswitch_1
-    check-cast p1, Lo84;
+    .line 1
+    invoke-virtual {p0}, Lrd3;->b()V
 
-    .line 38
-    .line 39
-    iget-wide v0, p1, Lo84;->a:J
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
 
-    .line 40
-    .line 41
-    sget-object p1, Lvb5;->y:Lss5;
+.method public final write([CII)V
+    .locals 3
 
-    .line 42
-    .line 43
-    invoke-interface {p0, v0, v1, p1}, Lhj6;->a(JLss5;)V
+    .line 1
+    const/4 v0, 0x0
 
-    .line 44
-    .line 45
-    .line 46
-    return-object v2
+    .line 2
+    :goto_0
+    if-ge v0, p3, :cond_1
 
-    .line 47
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 3
+    .line 4
+    add-int v1, p2, v0
+
+    .line 5
+    .line 6
+    aget-char v1, p1, v1
+
+    .line 7
+    .line 8
+    const/16 v2, 0xa
+
+    .line 9
+    .line 10
+    if-ne v1, v2, :cond_0
+
+    .line 11
+    .line 12
+    invoke-virtual {p0}, Lrd3;->b()V
+
+    .line 13
+    .line 14
+    .line 15
+    goto :goto_1
+
+    .line 16
+    :cond_0
+    iget-object v2, p0, Lrd3;->j:Ljava/lang/StringBuilder;
+
+    .line 17
+    .line 18
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 19
+    .line 20
+    .line 21
+    :goto_1
+    add-int/lit8 v0, v0, 0x1
+
+    .line 22
+    .line 23
+    goto :goto_0
+
+    .line 24
+    :cond_1
+    return-void
 .end method

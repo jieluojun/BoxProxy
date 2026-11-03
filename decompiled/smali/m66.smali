@@ -1,32 +1,29 @@
-.class public interface abstract Lm66;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lm66;
+.super Lq43;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# virtual methods
-.method public abstract a()Ljava/lang/Object;
-.end method
+# static fields
+.field public static final d:Lm66;
 
-.method public abstract b(Ljava/lang/Integer;)V
-.end method
 
-.method public abstract c(J)V
-.end method
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
 
-.method public abstract d(Ls51;)V
-.end method
+    .line 1
+    new-instance v0, Lm66;
 
-.method public abstract e()Ls51;
-.end method
+    .line 2
+    .line 3
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract f(I)V
-.end method
+    .line 4
+    .line 5
+    .line 6
+    sput-object v0, Lm66;->d:Lm66;
 
-.method public abstract g()J
-.end method
-
-.method public abstract h()I
-.end method
-
-.method public abstract i(I)Ljava/lang/Object;
+    .line 7
+    .line 8
+    return-void
 .end method

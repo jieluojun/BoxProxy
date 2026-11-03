@@ -1,17 +1,17 @@
 .class public final Lzm2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
 .implements Lcn2;
 
 
 # instance fields
-.field public final j:Lu54;
+.field public final j:Lp64;
 
 
 # direct methods
-.method public constructor <init>(Lu54;)V
+.method public constructor <init>(Lp64;)V
     .locals 0
 
     .line 1
@@ -20,7 +20,7 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lzm2;->j:Lu54;
+    iput-object p1, p0, Lzm2;->j:Lp64;
 
     .line 5
     .line 6
@@ -39,11 +39,11 @@
     return p0
 .end method
 
-.method public final d()Lu54;
+.method public final d()Lp64;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lzm2;->j:Lu54;
+    iget-object p0, p0, Lzm2;->j:Lp64;
 
     .line 2
     .line 3

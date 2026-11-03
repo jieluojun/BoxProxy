@@ -1,177 +1,153 @@
-.class public abstract Lyn6;
+.class public final Lyn6;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lg02;
 
 
-# static fields
-.field public static final a:Ljava/lang/ThreadLocal;
+# instance fields
+.field public final synthetic j:B
 
-.field public static final b:J
+.field public final synthetic k:Ldo6;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Ldo6;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/lang/ThreadLocal;
+    iput-byte p2, p0, Lyn6;->j:B
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
+    iput-object p1, p0, Lyn6;->k:Ldo6;
 
     .line 4
     .line 5
-    .line 6
-    sput-object v0, Lyn6;->a:Ljava/lang/ThreadLocal;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6
     .line 7
     .line 8
-    const/4 v0, 0x0
-
-    .line 9
-    invoke-static {v0, v0}, Lyn6;->a(II)J
-
-    .line 10
-    .line 11
-    .line 12
-    move-result-wide v0
-
-    .line 13
-    sput-wide v0, Lyn6;->b:J
-
-    .line 14
-    .line 15
     return-void
 .end method
 
-.method public static final a(II)J
-    .locals 4
 
-    .line 1
-    int-to-long v0, p0
-
-    .line 2
-    const/16 p0, 0x20
-
-    .line 3
-    .line 4
-    shl-long/2addr v0, p0
-
-    .line 5
-    int-to-long p0, p1
-
-    .line 6
-    const-wide v2, 0xffffffffL
-
-    .line 7
-    .line 8
-    .line 9
-    .line 10
-    .line 11
-    and-long/2addr p0, v2
-
-    .line 12
-    or-long/2addr p0, v0
-
-    .line 13
-    return-wide p0
-.end method
-
-.method public static final b(I)Landroid/text/TextDirectionHeuristic;
+# virtual methods
+.method public final e(Ljava/lang/Object;Ly71;)Ljava/lang/Object;
     .locals 1
 
     .line 1
-    if-eqz p0, :cond_5
+    iget-byte p2, p0, Lyn6;->j:B
 
     .line 2
     .line 3
-    const/4 v0, 0x1
+    iget-object p0, p0, Lyn6;->k:Ldo6;
 
     .line 4
-    if-eq p0, v0, :cond_4
-
     .line 5
-    .line 6
-    const/4 v0, 0x2
+    sget-object v0, Lk27;->a:Lk27;
 
+    .line 6
     .line 7
-    if-eq p0, v0, :cond_3
+    packed-switch p2, :pswitch_data_0
 
     .line 8
     .line 9
-    const/4 v0, 0x3
-
     .line 10
-    if-eq p0, v0, :cond_2
+    check-cast p1, Ls85;
 
     .line 11
     .line 12
-    const/4 v0, 0x4
+    if-eqz p1, :cond_0
 
     .line 13
-    if-eq p0, v0, :cond_1
-
     .line 14
-    .line 15
-    const/4 v0, 0x5
+    iget-object p0, p0, Ldo6;->d:Lfu6;
 
+    .line 15
     .line 16
-    if-eq p0, v0, :cond_0
+    invoke-virtual {p0}, Lfu6;->a()V
 
     .line 17
     .line 18
-    sget-object p0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR:Landroid/text/TextDirectionHeuristic;
-
     .line 19
+    goto :goto_0
+
     .line 20
-    return-object p0
+    :cond_0
+    iget-object p0, p0, Ldo6;->d:Lfu6;
 
     .line 21
-    :cond_0
-    sget-object p0, Landroid/text/TextDirectionHeuristics;->LOCALE:Landroid/text/TextDirectionHeuristic;
-
     .line 22
-    .line 23
-    return-object p0
+    iget-object p0, p0, Lfu6;->a:Lnk6;
 
+    .line 23
     .line 24
-    :cond_1
-    sget-object p0, Landroid/text/TextDirectionHeuristics;->ANYRTL_LTR:Landroid/text/TextDirectionHeuristic;
+    if-eqz p0, :cond_2
 
     .line 25
     .line 26
-    return-object p0
+    iget-object p1, p0, Lnk6;->D:Lk96;
 
     .line 27
-    :cond_2
-    sget-object p0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_RTL:Landroid/text/TextDirectionHeuristic;
-
     .line 28
-    .line 29
-    return-object p0
+    if-nez p1, :cond_1
 
+    .line 29
     .line 30
-    :cond_3
-    sget-object p0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR:Landroid/text/TextDirectionHeuristic;
+    goto :goto_0
 
     .line 31
+    :cond_1
+    const/4 p2, 0x0
+
     .line 32
-    return-object p0
+    invoke-virtual {p1, p2}, Leu2;->c(Ljava/util/concurrent/CancellationException;)V
 
     .line 33
-    :cond_4
-    sget-object p0, Landroid/text/TextDirectionHeuristics;->RTL:Landroid/text/TextDirectionHeuristic;
-
     .line 34
     .line 35
-    return-object p0
+    iput-object p2, p0, Lnk6;->D:Lk96;
 
     .line 36
-    :cond_5
-    sget-object p0, Landroid/text/TextDirectionHeuristics;->LTR:Landroid/text/TextDirectionHeuristic;
-
     .line 37
+    :cond_2
+    :goto_0
+    return-object v0
+
     .line 38
-    return-object p0
+    :pswitch_0
+    check-cast p1, Lvk6;
+
+    .line 39
+    .line 40
+    const/4 p1, 0x0
+
+    .line 41
+    invoke-virtual {p0, p1}, Ldo6;->w(Z)V
+
+    .line 42
+    .line 43
+    .line 44
+    sget-object p1, Lar6;->j:Lar6;
+
+    .line 45
+    .line 46
+    invoke-virtual {p0, p1}, Ldo6;->x(Lar6;)V
+
+    .line 47
+    .line 48
+    .line 49
+    return-object v0
+
+    .line 50
+    nop
+
+    .line 51
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

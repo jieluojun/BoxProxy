@@ -1,6 +1,6 @@
 .class public Lcom/hashsequence/coilresvg/SvgRenderer;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
 .implements Lcom/hashsequence/coilresvg/Disposable;
@@ -23,7 +23,7 @@
 
 
 # instance fields
-.field private final callCounter:Lbx;
+.field private final callCounter:Lww;
 
 .field private final cleanable:Lcom/hashsequence/coilresvg/UniffiCleaner$Cleanable;
 
@@ -31,7 +31,7 @@
 
 .field private final pointer:Lcom/sun/jna/Pointer;
 
-.field private final wasDestroyed:Lzw;
+.field private final wasDestroyed:Luw;
 
 
 # direct methods
@@ -46,7 +46,7 @@
     const/4 v1, 0x0
 
     .line 4
-    invoke-direct {v0, v1}, Lcom/hashsequence/coilresvg/SvgRenderer$Companion;-><init>(Loe1;)V
+    invoke-direct {v0, v1}, Lcom/hashsequence/coilresvg/SvgRenderer$Companion;-><init>(Lle1;)V
 
     .line 5
     .line 6
@@ -80,7 +80,7 @@
     .line 5
     .line 6
     .line 7
-    new-instance p1, Lzw;
+    new-instance p1, Luw;
 
     .line 8
     .line 9
@@ -92,15 +92,15 @@
     const/4 v0, 0x0
 
     .line 13
-    iput v0, p1, Lzw;->a:I
+    iput v0, p1, Luw;->a:I
 
     .line 14
     .line 15
-    iput-object p1, p0, Lcom/hashsequence/coilresvg/SvgRenderer;->wasDestroyed:Lzw;
+    iput-object p1, p0, Lcom/hashsequence/coilresvg/SvgRenderer;->wasDestroyed:Luw;
 
     .line 16
     .line 17
-    new-instance p1, Lbx;
+    new-instance p1, Lww;
 
     .line 18
     .line 19
@@ -113,11 +113,11 @@
 
     .line 23
     .line 24
-    iput-wide v0, p1, Lbx;->a:J
+    iput-wide v0, p1, Lww;->a:J
 
     .line 25
     .line 26
-    iput-object p1, p0, Lcom/hashsequence/coilresvg/SvgRenderer;->callCounter:Lbx;
+    iput-object p1, p0, Lcom/hashsequence/coilresvg/SvgRenderer;->callCounter:Lww;
 
     .line 27
     .line 28
@@ -186,7 +186,7 @@
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 57
-    new-instance v0, Lzw;
+    new-instance v0, Luw;
 
     .line 58
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
@@ -194,13 +194,13 @@
     const/4 v1, 0x0
 
     .line 59
-    iput v1, v0, Lzw;->a:I
+    iput v1, v0, Luw;->a:I
 
     .line 60
-    iput-object v0, p0, Lcom/hashsequence/coilresvg/SvgRenderer;->wasDestroyed:Lzw;
+    iput-object v0, p0, Lcom/hashsequence/coilresvg/SvgRenderer;->wasDestroyed:Luw;
 
     .line 61
-    new-instance v0, Lbx;
+    new-instance v0, Lww;
 
     .line 62
     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
@@ -208,10 +208,10 @@
     const-wide/16 v1, 0x1
 
     .line 63
-    iput-wide v1, v0, Lbx;->a:J
+    iput-wide v1, v0, Lww;->a:J
 
     .line 64
-    iput-object v0, p0, Lcom/hashsequence/coilresvg/SvgRenderer;->callCounter:Lbx;
+    iput-object v0, p0, Lcom/hashsequence/coilresvg/SvgRenderer;->callCounter:Lww;
 
     .line 65
     new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
@@ -243,11 +243,11 @@
     return-void
 .end method
 
-.method public static final synthetic access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lbx;
+.method public static final synthetic access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lww;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lcom/hashsequence/coilresvg/SvgRenderer;->callCounter:Lbx;
+    iget-object p0, p0, Lcom/hashsequence/coilresvg/SvgRenderer;->callCounter:Lww;
 
     .line 2
     .line 3
@@ -265,11 +265,11 @@
     return-object p0
 .end method
 
-.method public static synthetic b(Lcom/hashsequence/coilresvg/SvgRenderer;)Ld07;
+.method public static synthetic b(Lcom/hashsequence/coilresvg/SvgRenderer;)Lk27;
     .locals 0
 
     .line 1
-    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->close$lambda$0(Lcom/hashsequence/coilresvg/SvgRenderer;)Ld07;
+    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->close$lambda$0(Lcom/hashsequence/coilresvg/SvgRenderer;)Lk27;
 
     .line 2
     .line 3
@@ -280,7 +280,7 @@
     return-object p0
 .end method
 
-.method private static final close$lambda$0(Lcom/hashsequence/coilresvg/SvgRenderer;)Ld07;
+.method private static final close$lambda$0(Lcom/hashsequence/coilresvg/SvgRenderer;)Lk27;
     .locals 0
 
     .line 1
@@ -289,21 +289,21 @@
     .line 2
     .line 3
     .line 4
-    sget-object p0, Ld07;->a:Ld07;
+    sget-object p0, Lk27;->a:Lk27;
 
     .line 5
     .line 6
     return-object p0
 .end method
 
-.method private final synchronized(Lg52;)Ljava/lang/Object;
+.method private final synchronized(Ld52;)Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<T:",
             "Ljava/lang/Object;",
             ">(",
-            "Lg52;",
+            "Ld52;",
             ")TT;"
         }
     .end annotation
@@ -319,7 +319,7 @@
     .line 5
     .line 6
     :try_start_0
-    invoke-interface {p1}, Lg52;->invoke()Ljava/lang/Object;
+    invoke-interface {p1}, Ld52;->invoke()Ljava/lang/Object;
 
     .line 7
     .line 8
@@ -359,14 +359,14 @@
 
 
 # virtual methods
-.method public final callWithPointer$coil_resvg_release(Lr52;)Ljava/lang/Object;
+.method public final callWithPointer$coil_resvg_release(Lo52;)Ljava/lang/Object;
     .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<R:",
             "Ljava/lang/Object;",
             ">(",
-            "Lr52;",
+            "Lo52;",
             ")TR;"
         }
     .end annotation
@@ -378,7 +378,7 @@
     .line 3
     .line 4
     :cond_0
-    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lbx;
+    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lww;
 
     .line 5
     .line 6
@@ -386,7 +386,7 @@
     move-result-object v0
 
     .line 8
-    iget-wide v3, v0, Lbx;->a:J
+    iget-wide v3, v0, Lww;->a:J
 
     .line 9
     .line 10
@@ -420,7 +420,7 @@
 
     .line 25
     .line 26
-    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lbx;
+    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lww;
 
     .line 27
     .line 28
@@ -441,7 +441,7 @@
     .line 35
     .line 36
     .line 37
-    sget-object v1, Lbx;->b:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    sget-object v1, Lww;->b:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     .line 38
     .line 39
@@ -466,7 +466,7 @@
     move-result-object v0
 
     .line 49
-    invoke-interface {p1, v0}, Lr52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1, v0}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 50
     .line 51
@@ -476,7 +476,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 53
-    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lbx;
+    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lww;
 
     .line 54
     .line 55
@@ -529,7 +529,7 @@
     move-object p1, v0
 
     .line 78
-    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lbx;
+    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lww;
 
     .line 79
     .line 80
@@ -542,7 +542,7 @@
     .line 83
     .line 84
     .line 85
-    sget-object v1, Lbx;->b:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    sget-object v1, Lww;->b:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     .line 86
     .line 87
@@ -592,7 +592,7 @@
     move-result-object p0
 
     .line 109
-    invoke-static {p0}, Ld85;->a(Ljava/lang/Class;)Lvq0;
+    invoke-static {p0}, La95;->a(Ljava/lang/Class;)Lqq0;
 
     .line 110
     .line 111
@@ -609,7 +609,7 @@
 
     .line 117
     .line 118
-    invoke-static {p1, p0}, Lx84;->g(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {p1, p0}, Ls94;->g(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 119
     .line 120
@@ -630,7 +630,7 @@
     move-result-object p0
 
     .line 128
-    invoke-static {p0}, Ld85;->a(Ljava/lang/Class;)Lvq0;
+    invoke-static {p0}, La95;->a(Ljava/lang/Class;)Lqq0;
 
     .line 129
     .line 130
@@ -647,7 +647,7 @@
 
     .line 136
     .line 137
-    invoke-static {p1, p0}, Lx84;->g(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {p1, p0}, Ls94;->g(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 138
     .line 139
@@ -659,7 +659,7 @@
     .locals 2
 
     .line 1
-    new-instance v0, Lin5;
+    new-instance v0, Luo5;
 
     .line 2
     .line 3
@@ -667,12 +667,12 @@
 
     .line 4
     .line 5
-    invoke-direct {v0, p0, v1}, Lin5;-><init>(Ljava/lang/Object;B)V
+    invoke-direct {v0, p0, v1}, Luo5;-><init>(Ljava/lang/Object;B)V
 
     .line 6
     .line 7
     .line 8
-    invoke-direct {p0, v0}, Lcom/hashsequence/coilresvg/SvgRenderer;->synchronized(Lg52;)Ljava/lang/Object;
+    invoke-direct {p0, v0}, Lcom/hashsequence/coilresvg/SvgRenderer;->synchronized(Ld52;)Ljava/lang/Object;
 
     .line 9
     .line 10
@@ -684,7 +684,7 @@
     .locals 4
 
     .line 1
-    iget-object v0, p0, Lcom/hashsequence/coilresvg/SvgRenderer;->wasDestroyed:Lzw;
+    iget-object v0, p0, Lcom/hashsequence/coilresvg/SvgRenderer;->wasDestroyed:Luw;
 
     .line 2
     .line 3
@@ -693,7 +693,7 @@
     .line 4
     .line 5
     .line 6
-    sget-object v1, Lzw;->b:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+    sget-object v1, Luw;->b:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
     .line 7
     .line 8
@@ -715,7 +715,7 @@
 
     .line 15
     .line 16
-    iget-object v0, p0, Lcom/hashsequence/coilresvg/SvgRenderer;->callCounter:Lbx;
+    iget-object v0, p0, Lcom/hashsequence/coilresvg/SvgRenderer;->callCounter:Lww;
 
     .line 17
     .line 18
@@ -724,7 +724,7 @@
     .line 19
     .line 20
     .line 21
-    sget-object v1, Lbx;->b:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    sget-object v1, Lww;->b:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     .line 22
     .line 23
@@ -792,7 +792,7 @@
     .line 2
     .line 3
     :cond_0
-    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lbx;
+    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lww;
 
     .line 4
     .line 5
@@ -800,7 +800,7 @@
     move-result-object v1
 
     .line 7
-    iget-wide v4, v1, Lbx;->a:J
+    iget-wide v4, v1, Lww;->a:J
 
     .line 8
     .line 9
@@ -834,7 +834,7 @@
 
     .line 24
     .line 25
-    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lbx;
+    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lww;
 
     .line 26
     .line 27
@@ -855,7 +855,7 @@
     .line 34
     .line 35
     .line 36
-    sget-object v2, Lbx;->b:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    sget-object v2, Lww;->b:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     .line 37
     .line 38
@@ -897,7 +897,7 @@
     .line 55
     .line 56
     .line 57
-    invoke-virtual {v4, v5}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lr52;)Ljava/lang/Object;
+    invoke-virtual {v4, v5}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lo52;)Ljava/lang/Object;
 
     .line 58
     .line 59
@@ -911,7 +911,7 @@
 
     .line 62
     .line 63
-    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lbx;
+    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lww;
 
     .line 64
     .line 65
@@ -973,7 +973,7 @@
     move-exception v0
 
     .line 93
-    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lbx;
+    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lww;
 
     .line 94
     .line 95
@@ -986,7 +986,7 @@
     .line 98
     .line 99
     .line 100
-    sget-object v2, Lbx;->b:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    sget-object v2, Lww;->b:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     .line 101
     .line 102
@@ -1036,7 +1036,7 @@
     move-result-object p0
 
     .line 124
-    invoke-static {p0}, Ld85;->a(Ljava/lang/Class;)Lvq0;
+    invoke-static {p0}, La95;->a(Ljava/lang/Class;)Lqq0;
 
     .line 125
     .line 126
@@ -1053,7 +1053,7 @@
 
     .line 132
     .line 133
-    invoke-static {v0, p0}, Lx84;->g(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v0, p0}, Ls94;->g(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 134
     .line 135
@@ -1074,7 +1074,7 @@
     move-result-object p0
 
     .line 143
-    invoke-static {p0}, Ld85;->a(Ljava/lang/Class;)Lvq0;
+    invoke-static {p0}, La95;->a(Ljava/lang/Class;)Lqq0;
 
     .line 144
     .line 145
@@ -1091,7 +1091,7 @@
 
     .line 151
     .line 152
-    invoke-static {v0, p0}, Lx84;->g(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v0, p0}, Ls94;->g(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 153
     .line 154
@@ -1108,7 +1108,7 @@
     .line 2
     .line 3
     :cond_0
-    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lbx;
+    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lww;
 
     .line 4
     .line 5
@@ -1116,7 +1116,7 @@
     move-result-object v1
 
     .line 7
-    iget-wide v4, v1, Lbx;->a:J
+    iget-wide v4, v1, Lww;->a:J
 
     .line 8
     .line 9
@@ -1150,7 +1150,7 @@
 
     .line 24
     .line 25
-    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lbx;
+    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lww;
 
     .line 26
     .line 27
@@ -1171,7 +1171,7 @@
     .line 34
     .line 35
     .line 36
-    sget-object v2, Lbx;->b:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    sget-object v2, Lww;->b:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     .line 37
     .line 38
@@ -1213,7 +1213,7 @@
     .line 55
     .line 56
     .line 57
-    invoke-virtual {v4, v5}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lr52;)Ljava/lang/Object;
+    invoke-virtual {v4, v5}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lo52;)Ljava/lang/Object;
 
     .line 58
     .line 59
@@ -1227,7 +1227,7 @@
 
     .line 62
     .line 63
-    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lbx;
+    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lww;
 
     .line 64
     .line 65
@@ -1292,7 +1292,7 @@
     move-object p1, v0
 
     .line 94
-    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lbx;
+    invoke-static {p0}, Lcom/hashsequence/coilresvg/SvgRenderer;->access$getCallCounter$p(Lcom/hashsequence/coilresvg/SvgRenderer;)Lww;
 
     .line 95
     .line 96
@@ -1305,7 +1305,7 @@
     .line 99
     .line 100
     .line 101
-    sget-object v0, Lbx;->b:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
+    sget-object v0, Lww;->b:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
 
     .line 102
     .line 103
@@ -1355,7 +1355,7 @@
     move-result-object p0
 
     .line 125
-    invoke-static {p0}, Ld85;->a(Ljava/lang/Class;)Lvq0;
+    invoke-static {p0}, La95;->a(Ljava/lang/Class;)Lqq0;
 
     .line 126
     .line 127
@@ -1372,7 +1372,7 @@
 
     .line 133
     .line 134
-    invoke-static {p1, p0}, Lx84;->g(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {p1, p0}, Ls94;->g(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 135
     .line 136
@@ -1393,7 +1393,7 @@
     move-result-object p0
 
     .line 144
-    invoke-static {p0}, Ld85;->a(Ljava/lang/Class;)Lvq0;
+    invoke-static {p0}, La95;->a(Ljava/lang/Class;)Lqq0;
 
     .line 145
     .line 146
@@ -1410,7 +1410,7 @@
 
     .line 152
     .line 153
-    invoke-static {p1, p0}, Lx84;->g(Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {p1, p0}, Ls94;->g(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 154
     .line 155
@@ -1439,7 +1439,7 @@
     .line 8
     .line 9
     .line 10
-    invoke-virtual {v1, v2}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lr52;)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lo52;)Ljava/lang/Object;
 
     .line 11
     .line 12

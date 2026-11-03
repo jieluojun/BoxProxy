@@ -1,51 +1,21 @@
-.class public final synthetic Lau6;
+.class public final Lau6;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lv52;
+.implements Ldk3;
 
 
 # instance fields
-.field public final synthetic A:C
+.field public j:Laj3;
 
-.field public final synthetic j:Ljava/lang/String;
+.field public k:Lgj3;
 
-.field public final synthetic k:Lxn3;
-
-.field public final synthetic l:J
-
-.field public final synthetic m:J
-
-.field public final synthetic n:Ljava/lang/String;
-
-.field public final synthetic o:J
-
-.field public final synthetic p:Ljava/lang/String;
-
-.field public final synthetic q:J
-
-.field public final synthetic r:Lv52;
-
-.field public final synthetic s:Lw52;
-
-.field public final synthetic t:Lww1;
-
-.field public final synthetic u:Z
-
-.field public final synthetic v:F
-
-.field public final synthetic w:F
-
-.field public final synthetic x:F
-
-.field public final synthetic y:Lv52;
-
-.field public final synthetic z:I
+.field public final synthetic l:Landroidx/appcompat/widget/Toolbar;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;Lxn3;JJLjava/lang/String;JLjava/lang/String;JLv52;Lw52;Lww1;ZFFFLv52;II)V
+.method public constructor <init>(Landroidx/appcompat/widget/Toolbar;)V
     .locals 0
 
     .line 1
@@ -54,318 +24,608 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lau6;->j:Ljava/lang/String;
+    iput-object p1, p0, Lau6;->l:Landroidx/appcompat/widget/Toolbar;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lau6;->k:Lxn3;
-
-    .line 7
-    .line 8
-    iput-wide p3, p0, Lau6;->l:J
-
-    .line 9
-    .line 10
-    iput-wide p5, p0, Lau6;->m:J
-
-    .line 11
-    .line 12
-    iput-object p7, p0, Lau6;->n:Ljava/lang/String;
-
-    .line 13
-    .line 14
-    iput-wide p8, p0, Lau6;->o:J
-
-    .line 15
-    .line 16
-    iput-object p10, p0, Lau6;->p:Ljava/lang/String;
-
-    .line 17
-    .line 18
-    iput-wide p11, p0, Lau6;->q:J
-
-    .line 19
-    .line 20
-    iput-object p13, p0, Lau6;->r:Lv52;
-
-    .line 21
-    .line 22
-    iput-object p14, p0, Lau6;->s:Lw52;
-
-    .line 23
-    .line 24
-    iput-object p15, p0, Lau6;->t:Lww1;
-
-    .line 25
-    .line 26
-    move/from16 p1, p16
-
-    .line 27
-    .line 28
-    iput-boolean p1, p0, Lau6;->u:Z
-
-    .line 29
-    .line 30
-    move/from16 p1, p17
-
-    .line 31
-    .line 32
-    iput p1, p0, Lau6;->v:F
-
-    .line 33
-    .line 34
-    move/from16 p1, p18
-
-    .line 35
-    .line 36
-    iput p1, p0, Lau6;->w:F
-
-    .line 37
-    .line 38
-    move/from16 p1, p19
-
-    .line 39
-    .line 40
-    iput p1, p0, Lau6;->x:F
-
-    .line 41
-    .line 42
-    move-object/from16 p1, p20
-
-    .line 43
-    .line 44
-    iput-object p1, p0, Lau6;->y:Lv52;
-
-    .line 45
-    .line 46
-    move/from16 p1, p21
-
-    .line 47
-    .line 48
-    iput p1, p0, Lau6;->z:I
-
-    .line 49
-    .line 50
-    move/from16 p1, p22
-
-    .line 51
-    .line 52
-    iput-char p1, p0, Lau6;->A:C
-
-    .line 53
-    .line 54
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 24
+.method public final a(Laj3;Z)V
+    .locals 0
 
     .line 1
-    move-object/from16 v0, p0
+    return-void
+.end method
+
+.method public final c(Lgj3;)Z
+    .locals 6
+
+    .line 1
+    iget-object v0, p0, Lau6;->l:Landroidx/appcompat/widget/Toolbar;
 
     .line 2
     .line 3
-    move-object/from16 v20, p1
+    iget-object v1, v0, Landroidx/appcompat/widget/Toolbar;->r:Landroid/view/View;
 
     .line 4
     .line 5
-    check-cast v20, Lz01;
+    instance-of v2, v1, Lrt0;
 
     .line 6
     .line 7
-    move-object/from16 v1, p2
+    if-eqz v2, :cond_0
 
     .line 8
     .line 9
-    check-cast v1, Ljava/lang/Integer;
+    check-cast v1, Lrt0;
 
     .line 10
     .line 11
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast v1, Ljj3;
 
     .line 12
     .line 13
+    iget-object v1, v1, Ljj3;->j:Landroid/view/CollapsibleActionView;
+
     .line 14
-    iget v1, v0, Lau6;->z:I
-
     .line 15
-    .line 16
-    or-int/lit8 v1, v1, 0x1
+    invoke-interface {v1}, Landroid/view/CollapsibleActionView;->onActionViewCollapsed()V
 
+    .line 16
     .line 17
     .line 18
-    invoke-static {v1}, Lkr5;->i0(I)I
+    :cond_0
+    iget-object v1, v0, Landroidx/appcompat/widget/Toolbar;->r:Landroid/view/View;
 
     .line 19
     .line 20
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
     .line 21
-    move-result v21
-
     .line 22
-    iget-object v1, v0, Lau6;->j:Ljava/lang/String;
-
     .line 23
-    .line 24
-    move-object v2, v1
+    iget-object v1, v0, Landroidx/appcompat/widget/Toolbar;->q:Ljp;
 
+    .line 24
     .line 25
-    iget-object v1, v0, Lau6;->k:Lxn3;
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
     .line 26
     .line 27
-    move-object v4, v2
-
     .line 28
-    iget-wide v2, v0, Lau6;->l:J
+    const/4 v1, 0x0
 
     .line 29
-    .line 30
-    move-object v6, v4
+    iput-object v1, v0, Landroidx/appcompat/widget/Toolbar;->r:Landroid/view/View;
 
+    .line 30
     .line 31
-    iget-wide v4, v0, Lau6;->m:J
+    iget-object v2, v0, Landroidx/appcompat/widget/Toolbar;->N:Ljava/util/ArrayList;
 
     .line 32
     .line 33
-    move-object v7, v6
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
 
     .line 34
-    iget-object v6, v0, Lau6;->n:Ljava/lang/String;
-
     .line 35
     .line 36
-    move-object v9, v7
+    move-result v3
 
     .line 37
-    iget-wide v7, v0, Lau6;->o:J
+    const/4 v4, 0x1
 
     .line 38
+    sub-int/2addr v3, v4
+
     .line 39
-    move-object v10, v9
+    :goto_0
+    if-ltz v3, :cond_1
 
     .line 40
-    iget-object v9, v0, Lau6;->p:Ljava/lang/String;
-
     .line 41
+    invoke-virtual {v2, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
     .line 42
-    move-object v12, v10
-
     .line 43
-    iget-wide v10, v0, Lau6;->q:J
-
     .line 44
+    move-result-object v5
+
     .line 45
-    move-object v13, v12
+    check-cast v5, Landroid/view/View;
 
     .line 46
-    iget-object v12, v0, Lau6;->r:Lv52;
-
     .line 47
+    invoke-virtual {v0, v5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
     .line 48
-    move-object v14, v13
-
     .line 49
-    iget-object v13, v0, Lau6;->s:Lw52;
-
     .line 50
-    .line 51
-    move-object v15, v14
+    add-int/lit8 v3, v3, -0x1
 
+    .line 51
     .line 52
-    iget-object v14, v0, Lau6;->t:Lww1;
+    goto :goto_0
 
     .line 53
-    .line 54
-    move-object/from16 v16, v15
+    :cond_1
+    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
+    .line 54
     .line 55
     .line 56
-    iget-boolean v15, v0, Lau6;->u:Z
+    iput-object v1, p0, Lau6;->k:Lgj3;
 
     .line 57
     .line 58
-    move-object/from16 v17, v1
+    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
 
     .line 59
     .line 60
-    iget v1, v0, Lau6;->v:F
-
     .line 61
+    const/4 p0, 0x0
+
     .line 62
-    move/from16 v18, v1
+    iput-boolean p0, p1, Lgj3;->C:Z
 
     .line 63
     .line 64
-    iget v1, v0, Lau6;->w:F
+    iget-object p1, p1, Lgj3;->n:Laj3;
 
     .line 65
     .line 66
-    move/from16 v19, v1
+    invoke-virtual {p1, p0}, Laj3;->p(Z)V
 
     .line 67
     .line 68
-    iget v1, v0, Lau6;->x:F
+    .line 69
+    invoke-virtual {v0}, Landroidx/appcompat/widget/Toolbar;->t()V
+
+    .line 70
+    .line 71
+    .line 72
+    return v4
+.end method
+
+.method public final f(Lgj3;)Z
+    .locals 5
+
+    .line 1
+    iget-object v0, p0, Lau6;->l:Landroidx/appcompat/widget/Toolbar;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Landroidx/appcompat/widget/Toolbar;->c()V
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object v1, v0, Landroidx/appcompat/widget/Toolbar;->q:Ljp;
+
+    .line 7
+    .line 8
+    invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object v1
+
+    .line 12
+    if-eq v1, v0, :cond_1
+
+    .line 13
+    .line 14
+    instance-of v2, v1, Landroid/view/ViewGroup;
+
+    .line 15
+    .line 16
+    if-eqz v2, :cond_0
+
+    .line 17
+    .line 18
+    check-cast v1, Landroid/view/ViewGroup;
+
+    .line 19
+    .line 20
+    iget-object v2, v0, Landroidx/appcompat/widget/Toolbar;->q:Ljp;
+
+    .line 21
+    .line 22
+    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    .line 23
+    .line 24
+    .line 25
+    :cond_0
+    iget-object v1, v0, Landroidx/appcompat/widget/Toolbar;->q:Ljp;
+
+    .line 26
+    .line 27
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    .line 28
+    .line 29
+    .line 30
+    :cond_1
+    invoke-virtual {p1}, Lgj3;->getActionView()Landroid/view/View;
+
+    .line 31
+    .line 32
+    .line 33
+    move-result-object v1
+
+    .line 34
+    iput-object v1, v0, Landroidx/appcompat/widget/Toolbar;->r:Landroid/view/View;
+
+    .line 35
+    .line 36
+    iput-object p1, p0, Lau6;->k:Lgj3;
+
+    .line 37
+    .line 38
+    invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    .line 39
+    .line 40
+    .line 41
+    move-result-object p0
+
+    .line 42
+    const/4 v1, 0x2
+
+    .line 43
+    if-eq p0, v0, :cond_3
+
+    .line 44
+    .line 45
+    instance-of v2, p0, Landroid/view/ViewGroup;
+
+    .line 46
+    .line 47
+    if-eqz v2, :cond_2
+
+    .line 48
+    .line 49
+    check-cast p0, Landroid/view/ViewGroup;
+
+    .line 50
+    .line 51
+    iget-object v2, v0, Landroidx/appcompat/widget/Toolbar;->r:Landroid/view/View;
+
+    .line 52
+    .line 53
+    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    .line 54
+    .line 55
+    .line 56
+    :cond_2
+    invoke-static {}, Landroidx/appcompat/widget/Toolbar;->h()Lbu6;
+
+    .line 57
+    .line 58
+    .line 59
+    move-result-object p0
+
+    .line 60
+    iget v2, v0, Landroidx/appcompat/widget/Toolbar;->w:I
+
+    .line 61
+    .line 62
+    and-int/lit8 v2, v2, 0x70
+
+    .line 63
+    .line 64
+    const v3, 0x800003
+
+    .line 65
+    .line 66
+    .line 67
+    or-int/2addr v2, v3
+
+    .line 68
+    iput v2, p0, Lbu6;->a:I
 
     .line 69
     .line 70
-    move/from16 v22, v1
+    iput-byte v1, p0, Lbu6;->b:B
 
     .line 71
     .line 72
-    iget-object v1, v0, Lau6;->y:Lv52;
+    iget-object v2, v0, Landroidx/appcompat/widget/Toolbar;->r:Landroid/view/View;
 
     .line 73
     .line 74
-    iget-char v0, v0, Lau6;->A:C
+    invoke-virtual {v2, p0}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 75
     .line 76
-    move/from16 v23, v22
-
     .line 77
+    iget-object p0, v0, Landroidx/appcompat/widget/Toolbar;->r:Landroid/view/View;
+
     .line 78
-    move/from16 v22, v0
-
     .line 79
-    .line 80
-    move-object/from16 v0, v16
+    invoke-virtual {v0, p0}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
+    .line 80
     .line 81
     .line 82
-    move/from16 v16, v18
+    :cond_3
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
     .line 83
     .line 84
-    move/from16 v18, v23
-
     .line 85
+    move-result p0
+
     .line 86
-    move/from16 v23, v19
+    const/4 v2, 0x1
 
     .line 87
+    sub-int/2addr p0, v2
+
     .line 88
-    move-object/from16 v19, v1
+    :goto_0
+    if-ltz p0, :cond_5
 
     .line 89
     .line 90
-    move-object/from16 v1, v17
+    invoke-virtual {v0, p0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     .line 91
     .line 92
-    move/from16 v17, v23
-
     .line 93
+    move-result-object v3
+
     .line 94
-    invoke-static/range {v0 .. v22}, Le43;->o(Ljava/lang/String;Lxn3;JJLjava/lang/String;JLjava/lang/String;JLv52;Lw52;Lww1;ZFFFLv52;Lz01;II)V
+    invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     .line 95
     .line 96
     .line 97
-    sget-object v0, Ld07;->a:Ld07;
+    move-result-object v4
 
     .line 98
+    check-cast v4, Lbu6;
+
     .line 99
-    return-object v0
+    .line 100
+    iget-byte v4, v4, Lbu6;->b:B
+
+    .line 101
+    .line 102
+    if-eq v4, v1, :cond_4
+
+    .line 103
+    .line 104
+    iget-object v4, v0, Landroidx/appcompat/widget/Toolbar;->j:Landroidx/appcompat/widget/ActionMenuView;
+
+    .line 105
+    .line 106
+    if-eq v3, v4, :cond_4
+
+    .line 107
+    .line 108
+    invoke-virtual {v0, p0}, Landroid/view/ViewGroup;->removeViewAt(I)V
+
+    .line 109
+    .line 110
+    .line 111
+    iget-object v4, v0, Landroidx/appcompat/widget/Toolbar;->N:Ljava/util/ArrayList;
+
+    .line 112
+    .line 113
+    invoke-virtual {v4, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 114
+    .line 115
+    .line 116
+    :cond_4
+    add-int/lit8 p0, p0, -0x1
+
+    .line 117
+    .line 118
+    goto :goto_0
+
+    .line 119
+    :cond_5
+    invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
+
+    .line 120
+    .line 121
+    .line 122
+    iput-boolean v2, p1, Lgj3;->C:Z
+
+    .line 123
+    .line 124
+    iget-object p0, p1, Lgj3;->n:Laj3;
+
+    .line 125
+    .line 126
+    const/4 p1, 0x0
+
+    .line 127
+    invoke-virtual {p0, p1}, Laj3;->p(Z)V
+
+    .line 128
+    .line 129
+    .line 130
+    iget-object p0, v0, Landroidx/appcompat/widget/Toolbar;->r:Landroid/view/View;
+
+    .line 131
+    .line 132
+    instance-of p1, p0, Lrt0;
+
+    .line 133
+    .line 134
+    if-eqz p1, :cond_6
+
+    .line 135
+    .line 136
+    check-cast p0, Lrt0;
+
+    .line 137
+    .line 138
+    check-cast p0, Ljj3;
+
+    .line 139
+    .line 140
+    iget-object p0, p0, Ljj3;->j:Landroid/view/CollapsibleActionView;
+
+    .line 141
+    .line 142
+    invoke-interface {p0}, Landroid/view/CollapsibleActionView;->onActionViewExpanded()V
+
+    .line 143
+    .line 144
+    .line 145
+    :cond_6
+    invoke-virtual {v0}, Landroidx/appcompat/widget/Toolbar;->t()V
+
+    .line 146
+    .line 147
+    .line 148
+    return v2
+.end method
+
+.method public final g()V
+    .locals 4
+
+    .line 1
+    iget-object v0, p0, Lau6;->k:Lgj3;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_2
+
+    .line 4
+    .line 5
+    iget-object v0, p0, Lau6;->j:Laj3;
+
+    .line 6
+    .line 7
+    if-eqz v0, :cond_1
+
+    .line 8
+    .line 9
+    iget-object v0, v0, Laj3;->f:Ljava/util/ArrayList;
+
+    .line 10
+    .line 11
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result v0
+
+    .line 15
+    const/4 v1, 0x0
+
+    .line 16
+    :goto_0
+    if-ge v1, v0, :cond_1
+
+    .line 17
+    .line 18
+    iget-object v2, p0, Lau6;->j:Laj3;
+
+    .line 19
+    .line 20
+    invoke-virtual {v2, v1}, Laj3;->getItem(I)Landroid/view/MenuItem;
+
+    .line 21
+    .line 22
+    .line 23
+    move-result-object v2
+
+    .line 24
+    iget-object v3, p0, Lau6;->k:Lgj3;
+
+    .line 25
+    .line 26
+    if-ne v2, v3, :cond_0
+
+    .line 27
+    .line 28
+    goto :goto_1
+
+    .line 29
+    :cond_0
+    add-int/lit8 v1, v1, 0x1
+
+    .line 30
+    .line 31
+    goto :goto_0
+
+    .line 32
+    :cond_1
+    iget-object v0, p0, Lau6;->k:Lgj3;
+
+    .line 33
+    .line 34
+    invoke-virtual {p0, v0}, Lau6;->c(Lgj3;)Z
+
+    .line 35
+    .line 36
+    .line 37
+    :cond_2
+    :goto_1
+    return-void
+.end method
+
+.method public final i(Landroid/content/Context;Laj3;)V
+    .locals 1
+
+    .line 1
+    iget-object p1, p0, Lau6;->j:Laj3;
+
+    .line 2
+    .line 3
+    if-eqz p1, :cond_0
+
+    .line 4
+    .line 5
+    iget-object v0, p0, Lau6;->k:Lgj3;
+
+    .line 6
+    .line 7
+    if-eqz v0, :cond_0
+
+    .line 8
+    .line 9
+    invoke-virtual {p1, v0}, Laj3;->d(Lgj3;)Z
+
+    .line 10
+    .line 11
+    .line 12
+    :cond_0
+    iput-object p2, p0, Lau6;->j:Laj3;
+
+    .line 13
+    .line 14
+    return-void
+.end method
+
+.method public final j(Lbc6;)Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public final k()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
 .end method

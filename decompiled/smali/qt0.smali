@@ -1,7095 +1,18936 @@
 .class public final Lqt0;
-.super Lie6;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Landroid/view/View;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lv52;
+.implements Lf71;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public A:F
 
-.field public k:B
+.field public A0:Lwb1;
 
-.field public l:Ljava/lang/Object;
+.field public B:F
 
-.field public m:Ljava/lang/Object;
+.field public B0:Ln61;
 
-.field public n:Ljava/lang/Object;
+.field public C:F
 
-.field public o:Ljava/lang/Object;
+.field public final C0:Landroid/graphics/Matrix;
+
+.field public D:F
+
+.field public D0:Lqq1;
+
+.field public E:F
+
+.field public E0:Ly73;
+
+.field public final F:F
+
+.field public F0:Ljava/lang/String;
+
+.field public G:F
+
+.field public G0:Lhy2;
+
+.field public H:F
+
+.field public H0:Lwh1;
+
+.field public I:F
+
+.field public I0:J
+
+.field public J:F
+
+.field public final J0:Lpq1;
+
+.field public K:F
+
+.field public final K0:Lds1;
+
+.field public L:Z
+
+.field public L0:Landroid/graphics/Paint$Align;
+
+.field public M:Z
+
+.field public final M0:Landroid/view/GestureDetector;
+
+.field public N:Z
+
+.field public final N0:Landroid/view/ScaleGestureDetector;
+
+.field public O:Z
+
+.field public final O0:Landroid/view/inputmethod/CursorAnchorInfo$Builder;
+
+.field public P:Z
+
+.field public final P0:Landroid/widget/EdgeEffect;
+
+.field public Q:Z
+
+.field public final Q0:Landroid/widget/EdgeEffect;
+
+.field public R:Z
+
+.field public R0:Landroid/view/inputmethod/ExtractedTextRequest;
+
+.field public S:Z
+
+.field public final S0:Lwr1;
+
+.field public volatile T:Z
+
+.field public T0:Lbc1;
+
+.field public U:Z
+
+.field public U0:Lbv5;
+
+.field public V:I
+
+.field public V0:Lcc1;
+
+.field public W:I
+
+.field public final W0:Lri1;
+
+.field public X0:Landroid/os/Bundle;
+
+.field public Y0:Lub6;
+
+.field public Z0:Lyh1;
+
+.field public a0:I
+
+.field public final a1:Lja5;
+
+.field public b0:Z
+
+.field public final b1:Lsr1;
+
+.field public c0:Z
+
+.field public c1:Z
+
+.field public d0:Z
+
+.field public d1:F
+
+.field public e0:Z
+
+.field public e1:F
+
+.field public f0:Z
+
+.field public f1:Z
+
+.field public g0:Z
+
+.field public g1:Z
+
+.field public h0:Z
+
+.field public h1:Lz73;
+
+.field public i0:Z
+
+.field public final i1:Lh76;
+
+.field public final j:Lfp2;
+
+.field public j0:Z
+
+.field public final j1:Ljava/util/HashMap;
+
+.field public k:Lsr6;
+
+.field public k0:Z
+
+.field public final l:Lzr1;
+
+.field public l0:Z
+
+.field public final m:Lxq1;
+
+.field public m0:Z
+
+.field public final n:Ljava/util/ArrayList;
+
+.field public n0:Z
+
+.field public final o:Lsr6;
+
+.field public o0:Z
+
+.field public p:Lxm0;
+
+.field public p0:Z
+
+.field public final q:Ldr1;
+
+.field public q0:Z
+
+.field public final r:Ltv1;
+
+.field public r0:Z
+
+.field public s:Ld3;
+
+.field public s0:Z
+
+.field public t:I
+
+.field public t0:Z
+
+.field public u:I
+
+.field public u0:Z
+
+.field public v:I
+
+.field public final v0:Lav5;
+
+.field public w:I
+
+.field public final w0:Lav5;
+
+.field public x:I
+
+.field public final x0:Lav5;
+
+.field public final y:F
+
+.field public final y0:Landroid/content/ClipboardManager;
+
+.field public z:F
+
+.field public final z0:Landroid/view/inputmethod/InputMethodManager;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILc81;B)V
-    .locals 0
-
-    .line 16
-    iput-byte p3, p0, Lqt0;->j:B
-
-    invoke-direct {p0, p1, p2}, Lie6;-><init>(ILc81;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lg86;Li02;Ll86;Ljava/lang/Float;Lc81;)V
-    .locals 1
-
-    const/4 v0, 0x2
-
-    iput-byte v0, p0, Lqt0;->j:B
-
-    .line 17
-    iput-object p1, p0, Lqt0;->l:Ljava/lang/Object;
-
-    iput-object p2, p0, Lqt0;->m:Ljava/lang/Object;
-
-    iput-object p3, p0, Lqt0;->n:Ljava/lang/Object;
-
-    iput-object p4, p0, Lqt0;->o:Ljava/lang/Object;
-
-    invoke-direct {p0, v0, p5}, Lie6;-><init>(ILc81;)V
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Ljava/lang/Object;Lc81;B)V
-    .locals 0
-
-    .line 18
-    iput-byte p3, p0, Lqt0;->j:B
-
-    iput-object p1, p0, Lqt0;->o:Ljava/lang/Object;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p2}, Lie6;-><init>(ILc81;)V
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Lc81;B)V
-    .locals 0
-
-    .line 19
-    iput-byte p4, p0, Lqt0;->j:B
-
-    iput-object p1, p0, Lqt0;->n:Ljava/lang/Object;
-
-    iput-object p2, p0, Lqt0;->o:Ljava/lang/Object;
-
-    const/4 p1, 0x2
-
-    invoke-direct {p0, p1, p3}, Lie6;-><init>(ILc81;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Lr52;Ljava/util/concurrent/atomic/AtomicReference;Lv52;Lc81;)V
+.method static constructor <clinit>()V
     .locals 1
 
     .line 1
-    const/16 v0, 0xb
+    const-string v0, "CodeEditor"
 
     .line 2
     .line 3
-    iput-byte v0, p0, Lqt0;->j:B
+    invoke-static {v0}, Ltd3;->a(Ljava/lang/String;)Ltd3;
 
     .line 4
     .line 5
-    iput-object p1, p0, Lqt0;->m:Ljava/lang/Object;
-
     .line 6
-    .line 7
-    iput-object p2, p0, Lqt0;->n:Ljava/lang/Object;
-
-    .line 8
-    .line 9
-    iput-object p3, p0, Lqt0;->o:Ljava/lang/Object;
-
-    .line 10
-    .line 11
-    const/4 p1, 0x2
-
-    .line 12
-    invoke-direct {p0, p1, p4}, Lie6;-><init>(ILc81;)V
-
-    .line 13
-    .line 14
-    .line 15
     return-void
 .end method
 
-.method private final m(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 27
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 12
 
     .line 1
-    move-object/from16 v0, p0
+    const/4 v0, 0x0
 
     .line 2
-    .line 3
-    sget-object v3, Lbc4;->j:Lbc4;
+    const v1, 0x7f040054
 
+    .line 3
     .line 4
     .line 5
-    const-string v1, "if head -c 536870913 "
-
-    .line 6
-    .line 7
-    iget-object v2, v0, Lqt0;->m:Ljava/lang/Object;
-
-    .line 8
-    .line 9
-    check-cast v2, Lfb1;
-
-    .line 10
-    .line 11
-    sget-object v4, Lgb1;->j:Lgb1;
-
-    .line 12
-    .line 13
-    iget-byte v5, v0, Lqt0;->k:B
-
-    .line 14
-    .line 15
-    const v6, 0x7f0f037a
-
-    .line 16
-    .line 17
-    .line 18
-    const v7, 0x7f0f00ad
-
-    .line 19
-    .line 20
-    .line 21
-    const/4 v8, 0x2
-
-    .line 22
-    const/4 v9, 0x1
-
-    .line 23
-    const-wide/32 v10, 0x20000000
-
-    .line 24
-    .line 25
-    .line 26
-    const/4 v12, 0x0
-
-    .line 27
-    const/4 v13, 0x0
-
-    .line 28
-    if-eqz v5, :cond_2
-
-    .line 29
-    .line 30
-    if-eq v5, v9, :cond_1
-
-    .line 31
-    .line 32
-    if-ne v5, v8, :cond_0
-
-    .line 33
-    .line 34
-    iget-object v1, v0, Lqt0;->l:Ljava/lang/Object;
-
-    .line 35
-    .line 36
-    check-cast v1, Ljava/io/File;
-
-    .line 37
-    .line 38
-    :try_start_0
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 39
-    .line 40
-    .line 41
-    move-object v5, v1
-
-    .line 42
-    move-wide/from16 v19, v10
-
-    .line 43
-    .line 44
-    move-object/from16 v1, p1
-
-    .line 45
-    .line 46
-    goto/16 :goto_2
-
-    .line 47
-    .line 48
-    :catchall_0
-    move-exception v0
-
-    .line 49
-    goto/16 :goto_c
-
-    .line 50
-    .line 51
-    :catch_0
-    move-exception v0
-
-    .line 52
-    goto/16 :goto_4
-
-    .line 53
-    .line 54
-    :cond_0
-    const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
-
-    .line 55
-    .line 56
-    invoke-static {v0}, Lmv1;->e(Ljava/lang/String;)V
-
-    .line 57
-    .line 58
-    .line 59
-    return-object v13
-
-    .line 60
-    :cond_1
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-
-    .line 61
-    .line 62
-    .line 63
-    move-object/from16 v5, p1
-
-    .line 64
-    .line 65
-    goto :goto_0
-
-    .line 66
-    :cond_2
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-
-    .line 67
-    .line 68
-    .line 69
-    sget-object v5, Lqm5;->a:Lqm5;
-
-    .line 70
-    .line 71
-    iget-object v5, v0, Lqt0;->n:Ljava/lang/Object;
-
-    .line 72
-    .line 73
-    check-cast v5, Ljava/lang/String;
-
-    .line 74
-    .line 75
-    iput-object v2, v0, Lqt0;->m:Ljava/lang/Object;
-
-    .line 76
-    .line 77
-    iput-byte v9, v0, Lqt0;->k:B
-
-    .line 78
-    .line 79
-    sget-object v9, Loj1;->a:Lsf1;
-
-    .line 80
-    .line 81
-    sget-object v9, Ljf1;->l:Ljf1;
-
-    .line 82
-    .line 83
-    new-instance v14, Low;
-
-    .line 84
-    .line 85
-    const/16 v15, 0xc
-
-    .line 86
-    .line 87
-    invoke-direct {v14, v5, v13, v15}, Low;-><init>(Ljava/lang/Object;Lc81;B)V
-
-    .line 88
-    .line 89
-    .line 90
-    invoke-static {v9, v14, v0}, Lf;->c0(Lwa1;Lv52;Lc81;)Ljava/lang/Object;
-
-    .line 91
-    .line 92
-    .line 93
-    move-result-object v5
-
-    .line 94
-    if-ne v5, v4, :cond_3
-
-    .line 95
-    .line 96
-    goto/16 :goto_1
-
-    .line 97
-    .line 98
-    :cond_3
-    :goto_0
-    check-cast v5, Lpu;
-
-    .line 99
-    .line 100
-    iget-object v9, v5, Lpu;->a:Ljava/lang/Object;
-
-    .line 101
-    .line 102
-    check-cast v9, Lim5;
-
-    .line 103
-    .line 104
-    if-nez v9, :cond_5
-
-    .line 105
-    .line 106
-    new-instance v14, Lpu;
-
-    .line 107
-    .line 108
-    iget-object v0, v5, Lpu;->b:Ljava/lang/String;
-
-    .line 109
-    .line 110
-    if-nez v0, :cond_4
-
-    .line 111
-    .line 112
-    const v0, 0x7f0f037e
-
-    .line 113
-    .line 114
-    .line 115
-    new-array v1, v12, [Ljava/lang/Object;
-
-    .line 116
-    .line 117
-    invoke-static {v0, v1}, Lu67;->q(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    .line 118
-    .line 119
-    .line 120
-    move-result-object v0
-
-    .line 121
-    :cond_4
-    move-object/from16 v16, v0
-
-    .line 122
-    .line 123
-    const/16 v18, 0x0
-
-    .line 124
-    .line 125
-    const/16 v19, 0xd
-
-    .line 126
-    .line 127
-    const/4 v15, 0x0
-
-    .line 128
-    const/16 v17, 0x0
-
-    .line 129
-    .line 130
-    invoke-direct/range {v14 .. v19}, Lpu;-><init>(Ljava/lang/Object;Ljava/lang/String;Lbc4;Ljava/lang/Throwable;I)V
-
-    .line 131
-    .line 132
-    .line 133
-    return-object v14
-
-    .line 134
-    :cond_5
-    iget-wide v14, v9, Lim5;->c:J
-
-    .line 135
-    .line 136
-    cmp-long v5, v14, v10
-
-    .line 137
-    .line 138
-    if-lez v5, :cond_6
-
-    .line 139
-    .line 140
-    new-array v0, v12, [Ljava/lang/Object;
-
-    .line 141
-    .line 142
-    invoke-static {v7, v0}, Lu67;->q(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    .line 143
-    .line 144
-    .line 145
-    move-result-object v2
-
-    .line 146
-    new-instance v0, Lpu;
-
-    .line 147
-    .line 148
-    const/4 v1, 0x0
-
-    .line 149
-    const/4 v5, 0x1
-
-    .line 150
-    const/4 v4, 0x0
-
-    .line 151
-    invoke-direct/range {v0 .. v5}, Lpu;-><init>(Ljava/lang/Object;Ljava/lang/String;Lbc4;Ljava/lang/Throwable;I)V
-
-    .line 152
-    .line 153
-    .line 154
-    return-object v0
-
-    .line 155
-    :cond_6
-    sget-object v5, Lqm5;->a:Lqm5;
-
-    .line 156
-    .line 157
-    iget-object v5, v9, Lim5;->b:Ljava/lang/String;
-
-    .line 158
-    .line 159
-    invoke-static {v5}, Lqm5;->o(Ljava/lang/String;)Lpu;
-
-    .line 160
-    .line 161
-    .line 162
-    move-result-object v5
-
-    .line 163
-    iget-object v9, v5, Lpu;->a:Ljava/lang/Object;
-
-    .line 164
-    .line 165
-    check-cast v9, Ljava/io/File;
-
-    .line 166
-    .line 167
-    if-nez v9, :cond_8
-
-    .line 168
-    .line 169
-    new-instance v14, Lpu;
-
-    .line 170
-    .line 171
-    iget-object v0, v5, Lpu;->b:Ljava/lang/String;
-
-    .line 172
-    .line 173
-    if-nez v0, :cond_7
-
-    .line 174
-    .line 175
-    const v0, 0x7f0f00bb
-
-    .line 176
-    .line 177
-    .line 178
-    new-array v1, v12, [Ljava/lang/Object;
-
-    .line 179
-    .line 180
-    invoke-static {v0, v1}, Lu67;->q(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    .line 181
-    .line 182
-    .line 183
-    move-result-object v0
-
-    .line 184
-    :cond_7
-    move-object/from16 v16, v0
-
-    .line 185
-    .line 186
-    const/16 v18, 0x0
-
-    .line 187
-    .line 188
-    const/16 v19, 0xd
-
-    .line 189
-    .line 190
-    const/4 v15, 0x0
-
-    .line 191
-    const/16 v17, 0x0
-
-    .line 192
-    .line 193
-    invoke-direct/range {v14 .. v19}, Lpu;-><init>(Ljava/lang/Object;Ljava/lang/String;Lbc4;Ljava/lang/Throwable;I)V
-
-    .line 194
-    .line 195
-    .line 196
-    return-object v14
-
-    .line 197
-    :cond_8
-    invoke-virtual {v9}, Ljava/io/File;->getName()Ljava/lang/String;
-
-    .line 198
-    .line 199
-    .line 200
-    move-result-object v5
-
-    .line 201
-    const-string v14, "_"
-
-    .line 202
-    .line 203
-    invoke-static {v14, v5}, Lpa6;->j(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 204
-    .line 205
-    .line 206
-    move-result-object v5
-
-    .line 207
-    sget-object v14, Lcom/box/app/AppApplication;->j:Landroid/content/Context;
-
-    .line 208
-    .line 209
-    invoke-static {}, Lsa7;->p()Landroid/content/Context;
-
-    .line 210
-    .line 211
-    .line 212
-    move-result-object v14
-
-    .line 213
-    invoke-virtual {v14}, Landroid/content/Context;->getCacheDir()Ljava/io/File;
-
-    .line 214
-    .line 215
-    .line 216
-    move-result-object v14
-
-    .line 217
-    const-string v15, "box_export_"
-
-    .line 218
-    .line 219
-    invoke-static {v15, v5, v14}, Ljava/io/File;->createTempFile(Ljava/lang/String;Ljava/lang/String;Ljava/io/File;)Ljava/io/File;
-
-    .line 220
-    .line 221
-    .line 222
-    move-result-object v5
-
-    .line 223
-    invoke-static {}, Lsa7;->p()Landroid/content/Context;
-
-    .line 224
-    .line 225
-    .line 226
-    move-result-object v14
-
-    .line 227
-    invoke-virtual {v14}, Landroid/content/Context;->getApplicationInfo()Landroid/content/pm/ApplicationInfo;
-
-    .line 228
-    .line 229
-    .line 230
-    move-result-object v14
-
-    .line 231
-    iget v14, v14, Landroid/content/pm/ApplicationInfo;->uid:I
-
-    .line 232
-    .line 233
-    :try_start_1
-    sget-object v15, Lwc5;->a:Lwc5;
-
-    .line 234
-    .line 235
-    invoke-virtual {v9}, Ljava/io/File;->getPath()Ljava/lang/String;
-
-    .line 236
-    .line 237
-    .line 238
-    move-result-object v9
-
-    .line 239
-    invoke-virtual {v9}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 240
-    .line 241
-    .line 242
-    invoke-static {v9}, Lqm5;->q(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 243
-    .line 244
-    .line 245
-    move-result-object v9
-
-    .line 246
-    invoke-virtual {v5}, Ljava/io/File;->getPath()Ljava/lang/String;
-
-    .line 247
-    .line 248
-    .line 249
-    move-result-object v15
-
-    .line 250
-    invoke-virtual {v15}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 251
-    .line 252
-    .line 253
-    invoke-static {v15}, Lqm5;->q(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 254
-    .line 255
-    .line 256
-    move-result-object v15
-
-    .line 257
-    invoke-virtual {v5}, Ljava/io/File;->getPath()Ljava/lang/String;
-
-    .line 258
-    .line 259
-    .line 260
-    move-result-object v16
-
-    .line 261
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 262
-    .line 263
-    .line 264
-    invoke-static/range {v16 .. v16}, Lqm5;->q(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 265
-    .line 266
-    .line 267
-    move-result-object v13
-
-    .line 268
-    invoke-virtual {v5}, Ljava/io/File;->getPath()Ljava/lang/String;
-
-    .line 269
-    .line 270
-    .line 271
-    move-result-object v16
-
-    .line 272
-    invoke-virtual/range {v16 .. v16}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 273
-    .line 274
-    .line 275
-    invoke-static/range {v16 .. v16}, Lqm5;->q(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 276
-    .line 277
-    .line 278
-    move-result-object v7
-
-    .line 279
-    move-wide/from16 v19, v10
-
-    .line 280
-    .line 281
-    new-instance v10, Ljava/lang/StringBuilder;
-
-    .line 282
-    .line 283
-    invoke-direct {v10, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 284
-    .line 285
-    .line 286
-    invoke-virtual {v10, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 287
-    .line 288
-    .line 289
-    const-string v1, " > "
-
-    .line 290
-    .line 291
-    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 292
-    .line 293
-    .line 294
-    invoke-virtual {v10, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 295
-    .line 296
-    .line 297
-    const-string v1, "; then chown "
-
-    .line 298
-    .line 299
-    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 300
-    .line 301
-    .line 302
-    invoke-virtual {v10, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 303
-    .line 304
-    .line 305
-    const-string v1, ":"
-
-    .line 306
-    .line 307
-    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 308
-    .line 309
-    .line 310
-    invoke-virtual {v10, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 311
-    .line 312
-    .line 313
-    const-string v1, " "
-
-    .line 314
-    .line 315
-    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 316
-    .line 317
-    .line 318
-    invoke-virtual {v10, v13}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 319
-    .line 320
-    .line 321
-    const-string v1, " 2>/dev/null || true; chmod 0644 "
-
-    .line 322
-    .line 323
-    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 324
-    .line 325
-    .line 326
-    invoke-virtual {v10, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 327
-    .line 328
-    .line 329
-    const-string v1, " 2>/dev/null || true; else exit 1; fi"
-
-    .line 330
-    .line 331
-    invoke-virtual {v10, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 332
-    .line 333
-    .line 334
-    invoke-virtual {v10}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 335
-    .line 336
-    .line 337
-    move-result-object v1
-
-    .line 338
-    iput-object v2, v0, Lqt0;->m:Ljava/lang/Object;
-
-    .line 339
-    .line 340
-    iput-object v5, v0, Lqt0;->l:Ljava/lang/Object;
-
-    .line 341
-    .line 342
-    iput-byte v8, v0, Lqt0;->k:B
-
-    .line 343
-    .line 344
-    const-wide/32 v7, 0xea60
-
-    .line 345
-    .line 346
-    .line 347
-    invoke-static {v7, v8, v0, v1}, Lwc5;->f(JLc81;Ljava/lang/String;)Ljava/lang/Object;
-
-    .line 348
-    .line 349
-    .line 350
-    move-result-object v1
-
-    .line 351
-    if-ne v1, v4, :cond_9
-
-    .line 352
-    .line 353
-    :goto_1
-    return-object v4
-
-    .line 354
-    :cond_9
-    :goto_2
-    check-cast v1, Lnc5;
-
-    .line 355
-    .line 356
-    invoke-virtual {v1}, Lnc5;->a()Z
-
-    .line 357
-    .line 358
-    .line 359
-    move-result v2
-
-    .line 360
-    if-nez v2, :cond_c
-
-    .line 361
-    .line 362
-    iget-object v0, v1, Lnc5;->b:Ljava/lang/String;
-
-    .line 363
-    .line 364
-    invoke-static {v0}, Lw96;->v0(Ljava/lang/CharSequence;)Z
-
-    .line 365
-    .line 366
-    .line 367
-    move-result v2
-
-    .line 368
-    if-eqz v2, :cond_a
-
-    .line 369
-    .line 370
-    iget-object v0, v1, Lnc5;->a:Ljava/lang/String;
-
-    .line 371
-    .line 372
-    goto :goto_3
-
-    .line 373
-    :catchall_1
-    move-exception v0
-
-    .line 374
-    move-object v1, v5
-
-    .line 375
-    goto/16 :goto_c
-
-    .line 376
-    .line 377
-    :catch_1
-    move-exception v0
-
-    .line 378
-    move-object v1, v5
-
-    .line 379
-    goto :goto_4
-
-    .line 380
-    :cond_a
-    :goto_3
-    invoke-static {v0}, Lw96;->v0(Ljava/lang/CharSequence;)Z
-
-    .line 381
-    .line 382
-    .line 383
-    move-result v1
-
-    .line 384
-    if-eqz v1, :cond_b
-
-    .line 385
-    .line 386
-    new-array v0, v12, [Ljava/lang/Object;
-
-    .line 387
-    .line 388
-    invoke-static {v6, v0}, Lu67;->q(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    .line 389
-    .line 390
-    .line 391
-    move-result-object v0
-
-    .line 392
-    :cond_b
-    move-object/from16 v21, v0
-
-    .line 393
-    .line 394
-    new-instance v19, Lpu;
-
-    .line 395
-    .line 396
-    const/16 v20, 0x0
-
-    .line 397
-    .line 398
-    const/16 v22, 0x0
-
-    .line 399
-    .line 400
-    const/16 v23, 0x0
-
-    .line 401
-    .line 402
-    const/16 v24, 0xd
-
-    .line 403
-    .line 404
-    invoke-direct/range {v19 .. v24}, Lpu;-><init>(Ljava/lang/Object;Ljava/lang/String;Lbc4;Ljava/lang/Throwable;I)V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    .line 405
-    .line 406
-    .line 407
-    :try_start_2
-    invoke-virtual {v5}, Ljava/io/File;->delete()Z
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
-
-    .line 408
-    .line 409
-    .line 410
-    :catchall_2
-    return-object v19
-
-    .line 411
-    :cond_c
-    :try_start_3
-    invoke-virtual {v5}, Ljava/io/File;->length()J
-
-    .line 412
-    .line 413
-    .line 414
-    move-result-wide v1
-
-    .line 415
-    cmp-long v1, v1, v19
-
-    .line 416
-    .line 417
-    if-gtz v1, :cond_d
-
-    .line 418
-    .line 419
-    new-instance v21, Lpu;
-
-    .line 420
-    .line 421
-    iget-object v0, v0, Lqt0;->o:Ljava/lang/Object;
-
-    .line 422
-    .line 423
-    check-cast v0, Lr52;
-
-    .line 424
-    .line 425
-    invoke-interface {v0, v5}, Lr52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 426
-    .line 427
-    .line 428
-    move-result-object v22
-
-    .line 429
-    const/16 v25, 0x0
-
-    .line 430
-    .line 431
-    const/16 v26, 0xe
-
-    .line 432
-    .line 433
-    const/16 v23, 0x0
-
-    .line 434
-    .line 435
-    const/16 v24, 0x0
-
-    .line 436
-    .line 437
-    invoke-direct/range {v21 .. v26}, Lpu;-><init>(Ljava/lang/Object;Ljava/lang/String;Lbc4;Ljava/lang/Throwable;I)V
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
-    .line 438
-    .line 439
-    .line 440
-    :try_start_4
-    invoke-virtual {v5}, Ljava/io/File;->delete()Z
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_4
-
-    .line 441
-    .line 442
-    .line 443
-    goto :goto_b
-
-    .line 444
-    :cond_d
-    :try_start_5
-    new-instance v0, Lq71;
-
-    .line 445
-    .line 446
-    move-wide/from16 v1, v19
-
-    .line 447
-    .line 448
-    invoke-direct {v0, v1, v2}, Lq71;-><init>(J)V
-
-    .line 449
-    .line 450
-    .line 451
-    throw v0
-    :try_end_5
-    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_1
-    .catchall {:try_start_5 .. :try_end_5} :catchall_1
-
-    .line 452
-    :goto_4
-    :try_start_6
-    instance-of v2, v0, Ljava/util/concurrent/CancellationException;
-
-    .line 453
-    .line 454
-    if-nez v2, :cond_13
-
-    .line 455
-    .line 456
-    instance-of v2, v0, Lq71;
-
-    .line 457
-    .line 458
-    if-eqz v2, :cond_e
-
-    .line 459
-    .line 460
-    new-array v2, v12, [Ljava/lang/Object;
-
-    .line 461
-    .line 462
-    const v4, 0x7f0f00ad
-
-    .line 463
-    .line 464
-    .line 465
-    invoke-static {v4, v2}, Lu67;->q(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    .line 466
-    .line 467
-    .line 468
-    move-result-object v2
-
-    .line 469
-    :goto_5
-    move-object/from16 v21, v2
-
-    .line 470
-    .line 471
-    goto :goto_8
-
-    .line 472
-    :cond_e
-    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
-
-    .line 473
-    .line 474
-    .line 475
-    move-result-object v2
-
-    .line 476
-    if-eqz v2, :cond_11
-
-    .line 477
-    .line 478
-    invoke-static {v2}, Lw96;->v0(Ljava/lang/CharSequence;)Z
-
-    .line 479
-    .line 480
-    .line 481
-    move-result v4
-
-    .line 482
-    if-nez v4, :cond_f
-
-    .line 483
-    .line 484
-    move-object v13, v2
-
-    .line 485
-    goto :goto_6
-
-    .line 486
-    :cond_f
-    const/4 v13, 0x0
-
-    .line 487
-    :goto_6
-    if-nez v13, :cond_10
-
-    .line 488
-    .line 489
-    goto :goto_7
-
-    .line 490
-    :cond_10
-    move-object/from16 v21, v13
-
-    .line 491
-    .line 492
-    goto :goto_8
-
-    .line 493
-    :cond_11
-    :goto_7
-    new-array v2, v12, [Ljava/lang/Object;
-
-    .line 494
-    .line 495
-    invoke-static {v6, v2}, Lu67;->q(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    .line 496
-    .line 497
-    .line 498
-    move-result-object v2
-
-    .line 499
-    goto :goto_5
-
-    .line 500
-    :goto_8
-    instance-of v2, v0, Lq71;
-
-    .line 501
-    .line 502
-    if-eqz v2, :cond_12
-
-    .line 503
-    .line 504
-    :goto_9
-    move-object/from16 v22, v3
-
-    .line 505
-    .line 506
-    goto :goto_a
-
-    .line 507
-    :cond_12
-    sget-object v3, Lbc4;->m:Lbc4;
-
-    .line 508
-    .line 509
-    goto :goto_9
-
-    .line 510
-    :goto_a
-    new-instance v19, Lpu;
-
-    .line 511
-    .line 512
-    const/16 v20, 0x0
-
-    .line 513
-    .line 514
-    const/16 v24, 0x1
-
-    .line 515
-    .line 516
-    move-object/from16 v23, v0
-
-    .line 517
-    .line 518
-    invoke-direct/range {v19 .. v24}, Lpu;-><init>(Ljava/lang/Object;Ljava/lang/String;Lbc4;Ljava/lang/Throwable;I)V
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
-
-    .line 519
-    .line 520
-    .line 521
-    :try_start_7
-    invoke-virtual {v1}, Ljava/io/File;->delete()Z
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_3
-
-    .line 522
-    .line 523
-    .line 524
-    :catchall_3
-    move-object/from16 v21, v19
-
-    .line 525
-    .line 526
-    :catchall_4
-    :goto_b
-    return-object v21
-
-    .line 527
-    :cond_13
-    move-object/from16 v23, v0
-
-    .line 528
-    .line 529
-    :try_start_8
-    throw v23
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_0
-
-    .line 530
-    :goto_c
-    :try_start_9
-    invoke-virtual {v1}, Ljava/io/File;->delete()Z
-    :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_5
-
-    .line 531
-    .line 532
-    .line 533
-    :catchall_5
-    throw v0
-.end method
-
-
-# virtual methods
-.method public final create(Ljava/lang/Object;Lc81;)Lc81;
-    .locals 8
-
-    .line 1
-    iget-byte v0, p0, Lqt0;->j:B
-
-    .line 2
-    .line 3
-    const/4 v1, 0x2
-
-    .line 4
-    packed-switch v0, :pswitch_data_0
-
-    .line 5
-    .line 6
-    .line 7
-    new-instance v0, Lqt0;
-
-    .line 8
-    .line 9
-    iget-object v1, p0, Lqt0;->m:Ljava/lang/Object;
-
-    .line 10
-    .line 11
-    check-cast v1, Lr52;
-
-    .line 12
-    .line 13
-    iget-object v2, p0, Lqt0;->n:Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    check-cast v2, Ljava/util/concurrent/atomic/AtomicReference;
-
-    .line 16
-    .line 17
-    iget-object p0, p0, Lqt0;->o:Ljava/lang/Object;
-
-    .line 18
-    .line 19
-    check-cast p0, Lv52;
-
-    .line 20
-    .line 21
-    invoke-direct {v0, v1, v2, p0, p2}, Lqt0;-><init>(Lr52;Ljava/util/concurrent/atomic/AtomicReference;Lv52;Lc81;)V
-
-    .line 22
-    .line 23
-    .line 24
-    iput-object p1, v0, Lqt0;->l:Ljava/lang/Object;
-
-    .line 25
-    .line 26
-    return-object v0
-
-    .line 27
-    :pswitch_0
-    new-instance v0, Lqt0;
-
-    .line 28
-    .line 29
-    iget-object v1, p0, Lqt0;->n:Ljava/lang/Object;
-
-    .line 30
-    .line 31
-    check-cast v1, Ljava/lang/String;
-
-    .line 32
-    .line 33
-    iget-object p0, p0, Lqt0;->o:Ljava/lang/Object;
-
-    .line 34
-    .line 35
-    check-cast p0, Lr52;
-
-    .line 36
-    .line 37
-    const/16 v2, 0xa
-
-    .line 38
-    .line 39
-    invoke-direct {v0, v1, p0, p2, v2}, Lqt0;-><init>(Ljava/lang/Object;Ljava/lang/Object;Lc81;B)V
-
-    .line 40
-    .line 41
-    .line 42
-    iput-object p1, v0, Lqt0;->m:Ljava/lang/Object;
-
-    .line 43
-    .line 44
-    return-object v0
-
-    .line 45
-    :pswitch_1
-    new-instance p1, Lqt0;
-
-    .line 46
-    .line 47
-    iget-object v0, p0, Lqt0;->n:Ljava/lang/Object;
-
-    .line 48
-    .line 49
-    check-cast v0, Ljava/lang/String;
-
-    .line 50
-    .line 51
-    iget-object p0, p0, Lqt0;->o:Ljava/lang/Object;
-
-    .line 52
-    .line 53
-    check-cast p0, Ljava/lang/String;
-
-    .line 54
-    .line 55
-    const/16 v1, 0x9
-
-    .line 56
-    .line 57
-    invoke-direct {p1, v0, p0, p2, v1}, Lqt0;-><init>(Ljava/lang/Object;Ljava/lang/Object;Lc81;B)V
-
-    .line 58
-    .line 59
-    .line 60
-    return-object p1
-
-    .line 61
-    :pswitch_2
-    new-instance p1, Lqt0;
-
-    .line 62
-    .line 63
-    iget-object v0, p0, Lqt0;->n:Ljava/lang/Object;
-
-    .line 64
-    .line 65
-    check-cast v0, Lp72;
-
-    .line 66
-    .line 67
-    iget-object p0, p0, Lqt0;->o:Ljava/lang/Object;
-
-    .line 68
-    .line 69
-    check-cast p0, Lzh5;
-
-    .line 70
-    .line 71
-    const/16 v1, 0x8
-
-    .line 72
-    .line 73
-    invoke-direct {p1, v0, p0, p2, v1}, Lqt0;-><init>(Ljava/lang/Object;Ljava/lang/Object;Lc81;B)V
-
-    .line 74
-    .line 75
-    .line 76
-    return-object p1
-
-    .line 77
-    :pswitch_3
-    new-instance p1, Lqt0;
-
-    .line 78
-    .line 79
-    iget-object v0, p0, Lqt0;->n:Ljava/lang/Object;
-
-    .line 80
-    .line 81
-    check-cast v0, Lcs3;
-
-    .line 82
-    .line 83
-    iget-object p0, p0, Lqt0;->o:Ljava/lang/Object;
-
-    .line 84
-    .line 85
-    check-cast p0, Low;
-
-    .line 86
-    .line 87
-    const/4 v1, 0x7
-
-    .line 88
-    invoke-direct {p1, v0, p0, p2, v1}, Lqt0;-><init>(Ljava/lang/Object;Ljava/lang/Object;Lc81;B)V
-
-    .line 89
-    .line 90
-    .line 91
-    return-object p1
-
-    .line 92
-    :pswitch_4
-    new-instance p1, Lqt0;
-
-    .line 93
-    .line 94
-    iget-object v0, p0, Lqt0;->n:Ljava/lang/Object;
-
-    .line 95
-    .line 96
-    check-cast v0, Lqn4;
-
-    .line 97
-    .line 98
-    iget-object p0, p0, Lqt0;->o:Ljava/lang/Object;
-
-    .line 99
-    .line 100
-    check-cast p0, Lv52;
-
-    .line 101
-    .line 102
-    const/4 v1, 0x6
-
-    .line 103
-    invoke-direct {p1, v0, p0, p2, v1}, Lqt0;-><init>(Ljava/lang/Object;Ljava/lang/Object;Lc81;B)V
-
-    .line 104
-    .line 105
-    .line 106
-    return-object p1
-
-    .line 107
-    :pswitch_5
-    new-instance v0, Lqt0;
-
-    .line 108
-    .line 109
-    iget-object p0, p0, Lqt0;->o:Ljava/lang/Object;
-
-    .line 110
-    .line 111
-    check-cast p0, Lkj4;
-
-    .line 112
-    .line 113
-    const/4 v1, 0x5
-
-    .line 114
-    invoke-direct {v0, p0, p2, v1}, Lqt0;-><init>(Ljava/lang/Object;Lc81;B)V
-
-    .line 115
-    .line 116
-    .line 117
-    iput-object p1, v0, Lqt0;->n:Ljava/lang/Object;
-
-    .line 118
-    .line 119
-    return-object v0
-
-    .line 120
-    :pswitch_6
-    new-instance v0, Lqt0;
-
-    .line 121
-    .line 122
-    iget-object v1, p0, Lqt0;->n:Ljava/lang/Object;
-
-    .line 123
-    .line 124
-    check-cast v1, Lnr3;
-
-    .line 125
-    .line 126
-    iget-object p0, p0, Lqt0;->o:Ljava/lang/Object;
-
-    .line 127
-    .line 128
-    check-cast p0, Leo2;
-
-    .line 129
-    .line 130
-    const/4 v2, 0x4
-
-    .line 131
-    invoke-direct {v0, v1, p0, p2, v2}, Lqt0;-><init>(Ljava/lang/Object;Ljava/lang/Object;Lc81;B)V
-
-    .line 132
-    .line 133
-    .line 134
-    iput-object p1, v0, Lqt0;->m:Ljava/lang/Object;
-
-    .line 135
-    .line 136
-    return-object v0
-
-    .line 137
-    :pswitch_7
-    new-instance p0, Lqt0;
-
-    .line 138
-    .line 139
-    const/4 p1, 0x3
-
-    .line 140
-    invoke-direct {p0, v1, p2, p1}, Lqt0;-><init>(ILc81;B)V
-
-    .line 141
-    .line 142
-    .line 143
-    return-object p0
-
-    .line 144
-    :pswitch_8
-    new-instance v2, Lqt0;
-
-    .line 145
-    .line 146
-    iget-object p1, p0, Lqt0;->l:Ljava/lang/Object;
-
-    .line 147
-    .line 148
-    move-object v3, p1
-
-    .line 149
-    check-cast v3, Lg86;
-
-    .line 150
-    .line 151
-    iget-object p1, p0, Lqt0;->m:Ljava/lang/Object;
-
-    .line 152
-    .line 153
-    move-object v4, p1
-
-    .line 154
-    check-cast v4, Li02;
-
-    .line 155
-    .line 156
-    iget-object p1, p0, Lqt0;->n:Ljava/lang/Object;
-
-    .line 157
-    .line 158
-    move-object v5, p1
-
-    .line 159
-    check-cast v5, Ll86;
-
-    .line 160
-    .line 161
-    iget-object p0, p0, Lqt0;->o:Ljava/lang/Object;
-
-    .line 162
-    .line 163
-    move-object v6, p0
-
-    .line 164
-    check-cast v6, Ljava/lang/Float;
-
-    .line 165
-    .line 166
-    move-object v7, p2
-
-    .line 167
-    invoke-direct/range {v2 .. v7}, Lqt0;-><init>(Lg86;Li02;Ll86;Ljava/lang/Float;Lc81;)V
-
-    .line 168
-    .line 169
-    .line 170
-    return-object v2
-
-    .line 171
-    :pswitch_9
-    move-object v7, p2
-
-    .line 172
-    new-instance p2, Lqt0;
-
-    .line 173
-    .line 174
-    iget-object p0, p0, Lqt0;->o:Ljava/lang/Object;
-
-    .line 175
-    .line 176
-    check-cast p0, Lkm1;
-
-    .line 177
-    .line 178
-    const/4 v0, 0x1
-
-    .line 179
-    invoke-direct {p2, p0, v7, v0}, Lqt0;-><init>(Ljava/lang/Object;Lc81;B)V
-
-    .line 180
-    .line 181
-    .line 182
-    iput-object p1, p2, Lqt0;->n:Ljava/lang/Object;
-
-    .line 183
-    .line 184
-    return-object p2
-
-    .line 185
-    :pswitch_a
-    move-object v7, p2
-
-    .line 186
-    new-instance p0, Lqt0;
-
-    .line 187
-    .line 188
-    const/4 p1, 0x0
-
-    .line 189
-    invoke-direct {p0, v1, v7, p1}, Lqt0;-><init>(ILc81;B)V
-
-    .line 190
-    .line 191
-    .line 192
-    return-object p0
-
-    .line 193
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
-
-    .line 1
-    iget-byte v0, p0, Lqt0;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, Ld07;->a:Ld07;
-
-    .line 4
-    .line 5
-    check-cast p1, Lfb1;
-
-    .line 6
-    .line 7
-    check-cast p2, Lc81;
-
-    .line 8
-    .line 9
-    packed-switch v0, :pswitch_data_0
-
-    .line 10
-    .line 11
-    .line 12
-    invoke-virtual {p0, p1, p2}, Lqt0;->create(Ljava/lang/Object;Lc81;)Lc81;
-
-    .line 13
-    .line 14
-    .line 15
-    move-result-object p0
-
-    .line 16
-    check-cast p0, Lqt0;
-
-    .line 17
-    .line 18
-    invoke-virtual {p0, v1}, Lqt0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-object p0
-
-    .line 22
-    return-object p0
-
-    .line 23
-    :pswitch_0
-    invoke-virtual {p0, p1, p2}, Lqt0;->create(Ljava/lang/Object;Lc81;)Lc81;
-
-    .line 24
-    .line 25
-    .line 26
-    move-result-object p0
-
-    .line 27
-    check-cast p0, Lqt0;
-
-    .line 28
-    .line 29
-    invoke-virtual {p0, v1}, Lqt0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 30
-    .line 31
-    .line 32
-    move-result-object p0
-
-    .line 33
-    return-object p0
-
-    .line 34
-    :pswitch_1
-    invoke-virtual {p0, p1, p2}, Lqt0;->create(Ljava/lang/Object;Lc81;)Lc81;
-
-    .line 35
-    .line 36
-    .line 37
-    move-result-object p0
-
-    .line 38
-    check-cast p0, Lqt0;
-
-    .line 39
-    .line 40
-    invoke-virtual {p0, v1}, Lqt0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 41
-    .line 42
-    .line 43
-    move-result-object p0
-
-    .line 44
-    return-object p0
-
-    .line 45
-    :pswitch_2
-    invoke-virtual {p0, p1, p2}, Lqt0;->create(Ljava/lang/Object;Lc81;)Lc81;
-
-    .line 46
-    .line 47
-    .line 48
-    move-result-object p0
-
-    .line 49
-    check-cast p0, Lqt0;
-
-    .line 50
-    .line 51
-    invoke-virtual {p0, v1}, Lqt0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 52
-    .line 53
-    .line 54
-    move-result-object p0
-
-    .line 55
-    return-object p0
-
-    .line 56
-    :pswitch_3
-    invoke-virtual {p0, p1, p2}, Lqt0;->create(Ljava/lang/Object;Lc81;)Lc81;
-
-    .line 57
-    .line 58
-    .line 59
-    move-result-object p0
-
-    .line 60
-    check-cast p0, Lqt0;
-
-    .line 61
-    .line 62
-    invoke-virtual {p0, v1}, Lqt0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 63
-    .line 64
-    .line 65
-    move-result-object p0
-
-    .line 66
-    return-object p0
-
-    .line 67
-    :pswitch_4
-    invoke-virtual {p0, p1, p2}, Lqt0;->create(Ljava/lang/Object;Lc81;)Lc81;
-
-    .line 68
-    .line 69
-    .line 70
-    move-result-object p0
-
-    .line 71
-    check-cast p0, Lqt0;
-
-    .line 72
-    .line 73
-    invoke-virtual {p0, v1}, Lqt0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 74
-    .line 75
-    .line 76
-    move-result-object p0
-
-    .line 77
-    return-object p0
-
-    .line 78
-    :pswitch_5
-    invoke-virtual {p0, p1, p2}, Lqt0;->create(Ljava/lang/Object;Lc81;)Lc81;
-
-    .line 79
-    .line 80
-    .line 81
-    move-result-object p0
-
-    .line 82
-    check-cast p0, Lqt0;
-
-    .line 83
-    .line 84
-    invoke-virtual {p0, v1}, Lqt0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 85
-    .line 86
-    .line 87
-    move-result-object p0
-
-    .line 88
-    return-object p0
-
-    .line 89
-    :pswitch_6
-    invoke-virtual {p0, p1, p2}, Lqt0;->create(Ljava/lang/Object;Lc81;)Lc81;
-
-    .line 90
-    .line 91
-    .line 92
-    move-result-object p0
-
-    .line 93
-    check-cast p0, Lqt0;
-
-    .line 94
-    .line 95
-    invoke-virtual {p0, v1}, Lqt0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 96
-    .line 97
-    .line 98
-    sget-object p0, Lgb1;->j:Lgb1;
-
-    .line 99
-    .line 100
-    return-object p0
-
-    .line 101
-    :pswitch_7
-    invoke-virtual {p0, p1, p2}, Lqt0;->create(Ljava/lang/Object;Lc81;)Lc81;
-
-    .line 102
-    .line 103
-    .line 104
-    move-result-object p0
-
-    .line 105
-    check-cast p0, Lqt0;
-
-    .line 106
-    .line 107
-    invoke-virtual {p0, v1}, Lqt0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 108
-    .line 109
-    .line 110
-    move-result-object p0
-
-    .line 111
-    return-object p0
-
-    .line 112
-    :pswitch_8
-    invoke-virtual {p0, p1, p2}, Lqt0;->create(Ljava/lang/Object;Lc81;)Lc81;
-
-    .line 113
-    .line 114
-    .line 115
-    move-result-object p0
-
-    .line 116
-    check-cast p0, Lqt0;
-
-    .line 117
-    .line 118
-    invoke-virtual {p0, v1}, Lqt0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 119
-    .line 120
-    .line 121
-    move-result-object p0
-
-    .line 122
-    return-object p0
-
-    .line 123
-    :pswitch_9
-    invoke-virtual {p0, p1, p2}, Lqt0;->create(Ljava/lang/Object;Lc81;)Lc81;
-
-    .line 124
-    .line 125
-    .line 126
-    move-result-object p0
-
-    .line 127
-    check-cast p0, Lqt0;
-
-    .line 128
-    .line 129
-    invoke-virtual {p0, v1}, Lqt0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 130
-    .line 131
-    .line 132
-    move-result-object p0
-
-    .line 133
-    return-object p0
-
-    .line 134
-    :pswitch_a
-    invoke-virtual {p0, p1, p2}, Lqt0;->create(Ljava/lang/Object;Lc81;)Lc81;
-
-    .line 135
-    .line 136
-    .line 137
-    move-result-object p0
-
-    .line 138
-    check-cast p0, Lqt0;
-
-    .line 139
-    .line 140
-    invoke-virtual {p0, v1}, Lqt0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 141
-    .line 142
-    .line 143
-    move-result-object p0
-
-    .line 144
-    return-object p0
-
-    .line 145
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 23
-
-    .line 1
-    move-object/from16 v0, p0
-
-    .line 2
-    .line 3
-    iget-byte v1, v0, Lqt0;->j:B
-
-    .line 4
-    .line 5
-    const/16 v2, 0xa
-
-    .line 6
-    .line 7
-    const/4 v3, 0x6
-
-    .line 8
-    const/4 v4, 0x4
-
-    .line 9
-    const/16 v5, 0xc
-
-    .line 10
-    .line 11
-    const-wide/32 v6, 0xea60
-
-    .line 12
-    .line 13
-    .line 14
-    const/4 v8, 0x3
-
-    .line 15
-    sget-object v9, Ld07;->a:Ld07;
-
-    .line 16
-    .line 17
-    const/4 v10, 0x0
-
-    .line 18
-    const-string v11, "call to \'resume\' before \'invoke\' with coroutine"
-
-    .line 19
-    .line 20
-    sget-object v12, Lgb1;->j:Lgb1;
-
-    .line 21
-    .line 22
-    const/4 v13, 0x2
-
-    .line 23
-    const/4 v14, 0x1
-
-    .line 24
-    const/4 v15, 0x0
-
-    .line 25
-    packed-switch v1, :pswitch_data_0
-
-    .line 26
-    .line 27
-    .line 28
-    iget-object v1, v0, Lqt0;->n:Ljava/lang/Object;
-
-    .line 29
-    .line 30
-    check-cast v1, Ljava/util/concurrent/atomic/AtomicReference;
-
-    .line 31
-    .line 32
-    iget-byte v2, v0, Lqt0;->k:B
-
-    .line 33
-    .line 34
-    if-eqz v2, :cond_3
-
-    .line 35
-    .line 36
-    if-eq v2, v14, :cond_2
-
-    .line 37
-    .line 38
-    if-ne v2, v13, :cond_1
-
-    .line 39
-    .line 40
-    iget-object v0, v0, Lqt0;->l:Ljava/lang/Object;
-
-    .line 41
-    .line 42
-    move-object v2, v0
-
-    .line 43
-    check-cast v2, Lxv5;
-
-    .line 44
-    .line 45
-    :try_start_0
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 46
-    .line 47
-    .line 48
-    move-object/from16 v0, p1
-
-    .line 49
-    .line 50
-    :cond_0
-    move-object v3, v2
-
-    .line 51
-    goto :goto_1
-
-    .line 52
-    :cond_1
-    invoke-static {v11}, Lmv1;->e(Ljava/lang/String;)V
-
-    .line 53
-    .line 54
-    .line 55
-    move-object v12, v15
-
-    .line 56
-    goto :goto_3
-
-    .line 57
-    :cond_2
-    iget-object v2, v0, Lqt0;->l:Ljava/lang/Object;
-
-    .line 58
-    .line 59
-    check-cast v2, Lxv5;
-
-    .line 60
-    .line 61
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-
-    .line 62
-    .line 63
-    .line 64
-    goto :goto_0
-
-    .line 65
-    :cond_3
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-
-    .line 66
-    .line 67
-    .line 68
-    iget-object v2, v0, Lqt0;->l:Ljava/lang/Object;
-
-    .line 69
-    .line 70
-    check-cast v2, Lfb1;
-
-    .line 71
-    .line 72
-    new-instance v3, Lxv5;
-
-    .line 73
-    .line 74
-    invoke-interface {v2}, Lfb1;->e()Lwa1;
-
-    .line 75
-    .line 76
-    .line 77
-    move-result-object v4
-
-    .line 78
-    invoke-static {v4}, Lcd7;->C(Lwa1;)Lit2;
-
-    .line 79
-    .line 80
-    .line 81
-    move-result-object v4
-
-    .line 82
-    iget-object v5, v0, Lqt0;->m:Ljava/lang/Object;
-
-    .line 83
-    .line 84
-    check-cast v5, Lr52;
-
-    .line 85
-    .line 86
-    invoke-interface {v5, v2}, Lr52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 87
-    .line 88
-    .line 89
-    move-result-object v2
-
-    .line 90
-    invoke-direct {v3, v4, v2}, Lxv5;-><init>(Lit2;Ljava/lang/Object;)V
-
-    .line 91
-    .line 92
-    .line 93
-    invoke-virtual {v1, v3}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 94
-    .line 95
-    .line 96
-    move-result-object v2
-
-    .line 97
-    check-cast v2, Lxv5;
-
-    .line 98
-    .line 99
-    if-eqz v2, :cond_4
-
-    .line 100
-    .line 101
-    iget-object v2, v2, Lxv5;->a:Lit2;
-
-    .line 102
-    .line 103
-    iput-object v3, v0, Lqt0;->l:Ljava/lang/Object;
-
-    .line 104
-    .line 105
-    iput-byte v14, v0, Lqt0;->k:B
-
-    .line 106
-    .line 107
-    invoke-static {v2, v0}, Lcd7;->k(Lit2;Lie6;)Ljava/lang/Object;
-
-    .line 108
-    .line 109
-    .line 110
-    move-result-object v2
-
-    .line 111
-    if-ne v2, v12, :cond_4
-
-    .line 112
-    .line 113
-    goto :goto_3
-
-    .line 114
-    :cond_4
-    move-object v2, v3
-
-    .line 115
-    :goto_0
-    :try_start_1
-    iget-object v3, v0, Lqt0;->o:Ljava/lang/Object;
-
-    .line 116
-    .line 117
-    check-cast v3, Lv52;
-
-    .line 118
-    .line 119
-    iget-object v4, v2, Lxv5;->b:Ljava/lang/Object;
-
-    .line 120
-    .line 121
-    iput-object v2, v0, Lqt0;->l:Ljava/lang/Object;
-
-    .line 122
-    .line 123
-    iput-byte v13, v0, Lqt0;->k:B
-
-    .line 124
-    .line 125
-    invoke-interface {v3, v4, v0}, Lv52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 126
-    .line 127
-    .line 128
-    move-result-object v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 129
-    if-ne v0, v12, :cond_0
-
-    .line 130
-    .line 131
-    goto :goto_3
-
-    .line 132
-    :cond_5
-    :goto_1
-    invoke-virtual {v1, v3, v15}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 133
-    .line 134
-    .line 135
-    move-result v2
-
-    .line 136
-    if-eqz v2, :cond_6
-
-    .line 137
-    .line 138
-    goto :goto_2
-
-    .line 139
-    :cond_6
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    .line 140
-    .line 141
-    .line 142
-    move-result-object v2
-
-    .line 143
-    if-eq v2, v3, :cond_5
-
-    .line 144
-    .line 145
-    :goto_2
-    move-object v12, v0
-
-    .line 146
-    :goto_3
-    return-object v12
-
-    .line 147
-    :catchall_0
-    move-exception v0
-
-    .line 148
-    :goto_4
-    invoke-virtual {v1, v2, v15}, Ljava/util/concurrent/atomic/AtomicReference;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 149
-    .line 150
-    .line 151
-    move-result v3
-
-    .line 152
-    if-nez v3, :cond_7
-
-    .line 153
-    .line 154
-    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
-
-    .line 155
-    .line 156
-    .line 157
-    move-result-object v3
-
-    .line 158
-    if-ne v3, v2, :cond_7
-
-    .line 159
-    .line 160
-    goto :goto_4
-
-    .line 161
-    :cond_7
-    throw v0
-
-    .line 162
-    :pswitch_0
-    invoke-direct/range {p0 .. p1}, Lqt0;->m(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 163
-    .line 164
-    .line 165
-    move-result-object v0
-
-    .line 166
-    return-object v0
-
-    .line 167
-    :pswitch_1
-    iget-object v1, v0, Lqt0;->n:Ljava/lang/Object;
-
-    .line 168
-    .line 169
-    check-cast v1, Ljava/lang/String;
-
-    .line 170
-    .line 171
-    iget-byte v2, v0, Lqt0;->k:B
-
-    .line 172
-    .line 173
-    if-eqz v2, :cond_a
-
-    .line 174
-    .line 175
-    if-eq v2, v14, :cond_9
-
-    .line 176
-    .line 177
-    if-ne v2, v13, :cond_8
-
-    .line 178
-    .line 179
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-
-    .line 180
-    .line 181
-    .line 182
-    move-object/from16 v0, p1
-
-    .line 183
-    .line 184
-    goto/16 :goto_7
-
-    .line 185
-    .line 186
-    :cond_8
-    invoke-static {v11}, Lmv1;->e(Ljava/lang/String;)V
-
-    .line 187
-    .line 188
-    .line 189
-    move-object v12, v15
-
-    .line 190
-    goto/16 :goto_8
-
-    .line 191
-    .line 192
-    :cond_9
-    iget-object v1, v0, Lqt0;->m:Ljava/lang/Object;
-
-    .line 193
-    .line 194
-    check-cast v1, Ljava/io/File;
-
-    .line 195
-    .line 196
-    iget-object v2, v0, Lqt0;->l:Ljava/lang/Object;
-
-    .line 197
-    .line 198
-    check-cast v2, Ljava/io/File;
-
-    .line 199
-    .line 200
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-
-    .line 201
-    .line 202
-    .line 203
-    move-object v4, v1
-
-    .line 204
-    move-object/from16 v1, p1
-
-    .line 205
-    .line 206
-    goto/16 :goto_6
-
-    .line 207
-    .line 208
-    :cond_a
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-
-    .line 209
-    .line 210
-    .line 211
-    sget-object v2, Lqm5;->a:Lqm5;
-
-    .line 212
-    .line 213
-    invoke-static {v1}, Lqm5;->s(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 214
-    .line 215
-    .line 216
-    move-result-object v18
-
-    .line 217
-    if-eqz v18, :cond_b
-
-    .line 218
-    .line 219
-    new-instance v16, Lpu;
-
-    .line 220
-    .line 221
-    const/16 v20, 0x0
-
-    .line 222
-    .line 223
-    const/16 v21, 0xd
-
-    .line 224
-    .line 225
-    const/16 v17, 0x0
-
-    .line 226
-    .line 227
-    const/16 v19, 0x0
-
-    .line 228
-    .line 229
-    invoke-direct/range {v16 .. v21}, Lpu;-><init>(Ljava/lang/Object;Ljava/lang/String;Lbc4;Ljava/lang/Throwable;I)V
-
-    .line 230
-    .line 231
-    .line 232
-    :goto_5
-    move-object/from16 v12, v16
-
-    .line 233
-    .line 234
-    goto/16 :goto_8
-
-    .line 235
-    .line 236
-    :cond_b
-    iget-object v2, v0, Lqt0;->o:Ljava/lang/Object;
-
-    .line 237
-    .line 238
-    check-cast v2, Ljava/lang/String;
-
-    .line 239
-    .line 240
-    invoke-static {v2}, Lqm5;->k(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 241
-    .line 242
-    .line 243
-    move-result-object v2
-
-    .line 244
-    invoke-static {v2}, Lw96;->v0(Ljava/lang/CharSequence;)Z
-
-    .line 245
-    .line 246
-    .line 247
-    move-result v3
-
-    .line 248
-    if-eqz v3, :cond_c
-
-    .line 249
-    .line 250
-    new-instance v16, Lpu;
-
-    .line 251
-    .line 252
-    const v0, 0x7f0f038d
-
-    .line 253
-    .line 254
-    .line 255
-    new-array v1, v10, [Ljava/lang/Object;
-
-    .line 256
-    .line 257
-    invoke-static {v0, v1}, Lu67;->q(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    .line 258
-    .line 259
-    .line 260
-    move-result-object v18
-
-    .line 261
-    const/16 v20, 0x0
-
-    .line 262
-    .line 263
-    const/16 v21, 0xd
-
-    .line 264
-    .line 265
-    const/16 v17, 0x0
-
-    .line 266
-    .line 267
-    const/16 v19, 0x0
-
-    .line 268
-    .line 269
-    invoke-direct/range {v16 .. v21}, Lpu;-><init>(Ljava/lang/Object;Ljava/lang/String;Lbc4;Ljava/lang/Throwable;I)V
-
-    .line 270
-    .line 271
-    .line 272
-    goto :goto_5
-
-    .line 273
-    :cond_c
-    invoke-static {v2}, Lqm5;->o(Ljava/lang/String;)Lpu;
-
-    .line 274
-    .line 275
-    .line 276
-    move-result-object v2
-
-    .line 277
-    iget-object v3, v2, Lpu;->a:Ljava/lang/Object;
-
-    .line 278
-    .line 279
-    check-cast v3, Ljava/io/File;
-
-    .line 280
-    .line 281
-    const v4, 0x7f0f00bb
-
-    .line 282
-    .line 283
-    .line 284
-    if-nez v3, :cond_e
-
-    .line 285
-    .line 286
-    new-instance v16, Lpu;
-
-    .line 287
-    .line 288
-    iget-object v0, v2, Lpu;->b:Ljava/lang/String;
-
-    .line 289
-    .line 290
-    if-nez v0, :cond_d
-
-    .line 291
-    .line 292
-    new-array v0, v10, [Ljava/lang/Object;
-
-    .line 293
-    .line 294
-    invoke-static {v4, v0}, Lu67;->q(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    .line 295
-    .line 296
-    .line 297
-    move-result-object v0
-
-    .line 298
-    :cond_d
-    move-object/from16 v18, v0
-
-    .line 299
-    .line 300
-    const/16 v20, 0x0
-
-    .line 301
-    .line 302
-    const/16 v21, 0xd
-
-    .line 303
-    .line 304
-    const/16 v17, 0x0
-
-    .line 305
-    .line 306
-    const/16 v19, 0x0
-
-    .line 307
-    .line 308
-    invoke-direct/range {v16 .. v21}, Lpu;-><init>(Ljava/lang/Object;Ljava/lang/String;Lbc4;Ljava/lang/Throwable;I)V
-
-    .line 309
-    .line 310
-    .line 311
-    goto :goto_5
-
-    .line 312
-    :cond_e
-    invoke-virtual {v3}, Ljava/io/File;->getParentFile()Ljava/io/File;
-
-    .line 313
-    .line 314
-    .line 315
-    move-result-object v2
-
-    .line 316
-    if-nez v2, :cond_f
-
-    .line 317
-    .line 318
-    new-instance v16, Lpu;
-
-    .line 319
-    .line 320
-    new-array v0, v10, [Ljava/lang/Object;
-
-    .line 321
-    .line 322
-    invoke-static {v4, v0}, Lu67;->q(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    .line 323
-    .line 324
-    .line 325
-    move-result-object v18
-
-    .line 326
-    const/16 v20, 0x0
-
-    .line 327
-    .line 328
-    const/16 v21, 0xd
-
-    .line 329
-    .line 330
-    const/16 v17, 0x0
-
-    .line 331
-    .line 332
-    const/16 v19, 0x0
-
-    .line 333
-    .line 334
-    invoke-direct/range {v16 .. v21}, Lpu;-><init>(Ljava/lang/Object;Ljava/lang/String;Lbc4;Ljava/lang/Throwable;I)V
-
-    .line 335
-    .line 336
-    .line 337
-    goto :goto_5
-
-    .line 338
-    :cond_f
-    new-instance v4, Ljava/io/File;
-
-    .line 339
-    .line 340
-    invoke-static {v1}, Lw96;->V0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-
-    .line 341
-    .line 342
-    .line 343
-    move-result-object v1
-
-    .line 344
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    .line 345
-    .line 346
-    .line 347
-    move-result-object v1
-
-    .line 348
-    invoke-direct {v4, v2, v1}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    .line 349
-    .line 350
-    .line 351
-    sget-object v1, Lwc5;->a:Lwc5;
-
-    .line 352
-    .line 353
-    invoke-virtual {v4}, Ljava/io/File;->getPath()Ljava/lang/String;
-
-    .line 354
-    .line 355
-    .line 356
-    move-result-object v1
-
-    .line 357
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 358
-    .line 359
-    .line 360
-    invoke-static {v1}, Lqm5;->q(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 361
-    .line 362
-    .line 363
-    move-result-object v1
-
-    .line 364
-    const-string v2, "ls -d "
-
-    .line 365
-    .line 366
-    const-string v5, " 2>/dev/null"
-
-    .line 367
-    .line 368
-    invoke-static {v2, v1, v5}, Lxu1;->o(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 369
-    .line 370
-    .line 371
-    move-result-object v1
-
-    .line 372
-    iput-object v3, v0, Lqt0;->l:Ljava/lang/Object;
-
-    .line 373
-    .line 374
-    iput-object v4, v0, Lqt0;->m:Ljava/lang/Object;
-
-    .line 375
-    .line 376
-    iput-byte v14, v0, Lqt0;->k:B
-
-    .line 377
-    .line 378
-    invoke-static {v6, v7, v0, v1}, Lwc5;->f(JLc81;Ljava/lang/String;)Ljava/lang/Object;
-
-    .line 379
-    .line 380
-    .line 381
-    move-result-object v1
-
-    .line 382
-    if-ne v1, v12, :cond_10
-
-    .line 383
-    .line 384
-    goto/16 :goto_8
-
-    .line 385
-    .line 386
-    :cond_10
-    move-object v2, v3
-
-    .line 387
-    :goto_6
-    check-cast v1, Lnc5;
-
-    .line 388
-    .line 389
-    invoke-virtual {v1}, Lnc5;->a()Z
-
-    .line 390
-    .line 391
-    .line 392
-    move-result v1
-
-    .line 393
-    if-eqz v1, :cond_11
-
-    .line 394
-    .line 395
-    new-instance v16, Lpu;
-
-    .line 396
-    .line 397
-    const v0, 0x7f0f00aa
-
-    .line 398
-    .line 399
-    .line 400
-    new-array v1, v10, [Ljava/lang/Object;
-
-    .line 401
-    .line 402
-    invoke-static {v0, v1}, Lu67;->q(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    .line 403
-    .line 404
-    .line 405
-    move-result-object v18
-
-    .line 406
-    const/16 v20, 0x0
-
-    .line 407
-    .line 408
-    const/16 v21, 0xd
-
-    .line 409
-    .line 410
-    const/16 v17, 0x0
-
-    .line 411
-    .line 412
-    const/16 v19, 0x0
-
-    .line 413
-    .line 414
-    invoke-direct/range {v16 .. v21}, Lpu;-><init>(Ljava/lang/Object;Ljava/lang/String;Lbc4;Ljava/lang/Throwable;I)V
-
-    .line 415
-    .line 416
-    .line 417
-    goto/16 :goto_5
-
-    .line 418
-    .line 419
-    :cond_11
-    sget-object v1, Lqm5;->a:Lqm5;
-
-    .line 420
-    .line 421
-    invoke-virtual {v2}, Ljava/io/File;->getPath()Ljava/lang/String;
-
-    .line 422
-    .line 423
-    .line 424
-    move-result-object v1
-
-    .line 425
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 426
-    .line 427
-    .line 428
-    invoke-static {v1}, Lqm5;->q(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 429
-    .line 430
-    .line 431
-    move-result-object v1
-
-    .line 432
-    invoke-virtual {v4}, Ljava/io/File;->getPath()Ljava/lang/String;
-
-    .line 433
-    .line 434
-    .line 435
-    move-result-object v2
-
-    .line 436
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 437
-    .line 438
-    .line 439
-    invoke-static {v2}, Lqm5;->q(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 440
-    .line 441
-    .line 442
-    move-result-object v2
-
-    .line 443
-    const-string v3, "mv "
-
-    .line 444
-    .line 445
-    const-string v4, " "
-
-    .line 446
-    .line 447
-    invoke-static {v3, v1, v4, v2}, Lpa6;->k(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 448
-    .line 449
-    .line 450
-    move-result-object v1
-
-    .line 451
-    sget-object v2, Lwc5;->a:Lwc5;
-
-    .line 452
-    .line 453
-    iput-object v15, v0, Lqt0;->l:Ljava/lang/Object;
-
-    .line 454
-    .line 455
-    iput-object v15, v0, Lqt0;->m:Ljava/lang/Object;
-
-    .line 456
-    .line 457
-    iput-byte v13, v0, Lqt0;->k:B
-
-    .line 458
-    .line 459
-    invoke-static {v6, v7, v0, v1}, Lwc5;->f(JLc81;Ljava/lang/String;)Ljava/lang/Object;
-
-    .line 460
-    .line 461
-    .line 462
-    move-result-object v0
-
-    .line 463
-    if-ne v0, v12, :cond_12
-
-    .line 464
-    .line 465
-    goto :goto_8
-
-    .line 466
-    :cond_12
-    :goto_7
-    check-cast v0, Lnc5;
-
-    .line 467
-    .line 468
-    invoke-virtual {v0}, Lnc5;->a()Z
-
-    .line 469
-    .line 470
-    .line 471
-    move-result v1
-
-    .line 472
-    if-eqz v1, :cond_13
-
-    .line 473
-    .line 474
-    new-instance v2, Lpu;
-
-    .line 475
-    .line 476
-    const/4 v6, 0x0
-
-    .line 477
-    const/16 v7, 0xe
-
-    .line 478
-    .line 479
-    sget-object v3, Ld07;->a:Ld07;
-
-    .line 480
-    .line 481
-    const/4 v4, 0x0
-
-    .line 482
-    const/4 v5, 0x0
-
-    .line 483
-    invoke-direct/range {v2 .. v7}, Lpu;-><init>(Ljava/lang/Object;Ljava/lang/String;Lbc4;Ljava/lang/Throwable;I)V
-
-    .line 484
-    .line 485
-    .line 486
-    move-object v12, v2
-
-    .line 487
-    goto :goto_8
-
-    .line 488
-    :cond_13
-    iget-object v0, v0, Lnc5;->b:Ljava/lang/String;
-
-    .line 489
-    .line 490
-    invoke-static {v0}, Lw96;->v0(Ljava/lang/CharSequence;)Z
-
-    .line 491
-    .line 492
-    .line 493
-    move-result v1
-
-    .line 494
-    if-eqz v1, :cond_14
-
-    .line 495
-    .line 496
-    const v0, 0x7f0f00c5
-
-    .line 497
-    .line 498
-    .line 499
-    new-array v1, v10, [Ljava/lang/Object;
-
-    .line 500
-    .line 501
-    invoke-static {v0, v1}, Lu67;->q(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    .line 502
-    .line 503
-    .line 504
-    move-result-object v0
-
-    .line 505
-    :cond_14
-    move-object v3, v0
-
-    .line 506
-    new-instance v1, Lpu;
-
-    .line 507
-    .line 508
     const/4 v2, 0x0
 
-    .line 509
+    .line 6
+    invoke-direct {p0, p1, v0, v1, v2}, Landroid/view/View;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+
+    .line 7
+    .line 8
+    .line 9
+    new-instance p1, Lfp2;
+
+    .line 10
+    .line 11
+    invoke-direct {p1, p0}, Lfp2;-><init>(Lqt0;)V
+
+    .line 12
+    .line 13
+    .line 14
+    iput-object p1, p0, Lqt0;->j:Lfp2;
+
+    .line 15
+    .line 16
+    new-instance p1, Ljava/util/ArrayList;
+
+    .line 17
+    .line 18
+    const/4 v3, 0x2
+
+    .line 19
+    invoke-direct {p1, v3}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 20
+    .line 21
+    .line 22
+    iput-object p1, p0, Lqt0;->n:Ljava/util/ArrayList;
+
+    .line 23
+    .line 24
+    iput v2, p0, Lqt0;->v:I
+
+    .line 25
+    .line 26
+    const/high16 p1, 0x3f800000    # 1.0f
+
+    .line 27
+    .line 28
+    iput p1, p0, Lqt0;->H:F
+
+    .line 29
+    .line 30
     const/4 v4, 0x0
 
+    .line 31
+    iput v4, p0, Lqt0;->I:F
+
+    .line 32
+    .line 33
+    const/high16 v4, 0x3f000000    # 0.5f
+
+    .line 34
+    .line 35
+    iput v4, p0, Lqt0;->K:F
+
+    .line 36
+    .line 37
+    sget-object v4, Lwh1;->k:Lwh1;
+
+    .line 38
+    .line 39
+    iput-object v4, p0, Lqt0;->H0:Lwh1;
+
+    .line 40
+    .line 41
+    const-wide/16 v4, 0x0
+
+    .line 42
+    .line 43
+    iput-wide v4, p0, Lqt0;->I0:J
+
+    .line 44
+    .line 45
+    new-instance v4, Ljava/util/HashMap;
+
+    .line 46
+    .line 47
+    invoke-direct {v4}, Ljava/util/HashMap;-><init>()V
+
+    .line 48
+    .line 49
+    .line 50
+    iput-object v4, p0, Lqt0;->j1:Ljava/util/HashMap;
+
+    .line 51
+    .line 52
+    const-string v4, "CodeEditor"
+
+    .line 53
+    .line 54
+    const-string v5, "sora-editor\nCopyright (C) Rosemoe roses2020@qq.com\nThis project is distributed under the LGPL v2.1 license"
+
+    .line 55
+    .line 56
+    invoke-static {v4, v5}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 57
+    .line 58
+    .line 59
+    new-instance v4, Ltv1;
+
+    .line 60
+    .line 61
+    invoke-direct {v4, v0}, Ltv1;-><init>(Ltv1;)V
+
+    .line 62
+    .line 63
+    .line 64
+    iput-object v4, p0, Lqt0;->r:Ltv1;
+
+    .line 65
+    .line 66
+    const/4 v4, 0x1
+
+    .line 67
+    iput-boolean v4, p0, Lqt0;->s0:Z
+
+    .line 68
+    .line 69
+    new-instance v5, Lja5;
+
+    .line 70
+    .line 71
+    invoke-direct {v5, p0}, Lja5;-><init>(Lqt0;)V
+
+    .line 72
+    .line 73
+    .line 74
+    iput-object v5, p0, Lqt0;->a1:Lja5;
+
+    .line 75
+    .line 76
+    new-instance v5, Lsr1;
+
+    .line 77
+    .line 78
+    invoke-direct {v5, p0}, Lsr1;-><init>(Lqt0;)V
+
+    .line 79
+    .line 80
+    .line 81
+    iput-object v5, p0, Lqt0;->b1:Lsr1;
+
+    .line 82
+    .line 83
+    new-instance v5, Lsr6;
+
+    .line 84
+    .line 85
+    const/16 v6, 0xb
+
+    .line 86
+    .line 87
+    invoke-direct {v5, p0, v6}, Lsr6;-><init>(Lqt0;B)V
+
+    .line 88
+    .line 89
+    .line 90
+    iput-object v5, p0, Lqt0;->o:Lsr6;
+
+    .line 91
+    .line 92
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 93
+    .line 94
+    .line 95
+    move-result-object v5
+
+    .line 96
+    invoke-static {v5}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
+
+    .line 97
+    .line 98
+    .line 99
+    move-result-object v5
+
+    .line 100
+    invoke-virtual {v5}, Landroid/view/ViewConfiguration;->getScaledVerticalScrollFactor()F
+
+    .line 101
+    .line 102
+    .line 103
+    move-result v5
+
+    .line 104
+    iput v5, p0, Lqt0;->F:F
+
+    .line 105
+    .line 106
+    sget-object v5, Lz73;->m:Lz73;
+
+    .line 107
+    .line 108
+    iput-object v5, p0, Lqt0;->h1:Lz73;
+
+    .line 109
+    .line 110
+    sget-object v5, Lp6;->b0:Lp6;
+
+    .line 111
+    .line 112
+    iput-object v5, p0, Lqt0;->E0:Ly73;
+
+    .line 113
+    .line 114
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 115
+    .line 116
+    .line 117
+    move-result-object v5
+
+    .line 118
+    sget-object v7, Llk2;->a:Landroid/util/SparseIntArray;
+
+    .line 119
+    .line 120
+    const v8, 0x7f0f0451
+
+    .line 121
+    .line 122
+    .line 123
+    invoke-virtual {v7, v8}, Landroid/util/SparseIntArray;->get(I)I
+
+    .line 124
+    .line 125
+    .line 126
+    move-result v7
+
+    .line 127
+    if-nez v7, :cond_0
+
+    .line 128
+    .line 129
+    goto :goto_0
+
+    .line 130
+    :cond_0
+    move v8, v7
+
+    .line 131
+    :goto_0
+    invoke-virtual {v5, v8}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+
+    .line 132
+    .line 133
+    .line 134
+    move-result-object v5
+
+    .line 135
+    iput-object v5, p0, Lqt0;->F0:Ljava/lang/String;
+
+    .line 136
+    .line 137
+    new-instance v5, Lri1;
+
+    .line 138
+    .line 139
+    invoke-direct {v5}, Lri1;-><init>()V
+
+    .line 140
+    .line 141
+    .line 142
+    iput-object v5, p0, Lqt0;->W0:Lri1;
+
+    .line 143
+    .line 144
+    invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
+
+    .line 145
+    .line 146
+    .line 147
+    move-result-object v5
+
+    .line 148
+    invoke-virtual {v5}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    .line 149
+    .line 150
+    .line 151
+    move-result-object v5
+
+    .line 152
+    const/high16 v7, 0x41200000    # 10.0f
+
+    .line 153
+    .line 154
+    invoke-static {v4, v7, v5}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
+
+    .line 155
+    .line 156
+    .line 157
+    move-result v5
+
+    .line 158
+    div-float/2addr v5, v7
+
+    .line 159
+    iput v5, p0, Lqt0;->y:F
+
+    .line 160
+    .line 161
+    iput v5, p0, Lqt0;->z:F
+
+    .line 162
+    .line 163
+    const/high16 v7, 0x3fc00000    # 1.5f
+
+    .line 164
+    .line 165
+    mul-float/2addr v7, v5
+
+    .line 166
+    iput v7, p0, Lqt0;->C:F
+
+    .line 167
+    .line 168
+    iput v5, p0, Lqt0;->E:F
+
+    .line 169
+    .line 170
+    const/high16 v7, 0x40000000    # 2.0f
+
+    .line 171
+    .line 172
+    mul-float/2addr v5, v7
+
+    .line 173
+    iput v5, p0, Lqt0;->B:F
+
+    .line 174
+    .line 175
+    iput v5, p0, Lqt0;->A:F
+
+    .line 176
+    .line 177
+    new-instance v5, Landroid/graphics/Matrix;
+
+    .line 178
+    .line 179
+    invoke-direct {v5}, Landroid/graphics/Matrix;-><init>()V
+
+    .line 180
+    .line 181
+    .line 182
+    iput-object v5, p0, Lqt0;->C0:Landroid/graphics/Matrix;
+
+    .line 183
+    .line 184
+    new-instance v5, Lx82;
+
+    .line 185
+    .line 186
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 187
+    .line 188
+    .line 189
+    move-result-object v7
+
+    .line 190
+    invoke-direct {v5, v7}, Lx82;-><init>(Landroid/content/Context;)V
+
+    .line 191
+    .line 192
+    .line 193
+    iput-object v5, p0, Lqt0;->U0:Lbv5;
+
+    .line 194
+    .line 195
+    new-instance v5, Lwr1;
+
+    .line 196
+    .line 197
+    invoke-direct {v5, p0}, Lwr1;-><init>(Lqt0;)V
+
+    .line 198
+    .line 199
+    .line 200
+    iput-object v5, p0, Lqt0;->S0:Lwr1;
+
+    .line 201
+    .line 202
+    new-instance v5, Lqp3;
+
+    .line 203
+    .line 204
+    invoke-direct {v5, p0}, Lqp3;-><init>(Lqt0;)V
+
+    .line 205
+    .line 206
+    .line 207
+    iput-object v5, p0, Lqt0;->T0:Lbc1;
+
+    .line 208
+    .line 209
+    const/16 v5, 0x1f4
+
+    .line 210
+    .line 211
+    invoke-virtual {p0, v5}, Lqt0;->setCursorBlinkPeriod(I)V
+
+    .line 212
+    .line 213
+    .line 214
+    new-instance v5, Landroid/view/inputmethod/CursorAnchorInfo$Builder;
+
+    .line 215
+    .line 216
+    invoke-direct {v5}, Landroid/view/inputmethod/CursorAnchorInfo$Builder;-><init>()V
+
+    .line 217
+    .line 218
+    .line 219
+    iput-object v5, p0, Lqt0;->O0:Landroid/view/inputmethod/CursorAnchorInfo$Builder;
+
+    .line 220
+    .line 221
+    const/high16 v5, 0x41900000    # 18.0f
+
+    .line 222
+    .line 223
+    invoke-virtual {p0, v5}, Lqt0;->setTextSize(F)V
+
+    .line 224
+    .line 225
+    .line 226
+    invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
+
+    .line 227
+    .line 228
+    .line 229
+    move-result-object v5
+
+    .line 230
+    invoke-virtual {v5}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    .line 231
+    .line 232
+    .line 233
+    move-result-object v5
+
+    .line 234
+    const/high16 v7, 0x41a80000    # 21.0f
+
+    .line 235
+    .line 236
+    invoke-static {v3, v7, v5}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
+
+    .line 237
+    .line 238
+    .line 239
+    move-result v5
+
+    .line 240
+    invoke-virtual {p0, v5}, Lqt0;->setLineInfoTextSize(F)V
+
+    .line 241
+    .line 242
+    .line 243
+    sget-object v5, Lqq1;->c:Lqq1;
+
+    .line 244
+    .line 245
+    iput-object v5, p0, Lqt0;->D0:Lqq1;
+
+    .line 246
+    .line 247
+    invoke-virtual {v5, p0}, Lqq1;->c(Lqt0;)V
+
+    .line 248
+    .line 249
+    .line 250
+    new-instance v5, Lds1;
+
+    .line 251
+    .line 252
+    invoke-direct {v5, p0}, Lds1;-><init>(Lqt0;)V
+
+    .line 253
+    .line 254
+    .line 255
+    iput-object v5, p0, Lqt0;->K0:Lds1;
+
+    .line 256
+    .line 257
+    new-instance v5, Landroid/view/GestureDetector;
+
+    .line 258
+    .line 259
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 260
+    .line 261
+    .line 262
+    move-result-object v7
+
+    .line 263
+    iget-object v8, p0, Lqt0;->K0:Lds1;
+
+    .line 264
+    .line 265
+    invoke-direct {v5, v7, v8}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;)V
+
+    .line 266
+    .line 267
+    .line 268
+    iput-object v5, p0, Lqt0;->M0:Landroid/view/GestureDetector;
+
+    .line 269
+    .line 270
+    iget-object v7, p0, Lqt0;->K0:Lds1;
+
+    .line 271
+    .line 272
+    invoke-virtual {v5, v7}, Landroid/view/GestureDetector;->setOnDoubleTapListener(Landroid/view/GestureDetector$OnDoubleTapListener;)V
+
+    .line 273
+    .line 274
+    .line 275
+    new-instance v5, Landroid/view/ScaleGestureDetector;
+
+    .line 276
+    .line 277
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 278
+    .line 279
+    .line 280
+    move-result-object v7
+
+    .line 281
+    iget-object v8, p0, Lqt0;->K0:Lds1;
+
+    .line 282
+    .line 283
+    invoke-direct {v5, v7, v8}, Landroid/view/ScaleGestureDetector;-><init>(Landroid/content/Context;Landroid/view/ScaleGestureDetector$OnScaleGestureListener;)V
+
+    .line 284
+    .line 285
+    .line 286
+    iput-object v5, p0, Lqt0;->N0:Landroid/view/ScaleGestureDetector;
+
+    .line 287
+    .line 288
+    new-instance v5, Lav5;
+
+    .line 289
+    .line 290
+    invoke-direct {v5}, Lav5;-><init>()V
+
+    .line 291
+    .line 292
+    .line 293
+    iput-object v5, p0, Lqt0;->x0:Lav5;
+
+    .line 294
+    .line 295
+    new-instance v5, Lav5;
+
+    .line 296
+    .line 297
+    invoke-direct {v5}, Lav5;-><init>()V
+
+    .line 298
+    .line 299
+    .line 300
+    iput-object v5, p0, Lqt0;->v0:Lav5;
+
+    .line 301
+    .line 302
+    new-instance v5, Lav5;
+
+    .line 303
+    .line 304
+    invoke-direct {v5}, Lav5;-><init>()V
+
+    .line 305
+    .line 306
+    .line 307
+    iput-object v5, p0, Lqt0;->w0:Lav5;
+
+    .line 308
+    .line 309
+    sget-object v5, Landroid/graphics/Paint$Align;->RIGHT:Landroid/graphics/Paint$Align;
+
+    .line 310
+    .line 311
+    iput-object v5, p0, Lqt0;->L0:Landroid/graphics/Paint$Align;
+
+    .line 312
+    .line 313
+    iput-boolean v2, p0, Lqt0;->L:Z
+
+    .line 314
+    .line 315
+    iput-boolean v4, p0, Lqt0;->d0:Z
+
+    .line 316
+    .line 317
+    iput p1, p0, Lqt0;->D:F
+
+    .line 318
+    .line 319
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 320
+    .line 321
+    .line 322
+    move-result-object p1
+
+    .line 323
+    const-string v5, "input_method"
+
+    .line 324
+    .line 325
+    invoke-virtual {p1, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 326
+    .line 327
+    .line 328
+    move-result-object p1
+
+    .line 329
+    check-cast p1, Landroid/view/inputmethod/InputMethodManager;
+
+    .line 330
+    .line 331
+    iput-object p1, p0, Lqt0;->z0:Landroid/view/inputmethod/InputMethodManager;
+
+    .line 332
+    .line 333
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 334
+    .line 335
+    .line 336
+    move-result-object p1
+
+    .line 337
+    const-string v5, "clipboard"
+
+    .line 338
+    .line 339
+    invoke-virtual {p1, v5}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 340
+    .line 341
+    .line 342
+    move-result-object p1
+
+    .line 343
+    check-cast p1, Landroid/content/ClipboardManager;
+
+    .line 344
+    .line 345
+    iput-object p1, p0, Lqt0;->y0:Landroid/content/ClipboardManager;
+
+    .line 346
+    .line 347
+    invoke-virtual {p0, v4}, Lqt0;->setUndoEnabled(Z)V
+
+    .line 348
+    .line 349
+    .line 350
+    const/4 p1, -0x1
+
+    .line 351
+    iput p1, p0, Lqt0;->u:I
+
+    .line 352
+    .line 353
+    invoke-virtual {p0, v4}, Lqt0;->setScalable(Z)V
+
+    .line 354
+    .line 355
+    .line 356
+    invoke-virtual {p0, v4}, Landroid/view/View;->setFocusable(Z)V
+
+    .line 357
+    .line 358
+    .line 359
+    invoke-virtual {p0, v4}, Landroid/view/View;->setFocusableInTouchMode(Z)V
+
+    .line 360
+    .line 361
+    .line 362
+    iput-boolean v4, p0, Lqt0;->p0:Z
+
+    .line 363
+    .line 364
+    new-instance p1, Ldr1;
+
+    .line 365
+    .line 366
+    invoke-direct {p1, p0}, Ldr1;-><init>(Lqt0;)V
+
+    .line 367
+    .line 368
+    .line 369
+    iput-object p1, p0, Lqt0;->q:Ldr1;
+
+    .line 370
+    .line 371
+    new-instance p1, Lpq1;
+
+    .line 372
+    .line 373
+    invoke-direct {p1, p0}, Lpq1;-><init>(Lqt0;)V
+
+    .line 374
+    .line 375
+    .line 376
+    iput-object p1, p0, Lqt0;->J0:Lpq1;
+
+    .line 377
+    .line 378
+    new-instance p1, Landroid/widget/EdgeEffect;
+
+    .line 379
+    .line 380
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 381
+    .line 382
+    .line 383
+    move-result-object v5
+
+    .line 384
+    invoke-direct {p1, v5}, Landroid/widget/EdgeEffect;-><init>(Landroid/content/Context;)V
+
+    .line 385
+    .line 386
+    .line 387
+    iput-object p1, p0, Lqt0;->P0:Landroid/widget/EdgeEffect;
+
+    .line 388
+    .line 389
+    new-instance p1, Landroid/widget/EdgeEffect;
+
+    .line 390
+    .line 391
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 392
+    .line 393
+    .line 394
+    move-result-object v5
+
+    .line 395
+    invoke-direct {p1, v5}, Landroid/widget/EdgeEffect;-><init>(Landroid/content/Context;)V
+
+    .line 396
+    .line 397
+    .line 398
+    iput-object p1, p0, Lqt0;->Q0:Landroid/widget/EdgeEffect;
+
+    .line 399
+    .line 400
+    new-instance p1, Lzr1;
+
+    .line 401
+    .line 402
+    invoke-direct {p1, p0}, Lzr1;-><init>(Lqt0;)V
+
+    .line 403
+    .line 404
+    .line 405
+    iput-object p1, p0, Lqt0;->l:Lzr1;
+
+    .line 406
+    .line 407
+    new-instance p1, Lxq1;
+
+    .line 408
+    .line 409
+    invoke-direct {p1, p0}, Lxq1;-><init>(Lqt0;)V
+
+    .line 410
+    .line 411
+    .line 412
+    iput-object p1, p0, Lqt0;->m:Lxq1;
+
+    .line 413
+    .line 414
+    new-instance p1, Lr77;
+
+    .line 415
+    .line 416
+    invoke-direct {p1, p0}, Lr77;-><init>(Lqt0;)V
+
+    .line 417
+    .line 418
+    .line 419
+    invoke-virtual {p0, v0}, Lqt0;->setEditorLanguage(Lhy2;)V
+
+    .line 420
+    .line 421
+    .line 422
+    invoke-virtual {p0, v0}, Lqt0;->setText(Ljava/lang/CharSequence;)V
+
+    .line 423
+    .line 424
+    .line 425
+    const/4 p1, 0x4
+
+    .line 426
+    invoke-virtual {p0, p1}, Lqt0;->setTabWidth(I)V
+
+    .line 427
+    .line 428
+    .line 429
+    invoke-virtual {p0, v4}, Lqt0;->setHighlightCurrentLine(Z)V
+
+    .line 430
+    .line 431
+    .line 432
+    invoke-virtual {p0, v4}, Lqt0;->setVerticalScrollBarEnabled(Z)V
+
+    .line 433
+    .line 434
+    .line 435
+    invoke-virtual {p0, v4}, Lqt0;->setHighlightCurrentBlock(Z)V
+
+    .line 436
+    .line 437
+    .line 438
+    invoke-virtual {p0, v4}, Lqt0;->setDisplayLnPanel(Z)V
+
+    .line 439
+    .line 440
+    .line 441
+    invoke-virtual {p0, v4}, Lqt0;->setHorizontalScrollBarEnabled(Z)V
+
+    .line 442
+    .line 443
+    .line 444
+    invoke-virtual {p0, v4}, Lqt0;->setFirstLineNumberAlwaysVisible(Z)V
+
+    .line 445
+    .line 446
+    .line 447
+    invoke-virtual {p0, v4}, Lqt0;->setCursorAnimationEnabled(Z)V
+
+    .line 448
+    .line 449
+    .line 450
+    invoke-virtual {p0, v4}, Lqt0;->setEditable(Z)V
+
+    .line 451
+    .line 452
+    .line 453
+    invoke-virtual {p0, v4}, Lqt0;->setLineNumberEnabled(Z)V
+
+    .line 454
+    .line 455
+    .line 456
+    invoke-virtual {p0, v4}, Lqt0;->setHardwareAcceleratedDrawAllowed(Z)V
+
+    .line 457
+    .line 458
+    .line 459
+    invoke-virtual {p0, v2}, Lqt0;->setInterceptParentHorizontalScrollIfNeeded(Z)V
+
+    .line 460
+    .line 461
+    .line 462
+    sget-object v5, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
+
+    .line 463
+    .line 464
+    invoke-virtual {p0, v5}, Lqt0;->setTypefaceText(Landroid/graphics/Typeface;)V
+
+    .line 465
+    .line 466
+    .line 467
+    invoke-virtual {p0, v4}, Lqt0;->setSoftKeyboardEnabled(Z)V
+
+    .line 468
+    .line 469
+    .line 470
+    invoke-virtual {p0, v4}, Lqt0;->setDisableSoftKbdIfHardKbdAvailable(Z)V
+
+    .line 471
+    .line 472
+    .line 473
+    invoke-virtual {p0, v2}, Landroid/view/View;->setDefaultFocusHighlightEnabled(Z)V
+
+    .line 474
+    .line 475
+    .line 476
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 477
+    .line 478
+    .line 479
+    move-result-object v5
+
+    .line 480
+    instance-of v5, v5, Landroid/view/ContextThemeWrapper;
+
+    .line 481
+    .line 482
+    if-eqz v5, :cond_1
+
+    .line 483
+    .line 484
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 485
+    .line 486
+    .line 487
+    move-result-object v5
+
+    .line 488
+    check-cast v5, Landroid/view/ContextThemeWrapper;
+
+    .line 489
+    .line 490
+    new-instance v7, Landroid/util/TypedValue;
+
+    .line 491
+    .line 492
+    invoke-direct {v7}, Landroid/util/TypedValue;-><init>()V
+
+    .line 493
+    .line 494
+    .line 495
+    invoke-virtual {v5}, Landroid/view/ContextThemeWrapper;->getTheme()Landroid/content/res/Resources$Theme;
+
+    .line 496
+    .line 497
+    .line 498
+    move-result-object v5
+
+    .line 499
+    const v8, 0x1010433
+
+    .line 500
+    .line 501
+    .line 502
+    invoke-virtual {v5, v8, v7, v4}, Landroid/content/res/Resources$Theme;->resolveAttribute(ILandroid/util/TypedValue;Z)Z
+
+    .line 503
+    .line 504
+    .line 505
+    iget v5, v7, Landroid/util/TypedValue;->data:I
+
+    .line 506
+    .line 507
+    invoke-virtual {p0, v5}, Lqt0;->setEdgeEffectColor(I)V
+
+    .line 508
+    .line 509
     .line 510
-    const/4 v5, 0x0
+    :cond_1
+    iget-object v5, p0, Lqt0;->N0:Landroid/view/ScaleGestureDetector;
 
     .line 511
-    const/16 v6, 0xd
-
     .line 512
-    .line 513
-    invoke-direct/range {v1 .. v6}, Lpu;-><init>(Ljava/lang/Object;Ljava/lang/String;Lbc4;Ljava/lang/Throwable;I)V
+    invoke-virtual {v5, v2}, Landroid/view/ScaleGestureDetector;->setQuickScaleEnabled(Z)V
 
+    .line 513
     .line 514
     .line 515
-    .line 516
-    move-object v12, v1
+    new-instance v5, Lh76;
 
+    .line 516
     .line 517
-    :goto_8
-    return-object v12
+    invoke-direct {v5}, Ljava/lang/Object;-><init>()V
 
     .line 518
-    :pswitch_2
-    iget-object v1, v0, Lqt0;->n:Ljava/lang/Object;
-
     .line 519
     .line 520
-    check-cast v1, Lp72;
+    new-instance v7, Lt8;
 
     .line 521
     .line 522
-    iget-object v2, v0, Lqt0;->o:Ljava/lang/Object;
+    const/16 v8, 0x1c
 
     .line 523
     .line 524
-    check-cast v2, Lzh5;
+    invoke-direct {v7, v8}, Lt8;-><init>(B)V
 
     .line 525
     .line 526
-    iget-byte v3, v0, Lqt0;->k:B
-
     .line 527
+    new-instance v8, Ld11;
+
     .line 528
-    if-eqz v3, :cond_17
-
     .line 529
-    .line 530
-    if-eq v3, v14, :cond_16
+    invoke-direct {v8}, Ld11;-><init>()V
 
+    .line 530
     .line 531
     .line 532
-    if-ne v3, v13, :cond_15
+    new-instance v9, Lt8;
 
     .line 533
     .line 534
-    iget-object v0, v0, Lqt0;->m:Ljava/lang/Object;
+    invoke-virtual {p0}, Lqt0;->getClipboardManager()Landroid/content/ClipboardManager;
 
     .line 535
     .line 536
-    check-cast v0, Lzh5;
-
     .line 537
-    .line 538
-    :try_start_2
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    const/16 v10, 0x17
 
+    .line 538
     .line 539
+    invoke-direct {v9, v10}, Lt8;-><init>(B)V
+
     .line 540
     .line 541
-    move-object v1, v0
-
     .line 542
-    move-object/from16 v0, p1
+    invoke-virtual {v8, v9}, Ld11;->a(Lhl2;)V
 
     .line 543
     .line 544
-    goto/16 :goto_16
-
     .line 545
-    .line 546
-    :catchall_1
-    move-exception v0
+    new-instance v9, Li11;
 
+    .line 546
     .line 547
-    goto/16 :goto_18
+    const/16 v10, 0x9
 
     .line 548
     .line 549
-    :cond_15
-    invoke-static {v11}, Lmv1;->e(Ljava/lang/String;)V
+    invoke-direct {v9, v10}, Li11;-><init>(B)V
 
     .line 550
     .line 551
     .line 552
-    move-object v9, v15
+    invoke-virtual {v8, v9}, Ld11;->a(Lhl2;)V
 
     .line 553
-    goto/16 :goto_17
-
     .line 554
     .line 555
-    :cond_16
-    iget-object v1, v0, Lqt0;->l:Ljava/lang/Object;
+    new-instance v9, Lo35;
 
     .line 556
     .line 557
-    check-cast v1, Ljava/lang/String;
+    invoke-direct {v9, p1}, Lo35;-><init>(B)V
 
     .line 558
     .line 559
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-
     .line 560
+    invoke-virtual {v8, v9}, Ld11;->a(Lhl2;)V
+
     .line 561
     .line 562
-    goto/16 :goto_14
-
     .line 563
+    new-instance v9, Lmg6;
+
     .line 564
-    :cond_17
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-
     .line 565
-    .line 566
-    .line 567
-    invoke-virtual {v1}, Lp72;->Q()Ljava/lang/String;
+    const/4 v11, 0x7
 
+    .line 566
+    invoke-direct {v9, v11}, Lmg6;-><init>(B)V
+
+    .line 567
     .line 568
     .line 569
+    invoke-virtual {v8, v9}, Ld11;->a(Lhl2;)V
+
     .line 570
-    move-result-object v3
-
     .line 571
-    sget-object v4, Lyh5;->a:Ljava/util/Set;
-
     .line 572
-    .line 573
-    invoke-static {v3, v3}, Lv66;->q(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v8, v7}, Ld11;->a(Lhl2;)V
 
+    .line 573
     .line 574
     .line 575
-    .line 576
-    move-result-object v3
+    new-instance v7, Lg76;
 
+    .line 576
     .line 577
-    invoke-static {v3}, Lw96;->v0(Ljava/lang/CharSequence;)Z
+    invoke-direct {v7, v5, v2}, Lg76;-><init>(Lh76;B)V
 
     .line 578
     .line 579
     .line 580
-    move-result v4
+    const-class v8, Lju5;
 
     .line 581
-    if-nez v4, :cond_25
-
     .line 582
-    .line 583
-    move v4, v10
+    iget-object v9, p0, Lqt0;->r:Ltv1;
 
+    .line 583
     .line 584
-    :goto_9
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    invoke-virtual {v9, v8, v7}, Ltv1;->f(Ljava/lang/Class;Luv1;)Lue6;
 
     .line 585
     .line 586
     .line 587
-    move-result v5
+    new-instance v7, Lg76;
 
     .line 588
-    if-ge v4, v5, :cond_19
-
     .line 589
-    .line 590
-    invoke-virtual {v3, v4}, Ljava/lang/String;->charAt(I)C
+    invoke-direct {v7, v5, v4}, Lg76;-><init>(Lh76;B)V
 
+    .line 590
     .line 591
     .line 592
-    .line 593
-    move-result v5
+    const-class v8, Ls61;
 
+    .line 593
     .line 594
-    invoke-static {v5}, Lfm0;->E(C)Z
+    iget-object v9, p0, Lqt0;->r:Ltv1;
 
     .line 595
     .line 596
+    invoke-virtual {v9, v8, v7}, Ltv1;->f(Ljava/lang/Class;Luv1;)Lue6;
+
     .line 597
-    move-result v5
-
     .line 598
-    if-eqz v5, :cond_18
-
     .line 599
+    iput-object v5, p0, Lqt0;->i1:Lh76;
+
     .line 600
-    goto/16 :goto_10
-
     .line 601
-    .line 602
-    :cond_18
-    add-int/lit8 v4, v4, 0x1
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
+    .line 602
     .line 603
     .line 604
-    goto :goto_9
+    move-result-object v5
 
     .line 605
-    :cond_19
-    const-string v4, "://"
+    sget-object v7, Lw55;->a:[I
 
     .line 606
     .line 607
-    invoke-static {v3, v4, v3}, Lw96;->P0(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v5, v0, v7, v1, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
 
     .line 608
     .line 609
     .line 610
-    move-result-object v3
+    move-result-object v0
 
     .line 611
-    const/16 v4, 0x2f
+    const/16 v1, 0xf
 
     .line 612
     .line 613
-    invoke-static {v3, v4}, Lw96;->R0(Ljava/lang/String;C)Ljava/lang/String;
+    invoke-virtual {v0, v1}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     .line 614
     .line 615
     .line 616
-    move-result-object v3
+    move-result-object v5
 
     .line 617
-    const/16 v4, 0x3f
+    invoke-virtual {p0, v5}, Lqt0;->setHorizontalScrollbarThumbDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 618
     .line 619
-    invoke-static {v3, v4}, Lw96;->R0(Ljava/lang/String;C)Ljava/lang/String;
-
     .line 620
+    const/16 v5, 0x11
+
     .line 621
     .line 622
-    move-result-object v3
+    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     .line 623
-    const/16 v4, 0x23
-
     .line 624
     .line 625
-    invoke-static {v3, v4}, Lw96;->R0(Ljava/lang/String;C)Ljava/lang/String;
+    move-result-object v5
 
     .line 626
+    invoke-virtual {p0, v5}, Lqt0;->setHorizontalScrollbarTrackDrawable(Landroid/graphics/drawable/Drawable;)V
+
     .line 627
     .line 628
-    move-result-object v3
-
     .line 629
-    const-string v4, "+."
+    const/16 v5, 0x10
 
     .line 630
     .line 631
-    invoke-static {v3, v4}, Lw96;->E0(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     .line 632
     .line 633
     .line 634
-    move-result-object v3
+    move-result-object v5
 
     .line 635
-    const-string v4, "*."
+    invoke-virtual {p0, v5}, Lqt0;->setVerticalScrollbarThumbDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 636
     .line 637
-    invoke-static {v3, v4}, Lw96;->E0(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
     .line 638
+    const/16 v5, 0x12
+
     .line 639
     .line 640
-    move-result-object v3
+    invoke-virtual {v0, v5}, Landroid/content/res/TypedArray;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     .line 641
-    new-array v4, v14, [C
-
     .line 642
     .line 643
-    const/16 v5, 0x2e
+    move-result-object v5
 
     .line 644
-    .line 645
-    aput-char v5, v4, v10
+    invoke-virtual {p0, v5}, Lqt0;->setVerticalScrollbarTrackDrawable(Landroid/graphics/drawable/Drawable;)V
 
+    .line 645
     .line 646
     .line 647
-    invoke-static {v3, v4}, Lw96;->Y0(Ljava/lang/String;[C)Ljava/lang/String;
+    invoke-virtual {v0, v6, v4}, Landroid/content/res/TypedArray;->getInt(II)I
 
     .line 648
     .line 649
     .line 650
-    move-result-object v3
+    move-result v5
 
     .line 651
-    const-string v4, "["
+    invoke-virtual {p0, v5}, Lqt0;->setLnPanelPositionMode(I)V
 
     .line 652
     .line 653
-    invoke-static {v3, v4, v10}, Lda6;->f0(Ljava/lang/String;Ljava/lang/String;Z)Z
-
     .line 654
+    const/16 v5, 0xa
+
     .line 655
     .line 656
-    move-result v4
+    invoke-virtual {v0, v5, v1}, Landroid/content/res/TypedArray;->getInt(II)I
 
     .line 657
-    if-eqz v4, :cond_1a
-
     .line 658
     .line 659
-    const-string v4, "]"
+    move-result v1
 
     .line 660
-    .line 661
-    invoke-static {v3, v4, v10}, Lw96;->j0(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Z
+    invoke-virtual {p0, v1}, Lqt0;->setLnPanelPosition(I)V
 
+    .line 661
     .line 662
     .line 663
+    const/4 v1, 0x3
+
     .line 664
-    move-result v4
+    invoke-virtual {p0}, Lqt0;->getDividerWidth()F
 
     .line 665
-    if-eqz v4, :cond_1a
-
     .line 666
     .line 667
-    const/16 v4, 0x5b
+    move-result v5
 
     .line 668
-    .line 669
-    invoke-static {v3, v4, v3}, Lw96;->O0(Ljava/lang/String;CLjava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v1, v5}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
+    .line 669
     .line 670
     .line 671
+    move-result v1
+
     .line 672
-    move-result-object v3
+    invoke-virtual {p0, v1}, Lqt0;->setDividerWidth(F)V
 
     .line 673
-    const/16 v4, 0x5d
-
     .line 674
     .line 675
-    invoke-static {v3, v4}, Lw96;->R0(Ljava/lang/String;C)Ljava/lang/String;
+    iget v1, p0, Lqt0;->A:F
 
     .line 676
     .line 677
+    invoke-virtual {v0, v3, v1}, Landroid/content/res/TypedArray;->getDimension(IF)F
+
     .line 678
-    move-result-object v3
-
     .line 679
-    :cond_1a
-    move v4, v10
-
     .line 680
-    move v6, v4
+    move-result v1
 
     .line 681
-    :goto_a
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    iget v5, p0, Lqt0;->B:F
 
     .line 682
     .line 683
+    invoke-virtual {v0, v3, v5}, Landroid/content/res/TypedArray;->getDimension(IF)F
+
     .line 684
-    move-result v7
-
     .line 685
-    const/16 v11, 0x3a
-
     .line 686
+    move-result v3
+
     .line 687
-    if-ge v4, v7, :cond_1c
+    invoke-virtual {p0, v1, v3}, Lqt0;->k0(FF)V
 
     .line 688
     .line 689
-    invoke-virtual {v3, v4}, Ljava/lang/String;->charAt(I)C
-
     .line 690
+    const/16 v1, 0xc
+
     .line 691
     .line 692
-    move-result v7
+    invoke-virtual {v0, v1, v2}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     .line 693
-    if-ne v7, v11, :cond_1b
-
     .line 694
     .line 695
-    add-int/lit8 v6, v6, 0x1
+    move-result v1
 
     .line 696
-    .line 697
-    :cond_1b
-    add-int/lit8 v4, v4, 0x1
+    invoke-virtual {p0, v1}, Lqt0;->setPinLineNumber(Z)V
 
+    .line 697
     .line 698
     .line 699
-    goto :goto_a
+    const/4 v1, 0x5
 
     .line 700
-    :cond_1c
-    if-ne v6, v14, :cond_1f
+    invoke-virtual {v0, v1, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     .line 701
     .line 702
-    invoke-static {v3, v11, v3}, Lw96;->O0(Ljava/lang/String;CLjava/lang/String;)Ljava/lang/String;
-
     .line 703
+    move-result v1
+
     .line 704
+    invoke-virtual {p0, v1}, Lqt0;->setHighlightCurrentBlock(Z)V
+
     .line 705
-    move-result-object v4
-
     .line 706
-    move v6, v10
-
     .line 707
-    :goto_b
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
+    const/4 v1, 0x6
 
     .line 708
+    invoke-virtual {v0, v1, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
     .line 709
     .line 710
-    move-result v7
-
     .line 711
-    if-ge v6, v7, :cond_1e
+    move-result v1
 
     .line 712
-    .line 713
-    invoke-virtual {v4, v6}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {p0, v1}, Lqt0;->setHighlightCurrentLine(Z)V
 
+    .line 713
     .line 714
     .line 715
+    invoke-virtual {v0, p1, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
     .line 716
-    move-result v7
-
     .line 717
-    invoke-static {v7}, Ljava/lang/Character;->isDigit(C)Z
-
     .line 718
+    move-result p1
+
     .line 719
+    invoke-virtual {p0, p1}, Lqt0;->setHighlightBracketPair(Z)V
+
     .line 720
-    move-result v7
-
     .line 721
-    if-nez v7, :cond_1d
-
     .line 722
-    .line 723
-    goto :goto_c
+    const/16 p1, 0x8
 
+    .line 723
     .line 724
-    :cond_1d
-    add-int/lit8 v6, v6, 0x1
+    invoke-virtual {v0, p1, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     .line 725
     .line 726
-    goto :goto_b
-
     .line 727
-    :cond_1e
-    invoke-static {v3, v11}, Lw96;->R0(Ljava/lang/String;C)Ljava/lang/String;
+    move-result p1
 
     .line 728
+    invoke-virtual {p0, p1}, Lqt0;->setLigatureEnabled(Z)V
+
     .line 729
     .line 730
-    move-result-object v3
-
     .line 731
-    :cond_1f
-    :goto_c
-    new-array v4, v13, [C
+    iget-boolean p1, p0, Lqt0;->c0:Z
 
     .line 732
     .line 733
-    fill-array-data v4, :array_0
+    invoke-virtual {v0, v10, p1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     .line 734
     .line 735
     .line 736
-    invoke-static {v3, v4}, Lw96;->W0(Ljava/lang/String;[C)Ljava/lang/String;
+    move-result p1
 
     .line 737
+    invoke-virtual {p0, p1}, Lqt0;->setLineNumberEnabled(Z)V
+
     .line 738
     .line 739
-    move-result-object v3
-
     .line 740
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    iget-object p1, p0, Lqt0;->J0:Lpq1;
 
     .line 741
     .line 742
+    invoke-virtual {v0, v2, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
     .line 743
-    move-result v4
-
     .line 744
-    if-lt v4, v8, :cond_25
-
     .line 745
+    move-result v1
+
     .line 746
-    move v4, v10
+    iput-boolean v1, p1, Lpq1;->L:Z
 
     .line 747
-    :goto_d
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
     .line 748
+    iget-object v3, p1, Lpq1;->H:Ltv1;
+
     .line 749
     .line 750
-    move-result v6
+    invoke-virtual {v3, v1}, Ltv1;->d(Z)V
 
     .line 751
-    if-ge v4, v6, :cond_21
-
     .line 752
     .line 753
-    invoke-virtual {v3, v4}, Ljava/lang/String;->charAt(I)C
+    if-nez v1, :cond_2
 
     .line 754
     .line 755
+    invoke-virtual {p1}, Lpq1;->e()V
+
     .line 756
-    move-result v6
-
     .line 757
-    invoke-static {v6}, Lfm0;->E(C)Z
-
     .line 758
+    invoke-virtual {p1}, Lpq1;->f()V
+
     .line 759
     .line 760
-    move-result v6
-
     .line 761
-    if-eqz v6, :cond_20
+    :cond_2
+    iget-object p1, p0, Lqt0;->W0:Lri1;
 
     .line 762
     .line 763
-    goto :goto_10
+    const/16 v1, 0x13
 
     .line 764
-    :cond_20
-    add-int/lit8 v4, v4, 0x1
-
     .line 765
+    invoke-virtual {v0, v1, v4}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
     .line 766
-    goto :goto_d
-
     .line 767
-    :cond_21
-    invoke-static {v3, v11}, Lw96;->k0(Ljava/lang/CharSequence;C)Z
-
     .line 768
-    .line 769
-    .line 770
-    move-result v4
+    move-result v1
 
+    .line 769
+    iput-boolean v1, p1, Lri1;->l:Z
+
+    .line 770
     .line 771
-    if-eqz v4, :cond_22
+    const/16 p1, 0xd
 
     .line 772
     .line 773
-    goto :goto_13
+    iget-boolean v1, p0, Lqt0;->s0:Z
 
     .line 774
-    :cond_22
-    move v4, v10
-
     .line 775
-    :goto_e
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    invoke-virtual {v0, p1, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
 
     .line 776
     .line 777
     .line 778
-    move-result v6
+    move-result p1
 
     .line 779
-    if-ge v4, v6, :cond_27
+    invoke-virtual {p0, p1}, Lqt0;->setRenderFunctionCharacters(Z)V
 
     .line 780
     .line 781
-    invoke-virtual {v3, v4}, Ljava/lang/String;->charAt(I)C
-
     .line 782
+    const/16 p1, 0xe
+
     .line 783
     .line 784
-    move-result v6
+    iget-boolean v1, p0, Lqt0;->M:Z
 
     .line 785
-    invoke-static {v6}, Ljava/lang/Character;->isDigit(C)Z
-
     .line 786
+    invoke-virtual {v0, p1, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+
     .line 787
     .line 788
-    move-result v7
-
     .line 789
-    if-nez v7, :cond_26
+    move-result p1
 
     .line 790
-    .line 791
-    if-ne v6, v5, :cond_23
+    invoke-virtual {p0, p1}, Lqt0;->setScalable(Z)V
 
+    .line 791
     .line 792
     .line 793
-    goto :goto_11
+    const/16 p1, 0x16
 
     .line 794
-    :cond_23
-    move v4, v10
-
     .line 795
-    :goto_f
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
+    invoke-virtual {p0}, Lqt0;->getTextSizePx()F
 
     .line 796
     .line 797
     .line 798
-    move-result v5
+    move-result v1
 
     .line 799
-    if-ge v4, v5, :cond_25
+    invoke-virtual {v0, p1, v1}, Landroid/content/res/TypedArray;->getDimension(IF)F
 
     .line 800
     .line 801
-    invoke-virtual {v3, v4}, Ljava/lang/String;->charAt(I)C
-
     .line 802
+    move-result p1
+
     .line 803
+    invoke-virtual {p0, p1}, Lqt0;->setTextSizePx(F)V
+
     .line 804
-    move-result v5
-
     .line 805
-    invoke-static {v5}, Ljava/lang/Character;->isLetter(C)Z
-
     .line 806
+    invoke-virtual {p0}, Lqt0;->getCursorBlink()Lcc1;
+
     .line 807
     .line 808
-    move-result v5
-
     .line 809
-    if-eqz v5, :cond_24
+    move-result-object p1
 
     .line 810
-    .line 811
-    goto :goto_13
+    iget p1, p1, Lcc1;->n:I
 
+    .line 811
     .line 812
-    :cond_24
-    add-int/lit8 v4, v4, 0x1
+    invoke-virtual {v0, v4, p1}, Landroid/content/res/TypedArray;->getInt(II)I
 
     .line 813
     .line 814
-    goto :goto_f
-
     .line 815
-    :cond_25
-    :goto_10
-    move-object v3, v15
+    move-result p1
 
     .line 816
-    goto :goto_13
+    invoke-virtual {p0, p1}, Lqt0;->setCursorBlinkPeriod(I)V
 
     .line 817
-    :cond_26
-    :goto_11
-    add-int/lit8 v4, v4, 0x1
-
     .line 818
     .line 819
-    goto :goto_e
+    const/16 p1, 0x14
 
     .line 820
-    :cond_27
-    move v4, v10
-
     .line 821
-    move v6, v4
+    invoke-virtual {p0}, Lqt0;->getTabWidth()I
 
     .line 822
-    :goto_12
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
     .line 823
     .line 824
+    move-result v1
+
     .line 825
-    move-result v7
+    invoke-virtual {v0, p1, v1}, Landroid/content/res/TypedArray;->getInt(II)I
 
     .line 826
-    if-ge v4, v7, :cond_29
-
     .line 827
     .line 828
-    invoke-virtual {v3, v4}, Ljava/lang/String;->charAt(I)C
+    move-result p1
 
     .line 829
+    invoke-virtual {p0, p1}, Lqt0;->setTabWidth(I)V
+
     .line 830
     .line 831
-    move-result v7
-
     .line 832
-    if-ne v7, v5, :cond_28
+    const/16 p1, 0x18
 
     .line 833
     .line 834
-    add-int/lit8 v6, v6, 0x1
+    invoke-virtual {v0, p1, v2}, Landroid/content/res/TypedArray;->getInt(II)I
 
     .line 835
     .line 836
-    :cond_28
-    add-int/lit8 v4, v4, 0x1
-
     .line 837
+    move-result p1
+
     .line 838
-    goto :goto_12
+    if-eqz p1, :cond_4
 
     .line 839
-    :cond_29
-    if-ne v6, v8, :cond_25
-
     .line 840
-    .line 841
-    :goto_13
-    if-nez v3, :cond_2a
+    if-le p1, v4, :cond_3
 
+    .line 841
     .line 842
+    move v2, v4
+
     .line 843
-    invoke-virtual {v2, v10}, Lzh5;->k(Z)V
+    :cond_3
+    invoke-virtual {p0, v4, v2}, Lqt0;->p0(ZZ)V
 
     .line 844
     .line 845
     .line 846
-    iget-object v0, v2, Lzh5;->j:Llk4;
+    :cond_4
+    const/16 p1, 0x15
 
     .line 847
     .line 848
-    invoke-virtual {v0, v15}, Llk4;->setValue(Ljava/lang/Object;)V
+    invoke-virtual {v0, p1}, Landroid/content/res/TypedArray;->getString(I)Ljava/lang/String;
 
     .line 849
     .line 850
     .line 851
-    invoke-virtual {v1}, Lp72;->Q()Ljava/lang/String;
+    move-result-object p1
 
     .line 852
+    invoke-virtual {p0, p1}, Lqt0;->setText(Ljava/lang/CharSequence;)V
+
     .line 853
     .line 854
-    move-result-object v0
-
     .line 855
-    invoke-static {v0}, Lw96;->v0(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
     .line 856
     .line 857
     .line 858
+    return-void
+.end method
+
+
+# virtual methods
+.method public final A()V
+    .locals 21
+
+    .line 1
+    move-object/from16 v0, p0
+
+    .line 2
+    .line 3
+    iget-object v1, v0, Lqt0;->A0:Lwb1;
+
+    .line 4
+    .line 5
+    invoke-virtual {v1}, Lwb1;->a()Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v2
+
+    .line 9
+    if-eqz v2, :cond_0
+
+    .line 10
+    .line 11
+    iget-object v0, v0, Lqt0;->B0:Ln61;
+
+    .line 12
+    .line 13
+    iget-object v2, v1, Lwb1;->c:Lxm0;
+
+    .line 14
+    .line 15
+    iget v3, v2, Lxm0;->b:I
+
+    .line 16
+    .line 17
+    iget v2, v2, Lxm0;->c:I
+
+    .line 18
+    .line 19
+    iget-object v1, v1, Lwb1;->d:Lxm0;
+
+    .line 20
+    .line 21
+    iget v4, v1, Lxm0;->b:I
+
+    .line 22
+    .line 23
+    iget v1, v1, Lxm0;->c:I
+
+    .line 24
+    .line 25
+    invoke-virtual {v0, v3, v2, v4, v1}, Ln61;->h(IIII)V
+
+    .line 26
+    .line 27
+    .line 28
+    return-void
+
+    .line 29
+    :cond_0
+    iget-object v2, v1, Lwb1;->c:Lxm0;
+
+    .line 30
+    .line 31
+    iget v3, v2, Lxm0;->c:I
+
+    .line 32
+    .line 33
+    iget v2, v2, Lxm0;->b:I
+
+    .line 34
+    .line 35
+    iget-object v4, v0, Lqt0;->W0:Lri1;
+
+    .line 36
+    .line 37
+    iget-boolean v5, v4, Lri1;->k:Z
+
+    .line 38
+    .line 39
+    const/16 v6, 0x9
+
+    .line 40
+    .line 41
+    const/4 v7, 0x0
+
+    .line 42
+    const/4 v8, 0x1
+
+    .line 43
+    if-nez v5, :cond_1
+
+    .line 44
+    .line 45
+    goto :goto_3
+
+    .line 46
+    :cond_1
+    iget-object v5, v0, Lqt0;->B0:Ln61;
+
+    .line 47
+    .line 48
+    invoke-virtual {v5, v2}, Ln61;->o(I)Le71;
+
+    .line 49
+    .line 50
+    .line 51
+    move-result-object v5
+
+    .line 52
+    add-int/lit8 v9, v3, -0x1
+
+    .line 53
+    .line 54
+    :goto_0
+    const/16 v10, 0x20
+
+    .line 55
+    .line 56
+    if-ltz v9, :cond_3
+
+    .line 57
+    .line 58
+    invoke-virtual {v5, v9}, Le71;->charAt(I)C
+
+    .line 59
+    .line 60
+    .line 61
+    move-result v11
+
+    .line 62
+    if-eq v11, v10, :cond_2
+
+    .line 63
+    .line 64
+    if-eq v11, v6, :cond_2
+
+    .line 65
+    .line 66
+    goto :goto_3
+
+    .line 67
+    :cond_2
+    add-int/lit8 v9, v9, -0x1
+
+    .line 68
+    .line 69
+    goto :goto_0
+
+    .line 70
+    :cond_3
+    iget-object v9, v0, Lqt0;->B0:Ln61;
+
+    .line 71
+    .line 72
+    invoke-virtual {v9, v2}, Ln61;->o(I)Le71;
+
+    .line 73
+    .line 74
+    .line 75
+    move-result-object v9
+
+    .line 76
+    iget v9, v9, Le71;->l:I
+
+    .line 77
+    .line 78
+    move v11, v3
+
+    .line 79
+    :goto_1
+    if-ge v11, v9, :cond_5
+
+    .line 80
+    .line 81
+    invoke-virtual {v5, v11}, Le71;->charAt(I)C
+
+    .line 82
+    .line 83
+    .line 84
+    move-result v12
+
+    .line 85
+    if-eq v12, v10, :cond_4
+
+    .line 86
+    .line 87
+    if-eq v12, v6, :cond_4
+
+    .line 88
+    .line 89
+    move v5, v7
+
+    .line 90
+    goto :goto_2
+
+    .line 91
+    :cond_4
+    add-int/lit8 v11, v11, 0x1
+
+    .line 92
+    .line 93
+    goto :goto_1
+
+    .line 94
+    :cond_5
+    move v5, v8
+
+    .line 95
+    :goto_2
+    iget-boolean v4, v4, Lri1;->k:Z
+
+    .line 96
+    .line 97
+    if-eqz v4, :cond_7
+
+    .line 98
+    .line 99
+    if-eqz v5, :cond_7
+
+    .line 100
+    .line 101
+    iget-object v0, v0, Lqt0;->B0:Ln61;
+
+    .line 102
+    .line 103
+    if-nez v2, :cond_6
+
+    .line 104
+    .line 105
+    invoke-virtual {v0, v2, v7, v2, v3}, Ln61;->h(IIII)V
+
+    .line 106
+    .line 107
+    .line 108
+    return-void
+
+    .line 109
+    :cond_6
+    add-int/lit8 v1, v2, -0x1
+
+    .line 110
+    .line 111
+    invoke-virtual {v0, v1}, Ln61;->o(I)Le71;
+
+    .line 112
+    .line 113
+    .line 114
+    move-result-object v3
+
+    .line 115
+    iget v3, v3, Le71;->l:I
+
+    .line 116
+    .line 117
+    invoke-virtual {v0, v1, v3, v2, v9}, Ln61;->h(IIII)V
+
+    .line 118
+    .line 119
+    .line 120
+    return-void
+
+    .line 121
+    :cond_7
+    :goto_3
+    iget-object v2, v0, Lqt0;->B0:Ln61;
+
+    .line 122
+    .line 123
+    iget-object v4, v1, Lwb1;->c:Lxm0;
+
+    .line 124
+    .line 125
+    iget v4, v4, Lxm0;->b:I
+
+    .line 126
+    .line 127
+    invoke-virtual {v2, v4}, Ln61;->o(I)Le71;
+
+    .line 128
+    .line 129
+    .line 130
+    move-result-object v2
+
+    .line 131
+    if-gt v3, v8, :cond_8
+
+    .line 132
+    .line 133
+    move v3, v7
+
+    .line 134
+    move/from16 v16, v8
+
+    .line 135
+    .line 136
+    goto/16 :goto_11
+
+    .line 137
+    .line 138
+    :cond_8
+    move v4, v3
+
+    .line 139
+    move v5, v7
+
+    .line 140
+    move v9, v5
+
+    .line 141
+    move v10, v9
+
+    .line 142
+    :goto_4
+    invoke-static {v2, v4}, Ljava/lang/Character;->codePointBefore(Ljava/lang/CharSequence;I)I
+
+    .line 143
+    .line 144
+    .line 145
+    move-result v11
+
+    .line 146
+    invoke-static {v11}, Ljava/lang/Character;->charCount(I)I
+
+    .line 147
+    .line 148
+    .line 149
+    move-result v12
+
+    .line 150
+    sub-int/2addr v4, v12
+
+    .line 151
+    move/from16 v16, v8
+
+    .line 152
+    .line 153
+    const v8, 0x1f91d
+
+    .line 154
+    .line 155
+    .line 156
+    const v7, 0x1f1ff
+
+    .line 157
+    .line 158
+    .line 159
+    const v12, 0x1f1e6
+
+    .line 160
+    .line 161
+    .line 162
+    const/16 v13, 0x39
+
+    .line 163
+    .line 164
+    const/16 v17, 0x4
+
+    .line 165
+    .line 166
+    const/16 v14, 0x3b
+
+    .line 167
+    .line 168
+    const/16 v18, 0x2
+
+    .line 169
+    .line 170
+    const/16 v15, 0x24
+
+    .line 171
+    .line 172
+    const/16 v19, 0x7
+
+    .line 173
+    .line 174
+    const/16 v6, 0xd
+
+    .line 175
+    .line 176
+    packed-switch v5, :pswitch_data_0
+
+    .line 177
+    .line 178
+    .line 179
+    const-string v0, "state "
+
+    .line 180
+    .line 181
+    const-string v1, " is unknown"
+
+    .line 182
+    .line 183
+    invoke-static {v5, v0, v1}, Lpb1;->m(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 184
+    .line 185
+    .line 186
+    move-result-object v0
+
+    .line 187
+    invoke-static {v0}, Ljv1;->h(Ljava/lang/String;)V
+
+    .line 188
+    .line 189
+    .line 190
+    return-void
+
+    .line 191
+    :pswitch_0
+    const v7, 0xe0020
+
+    .line 192
+    .line 193
+    .line 194
+    if-gt v7, v11, :cond_9
+
+    .line 195
+    .line 196
+    const v7, 0xe007e
+
+    .line 197
+    .line 198
+    .line 199
+    if-gt v11, v7, :cond_9
+
+    .line 200
+    .line 201
+    add-int/lit8 v9, v9, 0x2
+
+    .line 202
+    .line 203
+    goto/16 :goto_f
+
+    .line 204
+    .line 205
+    :cond_9
+    invoke-static {v11, v13}, Landroid/icu/lang/UCharacter;->hasBinaryProperty(II)Z
+
+    .line 206
+    .line 207
+    .line 208
+    move-result v5
+
+    .line 209
+    if-eqz v5, :cond_b
+
+    .line 210
+    .line 211
+    invoke-static {v11}, Ljava/lang/Character;->charCount(I)I
+
+    .line 212
+    .line 213
+    .line 214
+    move-result v5
+
+    .line 215
+    :goto_5
+    add-int/2addr v9, v5
+
+    .line 216
+    :cond_a
+    :goto_6
+    move v5, v6
+
+    .line 217
+    goto/16 :goto_f
+
+    .line 218
+    .line 219
+    :cond_b
+    move v5, v6
+
+    .line 220
+    move/from16 v9, v18
+
+    .line 221
+    .line 222
+    goto/16 :goto_f
+
+    .line 223
+    .line 224
+    :pswitch_1
+    if-gt v12, v11, :cond_a
+
+    .line 225
+    .line 226
+    if-gt v11, v7, :cond_a
+
+    .line 227
+    .line 228
+    add-int/lit8 v9, v9, -0x2
+
+    .line 229
+    .line 230
+    const/16 v5, 0xa
+
+    .line 231
+    .line 232
+    goto/16 :goto_f
+
+    .line 233
+    .line 234
+    :pswitch_2
+    if-gt v12, v11, :cond_a
+
+    .line 235
+    .line 236
+    if-gt v11, v7, :cond_a
+
+    .line 237
+    .line 238
+    add-int/lit8 v9, v9, 0x2
+
+    .line 239
+    .line 240
+    const/16 v5, 0xb
+
+    .line 241
+    .line 242
+    goto/16 :goto_f
+
+    .line 243
+    .line 244
+    :pswitch_3
+    invoke-static {v11, v13}, Landroid/icu/lang/UCharacter;->hasBinaryProperty(II)Z
+
+    .line 245
+    .line 246
+    .line 247
+    move-result v5
+
+    .line 248
+    if-eqz v5, :cond_a
+
+    .line 249
+    .line 250
+    add-int/lit8 v10, v10, 0x1
+
+    .line 251
+    .line 252
+    invoke-static {v11}, Ljava/lang/Character;->charCount(I)I
+
+    .line 253
+    .line 254
+    .line 255
+    move-result v5
+
+    .line 256
+    add-int/2addr v5, v10
+
+    .line 257
+    add-int/2addr v9, v5
+
+    .line 258
+    move/from16 v5, v19
+
+    .line 259
+    .line 260
+    const/4 v10, 0x0
+
+    .line 261
+    goto/16 :goto_f
+
+    .line 262
+    .line 263
+    :pswitch_4
+    invoke-static {v11, v13}, Landroid/icu/lang/UCharacter;->hasBinaryProperty(II)Z
+
+    .line 264
+    .line 265
+    .line 266
+    move-result v5
+
+    .line 267
+    if-eqz v5, :cond_c
+
+    .line 268
+    .line 269
+    invoke-static {v11}, Ljava/lang/Character;->charCount(I)I
+
+    .line 270
+    .line 271
+    .line 272
+    move-result v5
+
+    .line 273
+    add-int/lit8 v5, v5, 0x1
+
+    .line 274
+    .line 275
+    add-int/2addr v9, v5
+
+    .line 276
+    invoke-static {v11, v14}, Landroid/icu/lang/UCharacter;->hasBinaryProperty(II)Z
+
+    .line 277
+    .line 278
+    .line 279
+    move-result v5
+
+    .line 280
+    if-eqz v5, :cond_d
+
+    .line 281
+    .line 282
+    goto/16 :goto_e
+
+    .line 283
+    .line 284
+    :cond_c
+    invoke-static {v11, v15}, Landroid/icu/lang/UCharacter;->hasBinaryProperty(II)Z
+
+    .line 285
+    .line 286
+    .line 287
+    move-result v5
+
+    .line 288
+    if-eqz v5, :cond_a
+
+    .line 289
+    .line 290
+    invoke-static {v11}, Ljava/lang/Character;->charCount(I)I
+
+    .line 291
+    .line 292
+    .line 293
+    move-result v10
+
+    .line 294
+    const/16 v5, 0x9
+
+    .line 295
+    .line 296
+    goto/16 :goto_f
+
+    .line 297
+    .line 298
+    :pswitch_5
+    const/16 v5, 0x200d
+
+    .line 299
+    .line 300
+    if-ne v11, v5, :cond_a
+
+    .line 301
+    .line 302
+    const/16 v5, 0x8
+
+    .line 303
+    .line 304
+    goto/16 :goto_f
+
+    .line 305
+    .line 306
+    :pswitch_6
+    invoke-static {v11, v13}, Landroid/icu/lang/UCharacter;->hasBinaryProperty(II)Z
+
+    .line 307
+    .line 308
+    .line 309
+    move-result v5
+
+    .line 310
+    if-eqz v5, :cond_e
+
+    .line 311
+    .line 312
+    invoke-static {v11}, Ljava/lang/Character;->charCount(I)I
+
+    .line 313
+    .line 314
+    .line 315
+    move-result v5
+
+    .line 316
+    :goto_7
+    add-int/2addr v9, v5
+
+    .line 317
+    :cond_d
+    :goto_8
+    move/from16 v5, v19
+
+    .line 318
+    .line 319
+    goto/16 :goto_f
+
+    .line 320
+    .line 321
+    :cond_e
+    invoke-static {v11, v15}, Landroid/icu/lang/UCharacter;->hasBinaryProperty(II)Z
+
+    .line 322
+    .line 323
+    .line 324
+    move-result v5
+
+    .line 325
+    if-nez v5, :cond_a
+
+    .line 326
+    .line 327
+    invoke-static {v11}, Landroid/icu/lang/UCharacter;->getCombiningClass(I)I
+
+    .line 328
+    .line 329
+    .line 330
+    move-result v5
+
+    .line 331
+    if-nez v5, :cond_a
+
+    .line 332
+    .line 333
+    invoke-static {v11}, Ljava/lang/Character;->charCount(I)I
+
+    .line 334
+    .line 335
+    .line 336
+    move-result v5
+
+    .line 337
+    goto :goto_5
+
+    .line 338
+    :pswitch_7
+    if-eq v11, v8, :cond_10
+
+    .line 339
+    .line 340
+    const v5, 0x1f93c
+
+    .line 341
+    .line 342
+    .line 343
+    if-ne v11, v5, :cond_f
+
+    .line 344
+    .line 345
+    goto :goto_9
+
+    .line 346
+    :cond_f
+    const/16 v5, 0x3c
+
+    .line 347
+    .line 348
+    invoke-static {v11, v5}, Landroid/icu/lang/UCharacter;->hasBinaryProperty(II)Z
+
+    .line 349
+    .line 350
+    .line 351
+    move-result v5
+
+    .line 352
+    goto :goto_a
+
+    .line 353
+    :cond_10
+    :goto_9
+    move/from16 v5, v16
+
+    .line 354
+    .line 355
+    :goto_a
+    if-eqz v5, :cond_a
+
+    .line 356
+    .line 357
+    invoke-static {v11}, Ljava/lang/Character;->charCount(I)I
+
+    .line 358
+    .line 359
+    .line 360
+    move-result v5
+
+    .line 361
+    :goto_b
+    add-int/2addr v5, v10
+
+    .line 362
+    goto/16 :goto_5
+
+    .line 363
+    .line 364
+    :pswitch_8
+    invoke-static {v11, v15}, Landroid/icu/lang/UCharacter;->hasBinaryProperty(II)Z
+
+    .line 365
+    .line 366
+    .line 367
+    move-result v5
+
+    .line 368
+    if-eqz v5, :cond_11
+
+    .line 369
+    .line 370
+    invoke-static {v11}, Ljava/lang/Character;->charCount(I)I
+
+    .line 371
+    .line 372
+    .line 373
+    move-result v10
+
+    .line 374
+    const/4 v5, 0x5
+
+    .line 375
+    goto/16 :goto_f
+
+    .line 376
+    .line 377
+    :cond_11
+    if-eq v11, v8, :cond_13
+
+    .line 378
+    .line 379
+    const v5, 0x1f93c
+
+    .line 380
+    .line 381
+    .line 382
+    if-ne v11, v5, :cond_12
+
+    .line 383
+    .line 384
+    goto :goto_c
+
+    .line 385
+    :cond_12
+    const/16 v5, 0x3c
+
+    .line 386
+    .line 387
+    invoke-static {v11, v5}, Landroid/icu/lang/UCharacter;->hasBinaryProperty(II)Z
+
+    .line 388
+    .line 389
+    .line 390
+    move-result v5
+
+    .line 391
+    goto :goto_d
+
+    .line 392
+    :cond_13
+    :goto_c
+    move/from16 v5, v16
+
+    .line 393
+    .line 394
+    :goto_d
+    if-eqz v5, :cond_a
+
+    .line 395
+    .line 396
+    invoke-static {v11}, Ljava/lang/Character;->charCount(I)I
+
+    .line 397
+    .line 398
+    .line 399
+    move-result v5
+
+    .line 400
+    goto :goto_7
+
+    .line 401
+    :pswitch_9
+    const/16 v5, 0x30
+
+    .line 402
+    .line 403
+    if-gt v5, v11, :cond_14
+
+    .line 404
+    .line 405
+    if-le v11, v13, :cond_15
+
+    .line 406
+    .line 407
+    :cond_14
+    const/16 v5, 0x23
+
+    .line 408
+    .line 409
+    if-eq v11, v5, :cond_15
+
+    .line 410
+    .line 411
+    const/16 v5, 0x2a
+
+    .line 412
+    .line 413
+    if-ne v11, v5, :cond_a
+
+    .line 414
+    .line 415
+    :cond_15
+    invoke-static {v11}, Ljava/lang/Character;->charCount(I)I
+
+    .line 416
+    .line 417
+    .line 418
+    move-result v5
+
+    .line 419
+    goto :goto_b
+
+    .line 420
+    :pswitch_a
+    invoke-static {v11, v15}, Landroid/icu/lang/UCharacter;->hasBinaryProperty(II)Z
+
+    .line 421
+    .line 422
+    .line 423
+    move-result v5
+
+    .line 424
+    if-eqz v5, :cond_16
+
+    .line 425
+    .line 426
+    invoke-static {v11}, Ljava/lang/Character;->charCount(I)I
+
+    .line 427
+    .line 428
+    .line 429
+    move-result v10
+
+    .line 430
+    const/4 v5, 0x3
+
+    .line 431
+    goto :goto_f
+
+    .line 432
+    :cond_16
+    const/16 v5, 0x30
+
+    .line 433
+    .line 434
+    if-gt v5, v11, :cond_17
+
+    .line 435
+    .line 436
+    if-le v11, v13, :cond_18
+
+    .line 437
+    .line 438
+    :cond_17
+    const/16 v5, 0x23
+
+    .line 439
+    .line 440
+    if-eq v11, v5, :cond_18
+
+    .line 441
+    .line 442
+    const/16 v5, 0x2a
+
+    .line 443
+    .line 444
+    if-ne v11, v5, :cond_a
+
+    .line 445
+    .line 446
+    :cond_18
+    invoke-static {v11}, Ljava/lang/Character;->charCount(I)I
+
+    .line 447
+    .line 448
+    .line 449
+    move-result v5
+
+    .line 450
+    goto/16 :goto_5
+
+    .line 451
+    .line 452
+    :pswitch_b
+    if-ne v11, v6, :cond_a
+
+    .line 453
+    .line 454
+    add-int/lit8 v9, v9, 0x1
+
+    .line 455
+    .line 456
+    goto/16 :goto_6
+
+    .line 457
+    .line 458
+    :pswitch_c
+    invoke-static {v11}, Ljava/lang/Character;->charCount(I)I
+
+    .line 459
+    .line 460
+    .line 461
+    move-result v9
+
+    .line 462
+    const/16 v5, 0xa
+
+    .line 463
+    .line 464
+    if-ne v11, v5, :cond_19
+
+    .line 465
+    .line 466
+    move/from16 v5, v16
+
+    .line 467
+    .line 468
+    goto :goto_f
+
+    .line 469
+    :cond_19
+    invoke-static {v11, v15}, Landroid/icu/lang/UCharacter;->hasBinaryProperty(II)Z
+
+    .line 470
+    .line 471
+    .line 472
+    move-result v8
+
+    .line 473
+    if-eqz v8, :cond_1a
+
+    .line 474
+    .line 475
+    const/4 v5, 0x6
+
+    .line 476
+    goto :goto_f
+
+    .line 477
+    :cond_1a
+    if-gt v12, v11, :cond_1b
+
+    .line 478
+    .line 479
+    if-gt v11, v7, :cond_1b
+
+    .line 480
+    .line 481
+    goto :goto_f
+
+    .line 482
+    :cond_1b
+    invoke-static {v11, v14}, Landroid/icu/lang/UCharacter;->hasBinaryProperty(II)Z
+
+    .line 483
+    .line 484
+    .line 485
+    move-result v5
+
+    .line 486
+    if-eqz v5, :cond_1c
+
+    .line 487
+    .line 488
+    :goto_e
+    move/from16 v5, v17
+
+    .line 489
+    .line 490
+    goto :goto_f
+
+    .line 491
+    :cond_1c
+    const/16 v5, 0x20e3
+
+    .line 492
+    .line 493
+    if-ne v11, v5, :cond_1d
+
+    .line 494
+    .line 495
+    move/from16 v5, v18
+
+    .line 496
+    .line 497
+    goto :goto_f
+
+    .line 498
+    :cond_1d
+    invoke-static {v11, v13}, Landroid/icu/lang/UCharacter;->hasBinaryProperty(II)Z
+
+    .line 499
+    .line 500
+    .line 501
+    move-result v5
+
+    .line 502
+    if-eqz v5, :cond_1e
+
+    .line 503
+    .line 504
+    goto/16 :goto_8
+
+    .line 505
+    .line 506
+    :cond_1e
+    const v5, 0xe007f
+
+    .line 507
+    .line 508
+    .line 509
+    if-ne v11, v5, :cond_a
+
+    .line 510
+    .line 511
+    const/16 v5, 0xc
+
+    .line 512
+    .line 513
+    :goto_f
+    if-lez v4, :cond_20
+
+    .line 514
+    .line 515
+    if-ne v5, v6, :cond_1f
+
+    .line 516
+    .line 517
+    goto :goto_10
+
+    .line 518
+    :cond_1f
+    move/from16 v8, v16
+
+    .line 519
+    .line 520
+    const/16 v6, 0x9
+
+    .line 521
+    .line 522
+    const/4 v7, 0x0
+
+    .line 523
+    goto/16 :goto_4
+
+    .line 524
+    .line 525
+    :cond_20
+    :goto_10
+    sub-int/2addr v3, v9
+
+    .line 526
+    :goto_11
+    iget-object v2, v1, Lwb1;->c:Lxm0;
+
+    .line 527
+    .line 528
+    iget v4, v2, Lxm0;->c:I
+
+    .line 529
+    .line 530
+    if-le v3, v4, :cond_21
+
+    .line 531
+    .line 532
+    move/from16 v20, v4
+
+    .line 533
+    .line 534
+    move v4, v3
+
+    .line 535
+    move/from16 v3, v20
+
+    .line 536
+    .line 537
+    :cond_21
+    if-ne v3, v4, :cond_23
+
+    .line 538
+    .line 539
+    iget v2, v2, Lxm0;->b:I
+
+    .line 540
+    .line 541
+    if-lez v2, :cond_22
+
+    .line 542
+    .line 543
+    if-nez v3, :cond_22
+
+    .line 544
+    .line 545
+    iget-object v0, v0, Lqt0;->B0:Ln61;
+
+    .line 546
+    .line 547
+    add-int/lit8 v2, v2, -0x1
+
+    .line 548
+    .line 549
+    invoke-virtual {v0, v2}, Ln61;->o(I)Le71;
+
+    .line 550
+    .line 551
+    .line 552
+    move-result-object v3
+
+    .line 553
+    iget v3, v3, Le71;->l:I
+
+    .line 554
+    .line 555
+    iget-object v1, v1, Lwb1;->c:Lxm0;
+
+    .line 556
+    .line 557
+    iget v1, v1, Lxm0;->b:I
+
+    .line 558
+    .line 559
+    const/4 v4, 0x0
+
+    .line 560
+    invoke-virtual {v0, v2, v3, v1, v4}, Ln61;->h(IIII)V
+
+    .line 561
+    .line 562
+    .line 563
+    :cond_22
+    return-void
+
+    .line 564
+    :cond_23
+    iget-object v0, v0, Lqt0;->B0:Ln61;
+
+    .line 565
+    .line 566
+    iget v1, v2, Lxm0;->b:I
+
+    .line 567
+    .line 568
+    invoke-virtual {v0, v1, v3, v1, v4}, Ln61;->h(IIII)V
+
+    .line 569
+    .line 570
+    .line 571
+    return-void
+
+    .line 572
+    nop
+
+    .line 573
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final B(Ljava/lang/String;Z)V
+    .locals 8
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->getCursor()Lwb1;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, Lwb1;->a()Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v1
+
+    .line 9
+    if-nez v1, :cond_0
+
+    .line 10
+    .line 11
+    goto :goto_0
+
+    .line 12
+    :cond_0
+    iget-object v1, v0, Lwb1;->c:Lxm0;
+
+    .line 13
+    .line 14
+    invoke-virtual {v1}, Lxm0;->a()Lxm0;
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-object v1
+
+    .line 18
+    iget-object v2, v0, Lwb1;->d:Lxm0;
+
+    .line 19
+    .line 20
+    invoke-virtual {v2}, Lxm0;->a()Lxm0;
+
+    .line 21
+    .line 22
+    .line 23
+    move-result-object v2
+
+    .line 24
+    invoke-virtual {v2}, Lxm0;->a()Lxm0;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object v2
+
+    .line 28
+    invoke-virtual {p0}, Lqt0;->getText()Ln61;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object v3
+
+    .line 32
+    iget v4, v1, Lxm0;->b:I
+
+    .line 33
+    .line 34
+    iget v1, v1, Lxm0;->c:I
+
+    .line 35
+    .line 36
+    iget v5, v2, Lxm0;->b:I
+
+    .line 37
+    .line 38
+    iget v6, v2, Lxm0;->c:I
+
+    .line 39
+    .line 40
+    const/4 v7, 0x0
+
+    .line 41
+    invoke-virtual {v3, v7}, Ln61;->u(Z)V
+
+    .line 42
+    .line 43
+    .line 44
+    :try_start_0
+    invoke-virtual {v3, v4, v1, v5, v6}, Ln61;->B(IIII)Ln61;
+
+    .line 45
+    .line 46
+    .line 47
+    move-result-object v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 48
+    invoke-virtual {v3, v7}, Ln61;->F(Z)V
+
+    .line 49
+    .line 50
+    .line 51
+    iget v3, v2, Lxm0;->b:I
+
+    .line 52
+    .line 53
+    iget v4, v2, Lxm0;->c:I
+
+    .line 54
+    .line 55
+    invoke-virtual {p0, v3, v4}, Lqt0;->l0(II)V
+
+    .line 56
+    .line 57
+    .line 58
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    .line 59
+    .line 60
+    invoke-direct {v3, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 61
+    .line 62
+    .line 63
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 64
+    .line 65
+    .line 66
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 67
+    .line 68
+    .line 69
+    move-result-object p1
+
+    .line 70
+    invoke-virtual {p0, p1, v7}, Lqt0;->v(Ljava/lang/CharSequence;Z)V
+
+    .line 71
+    .line 72
+    .line 73
+    if-eqz p2, :cond_1
+
+    .line 74
+    .line 75
+    iget-object p1, v0, Lwb1;->d:Lxm0;
+
+    .line 76
+    .line 77
+    invoke-virtual {p1}, Lxm0;->a()Lxm0;
+
+    .line 78
+    .line 79
+    .line 80
+    move-result-object p1
+
+    .line 81
+    iget p2, v2, Lxm0;->b:I
+
+    .line 82
+    .line 83
+    iget v0, v2, Lxm0;->c:I
+
+    .line 84
+    .line 85
+    iget v1, p1, Lxm0;->b:I
+
+    .line 86
+    .line 87
+    iget p1, p1, Lxm0;->c:I
+
+    .line 88
+    .line 89
+    invoke-virtual {p0, p2, v0, v1, p1}, Lqt0;->n0(IIII)V
+
+    .line 90
+    .line 91
+    .line 92
+    :cond_1
+    :goto_0
+    return-void
+
+    .line 93
+    :catchall_0
+    move-exception p0
+
+    .line 94
+    invoke-virtual {v3, v7}, Ln61;->F(Z)V
+
+    .line 95
+    .line 96
+    .line 97
+    throw p0
+.end method
+
+.method public final C(IIZ)V
+    .locals 16
+
+    .line 1
+    move-object/from16 v1, p0
+
+    .line 2
+    .line 3
+    move/from16 v0, p2
+
+    .line 4
+    .line 5
+    invoke-virtual {v1}, Lqt0;->getScroller()Ltr1;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object v2
+
+    .line 9
+    iget-object v3, v1, Lqt0;->s:Ld3;
+
+    .line 10
+    .line 11
+    move/from16 v4, p1
+
+    .line 12
+    .line 13
+    invoke-interface {v3, v4, v0}, Lgz2;->r(II)[F
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object v3
+
+    .line 17
+    const/4 v4, 0x1
+
+    .line 18
+    aget v5, v3, v4
+
+    .line 19
+    .line 20
+    invoke-virtual {v1}, Lqt0;->W()F
+
+    .line 21
+    .line 22
+    .line 23
+    move-result v6
+
+    .line 24
+    add-float/2addr v6, v5
+
+    .line 25
+    const/4 v5, 0x0
+
+    .line 26
+    aget v3, v3, v5
+
+    .line 27
+    .line 28
+    iget-object v7, v2, Ltr1;->b:Landroid/widget/OverScroller;
+
+    .line 29
+    .line 30
+    iget-object v8, v2, Ltr1;->b:Landroid/widget/OverScroller;
+
+    .line 31
+    .line 32
+    invoke-virtual {v7}, Landroid/widget/OverScroller;->isFinished()Z
+
+    .line 33
+    .line 34
+    .line 35
+    move-result v9
+
+    .line 36
+    if-eqz v9, :cond_0
+
+    .line 37
+    .line 38
+    invoke-virtual {v1}, Lqt0;->getOffsetY()I
+
+    .line 39
+    .line 40
+    .line 41
+    move-result v9
+
+    .line 42
+    :goto_0
+    int-to-float v9, v9
+
+    .line 43
+    goto :goto_1
+
+    .line 44
+    :cond_0
+    invoke-virtual {v7}, Landroid/widget/OverScroller;->getFinalY()I
+
+    .line 45
+    .line 46
+    .line 47
+    move-result v9
+
+    .line 48
+    goto :goto_0
+
+    .line 49
+    :goto_1
+    invoke-virtual {v7}, Landroid/widget/OverScroller;->isFinished()Z
+
+    .line 50
+    .line 51
+    .line 52
+    move-result v10
+
+    .line 53
+    if-eqz v10, :cond_1
+
+    .line 54
+    .line 55
+    invoke-virtual {v1}, Lqt0;->getOffsetX()I
+
+    .line 56
+    .line 57
+    .line 58
+    move-result v7
+
+    .line 59
+    :goto_2
+    int-to-float v7, v7
+
+    .line 60
+    goto :goto_3
+
+    .line 61
+    :cond_1
+    invoke-virtual {v7}, Landroid/widget/OverScroller;->getFinalX()I
+
+    .line 62
+    .line 63
+    .line 64
+    move-result v7
+
+    .line 65
+    goto :goto_2
+
+    .line 66
+    :goto_3
+    iget-object v10, v1, Lqt0;->W0:Lri1;
+
+    .line 67
+    .line 68
+    iget-boolean v11, v10, Lri1;->m:Z
+
+    .line 69
+    .line 70
+    const/4 v12, 0x2
+
+    .line 71
+    if-eqz v11, :cond_2
+
+    .line 72
+    .line 73
+    iget-byte v11, v10, Lri1;->n:B
+
+    .line 74
+    .line 75
+    goto :goto_4
+
+    .line 76
+    :cond_2
+    move v11, v12
+
+    .line 77
+    :goto_4
+    invoke-virtual {v1}, Lqt0;->getRowHeight()I
+
+    .line 78
+    .line 79
+    .line 80
+    move-result v13
+
+    .line 81
+    mul-int/2addr v13, v11
+
+    .line 82
+    int-to-float v13, v13
+
+    .line 83
+    sub-float v13, v3, v13
+
+    .line 84
+    .line 85
+    cmpg-float v13, v13, v9
+
+    .line 86
+    .line 87
+    if-gez v13, :cond_3
+
+    .line 88
+    .line 89
+    invoke-virtual {v1}, Lqt0;->getRowHeight()I
+
+    .line 90
+    .line 91
+    .line 92
+    move-result v13
+
+    .line 93
+    mul-int/2addr v13, v11
+
+    .line 94
+    int-to-float v11, v13
+
+    .line 95
+    sub-float v11, v3, v11
+
+    .line 96
+    .line 97
+    goto :goto_5
+
+    .line 98
+    :cond_3
+    move v11, v9
+
+    .line 99
+    :goto_5
+    invoke-virtual {v1}, Landroid/view/View;->getHeight()I
+
+    .line 100
+    .line 101
+    .line 102
+    move-result v13
+
+    .line 103
+    int-to-float v13, v13
+
+    .line 104
+    add-float/2addr v13, v9
+
+    .line 105
+    cmpl-float v9, v3, v13
+
+    .line 106
+    .line 107
+    const/high16 v13, 0x3f800000    # 1.0f
+
+    .line 108
+    .line 109
+    if-lez v9, :cond_4
+
+    .line 110
+    .line 111
+    invoke-virtual {v1}, Landroid/view/View;->getHeight()I
+
+    .line 112
+    .line 113
+    .line 114
+    move-result v9
+
+    .line 115
+    int-to-float v9, v9
+
+    .line 116
+    sub-float/2addr v3, v9
+
+    .line 117
+    invoke-virtual {v1}, Lqt0;->getRowHeight()I
+
+    .line 118
+    .line 119
+    .line 120
+    move-result v9
+
+    .line 121
+    int-to-float v9, v9
+
+    .line 122
+    mul-float/2addr v9, v13
+
+    .line 123
+    add-float v11, v9, v3
+
+    .line 124
+    .line 125
+    :cond_4
+    const/4 v3, 0x0
+
+    .line 126
+    if-nez v0, :cond_5
+
+    .line 127
+    .line 128
+    move v0, v3
+
+    .line 129
+    goto :goto_6
+
+    .line 130
+    :cond_5
+    invoke-virtual {v1}, Lqt0;->getTextPaint()Lik4;
+
+    .line 131
+    .line 132
+    .line 133
+    move-result-object v0
+
+    .line 134
+    const-string v9, "a"
+
+    .line 135
+    .line 136
+    invoke-virtual {v0, v9}, Landroid/graphics/Paint;->measureText(Ljava/lang/String;)F
+
+    .line 137
+    .line 138
+    .line 139
     move-result v0
 
+    .line 140
+    :goto_6
+    iget-boolean v9, v1, Lqt0;->k0:Z
+
+    .line 141
+    .line 142
+    if-eqz v9, :cond_6
+
+    .line 143
+    .line 144
+    invoke-virtual {v1}, Lqt0;->W()F
+
+    .line 145
+    .line 146
+    .line 147
+    move-result v9
+
+    .line 148
+    goto :goto_7
+
+    .line 149
+    :cond_6
+    move v9, v3
+
+    .line 150
+    :goto_7
+    add-float/2addr v9, v7
+
+    .line 151
+    cmpg-float v9, v6, v9
+
+    .line 152
+    .line 153
+    if-gez v9, :cond_8
+
+    .line 154
+    .line 155
+    invoke-virtual {v1}, Landroid/view/View;->getWidth()I
+
+    .line 156
+    .line 157
+    .line 158
+    move-result v9
+
+    .line 159
+    div-int/2addr v9, v12
+
+    .line 160
+    iget-boolean v12, v1, Lqt0;->k0:Z
+
+    .line 161
+    .line 162
+    if-eqz v12, :cond_7
+
+    .line 163
+    .line 164
+    invoke-virtual {v1}, Lqt0;->W()F
+
+    .line 165
+    .line 166
+    .line 167
+    move-result v12
+
+    .line 168
+    neg-float v12, v12
+
+    .line 169
+    goto :goto_8
+
+    .line 170
+    :cond_7
+    move v12, v3
+
+    .line 171
+    :goto_8
+    add-float/2addr v12, v6
+
+    .line 172
+    sub-float/2addr v12, v0
+
+    .line 173
+    sub-float v14, v12, v7
+
+    .line 174
+    .line 175
+    invoke-static {v14}, Ljava/lang/Math;->abs(F)F
+
+    .line 176
+    .line 177
+    .line 178
+    move-result v14
+
+    .line 179
+    int-to-float v9, v9
+
+    .line 180
+    cmpg-float v14, v14, v9
+
+    .line 181
+    .line 182
+    if-gez v14, :cond_9
+
+    .line 183
+    .line 184
+    sub-float v9, v7, v9
+
+    .line 185
+    .line 186
+    invoke-static {v13, v9}, Ljava/lang/Math;->max(FF)F
+
+    .line 187
+    .line 188
+    .line 189
+    move-result v12
+
+    .line 190
+    goto :goto_9
+
+    .line 191
+    :cond_8
+    move v12, v7
+
+    .line 192
+    :cond_9
+    :goto_9
+    add-float v9, v6, v0
+
+    .line 193
+    .line 194
+    invoke-virtual {v1}, Landroid/view/View;->getWidth()I
+
+    .line 195
+    .line 196
+    .line 197
+    move-result v14
+
+    .line 198
+    int-to-float v14, v14
+
+    .line 199
+    add-float/2addr v7, v14
+
+    .line 200
+    cmpl-float v7, v9, v7
+
+    .line 201
+    .line 202
+    if-lez v7, :cond_a
+
+    .line 203
+    .line 204
+    const v7, 0x3f4ccccd    # 0.8f
+
+    .line 205
+    .line 206
+    .line 207
+    mul-float/2addr v0, v7
+
+    .line 208
+    add-float/2addr v0, v6
+
+    .line 209
+    invoke-virtual {v1}, Landroid/view/View;->getWidth()I
+
+    .line 210
+    .line 211
+    .line 212
+    move-result v6
+
+    .line 213
+    int-to-float v6, v6
+
+    .line 214
+    sub-float v12, v0, v6
+
+    .line 215
+    .line 216
+    :cond_a
+    invoke-virtual {v1}, Lqt0;->getScrollMaxX()I
+
+    .line 217
+    .line 218
+    .line 219
+    move-result v0
+
+    .line 220
+    int-to-float v0, v0
+
+    .line 221
+    invoke-static {v0, v12}, Ljava/lang/Math;->min(FF)F
+
+    .line 222
+    .line 223
+    .line 224
+    move-result v0
+
+    .line 225
+    invoke-static {v3, v0}, Ljava/lang/Math;->max(FF)F
+
+    .line 226
+    .line 227
+    .line 228
+    move-result v0
+
+    .line 229
+    invoke-virtual {v1}, Lqt0;->getScrollMaxY()I
+
+    .line 230
+    .line 231
+    .line 232
+    move-result v6
+
+    .line 233
+    int-to-float v6, v6
+
+    .line 234
+    invoke-static {v6, v11}, Ljava/lang/Math;->min(FF)F
+
+    .line 235
+    .line 236
+    .line 237
+    move-result v6
+
+    .line 238
+    invoke-static {v3, v6}, Ljava/lang/Math;->max(FF)F
+
+    .line 239
+    .line 240
+    .line 241
+    move-result v9
+
+    .line 242
+    invoke-virtual {v1}, Lqt0;->getOffsetX()I
+
+    .line 243
+    .line 244
+    .line 245
+    move-result v3
+
+    .line 246
+    int-to-float v3, v3
+
+    .line 247
+    sub-float v3, v0, v3
+
+    .line 248
+    .line 249
+    invoke-static {v3}, Ljava/lang/Math;->abs(F)F
+
+    .line 250
+    .line 251
+    .line 252
+    move-result v3
+
+    .line 253
+    invoke-static {v13}, Ljava/lang/Math;->abs(F)F
+
+    .line 254
+    .line 255
+    .line 256
+    move-result v6
+
+    .line 257
+    cmpg-float v3, v3, v6
+
+    .line 258
+    .line 259
+    if-gez v3, :cond_b
+
+    .line 260
+    .line 261
+    invoke-virtual {v1}, Lqt0;->getOffsetY()I
+
+    .line 262
+    .line 263
+    .line 264
+    move-result v3
+
+    .line 265
+    int-to-float v3, v3
+
+    .line 266
+    sub-float v3, v9, v3
+
+    .line 267
+    .line 268
+    invoke-static {v3}, Ljava/lang/Math;->abs(F)F
+
+    .line 269
+    .line 270
+    .line 271
+    move-result v3
+
+    .line 272
+    invoke-static {v13}, Ljava/lang/Math;->abs(F)F
+
+    .line 273
+    .line 274
+    .line 275
+    move-result v6
+
+    .line 276
+    cmpg-float v3, v3, v6
+
+    .line 277
+    .line 278
+    if-gez v3, :cond_b
+
+    .line 279
+    .line 280
+    invoke-virtual {v1}, Landroid/view/View;->invalidate()V
+
+    .line 281
+    .line 282
+    .line 283
+    return-void
+
+    .line 284
+    :cond_b
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    .line 285
+    .line 286
+    .line 287
+    move-result-wide v6
+
+    .line 288
+    iget-wide v11, v1, Lqt0;->I0:J
+
+    .line 289
+    .line 290
+    sub-long/2addr v6, v11
+
+    .line 291
+    const-wide/16 v11, 0x64
+
+    .line 292
+    .line 293
+    cmp-long v3, v6, v11
+
+    .line 294
+    .line 295
+    if-ltz v3, :cond_c
+
+    .line 296
+    .line 297
+    move v5, v4
+
+    .line 298
+    :cond_c
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    .line 299
+    .line 300
+    .line 301
+    move-result-wide v6
+
+    .line 302
+    iput-wide v6, v1, Lqt0;->I0:J
+
+    .line 303
+    .line 304
+    if-eqz v5, :cond_d
+
+    .line 305
+    .line 306
+    if-nez p3, :cond_d
+
+    .line 307
+    .line 308
+    invoke-virtual {v8, v4}, Landroid/widget/OverScroller;->forceFinished(Z)V
+
+    .line 309
+    .line 310
+    .line 311
+    invoke-virtual {v2}, Ltr1;->a()V
+
+    .line 312
+    .line 313
+    .line 314
+    invoke-virtual {v1}, Lqt0;->getOffsetX()I
+
+    .line 315
+    .line 316
+    .line 317
+    move-result v3
+
+    .line 318
+    invoke-virtual {v1}, Lqt0;->getOffsetY()I
+
+    .line 319
+    .line 320
+    .line 321
+    move-result v4
+
+    .line 322
+    invoke-virtual {v1}, Lqt0;->getOffsetX()I
+
+    .line 323
+    .line 324
+    .line 325
+    move-result v5
+
+    .line 326
+    int-to-float v5, v5
+
+    .line 327
+    sub-float v5, v0, v5
+
+    .line 328
+    .line 329
+    float-to-int v5, v5
+
+    .line 330
+    invoke-virtual {v1}, Lqt0;->getOffsetY()I
+
+    .line 331
+    .line 332
+    .line 333
+    move-result v6
+
+    .line 334
+    int-to-float v6, v6
+
+    .line 335
+    sub-float v6, v9, v6
+
+    .line 336
+    .line 337
+    float-to-int v6, v6
+
+    .line 338
+    iget-object v7, v2, Ltr1;->a:Lqt0;
+
+    .line 339
+    .line 340
+    invoke-virtual {v7}, Lqt0;->getProps()Lri1;
+
+    .line 341
+    .line 342
+    .line 343
+    move-result-object v7
+
+    .line 344
+    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 345
+    .line 346
+    .line 347
+    const/16 v7, 0xfa
+
+    .line 348
+    .line 349
+    invoke-virtual/range {v2 .. v7}, Ltr1;->b(IIIII)V
+
+    .line 350
+    .line 351
+    .line 352
+    invoke-virtual {v10}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 353
+    .line 354
+    .line 355
+    goto :goto_a
+
+    .line 356
+    :cond_d
+    invoke-virtual {v1}, Lqt0;->getOffsetX()I
+
+    .line 357
+    .line 358
+    .line 359
+    move-result v3
+
+    .line 360
+    invoke-virtual {v1}, Lqt0;->getOffsetY()I
+
+    .line 361
+    .line 362
+    .line 363
+    move-result v4
+
+    .line 364
+    invoke-virtual {v1}, Lqt0;->getOffsetX()I
+
+    .line 365
+    .line 366
+    .line 367
+    move-result v5
+
+    .line 368
+    int-to-float v5, v5
+
+    .line 369
+    sub-float v5, v0, v5
+
+    .line 370
+    .line 371
+    float-to-int v5, v5
+
+    .line 372
+    invoke-virtual {v1}, Lqt0;->getOffsetY()I
+
+    .line 373
+    .line 374
+    .line 375
+    move-result v6
+
+    .line 376
+    int-to-float v6, v6
+
+    .line 377
+    sub-float v6, v9, v6
+
+    .line 378
+    .line 379
+    float-to-int v6, v6
+
+    .line 380
+    const/4 v7, 0x0
+
+    .line 381
+    invoke-virtual/range {v2 .. v7}, Ltr1;->b(IIIII)V
+
+    .line 382
+    .line 383
+    .line 384
+    invoke-virtual {v8}, Landroid/widget/OverScroller;->abortAnimation()V
+
+    .line 385
+    .line 386
+    .line 387
+    invoke-virtual {v2}, Ltr1;->a()V
+
+    .line 388
+    .line 389
+    .line 390
+    :goto_a
+    new-instance v2, Lsr5;
+
+    .line 391
+    .line 392
+    move-object v3, v2
+
+    .line 393
+    invoke-virtual {v1}, Lqt0;->getOffsetX()I
+
+    .line 394
+    .line 395
+    .line 396
+    move-result v2
+
+    .line 397
+    move-object v4, v3
+
+    .line 398
+    invoke-virtual {v1}, Lqt0;->getOffsetY()I
+
+    .line 399
+    .line 400
+    .line 401
+    move-result v3
+
+    .line 402
+    float-to-int v0, v0
+
+    .line 403
+    float-to-int v5, v9
+
+    .line 404
+    const/4 v6, 0x3
+
+    .line 405
+    move-object v15, v4
+
+    .line 406
+    move v4, v0
+
+    .line 407
+    move-object v0, v15
+
+    .line 408
+    invoke-direct/range {v0 .. v6}, Lsr5;-><init>(Lqt0;IIIII)V
+
+    .line 409
+    .line 410
+    .line 411
+    iget-object v2, v1, Lqt0;->r:Ltv1;
+
+    .line 412
+    .line 413
+    invoke-virtual {v2, v0}, Ltv1;->a(Lgv1;)I
+
+    .line 414
+    .line 415
+    .line 416
+    invoke-virtual {v1}, Landroid/view/View;->invalidate()V
+
+    .line 417
+    .line 418
+    .line 419
+    return-void
+.end method
+
+.method public final D()V
+    .locals 7
+
+    .line 1
+    iget-object v0, p0, Lqt0;->p:Lxm0;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_5
+
+    .line 4
+    .line 5
+    iget-object v1, p0, Lqt0;->B0:Ln61;
+
+    .line 6
+    .line 7
+    iget v2, v0, Lxm0;->b:I
+
+    .line 8
+    .line 9
+    iget v3, v0, Lxm0;->c:I
+
+    .line 10
+    .line 11
+    iget v0, v0, Lxm0;->a:I
+
+    .line 12
+    .line 13
+    const/4 v4, 0x0
+
+    .line 14
+    invoke-virtual {v1, v4}, Ln61;->u(Z)V
+
+    .line 15
+    .line 16
+    .line 17
+    if-ltz v2, :cond_3
+
+    .line 18
+    .line 19
+    :try_start_0
+    iget-object v5, v1, Ln61;->j:Ljava/util/ArrayList;
+
+    .line 20
+    .line 21
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
+
+    .line 22
+    .line 23
+    .line 24
+    move-result v5
+
+    .line 25
+    if-lt v2, v5, :cond_0
+
+    .line 26
+    .line 27
+    goto :goto_1
+
+    .line 28
+    :cond_0
+    invoke-virtual {v1, v2}, Ln61;->o(I)Le71;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object v5
+
+    .line 32
+    iget v6, v5, Le71;->l:I
+
+    .line 33
+    .line 34
+    invoke-virtual {v5}, Le71;->f()Lz73;
+
+    .line 35
+    .line 36
+    .line 37
+    move-result-object v5
+
+    .line 38
+    iget v5, v5, Lz73;->k:I
+
+    .line 39
+    .line 40
+    add-int/2addr v6, v5
+
+    .line 41
+    if-gt v3, v6, :cond_3
+
+    .line 42
+    .line 43
+    if-gez v3, :cond_1
+
+    .line 44
+    .line 45
+    goto :goto_1
+
+    .line 46
+    :cond_1
+    invoke-virtual {v1}, Ln61;->n()Lug0;
+
+    .line 47
+    .line 48
+    .line 49
+    move-result-object v5
+
+    .line 50
+    invoke-virtual {v5, v2, v3}, Lug0;->B(II)Lxm0;
+
+    .line 51
+    .line 52
+    .line 53
+    move-result-object v2
+
+    .line 54
+    iget v2, v2, Lxm0;->a:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 55
+    .line 56
+    if-ne v2, v0, :cond_2
+
+    .line 57
+    .line 58
+    const/4 v0, 0x1
+
+    .line 59
+    goto :goto_0
+
+    .line 60
+    :cond_2
+    move v0, v4
+
+    .line 61
+    :goto_0
+    invoke-virtual {v1, v4}, Ln61;->F(Z)V
+
+    .line 62
+    .line 63
+    .line 64
+    move v4, v0
+
+    .line 65
+    goto :goto_3
+
+    .line 66
+    :catchall_0
+    move-exception p0
+
+    .line 67
+    goto :goto_2
+
+    .line 68
+    :cond_3
+    :goto_1
+    invoke-virtual {v1, v4}, Ln61;->F(Z)V
+
+    .line 69
+    .line 70
+    .line 71
+    goto :goto_3
+
+    .line 72
+    :goto_2
+    invoke-virtual {v1, v4}, Ln61;->F(Z)V
+
+    .line 73
+    .line 74
+    .line 75
+    throw p0
+
+    .line 76
+    :goto_3
+    if-nez v4, :cond_4
+
+    .line 77
+    .line 78
+    goto :goto_4
+
+    .line 79
+    :cond_4
+    return-void
+
+    .line 80
+    :cond_5
+    :goto_4
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 81
+    .line 82
+    iget-object v0, v0, Lwb1;->d:Lxm0;
+
+    .line 83
+    .line 84
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
+
+    .line 85
+    .line 86
+    .line 87
+    move-result-object v0
+
+    .line 88
+    iput-object v0, p0, Lqt0;->p:Lxm0;
+
+    .line 89
+    .line 90
+    return-void
+.end method
+
+.method public final E()V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->getCursor()Lwb1;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v0, v0, Lwb1;->d:Lxm0;
+
+    .line 6
+    .line 7
+    iget v0, v0, Lxm0;->b:I
+
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lqt0;->getCursor()Lwb1;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    iget-object v1, v1, Lwb1;->d:Lxm0;
+
+    .line 14
+    .line 15
+    iget v1, v1, Lxm0;->c:I
+
+    .line 16
+    .line 17
+    const/4 v2, 0x0
+
+    .line 18
+    invoke-virtual {p0, v0, v1, v2}, Lqt0;->C(IIZ)V
+
+    .line 19
+    .line 20
+    .line 21
+    return-void
+.end method
+
+.method public final F(Lsv5;)V
+    .locals 9
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->D()V
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p0}, Lqt0;->getSelectingTarget()Lxm0;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object v0
+
+    .line 8
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 9
+    .line 10
+    .line 11
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 12
+    .line 13
+    .line 14
+    iget-object v1, p1, Lsv5;->j:Ls52;
+
+    .line 15
+    .line 16
+    invoke-interface {v1, p0, v0}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object v0
+
+    .line 20
+    check-cast v0, Lxm0;
+
+    .line 21
+    .line 22
+    iget-object v1, p0, Lqt0;->p:Lxm0;
+
+    .line 23
+    .line 24
+    iget v3, v1, Lxm0;->b:I
+
+    .line 25
+    .line 26
+    iget v4, v1, Lxm0;->c:I
+
+    .line 27
+    .line 28
+    iget v5, v0, Lxm0;->b:I
+
+    .line 29
+    .line 30
+    iget v6, v0, Lxm0;->c:I
+
+    .line 31
+    .line 32
+    const/4 v8, 0x0
+
+    .line 33
+    const/4 v7, 0x7
+
+    .line 34
+    move-object v2, p0
+
+    .line 35
+    invoke-virtual/range {v2 .. v8}, Lqt0;->o0(IIIIIZ)V
+
+    .line 36
+    .line 37
+    .line 38
+    sget-object p0, Lsv5;->r:Lsv5;
+
+    .line 39
+    .line 40
+    iget-object v0, v2, Lqt0;->K0:Lds1;
+
+    .line 41
+    .line 42
+    const/4 v1, 0x1
+
+    .line 43
+    const/4 v3, 0x0
+
+    .line 44
+    if-ne p1, p0, :cond_0
+
+    .line 45
+    .line 46
+    invoke-virtual {v2}, Landroid/view/View;->getHeight()I
+
+    .line 47
+    .line 48
+    .line 49
+    move-result p0
+
+    .line 50
+    neg-int p0, p0
+
+    .line 51
+    int-to-float p0, p0
+
+    .line 52
+    invoke-virtual {v0, v3, p0, v1}, Lds1;->j(FFZ)V
+
+    .line 53
+    .line 54
+    .line 55
+    goto :goto_0
+
+    .line 56
+    :cond_0
+    sget-object p0, Lsv5;->s:Lsv5;
+
+    .line 57
+    .line 58
+    if-ne p1, p0, :cond_1
+
+    .line 59
+    .line 60
+    invoke-virtual {v2}, Landroid/view/View;->getHeight()I
+
+    .line 61
+    .line 62
+    .line 63
+    move-result p0
+
+    .line 64
+    int-to-float p0, p0
+
+    .line 65
+    invoke-virtual {v0, v3, p0, v1}, Lds1;->j(FFZ)V
+
+    .line 66
+    .line 67
+    .line 68
+    :cond_1
+    :goto_0
+    iget-object p0, v2, Lqt0;->A0:Lwb1;
+
+    .line 69
+    .line 70
+    iget-object p0, p0, Lwb1;->c:Lxm0;
+
+    .line 71
+    .line 72
+    invoke-virtual {p0}, Lxm0;->a()Lxm0;
+
+    .line 73
+    .line 74
+    .line 75
+    move-result-object p0
+
+    .line 76
+    iget-object p1, v2, Lqt0;->p:Lxm0;
+
+    .line 77
+    .line 78
+    invoke-virtual {p0, p1}, Lxm0;->equals(Ljava/lang/Object;)Z
+
+    .line 79
+    .line 80
+    .line 81
+    move-result p0
+
+    .line 82
+    if-eqz p0, :cond_2
+
+    .line 83
+    .line 84
+    invoke-virtual {v2}, Lqt0;->E()V
+
+    .line 85
+    .line 86
+    .line 87
+    return-void
+
+    .line 88
+    :cond_2
+    iget-object p0, v2, Lqt0;->A0:Lwb1;
+
+    .line 89
+    .line 90
+    iget-object p0, p0, Lwb1;->c:Lxm0;
+
+    .line 91
+    .line 92
+    iget p1, p0, Lxm0;->b:I
+
+    .line 93
+    .line 94
+    iget p0, p0, Lxm0;->c:I
+
+    .line 95
+    .line 96
+    const/4 v0, 0x0
+
+    .line 97
+    invoke-virtual {v2, p1, p0, v0}, Lqt0;->C(IIZ)V
+
+    .line 98
+    .line 99
+    .line 100
+    return-void
+.end method
+
+.method public final G(Landroid/view/inputmethod/ExtractedTextRequest;)Landroid/view/inputmethod/ExtractedText;
+    .locals 6
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->getProps()Lri1;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 6
+    .line 7
+    .line 8
+    invoke-virtual {p0}, Lqt0;->getProps()Lri1;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object v0
+
+    .line 12
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 13
+    .line 14
+    .line 15
+    invoke-virtual {p0}, Lqt0;->getCursor()Lwb1;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object v0
+
+    .line 19
+    new-instance v1, Landroid/view/inputmethod/ExtractedText;
+
+    .line 20
+    .line 21
+    invoke-direct {v1}, Landroid/view/inputmethod/ExtractedText;-><init>()V
+
+    .line 22
+    .line 23
+    .line 24
+    iget-object v2, v0, Lwb1;->c:Lxm0;
+
+    .line 25
+    .line 26
+    iget v2, v2, Lxm0;->a:I
+
+    .line 27
+    .line 28
+    iget-object v0, v0, Lwb1;->d:Lxm0;
+
+    .line 29
+    .line 30
+    iget v0, v0, Lxm0;->a:I
+
+    .line 31
+    .line 32
+    iget v3, p1, Landroid/view/inputmethod/ExtractedTextRequest;->hintMaxChars:I
+
+    .line 33
+    .line 34
+    if-nez v3, :cond_0
+
+    .line 35
+    .line 36
+    iget-object v3, p0, Lqt0;->W0:Lri1;
+
+    .line 37
+    .line 38
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 39
+    .line 40
+    .line 41
+    const v3, 0x8000
+
+    .line 42
+    .line 43
+    .line 44
+    iput v3, p1, Landroid/view/inputmethod/ExtractedTextRequest;->hintMaxChars:I
+
+    .line 45
+    .line 46
+    :cond_0
+    if-ge v3, v2, :cond_1
+
+    .line 47
+    .line 48
+    div-int/lit8 v3, v3, 0x2
+
+    .line 49
+    .line 50
+    sub-int v3, v2, v3
+
+    .line 51
+    .line 52
+    invoke-static {v3, v2}, Ljava/lang/Math;->min(II)I
+
+    .line 53
+    .line 54
+    .line 55
+    move-result v3
+
+    .line 56
+    goto :goto_0
+
+    .line 57
+    :cond_1
+    const/4 v3, 0x0
+
+    .line 58
+    :goto_0
+    iget v4, p1, Landroid/view/inputmethod/ExtractedTextRequest;->hintMaxChars:I
+
+    .line 59
+    .line 60
+    add-int/2addr v4, v3
+
+    .line 61
+    iget p1, p1, Landroid/view/inputmethod/ExtractedTextRequest;->flags:I
+
+    .line 62
+    .line 63
+    iget-object v5, p0, Lqt0;->q:Ldr1;
+
+    .line 64
+    .line 65
+    invoke-virtual {v5, v3, v4, p1}, Ldr1;->b(III)Ljava/lang/CharSequence;
+
+    .line 66
+    .line 67
+    .line 68
+    move-result-object p1
+
+    .line 69
+    iput-object p1, v1, Landroid/view/inputmethod/ExtractedText;->text:Ljava/lang/CharSequence;
+
+    .line 70
+    .line 71
+    iput v3, v1, Landroid/view/inputmethod/ExtractedText;->startOffset:I
+
+    .line 72
+    .line 73
+    sub-int/2addr v2, v3
+
+    .line 74
+    iput v2, v1, Landroid/view/inputmethod/ExtractedText;->selectionStart:I
+
+    .line 75
+    .line 76
+    sub-int/2addr v0, v3
+
+    .line 77
+    iput v0, v1, Landroid/view/inputmethod/ExtractedText;->selectionEnd:I
+
+    .line 78
+    .line 79
+    invoke-virtual {p0}, Lqt0;->getKeyMetaStates()Lsx2;
+
+    .line 80
+    .line 81
+    .line 82
+    move-result-object p0
+
+    .line 83
+    invoke-virtual {p0}, Lsx2;->b()Z
+
+    .line 84
+    .line 85
+    .line 86
+    move-result p1
+
+    .line 87
+    if-eqz p1, :cond_2
+
+    .line 88
+    .line 89
+    invoke-virtual {p0}, Lsx2;->a()Z
+
+    .line 90
+    .line 91
+    .line 92
+    move-result p0
+
+    .line 93
+    if-nez p0, :cond_2
+
+    .line 94
+    .line 95
+    iget p0, v1, Landroid/view/inputmethod/ExtractedText;->flags:I
+
+    .line 96
+    .line 97
+    or-int/lit8 p0, p0, 0x2
+
+    .line 98
+    .line 99
+    iput p0, v1, Landroid/view/inputmethod/ExtractedText;->flags:I
+
+    .line 100
+    .line 101
+    :cond_2
+    return-object v1
+.end method
+
+.method public final H()I
+    .locals 10
+
+    .line 1
+    iget-object v0, p0, Lqt0;->Y0:Lub6;
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
+    const/4 v0, 0x0
+
+    .line 6
+    goto :goto_0
+
+    .line 7
+    :cond_0
+    iget-object v0, v0, Lub6;->b:Ljava/util/ArrayList;
+
+    .line 8
+    .line 9
+    :goto_0
+    const/4 v1, -0x1
+
+    .line 10
+    if-eqz v0, :cond_7
+
+    .line 11
+    .line 12
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    .line 13
+    .line 14
+    .line 15
+    move-result v2
+
+    .line 16
+    if-eqz v2, :cond_1
+
+    .line 17
+    .line 18
+    goto :goto_4
+
+    .line 19
+    :cond_1
+    iget-object v2, p0, Lqt0;->A0:Lwb1;
+
+    .line 20
+    .line 21
+    iget-object v2, v2, Lwb1;->c:Lxm0;
+
+    .line 22
+    .line 23
+    iget v2, v2, Lxm0;->b:I
+
+    .line 24
+    .line 25
+    invoke-static {v2, v0}, Lnt0;->a(ILjava/util/List;)I
+
+    .line 26
+    .line 27
+    .line 28
+    move-result v3
+
+    .line 29
+    const/4 v4, 0x0
+
+    .line 30
+    if-ne v3, v1, :cond_2
+
+    .line 31
+    .line 32
+    move v3, v4
+
+    .line 33
+    :cond_2
+    invoke-interface {v0}, Ljava/util/List;->size()I
+
+    .line 34
+    .line 35
+    .line 36
+    move-result v5
+
+    .line 37
+    add-int/lit8 v5, v5, -0x1
+
+    .line 38
+    .line 39
+    iget-object p0, p0, Lqt0;->Y0:Lub6;
+
+    .line 40
+    .line 41
+    const v6, 0x7fffffff
+
+    .line 42
+    .line 43
+    .line 44
+    if-eqz p0, :cond_3
+
+    .line 45
+    .line 46
+    iget p0, p0, Lub6;->c:I
+
+    .line 47
+    .line 48
+    goto :goto_1
+
+    .line 49
+    :cond_3
+    move p0, v6
+
+    .line 50
+    :goto_1
+    move v7, v6
+
+    .line 51
+    :goto_2
+    if-gt v3, v5, :cond_7
+
+    .line 52
+    .line 53
+    invoke-interface {v0, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    .line 54
+    .line 55
+    .line 56
+    move-result-object v8
+
+    .line 57
+    check-cast v8, Lnt0;
+
+    .line 58
+    .line 59
+    if-nez v8, :cond_4
+
+    .line 60
+    .line 61
+    goto :goto_3
+
+    .line 62
+    :cond_4
+    iget v9, v8, Lnt0;->c:I
+
+    .line 63
+    .line 64
+    if-lt v9, v2, :cond_5
+
+    .line 65
+    .line 66
+    iget v8, v8, Lnt0;->a:I
+
+    .line 67
+    .line 68
+    if-gt v8, v2, :cond_5
+
+    .line 69
+    .line 70
+    sub-int/2addr v9, v8
+
+    .line 71
+    if-ge v9, v7, :cond_6
+
+    .line 72
+    .line 73
+    move v1, v3
+
+    .line 74
+    move v7, v9
+
+    .line 75
+    goto :goto_3
+
+    .line 76
+    :cond_5
+    if-eq v7, v6, :cond_6
+
+    .line 77
+    .line 78
+    add-int/lit8 v4, v4, 0x1
+
+    .line 79
+    .line 80
+    if-lt v4, p0, :cond_6
+
+    .line 81
+    .line 82
+    goto :goto_4
+
+    .line 83
+    :cond_6
+    :goto_3
+    add-int/lit8 v3, v3, 0x1
+
+    .line 84
+    .line 85
+    goto :goto_2
+
+    .line 86
+    :cond_7
+    :goto_4
+    return v1
+.end method
+
+.method public final I(FF)J
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lqt0;->s:Ld3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lqt0;->W()F
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    sub-float/2addr p1, p0
+
+    .line 8
+    invoke-interface {v0, p1, p2}, Lgz2;->h(FF)Lsm3;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object p0
+
+    .line 12
+    iget p1, p0, Lsm3;->j:I
+
+    .line 13
+    .line 14
+    iget p0, p0, Lsm3;->k:I
+
+    .line 15
+    .line 16
+    invoke-static {p1, p0}, Ls77;->M(II)J
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-wide p0
+
+    .line 20
+    return-wide p0
+.end method
+
+.method public final J(FF)J
+    .locals 4
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    invoke-static {v0, p2}, Ljava/lang/Math;->max(FF)F
+
+    .line 3
+    .line 4
+    .line 5
+    move-result p2
+
+    .line 6
+    iget-object v1, p0, Lqt0;->b1:Lsr1;
+
+    .line 7
+    .line 8
+    iget-object v1, v1, Lsr1;->r:Ljava/util/List;
+
+    .line 9
+    .line 10
+    if-eqz v1, :cond_0
+
+    .line 11
+    .line 12
+    invoke-virtual {p0}, Lqt0;->getRowHeight()I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result v2
+
+    .line 16
+    int-to-float v2, v2
+
+    .line 17
+    div-float v2, p2, v2
+
+    .line 18
+    .line 19
+    invoke-static {v0, v2}, Ljava/lang/Math;->max(FF)F
+
+    .line 20
+    .line 21
+    .line 22
+    move-result v0
+
+    .line 23
+    float-to-int v0, v0
+
+    .line 24
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    .line 25
+    .line 26
+    .line 27
+    move-result v2
+
+    .line 28
+    invoke-virtual {p0}, Lqt0;->getRowHeight()I
+
+    .line 29
+    .line 30
+    .line 31
+    move-result v3
+
+    .line 32
+    mul-int/2addr v3, v2
+
+    .line 33
+    int-to-float v2, v3
+
+    .line 34
+    cmpg-float v2, p2, v2
+
+    .line 35
+    .line 36
+    if-gez v2, :cond_0
+
+    .line 37
+    .line 38
+    invoke-interface {v1}, Ljava/util/List;->size()I
+
+    .line 39
+    .line 40
+    .line 41
+    move-result v2
+
+    .line 42
+    if-ge v0, v2, :cond_0
+
+    .line 43
+    .line 44
+    iget-object p2, p0, Lqt0;->s:Ld3;
+
+    .line 45
+    .line 46
+    invoke-interface {v1, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    .line 47
+    .line 48
+    .line 49
+    move-result-object v0
+
+    .line 50
+    check-cast v0, Lnt0;
+
+    .line 51
+    .line 52
+    iget v0, v0, Lnt0;->a:I
+
+    .line 53
+    .line 54
+    const/4 v1, 0x0
+
+    .line 55
+    invoke-interface {p2, v0, v1}, Lgz2;->r(II)[F
+
+    .line 56
+    .line 57
+    .line 58
+    move-result-object p2
+
+    .line 59
+    aget p2, p2, v1
+
+    .line 60
+    .line 61
+    invoke-virtual {p0}, Lqt0;->getRowHeight()I
+
+    .line 62
+    .line 63
+    .line 64
+    move-result v0
+
+    .line 65
+    int-to-float v0, v0
+
+    .line 66
+    const/high16 v1, 0x40000000    # 2.0f
+
+    .line 67
+    .line 68
+    div-float/2addr v0, v1
+
+    .line 69
+    sub-float/2addr p2, v0
+
+    .line 70
+    invoke-virtual {p0, p1, p2}, Lqt0;->I(FF)J
+
+    .line 71
+    .line 72
+    .line 73
+    move-result-wide p0
+
+    .line 74
+    return-wide p0
+
+    .line 75
+    :cond_0
+    invoke-virtual {p0}, Lqt0;->getOffsetX()I
+
+    .line 76
+    .line 77
+    .line 78
+    move-result v0
+
+    .line 79
+    int-to-float v0, v0
+
+    .line 80
+    add-float/2addr p1, v0
+
+    .line 81
+    invoke-virtual {p0}, Lqt0;->getOffsetY()I
+
+    .line 82
+    .line 83
+    .line 84
+    move-result v0
+
+    .line 85
+    int-to-float v0, v0
+
+    .line 86
+    add-float/2addr p2, v0
+
+    .line 87
+    invoke-virtual {p0, p1, p2}, Lqt0;->I(FF)J
+
+    .line 88
+    .line 89
+    .line 90
+    move-result-wide p0
+
+    .line 91
+    return-wide p0
+.end method
+
+.method public final K(I)I
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->getLineSpacingPixels()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 6
+    .line 7
+    iget-object p0, p0, Lsr1;->s:Landroid/graphics/Paint$FontMetricsInt;
+
+    .line 8
+    .line 9
+    iget v1, p0, Landroid/graphics/Paint$FontMetricsInt;->descent:I
+
+    .line 10
+    .line 11
+    iget v2, p0, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
+
+    .line 12
+    .line 13
+    sub-int/2addr v1, v2
+
+    .line 14
+    add-int/2addr v1, v0
+
+    .line 15
+    const/4 v2, 0x1
+
+    .line 16
+    invoke-static {v2, v1}, Ljava/lang/Math;->max(II)I
+
+    .line 17
+    .line 18
+    .line 19
+    move-result v1
+
+    .line 20
+    add-int/2addr p1, v2
+
+    .line 21
+    mul-int/2addr p1, v1
+
+    .line 22
+    iget p0, p0, Landroid/graphics/Paint$FontMetricsInt;->descent:I
+
+    .line 23
+    .line 24
+    sub-int/2addr p1, p0
+
+    .line 25
+    div-int/lit8 v0, v0, 0x2
+
+    .line 26
+    .line 27
+    sub-int/2addr p1, v0
+
+    .line 28
+    return p1
+.end method
+
+.method public final L(I)I
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->getRowHeight()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    add-int/lit8 p1, p1, 0x1
+
+    .line 6
+    .line 7
+    mul-int/2addr p1, p0
+
+    .line 8
+    return p1
+.end method
+
+.method public final M(I)I
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->getRowHeight()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    mul-int/2addr v0, p1
+
+    .line 6
+    invoke-virtual {p0}, Lqt0;->getLineSpacingPixels()I
+
+    .line 7
+    .line 8
+    .line 9
+    move-result p0
+
+    .line 10
+    div-int/lit8 p0, p0, 0x2
+
+    .line 11
+    .line 12
+    add-int/2addr p0, v0
+
+    .line 13
+    return p0
+.end method
+
+.method public final N(I)Ljava/util/List;
+    .locals 5
+
+    .line 1
+    iget-object v0, p0, Lqt0;->Y0:Lub6;
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
+    const/4 v0, 0x0
+
+    .line 6
+    goto :goto_0
+
+    .line 7
+    :cond_0
+    iget-object v0, v0, Lub6;->a:Lfp2;
+
+    .line 8
+    .line 9
+    :goto_0
+    iget-object p0, p0, Lqt0;->n:Ljava/util/ArrayList;
+
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    .line 12
+    .line 13
+    .line 14
+    move-result v1
+
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    if-eqz v1, :cond_1
+
+    .line 17
+    .line 18
+    const-wide/16 v3, 0x5
+
+    .line 19
+    .line 20
+    invoke-static {v2, v3, v4}, La64;->j(IJ)La64;
+
+    .line 21
+    .line 22
+    .line 23
+    move-result-object v1
+
+    .line 24
+    invoke-virtual {p0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 25
+    .line 26
+    .line 27
+    :cond_1
+    if-eqz v0, :cond_2
+
+    .line 28
+    .line 29
+    :try_start_0
+    new-instance v1, Lfp2;
+
+    .line 30
+    .line 31
+    const/16 v3, 0xa
+
+    .line 32
+    .line 33
+    invoke-direct {v1, v0, v2, v3}, Lfp2;-><init>(Ljava/lang/Object;ZB)V
+
+    .line 34
+    .line 35
+    .line 36
+    invoke-virtual {v1, p1}, Lfp2;->b(I)Ljava/util/List;
+
+    .line 37
+    .line 38
+    .line 39
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 40
+    :catch_0
+    :cond_2
+    return-object p0
+.end method
+
+.method public final O(Z)V
+    .locals 8
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->getCursor()Lwb1;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    if-eqz p1, :cond_0
+
+    .line 6
+    .line 7
+    invoke-virtual {v0}, Lwb1;->a()Z
+
+    .line 8
+    .line 9
+    .line 10
+    move-result p1
+
+    .line 11
+    if-nez p1, :cond_0
+
+    .line 12
+    .line 13
+    return-void
+
+    .line 14
+    :cond_0
+    invoke-virtual {p0}, Lqt0;->getEditorLanguage()Lhy2;
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-object p1
+
+    .line 18
+    invoke-virtual {p0}, Lqt0;->getTabWidth()I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v1
+
+    .line 22
+    invoke-virtual {p0}, Lqt0;->getTabWidth()I
+
+    .line 23
+    .line 24
+    .line 25
+    move-result v2
+
+    .line 26
+    invoke-interface {p1}, Lhy2;->h()Z
+
+    .line 27
+    .line 28
+    .line 29
+    move-result p1
+
+    .line 30
+    invoke-static {v1, v2, p1}, Lu23;->o(IIZ)Ljava/lang/String;
+
+    .line 31
+    .line 32
+    .line 33
+    move-result-object p1
+
+    .line 34
+    invoke-virtual {p0}, Lqt0;->getText()Ln61;
+
+    .line 35
+    .line 36
+    .line 37
+    move-result-object v1
+
+    .line 38
+    invoke-virtual {p0}, Lqt0;->getTabWidth()I
+
+    .line 39
+    .line 40
+    .line 41
+    move-result p0
+
+    .line 42
+    invoke-virtual {v1}, Ln61;->b()Z
+
+    .line 43
+    .line 44
+    .line 45
+    iget-object v2, v0, Lwb1;->c:Lxm0;
+
+    .line 46
+    .line 47
+    iget v2, v2, Lxm0;->b:I
+
+    .line 48
+    .line 49
+    :goto_0
+    iget-object v3, v0, Lwb1;->d:Lxm0;
+
+    .line 50
+    .line 51
+    iget v3, v3, Lxm0;->b:I
+
+    .line 52
+    .line 53
+    if-gt v2, v3, :cond_4
+
+    .line 54
+    .line 55
+    invoke-virtual {v1, v2}, Ln61;->o(I)Le71;
+
+    .line 56
+    .line 57
+    .line 58
+    move-result-object v3
+
+    .line 59
+    invoke-static {v3}, Lu23;->n(Ljava/lang/CharSequence;)J
+
+    .line 60
+    .line 61
+    .line 62
+    move-result-wide v3
+
+    .line 63
+    const/16 v5, 0x20
+
+    .line 64
+    .line 65
+    shr-long v5, v3, v5
+
+    .line 66
+    .line 67
+    long-to-int v5, v5
+
+    .line 68
+    const-wide v6, 0xffffffffL
+
+    .line 69
+    .line 70
+    .line 71
+    .line 72
+    .line 73
+    and-long/2addr v3, v6
+
+    .line 74
+    long-to-int v3, v3
+
+    .line 75
+    mul-int v4, v3, p0
+
+    .line 76
+    .line 77
+    add-int/2addr v4, v5
+
+    .line 78
+    add-int v6, v5, v3
+
+    .line 79
+    .line 80
+    rem-int v7, v4, p0
+
+    .line 81
+    .line 82
+    sub-int v7, p0, v7
+
+    .line 83
+    .line 84
+    if-lez v5, :cond_2
+
+    .line 85
+    .line 86
+    if-lez v3, :cond_2
+
+    .line 87
+    .line 88
+    if-nez v7, :cond_1
+
+    .line 89
+    .line 90
+    move v7, p0
+
+    .line 91
+    :cond_1
+    add-int/2addr v7, v4
+
+    .line 92
+    div-int/2addr v7, p0
+
+    .line 93
+    const/4 v3, 0x0
+
+    .line 94
+    invoke-static {v7, p1}, Lpb6;->g0(ILjava/lang/String;)Ljava/lang/String;
+
+    .line 95
+    .line 96
+    .line 97
+    move-result-object v4
+
+    .line 98
+    move v5, v2
+
+    .line 99
+    invoke-virtual/range {v1 .. v6}, Ln61;->x(IILjava/lang/CharSequence;II)V
+
+    .line 100
+    .line 101
+    .line 102
+    goto :goto_1
+
+    .line 103
+    :cond_2
+    if-ne v7, p0, :cond_3
+
+    .line 104
+    .line 105
+    invoke-virtual {v1, v2, v6, p1}, Ln61;->r(IILjava/lang/CharSequence;)V
+
+    .line 106
+    .line 107
+    .line 108
+    goto :goto_1
+
+    .line 109
+    :cond_3
+    const-string v3, " "
+
+    .line 110
+    .line 111
+    invoke-static {v7, v3}, Lpb6;->g0(ILjava/lang/String;)Ljava/lang/String;
+
+    .line 112
+    .line 113
+    .line 114
+    move-result-object v3
+
+    .line 115
+    invoke-virtual {v1, v2, v6, v3}, Ln61;->r(IILjava/lang/CharSequence;)V
+
+    .line 116
+    .line 117
+    .line 118
+    :goto_1
+    add-int/lit8 v2, v2, 0x1
+
+    .line 119
+    .line 120
+    goto :goto_0
+
+    .line 121
+    :cond_4
+    invoke-virtual {v1}, Ln61;->k()Z
+
+    .line 122
+    .line 123
+    .line 124
+    return-void
+.end method
+
+.method public final P()V
+    .locals 6
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->getCursor()Lwb1;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, Lwb1;->a()Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v1
+
+    .line 9
+    if-eqz v1, :cond_0
+
+    .line 10
+    .line 11
+    const/4 v0, 0x1
+
+    .line 12
+    invoke-virtual {p0, v0}, Lqt0;->O(Z)V
+
+    .line 13
+    .line 14
+    .line 15
+    return-void
+
+    .line 16
+    :cond_0
+    iget-object v0, v0, Lwb1;->c:Lxm0;
+
+    .line 17
+    .line 18
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object v0
+
+    .line 22
+    invoke-virtual {p0}, Lqt0;->getText()Ln61;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object v1
+
+    .line 26
+    iget v2, v0, Lxm0;->b:I
+
+    .line 27
+    .line 28
+    invoke-virtual {v1, v2}, Ln61;->o(I)Le71;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object v1
+
+    .line 32
+    invoke-static {v1}, Lu23;->n(Ljava/lang/CharSequence;)J
+
+    .line 33
+    .line 34
+    .line 35
+    move-result-wide v1
+
+    .line 36
+    const/16 v3, 0x20
+
+    .line 37
+    .line 38
+    shr-long v3, v1, v3
+
+    .line 39
+    .line 40
+    long-to-int v3, v3
+
+    .line 41
+    const-wide v4, 0xffffffffL
+
+    .line 42
+    .line 43
+    .line 44
+    .line 45
+    .line 46
+    and-long/2addr v1, v4
+
+    .line 47
+    long-to-int v1, v1
+
+    .line 48
+    iget v0, v0, Lxm0;->c:I
+
+    .line 49
+    .line 50
+    add-int/2addr v3, v1
+
+    .line 51
+    if-le v0, v3, :cond_3
+
+    .line 52
+    .line 53
+    iget-object v0, p0, Lqt0;->q:Ldr1;
+
+    .line 54
+    .line 55
+    if-eqz v0, :cond_2
+
+    .line 56
+    .line 57
+    invoke-virtual {p0}, Lqt0;->R()Z
+
+    .line 58
+    .line 59
+    .line 60
+    move-result v1
+
+    .line 61
+    if-eqz v1, :cond_2
+
+    .line 62
+    .line 63
+    iget-object v1, v0, Ldr1;->b:Lb11;
+
+    .line 64
+    .line 65
+    invoke-virtual {v1}, Lb11;->a()Z
+
+    .line 66
+    .line 67
+    .line 68
+    move-result v1
+
+    .line 69
+    if-eqz v1, :cond_1
+
+    .line 70
+    .line 71
+    invoke-virtual {p0}, Lqt0;->h0()V
+
+    .line 72
+    .line 73
+    .line 74
+    :cond_1
+    invoke-virtual {p0}, Lqt0;->getEditorLanguage()Lhy2;
+
+    .line 75
+    .line 76
+    .line 77
+    move-result-object v1
+
+    .line 78
+    invoke-virtual {p0}, Lqt0;->getTabWidth()I
+
+    .line 79
+    .line 80
+    .line 81
+    move-result v2
+
+    .line 82
+    invoke-virtual {p0}, Lqt0;->getTabWidth()I
+
+    .line 83
+    .line 84
+    .line 85
+    move-result p0
+
+    .line 86
+    invoke-interface {v1}, Lhy2;->h()Z
+
+    .line 87
+    .line 88
+    .line 89
+    move-result v1
+
+    .line 90
+    invoke-static {v2, p0, v1}, Lu23;->o(IIZ)Ljava/lang/String;
+
+    .line 91
+    .line 92
+    .line 93
+    move-result-object p0
+
+    .line 94
+    invoke-virtual {v0, p0}, Ldr1;->a(Ljava/lang/CharSequence;)V
+
+    .line 95
+    .line 96
+    .line 97
+    :cond_2
+    return-void
+
+    .line 98
+    :cond_3
+    const/4 v0, 0x0
+
+    .line 99
+    invoke-virtual {p0, v0}, Lqt0;->O(Z)V
+
+    .line 100
+    .line 101
+    .line 102
+    return-void
+.end method
+
+.method public final Q(ILjava/lang/String;)V
+    .locals 4
+
+    .line 1
+    if-ltz p1, :cond_2
+
+    .line 2
+    .line 3
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    if-gt p1, v0, :cond_2
+
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lqt0;->getText()Ln61;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v0
+
+    .line 13
+    invoke-virtual {v0}, Ln61;->m()Lwb1;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object v0
+
+    .line 17
+    invoke-virtual {v0}, Lwb1;->a()Z
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v1
+
+    .line 21
+    if-eqz v1, :cond_0
+
+    .line 22
+    .line 23
+    invoke-virtual {p0}, Lqt0;->A()V
+
+    .line 24
+    .line 25
+    .line 26
+    invoke-virtual {p0}, Lqt0;->Z()V
+
+    .line 27
+    .line 28
+    .line 29
+    :cond_0
+    iget-object v1, p0, Lqt0;->B0:Ln61;
+
+    .line 30
+    .line 31
+    iget-object v2, v0, Lwb1;->d:Lxm0;
+
+    .line 32
+    .line 33
+    iget v3, v2, Lxm0;->b:I
+
+    .line 34
+    .line 35
+    iget v2, v2, Lxm0;->c:I
+
+    .line 36
+    .line 37
+    invoke-virtual {v1, v3, v2, p2}, Ln61;->r(IILjava/lang/CharSequence;)V
+
+    .line 38
+    .line 39
+    .line 40
+    invoke-virtual {p0}, Lqt0;->Z()V
+
+    .line 41
+    .line 42
+    .line 43
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
+
+    .line 44
+    .line 45
+    .line 46
+    move-result v1
+
+    .line 47
+    if-eq p1, v1, :cond_1
+
+    .line 48
+    .line 49
+    iget-object v1, p0, Lqt0;->B0:Ln61;
+
+    .line 50
+    .line 51
+    invoke-virtual {v1}, Ln61;->n()Lug0;
+
+    .line 52
+    .line 53
+    .line 54
+    move-result-object v1
+
+    .line 55
+    iget-object v0, v0, Lwb1;->d:Lxm0;
+
+    .line 56
+    .line 57
+    iget v0, v0, Lxm0;->a:I
+
+    .line 58
+    .line 59
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
+
+    .line 60
+    .line 61
+    .line 62
+    move-result p2
+
+    .line 63
+    sub-int/2addr p2, p1
+
+    .line 64
+    sub-int/2addr v0, p2
+
+    .line 65
+    invoke-virtual {v1, v0}, Lug0;->A(I)Lxm0;
+
+    .line 66
+    .line 67
+    .line 68
+    move-result-object p1
+
+    .line 69
+    iget p2, p1, Lxm0;->b:I
+
+    .line 70
+    .line 71
+    iget p1, p1, Lxm0;->c:I
+
+    .line 72
+    .line 73
+    invoke-virtual {p0, p2, p1}, Lqt0;->l0(II)V
+
+    .line 74
+    .line 75
+    .line 76
+    :cond_1
+    return-void
+
+    .line 77
+    :cond_2
+    const-string p0, "selectionOffset is invalid"
+
+    .line 78
+    .line 79
+    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+
+    .line 80
+    .line 81
+    .line 82
+    return-void
+.end method
+
+.method public final R()Z
+    .locals 1
+
+    .line 1
+    iget-boolean v0, p0, Lqt0;->N:Z
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    iget-boolean v0, p0, Lqt0;->T:Z
+
+    .line 6
+    .line 7
+    if-nez v0, :cond_0
+
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lqt0;->S()V
+
+    .line 10
+    .line 11
+    .line 12
+    const/4 p0, 0x1
+
+    .line 13
+    return p0
+
+    .line 14
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 15
+    return p0
+.end method
+
+.method public final S()V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->G0:Lhy2;
+
+    .line 2
+    .line 3
+    invoke-interface {p0}, Lhy2;->f()Lp6;
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final T()Z
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lqt0;->W0:Lri1;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
+    .line 5
+    .line 6
+    iget-boolean v0, p0, Lqt0;->Q:Z
+
+    .line 7
+    .line 8
+    if-nez v0, :cond_1
+
+    .line 9
+    .line 10
+    iget-boolean p0, p0, Lqt0;->R:Z
+
+    .line 11
+    .line 12
+    if-eqz p0, :cond_0
+
+    .line 13
+    .line 14
+    goto :goto_0
+
+    .line 15
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 16
+    return p0
+
+    .line 17
+    :cond_1
+    :goto_0
+    const/4 p0, 0x1
+
+    .line 18
+    return p0
+.end method
+
+.method public final U(FF)Z
+    .locals 6
+
+    .line 1
+    invoke-virtual {p0, p1, p2}, Lqt0;->J(FF)J
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-wide v0
+
+    .line 5
+    iget-object p2, p0, Lqt0;->s:Ld3;
+
+    .line 6
+    .line 7
+    iget-object v2, p0, Lqt0;->B0:Ln61;
+
+    .line 8
+    .line 9
+    const/16 v3, 0x20
+
+    .line 10
+    .line 11
+    shr-long v3, v0, v3
+
+    .line 12
+    .line 13
+    long-to-int v3, v3
+
+    .line 14
+    const-wide v4, 0xffffffffL
+
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    and-long/2addr v0, v4
+
+    .line 20
+    long-to-int v0, v0
+
+    .line 21
+    invoke-virtual {v2, v3, v0}, Ln61;->l(II)I
+
+    .line 22
+    .line 23
+    .line 24
+    move-result v0
+
+    .line 25
+    invoke-interface {p2, v0}, Lgz2;->c(I)I
+
+    .line 26
+    .line 27
+    .line 28
+    move-result p2
+
+    .line 29
+    iget-object v0, p0, Lqt0;->b1:Lsr1;
+
+    .line 30
+    .line 31
+    invoke-virtual {v0, p2}, Lsr1;->d(I)Lmq6;
+
+    .line 32
+    .line 33
+    .line 34
+    move-result-object p2
+
+    .line 35
+    new-instance v0, Lhq6;
+
+    .line 36
+    .line 37
+    invoke-direct {v0}, Lhq6;-><init>()V
+
+    .line 38
+    .line 39
+    .line 40
+    new-instance v1, Liq6;
+
+    .line 41
+    .line 42
+    invoke-direct {v1, p2, v0}, Liq6;-><init>(Lmq6;Lhq6;)V
+
+    .line 43
+    .line 44
+    .line 45
+    const/4 v0, 0x1
+
+    .line 46
+    invoke-virtual {p2, v1, v0}, Lmq6;->l(Lkq6;Z)V
+
+    .line 47
+    .line 48
+    .line 49
+    iget p2, v1, Liq6;->a:F
+
+    .line 50
+    .line 51
+    invoke-virtual {p0}, Lqt0;->W()F
+
+    .line 52
+    .line 53
+    .line 54
+    move-result v1
+
+    .line 55
+    add-float/2addr p2, v1
+
+    .line 56
+    invoke-virtual {p0}, Lqt0;->getOffsetX()I
+
+    .line 57
+    .line 58
+    .line 59
+    move-result p0
+
+    .line 60
+    int-to-float p0, p0
+
+    .line 61
+    add-float/2addr p0, p1
+
+    .line 62
+    cmpl-float p1, p0, v1
+
+    .line 63
+    .line 64
+    if-ltz p1, :cond_0
+
+    .line 65
+    .line 66
+    cmpg-float p0, p0, p2
+
+    .line 67
+    .line 68
+    if-gtz p0, :cond_0
+
+    .line 69
+    .line 70
+    return v0
+
+    .line 71
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 72
+    return p0
+.end method
+
+.method public final V()F
+    .locals 7
+
+    .line 1
+    iget-boolean v0, p0, Lqt0;->c0:Z
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    if-nez v0, :cond_0
+
+    .line 5
+    .line 6
+    return v1
+
+    .line 7
+    :cond_0
+    invoke-virtual {p0}, Lqt0;->getLineCount()I
+
+    .line 8
+    .line 9
+    .line 10
+    move-result v0
+
+    .line 11
+    const/4 v2, 0x0
+
+    .line 12
+    move v3, v2
+
+    .line 13
+    :goto_0
+    if-lez v0, :cond_1
+
+    .line 14
+    .line 15
+    add-int/lit8 v3, v3, 0x1
+
+    .line 16
+    .line 17
+    div-int/lit8 v0, v0, 0xa
+
+    .line 18
+    .line 19
+    goto :goto_0
+
+    .line 20
+    :cond_1
+    const/16 v0, 0x13
+
+    .line 21
+    .line 22
+    invoke-static {v0}, Lij6;->a(I)[F
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object v4
+
+    .line 26
+    iget-object v5, p0, Lqt0;->b1:Lsr1;
+
+    .line 27
+    .line 28
+    iget-object v5, v5, Lsr1;->c:Lik4;
+
+    .line 29
+    .line 30
+    const-string v6, "0 1 2 3 4 5 6 7 8 9"
+
+    .line 31
+    .line 32
+    invoke-virtual {v5, v6, v4}, Landroid/graphics/Paint;->getTextWidths(Ljava/lang/String;[F)I
+
+    .line 33
+    .line 34
+    .line 35
+    invoke-static {v4}, Lij6;->b([F)V
+
+    .line 36
+    .line 37
+    .line 38
+    :goto_1
+    if-ge v2, v0, :cond_2
+
+    .line 39
+    .line 40
+    aget v5, v4, v2
+
+    .line 41
+    .line 42
+    invoke-static {v1, v5}, Ljava/lang/Math;->max(FF)F
+
+    .line 43
+    .line 44
+    .line 45
+    move-result v1
+
+    .line 46
+    add-int/lit8 v2, v2, 0x2
+
+    .line 47
+    .line 48
+    goto :goto_1
+
+    .line 49
+    :cond_2
+    int-to-float v0, v3
+
+    .line 50
+    mul-float/2addr v1, v0
+
+    .line 51
+    iget p0, p0, Lqt0;->J:F
+
+    .line 52
+    .line 53
+    add-float/2addr v1, p0
+
+    .line 54
+    return v1
+.end method
+
+.method public final W()F
+    .locals 2
+
+    .line 1
+    iget-boolean v0, p0, Lqt0;->c0:Z
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Lqt0;->V()F
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v0
+
+    .line 9
+    iget v1, p0, Lqt0;->A:F
+
+    .line 10
+    .line 11
+    add-float/2addr v0, v1
+
+    .line 12
+    iget v1, p0, Lqt0;->B:F
+
+    .line 13
+    .line 14
+    add-float/2addr v0, v1
+
+    .line 15
+    iget v1, p0, Lqt0;->z:F
+
+    .line 16
+    .line 17
+    add-float/2addr v0, v1
+
+    .line 18
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 19
+    .line 20
+    invoke-virtual {p0}, Lsr1;->D()V
+
+    .line 21
+    .line 22
+    .line 23
+    const/4 p0, 0x0
+
+    .line 24
+    add-float/2addr v0, p0
+
+    .line 25
+    return v0
+
+    .line 26
+    :cond_0
+    iget p0, p0, Lqt0;->y:F
+
+    .line 27
+    .line 28
+    const/high16 v0, 0x40a00000    # 5.0f
+
+    .line 29
+    .line 30
+    mul-float/2addr p0, v0
+
+    .line 31
+    return p0
+.end method
+
+.method public final X(Lsv5;Z)V
+    .locals 0
+
+    .line 1
+    if-eqz p2, :cond_0
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Lqt0;->F(Lsv5;)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+
+    .line 7
+    :cond_0
+    invoke-virtual {p0, p1}, Lqt0;->Y(Lsv5;)V
+
+    .line 8
+    .line 9
+    .line 10
+    return-void
+.end method
+
+.method public final Y(Lsv5;)V
+    .locals 6
+
+    .line 1
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Lwb1;->a()Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    const/4 v1, 0x7
+
+    .line 8
+    const/4 v2, 0x1
+
+    .line 9
+    if-eqz v0, :cond_1
+
+    .line 10
+    .line 11
+    sget-object v0, Lsv5;->n:Lsv5;
+
+    .line 12
+    .line 13
+    if-ne p1, v0, :cond_0
+
+    .line 14
+    .line 15
+    iget-object p1, p0, Lqt0;->A0:Lwb1;
+
+    .line 16
+    .line 17
+    iget-object p1, p1, Lwb1;->c:Lxm0;
+
+    .line 18
+    .line 19
+    iget v0, p1, Lxm0;->b:I
+
+    .line 20
+    .line 21
+    iget p1, p1, Lxm0;->c:I
+
+    .line 22
+    .line 23
+    invoke-virtual {p0, v0, p1, v1, v2}, Lqt0;->m0(IIIZ)V
+
+    .line 24
+    .line 25
+    .line 26
+    return-void
+
+    .line 27
+    :cond_0
+    sget-object v0, Lsv5;->o:Lsv5;
+
+    .line 28
+    .line 29
+    if-ne p1, v0, :cond_1
+
+    .line 30
+    .line 31
+    iget-object p1, p0, Lqt0;->A0:Lwb1;
+
+    .line 32
+    .line 33
+    iget-object p1, p1, Lwb1;->d:Lxm0;
+
+    .line 34
+    .line 35
+    iget v0, p1, Lxm0;->b:I
+
+    .line 36
+    .line 37
+    iget p1, p1, Lxm0;->c:I
+
+    .line 38
+    .line 39
+    invoke-virtual {p0, v0, p1, v1, v2}, Lqt0;->m0(IIIZ)V
+
+    .line 40
+    .line 41
+    .line 42
+    return-void
+
+    .line 43
+    :cond_1
+    iget-object v0, p1, Lsv5;->k:Lrv5;
+
+    .line 44
+    .line 45
+    invoke-virtual {v0}, Ljava/lang/Enum;->ordinal()I
+
+    .line 46
+    .line 47
+    .line 48
+    move-result v0
+
+    .line 49
+    if-eqz v0, :cond_3
+
+    .line 50
+    .line 51
+    if-eq v0, v2, :cond_2
+
+    .line 52
+    .line 53
+    invoke-virtual {p0}, Lqt0;->D()V
+
+    .line 54
+    .line 55
+    .line 56
+    iget-object v0, p0, Lqt0;->p:Lxm0;
+
+    .line 57
+    .line 58
+    goto :goto_0
+
+    .line 59
+    :cond_2
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 60
+    .line 61
+    iget-object v0, v0, Lwb1;->d:Lxm0;
+
+    .line 62
+    .line 63
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
+
+    .line 64
+    .line 65
+    .line 66
+    move-result-object v0
+
+    .line 67
+    goto :goto_0
+
+    .line 68
+    :cond_3
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 69
+    .line 70
+    iget-object v0, v0, Lwb1;->c:Lxm0;
+
+    .line 71
+    .line 72
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
+
+    .line 73
+    .line 74
+    .line 75
+    move-result-object v0
+
+    .line 76
+    :goto_0
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 77
+    .line 78
+    .line 79
+    iget-object v3, p1, Lsv5;->j:Ls52;
+
+    .line 80
+    .line 81
+    invoke-interface {v3, p0, v0}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 82
+    .line 83
+    .line 84
+    move-result-object v0
+
+    .line 85
+    check-cast v0, Lxm0;
+
+    .line 86
+    .line 87
+    sget-object v3, Lsv5;->r:Lsv5;
+
+    .line 88
+    .line 89
+    iget-object v4, p0, Lqt0;->K0:Lds1;
+
+    .line 90
+    .line 91
+    const/4 v5, 0x0
+
+    .line 92
+    if-ne p1, v3, :cond_4
+
+    .line 93
+    .line 94
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+
+    .line 95
+    .line 96
+    .line 97
+    move-result p1
+
+    .line 98
+    neg-int p1, p1
+
+    .line 99
+    int-to-float p1, p1
+
+    .line 100
+    invoke-virtual {v4, v5, p1, v2}, Lds1;->j(FFZ)V
+
+    .line 101
+    .line 102
+    .line 103
+    goto :goto_1
+
+    .line 104
+    :cond_4
+    sget-object v3, Lsv5;->s:Lsv5;
+
+    .line 105
+    .line 106
+    if-ne p1, v3, :cond_5
+
+    .line 107
+    .line 108
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+
+    .line 109
+    .line 110
+    .line 111
+    move-result p1
+
+    .line 112
+    int-to-float p1, p1
+
+    .line 113
+    invoke-virtual {v4, v5, p1, v2}, Lds1;->j(FFZ)V
+
+    .line 114
+    .line 115
+    .line 116
+    :cond_5
+    :goto_1
+    iget p1, v0, Lxm0;->b:I
+
+    .line 117
+    .line 118
+    iget v0, v0, Lxm0;->c:I
+
+    .line 119
+    .line 120
+    invoke-virtual {p0, p1, v0, v1, v2}, Lqt0;->m0(IIIZ)V
+
+    .line 121
+    .line 122
+    .line 123
+    return-void
+.end method
+
+.method public final Z()V
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lqt0;->R0:Landroid/view/inputmethod/ExtractedTextRequest;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-virtual {p0, v0}, Lqt0;->G(Landroid/view/inputmethod/ExtractedTextRequest;)Landroid/view/inputmethod/ExtractedText;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object v0
+
+    .line 9
+    iget-object v1, p0, Lqt0;->R0:Landroid/view/inputmethod/ExtractedTextRequest;
+
+    .line 10
+    .line 11
+    iget v1, v1, Landroid/view/inputmethod/ExtractedTextRequest;->token:I
+
+    .line 12
+    .line 13
+    iget-object v2, p0, Lqt0;->z0:Landroid/view/inputmethod/InputMethodManager;
+
+    .line 14
+    .line 15
+    invoke-virtual {v2, p0, v1, v0}, Landroid/view/inputmethod/InputMethodManager;->updateExtractedText(Landroid/view/View;ILandroid/view/inputmethod/ExtractedText;)V
+
+    .line 16
+    .line 17
+    .line 18
+    :cond_0
+    invoke-virtual {p0}, Lqt0;->u0()V
+
+    .line 19
+    .line 20
+    .line 21
+    invoke-virtual {p0}, Lqt0;->t0()F
+
+    .line 22
+    .line 23
+    .line 24
+    iget-object v0, p0, Lqt0;->q:Ldr1;
+
+    .line 25
+    .line 26
+    iget-object v0, v0, Ldr1;->b:Lb11;
+
+    .line 27
+    .line 28
+    invoke-virtual {v0}, Lb11;->a()Z
+
+    .line 29
+    .line 30
+    .line 31
+    move-result v0
+
+    .line 32
+    if-eqz v0, :cond_1
+
+    .line 33
+    .line 34
+    invoke-virtual {p0}, Lqt0;->h0()V
+
+    .line 35
+    .line 36
+    .line 37
+    :cond_1
+    return-void
+.end method
+
+.method public final a(Ln61;)V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    iput-boolean v0, p0, Lqt0;->L:Z
+
+    .line 3
+    .line 4
+    iget-object p0, p0, Lqt0;->s:Ld3;
+
+    .line 5
+    .line 6
+    invoke-interface {p0, p1}, Lf71;->a(Ln61;)V
+
+    .line 7
+    .line 8
+    .line 9
+    return-void
+.end method
+
+.method public final a0(I)V
+    .locals 1
+
+    .line 1
+    new-instance v0, Lju5;
+
+    .line 2
+    .line 3
+    invoke-direct {v0, p0, p1}, Lju5;-><init>(Lqt0;I)V
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object p1, p0, Lqt0;->r:Ltv1;
+
+    .line 7
+    .line 8
+    invoke-virtual {p1, v0}, Ltv1;->a(Lgv1;)I
+
+    .line 9
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Lqt0;->getCursorRange()Lzp6;
+
+    .line 12
+    .line 13
+    .line 14
+    return-void
+.end method
+
+.method public final b0()V
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lqt0;->y0:Landroid/content/ClipboardManager;
+
+    .line 2
+    .line 3
+    :try_start_0
+    invoke-virtual {v0}, Landroid/content/ClipboardManager;->hasPrimaryClip()Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v1
+
+    .line 7
+    if-eqz v1, :cond_1
+
+    .line 8
+    .line 9
+    invoke-virtual {v0}, Landroid/content/ClipboardManager;->getPrimaryClip()Landroid/content/ClipData;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v0
+
+    .line 13
+    if-nez v0, :cond_0
+
+    .line 14
+    .line 15
+    goto :goto_0
+
+    .line 16
+    :cond_0
+    invoke-static {v0}, Lzu6;->u(Landroid/content/ClipData;)Ljava/lang/String;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object v0
+
+    .line 20
+    iget-object v1, p0, Lqt0;->q:Ldr1;
+
+    .line 21
+    .line 22
+    if-eqz v1, :cond_1
+
+    .line 23
+    .line 24
+    const/4 v2, 0x1
+
+    .line 25
+    invoke-virtual {v1, v0, v2}, Ldr1;->commitText(Ljava/lang/CharSequence;I)Z
+
+    .line 26
+    .line 27
+    .line 28
+    iget-object v0, p0, Lqt0;->W0:Lri1;
+
+    .line 29
+    .line 30
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 31
+    .line 32
+    .line 33
+    invoke-virtual {p0}, Lqt0;->Z()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 34
+    .line 35
+    .line 36
+    return-void
+
+    .line 37
+    :catch_0
+    move-exception v0
+
+    .line 38
+    goto :goto_1
+
+    .line 39
+    :cond_1
+    :goto_0
+    return-void
+
+    .line 40
+    :goto_1
+    const-string v1, "CodeEditor"
+
+    .line 41
+    .line 42
+    const-string v2, "Error pasting text to editor"
+
+    .line 43
+    .line 44
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 45
+    .line 46
+    .line 47
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 48
+    .line 49
+    .line 50
+    move-result-object p0
+
+    .line 51
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 52
+    .line 53
+    .line 54
+    move-result-object v0
+
+    .line 55
+    const/4 v1, 0x0
+
+    .line 56
+    invoke-static {p0, v0, v1}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    .line 57
+    .line 58
+    .line 59
+    move-result-object p0
+
+    .line 60
+    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
+
+    .line 61
+    .line 62
+    .line 63
+    return-void
+.end method
+
+.method public final c0(JLjava/lang/Runnable;)V
+    .locals 3
+
+    .line 1
+    sget-object v0, Lar1;->a:Lar1;
+
+    .line 2
+    .line 3
+    new-instance v1, Lot0;
+
+    .line 4
+    .line 5
+    const/4 v2, 0x1
+
+    .line 6
+    invoke-direct {v1, p0, p3, v2}, Lot0;-><init>(Lqt0;Ljava/lang/Runnable;B)V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {v0, v1, p1, p2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 10
+    .line 11
+    .line 12
+    return-void
+.end method
+
+.method public final computeHorizontalScrollExtent()I
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public final computeHorizontalScrollOffset()I
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->getScrollMaxX()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    invoke-virtual {p0}, Lqt0;->getOffsetX()I
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    invoke-static {v0, p0}, Ljava/lang/Math;->min(II)I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    const/4 v0, 0x0
+
+    .line 14
+    invoke-static {v0, p0}, Ljava/lang/Math;->max(II)I
+
+    .line 15
+    .line 16
+    .line 17
+    move-result p0
+
+    .line 18
+    return p0
+.end method
+
+.method public final computeHorizontalScrollRange()I
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->getScrollMaxX()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    return p0
+.end method
+
+.method public final computeScroll()V
+    .locals 8
+
+    .line 1
+    iget-object v0, p0, Lqt0;->K0:Lds1;
+
+    .line 2
+    .line 3
+    iget-object v1, v0, Lds1;->b:Ltr1;
+
+    .line 4
+    .line 5
+    iget-object v2, v1, Ltr1;->b:Landroid/widget/OverScroller;
+
+    .line 6
+    .line 7
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->computeScrollOffset()Z
+
+    .line 8
+    .line 9
+    .line 10
+    move-result v3
+
+    .line 11
+    if-eqz v3, :cond_0
+
+    .line 12
+    .line 13
+    invoke-virtual {v1}, Ltr1;->a()V
+
+    .line 14
+    .line 15
+    .line 16
+    :cond_0
+    if-eqz v3, :cond_9
+
+    .line 17
+    .line 18
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->isFinished()Z
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v1
+
+    .line 22
+    const/4 v3, 0x0
+
+    .line 23
+    const/4 v4, 0x1
+
+    .line 24
+    if-nez v1, :cond_4
+
+    .line 25
+    .line 26
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->getStartX()I
+
+    .line 27
+    .line 28
+    .line 29
+    move-result v1
+
+    .line 30
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->getFinalX()I
+
+    .line 31
+    .line 32
+    .line 33
+    move-result v5
+
+    .line 34
+    if-ne v1, v5, :cond_1
+
+    .line 35
+    .line 36
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->getStartY()I
+
+    .line 37
+    .line 38
+    .line 39
+    move-result v1
+
+    .line 40
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->getFinalY()I
+
+    .line 41
+    .line 42
+    .line 43
+    move-result v5
+
+    .line 44
+    if-eq v1, v5, :cond_4
+
+    .line 45
+    .line 46
+    :cond_1
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->getFinalX()I
+
+    .line 47
+    .line 48
+    .line 49
+    move-result v1
+
+    .line 50
+    int-to-float v1, v1
+
+    .line 51
+    iput v1, p0, Lqt0;->d1:F
+
+    .line 52
+    .line 53
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->getFinalY()I
+
+    .line 54
+    .line 55
+    .line 56
+    move-result v1
+
+    .line 57
+    int-to-float v1, v1
+
+    .line 58
+    iput v1, p0, Lqt0;->e1:F
+
+    .line 59
+    .line 60
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->getStartX()I
+
+    .line 61
+    .line 62
+    .line 63
+    move-result v1
+
+    .line 64
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->getFinalX()I
+
+    .line 65
+    .line 66
+    .line 67
+    move-result v5
+
+    .line 68
+    sub-int/2addr v1, v5
+
+    .line 69
+    invoke-static {v1}, Ljava/lang/Math;->abs(I)I
+
+    .line 70
+    .line 71
+    .line 72
+    move-result v1
+
+    .line 73
+    int-to-float v1, v1
+
+    .line 74
+    invoke-virtual {p0}, Lqt0;->getDpUnit()F
+
+    .line 75
+    .line 76
+    .line 77
+    move-result v5
+
+    .line 78
+    const/high16 v6, 0x40a00000    # 5.0f
+
+    .line 79
+    .line 80
+    mul-float/2addr v5, v6
+
+    .line 81
+    cmpl-float v1, v1, v5
+
+    .line 82
+    .line 83
+    if-lez v1, :cond_2
+
+    .line 84
+    .line 85
+    move v1, v4
+
+    .line 86
+    goto :goto_0
+
+    .line 87
+    :cond_2
+    move v1, v3
+
+    .line 88
+    :goto_0
+    iput-boolean v1, p0, Lqt0;->g1:Z
+
+    .line 89
+    .line 90
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->getStartY()I
+
+    .line 91
+    .line 92
+    .line 93
+    move-result v1
+
+    .line 94
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->getFinalY()I
+
+    .line 95
+    .line 96
+    .line 97
+    move-result v5
+
+    .line 98
+    sub-int/2addr v1, v5
+
+    .line 99
+    invoke-static {v1}, Ljava/lang/Math;->abs(I)I
+
+    .line 100
+    .line 101
+    .line 102
+    move-result v1
+
+    .line 103
+    int-to-float v1, v1
+
+    .line 104
+    invoke-virtual {p0}, Lqt0;->getDpUnit()F
+
+    .line 105
+    .line 106
+    .line 107
+    move-result v5
+
+    .line 108
+    mul-float/2addr v5, v6
+
+    .line 109
+    cmpl-float v1, v1, v5
+
+    .line 110
+    .line 111
+    if-lez v1, :cond_3
+
+    .line 112
+    .line 113
+    move v1, v4
+
+    .line 114
+    goto :goto_1
+
+    .line 115
+    :cond_3
+    move v1, v3
+
+    .line 116
+    :goto_1
+    iput-boolean v1, p0, Lqt0;->f1:Z
+
+    .line 117
+    .line 118
+    :cond_4
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->getCurrX()I
+
+    .line 119
+    .line 120
+    .line 121
+    move-result v1
+
+    .line 122
+    iget-object v5, p0, Lqt0;->Q0:Landroid/widget/EdgeEffect;
+
+    .line 123
+    .line 124
+    const/4 v6, 0x0
+
+    .line 125
+    if-gtz v1, :cond_5
+
+    .line 126
+    .line 127
+    iget v1, p0, Lqt0;->d1:F
+
+    .line 128
+    .line 129
+    cmpg-float v1, v1, v6
+
+    .line 130
+    .line 131
+    if-gtz v1, :cond_5
+
+    .line 132
+    .line 133
+    invoke-virtual {v5}, Landroid/widget/EdgeEffect;->isFinished()Z
+
+    .line 134
+    .line 135
+    .line 136
+    move-result v1
+
+    .line 137
+    if-eqz v1, :cond_5
+
+    .line 138
+    .line 139
+    iget-boolean v1, p0, Lqt0;->g1:Z
+
+    .line 140
+    .line 141
+    if-eqz v1, :cond_5
+
+    .line 142
+    .line 143
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->getCurrVelocity()F
+
+    .line 144
+    .line 145
+    .line 146
+    move-result v1
+
+    .line 147
+    float-to-int v1, v1
+
+    .line 148
+    invoke-virtual {v5, v1}, Landroid/widget/EdgeEffect;->onAbsorb(I)V
+
+    .line 149
+    .line 150
+    .line 151
+    iput-boolean v3, v0, Lds1;->j:Z
+
+    .line 152
+    .line 153
+    goto :goto_2
+
+    .line 154
+    :cond_5
+    invoke-virtual {p0}, Lqt0;->getScrollMaxX()I
+
+    .line 155
+    .line 156
+    .line 157
+    move-result v1
+
+    .line 158
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->getCurrX()I
+
+    .line 159
+    .line 160
+    .line 161
+    move-result v7
+
+    .line 162
+    if-lt v7, v1, :cond_6
+
+    .line 163
+    .line 164
+    iget v7, p0, Lqt0;->d1:F
+
+    .line 165
+    .line 166
+    int-to-float v1, v1
+
+    .line 167
+    cmpl-float v1, v7, v1
+
+    .line 168
+    .line 169
+    if-ltz v1, :cond_6
+
+    .line 170
+    .line 171
+    invoke-virtual {v5}, Landroid/widget/EdgeEffect;->isFinished()Z
+
+    .line 172
+    .line 173
+    .line 174
+    move-result v1
+
+    .line 175
+    if-eqz v1, :cond_6
+
+    .line 176
+    .line 177
+    iget-boolean v1, p0, Lqt0;->g1:Z
+
+    .line 178
+    .line 179
+    if-eqz v1, :cond_6
+
+    .line 180
+    .line 181
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->getCurrVelocity()F
+
+    .line 182
+    .line 183
+    .line 184
+    move-result v1
+
+    .line 185
+    float-to-int v1, v1
+
+    .line 186
+    invoke-virtual {v5, v1}, Landroid/widget/EdgeEffect;->onAbsorb(I)V
+
+    .line 187
+    .line 188
+    .line 189
+    iput-boolean v4, v0, Lds1;->j:Z
+
+    .line 190
+    .line 191
+    :cond_6
+    :goto_2
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->getCurrY()I
+
+    .line 192
+    .line 193
+    .line 194
+    move-result v1
+
+    .line 195
+    iget-object v5, p0, Lqt0;->P0:Landroid/widget/EdgeEffect;
+
+    .line 196
+    .line 197
+    if-gtz v1, :cond_7
+
+    .line 198
+    .line 199
+    iget v1, p0, Lqt0;->e1:F
+
+    .line 200
+    .line 201
+    cmpg-float v1, v1, v6
+
+    .line 202
+    .line 203
+    if-gtz v1, :cond_7
+
+    .line 204
+    .line 205
+    invoke-virtual {v5}, Landroid/widget/EdgeEffect;->isFinished()Z
+
+    .line 206
+    .line 207
+    .line 208
+    move-result v1
+
+    .line 209
+    if-eqz v1, :cond_7
+
+    .line 210
+    .line 211
+    iget-boolean v1, p0, Lqt0;->f1:Z
+
+    .line 212
+    .line 213
+    if-eqz v1, :cond_7
+
+    .line 214
+    .line 215
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->getCurrVelocity()F
+
+    .line 216
+    .line 217
+    .line 218
+    move-result v1
+
+    .line 219
+    float-to-int v1, v1
+
+    .line 220
+    invoke-virtual {v5, v1}, Landroid/widget/EdgeEffect;->onAbsorb(I)V
+
+    .line 221
+    .line 222
+    .line 223
+    iput-boolean v3, v0, Lds1;->i:Z
+
+    .line 224
+    .line 225
+    goto :goto_3
+
+    .line 226
+    :cond_7
+    invoke-virtual {p0}, Lqt0;->getScrollMaxY()I
+
+    .line 227
+    .line 228
+    .line 229
+    move-result v1
+
+    .line 230
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->getCurrY()I
+
+    .line 231
+    .line 232
+    .line 233
+    move-result v3
+
+    .line 234
+    if-lt v3, v1, :cond_8
+
+    .line 235
+    .line 236
+    iget v3, p0, Lqt0;->e1:F
+
+    .line 237
+    .line 238
+    int-to-float v1, v1
+
+    .line 239
+    cmpl-float v1, v3, v1
+
+    .line 240
+    .line 241
+    if-ltz v1, :cond_8
+
+    .line 242
+    .line 243
+    invoke-virtual {v5}, Landroid/widget/EdgeEffect;->isFinished()Z
+
+    .line 244
+    .line 245
+    .line 246
+    move-result v1
+
+    .line 247
+    if-eqz v1, :cond_8
+
+    .line 248
+    .line 249
+    iget-boolean v1, p0, Lqt0;->f1:Z
+
+    .line 250
+    .line 251
+    if-eqz v1, :cond_8
+
+    .line 252
+    .line 253
+    invoke-virtual {v2}, Landroid/widget/OverScroller;->getCurrVelocity()F
+
+    .line 254
+    .line 255
+    .line 256
+    move-result v1
+
+    .line 257
+    float-to-int v1, v1
+
+    .line 258
+    invoke-virtual {v5, v1}, Landroid/widget/EdgeEffect;->onAbsorb(I)V
+
+    .line 259
+    .line 260
+    .line 261
+    iput-boolean v4, v0, Lds1;->i:Z
+
+    .line 262
+    .line 263
+    :cond_8
+    :goto_3
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidateOnAnimation()V
+
+    .line 264
+    .line 265
+    .line 266
+    :cond_9
+    return-void
+.end method
+
+.method public final computeVerticalScrollExtent()I
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public final computeVerticalScrollOffset()I
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->getScrollMaxY()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    invoke-virtual {p0}, Lqt0;->getOffsetY()I
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    invoke-static {v0, p0}, Ljava/lang/Math;->min(II)I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    const/4 v0, 0x0
+
+    .line 14
+    invoke-static {v0, p0}, Ljava/lang/Math;->max(II)I
+
+    .line 15
+    .line 16
+    .line 17
+    move-result p0
+
+    .line 18
+    return p0
+.end method
+
+.method public final computeVerticalScrollRange()I
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->getScrollMaxY()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    return p0
+.end method
+
+.method public final createAccessibilityNodeInfo()Landroid/view/accessibility/AccessibilityNodeInfo;
+    .locals 6
+
+    .line 1
+    invoke-super {p0}, Landroid/view/View;->createAccessibilityNodeInfo()Landroid/view/accessibility/AccessibilityNodeInfo;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v1
+
+    .line 9
+    if-eqz v1, :cond_4
+
+    .line 10
+    .line 11
+    iget-object v1, p0, Lqt0;->W0:Lri1;
+
+    .line 12
+    .line 13
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 14
+    .line 15
+    .line 16
+    invoke-virtual {p0}, Lqt0;->R()Z
+
+    .line 17
+    .line 18
+    .line 19
+    move-result v1
+
+    .line 20
+    invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEditable(Z)V
+
+    .line 21
+    .line 22
+    .line 23
+    iget-object v1, p0, Lqt0;->A0:Lwb1;
+
+    .line 24
+    .line 25
+    iget-object v2, v1, Lwb1;->c:Lxm0;
+
+    .line 26
+    .line 27
+    iget v2, v2, Lxm0;->a:I
+
+    .line 28
+    .line 29
+    iget-object v1, v1, Lwb1;->d:Lxm0;
+
+    .line 30
+    .line 31
+    iget v1, v1, Lxm0;->a:I
+
+    .line 32
+    .line 33
+    invoke-virtual {v0, v2, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setTextSelection(II)V
+
+    .line 34
+    .line 35
+    .line 36
+    const/4 v1, 0x1
+
+    .line 37
+    invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setInputType(I)V
+
+    .line 38
+    .line 39
+    .line 40
+    invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setMultiLine(Z)V
+
+    .line 41
+    .line 42
+    .line 43
+    invoke-virtual {p0}, Lqt0;->getText()Ln61;
+
+    .line 44
+    .line 45
+    .line 46
+    move-result-object v2
+
+    .line 47
+    if-eqz v2, :cond_2
+
+    .line 48
+    .line 49
+    iget v3, v2, Ln61;->m:I
+
+    .line 50
+    .line 51
+    const v4, 0x186a0
+
+    .line 52
+    .line 53
+    .line 54
+    if-gt v3, v4, :cond_0
+
+    .line 55
+    .line 56
+    goto :goto_0
+
+    .line 57
+    :cond_0
+    const v3, 0x1869f
+
+    .line 58
+    .line 59
+    .line 60
+    invoke-virtual {v2, v3}, Ln61;->charAt(I)C
+
+    .line 61
+    .line 62
+    .line 63
+    move-result v5
+
+    .line 64
+    invoke-static {v5}, Ljava/lang/Character;->isHighSurrogate(C)Z
+
+    .line 65
+    .line 66
+    .line 67
+    move-result v5
+
+    .line 68
+    if-eqz v5, :cond_1
+
+    .line 69
+    .line 70
+    invoke-virtual {v2, v4}, Ln61;->charAt(I)C
+
+    .line 71
+    .line 72
+    .line 73
+    move-result v5
+
+    .line 74
+    invoke-static {v5}, Ljava/lang/Character;->isLowSurrogate(C)Z
+
+    .line 75
+    .line 76
+    .line 77
+    move-result v5
+
+    .line 78
+    if-eqz v5, :cond_1
+
+    .line 79
+    .line 80
+    move v4, v3
+
+    .line 81
+    :cond_1
+    const/4 v3, 0x0
+
+    .line 82
+    invoke-virtual {v2, v3, v4}, Ln61;->subSequence(II)Ljava/lang/CharSequence;
+
+    .line 83
+    .line 84
+    .line 85
+    move-result-object v2
+
+    .line 86
+    :cond_2
+    :goto_0
+    check-cast v2, Ln61;
+
+    .line 87
+    .line 88
+    invoke-virtual {v2}, Ln61;->toString()Ljava/lang/String;
+
+    .line 89
+    .line 90
+    .line 91
+    move-result-object v2
+
+    .line 92
+    invoke-virtual {v0, v2}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
+
+    .line 93
+    .line 94
+    .line 95
+    sget-object v2, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_COPY:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
+
+    .line 96
+    .line 97
+    invoke-virtual {v0, v2}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
+
+    .line 98
+    .line 99
+    .line 100
+    sget-object v2, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_CUT:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
+
+    .line 101
+    .line 102
+    invoke-virtual {v0, v2}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
+
+    .line 103
+    .line 104
+    .line 105
+    sget-object v2, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_PASTE:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
+
+    .line 106
+    .line 107
+    invoke-virtual {v0, v2}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
+
+    .line 108
+    .line 109
+    .line 110
+    sget-object v2, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SET_TEXT:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
+
+    .line 111
+    .line 112
+    invoke-virtual {v0, v2}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
+
+    .line 113
+    .line 114
+    .line 115
+    invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setLongClickable(Z)V
+
+    .line 116
+    .line 117
+    .line 118
+    invoke-virtual {p0}, Lqt0;->getScrollMaxY()I
+
+    .line 119
+    .line 120
+    .line 121
+    move-result v2
+
+    .line 122
+    if-lez v2, :cond_4
+
+    .line 123
+    .line 124
+    invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->setScrollable(Z)V
+
+    .line 125
+    .line 126
+    .line 127
+    invoke-virtual {p0}, Lqt0;->getOffsetY()I
+
+    .line 128
+    .line 129
+    .line 130
+    move-result p0
+
+    .line 131
+    if-lez p0, :cond_3
+
+    .line 132
+    .line 133
+    sget-object v1, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SCROLL_BACKWARD:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
+
+    .line 134
+    .line 135
+    invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
+
+    .line 136
+    .line 137
+    .line 138
+    sget-object v1, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SCROLL_UP:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
+
+    .line 139
+    .line 140
+    invoke-virtual {v0, v1}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
+
+    .line 141
+    .line 142
+    .line 143
+    :cond_3
+    if-ge p0, v2, :cond_4
+
+    .line 144
+    .line 145
+    sget-object p0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SCROLL_FORWARD:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
+
+    .line 146
+    .line 147
+    invoke-virtual {v0, p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
+
+    .line 148
+    .line 149
+    .line 150
+    sget-object p0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SCROLL_DOWN:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
+
+    .line 151
+    .line 152
+    invoke-virtual {v0, p0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
+
+    .line 153
+    .line 154
+    .line 155
+    :cond_4
+    return-object v0
+.end method
+
+.method public final d(Ln61;IIIILjava/lang/CharSequence;)V
+    .locals 12
+
+    .line 1
+    move/from16 v4, p4
+
+    .line 2
+    .line 3
+    iget-object v0, p0, Lqt0;->a1:Lja5;
+
+    .line 4
+    .line 5
+    iget-object v2, v0, Lja5;->a:Lq72;
+
+    .line 6
+    .line 7
+    const/4 v9, 0x1
+
+    .line 8
+    if-eq p2, v4, :cond_2
+
+    .line 9
+    .line 10
+    sub-int v5, v4, p2
+
+    .line 11
+    .line 12
+    iget-object v6, v2, Lq72;->k:Ljava/lang/Object;
+
+    .line 13
+    .line 14
+    check-cast v6, Lxq3;
+
+    .line 15
+    .line 16
+    if-ne v5, v9, :cond_0
+
+    .line 17
+    .line 18
+    invoke-virtual {v6, p2}, Lxq3;->b(I)V
+
+    .line 19
+    .line 20
+    .line 21
+    goto :goto_0
+
+    .line 22
+    :cond_0
+    new-array v7, v5, [I
+
+    .line 23
+    .line 24
+    invoke-virtual {v6, v7, p2}, Lxq3;->c([II)V
+
+    .line 25
+    .line 26
+    .line 27
+    :goto_0
+    iget-object v2, v2, Lq72;->l:Ljava/lang/Object;
+
+    .line 28
+    .line 29
+    check-cast v2, Ljava/util/ArrayList;
+
+    .line 30
+    .line 31
+    invoke-virtual {v2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    .line 32
+    .line 33
+    .line 34
+    move-result-object v2
+
+    .line 35
+    :cond_1
+    :goto_1
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    .line 36
+    .line 37
+    .line 38
+    move-result v6
+
+    .line 39
+    if-eqz v6, :cond_2
+
+    .line 40
+    .line 41
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 42
+    .line 43
+    .line 44
+    move-result-object v6
+
+    .line 45
+    check-cast v6, Lei3;
+
+    .line 46
+    .line 47
+    iget v7, v6, Lei3;->a:I
+
+    .line 48
+    .line 49
+    if-le v7, p2, :cond_1
+
+    .line 50
+    .line 51
+    add-int/2addr v7, v5
+
+    .line 52
+    iput v7, v6, Lei3;->a:I
+
+    .line 53
+    .line 54
+    goto :goto_1
+
+    .line 55
+    :cond_2
+    iget-object v0, v0, Lja5;->b:Lsr6;
+
+    .line 56
+    .line 57
+    iget-object v0, v0, Lsr6;->k:Ljava/lang/Object;
+
+    .line 58
+    .line 59
+    check-cast v0, Ljava/util/ArrayList;
+
+    .line 60
+    .line 61
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    .line 62
+    .line 63
+    .line 64
+    move-result-object v0
+
+    .line 65
+    :cond_3
+    :goto_2
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    .line 66
+    .line 67
+    .line 68
+    move-result v2
+
+    .line 69
+    if-eqz v2, :cond_5
+
+    .line 70
+    .line 71
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 72
+    .line 73
+    .line 74
+    move-result-object v2
+
+    .line 75
+    check-cast v2, Lla5;
+
+    .line 76
+    .line 77
+    iget v5, v2, Lla5;->a:I
+
+    .line 78
+    .line 79
+    if-ne v5, p2, :cond_4
+
+    .line 80
+    .line 81
+    iput-boolean v9, v2, Lla5;->c:Z
+
+    .line 82
+    .line 83
+    goto :goto_2
+
+    .line 84
+    :cond_4
+    if-le v5, p2, :cond_3
+
+    .line 85
+    .line 86
+    sub-int v6, v4, p2
+
+    .line 87
+    .line 88
+    add-int/2addr v6, v5
+
+    .line 89
+    iput v6, v2, Lla5;->a:I
+
+    .line 90
+    .line 91
+    goto :goto_2
+
+    .line 92
+    :cond_5
+    iget-object v0, p0, Lqt0;->b1:Lsr1;
+
+    .line 93
+    .line 94
+    invoke-virtual {v0}, Lsr1;->J()V
+
+    .line 95
+    .line 96
+    .line 97
+    iget-object v0, p0, Lqt0;->o:Lsr6;
+
+    .line 98
+    .line 99
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 100
+    .line 101
+    .line 102
+    iget-object v0, p0, Lqt0;->B0:Ln61;
+
+    .line 103
+    .line 104
+    invoke-virtual {v0}, Ln61;->n()Lug0;
+
+    .line 105
+    .line 106
+    .line 107
+    move-result-object v0
+
+    .line 108
+    invoke-virtual {v0, p2, p3}, Lug0;->B(II)Lxm0;
+
+    .line 109
+    .line 110
+    .line 111
+    move-result-object v10
+
+    .line 112
+    iget-object v0, p0, Lqt0;->B0:Ln61;
+
+    .line 113
+    .line 114
+    invoke-virtual {v0}, Ln61;->n()Lug0;
+
+    .line 115
+    .line 116
+    .line 117
+    move-result-object v0
+
+    .line 118
+    move/from16 v7, p5
+
+    .line 119
+    .line 120
+    invoke-virtual {v0, v4, v7}, Lug0;->B(II)Lxm0;
+
+    .line 121
+    .line 122
+    .line 123
+    move-result-object v11
+
+    .line 124
+    :try_start_0
+    iget-object v0, p0, Lqt0;->Y0:Lub6;
+
+    .line 125
+    .line 126
+    if-eqz v0, :cond_7
+
+    .line 127
+    .line 128
+    iget v2, v11, Lxm0;->b:I
+
+    .line 129
+    .line 130
+    iget v6, v10, Lxm0;->b:I
+
+    .line 131
+    .line 132
+    sub-int/2addr v2, v6
+
+    .line 133
+    if-nez v2, :cond_6
+
+    .line 134
+    .line 135
+    goto :goto_3
+
+    .line 136
+    :cond_6
+    iget-object v0, v0, Lub6;->b:Ljava/util/ArrayList;
+
+    .line 137
+    .line 138
+    if-eqz v0, :cond_7
+
+    .line 139
+    .line 140
+    invoke-static {v0, v6, v2}, Lmt6;->f0(Ljava/util/ArrayList;II)V
+
+    .line 141
+    .line 142
+    .line 143
+    :cond_7
+    :goto_3
+    iget-object v0, p0, Lqt0;->Z0:Lyh1;
+
+    .line 144
+    .line 145
+    if-eqz v0, :cond_8
+
+    .line 146
+    .line 147
+    iget v2, v10, Lxm0;->a:I
+
+    .line 148
+    .line 149
+    iget v6, v11, Lxm0;->a:I
+
+    .line 150
+    .line 151
+    invoke-virtual {v0, v2, v6}, Lyh1;->d(II)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 152
+    .line 153
+    .line 154
+    goto :goto_4
+
+    .line 155
+    :catch_0
+    move-exception v0
+
+    .line 156
+    const-string v2, "CodeEditor"
+
+    .line 157
+    .line 158
+    const-string v6, "Update failure"
+
+    .line 159
+    .line 160
+    invoke-static {v2, v6, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 161
+    .line 162
+    .line 163
+    :cond_8
+    :goto_4
+    iget-object v2, p0, Lqt0;->s:Ld3;
+
+    .line 164
+    .line 165
+    move-object v3, p1
+
+    .line 166
+    move v5, p3
+
+    .line 167
+    move-object/from16 v8, p6
+
+    .line 168
+    .line 169
+    move v6, v4
+
+    .line 170
+    move v4, p2
+
+    .line 171
+    invoke-interface/range {v2 .. v8}, Lf71;->d(Ln61;IIIILjava/lang/CharSequence;)V
+
+    .line 172
+    .line 173
+    .line 174
+    iget-object v2, p0, Lqt0;->b1:Lsr1;
+
+    .line 175
+    .line 176
+    iget-wide v5, v2, Lsr1;->A:J
+
+    .line 177
+    .line 178
+    const/4 v7, 0x0
+
+    .line 179
+    move v3, p2
+
+    .line 180
+    move/from16 v4, p4
+
+    .line 181
+    .line 182
+    invoke-virtual/range {v2 .. v7}, Lsr1;->c(IIJZ)V
+
+    .line 183
+    .line 184
+    .line 185
+    invoke-virtual {p0}, Lqt0;->t()V
+
+    .line 186
+    .line 187
+    .line 188
+    iget-object v0, p0, Lqt0;->G0:Lhy2;
+
+    .line 189
+    .line 190
+    invoke-interface {v0}, Lhy2;->a()Lq4;
+
+    .line 191
+    .line 192
+    .line 193
+    move-result-object v0
+
+    .line 194
+    move-object/from16 v5, p6
+
+    .line 195
+    .line 196
+    invoke-virtual {v0, v10, v11, v5}, Lq4;->m(Lxm0;Lxm0;Ljava/lang/CharSequence;)V
+
+    .line 197
+    .line 198
+    .line 199
+    iget-object v0, p0, Lqt0;->K0:Lds1;
+
+    .line 200
+    .line 201
+    invoke-virtual {v0}, Lds1;->m()Z
+
+    .line 202
+    .line 203
+    .line 204
+    move-result v2
+
+    .line 205
+    if-nez v2, :cond_9
+
+    .line 206
+    .line 207
+    goto :goto_5
+
+    .line 208
+    :cond_9
+    const-wide/16 v2, 0x0
+
+    .line 209
+    .line 210
+    iput-wide v2, v0, Lds1;->p:J
+
+    .line 211
+    .line 212
+    iget-object v0, v0, Lds1;->a:Lqt0;
+
+    .line 213
+    .line 214
+    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
+
+    .line 215
+    .line 216
+    .line 217
+    :goto_5
+    iget-boolean v0, p0, Lqt0;->N:Z
+
+    .line 218
+    .line 219
+    if-eqz v0, :cond_a
+
+    .line 220
+    .line 221
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 222
+    .line 223
+    invoke-virtual {v0}, Lwb1;->a()Z
+
+    .line 224
+    .line 225
+    .line 226
+    move-result v0
+
+    .line 227
+    if-nez v0, :cond_a
+
+    .line 228
+    .line 229
+    iget-object v0, p0, Lqt0;->q:Ldr1;
+
+    .line 230
+    .line 231
+    iget-object v0, v0, Ldr1;->b:Lb11;
+
+    .line 232
+    .line 233
+    invoke-virtual {v0}, Lb11;->a()Z
+
+    .line 234
+    .line 235
+    .line 236
+    move-result v0
+
+    .line 237
+    if-nez v0, :cond_a
+
+    .line 238
+    .line 239
+    iget v0, p0, Lqt0;->a0:I
+
+    .line 240
+    .line 241
+    if-nez v0, :cond_a
+
+    .line 242
+    .line 243
+    iget-object v0, p0, Lqt0;->T0:Lbc1;
+
+    .line 244
+    .line 245
+    check-cast v0, Lqp3;
+
+    .line 246
+    .line 247
+    invoke-virtual {v0}, Lqp3;->c()V
+
+    .line 248
+    .line 249
+    .line 250
+    iget-object v0, p0, Lqt0;->T0:Lbc1;
+
+    .line 251
+    .line 252
+    check-cast v0, Lqp3;
+
+    .line 253
+    .line 254
+    invoke-virtual {v0}, Lqp3;->e()V
+
+    .line 255
+    .line 256
+    .line 257
+    :cond_a
+    iget-boolean v0, p0, Lqt0;->S:Z
+
+    .line 258
+    .line 259
+    iget-object v2, p0, Lqt0;->A0:Lwb1;
+
+    .line 260
+    .line 261
+    if-eqz v0, :cond_b
+
+    .line 262
+    .line 263
+    iget-object v0, v2, Lwb1;->c:Lxm0;
+
+    .line 264
+    .line 265
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
+
+    .line 266
+    .line 267
+    .line 268
+    move-result-object v0
+
+    .line 269
+    goto :goto_6
+
+    .line 270
+    :cond_b
+    iget-object v0, v2, Lwb1;->d:Lxm0;
+
+    .line 271
+    .line 272
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
+
+    .line 273
+    .line 274
+    .line 275
+    move-result-object v0
+
+    .line 276
+    :goto_6
+    iput-object v0, p0, Lqt0;->p:Lxm0;
+
+    .line 277
+    .line 278
+    new-instance v0, Ls61;
+
+    .line 279
+    .line 280
+    iget-object v2, p0, Lqt0;->B0:Ln61;
+
+    .line 281
+    .line 282
+    iget-object v2, v2, Ln61;->r:Lw17;
+
+    .line 283
+    .line 284
+    iget-boolean v6, v2, Lw17;->p:Z
+
+    .line 285
+    .line 286
+    const/4 v2, 0x2
+
+    .line 287
+    move-object v1, p0
+
+    .line 288
+    move-object v3, v10
+
+    .line 289
+    move-object v4, v11
+
+    .line 290
+    invoke-direct/range {v0 .. v6}, Ls61;-><init>(Lqt0;ILxm0;Lxm0;Ljava/lang/CharSequence;Z)V
+
+    .line 291
+    .line 292
+    .line 293
+    iget-object v2, p0, Lqt0;->r:Ltv1;
+
+    .line 294
+    .line 295
+    invoke-virtual {v2, v0}, Ltv1;->a(Lgv1;)I
+
+    .line 296
+    .line 297
+    .line 298
+    invoke-virtual {p0, v9}, Lqt0;->a0(I)V
+
+    .line 299
+    .line 300
+    .line 301
+    invoke-virtual {v3}, Lxm0;->a()Lxm0;
+
+    .line 302
+    .line 303
+    .line 304
+    invoke-virtual {v4}, Lxm0;->a()Lxm0;
+
+    .line 305
+    .line 306
+    .line 307
+    const/4 v0, 0x0
+
+    .line 308
+    iput-boolean v0, p0, Lqt0;->L:Z
+
+    .line 309
+    .line 310
+    invoke-virtual {p0}, Lqt0;->E()V
+
+    .line 311
+    .line 312
+    .line 313
+    invoke-virtual {p0}, Lqt0;->s0()V
+
+    .line 314
+    .line 315
+    .line 316
+    return-void
+.end method
+
+.method public final d0(Ljava/lang/Runnable;)V
+    .locals 3
+
+    .line 1
+    sget-object v0, Lar1;->a:Lar1;
+
+    .line 2
+    .line 3
+    new-instance v1, Lot0;
+
+    .line 4
+    .line 5
+    const/4 v2, 0x0
+
+    .line 6
+    invoke-direct {v1, p0, p1, v2}, Lot0;-><init>(Lqt0;Ljava/lang/Runnable;B)V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 10
+    .line 11
+    .line 12
+    return-void
+.end method
+
+.method public final dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 3
+
+    .line 1
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    float-to-int v0, v0
+
+    .line 6
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    .line 7
+    .line 8
+    .line 9
+    move-result v1
+
+    .line 10
+    if-eqz v1, :cond_3
+
+    .line 11
+    .line 12
+    const/4 v2, 0x2
+
+    .line 13
+    if-eq v1, v2, :cond_0
+
+    .line 14
+    .line 15
+    goto :goto_0
+
+    .line 16
+    :cond_0
+    iget v1, p0, Lqt0;->v:I
+
+    .line 17
+    .line 18
+    sub-int/2addr v0, v1
+
+    .line 19
+    iget-boolean v1, p0, Lqt0;->e0:Z
+
+    .line 20
+    .line 21
+    if-eqz v1, :cond_4
+
+    .line 22
+    .line 23
+    iget-object v1, p0, Lqt0;->K0:Lds1;
+
+    .line 24
+    .line 25
+    invoke-virtual {v1}, Lds1;->f()Z
+
+    .line 26
+    .line 27
+    .line 28
+    move-result v1
+
+    .line 29
+    if-nez v1, :cond_4
+
+    .line 30
+    .line 31
+    if-lez v0, :cond_1
+
+    .line 32
+    .line 33
+    invoke-virtual {p0}, Lqt0;->getScroller()Ltr1;
+
+    .line 34
+    .line 35
+    .line 36
+    move-result-object v1
+
+    .line 37
+    iget-object v1, v1, Ltr1;->b:Landroid/widget/OverScroller;
+
+    .line 38
+    .line 39
+    invoke-virtual {v1}, Landroid/widget/OverScroller;->getCurrX()I
+
+    .line 40
+    .line 41
+    .line 42
+    move-result v1
+
+    .line 43
+    if-eqz v1, :cond_2
+
+    .line 44
+    .line 45
+    :cond_1
+    if-gez v0, :cond_4
+
+    .line 46
+    .line 47
+    invoke-virtual {p0}, Lqt0;->getScroller()Ltr1;
+
+    .line 48
+    .line 49
+    .line 50
+    move-result-object v0
+
+    .line 51
+    iget-object v0, v0, Ltr1;->b:Landroid/widget/OverScroller;
+
+    .line 52
+    .line 53
+    invoke-virtual {v0}, Landroid/widget/OverScroller;->getCurrX()I
+
+    .line 54
+    .line 55
+    .line 56
+    move-result v0
+
+    .line 57
+    invoke-virtual {p0}, Lqt0;->getScrollMaxX()I
+
+    .line 58
+    .line 59
+    .line 60
+    move-result v1
+
+    .line 61
+    if-ne v0, v1, :cond_4
+
+    .line 62
+    .line 63
+    :cond_2
+    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    .line 64
+    .line 65
+    .line 66
+    move-result-object v0
+
+    .line 67
+    const/4 v1, 0x0
+
+    .line 68
+    invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
+
+    .line 69
+    .line 70
+    .line 71
+    goto :goto_0
+
+    .line 72
+    :cond_3
+    iput v0, p0, Lqt0;->v:I
+
+    .line 73
+    .line 74
+    iget-boolean v0, p0, Lqt0;->e0:Z
+
+    .line 75
+    .line 76
+    if-eqz v0, :cond_4
+
+    .line 77
+    .line 78
+    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    .line 79
+    .line 80
+    .line 81
+    move-result-object v0
+
+    .line 82
+    const/4 v1, 0x1
+
+    .line 83
+    invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
+
+    .line 84
+    .line 85
+    .line 86
+    :cond_4
+    :goto_0
+    invoke-super {p0, p1}, Landroid/view/View;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+
+    .line 87
+    .line 88
+    .line 89
+    move-result p0
+
+    .line 90
+    return p0
+.end method
+
+.method public final e(Ln61;)V
+    .locals 1
+
+    .line 1
+    iget-object p1, p0, Lqt0;->W0:Lri1;
+
+    .line 2
+    .line 3
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object p1, p0, Lqt0;->T0:Lbc1;
+
+    .line 7
+    .line 8
+    check-cast p1, Lqp3;
+
+    .line 9
+    .line 10
+    invoke-virtual {p1}, Lqp3;->d()V
+
+    .line 11
+    .line 12
+    .line 13
+    iget-object p1, p0, Lqt0;->A0:Lwb1;
+
+    .line 14
+    .line 15
+    iget-object p1, p1, Lwb1;->c:Lxm0;
+
+    .line 16
+    .line 17
+    invoke-virtual {p1}, Lxm0;->a()Lxm0;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object p1
+
+    .line 21
+    iget-object v0, p0, Lqt0;->p:Lxm0;
+
+    .line 22
+    .line 23
+    invoke-virtual {p1, v0}, Lxm0;->equals(Ljava/lang/Object;)Z
+
+    .line 24
+    .line 25
+    .line 26
+    move-result p1
+
+    .line 27
+    iput-boolean p1, p0, Lqt0;->S:Z
+
+    .line 28
+    .line 29
+    return-void
+.end method
+
+.method public final e0()V
+    .locals 5
+
+    .line 1
+    iget-object v0, p0, Lqt0;->B0:Ln61;
+
+    .line 2
+    .line 3
+    iget-object v1, v0, Ln61;->r:Lw17;
+
+    .line 4
+    .line 5
+    iget-boolean v2, v1, Lw17;->k:Z
+
+    .line 6
+    .line 7
+    iget-object v3, v1, Lw17;->j:Ljava/util/ArrayList;
+
+    .line 8
+    .line 9
+    if-eqz v2, :cond_0
+
+    .line 10
+    .line 11
+    iget v2, v1, Lw17;->o:I
+
+    .line 12
+    .line 13
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
+
+    .line 14
+    .line 15
+    .line 16
+    move-result v4
+
+    .line 17
+    if-ge v2, v4, :cond_0
+
+    .line 18
+    .line 19
+    iget-boolean v2, v1, Lw17;->p:Z
+
+    .line 20
+    .line 21
+    if-nez v2, :cond_0
+
+    .line 22
+    .line 23
+    const/4 v2, 0x1
+
+    .line 24
+    iput-boolean v2, v1, Lw17;->p:Z
+
+    .line 25
+    .line 26
+    iget v4, v1, Lw17;->o:I
+
+    .line 27
+    .line 28
+    invoke-virtual {v3, v4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object v3
+
+    .line 32
+    check-cast v3, Lq17;
+
+    .line 33
+    .line 34
+    invoke-virtual {v3, v0}, Lq17;->c(Ln61;)V
+
+    .line 35
+    .line 36
+    .line 37
+    iget v0, v1, Lw17;->o:I
+
+    .line 38
+    .line 39
+    add-int/2addr v0, v2
+
+    .line 40
+    iput v0, v1, Lw17;->o:I
+
+    .line 41
+    .line 42
+    const/4 v0, 0x0
+
+    .line 43
+    iput-boolean v0, v1, Lw17;->p:Z
+
+    .line 44
+    .line 45
+    :cond_0
+    invoke-virtual {p0}, Lqt0;->Z()V
+
+    .line 46
+    .line 47
+    .line 48
+    return-void
+.end method
+
+.method public final f0()V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lqt0;->J0:Lpq1;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Lpq1;->e()V
+
+    .line 4
+    .line 5
+    .line 6
+    invoke-virtual {v0}, Lpq1;->f()V
+
+    .line 7
+    .line 8
+    .line 9
+    iget-object v0, p0, Lqt0;->l:Lzr1;
+
+    .line 10
+    .line 11
+    invoke-virtual {v0}, Lir1;->b()V
+
+    .line 12
+    .line 13
+    .line 14
+    iget-object v0, p0, Lqt0;->K0:Lds1;
+
+    .line 15
+    .line 16
+    iget-object v0, v0, Lds1;->d:Lbf3;
+
+    .line 17
+    .line 18
+    invoke-virtual {v0}, Lbf3;->a()V
+
+    .line 19
+    .line 20
+    .line 21
+    iget-object v0, p0, Lqt0;->m:Lxq1;
+
+    .line 22
+    .line 23
+    invoke-virtual {v0}, Lxq1;->b()V
+
+    .line 24
+    .line 25
+    .line 26
+    iget-boolean v0, p0, Lqt0;->b0:Z
+
+    .line 27
+    .line 28
+    if-nez v0, :cond_2
+
+    .line 29
+    .line 30
+    new-instance v0, Ljr1;
+
+    .line 31
+    .line 32
+    invoke-direct {v0, p0}, Lgv1;-><init>(Lqt0;)V
+
+    .line 33
+    .line 34
+    .line 35
+    iget-object v1, p0, Lqt0;->r:Ltv1;
+
+    .line 36
+    .line 37
+    invoke-virtual {v1, v0}, Ltv1;->a(Lgv1;)I
+
+    .line 38
+    .line 39
+    .line 40
+    const/4 v0, 0x1
+
+    .line 41
+    iput-boolean v0, p0, Lqt0;->b0:Z
+
+    .line 42
+    .line 43
+    iget-object v0, p0, Lqt0;->G0:Lhy2;
+
+    .line 44
+    .line 45
+    if-eqz v0, :cond_0
+
+    .line 46
+    .line 47
+    invoke-interface {v0}, Lhy2;->a()Lq4;
+
+    .line 48
+    .line 49
+    .line 50
+    move-result-object v0
+
+    .line 51
+    invoke-virtual {v0}, Lq4;->g()V
+
+    .line 52
+    .line 53
+    .line 54
+    iget-object v0, p0, Lqt0;->G0:Lhy2;
+
+    .line 55
+    .line 56
+    invoke-interface {v0}, Lhy2;->f()Lp6;
+
+    .line 57
+    .line 58
+    .line 59
+    iget-object v0, p0, Lqt0;->G0:Lhy2;
+
+    .line 60
+    .line 61
+    invoke-interface {v0}, Lhy2;->destroy()V
+
+    .line 62
+    .line 63
+    .line 64
+    new-instance v0, Lpt1;
+
+    .line 65
+    .line 66
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    .line 67
+    .line 68
+    .line 69
+    iput-object v0, p0, Lqt0;->G0:Lhy2;
+
+    .line 70
+    .line 71
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 72
+    iput-object v0, p0, Lqt0;->Y0:Lub6;
+
+    .line 73
+    .line 74
+    iput-object v0, p0, Lqt0;->Z0:Lyh1;
+
+    .line 75
+    .line 76
+    iget-object v1, p0, Lqt0;->o:Lsr6;
+
+    .line 77
+    .line 78
+    iput-object v0, v1, Lsr6;->l:Ljava/lang/Object;
+
+    .line 79
+    .line 80
+    iput-object v0, v1, Lsr6;->m:Ljava/lang/Object;
+
+    .line 81
+    .line 82
+    iget-object v0, p0, Lqt0;->B0:Ln61;
+
+    .line 83
+    .line 84
+    if-eqz v0, :cond_1
+
+    .line 85
+    .line 86
+    invoke-virtual {v0, p0}, Ln61;->w(Lf71;)V
+
+    .line 87
+    .line 88
+    .line 89
+    :cond_1
+    iget-object v0, p0, Lqt0;->D0:Lqq1;
+
+    .line 90
+    .line 91
+    invoke-virtual {v0, p0}, Lqq1;->d(Lqt0;)V
+
+    .line 92
+    .line 93
+    .line 94
+    :cond_2
+    return-void
+.end method
+
+.method public final g0()V
+    .locals 1
+
+    .line 1
+    iget-boolean v0, p0, Lqt0;->r0:Z
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
+
+    .line 6
+    .line 7
+    .line 8
+    :cond_0
+    return-void
+.end method
+
+.method public getAccessibilityClassName()Ljava/lang/CharSequence;
+    .locals 0
+
+    .line 1
+    const-class p0, Lqt0;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    return-object p0
+.end method
+
+.method public getBlockIndex()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lqt0;->u:I
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getBlockLineWidth()F
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lqt0;->D:F
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getClipboardManager()Landroid/content/ClipboardManager;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->y0:Landroid/content/ClipboardManager;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getColorScheme()Lqq1;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->D0:Lqq1;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getCurrentCursorBlock()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lqt0;->u:I
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getCursor()Lwb1;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->A0:Lwb1;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getCursorAnimator()Lbc1;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->T0:Lbc1;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getCursorBlink()Lcc1;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->V0:Lcc1;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getCursorRange()Lzp6;
+    .locals 2
+
+    .line 1
+    iget-object p0, p0, Lqt0;->A0:Lwb1;
+
+    .line 2
+    .line 3
+    new-instance v0, Lzp6;
+
+    .line 4
+    .line 5
+    iget-object v1, p0, Lwb1;->c:Lxm0;
+
+    .line 6
+    .line 7
+    invoke-virtual {v1}, Lxm0;->a()Lxm0;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v1
+
+    .line 11
+    iget-object p0, p0, Lwb1;->d:Lxm0;
+
+    .line 12
+    .line 13
+    invoke-virtual {p0}, Lxm0;->a()Lxm0;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p0
+
+    .line 17
+    invoke-direct {v0, v1, p0}, Lzp6;-><init>(Lxm0;Lxm0;)V
+
+    .line 18
+    .line 19
+    .line 20
+    return-object v0
+.end method
+
+.method public getDiagnosticIndicatorStyle()Lwh1;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->H0:Lwh1;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getDiagnostics()Lyh1;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->Z0:Lyh1;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getDividerMarginLeft()F
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lqt0;->A:F
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getDividerMarginRight()F
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lqt0;->B:F
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getDividerWidth()F
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lqt0;->z:F
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getDpUnit()F
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lqt0;->y:F
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getEdgeEffectColor()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->P0:Landroid/widget/EdgeEffect;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/widget/EdgeEffect;->getColor()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public getEditable()Z
+    .locals 0
+
+    .line 1
+    iget-boolean p0, p0, Lqt0;->N:Z
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getEditorLanguage()Lhy2;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->G0:Lhy2;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getEventHandler()Lds1;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->K0:Lds1;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getExtraArguments()Landroid/os/Bundle;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->X0:Landroid/os/Bundle;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getFirstVisibleLine()I
+    .locals 1
+
+    .line 1
+    :try_start_0
+    iget-object v0, p0, Lqt0;->s:Ld3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lqt0;->getFirstVisibleRow()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    invoke-interface {v0, p0}, Lgz2;->l(I)I
+
+    .line 8
+    .line 9
+    .line 10
+    move-result p0
+    :try_end_0
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 11
+    return p0
+
+    .line 12
+    :catch_0
+    const/4 p0, 0x0
+
+    .line 13
+    return p0
+.end method
+
+.method public getFirstVisibleRow()I
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->getOffsetY()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    invoke-virtual {p0}, Lqt0;->getRowHeight()I
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    div-int/2addr v0, p0
+
+    .line 10
+    const/4 p0, 0x0
+
+    .line 11
+    invoke-static {p0, v0}, Ljava/lang/Math;->max(II)I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    return p0
+.end method
+
+.method public getFormatTip()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->F0:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getGraphPaint()Lik4;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lsr1;->g:Lik4;
+
+    .line 4
+    .line 5
+    return-object p0
+.end method
+
+.method public getHandleStyle()Lbv5;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->U0:Lbv5;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getHighlightTexts()Lv92;
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return-object p0
+.end method
+
+.method public getHorizontalEdgeEffect()Landroid/widget/EdgeEffect;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->Q0:Landroid/widget/EdgeEffect;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getHorizontalScrollbarThumbDrawable()Landroid/graphics/drawable/Drawable;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lsr1;->t:Landroid/graphics/drawable/Drawable;
+
+    .line 4
+    .line 5
+    return-object p0
+.end method
+
+.method public getHorizontalScrollbarTrackDrawable()Landroid/graphics/drawable/Drawable;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lsr1;->u:Landroid/graphics/drawable/Drawable;
+
+    .line 4
+    .line 5
+    return-object p0
+.end method
+
+.method public getInlayHintRenderers()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+
+    .line 1
+    new-instance v0, Ljava/util/ArrayList;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lqt0;->j1:Ljava/util/HashMap;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Ljava/util/HashMap;->values()Ljava/util/Collection;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    invoke-direct {v0, p0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
+    .line 10
+    .line 11
+    .line 12
+    return-object v0
+.end method
+
+.method public getInlayHints()Lko2;
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return-object p0
+.end method
+
+.method public getInputMethodManager()Landroid/view/inputmethod/InputMethodManager;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->z0:Landroid/view/inputmethod/InputMethodManager;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getInputType()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lqt0;->w:I
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getInsertHandleDescriptor()Lav5;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->x0:Lav5;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getInsertSelectionWidth()F
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lqt0;->C:F
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getKeyMetaStates()Lsx2;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->j:Lfp2;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lfp2;->l:Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    check-cast p0, Lsx2;
+
+    .line 6
+    .line 7
+    return-object p0
+.end method
+
+.method public getLastVisibleLine()I
+    .locals 2
+
+    .line 1
+    :try_start_0
+    iget-object v0, p0, Lqt0;->s:Ld3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lqt0;->getLastVisibleRow()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v1
+
+    .line 7
+    invoke-interface {v0, v1}, Lgz2;->l(I)I
+
+    .line 8
+    .line 9
+    .line 10
+    move-result p0
+    :try_end_0
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 11
+    return p0
+
+    .line 12
+    :catch_0
+    invoke-virtual {p0}, Lqt0;->getLineCount()I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result p0
+
+    .line 16
+    add-int/lit8 p0, p0, -0x1
+
+    .line 17
+    .line 18
+    return p0
+.end method
+
+.method public getLastVisibleRow()I
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lqt0;->s:Ld3;
+
+    .line 2
+    .line 3
+    invoke-interface {v0}, Lgz2;->b()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    add-int/lit8 v0, v0, -0x1
+
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lqt0;->getOffsetY()I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v1
+
+    .line 13
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+
+    .line 14
+    .line 15
+    .line 16
+    move-result v2
+
+    .line 17
+    add-int/2addr v2, v1
+
+    .line 18
+    invoke-virtual {p0}, Lqt0;->getRowHeight()I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result p0
+
+    .line 22
+    div-int/2addr v2, p0
+
+    .line 23
+    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
+
+    .line 24
+    .line 25
+    .line 26
+    move-result p0
+
+    .line 27
+    const/4 v0, 0x0
+
+    .line 28
+    invoke-static {v0, p0}, Ljava/lang/Math;->max(II)I
+
+    .line 29
+    .line 30
+    .line 31
+    move-result p0
+
+    .line 32
+    return p0
+.end method
+
+.method public getLayout()Lgz2;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->s:Ld3;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getLeftHandleDescriptor()Lav5;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->v0:Lav5;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getLineCount()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->B0:Ln61;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Ln61;->j:Ljava/util/ArrayList;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+.end method
+
+.method public getLineInfoTextSize()F
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lqt0;->G:F
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getLineNumberAlign()Landroid/graphics/Paint$Align;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->L0:Landroid/graphics/Paint$Align;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getLineNumberMarginLeft()F
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lqt0;->J:F
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getLineNumberMetrics()Landroid/graphics/Paint$FontMetricsInt;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lsr1;->B:Landroid/graphics/Paint$FontMetricsInt;
+
+    .line 4
+    .line 5
+    return-object p0
+.end method
+
+.method public getLineNumberTipTextProvider()Ly73;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->E0:Ly73;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getLineSeparator()Lz73;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->h1:Lz73;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getLineSpacingExtra()F
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lqt0;->I:F
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getLineSpacingMultiplier()F
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lqt0;->H:F
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getLineSpacingPixels()I
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object v0, v0, Lsr1;->s:Landroid/graphics/Paint$FontMetricsInt;
+
+    .line 4
+    .line 5
+    iget v1, v0, Landroid/graphics/Paint$FontMetricsInt;->descent:I
+
+    .line 6
+    .line 7
+    iget v0, v0, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
+
+    .line 8
+    .line 9
+    sub-int/2addr v1, v0
+
+    .line 10
+    int-to-float v0, v1
+
+    .line 11
+    iget v1, p0, Lqt0;->H:F
+
+    .line 12
+    .line 13
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    .line 14
+    .line 15
+    sub-float/2addr v1, v2
+
+    .line 16
+    mul-float/2addr v1, v0
+
+    .line 17
+    iget p0, p0, Lqt0;->I:F
+
+    .line 18
+    .line 19
+    add-float/2addr v1, p0
+
+    .line 20
+    float-to-int p0, v1
+
+    .line 21
+    div-int/lit8 p0, p0, 0x2
+
+    .line 22
+    .line 23
+    mul-int/lit8 p0, p0, 0x2
+
+    .line 24
+    .line 25
+    return p0
+.end method
+
+.method public getLnPanelPosition()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lqt0;->V:I
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getLnPanelPositionMode()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lqt0;->W:I
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getNonPrintablePaintingFlags()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lqt0;->x:I
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getOffsetX()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->K0:Lds1;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lds1;->b:Ltr1;
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Ltr1;->b:Landroid/widget/OverScroller;
+
+    .line 6
+    .line 7
+    invoke-virtual {p0}, Landroid/widget/OverScroller;->getCurrX()I
+
+    .line 8
+    .line 9
+    .line 10
+    move-result p0
+
+    .line 11
+    return p0
+.end method
+
+.method public getOffsetY()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->K0:Lds1;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lds1;->b:Ltr1;
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Ltr1;->b:Landroid/widget/OverScroller;
+
+    .line 6
+    .line 7
+    invoke-virtual {p0}, Landroid/widget/OverScroller;->getCurrY()I
+
+    .line 8
+    .line 9
+    .line 10
+    move-result p0
+
+    .line 11
+    return p0
+.end method
+
+.method public getOtherPaint()Lik4;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lsr1;->c:Lik4;
+
+    .line 4
+    .line 5
+    return-object p0
+.end method
+
+.method public getProps()Lri1;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->W0:Lri1;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getRenderContext()Lja5;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->a1:Lja5;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getRenderer()Lsr1;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getRightHandleDescriptor()Lav5;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->w0:Lav5;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getRowHeight()I
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object v0, v0, Lsr1;->s:Landroid/graphics/Paint$FontMetricsInt;
+
+    .line 4
+    .line 5
+    iget v1, v0, Landroid/graphics/Paint$FontMetricsInt;->descent:I
+
+    .line 6
+    .line 7
+    iget v0, v0, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
+
+    .line 8
+    .line 9
+    sub-int/2addr v1, v0
+
+    .line 10
+    invoke-virtual {p0}, Lqt0;->getLineSpacingPixels()I
+
+    .line 11
+    .line 12
+    .line 13
+    move-result p0
+
+    .line 14
+    add-int/2addr p0, v1
+
+    .line 15
+    const/4 v0, 0x1
+
+    .line 16
+    invoke-static {v0, p0}, Ljava/lang/Math;->max(II)I
+
+    .line 17
+    .line 18
+    .line 19
+    move-result p0
+
+    .line 20
+    return p0
+.end method
+
+.method public getRowHeightOfText()I
+    .locals 1
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lsr1;->s:Landroid/graphics/Paint$FontMetricsInt;
+
+    .line 4
+    .line 5
+    iget v0, p0, Landroid/graphics/Paint$FontMetricsInt;->descent:I
+
+    .line 6
+    .line 7
+    iget p0, p0, Landroid/graphics/Paint$FontMetricsInt;->ascent:I
+
+    .line 8
+    .line 9
+    sub-int/2addr v0, p0
+
+    .line 10
+    return v0
+.end method
+
+.method public getScrollMaxX()I
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lqt0;->s:Ld3;
+
+    .line 2
+    .line 3
+    invoke-interface {v0}, Lgz2;->s()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    int-to-float v0, v0
+
+    .line 8
+    invoke-virtual {p0}, Lqt0;->W()F
+
+    .line 9
+    .line 10
+    .line 11
+    move-result v1
+
+    .line 12
+    add-float/2addr v1, v0
+
+    .line 13
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+
+    .line 14
+    .line 15
+    .line 16
+    move-result p0
+
+    .line 17
+    int-to-float p0, p0
+
+    .line 18
+    const/high16 v0, 0x40000000    # 2.0f
+
+    .line 19
+    .line 20
+    div-float/2addr p0, v0
+
+    .line 21
+    sub-float/2addr v1, p0
+
+    .line 22
+    const/4 p0, 0x0
+
+    .line 23
+    invoke-static {p0, v1}, Ljava/lang/Math;->max(FF)F
+
+    .line 24
+    .line 25
+    .line 26
+    move-result p0
+
+    .line 27
+    float-to-int p0, p0
+
+    .line 28
+    return p0
+.end method
+
+.method public getScrollMaxY()I
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    iget-object v1, p0, Lqt0;->s:Ld3;
+
+    .line 6
+    .line 7
+    invoke-interface {v1}, Lgz2;->g()I
+
+    .line 8
+    .line 9
+    .line 10
+    move-result v1
+
+    .line 11
+    if-eqz v0, :cond_1
+
+    .line 12
+    .line 13
+    iget v0, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    .line 14
+    .line 15
+    const/4 v2, -0x2
+
+    .line 16
+    if-ne v0, v2, :cond_0
+
+    .line 17
+    .line 18
+    goto :goto_0
+
+    .line 19
+    :cond_0
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+
+    .line 20
+    .line 21
+    .line 22
+    move-result v0
+
+    .line 23
+    int-to-float v0, v0
+
+    .line 24
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    .line 25
+    .line 26
+    iget p0, p0, Lqt0;->K:F
+
+    .line 27
+    .line 28
+    sub-float/2addr v2, p0
+
+    .line 29
+    mul-float/2addr v2, v0
+
+    .line 30
+    goto :goto_1
+
+    .line 31
+    :cond_1
+    :goto_0
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+
+    .line 32
+    .line 33
+    .line 34
+    move-result p0
+
+    .line 35
+    int-to-float v2, p0
+
+    .line 36
+    :goto_1
+    float-to-int p0, v2
+
+    .line 37
+    sub-int/2addr v1, p0
+
+    .line 38
+    const/4 p0, 0x0
+
+    .line 39
+    invoke-static {p0, v1}, Ljava/lang/Math;->max(II)I
+
+    .line 40
+    .line 41
+    .line 42
+    move-result p0
+
+    .line 43
+    return p0
+.end method
+
+.method public getScroller()Ltr1;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->K0:Lds1;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lds1;->b:Ltr1;
+
+    .line 4
+    .line 5
+    return-object p0
+.end method
+
+.method public getSearcher()Lwr1;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->S0:Lwr1;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getSelectingTarget()Lxm0;
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 2
+    .line 3
+    iget-object v0, v0, Lwb1;->c:Lxm0;
+
+    .line 4
+    .line 5
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object v0
+
+    .line 9
+    iget-object v1, p0, Lqt0;->p:Lxm0;
+
+    .line 10
+    .line 11
+    invoke-virtual {v0, v1}, Lxm0;->equals(Ljava/lang/Object;)Z
+
+    .line 12
+    .line 13
+    .line 14
+    move-result v0
+
+    .line 15
+    iget-object p0, p0, Lqt0;->A0:Lwb1;
+
+    .line 16
+    .line 17
+    if-eqz v0, :cond_0
+
+    .line 18
+    .line 19
+    iget-object p0, p0, Lwb1;->d:Lxm0;
+
+    .line 20
+    .line 21
+    invoke-virtual {p0}, Lxm0;->a()Lxm0;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object p0
+
+    .line 25
+    return-object p0
+
+    .line 26
+    :cond_0
+    iget-object p0, p0, Lwb1;->c:Lxm0;
+
+    .line 27
+    .line 28
+    invoke-virtual {p0}, Lxm0;->a()Lxm0;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    return-object p0
+.end method
+
+.method public getSnippetController()Lh76;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->i1:Lh76;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getStyles()Lub6;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->Y0:Lub6;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getTabWidth()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lqt0;->t:I
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getText()Ln61;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->B0:Ln61;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getTextBorderWidth()F
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lqt0;->E:F
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getTextLetterSpacing()F
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lsr1;->b:Lik4;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Landroid/graphics/Paint;->getLetterSpacing()F
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+.end method
+
+.method public getTextPaint()Lik4;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lsr1;->b:Lik4;
+
+    .line 4
+    .line 5
+    return-object p0
+.end method
+
+.method public getTextScaleX()F
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lsr1;->b:Lik4;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Landroid/graphics/Paint;->getTextScaleX()F
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+.end method
+
+.method public getTextSizePx()F
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lsr1;->b:Lik4;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Landroid/graphics/Paint;->getTextSize()F
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+.end method
+
+.method public getTypefaceLineNumber()Landroid/graphics/Typeface;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lsr1;->c:Lik4;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Landroid/graphics/Paint;->getTypeface()Landroid/graphics/Typeface;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    return-object p0
+.end method
+
+.method public getTypefaceText()Landroid/graphics/Typeface;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lsr1;->b:Lik4;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Landroid/graphics/Paint;->getTypeface()Landroid/graphics/Typeface;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    return-object p0
+.end method
+
+.method public getVerticalEdgeEffect()Landroid/widget/EdgeEffect;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->P0:Landroid/widget/EdgeEffect;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public getVerticalExtraSpaceFactor()F
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lqt0;->K:F
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public getVerticalScrollbarThumbDrawable()Landroid/graphics/drawable/Drawable;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lsr1;->v:Landroid/graphics/drawable/Drawable;
+
+    .line 4
+    .line 5
+    return-object p0
+.end method
+
+.method public getVerticalScrollbarTrackDrawable()Landroid/graphics/drawable/Drawable;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lsr1;->w:Landroid/graphics/drawable/Drawable;
+
+    .line 4
+    .line 5
+    return-object p0
+.end method
+
+.method public final h0()V
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lqt0;->q:Ldr1;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_1
+
+    .line 4
+    .line 5
+    iget-object v1, v0, Ldr1;->a:Lqt0;
+
+    .line 6
+    .line 7
+    invoke-virtual {v1}, Lqt0;->getText()Ln61;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v1
+
+    .line 11
+    :goto_0
+    iget v2, v1, Ln61;->n:I
+
+    .line 12
+    .line 13
+    if-lez v2, :cond_0
+
+    .line 14
+    .line 15
+    invoke-virtual {v1}, Ln61;->k()Z
+
+    .line 16
+    .line 17
+    .line 18
+    goto :goto_0
+
+    .line 19
+    :cond_0
+    iget-object v1, v0, Ldr1;->b:Lb11;
+
+    .line 20
+    .line 21
+    const/4 v2, -0x1
+
+    .line 22
+    iput v2, v1, Lb11;->b:I
+
+    .line 23
+    .line 24
+    iput v2, v1, Lb11;->a:I
+
+    .line 25
+    .line 26
+    const/4 v2, 0x0
+
+    .line 27
+    iput-boolean v2, v1, Lb11;->c:Z
+
+    .line 28
+    .line 29
+    iput-boolean v2, v0, Ldr1;->c:Z
+
+    .line 30
+    .line 31
+    :cond_1
+    iget-object v0, p0, Lqt0;->z0:Landroid/view/inputmethod/InputMethodManager;
+
+    .line 32
+    .line 33
+    if-eqz v0, :cond_2
+
+    .line 34
+    .line 35
+    invoke-virtual {v0, p0}, Landroid/view/inputmethod/InputMethodManager;->restartInput(Landroid/view/View;)V
+
+    .line 36
+    .line 37
+    .line 38
+    :cond_2
+    return-void
+.end method
+
+.method public final i0()V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->getLineCount()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    add-int/lit8 v0, v0, -0x1
+
+    .line 6
+    .line 7
+    invoke-virtual {p0}, Lqt0;->getText()Ln61;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v1
+
+    .line 11
+    invoke-virtual {p0}, Lqt0;->getLineCount()I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result v2
+
+    .line 15
+    add-int/lit8 v2, v2, -0x1
+
+    .line 16
+    .line 17
+    invoke-virtual {v1, v2}, Ln61;->o(I)Le71;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object v1
+
+    .line 21
+    iget v1, v1, Le71;->l:I
+
+    .line 22
+    .line 23
+    const/4 v2, 0x0
+
+    .line 24
+    invoke-virtual {p0, v2, v2, v0, v1}, Lqt0;->n0(IIII)V
+
+    .line 25
+    .line 26
+    .line 27
+    return-void
+.end method
+
+.method public final isHorizontalScrollBarEnabled()Z
+    .locals 0
+
+    .line 1
+    iget-boolean p0, p0, Lqt0;->i0:Z
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public final isVerticalScrollBarEnabled()Z
+    .locals 0
+
+    .line 1
+    iget-boolean p0, p0, Lqt0;->h0:Z
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public final j0(II)V
+    .locals 7
+
+    .line 1
+    iget-object v0, p0, Lqt0;->W0:Lri1;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
+    .line 5
+    .line 6
+    const/4 v0, 0x1
+
+    .line 7
+    invoke-virtual {p0}, Lqt0;->getText()Ln61;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v1
+
+    .line 11
+    invoke-static {v1, p1, p2, v0}, Lzu6;->K(Ln61;IIZ)Lzp6;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p1
+
+    .line 15
+    iget-object p2, p1, Lzp6;->a:Lxm0;
+
+    .line 16
+    .line 17
+    iget-object p1, p1, Lzp6;->b:Lxm0;
+
+    .line 18
+    .line 19
+    iget v1, p2, Lxm0;->b:I
+
+    .line 20
+    .line 21
+    iget v2, p2, Lxm0;->c:I
+
+    .line 22
+    .line 23
+    iget v3, p1, Lxm0;->b:I
+
+    .line 24
+    .line 25
+    iget v4, p1, Lxm0;->c:I
+
+    .line 26
+    .line 27
+    const/4 v5, 0x5
+
+    .line 28
+    const/4 v6, 0x1
+
+    .line 29
+    move-object v0, p0
+
+    .line 30
+    invoke-virtual/range {v0 .. v6}, Lqt0;->o0(IIIIIZ)V
+
+    .line 31
+    .line 32
+    .line 33
+    return-void
+.end method
+
+.method public final k0(FF)V
+    .locals 2
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    cmpg-float v1, p1, v0
+
+    .line 3
+    .line 4
+    if-ltz v1, :cond_0
+
+    .line 5
+    .line 6
+    cmpg-float v0, p2, v0
+
+    .line 7
+    .line 8
+    if-ltz v0, :cond_0
+
+    .line 9
+    .line 10
+    iput p1, p0, Lqt0;->A:F
+
+    .line 11
+    .line 12
+    iput p2, p0, Lqt0;->B:F
+
+    .line 13
+    .line 14
+    invoke-virtual {p0}, Lqt0;->g0()V
+
+    .line 15
+    .line 16
+    .line 17
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 18
+    .line 19
+    .line 20
+    return-void
+
+    .line 21
+    :cond_0
+    const-string p0, "margin can not be under zero"
+
+    .line 22
+    .line 23
+    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+
+    .line 24
+    .line 25
+    .line 26
+    return-void
+.end method
+
+.method public final l0(II)V
+    .locals 2
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    const/4 v1, 0x1
+
+    .line 3
+    invoke-virtual {p0, p1, p2, v0, v1}, Lqt0;->m0(IIIZ)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final m0(IIIZ)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lqt0;->T0:Lbc1;
+
+    .line 2
+    .line 3
+    check-cast v0, Lqp3;
+
+    .line 4
+    .line 5
+    invoke-virtual {v0}, Lqp3;->d()V
+
+    .line 6
+    .line 7
+    .line 8
+    if-lez p2, :cond_1
+
+    .line 9
+    .line 10
+    iget-object v0, p0, Lqt0;->B0:Ln61;
+
+    .line 11
+    .line 12
+    add-int/lit8 v1, p2, -0x1
+
+    .line 13
+    .line 14
+    invoke-virtual {v0, p1, v1}, Ln61;->c(II)C
+
+    .line 15
+    .line 16
+    .line 17
+    move-result v0
+
+    .line 18
+    invoke-static {v0}, Ljava/lang/Character;->isHighSurrogate(C)Z
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v0
+
+    .line 22
+    if-eqz v0, :cond_1
+
+    .line 23
+    .line 24
+    add-int/lit8 v0, p2, 0x1
+
+    .line 25
+    .line 26
+    iget-object v1, p0, Lqt0;->B0:Ln61;
+
+    .line 27
+    .line 28
+    invoke-virtual {v1, p1}, Ln61;->o(I)Le71;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object v1
+
+    .line 32
+    iget v1, v1, Le71;->l:I
+
+    .line 33
+    .line 34
+    if-le v0, v1, :cond_0
+
+    .line 35
+    .line 36
+    goto :goto_0
+
+    .line 37
+    :cond_0
+    move p2, v0
+
+    .line 38
+    :cond_1
+    :goto_0
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 39
+    .line 40
+    iget-object v1, v0, Lwb1;->b:Lug0;
+
+    .line 41
+    .line 42
+    invoke-virtual {v1, p1, p2}, Lug0;->B(II)Lxm0;
+
+    .line 43
+    .line 44
+    .line 45
+    move-result-object v1
+
+    .line 46
+    invoke-virtual {v1}, Lxm0;->a()Lxm0;
+
+    .line 47
+    .line 48
+    .line 49
+    move-result-object v1
+
+    .line 50
+    iput-object v1, v0, Lwb1;->c:Lxm0;
+
+    .line 51
+    .line 52
+    iget-object v1, v0, Lwb1;->b:Lug0;
+
+    .line 53
+    .line 54
+    invoke-virtual {v1, p1, p2}, Lug0;->B(II)Lxm0;
+
+    .line 55
+    .line 56
+    .line 57
+    move-result-object v1
+
+    .line 58
+    invoke-virtual {v1}, Lxm0;->a()Lxm0;
+
+    .line 59
+    .line 60
+    .line 61
+    move-result-object v1
+
+    .line 62
+    iput-object v1, v0, Lwb1;->d:Lxm0;
+
+    .line 63
+    .line 64
+    iget-boolean v0, p0, Lqt0;->f0:Z
+
+    .line 65
+    .line 66
+    if-eqz v0, :cond_2
+
+    .line 67
+    .line 68
+    invoke-virtual {p0}, Lqt0;->H()I
+
+    .line 69
+    .line 70
+    .line 71
+    move-result v0
+
+    .line 72
+    iput v0, p0, Lqt0;->u:I
+
+    .line 73
+    .line 74
+    :cond_2
+    invoke-virtual {p0}, Lqt0;->s0()V
+
+    .line 75
+    .line 76
+    .line 77
+    invoke-virtual {p0}, Lqt0;->u0()V
+
+    .line 78
+    .line 79
+    .line 80
+    iget-boolean v0, p0, Lqt0;->N:Z
+
+    .line 81
+    .line 82
+    if-eqz v0, :cond_3
+
+    .line 83
+    .line 84
+    iget-object v0, p0, Lqt0;->K0:Lds1;
+
+    .line 85
+    .line 86
+    invoke-virtual {v0}, Lds1;->f()Z
+
+    .line 87
+    .line 88
+    .line 89
+    move-result v0
+
+    .line 90
+    if-nez v0, :cond_3
+
+    .line 91
+    .line 92
+    iget v0, p0, Lqt0;->a0:I
+
+    .line 93
+    .line 94
+    if-nez v0, :cond_3
+
+    .line 95
+    .line 96
+    iget-object v0, p0, Lqt0;->T0:Lbc1;
+
+    .line 97
+    .line 98
+    check-cast v0, Lqp3;
+
+    .line 99
+    .line 100
+    invoke-virtual {v0}, Lqp3;->c()V
+
+    .line 101
+    .line 102
+    .line 103
+    iget-object v0, p0, Lqt0;->T0:Lbc1;
+
+    .line 104
+    .line 105
+    check-cast v0, Lqp3;
+
+    .line 106
+    .line 107
+    invoke-virtual {v0}, Lqp3;->e()V
+
+    .line 108
+    .line 109
+    .line 110
+    :cond_3
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 111
+    .line 112
+    iget-object v0, v0, Lwb1;->d:Lxm0;
+
+    .line 113
+    .line 114
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
+
+    .line 115
+    .line 116
+    .line 117
+    move-result-object v0
+
+    .line 118
+    iput-object v0, p0, Lqt0;->p:Lxm0;
+
+    .line 119
+    .line 120
+    iget-object v0, p0, Lqt0;->a1:Lja5;
+
+    .line 121
+    .line 122
+    invoke-virtual {v0}, Lja5;->a()V
+
+    .line 123
+    .line 124
+    .line 125
+    if-eqz p4, :cond_4
+
+    .line 126
+    .line 127
+    const/4 p4, 0x0
+
+    .line 128
+    invoke-virtual {p0, p1, p2, p4}, Lqt0;->C(IIZ)V
+
+    .line 129
+    .line 130
+    .line 131
+    goto :goto_1
+
+    .line 132
+    :cond_4
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 133
+    .line 134
+    .line 135
+    :goto_1
+    invoke-virtual {p0, p3}, Lqt0;->a0(I)V
+
+    .line 136
+    .line 137
+    .line 138
+    return-void
+.end method
+
+.method public final n0(IIII)V
+    .locals 7
+
+    .line 1
+    const/4 v6, 0x1
+
+    .line 2
+    const/4 v5, 0x0
+
+    .line 3
+    move-object v0, p0
+
+    .line 4
+    move v1, p1
+
+    .line 5
+    move v2, p2
+
+    .line 6
+    move v3, p3
+
+    .line 7
+    move v4, p4
+
+    .line 8
+    invoke-virtual/range {v0 .. v6}, Lqt0;->o0(IIIIIZ)V
+
+    .line 9
+    .line 10
+    .line 11
+    return-void
+.end method
+
+.method public final o0(IIIIIZ)V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Landroid/view/View;->requestFocus()Z
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p0}, Lqt0;->getText()Ln61;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object v0
+
+    .line 8
+    invoke-virtual {v0, p1, p2}, Ln61;->l(II)I
+
+    .line 9
+    .line 10
+    .line 11
+    move-result v0
+
+    .line 12
+    invoke-virtual {p0}, Lqt0;->getText()Ln61;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object v1
+
+    .line 16
+    invoke-virtual {v1, p3, p4}, Ln61;->l(II)I
+
+    .line 17
+    .line 18
+    .line 19
+    move-result v1
+
+    .line 20
+    if-ne v0, v1, :cond_0
+
+    .line 21
+    .line 22
+    invoke-virtual {p0, p1, p2, p5, p6}, Lqt0;->m0(IIIZ)V
+
+    .line 23
+    .line 24
+    .line 25
+    return-void
+
+    .line 26
+    :cond_0
+    if-le v0, v1, :cond_1
+
+    .line 27
+    .line 28
+    move v2, p3
+
+    .line 29
+    move p3, p1
+
+    .line 30
+    move p1, v2
+
+    .line 31
+    move v2, p4
+
+    .line 32
+    move p4, p2
+
+    .line 33
+    move p2, v2
+
+    .line 34
+    invoke-virtual/range {p0 .. p6}, Lqt0;->o0(IIIIIZ)V
+
+    .line 35
+    .line 36
+    .line 37
+    const-string p0, " end = "
+
+    .line 38
+    .line 39
+    const-string p5, " lineLeft = "
+
+    .line 40
+    .line 41
+    const-string p6, "setSelectionRegion() error: start > end:start = "
+
+    .line 42
+    .line 43
+    invoke-static {v0, v1, p6, p0, p5}, Lpb1;->s(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 44
+    .line 45
+    .line 46
+    move-result-object p0
+
+    .line 47
+    invoke-virtual {p0, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 48
+    .line 49
+    .line 50
+    const-string p3, " columnLeft = "
+
+    .line 51
+    .line 52
+    invoke-virtual {p0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 53
+    .line 54
+    .line 55
+    invoke-virtual {p0, p4}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 56
+    .line 57
+    .line 58
+    const-string p3, " lineRight = "
+
+    .line 59
+    .line 60
+    invoke-virtual {p0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 61
+    .line 62
+    .line 63
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 64
+    .line 65
+    .line 66
+    const-string p1, " columnRight = "
+
+    .line 67
+    .line 68
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 69
+    .line 70
+    .line 71
+    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 72
+    .line 73
+    .line 74
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 75
+    .line 76
+    .line 77
+    move-result-object p0
+
+    .line 78
+    const-string p1, "CodeEditor"
+
+    .line 79
+    .line 80
+    invoke-static {p1, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 81
+    .line 82
+    .line 83
+    return-void
+
+    .line 84
+    :cond_1
+    move v2, p3
+
+    .line 85
+    move p3, p1
+
+    .line 86
+    move p1, v2
+
+    .line 87
+    move v2, p4
+
+    .line 88
+    move p4, p2
+
+    .line 89
+    move p2, v2
+
+    .line 90
+    iget-object v0, p0, Lqt0;->T0:Lbc1;
+
+    .line 91
+    .line 92
+    check-cast v0, Lqp3;
+
+    .line 93
+    .line 94
+    invoke-virtual {v0}, Lqp3;->a()V
+
+    .line 95
+    .line 96
+    .line 97
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 98
+    .line 99
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 100
+    .line 101
+    .line 102
+    if-lez p4, :cond_3
+
+    .line 103
+    .line 104
+    add-int/lit8 v0, p4, -0x1
+
+    .line 105
+    .line 106
+    iget-object v1, p0, Lqt0;->B0:Ln61;
+
+    .line 107
+    .line 108
+    invoke-virtual {v1, p3, v0}, Ln61;->c(II)C
+
+    .line 109
+    .line 110
+    .line 111
+    move-result v0
+
+    .line 112
+    invoke-static {v0}, Ljava/lang/Character;->isHighSurrogate(C)Z
+
+    .line 113
+    .line 114
+    .line 115
+    move-result v0
+
+    .line 116
+    if-eqz v0, :cond_3
+
+    .line 117
+    .line 118
+    add-int/lit8 v0, p4, 0x1
+
+    .line 119
+    .line 120
+    iget-object v1, p0, Lqt0;->B0:Ln61;
+
+    .line 121
+    .line 122
+    invoke-virtual {v1, p3}, Ln61;->o(I)Le71;
+
+    .line 123
+    .line 124
+    .line 125
+    move-result-object v1
+
+    .line 126
+    iget v1, v1, Le71;->l:I
+
+    .line 127
+    .line 128
+    if-le v0, v1, :cond_2
+
+    .line 129
+    .line 130
+    goto :goto_0
+
+    .line 131
+    :cond_2
+    move p4, v0
+
+    .line 132
+    :cond_3
+    :goto_0
+    if-lez p2, :cond_5
+
+    .line 133
+    .line 134
+    add-int/lit8 v0, p2, -0x1
+
+    .line 135
+    .line 136
+    iget-object v1, p0, Lqt0;->B0:Ln61;
+
+    .line 137
+    .line 138
+    invoke-virtual {v1, p1, v0}, Ln61;->c(II)C
+
+    .line 139
+    .line 140
+    .line 141
+    move-result v0
+
+    .line 142
+    invoke-static {v0}, Ljava/lang/Character;->isHighSurrogate(C)Z
+
+    .line 143
+    .line 144
+    .line 145
+    move-result v0
+
+    .line 146
+    if-eqz v0, :cond_5
+
+    .line 147
+    .line 148
+    add-int/lit8 v0, p2, 0x1
+
+    .line 149
+    .line 150
+    iget-object v1, p0, Lqt0;->B0:Ln61;
+
+    .line 151
+    .line 152
+    invoke-virtual {v1, p1}, Ln61;->o(I)Le71;
+
+    .line 153
+    .line 154
+    .line 155
+    move-result-object v1
+
+    .line 156
+    iget v1, v1, Le71;->l:I
+
+    .line 157
+    .line 158
+    if-le v0, v1, :cond_4
+
+    .line 159
+    .line 160
+    goto :goto_1
+
+    .line 161
+    :cond_4
+    move p2, v0
+
+    .line 162
+    :cond_5
+    :goto_1
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 163
+    .line 164
+    iget-object v1, v0, Lwb1;->b:Lug0;
+
+    .line 165
+    .line 166
+    invoke-virtual {v1, p3, p4}, Lug0;->B(II)Lxm0;
+
+    .line 167
+    .line 168
+    .line 169
+    move-result-object v1
+
+    .line 170
+    invoke-virtual {v1}, Lxm0;->a()Lxm0;
+
+    .line 171
+    .line 172
+    .line 173
+    move-result-object v1
+
+    .line 174
+    iput-object v1, v0, Lwb1;->c:Lxm0;
+
+    .line 175
+    .line 176
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 177
+    .line 178
+    iget-object v1, v0, Lwb1;->b:Lug0;
+
+    .line 179
+    .line 180
+    invoke-virtual {v1, p1, p2}, Lug0;->B(II)Lxm0;
+
+    .line 181
+    .line 182
+    .line 183
+    move-result-object v1
+
+    .line 184
+    invoke-virtual {v1}, Lxm0;->a()Lxm0;
+
+    .line 185
+    .line 186
+    .line 187
+    move-result-object v1
+
+    .line 188
+    iput-object v1, v0, Lwb1;->d:Lxm0;
+
+    .line 189
+    .line 190
+    invoke-virtual {p0}, Lqt0;->s0()V
+
+    .line 191
+    .line 192
+    .line 193
+    invoke-virtual {p0}, Lqt0;->u0()V
+
+    .line 194
+    .line 195
+    .line 196
+    iget-object v0, p0, Lqt0;->a1:Lja5;
+
+    .line 197
+    .line 198
+    invoke-virtual {v0}, Lja5;->a()V
+
+    .line 199
+    .line 200
+    .line 201
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 202
+    .line 203
+    iget-object v0, v0, Lwb1;->c:Lxm0;
+
+    .line 204
+    .line 205
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
+
+    .line 206
+    .line 207
+    .line 208
+    move-result-object v0
+
+    .line 209
+    iget-object v1, p0, Lqt0;->p:Lxm0;
+
+    .line 210
+    .line 211
+    invoke-virtual {v0, v1}, Lxm0;->equals(Ljava/lang/Object;)Z
+
+    .line 212
+    .line 213
+    .line 214
+    move-result v0
+
+    .line 215
+    if-nez v0, :cond_6
+
+    .line 216
+    .line 217
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 218
+    .line 219
+    iget-object v0, v0, Lwb1;->d:Lxm0;
+
+    .line 220
+    .line 221
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
+
+    .line 222
+    .line 223
+    .line 224
+    move-result-object v0
+
+    .line 225
+    iget-object v1, p0, Lqt0;->p:Lxm0;
+
+    .line 226
+    .line 227
+    invoke-virtual {v0, v1}, Lxm0;->equals(Ljava/lang/Object;)Z
+
+    .line 228
+    .line 229
+    .line 230
+    move-result v0
+
+    .line 231
+    if-nez v0, :cond_6
+
+    .line 232
+    .line 233
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 234
+    .line 235
+    iget-object v0, v0, Lwb1;->d:Lxm0;
+
+    .line 236
+    .line 237
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
+
+    .line 238
+    .line 239
+    .line 240
+    move-result-object v0
+
+    .line 241
+    iput-object v0, p0, Lqt0;->p:Lxm0;
+
+    .line 242
+    .line 243
+    :cond_6
+    if-eqz p6, :cond_8
+
+    .line 244
+    .line 245
+    const/4 p6, 0x6
+
+    .line 246
+    const/4 v0, 0x0
+
+    .line 247
+    if-ne p5, p6, :cond_7
+
+    .line 248
+    .line 249
+    invoke-virtual {p0, p3, p4, v0}, Lqt0;->C(IIZ)V
+
+    .line 250
+    .line 251
+    .line 252
+    const-wide/16 p3, 0x0
+
+    .line 253
+    .line 254
+    iput-wide p3, p0, Lqt0;->I0:J
+
+    .line 255
+    .line 256
+    invoke-virtual {p0, p1, p2, v0}, Lqt0;->C(IIZ)V
+
+    .line 257
+    .line 258
+    .line 259
+    goto :goto_2
+
+    .line 260
+    :cond_7
+    invoke-virtual {p0, p1, p2, v0}, Lqt0;->C(IIZ)V
+
+    .line 261
+    .line 262
+    .line 263
+    goto :goto_2
+
+    .line 264
+    :cond_8
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 265
+    .line 266
+    .line 267
+    :goto_2
+    invoke-virtual {p0, p5}, Lqt0;->a0(I)V
+
+    .line 268
+    .line 269
+    .line 270
+    return-void
+.end method
+
+.method public final onAttachedToWindow()V
+    .locals 1
+
+    .line 1
+    invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
+
+    .line 2
+    .line 3
+    .line 4
+    new-instance v0, Lwd0;
+
+    .line 5
+    .line 6
+    invoke-direct {v0, p0}, Lgv1;-><init>(Lqt0;)V
+
+    .line 7
+    .line 8
+    .line 9
+    iget-object p0, p0, Lqt0;->r:Ltv1;
+
+    .line 10
+    .line 11
+    invoke-virtual {p0, v0}, Ltv1;->a(Lgv1;)I
+
+    .line 12
+    .line 13
+    .line 14
+    return-void
+.end method
+
+.method public final onCheckIsTextEditor()Z
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    if-eqz v0, :cond_0
+
+    .line 6
+    .line 7
+    invoke-virtual {p0}, Lqt0;->R()Z
+
+    .line 8
+    .line 9
+    .line 10
+    move-result p0
+
+    .line 11
+    if-eqz p0, :cond_0
+
+    .line 12
+    .line 13
+    const/4 p0, 0x1
+
+    .line 14
+    return p0
+
+    .line 15
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 16
+    return p0
+.end method
+
+.method public final onConfigurationChanged(Landroid/content/res/Configuration;)V
+    .locals 0
+
+    .line 1
+    invoke-super {p0, p1}, Landroid/view/View;->onConfigurationChanged(Landroid/content/res/Configuration;)V
+
+    .line 2
+    .line 3
+    .line 4
+    iget-object p1, p0, Lqt0;->K0:Lds1;
+
+    .line 5
+    .line 6
+    invoke-virtual {p1}, Lds1;->i()V
+
+    .line 7
+    .line 8
+    .line 9
+    const/4 p1, 0x0
+
+    .line 10
+    iput-boolean p1, p0, Lqt0;->R:Z
+
+    .line 11
+    .line 12
+    iput-boolean p1, p0, Lqt0;->Q:Z
+
+    .line 13
+    .line 14
+    return-void
+.end method
+
+.method public final onCreateContextMenu(Landroid/view/ContextMenu;)V
+    .locals 7
+
+    .line 1
+    invoke-super {p0, p1}, Landroid/view/View;->onCreateContextMenu(Landroid/view/ContextMenu;)V
+
+    .line 2
+    .line 3
+    .line 4
+    iget-object v0, p0, Lqt0;->K0:Lds1;
+
+    .line 5
+    .line 6
+    iget-object v0, v0, Lds1;->F:Landroid/graphics/PointF;
+
+    .line 7
+    .line 8
+    if-nez v0, :cond_0
+
+    .line 9
+    .line 10
+    return-void
+
+    .line 11
+    :cond_0
+    iget v1, v0, Landroid/graphics/PointF;->x:F
+
+    .line 12
+    .line 13
+    iget v0, v0, Landroid/graphics/PointF;->y:F
+
+    .line 14
+    .line 15
+    invoke-virtual {p0, v1, v0}, Lqt0;->J(FF)J
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-wide v0
+
+    .line 19
+    new-instance v2, Lhb1;
+
+    .line 20
+    .line 21
+    iget-object v3, p0, Lqt0;->B0:Ln61;
+
+    .line 22
+    .line 23
+    invoke-virtual {v3}, Ln61;->n()Lug0;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object v3
+
+    .line 27
+    const/16 v4, 0x20
+
+    .line 28
+    .line 29
+    shr-long v4, v0, v4
+
+    .line 30
+    .line 31
+    long-to-int v4, v4
+
+    .line 32
+    const-wide v5, 0xffffffffL
+
+    .line 33
+    .line 34
+    .line 35
+    .line 36
+    .line 37
+    and-long/2addr v0, v5
+
+    .line 38
+    long-to-int v0, v0
+
+    .line 39
+    invoke-virtual {v3, v4, v0}, Lug0;->B(II)Lxm0;
+
+    .line 40
+    .line 41
+    .line 42
+    move-result-object v0
+
+    .line 43
+    invoke-direct {v2, p0, p1, v0}, Lhb1;-><init>(Lqt0;Landroid/view/ContextMenu;Lxm0;)V
+
+    .line 44
+    .line 45
+    .line 46
+    iget-object p0, p0, Lqt0;->r:Ltv1;
+
+    .line 47
+    .line 48
+    invoke-virtual {p0, v2}, Ltv1;->a(Lgv1;)I
+
+    .line 49
+    .line 50
+    .line 51
+    return-void
+.end method
+
+.method public final onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->R()Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    const/4 v1, 0x0
+
+    .line 6
+    if-eqz v0, :cond_6
+
+    .line 7
+    .line 8
+    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
+
+    .line 9
+    .line 10
+    .line 11
+    move-result v0
+
+    .line 12
+    if-nez v0, :cond_0
+
+    .line 13
+    .line 14
+    goto/16 :goto_5
+
+    .line 15
+    .line 16
+    :cond_0
+    invoke-virtual {p0}, Lqt0;->u()Z
+
+    .line 17
+    .line 18
+    .line 19
+    move-result v0
+
+    .line 20
+    const/4 v2, 0x0
+
+    .line 21
+    if-eqz v0, :cond_2
+
+    .line 22
+    .line 23
+    iget v0, p0, Lqt0;->w:I
+
+    .line 24
+    .line 25
+    if-eqz v0, :cond_1
+
+    .line 26
+    .line 27
+    goto :goto_0
+
+    .line 28
+    :cond_1
+    const v0, 0x20001
+
+    .line 29
+    .line 30
+    .line 31
+    :goto_0
+    iput v0, p1, Landroid/view/inputmethod/EditorInfo;->inputType:I
+
+    .line 32
+    .line 33
+    goto :goto_1
+
+    .line 34
+    :cond_2
+    iput v2, p1, Landroid/view/inputmethod/EditorInfo;->inputType:I
+
+    .line 35
+    .line 36
+    :goto_1
+    invoke-virtual {p0}, Lqt0;->getCursor()Lwb1;
+
+    .line 37
+    .line 38
+    .line 39
+    move-result-object v0
+
+    .line 40
+    if-eqz v0, :cond_3
+
+    .line 41
+    .line 42
+    invoke-virtual {p0}, Lqt0;->getCursor()Lwb1;
+
+    .line 43
+    .line 44
+    .line 45
+    move-result-object v0
+
+    .line 46
+    iget-object v0, v0, Lwb1;->c:Lxm0;
+
+    .line 47
+    .line 48
+    iget v0, v0, Lxm0;->a:I
+
+    .line 49
+    .line 50
+    goto :goto_2
+
+    .line 51
+    :cond_3
+    move v0, v2
+
+    .line 52
+    :goto_2
+    iput v0, p1, Landroid/view/inputmethod/EditorInfo;->initialSelStart:I
+
+    .line 53
+    .line 54
+    invoke-virtual {p0}, Lqt0;->getCursor()Lwb1;
+
+    .line 55
+    .line 56
+    .line 57
+    move-result-object v0
+
+    .line 58
+    if-eqz v0, :cond_4
+
+    .line 59
+    .line 60
+    invoke-virtual {p0}, Lqt0;->getCursor()Lwb1;
+
+    .line 61
+    .line 62
+    .line 63
+    move-result-object v0
+
+    .line 64
+    iget-object v0, v0, Lwb1;->d:Lxm0;
+
+    .line 65
+    .line 66
+    iget v0, v0, Lxm0;->a:I
+
+    .line 67
+    .line 68
+    goto :goto_3
+
+    .line 69
+    :cond_4
+    move v0, v2
+
+    .line 70
+    :goto_3
+    iput v0, p1, Landroid/view/inputmethod/EditorInfo;->initialSelEnd:I
+
+    .line 71
+    .line 72
+    iget-object v0, p0, Lqt0;->q:Ldr1;
+
+    .line 73
+    .line 74
+    invoke-virtual {v0, v2}, Ldr1;->getCursorCapsMode(I)I
+
+    .line 75
+    .line 76
+    .line 77
+    move-result v3
+
+    .line 78
+    iput v3, p1, Landroid/view/inputmethod/EditorInfo;->initialCapsMode:I
+
+    .line 79
+    .line 80
+    iget-object v3, p0, Lqt0;->W0:Lri1;
+
+    .line 81
+    .line 82
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 83
+    .line 84
+    .line 85
+    const/high16 v3, 0x12000000
+
+    .line 86
+    .line 87
+    iput v3, p1, Landroid/view/inputmethod/EditorInfo;->imeOptions:I
+
+    .line 88
+    .line 89
+    new-instance p1, Lwd0;
+
+    .line 90
+    .line 91
+    invoke-direct {p1, p0}, Lgv1;-><init>(Lqt0;)V
+
+    .line 92
+    .line 93
+    .line 94
+    iget-object v3, p0, Lqt0;->r:Ltv1;
+
+    .line 95
+    .line 96
+    invoke-virtual {v3, p1}, Ltv1;->a(Lgv1;)I
+
+    .line 97
+    .line 98
+    .line 99
+    iget-object p1, v0, Ldr1;->a:Lqt0;
+
+    .line 100
+    .line 101
+    invoke-virtual {p1}, Lqt0;->getText()Ln61;
+
+    .line 102
+    .line 103
+    .line 104
+    move-result-object p1
+
+    .line 105
+    :goto_4
+    iget v3, p1, Ln61;->n:I
+
+    .line 106
+    .line 107
+    if-lez v3, :cond_5
+
+    .line 108
+    .line 109
+    invoke-virtual {p1}, Ln61;->k()Z
+
+    .line 110
+    .line 111
+    .line 112
+    goto :goto_4
+
+    .line 113
+    :cond_5
+    iget-object p1, v0, Ldr1;->b:Lb11;
+
+    .line 114
+    .line 115
+    const/4 v3, -0x1
+
+    .line 116
+    iput v3, p1, Lb11;->b:I
+
+    .line 117
+    .line 118
+    iput v3, p1, Lb11;->a:I
+
+    .line 119
+    .line 120
+    iput-boolean v2, p1, Lb11;->c:Z
+
+    .line 121
+    .line 122
+    iput-boolean v2, v0, Ldr1;->c:Z
+
+    .line 123
+    .line 124
+    iget-object p1, p0, Lqt0;->B0:Ln61;
+
+    .line 125
+    .line 126
+    iput v2, p1, Ln61;->n:I
+
+    .line 127
+    .line 128
+    invoke-virtual {p0, v1}, Lqt0;->setExtracting(Landroid/view/inputmethod/ExtractedTextRequest;)V
+
+    .line 129
+    .line 130
+    .line 131
+    return-object v0
+
+    .line 132
+    :cond_6
+    :goto_5
+    return-object v1
+.end method
+
+.method public final onDetachedFromWindow()V
+    .locals 2
+
+    .line 1
+    invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
+
+    .line 2
+    .line 3
+    .line 4
+    new-instance v0, Lwd0;
+
+    .line 5
+    .line 6
+    invoke-direct {v0, p0}, Lgv1;-><init>(Lqt0;)V
+
+    .line 7
+    .line 8
+    .line 9
+    iget-object v1, p0, Lqt0;->r:Ltv1;
+
+    .line 10
+    .line 11
+    invoke-virtual {v1, v0}, Ltv1;->a(Lgv1;)I
+
+    .line 12
+    .line 13
+    .line 14
+    iget-object v0, p0, Lqt0;->V0:Lcc1;
+
+    .line 15
+    .line 16
+    const/4 v1, 0x0
+
+    .line 17
+    iput-boolean v1, v0, Lcc1;->l:Z
+
+    .line 18
+    .line 19
+    invoke-virtual {p0, v0}, Lqt0;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+    .line 20
+    .line 21
+    .line 22
+    return-void
+.end method
+
+.method public final onDragEvent(Landroid/view/DragEvent;)Z
+    .locals 9
+
+    .line 1
+    invoke-virtual {p1}, Landroid/view/DragEvent;->getAction()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    const/4 v1, 0x1
+
+    .line 6
+    if-eq v0, v1, :cond_5
+
+    .line 7
+    .line 8
+    const/4 v2, 0x2
+
+    .line 9
+    iget-object v3, p0, Lqt0;->K0:Lds1;
+
+    .line 10
+    .line 11
+    const/4 v4, 0x0
+
+    .line 12
+    if-eq v0, v2, :cond_4
+
+    .line 13
+    .line 14
+    const/4 v2, 0x3
+
+    .line 15
+    if-eq v0, v2, :cond_1
+
+    .line 16
+    .line 17
+    const/4 v2, 0x6
+
+    .line 18
+    if-eq v0, v2, :cond_0
+
+    .line 19
+    .line 20
+    invoke-super {p0, p1}, Landroid/view/View;->onDragEvent(Landroid/view/DragEvent;)Z
+
+    .line 21
+    .line 22
+    .line 23
+    move-result p0
+
+    .line 24
+    return p0
+
+    .line 25
+    :cond_0
+    iput-object v4, v3, Lds1;->I:Lxm0;
+
+    .line 26
+    .line 27
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
+
+    .line 28
+    .line 29
+    .line 30
+    return v1
+
+    .line 31
+    :cond_1
+    iget-object v0, v3, Lds1;->I:Lxm0;
+
+    .line 32
+    .line 33
+    if-nez v0, :cond_2
+
+    .line 34
+    .line 35
+    const/4 p0, 0x0
+
+    .line 36
+    return p0
+
+    .line 37
+    :cond_2
+    iput-object v4, v3, Lds1;->I:Lxm0;
+
+    .line 38
+    .line 39
+    iget v2, v0, Lxm0;->b:I
+
+    .line 40
+    .line 41
+    iget v0, v0, Lxm0;->c:I
+
+    .line 42
+    .line 43
+    invoke-virtual {p0, v2, v0}, Lqt0;->l0(II)V
+
+    .line 44
+    .line 45
+    .line 46
+    invoke-virtual {p1}, Landroid/view/DragEvent;->getClipData()Landroid/content/ClipData;
+
+    .line 47
+    .line 48
+    .line 49
+    move-result-object v0
+
+    .line 50
+    invoke-static {v0}, Lzu6;->u(Landroid/content/ClipData;)Ljava/lang/String;
+
+    .line 51
+    .line 52
+    .line 53
+    move-result-object v0
+
+    .line 54
+    iget-object v2, p0, Lqt0;->q:Ldr1;
+
+    .line 55
+    .line 56
+    if-eqz v2, :cond_3
+
+    .line 57
+    .line 58
+    invoke-virtual {v2, v0, v1}, Ldr1;->commitText(Ljava/lang/CharSequence;I)Z
+
+    .line 59
+    .line 60
+    .line 61
+    iget-object v0, p0, Lqt0;->W0:Lri1;
+
+    .line 62
+    .line 63
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 64
+    .line 65
+    .line 66
+    invoke-virtual {p0}, Lqt0;->Z()V
+
+    .line 67
+    .line 68
+    .line 69
+    :cond_3
+    invoke-virtual {p0}, Landroid/view/View;->requestFocus()Z
+
+    .line 70
+    .line 71
+    .line 72
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
+
+    .line 73
+    .line 74
+    .line 75
+    invoke-super {p0, p1}, Landroid/view/View;->onDragEvent(Landroid/view/DragEvent;)Z
+
+    .line 76
+    .line 77
+    .line 78
+    return v1
+
+    .line 79
+    :cond_4
+    invoke-virtual {p1}, Landroid/view/DragEvent;->getX()F
+
+    .line 80
+    .line 81
+    .line 82
+    move-result v0
+
+    .line 83
+    invoke-virtual {p1}, Landroid/view/DragEvent;->getY()F
+
+    .line 84
+    .line 85
+    .line 86
+    move-result v2
+
+    .line 87
+    invoke-virtual {p0, v0, v2}, Lqt0;->J(FF)J
+
+    .line 88
+    .line 89
+    .line 90
+    move-result-wide v5
+
+    .line 91
+    const/16 v0, 0x20
+
+    .line 92
+    .line 93
+    shr-long v7, v5, v0
+
+    .line 94
+    .line 95
+    long-to-int v0, v7
+
+    .line 96
+    const-wide v7, 0xffffffffL
+
+    .line 97
+    .line 98
+    .line 99
+    .line 100
+    .line 101
+    and-long/2addr v5, v7
+
+    .line 102
+    long-to-int v2, v5
+
+    .line 103
+    invoke-virtual {p0}, Lqt0;->getText()Ln61;
+
+    .line 104
+    .line 105
+    .line 106
+    move-result-object v5
+
+    .line 107
+    invoke-virtual {v5}, Ln61;->n()Lug0;
+
+    .line 108
+    .line 109
+    .line 110
+    move-result-object v5
+
+    .line 111
+    invoke-virtual {v5, v0, v2}, Lug0;->B(II)Lxm0;
+
+    .line 112
+    .line 113
+    .line 114
+    move-result-object v0
+
+    .line 115
+    iput-object v0, v3, Lds1;->I:Lxm0;
+
+    .line 116
+    .line 117
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
+
+    .line 118
+    .line 119
+    .line 120
+    invoke-virtual {p1}, Landroid/view/DragEvent;->getX()F
+
+    .line 121
+    .line 122
+    .line 123
+    move-result p0
+
+    .line 124
+    invoke-virtual {p1}, Landroid/view/DragEvent;->getY()F
+
+    .line 125
+    .line 126
+    .line 127
+    move-result p1
+
+    .line 128
+    invoke-virtual {v3, v4, p0, p1}, Lds1;->k(Landroid/view/MotionEvent;FF)V
+
+    .line 129
+    .line 130
+    .line 131
+    :cond_5
+    return v1
+.end method
+
+.method public final onDraw(Landroid/graphics/Canvas;)V
+    .locals 4
+
+    .line 1
+    invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
+
+    .line 2
+    .line 3
+    .line 4
+    iget-object v0, p0, Lqt0;->b1:Lsr1;
+
+    .line 5
+    .line 6
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v1
+
+    .line 13
+    iget-object v2, v0, Lsr1;->p:Lqt0;
+
+    .line 14
+    .line 15
+    invoke-virtual {v2}, Lqt0;->getOffsetX()I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result v2
+
+    .line 19
+    int-to-float v2, v2
+
+    .line 20
+    iget-object v3, v0, Lsr1;->p:Lqt0;
+
+    .line 21
+    .line 22
+    invoke-virtual {v3}, Lqt0;->getOffsetY()I
+
+    .line 23
+    .line 24
+    .line 25
+    move-result v3
+
+    .line 26
+    int-to-float v3, v3
+
+    .line 27
+    invoke-virtual {p1, v2, v3}, Landroid/graphics/Canvas;->translate(FF)V
+
+    .line 28
+    .line 29
+    .line 30
+    const/4 v2, 0x1
+
+    .line 31
+    iput-boolean v2, v0, Lsr1;->H:Z
+
+    .line 32
+    .line 33
+    const/4 v2, 0x0
+
+    .line 34
+    :try_start_0
+    invoke-virtual {v0, p1}, Lsr1;->v(Landroid/graphics/Canvas;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 35
+    .line 36
+    .line 37
+    iput-boolean v2, v0, Lsr1;->H:Z
+
+    .line 38
+    .line 39
+    invoke-virtual {p1, v1}, Landroid/graphics/Canvas;->restoreToCount(I)V
+
+    .line 40
+    .line 41
+    .line 42
+    iget-boolean p1, p0, Lqt0;->n0:Z
+
+    .line 43
+    .line 44
+    iget-object v0, p0, Lqt0;->V0:Lcc1;
+
+    .line 45
+    .line 46
+    iget-boolean v0, v0, Lcc1;->k:Z
+
+    .line 47
+    .line 48
+    if-ne p1, v0, :cond_0
+
+    .line 49
+    .line 50
+    iget-object p1, p0, Lqt0;->K0:Lds1;
+
+    .line 51
+    .line 52
+    iget-object p1, p1, Lds1;->b:Ltr1;
+
+    .line 53
+    .line 54
+    iget-object p1, p1, Ltr1;->b:Landroid/widget/OverScroller;
+
+    .line 55
+    .line 56
+    invoke-virtual {p1}, Landroid/widget/OverScroller;->isFinished()Z
+
+    .line 57
+    .line 58
+    .line 59
+    move-result p1
+
+    .line 60
+    if-nez p1, :cond_1
+
+    .line 61
+    .line 62
+    :cond_0
+    iget-object p1, p0, Lqt0;->K0:Lds1;
+
+    .line 63
+    .line 64
+    iget-object p1, p1, Lds1;->d:Lbf3;
+
+    .line 65
+    .line 66
+    iget-object p1, p1, Lbf3;->b:Landroid/widget/PopupWindow;
+
+    .line 67
+    .line 68
+    invoke-virtual {p1}, Landroid/widget/PopupWindow;->isShowing()Z
+
+    .line 69
+    .line 70
+    .line 71
+    move-result p1
+
+    .line 72
+    if-eqz p1, :cond_1
+
+    .line 73
+    .line 74
+    iget-object p1, p0, Lqt0;->V0:Lcc1;
+
+    .line 75
+    .line 76
+    iget-boolean p1, p1, Lcc1;->k:Z
+
+    .line 77
+    .line 78
+    iput-boolean p1, p0, Lqt0;->n0:Z
+
+    .line 79
+    .line 80
+    iget-object p1, p0, Lqt0;->K0:Lds1;
+
+    .line 81
+    .line 82
+    iget-object p1, p1, Lds1;->d:Lbf3;
+
+    .line 83
+    .line 84
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 85
+    .line 86
+    .line 87
+    new-instance v0, Lr2;
+
+    .line 88
+    .line 89
+    const/4 v1, 0x5
+
+    .line 90
+    invoke-direct {v0, p1, v1}, Lr2;-><init>(Ljava/lang/Object;B)V
+
+    .line 91
+    .line 92
+    .line 93
+    invoke-virtual {p0, v0}, Lqt0;->d0(Ljava/lang/Runnable;)V
+
+    .line 94
+    .line 95
+    .line 96
+    :cond_1
+    return-void
+
+    .line 97
+    :catchall_0
+    move-exception p0
+
+    .line 98
+    iput-boolean v2, v0, Lsr1;->H:Z
+
+    .line 99
+    .line 100
+    throw p0
+.end method
+
+.method public final onFocusChanged(ZILandroid/graphics/Rect;)V
+    .locals 2
+
+    .line 1
+    invoke-super {p0, p1, p2, p3}, Landroid/view/View;->onFocusChanged(ZILandroid/graphics/Rect;)V
+
+    .line 2
+    .line 3
+    .line 4
+    iget-object p2, p0, Lqt0;->V0:Lcc1;
+
+    .line 5
+    .line 6
+    const/4 p3, 0x0
+
+    .line 7
+    if-eqz p1, :cond_1
+
+    .line 8
+    .line 9
+    iget v0, p2, Lcc1;->n:I
+
+    .line 10
+    .line 11
+    if-lez v0, :cond_0
+
+    .line 12
+    .line 13
+    const/4 p3, 0x1
+
+    .line 14
+    :cond_0
+    iput-boolean p3, p2, Lcc1;->l:Z
+
+    .line 15
+    .line 16
+    if-eqz p3, :cond_3
+
+    .line 17
+    .line 18
+    invoke-virtual {p0, p2}, Lqt0;->d0(Ljava/lang/Runnable;)V
+
+    .line 19
+    .line 20
+    .line 21
+    goto :goto_1
+
+    .line 22
+    :cond_1
+    iput-boolean p3, p2, Lcc1;->l:Z
+
+    .line 23
+    .line 24
+    iput-boolean p3, p2, Lcc1;->k:Z
+
+    .line 25
+    .line 26
+    iget-object p2, p0, Lqt0;->K0:Lds1;
+
+    .line 27
+    .line 28
+    invoke-virtual {p2}, Lds1;->m()Z
+
+    .line 29
+    .line 30
+    .line 31
+    move-result p3
+
+    .line 32
+    if-nez p3, :cond_2
+
+    .line 33
+    .line 34
+    goto :goto_0
+
+    .line 35
+    :cond_2
+    const-wide/16 v0, 0x0
+
+    .line 36
+    .line 37
+    iput-wide v0, p2, Lds1;->p:J
+
+    .line 38
+    .line 39
+    iget-object p2, p2, Lds1;->a:Lqt0;
+
+    .line 40
+    .line 41
+    invoke-virtual {p2}, Landroid/view/View;->invalidate()V
+
+    .line 42
+    .line 43
+    .line 44
+    :goto_0
+    iget-object p2, p0, Lqt0;->V0:Lcc1;
+
+    .line 45
+    .line 46
+    invoke-virtual {p0, p2}, Lqt0;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+    .line 47
+    .line 48
+    .line 49
+    :cond_3
+    :goto_1
+    new-instance p2, Lyq1;
+
+    .line 50
+    .line 51
+    invoke-direct {p2, p0, p1}, Lyq1;-><init>(Lqt0;Z)V
+
+    .line 52
+    .line 53
+    .line 54
+    iget-object p1, p0, Lqt0;->r:Ltv1;
+
+    .line 55
+    .line 56
+    invoke-virtual {p1, p2}, Ltv1;->a(Lgv1;)I
+
+    .line 57
+    .line 58
+    .line 59
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 60
+    .line 61
+    .line 62
+    return-void
+.end method
+
+.method public final onGenericMotionEvent(Landroid/view/MotionEvent;)Z
+    .locals 8
+
+    .line 1
+    const/16 v0, 0x2002
+
+    .line 2
+    .line 3
+    invoke-virtual {p1, v0}, Landroid/view/InputEvent;->isFromSource(I)Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    iget-object v1, p0, Lqt0;->K0:Lds1;
+
+    .line 8
+    .line 9
+    const/16 v2, 0xa
+
+    .line 10
+    .line 11
+    const/16 v3, 0x9
+
+    .line 12
+    .line 13
+    const/4 v4, 0x1
+
+    .line 14
+    if-eqz v0, :cond_6
+
+    .line 15
+    .line 16
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    .line 17
+    .line 18
+    .line 19
+    move-result v0
+
+    .line 20
+    const/4 v5, 0x0
+
+    .line 21
+    if-ne v0, v3, :cond_0
+
+    .line 22
+    .line 23
+    iput-boolean v4, p0, Lqt0;->Q:Z
+
+    .line 24
+    .line 25
+    goto :goto_0
+
+    .line 26
+    :cond_0
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    .line 27
+    .line 28
+    .line 29
+    move-result v0
+
+    .line 30
+    if-ne v0, v2, :cond_1
+
+    .line 31
+    .line 32
+    iput-boolean v5, p0, Lqt0;->Q:Z
+
+    .line 33
+    .line 34
+    :cond_1
+    :goto_0
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+
+    .line 35
+    .line 36
+    .line 37
+    move-result v0
+
+    .line 38
+    const/16 v6, 0xb
+
+    .line 39
+    .line 40
+    if-eq v0, v6, :cond_2
+
+    .line 41
+    .line 42
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+
+    .line 43
+    .line 44
+    .line 45
+    move-result v0
+
+    .line 46
+    const/16 v6, 0xc
+
+    .line 47
+    .line 48
+    if-ne v0, v6, :cond_4
+
+    .line 49
+    .line 50
+    :cond_2
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getButtonState()I
+
+    .line 51
+    .line 52
+    .line 53
+    move-result v0
+
+    .line 54
+    if-eqz v0, :cond_3
+
+    .line 55
+    .line 56
+    move v0, v4
+
+    .line 57
+    goto :goto_1
+
+    .line 58
+    :cond_3
+    move v0, v5
+
+    .line 59
+    :goto_1
+    iput-boolean v0, p0, Lqt0;->R:Z
+
+    .line 60
+    .line 61
+    :cond_4
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    .line 62
+    .line 63
+    .line 64
+    move-result v0
+
+    .line 65
+    const/4 v6, 0x7
+
+    .line 66
+    if-eq v0, v6, :cond_5
+
+    .line 67
+    .line 68
+    if-eq v0, v3, :cond_5
+
+    .line 69
+    .line 70
+    if-eq v0, v2, :cond_5
+
+    .line 71
+    .line 72
+    goto :goto_2
+
+    .line 73
+    :cond_5
+    new-instance p0, Lpt0;
+
+    .line 74
+    .line 75
+    invoke-direct {p0, v5}, Lpt0;-><init>(B)V
+
+    .line 76
+    .line 77
+    .line 78
+    const/4 v0, 0x0
+
+    .line 79
+    invoke-virtual {v1, p0, v0, p1}, Lds1;->a(Lx52;Lxm0;Landroid/view/MotionEvent;)I
+
+    .line 80
+    .line 81
+    .line 82
+    return v4
+
+    .line 83
+    :cond_6
+    :goto_2
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    .line 84
+    .line 85
+    .line 86
+    move-result v0
+
+    .line 87
+    const/16 v5, 0x8
+
+    .line 88
+    .line 89
+    if-ne v0, v5, :cond_9
+
+    .line 90
+    .line 91
+    const/4 v0, 0x2
+
+    .line 92
+    invoke-virtual {p1, v0}, Landroid/view/InputEvent;->isFromSource(I)Z
+
+    .line 93
+    .line 94
+    .line 95
+    move-result v0
+
+    .line 96
+    if-eqz v0, :cond_9
+
+    .line 97
+    .line 98
+    iget-object v0, p0, Lqt0;->j:Lfp2;
+
+    .line 99
+    .line 100
+    iget-object v5, v0, Lfp2;->l:Ljava/lang/Object;
+
+    .line 101
+    .line 102
+    check-cast v5, Lsx2;
+
+    .line 103
+    .line 104
+    iget-object v0, v0, Lfp2;->l:Ljava/lang/Object;
+
+    .line 105
+    .line 106
+    check-cast v0, Lsx2;
+
+    .line 107
+    .line 108
+    iget-boolean v5, v5, Lsx2;->c:Z
+
+    .line 109
+    .line 110
+    if-nez v5, :cond_9
+
+    .line 111
+    .line 112
+    invoke-virtual {p1, v3}, Landroid/view/MotionEvent;->getAxisValue(I)F
+
+    .line 113
+    .line 114
+    .line 115
+    move-result v3
+
+    .line 116
+    neg-float v3, v3
+
+    .line 117
+    invoke-virtual {p1, v2}, Landroid/view/MotionEvent;->getAxisValue(I)F
+
+    .line 118
+    .line 119
+    .line 120
+    move-result v2
+
+    .line 121
+    neg-float v2, v2
+
+    .line 122
+    iget v5, p0, Lqt0;->F:F
+
+    .line 123
+    .line 124
+    mul-float/2addr v2, v5
+
+    .line 125
+    iget-object p0, p0, Lqt0;->W0:Lri1;
+
+    .line 126
+    .line 127
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 128
+    .line 129
+    .line 130
+    const v6, 0x3f99999a    # 1.2f
+
+    .line 131
+    .line 132
+    .line 133
+    mul-float/2addr v2, v6
+
+    .line 134
+    mul-float/2addr v3, v5
+
+    .line 135
+    mul-float/2addr v3, v6
+
+    .line 136
+    invoke-virtual {v0}, Lsx2;->a()Z
+
+    .line 137
+    .line 138
+    .line 139
+    move-result v5
+
+    .line 140
+    if-eqz v5, :cond_7
+
+    .line 141
+    .line 142
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 143
+    .line 144
+    .line 145
+    const/high16 p0, 0x40a00000    # 5.0f
+
+    .line 146
+    .line 147
+    mul-float/2addr v2, p0
+
+    .line 148
+    mul-float/2addr v3, p0
+
+    .line 149
+    :cond_7
+    invoke-virtual {v0}, Lsx2;->b()Z
+
+    .line 150
+    .line 151
+    .line 152
+    move-result p0
+
+    .line 153
+    if-eqz p0, :cond_8
+
+    .line 154
+    .line 155
+    move v7, v3
+
+    .line 156
+    move v3, v2
+
+    .line 157
+    move v2, v7
+
+    .line 158
+    :cond_8
+    invoke-virtual {v1, p1, p1, v2, v3}, Lds1;->onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+
+    .line 159
+    .line 160
+    .line 161
+    return v4
+
+    .line 162
+    :cond_9
+    invoke-super {p0, p1}, Landroid/view/View;->onGenericMotionEvent(Landroid/view/MotionEvent;)Z
+
+    .line 163
+    .line 164
+    .line 165
+    move-result p0
+
+    .line 166
+    return p0
+.end method
+
+.method public final onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+    .locals 2
+
+    .line 1
+    invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p0}, Lqt0;->getScrollMaxY()I
+
+    .line 5
+    .line 6
+    .line 7
+    move-result v0
+
+    .line 8
+    if-lez v0, :cond_0
+
+    .line 9
+    .line 10
+    const/4 v1, 0x1
+
+    .line 11
+    goto :goto_0
+
+    .line 12
+    :cond_0
+    const/4 v1, 0x0
+
+    .line 13
+    :goto_0
+    invoke-virtual {p1, v1}, Landroid/view/accessibility/AccessibilityRecord;->setScrollable(Z)V
+
+    .line 14
+    .line 15
+    .line 16
+    invoke-virtual {p0}, Lqt0;->getScrollMaxX()I
+
+    .line 17
+    .line 18
+    .line 19
+    move-result p0
+
+    .line 20
+    invoke-virtual {p1, p0}, Landroid/view/accessibility/AccessibilityRecord;->setMaxScrollX(I)V
+
+    .line 21
+    .line 22
+    .line 23
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityRecord;->setMaxScrollY(I)V
+
+    .line 24
+    .line 25
+    .line 26
+    return-void
+.end method
+
+.method public final onKeyDown(ILandroid/view/KeyEvent;)Z
+    .locals 25
+
+    .line 1
+    move/from16 v1, p1
+
+    .line 2
+    .line 3
+    move-object/from16 v0, p0
+
+    .line 4
+    .line 5
+    move-object/from16 v2, p2
+
+    .line 6
+    .line 7
+    iget-object v0, v0, Lqt0;->j:Lfp2;
+
+    .line 8
+    .line 9
+    iget-object v3, v0, Lfp2;->l:Ljava/lang/Object;
+
+    .line 10
+    .line 11
+    check-cast v3, Lsx2;
+
+    .line 12
+    .line 13
+    iget-object v4, v3, Lsx2;->a:Lqt0;
+
+    .line 14
+    .line 15
+    iget-object v5, v3, Lsx2;->b:Landroid/text/Editable;
+
+    .line 16
+    .line 17
+    invoke-virtual {v2}, Landroid/view/KeyEvent;->getKeyCode()I
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v6
+
+    .line 21
+    invoke-virtual {v3, v4, v5, v6, v2}, Landroid/text/method/MetaKeyKeyListener;->onKeyDown(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z
+
+    .line 22
+    .line 23
+    .line 24
+    invoke-virtual {v2}, Landroid/view/KeyEvent;->isCtrlPressed()Z
+
+    .line 25
+    .line 26
+    .line 27
+    move-result v4
+
+    .line 28
+    iput-boolean v4, v3, Lsx2;->c:Z
+
+    .line 29
+    .line 30
+    iget-object v4, v0, Lfp2;->k:Ljava/lang/Object;
+
+    .line 31
+    .line 32
+    move-object v6, v4
+
+    .line 33
+    check-cast v6, Lqt0;
+
+    .line 34
+    .line 35
+    iget-object v4, v6, Lqt0;->r:Ltv1;
+
+    .line 36
+    .line 37
+    new-instance v13, Ler1;
+
+    .line 38
+    .line 39
+    const/4 v7, 0x2
+
+    .line 40
+    invoke-direct {v13, v6, v2, v7}, Ler1;-><init>(Lqt0;Landroid/view/KeyEvent;I)V
+
+    .line 41
+    .line 42
+    .line 43
+    new-instance v14, Lkx2;
+
+    .line 44
+    .line 45
+    invoke-virtual {v2}, Landroid/view/KeyEvent;->isCtrlPressed()Z
+
+    .line 46
+    .line 47
+    .line 48
+    invoke-virtual {v3}, Lsx2;->b()Z
+
+    .line 49
+    .line 50
+    .line 51
+    invoke-virtual {v3}, Lsx2;->a()Z
+
+    .line 52
+    .line 53
+    .line 54
+    invoke-direct {v14, v6, v2, v7}, Ler1;-><init>(Lqt0;Landroid/view/KeyEvent;I)V
+
+    .line 55
+    .line 56
+    .line 57
+    invoke-virtual {v4, v13}, Ltv1;->a(Lgv1;)I
+
+    .line 58
+    .line 59
+    .line 60
+    move-result v8
+
+    .line 61
+    and-int/2addr v8, v7
+
+    .line 62
+    const/4 v15, 0x0
+
+    .line 63
+    if-eqz v8, :cond_0
+
+    .line 64
+    .line 65
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
+
+    .line 66
+    .line 67
+    .line 68
+    move-result v0
+
+    .line 69
+    return v0
+
+    .line 70
+    :cond_0
+    invoke-virtual {v3}, Lsx2;->b()Z
+
+    .line 71
+    .line 72
+    .line 73
+    move-result v8
+
+    .line 74
+    invoke-virtual {v3}, Lsx2;->a()Z
+
+    .line 75
+    .line 76
+    .line 77
+    move-result v3
+
+    .line 78
+    invoke-virtual {v2}, Landroid/view/KeyEvent;->isCtrlPressed()Z
+
+    .line 79
+    .line 80
+    .line 81
+    move-result v9
+
+    .line 82
+    invoke-virtual {v0, v1, v2}, Lfp2;->v(ILandroid/view/KeyEvent;)Z
+
+    .line 83
+    .line 84
+    .line 85
+    move-result v0
+
+    .line 86
+    const/4 v10, 0x1
+
+    .line 87
+    if-eqz v0, :cond_3
+
+    .line 88
+    .line 89
+    invoke-virtual {v4, v14}, Ltv1;->a(Lgv1;)I
+
+    .line 90
+    .line 91
+    .line 92
+    move-result v0
+
+    .line 93
+    and-int/2addr v0, v7
+
+    .line 94
+    if-eqz v0, :cond_3
+
+    .line 95
+    .line 96
+    invoke-virtual {v14, v15}, Ler1;->a(Z)Z
+
+    .line 97
+    .line 98
+    .line 99
+    move-result v0
+
+    .line 100
+    if-nez v0, :cond_2
+
+    .line 101
+    .line 102
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
+
+    .line 103
+    .line 104
+    .line 105
+    move-result v0
+
+    .line 106
+    if-eqz v0, :cond_1
+
+    .line 107
+    .line 108
+    goto :goto_0
+
+    .line 109
+    :cond_1
+    return v15
+
+    .line 110
+    :cond_2
+    :goto_0
+    return v10
+
+    .line 111
+    :cond_3
+    const/16 v0, 0x7b
+
+    .line 112
+    .line 113
+    const/16 v4, 0x7a
+
+    .line 114
+    .line 115
+    if-eq v1, v4, :cond_4
+
+    .line 116
+    .line 117
+    if-eq v1, v0, :cond_4
+
+    .line 118
+    .line 119
+    packed-switch v1, :pswitch_data_0
+
+    .line 120
+    .line 121
+    .line 122
+    goto :goto_1
+
+    .line 123
+    :cond_4
+    :pswitch_0
+    invoke-static {v5}, Landroid/text/method/MetaKeyKeyListener;->adjustMetaAfterKeypress(Landroid/text/Spannable;)V
+
+    .line 124
+    .line 125
+    .line 126
+    :goto_1
+    iget-object v7, v6, Lqt0;->q:Ldr1;
+
+    .line 127
+    .line 128
+    invoke-virtual {v6}, Lqt0;->getCursor()Lwb1;
+
+    .line 129
+    .line 130
+    .line 131
+    move-result-object v11
+
+    .line 132
+    invoke-virtual {v6}, Lqt0;->getText()Ln61;
+
+    .line 133
+    .line 134
+    .line 135
+    move-result-object v12
+
+    .line 136
+    const/4 v15, 0x4
+
+    .line 137
+    if-eq v1, v15, :cond_7f
+
+    .line 138
+    .line 139
+    const/16 v15, 0x3d
+
+    .line 140
+    .line 141
+    if-eq v1, v15, :cond_7c
+
+    .line 142
+    .line 143
+    const/16 v15, 0x3e
+
+    .line 144
+    .line 145
+    const-string v10, " "
+
+    .line 146
+    .line 147
+    if-eq v1, v15, :cond_79
+
+    .line 148
+    .line 149
+    const/16 v15, 0x42
+
+    .line 150
+    .line 151
+    const v17, 0x7fffffff
+
+    .line 152
+    .line 153
+    .line 154
+    const-string v4, ""
+
+    .line 155
+    .line 156
+    move/from16 v18, v3
+
+    .line 157
+    .line 158
+    if-eq v1, v15, :cond_3f
+
+    .line 159
+    .line 160
+    const/16 v10, 0x43
+
+    .line 161
+    .line 162
+    if-eq v1, v10, :cond_3a
+
+    .line 163
+    .line 164
+    const/16 v10, 0x5c
+
+    .line 165
+    .line 166
+    if-eq v1, v10, :cond_38
+
+    .line 167
+    .line 168
+    const/16 v10, 0x5d
+
+    .line 169
+    .line 170
+    if-eq v1, v10, :cond_36
+
+    .line 171
+    .line 172
+    const/16 v10, 0x6f
+
+    .line 173
+    .line 174
+    if-eq v1, v10, :cond_34
+
+    .line 175
+    .line 176
+    const/16 v10, 0x70
+
+    .line 177
+    .line 178
+    if-eq v1, v10, :cond_2f
+
+    .line 179
+    .line 180
+    const/16 v10, 0x7a
+
+    .line 181
+    .line 182
+    if-eq v1, v10, :cond_2d
+
+    .line 183
+    .line 184
+    if-eq v1, v0, :cond_2b
+
+    .line 185
+    .line 186
+    const/16 v0, 0x116
+
+    .line 187
+    .line 188
+    if-eq v1, v0, :cond_2a
+
+    .line 189
+    .line 190
+    const/16 v0, 0x117
+
+    .line 191
+    .line 192
+    if-eq v1, v0, :cond_28
+
+    .line 193
+    .line 194
+    const/4 v0, 0x0
+
+    .line 195
+    packed-switch v1, :pswitch_data_1
+
+    .line 196
+    .line 197
+    .line 198
+    invoke-virtual {v2}, Landroid/view/KeyEvent;->isCtrlPressed()Z
+
+    .line 199
+    .line 200
+    .line 201
+    move-result v0
+
+    .line 202
+    if-eqz v0, :cond_10
+
+    .line 203
+    .line 204
+    invoke-virtual {v2}, Landroid/view/KeyEvent;->isAltPressed()Z
+
+    .line 205
+    .line 206
+    .line 207
+    move-result v0
+
+    .line 208
+    if-nez v0, :cond_10
+
+    .line 209
+    .line 210
+    iget-object v0, v6, Lqt0;->q:Ldr1;
+
+    .line 211
+    .line 212
+    invoke-virtual {v6}, Lqt0;->getText()Ln61;
+
+    .line 213
+    .line 214
+    .line 215
+    move-result-object v5
+
+    .line 216
+    invoke-virtual {v6}, Lqt0;->getCursor()Lwb1;
+
+    .line 217
+    .line 218
+    .line 219
+    move-result-object v7
+
+    .line 220
+    const/16 v9, 0x1d
+
+    .line 221
+    .line 222
+    if-eq v1, v9, :cond_d
+
+    .line 223
+    .line 224
+    const/16 v9, 0x26
+
+    .line 225
+    .line 226
+    if-eq v1, v9, :cond_a
+
+    .line 227
+    .line 228
+    const/16 v0, 0x1f
+
+    .line 229
+    .line 230
+    if-eq v1, v0, :cond_9
+
+    .line 231
+    .line 232
+    const/16 v5, 0x20
+
+    .line 233
+    .line 234
+    if-eq v1, v5, :cond_7
+
+    .line 235
+    .line 236
+    packed-switch v1, :pswitch_data_2
+
+    .line 237
+    .line 238
+    .line 239
+    const/4 v3, 0x0
+
+    .line 240
+    goto/16 :goto_3c
+
+    .line 241
+    .line 242
+    :pswitch_1
+    invoke-virtual {v6}, Lqt0;->R()Z
+
+    .line 243
+    .line 244
+    .line 245
+    move-result v0
+
+    .line 246
+    if-eqz v0, :cond_5
+
+    .line 247
+    .line 248
+    invoke-virtual {v6}, Lqt0;->q0()V
+
+    .line 249
+    .line 250
+    .line 251
+    :cond_5
+    :goto_2
+    const/4 v15, 0x1
+
+    .line 252
+    goto/16 :goto_5
+
+    .line 253
+    .line 254
+    :pswitch_2
+    invoke-virtual {v6}, Lqt0;->R()Z
+
+    .line 255
+    .line 256
+    .line 257
+    move-result v0
+
+    .line 258
+    if-eqz v0, :cond_5
+
+    .line 259
+    .line 260
+    invoke-virtual {v6}, Lqt0;->e0()V
+
+    .line 261
+    .line 262
+    .line 263
+    goto :goto_2
+
+    .line 264
+    :pswitch_3
+    invoke-virtual {v6}, Lqt0;->R()Z
+
+    .line 265
+    .line 266
+    .line 267
+    move-result v0
+
+    .line 268
+    if-eqz v0, :cond_6
+
+    .line 269
+    .line 270
+    invoke-virtual {v6}, Lqt0;->z()V
+
+    .line 271
+    .line 272
+    .line 273
+    goto :goto_2
+
+    .line 274
+    :cond_6
+    const/4 v3, 0x1
+
+    .line 275
+    invoke-virtual {v6, v3}, Lqt0;->w(Z)V
+
+    .line 276
+    .line 277
+    .line 278
+    :goto_3
+    move v15, v3
+
+    .line 279
+    goto/16 :goto_5
+
+    .line 280
+    .line 281
+    :pswitch_4
+    invoke-virtual {v6}, Lqt0;->getCursor()Lwb1;
+
+    .line 282
+    .line 283
+    .line 284
+    move-result-object v0
+
+    .line 285
+    iget-object v0, v0, Lwb1;->c:Lxm0;
+
+    .line 286
+    .line 287
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
+
+    .line 288
+    .line 289
+    .line 290
+    move-result-object v0
+
+    .line 291
+    iget v3, v0, Lxm0;->b:I
+
+    .line 292
+    .line 293
+    iget v0, v0, Lxm0;->c:I
+
+    .line 294
+    .line 295
+    invoke-virtual {v6, v3, v0}, Lqt0;->j0(II)V
+
+    .line 296
+    .line 297
+    .line 298
+    goto :goto_2
+
+    .line 299
+    :pswitch_5
+    invoke-virtual {v6}, Lqt0;->R()Z
+
+    .line 300
+    .line 301
+    .line 302
+    move-result v0
+
+    .line 303
+    if-eqz v0, :cond_5
+
+    .line 304
+    .line 305
+    invoke-virtual {v6}, Lqt0;->b0()V
+
+    .line 306
+    .line 307
+    .line 308
+    goto :goto_2
+
+    .line 309
+    :cond_7
+    invoke-virtual {v6}, Lqt0;->R()Z
+
+    .line 310
+    .line 311
+    .line 312
+    move-result v0
+
+    .line 313
+    if-eqz v0, :cond_5
+
+    .line 314
+    .line 315
+    invoke-virtual {v6}, Lqt0;->getCursor()Lwb1;
+
+    .line 316
+    .line 317
+    .line 318
+    move-result-object v0
+
+    .line 319
+    invoke-virtual {v0}, Lwb1;->a()Z
+
+    .line 320
+    .line 321
+    .line 322
+    move-result v3
+
+    .line 323
+    if-eqz v3, :cond_8
+
+    .line 324
+    .line 325
+    const/4 v3, 0x1
+
+    .line 326
+    invoke-virtual {v6, v4, v3}, Lqt0;->B(Ljava/lang/String;Z)V
+
+    .line 327
+    .line 328
+    .line 329
+    goto :goto_3
+
+    .line 330
+    :cond_8
+    const/4 v3, 0x1
+
+    .line 331
+    iget-object v0, v0, Lwb1;->c:Lxm0;
+
+    .line 332
+    .line 333
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
+
+    .line 334
+    .line 335
+    .line 336
+    move-result-object v0
+
+    .line 337
+    iget v7, v0, Lxm0;->b:I
+
+    .line 338
+    .line 339
+    invoke-virtual {v6}, Lqt0;->getText()Ln61;
+
+    .line 340
+    .line 341
+    .line 342
+    move-result-object v4
+
+    .line 343
+    iget v0, v0, Lxm0;->b:I
+
+    .line 344
+    .line 345
+    invoke-virtual {v4, v0}, Ln61;->o(I)Le71;
+
+    .line 346
+    .line 347
+    .line 348
+    move-result-object v0
+
+    .line 349
+    iget v10, v0, Le71;->l:I
+
+    .line 350
+    .line 351
+    const/4 v12, 0x1
+
+    .line 352
+    const/4 v11, 0x0
+
+    .line 353
+    const/4 v8, 0x0
+
+    .line 354
+    move v9, v7
+
+    .line 355
+    move v15, v3
+
+    .line 356
+    invoke-virtual/range {v6 .. v12}, Lqt0;->o0(IIIIIZ)V
+
+    .line 357
+    .line 358
+    .line 359
+    const-string v0, "\n"
+
+    .line 360
+    .line 361
+    const/4 v3, 0x0
+
+    .line 362
+    invoke-virtual {v6, v0, v3}, Lqt0;->B(Ljava/lang/String;Z)V
+
+    .line 363
+    .line 364
+    .line 365
+    goto :goto_5
+
+    .line 366
+    :cond_9
+    const/4 v15, 0x1
+
+    .line 367
+    invoke-virtual {v6, v15}, Lqt0;->w(Z)V
+
+    .line 368
+    .line 369
+    .line 370
+    goto :goto_5
+
+    .line 371
+    :cond_a
+    const/4 v15, 0x1
+
+    .line 372
+    if-eqz v8, :cond_c
+
+    .line 373
+    .line 374
+    invoke-virtual {v7}, Lwb1;->a()Z
+
+    .line 375
+    .line 376
+    .line 377
+    move-result v3
+
+    .line 378
+    if-eqz v3, :cond_b
+
+    .line 379
+    .line 380
+    goto :goto_4
+
+    .line 381
+    :cond_b
+    iget-object v3, v7, Lwb1;->c:Lxm0;
+
+    .line 382
+    .line 383
+    iget v3, v3, Lxm0;->b:I
+
+    .line 384
+    .line 385
+    invoke-virtual {v5, v3}, Ln61;->o(I)Le71;
+
+    .line 386
+    .line 387
+    .line 388
+    move-result-object v4
+
+    .line 389
+    iget v4, v4, Le71;->l:I
+
+    .line 390
+    .line 391
+    invoke-virtual {v6, v3, v4}, Lqt0;->l0(II)V
+
+    .line 392
+    .line 393
+    .line 394
+    const/4 v3, 0x0
+
+    .line 395
+    invoke-virtual {v0, v3, v15}, Ldr1;->deleteSurroundingText(II)Z
+
+    .line 396
+    .line 397
+    .line 398
+    invoke-virtual {v6}, Lqt0;->E()V
+
+    .line 399
+    .line 400
+    .line 401
+    goto :goto_5
+
+    .line 402
+    :cond_c
+    :goto_4
+    const/4 v10, 0x0
+
+    .line 403
+    goto :goto_6
+
+    .line 404
+    :cond_d
+    const/4 v15, 0x1
+
+    .line 405
+    invoke-virtual {v6}, Lqt0;->i0()V
+
+    .line 406
+    .line 407
+    .line 408
+    :goto_5
+    move v10, v15
+
+    .line 409
+    :goto_6
+    invoke-virtual {v14, v10}, Ler1;->a(Z)Z
+
+    .line 410
+    .line 411
+    .line 412
+    move-result v0
+
+    .line 413
+    if-nez v0, :cond_f
+
+    .line 414
+    .line 415
+    invoke-virtual {v13, v10}, Ler1;->a(Z)Z
+
+    .line 416
+    .line 417
+    .line 418
+    move-result v0
+
+    .line 419
+    if-eqz v0, :cond_e
+
+    .line 420
+    .line 421
+    goto :goto_7
+
+    .line 422
+    :cond_e
+    const/4 v15, 0x0
+
+    .line 423
+    :cond_f
+    :goto_7
+    invoke-static {v15}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 424
+    .line 425
+    .line 426
+    move-result-object v3
+
+    .line 427
+    goto/16 :goto_3c
+
+    .line 428
+    .line 429
+    :cond_10
+    const/4 v15, 0x1
+
+    .line 430
+    invoke-virtual {v6}, Lqt0;->getText()Ln61;
+
+    .line 431
+    .line 432
+    .line 433
+    move-result-object v0
+
+    .line 434
+    invoke-virtual {v6}, Lqt0;->getCursor()Lwb1;
+
+    .line 435
+    .line 436
+    .line 437
+    move-result-object v3
+
+    .line 438
+    invoke-static {v5, v2}, Landroid/text/method/MetaKeyKeyListener;->getMetaState(Ljava/lang/CharSequence;Landroid/view/KeyEvent;)I
+
+    .line 439
+    .line 440
+    .line 441
+    move-result v4
+
+    .line 442
+    invoke-virtual {v2, v4}, Landroid/view/KeyEvent;->getUnicodeChar(I)I
+
+    .line 443
+    .line 444
+    .line 445
+    move-result v4
+
+    .line 446
+    if-eqz v4, :cond_18
+
+    .line 447
+    .line 448
+    invoke-virtual {v6}, Lqt0;->R()Z
+
+    .line 449
+    .line 450
+    .line 451
+    move-result v7
+
+    .line 452
+    if-eqz v7, :cond_18
+
+    .line 453
+    .line 454
+    const v7, 0xef00
+
+    .line 455
+    .line 456
+    .line 457
+    if-eq v4, v7, :cond_17
+
+    .line 458
+    .line 459
+    const v7, 0xef01
+
+    .line 460
+    .line 461
+    .line 462
+    if-ne v4, v7, :cond_11
+
+    .line 463
+    .line 464
+    goto/16 :goto_a
+
+    .line 465
+    .line 466
+    :cond_11
+    const/high16 v7, -0x80000000
+
+    .line 467
+    .line 468
+    and-int/2addr v7, v4
+
+    .line 469
+    if-eqz v7, :cond_12
+
+    .line 470
+    .line 471
+    and-int v4, v4, v17
+
+    .line 472
+    .line 473
+    move v10, v15
+
+    .line 474
+    goto :goto_8
+
+    .line 475
+    :cond_12
+    const/4 v10, 0x0
+
+    .line 476
+    :goto_8
+    iget-object v7, v3, Lwb1;->c:Lxm0;
+
+    .line 477
+    .line 478
+    iget v7, v7, Lxm0;->a:I
+
+    .line 479
+    .line 480
+    add-int/lit8 v8, v7, 0x1
+
+    .line 481
+    .line 482
+    iget-object v9, v3, Lwb1;->d:Lxm0;
+
+    .line 483
+    .line 484
+    iget v9, v9, Lxm0;->a:I
+
+    .line 485
+    .line 486
+    if-ne v8, v9, :cond_13
+
+    .line 487
+    .line 488
+    invoke-virtual {v0, v7}, Ln61;->charAt(I)C
+
+    .line 489
+    .line 490
+    .line 491
+    move-result v7
+
+    .line 492
+    invoke-static {v7, v4}, Landroid/view/KeyCharacterMap;->getDeadChar(II)I
+
+    .line 493
+    .line 494
+    .line 495
+    move-result v8
+
+    .line 496
+    if-eq v8, v7, :cond_13
+
+    .line 497
+    .line 498
+    invoke-virtual {v2}, Landroid/view/KeyEvent;->getRepeatCount()I
+
+    .line 499
+    .line 500
+    .line 501
+    move-result v7
+
+    .line 502
+    if-nez v7, :cond_13
+
+    .line 503
+    .line 504
+    move v4, v8
+
+    .line 505
+    const/4 v10, 0x0
+
+    .line 506
+    :cond_13
+    if-eqz v10, :cond_16
+
+    .line 507
+    .line 508
+    invoke-virtual {v6}, Lqt0;->getCursor()Lwb1;
+
+    .line 509
+    .line 510
+    .line 511
+    move-result-object v7
+
+    .line 512
+    iget-object v8, v6, Lqt0;->A0:Lwb1;
+
+    .line 513
+    .line 514
+    invoke-virtual {v8}, Lwb1;->a()Z
+
+    .line 515
+    .line 516
+    .line 517
+    move-result v8
+
+    .line 518
+    if-eqz v8, :cond_14
+
+    .line 519
+    .line 520
+    iget-object v8, v3, Lwb1;->c:Lxm0;
+
+    .line 521
+    .line 522
+    iget v8, v8, Lxm0;->a:I
+
+    .line 523
+    .line 524
+    add-int/lit8 v9, v8, 0x1
+
+    .line 525
+    .line 526
+    iget-object v10, v3, Lwb1;->d:Lxm0;
+
+    .line 527
+    .line 528
+    iget v10, v10, Lxm0;->a:I
+
+    .line 529
+    .line 530
+    if-ne v9, v10, :cond_15
+
+    .line 531
+    .line 532
+    invoke-virtual {v0, v8}, Ln61;->charAt(I)C
+
+    .line 533
+    .line 534
+    .line 535
+    move-result v0
+
+    .line 536
+    if-ne v0, v4, :cond_15
+
+    .line 537
+    .line 538
+    :cond_14
+    iget-object v0, v3, Lwb1;->d:Lxm0;
+
+    .line 539
+    .line 540
+    iget v3, v0, Lxm0;->b:I
+
+    .line 541
+    .line 542
+    iget v0, v0, Lxm0;->c:I
+
+    .line 543
+    .line 544
+    const/16 v8, 0x9
+
+    .line 545
+    .line 546
+    invoke-virtual {v6, v3, v0, v8, v15}, Lqt0;->m0(IIIZ)V
+
+    .line 547
+    .line 548
+    .line 549
+    invoke-static {v4}, Ljava/lang/Character;->toChars(I)[C
+
+    .line 550
+    .line 551
+    .line 552
+    move-result-object v0
+
+    .line 553
+    invoke-static {v0}, Ljava/lang/String;->valueOf([C)Ljava/lang/String;
+
+    .line 554
+    .line 555
+    .line 556
+    move-result-object v0
+
+    .line 557
+    invoke-virtual {v6, v0, v15}, Lqt0;->v(Ljava/lang/CharSequence;Z)V
+
+    .line 558
+    .line 559
+    .line 560
+    invoke-virtual {v6}, Lqt0;->getText()Ln61;
+
+    .line 561
+    .line 562
+    .line 563
+    move-result-object v0
+
+    .line 564
+    iget-object v3, v7, Lwb1;->d:Lxm0;
+
+    .line 565
+    .line 566
+    iget v3, v3, Lxm0;->b:I
+
+    .line 567
+    .line 568
+    invoke-virtual {v0, v3}, Ln61;->o(I)Le71;
+
+    .line 569
+    .line 570
+    .line 571
+    move-result-object v0
+
+    .line 572
+    iget-object v3, v7, Lwb1;->d:Lxm0;
+
+    .line 573
+    .line 574
+    iget v3, v3, Lxm0;->c:I
+
+    .line 575
+    .line 576
+    invoke-static {v0, v3}, Ljava/lang/Character;->codePointBefore(Ljava/lang/CharSequence;I)I
+
+    .line 577
+    .line 578
+    .line 579
+    move-result v0
+
+    .line 580
+    invoke-static {v0}, Ljava/lang/Character;->charCount(I)I
+
+    .line 581
+    .line 582
+    .line 583
+    move-result v0
+
+    .line 584
+    iget-object v3, v7, Lwb1;->d:Lxm0;
+
+    .line 585
+    .line 586
+    iget v7, v3, Lxm0;->b:I
+
+    .line 587
+    .line 588
+    iget v10, v3, Lxm0;->c:I
+
+    .line 589
+    .line 590
+    sub-int v8, v10, v0
+
+    .line 591
+    .line 592
+    const/16 v11, 0x9
+
+    .line 593
+    .line 594
+    const/4 v12, 0x1
+
+    .line 595
+    move v9, v7
+
+    .line 596
+    invoke-virtual/range {v6 .. v12}, Lqt0;->o0(IIIIIZ)V
+
+    .line 597
+    .line 598
+    .line 599
+    :cond_15
+    :goto_9
+    move v10, v15
+
+    .line 600
+    goto :goto_b
+
+    .line 601
+    :cond_16
+    new-instance v0, Ljava/lang/String;
+
+    .line 602
+    .line 603
+    invoke-static {v4}, Ljava/lang/Character;->toChars(I)[C
+
+    .line 604
+    .line 605
+    .line 606
+    move-result-object v3
+
+    .line 607
+    invoke-direct {v0, v3}, Ljava/lang/String;-><init>([C)V
+
+    .line 608
+    .line 609
+    .line 610
+    invoke-virtual {v6, v0, v15}, Lqt0;->v(Ljava/lang/CharSequence;Z)V
+
+    .line 611
+    .line 612
+    .line 613
+    invoke-virtual {v6}, Lqt0;->Z()V
+
+    .line 614
+    .line 615
+    .line 616
+    goto :goto_9
+
+    .line 617
+    :cond_17
+    :goto_a
+    invoke-super {v6, v1, v2}, Landroid/view/View;->onKeyDown(ILandroid/view/KeyEvent;)Z
+
+    .line 618
+    .line 619
+    .line 620
+    move-result v10
+
+    .line 621
+    goto :goto_b
+
+    .line 622
+    :cond_18
+    invoke-super {v6, v1, v2}, Landroid/view/View;->onKeyDown(ILandroid/view/KeyEvent;)Z
+
+    .line 623
+    .line 624
+    .line 625
+    move-result v10
+
+    .line 626
+    :goto_b
+    if-eqz v10, :cond_19
+
+    .line 627
+    .line 628
+    invoke-static {v5}, Landroid/text/method/MetaKeyKeyListener;->adjustMetaAfterKeypress(Landroid/text/Spannable;)V
+
+    .line 629
+    .line 630
+    .line 631
+    :cond_19
+    invoke-virtual {v13, v10}, Ler1;->a(Z)Z
+
+    .line 632
+    .line 633
+    .line 634
+    move-result v0
+
+    .line 635
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 636
+    .line 637
+    .line 638
+    move-result-object v3
+
+    .line 639
+    goto/16 :goto_3c
+
+    .line 640
+    .line 641
+    :pswitch_6
+    const/4 v15, 0x1
+
+    .line 642
+    if-eqz v9, :cond_1a
+
+    .line 643
+    .line 644
+    sget-object v0, Lsv5;->q:Lsv5;
+
+    .line 645
+    .line 646
+    invoke-virtual {v6, v0, v8}, Lqt0;->X(Lsv5;Z)V
+
+    .line 647
+    .line 648
+    .line 649
+    goto :goto_c
+
+    .line 650
+    :cond_1a
+    sget-object v0, Lsv5;->o:Lsv5;
+
+    .line 651
+    .line 652
+    invoke-virtual {v6, v0, v8}, Lqt0;->X(Lsv5;Z)V
+
+    .line 653
+    .line 654
+    .line 655
+    :goto_c
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
+
+    .line 656
+    .line 657
+    .line 658
+    move-result v0
+
+    .line 659
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 660
+    .line 661
+    .line 662
+    move-result-object v3
+
+    .line 663
+    goto/16 :goto_3c
+
+    .line 664
+    .line 665
+    :pswitch_7
+    const/4 v15, 0x1
+
+    .line 666
+    if-eqz v9, :cond_1b
+
+    .line 667
+    .line 668
+    sget-object v0, Lsv5;->p:Lsv5;
+
+    .line 669
+    .line 670
+    invoke-virtual {v6, v0, v8}, Lqt0;->X(Lsv5;Z)V
+
+    .line 671
+    .line 672
+    .line 673
+    goto :goto_d
+
+    .line 674
+    :cond_1b
+    sget-object v0, Lsv5;->n:Lsv5;
+
+    .line 675
+    .line 676
+    invoke-virtual {v6, v0, v8}, Lqt0;->X(Lsv5;Z)V
+
+    .line 677
+    .line 678
+    .line 679
+    :goto_d
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
+
+    .line 680
+    .line 681
+    .line 682
+    move-result v0
+
+    .line 683
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 684
+    .line 685
+    .line 686
+    move-result-object v3
+
+    .line 687
+    goto/16 :goto_3c
+
+    .line 688
+    .line 689
+    :pswitch_8
+    const/4 v15, 0x1
+
+    .line 690
+    if-eqz v9, :cond_21
+
+    .line 691
+    .line 692
+    if-eqz v8, :cond_20
+
+    .line 693
+    .line 694
+    iget-object v0, v11, Lwb1;->c:Lxm0;
+
+    .line 695
+    .line 696
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
+
+    .line 697
+    .line 698
+    .line 699
+    move-result-object v0
+
+    .line 700
+    iget-object v3, v11, Lwb1;->d:Lxm0;
+
+    .line 701
+    .line 702
+    invoke-virtual {v3}, Lxm0;->a()Lxm0;
+
+    .line 703
+    .line 704
+    .line 705
+    move-result-object v3
+
+    .line 706
+    iget-object v4, v12, Ln61;->j:Ljava/util/ArrayList;
+
+    .line 707
+    .line 708
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
+
+    .line 709
+    .line 710
+    .line 711
+    move-result v4
+
+    .line 712
+    iget v5, v3, Lxm0;->b:I
+
+    .line 713
+    .line 714
+    sub-int/2addr v4, v15
+
+    .line 715
+    if-ne v5, v4, :cond_1c
+
+    .line 716
+    .line 717
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
+
+    .line 718
+    .line 719
+    .line 720
+    move-result v0
+
+    .line 721
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 722
+    .line 723
+    .line 724
+    move-result-object v3
+
+    .line 725
+    goto/16 :goto_3c
+
+    .line 726
+    .line 727
+    :cond_1c
+    add-int/2addr v5, v15
+
+    .line 728
+    invoke-virtual {v12, v5}, Ln61;->o(I)Le71;
+
+    .line 729
+    .line 730
+    .line 731
+    move-result-object v4
+
+    .line 732
+    invoke-virtual {v4}, Le71;->toString()Ljava/lang/String;
+
+    .line 733
+    .line 734
+    .line 735
+    move-result-object v4
+
+    .line 736
+    invoke-virtual {v12}, Ln61;->b()Z
+
+    .line 737
+    .line 738
+    .line 739
+    iget v5, v3, Lxm0;->b:I
+
+    .line 740
+    .line 741
+    invoke-virtual {v12, v5}, Ln61;->o(I)Le71;
+
+    .line 742
+    .line 743
+    .line 744
+    move-result-object v7
+
+    .line 745
+    iget v7, v7, Le71;->l:I
+
+    .line 746
+    .line 747
+    iget v8, v3, Lxm0;->b:I
+
+    .line 748
+    .line 749
+    add-int/2addr v8, v15
+
+    .line 750
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    .line 751
+    .line 752
+    .line 753
+    move-result v9
+
+    .line 754
+    invoke-virtual {v12, v5, v7, v8, v9}, Ln61;->h(IIII)V
+
+    .line 755
+    .line 756
+    .line 757
+    iget v5, v0, Lxm0;->b:I
+
+    .line 758
+    .line 759
+    invoke-virtual {v6}, Lqt0;->getLineSeparator()Lz73;
+
+    .line 760
+    .line 761
+    .line 762
+    move-result-object v7
+
+    .line 763
+    iget-object v7, v7, Lz73;->j:Ljava/lang/String;
+
+    .line 764
+    .line 765
+    invoke-virtual {v4, v7}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    .line 766
+    .line 767
+    .line 768
+    move-result-object v4
+
+    .line 769
+    const/4 v7, 0x0
+
+    .line 770
+    invoke-virtual {v12, v5, v7, v4}, Ln61;->r(IILjava/lang/CharSequence;)V
+
+    .line 771
+    .line 772
+    .line 773
+    invoke-virtual {v12}, Ln61;->k()Z
+
+    .line 774
+    .line 775
+    .line 776
+    invoke-virtual {v12}, Ln61;->n()Lug0;
+
+    .line 777
+    .line 778
+    .line 779
+    move-result-object v4
+
+    .line 780
+    iget v5, v0, Lxm0;->b:I
+
+    .line 781
+    .line 782
+    add-int/2addr v5, v15
+
+    .line 783
+    iget v7, v0, Lxm0;->c:I
+
+    .line 784
+    .line 785
+    invoke-virtual {v4, v5, v7}, Lug0;->B(II)Lxm0;
+
+    .line 786
+    .line 787
+    .line 788
+    move-result-object v4
+
+    .line 789
+    invoke-virtual {v12}, Ln61;->n()Lug0;
+
+    .line 790
+    .line 791
+    .line 792
+    move-result-object v5
+
+    .line 793
+    iget v7, v3, Lxm0;->b:I
+
+    .line 794
+    .line 795
+    add-int/2addr v7, v15
+
+    .line 796
+    iget v8, v3, Lxm0;->c:I
+
+    .line 797
+    .line 798
+    invoke-virtual {v5, v7, v8}, Lug0;->B(II)Lxm0;
+
+    .line 799
+    .line 800
+    .line 801
+    move-result-object v5
+
+    .line 802
+    iget v7, v0, Lxm0;->a:I
+
+    .line 803
+    .line 804
+    iget v3, v3, Lxm0;->a:I
+
+    .line 805
+    .line 806
+    if-eq v7, v3, :cond_1e
+
+    .line 807
+    .line 808
+    iget-object v3, v6, Lqt0;->p:Lxm0;
+
+    .line 809
+    .line 810
+    iget v7, v4, Lxm0;->b:I
+
+    .line 811
+    .line 812
+    iget v8, v4, Lxm0;->c:I
+
+    .line 813
+    .line 814
+    iget v9, v5, Lxm0;->b:I
+
+    .line 815
+    .line 816
+    iget v10, v5, Lxm0;->c:I
+
+    .line 817
+    .line 818
+    invoke-virtual {v6, v7, v8, v9, v10}, Lqt0;->n0(IIII)V
+
+    .line 819
+    .line 820
+    .line 821
+    if-eqz v3, :cond_1f
+
+    .line 822
+    .line 823
+    invoke-virtual {v3, v0}, Lxm0;->equals(Ljava/lang/Object;)Z
+
+    .line 824
+    .line 825
+    .line 826
+    move-result v0
+
+    .line 827
+    if-eqz v0, :cond_1d
+
+    .line 828
+    .line 829
+    iput-object v4, v6, Lqt0;->p:Lxm0;
+
+    .line 830
+    .line 831
+    goto :goto_e
+
+    .line 832
+    :cond_1d
+    iput-object v5, v6, Lqt0;->p:Lxm0;
+
+    .line 833
+    .line 834
+    goto :goto_e
+
+    .line 835
+    :cond_1e
+    iget v0, v4, Lxm0;->b:I
+
+    .line 836
+    .line 837
+    iget v3, v4, Lxm0;->c:I
+
+    .line 838
+    .line 839
+    invoke-virtual {v6, v0, v3}, Lqt0;->l0(II)V
+
+    .line 840
+    .line 841
+    .line 842
+    :cond_1f
+    :goto_e
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
+
+    .line 843
+    .line 844
+    .line 845
+    move-result v0
+
+    .line 846
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 847
+    .line 848
+    .line 849
+    move-result-object v3
+
+    .line 850
+    goto/16 :goto_3c
+
+    .line 851
+    .line 852
+    :cond_20
+    invoke-virtual {v6}, Lqt0;->getEventHandler()Lds1;
+
+    .line 853
+    .line 854
+    .line 855
+    move-result-object v3
+
+    .line 856
+    invoke-virtual {v6}, Lqt0;->getRowHeight()I
+
+    .line 857
+    .line 858
     .line 859
-    xor-int/2addr v0, v14
+    move-result v4
 
     .line 860
-    iget-object v1, v2, Lzh5;->k:Llk4;
+    int-to-float v4, v4
 
     .line 861
+    const/4 v7, 0x0
+
     .line 862
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {v3, v0, v4, v7}, Lds1;->j(FFZ)V
 
     .line 863
     .line 864
     .line 865
-    move-result-object v0
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
 
     .line 866
-    invoke-virtual {v1, v0}, Llk4;->setValue(Ljava/lang/Object;)V
-
     .line 867
     .line 868
+    move-result v0
+
     .line 869
-    goto :goto_17
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 870
-    :cond_2a
-    iput-object v3, v0, Lqt0;->l:Ljava/lang/Object;
-
     .line 871
     .line 872
-    iput-byte v14, v0, Lqt0;->k:B
+    move-result-object v3
 
     .line 873
+    goto/16 :goto_3c
+
     .line 874
-    const-wide/16 v4, 0x15e
-
     .line 875
-    .line 876
-    invoke-static {v4, v5, v0}, Lu57;->o(JLc81;)Ljava/lang/Object;
+    :cond_21
+    sget-object v0, Lsv5;->m:Lsv5;
 
+    .line 876
     .line 877
+    invoke-virtual {v6, v0, v8}, Lqt0;->X(Lsv5;Z)V
+
     .line 878
     .line 879
-    move-result-object v1
-
     .line 880
-    if-ne v1, v12, :cond_2b
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
 
     .line 881
     .line 882
-    goto :goto_15
-
     .line 883
-    :cond_2b
-    move-object v1, v3
+    move-result v0
 
     .line 884
-    :goto_14
-    iget-object v3, v2, Lzh5;->k:Llk4;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 885
     .line 886
-    sget-object v4, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
     .line 887
+    move-result-object v3
+
     .line 888
-    invoke-virtual {v3, v4}, Llk4;->setValue(Ljava/lang/Object;)V
+    goto/16 :goto_3c
 
     .line 889
     .line 890
+    :pswitch_9
+    const/4 v15, 0x1
+
     .line 891
-    invoke-virtual {v2, v14}, Lzh5;->k(Z)V
+    if-eqz v9, :cond_27
 
     .line 892
     .line 893
+    if-eqz v8, :cond_26
+
     .line 894
-    :try_start_3
-    sget-object v3, Lbf5;->a:Lbf5;
-
     .line 895
-    .line 896
-    invoke-virtual {v2}, Lzh5;->a()Lpe5;
+    iget-object v0, v11, Lwb1;->c:Lxm0;
 
+    .line 896
     .line 897
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
+
     .line 898
     .line 899
-    move-result-object v3
-
     .line 900
-    iget-object v3, v3, Lpe5;->b:Ljava/util/List;
-
-    .line 901
-    .line 902
-    invoke-virtual {v2}, Lzh5;->a()Lpe5;
-
-    .line 903
-    .line 904
-    .line 905
-    move-result-object v4
-
-    .line 906
-    iget-object v4, v4, Lpe5;->c:Ljava/util/List;
-
-    .line 907
-    .line 908
-    iput-object v15, v0, Lqt0;->l:Ljava/lang/Object;
-
-    .line 909
-    .line 910
-    iput-object v2, v0, Lqt0;->m:Ljava/lang/Object;
-
-    .line 911
-    .line 912
-    iput-byte v13, v0, Lqt0;->k:B
-
-    .line 913
-    .line 914
-    sget-object v5, Loj1;->a:Lsf1;
-
-    .line 915
-    .line 916
-    sget-object v5, Ljf1;->l:Ljf1;
-
-    .line 917
-    .line 918
-    new-instance v6, Lye5;
-
-    .line 919
-    .line 920
-    invoke-direct {v6, v1, v3, v4, v15}, Lye5;-><init>(Ljava/lang/String;Ljava/util/List;Ljava/util/List;Lc81;)V
-
-    .line 921
-    .line 922
-    .line 923
-    invoke-static {v5, v6, v0}, Lf;->c0(Lwa1;Lv52;Lc81;)Ljava/lang/Object;
-
-    .line 924
-    .line 925
-    .line 926
     move-result-object v0
 
-    .line 927
-    if-ne v0, v12, :cond_2c
+    .line 901
+    iget-object v3, v11, Lwb1;->d:Lxm0;
 
+    .line 902
+    .line 903
+    invoke-virtual {v3}, Lxm0;->a()Lxm0;
+
+    .line 904
+    .line 905
+    .line 906
+    move-result-object v3
+
+    .line 907
+    iget v4, v0, Lxm0;->b:I
+
+    .line 908
+    .line 909
+    if-nez v4, :cond_22
+
+    .line 910
+    .line 911
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
+
+    .line 912
+    .line 913
+    .line 914
+    move-result v0
+
+    .line 915
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 916
+    .line 917
+    .line 918
+    move-result-object v3
+
+    .line 919
+    goto/16 :goto_3c
+
+    .line 920
+    .line 921
+    :cond_22
+    sub-int/2addr v4, v15
+
+    .line 922
+    invoke-virtual {v12, v4}, Ln61;->o(I)Le71;
+
+    .line 923
+    .line 924
+    .line 925
+    move-result-object v4
+
+    .line 926
+    invoke-virtual {v4}, Le71;->toString()Ljava/lang/String;
+
+    .line 927
     .line 928
     .line 929
-    :goto_15
-    move-object v9, v12
+    move-result-object v4
 
     .line 930
-    goto :goto_17
+    invoke-virtual {v12}, Ln61;->b()Z
 
     .line 931
-    :cond_2c
-    move-object v1, v2
-
     .line 932
-    :goto_16
-    check-cast v0, Lqe5;
-
     .line 933
+    iget v5, v0, Lxm0;->b:I
+
     .line 934
-    iget-object v1, v1, Lzh5;->j:Llk4;
-
     .line 935
+    add-int/lit8 v7, v5, -0x1
+
     .line 936
-    invoke-virtual {v1, v0}, Llk4;->setValue(Ljava/lang/Object;)V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_1
-
     .line 937
-    .line 938
-    .line 939
-    invoke-virtual {v2, v10}, Lzh5;->k(Z)V
+    const/4 v8, 0x0
 
+    .line 938
+    invoke-virtual {v12, v7, v8, v5, v8}, Ln61;->h(IIII)V
+
+    .line 939
     .line 940
     .line 941
-    .line 942
-    :goto_17
-    return-object v9
+    iget v5, v3, Lxm0;->b:I
 
+    .line 942
     .line 943
-    :goto_18
-    invoke-virtual {v2, v10}, Lzh5;->k(Z)V
+    sub-int/2addr v5, v15
 
     .line 944
+    invoke-virtual {v12, v5}, Ln61;->o(I)Le71;
+
     .line 945
     .line 946
-    throw v0
-
     .line 947
-    :pswitch_3
-    iget-byte v1, v0, Lqt0;->k:B
+    move-result-object v7
 
     .line 948
+    iget v7, v7, Le71;->l:I
+
     .line 949
-    if-eqz v1, :cond_2f
-
     .line 950
-    .line 951
-    if-eq v1, v14, :cond_2e
+    invoke-virtual {v6}, Lqt0;->getLineSeparator()Lz73;
 
+    .line 951
     .line 952
     .line 953
-    if-ne v1, v13, :cond_2d
+    move-result-object v8
 
     .line 954
+    iget-object v8, v8, Lz73;->j:Ljava/lang/String;
+
     .line 955
-    iget-object v0, v0, Lqt0;->l:Ljava/lang/Object;
-
     .line 956
+    invoke-virtual {v8, v4}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
     .line 957
-    move-object v1, v0
-
     .line 958
-    check-cast v1, Lcs3;
-
     .line 959
+    move-result-object v4
+
     .line 960
-    :try_start_4
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_2
+    invoke-virtual {v12, v5, v7, v4}, Ln61;->r(IILjava/lang/CharSequence;)V
 
     .line 961
     .line 962
     .line 963
-    goto :goto_1b
+    invoke-virtual {v12}, Ln61;->k()Z
 
     .line 964
-    :catchall_2
-    move-exception v0
-
     .line 965
-    goto :goto_1d
-
     .line 966
-    :cond_2d
-    invoke-static {v11}, Lmv1;->e(Ljava/lang/String;)V
+    invoke-virtual {v12}, Ln61;->n()Lug0;
 
     .line 967
     .line 968
     .line 969
-    move-object v9, v15
+    move-result-object v4
 
     .line 970
-    goto :goto_1c
+    iget v5, v0, Lxm0;->b:I
 
     .line 971
-    :cond_2e
-    iget-object v1, v0, Lqt0;->m:Ljava/lang/Object;
-
     .line 972
+    sub-int/2addr v5, v15
+
     .line 973
-    check-cast v1, Low;
+    iget v7, v0, Lxm0;->c:I
 
     .line 974
     .line 975
-    iget-object v2, v0, Lqt0;->l:Ljava/lang/Object;
+    invoke-virtual {v4, v5, v7}, Lug0;->B(II)Lxm0;
 
     .line 976
     .line 977
-    check-cast v2, Lcs3;
-
     .line 978
+    move-result-object v4
+
     .line 979
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
+    invoke-virtual {v12}, Ln61;->n()Lug0;
 
     .line 980
     .line 981
     .line 982
-    goto :goto_19
+    move-result-object v5
 
     .line 983
-    :cond_2f
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
+    iget v7, v3, Lxm0;->b:I
 
     .line 984
     .line 985
+    sub-int/2addr v7, v15
+
     .line 986
-    iget-object v1, v0, Lqt0;->n:Ljava/lang/Object;
+    iget v8, v3, Lxm0;->c:I
 
     .line 987
     .line 988
-    check-cast v1, Lcs3;
+    invoke-virtual {v5, v7, v8}, Lug0;->B(II)Lxm0;
 
     .line 989
     .line 990
-    iget-object v2, v0, Lqt0;->o:Ljava/lang/Object;
-
     .line 991
+    move-result-object v5
+
     .line 992
-    check-cast v2, Low;
+    iget v7, v0, Lxm0;->a:I
 
     .line 993
     .line 994
-    iput-object v1, v0, Lqt0;->l:Ljava/lang/Object;
+    iget v3, v3, Lxm0;->a:I
 
     .line 995
     .line 996
-    iput-object v2, v0, Lqt0;->m:Ljava/lang/Object;
+    if-eq v7, v3, :cond_24
 
     .line 997
     .line 998
-    iput-byte v14, v0, Lqt0;->k:B
+    iget-object v3, v6, Lqt0;->p:Lxm0;
 
     .line 999
     .line 1000
-    invoke-virtual {v1, v0}, Lcs3;->e(Lc81;)Ljava/lang/Object;
+    iget v7, v4, Lxm0;->b:I
 
     .line 1001
     .line 1002
-    .line 1003
-    move-result-object v3
+    iget v8, v4, Lxm0;->c:I
 
+    .line 1003
     .line 1004
-    if-ne v3, v12, :cond_30
+    iget v9, v5, Lxm0;->b:I
 
     .line 1005
     .line 1006
-    goto :goto_1a
+    iget v10, v5, Lxm0;->c:I
 
     .line 1007
-    :cond_30
-    move-object/from16 v22, v2
-
     .line 1008
+    invoke-virtual {v6, v7, v8, v9, v10}, Lqt0;->n0(IIII)V
+
     .line 1009
-    move-object v2, v1
-
     .line 1010
-    move-object/from16 v1, v22
-
     .line 1011
+    if-eqz v3, :cond_25
+
     .line 1012
-    :goto_19
-    :try_start_5
-    new-instance v3, Luy;
-
     .line 1013
-    .line 1014
-    invoke-direct {v3, v1, v15}, Luy;-><init>(Lv52;Lc81;)V
+    invoke-virtual {v3, v0}, Lxm0;->equals(Ljava/lang/Object;)Z
 
+    .line 1014
     .line 1015
     .line 1016
+    move-result v0
+
     .line 1017
-    iput-object v2, v0, Lqt0;->l:Ljava/lang/Object;
+    if-eqz v0, :cond_23
 
     .line 1018
     .line 1019
-    iput-object v15, v0, Lqt0;->m:Ljava/lang/Object;
+    iput-object v4, v6, Lqt0;->p:Lxm0;
 
     .line 1020
     .line 1021
-    iput-byte v13, v0, Lqt0;->k:B
+    goto :goto_f
 
     .line 1022
+    :cond_23
+    iput-object v5, v6, Lqt0;->p:Lxm0;
+
     .line 1023
-    invoke-static {v3, v0}, Lr67;->G(Lv52;Lc81;)Ljava/lang/Object;
-
     .line 1024
-    .line 1025
-    .line 1026
-    move-result-object v0
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_3
+    goto :goto_f
 
+    .line 1025
+    :cond_24
+    iget v0, v4, Lxm0;->b:I
+
+    .line 1026
     .line 1027
-    if-ne v0, v12, :cond_31
+    iget v3, v4, Lxm0;->c:I
 
     .line 1028
     .line 1029
-    :goto_1a
-    move-object v9, v12
+    invoke-virtual {v6, v0, v3}, Lqt0;->l0(II)V
 
     .line 1030
-    goto :goto_1c
-
     .line 1031
-    :cond_31
-    move-object v1, v2
-
     .line 1032
-    :goto_1b
-    invoke-virtual {v1, v15}, Lcs3;->g(Ljava/lang/Object;)V
+    :cond_25
+    :goto_f
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
 
     .line 1033
     .line 1034
     .line 1035
-    :goto_1c
-    return-object v9
+    move-result v0
 
     .line 1036
-    :catchall_3
-    move-exception v0
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 1037
-    move-object v1, v2
-
     .line 1038
-    :goto_1d
-    invoke-virtual {v1, v15}, Lcs3;->g(Ljava/lang/Object;)V
-
     .line 1039
-    .line 1040
-    .line 1041
-    throw v0
+    move-result-object v3
 
+    .line 1040
+    goto/16 :goto_3c
+
+    .line 1041
     .line 1042
-    :pswitch_4
-    iget-byte v1, v0, Lqt0;->k:B
+    :cond_26
+    invoke-virtual {v6}, Lqt0;->getEventHandler()Lds1;
 
     .line 1043
     .line 1044
-    sget-object v2, Lxo1;->l:Lxo1;
-
     .line 1045
+    move-result-object v3
+
     .line 1046
-    if-eqz v1, :cond_35
+    invoke-virtual {v6}, Lqt0;->getRowHeight()I
 
     .line 1047
     .line 1048
-    if-eq v1, v14, :cond_34
-
     .line 1049
+    move-result v4
+
     .line 1050
-    if-eq v1, v13, :cond_33
+    neg-int v4, v4
 
     .line 1051
+    int-to-float v4, v4
+
     .line 1052
-    if-ne v1, v8, :cond_32
+    const/4 v7, 0x0
 
     .line 1053
-    .line 1054
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
+    invoke-virtual {v3, v0, v4, v7}, Lds1;->j(FFZ)V
 
+    .line 1054
     .line 1055
     .line 1056
-    .line 1057
-    move-object/from16 v15, p1
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
 
+    .line 1057
     .line 1058
     .line 1059
-    goto/16 :goto_22
+    move-result v0
 
     .line 1060
-    .line 1061
-    :cond_32
-    invoke-static {v11}, Lmv1;->e(Ljava/lang/String;)V
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
+    .line 1061
     .line 1062
     .line 1063
+    move-result-object v3
+
     .line 1064
-    goto/16 :goto_22
+    goto/16 :goto_3c
 
     .line 1065
     .line 1066
-    :cond_33
-    iget-object v1, v0, Lqt0;->l:Ljava/lang/Object;
+    :cond_27
+    sget-object v0, Lsv5;->l:Lsv5;
 
     .line 1067
     .line 1068
-    check-cast v1, Lcs3;
+    invoke-virtual {v6, v0, v8}, Lqt0;->X(Lsv5;Z)V
 
     .line 1069
     .line 1070
-    :try_start_6
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_4
-
     .line 1071
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
+
     .line 1072
     .line 1073
-    move-object v3, v1
-
     .line 1074
-    move-object/from16 v1, p1
+    move-result v0
 
     .line 1075
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
     .line 1076
-    goto :goto_20
-
     .line 1077
-    :catchall_4
-    move-exception v0
-
     .line 1078
-    goto/16 :goto_23
+    move-result-object v3
 
     .line 1079
-    .line 1080
-    :cond_34
-    iget-object v1, v0, Lqt0;->m:Ljava/lang/Object;
+    goto/16 :goto_3c
 
+    .line 1080
     .line 1081
+    :cond_28
+    const/4 v15, 0x1
+
     .line 1082
-    check-cast v1, Lqn4;
+    invoke-virtual {v6}, Lqt0;->R()Z
 
     .line 1083
     .line 1084
-    iget-object v3, v0, Lqt0;->l:Ljava/lang/Object;
-
     .line 1085
+    move-result v0
+
     .line 1086
-    check-cast v3, Lcs3;
+    if-eqz v0, :cond_29
 
     .line 1087
     .line 1088
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
+    invoke-virtual {v6}, Lqt0;->b0()V
 
     .line 1089
     .line 1090
     .line 1091
-    goto :goto_1e
+    :cond_29
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
 
     .line 1092
-    :cond_35
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-
     .line 1093
     .line 1094
+    move-result v0
+
     .line 1095
-    iget-object v1, v0, Lqt0;->n:Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 1096
     .line 1097
-    check-cast v1, Lqn4;
-
     .line 1098
+    move-result-object v3
+
     .line 1099
-    iget-object v3, v1, Lqn4;->e:Lcs3;
+    goto/16 :goto_3c
 
     .line 1100
     .line 1101
-    iput-object v3, v0, Lqt0;->l:Ljava/lang/Object;
+    :cond_2a
+    const/4 v15, 0x1
 
     .line 1102
-    .line 1103
-    iput-object v1, v0, Lqt0;->m:Ljava/lang/Object;
+    invoke-virtual {v6, v15}, Lqt0;->w(Z)V
 
+    .line 1103
     .line 1104
     .line 1105
-    iput-byte v14, v0, Lqt0;->k:B
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
 
     .line 1106
     .line 1107
-    invoke-virtual {v3, v0}, Lcs3;->e(Lc81;)Ljava/lang/Object;
-
     .line 1108
+    move-result v0
+
     .line 1109
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
     .line 1110
-    move-result-object v4
-
     .line 1111
-    if-ne v4, v12, :cond_36
-
     .line 1112
+    move-result-object v3
+
     .line 1113
-    goto :goto_21
+    goto/16 :goto_3c
 
     .line 1114
-    :cond_36
-    :goto_1e
-    :try_start_7
-    iget-object v4, v1, Lqn4;->f:Landroid/view/textclassifier/TextClassifier;
-
     .line 1115
+    :cond_2b
+    const/4 v15, 0x1
+
     .line 1116
-    if-eqz v4, :cond_37
+    if-eqz v9, :cond_2c
 
     .line 1117
     .line 1118
-    invoke-interface {v4}, Landroid/view/textclassifier/TextClassifier;->isDestroyed()Z
+    sget-object v0, Lsv5;->w:Lsv5;
 
     .line 1119
     .line 1120
+    invoke-virtual {v6, v0, v8}, Lqt0;->X(Lsv5;Z)V
+
     .line 1121
-    move-result v6
-
     .line 1122
-    if-eqz v6, :cond_39
-
     .line 1123
+    goto :goto_10
+
     .line 1124
-    goto :goto_1f
+    :cond_2c
+    invoke-virtual {v6}, Lqt0;->getProps()Lri1;
 
     .line 1125
-    :catchall_5
-    move-exception v0
-
     .line 1126
-    move-object v1, v3
-
     .line 1127
-    goto :goto_23
+    move-result-object v0
 
     .line 1128
-    :cond_37
-    :goto_1f
-    sget-object v4, Lto1;->k:Lm11;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 1129
     .line 1130
-    const-wide/16 v6, 0x12c
-
     .line 1131
-    .line 1132
-    invoke-static {v6, v7, v2}, Lb27;->n0(JLxo1;)J
+    sget-object v0, Lsv5;->y:Lsv5;
 
+    .line 1132
     .line 1133
+    invoke-virtual {v6, v0, v8}, Lqt0;->X(Lsv5;Z)V
+
     .line 1134
     .line 1135
-    move-result-wide v6
-
     .line 1136
-    new-instance v4, Lrt;
+    :goto_10
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
 
     .line 1137
     .line 1138
-    invoke-direct {v4, v1, v15, v5}, Lrt;-><init>(Ljava/lang/Object;Lc81;B)V
-
     .line 1139
-    .line 1140
-    .line 1141
-    iput-object v3, v0, Lqt0;->l:Ljava/lang/Object;
+    move-result v0
 
+    .line 1140
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 1141
     .line 1142
     .line 1143
-    iput-object v15, v0, Lqt0;->m:Ljava/lang/Object;
+    move-result-object v3
 
     .line 1144
-    .line 1145
-    iput-byte v13, v0, Lqt0;->k:B
+    goto/16 :goto_3c
 
+    .line 1145
     .line 1146
+    :cond_2d
+    const/4 v15, 0x1
+
     .line 1147
-    invoke-static {v6, v7, v4, v0}, Ln23;->S(JLv52;Ld81;)Ljava/lang/Object;
+    if-eqz v9, :cond_2e
 
     .line 1148
     .line 1149
-    .line 1150
-    move-result-object v1
+    sget-object v0, Lsv5;->v:Lsv5;
 
+    .line 1150
     .line 1151
-    if-ne v1, v12, :cond_38
+    invoke-virtual {v6, v0, v8}, Lqt0;->X(Lsv5;Z)V
 
     .line 1152
     .line 1153
-    goto :goto_21
-
     .line 1154
-    :cond_38
-    :goto_20
-    move-object v4, v1
+    goto :goto_11
 
     .line 1155
-    check-cast v4, Landroid/view/textclassifier/TextClassifier;
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_5
+    :cond_2e
+    invoke-virtual {v6}, Lqt0;->getProps()Lri1;
 
     .line 1156
     .line 1157
-    :cond_39
-    invoke-virtual {v3, v15}, Lcs3;->g(Ljava/lang/Object;)V
-
     .line 1158
-    .line 1159
-    .line 1160
-    sget-object v1, Lto1;->k:Lm11;
+    move-result-object v0
 
+    .line 1159
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 1160
     .line 1161
     .line 1162
-    const-wide/16 v5, 0xc8
+    sget-object v0, Lsv5;->x:Lsv5;
 
     .line 1163
     .line 1164
-    invoke-static {v5, v6, v2}, Lb27;->n0(JLxo1;)J
+    invoke-virtual {v6, v0, v8}, Lqt0;->X(Lsv5;Z)V
 
     .line 1165
     .line 1166
     .line 1167
-    move-result-wide v1
+    :goto_11
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
 
     .line 1168
-    new-instance v3, Ln02;
-
     .line 1169
     .line 1170
-    iget-object v5, v0, Lqt0;->o:Ljava/lang/Object;
+    move-result v0
 
     .line 1171
-    .line 1172
-    check-cast v5, Lv52;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
+    .line 1172
     .line 1173
     .line 1174
-    const/16 v6, 0x12
+    move-result-object v3
 
     .line 1175
+    goto/16 :goto_3c
+
     .line 1176
-    invoke-direct {v3, v4, v5, v15, v6}, Ln02;-><init>(Ljava/lang/Object;Ljava/lang/Object;Lc81;B)V
-
     .line 1177
-    .line 1178
-    .line 1179
-    iput-object v15, v0, Lqt0;->l:Ljava/lang/Object;
+    :cond_2f
+    const/4 v15, 0x1
 
+    .line 1178
+    invoke-virtual {v6}, Lqt0;->R()Z
+
+    .line 1179
     .line 1180
     .line 1181
-    iput-object v15, v0, Lqt0;->m:Ljava/lang/Object;
+    move-result v0
 
     .line 1182
+    if-eqz v0, :cond_33
+
     .line 1183
-    iput-byte v8, v0, Lqt0;->k:B
-
     .line 1184
-    .line 1185
-    invoke-static {v1, v2, v3, v0}, Ln23;->S(JLv52;Ld81;)Ljava/lang/Object;
+    iget-object v0, v6, Lqt0;->A0:Lwb1;
 
+    .line 1185
     .line 1186
+    invoke-virtual {v0}, Lwb1;->a()Z
+
     .line 1187
     .line 1188
-    move-result-object v0
-
     .line 1189
-    if-ne v0, v12, :cond_3a
+    move-result v0
 
     .line 1190
-    .line 1191
-    :goto_21
-    move-object v15, v12
+    if-eqz v0, :cond_30
 
+    .line 1191
     .line 1192
-    goto :goto_22
+    invoke-virtual {v6}, Lqt0;->A()V
 
     .line 1193
-    :cond_3a
-    move-object v15, v0
-
     .line 1194
-    :goto_22
-    return-object v15
-
     .line 1195
-    :goto_23
-    invoke-virtual {v1, v15}, Lcs3;->g(Ljava/lang/Object;)V
+    goto :goto_12
 
     .line 1196
+    :cond_30
+    if-eqz v9, :cond_31
+
     .line 1197
     .line 1198
-    throw v0
+    sget-object v0, Lsv5;->q:Lsv5;
 
     .line 1199
-    :pswitch_5
-    iget-object v1, v0, Lqt0;->o:Ljava/lang/Object;
-
     .line 1200
-    .line 1201
-    check-cast v1, Lkj4;
+    invoke-virtual {v6, v0}, Lqt0;->F(Lsv5;)V
 
+    .line 1201
     .line 1202
     .line 1203
-    iget-object v2, v0, Lqt0;->n:Ljava/lang/Object;
+    iget-object v0, v6, Lqt0;->A0:Lwb1;
 
     .line 1204
     .line 1205
-    check-cast v2, Lfb1;
+    invoke-virtual {v0}, Lwb1;->a()Z
 
     .line 1206
     .line 1207
-    iget-byte v3, v0, Lqt0;->k:B
-
     .line 1208
+    move-result v0
+
     .line 1209
-    if-eqz v3, :cond_3d
+    if-eqz v0, :cond_32
 
     .line 1210
     .line 1211
-    if-eq v3, v14, :cond_3c
+    invoke-virtual {v6}, Lqt0;->A()V
 
     .line 1212
     .line 1213
-    if-ne v3, v13, :cond_3b
-
     .line 1214
+    goto :goto_12
+
     .line 1215
-    :try_start_8
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-    :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_6
+    :cond_31
+    const/4 v3, 0x0
 
     .line 1216
+    invoke-virtual {v7, v3, v15}, Ldr1;->deleteSurroundingText(II)Z
+
     .line 1217
     .line 1218
-    goto :goto_24
-
     .line 1219
-    :catchall_6
-    move-exception v0
+    :cond_32
+    :goto_12
+    invoke-virtual {v6}, Lqt0;->Z()V
 
     .line 1220
-    goto :goto_28
-
     .line 1221
-    :cond_3b
-    invoke-static {v11}, Lmv1;->e(Ljava/lang/String;)V
-
     .line 1222
+    :cond_33
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
+
     .line 1223
     .line 1224
-    move-object v9, v15
-
     .line 1225
-    goto :goto_27
+    move-result v0
 
     .line 1226
-    :cond_3c
-    iget-object v3, v0, Lqt0;->m:Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 1227
     .line 1228
-    check-cast v3, Lzi4;
-
     .line 1229
+    move-result-object v3
+
     .line 1230
-    iget-object v4, v0, Lqt0;->l:Ljava/lang/Object;
+    goto/16 :goto_3c
 
     .line 1231
     .line 1232
-    check-cast v4, Lkj4;
+    :cond_34
+    const/4 v15, 0x1
 
     .line 1233
-    .line 1234
-    :try_start_9
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-    :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_6
+    invoke-virtual {v11}, Lwb1;->a()Z
 
+    .line 1234
     .line 1235
     .line 1236
+    move-result v0
+
     .line 1237
-    move-object v5, v4
+    if-eqz v0, :cond_35
 
     .line 1238
-    move-object/from16 v4, p1
-
     .line 1239
+    invoke-virtual {v6}, Lqt0;->getProps()Lri1;
+
     .line 1240
-    goto :goto_25
-
     .line 1241
-    :cond_3d
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-
     .line 1242
-    .line 1243
-    .line 1244
-    :cond_3e
-    :goto_24
-    :try_start_a
-    invoke-interface {v2}, Lfb1;->e()Lwa1;
+    move-result-object v0
 
+    .line 1243
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 1244
     .line 1245
     .line 1246
-    .line 1247
-    move-result-object v3
+    iget-object v0, v11, Lwb1;->d:Lxm0;
 
+    .line 1247
     .line 1248
-    invoke-static {v3}, Lcd7;->H(Lwa1;)Z
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
 
     .line 1249
     .line 1250
     .line 1251
-    move-result v3
+    move-result-object v0
 
     .line 1252
-    if-eqz v3, :cond_40
+    iget v3, v0, Lxm0;->b:I
 
     .line 1253
     .line 1254
-    iget-object v3, v1, Lc64;->d:Ljava/lang/Object;
+    iget v0, v0, Lxm0;->c:I
 
     .line 1255
     .line 1256
-    check-cast v3, Lzi4;
+    const/4 v7, 0x0
 
     .line 1257
-    .line 1258
-    iget-object v4, v1, Lkj4;->f:Lsd0;
+    invoke-virtual {v6, v3, v0, v7, v15}, Lqt0;->m0(IIIZ)V
 
+    .line 1258
     .line 1259
     .line 1260
-    iput-object v2, v0, Lqt0;->n:Ljava/lang/Object;
+    :cond_35
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
 
     .line 1261
     .line 1262
-    iput-object v1, v0, Lqt0;->l:Ljava/lang/Object;
-
     .line 1263
+    move-result v0
+
     .line 1264
-    iput-object v3, v0, Lqt0;->m:Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 1265
     .line 1266
-    iput-byte v14, v0, Lqt0;->k:B
-
     .line 1267
+    move-result-object v3
+
     .line 1268
-    invoke-virtual {v4, v0}, Lsd0;->o(Lc81;)Ljava/lang/Object;
+    goto/16 :goto_3c
 
     .line 1269
     .line 1270
+    :cond_36
+    const/4 v15, 0x1
+
     .line 1271
-    move-result-object v4
+    if-eqz v9, :cond_37
 
     .line 1272
-    if-ne v4, v12, :cond_3f
-
     .line 1273
-    .line 1274
-    goto :goto_26
+    sget-object v0, Lsv5;->u:Lsv5;
 
+    .line 1274
     .line 1275
-    :cond_3f
-    move-object v5, v1
+    invoke-virtual {v6, v0, v8}, Lqt0;->X(Lsv5;Z)V
 
     .line 1276
-    :goto_25
-    check-cast v4, Lij4;
-
     .line 1277
     .line 1278
-    iput-object v2, v0, Lqt0;->n:Ljava/lang/Object;
+    goto :goto_13
 
     .line 1279
+    :cond_37
+    sget-object v0, Lsv5;->s:Lsv5;
+
     .line 1280
-    iput-object v15, v0, Lqt0;->l:Ljava/lang/Object;
-
     .line 1281
-    .line 1282
-    iput-object v15, v0, Lqt0;->m:Ljava/lang/Object;
+    invoke-virtual {v6, v0, v8}, Lqt0;->X(Lsv5;Z)V
 
+    .line 1282
     .line 1283
     .line 1284
-    iput-byte v13, v0, Lqt0;->k:B
+    :goto_13
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
 
     .line 1285
     .line 1286
-    invoke-virtual {v5, v3, v4, v0}, Lkj4;->f(Lzi4;Lij4;Ld81;)Ljava/lang/Object;
-
     .line 1287
+    move-result v0
+
     .line 1288
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
     .line 1289
-    move-result-object v3
-    :try_end_a
-    .catchall {:try_start_a .. :try_end_a} :catchall_6
-
     .line 1290
-    if-ne v3, v12, :cond_3e
-
     .line 1291
+    move-result-object v3
+
     .line 1292
-    :goto_26
-    move-object v9, v12
+    goto/16 :goto_3c
 
     .line 1293
-    goto :goto_27
-
     .line 1294
-    :cond_40
-    iput-object v15, v1, Lkj4;->g:Ly76;
+    :cond_38
+    const/4 v15, 0x1
 
     .line 1295
-    .line 1296
-    :goto_27
-    return-object v9
+    if-eqz v9, :cond_39
 
+    .line 1296
     .line 1297
-    :goto_28
-    iput-object v15, v1, Lkj4;->g:Ly76;
+    sget-object v0, Lsv5;->t:Lsv5;
 
     .line 1298
     .line 1299
-    throw v0
+    invoke-virtual {v6, v0, v8}, Lqt0;->X(Lsv5;Z)V
 
     .line 1300
-    :pswitch_6
-    iget-byte v1, v0, Lqt0;->k:B
-
     .line 1301
     .line 1302
-    if-eqz v1, :cond_43
+    goto :goto_14
 
     .line 1303
+    :cond_39
+    sget-object v0, Lsv5;->r:Lsv5;
+
     .line 1304
-    if-eq v1, v14, :cond_42
-
     .line 1305
-    .line 1306
-    if-ne v1, v13, :cond_41
+    invoke-virtual {v6, v0, v8}, Lqt0;->X(Lsv5;Z)V
 
+    .line 1306
     .line 1307
     .line 1308
-    iget-object v1, v0, Lqt0;->l:Ljava/lang/Object;
+    :goto_14
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
 
     .line 1309
     .line 1310
-    check-cast v1, Lz75;
-
     .line 1311
+    move-result v0
+
     .line 1312
-    iget-object v2, v0, Lqt0;->m:Ljava/lang/Object;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 1313
     .line 1314
-    check-cast v2, Lfb1;
-
     .line 1315
+    move-result-object v3
+
     .line 1316
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
+    goto/16 :goto_3c
 
     .line 1317
     .line 1318
+    :cond_3a
+    const/4 v15, 0x1
+
     .line 1319
-    move-object v7, v1
+    invoke-virtual {v6}, Lqt0;->R()Z
 
     .line 1320
-    move-object v8, v2
-
     .line 1321
-    goto :goto_2a
-
     .line 1322
-    :cond_41
-    invoke-static {v11}, Lmv1;->e(Ljava/lang/String;)V
+    move-result v0
 
     .line 1323
+    if-eqz v0, :cond_3e
+
     .line 1324
     .line 1325
-    :goto_29
-    move-object v12, v15
+    iget-object v0, v6, Lqt0;->A0:Lwb1;
 
     .line 1326
-    goto/16 :goto_2c
-
     .line 1327
-    .line 1328
-    :cond_42
-    iget-object v1, v0, Lqt0;->l:Ljava/lang/Object;
+    invoke-virtual {v0}, Lwb1;->a()Z
 
+    .line 1328
     .line 1329
     .line 1330
-    check-cast v1, Lz75;
+    move-result v0
 
     .line 1331
+    if-eqz v0, :cond_3b
+
     .line 1332
-    iget-object v2, v0, Lqt0;->m:Ljava/lang/Object;
-
     .line 1333
-    .line 1334
-    check-cast v2, Lfb1;
+    invoke-virtual {v6}, Lqt0;->A()V
 
+    .line 1334
     .line 1335
     .line 1336
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
+    goto :goto_15
 
     .line 1337
+    :cond_3b
+    if-eqz v9, :cond_3c
+
     .line 1338
     .line 1339
-    move-object v7, v1
+    sget-object v0, Lsv5;->p:Lsv5;
 
     .line 1340
-    move-object v8, v2
-
     .line 1341
-    goto :goto_2b
+    invoke-virtual {v6, v0}, Lqt0;->F(Lsv5;)V
 
     .line 1342
-    :cond_43
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-
     .line 1343
     .line 1344
+    iget-object v0, v6, Lqt0;->A0:Lwb1;
+
     .line 1345
-    iget-object v1, v0, Lqt0;->m:Ljava/lang/Object;
-
     .line 1346
-    .line 1347
-    check-cast v1, Lfb1;
+    invoke-virtual {v0}, Lwb1;->a()Z
 
+    .line 1347
     .line 1348
     .line 1349
-    new-instance v2, Lz75;
+    move-result v0
 
     .line 1350
-    .line 1351
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
+    if-eqz v0, :cond_3d
 
+    .line 1351
     .line 1352
+    invoke-virtual {v6}, Lqt0;->A()V
+
     .line 1353
     .line 1354
-    const/high16 v3, 0x3f800000    # 1.0f
-
     .line 1355
+    goto :goto_15
+
     .line 1356
-    iput v3, v2, Lz75;->j:F
+    :cond_3c
+    invoke-virtual {v6}, Lqt0;->A()V
 
     .line 1357
     .line 1358
-    move-object v8, v1
-
     .line 1359
-    move-object v7, v2
+    :cond_3d
+    :goto_15
+    invoke-virtual {v6}, Lqt0;->Z()V
 
     .line 1360
-    :cond_44
-    :goto_2a
-    iget-object v1, v0, Lqt0;->n:Ljava/lang/Object;
-
     .line 1361
     .line 1362
-    move-object v5, v1
+    :cond_3e
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
 
     .line 1363
-    check-cast v5, Lnr3;
-
     .line 1364
     .line 1365
-    iget-object v1, v0, Lqt0;->o:Ljava/lang/Object;
+    move-result v0
 
     .line 1366
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
     .line 1367
-    move-object v6, v1
-
     .line 1368
-    check-cast v6, Leo2;
-
     .line 1369
+    move-result-object v3
+
     .line 1370
-    new-instance v4, Lv1;
+    goto/16 :goto_3c
 
     .line 1371
     .line 1372
-    const/4 v9, 0x5
+    :cond_3f
+    const/4 v15, 0x1
 
     .line 1373
-    invoke-direct/range {v4 .. v9}, Lv1;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;B)V
+    invoke-virtual {v6}, Lqt0;->getCursor()Lwb1;
 
     .line 1374
     .line 1375
     .line 1376
-    iput-object v8, v0, Lqt0;->m:Ljava/lang/Object;
+    move-result-object v5
 
     .line 1377
-    .line 1378
-    iput-object v7, v0, Lqt0;->l:Ljava/lang/Object;
+    invoke-virtual {v6}, Lqt0;->getText()Ln61;
 
+    .line 1378
     .line 1379
     .line 1380
-    iput-byte v14, v0, Lqt0;->k:B
+    move-result-object v7
 
     .line 1381
-    .line 1382
-    invoke-interface {v0}, Lc81;->getContext()Lwa1;
+    invoke-virtual {v6}, Lqt0;->R()Z
 
+    .line 1382
     .line 1383
     .line 1384
+    move-result v0
+
     .line 1385
-    move-result-object v1
+    if-eqz v0, :cond_78
 
     .line 1386
-    sget-object v2, Llv1;->q:Llv1;
-
     .line 1387
-    .line 1388
-    invoke-interface {v1, v2}, Lwa1;->p(Lva1;)Lua1;
+    invoke-virtual {v6}, Lqt0;->getLineSeparator()Lz73;
 
+    .line 1388
     .line 1389
     .line 1390
+    move-result-object v0
+
     .line 1391
-    move-result-object v1
+    iget-object v11, v0, Lz73;->j:Ljava/lang/String;
 
     .line 1392
-    if-nez v1, :cond_46
-
     .line 1393
-    .line 1394
-    invoke-interface {v0}, Lc81;->getContext()Lwa1;
+    invoke-virtual {v6}, Lqt0;->getEditorLanguage()Lhy2;
 
+    .line 1394
     .line 1395
     .line 1396
+    move-result-object v0
+
     .line 1397
-    move-result-object v1
+    if-eqz v8, :cond_40
 
     .line 1398
-    invoke-static {v1}, Ln43;->G(Lwa1;)Llf;
-
     .line 1399
+    if-nez v18, :cond_40
+
     .line 1400
     .line 1401
-    move-result-object v1
+    if-nez v9, :cond_40
 
     .line 1402
-    invoke-virtual {v1, v4, v0}, Llf;->a(Lr52;Lc81;)Ljava/lang/Object;
-
     .line 1403
+    invoke-static {v6, v5, v7, v13, v14}, Lfp2;->I(Lqt0;Lwb1;Ln61;Ler1;Lkx2;)Z
+
     .line 1404
     .line 1405
-    move-result-object v1
-
     .line 1406
-    if-ne v1, v12, :cond_45
+    move-result v0
 
     .line 1407
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
     .line 1408
-    goto :goto_2c
-
     .line 1409
-    :cond_45
-    :goto_2b
-    iget v1, v7, Lz75;->j:F
-
     .line 1410
+    move-result-object v3
+
     .line 1411
-    const/4 v2, 0x0
+    goto/16 :goto_3c
 
     .line 1412
-    cmpg-float v1, v1, v2
-
     .line 1413
+    :cond_40
+    const/4 v12, -0x1
+
     .line 1414
-    if-nez v1, :cond_44
+    if-eqz v9, :cond_47
 
     .line 1415
     .line 1416
-    new-instance v1, Lco2;
+    if-nez v8, :cond_47
 
     .line 1417
     .line 1418
-    invoke-direct {v1, v8, v10}, Lco2;-><init>(Lfb1;B)V
+    if-eqz v18, :cond_44
 
     .line 1419
     .line 1420
-    .line 1421
-    invoke-static {v1}, Lcw5;->S(Lg52;)Lu02;
+    iget-object v0, v5, Lwb1;->c:Lxm0;
 
+    .line 1421
     .line 1422
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
+
     .line 1423
     .line 1424
-    move-result-object v1
-
     .line 1425
-    new-instance v2, Ldo2;
+    move-result-object v0
 
     .line 1426
-    .line 1427
-    invoke-direct {v2, v13, v15}, Lie6;-><init>(ILc81;)V
+    iget v0, v0, Lxm0;->b:I
 
+    .line 1427
     .line 1428
+    if-nez v0, :cond_43
+
     .line 1429
     .line 1430
-    iput-object v8, v0, Lqt0;->m:Ljava/lang/Object;
+    const/4 v3, 0x0
 
     .line 1431
-    .line 1432
-    iput-object v7, v0, Lqt0;->l:Ljava/lang/Object;
+    invoke-virtual {v7, v3, v3, v11}, Ln61;->r(IILjava/lang/CharSequence;)V
 
+    .line 1432
     .line 1433
     .line 1434
-    iput-byte v13, v0, Lqt0;->k:B
+    invoke-virtual {v6, v3, v3}, Lqt0;->l0(II)V
 
     .line 1435
     .line 1436
-    invoke-static {v1, v2, v0}, Lfm0;->w(Li02;Lv52;Ld81;)Ljava/lang/Object;
-
     .line 1437
+    invoke-virtual {v6}, Lqt0;->E()V
+
     .line 1438
     .line 1439
-    move-result-object v1
-
     .line 1440
-    if-ne v1, v12, :cond_44
+    invoke-virtual {v14, v15}, Ler1;->a(Z)Z
 
     .line 1441
     .line 1442
-    goto :goto_2c
-
     .line 1443
-    :cond_46
-    invoke-static {}, Lyd1;->t()V
+    move-result v0
 
     .line 1444
+    if-nez v0, :cond_42
+
     .line 1445
     .line 1446
-    goto :goto_29
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
 
     .line 1447
-    :goto_2c
-    return-object v12
-
     .line 1448
-    :pswitch_7
-    iget-byte v1, v0, Lqt0;->k:B
-
     .line 1449
+    move-result v0
+
     .line 1450
-    const-string v2, "-"
+    if-eqz v0, :cond_41
 
     .line 1451
     .line 1452
-    if-eqz v1, :cond_49
+    goto :goto_16
 
     .line 1453
+    :cond_41
+    const/4 v15, 0x0
+
     .line 1454
-    if-eq v1, v14, :cond_48
+    :cond_42
+    :goto_16
+    invoke-static {v15}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 1455
     .line 1456
-    if-ne v1, v13, :cond_47
-
     .line 1457
+    move-result-object v3
+
     .line 1458
-    iget-object v1, v0, Lqt0;->o:Ljava/lang/Object;
+    goto/16 :goto_3c
 
     .line 1459
     .line 1460
-    check-cast v1, Ljava/lang/String;
+    :cond_43
+    add-int/2addr v0, v12
 
     .line 1461
-    .line 1462
-    iget-object v0, v0, Lqt0;->n:Ljava/lang/Object;
+    invoke-virtual {v7, v0}, Ln61;->o(I)Le71;
 
+    .line 1462
     .line 1463
     .line 1464
-    check-cast v0, Ljava/lang/String;
+    move-result-object v3
 
     .line 1465
-    .line 1466
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
+    iget v3, v3, Le71;->l:I
 
+    .line 1466
     .line 1467
+    invoke-virtual {v6, v0, v3}, Lqt0;->l0(II)V
+
     .line 1468
     .line 1469
-    move-object v3, v0
-
     .line 1470
-    move-object/from16 v0, p1
+    invoke-static {v6, v5, v7, v13, v14}, Lfp2;->I(Lqt0;Lwb1;Ln61;Ler1;Lkx2;)Z
 
     .line 1471
     .line 1472
-    goto/16 :goto_2f
-
     .line 1473
+    move-result v0
+
     .line 1474
-    :cond_47
-    invoke-static {v11}, Lmv1;->e(Ljava/lang/String;)V
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 1475
     .line 1476
     .line 1477
-    move-object v12, v15
+    move-result-object v3
 
     .line 1478
-    goto/16 :goto_37
+    goto/16 :goto_3c
 
     .line 1479
     .line 1480
-    :cond_48
-    iget-object v1, v0, Lqt0;->m:Ljava/lang/Object;
+    :cond_44
+    iget-object v0, v5, Lwb1;->c:Lxm0;
 
     .line 1481
     .line 1482
-    check-cast v1, Ljava/lang/String;
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
 
     .line 1483
     .line 1484
-    iget-object v3, v0, Lqt0;->l:Ljava/lang/Object;
-
     .line 1485
+    move-result-object v0
+
     .line 1486
-    check-cast v3, Ljava/lang/String;
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
 
     .line 1487
     .line 1488
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-
     .line 1489
+    move-result-object v0
+
     .line 1490
+    invoke-virtual {v6, v11, v15}, Lqt0;->v(Ljava/lang/CharSequence;Z)V
+
     .line 1491
-    move-object v4, v3
-
     .line 1492
-    move-object/from16 v3, p1
-
     .line 1493
-    .line 1494
-    goto :goto_2e
+    iget v3, v0, Lxm0;->b:I
 
+    .line 1494
     .line 1495
-    :cond_49
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
+    iget v0, v0, Lxm0;->c:I
 
     .line 1496
     .line 1497
-    .line 1498
-    sget-object v1, Llb0;->a:Llb0;
+    invoke-virtual {v6, v3, v0}, Lqt0;->l0(II)V
 
+    .line 1498
     .line 1499
     .line 1500
-    invoke-static {}, Llb0;->k()Lab0;
+    invoke-virtual {v6}, Lqt0;->E()V
 
     .line 1501
     .line 1502
     .line 1503
-    move-result-object v1
+    invoke-virtual {v14, v15}, Ler1;->a(Z)Z
 
     .line 1504
-    invoke-static {}, Llb0;->g()Lya0;
-
     .line 1505
     .line 1506
+    move-result v0
+
     .line 1507
-    move-result-object v3
+    if-nez v0, :cond_46
 
     .line 1508
-    iget-object v4, v3, Lya0;->a:Ljava/lang/String;
-
     .line 1509
-    .line 1510
-    invoke-virtual {v1, v4}, Lab0;->c(Ljava/lang/String;)Ljava/io/File;
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
 
+    .line 1510
     .line 1511
     .line 1512
+    move-result v0
+
     .line 1513
-    move-result-object v1
+    if-eqz v0, :cond_45
 
     .line 1514
-    invoke-virtual {v1}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-
     .line 1515
+    goto :goto_17
+
     .line 1516
+    :cond_45
+    const/4 v15, 0x0
+
     .line 1517
-    move-result-object v1
+    :cond_46
+    :goto_17
+    invoke-static {v15}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 1518
-    iget-object v4, v3, Lya0;->s:Ljava/lang/String;
-
     .line 1519
     .line 1520
-    invoke-static {v4}, Lw96;->V0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    move-result-object v3
 
     .line 1521
+    goto/16 :goto_3c
+
     .line 1522
     .line 1523
-    move-result-object v4
+    :cond_47
+    invoke-interface {v0}, Lhy2;->d()[Lx54;
 
     .line 1524
-    invoke-virtual {v4}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
     .line 1525
     .line 1526
+    move-result-object v8
+
     .line 1527
-    move-result-object v4
+    if-eqz v8, :cond_77
 
     .line 1528
-    iget-boolean v3, v3, Lya0;->r:Z
-
     .line 1529
-    .line 1530
-    if-eqz v3, :cond_4a
+    invoke-virtual {v5}, Lwb1;->a()Z
 
+    .line 1530
     .line 1531
     .line 1532
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
+    move-result v0
 
     .line 1533
+    if-eqz v0, :cond_48
+
     .line 1534
     .line 1535
-    move-result v3
+    goto/16 :goto_37
 
     .line 1536
-    if-lez v3, :cond_4a
-
     .line 1537
+    :cond_48
+    array-length v9, v8
+
     .line 1538
-    goto :goto_2d
+    const/4 v14, 0x0
 
     .line 1539
-    :cond_4a
-    move-object v4, v15
+    :goto_18
+    if-ge v14, v9, :cond_76
 
     .line 1540
-    :goto_2d
-    if-nez v4, :cond_4b
-
     .line 1541
-    .line 1542
-    move-object v4, v2
+    aget-object v16, v8, v14
 
+    .line 1542
     .line 1543
-    :cond_4b
-    iput-object v1, v0, Lqt0;->l:Ljava/lang/Object;
+    if-eqz v16, :cond_74
 
     .line 1544
     .line 1545
-    iput-object v4, v0, Lqt0;->m:Ljava/lang/Object;
+    iget-object v0, v5, Lwb1;->c:Lxm0;
 
     .line 1546
     .line 1547
-    iput-byte v14, v0, Lqt0;->k:B
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
 
     .line 1548
     .line 1549
-    sget-object v3, Loj1;->a:Lsf1;
-
     .line 1550
+    move-result-object v12
+
     .line 1551
-    sget-object v3, Ljf1;->l:Ljf1;
+    invoke-virtual {v6}, Lqt0;->getStyles()Lub6;
 
     .line 1552
     .line 1553
-    new-instance v5, Lmm;
-
     .line 1554
-    .line 1555
-    invoke-direct {v5, v13, v15, v14}, Lmm;-><init>(ILc81;B)V
+    move-object/from16 v3, v16
 
+    .line 1555
     .line 1556
+    check-cast v3, Lsp6;
+
     .line 1557
     .line 1558
-    invoke-static {v3, v5, v0}, Lf;->c0(Lwa1;Lv52;Lc81;)Ljava/lang/Object;
+    iget v0, v12, Lxm0;->b:I
 
     .line 1559
     .line 1560
+    invoke-virtual {v7, v0}, Ln61;->o(I)Le71;
+
     .line 1561
-    move-result-object v3
-
     .line 1562
-    if-ne v3, v12, :cond_4c
-
     .line 1563
+    move-result-object v0
+
     .line 1564
-    goto/16 :goto_37
+    iget v15, v0, Le71;->l:I
 
     .line 1565
     .line 1566
-    :cond_4c
-    move-object/from16 v22, v4
+    move-object/from16 v18, v8
 
     .line 1567
     .line 1568
-    move-object v4, v1
+    const/4 v8, 0x0
 
     .line 1569
-    move-object/from16 v1, v22
+    invoke-static {v8, v15, v0}, Lu23;->r(IILjava/lang/CharSequence;)J
 
     .line 1570
     .line 1571
-    :goto_2e
-    check-cast v3, Ljava/lang/String;
-
     .line 1572
+    move-result-wide v21
+
     .line 1573
-    if-nez v3, :cond_4d
+    move/from16 v23, v14
 
     .line 1574
     .line 1575
-    new-instance v12, Lki2;
+    const/16 v19, 0x20
 
     .line 1576
     .line 1577
-    const v0, 0x7f0f0189
+    shr-long v14, v21, v19
 
     .line 1578
     .line 1579
+    long-to-int v14, v14
+
     .line 1580
-    new-array v1, v10, [Ljava/lang/Object;
+    invoke-virtual {v0, v8, v14}, Le71;->i(II)Le71;
 
     .line 1581
     .line 1582
-    invoke-static {v0, v1}, Lu67;->q(I[Ljava/lang/Object;)Ljava/lang/String;
-
     .line 1583
-    .line 1584
-    .line 1585
     move-result-object v0
 
+    .line 1584
+    invoke-virtual {v0}, Le71;->toString()Ljava/lang/String;
+
+    .line 1585
     .line 1586
-    invoke-direct {v12, v15, v0, v14}, Lki2;-><init>(Lli2;Ljava/lang/String;I)V
-
     .line 1587
+    move-result-object v14
+
     .line 1588
+    iget-object v0, v3, Lsp6;->a:Lja4;
+
     .line 1589
-    goto/16 :goto_37
-
     .line 1590
+    const-string v15, "\t"
+
     .line 1591
-    :cond_4d
-    sget-object v5, Llb0;->a:Llb0;
-
     .line 1592
-    .line 1593
-    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-nez v0, :cond_49
 
+    .line 1593
     .line 1594
+    move/from16 v21, v9
+
     .line 1595
     .line 1596
-    invoke-static {v4}, Llb0;->s(Ljava/lang/String;)Ljava/lang/String;
+    :goto_19
+    const/4 v8, 0x0
 
     .line 1597
-    .line 1598
-    .line 1599
-    move-result-object v4
+    goto :goto_1e
 
+    .line 1598
+    :cond_49
+    iget v8, v12, Lxm0;->b:I
+
+    .line 1599
     .line 1600
-    invoke-static {v1}, Llb0;->s(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v7, v8}, Ln61;->q(I)Ljava/lang/String;
 
     .line 1601
     .line 1602
     .line 1603
-    move-result-object v1
+    move-result-object v8
 
     .line 1604
-    const-string v5, "\n            # Match the root service's executable path (emulated storage may be noexec).\n            case \"$core_path\" in\n                /storage/emulated/*)\n                    _real_core=\"/data/media/${core_path#/storage/emulated/}\"\n                    if [ -f \"$_real_core\" ]; then\n                        chmod 755 \"$_real_core\" >/dev/null 2>&1\n                        [ -x \"$_real_core\" ] && core_path=\"$_real_core\"\n                    fi\n                    ;;\n            esac\n            core_version=\"\"\n            if [ -x \"$core_path\" ]; then\n                case \"${core_path##*/}\" in\n                    sing-box|xray|v2fly|hysteria)\n                        _lp=\"$(bpld \"$(dirname \"$core_path\")\" \"$_bp_seed\")\"\n                        [ -n \"$_lp\" ] && export LD_LIBRARY_PATH=\"$_lp${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}\"\n                        ;;\n                esac\n                # Check the command status before taking its first line: a usage/error\n                # message from an unsupported flag must not suppress the next attempt.\n                case \"${core_path##*/}\" in\n                    sing-box|xray|hysteria) _version_args='version --version -v';;\n                    v2fly) _version_args='-version version --version -v';;\n                    *) _version_args='--version -v version';;\n                esac\n                for _arg in $_version_args; do\n                    if _version_output=\"$(\"$core_path\" \"$_arg\" 2>/dev/null </dev/null)\"; then\n                        core_version=\"$(printf '%s\\n' \"$_version_output\" | head -n 1)\"\n                        [ -n \"$core_version\" ] && break\n                    fi\n                done\n            fi\n            echo \"$core_version\"\n            echo '\n---SEP---\n'\n            echo "
+    move/from16 v21, v9
 
     .line 1605
     .line 1606
-    const-string v8, "\n            echo \'\n---SEP---\n\'\n            current_cpu=\"$(awk \'{print $39}\' /proc/"
+    iget v9, v12, Lxm0;->c:I
 
     .line 1607
     .line 1608
-    const-string v9, "\n            core_path="
+    const/4 v1, 0x0
 
     .line 1609
-    .line 1610
-    invoke-static {v9, v4, v5, v1, v8}, Lxu1;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v1, v9}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
+    .line 1610
     .line 1611
     .line 1612
+    move-result-object v9
+
     .line 1613
-    move-result-object v1
+    iget v1, v12, Lxm0;->c:I
 
     .line 1614
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 1615
+    invoke-virtual {v8, v1}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
     .line 1616
     .line 1617
-    const-string v4, "/stat 2>/dev/null | head -n 1)\"\n            [ -z \"$current_cpu\" ] && current_cpu=\"$(ps -o psr= -p "
-
     .line 1618
+    move-result-object v1
+
     .line 1619
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget v8, v12, Lxm0;->b:I
 
     .line 1620
     .line 1621
+    const/4 v2, 0x1
+
     .line 1622
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-le v8, v2, :cond_4a
 
     .line 1623
     .line 1624
+    add-int/lit8 v8, v8, -0x1
+
     .line 1625
-    const-string v4, " 2>/dev/null | head -n 1 | tr -d \' \')\"\n            echo \"$current_cpu\"\n        "
-
     .line 1626
-    .line 1627
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ln61;->q(I)Ljava/lang/String;
 
+    .line 1627
     .line 1628
     .line 1629
+    move-result-object v2
+
     .line 1630
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    goto :goto_1a
 
     .line 1631
+    :cond_4a
+    move-object v2, v4
+
     .line 1632
+    :goto_1a
+    :try_start_0
+    invoke-virtual {v0, v2, v9, v1}, Lja4;->a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction;
+
     .line 1633
-    move-result-object v1
-
-    # Version probes need the same dynamic-library resolver as root core startup.
-    invoke-static {v1}, Lcom/box/app/cfg/LdFix;->wrapProbe(Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v1
-
     .line 1634
-    invoke-static {v1}, Lx96;->S(Ljava/lang/String;)Ljava/lang/String;
-
     .line 1635
+    move-result-object v0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
     .line 1636
+    goto :goto_1b
+
     .line 1637
-    move-result-object v1
+    :catch_0
+    move-exception v0
 
     .line 1638
-    sget-object v4, Lwc5;->a:Lwc5;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
     .line 1639
     .line 1640
-    iput-object v15, v0, Lqt0;->l:Ljava/lang/Object;
-
     .line 1641
+    const/4 v0, 0x0
+
     .line 1642
-    iput-object v15, v0, Lqt0;->m:Ljava/lang/Object;
+    :goto_1b
+    if-nez v0, :cond_4b
 
     .line 1643
     .line 1644
-    iput-object v3, v0, Lqt0;->n:Ljava/lang/Object;
+    goto :goto_19
 
     .line 1645
+    :cond_4b
+    iget-object v1, v0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction;->indentAction:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
+
     .line 1646
-    const-string v4, "\n---SEP---\n"
-
     .line 1647
+    iget-object v2, v0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction;->appendText:Ljava/lang/String;
+
     .line 1648
-    iput-object v4, v0, Lqt0;->o:Ljava/lang/Object;
-
     .line 1649
+    iget-object v0, v0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction;->removeText:Ljava/lang/Integer;
+
     .line 1650
-    iput-byte v13, v0, Lqt0;->k:B
-
     .line 1651
-    .line 1652
-    invoke-static {v6, v7, v0, v1}, Lwc5;->f(JLc81;Ljava/lang/String;)Ljava/lang/Object;
+    if-nez v2, :cond_4e
 
+    .line 1652
     .line 1653
+    sget-object v2, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->Indent:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
+
     .line 1654
     .line 1655
-    move-result-object v0
+    if-eq v1, v2, :cond_4d
 
     .line 1656
-    if-ne v0, v12, :cond_4e
-
     .line 1657
+    sget-object v2, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->IndentOutdent:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
+
     .line 1658
-    goto/16 :goto_37
-
     .line 1659
-    .line 1660
-    :cond_4e
-    move-object v1, v4
+    if-ne v1, v2, :cond_4c
 
+    .line 1660
     .line 1661
-    :goto_2f
-    check-cast v0, Lnc5;
+    goto :goto_1c
 
     .line 1662
+    :cond_4c
+    move-object v2, v4
+
     .line 1663
-    invoke-virtual {v0}, Lnc5;->a()Z
+    goto :goto_1d
 
     .line 1664
+    :cond_4d
+    :goto_1c
+    move-object v2, v15
+
     .line 1665
+    goto :goto_1d
+
     .line 1666
-    move-result v4
+    :cond_4e
+    sget-object v8, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->Indent:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
 
     .line 1667
-    iget-object v5, v0, Lnc5;->a:Ljava/lang/String;
-
     .line 1668
+    if-ne v1, v8, :cond_4f
+
     .line 1669
-    if-nez v4, :cond_50
-
     .line 1670
-    .line 1671
-    invoke-static {v5}, Lw96;->v0(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v15, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
+    .line 1671
     .line 1672
     .line 1673
+    move-result-object v2
+
     .line 1674
-    move-result v4
+    :cond_4f
+    :goto_1d
+    if-eqz v0, :cond_50
 
     .line 1675
-    if-eqz v4, :cond_50
-
     .line 1676
-    .line 1677
-    iget-object v0, v0, Lnc5;->b:Ljava/lang/String;
+    invoke-virtual {v14}, Ljava/lang/String;->length()I
 
+    .line 1677
     .line 1678
     .line 1679
-    invoke-static {v0}, Lw96;->v0(Ljava/lang/CharSequence;)Z
+    move-result v8
 
     .line 1680
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
     .line 1681
     .line 1682
-    move-result v1
-
     .line 1683
-    if-eqz v1, :cond_4f
+    move-result v9
 
     .line 1684
+    sub-int/2addr v8, v9
+
     .line 1685
-    const v0, 0x7f0f018b
+    const/4 v9, 0x0
 
     .line 1686
+    invoke-virtual {v14, v9, v8}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
     .line 1687
     .line 1688
-    new-array v1, v10, [Ljava/lang/Object;
-
     .line 1689
+    move-result-object v14
+
     .line 1690
-    invoke-static {v0, v1}, Lu67;->q(I[Ljava/lang/Object;)Ljava/lang/String;
+    :cond_50
+    new-instance v8, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CompleteEnterAction;
 
     .line 1691
     .line 1692
+    invoke-direct {v8, v1, v2, v0, v14}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CompleteEnterAction;-><init>(Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;Ljava/lang/String;Ljava/lang/Integer;Ljava/lang/String;)V
+
     .line 1693
-    move-result-object v0
-
     .line 1694
-    :cond_4f
-    new-instance v12, Lki2;
-
     .line 1695
+    :goto_1e
+    iput-object v8, v3, Lsp6;->d:Lorg/eclipse/tm4e/languageconfiguration/internal/model/CompleteEnterAction;
+
     .line 1696
-    invoke-direct {v12, v15, v0, v14}, Lki2;-><init>(Lli2;Ljava/lang/String;I)V
-
     .line 1697
+    const/4 v1, 0x0
+
     .line 1698
+    iput-object v1, v3, Lsp6;->e:Landroid/util/Pair;
+
     .line 1699
-    goto/16 :goto_37
-
     .line 1700
-    .line 1701
-    :cond_50
-    filled-new-array {v1}, [Ljava/lang/String;
+    if-nez v8, :cond_71
 
+    .line 1701
     .line 1702
+    iget v0, v12, Lxm0;->b:I
+
     .line 1703
     .line 1704
-    move-result-object v0
+    invoke-virtual {v7, v0}, Ln61;->q(I)Ljava/lang/String;
 
     .line 1705
-    invoke-static {v5, v0}, Lw96;->K0(Ljava/lang/CharSequence;[Ljava/lang/String;)Ljava/util/List;
-
     .line 1706
     .line 1707
-    .line 1708
     move-result-object v0
 
-    .line 1709
-    invoke-static {v10, v0}, Lfu0;->H0(ILjava/util/List;)Ljava/lang/Object;
+    .line 1708
+    iget v1, v12, Lxm0;->c:I
 
+    .line 1709
     .line 1710
+    const/4 v8, 0x0
+
     .line 1711
+    invoke-virtual {v0, v8, v1}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
     .line 1712
+    .line 1713
+    .line 1714
     move-result-object v1
 
-    .line 1713
-    check-cast v1, Ljava/lang/String;
-
-    .line 1714
     .line 1715
-    if-eqz v1, :cond_51
+    iget v2, v12, Lxm0;->c:I
 
     .line 1716
     .line 1717
-    invoke-static {v1}, Lw96;->V0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-virtual {v0, v2}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     .line 1718
     .line 1719
     .line 1720
-    move-result-object v1
+    move-result-object v0
 
     .line 1721
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    iget-object v2, v3, Lsp6;->b:Lc6;
 
     .line 1722
     .line 1723
-    .line 1724
-    move-result-object v1
+    if-nez v2, :cond_51
 
+    .line 1724
     .line 1725
-    goto :goto_30
+    move-object/from16 v24, v4
 
     .line 1726
-    :cond_51
-    move-object v1, v15
-
     .line 1727
-    :goto_30
-    const-string v4, ""
+    const/4 v0, 0x0
 
     .line 1728
+    const/4 v1, 0x0
+
     .line 1729
-    if-nez v1, :cond_52
+    const/4 v9, 0x0
 
     .line 1730
-    .line 1731
-    move-object v1, v4
+    goto/16 :goto_32
 
+    .line 1731
     .line 1732
-    :cond_52
-    invoke-static {v1}, Lw96;->v0(Ljava/lang/CharSequence;)Z
+    :cond_51
+    iget-object v2, v2, Lc6;->k:Ljava/lang/Object;
 
     .line 1733
     .line 1734
-    .line 1735
-    move-result v5
+    check-cast v2, Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentationRules;
 
+    .line 1735
     .line 1736
-    if-eqz v5, :cond_53
+    invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     .line 1737
     .line 1738
-    move-object v1, v2
-
     .line 1739
-    :cond_53
-    invoke-static {v13, v0}, Lfu0;->H0(ILjava/util/List;)Ljava/lang/Object;
+    move-result v8
 
     .line 1740
+    invoke-static {v8, v1}, Lj23;->y(ILjava/lang/String;)Ljava/lang/String;
+
     .line 1741
     .line 1742
-    move-result-object v5
-
     .line 1743
-    check-cast v5, Ljava/lang/String;
+    move-result-object v8
 
     .line 1744
+    iget v9, v12, Lxm0;->b:I
+
     .line 1745
-    if-eqz v5, :cond_54
-
     .line 1746
-    .line 1747
-    invoke-static {v5}, Lw96;->V0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    add-int/lit8 v12, v9, 0x1
 
+    .line 1747
     .line 1748
+    if-gtz v12, :cond_52
+
     .line 1749
     .line 1750
-    move-result-object v5
+    new-instance v1, Lrp6;
 
     .line 1751
-    invoke-virtual {v5}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
     .line 1752
+    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+
     .line 1753
     .line 1754
-    move-result-object v5
-
     .line 1755
-    goto :goto_31
+    iput-object v4, v1, Lrp6;->a:Ljava/lang/String;
 
     .line 1756
-    :cond_54
-    move-object v5, v15
-
     .line 1757
-    :goto_31
-    if-nez v5, :cond_55
+    const/4 v9, 0x0
 
     .line 1758
-    .line 1759
-    move-object v5, v4
+    iput-object v9, v1, Lrp6;->b:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
 
+    .line 1759
     .line 1760
-    :cond_55
-    invoke-static {v5}, Lw96;->v0(Ljava/lang/CharSequence;)Z
+    move-object/from16 v24, v4
 
     .line 1761
     .line 1762
-    .line 1763
-    move-result v6
+    goto/16 :goto_2e
 
+    .line 1763
     .line 1764
-    if-eqz v6, :cond_56
+    :cond_52
+    if-lez v12, :cond_56
 
     .line 1765
     .line 1766
-    move-object v5, v2
+    move v12, v9
 
     .line 1767
-    :cond_56
-    invoke-virtual {v5, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    :goto_1f
+    if-ltz v12, :cond_56
 
     .line 1768
     .line 1769
-    .line 1770
-    move-result v6
+    if-ne v12, v9, :cond_53
 
+    .line 1770
     .line 1771
-    if-nez v6, :cond_59
+    move-object v14, v1
 
     .line 1772
+    move-object/from16 v22, v14
+
     .line 1773
-    :goto_32
-    invoke-virtual {v5}, Ljava/lang/String;->length()I
-
     .line 1774
+    goto :goto_20
+
     .line 1775
+    :cond_53
+    invoke-virtual {v7, v12}, Ln61;->q(I)Ljava/lang/String;
+
     .line 1776
-    move-result v6
-
     .line 1777
-    if-ge v10, v6, :cond_58
-
     .line 1778
+    move-result-object v14
+
     .line 1779
-    invoke-virtual {v5, v10}, Ljava/lang/String;->charAt(I)C
+    move-object/from16 v22, v1
 
     .line 1780
     .line 1781
-    .line 1782
-    move-result v6
+    :goto_20
+    iget-object v1, v2, Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentationRules;->unIndentedLinePattern:Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
+    .line 1782
     .line 1783
-    int-to-char v6, v6
+    if-eqz v1, :cond_54
 
     .line 1784
-    int-to-char v6, v6
-
     .line 1785
-    invoke-static {v6}, Ljava/lang/Character;->isDigit(C)Z
+    invoke-virtual {v1, v14}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;->matchesFully(Ljava/lang/String;)Z
 
     .line 1786
     .line 1787
     .line 1788
-    move-result v6
+    move-result v1
 
     .line 1789
-    if-nez v6, :cond_57
+    if-eqz v1, :cond_54
 
     .line 1790
     .line 1791
-    goto :goto_33
+    goto :goto_21
 
     .line 1792
-    :cond_57
-    add-int/lit8 v10, v10, 0x1
+    :cond_54
+    invoke-virtual {v14}, Ljava/lang/String;->isEmpty()Z
 
     .line 1793
     .line 1794
-    goto :goto_32
-
     .line 1795
-    :cond_58
-    const v6, 0x7f0f0183
+    move-result v1
 
     .line 1796
+    if-eqz v1, :cond_55
+
     .line 1797
     .line 1798
-    filled-new-array {v5}, [Ljava/lang/Object;
+    :goto_21
+    add-int/lit8 v12, v12, -0x1
 
     .line 1799
     .line 1800
-    .line 1801
-    move-result-object v5
+    move-object/from16 v1, v22
 
+    .line 1801
     .line 1802
-    invoke-static {v6, v5}, Lu67;->q(I[Ljava/lang/Object;)Ljava/lang/String;
+    goto :goto_1f
 
     .line 1803
+    :cond_55
+    :goto_22
+    const/4 v1, -0x1
+
     .line 1804
+    goto :goto_23
+
     .line 1805
-    move-result-object v5
+    :cond_56
+    move-object/from16 v22, v1
 
     .line 1806
-    :cond_59
-    :goto_33
-    invoke-static {v14, v0}, Lfu0;->H0(ILjava/util/List;)Ljava/lang/Object;
-
     .line 1807
+    const/4 v12, -0x1
+
     .line 1808
+    goto :goto_22
+
     .line 1809
-    move-result-object v0
+    :goto_23
+    if-gt v12, v1, :cond_57
 
     .line 1810
-    check-cast v0, Ljava/lang/String;
-
     .line 1811
-    .line 1812
-    if-eqz v0, :cond_5a
+    move-object/from16 v24, v4
 
+    .line 1812
     .line 1813
+    const/4 v1, 0x0
+
     .line 1814
-    invoke-static {v0}, Lw96;->V0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    const/4 v9, 0x0
 
     .line 1815
+    goto/16 :goto_2e
+
     .line 1816
     .line 1817
-    move-result-object v0
+    :cond_57
+    if-ne v12, v9, :cond_58
 
     .line 1818
-    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
     .line 1819
+    move-object/from16 v14, v22
+
     .line 1820
     .line 1821
-    move-result-object v0
+    goto :goto_24
 
     .line 1822
-    goto :goto_34
+    :cond_58
+    invoke-virtual {v7, v12}, Ln61;->q(I)Ljava/lang/String;
 
     .line 1823
-    :cond_5a
-    move-object v0, v15
-
     .line 1824
-    :goto_34
-    if-nez v0, :cond_5b
-
     .line 1825
+    move-result-object v14
+
     .line 1826
-    goto :goto_35
+    :goto_24
+    iget-object v1, v2, Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentationRules;->increaseIndentPattern:Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
     .line 1827
-    :cond_5b
-    move-object v4, v0
-
     .line 1828
-    :goto_35
-    invoke-static {v4}, Lw96;->v0(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v1, v14}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;->matchesFully(Ljava/lang/String;)Z
 
     .line 1829
     .line 1830
     .line 1831
-    move-result v0
+    move-result v1
 
     .line 1832
-    if-eqz v0, :cond_5c
+    if-nez v1, :cond_59
 
     .line 1833
     .line 1834
-    goto :goto_36
+    iget-object v1, v2, Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentationRules;->indentNextLinePattern:Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
     .line 1835
-    :cond_5c
-    move-object v2, v4
-
     .line 1836
-    :goto_36
-    new-instance v0, Lli2;
+    if-eqz v1, :cond_5a
 
     .line 1837
     .line 1838
-    invoke-direct {v0, v3, v1, v2, v5}, Lli2;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1, v14}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;->matchesFully(Ljava/lang/String;)Z
 
     .line 1839
     .line 1840
     .line 1841
-    new-instance v12, Lki2;
+    move-result v1
 
     .line 1842
-    .line 1843
-    invoke-direct {v12, v0, v15, v13}, Lki2;-><init>(Lli2;Ljava/lang/String;I)V
+    if-eqz v1, :cond_5a
 
+    .line 1843
     .line 1844
+    :cond_59
+    move-object/from16 v24, v4
+
     .line 1845
     .line 1846
-    :goto_37
-    return-object v12
+    const/4 v9, 0x0
 
     .line 1847
-    :pswitch_8
-    iget-object v1, v0, Lqt0;->m:Ljava/lang/Object;
+    goto/16 :goto_2d
 
     .line 1848
     .line 1849
-    check-cast v1, Li02;
+    :cond_5a
+    iget-object v1, v2, Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentationRules;->decreaseIndentPattern:Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
     .line 1850
     .line 1851
-    iget-object v2, v0, Lqt0;->n:Ljava/lang/Object;
+    invoke-virtual {v1, v14}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;->matchesFully(Ljava/lang/String;)Z
 
     .line 1852
     .line 1853
-    check-cast v2, Ll86;
-
     .line 1854
+    move-result v1
+
     .line 1855
-    iget-byte v5, v0, Lqt0;->k:B
+    if-eqz v1, :cond_5b
 
     .line 1856
     .line 1857
-    if-eqz v5, :cond_60
+    new-instance v1, Lrp6;
 
     .line 1858
     .line 1859
-    if-eq v5, v14, :cond_5f
+    invoke-virtual {v14}, Ljava/lang/String;->length()I
 
     .line 1860
     .line 1861
-    if-eq v5, v13, :cond_5e
-
     .line 1862
+    move-result v9
+
     .line 1863
-    if-eq v5, v8, :cond_5f
+    invoke-static {v9, v14}, Lj23;->y(ILjava/lang/String;)Ljava/lang/String;
 
     .line 1864
     .line 1865
-    if-ne v5, v4, :cond_5d
-
     .line 1866
+    move-result-object v9
+
     .line 1867
-    goto :goto_38
+    const/4 v14, 0x0
 
     .line 1868
-    :cond_5d
-    invoke-static {v11}, Lmv1;->e(Ljava/lang/String;)V
+    invoke-direct {v1, v9, v14}, Lrp6;-><init>(Ljava/lang/String;Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;)V
 
     .line 1869
     .line 1870
     .line 1871
-    move-object v9, v15
+    :goto_25
+    move-object/from16 v24, v4
 
     .line 1872
-    goto/16 :goto_3b
-
     .line 1873
+    :goto_26
+    move-object v9, v14
+
     .line 1874
-    :cond_5e
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
+    goto/16 :goto_2e
 
     .line 1875
     .line 1876
+    :cond_5b
+    const/4 v14, 0x0
+
     .line 1877
-    goto :goto_39
+    if-nez v12, :cond_5d
 
     .line 1878
-    :cond_5f
-    :goto_38
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-
     .line 1879
+    new-instance v1, Lrp6;
+
     .line 1880
     .line 1881
-    goto/16 :goto_3b
+    if-ne v12, v9, :cond_5c
 
     .line 1882
     .line 1883
-    :cond_60
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
+    move-object/from16 v9, v22
 
     .line 1884
     .line 1885
+    goto :goto_27
+
     .line 1886
-    iget-object v5, v0, Lqt0;->l:Ljava/lang/Object;
+    :cond_5c
+    invoke-virtual {v7, v12}, Ln61;->q(I)Ljava/lang/String;
 
     .line 1887
     .line 1888
-    check-cast v5, Lg86;
-
     .line 1889
+    move-result-object v9
+
     .line 1890
-    sget-object v6, Lgz5;->a:Lr25;
+    :goto_27
+    invoke-virtual {v9}, Ljava/lang/String;->length()I
 
     .line 1891
     .line 1892
-    if-ne v5, v6, :cond_61
-
     .line 1893
+    move-result v12
+
     .line 1894
-    iput-byte v14, v0, Lqt0;->k:B
+    invoke-static {v12, v9}, Lj23;->y(ILjava/lang/String;)Ljava/lang/String;
 
     .line 1895
     .line 1896
-    invoke-interface {v1, v2, v0}, Li02;->a(Lj02;Lc81;)Ljava/lang/Object;
-
     .line 1897
+    move-result-object v9
+
     .line 1898
+    invoke-direct {v1, v9, v14}, Lrp6;-><init>(Ljava/lang/String;Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;)V
+
     .line 1899
-    move-result-object v0
-
     .line 1900
-    if-ne v0, v12, :cond_64
-
     .line 1901
+    goto :goto_25
+
     .line 1902
-    goto :goto_3a
+    :cond_5d
+    add-int/lit8 v1, v12, -0x1
 
     .line 1903
-    :cond_61
-    sget-object v6, Lgz5;->b:Lr25;
-
     .line 1904
-    .line 1905
-    const/4 v7, 0x0
+    if-ne v1, v9, :cond_5e
 
+    .line 1905
     .line 1906
-    if-ne v5, v6, :cond_63
+    move-object/from16 v1, v22
 
     .line 1907
     .line 1908
-    invoke-virtual {v2}, Ll4;->j()Lbc6;
+    goto :goto_28
 
     .line 1909
+    :cond_5e
+    invoke-virtual {v7, v1}, Ln61;->q(I)Ljava/lang/String;
+
     .line 1910
     .line 1911
-    move-result-object v3
-
     .line 1912
-    new-instance v4, Lf12;
+    move-result-object v1
 
     .line 1913
-    .line 1914
-    invoke-direct {v4, v13, v7}, Lie6;-><init>(ILc81;)V
+    :goto_28
+    iget-object v14, v2, Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentationRules;->increaseIndentPattern:Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
+    .line 1914
     .line 1915
+    invoke-virtual {v14, v1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;->matchesFully(Ljava/lang/String;)Z
+
     .line 1916
     .line 1917
-    iput-byte v13, v0, Lqt0;->k:B
-
     .line 1918
+    move-result v14
+
     .line 1919
-    invoke-static {v3, v4, v0}, Lfm0;->w(Li02;Lv52;Ld81;)Ljava/lang/Object;
+    move-object/from16 v24, v4
 
     .line 1920
     .line 1921
-    .line 1922
-    move-result-object v3
+    iget-object v4, v2, Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentationRules;->decreaseIndentPattern:Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
+    .line 1922
     .line 1923
-    if-ne v3, v12, :cond_62
+    invoke-virtual {v4, v1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;->matchesFully(Ljava/lang/String;)Z
 
     .line 1924
     .line 1925
-    goto :goto_3a
-
     .line 1926
-    :cond_62
-    :goto_39
-    iput-byte v8, v0, Lqt0;->k:B
+    move-result v4
 
     .line 1927
-    .line 1928
-    invoke-interface {v1, v2, v0}, Li02;->a(Lj02;Lc81;)Ljava/lang/Object;
+    if-eqz v4, :cond_5f
 
+    .line 1928
     .line 1929
+    add-int/lit8 v14, v14, 0x2
+
     .line 1930
     .line 1931
-    move-result-object v0
+    :cond_5f
+    iget-object v4, v2, Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentationRules;->indentNextLinePattern:Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
     .line 1932
-    if-ne v0, v12, :cond_64
-
     .line 1933
-    .line 1934
-    goto :goto_3a
+    if-eqz v4, :cond_60
 
+    .line 1934
     .line 1935
-    :cond_63
-    invoke-virtual {v2}, Ll4;->j()Lbc6;
+    invoke-virtual {v4, v1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;->matchesFully(Ljava/lang/String;)Z
 
     .line 1936
     .line 1937
     .line 1938
-    move-result-object v17
+    move-result v4
 
     .line 1939
-    new-instance v6, Lf86;
+    if-eqz v4, :cond_60
 
     .line 1940
     .line 1941
-    invoke-direct {v6, v5, v7}, Lf86;-><init>(Lg86;Lc81;)V
+    add-int/lit8 v14, v14, 0x4
 
     .line 1942
     .line 1943
+    :cond_60
+    iget-object v4, v2, Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentationRules;->unIndentedLinePattern:Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
+
     .line 1944
-    sget v5, Lb12;->a:I
-
     .line 1945
+    if-eqz v4, :cond_61
+
     .line 1946
-    new-instance v15, Lrm0;
-
     .line 1947
-    .line 1948
-    const/16 v19, -0x2
+    invoke-virtual {v4, v1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;->matchesFully(Ljava/lang/String;)Z
 
+    .line 1948
     .line 1949
     .line 1950
-    sget-object v20, Lnd0;->j:Lnd0;
+    move-result v1
 
     .line 1951
+    if-eqz v1, :cond_61
+
     .line 1952
-    sget-object v18, Lot1;->j:Lot1;
-
     .line 1953
+    add-int/lit8 v14, v14, 0x8
+
     .line 1954
-    move-object/from16 v16, v6
-
     .line 1955
-    .line 1956
-    invoke-direct/range {v15 .. v20}, Lrm0;-><init>(Lw52;Li02;Lwa1;ILnd0;)V
+    :cond_61
+    and-int/lit8 v1, v14, 0x3
 
+    .line 1956
     .line 1957
+    if-nez v1, :cond_66
+
     .line 1958
     .line 1959
-    new-instance v5, Lye0;
+    and-int/lit8 v1, v14, 0x4
 
     .line 1960
     .line 1961
-    invoke-direct {v5, v13, v7, v3}, Lye0;-><init>(ILc81;B)V
+    if-nez v1, :cond_66
 
     .line 1962
     .line 1963
+    if-lez v14, :cond_66
+
     .line 1964
-    new-instance v3, Lt02;
-
     .line 1965
-    .line 1966
-    invoke-direct {v3, v15, v5, v14}, Lt02;-><init>(Li02;Ljava/lang/Object;B)V
+    add-int/lit8 v12, v12, -0x2
 
+    .line 1966
     .line 1967
+    :goto_29
+    if-lez v12, :cond_63
+
     .line 1968
     .line 1969
-    invoke-static {v3}, Los2;->j0(Li02;)Li02;
+    if-ne v12, v9, :cond_62
 
     .line 1970
     .line 1971
-    .line 1972
-    move-result-object v3
+    move-object/from16 v1, v22
 
+    .line 1972
     .line 1973
-    invoke-static {v3}, Los2;->j0(Li02;)Li02;
+    goto :goto_2a
 
     .line 1974
+    :cond_62
+    invoke-virtual {v7, v12}, Ln61;->q(I)Ljava/lang/String;
+
     .line 1975
     .line 1976
-    move-result-object v3
-
     .line 1977
-    new-instance v16, Lu3;
+    move-result-object v1
 
     .line 1978
+    :goto_2a
+    iget-object v4, v2, Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentationRules;->indentNextLinePattern:Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
+
     .line 1979
-    iget-object v5, v0, Lqt0;->o:Ljava/lang/Object;
-
     .line 1980
+    if-eqz v4, :cond_64
+
     .line 1981
-    move-object/from16 v19, v5
-
     .line 1982
-    .line 1983
-    check-cast v19, Ljava/lang/Float;
+    invoke-virtual {v4, v1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;->matchesFully(Ljava/lang/String;)Z
 
+    .line 1983
     .line 1984
     .line 1985
-    const/16 v21, 0xe
+    move-result v1
 
     .line 1986
+    if-eqz v1, :cond_64
+
     .line 1987
-    move-object/from16 v17, v1
-
     .line 1988
-    .line 1989
-    move-object/from16 v18, v2
+    add-int/lit8 v12, v12, -0x1
 
+    .line 1989
     .line 1990
+    goto :goto_29
+
     .line 1991
-    move-object/from16 v20, v7
+    :cond_63
+    const/4 v12, 0x0
 
     .line 1992
-    .line 1993
-    invoke-direct/range {v16 .. v21}, Lu3;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lc81;B)V
+    :cond_64
+    new-instance v1, Lrp6;
 
+    .line 1993
     .line 1994
+    const/16 v20, 0x1
+
     .line 1995
     .line 1996
-    move-object/from16 v1, v16
+    add-int/lit8 v12, v12, 0x1
 
     .line 1997
     .line 1998
-    iput-byte v4, v0, Lqt0;->k:B
+    if-ne v12, v9, :cond_65
 
     .line 1999
     .line 2000
-    invoke-static {v3, v1, v0}, Lcd7;->n(Li02;Lv52;Lie6;)Ljava/lang/Object;
+    move-object/from16 v4, v22
 
     .line 2001
     .line 2002
+    goto :goto_2b
+
     .line 2003
-    move-result-object v0
+    :cond_65
+    invoke-virtual {v7, v12}, Ln61;->q(I)Ljava/lang/String;
 
     .line 2004
-    if-ne v0, v12, :cond_64
-
     .line 2005
     .line 2006
-    :goto_3a
-    move-object v9, v12
+    move-result-object v4
 
     .line 2007
-    :cond_64
-    :goto_3b
-    return-object v9
+    :goto_2b
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
     .line 2008
-    :pswitch_9
-    iget-object v1, v0, Lqt0;->o:Ljava/lang/Object;
-
     .line 2009
     .line 2010
-    check-cast v1, Lkm1;
+    move-result v9
 
     .line 2011
-    .line 2012
-    iget-byte v5, v0, Lqt0;->k:B
+    invoke-static {v9, v4}, Lj23;->y(ILjava/lang/String;)Ljava/lang/String;
 
+    .line 2012
     .line 2013
     .line 2014
-    packed-switch v5, :pswitch_data_1
+    move-result-object v4
 
     .line 2015
-    .line 2016
-    .line 2017
-    invoke-static {v11}, Lmv1;->e(Ljava/lang/String;)V
+    const/4 v14, 0x0
 
+    .line 2016
+    invoke-direct {v1, v4, v14}, Lrp6;-><init>(Ljava/lang/String;Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;)V
+
+    .line 2017
     .line 2018
     .line 2019
-    .line 2020
-    move-object v9, v15
+    goto/16 :goto_26
 
+    .line 2020
     .line 2021
-    goto/16 :goto_45
+    :cond_66
+    new-instance v1, Lrp6;
 
     .line 2022
     .line 2023
-    :pswitch_a
-    iget-object v5, v0, Lqt0;->n:Ljava/lang/Object;
+    if-ne v12, v9, :cond_67
 
     .line 2024
     .line 2025
-    check-cast v5, Lfb1;
+    move-object/from16 v4, v22
 
     .line 2026
     .line 2027
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
+    goto :goto_2c
 
     .line 2028
+    :cond_67
+    invoke-virtual {v7, v12}, Ln61;->q(I)Ljava/lang/String;
+
     .line 2029
     .line 2030
-    goto :goto_3d
-
     .line 2031
-    :pswitch_b
-    iget-object v5, v0, Lqt0;->n:Ljava/lang/Object;
+    move-result-object v4
 
     .line 2032
-    .line 2033
-    check-cast v5, Lfb1;
+    :goto_2c
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
 
+    .line 2033
     .line 2034
     .line 2035
-    :goto_3c
-    :try_start_b
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-    :try_end_b
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_b .. :try_end_b} :catch_2
+    move-result v9
 
     .line 2036
+    invoke-static {v9, v4}, Lj23;->y(ILjava/lang/String;)Ljava/lang/String;
+
     .line 2037
     .line 2038
-    goto :goto_3d
-
     .line 2039
-    :pswitch_c
-    iget-object v5, v0, Lqt0;->n:Ljava/lang/Object;
+    move-result-object v4
 
     .line 2040
+    const/4 v9, 0x0
+
     .line 2041
-    check-cast v5, Lfb1;
+    invoke-direct {v1, v4, v9}, Lrp6;-><init>(Ljava/lang/String;Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;)V
 
     .line 2042
     .line 2043
-    goto :goto_3c
-
     .line 2044
-    :pswitch_d
-    iget-object v5, v0, Lqt0;->l:Ljava/lang/Object;
+    goto :goto_2e
 
     .line 2045
+    :goto_2d
+    new-instance v1, Lrp6;
+
     .line 2046
-    check-cast v5, Lc85;
-
     .line 2047
-    .line 2048
-    iget-object v6, v0, Lqt0;->n:Ljava/lang/Object;
+    invoke-virtual {v14}, Ljava/lang/String;->length()I
 
+    .line 2048
     .line 2049
     .line 2050
-    check-cast v6, Lfb1;
+    move-result v4
 
     .line 2051
-    .line 2052
-    :try_start_c
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-    :try_end_c
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_c .. :try_end_c} :catch_0
+    invoke-static {v4, v14}, Lj23;->y(ILjava/lang/String;)Ljava/lang/String;
 
+    .line 2052
     .line 2053
     .line 2054
+    move-result-object v4
+
     .line 2055
-    :cond_65
-    move-object v7, v6
+    sget-object v12, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->Indent:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
 
     .line 2056
-    goto/16 :goto_42
-
     .line 2057
+    invoke-direct {v1, v4, v12}, Lrp6;-><init>(Ljava/lang/String;Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;)V
+
     .line 2058
-    :catch_0
-    move-object v5, v6
-
     .line 2059
-    goto/16 :goto_43
-
     .line 2060
+    :goto_2e
+    if-nez v1, :cond_68
+
     .line 2061
-    :pswitch_e
-    iget-object v5, v0, Lqt0;->l:Ljava/lang/Object;
-
     .line 2062
+    new-instance v1, Landroid/util/Pair;
+
     .line 2063
-    check-cast v5, Lc85;
-
     .line 2064
-    .line 2065
-    iget-object v6, v0, Lqt0;->n:Ljava/lang/Object;
+    invoke-direct {v1, v8, v8}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
+    .line 2065
     .line 2066
     .line 2067
-    check-cast v6, Lfb1;
+    move-object v0, v1
 
     .line 2068
+    const/4 v1, 0x0
+
     .line 2069
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
+    goto/16 :goto_32
 
     .line 2070
     .line 2071
+    :cond_68
+    iget-object v4, v1, Lrp6;->a:Ljava/lang/String;
+
     .line 2072
-    goto/16 :goto_41
-
     .line 2073
+    iget-object v12, v3, Lsp6;->c:Lpp6;
+
     .line 2074
-    :pswitch_f
-    iget-object v5, v0, Lqt0;->m:Ljava/lang/Object;
-
     .line 2075
+    iget-boolean v14, v12, Lpp6;->c:Z
+
     .line 2076
-    check-cast v5, Lc85;
-
     .line 2077
-    .line 2078
-    iget-object v6, v0, Lqt0;->l:Ljava/lang/Object;
+    if-eqz v14, :cond_69
 
+    .line 2078
     .line 2079
+    goto :goto_30
+
     .line 2080
-    check-cast v6, Lc85;
+    :cond_69
+    iget v12, v12, Lpp6;->b:I
 
     .line 2081
     .line 2082
-    iget-object v7, v0, Lqt0;->n:Ljava/lang/Object;
+    if-ltz v12, :cond_70
 
     .line 2083
     .line 2084
-    check-cast v7, Lfb1;
+    if-eqz v12, :cond_6d
 
     .line 2085
     .line 2086
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
+    const/4 v15, 0x1
 
     .line 2087
+    if-ne v12, v15, :cond_6a
+
     .line 2088
     .line 2089
-    move-object v10, v7
+    move-object v15, v10
 
     .line 2090
-    move-object v7, v6
+    goto :goto_30
 
     .line 2091
-    move-object/from16 v6, p1
+    :cond_6a
+    div-int v14, v17, v12
 
     .line 2092
     .line 2093
-    goto :goto_3f
+    if-gt v15, v14, :cond_6c
 
     .line 2094
-    :pswitch_10
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-
     .line 2095
+    new-instance v14, Ljava/lang/StringBuilder;
+
     .line 2096
     .line 2097
-    iget-object v5, v0, Lqt0;->n:Ljava/lang/Object;
+    invoke-direct {v14, v12}, Ljava/lang/StringBuilder;-><init>(I)V
 
     .line 2098
     .line 2099
-    check-cast v5, Lfb1;
-
     .line 2100
+    const/4 v15, 0x0
+
     .line 2101
-    :cond_66
-    :goto_3d
-    move-object v7, v5
+    :goto_2f
+    if-ge v15, v12, :cond_6b
 
     .line 2102
-    :cond_67
-    :goto_3e
-    invoke-static {v7}, Lr67;->O(Lfb1;)Z
-
     .line 2103
+    invoke-virtual {v14, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 2104
     .line 2105
-    move-result v5
-
     .line 2106
-    if-eqz v5, :cond_6d
+    add-int/lit8 v15, v15, 0x1
 
     .line 2107
     .line 2108
-    new-instance v5, Lc85;
+    goto :goto_2f
 
     .line 2109
-    .line 2110
-    invoke-direct {v5}, Ljava/lang/Object;-><init>()V
+    :cond_6b
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    .line 2110
     .line 2111
     .line 2112
+    move-result-object v12
+
     .line 2113
-    iget-object v6, v1, Lkm1;->D:Lsd0;
+    move-object v15, v12
 
     .line 2114
+    goto :goto_30
+
     .line 2115
-    if-eqz v6, :cond_69
+    :cond_6c
+    new-instance v0, Ljava/lang/OutOfMemoryError;
 
     .line 2116
     .line 2117
-    iput-object v7, v0, Lqt0;->n:Ljava/lang/Object;
+    const-string v1, "Repeating 1 bytes String "
 
     .line 2118
     .line 2119
-    iput-object v5, v0, Lqt0;->l:Ljava/lang/Object;
+    const-string v2, " times will produce a String exceeding maximum size."
 
     .line 2120
     .line 2121
-    iput-object v5, v0, Lqt0;->m:Ljava/lang/Object;
+    invoke-static {v12, v1, v2}, Lpb1;->m(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 2122
     .line 2123
-    iput-byte v14, v0, Lqt0;->k:B
-
     .line 2124
+    move-result-object v1
+
     .line 2125
-    invoke-virtual {v6, v0}, Lsd0;->o(Lc81;)Ljava/lang/Object;
+    invoke-direct {v0, v1}, Ljava/lang/OutOfMemoryError;-><init>(Ljava/lang/String;)V
 
     .line 2126
     .line 2127
     .line 2128
-    move-result-object v6
+    throw v0
 
     .line 2129
-    if-ne v6, v12, :cond_68
+    :cond_6d
+    move-object/from16 v15, v24
 
     .line 2130
     .line 2131
-    goto/16 :goto_44
+    :goto_30
+    iget-object v1, v1, Lrp6;->b:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
 
     .line 2132
     .line 2133
-    :cond_68
-    move-object v10, v7
+    sget-object v12, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->Indent:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
 
     .line 2134
-    move-object v7, v5
-
     .line 2135
-    :goto_3f
-    check-cast v6, Lxl1;
+    if-ne v1, v12, :cond_6e
 
     .line 2136
     .line 2137
-    goto :goto_40
+    invoke-virtual {v8, v15}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     .line 2138
-    :cond_69
-    move-object v10, v7
-
     .line 2139
-    move-object v6, v15
-
     .line 2140
-    move-object v7, v5
+    move-result-object v4
 
     .line 2141
-    :goto_40
-    iput-object v6, v5, Lc85;->j:Ljava/lang/Object;
+    :cond_6e
+    iget-object v1, v2, Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentationRules;->decreaseIndentPattern:Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
     .line 2142
     .line 2143
-    iget-object v5, v7, Lc85;->j:Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;->matchesFully(Ljava/lang/String;)Z
 
     .line 2144
     .line 2145
-    instance-of v6, v5, Lvl1;
-
     .line 2146
+    move-result v0
+
     .line 2147
-    if-eqz v6, :cond_6c
+    if-eqz v0, :cond_6f
 
     .line 2148
     .line 2149
-    check-cast v5, Lvl1;
+    invoke-virtual {v8}, Ljava/lang/String;->length()I
 
     .line 2150
     .line 2151
-    iput-object v10, v0, Lqt0;->n:Ljava/lang/Object;
-
     .line 2152
+    move-result v0
+
     .line 2153
-    iput-object v7, v0, Lqt0;->l:Ljava/lang/Object;
+    const/16 v20, 0x1
 
     .line 2154
     .line 2155
-    iput-object v15, v0, Lqt0;->m:Ljava/lang/Object;
+    add-int/lit8 v0, v0, -0x1
 
     .line 2156
     .line 2157
-    iput-byte v13, v0, Lqt0;->k:B
+    const/4 v1, 0x0
 
     .line 2158
-    .line 2159
-    invoke-virtual {v1, v5, v0}, Lkm1;->Q1(Lvl1;Ld81;)Ljava/lang/Object;
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
 
+    .line 2159
     .line 2160
     .line 2161
+    move-result v0
+
     .line 2162
-    move-result-object v5
+    invoke-virtual {v8}, Ljava/lang/String;->length()I
 
     .line 2163
-    if-ne v5, v12, :cond_6a
-
     .line 2164
     .line 2165
-    goto :goto_44
+    move-result v2
 
     .line 2166
-    :cond_6a
-    move-object v5, v7
+    invoke-virtual {v15}, Ljava/lang/String;->length()I
 
     .line 2167
-    move-object v6, v10
-
     .line 2168
-    :goto_41
-    :try_start_d
-    new-instance v7, Lu3;
-
     .line 2169
+    move-result v4
+
     .line 2170
-    invoke-direct {v7, v5, v1, v15, v2}, Lu3;-><init>(Ljava/lang/Object;Ljava/lang/Object;Lc81;B)V
+    sub-int/2addr v2, v4
 
     .line 2171
+    invoke-static {v0, v2}, Ljava/lang/Math;->max(II)I
+
     .line 2172
     .line 2173
-    iput-object v6, v0, Lqt0;->n:Ljava/lang/Object;
-
     .line 2174
+    move-result v0
+
     .line 2175
-    iput-object v5, v0, Lqt0;->l:Ljava/lang/Object;
+    invoke-virtual {v8, v1, v0}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     .line 2176
     .line 2177
-    iput-byte v8, v0, Lqt0;->k:B
-
     .line 2178
+    move-result-object v4
+
     .line 2179
-    invoke-virtual {v1, v7, v0}, Lkm1;->I1(Lu3;Lqt0;)Ljava/lang/Object;
+    goto :goto_31
 
     .line 2180
-    .line 2181
-    .line 2182
-    move-result-object v7
-    :try_end_d
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_d .. :try_end_d} :catch_0
+    :cond_6f
+    const/4 v1, 0x0
 
+    .line 2181
+    :goto_31
+    new-instance v0, Landroid/util/Pair;
+
+    .line 2182
     .line 2183
-    if-ne v7, v12, :cond_65
+    invoke-direct {v0, v8, v4}, Landroid/util/Pair;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 2184
     .line 2185
-    goto :goto_44
-
     .line 2186
-    :goto_42
-    :try_start_e
-    iget-object v5, v5, Lc85;->j:Ljava/lang/Object;
+    :goto_32
+    iput-object v0, v3, Lsp6;->e:Landroid/util/Pair;
 
     .line 2187
     .line 2188
-    instance-of v6, v5, Lwl1;
+    goto :goto_33
 
     .line 2189
+    :cond_70
+    const/4 v1, 0x0
+
     .line 2190
-    if-eqz v6, :cond_6b
+    const-string v0, "count is negative: "
 
     .line 2191
     .line 2192
-    check-cast v5, Lwl1;
+    invoke-static {v12, v0}, Lqq5;->k(ILjava/lang/String;)Ljava/lang/String;
 
     .line 2193
     .line 2194
-    iput-object v7, v0, Lqt0;->n:Ljava/lang/Object;
-
     .line 2195
+    move-result-object v0
+
     .line 2196
-    iput-object v15, v0, Lqt0;->l:Ljava/lang/Object;
+    invoke-static {v0}, Ljv1;->h(Ljava/lang/String;)V
 
     .line 2197
     .line 2198
-    iput-byte v4, v0, Lqt0;->k:B
-
     .line 2199
+    return v1
+
     .line 2200
-    invoke-virtual {v1, v5, v0}, Lkm1;->R1(Lwl1;Ld81;)Ljava/lang/Object;
+    :cond_71
+    move-object/from16 v24, v4
 
     .line 2201
     .line 2202
+    const/4 v9, 0x0
+
     .line 2203
-    move-result-object v5
+    :goto_33
+    iget-object v0, v3, Lsp6;->d:Lorg/eclipse/tm4e/languageconfiguration/internal/model/CompleteEnterAction;
 
     .line 2204
-    if-ne v5, v12, :cond_67
-
     .line 2205
-    .line 2206
-    goto :goto_44
+    if-nez v0, :cond_72
 
+    .line 2206
     .line 2207
-    :catch_1
-    move-object v5, v7
+    iget-object v0, v3, Lsp6;->e:Landroid/util/Pair;
 
     .line 2208
-    goto :goto_43
-
     .line 2209
-    :cond_6b
-    instance-of v5, v5, Ltl1;
+    if-eqz v0, :cond_75
 
     .line 2210
     .line 2211
-    if-eqz v5, :cond_67
+    :cond_72
+    :try_start_1
+    iget-object v0, v5, Lwb1;->c:Lxm0;
 
     .line 2212
     .line 2213
-    iput-object v7, v0, Lqt0;->n:Ljava/lang/Object;
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
 
     .line 2214
     .line 2215
-    iput-object v15, v0, Lqt0;->l:Ljava/lang/Object;
-
     .line 2216
+    invoke-virtual {v6}, Lqt0;->getStyles()Lub6;
+
     .line 2217
-    const/4 v5, 0x5
-
     .line 2218
-    iput-byte v5, v0, Lqt0;->k:B
-
     .line 2219
-    .line 2220
-    invoke-virtual {v1, v0}, Lkm1;->P1(Ld81;)Ljava/lang/Object;
+    invoke-virtual {v6}, Lqt0;->getTabWidth()I
 
+    .line 2220
     .line 2221
     .line 2222
-    .line 2223
-    move-result-object v5
-    :try_end_e
-    .catch Ljava/util/concurrent/CancellationException; {:try_start_e .. :try_end_e} :catch_1
+    check-cast v16, Lsp6;
 
+    .line 2223
     .line 2224
-    if-ne v5, v12, :cond_67
+    invoke-virtual/range {v16 .. v16}, Lsp6;->a()Lw54;
 
     .line 2225
     .line 2226
-    goto :goto_44
-
     .line 2227
-    :catch_2
-    :goto_43
-    iput-object v5, v0, Lqt0;->n:Ljava/lang/Object;
+    move-result-object v0
 
     .line 2228
-    .line 2229
-    iput-object v15, v0, Lqt0;->l:Ljava/lang/Object;
+    iget-object v1, v0, Lw54;->a:Ljava/lang/String;
 
+    .line 2229
     .line 2230
+    const/4 v3, 0x0
+
     .line 2231
-    iput-byte v3, v0, Lqt0;->k:B
+    invoke-virtual {v6, v1, v3}, Lqt0;->v(Ljava/lang/CharSequence;Z)V
 
     .line 2232
     .line 2233
-    invoke-virtual {v1, v0}, Lkm1;->P1(Ld81;)Ljava/lang/Object;
-
     .line 2234
+    iget v0, v0, Lw54;->b:I
+
     .line 2235
     .line 2236
-    move-result-object v6
+    if-eqz v0, :cond_73
 
     .line 2237
-    if-ne v6, v12, :cond_66
-
     .line 2238
-    .line 2239
-    :goto_44
-    move-object v9, v12
+    iget-object v1, v5, Lwb1;->c:Lxm0;
 
+    .line 2239
     .line 2240
-    goto :goto_45
+    iget v1, v1, Lxm0;->a:I
 
     .line 2241
-    :cond_6c
-    move-object v7, v10
-
     .line 2242
-    goto/16 :goto_3e
+    sub-int/2addr v1, v0
 
     .line 2243
+    invoke-static {v1, v3}, Ljava/lang/Math;->max(II)I
+
     .line 2244
-    :cond_6d
-    :goto_45
-    return-object v9
-
     .line 2245
-    :pswitch_11
-    iget-byte v1, v0, Lqt0;->k:B
-
     .line 2246
+    move-result v0
+
     .line 2247
-    if-eqz v1, :cond_71
+    iget-object v1, v5, Lwb1;->b:Lug0;
 
     .line 2248
     .line 2249
-    if-eq v1, v14, :cond_70
+    invoke-virtual {v1, v0}, Lug0;->A(I)Lxm0;
 
     .line 2250
     .line 2251
-    if-eq v1, v13, :cond_6f
-
     .line 2252
+    move-result-object v0
+
     .line 2253
-    if-ne v1, v8, :cond_6e
+    iget v1, v0, Lxm0;->b:I
 
     .line 2254
     .line 2255
-    iget-object v0, v0, Lqt0;->l:Ljava/lang/Object;
+    iget v0, v0, Lxm0;->c:I
 
     .line 2256
     .line 2257
-    check-cast v0, Ljava/util/List;
+    invoke-virtual {v6, v1, v0}, Lqt0;->l0(II)V
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 2258
     .line 2259
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
-
     .line 2260
+    goto :goto_34
+
     .line 2261
+    :catch_1
+    move-exception v0
+
     .line 2262
-    move-object v1, v0
+    goto :goto_35
 
     .line 2263
-    move-object/from16 v0, p1
+    :cond_73
+    :goto_34
+    const/4 v15, 0x1
 
     .line 2264
+    goto :goto_38
+
     .line 2265
-    goto/16 :goto_4a
+    :goto_35
+    const-string v1, "EditorKeyEventHandler"
 
     .line 2266
     .line 2267
-    :cond_6e
-    invoke-static {v11}, Lmv1;->e(Ljava/lang/String;)V
+    const-string v2, "Error occurred while calling Language\'s NewlineHandler"
 
     .line 2268
     .line 2269
+    invoke-static {v1, v2, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
     .line 2270
-    move-object v12, v15
-
     .line 2271
-    goto/16 :goto_4b
-
     .line 2272
+    const/4 v15, 0x1
+
     .line 2273
-    :cond_6f
-    iget-object v1, v0, Lqt0;->n:Ljava/lang/Object;
+    goto :goto_36
 
     .line 2274
+    :cond_74
+    move-object/from16 v24, v4
+
     .line 2275
-    check-cast v1, Ljava/util/Collection;
-
     .line 2276
+    move-object/from16 v18, v8
+
     .line 2277
-    check-cast v1, Ljava/util/Collection;
-
     .line 2278
+    move/from16 v21, v9
+
     .line 2279
-    iget-object v2, v0, Lqt0;->o:Ljava/lang/Object;
-
     .line 2280
-    .line 2281
-    check-cast v2, Ljava/util/Iterator;
+    move/from16 v23, v14
 
+    .line 2281
     .line 2282
+    const/4 v9, 0x0
+
     .line 2283
-    iget-object v3, v0, Lqt0;->m:Ljava/lang/Object;
+    const/16 v19, 0x20
 
     .line 2284
     .line 2285
-    check-cast v3, Ljava/util/Collection;
+    :cond_75
+    add-int/lit8 v14, v23, 0x1
 
     .line 2286
     .line 2287
-    check-cast v3, Ljava/util/Collection;
+    move/from16 v1, p1
 
     .line 2288
     .line 2289
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
+    move-object/from16 v2, p2
 
     .line 2290
     .line 2291
-    .line 2292
-    move-object v4, v2
+    move-object/from16 v8, v18
 
+    .line 2292
     .line 2293
-    move-object v2, v3
+    move/from16 v9, v21
 
     .line 2294
-    move-object/from16 v3, p1
-
     .line 2295
-    .line 2296
-    goto/16 :goto_48
+    move-object/from16 v4, v24
 
+    .line 2296
     .line 2297
+    const/4 v12, -0x1
+
     .line 2298
-    :cond_70
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
+    const/4 v15, 0x1
 
     .line 2299
+    goto/16 :goto_18
+
     .line 2300
     .line 2301
-    move-object/from16 v1, p1
+    :cond_76
+    :goto_36
+    invoke-virtual {v6, v11, v15}, Lqt0;->v(Ljava/lang/CharSequence;Z)V
 
     .line 2302
     .line 2303
-    goto :goto_46
-
     .line 2304
-    :cond_71
-    invoke-static/range {p1 .. p1}, Lc33;->N(Ljava/lang/Object;)V
+    goto :goto_38
 
     .line 2305
+    :cond_77
+    :goto_37
+    invoke-virtual {v6, v11, v15}, Lqt0;->v(Ljava/lang/CharSequence;Z)V
+
     .line 2306
     .line 2307
-    iput-byte v14, v0, Lqt0;->k:B
-
     .line 2308
-    .line 2309
-    sget-object v1, Loj1;->a:Lsf1;
+    :goto_38
+    invoke-virtual {v6}, Lqt0;->Z()V
 
+    .line 2309
     .line 2310
     .line 2311
-    sget-object v1, Ljf1;->l:Ljf1;
+    :cond_78
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
 
     .line 2312
     .line 2313
-    new-instance v3, Lff;
-
     .line 2314
+    move-result v0
+
     .line 2315
-    const/4 v4, 0x7
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 2316
-    invoke-direct {v3, v13, v15, v4}, Lff;-><init>(ILc81;B)V
-
     .line 2317
     .line 2318
+    move-result-object v3
+
     .line 2319
-    invoke-static {v1, v3, v0}, Lf;->c0(Lwa1;Lv52;Lc81;)Ljava/lang/Object;
+    goto/16 :goto_3c
 
     .line 2320
     .line 2321
-    .line 2322
-    move-result-object v1
+    :cond_79
+    move/from16 v18, v3
 
+    .line 2322
     .line 2323
-    if-ne v1, v12, :cond_72
+    if-eqz v9, :cond_7a
 
     .line 2324
     .line 2325
-    goto/16 :goto_4b
+    if-nez v18, :cond_7a
 
     .line 2326
     .line 2327
-    :cond_72
-    :goto_46
-    check-cast v1, Lit0;
+    iget-object v0, v6, Lqt0;->J0:Lpq1;
 
     .line 2328
     .line 2329
-    iget-object v1, v1, Lit0;->a:Ljava/lang/Object;
+    invoke-virtual {v0}, Lpq1;->h()V
 
     .line 2330
     .line 2331
-    check-cast v1, Lht0;
-
     .line 2332
+    const/4 v15, 0x1
+
     .line 2333
-    if-nez v1, :cond_73
+    goto :goto_39
 
     .line 2334
-    .line 2335
-    new-instance v12, Lmt0;
+    :cond_7a
+    invoke-virtual {v6}, Lqt0;->R()Z
 
+    .line 2335
     .line 2336
     .line 2337
-    const v0, 0x7f0f0095
+    move-result v0
 
     .line 2338
+    const/4 v15, 0x1
+
     .line 2339
+    if-eqz v0, :cond_7b
+
     .line 2340
-    new-array v1, v10, [Ljava/lang/Object;
-
     .line 2341
-    .line 2342
-    invoke-static {v0, v1}, Lu67;->q(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v6, v10, v15}, Lqt0;->v(Ljava/lang/CharSequence;Z)V
 
+    .line 2342
     .line 2343
     .line 2344
+    invoke-virtual {v6}, Lqt0;->Z()V
+
     .line 2345
-    move-result-object v0
-
     .line 2346
-    invoke-direct {v12, v0, v10}, Lmt0;-><init>(Ljava/lang/String;Z)V
-
     .line 2347
+    :cond_7b
+    :goto_39
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
+
     .line 2348
     .line 2349
-    goto/16 :goto_4b
-
     .line 2350
+    move-result v0
+
     .line 2351
-    :cond_73
-    invoke-static {}, Lra7;->t()Lp83;
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 2352
     .line 2353
@@ -7097,709 +18938,11672 @@
     move-result-object v3
 
     .line 2355
-    iget-boolean v4, v1, Lht0;->c:Z
+    goto :goto_3c
 
     .line 2356
+    :cond_7c
+    move/from16 v18, v3
+
     .line 2357
-    if-eqz v4, :cond_74
-
     .line 2358
-    .line 2359
-    new-instance v4, Llt0;
+    invoke-virtual {v6}, Lqt0;->R()Z
 
+    .line 2359
     .line 2360
     .line 2361
-    iget-object v6, v1, Lht0;->g:Ljava/lang/String;
+    move-result v0
 
     .line 2362
+    if-eqz v0, :cond_7d
+
     .line 2363
-    iget-object v7, v1, Lht0;->f:Ljava/lang/String;
-
     .line 2364
+    if-nez v18, :cond_7d
+
     .line 2365
-    const-string v9, "IPv4"
-
     .line 2366
-    .line 2367
-    invoke-direct {v4, v9, v6, v7}, Llt0;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    if-nez v9, :cond_7d
 
+    .line 2367
     .line 2368
+    invoke-virtual {v6}, Lqt0;->getSnippetController()Lh76;
+
     .line 2369
     .line 2370
-    invoke-virtual {v3, v4}, Lp83;->add(Ljava/lang/Object;)Z
-
     .line 2371
-    .line 2372
-    .line 2373
-    :cond_74
-    iget-boolean v4, v1, Lht0;->d:Z
+    move-result-object v0
 
+    .line 2372
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2373
     .line 2374
     .line 2375
-    if-eqz v4, :cond_75
+    if-eqz v8, :cond_7e
 
     .line 2376
     .line 2377
-    new-instance v4, Llt0;
+    invoke-virtual {v6}, Lqt0;->r0()V
 
     .line 2378
     .line 2379
-    iget-object v6, v1, Lht0;->i:Ljava/lang/String;
-
     .line 2380
+    :cond_7d
+    :goto_3a
+    const/4 v15, 0x1
+
     .line 2381
-    iget-object v1, v1, Lht0;->h:Ljava/lang/String;
+    goto :goto_3b
 
     .line 2382
-    .line 2383
-    const-string v7, "IPv6"
+    :cond_7e
+    invoke-virtual {v6}, Lqt0;->P()V
 
+    .line 2383
     .line 2384
     .line 2385
-    invoke-direct {v4, v7, v6, v1}, Llt0;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    goto :goto_3a
 
     .line 2386
+    :goto_3b
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
+
     .line 2387
     .line 2388
-    invoke-virtual {v3, v4}, Lp83;->add(Ljava/lang/Object;)Z
-
     .line 2389
-    .line 2390
-    .line 2391
-    :cond_75
-    invoke-static {v3}, Lra7;->l(Lp83;)Lp83;
+    move-result v0
 
+    .line 2390
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 2391
     .line 2392
     .line 2393
+    move-result-object v3
+
     .line 2394
-    move-result-object v1
+    goto :goto_3c
 
     .line 2395
-    invoke-virtual {v1}, Lp83;->isEmpty()Z
+    :cond_7f
+    move v15, v10
 
     .line 2396
+    invoke-virtual {v11}, Lwb1;->a()Z
+
     .line 2397
     .line 2398
-    move-result v3
-
     .line 2399
-    if-eqz v3, :cond_76
+    move-result v0
 
     .line 2400
+    if-eqz v0, :cond_80
+
     .line 2401
-    new-instance v12, Lmt0;
-
     .line 2402
-    .line 2403
-    const v0, 0x7f0f00a4
+    iget-object v0, v11, Lwb1;->c:Lxm0;
 
+    .line 2403
     .line 2404
+    iget v1, v0, Lxm0;->b:I
+
     .line 2405
     .line 2406
-    new-array v1, v10, [Ljava/lang/Object;
+    iget v0, v0, Lxm0;->c:I
 
     .line 2407
     .line 2408
-    invoke-static {v0, v1}, Lu67;->q(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v6, v1, v0}, Lqt0;->l0(II)V
 
     .line 2409
     .line 2410
     .line 2411
-    move-result-object v0
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
 
     .line 2412
-    invoke-direct {v12, v0, v10}, Lmt0;-><init>(Ljava/lang/String;Z)V
-
     .line 2413
     .line 2414
+    move-result v0
+
     .line 2415
-    goto/16 :goto_4b
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 2416
     .line 2417
-    :cond_76
-    new-instance v3, Ljava/util/ArrayList;
-
     .line 2418
-    .line 2419
-    invoke-static {v1, v2}, Lgu0;->o0(Ljava/lang/Iterable;I)I
-
-    .line 2420
-    .line 2421
-    .line 2422
-    move-result v2
-
-    .line 2423
-    invoke-direct {v3, v2}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 2424
-    .line 2425
-    .line 2426
-    invoke-virtual {v1, v10}, Lp83;->listIterator(I)Ljava/util/ListIterator;
-
-    .line 2427
-    .line 2428
-    .line 2429
-    move-result-object v1
-
-    .line 2430
-    move-object v2, v1
-
-    .line 2431
-    move-object v1, v3
-
-    .line 2432
-    :goto_47
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 2433
-    .line 2434
-    .line 2435
-    move-result v3
-
-    .line 2436
-    if-eqz v3, :cond_78
-
-    .line 2437
-    .line 2438
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 2439
-    .line 2440
-    .line 2441
     move-result-object v3
 
-    .line 2442
-    check-cast v3, Llt0;
+    .line 2419
+    goto :goto_3c
 
+    .line 2420
+    :cond_80
+    iget-boolean v0, v6, Lqt0;->q0:Z
+
+    .line 2421
+    .line 2422
+    if-eqz v0, :cond_81
+
+    .line 2423
+    .line 2424
+    const/4 v3, 0x0
+
+    .line 2425
+    iput-boolean v3, v6, Lqt0;->q0:Z
+
+    .line 2426
+    .line 2427
+    invoke-virtual {v13, v15}, Ler1;->a(Z)Z
+
+    .line 2428
+    .line 2429
+    .line 2430
+    move-result v0
+
+    .line 2431
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 2432
+    .line 2433
+    .line 2434
+    move-result-object v3
+
+    .line 2435
+    goto :goto_3c
+
+    .line 2436
+    :cond_81
+    const/4 v3, 0x0
+
+    .line 2437
+    invoke-virtual {v13, v3}, Ler1;->a(Z)Z
+
+    .line 2438
+    .line 2439
+    .line 2440
+    move-result v0
+
+    .line 2441
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 2442
     .line 2443
     .line 2444
-    sget-object v4, Lrt0;->a:Lrt0;
+    move-result-object v3
 
     .line 2445
+    :goto_3c
+    if-eqz v3, :cond_82
+
     .line 2446
-    iput-object v15, v0, Lqt0;->l:Ljava/lang/Object;
-
     .line 2447
+    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+
     .line 2448
-    move-object v6, v1
-
     .line 2449
-    check-cast v6, Ljava/util/Collection;
-
     .line 2450
+    move-result v0
+
     .line 2451
-    iput-object v6, v0, Lqt0;->m:Ljava/lang/Object;
+    invoke-virtual {v13, v0}, Ler1;->a(Z)Z
 
     .line 2452
     .line 2453
-    iput-object v2, v0, Lqt0;->o:Ljava/lang/Object;
-
     .line 2454
+    move-result v0
+
     .line 2455
-    iput-object v6, v0, Lqt0;->n:Ljava/lang/Object;
+    goto :goto_3d
 
     .line 2456
+    :cond_82
+    move/from16 v1, p1
+
     .line 2457
-    iput-byte v13, v0, Lqt0;->k:B
-
     .line 2458
-    .line 2459
-    invoke-virtual {v4, v3, v0}, Lrt0;->b(Llt0;Ld81;)Ljava/lang/Object;
+    move-object/from16 v2, p2
 
+    .line 2459
     .line 2460
+    invoke-super {v6, v1, v2}, Landroid/view/View;->onKeyDown(ILandroid/view/KeyEvent;)Z
+
     .line 2461
     .line 2462
-    move-result-object v3
-
     .line 2463
-    if-ne v3, v12, :cond_77
+    move-result v0
 
     .line 2464
-    .line 2465
-    goto/16 :goto_4b
+    invoke-virtual {v13, v0}, Ler1;->a(Z)Z
 
+    .line 2465
     .line 2466
     .line 2467
-    :cond_77
-    move-object v4, v2
+    move-result v0
 
     .line 2468
-    move-object v2, v1
+    :goto_3d
+    return v0
 
     .line 2469
-    :goto_48
-    check-cast v3, Lnt0;
+    :pswitch_data_0
+    .packed-switch 0x13
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
+    .end packed-switch
 
     .line 2470
     .line 2471
-    invoke-interface {v1, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
-
     .line 2472
     .line 2473
     .line 2474
-    move-object v1, v2
-
     .line 2475
-    move-object v2, v4
-
     .line 2476
-    goto :goto_47
-
     .line 2477
-    :cond_78
-    check-cast v1, Ljava/util/List;
-
     .line 2478
     .line 2479
-    new-instance v2, Ljava/util/ArrayList;
-
     .line 2480
     .line 2481
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    .line 2482
-    .line 2483
-    .line 2484
-    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    .line 2485
-    .line 2486
-    .line 2487
-    move-result-object v3
-
-    .line 2488
-    :cond_79
-    :goto_49
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 2489
-    .line 2490
-    .line 2491
-    move-result v4
-
-    .line 2492
-    if-eqz v4, :cond_7a
-
-    .line 2493
-    .line 2494
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 2495
-    .line 2496
-    .line 2497
-    move-result-object v4
-
-    .line 2498
-    move-object v6, v4
-
-    .line 2499
-    check-cast v6, Lnt0;
-
-    .line 2500
-    .line 2501
-    iget-boolean v6, v6, Lnt0;->b:Z
-
-    .line 2502
-    .line 2503
-    if-nez v6, :cond_79
-
-    .line 2504
-    .line 2505
-    invoke-virtual {v2, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 2506
-    .line 2507
-    .line 2508
-    goto :goto_49
-
-    .line 2509
-    :cond_7a
-    invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
-
-    .line 2510
-    .line 2511
-    .line 2512
-    move-result v3
-
-    .line 2513
-    if-nez v3, :cond_7b
-
-    .line 2514
-    .line 2515
-    new-instance v12, Lmt0;
-
-    .line 2516
-    .line 2517
-    new-instance v0, Lcl0;
-
-    .line 2518
-    .line 2519
-    invoke-direct {v0, v5}, Lcl0;-><init>(B)V
-
-    .line 2520
-    .line 2521
-    .line 2522
-    const/16 v21, 0x1e
-
-    .line 2523
-    .line 2524
-    const-string v17, "\n"
-
-    .line 2525
-    .line 2526
-    const/16 v18, 0x0
-
-    .line 2527
-    .line 2528
-    const/16 v19, 0x0
-
-    .line 2529
-    .line 2530
-    move-object/from16 v20, v0
-
-    .line 2531
-    .line 2532
-    move-object/from16 v16, v2
-
-    .line 2533
-    .line 2534
-    invoke-static/range {v16 .. v21}, Lfu0;->L0(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/String;Ljava/lang/String;Lr52;I)Ljava/lang/String;
-
-    .line 2535
-    .line 2536
-    .line 2537
-    move-result-object v0
-
-    .line 2538
-    invoke-direct {v12, v0, v10}, Lmt0;-><init>(Ljava/lang/String;Z)V
-
-    .line 2539
-    .line 2540
-    .line 2541
-    goto/16 :goto_4b
-
-    .line 2542
-    .line 2543
-    :cond_7b
-    sget-object v2, Lrt0;->a:Lrt0;
-
-    .line 2544
-    .line 2545
-    iput-object v1, v0, Lqt0;->l:Ljava/lang/Object;
-
-    .line 2546
-    .line 2547
-    iput-object v15, v0, Lqt0;->m:Ljava/lang/Object;
-
-    .line 2548
-    .line 2549
-    iput-object v15, v0, Lqt0;->o:Ljava/lang/Object;
-
-    .line 2550
-    .line 2551
-    iput-object v15, v0, Lqt0;->n:Ljava/lang/Object;
-
-    .line 2552
-    .line 2553
-    iput-byte v8, v0, Lqt0;->k:B
-
-    .line 2554
-    .line 2555
-    invoke-virtual {v2, v0}, Lrt0;->a(Ld81;)Ljava/lang/Object;
-
-    .line 2556
-    .line 2557
-    .line 2558
-    move-result-object v0
-
-    .line 2559
-    if-ne v0, v12, :cond_7c
-
-    .line 2560
-    .line 2561
-    goto :goto_4b
-
-    .line 2562
-    :cond_7c
-    :goto_4a
-    check-cast v0, Lmt0;
-
-    .line 2563
-    .line 2564
-    iget-boolean v2, v0, Lmt0;->a:Z
-
-    .line 2565
-    .line 2566
-    iget-object v0, v0, Lmt0;->b:Ljava/lang/String;
-
-    .line 2567
-    .line 2568
-    const-string v7, "\n"
-
-    .line 2569
-    .line 2570
-    if-nez v2, :cond_7d
-
-    .line 2571
-    .line 2572
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    .line 2573
-    .line 2574
-    new-instance v5, Lcl0;
-
-    .line 2575
-    .line 2576
-    const/16 v2, 0xd
-
-    .line 2577
-    .line 2578
-    invoke-direct {v5, v2}, Lcl0;-><init>(B)V
-
-    .line 2579
-    .line 2580
-    .line 2581
-    const/16 v6, 0x1e
-
-    .line 2582
-    .line 2583
-    const-string v2, "\n"
-
-    .line 2584
-    .line 2585
-    const/4 v3, 0x0
-
-    .line 2586
-    const/4 v4, 0x0
-
-    .line 2587
-    invoke-static/range {v1 .. v6}, Lfu0;->L0(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/String;Ljava/lang/String;Lr52;I)Ljava/lang/String;
-
-    .line 2588
-    .line 2589
-    .line 2590
-    move-result-object v1
-
-    .line 2591
-    invoke-direct {v8, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 2592
-    .line 2593
-    .line 2594
-    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 2595
-    .line 2596
-    .line 2597
-    const v1, 0x7f0f00a1
-
-    .line 2598
-    .line 2599
-    .line 2600
-    filled-new-array {v0}, [Ljava/lang/Object;
-
-    .line 2601
-    .line 2602
-    .line 2603
-    move-result-object v0
-
-    .line 2604
-    invoke-static {v1, v0}, Lu67;->q(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    .line 2605
-    .line 2606
-    .line 2607
-    move-result-object v0
-
-    .line 2608
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 2609
-    .line 2610
-    .line 2611
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 2612
-    .line 2613
-    .line 2614
-    move-result-object v0
-
-    .line 2615
-    new-instance v12, Lmt0;
-
-    .line 2616
-    .line 2617
-    invoke-direct {v12, v0, v10}, Lmt0;-><init>(Ljava/lang/String;Z)V
-
-    .line 2618
-    .line 2619
-    .line 2620
-    goto :goto_4b
-
-    .line 2621
-    :cond_7d
-    new-instance v8, Ljava/lang/StringBuilder;
-
-    .line 2622
-    .line 2623
-    new-instance v5, Lcl0;
-
-    .line 2624
-    .line 2625
-    const/16 v2, 0xe
-
-    .line 2626
-    .line 2627
-    invoke-direct {v5, v2}, Lcl0;-><init>(B)V
-
-    .line 2628
-    .line 2629
-    .line 2630
-    const/16 v6, 0x1e
-
-    .line 2631
-    .line 2632
-    const-string v2, "\n"
-
-    .line 2633
-    .line 2634
-    const/4 v3, 0x0
-
-    .line 2635
-    const/4 v4, 0x0
-
-    .line 2636
-    invoke-static/range {v1 .. v6}, Lfu0;->L0(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/String;Ljava/lang/String;Lr52;I)Ljava/lang/String;
-
-    .line 2637
-    .line 2638
-    .line 2639
-    move-result-object v1
-
-    .line 2640
-    invoke-direct {v8, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 2641
-    .line 2642
-    .line 2643
-    invoke-static {v0}, Lw96;->v0(Ljava/lang/CharSequence;)Z
-
-    .line 2644
-    .line 2645
-    .line 2646
-    move-result v1
-
-    .line 2647
-    if-nez v1, :cond_7e
-
-    .line 2648
-    .line 2649
-    invoke-virtual {v8, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 2650
-    .line 2651
-    .line 2652
-    invoke-virtual {v8, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 2653
-    .line 2654
-    .line 2655
-    :cond_7e
-    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 2656
-    .line 2657
-    .line 2658
-    move-result-object v0
-
-    .line 2659
-    new-instance v12, Lmt0;
-
-    .line 2660
-    .line 2661
-    invoke-direct {v12, v0, v14}, Lmt0;-><init>(Ljava/lang/String;Z)V
-
-    .line 2662
-    .line 2663
-    .line 2664
-    :goto_4b
-    return-object v12
-
-    .line 2665
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_11
+    :pswitch_data_1
+    .packed-switch 0x13
         :pswitch_9
         :pswitch_8
         :pswitch_7
         :pswitch_6
+    .end packed-switch
+
+    .line 2482
+    .line 2483
+    .line 2484
+    .line 2485
+    .line 2486
+    .line 2487
+    .line 2488
+    .line 2489
+    .line 2490
+    .line 2491
+    .line 2492
+    .line 2493
+    :pswitch_data_2
+    .packed-switch 0x32
         :pswitch_5
         :pswitch_4
         :pswitch_3
         :pswitch_2
         :pswitch_1
-        :pswitch_0
     .end packed-switch
+.end method
 
-    .line 2666
-    .line 2667
-    .line 2668
-    .line 2669
-    .line 2670
-    .line 2671
-    .line 2672
-    .line 2673
-    .line 2674
-    .line 2675
-    .line 2676
-    .line 2677
-    .line 2678
-    .line 2679
-    .line 2680
-    .line 2681
-    .line 2682
-    .line 2683
-    .line 2684
-    .line 2685
-    .line 2686
-    .line 2687
-    .line 2688
-    .line 2689
-    .line 2690
-    .line 2691
-    :pswitch_data_1
-    .packed-switch 0x0
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-    .end packed-switch
+.method public final onKeyMultiple(IILandroid/view/KeyEvent;)Z
+    .locals 2
 
-    .line 2692
-    .line 2693
-    .line 2694
-    .line 2695
-    .line 2696
-    .line 2697
-    .line 2698
-    .line 2699
-    .line 2700
-    .line 2701
-    .line 2702
-    .line 2703
-    .line 2704
-    .line 2705
-    .line 2706
-    .line 2707
-    .line 2708
-    .line 2709
-    :array_0
-    .array-data 2
-        0x5bs
-        0x5ds
-    .end array-data
+    .line 1
+    new-instance v0, Ler1;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lqt0;->j:Lfp2;
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Lfp2;->k:Ljava/lang/Object;
+
+    .line 6
+    .line 7
+    check-cast p0, Lqt0;
+
+    .line 8
+    .line 9
+    const/4 v1, 0x3
+
+    .line 10
+    invoke-direct {v0, p0, p3, v1}, Ler1;-><init>(Lqt0;Landroid/view/KeyEvent;I)V
+
+    .line 11
+    .line 12
+    .line 13
+    iget-object v1, p0, Lqt0;->r:Ltv1;
+
+    .line 14
+    .line 15
+    invoke-virtual {v1, v0}, Ltv1;->a(Lgv1;)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result v1
+
+    .line 19
+    and-int/lit8 v1, v1, 0x2
+
+    .line 20
+    .line 21
+    if-eqz v1, :cond_0
+
+    .line 22
+    .line 23
+    const/4 p0, 0x0
+
+    .line 24
+    invoke-virtual {v0, p0}, Ler1;->a(Z)Z
+
+    .line 25
+    .line 26
+    .line 27
+    move-result p0
+
+    .line 28
+    return p0
+
+    .line 29
+    :cond_0
+    invoke-super {p0, p1, p2, p3}, Landroid/view/View;->onKeyMultiple(IILandroid/view/KeyEvent;)Z
+
+    .line 30
+    .line 31
+    .line 32
+    move-result p0
+
+    .line 33
+    invoke-virtual {v0, p0}, Ler1;->a(Z)Z
+
+    .line 34
+    .line 35
+    .line 36
+    move-result p0
+
+    .line 37
+    return p0
+.end method
+
+.method public final onKeyUp(ILandroid/view/KeyEvent;)Z
+    .locals 7
+
+    .line 1
+    iget-object p0, p0, Lqt0;->j:Lfp2;
+
+    .line 2
+    .line 3
+    iget-object v0, p0, Lfp2;->l:Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    check-cast v0, Lsx2;
+
+    .line 6
+    .line 7
+    iget-object v1, v0, Lsx2;->a:Lqt0;
+
+    .line 8
+    .line 9
+    iget-object v2, v0, Lsx2;->b:Landroid/text/Editable;
+
+    .line 10
+    .line 11
+    invoke-virtual {p2}, Landroid/view/KeyEvent;->getKeyCode()I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result v3
+
+    .line 15
+    invoke-virtual {v0, v1, v2, v3, p2}, Landroid/text/method/MetaKeyKeyListener;->onKeyUp(Landroid/view/View;Landroid/text/Editable;ILandroid/view/KeyEvent;)Z
+
+    .line 16
+    .line 17
+    .line 18
+    invoke-virtual {p2}, Landroid/view/KeyEvent;->isCtrlPressed()Z
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v1
+
+    .line 22
+    iput-boolean v1, v0, Lsx2;->c:Z
+
+    .line 23
+    .line 24
+    iget-object v1, p0, Lfp2;->k:Ljava/lang/Object;
+
+    .line 25
+    .line 26
+    check-cast v1, Lqt0;
+
+    .line 27
+    .line 28
+    iget-object v2, v1, Lqt0;->r:Ltv1;
+
+    .line 29
+    .line 30
+    invoke-virtual {v1}, Lqt0;->getCursor()Lwb1;
+
+    .line 31
+    .line 32
+    .line 33
+    new-instance v3, Ler1;
+
+    .line 34
+    .line 35
+    const/4 v4, 0x1
+
+    .line 36
+    invoke-direct {v3, v1, p2, v4}, Ler1;-><init>(Lqt0;Landroid/view/KeyEvent;I)V
+
+    .line 37
+    .line 38
+    .line 39
+    invoke-virtual {v2, v3}, Ltv1;->a(Lgv1;)I
+
+    .line 40
+    .line 41
+    .line 42
+    move-result v5
+
+    .line 43
+    and-int/lit8 v5, v5, 0x2
+
+    .line 44
+    .line 45
+    const/4 v6, 0x0
+
+    .line 46
+    if-eqz v5, :cond_0
+
+    .line 47
+    .line 48
+    invoke-virtual {v3, v6}, Ler1;->a(Z)Z
+
+    .line 49
+    .line 50
+    .line 51
+    move-result p0
+
+    .line 52
+    return p0
+
+    .line 53
+    :cond_0
+    invoke-virtual {p0, p1, p2}, Lfp2;->v(ILandroid/view/KeyEvent;)Z
+
+    .line 54
+    .line 55
+    .line 56
+    move-result p0
+
+    .line 57
+    if-eqz p0, :cond_3
+
+    .line 58
+    .line 59
+    new-instance p0, Lkx2;
+
+    .line 60
+    .line 61
+    invoke-virtual {p2}, Landroid/view/KeyEvent;->isCtrlPressed()Z
+
+    .line 62
+    .line 63
+    .line 64
+    invoke-virtual {v0}, Lsx2;->b()Z
+
+    .line 65
+    .line 66
+    .line 67
+    invoke-virtual {v0}, Lsx2;->a()Z
+
+    .line 68
+    .line 69
+    .line 70
+    invoke-direct {p0, v1, p2, v4}, Ler1;-><init>(Lqt0;Landroid/view/KeyEvent;I)V
+
+    .line 71
+    .line 72
+    .line 73
+    invoke-virtual {v2, p0}, Ltv1;->a(Lgv1;)I
+
+    .line 74
+    .line 75
+    .line 76
+    move-result v0
+
+    .line 77
+    and-int/lit8 v0, v0, 0x2
+
+    .line 78
+    .line 79
+    if-eqz v0, :cond_3
+
+    .line 80
+    .line 81
+    invoke-virtual {p0, v6}, Ler1;->a(Z)Z
+
+    .line 82
+    .line 83
+    .line 84
+    move-result p0
+
+    .line 85
+    if-nez p0, :cond_2
+
+    .line 86
+    .line 87
+    invoke-virtual {v3, v6}, Ler1;->a(Z)Z
+
+    .line 88
+    .line 89
+    .line 90
+    move-result p0
+
+    .line 91
+    if-eqz p0, :cond_1
+
+    .line 92
+    .line 93
+    goto :goto_0
+
+    .line 94
+    :cond_1
+    return v6
+
+    .line 95
+    :cond_2
+    :goto_0
+    return v4
+
+    .line 96
+    :cond_3
+    invoke-super {v1, p1, p2}, Landroid/view/View;->onKeyUp(ILandroid/view/KeyEvent;)Z
+
+    .line 97
+    .line 98
+    .line 99
+    move-result p0
+
+    .line 100
+    invoke-virtual {v3, p0}, Ler1;->a(Z)Z
+
+    .line 101
+    .line 102
+    .line 103
+    move-result p0
+
+    .line 104
+    return p0
+.end method
+
+.method public final onMeasure(II)V
+    .locals 17
+
+    .line 1
+    move-object/from16 v0, p0
+
+    .line 2
+    .line 3
+    invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v1
+
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    const/high16 v3, 0x40000000    # 2.0f
+
+    .line 9
+    .line 10
+    if-ne v1, v3, :cond_1
+
+    .line 11
+    .line 12
+    invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result v1
+
+    .line 16
+    if-eq v1, v3, :cond_0
+
+    .line 17
+    .line 18
+    goto :goto_0
+
+    .line 19
+    :cond_0
+    iput-boolean v2, v0, Lqt0;->r0:Z
+
+    .line 20
+    .line 21
+    move/from16 v3, p1
+
+    .line 22
+    .line 23
+    move/from16 v1, p2
+
+    .line 24
+    .line 25
+    goto/16 :goto_b
+
+    .line 26
+    .line 27
+    :cond_1
+    :goto_0
+    const-string v1, "CodeEditor"
+
+    .line 28
+    .line 29
+    const-string v4, "use wrap_content in editor may cause layout lags"
+
+    .line 30
+    .line 31
+    invoke-static {v1, v4}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 32
+    .line 33
+    .line 34
+    invoke-virtual {v0}, Lqt0;->W()F
+
+    .line 35
+    .line 36
+    .line 37
+    move-result v1
+
+    .line 38
+    invoke-virtual {v0}, Lqt0;->getRowHeight()I
+
+    .line 39
+    .line 40
+    .line 41
+    move-result v4
+
+    .line 42
+    int-to-float v4, v4
+
+    .line 43
+    iget-boolean v5, v0, Lqt0;->O:Z
+
+    .line 44
+    .line 45
+    iget v6, v0, Lqt0;->t:I
+
+    .line 46
+    .line 47
+    iget-object v7, v0, Lqt0;->B0:Ln61;
+
+    .line 48
+    .line 49
+    iget-object v8, v0, Lqt0;->b1:Lsr1;
+
+    .line 50
+    .line 51
+    iget-object v8, v8, Lsr1;->b:Lik4;
+
+    .line 52
+    .line 53
+    invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getMode(I)I
+
+    .line 54
+    .line 55
+    .line 56
+    move-result v9
+
+    .line 57
+    invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getMode(I)I
+
+    .line 58
+    .line 59
+    .line 60
+    move-result v10
+
+    .line 61
+    const v11, 0x3fffffff    # 1.9999999f
+
+    .line 62
+    .line 63
+    .line 64
+    if-nez v9, :cond_2
+
+    .line 65
+    .line 66
+    move v12, v11
+
+    .line 67
+    goto :goto_1
+
+    .line 68
+    :cond_2
+    invoke-static/range {p1 .. p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
+
+    .line 69
+    .line 70
+    .line 71
+    move-result v12
+
+    .line 72
+    :goto_1
+    if-nez v10, :cond_3
+
+    .line 73
+    .line 74
+    goto :goto_2
+
+    .line 75
+    :cond_3
+    invoke-static/range {p2 .. p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
+
+    .line 76
+    .line 77
+    .line 78
+    move-result v11
+
+    .line 79
+    :goto_2
+    new-instance v13, Ls36;
+
+    .line 80
+    .line 81
+    invoke-direct {v13, v6}, Ls36;-><init>(I)V
+
+    .line 82
+    .line 83
+    .line 84
+    const/4 v6, 0x1
+
+    .line 85
+    if-eqz v5, :cond_c
+
+    .line 86
+    .line 87
+    if-eq v9, v3, :cond_8
+
+    .line 88
+    .line 89
+    if-eq v10, v3, :cond_4
+
+    .line 90
+    .line 91
+    iget-object v5, v7, Ln61;->j:Ljava/util/ArrayList;
+
+    .line 92
+    .line 93
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
+
+    .line 94
+    .line 95
+    .line 96
+    move-result v5
+
+    .line 97
+    new-array v5, v5, [I
+
+    .line 98
+    .line 99
+    goto :goto_3
+
+    .line 100
+    :cond_4
+    const/4 v5, 0x0
+
+    .line 101
+    :goto_3
+    new-instance v9, Lvq3;
+
+    .line 102
+    .line 103
+    invoke-direct {v9, v2}, Lvq3;-><init>(I)V
+
+    .line 104
+    .line 105
+    .line 106
+    iget-object v10, v7, Ln61;->j:Ljava/util/ArrayList;
+
+    .line 107
+    .line 108
+    invoke-virtual {v10}, Ljava/util/ArrayList;->size()I
+
+    .line 109
+    .line 110
+    .line 111
+    move-result v10
+
+    .line 112
+    sub-int/2addr v10, v6
+
+    .line 113
+    new-instance v14, Lk67;
+
+    .line 114
+    .line 115
+    invoke-direct {v14, v13, v8, v9, v5}, Lk67;-><init>(Ls36;Lik4;Lvq3;[I)V
+
+    .line 116
+    .line 117
+    .line 118
+    invoke-virtual {v7, v10, v14}, Ln61;->z(ILm61;)V
+
+    .line 119
+    .line 120
+    .line 121
+    int-to-float v8, v12
+
+    .line 122
+    iget v9, v9, Lvq3;->a:I
+
+    .line 123
+    .line 124
+    int-to-float v9, v9
+
+    .line 125
+    add-float/2addr v9, v1
+
+    .line 126
+    invoke-static {v8, v9}, Ljava/lang/Math;->min(FF)F
+
+    .line 127
+    .line 128
+    .line 129
+    move-result v8
+
+    .line 130
+    float-to-int v8, v8
+
+    .line 131
+    invoke-static {v8, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    .line 132
+    .line 133
+    .line 134
+    move-result v9
+
+    .line 135
+    if-eqz v5, :cond_7
+
+    .line 136
+    .line 137
+    int-to-float v8, v8
+
+    .line 138
+    sub-float/2addr v8, v1
+
+    .line 139
+    float-to-int v1, v8
+
+    .line 140
+    if-gtz v1, :cond_5
+
+    .line 141
+    .line 142
+    iget v1, v7, Ln61;->m:I
+
+    .line 143
+    .line 144
+    :goto_4
+    move/from16 v16, v6
+
+    .line 145
+    .line 146
+    goto :goto_6
+
+    .line 147
+    :cond_5
+    move v7, v2
+
+    .line 148
+    :goto_5
+    array-length v8, v5
+
+    .line 149
+    if-ge v2, v8, :cond_6
+
+    .line 150
+    .line 151
+    int-to-double v7, v7
+
+    .line 152
+    aget v10, v5, v2
+
+    .line 153
+    .line 154
+    int-to-double v12, v10
+
+    .line 155
+    const-wide/high16 v14, 0x3ff0000000000000L    # 1.0
+
+    .line 156
+    .line 157
+    mul-double/2addr v12, v14
+
+    .line 158
+    move/from16 v16, v6
+
+    .line 159
+    .line 160
+    move-wide/from16 p1, v7
+
+    .line 161
+    .line 162
+    int-to-double v6, v1
+
+    .line 163
+    div-double/2addr v12, v6
+
+    .line 164
+    invoke-static {v12, v13}, Ljava/lang/Math;->ceil(D)D
+
+    .line 165
+    .line 166
+    .line 167
+    move-result-wide v6
+
+    .line 168
+    invoke-static {v14, v15, v6, v7}, Ljava/lang/Math;->max(DD)D
+
+    .line 169
+    .line 170
+    .line 171
+    move-result-wide v6
+
+    .line 172
+    add-double v6, v6, p1
+
+    .line 173
+    .line 174
+    double-to-int v7, v6
+
+    .line 175
+    add-int/lit8 v2, v2, 0x1
+
+    .line 176
+    .line 177
+    move/from16 v6, v16
+
+    .line 178
+    .line 179
+    goto :goto_5
+
+    .line 180
+    :cond_6
+    move v1, v7
+
+    .line 181
+    goto :goto_4
+
+    .line 182
+    :goto_6
+    int-to-float v1, v1
+
+    .line 183
+    mul-float/2addr v4, v1
+
+    .line 184
+    float-to-int v1, v4
+
+    .line 185
+    invoke-static {v1, v11}, Ljava/lang/Math;->min(II)I
+
+    .line 186
+    .line 187
+    .line 188
+    move-result v1
+
+    .line 189
+    invoke-static {v1, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    .line 190
+    .line 191
+    .line 192
+    move-result v1
+
+    .line 193
+    goto :goto_7
+
+    .line 194
+    :cond_7
+    move/from16 v16, v6
+
+    .line 195
+    .line 196
+    move/from16 v1, p2
+
+    .line 197
+    .line 198
+    :goto_7
+    move v2, v1
+
+    .line 199
+    move v1, v9
+
+    .line 200
+    goto/16 :goto_a
+
+    .line 201
+    .line 202
+    :cond_8
+    move/from16 v16, v6
+
+    .line 203
+    .line 204
+    if-eq v10, v3, :cond_a
+
+    .line 205
+    .line 206
+    new-instance v5, Lvq3;
+
+    .line 207
+    .line 208
+    invoke-direct {v5, v2}, Lvq3;-><init>(I)V
+
+    .line 209
+    .line 210
+    .line 211
+    int-to-float v2, v12
+
+    .line 212
+    sub-float/2addr v2, v1
+
+    .line 213
+    float-to-int v1, v2
+
+    .line 214
+    if-gtz v1, :cond_9
+
+    .line 215
+    .line 216
+    iget v1, v7, Ln61;->m:I
+
+    .line 217
+    .line 218
+    iput v1, v5, Lvq3;->a:I
+
+    .line 219
+    .line 220
+    goto :goto_8
+
+    .line 221
+    :cond_9
+    iget-object v2, v7, Ln61;->j:Ljava/util/ArrayList;
+
+    .line 222
+    .line 223
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    .line 224
+    .line 225
+    .line 226
+    move-result v2
+
+    .line 227
+    add-int/lit8 v2, v2, -0x1
+
+    .line 228
+    .line 229
+    new-instance v6, Ll67;
+
+    .line 230
+    .line 231
+    invoke-direct {v6, v13, v8, v5, v1}, Ll67;-><init>(Ls36;Lik4;Lvq3;I)V
+
+    .line 232
+    .line 233
+    .line 234
+    invoke-virtual {v7, v2, v6}, Ln61;->z(ILm61;)V
+
+    .line 235
+    .line 236
+    .line 237
+    :goto_8
+    iget v1, v5, Lvq3;->a:I
+
+    .line 238
+    .line 239
+    int-to-float v1, v1
+
+    .line 240
+    mul-float/2addr v4, v1
+
+    .line 241
+    float-to-int v1, v4
+
+    .line 242
+    invoke-static {v1, v11}, Ljava/lang/Math;->min(II)I
+
+    .line 243
+    .line 244
+    .line 245
+    move-result v1
+
+    .line 246
+    invoke-static {v1, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    .line 247
+    .line 248
+    .line 249
+    move-result v1
+
+    .line 250
+    move v2, v1
+
+    .line 251
+    move/from16 v1, p1
+
+    .line 252
+    .line 253
+    goto :goto_a
+
+    .line 254
+    :cond_a
+    move/from16 v1, p1
+
+    .line 255
+    .line 256
+    :cond_b
+    move/from16 v2, p2
+
+    .line 257
+    .line 258
+    goto :goto_a
+
+    .line 259
+    :cond_c
+    move/from16 v16, v6
+
+    .line 260
+    .line 261
+    if-eq v9, v3, :cond_d
+
+    .line 262
+    .line 263
+    new-instance v5, Lvq3;
+
+    .line 264
+    .line 265
+    invoke-direct {v5, v2}, Lvq3;-><init>(I)V
+
+    .line 266
+    .line 267
+    .line 268
+    iget-object v2, v7, Ln61;->j:Ljava/util/ArrayList;
+
+    .line 269
+    .line 270
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    .line 271
+    .line 272
+    .line 273
+    move-result v2
+
+    .line 274
+    add-int/lit8 v2, v2, -0x1
+
+    .line 275
+    .line 276
+    new-instance v6, Lm67;
+
+    .line 277
+    .line 278
+    invoke-direct {v6, v13, v8, v5}, Lm67;-><init>(Ls36;Lik4;Lvq3;)V
+
+    .line 279
+    .line 280
+    .line 281
+    invoke-virtual {v7, v2, v6}, Ln61;->z(ILm61;)V
+
+    .line 282
+    .line 283
+    .line 284
+    iget v2, v5, Lvq3;->a:I
+
+    .line 285
+    .line 286
+    int-to-float v2, v2
+
+    .line 287
+    add-float/2addr v2, v1
+
+    .line 288
+    int-to-float v1, v12
+
+    .line 289
+    invoke-static {v2, v1}, Ljava/lang/Math;->min(FF)F
+
+    .line 290
+    .line 291
+    .line 292
+    move-result v1
+
+    .line 293
+    float-to-int v1, v1
+
+    .line 294
+    invoke-static {v1, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    .line 295
+    .line 296
+    .line 297
+    move-result v1
+
+    .line 298
+    goto :goto_9
+
+    .line 299
+    :cond_d
+    move/from16 v1, p1
+
+    .line 300
+    .line 301
+    :goto_9
+    if-eq v10, v3, :cond_b
+
+    .line 302
+    .line 303
+    iget-object v2, v7, Ln61;->j:Ljava/util/ArrayList;
+
+    .line 304
+    .line 305
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    .line 306
+    .line 307
+    .line 308
+    move-result v2
+
+    .line 309
+    int-to-float v2, v2
+
+    .line 310
+    mul-float/2addr v4, v2
+
+    .line 311
+    float-to-int v2, v4
+
+    .line 312
+    invoke-static {v11, v2}, Ljava/lang/Math;->min(II)I
+
+    .line 313
+    .line 314
+    .line 315
+    move-result v2
+
+    .line 316
+    invoke-static {v2, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    .line 317
+    .line 318
+    .line 319
+    move-result v2
+
+    .line 320
+    :goto_a
+    invoke-static {v1, v2}, Ls77;->M(II)J
+
+    .line 321
+    .line 322
+    .line 323
+    move-result-wide v1
+
+    .line 324
+    const/16 v3, 0x20
+
+    .line 325
+    .line 326
+    shr-long v3, v1, v3
+
+    .line 327
+    .line 328
+    long-to-int v3, v3
+
+    .line 329
+    const-wide v4, 0xffffffffL
+
+    .line 330
+    .line 331
+    .line 332
+    .line 333
+    .line 334
+    and-long/2addr v1, v4
+
+    .line 335
+    long-to-int v1, v1
+
+    .line 336
+    move/from16 v2, v16
+
+    .line 337
+    .line 338
+    iput-boolean v2, v0, Lqt0;->r0:Z
+
+    .line 339
+    .line 340
+    :goto_b
+    invoke-super {v0, v3, v1}, Landroid/view/View;->onMeasure(II)V
+
+    .line 341
+    .line 342
+    .line 343
+    return-void
+.end method
+
+.method public final onResolvePointerIcon(Landroid/view/MotionEvent;I)Landroid/view/PointerIcon;
+    .locals 6
+
+    .line 1
+    const/16 v0, 0x2002
+
+    .line 2
+    .line 3
+    invoke-virtual {p1, v0}, Landroid/view/InputEvent;->isFromSource(I)Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    if-eqz v0, :cond_9
+
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lqt0;->S()V
+
+    .line 10
+    .line 11
+    .line 12
+    iget-boolean v0, p0, Lqt0;->T:Z
+
+    .line 13
+    .line 14
+    if-eqz v0, :cond_0
+
+    .line 15
+    .line 16
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    const/16 p1, 0x3ec
+
+    .line 21
+    .line 22
+    invoke-static {p0, p1}, Landroid/view/PointerIcon;->getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object p0
+
+    .line 26
+    return-object p0
+
+    .line 27
+    :cond_0
+    iget-object v0, p0, Lqt0;->K0:Lds1;
+
+    .line 28
+    .line 29
+    invoke-virtual {v0}, Lds1;->f()Z
+
+    .line 30
+    .line 31
+    .line 32
+    move-result v0
+
+    .line 33
+    const/16 v1, 0x3fd
+
+    .line 34
+    .line 35
+    if-eqz v0, :cond_1
+
+    .line 36
+    .line 37
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 38
+    .line 39
+    .line 40
+    move-result-object p0
+
+    .line 41
+    invoke-static {p0, v1}, Landroid/view/PointerIcon;->getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
+
+    .line 42
+    .line 43
+    .line 44
+    move-result-object p0
+
+    .line 45
+    return-object p0
+
+    .line 46
+    :cond_1
+    invoke-virtual {p0}, Lqt0;->getLeftHandleDescriptor()Lav5;
+
+    .line 47
+    .line 48
+    .line 49
+    move-result-object v0
+
+    .line 50
+    iget-object v0, v0, Lav5;->a:Landroid/graphics/RectF;
+
+    .line 51
+    .line 52
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    .line 53
+    .line 54
+    .line 55
+    move-result v2
+
+    .line 56
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    .line 57
+    .line 58
+    .line 59
+    move-result v3
+
+    .line 60
+    invoke-virtual {v0, v2, v3}, Landroid/graphics/RectF;->contains(FF)Z
+
+    .line 61
+    .line 62
+    .line 63
+    move-result v0
+
+    .line 64
+    if-nez v0, :cond_8
+
+    .line 65
+    .line 66
+    invoke-virtual {p0}, Lqt0;->getRightHandleDescriptor()Lav5;
+
+    .line 67
+    .line 68
+    .line 69
+    move-result-object v0
+
+    .line 70
+    iget-object v0, v0, Lav5;->a:Landroid/graphics/RectF;
+
+    .line 71
+    .line 72
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    .line 73
+    .line 74
+    .line 75
+    move-result v2
+
+    .line 76
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    .line 77
+    .line 78
+    .line 79
+    move-result v3
+
+    .line 80
+    invoke-virtual {v0, v2, v3}, Landroid/graphics/RectF;->contains(FF)Z
+
+    .line 81
+    .line 82
+    .line 83
+    move-result v0
+
+    .line 84
+    if-nez v0, :cond_8
+
+    .line 85
+    .line 86
+    invoke-virtual {p0}, Lqt0;->getInsertHandleDescriptor()Lav5;
+
+    .line 87
+    .line 88
+    .line 89
+    move-result-object v0
+
+    .line 90
+    iget-object v0, v0, Lav5;->a:Landroid/graphics/RectF;
+
+    .line 91
+    .line 92
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    .line 93
+    .line 94
+    .line 95
+    move-result v2
+
+    .line 96
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    .line 97
+    .line 98
+    .line 99
+    move-result v3
+
+    .line 100
+    invoke-virtual {v0, v2, v3}, Landroid/graphics/RectF;->contains(FF)Z
+
+    .line 101
+    .line 102
+    .line 103
+    move-result v0
+
+    .line 104
+    if-eqz v0, :cond_2
+
+    .line 105
+    .line 106
+    goto/16 :goto_1
+
+    .line 107
+    .line 108
+    :cond_2
+    invoke-static {p0, p1, p2}, Lj23;->N(Lqt0;Landroid/view/MotionEvent;I)J
+
+    .line 109
+    .line 110
+    .line 111
+    move-result-wide v2
+
+    .line 112
+    const/16 v0, 0x20
+
+    .line 113
+    .line 114
+    shr-long v4, v2, v0
+
+    .line 115
+    .line 116
+    long-to-int v0, v4
+
+    .line 117
+    const-wide v4, 0xffffffffL
+
+    .line 118
+    .line 119
+    .line 120
+    .line 121
+    .line 122
+    and-long/2addr v2, v4
+
+    .line 123
+    long-to-int v2, v2
+
+    .line 124
+    const/4 v3, 0x1
+
+    .line 125
+    if-nez v2, :cond_3
+
+    .line 126
+    .line 127
+    move v2, v3
+
+    .line 128
+    goto :goto_0
+
+    .line 129
+    :cond_3
+    const/4 v2, 0x0
+
+    .line 130
+    :goto_0
+    const/4 v4, 0x5
+
+    .line 131
+    const/16 v5, 0x3ea
+
+    .line 132
+    .line 133
+    if-ne v0, v4, :cond_6
+
+    .line 134
+    .line 135
+    if-eqz v2, :cond_6
+
+    .line 136
+    .line 137
+    iget-object p2, p0, Lqt0;->K0:Lds1;
+
+    .line 138
+    .line 139
+    iget-boolean v0, p2, Lds1;->H:Z
+
+    .line 140
+    .line 141
+    if-eqz v0, :cond_4
+
+    .line 142
+    .line 143
+    iget-boolean p2, p2, Lds1;->G:Z
+
+    .line 144
+    .line 145
+    if-nez p2, :cond_4
+
+    .line 146
+    .line 147
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 148
+    .line 149
+    .line 150
+    move-result-object p0
+
+    .line 151
+    invoke-static {p0, v1}, Landroid/view/PointerIcon;->getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
+
+    .line 152
+    .line 153
+    .line 154
+    move-result-object p0
+
+    .line 155
+    return-object p0
+
+    .line 156
+    :cond_4
+    iget-object p2, p0, Lqt0;->b1:Lsr1;
+
+    .line 157
+    .line 158
+    iget-object p2, p2, Lsr1;->r:Ljava/util/List;
+
+    .line 159
+    .line 160
+    if-eqz p2, :cond_5
+
+    .line 161
+    .line 162
+    invoke-interface {p2}, Ljava/util/List;->size()I
+
+    .line 163
+    .line 164
+    .line 165
+    move-result p2
+
+    .line 166
+    if-lez p2, :cond_5
+
+    .line 167
+    .line 168
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    .line 169
+    .line 170
+    .line 171
+    move-result p1
+
+    .line 172
+    sub-int/2addr p2, v3
+
+    .line 173
+    invoke-virtual {p0, p2}, Lqt0;->L(I)I
+
+    .line 174
+    .line 175
+    .line 176
+    move-result p2
+
+    .line 177
+    int-to-float p2, p2
+
+    .line 178
+    cmpg-float p1, p1, p2
+
+    .line 179
+    .line 180
+    if-gez p1, :cond_5
+
+    .line 181
+    .line 182
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 183
+    .line 184
+    .line 185
+    move-result-object p0
+
+    .line 186
+    invoke-static {p0, v5}, Landroid/view/PointerIcon;->getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
+
+    .line 187
+    .line 188
+    .line 189
+    move-result-object p0
+
+    .line 190
+    return-object p0
+
+    .line 191
+    :cond_5
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 192
+    .line 193
+    .line 194
+    move-result-object p0
+
+    .line 195
+    const/16 p1, 0x3f0
+
+    .line 196
+    .line 197
+    invoke-static {p0, p1}, Landroid/view/PointerIcon;->getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
+
+    .line 198
+    .line 199
+    .line 200
+    move-result-object p0
+
+    .line 201
+    return-object p0
+
+    .line 202
+    :cond_6
+    if-ne v0, v3, :cond_7
+
+    .line 203
+    .line 204
+    iget-object p1, p0, Lqt0;->W0:Lri1;
+
+    .line 205
+    .line 206
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 207
+    .line 208
+    .line 209
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 210
+    .line 211
+    .line 212
+    move-result-object p0
+
+    .line 213
+    invoke-static {p0, v5}, Landroid/view/PointerIcon;->getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
+
+    .line 214
+    .line 215
+    .line 216
+    move-result-object p0
+
+    .line 217
+    return-object p0
+
+    .line 218
+    :cond_7
+    invoke-super {p0, p1, p2}, Landroid/view/View;->onResolvePointerIcon(Landroid/view/MotionEvent;I)Landroid/view/PointerIcon;
+
+    .line 219
+    .line 220
+    .line 221
+    move-result-object p0
+
+    .line 222
+    return-object p0
+
+    .line 223
+    :cond_8
+    :goto_1
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 224
+    .line 225
+    .line 226
+    move-result-object p0
+
+    .line 227
+    const/16 p1, 0x3fc
+
+    .line 228
+    .line 229
+    invoke-static {p0, p1}, Landroid/view/PointerIcon;->getSystemIcon(Landroid/content/Context;I)Landroid/view/PointerIcon;
+
+    .line 230
+    .line 231
+    .line 232
+    move-result-object p0
+
+    .line 233
+    return-object p0
+
+    .line 234
+    :cond_9
+    invoke-super {p0, p1, p2}, Landroid/view/View;->onResolvePointerIcon(Landroid/view/MotionEvent;I)Landroid/view/PointerIcon;
+
+    .line 235
+    .line 236
+    .line 237
+    move-result-object p0
+
+    .line 238
+    return-object p0
+.end method
+
+.method public final onSizeChanged(IIII)V
+    .locals 3
+
+    .line 1
+    invoke-super {p0, p1, p2, p3, p4}, Landroid/view/View;->onSizeChanged(IIII)V
+
+    .line 2
+    .line 3
+    .line 4
+    iget-object v0, p0, Lqt0;->b1:Lsr1;
+
+    .line 5
+    .line 6
+    iget-object v0, v0, Lsr1;->d:Landroid/graphics/Rect;
+
+    .line 7
+    .line 8
+    iput p1, v0, Landroid/graphics/Rect;->right:I
+
+    .line 9
+    .line 10
+    iput p2, v0, Landroid/graphics/Rect;->bottom:I
+
+    .line 11
+    .line 12
+    invoke-virtual {p0}, Lqt0;->getVerticalEdgeEffect()Landroid/widget/EdgeEffect;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object v0
+
+    .line 16
+    invoke-virtual {v0, p1, p2}, Landroid/widget/EdgeEffect;->setSize(II)V
+
+    .line 17
+    .line 18
+    .line 19
+    invoke-virtual {p0}, Lqt0;->getHorizontalEdgeEffect()Landroid/widget/EdgeEffect;
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-object v0
+
+    .line 23
+    invoke-virtual {v0, p2, p1}, Landroid/widget/EdgeEffect;->setSize(II)V
+
+    .line 24
+    .line 25
+    .line 26
+    invoke-virtual {p0}, Lqt0;->getVerticalEdgeEffect()Landroid/widget/EdgeEffect;
+
+    .line 27
+    .line 28
+    .line 29
+    move-result-object v0
+
+    .line 30
+    invoke-virtual {v0}, Landroid/widget/EdgeEffect;->finish()V
+
+    .line 31
+    .line 32
+    .line 33
+    invoke-virtual {p0}, Lqt0;->getHorizontalEdgeEffect()Landroid/widget/EdgeEffect;
+
+    .line 34
+    .line 35
+    .line 36
+    move-result-object v0
+
+    .line 37
+    invoke-virtual {v0}, Landroid/widget/EdgeEffect;->finish()V
+
+    .line 38
+    .line 39
+    .line 40
+    iget-object v0, p0, Lqt0;->s:Ld3;
+
+    .line 41
+    .line 42
+    const/4 v1, 0x0
+
+    .line 43
+    if-eqz v0, :cond_3
+
+    .line 44
+    .line 45
+    iget-boolean v0, p0, Lqt0;->O:Z
+
+    .line 46
+    .line 47
+    if-eqz v0, :cond_0
+
+    .line 48
+    .line 49
+    if-eq p1, p3, :cond_0
+
+    .line 50
+    .line 51
+    goto :goto_1
+
+    .line 52
+    :cond_0
+    invoke-virtual {p0}, Lqt0;->getOffsetX()I
+
+    .line 53
+    .line 54
+    .line 55
+    move-result p1
+
+    .line 56
+    invoke-virtual {p0}, Lqt0;->getScrollMaxX()I
+
+    .line 57
+    .line 58
+    .line 59
+    move-result p3
+
+    .line 60
+    const/4 v0, 0x0
+
+    .line 61
+    if-le p1, p3, :cond_1
+
+    .line 62
+    .line 63
+    invoke-virtual {p0}, Lqt0;->getScrollMaxX()I
+
+    .line 64
+    .line 65
+    .line 66
+    move-result p1
+
+    .line 67
+    invoke-virtual {p0}, Lqt0;->getOffsetX()I
+
+    .line 68
+    .line 69
+    .line 70
+    move-result p3
+
+    .line 71
+    sub-int/2addr p1, p3
+
+    .line 72
+    int-to-float p1, p1
+
+    .line 73
+    goto :goto_0
+
+    .line 74
+    :cond_1
+    move p1, v0
+
+    .line 75
+    :goto_0
+    invoke-virtual {p0}, Lqt0;->getOffsetY()I
+
+    .line 76
+    .line 77
+    .line 78
+    move-result p3
+
+    .line 79
+    invoke-virtual {p0}, Lqt0;->getScrollMaxY()I
+
+    .line 80
+    .line 81
+    .line 82
+    move-result v2
+
+    .line 83
+    if-le p3, v2, :cond_2
+
+    .line 84
+    .line 85
+    invoke-virtual {p0}, Lqt0;->getScrollMaxY()I
+
+    .line 86
+    .line 87
+    .line 88
+    move-result p3
+
+    .line 89
+    invoke-virtual {p0}, Lqt0;->getOffsetY()I
+
+    .line 90
+    .line 91
+    .line 92
+    move-result v0
+
+    .line 93
+    sub-int/2addr p3, v0
+
+    .line 94
+    int-to-float v0, p3
+
+    .line 95
+    :cond_2
+    iget-object p3, p0, Lqt0;->K0:Lds1;
+
+    .line 96
+    .line 97
+    invoke-virtual {p3, p1, v0, v1}, Lds1;->j(FFZ)V
+
+    .line 98
+    .line 99
+    .line 100
+    goto :goto_2
+
+    .line 101
+    :cond_3
+    :goto_1
+    const/4 p1, 0x1
+
+    .line 102
+    invoke-virtual {p0, p1}, Lqt0;->y(Z)V
+
+    .line 103
+    .line 104
+    .line 105
+    :goto_2
+    iput-boolean v1, p0, Lqt0;->f1:Z
+
+    .line 106
+    .line 107
+    iput-boolean v1, p0, Lqt0;->g1:Z
+
+    .line 108
+    .line 109
+    if-le p4, p2, :cond_4
+
+    .line 110
+    .line 111
+    iget-object p1, p0, Lqt0;->W0:Lri1;
+
+    .line 112
+    .line 113
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 114
+    .line 115
+    .line 116
+    invoke-virtual {p0}, Lqt0;->E()V
+
+    .line 117
+    .line 118
+    .line 119
+    :cond_4
+    return-void
+.end method
+
+.method public final onTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 14
+
+    .line 1
+    invoke-virtual {p0}, Landroid/view/View;->isEnabled()Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    const/4 v1, 0x0
+
+    .line 6
+    if-nez v0, :cond_0
+
+    .line 7
+    .line 8
+    goto/16 :goto_b
+
+    .line 9
+    .line 10
+    :cond_0
+    const/16 v0, 0x2002
+
+    .line 11
+    .line 12
+    invoke-virtual {p1, v0}, Landroid/view/InputEvent;->isFromSource(I)Z
+
+    .line 13
+    .line 14
+    .line 15
+    move-result v0
+
+    .line 16
+    iget-object v2, p0, Lqt0;->K0:Lds1;
+
+    .line 17
+    .line 18
+    const/4 v3, 0x1
+
+    .line 19
+    if-eqz v0, :cond_19
+
+    .line 20
+    .line 21
+    iget-object p0, p0, Lqt0;->W0:Lri1;
+
+    .line 22
+    .line 23
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 24
+    .line 25
+    .line 26
+    iget p0, v2, Lds1;->y:I
+
+    .line 27
+    .line 28
+    iget-object v4, v2, Lds1;->a:Lqt0;
+
+    .line 29
+    .line 30
+    invoke-virtual {v4}, Lqt0;->S()V
+
+    .line 31
+    .line 32
+    .line 33
+    iget-boolean v0, v2, Lds1;->r:Z
+
+    .line 34
+    .line 35
+    if-nez v0, :cond_18
+
+    .line 36
+    .line 37
+    iget-boolean v0, v2, Lds1;->q:Z
+
+    .line 38
+    .line 39
+    if-eqz v0, :cond_1
+
+    .line 40
+    .line 41
+    goto/16 :goto_5
+
+    .line 42
+    .line 43
+    :cond_1
+    const/4 v0, 0x0
+
+    .line 44
+    iput-object v0, v2, Lds1;->F:Landroid/graphics/PointF;
+
+    .line 45
+    .line 46
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
+
+    .line 47
+    .line 48
+    .line 49
+    move-result v5
+
+    .line 50
+    const-wide v6, 0xffffffffL
+
+    .line 51
+    .line 52
+    .line 53
+    .line 54
+    .line 55
+    const/16 v8, 0x20
+
+    .line 56
+    .line 57
+    if-eqz v5, :cond_13
+
+    .line 58
+    .line 59
+    const/4 v11, 0x2
+
+    .line 60
+    if-eq v5, v3, :cond_8
+
+    .line 61
+    .line 62
+    if-eq v5, v11, :cond_3
+
+    .line 63
+    .line 64
+    const/4 p0, 0x3
+
+    .line 65
+    if-eq v5, p0, :cond_2
+
+    .line 66
+    .line 67
+    goto/16 :goto_c
+
+    .line 68
+    .line 69
+    :cond_2
+    invoke-virtual {v2}, Lds1;->i()V
+
+    .line 70
+    .line 71
+    .line 72
+    iput v1, v2, Lds1;->x:I
+
+    .line 73
+    .line 74
+    return v3
+
+    .line 75
+    :cond_3
+    iget-boolean v0, v2, Lds1;->E:Z
+
+    .line 76
+    .line 77
+    if-eqz v0, :cond_4
+
+    .line 78
+    .line 79
+    goto/16 :goto_c
+
+    .line 80
+    .line 81
+    :cond_4
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    .line 82
+    .line 83
+    .line 84
+    move-result v0
+
+    .line 85
+    iget v5, v2, Lds1;->A:F
+
+    .line 86
+    .line 87
+    sub-float/2addr v0, v5
+
+    .line 88
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+
+    .line 89
+    .line 90
+    .line 91
+    move-result v0
+
+    .line 92
+    int-to-float p0, p0
+
+    .line 93
+    cmpl-float v0, v0, p0
+
+    .line 94
+    .line 95
+    if-gtz v0, :cond_5
+
+    .line 96
+    .line 97
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    .line 98
+    .line 99
+    .line 100
+    move-result v0
+
+    .line 101
+    iget v5, v2, Lds1;->B:F
+
+    .line 102
+    .line 103
+    sub-float/2addr v0, v5
+
+    .line 104
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+
+    .line 105
+    .line 106
+    .line 107
+    move-result v0
+
+    .line 108
+    cmpl-float p0, v0, p0
+
+    .line 109
+    .line 110
+    if-lez p0, :cond_6
+
+    .line 111
+    .line 112
+    :cond_5
+    iput-boolean v1, v2, Lds1;->G:Z
+
+    .line 113
+    .line 114
+    :cond_6
+    iget p0, v2, Lds1;->C:I
+
+    .line 115
+    .line 116
+    and-int/2addr p0, v3
+
+    .line 117
+    if-eqz p0, :cond_21
+
+    .line 118
+    .line 119
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    .line 120
+    .line 121
+    .line 122
+    move-result p0
+
+    .line 123
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    .line 124
+    .line 125
+    .line 126
+    move-result v0
+
+    .line 127
+    invoke-virtual {v4, p0, v0}, Lqt0;->J(FF)J
+
+    .line 128
+    .line 129
+    .line 130
+    move-result-wide v0
+
+    .line 131
+    shr-long v8, v0, v8
+
+    .line 132
+    .line 133
+    long-to-int p0, v8
+
+    .line 134
+    and-long/2addr v0, v6
+
+    .line 135
+    long-to-int v8, v0
+
+    .line 136
+    invoke-virtual {v4}, Lqt0;->getText()Ln61;
+
+    .line 137
+    .line 138
+    .line 139
+    move-result-object v0
+
+    .line 140
+    invoke-virtual {v0}, Ln61;->n()Lug0;
+
+    .line 141
+    .line 142
+    .line 143
+    move-result-object v0
+
+    .line 144
+    invoke-virtual {v0, p0, v8}, Lug0;->B(II)Lxm0;
+
+    .line 145
+    .line 146
+    .line 147
+    move-result-object v0
+
+    .line 148
+    iget-boolean v1, v2, Lds1;->G:Z
+
+    .line 149
+    .line 150
+    if-nez v1, :cond_7
+
+    .line 151
+    .line 152
+    iget-boolean v1, v2, Lds1;->H:Z
+
+    .line 153
+    .line 154
+    if-nez v1, :cond_7
+
+    .line 155
+    .line 156
+    iget-object v1, v4, Lqt0;->p:Lxm0;
+
+    .line 157
+    .line 158
+    iget v5, v1, Lxm0;->b:I
+
+    .line 159
+    .line 160
+    iget v6, v1, Lxm0;->c:I
+
+    .line 161
+    .line 162
+    const/16 v9, 0x8
+
+    .line 163
+    .line 164
+    const/4 v10, 0x1
+
+    .line 165
+    move v7, p0
+
+    .line 166
+    invoke-virtual/range {v4 .. v10}, Lqt0;->o0(IIIIIZ)V
+
+    .line 167
+    .line 168
+    .line 169
+    :cond_7
+    iput-object v0, v2, Lds1;->I:Lxm0;
+
+    .line 170
+    .line 171
+    invoke-virtual {v4}, Landroid/view/View;->postInvalidate()V
+
+    .line 172
+    .line 173
+    .line 174
+    invoke-virtual {v2, p1}, Lds1;->l(Landroid/view/MotionEvent;)V
+
+    .line 175
+    .line 176
+    .line 177
+    return v3
+
+    .line 178
+    :cond_8
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getEventTime()J
+
+    .line 179
+    .line 180
+    .line 181
+    move-result-wide v9
+
+    .line 182
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getDownTime()J
+
+    .line 183
+    .line 184
+    .line 185
+    move-result-wide v12
+
+    .line 186
+    sub-long/2addr v9, v12
+
+    .line 187
+    long-to-float p0, v9
+
+    .line 188
+    invoke-static {}, Landroid/view/ViewConfiguration;->getTapTimeout()I
+
+    .line 189
+    .line 190
+    .line 191
+    move-result v5
+
+    .line 192
+    int-to-float v5, v5
+
+    .line 193
+    const/high16 v9, 0x40000000    # 2.0f
+
+    .line 194
+    .line 195
+    mul-float/2addr v5, v9
+
+    .line 196
+    cmpl-float p0, p0, v5
+
+    .line 197
+    .line 198
+    if-lez p0, :cond_9
+
+    .line 199
+    .line 200
+    iput-boolean v1, v2, Lds1;->G:Z
+
+    .line 201
+    .line 202
+    :cond_9
+    iget-boolean p0, v2, Lds1;->E:Z
+
+    .line 203
+    .line 204
+    if-nez p0, :cond_12
+
+    .line 205
+    .line 206
+    iget-boolean p0, v2, Lds1;->H:Z
+
+    .line 207
+    .line 208
+    if-eqz p0, :cond_f
+
+    .line 209
+    .line 210
+    iget-boolean p0, v2, Lds1;->G:Z
+
+    .line 211
+    .line 212
+    if-nez p0, :cond_f
+
+    .line 213
+    .line 214
+    iget p0, v2, Lds1;->C:I
+
+    .line 215
+    .line 216
+    and-int/2addr p0, v3
+
+    .line 217
+    if-eqz p0, :cond_f
+
+    .line 218
+    .line 219
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    .line 220
+    .line 221
+    .line 222
+    move-result p0
+
+    .line 223
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    .line 224
+    .line 225
+    .line 226
+    move-result v5
+
+    .line 227
+    invoke-virtual {v4, p0, v5}, Lqt0;->J(FF)J
+
+    .line 228
+    .line 229
+    .line 230
+    move-result-wide v9
+
+    .line 231
+    shr-long v12, v9, v8
+
+    .line 232
+    .line 233
+    long-to-int p0, v12
+
+    .line 234
+    and-long v5, v9, v6
+
+    .line 235
+    .line 236
+    long-to-int v5, v5
+
+    .line 237
+    invoke-virtual {v4}, Lqt0;->getText()Ln61;
+
+    .line 238
+    .line 239
+    .line 240
+    move-result-object v6
+
+    .line 241
+    invoke-virtual {v6}, Ln61;->n()Lug0;
+
+    .line 242
+    .line 243
+    .line 244
+    move-result-object v6
+
+    .line 245
+    invoke-virtual {v6, p0, v5}, Lug0;->B(II)Lxm0;
+
+    .line 246
+    .line 247
+    .line 248
+    move-result-object p0
+
+    .line 249
+    invoke-virtual {v4}, Lqt0;->getCursorRange()Lzp6;
+
+    .line 250
+    .line 251
+    .line 252
+    move-result-object v5
+
+    .line 253
+    iget v6, p0, Lxm0;->a:I
+
+    .line 254
+    .line 255
+    iget-object v7, v5, Lzp6;->a:Lxm0;
+
+    .line 256
+    .line 257
+    iget-object v5, v5, Lzp6;->b:Lxm0;
+
+    .line 258
+    .line 259
+    iget v8, v7, Lxm0;->a:I
+
+    .line 260
+    .line 261
+    if-lt v6, v8, :cond_a
+
+    .line 262
+    .line 263
+    iget v8, v5, Lxm0;->a:I
+
+    .line 264
+    .line 265
+    if-ge v6, v8, :cond_a
+
+    .line 266
+    .line 267
+    move v6, v3
+
+    .line 268
+    goto :goto_0
+
+    .line 269
+    :cond_a
+    move v6, v1
+
+    .line 270
+    :goto_0
+    if-nez v6, :cond_f
+
+    .line 271
+    .line 272
+    invoke-virtual {v4}, Lqt0;->getKeyMetaStates()Lsx2;
+
+    .line 273
+    .line 274
+    .line 275
+    move-result-object v6
+
+    .line 276
+    iget-boolean v6, v6, Lsx2;->c:Z
+
+    .line 277
+    .line 278
+    if-nez v6, :cond_b
+
+    .line 279
+    .line 280
+    invoke-virtual {v5, p0}, Lxm0;->equals(Ljava/lang/Object;)Z
+
+    .line 281
+    .line 282
+    .line 283
+    move-result v6
+
+    .line 284
+    if-nez v6, :cond_f
+
+    .line 285
+    .line 286
+    :cond_b
+    iget v6, v5, Lxm0;->a:I
+
+    .line 287
+    .line 288
+    iget v8, v7, Lxm0;->a:I
+
+    .line 289
+    .line 290
+    sub-int/2addr v6, v8
+
+    .line 291
+    invoke-virtual {v4}, Lqt0;->getKeyMetaStates()Lsx2;
+
+    .line 292
+    .line 293
+    .line 294
+    move-result-object v8
+
+    .line 295
+    iget-boolean v8, v8, Lsx2;->c:Z
+
+    .line 296
+    .line 297
+    iget v9, p0, Lxm0;->a:I
+
+    .line 298
+    .line 299
+    if-eqz v8, :cond_c
+
+    .line 300
+    .line 301
+    goto :goto_1
+
+    .line 302
+    :cond_c
+    iget v8, v7, Lxm0;->a:I
+
+    .line 303
+    .line 304
+    if-ge v9, v8, :cond_d
+
+    .line 305
+    .line 306
+    goto :goto_1
+
+    .line 307
+    :cond_d
+    sub-int/2addr v9, v6
+
+    .line 308
+    :goto_1
+    invoke-virtual {v4}, Lqt0;->getText()Ln61;
+
+    .line 309
+    .line 310
+    .line 311
+    move-result-object v8
+
+    .line 312
+    iget v7, v7, Lxm0;->a:I
+
+    .line 313
+    .line 314
+    iget v5, v5, Lxm0;->a:I
+
+    .line 315
+    .line 316
+    invoke-virtual {v8, v7, v5}, Ln61;->D(II)Ljava/lang/String;
+
+    .line 317
+    .line 318
+    .line 319
+    move-result-object v5
+
+    .line 320
+    invoke-virtual {v4}, Lqt0;->getKeyMetaStates()Lsx2;
+
+    .line 321
+    .line 322
+    .line 323
+    move-result-object v7
+
+    .line 324
+    iget-boolean v7, v7, Lsx2;->c:Z
+
+    .line 325
+    .line 326
+    if-eqz v7, :cond_e
+
+    .line 327
+    .line 328
+    iget v7, p0, Lxm0;->b:I
+
+    .line 329
+    .line 330
+    iget v10, p0, Lxm0;->c:I
+
+    .line 331
+    .line 332
+    invoke-virtual {v8, v7, v10, v5}, Ln61;->r(IILjava/lang/CharSequence;)V
+
+    .line 333
+    .line 334
+    .line 335
+    goto :goto_2
+
+    .line 336
+    :cond_e
+    invoke-virtual {v8}, Ln61;->b()Z
+
+    .line 337
+    .line 338
+    .line 339
+    invoke-virtual {v4}, Lqt0;->A()V
+
+    .line 340
+    .line 341
+    .line 342
+    invoke-virtual {v8}, Ln61;->n()Lug0;
+
+    .line 343
+    .line 344
+    .line 345
+    move-result-object p0
+
+    .line 346
+    invoke-virtual {p0, v9}, Lug0;->A(I)Lxm0;
+
+    .line 347
+    .line 348
+    .line 349
+    move-result-object p0
+
+    .line 350
+    iget v7, p0, Lxm0;->b:I
+
+    .line 351
+    .line 352
+    iget v10, p0, Lxm0;->c:I
+
+    .line 353
+    .line 354
+    invoke-virtual {v8, v7, v10, v5}, Ln61;->r(IILjava/lang/CharSequence;)V
+
+    .line 355
+    .line 356
+    .line 357
+    invoke-virtual {v8}, Ln61;->k()Z
+
+    .line 358
+    .line 359
+    .line 360
+    :goto_2
+    invoke-virtual {v8}, Ln61;->n()Lug0;
+
+    .line 361
+    .line 362
+    .line 363
+    move-result-object v5
+
+    .line 364
+    add-int/2addr v9, v6
+
+    .line 365
+    invoke-virtual {v5, v9}, Lug0;->A(I)Lxm0;
+
+    .line 366
+    .line 367
+    .line 368
+    move-result-object v5
+
+    .line 369
+    move-object v6, v5
+
+    .line 370
+    iget v5, p0, Lxm0;->b:I
+
+    .line 371
+    .line 372
+    iget p0, p0, Lxm0;->c:I
+
+    .line 373
+    .line 374
+    iget v7, v6, Lxm0;->b:I
+
+    .line 375
+    .line 376
+    iget v8, v6, Lxm0;->c:I
+
+    .line 377
+    .line 378
+    const/16 v9, 0x8
+
+    .line 379
+    .line 380
+    const/4 v10, 0x1
+
+    .line 381
+    move v6, p0
+
+    .line 382
+    invoke-virtual/range {v4 .. v10}, Lqt0;->o0(IIIIIZ)V
+
+    .line 383
+    .line 384
+    .line 385
+    :cond_f
+    iget-boolean p0, v2, Lds1;->G:Z
+
+    .line 386
+    .line 387
+    if-eqz p0, :cond_12
+
+    .line 388
+    .line 389
+    iget p0, v2, Lds1;->C:I
+
+    .line 390
+    .line 391
+    and-int/lit8 v5, p0, 0x1
+
+    .line 392
+    .line 393
+    if-eqz v5, :cond_10
+
+    .line 394
+    .line 395
+    invoke-virtual {v2, p1}, Lds1;->onSingleTapUp(Landroid/view/MotionEvent;)Z
+
+    .line 396
+    .line 397
+    .line 398
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getEventTime()J
+
+    .line 399
+    .line 400
+    .line 401
+    move-result-wide p0
+
+    .line 402
+    iput-wide p0, v2, Lds1;->D:J
+
+    .line 403
+    .line 404
+    goto :goto_3
+
+    .line 405
+    :cond_10
+    and-int/2addr p0, v11
+
+    .line 406
+    if-eqz p0, :cond_12
+
+    .line 407
+    .line 408
+    new-instance p0, Landroid/graphics/PointF;
+
+    .line 409
+    .line 410
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    .line 411
+    .line 412
+    .line 413
+    move-result v5
+
+    .line 414
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    .line 415
+    .line 416
+    .line 417
+    move-result v6
+
+    .line 418
+    invoke-direct {p0, v5, v6}, Landroid/graphics/PointF;-><init>(FF)V
+
+    .line 419
+    .line 420
+    .line 421
+    iput-object p0, v2, Lds1;->F:Landroid/graphics/PointF;
+
+    .line 422
+    .line 423
+    new-instance p0, Lpt0;
+
+    .line 424
+    .line 425
+    const/4 v5, 0x4
+
+    .line 426
+    invoke-direct {p0, v5}, Lpt0;-><init>(B)V
+
+    .line 427
+    .line 428
+    .line 429
+    invoke-virtual {v2, p0, v0, p1}, Lds1;->a(Lx52;Lxm0;Landroid/view/MotionEvent;)I
+
+    .line 430
+    .line 431
+    .line 432
+    move-result p0
+
+    .line 433
+    and-int/2addr p0, v11
+
+    .line 434
+    if-eqz p0, :cond_11
+
+    .line 435
+    .line 436
+    goto :goto_3
+
+    .line 437
+    :cond_11
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    .line 438
+    .line 439
+    .line 440
+    move-result p0
+
+    .line 441
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    .line 442
+    .line 443
+    .line 444
+    move-result v0
+
+    .line 445
+    invoke-virtual {v4, p0, v0}, Landroid/view/View;->performContextClick(FF)Z
+
+    .line 446
+    .line 447
+    .line 448
+    invoke-virtual {v4}, Lqt0;->getProps()Lri1;
+
+    .line 449
+    .line 450
+    .line 451
+    move-result-object p0
+
+    .line 452
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 453
+    .line 454
+    .line 455
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    .line 456
+    .line 457
+    .line 458
+    move-result p0
+
+    .line 459
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    .line 460
+    .line 461
+    .line 462
+    move-result p1
+
+    .line 463
+    invoke-virtual {v4, p0, p1}, Landroid/view/View;->showContextMenu(FF)Z
+
+    .line 464
+    .line 465
+    .line 466
+    :cond_12
+    :goto_3
+    invoke-virtual {v2}, Lds1;->i()V
+
+    .line 467
+    .line 468
+    .line 469
+    iput v1, v2, Lds1;->x:I
+
+    .line 470
+    .line 471
+    return v3
+
+    .line 472
+    :cond_13
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    .line 473
+    .line 474
+    .line 475
+    move-result p0
+
+    .line 476
+    iput p0, v2, Lds1;->A:F
+
+    .line 477
+    .line 478
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    .line 479
+    .line 480
+    .line 481
+    move-result p0
+
+    .line 482
+    iput p0, v2, Lds1;->B:F
+
+    .line 483
+    .line 484
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getButtonState()I
+
+    .line 485
+    .line 486
+    .line 487
+    move-result p0
+
+    .line 488
+    iput p0, v2, Lds1;->C:I
+
+    .line 489
+    .line 490
+    iput-boolean v3, v2, Lds1;->G:Z
+
+    .line 491
+    .line 492
+    and-int/2addr p0, v3
+
+    .line 493
+    if-eqz p0, :cond_21
+
+    .line 494
+    .line 495
+    invoke-virtual {v2, p1}, Lds1;->h(Landroid/view/MotionEvent;)Z
+
+    .line 496
+    .line 497
+    .line 498
+    move-result p0
+
+    .line 499
+    if-eqz p0, :cond_15
+
+    .line 500
+    .line 501
+    iget-boolean p0, v2, Lds1;->r:Z
+
+    .line 502
+    .line 503
+    if-nez p0, :cond_14
+
+    .line 504
+    .line 505
+    iget-boolean p0, v2, Lds1;->q:Z
+
+    .line 506
+    .line 507
+    if-eqz p0, :cond_15
+
+    .line 508
+    .line 509
+    :cond_14
+    return v3
+
+    .line 510
+    :cond_15
+    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
+
+    .line 511
+    .line 512
+    .line 513
+    move-result-wide v9
+
+    .line 514
+    iget-wide v11, v2, Lds1;->D:J
+
+    .line 515
+    .line 516
+    sub-long/2addr v9, v11
+
+    .line 517
+    invoke-static {}, Landroid/view/ViewConfiguration;->getDoubleTapTimeout()I
+
+    .line 518
+    .line 519
+    .line 520
+    move-result p0
+
+    .line 521
+    int-to-long v11, p0
+
+    .line 522
+    cmp-long p0, v9, v11
+
+    .line 523
+    .line 524
+    if-gez p0, :cond_16
+
+    .line 525
+    .line 526
+    iput-boolean v3, v2, Lds1;->E:Z
+
+    .line 527
+    .line 528
+    invoke-virtual {v2, p1}, Lds1;->onDoubleTap(Landroid/view/MotionEvent;)Z
+
+    .line 529
+    .line 530
+    .line 531
+    return v3
+
+    .line 532
+    :cond_16
+    iget p0, v2, Lds1;->A:F
+
+    .line 533
+    .line 534
+    iget p1, v2, Lds1;->B:F
+
+    .line 535
+    .line 536
+    invoke-virtual {v4, p0, p1}, Lqt0;->J(FF)J
+
+    .line 537
+    .line 538
+    .line 539
+    move-result-wide p0
+
+    .line 540
+    shr-long v8, p0, v8
+
+    .line 541
+    .line 542
+    long-to-int v0, v8
+
+    .line 543
+    and-long/2addr p0, v6
+
+    .line 544
+    long-to-int p0, p0
+
+    .line 545
+    invoke-virtual {v4}, Lqt0;->getText()Ln61;
+
+    .line 546
+    .line 547
+    .line 548
+    move-result-object p1
+
+    .line 549
+    invoke-virtual {p1}, Ln61;->n()Lug0;
+
+    .line 550
+    .line 551
+    .line 552
+    move-result-object p1
+
+    .line 553
+    invoke-virtual {p1, v0, p0}, Lug0;->B(II)Lxm0;
+
+    .line 554
+    .line 555
+    .line 556
+    move-result-object p1
+
+    .line 557
+    iget-object v5, v4, Lqt0;->A0:Lwb1;
+
+    .line 558
+    .line 559
+    invoke-virtual {v5}, Lwb1;->a()Z
+
+    .line 560
+    .line 561
+    .line 562
+    move-result v5
+
+    .line 563
+    if-eqz v5, :cond_17
+
+    .line 564
+    .line 565
+    invoke-virtual {v4}, Lqt0;->getCursorRange()Lzp6;
+
+    .line 566
+    .line 567
+    .line 568
+    move-result-object v5
+
+    .line 569
+    iget v6, p1, Lxm0;->a:I
+
+    .line 570
+    .line 571
+    iget-object v7, v5, Lzp6;->a:Lxm0;
+
+    .line 572
+    .line 573
+    iget v7, v7, Lxm0;->a:I
+
+    .line 574
+    .line 575
+    if-lt v6, v7, :cond_17
+
+    .line 576
+    .line 577
+    iget-object v5, v5, Lzp6;->b:Lxm0;
+
+    .line 578
+    .line 579
+    iget v5, v5, Lxm0;->a:I
+
+    .line 580
+    .line 581
+    if-ge v6, v5, :cond_17
+
+    .line 582
+    .line 583
+    iget v5, v2, Lds1;->A:F
+
+    .line 584
+    .line 585
+    iget v6, v2, Lds1;->B:F
+
+    .line 586
+    .line 587
+    invoke-virtual {v4, v5, v6}, Lqt0;->U(FF)Z
+
+    .line 588
+    .line 589
+    .line 590
+    move-result v5
+
+    .line 591
+    if-eqz v5, :cond_17
+
+    .line 592
+    .line 593
+    iput-boolean v3, v2, Lds1;->H:Z
+
+    .line 594
+    .line 595
+    goto :goto_4
+
+    .line 596
+    :cond_17
+    iput-boolean v1, v2, Lds1;->H:Z
+
+    .line 597
+    .line 598
+    const/16 v1, 0x8
+
+    .line 599
+    .line 600
+    invoke-virtual {v4, v0, p0, v1, v3}, Lqt0;->m0(IIIZ)V
+
+    .line 601
+    .line 602
+    .line 603
+    invoke-virtual {v4}, Landroid/view/View;->requestFocus()Z
+
+    .line 604
+    .line 605
+    .line 606
+    :goto_4
+    iput-object p1, v2, Lds1;->I:Lxm0;
+
+    .line 607
+    .line 608
+    invoke-virtual {v4}, Landroid/view/View;->postInvalidate()V
+
+    .line 609
+    .line 610
+    .line 611
+    return v3
+
+    .line 612
+    :cond_18
+    :goto_5
+    invoke-virtual {v2, p1}, Lds1;->h(Landroid/view/MotionEvent;)Z
+
+    .line 613
+    .line 614
+    .line 615
+    move-result p0
+
+    .line 616
+    return p0
+
+    .line 617
+    :cond_19
+    invoke-virtual {p0}, Lqt0;->S()V
+
+    .line 618
+    .line 619
+    .line 620
+    iget-boolean v0, v2, Lds1;->r:Z
+
+    .line 621
+    .line 622
+    if-nez v0, :cond_1b
+
+    .line 623
+    .line 624
+    iget-boolean v0, v2, Lds1;->q:Z
+
+    .line 625
+    .line 626
+    if-nez v0, :cond_1b
+
+    .line 627
+    .line 628
+    invoke-virtual {v2}, Lds1;->f()Z
+
+    .line 629
+    .line 630
+    .line 631
+    move-result v0
+
+    .line 632
+    if-eqz v0, :cond_1a
+
+    .line 633
+    .line 634
+    goto :goto_6
+
+    .line 635
+    :cond_1a
+    move v0, v1
+
+    .line 636
+    goto :goto_7
+
+    .line 637
+    :cond_1b
+    :goto_6
+    move v0, v3
+
+    .line 638
+    :goto_7
+    invoke-virtual {v2, p1}, Lds1;->h(Landroid/view/MotionEvent;)Z
+
+    .line 639
+    .line 640
+    .line 641
+    move-result v4
+
+    .line 642
+    iget-boolean v5, v2, Lds1;->r:Z
+
+    .line 643
+    .line 644
+    if-nez v5, :cond_1d
+
+    .line 645
+    .line 646
+    iget-boolean v5, v2, Lds1;->q:Z
+
+    .line 647
+    .line 648
+    if-nez v5, :cond_1d
+
+    .line 649
+    .line 650
+    invoke-virtual {v2}, Lds1;->f()Z
+
+    .line 651
+    .line 652
+    .line 653
+    move-result v2
+
+    .line 654
+    if-eqz v2, :cond_1c
+
+    .line 655
+    .line 656
+    goto :goto_8
+
+    .line 657
+    :cond_1c
+    move v2, v1
+
+    .line 658
+    goto :goto_9
+
+    .line 659
+    :cond_1d
+    :goto_8
+    move v2, v3
+
+    .line 660
+    :goto_9
+    iget-object v5, p0, Lqt0;->N0:Landroid/view/ScaleGestureDetector;
+
+    .line 661
+    .line 662
+    invoke-virtual {v5, p1}, Landroid/view/ScaleGestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+    .line 663
+    .line 664
+    .line 665
+    move-result v5
+
+    .line 666
+    if-nez v2, :cond_1e
+
+    .line 667
+    .line 668
+    if-nez v0, :cond_1e
+
+    .line 669
+    .line 670
+    iget-object v0, p0, Lqt0;->M0:Landroid/view/GestureDetector;
+
+    .line 671
+    .line 672
+    invoke-virtual {v0, p1}, Landroid/view/GestureDetector;->onTouchEvent(Landroid/view/MotionEvent;)Z
+
+    .line 673
+    .line 674
+    .line 675
+    move-result v0
+
+    .line 676
+    goto :goto_a
+
+    .line 677
+    :cond_1e
+    move v0, v1
+
+    .line 678
+    :goto_a
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    .line 679
+    .line 680
+    .line 681
+    move-result p1
+
+    .line 682
+    if-ne p1, v3, :cond_1f
+
+    .line 683
+    .line 684
+    iget-object p1, p0, Lqt0;->P0:Landroid/widget/EdgeEffect;
+
+    .line 685
+    .line 686
+    invoke-virtual {p1}, Landroid/widget/EdgeEffect;->onRelease()V
+
+    .line 687
+    .line 688
+    .line 689
+    iget-object p0, p0, Lqt0;->Q0:Landroid/widget/EdgeEffect;
+
+    .line 690
+    .line 691
+    invoke-virtual {p0}, Landroid/widget/EdgeEffect;->onRelease()V
+
+    .line 692
+    .line 693
+    .line 694
+    :cond_1f
+    if-nez v5, :cond_21
+
+    .line 695
+    .line 696
+    if-nez v0, :cond_21
+
+    .line 697
+    .line 698
+    if-eqz v4, :cond_20
+
+    .line 699
+    .line 700
+    goto :goto_c
+
+    .line 701
+    :cond_20
+    :goto_b
+    return v1
+
+    .line 702
+    :cond_21
+    :goto_c
+    return v3
+.end method
+
+.method public final p0(ZZ)V
+    .locals 1
+
+    .line 1
+    iget-boolean v0, p0, Lqt0;->O:Z
+
+    .line 2
+    .line 3
+    if-ne v0, p1, :cond_0
+
+    .line 4
+    .line 5
+    iget-boolean v0, p0, Lqt0;->l0:Z
+
+    .line 6
+    .line 7
+    if-ne v0, p2, :cond_0
+
+    .line 8
+    .line 9
+    return-void
+
+    .line 10
+    :cond_0
+    iput-boolean p1, p0, Lqt0;->O:Z
+
+    .line 11
+    .line 12
+    iput-boolean p2, p0, Lqt0;->l0:Z
+
+    .line 13
+    .line 14
+    invoke-virtual {p0}, Lqt0;->g0()V
+
+    .line 15
+    .line 16
+    .line 17
+    const/4 p2, 0x1
+
+    .line 18
+    invoke-virtual {p0, p2}, Lqt0;->y(Z)V
+
+    .line 19
+    .line 20
+    .line 21
+    if-nez p1, :cond_1
+
+    .line 22
+    .line 23
+    iget-object p1, p0, Lqt0;->a1:Lja5;
+
+    .line 24
+    .line 25
+    invoke-virtual {p1}, Lja5;->a()V
+
+    .line 26
+    .line 27
+    .line 28
+    :cond_1
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 29
+    .line 30
+    .line 31
+    return-void
+.end method
+
+.method public final performAccessibilityAction(ILandroid/os/Bundle;)Z
+    .locals 2
+
+    .line 1
+    const/16 v0, 0x1000
+
+    .line 2
+    .line 3
+    const/4 v1, 0x1
+
+    .line 4
+    if-eq p1, v0, :cond_7
+
+    .line 5
+    .line 6
+    const/16 v0, 0x2000
+
+    .line 7
+    .line 8
+    if-eq p1, v0, :cond_6
+
+    .line 9
+    .line 10
+    const/16 v0, 0x4000
+
+    .line 11
+    .line 12
+    if-eq p1, v0, :cond_5
+
+    .line 13
+    .line 14
+    const v0, 0x8000
+
+    .line 15
+    .line 16
+    .line 17
+    if-eq p1, v0, :cond_4
+
+    .line 18
+    .line 19
+    const/high16 v0, 0x10000
+
+    .line 20
+    .line 21
+    if-eq p1, v0, :cond_3
+
+    .line 22
+    .line 23
+    const/high16 v0, 0x200000
+
+    .line 24
+    .line 25
+    if-eq p1, v0, :cond_2
+
+    .line 26
+    .line 27
+    const v0, 0x1020038
+
+    .line 28
+    .line 29
+    .line 30
+    if-eq p1, v0, :cond_1
+
+    .line 31
+    .line 32
+    const v0, 0x102003a
+
+    .line 33
+    .line 34
+    .line 35
+    if-eq p1, v0, :cond_0
+
+    .line 36
+    .line 37
+    invoke-super {p0, p1, p2}, Landroid/view/View;->performAccessibilityAction(ILandroid/os/Bundle;)Z
+
+    .line 38
+    .line 39
+    .line 40
+    move-result p0
+
+    .line 41
+    return p0
+
+    .line 42
+    :cond_0
+    sget-object p1, Lsv5;->r:Lsv5;
+
+    .line 43
+    .line 44
+    invoke-virtual {p0, p1}, Lqt0;->Y(Lsv5;)V
+
+    .line 45
+    .line 46
+    .line 47
+    return v1
+
+    .line 48
+    :cond_1
+    sget-object p1, Lsv5;->s:Lsv5;
+
+    .line 49
+    .line 50
+    invoke-virtual {p0, p1}, Lqt0;->Y(Lsv5;)V
+
+    .line 51
+    .line 52
+    .line 53
+    return v1
+
+    .line 54
+    :cond_2
+    const-string p1, "ACTION_ARGUMENT_SET_TEXT_CHARSEQUENCE"
+
+    .line 55
+    .line 56
+    invoke-virtual {p2, p1}, Landroid/os/Bundle;->getCharSequence(Ljava/lang/String;)Ljava/lang/CharSequence;
+
+    .line 57
+    .line 58
+    .line 59
+    move-result-object p1
+
+    .line 60
+    invoke-virtual {p0, p1}, Lqt0;->setText(Ljava/lang/CharSequence;)V
+
+    .line 61
+    .line 62
+    .line 63
+    return v1
+
+    .line 64
+    :cond_3
+    invoke-virtual {p0}, Lqt0;->z()V
+
+    .line 65
+    .line 66
+    .line 67
+    return v1
+
+    .line 68
+    :cond_4
+    invoke-virtual {p0}, Lqt0;->b0()V
+
+    .line 69
+    .line 70
+    .line 71
+    return v1
+
+    .line 72
+    :cond_5
+    invoke-virtual {p0, v1}, Lqt0;->w(Z)V
+
+    .line 73
+    .line 74
+    .line 75
+    return v1
+
+    .line 76
+    :cond_6
+    sget-object p1, Lsv5;->s:Lsv5;
+
+    .line 77
+    .line 78
+    invoke-virtual {p0, p1}, Lqt0;->Y(Lsv5;)V
+
+    .line 79
+    .line 80
+    .line 81
+    return v1
+
+    .line 82
+    :cond_7
+    sget-object p1, Lsv5;->r:Lsv5;
+
+    .line 83
+    .line 84
+    invoke-virtual {p0, p1}, Lqt0;->Y(Lsv5;)V
+
+    .line 85
+    .line 86
+    .line 87
+    return v1
+.end method
+
+.method public final q(Ln61;IIIILjava/lang/StringBuilder;)V
+    .locals 12
+
+    .line 1
+    move/from16 v6, p4
+
+    .line 2
+    .line 3
+    iget-object v0, p0, Lqt0;->a1:Lja5;
+
+    .line 4
+    .line 5
+    iget-object v2, v0, Lja5;->a:Lq72;
+
+    .line 6
+    .line 7
+    iget-object v4, v2, Lq72;->l:Ljava/lang/Object;
+
+    .line 8
+    .line 9
+    check-cast v4, Ljava/util/ArrayList;
+
+    .line 10
+    .line 11
+    const/4 v9, 0x1
+
+    .line 12
+    if-eq p2, v6, :cond_1
+
+    .line 13
+    .line 14
+    iget-object v2, v2, Lq72;->k:Ljava/lang/Object;
+
+    .line 15
+    .line 16
+    check-cast v2, Lxq3;
+
+    .line 17
+    .line 18
+    invoke-virtual {v2, p2, v6}, Lxq3;->h(II)V
+
+    .line 19
+    .line 20
+    .line 21
+    new-instance v2, Lrm2;
+
+    .line 22
+    .line 23
+    invoke-direct {v2, p2, v6, v9}, Lrm2;-><init>(IIB)V
+
+    .line 24
+    .line 25
+    .line 26
+    invoke-static {v4, v2}, Lfu0;->u0(Ljava/util/List;Lo52;)V
+
+    .line 27
+    .line 28
+    .line 29
+    invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    .line 30
+    .line 31
+    .line 32
+    move-result-object v2
+
+    .line 33
+    :cond_0
+    :goto_0
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    .line 34
+    .line 35
+    .line 36
+    move-result v4
+
+    .line 37
+    if-eqz v4, :cond_1
+
+    .line 38
+    .line 39
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 40
+    .line 41
+    .line 42
+    move-result-object v4
+
+    .line 43
+    check-cast v4, Lei3;
+
+    .line 44
+    .line 45
+    iget v5, v4, Lei3;->a:I
+
+    .line 46
+    .line 47
+    if-le v5, v6, :cond_0
+
+    .line 48
+    .line 49
+    sub-int v7, v6, p2
+
+    .line 50
+    .line 51
+    sub-int/2addr v5, v7
+
+    .line 52
+    iput v5, v4, Lei3;->a:I
+
+    .line 53
+    .line 54
+    goto :goto_0
+
+    .line 55
+    :cond_1
+    iget-object v0, v0, Lja5;->b:Lsr6;
+
+    .line 56
+    .line 57
+    new-instance v2, Ljava/util/ArrayList;
+
+    .line 58
+    .line 59
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
+
+    .line 60
+    .line 61
+    .line 62
+    iget-object v4, v0, Lsr6;->k:Ljava/lang/Object;
+
+    .line 63
+    .line 64
+    check-cast v4, Ljava/util/ArrayList;
+
+    .line 65
+    .line 66
+    invoke-virtual {v4}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    .line 67
+    .line 68
+    .line 69
+    move-result-object v5
+
+    .line 70
+    :cond_2
+    :goto_1
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
+
+    .line 71
+    .line 72
+    .line 73
+    move-result v7
+
+    .line 74
+    if-eqz v7, :cond_5
+
+    .line 75
+    .line 76
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 77
+    .line 78
+    .line 79
+    move-result-object v7
+
+    .line 80
+    check-cast v7, Lla5;
+
+    .line 81
+    .line 82
+    iget v8, v7, Lla5;->a:I
+
+    .line 83
+    .line 84
+    if-ne v8, p2, :cond_3
+
+    .line 85
+    .line 86
+    iput-boolean v9, v7, Lla5;->c:Z
+
+    .line 87
+    .line 88
+    goto :goto_1
+
+    .line 89
+    :cond_3
+    add-int/lit8 v10, p2, 0x1
+
+    .line 90
+    .line 91
+    if-gt v10, v8, :cond_4
+
+    .line 92
+    .line 93
+    if-gt v8, v6, :cond_4
+
+    .line 94
+    .line 95
+    invoke-virtual {v2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 96
+    .line 97
+    .line 98
+    iget-object v7, v7, Lla5;->b:Landroid/graphics/RenderNode;
+
+    .line 99
+    .line 100
+    invoke-virtual {v7}, Landroid/graphics/RenderNode;->discardDisplayList()V
+
+    .line 101
+    .line 102
+    .line 103
+    goto :goto_1
+
+    .line 104
+    :cond_4
+    if-le v8, v6, :cond_2
+
+    .line 105
+    .line 106
+    sub-int v10, v6, p2
+
+    .line 107
+    .line 108
+    sub-int/2addr v8, v10
+
+    .line 109
+    iput v8, v7, Lla5;->a:I
+
+    .line 110
+    .line 111
+    goto :goto_1
+
+    .line 112
+    :cond_5
+    invoke-static {v2}, Lau0;->i1(Ljava/lang/Iterable;)Ljava/util/Set;
+
+    .line 113
+    .line 114
+    .line 115
+    move-result-object v5
+
+    .line 116
+    check-cast v5, Ljava/util/Collection;
+
+    .line 117
+    .line 118
+    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->removeAll(Ljava/util/Collection;)Z
+
+    .line 119
+    .line 120
+    .line 121
+    iget-object v0, v0, Lsr6;->m:Ljava/lang/Object;
+
+    .line 122
+    .line 123
+    check-cast v0, Ljava/util/Stack;
+
+    .line 124
+    .line 125
+    invoke-virtual {v0, v2}, Ljava/util/AbstractCollection;->addAll(Ljava/util/Collection;)Z
+
+    .line 126
+    .line 127
+    .line 128
+    iget-object v0, p0, Lqt0;->b1:Lsr1;
+
+    .line 129
+    .line 130
+    invoke-virtual {v0}, Lsr1;->J()V
+
+    .line 131
+    .line 132
+    .line 133
+    iget-object v0, p0, Lqt0;->o:Lsr6;
+
+    .line 134
+    .line 135
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 136
+    .line 137
+    .line 138
+    iget-object v0, p0, Lqt0;->B0:Ln61;
+
+    .line 139
+    .line 140
+    invoke-virtual {v0}, Ln61;->n()Lug0;
+
+    .line 141
+    .line 142
+    .line 143
+    move-result-object v0
+
+    .line 144
+    invoke-virtual {v0, p2, p3}, Lug0;->B(II)Lxm0;
+
+    .line 145
+    .line 146
+    .line 147
+    move-result-object v10
+
+    .line 148
+    invoke-virtual {v10}, Lxm0;->a()Lxm0;
+
+    .line 149
+    .line 150
+    .line 151
+    move-result-object v11
+
+    .line 152
+    move/from16 v7, p5
+
+    .line 153
+    .line 154
+    iput v7, v11, Lxm0;->c:I
+
+    .line 155
+    .line 156
+    iput v6, v11, Lxm0;->b:I
+
+    .line 157
+    .line 158
+    iget v0, v10, Lxm0;->a:I
+
+    .line 159
+    .line 160
+    invoke-virtual/range {p6 .. p6}, Ljava/lang/StringBuilder;->length()I
+
+    .line 161
+    .line 162
+    .line 163
+    move-result v2
+
+    .line 164
+    add-int/2addr v2, v0
+
+    .line 165
+    iput v2, v11, Lxm0;->a:I
+
+    .line 166
+    .line 167
+    :try_start_0
+    iget-object v0, p0, Lqt0;->Y0:Lub6;
+
+    .line 168
+    .line 169
+    if-eqz v0, :cond_7
+
+    .line 170
+    .line 171
+    iget v2, v10, Lxm0;->b:I
+
+    .line 172
+    .line 173
+    iget v4, v11, Lxm0;->b:I
+
+    .line 174
+    .line 175
+    sub-int v4, v2, v4
+
+    .line 176
+    .line 177
+    if-nez v4, :cond_6
+
+    .line 178
+    .line 179
+    goto :goto_2
+
+    .line 180
+    :cond_6
+    iget-object v0, v0, Lub6;->b:Ljava/util/ArrayList;
+
+    .line 181
+    .line 182
+    if-eqz v0, :cond_7
+
+    .line 183
+    .line 184
+    invoke-static {v0, v2, v4}, Lmt6;->f0(Ljava/util/ArrayList;II)V
+
+    .line 185
+    .line 186
+    .line 187
+    :cond_7
+    :goto_2
+    iget-object v0, p0, Lqt0;->Z0:Lyh1;
+
+    .line 188
+    .line 189
+    if-eqz v0, :cond_8
+
+    .line 190
+    .line 191
+    iget v2, v10, Lxm0;->a:I
+
+    .line 192
+    .line 193
+    iget v4, v11, Lxm0;->a:I
+
+    .line 194
+    .line 195
+    invoke-virtual {v0, v2, v4}, Lyh1;->c(II)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 196
+    .line 197
+    .line 198
+    goto :goto_3
+
+    .line 199
+    :catch_0
+    move-exception v0
+
+    .line 200
+    const-string v2, "CodeEditor"
+
+    .line 201
+    .line 202
+    const-string v4, "Update failure"
+
+    .line 203
+    .line 204
+    invoke-static {v2, v4, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 205
+    .line 206
+    .line 207
+    :cond_8
+    :goto_3
+    iget-object v2, p0, Lqt0;->s:Ld3;
+
+    .line 208
+    .line 209
+    move-object v3, p1
+
+    .line 210
+    move v4, p2
+
+    .line 211
+    move v5, p3
+
+    .line 212
+    move-object/from16 v8, p6
+
+    .line 213
+    .line 214
+    invoke-interface/range {v2 .. v8}, Lf71;->q(Ln61;IIIILjava/lang/StringBuilder;)V
+
+    .line 215
+    .line 216
+    .line 217
+    iget-object v2, p0, Lqt0;->b1:Lsr1;
+
+    .line 218
+    .line 219
+    add-int/lit8 v4, p2, 0x1
+
+    .line 220
+    .line 221
+    iget-wide v5, v2, Lsr1;->A:J
+
+    .line 222
+    .line 223
+    const/4 v7, 0x0
+
+    .line 224
+    move v3, p2
+
+    .line 225
+    invoke-virtual/range {v2 .. v7}, Lsr1;->c(IIJZ)V
+
+    .line 226
+    .line 227
+    .line 228
+    invoke-virtual {p0}, Lqt0;->t()V
+
+    .line 229
+    .line 230
+    .line 231
+    iget-boolean v0, p0, Lqt0;->N:Z
+
+    .line 232
+    .line 233
+    if-eqz v0, :cond_9
+
+    .line 234
+    .line 235
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 236
+    .line 237
+    invoke-virtual {v0}, Lwb1;->a()Z
+
+    .line 238
+    .line 239
+    .line 240
+    move-result v0
+
+    .line 241
+    if-nez v0, :cond_9
+
+    .line 242
+    .line 243
+    iget-boolean v0, p0, Lqt0;->L:Z
+
+    .line 244
+    .line 245
+    if-nez v0, :cond_9
+
+    .line 246
+    .line 247
+    iget-object v0, p0, Lqt0;->q:Ldr1;
+
+    .line 248
+    .line 249
+    iget-object v0, v0, Ldr1;->b:Lb11;
+
+    .line 250
+    .line 251
+    invoke-virtual {v0}, Lb11;->a()Z
+
+    .line 252
+    .line 253
+    .line 254
+    move-result v0
+
+    .line 255
+    if-nez v0, :cond_9
+
+    .line 256
+    .line 257
+    iget v0, p0, Lqt0;->a0:I
+
+    .line 258
+    .line 259
+    if-nez v0, :cond_9
+
+    .line 260
+    .line 261
+    iget-object v0, p0, Lqt0;->T0:Lbc1;
+
+    .line 262
+    .line 263
+    check-cast v0, Lqp3;
+
+    .line 264
+    .line 265
+    invoke-virtual {v0}, Lqp3;->c()V
+
+    .line 266
+    .line 267
+    .line 268
+    iget-object v0, p0, Lqt0;->T0:Lbc1;
+
+    .line 269
+    .line 270
+    check-cast v0, Lqp3;
+
+    .line 271
+    .line 272
+    invoke-virtual {v0}, Lqp3;->e()V
+
+    .line 273
+    .line 274
+    .line 275
+    :cond_9
+    iget-object v0, p0, Lqt0;->G0:Lhy2;
+
+    .line 276
+    .line 277
+    invoke-interface {v0}, Lhy2;->a()Lq4;
+
+    .line 278
+    .line 279
+    .line 280
+    move-result-object v0
+
+    .line 281
+    invoke-virtual {v0, v10, v11}, Lq4;->f(Lxm0;Lxm0;)V
+
+    .line 282
+    .line 283
+    .line 284
+    iget-boolean v0, p0, Lqt0;->S:Z
+
+    .line 285
+    .line 286
+    iget-object v2, p0, Lqt0;->A0:Lwb1;
+
+    .line 287
+    .line 288
+    if-eqz v0, :cond_a
+
+    .line 289
+    .line 290
+    iget-object v0, v2, Lwb1;->c:Lxm0;
+
+    .line 291
+    .line 292
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
+
+    .line 293
+    .line 294
+    .line 295
+    move-result-object v0
+
+    .line 296
+    goto :goto_4
+
+    .line 297
+    :cond_a
+    iget-object v0, v2, Lwb1;->d:Lxm0;
+
+    .line 298
+    .line 299
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
+
+    .line 300
+    .line 301
+    .line 302
+    move-result-object v0
+
+    .line 303
+    :goto_4
+    iput-object v0, p0, Lqt0;->p:Lxm0;
+
+    .line 304
+    .line 305
+    new-instance v0, Ls61;
+
+    .line 306
+    .line 307
+    iget-object v2, p0, Lqt0;->B0:Ln61;
+
+    .line 308
+    .line 309
+    iget-object v2, v2, Ln61;->r:Lw17;
+
+    .line 310
+    .line 311
+    iget-boolean v6, v2, Lw17;->p:Z
+
+    .line 312
+    .line 313
+    const/4 v2, 0x3
+
+    .line 314
+    move-object v1, p0
+
+    .line 315
+    move-object/from16 v5, p6
+
+    .line 316
+    .line 317
+    move-object v3, v10
+
+    .line 318
+    move-object v4, v11
+
+    .line 319
+    invoke-direct/range {v0 .. v6}, Ls61;-><init>(Lqt0;ILxm0;Lxm0;Ljava/lang/CharSequence;Z)V
+
+    .line 320
+    .line 321
+    .line 322
+    iget-object v2, p0, Lqt0;->r:Ltv1;
+
+    .line 323
+    .line 324
+    invoke-virtual {v2, v0}, Ltv1;->a(Lgv1;)I
+
+    .line 325
+    .line 326
+    .line 327
+    invoke-virtual {p0, v9}, Lqt0;->a0(I)V
+
+    .line 328
+    .line 329
+    .line 330
+    iget-boolean v0, p0, Lqt0;->L:Z
+
+    .line 331
+    .line 332
+    if-nez v0, :cond_c
+
+    .line 333
+    .line 334
+    invoke-virtual {p0}, Lqt0;->s0()V
+
+    .line 335
+    .line 336
+    .line 337
+    invoke-virtual {p0}, Lqt0;->E()V
+
+    .line 338
+    .line 339
+    .line 340
+    iget-object v0, p0, Lqt0;->K0:Lds1;
+
+    .line 341
+    .line 342
+    invoke-virtual {v0}, Lds1;->m()Z
+
+    .line 343
+    .line 344
+    .line 345
+    move-result v1
+
+    .line 346
+    if-nez v1, :cond_b
+
+    .line 347
+    .line 348
+    goto :goto_5
+
+    .line 349
+    :cond_b
+    const-wide/16 v1, 0x0
+
+    .line 350
+    .line 351
+    iput-wide v1, v0, Lds1;->p:J
+
+    .line 352
+    .line 353
+    iget-object v0, v0, Lds1;->a:Lqt0;
+
+    .line 354
+    .line 355
+    invoke-virtual {v0}, Landroid/view/View;->invalidate()V
+
+    .line 356
+    .line 357
+    .line 358
+    :cond_c
+    :goto_5
+    return-void
+.end method
+
+.method public final q0()V
+    .locals 9
+
+    .line 1
+    iget-object v0, p0, Lqt0;->B0:Ln61;
+
+    .line 2
+    .line 3
+    iget-object v1, v0, Ln61;->r:Lw17;
+
+    .line 4
+    .line 5
+    iget-boolean v2, v1, Lw17;->k:Z
+
+    .line 6
+    .line 7
+    if-eqz v2, :cond_0
+
+    .line 8
+    .line 9
+    iget v2, v1, Lw17;->o:I
+
+    .line 10
+    .line 11
+    if-lez v2, :cond_0
+
+    .line 12
+    .line 13
+    iget-boolean v3, v1, Lw17;->p:Z
+
+    .line 14
+    .line 15
+    if-nez v3, :cond_0
+
+    .line 16
+    .line 17
+    const/4 v3, 0x1
+
+    .line 18
+    iput-boolean v3, v1, Lw17;->p:Z
+
+    .line 19
+    .line 20
+    iget-object v4, v1, Lw17;->j:Ljava/util/ArrayList;
+
+    .line 21
+    .line 22
+    sub-int/2addr v2, v3
+
+    .line 23
+    invoke-virtual {v4, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object v2
+
+    .line 27
+    check-cast v2, Lq17;
+
+    .line 28
+    .line 29
+    invoke-virtual {v2, v0}, Lq17;->d(Ln61;)V
+
+    .line 30
+    .line 31
+    .line 32
+    iget v0, v1, Lw17;->o:I
+
+    .line 33
+    .line 34
+    sub-int/2addr v0, v3
+
+    .line 35
+    iput v0, v1, Lw17;->o:I
+
+    .line 36
+    .line 37
+    const/4 v0, 0x0
+
+    .line 38
+    iput-boolean v0, v1, Lw17;->p:Z
+
+    .line 39
+    .line 40
+    iget-object v0, v2, Lq17;->j:Lzp6;
+
+    .line 41
+    .line 42
+    goto :goto_0
+
+    .line 43
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 44
+    :goto_0
+    if-eqz v0, :cond_1
+
+    .line 45
+    .line 46
+    :try_start_0
+    iget-object v1, v0, Lzp6;->a:Lxm0;
+
+    .line 47
+    .line 48
+    iget v3, v1, Lxm0;->b:I
+
+    .line 49
+    .line 50
+    iget v4, v1, Lxm0;->c:I
+
+    .line 51
+    .line 52
+    iget-object v0, v0, Lzp6;->b:Lxm0;
+
+    .line 53
+    .line 54
+    iget v5, v0, Lxm0;->b:I
+
+    .line 55
+    .line 56
+    iget v6, v0, Lxm0;->c:I
+    :try_end_0
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 57
+    .line 58
+    const/4 v8, 0x1
+
+    .line 59
+    const/4 v7, 0x1
+
+    .line 60
+    move-object v2, p0
+
+    .line 61
+    :try_start_1
+    invoke-virtual/range {v2 .. v8}, Lqt0;->o0(IIIIIZ)V
+    :try_end_1
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_1 .. :try_end_1} :catch_1
+
+    .line 62
+    .line 63
+    .line 64
+    goto :goto_1
+
+    .line 65
+    :catch_0
+    :cond_1
+    move-object v2, p0
+
+    .line 66
+    :catch_1
+    :goto_1
+    invoke-virtual {v2}, Lqt0;->Z()V
+
+    .line 67
+    .line 68
+    .line 69
+    return-void
+.end method
+
+.method public final r0()V
+    .locals 10
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->getCursor()Lwb1;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {p0}, Lqt0;->getText()Ln61;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object v1
+
+    .line 9
+    invoke-virtual {p0}, Lqt0;->getTabWidth()I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v7
+
+    .line 13
+    invoke-virtual {p0}, Lqt0;->getEditorLanguage()Lhy2;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object v2
+
+    .line 17
+    invoke-virtual {p0}, Lqt0;->getTabWidth()I
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v3
+
+    .line 21
+    invoke-virtual {p0}, Lqt0;->getTabWidth()I
+
+    .line 22
+    .line 23
+    .line 24
+    move-result p0
+
+    .line 25
+    invoke-interface {v2}, Lhy2;->h()Z
+
+    .line 26
+    .line 27
+    .line 28
+    move-result v2
+
+    .line 29
+    invoke-static {v3, p0, v2}, Lu23;->o(IIZ)Ljava/lang/String;
+
+    .line 30
+    .line 31
+    .line 32
+    move-result-object p0
+
+    .line 33
+    invoke-virtual {v1}, Ln61;->b()Z
+
+    .line 34
+    .line 35
+    .line 36
+    iget-object v2, v0, Lwb1;->c:Lxm0;
+
+    .line 37
+    .line 38
+    iget v2, v2, Lxm0;->b:I
+
+    .line 39
+    .line 40
+    :goto_0
+    iget-object v3, v0, Lwb1;->d:Lxm0;
+
+    .line 41
+    .line 42
+    iget v3, v3, Lxm0;->b:I
+
+    .line 43
+    .line 44
+    if-gt v2, v3, :cond_5
+
+    .line 45
+    .line 46
+    invoke-virtual {v1, v2}, Ln61;->q(I)Ljava/lang/String;
+
+    .line 47
+    .line 48
+    .line 49
+    move-result-object v3
+
+    .line 50
+    invoke-static {v3}, Lu23;->n(Ljava/lang/CharSequence;)J
+
+    .line 51
+    .line 52
+    .line 53
+    move-result-wide v3
+
+    .line 54
+    const/16 v5, 0x20
+
+    .line 55
+    .line 56
+    shr-long v5, v3, v5
+
+    .line 57
+    .line 58
+    long-to-int v5, v5
+
+    .line 59
+    const-wide v8, 0xffffffffL
+
+    .line 60
+    .line 61
+    .line 62
+    .line 63
+    .line 64
+    and-long/2addr v3, v8
+
+    .line 65
+    long-to-int v3, v3
+
+    .line 66
+    mul-int v4, v3, v7
+
+    .line 67
+    .line 68
+    add-int/2addr v4, v5
+
+    .line 69
+    if-nez v4, :cond_0
+
+    .line 70
+    .line 71
+    goto :goto_2
+
+    .line 72
+    :cond_0
+    add-int v6, v5, v3
+
+    .line 73
+    .line 74
+    rem-int v8, v4, v7
+
+    .line 75
+    .line 76
+    if-lez v5, :cond_2
+
+    .line 77
+    .line 78
+    if-lez v3, :cond_2
+
+    .line 79
+    .line 80
+    if-nez v8, :cond_1
+
+    .line 81
+    .line 82
+    move v8, v7
+
+    .line 83
+    :cond_1
+    sub-int/2addr v4, v8
+
+    .line 84
+    invoke-static {v4}, Ljava/lang/Math;->abs(I)I
+
+    .line 85
+    .line 86
+    .line 87
+    move-result v3
+
+    .line 88
+    div-int/2addr v3, v7
+
+    .line 89
+    move v4, v3
+
+    .line 90
+    const/4 v3, 0x0
+
+    .line 91
+    invoke-static {v4, p0}, Lpb6;->g0(ILjava/lang/String;)Ljava/lang/String;
+
+    .line 92
+    .line 93
+    .line 94
+    move-result-object v4
+
+    .line 95
+    move v5, v2
+
+    .line 96
+    invoke-virtual/range {v1 .. v6}, Ln61;->x(IILjava/lang/CharSequence;II)V
+
+    .line 97
+    .line 98
+    .line 99
+    goto :goto_2
+
+    .line 100
+    :cond_2
+    if-nez v8, :cond_4
+
+    .line 101
+    .line 102
+    if-lez v3, :cond_3
+
+    .line 103
+    .line 104
+    const/4 v3, 0x1
+
+    .line 105
+    goto :goto_1
+
+    .line 106
+    :cond_3
+    move v3, v7
+
+    .line 107
+    :goto_1
+    sub-int v3, v6, v3
+
+    .line 108
+    .line 109
+    invoke-virtual {v1, v2, v3, v2, v6}, Ln61;->h(IIII)V
+
+    .line 110
+    .line 111
+    .line 112
+    goto :goto_2
+
+    .line 113
+    :cond_4
+    sub-int v3, v6, v8
+
+    .line 114
+    .line 115
+    invoke-virtual {v1, v2, v3, v2, v6}, Ln61;->h(IIII)V
+
+    .line 116
+    .line 117
+    .line 118
+    :goto_2
+    add-int/lit8 v2, v2, 0x1
+
+    .line 119
+    .line 120
+    goto :goto_0
+
+    .line 121
+    :cond_5
+    invoke-virtual {v1}, Ln61;->k()Z
+
+    .line 122
+    .line 123
+    .line 124
+    return-void
+.end method
+
+.method public final removeCallbacks(Ljava/lang/Runnable;)Z
+    .locals 1
+
+    .line 1
+    sget-object v0, Lar1;->a:Lar1;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0, p1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
+
+    .line 4
+    .line 5
+    .line 6
+    invoke-super {p0, p1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
+
+    .line 7
+    .line 8
+    .line 9
+    move-result p0
+
+    .line 10
+    return p0
+.end method
+
+.method public final s0()V
+    .locals 3
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->t0()F
+
+    .line 2
+    .line 3
+    .line 4
+    iget-object v0, p0, Lqt0;->R0:Landroid/view/inputmethod/ExtractedTextRequest;
+
+    .line 5
+    .line 6
+    if-eqz v0, :cond_0
+
+    .line 7
+    .line 8
+    invoke-virtual {p0, v0}, Lqt0;->G(Landroid/view/inputmethod/ExtractedTextRequest;)Landroid/view/inputmethod/ExtractedText;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object v0
+
+    .line 12
+    iget-object v1, p0, Lqt0;->R0:Landroid/view/inputmethod/ExtractedTextRequest;
+
+    .line 13
+    .line 14
+    iget v1, v1, Landroid/view/inputmethod/ExtractedTextRequest;->token:I
+
+    .line 15
+    .line 16
+    iget-object v2, p0, Lqt0;->z0:Landroid/view/inputmethod/InputMethodManager;
+
+    .line 17
+    .line 18
+    invoke-virtual {v2, p0, v1, v0}, Landroid/view/inputmethod/InputMethodManager;->updateExtractedText(Landroid/view/View;ILandroid/view/inputmethod/ExtractedText;)V
+
+    .line 19
+    .line 20
+    .line 21
+    :cond_0
+    iget-object v0, p0, Lqt0;->B0:Ln61;
+
+    .line 22
+    .line 23
+    iget v0, v0, Ln61;->n:I
+
+    .line 24
+    .line 25
+    const/4 v1, 0x1
+
+    .line 26
+    if-gt v0, v1, :cond_1
+
+    .line 27
+    .line 28
+    iget-object v0, p0, Lqt0;->q:Ldr1;
+
+    .line 29
+    .line 30
+    iget-object v0, v0, Ldr1;->b:Lb11;
+
+    .line 31
+    .line 32
+    invoke-virtual {v0}, Lb11;->a()Z
+
+    .line 33
+    .line 34
+    .line 35
+    move-result v0
+
+    .line 36
+    if-nez v0, :cond_1
+
+    .line 37
+    .line 38
+    invoke-virtual {p0}, Lqt0;->u0()V
+
+    .line 39
+    .line 40
+    .line 41
+    :cond_1
+    return-void
+.end method
+
+.method public setBlockLineEnabled(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lqt0;->d0:Z
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public setBlockLineWidth(F)V
+    .locals 0
+
+    .line 1
+    iput p1, p0, Lqt0;->D:F
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public setColorScheme(Lqq1;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lqt0;->D0:Lqq1;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-virtual {v0, p0}, Lqq1;->d(Lqt0;)V
+
+    .line 6
+    .line 7
+    .line 8
+    :cond_0
+    iput-object p1, p0, Lqt0;->D0:Lqq1;
+
+    .line 9
+    .line 10
+    invoke-virtual {p1, p0}, Lqq1;->c(Lqt0;)V
+
+    .line 11
+    .line 12
+    .line 13
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 14
+    .line 15
+    .line 16
+    return-void
+.end method
+
+.method public setCursorAnimationEnabled(Z)V
+    .locals 1
+
+    .line 1
+    if-nez p1, :cond_0
+
+    .line 2
+    .line 3
+    iget-object v0, p0, Lqt0;->T0:Lbc1;
+
+    .line 4
+    .line 5
+    check-cast v0, Lqp3;
+
+    .line 6
+    .line 7
+    invoke-virtual {v0}, Lqp3;->a()V
+
+    .line 8
+    .line 9
+    .line 10
+    :cond_0
+    iput-boolean p1, p0, Lqt0;->j0:Z
+
+    .line 11
+    .line 12
+    return-void
+.end method
+
+.method public setCursorAnimator(Lbc1;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lqt0;->T0:Lbc1;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+.method public setCursorBlinkPeriod(I)V
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lqt0;->V0:Lcc1;
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
+    new-instance v0, Lcc1;
+
+    .line 6
+    .line 7
+    invoke-direct {v0, p0, p1}, Lcc1;-><init>(Lqt0;I)V
+
+    .line 8
+    .line 9
+    .line 10
+    iput-object v0, p0, Lqt0;->V0:Lcc1;
+
+    .line 11
+    .line 12
+    return-void
+
+    .line 13
+    :cond_0
+    iget v1, v0, Lcc1;->n:I
+
+    .line 14
+    .line 15
+    iput p1, v0, Lcc1;->n:I
+
+    .line 16
+    .line 17
+    const/4 v2, 0x1
+
+    .line 18
+    if-gtz p1, :cond_1
+
+    .line 19
+    .line 20
+    iput-boolean v2, v0, Lcc1;->k:Z
+
+    .line 21
+    .line 22
+    const/4 v2, 0x0
+
+    .line 23
+    iput-boolean v2, v0, Lcc1;->l:Z
+
+    .line 24
+    .line 25
+    goto :goto_0
+
+    .line 26
+    :cond_1
+    iput-boolean v2, v0, Lcc1;->l:Z
+
+    .line 27
+    .line 28
+    :goto_0
+    if-gtz v1, :cond_2
+
+    .line 29
+    .line 30
+    if-eqz v2, :cond_2
+
+    .line 31
+    .line 32
+    invoke-virtual {p0}, Landroid/view/View;->isAttachedToWindow()Z
+
+    .line 33
+    .line 34
+    .line 35
+    move-result p1
+
+    .line 36
+    if-eqz p1, :cond_2
+
+    .line 37
+    .line 38
+    iget-object p1, p0, Lqt0;->V0:Lcc1;
+
+    .line 39
+    .line 40
+    invoke-virtual {p0, p1}, Lqt0;->d0(Ljava/lang/Runnable;)V
+
+    .line 41
+    .line 42
+    .line 43
+    :cond_2
+    return-void
+.end method
+
+.method public setCursorWidth(F)V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    cmpg-float v0, p1, v0
+
+    .line 3
+    .line 4
+    if-ltz v0, :cond_0
+
+    .line 5
+    .line 6
+    iput p1, p0, Lqt0;->C:F
+
+    .line 7
+    .line 8
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 9
+    .line 10
+    .line 11
+    return-void
+
+    .line 12
+    :cond_0
+    const-string p0, "width can not be under zero"
+
+    .line 13
+    .line 14
+    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+
+    .line 15
+    .line 16
+    .line 17
+    return-void
+.end method
+
+.method public setDiagnosticIndicatorStyle(Lwh1;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lqt0;->H0:Lwh1;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public setDiagnostics(Lyh1;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lqt0;->Z0:Lyh1;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    iget-object v0, v0, Lyh1;->b:Ljava/lang/ref/WeakReference;
+
+    .line 6
+    .line 7
+    invoke-virtual {v0}, Ljava/lang/ref/Reference;->clear()V
+
+    .line 8
+    .line 9
+    .line 10
+    :cond_0
+    iput-object p1, p0, Lqt0;->Z0:Lyh1;
+
+    .line 11
+    .line 12
+    if-eqz p1, :cond_1
+
+    .line 13
+    .line 14
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    .line 15
+    .line 16
+    invoke-direct {v0, p0}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    .line 17
+    .line 18
+    .line 19
+    iput-object v0, p1, Lyh1;->b:Ljava/lang/ref/WeakReference;
+
+    .line 20
+    .line 21
+    :cond_1
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 22
+    .line 23
+    .line 24
+    return-void
+.end method
+
+.method public setDisableSoftKbdIfHardKbdAvailable(Z)V
+    .locals 2
+
+    .line 1
+    iget-boolean v0, p0, Lqt0;->u0:Z
+
+    .line 2
+    .line 3
+    if-ne v0, p1, :cond_0
+
+    .line 4
+    .line 5
+    return-void
+
+    .line 6
+    :cond_0
+    iput-boolean p1, p0, Lqt0;->u0:Z
+
+    .line 7
+    .line 8
+    invoke-virtual {p0}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object p1
+
+    .line 12
+    const/4 v0, 0x0
+
+    .line 13
+    iget-object v1, p0, Lqt0;->z0:Landroid/view/inputmethod/InputMethodManager;
+
+    .line 14
+    .line 15
+    invoke-virtual {v1, p1, v0}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
+
+    .line 16
+    .line 17
+    .line 18
+    invoke-virtual {p0}, Lqt0;->h0()V
+
+    .line 19
+    .line 20
+    .line 21
+    return-void
+.end method
+
+.method public setDisplayLnPanel(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lqt0;->U:Z
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public setDividerMargin(F)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0, p1, p1}, Lqt0;->k0(FF)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public setDividerWidth(F)V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    cmpg-float v0, p1, v0
+
+    .line 3
+    .line 4
+    if-ltz v0, :cond_0
+
+    .line 5
+    .line 6
+    iput p1, p0, Lqt0;->z:F
+
+    .line 7
+    .line 8
+    invoke-virtual {p0}, Lqt0;->g0()V
+
+    .line 9
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 12
+    .line 13
+    .line 14
+    return-void
+
+    .line 15
+    :cond_0
+    const-string p0, "width can not be under zero"
+
+    .line 16
+    .line 17
+    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+
+    .line 18
+    .line 19
+    .line 20
+    return-void
+.end method
+
+.method public setEdgeEffectColor(I)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lqt0;->P0:Landroid/widget/EdgeEffect;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0, p1}, Landroid/widget/EdgeEffect;->setColor(I)V
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object p0, p0, Lqt0;->Q0:Landroid/widget/EdgeEffect;
+
+    .line 7
+    .line 8
+    invoke-virtual {p0, p1}, Landroid/widget/EdgeEffect;->setColor(I)V
+
+    .line 9
+    .line 10
+    .line 11
+    return-void
+.end method
+
+.method public setEditable(Z)V
+    .locals 2
+
+    .line 1
+    iput-boolean p1, p0, Lqt0;->N:Z
+
+    .line 2
+    .line 3
+    if-nez p1, :cond_0
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p1
+
+    .line 9
+    const/4 v0, 0x0
+
+    .line 10
+    iget-object v1, p0, Lqt0;->z0:Landroid/view/inputmethod/InputMethodManager;
+
+    .line 11
+    .line 12
+    invoke-virtual {v1, p1, v0}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
+
+    .line 13
+    .line 14
+    .line 15
+    iget-object p0, p0, Lqt0;->i1:Lh76;
+
+    .line 16
+    .line 17
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 18
+    .line 19
+    .line 20
+    :cond_0
+    return-void
+.end method
+
+.method public setEditorLanguage(Lhy2;)V
+    .locals 3
+
+    .line 1
+    if-nez p1, :cond_0
+
+    .line 2
+    .line 3
+    new-instance p1, Lpt1;
+
+    .line 4
+    .line 5
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    .line 6
+    .line 7
+    .line 8
+    :cond_0
+    iget-object v0, p0, Lqt0;->G0:Lhy2;
+
+    .line 9
+    .line 10
+    const/4 v1, 0x0
+
+    .line 11
+    if-eqz v0, :cond_1
+
+    .line 12
+    .line 13
+    invoke-interface {v0}, Lhy2;->f()Lp6;
+
+    .line 14
+    .line 15
+    .line 16
+    invoke-interface {v0}, Lhy2;->a()Lq4;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object v2
+
+    .line 20
+    iput-object v1, v2, Lq4;->a:Ljava/lang/Object;
+
+    .line 21
+    .line 22
+    invoke-interface {v0}, Lhy2;->a()Lq4;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object v2
+
+    .line 26
+    invoke-virtual {v2}, Lq4;->g()V
+
+    .line 27
+    .line 28
+    .line 29
+    invoke-interface {v0}, Lhy2;->destroy()V
+
+    .line 30
+    .line 31
+    .line 32
+    :cond_1
+    iget-object v0, p0, Lqt0;->o:Lsr6;
+
+    .line 33
+    .line 34
+    iput-object v1, v0, Lsr6;->l:Ljava/lang/Object;
+
+    .line 35
+    .line 36
+    iput-object v1, v0, Lsr6;->m:Ljava/lang/Object;
+
+    .line 37
+    .line 38
+    iput-object p1, p0, Lqt0;->G0:Lhy2;
+
+    .line 39
+    .line 40
+    iput-object v1, p0, Lqt0;->Y0:Lub6;
+
+    .line 41
+    .line 42
+    iget-object v2, p0, Lqt0;->Z0:Lyh1;
+
+    .line 43
+    .line 44
+    if-eqz v2, :cond_2
+
+    .line 45
+    .line 46
+    iget-object v2, v2, Lyh1;->b:Ljava/lang/ref/WeakReference;
+
+    .line 47
+    .line 48
+    invoke-virtual {v2}, Ljava/lang/ref/Reference;->clear()V
+
+    .line 49
+    .line 50
+    .line 51
+    :cond_2
+    iput-object v1, p0, Lqt0;->Z0:Lyh1;
+
+    .line 52
+    .line 53
+    invoke-interface {p1}, Lhy2;->a()Lq4;
+
+    .line 54
+    .line 55
+    .line 56
+    move-result-object p1
+
+    .line 57
+    iput-object v0, p1, Lq4;->a:Ljava/lang/Object;
+
+    .line 58
+    .line 59
+    iget-object v0, p0, Lqt0;->B0:Ln61;
+
+    .line 60
+    .line 61
+    if-eqz v0, :cond_3
+
+    .line 62
+    .line 63
+    new-instance v2, Lj71;
+
+    .line 64
+    .line 65
+    invoke-direct {v2, v0}, Lj71;-><init>(Ln61;)V
+
+    .line 66
+    .line 67
+    .line 68
+    iget-object v0, p0, Lqt0;->X0:Landroid/os/Bundle;
+
+    .line 69
+    .line 70
+    invoke-virtual {p1, v2, v0}, Lq4;->v(Lj71;Landroid/os/Bundle;)V
+
+    .line 71
+    .line 72
+    .line 73
+    :cond_3
+    iget-object p1, p0, Lqt0;->k:Lsr6;
+
+    .line 74
+    .line 75
+    if-eqz p1, :cond_4
+
+    .line 76
+    .line 77
+    iput-object v1, p1, Lsr6;->m:Ljava/lang/Object;
+
+    .line 78
+    .line 79
+    :cond_4
+    iget-object p1, p0, Lqt0;->G0:Lhy2;
+
+    .line 80
+    .line 81
+    invoke-interface {p1}, Lhy2;->g()Lsr6;
+
+    .line 82
+    .line 83
+    .line 84
+    move-result-object p1
+
+    .line 85
+    iput-object p1, p0, Lqt0;->k:Lsr6;
+
+    .line 86
+    .line 87
+    if-nez p1, :cond_5
+
+    .line 88
+    .line 89
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    .line 90
+    .line 91
+    const-string v0, "Language("
+
+    .line 92
+    .line 93
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 94
+    .line 95
+    .line 96
+    iget-object v0, p0, Lqt0;->G0:Lhy2;
+
+    .line 97
+    .line 98
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 99
+    .line 100
+    .line 101
+    move-result-object v0
+
+    .line 102
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 103
+    .line 104
+    .line 105
+    const-string v0, ") returned null for symbol pairs. It is a mistake."
+
+    .line 106
+    .line 107
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 108
+    .line 109
+    .line 110
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 111
+    .line 112
+    .line 113
+    move-result-object p1
+
+    .line 114
+    const-string v0, "CodeEditor"
+
+    .line 115
+    .line 116
+    invoke-static {v0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 117
+    .line 118
+    .line 119
+    new-instance p1, Lsr6;
+
+    .line 120
+    .line 121
+    invoke-direct {p1, v1}, Lsr6;-><init>(Lig6;)V
+
+    .line 122
+    .line 123
+    .line 124
+    iput-object p1, p0, Lqt0;->k:Lsr6;
+
+    .line 125
+    .line 126
+    :cond_5
+    iget-object v0, p0, Lqt0;->W0:Lri1;
+
+    .line 127
+    .line 128
+    iget-object v0, v0, Lri1;->j:Lsr6;
+
+    .line 129
+    .line 130
+    iput-object v0, p1, Lsr6;->m:Ljava/lang/Object;
+
+    .line 131
+    .line 132
+    iget-object p1, p0, Lqt0;->a1:Lja5;
+
+    .line 133
+    .line 134
+    invoke-virtual {p1}, Lja5;->a()V
+
+    .line 135
+    .line 136
+    .line 137
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 138
+    .line 139
+    .line 140
+    return-void
+.end method
+
+.method public setExtracting(Landroid/view/inputmethod/ExtractedTextRequest;)V
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->getProps()Lri1;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 6
+    .line 7
+    .line 8
+    iput-object p1, p0, Lqt0;->R0:Landroid/view/inputmethod/ExtractedTextRequest;
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+.method public setFirstLineNumberAlwaysVisible(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lqt0;->m0:Z
+
+    .line 2
+    .line 3
+    iget-boolean p1, p0, Lqt0;->O:Z
+
+    .line 4
+    .line 5
+    if-eqz p1, :cond_0
+
+    .line 6
+    .line 7
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 8
+    .line 9
+    .line 10
+    :cond_0
+    return-void
+.end method
+
+.method public setFontFeatureSettings(Ljava/lang/String;)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object v1, v0, Lsr1;->b:Lik4;
+
+    .line 4
+    .line 5
+    invoke-virtual {v1, p1}, Landroid/graphics/Paint;->setFontFeatureSettings(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    invoke-virtual {v1}, Lik4;->c()V
+
+    .line 9
+    .line 10
+    .line 11
+    iget-object v1, v0, Lsr1;->c:Lik4;
+
+    .line 12
+    .line 13
+    invoke-virtual {v1, p1}, Landroid/graphics/Paint;->setFontFeatureSettings(Ljava/lang/String;)V
+
+    .line 14
+    .line 15
+    .line 16
+    iget-object v1, v0, Lsr1;->g:Lik4;
+
+    .line 17
+    .line 18
+    invoke-virtual {v1, p1}, Landroid/graphics/Paint;->setFontFeatureSettings(Ljava/lang/String;)V
+
+    .line 19
+    .line 20
+    .line 21
+    invoke-virtual {v0}, Lsr1;->J()V
+
+    .line 22
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 25
+    .line 26
+    .line 27
+    return-void
+.end method
+
+.method public setFormatTip(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Lqt0;->F0:Ljava/lang/String;
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public setHardwareAcceleratedDrawAllowed(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lqt0;->c1:Z
+
+    .line 2
+    .line 3
+    if-eqz p1, :cond_0
+
+    .line 4
+    .line 5
+    iget-boolean p1, p0, Lqt0;->O:Z
+
+    .line 6
+    .line 7
+    if-nez p1, :cond_0
+
+    .line 8
+    .line 9
+    iget-object p0, p0, Lqt0;->a1:Lja5;
+
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Lja5;->a()V
+
+    .line 12
+    .line 13
+    .line 14
+    :cond_0
+    return-void
+.end method
+
+.method public setHighlightBracketPair(Z)V
+    .locals 2
+
+    .line 1
+    iput-boolean p1, p0, Lqt0;->p0:Z
+
+    .line 2
+    .line 3
+    iget-object v0, p0, Lqt0;->o:Lsr6;
+
+    .line 4
+    .line 5
+    if-nez p1, :cond_0
+
+    .line 6
+    .line 7
+    const/4 p1, 0x0
+
+    .line 8
+    iput-object p1, v0, Lsr6;->l:Ljava/lang/Object;
+
+    .line 9
+    .line 10
+    goto :goto_0
+
+    .line 11
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 12
+    .line 13
+    .line 14
+    new-instance p1, Lr2;
+
+    .line 15
+    .line 16
+    const/16 v1, 0xb
+
+    .line 17
+    .line 18
+    invoke-direct {p1, v0, v1}, Lr2;-><init>(Ljava/lang/Object;B)V
+
+    .line 19
+    .line 20
+    .line 21
+    invoke-virtual {v0, p1}, Lsr6;->k0(Ljava/lang/Runnable;)V
+
+    .line 22
+    .line 23
+    .line 24
+    :goto_0
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 25
+    .line 26
+    .line 27
+    return-void
+.end method
+
+.method public setHighlightCurrentBlock(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lqt0;->f0:Z
+
+    .line 2
+    .line 3
+    if-nez p1, :cond_0
+
+    .line 4
+    .line 5
+    const/4 p1, -0x1
+
+    .line 6
+    iput p1, p0, Lqt0;->u:I
+
+    .line 7
+    .line 8
+    goto :goto_0
+
+    .line 9
+    :cond_0
+    invoke-virtual {p0}, Lqt0;->H()I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p1
+
+    .line 13
+    iput p1, p0, Lqt0;->u:I
+
+    .line 14
+    .line 15
+    :goto_0
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 16
+    .line 17
+    .line 18
+    return-void
+.end method
+
+.method public setHighlightCurrentLine(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lqt0;->g0:Z
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public setHighlightTexts(Lv92;)V
+    .locals 1
+
+    .line 1
+    new-instance p1, Lzq3;
+
+    .line 2
+    .line 3
+    const/4 v0, 0x0
+
+    .line 4
+    invoke-direct {p1, v0}, Lzq3;-><init>(Ljava/lang/Object;)V
+
+    .line 5
+    .line 6
+    .line 7
+    iget v0, p1, Lzq3;->d:I
+
+    .line 8
+    .line 9
+    if-nez v0, :cond_0
+
+    .line 10
+    .line 11
+    return-void
+
+    .line 12
+    :cond_0
+    iget-object v0, p0, Lqt0;->s:Ld3;
+
+    .line 13
+    .line 14
+    if-eqz v0, :cond_3
+
+    .line 15
+    .line 16
+    iget-object v0, p0, Lqt0;->a1:Lja5;
+
+    .line 17
+    .line 18
+    if-nez v0, :cond_1
+
+    .line 19
+    .line 20
+    goto :goto_1
+
+    .line 21
+    :cond_1
+    new-instance v0, Lr77;
+
+    .line 22
+    .line 23
+    invoke-direct {v0, p1}, Lr77;-><init>(Lzq3;)V
+
+    .line 24
+    .line 25
+    .line 26
+    iget-boolean p1, p0, Lqt0;->T:Z
+
+    .line 27
+    .line 28
+    if-nez p1, :cond_2
+
+    .line 29
+    .line 30
+    iget-object p1, p0, Lqt0;->s:Ld3;
+
+    .line 31
+    .line 32
+    invoke-interface {p1, v0}, Lgz2;->i(Lr77;)V
+
+    .line 33
+    .line 34
+    .line 35
+    goto :goto_0
+
+    .line 36
+    :cond_2
+    const/4 p1, 0x1
+
+    .line 37
+    invoke-virtual {p0, p1}, Lqt0;->y(Z)V
+
+    .line 38
+    .line 39
+    .line 40
+    :goto_0
+    iget-object p1, p0, Lqt0;->a1:Lja5;
+
+    .line 41
+    .line 42
+    invoke-virtual {p1}, Lja5;->a()V
+
+    .line 43
+    .line 44
+    .line 45
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 46
+    .line 47
+    .line 48
+    return-void
+
+    .line 49
+    :cond_3
+    :goto_1
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 50
+    .line 51
+    .line 52
+    return-void
+.end method
+
+.method public setHorizontalScrollBarEnabled(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lqt0;->i0:Z
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+.method public setHorizontalScrollbarThumbDrawable(Landroid/graphics/drawable/Drawable;)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iput-object p1, p0, Lsr1;->t:Landroid/graphics/drawable/Drawable;
+
+    .line 4
+    .line 5
+    return-void
+.end method
+
+.method public setHorizontalScrollbarTrackDrawable(Landroid/graphics/drawable/Drawable;)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iput-object p1, p0, Lsr1;->u:Landroid/graphics/drawable/Drawable;
+
+    .line 4
+    .line 5
+    return-void
+.end method
+
+.method public setInlayHints(Lko2;)V
+    .locals 1
+
+    .line 1
+    new-instance p1, Lzq3;
+
+    .line 2
+    .line 3
+    const/4 v0, 0x0
+
+    .line 4
+    invoke-direct {p1, v0}, Lzq3;-><init>(Ljava/lang/Object;)V
+
+    .line 5
+    .line 6
+    .line 7
+    new-instance v0, Lr77;
+
+    .line 8
+    .line 9
+    invoke-direct {v0, p1}, Lr77;-><init>(Lzq3;)V
+
+    .line 10
+    .line 11
+    .line 12
+    iget-boolean p1, p0, Lqt0;->T:Z
+
+    .line 13
+    .line 14
+    if-nez p1, :cond_0
+
+    .line 15
+    .line 16
+    iget-object p1, p0, Lqt0;->s:Ld3;
+
+    .line 17
+    .line 18
+    invoke-interface {p1, v0}, Lgz2;->i(Lr77;)V
+
+    .line 19
+    .line 20
+    .line 21
+    goto :goto_0
+
+    .line 22
+    :cond_0
+    const/4 p1, 0x1
+
+    .line 23
+    invoke-virtual {p0, p1}, Lqt0;->y(Z)V
+
+    .line 24
+    .line 25
+    .line 26
+    :goto_0
+    iget-object p0, p0, Lqt0;->a1:Lja5;
+
+    .line 27
+    .line 28
+    invoke-virtual {p0}, Lja5;->a()V
+
+    .line 29
+    .line 30
+    .line 31
+    return-void
+.end method
+
+.method public setInputType(I)V
+    .locals 0
+
+    .line 1
+    iput p1, p0, Lqt0;->w:I
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lqt0;->h0()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public setInterceptParentHorizontalScrollIfNeeded(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lqt0;->e0:Z
+
+    .line 2
+    .line 3
+    if-nez p1, :cond_0
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    if-eqz p0, :cond_0
+
+    .line 10
+    .line 11
+    const/4 p1, 0x0
+
+    .line 12
+    invoke-interface {p0, p1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
+
+    .line 13
+    .line 14
+    .line 15
+    :cond_0
+    return-void
+.end method
+
+.method public setLayoutBusy(Z)V
+    .locals 10
+
+    .line 1
+    iget-boolean v0, p0, Lqt0;->T:Z
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_1
+
+    .line 4
+    .line 5
+    if-nez p1, :cond_1
+
+    .line 6
+    .line 7
+    iget-boolean p1, p0, Lqt0;->O:Z
+
+    .line 8
+    .line 9
+    const/4 v0, 0x0
+
+    .line 10
+    if-eqz p1, :cond_0
+
+    .line 11
+    .line 12
+    iget-object p1, p0, Lqt0;->K0:Lds1;
+
+    .line 13
+    .line 14
+    iget-boolean v1, p1, Lds1;->Q:Z
+
+    .line 15
+    .line 16
+    if-eqz v1, :cond_0
+
+    .line 17
+    .line 18
+    iput-boolean v0, p1, Lds1;->Q:Z
+
+    .line 19
+    .line 20
+    iget-wide v1, p1, Lds1;->P:J
+
+    .line 21
+    .line 22
+    const/16 p1, 0x20
+
+    .line 23
+    .line 24
+    shr-long v3, v1, p1
+
+    .line 25
+    .line 26
+    long-to-int p1, v3
+
+    .line 27
+    const-wide v3, 0xffffffffL
+
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    and-long/2addr v1, v3
+
+    .line 33
+    long-to-int v1, v1
+
+    .line 34
+    iget-object v2, p0, Lqt0;->s:Ld3;
+
+    .line 35
+    .line 36
+    check-cast v2, Ltd7;
+
+    .line 37
+    .line 38
+    invoke-virtual {v2, p1, v1}, Ltd7;->x(II)I
+
+    .line 39
+    .line 40
+    .line 41
+    move-result p1
+
+    .line 42
+    invoke-virtual {p0}, Lqt0;->getRowHeight()I
+
+    .line 43
+    .line 44
+    .line 45
+    move-result v1
+
+    .line 46
+    mul-int/2addr v1, p1
+
+    .line 47
+    int-to-float p1, v1
+
+    .line 48
+    iget-object v1, p0, Lqt0;->K0:Lds1;
+
+    .line 49
+    .line 50
+    iget v2, v1, Lds1;->R:F
+
+    .line 51
+    .line 52
+    sub-float/2addr p1, v2
+
+    .line 53
+    iget-object v2, v1, Lds1;->b:Ltr1;
+
+    .line 54
+    .line 55
+    new-instance v3, Lsr5;
+
+    .line 56
+    .line 57
+    iget-object v1, v2, Ltr1;->b:Landroid/widget/OverScroller;
+
+    .line 58
+    .line 59
+    invoke-virtual {v1}, Landroid/widget/OverScroller;->getCurrX()I
+
+    .line 60
+    .line 61
+    .line 62
+    move-result v5
+
+    .line 63
+    iget-object v1, v2, Ltr1;->b:Landroid/widget/OverScroller;
+
+    .line 64
+    .line 65
+    invoke-virtual {v1}, Landroid/widget/OverScroller;->getCurrY()I
+
+    .line 66
+    .line 67
+    .line 68
+    move-result v6
+
+    .line 69
+    float-to-int v4, p1
+
+    .line 70
+    const/4 v9, 0x5
+
+    .line 71
+    const/4 v7, 0x0
+
+    .line 72
+    move v8, v4
+
+    .line 73
+    move-object v4, p0
+
+    .line 74
+    invoke-direct/range {v3 .. v9}, Lsr5;-><init>(Lqt0;IIIII)V
+
+    .line 75
+    .line 76
+    .line 77
+    move v4, v8
+
+    .line 78
+    iget-object p1, p0, Lqt0;->r:Ltv1;
+
+    .line 79
+    .line 80
+    invoke-virtual {p1, v3}, Ltv1;->a(Lgv1;)I
+
+    .line 81
+    .line 82
+    .line 83
+    const/4 v6, 0x0
+
+    .line 84
+    const/4 v3, 0x0
+
+    .line 85
+    const/4 v5, 0x0
+
+    .line 86
+    invoke-virtual/range {v2 .. v7}, Ltr1;->b(IIIII)V
+
+    .line 87
+    .line 88
+    .line 89
+    iget-object p1, v2, Ltr1;->b:Landroid/widget/OverScroller;
+
+    .line 90
+    .line 91
+    invoke-virtual {p1}, Landroid/widget/OverScroller;->abortAnimation()V
+
+    .line 92
+    .line 93
+    .line 94
+    invoke-virtual {v2}, Ltr1;->a()V
+
+    .line 95
+    .line 96
+    .line 97
+    :cond_0
+    iput-boolean v0, p0, Lqt0;->T:Z
+
+    .line 98
+    .line 99
+    invoke-virtual {p0}, Lqt0;->h0()V
+
+    .line 100
+    .line 101
+    .line 102
+    invoke-virtual {p0}, Landroid/view/View;->postInvalidate()V
+
+    .line 103
+    .line 104
+    .line 105
+    new-instance p1, Lwd0;
+
+    .line 106
+    .line 107
+    invoke-direct {p1, p0}, Lgv1;-><init>(Lqt0;)V
+
+    .line 108
+    .line 109
+    .line 110
+    iget-object p0, p0, Lqt0;->r:Ltv1;
+
+    .line 111
+    .line 112
+    invoke-virtual {p0, p1}, Ltv1;->a(Lgv1;)I
+
+    .line 113
+    .line 114
+    .line 115
+    return-void
+
+    .line 116
+    :cond_1
+    iget-boolean v0, p0, Lqt0;->T:Z
+
+    .line 117
+    .line 118
+    if-ne v0, p1, :cond_2
+
+    .line 119
+    .line 120
+    return-void
+
+    .line 121
+    :cond_2
+    iput-boolean p1, p0, Lqt0;->T:Z
+
+    .line 122
+    .line 123
+    new-instance p1, Lwd0;
+
+    .line 124
+    .line 125
+    invoke-direct {p1, p0}, Lgv1;-><init>(Lqt0;)V
+
+    .line 126
+    .line 127
+    .line 128
+    iget-object p0, p0, Lqt0;->r:Ltv1;
+
+    .line 129
+    .line 130
+    invoke-virtual {p0, p1}, Ltv1;->a(Lgv1;)I
+
+    .line 131
+    .line 132
+    .line 133
+    return-void
+.end method
+
+.method public setLigatureEnabled(Z)V
+    .locals 0
+
+    .line 1
+    if-eqz p1, :cond_0
+
+    .line 2
+    .line 3
+    const/4 p1, 0x0
+
+    .line 4
+    goto :goto_0
+
+    .line 5
+    :cond_0
+    const-string p1, "\'liga\' 0,\'calt\' 0,\'hlig\' 0,\'dlig\' 0,\'clig\' 0"
+
+    .line 6
+    .line 7
+    :goto_0
+    invoke-virtual {p0, p1}, Lqt0;->setFontFeatureSettings(Ljava/lang/String;)V
+
+    .line 8
+    .line 9
+    .line 10
+    return-void
+.end method
+
+.method public setLineInfoTextSize(F)V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    cmpg-float v0, p1, v0
+
+    .line 3
+    .line 4
+    if-lez v0, :cond_0
+
+    .line 5
+    .line 6
+    iput p1, p0, Lqt0;->G:F
+
+    .line 7
+    .line 8
+    return-void
+
+    .line 9
+    :cond_0
+    invoke-static {}, Ls94;->c()V
+
+    .line 10
+    .line 11
+    .line 12
+    return-void
+.end method
+
+.method public setLineNumberAlign(Landroid/graphics/Paint$Align;)V
+    .locals 0
+
+    .line 1
+    if-nez p1, :cond_0
+
+    .line 2
+    .line 3
+    sget-object p1, Landroid/graphics/Paint$Align;->LEFT:Landroid/graphics/Paint$Align;
+
+    .line 4
+    .line 5
+    :cond_0
+    iput-object p1, p0, Lqt0;->L0:Landroid/graphics/Paint$Align;
+
+    .line 6
+    .line 7
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 8
+    .line 9
+    .line 10
+    return-void
+.end method
+
+.method public setLineNumberEnabled(Z)V
+    .locals 1
+
+    .line 1
+    iget-boolean v0, p0, Lqt0;->c0:Z
+
+    .line 2
+    .line 3
+    if-eq p1, v0, :cond_0
+
+    .line 4
+    .line 5
+    iget-boolean v0, p0, Lqt0;->O:Z
+
+    .line 6
+    .line 7
+    if-eqz v0, :cond_0
+
+    .line 8
+    .line 9
+    const/4 v0, 0x1
+
+    .line 10
+    invoke-virtual {p0, v0}, Lqt0;->y(Z)V
+
+    .line 11
+    .line 12
+    .line 13
+    :cond_0
+    iput-boolean p1, p0, Lqt0;->c0:Z
+
+    .line 14
+    .line 15
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 16
+    .line 17
+    .line 18
+    return-void
+.end method
+
+.method public setLineNumberMarginLeft(F)V
+    .locals 0
+
+    .line 1
+    iput p1, p0, Lqt0;->J:F
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lqt0;->g0()V
+
+    .line 4
+    .line 5
+    .line 6
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 7
+    .line 8
+    .line 9
+    return-void
+.end method
+
+.method public setLineNumberTipTextProvider(Ly73;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "Provider can not be null"
+
+    .line 2
+    .line 3
+    invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    iput-object p1, p0, Lqt0;->E0:Ly73;
+
+    .line 7
+    .line 8
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 9
+    .line 10
+    .line 11
+    return-void
+.end method
+
+.method public setLineSeparator(Lz73;)V
+    .locals 1
+
+    .line 1
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    sget-object v0, Lz73;->l:Lz73;
+
+    .line 5
+    .line 6
+    if-eq p1, v0, :cond_0
+
+    .line 7
+    .line 8
+    iput-object p1, p0, Lqt0;->h1:Lz73;
+
+    .line 9
+    .line 10
+    return-void
+
+    .line 11
+    :cond_0
+    invoke-static {}, Ls94;->c()V
+
+    .line 12
+    .line 13
+    .line 14
+    return-void
+.end method
+
+.method public setLineSpacingExtra(F)V
+    .locals 0
+
+    .line 1
+    iput p1, p0, Lqt0;->I:F
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public setLineSpacingMultiplier(F)V
+    .locals 0
+
+    .line 1
+    iput p1, p0, Lqt0;->H:F
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public setLnPanelPosition(I)V
+    .locals 0
+
+    .line 1
+    iput p1, p0, Lqt0;->V:I
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public setLnPanelPositionMode(I)V
+    .locals 0
+
+    .line 1
+    iput p1, p0, Lqt0;->W:I
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public setNonPrintablePaintingFlags(I)V
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lqt0;->x:I
+
+    .line 2
+    .line 3
+    iput p1, p0, Lqt0;->x:I
+
+    .line 4
+    .line 5
+    and-int/lit16 v0, v0, 0x80
+
+    .line 6
+    .line 7
+    and-int/lit16 p1, p1, 0x80
+
+    .line 8
+    .line 9
+    if-eq v0, p1, :cond_0
+
+    .line 10
+    .line 11
+    const/4 p1, 0x1
+
+    .line 12
+    invoke-virtual {p0, p1}, Lqt0;->y(Z)V
+
+    .line 13
+    .line 14
+    .line 15
+    :cond_0
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 16
+    .line 17
+    .line 18
+    return-void
+.end method
+
+.method public setPinLineNumber(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lqt0;->k0:Z
+
+    .line 2
+    .line 3
+    iget-boolean p1, p0, Lqt0;->c0:Z
+
+    .line 4
+    .line 5
+    if-eqz p1, :cond_0
+
+    .line 6
+    .line 7
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 8
+    .line 9
+    .line 10
+    :cond_0
+    return-void
+.end method
+
+.method public setRenderFunctionCharacters(Z)V
+    .locals 1
+
+    .line 1
+    iget-boolean v0, p0, Lqt0;->s0:Z
+
+    .line 2
+    .line 3
+    if-eq v0, p1, :cond_0
+
+    .line 4
+    .line 5
+    iput-boolean p1, p0, Lqt0;->s0:Z
+
+    .line 6
+    .line 7
+    iget-object p1, p0, Lqt0;->b1:Lsr1;
+
+    .line 8
+    .line 9
+    invoke-virtual {p1}, Lsr1;->F()V
+
+    .line 10
+    .line 11
+    .line 12
+    invoke-virtual {p0}, Lqt0;->g0()V
+
+    .line 13
+    .line 14
+    .line 15
+    const/4 p1, 0x1
+
+    .line 16
+    invoke-virtual {p0, p1}, Lqt0;->y(Z)V
+
+    .line 17
+    .line 18
+    .line 19
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 20
+    .line 21
+    .line 22
+    :cond_0
+    return-void
+.end method
+
+.method public setScalable(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lqt0;->M:Z
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+.method public setScrollBarEnabled(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lqt0;->i0:Z
+
+    .line 2
+    .line 3
+    iput-boolean p1, p0, Lqt0;->h0:Z
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 6
+    .line 7
+    .line 8
+    return-void
+.end method
+
+.method public setSelectionHandleStyle(Lbv5;)V
+    .locals 0
+
+    .line 1
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    check-cast p1, Lbv5;
+
+    .line 5
+    .line 6
+    iput-object p1, p0, Lqt0;->U0:Lbv5;
+
+    .line 7
+    .line 8
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 9
+    .line 10
+    .line 11
+    return-void
+.end method
+
+.method public setSoftKeyboardEnabled(Z)V
+    .locals 2
+
+    .line 1
+    iget-boolean v0, p0, Lqt0;->t0:Z
+
+    .line 2
+    .line 3
+    if-ne v0, p1, :cond_0
+
+    .line 4
+    .line 5
+    return-void
+
+    .line 6
+    :cond_0
+    iput-boolean p1, p0, Lqt0;->t0:Z
+
+    .line 7
+    .line 8
+    invoke-virtual {p0}, Landroid/view/View;->getWindowToken()Landroid/os/IBinder;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object p1
+
+    .line 12
+    const/4 v0, 0x0
+
+    .line 13
+    iget-object v1, p0, Lqt0;->z0:Landroid/view/inputmethod/InputMethodManager;
+
+    .line 14
+    .line 15
+    invoke-virtual {v1, p1, v0}, Landroid/view/inputmethod/InputMethodManager;->hideSoftInputFromWindow(Landroid/os/IBinder;I)Z
+
+    .line 16
+    .line 17
+    .line 18
+    invoke-virtual {p0}, Lqt0;->h0()V
+
+    .line 19
+    .line 20
+    .line 21
+    return-void
+.end method
+
+.method public setStickyTextSelection(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lqt0;->o0:Z
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+.method public setStyles(Lub6;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lqt0;->Y0:Lub6;
+
+    .line 2
+    .line 3
+    iget-boolean p1, p0, Lqt0;->f0:Z
+
+    .line 4
+    .line 5
+    if-eqz p1, :cond_0
+
+    .line 6
+    .line 7
+    invoke-virtual {p0}, Lqt0;->H()I
+
+    .line 8
+    .line 9
+    .line 10
+    move-result p1
+
+    .line 11
+    iput p1, p0, Lqt0;->u:I
+
+    .line 12
+    .line 13
+    :cond_0
+    iget-object p1, p0, Lqt0;->a1:Lja5;
+
+    .line 14
+    .line 15
+    invoke-virtual {p1}, Lja5;->a()V
+
+    .line 16
+    .line 17
+    .line 18
+    iget-object p1, p0, Lqt0;->b1:Lsr1;
+
+    .line 19
+    .line 20
+    invoke-virtual {p1}, Lsr1;->J()V
+
+    .line 21
+    .line 22
+    .line 23
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 24
+    .line 25
+    .line 26
+    return-void
+.end method
+
+.method public setTabWidth(I)V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-lt p1, v0, :cond_0
+
+    .line 3
+    .line 4
+    iput p1, p0, Lqt0;->t:I
+
+    .line 5
+    .line 6
+    iget-object p1, p0, Lqt0;->a1:Lja5;
+
+    .line 7
+    .line 8
+    invoke-virtual {p1}, Lja5;->a()V
+
+    .line 9
+    .line 10
+    .line 11
+    iget-object p1, p0, Lqt0;->b1:Lsr1;
+
+    .line 12
+    .line 13
+    invoke-virtual {p1}, Lsr1;->J()V
+
+    .line 14
+    .line 15
+    .line 16
+    invoke-virtual {p0}, Lqt0;->g0()V
+
+    .line 17
+    .line 18
+    .line 19
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 20
+    .line 21
+    .line 22
+    return-void
+
+    .line 23
+    :cond_0
+    const-string p0, "width can not be under 1"
+
+    .line 24
+    .line 25
+    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+
+    .line 26
+    .line 27
+    .line 28
+    return-void
+.end method
+
+.method public setText(Ljava/lang/CharSequence;)V
+    .locals 11
+
+    .line 1
+    if-nez p1, :cond_0
+
+    .line 2
+    .line 3
+    const-string p1, ""
+
+    .line 4
+    .line 5
+    :cond_0
+    iget-object v0, p0, Lqt0;->B0:Ln61;
+
+    .line 6
+    .line 7
+    const/4 v1, 0x0
+
+    .line 8
+    if-eqz v0, :cond_1
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, p0}, Ln61;->w(Lf71;)V
+
+    .line 11
+    .line 12
+    .line 13
+    iget-object v0, p0, Lqt0;->B0:Ln61;
+
+    .line 14
+    .line 15
+    iput v1, v0, Ln61;->n:I
+
+    .line 16
+    .line 17
+    :cond_1
+    new-instance v0, Landroid/os/Bundle;
+
+    .line 18
+    .line 19
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
+
+    .line 20
+    .line 21
+    .line 22
+    iput-object v0, p0, Lqt0;->X0:Landroid/os/Bundle;
+
+    .line 23
+    .line 24
+    instance-of v0, p1, Ln61;
+
+    .line 25
+    .line 26
+    iget-object v2, p0, Lqt0;->b1:Lsr1;
+
+    .line 27
+    .line 28
+    const/4 v3, 0x1
+
+    .line 29
+    if-eqz v0, :cond_2
+
+    .line 30
+    .line 31
+    check-cast p1, Ln61;
+
+    .line 32
+    .line 33
+    iput-object p1, p0, Lqt0;->B0:Ln61;
+
+    .line 34
+    .line 35
+    iput v1, p1, Ln61;->n:I
+
+    .line 36
+    .line 37
+    invoke-virtual {v2}, Lsr1;->J()V
+
+    .line 38
+    .line 39
+    .line 40
+    goto :goto_0
+
+    .line 41
+    :cond_2
+    new-instance v0, Ln61;
+
+    .line 42
+    .line 43
+    invoke-direct {v0, p1, v3}, Ln61;-><init>(Ljava/lang/CharSequence;Z)V
+
+    .line 44
+    .line 45
+    .line 46
+    iput-object v0, p0, Lqt0;->B0:Ln61;
+
+    .line 47
+    .line 48
+    :goto_0
+    iget-object p1, p0, Lqt0;->o:Lsr6;
+
+    .line 49
+    .line 50
+    const/4 v0, 0x0
+
+    .line 51
+    iput-object v0, p1, Lsr6;->l:Ljava/lang/Object;
+
+    .line 52
+    .line 53
+    iput-object v0, p1, Lsr6;->m:Ljava/lang/Object;
+
+    .line 54
+    .line 55
+    iput-object v0, p0, Lqt0;->Y0:Lub6;
+
+    .line 56
+    .line 57
+    iget-object p1, p0, Lqt0;->B0:Ln61;
+
+    .line 58
+    .line 59
+    invoke-virtual {p1}, Ln61;->m()Lwb1;
+
+    .line 60
+    .line 61
+    .line 62
+    move-result-object p1
+
+    .line 63
+    iput-object p1, p0, Lqt0;->A0:Lwb1;
+
+    .line 64
+    .line 65
+    iget-object p1, p1, Lwb1;->d:Lxm0;
+
+    .line 66
+    .line 67
+    invoke-virtual {p1}, Lxm0;->a()Lxm0;
+
+    .line 68
+    .line 69
+    .line 70
+    move-result-object p1
+
+    .line 71
+    iput-object p1, p0, Lqt0;->p:Lxm0;
+
+    .line 72
+    .line 73
+    iget-object p1, p0, Lqt0;->K0:Lds1;
+
+    .line 74
+    .line 75
+    iget-object v4, p1, Lds1;->b:Ltr1;
+
+    .line 76
+    .line 77
+    const/4 v8, 0x0
+
+    .line 78
+    const/4 v9, 0x0
+
+    .line 79
+    const/4 v5, 0x0
+
+    .line 80
+    const/4 v6, 0x0
+
+    .line 81
+    const/4 v7, 0x0
+
+    .line 82
+    invoke-virtual/range {v4 .. v9}, Ltr1;->b(IIIII)V
+
+    .line 83
+    .line 84
+    .line 85
+    iput-boolean v1, p1, Lds1;->q:Z
+
+    .line 86
+    .line 87
+    iput-boolean v1, p1, Lds1;->r:Z
+
+    .line 88
+    .line 89
+    const/4 v0, -0x1
+
+    .line 90
+    iput v0, p1, Lds1;->e:I
+
+    .line 91
+    .line 92
+    invoke-virtual {p1}, Lds1;->d()V
+
+    .line 93
+    .line 94
+    .line 95
+    iget-object p1, p1, Lds1;->d:Lbf3;
+
+    .line 96
+    .line 97
+    invoke-virtual {p1}, Lbf3;->a()V
+
+    .line 98
+    .line 99
+    .line 100
+    iget-object p1, p0, Lqt0;->B0:Ln61;
+
+    .line 101
+    .line 102
+    invoke-virtual {p1, p0}, Ln61;->a(Lf71;)V
+
+    .line 103
+    .line 104
+    .line 105
+    iget-object p1, p0, Lqt0;->B0:Ln61;
+
+    .line 106
+    .line 107
+    iget-boolean v0, p0, Lqt0;->P:Z
+
+    .line 108
+    .line 109
+    invoke-virtual {p1, v0}, Ln61;->A(Z)V
+
+    .line 110
+    .line 111
+    .line 112
+    iget-object p1, p0, Lqt0;->B0:Ln61;
+
+    .line 113
+    .line 114
+    iget-object v0, p1, Ln61;->q:Lo61;
+
+    .line 115
+    .line 116
+    iput-boolean v3, v0, Lo61;->k:Z
+
+    .line 117
+    .line 118
+    iget-object p1, p1, Ln61;->j:Ljava/util/ArrayList;
+
+    .line 119
+    .line 120
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+
+    .line 121
+    .line 122
+    .line 123
+    move-result p1
+
+    .line 124
+    iget-object v0, p0, Lqt0;->a1:Lja5;
+
+    .line 125
+    .line 126
+    iget-object v4, v0, Lja5;->a:Lq72;
+
+    .line 127
+    .line 128
+    iget-object v5, v4, Lq72;->k:Ljava/lang/Object;
+
+    .line 129
+    .line 130
+    check-cast v5, Lxq3;
+
+    .line 131
+    .line 132
+    iget v6, v5, Lxq3;->b:I
+
+    .line 133
+    .line 134
+    if-le v6, p1, :cond_3
+
+    .line 135
+    .line 136
+    invoke-virtual {v5, p1, v6}, Lxq3;->h(II)V
+
+    .line 137
+    .line 138
+    .line 139
+    goto :goto_2
+
+    .line 140
+    :cond_3
+    if-ge v6, p1, :cond_4
+
+    .line 141
+    .line 142
+    sub-int/2addr p1, v6
+
+    .line 143
+    move v6, v1
+
+    .line 144
+    :goto_1
+    if-ge v6, p1, :cond_4
+
+    .line 145
+    .line 146
+    invoke-virtual {v5, v1}, Lxq3;->a(I)V
+
+    .line 147
+    .line 148
+    .line 149
+    add-int/lit8 v6, v6, 0x1
+
+    .line 150
+    .line 151
+    goto :goto_1
+
+    .line 152
+    :cond_4
+    :goto_2
+    iget p1, v5, Lxq3;->b:I
+
+    .line 153
+    .line 154
+    invoke-static {v1, p1}, Lg23;->k0(II)Lvq2;
+
+    .line 155
+    .line 156
+    .line 157
+    move-result-object p1
+
+    .line 158
+    invoke-virtual {p1}, Ltq2;->iterator()Ljava/util/Iterator;
+
+    .line 159
+    .line 160
+    .line 161
+    move-result-object p1
+
+    .line 162
+    :goto_3
+    move-object v6, p1
+
+    .line 163
+    check-cast v6, Luq2;
+
+    .line 164
+    .line 165
+    iget-boolean v6, v6, Luq2;->l:Z
+
+    .line 166
+    .line 167
+    if-eqz v6, :cond_5
+
+    .line 168
+    .line 169
+    move-object v6, p1
+
+    .line 170
+    check-cast v6, Loq2;
+
+    .line 171
+    .line 172
+    invoke-virtual {v6}, Loq2;->nextInt()I
+
+    .line 173
+    .line 174
+    .line 175
+    move-result v6
+
+    .line 176
+    invoke-virtual {v5, v6, v1}, Lxq3;->i(II)V
+
+    .line 177
+    .line 178
+    .line 179
+    goto :goto_3
+
+    .line 180
+    :cond_5
+    iget-object p1, v4, Lq72;->l:Ljava/lang/Object;
+
+    .line 181
+    .line 182
+    check-cast p1, Ljava/util/ArrayList;
+
+    .line 183
+    .line 184
+    invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
+
+    .line 185
+    .line 186
+    .line 187
+    iget-object p1, v2, Lsr1;->p:Lqt0;
+
+    .line 188
+    .line 189
+    invoke-virtual {p1}, Lqt0;->getCursor()Lwb1;
+
+    .line 190
+    .line 191
+    .line 192
+    move-result-object v1
+
+    .line 193
+    iput-object v1, v2, Lsr1;->E:Lwb1;
+
+    .line 194
+    .line 195
+    invoke-virtual {p1}, Lqt0;->getText()Ln61;
+
+    .line 196
+    .line 197
+    .line 198
+    move-result-object p1
+
+    .line 199
+    iput-object p1, v2, Lsr1;->G:Ln61;
+
+    .line 200
+    .line 201
+    iget-object p1, p0, Lqt0;->G0:Lhy2;
+
+    .line 202
+    .line 203
+    if-eqz p1, :cond_6
+
+    .line 204
+    .line 205
+    invoke-interface {p1}, Lhy2;->a()Lq4;
+
+    .line 206
+    .line 207
+    .line 208
+    move-result-object p1
+
+    .line 209
+    new-instance v1, Lj71;
+
+    .line 210
+    .line 211
+    iget-object v2, p0, Lqt0;->B0:Ln61;
+
+    .line 212
+    .line 213
+    invoke-direct {v1, v2}, Lj71;-><init>(Ln61;)V
+
+    .line 214
+    .line 215
+    .line 216
+    iget-object v2, p0, Lqt0;->X0:Landroid/os/Bundle;
+
+    .line 217
+    .line 218
+    invoke-virtual {p1, v1, v2}, Lq4;->v(Lj71;Landroid/os/Bundle;)V
+
+    .line 219
+    .line 220
+    .line 221
+    iget-object p1, p0, Lqt0;->G0:Lhy2;
+
+    .line 222
+    .line 223
+    invoke-interface {p1}, Lhy2;->f()Lp6;
+
+    .line 224
+    .line 225
+    .line 226
+    :cond_6
+    new-instance v4, Ls61;
+
+    .line 227
+    .line 228
+    new-instance v7, Lxm0;
+
+    .line 229
+    .line 230
+    invoke-direct {v7}, Ljava/lang/Object;-><init>()V
+
+    .line 231
+    .line 232
+    .line 233
+    iget-object p1, p0, Lqt0;->B0:Ln61;
+
+    .line 234
+    .line 235
+    invoke-virtual {p1}, Ln61;->n()Lug0;
+
+    .line 236
+    .line 237
+    .line 238
+    move-result-object p1
+
+    .line 239
+    invoke-virtual {p0}, Lqt0;->getLineCount()I
+
+    .line 240
+    .line 241
+    .line 242
+    move-result v1
+
+    .line 243
+    sub-int/2addr v1, v3
+
+    .line 244
+    iget-object v2, p0, Lqt0;->B0:Ln61;
+
+    .line 245
+    .line 246
+    invoke-virtual {p0}, Lqt0;->getLineCount()I
+
+    .line 247
+    .line 248
+    .line 249
+    move-result v5
+
+    .line 250
+    sub-int/2addr v5, v3
+
+    .line 251
+    invoke-virtual {v2, v5}, Ln61;->o(I)Le71;
+
+    .line 252
+    .line 253
+    .line 254
+    move-result-object v2
+
+    .line 255
+    iget v2, v2, Le71;->l:I
+
+    .line 256
+    .line 257
+    invoke-virtual {p1, v1, v2}, Lug0;->B(II)Lxm0;
+
+    .line 258
+    .line 259
+    .line 260
+    move-result-object v8
+
+    .line 261
+    iget-object v9, p0, Lqt0;->B0:Ln61;
+
+    .line 262
+    .line 263
+    const/4 v10, 0x0
+
+    .line 264
+    const/4 v6, 0x1
+
+    .line 265
+    move-object v5, p0
+
+    .line 266
+    invoke-direct/range {v4 .. v10}, Ls61;-><init>(Lqt0;ILxm0;Lxm0;Ljava/lang/CharSequence;Z)V
+
+    .line 267
+    .line 268
+    .line 269
+    iget-object p0, v5, Lqt0;->r:Ltv1;
+
+    .line 270
+    .line 271
+    invoke-virtual {p0, v4}, Ltv1;->a(Lgv1;)I
+
+    .line 272
+    .line 273
+    .line 274
+    invoke-virtual {v5, v3}, Lqt0;->y(Z)V
+
+    .line 275
+    .line 276
+    .line 277
+    iget-object p0, v5, Lqt0;->z0:Landroid/view/inputmethod/InputMethodManager;
+
+    .line 278
+    .line 279
+    if-eqz p0, :cond_7
+
+    .line 280
+    .line 281
+    invoke-virtual {p0, v5}, Landroid/view/inputmethod/InputMethodManager;->restartInput(Landroid/view/View;)V
+
+    .line 282
+    .line 283
+    .line 284
+    :cond_7
+    invoke-virtual {v5}, Landroid/view/View;->requestLayout()V
+
+    .line 285
+    .line 286
+    .line 287
+    invoke-virtual {v0}, Lja5;->a()V
+
+    .line 288
+    .line 289
+    .line 290
+    invoke-virtual {v5}, Landroid/view/View;->invalidate()V
+
+    .line 291
+    .line 292
+    .line 293
+    return-void
+.end method
+
+.method public setTextBorderWidth(F)V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    cmpg-float v0, p1, v0
+
+    .line 3
+    .line 4
+    if-ltz v0, :cond_0
+
+    .line 5
+    .line 6
+    iput p1, p0, Lqt0;->E:F
+
+    .line 7
+    .line 8
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 9
+    .line 10
+    .line 11
+    return-void
+
+    .line 12
+    :cond_0
+    const-string p0, "width can not be under zero"
+
+    .line 13
+    .line 14
+    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+
+    .line 15
+    .line 16
+    .line 17
+    return-void
+.end method
+
+.method public setTextLetterSpacing(F)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object v1, v0, Lsr1;->b:Lik4;
+
+    .line 4
+    .line 5
+    invoke-virtual {v1, p1}, Lik4;->setLetterSpacing(F)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object v1, v0, Lsr1;->c:Lik4;
+
+    .line 9
+    .line 10
+    invoke-virtual {v1, p1}, Lik4;->setLetterSpacing(F)V
+
+    .line 11
+    .line 12
+    .line 13
+    invoke-virtual {v0}, Lsr1;->F()V
+
+    .line 14
+    .line 15
+    .line 16
+    invoke-virtual {p0}, Lqt0;->g0()V
+
+    .line 17
+    .line 18
+    .line 19
+    return-void
+.end method
+
+.method public setTextScaleX(F)V
+    .locals 1
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object v0, p0, Lsr1;->b:Lik4;
+
+    .line 4
+    .line 5
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setTextScaleX(F)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object v0, p0, Lsr1;->c:Lik4;
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setTextScaleX(F)V
+
+    .line 11
+    .line 12
+    .line 13
+    invoke-virtual {p0}, Lsr1;->F()V
+
+    .line 14
+    .line 15
+    .line 16
+    return-void
+.end method
+
+.method public setTextSize(F)V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    if-nez v0, :cond_0
+
+    .line 6
+    .line 7
+    invoke-static {}, Landroid/content/res/Resources;->getSystem()Landroid/content/res/Resources;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v0
+
+    .line 11
+    goto :goto_0
+
+    .line 12
+    :cond_0
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object v0
+
+    .line 16
+    :goto_0
+    const/4 v1, 0x2
+
+    .line 17
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object v0
+
+    .line 21
+    invoke-static {v1, p1, v0}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
+
+    .line 22
+    .line 23
+    .line 24
+    move-result p1
+
+    .line 25
+    invoke-virtual {p0, p1}, Lqt0;->setTextSizePx(F)V
+
+    .line 26
+    .line 27
+    .line 28
+    return-void
+.end method
+
+.method public setTextSizePx(F)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0, p1}, Lqt0;->setTextSizePxDirect(F)V
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p0}, Lqt0;->g0()V
+
+    .line 5
+    .line 6
+    .line 7
+    const/4 p1, 0x1
+
+    .line 8
+    invoke-virtual {p0, p1}, Lqt0;->y(Z)V
+
+    .line 9
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Landroid/view/View;->invalidate()V
+
+    .line 12
+    .line 13
+    .line 14
+    return-void
+.end method
+
+.method public setTextSizePxDirect(F)V
+    .locals 6
+
+    .line 1
+    invoke-virtual {p0}, Lqt0;->getTextSizePx()F
+
+    .line 2
+    .line 3
+    .line 4
+    iget-object v0, p0, Lqt0;->b1:Lsr1;
+
+    .line 5
+    .line 6
+    iget-object v1, v0, Lsr1;->b:Lik4;
+
+    .line 7
+    .line 8
+    invoke-virtual {v1, p1}, Landroid/graphics/Paint;->setTextSize(F)V
+
+    .line 9
+    .line 10
+    .line 11
+    invoke-virtual {v1}, Lik4;->c()V
+
+    .line 12
+    .line 13
+    .line 14
+    iget-object v2, v0, Lsr1;->c:Lik4;
+
+    .line 15
+    .line 16
+    invoke-virtual {v2, p1}, Landroid/graphics/Paint;->setTextSize(F)V
+
+    .line 17
+    .line 18
+    .line 19
+    iget-object v3, v0, Lsr1;->g:Lik4;
+
+    .line 20
+    .line 21
+    iget-object v4, v0, Lsr1;->p:Lqt0;
+
+    .line 22
+    .line 23
+    invoke-virtual {v4}, Lqt0;->getProps()Lri1;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object v5
+
+    .line 27
+    invoke-static {v5}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 28
+    .line 29
+    .line 30
+    const v5, 0x3f59999a    # 0.85f
+
+    .line 31
+    .line 32
+    .line 33
+    mul-float/2addr p1, v5
+
+    .line 34
+    invoke-virtual {v3, p1}, Landroid/graphics/Paint;->setTextSize(F)V
+
+    .line 35
+    .line 36
+    .line 37
+    invoke-virtual {v1}, Landroid/graphics/Paint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
+
+    .line 38
+    .line 39
+    .line 40
+    move-result-object p1
+
+    .line 41
+    iput-object p1, v0, Lsr1;->s:Landroid/graphics/Paint$FontMetricsInt;
+
+    .line 42
+    .line 43
+    invoke-virtual {v2}, Landroid/graphics/Paint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
+
+    .line 44
+    .line 45
+    .line 46
+    move-result-object p1
+
+    .line 47
+    iput-object p1, v0, Lsr1;->B:Landroid/graphics/Paint$FontMetricsInt;
+
+    .line 48
+    .line 49
+    invoke-virtual {v3}, Landroid/graphics/Paint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
+
+    .line 50
+    .line 51
+    .line 52
+    move-result-object p1
+
+    .line 53
+    iput-object p1, v0, Lsr1;->C:Landroid/graphics/Paint$FontMetricsInt;
+
+    .line 54
+    .line 55
+    invoke-virtual {v4}, Lqt0;->getRenderContext()Lja5;
+
+    .line 56
+    .line 57
+    .line 58
+    move-result-object p1
+
+    .line 59
+    invoke-virtual {p1}, Lja5;->a()V
+
+    .line 60
+    .line 61
+    .line 62
+    invoke-virtual {v0}, Lsr1;->J()V
+
+    .line 63
+    .line 64
+    .line 65
+    new-instance p1, Lqq6;
+
+    .line 66
+    .line 67
+    invoke-direct {p1, p0}, Lgv1;-><init>(Lqt0;)V
+
+    .line 68
+    .line 69
+    .line 70
+    iget-object p0, p0, Lqt0;->r:Ltv1;
+
+    .line 71
+    .line 72
+    invoke-virtual {p0, p1}, Ltv1;->a(Lgv1;)I
+
+    .line 73
+    .line 74
+    .line 75
+    return-void
+.end method
+
+.method public setTypefaceLineNumber(Landroid/graphics/Typeface;)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object v1, v0, Lsr1;->c:Lik4;
+
+    .line 4
+    .line 5
+    if-nez p1, :cond_0
+
+    .line 6
+    .line 7
+    sget-object p1, Landroid/graphics/Typeface;->MONOSPACE:Landroid/graphics/Typeface;
+
+    .line 8
+    .line 9
+    :cond_0
+    invoke-virtual {v1, p1}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
+
+    .line 10
+    .line 11
+    .line 12
+    invoke-virtual {v1}, Landroid/graphics/Paint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p1
+
+    .line 16
+    iput-object p1, v0, Lsr1;->B:Landroid/graphics/Paint$FontMetricsInt;
+
+    .line 17
+    .line 18
+    iget-object p1, v0, Lsr1;->p:Lqt0;
+
+    .line 19
+    .line 20
+    invoke-virtual {p1}, Landroid/view/View;->invalidate()V
+
+    .line 21
+    .line 22
+    .line 23
+    invoke-virtual {p0}, Lqt0;->g0()V
+
+    .line 24
+    .line 25
+    .line 26
+    return-void
+.end method
+
+.method public setTypefaceText(Landroid/graphics/Typeface;)V
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iget-object v1, v0, Lsr1;->b:Lik4;
+
+    .line 4
+    .line 5
+    iget-object v2, v0, Lsr1;->p:Lqt0;
+
+    .line 6
+    .line 7
+    if-nez p1, :cond_0
+
+    .line 8
+    .line 9
+    sget-object p1, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
+
+    .line 10
+    .line 11
+    :cond_0
+    invoke-virtual {v1, p1}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
+
+    .line 12
+    .line 13
+    .line 14
+    invoke-virtual {v1}, Lik4;->c()V
+
+    .line 15
+    .line 16
+    .line 17
+    invoke-virtual {v1}, Landroid/graphics/Paint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object p1
+
+    .line 21
+    iput-object p1, v0, Lsr1;->s:Landroid/graphics/Paint$FontMetricsInt;
+
+    .line 22
+    .line 23
+    invoke-virtual {v2}, Lqt0;->getRenderContext()Lja5;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object p1
+
+    .line 27
+    invoke-virtual {p1}, Lja5;->a()V
+
+    .line 28
+    .line 29
+    .line 30
+    invoke-virtual {v0}, Lsr1;->J()V
+
+    .line 31
+    .line 32
+    .line 33
+    const/4 p1, 0x1
+
+    .line 34
+    invoke-virtual {v2, p1}, Lqt0;->y(Z)V
+
+    .line 35
+    .line 36
+    .line 37
+    invoke-virtual {v2}, Landroid/view/View;->invalidate()V
+
+    .line 38
+    .line 39
+    .line 40
+    invoke-virtual {p0}, Lqt0;->g0()V
+
+    .line 41
+    .line 42
+    .line 43
+    return-void
+.end method
+
+.method public setUndoEnabled(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lqt0;->P:Z
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lqt0;->B0:Ln61;
+
+    .line 4
+    .line 5
+    if-eqz p0, :cond_0
+
+    .line 6
+    .line 7
+    invoke-virtual {p0, p1}, Ln61;->A(Z)V
+
+    .line 8
+    .line 9
+    .line 10
+    :cond_0
+    return-void
+.end method
+
+.method public setVerticalExtraSpaceFactor(F)V
+    .locals 2
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    cmpg-float v1, p1, v0
+
+    .line 3
+    .line 4
+    if-ltz v1, :cond_0
+
+    .line 5
+    .line 6
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    .line 7
+    .line 8
+    cmpl-float v1, p1, v1
+
+    .line 9
+    .line 10
+    if-gtz v1, :cond_0
+
+    .line 11
+    .line 12
+    iput p1, p0, Lqt0;->K:F
+
+    .line 13
+    .line 14
+    iget-object p0, p0, Lqt0;->K0:Lds1;
+
+    .line 15
+    .line 16
+    const/4 p1, 0x0
+
+    .line 17
+    invoke-virtual {p0, v0, v0, p1}, Lds1;->j(FFZ)V
+
+    .line 18
+    .line 19
+    .line 20
+    return-void
+
+    .line 21
+    :cond_0
+    const-string p0, "the factor should be in range [0.0, 1.0]"
+
+    .line 22
+    .line 23
+    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+
+    .line 24
+    .line 25
+    .line 26
+    return-void
+.end method
+
+.method public setVerticalScrollBarEnabled(Z)V
+    .locals 0
+
+    .line 1
+    iput-boolean p1, p0, Lqt0;->h0:Z
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+.method public setVerticalScrollbarThumbDrawable(Landroid/graphics/drawable/Drawable;)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iput-object p1, p0, Lsr1;->v:Landroid/graphics/drawable/Drawable;
+
+    .line 4
+    .line 5
+    return-void
+.end method
+
+.method public setVerticalScrollbarTrackDrawable(Landroid/graphics/drawable/Drawable;)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqt0;->b1:Lsr1;
+
+    .line 2
+    .line 3
+    iput-object p1, p0, Lsr1;->w:Landroid/graphics/drawable/Drawable;
+
+    .line 4
+    .line 5
+    return-void
+.end method
+
+.method public setWordwrap(Z)V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    invoke-virtual {p0, p1, v0}, Lqt0;->p0(ZZ)V
+
+    .line 3
+    .line 4
+    .line 5
+    return-void
+.end method
+
+.method public final t()V
+    .locals 3
+
+    .line 1
+    iget-boolean v0, p0, Lqt0;->r0:Z
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_1
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object v0
+
+    .line 9
+    if-eqz v0, :cond_1
+
+    .line 10
+    .line 11
+    iget v1, v0, Landroid/view/ViewGroup$LayoutParams;->width:I
+
+    .line 12
+    .line 13
+    const/4 v2, -0x2
+
+    .line 14
+    if-ne v1, v2, :cond_0
+
+    .line 15
+    .line 16
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
+
+    .line 17
+    .line 18
+    .line 19
+    return-void
+
+    .line 20
+    :cond_0
+    iget v0, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    .line 21
+    .line 22
+    if-ne v0, v2, :cond_1
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
+
+    .line 25
+    .line 26
+    .line 27
+    move-result v0
+
+    .line 28
+    iget-object v1, p0, Lqt0;->s:Ld3;
+
+    .line 29
+    .line 30
+    invoke-interface {v1}, Lgz2;->g()I
+
+    .line 31
+    .line 32
+    .line 33
+    move-result v1
+
+    .line 34
+    if-eq v0, v1, :cond_1
+
+    .line 35
+    .line 36
+    invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
+
+    .line 37
+    .line 38
+    .line 39
+    :cond_1
+    return-void
+.end method
+
+.method public final t0()F
+    .locals 12
+
+    .line 1
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 2
+    .line 3
+    iget-object v0, v0, Lwb1;->d:Lxm0;
+
+    .line 4
+    .line 5
+    iget v1, v0, Lxm0;->b:I
+
+    .line 6
+    .line 7
+    iget v0, v0, Lxm0;->c:I
+
+    .line 8
+    .line 9
+    iget-object v2, p0, Lqt0;->s:Ld3;
+
+    .line 10
+    .line 11
+    invoke-interface {v2, v1, v0}, Lgz2;->r(II)[F
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object v0
+
+    .line 15
+    invoke-virtual {p0}, Lqt0;->W()F
+
+    .line 16
+    .line 17
+    .line 18
+    move-result v1
+
+    .line 19
+    const/4 v2, 0x1
+
+    .line 20
+    aget v3, v0, v2
+
+    .line 21
+    .line 22
+    add-float/2addr v1, v3
+
+    .line 23
+    invoke-virtual {p0}, Lqt0;->getOffsetX()I
+
+    .line 24
+    .line 25
+    .line 26
+    move-result v3
+
+    .line 27
+    int-to-float v3, v3
+
+    .line 28
+    sub-float/2addr v1, v3
+
+    .line 29
+    const/4 v3, 0x0
+
+    .line 30
+    aget v0, v0, v3
+
+    .line 31
+    .line 32
+    invoke-virtual {p0}, Lqt0;->getOffsetY()I
+
+    .line 33
+    .line 34
+    .line 35
+    move-result v4
+
+    .line 36
+    int-to-float v4, v4
+
+    .line 37
+    sub-float v9, v0, v4
+
+    .line 38
+    .line 39
+    invoke-virtual {p0}, Lqt0;->getRowHeight()I
+
+    .line 40
+    .line 41
+    .line 42
+    move-result v0
+
+    .line 43
+    int-to-float v0, v0
+
+    .line 44
+    sub-float v7, v9, v0
+
+    .line 45
+    .line 46
+    invoke-virtual {p0}, Lqt0;->getRowHeight()I
+
+    .line 47
+    .line 48
+    .line 49
+    move-result v0
+
+    .line 50
+    int-to-float v0, v0
+
+    .line 51
+    div-float v0, v7, v0
+
+    .line 52
+    .line 53
+    invoke-static {v0}, Ljava/lang/Math;->round(F)I
+
+    .line 54
+    .line 55
+    .line 56
+    move-result v0
+
+    .line 57
+    invoke-virtual {p0, v0}, Lqt0;->K(I)I
+
+    .line 58
+    .line 59
+    .line 60
+    move-result v0
+
+    .line 61
+    int-to-float v8, v0
+
+    .line 62
+    const/4 v0, 0x0
+
+    .line 63
+    cmpg-float v4, v1, v0
+
+    .line 64
+    .line 65
+    if-gez v4, :cond_0
+
+    .line 66
+    .line 67
+    move v6, v0
+
+    .line 68
+    :goto_0
+    move v0, v3
+
+    .line 69
+    goto :goto_1
+
+    .line 70
+    :cond_0
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+
+    .line 71
+    .line 72
+    .line 73
+    move-result v0
+
+    .line 74
+    int-to-float v0, v0
+
+    .line 75
+    cmpl-float v0, v1, v0
+
+    .line 76
+    .line 77
+    if-lez v0, :cond_1
+
+    .line 78
+    .line 79
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
+
+    .line 80
+    .line 81
+    .line 82
+    move-result v0
+
+    .line 83
+    int-to-float v1, v0
+
+    .line 84
+    move v6, v1
+
+    .line 85
+    goto :goto_0
+
+    .line 86
+    :cond_1
+    move v6, v1
+
+    .line 87
+    move v0, v2
+
+    .line 88
+    :goto_1
+    iget-object v1, p0, Lqt0;->q:Ldr1;
+
+    .line 89
+    .line 90
+    iget-object v1, v1, Ldr1;->b:Lb11;
+
+    .line 91
+    .line 92
+    iget-boolean v4, v1, Lb11;->c:Z
+
+    .line 93
+    .line 94
+    if-eqz v4, :cond_2
+
+    .line 95
+    .line 96
+    return v6
+
+    .line 97
+    :cond_2
+    iget-object v4, p0, Lqt0;->W0:Lri1;
+
+    .line 98
+    .line 99
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 100
+    .line 101
+    .line 102
+    iget-object v5, p0, Lqt0;->O0:Landroid/view/inputmethod/CursorAnchorInfo$Builder;
+
+    .line 103
+    .line 104
+    invoke-virtual {v5}, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->reset()V
+
+    .line 105
+    .line 106
+    .line 107
+    invoke-virtual {p0}, Landroid/view/View;->getMatrix()Landroid/graphics/Matrix;
+
+    .line 108
+    .line 109
+    .line 110
+    move-result-object v4
+
+    .line 111
+    iget-object v10, p0, Lqt0;->C0:Landroid/graphics/Matrix;
+
+    .line 112
+    .line 113
+    invoke-virtual {v10, v4}, Landroid/graphics/Matrix;->set(Landroid/graphics/Matrix;)V
+
+    .line 114
+    .line 115
+    .line 116
+    const/4 v4, 0x2
+
+    .line 117
+    new-array v11, v4, [I
+
+    .line 118
+    .line 119
+    invoke-virtual {p0, v11}, Landroid/view/View;->getLocationOnScreen([I)V
+
+    .line 120
+    .line 121
+    .line 122
+    aget v3, v11, v3
+
+    .line 123
+    .line 124
+    int-to-float v3, v3
+
+    .line 125
+    aget v11, v11, v2
+
+    .line 126
+    .line 127
+    int-to-float v11, v11
+
+    .line 128
+    invoke-virtual {v10, v3, v11}, Landroid/graphics/Matrix;->postTranslate(FF)Z
+
+    .line 129
+    .line 130
+    .line 131
+    invoke-virtual {v5, v10}, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->setMatrix(Landroid/graphics/Matrix;)Landroid/view/inputmethod/CursorAnchorInfo$Builder;
+
+    .line 132
+    .line 133
+    .line 134
+    iget-object v3, p0, Lqt0;->A0:Lwb1;
+
+    .line 135
+    .line 136
+    iget-object v10, v3, Lwb1;->c:Lxm0;
+
+    .line 137
+    .line 138
+    iget v10, v10, Lxm0;->a:I
+
+    .line 139
+    .line 140
+    iget-object v3, v3, Lwb1;->d:Lxm0;
+
+    .line 141
+    .line 142
+    iget v3, v3, Lxm0;->a:I
+
+    .line 143
+    .line 144
+    invoke-virtual {v5, v10, v3}, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->setSelectionRange(II)Landroid/view/inputmethod/CursorAnchorInfo$Builder;
+
+    .line 145
+    .line 146
+    .line 147
+    invoke-virtual {v1}, Lb11;->a()Z
+
+    .line 148
+    .line 149
+    .line 150
+    move-result v3
+
+    .line 151
+    if-eqz v3, :cond_3
+
+    .line 152
+    .line 153
+    iget v3, v1, Lb11;->a:I
+
+    .line 154
+    .line 155
+    iget-object v10, p0, Lqt0;->B0:Ln61;
+
+    .line 156
+    .line 157
+    iget v1, v1, Lb11;->b:I
+
+    .line 158
+    .line 159
+    invoke-virtual {v10, v3, v1}, Ln61;->D(II)Ljava/lang/String;
+
+    .line 160
+    .line 161
+    .line 162
+    move-result-object v1
+
+    .line 163
+    invoke-virtual {v5, v3, v1}, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->setComposingText(ILjava/lang/CharSequence;)Landroid/view/inputmethod/CursorAnchorInfo$Builder;
+
+    .line 164
+    .line 165
+    .line 166
+    :cond_3
+    if-eqz v0, :cond_4
+
+    .line 167
+    .line 168
+    move v10, v2
+
+    .line 169
+    goto :goto_2
+
+    .line 170
+    :cond_4
+    move v10, v4
+
+    .line 171
+    :goto_2
+    invoke-virtual/range {v5 .. v10}, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->setInsertionMarkerLocation(FFFFI)Landroid/view/inputmethod/CursorAnchorInfo$Builder;
+
+    .line 172
+    .line 173
+    .line 174
+    iget-object v0, p0, Lqt0;->z0:Landroid/view/inputmethod/InputMethodManager;
+
+    .line 175
+    .line 176
+    invoke-virtual {v5}, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->build()Landroid/view/inputmethod/CursorAnchorInfo;
+
+    .line 177
+    .line 178
+    .line 179
+    move-result-object v1
+
+    .line 180
+    invoke-virtual {v0, p0, v1}, Landroid/view/inputmethod/InputMethodManager;->updateCursorAnchorInfo(Landroid/view/View;Landroid/view/inputmethod/CursorAnchorInfo;)V
+
+    .line 181
+    .line 182
+    .line 183
+    return v6
+.end method
+
+.method public final u()Z
+    .locals 4
+
+    .line 1
+    iget-boolean v0, p0, Lqt0;->u0:Z
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_3
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object v0
+
+    .line 9
+    const/4 v1, 0x0
+
+    .line 10
+    if-nez v0, :cond_1
+
+    .line 11
+    .line 12
+    :cond_0
+    move v3, v1
+
+    .line 13
+    goto :goto_0
+
+    .line 14
+    :cond_1
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-object v0
+
+    .line 18
+    invoke-virtual {v0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object v0
+
+    .line 22
+    iget v2, v0, Landroid/content/res/Configuration;->keyboard:I
+
+    .line 23
+    .line 24
+    const/4 v3, 0x1
+
+    .line 25
+    if-ne v2, v3, :cond_2
+
+    .line 26
+    .line 27
+    iget v0, v0, Landroid/content/res/Configuration;->hardKeyboardHidden:I
+
+    .line 28
+    .line 29
+    if-ne v0, v3, :cond_0
+
+    .line 30
+    .line 31
+    :cond_2
+    :goto_0
+    if-eqz v3, :cond_3
+
+    .line 32
+    .line 33
+    return v1
+
+    .line 34
+    :cond_3
+    iget-boolean p0, p0, Lqt0;->t0:Z
+
+    .line 35
+    .line 36
+    return p0
+.end method
+
+.method public final u0()V
+    .locals 9
+
+    .line 1
+    iget-object v0, p0, Lqt0;->W0:Lri1;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object v0, p0, Lqt0;->q:Ldr1;
+
+    .line 7
+    .line 8
+    iget-object v1, v0, Ldr1;->b:Lb11;
+
+    .line 9
+    .line 10
+    iget-boolean v2, v1, Lb11;->c:Z
+
+    .line 11
+    .line 12
+    if-eqz v2, :cond_0
+
+    .line 13
+    .line 14
+    return-void
+
+    .line 15
+    :cond_0
+    invoke-virtual {v1}, Lb11;->a()Z
+
+    .line 16
+    .line 17
+    .line 18
+    move-result v1
+
+    .line 19
+    const/4 v2, -0x1
+
+    .line 20
+    if-eqz v1, :cond_1
+
+    .line 21
+    .line 22
+    :try_start_0
+    iget-object v0, v0, Ldr1;->b:Lb11;
+
+    .line 23
+    .line 24
+    iget v1, v0, Lb11;->a:I
+    :try_end_0
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_1
+
+    .line 25
+    .line 26
+    :try_start_1
+    iget v2, v0, Lb11;->b:I
+    :try_end_1
+    .catch Ljava/lang/IndexOutOfBoundsException; {:try_start_1 .. :try_end_1} :catch_0
+
+    .line 27
+    .line 28
+    :catch_0
+    :goto_0
+    move v7, v1
+
+    .line 29
+    move v8, v2
+
+    .line 30
+    goto :goto_1
+
+    .line 31
+    :catch_1
+    move v1, v2
+
+    .line 32
+    goto :goto_0
+
+    .line 33
+    :cond_1
+    move v7, v2
+
+    .line 34
+    move v8, v7
+
+    .line 35
+    :goto_1
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 36
+    .line 37
+    iget-object v1, v0, Lwb1;->c:Lxm0;
+
+    .line 38
+    .line 39
+    iget v5, v1, Lxm0;->a:I
+
+    .line 40
+    .line 41
+    iget-object v0, v0, Lwb1;->d:Lxm0;
+
+    .line 42
+    .line 43
+    iget v6, v0, Lxm0;->a:I
+
+    .line 44
+    .line 45
+    iget-object v3, p0, Lqt0;->z0:Landroid/view/inputmethod/InputMethodManager;
+
+    .line 46
+    .line 47
+    move-object v4, p0
+
+    .line 48
+    invoke-virtual/range {v3 .. v8}, Landroid/view/inputmethod/InputMethodManager;->updateSelection(Landroid/view/View;IIII)V
+
+    .line 49
+    .line 50
+    .line 51
+    return-void
+.end method
+
+.method public final v(Ljava/lang/CharSequence;Z)V
+    .locals 17
+
+    .line 1
+    move-object/from16 v1, p0
+
+    .line 2
+    .line 3
+    move-object/from16 v4, p1
+
+    .line 4
+    .line 5
+    invoke-virtual {v1}, Lqt0;->getProps()Lri1;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object v0
+
+    .line 9
+    iget-boolean v0, v0, Lri1;->l:Z
+
+    .line 10
+    .line 11
+    const/4 v2, 0x2
+
+    .line 12
+    const/4 v5, 0x1
+
+    .line 13
+    if-eqz v0, :cond_e
+
+    .line 14
+    .line 15
+    invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result v0
+
+    .line 19
+    if-lez v0, :cond_e
+
+    .line 20
+    .line 21
+    invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
+
+    .line 22
+    .line 23
+    .line 24
+    move-result v0
+
+    .line 25
+    sub-int/2addr v0, v5
+
+    .line 26
+    invoke-interface {v4, v0}, Ljava/lang/CharSequence;->charAt(I)C
+
+    .line 27
+    .line 28
+    .line 29
+    move-result v0
+
+    .line 30
+    invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
+
+    .line 31
+    .line 32
+    .line 33
+    move-result v7
+
+    .line 34
+    if-le v7, v5, :cond_0
+
+    .line 35
+    .line 36
+    invoke-interface {v4}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    .line 37
+    .line 38
+    .line 39
+    move-result-object v7
+
+    .line 40
+    invoke-virtual {v7}, Ljava/lang/String;->toCharArray()[C
+
+    .line 41
+    .line 42
+    .line 43
+    move-result-object v7
+
+    .line 44
+    goto :goto_0
+
+    .line 45
+    :cond_0
+    const/4 v7, 0x0
+
+    .line 46
+    :goto_0
+    iget-object v8, v1, Lqt0;->k:Lsr6;
+
+    .line 47
+    .line 48
+    iget-object v9, v1, Lqt0;->A0:Lwb1;
+
+    .line 49
+    .line 50
+    iget-object v9, v9, Lwb1;->c:Lxm0;
+
+    .line 51
+    .line 52
+    invoke-virtual {v9}, Lxm0;->a()Lxm0;
+
+    .line 53
+    .line 54
+    .line 55
+    move-result-object v9
+
+    .line 56
+    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 57
+    .line 58
+    .line 59
+    invoke-virtual {v1}, Lqt0;->getText()Ln61;
+
+    .line 60
+    .line 61
+    .line 62
+    move-result-object v10
+
+    .line 63
+    if-nez v7, :cond_1
+
+    .line 64
+    .line 65
+    invoke-virtual {v8, v0}, Lsr6;->V(C)Lkg6;
+
+    .line 66
+    .line 67
+    .line 68
+    move-result-object v11
+
+    .line 69
+    goto :goto_1
+
+    .line 70
+    :cond_1
+    const/4 v11, 0x0
+
+    .line 71
+    :goto_1
+    if-eqz v11, :cond_2
+
+    .line 72
+    .line 73
+    iget v0, v9, Lxm0;->a:I
+
+    .line 74
+    .line 75
+    iget-object v6, v11, Lkg6;->a:Ljava/lang/String;
+
+    .line 76
+    .line 77
+    invoke-virtual {v6}, Ljava/lang/String;->length()I
+
+    .line 78
+    .line 79
+    .line 80
+    move-result v6
+
+    .line 81
+    add-int/2addr v6, v0
+
+    .line 82
+    iput v6, v11, Lkg6;->d:I
+
+    .line 83
+    .line 84
+    iput v0, v11, Lkg6;->e:I
+
+    .line 85
+    .line 86
+    move-object v6, v11
+
+    .line 87
+    goto/16 :goto_a
+
+    .line 88
+    .line 89
+    :cond_2
+    invoke-virtual {v8, v0}, Lsr6;->W(C)Ljava/util/List;
+
+    .line 90
+    .line 91
+    .line 92
+    move-result-object v0
+
+    .line 93
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    .line 94
+    .line 95
+    .line 96
+    move-result-object v0
+
+    .line 97
+    :goto_2
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    .line 98
+    .line 99
+    .line 100
+    move-result v8
+
+    .line 101
+    if-eqz v8, :cond_e
+
+    .line 102
+    .line 103
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 104
+    .line 105
+    .line 106
+    move-result-object v8
+
+    .line 107
+    check-cast v8, Lkg6;
+
+    .line 108
+    .line 109
+    iget-object v11, v8, Lkg6;->c:Ljg6;
+
+    .line 110
+    .line 111
+    iget-object v12, v8, Lkg6;->a:Ljava/lang/String;
+
+    .line 112
+    .line 113
+    if-nez v11, :cond_3
+
+    .line 114
+    .line 115
+    const/4 v11, 0x0
+
+    .line 116
+    goto :goto_3
+
+    .line 117
+    :cond_3
+    invoke-virtual {v1}, Lqt0;->getText()Ln61;
+
+    .line 118
+    .line 119
+    .line 120
+    move-result-object v13
+
+    .line 121
+    invoke-virtual {v13}, Ln61;->m()Lwb1;
+
+    .line 122
+    .line 123
+    .line 124
+    move-result-object v14
+
+    .line 125
+    iget-object v14, v14, Lwb1;->c:Lxm0;
+
+    .line 126
+    .line 127
+    iget v14, v14, Lxm0;->b:I
+
+    .line 128
+    .line 129
+    invoke-virtual {v13, v14}, Ln61;->o(I)Le71;
+
+    .line 130
+    .line 131
+    .line 132
+    invoke-virtual {v13}, Ln61;->m()Lwb1;
+
+    .line 133
+    .line 134
+    .line 135
+    invoke-interface {v11, v1}, Ljg6;->b(Lqt0;)Z
+
+    .line 136
+    .line 137
+    .line 138
+    move-result v11
+
+    .line 139
+    :goto_3
+    if-nez v11, :cond_4
+
+    .line 140
+    .line 141
+    goto :goto_2
+
+    .line 142
+    :cond_4
+    invoke-virtual {v12}, Ljava/lang/String;->toCharArray()[C
+
+    .line 143
+    .line 144
+    .line 145
+    move-result-object v11
+
+    .line 146
+    iget v13, v9, Lxm0;->a:I
+
+    .line 147
+    .line 148
+    if-nez v7, :cond_7
+
+    .line 149
+    .line 150
+    array-length v14, v11
+
+    .line 151
+    sub-int/2addr v14, v2
+
+    .line 152
+    move v15, v5
+
+    .line 153
+    :goto_4
+    if-ltz v14, :cond_d
+
+    .line 154
+    .line 155
+    if-lez v13, :cond_5
+
+    .line 156
+    .line 157
+    add-int/lit8 v13, v13, -0x1
+
+    .line 158
+    .line 159
+    :cond_5
+    invoke-virtual {v10, v13}, Ln61;->charAt(I)C
+
+    .line 160
+    .line 161
+    .line 162
+    move-result v6
+
+    .line 163
+    aget-char v2, v11, v14
+
+    .line 164
+    .line 165
+    if-ne v6, v2, :cond_6
+
+    .line 166
+    .line 167
+    move v2, v5
+
+    .line 168
+    goto :goto_5
+
+    .line 169
+    :cond_6
+    const/4 v2, 0x0
+
+    .line 170
+    :goto_5
+    and-int/2addr v15, v2
+
+    .line 171
+    add-int/lit8 v14, v14, -0x1
+
+    .line 172
+    .line 173
+    const/4 v2, 0x2
+
+    .line 174
+    goto :goto_4
+
+    .line 175
+    :cond_7
+    array-length v2, v7
+
+    .line 176
+    array-length v6, v11
+
+    .line 177
+    if-le v2, v6, :cond_9
+
+    .line 178
+    .line 179
+    :cond_8
+    const/4 v2, 0x2
+
+    .line 180
+    goto :goto_2
+
+    .line 181
+    :cond_9
+    array-length v2, v11
+
+    .line 182
+    sub-int/2addr v2, v5
+
+    .line 183
+    array-length v6, v7
+
+    .line 184
+    sub-int/2addr v6, v5
+
+    .line 185
+    move v15, v5
+
+    .line 186
+    :goto_6
+    if-lez v6, :cond_b
+
+    .line 187
+    .line 188
+    aget-char v14, v7, v6
+
+    .line 189
+    .line 190
+    aget-char v3, v11, v2
+
+    .line 191
+    .line 192
+    if-ne v14, v3, :cond_a
+
+    .line 193
+    .line 194
+    move v3, v5
+
+    .line 195
+    goto :goto_7
+
+    .line 196
+    :cond_a
+    const/4 v3, 0x0
+
+    .line 197
+    :goto_7
+    and-int/2addr v15, v3
+
+    .line 198
+    add-int/lit8 v6, v6, -0x1
+
+    .line 199
+    .line 200
+    add-int/lit8 v2, v2, -0x1
+
+    .line 201
+    .line 202
+    goto :goto_6
+
+    .line 203
+    :cond_b
+    if-ne v15, v5, :cond_d
+
+    .line 204
+    .line 205
+    if-lez v2, :cond_d
+
+    .line 206
+    .line 207
+    add-int/lit8 v13, v13, -0x1
+
+    .line 208
+    .line 209
+    :goto_8
+    if-ltz v2, :cond_d
+
+    .line 210
+    .line 211
+    invoke-virtual {v10, v13}, Ln61;->charAt(I)C
+
+    .line 212
+    .line 213
+    .line 214
+    move-result v3
+
+    .line 215
+    aget-char v6, v11, v2
+
+    .line 216
+    .line 217
+    if-ne v3, v6, :cond_c
+
+    .line 218
+    .line 219
+    move v3, v5
+
+    .line 220
+    goto :goto_9
+
+    .line 221
+    :cond_c
+    const/4 v3, 0x0
+
+    .line 222
+    :goto_9
+    and-int/2addr v15, v3
+
+    .line 223
+    add-int/lit8 v13, v13, -0x1
+
+    .line 224
+    .line 225
+    add-int/lit8 v2, v2, -0x1
+
+    .line 226
+    .line 227
+    goto :goto_8
+
+    .line 228
+    :cond_d
+    if-ne v15, v5, :cond_8
+
+    .line 229
+    .line 230
+    invoke-virtual {v12}, Ljava/lang/String;->length()I
+
+    .line 231
+    .line 232
+    .line 233
+    move-result v0
+
+    .line 234
+    add-int/2addr v0, v13
+
+    .line 235
+    iput v0, v8, Lkg6;->d:I
+
+    .line 236
+    .line 237
+    iput v13, v8, Lkg6;->e:I
+
+    .line 238
+    .line 239
+    move-object v6, v8
+
+    .line 240
+    goto :goto_a
+
+    .line 241
+    :cond_e
+    const/4 v6, 0x0
+
+    .line 242
+    :goto_a
+    iget-object v2, v1, Lqt0;->A0:Lwb1;
+
+    .line 243
+    .line 244
+    iget-object v7, v1, Lqt0;->B0:Ln61;
+
+    .line 245
+    .line 246
+    iget-object v0, v1, Lqt0;->G0:Lhy2;
+
+    .line 247
+    .line 248
+    :try_start_0
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :try_end_0
+    .catch Ljava/lang/AbstractMethodError; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 249
+    .line 250
+    .line 251
+    :catch_0
+    if-eqz v6, :cond_11
+
+    .line 252
+    .line 253
+    iget-object v0, v6, Lkg6;->a:Ljava/lang/String;
+
+    .line 254
+    .line 255
+    iget-object v3, v6, Lkg6;->b:Ljava/lang/String;
+
+    .line 256
+    .line 257
+    sget-object v8, Lkg6;->f:Lkg6;
+
+    .line 258
+    .line 259
+    if-eq v6, v8, :cond_11
+
+    .line 260
+    .line 261
+    iget-object v4, v6, Lkg6;->c:Ljg6;
+
+    .line 262
+    .line 263
+    if-nez v4, :cond_f
+
+    .line 264
+    .line 265
+    const/16 v16, 0x0
+
+    .line 266
+    .line 267
+    goto :goto_b
+
+    .line 268
+    :cond_f
+    invoke-interface {v4, v7}, Ljg6;->a(Ln61;)Z
+
+    .line 269
+    .line 270
+    .line 271
+    move-result v4
+
+    .line 272
+    move/from16 v16, v4
+
+    .line 273
+    .line 274
+    :goto_b
+    if-eqz v16, :cond_10
+
+    .line 275
+    .line 276
+    invoke-virtual {v7}, Ln61;->b()Z
+
+    .line 277
+    .line 278
+    .line 279
+    iget-object v4, v2, Lwb1;->c:Lxm0;
+
+    .line 280
+    .line 281
+    iget v5, v4, Lxm0;->b:I
+
+    .line 282
+    .line 283
+    iget v4, v4, Lxm0;->c:I
+
+    .line 284
+    .line 285
+    invoke-virtual {v7, v5, v4, v0}, Ln61;->r(IILjava/lang/CharSequence;)V
+
+    .line 286
+    .line 287
+    .line 288
+    iget-object v0, v2, Lwb1;->d:Lxm0;
+
+    .line 289
+    .line 290
+    iget v4, v0, Lxm0;->b:I
+
+    .line 291
+    .line 292
+    iget v0, v0, Lxm0;->c:I
+
+    .line 293
+    .line 294
+    invoke-virtual {v7, v4, v0, v3}, Ln61;->r(IILjava/lang/CharSequence;)V
+
+    .line 295
+    .line 296
+    .line 297
+    invoke-virtual {v7}, Ln61;->k()Z
+
+    .line 298
+    .line 299
+    .line 300
+    iget-object v0, v2, Lwb1;->c:Lxm0;
+
+    .line 301
+    .line 302
+    iget v4, v0, Lxm0;->b:I
+
+    .line 303
+    .line 304
+    iget v0, v0, Lxm0;->c:I
+
+    .line 305
+    .line 306
+    iget-object v2, v2, Lwb1;->d:Lxm0;
+
+    .line 307
+    .line 308
+    iget v5, v2, Lxm0;->b:I
+
+    .line 309
+    .line 310
+    iget v2, v2, Lxm0;->c:I
+
+    .line 311
+    .line 312
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    .line 313
+    .line 314
+    .line 315
+    move-result v3
+
+    .line 316
+    sub-int/2addr v2, v3
+
+    .line 317
+    invoke-virtual {v1, v4, v0, v5, v2}, Lqt0;->n0(IIII)V
+
+    .line 318
+    .line 319
+    .line 320
+    goto/16 :goto_12
+
+    .line 321
+    .line 322
+    :cond_10
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 323
+    .line 324
+    .line 325
+    invoke-virtual {v7}, Ln61;->b()Z
+
+    .line 326
+    .line 327
+    .line 328
+    invoke-virtual {v7}, Ln61;->n()Lug0;
+
+    .line 329
+    .line 330
+    .line 331
+    move-result-object v4
+
+    .line 332
+    iget v5, v6, Lkg6;->e:I
+
+    .line 333
+    .line 334
+    invoke-virtual {v4, v5}, Lug0;->A(I)Lxm0;
+
+    .line 335
+    .line 336
+    .line 337
+    move-result-object v4
+
+    .line 338
+    iget v8, v4, Lxm0;->b:I
+
+    .line 339
+    .line 340
+    iget v9, v4, Lxm0;->c:I
+
+    .line 341
+    .line 342
+    iget-object v2, v2, Lwb1;->d:Lxm0;
+
+    .line 343
+    .line 344
+    iget v11, v2, Lxm0;->b:I
+
+    .line 345
+    .line 346
+    iget v12, v2, Lxm0;->c:I
+
+    .line 347
+    .line 348
+    iget-object v10, v6, Lkg6;->a:Ljava/lang/String;
+
+    .line 349
+    .line 350
+    invoke-virtual/range {v7 .. v12}, Ln61;->x(IILjava/lang/CharSequence;II)V
+
+    .line 351
+    .line 352
+    .line 353
+    iget v2, v4, Lxm0;->b:I
+
+    .line 354
+    .line 355
+    iget v4, v4, Lxm0;->c:I
+
+    .line 356
+    .line 357
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    .line 358
+    .line 359
+    .line 360
+    move-result v0
+
+    .line 361
+    add-int/2addr v0, v4
+
+    .line 362
+    invoke-virtual {v7, v2, v0, v3}, Ln61;->r(IILjava/lang/CharSequence;)V
+
+    .line 363
+    .line 364
+    .line 365
+    invoke-virtual {v7}, Ln61;->k()Z
+
+    .line 366
+    .line 367
+    .line 368
+    invoke-virtual {v7}, Ln61;->n()Lug0;
+
+    .line 369
+    .line 370
+    .line 371
+    move-result-object v0
+
+    .line 372
+    iget v2, v6, Lkg6;->d:I
+
+    .line 373
+    .line 374
+    invoke-virtual {v0, v2}, Lug0;->A(I)Lxm0;
+
+    .line 375
+    .line 376
+    .line 377
+    move-result-object v0
+
+    .line 378
+    iget v2, v0, Lxm0;->b:I
+
+    .line 379
+    .line 380
+    iget v0, v0, Lxm0;->c:I
+
+    .line 381
+    .line 382
+    invoke-virtual {v1, v2, v0}, Lqt0;->l0(II)V
+
+    .line 383
+    .line 384
+    .line 385
+    goto/16 :goto_12
+
+    .line 386
+    .line 387
+    :cond_11
+    invoke-virtual {v2}, Lwb1;->a()Z
+
+    .line 388
+    .line 389
+    .line 390
+    move-result v0
+
+    .line 391
+    if-eqz v0, :cond_12
+
+    .line 392
+    .line 393
+    iget-object v0, v2, Lwb1;->c:Lxm0;
+
+    .line 394
+    .line 395
+    iget v1, v0, Lxm0;->b:I
+
+    .line 396
+    .line 397
+    iget v3, v0, Lxm0;->c:I
+
+    .line 398
+    .line 399
+    iget-object v0, v2, Lwb1;->d:Lxm0;
+
+    .line 400
+    .line 401
+    iget v5, v0, Lxm0;->b:I
+
+    .line 402
+    .line 403
+    iget v6, v0, Lxm0;->c:I
+
+    .line 404
+    .line 405
+    move v2, v1
+
+    .line 406
+    move-object v1, v7
+
+    .line 407
+    invoke-virtual/range {v1 .. v6}, Ln61;->x(IILjava/lang/CharSequence;II)V
+
+    .line 408
+    .line 409
+    .line 410
+    goto/16 :goto_12
+
+    .line 411
+    .line 412
+    :cond_12
+    iget-object v0, v1, Lqt0;->W0:Lri1;
+
+    .line 413
+    .line 414
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 415
+    .line 416
+    .line 417
+    invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
+
+    .line 418
+    .line 419
+    .line 420
+    move-result v0
+
+    .line 421
+    if-eqz v0, :cond_18
+
+    .line 422
+    .line 423
+    if-eqz p2, :cond_18
+
+    .line 424
+    .line 425
+    const/4 v0, 0x0
+
+    .line 426
+    invoke-interface {v4, v0}, Ljava/lang/CharSequence;->charAt(I)C
+
+    .line 427
+    .line 428
+    .line 429
+    move-result v3
+
+    .line 430
+    const/16 v6, 0xd
+
+    .line 431
+    .line 432
+    const/16 v8, 0xa
+
+    .line 433
+    .line 434
+    if-eq v3, v8, :cond_13
+
+    .line 435
+    .line 436
+    if-ne v3, v6, :cond_18
+
+    .line 437
+    .line 438
+    :cond_13
+    iget-object v9, v1, Lqt0;->B0:Ln61;
+
+    .line 439
+    .line 440
+    iget-object v10, v2, Lwb1;->c:Lxm0;
+
+    .line 441
+    .line 442
+    iget v10, v10, Lxm0;->b:I
+
+    .line 443
+    .line 444
+    invoke-virtual {v9, v10}, Ln61;->q(I)Ljava/lang/String;
+
+    .line 445
+    .line 446
+    .line 447
+    move-result-object v9
+
+    .line 448
+    move v10, v0
+
+    .line 449
+    move v11, v10
+
+    .line 450
+    :goto_c
+    iget-object v12, v2, Lwb1;->c:Lxm0;
+
+    .line 451
+    .line 452
+    iget v12, v12, Lxm0;->c:I
+
+    .line 453
+    .line 454
+    if-ge v0, v12, :cond_16
+
+    .line 455
+    .line 456
+    invoke-virtual {v9, v0}, Ljava/lang/String;->charAt(I)C
+
+    .line 457
+    .line 458
+    .line 459
+    move-result v12
+
+    .line 460
+    const/16 v13, 0x9
+
+    .line 461
+    .line 462
+    if-eq v12, v13, :cond_14
+
+    .line 463
+    .line 464
+    const/16 v14, 0x20
+
+    .line 465
+    .line 466
+    if-ne v12, v14, :cond_16
+
+    .line 467
+    .line 468
+    :cond_14
+    invoke-virtual {v9, v0}, Ljava/lang/String;->charAt(I)C
+
+    .line 469
+    .line 470
+    .line 471
+    move-result v12
+
+    .line 472
+    if-ne v12, v13, :cond_15
+
+    .line 473
+    .line 474
+    add-int/lit8 v11, v11, 0x1
+
+    .line 475
+    .line 476
+    goto :goto_d
+
+    .line 477
+    :cond_15
+    add-int/lit8 v10, v10, 0x1
+
+    .line 478
+    .line 479
+    :goto_d
+    add-int/lit8 v0, v0, 0x1
+
+    .line 480
+    .line 481
+    goto :goto_c
+
+    .line 482
+    :cond_16
+    iget v0, v1, Lqt0;->t:I
+
+    .line 483
+    .line 484
+    mul-int/2addr v11, v0
+
+    .line 485
+    add-int/2addr v11, v10
+
+    .line 486
+    :try_start_1
+    iget-object v0, v1, Lqt0;->G0:Lhy2;
+
+    .line 487
+    .line 488
+    new-instance v9, Lj71;
+
+    .line 489
+    .line 490
+    iget-object v10, v1, Lqt0;->B0:Ln61;
+
+    .line 491
+    .line 492
+    invoke-direct {v9, v10}, Lj71;-><init>(Ln61;)V
+
+    .line 493
+    .line 494
+    .line 495
+    iget-object v10, v2, Lwb1;->c:Lxm0;
+
+    .line 496
+    .line 497
+    iget v12, v10, Lxm0;->b:I
+
+    .line 498
+    .line 499
+    iget v10, v10, Lxm0;->c:I
+    :try_end_1
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_2
+
+    .line 500
+    .line 501
+    :try_start_2
+    invoke-interface {v0, v9, v12, v10}, Lhy2;->e(Lj71;II)I
+
+    .line 502
+    .line 503
+    .line 504
+    move-result v0
+    :try_end_2
+    .catch Ljava/lang/AbstractMethodError; {:try_start_2 .. :try_end_2} :catch_1
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
+
+    .line 505
+    goto :goto_e
+
+    .line 506
+    :catch_1
+    :try_start_3
+    invoke-interface {v0, v9, v12, v10}, Lhy2;->e(Lj71;II)I
+
+    .line 507
+    .line 508
+    .line 509
+    move-result v0
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
+
+    .line 510
+    :goto_e
+    add-int/2addr v11, v0
+
+    .line 511
+    goto :goto_f
+
+    .line 512
+    :catch_2
+    move-exception v0
+
+    .line 513
+    const-string v9, "CodeEditor"
+
+    .line 514
+    .line 515
+    const-string v10, "Language object error"
+
+    .line 516
+    .line 517
+    invoke-static {v9, v10, v0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 518
+    .line 519
+    .line 520
+    :goto_f
+    if-ne v3, v6, :cond_17
+
+    .line 521
+    .line 522
+    invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
+
+    .line 523
+    .line 524
+    .line 525
+    move-result v0
+
+    .line 526
+    const/4 v3, 0x2
+
+    .line 527
+    if-lt v0, v3, :cond_17
+
+    .line 528
+    .line 529
+    invoke-interface {v4, v5}, Ljava/lang/CharSequence;->charAt(I)C
+
+    .line 530
+    .line 531
+    .line 532
+    move-result v0
+
+    .line 533
+    if-ne v0, v8, :cond_17
+
+    .line 534
+    .line 535
+    goto :goto_10
+
+    .line 536
+    :cond_17
+    move v3, v5
+
+    .line 537
+    :goto_10
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 538
+    .line 539
+    invoke-direct {v0, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/CharSequence;)V
+
+    .line 540
+    .line 541
+    .line 542
+    iget v4, v1, Lqt0;->t:I
+
+    .line 543
+    .line 544
+    iget-object v1, v1, Lqt0;->G0:Lhy2;
+
+    .line 545
+    .line 546
+    invoke-interface {v1}, Lhy2;->h()Z
+
+    .line 547
+    .line 548
+    .line 549
+    move-result v1
+
+    .line 550
+    invoke-static {v11, v4, v1}, Lu23;->o(IIZ)Ljava/lang/String;
+
+    .line 551
+    .line 552
+    .line 553
+    move-result-object v1
+
+    .line 554
+    invoke-virtual {v0, v3, v1}, Ljava/lang/StringBuilder;->insert(ILjava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 555
+    .line 556
+    .line 557
+    goto :goto_11
+
+    .line 558
+    :cond_18
+    move-object v0, v4
+
+    .line 559
+    :goto_11
+    iget-object v1, v2, Lwb1;->c:Lxm0;
+
+    .line 560
+    .line 561
+    iget v2, v1, Lxm0;->b:I
+
+    .line 562
+    .line 563
+    iget v1, v1, Lxm0;->c:I
+
+    .line 564
+    .line 565
+    invoke-virtual {v7, v2, v1, v0}, Ln61;->r(IILjava/lang/CharSequence;)V
+
+    .line 566
+    .line 567
+    .line 568
+    :goto_12
+    return-void
+.end method
+
+.method public final w(Z)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Lwb1;->a()Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    if-eqz v0, :cond_0
+
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lqt0;->getText()Ln61;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p1
+
+    .line 13
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 14
+    .line 15
+    iget-object v1, v0, Lwb1;->c:Lxm0;
+
+    .line 16
+    .line 17
+    iget v1, v1, Lxm0;->a:I
+
+    .line 18
+    .line 19
+    iget-object v0, v0, Lwb1;->d:Lxm0;
+
+    .line 20
+    .line 21
+    iget v0, v0, Lxm0;->a:I
+
+    .line 22
+    .line 23
+    invoke-virtual {p0, v1, v0, p1}, Lqt0;->x(IILjava/lang/CharSequence;)V
+
+    .line 24
+    .line 25
+    .line 26
+    return-void
+
+    .line 27
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 28
+    if-eqz p1, :cond_2
+
+    .line 29
+    .line 30
+    invoke-virtual {p0}, Lqt0;->getCursor()Lwb1;
+
+    .line 31
+    .line 32
+    .line 33
+    move-result-object p1
+
+    .line 34
+    invoke-virtual {p1}, Lwb1;->a()Z
+
+    .line 35
+    .line 36
+    .line 37
+    move-result v1
+
+    .line 38
+    if-eqz v1, :cond_1
+
+    .line 39
+    .line 40
+    const/4 p1, 0x1
+
+    .line 41
+    invoke-virtual {p0, p1}, Lqt0;->w(Z)V
+
+    .line 42
+    .line 43
+    .line 44
+    goto :goto_0
+
+    .line 45
+    :cond_1
+    iget-object p1, p1, Lwb1;->c:Lxm0;
+
+    .line 46
+    .line 47
+    invoke-virtual {p1}, Lxm0;->a()Lxm0;
+
+    .line 48
+    .line 49
+    .line 50
+    move-result-object p1
+
+    .line 51
+    iget p1, p1, Lxm0;->b:I
+
+    .line 52
+    .line 53
+    invoke-virtual {p0}, Lqt0;->getText()Ln61;
+
+    .line 54
+    .line 55
+    .line 56
+    move-result-object v1
+
+    .line 57
+    invoke-virtual {v1, p1}, Ln61;->o(I)Le71;
+
+    .line 58
+    .line 59
+    .line 60
+    move-result-object v1
+
+    .line 61
+    iget v1, v1, Le71;->l:I
+
+    .line 62
+    .line 63
+    invoke-virtual {p0, p1, v0, p1, v1}, Lqt0;->n0(IIII)V
+
+    .line 64
+    .line 65
+    .line 66
+    invoke-virtual {p0, v0}, Lqt0;->w(Z)V
+
+    .line 67
+    .line 68
+    .line 69
+    :goto_0
+    return-void
+
+    .line 70
+    :cond_2
+    invoke-virtual {p0}, Lqt0;->getLineSeparator()Lz73;
+
+    .line 71
+    .line 72
+    .line 73
+    move-result-object p1
+
+    .line 74
+    iget-object p1, p1, Lz73;->j:Ljava/lang/String;
+
+    .line 75
+    .line 76
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
+
+    .line 77
+    .line 78
+    .line 79
+    move-result v1
+
+    .line 80
+    invoke-virtual {p0, v0, v1, p1}, Lqt0;->x(IILjava/lang/CharSequence;)V
+
+    .line 81
+    .line 82
+    .line 83
+    return-void
+.end method
+
+.method public final x(IILjava/lang/CharSequence;)V
+    .locals 4
+
+    .line 1
+    if-ge p2, p1, :cond_0
+
+    .line 2
+    .line 3
+    goto/16 :goto_4
+
+    .line 4
+    .line 5
+    :cond_0
+    sub-int v0, p2, p1
+
+    .line 6
+    .line 7
+    iget-object v1, p0, Lqt0;->W0:Lri1;
+
+    .line 8
+    .line 9
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 10
+    .line 11
+    .line 12
+    const/high16 v1, 0x80000
+
+    .line 13
+    .line 14
+    const v2, 0x7f0f044f
+
+    .line 15
+    .line 16
+    .line 17
+    const/4 v3, 0x0
+
+    .line 18
+    if-le v0, v1, :cond_2
+
+    .line 19
+    .line 20
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 21
+    .line 22
+    .line 23
+    move-result-object p0
+
+    .line 24
+    sget-object p1, Llk2;->a:Landroid/util/SparseIntArray;
+
+    .line 25
+    .line 26
+    invoke-virtual {p1, v2}, Landroid/util/SparseIntArray;->get(I)I
+
+    .line 27
+    .line 28
+    .line 29
+    move-result p1
+
+    .line 30
+    if-nez p1, :cond_1
+
+    .line 31
+    .line 32
+    goto :goto_0
+
+    .line 33
+    :cond_1
+    move v2, p1
+
+    .line 34
+    :goto_0
+    invoke-static {p0, v2, v3}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+
+    .line 35
+    .line 36
+    .line 37
+    move-result-object p0
+
+    .line 38
+    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
+
+    .line 39
+    .line 40
+    .line 41
+    return-void
+
+    .line 42
+    :cond_2
+    :try_start_0
+    instance-of v0, p3, Ln61;
+
+    .line 43
+    .line 44
+    if-eqz v0, :cond_3
+
+    .line 45
+    .line 46
+    check-cast p3, Ln61;
+
+    .line 47
+    .line 48
+    invoke-virtual {p3, p1, p2}, Ln61;->D(II)Ljava/lang/String;
+
+    .line 49
+    .line 50
+    .line 51
+    move-result-object p1
+
+    .line 52
+    goto :goto_1
+
+    .line 53
+    :catch_0
+    move-exception p1
+
+    .line 54
+    goto :goto_2
+
+    .line 55
+    :cond_3
+    invoke-interface {p3, p1, p2}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
+
+    .line 56
+    .line 57
+    .line 58
+    move-result-object p1
+
+    .line 59
+    invoke-interface {p1}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+
+    .line 60
+    .line 61
+    .line 62
+    move-result-object p1
+
+    .line 63
+    :goto_1
+    iget-object p2, p0, Lqt0;->y0:Landroid/content/ClipboardManager;
+
+    .line 64
+    .line 65
+    invoke-static {p1, p1}, Landroid/content/ClipData;->newPlainText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/ClipData;
+
+    .line 66
+    .line 67
+    .line 68
+    move-result-object p1
+
+    .line 69
+    invoke-virtual {p2, p1}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
+    :try_end_0
+    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 70
+    .line 71
+    .line 72
+    return-void
+
+    .line 73
+    :goto_2
+    invoke-virtual {p1}, Ljava/lang/Throwable;->getCause()Ljava/lang/Throwable;
+
+    .line 74
+    .line 75
+    .line 76
+    move-result-object p2
+
+    .line 77
+    instance-of p2, p2, Landroid/os/TransactionTooLargeException;
+
+    .line 78
+    .line 79
+    if-eqz p2, :cond_5
+
+    .line 80
+    .line 81
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 82
+    .line 83
+    .line 84
+    move-result-object p0
+
+    .line 85
+    sget-object p1, Llk2;->a:Landroid/util/SparseIntArray;
+
+    .line 86
+    .line 87
+    invoke-virtual {p1, v2}, Landroid/util/SparseIntArray;->get(I)I
+
+    .line 88
+    .line 89
+    .line 90
+    move-result p1
+
+    .line 91
+    if-nez p1, :cond_4
+
+    .line 92
+    .line 93
+    goto :goto_3
+
+    .line 94
+    :cond_4
+    move v2, p1
+
+    .line 95
+    :goto_3
+    invoke-static {p0, v2, v3}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+
+    .line 96
+    .line 97
+    .line 98
+    move-result-object p0
+
+    .line 99
+    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
+
+    .line 100
+    .line 101
+    .line 102
+    goto :goto_4
+
+    .line 103
+    :cond_5
+    const-string p2, "CodeEditor"
+
+    .line 104
+    .line 105
+    invoke-static {p2, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 106
+    .line 107
+    .line 108
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 109
+    .line 110
+    .line 111
+    move-result-object p0
+
+    .line 112
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 113
+    .line 114
+    .line 115
+    move-result-object p1
+
+    .line 116
+    invoke-virtual {p1}, Ljava/lang/Class;->toString()Ljava/lang/String;
+
+    .line 117
+    .line 118
+    .line 119
+    move-result-object p1
+
+    .line 120
+    invoke-static {p0, p1, v3}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    .line 121
+    .line 122
+    .line 123
+    move-result-object p0
+
+    .line 124
+    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
+
+    .line 125
+    .line 126
+    .line 127
+    :goto_4
+    return-void
+.end method
+
+.method public final y(Z)V
+    .locals 14
+
+    .line 1
+    iget-object v0, p0, Lqt0;->s:Ld3;
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    if-eqz v0, :cond_3
+
+    .line 5
+    .line 6
+    instance-of v2, v0, Lz63;
+
+    .line 7
+    .line 8
+    if-eqz v2, :cond_1
+
+    .line 9
+    .line 10
+    iget-boolean v2, p0, Lqt0;->O:Z
+
+    .line 11
+    .line 12
+    if-nez v2, :cond_1
+
+    .line 13
+    .line 14
+    check-cast v0, Lz63;
+
+    .line 15
+    .line 16
+    iget-object p0, p0, Lqt0;->B0:Ln61;
+
+    .line 17
+    .line 18
+    iput-object p0, v0, Ld3;->k:Ln61;
+
+    .line 19
+    .line 20
+    iget-object p0, v0, Lz63;->m:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    .line 21
+    .line 22
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->getAndIncrement()I
+
+    .line 23
+    .line 24
+    .line 25
+    new-instance p0, Ls36;
+
+    .line 26
+    .line 27
+    iget-object p1, v0, Ld3;->j:Lqt0;
+
+    .line 28
+    .line 29
+    invoke-virtual {p1}, Lqt0;->getTabWidth()I
+
+    .line 30
+    .line 31
+    .line 32
+    move-result p1
+
+    .line 33
+    invoke-direct {p0, p1}, Ls36;-><init>(I)V
+
+    .line 34
+    .line 35
+    .line 36
+    iput-object p0, v0, Lz63;->p:Ls36;
+
+    .line 37
+    .line 38
+    iget-object p1, v0, Ld3;->j:Lqt0;
+
+    .line 39
+    .line 40
+    iget-boolean p1, p1, Lqt0;->s0:Z
+
+    .line 41
+    .line 42
+    iput-boolean p1, p0, Ls36;->e:Z
+
+    .line 43
+    .line 44
+    :try_start_0
+    iget-object p0, v0, Lz63;->n:Lk20;
+
+    .line 45
+    .line 46
+    iget-object p0, p0, Lk20;->a:Ljava/util/concurrent/locks/ReentrantLock;
+
+    .line 47
+    .line 48
+    sget-object p1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    .line 49
+    .line 50
+    const-wide/16 v2, 0x5
+
+    .line 51
+    .line 52
+    invoke-virtual {p0, v2, v3, p1}, Ljava/util/concurrent/locks/ReentrantLock;->tryLock(JLjava/util/concurrent/TimeUnit;)Z
+
+    .line 53
+    .line 54
+    .line 55
+    move-result p0
+
+    .line 56
+    if-eqz p0, :cond_0
+
+    .line 57
+    .line 58
+    iget-object p0, v0, Lz63;->n:Lk20;
+
+    .line 59
+    .line 60
+    iget-object p0, p0, Lk20;->a:Ljava/util/concurrent/locks/ReentrantLock;
+
+    .line 61
+    .line 62
+    invoke-virtual {p0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    .line 63
+    .line 64
+    .line 65
+    iget-object p0, v0, Lz63;->n:Lk20;
+
+    .line 66
+    .line 67
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 68
+    .line 69
+    .line 70
+    new-instance p1, Li20;
+
+    .line 71
+    .line 72
+    invoke-direct {p1, p0}, Li20;-><init>(Lk20;)V
+
+    .line 73
+    .line 74
+    .line 75
+    iput-object p1, p0, Lk20;->g:Li20;
+
+    .line 76
+    .line 77
+    iput v1, p0, Lk20;->e:I
+
+    .line 78
+    .line 79
+    iget-object p1, p0, Lk20;->d:Ljava/util/ArrayList;
+
+    .line 80
+    .line 81
+    invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
+
+    .line 82
+    .line 83
+    .line 84
+    const/4 p1, 0x0
+
+    .line 85
+    iput-object p1, p0, Lk20;->i:Li20;
+
+    .line 86
+    .line 87
+    iput v1, p0, Lk20;->h:I
+
+    .line 88
+    .line 89
+    iget-object p0, v0, Lz63;->o:Lk20;
+
+    .line 90
+    .line 91
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 92
+    .line 93
+    .line 94
+    new-instance v2, Li20;
+
+    .line 95
+    .line 96
+    invoke-direct {v2, p0}, Li20;-><init>(Lk20;)V
+
+    .line 97
+    .line 98
+    .line 99
+    iput-object v2, p0, Lk20;->g:Li20;
+
+    .line 100
+    .line 101
+    iput v1, p0, Lk20;->e:I
+
+    .line 102
+    .line 103
+    iget-object v2, p0, Lk20;->d:Ljava/util/ArrayList;
+
+    .line 104
+    .line 105
+    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
+
+    .line 106
+    .line 107
+    .line 108
+    iput-object p1, p0, Lk20;->i:Li20;
+
+    .line 109
+    .line 110
+    iput v1, p0, Lk20;->h:I
+
+    .line 111
+    .line 112
+    iget-object p0, v0, Lz63;->n:Lk20;
+
+    .line 113
+    .line 114
+    iget-object p1, v0, Lz63;->o:Lk20;
+
+    .line 115
+    .line 116
+    invoke-virtual {v0, p0, p1}, Lz63;->u(Lk20;Lk20;)V
+
+    .line 117
+    .line 118
+    .line 119
+    return-void
+
+    .line 120
+    :cond_0
+    new-instance p0, Lk20;
+
+    .line 121
+    .line 122
+    invoke-direct {p0}, Lk20;-><init>()V
+
+    .line 123
+    .line 124
+    .line 125
+    iput-object p0, v0, Lz63;->n:Lk20;
+
+    .line 126
+    .line 127
+    new-instance p1, Lk20;
+
+    .line 128
+    .line 129
+    invoke-direct {p1}, Lk20;-><init>()V
+
+    .line 130
+    .line 131
+    .line 132
+    iput-object p1, v0, Lz63;->o:Lk20;
+
+    .line 133
+    .line 134
+    invoke-virtual {v0, p0, p1}, Lz63;->u(Lk20;Lk20;)V
+    :try_end_0
+    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 135
+    .line 136
+    .line 137
+    return-void
+
+    .line 138
+    :catch_0
+    move-exception v0
+
+    .line 139
+    move-object p0, v0
+
+    .line 140
+    const-string p1, "Unable to wait for lock"
+
+    .line 141
+    .line 142
+    invoke-static {p1, p0}, Lvd1;->j(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 143
+    .line 144
+    .line 145
+    return-void
+
+    .line 146
+    :cond_1
+    instance-of v2, v0, Ltd7;
+
+    .line 147
+    .line 148
+    if-eqz v2, :cond_2
+
+    .line 149
+    .line 150
+    iget-boolean v2, p0, Lqt0;->O:Z
+
+    .line 151
+    .line 152
+    if-eqz v2, :cond_2
+
+    .line 153
+    .line 154
+    new-instance v3, Ltd7;
+
+    .line 155
+    .line 156
+    iget-object v5, p0, Lqt0;->B0:Ln61;
+
+    .line 157
+    .line 158
+    iget-boolean v6, p0, Lqt0;->l0:Z
+
+    .line 159
+    .line 160
+    iget-object v0, p0, Lqt0;->s:Ld3;
+
+    .line 161
+    .line 162
+    move-object v7, v0
+
+    .line 163
+    check-cast v7, Ltd7;
+
+    .line 164
+    .line 165
+    move-object v4, p0
+
+    .line 166
+    move v8, p1
+
+    .line 167
+    invoke-direct/range {v3 .. v8}, Ltd7;-><init>(Lqt0;Ln61;ZLtd7;Z)V
+
+    .line 168
+    .line 169
+    .line 170
+    iget-object p0, v4, Lqt0;->s:Ld3;
+
+    .line 171
+    .line 172
+    invoke-interface {p0}, Lgz2;->f()V
+
+    .line 173
+    .line 174
+    .line 175
+    iput-object v3, v4, Lqt0;->s:Ld3;
+
+    .line 176
+    .line 177
+    return-void
+
+    .line 178
+    :cond_2
+    move-object v4, p0
+
+    .line 179
+    invoke-interface {v0}, Lgz2;->f()V
+
+    .line 180
+    .line 181
+    .line 182
+    goto :goto_0
+
+    .line 183
+    :cond_3
+    move-object v4, p0
+
+    .line 184
+    :goto_0
+    iget-boolean p0, v4, Lqt0;->O:Z
+
+    .line 185
+    .line 186
+    if-eqz p0, :cond_4
+
+    .line 187
+    .line 188
+    invoke-virtual {v4}, Lqt0;->V()F
+
+    .line 189
+    .line 190
+    .line 191
+    move-result p0
+
+    .line 192
+    float-to-int p0, p0
+
+    .line 193
+    iget-object p1, v4, Lqt0;->b1:Lsr1;
+
+    .line 194
+    .line 195
+    iput p0, p1, Lsr1;->D:I
+
+    .line 196
+    .line 197
+    new-instance v8, Ltd7;
+
+    .line 198
+    .line 199
+    iget-object v10, v4, Lqt0;->B0:Ln61;
+
+    .line 200
+    .line 201
+    iget-boolean v11, v4, Lqt0;->l0:Z
+
+    .line 202
+    .line 203
+    const/4 v12, 0x0
+
+    .line 204
+    const/4 v13, 0x0
+
+    .line 205
+    move-object v9, v4
+
+    .line 206
+    invoke-direct/range {v8 .. v13}, Ltd7;-><init>(Lqt0;Ln61;ZLtd7;Z)V
+
+    .line 207
+    .line 208
+    .line 209
+    iput-object v8, v4, Lqt0;->s:Ld3;
+
+    .line 210
+    .line 211
+    goto :goto_1
+
+    .line 212
+    :cond_4
+    new-instance p0, Lz63;
+
+    .line 213
+    .line 214
+    iget-object p1, v4, Lqt0;->B0:Ln61;
+
+    .line 215
+    .line 216
+    invoke-direct {p0, v4, p1}, Lz63;-><init>(Lqt0;Ln61;)V
+
+    .line 217
+    .line 218
+    .line 219
+    iput-object p0, v4, Lqt0;->s:Ld3;
+
+    .line 220
+    .line 221
+    :goto_1
+    iget-object p0, v4, Lqt0;->K0:Lds1;
+
+    .line 222
+    .line 223
+    if-eqz p0, :cond_5
+
+    .line 224
+    .line 225
+    const/4 p1, 0x0
+
+    .line 226
+    invoke-virtual {p0, p1, p1, v1}, Lds1;->j(FFZ)V
+
+    .line 227
+    .line 228
+    .line 229
+    :cond_5
+    return-void
+.end method
+
+.method public final z()V
+    .locals 4
+
+    .line 1
+    iget-object v0, p0, Lqt0;->A0:Lwb1;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Lwb1;->a()Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    if-eqz v0, :cond_0
+
+    .line 8
+    .line 9
+    const/4 v0, 0x1
+
+    .line 10
+    invoke-virtual {p0, v0}, Lqt0;->w(Z)V
+
+    .line 11
+    .line 12
+    .line 13
+    invoke-virtual {p0}, Lqt0;->A()V
+
+    .line 14
+    .line 15
+    .line 16
+    invoke-virtual {p0}, Lqt0;->Z()V
+
+    .line 17
+    .line 18
+    .line 19
+    return-void
+
+    .line 20
+    :cond_0
+    invoke-virtual {p0}, Lqt0;->getCursor()Lwb1;
+
+    .line 21
+    .line 22
+    .line 23
+    move-result-object v0
+
+    .line 24
+    invoke-virtual {v0}, Lwb1;->a()Z
+
+    .line 25
+    .line 26
+    .line 27
+    move-result v1
+
+    .line 28
+    if-eqz v1, :cond_1
+
+    .line 29
+    .line 30
+    invoke-virtual {p0}, Lqt0;->z()V
+
+    .line 31
+    .line 32
+    .line 33
+    goto :goto_1
+
+    .line 34
+    :cond_1
+    iget-object v0, v0, Lwb1;->c:Lxm0;
+
+    .line 35
+    .line 36
+    invoke-virtual {v0}, Lxm0;->a()Lxm0;
+
+    .line 37
+    .line 38
+    .line 39
+    move-result-object v0
+
+    .line 40
+    iget v1, v0, Lxm0;->b:I
+
+    .line 41
+    .line 42
+    invoke-virtual {p0}, Lqt0;->getText()Ln61;
+
+    .line 43
+    .line 44
+    .line 45
+    move-result-object v2
+
+    .line 46
+    iget v0, v0, Lxm0;->b:I
+
+    .line 47
+    .line 48
+    invoke-virtual {v2, v0}, Ln61;->o(I)Le71;
+
+    .line 49
+    .line 50
+    .line 51
+    move-result-object v0
+
+    .line 52
+    iget v0, v0, Le71;->l:I
+
+    .line 53
+    .line 54
+    add-int/lit8 v0, v1, 0x1
+
+    .line 55
+    .line 56
+    invoke-virtual {p0}, Lqt0;->getLineCount()I
+
+    .line 57
+    .line 58
+    .line 59
+    move-result v2
+
+    .line 60
+    const/4 v3, 0x0
+
+    .line 61
+    if-ne v0, v2, :cond_3
+
+    .line 62
+    .line 63
+    invoke-virtual {p0}, Lqt0;->getText()Ln61;
+
+    .line 64
+    .line 65
+    .line 66
+    move-result-object v0
+
+    .line 67
+    invoke-virtual {v0, v1}, Ln61;->o(I)Le71;
+
+    .line 68
+    .line 69
+    .line 70
+    move-result-object v0
+
+    .line 71
+    iget v0, v0, Le71;->l:I
+
+    .line 72
+    .line 73
+    if-nez v0, :cond_2
+
+    .line 74
+    .line 75
+    invoke-virtual {p0, v3}, Lqt0;->w(Z)V
+
+    .line 76
+    .line 77
+    .line 78
+    goto :goto_1
+
+    .line 79
+    :cond_2
+    invoke-virtual {p0}, Lqt0;->getText()Ln61;
+
+    .line 80
+    .line 81
+    .line 82
+    move-result-object v0
+
+    .line 83
+    invoke-virtual {v0, v1}, Ln61;->o(I)Le71;
+
+    .line 84
+    .line 85
+    .line 86
+    move-result-object v0
+
+    .line 87
+    iget v0, v0, Le71;->l:I
+
+    .line 88
+    .line 89
+    invoke-virtual {p0, v1, v3, v1, v0}, Lqt0;->n0(IIII)V
+
+    .line 90
+    .line 91
+    .line 92
+    goto :goto_0
+
+    .line 93
+    :cond_3
+    invoke-virtual {p0, v1, v3, v0, v3}, Lqt0;->n0(IIII)V
+
+    .line 94
+    .line 95
+    .line 96
+    :goto_0
+    invoke-virtual {p0}, Lqt0;->z()V
+
+    .line 97
+    .line 98
+    .line 99
+    iget-object p0, p0, Lqt0;->W0:Lri1;
+
+    .line 100
+    .line 101
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 102
+    .line 103
+    .line 104
+    :goto_1
+    return-void
 .end method

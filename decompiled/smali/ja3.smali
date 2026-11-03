@@ -1,253 +1,165 @@
-.class public final synthetic Lja3;
+.class public final Lja3;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lv52;
+.implements Landroid/view/View$OnTouchListener;
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Lxn3;
-
-.field public final synthetic l:J
-
-.field public final synthetic m:J
-
-.field public final synthetic n:I
-
-.field public final synthetic o:Ljava/lang/Object;
-
-.field public final synthetic p:Ljava/lang/Object;
+.field public final synthetic j:Lka3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lxn3;JJLjava/lang/Object;Ljava/lang/Object;IB)V
+.method public constructor <init>(Lka3;)V
     .locals 0
 
     .line 1
-    iput-byte p9, p0, Lja3;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lja3;->k:Lxn3;
-
     .line 4
+    iput-object p1, p0, Lja3;->j:Lka3;
+
     .line 5
-    iput-wide p2, p0, Lja3;->l:J
-
     .line 6
-    .line 7
-    iput-wide p4, p0, Lja3;->m:J
-
-    .line 8
-    .line 9
-    iput-object p6, p0, Lja3;->o:Ljava/lang/Object;
-
-    .line 10
-    .line 11
-    iput-object p7, p0, Lja3;->p:Ljava/lang/Object;
-
-    .line 12
-    .line 13
-    iput p8, p0, Lja3;->n:I
-
-    .line 14
-    .line 15
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 16
-    .line 17
-    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 24
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 4
 
     .line 1
-    move-object/from16 v0, p0
+    iget-object p0, p0, Lja3;->j:Lka3;
 
     .line 2
     .line 3
-    iget-byte v1, v0, Lja3;->j:B
+    iget-object p1, p0, Lka3;->z:Lga3;
 
     .line 4
     .line 5
-    sget-object v2, Ld07;->a:Ld07;
+    iget-object v0, p0, Lka3;->D:Landroid/os/Handler;
 
     .line 6
     .line 7
-    iget v3, v0, Lja3;->n:I
+    iget-object p0, p0, Lka3;->H:Lmp;
 
     .line 8
     .line 9
-    iget-object v4, v0, Lja3;->p:Ljava/lang/Object;
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getAction()I
 
     .line 10
     .line 11
-    iget-object v5, v0, Lja3;->o:Ljava/lang/Object;
-
     .line 12
+    move-result v1
+
     .line 13
-    packed-switch v1, :pswitch_data_0
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
 
     .line 14
     .line 15
     .line 16
-    move-object v11, v5
+    move-result v2
 
     .line 17
-    check-cast v11, Li97;
+    float-to-int v2, v2
 
     .line 18
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
+
     .line 19
-    move-object v12, v4
-
     .line 20
-    check-cast v12, Lty0;
-
     .line 21
+    move-result p2
+
     .line 22
-    move-object/from16 v13, p1
+    float-to-int p2, p2
 
     .line 23
+    if-nez v1, :cond_0
+
     .line 24
-    check-cast v13, Lz01;
-
     .line 25
+    if-eqz p0, :cond_0
+
     .line 26
-    move-object/from16 v1, p2
-
     .line 27
-    .line 28
-    check-cast v1, Ljava/lang/Integer;
+    invoke-virtual {p0}, Landroid/widget/PopupWindow;->isShowing()Z
 
+    .line 28
     .line 29
     .line 30
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result v3
 
     .line 31
+    if-eqz v3, :cond_0
+
     .line 32
     .line 33
-    or-int/lit8 v1, v3, 0x1
+    if-ltz v2, :cond_0
 
     .line 34
     .line 35
-    invoke-static {v1}, Lkr5;->i0(I)I
+    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getWidth()I
 
     .line 36
     .line 37
     .line 38
-    move-result v14
+    move-result v3
 
     .line 39
-    iget-object v6, v0, Lja3;->k:Lxn3;
+    if-ge v2, v3, :cond_0
 
     .line 40
     .line 41
-    iget-wide v7, v0, Lja3;->l:J
+    if-ltz p2, :cond_0
 
     .line 42
     .line 43
-    iget-wide v9, v0, Lja3;->m:J
+    invoke-virtual {p0}, Landroid/widget/PopupWindow;->getHeight()I
 
     .line 44
     .line 45
-    invoke-static/range {v6 .. v14}, Lj43;->b(Lxn3;JJLi97;Lty0;Lz01;I)V
-
     .line 46
-    .line 47
-    .line 48
-    return-object v2
+    move-result p0
 
+    .line 47
+    if-ge p2, p0, :cond_0
+
+    .line 48
     .line 49
-    :pswitch_0
-    move-object/from16 v20, v5
+    const-wide/16 v1, 0xfa
 
     .line 50
     .line 51
-    check-cast v20, Lhx5;
+    invoke-virtual {v0, p1, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 52
     .line 53
-    move-object/from16 v21, v4
-
     .line 54
+    goto :goto_0
+
     .line 55
-    check-cast v21, Ljava/util/List;
+    :cond_0
+    const/4 p0, 0x1
 
     .line 56
+    if-ne v1, p0, :cond_1
+
     .line 57
-    move-object/from16 v22, p1
-
     .line 58
-    .line 59
-    check-cast v22, Lz01;
+    invoke-virtual {v0, p1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
 
+    .line 59
     .line 60
     .line 61
-    move-object/from16 v1, p2
+    :cond_1
+    :goto_0
+    const/4 p0, 0x0
 
     .line 62
-    .line 63
-    check-cast v1, Ljava/lang/Integer;
-
-    .line 64
-    .line 65
-    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
-
-    .line 66
-    .line 67
-    .line 68
-    or-int/lit8 v1, v3, 0x1
-
-    .line 69
-    .line 70
-    invoke-static {v1}, Lkr5;->i0(I)I
-
-    .line 71
-    .line 72
-    .line 73
-    move-result v23
-
-    .line 74
-    iget-object v15, v0, Lja3;->k:Lxn3;
-
-    .line 75
-    .line 76
-    iget-wide v3, v0, Lja3;->l:J
-
-    .line 77
-    .line 78
-    iget-wide v0, v0, Lja3;->m:J
-
-    .line 79
-    .line 80
-    move-wide/from16 v18, v0
-
-    .line 81
-    .line 82
-    move-wide/from16 v16, v3
-
-    .line 83
-    .line 84
-    invoke-static/range {v15 .. v23}, Lzc7;->v(Lxn3;JJLhx5;Ljava/util/List;Lz01;I)V
-
-    .line 85
-    .line 86
-    .line 87
-    return-object v2
-
-    .line 88
-    nop
-
-    .line 89
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

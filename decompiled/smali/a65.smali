@@ -1,261 +1,213 @@
-.class public La65;
-.super Lft4;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final La65;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lb65;
+
+
+# instance fields
+.field public final j:D
+
+
+# direct methods
+.method public constructor <init>(D)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-wide p1, p0, La65;->j:D
+
+    .line 5
+    .line 6
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a()Lw55;
-    .locals 1
+.method public final d(F)F
+    .locals 2
 
     .line 1
-    const-string v0, "captures"
+    iget-wide v0, p0, La65;->j:D
 
     .line 2
     .line 3
-    invoke-virtual {p0, v0}, La65;->i(Ljava/lang/String;)V
+    float-to-double p0, p1
+
+    .line 4
+    invoke-static {p0, p1, v0, v1}, Lt87;->S(DD)D
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-wide p0
+
+    .line 8
+    double-to-float p0, p0
+
+    .line 9
+    return p0
+.end method
+
+.method public final e(F)F
+    .locals 4
+
+    .line 1
+    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
+
+    .line 2
+    .line 3
+    iget-wide v2, p0, La65;->j:D
 
     .line 4
     .line 5
+    div-double/2addr v0, v2
+
     .line 6
-    invoke-virtual {p0, v0}, Ljava/util/AbstractMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    float-to-double p0, p1
 
     .line 7
+    invoke-static {p0, p1, v0, v1}, Lt87;->S(DD)D
+
     .line 8
     .line 9
-    move-result-object p0
-
     .line 10
-    check-cast p0, Lw55;
+    move-result-wide p0
 
     .line 11
+    double-to-float p0, p0
+
     .line 12
-    return-object p0
+    return p0
 .end method
 
-.method public b()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    const-string v0, "name"
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, v0}, Ljava/util/AbstractMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Ljava/lang/String;
-
-    .line 8
-    .line 9
-    return-object p0
-.end method
-
-.method public c()Ljava/util/Collection;
-    .locals 1
-
-    .line 1
-    const-string v0, "patterns"
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, v0}, Ljava/util/AbstractMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Ljava/util/Collection;
-
-    .line 8
-    .line 9
-    return-object p0
-.end method
-
-.method public d()Lz55;
-    .locals 1
-
-    .line 1
-    const-string v0, "repository"
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, v0}, Ljava/util/AbstractMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Lz55;
-
-    .line 8
-    .line 9
-    return-object p0
-.end method
-
-.method public final e(Lwd5;)V
-    .locals 1
-
-    .line 1
-    const-string v0, "id"
-
-    .line 2
-    .line 3
-    invoke-super {p0, v0, p1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public final f(Ljava/lang/String;)V
-    .locals 1
-
-    .line 1
-    const-string v0, "include"
-
-    .line 2
-    .line 3
-    invoke-super {p0, v0, p1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public final g(Ljava/lang/String;)V
-    .locals 1
-
-    .line 1
-    const-string v0, "name"
-
-    .line 2
-    .line 3
-    invoke-super {p0, v0, p1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public final h(Ljava/util/Collection;)V
-    .locals 1
-
-    .line 1
-    const-string v0, "patterns"
-
-    .line 2
-    .line 3
-    invoke-super {p0, v0, p1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public final i(Ljava/lang/String;)V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 5
 
     .line 1
-    invoke-virtual {p0, p1}, Ljava/util/AbstractMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v0, 0x1
 
     .line 2
+    if-ne p0, p1, :cond_0
+
     .line 3
     .line 4
-    move-result-object v0
+    return v0
 
     .line 5
-    instance-of v1, v0, Ljava/util/List;
+    :cond_0
+    instance-of v1, p1, La65;
 
     .line 6
     .line 7
-    if-eqz v1, :cond_1
+    const/4 v2, 0x0
 
     .line 8
-    .line 9
-    check-cast v0, Ljava/util/List;
+    if-nez v1, :cond_1
 
+    .line 9
     .line 10
+    return v2
+
     .line 11
-    new-instance v1, La65;
+    :cond_1
+    check-cast p1, La65;
 
     .line 12
     .line 13
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
+    iget-wide v3, p0, La65;->j:D
 
     .line 14
     .line 15
-    .line 16
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+    iget-wide p0, p1, La65;->j:D
 
+    .line 16
     .line 17
+    invoke-static {v3, v4, p0, p1}, Ljava/lang/Double;->compare(DD)I
+
     .line 18
     .line 19
-    move-result-object v0
-
     .line 20
-    const/4 v2, 0x0
+    move-result p0
 
     .line 21
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    if-eqz p0, :cond_2
 
     .line 22
     .line 23
+    return v2
+
     .line 24
-    move-result v3
+    :cond_2
+    return v0
+.end method
 
-    .line 25
-    if-eqz v3, :cond_0
+.method public final hashCode()I
+    .locals 2
 
-    .line 26
-    .line 27
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    .line 1
+    iget-wide v0, p0, La65;->j:D
 
-    .line 28
-    .line 29
-    .line 30
-    move-result-object v3
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Ljava/lang/Double;->hashCode(D)I
 
-    .line 31
-    add-int/lit8 v2, v2, 0x1
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
 
-    .line 32
-    .line 33
-    invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+    .line 7
+    return p0
+.end method
 
-    .line 34
-    .line 35
-    .line 36
-    move-result-object v4
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    .line 37
-    invoke-virtual {v1, v4, v3}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 38
-    .line 39
-    .line 40
-    goto :goto_0
+    .line 2
+    .line 3
+    const-string v1, "GammaTransferFunctions(gamma="
 
-    .line 41
-    :cond_0
-    invoke-super {p0, p1, v1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 42
-    .line 43
-    .line 44
-    :cond_1
-    return-void
+    .line 6
+    .line 7
+    .line 8
+    iget-wide v1, p0, La65;->j:D
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const/16 p0, 0x29
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object p0
+
+    .line 22
+    return-object p0
 .end method

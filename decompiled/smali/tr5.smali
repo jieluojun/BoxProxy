@@ -1,29 +1,53 @@
-.class public abstract Ltr5;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Ltr5;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Ljava/security/SecureRandom;
+# instance fields
+.field public j:Lw85;
+
+.field public synthetic k:Ljava/lang/Object;
+
+.field public l:I
 
 
-# direct methods
-.method static constructor <clinit>()V
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     .line 1
-    new-instance v0, Ljava/security/SecureRandom;
+    iput-object p1, p0, Ltr5;->k:Ljava/lang/Object;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/security/SecureRandom;-><init>()V
+    iget p1, p0, Ltr5;->l:I
 
     .line 4
     .line 5
-    .line 6
-    sput-object v0, Ltr5;->a:Ljava/security/SecureRandom;
+    const/high16 v0, -0x80000000
 
+    .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    return-void
+    iput p1, p0, Ltr5;->l:I
+
+    .line 9
+    .line 10
+    const/4 p1, 0x0
+
+    .line 11
+    const/4 v0, 0x0
+
+    .line 12
+    invoke-static {p1, v0, p1, p0}, Lw23;->m(Los5;FLnh;Lz71;)Ljava/lang/Object;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p0
+
+    .line 16
+    return-object p0
 .end method

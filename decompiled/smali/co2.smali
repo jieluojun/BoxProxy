@@ -1,19 +1,19 @@
 .class public final synthetic Lco2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lg52;
+.implements Ld52;
 
 
 # instance fields
 .field public final synthetic j:B
 
-.field public final synthetic k:Lfb1;
+.field public final synthetic k:Lbb1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lfb1;B)V
+.method public synthetic constructor <init>(Lbb1;B)V
     .locals 0
 
     .line 1
@@ -21,7 +21,7 @@
 
     .line 2
     .line 3
-    iput-object p1, p0, Lco2;->k:Lfb1;
+    iput-object p1, p0, Lco2;->k:Lbb1;
 
     .line 4
     .line 5
@@ -43,7 +43,7 @@
 
     .line 2
     .line 3
-    iget-object p0, p0, Lco2;->k:Lfb1;
+    iget-object p0, p0, Lco2;->k:Lbb1;
 
     .line 4
     .line 5
@@ -52,11 +52,11 @@
     .line 6
     .line 7
     .line 8
-    new-instance v0, Ldk5;
+    new-instance v0, Lql5;
 
     .line 9
     .line 10
-    invoke-direct {v0, p0}, Ldk5;-><init>(Lfb1;)V
+    invoke-direct {v0, p0}, Lql5;-><init>(Lbb1;)V
 
     .line 11
     .line 12
@@ -65,7 +65,7 @@
 
     .line 14
     :pswitch_0
-    invoke-interface {p0}, Lfb1;->e()Lwa1;
+    invoke-interface {p0}, Lbb1;->e()Lsa1;
 
     .line 15
     .line 16
@@ -73,7 +73,7 @@
     move-result-object p0
 
     .line 18
-    invoke-static {p0}, Lcw5;->w(Lwa1;)F
+    invoke-static {p0}, Lqx5;->F(Lsa1;)F
 
     .line 19
     .line 20

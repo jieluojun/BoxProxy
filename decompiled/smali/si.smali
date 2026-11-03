@@ -1,120 +1,103 @@
-.class public final synthetic Lsi;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Landroid/window/OnBackInvokedCallback;
+.class public final Lsi;
+.super Landroid/text/SegmentFinder;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic a:B
-
-.field public final synthetic b:Ljava/lang/Object;
+.field public final synthetic a:Ls06;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;B)V
+.method public constructor <init>(Ls06;)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lsi;->a:B
+    iput-object p1, p0, Lsi;->a:Ls06;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lsi;->b:Ljava/lang/Object;
+    invoke-direct {p0}, Landroid/text/SegmentFinder;-><init>()V
 
     .line 4
     .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 6
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final onBackInvoked()V
-    .locals 1
+.method public final nextEndBoundary(I)I
+    .locals 0
 
     .line 1
-    iget-byte v0, p0, Lsi;->a:B
+    iget-object p0, p0, Lsi;->a:Ls06;
 
     .line 2
     .line 3
-    iget-object p0, p0, Lsi;->b:Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Ls06;->m(I)I
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_0
-
     .line 6
+    move-result p0
+
     .line 7
-    .line 8
-    check-cast p0, Lms6;
+    return p0
+.end method
 
-    .line 9
-    .line 10
-    invoke-virtual {p0}, Lms6;->run()V
+.method public final nextStartBoundary(I)I
+    .locals 0
 
-    .line 11
-    .line 12
-    .line 13
-    return-void
+    .line 1
+    iget-object p0, p0, Lsi;->a:Ls06;
 
-    .line 14
-    :pswitch_0
-    check-cast p0, Ld94;
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Ls06;->B(I)I
 
-    .line 15
-    .line 16
-    invoke-virtual {p0}, Ltv3;->b()V
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
 
-    .line 17
-    .line 18
-    .line 19
-    return-void
+    .line 7
+    return p0
+.end method
 
-    .line 20
-    :pswitch_1
-    check-cast p0, Lhp;
+.method public final previousEndBoundary(I)I
+    .locals 0
 
-    .line 21
-    .line 22
-    invoke-virtual {p0}, Lhp;->G()Z
+    .line 1
+    iget-object p0, p0, Lsi;->a:Ls06;
 
-    .line 23
-    .line 24
-    .line 25
-    return-void
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Ls06;->C(I)I
 
-    .line 26
-    :pswitch_2
-    check-cast p0, Lg52;
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
 
-    .line 27
-    .line 28
-    if-eqz p0, :cond_0
+    .line 7
+    return p0
+.end method
 
-    .line 29
-    .line 30
-    invoke-interface {p0}, Lg52;->invoke()Ljava/lang/Object;
+.method public final previousStartBoundary(I)I
+    .locals 0
 
-    .line 31
-    .line 32
-    .line 33
-    :cond_0
-    return-void
+    .line 1
+    iget-object p0, p0, Lsi;->a:Ls06;
 
-    .line 34
-    nop
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Ls06;->c(I)I
 
-    .line 35
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
 .end method

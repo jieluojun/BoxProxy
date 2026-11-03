@@ -1,172 +1,237 @@
 .class public final Lws1;
-.super Landroid/view/inputmethod/InputConnectionWrapper;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Landroid/text/InputFilter;
 
 
 # instance fields
 .field public final a:Landroid/widget/TextView;
 
+.field public b:Lvs1;
+
 
 # direct methods
-.method public constructor <init>(Landroid/view/inputmethod/EditorInfo;Landroid/view/inputmethod/InputConnection;Landroid/widget/TextView;)V
-    .locals 1
+.method public constructor <init>(Landroid/widget/TextView;)V
+    .locals 0
 
     .line 1
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    invoke-direct {p0, p2, v0}, Landroid/view/inputmethod/InputConnectionWrapper;-><init>(Landroid/view/inputmethod/InputConnection;Z)V
-
     .line 3
     .line 4
+    iput-object p1, p0, Lws1;->a:Landroid/widget/TextView;
+
     .line 5
-    iput-object p3, p0, Lws1;->a:Landroid/widget/TextView;
-
     .line 6
-    .line 7
-    invoke-static {}, Lqs1;->d()Z
-
-    .line 8
-    .line 9
-    .line 10
-    move-result p0
-
-    .line 11
-    if-eqz p0, :cond_0
-
-    .line 12
-    .line 13
-    invoke-static {}, Lqs1;->a()Lqs1;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p0
-
-    .line 17
-    invoke-virtual {p0, p1}, Lqs1;->i(Landroid/view/inputmethod/EditorInfo;)V
-
-    .line 18
-    .line 19
-    .line 20
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final deleteSurroundingText(II)Z
-    .locals 2
+.method public final filter(Ljava/lang/CharSequence;IILandroid/text/Spanned;II)Ljava/lang/CharSequence;
+    .locals 3
 
     .line 1
     iget-object v0, p0, Lws1;->a:Landroid/widget/TextView;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Landroid/widget/TextView;->getEditableText()Landroid/text/Editable;
+    invoke-virtual {v0}, Landroid/view/View;->isInEditMode()Z
 
     .line 4
     .line 5
     .line 6
-    move-result-object v0
+    move-result v1
 
     .line 7
-    const/4 v1, 0x0
+    if-eqz v1, :cond_0
 
     .line 8
-    invoke-static {p0, v0, p1, p2, v1}, Lgq6;->R(Lws1;Landroid/text/Editable;IIZ)Z
-
     .line 9
+    goto :goto_1
+
     .line 10
+    :cond_0
+    invoke-static {}, Los1;->a()Los1;
+
     .line 11
-    move-result v0
-
     .line 12
-    if-nez v0, :cond_1
-
     .line 13
+    move-result-object v1
+
     .line 14
-    invoke-super {p0, p1, p2}, Landroid/view/inputmethod/InputConnectionWrapper;->deleteSurroundingText(II)Z
+    invoke-virtual {v1}, Los1;->c()I
 
     .line 15
     .line 16
     .line 17
-    move-result p0
+    move-result v1
 
     .line 18
-    if-eqz p0, :cond_0
+    if-eqz v1, :cond_5
 
     .line 19
     .line 20
-    goto :goto_0
+    const/4 v2, 0x1
 
     .line 21
-    :cond_0
-    return v1
+    if-eq v1, v2, :cond_1
 
     .line 22
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
     .line 23
-    return p0
-.end method
+    const/4 p2, 0x3
 
-.method public final deleteSurroundingTextInCodePoints(II)Z
-    .locals 2
+    .line 24
+    if-eq v1, p2, :cond_5
 
-    .line 1
-    iget-object v0, p0, Lws1;->a:Landroid/widget/TextView;
+    .line 25
+    .line 26
+    goto :goto_1
 
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Landroid/widget/TextView;->getEditableText()Landroid/text/Editable;
+    .line 27
+    :cond_1
+    if-nez p6, :cond_2
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
+    .line 28
+    .line 29
+    if-nez p5, :cond_2
 
-    .line 7
-    const/4 v1, 0x1
+    .line 30
+    .line 31
+    invoke-interface {p4}, Ljava/lang/CharSequence;->length()I
 
-    .line 8
-    invoke-static {p0, v0, p1, p2, v1}, Lgq6;->R(Lws1;Landroid/text/Editable;IIZ)Z
-
-    .line 9
-    .line 10
-    .line 11
-    move-result v0
-
-    .line 12
-    if-nez v0, :cond_1
-
-    .line 13
-    .line 14
-    invoke-super {p0, p1, p2}, Landroid/view/inputmethod/InputConnectionWrapper;->deleteSurroundingTextInCodePoints(II)Z
-
-    .line 15
-    .line 16
-    .line 17
+    .line 32
+    .line 33
+    .line 34
     move-result p0
 
-    .line 18
-    if-eqz p0, :cond_0
+    .line 35
+    if-nez p0, :cond_2
 
-    .line 19
-    .line 20
+    .line 36
+    .line 37
+    invoke-virtual {v0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
+
+    .line 38
+    .line 39
+    .line 40
+    move-result-object p0
+
+    .line 41
+    if-ne p1, p0, :cond_2
+
+    .line 42
+    .line 43
+    goto :goto_1
+
+    .line 44
+    :cond_2
+    if-eqz p1, :cond_4
+
+    .line 45
+    .line 46
+    if-nez p2, :cond_3
+
+    .line 47
+    .line 48
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    .line 49
+    .line 50
+    .line 51
+    move-result p0
+
+    .line 52
+    if-ne p3, p0, :cond_3
+
+    .line 53
+    .line 54
     goto :goto_0
 
-    .line 21
-    :cond_0
-    const/4 p0, 0x0
+    .line 55
+    :cond_3
+    invoke-interface {p1, p2, p3}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
 
-    .line 22
-    return p0
+    .line 56
+    .line 57
+    .line 58
+    move-result-object p1
 
-    .line 23
-    :cond_1
+    .line 59
     :goto_0
-    return v1
+    invoke-static {}, Los1;->a()Los1;
+
+    .line 60
+    .line 61
+    .line 62
+    move-result-object p0
+
+    .line 63
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    .line 64
+    .line 65
+    .line 66
+    move-result p2
+
+    .line 67
+    const/4 p3, 0x0
+
+    .line 68
+    invoke-virtual {p0, p3, p2, p3, p1}, Los1;->g(IIILjava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    .line 69
+    .line 70
+    .line 71
+    move-result-object p0
+
+    .line 72
+    return-object p0
+
+    .line 73
+    :cond_4
+    :goto_1
+    return-object p1
+
+    .line 74
+    :cond_5
+    invoke-static {}, Los1;->a()Los1;
+
+    .line 75
+    .line 76
+    .line 77
+    move-result-object p2
+
+    .line 78
+    iget-object p3, p0, Lws1;->b:Lvs1;
+
+    .line 79
+    .line 80
+    if-nez p3, :cond_6
+
+    .line 81
+    .line 82
+    new-instance p3, Lvs1;
+
+    .line 83
+    .line 84
+    invoke-direct {p3, v0, p0}, Lvs1;-><init>(Landroid/widget/TextView;Lws1;)V
+
+    .line 85
+    .line 86
+    .line 87
+    iput-object p3, p0, Lws1;->b:Lvs1;
+
+    .line 88
+    .line 89
+    :cond_6
+    invoke-virtual {p2, p3}, Los1;->h(Lls1;)V
+
+    .line 90
+    .line 91
+    .line 92
+    return-object p1
 .end method

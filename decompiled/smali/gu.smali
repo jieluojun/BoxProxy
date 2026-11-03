@@ -1,133 +1,54 @@
-.class public final enum Lgu;
-.super Ljava/lang/Enum;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lgu;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final enum j:Lgu;
+# instance fields
+.field public j:Ljava/util/List;
 
-.field public static final enum k:Lgu;
+.field public k:Ljava/util/Set;
 
-.field public static final synthetic l:[Lgu;
+.field public l:Ljava/util/Set;
 
-.field public static final synthetic m:Lcv1;
+.field public synthetic m:Ljava/lang/Object;
+
+.field public n:I
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 4
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    new-instance v0, Lgu;
+    iput-object p1, p0, Lgu;->m:Ljava/lang/Object;
 
     .line 2
     .line 3
-    const-string v1, "Name"
+    iget p1, p0, Lgu;->n:I
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    const/high16 v0, -0x80000000
 
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 7
-    .line 8
-    .line 9
-    sput-object v0, Lgu;->j:Lgu;
+    or-int/2addr p1, v0
 
+    .line 8
+    iput p1, p0, Lgu;->n:I
+
+    .line 9
     .line 10
+    const/4 p1, 0x0
+
     .line 11
-    new-instance v1, Lgu;
+    invoke-static {p1, p1, p0}, Ls77;->I(Lft;Ljava/util/List;Lz71;)Ljava/lang/Object;
 
     .line 12
     .line 13
-    const-string v2, "Install"
-
     .line 14
-    .line 15
-    const/4 v3, 0x1
-
-    .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 17
-    .line 18
-    .line 19
-    sput-object v1, Lgu;->k:Lgu;
-
-    .line 20
-    .line 21
-    filled-new-array {v0, v1}, [Lgu;
-
-    .line 22
-    .line 23
-    .line 24
-    move-result-object v0
-
-    .line 25
-    sput-object v0, Lgu;->l:[Lgu;
-
-    .line 26
-    .line 27
-    new-instance v1, Lcv1;
-
-    .line 28
-    .line 29
-    invoke-direct {v1, v0}, Lcv1;-><init>([Ljava/lang/Enum;)V
-
-    .line 30
-    .line 31
-    .line 32
-    sput-object v1, Lgu;->m:Lcv1;
-
-    .line 33
-    .line 34
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lgu;
-    .locals 1
-
-    .line 1
-    const-class v0, Lgu;
-
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    .line 4
-    .line 5
-    .line 6
     move-result-object p0
 
-    .line 7
-    check-cast p0, Lgu;
-
-    .line 8
-    .line 9
+    .line 15
     return-object p0
-.end method
-
-.method public static values()[Lgu;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lgu;->l:[Lgu;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [Lgu;
-
-    .line 8
-    .line 9
-    return-object v0
 .end method

@@ -1,57 +1,69 @@
 .class public abstract Ldd0;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final a:Lu11;
-
-.field public static final b:Lcd0;
+.field public static final a:Landroid/graphics/Matrix;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
     .line 1
-    new-instance v0, Lc90;
+    new-instance v0, Landroid/graphics/Matrix;
 
     .line 2
     .line 3
-    const/16 v1, 0x13
+    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Lc90;-><init>(B)V
+    .line 6
+    sput-object v0, Ldd0;->a:Landroid/graphics/Matrix;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+.method public static a(Landroid/graphics/Path;FFFFF)V
+    .locals 8
+
+    .line 1
+    sub-float v1, p1, p3
+
+    .line 2
+    .line 3
+    sub-float v2, p2, p3
+
+    .line 4
+    .line 5
+    add-float v3, p1, p3
 
     .line 6
     .line 7
-    .line 8
-    new-instance v1, Lu11;
+    add-float v4, p2, p3
 
+    .line 8
     .line 9
+    const/4 v7, 0x0
+
     .line 10
-    invoke-direct {v1, v0}, Lu11;-><init>(Lr52;)V
+    move-object v0, p0
 
     .line 11
+    move v5, p4
+
     .line 12
+    move v6, p5
+
     .line 13
-    sput-object v1, Ldd0;->a:Lu11;
+    invoke-virtual/range {v0 .. v7}, Landroid/graphics/Path;->arcTo(FFFFFFZ)V
 
     .line 14
     .line 15
-    new-instance v0, Lcd0;
-
     .line 16
-    .line 17
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 18
-    .line 19
-    .line 20
-    sput-object v0, Ldd0;->b:Lcd0;
-
-    .line 21
-    .line 22
     return-void
 .end method

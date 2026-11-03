@@ -1,48 +1,49 @@
 .class public abstract Lwi;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# static fields
+.field public static final a:Ljava/util/HashSet;
 
 
 # direct methods
-.method public static final a(Landroid/view/View;Z)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    if-eqz p1, :cond_0
+    new-instance v0, Ljava/util/HashSet;
 
     .line 2
     .line 3
-    const/4 p1, 0x1
+    sget-object v1, Lx97;->a:Lz97;
 
     .line 4
-    invoke-virtual {p0, p1}, Landroid/view/View;->setContentSensitivity(I)V
-
     .line 5
+    invoke-interface {v1}, Lz97;->c()[Ljava/lang/String;
+
     .line 6
     .line 7
-    return-void
-
     .line 8
-    :cond_0
-    const/4 p1, 0x0
+    move-result-object v1
 
     .line 9
-    invoke-virtual {p0, p1}, Landroid/view/View;->setContentSensitivity(I)V
+    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     .line 10
     .line 11
     .line 12
-    return-void
-.end method
+    move-result-object v1
 
-.method public static final b(Landroid/view/View;F)V
-    .locals 0
+    .line 13
+    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
 
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/view/View;->setRequestedFrameRate(F)V
+    .line 14
+    .line 15
+    .line 16
+    sput-object v0, Lwi;->a:Ljava/util/HashSet;
 
-    .line 2
-    .line 3
-    .line 4
+    .line 17
+    .line 18
     return-void
 .end method

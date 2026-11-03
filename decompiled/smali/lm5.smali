@@ -1,80 +1,127 @@
-.class public final Llm5;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final synthetic Llm5;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lo52;
 
 
 # instance fields
-.field public j:Ljava/lang/String;
+.field public final synthetic j:B
 
-.field public k:Ljava/lang/String;
+.field public final synthetic k:Lio5;
 
-.field public l:Ljava/lang/String;
+.field public final synthetic l:Lql5;
 
-.field public m:I
-
-.field public synthetic n:Ljava/lang/Object;
-
-.field public final synthetic o:Lqm5;
-
-.field public p:I
+.field public final synthetic m:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Lqm5;Ld81;)V
+.method public synthetic constructor <init>(Lio5;Lql5;Landroid/content/Context;B)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Llm5;->o:Lqm5;
+    iput-byte p4, p0, Llm5;->j:B
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
+    iput-object p1, p0, Llm5;->k:Lio5;
 
     .line 4
     .line 5
+    iput-object p2, p0, Llm5;->l:Lql5;
+
     .line 6
+    .line 7
+    iput-object p3, p0, Llm5;->m:Landroid/content/Context;
+
+    .line 8
+    .line 9
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 10
+    .line 11
+    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
 
     .line 1
-    iput-object p1, p0, Llm5;->n:Ljava/lang/Object;
+    iget-byte v0, p0, Llm5;->j:B
 
     .line 2
     .line 3
-    iget p1, p0, Llm5;->p:I
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    const/4 v2, 0x0
 
     .line 6
-    .line 7
-    or-int/2addr p1, v0
+    iget-object v3, p0, Llm5;->m:Landroid/content/Context;
 
+    .line 7
     .line 8
-    iput p1, p0, Llm5;->p:I
+    iget-object v4, p0, Llm5;->l:Lql5;
 
     .line 9
     .line 10
-    iget-object p1, p0, Llm5;->o:Lqm5;
+    iget-object p0, p0, Llm5;->k:Lio5;
 
     .line 11
     .line 12
-    const/4 v0, 0x0
+    check-cast p1, Lsn5;
 
     .line 13
-    invoke-virtual {p1, v0, v0, p0}, Lqm5;->j(Ljava/lang/String;Ljava/lang/String;Ld81;)Ljava/lang/Object;
-
     .line 14
+    packed-switch v0, :pswitch_data_0
+
     .line 15
     .line 16
-    move-result-object p0
-
     .line 17
-    return-object p0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 18
+    .line 19
+    .line 20
+    invoke-virtual {p0, v2}, Lio5;->g(Lsn5;)V
+
+    .line 21
+    .line 22
+    .line 23
+    invoke-static {v4, p1, v3}, Lql5;->b(Lql5;Lsn5;Landroid/content/Context;)V
+
+    .line 24
+    .line 25
+    .line 26
+    return-object v1
+
+    .line 27
+    :pswitch_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 28
+    .line 29
+    .line 30
+    invoke-virtual {p0, v2}, Lio5;->g(Lsn5;)V
+
+    .line 31
+    .line 32
+    .line 33
+    invoke-static {v4, p1, v3}, Lql5;->b(Lql5;Lsn5;Landroid/content/Context;)V
+
+    .line 34
+    .line 35
+    .line 36
+    return-object v1
+
+    .line 37
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -31,7 +31,7 @@ class CoreVersionTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         project = Path(os.environ.get('BOXPROXY_TEST_PROJECT', ROOT / 'decompiled'))
-        probe = os.environ.get('BOXPROXY_TEST_PROBE_CLASS', 'qt0')
+        probe = os.environ.get('BOXPROXY_TEST_PROBE_CLASS', 'lt0')
         qt = (project / 'smali' / (probe + '.smali')).read_text()
         ld = (project / 'smali/com/box/app/cfg/LdFix.smali').read_text()
         cls.fragment = const(qt, 'v5', '\n            # Match')

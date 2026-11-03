@@ -1,87 +1,310 @@
 .class public final Ltx;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lwy;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final a:Ltx;
+.field public static final x:Ltx;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 4
 
     .line 1
-    new-instance v0, Ltx;
+    const/16 v0, 0x100
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    new-array v0, v0, [I
 
     .line 4
     .line 5
-    .line 6
-    sput-object v0, Ltx;->a:Ltx;
-
-    .line 7
-    .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of p0, p1, Ltx;
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
-    if-nez p0, :cond_1
-
     .line 8
+    new-instance v1, Ltx;
+
     .line 9
-    const/4 p0, 0x0
-
     .line 10
-    return p0
+    const-string v2, "Big5"
 
     .line 11
-    :cond_1
-    return v0
-.end method
+    .line 12
+    const/4 v3, 0x0
 
-.method public final hashCode()I
-    .locals 0
+    .line 13
+    invoke-direct {v1, v2, v0, v3}, Lwy;-><init>(Ljava/lang/String;[II)V
 
-    .line 1
-    const p0, 0x72e465b4
+    .line 14
+    .line 15
+    .line 16
+    sput-object v1, Ltx;->x:Ltx;
 
-    .line 2
-    .line 3
-    .line 4
-    return p0
-.end method
+    .line 17
+    .line 18
+    return-void
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    const-string p0, "Top"
-
-    .line 2
-    .line 3
-    return-object p0
+    .line 19
+    :array_0
+    .array-data 4
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x1
+    .end array-data
 .end method

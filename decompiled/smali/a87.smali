@@ -1,92 +1,66 @@
-.class public abstract La87;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final La87;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Lc87;
+# instance fields
+.field public synthetic j:Ljava/lang/Object;
+
+.field public k:I
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 3
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 7
 
     .line 1
-    :try_start_0
-    invoke-static {}, Lm17;->e()Ljava/lang/reflect/InvocationHandler;
+    iput-object p1, p0, La87;->j:Ljava/lang/Object;
 
     .line 2
     .line 3
-    .line 4
-    move-result-object v0
-    :try_end_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    iget p1, p0, La87;->k:I
 
+    .line 4
     .line 5
-    new-instance v1, Lks4;
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
-    const-class v2, Lorg/chromium/support_lib_boundary/WebViewProviderFactoryBoundaryInterface;
+    or-int/2addr p1, v0
 
     .line 8
-    .line 9
-    invoke-static {v2, v0}, Lv50;->L(Ljava/lang/Class;Ljava/lang/reflect/InvocationHandler;)Ljava/lang/Object;
+    iput p1, p0, La87;->k:I
 
+    .line 9
     .line 10
+    const/4 v4, 0x0
+
     .line 11
+    const/4 v5, 0x0
+
     .line 12
-    move-result-object v0
+    const/4 v0, 0x0
 
     .line 13
-    check-cast v0, Lorg/chromium/support_lib_boundary/WebViewProviderFactoryBoundaryInterface;
+    const/4 v1, 0x0
 
     .line 14
+    const/4 v2, 0x0
+
     .line 15
-    invoke-direct {v1, v0}, Lks4;-><init>(Ljava/lang/Object;)V
+    const/4 v3, 0x0
 
     .line 16
+    move-object v6, p0
+
     .line 17
+    invoke-static/range {v0 .. v6}, Lz27;->b(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/net/Uri;Lz71;)Ljava/lang/Object;
+
     .line 18
-    goto :goto_0
-
     .line 19
-    :catch_0
-    new-instance v1, Llv1;
-
     .line 20
+    move-result-object p0
+
     .line 21
-    const/4 v0, 0x5
-
-    .line 22
-    invoke-direct {v1, v0}, Llv1;-><init>(B)V
-
-    .line 23
-    .line 24
-    .line 25
-    :goto_0
-    sput-object v1, La87;->a:Lc87;
-
-    .line 26
-    .line 27
-    return-void
-
-    .line 28
-    :catch_1
-    move-exception v0
-
-    .line 29
-    new-instance v1, Ljava/lang/RuntimeException;
-
-    .line 30
-    .line 31
-    invoke-direct {v1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    .line 32
-    .line 33
-    .line 34
-    throw v1
+    return-object p0
 .end method

@@ -1,6 +1,6 @@
-.class public abstract Lfq1;
+.class public Lfq1;
 .super Leq1;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # virtual methods
@@ -21,7 +21,7 @@
     move-result-object p0
 
     .line 8
-    const/4 p1, 0x1
+    const/4 p1, 0x3
 
     .line 9
     iput p1, p0, Landroid/view/WindowManager$LayoutParams;->layoutInDisplayCutoutMode:I

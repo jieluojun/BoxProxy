@@ -5,7 +5,7 @@
 # 顶栏按钮的 onClick (Lg52 = () -> Unit)：0 = 锚点面板，1 = 可视化修改。
 
 # interfaces
-.implements Lg52;
+.implements Ld52;
 
 
 # instance fields
@@ -44,7 +44,7 @@
 
     invoke-static {v0, v1, v2}, Lcom/box/app/cfg/CfgLauncher;->open(ILjava/lang/Object;Landroid/content/Context;)V
 
-    sget-object v0, Ld07;->a:Ld07;
+    sget-object v0, Lk27;->a:Lk27;
 
     return-object v0
 .end method

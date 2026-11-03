@@ -1,32 +1,42 @@
-.class public final synthetic Lqg3;
+.class public final Lqg3;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Lv52;
+
+# static fields
+.field public static final b:Ljava/util/regex/Pattern;
 
 
 # instance fields
-.field public final synthetic j:Z
-
-.field public final synthetic k:Lg52;
-
-.field public final synthetic l:Lxn3;
-
-.field public final synthetic m:Ljq4;
-
-.field public final synthetic n:Z
-
-.field public final synthetic o:Lty0;
-
-.field public final synthetic p:I
-
-.field public final synthetic q:B
+.field public final a:Ljava/util/regex/Matcher;
 
 
 # direct methods
-.method public synthetic constructor <init>(ZLg52;Lxn3;Ljq4;ZLty0;II)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    const-string v0, "([LR]:|[\\w\\.:][\\w\\.:\\-]*|[\\,\\|\\-\\(\\)])"
+
+    .line 2
+    .line 3
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    sput-object v0, Lqg3;->b:Ljava/util/regex/Pattern;
+
+    .line 8
+    .line 9
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/CharSequence;)V
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -34,115 +44,61 @@
     .line 2
     .line 3
     .line 4
-    iput-boolean p1, p0, Lqg3;->j:Z
+    sget-object v0, Lqg3;->b:Ljava/util/regex/Pattern;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lqg3;->k:Lg52;
+    invoke-virtual {v0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
     .line 7
     .line 8
-    iput-object p3, p0, Lqg3;->l:Lxn3;
-
     .line 9
+    move-result-object p1
+
     .line 10
-    iput-object p4, p0, Lqg3;->m:Ljq4;
+    iput-object p1, p0, Lqg3;->a:Ljava/util/regex/Matcher;
 
     .line 11
     .line 12
-    iput-boolean p5, p0, Lqg3;->n:Z
-
-    .line 13
-    .line 14
-    iput-object p6, p0, Lqg3;->o:Lty0;
-
-    .line 15
-    .line 16
-    iput p7, p0, Lqg3;->p:I
-
-    .line 17
-    .line 18
-    iput-byte p8, p0, Lqg3;->q:B
-
-    .line 19
-    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 9
+.method public final a()Ljava/lang/String;
+    .locals 1
 
     .line 1
-    move-object v6, p1
+    iget-object p0, p0, Lqg3;->a:Ljava/util/regex/Matcher;
 
     .line 2
-    check-cast v6, Lz01;
-
     .line 3
-    .line 4
-    check-cast p2, Ljava/lang/Integer;
+    invoke-virtual {p0}, Ljava/util/regex/Matcher;->find()Z
 
+    .line 4
     .line 5
     .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result v0
 
     .line 7
+    if-nez v0, :cond_0
+
     .line 8
     .line 9
-    iget p1, p0, Lqg3;->p:I
+    const/4 p0, 0x0
 
     .line 10
+    return-object p0
+
     .line 11
-    or-int/lit8 p1, p1, 0x1
+    :cond_0
+    invoke-virtual {p0}, Ljava/util/regex/Matcher;->group()Ljava/lang/String;
 
     .line 12
     .line 13
-    invoke-static {p1}, Lkr5;->i0(I)I
-
     .line 14
+    move-result-object p0
+
     .line 15
-    .line 16
-    move-result v7
-
-    .line 17
-    iget-boolean v0, p0, Lqg3;->j:Z
-
-    .line 18
-    .line 19
-    iget-object v1, p0, Lqg3;->k:Lg52;
-
-    .line 20
-    .line 21
-    iget-object v2, p0, Lqg3;->l:Lxn3;
-
-    .line 22
-    .line 23
-    iget-object v3, p0, Lqg3;->m:Ljq4;
-
-    .line 24
-    .line 25
-    iget-boolean v4, p0, Lqg3;->n:Z
-
-    .line 26
-    .line 27
-    iget-object v5, p0, Lqg3;->o:Lty0;
-
-    .line 28
-    .line 29
-    iget-byte v8, p0, Lqg3;->q:B
-
-    .line 30
-    .line 31
-    invoke-static/range {v0 .. v8}, Lvg3;->c(ZLg52;Lxn3;Ljq4;ZLty0;Lz01;II)V
-
-    .line 32
-    .line 33
-    .line 34
-    sget-object p0, Ld07;->a:Ld07;
-
-    .line 35
-    .line 36
     return-object p0
 .end method

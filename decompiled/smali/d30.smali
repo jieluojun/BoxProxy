@@ -1,122 +1,127 @@
-.class public final Ld30;
-.super Lqg1;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final synthetic Ld30;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lou5;
+.implements Ld52;
 
 
 # instance fields
-.field public A:F
+.field public final synthetic j:B
 
-.field public B:Ld66;
+.field public final synthetic k:Z
 
-.field public C:Lhx5;
+.field public final synthetic l:Ljf3;
 
-.field public final D:Lpg0;
-
-.field public z:Lz20;
+.field public final synthetic m:I
 
 
 # direct methods
-.method public constructor <init>(FLd66;Lhx5;)V
+.method public synthetic constructor <init>(ZLjf3;IB)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lqg1;-><init>()V
+    iput-byte p4, p0, Ld30;->j:B
 
     .line 2
     .line 3
+    iput-boolean p1, p0, Ld30;->k:Z
+
     .line 4
-    iput p1, p0, Ld30;->A:F
-
     .line 5
+    iput-object p2, p0, Ld30;->l:Ljf3;
+
     .line 6
-    iput-object p2, p0, Ld30;->B:Ld66;
-
     .line 7
+    iput p3, p0, Ld30;->m:I
+
     .line 8
-    iput-object p3, p0, Ld30;->C:Lhx5;
-
     .line 9
-    .line 10
-    new-instance p1, Lr2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 10
     .line 11
     .line 12
-    const/16 p2, 0x18
-
-    .line 13
-    .line 14
-    invoke-direct {p1, p0, p2}, Lr2;-><init>(Ljava/lang/Object;B)V
-
-    .line 15
-    .line 16
-    .line 17
-    new-instance p2, Lpg0;
-
-    .line 18
-    .line 19
-    new-instance p3, Lqg0;
-
-    .line 20
-    .line 21
-    invoke-direct {p3}, Lqg0;-><init>()V
-
-    .line 22
-    .line 23
-    .line 24
-    invoke-direct {p2, p3, p1}, Lpg0;-><init>(Lqg0;Lr52;)V
-
-    .line 25
-    .line 26
-    .line 27
-    invoke-virtual {p0, p2}, Lqg1;->E1(Lpg1;)V
-
-    .line 28
-    .line 29
-    .line 30
-    iput-object p2, p0, Ld30;->D:Lpg0;
-
-    .line 31
-    .line 32
     return-void
 .end method
 
 
 # virtual methods
-.method public final Q0(Lwu5;)V
-    .locals 0
+.method public final invoke()Ljava/lang/Object;
+    .locals 4
 
     .line 1
-    iget-object p0, p0, Ld30;->C:Lhx5;
+    iget-byte v0, p0, Ld30;->j:B
 
     .line 2
     .line 3
-    invoke-static {p1, p0}, Luu5;->n(Lwu5;Lhx5;)V
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
     .line 5
+    iget v2, p0, Ld30;->m:I
+
     .line 6
-    return-void
-.end method
+    .line 7
+    iget-object v3, p0, Ld30;->l:Ljf3;
 
-.method public final p()Z
-    .locals 0
+    .line 8
+    .line 9
+    iget-boolean p0, p0, Ld30;->k:Z
 
-    .line 1
-    const/4 p0, 0x0
+    .line 10
+    .line 11
+    packed-switch v0, :pswitch_data_0
 
-    .line 2
-    return p0
-.end method
+    .line 12
+    .line 13
+    .line 14
+    if-nez p0, :cond_0
 
-.method public final t1()Z
-    .locals 0
+    .line 15
+    .line 16
+    invoke-virtual {v3, v2}, Ljf3;->a(I)V
 
-    .line 1
-    const/4 p0, 0x0
+    .line 17
+    .line 18
+    .line 19
+    :cond_0
+    return-object v1
 
-    .line 2
-    return p0
+    .line 20
+    :pswitch_0
+    if-nez p0, :cond_1
+
+    .line 21
+    .line 22
+    invoke-virtual {v3, v2}, Ljf3;->a(I)V
+
+    .line 23
+    .line 24
+    .line 25
+    :cond_1
+    return-object v1
+
+    .line 26
+    :pswitch_1
+    if-nez p0, :cond_2
+
+    .line 27
+    .line 28
+    invoke-virtual {v3, v2}, Ljf3;->a(I)V
+
+    .line 29
+    .line 30
+    .line 31
+    :cond_2
+    return-object v1
+
+    .line 32
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

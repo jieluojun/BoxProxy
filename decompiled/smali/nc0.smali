@@ -1,57 +1,84 @@
 .class public final Lnc0;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljo3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public j:Lt33;
+.field public x:Lpf;
 
-.field public k:I
-
-.field public l:Z
-
-.field public synthetic m:Ljava/lang/Object;
-
-.field public n:I
+.field public final y:Lv90;
 
 
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+# direct methods
+.method public constructor <init>(Lpf;)V
     .locals 1
 
     .line 1
-    iput-object p1, p0, Lnc0;->m:Ljava/lang/Object;
+    invoke-direct {p0}, Ljo3;-><init>()V
 
     .line 2
     .line 3
-    iget p1, p0, Lnc0;->n:I
-
     .line 4
+    iput-object p1, p0, Lnc0;->x:Lpf;
+
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
-    .line 7
-    or-int/2addr p1, v0
+    new-instance p1, Lv90;
 
+    .line 7
     .line 8
-    iput p1, p0, Lnc0;->n:I
+    const/4 v0, 0x1
 
     .line 9
+    invoke-direct {p1, p0, v0}, Lv90;-><init>(Ljava/lang/Object;B)V
+
     .line 10
-    const/4 p1, 0x0
-
     .line 11
-    const/4 v0, 0x0
-
     .line 12
-    invoke-static {p1, v0, v0, p0}, Lv50;->M(Lt33;IZLd81;)Ljava/lang/Object;
+    iput-object p1, p0, Lnc0;->y:Lv90;
 
     .line 13
     .line 14
-    .line 15
-    move-result-object p0
+    return-void
+.end method
 
-    .line 16
-    return-object p0
+
+# virtual methods
+.method public final w1()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lnc0;->x:Lpf;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lnc0;->y:Lv90;
+
+    .line 4
+    .line 5
+    invoke-virtual {v0, p0}, Lpf;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 6
+    .line 7
+    .line 8
+    return-void
+.end method
+
+.method public final x1()V
+    .locals 1
+
+    .line 1
+    iget-object p0, p0, Lnc0;->x:Lpf;
+
+    .line 2
+    .line 3
+    const/4 v0, 0x0
+
+    .line 4
+    invoke-virtual {p0, v0}, Lpf;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 5
+    .line 6
+    .line 7
+    return-void
 .end method

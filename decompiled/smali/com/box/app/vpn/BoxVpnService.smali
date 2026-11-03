@@ -85,11 +85,11 @@
 
     if-eqz v2, :cond_end
 
-    invoke-static {}, Llb0;->k()Lab0;
+    invoke-static {}, Lgb0;->k()Lva0;
 
     move-result-object v2
 
-    iget-object v2, v2, Lab0;->c:Ljava/io/File;
+    iget-object v2, v2, Lva0;->c:Ljava/io/File;
 
     new-instance v3, Ljava/io/File;
 
@@ -439,11 +439,11 @@
 
     iput-object v1, p0, Lcom/box/app/vpn/BoxVpnService;->fScript:Ljava/io/File;
 
-    invoke-static {}, Llb0;->k()Lab0;
+    invoke-static {}, Lgb0;->k()Lva0;
 
     move-result-object v0
 
-    iget-object v1, v0, Lab0;->c:Ljava/io/File;
+    iget-object v1, v0, Lva0;->c:Ljava/io/File;
 
     new-instance v2, Ljava/io/File;
 
@@ -465,13 +465,13 @@
 
     invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->sync()V
 
-    invoke-static {}, Llb0;->g()Lya0;
+    invoke-static {}, Lgb0;->g()Lta0;
 
     move-result-object v0
 
-    iget-object v1, v0, Lya0;->a:Ljava/lang/String;
+    iget-object v1, v0, Lta0;->a:Ljava/lang/String;
 
-    iget-object v2, v0, Lya0;->h:Ljava/lang/String;
+    iget-object v2, v0, Lta0;->h:Ljava/lang/String;
 
     invoke-static {v1}, Lcom/box/app/vpn/VpnSb;->supported(Ljava/lang/String;)Z
 
@@ -494,19 +494,19 @@
     :cond_core_ok
     invoke-direct {p0}, Lcom/box/app/vpn/BoxVpnService;->initPaths()V
 
-    invoke-static {}, Llb0;->k()Lab0;
+    invoke-static {}, Lgb0;->k()Lva0;
 
     move-result-object v3
 
-    invoke-virtual {v3, v1}, Lab0;->c(Ljava/lang/String;)Ljava/io/File;
+    invoke-virtual {v3, v1}, Lva0;->c(Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v4
 
-    invoke-virtual {v3, v1, v2}, Lab0;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
+    invoke-virtual {v3, v1, v2}, Lva0;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v5
 
-    invoke-virtual {v3, v1}, Lab0;->b(Ljava/lang/String;)Ljava/io/File;
+    invoke-virtual {v3, v1}, Lva0;->b(Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v6
 
@@ -557,7 +557,7 @@
 
     invoke-static {}, Lcom/box/app/vpn/VpnBridge;->ensureBoxctl()V
 
-    iget-object v10, v3, Lab0;->f:Ljava/io/File;
+    iget-object v10, v3, Lva0;->f:Ljava/io/File;
 
     invoke-static {v0, v10}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
 
@@ -567,17 +567,17 @@
 
     invoke-static {v0, v10}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
 
-    invoke-virtual {v3}, Lab0;->d()Ljava/io/File;
+    invoke-virtual {v3}, Lva0;->d()Ljava/io/File;
 
     move-result-object v10
 
     invoke-static {v0, v10}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
 
-    invoke-static {}, Llb0;->g()Lya0;
+    invoke-static {}, Lgb0;->g()Lta0;
 
     move-result-object v10
 
-    iget-boolean v10, v10, Lya0;->d:Z
+    iget-boolean v10, v10, Lta0;->d:Z
 
     if-eqz v10, :cond_sync_off
 
@@ -708,11 +708,11 @@
 
     invoke-static {v1, v9}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
 
-    invoke-static {}, Llb0;->g()Lya0;
+    invoke-static {}, Lgb0;->g()Lta0;
 
     move-result-object v2
 
-    iget-object v2, v2, Lya0;->a:Ljava/lang/String;
+    iget-object v2, v2, Lta0;->a:Ljava/lang/String;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 

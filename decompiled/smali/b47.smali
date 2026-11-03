@@ -1,62 +1,25 @@
-.class public abstract Lb47;
+.class public final Lb47;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# instance fields
+.field public a:Ljava/lang/Object;
 
 
 # direct methods
-.method public static a(Landroid/view/View;)Ljava/lang/CharSequence;
+.method public constructor <init>(Ljava/lang/Object;)V
     .locals 0
 
     .line 1
-    invoke-virtual {p0}, Landroid/view/View;->getAccessibilityPaneTitle()Ljava/lang/CharSequence;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    move-result-object p0
+    iput-object p1, p0, Lb47;->a:Ljava/lang/Object;
 
     .line 5
-    return-object p0
-.end method
-
-.method public static b(Landroid/view/View;)Z
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/View;->isAccessibilityHeading()Z
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    return p0
-.end method
-
-.method public static c(Landroid/view/View;)Z
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/View;->isScreenReaderFocusable()Z
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    return p0
-.end method
-
-.method public static d(Landroid/view/View;Ljava/lang/CharSequence;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/view/View;->setAccessibilityPaneTitle(Ljava/lang/CharSequence;)V
-
-    .line 2
-    .line 3
-    .line 4
+    .line 6
     return-void
 .end method

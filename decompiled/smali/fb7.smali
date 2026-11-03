@@ -1,33 +1,17 @@
-.class public abstract Lfb7;
+.class public interface abstract Lfb7;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Ljava/util/concurrent/atomic/AtomicReference;
+# virtual methods
+.method public abstract a(Lyg1;)I
+.end method
 
+.method public abstract b(Lyg1;)I
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public abstract c(Lyg1;Lkz2;)I
+.end method
 
-    .line 1
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
-
-    .line 2
-    .line 3
-    sget-object v1, Lvb5;->Q:Leb7;
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
-
-    .line 6
-    .line 7
-    .line 8
-    sput-object v0, Lfb7;->a:Ljava/util/concurrent/atomic/AtomicReference;
-
-    .line 9
-    .line 10
-    return-void
+.method public abstract d(Lyg1;Lkz2;)I
 .end method

@@ -1,24 +1,30 @@
 .class public final enum Lnd1;
 .super Ljava/lang/Enum;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
 .field public static final enum j:Lnd1;
 
-.field public static final synthetic k:[Lnd1;
+.field public static final enum k:Lnd1;
+
+.field public static final enum l:Lnd1;
+
+.field public static final enum m:Lnd1;
+
+.field public static final synthetic n:[Lnd1;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 6
 
     .line 1
     new-instance v0, Lnd1;
 
     .line 2
     .line 3
-    const-string v1, "Resize"
+    const-string v1, "MEMORY_CACHE"
 
     .line 4
     .line 5
@@ -38,7 +44,7 @@
 
     .line 12
     .line 13
-    const-string v2, "Fixed"
+    const-string v2, "MEMORY"
 
     .line 14
     .line 15
@@ -50,18 +56,62 @@
     .line 17
     .line 18
     .line 19
-    filled-new-array {v0, v1}, [Lnd1;
+    sput-object v1, Lnd1;->k:Lnd1;
 
     .line 20
     .line 21
-    .line 22
-    move-result-object v0
+    new-instance v2, Lnd1;
 
+    .line 22
     .line 23
-    sput-object v0, Lnd1;->k:[Lnd1;
+    const-string v3, "DISK"
 
     .line 24
     .line 25
+    const/4 v4, 0x2
+
+    .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 27
+    .line 28
+    .line 29
+    sput-object v2, Lnd1;->l:Lnd1;
+
+    .line 30
+    .line 31
+    new-instance v3, Lnd1;
+
+    .line 32
+    .line 33
+    const-string v4, "NETWORK"
+
+    .line 34
+    .line 35
+    const/4 v5, 0x3
+
+    .line 36
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 37
+    .line 38
+    .line 39
+    sput-object v3, Lnd1;->m:Lnd1;
+
+    .line 40
+    .line 41
+    filled-new-array {v0, v1, v2, v3}, [Lnd1;
+
+    .line 42
+    .line 43
+    .line 44
+    move-result-object v0
+
+    .line 45
+    sput-object v0, Lnd1;->n:[Lnd1;
+
+    .line 46
+    .line 47
     return-void
 .end method
 
@@ -92,7 +142,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lnd1;->k:[Lnd1;
+    sget-object v0, Lnd1;->n:[Lnd1;
 
     .line 2
     .line 3

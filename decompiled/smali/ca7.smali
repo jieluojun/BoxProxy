@@ -1,63 +1,99 @@
-.class public Lca7;
-.super Lba7;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lca7;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# instance fields
+.field public final a:F
+
+.field public final b:F
 
 
 # direct methods
-.method public constructor <init>(Lla7;Landroid/view/WindowInsets;)V
+.method public constructor <init>(FF)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1, p2}, Lba7;-><init>(Lla7;Landroid/view/WindowInsets;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    return-void
-.end method
-
-.method public constructor <init>(Lla7;Lca7;)V
-    .locals 0
+    iput p1, p0, Lca7;->a:F
 
     .line 5
-    invoke-direct {p0, p1, p2}, Lba7;-><init>(Lla7;Lba7;)V
+    .line 6
+    iput p2, p0, Lca7;->b:F
 
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Lla7;
-    .locals 1
+.method public final a()[F
+    .locals 4
 
     .line 1
-    iget-object p0, p0, Laa7;->c:Landroid/view/WindowInsets;
+    iget v0, p0, Lca7;->a:F
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Landroid/view/WindowInsets;->consumeDisplayCutout()Landroid/view/WindowInsets;
+    iget p0, p0, Lca7;->b:F
 
     .line 4
     .line 5
-    .line 6
-    move-result-object p0
+    div-float v1, v0, p0
 
+    .line 6
     .line 7
-    const/4 v0, 0x0
+    const/high16 v2, 0x3f800000    # 1.0f
 
     .line 8
-    invoke-static {p0, v0}, Lla7;->c(Landroid/view/WindowInsets;Landroid/view/View;)Lla7;
-
     .line 9
+    sub-float v0, v2, v0
+
     .line 10
     .line 11
-    move-result-object p0
+    sub-float/2addr v0, p0
 
     .line 12
+    div-float/2addr v0, p0
+
+    .line 13
+    const/4 p0, 0x3
+
+    .line 14
+    new-array p0, p0, [F
+
+    .line 15
+    .line 16
+    const/4 v3, 0x0
+
+    .line 17
+    aput v1, p0, v3
+
+    .line 18
+    .line 19
+    const/4 v1, 0x1
+
+    .line 20
+    aput v2, p0, v1
+
+    .line 21
+    .line 22
+    const/4 v1, 0x2
+
+    .line 23
+    aput v0, p0, v1
+
+    .line 24
+    .line 25
     return-object p0
 .end method
 
-.method public equals(Ljava/lang/Object;)Z
+.method public final equals(Ljava/lang/Object;)Z
     .locals 4
 
     .line 1
@@ -91,15 +127,15 @@
 
     .line 12
     .line 13
-    iget-object v1, p0, Laa7;->c:Landroid/view/WindowInsets;
+    iget v1, p0, Lca7;->a:F
 
     .line 14
     .line 15
-    iget-object v3, p1, Laa7;->c:Landroid/view/WindowInsets;
+    iget v3, p1, Lca7;->a:F
 
     .line 16
     .line 17
-    invoke-static {v1, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
 
     .line 18
     .line 19
@@ -111,107 +147,106 @@
 
     .line 22
     .line 23
-    iget-object v1, p0, Laa7;->g:Lpp2;
+    return v2
 
     .line 24
+    :cond_2
+    iget p0, p0, Lca7;->b:F
+
     .line 25
-    iget-object v3, p1, Laa7;->g:Lpp2;
-
     .line 26
-    .line 27
-    invoke-static {v1, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget p1, p1, Lca7;->b:F
 
+    .line 27
     .line 28
+    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
+
     .line 29
     .line 30
-    move-result v1
-
     .line 31
-    if-eqz v1, :cond_2
-
-    .line 32
-    .line 33
-    iget p0, p0, Laa7;->h:I
-
-    .line 34
-    .line 35
-    iget p1, p1, Laa7;->h:I
-
-    .line 36
-    .line 37
-    invoke-static {p0, p1}, Laa7;->L(II)Z
-
-    .line 38
-    .line 39
-    .line 40
     move-result p0
 
-    .line 41
-    if-eqz p0, :cond_2
+    .line 32
+    if-eqz p0, :cond_3
 
-    .line 42
-    .line 43
-    return v0
-
-    .line 44
-    :cond_2
+    .line 33
+    .line 34
     return v2
+
+    .line 35
+    :cond_3
+    return v0
 .end method
 
-.method public h()Lpj1;
+.method public final hashCode()I
     .locals 1
 
     .line 1
-    iget-object p0, p0, Laa7;->c:Landroid/view/WindowInsets;
+    iget v0, p0, Lca7;->a:F
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Landroid/view/WindowInsets;->getDisplayCutout()Landroid/view/DisplayCutout;
+    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
 
     .line 4
     .line 5
     .line 6
-    move-result-object p0
+    move-result v0
 
     .line 7
-    if-nez p0, :cond_0
+    mul-int/lit8 v0, v0, 0x1f
 
     .line 8
     .line 9
-    const/4 p0, 0x0
+    iget p0, p0, Lca7;->b:F
 
     .line 10
-    return-object p0
-
     .line 11
-    :cond_0
-    new-instance v0, Lpj1;
+    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
 
     .line 12
     .line 13
-    invoke-direct {v0, p0}, Lpj1;-><init>(Landroid/view/DisplayCutout;)V
-
     .line 14
+    move-result p0
+
     .line 15
+    add-int/2addr p0, v0
+
     .line 16
-    return-object v0
+    return p0
 .end method
 
-.method public hashCode()I
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 4
 
     .line 1
-    iget-object p0, p0, Laa7;->c:Landroid/view/WindowInsets;
+    const-string v0, ", y="
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Landroid/view/WindowInsets;->hashCode()I
+    const-string v1, ")"
 
     .line 4
     .line 5
-    .line 6
-    move-result p0
+    const-string v2, "WhitePoint(x="
 
+    .line 6
     .line 7
-    return p0
+    iget v3, p0, Lca7;->a:F
+
+    .line 8
+    .line 9
+    iget p0, p0, Lca7;->b:F
+
+    .line 10
+    .line 11
+    invoke-static {v2, v3, v0, p0, v1}, Lh86;->o(Ljava/lang/String;FLjava/lang/String;FLjava/lang/String;)Ljava/lang/String;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    return-object p0
 .end method

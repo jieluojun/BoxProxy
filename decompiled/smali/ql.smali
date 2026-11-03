@@ -1,245 +1,643 @@
 .class public final synthetic Lql;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lv52;
+.implements Lo52;
 
 
 # instance fields
 .field public final synthetic j:B
 
-.field public final synthetic k:Z
+.field public final synthetic k:Ls52;
 
-.field public final synthetic l:Lr52;
-
-.field public final synthetic m:Z
-
-.field public final synthetic n:B
-
-.field public final synthetic o:Ljava/lang/Object;
+.field public final synthetic l:Lyi;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;ZZLr52;II)V
+.method public synthetic constructor <init>(Ls52;Lyi;B)V
     .locals 0
 
     .line 1
-    const/4 p5, 0x0
+    iput-byte p3, p0, Lql;->j:B
 
     .line 2
-    iput-byte p5, p0, Lql;->j:B
-
     .line 3
-    .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lql;->k:Ls52;
 
+    .line 4
     .line 5
+    iput-object p2, p0, Lql;->l:Lyi;
+
     .line 6
     .line 7
-    iput-object p1, p0, Lql;->o:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 8
     .line 9
-    iput-boolean p2, p0, Lql;->k:Z
-
     .line 10
-    .line 11
-    iput-boolean p3, p0, Lql;->m:Z
-
-    .line 12
-    .line 13
-    iput-object p4, p0, Lql;->l:Lr52;
-
-    .line 14
-    .line 15
-    iput-byte p6, p0, Lql;->n:B
-
-    .line 16
-    .line 17
-    return-void
-.end method
-
-.method public synthetic constructor <init>(ZLr52;Lxn3;ZII)V
-    .locals 0
-
-    .line 18
-    const/4 p5, 0x1
-
-    iput-byte p5, p0, Lql;->j:B
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-boolean p1, p0, Lql;->k:Z
-
-    iput-object p2, p0, Lql;->l:Lr52;
-
-    iput-object p3, p0, Lql;->o:Ljava/lang/Object;
-
-    iput-boolean p4, p0, Lql;->m:Z
-
-    iput-byte p6, p0, Lql;->n:B
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 19
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
     .line 1
-    move-object/from16 v0, p0
+    iget-byte v0, p0, Lql;->j:B
 
     .line 2
     .line 3
-    iget-byte v1, v0, Lql;->j:B
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
     .line 5
-    sget-object v2, Ld07;->a:Ld07;
+    iget-object v2, p0, Lql;->l:Lyi;
 
     .line 6
     .line 7
-    const/4 v3, 0x1
+    iget-object p0, p0, Lql;->k:Ls52;
 
     .line 8
-    iget-object v4, v0, Lql;->o:Ljava/lang/Object;
-
     .line 9
-    .line 10
-    packed-switch v1, :pswitch_data_0
+    packed-switch v0, :pswitch_data_0
 
+    .line 10
     .line 11
     .line 12
-    .line 13
-    move-object v7, v4
+    check-cast p1, Ls52;
 
+    .line 13
     .line 14
-    check-cast v7, Lxn3;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 15
     .line 16
-    move-object/from16 v9, p1
-
     .line 17
-    .line 18
-    check-cast v9, Lz01;
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 18
     .line 19
     .line 20
-    move-object/from16 v1, p2
+    return-object v1
 
     .line 21
+    :pswitch_0
+    check-cast p1, Ls52;
+
     .line 22
-    check-cast v1, Ljava/lang/Integer;
-
     .line 23
-    .line 24
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 24
     .line 25
     .line 26
-    .line 27
-    invoke-static {v3}, Lkr5;->i0(I)I
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 27
     .line 28
     .line 29
+    return-object v1
+
     .line 30
-    move-result v10
+    :pswitch_1
+    check-cast p1, Lt52;
 
     .line 31
-    iget-boolean v5, v0, Lql;->k:Z
-
     .line 32
-    .line 33
-    iget-object v6, v0, Lql;->l:Lr52;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 33
     .line 34
     .line 35
-    iget-boolean v8, v0, Lql;->m:Z
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 36
     .line 37
-    iget-byte v11, v0, Lql;->n:B
-
     .line 38
+    return-object v1
+
     .line 39
-    invoke-static/range {v5 .. v11}, Le43;->b(ZLr52;Lxn3;ZLz01;II)V
+    :pswitch_2
+    check-cast p1, Ls52;
 
     .line 40
     .line 41
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 42
-    return-object v2
-
     .line 43
-    :pswitch_0
-    move-object v12, v4
-
     .line 44
-    check-cast v12, Ljava/lang/String;
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 45
     .line 46
-    move-object/from16 v16, p1
-
     .line 47
+    return-object v1
+
     .line 48
-    check-cast v16, Lz01;
+    :pswitch_3
+    check-cast p1, Ls52;
 
     .line 49
     .line 50
-    move-object/from16 v1, p2
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 51
     .line 52
-    check-cast v1, Ljava/lang/Integer;
-
     .line 53
-    .line 54
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 54
     .line 55
     .line 56
+    return-object v1
+
     .line 57
-    invoke-static {v3}, Lkr5;->i0(I)I
+    :pswitch_4
+    check-cast p1, Lt52;
 
     .line 58
     .line 59
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 60
-    move-result v17
-
     .line 61
-    iget-boolean v13, v0, Lql;->k:Z
-
     .line 62
-    .line 63
-    iget-boolean v14, v0, Lql;->m:Z
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 63
     .line 64
     .line 65
-    iget-object v15, v0, Lql;->l:Lr52;
+    return-object v1
 
     .line 66
+    :pswitch_5
+    check-cast p1, Ls52;
+
     .line 67
-    iget-byte v0, v0, Lql;->n:B
-
     .line 68
-    .line 69
-    move/from16 v18, v0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 69
     .line 70
     .line 71
-    invoke-static/range {v12 .. v18}, Lud1;->g(Ljava/lang/String;ZZLr52;Lz01;II)V
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 72
     .line 73
     .line 74
-    return-object v2
+    return-object v1
 
     .line 75
+    :pswitch_6
+    check-cast p1, Lt52;
+
+    .line 76
+    .line 77
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 78
+    .line 79
+    .line 80
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 81
+    .line 82
+    .line 83
+    return-object v1
+
+    .line 84
+    :pswitch_7
+    check-cast p1, Ls52;
+
+    .line 85
+    .line 86
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 87
+    .line 88
+    .line 89
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 90
+    .line 91
+    .line 92
+    return-object v1
+
+    .line 93
+    :pswitch_8
+    check-cast p1, Lt52;
+
+    .line 94
+    .line 95
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 96
+    .line 97
+    .line 98
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 99
+    .line 100
+    .line 101
+    return-object v1
+
+    .line 102
+    :pswitch_9
+    check-cast p1, Ls52;
+
+    .line 103
+    .line 104
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 105
+    .line 106
+    .line 107
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 108
+    .line 109
+    .line 110
+    return-object v1
+
+    .line 111
+    :pswitch_a
+    check-cast p1, Lt52;
+
+    .line 112
+    .line 113
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 114
+    .line 115
+    .line 116
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 117
+    .line 118
+    .line 119
+    return-object v1
+
+    .line 120
+    :pswitch_b
+    check-cast p1, Ls52;
+
+    .line 121
+    .line 122
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 123
+    .line 124
+    .line 125
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 126
+    .line 127
+    .line 128
+    return-object v1
+
+    .line 129
+    :pswitch_c
+    check-cast p1, Lt52;
+
+    .line 130
+    .line 131
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 132
+    .line 133
+    .line 134
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 135
+    .line 136
+    .line 137
+    return-object v1
+
+    .line 138
+    :pswitch_d
+    check-cast p1, Ls52;
+
+    .line 139
+    .line 140
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 141
+    .line 142
+    .line 143
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 144
+    .line 145
+    .line 146
+    return-object v1
+
+    .line 147
+    :pswitch_e
+    check-cast p1, Ls52;
+
+    .line 148
+    .line 149
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 150
+    .line 151
+    .line 152
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 153
+    .line 154
+    .line 155
+    return-object v1
+
+    .line 156
+    :pswitch_f
+    check-cast p1, Lt52;
+
+    .line 157
+    .line 158
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 159
+    .line 160
+    .line 161
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 162
+    .line 163
+    .line 164
+    return-object v1
+
+    .line 165
+    :pswitch_10
+    check-cast p1, Lt52;
+
+    .line 166
+    .line 167
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 168
+    .line 169
+    .line 170
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 171
+    .line 172
+    .line 173
+    return-object v1
+
+    .line 174
+    :pswitch_11
+    check-cast p1, Ls52;
+
+    .line 175
+    .line 176
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 177
+    .line 178
+    .line 179
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 180
+    .line 181
+    .line 182
+    return-object v1
+
+    .line 183
+    :pswitch_12
+    check-cast p1, Lt52;
+
+    .line 184
+    .line 185
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 186
+    .line 187
+    .line 188
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 189
+    .line 190
+    .line 191
+    return-object v1
+
+    .line 192
+    :pswitch_13
+    check-cast p1, Ls52;
+
+    .line 193
+    .line 194
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 195
+    .line 196
+    .line 197
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 198
+    .line 199
+    .line 200
+    return-object v1
+
+    .line 201
+    :pswitch_14
+    check-cast p1, Lt52;
+
+    .line 202
+    .line 203
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 204
+    .line 205
+    .line 206
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 207
+    .line 208
+    .line 209
+    return-object v1
+
+    .line 210
+    :pswitch_15
+    check-cast p1, Ls52;
+
+    .line 211
+    .line 212
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 213
+    .line 214
+    .line 215
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 216
+    .line 217
+    .line 218
+    return-object v1
+
+    .line 219
+    :pswitch_16
+    check-cast p1, Lt52;
+
+    .line 220
+    .line 221
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 222
+    .line 223
+    .line 224
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 225
+    .line 226
+    .line 227
+    return-object v1
+
+    .line 228
+    :pswitch_17
+    check-cast p1, Ls52;
+
+    .line 229
+    .line 230
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 231
+    .line 232
+    .line 233
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 234
+    .line 235
+    .line 236
+    return-object v1
+
+    .line 237
+    :pswitch_18
+    check-cast p1, Ls52;
+
+    .line 238
+    .line 239
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 240
+    .line 241
+    .line 242
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 243
+    .line 244
+    .line 245
+    return-object v1
+
+    .line 246
+    :pswitch_19
+    check-cast p1, Lt52;
+
+    .line 247
+    .line 248
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 249
+    .line 250
+    .line 251
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 252
+    .line 253
+    .line 254
+    return-object v1
+
+    .line 255
+    :pswitch_1a
+    check-cast p1, Ls52;
+
+    .line 256
+    .line 257
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 258
+    .line 259
+    .line 260
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 261
+    .line 262
+    .line 263
+    return-object v1
+
+    .line 264
+    :pswitch_1b
+    check-cast p1, Lt52;
+
+    .line 265
+    .line 266
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 267
+    .line 268
+    .line 269
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 270
+    .line 271
+    .line 272
+    return-object v1
+
+    .line 273
+    :pswitch_1c
+    check-cast p1, Ls52;
+
+    .line 274
+    .line 275
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 276
+    .line 277
+    .line 278
+    invoke-interface {p0, v2, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 279
+    .line 280
+    .line 281
+    return-object v1
+
+    .line 282
+    nop
+
+    .line 283
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_1c
+        :pswitch_1b
+        :pswitch_1a
+        :pswitch_19
+        :pswitch_18
+        :pswitch_17
+        :pswitch_16
+        :pswitch_15
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

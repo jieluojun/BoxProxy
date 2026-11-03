@@ -1,251 +1,71 @@
-.class public final Ljv5;
-.super Lau0;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public abstract synthetic Ljv5;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final e:Ljava/util/ArrayList;
+# static fields
+.field public static final synthetic a:[I
 
 
 # direct methods
-.method public constructor <init>(Lxg6;Ljava/util/ArrayList;ILjava/util/Optional;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-direct {p0, p1, p3, p4}, Lau0;-><init>(Lxg6;ILjava/util/Optional;)V
+    invoke-static {}, Lt82;->values()[Lt82;
 
     .line 2
     .line 3
     .line 4
-    iput-object p2, p0, Ljv5;->e:Ljava/util/ArrayList;
+    move-result-object v0
 
     .line 5
+    array-length v0, v0
+
     .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()I
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x2
-
-    .line 2
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    iget-object v1, p0, Ljv5;->e:Ljava/util/ArrayList;
+    new-array v0, v0, [I
 
     .line 7
     .line 8
-    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    const/4 v1, 0x1
 
     .line 9
+    :try_start_0
+    aput v1, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+
     .line 10
     .line 11
-    move-result-object v1
+    :catch_0
+    const/4 v1, 0x2
 
     .line 12
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    :try_start_1
+    aput v1, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 13
     .line 14
+    :catch_1
+    const/4 v1, 0x0
+
     .line 15
-    move-result v2
+    const/4 v2, 0x3
 
     .line 16
-    if-eqz v2, :cond_1
+    :try_start_2
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 17
     .line 18
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    :catch_2
+    sput-object v0, Ljv5;->a:[I
 
     .line 19
     .line 20
-    .line 21
-    move-result-object v2
-
-    .line 22
-    check-cast v2, Lk54;
-
-    .line 23
-    .line 24
-    instance-of v3, v2, Lau0;
-
-    .line 25
-    .line 26
-    if-eqz v3, :cond_0
-
-    .line 27
-    .line 28
-    invoke-static {v2}, Ljava/lang/System;->identityHashCode(Ljava/lang/Object;)I
-
-    .line 29
-    .line 30
-    .line 31
-    move-result v2
-
-    .line 32
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 33
-    .line 34
-    .line 35
-    goto :goto_1
-
-    .line 36
-    :cond_0
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    .line 37
-    .line 38
-    .line 39
-    move-result-object v2
-
-    .line 40
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 41
-    .line 42
-    .line 43
-    :goto_1
-    const-string v2, ","
-
-    .line 44
-    .line 45
-    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 46
-    .line 47
-    .line 48
-    goto :goto_0
-
-    .line 49
-    :cond_1
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
-
-    .line 50
-    .line 51
-    .line 52
-    move-result v1
-
-    .line 53
-    if-lez v1, :cond_2
-
-    .line 54
-    .line 55
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
-
-    .line 56
-    .line 57
-    .line 58
-    move-result v1
-
-    .line 59
-    add-int/lit8 v1, v1, -0x1
-
-    .line 60
-    .line 61
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->deleteCharAt(I)Ljava/lang/StringBuilder;
-
-    .line 62
-    .line 63
-    .line 64
-    :cond_2
-    const-class v1, Ljv5;
-
-    .line 65
-    .line 66
-    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    .line 67
-    .line 68
-    .line 69
-    move-result-object v1
-
-    .line 70
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    .line 71
-    .line 72
-    const-string v3, "<"
-
-    .line 73
-    .line 74
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 75
-    .line 76
-    .line 77
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 78
-    .line 79
-    .line 80
-    const-string v1, " (tag="
-
-    .line 81
-    .line 82
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 83
-    .line 84
-    .line 85
-    iget-object p0, p0, Lk54;->b:Lxg6;
-
-    .line 86
-    .line 87
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 88
-    .line 89
-    .line 90
-    const-string p0, ", value=["
-
-    .line 91
-    .line 92
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 93
-    .line 94
-    .line 95
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 96
-    .line 97
-    .line 98
-    const-string p0, "])>"
-
-    .line 99
-    .line 100
-    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 101
-    .line 102
-    .line 103
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 104
-    .line 105
-    .line 106
-    move-result-object p0
-
-    .line 107
-    return-object p0
+    return-void
 .end method

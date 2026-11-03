@@ -1,177 +1,132 @@
 .class public final Lng0;
-.super Lj54;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:I
+.field public a:Ljava/util/LinkedHashMap;
 
-.field public final b:Z
-
-.field public final c:Z
-
-
-# direct methods
-.method public constructor <init>(IZZ)V
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x2
-
-    .line 2
-    invoke-direct {p0, v0}, Lj54;-><init>(I)V
-
-    .line 3
-    .line 4
-    .line 5
-    iput p1, p0, Lng0;->a:I
-
-    .line 6
-    .line 7
-    iput-boolean p2, p0, Lng0;->b:Z
-
-    .line 8
-    .line 9
-    iput-boolean p3, p0, Lng0;->c:Z
-
-    .line 10
-    .line 11
-    return-void
-.end method
+.field public b:Ljava/util/LinkedHashMap;
 
 
 # virtual methods
-.method public final getName()Ljava/lang/String;
-    .locals 0
+.method public final varargs a(Lt8;[Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    const-string p0, "Character Type"
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    return-object p0
-.end method
-
-.method public final toString(I)Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    new-instance v0, Ljava/lang/StringBuilder;
-
     .line 4
-    .line 5
-    const-string v1, "\n  ctype: "
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 5
     .line 6
     .line 7
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    array-length v0, p2
 
     .line 8
+    invoke-static {p2, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
     .line 9
     .line 10
-    iget v1, p0, Lng0;->a:I
-
     .line 11
+    move-result-object p2
+
     .line 12
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {p1, p2}, Lt8;->y([Ljava/lang/Object;)Ljava/lang/String;
 
     .line 13
     .line 14
     .line 15
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object p1
 
     .line 16
+    iget-object p2, p0, Lng0;->a:Ljava/util/LinkedHashMap;
+
     .line 17
     .line 18
-    move-result-object v0
+    invoke-virtual {p2, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 19
-    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
     .line 20
     .line 21
+    move-result-object p2
+
     .line 22
-    new-instance v0, Ljava/lang/StringBuilder;
+    if-eqz p2, :cond_0
 
     .line 23
     .line 24
-    const-string v1, ", not: "
+    iget-object p0, p0, Lng0;->b:Ljava/util/LinkedHashMap;
 
     .line 25
     .line 26
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-interface {p0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 27
     .line 28
     .line 29
-    iget-boolean v1, p0, Lng0;->b:Z
+    :cond_0
+    return-object p2
+.end method
 
-    .line 30
-    .line 31
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+.method public final b(Lt8;[Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 1
 
-    .line 32
-    .line 33
-    .line 34
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 35
-    .line 36
-    .line 37
-    move-result-object v0
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 38
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 5
+    .line 6
+    .line 7
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 39
-    .line 40
-    .line 41
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 8
+    .line 9
+    .line 10
+    array-length v0, p2
 
-    .line 42
-    .line 43
-    const-string v1, ", ascii: "
+    .line 11
+    invoke-static {p2, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
-    .line 44
-    .line 45
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p2
 
-    .line 46
-    .line 47
-    .line 48
-    iget-boolean p0, p0, Lng0;->c:Z
+    .line 15
+    invoke-virtual {p1, p2}, Lt8;->y([Ljava/lang/Object;)Ljava/lang/String;
 
-    .line 49
-    .line 50
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p1
 
-    .line 51
-    .line 52
-    .line 53
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 19
+    iget-object p2, p0, Lng0;->a:Ljava/util/LinkedHashMap;
 
-    .line 54
-    .line 55
-    .line 56
-    move-result-object p0
+    .line 20
+    .line 21
+    invoke-interface {p2, p1, p3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 57
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 22
+    .line 23
+    .line 24
+    iget-object p0, p0, Lng0;->b:Ljava/util/LinkedHashMap;
 
-    .line 58
-    .line 59
-    .line 60
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 25
+    .line 26
+    invoke-interface {p0, p1, p3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 61
-    .line 62
-    .line 63
-    move-result-object p0
-
-    .line 64
-    return-object p0
+    .line 27
+    .line 28
+    .line 29
+    return-void
 .end method

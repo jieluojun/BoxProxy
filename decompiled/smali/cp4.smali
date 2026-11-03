@@ -1,93 +1,70 @@
-.class public final synthetic Lcp4;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lg52;
-
-
-# instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Lrp4;
-
-.field public final synthetic l:I
+.class public final Lcp4;
+.super Ljava/util/concurrent/CancellationException;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # direct methods
-.method public synthetic constructor <init>(Lrp4;IB)V
-    .locals 0
+.method public constructor <init>(J)V
+    .locals 2
 
     .line 1
-    iput-byte p3, p0, Lcp4;->j:B
+    new-instance v0, Ljava/lang/StringBuilder;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lcp4;->k:Lrp4;
+    const-string v1, "Timed out waiting for "
 
     .line 4
     .line 5
-    iput p2, p0, Lcp4;->l:I
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 6
     .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 8
+    invoke-virtual {v0, p1, p2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
     .line 9
     .line 10
+    .line 11
+    const-string p1, " ms"
+
+    .line 12
+    .line 13
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 14
+    .line 15
+    .line 16
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p1
+
+    .line 20
+    invoke-direct {p0, p1}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
+
+    .line 21
+    .line 22
+    .line 23
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
+.method public final fillInStackTrace()Ljava/lang/Throwable;
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Lcp4;->j:B
+    sget-object v0, Lq50;->S:[Ljava/lang/StackTraceElement;
 
     .line 2
     .line 3
-    sget-object v1, Ld07;->a:Ld07;
+    invoke-virtual {p0, v0}, Ljava/lang/Throwable;->setStackTrace([Ljava/lang/StackTraceElement;)V
 
     .line 4
     .line 5
-    iget v2, p0, Lcp4;->l:I
-
     .line 6
-    .line 7
-    iget-object p0, p0, Lcp4;->k:Lrp4;
-
-    .line 8
-    .line 9
-    packed-switch v0, :pswitch_data_0
-
-    .line 10
-    .line 11
-    .line 12
-    invoke-virtual {p0, v2}, Lrp4;->b(I)V
-
-    .line 13
-    .line 14
-    .line 15
-    return-object v1
-
-    .line 16
-    :pswitch_0
-    invoke-virtual {p0, v2}, Lrp4;->b(I)V
-
-    .line 17
-    .line 18
-    .line 19
-    return-object v1
-
-    .line 20
-    nop
-
-    .line 21
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

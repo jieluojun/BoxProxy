@@ -1,12 +1,12 @@
 .class public abstract Lpl2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final a:Le87;
+.field public static final a:Lba7;
 
-.field public static final b:Le87;
+.field public static final b:Lba7;
 
 
 # direct methods
@@ -176,11 +176,11 @@
     .line 95
     .line 96
     .line 97
-    new-instance v2, Le87;
+    new-instance v2, Lba7;
 
     .line 98
     .line 99
-    new-instance v3, Lgd7;
+    new-instance v3, Lcf7;
 
     .line 100
     .line 101
@@ -214,7 +214,7 @@
     move-result-object v5
 
     .line 119
-    invoke-direct {v3, v4, v5}, Lgd7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+    invoke-direct {v3, v4, v5}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
 
     .line 120
     .line 121
@@ -223,12 +223,12 @@
 
     .line 123
     .line 124
-    invoke-direct {v2, v4, v3}, Le87;-><init>(Ljava/lang/String;Lgd7;)V
+    invoke-direct {v2, v4, v3}, Lba7;-><init>(Ljava/lang/String;Lcf7;)V
 
     .line 125
     .line 126
     .line 127
-    sput-object v2, Lpl2;->a:Le87;
+    sput-object v2, Lpl2;->a:Lba7;
 
     .line 128
     .line 129
@@ -277,11 +277,11 @@
     .line 154
     .line 155
     .line 156
-    new-instance v2, Le87;
+    new-instance v2, Lba7;
 
     .line 157
     .line 158
-    new-instance v3, Lgd7;
+    new-instance v3, Lcf7;
 
     .line 159
     .line 160
@@ -315,7 +315,7 @@
     move-result-object v5
 
     .line 178
-    invoke-direct {v3, v4, v5}, Lgd7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+    invoke-direct {v3, v4, v5}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
 
     .line 179
     .line 180
@@ -324,12 +324,12 @@
 
     .line 182
     .line 183
-    invoke-direct {v2, v4, v3}, Le87;-><init>(Ljava/lang/String;Lgd7;)V
+    invoke-direct {v2, v4, v3}, Lba7;-><init>(Ljava/lang/String;Lcf7;)V
 
     .line 184
     .line 185
     .line 186
-    sput-object v2, Lpl2;->b:Le87;
+    sput-object v2, Lpl2;->b:Lba7;
 
     .line 187
     .line 188

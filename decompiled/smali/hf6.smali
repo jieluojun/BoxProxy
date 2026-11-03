@@ -1,204 +1,33 @@
 .class public final Lhf6;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Landroid/view/MenuItem$OnMenuItemClickListener;
+
+
+# static fields
+.field public static final d:[Ljava/lang/Class;
 
 
 # instance fields
-.field public final a:J
+.field public final synthetic a:B
 
-.field public final b:Ldq6;
+.field public b:Ljava/lang/Object;
 
-.field public final c:Lxp6;
+.field public c:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(JLdq6;Lxp6;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-class v0, Landroid/view/MenuItem;
 
     .line 2
     .line 3
-    .line 4
-    iput-wide p1, p0, Lhf6;->a:J
-
-    .line 5
-    .line 6
-    iput-object p3, p0, Lhf6;->b:Ldq6;
-
-    .line 7
-    .line 8
-    iput-object p4, p0, Lhf6;->c:Lxp6;
-
-    .line 9
-    .line 10
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    .line 1
-    if-ne p0, p1, :cond_0
-
-    .line 2
-    .line 3
-    goto :goto_1
-
-    .line 4
-    :cond_0
-    instance-of v0, p1, Lhf6;
-
-    .line 5
-    .line 6
-    if-nez v0, :cond_1
-
-    .line 7
-    .line 8
-    goto :goto_0
-
-    .line 9
-    :cond_1
-    check-cast p1, Lhf6;
-
-    .line 10
-    .line 11
-    iget-wide v0, p0, Lhf6;->a:J
-
-    .line 12
-    .line 13
-    iget-wide v2, p1, Lhf6;->a:J
-
-    .line 14
-    .line 15
-    invoke-static {v0, v1, v2, v3}, Ljy6;->a(JJ)Z
-
-    .line 16
-    .line 17
-    .line 18
-    move-result v0
-
-    .line 19
-    if-nez v0, :cond_2
-
-    .line 20
-    .line 21
-    goto :goto_0
-
-    .line 22
-    :cond_2
-    iget-object v0, p0, Lhf6;->b:Ldq6;
-
-    .line 23
-    .line 24
-    iget-object v1, p1, Lhf6;->b:Ldq6;
-
-    .line 25
-    .line 26
-    if-eq v0, v1, :cond_3
-
-    .line 27
-    .line 28
-    goto :goto_0
-
-    .line 29
-    :cond_3
-    iget-object p0, p0, Lhf6;->c:Lxp6;
-
-    .line 30
-    .line 31
-    iget-object p1, p1, Lhf6;->c:Lxp6;
-
-    .line 32
-    .line 33
-    if-eq p0, p1, :cond_4
-
-    .line 34
-    .line 35
-    :goto_0
-    const/4 p0, 0x0
-
-    .line 36
-    return p0
-
-    .line 37
-    :cond_4
-    :goto_1
-    const/4 p0, 0x1
-
-    .line 38
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    .line 1
-    iget-wide v0, p0, Lhf6;->a:J
-
-    .line 2
-    .line 3
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    mul-int/lit8 v0, v0, 0x1f
-
-    .line 8
-    .line 9
-    iget-object v1, p0, Lhf6;->b:Ldq6;
-
-    .line 10
-    .line 11
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result v1
-
-    .line 15
-    add-int/2addr v1, v0
-
-    .line 16
-    mul-int/lit8 v1, v1, 0x1f
-
-    .line 17
-    .line 18
-    iget-object p0, p0, Lhf6;->c:Lxp6;
-
-    .line 19
-    .line 20
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    .line 21
-    .line 22
-    .line 23
-    move-result p0
-
-    .line 24
-    add-int/2addr p0, v1
-
-    .line 25
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    .line 1
-    iget-wide v0, p0, Lhf6;->a:J
-
-    .line 2
-    .line 3
-    invoke-static {v0, v1}, Lmu0;->i(J)Ljava/lang/String;
+    filled-new-array {v0}, [Ljava/lang/Class;
 
     .line 4
     .line 5
@@ -206,76 +35,208 @@
     move-result-object v0
 
     .line 7
-    new-instance v1, Ljava/lang/StringBuilder;
+    sput-object v0, Lhf6;->d:[Ljava/lang/Class;
 
     .line 8
     .line 9
-    const-string v2, "SystemPaletteInfo(seedColor="
+    return-void
+.end method
+
+.method public synthetic constructor <init>()V
+    .locals 1
+
+    .line 12
+    const/4 v0, 0x0
+
+    iput-byte v0, p0, Lhf6;->a:B
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public constructor <init>(Llj3;Landroid/view/MenuItem$OnMenuItemClickListener;)V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    iput-byte v0, p0, Lhf6;->a:B
+
+    .line 3
+    .line 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 5
+    .line 6
+    .line 7
+    iput-object p1, p0, Lhf6;->c:Ljava/lang/Object;
+
+    .line 8
+    .line 9
+    iput-object p2, p0, Lhf6;->b:Ljava/lang/Object;
 
     .line 10
     .line 11
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    return-void
+.end method
 
+
+# virtual methods
+.method public final onMenuItemClick(Landroid/view/MenuItem;)Z
+    .locals 3
+
+    .line 1
+    iget-byte v0, p0, Lhf6;->a:B
+
+    .line 2
+    .line 3
+    packed-switch v0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object v0, p0, Lhf6;->b:Ljava/lang/Object;
+
+    .line 7
+    .line 8
+    check-cast v0, Landroid/view/MenuItem$OnMenuItemClickListener;
+
+    .line 9
+    .line 10
+    iget-object p0, p0, Lhf6;->c:Ljava/lang/Object;
+
+    .line 11
     .line 12
+    check-cast p0, Llj3;
+
     .line 13
     .line 14
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, p1}, Lq4;->j(Landroid/view/MenuItem;)Landroid/view/MenuItem;
 
     .line 15
     .line 16
     .line 17
-    const-string v0, ", paletteStyle="
+    move-result-object p0
 
     .line 18
-    .line 19
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-interface {v0, p0}, Landroid/view/MenuItem$OnMenuItemClickListener;->onMenuItemClick(Landroid/view/MenuItem;)Z
 
+    .line 19
     .line 20
     .line 21
+    move-result p0
+
     .line 22
-    iget-object v0, p0, Lhf6;->b:Ldq6;
+    return p0
 
     .line 23
-    .line 24
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    :pswitch_0
+    iget-object v0, p0, Lhf6;->b:Ljava/lang/Object;
 
+    .line 24
     .line 25
+    iget-object p0, p0, Lhf6;->c:Ljava/lang/Object;
+
     .line 26
     .line 27
-    const-string v0, ", colorSpec="
+    check-cast p0, Ljava/lang/reflect/Method;
 
     .line 28
     .line 29
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :try_start_0
+    invoke-virtual {p0}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
 
     .line 30
     .line 31
     .line 32
-    iget-object p0, p0, Lhf6;->c:Lxp6;
+    move-result-object v1
 
     .line 33
-    .line 34
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    sget-object v2, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
+    .line 34
     .line 35
+    if-ne v1, v2, :cond_0
+
     .line 36
     .line 37
-    const-string p0, ")"
+    filled-new-array {p1}, [Ljava/lang/Object;
 
     .line 38
     .line 39
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 40
-    .line 41
-    .line 42
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object p1
 
+    .line 41
+    invoke-virtual {p0, v0, p1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 42
     .line 43
     .line 44
-    .line 45
     move-result-object p0
 
+    .line 45
+    check-cast p0, Ljava/lang/Boolean;
+
     .line 46
-    return-object p0
+    .line 47
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    .line 48
+    .line 49
+    .line 50
+    move-result p0
+
+    .line 51
+    goto :goto_0
+
+    .line 52
+    :cond_0
+    filled-new-array {p1}, [Ljava/lang/Object;
+
+    .line 53
+    .line 54
+    .line 55
+    move-result-object p1
+
+    .line 56
+    invoke-virtual {p0, v0, p1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 57
+    .line 58
+    .line 59
+    const/4 p0, 0x1
+
+    .line 60
+    :goto_0
+    return p0
+
+    .line 61
+    :catch_0
+    move-exception p0
+
+    .line 62
+    new-instance p1, Ljava/lang/RuntimeException;
+
+    .line 63
+    .line 64
+    invoke-direct {p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+
+    .line 65
+    .line 66
+    .line 67
+    throw p1
+
+    .line 68
+    nop
+
+    .line 69
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

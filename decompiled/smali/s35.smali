@@ -1,299 +1,325 @@
-.class public final synthetic Ls35;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final enum Ls35;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Lg52;
+
+# static fields
+.field public static final k:Lo35;
+
+.field public static final enum l:Ls35;
+
+.field public static final enum m:Ls35;
+
+.field public static final enum n:Ls35;
+
+.field public static final enum o:Ls35;
+
+.field public static final enum p:Ls35;
+
+.field public static final enum q:Ls35;
+
+.field public static final synthetic r:[Ls35;
+
+.field public static final synthetic s:Lzu1;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final j:Ljava/lang/String;
 
-.field public final synthetic k:Lk45;
 
-.field public final synthetic l:F
 
-.field public final synthetic m:Li86;
-
+.field public static final enum t:Ls35;
 
 # direct methods
-.method public synthetic constructor <init>(Lk45;FLi86;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 10
 
     .line 1
-    iput-byte p4, p0, Ls35;->j:B
+    new-instance v0, Ls35;
 
     .line 2
     .line 3
-    iput-object p1, p0, Ls35;->k:Lk45;
+    const/4 v1, 0x0
 
     .line 4
+    const-string v2, "tun"
+
     .line 5
-    iput p2, p0, Ls35;->l:F
-
     .line 6
-    .line 7
-    iput-object p3, p0, Ls35;->m:Li86;
-
-    .line 8
-    .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 10
-    .line 11
-    .line 12
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 5
-
-    .line 1
-    iget-byte v0, p0, Ls35;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, Lo85;->a:Lo85;
-
-    .line 4
-    .line 5
-    const/4 v2, 0x0
-
-    .line 6
-    iget-object v3, p0, Ls35;->m:Li86;
+    const-string v3, "Tun"
 
     .line 7
     .line 8
-    iget v4, p0, Ls35;->l:F
+    invoke-direct {v0, v1, v3, v2}, Ls35;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
     .line 9
     .line 10
-    iget-object p0, p0, Ls35;->k:Lk45;
-
     .line 11
-    .line 12
-    packed-switch v0, :pswitch_data_0
+    sput-object v0, Ls35;->l:Ls35;
 
+    .line 12
     .line 13
+    new-instance v1, Ls35;
+
     .line 14
     .line 15
-    invoke-virtual {p0}, Lk45;->b()Lt85;
+    const/4 v2, 0x1
 
     .line 16
+    const-string v3, "tproxy"
+
     .line 17
     .line 18
-    move-result-object v0
+    const-string v4, "TProxy"
 
     .line 19
-    invoke-static {v0, v1}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
     .line 20
+    invoke-direct {v1, v2, v4, v3}, Ls35;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
     .line 21
     .line 22
-    move-result v0
-
     .line 23
-    if-eqz v0, :cond_0
+    sput-object v1, Ls35;->m:Ls35;
 
     .line 24
     .line 25
-    goto :goto_0
+    new-instance v2, Ls35;
 
     .line 26
-    :cond_0
-    invoke-interface {v3}, Li86;->getValue()Ljava/lang/Object;
-
     .line 27
-    .line 28
-    .line 29
-    move-result-object v0
+    const/4 v3, 0x2
 
+    .line 28
+    const-string v4, "ebpf"
+
+    .line 29
     .line 30
-    check-cast v0, Lal1;
+    const-string v5, "Ebpf"
 
     .line 31
     .line 32
-    iget v0, v0, Lal1;->j:F
+    invoke-direct {v2, v3, v5, v4}, Ls35;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
     .line 33
     .line 34
-    invoke-static {v0, v2}, Lal1;->a(FF)I
-
     .line 35
+    sput-object v2, Ls35;->n:Ls35;
+
     .line 36
     .line 37
-    move-result v0
+    new-instance v3, Ls35;
 
     .line 38
-    const/high16 v1, 0x42100000    # 36.0f
-
     .line 39
+    const/4 v4, 0x3
+
     .line 40
-    if-gtz v0, :cond_1
+    const-string v5, "redirect"
 
     .line 41
     .line 42
-    add-float/2addr v4, v1
+    const-string v6, "Redirect"
 
     .line 43
-    invoke-virtual {p0}, Lk45;->c()F
-
     .line 44
+    invoke-direct {v3, v4, v6, v5}, Ls35;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
     .line 45
     .line 46
-    move-result p0
-
     .line 47
-    mul-float v2, p0, v4
+    sput-object v3, Ls35;->o:Ls35;
 
     .line 48
     .line 49
-    goto :goto_0
+    new-instance v4, Ls35;
 
     .line 50
-    :cond_1
-    add-float/2addr v4, v1
-
     .line 51
-    invoke-interface {v3}, Li86;->getValue()Ljava/lang/Object;
+    const/4 v5, 0x4
 
     .line 52
+    const-string v6, "mixed"
+
     .line 53
     .line 54
-    move-result-object p0
+    const-string v7, "Mixed"
 
     .line 55
-    check-cast p0, Lal1;
-
     .line 56
-    .line 57
-    iget p0, p0, Lal1;->j:F
+    invoke-direct {v4, v5, v7, v6}, Ls35;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
+    .line 57
     .line 58
     .line 59
-    add-float v2, v4, p0
+    sput-object v4, Ls35;->p:Ls35;
 
     .line 60
     .line 61
-    :goto_0
-    new-instance p0, Lal1;
+    new-instance v5, Ls35;
 
     .line 62
     .line 63
-    invoke-direct {p0, v2}, Lal1;-><init>(F)V
+    const/4 v6, 0x5
 
     .line 64
+    const-string v7, "enhance"
+
     .line 65
     .line 66
-    return-object p0
+    const-string v8, "Enhance"
 
     .line 67
-    :pswitch_0
-    invoke-virtual {p0}, Lk45;->b()Lt85;
-
     .line 68
+    invoke-direct {v5, v6, v8, v7}, Ls35;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
     .line 69
     .line 70
-    move-result-object v0
-
     .line 71
-    invoke-static {v0, v1}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    sput-object v5, Ls35;->q:Ls35;
 
     .line 72
     .line 73
-    .line 74
-    move-result v0
+    new-instance v6, Ls35;
 
-    .line 75
-    if-eqz v0, :cond_2
+    const/4 v7, 0x0
 
-    .line 76
+    const-string v8, "Vpn"
+
+    const-string v9, "vpn"
+
+    invoke-direct {v6, v7, v8, v9}, Ls35;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
+    sput-object v6, Ls35;->t:Ls35;
+
+    const/4 v7, 0x7
+
+    new-array v7, v7, [Ls35;
+
+    const/4 v8, 0x0
+
+    aput-object v6, v7, v8
+
+    const/4 v8, 0x1
+
+    aput-object v0, v7, v8
+
+    const/4 v8, 0x2
+
+    aput-object v1, v7, v8
+
+    const/4 v8, 0x3
+
+    aput-object v2, v7, v8
+
+    const/4 v8, 0x4
+
+    aput-object v3, v7, v8
+
+    const/4 v8, 0x5
+
+    aput-object v4, v7, v8
+
+    const/4 v8, 0x6
+
+    aput-object v5, v7, v8
+
+    move-object v0, v7
+
     .line 77
-    goto :goto_1
+    sput-object v0, Ls35;->r:[Ls35;
 
     .line 78
-    :cond_2
-    invoke-interface {v3}, Li86;->getValue()Ljava/lang/Object;
-
     .line 79
+    new-instance v1, Lzu1;
+
     .line 80
     .line 81
-    move-result-object v0
+    invoke-direct {v1, v0}, Lzu1;-><init>([Ljava/lang/Enum;)V
 
     .line 82
-    check-cast v0, Lal1;
-
     .line 83
     .line 84
-    iget v0, v0, Lal1;->j:F
+    sput-object v1, Ls35;->s:Lzu1;
 
     .line 85
     .line 86
-    invoke-static {v0, v2}, Lal1;->a(FF)I
+    new-instance v0, Lo35;
 
     .line 87
     .line 88
+    const/4 v1, 0x3
+
     .line 89
-    move-result v0
+    invoke-direct {v0, v1}, Lo35;-><init>(B)V
 
     .line 90
-    if-gtz v0, :cond_3
-
     .line 91
     .line 92
-    invoke-virtual {p0}, Lk45;->c()F
+    sput-object v0, Ls35;->k:Lo35;
 
     .line 93
     .line 94
-    .line 95
-    move-result p0
+    return-void
+.end method
 
-    .line 96
-    mul-float v2, p0, v4
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
+    .locals 0
 
-    .line 97
-    .line 98
-    goto :goto_1
+    .line 1
+    invoke-direct {p0, p2, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 99
-    :cond_3
-    invoke-interface {v3}, Li86;->getValue()Ljava/lang/Object;
+    .line 2
+    .line 3
+    .line 4
+    iput-object p3, p0, Ls35;->j:Ljava/lang/String;
 
-    .line 100
-    .line 101
-    .line 102
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Ls35;
+    .locals 1
+
+    .line 1
+    const-class v0, Ls35;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
     move-result-object p0
 
-    .line 103
-    check-cast p0, Lal1;
+    .line 7
+    check-cast p0, Ls35;
 
-    .line 104
-    .line 105
-    iget p0, p0, Lal1;->j:F
-
-    .line 106
-    .line 107
-    add-float v2, v4, p0
-
-    .line 108
-    .line 109
-    :goto_1
-    new-instance p0, Lal1;
-
-    .line 110
-    .line 111
-    invoke-direct {p0, v2}, Lal1;-><init>(F)V
-
-    .line 112
-    .line 113
-    .line 114
+    .line 8
+    .line 9
     return-object p0
+.end method
 
-    .line 115
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+.method public static values()[Ls35;
+    .locals 1
+
+    .line 1
+    sget-object v0, Ls35;->r:[Ls35;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Ls35;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

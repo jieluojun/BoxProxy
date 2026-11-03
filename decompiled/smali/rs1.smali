@@ -1,80 +1,68 @@
 .class public final Lrs1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lnf1;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic j:Lq53;
+# static fields
+.field public static final a:Lc6;
 
 
 # direct methods
-.method public constructor <init>(Landroidx/emoji2/text/EmojiCompatInitializer;Lq53;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p2, p0, Lrs1;->j:Lq53;
-
-    .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final onResume(Ln53;)V
+.method static constructor <clinit>()V
     .locals 3
 
     .line 1
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    new-instance v0, Lc6;
 
     .line 2
     .line 3
-    .line 4
-    move-result-object p1
+    const/16 v1, 0xc
 
+    .line 4
     .line 5
-    invoke-static {p1}, Lx11;->a(Landroid/os/Looper;)Landroid/os/Handler;
+    const/4 v2, 0x0
 
     .line 6
+    invoke-direct {v0, v1, v2}, Lc6;-><init>(BZ)V
+
     .line 7
     .line 8
-    move-result-object p1
-
     .line 9
-    new-instance v0, Lkh0;
+    invoke-static {}, Los1;->d()Z
 
     .line 10
     .line 11
-    invoke-direct {v0}, Lkh0;-><init>()V
-
     .line 12
+    move-result v1
+
     .line 13
+    if-eqz v1, :cond_0
+
     .line 14
-    const-wide/16 v1, 0x1f4
-
     .line 15
-    .line 16
-    invoke-virtual {p1, v0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+    invoke-virtual {v0}, Lc6;->y()Lu96;
 
+    .line 16
     .line 17
     .line 18
+    move-result-object v1
+
     .line 19
-    iget-object p1, p0, Lrs1;->j:Lq53;
+    goto :goto_0
 
     .line 20
+    :cond_0
+    const/4 v1, 0x0
+
     .line 21
-    invoke-virtual {p1, p0}, Lq53;->f(Lm53;)V
+    :goto_0
+    iput-object v1, v0, Lc6;->k:Ljava/lang/Object;
 
     .line 22
     .line 23
+    sput-object v0, Lrs1;->a:Lc6;
+
     .line 24
+    .line 25
     return-void
 .end method

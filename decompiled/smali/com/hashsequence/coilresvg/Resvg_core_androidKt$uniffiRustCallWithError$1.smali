@@ -1,14 +1,14 @@
 .class public final Lcom/hashsequence/coilresvg/Resvg_core_androidKt$uniffiRustCallWithError$1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lr52;
+.implements Lo52;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/hashsequence/coilresvg/Resvg_core_androidKt;->uniffiRustCallWithError(Lcom/hashsequence/coilresvg/UniffiRustCallStatusErrorHandler;Lr52;)Ljava/lang/Object;
+    value = Lcom/hashsequence/coilresvg/Resvg_core_androidKt;->uniffiRustCallWithError(Lcom/hashsequence/coilresvg/UniffiRustCallStatusErrorHandler;Lo52;)Ljava/lang/Object;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,16 +19,16 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lr52;"
+        "Lo52;"
     }
 .end annotation
 
 
 # instance fields
-.field final synthetic $callback:Lr52;
+.field final synthetic $callback:Lo52;
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "Lr52;"
+            "Lo52;"
         }
     .end annotation
 .end field
@@ -44,19 +44,19 @@
 
 
 # direct methods
-.method public constructor <init>(Lr52;Lcom/hashsequence/coilresvg/UniffiRustCallStatusErrorHandler;)V
+.method public constructor <init>(Lo52;Lcom/hashsequence/coilresvg/UniffiRustCallStatusErrorHandler;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lr52;",
+            "Lo52;",
             "Lcom/hashsequence/coilresvg/UniffiRustCallStatusErrorHandler<",
             "TE;>;)V"
         }
     .end annotation
 
     .line 1
-    iput-object p1, p0, Lcom/hashsequence/coilresvg/Resvg_core_androidKt$uniffiRustCallWithError$1;->$callback:Lr52;
+    iput-object p1, p0, Lcom/hashsequence/coilresvg/Resvg_core_androidKt$uniffiRustCallWithError$1;->$callback:Lo52;
 
     .line 2
     .line 3
@@ -90,11 +90,11 @@
     .line 2
     .line 3
     .line 4
-    iget-object v0, p0, Lcom/hashsequence/coilresvg/Resvg_core_androidKt$uniffiRustCallWithError$1;->$callback:Lr52;
+    iget-object v0, p0, Lcom/hashsequence/coilresvg/Resvg_core_androidKt$uniffiRustCallWithError$1;->$callback:Lo52;
 
     .line 5
     .line 6
-    invoke-interface {v0, p1}, Lr52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0, p1}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 7
     .line 8

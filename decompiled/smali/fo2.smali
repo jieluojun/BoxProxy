@@ -1,13 +1,13 @@
 .class public final Lfo2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lh66;
+.implements Lt76;
 
 
 # instance fields
-.field public final j:Li65;
+.field public final j:Le75;
 
 .field public final k:Ljava/util/zip/Inflater;
 
@@ -17,7 +17,7 @@
 
 
 # direct methods
-.method public constructor <init>(Li65;Ljava/util/zip/Inflater;)V
+.method public constructor <init>(Le75;Ljava/util/zip/Inflater;)V
     .locals 0
 
     .line 1
@@ -26,7 +26,7 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lfo2;->j:Li65;
+    iput-object p1, p0, Lfo2;->j:Le75;
 
     .line 5
     .line 6
@@ -39,19 +39,19 @@
 
 
 # virtual methods
-.method public final a()Ltr6;
+.method public final a()Lft6;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lfo2;->j:Li65;
+    iget-object p0, p0, Lfo2;->j:Le75;
 
     .line 2
     .line 3
-    iget-object p0, p0, Li65;->j:Lh66;
+    iget-object p0, p0, Le75;->j:Lt76;
 
     .line 4
     .line 5
-    invoke-interface {p0}, Lh66;->a()Ltr6;
+    invoke-interface {p0}, Lt76;->a()Lft6;
 
     .line 6
     .line 7
@@ -62,7 +62,7 @@
     return-object p0
 .end method
 
-.method public final b(Lld0;J)J
+.method public final b(Lgd0;J)J
     .locals 7
 
     .line 1
@@ -107,7 +107,7 @@
 
     .line 20
     :try_start_0
-    invoke-virtual {p1, v3}, Lld0;->K(I)Lur5;
+    invoke-virtual {p1, v3}, Lgd0;->K(I)Ljt5;
 
     .line 21
     .line 22
@@ -115,7 +115,7 @@
     move-result-object v3
 
     .line 24
-    iget v4, v3, Lur5;->c:I
+    iget v4, v3, Ljt5;->c:I
 
     .line 25
     .line 26
@@ -147,7 +147,7 @@
     .catch Ljava/util/zip/DataFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 38
-    iget-object v4, p0, Lfo2;->j:Li65;
+    iget-object v4, p0, Lfo2;->j:Le75;
 
     .line 39
     .line 40
@@ -160,7 +160,7 @@
     .line 43
     :cond_1
     :try_start_1
-    invoke-virtual {v4}, Li65;->b()Z
+    invoke-virtual {v4}, Le75;->b()Z
 
     .line 44
     .line 45
@@ -176,11 +176,11 @@
 
     .line 50
     :cond_2
-    iget-object p3, v4, Li65;->k:Lld0;
+    iget-object p3, v4, Le75;->k:Lgd0;
 
     .line 51
     .line 52
-    iget-object p3, p3, Lld0;->j:Lur5;
+    iget-object p3, p3, Lgd0;->j:Ljt5;
 
     .line 53
     .line 54
@@ -189,11 +189,11 @@
     .line 55
     .line 56
     .line 57
-    iget v5, p3, Lur5;->c:I
+    iget v5, p3, Ljt5;->c:I
 
     .line 58
     .line 59
-    iget v6, p3, Lur5;->b:I
+    iget v6, p3, Ljt5;->b:I
 
     .line 60
     .line 61
@@ -204,7 +204,7 @@
 
     .line 63
     .line 64
-    iget-object p3, p3, Lur5;->a:[B
+    iget-object p3, p3, Ljt5;->a:[B
 
     .line 65
     .line 66
@@ -214,11 +214,11 @@
     .line 68
     .line 69
     :goto_0
-    iget-object p3, v3, Lur5;->a:[B
+    iget-object p3, v3, Ljt5;->a:[B
 
     .line 70
     .line 71
-    iget v5, v3, Lur5;->c:I
+    iget v5, v3, Ljt5;->c:I
 
     .line 72
     .line 73
@@ -267,7 +267,7 @@
     int-to-long v5, p3
 
     .line 93
-    invoke-virtual {v4, v5, v6}, Li65;->z(J)V
+    invoke-virtual {v4, v5, v6}, Le75;->z(J)V
 
     .line 94
     .line 95
@@ -277,18 +277,18 @@
 
     .line 97
     .line 98
-    iget p0, v3, Lur5;->c:I
+    iget p0, v3, Ljt5;->c:I
 
     .line 99
     .line 100
     add-int/2addr p0, p2
 
     .line 101
-    iput p0, v3, Lur5;->c:I
+    iput p0, v3, Ljt5;->c:I
 
     .line 102
     .line 103
-    iget-wide v0, p1, Lld0;->k:J
+    iget-wide v0, p1, Lgd0;->k:J
 
     .line 104
     .line 105
@@ -298,7 +298,7 @@
     add-long/2addr v0, p2
 
     .line 107
-    iput-wide v0, p1, Lld0;->k:J
+    iput-wide v0, p1, Lgd0;->k:J
 
     .line 108
     .line 109
@@ -306,11 +306,11 @@
 
     .line 110
     :cond_4
-    iget p0, v3, Lur5;->b:I
+    iget p0, v3, Ljt5;->b:I
 
     .line 111
     .line 112
-    iget p2, v3, Lur5;->c:I
+    iget p2, v3, Ljt5;->c:I
 
     .line 113
     .line 114
@@ -318,7 +318,7 @@
 
     .line 115
     .line 116
-    invoke-virtual {v3}, Lur5;->a()Lur5;
+    invoke-virtual {v3}, Ljt5;->a()Ljt5;
 
     .line 117
     .line 118
@@ -326,11 +326,11 @@
     move-result-object p0
 
     .line 120
-    iput-object p0, p1, Lld0;->j:Lur5;
+    iput-object p0, p1, Lgd0;->j:Ljt5;
 
     .line 121
     .line 122
-    invoke-static {v3}, Lxr5;->a(Lur5;)V
+    invoke-static {v3}, Lmt5;->a(Ljt5;)V
     :try_end_1
     .catch Ljava/util/zip/DataFormatException; {:try_start_1 .. :try_end_1} :catch_0
 
@@ -363,7 +363,7 @@
 
     .line 134
     .line 135
-    invoke-static {p0}, Lmv1;->e(Ljava/lang/String;)V
+    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
 
     .line 136
     .line 137
@@ -376,7 +376,7 @@
 
     .line 140
     .line 141
-    invoke-static {p2, p3, p0}, Lxu1;->m(JLjava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, p3, p0}, Lpb1;->n(JLjava/lang/String;)Ljava/lang/String;
 
     .line 142
     .line 143
@@ -384,7 +384,7 @@
     move-result-object p0
 
     .line 145
-    invoke-static {p0}, Lmv1;->d(Ljava/lang/Object;)V
+    invoke-static {p0}, Ljv1;->d(Ljava/lang/Object;)V
 
     .line 146
     .line 147
@@ -424,11 +424,11 @@
 
     .line 13
     .line 14
-    iget-object p0, p0, Lfo2;->j:Li65;
+    iget-object p0, p0, Lfo2;->j:Le75;
 
     .line 15
     .line 16
-    invoke-virtual {p0}, Li65;->close()V
+    invoke-virtual {p0}, Le75;->close()V
 
     .line 17
     .line 18
@@ -436,7 +436,7 @@
     return-void
 .end method
 
-.method public final u(Lld0;J)J
+.method public final u(Lgd0;J)J
     .locals 4
 
     .line 1
@@ -446,7 +446,7 @@
     .line 3
     .line 4
     :goto_0
-    invoke-virtual {p0, p1, p2, p3}, Lfo2;->b(Lld0;J)J
+    invoke-virtual {p0, p1, p2, p3}, Lfo2;->b(Lgd0;J)J
 
     .line 5
     .line 6
@@ -502,11 +502,11 @@
 
     .line 30
     :cond_1
-    iget-object v0, p0, Lfo2;->j:Li65;
+    iget-object v0, p0, Lfo2;->j:Le75;
 
     .line 31
     .line 32
-    invoke-virtual {v0}, Li65;->b()Z
+    invoke-virtual {v0}, Le75;->b()Z
 
     .line 33
     .line 34

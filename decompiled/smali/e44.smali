@@ -1,135 +1,141 @@
-.class public final synthetic Le44;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lv52;
+.class public final Le44;
+.super Lva5;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final b:I
 
-.field public final synthetic k:Ljava/lang/String;
+.field public final c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field public final synthetic l:Ljava/lang/String;
-
-.field public final synthetic m:Ljava/lang/String;
+.field public final d:Ljava/util/concurrent/atomic/AtomicLong;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;IB)V
+.method public constructor <init>(ILjava/util/concurrent/atomic/AtomicBoolean;Ljava/util/concurrent/atomic/AtomicLong;)V
     .locals 0
 
     .line 1
-    iput-byte p5, p0, Le44;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Le44;->k:Ljava/lang/String;
-
     .line 4
+    iput p1, p0, Le44;->b:I
+
     .line 5
-    iput-object p2, p0, Le44;->l:Ljava/lang/String;
-
     .line 6
+    iput-object p2, p0, Le44;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
+
     .line 7
-    iput-object p3, p0, Le44;->m:Ljava/lang/String;
-
     .line 8
-    .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p3, p0, Le44;->d:Ljava/util/concurrent/atomic/AtomicLong;
 
+    .line 9
     .line 10
-    .line 11
-    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+.method public final a()J
+    .locals 2
 
     .line 1
-    iget-byte v0, p0, Le44;->j:B
+    iget p0, p0, Le44;->b:I
 
     .line 2
     .line 3
-    sget-object v1, Ld07;->a:Ld07;
+    int-to-long v0, p0
 
     .line 4
-    .line 5
-    const/4 v2, 0x1
+    return-wide v0
+.end method
 
+.method public final c(Ld75;)V
+    .locals 5
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    :goto_0
+    iget v1, p0, Le44;->b:I
+
+    .line 3
+    .line 4
+    if-ge v0, v1, :cond_1
+
+    .line 5
     .line 6
-    iget-object v3, p0, Le44;->m:Ljava/lang/String;
+    iget-object v2, p0, Le44;->c:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 7
     .line 8
-    iget-object v4, p0, Le44;->l:Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/util/concurrent/atomic/AtomicBoolean;->get()Z
 
     .line 9
     .line 10
-    iget-object p0, p0, Le44;->k:Ljava/lang/String;
-
     .line 11
+    move-result v2
+
     .line 12
-    check-cast p1, Lz01;
+    if-nez v2, :cond_0
 
     .line 13
     .line 14
-    check-cast p2, Ljava/lang/Integer;
+    const/high16 v2, 0x10000
 
     .line 15
     .line 16
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sub-int/2addr v1, v0
 
     .line 17
+    invoke-static {v2, v1}, Ljava/lang/Math;->min(II)I
+
     .line 18
     .line 19
-    packed-switch v0, :pswitch_data_0
-
     .line 20
-    .line 21
-    .line 22
-    invoke-static {v2}, Lkr5;->i0(I)I
+    move-result v1
 
+    .line 21
+    sget-object v2, Lo44;->e:[B
+
+    .line 22
     .line 23
+    invoke-virtual {p1, v0, v1, v2}, Ld75;->c(II[B)Lrd0;
+
     .line 24
     .line 25
-    move-result p2
-
     .line 26
-    invoke-static {p0, v4, v3, p1, p2}, Los2;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lz01;I)V
+    add-int/2addr v0, v1
 
     .line 27
+    iget-object v2, p0, Le44;->d:Ljava/util/concurrent/atomic/AtomicLong;
+
     .line 28
     .line 29
-    return-object v1
+    int-to-long v3, v1
 
     .line 30
-    :pswitch_0
-    invoke-static {v2}, Lkr5;->i0(I)I
+    invoke-virtual {v2, v3, v4}, Ljava/util/concurrent/atomic/AtomicLong;->addAndGet(J)J
 
     .line 31
     .line 32
     .line 33
-    move-result p2
+    goto :goto_0
 
     .line 34
-    invoke-static {p0, v4, v3, p1, p2}, Lns2;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lz01;I)V
+    :cond_0
+    const-string p0, "upload stopped"
 
     .line 35
     .line 36
+    invoke-static {p0}, Lvd1;->m(Ljava/lang/String;)V
+
     .line 37
-    return-object v1
-
     .line 38
-    nop
-
     .line 39
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    :cond_1
+    return-void
 .end method

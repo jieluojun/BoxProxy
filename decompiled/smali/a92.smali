@@ -1,347 +1,185 @@
-.class public abstract La92;
+.class public final synthetic La92;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Landroid/view/Choreographer$FrameCallback;
 
 
-# static fields
-.field public static final synthetic a:I
+# instance fields
+.field public final synthetic j:B
 
-.field private static volatile choreographer:Landroid/view/Choreographer;
+.field public final synthetic k:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Landroidx/profileinstaller/ProfileInstallerInitializer;Landroid/content/Context;)V
+    .locals 0
 
-    .line 1
-    :try_start_0
-    new-instance v0, Ly82;
-
-    .line 2
-    .line 3
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v1
-
-    .line 7
-    invoke-static {v1}, La92;->a(Landroid/os/Looper;)Landroid/os/Handler;
-
-    .line 8
-    .line 9
     .line 10
-    move-result-object v1
+    const/4 p1, 0x1
 
-    .line 11
-    invoke-direct {v0, v1}, Ly82;-><init>(Landroid/os/Handler;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iput-byte p1, p0, La92;->j:B
 
-    .line 12
-    .line 13
-    .line 14
-    goto :goto_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 15
-    :catchall_0
-    move-exception v0
+    iput-object p2, p0, La92;->k:Ljava/lang/Object;
 
-    .line 16
-    new-instance v1, Lwa5;
-
-    .line 17
-    .line 18
-    invoke-direct {v1, v0}, Lwa5;-><init>(Ljava/lang/Throwable;)V
-
-    .line 19
-    .line 20
-    .line 21
-    move-object v0, v1
-
-    .line 22
-    :goto_0
-    instance-of v1, v0, Lwa5;
-
-    .line 23
-    .line 24
-    if-eqz v1, :cond_0
-
-    .line 25
-    .line 26
-    const/4 v0, 0x0
-
-    .line 27
-    :cond_0
-    check-cast v0, Ly82;
-
-    .line 28
-    .line 29
     return-void
 .end method
 
-.method public static final a(Landroid/os/Looper;)Landroid/os/Handler;
+.method public synthetic constructor <init>(Lrh0;)V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    iput-byte v0, p0, La92;->j:B
+
+    .line 3
+    .line 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 5
+    .line 6
+    .line 7
+    iput-object p1, p0, La92;->k:Ljava/lang/Object;
+
+    .line 8
+    .line 9
+    return-void
+.end method
+
+
+# virtual methods
+.method public final doFrame(J)V
     .locals 3
 
     .line 1
-    const-class v0, Landroid/os/Looper;
+    iget-byte v0, p0, La92;->j:B
 
     .line 2
     .line 3
-    filled-new-array {v0}, [Ljava/lang/Class;
+    iget-object p0, p0, La92;->k:Ljava/lang/Object;
 
     .line 4
     .line 5
+    packed-switch v0, :pswitch_data_0
+
     .line 6
-    move-result-object v0
-
     .line 7
-    const-class v1, Landroid/os/Handler;
-
     .line 8
+    check-cast p0, Landroid/content/Context;
+
     .line 9
-    const-string v2, "createAsync"
-
     .line 10
-    .line 11
-    invoke-virtual {v1, v2, v0}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
+    .line 11
     .line 12
     .line 13
+    move-result-object p1
+
     .line 14
-    move-result-object v0
+    invoke-static {p1}, Landroid/os/Handler;->createAsync(Landroid/os/Looper;)Landroid/os/Handler;
 
     .line 15
-    const/4 v1, 0x0
-
     .line 16
-    filled-new-array {p0}, [Ljava/lang/Object;
-
     .line 17
-    .line 18
-    .line 19
-    move-result-object p0
+    move-result-object p1
 
+    .line 18
+    new-instance p2, Ljava/util/Random;
+
+    .line 19
     .line 20
-    invoke-virtual {v0, v1, p0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {p2}, Ljava/util/Random;-><init>()V
 
     .line 21
     .line 22
     .line 23
-    move-result-object p0
+    const/16 v0, 0x3e8
 
     .line 24
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 25
-    .line 26
-    .line 27
-    check-cast p0, Landroid/os/Handler;
-
-    .line 28
-    .line 29
-    return-object p0
-.end method
-
-.method public static final b(Lf9;)Ljava/lang/Object;
-    .locals 4
-
-    .line 1
-    sget-object v0, La92;->choreographer:Landroid/view/Choreographer;
-
-    .line 2
-    .line 3
     const/4 v1, 0x1
 
-    .line 4
-    if-eqz v0, :cond_0
-
-    .line 5
-    .line 6
-    new-instance v2, Lwh0;
-
-    .line 7
-    .line 8
-    invoke-static {p0}, Lra7;->L(Lc81;)Lc81;
-
-    .line 9
-    .line 10
-    .line 11
-    move-result-object p0
-
-    .line 12
-    invoke-direct {v2, v1, p0}, Lwh0;-><init>(ILc81;)V
-
-    .line 13
-    .line 14
-    .line 15
-    invoke-virtual {v2}, Lwh0;->t()V
-
-    .line 16
-    .line 17
-    .line 18
-    new-instance p0, Lz82;
-
-    .line 19
-    .line 20
-    invoke-direct {p0, v2}, Lz82;-><init>(Lwh0;)V
-
-    .line 21
-    .line 22
-    .line 23
-    invoke-virtual {v0, p0}, Landroid/view/Choreographer;->postFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
-
-    .line 24
-    .line 25
     .line 26
-    invoke-virtual {v2}, Lwh0;->q()Ljava/lang/Object;
+    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
 
     .line 27
     .line 28
     .line 29
-    move-result-object p0
+    move-result v0
 
     .line 30
-    return-object p0
+    invoke-virtual {p2, v0}, Ljava/util/Random;->nextInt(I)I
 
     .line 31
-    :cond_0
-    new-instance v0, Lwh0;
-
     .line 32
     .line 33
-    invoke-static {p0}, Lra7;->L(Lc81;)Lc81;
+    move-result p2
 
     .line 34
+    new-instance v0, Lpo;
+
     .line 35
     .line 36
-    move-result-object p0
+    const/4 v1, 0x2
 
     .line 37
-    invoke-direct {v0, v1, p0}, Lwh0;-><init>(ILc81;)V
+    invoke-direct {v0, p0, v1}, Lpo;-><init>(Landroid/content/Context;B)V
 
     .line 38
     .line 39
     .line 40
-    invoke-virtual {v0}, Lwh0;->t()V
+    add-int/lit16 p2, p2, 0x1388
 
     .line 41
     .line 42
+    int-to-long v1, p2
+
     .line 43
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
+    invoke-virtual {p1, v0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
     .line 44
     .line 45
     .line 46
-    move-result-object p0
+    return-void
 
     .line 47
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+    :pswitch_0
+    check-cast p0, Lrh0;
 
     .line 48
     .line 49
-    .line 50
-    move-result-object v1
+    sget-object v0, Llj1;->a:Lpf1;
 
+    .line 50
     .line 51
-    if-ne p0, v1, :cond_1
+    sget-object v0, Lhf3;->a:Lz82;
 
     .line 52
     .line 53
-    invoke-static {v0}, La92;->c(Lwh0;)V
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     .line 54
     .line 55
     .line 56
-    goto :goto_0
+    move-result-object p1
 
     .line 57
-    :cond_1
-    sget-object p0, Loj1;->a:Lsf1;
+    invoke-virtual {p0, v0, p1}, Lrh0;->C(Lua1;Ljava/lang/Object;)V
 
     .line 58
     .line 59
-    sget-object p0, Lse3;->a:Ly82;
-
     .line 60
-    .line 61
-    iget-object v1, v0, Lwh0;->n:Lwa1;
-
-    .line 62
-    .line 63
-    new-instance v2, Loa;
-
-    .line 64
-    .line 65
-    const/4 v3, 0x4
-
-    .line 66
-    invoke-direct {v2, v0, v3}, Loa;-><init>(Ljava/lang/Object;B)V
-
-    .line 67
-    .line 68
-    .line 69
-    invoke-virtual {p0, v1, v2}, Ly82;->H(Lwa1;Ljava/lang/Runnable;)V
-
-    .line 70
-    .line 71
-    .line 72
-    :goto_0
-    invoke-virtual {v0}, Lwh0;->q()Ljava/lang/Object;
-
-    .line 73
-    .line 74
-    .line 75
-    move-result-object p0
-
-    .line 76
-    return-object p0
-.end method
-
-.method public static final c(Lwh0;)V
-    .locals 2
-
-    .line 1
-    sget-object v0, La92;->choreographer:Landroid/view/Choreographer;
-
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
-
-    .line 4
-    .line 5
-    invoke-static {}, Landroid/view/Choreographer;->getInstance()Landroid/view/Choreographer;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object v0
-
-    .line 9
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 10
-    .line 11
-    .line 12
-    sput-object v0, La92;->choreographer:Landroid/view/Choreographer;
-
-    .line 13
-    .line 14
-    :cond_0
-    new-instance v1, Lz82;
-
-    .line 15
-    .line 16
-    invoke-direct {v1, p0}, Lz82;-><init>(Lwh0;)V
-
-    .line 17
-    .line 18
-    .line 19
-    invoke-virtual {v0, v1}, Landroid/view/Choreographer;->postFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
-
-    .line 20
-    .line 21
-    .line 22
     return-void
+
+    .line 61
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

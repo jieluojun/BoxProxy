@@ -1,26 +1,25 @@
-.class public final Lon;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final synthetic Lon;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ljz1;
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
-
-.field public final synthetic k:Lpn;
-
-.field public l:I
+.field public final synthetic a:B
 
 
 # direct methods
-.method public constructor <init>(Lpn;Ld81;)V
+.method public synthetic constructor <init>(B)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lon;->k:Lpn;
+    iput-byte p1, p0, Lon;->a:B
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
@@ -30,43 +29,37 @@
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke()F
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lon;->j:Ljava/lang/Object;
+    iget-byte p0, p0, Lon;->a:B
 
     .line 2
     .line 3
-    iget p1, p0, Lon;->l:I
+    packed-switch p0, :pswitch_data_0
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
+    const/4 p0, 0x0
+
     .line 7
-    or-int/2addr p1, v0
+    return p0
 
     .line 8
-    iput p1, p0, Lon;->l:I
+    :pswitch_0
+    const/4 p0, 0x0
 
     .line 9
+    return p0
+
     .line 10
-    iget-object p1, p0, Lon;->k:Lpn;
+    nop
 
     .line 11
-    .line 12
-    const/4 v0, 0x0
-
-    .line 13
-    invoke-virtual {p1, v0, v0, p0}, Lpn;->s(Landroid/content/Context;Lwm;Ld81;)Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p0
-
-    .line 17
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,193 +1,182 @@
-.class public final Lt55;
+.class public abstract Lt55;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
 
 
-# instance fields
-.field public final a:Ljava/lang/Number;
+# static fields
+.field public static final a:[I
 
-.field public final b:B
+.field public static final b:[I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Number;I)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p1, p0, Lt55;->a:Ljava/lang/Number;
-
-    .line 5
-    .line 6
-    iput-byte p2, p0, Lt55;->b:B
-
-    .line 7
-    .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
-
-    .line 1
-    if-eqz p1, :cond_1
-
-    .line 2
-    .line 3
-    const-class v0, Lt55;
-
-    .line 4
-    .line 5
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object v1
-
-    .line 9
-    if-eq v0, v1, :cond_0
-
-    .line 10
-    .line 11
-    goto :goto_0
-
-    .line 12
-    :cond_0
-    check-cast p1, Lt55;
-
-    .line 13
-    .line 14
-    iget-byte v0, p0, Lt55;->b:B
-
-    .line 15
-    .line 16
-    iget-byte v1, p1, Lt55;->b:B
-
-    .line 17
-    .line 18
-    if-ne v0, v1, :cond_1
-
-    .line 19
-    .line 20
-    iget-object p0, p0, Lt55;->a:Ljava/lang/Number;
-
-    .line 21
-    .line 22
-    iget-object p1, p1, Lt55;->a:Ljava/lang/Number;
-
-    .line 23
-    .line 24
-    invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 25
-    .line 26
-    .line 27
-    move-result p0
-
-    .line 28
-    if-eqz p0, :cond_1
-
-    .line 29
-    .line 30
-    const/4 p0, 0x1
-
-    .line 31
-    return p0
-
-    .line 32
-    :cond_1
-    :goto_0
-    const/4 p0, 0x0
-
-    .line 33
-    return p0
-.end method
-
-.method public final hashCode()I
+.method public static constructor <clinit>()V
     .locals 1
 
     .line 1
-    iget-byte v0, p0, Lt55;->b:B
+    const/16 v0, 0x41
 
     .line 2
     .line 3
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    new-array v0, v0, [I
 
     .line 4
     .line 5
+    fill-array-data v0, :array_0
+
     .line 6
-    move-result-object v0
-
     .line 7
-    iget-object p0, p0, Lt55;->a:Ljava/lang/Number;
-
     .line 8
-    .line 9
-    filled-new-array {p0, v0}, [Ljava/lang/Object;
+    sput-object v0, Lt55;->a:[I
 
+    .line 9
     .line 10
+    const/16 v0, 0x2b
+
     .line 11
     .line 12
-    move-result-object p0
+    new-array v0, v0, [I
 
     .line 13
-    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
-
     .line 14
+    fill-array-data v0, :array_1
+
     .line 15
     .line 16
-    move-result p0
-
     .line 17
-    return p0
-.end method
+    sput-object v0, Lt55;->b:[I
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    .line 1
-    iget-object v0, p0, Lt55;->a:Ljava/lang/Number;
-
-    .line 2
-    .line 3
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    const-string v1, ", radix="
-
-    .line 8
-    .line 9
-    const-string v2, "}"
-
-    .line 10
-    .line 11
-    iget-byte p0, p0, Lt55;->b:B
-
-    .line 12
-    .line 13
-    const-string v3, "RadixNumber{number="
-
-    .line 14
-    .line 15
-    invoke-static {p0, v3, v0, v1, v2}, Lv66;->m(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 16
-    .line 17
     .line 18
-    move-result-object p0
-
     .line 19
-    return-object p0
+    return-void
+
+    .line 20
+    nop
+
+    .line 21
+    :array_0
+    .array-data 4
+        0x7f0400d2
+        0x7f0400d3
+        0x7f0400d4
+        0x7f0400d5
+        0x7f0400d6
+        0x7f0400d7
+        0x7f0400d8
+        0x7f0400d9
+        0x7f0400da
+        0x7f0400db
+        0x7f0400dc
+        0x7f0400dd
+        0x7f0400de
+        0x7f0400df
+        0x7f0400e0
+        0x7f0400e1
+        0x7f0400e2
+        0x7f0400e3
+        0x7f0400e4
+        0x7f0400e5
+        0x7f0400e6
+        0x7f0400e7
+        0x7f0400e8
+        0x7f0400e9
+        0x7f0400ea
+        0x7f0400eb
+        0x7f0400fe
+        0x7f0400ff
+        0x7f040100
+        0x7f040101
+        0x7f040102
+        0x7f040103
+        0x7f040104
+        0x7f040105
+        0x7f040106
+        0x7f040107
+        0x7f040108
+        0x7f040109
+        0x7f04010a
+        0x7f04010f
+        0x7f040110
+        0x7f040111
+        0x7f040112
+        0x7f040113
+        0x7f040114
+        0x7f040115
+        0x7f040116
+        0x7f040117
+        0x7f040118
+        0x7f040119
+        0x7f04011a
+        0x7f04011b
+        0x7f04012a
+        0x7f04012b
+        0x7f04012c
+        0x7f04012d
+        0x7f04012e
+        0x7f04012f
+        0x7f040130
+        0x7f040131
+        0x7f040132
+        0x7f040133
+        0x7f040134
+        0x7f040135
+        0x7f040136
+    .end array-data
+
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    :array_1
+    .array-data 4
+        0x7f0400ce
+        0x7f0400cf
+        0x7f0400d0
+        0x7f0400d1
+        0x7f0400ec
+        0x7f0400ed
+        0x7f0400ee
+        0x7f0400ef
+        0x7f0400f0
+        0x7f0400f1
+        0x7f0400f2
+        0x7f0400f3
+        0x7f0400f4
+        0x7f0400f5
+        0x7f0400f6
+        0x7f0400f7
+        0x7f0400f8
+        0x7f0400f9
+        0x7f0400fa
+        0x7f0400fb
+        0x7f0400fc
+        0x7f0400fd
+        0x7f04010b
+        0x7f04010c
+        0x7f04010d
+        0x7f04010e
+        0x7f04011c
+        0x7f04011d
+        0x7f04011e
+        0x7f04011f
+        0x7f040120
+        0x7f040121
+        0x7f040122
+        0x7f040123
+        0x7f040124
+        0x7f040125
+        0x7f040126
+        0x7f040127
+        0x7f040128
+        0x7f040129
+        0x7f040137
+        0x7f040138
+        0x7f040139
+    .end array-data
 .end method

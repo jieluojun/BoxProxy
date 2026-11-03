@@ -1,150 +1,150 @@
 .class public final Lcg0;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lh66;
+.super Lj92;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final j:Ljava/nio/ByteBuffer;
+.field public final o:[B
 
-.field public final k:I
+.field public final p:I
+
+.field public final q:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/nio/ByteBuffer;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lj92;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    invoke-virtual {p1}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
+    const/4 v0, 0x0
 
     .line 5
+    iput-object v0, p0, Lcg0;->o:[B
+
     .line 6
     .line 7
-    move-result-object p1
+    const/4 v0, 0x0
 
     .line 8
-    iput-object p1, p0, Lcg0;->j:Ljava/nio/ByteBuffer;
+    iput v0, p0, Lcg0;->q:I
 
     .line 9
     .line 10
-    invoke-virtual {p1}, Ljava/nio/Buffer;->capacity()I
+    iput v0, p0, Lcg0;->p:I
 
     .line 11
     .line 12
+    return-void
+.end method
+
+.method public constructor <init>(ILj92;Ljava/lang/Object;[BIILj92;)V
+    .locals 0
+
     .line 13
-    move-result p1
+    invoke-direct {p0, p1, p2, p3, p7}, Lj92;-><init>(ILj92;Ljava/lang/Object;Lj92;)V
 
     .line 14
-    iput p1, p0, Lcg0;->k:I
+    iput-object p4, p0, Lcg0;->o:[B
 
     .line 15
+    iput p5, p0, Lcg0;->p:I
+
     .line 16
+    iput p6, p0, Lcg0;->q:I
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ltr6;
-    .locals 0
+.method public final b(II[B)Z
+    .locals 5
 
     .line 1
-    sget-object p0, Ltr6;->d:Lsr6;
+    iget v0, p0, Lcg0;->q:I
 
     .line 2
     .line 3
-    return-object p0
-.end method
-
-.method public final close()V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method public final u(Lld0;J)J
-    .locals 3
-
-    .line 1
-    iget-object v0, p0, Lcg0;->j:Ljava/nio/ByteBuffer;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/nio/Buffer;->position()I
+    iget v1, p0, Lcg0;->p:I
 
     .line 4
     .line 5
-    .line 6
-    move-result v1
+    sub-int v2, v0, v1
 
+    .line 6
     .line 7
-    iget p0, p0, Lcg0;->k:I
+    sub-int/2addr p2, p1
 
     .line 8
+    const/4 v3, 0x0
+
     .line 9
-    if-ne v1, p0, :cond_0
+    if-eq v2, p2, :cond_0
 
     .line 10
     .line 11
-    const-wide/16 p0, -0x1
+    return v3
 
     .line 12
-    .line 13
-    return-wide p0
-
-    .line 14
     :cond_0
-    invoke-virtual {v0}, Ljava/nio/Buffer;->position()I
+    iget-object p0, p0, Lcg0;->o:[B
+
+    .line 13
+    .line 14
+    const/4 p2, 0x1
 
     .line 15
+    if-ne p0, p3, :cond_1
+
     .line 16
     .line 17
-    move-result v1
+    return p2
 
     .line 18
-    int-to-long v1, v1
+    :cond_1
+    :goto_0
+    if-ge v1, v0, :cond_3
 
     .line 19
-    add-long/2addr v1, p2
-
     .line 20
-    long-to-int p2, v1
+    add-int/lit8 v2, v1, 0x1
 
     .line 21
-    if-le p2, p0, :cond_1
-
     .line 22
-    .line 23
-    goto :goto_0
+    aget-byte v1, p0, v1
 
+    .line 23
     .line 24
-    :cond_1
-    move p0, p2
+    add-int/lit8 v4, p1, 0x1
 
     .line 25
-    :goto_0
-    invoke-virtual {v0, p0}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
-
     .line 26
+    aget-byte p1, p3, p1
+
     .line 27
     .line 28
-    invoke-virtual {p1, v0}, Lld0;->write(Ljava/nio/ByteBuffer;)I
+    if-eq v1, p1, :cond_2
 
     .line 29
     .line 30
+    return v3
+
     .line 31
-    move-result p0
+    :cond_2
+    move v1, v2
 
     .line 32
-    int-to-long p0, p0
+    move p1, v4
 
     .line 33
-    return-wide p0
+    goto :goto_0
+
+    .line 34
+    :cond_3
+    return p2
 .end method

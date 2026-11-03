@@ -5,7 +5,7 @@
 # Glue between the existing (root based) app code and the non-root VPN run mode.
 #
 #   control(action)   service up/down/restart   (hooked into Lgg2;->a)
-#   beforeSave(ya0)   run-mode switching        (hooked into Llb0;->q)
+#   beforeSave(ya0)   run-mode switching        (hooked into Lgb0;->q)
 #   key(mode)         Compose remember key      (VPN shares TUN's ordinal)
 
 
@@ -54,11 +54,11 @@
     const/4 v1, 0x0
 
     :try_start_0
-    invoke-static {}, Llb0;->g()Lya0;
+    invoke-static {}, Lgb0;->g()Lta0;
 
     move-result-object v0
 
-    iget-object v0, v0, Lya0;->b:Ljava/lang/String;
+    iget-object v0, v0, Lta0;->b:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/box/app/vpn/VpnBridge;->isVpn(Ljava/lang/String;)Z
 
@@ -80,14 +80,14 @@
 .end method
 
 # Compose "changed" key for a run mode. VPN reuses TUN's ordinal, so make it distinct.
-.method public static key(Lv25;)I
+.method public static key(Ls35;)I
     .locals 2
 
     invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
 
     move-result v0
 
-    sget-object v1, Lv25;->t:Lv25;
+    sget-object v1, Ls35;->t:Ls35;
 
     if-ne p0, v1, :cond_not_vpn
 
@@ -100,7 +100,7 @@
 .method public static ctx()Landroid/content/Context;
     .locals 1
 
-    invoke-static {}, Lsa7;->p()Landroid/content/Context;
+    invoke-static {}, Lns6;->o()Landroid/content/Context;
 
     move-result-object v0
 
@@ -292,11 +292,11 @@
 
     :cond_try
     :try_start_0
-    invoke-static {}, Llb0;->k()Lab0;
+    invoke-static {}, Lgb0;->k()Lva0;
 
     move-result-object v1
 
-    iget-object v1, v1, Lab0;->c:Ljava/io/File;
+    iget-object v1, v1, Lva0;->c:Ljava/io/File;
 
     new-instance v2, Ljava/io/File;
 
@@ -365,7 +365,7 @@
     :try_start_0
     const-string v0, "down"
 
-    invoke-static {v0}, Llb0;->c(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lgb0;->c(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
@@ -612,11 +612,11 @@
 
     if-ge v0, v1, :cond_go
 
-    invoke-static {}, Llb0;->g()Lya0;
+    invoke-static {}, Lgb0;->g()Lta0;
 
     move-result-object v1
 
-    iget-object v1, v1, Lya0;->b:Ljava/lang/String;
+    iget-object v1, v1, Lta0;->b:Ljava/lang/String;
 
     invoke-virtual {p0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -652,19 +652,19 @@
     return-void
 .end method
 
-# Hook at the start of Llb0;->q (settings save): switches between the root core
+# Hook at the start of Lgb0;->q (settings save): switches between the root core
 # and the VPN core when the run mode changes, so the proxy keeps running.
-.method public static beforeSave(Lya0;)V
+.method public static beforeSave(Lta0;)V
     .locals 6
 
     :try_start_0
-    invoke-static {}, Llb0;->g()Lya0;
+    invoke-static {}, Lgb0;->g()Lta0;
 
     move-result-object v0
 
-    iget-object v0, v0, Lya0;->b:Ljava/lang/String;
+    iget-object v0, v0, Lta0;->b:Ljava/lang/String;
 
-    iget-object v1, p0, Lya0;->b:Ljava/lang/String;
+    iget-object v1, p0, Lta0;->b:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/box/app/vpn/VpnBridge;->isVpn(Ljava/lang/String;)Z
 
@@ -675,7 +675,7 @@
     move-result v3
 
     # mirror of "boot auto-start" and the run mode for the restart logic (read on the main thread)
-    invoke-static {p0, v3}, Lcom/box/app/vpn/VpnPrefs;->mirror(Lya0;Z)V
+    invoke-static {p0, v3}, Lcom/box/app/vpn/VpnPrefs;->mirror(Lta0;Z)V
 
     if-eq v2, v3, :cond_end
 
@@ -730,14 +730,14 @@
 .end method
 
 # String resource id of the "VPN" label for the VPN run mode, 0 for the others.
-.method public static modeRes(Lv25;)I
+.method public static modeRes(Ls35;)I
     .locals 2
 
-    sget-object v0, Lv25;->t:Lv25;
+    sget-object v0, Ls35;->t:Ls35;
 
     if-ne p0, v0, :cond_no
 
-    const v1, 0x7f0f04a8
+    const v1, 0x7f0f050a
 
     return v1
 
@@ -752,11 +752,11 @@
     .locals 4
 
     :try_start_0
-    invoke-static {}, Llb0;->k()Lab0;
+    invoke-static {}, Lgb0;->k()Lva0;
 
     move-result-object v0
 
-    iget-object v1, v0, Lab0;->f:Ljava/io/File;
+    iget-object v1, v0, Lva0;->f:Ljava/io/File;
 
     invoke-virtual {v1}, Ljava/io/File;->isFile()Z
 
@@ -810,11 +810,11 @@
 
     if-eqz v3, :cond_err
 
-    invoke-static {}, Llb0;->k()Lab0;
+    invoke-static {}, Lgb0;->k()Lva0;
 
     move-result-object v3
 
-    iget-object v4, v3, Lab0;->c:Ljava/io/File;
+    iget-object v4, v3, Lva0;->c:Ljava/io/File;
 
     new-instance v5, Ljava/io/File;
 
@@ -832,7 +832,7 @@
 
     invoke-static {v4, v5}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
 
-    iget-object v5, v3, Lab0;->f:Ljava/io/File;
+    iget-object v5, v3, Lva0;->f:Ljava/io/File;
 
     invoke-static {v4, v5}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
 
@@ -842,17 +842,17 @@
 
     invoke-static {v4, v5}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
 
-    invoke-virtual {v3}, Lab0;->d()Ljava/io/File;
+    invoke-virtual {v3}, Lva0;->d()Ljava/io/File;
 
     move-result-object v5
 
     invoke-static {v4, v5}, Lcom/box/app/vpn/VpnShell;->add(Ljava/util/ArrayList;Ljava/io/File;)V
 
-    invoke-static {}, Llb0;->g()Lya0;
+    invoke-static {}, Lgb0;->g()Lta0;
 
     move-result-object v5
 
-    iget-object v5, v5, Lya0;->a:Ljava/lang/String;
+    iget-object v5, v5, Lta0;->a:Ljava/lang/String;
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -939,11 +939,11 @@
 .method public static syncDb()Ljava/io/File;
     .locals 9
 
-    invoke-static {}, Llb0;->k()Lab0;
+    invoke-static {}, Lgb0;->k()Lva0;
 
     move-result-object v0
 
-    iget-object v1, v0, Lab0;->e:Ljava/io/File;
+    iget-object v1, v0, Lva0;->e:Ljava/io/File;
 
     :try_start_0
     invoke-static {}, Lcom/box/app/vpn/VpnBridge;->ctx()Landroid/content/Context;

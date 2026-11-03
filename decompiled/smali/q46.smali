@@ -1,84 +1,208 @@
 .class public final Lq46;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
+.field public final a:Lo52;
 
-.field public final synthetic k:Lr46;
-
-.field public l:I
+.field public final b:Lry1;
 
 
 # direct methods
-.method public constructor <init>(Lr46;Ld81;)V
+.method public constructor <init>(Lry1;Lo52;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lq46;->k:Lr46;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
-
     .line 4
+    iput-object p2, p0, Lq46;->a:Lo52;
+
     .line 5
     .line 6
+    iput-object p1, p0, Lq46;->b:Lry1;
+
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
     .line 1
-    iput-object p1, p0, Lq46;->j:Ljava/lang/Object;
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    iget p1, p0, Lq46;->l:I
+    if-ne p0, p1, :cond_0
 
+    .line 3
     .line 4
+    return v0
+
     .line 5
-    const/high16 v0, -0x80000000
+    :cond_0
+    instance-of v1, p1, Lq46;
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    const/4 v2, 0x0
 
     .line 8
-    iput p1, p0, Lq46;->l:I
+    if-nez v1, :cond_1
 
     .line 9
     .line 10
-    const/4 v3, 0x0
+    return v2
 
     .line 11
-    const/4 v4, 0x0
+    :cond_1
+    check-cast p1, Lq46;
 
     .line 12
-    iget-object v0, p0, Lq46;->k:Lr46;
-
     .line 13
-    .line 14
-    const/4 v1, 0x0
+    iget-object v1, p1, Lq46;->a:Lo52;
 
+    .line 14
     .line 15
-    const/4 v2, 0x0
+    iget-object v3, p0, Lq46;->a:Lo52;
 
     .line 16
-    move-object v5, p0
-
     .line 17
-    invoke-virtual/range {v0 .. v5}, Lr46;->d(Lnq5;FFLo46;Ld81;)Ljava/lang/Object;
+    if-ne v3, v1, :cond_2
 
     .line 18
     .line 19
+    iget-object p0, p0, Lq46;->b:Lry1;
+
     .line 20
-    move-result-object p0
+    .line 21
+    iget-object p1, p1, Lq46;->b:Lry1;
+
+    .line 22
+    .line 23
+    invoke-static {p0, p1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 24
+    .line 25
+    .line 26
+    move-result p0
+
+    .line 27
+    if-eqz p0, :cond_2
+
+    .line 28
+    .line 29
+    return v0
+
+    .line 30
+    :cond_2
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lq46;->a:Lo52;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 8
+    .line 9
+    iget-object p0, p0, Lq46;->b:Lry1;
+
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    add-int/2addr p0, v0
+
+    .line 16
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "SlideConfig(slideOffset="
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object v1, p0, Lq46;->a:Lo52;
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const-string v1, ", animationSpec="
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    iget-object p0, p0, Lq46;->b:Lry1;
+
+    .line 19
+    .line 20
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 21
+    .line 22
+    .line 23
+    const-string p0, ")"
+
+    .line 24
+    .line 25
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 26
+    .line 27
+    .line 28
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
     return-object p0
 .end method

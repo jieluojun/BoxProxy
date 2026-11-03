@@ -1,23 +1,11 @@
-.class public interface abstract Lml1;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lml1;
+.super Loc7;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# virtual methods
-.method public abstract O(Lfl1;)V
-.end method
+# instance fields
+.field public e:Lll1;
 
-.method public abstract Q(Lfl1;)V
-.end method
+.field public f:Z
 
-.method public abstract e1(Lfl1;)Z
-.end method
-
-.method public abstract j0(Lfl1;)V
-.end method
-
-.method public abstract n0(Lfl1;)V
-.end method
-
-.method public abstract q0(Lfl1;)V
-.end method
+.field public g:Z

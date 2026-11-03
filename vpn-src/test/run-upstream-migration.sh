@@ -11,8 +11,12 @@ APKTOOL_JAR=$(realpath "$APKTOOL_JAR")
 ENJARIFY=$(realpath "$ENJARIFY")
 tmp=$(mktemp -d)
 trap 'rm -rf "$tmp"' EXIT
-python3 scripts/migrate_upstream.py --output "$tmp/stage"
-project="$tmp/stage/decompiled"
+if [[ -n "${BOXPROXY_TEST_PROJECT:-}" ]]; then
+    project=$(realpath "$BOXPROXY_TEST_PROJECT")
+else
+    python3 scripts/migrate_upstream.py --output "$tmp/stage"
+    project="$tmp/stage/decompiled"
+fi
 mkdir -p "$tmp/smali" "$tmp/classes" "$tmp/tools" "$tmp/src"
 cp "$project/smali/ta0.smali" "$project/smali/com/box/app/vpn/CoreConfigHistory.smali" \
     "$project/smali/com/box/app/vpn/BoxctlFix.smali" "$project/smali/com/box/app/cfg/LdFix.smali" "$tmp/smali/"
@@ -45,4 +49,6 @@ mapfile -t sources < <(find "$tmp/src" -name '*.java' | sort)
 BOXPROXY_TEST_PROJECT="$project" BOXPROXY_TEST_PROBE_CLASS=lt0 \
     python3 -m unittest discover -s vpn-src/test -p 'test_core_version.py' -v
 python3 -m unittest discover -s vpn-src/test -p 'test_upstream_migration.py' -v
+python3 -m unittest discover -s vpn-src/test -p 'test_core_config_history.py' -v
+python3 -m unittest discover -s vpn-src/test -p 'test_full_migration.py' -v
 "$JAVA" -Xmx2g -cp "$tmp/tools:$APKTOOL_JAR" Assemble "$tmp/all.dex" "$project/smali"

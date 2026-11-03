@@ -1,93 +1,130 @@
-.class public final synthetic Lpy5;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lpy5;
+.super Landroid/text/style/CharacterStyle;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lg52;
+.implements Landroid/text/style/UpdateAppearance;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final j:Loy5;
 
-.field public final synthetic k:Lby5;
+.field public final k:F
 
-.field public final synthetic l:Lxx5;
+.field public final l:Lgl4;
+
+.field public final m:Lhh1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lby5;Lxx5;B)V
-    .locals 0
+.method public constructor <init>(Loy5;F)V
+    .locals 2
 
     .line 1
-    iput-byte p3, p0, Lpy5;->j:B
+    invoke-direct {p0}, Landroid/text/style/CharacterStyle;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lpy5;->k:Lby5;
-
     .line 4
+    iput-object p1, p0, Lpy5;->j:Loy5;
+
     .line 5
-    iput-object p2, p0, Lpy5;->l:Lxx5;
-
     .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lpy5;->k:F
 
+    .line 7
     .line 8
+    new-instance p1, Lg46;
+
     .line 9
     .line 10
+    const-wide v0, 0x7fc000007fc00000L    # 2.247117487993712E307
+
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    invoke-direct {p1, v0, v1}, Lg46;-><init>(J)V
+
+    .line 16
+    .line 17
+    .line 18
+    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object p1
+
+    .line 22
+    iput-object p1, p0, Lpy5;->l:Lgl4;
+
+    .line 23
+    .line 24
+    new-instance p1, Luo5;
+
+    .line 25
+    .line 26
+    const/16 p2, 0x9
+
+    .line 27
+    .line 28
+    invoke-direct {p1, p0, p2}, Luo5;-><init>(Ljava/lang/Object;B)V
+
+    .line 29
+    .line 30
+    .line 31
+    invoke-static {p1}, Ly66;->b(Ld52;)Lhh1;
+
+    .line 32
+    .line 33
+    .line 34
+    move-result-object p1
+
+    .line 35
+    iput-object p1, p0, Lpy5;->m:Lhh1;
+
+    .line 36
+    .line 37
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
+.method public final updateDrawState(Landroid/text/TextPaint;)V
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Lpy5;->j:B
+    iget v0, p0, Lpy5;->k:F
 
     .line 2
     .line 3
-    sget-object v1, Ld07;->a:Ld07;
+    invoke-static {p1, v0}, Loc7;->c0(Landroid/text/TextPaint;F)V
 
     .line 4
     .line 5
-    iget-object v2, p0, Lpy5;->l:Lxx5;
-
     .line 6
+    iget-object p0, p0, Lpy5;->m:Lhh1;
+
     .line 7
-    iget-object p0, p0, Lpy5;->k:Lby5;
-
     .line 8
-    .line 9
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p0}, Lhh1;->getValue()Ljava/lang/Object;
 
+    .line 9
     .line 10
     .line 11
+    move-result-object p0
+
     .line 12
-    invoke-virtual {p0, v2}, Lby5;->c(Lxx5;)V
+    check-cast p0, Landroid/graphics/Shader;
 
     .line 13
     .line 14
+    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+
     .line 15
-    return-object v1
-
     .line 16
-    :pswitch_0
-    invoke-virtual {p0, v2}, Lby5;->c(Lxx5;)V
-
     .line 17
-    .line 18
-    .line 19
-    return-object v1
-
-    .line 20
-    nop
-
-    .line 21
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

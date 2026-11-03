@@ -1,9 +1,9 @@
 .class public final Lbo2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Li86;
+.implements Lu96;
 
 
 # instance fields
@@ -11,9 +11,9 @@
 
 .field public k:Ljava/lang/Float;
 
-.field public final l:Llk4;
+.field public final l:Lgl4;
 
-.field public m:Lmh6;
+.field public m:Lxi6;
 
 .field public n:Z
 
@@ -46,7 +46,7 @@
 
     .line 9
     .line 10
-    invoke-static {p2}, Le43;->b0(Ljava/lang/Object;)Llk4;
+    invoke-static {p2}, Lg23;->M(Ljava/lang/Object;)Lgl4;
 
     .line 11
     .line 12
@@ -54,11 +54,11 @@
     move-result-object p1
 
     .line 14
-    iput-object p1, p0, Lbo2;->l:Llk4;
+    iput-object p1, p0, Lbo2;->l:Lgl4;
 
     .line 15
     .line 16
-    new-instance v0, Lmh6;
+    new-instance v0, Lxi6;
 
     .line 17
     .line 18
@@ -73,19 +73,19 @@
     const/4 v5, 0x0
 
     .line 23
-    sget-object v2, Lb27;->a:Lhw6;
+    sget-object v2, Lf47;->a:Liy6;
 
     .line 24
     .line 25
     move-object v1, p4
 
     .line 26
-    invoke-direct/range {v0 .. v5}, Lmh6;-><init>(Lqh;Lhw6;Ljava/lang/Object;Ljava/lang/Object;Lwh;)V
+    invoke-direct/range {v0 .. v5}, Lxi6;-><init>(Lnh;Liy6;Ljava/lang/Object;Ljava/lang/Object;Lth;)V
 
     .line 27
     .line 28
     .line 29
-    iput-object v0, p0, Lbo2;->m:Lmh6;
+    iput-object v0, p0, Lbo2;->m:Lxi6;
 
     .line 30
     .line 31
@@ -98,11 +98,11 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lbo2;->l:Llk4;
+    iget-object p0, p0, Lbo2;->l:Lgl4;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Llk4;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lgl4;->getValue()Ljava/lang/Object;
 
     .line 4
     .line 5

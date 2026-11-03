@@ -1,135 +1,135 @@
-.class public final Lty6;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lsw2;
-
-
-# static fields
-.field public static final a:Lty6;
-
-.field public static final b:Llo2;
+.class public Lty6;
+.super Lky6;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>()V
+    .locals 0
 
     .line 1
-    new-instance v0, Lty6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 4
-    .line 5
-    .line 6
-    sput-object v0, Lty6;->a:Lty6;
-
-    .line 7
-    .line 8
-    const-string v0, "kotlin.UShort"
-
-    .line 9
-    .line 10
-    sget-object v1, Lo16;->a:Lo16;
-
-    .line 11
-    .line 12
-    invoke-static {v0, v1}, Lc;->j(Ljava/lang/String;Lsw2;)Llo2;
-
-    .line 13
-    .line 14
-    .line 15
-    move-result-object v0
-
-    .line 16
-    sput-object v0, Lty6;->b:Llo2;
-
-    .line 17
-    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lae1;)Ljava/lang/Object;
-    .locals 0
+.method public final b(Lhw2;)Ljava/lang/Object;
+    .locals 4
 
     .line 1
-    sget-object p0, Lty6;->b:Llo2;
+    invoke-virtual {p1}, Lhw2;->L()I
 
     .line 2
     .line 3
-    invoke-interface {p1, p0}, Lae1;->w(Lov5;)Lae1;
-
     .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    invoke-interface {p0}, Lae1;->z()S
-
-    .line 8
-    .line 9
-    .line 10
     move-result p0
 
-    .line 11
-    new-instance p1, Lpy6;
-
-    .line 12
-    .line 13
-    invoke-direct {p1, p0}, Lpy6;-><init>(S)V
-
-    .line 14
-    .line 15
-    .line 16
-    return-object p1
-.end method
-
-.method public final c()Lov5;
-    .locals 0
-
-    .line 1
-    sget-object p0, Lty6;->b:Llo2;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final d(Lm96;Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    check-cast p2, Lpy6;
-
-    .line 2
-    .line 3
-    iget-short p0, p2, Lpy6;->j:S
-
-    .line 4
     .line 5
-    sget-object p2, Lty6;->b:Llo2;
+    const/16 v0, 0x9
 
     .line 6
     .line 7
-    invoke-virtual {p1, p2}, Lm96;->h(Lov5;)Lm96;
+    if-ne p0, v0, :cond_0
 
     .line 8
     .line 9
+    invoke-virtual {p1}, Lhw2;->H()V
+
     .line 10
+    .line 11
+    .line 12
+    const/4 p0, 0x0
+
+    .line 13
+    return-object p0
+
+    .line 14
+    :cond_0
+    invoke-virtual {p1}, Lhw2;->J()Ljava/lang/String;
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-object p0
+
+    .line 18
+    :try_start_0
+    invoke-static {p0}, Leg3;->h(Ljava/lang/String;)V
+
+    .line 19
+    .line 20
+    .line 21
+    new-instance v0, Ljava/math/BigInteger;
+
+    .line 22
+    .line 23
+    invoke-direct {v0, p0}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 24
+    .line 25
+    .line 26
+    return-object v0
+
+    .line 27
+    :catch_0
+    move-exception v0
+
+    .line 28
+    new-instance v1, Lov2;
+
+    .line 29
+    .line 30
+    const-string v2, "Failed parsing \'"
+
+    .line 31
+    .line 32
+    const-string v3, "\' as BigInteger; at path "
+
+    .line 33
+    .line 34
+    invoke-static {v2, p0, v3}, Lh86;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 35
+    .line 36
+    .line 37
+    move-result-object p0
+
+    .line 38
+    const/4 v2, 0x1
+
+    .line 39
+    invoke-virtual {p1, v2}, Lhw2;->p(Z)Ljava/lang/String;
+
+    .line 40
+    .line 41
+    .line 42
     move-result-object p1
 
-    .line 11
-    invoke-virtual {p1, p0}, Lm96;->p(S)V
+    .line 43
+    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 12
-    .line 13
-    .line 14
-    return-void
+    .line 44
+    .line 45
+    .line 46
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 47
+    .line 48
+    .line 49
+    move-result-object p0
+
+    .line 50
+    invoke-direct {v1, p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 51
+    .line 52
+    .line 53
+    throw v1
 .end method

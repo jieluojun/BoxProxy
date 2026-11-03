@@ -1,5 +1,7 @@
 # vpn-src
 
+> 当前运行工程为 26.11.02.534f30c / 134，已完成定制迁移。下文早期真机记录针对旧版，**不表示 134 已通过 Android 真机验证**。本次范围和测试见 [完整迁移说明](../upstream/26.11.02.534f30c/migration/README.md)。
+
 `decompiled/smali/com/box/app/vpn/` 里的 `VpnPump*`、`VpnTags`、`VpnNet*`、`VpnSb*`、`VpnRoot*`、`SbConfig*`、`XrConfig`、`HyConfig` 的 smali 是由这里的 Java 源码生成的
 （apktool 工程里没有 Java 编译步骤，所以提交的是生成物）。
 
@@ -25,7 +27,7 @@
 `stubs/` 是编译占位（`CfgGlue`、`Toast`、`Immutable`）、`app/` 是原生 View 界面。生成物在 `decompiled/smali/`
 （`com/box/app/cfg`、`top/yukonga`、`kotlin`、`androidx/compose/runtime`）；一键重新生成：`tools/build-cfg.sh`（环境变量见脚本头部）。
 流程：kotlinc（`-Xlambdas=class -Xsam-conversions=class`）→ `prune.py` 裁 stdlib 类 → D8（`--no-desugaring`）→ baksmali（`tools/Bk.java`）→ `prune_smali.py` 方法级裁剪。
-真实的 `CfgGlue`、`CfgNav`、`CfgIcon`、`CfgClick` 是手写 smali（要碰混淆后的 Compose 与编辑器视图模型 `Lmj5`），不会被脚本覆盖。
+真实的 `CfgGlue`、`CfgNav`、`CfgIcon`、`CfgClick` 是手写 smali（要碰混淆后的 Compose 与编辑器视图模型 `Lxk5`），不会被脚本覆盖。
 
 ### 工具链（不提交二进制）
 
@@ -48,14 +50,14 @@ harness：`build.sh` 里的 `SbTest` / `sbflow` / `sb` 随机点击；`pruned.sh
 
 `boxctl` 和核心都在 `Android/data/<包名>/files/box/bin/`（外部存储）。部分机型 / root 方案下 su 看到的 `/storage/emulated/…` 不让执行，报
 `…/boxctl: can't execute: Permission denied`，或 boxctl 起核心时 `execute …/bin/mihomo failed: Permission denied (os error 13)`。
-同一批文件在真实路径 `/data/media/<用户>/…` 下可以执行。`lb0.c`（拼 boxctl 命令的唯一入口）经 `com.box.app.vpn.BoxctlFix.wrap` 处理：
+同一批文件在真实路径 `/data/media/<用户>/…` 下可以执行。`gb0.c`（拼 boxctl 命令的唯一入口）经 `com.box.app.vpn.BoxctlFix.wrap` 处理：
 boxctl 本来能执行就原样运行（不改变现有设备）；否则改用 `/data/media/<用户>/…/bin/boxctl`（chmod 755），并给它 `--home /data/media/<用户>/…/box`，
 让它起核心时也走真实路径。开机脚本里同样处理（等待条件由 `-x` 改成 `-f`）。
 （早先还试过「复制到应用私有目录 + linker64」和「126 时重试」的回退，真机上只需要走真实路径，已去掉。）**只在一台受影响的真机上验证过。**
 
 ## root 模式：详情页的内核版本探测
 
-`qt0.smali` 的系统详情探测原来直接运行内核，不经过 boxctl 命令入口，因此漏掉了启动时的真实路径和动态库处理。
+`lt0.smali` 的系统详情探测原来直接运行内核，不经过 boxctl 命令入口，因此漏掉了启动时的真实路径和动态库处理。
 现在版本探测先尝试 `/storage/emulated/<用户>/…` 对应的 `/data/media/<用户>/…`（不存在或不可执行时保留原路径），
 再由 `LdFix.wrapProbe` 提供与启动共用的 `bpld` 函数和 seed，为动态内核补上 `LD_LIBRARY_PATH`。
 整个探测在子 shell 内运行，不污染常驻 su 会话。sing-box 优先调用 `version`，mihomo 保持 `--version` 优先；

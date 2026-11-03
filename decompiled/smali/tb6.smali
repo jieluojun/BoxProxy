@@ -1,71 +1,179 @@
 .class public final Ltb6;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# static fields
+.field public static final d:Ltb6;
 
 
 # instance fields
-.field public j:Ll86;
+.field public final a:I
 
-.field public synthetic k:Ljava/lang/Object;
+.field public final b:I
 
-.field public final synthetic l:Lub6;
-
-.field public m:I
+.field public final c:I
 
 
 # direct methods
-.method public constructor <init>(Lub6;Ld81;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    iput-object p1, p0, Ltb6;->l:Lub6;
+    new-instance v0, Ltb6;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
+    const/4 v1, -0x1
 
     .line 4
+    const/4 v2, 0x0
+
+    .line 5
+    invoke-direct {v0, v1, v2, v2}, Ltb6;-><init>(III)V
+
+    .line 6
+    .line 7
+    .line 8
+    sput-object v0, Ltb6;->d:Ltb6;
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+.method public constructor <init>(III)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput p1, p0, Ltb6;->a:I
+
     .line 5
     .line 6
+    iput p2, p0, Ltb6;->b:I
+
+    .line 7
+    .line 8
+    iput p3, p0, Ltb6;->c:I
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
     .line 1
-    iput-object p1, p0, Ltb6;->k:Ljava/lang/Object;
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    iget p1, p0, Ltb6;->m:I
+    if-ne p0, p1, :cond_0
 
+    .line 3
     .line 4
+    return v0
+
     .line 5
-    const/high16 v0, -0x80000000
+    :cond_0
+    instance-of v1, p1, Ltb6;
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    const/4 v2, 0x0
 
     .line 8
-    iput p1, p0, Ltb6;->m:I
+    if-eqz v1, :cond_1
 
     .line 9
     .line 10
-    iget-object p1, p0, Ltb6;->l:Lub6;
+    check-cast p1, Ltb6;
 
     .line 11
     .line 12
-    invoke-virtual {p1, p0}, Lub6;->b(Ld81;)Ljava/lang/Object;
+    iget v1, p0, Ltb6;->c:I
 
     .line 13
     .line 14
-    .line 15
-    move-result-object p0
+    iget v3, p1, Ltb6;->c:I
 
+    .line 15
     .line 16
-    return-object p0
+    if-ne v1, v3, :cond_1
+
+    .line 17
+    .line 18
+    iget v1, p0, Ltb6;->a:I
+
+    .line 19
+    .line 20
+    iget v3, p1, Ltb6;->a:I
+
+    .line 21
+    .line 22
+    if-ne v1, v3, :cond_1
+
+    .line 23
+    .line 24
+    iget p0, p0, Ltb6;->b:I
+
+    .line 25
+    .line 26
+    iget p1, p1, Ltb6;->b:I
+
+    .line 27
+    .line 28
+    if-ne p0, p1, :cond_1
+
+    .line 29
+    .line 30
+    return v0
+
+    .line 31
+    :cond_1
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    .line 1
+    iget v0, p0, Ltb6;->c:I
+
+    .line 2
+    .line 3
+    add-int/lit8 v0, v0, 0x1f
+
+    .line 4
+    .line 5
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 6
+    .line 7
+    iget v1, p0, Ltb6;->a:I
+
+    .line 8
+    .line 9
+    add-int/2addr v0, v1
+
+    .line 10
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 11
+    .line 12
+    iget p0, p0, Ltb6;->b:I
+
+    .line 13
+    .line 14
+    add-int/2addr v0, p0
+
+    .line 15
+    return v0
 .end method

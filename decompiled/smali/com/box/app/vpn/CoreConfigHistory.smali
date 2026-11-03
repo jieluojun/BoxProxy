@@ -2,24 +2,24 @@
 .super Ljava/lang/Object;
 .source "CoreConfigHistory.java"
 
-# Hand-written bridge to the obfuscated settings model (ya0).
-# Called inside i40's existing settings transaction, with its already-read old settings.
+# Hand-written bridge to the obfuscated settings model (ta0).
+# Called inside d40's existing settings transaction, with its already-read old settings.
 # Keep history in box.db, not a separate preference store: a failed switch rolls back both.
 
-.method private static remember(Landroid/database/sqlite/SQLiteDatabase;Lya0;)V
+.method private static remember(Landroid/database/sqlite/SQLiteDatabase;Lta0;)V
     .locals 3
 
     const-string v0, "CREATE TABLE IF NOT EXISTS core_config_history (core_name TEXT PRIMARY KEY NOT NULL, config_name TEXT NOT NULL)"
 
     invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
 
-    iget-object v0, p1, Lya0;->a:Ljava/lang/String;
+    iget-object v0, p1, Lta0;->a:Ljava/lang/String;
 
-    invoke-static {v0}, Llb0;->h(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lgb0;->h(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v1, p1, Lya0;->h:Ljava/lang/String;
+    iget-object v1, p1, Lta0;->h:Ljava/lang/String;
 
     if-nez v1, :config_not_null
 
@@ -77,11 +77,11 @@
 
     if-nez v2, :return_config
 
-    invoke-static {}, Llb0;->k()Lab0;
+    invoke-static {}, Lgb0;->k()Lva0;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1, v1}, Lab0;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
+    invoke-virtual {v0, p1, v1}, Lva0;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v0
 
@@ -105,18 +105,18 @@
     throw v1
 .end method
 
-.method public static onUpdate(Landroid/database/sqlite/SQLiteDatabase;Lya0;Lya0;)Lya0;
+.method public static onUpdate(Landroid/database/sqlite/SQLiteDatabase;Lta0;Lta0;)Lta0;
     .locals 2
 
-    iget-object v0, p1, Lya0;->a:Ljava/lang/String;
+    iget-object v0, p1, Lta0;->a:Ljava/lang/String;
 
-    invoke-static {v0}, Llb0;->h(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0}, Lgb0;->h(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    iget-object v1, p2, Lya0;->a:Ljava/lang/String;
+    iget-object v1, p2, Lta0;->a:Ljava/lang/String;
 
-    invoke-static {v1}, Llb0;->h(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1}, Lgb0;->h(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v1
 
@@ -131,20 +131,20 @@
 
     :core_changed
     # Also migrates the currently selected config on the first switch after upgrading.
-    invoke-static {p0, p1}, Lcom/box/app/vpn/CoreConfigHistory;->remember(Landroid/database/sqlite/SQLiteDatabase;Lya0;)V
+    invoke-static {p0, p1}, Lcom/box/app/vpn/CoreConfigHistory;->remember(Landroid/database/sqlite/SQLiteDatabase;Lta0;)V
 
     invoke-static {p0, v1}, Lcom/box/app/vpn/CoreConfigHistory;->load(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {p2, v0}, Lcom/box/app/vpn/CoreConfigHistory;->withConfig(Lya0;Ljava/lang/String;)Lya0;
+    invoke-static {p2, v0}, Lcom/box/app/vpn/CoreConfigHistory;->withConfig(Lta0;Ljava/lang/String;)Lta0;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method private static withConfig(Lya0;Ljava/lang/String;)Lya0;
+.method private static withConfig(Lta0;Ljava/lang/String;)Lta0;
     .locals 25
 
     move-object/from16 v0, p0
@@ -178,7 +178,7 @@
     # Kotlin copy$default: preserve all 23 fields except configName (bit 7).
     const v24, 0x7fff7f
 
-    invoke-static/range {v0 .. v24}, Lya0;->a(Lya0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/String;ZZI)Lya0;
+    invoke-static/range {v0 .. v24}, Lta0;->a(Lta0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/String;ZZI)Lta0;
 
     move-result-object v0
 

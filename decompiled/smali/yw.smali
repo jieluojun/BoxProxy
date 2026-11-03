@@ -1,335 +1,437 @@
-.class public Lyw;
-.super Ltr6;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final synthetic Lyw;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-
-# static fields
-.field public static final h:Lr7;
-
-.field public static i:Lyw;
-
-.field public static final j:Ljava/util/concurrent/locks/ReentrantLock;
-
-.field public static final k:Ljava/util/concurrent/locks/Condition;
-
-.field public static final l:C
-
-.field public static final m:J
+# interfaces
+.implements Ljava/util/function/Consumer;
 
 
 # instance fields
-.field public e:B
+.field public final synthetic a:B
 
-.field public f:I
-
-.field public g:J
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Ljava/lang/Object;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lr7;
+    iput-byte p2, p0, Lyw;->a:B
 
     .line 2
     .line 3
-    const/4 v1, 0x7
+    iput-object p1, p0, Lyw;->b:Ljava/lang/Object;
 
     .line 4
-    invoke-direct {v0, v1}, Lr7;-><init>(B)V
-
     .line 5
-    .line 6
-    .line 7
-    const/16 v1, 0x8
-
-    .line 8
-    .line 9
-    new-array v1, v1, [Lyw;
-
-    .line 10
-    .line 11
-    iput-object v1, v0, Lr7;->c:Ljava/lang/Object;
-
-    .line 12
-    .line 13
-    sput-object v0, Lyw;->h:Lr7;
-
-    .line 14
-    .line 15
-    new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
-
-    .line 16
-    .line 17
-    invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
-
-    .line 18
-    .line 19
-    .line 20
-    sput-object v0, Lyw;->j:Ljava/util/concurrent/locks/ReentrantLock;
-
-    .line 21
-    .line 22
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->newCondition()Ljava/util/concurrent/locks/Condition;
-
-    .line 23
-    .line 24
-    .line 25
-    move-result-object v0
-
-    .line 26
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 27
-    .line 28
-    .line 29
-    sput-object v0, Lyw;->k:Ljava/util/concurrent/locks/Condition;
-
-    .line 30
-    .line 31
-    const v0, 0xea60
-
-    .line 32
-    .line 33
-    .line 34
-    sput-char v0, Lyw;->l:C
-
-    .line 35
-    .line 36
-    const-wide v0, 0xdf8475800L
-
-    .line 37
-    .line 38
-    .line 39
-    .line 40
-    .line 41
-    sput-wide v0, Lyw;->m:J
-
-    .line 42
-    .line 43
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    .line 3
-    .line 4
-    const/4 v0, -0x1
-
-    .line 5
-    iput v0, p0, Lyw;->f:I
-
     .line 6
     .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final i()V
-    .locals 5
+.method public final accept(Ljava/lang/Object;)V
+    .locals 2
 
     .line 1
-    iget-wide v0, p0, Ltr6;->c:J
+    iget-byte v0, p0, Lyw;->a:B
 
     .line 2
     .line 3
-    iget-boolean v2, p0, Ltr6;->a:Z
+    const-string v1, "pattern="
 
     .line 4
     .line 5
-    const-wide/16 v3, 0x0
+    iget-object p0, p0, Lyw;->b:Ljava/lang/Object;
 
     .line 6
     .line 7
-    cmp-long v0, v0, v3
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
-    if-nez v0, :cond_0
-
     .line 10
+    check-cast p0, Las3;
+
     .line 11
-    if-nez v2, :cond_0
-
     .line 12
-    .line 13
-    return-void
+    check-cast p1, Ljava/lang/Boolean;
 
+    .line 13
     .line 14
-    :cond_0
-    sget-object v0, Lyw;->j:Ljava/util/concurrent/locks/ReentrantLock;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 15
     .line 16
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
-
     .line 17
+    invoke-interface {p0, p1}, Las3;->setValue(Ljava/lang/Object;)V
+
     .line 18
     .line 19
-    :try_start_0
-    iget-byte v1, p0, Lyw;->e:B
-
     .line 20
+    return-void
+
     .line 21
-    if-nez v1, :cond_1
+    :pswitch_0
+    check-cast p0, Lpe5;
 
     .line 22
     .line 23
-    const/4 v1, 0x1
+    check-cast p1, Ljava/lang/StringBuilder;
 
     .line 24
-    iput-byte v1, p0, Lyw;->e:B
-
     .line 25
-    .line 26
-    invoke-static {p0}, Lu57;->H(Lyw;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const-string v0, "id="
 
+    .line 26
     .line 27
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 28
     .line 29
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
-
     .line 30
+    iget-object v0, p0, Lpe5;->a:Lte5;
+
     .line 31
     .line 32
-    return-void
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 33
-    :catchall_0
-    move-exception p0
-
     .line 34
-    goto :goto_0
-
     .line 35
-    :cond_1
-    :try_start_1
-    const-string p0, "Unbalanced enter/exit"
+    const-string v0, ",name="
 
     .line 36
     .line 37
-    new-instance v1, Ljava/lang/IllegalStateException;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 38
     .line 39
-    invoke-direct {v1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
     .line 40
+    iget-object p0, p0, Lpe5;->b:Ljava/lang/String;
+
     .line 41
     .line 42
-    throw v1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 43
-    :goto_0
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
-
     .line 44
     .line 45
-    .line 46
-    throw p0
-.end method
-
-.method public final j()Z
-    .locals 4
-
-    .line 1
-    sget-object v0, Lyw;->j:Ljava/util/concurrent/locks/ReentrantLock;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
-
-    .line 4
-    .line 5
-    .line 6
-    :try_start_0
-    iget-byte v1, p0, Lyw;->e:B
-
-    .line 7
-    .line 8
-    const/4 v2, 0x0
-
-    .line 9
-    iput-byte v2, p0, Lyw;->e:B
-
-    .line 10
-    .line 11
-    const/4 v3, 0x1
-
-    .line 12
-    if-ne v1, v3, :cond_0
-
-    .line 13
-    .line 14
-    sget-object v1, Lyw;->h:Lr7;
-
-    .line 15
-    .line 16
-    invoke-virtual {v1, p0}, Lr7;->o(Lyw;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 17
-    .line 18
-    .line 19
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
-
-    .line 20
-    .line 21
-    .line 22
-    return v2
-
-    .line 23
-    :catchall_0
-    move-exception p0
-
-    .line 24
-    goto :goto_0
-
-    .line 25
-    :cond_0
-    const/4 p0, 0x2
-
-    .line 26
-    if-ne v1, p0, :cond_1
-
-    .line 27
-    .line 28
-    move v2, v3
-
-    .line 29
-    :cond_1
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
-
-    .line 30
-    .line 31
-    .line 32
-    return v2
-
-    .line 33
-    :goto_0
-    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
-
-    .line 34
-    .line 35
-    .line 36
-    throw p0
-.end method
-
-.method public k()V
-    .locals 0
-
-    .line 1
     return-void
+
+    .line 46
+    :pswitch_1
+    check-cast p0, Lul4;
+
+    .line 47
+    .line 48
+    check-cast p1, Let4;
+
+    .line 49
+    .line 50
+    invoke-interface {p1}, Let4;->a()Lfv1;
+
+    .line 51
+    .line 52
+    .line 53
+    move-result-object p1
+
+    .line 54
+    invoke-static {p1}, Ljava/util/Optional;->of(Ljava/lang/Object;)Ljava/util/Optional;
+
+    .line 55
+    .line 56
+    .line 57
+    move-result-object p1
+
+    .line 58
+    iput-object p1, p0, Lul4;->n:Ljava/util/Optional;
+
+    .line 59
+    .line 60
+    return-void
+
+    .line 61
+    :pswitch_2
+    check-cast p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;
+
+    .line 62
+    .line 63
+    check-cast p1, Ljava/lang/StringBuilder;
+
+    .line 64
+    .line 65
+    invoke-static {p0, p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;->a(Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;Ljava/lang/StringBuilder;)V
+
+    .line 66
+    .line 67
+    .line 68
+    return-void
+
+    .line 69
+    :pswitch_3
+    check-cast p0, Lvs3;
+
+    .line 70
+    .line 71
+    check-cast p1, Ljava/lang/StringBuilder;
+
+    .line 72
+    .line 73
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 74
+    .line 75
+    .line 76
+    iget-object p0, p0, Lvs3;->a:Ljava/lang/String;
+
+    .line 77
+    .line 78
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 79
+    .line 80
+    .line 81
+    return-void
+
+    .line 82
+    :pswitch_4
+    check-cast p0, Lgu2;
+
+    .line 83
+    .line 84
+    check-cast p1, Ljava/lang/StringBuilder;
+
+    .line 85
+    .line 86
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 87
+    .line 88
+    .line 89
+    iget-object p0, p0, Lgu2;->d:Ljava/lang/String;
+
+    .line 90
+    .line 91
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 92
+    .line 93
+    .line 94
+    return-void
+
+    .line 95
+    :pswitch_5
+    check-cast p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentForEnter;
+
+    .line 96
+    .line 97
+    check-cast p1, Ljava/lang/StringBuilder;
+
+    .line 98
+    .line 99
+    invoke-static {p0, p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentForEnter;->a(Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentForEnter;Ljava/lang/StringBuilder;)V
+
+    .line 100
+    .line 101
+    .line 102
+    return-void
+
+    .line 103
+    :pswitch_6
+    check-cast p0, Ls72;
+
+    .line 104
+    .line 105
+    check-cast p1, Ljava/lang/StringBuilder;
+
+    .line 106
+    .line 107
+    const-string v0, "name="
+
+    .line 108
+    .line 109
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 110
+    .line 111
+    .line 112
+    iget-object v0, p0, Ls72;->g:Lu65;
+
+    .line 113
+    .line 114
+    const-string v1, "name"
+
+    .line 115
+    .line 116
+    invoke-virtual {v0, v1}, Ljava/util/AbstractMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 117
+    .line 118
+    .line 119
+    move-result-object v0
+
+    .line 120
+    check-cast v0, Ljava/lang/String;
+
+    .line 121
+    .line 122
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 123
+    .line 124
+    .line 125
+    const-string v0, ", "
+
+    .line 126
+    .line 127
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 128
+    .line 129
+    .line 130
+    const-string v0, "scopeName="
+
+    .line 131
+    .line 132
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 133
+    .line 134
+    .line 135
+    iget-object p0, p0, Ls72;->a:Ljava/lang/String;
+
+    .line 136
+    .line 137
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 138
+    .line 139
+    .line 140
+    return-void
+
+    .line 141
+    :pswitch_7
+    check-cast p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/FoldingRules;
+
+    .line 142
+    .line 143
+    check-cast p1, Ljava/lang/StringBuilder;
+
+    .line 144
+    .line 145
+    invoke-static {p0, p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/FoldingRules;->a(Lorg/eclipse/tm4e/languageconfiguration/internal/model/FoldingRules;Ljava/lang/StringBuilder;)V
+
+    .line 146
+    .line 147
+    .line 148
+    return-void
+
+    .line 149
+    :pswitch_8
+    check-cast p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction;
+
+    .line 150
+    .line 151
+    check-cast p1, Ljava/lang/StringBuilder;
+
+    .line 152
+    .line 153
+    invoke-static {p0, p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction;->a(Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction;Ljava/lang/StringBuilder;)V
+
+    .line 154
+    .line 155
+    .line 156
+    return-void
+
+    .line 157
+    :pswitch_9
+    check-cast p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CompleteEnterAction;
+
+    .line 158
+    .line 159
+    check-cast p1, Ljava/lang/StringBuilder;
+
+    .line 160
+    .line 161
+    invoke-static {p0, p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CompleteEnterAction;->b(Lorg/eclipse/tm4e/languageconfiguration/internal/model/CompleteEnterAction;Ljava/lang/StringBuilder;)V
+
+    .line 162
+    .line 163
+    .line 164
+    return-void
+
+    .line 165
+    :pswitch_a
+    check-cast p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CommentRule;
+
+    .line 166
+    .line 167
+    check-cast p1, Ljava/lang/StringBuilder;
+
+    .line 168
+    .line 169
+    invoke-static {p0, p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CommentRule;->a(Lorg/eclipse/tm4e/languageconfiguration/internal/model/CommentRule;Ljava/lang/StringBuilder;)V
+
+    .line 170
+    .line 171
+    .line 172
+    return-void
+
+    .line 173
+    :pswitch_b
+    check-cast p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;
+
+    .line 174
+    .line 175
+    check-cast p1, Ljava/lang/StringBuilder;
+
+    .line 176
+    .line 177
+    invoke-static {p0, p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;->a(Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;Ljava/lang/StringBuilder;)V
+
+    .line 178
+    .line 179
+    .line 180
+    return-void
+
+    .line 181
+    :pswitch_c
+    check-cast p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPairConditional;
+
+    .line 182
+    .line 183
+    check-cast p1, Ljava/lang/StringBuilder;
+
+    .line 184
+    .line 185
+    invoke-static {p0, p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPairConditional;->b(Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPairConditional;Ljava/lang/StringBuilder;)V
+
+    .line 186
+    .line 187
+    .line 188
+    return-void
+
+    .line 189
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

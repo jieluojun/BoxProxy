@@ -1,23 +1,38 @@
 .class public final Lwu2;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lhv2;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lsw2;
+.implements Ljava/util/List;
+.implements Lvw2;
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lhv2;",
+        "Ljava/util/List<",
+        "Lhv2;",
+        ">;",
+        "Lvw2;"
+    }
+.end annotation
 
 
 # static fields
-.field public static final a:Lwu2;
+.field public static final Companion:Lvu2;
 
-.field public static final b:Lqv5;
+
+# instance fields
+.field public final j:Ljava/util/List;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 1
 
     .line 1
-    new-instance v0, Lwu2;
+    new-instance v0, Lvu2;
 
     .line 2
     .line 3
@@ -26,174 +41,627 @@
     .line 4
     .line 5
     .line 6
-    sput-object v0, Lwu2;->a:Lwu2;
+    sput-object v0, Lwu2;->Companion:Lvu2;
 
     .line 7
     .line 8
-    const/4 v0, 0x0
+    return-void
+.end method
 
+.method public constructor <init>(Ljava/util/List;)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 5
+    .line 6
+    .line 7
+    iput-object p1, p0, Lwu2;->j:Ljava/util/List;
+
+    .line 8
     .line 9
-    new-array v0, v0, [Lov5;
-
-    .line 10
-    .line 11
-    new-instance v1, Ljd2;
-
-    .line 12
-    .line 13
-    const/16 v2, 0x1d
-
-    .line 14
-    .line 15
-    invoke-direct {v1, v2}, Ljd2;-><init>(B)V
-
-    .line 16
-    .line 17
-    .line 18
-    const-string v2, "kotlinx.serialization.json.JsonElement"
-
-    .line 19
-    .line 20
-    sget-object v3, Lzp4;->e:Lzp4;
-
-    .line 21
-    .line 22
-    invoke-static {v2, v3, v0, v1}, Lk33;->k(Ljava/lang/String;Ll33;[Lov5;Lr52;)Lqv5;
-
-    .line 23
-    .line 24
-    .line 25
-    move-result-object v0
-
-    .line 26
-    sput-object v0, Lwu2;->b:Lqv5;
-
-    .line 27
-    .line 28
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lae1;)Ljava/lang/Object;
+.method public final bridge synthetic add(ILjava/lang/Object;)V
     .locals 0
 
     .line 1
-    invoke-static {p1}, Le;->m(Lae1;)Lnu2;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     .line 2
     .line 3
-    .line 4
-    move-result-object p0
+    const-string p1, "Operation is not supported for read-only collection"
 
+    .line 4
     .line 5
-    invoke-interface {p0}, Lnu2;->n()Lsu2;
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     .line 6
     .line 7
     .line 8
-    move-result-object p0
+    throw p0
+.end method
+
+.method public final bridge synthetic add(Ljava/lang/Object;)Z
+    .locals 0
 
     .line 9
-    return-object p0
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    const-string p1, "Operation is not supported for read-only collection"
+
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p0
 .end method
 
-.method public final c()Lov5;
+.method public final addAll(ILjava/util/Collection;)Z
     .locals 0
 
     .line 1
-    sget-object p0, Lwu2;->b:Lqv5;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     .line 2
     .line 3
-    return-object p0
-.end method
-
-.method public final d(Lm96;Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    check-cast p2, Lsu2;
-
-    .line 2
-    .line 3
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-string p1, "Operation is not supported for read-only collection"
 
     .line 4
     .line 5
-    .line 6
-    invoke-static {p1}, Le;->n(Lm96;)V
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
+    .line 6
     .line 7
     .line 8
+    throw p0
+.end method
+
+.method public final addAll(Ljava/util/Collection;)Z
+    .locals 0
+
     .line 9
-    instance-of p0, p2, Lpv2;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    const-string p1, "Operation is not supported for read-only collection"
+
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final clear()V
+    .locals 1
+
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 2
+    .line 3
+    const-string v0, "Operation is not supported for read-only collection"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
+.end method
+
+.method public final contains(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    instance-of v0, p1, Lhv2;
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
+    const/4 p0, 0x0
+
+    .line 6
+    return p0
+
+    .line 7
+    :cond_0
+    check-cast p1, Lhv2;
+
+    .line 8
+    .line 9
+    iget-object p0, p0, Lwu2;->j:Ljava/util/List;
 
     .line 10
     .line 11
-    if-eqz p0, :cond_0
+    invoke-interface {p0, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
 
     .line 12
     .line 13
-    sget-object p0, Lsv2;->a:Lsv2;
+    .line 14
+    move-result p0
 
+    .line 15
+    return p0
+.end method
+
+.method public final containsAll(Ljava/util/Collection;)Z
+    .locals 0
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    iget-object p0, p0, Lwu2;->j:Ljava/util/List;
+
+    .line 5
+    .line 6
+    invoke-interface {p0, p1}, Ljava/util/List;->containsAll(Ljava/util/Collection;)Z
+
+    .line 7
+    .line 8
+    .line 9
+    move-result p0
+
+    .line 10
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lwu2;->j:Ljava/util/List;
+
+    .line 2
+    .line 3
+    invoke-static {p0, p1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final get(I)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lwu2;->j:Ljava/util/List;
+
+    .line 2
+    .line 3
+    invoke-interface {p0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lhv2;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lwu2;->j:Ljava/util/List;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final indexOf(Ljava/lang/Object;)I
+    .locals 1
+
+    .line 1
+    instance-of v0, p1, Lhv2;
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
+    const/4 p0, -0x1
+
+    .line 6
+    return p0
+
+    .line 7
+    :cond_0
+    check-cast p1, Lhv2;
+
+    .line 8
+    .line 9
+    iget-object p0, p0, Lwu2;->j:Ljava/util/List;
+
+    .line 10
+    .line 11
+    invoke-interface {p0, p1}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    return p0
+.end method
+
+.method public final isEmpty()Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lwu2;->j:Ljava/util/List;
+
+    .line 2
+    .line 3
+    invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lwu2;->j:Ljava/util/List;
+
+    .line 2
+    .line 3
+    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    return-object p0
+.end method
+
+.method public final lastIndexOf(Ljava/lang/Object;)I
+    .locals 1
+
+    .line 1
+    instance-of v0, p1, Lhv2;
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
+    const/4 p0, -0x1
+
+    .line 6
+    return p0
+
+    .line 7
+    :cond_0
+    check-cast p1, Lhv2;
+
+    .line 8
+    .line 9
+    iget-object p0, p0, Lwu2;->j:Ljava/util/List;
+
+    .line 10
+    .line 11
+    invoke-interface {p0, p1}, Ljava/util/List;->lastIndexOf(Ljava/lang/Object;)I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    return p0
+.end method
+
+.method public final listIterator()Ljava/util/ListIterator;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lwu2;->j:Ljava/util/List;
+
+    .line 2
+    .line 3
+    invoke-interface {p0}, Ljava/util/List;->listIterator()Ljava/util/ListIterator;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    return-object p0
+.end method
+
+.method public final listIterator(I)Ljava/util/ListIterator;
+    .locals 0
+
+    .line 8
+    iget-object p0, p0, Lwu2;->j:Ljava/util/List;
+
+    invoke-interface {p0, p1}, Ljava/util/List;->listIterator(I)Ljava/util/ListIterator;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final bridge synthetic remove(I)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 2
+    .line 3
+    const-string p1, "Operation is not supported for read-only collection"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
+.end method
+
+.method public final remove(Ljava/lang/Object;)Z
+    .locals 0
+
+    .line 9
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    const-string p1, "Operation is not supported for read-only collection"
+
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
+.method public final removeAll(Ljava/util/Collection;)Z
+    .locals 0
+
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 2
+    .line 3
+    const-string p1, "Operation is not supported for read-only collection"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
+.end method
+
+.method public final replaceAll(Ljava/util/function/UnaryOperator;)V
+    .locals 0
+
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 2
+    .line 3
+    const-string p1, "Operation is not supported for read-only collection"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
+.end method
+
+.method public final retainAll(Ljava/util/Collection;)Z
+    .locals 0
+
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 2
+    .line 3
+    const-string p1, "Operation is not supported for read-only collection"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
+.end method
+
+.method public final bridge synthetic set(ILjava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 2
+    .line 3
+    const-string p1, "Operation is not supported for read-only collection"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
+.end method
+
+.method public final size()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lwu2;->j:Ljava/util/List;
+
+    .line 2
+    .line 3
+    invoke-interface {p0}, Ljava/util/List;->size()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final sort(Ljava/util/Comparator;)V
+    .locals 0
+
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 2
+    .line 3
+    const-string p1, "Operation is not supported for read-only collection"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
+.end method
+
+.method public final subList(II)Ljava/util/List;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lwu2;->j:Ljava/util/List;
+
+    .line 2
+    .line 3
+    invoke-interface {p0, p1, p2}, Ljava/util/List;->subList(II)Ljava/util/List;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    return-object p0
+.end method
+
+.method public final toArray()[Ljava/lang/Object;
+    .locals 0
+
+    .line 9
+    invoke-static {p0}, Lg51;->Q(Ljava/util/Collection;)[Ljava/lang/Object;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-static {p0, p1}, Lg51;->R(Ljava/util/Collection;[Ljava/lang/Object;)[Ljava/lang/Object;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object p0
+
+    .line 8
+    return-object p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 6
+
+    .line 1
+    const/4 v4, 0x0
+
+    .line 2
+    const/16 v5, 0x38
+
+    .line 3
+    .line 4
+    iget-object v0, p0, Lwu2;->j:Ljava/util/List;
+
+    .line 5
+    .line 6
+    const-string v1, ","
+
+    .line 7
+    .line 8
+    const-string v2, "["
+
+    .line 9
+    .line 10
+    const-string v3, "]"
+
+    .line 11
+    .line 12
+    invoke-static/range {v0 .. v5}, Lau0;->M0(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/String;Ljava/lang/String;Lo52;I)Ljava/lang/String;
+
+    .line 13
     .line 14
     .line 15
-    invoke-virtual {p1, p0, p2}, Lm96;->o(Lsw2;Ljava/lang/Object;)V
+    move-result-object p0
 
     .line 16
-    .line 17
-    .line 18
-    return-void
-
-    .line 19
-    :cond_0
-    instance-of p0, p2, Lkv2;
-
-    .line 20
-    .line 21
-    if-eqz p0, :cond_1
-
-    .line 22
-    .line 23
-    sget-object p0, Lnv2;->a:Lnv2;
-
-    .line 24
-    .line 25
-    invoke-virtual {p1, p0, p2}, Lm96;->o(Lsw2;Ljava/lang/Object;)V
-
-    .line 26
-    .line 27
-    .line 28
-    return-void
-
-    .line 29
-    :cond_1
-    instance-of p0, p2, Lhu2;
-
-    .line 30
-    .line 31
-    if-eqz p0, :cond_2
-
-    .line 32
-    .line 33
-    sget-object p0, Lku2;->a:Lku2;
-
-    .line 34
-    .line 35
-    invoke-virtual {p1, p0, p2}, Lm96;->o(Lsw2;Ljava/lang/Object;)V
-
-    .line 36
-    .line 37
-    .line 38
-    return-void
-
-    .line 39
-    :cond_2
-    invoke-static {}, Lyd1;->a()V
-
-    .line 40
-    .line 41
-    .line 42
-    return-void
+    return-object p0
 .end method

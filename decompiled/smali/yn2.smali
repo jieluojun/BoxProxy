@@ -1,10 +1,10 @@
 .class public final Lyn2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Laa;
+.field public final a:Lx9;
 
 .field public b:I
 
@@ -14,7 +14,7 @@
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Laa;)V
+.method public constructor <init>(Landroid/content/Context;Lx9;)V
     .locals 1
 
     .line 1
@@ -23,7 +23,7 @@
     .line 2
     .line 3
     .line 4
-    iput-object p2, p0, Lyn2;->a:Laa;
+    iput-object p2, p0, Lyn2;->a:Lx9;
 
     .line 5
     .line 6

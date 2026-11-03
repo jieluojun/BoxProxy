@@ -1,6 +1,6 @@
 .class public final Lxb4;
-.super Lac4;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lwc4;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
@@ -25,7 +25,7 @@
     const/4 v3, 0x0
 
     .line 6
-    invoke-direct {v0, v3, v1, v2}, Lac4;-><init>(III)V
+    invoke-direct {v0, v3, v1, v2}, Lwc4;-><init>(III)V
 
     .line 7
     .line 8
@@ -39,7 +39,7 @@
 
 
 # virtual methods
-.method public final a(Lnp2;Lvu;Lk46;Lf95;Lcc4;)V
+.method public final a(Lnp2;Lqu;Lw56;Lca5;Lyc4;)V
     .locals 0
 
     .line 1
@@ -54,25 +54,29 @@
     move-result-object p0
 
     .line 6
-    const/4 p3, 0x1
+    check-cast p0, Lo52;
 
     .line 7
-    invoke-virtual {p1, p3}, Lnp2;->c(I)Ljava/lang/Object;
-
     .line 8
+    const/4 p2, 0x1
+
     .line 9
+    invoke-virtual {p1, p2}, Lnp2;->c(I)Ljava/lang/Object;
+
     .line 10
+    .line 11
+    .line 12
     move-result-object p1
 
-    .line 11
-    check-cast p1, Lv52;
-
-    .line 12
     .line 13
-    invoke-interface {p2, p1, p0}, Lvu;->q(Lv52;Ljava/lang/Object;)V
+    check-cast p1, Le11;
 
     .line 14
     .line 15
+    invoke-interface {p0, p1}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 16
+    .line 17
+    .line 18
     return-void
 .end method

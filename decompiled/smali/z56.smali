@@ -1,24 +1,30 @@
 .class public final Lz56;
-.super Lyw;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final n:Ljava/net/Socket;
+.field public j:Lo52;
+
+.field public synthetic k:Ljava/lang/Object;
+
+.field public final synthetic l:Ld66;
+
+.field public m:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/net/Socket;)V
+.method public constructor <init>(Ld66;Lz71;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lyw;-><init>()V
+    iput-object p1, p0, Lz56;->l:Ld66;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lz56;->n:Ljava/net/Socket;
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
+    .line 4
     .line 5
     .line 6
     return-void
@@ -26,157 +32,46 @@
 
 
 # virtual methods
-.method public final k()V
-    .locals 5
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
     .line 1
-    const-string v0, "Failed to close timed out socket "
+    iput-object p1, p0, Lz56;->k:Ljava/lang/Object;
 
     .line 2
     .line 3
-    iget-object p0, p0, Lz56;->n:Ljava/net/Socket;
+    iget p1, p0, Lz56;->m:I
 
     .line 4
     .line 5
-    :try_start_0
-    invoke-virtual {p0}, Ljava/net/Socket;->close()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/AssertionError; {:try_start_0 .. :try_end_0} :catch_0
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    return-void
+    iput p1, p0, Lz56;->m:I
 
     .line 9
-    :catch_0
-    move-exception v1
-
     .line 10
-    invoke-static {v1}, Lbd7;->a(Ljava/lang/AssertionError;)Z
+    const/4 p1, 0x0
 
     .line 11
-    .line 12
-    .line 13
-    move-result v2
+    const/4 v0, 0x0
 
+    .line 12
+    iget-object v1, p0, Lz56;->l:Ld66;
+
+    .line 13
     .line 14
-    if-eqz v2, :cond_0
+    invoke-virtual {v1, p1, v0, p1, p0}, Ld66;->b(Lcs5;FLo52;Lz71;)Ljava/lang/Object;
 
     .line 15
     .line 16
-    sget-object v2, Lbd7;->a:Ljava/util/logging/Logger;
-
     .line 17
+    move-result-object p0
+
     .line 18
-    sget-object v3, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
-
-    .line 19
-    .line 20
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    .line 21
-    .line 22
-    invoke-direct {v4, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 23
-    .line 24
-    .line 25
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 26
-    .line 27
-    .line 28
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 29
-    .line 30
-    .line 31
-    move-result-object p0
-
-    .line 32
-    invoke-virtual {v2, v3, p0, v1}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 33
-    .line 34
-    .line 35
-    goto :goto_0
-
-    .line 36
-    :cond_0
-    throw v1
-
-    .line 37
-    :catch_1
-    move-exception v1
-
-    .line 38
-    sget-object v2, Lbd7;->a:Ljava/util/logging/Logger;
-
-    .line 39
-    .line 40
-    sget-object v3, Ljava/util/logging/Level;->WARNING:Ljava/util/logging/Level;
-
-    .line 41
-    .line 42
-    new-instance v4, Ljava/lang/StringBuilder;
-
-    .line 43
-    .line 44
-    invoke-direct {v4, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 45
-    .line 46
-    .line 47
-    invoke-virtual {v4, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 48
-    .line 49
-    .line 50
-    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 51
-    .line 52
-    .line 53
-    move-result-object p0
-
-    .line 54
-    invoke-virtual {v2, v3, p0, v1}, Ljava/util/logging/Logger;->log(Ljava/util/logging/Level;Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 55
-    .line 56
-    .line 57
-    :goto_0
-    return-void
-.end method
-
-.method public final l(Ljava/io/IOException;)Ljava/io/IOException;
-    .locals 1
-
-    .line 1
-    new-instance p0, Ljava/net/SocketTimeoutException;
-
-    .line 2
-    .line 3
-    const-string v0, "timeout"
-
-    .line 4
-    .line 5
-    invoke-direct {p0, v0}, Ljava/net/SocketTimeoutException;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    if-eqz p1, :cond_0
-
-    .line 9
-    .line 10
-    invoke-virtual {p0, p1}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
-
-    .line 11
-    .line 12
-    .line 13
-    :cond_0
     return-object p0
 .end method

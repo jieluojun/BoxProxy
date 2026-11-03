@@ -1,17 +1,17 @@
-.class public abstract Lft4;
-.super Ljava/util/HashMap;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final synthetic Lft4;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lgt4;
+.implements Ljava/util/concurrent/Executor;
 
 
 # virtual methods
-.method public final setProperty(Ljava/lang/String;Ljava/lang/Object;)V
+.method public final execute(Ljava/lang/Runnable;)V
     .locals 0
 
     .line 1
-    invoke-virtual {p0, p1, p2}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     .line 2
     .line 3

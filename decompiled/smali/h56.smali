@@ -1,102 +1,131 @@
 .class public final Lh56;
-.super Lu86;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Landroidx/compose/ui/input/pointer/PointerInputEventHandler;
 
 
 # instance fields
-.field public c:I
+.field public final synthetic a:I
+
+.field public final synthetic b:I
+
+.field public final synthetic c:Lu96;
+
+.field public final synthetic d:Ljr0;
+
+.field public final synthetic e:Z
+
+.field public final synthetic f:Las3;
 
 
 # direct methods
-.method public constructor <init>(IJ)V
+.method public constructor <init>(IILeg;Ljr0;ZLas3;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p2, p3}, Lu86;-><init>(J)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Lh56;->c:I
+    iput p1, p0, Lh56;->a:I
 
     .line 5
     .line 6
+    iput p2, p0, Lh56;->b:I
+
+    .line 7
+    .line 8
+    iput-object p3, p0, Lh56;->c:Lu96;
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Lh56;->d:Ljr0;
+
+    .line 11
+    .line 12
+    iput-boolean p5, p0, Lh56;->e:Z
+
+    .line 13
+    .line 14
+    iput-object p6, p0, Lh56;->f:Las3;
+
+    .line 15
+    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lu86;)V
-    .locals 0
+.method public final invoke(Lmp4;Ly71;)Ljava/lang/Object;
+    .locals 8
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v0, Lg56;
 
     .line 2
     .line 3
-    .line 4
-    check-cast p1, Lh56;
+    iget-object v6, p0, Lh56;->f:Las3;
 
+    .line 4
     .line 5
+    const/4 v7, 0x0
+
     .line 6
-    iget p1, p1, Lh56;->c:I
+    iget v1, p0, Lh56;->a:I
 
     .line 7
     .line 8
-    iput p1, p0, Lh56;->c:I
+    iget v2, p0, Lh56;->b:I
 
     .line 9
     .line 10
-    return-void
-.end method
+    iget-object v3, p0, Lh56;->c:Lu96;
 
-.method public final b()Lu86;
-    .locals 2
-
-    .line 1
-    invoke-static {}, Le56;->h()Lx46;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
-
-    .line 5
-    invoke-virtual {v0}, Lx46;->g()J
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-wide v0
-
-    .line 9
-    invoke-virtual {p0, v0, v1}, Lh56;->c(J)Lu86;
-
-    .line 10
     .line 11
     .line 12
-    move-result-object p0
+    iget-object v4, p0, Lh56;->d:Ljr0;
 
     .line 13
+    .line 14
+    iget-boolean v5, p0, Lh56;->e:Z
+
+    .line 15
+    .line 16
+    invoke-direct/range {v0 .. v7}, Lg56;-><init>(IILu96;Ljr0;ZLas3;Ly71;)V
+
+    .line 17
+    .line 18
+    .line 19
+    check-cast p1, Lbg6;
+
+    .line 20
+    .line 21
+    invoke-virtual {p1, v0, p2}, Lbg6;->E1(Ls52;Ly71;)Ljava/lang/Object;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object p0
+
+    .line 25
+    sget-object p1, Lcb1;->j:Lcb1;
+
+    .line 26
+    .line 27
+    if-ne p0, p1, :cond_0
+
+    .line 28
+    .line 29
     return-object p0
-.end method
 
-.method public final c(J)Lu86;
-    .locals 1
+    .line 30
+    :cond_0
+    sget-object p0, Lk27;->a:Lk27;
 
-    .line 1
-    new-instance v0, Lh56;
-
-    .line 2
-    .line 3
-    iget p0, p0, Lh56;->c:I
-
-    .line 4
-    .line 5
-    invoke-direct {v0, p0, p1, p2}, Lh56;-><init>(IJ)V
-
-    .line 6
-    .line 7
-    .line 8
-    return-object v0
+    .line 31
+    .line 32
+    return-object p0
 .end method

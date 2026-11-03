@@ -1,28 +1,24 @@
 .class public final Lp46;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
-
-.field public final synthetic k:Lr46;
-
-.field public l:I
+.field public final a:Z
 
 
 # direct methods
-.method public constructor <init>(Lr46;Ld81;)V
+.method public constructor <init>(ZLuy0;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lp46;->k:Lr46;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
-
     .line 4
+    iput-boolean p1, p0, Lp46;->a:Z
+
     .line 5
     .line 6
     return-void
@@ -30,46 +26,48 @@
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final toString()Ljava/lang/String;
     .locals 2
 
     .line 1
-    iput-object p1, p0, Lp46;->j:Ljava/lang/Object;
+    new-instance v0, Ljava/lang/StringBuilder;
 
     .line 2
     .line 3
-    iget p1, p0, Lp46;->l:I
+    const-string v1, "SizeTransform(clip="
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lp46;->l:I
+    iget-boolean p0, p0, Lp46;->a:Z
 
     .line 9
     .line 10
-    const/4 p1, 0x0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     .line 11
-    const/4 v0, 0x0
-
     .line 12
-    iget-object v1, p0, Lp46;->k:Lr46;
-
     .line 13
-    .line 14
-    invoke-virtual {v1, p1, v0, p1, p0}, Lr46;->c(Lnq5;FLr52;Ld81;)Ljava/lang/Object;
+    const-string p0, ")"
 
+    .line 14
     .line 15
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 16
     .line 17
+    .line 18
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 19
+    .line 20
+    .line 21
     move-result-object p0
 
-    .line 18
+    .line 22
     return-object p0
 .end method

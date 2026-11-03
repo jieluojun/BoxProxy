@@ -1,242 +1,228 @@
-.class public final Lvm4;
-.super Ll3;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final enum Lvm4;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final l:[Ljava/lang/Object;
+# static fields
+.field public static final enum j:Lvm4;
 
-.field public final m:Lxv6;
+.field public static final enum k:Lvm4;
+
+.field public static final enum l:Lvm4;
+
+.field public static final enum m:Lvm4;
+
+.field public static final enum n:Lvm4;
+
+.field public static final enum o:Lvm4;
+
+.field public static final enum p:Lvm4;
+
+.field public static final synthetic q:[Lvm4;
 
 
 # direct methods
-.method public constructor <init>([Ljava/lang/Object;[Ljava/lang/Object;III)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 9
 
     .line 1
-    invoke-direct {p0, p3, p4}, Ll3;-><init>(II)V
+    new-instance v0, Lvm4;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p2, p0, Lvm4;->l:[Ljava/lang/Object;
+    const-string v1, "Invalid"
 
+    .line 4
     .line 5
+    const/4 v2, 0x0
+
     .line 6
-    add-int/lit8 p4, p4, -0x1
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
-    and-int/lit8 p2, p4, -0x20
-
     .line 9
+    sput-object v0, Lvm4;->j:Lvm4;
+
     .line 10
-    if-le p3, p2, :cond_0
-
     .line 11
-    .line 12
-    move p3, p2
+    new-instance v1, Lvm4;
 
+    .line 12
     .line 13
-    :cond_0
-    new-instance p4, Lxv6;
+    const-string v2, "Cancelled"
 
     .line 14
     .line 15
-    invoke-direct {p4, p1, p3, p2, p5}, Lxv6;-><init>([Ljava/lang/Object;III)V
+    const/4 v3, 0x1
 
     .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 17
     .line 18
-    iput-object p4, p0, Lvm4;->m:Lxv6;
-
     .line 19
+    sput-object v1, Lvm4;->k:Lvm4;
+
     .line 20
+    .line 21
+    new-instance v2, Lvm4;
+
+    .line 22
+    .line 23
+    const-string v3, "InitialPending"
+
+    .line 24
+    .line 25
+    const/4 v4, 0x2
+
+    .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 27
+    .line 28
+    .line 29
+    sput-object v2, Lvm4;->l:Lvm4;
+
+    .line 30
+    .line 31
+    new-instance v3, Lvm4;
+
+    .line 32
+    .line 33
+    const-string v4, "RecomposePending"
+
+    .line 34
+    .line 35
+    const/4 v5, 0x3
+
+    .line 36
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 37
+    .line 38
+    .line 39
+    sput-object v3, Lvm4;->m:Lvm4;
+
+    .line 40
+    .line 41
+    new-instance v4, Lvm4;
+
+    .line 42
+    .line 43
+    const-string v5, "Recomposing"
+
+    .line 44
+    .line 45
+    const/4 v6, 0x4
+
+    .line 46
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 47
+    .line 48
+    .line 49
+    sput-object v4, Lvm4;->n:Lvm4;
+
+    .line 50
+    .line 51
+    new-instance v5, Lvm4;
+
+    .line 52
+    .line 53
+    const-string v6, "ApplyPending"
+
+    .line 54
+    .line 55
+    const/4 v7, 0x5
+
+    .line 56
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 57
+    .line 58
+    .line 59
+    sput-object v5, Lvm4;->o:Lvm4;
+
+    .line 60
+    .line 61
+    new-instance v6, Lvm4;
+
+    .line 62
+    .line 63
+    const-string v7, "Applied"
+
+    .line 64
+    .line 65
+    const/4 v8, 0x6
+
+    .line 66
+    invoke-direct {v6, v7, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 67
+    .line 68
+    .line 69
+    sput-object v6, Lvm4;->p:Lvm4;
+
+    .line 70
+    .line 71
+    filled-new-array/range {v0 .. v6}, [Lvm4;
+
+    .line 72
+    .line 73
+    .line 74
+    move-result-object v0
+
+    .line 75
+    sput-object v0, Lvm4;->q:[Lvm4;
+
+    .line 76
+    .line 77
     return-void
 .end method
 
-
-# virtual methods
-.method public final next()Ljava/lang/Object;
-    .locals 3
+.method public static valueOf(Ljava/lang/String;)Lvm4;
+    .locals 1
 
     .line 1
-    invoke-virtual {p0}, Ll3;->hasNext()Z
+    const-class v0, Lvm4;
 
     .line 2
     .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
     .line 4
-    move-result v0
-
     .line 5
-    if-eqz v0, :cond_1
-
     .line 6
+    move-result-object p0
+
     .line 7
-    iget-object v0, p0, Lvm4;->m:Lxv6;
+    check-cast p0, Lvm4;
 
     .line 8
     .line 9
-    invoke-virtual {v0}, Ll3;->hasNext()Z
-
-    .line 10
-    .line 11
-    .line 12
-    move-result v1
-
-    .line 13
-    if-eqz v1, :cond_0
-
-    .line 14
-    .line 15
-    iget v1, p0, Ll3;->j:I
-
-    .line 16
-    .line 17
-    add-int/lit8 v1, v1, 0x1
-
-    .line 18
-    .line 19
-    iput v1, p0, Ll3;->j:I
-
-    .line 20
-    .line 21
-    invoke-virtual {v0}, Lxv6;->next()Ljava/lang/Object;
-
-    .line 22
-    .line 23
-    .line 24
-    move-result-object p0
-
-    .line 25
-    return-object p0
-
-    .line 26
-    :cond_0
-    iget v1, p0, Ll3;->j:I
-
-    .line 27
-    .line 28
-    add-int/lit8 v2, v1, 0x1
-
-    .line 29
-    .line 30
-    iput v2, p0, Ll3;->j:I
-
-    .line 31
-    .line 32
-    iget v0, v0, Ll3;->k:I
-
-    .line 33
-    .line 34
-    sub-int/2addr v1, v0
-
-    .line 35
-    iget-object p0, p0, Lvm4;->l:[Ljava/lang/Object;
-
-    .line 36
-    .line 37
-    aget-object p0, p0, v1
-
-    .line 38
-    .line 39
-    return-object p0
-
-    .line 40
-    :cond_1
-    invoke-static {}, Lyd1;->p()V
-
-    .line 41
-    .line 42
-    .line 43
-    const/4 p0, 0x0
-
-    .line 44
     return-object p0
 .end method
 
-.method public final previous()Ljava/lang/Object;
-    .locals 3
+.method public static values()[Lvm4;
+    .locals 1
 
     .line 1
-    invoke-virtual {p0}, Ll3;->hasPrevious()Z
+    sget-object v0, Lvm4;->q:[Lvm4;
 
     .line 2
     .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
     .line 4
-    move-result v0
-
     .line 5
-    if-eqz v0, :cond_1
-
     .line 6
+    move-result-object v0
+
     .line 7
-    iget v0, p0, Ll3;->j:I
+    check-cast v0, [Lvm4;
 
     .line 8
     .line 9
-    iget-object v1, p0, Lvm4;->m:Lxv6;
-
-    .line 10
-    .line 11
-    iget v2, v1, Ll3;->k:I
-
-    .line 12
-    .line 13
-    if-le v0, v2, :cond_0
-
-    .line 14
-    .line 15
-    add-int/lit8 v0, v0, -0x1
-
-    .line 16
-    .line 17
-    iput v0, p0, Ll3;->j:I
-
-    .line 18
-    .line 19
-    sub-int/2addr v0, v2
-
-    .line 20
-    iget-object p0, p0, Lvm4;->l:[Ljava/lang/Object;
-
-    .line 21
-    .line 22
-    aget-object p0, p0, v0
-
-    .line 23
-    .line 24
-    return-object p0
-
-    .line 25
-    :cond_0
-    add-int/lit8 v0, v0, -0x1
-
-    .line 26
-    .line 27
-    iput v0, p0, Ll3;->j:I
-
-    .line 28
-    .line 29
-    invoke-virtual {v1}, Lxv6;->previous()Ljava/lang/Object;
-
-    .line 30
-    .line 31
-    .line 32
-    move-result-object p0
-
-    .line 33
-    return-object p0
-
-    .line 34
-    :cond_1
-    invoke-static {}, Lyd1;->p()V
-
-    .line 35
-    .line 36
-    .line 37
-    const/4 p0, 0x0
-
-    .line 38
-    return-object p0
+    return-object v0
 .end method

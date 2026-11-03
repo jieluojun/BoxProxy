@@ -1,44 +1,22 @@
-.class public final synthetic Lt9;
+.class public final Lt9;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lv52;
+.implements Lvh0;
 
 
 # instance fields
-.field public final synthetic j:Lg52;
+.field public a:Landroid/graphics/Canvas;
 
-.field public final synthetic k:Lty0;
+.field public b:Landroid/graphics/Rect;
 
-.field public final synthetic l:Lxn3;
-
-.field public final synthetic m:Lv52;
-
-.field public final synthetic n:Lv52;
-
-.field public final synthetic o:Lv52;
-
-.field public final synthetic p:Lhx5;
-
-.field public final synthetic q:J
-
-.field public final synthetic r:J
-
-.field public final synthetic s:J
-
-.field public final synthetic t:J
-
-.field public final synthetic u:Lmi1;
-
-.field public final synthetic v:I
-
-.field public final synthetic w:S
+.field public c:Landroid/graphics/Rect;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lg52;Lty0;Lxn3;Lv52;Lv52;Lv52;Lhx5;JJJJLmi1;II)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,230 +24,861 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lt9;->j:Lg52;
+    sget-object v0, Lu9;->a:Landroid/graphics/Canvas;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lt9;->k:Lty0;
+    iput-object v0, p0, Lt9;->a:Landroid/graphics/Canvas;
 
     .line 7
     .line 8
-    iput-object p3, p0, Lt9;->l:Lxn3;
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Lt9;->m:Lv52;
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Lt9;->n:Lv52;
-
-    .line 13
-    .line 14
-    iput-object p6, p0, Lt9;->o:Lv52;
-
-    .line 15
-    .line 16
-    iput-object p7, p0, Lt9;->p:Lhx5;
-
-    .line 17
-    .line 18
-    iput-wide p8, p0, Lt9;->q:J
-
-    .line 19
-    .line 20
-    iput-wide p10, p0, Lt9;->r:J
-
-    .line 21
-    .line 22
-    iput-wide p12, p0, Lt9;->s:J
-
-    .line 23
-    .line 24
-    iput-wide p14, p0, Lt9;->t:J
-
-    .line 25
-    .line 26
-    move-object/from16 p1, p16
-
-    .line 27
-    .line 28
-    iput-object p1, p0, Lt9;->u:Lmi1;
-
-    .line 29
-    .line 30
-    move/from16 p1, p17
-
-    .line 31
-    .line 32
-    iput p1, p0, Lt9;->v:I
-
-    .line 33
-    .line 34
-    move/from16 p1, p18
-
-    .line 35
-    .line 36
-    iput-short p1, p0, Lt9;->w:S
-
-    .line 37
-    .line 38
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 20
+.method public final a(FF)V
+    .locals 0
 
     .line 1
-    move-object/from16 v0, p0
+    iget-object p0, p0, Lt9;->a:Landroid/graphics/Canvas;
 
     .line 2
     .line 3
-    move-object/from16 v16, p1
+    invoke-virtual {p0, p1, p2}, Landroid/graphics/Canvas;->scale(FF)V
 
     .line 4
     .line 5
-    check-cast v16, Lz01;
+    .line 6
+    return-void
+.end method
+
+.method public final b(F)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lt9;->a:Landroid/graphics/Canvas;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Landroid/graphics/Canvas;->rotate(F)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final c(Lzc;Lbd4;)V
+    .locals 1
+
+    .line 1
+    iget-object p0, p0, Lt9;->a:Landroid/graphics/Canvas;
+
+    .line 2
+    .line 3
+    instance-of v0, p1, Lzc;
+
+    .line 4
+    .line 5
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    move-object/from16 v1, p2
+    iget-object p1, p1, Lzc;->a:Landroid/graphics/Path;
 
     .line 8
     .line 9
-    check-cast v1, Ljava/lang/Integer;
+    invoke-static {p2}, Lp87;->M(Lbd4;)Landroid/graphics/Paint;
 
     .line 10
     .line 11
+    .line 12
+    move-result-object p2
+
+    .line 13
+    invoke-virtual {p0, p1, p2}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
+
+    .line 14
+    .line 15
+    .line 16
+    return-void
+
+    .line 17
+    :cond_0
+    const-string p0, "Unable to obtain android.graphics.Path"
+
+    .line 18
+    .line 19
+    invoke-static {p0}, Lvd1;->d(Ljava/lang/String;)V
+
+    .line 20
+    .line 21
+    .line 22
+    return-void
+.end method
+
+.method public final d(FFFFFFLbd4;)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lt9;->a:Landroid/graphics/Canvas;
+
+    .line 2
+    .line 3
+    invoke-static {p7}, Lp87;->M(Lbd4;)Landroid/graphics/Paint;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p7
+
+    .line 7
+    invoke-virtual/range {p0 .. p7}, Landroid/graphics/Canvas;->drawRoundRect(FFFFFFLandroid/graphics/Paint;)V
+
+    .line 8
+    .line 9
+    .line 10
+    return-void
+.end method
+
+.method public final e(Lrl2;JJJLbd4;)V
+    .locals 8
+
+    .line 1
+    iget-object v0, p0, Lt9;->b:Landroid/graphics/Rect;
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
+    new-instance v0, Landroid/graphics/Rect;
+
+    .line 6
+    .line 7
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    .line 8
+    .line 9
+    .line 10
+    iput-object v0, p0, Lt9;->b:Landroid/graphics/Rect;
+
+    .line 11
+    .line 12
+    new-instance v0, Landroid/graphics/Rect;
+
+    .line 13
+    .line 14
+    invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
+
+    .line 15
+    .line 16
+    .line 17
+    iput-object v0, p0, Lt9;->c:Landroid/graphics/Rect;
+
+    .line 18
+    .line 19
+    :cond_0
+    iget-object v0, p0, Lt9;->a:Landroid/graphics/Canvas;
+
+    .line 20
+    .line 21
+    invoke-static {p1}, Lx37;->g(Lrl2;)Landroid/graphics/Bitmap;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object p1
+
+    .line 25
+    iget-object v1, p0, Lt9;->b:Landroid/graphics/Rect;
+
+    .line 26
+    .line 27
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 28
+    .line 29
+    .line 30
+    const/16 v2, 0x20
+
+    .line 31
+    .line 32
+    shr-long v3, p2, v2
+
+    .line 33
+    .line 34
+    long-to-int v3, v3
+
+    .line 35
+    iput v3, v1, Landroid/graphics/Rect;->left:I
+
+    .line 36
+    .line 37
+    const-wide v4, 0xffffffffL
+
+    .line 38
+    .line 39
+    .line 40
+    .line 41
+    .line 42
+    and-long/2addr p2, v4
+
+    .line 43
+    long-to-int p2, p2
+
+    .line 44
+    iput p2, v1, Landroid/graphics/Rect;->top:I
+
+    .line 45
+    .line 46
+    shr-long v6, p4, v2
+
+    .line 47
+    .line 48
+    long-to-int p3, v6
+
+    .line 49
+    add-int/2addr v3, p3
+
+    .line 50
+    iput v3, v1, Landroid/graphics/Rect;->right:I
+
+    .line 51
+    .line 52
+    and-long v6, p4, v4
+
+    .line 53
+    .line 54
+    long-to-int p3, v6
+
+    .line 55
+    add-int/2addr p2, p3
+
+    .line 56
+    iput p2, v1, Landroid/graphics/Rect;->bottom:I
+
+    .line 57
+    .line 58
+    iget-object p0, p0, Lt9;->c:Landroid/graphics/Rect;
+
+    .line 59
+    .line 60
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 61
+    .line 62
+    .line 63
+    const/4 p2, 0x0
+
+    .line 64
+    iput p2, p0, Landroid/graphics/Rect;->left:I
+
+    .line 65
+    .line 66
+    iput p2, p0, Landroid/graphics/Rect;->top:I
+
+    .line 67
+    .line 68
+    shr-long p2, p6, v2
+
+    .line 69
+    .line 70
+    long-to-int p2, p2
+
+    .line 71
+    iput p2, p0, Landroid/graphics/Rect;->right:I
+
+    .line 72
+    .line 73
+    and-long p2, p6, v4
+
+    .line 74
+    .line 75
+    long-to-int p2, p2
+
+    .line 76
+    iput p2, p0, Landroid/graphics/Rect;->bottom:I
+
+    .line 77
+    .line 78
+    move-object/from16 p2, p8
+
+    .line 79
+    .line 80
+    iget-object p2, p2, Lbd4;->c:Ljava/lang/Object;
+
+    .line 81
+    .line 82
+    check-cast p2, Landroid/graphics/Paint;
+
+    .line 83
+    .line 84
+    invoke-virtual {v0, p1, v1, p0, p2}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;Landroid/graphics/Rect;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+
+    .line 85
+    .line 86
+    .line 87
+    return-void
+.end method
+
+.method public final f(Ls85;Lbd4;)V
+    .locals 7
+
+    .line 1
+    iget-object v0, p0, Lt9;->a:Landroid/graphics/Canvas;
+
+    .line 2
+    .line 3
+    iget v1, p1, Ls85;->a:F
+
+    .line 4
+    .line 5
+    iget v2, p1, Ls85;->b:F
+
+    .line 6
+    .line 7
+    iget v3, p1, Ls85;->c:F
+
+    .line 8
+    .line 9
+    iget v4, p1, Ls85;->d:F
+
+    .line 10
+    .line 11
+    invoke-static {p2}, Lp87;->M(Lbd4;)Landroid/graphics/Paint;
 
     .line 12
     .line 13
     .line 14
-    iget v1, v0, Lt9;->v:I
+    move-result-object v5
 
     .line 15
+    const/16 v6, 0x1f
+
     .line 16
-    or-int/lit8 v1, v1, 0x1
-
     .line 17
-    .line 18
-    invoke-static {v1}, Lkr5;->i0(I)I
+    invoke-virtual/range {v0 .. v6}, Landroid/graphics/Canvas;->saveLayer(FFFFLandroid/graphics/Paint;I)I
 
+    .line 18
     .line 19
     .line 20
-    .line 21
-    move-result v17
+    return-void
+.end method
 
+.method public final g(FFFFLbd4;)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lt9;->a:Landroid/graphics/Canvas;
+
+    .line 2
+    .line 3
+    invoke-static {p5}, Lp87;->M(Lbd4;)Landroid/graphics/Paint;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p5
+
+    .line 7
+    invoke-virtual/range {p0 .. p5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+
+    .line 8
+    .line 9
+    .line 10
+    return-void
+.end method
+
+.method public final h(FFFFI)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lt9;->a:Landroid/graphics/Canvas;
+
+    .line 2
+    .line 3
+    if-nez p5, :cond_0
+
+    .line 4
+    .line 5
+    sget-object p5, Landroid/graphics/Region$Op;->DIFFERENCE:Landroid/graphics/Region$Op;
+
+    .line 6
+    .line 7
+    goto :goto_0
+
+    .line 8
+    :cond_0
+    sget-object p5, Landroid/graphics/Region$Op;->INTERSECT:Landroid/graphics/Region$Op;
+
+    .line 9
+    .line 10
+    :goto_0
+    invoke-virtual/range {p0 .. p5}, Landroid/graphics/Canvas;->clipRect(FFFFLandroid/graphics/Region$Op;)Z
+
+    .line 11
+    .line 12
+    .line 13
+    return-void
+.end method
+
+.method public final i(FF)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lt9;->a:Landroid/graphics/Canvas;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1, p2}, Landroid/graphics/Canvas;->translate(FF)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final j()V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lt9;->a:Landroid/graphics/Canvas;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/graphics/Canvas;->restore()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final k(FFFFFFLbd4;)V
+    .locals 9
+
+    .line 1
+    iget-object v0, p0, Lt9;->a:Landroid/graphics/Canvas;
+
+    .line 2
+    .line 3
+    move-object/from16 p0, p7
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Lbd4;->c:Ljava/lang/Object;
+
+    .line 6
+    .line 7
+    move-object v8, p0
+
+    .line 8
+    check-cast v8, Landroid/graphics/Paint;
+
+    .line 9
+    .line 10
+    const/4 v7, 0x0
+
+    .line 11
+    move v1, p1
+
+    .line 12
+    move v2, p2
+
+    .line 13
+    move v3, p3
+
+    .line 14
+    move v4, p4
+
+    .line 15
+    move v5, p5
+
+    .line 16
+    move v6, p6
+
+    .line 17
+    invoke-virtual/range {v0 .. v8}, Landroid/graphics/Canvas;->drawArc(FFFFFFZLandroid/graphics/Paint;)V
+
+    .line 18
+    .line 19
+    .line 20
+    return-void
+.end method
+
+.method public final l(FJLbd4;)V
+    .locals 3
+
+    .line 1
+    iget-object p0, p0, Lt9;->a:Landroid/graphics/Canvas;
+
+    .line 2
+    .line 3
+    const/16 v0, 0x20
+
+    .line 4
+    .line 5
+    shr-long v0, p2, v0
+
+    .line 6
+    .line 7
+    long-to-int v0, v0
+
+    .line 8
+    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 9
+    .line 10
+    .line 11
+    move-result v0
+
+    .line 12
+    const-wide v1, 0xffffffffL
+
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    and-long/2addr p2, v1
+
+    .line 18
+    long-to-int p2, p2
+
+    .line 19
+    invoke-static {p2}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 20
+    .line 21
     .line 22
-    iget-object v1, v0, Lt9;->j:Lg52;
+    move-result p2
 
     .line 23
-    .line 24
-    move-object v2, v1
+    iget-object p3, p4, Lbd4;->c:Ljava/lang/Object;
 
+    .line 24
     .line 25
-    iget-object v1, v0, Lt9;->k:Lty0;
+    check-cast p3, Landroid/graphics/Paint;
 
     .line 26
     .line 27
-    move-object v3, v2
+    invoke-virtual {p0, v0, p2, p1, p3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
     .line 28
-    iget-object v2, v0, Lt9;->l:Lxn3;
-
     .line 29
     .line 30
-    move-object v4, v3
+    return-void
+.end method
+
+.method public final m(Lrl2;JLbd4;)V
+    .locals 3
+
+    .line 1
+    iget-object p0, p0, Lt9;->a:Landroid/graphics/Canvas;
+
+    .line 2
+    .line 3
+    invoke-static {p1}, Lx37;->g(Lrl2;)Landroid/graphics/Bitmap;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p1
+
+    .line 7
+    const/16 v0, 0x20
+
+    .line 8
+    .line 9
+    shr-long v0, p2, v0
+
+    .line 10
+    .line 11
+    long-to-int v0, v0
+
+    .line 12
+    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 13
+    .line 14
+    .line 15
+    move-result v0
+
+    .line 16
+    const-wide v1, 0xffffffffL
+
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    .line 21
+    and-long/2addr p2, v1
+
+    .line 22
+    long-to-int p2, p2
+
+    .line 23
+    invoke-static {p2}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 24
+    .line 25
+    .line 26
+    move-result p2
+
+    .line 27
+    invoke-static {p4}, Lp87;->M(Lbd4;)Landroid/graphics/Paint;
+
+    .line 28
+    .line 29
+    .line 30
+    move-result-object p3
 
     .line 31
-    iget-object v3, v0, Lt9;->m:Lv52;
+    invoke-virtual {p0, p1, v0, p2, p3}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
     .line 32
     .line 33
-    move-object v5, v4
-
     .line 34
-    iget-object v4, v0, Lt9;->n:Lv52;
+    return-void
+.end method
 
+.method public final o()V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lt9;->a:Landroid/graphics/Canvas;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/graphics/Canvas;->save()I
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final p()V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lt9;->a:Landroid/graphics/Canvas;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/graphics/Canvas;->disableZ()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final q([F)V
+    .locals 1
+
+    .line 1
+    invoke-static {p1}, Ln33;->z([F)Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    if-nez v0, :cond_0
+
+    .line 6
+    .line 7
+    new-instance v0, Landroid/graphics/Matrix;
+
+    .line 8
+    .line 9
+    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
+
+    .line 10
+    .line 11
+    .line 12
+    invoke-static {v0, p1}, Lf47;->l0(Landroid/graphics/Matrix;[F)V
+
+    .line 13
+    .line 14
+    .line 15
+    iget-object p0, p0, Lt9;->a:Landroid/graphics/Canvas;
+
+    .line 16
+    .line 17
+    invoke-virtual {p0, v0}, Landroid/graphics/Canvas;->concat(Landroid/graphics/Matrix;)V
+
+    .line 18
+    .line 19
+    .line 20
+    :cond_0
+    return-void
+.end method
+
+.method public final r()V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lt9;->a:Landroid/graphics/Canvas;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/graphics/Canvas;->enableZ()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final s(JJLbd4;)V
+    .locals 6
+
+    .line 1
+    iget-object p0, p0, Lt9;->a:Landroid/graphics/Canvas;
+
+    .line 2
+    .line 3
+    const/16 v0, 0x20
+
+    .line 4
+    .line 5
+    shr-long v1, p1, v0
+
+    .line 6
+    .line 7
+    long-to-int v1, v1
+
+    .line 8
+    invoke-static {v1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 9
+    .line 10
+    .line 11
+    move-result v1
+
+    .line 12
+    const-wide v2, 0xffffffffL
+
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    and-long/2addr p1, v2
+
+    .line 18
+    long-to-int p1, p1
+
+    .line 19
+    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 20
+    .line 21
+    .line 22
+    move-result p2
+
+    .line 23
+    shr-long v4, p3, v0
+
+    .line 24
+    .line 25
+    long-to-int p1, v4
+
+    .line 26
+    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 27
+    .line 28
+    .line 29
+    move-result p1
+
+    .line 30
+    and-long/2addr p3, v2
+
+    .line 31
+    long-to-int p3, p3
+
+    .line 32
+    invoke-static {p3}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 33
+    .line 34
     .line 35
+    move-result p4
+
     .line 36
-    move-object v6, v5
+    iget-object p3, p5, Lbd4;->c:Ljava/lang/Object;
 
     .line 37
-    iget-object v5, v0, Lt9;->o:Lv52;
-
     .line 38
+    move-object p5, p3
+
     .line 39
-    move-object v7, v6
+    check-cast p5, Landroid/graphics/Paint;
 
     .line 40
-    iget-object v6, v0, Lt9;->p:Lhx5;
-
     .line 41
+    move p3, p1
+
     .line 42
-    move-object v9, v7
+    move p1, v1
 
     .line 43
-    iget-wide v7, v0, Lt9;->q:J
+    invoke-virtual/range {p0 .. p5}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
     .line 44
     .line 45
-    move-object v11, v9
-
     .line 46
-    iget-wide v9, v0, Lt9;->r:J
+    return-void
+.end method
 
-    .line 47
-    .line 48
-    move-object v13, v11
+.method public final t(Lzc;)V
+    .locals 1
 
-    .line 49
-    iget-wide v11, v0, Lt9;->s:J
+    .line 1
+    iget-object p0, p0, Lt9;->a:Landroid/graphics/Canvas;
 
-    .line 50
-    .line 51
-    move-object v15, v13
+    .line 2
+    .line 3
+    instance-of v0, p1, Lzc;
 
-    .line 52
-    iget-wide v13, v0, Lt9;->t:J
+    .line 4
+    .line 5
+    if-eqz v0, :cond_0
 
-    .line 53
-    .line 54
-    move-object/from16 v18, v15
+    .line 6
+    .line 7
+    iget-object p1, p1, Lzc;->a:Landroid/graphics/Path;
 
-    .line 55
-    .line 56
-    iget-object v15, v0, Lt9;->u:Lmi1;
+    .line 8
+    .line 9
+    sget-object v0, Landroid/graphics/Region$Op;->INTERSECT:Landroid/graphics/Region$Op;
 
-    .line 57
-    .line 58
-    iget-short v0, v0, Lt9;->w:S
+    .line 10
+    .line 11
+    invoke-virtual {p0, p1, v0}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;Landroid/graphics/Region$Op;)Z
 
-    .line 59
-    .line 60
-    move-object/from16 v19, v18
+    .line 12
+    .line 13
+    .line 14
+    return-void
 
-    .line 61
-    .line 62
-    move/from16 v18, v0
+    .line 15
+    :cond_0
+    const-string p0, "Unable to obtain android.graphics.Path"
 
-    .line 63
-    .line 64
-    move-object/from16 v0, v19
+    .line 16
+    .line 17
+    invoke-static {p0}, Lvd1;->d(Ljava/lang/String;)V
 
-    .line 65
-    .line 66
-    invoke-static/range {v0 .. v18}, Lu57;->a(Lg52;Lty0;Lxn3;Lv52;Lv52;Lv52;Lhx5;JJJJLmi1;Lz01;II)V
-
-    .line 67
-    .line 68
-    .line 69
-    sget-object v0, Ld07;->a:Ld07;
-
-    .line 70
-    .line 71
-    return-object v0
+    .line 18
+    .line 19
+    .line 20
+    return-void
 .end method

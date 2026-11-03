@@ -1,135 +1,149 @@
 .class public final Li32;
-.super Landroid/text/style/MetricAffectingSpan;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public a:Ljava/lang/String;
 
-.field public final k:Ljava/lang/Object;
+.field public b:Ljava/lang/String;
 
-
-# direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .locals 0
-
-    .line 1
-    iput-byte p2, p0, Li32;->j:B
-
-    .line 2
-    .line 3
-    invoke-direct {p0}, Landroid/text/style/MetricAffectingSpan;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    iput-object p1, p0, Li32;->k:Ljava/lang/Object;
-
-    .line 7
-    .line 8
-    return-void
-.end method
+.field public c:Ljava/util/List;
 
 
 # virtual methods
-.method public final updateDrawState(Landroid/text/TextPaint;)V
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
     .line 1
-    iget-byte v0, p0, Li32;->j:B
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    iget-object p0, p0, Li32;->k:Ljava/lang/Object;
+    if-ne p0, p1, :cond_0
 
+    .line 3
     .line 4
+    return v0
+
     .line 5
-    packed-switch v0, :pswitch_data_0
+    :cond_0
+    instance-of v1, p1, Li32;
 
     .line 6
     .line 7
+    const/4 v2, 0x0
+
     .line 8
-    check-cast p0, Landroid/graphics/Typeface;
+    if-nez v1, :cond_1
 
     .line 9
     .line 10
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
+    return v2
 
     .line 11
+    :cond_1
+    check-cast p1, Li32;
+
     .line 12
     .line 13
-    return-void
+    iget-object v1, p0, Li32;->a:Ljava/lang/String;
 
     .line 14
-    :pswitch_0
-    check-cast p0, Ljava/lang/String;
-
     .line 15
-    .line 16
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setFontFeatureSettings(Ljava/lang/String;)V
+    iget-object v3, p1, Li32;->a:Ljava/lang/String;
 
+    .line 16
     .line 17
+    invoke-static {v1, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
     .line 18
     .line 19
-    return-void
-
     .line 20
-    nop
+    move-result v1
 
     .line 21
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    if-eqz v1, :cond_2
+
+    .line 22
+    .line 23
+    iget-object v1, p0, Li32;->b:Ljava/lang/String;
+
+    .line 24
+    .line 25
+    iget-object v3, p1, Li32;->b:Ljava/lang/String;
+
+    .line 26
+    .line 27
+    invoke-static {v1, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 28
+    .line 29
+    .line 30
+    move-result v1
+
+    .line 31
+    if-eqz v1, :cond_2
+
+    .line 32
+    .line 33
+    iget-object p0, p0, Li32;->c:Ljava/util/List;
+
+    .line 34
+    .line 35
+    iget-object p1, p1, Li32;->c:Ljava/util/List;
+
+    .line 36
+    .line 37
+    invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 38
+    .line 39
+    .line 40
+    move-result p0
+
+    .line 41
+    if-eqz p0, :cond_2
+
+    .line 42
+    .line 43
+    return v0
+
+    .line 44
+    :cond_2
+    return v2
 .end method
 
-.method public final updateMeasureState(Landroid/text/TextPaint;)V
-    .locals 1
+.method public final hashCode()I
+    .locals 2
 
     .line 1
-    iget-byte v0, p0, Li32;->j:B
+    iget-object v0, p0, Li32;->a:Ljava/lang/String;
 
     .line 2
     .line 3
-    iget-object p0, p0, Li32;->k:Ljava/lang/Object;
+    iget-object v1, p0, Li32;->b:Ljava/lang/String;
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_0
+    iget-object p0, p0, Li32;->c:Ljava/util/List;
 
     .line 6
     .line 7
-    .line 8
-    check-cast p0, Landroid/graphics/Typeface;
+    filled-new-array {v0, v1, p0}, [Ljava/lang/Object;
 
+    .line 8
     .line 9
     .line 10
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
+    move-result-object p0
 
     .line 11
+    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+
     .line 12
     .line 13
-    return-void
-
     .line 14
-    :pswitch_0
-    check-cast p0, Ljava/lang/String;
+    move-result p0
 
     .line 15
-    .line 16
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setFontFeatureSettings(Ljava/lang/String;)V
-
-    .line 17
-    .line 18
-    .line 19
-    return-void
-
-    .line 20
-    nop
-
-    .line 21
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

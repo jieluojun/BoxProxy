@@ -83,6 +83,9 @@ jobs:
           echo "${APKTOOL_SHA256}  ${jar}" | sha256sum -c -
           java -jar "$jar" --version
 
+      - name: Validate internal smali member references
+        run: python3 scripts/check_smali_references.py
+
       - name: Build unsigned APK with apktool
         shell: bash
         run: |

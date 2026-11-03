@@ -12,9 +12,9 @@
 .method public static getPath(Ljava/lang/Object;)Ljava/lang/String;
     .locals 0
 
-    check-cast p0, Lmj5;
+    check-cast p0, Lxk5;
 
-    iget-object p0, p0, Lmj5;->a:Ljava/lang/String;
+    iget-object p0, p0, Lxk5;->a:Ljava/lang/String;
 
     return-object p0
 .end method
@@ -22,9 +22,9 @@
 .method public static getText(Ljava/lang/Object;)Ljava/lang/String;
     .locals 0
 
-    check-cast p0, Lmj5;
+    check-cast p0, Lxk5;
 
-    invoke-virtual {p0}, Lmj5;->b()Ljava/lang/String;
+    invoke-virtual {p0}, Lxk5;->b()Ljava/lang/String;
 
     move-result-object p0
 
@@ -34,11 +34,11 @@
 .method public static setText(Ljava/lang/Object;Ljava/lang/String;)V
     .locals 0
 
-    check-cast p0, Lmj5;
+    check-cast p0, Lxk5;
 
-    invoke-virtual {p0, p1}, Lmj5;->m(Ljava/lang/String;)V
+    invoke-virtual {p0, p1}, Lxk5;->m(Ljava/lang/String;)V
 
-    invoke-virtual {p0}, Lmj5;->k()V
+    invoke-virtual {p0}, Lxk5;->k()V
 
     return-void
 .end method
@@ -49,14 +49,14 @@
 .method public static replaceKeep(Ljava/lang/Object;Ljava/lang/String;)V
     .locals 10
 
-    check-cast p0, Lvt0;
+    check-cast p0, Lqt0;
 
     :try_start_0
-    invoke-virtual {p0}, Lvt0;->getText()Lr61;
+    invoke-virtual {p0}, Lqt0;->getText()Ln61;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Lr61;->toString()Ljava/lang/String;
+    invoke-virtual {v0}, Ln61;->toString()Ljava/lang/String;
 
     move-result-object v1
 
@@ -96,9 +96,9 @@
 
     move-object v3, v0
 
-    invoke-static {p0, v4, v5}, Lcom/box/app/cfg/CfgGlue;->preSel(Lvt0;II)V
+    invoke-static {p0, v4, v5}, Lcom/box/app/cfg/CfgGlue;->preSel(Lqt0;II)V
 
-    invoke-virtual/range {v3 .. v8}, Lr61;->x(IILjava/lang/CharSequence;II)V
+    invoke-virtual/range {v3 .. v8}, Ln61;->x(IILjava/lang/CharSequence;II)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -113,7 +113,7 @@
 
     aget v5, v2, v9
 
-    invoke-virtual {p0, v4, v5}, Lvt0;->l0(II)V
+    invoke-virtual {p0, v4, v5}, Lqt0;->l0(II)V
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -124,7 +124,7 @@
     :catch_0
     move-exception v0
 
-    invoke-virtual {p0, p1}, Lvt0;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0, p1}, Lqt0;->setText(Ljava/lang/CharSequence;)V
 
     return-void
 
@@ -139,9 +139,9 @@
     .locals 1
 
     :try_start_0
-    check-cast p0, Lmj5;
+    check-cast p0, Lxk5;
 
-    iget-object v0, p0, Lmj5;->a:Ljava/lang/String;
+    iget-object v0, p0, Lxk5;->a:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/box/app/cfg/EditorGlue;->isMihomo(Ljava/lang/String;)Z
 
@@ -164,9 +164,9 @@
     .locals 1
 
     :try_start_0
-    check-cast p0, Lmj5;
+    check-cast p0, Lxk5;
 
-    iget-object v0, p0, Lmj5;->a:Ljava/lang/String;
+    iget-object v0, p0, Lxk5;->a:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/box/app/cfg/EditorGlue;->isSingBox(Ljava/lang/String;)Z
 
@@ -201,11 +201,11 @@
 
     sput-object v1, Lcom/box/app/cfg/CfgGlue;->sMj:Ljava/lang/Object;
 
-    check-cast v0, Lmj5;
+    check-cast v0, Lxk5;
 
-    iget-object v0, v0, Lmj5;->q:Llk4;
+    iget-object v0, v0, Lxk5;->q:Lgl4;
 
-    invoke-virtual {v0}, Llk4;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lgl4;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
@@ -221,7 +221,7 @@
 
     move-result-object v1
 
-    invoke-virtual {v0, v1}, Llk4;->setValue(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Lgl4;->setValue(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -238,11 +238,11 @@
 # 替换之前先把光标放到「要改的那一段的起点」。撤销栈里每一步记着「这一步之前的选区」（pz6.e → no6），回退时编辑器把光标还原到那里并滚过去；
 # 面板回来时光标通常还在文件开头（0,0），于是回退就跳到顶部。先把光标挪到改动处，回退就停在被改的那一行（和直接在编辑器里改一样）。
 # 替换完成后 replaceKeep 仍会再把光标放到新内容所在行。任何异常都忽略（不能影响后面的替换）。
-.method public static preSel(Lvt0;II)V
+.method public static preSel(Lqt0;II)V
     .locals 1
 
     :try_start_0
-    invoke-virtual {p0, p1, p2}, Lvt0;->l0(II)V
+    invoke-virtual {p0, p1, p2}, Lqt0;->l0(II)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 

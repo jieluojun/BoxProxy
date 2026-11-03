@@ -1,10 +1,10 @@
 .class public final Llf2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Lhb2;
+.field public final a:Lib2;
 
 .field public final b:Log2;
 
@@ -14,7 +14,7 @@
 
 
 # direct methods
-.method public constructor <init>(Lhb2;Log2;Lfh2;Lji2;)V
+.method public constructor <init>(Lib2;Log2;Lfh2;Lji2;)V
     .locals 0
 
     .line 1
@@ -23,7 +23,7 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Llf2;->a:Lhb2;
+    iput-object p1, p0, Llf2;->a:Lib2;
 
     .line 5
     .line 6
@@ -72,15 +72,15 @@
 
     .line 10
     .line 11
-    iget-object v0, p0, Llf2;->a:Lhb2;
+    iget-object v0, p0, Llf2;->a:Lib2;
 
     .line 12
     .line 13
-    iget-object v1, p1, Llf2;->a:Lhb2;
+    iget-object v1, p1, Llf2;->a:Lib2;
 
     .line 14
     .line 15
-    invoke-virtual {v0, v1}, Lhb2;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Lib2;->equals(Ljava/lang/Object;)Z
 
     .line 16
     .line 17
@@ -183,11 +183,11 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Llf2;->a:Lhb2;
+    iget-object v0, p0, Llf2;->a:Lib2;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Lhb2;->hashCode()I
+    invoke-virtual {v0}, Lib2;->hashCode()I
 
     .line 4
     .line 5
@@ -272,7 +272,7 @@
     .line 6
     .line 7
     .line 8
-    iget-object v1, p0, Llf2;->a:Lhb2;
+    iget-object v1, p0, Llf2;->a:Lib2;
 
     .line 9
     .line 10

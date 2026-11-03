@@ -1,1063 +1,354 @@
-.class public abstract Lr86;
-.super Lj54;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lr86;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field protected state:I
+.field public a:Ls86;
+
+.field public b:D
+
+.field public c:D
+
+.field public d:D
+
+.field public e:D
+
+.field public f:D
 
 
 # virtual methods
-.method public clearMark1()V
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    and-int/lit8 v0, v0, -0x9
-
-    .line 4
-    .line 5
-    iput v0, p0, Lr86;->state:I
-
-    .line 6
-    .line 7
-    return-void
-.end method
-
-.method public clearMark2()V
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    and-int/lit8 v0, v0, -0x11
-
-    .line 4
-    .line 5
-    iput v0, p0, Lr86;->state:I
-
-    .line 6
-    .line 7
-    return-void
-.end method
-
-.method public isAddrFixed()Z
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    and-int/lit16 p0, p0, 0x200
-
-    .line 4
-    .line 5
-    if-eqz p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public isByNumber()Z
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    and-int/lit16 p0, p0, 0x4000
-
-    .line 4
-    .line 5
-    if-eqz p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public isCLenFixed()Z
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    and-int/lit8 p0, p0, 0x4
-
-    .line 4
-    .line 5
-    if-eqz p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public isCalled()Z
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    and-int/lit16 p0, p0, 0x100
-
-    .line 4
-    .line 5
-    if-eqz p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public isInRepeat()Z
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    and-int/lit16 p0, p0, 0x1000
-
-    .line 4
-    .line 5
-    if-eqz p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public isMark1()Z
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    and-int/lit8 p0, p0, 0x8
-
-    .line 4
-    .line 5
-    if-eqz p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public isMark2()Z
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    and-int/lit8 p0, p0, 0x10
-
-    .line 4
-    .line 5
-    if-eqz p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public isMaxFixed()Z
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    and-int/lit8 p0, p0, 0x2
-
-    .line 4
-    .line 5
-    if-eqz p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public isMemBackrefed()Z
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    and-int/lit8 p0, p0, 0x20
-
-    .line 4
-    .line 5
-    if-eqz p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public isMinFixed()Z
-    .locals 1
-
-    .line 1
-    iget p0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    const/4 v0, 0x1
-
-    .line 4
-    and-int/2addr p0, v0
-
-    .line 5
-    if-eqz p0, :cond_0
-
-    .line 6
-    .line 7
-    return v0
-
-    .line 8
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 9
-    return p0
-.end method
-
-.method public isNameRef()Z
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    and-int/lit16 p0, p0, 0x800
-
-    .line 4
-    .line 5
-    if-eqz p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public isNamedGroup()Z
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    and-int/lit16 p0, p0, 0x400
-
-    .line 4
-    .line 5
-    if-eqz p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public isNestLevel()Z
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    and-int/lit16 p0, p0, 0x2000
-
-    .line 4
-    .line 5
-    if-eqz p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public isRecursion()Z
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    and-int/lit16 p0, p0, 0x80
-
-    .line 4
-    .line 5
-    if-eqz p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public isStopBtSimpleRepeat()Z
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    and-int/lit8 p0, p0, 0x40
-
-    .line 4
-    .line 5
-    if-eqz p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public setAddrFixed()V
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    or-int/lit16 v0, v0, 0x200
-
-    .line 4
-    .line 5
-    iput v0, p0, Lr86;->state:I
-
-    .line 6
-    .line 7
-    return-void
-.end method
-
-.method public setCLenFixed()V
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    or-int/lit8 v0, v0, 0x4
-
-    .line 4
-    .line 5
-    iput v0, p0, Lr86;->state:I
-
-    .line 6
-    .line 7
-    return-void
-.end method
-
-.method public setCalled()V
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    or-int/lit16 v0, v0, 0x100
-
-    .line 4
-    .line 5
-    iput v0, p0, Lr86;->state:I
-
-    .line 6
-    .line 7
-    return-void
-.end method
-
-.method public setMark1()V
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    or-int/lit8 v0, v0, 0x8
-
-    .line 4
-    .line 5
-    iput v0, p0, Lr86;->state:I
-
-    .line 6
-    .line 7
-    return-void
-.end method
-
-.method public setMark2()V
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    or-int/lit8 v0, v0, 0x10
-
-    .line 4
-    .line 5
-    iput v0, p0, Lr86;->state:I
-
-    .line 6
-    .line 7
-    return-void
-.end method
-
-.method public setMaxFixed()V
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    or-int/lit8 v0, v0, 0x2
-
-    .line 4
-    .line 5
-    iput v0, p0, Lr86;->state:I
-
-    .line 6
-    .line 7
-    return-void
-.end method
-
-.method public setMemBackrefed()V
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    or-int/lit8 v0, v0, 0x20
-
-    .line 4
-    .line 5
-    iput v0, p0, Lr86;->state:I
-
-    .line 6
-    .line 7
-    return-void
-.end method
-
-.method public setMinFixed()V
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    or-int/lit8 v0, v0, 0x1
-
-    .line 4
-    .line 5
-    iput v0, p0, Lr86;->state:I
-
-    .line 6
-    .line 7
-    return-void
-.end method
-
-.method public setNameRef()V
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    or-int/lit16 v0, v0, 0x800
-
-    .line 4
-    .line 5
-    iput v0, p0, Lr86;->state:I
-
-    .line 6
-    .line 7
-    return-void
-.end method
-
-.method public setRecursion()V
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    or-int/lit16 v0, v0, 0x80
-
-    .line 4
-    .line 5
-    iput v0, p0, Lr86;->state:I
-
-    .line 6
-    .line 7
-    return-void
-.end method
-
-.method public setStopBtSimpleRepeat()V
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lr86;->state:I
-
-    .line 2
-    .line 3
-    or-int/lit8 v0, v0, 0x40
-
-    .line 4
-    .line 5
-    iput v0, p0, Lr86;->state:I
-
-    .line 6
-    .line 7
-    return-void
-.end method
-
-.method public stateToString()Ljava/lang/String;
+.method public final a(FFF)V
     .locals 2
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    float-to-double v0, p1
 
     .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    iput-wide v0, p0, Lr86;->c:D
 
+    .line 3
     .line 4
+    iput-wide v0, p0, Lr86;->e:D
+
     .line 5
     .line 6
-    invoke-virtual {p0}, Lr86;->isMinFixed()Z
+    float-to-double p1, p2
 
     .line 7
+    iput-wide p1, p0, Lr86;->d:D
+
     .line 8
     .line 9
-    move-result v1
+    float-to-double p1, p3
 
     .line 10
-    if-eqz v1, :cond_0
+    iput-wide p1, p0, Lr86;->b:D
 
     .line 11
     .line 12
-    const-string v1, "MIN_FIXED "
+    iput-wide p1, p0, Lr86;->f:D
 
     .line 13
     .line 14
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    new-instance p1, Ls86;
 
     .line 15
     .line 16
+    invoke-static {p3}, Ljava/lang/Math;->abs(F)F
+
     .line 17
+    .line 18
+    .line 19
+    move-result p2
+
+    .line 20
+    float-to-double p2, p2
+
+    .line 21
+    const-wide v0, 0x40b3880000000000L    # 5000.0
+
+    .line 22
+    .line 23
+    .line 24
+    .line 25
+    .line 26
+    cmpl-double p2, p2, v0
+
+    .line 27
+    .line 28
+    if-lez p2, :cond_0
+
+    .line 29
+    .line 30
+    const p2, 0x3f0ccccd    # 0.55f
+
+    .line 31
+    .line 32
+    .line 33
+    goto :goto_0
+
+    .line 34
     :cond_0
-    invoke-virtual {p0}, Lr86;->isMaxFixed()Z
+    const p2, 0x3ecccccd    # 0.4f
+
+    .line 35
+    .line 36
+    .line 37
+    :goto_0
+    invoke-direct {p1, p2}, Ls86;-><init>(F)V
+
+    .line 38
+    .line 39
+    .line 40
+    iput-object p1, p0, Lr86;->a:Ls86;
+
+    .line 41
+    .line 42
+    return-void
+.end method
+
+.method public final b(F)Z
+    .locals 19
+
+    .line 1
+    move-object/from16 v0, p0
+
+    .line 2
+    .line 3
+    iget-object v1, v0, Lr86;->a:Ls86;
+
+    .line 4
+    .line 5
+    const/4 v2, 0x0
+
+    .line 6
+    if-nez v1, :cond_0
+
+    .line 7
+    .line 8
+    return v2
+
+    .line 9
+    :cond_0
+    const v3, 0x3a83126f    # 0.001f
+
+    .line 10
+    .line 11
+    .line 12
+    const v4, 0x3c83126f    # 0.016f
+
+    .line 13
+    .line 14
+    .line 15
+    move/from16 v5, p1
+
+    .line 16
+    .line 17
+    invoke-static {v5, v3, v4}, Lg23;->q(FFF)F
 
     .line 18
     .line 19
     .line 20
-    move-result v1
+    move-result v3
 
     .line 21
-    if-eqz v1, :cond_1
+    iget-wide v4, v0, Lr86;->b:D
 
     .line 22
     .line 23
-    const-string v1, "MAX_FIXED "
+    iget-wide v6, v0, Lr86;->c:D
 
     .line 24
     .line 25
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-wide v8, v0, Lr86;->d:D
 
     .line 26
     .line 27
-    .line 28
-    :cond_1
-    invoke-virtual {p0}, Lr86;->isMark1()Z
+    iget-wide v10, v1, Ls86;->a:D
 
+    .line 28
     .line 29
+    float-to-double v12, v3
+
     .line 30
+    mul-double/2addr v10, v12
+
     .line 31
-    move-result v1
+    const-wide/high16 v14, 0x3ff0000000000000L    # 1.0
 
     .line 32
-    if-eqz v1, :cond_2
-
     .line 33
+    sub-double v10, v14, v10
+
     .line 34
-    const-string v1, "MARK1 "
-
     .line 35
-    .line 36
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move/from16 v16, v2
 
+    .line 36
     .line 37
+    iget-wide v2, v1, Ls86;->b:D
+
     .line 38
     .line 39
-    :cond_2
-    invoke-virtual {p0}, Lr86;->isMark2()Z
+    sub-double v17, v8, v6
 
     .line 40
     .line 41
-    .line 42
-    move-result v1
+    mul-double v17, v17, v2
 
+    .line 42
     .line 43
-    if-eqz v1, :cond_3
+    mul-double v17, v17, v12
 
     .line 44
     .line 45
-    const-string v1, "MARK2 "
+    mul-double/2addr v4, v10
 
     .line 46
-    .line 47
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    add-double v4, v4, v17
 
+    .line 47
     .line 48
+    iput-wide v4, v0, Lr86;->b:D
+
     .line 49
     .line 50
-    :cond_3
-    invoke-virtual {p0}, Lr86;->isMemBackrefed()Z
+    mul-double/2addr v12, v4
 
     .line 51
-    .line 52
-    .line 53
-    move-result v1
+    add-double/2addr v12, v6
 
+    .line 52
+    iput-wide v12, v0, Lr86;->c:D
+
+    .line 53
     .line 54
-    if-eqz v1, :cond_4
+    iget-wide v1, v0, Lr86;->e:D
 
     .line 55
     .line 56
-    const-string v1, "MEM_BACKREFED "
+    cmpg-double v1, v1, v8
 
     .line 57
     .line 58
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-gez v1, :cond_1
 
     .line 59
     .line 60
-    .line 61
-    :cond_4
-    invoke-virtual {p0}, Lr86;->isStopBtSimpleRepeat()Z
+    cmpl-double v2, v12, v8
 
+    .line 61
     .line 62
+    if-lez v2, :cond_1
+
     .line 63
     .line 64
-    move-result v1
+    goto :goto_0
 
     .line 65
-    if-eqz v1, :cond_5
+    :cond_1
+    if-lez v1, :cond_2
 
     .line 66
     .line 67
-    const-string v1, "STOP_BT_SIMPLE_REPEAT "
+    cmpl-double v2, v12, v8
 
     .line 68
     .line 69
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-ltz v2, :cond_4
 
     .line 70
     .line 71
-    .line 72
-    :cond_5
-    invoke-virtual {p0}, Lr86;->isRecursion()Z
+    :cond_2
+    if-nez v1, :cond_3
 
+    .line 72
     .line 73
+    iget-wide v1, v0, Lr86;->f:D
+
     .line 74
     .line 75
-    move-result v1
+    invoke-static {v1, v2}, Ljava/lang/Math;->signum(D)D
 
     .line 76
-    if-eqz v1, :cond_6
-
     .line 77
     .line 78
-    const-string v1, "RECURSION "
+    move-result-wide v1
 
     .line 79
-    .line 80
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-wide v3, v0, Lr86;->c:D
 
+    .line 80
     .line 81
+    invoke-static {v3, v4}, Ljava/lang/Math;->signum(D)D
+
     .line 82
     .line 83
-    :cond_6
-    invoke-virtual {p0}, Lr86;->isCalled()Z
-
     .line 84
-    .line 85
-    .line 86
-    move-result v1
+    move-result-wide v3
 
+    .line 85
+    cmpg-double v1, v1, v3
+
+    .line 86
     .line 87
-    if-eqz v1, :cond_7
+    if-nez v1, :cond_4
 
     .line 88
     .line 89
-    const-string v1, "CALLED "
+    :cond_3
+    iget-wide v1, v0, Lr86;->c:D
 
     .line 90
     .line 91
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-wide v3, v0, Lr86;->d:D
 
     .line 92
     .line 93
+    sub-double/2addr v1, v3
+
     .line 94
-    :cond_7
-    invoke-virtual {p0}, Lr86;->isAddrFixed()Z
+    invoke-static {v1, v2}, Ljava/lang/Math;->abs(D)D
 
     .line 95
     .line 96
     .line 97
-    move-result v1
+    move-result-wide v1
 
     .line 98
-    if-eqz v1, :cond_8
+    cmpg-double v1, v1, v14
 
     .line 99
     .line 100
-    const-string v1, "ADDR_FIXED "
+    if-gez v1, :cond_5
 
     .line 101
     .line 102
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_4
+    :goto_0
+    iget-wide v1, v0, Lr86;->d:D
 
     .line 103
     .line 104
-    .line 105
-    :cond_8
-    invoke-virtual {p0}, Lr86;->isNamedGroup()Z
+    iput-wide v1, v0, Lr86;->c:D
 
+    .line 105
     .line 106
+    const-wide/16 v1, 0x0
+
     .line 107
     .line 108
-    move-result v1
+    iput-wide v1, v0, Lr86;->b:D
 
     .line 109
-    if-eqz v1, :cond_9
-
     .line 110
+    const/4 v0, 0x1
+
     .line 111
-    const-string v1, "NAMED_GROUP "
+    return v0
 
     .line 112
-    .line 113
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 114
-    .line 115
-    .line 116
-    :cond_9
-    invoke-virtual {p0}, Lr86;->isNameRef()Z
-
-    .line 117
-    .line 118
-    .line 119
-    move-result v1
-
-    .line 120
-    if-eqz v1, :cond_a
-
-    .line 121
-    .line 122
-    const-string v1, "NAME_REF "
-
-    .line 123
-    .line 124
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 125
-    .line 126
-    .line 127
-    :cond_a
-    invoke-virtual {p0}, Lr86;->isInRepeat()Z
-
-    .line 128
-    .line 129
-    .line 130
-    move-result v1
-
-    .line 131
-    if-eqz v1, :cond_b
-
-    .line 132
-    .line 133
-    const-string v1, "IN_REPEAT "
-
-    .line 134
-    .line 135
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 136
-    .line 137
-    .line 138
-    :cond_b
-    invoke-virtual {p0}, Lr86;->isNestLevel()Z
-
-    .line 139
-    .line 140
-    .line 141
-    move-result v1
-
-    .line 142
-    if-eqz v1, :cond_c
-
-    .line 143
-    .line 144
-    const-string v1, "NEST_LEVEL "
-
-    .line 145
-    .line 146
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 147
-    .line 148
-    .line 149
-    :cond_c
-    invoke-virtual {p0}, Lr86;->isByNumber()Z
-
-    .line 150
-    .line 151
-    .line 152
-    move-result p0
-
-    .line 153
-    if-eqz p0, :cond_d
-
-    .line 154
-    .line 155
-    const-string p0, "BY_NUMBER "
-
-    .line 156
-    .line 157
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 158
-    .line 159
-    .line 160
-    :cond_d
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 161
-    .line 162
-    .line 163
-    move-result-object p0
-
-    .line 164
-    return-object p0
-.end method
-
-.method public toString(I)Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v0, "\n  state: "
-
-    .line 4
-    .line 5
-    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    invoke-virtual {p0}, Lr86;->stateToString()Ljava/lang/String;
-
-    .line 9
-    .line 10
-    .line 11
-    move-result-object p0
-
-    .line 12
-    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 13
-    .line 14
-    .line 15
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object p0
-
-    .line 19
-    return-object p0
+    :cond_5
+    return v16
 .end method

@@ -1,27 +1,47 @@
 .class public final Lqo6;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Lyo6;
+
+# static fields
+.field public static final c:Lqo6;
 
 
 # instance fields
-.field public a:F
+.field public final a:F
 
-.field public b:Z
-
-.field public final synthetic c:Landroid/graphics/Canvas;
-
-.field public final synthetic d:Lvo6;
-
-.field public final synthetic e:F
-
-.field public final synthetic f:Lap6;
+.field public final b:F
 
 
 # direct methods
-.method public constructor <init>(Lap6;Landroid/graphics/Canvas;Lvo6;F)V
+.method static constructor <clinit>()V
+    .locals 3
+
+    .line 1
+    new-instance v0, Lqo6;
+
+    .line 2
+    .line 3
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    .line 4
+    .line 5
+    const/4 v2, 0x0
+
+    .line 6
+    invoke-direct {v0, v1, v2}, Lqo6;-><init>(FF)V
+
+    .line 7
+    .line 8
+    .line 9
+    sput-object v0, Lqo6;->c:Lqo6;
+
+    .line 10
+    .line 11
+    return-void
+.end method
+
+.method public constructor <init>(FF)V
     .locals 0
 
     .line 1
@@ -30,115 +50,161 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lqo6;->f:Lap6;
+    iput p1, p0, Lqo6;->a:F
 
     .line 5
     .line 6
-    iput-object p2, p0, Lqo6;->c:Landroid/graphics/Canvas;
+    iput p2, p0, Lqo6;->b:F
 
     .line 7
     .line 8
-    iput-object p3, p0, Lqo6;->d:Lvo6;
-
-    .line 9
-    .line 10
-    iput p4, p0, Lqo6;->e:F
-
-    .line 11
-    .line 12
-    const/4 p1, 0x0
-
-    .line 13
-    iput p1, p0, Lqo6;->a:F
-
-    .line 14
-    .line 15
-    const/4 p1, 0x1
-
-    .line 16
-    iput-boolean p1, p0, Lqo6;->b:Z
-
-    .line 17
-    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/ArrayList;ZLfm3;)Z
-    .locals 7
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
     .line 1
-    iget v5, p0, Lqo6;->a:F
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    iget-object v6, p0, Lqo6;->d:Lvo6;
+    if-ne p0, p1, :cond_0
 
+    .line 3
     .line 4
+    return v0
+
     .line 5
-    iget-object v0, p0, Lqo6;->f:Lap6;
+    :cond_0
+    instance-of v1, p1, Lqo6;
 
     .line 6
     .line 7
-    iget-object v4, p0, Lqo6;->c:Landroid/graphics/Canvas;
+    const/4 v2, 0x0
 
     .line 8
-    .line 9
-    move-object v1, p1
+    if-nez v1, :cond_1
 
+    .line 9
     .line 10
-    move v2, p2
+    return v2
 
     .line 11
-    move-object v3, p3
+    :cond_1
+    check-cast p1, Lqo6;
 
     .line 12
-    invoke-virtual/range {v0 .. v6}, Lap6;->h(Ljava/util/ArrayList;ZLfm3;Landroid/graphics/Canvas;FLvo6;)F
-
     .line 13
+    iget v1, p1, Lqo6;->a:F
+
     .line 14
     .line 15
-    move-result p1
+    iget v3, p0, Lqo6;->a:F
 
     .line 16
-    iget p2, p0, Lqo6;->a:F
-
     .line 17
-    .line 18
-    add-float/2addr p2, p1
+    cmpg-float v1, v3, v1
 
+    .line 18
     .line 19
-    iput p2, p0, Lqo6;->a:F
+    if-nez v1, :cond_2
 
     .line 20
     .line 21
-    iget p1, p0, Lqo6;->e:F
+    iget p0, p0, Lqo6;->b:F
 
     .line 22
     .line 23
-    cmpg-float p1, p2, p1
+    iget p1, p1, Lqo6;->b:F
 
     .line 24
     .line 25
-    if-gez p1, :cond_0
+    cmpg-float p0, p0, p1
 
     .line 26
     .line 27
-    const/4 p1, 0x1
+    if-nez p0, :cond_2
 
     .line 28
-    goto :goto_0
-
     .line 29
-    :cond_0
-    const/4 p1, 0x0
+    return v0
 
     .line 30
-    :goto_0
-    iput-boolean p1, p0, Lqo6;->b:Z
+    :cond_2
+    return v2
+.end method
 
-    .line 31
-    .line 32
-    return p1
+.method public final hashCode()I
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lqo6;->a:F
+
+    .line 2
+    .line 3
+    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 8
+    .line 9
+    iget p0, p0, Lqo6;->b:F
+
+    .line 10
+    .line 11
+    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    add-int/2addr p0, v0
+
+    .line 16
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    .line 1
+    const-string v0, ", skewX="
+
+    .line 2
+    .line 3
+    const-string v1, ")"
+
+    .line 4
+    .line 5
+    const-string v2, "TextGeometricTransform(scaleX="
+
+    .line 6
+    .line 7
+    iget v3, p0, Lqo6;->a:F
+
+    .line 8
+    .line 9
+    iget p0, p0, Lqo6;->b:F
+
+    .line 10
+    .line 11
+    invoke-static {v2, v3, v0, p0, v1}, Lh86;->o(Ljava/lang/String;FLjava/lang/String;FLjava/lang/String;)Ljava/lang/String;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    return-object p0
 .end method

@@ -1,29 +1,29 @@
 .class public final synthetic Lrr;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lv52;
+.implements Ls52;
 
 
 # instance fields
 .field public final synthetic j:B
 
-.field public final synthetic k:Lnu;
+.field public final synthetic k:Ljava/util/List;
 
-.field public final synthetic l:Z
+.field public final synthetic l:Lo52;
 
 .field public final synthetic m:Z
 
 .field public final synthetic n:Z
 
-.field public final synthetic o:Lg52;
+.field public final synthetic o:Ld52;
 
-.field public final synthetic p:Lg52;
+.field public final synthetic p:Ld52;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lnu;ZZZLg52;Lg52;IB)V
+.method public synthetic constructor <init>(Ljava/util/List;Lo52;ZZLd52;Ld52;IB)V
     .locals 0
 
     .line 1
@@ -31,11 +31,11 @@
 
     .line 2
     .line 3
-    iput-object p1, p0, Lrr;->k:Lnu;
+    iput-object p1, p0, Lrr;->k:Ljava/util/List;
 
     .line 4
     .line 5
-    iput-boolean p2, p0, Lrr;->l:Z
+    iput-object p2, p0, Lrr;->l:Lo52;
 
     .line 6
     .line 7
@@ -47,11 +47,11 @@
 
     .line 10
     .line 11
-    iput-object p5, p0, Lrr;->o:Lg52;
+    iput-object p5, p0, Lrr;->o:Ld52;
 
     .line 12
     .line 13
-    iput-object p6, p0, Lrr;->p:Lg52;
+    iput-object p6, p0, Lrr;->p:Ld52;
 
     .line 14
     .line 15
@@ -77,7 +77,7 @@
 
     .line 4
     .line 5
-    sget-object v2, Ld07;->a:Ld07;
+    sget-object v2, Lk27;->a:Lk27;
 
     .line 6
     .line 7
@@ -93,7 +93,7 @@
 
     .line 12
     .line 13
-    check-cast v10, Lz01;
+    check-cast v10, Lv01;
 
     .line 14
     .line 15
@@ -110,7 +110,7 @@
     .line 20
     .line 21
     .line 22
-    invoke-static {v3}, Lkr5;->i0(I)I
+    invoke-static {v3}, Lw23;->h0(I)I
 
     .line 23
     .line 24
@@ -118,11 +118,11 @@
     move-result v11
 
     .line 26
-    iget-object v4, v0, Lrr;->k:Lnu;
+    iget-object v4, v0, Lrr;->k:Ljava/util/List;
 
     .line 27
     .line 28
-    iget-boolean v5, v0, Lrr;->l:Z
+    iget-object v5, v0, Lrr;->l:Lo52;
 
     .line 29
     .line 30
@@ -134,15 +134,15 @@
 
     .line 33
     .line 34
-    iget-object v8, v0, Lrr;->o:Lg52;
+    iget-object v8, v0, Lrr;->o:Ld52;
 
     .line 35
     .line 36
-    iget-object v9, v0, Lrr;->p:Lg52;
+    iget-object v9, v0, Lrr;->p:Ld52;
 
     .line 37
     .line 38
-    invoke-static/range {v4 .. v11}, Lc17;->c(Lnu;ZZZLg52;Lg52;Lz01;I)V
+    invoke-static/range {v4 .. v11}, Lk37;->b(Ljava/util/List;Lo52;ZZLd52;Ld52;Lv01;I)V
 
     .line 39
     .line 40
@@ -155,7 +155,7 @@
 
     .line 43
     .line 44
-    check-cast v18, Lz01;
+    check-cast v18, Lv01;
 
     .line 45
     .line 46
@@ -172,7 +172,7 @@
     .line 51
     .line 52
     .line 53
-    invoke-static {v3}, Lkr5;->i0(I)I
+    invoke-static {v3}, Lw23;->h0(I)I
 
     .line 54
     .line 55
@@ -180,11 +180,11 @@
     move-result v19
 
     .line 57
-    iget-object v12, v0, Lrr;->k:Lnu;
+    iget-object v12, v0, Lrr;->k:Ljava/util/List;
 
     .line 58
     .line 59
-    iget-boolean v13, v0, Lrr;->l:Z
+    iget-object v13, v0, Lrr;->l:Lo52;
 
     .line 60
     .line 61
@@ -196,11 +196,11 @@
 
     .line 64
     .line 65
-    iget-object v1, v0, Lrr;->o:Lg52;
+    iget-object v1, v0, Lrr;->o:Ld52;
 
     .line 66
     .line 67
-    iget-object v0, v0, Lrr;->p:Lg52;
+    iget-object v0, v0, Lrr;->p:Ld52;
 
     .line 68
     .line 69
@@ -212,7 +212,7 @@
 
     .line 72
     .line 73
-    invoke-static/range {v12 .. v19}, Lwh6;->c(Lnu;ZZZLg52;Lg52;Lz01;I)V
+    invoke-static/range {v12 .. v19}, Lhj6;->b(Ljava/util/List;Lo52;ZZLd52;Ld52;Lv01;I)V
 
     .line 74
     .line 75

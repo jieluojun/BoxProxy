@@ -1,17 +1,28 @@
-.class public interface abstract Lla4;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lla4;
+.super Ljo3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Li72;
+
+
+# instance fields
+.field public x:Lo52;
 
 
 # virtual methods
-.method public abstract a(I)I
-.end method
+.method public final H(Lm64;)V
+    .locals 0
 
-.method public abstract b(I)I
-.end method
+    .line 1
+    iget-object p0, p0, Lla4;->x:Lo52;
 
-.method public abstract c()I
-.end method
+    .line 2
+    .line 3
+    invoke-interface {p0, p1}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-.method public abstract count()I
+    .line 4
+    .line 5
+    .line 6
+    return-void
 .end method

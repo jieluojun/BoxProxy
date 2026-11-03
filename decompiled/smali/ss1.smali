@@ -1,29 +1,31 @@
 .class public final Lss1;
-.super Le;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Landroid/text/Editable$Factory;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic d:Le;
+# static fields
+.field public static final a:Ljava/lang/Object;
 
-.field public final synthetic e:Ljava/util/concurrent/ThreadPoolExecutor;
+.field public static volatile b:Lss1;
+
+.field public static c:Ljava/lang/Class;
 
 
 # direct methods
-.method public constructor <init>(Le;Ljava/util/concurrent/ThreadPoolExecutor;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljava/lang/Object;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lss1;->d:Le;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
+    .line 4
     .line 5
     .line 6
-    iput-object p2, p0, Lss1;->e:Ljava/util/concurrent/ThreadPoolExecutor;
+    sput-object v0, Lss1;->a:Ljava/lang/Object;
 
     .line 7
     .line 8
@@ -32,82 +34,38 @@
 
 
 # virtual methods
-.method public final O(Ljava/lang/Throwable;)V
+.method public final newEditable(Ljava/lang/CharSequence;)Landroid/text/Editable;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lss1;->e:Ljava/util/concurrent/ThreadPoolExecutor;
+    sget-object v0, Lss1;->c:Ljava/lang/Class;
 
     .line 2
     .line 3
-    :try_start_0
-    iget-object p0, p0, Lss1;->d:Le;
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    invoke-virtual {p0, p1}, Le;->O(Ljava/lang/Throwable;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    new-instance p0, Ld86;
 
     .line 6
     .line 7
-    .line 8
-    invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdown()V
+    invoke-direct {p0, v0, p1}, Ld86;-><init>(Ljava/lang/Class;Ljava/lang/CharSequence;)V
 
+    .line 8
     .line 9
     .line 10
+    return-object p0
+
     .line 11
-    return-void
+    :cond_0
+    invoke-super {p0, p1}, Landroid/text/Editable$Factory;->newEditable(Ljava/lang/CharSequence;)Landroid/text/Editable;
 
     .line 12
-    :catchall_0
-    move-exception p0
-
     .line 13
-    invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdown()V
-
     .line 14
+    move-result-object p0
+
     .line 15
-    .line 16
-    throw p0
-.end method
-
-.method public final P(Lne1;)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lss1;->e:Ljava/util/concurrent/ThreadPoolExecutor;
-
-    .line 2
-    .line 3
-    :try_start_0
-    iget-object p0, p0, Lss1;->d:Le;
-
-    .line 4
-    .line 5
-    invoke-virtual {p0, p1}, Le;->P(Lne1;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 6
-    .line 7
-    .line 8
-    invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdown()V
-
-    .line 9
-    .line 10
-    .line 11
-    return-void
-
-    .line 12
-    :catchall_0
-    move-exception p0
-
-    .line 13
-    invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdown()V
-
-    .line 14
-    .line 15
-    .line 16
-    throw p0
+    return-object p0
 .end method

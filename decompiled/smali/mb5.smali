@@ -1,50 +1,62 @@
-.class public final Lmb5;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public abstract Lmb5;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public j:Loe6;
+# static fields
+.field public static final a:Ljava/lang/ThreadLocal;
 
-.field public synthetic k:Ljava/lang/Object;
+.field public static final b:Ljava/util/WeakHashMap;
 
-.field public l:I
+.field public static final c:Ljava/lang/Object;
 
 
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Lmb5;->k:Ljava/lang/Object;
+    new-instance v0, Ljava/lang/ThreadLocal;
 
     .line 2
     .line 3
-    iget p1, p0, Lmb5;->l:I
+    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
-    .line 7
-    or-int/2addr p1, v0
+    sput-object v0, Lmb5;->a:Ljava/lang/ThreadLocal;
 
+    .line 7
     .line 8
-    iput p1, p0, Lmb5;->l:I
+    new-instance v0, Ljava/util/WeakHashMap;
 
     .line 9
     .line 10
-    const/4 p1, 0x0
+    const/4 v1, 0x0
 
     .line 11
-    invoke-static {p1, p0}, Ll33;->k(Loe6;Lgz;)Ljava/lang/Object;
+    invoke-direct {v0, v1}, Ljava/util/WeakHashMap;-><init>(I)V
 
     .line 12
     .line 13
     .line 14
-    move-result-object p0
+    sput-object v0, Lmb5;->b:Ljava/util/WeakHashMap;
 
     .line 15
-    return-object p0
+    .line 16
+    new-instance v0, Ljava/lang/Object;
+
+    .line 17
+    .line 18
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    .line 19
+    .line 20
+    .line 21
+    sput-object v0, Lmb5;->c:Ljava/lang/Object;
+
+    .line 22
+    .line 23
+    return-void
 .end method

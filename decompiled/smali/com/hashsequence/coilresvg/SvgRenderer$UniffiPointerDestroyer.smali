@@ -1,6 +1,6 @@
 .class final Lcom/hashsequence/coilresvg/SvgRenderer$UniffiPointerDestroyer;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
 .implements Lcom/hashsequence/coilresvg/Disposable;
@@ -81,7 +81,7 @@
     .line 12
     .line 13
     .line 14
-    invoke-virtual {v1, v2}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lr52;)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lo52;)Ljava/lang/Object;
 
     .line 15
     .line 16

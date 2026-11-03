@@ -1,69 +1,104 @@
-.class public final Lea4;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public abstract synthetic Lea4;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public synthetic j:Ljava/lang/Object;
-
-.field public final synthetic k:Llv1;
-
-.field public l:I
+# static fields
+.field public static final synthetic a:[I
 
 
 # direct methods
-.method public constructor <init>(Llv1;Ld81;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    iput-object p1, p0, Lea4;->k:Llv1;
+    invoke-static {}, Lw53;->values()[Lw53;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
-
     .line 4
+    move-result-object v0
+
     .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iput-object p1, p0, Lea4;->j:Ljava/lang/Object;
-
-    .line 2
-    .line 3
-    iget p1, p0, Lea4;->l:I
-
-    .line 4
-    .line 5
-    const/high16 v0, -0x80000000
+    array-length v0, v0
 
     .line 6
+    new-array v0, v0, [I
+
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lea4;->l:I
+    :try_start_0
+    sget-object v1, Lw53;->ON_START:Lw53;
 
     .line 9
     .line 10
-    iget-object p1, p0, Lea4;->k:Llv1;
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     .line 11
     .line 12
-    invoke-virtual {p1, p0}, Llv1;->p(Ld81;)Ljava/lang/Enum;
-
     .line 13
+    move-result v1
+
     .line 14
+    const/4 v2, 0x1
+
     .line 15
-    move-result-object p0
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 16
-    return-object p0
+    .line 17
+    :catch_0
+    :try_start_1
+    sget-object v1, Lw53;->ON_STOP:Lw53;
+
+    .line 18
+    .line 19
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    .line 20
+    .line 21
+    .line 22
+    move-result v1
+
+    .line 23
+    const/4 v2, 0x2
+
+    .line 24
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    .line 25
+    .line 26
+    :catch_1
+    :try_start_2
+    sget-object v1, Lw53;->ON_DESTROY:Lw53;
+
+    .line 27
+    .line 28
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    .line 29
+    .line 30
+    .line 31
+    move-result v1
+
+    .line 32
+    const/4 v2, 0x3
+
+    .line 33
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    .line 34
+    .line 35
+    :catch_2
+    sput-object v0, Lea4;->a:[I
+
+    .line 36
+    .line 37
+    return-void
 .end method

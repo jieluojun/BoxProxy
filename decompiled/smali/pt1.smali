@@ -1,60 +1,53 @@
-.class public final Lpt1;
+.class public Lpt1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Ljava/util/ListIterator;
-.implements Lhw2;
+.implements Lhy2;
 
 
 # static fields
-.field public static final j:Lpt1;
+.field public static final a:Lsr6;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
     .line 1
-    new-instance v0, Lpt1;
+    new-instance v0, Lsr6;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x0
 
     .line 4
+    invoke-direct {v0, v1}, Lsr6;-><init>(Lig6;)V
+
     .line 5
     .line 6
-    sput-object v0, Lpt1;->j:Lpt1;
-
     .line 7
+    sput-object v0, Lpt1;->a:Lsr6;
+
     .line 8
+    .line 9
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic add(Ljava/lang/Object;)V
+.method public a()Lq4;
     .locals 0
 
     .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    sget-object p0, Lot1;->c:Lot1;
 
     .line 2
     .line 3
-    const-string p1, "Operation is not supported for read-only collection"
-
-    .line 4
-    .line 5
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    throw p0
+    return-object p0
 .end method
 
-.method public final hasNext()Z
+.method public final b()I
     .locals 0
 
     .line 1
@@ -64,7 +57,35 @@
     return p0
 .end method
 
-.method public final hasPrevious()Z
+.method public c(Lj71;Lxm0;Lpx0;Landroid/os/Bundle;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public d()[Lx54;
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    new-array p0, p0, [Lx54;
+
+    .line 3
+    .line 4
+    return-object p0
+.end method
+
+.method public destroy()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public final e(Lj71;II)I
     .locals 0
 
     .line 1
@@ -74,23 +95,29 @@
     return p0
 .end method
 
-.method public final next()Ljava/lang/Object;
+.method public final f()Lp6;
     .locals 0
 
     .line 1
-    new-instance p0, Ljava/util/NoSuchElementException;
+    sget-object p0, Lp6;->j0:Lp6;
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    throw p0
+    return-object p0
 .end method
 
-.method public final nextIndex()I
+.method public g()Lsr6;
+    .locals 0
+
+    .line 1
+    sget-object p0, Lpt1;->a:Lsr6;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public h()Z
     .locals 0
 
     .line 1
@@ -98,70 +125,4 @@
 
     .line 2
     return p0
-.end method
-
-.method public final previous()Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    new-instance p0, Ljava/util/NoSuchElementException;
-
-    .line 2
-    .line 3
-    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    throw p0
-.end method
-
-.method public final previousIndex()I
-    .locals 0
-
-    .line 1
-    const/4 p0, -0x1
-
-    .line 2
-    return p0
-.end method
-
-.method public final remove()V
-    .locals 1
-
-    .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    .line 2
-    .line 3
-    const-string v0, "Operation is not supported for read-only collection"
-
-    .line 4
-    .line 5
-    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    throw p0
-.end method
-
-.method public final bridge synthetic set(Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    .line 2
-    .line 3
-    const-string p1, "Operation is not supported for read-only collection"
-
-    .line 4
-    .line 5
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    throw p0
 .end method

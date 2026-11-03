@@ -1,249 +1,145 @@
 .class public final Lru3;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Landroidx/compose/ui/input/pointer/PointerInputEventHandler;
-
-
-# instance fields
-.field public final synthetic a:Z
-
-.field public final synthetic b:Lnr3;
-
-.field public final synthetic c:F
-
-.field public final synthetic d:I
-
-.field public final synthetic e:Lgg;
-
-.field public final synthetic f:Lvt3;
-
-.field public final synthetic g:Lnr3;
-
-.field public final synthetic h:Lfb1;
-
-.field public final synthetic i:Lnr3;
-
-.field public final synthetic j:Lsu3;
-
-.field public final synthetic k:Lnr3;
-
-.field public final synthetic l:Lnr3;
-
-
-# direct methods
-.method public constructor <init>(ZLnr3;FILgg;Lvt3;Lnr3;Lfb1;Lnr3;Lsu3;Lnr3;Lnr3;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-boolean p1, p0, Lru3;->a:Z
-
-    .line 5
-    .line 6
-    iput-object p2, p0, Lru3;->b:Lnr3;
-
-    .line 7
-    .line 8
-    iput p3, p0, Lru3;->c:F
-
-    .line 9
-    .line 10
-    iput p4, p0, Lru3;->d:I
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Lru3;->e:Lgg;
-
-    .line 13
-    .line 14
-    iput-object p6, p0, Lru3;->f:Lvt3;
-
-    .line 15
-    .line 16
-    iput-object p7, p0, Lru3;->g:Lnr3;
-
-    .line 17
-    .line 18
-    iput-object p8, p0, Lru3;->h:Lfb1;
-
-    .line 19
-    .line 20
-    iput-object p9, p0, Lru3;->i:Lnr3;
-
-    .line 21
-    .line 22
-    iput-object p10, p0, Lru3;->j:Lsu3;
-
-    .line 23
-    .line 24
-    iput-object p11, p0, Lru3;->k:Lnr3;
-
-    .line 25
-    .line 26
-    iput-object p12, p0, Lru3;->l:Lnr3;
-
-    .line 27
-    .line 28
-    return-void
-.end method
+.implements Ltu3;
 
 
 # virtual methods
-.method public final invoke(Lro4;Lc81;)Ljava/lang/Object;
-    .locals 16
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
     .line 1
-    move-object/from16 v0, p0
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of p0, p1, Lru3;
+
+    .line 6
+    .line 7
+    if-nez p0, :cond_1
+
+    .line 8
+    .line 9
+    goto :goto_0
+
+    .line 10
+    :cond_1
+    const/high16 p0, 0x3f800000    # 1.0f
+
+    .line 11
+    .line 12
+    invoke-static {p0, p0}, Ljava/lang/Float;->compare(FF)I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result p0
+
+    .line 16
+    if-eqz p0, :cond_2
+
+    .line 17
+    .line 18
+    goto :goto_0
+
+    .line 19
+    :cond_2
+    const/high16 p0, 0x43120000    # 146.0f
+
+    .line 20
+    .line 21
+    invoke-static {p0, p0}, Ljava/lang/Float;->compare(FF)I
+
+    .line 22
+    .line 23
+    .line 24
+    move-result p0
+
+    .line 25
+    if-eqz p0, :cond_3
+
+    .line 26
+    .line 27
+    :goto_0
+    const/4 p0, 0x0
+
+    .line 28
+    return p0
+
+    .line 29
+    :cond_3
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    .line 1
+    const/high16 p0, 0x3f800000    # 1.0f
 
     .line 2
     .line 3
-    invoke-interface/range {p2 .. p2}, Lc81;->getContext()Lwa1;
+    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
 
     .line 4
     .line 5
     .line 6
-    move-result-object v4
+    move-result p0
 
     .line 7
-    new-instance v1, Lqu3;
+    const/16 v0, 0x1f
 
     .line 8
     .line 9
-    iget-object v13, v0, Lru3;->l:Lnr3;
+    mul-int/2addr p0, v0
 
     .line 10
-    .line 11
-    const/4 v14, 0x0
+    const/high16 v1, 0x43120000    # 146.0f
 
+    .line 11
     .line 12
-    move-object v2, v1
+    invoke-static {v1, p0, v0}, Lpb1;->d(FII)I
 
     .line 13
-    iget-boolean v1, v0, Lru3;->a:Z
-
     .line 14
     .line 15
-    move-object v3, v2
+    move-result p0
 
     .line 16
-    iget-object v2, v0, Lru3;->b:Lnr3;
+    const/4 v0, 0x1
 
     .line 17
+    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
+
     .line 18
-    move-object v5, v3
-
     .line 19
-    iget v3, v0, Lru3;->c:F
-
     .line 20
+    move-result v0
+
     .line 21
-    move-object v6, v5
+    add-int/2addr v0, p0
 
     .line 22
-    iget v5, v0, Lru3;->d:I
+    return v0
+.end method
 
-    .line 23
-    .line 24
-    move-object v7, v6
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    .line 25
-    iget-object v6, v0, Lru3;->e:Lgg;
+    .line 1
+    const-string p0, "Spring(dampingRatio=1.0, stiffness=146.0, clampOvershoot=true)"
 
-    .line 26
-    .line 27
-    move-object v8, v7
-
-    .line 28
-    iget-object v7, v0, Lru3;->f:Lvt3;
-
-    .line 29
-    .line 30
-    move-object v9, v8
-
-    .line 31
-    iget-object v8, v0, Lru3;->g:Lnr3;
-
-    .line 32
-    .line 33
-    move-object v10, v9
-
-    .line 34
-    iget-object v9, v0, Lru3;->h:Lfb1;
-
-    .line 35
-    .line 36
-    move-object v11, v10
-
-    .line 37
-    iget-object v10, v0, Lru3;->i:Lnr3;
-
-    .line 38
-    .line 39
-    move-object v12, v11
-
-    .line 40
-    iget-object v11, v0, Lru3;->j:Lsu3;
-
-    .line 41
-    .line 42
-    iget-object v0, v0, Lru3;->k:Lnr3;
-
-    .line 43
-    .line 44
-    move-object v15, v12
-
-    .line 45
-    move-object v12, v0
-
-    .line 46
-    move-object v0, v15
-
-    .line 47
-    invoke-direct/range {v0 .. v14}, Lqu3;-><init>(ZLnr3;FLwa1;ILgg;Lvt3;Lnr3;Lfb1;Lnr3;Lsu3;Lnr3;Lnr3;Lc81;)V
-
-    .line 48
-    .line 49
-    .line 50
-    move-object/from16 v1, p2
-
-    .line 51
-    .line 52
-    move-object v2, v0
-
-    .line 53
-    move-object/from16 v0, p1
-
-    .line 54
-    .line 55
-    invoke-static {v0, v2, v1}, Le;->p(Lro4;Lv52;Lc81;)Ljava/lang/Object;
-
-    .line 56
-    .line 57
-    .line 58
-    move-result-object v0
-
-    .line 59
-    sget-object v1, Lgb1;->j:Lgb1;
-
-    .line 60
-    .line 61
-    if-ne v0, v1, :cond_0
-
-    .line 62
-    .line 63
-    return-object v0
-
-    .line 64
-    :cond_0
-    sget-object v0, Ld07;->a:Ld07;
-
-    .line 65
-    .line 66
-    return-object v0
+    .line 2
+    .line 3
+    return-object p0
 .end method

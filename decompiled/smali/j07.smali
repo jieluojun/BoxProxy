@@ -1,117 +1,98 @@
 .class public final Lj07;
-.super Landroid/graphics/drawable/RippleDrawable;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lqs4;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final j:Z
+.field public a:[I
 
-.field public k:Lmu0;
-
-.field public l:Z
-
-
-# direct methods
-.method public constructor <init>(Z)V
-    .locals 4
-
-    .line 1
-    const/high16 v0, -0x1000000
-
-    .line 2
-    .line 3
-    invoke-static {v0}, Landroid/content/res/ColorStateList;->valueOf(I)Landroid/content/res/ColorStateList;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    const/4 v1, 0x0
-
-    .line 8
-    if-eqz p1, :cond_0
-
-    .line 9
-    .line 10
-    new-instance v2, Landroid/graphics/drawable/ColorDrawable;
-
-    .line 11
-    .line 12
-    const/4 v3, -0x1
-
-    .line 13
-    invoke-direct {v2, v3}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
-
-    .line 14
-    .line 15
-    .line 16
-    goto :goto_0
-
-    .line 17
-    :cond_0
-    move-object v2, v1
-
-    .line 18
-    :goto_0
-    invoke-direct {p0, v0, v1, v2}, Landroid/graphics/drawable/RippleDrawable;-><init>(Landroid/content/res/ColorStateList;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-
-    .line 19
-    .line 20
-    .line 21
-    iput-boolean p1, p0, Lj07;->j:Z
-
-    .line 22
-    .line 23
-    return-void
-.end method
+.field public b:I
 
 
 # virtual methods
-.method public final getDirtyBounds()Landroid/graphics/Rect;
-    .locals 2
+.method public final a()Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    iget-boolean v0, p0, Lj07;->j:Z
+    iget-object v0, p0, Lj07;->a:[I
 
     .line 2
     .line 3
-    if-nez v0, :cond_0
+    iget p0, p0, Lj07;->b:I
 
     .line 4
     .line 5
-    const/4 v0, 0x1
+    invoke-static {v0, p0}, Ljava/util/Arrays;->copyOf([II)[I
 
     .line 6
-    iput-boolean v0, p0, Lj07;->l:Z
-
     .line 7
     .line 8
-    :cond_0
-    invoke-super {p0}, Landroid/graphics/drawable/RippleDrawable;->getDirtyBounds()Landroid/graphics/Rect;
+    move-result-object p0
 
     .line 9
+    new-instance v0, Li07;
+
     .line 10
     .line 11
-    move-result-object v0
+    invoke-direct {v0, p0}, Li07;-><init>([I)V
 
     .line 12
-    const/4 v1, 0x0
-
     .line 13
-    iput-boolean v1, p0, Lj07;->l:Z
-
     .line 14
-    .line 15
     return-object v0
 .end method
 
-.method public final isProjected()Z
+.method public final b(I)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lj07;->a:[I
+
+    .line 2
+    .line 3
+    array-length v1, v0
+
+    .line 4
+    if-ge v1, p1, :cond_1
+
+    .line 5
+    .line 6
+    array-length v1, v0
+
+    .line 7
+    mul-int/lit8 v1, v1, 0x2
+
+    .line 8
+    .line 9
+    if-ge p1, v1, :cond_0
+
+    .line 10
+    .line 11
+    move p1, v1
+
+    .line 12
+    :cond_0
+    invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([II)[I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p1
+
+    .line 16
+    iput-object p1, p0, Lj07;->a:[I
+
+    .line 17
+    .line 18
+    :cond_1
+    return-void
+.end method
+
+.method public final d()I
     .locals 0
 
     .line 1
-    iget-boolean p0, p0, Lj07;->l:Z
+    iget p0, p0, Lj07;->b:I
 
     .line 2
     .line 3

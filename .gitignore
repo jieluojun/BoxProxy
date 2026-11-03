@@ -21,3 +21,7 @@ keystore.properties
 .DS_Store
 .idea/
 *.iml
+
+# Python host-test caches
+__pycache__/
+*.py[cod]

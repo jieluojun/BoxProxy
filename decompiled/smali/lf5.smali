@@ -1,72 +1,90 @@
 .class public final Llf5;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lmf5;
 
 
-# instance fields
-.field public synthetic j:Ljava/lang/Object;
-
-.field public final synthetic k:Lnf5;
-
-.field public l:I
+# static fields
+.field public static final a:Llf5;
 
 
 # direct methods
-.method public constructor <init>(Lnf5;Ld81;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Llf5;->k:Lnf5;
+    new-instance v0, Llf5;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
     .line 6
+    sput-object v0, Llf5;->a:Llf5;
+
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
     .line 1
-    iput-object p1, p0, Llf5;->j:Ljava/lang/Object;
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    iget p1, p0, Llf5;->l:I
+    if-ne p0, p1, :cond_0
 
+    .line 3
     .line 4
+    return v0
+
     .line 5
-    const/high16 v0, -0x80000000
+    :cond_0
+    instance-of p0, p1, Llf5;
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    if-nez p0, :cond_1
 
     .line 8
-    iput p1, p0, Llf5;->l:I
-
     .line 9
+    const/4 p0, 0x0
+
     .line 10
-    iget-object p1, p0, Llf5;->k:Lnf5;
+    return p0
 
     .line 11
-    .line 12
-    const/4 v0, 0x0
+    :cond_1
+    return v0
+.end method
 
-    .line 13
-    invoke-virtual {p1, v0, v0, p0}, Lnf5;->b(Lzf5;Ljava/util/Collection;Ld81;)Ljava/lang/Object;
+.method public final hashCode()I
+    .locals 0
 
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p0
+    .line 1
+    const p0, 0x3fe6b9fb
 
-    .line 17
+    .line 2
+    .line 3
+    .line 4
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    const-string p0, "Unmatched"
+
+    .line 2
+    .line 3
     return-object p0
 .end method

@@ -1,62 +1,45 @@
-.class public final synthetic Lss4;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lv52;
+.class public abstract Lss4;
+.super Lut0;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:Lxn3;
-
-.field public final synthetic k:J
-
-.field public final synthetic l:F
-
-.field public final synthetic m:F
-
-.field public final synthetic n:F
-
-.field public final synthetic o:I
-
-.field public final synthetic p:B
+.field public final b:Lrs4;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lxn3;JFFFII)V
-    .locals 0
+.method public constructor <init>(Lgx2;)V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lss4;->j:Lxn3;
+    invoke-direct {p0, p1}, Lut0;-><init>(Lgx2;)V
 
     .line 5
     .line 6
-    iput-wide p2, p0, Lss4;->k:J
-
     .line 7
+    new-instance v0, Lrs4;
+
     .line 8
-    iput p4, p0, Lss4;->l:F
-
     .line 9
-    .line 10
-    iput p5, p0, Lss4;->m:F
+    invoke-interface {p1}, Lgx2;->c()Lcx5;
 
+    .line 10
     .line 11
     .line 12
-    iput p6, p0, Lss4;->n:F
+    move-result-object p1
 
     .line 13
-    .line 14
-    iput p7, p0, Lss4;->o:I
+    invoke-direct {v0, p1}, Lrs4;-><init>(Lcx5;)V
 
+    .line 14
     .line 15
     .line 16
-    iput-byte p8, p0, Lss4;->p:B
+    iput-object v0, p0, Lss4;->b:Lrs4;
 
     .line 17
     .line 18
@@ -65,19 +48,141 @@
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 9
+.method public final b(Lxd1;)Ljava/lang/Object;
+    .locals 0
 
     .line 1
-    move-object v6, p1
+    invoke-virtual {p0, p1}, Lq2;->i(Lxd1;)Ljava/lang/Object;
 
     .line 2
-    check-cast v6, Lz01;
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method public final c()Lcx5;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lss4;->b:Lrs4;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public final d(Lya6;Ljava/lang/Object;)V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0, p2}, Lq2;->h(Ljava/lang/Object;)I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    iget-object v1, p0, Lss4;->b:Lrs4;
+
+    .line 6
+    .line 7
+    invoke-virtual {p1, v1}, Lya6;->a(Lcx5;)Lya6;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p1
+
+    .line 11
+    invoke-virtual {p0, p1, p2, v0}, Lss4;->o(Lya6;Ljava/lang/Object;I)V
+
+    .line 12
+    .line 13
+    .line 14
+    invoke-virtual {p1, v1}, Lya6;->s(Lcx5;)V
+
+    .line 15
+    .line 16
+    .line 17
+    return-void
+.end method
+
+.method public final e()Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, Lss4;->n()Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {p0, v0}, Lq2;->k(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    check-cast p0, Lqs4;
+
+    .line 10
+    .line 11
+    return-object p0
+.end method
+
+.method public final g(Ljava/lang/Object;)Ljava/util/Iterator;
+    .locals 0
+
+    .line 1
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    .line 2
+    .line 3
+    const-string p1, "This method lead to boxing and must not be used, use writeContents instead"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
+.end method
+
+.method public n()Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    new-array p0, p0, [Z
 
     .line 3
     .line 4
-    check-cast p2, Ljava/lang/Integer;
+    return-object p0
+.end method
 
+.method public o(Lya6;Ljava/lang/Object;I)V
+    .locals 3
+
+    .line 1
+    check-cast p2, [Z
+
+    .line 2
+    .line 3
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
     .line 5
     .line 6
     invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -85,54 +190,39 @@
     .line 7
     .line 8
     .line 9
-    iget p1, p0, Lss4;->o:I
+    const/4 v0, 0x0
 
     .line 10
+    :goto_0
+    if-ge v0, p3, :cond_0
+
     .line 11
-    or-int/lit8 p1, p1, 0x1
-
     .line 12
-    .line 13
-    invoke-static {p1}, Lkr5;->i0(I)I
+    aget-boolean v1, p2, v0
 
+    .line 13
     .line 14
+    iget-object v2, p0, Lss4;->b:Lrs4;
+
     .line 15
     .line 16
-    move-result v7
+    invoke-virtual {p1, v2, v0}, Lya6;->f(Lcx5;I)V
 
     .line 17
-    iget-object v0, p0, Lss4;->j:Lxn3;
-
     .line 18
     .line 19
-    iget-wide v1, p0, Lss4;->k:J
+    invoke-virtual {p1, v1}, Lya6;->b(Z)V
 
     .line 20
     .line 21
-    iget v3, p0, Lss4;->l:F
-
     .line 22
+    add-int/lit8 v0, v0, 0x1
+
     .line 23
-    iget v4, p0, Lss4;->m:F
-
     .line 24
+    goto :goto_0
+
     .line 25
-    iget v5, p0, Lss4;->n:F
-
-    .line 26
-    .line 27
-    iget-byte v8, p0, Lss4;->p:B
-
-    .line 28
-    .line 29
-    invoke-static/range {v0 .. v8}, Lab;->q(Lxn3;JFFFLz01;II)V
-
-    .line 30
-    .line 31
-    .line 32
-    sget-object p0, Ld07;->a:Ld07;
-
-    .line 33
-    .line 34
-    return-object p0
+    :cond_0
+    return-void
 .end method

@@ -1,267 +1,375 @@
-.class public abstract Lcb;
+.class public final synthetic Lcb;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final a:Lmp1;
+# instance fields
+.field public final synthetic j:B
 
-.field public static final b:Lmp1;
+.field public final synthetic k:Ljava/lang/Object;
 
-.field public static final c:Lu11;
-
-.field public static final d:Lmp1;
-
-.field public static final e:Lmp1;
-
-.field public static final f:Lmp1;
+.field public final synthetic l:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lv;
+    iput-byte p3, p0, Lcb;->j:B
 
     .line 2
     .line 3
-    const/4 v1, 0x6
+    iput-object p1, p0, Lcb;->k:Ljava/lang/Object;
 
     .line 4
-    invoke-direct {v0, v1}, Lv;-><init>(B)V
-
     .line 5
+    iput-object p2, p0, Lcb;->l:Ljava/lang/Object;
+
     .line 6
     .line 7
-    new-instance v1, Lmp1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 8
     .line 9
-    const/4 v2, 0x0
-
     .line 10
-    invoke-direct {v1, v0, v2}, Lmp1;-><init>(Lg52;B)V
-
-    .line 11
-    .line 12
-    .line 13
-    sput-object v1, Lcb;->a:Lmp1;
-
-    .line 14
-    .line 15
-    new-instance v0, Lbb;
-
-    .line 16
-    .line 17
-    const/4 v1, 0x0
-
-    .line 18
-    const-string v2, "LocalContext"
-
-    .line 19
-    .line 20
-    invoke-direct {v0, v2, v1}, Lbb;-><init>(Ljava/lang/String;B)V
-
-    .line 21
-    .line 22
-    .line 23
-    new-instance v1, Lmp1;
-
-    .line 24
-    .line 25
-    const/4 v2, 0x1
-
-    .line 26
-    invoke-direct {v1, v0, v2}, Lmp1;-><init>(Lg52;B)V
-
-    .line 27
-    .line 28
-    .line 29
-    sput-object v1, Lcb;->b:Lmp1;
-
-    .line 30
-    .line 31
-    new-instance v0, Lo;
-
-    .line 32
-    .line 33
-    const/16 v1, 0x11
-
-    .line 34
-    .line 35
-    invoke-direct {v0, v1}, Lo;-><init>(B)V
-
-    .line 36
-    .line 37
-    .line 38
-    new-instance v1, Lu11;
-
-    .line 39
-    .line 40
-    invoke-direct {v1, v0}, Lu11;-><init>(Lr52;)V
-
-    .line 41
-    .line 42
-    .line 43
-    sput-object v1, Lcb;->c:Lu11;
-
-    .line 44
-    .line 45
-    new-instance v0, Lbb;
-
-    .line 46
-    .line 47
-    const/4 v1, 0x0
-
-    .line 48
-    const-string v2, "LocalImageVectorCache"
-
-    .line 49
-    .line 50
-    invoke-direct {v0, v2, v1}, Lbb;-><init>(Ljava/lang/String;B)V
-
-    .line 51
-    .line 52
-    .line 53
-    new-instance v1, Lmp1;
-
-    .line 54
-    .line 55
-    const/4 v2, 0x1
-
-    .line 56
-    invoke-direct {v1, v0, v2}, Lmp1;-><init>(Lg52;B)V
-
-    .line 57
-    .line 58
-    .line 59
-    sput-object v1, Lcb;->d:Lmp1;
-
-    .line 60
-    .line 61
-    new-instance v0, Lbb;
-
-    .line 62
-    .line 63
-    const/4 v1, 0x0
-
-    .line 64
-    const-string v2, "LocalResourceIdCache"
-
-    .line 65
-    .line 66
-    invoke-direct {v0, v2, v1}, Lbb;-><init>(Ljava/lang/String;B)V
-
-    .line 67
-    .line 68
-    .line 69
-    new-instance v1, Lmp1;
-
-    .line 70
-    .line 71
-    const/4 v2, 0x1
-
-    .line 72
-    invoke-direct {v1, v0, v2}, Lmp1;-><init>(Lg52;B)V
-
-    .line 73
-    .line 74
-    .line 75
-    sput-object v1, Lcb;->e:Lmp1;
-
-    .line 76
-    .line 77
-    new-instance v0, Lbb;
-
-    .line 78
-    .line 79
-    const/4 v1, 0x0
-
-    .line 80
-    const-string v2, "LocalView"
-
-    .line 81
-    .line 82
-    invoke-direct {v0, v2, v1}, Lbb;-><init>(Ljava/lang/String;B)V
-
-    .line 83
-    .line 84
-    .line 85
-    new-instance v1, Lmp1;
-
-    .line 86
-    .line 87
-    const/4 v2, 0x1
-
-    .line 88
-    invoke-direct {v1, v0, v2}, Lmp1;-><init>(Lg52;B)V
-
-    .line 89
-    .line 90
-    .line 91
-    sput-object v1, Lcb;->f:Lmp1;
-
-    .line 92
-    .line 93
     return-void
 .end method
 
-.method public static final a(Ljava/lang/String;)V
-    .locals 3
+
+# virtual methods
+.method public final run()V
+    .locals 4
 
     .line 1
-    new-instance v0, Ljava/lang/IllegalStateException;
+    iget-byte v0, p0, Lcb;->j:B
 
     .line 2
     .line 3
-    new-instance v1, Ljava/lang/StringBuilder;
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
     .line 5
-    const-string v2, "CompositionLocal "
+    iget-object v2, p0, Lcb;->l:Ljava/lang/Object;
 
     .line 6
     .line 7
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object p0, p0, Lcb;->k:Ljava/lang/Object;
 
     .line 8
     .line 9
-    .line 10
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    packed-switch v0, :pswitch_data_0
 
+    .line 10
     .line 11
     .line 12
+    check-cast p0, Lyd7;
+
     .line 13
-    const-string p0, " not present"
-
     .line 14
-    .line 15
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    check-cast v2, Lh63;
 
+    .line 15
     .line 16
+    iget-boolean v0, p0, Lyd7;->l:Z
+
     .line 17
     .line 18
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-nez v0, :cond_0
 
     .line 19
     .line 20
-    .line 21
-    move-result-object p0
+    iput-object v2, p0, Lyd7;->m:Lh63;
 
+    .line 21
     .line 22
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    invoke-virtual {v2, p0}, Lh63;->a(Ld63;)V
 
     .line 23
     .line 24
     .line 25
-    move-result-object p0
+    :cond_0
+    return-void
 
     .line 26
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    :pswitch_0
+    check-cast p0, Lbq;
 
     .line 27
     .line 28
+    check-cast v2, Landroid/graphics/Typeface;
+
     .line 29
+    .line 30
+    invoke-virtual {p0, v2}, Lbq;->k(Landroid/graphics/Typeface;)V
+
+    .line 31
+    .line 32
+    .line 33
+    return-void
+
+    .line 34
+    :pswitch_1
+    check-cast p0, Lvt5;
+
+    .line 35
+    .line 36
+    check-cast v2, Lqa4;
+
+    .line 37
+    .line 38
+    invoke-virtual {p0, v2, v1}, Lvt5;->g(Ljava/lang/Object;Ljava/lang/Object;)I
+
+    .line 39
+    .line 40
+    .line 41
+    return-void
+
+    .line 42
+    :pswitch_2
+    check-cast p0, Lrh0;
+
+    .line 43
+    .line 44
+    check-cast v2, Lz82;
+
+    .line 45
+    .line 46
+    invoke-virtual {p0, v2, v1}, Lrh0;->C(Lua1;Ljava/lang/Object;)V
+
+    .line 47
+    .line 48
+    .line 49
+    return-void
+
+    .line 50
+    :pswitch_3
+    check-cast p0, Lqt0;
+
+    .line 51
+    .line 52
+    check-cast v2, Lub6;
+
+    .line 53
+    .line 54
+    invoke-virtual {p0, v2}, Lqt0;->setStyles(Lub6;)V
+
+    .line 55
+    .line 56
+    .line 57
+    return-void
+
+    .line 58
+    :pswitch_4
+    check-cast p0, Lvr1;
+
+    .line 59
+    .line 60
+    check-cast v2, Lvd3;
+
+    .line 61
+    .line 62
+    iget-object v0, p0, Lvr1;->n:Lwr1;
+
+    .line 63
+    .line 64
+    iget-object v1, v0, Lwr1;->d:Ljava/lang/Thread;
+
+    .line 65
+    .line 66
+    iget-object v3, v0, Lwr1;->a:Lqt0;
+
+    .line 67
+    .line 68
+    iget-object p0, p0, Lvr1;->m:Ljava/lang/Thread;
+
+    .line 69
+    .line 70
+    if-ne v1, p0, :cond_1
+
+    .line 71
+    .line 72
+    iput-object v2, v0, Lwr1;->e:Lvd3;
+
+    .line 73
+    .line 74
+    invoke-virtual {v3}, Landroid/view/View;->invalidate()V
+
+    .line 75
+    .line 76
+    .line 77
+    new-instance p0, Ly35;
+
+    .line 78
+    .line 79
+    invoke-direct {p0, v3}, Lgv1;-><init>(Lqt0;)V
+
+    .line 80
+    .line 81
+    .line 82
+    iget-object v1, v3, Lqt0;->r:Ltv1;
+
+    .line 83
+    .line 84
+    invoke-virtual {v1, p0}, Ltv1;->a(Lgv1;)I
+
+    .line 85
+    .line 86
+    .line 87
+    const/4 p0, 0x0
+
+    .line 88
+    iput-object p0, v0, Lwr1;->d:Ljava/lang/Thread;
+
+    .line 89
+    .line 90
+    :cond_1
+    return-void
+
+    .line 91
+    :pswitch_5
+    check-cast p0, Lgo;
+
+    .line 92
+    .line 93
+    check-cast v2, Lfa4;
+
+    .line 94
+    .line 95
+    iget-object v0, p0, Lby0;->j:Lh63;
+
+    .line 96
+    .line 97
+    new-instance v1, Ltx0;
+
+    .line 98
+    .line 99
+    invoke-direct {v1, v2, p0}, Ltx0;-><init>(Lfa4;Lcy0;)V
+
+    .line 100
+    .line 101
+    .line 102
+    invoke-virtual {v0, v1}, Lh63;->a(Ld63;)V
+
+    .line 103
+    .line 104
+    .line 105
+    return-void
+
+    .line 106
+    :pswitch_6
+    check-cast p0, Lpx0;
+
+    .line 107
+    .line 108
+    check-cast v2, Lqa;
+
+    .line 109
+    .line 110
+    iget-boolean v0, p0, Lpx0;->h:Z
+
+    .line 111
+    .line 112
+    if-eqz v0, :cond_2
+
+    .line 113
+    .line 114
+    goto :goto_0
+
+    .line 115
+    :cond_2
+    iget-object v0, p0, Lpx0;->a:Ljava/util/ArrayList;
+
+    .line 116
+    .line 117
+    invoke-static {v0, v2}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
+
+    .line 118
+    .line 119
+    .line 120
+    iget-object p0, p0, Lpx0;->e:Lkq1;
+
+    .line 121
+    .line 122
+    invoke-virtual {p0}, Lkq1;->run()V
+
+    .line 123
+    .line 124
+    .line 125
+    :goto_0
+    return-void
+
+    .line 126
+    :pswitch_7
+    check-cast p0, Lqo;
+
+    .line 127
+    .line 128
+    check-cast v2, Ljava/lang/Runnable;
+
+    .line 129
+    .line 130
+    :try_start_0
+    invoke-interface {v2}, Ljava/lang/Runnable;->run()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 131
+    .line 132
+    .line 133
+    invoke-virtual {p0}, Lqo;->a()V
+
+    .line 134
+    .line 135
+    .line 136
+    return-void
+
+    .line 137
+    :catchall_0
+    move-exception v0
+
+    .line 138
+    invoke-virtual {p0}, Lqo;->a()V
+
+    .line 139
+    .line 140
+    .line 141
     throw v0
+
+    .line 142
+    :pswitch_8
+    check-cast p0, Lfb;
+
+    .line 143
+    .line 144
+    check-cast v2, Landroid/util/LongSparseArray;
+
+    .line 145
+    .line 146
+    invoke-static {p0, v2}, Ldb;->b(Lfb;Landroid/util/LongSparseArray;)V
+
+    .line 147
+    .line 148
+    .line 149
+    return-void
+
+    .line 150
+    nop
+
+    .line 151
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

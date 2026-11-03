@@ -1,121 +1,135 @@
-.class public abstract Lf32;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lf32;
+.super Landroid/text/style/MetricAffectingSpan;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Lff1;
+# instance fields
+.field public final synthetic j:B
 
-.field public static final b:Ld72;
-
-.field public static final c:Ld72;
-
-.field public static final d:Ld72;
-
-.field public static final e:Ld72;
+.field public final k:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(Ljava/lang/Object;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lff1;
+    iput-byte p2, p0, Lf32;->j:B
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/text/style/MetricAffectingSpan;-><init>()V
 
     .line 4
     .line 5
     .line 6
-    sput-object v0, Lf32;->a:Lff1;
+    iput-object p1, p0, Lf32;->k:Ljava/lang/Object;
 
     .line 7
     .line 8
-    new-instance v0, Ld72;
+    return-void
+.end method
+
+
+# virtual methods
+.method public final updateDrawState(Landroid/text/TextPaint;)V
+    .locals 1
+
+    .line 1
+    iget-byte v0, p0, Lf32;->j:B
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lf32;->k:Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    packed-switch v0, :pswitch_data_0
+
+    .line 6
+    .line 7
+    .line 8
+    check-cast p0, Landroid/graphics/Typeface;
 
     .line 9
     .line 10
-    const-string v1, "sans-serif"
+    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
     .line 11
     .line 12
-    const-string v2, "FontFamily.SansSerif"
-
     .line 13
+    return-void
+
     .line 14
-    invoke-direct {v0, v1, v2}, Ld72;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    :pswitch_0
+    check-cast p0, Ljava/lang/String;
 
     .line 15
     .line 16
-    .line 17
-    sput-object v0, Lf32;->b:Ld72;
+    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setFontFeatureSettings(Ljava/lang/String;)V
 
+    .line 17
     .line 18
     .line 19
-    new-instance v0, Ld72;
+    return-void
 
     .line 20
+    nop
+
     .line 21
-    const-string v1, "serif"
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    .line 22
-    .line 23
-    const-string v2, "FontFamily.Serif"
+.method public final updateMeasureState(Landroid/text/TextPaint;)V
+    .locals 1
 
-    .line 24
-    .line 25
-    invoke-direct {v0, v1, v2}, Ld72;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+    .line 1
+    iget-byte v0, p0, Lf32;->j:B
 
-    .line 26
-    .line 27
-    .line 28
-    sput-object v0, Lf32;->c:Ld72;
+    .line 2
+    .line 3
+    iget-object p0, p0, Lf32;->k:Ljava/lang/Object;
 
-    .line 29
-    .line 30
-    new-instance v0, Ld72;
+    .line 4
+    .line 5
+    packed-switch v0, :pswitch_data_0
 
-    .line 31
-    .line 32
-    const-string v1, "monospace"
+    .line 6
+    .line 7
+    .line 8
+    check-cast p0, Landroid/graphics/Typeface;
 
-    .line 33
-    .line 34
-    const-string v2, "FontFamily.Monospace"
+    .line 9
+    .line 10
+    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
 
-    .line 35
-    .line 36
-    invoke-direct {v0, v1, v2}, Ld72;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 37
-    .line 38
-    .line 39
-    sput-object v0, Lf32;->d:Ld72;
-
-    .line 40
-    .line 41
-    new-instance v0, Ld72;
-
-    .line 42
-    .line 43
-    const-string v1, "cursive"
-
-    .line 44
-    .line 45
-    const-string v2, "FontFamily.Cursive"
-
-    .line 46
-    .line 47
-    invoke-direct {v0, v1, v2}, Ld72;-><init>(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 48
-    .line 49
-    .line 50
-    sput-object v0, Lf32;->e:Ld72;
-
-    .line 51
-    .line 52
+    .line 11
+    .line 12
+    .line 13
     return-void
+
+    .line 14
+    :pswitch_0
+    check-cast p0, Ljava/lang/String;
+
+    .line 15
+    .line 16
+    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setFontFeatureSettings(Ljava/lang/String;)V
+
+    .line 17
+    .line 18
+    .line 19
+    return-void
+
+    .line 20
+    nop
+
+    .line 21
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

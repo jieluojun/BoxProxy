@@ -1,44 +1,77 @@
-.class public interface abstract Leq;
+.class public abstract Leq;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# virtual methods
-.method public abstract b()Z
+# static fields
+.field public static final a:Lye3;
+
+.field public static b:Landroid/graphics/Paint;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    .line 1
+    new-instance v0, Lye3;
+
+    .line 2
+    .line 3
+    const/16 v1, 0x1e
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Lye3;-><init>(I)V
+
+    .line 6
+    .line 7
+    .line 8
+    sput-object v0, Leq;->a:Lye3;
+
+    .line 9
+    .line 10
+    return-void
 .end method
 
-.method public abstract c()I
-.end method
+.method public static a(Landroid/widget/TextView;Ljava/lang/String;)V
+    .locals 1
 
-.method public abstract dismiss()V
-.end method
+    .line 1
+    invoke-virtual {p0}, Landroid/widget/TextView;->getFontVariationSettings()Ljava/lang/String;
 
-.method public abstract e()Landroid/graphics/drawable/Drawable;
-.end method
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
 
-.method public abstract f(Ljava/lang/CharSequence;)V
-.end method
+    .line 5
+    invoke-static {v0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-.method public abstract g(Landroid/graphics/drawable/Drawable;)V
-.end method
+    .line 6
+    .line 7
+    .line 8
+    move-result v0
 
-.method public abstract j(I)V
-.end method
+    .line 9
+    if-eqz v0, :cond_0
 
-.method public abstract k(I)V
-.end method
+    .line 10
+    .line 11
+    const-string v0, ""
 
-.method public abstract l(I)V
-.end method
+    .line 12
+    .line 13
+    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setFontVariationSettings(Ljava/lang/String;)Z
 
-.method public abstract m(II)V
-.end method
+    .line 14
+    .line 15
+    .line 16
+    :cond_0
+    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setFontVariationSettings(Ljava/lang/String;)Z
 
-.method public abstract n()I
-.end method
-
-.method public abstract o()Ljava/lang/CharSequence;
-.end method
-
-.method public abstract p(Landroid/widget/ListAdapter;)V
+    .line 17
+    .line 18
+    .line 19
+    return-void
 .end method

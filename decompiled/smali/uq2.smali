@@ -1,285 +1,160 @@
 .class public final Luq2;
-.super Lsq2;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lpr0;
+.super Loq2;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final m:Luq2;
+# instance fields
+.field public final j:I
+
+.field public final k:I
+
+.field public l:Z
+
+.field public m:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(III)V
+    .locals 2
 
     .line 1
-    new-instance v0, Luq2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/4 v1, 0x1
-
     .line 4
-    const/4 v2, 0x0
+    iput p3, p0, Luq2;->j:I
 
     .line 5
-    invoke-direct {v0, v1, v2, v1}, Lsq2;-><init>(III)V
-
     .line 6
+    iput p2, p0, Luq2;->k:I
+
     .line 7
     .line 8
-    sput-object v0, Luq2;->m:Luq2;
+    const/4 v0, 0x0
 
     .line 9
+    const/4 v1, 0x1
+
     .line 10
+    if-lez p3, :cond_0
+
+    .line 11
+    .line 12
+    if-gt p1, p2, :cond_1
+
+    .line 13
+    .line 14
+    :goto_0
+    move v0, v1
+
+    .line 15
+    goto :goto_1
+
+    .line 16
+    :cond_0
+    if-lt p1, p2, :cond_1
+
+    .line 17
+    .line 18
+    goto :goto_0
+
+    .line 19
+    :cond_1
+    :goto_1
+    iput-boolean v0, p0, Luq2;->l:Z
+
+    .line 20
+    .line 21
+    if-eqz v0, :cond_2
+
+    .line 22
+    .line 23
+    goto :goto_2
+
+    .line 24
+    :cond_2
+    move p1, p2
+
+    .line 25
+    :goto_2
+    iput p1, p0, Luq2;->m:I
+
+    .line 26
+    .line 27
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()Ljava/lang/Comparable;
+.method public final hasNext()Z
     .locals 0
 
     .line 1
-    iget p0, p0, Lsq2;->j:I
+    iget-boolean p0, p0, Luq2;->l:Z
 
     .line 2
     .line 3
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
+    return p0
 .end method
 
-.method public final c()Ljava/lang/Comparable;
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lsq2;->k:I
-
-    .line 2
-    .line 3
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
+.method public final nextInt()I
     .locals 2
 
     .line 1
-    instance-of v0, p1, Luq2;
+    iget v0, p0, Luq2;->m:I
 
     .line 2
     .line 3
-    if-eqz v0, :cond_2
+    iget v1, p0, Luq2;->k:I
 
     .line 4
     .line 5
-    invoke-virtual {p0}, Luq2;->isEmpty()Z
+    if-ne v0, v1, :cond_1
 
     .line 6
     .line 7
-    .line 8
-    move-result v0
+    iget-boolean v1, p0, Luq2;->l:Z
 
+    .line 8
     .line 9
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
-    move-object v0, p1
+    const/4 v1, 0x0
 
     .line 12
-    check-cast v0, Luq2;
+    iput-boolean v1, p0, Luq2;->l:Z
 
     .line 13
     .line 14
-    invoke-virtual {v0}, Luq2;->isEmpty()Z
-
-    .line 15
-    .line 16
-    .line 17
-    move-result v0
-
-    .line 18
-    if-nez v0, :cond_1
-
-    .line 19
-    .line 20
-    :cond_0
-    check-cast p1, Luq2;
-
-    .line 21
-    .line 22
-    iget v0, p1, Lsq2;->j:I
-
-    .line 23
-    .line 24
-    iget v1, p0, Lsq2;->j:I
-
-    .line 25
-    .line 26
-    if-ne v1, v0, :cond_2
-
-    .line 27
-    .line 28
-    iget p0, p0, Lsq2;->k:I
-
-    .line 29
-    .line 30
-    iget p1, p1, Lsq2;->k:I
-
-    .line 31
-    .line 32
-    if-ne p0, p1, :cond_2
-
-    .line 33
-    .line 34
-    :cond_1
-    const/4 p0, 0x1
-
-    .line 35
-    return p0
-
-    .line 36
-    :cond_2
-    const/4 p0, 0x0
-
-    .line 37
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Luq2;->isEmpty()Z
-
-    .line 2
-    .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    if-eqz v0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, -0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    iget v0, p0, Lsq2;->j:I
-
-    .line 10
-    .line 11
-    mul-int/lit8 v0, v0, 0x1f
-
-    .line 12
-    .line 13
-    iget p0, p0, Lsq2;->k:I
-
-    .line 14
-    .line 15
-    add-int/2addr v0, p0
-
-    .line 16
     return v0
-.end method
 
-.method public final isEmpty()Z
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lsq2;->j:I
-
-    .line 2
-    .line 3
-    iget p0, p0, Lsq2;->k:I
-
-    .line 4
-    .line 5
-    if-le v0, p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    iget v1, p0, Lsq2;->j:I
-
-    .line 7
-    .line 8
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 9
-    .line 10
-    .line 11
-    const-string v1, ".."
-
-    .line 12
-    .line 13
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 14
     .line 15
-    .line 16
-    iget p0, p0, Lsq2;->k:I
+    :cond_0
+    invoke-static {}, Lvd1;->p()V
 
+    .line 16
     .line 17
     .line 18
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    const/4 p0, 0x0
 
     .line 19
+    return p0
+
     .line 20
+    :cond_1
+    iget v1, p0, Luq2;->j:I
+
     .line 21
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
     .line 22
-    .line 23
-    .line 24
-    move-result-object p0
+    add-int/2addr v1, v0
 
+    .line 23
+    iput v1, p0, Luq2;->m:I
+
+    .line 24
     .line 25
-    return-object p0
+    return v0
 .end method

@@ -1,44 +1,59 @@
-.class public abstract Loa3;
+.class public final Loa3;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Lmp1;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 3
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 0
 
     .line 1
-    new-instance v0, Lv43;
+    instance-of p0, p1, Loa3;
 
     .line 2
     .line 3
-    const/4 v1, 0x2
+    if-nez p0, :cond_0
 
     .line 4
-    invoke-direct {v0, v1}, Lv43;-><init>(B)V
-
     .line 5
+    const/4 p0, 0x0
+
     .line 6
+    return p0
+
     .line 7
-    new-instance v1, Lmp1;
+    :cond_0
+    const/4 p0, 0x1
 
     .line 8
-    .line 9
-    const/4 v2, 0x1
+    return p0
+.end method
 
-    .line 10
-    invoke-direct {v1, v0, v2}, Lmp1;-><init>(Lg52;B)V
+.method public final hashCode()I
+    .locals 0
 
-    .line 11
-    .line 12
-    .line 13
-    sput-object v1, Loa3;->a:Lmp1;
+    .line 1
+    const/4 p0, 0x1
 
-    .line 14
-    .line 15
-    return-void
+    .line 2
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    .line 3
+    .line 4
+    .line 5
+    move-result p0
+
+    .line 6
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    const-string p0, "Assertive"
+
+    .line 2
+    .line 3
+    return-object p0
 .end method

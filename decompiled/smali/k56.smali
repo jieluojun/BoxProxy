@@ -1,107 +1,113 @@
-.class public final Lk56;
-.super Lu86;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final synthetic Lk56;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lo52;
 
 
 # instance fields
-.field public c:Ljava/lang/Object;
+.field public final synthetic j:Lxn4;
+
+.field public final synthetic k:I
+
+.field public final synthetic l:I
+
+.field public final synthetic m:Lxn4;
+
+.field public final synthetic n:I
+
+.field public final synthetic o:Lx85;
 
 
 # direct methods
-.method public constructor <init>(JLjava/lang/Object;)V
+.method public synthetic constructor <init>(Lxn4;IILxn4;ILx85;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1, p2}, Lu86;-><init>(J)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    iput-object p3, p0, Lk56;->c:Ljava/lang/Object;
+    iput-object p1, p0, Lk56;->j:Lxn4;
 
     .line 5
     .line 6
+    iput p2, p0, Lk56;->k:I
+
+    .line 7
+    .line 8
+    iput p3, p0, Lk56;->l:I
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Lk56;->m:Lxn4;
+
+    .line 11
+    .line 12
+    iput p5, p0, Lk56;->n:I
+
+    .line 13
+    .line 14
+    iput-object p6, p0, Lk56;->o:Lx85;
+
+    .line 15
+    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lu86;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    check-cast p1, Lk56;
-
-    .line 5
-    .line 6
-    iget-object p1, p1, Lk56;->c:Ljava/lang/Object;
-
-    .line 7
-    .line 8
-    iput-object p1, p0, Lk56;->c:Ljava/lang/Object;
-
-    .line 9
-    .line 10
-    return-void
-.end method
-
-.method public final b()Lu86;
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 3
 
     .line 1
-    new-instance v0, Lk56;
+    check-cast p1, Lwn4;
 
     .line 2
     .line 3
-    invoke-static {}, Le56;->h()Lx46;
+    iget-object v0, p0, Lk56;->j:Lxn4;
 
     .line 4
     .line 5
-    .line 6
-    move-result-object v1
+    iget v1, p0, Lk56;->k:I
 
+    .line 6
     .line 7
-    invoke-virtual {v1}, Lx46;->g()J
+    iget v2, p0, Lk56;->l:I
 
     .line 8
     .line 9
+    invoke-static {p1, v0, v1, v2}, Lwn4;->l(Lwn4;Lxn4;II)V
+
     .line 10
-    move-result-wide v1
-
     .line 11
-    iget-object p0, p0, Lk56;->c:Ljava/lang/Object;
-
     .line 12
-    .line 13
-    invoke-direct {v0, v1, v2, p0}, Lk56;-><init>(JLjava/lang/Object;)V
+    iget-object v0, p0, Lk56;->o:Lx85;
 
+    .line 13
     .line 14
+    iget v0, v0, Lx85;->j:I
+
     .line 15
     .line 16
-    return-object v0
-.end method
+    iget-object v1, p0, Lk56;->m:Lxn4;
 
-.method public final c(J)Lu86;
-    .locals 1
+    .line 17
+    .line 18
+    iget p0, p0, Lk56;->n:I
 
-    .line 1
-    new-instance v0, Lk56;
+    .line 19
+    .line 20
+    invoke-static {p1, v1, p0, v0}, Lwn4;->l(Lwn4;Lxn4;II)V
 
-    .line 2
-    .line 3
-    iget-object p0, p0, Lk56;->c:Ljava/lang/Object;
+    .line 21
+    .line 22
+    .line 23
+    sget-object p0, Lk27;->a:Lk27;
 
-    .line 4
-    .line 5
-    invoke-direct {v0, p1, p2, p0}, Lk56;-><init>(JLjava/lang/Object;)V
-
-    .line 6
-    .line 7
-    .line 8
-    return-object v0
+    .line 24
+    .line 25
+    return-object p0
 .end method

@@ -1,26 +1,28 @@
 .class public final Lff5;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
+.field public j:Lxf5;
 
-.field public final synthetic k:Lvb5;
+.field public synthetic k:Ljava/lang/Object;
 
-.field public l:I
+.field public final synthetic l:Lgx1;
+
+.field public m:I
 
 
 # direct methods
-.method public constructor <init>(Lvb5;Ld81;)V
+.method public constructor <init>(Lgx1;Lz71;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lff5;->k:Lvb5;
+    iput-object p1, p0, Lff5;->l:Lgx1;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
     .line 4
     .line 5
@@ -34,11 +36,11 @@
     .locals 1
 
     .line 1
-    iput-object p1, p0, Lff5;->j:Ljava/lang/Object;
+    iput-object p1, p0, Lff5;->k:Ljava/lang/Object;
 
     .line 2
     .line 3
-    iget p1, p0, Lff5;->l:I
+    iget p1, p0, Lff5;->m:I
 
     .line 4
     .line 5
@@ -49,18 +51,18 @@
     or-int/2addr p1, v0
 
     .line 8
-    iput p1, p0, Lff5;->l:I
+    iput p1, p0, Lff5;->m:I
 
     .line 9
     .line 10
-    iget-object p1, p0, Lff5;->k:Lvb5;
+    iget-object p1, p0, Lff5;->l:Lgx1;
 
     .line 11
     .line 12
     const/4 v0, 0x0
 
     .line 13
-    invoke-virtual {p1, p0, v0, v0}, Lvb5;->j(Ld81;Lzf5;Ljava/io/File;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, p0}, Lgx1;->j(Lxf5;Lz71;)Ljava/lang/Object;
 
     .line 14
     .line 15
@@ -68,26 +70,5 @@
     move-result-object p0
 
     .line 17
-    sget-object p1, Lgb1;->j:Lgb1;
-
-    .line 18
-    .line 19
-    if-ne p0, p1, :cond_0
-
-    .line 20
-    .line 21
     return-object p0
-
-    .line 22
-    :cond_0
-    new-instance p1, Lxa5;
-
-    .line 23
-    .line 24
-    invoke-direct {p1, p0}, Lxa5;-><init>(Ljava/lang/Object;)V
-
-    .line 25
-    .line 26
-    .line 27
-    return-object p1
 .end method

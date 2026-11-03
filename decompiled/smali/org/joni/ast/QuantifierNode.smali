@@ -1,12 +1,12 @@
 .class public final Lorg/joni/ast/QuantifierNode;
-.super Lr86;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lda6;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
 .field static final PopularQStr:[Ljava/lang/String;
 
-.field static final REDUCE_TABLE:[[Lq45;
+.field static final REDUCE_TABLE:[[Ln55;
 
 .field public static final REPEAT_INFINITE:I = -0x1
 
@@ -18,15 +18,15 @@
 
 .field public greedy:Z
 
-.field public headExact:Lj54;
+.field public headExact:Le64;
 
 .field public isRefered:Z
 
 .field public lower:I
 
-.field public nextHeadExact:Lj54;
+.field public nextHeadExact:Le64;
 
-.field public target:Lj54;
+.field public target:Le64;
 
 .field public targetEmptyInfo:I
 
@@ -38,30 +38,30 @@
     .locals 13
 
     .line 1
-    sget-object v0, Lq45;->k:Lq45;
+    sget-object v0, Ln55;->k:Ln55;
 
     .line 2
     .line 3
-    sget-object v1, Lq45;->l:Lq45;
+    sget-object v1, Ln55;->l:Ln55;
 
     .line 4
     .line 5
-    sget-object v3, Lq45;->n:Lq45;
+    sget-object v3, Ln55;->n:Ln55;
 
     .line 6
     .line 7
-    sget-object v4, Lq45;->m:Lq45;
+    sget-object v4, Ln55;->m:Ln55;
 
     .line 8
     .line 9
-    sget-object v5, Lq45;->j:Lq45;
+    sget-object v5, Ln55;->j:Ln55;
 
     .line 10
     .line 11
     move-object v2, v1
 
     .line 12
-    filled-new-array/range {v0 .. v5}, [Lq45;
+    filled-new-array/range {v0 .. v5}, [Ln55;
 
     .line 13
     .line 14
@@ -78,7 +78,7 @@
     move-object v9, v5
 
     .line 19
-    sget-object v3, Lq45;->o:Lq45;
+    sget-object v3, Ln55;->o:Ln55;
 
     .line 20
     .line 21
@@ -94,7 +94,7 @@
     move-object v5, v0
 
     .line 25
-    filled-new-array/range {v0 .. v5}, [Lq45;
+    filled-new-array/range {v0 .. v5}, [Ln55;
 
     .line 26
     .line 27
@@ -111,7 +111,7 @@
     move-object v3, v9
 
     .line 32
-    filled-new-array/range {v0 .. v5}, [Lq45;
+    filled-new-array/range {v0 .. v5}, [Ln55;
 
     .line 33
     .line 34
@@ -137,7 +137,7 @@
     move-object v1, v8
 
     .line 42
-    filled-new-array/range {v0 .. v5}, [Lq45;
+    filled-new-array/range {v0 .. v5}, [Ln55;
 
     .line 43
     .line 44
@@ -160,7 +160,7 @@
     move-object v5, v0
 
     .line 51
-    filled-new-array/range {v0 .. v5}, [Lq45;
+    filled-new-array/range {v0 .. v5}, [Ln55;
 
     .line 52
     .line 53
@@ -183,7 +183,7 @@
     move-object v3, v11
 
     .line 60
-    filled-new-array/range {v0 .. v5}, [Lq45;
+    filled-new-array/range {v0 .. v5}, [Ln55;
 
     .line 61
     .line 62
@@ -203,7 +203,7 @@
     move-object v10, v12
 
     .line 68
-    filled-new-array/range {v6 .. v11}, [[Lq45;
+    filled-new-array/range {v6 .. v11}, [[Ln55;
 
     .line 69
     .line 70
@@ -211,7 +211,7 @@
     move-result-object v0
 
     .line 72
-    sput-object v0, Lorg/joni/ast/QuantifierNode;->REDUCE_TABLE:[[Lq45;
+    sput-object v0, Lorg/joni/ast/QuantifierNode;->REDUCE_TABLE:[[Ln55;
 
     .line 73
     .line 74
@@ -301,7 +301,7 @@
     const/4 v0, 0x5
 
     .line 2
-    invoke-direct {p0, v0}, Lj54;-><init>(I)V
+    invoke-direct {p0, v0}, Le64;-><init>(I)V
 
     .line 3
     .line 4
@@ -371,7 +371,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lr86;->state:I
+    iget v0, p0, Lda6;->state:I
 
     .line 2
     .line 3
@@ -379,7 +379,7 @@
 
     .line 4
     .line 5
-    iput v0, p0, Lr86;->state:I
+    iput v0, p0, Lda6;->state:I
 
     .line 6
     .line 7
@@ -390,7 +390,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lr86;->state:I
+    iget v0, p0, Lda6;->state:I
 
     .line 2
     .line 3
@@ -398,7 +398,7 @@
 
     .line 4
     .line 5
-    iput v0, p0, Lr86;->state:I
+    iput v0, p0, Lda6;->state:I
 
     .line 6
     .line 7
@@ -409,7 +409,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lr86;->state:I
+    iget v0, p0, Lda6;->state:I
 
     .line 2
     .line 3
@@ -417,7 +417,7 @@
 
     .line 4
     .line 5
-    iput v0, p0, Lr86;->state:I
+    iput v0, p0, Lda6;->state:I
 
     .line 6
     .line 7
@@ -428,7 +428,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lr86;->state:I
+    iget v0, p0, Lda6;->state:I
 
     .line 2
     .line 3
@@ -436,7 +436,7 @@
 
     .line 4
     .line 5
-    iput v0, p0, Lr86;->state:I
+    iput v0, p0, Lda6;->state:I
 
     .line 6
     .line 7
@@ -447,7 +447,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lr86;->state:I
+    iget v0, p0, Lda6;->state:I
 
     .line 2
     .line 3
@@ -455,7 +455,7 @@
 
     .line 4
     .line 5
-    iput v0, p0, Lr86;->state:I
+    iput v0, p0, Lda6;->state:I
 
     .line 6
     .line 7
@@ -466,7 +466,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->clearMark1()V
+    invoke-super {p0}, Lda6;->clearMark1()V
 
     .line 2
     .line 3
@@ -478,7 +478,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->clearMark2()V
+    invoke-super {p0}, Lda6;->clearMark2()V
 
     .line 2
     .line 3
@@ -490,7 +490,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lr86;->state:I
+    iget v0, p0, Lda6;->state:I
 
     .line 2
     .line 3
@@ -498,7 +498,7 @@
 
     .line 4
     .line 5
-    iput v0, p0, Lr86;->state:I
+    iput v0, p0, Lda6;->state:I
 
     .line 6
     .line 7
@@ -509,7 +509,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lr86;->state:I
+    iget v0, p0, Lda6;->state:I
 
     .line 2
     .line 3
@@ -517,7 +517,7 @@
 
     .line 4
     .line 5
-    iput v0, p0, Lr86;->state:I
+    iput v0, p0, Lda6;->state:I
 
     .line 6
     .line 7
@@ -528,7 +528,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lr86;->state:I
+    iget v0, p0, Lda6;->state:I
 
     .line 2
     .line 3
@@ -536,7 +536,7 @@
 
     .line 4
     .line 5
-    iput v0, p0, Lr86;->state:I
+    iput v0, p0, Lda6;->state:I
 
     .line 6
     .line 7
@@ -547,7 +547,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lr86;->state:I
+    iget v0, p0, Lda6;->state:I
 
     .line 2
     .line 3
@@ -555,7 +555,7 @@
 
     .line 4
     .line 5
-    iput v0, p0, Lr86;->state:I
+    iput v0, p0, Lda6;->state:I
 
     .line 6
     .line 7
@@ -566,7 +566,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lr86;->state:I
+    iget v0, p0, Lda6;->state:I
 
     .line 2
     .line 3
@@ -574,7 +574,7 @@
 
     .line 4
     .line 5
-    iput v0, p0, Lr86;->state:I
+    iput v0, p0, Lda6;->state:I
 
     .line 6
     .line 7
@@ -585,7 +585,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lr86;->state:I
+    iget v0, p0, Lda6;->state:I
 
     .line 2
     .line 3
@@ -593,7 +593,7 @@
 
     .line 4
     .line 5
-    iput v0, p0, Lr86;->state:I
+    iput v0, p0, Lda6;->state:I
 
     .line 6
     .line 7
@@ -604,7 +604,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lr86;->state:I
+    iget v0, p0, Lda6;->state:I
 
     .line 2
     .line 3
@@ -612,7 +612,7 @@
 
     .line 4
     .line 5
-    iput v0, p0, Lr86;->state:I
+    iput v0, p0, Lda6;->state:I
 
     .line 6
     .line 7
@@ -623,7 +623,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lr86;->state:I
+    iget v0, p0, Lda6;->state:I
 
     .line 2
     .line 3
@@ -631,7 +631,7 @@
 
     .line 4
     .line 5
-    iput v0, p0, Lr86;->state:I
+    iput v0, p0, Lda6;->state:I
 
     .line 6
     .line 7
@@ -642,19 +642,19 @@
     .locals 1
 
     .line 1
-    iget v0, p1, Lr86;->state:I
+    iget v0, p1, Lda6;->state:I
 
     .line 2
     .line 3
-    iput v0, p0, Lr86;->state:I
+    iput v0, p0, Lda6;->state:I
 
     .line 4
     .line 5
-    iget-object v0, p1, Lorg/joni/ast/QuantifierNode;->target:Lj54;
+    iget-object v0, p1, Lorg/joni/ast/QuantifierNode;->target:Le64;
 
     .line 6
     .line 7
-    invoke-virtual {p0, v0}, Lorg/joni/ast/QuantifierNode;->setTarget(Lj54;)V
+    invoke-virtual {p0, v0}, Lorg/joni/ast/QuantifierNode;->setTarget(Le64;)V
 
     .line 8
     .line 9
@@ -662,7 +662,7 @@
     const/4 v0, 0x0
 
     .line 11
-    iput-object v0, p1, Lorg/joni/ast/QuantifierNode;->target:Lj54;
+    iput-object v0, p1, Lorg/joni/ast/QuantifierNode;->target:Le64;
 
     .line 12
     .line 13
@@ -698,19 +698,19 @@
 
     .line 28
     .line 29
-    iget-object v0, p1, Lorg/joni/ast/QuantifierNode;->headExact:Lj54;
+    iget-object v0, p1, Lorg/joni/ast/QuantifierNode;->headExact:Le64;
 
     .line 30
     .line 31
-    iput-object v0, p0, Lorg/joni/ast/QuantifierNode;->headExact:Lj54;
+    iput-object v0, p0, Lorg/joni/ast/QuantifierNode;->headExact:Le64;
 
     .line 32
     .line 33
-    iget-object v0, p1, Lorg/joni/ast/QuantifierNode;->nextHeadExact:Lj54;
+    iget-object v0, p1, Lorg/joni/ast/QuantifierNode;->nextHeadExact:Le64;
 
     .line 34
     .line 35
-    iput-object v0, p0, Lorg/joni/ast/QuantifierNode;->nextHeadExact:Lj54;
+    iput-object v0, p0, Lorg/joni/ast/QuantifierNode;->nextHeadExact:Le64;
 
     .line 36
     .line 37
@@ -733,11 +733,11 @@
     return-void
 .end method
 
-.method public getChild()Lj54;
+.method public getChild()Le64;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lorg/joni/ast/QuantifierNode;->target:Lj54;
+    iget-object p0, p0, Lorg/joni/ast/QuantifierNode;->target:Le64;
 
     .line 2
     .line 3
@@ -759,7 +759,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->isAddrFixed()Z
+    invoke-super {p0}, Lda6;->isAddrFixed()Z
 
     .line 2
     .line 3
@@ -798,11 +798,11 @@
 
     .line 12
     .line 13
-    iget-object p0, p0, Lorg/joni/ast/QuantifierNode;->target:Lj54;
+    iget-object p0, p0, Lorg/joni/ast/QuantifierNode;->target:Le64;
 
     .line 14
     .line 15
-    invoke-virtual {p0}, Lj54;->getType()I
+    invoke-virtual {p0}, Le64;->getType()I
 
     .line 16
     .line 17
@@ -834,7 +834,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->isByNumber()Z
+    invoke-super {p0}, Lda6;->isByNumber()Z
 
     .line 2
     .line 3
@@ -849,7 +849,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->isCLenFixed()Z
+    invoke-super {p0}, Lda6;->isCLenFixed()Z
 
     .line 2
     .line 3
@@ -864,7 +864,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->isCalled()Z
+    invoke-super {p0}, Lda6;->isCalled()Z
 
     .line 2
     .line 3
@@ -879,7 +879,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->isInRepeat()Z
+    invoke-super {p0}, Lda6;->isInRepeat()Z
 
     .line 2
     .line 3
@@ -894,7 +894,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->isMark1()Z
+    invoke-super {p0}, Lda6;->isMark1()Z
 
     .line 2
     .line 3
@@ -909,7 +909,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->isMark2()Z
+    invoke-super {p0}, Lda6;->isMark2()Z
 
     .line 2
     .line 3
@@ -924,7 +924,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->isMaxFixed()Z
+    invoke-super {p0}, Lda6;->isMaxFixed()Z
 
     .line 2
     .line 3
@@ -939,7 +939,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->isMemBackrefed()Z
+    invoke-super {p0}, Lda6;->isMemBackrefed()Z
 
     .line 2
     .line 3
@@ -954,7 +954,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->isMinFixed()Z
+    invoke-super {p0}, Lda6;->isMinFixed()Z
 
     .line 2
     .line 3
@@ -969,7 +969,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->isNameRef()Z
+    invoke-super {p0}, Lda6;->isNameRef()Z
 
     .line 2
     .line 3
@@ -984,7 +984,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->isNamedGroup()Z
+    invoke-super {p0}, Lda6;->isNamedGroup()Z
 
     .line 2
     .line 3
@@ -999,7 +999,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->isNestLevel()Z
+    invoke-super {p0}, Lda6;->isNestLevel()Z
 
     .line 2
     .line 3
@@ -1014,7 +1014,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->isRecursion()Z
+    invoke-super {p0}, Lda6;->isRecursion()Z
 
     .line 2
     .line 3
@@ -1029,7 +1029,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->isStopBtSimpleRepeat()Z
+    invoke-super {p0}, Lda6;->isStopBtSimpleRepeat()Z
 
     .line 2
     .line 3
@@ -1224,7 +1224,7 @@
 
     .line 14
     :cond_0
-    sget-object v2, Lorg/joni/ast/QuantifierNode;->REDUCE_TABLE:[[Lq45;
+    sget-object v2, Lorg/joni/ast/QuantifierNode;->REDUCE_TABLE:[[Ln55;
 
     .line 15
     .line 16
@@ -1293,7 +1293,7 @@
 
     .line 44
     :cond_1
-    invoke-virtual {p0, p1}, Lorg/joni/ast/QuantifierNode;->setTarget(Lj54;)V
+    invoke-virtual {p0, p1}, Lorg/joni/ast/QuantifierNode;->setTarget(Le64;)V
 
     .line 45
     .line 46
@@ -1326,11 +1326,11 @@
 
     .line 60
     :cond_2
-    iget-object v0, p1, Lorg/joni/ast/QuantifierNode;->target:Lj54;
+    iget-object v0, p1, Lorg/joni/ast/QuantifierNode;->target:Le64;
 
     .line 61
     .line 62
-    invoke-virtual {p0, v0}, Lorg/joni/ast/QuantifierNode;->setTarget(Lj54;)V
+    invoke-virtual {p0, v0}, Lorg/joni/ast/QuantifierNode;->setTarget(Le64;)V
 
     .line 63
     .line 64
@@ -1351,11 +1351,11 @@
 
     .line 72
     :cond_3
-    iget-object v0, p1, Lorg/joni/ast/QuantifierNode;->target:Lj54;
+    iget-object v0, p1, Lorg/joni/ast/QuantifierNode;->target:Le64;
 
     .line 73
     .line 74
-    invoke-virtual {p0, v0}, Lorg/joni/ast/QuantifierNode;->setTarget(Lj54;)V
+    invoke-virtual {p0, v0}, Lorg/joni/ast/QuantifierNode;->setTarget(Le64;)V
 
     .line 75
     .line 76
@@ -1376,11 +1376,11 @@
 
     .line 84
     :cond_4
-    iget-object v0, p1, Lorg/joni/ast/QuantifierNode;->target:Lj54;
+    iget-object v0, p1, Lorg/joni/ast/QuantifierNode;->target:Le64;
 
     .line 85
     .line 86
-    invoke-virtual {p0, v0}, Lorg/joni/ast/QuantifierNode;->setTarget(Lj54;)V
+    invoke-virtual {p0, v0}, Lorg/joni/ast/QuantifierNode;->setTarget(Le64;)V
 
     .line 87
     .line 88
@@ -1410,7 +1410,7 @@
     const/4 p0, 0x0
 
     .line 100
-    iput-object p0, p1, Lorg/joni/ast/QuantifierNode;->target:Lj54;
+    iput-object p0, p1, Lorg/joni/ast/QuantifierNode;->target:Le64;
 
     .line 101
     .line 102
@@ -1418,7 +1418,7 @@
 
     .line 103
     :cond_6
-    invoke-virtual {p0, p1}, Lorg/joni/ast/QuantifierNode;->setTarget(Lj54;)V
+    invoke-virtual {p0, p1}, Lorg/joni/ast/QuantifierNode;->setTarget(Le64;)V
 
     .line 104
     .line 105
@@ -1432,7 +1432,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->setAddrFixed()V
+    invoke-super {p0}, Lda6;->setAddrFixed()V
 
     .line 2
     .line 3
@@ -1444,7 +1444,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lr86;->state:I
+    iget v0, p0, Lda6;->state:I
 
     .line 2
     .line 3
@@ -1452,7 +1452,7 @@
 
     .line 4
     .line 5
-    iput v0, p0, Lr86;->state:I
+    iput v0, p0, Lda6;->state:I
 
     .line 6
     .line 7
@@ -1463,7 +1463,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->setCLenFixed()V
+    invoke-super {p0}, Lda6;->setCLenFixed()V
 
     .line 2
     .line 3
@@ -1475,7 +1475,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->setCalled()V
+    invoke-super {p0}, Lda6;->setCalled()V
 
     .line 2
     .line 3
@@ -1483,11 +1483,11 @@
     return-void
 .end method
 
-.method public setChild(Lj54;)V
+.method public setChild(Le64;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lorg/joni/ast/QuantifierNode;->target:Lj54;
+    iput-object p1, p0, Lorg/joni/ast/QuantifierNode;->target:Le64;
 
     .line 2
     .line 3
@@ -1498,7 +1498,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lr86;->state:I
+    iget v0, p0, Lda6;->state:I
 
     .line 2
     .line 3
@@ -1506,7 +1506,7 @@
 
     .line 4
     .line 5
-    iput v0, p0, Lr86;->state:I
+    iput v0, p0, Lda6;->state:I
 
     .line 6
     .line 7
@@ -1517,7 +1517,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->setMark1()V
+    invoke-super {p0}, Lda6;->setMark1()V
 
     .line 2
     .line 3
@@ -1529,7 +1529,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->setMark2()V
+    invoke-super {p0}, Lda6;->setMark2()V
 
     .line 2
     .line 3
@@ -1541,7 +1541,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->setMaxFixed()V
+    invoke-super {p0}, Lda6;->setMaxFixed()V
 
     .line 2
     .line 3
@@ -1553,7 +1553,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->setMemBackrefed()V
+    invoke-super {p0}, Lda6;->setMemBackrefed()V
 
     .line 2
     .line 3
@@ -1565,7 +1565,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->setMinFixed()V
+    invoke-super {p0}, Lda6;->setMinFixed()V
 
     .line 2
     .line 3
@@ -1577,7 +1577,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->setNameRef()V
+    invoke-super {p0}, Lda6;->setNameRef()V
 
     .line 2
     .line 3
@@ -1589,7 +1589,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lr86;->state:I
+    iget v0, p0, Lda6;->state:I
 
     .line 2
     .line 3
@@ -1597,7 +1597,7 @@
 
     .line 4
     .line 5
-    iput v0, p0, Lr86;->state:I
+    iput v0, p0, Lda6;->state:I
 
     .line 6
     .line 7
@@ -1608,7 +1608,7 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lr86;->state:I
+    iget v0, p0, Lda6;->state:I
 
     .line 2
     .line 3
@@ -1616,14 +1616,14 @@
 
     .line 4
     .line 5
-    iput v0, p0, Lr86;->state:I
+    iput v0, p0, Lda6;->state:I
 
     .line 6
     .line 7
     return-void
 .end method
 
-.method public setQuantifier(Lj54;ZLep5;[BII)I
+.method public setQuantifier(Le64;ZLtq5;[BII)I
     .locals 7
 
     .line 1
@@ -1655,7 +1655,7 @@
 
     .line 14
     :cond_0
-    invoke-virtual {p1}, Lj54;->getType()I
+    invoke-virtual {p1}, Le64;->getType()I
 
     .line 15
     .line 16
@@ -1708,7 +1708,7 @@
     move-result v4
 
     .line 38
-    sget-boolean v5, Lz11;->k:Z
+    sget-boolean v5, Lv11;->k:Z
 
     .line 39
     .line 40
@@ -1760,7 +1760,7 @@
 
     .line 61
     .line 62
-    sget-object p3, Lorg/joni/ast/QuantifierNode;->REDUCE_TABLE:[[Lq45;
+    sget-object p3, Lorg/joni/ast/QuantifierNode;->REDUCE_TABLE:[[Ln55;
 
     .line 63
     .line 64
@@ -1951,19 +1951,19 @@
     move-object p2, p1
 
     .line 151
-    check-cast p2, Lr96;
+    check-cast p2, Ldb6;
 
     .line 152
     .line 153
-    iget-object p4, p3, Lep5;->c:Lz2;
+    iget-object p4, p3, Ltq5;->c:Lw2;
 
     .line 154
     .line 155
-    iget p5, p2, Lr96;->c:I
+    iget p5, p2, Ldb6;->c:I
 
     .line 156
     .line 157
-    iget p6, p2, Lr96;->b:I
+    iget p6, p2, Ldb6;->b:I
 
     .line 158
     .line 159
@@ -1971,11 +1971,11 @@
 
     .line 160
     .line 161
-    iget-object v0, p2, Lr96;->a:[B
+    iget-object v0, p2, Ldb6;->a:[B
 
     .line 162
     .line 163
-    invoke-virtual {p4, p6, p5, v0}, Lz2;->r(II[B)I
+    invoke-virtual {p4, p6, p5, v0}, Lw2;->r(II[B)I
 
     .line 164
     .line 165
@@ -1983,11 +1983,11 @@
     move-result p4
 
     .line 167
-    iget p5, p2, Lr96;->c:I
+    iget p5, p2, Ldb6;->c:I
 
     .line 168
     .line 169
-    iget p6, p2, Lr96;->b:I
+    iget p6, p2, Ldb6;->b:I
 
     .line 170
     .line 171
@@ -1999,7 +1999,7 @@
 
     .line 174
     .line 175
-    iget-object p3, p3, Lep5;->c:Lz2;
+    iget-object p3, p3, Ltq5;->c:Lw2;
 
     .line 176
     .line 177
@@ -2007,11 +2007,11 @@
 
     .line 178
     .line 179
-    iget-object p4, p2, Lr96;->a:[B
+    iget-object p4, p2, Ldb6;->a:[B
 
     .line 180
     .line 181
-    invoke-virtual {p3, p6, p4, p5, p5}, Lz2;->u(I[BII)I
+    invoke-virtual {p3, p6, p4, p5, p5}, Lw2;->u(I[BII)I
 
     .line 182
     .line 183
@@ -2026,7 +2026,7 @@
 
     .line 187
     .line 188
-    iget p4, p2, Lr96;->b:I
+    iget p4, p2, Ldb6;->b:I
 
     .line 189
     .line 190
@@ -2034,24 +2034,24 @@
 
     .line 191
     .line 192
-    new-instance p4, Lr96;
+    new-instance p4, Ldb6;
 
     .line 193
     .line 194
-    iget-object p5, p2, Lr96;->a:[B
+    iget-object p5, p2, Ldb6;->a:[B
 
     .line 195
     .line 196
-    iget p6, p2, Lr96;->c:I
+    iget p6, p2, Ldb6;->c:I
 
     .line 197
     .line 198
-    invoke-direct {p4, p3, p6, p5}, Lr96;-><init>(II[B)V
+    invoke-direct {p4, p3, p6, p5}, Ldb6;-><init>(II[B)V
 
     .line 199
     .line 200
     .line 201
-    invoke-virtual {p2}, Lr96;->d()Z
+    invoke-virtual {p2}, Ldb6;->d()Z
 
     .line 202
     .line 203
@@ -2063,19 +2063,19 @@
 
     .line 206
     .line 207
-    iget p5, p4, Lr96;->d:I
+    iget p5, p4, Ldb6;->d:I
 
     .line 208
     .line 209
     or-int/2addr p5, v1
 
     .line 210
-    iput p5, p4, Lr96;->d:I
+    iput p5, p4, Ldb6;->d:I
 
     .line 211
     .line 212
     :cond_9
-    iput p3, p2, Lr96;->c:I
+    iput p3, p2, Ldb6;->c:I
 
     .line 213
     .line 214
@@ -2091,7 +2091,7 @@
 
     .line 217
     .line 218
-    invoke-virtual {p0, p4}, Lorg/joni/ast/QuantifierNode;->setTarget(Lj54;)V
+    invoke-virtual {p0, p4}, Lorg/joni/ast/QuantifierNode;->setTarget(Le64;)V
 
     .line 219
     .line 220
@@ -2101,7 +2101,7 @@
     .line 222
     :cond_b
     :goto_4
-    invoke-virtual {p0, p1}, Lorg/joni/ast/QuantifierNode;->setTarget(Lj54;)V
+    invoke-virtual {p0, p1}, Lorg/joni/ast/QuantifierNode;->setTarget(Le64;)V
 
     .line 223
     .line 224
@@ -2113,7 +2113,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->setRecursion()V
+    invoke-super {p0}, Lda6;->setRecursion()V
 
     .line 2
     .line 3
@@ -2125,7 +2125,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->setStopBtSimpleRepeat()V
+    invoke-super {p0}, Lda6;->setStopBtSimpleRepeat()V
 
     .line 2
     .line 3
@@ -2133,15 +2133,15 @@
     return-void
 .end method
 
-.method public setTarget(Lj54;)V
+.method public setTarget(Le64;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lorg/joni/ast/QuantifierNode;->target:Lj54;
+    iput-object p1, p0, Lorg/joni/ast/QuantifierNode;->target:Le64;
 
     .line 2
     .line 3
-    iput-object p0, p1, Lj54;->parent:Lj54;
+    iput-object p0, p1, Le64;->parent:Le64;
 
     .line 4
     .line 5
@@ -2152,7 +2152,7 @@
     .locals 0
 
     .line 1
-    invoke-super {p0}, Lr86;->stateToString()Ljava/lang/String;
+    invoke-super {p0}, Lda6;->stateToString()Ljava/lang/String;
 
     .line 2
     .line 3
@@ -2171,7 +2171,7 @@
 
     .line 2
     .line 3
-    invoke-super {p0, p1}, Lr86;->toString(I)Ljava/lang/String;
+    invoke-super {p0, p1}, Lda6;->toString(I)Ljava/lang/String;
 
     .line 4
     .line 5
@@ -2407,7 +2407,7 @@
     .line 129
     .line 130
     .line 131
-    iget-object v2, p0, Lorg/joni/ast/QuantifierNode;->headExact:Lj54;
+    iget-object v2, p0, Lorg/joni/ast/QuantifierNode;->headExact:Le64;
 
     .line 132
     .line 133
@@ -2415,7 +2415,7 @@
 
     .line 134
     .line 135
-    invoke-static {v2, p1}, Lj54;->pad(Ljava/lang/Object;I)Ljava/lang/String;
+    invoke-static {v2, p1}, Le64;->pad(Ljava/lang/Object;I)Ljava/lang/String;
 
     .line 136
     .line 137
@@ -2454,11 +2454,11 @@
     .line 154
     .line 155
     .line 156
-    iget-object v2, p0, Lorg/joni/ast/QuantifierNode;->nextHeadExact:Lj54;
+    iget-object v2, p0, Lorg/joni/ast/QuantifierNode;->nextHeadExact:Le64;
 
     .line 157
     .line 158
-    invoke-static {v2, p1}, Lj54;->pad(Ljava/lang/Object;I)Ljava/lang/String;
+    invoke-static {v2, p1}, Le64;->pad(Ljava/lang/Object;I)Ljava/lang/String;
 
     .line 159
     .line 160
@@ -2497,11 +2497,11 @@
     .line 177
     .line 178
     .line 179
-    iget-object p0, p0, Lorg/joni/ast/QuantifierNode;->target:Lj54;
+    iget-object p0, p0, Lorg/joni/ast/QuantifierNode;->target:Le64;
 
     .line 180
     .line 181
-    invoke-static {p0, p1}, Lj54;->pad(Ljava/lang/Object;I)Ljava/lang/String;
+    invoke-static {p0, p1}, Le64;->pad(Ljava/lang/Object;I)Ljava/lang/String;
 
     .line 182
     .line 183

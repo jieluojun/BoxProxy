@@ -1,69 +1,78 @@
 .class public final Lsb6;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ld53;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public synthetic j:Ljava/lang/Object;
+# static fields
+.field public static final i:Lsb6;
 
-.field public final synthetic k:Lub6;
+.field public static final j:Lsb6;
 
-.field public l:I
+.field public static final k:Lsb6;
+
+.field public static final l:Lsb6;
 
 
 # direct methods
-.method public constructor <init>(Lub6;Ld81;)V
-    .locals 0
+.method static synthetic constructor <clinit>()V
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Lsb6;->k:Lub6;
+    new-instance v0, Lsb6;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
+    const/16 v1, 0x14
 
     .line 4
     .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iput-object p1, p0, Lsb6;->j:Ljava/lang/Object;
-
-    .line 2
-    .line 3
-    iget p1, p0, Lsb6;->l:I
-
-    .line 4
-    .line 5
-    const/high16 v0, -0x80000000
+    invoke-direct {v0, v1}, Ld53;-><init>(B)V
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lsb6;->l:I
+    sput-object v0, Lsb6;->i:Lsb6;
 
     .line 9
     .line 10
-    iget-object p1, p0, Lsb6;->k:Lub6;
+    new-instance v0, Lsb6;
 
     .line 11
     .line 12
-    invoke-virtual {p1, p0}, Lub6;->a(Ld81;)Ljava/lang/Object;
+    invoke-direct {v0, v1}, Ld53;-><init>(B)V
 
     .line 13
     .line 14
     .line 15
-    move-result-object p0
+    sput-object v0, Lsb6;->j:Lsb6;
 
     .line 16
-    return-object p0
+    .line 17
+    new-instance v0, Lsb6;
+
+    .line 18
+    .line 19
+    invoke-direct {v0, v1}, Ld53;-><init>(B)V
+
+    .line 20
+    .line 21
+    .line 22
+    sput-object v0, Lsb6;->k:Lsb6;
+
+    .line 23
+    .line 24
+    new-instance v0, Lsb6;
+
+    .line 25
+    .line 26
+    invoke-direct {v0, v1}, Ld53;-><init>(B)V
+
+    .line 27
+    .line 28
+    .line 29
+    sput-object v0, Lsb6;->l:Lsb6;
+
+    .line 30
+    .line 31
+    return-void
 .end method

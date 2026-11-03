@@ -1,208 +1,182 @@
-.class public abstract Lth6;
+.class public final synthetic Lth6;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
-# static fields
-.field public static final a:Ljava/lang/String;
+# instance fields
+.field public final synthetic j:I
 
-.field public static final b:J
+.field public final synthetic k:Lko3;
 
-.field public static final c:I
+.field public final synthetic l:J
 
-.field public static final d:I
+.field public final synthetic m:J
 
-.field public static final e:J
+.field public final synthetic n:F
 
-.field public static final f:Llv1;
+.field public final synthetic o:F
+
+.field public final synthetic p:Les5;
+
+.field public final synthetic q:Lt52;
+
+.field public final synthetic r:Loy0;
+
+.field public final synthetic s:Loy0;
+
+.field public final synthetic t:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
+.method public synthetic constructor <init>(FFIIJJLoy0;Loy0;Lt52;Lko3;Les5;)V
+    .locals 0
 
     .line 1
-    const-string v0, "kotlinx.coroutines.scheduler.default.name"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    sget v1, Lif6;->a:I
-
     .line 4
-    .line 5
-    :try_start_0
-    invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+    iput p3, p0, Lth6;->j:I
 
+    .line 5
     .line 6
+    iput-object p12, p0, Lth6;->k:Lko3;
+
     .line 7
     .line 8
-    move-result-object v0
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    iput-wide p5, p0, Lth6;->l:J
 
     .line 9
-    goto :goto_0
-
     .line 10
-    :catch_0
-    const/4 v0, 0x0
+    iput-wide p7, p0, Lth6;->m:J
 
     .line 11
-    :goto_0
-    if-nez v0, :cond_0
-
     .line 12
+    iput p1, p0, Lth6;->n:F
+
     .line 13
-    const-string v0, "DefaultDispatcher"
-
     .line 14
+    iput p2, p0, Lth6;->o:F
+
     .line 15
-    :cond_0
-    sput-object v0, Lth6;->a:Ljava/lang/String;
-
     .line 16
+    iput-object p13, p0, Lth6;->p:Les5;
+
     .line 17
-    const-wide/16 v4, 0x1
-
     .line 18
-    .line 19
-    const-wide v6, 0x7fffffffffffffffL
+    iput-object p11, p0, Lth6;->q:Lt52;
 
+    .line 19
     .line 20
+    iput-object p9, p0, Lth6;->r:Loy0;
+
     .line 21
     .line 22
+    iput-object p10, p0, Lth6;->s:Loy0;
+
     .line 23
     .line 24
-    const-string v1, "kotlinx.coroutines.scheduler.resolution.ns"
+    iput p4, p0, Lth6;->t:I
 
     .line 25
     .line 26
-    const-wide/32 v2, 0x186a0
+    return-void
+.end method
 
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 14
+
+    .line 1
+    move-object v10, p1
+
+    .line 2
+    check-cast v10, Lv01;
+
+    .line 3
+    .line 4
+    move-object/from16 v0, p2
+
+    .line 5
+    .line 6
+    check-cast v0, Ljava/lang/Integer;
+
+    .line 7
+    .line 8
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 9
+    .line 10
+    .line 11
+    iget v0, p0, Lth6;->t:I
+
+    .line 12
+    .line 13
+    or-int/lit8 v0, v0, 0x1
+
+    .line 14
+    .line 15
+    invoke-static {v0}, Lw23;->h0(I)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result v3
+
+    .line 19
+    iget v0, p0, Lth6;->n:F
+
+    .line 20
+    .line 21
+    iget v1, p0, Lth6;->o:F
+
+    .line 22
+    .line 23
+    iget v2, p0, Lth6;->j:I
+
+    .line 24
+    .line 25
+    iget-wide v4, p0, Lth6;->l:J
+
+    .line 26
     .line 27
+    iget-wide v6, p0, Lth6;->m:J
+
     .line 28
     .line 29
-    invoke-static/range {v1 .. v7}, Lf63;->M(Ljava/lang/String;JJJ)J
+    iget-object v8, p0, Lth6;->r:Loy0;
 
     .line 30
     .line 31
-    .line 32
-    move-result-wide v0
+    iget-object v9, p0, Lth6;->s:Loy0;
 
+    .line 32
     .line 33
-    sput-wide v0, Lth6;->b:J
+    iget-object v11, p0, Lth6;->q:Lt52;
 
     .line 34
     .line 35
-    sget v0, Lif6;->a:I
+    iget-object v12, p0, Lth6;->k:Lko3;
 
     .line 36
     .line 37
-    const/4 v1, 0x2
+    iget-object v13, p0, Lth6;->p:Les5;
 
     .line 38
-    if-ge v0, v1, :cond_1
-
     .line 39
+    invoke-static/range {v0 .. v13}, Ld43;->h(FFIIJJLoy0;Loy0;Lv01;Lt52;Lko3;Les5;)V
+
     .line 40
-    move v0, v1
-
     .line 41
-    :cond_1
-    const/16 v1, 0x8
-
     .line 42
+    sget-object p0, Lk27;->a:Lk27;
+
     .line 43
-    const-string v2, "kotlinx.coroutines.scheduler.core.pool.size"
-
     .line 44
-    .line 45
-    invoke-static {v0, v2, v1}, Lf63;->N(ILjava/lang/String;I)I
-
-    .line 46
-    .line 47
-    .line 48
-    move-result v0
-
-    .line 49
-    sput v0, Lth6;->c:I
-
-    .line 50
-    .line 51
-    const v0, 0x1ffffe
-
-    .line 52
-    .line 53
-    .line 54
-    const/4 v1, 0x4
-
-    .line 55
-    const-string v2, "kotlinx.coroutines.scheduler.max.pool.size"
-
-    .line 56
-    .line 57
-    invoke-static {v0, v2, v1}, Lf63;->N(ILjava/lang/String;I)I
-
-    .line 58
-    .line 59
-    .line 60
-    move-result v0
-
-    .line 61
-    sput v0, Lth6;->d:I
-
-    .line 62
-    .line 63
-    const-wide/16 v4, 0x1
-
-    .line 64
-    .line 65
-    const-wide v6, 0x7fffffffffffffffL
-
-    .line 66
-    .line 67
-    .line 68
-    .line 69
-    .line 70
-    const-string v1, "kotlinx.coroutines.scheduler.keep.alive.sec"
-
-    .line 71
-    .line 72
-    const-wide/16 v2, 0x3c
-
-    .line 73
-    .line 74
-    invoke-static/range {v1 .. v7}, Lf63;->M(Ljava/lang/String;JJJ)J
-
-    .line 75
-    .line 76
-    .line 77
-    move-result-wide v0
-
-    .line 78
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    .line 79
-    .line 80
-    invoke-virtual {v2, v0, v1}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
-
-    .line 81
-    .line 82
-    .line 83
-    move-result-wide v0
-
-    .line 84
-    sput-wide v0, Lth6;->e:J
-
-    .line 85
-    .line 86
-    sget-object v0, Llv1;->y:Llv1;
-
-    .line 87
-    .line 88
-    sput-object v0, Lth6;->f:Llv1;
-
-    .line 89
-    .line 90
-    return-void
+    return-object p0
 .end method

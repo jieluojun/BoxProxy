@@ -1,14 +1,59 @@
 .class public final Lbr2;
-.super Ljr2;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Landroid/os/Parcelable;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Lbr2;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final b:J
+.field public final j:Landroid/content/IntentSender;
+
+.field public final k:Landroid/content/Intent;
+
+.field public final l:I
+
+.field public final m:I
 
 
 # direct methods
-.method public constructor <init>(J)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    .line 1
+    new-instance v0, Lj6;
+
+    .line 2
+    .line 3
+    const/16 v1, 0x8
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Lj6;-><init>(B)V
+
+    .line 6
+    .line 7
+    .line 8
+    sput-object v0, Lbr2;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/IntentSender;Landroid/content/Intent;II)V
     .locals 0
 
     .line 1
@@ -17,137 +62,81 @@
     .line 2
     .line 3
     .line 4
-    iput-wide p1, p0, Lbr2;->b:J
+    iput-object p1, p0, Lbr2;->j:Landroid/content/IntentSender;
 
     .line 5
     .line 6
+    iput-object p2, p0, Lbr2;->k:Landroid/content/Intent;
+
+    .line 7
+    .line 8
+    iput p3, p0, Lbr2;->l:I
+
+    .line 9
+    .line 10
+    iput p4, p0, Lbr2;->m:I
+
+    .line 11
+    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 2
+.method public final describeContents()I
+    .locals 0
 
     .line 1
-    iget-wide v0, p0, Lbr2;->b:J
+    const/4 p0, 0x0
 
     .line 2
-    .line 3
-    return-wide v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 5
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of v1, p1, Lbr2;
-
-    .line 6
-    .line 7
-    const/4 v2, 0x0
-
-    .line 8
-    if-nez v1, :cond_1
-
-    .line 9
-    .line 10
-    return v2
-
-    .line 11
-    :cond_1
-    check-cast p1, Lbr2;
-
-    .line 12
-    .line 13
-    iget-wide v3, p0, Lbr2;->b:J
-
-    .line 14
-    .line 15
-    iget-wide p0, p1, Lbr2;->b:J
-
-    .line 16
-    .line 17
-    invoke-static {v3, v4, p0, p1}, Lk33;->s(JJ)Z
-
-    .line 18
-    .line 19
-    .line 20
-    move-result p0
-
-    .line 21
-    if-nez p0, :cond_2
-
-    .line 22
-    .line 23
-    return v2
-
-    .line 24
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    .line 1
-    iget-wide v0, p0, Lbr2;->b:J
-
-    .line 2
-    .line 3
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 1
 
     .line 1
-    iget-wide v0, p0, Lbr2;->b:J
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    invoke-static {v0, v1}, Lk33;->N(J)Ljava/lang/String;
-
     .line 4
+    iget-object v0, p0, Lbr2;->j:Landroid/content/IntentSender;
+
     .line 5
     .line 6
-    move-result-object p0
+    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
     .line 7
-    const-string v0, "Enter(point="
-
     .line 8
     .line 9
-    const-string v1, ")"
+    iget-object v0, p0, Lbr2;->k:Landroid/content/Intent;
 
     .line 10
     .line 11
-    invoke-static {v0, p0, v1}, Lxu1;->o(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
 
     .line 12
     .line 13
     .line 14
-    move-result-object p0
+    iget p2, p0, Lbr2;->l:I
 
     .line 15
-    return-object p0
+    .line 16
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 17
+    .line 18
+    .line 19
+    iget p0, p0, Lbr2;->m:I
+
+    .line 20
+    .line 21
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 22
+    .line 23
+    .line 24
+    return-void
 .end method

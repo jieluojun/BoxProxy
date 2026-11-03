@@ -1,22 +1,19 @@
-.class final Ltj1;
-.super Leo3;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Ltj1;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Leo3;"
-    }
-.end annotation
+# interfaces
+.implements Lda5;
 
 
 # instance fields
-.field public final j:Lb23;
+.field public final j:Lo52;
+
+.field public k:Luj1;
 
 
 # direct methods
-.method public constructor <init>(Lb23;)V
+.method public constructor <init>(Lo52;)V
     .locals 0
 
     .line 1
@@ -25,7 +22,7 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Ltj1;->j:Lb23;
+    iput-object p1, p0, Ltj1;->j:Lo52;
 
     .line 5
     .line 6
@@ -34,227 +31,68 @@
 
 
 # virtual methods
-.method public final a()Lwn3;
-    .locals 1
-
-    .line 1
-    new-instance v0, Luj1;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Lwn3;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    iget-object p0, p0, Ltj1;->j:Lb23;
-
-    .line 7
-    .line 8
-    iput-object p0, v0, Luj1;->x:Lb23;
-
-    .line 9
-    .line 10
-    return-object v0
-.end method
-
-.method public final b(Lwn3;)V
+.method public final a()V
     .locals 2
 
     .line 1
-    check-cast p1, Luj1;
+    iget-object v0, p0, Ltj1;->j:Lo52;
 
     .line 2
     .line 3
-    iget-object v0, p1, Luj1;->x:Lb23;
+    sget-object v1, Lrd1;->b0:Lvj1;
 
     .line 4
     .line 5
-    iget-object p0, p0, Ltj1;->j:Lb23;
+    invoke-interface {v0, v1}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 6
     .line 7
-    invoke-static {v0, p0}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
     .line 8
-    .line 9
-    .line 10
-    move-result v0
+    move-result-object v0
 
+    .line 9
+    check-cast v0, Luj1;
+
+    .line 10
     .line 11
-    if-nez v0, :cond_0
+    iput-object v0, p0, Ltj1;->k:Luj1;
 
     .line 12
     .line 13
-    iget-object v0, p1, Lwn3;->j:Lwn3;
-
-    .line 14
-    .line 15
-    iget-boolean v0, v0, Lwn3;->w:Z
-
-    .line 16
-    .line 17
-    if-eqz v0, :cond_0
-
-    .line 18
-    .line 19
-    iget-object v0, p1, Luj1;->x:Lb23;
-
-    .line 20
-    .line 21
-    invoke-virtual {v0}, Lb23;->e()V
-
-    .line 22
-    .line 23
-    .line 24
-    const/4 v1, 0x0
-
-    .line 25
-    iput-object v1, v0, Lb23;->b:Lbn2;
-
-    .line 26
-    .line 27
-    const/4 v1, -0x1
-
-    .line 28
-    iput v1, v0, Lb23;->c:I
-
-    .line 29
-    .line 30
-    iput-object p1, p0, Lb23;->j:Luj1;
-
-    .line 31
-    .line 32
-    iput-object p0, p1, Luj1;->x:Lb23;
-
-    .line 33
-    .line 34
-    :cond_0
     return-void
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of v1, p1, Ltj1;
-
-    .line 6
-    .line 7
-    const/4 v2, 0x0
-
-    .line 8
-    if-nez v1, :cond_1
-
-    .line 9
-    .line 10
-    return v2
-
-    .line 11
-    :cond_1
-    check-cast p1, Ltj1;
-
-    .line 12
-    .line 13
-    iget-object p0, p0, Ltj1;->j:Lb23;
-
-    .line 14
-    .line 15
-    iget-object p1, p1, Ltj1;->j:Lb23;
-
-    .line 16
-    .line 17
-    invoke-static {p0, p1}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 18
-    .line 19
-    .line 20
-    move-result p0
-
-    .line 21
-    if-nez p0, :cond_2
-
-    .line 22
-    .line 23
-    return v2
-
-    .line 24
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
+.method public final d()V
     .locals 0
 
     .line 1
-    iget-object p0, p0, Ltj1;->j:Lb23;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final h()V
+    .locals 1
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Ltj1;->k:Luj1;
 
     .line 2
     .line 3
-    const-string v1, "DisplayingDisappearingItemsElement(animator="
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-interface {v0}, Luj1;->a()V
 
     .line 6
     .line 7
     .line 8
-    iget-object p0, p0, Ltj1;->j:Lb23;
+    :cond_0
+    const/4 v0, 0x0
 
     .line 9
+    iput-object v0, p0, Ltj1;->k:Luj1;
+
     .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
     .line 11
-    .line 12
-    .line 13
-    const-string p0, ")"
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-object p0
-
-    .line 22
-    return-object p0
+    return-void
 .end method

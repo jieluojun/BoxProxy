@@ -1,711 +1,1064 @@
-.class public final synthetic Lfy2;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lv52;
+.class public final Lfy2;
+.super Lvu0;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Llm2;
+.field public final synthetic d:B
 
 
 # direct methods
-.method public synthetic constructor <init>(Llm2;B)V
+.method public synthetic constructor <init>(Ljava/lang/String;JIB)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lfy2;->j:B
+    iput-byte p5, p0, Lfy2;->d:B
 
     .line 2
     .line 3
-    iput-object p1, p0, Lfy2;->k:Llm2;
+    invoke-direct {p0, p2, p3, p4, p1}, Lvu0;-><init>(JILjava/lang/String;)V
 
     .line 4
     .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 6
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 11
+.method public final a(I)F
+    .locals 0
 
     .line 1
-    iget-byte v0, p0, Lfy2;->j:B
+    iget-byte p0, p0, Lfy2;->d:B
 
     .line 2
     .line 3
-    sget-object v1, Ld07;->a:Ld07;
+    packed-switch p0, :pswitch_data_0
 
     .line 4
     .line 5
-    const/4 v2, 0x0
-
     .line 6
-    const/4 v3, 0x2
+    const/high16 p0, 0x40000000    # 2.0f
 
     .line 7
-    const/4 v4, 0x1
-
     .line 8
-    check-cast p1, Lz01;
+    return p0
+
+    .line 9
+    :pswitch_0
+    if-nez p1, :cond_0
+
+    .line 10
+    .line 11
+    const/high16 p0, 0x42c80000    # 100.0f
+
+    .line 12
+    .line 13
+    goto :goto_0
+
+    .line 14
+    :cond_0
+    const/high16 p0, 0x43000000    # 128.0f
+
+    .line 15
+    .line 16
+    :goto_0
+    return p0
+
+    .line 17
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final b(I)F
+    .locals 0
+
+    .line 1
+    iget-byte p0, p0, Lfy2;->d:B
+
+    .line 2
+    .line 3
+    packed-switch p0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    const/high16 p0, -0x40000000    # -2.0f
+
+    .line 7
+    .line 8
+    return p0
+
+    .line 9
+    :pswitch_0
+    if-nez p1, :cond_0
+
+    .line 10
+    .line 11
+    const/4 p0, 0x0
+
+    .line 12
+    goto :goto_0
+
+    .line 13
+    :cond_0
+    const/high16 p0, -0x3d000000    # -128.0f
+
+    .line 14
+    .line 15
+    :goto_0
+    return p0
+
+    .line 16
+    nop
+
+    .line 17
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final d(FFF)J
+    .locals 5
+
+    .line 1
+    iget-byte p0, p0, Lfy2;->d:B
+
+    .line 2
+    .line 3
+    const-wide v0, 0xffffffffL
+
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    const/16 p3, 0x20
 
     .line 9
     .line 10
-    check-cast p2, Ljava/lang/Integer;
+    packed-switch p0, :pswitch_data_0
 
     .line 11
     .line 12
-    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
-
     .line 13
+    const/high16 p0, -0x40000000    # -2.0f
+
     .line 14
     .line 15
-    move-result p2
+    cmpg-float v2, p1, p0
 
     .line 16
-    packed-switch v0, :pswitch_data_0
-
     .line 17
+    if-gez v2, :cond_0
+
     .line 18
     .line 19
-    and-int/lit8 v0, p2, 0x3
+    move p1, p0
 
     .line 20
-    .line 21
-    if-eq v0, v3, :cond_0
-
-    .line 22
-    .line 23
-    move v2, v4
-
-    .line 24
     :cond_0
-    and-int/2addr p2, v4
+    const/high16 v2, 0x40000000    # 2.0f
+
+    .line 21
+    .line 22
+    cmpl-float v3, p1, v2
+
+    .line 23
+    .line 24
+    if-lez v3, :cond_1
 
     .line 25
-    move-object v8, p1
-
     .line 26
-    check-cast v8, Lv62;
+    move p1, v2
 
     .line 27
-    .line 28
-    invoke-virtual {v8, p2, v2}, Lv62;->T(IZ)Z
+    :cond_1
+    cmpg-float v3, p2, p0
 
+    .line 28
     .line 29
+    if-gez v3, :cond_2
+
     .line 30
     .line 31
-    move-result p1
+    move p2, p0
 
     .line 32
-    if-eqz p1, :cond_1
+    :cond_2
+    cmpl-float p0, p2, v2
 
     .line 33
     .line 34
-    const/16 v9, 0x30
+    if-lez p0, :cond_3
 
     .line 35
     .line 36
-    const/16 v10, 0xc
+    goto :goto_0
 
     .line 37
+    :cond_3
+    move v2, p2
+
     .line 38
-    iget-object v3, p0, Lfy2;->k:Llm2;
+    :goto_0
+    invoke-static {p1}, Ljava/lang/Float;->floatToRawIntBits(F)I
 
     .line 39
     .line 40
-    const/4 v4, 0x0
-
     .line 41
-    const/4 v5, 0x0
+    move-result p0
 
     .line 42
-    const-wide/16 v6, 0x0
+    int-to-long p0, p0
 
     .line 43
-    .line 44
-    invoke-static/range {v3 .. v10}, Lol2;->a(Llm2;Ljava/lang/String;Lxn3;JLz01;II)V
+    invoke-static {v2}, Ljava/lang/Float;->floatToRawIntBits(F)I
 
+    .line 44
     .line 45
     .line 46
+    move-result p2
+
     .line 47
-    goto :goto_0
+    int-to-long v2, p2
 
     .line 48
-    :cond_1
-    invoke-virtual {v8}, Lv62;->W()V
+    shl-long/2addr p0, p3
 
     .line 49
+    :goto_1
+    and-long p2, v2, v0
+
     .line 50
     .line 51
-    :goto_0
-    return-object v1
+    or-long/2addr p0, p2
 
     .line 52
-    :pswitch_0
-    and-int/lit8 v0, p2, 0x3
+    return-wide p0
 
     .line 53
+    :pswitch_0
+    const/4 p0, 0x0
+
     .line 54
-    if-eq v0, v3, :cond_2
+    cmpg-float v2, p1, p0
 
     .line 55
     .line 56
-    move v2, v4
+    if-gez v2, :cond_4
 
     .line 57
-    :cond_2
-    and-int/2addr p2, v4
-
     .line 58
-    move-object v8, p1
+    move p1, p0
 
     .line 59
-    check-cast v8, Lv62;
+    :cond_4
+    const/high16 p0, 0x42c80000    # 100.0f
 
     .line 60
     .line 61
-    invoke-virtual {v8, p2, v2}, Lv62;->T(IZ)Z
+    cmpl-float v2, p1, p0
 
     .line 62
     .line 63
-    .line 64
-    move-result p1
+    if-lez v2, :cond_5
 
+    .line 64
     .line 65
-    if-eqz p1, :cond_3
+    move p1, p0
 
     .line 66
+    :cond_5
+    const/high16 p0, -0x3d000000    # -128.0f
+
     .line 67
-    const/16 v9, 0x30
-
     .line 68
+    cmpg-float v2, p2, p0
+
     .line 69
-    const/16 v10, 0xc
-
     .line 70
-    .line 71
-    iget-object v3, p0, Lfy2;->k:Llm2;
+    if-gez v2, :cond_6
 
+    .line 71
     .line 72
+    move p2, p0
+
     .line 73
-    const/4 v4, 0x0
+    :cond_6
+    const/high16 p0, 0x43000000    # 128.0f
 
     .line 74
-    const/4 v5, 0x0
-
     .line 75
-    const-wide/16 v6, 0x0
+    cmpl-float v2, p2, p0
 
     .line 76
     .line 77
-    invoke-static/range {v3 .. v10}, Lol2;->a(Llm2;Ljava/lang/String;Lxn3;JLz01;II)V
+    if-lez v2, :cond_7
 
     .line 78
     .line 79
+    move p2, p0
+
     .line 80
-    goto :goto_1
+    :cond_7
+    const/high16 p0, 0x41800000    # 16.0f
 
     .line 81
-    :cond_3
-    invoke-virtual {v8}, Lv62;->W()V
-
     .line 82
-    .line 83
-    .line 84
-    :goto_1
-    return-object v1
+    add-float/2addr p1, p0
 
+    .line 83
+    const/high16 p0, 0x42e80000    # 116.0f
+
+    .line 84
     .line 85
-    :pswitch_1
-    and-int/lit8 v0, p2, 0x3
+    div-float/2addr p1, p0
 
     .line 86
-    .line 87
-    if-eq v0, v3, :cond_4
+    const p0, 0x3b03126f    # 0.002f
 
+    .line 87
     .line 88
     .line 89
-    move v2, v4
+    mul-float/2addr p2, p0
 
     .line 90
-    :cond_4
-    and-int/2addr p2, v4
+    add-float/2addr p2, p1
 
     .line 91
-    move-object v8, p1
+    const p0, 0x3e53dcb1
 
     .line 92
-    check-cast v8, Lv62;
-
     .line 93
     .line 94
-    invoke-virtual {v8, p2, v2}, Lv62;->T(IZ)Z
+    cmpl-float v2, p2, p0
 
     .line 95
     .line 96
+    const v3, 0x3e0d3dcb
+
     .line 97
-    move-result p1
-
     .line 98
-    if-eqz p1, :cond_5
-
     .line 99
-    .line 100
-    const/16 v9, 0x180
+    const v4, 0x3e038027
 
+    .line 100
     .line 101
     .line 102
-    const/16 v10, 0x1a
+    if-lez v2, :cond_8
 
     .line 103
     .line 104
-    iget-object v3, p0, Lfy2;->k:Llm2;
+    mul-float v2, p2, p2
 
     .line 105
     .line 106
-    const/4 v4, 0x0
+    mul-float/2addr v2, p2
 
     .line 107
-    const/4 v5, 0x0
-
-    .line 108
-    const-wide/16 v6, 0x0
-
-    .line 109
-    .line 110
-    invoke-static/range {v3 .. v10}, Ll23;->h(Llm2;Lpj4;Lxn3;JLz01;II)V
-
-    .line 111
-    .line 112
-    .line 113
     goto :goto_2
 
-    .line 114
-    :cond_5
-    invoke-virtual {v8}, Lv62;->W()V
+    .line 108
+    :cond_8
+    sub-float/2addr p2, v3
 
+    .line 109
+    mul-float v2, p2, v4
+
+    .line 110
+    .line 111
+    :goto_2
+    cmpl-float p0, p1, p0
+
+    .line 112
+    .line 113
+    if-lez p0, :cond_9
+
+    .line 114
     .line 115
+    mul-float p0, p1, p1
+
     .line 116
     .line 117
-    :goto_2
-    return-object v1
+    mul-float/2addr p0, p1
 
     .line 118
-    :pswitch_2
-    and-int/lit8 v0, p2, 0x3
+    goto :goto_3
 
     .line 119
+    :cond_9
+    sub-float/2addr p1, v3
+
     .line 120
-    if-eq v0, v3, :cond_6
+    mul-float p0, p1, v4
 
     .line 121
     .line 122
-    move v2, v4
+    :goto_3
+    sget-object p1, Lrd1;->g0:[F
 
     .line 123
-    :cond_6
-    and-int/2addr p2, v4
-
     .line 124
-    move-object v8, p1
+    const/4 p2, 0x0
 
     .line 125
-    check-cast v8, Lv62;
+    aget p2, p1, p2
 
     .line 126
     .line 127
-    invoke-virtual {v8, p2, v2}, Lv62;->T(IZ)Z
+    mul-float/2addr v2, p2
 
     .line 128
-    .line 129
-    .line 130
-    move-result p1
+    const/4 p2, 0x1
 
+    .line 129
+    aget p1, p1, p2
+
+    .line 130
     .line 131
-    if-eqz p1, :cond_7
+    mul-float/2addr p0, p1
 
     .line 132
-    .line 133
-    const/16 v9, 0x180
+    invoke-static {v2}, Ljava/lang/Float;->floatToRawIntBits(F)I
 
+    .line 133
     .line 134
     .line 135
-    const/16 v10, 0x1a
+    move-result p1
 
     .line 136
+    int-to-long p1, p1
+
     .line 137
-    iget-object v3, p0, Lfy2;->k:Llm2;
+    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
 
     .line 138
     .line 139
-    const/4 v4, 0x0
-
     .line 140
-    const/4 v5, 0x0
+    move-result p0
 
     .line 141
-    const-wide/16 v6, 0x0
+    int-to-long v2, p0
 
     .line 142
+    shl-long p0, p1, p3
+
     .line 143
-    invoke-static/range {v3 .. v10}, Ll23;->h(Llm2;Lpj4;Lxn3;JLz01;II)V
+    .line 144
+    goto :goto_1
+
+    .line 145
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final e(FFF)F
+    .locals 0
+
+    .line 1
+    iget-byte p0, p0, Lfy2;->d:B
+
+    .line 2
+    .line 3
+    packed-switch p0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    const/high16 p0, -0x40000000    # -2.0f
+
+    .line 7
+    .line 8
+    cmpg-float p1, p3, p0
+
+    .line 9
+    .line 10
+    if-gez p1, :cond_0
+
+    .line 11
+    .line 12
+    move p3, p0
+
+    .line 13
+    :cond_0
+    const/high16 p0, 0x40000000    # 2.0f
+
+    .line 14
+    .line 15
+    cmpl-float p1, p3, p0
+
+    .line 16
+    .line 17
+    if-lez p1, :cond_1
+
+    .line 18
+    .line 19
+    move p3, p0
+
+    .line 20
+    :cond_1
+    return p3
+
+    .line 21
+    :pswitch_0
+    const/4 p0, 0x0
+
+    .line 22
+    cmpg-float p2, p1, p0
+
+    .line 23
+    .line 24
+    if-gez p2, :cond_2
+
+    .line 25
+    .line 26
+    move p1, p0
+
+    .line 27
+    :cond_2
+    const/high16 p0, 0x42c80000    # 100.0f
+
+    .line 28
+    .line 29
+    cmpl-float p2, p1, p0
+
+    .line 30
+    .line 31
+    if-lez p2, :cond_3
+
+    .line 32
+    .line 33
+    move p1, p0
+
+    .line 34
+    :cond_3
+    const/high16 p0, -0x3d000000    # -128.0f
+
+    .line 35
+    .line 36
+    cmpg-float p2, p3, p0
+
+    .line 37
+    .line 38
+    if-gez p2, :cond_4
+
+    .line 39
+    .line 40
+    move p3, p0
+
+    .line 41
+    :cond_4
+    const/high16 p0, 0x43000000    # 128.0f
+
+    .line 42
+    .line 43
+    cmpl-float p2, p3, p0
+
+    .line 44
+    .line 45
+    if-lez p2, :cond_5
+
+    .line 46
+    .line 47
+    move p3, p0
+
+    .line 48
+    :cond_5
+    const/high16 p0, 0x41800000    # 16.0f
+
+    .line 49
+    .line 50
+    add-float/2addr p1, p0
+
+    .line 51
+    const/high16 p0, 0x42e80000    # 116.0f
+
+    .line 52
+    .line 53
+    div-float/2addr p1, p0
+
+    .line 54
+    const p0, 0x3ba3d70a    # 0.005f
+
+    .line 55
+    .line 56
+    .line 57
+    mul-float/2addr p3, p0
+
+    .line 58
+    sub-float/2addr p1, p3
+
+    .line 59
+    const p0, 0x3e53dcb1
+
+    .line 60
+    .line 61
+    .line 62
+    cmpl-float p0, p1, p0
+
+    .line 63
+    .line 64
+    if-lez p0, :cond_6
+
+    .line 65
+    .line 66
+    mul-float p0, p1, p1
+
+    .line 67
+    .line 68
+    mul-float/2addr p0, p1
+
+    .line 69
+    goto :goto_0
+
+    .line 70
+    :cond_6
+    const p0, 0x3e0d3dcb
+
+    .line 71
+    .line 72
+    .line 73
+    sub-float/2addr p1, p0
+
+    .line 74
+    const p0, 0x3e038027
+
+    .line 75
+    .line 76
+    .line 77
+    mul-float/2addr p0, p1
+
+    .line 78
+    :goto_0
+    sget-object p1, Lrd1;->g0:[F
+
+    .line 79
+    .line 80
+    const/4 p2, 0x2
+
+    .line 81
+    aget p1, p1, p2
+
+    .line 82
+    .line 83
+    mul-float/2addr p0, p1
+
+    .line 84
+    return p0
+
+    .line 85
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final f(FFFFLvu0;)J
+    .locals 5
+
+    .line 1
+    iget-byte p0, p0, Lfy2;->d:B
+
+    .line 2
+    .line 3
+    packed-switch p0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    const/high16 p0, -0x40000000    # -2.0f
+
+    .line 7
+    .line 8
+    cmpg-float v0, p1, p0
+
+    .line 9
+    .line 10
+    if-gez v0, :cond_0
+
+    .line 11
+    .line 12
+    move p1, p0
+
+    .line 13
+    :cond_0
+    const/high16 v0, 0x40000000    # 2.0f
+
+    .line 14
+    .line 15
+    cmpl-float v1, p1, v0
+
+    .line 16
+    .line 17
+    if-lez v1, :cond_1
+
+    .line 18
+    .line 19
+    move p1, v0
+
+    .line 20
+    :cond_1
+    cmpg-float v1, p2, p0
+
+    .line 21
+    .line 22
+    if-gez v1, :cond_2
+
+    .line 23
+    .line 24
+    move p2, p0
+
+    .line 25
+    :cond_2
+    cmpl-float v1, p2, v0
+
+    .line 26
+    .line 27
+    if-lez v1, :cond_3
+
+    .line 28
+    .line 29
+    move p2, v0
+
+    .line 30
+    :cond_3
+    cmpg-float v1, p3, p0
+
+    .line 31
+    .line 32
+    if-gez v1, :cond_4
+
+    .line 33
+    .line 34
+    move p3, p0
+
+    .line 35
+    :cond_4
+    cmpl-float p0, p3, v0
+
+    .line 36
+    .line 37
+    if-lez p0, :cond_5
+
+    .line 38
+    .line 39
+    goto :goto_0
+
+    .line 40
+    :cond_5
+    move v0, p3
+
+    .line 41
+    :goto_0
+    invoke-static {p1, p2, v0, p4, p5}, Lmt6;->a(FFFFLvu0;)J
+
+    .line 42
+    .line 43
+    .line 44
+    move-result-wide p0
+
+    .line 45
+    return-wide p0
+
+    .line 46
+    :pswitch_0
+    sget-object p0, Lrd1;->g0:[F
+
+    .line 47
+    .line 48
+    const/4 v0, 0x0
+
+    .line 49
+    aget v0, p0, v0
+
+    .line 50
+    .line 51
+    div-float/2addr p1, v0
+
+    .line 52
+    const/4 v0, 0x1
+
+    .line 53
+    aget v0, p0, v0
+
+    .line 54
+    .line 55
+    div-float/2addr p2, v0
+
+    .line 56
+    const/4 v0, 0x2
+
+    .line 57
+    aget p0, p0, v0
+
+    .line 58
+    .line 59
+    div-float/2addr p3, p0
+
+    .line 60
+    const p0, 0x3c111aa7
+
+    .line 61
+    .line 62
+    .line 63
+    cmpl-float v0, p1, p0
+
+    .line 64
+    .line 65
+    const v1, 0x3e0d3dcb
+
+    .line 66
+    .line 67
+    .line 68
+    const v2, 0x40f92f68
+
+    .line 69
+    .line 70
+    .line 71
+    if-lez v0, :cond_6
+
+    .line 72
+    .line 73
+    float-to-double v3, p1
+
+    .line 74
+    invoke-static {v3, v4}, Ljava/lang/Math;->cbrt(D)D
+
+    .line 75
+    .line 76
+    .line 77
+    move-result-wide v3
+
+    .line 78
+    double-to-float p1, v3
+
+    .line 79
+    goto :goto_1
+
+    .line 80
+    :cond_6
+    mul-float/2addr p1, v2
+
+    .line 81
+    add-float/2addr p1, v1
+
+    .line 82
+    :goto_1
+    cmpl-float v0, p2, p0
+
+    .line 83
+    .line 84
+    if-lez v0, :cond_7
+
+    .line 85
+    .line 86
+    float-to-double v3, p2
+
+    .line 87
+    invoke-static {v3, v4}, Ljava/lang/Math;->cbrt(D)D
+
+    .line 88
+    .line 89
+    .line 90
+    move-result-wide v3
+
+    .line 91
+    double-to-float p2, v3
+
+    .line 92
+    goto :goto_2
+
+    .line 93
+    :cond_7
+    mul-float/2addr p2, v2
+
+    .line 94
+    add-float/2addr p2, v1
+
+    .line 95
+    :goto_2
+    cmpl-float p0, p3, p0
+
+    .line 96
+    .line 97
+    if-lez p0, :cond_8
+
+    .line 98
+    .line 99
+    float-to-double v0, p3
+
+    .line 100
+    invoke-static {v0, v1}, Ljava/lang/Math;->cbrt(D)D
+
+    .line 101
+    .line 102
+    .line 103
+    move-result-wide v0
+
+    .line 104
+    double-to-float p0, v0
+
+    .line 105
+    goto :goto_3
+
+    .line 106
+    :cond_8
+    mul-float/2addr p3, v2
+
+    .line 107
+    add-float p0, p3, v1
+
+    .line 108
+    .line 109
+    :goto_3
+    const/high16 p3, 0x42e80000    # 116.0f
+
+    .line 110
+    .line 111
+    mul-float/2addr p3, p2
+
+    .line 112
+    const/high16 v0, 0x41800000    # 16.0f
+
+    .line 113
+    .line 114
+    sub-float/2addr p3, v0
+
+    .line 115
+    const/high16 v0, 0x43fa0000    # 500.0f
+
+    .line 116
+    .line 117
+    sub-float/2addr p1, p2
+
+    .line 118
+    mul-float/2addr p1, v0
+
+    .line 119
+    const/high16 v0, 0x43480000    # 200.0f
+
+    .line 120
+    .line 121
+    sub-float/2addr p2, p0
+
+    .line 122
+    mul-float/2addr p2, v0
+
+    .line 123
+    const/4 p0, 0x0
+
+    .line 124
+    cmpg-float v0, p3, p0
+
+    .line 125
+    .line 126
+    if-gez v0, :cond_9
+
+    .line 127
+    .line 128
+    move p3, p0
+
+    .line 129
+    :cond_9
+    const/high16 p0, 0x42c80000    # 100.0f
+
+    .line 130
+    .line 131
+    cmpl-float v0, p3, p0
+
+    .line 132
+    .line 133
+    if-lez v0, :cond_a
+
+    .line 134
+    .line 135
+    move p3, p0
+
+    .line 136
+    :cond_a
+    const/high16 p0, -0x3d000000    # -128.0f
+
+    .line 137
+    .line 138
+    cmpg-float v0, p1, p0
+
+    .line 139
+    .line 140
+    if-gez v0, :cond_b
+
+    .line 141
+    .line 142
+    move p1, p0
+
+    .line 143
+    :cond_b
+    const/high16 v0, 0x43000000    # 128.0f
 
     .line 144
     .line 145
-    .line 146
-    goto :goto_3
+    cmpl-float v1, p1, v0
 
+    .line 146
     .line 147
-    :cond_7
-    invoke-virtual {v8}, Lv62;->W()V
+    if-lez v1, :cond_c
 
     .line 148
     .line 149
+    move p1, v0
+
     .line 150
-    :goto_3
-    return-object v1
+    :cond_c
+    cmpg-float v1, p2, p0
 
     .line 151
-    :pswitch_3
-    and-int/lit8 v0, p2, 0x3
-
     .line 152
-    .line 153
-    if-eq v0, v3, :cond_8
+    if-gez v1, :cond_d
 
+    .line 153
     .line 154
+    move p2, p0
+
     .line 155
-    move v2, v4
+    :cond_d
+    cmpl-float p0, p2, v0
 
     .line 156
-    :cond_8
-    and-int/2addr p2, v4
-
     .line 157
-    move-object v8, p1
+    if-lez p0, :cond_e
 
     .line 158
-    check-cast v8, Lv62;
-
     .line 159
-    .line 160
-    invoke-virtual {v8, p2, v2}, Lv62;->T(IZ)Z
-
-    .line 161
-    .line 162
-    .line 163
-    move-result p1
-
-    .line 164
-    if-eqz p1, :cond_9
-
-    .line 165
-    .line 166
-    const/16 v9, 0x30
-
-    .line 167
-    .line 168
-    const/16 v10, 0xc
-
-    .line 169
-    .line 170
-    iget-object v3, p0, Lfy2;->k:Llm2;
-
-    .line 171
-    .line 172
-    const/4 v4, 0x0
-
-    .line 173
-    const/4 v5, 0x0
-
-    .line 174
-    const-wide/16 v6, 0x0
-
-    .line 175
-    .line 176
-    invoke-static/range {v3 .. v10}, Lol2;->a(Llm2;Ljava/lang/String;Lxn3;JLz01;II)V
-
-    .line 177
-    .line 178
-    .line 179
     goto :goto_4
 
-    .line 180
-    :cond_9
-    invoke-virtual {v8}, Lv62;->W()V
-
-    .line 181
-    .line 182
-    .line 183
-    :goto_4
-    return-object v1
-
-    .line 184
-    :pswitch_4
-    and-int/lit8 v0, p2, 0x3
-
-    .line 185
-    .line 186
-    if-eq v0, v3, :cond_a
-
-    .line 187
-    .line 188
-    move v2, v4
-
-    .line 189
-    :cond_a
-    and-int/2addr p2, v4
-
-    .line 190
-    move-object v8, p1
-
-    .line 191
-    check-cast v8, Lv62;
-
-    .line 192
-    .line 193
-    invoke-virtual {v8, p2, v2}, Lv62;->T(IZ)Z
-
-    .line 194
-    .line 195
-    .line 196
-    move-result p1
-
-    .line 197
-    if-eqz p1, :cond_b
-
-    .line 198
-    .line 199
-    const/16 v9, 0x30
-
-    .line 200
-    .line 201
-    const/16 v10, 0xc
-
-    .line 202
-    .line 203
-    iget-object v3, p0, Lfy2;->k:Llm2;
-
-    .line 204
-    .line 205
-    const/4 v4, 0x0
-
-    .line 206
-    const/4 v5, 0x0
-
-    .line 207
-    const-wide/16 v6, 0x0
-
-    .line 208
-    .line 209
-    invoke-static/range {v3 .. v10}, Lol2;->a(Llm2;Ljava/lang/String;Lxn3;JLz01;II)V
-
-    .line 210
-    .line 211
-    .line 212
-    goto :goto_5
-
-    .line 213
-    :cond_b
-    invoke-virtual {v8}, Lv62;->W()V
-
-    .line 214
-    .line 215
-    .line 216
-    :goto_5
-    return-object v1
-
-    .line 217
-    :pswitch_5
-    and-int/lit8 v0, p2, 0x3
-
-    .line 218
-    .line 219
-    if-eq v0, v3, :cond_c
-
-    .line 220
-    .line 221
-    move v2, v4
-
-    .line 222
-    :cond_c
-    and-int/2addr p2, v4
-
-    .line 223
-    move-object v8, p1
-
-    .line 224
-    check-cast v8, Lv62;
-
-    .line 225
-    .line 226
-    invoke-virtual {v8, p2, v2}, Lv62;->T(IZ)Z
-
-    .line 227
-    .line 228
-    .line 229
-    move-result p1
-
-    .line 230
-    if-eqz p1, :cond_d
-
-    .line 231
-    .line 232
-    const/16 v9, 0x30
-
-    .line 233
-    .line 234
-    const/16 v10, 0xc
-
-    .line 235
-    .line 236
-    iget-object v3, p0, Lfy2;->k:Llm2;
-
-    .line 237
-    .line 238
-    const/4 v4, 0x0
-
-    .line 239
-    const/4 v5, 0x0
-
-    .line 240
-    const-wide/16 v6, 0x0
-
-    .line 241
-    .line 242
-    invoke-static/range {v3 .. v10}, Lol2;->a(Llm2;Ljava/lang/String;Lxn3;JLz01;II)V
-
-    .line 243
-    .line 244
-    .line 245
-    goto :goto_6
-
-    .line 246
-    :cond_d
-    invoke-virtual {v8}, Lv62;->W()V
-
-    .line 247
-    .line 248
-    .line 249
-    :goto_6
-    return-object v1
-
-    .line 250
-    :pswitch_6
-    and-int/lit8 v0, p2, 0x3
-
-    .line 251
-    .line 252
-    if-eq v0, v3, :cond_e
-
-    .line 253
-    .line 254
-    move v2, v4
-
-    .line 255
+    .line 160
     :cond_e
-    and-int/2addr p2, v4
+    move v0, p2
 
-    .line 256
-    move-object v8, p1
+    .line 161
+    :goto_4
+    invoke-static {p3, p1, v0, p4, p5}, Lmt6;->a(FFFFLvu0;)J
 
-    .line 257
-    check-cast v8, Lv62;
+    .line 162
+    .line 163
+    .line 164
+    move-result-wide p0
 
-    .line 258
-    .line 259
-    invoke-virtual {v8, p2, v2}, Lv62;->T(IZ)Z
+    .line 165
+    return-wide p0
 
-    .line 260
-    .line 261
-    .line 262
-    move-result p1
-
-    .line 263
-    if-eqz p1, :cond_f
-
-    .line 264
-    .line 265
-    sget-object p1, Lih3;->b:Lmp1;
-
-    .line 266
-    .line 267
-    invoke-virtual {v8, p1}, Lv62;->k(Lit4;)Ljava/lang/Object;
-
-    .line 268
-    .line 269
-    .line 270
-    move-result-object p1
-
-    .line 271
-    check-cast p1, Lgh3;
-
-    .line 272
-    .line 273
-    iget-object p1, p1, Lgh3;->a:Lsu0;
-
-    .line 274
-    .line 275
-    iget-wide v6, p1, Lsu0;->a:J
-
-    .line 276
-    .line 277
-    const/16 v9, 0x30
-
-    .line 278
-    .line 279
-    const/4 v10, 0x4
-
-    .line 280
-    iget-object v3, p0, Lfy2;->k:Llm2;
-
-    .line 281
-    .line 282
-    const/4 v4, 0x0
-
-    .line 283
-    const/4 v5, 0x0
-
-    .line 284
-    invoke-static/range {v3 .. v10}, Lol2;->a(Llm2;Ljava/lang/String;Lxn3;JLz01;II)V
-
-    .line 285
-    .line 286
-    .line 287
-    goto :goto_7
-
-    .line 288
-    :cond_f
-    invoke-virtual {v8}, Lv62;->W()V
-
-    .line 289
-    .line 290
-    .line 291
-    :goto_7
-    return-object v1
-
-    .line 292
+    .line 166
     nop
 
-    .line 293
+    .line 167
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

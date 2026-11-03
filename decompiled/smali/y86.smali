@@ -1,17 +1,13 @@
-.class public final synthetic Ly86;
+.class public Ly86;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Landroid/graphics/ImageDecoder$OnPartialImageListener;
-
-
-# instance fields
-.field public final synthetic a:Lb20;
+.implements Lly6;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lb20;)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
@@ -20,50 +16,68 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Ly86;->a:Lb20;
-
-    .line 5
-    .line 6
     return-void
 .end method
 
 
 # virtual methods
-.method public final onPartialImage(Landroid/graphics/ImageDecoder$DecodeException;)Z
+.method public final a(Lm82;Lrz6;)Lky6;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Ly86;->a:Lb20;
+    iget-object p0, p2, Lrz6;->a:Ljava/lang/Class;
 
     .line 2
     .line 3
-    iget-object p0, p0, Lb20;->b:Lhc4;
+    const-class p2, Ljava/sql/Timestamp;
 
     .line 4
     .line 5
-    sget-object p1, Lgm2;->f:Lt57;
+    if-ne p0, p2, :cond_0
 
     .line 6
     .line 7
-    invoke-static {p0, p1}, Lb27;->Y(Lhc4;Lt57;)Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 8
     .line 9
     .line 10
-    move-result-object p0
+    new-instance p0, Lrz6;
 
     .line 11
-    check-cast p0, Ljava/lang/Boolean;
-
     .line 12
-    .line 13
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+    const-class p2, Ljava/util/Date;
 
+    .line 13
     .line 14
+    invoke-direct {p0, p2}, Lrz6;-><init>(Ljava/lang/reflect/Type;)V
+
     .line 15
     .line 16
-    move-result p0
-
     .line 17
-    return p0
+    invoke-virtual {p1, p0}, Lm82;->b(Lrz6;)Lky6;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object p0
+
+    .line 21
+    new-instance p1, Lz86;
+
+    .line 22
+    .line 23
+    invoke-direct {p1, p0}, Lz86;-><init>(Lky6;)V
+
+    .line 24
+    .line 25
+    .line 26
+    return-object p1
+
+    .line 27
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 28
+    return-object p0
 .end method

@@ -1,71 +1,58 @@
-.class public final Ly51;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public abstract Ly51;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lw51;
 
 
-# instance fields
-.field public j:Lc85;
-
-.field public synthetic k:Ljava/lang/Object;
-
-.field public final synthetic l:Lz51;
-
-.field public m:I
+# static fields
+.field public static final a:Ljava/util/HashMap;
 
 
 # direct methods
-.method public constructor <init>(Lz51;Ld81;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    iput-object p1, p0, Ly51;->l:Lz51;
+    new-instance v0, Ljava/util/HashMap;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     .line 4
     .line 5
     .line 6
-    return-void
-.end method
+    sput-object v0, Ly51;->a:Ljava/util/HashMap;
 
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iput-object p1, p0, Ly51;->k:Ljava/lang/Object;
-
-    .line 2
-    .line 3
-    iget p1, p0, Ly51;->m:I
-
-    .line 4
-    .line 5
-    const/high16 v0, -0x80000000
-
-    .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Ly51;->m:I
+    const-string v1, "true"
 
     .line 9
     .line 10
-    iget-object p1, p0, Ly51;->l:Lz51;
+    sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     .line 11
     .line 12
-    invoke-virtual {p1, p0}, Lz51;->a(Lc81;)Ljava/lang/Object;
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 13
     .line 14
     .line 15
-    move-result-object p0
+    const-string v1, "false"
 
     .line 16
-    return-object p0
+    .line 17
+    sget-object v2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    .line 18
+    .line 19
+    invoke-virtual {v0, v1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 20
+    .line 21
+    .line 22
+    return-void
 .end method

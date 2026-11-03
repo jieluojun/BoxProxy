@@ -3,7 +3,7 @@
 .source "PanelToggle.java"
 
 # "Hide unavailable nodes" menu item of the panel page.
-.implements Lg52;
+.implements Ld52;
 
 
 .method public constructor <init>()V
@@ -19,7 +19,7 @@
 
     invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->hideFlip()V
 
-    sget-object v0, Ld07;->a:Ld07;
+    sget-object v0, Lk27;->a:Lk27;
 
     return-object v0
 .end method

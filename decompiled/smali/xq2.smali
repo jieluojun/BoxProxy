@@ -1,115 +1,111 @@
 .class public final Lxq2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lsw2;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Lxq2;
-
-.field public static final b:Lyr4;
+# instance fields
+.field public a:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
-    new-instance v0, Lxq2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    const/4 v0, 0x0
+
     .line 5
+    iput v0, p0, Lxq2;->a:I
+
     .line 6
-    sput-object v0, Lxq2;->a:Lxq2;
-
     .line 7
-    .line 8
-    new-instance v0, Lyr4;
-
-    .line 9
-    .line 10
-    const-string v1, "kotlin.Int"
-
-    .line 11
-    .line 12
-    sget-object v2, Lxr4;->j:Lxr4;
-
-    .line 13
-    .line 14
-    invoke-direct {v0, v1, v2}, Lyr4;-><init>(Ljava/lang/String;Lxr4;)V
-
-    .line 15
-    .line 16
-    .line 17
-    sput-object v0, Lxq2;->b:Lyr4;
-
-    .line 18
-    .line 19
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lae1;)Ljava/lang/Object;
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
     .line 1
-    invoke-interface {p1}, Lae1;->q()I
+    iget v0, p0, Lxq2;->a:I
 
     .line 2
     .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
     .line 4
+    .line 5
+    .line 6
     move-result p0
 
-    .line 5
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 6
     .line 7
+    const/16 v1, 0x10
+
     .line 8
+    .line 9
+    invoke-static {v1}, Lam0;->k(I)V
+
+    .line 10
+    .line 11
+    .line 12
+    invoke-static {p0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
+    .line 13
+    .line 14
+    .line 15
     move-result-object p0
 
-    .line 9
+    .line 16
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 17
+    .line 18
+    .line 19
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    .line 20
+    .line 21
+    const-string v2, "IntRef(element = "
+
+    .line 22
+    .line 23
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 24
+    .line 25
+    .line 26
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 27
+    .line 28
+    .line 29
+    const-string v0, ")@"
+
+    .line 30
+    .line 31
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 32
+    .line 33
+    .line 34
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 35
+    .line 36
+    .line 37
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 38
+    .line 39
+    .line 40
+    move-result-object p0
+
+    .line 41
     return-object p0
-.end method
-
-.method public final c()Lov5;
-    .locals 0
-
-    .line 1
-    sget-object p0, Lxq2;->b:Lyr4;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final d(Lm96;Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    check-cast p2, Ljava/lang/Number;
-
-    .line 2
-    .line 3
-    invoke-virtual {p2}, Ljava/lang/Number;->intValue()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    invoke-virtual {p1, p0}, Lm96;->j(I)V
-
-    .line 8
-    .line 9
-    .line 10
-    return-void
 .end method

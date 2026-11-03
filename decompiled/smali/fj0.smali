@@ -1,356 +1,176 @@
 .class public final synthetic Lfj0;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ld62;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lr52;
+.implements Lo52;
 
 
 # instance fields
-.field public final synthetic j:Lfb1;
+.field public final synthetic k:B
 
-.field public final synthetic k:Lsi0;
+.field public final synthetic l:Lkq3;
 
-.field public final synthetic l:Lnr3;
-
-.field public final synthetic m:Lnr3;
-
-.field public final synthetic n:Z
-
-.field public final synthetic o:Lyj0;
-
-.field public final synthetic p:Lej0;
-
-.field public final synthetic q:Lgq3;
-
-.field public final synthetic r:Lw17;
-
-.field public final synthetic s:Lxp3;
+.field public final synthetic m:Lb47;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lfb1;Lsi0;Lnr3;Lnr3;ZLyj0;Lej0;Lgq3;Lw17;Lxp3;)V
-    .locals 0
+.method public constructor <init>(Lkq3;Lb47;B)V
+    .locals 12
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p3, p0, Lfj0;->k:B
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lfj0;->j:Lfb1;
+    packed-switch p3, :pswitch_data_0
 
+    .line 4
     .line 5
     .line 6
-    iput-object p2, p0, Lfj0;->k:Lsi0;
+    iput-object p1, p0, Lfj0;->l:Lkq3;
 
     .line 7
     .line 8
-    iput-object p3, p0, Lfj0;->l:Lnr3;
+    iput-object p2, p0, Lfj0;->m:Lb47;
 
     .line 9
     .line 10
-    iput-object p4, p0, Lfj0;->m:Lnr3;
+    const-string v4, "collectAsState$updateRanges(Lcom/patrykandpatrick/vico/compose/cartesian/data/MutableCartesianChartRanges;Lcom/patrykandpatrick/vico/compose/common/ValueWrapper;Lcom/patrykandpatrick/vico/compose/cartesian/data/CartesianChartModel;)Lcom/patrykandpatrick/vico/compose/cartesian/data/CartesianChartRanges;"
 
     .line 11
     .line 12
-    iput-boolean p5, p0, Lfj0;->n:Z
+    const/4 v5, 0x0
 
     .line 13
+    const/4 v1, 0x1
+
     .line 14
-    iput-object p6, p0, Lfj0;->o:Lyj0;
+    const-class v2, Los2;
 
     .line 15
     .line 16
-    iput-object p7, p0, Lfj0;->p:Lej0;
+    const-string v3, "updateRanges"
 
     .line 17
     .line 18
-    iput-object p8, p0, Lfj0;->q:Lgq3;
+    move-object v0, p0
 
     .line 19
-    .line 20
-    iput-object p9, p0, Lfj0;->r:Lw17;
+    invoke-direct/range {v0 .. v5}, Ld62;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
+    .line 20
     .line 21
     .line 22
-    iput-object p10, p0, Lfj0;->s:Lxp3;
+    return-void
 
     .line 23
+    :pswitch_0
+    move-object v0, p0
+
     .line 24
+    iput-object p1, v0, Lfj0;->l:Lkq3;
+
+    .line 25
+    .line 26
+    iput-object p2, v0, Lfj0;->m:Lb47;
+
+    .line 27
+    .line 28
+    const-string v10, "collectAsState$updateRanges(Lcom/patrykandpatrick/vico/compose/cartesian/data/MutableCartesianChartRanges;Lcom/patrykandpatrick/vico/compose/common/ValueWrapper;Lcom/patrykandpatrick/vico/compose/cartesian/data/CartesianChartModel;)Lcom/patrykandpatrick/vico/compose/cartesian/data/CartesianChartRanges;"
+
+    .line 29
+    .line 30
+    const/4 v11, 0x0
+
+    .line 31
+    const/4 v7, 0x1
+
+    .line 32
+    const-class v8, Los2;
+
+    .line 33
+    .line 34
+    const-string v9, "updateRanges"
+
+    .line 35
+    .line 36
+    move-object v6, v0
+
+    .line 37
+    invoke-direct/range {v6 .. v11}, Ld62;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 38
+    .line 39
+    .line 40
     return-void
+
+    .line 41
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 
 # virtual methods
 .method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 17
+    .locals 2
 
     .line 1
-    move-object/from16 v0, p0
+    iget-byte v0, p0, Lfj0;->k:B
 
     .line 2
     .line 3
-    move-object/from16 v2, p1
+    iget-object v1, p0, Lfj0;->m:Lb47;
 
     .line 4
     .line 5
-    check-cast v2, Lo17;
+    iget-object p0, p0, Lfj0;->l:Lkq3;
 
     .line 6
     .line 7
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
     .line 10
-    new-instance v1, Lc85;
+    check-cast p1, Lzi0;
 
     .line 11
     .line 12
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+    invoke-static {p0, v1, p1}, Ljj0;->b(Lkq3;Lb47;Lzi0;)Lvj0;
 
     .line 13
     .line 14
     .line 15
-    new-instance v7, Lc85;
+    move-result-object p0
 
     .line 16
+    return-object p0
+
     .line 17
-    invoke-direct {v7}, Ljava/lang/Object;-><init>()V
+    :pswitch_0
+    check-cast p1, Lzi0;
 
     .line 18
     .line 19
-    .line 20
-    new-instance v3, Lc85;
+    invoke-static {p0, v1, p1}, Ljj0;->b(Lkq3;Lb47;Lzi0;)Lvj0;
 
+    .line 20
     .line 21
     .line 22
-    invoke-direct {v3}, Ljava/lang/Object;-><init>()V
+    move-result-object p0
 
     .line 23
+    return-object p0
+
     .line 24
+    nop
+
     .line 25
-    new-instance v9, Ly75;
-
-    .line 26
-    .line 27
-    invoke-direct {v9}, Ljava/lang/Object;-><init>()V
-
-    .line 28
-    .line 29
-    .line 30
-    new-instance v10, Ly75;
-
-    .line 31
-    .line 32
-    invoke-direct {v10}, Ljava/lang/Object;-><init>()V
-
-    .line 33
-    .line 34
-    .line 35
-    move-object v5, v2
-
-    .line 36
-    new-instance v2, Ly75;
-
-    .line 37
-    .line 38
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
-
-    .line 39
-    .line 40
-    .line 41
-    const/4 v4, 0x1
-
-    .line 42
-    iput-boolean v4, v2, Ly75;->j:Z
-
-    .line 43
-    .line 44
-    new-instance v4, Lgj0;
-
-    .line 45
-    .line 46
-    iget-object v13, v0, Lfj0;->k:Lsi0;
-
-    .line 47
-    .line 48
-    move-object v6, v1
-
-    .line 49
-    move-object v1, v4
-
-    .line 50
-    iget-object v4, v0, Lfj0;->l:Lnr3;
-
-    .line 51
-    .line 52
-    move-object v8, v3
-
-    .line 53
-    move-object v3, v13
-
-    .line 54
-    move-object v13, v5
-
-    .line 55
-    iget-object v5, v0, Lfj0;->m:Lnr3;
-
-    .line 56
-    .line 57
-    move-object v11, v10
-
-    .line 58
-    move-object v10, v8
-
-    .line 59
-    move-object v8, v6
-
-    .line 60
-    iget-boolean v6, v0, Lfj0;->n:Z
-
-    .line 61
-    .line 62
-    move-object v12, v7
-
-    .line 63
-    move-object v7, v9
-
-    .line 64
-    iget-object v9, v0, Lfj0;->j:Lfb1;
-
-    .line 65
-    .line 66
-    invoke-direct/range {v1 .. v13}, Lgj0;-><init>(Ly75;Lsi0;Lnr3;Lnr3;ZLy75;Lc85;Lfb1;Lc85;Ly75;Lc85;Lo17;)V
-
-    .line 67
-    .line 68
-    .line 69
-    move-object v6, v8
-
-    .line 70
-    move-object v15, v9
-
-    .line 71
-    move-object v8, v10
-
-    .line 72
-    move-object v5, v13
-
-    .line 73
-    new-instance v2, Llj0;
-
-    .line 74
-    .line 75
-    const/4 v14, 0x0
-
-    .line 76
-    iget-object v4, v0, Lfj0;->o:Lyj0;
-
-    .line 77
-    .line 78
-    move-object v13, v3
-
-    .line 79
-    iget-object v3, v0, Lfj0;->p:Lej0;
-
-    .line 80
-    .line 81
-    move-object v9, v2
-
-    .line 82
-    move-object v2, v5
-
-    .line 83
-    iget-object v5, v0, Lfj0;->q:Lgq3;
-
-    .line 84
-    .line 85
-    move-object v10, v11
-
-    .line 86
-    iget-object v11, v0, Lfj0;->r:Lw17;
-
-    .line 87
-    .line 88
-    iget-object v0, v0, Lfj0;->s:Lxp3;
-
-    .line 89
-    .line 90
-    move-object/from16 v16, v12
-
-    .line 91
-    .line 92
-    move-object v12, v0
-
-    .line 93
-    move-object v0, v9
-
-    .line 94
-    move-object v9, v7
-
-    .line 95
-    move-object/from16 v7, v16
-
-    .line 96
-    .line 97
-    move-object/from16 v16, v4
-
-    .line 98
-    .line 99
-    move-object v4, v1
-
-    .line 100
-    move-object/from16 v1, v16
-
-    .line 101
-    .line 102
-    invoke-direct/range {v0 .. v14}, Llj0;-><init>(Lyj0;Lo17;Lej0;Lgj0;Lgq3;Lc85;Lc85;Lc85;Ly75;Ly75;Lw17;Lxp3;Lsi0;Lc81;)V
-
-    .line 103
-    .line 104
-    .line 105
-    move-object v5, v2
-
-    .line 106
-    move-object v12, v7
-
-    .line 107
-    const/4 v2, 0x3
-
-    .line 108
-    const/4 v3, 0x0
-
-    .line 109
-    invoke-static {v15, v3, v3, v0, v2}, Lf;->J(Lfb1;Lwa1;Lib1;Lv52;I)Ly76;
-
-    .line 110
-    .line 111
-    .line 112
-    new-instance v0, Lsb;
-
-    .line 113
-    .line 114
-    move-object v4, v1
-
-    .line 115
-    move-object v1, v6
-
-    .line 116
-    const/4 v6, 0x2
-
-    .line 117
-    move-object v3, v8
-
-    .line 118
-    move-object v2, v12
-
-    .line 119
-    invoke-direct/range {v0 .. v6}, Lsb;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;B)V
-
-    .line 120
-    .line 121
-    .line 122
-    return-object v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,21 +1,21 @@
 .class public final synthetic Ld41;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lv52;
+.implements Ld52;
 
 
 # instance fields
 .field public final synthetic j:B
 
-.field public final synthetic k:Lx31;
+.field public final synthetic k:Landroid/content/Context;
 
-.field public final synthetic l:Lp15;
+.field public final synthetic l:Las3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lx31;Lp15;B)V
+.method public synthetic constructor <init>(Landroid/content/Context;Las3;B)V
     .locals 0
 
     .line 1
@@ -23,11 +23,11 @@
 
     .line 2
     .line 3
-    iput-object p1, p0, Ld41;->k:Lx31;
+    iput-object p1, p0, Ld41;->k:Landroid/content/Context;
 
     .line 4
     .line 5
-    iput-object p2, p0, Ld41;->l:Lp15;
+    iput-object p2, p0, Ld41;->l:Las3;
 
     .line 6
     .line 7
@@ -41,79 +41,61 @@
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final invoke()Ljava/lang/Object;
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Ld41;->j:B
 
     .line 2
     .line 3
-    sget-object v1, Ld07;->a:Ld07;
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
     .line 5
-    iget-object v2, p0, Ld41;->l:Lp15;
+    const/4 v2, 0x0
 
     .line 6
+    iget-object v3, p0, Ld41;->l:Las3;
+
     .line 7
-    iget-object p0, p0, Ld41;->k:Lx31;
-
     .line 8
+    iget-object p0, p0, Ld41;->k:Landroid/content/Context;
+
     .line 9
-    check-cast p1, Ljava/lang/String;
-
     .line 10
-    .line 11
-    check-cast p2, Ljava/util/List;
+    packed-switch v0, :pswitch_data_0
 
+    .line 11
     .line 12
     .line 13
-    packed-switch v0, :pswitch_data_0
+    invoke-interface {v3, v2}, Las3;->setValue(Ljava/lang/Object;)V
 
     .line 14
     .line 15
     .line 16
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p0, v2}, Lt87;->P(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 17
     .line 18
     .line 19
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-object v1
 
     .line 20
+    :pswitch_0
+    invoke-interface {v3, v2}, Las3;->setValue(Ljava/lang/Object;)V
+
     .line 21
     .line 22
-    invoke-virtual {p0, v2, p1, p2}, Lx31;->q(Lp15;Ljava/lang/String;Ljava/util/List;)V
-
     .line 23
+    invoke-static {p0, v2}, Lt87;->P(Landroid/content/Context;Ljava/lang/String;)V
+
     .line 24
     .line 25
-    return-object v1
-
     .line 26
-    :pswitch_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-object v1
 
     .line 27
-    .line 28
-    .line 29
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 30
-    .line 31
-    .line 32
-    invoke-virtual {p0, v2, p1, p2}, Lx31;->q(Lp15;Ljava/lang/String;Ljava/util/List;)V
-
-    .line 33
-    .line 34
-    .line 35
-    return-object v1
-
-    .line 36
-    nop
-
-    .line 37
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

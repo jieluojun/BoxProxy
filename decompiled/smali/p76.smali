@@ -1,129 +1,233 @@
-.class public abstract Lp76;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lp76;
+.super Lad0;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lds2;
 
 
-# static fields
-.field public static final a:Z
-
-.field public static final b:Lk76$a;
-
-.field public static final c:Ll76$a;
-
-.field public static final d:Lm76;
+# instance fields
+.field public final a:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(J)V
+    .locals 0
 
     .line 1
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    const/4 v1, 0x1
-
     .line 3
-    :try_start_0
-    const-string v2, "java.sql.Date"
+    .line 4
+    iput-wide p1, p0, Lp76;->a:J
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(FLjava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    const/4 p0, 0x0
+
+    throw p0
+.end method
+
+.method public final b(FJLbd4;)V
+    .locals 2
+
+    .line 1
+    const/high16 p2, 0x3f800000    # 1.0f
+
+    .line 2
+    .line 3
+    invoke-virtual {p4, p2}, Lbd4;->p(F)V
 
     .line 4
     .line 5
-    invoke-static {v2}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-    :try_end_0
-    .catch Ljava/lang/ClassNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
-
     .line 6
+    cmpg-float p2, p1, p2
+
     .line 7
     .line 8
-    move v2, v1
+    iget-wide v0, p0, Lp76;->a:J
 
     .line 9
-    goto :goto_0
-
     .line 10
-    :catch_0
-    move v2, v0
+    if-nez p2, :cond_0
 
     .line 11
-    :goto_0
-    sput-boolean v2, Lp76;->a:Z
-
     .line 12
+    goto :goto_0
+
     .line 13
-    if-eqz v2, :cond_0
+    :cond_0
+    invoke-static {v0, v1}, Lhu0;->d(J)F
 
     .line 14
     .line 15
-    new-instance v2, Lo76;
-
     .line 16
+    move-result p0
+
     .line 17
-    const-class v3, Ljava/sql/Date;
+    mul-float/2addr p0, p1
 
     .line 18
-    .line 19
-    invoke-direct {v2, v3, v0}, Lo76;-><init>(Ljava/lang/Class;B)V
+    invoke-static {v0, v1, p0}, Lhu0;->c(JF)J
 
+    .line 19
     .line 20
     .line 21
+    move-result-wide v0
+
     .line 22
-    new-instance v0, Lo76;
+    :goto_0
+    invoke-virtual {p4, v0, v1}, Lbd4;->r(J)V
 
     .line 23
     .line 24
-    const-class v2, Ljava/sql/Timestamp;
-
     .line 25
-    .line 26
-    invoke-direct {v0, v2, v1}, Lo76;-><init>(Ljava/lang/Class;B)V
+    iget-object p0, p4, Lbd4;->d:Ljava/lang/Object;
 
+    .line 26
     .line 27
+    check-cast p0, Landroid/graphics/Shader;
+
     .line 28
     .line 29
-    sget-object v0, Lk76;->b:Lk76$a;
+    if-eqz p0, :cond_1
 
     .line 30
     .line 31
-    sput-object v0, Lp76;->b:Lk76$a;
+    const/4 p0, 0x0
 
     .line 32
-    .line 33
-    sget-object v0, Ll76;->b:Ll76$a;
+    invoke-virtual {p4, p0}, Lbd4;->u(Landroid/graphics/Shader;)V
 
+    .line 33
     .line 34
     .line 35
-    sput-object v0, Lp76;->c:Ll76$a;
+    :cond_1
+    return-void
+.end method
 
-    .line 36
-    .line 37
-    sget-object v0, Ln76;->b:Lm76;
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
-    .line 38
-    .line 39
-    sput-object v0, Lp76;->d:Lm76;
+    .line 1
+    if-ne p0, p1, :cond_0
 
-    .line 40
-    .line 41
+    .line 2
+    .line 3
     goto :goto_1
 
-    .line 42
+    .line 4
     :cond_0
-    const/4 v0, 0x0
+    instance-of v0, p1, Lp76;
 
-    .line 43
-    sput-object v0, Lp76;->b:Lk76$a;
+    .line 5
+    .line 6
+    if-nez v0, :cond_1
 
-    .line 44
-    .line 45
-    sput-object v0, Lp76;->c:Ll76$a;
+    .line 7
+    .line 8
+    goto :goto_0
 
-    .line 46
-    .line 47
-    sput-object v0, Lp76;->d:Lm76;
+    .line 9
+    :cond_1
+    check-cast p1, Lp76;
 
-    .line 48
-    .line 49
+    .line 10
+    .line 11
+    iget-wide v0, p1, Lp76;->a:J
+
+    .line 12
+    .line 13
+    iget-wide p0, p0, Lp76;->a:J
+
+    .line 14
+    .line 15
+    invoke-static {p0, p1, v0, v1}, Lm07;->a(JJ)Z
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    if-nez p0, :cond_2
+
+    .line 20
+    .line 21
+    :goto_0
+    const/4 p0, 0x0
+
+    .line 22
+    return p0
+
+    .line 23
+    :cond_2
     :goto_1
-    return-void
+    const/4 p0, 0x1
+
+    .line 24
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lp76;->a:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lp76;->a:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Lhu0;->i(J)Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    const-string v0, "SolidColor(value="
+
+    .line 8
+    .line 9
+    const-string v1, ")"
+
+    .line 10
+    .line 11
+    invoke-static {v0, p0, v1}, Lpb1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    return-object p0
 .end method

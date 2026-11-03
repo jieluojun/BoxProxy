@@ -1,115 +1,122 @@
 .class public final Ly20;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lng1;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lsw2;
+.implements Lcw5;
 
 
-# static fields
-.field public static final a:Ly20;
+# instance fields
+.field public A:F
 
-.field public static final b:Lyr4;
+.field public B:Lp76;
+
+.field public C:Lvy5;
+
+.field public final D:Lkg0;
+
+.field public z:Lu20;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(FLp76;Lvy5;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ly20;
+    invoke-direct {p0}, Lng1;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    iput p1, p0, Ly20;->A:F
+
     .line 5
     .line 6
-    sput-object v0, Ly20;->a:Ly20;
+    iput-object p2, p0, Ly20;->B:Lp76;
 
     .line 7
     .line 8
-    new-instance v0, Lyr4;
+    iput-object p3, p0, Ly20;->C:Lvy5;
 
     .line 9
     .line 10
-    const-string v1, "kotlin.Boolean"
+    new-instance p1, Lo2;
 
     .line 11
     .line 12
-    sget-object v2, Lxr4;->e:Lxr4;
+    const/16 p2, 0x18
 
     .line 13
     .line 14
-    invoke-direct {v0, v1, v2}, Lyr4;-><init>(Ljava/lang/String;Lxr4;)V
+    invoke-direct {p1, p0, p2}, Lo2;-><init>(Ljava/lang/Object;B)V
 
     .line 15
     .line 16
     .line 17
-    sput-object v0, Ly20;->b:Lyr4;
+    new-instance p2, Lkg0;
 
     .line 18
     .line 19
+    new-instance p3, Llg0;
+
+    .line 20
+    .line 21
+    invoke-direct {p3}, Llg0;-><init>()V
+
+    .line 22
+    .line 23
+    .line 24
+    invoke-direct {p2, p3, p1}, Lkg0;-><init>(Llg0;Lo52;)V
+
+    .line 25
+    .line 26
+    .line 27
+    invoke-virtual {p0, p2}, Lng1;->E1(Lmg1;)V
+
+    .line 28
+    .line 29
+    .line 30
+    iput-object p2, p0, Ly20;->D:Lkg0;
+
+    .line 31
+    .line 32
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lae1;)Ljava/lang/Object;
+.method public final Q0(Llw5;)V
     .locals 0
 
     .line 1
-    invoke-interface {p1}, Lae1;->d()Z
+    iget-object p0, p0, Ly20;->C:Lvy5;
 
     .line 2
     .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    return-object p0
-.end method
-
-.method public final c()Lov5;
-    .locals 0
-
-    .line 1
-    sget-object p0, Ly20;->b:Lyr4;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final d(Lm96;Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    check-cast p2, Ljava/lang/Boolean;
-
-    .line 2
-    .line 3
-    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-static {p1, p0}, Ljw5;->n(Llw5;Lvy5;)V
 
     .line 4
     .line 5
     .line 6
-    move-result p0
-
-    .line 7
-    invoke-virtual {p1, p0}, Lm96;->b(Z)V
-
-    .line 8
-    .line 9
-    .line 10
     return-void
+.end method
+
+.method public final p()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public final t1()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
 .end method

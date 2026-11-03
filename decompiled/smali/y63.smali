@@ -1,259 +1,216 @@
 .class public final Ly63;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super La3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Ljava/util/ArrayList;
+.field public final synthetic l:Lk20;
 
-.field public final b:Ljava/util/ArrayList;
+.field public final synthetic m:Ls36;
+
+.field public final synthetic n:Lik4;
+
+.field public final synthetic o:Lk20;
+
+.field public final synthetic p:I
+
+.field public final synthetic q:Lz63;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lz63;Lc3;Lk20;Ls36;Lik4;Lk20;I)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ly63;->q:Lz63;
 
     .line 2
     .line 3
+    iput-object p3, p0, Ly63;->l:Lk20;
+
     .line 4
-    new-instance v0, Ljava/util/ArrayList;
-
     .line 5
-    .line 6
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    iput-object p4, p0, Ly63;->m:Ls36;
 
+    .line 6
     .line 7
+    iput-object p5, p0, Ly63;->n:Lik4;
+
     .line 8
     .line 9
-    iput-object v0, p0, Ly63;->a:Ljava/util/ArrayList;
+    iput-object p6, p0, Ly63;->o:Lk20;
 
     .line 10
     .line 11
-    new-instance v0, Ljava/util/ArrayList;
+    iput p7, p0, Ly63;->p:I
 
     .line 12
     .line 13
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {p0, p1, p2}, La3;-><init>(Ld3;Lc3;)V
 
     .line 14
     .line 15
     .line 16
-    iput-object v0, p0, Ly63;->b:Ljava/util/ArrayList;
-
-    .line 17
-    .line 18
     return-void
 .end method
 
-.method public static a(Ly63;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
-    .locals 12
+
+# virtual methods
+.method public final a()Ljava/lang/Object;
+    .locals 9
 
     .line 1
-    iget-object v0, p0, Ly63;->a:Ljava/util/ArrayList;
+    iget-object v0, p0, Ly63;->l:Lk20;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    iget-object v1, v0, Lk20;->a:Ljava/util/concurrent/locks/ReentrantLock;
 
     .line 4
     .line 5
+    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+
     .line 6
+    .line 7
+    .line 8
+    :try_start_0
+    iget-object v0, p0, Ly63;->q:Lz63;
+
+    .line 9
+    .line 10
+    iget-object v0, v0, Ld3;->k:Ln61;
+
+    .line 11
+    .line 12
+    iget-object v2, v0, Ln61;->j:Ljava/util/ArrayList;
+
+    .line 13
+    .line 14
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    .line 15
+    .line 16
+    .line 17
+    move-result v2
+
+    .line 18
+    add-int/lit8 v2, v2, -0x1
+
+    .line 19
+    .line 20
+    iget-object v5, p0, Ly63;->m:Ls36;
+
+    .line 21
+    .line 22
+    iget-object v6, p0, Ly63;->n:Lik4;
+
+    .line 23
+    .line 24
+    iget-object v7, p0, Ly63;->l:Lk20;
+
+    .line 25
+    .line 26
+    iget-object v8, p0, Ly63;->o:Lk20;
+
+    .line 27
+    .line 28
+    new-instance v3, Lx63;
+
+    .line 29
+    .line 30
+    move-object v4, p0
+
+    .line 31
+    invoke-direct/range {v3 .. v8}, Lx63;-><init>(Ly63;Ls36;Lik4;Lk20;Lk20;)V
+
+    .line 32
+    .line 33
+    .line 34
+    const/4 p0, 0x0
+
+    .line 35
+    invoke-virtual {v0, p0, v2, v3}, Ln61;->y(IILl61;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 36
+    .line 37
+    .line 38
+    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    .line 39
+    .line 40
+    .line 41
+    const/4 p0, 0x0
+
+    .line 42
+    return-object p0
+
+    .line 43
+    :catchall_0
+    move-exception v0
+
+    .line 44
+    move-object p0, v0
+
+    .line 45
+    invoke-virtual {v1}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    .line 46
+    .line 47
+    .line 48
+    throw p0
+.end method
+
+.method public final b()Z
+    .locals 1
+
+    .line 1
+    invoke-super {p0}, La3;->b()Z
+
+    .line 2
+    .line 3
+    .line 4
     move-result v0
 
+    .line 5
+    if-eqz v0, :cond_0
+
+    .line 6
     .line 7
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    iget-object v0, p0, Ly63;->q:Lz63;
 
     .line 8
     .line 9
-    .line 10
-    move-result-object v0
+    iget-object v0, v0, Lz63;->m:Ljava/util/concurrent/atomic/AtomicInteger;
 
+    .line 10
     .line 11
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     .line 12
     .line 13
     .line 14
-    iget-object v1, p0, Ly63;->a:Ljava/util/ArrayList;
+    move-result v0
 
     .line 15
-    .line 16
-    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    iget p0, p0, Ly63;->p:I
 
+    .line 16
     .line 17
+    if-ne v0, p0, :cond_0
+
     .line 18
     .line 19
-    move-result-object v2
+    const/4 p0, 0x1
 
     .line 20
-    invoke-interface {p2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    return p0
 
     .line 21
-    .line 22
-    .line 23
-    move-result-object v3
-
-    .line 24
-    new-instance v4, Ljava/util/ArrayList;
-
-    .line 25
-    .line 26
-    const/16 v5, 0xa
-
-    .line 27
-    .line 28
-    invoke-static {p1, v5}, Lgu0;->o0(Ljava/lang/Iterable;I)I
-
-    .line 29
-    .line 30
-    .line 31
-    move-result p1
-
-    .line 32
-    invoke-static {p2, v5}, Lgu0;->o0(Ljava/lang/Iterable;I)I
-
-    .line 33
-    .line 34
-    .line 35
-    move-result p2
-
-    .line 36
-    invoke-static {p1, p2}, Ljava/lang/Math;->min(II)I
-
-    .line 37
-    .line 38
-    .line 39
-    move-result p1
-
-    .line 40
-    invoke-direct {v4, p1}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 41
-    .line 42
-    .line 43
-    :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 44
-    .line 45
-    .line 46
-    move-result p1
-
-    .line 47
-    if-eqz p1, :cond_0
-
-    .line 48
-    .line 49
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 50
-    .line 51
-    .line 52
-    move-result p1
-
-    .line 53
-    if-eqz p1, :cond_0
-
-    .line 54
-    .line 55
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 56
-    .line 57
-    .line 58
-    move-result-object p1
-
-    .line 59
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 60
-    .line 61
-    .line 62
-    move-result-object p2
-
-    .line 63
-    check-cast p2, Ljava/lang/Number;
-
-    .line 64
-    .line 65
-    check-cast p1, Ljava/lang/Number;
-
-    .line 66
-    .line 67
-    new-instance v5, Lz63;
-
-    .line 68
-    .line 69
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 70
-    .line 71
-    .line 72
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 73
-    .line 74
-    .line 75
-    invoke-virtual {p1}, Ljava/lang/Number;->doubleValue()D
-
-    .line 76
-    .line 77
-    .line 78
-    move-result-wide v6
-
-    .line 79
-    invoke-virtual {p2}, Ljava/lang/Number;->doubleValue()D
-
-    .line 80
-    .line 81
-    .line 82
-    move-result-wide v8
-
-    .line 83
-    const/4 p1, 0x0
-
-    .line 84
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 85
-    .line 86
-    .line 87
-    move-result-object v10
-
-    .line 88
-    const/4 v11, 0x0
-
-    .line 89
-    invoke-direct/range {v5 .. v11}, Lz63;-><init>(DDLjava/lang/Object;I)V
-
-    .line 90
-    .line 91
-    .line 92
-    invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 93
-    .line 94
-    .line 95
-    goto :goto_0
-
-    .line 96
     :cond_0
-    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    const/4 p0, 0x0
 
-    .line 97
-    .line 98
-    .line 99
-    iget-object p0, p0, Ly63;->b:Ljava/util/ArrayList;
-
-    .line 100
-    .line 101
-    invoke-virtual {p0, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 102
-    .line 103
-    .line 104
-    return-void
+    .line 22
+    return p0
 .end method

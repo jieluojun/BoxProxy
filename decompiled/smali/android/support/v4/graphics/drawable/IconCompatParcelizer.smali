@@ -1,6 +1,6 @@
 .class public final Landroid/support/v4/graphics/drawable/IconCompatParcelizer;
 .super Landroidx/core/graphics/drawable/IconCompatParcelizer;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # direct methods
@@ -16,11 +16,11 @@
     return-void
 .end method
 
-.method public static read(Lb37;)Landroidx/core/graphics/drawable/IconCompat;
+.method public static read(Lc57;)Landroidx/core/graphics/drawable/IconCompat;
     .locals 0
 
     .line 1
-    invoke-static {p0}, Landroidx/core/graphics/drawable/IconCompatParcelizer;->read(Lb37;)Landroidx/core/graphics/drawable/IconCompat;
+    invoke-static {p0}, Landroidx/core/graphics/drawable/IconCompatParcelizer;->read(Lc57;)Landroidx/core/graphics/drawable/IconCompat;
 
     .line 2
     .line 3
@@ -31,11 +31,11 @@
     return-object p0
 .end method
 
-.method public static write(Landroidx/core/graphics/drawable/IconCompat;Lb37;)V
+.method public static write(Landroidx/core/graphics/drawable/IconCompat;Lc57;)V
     .locals 0
 
     .line 1
-    invoke-static {p0, p1}, Landroidx/core/graphics/drawable/IconCompatParcelizer;->write(Landroidx/core/graphics/drawable/IconCompat;Lb37;)V
+    invoke-static {p0, p1}, Landroidx/core/graphics/drawable/IconCompatParcelizer;->write(Landroidx/core/graphics/drawable/IconCompat;Lc57;)V
 
     .line 2
     .line 3

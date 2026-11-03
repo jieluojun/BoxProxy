@@ -1,83 +1,99 @@
-.class public abstract Lor2;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final synthetic Lor2;
+.super Ld62;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
 # static fields
-.field public static final a:Lqi2;
-
-.field public static final b:Lh37;
-
-.field public static final c:Lmp1;
+.field public static final k:Lor2;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 6
 
     .line 1
-    new-instance v0, Lqi2;
+    new-instance v0, Lor2;
 
     .line 2
     .line 3
-    sget-object v1, Lnr2;->k:Lnr2;
+    const-string v4, "min(II)I"
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Lh8;-><init>(Lv52;)V
+    const/4 v5, 0x1
 
     .line 6
+    const/4 v1, 0x2
+
     .line 7
+    const-class v2, Lai3;
+
     .line 8
-    sput-object v0, Lor2;->a:Lqi2;
-
     .line 9
+    const-string v3, "min"
+
     .line 10
-    new-instance v0, Lh37;
-
     .line 11
-    .line 12
-    sget-object v1, Lmr2;->k:Lmr2;
+    invoke-direct/range {v0 .. v5}, Ld62;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
+    .line 12
     .line 13
     .line 14
-    invoke-direct {v0, v1}, Lh8;-><init>(Lv52;)V
+    sput-object v0, Lor2;->k:Lor2;
 
     .line 15
     .line 16
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    check-cast p1, Ljava/lang/Number;
+
+    .line 2
+    .line 3
+    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    check-cast p2, Ljava/lang/Number;
+
+    .line 8
+    .line 9
+    invoke-virtual {p2}, Ljava/lang/Number;->intValue()I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p1
+
+    .line 13
+    invoke-static {p0, p1}, Ljava/lang/Math;->min(II)I
+
+    .line 14
+    .line 15
+    .line 16
+    move-result p0
+
     .line 17
-    sput-object v0, Lor2;->b:Lh37;
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 18
     .line 19
-    new-instance v0, Lb02;
-
     .line 20
+    move-result-object p0
+
     .line 21
-    const/16 v1, 0x11
-
-    .line 22
-    .line 23
-    invoke-direct {v0, v1}, Lb02;-><init>(B)V
-
-    .line 24
-    .line 25
-    .line 26
-    new-instance v1, Lmp1;
-
-    .line 27
-    .line 28
-    const/4 v2, 0x1
-
-    .line 29
-    invoke-direct {v1, v0, v2}, Lmp1;-><init>(Lg52;B)V
-
-    .line 30
-    .line 31
-    .line 32
-    sput-object v1, Lor2;->c:Lmp1;
-
-    .line 33
-    .line 34
-    return-void
+    return-object p0
 .end method

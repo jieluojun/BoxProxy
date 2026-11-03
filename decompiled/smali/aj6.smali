@@ -1,52 +1,56 @@
 .class public final Laj6;
-.super Lmi6;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lzi6;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final b:Landroid/view/textclassifier/TextClassification;
-
-.field public final c:I
-
-.field public final d:Landroid/graphics/drawable/Drawable;
+.field public final l:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/textclassifier/TextClassification;ILandroid/graphics/drawable/Drawable;)V
+.method public constructor <init>(Ljava/lang/Runnable;JZ)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1}, Lmi6;-><init>(Ljava/lang/Object;)V
+    invoke-direct {p0, p2, p3, p4}, Lzi6;-><init>(JZ)V
 
     .line 2
     .line 3
     .line 4
-    iput-object p2, p0, Laj6;->b:Landroid/view/textclassifier/TextClassification;
+    iput-object p1, p0, Laj6;->l:Ljava/lang/Runnable;
 
     .line 5
     .line 6
-    iput p3, p0, Laj6;->c:I
-
-    .line 7
-    .line 8
-    iput-object p4, p0, Laj6;->d:Landroid/graphics/drawable/Drawable;
-
-    .line 9
-    .line 10
     return-void
 .end method
 
 
 # virtual methods
+.method public final run()V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Laj6;->l:Ljava/lang/Runnable;
+
+    .line 2
+    .line 3
+    invoke-interface {p0}, Ljava/lang/Runnable;->run()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
 .method public final toString()Ljava/lang/String;
-    .locals 2
+    .locals 4
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 2
     .line 3
-    const-string v1, "TextContextMenuTextClassificationItem(key="
+    const-string v1, "Task["
 
     .line 4
     .line 5
@@ -55,52 +59,54 @@
     .line 6
     .line 7
     .line 8
-    iget-object v1, p0, Lmi6;->a:Ljava/lang/Object;
+    iget-object v1, p0, Laj6;->l:Ljava/lang/Runnable;
 
     .line 9
     .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 11
     .line 12
     .line 13
-    const-string v1, ", textClassification="
+    move-result-object v2
 
     .line 14
-    .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
 
+    .line 15
     .line 16
     .line 17
+    move-result-object v2
+
     .line 18
-    iget-object v1, p0, Laj6;->b:Landroid/view/textclassifier/TextClassification;
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 19
     .line 20
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
     .line 21
+    const/16 v2, 0x40
+
     .line 22
     .line 23
-    const-string v1, ", index="
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 24
     .line 25
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 26
+    invoke-static {v1}, Lrd1;->T(Ljava/lang/Object;)Ljava/lang/String;
+
     .line 27
     .line 28
-    iget v1, p0, Laj6;->c:I
-
     .line 29
+    move-result-object v1
+
     .line 30
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 31
     .line 32
     .line 33
-    const-string v1, ", icon="
+    const-string v1, ", "
 
     .line 34
     .line 35
@@ -109,31 +115,62 @@
     .line 36
     .line 37
     .line 38
-    iget-object p0, p0, Laj6;->d:Landroid/graphics/drawable/Drawable;
+    iget-wide v2, p0, Lzi6;->j:J
 
     .line 39
     .line 40
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v2, v3}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     .line 41
     .line 42
     .line 43
-    const-string p0, ")"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 44
     .line 45
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 46
+    iget-boolean p0, p0, Lzi6;->k:Z
+
     .line 47
     .line 48
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-eqz p0, :cond_0
 
     .line 49
     .line 50
+    const-string p0, "Blocking"
+
     .line 51
+    .line 52
+    goto :goto_0
+
+    .line 53
+    :cond_0
+    const-string p0, "Non-blocking"
+
+    .line 54
+    .line 55
+    :goto_0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 56
+    .line 57
+    .line 58
+    const/16 p0, 0x5d
+
+    .line 59
+    .line 60
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 61
+    .line 62
+    .line 63
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 64
+    .line 65
+    .line 66
     move-result-object p0
 
-    .line 52
+    .line 67
     return-object p0
 .end method

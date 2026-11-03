@@ -1,213 +1,202 @@
-.class public abstract Lw76;
+.class public final Lw76;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lh11;
+.implements Ljava/lang/Iterable;
+.implements Lvw2;
 
 
-# static fields
-.field public static final synthetic a:I
+# instance fields
+.field public final j:Lt56;
+
+.field public final k:I
+
+.field public final l:Lz95;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Lt56;ILu62;Lz95;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/lang/Exception;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Exception;-><init>()V
-
     .line 4
+    iput-object p1, p0, Lw76;->j:Lt56;
+
     .line 5
     .line 6
-    const-class v1, Lzc7;
+    iput p2, p0, Lw76;->k:I
 
     .line 7
     .line 8
-    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    iput-object p4, p0, Lw76;->l:Lz95;
 
     .line 9
     .line 10
+    return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    .line 1
+    instance-of v0, p1, Lw76;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_1
+
+    .line 4
+    .line 5
+    check-cast p1, Lw76;
+
+    .line 6
+    .line 7
+    iget v0, p1, Lw76;->k:I
+
+    .line 8
+    .line 9
+    iget v1, p0, Lw76;->k:I
+
+    .line 10
     .line 11
-    move-result-object v1
+    if-ne v0, v1, :cond_1
 
     .line 12
-    invoke-virtual {v0}, Ljava/lang/Throwable;->getStackTrace()[Ljava/lang/StackTraceElement;
-
     .line 13
+    iget-object v0, p1, Lw76;->j:Lt56;
+
     .line 14
     .line 15
-    move-result-object v0
+    iget-object v1, p0, Lw76;->j:Lt56;
 
     .line 16
-    const/4 v2, 0x0
-
     .line 17
-    aget-object v0, v0, v2
+    if-eq v0, v1, :cond_0
 
     .line 18
     .line 19
-    new-instance v2, Ljava/lang/StackTraceElement;
-
-    .line 20
-    .line 21
-    const-string v3, "_COROUTINE."
-
-    .line 22
-    .line 23
-    invoke-virtual {v3, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 24
-    .line 25
-    .line 26
-    move-result-object v1
-
-    .line 27
-    invoke-virtual {v0}, Ljava/lang/StackTraceElement;->getFileName()Ljava/lang/String;
-
-    .line 28
-    .line 29
-    .line 30
-    move-result-object v3
-
-    .line 31
-    invoke-virtual {v0}, Ljava/lang/StackTraceElement;->getLineNumber()I
-
-    .line 32
-    .line 33
-    .line 34
-    move-result v0
-
-    .line 35
-    const-string v4, "_"
-
-    .line 36
-    .line 37
-    invoke-direct {v2, v1, v4, v3, v0}, Ljava/lang/StackTraceElement;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 38
-    .line 39
-    .line 40
-    :try_start_0
-    const-class v0, Lgz;
-
-    .line 41
-    .line 42
-    invoke-virtual {v0}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
-
-    .line 43
-    .line 44
-    .line 45
-    move-result-object v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 46
     goto :goto_0
 
-    .line 47
-    :catchall_0
-    move-exception v0
-
-    .line 48
-    new-instance v1, Lwa5;
-
-    .line 49
-    .line 50
-    invoke-direct {v1, v0}, Lwa5;-><init>(Ljava/lang/Throwable;)V
-
-    .line 51
-    .line 52
-    .line 53
-    move-object v0, v1
-
-    .line 54
-    :goto_0
-    invoke-static {v0}, Lxa5;->a(Ljava/lang/Object;)Ljava/lang/Throwable;
-
-    .line 55
-    .line 56
-    .line 57
-    move-result-object v1
-
-    .line 58
-    if-nez v1, :cond_0
-
-    .line 59
-    .line 60
-    goto :goto_1
-
-    .line 61
+    .line 20
     :cond_0
-    const-string v0, "kotlin.coroutines.jvm.internal.BaseContinuationImpl"
+    iget-object p1, p1, Lw76;->l:Lz95;
 
-    .line 62
-    .line 63
-    :goto_1
-    check-cast v0, Ljava/lang/String;
+    .line 21
+    .line 22
+    iget-object p0, p0, Lw76;->l:Lz95;
 
-    .line 64
-    .line 65
-    :try_start_1
-    const-class v0, Lw76;
+    .line 23
+    .line 24
+    invoke-virtual {p1, p0}, Lz95;->equals(Ljava/lang/Object;)Z
 
-    .line 66
-    .line 67
-    invoke-virtual {v0}, Ljava/lang/Class;->getCanonicalName()Ljava/lang/String;
+    .line 25
+    .line 26
+    .line 27
+    move-result p0
 
-    .line 68
-    .line 69
-    .line 70
-    move-result-object v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    .line 28
+    if-eqz p0, :cond_1
 
-    .line 71
-    goto :goto_2
+    .line 29
+    .line 30
+    const/4 p0, 0x1
 
-    .line 72
-    :catchall_1
-    move-exception v0
+    .line 31
+    return p0
 
-    .line 73
-    new-instance v1, Lwa5;
-
-    .line 74
-    .line 75
-    invoke-direct {v1, v0}, Lwa5;-><init>(Ljava/lang/Throwable;)V
-
-    .line 76
-    .line 77
-    .line 78
-    move-object v0, v1
-
-    .line 79
-    :goto_2
-    invoke-static {v0}, Lxa5;->a(Ljava/lang/Object;)Ljava/lang/Throwable;
-
-    .line 80
-    .line 81
-    .line 82
-    move-result-object v1
-
-    .line 83
-    if-nez v1, :cond_1
-
-    .line 84
-    .line 85
-    goto :goto_3
-
-    .line 86
+    .line 32
     :cond_1
-    const-string v0, "kotlinx.coroutines.internal.StackTraceRecoveryKt"
+    :goto_0
+    const/4 p0, 0x0
 
-    .line 87
-    .line 88
-    :goto_3
-    check-cast v0, Ljava/lang/String;
+    .line 33
+    return p0
+.end method
 
-    .line 89
-    .line 90
-    return-void
+.method public final hashCode()I
+    .locals 2
+
+    .line 1
+    iget v0, p0, Lw76;->k:I
+
+    .line 2
+    .line 3
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 4
+    .line 5
+    iget-object v1, p0, Lw76;->j:Lt56;
+
+    .line 6
+    .line 7
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    .line 8
+    .line 9
+    .line 10
+    move-result v1
+
+    .line 11
+    add-int/2addr v1, v0
+
+    .line 12
+    mul-int/lit8 v1, v1, 0x1f
+
+    .line 13
+    .line 14
+    iget-object p0, p0, Lw76;->l:Lz95;
+
+    .line 15
+    .line 16
+    invoke-virtual {p0}, Lz95;->hashCode()I
+
+    .line 17
+    .line 18
+    .line 19
+    move-result p0
+
+    .line 20
+    add-int/2addr p0, v1
+
+    .line 21
+    return p0
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .locals 4
+
+    .line 1
+    new-instance v0, Lvg1;
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    iget-object v2, p0, Lw76;->l:Lz95;
+
+    .line 5
+    .line 6
+    iget-object v3, p0, Lw76;->j:Lt56;
+
+    .line 7
+    .line 8
+    iget p0, p0, Lw76;->k:I
+
+    .line 9
+    .line 10
+    invoke-direct {v0, v3, p0, v1, v2}, Lvg1;-><init>(Lt56;ILu62;Lu23;)V
+
+    .line 11
+    .line 12
+    .line 13
+    return-object v0
 .end method

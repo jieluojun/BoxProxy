@@ -1,255 +1,306 @@
 .class public final Luq;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Luf6;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-
-# static fields
-.field public static final b:[Ljava/lang/Class;
-
-.field public static final c:[I
-
-.field public static final d:[Ljava/lang/String;
-
-.field public static final e:Lt16;
+# interfaces
+.implements Ls52;
 
 
 # instance fields
-.field public final a:[Ljava/lang/Object;
+.field public synthetic j:Ljava/lang/Object;
+
+.field public final synthetic k:Landroid/content/Context;
+
+.field public final synthetic l:Ljava/lang/String;
+
+.field public final synthetic m:I
+
+.field public final synthetic n:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Ly71;)V
+    .locals 0
 
     .line 1
-    const-class v0, Landroid/content/Context;
+    iput-object p1, p0, Luq;->k:Landroid/content/Context;
 
     .line 2
     .line 3
-    const-class v1, Landroid/util/AttributeSet;
+    iput-object p2, p0, Luq;->l:Ljava/lang/String;
 
     .line 4
     .line 5
-    filled-new-array {v0, v1}, [Ljava/lang/Class;
+    iput p3, p0, Luq;->m:I
 
     .line 6
     .line 7
-    .line 8
-    move-result-object v0
+    iput-object p4, p0, Luq;->n:Ljava/lang/String;
 
+    .line 8
     .line 9
-    sput-object v0, Luq;->b:[Ljava/lang/Class;
+    const/4 p1, 0x2
 
     .line 10
-    .line 11
-    const v0, 0x101026f
+    invoke-direct {p0, p1, p5}, Luf6;-><init>(ILy71;)V
 
+    .line 11
     .line 12
     .line 13
-    .line 14
-    filled-new-array {v0}, [I
-
-    .line 15
-    .line 16
-    .line 17
-    move-result-object v0
-
-    .line 18
-    sput-object v0, Luq;->c:[I
-
-    .line 19
-    .line 20
-    const-string v0, "android.view."
-
-    .line 21
-    .line 22
-    const-string v1, "android.webkit."
-
-    .line 23
-    .line 24
-    const-string v2, "android.widget."
-
-    .line 25
-    .line 26
-    filled-new-array {v2, v0, v1}, [Ljava/lang/String;
-
-    .line 27
-    .line 28
-    .line 29
-    move-result-object v0
-
-    .line 30
-    sput-object v0, Luq;->d:[Ljava/lang/String;
-
-    .line 31
-    .line 32
-    new-instance v0, Lt16;
-
-    .line 33
-    .line 34
-    invoke-direct {v0}, Lt16;-><init>()V
-
-    .line 35
-    .line 36
-    .line 37
-    sput-object v0, Luq;->e:Lt16;
-
-    .line 38
-    .line 39
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    const/4 v0, 0x2
-
-    .line 5
-    new-array v0, v0, [Ljava/lang/Object;
-
-    .line 6
-    .line 7
-    iput-object v0, p0, Luq;->a:[Ljava/lang/Object;
-
-    .line 8
-    .line 9
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)Landroid/view/View;
-    .locals 2
+.method public final create(Ljava/lang/Object;Ly71;)Ly71;
+    .locals 6
 
     .line 1
-    sget-object v0, Luq;->e:Lt16;
+    new-instance v0, Luq;
 
     .line 2
     .line 3
-    invoke-virtual {v0, p2}, Lt16;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    iget v3, p0, Luq;->m:I
 
     .line 4
     .line 5
-    .line 6
-    move-result-object v1
+    iget-object v4, p0, Luq;->n:Ljava/lang/String;
 
+    .line 6
     .line 7
-    check-cast v1, Ljava/lang/reflect/Constructor;
+    iget-object v1, p0, Luq;->k:Landroid/content/Context;
 
     .line 8
     .line 9
-    if-nez v1, :cond_1
+    iget-object v2, p0, Luq;->l:Ljava/lang/String;
 
     .line 10
     .line 11
-    if-eqz p3, :cond_0
+    move-object v5, p2
+
+    .line 12
+    invoke-direct/range {v0 .. v5}, Luq;-><init>(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Ly71;)V
+
+    .line 13
+    .line 14
+    .line 15
+    iput-object p1, v0, Luq;->j:Ljava/lang/Object;
+
+    .line 16
+    .line 17
+    return-object v0
+.end method
+
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    check-cast p1, Lbb1;
+
+    .line 2
+    .line 3
+    check-cast p2, Ly71;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0, p1, p2}, Luq;->create(Ljava/lang/Object;Ly71;)Ly71;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    check-cast p0, Luq;
+
+    .line 10
+    .line 11
+    sget-object p1, Lk27;->a:Lk27;
 
     .line 12
     .line 13
-    :try_start_0
-    invoke-virtual {p3, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0, p1}, Luq;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 14
     .line 15
     .line 16
-    move-result-object p3
+    move-result-object p0
 
     .line 17
-    goto :goto_0
+    return-object p0
+.end method
 
-    .line 18
-    :cond_0
-    move-object p3, p2
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    .line 19
-    :goto_0
-    invoke-virtual {p1}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
+    .line 1
+    iget-object v0, p0, Luq;->j:Ljava/lang/Object;
 
-    .line 20
-    .line 21
-    .line 22
+    .line 2
+    .line 3
+    check-cast v0, Lbb1;
+
+    .line 4
+    .line 5
+    invoke-static {p1}, Leg3;->S(Ljava/lang/Object;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object p1, p0, Luq;->k:Landroid/content/Context;
+
+    .line 9
+    .line 10
+    iget-object v0, p0, Luq;->l:Ljava/lang/String;
+
+    .line 11
+    .line 12
+    :try_start_0
+    invoke-virtual {p1}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    .line 13
+    .line 14
+    .line 15
     move-result-object p1
 
-    .line 23
-    const/4 v1, 0x0
+    .line 16
+    invoke-virtual {p1, v0}, Landroid/content/pm/PackageManager;->getApplicationIcon(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 20
+    goto :goto_0
+
+    .line 21
+    :catchall_0
+    move-exception p1
+
+    .line 22
+    new-instance v0, Ltb5;
+
+    .line 23
     .line 24
-    invoke-static {p3, v1, p1}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
+    invoke-direct {v0, p1}, Ltb5;-><init>(Ljava/lang/Throwable;)V
 
     .line 25
     .line 26
     .line 27
-    move-result-object p1
+    move-object p1, v0
 
     .line 28
-    const-class p3, Landroid/view/View;
+    :goto_0
+    instance-of v0, p1, Ltb5;
 
     .line 29
     .line 30
-    invoke-virtual {p1, p3}, Ljava/lang/Class;->asSubclass(Ljava/lang/Class;)Ljava/lang/Class;
+    const/4 v1, 0x0
 
     .line 31
+    if-eqz v0, :cond_0
+
     .line 32
     .line 33
-    move-result-object p1
+    move-object p1, v1
 
     .line 34
-    sget-object p3, Luq;->b:[Ljava/lang/Class;
+    :cond_0
+    check-cast p1, Landroid/graphics/drawable/Drawable;
 
     .line 35
     .line 36
-    invoke-virtual {p1, p3}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    if-nez p1, :cond_1
 
     .line 37
     .line 38
+    return-object v1
+
     .line 39
-    move-result-object v1
+    :cond_1
+    iget v0, p0, Luq;->m:I
 
     .line 40
-    invoke-virtual {v0, p2, v1}, Lt16;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 41
+    :try_start_1
+    invoke-static {p1, v0, v0}, Luu6;->W(Landroid/graphics/drawable/Drawable;II)Landroid/graphics/Bitmap;
+
     .line 42
     .line 43
-    :cond_1
-    const/4 p1, 0x1
-
     .line 44
-    invoke-virtual {v1, p1}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
+    move-result-object p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 45
+    goto :goto_1
+
     .line 46
+    :catchall_1
+    move-exception p1
+
     .line 47
-    iget-object p0, p0, Luq;->a:[Ljava/lang/Object;
+    new-instance v0, Ltb5;
 
     .line 48
     .line 49
-    invoke-virtual {v1, p0}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v0, p1}, Ltb5;-><init>(Ljava/lang/Throwable;)V
 
     .line 50
     .line 51
     .line 52
-    move-result-object p0
+    move-object p1, v0
 
     .line 53
-    check-cast p0, Landroid/view/View;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    :goto_1
+    instance-of v0, p1, Ltb5;
 
     .line 54
     .line 55
-    return-object p0
+    if-eqz v0, :cond_2
 
     .line 56
-    :catch_0
-    const/4 p0, 0x0
-
     .line 57
-    return-object p0
+    move-object p1, v1
+
+    .line 58
+    :cond_2
+    check-cast p1, Landroid/graphics/Bitmap;
+
+    .line 59
+    .line 60
+    if-eqz p1, :cond_3
+
+    .line 61
+    .line 62
+    sget-object v0, Lrq;->a:Landroid/util/LruCache;
+
+    .line 63
+    .line 64
+    iget-object p0, p0, Luq;->n:Ljava/lang/String;
+
+    .line 65
+    .line 66
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 67
+    .line 68
+    .line 69
+    sget-object v0, Lrq;->a:Landroid/util/LruCache;
+
+    .line 70
+    .line 71
+    invoke-virtual {v0, p0, p1}, Landroid/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 72
+    .line 73
+    .line 74
+    move-object v1, p1
+
+    .line 75
+    :cond_3
+    return-object v1
 .end method

@@ -1,73 +1,49 @@
-.class public interface abstract Lqo4;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lqo4;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Lpg1;
+
+# instance fields
+.field public synthetic j:Ljava/lang/Object;
+
+.field public k:I
 
 
 # virtual methods
-.method public D()J
-    .locals 2
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    const/4 p0, 0x0
+    iput-object p1, p0, Lqo4;->j:Ljava/lang/Object;
 
     .line 2
-    invoke-static {p0, p0, p0, p0}, Lj43;->D(IIII)J
-
     .line 3
+    iget p1, p0, Lqo4;->k:I
+
     .line 4
     .line 5
-    move-result-wide v0
+    const/high16 v0, -0x80000000
 
     .line 6
-    return-wide v0
-.end method
+    .line 7
+    or-int/2addr p1, v0
 
-.method public F0()Z
-    .locals 0
+    .line 8
+    iput p1, p0, Lqo4;->k:I
 
-    .line 1
-    const/4 p0, 0x0
+    .line 9
+    .line 10
+    const/4 p1, 0x0
 
-    .line 2
-    return p0
-.end method
+    .line 11
+    invoke-static {p1, p1, p0}, Lso4;->a(Lpo4;Ls52;Lz71;)V
 
-.method public L0()V
-    .locals 0
+    .line 12
+    .line 13
+    .line 14
+    sget-object p0, Lcb1;->j:Lcb1;
 
-    .line 1
-    invoke-interface {p0}, Lqo4;->S0()V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public abstract S0()V
-.end method
-
-.method public c()V
-    .locals 0
-
-    .line 1
-    invoke-interface {p0}, Lqo4;->S0()V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public abstract g0(Lfo4;Lgo4;J)V
-.end method
-
-.method public g1()V
-    .locals 0
-
-    .line 1
-    return-void
+    .line 15
+    .line 16
+    return-object p0
 .end method

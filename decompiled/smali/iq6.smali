@@ -1,133 +1,120 @@
-.class public final synthetic Liq6;
+.class public final Liq6;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lg52;
+.implements Lkq6;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public a:F
 
-.field public final synthetic k:Lbq6;
+.field public final b:Lhq6;
 
-.field public final synthetic l:Lhk4;
+.field public c:Landroid/graphics/Canvas;
+
+.field public final synthetic d:Lmq6;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lbq6;Lhk4;B)V
+.method public constructor <init>(Lmq6;Lhq6;)V
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Liq6;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Liq6;->k:Lbq6;
-
     .line 4
-    .line 5
-    iput-object p2, p0, Liq6;->l:Lhk4;
+    iput-object p1, p0, Liq6;->d:Lmq6;
 
+    .line 5
     .line 6
+    const/4 p1, 0x0
+
     .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p1, p0, Liq6;->a:F
 
     .line 8
     .line 9
+    iput-object p2, p0, Liq6;->b:Lhq6;
+
     .line 10
+    .line 11
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
+.method public final a(Ljava/util/ArrayList;ZLsm3;)Z
+    .locals 7
 
     .line 1
-    iget-byte v0, p0, Liq6;->j:B
+    iget v5, p0, Liq6;->a:F
 
     .line 2
     .line 3
-    sget-object v1, Ld07;->a:Ld07;
+    iget-object v4, p0, Liq6;->c:Landroid/graphics/Canvas;
 
     .line 4
     .line 5
-    iget-object v2, p0, Liq6;->l:Lhk4;
+    iget-object v6, p0, Liq6;->b:Lhq6;
 
     .line 6
     .line 7
-    iget-object p0, p0, Liq6;->k:Lbq6;
+    iget-object v0, p0, Liq6;->d:Lmq6;
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_0
+    move-object v1, p1
 
     .line 10
+    move v2, p2
+
     .line 11
+    move-object v3, p3
+
     .line 12
-    iget-object p0, p0, Lbq6;->p:Lr52;
+    invoke-virtual/range {v0 .. v6}, Lmq6;->h(Ljava/util/ArrayList;ZLsm3;Landroid/graphics/Canvas;FLhq6;)F
 
     .line 13
     .line 14
-    invoke-virtual {v2}, Lhk4;->g()F
-
     .line 15
+    move-result p1
+
     .line 16
+    add-float/2addr v5, p1
+
     .line 17
-    move-result v0
+    iput v5, p0, Liq6;->a:F
 
     .line 18
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
     .line 19
+    iget-object p0, p0, Liq6;->b:Lhq6;
+
     .line 20
     .line 21
-    move-result-object v0
+    iget p0, p0, Lhq6;->c:F
 
     .line 22
-    invoke-interface {p0, v0}, Lr52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 23
+    cmpg-float p0, v5, p0
+
     .line 24
     .line 25
-    return-object v1
+    if-gez p0, :cond_0
 
     .line 26
-    :pswitch_0
-    iget-object p0, p0, Lbq6;->p:Lr52;
-
     .line 27
+    const/4 p0, 0x1
+
     .line 28
-    invoke-virtual {v2}, Lhk4;->g()F
+    return p0
 
     .line 29
+    :cond_0
+    const/4 p0, 0x0
+
     .line 30
-    .line 31
-    move-result v0
-
-    .line 32
-    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    .line 33
-    .line 34
-    .line 35
-    move-result-object v0
-
-    .line 36
-    invoke-interface {p0, v0}, Lr52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 37
-    .line 38
-    .line 39
-    return-object v1
-
-    .line 40
-    nop
-
-    .line 41
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

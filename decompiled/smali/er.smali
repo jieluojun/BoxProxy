@@ -1,20 +1,14 @@
 .class public final enum Ler;
 .super Ljava/lang/Enum;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final k:Lw8;
+.field public static final enum j:Ler;
 
-.field public static final enum l:Ler;
+.field public static final synthetic k:[Ler;
 
-.field public static final synthetic m:[Ler;
-
-.field public static final synthetic n:Lcv1;
-
-
-# instance fields
-.field public final j:Ljava/lang/String;
+.field public static final synthetic l:Lzu1;
 
 
 # direct methods
@@ -26,103 +20,79 @@
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    const-string v1, "All"
 
     .line 4
-    const-string v2, "default"
-
     .line 5
+    const/4 v2, 0x0
+
     .line 6
-    const-string v3, "Default"
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
-    invoke-direct {v0, v1, v3, v2}, Ler;-><init>(ILjava/lang/String;Ljava/lang/String;)V
-
     .line 9
+    sput-object v0, Ler;->j:Ler;
+
     .line 10
     .line 11
-    sput-object v0, Ler;->l:Ler;
+    new-instance v1, Ler;
 
     .line 12
     .line 13
-    new-instance v1, Ler;
+    const-string v2, "User"
 
     .line 14
     .line 15
-    const/4 v2, 0x1
+    const/4 v3, 0x1
 
     .line 16
-    const-string v3, "alternate"
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
     .line 18
-    const-string v4, "Alternate"
-
     .line 19
-    .line 20
-    invoke-direct {v1, v2, v4, v3}, Ler;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    new-instance v2, Ler;
 
+    .line 20
     .line 21
+    const-string v3, "System"
+
     .line 22
     .line 23
-    filled-new-array {v0, v1}, [Ler;
+    const/4 v4, 0x2
 
     .line 24
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 25
     .line 26
-    move-result-object v0
-
     .line 27
-    sput-object v0, Ler;->m:[Ler;
+    filled-new-array {v0, v1, v2}, [Ler;
 
     .line 28
     .line 29
-    new-instance v1, Lcv1;
-
     .line 30
+    move-result-object v0
+
     .line 31
-    invoke-direct {v1, v0}, Lcv1;-><init>([Ljava/lang/Enum;)V
+    sput-object v0, Ler;->k:[Ler;
 
     .line 32
     .line 33
+    new-instance v1, Lzu1;
+
     .line 34
-    sput-object v1, Ler;->n:Lcv1;
-
     .line 35
-    .line 36
-    new-instance v0, Lw8;
+    invoke-direct {v1, v0}, Lzu1;-><init>([Ljava/lang/Enum;)V
 
+    .line 36
     .line 37
     .line 38
-    const/4 v1, 0x4
+    sput-object v1, Ler;->l:Lzu1;
 
     .line 39
-    invoke-direct {v0, v1}, Lw8;-><init>(B)V
-
     .line 40
-    .line 41
-    .line 42
-    sput-object v0, Ler;->k:Lw8;
-
-    .line 43
-    .line 44
-    return-void
-.end method
-
-.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0, p2, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p3, p0, Ler;->j:Ljava/lang/String;
-
-    .line 5
-    .line 6
     return-void
 .end method
 
@@ -153,7 +123,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Ler;->m:[Ler;
+    sget-object v0, Ler;->k:[Ler;
 
     .line 2
     .line 3

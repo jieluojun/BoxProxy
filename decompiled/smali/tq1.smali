@@ -1,135 +1,78 @@
-.class public final synthetic Ltq1;
+.class public final Ltq1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lg52;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final a:Landroid/content/Context;
 
-.field public final synthetic k:Lt57;
+.field public b:Ljava/lang/String;
+
+.field public c:Z
+
+.field public d:I
+
+.field public e:Lsq1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lt57;B)V
+.method public constructor <init>(Landroid/content/Context;)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Ltq1;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Ltq1;->k:Lt57;
-
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ltq1;->a:Landroid/content/Context;
 
+    .line 5
     .line 6
+    const-string p1, ""
+
     .line 7
     .line 8
+    iput-object p1, p0, Ltq1;->b:Ljava/lang/String;
+
+    .line 9
+    .line 10
+    const/4 p1, 0x1
+
+    .line 11
+    iput-boolean p1, p0, Ltq1;->c:Z
+
+    .line 12
+    .line 13
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 2
+.method public final a(I)V
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Ltq1;->j:B
+    iget-object v0, p0, Ltq1;->a:Landroid/content/Context;
 
     .line 2
     .line 3
-    sget-object v1, Ld07;->a:Ld07;
+    invoke-virtual {v0, p1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     .line 4
     .line 5
-    iget-object p0, p0, Ltq1;->k:Lt57;
-
     .line 6
+    move-result-object p1
+
     .line 7
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 8
     .line 9
     .line 10
-    iget-object p0, p0, Lt57;->k:Ljava/lang/Object;
+    iput-object p1, p0, Ltq1;->b:Ljava/lang/String;
 
     .line 11
     .line 12
-    check-cast p0, Lvt0;
-
-    .line 13
-    .line 14
-    invoke-virtual {p0}, Lvt0;->i0()V
-
-    .line 15
-    .line 16
-    .line 17
-    return-object v1
-
-    .line 18
-    :pswitch_0
-    iget-object p0, p0, Lt57;->k:Ljava/lang/Object;
-
-    .line 19
-    .line 20
-    check-cast p0, Lvt0;
-
-    .line 21
-    .line 22
-    invoke-virtual {p0}, Lvt0;->z()V
-
-    .line 23
-    .line 24
-    .line 25
-    return-object v1
-
-    .line 26
-    :pswitch_1
-    iget-object p0, p0, Lt57;->k:Ljava/lang/Object;
-
-    .line 27
-    .line 28
-    check-cast p0, Lvt0;
-
-    .line 29
-    .line 30
-    const/4 v0, 0x1
-
-    .line 31
-    invoke-virtual {p0, v0}, Lvt0;->w(Z)V
-
-    .line 32
-    .line 33
-    .line 34
-    return-object v1
-
-    .line 35
-    :pswitch_2
-    iget-object p0, p0, Lt57;->k:Ljava/lang/Object;
-
-    .line 36
-    .line 37
-    check-cast p0, Lvt0;
-
-    .line 38
-    .line 39
-    invoke-virtual {p0}, Lvt0;->b0()V
-
-    .line 40
-    .line 41
-    .line 42
-    return-object v1
-
-    .line 43
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

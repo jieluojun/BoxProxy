@@ -1,53 +1,378 @@
-.class public interface abstract Lyd6;
+.class public final Lyd6;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Landroid/view/MenuItem;
+
+# instance fields
+.field public final a:J
+
+.field public final b:J
+
+.field public final c:J
+
+.field public final d:J
+
+.field public final e:Ljava/lang/String;
+
+
+# direct methods
+.method public constructor <init>(JJJJLjava/lang/String;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-wide p1, p0, Lyd6;->a:J
+
+    .line 5
+    .line 6
+    iput-wide p3, p0, Lyd6;->b:J
+
+    .line 7
+    .line 8
+    iput-wide p5, p0, Lyd6;->c:J
+
+    .line 9
+    .line 10
+    iput-wide p7, p0, Lyd6;->d:J
+
+    .line 11
+    .line 12
+    iput-object p9, p0, Lyd6;->e:Ljava/lang/String;
+
+    .line 13
+    .line 14
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Lti3;)Lyd6;
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lyd6;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Lyd6;
+
+    .line 12
+    .line 13
+    iget-wide v3, p0, Lyd6;->a:J
+
+    .line 14
+    .line 15
+    iget-wide v5, p1, Lyd6;->a:J
+
+    .line 16
+    .line 17
+    cmp-long v1, v3, v5
+
+    .line 18
+    .line 19
+    if-eqz v1, :cond_2
+
+    .line 20
+    .line 21
+    return v2
+
+    .line 22
+    :cond_2
+    iget-wide v3, p0, Lyd6;->b:J
+
+    .line 23
+    .line 24
+    iget-wide v5, p1, Lyd6;->b:J
+
+    .line 25
+    .line 26
+    cmp-long v1, v3, v5
+
+    .line 27
+    .line 28
+    if-eqz v1, :cond_3
+
+    .line 29
+    .line 30
+    return v2
+
+    .line 31
+    :cond_3
+    iget-wide v3, p0, Lyd6;->c:J
+
+    .line 32
+    .line 33
+    iget-wide v5, p1, Lyd6;->c:J
+
+    .line 34
+    .line 35
+    cmp-long v1, v3, v5
+
+    .line 36
+    .line 37
+    if-eqz v1, :cond_4
+
+    .line 38
+    .line 39
+    return v2
+
+    .line 40
+    :cond_4
+    iget-wide v3, p0, Lyd6;->d:J
+
+    .line 41
+    .line 42
+    iget-wide v5, p1, Lyd6;->d:J
+
+    .line 43
+    .line 44
+    cmp-long v1, v3, v5
+
+    .line 45
+    .line 46
+    if-eqz v1, :cond_5
+
+    .line 47
+    .line 48
+    return v2
+
+    .line 49
+    :cond_5
+    iget-object p0, p0, Lyd6;->e:Ljava/lang/String;
+
+    .line 50
+    .line 51
+    iget-object p1, p1, Lyd6;->e:Ljava/lang/String;
+
+    .line 52
+    .line 53
+    invoke-static {p0, p1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 54
+    .line 55
+    .line 56
+    move-result p0
+
+    .line 57
+    if-nez p0, :cond_6
+
+    .line 58
+    .line 59
+    return v2
+
+    .line 60
+    :cond_6
+    return v0
 .end method
 
-.method public abstract c()Lti3;
+.method public final hashCode()I
+    .locals 4
+
+    .line 1
+    iget-wide v0, p0, Lyd6;->a:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    const/16 v1, 0x1f
+
+    .line 8
+    .line 9
+    mul-int/2addr v0, v1
+
+    .line 10
+    iget-wide v2, p0, Lyd6;->b:J
+
+    .line 11
+    .line 12
+    invoke-static {v0, v1, v2, v3}, Lqq5;->d(IIJ)I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result v0
+
+    .line 16
+    iget-wide v2, p0, Lyd6;->c:J
+
+    .line 17
+    .line 18
+    invoke-static {v0, v1, v2, v3}, Lqq5;->d(IIJ)I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v0
+
+    .line 22
+    iget-wide v2, p0, Lyd6;->d:J
+
+    .line 23
+    .line 24
+    invoke-static {v0, v1, v2, v3}, Lqq5;->d(IIJ)I
+
+    .line 25
+    .line 26
+    .line 27
+    move-result v0
+
+    .line 28
+    iget-object p0, p0, Lyd6;->e:Ljava/lang/String;
+
+    .line 29
+    .line 30
+    if-nez p0, :cond_0
+
+    .line 31
+    .line 32
+    const/4 p0, 0x0
+
+    .line 33
+    goto :goto_0
+
+    .line 34
+    :cond_0
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    .line 35
+    .line 36
+    .line 37
+    move-result p0
+
+    .line 38
+    :goto_0
+    add-int/2addr v0, p0
+
+    .line 39
+    return v0
 .end method
 
-.method public abstract getAlphabeticModifiers()I
-.end method
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
-.method public abstract getContentDescription()Ljava/lang/CharSequence;
-.end method
+    .line 1
+    const-string v0, "SubscriptionFlowInfo(uploadBytes="
 
-.method public abstract getIconTintList()Landroid/content/res/ColorStateList;
-.end method
+    .line 2
+    .line 3
+    const-string v1, ", downloadBytes="
 
-.method public abstract getIconTintMode()Landroid/graphics/PorterDuff$Mode;
-.end method
+    .line 4
+    .line 5
+    iget-wide v2, p0, Lyd6;->a:J
 
-.method public abstract getNumericModifiers()I
-.end method
+    .line 6
+    .line 7
+    invoke-static {v2, v3, v0, v1}, Lqq5;->o(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public abstract getTooltipText()Ljava/lang/CharSequence;
-.end method
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v0
 
-.method public abstract setAlphabeticShortcut(CI)Landroid/view/MenuItem;
-.end method
+    .line 11
+    iget-wide v1, p0, Lyd6;->b:J
 
-.method public abstract setContentDescription(Ljava/lang/CharSequence;)Lyd6;
-.end method
+    .line 12
+    .line 13
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-.method public abstract setIconTintList(Landroid/content/res/ColorStateList;)Landroid/view/MenuItem;
-.end method
+    .line 14
+    .line 15
+    .line 16
+    const-string v1, ", totalBytes="
 
-.method public abstract setIconTintMode(Landroid/graphics/PorterDuff$Mode;)Landroid/view/MenuItem;
-.end method
+    .line 17
+    .line 18
+    const-string v2, ", expireEpochSec="
 
-.method public abstract setNumericShortcut(CI)Landroid/view/MenuItem;
-.end method
+    .line 19
+    .line 20
+    iget-wide v3, p0, Lyd6;->c:J
 
-.method public abstract setShortcut(CCII)Landroid/view/MenuItem;
-.end method
+    .line 21
+    .line 22
+    invoke-static {v0, v1, v3, v4, v2}, Lpb1;->z(Ljava/lang/StringBuilder;Ljava/lang/String;JLjava/lang/String;)V
 
-.method public abstract setTooltipText(Ljava/lang/CharSequence;)Lyd6;
+    .line 23
+    .line 24
+    .line 25
+    iget-wide v1, p0, Lyd6;->d:J
+
+    .line 26
+    .line 27
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    .line 28
+    .line 29
+    .line 30
+    const-string v1, ", title="
+
+    .line 31
+    .line 32
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 33
+    .line 34
+    .line 35
+    iget-object p0, p0, Lyd6;->e:Ljava/lang/String;
+
+    .line 36
+    .line 37
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 38
+    .line 39
+    .line 40
+    const-string p0, ")"
+
+    .line 41
+    .line 42
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 43
+    .line 44
+    .line 45
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 46
+    .line 47
+    .line 48
+    move-result-object p0
+
+    .line 49
+    return-object p0
 .end method

@@ -1,9 +1,9 @@
 .class public final synthetic Lsi2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lv52;
+.implements Ls52;
 
 
 # instance fields
@@ -47,7 +47,7 @@
 
     .line 4
     .line 5
-    check-cast p1, Lbn4;
+    check-cast p1, Lwn4;
 
     .line 6
     .line 7
@@ -71,7 +71,7 @@
     const/4 v0, 0x1
 
     .line 17
-    invoke-static {p1, v0, p0, p2}, Lf63;->B(Lbn4;Z[Lti2;F)F
+    invoke-static {p1, v0, p0, p2}, Lg33;->L(Lwn4;Z[Lti2;F)F
 
     .line 18
     .line 19
@@ -95,7 +95,7 @@
     const/4 v0, 0x0
 
     .line 27
-    invoke-static {p1, v0, p0, p2}, Lf63;->B(Lbn4;Z[Lti2;F)F
+    invoke-static {p1, v0, p0, p2}, Lg33;->L(Lwn4;Z[Lti2;F)F
 
     .line 28
     .line 29

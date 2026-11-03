@@ -1,9 +1,9 @@
 .class public final synthetic Lwj2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lg52;
+.implements Ld52;
 
 
 # instance fields
@@ -79,17 +79,17 @@
     move-exception p0
 
     .line 15
-    sget-object v1, Lfv1;->m:Lfv1;
+    sget-object v1, Lcv1;->m:Lcv1;
 
     .line 16
     .line 17
-    invoke-virtual {v0, v1, v1, p0}, Lxj2;->b(Lfv1;Lfv1;Ljava/io/IOException;)V
+    invoke-virtual {v0, v1, v1, p0}, Lxj2;->b(Lcv1;Lcv1;Ljava/io/IOException;)V
 
     .line 18
     .line 19
     .line 20
     :goto_0
-    sget-object p0, Ld07;->a:Ld07;
+    sget-object p0, Lk27;->a:Lk27;
 
     .line 21
     .line 22

@@ -1,25 +1,16 @@
 .class public final Lp32;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Lps1;
+.field public final a:Landroid/graphics/Typeface;
 
-.field public b:Z
-
-.field public final c:Lgf1;
+.field public final b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method public constructor <init>(Lps1;)V
+.method public constructor <init>(I)V
     .locals 1
 
     .line 1
@@ -31,26 +22,30 @@
     const/4 v0, 0x0
 
     .line 5
-    iput-boolean v0, p0, Lp32;->b:Z
+    iput-object v0, p0, Lp32;->a:Landroid/graphics/Typeface;
 
     .line 6
     .line 7
-    new-instance v0, Lgf1;
+    iput p1, p0, Lp32;->b:I
 
     .line 8
     .line 9
-    invoke-direct {v0}, Lgf1;-><init>()V
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/graphics/Typeface;)V
+    .locals 0
 
     .line 10
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 11
+    iput-object p1, p0, Lp32;->a:Landroid/graphics/Typeface;
+
+    const/4 p1, 0x0
+
     .line 12
-    iput-object v0, p0, Lp32;->c:Lgf1;
+    iput p1, p0, Lp32;->b:I
 
-    .line 13
-    .line 14
-    iput-object p1, p0, Lp32;->a:Lps1;
-
-    .line 15
-    .line 16
     return-void
 .end method

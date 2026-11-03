@@ -1,48 +1,33 @@
 .class public final Lzg6;
-.super Lwn3;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public x:Z
+.field public final a:Ljava/lang/String;
+
+.field public final b:Lcu4;
+
+.field public c:Ljava/lang/Object;
 
 
-# virtual methods
-.method public final toString()Ljava/lang/String;
+# direct methods
+.method public constructor <init>(Ljava/lang/String;Lcu4;)V
     .locals 0
 
     .line 1
-    const-string p0, "<tail>"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final w1()V
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    iput-boolean v0, p0, Lzg6;->x:Z
-
     .line 3
     .line 4
-    return-void
-.end method
+    iput-object p1, p0, Lzg6;->a:Ljava/lang/String;
 
-.method public final x1()V
-    .locals 1
+    .line 5
+    .line 6
+    iput-object p2, p0, Lzg6;->b:Lcu4;
 
-    .line 1
-    const/4 v0, 0x0
-
-    .line 2
-    iput-boolean v0, p0, Lzg6;->x:Z
-
-    .line 3
-    .line 4
+    .line 7
+    .line 8
     return-void
 .end method

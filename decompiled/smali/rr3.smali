@@ -1,197 +1,97 @@
 .class public final Lrr3;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lsr3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Li97;
-
-
-# instance fields
-.field public final a:Llk4;
+.implements Lfx2;
+.implements Lo52;
 
 
 # direct methods
-.method public constructor <init>(Li97;)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    .locals 6
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object v1, Ldh0;->NO_RECEIVER:Ljava/lang/Object;
 
     .line 2
     .line 3
+    move-object v0, p0
+
     .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move-object v2, p1
 
     .line 5
+    move-object v3, p2
+
     .line 6
+    move-object v4, p3
+
     .line 7
-    invoke-static {p1}, Le43;->b0(Ljava/lang/Object;)Llk4;
+    move v5, p4
 
     .line 8
+    invoke-direct/range {v0 .. v5}, Lzt4;-><init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
     .line 9
     .line 10
-    move-result-object p1
-
     .line 11
-    iput-object p1, p0, Lrr3;->a:Llk4;
-
-    .line 12
-    .line 13
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lbh1;)I
-    .locals 0
+.method public final computeReflected()Lsw2;
+    .locals 1
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object v0, La95;->a:Lb95;
 
     .line 2
     .line 3
-    .line 4
-    iget-object p0, p0, Lrr3;->a:Llk4;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 4
     .line 5
     .line 6
-    invoke-virtual {p0}, Llk4;->getValue()Ljava/lang/Object;
-
-    .line 7
-    .line 8
-    .line 9
-    move-result-object p0
-
-    .line 10
-    check-cast p0, Li97;
-
-    .line 11
-    .line 12
-    invoke-interface {p0, p1}, Li97;->a(Lbh1;)I
-
-    .line 13
-    .line 14
-    .line 15
-    move-result p0
-
-    .line 16
-    return p0
+    return-object p0
 .end method
 
-.method public final b(Lbh1;)I
+.method public final d()V
     .locals 0
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p0}, Lzt4;->getReflected()Lfx2;
 
     .line 2
     .line 3
     .line 4
-    iget-object p0, p0, Lrr3;->a:Llk4;
-
-    .line 5
-    .line 6
-    invoke-virtual {p0}, Llk4;->getValue()Ljava/lang/Object;
-
-    .line 7
-    .line 8
-    .line 9
     move-result-object p0
 
+    .line 5
+    check-cast p0, Lrr3;
+
+    .line 6
+    .line 7
+    invoke-virtual {p0}, Lrr3;->d()V
+
+    .line 8
+    .line 9
     .line 10
-    check-cast p0, Li97;
-
-    .line 11
-    .line 12
-    invoke-interface {p0, p1}, Li97;->b(Lbh1;)I
-
-    .line 13
-    .line 14
-    .line 15
-    move-result p0
-
-    .line 16
-    return p0
+    return-void
 .end method
 
-.method public final c(Lbh1;Lwy2;)I
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p0}, Lrr3;->d()V
 
     .line 2
     .line 3
     .line 4
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 p0, 0x0
 
     .line 5
-    .line 6
-    .line 7
-    iget-object p0, p0, Lrr3;->a:Llk4;
-
-    .line 8
-    .line 9
-    invoke-virtual {p0}, Llk4;->getValue()Ljava/lang/Object;
-
-    .line 10
-    .line 11
-    .line 12
-    move-result-object p0
-
-    .line 13
-    check-cast p0, Li97;
-
-    .line 14
-    .line 15
-    invoke-interface {p0, p1, p2}, Li97;->c(Lbh1;Lwy2;)I
-
-    .line 16
-    .line 17
-    .line 18
-    move-result p0
-
-    .line 19
-    return p0
-.end method
-
-.method public final d(Lbh1;Lwy2;)I
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 5
-    .line 6
-    .line 7
-    iget-object p0, p0, Lrr3;->a:Llk4;
-
-    .line 8
-    .line 9
-    invoke-virtual {p0}, Llk4;->getValue()Ljava/lang/Object;
-
-    .line 10
-    .line 11
-    .line 12
-    move-result-object p0
-
-    .line 13
-    check-cast p0, Li97;
-
-    .line 14
-    .line 15
-    invoke-interface {p0, p1, p2}, Li97;->d(Lbh1;Lwy2;)I
-
-    .line 16
-    .line 17
-    .line 18
-    move-result p0
-
-    .line 19
-    return p0
+    throw p0
 .end method

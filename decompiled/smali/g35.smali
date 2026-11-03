@@ -1,134 +1,206 @@
-.class public final synthetic Lg35;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lw52;
+.class public final enum Lg35;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic j:Ln45;
+# static fields
+.field public static final enum j:Lg35;
 
-.field public final synthetic k:Z
+.field public static final enum k:Lg35;
 
-.field public final synthetic l:F
+.field public static final enum l:Lg35;
 
-.field public final synthetic m:F
+.field public static final enum m:Lg35;
 
-.field public final synthetic n:Lhx5;
+.field public static final enum n:Lg35;
+
+.field public static final enum o:Lg35;
+
+.field public static final synthetic p:[Lg35;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ln45;ZFFLhx5;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 8
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lg35;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lg35;->j:Ln45;
-
-    .line 5
-    .line 6
-    iput-boolean p2, p0, Lg35;->k:Z
-
-    .line 7
-    .line 8
-    iput p3, p0, Lg35;->l:F
-
-    .line 9
-    .line 10
-    iput p4, p0, Lg35;->m:F
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Lg35;->n:Lhx5;
-
-    .line 13
-    .line 14
-    return-void
-.end method
-
-
-# virtual methods
-.method public final b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 9
-
-    .line 1
-    check-cast p1, Lvh3;
-
-    .line 2
-    .line 3
-    check-cast p2, Lnh3;
+    const-string v1, "SortMode"
 
     .line 4
     .line 5
-    check-cast p3, Lw51;
+    const/4 v2, 0x0
 
     .line 6
-    .line 7
-    iget-wide v0, p3, Lw51;->a:J
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 7
     .line 8
     .line 9
-    invoke-interface {p2, v0, v1}, Lnh3;->e(J)Lcn4;
+    sput-object v0, Lg35;->j:Lg35;
 
     .line 10
     .line 11
-    .line 12
-    move-result-object v3
+    new-instance v1, Lg35;
 
+    .line 12
     .line 13
-    iget p2, v3, Lcn4;->j:I
+    const-string v2, "NodeColumns"
 
     .line 14
     .line 15
-    iget p3, v3, Lcn4;->k:I
+    const/4 v3, 0x1
 
     .line 16
-    .line 17
-    new-instance v2, Li35;
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 17
     .line 18
     .line 19
-    iget-object v4, p0, Lg35;->j:Ln45;
+    sput-object v1, Lg35;->k:Lg35;
 
     .line 20
     .line 21
-    iget-boolean v5, p0, Lg35;->k:Z
+    new-instance v2, Lg35;
 
     .line 22
     .line 23
-    iget v6, p0, Lg35;->l:F
+    const-string v3, "NodeDensity"
 
     .line 24
     .line 25
-    iget v7, p0, Lg35;->m:F
+    const/4 v4, 0x2
 
     .line 26
-    .line 27
-    iget-object v8, p0, Lg35;->n:Lhx5;
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 27
     .line 28
     .line 29
-    invoke-direct/range {v2 .. v8}, Li35;-><init>(Lcn4;Ln45;ZFFLhx5;)V
+    sput-object v2, Lg35;->l:Lg35;
 
     .line 30
     .line 31
+    new-instance v3, Lg35;
+
     .line 32
-    sget-object p0, Ltt1;->j:Ltt1;
-
     .line 33
-    .line 34
-    invoke-interface {p1, p2, p3, p0, v2}, Lvh3;->O0(IILjava/util/Map;Lr52;)Lth3;
+    const-string v4, "GroupColumns"
 
+    .line 34
     .line 35
+    const/4 v5, 0x3
+
     .line 36
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 37
+    .line 38
+    .line 39
+    sput-object v3, Lg35;->m:Lg35;
+
+    .line 40
+    .line 41
+    new-instance v4, Lg35;
+
+    .line 42
+    .line 43
+    const-string v5, "GroupDensity"
+
+    .line 44
+    .line 45
+    const/4 v6, 0x4
+
+    .line 46
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 47
+    .line 48
+    .line 49
+    sput-object v4, Lg35;->n:Lg35;
+
+    .line 50
+    .line 51
+    new-instance v5, Lg35;
+
+    .line 52
+    .line 53
+    const-string v6, "NameOverflow"
+
+    .line 54
+    .line 55
+    const/4 v7, 0x5
+
+    .line 56
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 57
+    .line 58
+    .line 59
+    sput-object v5, Lg35;->o:Lg35;
+
+    .line 60
+    .line 61
+    filled-new-array/range {v0 .. v5}, [Lg35;
+
+    .line 62
+    .line 63
+    .line 64
+    move-result-object v0
+
+    .line 65
+    sput-object v0, Lg35;->p:[Lg35;
+
+    .line 66
+    .line 67
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lg35;
+    .locals 1
+
+    .line 1
+    const-class v0, Lg35;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
     move-result-object p0
 
-    .line 38
+    .line 7
+    check-cast p0, Lg35;
+
+    .line 8
+    .line 9
     return-object p0
+.end method
+
+.method public static values()[Lg35;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lg35;->p:[Lg35;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lg35;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

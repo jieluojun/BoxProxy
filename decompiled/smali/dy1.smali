@@ -1,42 +1,35 @@
-.class public final Ldy1;
-.super Lgy1;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public abstract Ldy1;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public b:Z
+.field public final a:Ljava/io/File;
 
 
-# virtual methods
-.method public final a()Ljava/io/File;
-    .locals 1
+# direct methods
+.method public constructor <init>(Ljava/io/File;)V
+    .locals 0
 
     .line 1
-    iget-boolean v0, p0, Ldy1;->b:Z
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_0
-
     .line 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 5
-    const/4 p0, 0x0
-
     .line 6
-    return-object p0
-
     .line 7
-    :cond_0
-    const/4 v0, 0x1
+    iput-object p1, p0, Ldy1;->a:Ljava/io/File;
 
     .line 8
-    iput-boolean v0, p0, Ldy1;->b:Z
-
     .line 9
-    .line 10
-    iget-object p0, p0, Lgy1;->a:Ljava/io/File;
+    return-void
+.end method
 
-    .line 11
-    .line 12
-    return-object p0
+
+# virtual methods
+.method public abstract a()Ljava/io/File;
 .end method

@@ -1,6 +1,6 @@
 .class public final Lcom/materialkolor/ktx/ContrastKt;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # direct methods
@@ -8,7 +8,7 @@
     .locals 3
 
     .line 1
-    invoke-static {p0, p1}, Lcd7;->f0(J)I
+    invoke-static {p0, p1}, Lmt6;->e0(J)I
 
     .line 2
     .line 3
@@ -16,7 +16,7 @@
     move-result p0
 
     .line 5
-    invoke-static {p0}, Lns2;->s0(I)[D
+    invoke-static {p0}, Los2;->K(I)[D
 
     .line 6
     .line 7
@@ -24,7 +24,7 @@
     move-result-object p0
 
     .line 9
-    invoke-static {p2, p3}, Lcd7;->f0(J)I
+    invoke-static {p2, p3}, Lmt6;->e0(J)I
 
     .line 10
     .line 11
@@ -32,7 +32,7 @@
     move-result p1
 
     .line 13
-    invoke-static {p1}, Lns2;->s0(I)[D
+    invoke-static {p1}, Los2;->K(I)[D
 
     .line 14
     .line 15
@@ -91,7 +91,7 @@
     return-wide p2
 .end method
 
-.method public static final hasEnoughContrast-jxsXWHM(JJLg81;)Z
+.method public static final hasEnoughContrast-jxsXWHM(JJLc81;)Z
     .locals 0
 
     .line 1
@@ -108,7 +108,7 @@
     move-result-wide p0
 
     .line 8
-    iget-wide p2, p4, Lg81;->j:D
+    iget-wide p2, p4, Lc81;->j:D
 
     .line 9
     .line 10
@@ -137,7 +137,7 @@
     return p0
 .end method
 
-.method public static synthetic hasEnoughContrast-jxsXWHM$default(JJLg81;ILjava/lang/Object;)Z
+.method public static synthetic hasEnoughContrast-jxsXWHM$default(JJLc81;ILjava/lang/Object;)Z
     .locals 0
 
     .line 1
@@ -149,12 +149,12 @@
 
     .line 4
     .line 5
-    sget-object p4, Lg81;->k:Lg81;
+    sget-object p4, Lc81;->k:Lc81;
 
     .line 6
     .line 7
     :cond_0
-    invoke-static {p0, p1, p2, p3, p4}, Lcom/materialkolor/ktx/ContrastKt;->hasEnoughContrast-jxsXWHM(JJLg81;)Z
+    invoke-static {p0, p1, p2, p3, p4}, Lcom/materialkolor/ktx/ContrastKt;->hasEnoughContrast-jxsXWHM(JJLc81;)Z
 
     .line 8
     .line 9
@@ -169,7 +169,7 @@
     .locals 3
 
     .line 1
-    invoke-static {p0, p1}, Lcom/materialkolor/ktx/HctKt;->toHct-8_81llA(J)Ll92;
+    invoke-static {p0, p1}, Lcom/materialkolor/ktx/HctKt;->toHct-8_81llA(J)Lm92;
 
     .line 2
     .line 3
@@ -177,7 +177,7 @@
     move-result-object p0
 
     .line 5
-    invoke-static {p2, p3}, Lcom/materialkolor/ktx/HctKt;->toHct-8_81llA(J)Ll92;
+    invoke-static {p2, p3}, Lcom/materialkolor/ktx/HctKt;->toHct-8_81llA(J)Lm92;
 
     .line 6
     .line 7
@@ -185,15 +185,15 @@
     move-result-object p1
 
     .line 9
-    iget-wide p2, p0, Ll92;->d:D
+    iget-wide p2, p0, Lm92;->d:D
 
     .line 10
     .line 11
-    iget-wide p0, p1, Ll92;->d:D
+    iget-wide p0, p1, Lm92;->d:D
 
     .line 12
     .line 13
-    invoke-static {p2, p3}, Lns2;->u0(D)D
+    invoke-static {p2, p3}, Los2;->M(D)D
 
     .line 14
     .line 15
@@ -201,7 +201,7 @@
     move-result-wide p2
 
     .line 17
-    invoke-static {p0, p1}, Lns2;->u0(D)D
+    invoke-static {p0, p1}, Los2;->M(D)D
 
     .line 18
     .line 19

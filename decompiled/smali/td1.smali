@@ -1,39 +1,25 @@
-.class public interface abstract annotation Ltd1;
+.class public final Ltd1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Ljava/lang/annotation/Annotation;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# annotations
-.annotation system Ldalvik/annotation/AnnotationDefault;
-    value = .subannotation Ltd1;
-        c = ""
-        f = ""
-        l = {}
-        m = ""
-        v = 0x2
-    .end subannotation
-.end annotation
-
-.annotation runtime Ljava/lang/annotation/Retention;
-    value = .enum Ljava/lang/annotation/RetentionPolicy;->RUNTIME:Ljava/lang/annotation/RetentionPolicy;
-.end annotation
+# instance fields
+.field public final a:Lhz1;
 
 
-# virtual methods
-.method public abstract c()Ljava/lang/String;
-.end method
+# direct methods
+.method public constructor <init>(Lhz1;)V
+    .locals 0
 
-.method public abstract f()Ljava/lang/String;
-.end method
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract l()[I
-.end method
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Ltd1;->a:Lhz1;
 
-.method public abstract m()Ljava/lang/String;
-.end method
-
-.method public abstract v()I
+    .line 5
+    .line 6
+    return-void
 .end method

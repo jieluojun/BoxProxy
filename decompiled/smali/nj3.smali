@@ -1,213 +1,297 @@
-.class public abstract Lnj3;
+.class public final synthetic Lnj3;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
-# static fields
-.field public static final a:Lo8;
+# instance fields
+.field public final synthetic j:Z
 
-.field public static final b:Lo8;
+.field public final synthetic k:Ld52;
 
-.field public static final c:Lr87;
+.field public final synthetic l:Ls52;
 
-.field public static final d:Lr87;
+.field public final synthetic m:Lko3;
 
-.field public static final e:Lp8;
+.field public final synthetic n:Ls52;
 
-.field public static final f:Lp8;
+.field public final synthetic o:Z
 
-.field public static final g:Lp8;
+.field public final synthetic p:J
 
-.field public static final h:Ls87;
+.field public final synthetic q:J
 
-.field public static final i:Ls87;
+.field public final synthetic r:J
+
+.field public final synthetic s:J
+
+.field public final synthetic t:Lhj3;
+
+.field public final synthetic u:Lwu;
+
+.field public final synthetic v:Lzh4;
+
+.field public final synthetic w:I
+
+.field public final synthetic x:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(ZLd52;Ls52;Lko3;Ls52;ZJJJJLhj3;Lwu;Lzh4;II)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lo8;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    sget-object v1, Ls6;->x:Lr10;
-
     .line 4
-    .line 5
-    invoke-direct {v0, v1, v1}, Lo8;-><init>(Lr10;Lr10;)V
+    iput-boolean p1, p0, Lnj3;->j:Z
 
+    .line 5
     .line 6
+    iput-object p2, p0, Lnj3;->k:Ld52;
+
     .line 7
     .line 8
-    sput-object v0, Lnj3;->a:Lo8;
+    iput-object p3, p0, Lnj3;->l:Ls52;
 
     .line 9
     .line 10
-    new-instance v0, Lo8;
+    iput-object p4, p0, Lnj3;->m:Lko3;
 
     .line 11
     .line 12
-    sget-object v2, Ls6;->z:Lr10;
+    iput-object p5, p0, Lnj3;->n:Ls52;
 
     .line 13
     .line 14
-    invoke-direct {v0, v1, v2}, Lo8;-><init>(Lr10;Lr10;)V
+    iput-boolean p6, p0, Lnj3;->o:Z
 
     .line 15
     .line 16
+    iput-wide p7, p0, Lnj3;->p:J
+
     .line 17
-    new-instance v0, Lo8;
-
     .line 18
-    .line 19
-    invoke-direct {v0, v2, v2}, Lo8;-><init>(Lr10;Lr10;)V
+    iput-wide p9, p0, Lnj3;->q:J
 
+    .line 19
     .line 20
+    iput-wide p11, p0, Lnj3;->r:J
+
     .line 21
     .line 22
-    sput-object v0, Lnj3;->b:Lo8;
+    iput-wide p13, p0, Lnj3;->s:J
 
     .line 23
     .line 24
-    new-instance v0, Lo8;
+    iput-object p15, p0, Lnj3;->t:Lhj3;
 
     .line 25
     .line 26
-    invoke-direct {v0, v2, v1}, Lo8;-><init>(Lr10;Lr10;)V
+    move-object/from16 p1, p16
 
     .line 27
     .line 28
+    iput-object p1, p0, Lnj3;->u:Lwu;
+
     .line 29
-    new-instance v0, Lr87;
-
     .line 30
+    move-object/from16 p1, p17
+
     .line 31
-    sget-object v1, Los2;->c:Lp10;
-
     .line 32
-    .line 33
-    invoke-direct {v0, v1}, Lr87;-><init>(Lp10;)V
+    iput-object p1, p0, Lnj3;->v:Lzh4;
 
+    .line 33
     .line 34
+    move/from16 p1, p18
+
     .line 35
     .line 36
-    sput-object v0, Lnj3;->c:Lr87;
+    iput p1, p0, Lnj3;->w:I
 
     .line 37
     .line 38
-    new-instance v0, Lr87;
+    move/from16 p1, p19
 
     .line 39
     .line 40
-    sget-object v1, Los2;->d:Lp10;
+    iput p1, p0, Lnj3;->x:I
 
     .line 41
     .line 42
-    invoke-direct {v0, v1}, Lr87;-><init>(Lp10;)V
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 21
+
+    .line 1
+    move-object/from16 v0, p0
+
+    .line 2
+    .line 3
+    move-object/from16 v17, p1
+
+    .line 4
+    .line 5
+    check-cast v17, Lv01;
+
+    .line 6
+    .line 7
+    move-object/from16 v1, p2
+
+    .line 8
+    .line 9
+    check-cast v1, Ljava/lang/Integer;
+
+    .line 10
+    .line 11
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 12
+    .line 13
+    .line 14
+    iget v1, v0, Lnj3;->w:I
+
+    .line 15
+    .line 16
+    or-int/lit8 v1, v1, 0x1
+
+    .line 17
+    .line 18
+    invoke-static {v1}, Lw23;->h0(I)I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v18
+
+    .line 22
+    iget v1, v0, Lnj3;->x:I
+
+    .line 23
+    .line 24
+    invoke-static {v1}, Lw23;->h0(I)I
+
+    .line 25
+    .line 26
+    .line 27
+    move-result v19
+
+    .line 28
+    iget-boolean v1, v0, Lnj3;->j:Z
+
+    .line 29
+    .line 30
+    move v2, v1
+
+    .line 31
+    iget-object v1, v0, Lnj3;->k:Ld52;
+
+    .line 32
+    .line 33
+    move v3, v2
+
+    .line 34
+    iget-object v2, v0, Lnj3;->l:Ls52;
+
+    .line 35
+    .line 36
+    move v4, v3
+
+    .line 37
+    iget-object v3, v0, Lnj3;->m:Lko3;
+
+    .line 38
+    .line 39
+    move v5, v4
+
+    .line 40
+    iget-object v4, v0, Lnj3;->n:Ls52;
+
+    .line 41
+    .line 42
+    move v6, v5
 
     .line 43
+    iget-boolean v5, v0, Lnj3;->o:Z
+
     .line 44
     .line 45
-    sput-object v0, Lnj3;->d:Lr87;
+    move v8, v6
 
     .line 46
-    .line 47
-    new-instance v0, Lp8;
+    iget-wide v6, v0, Lnj3;->p:J
 
+    .line 47
     .line 48
+    move v10, v8
+
     .line 49
-    sget-object v1, Ls6;->u:Ls10;
+    iget-wide v8, v0, Lnj3;->q:J
 
     .line 50
     .line 51
-    sget-object v2, Ls6;->w:Ls10;
+    move v12, v10
 
     .line 52
+    iget-wide v10, v0, Lnj3;->r:J
+
     .line 53
-    invoke-direct {v0, v1, v2}, Lp8;-><init>(Ls10;Ls10;)V
-
     .line 54
-    .line 55
-    .line 56
-    sput-object v0, Lnj3;->e:Lp8;
+    move v14, v12
 
+    .line 55
+    iget-wide v12, v0, Lnj3;->s:J
+
+    .line 56
     .line 57
+    move v15, v14
+
     .line 58
-    new-instance v0, Lp8;
+    iget-object v14, v0, Lnj3;->t:Lhj3;
 
     .line 59
     .line 60
-    invoke-direct {v0, v1, v1}, Lp8;-><init>(Ls10;Ls10;)V
+    move/from16 v16, v15
 
     .line 61
     .line 62
+    iget-object v15, v0, Lnj3;->u:Lwu;
+
     .line 63
-    new-instance v0, Lp8;
-
     .line 64
-    .line 65
-    invoke-direct {v0, v2, v1}, Lp8;-><init>(Ls10;Ls10;)V
+    iget-object v0, v0, Lnj3;->v:Lzh4;
 
+    .line 65
     .line 66
+    move/from16 v20, v16
+
     .line 67
     .line 68
-    sput-object v0, Lnj3;->f:Lp8;
+    move-object/from16 v16, v0
 
     .line 69
     .line 70
-    new-instance v0, Lp8;
+    move/from16 v0, v20
 
     .line 71
     .line 72
-    invoke-direct {v0, v2, v2}, Lp8;-><init>(Ls10;Ls10;)V
+    invoke-static/range {v0 .. v19}, Lsj3;->f(ZLd52;Ls52;Lko3;Ls52;ZJJJJLhj3;Lwu;Lzh4;Lv01;II)V
 
     .line 73
     .line 74
     .line 75
-    new-instance v0, Lp8;
+    sget-object v0, Lk27;->a:Lk27;
 
     .line 76
     .line 77
-    sget-object v3, Ls6;->v:Ls10;
-
-    .line 78
-    .line 79
-    invoke-direct {v0, v3, v1}, Lp8;-><init>(Ls10;Ls10;)V
-
-    .line 80
-    .line 81
-    .line 82
-    sput-object v0, Lnj3;->g:Lp8;
-
-    .line 83
-    .line 84
-    new-instance v0, Ls87;
-
-    .line 85
-    .line 86
-    invoke-direct {v0, v1}, Ls87;-><init>(Ls10;)V
-
-    .line 87
-    .line 88
-    .line 89
-    sput-object v0, Lnj3;->h:Ls87;
-
-    .line 90
-    .line 91
-    new-instance v0, Ls87;
-
-    .line 92
-    .line 93
-    invoke-direct {v0, v2}, Ls87;-><init>(Ls10;)V
-
-    .line 94
-    .line 95
-    .line 96
-    sput-object v0, Lnj3;->i:Ls87;
-
-    .line 97
-    .line 98
-    return-void
+    return-object v0
 .end method

@@ -1,54 +1,72 @@
-.class public abstract Lem3;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lem3;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Ljava/lang/String;
+# instance fields
+.field public synthetic j:Ljava/lang/Object;
 
-.field public static final b:Ljava/lang/String;
+.field public final synthetic k:Lnm3;
+
+.field public l:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lnm3;Lz71;)V
+    .locals 0
 
     .line 1
-    const-string v0, "H"
+    iput-object p1, p0, Lem3;->k:Lnm3;
 
     .line 2
     .line 3
-    const/16 v1, 0xa
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
     .line 4
     .line 5
-    invoke-static {v1, v0}, Lda6;->b0(ILjava/lang/String;)Ljava/lang/String;
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iput-object p1, p0, Lem3;->j:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Lem3;->l:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    move-result-object v0
+    iput p1, p0, Lem3;->l:I
 
     .line 9
-    sput-object v0, Lem3;->a:Ljava/lang/String;
-
     .line 10
-    .line 11
-    const-string v1, "\n"
+    iget-object p1, p0, Lem3;->k:Lnm3;
 
+    .line 11
     .line 12
+    const/4 v0, 0x0
+
     .line 13
-    invoke-static {v0, v1, v0}, Lxu1;->C(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p1, v0, p0}, Lnm3;->d(Lr35;Lz71;)Ljava/lang/Object;
 
     .line 14
     .line 15
     .line 16
-    move-result-object v0
+    move-result-object p0
 
     .line 17
-    sput-object v0, Lem3;->b:Ljava/lang/String;
-
-    .line 18
-    .line 19
-    return-void
+    return-object p0
 .end method

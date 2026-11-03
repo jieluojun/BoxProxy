@@ -1,150 +1,124 @@
 .class public final Lp80;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lt80;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final INSTANCE:Lp80;
+# instance fields
+.field public final a:Llu;
 
-.field public static final synthetic a:Lf03;
+.field public final b:Lou;
+
+.field public final c:Lj17;
+
+.field public final d:Lnr6;
+
+.field public final e:Lfx3;
+
+.field public final f:Lo52;
+
+.field public final g:Ls52;
+
+.field public final h:Z
+
+.field public final i:Ld52;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
-
-    .line 1
-    new-instance v0, Lp80;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    sput-object v0, Lp80;->INSTANCE:Lp80;
-
-    .line 7
-    .line 8
-    new-instance v0, Lz70;
-
-    .line 9
-    .line 10
-    const/16 v1, 0xc
-
-    .line 11
-    .line 12
-    invoke-direct {v0, v1}, Lz70;-><init>(B)V
-
-    .line 13
-    .line 14
-    .line 15
-    sget-object v1, Lz33;->j:Lz33;
-
-    .line 16
-    .line 17
-    invoke-static {v1, v0}, Lra7;->Q(Lz33;Lg52;)Lf03;
-
-    .line 18
-    .line 19
-    .line 20
-    move-result-object v0
-
-    .line 21
-    sput-object v0, Lp80;->a:Lf03;
-
-    .line 22
-    .line 23
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
     .line 1
-    const/4 v0, 0x1
+    sget-object v0, Lou;->f:Lt8;
 
     .line 2
-    if-ne p0, p1, :cond_0
+    .line 3
+    return-void
+.end method
 
+.method public constructor <init>(Lbu3;Llu;Lou;Lj17;Lnr6;Lfx3;Lj90;Li90;Lo52;Ls52;ZLyu3;Ld52;)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
     .line 3
     .line 4
-    return v0
+    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 5
-    :cond_0
-    instance-of p0, p1, Lp80;
-
     .line 6
     .line 7
-    if-nez p0, :cond_1
+    invoke-virtual {p6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 8
     .line 9
-    const/4 p0, 0x0
-
     .line 10
-    return p0
+    invoke-virtual {p7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 11
-    :cond_1
-    return v0
-.end method
+    .line 12
+    .line 13
+    invoke-virtual {p8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.method public final hashCode()I
-    .locals 0
+    .line 14
+    .line 15
+    .line 16
+    invoke-virtual {p9}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 1
-    const p0, -0x1c176447
+    .line 17
+    .line 18
+    .line 19
+    invoke-virtual {p10}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 2
-    .line 3
-    .line 4
-    return p0
-.end method
+    .line 20
+    .line 21
+    .line 22
+    invoke-virtual {p13}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.method public final serializer()Lsw2;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lsw2;"
-        }
-    .end annotation
+    .line 23
+    .line 24
+    .line 25
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 1
-    sget-object p0, Lp80;->a:Lf03;
+    .line 26
+    .line 27
+    .line 28
+    iput-object p2, p0, Lp80;->a:Llu;
 
-    .line 2
-    .line 3
-    invoke-interface {p0}, Lf03;->getValue()Ljava/lang/Object;
+    .line 29
+    .line 30
+    iput-object p3, p0, Lp80;->b:Lou;
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
+    .line 31
+    .line 32
+    iput-object p4, p0, Lp80;->c:Lj17;
 
-    .line 7
-    check-cast p0, Lsw2;
+    .line 33
+    .line 34
+    iput-object p5, p0, Lp80;->d:Lnr6;
 
-    .line 8
-    .line 9
-    return-object p0
-.end method
+    .line 35
+    .line 36
+    iput-object p6, p0, Lp80;->e:Lfx3;
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    .line 37
+    .line 38
+    iput-object p9, p0, Lp80;->f:Lo52;
 
-    .line 1
-    const-string p0, "SubscriptionLocalDetails"
+    .line 39
+    .line 40
+    iput-object p10, p0, Lp80;->g:Ls52;
 
-    .line 2
-    .line 3
-    return-object p0
+    .line 41
+    .line 42
+    iput-boolean p11, p0, Lp80;->h:Z
+
+    .line 43
+    .line 44
+    iput-object p13, p0, Lp80;->i:Ld52;
+
+    .line 45
+    .line 46
+    return-void
 .end method

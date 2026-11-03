@@ -1,28 +1,24 @@
 .class public final Lpp4;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
-
-.field public final synthetic k:Lqp4;
-
-.field public l:I
+.field public final a:I
 
 
 # direct methods
-.method public constructor <init>(Lqp4;Ld81;)V
+.method public synthetic constructor <init>(I)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lpp4;->k:Lqp4;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
-
     .line 4
+    iput p1, p0, Lpp4;->a:I
+
     .line 5
     .line 6
     return-void
@@ -30,43 +26,94 @@
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
     .line 1
-    iput-object p1, p0, Lpp4;->j:Ljava/lang/Object;
+    instance-of v0, p1, Lpp4;
 
     .line 2
     .line 3
-    iget p1, p0, Lpp4;->l:I
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    goto :goto_0
 
     .line 6
-    .line 7
-    or-int/2addr p1, v0
+    :cond_0
+    check-cast p1, Lpp4;
 
+    .line 7
     .line 8
-    iput p1, p0, Lpp4;->l:I
+    iget p1, p1, Lpp4;->a:I
 
     .line 9
     .line 10
-    iget-object p1, p0, Lpp4;->k:Lqp4;
+    iget p0, p0, Lpp4;->a:I
 
     .line 11
     .line 12
-    const/4 v0, 0x0
+    if-eq p0, p1, :cond_1
 
     .line 13
-    invoke-virtual {p1, v0, p0}, Lqp4;->d(Ljava/util/List;Ld81;)Ljava/lang/Object;
-
     .line 14
+    :goto_0
+    const/4 p0, 0x0
+
     .line 15
+    return p0
+
     .line 16
-    move-result-object p0
+    :cond_1
+    const/4 p0, 0x1
 
     .line 17
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lpp4;->a:I
+
+    .line 2
+    .line 3
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    const-string v0, "PointerKeyboardModifiers(packedValue="
+
+    .line 2
+    .line 3
+    const-string v1, ")"
+
+    .line 4
+    .line 5
+    iget p0, p0, Lpp4;->a:I
+
+    .line 6
+    .line 7
+    invoke-static {p0, v0, v1}, Lpb1;->m(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p0
+
+    .line 11
     return-object p0
 .end method

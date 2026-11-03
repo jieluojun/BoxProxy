@@ -1,313 +1,238 @@
-.class public abstract Lp07;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lp07;
+.super Lss4;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final a:Lp07;
+.field public static final c:Lp07;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 2
 
     .line 1
-    const-string v0, "newInstance"
+    new-instance v0, Lp07;
 
     .line 2
     .line 3
-    const-class v1, Ljava/lang/Class;
+    sget-object v1, Lq07;->a:Lq07;
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    invoke-direct {v0, v1}, Lss4;-><init>(Lgx2;)V
 
     .line 6
-    const/4 v3, 0x1
-
     .line 7
-    :try_start_0
-    const-string v4, "sun.misc.Unsafe"
-
     .line 8
+    sput-object v0, Lp07;->c:Lp07;
+
     .line 9
-    invoke-static {v4}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
-
     .line 10
-    .line 11
-    .line 12
-    move-result-object v4
-
-    .line 13
-    const-string v5, "theUnsafe"
-
-    .line 14
-    .line 15
-    invoke-virtual {v4, v5}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object v5
-
-    .line 19
-    invoke-virtual {v5, v3}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
-
-    .line 20
-    .line 21
-    .line 22
-    invoke-virtual {v5, v2}, Ljava/lang/reflect/Field;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 23
-    .line 24
-    .line 25
-    move-result-object v5
-
-    .line 26
-    const-string v6, "allocateInstance"
-
-    .line 27
-    .line 28
-    filled-new-array {v1}, [Ljava/lang/Class;
-
-    .line 29
-    .line 30
-    .line 31
-    move-result-object v7
-
-    .line 32
-    invoke-virtual {v4, v6, v7}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    .line 33
-    .line 34
-    .line 35
-    move-result-object v4
-
-    .line 36
-    new-instance v6, Ll07;
-
-    .line 37
-    .line 38
-    invoke-direct {v6, v4, v5}, Ll07;-><init>(Ljava/lang/reflect/Method;Ljava/lang/Object;)V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 39
-    .line 40
-    .line 41
-    goto :goto_0
-
-    .line 42
-    :catch_0
-    :try_start_1
-    const-class v4, Ljava/io/ObjectStreamClass;
-
-    .line 43
-    .line 44
-    const-string v5, "getConstructorId"
-
-    .line 45
-    .line 46
-    filled-new-array {v1}, [Ljava/lang/Class;
-
-    .line 47
-    .line 48
-    .line 49
-    move-result-object v6
-
-    .line 50
-    invoke-virtual {v4, v5, v6}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    .line 51
-    .line 52
-    .line 53
-    move-result-object v5
-
-    .line 54
-    invoke-virtual {v5, v3}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
-
-    .line 55
-    .line 56
-    .line 57
-    const-class v6, Ljava/lang/Object;
-
-    .line 58
-    .line 59
-    filled-new-array {v6}, [Ljava/lang/Object;
-
-    .line 60
-    .line 61
-    .line 62
-    move-result-object v6
-
-    .line 63
-    invoke-virtual {v5, v2, v6}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 64
-    .line 65
-    .line 66
-    move-result-object v2
-
-    .line 67
-    check-cast v2, Ljava/lang/Integer;
-
-    .line 68
-    .line 69
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
-    .line 70
-    .line 71
-    .line 72
-    move-result v2
-
-    .line 73
-    sget-object v5, Ljava/lang/Integer;->TYPE:Ljava/lang/Class;
-
-    .line 74
-    .line 75
-    filled-new-array {v1, v5}, [Ljava/lang/Class;
-
-    .line 76
-    .line 77
-    .line 78
-    move-result-object v5
-
-    .line 79
-    invoke-virtual {v4, v0, v5}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    .line 80
-    .line 81
-    .line 82
-    move-result-object v4
-
-    .line 83
-    invoke-virtual {v4, v3}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
-
-    .line 84
-    .line 85
-    .line 86
-    new-instance v6, Lm07;
-
-    .line 87
-    .line 88
-    invoke-direct {v6, v2, v4}, Lm07;-><init>(ILjava/lang/reflect/Method;)V
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-
-    .line 89
-    .line 90
-    .line 91
-    goto :goto_0
-
-    .line 92
-    :catch_1
-    :try_start_2
-    const-class v2, Ljava/io/ObjectInputStream;
-
-    .line 93
-    .line 94
-    filled-new-array {v1, v1}, [Ljava/lang/Class;
-
-    .line 95
-    .line 96
-    .line 97
-    move-result-object v1
-
-    .line 98
-    invoke-virtual {v2, v0, v1}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    .line 99
-    .line 100
-    .line 101
-    move-result-object v0
-
-    .line 102
-    invoke-virtual {v0, v3}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
-
-    .line 103
-    .line 104
-    .line 105
-    new-instance v6, Ln07;
-
-    .line 106
-    .line 107
-    invoke-direct {v6, v0}, Ln07;-><init>(Ljava/lang/reflect/Method;)V
-    :try_end_2
-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
-
-    .line 108
-    .line 109
-    .line 110
-    goto :goto_0
-
-    .line 111
-    :catch_2
-    new-instance v6, Lo07;
-
-    .line 112
-    .line 113
-    invoke-direct {v6}, Ljava/lang/Object;-><init>()V
-
-    .line 114
-    .line 115
-    .line 116
-    :goto_0
-    sput-object v6, Lp07;->a:Lp07;
-
-    .line 117
-    .line 118
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Ljava/lang/Class;)Ljava/lang/Object;
-    .locals 2
+.method public final h(Ljava/lang/Object;)I
+    .locals 0
 
     .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    check-cast p1, Ln07;
 
     .line 2
     .line 3
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object p0, p1, Ln07;->j:[J
 
     .line 4
     .line 5
-    const-string v1, "Cannot allocate "
+    array-length p0, p0
+
+    .line 6
+    return p0
+.end method
+
+.method public final j(Lc11;ILjava/lang/Object;)V
+    .locals 2
+
+    .line 1
+    check-cast p3, Lo07;
+
+    .line 2
+    .line 3
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object p0, p0, Lss4;->b:Lrs4;
+
+    .line 7
+    .line 8
+    invoke-interface {p1, p0, p2}, Lc11;->c(Lrs4;I)Lxd1;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object p0
+
+    .line 12
+    invoke-interface {p0}, Lxd1;->b()J
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-wide p0
+
+    .line 16
+    invoke-static {p3}, Lqs4;->c(Lqs4;)V
+
+    .line 17
+    .line 18
+    .line 19
+    iget-object p2, p3, Lo07;->a:[J
+
+    .line 20
+    .line 21
+    iget v0, p3, Lo07;->b:I
+
+    .line 22
+    .line 23
+    add-int/lit8 v1, v0, 0x1
+
+    .line 24
+    .line 25
+    iput v1, p3, Lo07;->b:I
+
+    .line 26
+    .line 27
+    aput-wide p0, p2, v0
+
+    .line 28
+    .line 29
+    return-void
+.end method
+
+.method public final k(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    check-cast p1, Ln07;
+
+    .line 2
+    .line 3
+    iget-object p0, p1, Ln07;->j:[J
+
+    .line 4
+    .line 5
+    new-instance p1, Lo07;
 
     .line 6
     .line 7
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
     .line 8
     .line 9
     .line 10
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iput-object p0, p1, Lo07;->a:[J
 
     .line 11
     .line 12
+    array-length p0, p0
+
     .line 13
-    const-string p1, ". Usage of JDK sun.misc.Unsafe is enabled, but it could not be used. Make sure your runtime is configured correctly."
+    iput p0, p1, Lo07;->b:I
 
     .line 14
     .line 15
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/16 p0, 0xa
 
     .line 16
     .line 17
-    .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {p1, p0}, Lo07;->b(I)V
 
+    .line 18
     .line 19
     .line 20
-    .line 21
-    move-result-object p1
+    return-object p1
+.end method
 
+.method public final n()Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    new-array p0, p0, [J
+
+    .line 3
+    .line 4
+    new-instance v0, Ln07;
+
+    .line 5
+    .line 6
+    invoke-direct {v0, p0}, Ln07;-><init>([J)V
+
+    .line 7
+    .line 8
+    .line 9
+    return-object v0
+.end method
+
+.method public final o(Lya6;Ljava/lang/Object;I)V
+    .locals 4
+
+    .line 1
+    check-cast p2, Ln07;
+
+    .line 2
+    .line 3
+    iget-object p2, p2, Ln07;->j:[J
+
+    .line 4
+    .line 5
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 6
+    .line 7
+    .line 8
+    const/4 v0, 0x0
+
+    .line 9
+    :goto_0
+    if-ge v0, p3, :cond_0
+
+    .line 10
+    .line 11
+    iget-object v1, p0, Lss4;->b:Lrs4;
+
+    .line 12
+    .line 13
+    invoke-virtual {p1, v1, v0}, Lya6;->i(Lrs4;I)Lya6;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object v1
+
+    .line 17
+    aget-wide v2, p2, v0
+
+    .line 18
+    .line 19
+    invoke-virtual {v1, v2, v3}, Lya6;->k(J)V
+
+    .line 20
+    .line 21
     .line 22
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    add-int/lit8 v0, v0, 0x1
 
     .line 23
     .line 24
+    goto :goto_0
+
     .line 25
-    throw p0
+    :cond_0
+    return-void
 .end method

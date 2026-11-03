@@ -1,37 +1,31 @@
 .class public final synthetic Lz30;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lr52;
+.implements Ls52;
 
 
 # instance fields
-.field public final synthetic j:Lnr3;
+.field public final synthetic j:J
 
-.field public final synthetic k:Lnr3;
+.field public final synthetic k:Z
 
-.field public final synthetic l:Lfb1;
+.field public final synthetic l:Ldg;
 
-.field public final synthetic m:Lgg;
+.field public final synthetic m:Lbb1;
 
-.field public final synthetic n:Lbh1;
+.field public final synthetic n:Lem0;
 
-.field public final synthetic o:Z
+.field public final synthetic o:Lo52;
 
-.field public final synthetic p:Lg52;
+.field public final synthetic p:Lo52;
 
-.field public final synthetic q:Lik4;
-
-.field public final synthetic r:Lhk4;
-
-.field public final synthetic s:Lnr3;
-
-.field public final synthetic t:Lr52;
+.field public final synthetic q:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lnr3;Lnr3;Lfb1;Lgg;Lbh1;ZLg52;Lik4;Lhk4;Lnr3;Lr52;)V
+.method public synthetic constructor <init>(JZLdg;Lbb1;Lem0;Lo52;Lo52;I)V
     .locals 0
 
     .line 1
@@ -40,180 +34,115 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lz30;->j:Lnr3;
+    iput-wide p1, p0, Lz30;->j:J
 
     .line 5
     .line 6
-    iput-object p2, p0, Lz30;->k:Lnr3;
+    iput-boolean p3, p0, Lz30;->k:Z
 
     .line 7
     .line 8
-    iput-object p3, p0, Lz30;->l:Lfb1;
+    iput-object p4, p0, Lz30;->l:Ldg;
 
     .line 9
     .line 10
-    iput-object p4, p0, Lz30;->m:Lgg;
+    iput-object p5, p0, Lz30;->m:Lbb1;
 
     .line 11
     .line 12
-    iput-object p5, p0, Lz30;->n:Lbh1;
+    iput-object p6, p0, Lz30;->n:Lem0;
 
     .line 13
     .line 14
-    iput-boolean p6, p0, Lz30;->o:Z
+    iput-object p7, p0, Lz30;->o:Lo52;
 
     .line 15
     .line 16
-    iput-object p7, p0, Lz30;->p:Lg52;
+    iput-object p8, p0, Lz30;->p:Lo52;
 
     .line 17
     .line 18
-    iput-object p8, p0, Lz30;->q:Lik4;
+    iput p9, p0, Lz30;->q:I
 
     .line 19
     .line 20
-    iput-object p9, p0, Lz30;->r:Lhk4;
-
-    .line 21
-    .line 22
-    iput-object p10, p0, Lz30;->s:Lnr3;
-
-    .line 23
-    .line 24
-    iput-object p11, p0, Lz30;->t:Lr52;
-
-    .line 25
-    .line 26
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 13
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 10
 
     .line 1
-    check-cast p1, Ljava/lang/Float;
+    move-object v8, p1
 
     .line 2
-    .line 3
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+    check-cast v8, Lv01;
 
+    .line 3
     .line 4
+    check-cast p2, Ljava/lang/Integer;
+
     .line 5
     .line 6
-    move-result v4
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 7
-    iget-object p1, p0, Lz30;->j:Lnr3;
-
     .line 8
     .line 9
-    invoke-interface {p1}, Li86;->getValue()Ljava/lang/Object;
+    iget p1, p0, Lz30;->q:I
 
     .line 10
     .line 11
-    .line 12
-    move-result-object v0
+    or-int/lit8 p1, p1, 0x1
 
+    .line 12
     .line 13
-    check-cast v0, Lit2;
+    invoke-static {p1}, Lw23;->h0(I)I
 
     .line 14
     .line 15
-    const/4 v12, 0x0
-
     .line 16
-    if-eqz v0, :cond_0
+    move-result v9
 
     .line 17
-    .line 18
-    invoke-interface {v0, v12}, Lit2;->c(Ljava/util/concurrent/CancellationException;)V
+    iget-wide v0, p0, Lz30;->j:J
 
+    .line 18
     .line 19
+    iget-boolean v2, p0, Lz30;->k:Z
+
     .line 20
     .line 21
-    :cond_0
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    iget-object v3, p0, Lz30;->l:Ldg;
 
     .line 22
     .line 23
-    iget-object v8, p0, Lz30;->k:Lnr3;
+    iget-object v4, p0, Lz30;->m:Lbb1;
 
     .line 24
     .line 25
-    invoke-interface {v8, v0}, Lnr3;->setValue(Ljava/lang/Object;)V
+    iget-object v5, p0, Lz30;->n:Lem0;
 
     .line 26
     .line 27
+    iget-object v6, p0, Lz30;->o:Lo52;
+
     .line 28
-    new-instance v0, Lj40;
-
     .line 29
-    .line 30
-    const/4 v11, 0x0
+    iget-object v7, p0, Lz30;->p:Lo52;
 
+    .line 30
     .line 31
-    iget-object v1, p0, Lz30;->m:Lgg;
+    invoke-static/range {v0 .. v9}, Lxa;->h(JZLdg;Lbb1;Lem0;Lo52;Lo52;Lv01;I)V
 
     .line 32
     .line 33
-    iget-object v2, p0, Lz30;->n:Lbh1;
-
     .line 34
+    sget-object p0, Lk27;->a:Lk27;
+
     .line 35
-    iget-boolean v3, p0, Lz30;->o:Z
-
     .line 36
-    .line 37
-    iget-object v5, p0, Lz30;->p:Lg52;
-
-    .line 38
-    .line 39
-    iget-object v6, p0, Lz30;->q:Lik4;
-
-    .line 40
-    .line 41
-    iget-object v7, p0, Lz30;->r:Lhk4;
-
-    .line 42
-    .line 43
-    iget-object v9, p0, Lz30;->s:Lnr3;
-
-    .line 44
-    .line 45
-    iget-object v10, p0, Lz30;->t:Lr52;
-
-    .line 46
-    .line 47
-    invoke-direct/range {v0 .. v11}, Lj40;-><init>(Lgg;Lbh1;ZFLg52;Lik4;Lhk4;Lnr3;Lnr3;Lr52;Lc81;)V
-
-    .line 48
-    .line 49
-    .line 50
-    const/4 v1, 0x3
-
-    .line 51
-    iget-object p0, p0, Lz30;->l:Lfb1;
-
-    .line 52
-    .line 53
-    invoke-static {p0, v12, v12, v0, v1}, Lf;->J(Lfb1;Lwa1;Lib1;Lv52;I)Ly76;
-
-    .line 54
-    .line 55
-    .line 56
-    move-result-object p0
-
-    .line 57
-    invoke-interface {p1, p0}, Lnr3;->setValue(Ljava/lang/Object;)V
-
-    .line 58
-    .line 59
-    .line 60
-    sget-object p0, Ld07;->a:Ld07;
-
-    .line 61
-    .line 62
     return-object p0
 .end method

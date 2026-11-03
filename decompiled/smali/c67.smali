@@ -1,108 +1,33 @@
-.class public final enum Lc67;
-.super Ljava/lang/Enum;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-
-# static fields
-.field public static final enum j:Lc67;
-
-.field public static final enum k:Lc67;
-
-.field public static final synthetic l:[Lc67;
+.class public abstract Lc67;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public static a(Landroid/view/View;)[Ljava/lang/String;
+    .locals 0
 
     .line 1
-    new-instance v0, Lc67;
+    invoke-virtual {p0}, Landroid/view/View;->getReceiveContentMimeTypes()[Ljava/lang/String;
 
     .line 2
     .line 3
-    const-string v1, "WebUi"
-
     .line 4
-    .line 5
-    const/4 v2, 0x0
-
-    .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 7
-    .line 8
-    .line 9
-    sput-object v0, Lc67;->j:Lc67;
-
-    .line 10
-    .line 11
-    new-instance v1, Lc67;
-
-    .line 12
-    .line 13
-    const-string v2, "SubStore"
-
-    .line 14
-    .line 15
-    const/4 v3, 0x1
-
-    .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 17
-    .line 18
-    .line 19
-    sput-object v1, Lc67;->k:Lc67;
-
-    .line 20
-    .line 21
-    filled-new-array {v0, v1}, [Lc67;
-
-    .line 22
-    .line 23
-    .line 24
-    move-result-object v0
-
-    .line 25
-    sput-object v0, Lc67;->l:[Lc67;
-
-    .line 26
-    .line 27
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lc67;
-    .locals 1
-
-    .line 1
-    const-class v0, Lc67;
-
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    .line 4
-    .line 5
-    .line 6
     move-result-object p0
 
-    .line 7
-    check-cast p0, Lc67;
-
-    .line 8
-    .line 9
+    .line 5
     return-object p0
 .end method
 
-.method public static values()[Lc67;
+.method public static b(Landroid/view/View;Ld71;)Ld71;
     .locals 1
 
     .line 1
-    sget-object v0, Lc67;->l:[Lc67;
+    iget-object v0, p1, Ld71;->a:Lc71;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-interface {v0}, Lc71;->b()Landroid/view/ContentInfo;
 
     .line 4
     .line 5
@@ -110,9 +35,55 @@
     move-result-object v0
 
     .line 7
-    check-cast v0, [Lc67;
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 8
     .line 9
-    return-object v0
+    .line 10
+    invoke-virtual {p0, v0}, Landroid/view/View;->performReceiveContent(Landroid/view/ContentInfo;)Landroid/view/ContentInfo;
+
+    .line 11
+    .line 12
+    .line 13
+    move-result-object p0
+
+    .line 14
+    if-nez p0, :cond_0
+
+    .line 15
+    .line 16
+    const/4 p0, 0x0
+
+    .line 17
+    return-object p0
+
+    .line 18
+    :cond_0
+    if-ne p0, v0, :cond_1
+
+    .line 19
+    .line 20
+    return-object p1
+
+    .line 21
+    :cond_1
+    new-instance p1, Ld71;
+
+    .line 22
+    .line 23
+    new-instance v0, Lc6;
+
+    .line 24
+    .line 25
+    invoke-direct {v0, p0}, Lc6;-><init>(Landroid/view/ContentInfo;)V
+
+    .line 26
+    .line 27
+    .line 28
+    invoke-direct {p1, v0}, Ld71;-><init>(Lc71;)V
+
+    .line 29
+    .line 30
+    .line 31
+    return-object p1
 .end method

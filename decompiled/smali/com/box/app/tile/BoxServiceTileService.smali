@@ -1,6 +1,6 @@
 .class public final Lcom/box/app/tile/BoxServiceTileService;
 .super Landroid/service/quicksettings/TileService;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
@@ -8,7 +8,7 @@
 
 
 # instance fields
-.field public final j:La81;
+.field public final j:Lw71;
 
 
 # direct methods
@@ -21,7 +21,7 @@
     .line 2
     .line 3
     .line 4
-    invoke-static {}, Lk33;->g()Ltd6;
+    invoke-static {}, Ly43;->h()Lff6;
 
     .line 5
     .line 6
@@ -29,19 +29,19 @@
     move-result-object v0
 
     .line 8
-    sget-object v1, Loj1;->a:Lsf1;
+    sget-object v1, Llj1;->a:Lpf1;
 
     .line 9
     .line 10
-    sget-object v1, Lse3;->a:Ly82;
+    sget-object v1, Lhf3;->a:Lz82;
 
     .line 11
     .line 12
-    iget-object v1, v1, Ly82;->o:Ly82;
+    iget-object v1, v1, Lz82;->o:Lz82;
 
     .line 13
     .line 14
-    invoke-static {v0, v1}, Lf;->R(Lua1;Lwa1;)Lwa1;
+    invoke-static {v0, v1}, Lx37;->R(Lqa1;Lsa1;)Lsa1;
 
     .line 15
     .line 16
@@ -49,7 +49,7 @@
     move-result-object v0
 
     .line 18
-    invoke-static {v0}, Lr67;->f(Lwa1;)La81;
+    invoke-static {v0}, Lp87;->f(Lsa1;)Lw71;
 
     .line 19
     .line 20
@@ -57,7 +57,7 @@
     move-result-object v0
 
     .line 22
-    iput-object v0, p0, Lcom/box/app/tile/BoxServiceTileService;->j:La81;
+    iput-object v0, p0, Lcom/box/app/tile/BoxServiceTileService;->j:Lw71;
 
     .line 23
     .line 24
@@ -90,7 +90,7 @@
 
     .line 9
     .line 10
-    const v1, 0x7f0f0179
+    const v1, 0x7f0f0183
 
     .line 11
     .line 12
@@ -99,7 +99,7 @@
 
     .line 14
     :cond_1
-    const v1, 0x7f0f017b
+    const v1, 0x7f0f0185
 
     .line 15
     .line 16
@@ -118,7 +118,7 @@
     .line 22
     .line 23
     .line 24
-    const v2, 0x7f0f0445
+    const v2, 0x7f0f04a7
 
     .line 25
     .line 26
@@ -153,7 +153,7 @@
 
     .line 42
     .line 43
-    invoke-static {v0, v1}, Ly4;->o(Landroid/service/quicksettings/Tile;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lv4;->o(Landroid/service/quicksettings/Tile;Ljava/lang/String;)V
 
     .line 44
     .line 45
@@ -214,14 +214,14 @@
     .line 2
     .line 3
     .line 4
-    new-instance v0, Lu2;
+    new-instance v0, Lr2;
 
     .line 5
     .line 6
     const/4 v1, 0x4
 
     .line 7
-    invoke-direct {v0, p0, v1}, Lu2;-><init>(Ljava/lang/Object;B)V
+    invoke-direct {v0, p0, v1}, Lr2;-><init>(Ljava/lang/Object;B)V
 
     .line 8
     .line 9
@@ -238,14 +238,14 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/box/app/tile/BoxServiceTileService;->j:La81;
+    iget-object v0, p0, Lcom/box/app/tile/BoxServiceTileService;->j:Lw71;
 
     .line 2
     .line 3
     const/4 v1, 0x0
 
     .line 4
-    invoke-static {v0, v1}, Lr67;->y(Lfb1;Ljava/util/concurrent/CancellationException;)V
+    invoke-static {v0, v1}, Lp87;->y(Lbb1;Ljava/util/concurrent/CancellationException;)V
 
     .line 5
     .line 6
@@ -267,7 +267,7 @@
     .line 2
     .line 3
     .line 4
-    new-instance v0, Li2;
+    new-instance v0, Lf2;
 
     .line 5
     .line 6
@@ -278,7 +278,7 @@
     const/4 v2, 0x0
 
     .line 9
-    invoke-direct {v0, p0, v2, v1}, Li2;-><init>(Ljava/lang/Object;Lc81;B)V
+    invoke-direct {v0, p0, v2, v1}, Lf2;-><init>(Ljava/lang/Object;Ly71;B)V
 
     .line 10
     .line 11
@@ -286,11 +286,11 @@
     const/4 v1, 0x3
 
     .line 13
-    iget-object p0, p0, Lcom/box/app/tile/BoxServiceTileService;->j:La81;
+    iget-object p0, p0, Lcom/box/app/tile/BoxServiceTileService;->j:Lw71;
 
     .line 14
     .line 15
-    invoke-static {p0, v2, v2, v0, v1}, Lf;->J(Lfb1;Lwa1;Lib1;Lv52;I)Ly76;
+    invoke-static {p0, v2, v2, v0, v1}, Lx37;->J(Lbb1;Lsa1;Leb1;Ls52;I)Lk96;
 
     .line 16
     .line 17

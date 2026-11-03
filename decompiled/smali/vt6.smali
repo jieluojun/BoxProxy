@@ -1,9 +1,41 @@
 .class public final Lvt6;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
+.field public final A:J
+
+.field public final B:J
+
+.field public final C:J
+
+.field public final D:J
+
+.field public final E:J
+
+.field public final F:J
+
+.field public final G:J
+
+.field public final H:J
+
+.field public final I:J
+
+.field public final J:J
+
+.field public final K:J
+
+.field public final L:J
+
+.field public final M:J
+
+.field public final N:J
+
+.field public final O:J
+
+.field public final P:J
+
 .field public final a:J
 
 .field public final b:J
@@ -16,9 +48,49 @@
 
 .field public final f:J
 
+.field public final g:J
+
+.field public final h:J
+
+.field public final i:J
+
+.field public final j:J
+
+.field public final k:J
+
+.field public final l:J
+
+.field public final m:J
+
+.field public final n:J
+
+.field public final o:J
+
+.field public final p:J
+
+.field public final q:J
+
+.field public final r:J
+
+.field public final s:J
+
+.field public final t:J
+
+.field public final u:J
+
+.field public final v:J
+
+.field public final w:J
+
+.field public final x:J
+
+.field public final y:J
+
+.field public final z:J
+
 
 # direct methods
-.method public constructor <init>(JJJJJJ)V
+.method public constructor <init>(JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ)V
     .locals 0
 
     .line 1
@@ -51,287 +123,288 @@
 
     .line 15
     .line 16
-    return-void
-.end method
+    iput-wide p13, p0, Lvt6;->g:J
 
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    .line 1
-    if-ne p0, p1, :cond_0
-
-    .line 2
-    .line 3
-    goto :goto_0
-
-    .line 4
-    :cond_0
-    if-eqz p1, :cond_8
-
-    .line 5
-    .line 6
-    instance-of v0, p1, Lvt6;
-
-    .line 7
-    .line 8
-    if-nez v0, :cond_1
-
-    .line 9
-    .line 10
-    goto :goto_1
-
-    .line 11
-    :cond_1
-    check-cast p1, Lvt6;
-
-    .line 12
-    .line 13
-    iget-wide v0, p1, Lvt6;->a:J
-
-    .line 14
-    .line 15
-    iget-wide v2, p0, Lvt6;->a:J
-
-    .line 16
     .line 17
-    invoke-static {v2, v3, v0, v1}, Ljy6;->a(JJ)Z
-
     .line 18
-    .line 19
-    .line 20
-    move-result v0
+    move-wide p1, p15
 
+    .line 19
+    iput-wide p1, p0, Lvt6;->h:J
+
+    .line 20
     .line 21
-    if-nez v0, :cond_2
+    move-wide/from16 p1, p17
 
     .line 22
     .line 23
-    goto :goto_1
+    iput-wide p1, p0, Lvt6;->i:J
 
     .line 24
-    :cond_2
-    iget-wide v0, p0, Lvt6;->b:J
-
     .line 25
+    move-wide/from16 p1, p19
+
     .line 26
-    iget-wide v2, p1, Lvt6;->b:J
-
     .line 27
-    .line 28
-    invoke-static {v0, v1, v2, v3}, Ljy6;->a(JJ)Z
+    iput-wide p1, p0, Lvt6;->j:J
 
+    .line 28
     .line 29
+    move-wide/from16 p1, p21
+
     .line 30
     .line 31
-    move-result v0
+    iput-wide p1, p0, Lvt6;->k:J
 
     .line 32
-    if-nez v0, :cond_3
-
     .line 33
-    .line 34
-    goto :goto_1
+    move-wide/from16 p1, p23
 
+    .line 34
     .line 35
-    :cond_3
-    iget-wide v0, p0, Lvt6;->c:J
+    iput-wide p1, p0, Lvt6;->l:J
 
     .line 36
     .line 37
-    iget-wide v2, p1, Lvt6;->c:J
+    move-wide/from16 p1, p25
 
     .line 38
     .line 39
-    invoke-static {v0, v1, v2, v3}, Ljy6;->a(JJ)Z
+    iput-wide p1, p0, Lvt6;->m:J
 
     .line 40
     .line 41
-    .line 42
-    move-result v0
+    move-wide/from16 p1, p27
 
+    .line 42
     .line 43
-    if-nez v0, :cond_4
+    iput-wide p1, p0, Lvt6;->n:J
 
     .line 44
     .line 45
-    goto :goto_1
+    move-wide/from16 p1, p29
 
     .line 46
-    :cond_4
-    iget-wide v0, p0, Lvt6;->d:J
-
     .line 47
+    iput-wide p1, p0, Lvt6;->o:J
+
     .line 48
-    iget-wide v2, p1, Lvt6;->d:J
-
     .line 49
-    .line 50
-    invoke-static {v0, v1, v2, v3}, Ljy6;->a(JJ)Z
+    move-wide/from16 p1, p31
 
+    .line 50
     .line 51
+    iput-wide p1, p0, Lvt6;->p:J
+
     .line 52
     .line 53
-    move-result v0
+    move-wide/from16 p1, p33
 
     .line 54
-    if-nez v0, :cond_5
-
     .line 55
-    .line 56
-    goto :goto_1
+    iput-wide p1, p0, Lvt6;->q:J
 
+    .line 56
     .line 57
-    :cond_5
-    iget-wide v0, p0, Lvt6;->e:J
+    move-wide/from16 p1, p35
 
     .line 58
     .line 59
-    iget-wide v2, p1, Lvt6;->e:J
+    iput-wide p1, p0, Lvt6;->r:J
 
     .line 60
     .line 61
-    invoke-static {v0, v1, v2, v3}, Ljy6;->a(JJ)Z
+    move-wide/from16 p1, p37
 
     .line 62
     .line 63
-    .line 64
-    move-result v0
+    iput-wide p1, p0, Lvt6;->s:J
 
+    .line 64
     .line 65
-    if-nez v0, :cond_6
+    move-wide/from16 p1, p39
 
     .line 66
     .line 67
-    goto :goto_1
+    iput-wide p1, p0, Lvt6;->t:J
 
     .line 68
-    :cond_6
-    iget-wide v0, p0, Lvt6;->f:J
-
     .line 69
+    move-wide/from16 p1, p41
+
     .line 70
-    iget-wide p0, p1, Lvt6;->f:J
-
     .line 71
-    .line 72
-    invoke-static {v0, v1, p0, p1}, Ljy6;->a(JJ)Z
+    iput-wide p1, p0, Lvt6;->u:J
 
+    .line 72
     .line 73
+    move-wide/from16 p1, p43
+
     .line 74
     .line 75
-    move-result p0
+    iput-wide p1, p0, Lvt6;->v:J
 
     .line 76
-    if-nez p0, :cond_7
-
     .line 77
-    .line 78
-    goto :goto_1
+    move-wide/from16 p1, p45
 
+    .line 78
     .line 79
-    :cond_7
-    :goto_0
-    const/4 p0, 0x1
+    iput-wide p1, p0, Lvt6;->w:J
 
     .line 80
-    return p0
-
     .line 81
-    :cond_8
-    :goto_1
-    const/4 p0, 0x0
+    move-wide/from16 p1, p47
 
     .line 82
-    return p0
-.end method
+    .line 83
+    iput-wide p1, p0, Lvt6;->x:J
 
-.method public final hashCode()I
-    .locals 4
+    .line 84
+    .line 85
+    move-wide/from16 p1, p49
 
-    .line 1
-    iget-wide v0, p0, Lvt6;->a:J
+    .line 86
+    .line 87
+    iput-wide p1, p0, Lvt6;->y:J
 
-    .line 2
-    .line 3
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    .line 88
+    .line 89
+    move-wide/from16 p1, p51
 
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
+    .line 90
+    .line 91
+    iput-wide p1, p0, Lvt6;->z:J
 
-    .line 7
-    const/16 v1, 0x1f
+    .line 92
+    .line 93
+    move-wide/from16 p1, p53
 
-    .line 8
-    .line 9
-    mul-int/2addr v0, v1
+    .line 94
+    .line 95
+    iput-wide p1, p0, Lvt6;->A:J
 
-    .line 10
-    iget-wide v2, p0, Lvt6;->b:J
+    .line 96
+    .line 97
+    move-wide/from16 p1, p55
 
-    .line 11
-    .line 12
-    invoke-static {v0, v1, v2, v3}, Lxu1;->e(IIJ)I
+    .line 98
+    .line 99
+    iput-wide p1, p0, Lvt6;->B:J
 
-    .line 13
-    .line 14
-    .line 15
-    move-result v0
+    .line 100
+    .line 101
+    move-wide/from16 p1, p57
 
-    .line 16
-    iget-wide v2, p0, Lvt6;->c:J
+    .line 102
+    .line 103
+    iput-wide p1, p0, Lvt6;->C:J
 
-    .line 17
-    .line 18
-    invoke-static {v0, v1, v2, v3}, Lxu1;->e(IIJ)I
+    .line 104
+    .line 105
+    move-wide/from16 p1, p59
 
-    .line 19
-    .line 20
-    .line 21
-    move-result v0
+    .line 106
+    .line 107
+    iput-wide p1, p0, Lvt6;->D:J
 
-    .line 22
-    iget-wide v2, p0, Lvt6;->d:J
+    .line 108
+    .line 109
+    move-wide/from16 p1, p61
 
-    .line 23
-    .line 24
-    invoke-static {v0, v1, v2, v3}, Lxu1;->e(IIJ)I
+    .line 110
+    .line 111
+    iput-wide p1, p0, Lvt6;->E:J
 
-    .line 25
-    .line 26
-    .line 27
-    move-result v0
+    .line 112
+    .line 113
+    move-wide/from16 p1, p63
 
-    .line 28
-    iget-wide v2, p0, Lvt6;->e:J
+    .line 114
+    .line 115
+    iput-wide p1, p0, Lvt6;->F:J
 
-    .line 29
-    .line 30
-    invoke-static {v0, v1, v2, v3}, Lxu1;->e(IIJ)I
+    .line 116
+    .line 117
+    move-wide/from16 p1, p65
 
-    .line 31
-    .line 32
-    .line 33
-    move-result v0
+    .line 118
+    .line 119
+    iput-wide p1, p0, Lvt6;->G:J
 
-    .line 34
-    iget-wide v1, p0, Lvt6;->f:J
+    .line 120
+    .line 121
+    move-wide/from16 p1, p67
 
-    .line 35
-    .line 36
-    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
+    .line 122
+    .line 123
+    iput-wide p1, p0, Lvt6;->H:J
 
-    .line 37
-    .line 38
-    .line 39
-    move-result p0
+    .line 124
+    .line 125
+    move-wide/from16 p1, p69
 
-    .line 40
-    add-int/2addr p0, v0
+    .line 126
+    .line 127
+    iput-wide p1, p0, Lvt6;->I:J
 
-    .line 41
-    return p0
+    .line 128
+    .line 129
+    move-wide/from16 p1, p71
+
+    .line 130
+    .line 131
+    iput-wide p1, p0, Lvt6;->J:J
+
+    .line 132
+    .line 133
+    move-wide/from16 p1, p73
+
+    .line 134
+    .line 135
+    iput-wide p1, p0, Lvt6;->K:J
+
+    .line 136
+    .line 137
+    move-wide/from16 p1, p75
+
+    .line 138
+    .line 139
+    iput-wide p1, p0, Lvt6;->L:J
+
+    .line 140
+    .line 141
+    move-wide/from16 p1, p77
+
+    .line 142
+    .line 143
+    iput-wide p1, p0, Lvt6;->M:J
+
+    .line 144
+    .line 145
+    move-wide/from16 p1, p79
+
+    .line 146
+    .line 147
+    iput-wide p1, p0, Lvt6;->N:J
+
+    .line 148
+    .line 149
+    move-wide/from16 p1, p81
+
+    .line 150
+    .line 151
+    iput-wide p1, p0, Lvt6;->O:J
+
+    .line 152
+    .line 153
+    move-wide/from16 p1, p83
+
+    .line 154
+    .line 155
+    iput-wide p1, p0, Lvt6;->P:J
+
+    .line 156
+    .line 157
+    return-void
 .end method

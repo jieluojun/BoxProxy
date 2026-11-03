@@ -1,32 +1,23 @@
-.class public final Llk0;
+.class public interface abstract Llk0;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lnk0;
+.implements Lpi3;
 
 
 # virtual methods
-.method public final a(DDLgq3;)D
-    .locals 0
-
-    .line 1
-    invoke-virtual {p5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    return-wide p3
+.method public abstract b()Lzi0;
 .end method
 
-.method public final d(DDLgq3;)D
-    .locals 0
+.method public abstract c()Ljava/lang/Double;
+.end method
 
-    .line 1
-    invoke-virtual {p5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.method public abstract f()Lvj0;
+.end method
 
-    .line 2
-    .line 3
-    .line 4
-    return-wide p1
+.method public abstract i()Ljava/lang/Integer;
+.end method
+
+.method public abstract m()Lek0;
 .end method

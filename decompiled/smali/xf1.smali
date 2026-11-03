@@ -1,69 +1,137 @@
-.class public final Lxf1;
+.class public final synthetic Lxf1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lxh;
+.implements Ls52;
 
 
-# static fields
-.field public static final j:Lxf1;
+# instance fields
+.field public final synthetic j:B
 
-.field public static final k:Lpz1;
+.field public final synthetic k:I
+
+.field public final synthetic l:J
+
+.field public final synthetic m:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(IJIB)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lxf1;
+    iput-byte p5, p0, Lxf1;->j:B
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput p1, p0, Lxf1;->k:I
 
     .line 4
     .line 5
+    iput-wide p2, p0, Lxf1;->l:J
+
     .line 6
-    sput-object v0, Lxf1;->j:Lxf1;
-
     .line 7
+    iput p4, p0, Lxf1;->m:I
+
     .line 8
-    new-instance v0, Lpz1;
-
     .line 9
-    .line 10
-    const/high16 v1, 0x3f800000    # 1.0f
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 10
     .line 11
     .line 12
-    const v2, 0x44bb8000    # 1500.0f
-
-    .line 13
-    .line 14
-    .line 15
-    invoke-direct {v0, v1, v2}, Lpz1;-><init>(FF)V
-
-    .line 16
-    .line 17
-    .line 18
-    sput-object v0, Lxf1;->k:Lpz1;
-
-    .line 19
-    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method public final get(I)Lhz1;
-    .locals 0
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
 
     .line 1
-    sget-object p0, Lxf1;->k:Lpz1;
+    iget-byte v0, p0, Lxf1;->j:B
 
     .line 2
     .line 3
-    return-object p0
+    sget-object v1, Lk27;->a:Lk27;
+
+    .line 4
+    .line 5
+    iget v2, p0, Lxf1;->m:I
+
+    .line 6
+    .line 7
+    iget-wide v3, p0, Lxf1;->l:J
+
+    .line 8
+    .line 9
+    iget p0, p0, Lxf1;->k:I
+
+    .line 10
+    .line 11
+    check-cast p1, Lv01;
+
+    .line 12
+    .line 13
+    check-cast p2, Ljava/lang/Integer;
+
+    .line 14
+    .line 15
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 16
+    .line 17
+    .line 18
+    packed-switch v0, :pswitch_data_0
+
+    .line 19
+    .line 20
+    .line 21
+    or-int/lit8 p2, v2, 0x1
+
+    .line 22
+    .line 23
+    invoke-static {p2}, Lw23;->h0(I)I
+
+    .line 24
+    .line 25
+    .line 26
+    move-result p2
+
+    .line 27
+    invoke-static {p0, v3, v4, p1, p2}, Lzf1;->b(IJLv01;I)V
+
+    .line 28
+    .line 29
+    .line 30
+    return-object v1
+
+    .line 31
+    :pswitch_0
+    or-int/lit8 p2, v2, 0x1
+
+    .line 32
+    .line 33
+    invoke-static {p2}, Lw23;->h0(I)I
+
+    .line 34
+    .line 35
+    .line 36
+    move-result p2
+
+    .line 37
+    invoke-static {p0, v3, v4, p1, p2}, Lzf1;->b(IJLv01;I)V
+
+    .line 38
+    .line 39
+    .line 40
+    return-object v1
+
+    .line 41
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

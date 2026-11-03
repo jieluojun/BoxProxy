@@ -1,20 +1,20 @@
 .class public final Ljo2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
 .field public final a:Ljava/lang/String;
 
-.field public final b:Lzf3;
+.field public final b:Log3;
 
 .field public final c:I
 
-.field public final d:Lwd5;
+.field public final d:Lte5;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lzf3;Lwd5;I)V
+.method public constructor <init>(Ljava/lang/String;Log3;Lte5;I)V
     .locals 0
 
     .line 1
@@ -27,11 +27,11 @@
 
     .line 5
     .line 6
-    iput-object p2, p0, Ljo2;->b:Lzf3;
+    iput-object p2, p0, Ljo2;->b:Log3;
 
     .line 7
     .line 8
-    iput-object p3, p0, Ljo2;->d:Lwd5;
+    iput-object p3, p0, Ljo2;->d:Lte5;
 
     .line 9
     .line 10

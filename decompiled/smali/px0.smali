@@ -1,60 +1,29 @@
-.class public Lpx0;
+.class public final Lpx0;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-
-# static fields
-.field public static final synthetic b:J
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field private volatile synthetic _handled$volatile:I
+.field public final a:Ljava/util/ArrayList;
 
-.field public final a:Ljava/lang/Throwable;
+.field public final b:Ljava/util/ArrayList;
+
+.field public final c:Ljava/util/concurrent/locks/ReentrantLock;
+
+.field public final d:Landroid/os/Handler;
+
+.field public final e:Lkq1;
+
+.field public final f:I
+
+.field public g:Lqa;
+
+.field public h:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    .line 1
-    sget-object v0, Law;->a:Lsun/misc/Unsafe;
-
-    .line 2
-    .line 3
-    const-class v1, Lpx0;
-
-    .line 4
-    .line 5
-    const-string v2, "_handled$volatile"
-
-    .line 6
-    .line 7
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object v1
-
-    .line 11
-    invoke-virtual {v0, v1}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-wide v0
-
-    .line 15
-    sput-wide v0, Lpx0;->b:J
-
-    .line 16
-    .line 17
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/Throwable;Z)V
-    .locals 0
+.method public constructor <init>(Landroid/os/Handler;Lkq1;I)V
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -62,82 +31,162 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lpx0;->a:Ljava/lang/Throwable;
+    const/4 v0, 0x0
 
     .line 5
-    .line 6
-    iput p2, p0, Lpx0;->_handled$volatile:I
+    iput-boolean v0, p0, Lpx0;->h:Z
 
+    .line 6
     .line 7
+    iput-object p1, p0, Lpx0;->d:Landroid/os/Handler;
+
     .line 8
+    .line 9
+    new-instance p1, Ljava/util/ArrayList;
+
+    .line 10
+    .line 11
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    .line 12
+    .line 13
+    .line 14
+    iput-object p1, p0, Lpx0;->a:Ljava/util/ArrayList;
+
+    .line 15
+    .line 16
+    new-instance p1, Ljava/util/ArrayList;
+
+    .line 17
+    .line 18
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    .line 19
+    .line 20
+    .line 21
+    iput-object p1, p0, Lpx0;->b:Ljava/util/ArrayList;
+
+    .line 22
+    .line 23
+    new-instance p1, Ljava/util/concurrent/locks/ReentrantLock;
+
+    .line 24
+    .line 25
+    const/4 v0, 0x1
+
+    .line 26
+    invoke-direct {p1, v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>(Z)V
+
+    .line 27
+    .line 28
+    .line 29
+    iput-object p1, p0, Lpx0;->c:Ljava/util/concurrent/locks/ReentrantLock;
+
+    .line 30
+    .line 31
+    iput-object p2, p0, Lpx0;->e:Lkq1;
+
+    .line 32
+    .line 33
+    iput p3, p0, Lpx0;->f:I
+
+    .line 34
+    .line 35
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final a()V
+    .locals 1
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-static {}, Ljava/lang/Thread;->interrupted()Z
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 4
-    .line 5
-    .line 6
-    move-result-object v1
+    move-result v0
 
+    .line 5
+    if-nez v0, :cond_0
+
+    .line 6
     .line 7
-    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    iget-boolean v0, p0, Lpx0;->h:Z
 
     .line 8
     .line 9
-    .line 10
-    move-result-object v1
+    if-eqz v0, :cond_1
 
+    .line 10
     .line 11
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    :cond_0
+    const/4 v0, 0x1
 
     .line 12
+    iput-boolean v0, p0, Lpx0;->h:Z
+
     .line 13
     .line 14
-    const/16 v1, 0x5b
+    iget p0, p0, Lpx0;->f:I
 
     .line 15
     .line 16
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    if-le p0, v0, :cond_2
 
     .line 17
     .line 18
+    :cond_1
+    return-void
+
     .line 19
-    iget-object p0, p0, Lpx0;->a:Ljava/lang/Throwable;
+    :cond_2
+    new-instance p0, Llx0;
 
     .line 20
     .line 21
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-direct {p0}, Ljava/lang/RuntimeException;-><init>()V
 
     .line 22
     .line 23
     .line 24
-    const/16 p0, 0x5d
+    throw p0
+.end method
 
-    .line 25
-    .line 26
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+.method public final b(Z)V
+    .locals 1
 
-    .line 27
-    .line 28
-    .line 29
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 1
+    iget-boolean v0, p0, Lpx0;->h:Z
 
-    .line 30
-    .line 31
-    .line 32
-    move-result-object p0
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
 
-    .line 33
-    return-object p0
+    .line 4
+    .line 5
+    return-void
+
+    .line 6
+    :cond_0
+    new-instance v0, Lox0;
+
+    .line 7
+    .line 8
+    invoke-direct {v0, p0, p1}, Lox0;-><init>(Lpx0;Z)V
+
+    .line 9
+    .line 10
+    .line 11
+    iget-object p0, p0, Lpx0;->d:Landroid/os/Handler;
+
+    .line 12
+    .line 13
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 14
+    .line 15
+    .line 16
+    return-void
 .end method

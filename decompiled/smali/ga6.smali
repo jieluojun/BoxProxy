@@ -1,78 +1,83 @@
-.class public final Lga6;
-.super Ll33;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public abstract Lga6;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final e:Lga6;
+# instance fields
+.field public a:J
 
-.field public static final f:Lga6;
-
-.field public static final g:Lga6;
-
-.field public static final h:Lga6;
+.field public b:Lga6;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(J)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lga6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/16 v1, 0x14
-
     .line 4
+    iput-wide p1, p0, Lga6;->a:J
+
     .line 5
-    invoke-direct {v0, v1}, Ll33;-><init>(B)V
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public abstract a(Lga6;)V
+.end method
+
+.method public b()Lga6;
+    .locals 2
+
+    .line 1
+    invoke-static {}, Lq66;->h()Lj66;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-virtual {p0}, Lj66;->g()J
 
     .line 6
     .line 7
     .line 8
-    sput-object v0, Lga6;->e:Lga6;
+    move-result-wide v0
 
     .line 9
+    new-instance p0, Lgh1;
+
     .line 10
-    new-instance v0, Lga6;
-
     .line 11
-    .line 12
-    invoke-direct {v0, v1}, Ll33;-><init>(B)V
+    invoke-direct {p0, v0, v1}, Lgh1;-><init>(J)V
 
+    .line 12
     .line 13
     .line 14
-    .line 15
-    sput-object v0, Lga6;->f:Lga6;
+    return-object p0
+.end method
 
-    .line 16
-    .line 17
-    new-instance v0, Lga6;
+.method public c(J)Lga6;
+    .locals 0
 
-    .line 18
-    .line 19
-    invoke-direct {v0, v1}, Ll33;-><init>(B)V
+    .line 1
+    invoke-virtual {p0}, Lga6;->b()Lga6;
 
-    .line 20
-    .line 21
-    .line 22
-    sput-object v0, Lga6;->g:Lga6;
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
 
-    .line 23
-    .line 24
-    new-instance v0, Lga6;
+    .line 5
+    iput-wide p1, p0, Lga6;->a:J
 
-    .line 25
-    .line 26
-    invoke-direct {v0, v1}, Ll33;-><init>(B)V
-
-    .line 27
-    .line 28
-    .line 29
-    sput-object v0, Lga6;->h:Lga6;
-
-    .line 30
-    .line 31
-    return-void
+    .line 6
+    .line 7
+    return-object p0
 .end method

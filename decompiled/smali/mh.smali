@@ -1,118 +1,163 @@
-.class public final enum Lmh;
-.super Ljava/lang/Enum;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lmh;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final enum j:Lmh;
+# instance fields
+.field public final a:Liy6;
 
-.field public static final enum k:Lmh;
+.field public final b:Ljava/lang/Object;
 
-.field public static final synthetic l:[Lmh;
+.field public final c:J
+
+.field public final d:Ld52;
+
+.field public final e:Lgl4;
+
+.field public f:Lth;
+
+.field public g:J
+
+.field public h:J
+
+.field public final i:Lgl4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Ljava/lang/Object;Liy6;Lth;JLjava/lang/Object;JLd52;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lmh;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const-string v1, "BoundReached"
-
     .line 4
-    .line 5
-    const/4 v2, 0x0
+    iput-object p2, p0, Lmh;->a:Liy6;
 
+    .line 5
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p6, p0, Lmh;->b:Ljava/lang/Object;
 
     .line 7
     .line 8
+    iput-wide p7, p0, Lmh;->c:J
+
     .line 9
-    sput-object v0, Lmh;->j:Lmh;
-
     .line 10
+    iput-object p9, p0, Lmh;->d:Ld52;
+
     .line 11
-    new-instance v1, Lmh;
-
     .line 12
-    .line 13
-    const-string v2, "Finished"
+    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
 
+    .line 13
     .line 14
     .line 15
-    const/4 v3, 0x1
+    move-result-object p1
 
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p1, p0, Lmh;->e:Lgl4;
 
     .line 17
     .line 18
-    .line 19
-    sput-object v1, Lmh;->k:Lmh;
+    invoke-static {p3}, Lam0;->q(Lth;)Lth;
 
+    .line 19
     .line 20
     .line 21
-    filled-new-array {v0, v1}, [Lmh;
+    move-result-object p1
 
     .line 22
+    iput-object p1, p0, Lmh;->f:Lth;
+
     .line 23
     .line 24
-    move-result-object v0
+    iput-wide p4, p0, Lmh;->g:J
 
     .line 25
-    sput-object v0, Lmh;->l:[Lmh;
-
     .line 26
+    const-wide/high16 p1, -0x8000000000000000L
+
     .line 27
+    .line 28
+    iput-wide p1, p0, Lmh;->h:J
+
+    .line 29
+    .line 30
+    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    .line 31
+    .line 32
+    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
+
+    .line 33
+    .line 34
+    .line 35
+    move-result-object p1
+
+    .line 36
+    iput-object p1, p0, Lmh;->i:Lgl4;
+
+    .line 37
+    .line 38
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lmh;
-    .locals 1
+
+# virtual methods
+.method public final a()V
+    .locals 2
 
     .line 1
-    const-class v0, Lmh;
+    iget-object v0, p0, Lmh;->i:Lgl4;
 
     .line 2
     .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    sget-object v1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     .line 4
     .line 5
+    invoke-virtual {v0, v1}, Lgl4;->setValue(Ljava/lang/Object;)V
+
     .line 6
-    move-result-object p0
-
     .line 7
-    check-cast p0, Lmh;
-
     .line 8
+    iget-object p0, p0, Lmh;->d:Ld52;
+
     .line 9
-    return-object p0
+    .line 10
+    invoke-interface {p0}, Ld52;->invoke()Ljava/lang/Object;
+
+    .line 11
+    .line 12
+    .line 13
+    return-void
 .end method
 
-.method public static values()[Lmh;
+.method public final b()Ljava/lang/Object;
     .locals 1
 
     .line 1
-    sget-object v0, Lmh;->l:[Lmh;
+    iget-object v0, p0, Lmh;->a:Liy6;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    iget-object v0, v0, Liy6;->b:Lo52;
 
     .line 4
     .line 5
-    .line 6
-    move-result-object v0
+    iget-object p0, p0, Lmh;->f:Lth;
 
+    .line 6
     .line 7
-    check-cast v0, [Lmh;
+    invoke-interface {v0, p0}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 8
     .line 9
-    return-object v0
+    .line 10
+    move-result-object p0
+
+    .line 11
+    return-object p0
 .end method

@@ -1,212 +1,123 @@
 .class public final Lfx1;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lyi6;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:F
+.field public final synthetic e:Lee5;
 
-.field public final b:Luy1;
+.field public final synthetic f:Lgx1;
 
 
 # direct methods
-.method public constructor <init>(FLuy1;)V
+.method public constructor <init>(Ljava/lang/String;Lee5;Lgx1;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lfx1;->e:Lee5;
 
     .line 2
     .line 3
-    .line 4
-    iput p1, p0, Lfx1;->a:F
+    iput-object p3, p0, Lfx1;->f:Lgx1;
 
+    .line 4
     .line 5
+    const/4 p2, 0x1
+
     .line 6
-    iput-object p2, p0, Lfx1;->b:Luy1;
+    invoke-direct {p0, p1, p2}, Lyi6;-><init>(Ljava/lang/String;Z)V
 
     .line 7
     .line 8
+    .line 9
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final a()J
     .locals 4
 
     .line 1
-    const/4 v0, 0x1
+    iget-object v0, p0, Lfx1;->e:Lee5;
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
+    :try_start_0
+    invoke-interface {v0}, Lee5;->g()Lde5;
+
     .line 4
-    return v0
-
     .line 5
-    :cond_0
-    instance-of v1, p1, Lfx1;
-
     .line 6
+    move-result-object v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
     .line 7
-    const/4 v2, 0x0
+    goto :goto_0
 
     .line 8
-    if-nez v1, :cond_1
+    :catchall_0
+    move-exception v1
 
     .line 9
-    .line 10
-    return v2
+    new-instance v2, Lde5;
 
+    .line 10
     .line 11
-    :cond_1
-    check-cast p1, Lfx1;
+    const/4 v3, 0x2
 
     .line 12
-    .line 13
-    iget v1, p1, Lfx1;->a:F
+    invoke-direct {v2, v0, v1, v3}, Lde5;-><init>(Lee5;Ljava/lang/Throwable;I)V
 
+    .line 13
     .line 14
     .line 15
-    iget v3, p0, Lfx1;->a:F
+    move-object v1, v2
 
     .line 16
+    :goto_0
+    iget-object p0, p0, Lfx1;->f:Lgx1;
+
     .line 17
-    cmpg-float v1, v3, v1
-
     .line 18
+    iget-object v2, p0, Lgx1;->m:Ljava/lang/Object;
+
     .line 19
-    if-nez v1, :cond_2
-
     .line 20
+    check-cast v2, Ljava/util/concurrent/CopyOnWriteArrayList;
+
     .line 21
-    iget-object p0, p0, Lfx1;->b:Luy1;
-
     .line 22
-    .line 23
-    iget-object p1, p1, Lfx1;->b:Luy1;
+    invoke-virtual {v2, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->contains(Ljava/lang/Object;)Z
 
+    .line 23
     .line 24
     .line 25
-    invoke-static {p0, p1}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 26
-    .line 27
-    .line 28
-    move-result p0
-
-    .line 29
-    if-eqz p0, :cond_2
-
-    .line 30
-    .line 31
-    return v0
-
-    .line 32
-    :cond_2
-    return v2
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lfx1;->a:F
-
-    .line 2
-    .line 3
-    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 4
-    .line 5
-    .line 6
     move-result v0
 
-    .line 7
-    mul-int/lit8 v0, v0, 0x1f
-
-    .line 8
-    .line 9
-    iget-object p0, p0, Lfx1;->b:Luy1;
-
-    .line 10
-    .line 11
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    add-int/2addr p0, v0
-
-    .line 16
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v1, "FadeConfig(alpha="
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    iget v1, p0, Lfx1;->a:F
-
-    .line 9
-    .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 11
-    .line 12
-    .line 13
-    const-string v1, ", animationSpec="
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    iget-object p0, p0, Lfx1;->b:Luy1;
-
-    .line 19
-    .line 20
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 21
-    .line 22
-    .line 23
-    const-string p0, ")"
-
-    .line 24
-    .line 25
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 26
+    if-eqz v0, :cond_0
+
     .line 27
     .line 28
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object p0, p0, Lgx1;->n:Ljava/lang/Object;
 
     .line 29
     .line 30
-    .line 31
-    move-result-object p0
+    check-cast p0, Ljava/util/concurrent/LinkedBlockingDeque;
 
+    .line 31
     .line 32
-    return-object p0
+    invoke-virtual {p0, v1}, Ljava/util/concurrent/LinkedBlockingDeque;->put(Ljava/lang/Object;)V
+
+    .line 33
+    .line 34
+    .line 35
+    :cond_0
+    const-wide/16 v0, -0x1
+
+    .line 36
+    .line 37
+    return-wide v0
 .end method

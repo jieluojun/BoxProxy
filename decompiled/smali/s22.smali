@@ -1,12 +1,12 @@
-.class final Ls22;
-.super Leo3;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Ls22;
+.super Lro3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Leo3;"
+        "Lro3;"
     }
 .end annotation
 
@@ -38,27 +38,37 @@
 
 
 # virtual methods
-.method public final a()Lwn3;
-    .locals 0
+.method public final a()Ljo3;
+    .locals 3
 
     .line 1
-    new-instance p0, Lu22;
+    new-instance p0, Lt22;
 
     .line 2
     .line 3
-    invoke-direct {p0}, Lu22;-><init>()V
+    const/4 v0, 0x0
 
     .line 4
+    const/16 v1, 0xf
+
     .line 5
     .line 6
+    const/4 v2, 0x0
+
+    .line 7
+    invoke-direct {p0, v2, v0, v1}, Lt22;-><init>(ILs52;I)V
+
+    .line 8
+    .line 9
+    .line 10
     return-object p0
 .end method
 
-.method public final b(Lwn3;)V
+.method public final b(Ljo3;)V
     .locals 0
 
     .line 1
-    check-cast p1, Lu22;
+    check-cast p1, Lt22;
 
     .line 2
     .line 3
@@ -90,7 +100,7 @@
     .locals 0
 
     .line 1
-    const p0, 0x3cc196f4
+    const p0, 0x67a7b089
 
     .line 2
     .line 3

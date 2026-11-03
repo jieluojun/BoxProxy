@@ -1,173 +1,49 @@
-.class public final enum Lz67;
-.super Ljava/lang/Enum;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-
-# static fields
-.field public static final k:Laf6;
-
-.field public static final enum l:Lz67;
-
-.field public static final enum m:Lz67;
-
-.field public static final enum n:Lz67;
-
-.field public static final synthetic o:[Lz67;
-
-.field public static final synthetic p:Lcv1;
+.class public final Lz67;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final j:Ljava/lang/String;
+.field public final a:Ljava/lang/ref/WeakReference;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
-
-    .line 1
-    new-instance v0, Lz67;
-
-    .line 2
-    .line 3
-    const/4 v1, 0x0
-
-    .line 4
-    const-string v2, "auto"
-
-    .line 5
-    .line 6
-    const-string v3, "AUTO"
-
-    .line 7
-    .line 8
-    invoke-direct {v0, v1, v3, v2}, Lz67;-><init>(ILjava/lang/String;Ljava/lang/String;)V
-
-    .line 9
-    .line 10
-    .line 11
-    sput-object v0, Lz67;->l:Lz67;
-
-    .line 12
-    .line 13
-    new-instance v1, Lz67;
-
-    .line 14
-    .line 15
-    const/4 v2, 0x1
-
-    .line 16
-    const-string v3, "clash"
-
-    .line 17
-    .line 18
-    const-string v4, "CLASH"
-
-    .line 19
-    .line 20
-    invoke-direct {v1, v2, v4, v3}, Lz67;-><init>(ILjava/lang/String;Ljava/lang/String;)V
-
-    .line 21
-    .line 22
-    .line 23
-    sput-object v1, Lz67;->m:Lz67;
-
-    .line 24
-    .line 25
-    new-instance v2, Lz67;
-
-    .line 26
-    .line 27
-    const/4 v3, 0x2
-
-    .line 28
-    const-string v4, "sing_box"
-
-    .line 29
-    .line 30
-    const-string v5, "SING_BOX"
-
-    .line 31
-    .line 32
-    invoke-direct {v2, v3, v5, v4}, Lz67;-><init>(ILjava/lang/String;Ljava/lang/String;)V
-
-    .line 33
-    .line 34
-    .line 35
-    sput-object v2, Lz67;->n:Lz67;
-
-    .line 36
-    .line 37
-    filled-new-array {v0, v1, v2}, [Lz67;
-
-    .line 38
-    .line 39
-    .line 40
-    move-result-object v0
-
-    .line 41
-    sput-object v0, Lz67;->o:[Lz67;
-
-    .line 42
-    .line 43
-    new-instance v1, Lcv1;
-
-    .line 44
-    .line 45
-    invoke-direct {v1, v0}, Lcv1;-><init>([Ljava/lang/Enum;)V
-
-    .line 46
-    .line 47
-    .line 48
-    sput-object v1, Lz67;->p:Lcv1;
-
-    .line 49
-    .line 50
-    new-instance v0, Laf6;
-
-    .line 51
-    .line 52
-    const/16 v1, 0x12
-
-    .line 53
-    .line 54
-    invoke-direct {v0, v1}, Laf6;-><init>(B)V
-
-    .line 55
-    .line 56
-    .line 57
-    sput-object v0, Lz67;->k:Laf6;
-
-    .line 58
-    .line 59
-    return-void
-.end method
-
-.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0, p2, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p3, p0, Lz67;->j:Ljava/lang/String;
-
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lz67;
+.method public constructor <init>(Landroid/view/View;)V
     .locals 1
 
     .line 1
-    const-class v0, Lz67;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    .line 4
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
+    .line 5
+    .line 6
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    .line 7
+    .line 8
+    .line 9
+    iput-object v0, p0, Lz67;->a:Ljava/lang/ref/WeakReference;
+
+    .line 10
+    .line 11
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(F)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lz67;->a:Ljava/lang/ref/WeakReference;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     .line 4
     .line 5
@@ -175,32 +51,224 @@
     move-result-object p0
 
     .line 7
-    check-cast p0, Lz67;
+    check-cast p0, Landroid/view/View;
 
     .line 8
     .line 9
-    return-object p0
+    if-eqz p0, :cond_0
+
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    invoke-virtual {p0, p1}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+
+    .line 16
+    .line 17
+    .line 18
+    :cond_0
+    return-void
 .end method
 
-.method public static values()[Lz67;
-    .locals 1
+.method public final b()V
+    .locals 0
 
     .line 1
-    sget-object v0, Lz67;->o:[Lz67;
+    iget-object p0, p0, Lz67;->a:Ljava/lang/ref/WeakReference;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     .line 4
     .line 5
     .line 6
-    move-result-object v0
+    move-result-object p0
 
     .line 7
-    check-cast v0, [Lz67;
+    check-cast p0, Landroid/view/View;
 
     .line 8
     .line 9
-    return-object v0
+    if-eqz p0, :cond_0
+
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    invoke-virtual {p0}, Landroid/view/ViewPropertyAnimator;->cancel()V
+
+    .line 16
+    .line 17
+    .line 18
+    :cond_0
+    return-void
+.end method
+
+.method public final c(J)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lz67;->a:Ljava/lang/ref/WeakReference;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Landroid/view/View;
+
+    .line 8
+    .line 9
+    if-eqz p0, :cond_0
+
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    invoke-virtual {p0, p1, p2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+
+    .line 16
+    .line 17
+    .line 18
+    :cond_0
+    return-void
+.end method
+
+.method public final d(Lc77;)V
+    .locals 2
+
+    .line 1
+    iget-object p0, p0, Lz67;->a:Ljava/lang/ref/WeakReference;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Landroid/view/View;
+
+    .line 8
+    .line 9
+    if-eqz p0, :cond_1
+
+    .line 10
+    .line 11
+    if-eqz p1, :cond_0
+
+    .line 12
+    .line 13
+    invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object v0
+
+    .line 17
+    new-instance v1, Lq5;
+
+    .line 18
+    .line 19
+    invoke-direct {v1, p1, p0}, Lq5;-><init>(Lc77;Landroid/view/View;)V
+
+    .line 20
+    .line 21
+    .line 22
+    invoke-virtual {v0, v1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+
+    .line 23
+    .line 24
+    .line 25
+    return-void
+
+    .line 26
+    :cond_0
+    invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    .line 27
+    .line 28
+    .line 29
+    move-result-object p0
+
+    .line 30
+    const/4 p1, 0x0
+
+    .line 31
+    invoke-virtual {p0, p1}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
+
+    .line 32
+    .line 33
+    .line 34
+    :cond_1
+    return-void
+.end method
+
+.method public final e(F)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lz67;->a:Ljava/lang/ref/WeakReference;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Landroid/view/View;
+
+    .line 8
+    .line 9
+    if-eqz p0, :cond_0
+
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    invoke-virtual {p0, p1}, Landroid/view/ViewPropertyAnimator;->translationY(F)Landroid/view/ViewPropertyAnimator;
+
+    .line 16
+    .line 17
+    .line 18
+    :cond_0
+    return-void
 .end method

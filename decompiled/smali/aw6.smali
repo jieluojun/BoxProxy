@@ -1,142 +1,181 @@
 .class public final Law6;
-.super Lzv6;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# static fields
+.field public static final d:Lqp5;
 
 
 # instance fields
-.field public final synthetic m:B
+.field public a:F
+
+.field public final b:Lcl4;
+
+.field public final c:Lcl4;
 
 
 # direct methods
-.method public synthetic constructor <init>(B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    iput-byte p1, p0, Law6;->m:B
+    new-instance v0, Liw5;
 
     .line 2
     .line 3
-    invoke-direct {p0}, Lzv6;-><init>()V
+    const/16 v1, 0x11
 
     .line 4
     .line 5
+    invoke-direct {v0, v1}, Liw5;-><init>(B)V
+
     .line 6
+    .line 7
+    .line 8
+    new-instance v1, Lyv6;
+
+    .line 9
+    .line 10
+    const/4 v2, 0x1
+
+    .line 11
+    invoke-direct {v1, v2}, Lyv6;-><init>(B)V
+
+    .line 12
+    .line 13
+    .line 14
+    invoke-static {v0, v1}, Ly43;->w(Ls52;Lo52;)Lqp5;
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-object v0
+
+    .line 18
+    sput-object v0, Law6;->d:Lqp5;
+
+    .line 19
+    .line 20
+    return-void
+.end method
+
+.method public constructor <init>(FFF)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput p1, p0, Law6;->a:F
+
+    .line 5
+    .line 6
+    new-instance p1, Lcl4;
+
+    .line 7
+    .line 8
+    invoke-direct {p1, p3}, Lcl4;-><init>(F)V
+
+    .line 9
+    .line 10
+    .line 11
+    iput-object p1, p0, Law6;->b:Lcl4;
+
+    .line 12
+    .line 13
+    new-instance p1, Lcl4;
+
+    .line 14
+    .line 15
+    invoke-direct {p1, p2}, Lcl4;-><init>(F)V
+
+    .line 16
+    .line 17
+    .line 18
+    iput-object p1, p0, Law6;->c:Lcl4;
+
+    .line 19
+    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method public final next()Ljava/lang/Object;
-    .locals 3
+.method public final a()F
+    .locals 2
 
     .line 1
-    iget-byte v0, p0, Law6;->m:B
+    iget v0, p0, Law6;->a:F
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_0
+    const/4 v1, 0x0
 
     .line 4
+    cmpg-float v0, v0, v1
+
     .line 5
     .line 6
-    iget v0, p0, Lzv6;->l:I
+    if-nez v0, :cond_0
 
     .line 7
     .line 8
-    add-int/lit8 v1, v0, 0x2
+    return v1
+
+    .line 9
+    :cond_0
+    iget-object v0, p0, Law6;->c:Lcl4;
+
+    .line 10
+    .line 11
+    invoke-virtual {v0}, Lcl4;->g()F
+
+    .line 12
+    .line 13
+    .line 14
+    move-result v0
+
+    .line 15
+    iget p0, p0, Law6;->a:F
+
+    .line 16
+    .line 17
+    div-float/2addr v0, p0
+
+    .line 18
+    return v0
+.end method
+
+.method public final b(F)V
+    .locals 2
+
+    .line 1
+    iget v0, p0, Law6;->a:F
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    invoke-static {p1, v0, v1}, Lg23;->q(FFF)F
+
+    .line 5
+    .line 6
+    .line 7
+    move-result p1
+
+    .line 8
+    iget-object p0, p0, Law6;->c:Lcl4;
 
     .line 9
     .line 10
-    iput v1, p0, Lzv6;->l:I
+    invoke-virtual {p0, p1}, Lcl4;->h(F)V
 
     .line 11
     .line 12
-    iget-object p0, p0, Lzv6;->j:[Ljava/lang/Object;
-
     .line 13
-    .line 14
-    add-int/lit8 v0, v0, 0x1
-
-    .line 15
-    .line 16
-    aget-object p0, p0, v0
-
-    .line 17
-    .line 18
-    return-object p0
-
-    .line 19
-    :pswitch_0
-    iget v0, p0, Lzv6;->l:I
-
-    .line 20
-    .line 21
-    add-int/lit8 v1, v0, 0x2
-
-    .line 22
-    .line 23
-    iput v1, p0, Lzv6;->l:I
-
-    .line 24
-    .line 25
-    iget-object p0, p0, Lzv6;->j:[Ljava/lang/Object;
-
-    .line 26
-    .line 27
-    aget-object p0, p0, v0
-
-    .line 28
-    .line 29
-    return-object p0
-
-    .line 30
-    :pswitch_1
-    iget v0, p0, Lzv6;->l:I
-
-    .line 31
-    .line 32
-    add-int/lit8 v1, v0, 0x2
-
-    .line 33
-    .line 34
-    iput v1, p0, Lzv6;->l:I
-
-    .line 35
-    .line 36
-    new-instance v1, Lgf3;
-
-    .line 37
-    .line 38
-    iget-object p0, p0, Lzv6;->j:[Ljava/lang/Object;
-
-    .line 39
-    .line 40
-    aget-object v2, p0, v0
-
-    .line 41
-    .line 42
-    add-int/lit8 v0, v0, 0x1
-
-    .line 43
-    .line 44
-    aget-object p0, p0, v0
-
-    .line 45
-    .line 46
-    const/4 v0, 0x0
-
-    .line 47
-    invoke-direct {v1, v2, p0, v0}, Lgf3;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
-
-    .line 48
-    .line 49
-    .line 50
-    return-object v1
-
-    .line 51
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

@@ -1,6 +1,6 @@
 .class public abstract Ljk2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
@@ -8,7 +8,7 @@
 
 .field public static final b:[B
 
-.field public static final c:Lfi0;
+.field public static final c:Lai0;
 
 
 # direct methods
@@ -46,19 +46,19 @@
 
     .line 16
     .line 17
-    new-instance v1, Lfi0;
+    new-instance v1, Lai0;
 
     .line 18
     .line 19
     const/4 v2, 0x1
 
     .line 20
-    invoke-direct {v1, v2}, Lfi0;-><init>(B)V
+    invoke-direct {v1, v2}, Lai0;-><init>(B)V
 
     .line 21
     .line 22
     .line 23
-    sput-object v1, Ljk2;->c:Lfi0;
+    sput-object v1, Ljk2;->c:Lai0;
 
     .line 24
     .line 25
@@ -86,7 +86,7 @@
 
     .line 35
     .line 36
-    new-instance v5, Lfi0;
+    new-instance v5, Lai0;
 
     .line 37
     .line 38
@@ -98,11 +98,11 @@
     const/4 v6, 0x0
 
     .line 42
-    iput-object v6, v5, Lfi0;->l:Ljava/lang/Object;
+    iput-object v6, v5, Lai0;->l:Ljava/lang/Object;
 
     .line 43
     .line 44
-    iput v1, v5, Lfi0;->j:I
+    iput v1, v5, Lai0;->j:I
 
     .line 45
     .line 46
@@ -122,20 +122,20 @@
 
     .line 53
     :cond_0
-    iput v6, v5, Lfi0;->k:I
+    iput v6, v5, Lai0;->k:I
 
     .line 54
     .line 55
-    sget-object v6, Ljk2;->c:Lfi0;
+    sget-object v6, Ljk2;->c:Lai0;
 
     .line 56
     .line 57
     :goto_1
-    iget-object v6, v6, Lfi0;->l:Ljava/lang/Object;
+    iget-object v6, v6, Lai0;->l:Ljava/lang/Object;
 
     .line 58
     .line 59
-    check-cast v6, [Lfi0;
+    check-cast v6, [Lai0;
 
     .line 60
     .line 61
@@ -168,11 +168,11 @@
 
     .line 75
     .line 76
-    new-instance v9, Lfi0;
+    new-instance v9, Lai0;
 
     .line 77
     .line 78
-    invoke-direct {v9, v2}, Lfi0;-><init>(B)V
+    invoke-direct {v9, v2}, Lai0;-><init>(B)V
 
     .line 79
     .line 80
@@ -493,9 +493,6 @@
     .line 106
     .line 107
     .line 108
-    .line 109
-    .line 110
-    .line 111
     :array_1
     .array-data 1
         0xdt

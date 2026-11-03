@@ -1,272 +1,341 @@
-.class public final synthetic Lnr5;
+.class public final Lnr5;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lr52;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Ljava/lang/String;
-
-.field public final synthetic l:Lnr3;
+.field public final a:Lgl4;
 
 
 # direct methods
-.method public synthetic constructor <init>(BLnr3;Ljava/lang/String;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
-    iput-byte p1, p0, Lnr5;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p3, p0, Lnr5;->k:Ljava/lang/String;
-
     .line 4
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
     .line 5
-    iput-object p2, p0, Lnr5;->l:Lnr3;
-
     .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {v0}, Lg23;->M(Ljava/lang/Object;)Lgl4;
 
+    .line 7
     .line 8
     .line 9
+    move-result-object v0
+
     .line 10
+    iput-object v0, p0, Lnr5;->a:Lgl4;
+
+    .line 11
+    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a(Loa;Lgw5;Lsa1;Ljava/util/function/Consumer;)V
     .locals 9
 
     .line 1
-    iget-byte v0, p0, Lnr5;->j:B
+    new-instance v2, Lcs3;
 
     .line 2
     .line 3
-    iget-object v1, p0, Lnr5;->l:Lnr3;
+    const/16 v0, 0x10
 
     .line 4
     .line 5
-    iget-object p0, p0, Lnr5;->k:Ljava/lang/String;
+    new-array v0, v0, [Lor5;
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_0
+    const/4 v8, 0x0
 
     .line 8
+    invoke-direct {v2, v8, v0}, Lcs3;-><init>(I[Ljava/lang/Object;)V
+
     .line 9
     .line 10
-    check-cast p1, Landroid/webkit/WebResourceRequest;
-
     .line 11
-    .line 12
-    invoke-interface {v1}, Li86;->getValue()Ljava/lang/Object;
+    invoke-virtual {p2}, Lgw5;->a()Lew5;
 
+    .line 12
     .line 13
     .line 14
+    move-result-object p2
+
     .line 15
-    move-result-object v0
+    new-instance v0, Lg24;
 
     .line 16
-    check-cast v0, Ljava/lang/Boolean;
-
     .line 17
-    .line 18
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    const/16 v6, 0x8
 
+    .line 18
     .line 19
+    const/4 v7, 0x2
+
     .line 20
+    const/4 v1, 0x1
+
     .line 21
-    move-result v0
+    const-class v3, Lcs3;
 
     .line 22
-    const/4 v1, 0x0
-
     .line 23
-    if-eqz v0, :cond_1
+    const-string v4, "add"
 
     .line 24
     .line 25
-    if-eqz p1, :cond_0
+    const-string v5, "add(Ljava/lang/Object;)Z"
 
     .line 26
     .line 27
-    invoke-interface {p1}, Landroid/webkit/WebResourceRequest;->getUrl()Landroid/net/Uri;
+    invoke-direct/range {v0 .. v7}, Lg24;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;IB)V
 
     .line 28
     .line 29
     .line 30
-    move-result-object p1
+    invoke-static {p2, v8, v0}, Lu23;->e0(Lew5;ILg24;)V
 
     .line 31
-    goto :goto_0
-
     .line 32
-    :cond_0
-    move-object p1, v1
-
     .line 33
-    :goto_0
-    sget-object v0, Lw77;->a:Lgo2;
+    new-instance p2, Lwp5;
 
     .line 34
     .line 35
-    if-eqz p1, :cond_1
+    const/4 v0, 0x1
 
     .line 36
-    .line 37
-    invoke-virtual {p1}, Landroid/net/Uri;->toString()Ljava/lang/String;
+    invoke-direct {p2, v0}, Lwp5;-><init>(B)V
 
+    .line 37
     .line 38
     .line 39
-    .line 40
-    move-result-object p1
+    new-instance v1, Lwp5;
 
+    .line 40
     .line 41
-    if-eqz p1, :cond_1
+    const/4 v3, 0x2
 
     .line 42
-    .line 43
-    const-string v0, "https://mui.kernelsu.org/internal/colors.css"
+    invoke-direct {v1, v3}, Lwp5;-><init>(B)V
 
+    .line 43
     .line 44
     .line 45
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+    new-array v3, v3, [Lo52;
 
     .line 46
     .line 47
-    .line 48
-    move-result p1
+    aput-object p2, v3, v8
 
+    .line 48
     .line 49
-    const/4 v0, 0x1
+    aput-object v1, v3, v0
 
     .line 50
-    if-ne p1, v0, :cond_1
-
     .line 51
-    .line 52
-    new-instance v2, Landroid/webkit/WebResourceResponse;
+    invoke-static {v3}, Lp87;->D([Lo52;)Lfx0;
 
+    .line 52
     .line 53
     .line 54
-    const-string p1, "Cache-Control"
+    move-result-object p2
 
     .line 55
+    iget-object v1, v2, Lcs3;->j:[Ljava/lang/Object;
+
     .line 56
-    const-string v0, "no-store"
-
     .line 57
-    .line 58
-    invoke-static {p1, v0}, Ljava/util/Collections;->singletonMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map;
+    iget v3, v2, Lcs3;->l:I
 
+    .line 58
     .line 59
+    invoke-static {v1, v8, v3, p2}, Ljava/util/Arrays;->sort([Ljava/lang/Object;IILjava/util/Comparator;)V
+
     .line 60
     .line 61
-    move-result-object v7
-
     .line 62
-    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget p2, v2, Lcs3;->l:I
 
     .line 63
     .line 64
-    .line 65
-    new-instance v8, Ljava/io/ByteArrayInputStream;
+    if-nez p2, :cond_0
 
+    .line 65
     .line 66
+    const/4 p2, 0x0
+
     .line 67
-    sget-object p1, Lhn0;->a:Ljava/nio/charset/Charset;
+    goto :goto_0
 
     .line 68
+    :cond_0
+    sub-int/2addr p2, v0
+
     .line 69
-    invoke-virtual {p0, p1}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+    iget-object v1, v2, Lcs3;->j:[Ljava/lang/Object;
 
     .line 70
     .line 71
-    .line 72
-    move-result-object p0
+    aget-object p2, v1, p2
 
+    .line 72
     .line 73
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :goto_0
+    check-cast p2, Lor5;
 
     .line 74
     .line 75
+    if-nez p2, :cond_1
+
     .line 76
-    invoke-direct {v8, p0}, Ljava/io/ByteArrayInputStream;-><init>([B)V
-
     .line 77
+    return-void
+
     .line 78
+    :cond_1
+    iget-object v3, p2, Lor5;->c:Lwq2;
+
     .line 79
-    const-string v3, "text/css"
-
     .line 80
-    .line 81
-    const-string v4, "utf-8"
+    invoke-static {p3}, Lp87;->f(Lsa1;)Lw71;
 
+    .line 81
     .line 82
     .line 83
-    const/16 v5, 0xc8
+    move-result-object v4
 
     .line 84
+    new-instance v1, Lh01;
+
     .line 85
-    const-string v6, "OK"
-
     .line 86
-    .line 87
-    invoke-direct/range {v2 .. v8}, Landroid/webkit/WebResourceResponse;-><init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/util/Map;Ljava/io/InputStream;)V
+    iget-object v2, p2, Lor5;->a:Lew5;
 
+    .line 87
     .line 88
+    move-object v5, p0
+
     .line 89
+    move-object v6, p1
+
     .line 90
-    move-object v1, v2
+    invoke-direct/range {v1 .. v6}, Lh01;-><init>(Lew5;Lwq2;Lw71;Lnr5;Loa;)V
 
     .line 91
-    :cond_1
-    return-object v1
-
     .line 92
-    :pswitch_0
-    check-cast p1, Lfx2;
-
     .line 93
-    .line 94
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p2, Lor5;->d:Lm64;
 
+    .line 94
     .line 95
+    invoke-static {p0}, Lzu6;->E(Ljz2;)Ljz2;
+
     .line 96
     .line 97
-    invoke-interface {v1}, Li86;->getValue()Ljava/lang/Object;
-
     .line 98
-    .line 99
-    .line 100
     move-result-object p1
 
-    .line 101
-    check-cast p1, Lr52;
+    .line 99
+    invoke-interface {p1, p0, v0}, Ljz2;->O(Ljz2;Z)Ls85;
 
+    .line 100
+    .line 101
     .line 102
+    move-result-object p0
+
     .line 103
-    invoke-interface {p1, p0}, Lr52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v3}, Lwq2;->c()J
 
     .line 104
     .line 105
     .line 106
-    sget-object p0, Ld07;->a:Ld07;
+    move-result-wide p1
 
     .line 107
-    .line 108
-    return-object p0
+    invoke-static {p0}, Lp87;->d0(Ls85;)Lwq2;
 
+    .line 108
     .line 109
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 110
+    move-result-object p0
+
+    .line 111
+    invoke-static {p0}, Le33;->T(Lwq2;)Landroid/graphics/Rect;
+
+    .line 112
+    .line 113
+    .line 114
+    move-result-object p0
+
+    .line 115
+    new-instance p3, Landroid/graphics/Point;
+
+    .line 116
+    .line 117
+    const/16 v0, 0x20
+
+    .line 118
+    .line 119
+    shr-long v4, p1, v0
+
+    .line 120
+    .line 121
+    long-to-int v0, v4
+
+    .line 122
+    const-wide v4, 0xffffffffL
+
+    .line 123
+    .line 124
+    .line 125
+    .line 126
+    .line 127
+    and-long/2addr p1, v4
+
+    .line 128
+    long-to-int p1, p1
+
+    .line 129
+    invoke-direct {p3, v0, p1}, Landroid/graphics/Point;-><init>(II)V
+
+    .line 130
+    .line 131
+    .line 132
+    new-instance p1, Landroid/view/ScrollCaptureTarget;
+
+    .line 133
+    .line 134
+    invoke-direct {p1, v6, p0, p3, v1}, Landroid/view/ScrollCaptureTarget;-><init>(Landroid/view/View;Landroid/graphics/Rect;Landroid/graphics/Point;Landroid/view/ScrollCaptureCallback;)V
+
+    .line 135
+    .line 136
+    .line 137
+    invoke-static {v3}, Le33;->T(Lwq2;)Landroid/graphics/Rect;
+
+    .line 138
+    .line 139
+    .line 140
+    move-result-object p0
+
+    .line 141
+    invoke-virtual {p1, p0}, Landroid/view/ScrollCaptureTarget;->setScrollBounds(Landroid/graphics/Rect;)V
+
+    .line 142
+    .line 143
+    .line 144
+    invoke-interface {p4, p1}, Ljava/util/function/Consumer;->accept(Ljava/lang/Object;)V
+
+    .line 145
+    .line 146
+    .line 147
+    return-void
 .end method

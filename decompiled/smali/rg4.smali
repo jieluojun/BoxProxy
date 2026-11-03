@@ -1,45 +1,118 @@
-.class public final Lrg4;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final enum Lrg4;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public synthetic j:Ljava/lang/Object;
+# static fields
+.field public static final enum j:Lrg4;
 
-.field public k:I
+.field public static final enum k:Lrg4;
+
+.field public static final synthetic l:[Lrg4;
 
 
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+# direct methods
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    iput-object p1, p0, Lrg4;->j:Ljava/lang/Object;
+    new-instance v0, Lrg4;
 
     .line 2
     .line 3
-    iget p1, p0, Lrg4;->k:I
+    const-string v1, "Sort"
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    const/4 v2, 0x0
 
     .line 6
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lrg4;->k:I
-
     .line 9
-    .line 10
-    invoke-static {p0}, Lpx6;->h0(Ld81;)Ljava/lang/Object;
+    sput-object v0, Lrg4;->j:Lrg4;
 
+    .line 10
     .line 11
+    new-instance v1, Lrg4;
+
     .line 12
     .line 13
-    move-result-object p0
+    const-string v2, "Limit"
 
     .line 14
+    .line 15
+    const/4 v3, 0x1
+
+    .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    sput-object v1, Lrg4;->k:Lrg4;
+
+    .line 20
+    .line 21
+    filled-new-array {v0, v1}, [Lrg4;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object v0
+
+    .line 25
+    sput-object v0, Lrg4;->l:[Lrg4;
+
+    .line 26
+    .line 27
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lrg4;
+    .locals 1
+
+    .line 1
+    const-class v0, Lrg4;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lrg4;
+
+    .line 8
+    .line 9
     return-object p0
+.end method
+
+.method public static values()[Lrg4;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lrg4;->l:[Lrg4;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lrg4;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

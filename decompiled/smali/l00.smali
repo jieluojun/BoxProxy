@@ -1,45 +1,29 @@
 .class public final synthetic Ll00;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lv52;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic j:Lxn3;
+.field public final synthetic j:Lvq6;
 
-.field public final synthetic k:Ldi;
+.field public final synthetic k:Lkz2;
 
-.field public final synthetic l:Lr52;
+.field public final synthetic l:Ljava/util/List;
 
-.field public final synthetic m:Z
+.field public final synthetic m:Lai;
 
-.field public final synthetic n:Ljava/util/Map;
+.field public final synthetic n:Lyg1;
 
-.field public final synthetic o:Ljp6;
+.field public final synthetic o:Lb32;
 
-.field public final synthetic p:I
-
-.field public final synthetic q:Z
-
-.field public final synthetic r:I
-
-.field public final synthetic s:I
-
-.field public final synthetic t:Le32;
-
-.field public final synthetic u:Lct5;
-
-.field public final synthetic v:Lr52;
-
-.field public final synthetic w:I
-
-.field public final synthetic x:I
+.field public final synthetic p:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lxn3;Ldi;Lr52;ZLjava/util/Map;Ljp6;IZIILe32;Lct5;Lr52;II)V
+.method public synthetic constructor <init>(Lvq6;Lkz2;Ljava/util/List;Lai;Lyg1;Lb32;Z)V
     .locals 0
 
     .line 1
@@ -48,232 +32,316 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Ll00;->j:Lxn3;
+    iput-object p1, p0, Ll00;->j:Lvq6;
 
     .line 5
     .line 6
-    iput-object p2, p0, Ll00;->k:Ldi;
+    iput-object p2, p0, Ll00;->k:Lkz2;
 
     .line 7
     .line 8
-    iput-object p3, p0, Ll00;->l:Lr52;
+    iput-object p3, p0, Ll00;->l:Ljava/util/List;
 
     .line 9
     .line 10
-    iput-boolean p4, p0, Ll00;->m:Z
+    iput-object p4, p0, Ll00;->m:Lai;
 
     .line 11
     .line 12
-    iput-object p5, p0, Ll00;->n:Ljava/util/Map;
+    iput-object p5, p0, Ll00;->n:Lyg1;
 
     .line 13
     .line 14
-    iput-object p6, p0, Ll00;->o:Ljp6;
+    iput-object p6, p0, Ll00;->o:Lb32;
 
     .line 15
     .line 16
-    iput p7, p0, Ll00;->p:I
+    iput-boolean p7, p0, Ll00;->p:Z
 
     .line 17
     .line 18
-    iput-boolean p8, p0, Ll00;->q:Z
-
-    .line 19
-    .line 20
-    iput p9, p0, Ll00;->r:I
-
-    .line 21
-    .line 22
-    iput p10, p0, Ll00;->s:I
-
-    .line 23
-    .line 24
-    iput-object p11, p0, Ll00;->t:Le32;
-
-    .line 25
-    .line 26
-    iput-object p12, p0, Ll00;->u:Lct5;
-
-    .line 27
-    .line 28
-    iput-object p13, p0, Ll00;->v:Lr52;
-
-    .line 29
-    .line 30
-    iput p14, p0, Ll00;->w:I
-
-    .line 31
-    .line 32
-    iput p15, p0, Ll00;->x:I
-
-    .line 33
-    .line 34
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 17
+.method public final run()V
+    .locals 11
 
     .line 1
-    move-object/from16 v0, p0
+    iget-object v0, p0, Ll00;->j:Lvq6;
 
     .line 2
     .line 3
-    move-object/from16 v13, p1
+    iget-object v1, p0, Ll00;->k:Lkz2;
 
     .line 4
     .line 5
-    check-cast v13, Lz01;
+    iget-object v3, p0, Ll00;->m:Lai;
 
     .line 6
     .line 7
-    move-object/from16 v1, p2
+    iget-object v4, p0, Ll00;->n:Lyg1;
 
     .line 8
     .line 9
-    check-cast v1, Ljava/lang/Integer;
+    iget-object v5, p0, Ll00;->o:Lb32;
 
     .line 10
     .line 11
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-boolean v8, p0, Ll00;->p:Z
 
     .line 12
     .line 13
+    const-string v2, "BackgroundTextMeasurement"
+
     .line 14
-    iget v1, v0, Ll00;->w:I
-
     .line 15
-    .line 16
-    or-int/lit8 v1, v1, 0x1
+    invoke-static {v2}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
+    .line 16
     .line 17
     .line 18
-    invoke-static {v1}, Lkr5;->i0(I)I
+    :try_start_0
+    invoke-static {}, Lq66;->h()Lj66;
 
     .line 19
     .line 20
     .line 21
-    move-result v14
+    move-result-object v2
 
     .line 22
-    iget v1, v0, Ll00;->x:I
+    instance-of v6, v2, Lzr3;
 
     .line 23
     .line 24
-    invoke-static {v1}, Lkr5;->i0(I)I
+    const/4 v7, 0x0
 
     .line 25
+    if-eqz v6, :cond_0
+
     .line 26
     .line 27
-    move-result v15
+    check-cast v2, Lzr3;
 
     .line 28
-    iget-object v1, v0, Ll00;->j:Lxn3;
-
     .line 29
+    goto :goto_0
+
     .line 30
-    move-object v2, v1
+    :cond_0
+    move-object v2, v7
 
     .line 31
-    iget-object v1, v0, Ll00;->k:Ldi;
+    :goto_0
+    if-eqz v2, :cond_2
 
     .line 32
     .line 33
-    move-object v3, v2
+    invoke-virtual {v2, v7, v7}, Lzr3;->C(Lo52;Lo52;)Lzr3;
 
     .line 34
-    iget-object v2, v0, Ll00;->l:Lr52;
-
     .line 35
     .line 36
-    move-object v4, v3
+    move-result-object v9
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_3
 
     .line 37
-    iget-boolean v3, v0, Ll00;->m:Z
+    if-eqz v9, :cond_2
 
     .line 38
     .line 39
-    move-object v5, v4
+    :try_start_1
+    invoke-virtual {v9}, Lj66;->j()Lj66;
 
     .line 40
-    iget-object v4, v0, Ll00;->n:Ljava/util/Map;
-
     .line 41
     .line 42
-    move-object v6, v5
+    move-result-object v10
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 43
-    iget-object v5, v0, Ll00;->o:Ljp6;
+    :try_start_2
+    invoke-static {v0, v1}, Ld53;->T(Lvq6;Lkz2;)Lvq6;
 
     .line 44
     .line 45
-    move-object v7, v6
-
     .line 46
-    iget v6, v0, Ll00;->p:I
+    move-result-object v6
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     .line 47
-    .line 48
-    move-object v8, v7
+    iget-object p0, p0, Ll00;->l:Ljava/util/List;
 
+    .line 48
     .line 49
-    iget-boolean v7, v0, Ll00;->q:Z
+    if-nez p0, :cond_1
 
     .line 50
     .line 51
-    move-object v9, v8
+    :try_start_3
+    sget-object p0, Lqt1;->j:Lqt1;
 
     .line 52
-    iget v8, v0, Ll00;->r:I
-
     .line 53
+    :cond_1
+    move-object v7, p0
+
     .line 54
-    move-object v10, v9
+    goto :goto_1
 
     .line 55
-    iget v9, v0, Ll00;->s:I
+    :catchall_0
+    move-exception v0
 
     .line 56
+    move-object p0, v0
+
     .line 57
-    move-object v11, v10
+    goto :goto_2
 
     .line 58
-    iget-object v10, v0, Ll00;->t:Le32;
+    :goto_1
+    new-instance v2, Lv72;
 
     .line 59
     .line 60
-    move-object v12, v11
+    invoke-direct/range {v2 .. v8}, Lv72;-><init>(Lai;Lyg1;Lb32;Lvq6;Ljava/util/List;Z)V
 
     .line 61
-    iget-object v11, v0, Ll00;->u:Lct5;
-
     .line 62
     .line 63
-    iget-object v0, v0, Ll00;->v:Lr52;
+    invoke-virtual {v2}, Lv72;->c()F
 
     .line 64
     .line 65
-    move-object/from16 v16, v12
-
     .line 66
+    invoke-virtual {v2}, Lv72;->a()F
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
     .line 67
-    move-object v12, v0
-
     .line 68
-    move-object/from16 v0, v16
-
     .line 69
-    .line 70
-    invoke-static/range {v0 .. v15}, Lu57;->e(Lxn3;Ldi;Lr52;ZLjava/util/Map;Ljp6;IZIILe32;Lct5;Lr52;Lz01;II)V
+    :try_start_4
+    invoke-static {v10}, Lj66;->q(Lj66;)V
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
+    .line 70
     .line 71
     .line 72
-    .line 73
-    sget-object v0, Ld07;->a:Ld07;
+    :try_start_5
+    invoke-virtual {v9}, Lzr3;->w()Lq43;
 
+    .line 73
     .line 74
     .line 75
-    return-object v0
+    move-result-object p0
+
+    .line 76
+    invoke-virtual {p0}, Lq43;->n()V
+
+    .line 77
+    .line 78
+    .line 79
+    invoke-virtual {v9}, Lzr3;->c()V
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_3
+
+    .line 80
+    .line 81
+    .line 82
+    invoke-static {}, Landroid/os/Trace;->endSection()V
+
+    .line 83
+    .line 84
+    .line 85
+    return-void
+
+    .line 86
+    :catchall_1
+    move-exception v0
+
+    .line 87
+    move-object p0, v0
+
+    .line 88
+    goto :goto_3
+
+    .line 89
+    :goto_2
+    :try_start_6
+    invoke-static {v10}, Lj66;->q(Lj66;)V
+
+    .line 90
+    .line 91
+    .line 92
+    throw p0
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_1
+
+    .line 93
+    :goto_3
+    :try_start_7
+    throw p0
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_2
+
+    .line 94
+    :catchall_2
+    move-exception v0
+
+    .line 95
+    move-object p0, v0
+
+    .line 96
+    :try_start_8
+    invoke-virtual {v9}, Lzr3;->c()V
+
+    .line 97
+    .line 98
+    .line 99
+    throw p0
+
+    .line 100
+    :catchall_3
+    move-exception v0
+
+    .line 101
+    move-object p0, v0
+
+    .line 102
+    goto :goto_4
+
+    .line 103
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    .line 104
+    .line 105
+    const-string v0, "Cannot create a mutable snapshot of an read-only snapshot"
+
+    .line 106
+    .line 107
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    .line 108
+    .line 109
+    .line 110
+    throw p0
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_3
+
+    .line 111
+    :goto_4
+    invoke-static {}, Landroid/os/Trace;->endSection()V
+
+    .line 112
+    .line 113
+    .line 114
+    throw p0
 .end method

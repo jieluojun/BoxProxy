@@ -1,74 +1,183 @@
-.class public final Lck5;
-.super Ld81;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final synthetic Lck5;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ld52;
 
 
 # instance fields
-.field public j:Lpu;
+.field public final synthetic j:B
 
-.field public synthetic k:Ljava/lang/Object;
+.field public final synthetic k:Lxk5;
 
-.field public final synthetic l:Ldk5;
+.field public final synthetic l:Ld52;
 
-.field public m:I
+.field public final synthetic m:Las3;
 
 
 # direct methods
-.method public constructor <init>(Ldk5;Ld81;)V
+.method public synthetic constructor <init>(Lxk5;Ld52;Las3;B)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lck5;->l:Ldk5;
+    iput-byte p4, p0, Lck5;->j:B
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Ld81;-><init>(Lc81;)V
+    iput-object p1, p0, Lck5;->k:Lxk5;
 
     .line 4
     .line 5
+    iput-object p2, p0, Lck5;->l:Ld52;
+
     .line 6
+    .line 7
+    iput-object p3, p0, Lck5;->m:Las3;
+
+    .line 8
+    .line 9
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 10
+    .line 11
+    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke()Ljava/lang/Object;
+    .locals 5
 
     .line 1
-    iput-object p1, p0, Lck5;->k:Ljava/lang/Object;
+    iget-byte v0, p0, Lck5;->j:B
 
     .line 2
     .line 3
-    iget p1, p0, Lck5;->m:I
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    const/4 v2, 0x0
 
     .line 6
-    .line 7
-    or-int/2addr p1, v0
+    iget-object v3, p0, Lck5;->m:Las3;
 
+    .line 7
     .line 8
-    iput p1, p0, Lck5;->m:I
+    iget-object v4, p0, Lck5;->l:Ld52;
 
     .line 9
     .line 10
-    iget-object p1, p0, Lck5;->l:Ldk5;
+    iget-object p0, p0, Lck5;->k:Lxk5;
 
     .line 11
     .line 12
-    const/4 v0, 0x0
+    packed-switch v0, :pswitch_data_0
 
     .line 13
-    invoke-virtual {p1, v0, v0, p0}, Ldk5;->r(Lgm5;Landroid/content/Context;Ld81;)Ljava/lang/Object;
-
     .line 14
     .line 15
-    .line 16
-    move-result-object p0
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
+    .line 16
     .line 17
-    return-object p0
+    invoke-interface {v3, v0}, Las3;->setValue(Ljava/lang/Object;)V
+
+    .line 18
+    .line 19
+    .line 20
+    iget-object v0, p0, Lxk5;->o:Lgl4;
+
+    .line 21
+    .line 22
+    invoke-virtual {v0}, Lgl4;->getValue()Ljava/lang/Object;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object v0
+
+    .line 26
+    check-cast v0, Ljava/lang/String;
+
+    .line 27
+    .line 28
+    invoke-virtual {p0, v0}, Lxk5;->m(Ljava/lang/String;)V
+
+    .line 29
+    .line 30
+    .line 31
+    invoke-virtual {p0, v2}, Lxk5;->o(Ljava/lang/String;)V
+
+    .line 32
+    .line 33
+    .line 34
+    invoke-virtual {p0}, Lxk5;->k()V
+
+    .line 35
+    .line 36
+    .line 37
+    invoke-interface {v4}, Ld52;->invoke()Ljava/lang/Object;
+
+    .line 38
+    .line 39
+    .line 40
+    return-object v1
+
+    .line 41
+    :pswitch_0
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    .line 42
+    .line 43
+    invoke-interface {v3, v0}, Las3;->setValue(Ljava/lang/Object;)V
+
+    .line 44
+    .line 45
+    .line 46
+    iget-object v0, p0, Lxk5;->o:Lgl4;
+
+    .line 47
+    .line 48
+    invoke-virtual {v0}, Lgl4;->getValue()Ljava/lang/Object;
+
+    .line 49
+    .line 50
+    .line 51
+    move-result-object v0
+
+    .line 52
+    check-cast v0, Ljava/lang/String;
+
+    .line 53
+    .line 54
+    invoke-virtual {p0, v0}, Lxk5;->m(Ljava/lang/String;)V
+
+    .line 55
+    .line 56
+    .line 57
+    invoke-virtual {p0, v2}, Lxk5;->o(Ljava/lang/String;)V
+
+    .line 58
+    .line 59
+    .line 60
+    invoke-virtual {p0}, Lxk5;->k()V
+
+    .line 61
+    .line 62
+    .line 63
+    invoke-interface {v4}, Ld52;->invoke()Ljava/lang/Object;
+
+    .line 64
+    .line 65
+    .line 66
+    return-object v1
+
+    .line 67
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

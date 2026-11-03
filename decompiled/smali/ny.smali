@@ -1,677 +1,246 @@
-.class public final Lny;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Landroid/os/Parcelable;
+.class public final enum Lny;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lny;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public static final k:Lt8;
+
+.field public static final l:Ljava/util/Set;
+
+.field public static final enum m:Lny;
+
+.field public static final enum n:Lny;
+
+.field public static final enum o:Lny;
+
+.field public static final enum p:Lny;
+
+.field public static final synthetic q:[Lny;
+
+.field public static final synthetic r:Lzu1;
 
 
 # instance fields
-.field public final j:[I
-
-.field public final k:Ljava/util/ArrayList;
-
-.field public final l:[I
-
-.field public final m:[I
-
-.field public final n:I
-
-.field public final o:Ljava/lang/String;
-
-.field public final p:I
-
-.field public final q:I
-
-.field public final r:Ljava/lang/CharSequence;
-
-.field public final s:I
-
-.field public final t:Ljava/lang/CharSequence;
-
-.field public final u:Ljava/util/ArrayList;
-
-.field public final v:Ljava/util/ArrayList;
-
-.field public final w:Z
+.field public final j:Ljava/lang/String;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 7
 
     .line 1
-    new-instance v0, Lm6;
+    new-instance v0, Lny;
 
     .line 2
     .line 3
-    const/4 v1, 0x2
+    const/4 v1, 0x0
 
     .line 4
-    invoke-direct {v0, v1}, Lm6;-><init>(B)V
+    const-string v2, "app_settings"
 
     .line 5
     .line 6
-    .line 7
-    sput-object v0, Lny;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    .line 8
-    .line 9
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/os/Parcel;)V
-    .locals 2
-
-    .line 163
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 164
-    invoke-virtual {p1}, Landroid/os/Parcel;->createIntArray()[I
-
-    move-result-object v0
-
-    iput-object v0, p0, Lny;->j:[I
-
-    .line 165
-    invoke-virtual {p1}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lny;->k:Ljava/util/ArrayList;
-
-    .line 166
-    invoke-virtual {p1}, Landroid/os/Parcel;->createIntArray()[I
-
-    move-result-object v0
-
-    iput-object v0, p0, Lny;->l:[I
-
-    .line 167
-    invoke-virtual {p1}, Landroid/os/Parcel;->createIntArray()[I
-
-    move-result-object v0
-
-    iput-object v0, p0, Lny;->m:[I
-
-    .line 168
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Lny;->n:I
-
-    .line 169
-    invoke-virtual {p1}, Landroid/os/Parcel;->readString()Ljava/lang/String;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lny;->o:Ljava/lang/String;
-
-    .line 170
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Lny;->p:I
-
-    .line 171
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v0
-
-    iput v0, p0, Lny;->q:I
-
-    .line 172
-    sget-object v0, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
-
-    invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Ljava/lang/CharSequence;
-
-    iput-object v1, p0, Lny;->r:Ljava/lang/CharSequence;
-
-    .line 173
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result v1
-
-    iput v1, p0, Lny;->s:I
-
-    .line 174
-    invoke-interface {v0, p1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/CharSequence;
-
-    iput-object v0, p0, Lny;->t:Ljava/lang/CharSequence;
-
-    .line 175
-    invoke-virtual {p1}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lny;->u:Ljava/util/ArrayList;
-
-    .line 176
-    invoke-virtual {p1}, Landroid/os/Parcel;->createStringArrayList()Ljava/util/ArrayList;
-
-    move-result-object v0
-
-    iput-object v0, p0, Lny;->v:Ljava/util/ArrayList;
-
-    .line 177
-    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    iput-boolean p1, p0, Lny;->w:Z
-
-    return-void
-.end method
-
-.method public constructor <init>(Lmy;)V
-    .locals 9
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iget-object v0, p1, Lmy;->a:Ljava/util/ArrayList;
-
-    .line 5
-    .line 6
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    const-string v3, "AppSettings"
 
     .line 7
     .line 8
-    .line 9
-    move-result v0
+    invoke-direct {v0, v1, v3, v2}, Lny;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
+    .line 9
     .line 10
-    mul-int/lit8 v1, v0, 0x6
-
     .line 11
+    sput-object v0, Lny;->m:Lny;
+
     .line 12
-    new-array v1, v1, [I
-
     .line 13
-    .line 14
-    iput-object v1, p0, Lny;->j:[I
+    new-instance v1, Lny;
 
+    .line 14
     .line 15
+    const/4 v2, 0x1
+
     .line 16
-    iget-boolean v1, p1, Lmy;->g:Z
+    const-string v3, "runtime_data"
 
     .line 17
     .line 18
-    const/4 v2, 0x0
+    const-string v4, "RuntimeData"
 
     .line 19
-    if-eqz v1, :cond_1
-
     .line 20
-    .line 21
-    new-instance v1, Ljava/util/ArrayList;
+    invoke-direct {v1, v2, v4, v3}, Lny;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
+    .line 21
     .line 22
     .line 23
-    invoke-direct {v1, v0}, Ljava/util/ArrayList;-><init>(I)V
+    sput-object v1, Lny;->n:Lny;
 
     .line 24
     .line 25
-    .line 26
-    iput-object v1, p0, Lny;->k:Ljava/util/ArrayList;
+    new-instance v2, Lny;
 
+    .line 26
     .line 27
+    const/4 v3, 0x2
+
     .line 28
-    new-array v1, v0, [I
+    const-string v4, "user_scripts"
 
     .line 29
     .line 30
-    iput-object v1, p0, Lny;->l:[I
+    const-string v5, "UserScripts"
 
     .line 31
     .line 32
-    new-array v1, v0, [I
+    invoke-direct {v2, v3, v5, v4}, Lny;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
     .line 33
     .line 34
-    iput-object v1, p0, Lny;->m:[I
-
     .line 35
-    .line 36
-    const/4 v1, 0x0
+    sput-object v2, Lny;->o:Lny;
 
+    .line 36
     .line 37
-    move v3, v1
+    new-instance v3, Lny;
 
     .line 38
-    :goto_0
-    if-ge v1, v0, :cond_0
-
     .line 39
+    const/4 v4, 0x3
+
     .line 40
-    iget-object v4, p1, Lmy;->a:Ljava/util/ArrayList;
+    const-string v5, "core_binaries"
 
     .line 41
     .line 42
-    invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    const-string v6, "CoreBinaries"
 
     .line 43
     .line 44
+    invoke-direct {v3, v4, v6, v5}, Lny;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
     .line 45
-    move-result-object v4
-
     .line 46
-    check-cast v4, Ld52;
-
     .line 47
+    sput-object v3, Lny;->p:Lny;
+
     .line 48
-    iget-object v5, p0, Lny;->j:[I
-
     .line 49
-    .line 50
-    add-int/lit8 v6, v3, 0x1
+    filled-new-array {v0, v1, v2, v3}, [Lny;
 
+    .line 50
     .line 51
     .line 52
-    iget v7, v4, Ld52;->a:I
+    move-result-object v0
 
     .line 53
+    sput-object v0, Lny;->q:[Lny;
+
     .line 54
-    aput v7, v5, v3
-
     .line 55
+    new-instance v1, Lzu1;
+
     .line 56
-    iget-object v5, p0, Lny;->k:Ljava/util/ArrayList;
-
     .line 57
-    .line 58
-    invoke-virtual {v5, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-direct {v1, v0}, Lzu1;-><init>([Ljava/lang/Enum;)V
 
+    .line 58
     .line 59
     .line 60
+    sput-object v1, Lny;->r:Lzu1;
+
     .line 61
-    iget-object v5, p0, Lny;->j:[I
-
     .line 62
+    new-instance v0, Lt8;
+
     .line 63
-    add-int/lit8 v7, v3, 0x2
-
     .line 64
+    const/16 v2, 0xc
+
     .line 65
-    iget-boolean v8, v4, Ld52;->b:Z
-
     .line 66
-    .line 67
-    aput v8, v5, v6
+    invoke-direct {v0, v2}, Lt8;-><init>(B)V
 
+    .line 67
     .line 68
     .line 69
-    add-int/lit8 v6, v3, 0x3
+    sput-object v0, Lny;->k:Lt8;
 
     .line 70
     .line 71
-    iget v8, v4, Ld52;->c:I
+    invoke-static {v1}, Lau0;->i1(Ljava/lang/Iterable;)Ljava/util/Set;
 
     .line 72
     .line 73
-    aput v8, v5, v7
-
     .line 74
+    move-result-object v0
+
     .line 75
-    add-int/lit8 v7, v3, 0x4
+    sput-object v0, Lny;->l:Ljava/util/Set;
 
     .line 76
     .line 77
-    iget v8, v4, Ld52;->d:I
-
-    .line 78
-    .line 79
-    aput v8, v5, v6
-
-    .line 80
-    .line 81
-    add-int/lit8 v6, v3, 0x5
-
-    .line 82
-    .line 83
-    iget v8, v4, Ld52;->e:I
-
-    .line 84
-    .line 85
-    aput v8, v5, v7
-
-    .line 86
-    .line 87
-    add-int/lit8 v3, v3, 0x6
-
-    .line 88
-    .line 89
-    iget v7, v4, Ld52;->f:I
-
-    .line 90
-    .line 91
-    aput v7, v5, v6
-
-    .line 92
-    .line 93
-    iget-object v5, p0, Lny;->l:[I
-
-    .line 94
-    .line 95
-    iget-object v6, v4, Ld52;->g:Lf53;
-
-    .line 96
-    .line 97
-    invoke-virtual {v6}, Ljava/lang/Enum;->ordinal()I
-
-    .line 98
-    .line 99
-    .line 100
-    move-result v6
-
-    .line 101
-    aput v6, v5, v1
-
-    .line 102
-    .line 103
-    iget-object v5, p0, Lny;->m:[I
-
-    .line 104
-    .line 105
-    iget-object v4, v4, Ld52;->h:Lf53;
-
-    .line 106
-    .line 107
-    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
-
-    .line 108
-    .line 109
-    .line 110
-    move-result v4
-
-    .line 111
-    aput v4, v5, v1
-
-    .line 112
-    .line 113
-    add-int/lit8 v1, v1, 0x1
-
-    .line 114
-    .line 115
-    goto :goto_0
-
-    .line 116
-    :cond_0
-    iget v0, p1, Lmy;->f:I
-
-    .line 117
-    .line 118
-    iput v0, p0, Lny;->n:I
-
-    .line 119
-    .line 120
-    iget-object v0, p1, Lmy;->h:Ljava/lang/String;
-
-    .line 121
-    .line 122
-    iput-object v0, p0, Lny;->o:Ljava/lang/String;
-
-    .line 123
-    .line 124
-    iget v0, p1, Lmy;->q:I
-
-    .line 125
-    .line 126
-    iput v0, p0, Lny;->p:I
-
-    .line 127
-    .line 128
-    iget v0, p1, Lmy;->i:I
-
-    .line 129
-    .line 130
-    iput v0, p0, Lny;->q:I
-
-    .line 131
-    .line 132
-    iget-object v0, p1, Lmy;->j:Ljava/lang/CharSequence;
-
-    .line 133
-    .line 134
-    iput-object v0, p0, Lny;->r:Ljava/lang/CharSequence;
-
-    .line 135
-    .line 136
-    iget v0, p1, Lmy;->k:I
-
-    .line 137
-    .line 138
-    iput v0, p0, Lny;->s:I
-
-    .line 139
-    .line 140
-    iget-object v0, p1, Lmy;->l:Ljava/lang/CharSequence;
-
-    .line 141
-    .line 142
-    iput-object v0, p0, Lny;->t:Ljava/lang/CharSequence;
-
-    .line 143
-    .line 144
-    iget-object v0, p1, Lmy;->m:Ljava/util/ArrayList;
-
-    .line 145
-    .line 146
-    iput-object v0, p0, Lny;->u:Ljava/util/ArrayList;
-
-    .line 147
-    .line 148
-    iget-object v0, p1, Lmy;->n:Ljava/util/ArrayList;
-
-    .line 149
-    .line 150
-    iput-object v0, p0, Lny;->v:Ljava/util/ArrayList;
-
-    .line 151
-    .line 152
-    iget-boolean p1, p1, Lmy;->o:Z
-
-    .line 153
-    .line 154
-    iput-boolean p1, p0, Lny;->w:Z
-
-    .line 155
-    .line 156
     return-void
-
-    .line 157
-    :cond_1
-    const-string p0, "Not on back stack"
-
-    .line 158
-    .line 159
-    invoke-static {p0}, Lmv1;->e(Ljava/lang/String;)V
-
-    .line 160
-    .line 161
-    .line 162
-    throw v2
 .end method
 
-
-# virtual methods
-.method public final describeContents()I
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
     .locals 0
 
     .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 1
-
-    .line 1
-    iget-object p2, p0, Lny;->j:[I
+    invoke-direct {p0, p2, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 2
     .line 3
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeIntArray([I)V
+    .line 4
+    iput-object p3, p0, Lny;->j:Ljava/lang/String;
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lny;
+    .locals 1
+
+    .line 1
+    const-class v0, Lny;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     .line 4
     .line 5
     .line 6
-    iget-object p2, p0, Lny;->k:Ljava/util/ArrayList;
+    move-result-object p0
 
     .line 7
+    check-cast p0, Lny;
+
     .line 8
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
-
     .line 9
-    .line 10
-    .line 11
-    iget-object p2, p0, Lny;->l:[I
+    return-object p0
+.end method
 
-    .line 12
-    .line 13
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeIntArray([I)V
+.method public static values()[Lny;
+    .locals 1
 
-    .line 14
-    .line 15
-    .line 16
-    iget-object p2, p0, Lny;->m:[I
+    .line 1
+    sget-object v0, Lny;->q:[Lny;
 
-    .line 17
-    .line 18
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeIntArray([I)V
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    .line 19
-    .line 20
-    .line 21
-    iget p2, p0, Lny;->n:I
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
 
-    .line 22
-    .line 23
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+    .line 7
+    check-cast v0, [Lny;
 
-    .line 24
-    .line 25
-    .line 26
-    iget-object p2, p0, Lny;->o:Ljava/lang/String;
-
-    .line 27
-    .line 28
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
-    .line 29
-    .line 30
-    .line 31
-    iget p2, p0, Lny;->p:I
-
-    .line 32
-    .line 33
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 34
-    .line 35
-    .line 36
-    iget p2, p0, Lny;->q:I
-
-    .line 37
-    .line 38
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 39
-    .line 40
-    .line 41
-    iget-object p2, p0, Lny;->r:Ljava/lang/CharSequence;
-
-    .line 42
-    .line 43
-    const/4 v0, 0x0
-
-    .line 44
-    invoke-static {p2, p1, v0}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V
-
-    .line 45
-    .line 46
-    .line 47
-    iget p2, p0, Lny;->s:I
-
-    .line 48
-    .line 49
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 50
-    .line 51
-    .line 52
-    iget-object p2, p0, Lny;->t:Ljava/lang/CharSequence;
-
-    .line 53
-    .line 54
-    invoke-static {p2, p1, v0}, Landroid/text/TextUtils;->writeToParcel(Ljava/lang/CharSequence;Landroid/os/Parcel;I)V
-
-    .line 55
-    .line 56
-    .line 57
-    iget-object p2, p0, Lny;->u:Ljava/util/ArrayList;
-
-    .line 58
-    .line 59
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
-
-    .line 60
-    .line 61
-    .line 62
-    iget-object p2, p0, Lny;->v:Ljava/util/ArrayList;
-
-    .line 63
-    .line 64
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeStringList(Ljava/util/List;)V
-
-    .line 65
-    .line 66
-    .line 67
-    iget-boolean p0, p0, Lny;->w:Z
-
-    .line 68
-    .line 69
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 70
-    .line 71
-    .line 72
-    return-void
+    .line 8
+    .line 9
+    return-object v0
 .end method

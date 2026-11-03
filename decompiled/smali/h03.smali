@@ -1,17 +1,29 @@
 .class public final Lh03;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lr13;
+.implements Lii3;
 
 
 # instance fields
-.field public final a:Lf13;
+.field public final synthetic a:I
+
+.field public final synthetic b:I
+
+.field public final synthetic c:Ljava/util/Map;
+
+.field public final synthetic d:Lo52;
+
+.field public final synthetic e:Li03;
+
+.field public final synthetic f:Lo03;
+
+.field public final synthetic g:Lo52;
 
 
 # direct methods
-.method public constructor <init>(Lf13;)V
+.method public constructor <init>(IILjava/util/Map;Lo52;Li03;Lo03;Lo52;)V
     .locals 0
 
     .line 1
@@ -20,10 +32,34 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lh03;->a:Lf13;
+    iput p1, p0, Lh03;->a:I
 
     .line 5
     .line 6
+    iput p2, p0, Lh03;->b:I
+
+    .line 7
+    .line 8
+    iput-object p3, p0, Lh03;->c:Ljava/util/Map;
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Lh03;->d:Lo52;
+
+    .line 11
+    .line 12
+    iput-object p5, p0, Lh03;->e:Li03;
+
+    .line 13
+    .line 14
+    iput-object p6, p0, Lh03;->f:Lo03;
+
+    .line 15
+    .line 16
+    iput-object p7, p0, Lh03;->g:Lo52;
+
+    .line 17
+    .line 18
     return-void
 .end method
 
@@ -33,499 +69,131 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lh03;->a:Lf13;
+    iget p0, p0, Lh03;->b:I
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Lf13;->h()Lu03;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    iget p0, p0, Lu03;->s:I
-
-    .line 8
-    .line 9
     return p0
 .end method
 
-.method public final b()Z
+.method public final b()I
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lh03;->a:Lf13;
+    iget p0, p0, Lh03;->a:I
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Lf13;->h()Lu03;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    iget-object p0, p0, Lu03;->p:Ljava/util/List;
-
-    .line 8
-    .line 9
-    invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    xor-int/lit8 p0, p0, 0x1
-
-    .line 14
-    .line 15
     return p0
 .end method
 
-.method public final c()I
+.method public final c()Ljava/util/Map;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lh03;->a:Lf13;
+    iget-object p0, p0, Lh03;->c:Ljava/util/Map;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Lf13;->h()Lu03;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    iget-object p0, p0, Lu03;->p:Ljava/util/List;
-
-    .line 8
-    .line 9
-    invoke-static {p0}, Lfu0;->M0(Ljava/util/List;)Ljava/lang/Object;
-
-    .line 10
-    .line 11
-    .line 12
-    move-result-object p0
-
-    .line 13
-    check-cast p0, Lv03;
-
-    .line 14
-    .line 15
-    iget p0, p0, Lv03;->a:I
-
-    .line 16
-    .line 17
-    return p0
+    return-object p0
 .end method
 
-.method public final d()I
-    .locals 15
+.method public final d()V
+    .locals 2
 
     .line 1
-    iget-object p0, p0, Lh03;->a:Lf13;
+    iget-object v0, p0, Lh03;->f:Lo03;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Lf13;->h()Lu03;
+    iget-object v0, v0, Lo03;->j:La03;
 
     .line 4
     .line 5
-    .line 6
-    move-result-object v0
+    iget-object v1, p0, Lh03;->e:Li03;
 
+    .line 6
     .line 7
-    iget-object v0, v0, Lu03;->p:Ljava/util/List;
+    invoke-virtual {v1}, Li03;->E()Z
 
     .line 8
     .line 9
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
     .line 10
-    .line 11
-    .line 12
-    move-result v0
+    move-result v1
 
+    .line 11
+    iget-object p0, p0, Lh03;->g:Lo52;
+
+    .line 12
     .line 13
-    const/4 v1, 0x0
+    if-eqz v1, :cond_0
 
     .line 14
-    if-eqz v0, :cond_0
-
     .line 15
-    .line 16
-    return v1
+    iget-object v1, v0, La03;->O:Lj9;
 
+    .line 16
     .line 17
-    :cond_0
-    invoke-virtual {p0}, Lf13;->h()Lu03;
+    iget-object v1, v1, Lj9;->d:Ljava/lang/Object;
 
     .line 18
     .line 19
-    .line 20
-    move-result-object v0
+    check-cast v1, Lvo2;
 
+    .line 20
     .line 21
-    iget-object v2, v0, Lu03;->t:Lmc4;
+    iget-object v1, v1, Lvo2;->m0:Luo2;
 
     .line 22
     .line 23
-    const/16 v3, 0x20
+    if-eqz v1, :cond_0
 
     .line 24
     .line 25
-    const-wide v4, 0xffffffffL
+    iget-object v0, v1, Lne3;->y:Loe3;
 
     .line 26
     .line 27
+    invoke-interface {p0, v0}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 28
     .line 29
     .line 30
-    sget-object v6, Lmc4;->j:Lmc4;
+    return-void
 
     .line 31
+    :cond_0
+    iget-object v0, v0, La03;->O:Lj9;
+
     .line 32
-    if-ne v2, v6, :cond_1
-
     .line 33
-    .line 34
-    invoke-virtual {v0}, Lu03;->i()J
+    iget-object v0, v0, Lj9;->d:Ljava/lang/Object;
 
+    .line 34
     .line 35
+    check-cast v0, Lvo2;
+
     .line 36
     .line 37
-    move-result-wide v7
+    iget-object v0, v0, Lne3;->y:Loe3;
 
     .line 38
-    and-long/2addr v7, v4
-
     .line 39
-    :goto_0
-    long-to-int v0, v7
+    invoke-interface {p0, v0}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 40
-    goto :goto_1
-
     .line 41
-    :cond_1
-    invoke-virtual {v0}, Lu03;->i()J
-
     .line 42
-    .line 43
-    .line 44
-    move-result-wide v7
-
-    .line 45
-    shr-long/2addr v7, v3
-
-    .line 46
-    goto :goto_0
-
-    .line 47
-    :goto_1
-    invoke-virtual {p0}, Lf13;->h()Lu03;
-
-    .line 48
-    .line 49
-    .line 50
-    move-result-object p0
-
-    .line 51
-    iget-object v2, p0, Lu03;->t:Lmc4;
-
-    .line 52
-    .line 53
-    iget-object v7, p0, Lu03;->p:Ljava/util/List;
-
-    .line 54
-    .line 55
-    const/4 v8, 0x1
-
-    .line 56
-    if-ne v2, v6, :cond_2
-
-    .line 57
-    .line 58
-    move v2, v8
-
-    .line 59
-    goto :goto_2
-
-    .line 60
-    :cond_2
-    move v2, v1
-
-    .line 61
-    :goto_2
-    invoke-interface {v7}, Ljava/util/List;->isEmpty()Z
-
-    .line 62
-    .line 63
-    .line 64
-    move-result v6
-
-    .line 65
-    if-eqz v6, :cond_3
-
-    .line 66
-    .line 67
-    goto :goto_9
-
-    .line 68
-    :cond_3
-    move v6, v1
-
-    .line 69
-    move v9, v6
-
-    .line 70
-    move v10, v9
-
-    .line 71
-    :goto_3
-    invoke-interface {v7}, Ljava/util/List;->size()I
-
-    .line 72
-    .line 73
-    .line 74
-    move-result v11
-
-    .line 75
-    if-ge v6, v11, :cond_9
-
-    .line 76
-    .line 77
-    invoke-interface {v7, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    .line 78
-    .line 79
-    .line 80
-    move-result-object v11
-
-    .line 81
-    check-cast v11, Lv03;
-
-    .line 82
-    .line 83
-    if-eqz v2, :cond_4
-
-    .line 84
-    .line 85
-    iget v11, v11, Lv03;->x:I
-
-    .line 86
-    .line 87
-    goto :goto_4
-
-    .line 88
-    :cond_4
-    iget v11, v11, Lv03;->y:I
-
-    .line 89
-    .line 90
-    :goto_4
-    const/4 v12, -0x1
-
-    .line 91
-    if-ne v11, v12, :cond_5
-
-    .line 92
-    .line 93
-    add-int/lit8 v6, v6, 0x1
-
-    .line 94
-    .line 95
-    goto :goto_3
-
-    .line 96
-    :cond_5
-    move v12, v1
-
-    .line 97
-    :goto_5
-    invoke-interface {v7}, Ljava/util/List;->size()I
-
-    .line 98
-    .line 99
-    .line 100
-    move-result v13
-
-    .line 101
-    if-ge v6, v13, :cond_8
-
-    .line 102
-    .line 103
-    invoke-interface {v7, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    .line 104
-    .line 105
-    .line 106
-    move-result-object v13
-
-    .line 107
-    check-cast v13, Lv03;
-
-    .line 108
-    .line 109
-    if-eqz v2, :cond_6
-
-    .line 110
-    .line 111
-    iget v13, v13, Lv03;->x:I
-
-    .line 112
-    .line 113
-    goto :goto_6
-
-    .line 114
-    :cond_6
-    iget v13, v13, Lv03;->y:I
-
-    .line 115
-    .line 116
-    :goto_6
-    if-ne v13, v11, :cond_8
-
-    .line 117
-    .line 118
-    if-eqz v2, :cond_7
-
-    .line 119
-    .line 120
-    invoke-interface {v7, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    .line 121
-    .line 122
-    .line 123
-    move-result-object v13
-
-    .line 124
-    check-cast v13, Lv03;
-
-    .line 125
-    .line 126
-    iget-wide v13, v13, Lv03;->v:J
-
-    .line 127
-    .line 128
-    and-long/2addr v13, v4
-
-    .line 129
-    :goto_7
-    long-to-int v13, v13
-
-    .line 130
-    goto :goto_8
-
-    .line 131
-    :cond_7
-    invoke-interface {v7, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    .line 132
-    .line 133
-    .line 134
-    move-result-object v13
-
-    .line 135
-    check-cast v13, Lv03;
-
-    .line 136
-    .line 137
-    iget-wide v13, v13, Lv03;->v:J
-
-    .line 138
-    .line 139
-    shr-long/2addr v13, v3
-
-    .line 140
-    goto :goto_7
-
-    .line 141
-    :goto_8
-    invoke-static {v12, v13}, Ljava/lang/Math;->max(II)I
-
-    .line 142
-    .line 143
-    .line 144
-    move-result v12
-
-    .line 145
-    add-int/lit8 v6, v6, 0x1
-
-    .line 146
-    .line 147
-    goto :goto_5
-
-    .line 148
-    :cond_8
-    add-int/2addr v9, v12
-
-    .line 149
-    add-int/lit8 v10, v10, 0x1
-
-    .line 150
-    .line 151
-    goto :goto_3
-
-    .line 152
-    :cond_9
-    div-int/2addr v9, v10
-
-    .line 153
-    iget p0, p0, Lu03;->v:I
-
-    .line 154
-    .line 155
-    add-int v1, v9, p0
-
-    .line 156
-    .line 157
-    :goto_9
-    if-nez v1, :cond_a
-
-    .line 158
-    .line 159
-    goto :goto_a
-
-    .line 160
-    :cond_a
-    div-int/2addr v0, v1
-
-    .line 161
-    if-ge v0, v8, :cond_b
-
-    .line 162
-    .line 163
-    :goto_a
-    return v8
-
-    .line 164
-    :cond_b
-    return v0
+    return-void
 .end method
 
-.method public final e()I
+.method public final f()Lo52;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lh03;->a:Lf13;
+    iget-object p0, p0, Lh03;->d:Lo52;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Lf13;->g()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
+    return-object p0
 .end method

@@ -1,6 +1,6 @@
 .class public final Landroidx/lifecycle/ProcessLifecycleInitializer;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
 .implements Lho2;
@@ -34,7 +34,7 @@
     .locals 0
 
     .line 1
-    sget-object p0, Lst1;->j:Lst1;
+    sget-object p0, Lqt1;->j:Lqt1;
 
     .line 2
     .line 3
@@ -50,7 +50,7 @@
     .line 2
     .line 3
     .line 4
-    invoke-static {p1}, Lgq6;->M(Landroid/content/Context;)Lgq6;
+    invoke-static {p1}, Lsr6;->M(Landroid/content/Context;)Lsr6;
 
     .line 5
     .line 6
@@ -63,7 +63,7 @@
     .line 9
     .line 10
     .line 11
-    iget-object p0, p0, Lgq6;->l:Ljava/lang/Object;
+    iget-object p0, p0, Lsr6;->l:Ljava/lang/Object;
 
     .line 12
     .line 13
@@ -87,7 +87,7 @@
 
     .line 22
     .line 23
-    sget-object p0, Lh53;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    sget-object p0, Lz53;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 24
     .line 25
@@ -127,11 +127,11 @@
 
     .line 41
     .line 42
-    new-instance v0, Lg53;
+    new-instance v0, Ly53;
 
     .line 43
     .line 44
-    invoke-direct {v0}, Lg53;-><init>()V
+    invoke-direct {v0}, Ly53;-><init>()V
 
     .line 45
     .line 46
@@ -142,7 +142,7 @@
     .line 49
     .line 50
     :goto_0
-    sget-object p0, Lds4;->q:Lds4;
+    sget-object p0, Lzs4;->q:Lzs4;
 
     .line 51
     .line 52
@@ -160,19 +160,19 @@
     .line 58
     .line 59
     .line 60
-    iput-object v0, p0, Lds4;->n:Landroid/os/Handler;
+    iput-object v0, p0, Lzs4;->n:Landroid/os/Handler;
 
     .line 61
     .line 62
-    iget-object v0, p0, Lds4;->o:Lq53;
+    iget-object v0, p0, Lzs4;->o:Lh63;
 
     .line 63
     .line 64
-    sget-object v1, Le53;->ON_CREATE:Le53;
+    sget-object v1, Lw53;->ON_CREATE:Lw53;
 
     .line 65
     .line 66
-    invoke-virtual {v0, v1}, Lq53;->d(Le53;)V
+    invoke-virtual {v0, v1}, Lh63;->d(Lw53;)V
 
     .line 67
     .line 68
@@ -194,11 +194,11 @@
 
     .line 77
     .line 78
-    new-instance v0, Lcs4;
+    new-instance v0, Lys4;
 
     .line 79
     .line 80
-    invoke-direct {v0, p0}, Lcs4;-><init>(Lds4;)V
+    invoke-direct {v0, p0}, Lys4;-><init>(Lzs4;)V
 
     .line 81
     .line 82
@@ -216,7 +216,7 @@
 
     .line 88
     .line 89
-    invoke-static {p0}, Lmv1;->e(Ljava/lang/String;)V
+    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
 
     .line 90
     .line 91

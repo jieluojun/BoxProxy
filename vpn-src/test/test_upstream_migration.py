@@ -26,7 +26,7 @@ class UpstreamMigrationTest(unittest.TestCase):
     def setUpClass(cls):
         cls.temp = tempfile.TemporaryDirectory()
         cls.addClassCleanup(cls.temp.cleanup)
-        cls.project = migration.prepare(SNAPSHOT, Path(cls.temp.name) / 'stage')
+        cls.project = migration.prepare(SNAPSHOT, Path(cls.temp.name) / 'stage', phase="phase1")
 
     def text(self, name):
         return (self.project / 'smali' / name).read_text()
@@ -100,7 +100,7 @@ class UpstreamMigrationTest(unittest.TestCase):
             output = Path(tmp) / 'stage'
             with patch.object(migration, 'apply_phase', side_effect=ValueError('rejected')):
                 with self.assertRaisesRegex(ValueError, 'rejected'):
-                    migration.prepare(SNAPSHOT, output)
+                    migration.prepare(SNAPSHOT, output, phase="phase1")
             self.assertFalse(output.exists())
             self.assertEqual(list(Path(tmp).iterdir()), [])
 

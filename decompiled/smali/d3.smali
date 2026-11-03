@@ -1,19 +1,94 @@
 .class public abstract Ld3;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lgz2;
+
+
+# static fields
+.field public static final l:Ljava/util/concurrent/ThreadPoolExecutor;
 
 
 # instance fields
-.field public final j:Lf3;
+.field public j:Lqt0;
 
-.field public final synthetic k:Lg3;
+.field public k:Ln61;
 
 
 # direct methods
-.method public constructor <init>(Lg3;Lf3;)V
+.method static constructor <clinit>()V
+    .locals 9
+
+    .line 1
+    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0}, Ljava/lang/Runtime;->availableProcessors()I
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v0
+
+    .line 9
+    const/4 v1, 0x2
+
+    .line 10
+    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
+
+    .line 11
+    .line 12
+    .line 13
+    move-result v4
+
+    .line 14
+    new-instance v2, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    .line 15
+    .line 16
+    new-instance v8, Ljava/util/concurrent/LinkedBlockingQueue;
+
+    .line 17
+    .line 18
+    const/16 v0, 0x80
+
+    .line 19
+    .line 20
+    invoke-direct {v8, v0}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>(I)V
+
+    .line 21
+    .line 22
+    .line 23
+    const/4 v3, 0x2
+
+    .line 24
+    const-wide/16 v5, 0x1
+
+    .line 25
+    .line 26
+    sget-object v7, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
+
+    .line 27
+    .line 28
+    invoke-direct/range {v2 .. v8}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;)V
+
+    .line 29
+    .line 30
+    .line 31
+    sput-object v2, Ld3;->l:Ljava/util/concurrent/ThreadPoolExecutor;
+
+    .line 32
+    .line 33
+    return-void
+.end method
+
+.method public constructor <init>(Lqt0;Ln61;)V
     .locals 0
 
     .line 1
@@ -22,11 +97,11 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Ld3;->k:Lg3;
+    iput-object p1, p0, Ld3;->j:Lqt0;
 
     .line 5
     .line 6
-    iput-object p2, p0, Ld3;->j:Lf3;
+    iput-object p2, p0, Ld3;->k:Ln61;
 
     .line 7
     .line 8
@@ -35,120 +110,22 @@
 
 
 # virtual methods
-.method public abstract a()Ljava/lang/Object;
-.end method
-
-.method public b()Z
+.method public final t()V
     .locals 0
 
     .line 1
-    iget-object p0, p0, Ld3;->k:Lg3;
+    iget-object p0, p0, Ld3;->j:Lqt0;
 
     .line 2
     .line 3
-    iget-object p0, p0, Lg3;->j:Lvt0;
+    invoke-virtual {p0}, Lqt0;->getInlayHints()Lko2;
 
     .line 4
     .line 5
-    if-eqz p0, :cond_0
-
     .line 6
+    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+
     .line 7
-    const/4 p0, 0x1
-
     .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public final run()V
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Ld3;->b()Z
-
-    .line 2
-    .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    if-eqz v0, :cond_0
-
-    .line 6
-    .line 7
-    invoke-virtual {p0}, Ld3;->a()Ljava/lang/Object;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object v0
-
-    .line 11
-    iget-object p0, p0, Ld3;->j:Lf3;
-
-    .line 12
-    .line 13
-    invoke-virtual {p0, v0}, Lf3;->a(Ljava/lang/Object;)V
-
-    .line 14
-    .line 15
-    .line 16
     return-void
-
-    .line 17
-    :cond_0
-    iget-object p0, p0, Ld3;->j:Lf3;
-
-    .line 18
-    .line 19
-    monitor-enter p0
-
-    .line 20
-    :try_start_0
-    iget v0, p0, Lf3;->e:I
-
-    .line 21
-    .line 22
-    add-int/lit8 v0, v0, 0x1
-
-    .line 23
-    .line 24
-    iput v0, p0, Lf3;->e:I
-
-    .line 25
-    .line 26
-    const/4 v0, 0x0
-
-    .line 27
-    invoke-virtual {p0, v0}, Lf3;->a(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 28
-    .line 29
-    .line 30
-    monitor-exit p0
-
-    .line 31
-    return-void
-
-    .line 32
-    :catchall_0
-    move-exception v0
-
-    .line 33
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 34
-    throw v0
 .end method

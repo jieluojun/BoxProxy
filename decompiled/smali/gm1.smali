@@ -1,49 +1,74 @@
-.class public abstract synthetic Lgm1;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lgm1;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final synthetic a:[I
+# instance fields
+.field public j:Ltl1;
+
+.field public synthetic k:Ljava/lang/Object;
+
+.field public final synthetic l:Lhm1;
+
+.field public m:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lhm1;Lz71;)V
+    .locals 0
 
     .line 1
-    invoke-static {}, Lol1;->values()[Lol1;
+    iput-object p1, p0, Lgm1;->l:Lhm1;
 
     .line 2
     .line 3
-    .line 4
-    move-result-object v0
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
+    .line 4
     .line 5
-    array-length v0, v0
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iput-object p1, p0, Lgm1;->k:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Lgm1;->m:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
 
     .line 6
-    new-array v0, v0, [I
-
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    const/4 v1, 0x2
+    iput p1, p0, Lgm1;->m:I
 
     .line 9
-    const/4 v2, 0x1
-
     .line 10
-    :try_start_0
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    iget-object p1, p0, Lgm1;->l:Lhm1;
 
     .line 11
     .line 12
-    :catch_0
-    sput-object v0, Lgm1;->a:[I
+    const/4 v0, 0x0
 
     .line 13
+    invoke-virtual {p1, v0, p0}, Lhm1;->R1(Ltl1;Lz71;)Ljava/lang/Object;
+
     .line 14
-    return-void
+    .line 15
+    .line 16
+    move-result-object p0
+
+    .line 17
+    return-object p0
 .end method

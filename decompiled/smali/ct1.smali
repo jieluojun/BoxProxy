@@ -1,173 +1,176 @@
 .class public final Lct1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lat1;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final k:Ljava/lang/String;
+.field public final a:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;B)V
+.method public synthetic constructor <init>(I)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lct1;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lct1;->k:Ljava/lang/String;
+    .line 4
+    iput p1, p0, Lct1;->a:I
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public static a(I)Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    if-nez p0, :cond_0
+
+    .line 2
+    .line 3
+    const-string p0, "EmojiSupportMatch.Default"
 
     .line 4
     .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    return-object p0
 
     .line 6
+    :cond_0
+    const/4 v0, 0x1
+
     .line 7
+    if-ne p0, v0, :cond_1
+
     .line 8
-    return-void
+    .line 9
+    const-string p0, "EmojiSupportMatch.None"
+
+    .line 10
+    .line 11
+    return-object p0
+
+    .line 12
+    :cond_1
+    const/4 v0, 0x2
+
+    .line 13
+    if-ne p0, v0, :cond_2
+
+    .line 14
+    .line 15
+    const-string p0, "EmojiSupportMatch.All"
+
+    .line 16
+    .line 17
+    return-object p0
+
+    .line 18
+    :cond_2
+    const-string v0, "Invalid(value="
+
+    .line 19
+    .line 20
+    const-string v1, ")"
+
+    .line 21
+    .line 22
+    invoke-static {p0, v0, v1}, Lpb1;->m(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object p0
+
+    .line 26
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public a()Ljava/lang/Object;
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
     .line 1
-    return-object p0
-.end method
-
-.method public h(Ljava/lang/CharSequence;IILtx6;)Z
-    .locals 0
-
-    .line 1
-    invoke-interface {p1, p2, p3}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
+    instance-of v0, p1, Lct1;
 
     .line 2
     .line 3
-    .line 4
-    move-result-object p1
+    if-nez v0, :cond_0
 
+    .line 4
     .line 5
-    iget-object p0, p0, Lct1;->k:Ljava/lang/String;
+    goto :goto_0
 
     .line 6
-    .line 7
-    invoke-static {p1, p0}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    :cond_0
+    check-cast p1, Lct1;
 
+    .line 7
     .line 8
+    iget p1, p1, Lct1;->a:I
+
     .line 9
     .line 10
-    move-result p0
+    iget p0, p0, Lct1;->a:I
 
     .line 11
-    if-eqz p0, :cond_0
-
     .line 12
+    if-eq p0, p1, :cond_1
+
     .line 13
-    iget p0, p4, Ltx6;->c:I
-
     .line 14
-    .line 15
-    and-int/lit8 p0, p0, 0x3
-
-    .line 16
-    .line 17
-    or-int/lit8 p0, p0, 0x4
-
-    .line 18
-    .line 19
-    iput p0, p4, Ltx6;->c:I
-
-    .line 20
-    .line 21
+    :goto_0
     const/4 p0, 0x0
 
-    .line 22
+    .line 15
     return p0
 
-    .line 23
-    :cond_0
+    .line 16
+    :cond_1
     const/4 p0, 0x1
 
-    .line 24
+    .line 17
     return p0
 .end method
 
-.method public toString()Ljava/lang/String;
-    .locals 2
+.method public final hashCode()I
+    .locals 0
 
     .line 1
-    iget-byte v0, p0, Lct1;->j:B
+    iget p0, p0, Lct1;->a:I
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_0
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
     .line 4
     .line 5
     .line 6
-    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    move-result p0
 
     .line 7
-    .line 8
-    .line 9
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lct1;->a:I
+
+    .line 2
+    .line 3
+    invoke-static {p0}, Lct1;->a(I)Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
     move-result-object p0
 
-    .line 10
+    .line 7
     return-object p0
-
-    .line 11
-    :pswitch_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 12
-    .line 13
-    const-string v1, "<"
-
-    .line 14
-    .line 15
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 16
-    .line 17
-    .line 18
-    iget-object p0, p0, Lct1;->k:Ljava/lang/String;
-
-    .line 19
-    .line 20
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 21
-    .line 22
-    .line 23
-    const/16 p0, 0x3e
-
-    .line 24
-    .line 25
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 26
-    .line 27
-    .line 28
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 29
-    .line 30
-    .line 31
-    move-result-object p0
-
-    .line 32
-    return-object p0
-
-    .line 33
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
 .end method

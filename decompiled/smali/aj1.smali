@@ -1,340 +1,133 @@
 .class public final Laj1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Ljo3;
-
-
-# static fields
-.field public static final k:Laj1;
-
-.field public static final l:Laj1;
+.implements Ljava/lang/AutoCloseable;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final j:Lzi1;
+
+.field public k:Z
+
+.field public final synthetic l:Lcj1;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 2
-
-    .line 1
-    new-instance v0, Laj1;
-
-    .line 2
-    .line 3
-    const/4 v1, 0x0
-
-    .line 4
-    invoke-direct {v0, v1}, Laj1;-><init>(B)V
-
-    .line 5
-    .line 6
-    .line 7
-    sput-object v0, Laj1;->k:Laj1;
-
-    .line 8
-    .line 9
-    new-instance v0, Laj1;
-
-    .line 10
-    .line 11
-    const/4 v1, 0x1
-
-    .line 12
-    invoke-direct {v0, v1}, Laj1;-><init>(B)V
-
-    .line 13
-    .line 14
-    .line 15
-    sput-object v0, Laj1;->l:Laj1;
-
-    .line 16
-    .line 17
-    return-void
-.end method
-
-.method public synthetic constructor <init>(B)V
+.method public constructor <init>(Lcj1;Lzi1;)V
     .locals 0
 
     .line 1
-    iput-byte p1, p0, Laj1;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    iput-object p1, p0, Laj1;->l:Lcj1;
+
     .line 5
     .line 6
+    iput-object p2, p0, Laj1;->j:Lzi1;
+
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final A()F
-    .locals 0
+.method public final close()V
+    .locals 3
 
     .line 1
-    iget-byte p0, p0, Laj1;->j:B
+    iget-boolean v0, p0, Laj1;->k:Z
 
     .line 2
     .line 3
-    packed-switch p0, :pswitch_data_0
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
+    const/4 v0, 0x1
+
     .line 6
-    const/high16 p0, 0x3f800000    # 1.0f
+    iput-boolean v0, p0, Laj1;->k:Z
 
     .line 7
     .line 8
-    return p0
+    iget-object v0, p0, Laj1;->l:Lcj1;
 
     .line 9
-    :pswitch_0
-    const/high16 p0, 0x3f800000    # 1.0f
-
     .line 10
-    .line 11
-    return p0
-
-    .line 12
-    :pswitch_1
-    const/4 p0, 0x0
-
-    .line 13
-    return p0
-
-    .line 14
-    nop
-
-    .line 15
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final m(Lwa1;)Lwa1;
-    .locals 1
-
-    .line 1
-    iget-byte v0, p0, Laj1;->j:B
-
-    .line 2
-    .line 3
-    packed-switch v0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    invoke-static {p0, p1}, Lf;->R(Lua1;Lwa1;)Lwa1;
-
-    .line 7
-    .line 8
-    .line 9
-    move-result-object p0
-
-    .line 10
-    return-object p0
+    iget-object v1, v0, Lcj1;->q:Ljava/lang/Object;
 
     .line 11
-    :pswitch_0
-    invoke-static {p0, p1}, Lf;->R(Lua1;Lwa1;)Lwa1;
-
     .line 12
-    .line 13
-    .line 14
-    move-result-object p0
+    monitor-enter v1
 
+    .line 13
+    :try_start_0
+    iget-object p0, p0, Laj1;->j:Lzi1;
+
+    .line 14
     .line 15
-    return-object p0
+    iget v2, p0, Lzi1;->h:I
 
     .line 16
-    :pswitch_1
-    invoke-static {p0, p1}, Lf;->R(Lua1;Lwa1;)Lwa1;
-
     .line 17
+    add-int/lit8 v2, v2, -0x1
+
     .line 18
     .line 19
-    move-result-object p0
+    iput v2, p0, Lzi1;->h:I
 
     .line 20
-    return-object p0
-
     .line 21
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
+    if-nez v2, :cond_0
 
-.method public final p(Lva1;)Lua1;
-    .locals 1
+    .line 22
+    .line 23
+    iget-boolean v2, p0, Lzi1;->f:Z
 
-    .line 1
-    iget-byte v0, p0, Laj1;->j:B
+    .line 24
+    .line 25
+    if-eqz v2, :cond_0
 
-    .line 2
-    .line 3
-    packed-switch v0, :pswitch_data_0
+    .line 26
+    .line 27
+    invoke-virtual {v0, p0}, Lcj1;->t(Lzi1;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 4
-    .line 5
-    .line 6
-    invoke-static {p0, p1}, Lf;->x(Lua1;Lva1;)Lua1;
+    .line 28
+    .line 29
+    .line 30
+    goto :goto_0
 
-    .line 7
-    .line 8
-    .line 9
-    move-result-object p0
+    .line 31
+    :catchall_0
+    move-exception p0
 
-    .line 10
-    return-object p0
+    .line 32
+    goto :goto_1
 
-    .line 11
-    :pswitch_0
-    invoke-static {p0, p1}, Lf;->x(Lua1;Lva1;)Lua1;
+    .line 33
+    :cond_0
+    :goto_0
+    monitor-exit v1
 
-    .line 12
-    .line 13
-    .line 14
-    move-result-object p0
+    .line 34
+    return-void
 
-    .line 15
-    return-object p0
+    .line 35
+    :goto_1
+    monitor-exit v1
 
-    .line 16
-    :pswitch_1
-    invoke-static {p0, p1}, Lf;->x(Lua1;Lva1;)Lua1;
+    .line 36
+    throw p0
 
-    .line 17
-    .line 18
-    .line 19
-    move-result-object p0
-
-    .line 20
-    return-object p0
-
-    .line 21
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final v(Lv52;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iget-byte v0, p0, Laj1;->j:B
-
-    .line 2
-    .line 3
-    packed-switch v0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    invoke-interface {p1, p2, p0}, Lv52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 7
-    .line 8
-    .line 9
-    move-result-object p0
-
-    .line 10
-    return-object p0
-
-    .line 11
-    :pswitch_0
-    invoke-interface {p1, p2, p0}, Lv52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object p0
-
-    .line 15
-    return-object p0
-
-    .line 16
-    :pswitch_1
-    invoke-interface {p1, p2, p0}, Lv52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 17
-    .line 18
-    .line 19
-    move-result-object p0
-
-    .line 20
-    return-object p0
-
-    .line 21
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final z(Lva1;)Lwa1;
-    .locals 1
-
-    .line 1
-    iget-byte v0, p0, Laj1;->j:B
-
-    .line 2
-    .line 3
-    packed-switch v0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    invoke-static {p0, p1}, Lf;->K(Lua1;Lva1;)Lwa1;
-
-    .line 7
-    .line 8
-    .line 9
-    move-result-object p0
-
-    .line 10
-    return-object p0
-
-    .line 11
-    :pswitch_0
-    invoke-static {p0, p1}, Lf;->K(Lua1;Lva1;)Lwa1;
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object p0
-
-    .line 15
-    return-object p0
-
-    .line 16
-    :pswitch_1
-    invoke-static {p0, p1}, Lf;->K(Lua1;Lva1;)Lwa1;
-
-    .line 17
-    .line 18
-    .line 19
-    move-result-object p0
-
-    .line 20
-    return-object p0
-
-    .line 21
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 37
+    :cond_1
+    return-void
 .end method

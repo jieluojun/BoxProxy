@@ -1,80 +1,173 @@
-.class public abstract Lzp1;
+.class public final synthetic Lzp1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final a:F
+# instance fields
+.field public final synthetic j:Lcq1;
 
-.field public static final b:D
+.field public final synthetic k:Lpg6;
 
-.field public static final c:D
+.field public final synthetic l:Lpg6;
+
+.field public final synthetic m:Lcy0;
+
+.field public final synthetic n:Landroid/view/View;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(Lcq1;Lpg6;Lpg6;Lcy0;Landroid/view/View;)V
+    .locals 0
 
     .line 1
-    invoke-static {}, Landroid/view/ViewConfiguration;->getScrollFriction()F
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    move-result v0
+    iput-object p1, p0, Lzp1;->j:Lcq1;
 
     .line 5
-    sput v0, Lzp1;->a:F
-
     .line 6
+    iput-object p2, p0, Lzp1;->k:Lpg6;
+
     .line 7
-    const-wide v0, 0x3fe8f5c28f5c28f6L    # 0.78
+    .line 8
+    iput-object p3, p0, Lzp1;->l:Lpg6;
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Lzp1;->m:Lcy0;
+
+    .line 11
+    .line 12
+    iput-object p5, p0, Lzp1;->n:Landroid/view/View;
+
+    .line 13
+    .line 14
+    return-void
+.end method
+
+
+# virtual methods
+.method public final run()V
+    .locals 8
+
+    .line 1
+    iget-object v0, p0, Lzp1;->m:Lcy0;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v4
+
+    .line 7
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 8
     .line 9
     .line 10
+    iget-object v2, p0, Lzp1;->k:Lpg6;
+
     .line 11
     .line 12
-    invoke-static {v0, v1}, Ljava/lang/Math;->log(D)D
+    iget-object v0, v2, Lpg6;->a:Lo52;
 
     .line 13
     .line 14
-    .line 15
-    move-result-wide v0
+    iget-object v5, p0, Lzp1;->n:Landroid/view/View;
 
+    .line 15
     .line 16
-    const-wide v2, 0x3feccccccccccccdL    # 0.9
+    invoke-virtual {v5}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
 
     .line 17
     .line 18
     .line 19
-    .line 20
-    .line 21
-    invoke-static {v2, v3}, Ljava/lang/Math;->log(D)D
+    move-result-object v1
 
+    .line 20
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 21
     .line 22
     .line 23
+    invoke-interface {v0, v1}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 24
-    move-result-wide v2
-
     .line 25
-    div-double/2addr v0, v2
-
     .line 26
-    sput-wide v0, Lzp1;->b:D
+    move-result-object v0
 
     .line 27
+    check-cast v0, Ljava/lang/Boolean;
+
     .line 28
-    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
-
     .line 29
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
     .line 30
-    sub-double/2addr v0, v2
-
     .line 31
-    sput-wide v0, Lzp1;->c:D
-
     .line 32
+    move-result v6
+
     .line 33
+    iget-object v3, p0, Lzp1;->l:Lpg6;
+
+    .line 34
+    .line 35
+    iget-object v0, v3, Lpg6;->a:Lo52;
+
+    .line 36
+    .line 37
+    invoke-virtual {v5}, Landroid/view/View;->getResources()Landroid/content/res/Resources;
+
+    .line 38
+    .line 39
+    .line 40
+    move-result-object v1
+
+    .line 41
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 42
+    .line 43
+    .line 44
+    invoke-interface {v0, v1}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 45
+    .line 46
+    .line 47
+    move-result-object v0
+
+    .line 48
+    check-cast v0, Ljava/lang/Boolean;
+
+    .line 49
+    .line 50
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    .line 51
+    .line 52
+    .line 53
+    move-result v7
+
+    .line 54
+    iget-object v1, p0, Lzp1;->j:Lcq1;
+
+    .line 55
+    .line 56
+    invoke-virtual/range {v1 .. v7}, Lcq1;->b(Lpg6;Lpg6;Landroid/view/Window;Landroid/view/View;ZZ)V
+
+    .line 57
+    .line 58
+    .line 59
     return-void
 .end method

@@ -1,56 +1,73 @@
-.class public abstract Ly45;
-.super Ljava/lang/Object;
+.class public final Ly45;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:[I
+# instance fields
+.field public synthetic j:Ljava/lang/Object;
 
-.field public static final b:[I
+.field public final synthetic k:La55;
+
+.field public l:I
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(La55;Lz71;)V
+    .locals 0
 
     .line 1
-    const v0, 0x1010003
+    iput-object p1, p0, Ly45;->k:La55;
 
     .line 2
     .line 3
-    .line 4
-    const v1, 0x10100d0
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
+    .line 4
     .line 5
     .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    .line 1
+    iput-object p1, p0, Ly45;->j:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Ly45;->l:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
+
+    .line 6
     .line 7
-    const v2, 0x10100d1
+    or-int/2addr p1, v0
 
     .line 8
+    iput p1, p0, Ly45;->l:I
+
     .line 9
     .line 10
-    filled-new-array {v0, v1, v2}, [I
+    iget-object p1, p0, Ly45;->k:La55;
 
     .line 11
     .line 12
-    .line 13
-    move-result-object v1
+    const-wide/16 v0, 0x0
 
+    .line 13
     .line 14
-    sput-object v1, Ly45;->a:[I
+    invoke-virtual {p1, v0, v1, p0}, La55;->M0(JLy71;)Ljava/lang/Object;
 
     .line 15
     .line 16
-    filled-new-array {v0, v2}, [I
-
     .line 17
+    move-result-object p0
+
     .line 18
-    .line 19
-    move-result-object v0
-
-    .line 20
-    sput-object v0, Ly45;->b:[I
-
-    .line 21
-    .line 22
-    return-void
+    return-object p0
 .end method

@@ -1,23 +1,55 @@
 .class public final Lxe1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public a:Lzq1;
+.field public final a:Lse;
 
-.field public b:Landroid/view/View;
+.field public final b:Lwe1;
 
-.field public c:Landroid/widget/TextView;
+.field public final c:Lms3;
 
-.field public d:Landroid/widget/TextView;
 
-.field public e:Landroid/widget/TextView;
+# direct methods
+.method public constructor <init>(Lse;)V
+    .locals 0
 
-.field public f:Landroid/widget/TextView;
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.field public g:Landroid/view/ViewGroup;
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Lxe1;->a:Lse;
 
-.field public h:Landroid/view/ViewGroup;
+    .line 5
+    .line 6
+    new-instance p1, Lwe1;
 
-.field public i:Z
+    .line 7
+    .line 8
+    invoke-direct {p1, p0}, Lwe1;-><init>(Lxe1;)V
+
+    .line 9
+    .line 10
+    .line 11
+    iput-object p1, p0, Lxe1;->b:Lwe1;
+
+    .line 12
+    .line 13
+    new-instance p1, Lms3;
+
+    .line 14
+    .line 15
+    invoke-direct {p1}, Lms3;-><init>()V
+
+    .line 16
+    .line 17
+    .line 18
+    iput-object p1, p0, Lxe1;->c:Lms3;
+
+    .line 19
+    .line 20
+    return-void
+.end method

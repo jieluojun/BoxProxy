@@ -1,71 +1,131 @@
-.class public abstract synthetic Lat;
+.class public final synthetic Lat;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ld52;
 
 
-# static fields
-.field public static final synthetic a:[I
+# instance fields
+.field public final synthetic j:B
+
+.field public final synthetic k:Lyt;
+
+.field public final synthetic l:Lbu;
+
+.field public final synthetic m:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(Lyt;Lbu;ZB)V
+    .locals 0
 
     .line 1
-    invoke-static {}, Llr;->values()[Llr;
+    iput-byte p4, p0, Lat;->j:B
 
     .line 2
     .line 3
-    .line 4
-    move-result-object v0
+    iput-object p1, p0, Lat;->k:Lyt;
 
+    .line 4
     .line 5
-    array-length v0, v0
+    iput-object p2, p0, Lat;->l:Lbu;
 
     .line 6
-    new-array v0, v0, [I
-
     .line 7
-    .line 8
-    const/4 v1, 0x1
+    iput-boolean p3, p0, Lat;->m:Z
 
+    .line 8
     .line 9
-    const/4 v2, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 10
-    :try_start_0
-    aput v1, v0, v2
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
     .line 11
     .line 12
-    :catch_0
-    const/4 v2, 0x2
+    return-void
+.end method
 
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 4
+
+    .line 1
+    iget-byte v0, p0, Lat;->j:B
+
+    .line 2
+    .line 3
+    sget-object v1, Lk27;->a:Lk27;
+
+    .line 4
+    .line 5
+    iget-boolean v2, p0, Lat;->m:Z
+
+    .line 6
+    .line 7
+    iget-object v3, p0, Lat;->l:Lbu;
+
+    .line 8
+    .line 9
+    iget-object p0, p0, Lat;->k:Lyt;
+
+    .line 10
+    .line 11
+    packed-switch v0, :pswitch_data_0
+
+    .line 12
     .line 13
-    :try_start_1
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
     .line 14
-    .line 15
-    :catch_1
-    const/4 v1, 0x3
+    xor-int/lit8 v0, v2, 0x1
 
+    .line 15
     .line 16
-    :try_start_2
-    aput v1, v0, v2
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+    invoke-static {v3, v0}, Lx37;->e(Lbu;Z)Lcu;
 
     .line 17
     .line 18
-    :catch_2
-    sput-object v0, Lat;->a:[I
-
     .line 19
+    move-result-object v0
+
     .line 20
-    return-void
+    iget-object p0, p0, Lyt;->h:Las3;
+
+    .line 21
+    .line 22
+    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
+
+    .line 23
+    .line 24
+    .line 25
+    return-object v1
+
+    .line 26
+    :pswitch_0
+    invoke-static {v3, v2}, Lx37;->e(Lbu;Z)Lcu;
+
+    .line 27
+    .line 28
+    .line 29
+    move-result-object v0
+
+    .line 30
+    iget-object p0, p0, Lyt;->h:Las3;
+
+    .line 31
+    .line 32
+    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
+
+    .line 33
+    .line 34
+    .line 35
+    return-object v1
+
+    .line 36
+    nop
+
+    .line 37
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,361 +1,207 @@
 .class public final synthetic Lq1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lr52;
+.implements Lo52;
 
 
 # instance fields
 .field public final synthetic j:B
 
-.field public final synthetic k:Lbh1;
-
-.field public final synthetic l:Lnr3;
+.field public final synthetic k:Ls52;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lbh1;Lnr3;B)V
+.method public synthetic constructor <init>(Ls52;B)V
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Lq1;->j:B
+    iput-byte p2, p0, Lq1;->j:B
 
     .line 2
     .line 3
-    iput-object p1, p0, Lq1;->k:Lbh1;
+    iput-object p1, p0, Lq1;->k:Ls52;
 
     .line 4
     .line 5
-    iput-object p2, p0, Lq1;->l:Lnr3;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 6
     .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 8
-    .line 9
-    .line 10
     return-void
 .end method
 
 
 # virtual methods
 .method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 8
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Lq1;->j:B
 
     .line 2
     .line 3
-    const/16 v1, 0x20
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
     .line 5
-    sget-object v2, Ld07;->a:Ld07;
+    iget-object p0, p0, Lq1;->k:Ls52;
 
     .line 6
     .line 7
-    const-wide v3, 0xffffffffL
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
     .line 10
+    check-cast p1, Ljz2;
+
     .line 11
     .line 12
-    iget-object v5, p0, Lq1;->l:Lnr3;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 13
     .line 14
-    iget-object p0, p0, Lq1;->k:Lbh1;
-
     .line 15
-    .line 16
-    packed-switch v0, :pswitch_data_0
+    const-wide/16 v2, 0x0
 
+    .line 16
     .line 17
+    invoke-interface {p1, v2, v3}, Ljz2;->T(J)J
+
     .line 18
     .line 19
-    check-cast p1, Ldl1;
-
     .line 20
+    move-result-wide v2
+
     .line 21
-    iget-wide v6, p1, Ldl1;->a:J
+    new-instance v0, Lj94;
 
     .line 22
     .line 23
-    invoke-static {v6, v7}, Ldl1;->b(J)F
+    invoke-direct {v0, v2, v3}, Lj94;-><init>(J)V
 
     .line 24
     .line 25
     .line 26
-    move-result v0
+    invoke-interface {p1}, Ljz2;->Q()J
 
     .line 27
-    invoke-interface {p0, v0}, Lbh1;->t0(F)I
-
     .line 28
     .line 29
+    move-result-wide v2
+
     .line 30
-    move-result v0
+    new-instance p1, Lar2;
 
     .line 31
-    iget-wide v6, p1, Ldl1;->a:J
-
     .line 32
-    .line 33
-    invoke-static {v6, v7}, Ldl1;->a(J)F
+    invoke-direct {p1, v2, v3}, Lar2;-><init>(J)V
 
+    .line 33
     .line 34
     .line 35
+    invoke-interface {p0, v0, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 36
-    move-result p1
-
     .line 37
-    invoke-interface {p0, p1}, Lbh1;->t0(F)I
-
     .line 38
-    .line 39
-    .line 40
-    move-result p0
+    return-object v1
 
+    .line 39
+    :pswitch_0
+    check-cast p1, Lmh;
+
+    .line 40
     .line 41
-    int-to-long v6, v0
+    iget-object v0, p1, Lmh;->e:Lgl4;
 
     .line 42
-    shl-long v0, v6, v1
-
     .line 43
+    invoke-virtual {v0}, Lgl4;->getValue()Ljava/lang/Object;
+
     .line 44
-    int-to-long p0, p0
-
     .line 45
-    and-long/2addr p0, v3
-
     .line 46
-    or-long/2addr p0, v0
+    move-result-object v0
 
     .line 47
-    new-instance v0, Lzq2;
+    sget-object v2, Lf47;->a:Liy6;
 
     .line 48
     .line 49
-    invoke-direct {v0, p0, p1}, Lzq2;-><init>(J)V
+    iget-object v2, v2, Liy6;->b:Lo52;
 
     .line 50
     .line 51
-    .line 52
-    invoke-interface {v5, v0}, Lnr3;->setValue(Ljava/lang/Object;)V
+    iget-object p1, p1, Lmh;->f:Lth;
 
+    .line 52
     .line 53
+    invoke-interface {v2, p1}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 54
     .line 55
-    return-object v2
-
     .line 56
-    :pswitch_0
-    check-cast p1, Lg52;
+    move-result-object p1
 
     .line 57
-    .line 58
-    new-instance v0, Liv4;
+    invoke-interface {p0, v0, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 58
     .line 59
     .line 60
-    const/16 v1, 0xa
+    return-object v1
 
     .line 61
-    .line 62
-    invoke-direct {v0, p1, v1}, Liv4;-><init>(Lg52;B)V
+    :pswitch_1
+    check-cast p1, Ljava/lang/String;
 
+    .line 62
     .line 63
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 64
     .line 65
-    new-instance p1, Lq1;
-
     .line 66
-    .line 67
-    const/4 v1, 0x4
+    const-string v0, "USDT (TRC20)"
 
+    .line 67
     .line 68
-    invoke-direct {p1, p0, v5, v1}, Lq1;-><init>(Lbh1;Lnr3;B)V
+    invoke-interface {p0, v0, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 69
     .line 70
     .line 71
-    invoke-static {v0, p1}, Lre3;->a(Lr52;Lr52;)Lxn3;
+    return-object v1
 
     .line 72
+    :pswitch_2
+    check-cast p1, Ljava/lang/String;
+
     .line 73
     .line 74
-    move-result-object p0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 75
-    return-object p0
-
     .line 76
-    :pswitch_1
-    check-cast p1, Ldl1;
-
     .line 77
+    const-string v0, "USDT (TON)"
+
     .line 78
-    iget-wide v6, p1, Ldl1;->a:J
-
     .line 79
-    .line 80
-    invoke-static {v6, v7}, Ldl1;->b(J)F
+    invoke-interface {p0, v0, p1}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 80
     .line 81
     .line 82
+    return-object v1
+
     .line 83
-    move-result v0
-
-    .line 84
-    invoke-interface {p0, v0}, Lbh1;->t0(F)I
-
-    .line 85
-    .line 86
-    .line 87
-    move-result v0
-
-    .line 88
-    iget-wide v6, p1, Ldl1;->a:J
-
-    .line 89
-    .line 90
-    invoke-static {v6, v7}, Ldl1;->a(J)F
-
-    .line 91
-    .line 92
-    .line 93
-    move-result p1
-
-    .line 94
-    invoke-interface {p0, p1}, Lbh1;->t0(F)I
-
-    .line 95
-    .line 96
-    .line 97
-    move-result p0
-
-    .line 98
-    int-to-long v6, v0
-
-    .line 99
-    shl-long v0, v6, v1
-
-    .line 100
-    .line 101
-    int-to-long p0, p0
-
-    .line 102
-    and-long/2addr p0, v3
-
-    .line 103
-    or-long/2addr p0, v0
-
-    .line 104
-    new-instance v0, Lzq2;
-
-    .line 105
-    .line 106
-    invoke-direct {v0, p0, p1}, Lzq2;-><init>(J)V
-
-    .line 107
-    .line 108
-    .line 109
-    invoke-interface {v5, v0}, Lnr3;->setValue(Ljava/lang/Object;)V
-
-    .line 110
-    .line 111
-    .line 112
-    return-object v2
-
-    .line 113
-    :pswitch_2
-    check-cast p1, Lg52;
-
-    .line 114
-    .line 115
-    new-instance v0, Liv4;
-
-    .line 116
-    .line 117
-    const/4 v1, 0x7
-
-    .line 118
-    invoke-direct {v0, p1, v1}, Liv4;-><init>(Lg52;B)V
-
-    .line 119
-    .line 120
-    .line 121
-    new-instance p1, Lq1;
-
-    .line 122
-    .line 123
-    const/4 v1, 0x2
-
-    .line 124
-    invoke-direct {p1, p0, v5, v1}, Lq1;-><init>(Lbh1;Lnr3;B)V
-
-    .line 125
-    .line 126
-    .line 127
-    invoke-static {v0, p1}, Lre3;->a(Lr52;Lr52;)Lxn3;
-
-    .line 128
-    .line 129
-    .line 130
-    move-result-object p0
-
-    .line 131
-    return-object p0
-
-    .line 132
-    :pswitch_3
-    check-cast p1, Lzq2;
-
-    .line 133
-    .line 134
-    iget-wide v0, p1, Lzq2;->a:J
-
-    .line 135
-    .line 136
-    and-long/2addr v0, v3
-
-    .line 137
-    long-to-int p1, v0
-
-    .line 138
-    invoke-interface {p0, p1}, Lbh1;->j1(I)F
-
-    .line 139
-    .line 140
-    .line 141
-    move-result p0
-
-    .line 142
-    new-instance p1, Lal1;
-
-    .line 143
-    .line 144
-    invoke-direct {p1, p0}, Lal1;-><init>(F)V
-
-    .line 145
-    .line 146
-    .line 147
-    invoke-interface {v5, p1}, Lnr3;->setValue(Ljava/lang/Object;)V
-
-    .line 148
-    .line 149
-    .line 150
-    return-object v2
-
-    .line 151
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3
         :pswitch_2
         :pswitch_1
         :pswitch_0

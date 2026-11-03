@@ -1,155 +1,129 @@
 .class public final Ll42;
-.super Lmv3;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-
-# instance fields
-.field public final h:Lvi1;
-
-
-# direct methods
-.method public constructor <init>(Lvi1;)V
-    .locals 2
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    sget-object v0, Lrv3;->a:Lrv3;
-
-    .line 5
-    .line 6
-    const/4 v1, 0x1
-
-    .line 7
-    invoke-direct {p0, v0, v1}, Lmv3;-><init>(Lsv3;Z)V
-
-    .line 8
-    .line 9
-    .line 10
-    iput-object p1, p0, Ll42;->h:Lvi1;
-
-    .line 11
-    .line 12
-    return-void
-.end method
+# interfaces
+.implements Lh23;
 
 
 # virtual methods
-.method public final d()V
+.method public final b(Lyg1;I)I
     .locals 0
 
     .line 1
-    iget-object p0, p0, Ll42;->h:Lvi1;
+    int-to-float p0, p2
 
     .line 2
+    const/4 p1, 0x0
+
     .line 3
-    invoke-virtual {p0}, Ltv3;->a()V
+    mul-float/2addr p0, p1
 
     .line 4
+    invoke-static {p0}, Lai3;->E(F)I
+
     .line 5
     .line 6
-    return-void
+    .line 7
+    move-result p0
+
+    .line 8
+    return p0
 .end method
 
-.method public final e()V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 0
 
     .line 1
-    iget-object p0, p0, Ll42;->h:Lvi1;
+    instance-of p0, p1, Ll42;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ltv3;->b()V
+    if-eqz p0, :cond_0
 
     .line 4
     .line 5
+    const/4 p0, 0x1
+
     .line 6
-    return-void
-.end method
-
-.method public final f(Lhv3;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Ll42;->h:Lvi1;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 4
-    .line 5
-    .line 6
-    invoke-virtual {p0, p1}, Ltv3;->c(Lhv3;)V
+    return p0
 
     .line 7
+    :cond_0
+    const/4 p0, 0x0
+
     .line 8
-    .line 9
-    return-void
+    return p0
 .end method
 
-.method public final g(Lhv3;)V
-    .locals 2
+.method public final f(Lyg1;I)I
+    .locals 0
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    int-to-float p0, p2
+
+    .line 2
+    const/high16 p1, 0x3f000000    # 0.5f
+
+    .line 3
+    .line 4
+    mul-float/2addr p0, p1
+
+    .line 5
+    invoke-static {p0}, Lai3;->E(F)I
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    .line 1
+    const/high16 p0, 0x3f000000    # 0.5f
 
     .line 2
     .line 3
-    .line 4
-    iget-object p0, p0, Ll42;->h:Lvi1;
+    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
 
+    .line 4
     .line 5
     .line 6
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result p0
 
     .line 7
+    mul-int/lit8 p0, p0, 0x1f
+
     .line 8
     .line 9
-    iget-object v0, p0, Ltv3;->a:Liv3;
+    const/4 v0, 0x0
 
     .line 10
-    .line 11
-    if-eqz v0, :cond_1
+    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
 
+    .line 11
     .line 12
     .line 13
-    iget-boolean v1, p0, Ltv3;->b:Z
+    move-result v0
 
     .line 14
+    add-int/2addr v0, p0
+
     .line 15
-    if-nez v1, :cond_0
+    return v0
+.end method
 
-    .line 16
-    .line 17
-    invoke-virtual {v0, p0, p1}, Liv3;->e(Ltv3;Lhv3;)V
+.method public final j()Z
+    .locals 0
 
-    .line 18
-    .line 19
-    .line 20
-    const/4 p1, 0x1
+    .line 1
+    const/4 p0, 0x0
 
-    .line 21
-    iput-boolean p1, p0, Ltv3;->b:Z
-
-    .line 22
-    .line 23
-    :cond_0
-    return-void
-
-    .line 24
-    :cond_1
-    const-string p0, "This input is not added to any dispatcher."
-
-    .line 25
-    .line 26
-    invoke-static {p0}, Lmv1;->e(Ljava/lang/String;)V
-
-    .line 27
-    .line 28
-    .line 29
-    return-void
+    .line 2
+    return p0
 .end method

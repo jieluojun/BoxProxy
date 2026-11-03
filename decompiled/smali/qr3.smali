@@ -1,152 +1,94 @@
-.class public abstract Lqr3;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public Lqr3;
+.super Lsr3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lex2;
+.implements Lfx2;
 
 
 # direct methods
-.method public static final a(ILjava/util/List;)V
+.method public constructor <init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 6
+
+    .line 1
+    const/4 v5, 0x1
+
+    .line 2
+    sget-object v1, Ldh0;->NO_RECEIVER:Ljava/lang/Object;
+
+    .line 3
+    .line 4
+    move-object v0, p0
+
+    .line 5
+    move-object v2, p1
+
+    .line 6
+    move-object v3, p2
+
+    .line 7
+    move-object v4, p3
+
+    .line 8
+    invoke-direct/range {v0 .. v5}, Lzt4;-><init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 9
+    .line 10
+    .line 11
+    return-void
+.end method
+
+
+# virtual methods
+.method public final computeReflected()Lsw2;
+    .locals 1
+
+    .line 1
+    sget-object v0, La95;->a:Lb95;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
+    .line 5
+    .line 6
+    return-object p0
+.end method
+
+.method public get()Ljava/lang/Object;
     .locals 0
 
     .line 1
-    invoke-interface {p1}, Ljava/util/List;->size()I
+    invoke-virtual {p0}, Lqr3;->getGetter()Ldx2;
 
     .line 2
     .line 3
     .line 4
-    move-result p1
+    const/4 p0, 0x0
 
     .line 5
-    if-ltz p0, :cond_1
-
-    .line 6
-    .line 7
-    if-lt p0, p1, :cond_0
-
-    .line 8
-    .line 9
-    goto :goto_0
-
-    .line 10
-    :cond_0
-    return-void
-
-    .line 11
-    :cond_1
-    :goto_0
-    invoke-static {p0, p1}, Lqr3;->c(II)V
-
-    .line 12
-    .line 13
-    .line 14
-    return-void
+    throw p0
 .end method
 
-.method public static final b(IILjava/util/List;)V
+.method public final getDelegate()Ljava/lang/Object;
     .locals 0
 
     .line 1
-    if-le p0, p1, :cond_0
+    invoke-virtual {p0}, Lzt4;->getReflected()Lfx2;
 
     .line 2
     .line 3
-    invoke-static {p0, p1}, Lqr3;->f(II)V
-
     .line 4
-    .line 5
-    .line 6
-    :cond_0
-    if-gez p0, :cond_1
-
-    .line 7
-    .line 8
-    invoke-static {p0}, Lqr3;->d(I)V
-
-    .line 9
-    .line 10
-    .line 11
-    :cond_1
-    invoke-interface {p2}, Ljava/util/List;->size()I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    if-le p1, p0, :cond_2
-
-    .line 16
-    .line 17
-    invoke-interface {p2}, Ljava/util/List;->size()I
-
-    .line 18
-    .line 19
-    .line 20
-    move-result p0
-
-    .line 21
-    invoke-static {p1, p0}, Lqr3;->e(II)V
-
-    .line 22
-    .line 23
-    .line 24
-    :cond_2
-    return-void
-.end method
-
-.method private static final c(II)V
-    .locals 4
-
-    .line 1
-    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
-
-    .line 2
-    .line 3
-    const-string v1, " is out of bounds. The list has "
-
-    .line 4
-    .line 5
-    const-string v2, " elements."
-
-    .line 6
-    .line 7
-    const-string v3, "Index "
-
-    .line 8
-    .line 9
-    invoke-static {p0, p1, v3, v1, v2}, Lxu1;->k(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 10
-    .line 11
-    .line 12
     move-result-object p0
 
-    .line 13
-    invoke-direct {v0, p0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
-
-    .line 14
-    .line 15
-    .line 16
-    throw v0
-.end method
-
-.method private static final d(I)V
-    .locals 3
-
-    .line 1
-    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
-
-    .line 2
-    .line 3
-    const-string v1, "fromIndex ("
-
-    .line 4
     .line 5
-    const-string v2, ") is less than 0."
+    check-cast p0, Lqr3;
 
     .line 6
     .line 7
-    invoke-static {p0, v1, v2}, Lxu1;->l(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {p0}, Lqr3;->getDelegate()Ljava/lang/Object;
 
     .line 8
     .line 9
@@ -154,82 +96,47 @@
     move-result-object p0
 
     .line 11
-    invoke-direct {v0, p0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
-
-    .line 12
-    .line 13
-    .line 14
-    throw v0
+    return-object p0
 .end method
 
-.method private static final e(II)V
-    .locals 4
+.method public final getGetter()Ldx2;
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
+    invoke-virtual {p0}, Lzt4;->getReflected()Lfx2;
 
     .line 2
     .line 3
-    const-string v1, ") is more than than the list size ("
-
     .line 4
+    move-result-object p0
+
     .line 5
-    const-string v2, ")"
+    check-cast p0, Lqr3;
 
     .line 6
     .line 7
-    const-string v3, "toIndex ("
+    invoke-virtual {p0}, Lqr3;->getGetter()Ldx2;
 
     .line 8
     .line 9
-    invoke-static {p0, p1, v3, v1, v2}, Lxu1;->k(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
     .line 10
+    const/4 p0, 0x0
+
     .line 11
-    .line 12
-    move-result-object p0
-
-    .line 13
-    invoke-direct {v0, p0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
-
-    .line 14
-    .line 15
-    .line 16
-    throw v0
+    return-object p0
 .end method
 
-.method private static final f(II)V
-    .locals 4
+.method public final invoke()Ljava/lang/Object;
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    invoke-interface {p0}, Lex2;->get()Ljava/lang/Object;
 
     .line 2
     .line 3
-    const-string v1, ") is greater than toIndex ("
-
     .line 4
-    .line 5
-    const-string v2, ")."
-
-    .line 6
-    .line 7
-    const-string v3, "Indices are out of order. fromIndex ("
-
-    .line 8
-    .line 9
-    invoke-static {p0, p1, v3, v1, v2}, Lxu1;->k(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 10
-    .line 11
-    .line 12
     move-result-object p0
 
-    .line 13
-    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    .line 14
-    .line 15
-    .line 16
-    throw v0
+    .line 5
+    return-object p0
 .end method

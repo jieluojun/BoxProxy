@@ -1,25 +1,23 @@
 .class public final Lj80;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lt80;
+.implements Lo80;
 
 
 # static fields
-.field public static final Companion:Li80;
+.field public static final INSTANCE:Lj80;
 
-
-# instance fields
-.field public final a:Ljava/lang/String;
+.field public static final synthetic a:Lt03;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
     .line 1
-    new-instance v0, Li80;
+    new-instance v0, Lj80;
 
     .line 2
     .line 3
@@ -28,81 +26,46 @@
     .line 4
     .line 5
     .line 6
-    sput-object v0, Lj80;->Companion:Li80;
+    sput-object v0, Lj80;->INSTANCE:Lj80;
 
     .line 7
     .line 8
-    return-void
-.end method
+    new-instance v0, Lu70;
 
-.method public synthetic constructor <init>(ILjava/lang/String;)V
-    .locals 2
-
-    .line 1
-    and-int/lit8 v0, p1, 0x1
-
-    .line 2
-    .line 3
-    const/4 v1, 0x1
-
-    .line 4
-    if-ne v1, v0, :cond_0
-
-    .line 5
-    .line 6
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 7
-    .line 8
     .line 9
-    iput-object p2, p0, Lj80;->a:Ljava/lang/String;
-
     .line 10
-    .line 11
-    return-void
+    const/16 v1, 0xb
 
+    .line 11
     .line 12
-    :cond_0
-    sget-object p0, Lh80;->a:Lh80;
+    invoke-direct {v0, v1}, Lu70;-><init>(B)V
 
     .line 13
     .line 14
-    invoke-virtual {p0}, Lh80;->c()Lov5;
-
     .line 15
+    sget-object v1, Lt43;->j:Lt43;
+
     .line 16
     .line 17
-    move-result-object p0
+    invoke-static {v1, v0}, Loc7;->Q(Lt43;Ld52;)Lt03;
 
     .line 18
-    invoke-static {p1, v1, p0}, Lu23;->R(IILov5;)V
-
     .line 19
     .line 20
+    move-result-object v0
+
     .line 21
-    const/4 p0, 0x0
+    sput-object v0, Lj80;->a:Lt03;
 
     .line 22
-    throw p0
-.end method
-
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 23
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lj80;->a:Ljava/lang/String;
-
     return-void
 .end method
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+    .locals 1
 
     .line 1
     const/4 v0, 0x1
@@ -116,49 +79,21 @@
 
     .line 5
     :cond_0
-    instance-of v1, p1, Lj80;
+    instance-of p0, p1, Lj80;
 
     .line 6
     .line 7
-    const/4 v2, 0x0
+    if-nez p0, :cond_1
 
     .line 8
-    if-nez v1, :cond_1
-
     .line 9
+    const/4 p0, 0x0
+
     .line 10
-    return v2
+    return p0
 
     .line 11
     :cond_1
-    check-cast p1, Lj80;
-
-    .line 12
-    .line 13
-    iget-object p0, p0, Lj80;->a:Ljava/lang/String;
-
-    .line 14
-    .line 15
-    iget-object p1, p1, Lj80;->a:Ljava/lang/String;
-
-    .line 16
-    .line 17
-    invoke-static {p0, p1}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 18
-    .line 19
-    .line 20
-    move-result p0
-
-    .line 21
-    if-nez p0, :cond_2
-
-    .line 22
-    .line 23
-    return v2
-
-    .line 24
-    :cond_2
     return v0
 .end method
 
@@ -166,44 +101,50 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lj80;->a:Ljava/lang/String;
+    const p0, -0x7626b260
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
-
     .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final serializer()Lgx2;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lgx2;"
+        }
+    .end annotation
 
     .line 1
-    const-string v0, "RuntimeFileEditor(relativePath="
+    sget-object p0, Lj80;->a:Lt03;
 
     .line 2
     .line 3
-    const-string v1, ")"
+    invoke-interface {p0}, Lt03;->getValue()Ljava/lang/Object;
 
     .line 4
     .line 5
-    iget-object p0, p0, Lj80;->a:Ljava/lang/String;
-
     .line 6
+    move-result-object p0
+
     .line 7
-    invoke-static {v0, p0, v1}, Lxu1;->o(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    check-cast p0, Lgx2;
 
     .line 8
     .line 9
-    .line 10
-    move-result-object p0
+    return-object p0
+.end method
 
-    .line 11
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    const-string p0, "SubscriptionDetails"
+
+    .line 2
+    .line 3
     return-object p0
 .end method

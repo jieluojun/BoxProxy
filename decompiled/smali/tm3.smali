@@ -1,99 +1,417 @@
-.class public abstract Ltm3;
+.class public final Ltm3;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ljava/lang/AutoCloseable;
 
 
-# static fields
-.field public static final a:Li76;
+# instance fields
+.field public final j:Lqt0;
 
-.field public static final b:Li76;
+.field public k:Landroid/graphics/Bitmap;
 
-.field public static final c:Li76;
+.field public l:Z
 
-.field public static final d:Li76;
+.field public final m:Ljava/util/ArrayList;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Lqt0;)V
     .locals 4
 
     .line 1
-    const/high16 v0, 0x3f800000    # 1.0f
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const v1, 0x3e4ccccd    # 0.2f
+    .line 4
+    iput-object p1, p0, Ltm3;->j:Lqt0;
+
+    .line 5
+    .line 6
+    new-instance v0, Lnb3;
+
+    .line 7
+    .line 8
+    const/4 v1, 0x3
+
+    .line 9
+    invoke-direct {v0, v1}, Lnb3;-><init>(B)V
+
+    .line 10
+    .line 11
+    .line 12
+    new-instance v0, Landroid/graphics/RectF;
+
+    .line 13
+    .line 14
+    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
+
+    .line 15
+    .line 16
+    .line 17
+    new-instance v0, Landroid/graphics/RectF;
+
+    .line 18
+    .line 19
+    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
+
+    .line 20
+    .line 21
+    .line 22
+    new-instance v0, Lik4;
+
+    .line 23
+    .line 24
+    const/4 v1, 0x0
+
+    .line 25
+    invoke-direct {v0, v1}, Lik4;-><init>(Z)V
+
+    .line 26
+    .line 27
+    .line 28
+    new-instance v0, Ljava/util/ArrayList;
+
+    .line 29
+    .line 30
+    const/4 v1, 0x4
+
+    .line 31
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 32
+    .line 33
+    .line 34
+    new-instance v1, Lvd1;
+
+    .line 35
+    .line 36
+    const/16 v2, 0x12
+
+    .line 37
+    .line 38
+    invoke-direct {v1, p0, v2}, Lvd1;-><init>(Ltm3;B)V
+
+    .line 39
+    .line 40
+    .line 41
+    const-class v2, Ls61;
+
+    .line 42
+    .line 43
+    iget-object v3, p1, Lqt0;->r:Ltv1;
+
+    .line 44
+    .line 45
+    invoke-virtual {v3, v2, v1}, Ltv1;->e(Ljava/lang/Class;Lrv1;)Lue6;
+
+    .line 46
+    .line 47
+    .line 48
+    move-result-object v1
+
+    .line 49
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 50
+    .line 51
+    .line 52
+    new-instance v1, Lvd1;
+
+    .line 53
+    .line 54
+    const/16 v2, 0x13
+
+    .line 55
+    .line 56
+    invoke-direct {v1, p0, v2}, Lvd1;-><init>(Ltm3;B)V
+
+    .line 57
+    .line 58
+    .line 59
+    const-class v2, Ltu0;
+
+    .line 60
+    .line 61
+    iget-object v3, p1, Lqt0;->r:Ltv1;
+
+    .line 62
+    .line 63
+    invoke-virtual {v3, v2, v1}, Ltv1;->e(Ljava/lang/Class;Lrv1;)Lue6;
+
+    .line 64
+    .line 65
+    .line 66
+    move-result-object v1
+
+    .line 67
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 68
+    .line 69
+    .line 70
+    new-instance v1, Lvd1;
+
+    .line 71
+    .line 72
+    const/16 v2, 0x14
+
+    .line 73
+    .line 74
+    invoke-direct {v1, p0, v2}, Lvd1;-><init>(Ltm3;B)V
+
+    .line 75
+    .line 76
+    .line 77
+    const-class v2, Lqq6;
+
+    .line 78
+    .line 79
+    iget-object v3, p1, Lqt0;->r:Ltv1;
+
+    .line 80
+    .line 81
+    invoke-virtual {v3, v2, v1}, Ltv1;->e(Ljava/lang/Class;Lrv1;)Lue6;
+
+    .line 82
+    .line 83
+    .line 84
+    move-result-object v1
+
+    .line 85
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 86
+    .line 87
+    .line 88
+    new-instance v1, Lx6;
+
+    .line 89
+    .line 90
+    const/4 v2, 0x6
+
+    .line 91
+    invoke-direct {v1, p0, v2}, Lx6;-><init>(Ljava/lang/Object;B)V
+
+    .line 92
+    .line 93
+    .line 94
+    const-class v2, Ljr1;
+
+    .line 95
+    .line 96
+    iget-object p1, p1, Lqt0;->r:Ltv1;
+
+    .line 97
+    .line 98
+    invoke-virtual {p1, v2, v1}, Ltv1;->e(Ljava/lang/Class;Lrv1;)Lue6;
+
+    .line 99
+    .line 100
+    .line 101
+    move-result-object p1
+
+    .line 102
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 103
+    .line 104
+    .line 105
+    iput-object v0, p0, Ltm3;->m:Ljava/util/ArrayList;
+
+    .line 106
+    .line 107
+    return-void
+.end method
+
+
+# virtual methods
+.method public final close()V
+    .locals 6
+
+    .line 1
+    iget-object v0, p0, Ltm3;->m:Ljava/util/ArrayList;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     .line 4
     .line 5
     .line 6
-    invoke-static {v0, v1}, Lkr5;->x(FF)Li76;
+    move-result-object v1
 
     .line 7
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
     .line 8
     .line 9
-    move-result-object v2
-
     .line 10
-    sput-object v2, Ltm3;->a:Li76;
+    move-result v2
 
     .line 11
-    .line 12
-    const v2, 0x3f733333    # 0.95f
+    if-eqz v2, :cond_1
 
+    .line 12
     .line 13
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
     .line 14
     .line 15
-    const v3, 0x3eb33333    # 0.35f
-
     .line 16
-    .line 17
-    .line 18
-    invoke-static {v2, v3}, Lkr5;->x(FF)Li76;
-
-    .line 19
-    .line 20
-    .line 21
     move-result-object v2
 
+    .line 17
+    check-cast v2, Lue6;
+
+    .line 18
+    .line 19
+    iget-object v3, v2, Lue6;->c:Ltv1;
+
+    .line 20
+    .line 21
+    iget-object v4, v2, Lue6;->a:Ljava/lang/Class;
+
     .line 22
-    sput-object v2, Ltm3;->b:Li76;
-
     .line 23
-    .line 24
-    const v2, 0x3f19999a    # 0.6f
+    invoke-virtual {v3, v4}, Ltv1;->b(Ljava/lang/Class;)Lsv1;
 
+    .line 24
     .line 25
     .line 26
+    move-result-object v3
+
     .line 27
-    invoke-static {v0, v2}, Lkr5;->x(FF)Li76;
+    iget-object v4, v3, Lsv1;->a:Ljava/util/concurrent/locks/ReentrantReadWriteLock;
 
     .line 28
     .line 29
+    invoke-virtual {v4}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
+
     .line 30
-    move-result-object v0
-
     .line 31
-    sput-object v0, Ltm3;->c:Li76;
-
     .line 32
+    move-result-object v5
+
     .line 33
-    const v0, 0x3f75c28f    # 0.96f
+    invoke-interface {v5}, Ljava/util/concurrent/locks/Lock;->lock()V
 
     .line 34
     .line 35
     .line 36
-    invoke-static {v0, v1}, Lkr5;->x(FF)Li76;
+    :try_start_0
+    iget-object v2, v2, Lue6;->b:Ljava/lang/ref/WeakReference;
 
     .line 37
     .line 38
+    invoke-virtual {v2}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
     .line 39
+    .line 40
+    .line 41
+    move-result-object v2
+
+    .line 42
+    check-cast v2, Luv1;
+
+    .line 43
+    .line 44
+    if-eqz v2, :cond_0
+
+    .line 45
+    .line 46
+    iget-object v3, v3, Lsv1;->b:Ljava/util/ArrayList;
+
+    .line 47
+    .line 48
+    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 49
+    .line 50
+    .line 51
+    goto :goto_1
+
+    .line 52
+    :catchall_0
+    move-exception p0
+
+    .line 53
+    goto :goto_2
+
+    .line 54
+    :cond_0
+    :goto_1
+    invoke-virtual {v4}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
+
+    .line 55
+    .line 56
+    .line 57
+    move-result-object v2
+
+    .line 58
+    invoke-interface {v2}, Ljava/util/concurrent/locks/Lock;->unlock()V
+
+    .line 59
+    .line 60
+    .line 61
+    goto :goto_0
+
+    .line 62
+    :goto_2
+    invoke-virtual {v4}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
+
+    .line 63
+    .line 64
+    .line 65
     move-result-object v0
 
-    .line 40
-    sput-object v0, Ltm3;->d:Li76;
+    .line 66
+    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
 
-    .line 41
-    .line 42
+    .line 67
+    .line 68
+    .line 69
+    throw p0
+
+    .line 70
+    :cond_1
+    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+
+    .line 71
+    .line 72
+    .line 73
+    iget-object v0, p0, Ltm3;->k:Landroid/graphics/Bitmap;
+
+    .line 74
+    .line 75
+    if-eqz v0, :cond_2
+
+    .line 76
+    .line 77
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
+
+    .line 78
+    .line 79
+    .line 80
+    :cond_2
+    const/4 v0, 0x0
+
+    .line 81
+    iput-object v0, p0, Ltm3;->k:Landroid/graphics/Bitmap;
+
+    .line 82
+    .line 83
+    const/4 v0, 0x1
+
+    .line 84
+    iput-boolean v0, p0, Ltm3;->l:Z
+
+    .line 85
+    .line 86
     return-void
 .end method

@@ -1,52 +1,34 @@
 .class public final Lyh0;
-.super Lpx0;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-
-# static fields
-.field public static final synthetic c:J
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field private volatile synthetic _resumed$volatile:I
+.field public final a:Lt9;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
-    sget-object v0, Law;->a:Lsun/misc/Unsafe;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const-class v1, Lyh0;
-
     .line 4
+    new-instance v0, Lt9;
+
     .line 5
-    const-string v2, "_resumed$volatile"
-
     .line 6
-    .line 7
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-direct {v0}, Lt9;-><init>()V
 
+    .line 7
     .line 8
     .line 9
+    iput-object v0, p0, Lyh0;->a:Lt9;
+
     .line 10
-    move-result-object v1
-
     .line 11
-    invoke-virtual {v0, v1}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-wide v0
-
-    .line 15
-    sput-wide v0, Lyh0;->c:J
-
-    .line 16
-    .line 17
     return-void
 .end method

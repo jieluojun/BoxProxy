@@ -7,9 +7,9 @@
 #   assets/box/mihomo/mianliu.yaml   -> mihomo/免流.yaml
 #   assets/box/sing-box/mianliu.json -> sing-box/免流.json
 #   assets/box/scripts/ipv6_disable.sh -> scripts/禁用系统 IPv6.sh, ipv6_restore.sh -> scripts/还原系统 IPv6.sh（seedScript：每次安装后覆盖）
-# Hooked into Llb0;->d (runtime directory setup).
+# Hooked into Lgb0;->d (runtime directory setup).
 
-.method public static run(Lab0;)V
+.method public static run(Lva0;)V
     .locals 5
 
     :try_start_0
@@ -23,7 +23,7 @@
 
     move-object v4, v3
 
-    invoke-static {p0, v0, v1, v2, v4}, Lcom/box/app/vpn/VpnSeed;->seed(Lab0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, v0, v1, v2, v4}, Lcom/box/app/vpn/VpnSeed;->seed(Lva0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -37,7 +37,7 @@
 
     const-string v3, "box/sing-box/mianliu.json"
 
-    invoke-static {p0, v0, v1, v2, v3}, Lcom/box/app/vpn/VpnSeed;->seed(Lab0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, v0, v1, v2, v3}, Lcom/box/app/vpn/VpnSeed;->seed(Lva0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     :try_end_1
     .catch Ljava/lang/Throwable; {:try_start_1 .. :try_end_1} :catch_1
 
@@ -50,7 +50,7 @@
 
     const-string v2, "box/scripts/ipv6_disable.sh"
 
-    invoke-static {p0, v0, v1, v2}, Lcom/box/app/vpn/VpnSeed;->seedScript(Lab0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, v0, v1, v2}, Lcom/box/app/vpn/VpnSeed;->seedScript(Lva0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     :try_end_2
     .catch Ljava/lang/Throwable; {:try_start_2 .. :try_end_2} :catch_2
 
@@ -63,7 +63,7 @@
 
     const-string v2, "box/scripts/ipv6_restore.sh"
 
-    invoke-static {p0, v0, v1, v2}, Lcom/box/app/vpn/VpnSeed;->seedScript(Lab0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {p0, v0, v1, v2}, Lcom/box/app/vpn/VpnSeed;->seedScript(Lva0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     :try_end_3
     .catch Ljava/lang/Throwable; {:try_start_3 .. :try_end_3} :catch_3
 
@@ -81,7 +81,7 @@
     .locals 8
 
     :try_start_0
-    invoke-static {}, Lsa7;->p()Landroid/content/Context;
+    invoke-static {}, Lns6;->o()Landroid/content/Context;
 
     move-result-object v0
 
@@ -149,11 +149,11 @@
 # assets/box/scripts/*.sh -> <box home>/scripts/<name>：每次安装（含覆盖安装）后第一次启动都重新生成并覆盖。
 # 用 PackageInfo.lastUpdateTime 判断"这次安装有没有写过"：同一次安装内不重复覆盖（用户可以改脚本），
 # 下次覆盖安装 lastUpdateTime 变了就再写一遍。（脚本页读的就是这个目录：i16.c = <home>/scripts）
-.method private static seedScript(Lab0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method private static seedScript(Lva0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 10
 
     :try_start_0
-    invoke-static {}, Lsa7;->p()Landroid/content/Context;
+    invoke-static {}, Lns6;->o()Landroid/content/Context;
 
     move-result-object v0
 
@@ -189,7 +189,7 @@
 
     if-eqz v8, :cond_done
 
-    invoke-static {}, Li16;->c()Ljava/io/File;
+    invoke-static {}, Lv26;->c()Ljava/io/File;
 
     move-result-object v2
 
@@ -211,7 +211,7 @@
 
     invoke-direct {v6, v3}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    invoke-static {v2, v6}, Lqa7;->t(Ljava/io/InputStream;Ljava/io/OutputStream;)J
+    invoke-static {v2, v6}, Lnc7;->t(Ljava/io/InputStream;Ljava/io/OutputStream;)J
 
     invoke-virtual {v6}, Ljava/io/FileOutputStream;->close()V
 
@@ -240,11 +240,11 @@
     goto :goto_end
 .end method
 
-.method private static seed(Lab0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method private static seed(Lva0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
     .locals 8
 
     :try_start_0
-    invoke-static {}, Lsa7;->p()Landroid/content/Context;
+    invoke-static {}, Lns6;->o()Landroid/content/Context;
 
     move-result-object v0
 
@@ -266,7 +266,7 @@
 
     if-nez v3, :cond_done
 
-    invoke-virtual {p0, p2, p3}, Lab0;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
+    invoke-virtual {p0, p2, p3}, Lva0;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v3
 
@@ -297,7 +297,7 @@
 
     invoke-direct {v5, v3}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    invoke-static {v4, v5}, Lqa7;->t(Ljava/io/InputStream;Ljava/io/OutputStream;)J
+    invoke-static {v4, v5}, Lnc7;->t(Ljava/io/InputStream;Ljava/io/OutputStream;)J
 
     invoke-virtual {v5}, Ljava/io/FileOutputStream;->close()V
 

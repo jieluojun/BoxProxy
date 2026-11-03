@@ -1,426 +1,249 @@
-.class public final Lp97;
-.super Landroid/view/WindowInsetsAnimation$Callback;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final synthetic Lp97;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
 # instance fields
-.field public final a:Lj97;
+.field public final synthetic j:Ljava/lang/String;
 
-.field public b:Ljava/util/List;
+.field public final synthetic k:I
 
-.field public c:Ljava/util/ArrayList;
+.field public final synthetic l:I
 
-.field public final d:Ljava/util/HashMap;
+.field public final synthetic m:Lko3;
+
+.field public final synthetic n:Z
+
+.field public final synthetic o:I
+
+.field public final synthetic p:I
+
+.field public final synthetic q:Z
+
+.field public final synthetic r:Ljava/lang/String;
+
+.field public final synthetic s:Lo52;
+
+.field public final synthetic t:Lo52;
+
+.field public final synthetic u:Lo52;
+
+.field public final synthetic v:Lo52;
 
 
 # direct methods
-.method public constructor <init>(Lj97;)V
-    .locals 1
+.method public synthetic constructor <init>(Ljava/lang/String;IILko3;ZIIZLjava/lang/String;Lo52;Lo52;Lo52;Lo52;I)V
+    .locals 0
 
     .line 1
-    iget v0, p1, Lj97;->k:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, v0}, Landroid/view/WindowInsetsAnimation$Callback;-><init>(I)V
-
     .line 4
+    iput-object p1, p0, Lp97;->j:Ljava/lang/String;
+
     .line 5
     .line 6
-    new-instance v0, Ljava/util/HashMap;
+    iput p2, p0, Lp97;->k:I
 
     .line 7
     .line 8
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    iput p3, p0, Lp97;->l:I
 
     .line 9
     .line 10
+    iput-object p4, p0, Lp97;->m:Lko3;
+
     .line 11
-    iput-object v0, p0, Lp97;->d:Ljava/util/HashMap;
-
     .line 12
-    .line 13
-    iput-object p1, p0, Lp97;->a:Lj97;
+    iput-boolean p5, p0, Lp97;->n:Z
 
+    .line 13
     .line 14
+    iput p6, p0, Lp97;->o:I
+
     .line 15
+    .line 16
+    iput p7, p0, Lp97;->p:I
+
+    .line 17
+    .line 18
+    iput-boolean p8, p0, Lp97;->q:Z
+
+    .line 19
+    .line 20
+    iput-object p9, p0, Lp97;->r:Ljava/lang/String;
+
+    .line 21
+    .line 22
+    iput-object p10, p0, Lp97;->s:Lo52;
+
+    .line 23
+    .line 24
+    iput-object p11, p0, Lp97;->t:Lo52;
+
+    .line 25
+    .line 26
+    iput-object p12, p0, Lp97;->u:Lo52;
+
+    .line 27
+    .line 28
+    iput-object p13, p0, Lp97;->v:Lo52;
+
+    .line 29
+    .line 30
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/view/WindowInsetsAnimation;)Ls97;
-    .locals 5
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 16
 
     .line 1
-    iget-object p0, p0, Lp97;->d:Ljava/util/HashMap;
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
-    invoke-virtual {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object/from16 v13, p1
 
     .line 4
     .line 5
-    .line 6
-    move-result-object v0
+    check-cast v13, Lv01;
 
+    .line 6
     .line 7
-    check-cast v0, Ls97;
+    move-object/from16 v1, p2
 
     .line 8
     .line 9
-    if-nez v0, :cond_0
+    check-cast v1, Ljava/lang/Integer;
 
     .line 10
     .line 11
-    new-instance v0, Ls97;
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 12
     .line 13
-    const/4 v1, 0x0
-
     .line 14
-    const-wide/16 v2, 0x0
+    const/16 v1, 0xc01
 
     .line 15
     .line 16
-    const/4 v4, 0x0
-
-    .line 17
-    invoke-direct {v0, v4, v1, v2, v3}, Ls97;-><init>(ILandroid/view/animation/Interpolator;J)V
-
-    .line 18
-    .line 19
-    .line 20
-    new-instance v1, Lq97;
-
-    .line 21
-    .line 22
-    invoke-direct {v1, p1}, Lq97;-><init>(Landroid/view/WindowInsetsAnimation;)V
-
-    .line 23
-    .line 24
-    .line 25
-    iput-object v1, v0, Ls97;->a:Lr97;
-
-    .line 26
-    .line 27
-    invoke-virtual {p0, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 28
-    .line 29
-    .line 30
-    :cond_0
-    return-object v0
-.end method
-
-.method public final onEnd(Landroid/view/WindowInsetsAnimation;)V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lp97;->a:Lj97;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lp97;->a(Landroid/view/WindowInsetsAnimation;)Ls97;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v1
-
-    .line 7
-    invoke-virtual {v0, v1}, Lj97;->a(Ls97;)V
-
-    .line 8
-    .line 9
-    .line 10
-    iget-object p0, p0, Lp97;->d:Ljava/util/HashMap;
-
-    .line 11
-    .line 12
-    invoke-virtual {p0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 13
-    .line 14
-    .line 15
-    return-void
-.end method
-
-.method public final onPrepare(Landroid/view/WindowInsetsAnimation;)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lp97;->a:Lj97;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lp97;->a(Landroid/view/WindowInsetsAnimation;)Ls97;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    invoke-virtual {v0, p0}, Lj97;->b(Ls97;)V
-
-    .line 8
-    .line 9
-    .line 10
-    return-void
-.end method
-
-.method public final onProgress(Landroid/view/WindowInsets;Ljava/util/List;)Landroid/view/WindowInsets;
-    .locals 4
-
-    .line 1
-    iget-object v0, p0, Lp97;->c:Ljava/util/ArrayList;
-
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
-
-    .line 4
-    .line 5
-    new-instance v0, Ljava/util/ArrayList;
-
-    .line 6
-    .line 7
-    invoke-interface {p2}, Ljava/util/List;->size()I
-
-    .line 8
-    .line 9
-    .line 10
-    move-result v1
-
-    .line 11
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 12
-    .line 13
-    .line 14
-    iput-object v0, p0, Lp97;->c:Ljava/util/ArrayList;
-
-    .line 15
-    .line 16
-    invoke-static {v0}, Ljava/util/Collections;->unmodifiableList(Ljava/util/List;)Ljava/util/List;
+    invoke-static {v1}, Lw23;->h0(I)I
 
     .line 17
     .line 18
     .line 19
-    move-result-object v0
+    move-result v14
 
     .line 20
-    iput-object v0, p0, Lp97;->b:Ljava/util/List;
+    iget-object v1, v0, Lp97;->j:Ljava/lang/String;
 
     .line 21
     .line 22
-    goto :goto_0
+    move-object v2, v1
 
     .line 23
-    :cond_0
-    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
+    iget v1, v0, Lp97;->k:I
 
     .line 24
     .line 25
+    move-object v3, v2
+
     .line 26
-    :goto_0
-    invoke-interface {p2}, Ljava/util/List;->size()I
+    iget v2, v0, Lp97;->l:I
 
     .line 27
     .line 28
+    move-object v4, v3
+
     .line 29
-    move-result v0
+    iget-object v3, v0, Lp97;->m:Lko3;
 
     .line 30
-    add-int/lit8 v0, v0, -0x1
-
     .line 31
+    move-object v5, v4
+
     .line 32
-    :goto_1
-    if-ltz v0, :cond_1
+    iget-boolean v4, v0, Lp97;->n:Z
 
     .line 33
     .line 34
-    invoke-interface {p2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    move-object v6, v5
 
     .line 35
+    iget v5, v0, Lp97;->o:I
+
     .line 36
     .line 37
-    move-result-object v1
+    move-object v7, v6
 
     .line 38
-    invoke-static {v1}, Lo97;->f(Ljava/lang/Object;)Landroid/view/WindowInsetsAnimation;
+    iget v6, v0, Lp97;->p:I
 
     .line 39
     .line 40
+    move-object v8, v7
+
     .line 41
-    move-result-object v1
+    iget-boolean v7, v0, Lp97;->q:Z
 
     .line 42
-    invoke-virtual {p0, v1}, Lp97;->a(Landroid/view/WindowInsetsAnimation;)Ls97;
-
     .line 43
-    .line 44
-    .line 45
-    move-result-object v2
+    move-object v9, v8
 
+    .line 44
+    iget-object v8, v0, Lp97;->r:Ljava/lang/String;
+
+    .line 45
     .line 46
-    invoke-static {v1}, Lo97;->a(Landroid/view/WindowInsetsAnimation;)F
+    move-object v10, v9
 
     .line 47
+    iget-object v9, v0, Lp97;->s:Lo52;
+
     .line 48
     .line 49
-    move-result v1
+    move-object v11, v10
 
     .line 50
-    iget-object v3, v2, Ls97;->a:Lr97;
+    iget-object v10, v0, Lp97;->t:Lo52;
 
     .line 51
     .line 52
-    invoke-virtual {v3, v1}, Lr97;->e(F)V
+    move-object v12, v11
 
     .line 53
+    iget-object v11, v0, Lp97;->u:Lo52;
+
     .line 54
     .line 55
-    iget-object v1, p0, Lp97;->c:Ljava/util/ArrayList;
+    iget-object v0, v0, Lp97;->v:Lo52;
 
     .line 56
     .line 57
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    move-object v15, v12
 
     .line 58
+    move-object v12, v0
+
     .line 59
+    move-object v0, v15
+
     .line 60
-    add-int/lit8 v0, v0, -0x1
+    invoke-static/range {v0 .. v14}, Lr97;->k(Ljava/lang/String;IILko3;ZIIZLjava/lang/String;Lo52;Lo52;Lo52;Lo52;Lv01;I)V
 
     .line 61
     .line 62
-    goto :goto_1
-
     .line 63
-    :cond_1
-    const/4 p2, 0x0
+    sget-object v0, Lk27;->a:Lk27;
 
     .line 64
-    invoke-static {p1, p2}, Lla7;->c(Landroid/view/WindowInsets;Landroid/view/View;)Lla7;
-
     .line 65
-    .line 66
-    .line 67
-    move-result-object p1
-
-    .line 68
-    iget-object p2, p0, Lp97;->b:Ljava/util/List;
-
-    .line 69
-    .line 70
-    iget-object p0, p0, Lp97;->a:Lj97;
-
-    .line 71
-    .line 72
-    invoke-virtual {p0, p1, p2}, Lj97;->c(Lla7;Ljava/util/List;)Lla7;
-
-    .line 73
-    .line 74
-    .line 75
-    move-result-object p0
-
-    .line 76
-    invoke-virtual {p0}, Lla7;->b()Landroid/view/WindowInsets;
-
-    .line 77
-    .line 78
-    .line 79
-    move-result-object p0
-
-    .line 80
-    return-object p0
-.end method
-
-.method public final onStart(Landroid/view/WindowInsetsAnimation;Landroid/view/WindowInsetsAnimation$Bounds;)Landroid/view/WindowInsetsAnimation$Bounds;
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0, p1}, Lp97;->a(Landroid/view/WindowInsetsAnimation;)Ls97;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p1
-
-    .line 5
-    new-instance v0, Lfz5;
-
-    .line 6
-    .line 7
-    invoke-direct {v0, p2}, Lfz5;-><init>(Landroid/view/WindowInsetsAnimation$Bounds;)V
-
-    .line 8
-    .line 9
-    .line 10
-    iget-object p0, p0, Lp97;->a:Lj97;
-
-    .line 11
-    .line 12
-    invoke-virtual {p0, p1, v0}, Lj97;->d(Ls97;Lfz5;)Lfz5;
-
-    .line 13
-    .line 14
-    .line 15
-    move-result-object p0
-
-    .line 16
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 17
-    .line 18
-    .line 19
-    invoke-static {}, Ly4;->m()V
-
-    .line 20
-    .line 21
-    .line 22
-    iget-object p1, p0, Lfz5;->k:Ljava/lang/Object;
-
-    .line 23
-    .line 24
-    check-cast p1, Lpp2;
-
-    .line 25
-    .line 26
-    invoke-virtual {p1}, Lpp2;->d()Landroid/graphics/Insets;
-
-    .line 27
-    .line 28
-    .line 29
-    move-result-object p1
-
-    .line 30
-    iget-object p0, p0, Lfz5;->l:Ljava/lang/Object;
-
-    .line 31
-    .line 32
-    check-cast p0, Lpp2;
-
-    .line 33
-    .line 34
-    invoke-virtual {p0}, Lpp2;->d()Landroid/graphics/Insets;
-
-    .line 35
-    .line 36
-    .line 37
-    move-result-object p0
-
-    .line 38
-    invoke-static {p1, p0}, Ly4;->h(Landroid/graphics/Insets;Landroid/graphics/Insets;)Landroid/view/WindowInsetsAnimation$Bounds;
-
-    .line 39
-    .line 40
-    .line 41
-    move-result-object p0
-
-    .line 42
-    return-object p0
+    return-object v0
 .end method

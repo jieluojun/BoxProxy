@@ -1,65 +1,87 @@
 .class public final Lnx;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final synthetic b:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-
-# instance fields
-.field public final a:[Lgg1;
-
-.field private volatile synthetic notCompletedCount$volatile:I
+.field public static final a:Lnx;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 1
 
     .line 1
-    const-class v0, Lnx;
+    new-instance v0, Lnx;
 
     .line 2
     .line 3
-    const-string v1, "notCompletedCount$volatile"
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
-    invoke-static {v0, v1}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
     .line 6
+    sput-object v0, Lnx;->a:Lnx;
+
     .line 7
     .line 8
-    move-result-object v0
-
-    .line 9
-    sput-object v0, Lnx;->b:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    .line 10
-    .line 11
     return-void
 .end method
 
-.method public constructor <init>([Lgg1;)V
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of p0, p1, Lnx;
+
+    .line 6
+    .line 7
+    if-nez p0, :cond_1
+
+    .line 8
+    .line 9
+    const/4 p0, 0x0
+
+    .line 10
+    return p0
+
+    .line 11
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const p0, 0x223a56c
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lnx;->a:[Lgg1;
+    return p0
+.end method
 
-    .line 5
-    .line 6
-    array-length p1, p1
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    .line 7
-    iput p1, p0, Lnx;->notCompletedCount$volatile:I
+    .line 1
+    const-string p0, "Bottom"
 
-    .line 8
-    .line 9
-    return-void
+    .line 2
+    .line 3
+    return-object p0
 .end method

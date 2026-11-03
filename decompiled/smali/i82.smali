@@ -1,193 +1,181 @@
 .class public final Li82;
-.super Ljw6;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ljava/util/Iterator;
+.implements Lvw2;
 
 
 # instance fields
-.field public final synthetic a:B
+.field public final j:Lt56;
+
+.field public final k:I
+
+.field public l:I
+
+.field public final m:I
 
 
 # direct methods
-.method public synthetic constructor <init>(B)V
+.method public constructor <init>(Lt56;II)V
     .locals 0
 
     .line 1
-    iput-byte p1, p0, Li82;->a:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    iput-object p1, p0, Li82;->j:Lt56;
+
     .line 5
     .line 6
+    iput p3, p0, Li82;->k:I
+
+    .line 7
+    .line 8
+    iput p2, p0, Li82;->l:I
+
+    .line 9
+    .line 10
+    iget p2, p1, Lt56;->q:I
+
+    .line 11
+    .line 12
+    iput p2, p0, Li82;->m:I
+
+    .line 13
+    .line 14
+    iget-boolean p0, p1, Lt56;->p:Z
+
+    .line 15
+    .line 16
+    if-eqz p0, :cond_0
+
+    .line 17
+    .line 18
+    invoke-static {}, Lv56;->e()V
+
+    .line 19
+    .line 20
+    .line 21
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ltv2;)Ljava/lang/Object;
-    .locals 2
-
-    .line 1
-    iget-byte p0, p0, Li82;->a:B
-
-    .line 2
-    .line 3
-    const/16 v0, 0x9
-
-    .line 4
-    .line 5
-    const/4 v1, 0x0
-
-    .line 6
-    packed-switch p0, :pswitch_data_0
-
-    .line 7
-    .line 8
-    .line 9
-    invoke-virtual {p1}, Ltv2;->R()V
-
-    .line 10
-    .line 11
-    .line 12
-    return-object v1
-
-    .line 13
-    :pswitch_0
-    invoke-virtual {p1}, Ltv2;->L()I
-
-    .line 14
-    .line 15
-    .line 16
-    move-result p0
-
-    .line 17
-    if-ne p0, v0, :cond_0
-
-    .line 18
-    .line 19
-    invoke-virtual {p1}, Ltv2;->H()V
-
-    .line 20
-    .line 21
-    .line 22
-    goto :goto_0
-
-    .line 23
-    :cond_0
-    invoke-virtual {p1}, Ltv2;->x()D
-
-    .line 24
-    .line 25
-    .line 26
-    move-result-wide p0
-
-    .line 27
-    double-to-float p0, p0
-
-    .line 28
-    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    .line 29
-    .line 30
-    .line 31
-    move-result-object v1
-
-    .line 32
-    :goto_0
-    return-object v1
-
-    .line 33
-    :pswitch_1
-    invoke-virtual {p1}, Ltv2;->L()I
-
-    .line 34
-    .line 35
-    .line 36
-    move-result p0
-
-    .line 37
-    if-ne p0, v0, :cond_1
-
-    .line 38
-    .line 39
-    invoke-virtual {p1}, Ltv2;->H()V
-
-    .line 40
-    .line 41
-    .line 42
-    goto :goto_1
-
-    .line 43
-    :cond_1
-    invoke-virtual {p1}, Ltv2;->x()D
-
-    .line 44
-    .line 45
-    .line 46
-    move-result-wide p0
-
-    .line 47
-    invoke-static {p0, p1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    .line 48
-    .line 49
-    .line 50
-    move-result-object v1
-
-    .line 51
-    :goto_1
-    return-object v1
-
-    .line 52
-    nop
-
-    .line 53
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public toString()Ljava/lang/String;
+.method public final hasNext()Z
     .locals 1
 
     .line 1
-    iget-byte v0, p0, Li82;->a:B
+    iget v0, p0, Li82;->l:I
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_0
+    iget p0, p0, Li82;->k:I
 
     .line 4
     .line 5
-    .line 6
-    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    if-ge v0, p0, :cond_0
 
+    .line 6
     .line 7
+    const/4 p0, 0x1
+
     .line 8
+    return p0
+
     .line 9
-    move-result-object p0
+    :cond_0
+    const/4 p0, 0x0
 
     .line 10
-    return-object p0
+    return p0
+.end method
 
+.method public final next()Ljava/lang/Object;
+    .locals 5
+
+    .line 1
+    iget-object v0, p0, Li82;->j:Lt56;
+
+    .line 2
+    .line 3
+    iget v1, v0, Lt56;->q:I
+
+    .line 4
+    .line 5
+    iget v2, p0, Li82;->m:I
+
+    .line 6
+    .line 7
+    if-eq v1, v2, :cond_0
+
+    .line 8
+    .line 9
+    invoke-static {}, Lv56;->e()V
+
+    .line 10
     .line 11
-    :pswitch_0
-    const-string p0, "AnonymousOrNonStaticLocalClassAdapter"
-
     .line 12
-    .line 13
-    return-object p0
+    :cond_0
+    iget v1, p0, Li82;->l:I
 
+    .line 13
     .line 14
-    nop
+    iget-object v3, v0, Lt56;->j:[I
 
     .line 15
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-    .end packed-switch
+    .line 16
+    mul-int/lit8 v4, v1, 0x5
+
+    .line 17
+    .line 18
+    add-int/lit8 v4, v4, 0x3
+
+    .line 19
+    .line 20
+    aget v3, v3, v4
+
+    .line 21
+    .line 22
+    add-int/2addr v3, v1
+
+    .line 23
+    iput v3, p0, Li82;->l:I
+
+    .line 24
+    .line 25
+    new-instance p0, Lu56;
+
+    .line 26
+    .line 27
+    invoke-direct {p0, v0, v1, v2}, Lu56;-><init>(Lt56;II)V
+
+    .line 28
+    .line 29
+    .line 30
+    return-object p0
+.end method
+
+.method public final remove()V
+    .locals 1
+
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 2
+    .line 3
+    const-string v0, "Operation is not supported for read-only collection"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
 .end method

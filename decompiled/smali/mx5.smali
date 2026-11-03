@@ -1,272 +1,336 @@
-.class public abstract Lmx5;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final Lmx5;
+.super Lk3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ljava/io/Serializable;
 
 
 # static fields
-.field public static final a:Lad5;
+.field public static final k:Lmx5;
 
-.field public static final b:Lad5;
 
-.field public static final c:Lad5;
-
-.field public static final d:Lad5;
-
-.field public static final e:Lad5;
-
-.field public static final f:Lad5;
-
-.field public static final g:Lad5;
-
-.field public static final h:Lad5;
-
-.field public static final i:Lbl1;
-
-.field public static final j:Lbl1;
-
-.field public static final k:Lbl1;
-
-.field public static final l:Lbl1;
-
-.field public static final m:Lbl1;
+# instance fields
+.field public final j:Lsf3;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 9
+    .locals 2
 
     .line 1
-    const/high16 v0, 0x42400000    # 48.0f
+    new-instance v0, Lmx5;
 
     .line 2
     .line 3
-    invoke-static {v0}, Lcd5;->a(F)Lad5;
+    sget-object v1, Lsf3;->w:Lsf3;
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Lmx5;-><init>(Lsf3;)V
+
+    .line 6
+    .line 7
+    .line 8
+    sput-object v0, Lmx5;->k:Lmx5;
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 1
+
+    .line 1
+    new-instance v0, Lsf3;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Lsf3;-><init>()V
 
     .line 4
     .line 5
     .line 6
-    move-result-object v1
+    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
 
     .line 7
-    sput-object v1, Lmx5;->a:Lad5;
-
     .line 8
     .line 9
-    const/high16 v1, 0x41e00000    # 28.0f
+    iput-object v0, p0, Lmx5;->j:Lsf3;
 
     .line 10
     .line 11
-    invoke-static {v1}, Lcd5;->a(F)Lad5;
+    return-void
+.end method
+
+.method public constructor <init>(Lsf3;)V
+    .locals 0
+
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 12
+    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
+
     .line 13
+    iput-object p1, p0, Lmx5;->j:Lsf3;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lmx5;->j:Lsf3;
+
+    .line 2
+    .line 3
+    iget p0, p0, Lsf3;->r:I
+
+    .line 4
+    .line 5
+    return p0
+.end method
+
+.method public final add(Ljava/lang/Object;)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lmx5;->j:Lsf3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Lsf3;->a(Ljava/lang/Object;)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    if-ltz p0, :cond_0
+
+    .line 8
+    .line 9
+    const/4 p0, 0x1
+
+    .line 10
+    return p0
+
+    .line 11
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 12
+    return p0
+.end method
+
+.method public final addAll(Ljava/util/Collection;)Z
+    .locals 1
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    iget-object v0, p0, Lmx5;->j:Lsf3;
+
+    .line 5
+    .line 6
+    invoke-virtual {v0}, Lsf3;->c()V
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-super {p0, p1}, Ljava/util/AbstractCollection;->addAll(Ljava/util/Collection;)Z
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    return p0
+.end method
+
+.method public final clear()V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lmx5;->j:Lsf3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lsf3;->clear()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final contains(Ljava/lang/Object;)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lmx5;->j:Lsf3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Lsf3;->containsKey(Ljava/lang/Object;)Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final isEmpty()Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lmx5;->j:Lsf3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lsf3;->isEmpty()Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .locals 2
+
+    .line 1
+    new-instance v0, Lpf3;
+
+    .line 2
+    .line 3
+    const/4 v1, 0x1
+
+    .line 4
+    iget-object p0, p0, Lmx5;->j:Lsf3;
+
+    .line 5
+    .line 6
+    invoke-direct {v0, p0, v1}, Lpf3;-><init>(Lsf3;B)V
+
+    .line 7
+    .line 8
+    .line 9
+    return-object v0
+.end method
+
+.method public final remove(Ljava/lang/Object;)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lmx5;->j:Lsf3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lsf3;->c()V
+
+    .line 4
+    .line 5
+    .line 6
+    invoke-virtual {p0, p1}, Lsf3;->g(Ljava/lang/Object;)I
+
+    .line 7
+    .line 8
+    .line 9
+    move-result p1
+
+    .line 10
+    if-gez p1, :cond_0
+
+    .line 11
+    .line 12
+    const/4 p0, 0x0
+
+    .line 13
+    return p0
+
     .line 14
-    move-result-object v2
+    :cond_0
+    invoke-virtual {p0, p1}, Lsf3;->k(I)V
 
     .line 15
-    sput-object v2, Lmx5;->b:Lad5;
-
     .line 16
     .line 17
-    const/high16 v2, 0x42000000    # 32.0f
+    const/4 p0, 0x1
 
     .line 18
-    .line 19
-    invoke-static {v2}, Lcd5;->a(F)Lad5;
+    return p0
+.end method
 
-    .line 20
-    .line 21
-    .line 22
-    move-result-object v3
+.method public final removeAll(Ljava/util/Collection;)Z
+    .locals 1
 
-    .line 23
-    sput-object v3, Lmx5;->c:Lad5;
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 24
-    .line 25
-    const/high16 v3, 0x40800000    # 4.0f
+    .line 2
+    .line 3
+    .line 4
+    iget-object v0, p0, Lmx5;->j:Lsf3;
 
-    .line 26
-    .line 27
-    invoke-static {v3}, Lcd5;->a(F)Lad5;
+    .line 5
+    .line 6
+    invoke-virtual {v0}, Lsf3;->c()V
 
-    .line 28
-    .line 29
-    .line 30
-    move-result-object v4
+    .line 7
+    .line 8
+    .line 9
+    invoke-super {p0, p1}, Ljava/util/AbstractCollection;->removeAll(Ljava/util/Collection;)Z
 
-    .line 31
-    sput-object v4, Lmx5;->d:Lad5;
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
 
-    .line 32
-    .line 33
-    const/high16 v4, 0x41800000    # 16.0f
+    .line 13
+    return p0
+.end method
 
-    .line 34
-    .line 35
-    invoke-static {v4}, Lcd5;->a(F)Lad5;
+.method public final retainAll(Ljava/util/Collection;)Z
+    .locals 1
 
-    .line 36
-    .line 37
-    .line 38
-    move-result-object v5
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 39
-    sput-object v5, Lmx5;->e:Lad5;
+    .line 2
+    .line 3
+    .line 4
+    iget-object v0, p0, Lmx5;->j:Lsf3;
 
-    .line 40
-    .line 41
-    const/high16 v5, 0x41a00000    # 20.0f
+    .line 5
+    .line 6
+    invoke-virtual {v0}, Lsf3;->c()V
 
-    .line 42
-    .line 43
-    invoke-static {v5}, Lcd5;->a(F)Lad5;
+    .line 7
+    .line 8
+    .line 9
+    invoke-super {p0, p1}, Ljava/util/AbstractCollection;->retainAll(Ljava/util/Collection;)Z
 
-    .line 44
-    .line 45
-    .line 46
-    move-result-object v6
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
 
-    .line 47
-    sput-object v6, Lmx5;->f:Lad5;
-
-    .line 48
-    .line 49
-    const/high16 v6, 0x41400000    # 12.0f
-
-    .line 50
-    .line 51
-    invoke-static {v6}, Lcd5;->a(F)Lad5;
-
-    .line 52
-    .line 53
-    .line 54
-    move-result-object v7
-
-    .line 55
-    sput-object v7, Lmx5;->g:Lad5;
-
-    .line 56
-    .line 57
-    const/high16 v7, 0x41000000    # 8.0f
-
-    .line 58
-    .line 59
-    invoke-static {v7}, Lcd5;->a(F)Lad5;
-
-    .line 60
-    .line 61
-    .line 62
-    move-result-object v8
-
-    .line 63
-    sput-object v8, Lmx5;->h:Lad5;
-
-    .line 64
-    .line 65
-    new-instance v8, Lbl1;
-
-    .line 66
-    .line 67
-    invoke-direct {v8, v0}, Lbl1;-><init>(F)V
-
-    .line 68
-    .line 69
-    .line 70
-    new-instance v0, Lbl1;
-
-    .line 71
-    .line 72
-    invoke-direct {v0, v1}, Lbl1;-><init>(F)V
-
-    .line 73
-    .line 74
-    .line 75
-    new-instance v0, Lbl1;
-
-    .line 76
-    .line 77
-    invoke-direct {v0, v2}, Lbl1;-><init>(F)V
-
-    .line 78
-    .line 79
-    .line 80
-    new-instance v0, Lbl1;
-
-    .line 81
-    .line 82
-    invoke-direct {v0, v3}, Lbl1;-><init>(F)V
-
-    .line 83
-    .line 84
-    .line 85
-    sput-object v0, Lmx5;->i:Lbl1;
-
-    .line 86
-    .line 87
-    new-instance v0, Lbl1;
-
-    .line 88
-    .line 89
-    invoke-direct {v0, v4}, Lbl1;-><init>(F)V
-
-    .line 90
-    .line 91
-    .line 92
-    sput-object v0, Lmx5;->j:Lbl1;
-
-    .line 93
-    .line 94
-    new-instance v0, Lbl1;
-
-    .line 95
-    .line 96
-    invoke-direct {v0, v5}, Lbl1;-><init>(F)V
-
-    .line 97
-    .line 98
-    .line 99
-    new-instance v0, Lbl1;
-
-    .line 100
-    .line 101
-    invoke-direct {v0, v6}, Lbl1;-><init>(F)V
-
-    .line 102
-    .line 103
-    .line 104
-    sput-object v0, Lmx5;->k:Lbl1;
-
-    .line 105
-    .line 106
-    new-instance v0, Lbl1;
-
-    .line 107
-    .line 108
-    const/4 v1, 0x0
-
-    .line 109
-    invoke-direct {v0, v1}, Lbl1;-><init>(F)V
-
-    .line 110
-    .line 111
-    .line 112
-    sput-object v0, Lmx5;->l:Lbl1;
-
-    .line 113
-    .line 114
-    new-instance v0, Lbl1;
-
-    .line 115
-    .line 116
-    invoke-direct {v0, v7}, Lbl1;-><init>(F)V
-
-    .line 117
-    .line 118
-    .line 119
-    sput-object v0, Lmx5;->m:Lbl1;
-
-    .line 120
-    .line 121
-    return-void
+    .line 13
+    return p0
 .end method

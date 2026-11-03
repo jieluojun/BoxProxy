@@ -1,6 +1,6 @@
 .class public final Lnp2;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
@@ -264,11 +264,11 @@
 
     .line 2
     .line 3
-    check-cast v0, Ldc4;
+    check-cast v0, Lzc4;
 
     .line 4
     .line 5
-    iget-object v0, v0, Ldc4;->f:[I
+    iget-object v0, v0, Lzc4;->g:[I
 
     .line 6
     .line 7
@@ -294,11 +294,11 @@
 
     .line 2
     .line 3
-    check-cast v0, Ldc4;
+    check-cast v0, Lzc4;
 
     .line 4
     .line 5
-    iget-object v0, v0, Ldc4;->h:[Ljava/lang/Object;
+    iget-object v0, v0, Lzc4;->i:[Ljava/lang/Object;
 
     .line 6
     .line 7

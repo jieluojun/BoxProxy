@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Prepare the reviewed, partial 26.11.02 migration in a NEW staging directory.
+"""Reproduce the pinned custom 134 project in a NEW, atomically published directory.
 
-Never rewrites decompiled/, accepts fuzzy patches, or interprets heuristic class
-candidates as mappings. A partial result is not a release-ready custom build.
+The default full plan overlays verified runtime files onto the immutable upstream
+snapshot. --phase phase1 reproduces the historical, non-release first batch.
+No heuristic mappings or fuzzy patches are executed at build time.
 """
 import argparse
 import hashlib
@@ -70,7 +71,40 @@ def apply_phase(project, bundle):
     }
 
 
-def prepare(snapshot, output):
+def apply_full(project, bundle, runtime=None):
+    project, bundle = Path(project), Path(bundle)
+    runtime = Path(runtime) if runtime else Path(__file__).resolve().parents[1] / 'decompiled'
+    plan = json.loads((bundle / 'full.json').read_text())
+    if plan['status'] != 'full-custom-migration-host-validated-device-validation-pending':
+        raise ValueError('Unexpected full-plan status')
+    if plan['pendingImplementation'] or plan['removed']:
+        raise ValueError('Incomplete full migration plan')
+    modified, additions = plan['resultSha256'], plan['additionsSha256']
+    if set(modified) != set(plan['baseSha256']) or set(modified) & set(additions):
+        raise ValueError('Inconsistent full migration plan')
+    for name, expected in plan['baseSha256'].items():
+        if digest(relative_path(project, name)) != expected:
+            raise ValueError('Unreviewed full-migration input: ' + name)
+    for group in (modified, additions):
+        for name, expected in group.items():
+            source, dest = relative_path(runtime, name), relative_path(project, name)
+            if digest(source) != expected:
+                raise ValueError('Unreviewed full-migration runtime: ' + name)
+            if group is additions and dest.exists():
+                raise ValueError('Refusing to overwrite upstream file: ' + name)
+            dest.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(source, dest)
+    expected_files = dict(plan['upstreamUnchangedSha256'], **modified, **additions)
+    actual_files = {p.relative_to(project).as_posix() for p in project.rglob('*') if p.is_file()}
+    if actual_files != set(expected_files):
+        raise ValueError('Full migration file set mismatch')
+    for name, expected in expected_files.items():
+        if digest(relative_path(project, name)) != expected:
+            raise ValueError('Full migration result mismatch: ' + name)
+    return {k: plan[k] for k in ('versionName', 'versionCode', 'status', 'pendingImplementation', 'deviceValidation')}
+
+
+def prepare(snapshot, output, phase="full"):
     snapshot, output = Path(snapshot).resolve(), Path(output).resolve()
     runtime = Path(__file__).resolve().parents[1] / 'decompiled'
     if output == runtime or runtime in output.parents or output in runtime.parents:
@@ -82,7 +116,9 @@ def prepare(snapshot, output):
     with tempfile.TemporaryDirectory(prefix='.boxproxy-migrate-', dir=output.parent) as temp:
         stage = Path(temp) / 'stage'
         project, _ = extract(snapshot, stage)
-        report = apply_phase(project, snapshot / 'migration')
+        if phase not in ('full', 'phase1'):
+            raise ValueError('Unknown migration phase')
+        report = (apply_full if phase == 'full' else apply_phase)(project, snapshot / 'migration')
         (stage / 'migration-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
         stage.rename(output)
     return output / 'decompiled'
@@ -92,9 +128,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--snapshot', type=Path, default=Path('upstream/26.11.02.534f30c'))
     parser.add_argument('--output', type=Path, required=True)
+    parser.add_argument('--phase', choices=('full', 'phase1'), default='full')
     args = parser.parse_args()
-    project = prepare(args.snapshot, args.output)
-    print('Prepared PARTIAL migration (NOT FOR RELEASE):', project)
+    project = prepare(args.snapshot, args.output, args.phase)
+    print('Prepared ' + args.phase + ' migration:', project)
+    if args.phase == 'phase1':
+        print('Historical PARTIAL migration: NOT FOR RELEASE.')
     print('Current customized decompiled/ was not changed.')
 
 

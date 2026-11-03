@@ -1,6 +1,6 @@
 .class public final Lcom/hashsequence/coilresvg/SvgRenderResult;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # annotations
@@ -37,7 +37,7 @@
     const/4 v1, 0x0
 
     .line 4
-    invoke-direct {v0, v1}, Lcom/hashsequence/coilresvg/SvgRenderResult$Companion;-><init>(Loe1;)V
+    invoke-direct {v0, v1}, Lcom/hashsequence/coilresvg/SvgRenderResult$Companion;-><init>(Lle1;)V
 
     .line 5
     .line 6
@@ -86,7 +86,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(II[BLoe1;)V
+.method public synthetic constructor <init>(II[BLle1;)V
     .locals 0
 
     .line 14
@@ -200,7 +200,7 @@
     const/4 v0, 0x0
 
     .line 7
-    invoke-direct {p0, p1, p2, p3, v0}, Lcom/hashsequence/coilresvg/SvgRenderResult;-><init>(II[BLoe1;)V
+    invoke-direct {p0, p1, p2, p3, v0}, Lcom/hashsequence/coilresvg/SvgRenderResult;-><init>(II[BLle1;)V
 
     .line 8
     .line 9
@@ -378,7 +378,7 @@
 
     .line 11
     .line 12
-    invoke-static {v2, v0, v1}, Lxu1;->d(III)I
+    invoke-static {v2, v0, v1}, Lpb1;->e(III)I
 
     .line 13
     .line 14
@@ -514,7 +514,7 @@
 
     .line 34
     .line 35
-    invoke-static {v4, v0, v2, v1, v3}, Lxu1;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4, v0, v2, v1, v3}, Lpb1;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 36
     .line 37
@@ -526,7 +526,7 @@
 
     .line 40
     .line 41
-    invoke-static {v0, p0, v1}, Lv66;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lh86;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 42
     .line 43

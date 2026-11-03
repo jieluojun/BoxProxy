@@ -1,20 +1,34 @@
-.class public interface abstract Lr13;
+.class public final Lr13;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lio3;
 
 
-# virtual methods
-.method public abstract a()I
-.end method
+# instance fields
+.field public final synthetic j:B
 
-.method public abstract b()Z
-.end method
+.field public final synthetic k:Los5;
 
-.method public abstract c()I
-.end method
 
-.method public abstract d()I
-.end method
+# direct methods
+.method public synthetic constructor <init>(Los5;B)V
+    .locals 0
 
-.method public abstract e()I
+    .line 1
+    iput-byte p2, p0, Lr13;->j:B
+
+    .line 2
+    .line 3
+    iput-object p1, p0, Lr13;->k:Los5;
+
+    .line 4
+    .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 6
+    .line 7
+    .line 8
+    return-void
 .end method

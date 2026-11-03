@@ -1,153 +1,141 @@
 .class public final Lj90;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lr52;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public a:Ljava/util/Set;
 
-.field public final synthetic k:Lku3;
+.field public final b:Lgl4;
 
-.field public final synthetic l:Lty0;
+.field public c:Landroid/net/Uri;
+
+.field public final d:Lgl4;
+
+.field public final e:Lgl4;
+
+.field public final f:Lgl4;
+
+.field public final g:Lgl4;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lku3;Lty0;B)V
-    .locals 0
+.method public constructor <init>(Llu;)V
+    .locals 2
 
     .line 1
-    iput-byte p3, p0, Lj90;->j:B
-
-    .line 2
-    .line 3
-    iput-object p1, p0, Lj90;->k:Lku3;
-
-    .line 4
-    .line 5
-    iput-object p2, p0, Lj90;->l:Lty0;
-
-    .line 6
-    .line 7
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 8
-    .line 9
-    .line 10
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    .line 1
-    iget-byte v0, p0, Lj90;->j:B
-
     .line 2
     .line 3
-    iget-object v1, p0, Lj90;->l:Lty0;
-
     .line 4
+    sget-object v0, Lny;->k:Lt8;
+
     .line 5
-    const-string v2, "top.yukonga.miuix.kmp.nav.swipeDismiss"
-
     .line 6
-    .line 7
-    iget-object p0, p0, Lj90;->k:Lku3;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 7
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_0
+    sget-object v0, Lny;->l:Ljava/util/Set;
 
     .line 10
     .line 11
-    .line 12
-    check-cast p1, Lt80;
+    iput-object v0, p0, Lj90;->a:Ljava/util/Set;
 
+    .line 12
     .line 13
+    const/4 v0, 0x0
+
     .line 14
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {v0}, Lg23;->M(Ljava/lang/Object;)Lgl4;
 
     .line 15
     .line 16
     .line 17
-    check-cast p1, Lm80;
+    move-result-object v1
 
     .line 18
-    .line 19
-    invoke-static {v2, p0}, Ljava/util/Collections;->singletonMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map;
+    iput-object v1, p0, Lj90;->b:Lgl4;
 
+    .line 19
     .line 20
+    iget-boolean v1, p1, Llu;->d:Z
+
     .line 21
     .line 22
-    move-result-object p0
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 23
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 24
     .line 25
+    move-result-object v1
+
     .line 26
-    new-instance v0, Lnt3;
+    invoke-static {v1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
 
     .line 27
     .line 28
-    invoke-direct {v0, p1, p1, p0, v1}, Lnt3;-><init>(Lt80;Ljava/lang/Object;Ljava/util/Map;Lw52;)V
-
     .line 29
-    .line 30
-    .line 31
-    return-object v0
+    move-result-object v1
 
+    .line 30
+    iput-object v1, p0, Lj90;->d:Lgl4;
+
+    .line 31
     .line 32
-    :pswitch_0
-    check-cast p1, Lt80;
+    iget-boolean v1, p1, Llu;->e:Z
 
     .line 33
     .line 34
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 35
     .line 36
     .line 37
-    check-cast p1, Lq70;
+    move-result-object v1
 
     .line 38
-    .line 39
-    invoke-static {v2, p0}, Ljava/util/Collections;->singletonMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map;
+    invoke-static {v1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
 
+    .line 39
     .line 40
     .line 41
+    move-result-object v1
+
     .line 42
-    move-result-object p0
+    iput-object v1, p0, Lj90;->e:Lgl4;
 
     .line 43
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 44
+    iget-object p1, p1, Llu;->f:Ljava/lang/String;
+
     .line 45
     .line 46
-    new-instance v0, Lnt3;
+    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
 
     .line 47
     .line 48
-    invoke-direct {v0, p1, p1, p0, v1}, Lnt3;-><init>(Lt80;Ljava/lang/Object;Ljava/util/Map;Lw52;)V
-
     .line 49
-    .line 50
-    .line 51
-    return-object v0
+    move-result-object p1
 
+    .line 50
+    iput-object p1, p0, Lj90;->f:Lgl4;
+
+    .line 51
     .line 52
-    nop
+    invoke-static {v0}, Lg23;->M(Ljava/lang/Object;)Lgl4;
 
     .line 53
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 54
+    .line 55
+    move-result-object p1
+
+    .line 56
+    iput-object p1, p0, Lj90;->g:Lgl4;
+
+    .line 57
+    .line 58
+    return-void
 .end method

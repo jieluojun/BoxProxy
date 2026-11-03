@@ -1,128 +1,107 @@
-.class public final synthetic Ltk6;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lmz1;
-.implements Le62;
+.class public final enum Ltk6;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic a:Lg52;
+# static fields
+.field public static final enum j:Ltk6;
+
+.field public static final enum k:Ltk6;
+
+.field public static final enum l:Ltk6;
+
+.field public static final synthetic m:[Ltk6;
 
 
 # direct methods
-.method public constructor <init>(Lg52;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ltk6;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Ltk6;->a:Lg52;
-
-    .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final b()Ld62;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Ltk6;->a:Lg52;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    instance-of v0, p1, Lmz1;
-
-    .line 2
-    .line 3
-    if-eqz v0, :cond_0
+    const-string v1, "Insert"
 
     .line 4
     .line 5
-    instance-of v0, p1, Le62;
+    const/4 v2, 0x0
 
     .line 6
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 7
-    if-eqz v0, :cond_0
-
     .line 8
     .line 9
-    check-cast p1, Le62;
+    sput-object v0, Ltk6;->j:Ltk6;
 
     .line 10
     .line 11
-    invoke-interface {p1}, Le62;->b()Ld62;
+    new-instance v1, Ltk6;
 
     .line 12
     .line 13
-    .line 14
-    move-result-object p1
+    const-string v2, "Delete"
 
+    .line 14
     .line 15
-    iget-object p0, p0, Ltk6;->a:Lg52;
+    const/4 v3, 0x1
 
     .line 16
-    .line 17
-    invoke-static {p0, p1}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 17
     .line 18
     .line 19
-    .line 20
-    move-result p0
+    sput-object v1, Ltk6;->k:Ltk6;
 
+    .line 20
     .line 21
-    return p0
+    new-instance v2, Ltk6;
 
     .line 22
-    :cond_0
-    const/4 p0, 0x0
-
     .line 23
-    return p0
+    const-string v3, "Replace"
+
+    .line 24
+    .line 25
+    const/4 v4, 0x2
+
+    .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 27
+    .line 28
+    .line 29
+    sput-object v2, Ltk6;->l:Ltk6;
+
+    .line 30
+    .line 31
+    filled-new-array {v0, v1, v2}, [Ltk6;
+
+    .line 32
+    .line 33
+    .line 34
+    move-result-object v0
+
+    .line 35
+    sput-object v0, Ltk6;->m:[Ltk6;
+
+    .line 36
+    .line 37
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 0
+.method public static valueOf(Ljava/lang/String;)Ltk6;
+    .locals 1
 
     .line 1
-    iget-object p0, p0, Ltk6;->a:Lg52;
+    const-class v0, Ltk6;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final synthetic invoke()F
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Ltk6;->a:Lg52;
-
-    .line 2
-    .line 3
-    invoke-interface {p0}, Lg52;->invoke()Ljava/lang/Object;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     .line 4
     .line 5
@@ -130,17 +109,32 @@
     move-result-object p0
 
     .line 7
-    check-cast p0, Ljava/lang/Number;
+    check-cast p0, Ltk6;
 
     .line 8
     .line 9
-    invoke-virtual {p0}, Ljava/lang/Number;->floatValue()F
+    return-object p0
+.end method
 
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
+.method public static values()[Ltk6;
+    .locals 1
 
-    .line 13
-    return p0
+    .line 1
+    sget-object v0, Ltk6;->m:[Ltk6;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Ltk6;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

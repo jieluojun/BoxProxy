@@ -1,322 +1,428 @@
 .class public final Ld57;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lc57;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Ljava/util/ArrayList;
+.field public final d:Landroid/util/SparseIntArray;
 
-.field public b:J
+.field public final e:Landroid/os/Parcel;
 
-.field public c:Landroid/view/animation/Interpolator;
+.field public final f:I
 
-.field public d:Le57;
+.field public final g:I
 
-.field public e:Z
+.field public final h:Ljava/lang/String;
 
-.field public final f:Lc57;
+.field public i:I
+
+.field public j:I
+
+.field public k:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Landroid/os/Parcel;)V
+    .locals 8
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataPosition()I
 
     .line 2
     .line 3
     .line 4
-    const-wide/16 v0, -0x1
+    move-result v2
 
     .line 5
-    .line 6
-    iput-wide v0, p0, Ld57;->b:J
+    invoke-virtual {p1}, Landroid/os/Parcel;->dataSize()I
 
+    .line 6
     .line 7
     .line 8
-    new-instance v0, Lc57;
+    move-result v3
 
     .line 9
-    .line 10
-    invoke-direct {v0, p0}, Lc57;-><init>(Ld57;)V
+    new-instance v5, Ljv;
 
+    .line 10
     .line 11
+    invoke-direct {v5}, Lg36;-><init>()V
+
     .line 12
     .line 13
-    iput-object v0, p0, Ld57;->f:Lc57;
-
     .line 14
+    new-instance v6, Ljv;
+
     .line 15
-    new-instance v0, Ljava/util/ArrayList;
-
     .line 16
-    .line 17
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v6}, Lg36;-><init>()V
 
+    .line 17
     .line 18
     .line 19
-    .line 20
-    iput-object v0, p0, Ld57;->a:Ljava/util/ArrayList;
+    new-instance v7, Ljv;
 
+    .line 20
     .line 21
+    invoke-direct {v7}, Lg36;-><init>()V
+
     .line 22
+    .line 23
+    .line 24
+    const-string v4, ""
+
+    .line 25
+    .line 26
+    move-object v0, p0
+
+    .line 27
+    move-object v1, p1
+
+    .line 28
+    invoke-direct/range {v0 .. v7}, Ld57;-><init>(Landroid/os/Parcel;IILjava/lang/String;Ljv;Ljv;Ljv;)V
+
+    .line 29
+    .line 30
+    .line 31
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Parcel;IILjava/lang/String;Ljv;Ljv;Ljv;)V
+    .locals 0
+
+    .line 32
+    invoke-direct {p0, p5, p6, p7}, Lc57;-><init>(Ljv;Ljv;Ljv;)V
+
+    .line 33
+    new-instance p5, Landroid/util/SparseIntArray;
+
+    invoke-direct {p5}, Landroid/util/SparseIntArray;-><init>()V
+
+    iput-object p5, p0, Ld57;->d:Landroid/util/SparseIntArray;
+
+    const/4 p5, -0x1
+
+    .line 34
+    iput p5, p0, Ld57;->i:I
+
+    .line 35
+    iput p5, p0, Ld57;->k:I
+
+    .line 36
+    iput-object p1, p0, Ld57;->e:Landroid/os/Parcel;
+
+    .line 37
+    iput p2, p0, Ld57;->f:I
+
+    .line 38
+    iput p3, p0, Ld57;->g:I
+
+    .line 39
+    iput p2, p0, Ld57;->j:I
+
+    .line 40
+    iput-object p4, p0, Ld57;->h:Ljava/lang/String;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final a()Ld57;
+    .locals 8
 
     .line 1
-    iget-boolean v0, p0, Ld57;->e:Z
+    new-instance v0, Ld57;
 
     .line 2
     .line 3
-    if-nez v0, :cond_0
+    iget-object v1, p0, Ld57;->e:Landroid/os/Parcel;
 
     .line 4
     .line 5
-    return-void
+    invoke-virtual {v1}, Landroid/os/Parcel;->dataPosition()I
 
     .line 6
-    :cond_0
-    iget-object v0, p0, Ld57;->a:Ljava/util/ArrayList;
-
     .line 7
     .line 8
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    move-result v2
 
     .line 9
+    iget v3, p0, Ld57;->j:I
+
     .line 10
     .line 11
-    move-result-object v0
+    iget v4, p0, Ld57;->f:I
 
     .line 12
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
     .line 13
+    if-ne v3, v4, :cond_0
+
     .line 14
     .line 15
-    move-result v1
+    iget v3, p0, Ld57;->g:I
 
     .line 16
-    if-eqz v1, :cond_1
-
     .line 17
-    .line 18
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    :cond_0
+    new-instance v4, Ljava/lang/StringBuilder;
 
+    .line 18
     .line 19
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
+
     .line 20
     .line 21
-    move-result-object v1
-
     .line 22
-    check-cast v1, Lb57;
+    iget-object v5, p0, Ld57;->h:Ljava/lang/String;
 
     .line 23
     .line 24
-    invoke-virtual {v1}, Lb57;->b()V
+    const-string v6, "  "
 
     .line 25
     .line 26
-    .line 27
-    goto :goto_0
-
-    .line 28
-    :cond_1
-    const/4 v0, 0x0
-
-    .line 29
-    iput-boolean v0, p0, Ld57;->e:Z
-
-    .line 30
-    .line 31
-    return-void
-.end method
-
-.method public final b()V
-    .locals 6
-
-    .line 1
-    iget-boolean v0, p0, Ld57;->e:Z
-
-    .line 2
-    .line 3
-    if-eqz v0, :cond_0
-
-    .line 4
-    .line 5
-    return-void
-
-    .line 6
-    :cond_0
-    iget-object v0, p0, Ld57;->a:Ljava/util/ArrayList;
-
-    .line 7
-    .line 8
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    .line 9
-    .line 10
-    .line 11
-    move-result-object v0
-
-    .line 12
-    :cond_1
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 13
-    .line 14
-    .line 15
-    move-result v1
-
-    .line 16
-    if-eqz v1, :cond_5
-
-    .line 17
-    .line 18
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-object v1
-
-    .line 22
-    check-cast v1, Lb57;
-
-    .line 23
-    .line 24
-    iget-wide v2, p0, Ld57;->b:J
-
-    .line 25
-    .line 26
-    const-wide/16 v4, 0x0
+    invoke-static {v4, v5, v6}, Lh86;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 27
     .line 28
-    cmp-long v4, v2, v4
-
     .line 29
+    move-result-object v4
+
     .line 30
-    if-ltz v4, :cond_2
+    iget-object v6, p0, Lc57;->b:Ljv;
 
     .line 31
     .line 32
-    invoke-virtual {v1, v2, v3}, Lb57;->c(J)V
+    iget-object v7, p0, Lc57;->c:Ljv;
 
     .line 33
     .line 34
+    iget-object v5, p0, Lc57;->a:Ljv;
+
     .line 35
-    :cond_2
-    iget-object v2, p0, Ld57;->c:Landroid/view/animation/Interpolator;
-
     .line 36
-    .line 37
-    if-eqz v2, :cond_3
+    invoke-direct/range {v0 .. v7}, Ld57;-><init>(Landroid/os/Parcel;IILjava/lang/String;Ljv;Ljv;Ljv;)V
 
+    .line 37
     .line 38
     .line 39
-    iget-object v3, v1, Lb57;->a:Ljava/lang/ref/WeakReference;
+    return-object v0
+.end method
 
+.method public final e(I)Z
+    .locals 3
+
+    .line 1
+    :goto_0
+    iget v0, p0, Ld57;->j:I
+
+    .line 2
+    .line 3
+    iget v1, p0, Ld57;->k:I
+
+    .line 4
+    .line 5
+    iget v2, p0, Ld57;->g:I
+
+    .line 6
+    .line 7
+    if-ge v0, v2, :cond_2
+
+    .line 8
+    .line 9
+    if-ne v1, p1, :cond_0
+
+    .line 10
+    .line 11
+    goto :goto_1
+
+    .line 12
+    :cond_0
+    invoke-static {v1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object v0
+
+    .line 16
+    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object v1
+
+    .line 20
+    invoke-virtual {v0, v1}, Ljava/lang/String;->compareTo(Ljava/lang/String;)I
+
+    .line 21
+    .line 22
+    .line 23
+    move-result v0
+
+    .line 24
+    if-lez v0, :cond_1
+
+    .line 25
+    .line 26
+    goto :goto_2
+
+    .line 27
+    :cond_1
+    iget v0, p0, Ld57;->j:I
+
+    .line 28
+    .line 29
+    iget-object v1, p0, Ld57;->e:Landroid/os/Parcel;
+
+    .line 30
+    .line 31
+    invoke-virtual {v1, v0}, Landroid/os/Parcel;->setDataPosition(I)V
+
+    .line 32
+    .line 33
+    .line 34
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+
+    .line 35
+    .line 36
+    .line 37
+    move-result v0
+
+    .line 38
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+
+    .line 39
     .line 40
     .line 41
-    invoke-virtual {v3}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+    move-result v1
+
+    .line 42
+    iput v1, p0, Ld57;->k:I
+
+    .line 43
+    .line 44
+    iget v1, p0, Ld57;->j:I
+
+    .line 45
+    .line 46
+    add-int/2addr v1, v0
+
+    .line 47
+    iput v1, p0, Ld57;->j:I
+
+    .line 48
+    .line 49
+    goto :goto_0
+
+    .line 50
+    :cond_2
+    if-ne v1, p1, :cond_3
+
+    .line 51
+    .line 52
+    :goto_1
+    const/4 p0, 0x1
+
+    .line 53
+    return p0
+
+    .line 54
+    :cond_3
+    :goto_2
+    const/4 p0, 0x0
+
+    .line 55
+    return p0
+.end method
+
+.method public final h(I)V
+    .locals 5
+
+    .line 1
+    iget v0, p0, Ld57;->i:I
+
+    .line 2
+    .line 3
+    iget-object v1, p0, Ld57;->d:Landroid/util/SparseIntArray;
+
+    .line 4
+    .line 5
+    iget-object v2, p0, Ld57;->e:Landroid/os/Parcel;
+
+    .line 6
+    .line 7
+    if-ltz v0, :cond_0
+
+    .line 8
+    .line 9
+    invoke-virtual {v1, v0}, Landroid/util/SparseIntArray;->get(I)I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v0
+
+    .line 13
+    invoke-virtual {v2}, Landroid/os/Parcel;->dataPosition()I
+
+    .line 14
+    .line 15
+    .line 16
+    move-result v3
+
+    .line 17
+    sub-int v4, v3, v0
+
+    .line 18
+    .line 19
+    invoke-virtual {v2, v0}, Landroid/os/Parcel;->setDataPosition(I)V
+
+    .line 20
+    .line 21
+    .line 22
+    invoke-virtual {v2, v4}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 23
+    .line 24
+    .line 25
+    invoke-virtual {v2, v3}, Landroid/os/Parcel;->setDataPosition(I)V
+
+    .line 26
+    .line 27
+    .line 28
+    :cond_0
+    iput p1, p0, Ld57;->i:I
+
+    .line 29
+    .line 30
+    invoke-virtual {v2}, Landroid/os/Parcel;->dataPosition()I
+
+    .line 31
+    .line 32
+    .line 33
+    move-result p0
+
+    .line 34
+    invoke-virtual {v1, p1, p0}, Landroid/util/SparseIntArray;->put(II)V
+
+    .line 35
+    .line 36
+    .line 37
+    const/4 p0, 0x0
+
+    .line 38
+    invoke-virtual {v2, p0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 39
+    .line 40
+    .line 41
+    invoke-virtual {v2, p1}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 42
     .line 43
     .line 44
-    move-result-object v3
-
-    .line 45
-    check-cast v3, Landroid/view/View;
-
-    .line 46
-    .line 47
-    if-eqz v3, :cond_3
-
-    .line 48
-    .line 49
-    invoke-virtual {v3}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
-
-    .line 50
-    .line 51
-    .line 52
-    move-result-object v3
-
-    .line 53
-    invoke-virtual {v3, v2}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
-
-    .line 54
-    .line 55
-    .line 56
-    :cond_3
-    iget-object v2, p0, Ld57;->d:Le57;
-
-    .line 57
-    .line 58
-    if-eqz v2, :cond_4
-
-    .line 59
-    .line 60
-    iget-object v2, p0, Ld57;->f:Lc57;
-
-    .line 61
-    .line 62
-    invoke-virtual {v1, v2}, Lb57;->d(Le57;)V
-
-    .line 63
-    .line 64
-    .line 65
-    :cond_4
-    iget-object v1, v1, Lb57;->a:Ljava/lang/ref/WeakReference;
-
-    .line 66
-    .line 67
-    invoke-virtual {v1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
-
-    .line 68
-    .line 69
-    .line 70
-    move-result-object v1
-
-    .line 71
-    check-cast v1, Landroid/view/View;
-
-    .line 72
-    .line 73
-    if-eqz v1, :cond_1
-
-    .line 74
-    .line 75
-    invoke-virtual {v1}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
-
-    .line 76
-    .line 77
-    .line 78
-    move-result-object v1
-
-    .line 79
-    invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    .line 80
-    .line 81
-    .line 82
-    goto :goto_0
-
-    .line 83
-    :cond_5
-    const/4 v0, 0x1
-
-    .line 84
-    iput-boolean v0, p0, Ld57;->e:Z
-
-    .line 85
-    .line 86
     return-void
 .end method

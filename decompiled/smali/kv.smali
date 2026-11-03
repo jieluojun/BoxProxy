@@ -1,374 +1,122 @@
-.class public final Lkv;
+.class public abstract Lkv;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Ljava/util/Iterator;
-.implements Lhw2;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public j:I
-
-.field public k:I
-
-.field public l:Z
-
-.field public final synthetic m:B
-
-.field public final synthetic n:Ljava/lang/Object;
+# static fields
+.field public static final a:I
 
 
 # direct methods
-.method public constructor <init>(I)V
-    .locals 0
-
-    .line 26
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 27
-    iput p1, p0, Lkv;->j:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Lov;B)V
-    .locals 0
-
-    .line 1
-    iput-byte p2, p0, Lkv;->m:B
-
-    .line 2
-    .line 3
-    packed-switch p2, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    iput-object p1, p0, Lkv;->n:Ljava/lang/Object;
-
-    .line 7
-    .line 8
-    iget p1, p1, Lt16;->l:I
-
-    .line 9
-    .line 10
-    invoke-direct {p0, p1}, Lkv;-><init>(I)V
-
-    .line 11
-    .line 12
-    .line 13
-    return-void
-
-    .line 14
-    :pswitch_0
-    iput-object p1, p0, Lkv;->n:Ljava/lang/Object;
-
-    .line 15
-    .line 16
-    iget p1, p1, Lt16;->l:I
-
-    .line 17
-    .line 18
-    invoke-direct {p0, p1}, Lkv;-><init>(I)V
-
-    .line 19
-    .line 20
-    .line 21
-    return-void
-
-    .line 22
-    nop
-
-    .line 23
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public constructor <init>(Lrv;)V
-    .locals 1
-
-    const/4 v0, 0x2
-
-    iput-byte v0, p0, Lkv;->m:B
-
-    .line 23
-    iput-object p1, p0, Lkv;->n:Ljava/lang/Object;
-
-    .line 24
-    iget p1, p1, Lrv;->l:I
-
-    .line 25
-    invoke-direct {p0, p1}, Lkv;-><init>(I)V
-
-    return-void
-.end method
-
-
-# virtual methods
-.method public final hasNext()Z
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lkv;->k:I
-
-    .line 2
-    .line 3
-    iget p0, p0, Lkv;->j:I
-
-    .line 4
-    .line 5
-    if-ge v0, p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public final next()Ljava/lang/Object;
+.method static constructor <clinit>()V
     .locals 3
 
     .line 1
-    invoke-virtual {p0}, Lkv;->hasNext()Z
-
-    .line 2
-    .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    if-eqz v0, :cond_0
-
-    .line 6
-    .line 7
-    iget v0, p0, Lkv;->k:I
-
-    .line 8
-    .line 9
-    iget-byte v1, p0, Lkv;->m:B
-
-    .line 10
-    .line 11
-    iget-object v2, p0, Lkv;->n:Ljava/lang/Object;
-
-    .line 12
-    .line 13
-    packed-switch v1, :pswitch_data_0
-
-    .line 14
-    .line 15
-    .line 16
-    check-cast v2, Lrv;
-
-    .line 17
-    .line 18
-    iget-object v1, v2, Lrv;->k:[Ljava/lang/Object;
-
-    .line 19
-    .line 20
-    aget-object v0, v1, v0
-
-    .line 21
-    .line 22
-    goto :goto_0
-
-    .line 23
-    :pswitch_0
-    check-cast v2, Lov;
-
-    .line 24
-    .line 25
-    invoke-virtual {v2, v0}, Lt16;->h(I)Ljava/lang/Object;
-
-    .line 26
-    .line 27
-    .line 28
-    move-result-object v0
-
-    .line 29
-    goto :goto_0
-
-    .line 30
-    :pswitch_1
-    check-cast v2, Lov;
-
-    .line 31
-    .line 32
-    invoke-virtual {v2, v0}, Lt16;->e(I)Ljava/lang/Object;
-
-    .line 33
-    .line 34
-    .line 35
-    move-result-object v0
-
-    .line 36
-    :goto_0
-    iget v1, p0, Lkv;->k:I
-
-    .line 37
-    .line 38
-    const/4 v2, 0x1
-
-    .line 39
-    add-int/2addr v1, v2
-
-    .line 40
-    iput v1, p0, Lkv;->k:I
-
-    .line 41
-    .line 42
-    iput-boolean v2, p0, Lkv;->l:Z
-
-    .line 43
-    .line 44
-    return-object v0
-
-    .line 45
-    :cond_0
-    invoke-static {}, Lyd1;->p()V
-
-    .line 46
-    .line 47
-    .line 48
-    const/4 p0, 0x0
-
-    .line 49
-    return-object p0
-
-    .line 50
-    nop
-
-    .line 51
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final remove()V
-    .locals 3
-
-    .line 1
-    iget-boolean v0, p0, Lkv;->l:Z
-
-    .line 2
-    .line 3
-    if-eqz v0, :cond_0
-
-    .line 4
-    .line 5
-    iget v0, p0, Lkv;->k:I
-
-    .line 6
-    .line 7
-    add-int/lit8 v0, v0, -0x1
-
-    .line 8
-    .line 9
-    iput v0, p0, Lkv;->k:I
-
-    .line 10
-    .line 11
-    iget-byte v1, p0, Lkv;->m:B
-
-    .line 12
-    .line 13
-    iget-object v2, p0, Lkv;->n:Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    packed-switch v1, :pswitch_data_0
-
-    .line 16
-    .line 17
-    .line 18
-    check-cast v2, Lrv;
-
-    .line 19
-    .line 20
-    invoke-virtual {v2, v0}, Lrv;->a(I)Ljava/lang/Object;
-
-    .line 21
-    .line 22
-    .line 23
-    goto :goto_0
-
-    .line 24
-    :pswitch_0
-    check-cast v2, Lov;
-
-    .line 25
-    .line 26
-    invoke-virtual {v2, v0}, Lt16;->f(I)Ljava/lang/Object;
-
-    .line 27
-    .line 28
-    .line 29
-    goto :goto_0
-
-    .line 30
-    :pswitch_1
-    check-cast v2, Lov;
-
-    .line 31
-    .line 32
-    invoke-virtual {v2, v0}, Lt16;->f(I)Ljava/lang/Object;
-
-    .line 33
-    .line 34
-    .line 35
-    :goto_0
-    iget v0, p0, Lkv;->j:I
-
-    .line 36
-    .line 37
-    add-int/lit8 v0, v0, -0x1
-
-    .line 38
-    .line 39
-    iput v0, p0, Lkv;->j:I
-
-    .line 40
-    .line 41
     const/4 v0, 0x0
 
+    .line 2
+    :try_start_0
+    const-string v1, "kotlinx.serialization.json.pool.size"
+
+    .line 3
+    .line 4
+    invoke-static {v1}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object v1
+
+    .line 8
+    if-eqz v1, :cond_0
+
+    .line 9
+    .line 10
+    invoke-static {v1}, Lpb6;->l0(Ljava/lang/String;)Ljava/lang/Integer;
+
+    .line 11
+    .line 12
+    .line 13
+    move-result-object v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 14
+    goto :goto_1
+
+    .line 15
+    :catchall_0
+    move-exception v1
+
+    .line 16
+    goto :goto_0
+
+    .line 17
+    :cond_0
+    move-object v1, v0
+
+    .line 18
+    goto :goto_1
+
+    .line 19
+    :goto_0
+    new-instance v2, Ltb5;
+
+    .line 20
+    .line 21
+    invoke-direct {v2, v1}, Ltb5;-><init>(Ljava/lang/Throwable;)V
+
+    .line 22
+    .line 23
+    .line 24
+    move-object v1, v2
+
+    .line 25
+    :goto_1
+    instance-of v2, v1, Ltb5;
+
+    .line 26
+    .line 27
+    if-eqz v2, :cond_1
+
+    .line 28
+    .line 29
+    goto :goto_2
+
+    .line 30
+    :cond_1
+    move-object v0, v1
+
+    .line 31
+    :goto_2
+    check-cast v0, Ljava/lang/Integer;
+
+    .line 32
+    .line 33
+    if-eqz v0, :cond_2
+
+    .line 34
+    .line 35
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+
+    .line 36
+    .line 37
+    .line 38
+    move-result v0
+
+    .line 39
+    goto :goto_3
+
+    .line 40
+    :cond_2
+    const/high16 v0, 0x200000
+
+    .line 41
     .line 42
-    iput-boolean v0, p0, Lkv;->l:Z
+    :goto_3
+    sput v0, Lkv;->a:I
 
     .line 43
     .line 44
     return-void
-
-    .line 45
-    :cond_0
-    const-string p0, "Call next() before removing an element."
-
-    .line 46
-    .line 47
-    invoke-static {p0}, Lmv1;->e(Ljava/lang/String;)V
-
-    .line 48
-    .line 49
-    .line 50
-    return-void
-
-    .line 51
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

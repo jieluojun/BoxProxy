@@ -1,182 +1,118 @@
 .class public final Leu3;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lfu3;
+.super Ln67;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Ltp1;
+.field public final b:Ljava/util/LinkedHashMap;
 
 
 # direct methods
-.method public constructor <init>(Ltp1;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p0}, Ln67;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljava/util/LinkedHashMap;
 
     .line 5
     .line 6
-    .line 7
-    iput-object p1, p0, Leu3;->a:Ltp1;
+    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
 
+    .line 7
     .line 8
     .line 9
+    iput-object v0, p0, Leu3;->b:Ljava/util/LinkedHashMap;
+
+    .line 10
+    .line 11
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final b()V
+    .locals 0
 
     .line 1
-    if-ne p0, p1, :cond_0
+    invoke-virtual {p0}, Leu3;->c()V
 
     .line 2
     .line 3
-    goto :goto_1
-
     .line 4
-    :cond_0
-    instance-of v0, p1, Leu3;
-
-    .line 5
-    .line 6
-    if-nez v0, :cond_1
-
-    .line 7
-    .line 8
-    goto :goto_0
-
-    .line 9
-    :cond_1
-    check-cast p1, Leu3;
-
-    .line 10
-    .line 11
-    iget-object p0, p0, Leu3;->a:Ltp1;
-
-    .line 12
-    .line 13
-    iget-object p1, p1, Leu3;->a:Ltp1;
-
-    .line 14
-    .line 15
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    .line 16
-    .line 17
-    .line 18
-    move-result p0
-
-    .line 19
-    if-nez p0, :cond_2
-
-    .line 20
-    .line 21
-    :goto_0
-    const/4 p0, 0x0
-
-    .line 22
-    return p0
-
-    .line 23
-    :cond_2
-    :goto_1
-    const/4 p0, 0x1
-
-    .line 24
-    return p0
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 1
-
-    .line 1
-    const/16 v0, 0x1f4
-
-    .line 2
-    .line 3
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    mul-int/lit8 v0, v0, 0x1f
-
-    .line 8
-    .line 9
-    iget-object p0, p0, Leu3;->a:Ltp1;
-
-    .line 10
-    .line 11
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    add-int/2addr p0, v0
-
-    .line 16
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
+.method public final c()V
     .locals 2
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object p0, p0, Leu3;->b:Ljava/util/LinkedHashMap;
 
     .line 2
     .line 3
-    const-string v1, "Tween(durationMillis=500, easing="
+    invoke-virtual {p0}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
     .line 6
+    move-result-object v0
+
     .line 7
+    check-cast v0, Ljava/lang/Iterable;
+
     .line 8
-    iget-object p0, p0, Leu3;->a:Ltp1;
-
     .line 9
-    .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
+    .line 10
     .line 11
     .line 12
+    move-result-object v0
+
     .line 13
-    const-string p0, ")"
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 14
     .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 16
-    .line 17
-    .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result v1
 
+    .line 17
+    if-eqz v1, :cond_0
+
+    .line 18
     .line 19
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
     .line 20
     .line 21
-    move-result-object p0
-
     .line 22
-    return-object p0
+    move-result-object v1
+
+    .line 23
+    check-cast v1, Lu67;
+
+    .line 24
+    .line 25
+    invoke-virtual {v1}, Lu67;->a()V
+
+    .line 26
+    .line 27
+    .line 28
+    goto :goto_0
+
+    .line 29
+    :cond_0
+    invoke-virtual {p0}, Ljava/util/LinkedHashMap;->clear()V
+
+    .line 30
+    .line 31
+    .line 32
+    return-void
 .end method

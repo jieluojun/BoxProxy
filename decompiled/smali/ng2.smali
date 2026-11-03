@@ -1,6 +1,6 @@
 .class public final enum Lng2;
 .super Ljava/lang/Enum;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
@@ -28,7 +28,7 @@
 
     .line 2
     .line 3
-    const v1, 0x7f0f017a
+    const v1, 0x7f0f0184
 
     .line 4
     .line 5
@@ -60,7 +60,7 @@
 
     .line 18
     .line 19
-    const v5, 0x7f0f017c
+    const v5, 0x7f0f0186
 
     .line 20
     .line 21
@@ -81,7 +81,7 @@
     const/4 v3, 0x2
 
     .line 30
-    const v5, 0x7f0f0178
+    const v5, 0x7f0f0182
 
     .line 31
     .line 32

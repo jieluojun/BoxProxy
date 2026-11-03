@@ -1,141 +1,130 @@
 .class public final Lf12;
-.super Lie6;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lv52;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public synthetic j:I
+.field public final synthetic a:B
+
+.field public final b:Z
+
+.field public final c:Z
+
+
+# direct methods
+.method public synthetic constructor <init>(ZZB)V
+    .locals 0
+
+    .line 1
+    iput-byte p3, p0, Lf12;->a:B
+
+    .line 2
+    .line 3
+    iput-boolean p1, p0, Lf12;->b:Z
+
+    .line 4
+    .line 5
+    iput-boolean p2, p0, Lf12;->c:Z
+
+    .line 6
+    .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 8
+    .line 9
+    .line 10
+    return-void
+.end method
 
 
 # virtual methods
-.method public final create(Ljava/lang/Object;Lc81;)Lc81;
-    .locals 1
+.method public toString()Ljava/lang/String;
+    .locals 2
 
     .line 1
-    new-instance p0, Lf12;
+    iget-byte v0, p0, Lf12;->a:B
 
     .line 2
     .line 3
-    const/4 v0, 0x2
-
-    .line 4
-    invoke-direct {p0, v0, p2}, Lie6;-><init>(ILc81;)V
-
-    .line 5
-    .line 6
-    .line 7
-    check-cast p1, Ljava/lang/Number;
-
-    .line 8
-    .line 9
-    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p1
-
-    .line 13
-    iput p1, p0, Lf12;->j:I
-
-    .line 14
-    .line 15
-    return-object p0
-.end method
-
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    check-cast p1, Ljava/lang/Number;
-
-    .line 2
-    .line 3
-    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
     .line 6
-    move-result p1
+    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     .line 7
-    check-cast p2, Lc81;
-
     .line 8
     .line 9
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 10
-    .line 11
-    .line 12
-    move-result-object p1
-
-    .line 13
-    invoke-virtual {p0, p1, p2}, Lf12;->create(Ljava/lang/Object;Lc81;)Lc81;
-
-    .line 14
-    .line 15
-    .line 16
     move-result-object p0
 
+    .line 10
+    return-object p0
+
+    .line 11
+    :pswitch_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 12
+    .line 13
+    const-string v1, "implicit=["
+
+    .line 14
+    .line 15
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 16
     .line 17
-    check-cast p0, Lf12;
-
     .line 18
+    iget-boolean v1, p0, Lf12;->b:Z
+
     .line 19
-    sget-object p1, Ld07;->a:Ld07;
-
     .line 20
-    .line 21
-    invoke-virtual {p0, p1}, Lf12;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
+    .line 21
     .line 22
     .line 23
+    const-string v1, ", "
+
     .line 24
-    move-result-object p0
-
     .line 25
-    return-object p0
-.end method
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    .line 26
+    .line 27
+    .line 28
+    iget-boolean p0, p0, Lf12;->c:Z
 
-    .line 1
-    iget p0, p0, Lf12;->j:I
+    .line 29
+    .line 30
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
-    .line 2
-    .line 3
-    invoke-static {p1}, Lc33;->N(Ljava/lang/Object;)V
+    .line 31
+    .line 32
+    .line 33
+    const-string p0, "]"
 
-    .line 4
-    .line 5
-    .line 6
-    if-lez p0, :cond_0
+    .line 34
+    .line 35
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 7
-    .line 8
-    const/4 p0, 0x1
+    .line 36
+    .line 37
+    .line 38
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 9
-    goto :goto_0
-
-    .line 10
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 11
-    :goto_0
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 12
-    .line 13
-    .line 14
+    .line 39
+    .line 40
+    .line 41
     move-result-object p0
 
-    .line 15
+    .line 42
     return-object p0
+
+    .line 43
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method

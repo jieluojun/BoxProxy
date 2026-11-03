@@ -14,7 +14,7 @@
 
 
 # static fields
-.field public static jna_library_appname:I = 0x7f0f0193
+.field public static jna_library_appname:I = 0x7f0f019d
 
 
 # direct methods

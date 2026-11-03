@@ -3,8 +3,8 @@
 .source "BootSync.java"
 
 # Keeps the root boot script in step with the run mode when "Auto Start On Boot" is on:
-#   VPN -> root : (re)install the script   (Llb0;->r(true), what the switch does)
-#   root -> VPN : remove it                (Llb0;->o), the VPN is started by BootReceiver instead
+#   VPN -> root : (re)install the script   (Lgb0;->r(true), what the switch does)
+#   root -> VPN : remove it                (Lgb0;->o), the VPN is started by BootReceiver instead
 # It waits until the new run mode has been saved, then runs the suspend function on this thread.
 
 .implements Ljava/lang/Runnable;
@@ -56,11 +56,11 @@
 
     if-ge v0, v1, :cond_go
 
-    invoke-static {}, Llb0;->g()Lya0;
+    invoke-static {}, Lgb0;->g()Lta0;
 
     move-result-object v1
 
-    iget-object v1, v1, Lya0;->b:Ljava/lang/String;
+    iget-object v1, v1, Lta0;->b:Ljava/lang/String;
 
     invoke-static {v1}, Lcom/box/app/vpn/VpnBridge;->isVpn(Ljava/lang/String;)Z
 
@@ -80,11 +80,11 @@
 
     :cond_go
     # the mode may still not be the wanted one after the wait: then do nothing
-    invoke-static {}, Llb0;->g()Lya0;
+    invoke-static {}, Lgb0;->g()Lta0;
 
     move-result-object v1
 
-    iget-object v1, v1, Lya0;->b:Ljava/lang/String;
+    iget-object v1, v1, Lta0;->b:Ljava/lang/String;
 
     invoke-static {v1}, Lcom/box/app/vpn/VpnBridge;->isVpn(Ljava/lang/String;)Z
 
@@ -94,11 +94,11 @@
 
     if-ne v1, v2, :cond_end
 
-    invoke-static {}, Llb0;->g()Lya0;
+    invoke-static {}, Lgb0;->g()Lta0;
 
     move-result-object v1
 
-    iget-boolean v1, v1, Lya0;->w:Z
+    iget-boolean v1, v1, Lta0;->w:Z
 
     if-eqz v1, :cond_end
 
@@ -114,7 +114,7 @@
 
     invoke-direct {v3, v2}, Lcom/box/app/vpn/BootCont;-><init>(Ljava/util/concurrent/CountDownLatch;)V
 
-    sget-object v4, Llb0;->a:Llb0;
+    sget-object v4, Lgb0;->a:Lgb0;
 
     if-eqz v1, :cond_install
 
@@ -122,7 +122,7 @@
 
     invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
 
-    invoke-virtual {v4, v3}, Llb0;->o(Ld81;)Ljava/lang/Object;
+    invoke-virtual {v4, v3}, Lgb0;->o(Lz71;)Ljava/lang/Object;
 
     move-result-object v5
 
@@ -135,12 +135,12 @@
 
     const/4 v1, 0x1
 
-    invoke-virtual {v4, v1, v3}, Llb0;->r(ZLd81;)Ljava/lang/Object;
+    invoke-virtual {v4, v1, v3}, Lgb0;->r(ZLz71;)Ljava/lang/Object;
 
     move-result-object v5
 
     :cond_wait
-    sget-object v6, Lgb1;->j:Lgb1;
+    sget-object v6, Lcb1;->j:Lcb1;
 
     if-ne v5, v6, :cond_end
 

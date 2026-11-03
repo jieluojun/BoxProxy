@@ -1,19 +1,41 @@
-.class public final Lj92;
+.class public abstract Lj92;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Ljava/util/Iterator;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public j:Li92;
+.field public j:I
 
-.field public final synthetic k:Lig0;
+.field public k:Ljava/lang/Object;
+
+.field public final l:Ljava/lang/Object;
+
+.field public m:Ljava/lang/Object;
+
+.field public n:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lig0;)V
+.method public constructor <init>()V
+    .locals 1
+
+    .line 23
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    .line 24
+    iput v0, p0, Lj92;->j:I
+
+    .line 25
+    iput-object p0, p0, Lj92;->m:Ljava/lang/Object;
+
+    iput-object p0, p0, Lj92;->l:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public constructor <init>(ILj92;Ljava/lang/Object;Lj92;)V
     .locals 0
 
     .line 1
@@ -22,107 +44,273 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lj92;->k:Lig0;
+    iput p1, p0, Lj92;->j:I
 
     .line 5
     .line 6
-    iget-object p1, p1, Lig0;->l:Li92;
+    iput-object p2, p0, Lj92;->k:Ljava/lang/Object;
 
     .line 7
     .line 8
-    iget-object p1, p1, Li92;->m:Ljava/lang/Object;
+    iput-object p3, p0, Lj92;->n:Ljava/lang/Object;
 
     .line 9
     .line 10
-    check-cast p1, Li92;
+    iput-object p4, p0, Lj92;->m:Ljava/lang/Object;
 
     .line 11
     .line 12
-    iput-object p1, p0, Lj92;->j:Li92;
+    iget-object p1, p4, Lj92;->l:Ljava/lang/Object;
 
     .line 13
     .line 14
+    check-cast p1, Lj92;
+
+    .line 15
+    .line 16
+    iput-object p1, p0, Lj92;->l:Ljava/lang/Object;
+
+    .line 17
+    .line 18
+    iput-object p0, p1, Lj92;->m:Ljava/lang/Object;
+
+    .line 19
+    .line 20
+    iput-object p0, p4, Lj92;->l:Ljava/lang/Object;
+
+    .line 21
+    .line 22
+    return-void
+.end method
+
+.method public constructor <init>(Ld76;Ljava/util/Iterator;)V
+    .locals 0
+
+    .line 26
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 27
+    iput-object p1, p0, Lj92;->k:Ljava/lang/Object;
+
+    .line 28
+    iput-object p2, p0, Lj92;->l:Ljava/lang/Object;
+
+    .line 29
+    invoke-virtual {p1}, Ld76;->e()Lc76;
+
+    move-result-object p1
+
+    .line 30
+    iget p1, p1, Lc76;->d:I
+
+    .line 31
+    iput p1, p0, Lj92;->j:I
+
+    .line 32
+    invoke-virtual {p0}, Lj92;->a()V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lj92;->j:Li92;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lj92;->k:Lig0;
-
-    .line 4
-    .line 5
-    iget-object p0, p0, Lig0;->l:Li92;
-
-    .line 6
-    .line 7
-    if-eq v0, p0, :cond_0
-
-    .line 8
-    .line 9
-    const/4 p0, 0x1
-
-    .line 10
-    return p0
-
-    .line 11
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 12
-    return p0
-.end method
-
-.method public final next()Ljava/lang/Object;
+.method public a()V
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lj92;->j:Li92;
+    iget-object v0, p0, Lj92;->n:Ljava/lang/Object;
 
     .line 2
     .line 3
-    iget-object v1, v0, Li92;->m:Ljava/lang/Object;
+    check-cast v0, Ljava/util/Map$Entry;
 
     .line 4
     .line 5
-    check-cast v1, Li92;
+    iput-object v0, p0, Lj92;->m:Ljava/lang/Object;
 
     .line 6
     .line 7
-    iput-object v1, p0, Lj92;->j:Li92;
+    iget-object v0, p0, Lj92;->l:Ljava/lang/Object;
 
     .line 8
     .line 9
-    iget-object p0, v0, Li92;->n:Ljava/lang/Object;
+    check-cast v0, Ljava/util/Iterator;
 
     .line 10
     .line 11
-    return-object p0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    .line 12
+    .line 13
+    .line 14
+    move-result v1
+
+    .line 15
+    if-eqz v1, :cond_0
+
+    .line 16
+    .line 17
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object v0
+
+    .line 21
+    check-cast v0, Ljava/util/Map$Entry;
+
+    .line 22
+    .line 23
+    goto :goto_0
+
+    .line 24
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 25
+    :goto_0
+    iput-object v0, p0, Lj92;->n:Ljava/lang/Object;
+
+    .line 26
+    .line 27
+    return-void
 .end method
 
-.method public final remove()V
-    .locals 1
+.method public hasNext()Z
+    .locals 0
 
     .line 1
-    new-instance p0, Leu1;
+    iget-object p0, p0, Lj92;->n:Ljava/lang/Object;
 
     .line 2
     .line 3
-    const-string v0, "not supported operation exception"
+    check-cast p0, Ljava/util/Map$Entry;
 
     .line 4
     .line 5
-    invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    if-eqz p0, :cond_0
+
+    .line 6
+    .line 7
+    const/4 p0, 0x1
+
+    .line 8
+    return p0
+
+    .line 9
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 10
+    return p0
+.end method
+
+.method public remove()V
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lj92;->k:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    check-cast v0, Ld76;
+
+    .line 4
+    .line 5
+    invoke-virtual {v0}, Ld76;->e()Lc76;
 
     .line 6
     .line 7
     .line 8
+    move-result-object v1
+
+    .line 9
+    iget v1, v1, Lc76;->d:I
+
+    .line 10
+    .line 11
+    iget v2, p0, Lj92;->j:I
+
+    .line 12
+    .line 13
+    if-ne v1, v2, :cond_1
+
+    .line 14
+    .line 15
+    iget-object v1, p0, Lj92;->m:Ljava/lang/Object;
+
+    .line 16
+    .line 17
+    check-cast v1, Ljava/util/Map$Entry;
+
+    .line 18
+    .line 19
+    if-eqz v1, :cond_0
+
+    .line 20
+    .line 21
+    invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object v1
+
+    .line 25
+    invoke-virtual {v0, v1}, Ld76;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 26
+    .line 27
+    .line 28
+    const/4 v1, 0x0
+
+    .line 29
+    iput-object v1, p0, Lj92;->m:Ljava/lang/Object;
+
+    .line 30
+    .line 31
+    invoke-virtual {v0}, Ld76;->e()Lc76;
+
+    .line 32
+    .line 33
+    .line 34
+    move-result-object v0
+
+    .line 35
+    iget v0, v0, Lc76;->d:I
+
+    .line 36
+    .line 37
+    iput v0, p0, Lj92;->j:I
+
+    .line 38
+    .line 39
+    return-void
+
+    .line 40
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    .line 41
+    .line 42
+    invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    .line 43
+    .line 44
+    .line 45
+    throw p0
+
+    .line 46
+    :cond_1
+    new-instance p0, Ljava/util/ConcurrentModificationException;
+
+    .line 47
+    .line 48
+    invoke-direct {p0}, Ljava/util/ConcurrentModificationException;-><init>()V
+
+    .line 49
+    .line 50
+    .line 51
     throw p0
 .end method

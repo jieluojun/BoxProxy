@@ -1,425 +1,566 @@
 .class public final Lms4;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lng1;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Llp4;
+.implements Lcw5;
+.implements Lpx6;
+
+
+# static fields
+.field public static final I:Lsc5;
 
 
 # instance fields
-.field public final a:I
+.field public A:Lmn2;
 
-.field public final b:I
+.field public B:Z
 
-.field public final c:J
+.field public C:Lbg6;
 
-.field public final d:J
+.field public D:Lmg1;
+
+.field public E:Lhs4;
+
+.field public F:Lar3;
+
+.field public G:Z
+
+.field public final H:Lsc5;
+
+.field public z:Lar3;
 
 
 # direct methods
-.method public constructor <init>(IIJJ)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lsc5;
 
     .line 2
     .line 3
+    const/16 v1, 0x1c
+
     .line 4
-    iput p1, p0, Lms4;->a:I
-
     .line 5
-    .line 6
-    iput p2, p0, Lms4;->b:I
+    invoke-direct {v0, v1}, Lsc5;-><init>(B)V
 
+    .line 6
     .line 7
     .line 8
-    iput-wide p3, p0, Lms4;->c:J
+    sput-object v0, Lms4;->I:Lsc5;
 
     .line 9
     .line 10
-    iput-wide p5, p0, Lms4;->d:J
-
-    .line 11
-    .line 12
     return-void
 .end method
 
-.method public static a(Ljava/io/File;)Lms4;
-    .locals 9
+.method public constructor <init>(Lar3;Lmn2;Z)V
+    .locals 0
 
     .line 1
-    new-instance v1, Ljava/io/DataInputStream;
+    invoke-direct {p0}, Lng1;-><init>()V
 
     .line 2
     .line 3
-    new-instance v0, Ljava/io/FileInputStream;
-
     .line 4
-    .line 5
-    invoke-direct {v0, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    iput-object p1, p0, Lms4;->z:Lar3;
 
+    .line 5
     .line 6
+    iput-object p2, p0, Lms4;->A:Lmn2;
+
     .line 7
     .line 8
-    invoke-direct {v1, v0}, Ljava/io/DataInputStream;-><init>(Ljava/io/InputStream;)V
+    iput-boolean p3, p0, Lms4;->B:Z
 
     .line 9
     .line 10
+    iput-object p1, p0, Lms4;->F:Lar3;
+
     .line 11
-    :try_start_0
-    new-instance v2, Lms4;
-
     .line 12
-    .line 13
-    invoke-virtual {v1}, Ljava/io/DataInputStream;->readInt()I
+    if-nez p1, :cond_0
 
+    .line 13
     .line 14
+    if-eqz p2, :cond_0
+
     .line 15
     .line 16
-    move-result v3
+    const/4 p1, 0x1
 
     .line 17
-    invoke-virtual {v1}, Ljava/io/DataInputStream;->readInt()I
+    goto :goto_0
 
     .line 18
-    .line 19
-    .line 20
-    move-result v4
+    :cond_0
+    const/4 p1, 0x0
 
+    .line 19
+    :goto_0
+    iput-boolean p1, p0, Lms4;->G:Z
+
+    .line 20
     .line 21
-    invoke-virtual {v1}, Ljava/io/DataInputStream;->readLong()J
+    sget-object p1, Lms4;->I:Lsc5;
 
     .line 22
     .line 23
+    iput-object p1, p0, Lms4;->H:Lsc5;
+
     .line 24
-    move-result-wide v5
-
     .line 25
-    invoke-virtual {v1}, Ljava/io/DataInputStream;->readLong()J
-
-    .line 26
-    .line 27
-    .line 28
-    move-result-wide v7
-
-    .line 29
-    invoke-direct/range {v2 .. v8}, Lms4;-><init>(IIJJ)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 30
-    .line 31
-    .line 32
-    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
-
-    .line 33
-    .line 34
-    .line 35
-    return-object v2
-
-    .line 36
-    :catchall_0
-    move-exception v0
-
-    .line 37
-    move-object p0, v0
-
-    .line 38
-    :try_start_1
-    invoke-virtual {v1}, Ljava/io/InputStream;->close()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    .line 39
-    .line 40
-    .line 41
-    goto :goto_0
-
-    .line 42
-    :catchall_1
-    move-exception v0
-
-    .line 43
-    invoke-virtual {p0, v0}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
-
-    .line 44
-    .line 45
-    .line 46
-    :goto_0
-    throw p0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/io/File;)V
+.method public final C()Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lms4;->H:Lsc5;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public final H1()V
     .locals 3
 
     .line 1
-    invoke-virtual {p1}, Ljava/io/File;->delete()Z
+    iget-object v0, p0, Lms4;->z:Lar3;
 
     .line 2
     .line 3
+    if-eqz v0, :cond_0
+
     .line 4
-    new-instance v0, Ljava/io/DataOutputStream;
-
     .line 5
+    iget-object v1, p0, Lms4;->E:Lhs4;
+
     .line 6
-    new-instance v1, Ljava/io/FileOutputStream;
-
     .line 7
-    .line 8
-    invoke-direct {v1, p1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
+    if-eqz v1, :cond_0
 
+    .line 8
     .line 9
+    new-instance v2, Lgs4;
+
     .line 10
     .line 11
-    invoke-direct {v0, v1}, Ljava/io/DataOutputStream;-><init>(Ljava/io/OutputStream;)V
+    invoke-direct {v2, v1}, Lgs4;-><init>(Lhs4;)V
 
     .line 12
     .line 13
     .line 14
-    :try_start_0
-    iget p1, p0, Lms4;->a:I
+    invoke-virtual {v0, v2}, Lar3;->c(Llr2;)V
 
     .line 15
     .line 16
-    invoke-virtual {v0, p1}, Ljava/io/DataOutputStream;->writeInt(I)V
-
     .line 17
-    .line 18
-    .line 19
-    iget p1, p0, Lms4;->b:I
-
-    .line 20
-    .line 21
-    invoke-virtual {v0, p1}, Ljava/io/DataOutputStream;->writeInt(I)V
-
-    .line 22
-    .line 23
-    .line 24
-    iget-wide v1, p0, Lms4;->c:J
-
-    .line 25
-    .line 26
-    invoke-virtual {v0, v1, v2}, Ljava/io/DataOutputStream;->writeLong(J)V
-
-    .line 27
-    .line 28
-    .line 29
-    iget-wide p0, p0, Lms4;->d:J
-
-    .line 30
-    .line 31
-    invoke-virtual {v0, p0, p1}, Ljava/io/DataOutputStream;->writeLong(J)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 32
-    .line 33
-    .line 34
-    invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
-
-    .line 35
-    .line 36
-    .line 37
-    return-void
-
-    .line 38
-    :catchall_0
-    move-exception p0
-
-    .line 39
-    :try_start_1
-    invoke-virtual {v0}, Ljava/io/OutputStream;->close()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    .line 40
-    .line 41
-    .line 42
-    goto :goto_0
-
-    .line 43
-    :catchall_1
-    move-exception p1
-
-    .line 44
-    invoke-virtual {p0, p1}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
-
-    .line 45
-    .line 46
-    .line 47
-    :goto_0
-    throw p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 6
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
     :cond_0
-    const/4 v1, 0x0
-
-    .line 6
-    if-eqz p1, :cond_2
-
-    .line 7
-    .line 8
-    instance-of v2, p1, Lms4;
-
-    .line 9
-    .line 10
-    if-nez v2, :cond_1
-
-    .line 11
-    .line 12
-    goto :goto_0
-
-    .line 13
-    :cond_1
-    check-cast p1, Lms4;
-
-    .line 14
-    .line 15
-    iget v2, p0, Lms4;->b:I
-
-    .line 16
-    .line 17
-    iget v3, p1, Lms4;->b:I
+    const/4 v0, 0x0
 
     .line 18
+    iput-object v0, p0, Lms4;->E:Lhs4;
+
     .line 19
-    if-ne v2, v3, :cond_2
-
     .line 20
-    .line 21
-    iget-wide v2, p0, Lms4;->c:J
-
-    .line 22
-    .line 23
-    iget-wide v4, p1, Lms4;->c:J
-
-    .line 24
-    .line 25
-    cmp-long v2, v2, v4
-
-    .line 26
-    .line 27
-    if-nez v2, :cond_2
-
-    .line 28
-    .line 29
-    iget v2, p0, Lms4;->a:I
-
-    .line 30
-    .line 31
-    iget v3, p1, Lms4;->a:I
-
-    .line 32
-    .line 33
-    if-ne v2, v3, :cond_2
-
-    .line 34
-    .line 35
-    iget-wide v2, p0, Lms4;->d:J
-
-    .line 36
-    .line 37
-    iget-wide p0, p1, Lms4;->d:J
-
-    .line 38
-    .line 39
-    cmp-long p0, v2, p0
-
-    .line 40
-    .line 41
-    if-nez p0, :cond_2
-
-    .line 42
-    .line 43
-    return v0
-
-    .line 44
-    :cond_2
-    :goto_0
-    return v1
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 5
+.method public final I1()V
+    .locals 2
 
     .line 1
-    iget v0, p0, Lms4;->b:I
+    iget-object v0, p0, Lms4;->D:Lmg1;
 
     .line 2
     .line 3
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
+    goto :goto_0
+
     .line 6
+    :cond_0
+    iget-object v0, p0, Lms4;->A:Lmn2;
+
+    .line 7
+    .line 8
+    if-eqz v0, :cond_2
+
+    .line 9
+    .line 10
+    iget-object v1, p0, Lms4;->z:Lar3;
+
+    .line 11
+    .line 12
+    if-nez v1, :cond_1
+
+    .line 13
+    .line 14
+    new-instance v1, Lar3;
+
+    .line 15
+    .line 16
+    invoke-direct {v1}, Lar3;-><init>()V
+
+    .line 17
+    .line 18
+    .line 19
+    iput-object v1, p0, Lms4;->z:Lar3;
+
+    .line 20
+    .line 21
+    :cond_1
+    invoke-interface {v0, v1}, Lmn2;->a(Lmr2;)Lmg1;
+
+    .line 22
+    .line 23
+    .line 24
     move-result-object v0
 
-    .line 7
-    iget-wide v1, p0, Lms4;->c:J
-
-    .line 8
-    .line 9
-    invoke-static {v1, v2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    .line 10
-    .line 11
-    .line 12
-    move-result-object v1
-
-    .line 13
-    iget v2, p0, Lms4;->a:I
-
-    .line 14
-    .line 15
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object v2
-
-    .line 19
-    iget-wide v3, p0, Lms4;->d:J
-
-    .line 20
-    .line 21
-    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    .line 22
-    .line 23
-    .line 24
-    move-result-object p0
-
     .line 25
-    filled-new-array {v0, v1, v2, p0}, [Ljava/lang/Object;
+    invoke-virtual {p0, v0}, Lng1;->E1(Lmg1;)V
 
     .line 26
     .line 27
     .line 28
-    move-result-object p0
+    iput-object v0, p0, Lms4;->D:Lmg1;
 
     .line 29
-    invoke-static {p0}, Ljava/util/Objects;->hash([Ljava/lang/Object;)I
+    .line 30
+    :cond_2
+    :goto_0
+    return-void
+.end method
+
+.method public final Q0(Llw5;)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    iget-boolean p0, p0, Lms4;->B:Z
+
+    .line 5
+    .line 6
+    if-nez p0, :cond_0
+
+    .line 7
+    .line 8
+    invoke-static {p1}, Ljw5;->a(Llw5;)V
+
+    .line 9
+    .line 10
+    .line 11
+    :cond_0
+    return-void
+.end method
+
+.method public final S0()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lms4;->C:Lbg6;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-virtual {v0}, Lbg6;->S0()V
+
+    .line 6
+    .line 7
+    .line 8
+    :cond_0
+    iget-object p0, p0, Lms4;->D:Lmg1;
+
+    .line 9
+    .line 10
+    instance-of v0, p0, Llp4;
+
+    .line 11
+    .line 12
+    if-eqz v0, :cond_2
+
+    .line 13
+    .line 14
+    instance-of v0, p0, Llp4;
+
+    .line 15
+    .line 16
+    if-eqz v0, :cond_1
+
+    .line 17
+    .line 18
+    check-cast p0, Llp4;
+
+    .line 19
+    .line 20
+    goto :goto_0
+
+    .line 21
+    :cond_1
+    const/4 p0, 0x0
+
+    .line 22
+    :goto_0
+    if-eqz p0, :cond_2
+
+    .line 23
+    .line 24
+    invoke-interface {p0}, Llp4;->S0()V
+
+    .line 25
+    .line 26
+    .line 27
+    :cond_2
+    return-void
+.end method
+
+.method public final W0()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x1
+
+    .line 2
+    return p0
+.end method
+
+.method public final g0(Lap4;Lbp4;J)V
+    .locals 8
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    const/16 v0, 0x21
+
+    .line 5
+    .line 6
+    shr-long v1, p3, v0
+
+    .line 7
+    .line 8
+    const/16 v3, 0x20
+
+    .line 9
+    .line 10
+    shl-long/2addr v1, v3
+
+    .line 11
+    shl-long v4, p3, v3
+
+    .line 12
+    .line 13
+    shr-long/2addr v4, v0
+
+    .line 14
+    const-wide v6, 0xffffffffL
+
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    and-long/2addr v4, v6
+
+    .line 20
+    or-long v0, v1, v4
+
+    .line 21
+    .line 22
+    shr-long v2, v0, v3
+
+    .line 23
+    .line 24
+    long-to-int v2, v2
+
+    .line 25
+    int-to-float v2, v2
+
+    .line 26
+    and-long/2addr v0, v6
+
+    .line 27
+    long-to-int v0, v0
+
+    .line 28
+    int-to-float v0, v0
+
+    .line 29
+    invoke-static {v2}, Ljava/lang/Float;->floatToRawIntBits(F)I
 
     .line 30
     .line 31
     .line 32
-    move-result p0
+    invoke-static {v0}, Ljava/lang/Float;->floatToRawIntBits(F)I
 
     .line 33
+    .line 34
+    .line 35
+    invoke-virtual {p0}, Lms4;->I1()V
+
+    .line 36
+    .line 37
+    .line 38
+    iget-object v0, p0, Lms4;->C:Lbg6;
+
+    .line 39
+    .line 40
+    if-nez v0, :cond_0
+
+    .line 41
+    .line 42
+    new-instance v0, Lv3;
+
+    .line 43
+    .line 44
+    const/4 v1, 0x0
+
+    .line 45
+    invoke-direct {v0, p0, v1}, Lv3;-><init>(Ljava/lang/Object;B)V
+
+    .line 46
+    .line 47
+    .line 48
+    invoke-static {v0}, Lwf6;->a(Landroidx/compose/ui/input/pointer/PointerInputEventHandler;)Lbg6;
+
+    .line 49
+    .line 50
+    .line 51
+    move-result-object v0
+
+    .line 52
+    invoke-virtual {p0, v0}, Lng1;->E1(Lmg1;)V
+
+    .line 53
+    .line 54
+    .line 55
+    iput-object v0, p0, Lms4;->C:Lbg6;
+
+    .line 56
+    .line 57
+    :cond_0
+    invoke-virtual {v0, p1, p2, p3, p4}, Lbg6;->g0(Lap4;Lbp4;J)V
+
+    .line 58
+    .line 59
+    .line 60
+    iget-object p0, p0, Lms4;->D:Lmg1;
+
+    .line 61
+    .line 62
+    instance-of v0, p0, Llp4;
+
+    .line 63
+    .line 64
+    if-eqz v0, :cond_1
+
+    .line 65
+    .line 66
+    check-cast p0, Llp4;
+
+    .line 67
+    .line 68
+    invoke-interface {p0, p1, p2, p3, p4}, Llp4;->g0(Lap4;Lbp4;J)V
+
+    .line 69
+    .line 70
+    .line 71
+    :cond_1
+    return-void
+.end method
+
+.method public final t1()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
     return p0
+.end method
+
+.method public final w1()V
+    .locals 1
+
+    .line 1
+    iget-boolean v0, p0, Lms4;->G:Z
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Lms4;->I1()V
+
+    .line 6
+    .line 7
+    .line 8
+    :cond_0
+    return-void
+.end method
+
+.method public final x1()V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lms4;->H1()V
+
+    .line 2
+    .line 3
+    .line 4
+    iget-object v0, p0, Lms4;->F:Lar3;
+
+    .line 5
+    .line 6
+    const/4 v1, 0x0
+
+    .line 7
+    if-nez v0, :cond_0
+
+    .line 8
+    .line 9
+    iput-object v1, p0, Lms4;->z:Lar3;
+
+    .line 10
+    .line 11
+    :cond_0
+    iget-object v0, p0, Lms4;->D:Lmg1;
+
+    .line 12
+    .line 13
+    if-eqz v0, :cond_1
+
+    .line 14
+    .line 15
+    invoke-virtual {p0, v0}, Lng1;->F1(Lmg1;)V
+
+    .line 16
+    .line 17
+    .line 18
+    :cond_1
+    iput-object v1, p0, Lms4;->D:Lmg1;
+
+    .line 19
+    .line 20
+    return-void
 .end method

@@ -1,80 +1,111 @@
 .class public abstract Lyx6;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ljava/util/Iterator;
+.implements Lvw2;
 
 
-# static fields
-.field public static final a:Ljp6;
+# instance fields
+.field public j:[Ljava/lang/Object;
+
+.field public k:I
+
+.field public l:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 13
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
-    new-instance v11, Lh73;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/high16 v0, 0x3f000000    # 0.5f
+    .line 4
+    sget-object v0, Lxx6;->e:Lxx6;
+
+    .line 5
+    .line 6
+    iget-object v0, v0, Lxx6;->d:[Ljava/lang/Object;
+
+    .line 7
+    .line 8
+    iput-object v0, p0, Lyx6;->j:[Ljava/lang/Object;
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a([Ljava/lang/Object;II)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lyx6;->j:[Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iput p2, p0, Lyx6;->k:I
 
     .line 4
     .line 5
-    invoke-static {v0}, Le73;->a(F)V
+    iput p3, p0, Lyx6;->l:I
+
+    .line 6
+    .line 7
+    return-void
+.end method
+
+.method public final hasNext()Z
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lyx6;->l:I
+
+    .line 2
+    .line 3
+    iget p0, p0, Lyx6;->k:I
+
+    .line 4
+    .line 5
+    if-ge v0, p0, :cond_0
+
+    .line 6
+    .line 7
+    const/4 p0, 0x1
+
+    .line 8
+    return p0
+
+    .line 9
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 10
+    return p0
+.end method
+
+.method public final remove()V
+    .locals 1
+
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 2
+    .line 3
+    const-string v0, "Operation is not supported for read-only collection"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     .line 6
     .line 7
     .line 8
-    const/4 v1, 0x0
-
-    .line 9
-    invoke-direct {v11, v0, v1, v1}, Lh73;-><init>(FII)V
-
-    .line 10
-    .line 11
-    .line 12
-    sget-object v0, Ljp6;->d:Ljp6;
-
-    .line 13
-    .line 14
-    const-wide/16 v9, 0x0
-
-    .line 15
-    .line 16
-    const v12, 0xe7ffff
-
-    .line 17
-    .line 18
-    .line 19
-    const-wide/16 v1, 0x0
-
-    .line 20
-    .line 21
-    const-wide/16 v3, 0x0
-
-    .line 22
-    .line 23
-    const/4 v5, 0x0
-
-    .line 24
-    const/4 v6, 0x0
-
-    .line 25
-    const-wide/16 v7, 0x0
-
-    .line 26
-    .line 27
-    invoke-static/range {v0 .. v12}, Ljp6;->a(Ljp6;JJLd42;Lf32;JJLh73;I)Ljp6;
-
-    .line 28
-    .line 29
-    .line 30
-    move-result-object v0
-
-    .line 31
-    sput-object v0, Lyx6;->a:Ljp6;
-
-    .line 32
-    .line 33
-    return-void
+    throw p0
 .end method

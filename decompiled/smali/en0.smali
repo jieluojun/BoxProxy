@@ -1,19 +1,18 @@
 .class public final Len0;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Ljava/text/CharacterIterator;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final j:Ljava/lang/CharSequence;
+.field public final a:J
 
-.field public k:I
+.field public final b:J
+
+.field public final c:J
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/CharSequence;)V
+.method public constructor <init>(JJJ)V
     .locals 0
 
     .line 1
@@ -22,162 +21,143 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Len0;->j:Ljava/lang/CharSequence;
+    iput-wide p1, p0, Len0;->a:J
 
     .line 5
     .line 6
+    iput-wide p3, p0, Len0;->b:J
+
+    .line 7
+    .line 8
+    iput-wide p5, p0, Len0;->c:J
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final clone()Ljava/lang/Object;
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
     .line 1
-    new-instance v0, Len0;
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
-    iget-object v1, p0, Len0;->j:Ljava/lang/CharSequence;
+    goto :goto_1
 
     .line 4
-    .line 5
-    invoke-direct {v0, v1}, Len0;-><init>(Ljava/lang/CharSequence;)V
+    :cond_0
+    instance-of v0, p1, Len0;
 
+    .line 5
     .line 6
+    if-nez v0, :cond_1
+
     .line 7
     .line 8
-    iget p0, p0, Len0;->k:I
+    goto :goto_0
 
     .line 9
-    .line 10
-    iput p0, v0, Len0;->k:I
-
-    .line 11
-    .line 12
-    return-object v0
-.end method
-
-.method public final current()C
-    .locals 3
-
-    .line 1
-    iget v0, p0, Len0;->k:I
-
-    .line 2
-    .line 3
-    iget-object v1, p0, Len0;->j:Ljava/lang/CharSequence;
-
-    .line 4
-    .line 5
-    invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
-
-    .line 6
-    .line 7
-    .line 8
-    move-result v2
-
-    .line 9
-    if-ne v0, v2, :cond_0
+    :cond_1
+    check-cast p1, Len0;
 
     .line 10
     .line 11
-    const p0, 0xffff
+    iget-wide v0, p0, Len0;->a:J
 
     .line 12
     .line 13
-    .line 14
-    return p0
+    iget-wide v2, p1, Len0;->a:J
 
+    .line 14
     .line 15
-    :cond_0
-    iget p0, p0, Len0;->k:I
+    invoke-static {v0, v1, v2, v3}, Lj94;->c(JJ)Z
 
     .line 16
     .line 17
-    invoke-interface {v1, p0}, Ljava/lang/CharSequence;->charAt(I)C
-
     .line 18
+    move-result v0
+
     .line 19
+    if-nez v0, :cond_2
+
     .line 20
-    move-result p0
-
     .line 21
-    return p0
-.end method
+    goto :goto_0
 
-.method public final first()C
-    .locals 1
+    .line 22
+    :cond_2
+    iget-wide v0, p0, Len0;->b:J
 
-    .line 1
-    const/4 v0, 0x0
+    .line 23
+    .line 24
+    iget-wide v2, p1, Len0;->b:J
 
-    .line 2
-    iput v0, p0, Len0;->k:I
+    .line 25
+    .line 26
+    invoke-static {v0, v1, v2, v3}, Lj94;->c(JJ)Z
 
-    .line 3
-    .line 4
-    invoke-virtual {p0}, Len0;->current()C
+    .line 27
+    .line 28
+    .line 29
+    move-result v0
 
-    .line 5
-    .line 6
-    .line 7
+    .line 30
+    if-nez v0, :cond_3
+
+    .line 31
+    .line 32
+    goto :goto_0
+
+    .line 33
+    :cond_3
+    iget-wide v0, p0, Len0;->c:J
+
+    .line 34
+    .line 35
+    iget-wide p0, p1, Len0;->c:J
+
+    .line 36
+    .line 37
+    invoke-static {v0, v1, p0, p1}, Lj94;->c(JJ)Z
+
+    .line 38
+    .line 39
+    .line 40
     move-result p0
 
-    .line 8
-    return p0
-.end method
+    .line 41
+    if-nez p0, :cond_4
 
-.method public final getBeginIndex()I
-    .locals 0
-
-    .line 1
+    .line 42
+    .line 43
+    :goto_0
     const/4 p0, 0x0
 
-    .line 2
+    .line 44
+    return p0
+
+    .line 45
+    :cond_4
+    :goto_1
+    const/4 p0, 0x1
+
+    .line 46
     return p0
 .end method
 
-.method public final getEndIndex()I
-    .locals 0
+.method public final hashCode()I
+    .locals 4
 
     .line 1
-    iget-object p0, p0, Len0;->j:Ljava/lang/CharSequence;
+    iget-wide v0, p0, Len0;->a:J
 
     .line 2
     .line 3
-    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final getIndex()I
-    .locals 0
-
-    .line 1
-    iget p0, p0, Len0;->k:I
-
-    .line 2
-    .line 3
-    return p0
-.end method
-
-.method public final last()C
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Len0;->j:Ljava/lang/CharSequence;
-
-    .line 2
-    .line 3
-    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
     .line 4
     .line 5
@@ -185,118 +165,114 @@
     move-result v0
 
     .line 7
-    add-int/lit8 v0, v0, -0x1
+    const/16 v1, 0x1f
 
     .line 8
     .line 9
-    iput v0, p0, Len0;->k:I
+    mul-int/2addr v0, v1
 
     .line 10
+    iget-wide v2, p0, Len0;->b:J
+
     .line 11
-    if-gez v0, :cond_0
-
     .line 12
+    invoke-static {v0, v1, v2, v3}, Lqq5;->d(IIJ)I
+
     .line 13
-    const/4 v0, 0x0
-
     .line 14
-    iput v0, p0, Len0;->k:I
-
     .line 15
+    move-result v0
+
     .line 16
-    :cond_0
-    invoke-virtual {p0}, Len0;->current()C
+    iget-wide v1, p0, Len0;->c:J
 
     .line 17
     .line 18
+    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
+
     .line 19
-    move-result p0
-
     .line 20
-    return p0
-.end method
-
-.method public final next()C
-    .locals 1
-
-    .line 1
-    iget v0, p0, Len0;->k:I
-
-    .line 2
-    .line 3
-    add-int/lit8 v0, v0, 0x1
-
-    .line 4
-    .line 5
-    iput v0, p0, Len0;->k:I
-
-    .line 6
-    .line 7
-    invoke-virtual {p0}, Len0;->current()C
-
-    .line 8
-    .line 9
-    .line 10
+    .line 21
     move-result p0
 
-    .line 11
+    .line 22
+    add-int/2addr p0, v0
+
+    .line 23
     return p0
 .end method
 
-.method public final previous()C
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
     .line 1
-    iget v0, p0, Len0;->k:I
+    iget-wide v0, p0, Len0;->a:J
 
     .line 2
     .line 3
-    add-int/lit8 v0, v0, -0x1
+    invoke-static {v0, v1}, Lj94;->i(J)Ljava/lang/String;
 
     .line 4
     .line 5
-    iput v0, p0, Len0;->k:I
-
     .line 6
+    move-result-object v0
+
     .line 7
-    if-gez v0, :cond_0
+    iget-wide v1, p0, Len0;->b:J
 
     .line 8
     .line 9
-    const/4 v0, 0x0
+    invoke-static {v1, v2}, Lj94;->i(J)Ljava/lang/String;
 
     .line 10
-    iput v0, p0, Len0;->k:I
-
     .line 11
     .line 12
-    :cond_0
-    invoke-virtual {p0}, Len0;->current()C
+    move-result-object v1
 
     .line 13
+    iget-wide v2, p0, Len0;->c:J
+
     .line 14
     .line 15
-    move-result p0
+    invoke-static {v2, v3}, Lj94;->i(J)Ljava/lang/String;
 
     .line 16
-    return p0
-.end method
+    .line 17
+    .line 18
+    move-result-object p0
 
-.method public final setIndex(I)C
-    .locals 0
+    .line 19
+    const-string v2, ", middlePoint="
 
-    .line 1
-    iput p1, p0, Len0;->k:I
+    .line 20
+    .line 21
+    const-string v3, ", endPoint="
 
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Len0;->current()C
+    .line 22
+    .line 23
+    const-string v4, "CheckCache(startPoint="
 
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
+    .line 24
+    .line 25
+    invoke-static {v4, v0, v2, v1, v3}, Lpb1;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 7
-    return p0
+    .line 26
+    .line 27
+    .line 28
+    move-result-object v0
+
+    .line 29
+    const-string v1, ")"
+
+    .line 30
+    .line 31
+    invoke-static {v0, p0, v1}, Lh86;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 32
+    .line 33
+    .line 34
+    move-result-object p0
+
+    .line 35
+    return-object p0
 .end method

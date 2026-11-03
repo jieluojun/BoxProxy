@@ -1,93 +1,82 @@
 .class public final Leh5;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lg52;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public j:Lih5;
 
-.field public final synthetic k:Luh5;
+.field public k:Ljava/lang/String;
 
-.field public final synthetic l:Lue5;
+.field public l:Ljava/util/List;
+
+.field public m:Ljava/util/Iterator;
+
+.field public n:Log5;
+
+.field public synthetic o:Ljava/lang/Object;
+
+.field public final synthetic p:Lhh5;
+
+.field public q:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Luh5;Lue5;B)V
+.method public constructor <init>(Lhh5;Lz71;)V
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Leh5;->j:B
+    iput-object p1, p0, Leh5;->p:Lhh5;
 
     .line 2
     .line 3
-    iput-object p1, p0, Leh5;->k:Luh5;
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
     .line 4
     .line 5
-    iput-object p2, p0, Leh5;->l:Lue5;
-
     .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 8
-    .line 9
-    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Leh5;->j:B
+    iput-object p1, p0, Leh5;->o:Ljava/lang/Object;
 
     .line 2
     .line 3
-    sget-object v1, Ld07;->a:Ld07;
+    iget p1, p0, Leh5;->q:I
 
     .line 4
     .line 5
-    iget-object v2, p0, Leh5;->l:Lue5;
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
-    iget-object p0, p0, Leh5;->k:Luh5;
+    or-int/2addr p1, v0
 
     .line 8
-    .line 9
-    packed-switch v0, :pswitch_data_0
+    iput p1, p0, Leh5;->q:I
 
+    .line 9
     .line 10
+    iget-object p1, p0, Leh5;->p:Lhh5;
+
     .line 11
     .line 12
-    invoke-virtual {p0, v2}, Luh5;->m(Lue5;)V
+    const/4 v0, 0x0
 
     .line 13
+    invoke-virtual {p1, p0, v0, v0}, Lhh5;->e(Lz71;Lih5;Ljava/lang/String;)Ljava/lang/Object;
+
     .line 14
     .line 15
-    return-object v1
-
     .line 16
-    :pswitch_0
-    invoke-virtual {p0, v2}, Luh5;->m(Lue5;)V
+    move-result-object p0
 
     .line 17
-    .line 18
-    .line 19
-    return-object v1
-
-    .line 20
-    nop
-
-    .line 21
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

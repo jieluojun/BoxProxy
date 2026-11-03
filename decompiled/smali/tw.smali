@@ -1,19 +1,118 @@
-.class public final Ltw;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public Ltw;
+.super Lft6;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# static fields
+.field public static final h:Lo7;
+
+.field public static i:Ltw;
+
+.field public static final j:Ljava/util/concurrent/locks/ReentrantLock;
+
+.field public static final k:Ljava/util/concurrent/locks/Condition;
+
+.field public static final l:C
+
+.field public static final m:J
 
 
 # instance fields
-.field public final a:Ljava/lang/Object;
+.field public e:B
 
-.field public final b:Lhw;
+.field public f:I
 
-.field public final c:Lxl2;
+.field public g:J
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Object;Lhw;Lxl2;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
+
+    .line 1
+    new-instance v0, Lo7;
+
+    .line 2
+    .line 3
+    const/4 v1, 0x7
+
+    .line 4
+    invoke-direct {v0, v1}, Lo7;-><init>(B)V
+
+    .line 5
+    .line 6
+    .line 7
+    const/16 v1, 0x8
+
+    .line 8
+    .line 9
+    new-array v1, v1, [Ltw;
+
+    .line 10
+    .line 11
+    iput-object v1, v0, Lo7;->c:Ljava/lang/Object;
+
+    .line 12
+    .line 13
+    sput-object v0, Ltw;->h:Lo7;
+
+    .line 14
+    .line 15
+    new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
+
+    .line 16
+    .line 17
+    invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
+
+    .line 18
+    .line 19
+    .line 20
+    sput-object v0, Ltw;->j:Ljava/util/concurrent/locks/ReentrantLock;
+
+    .line 21
+    .line 22
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->newCondition()Ljava/util/concurrent/locks/Condition;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object v0
+
+    .line 26
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 27
+    .line 28
+    .line 29
+    sput-object v0, Ltw;->k:Ljava/util/concurrent/locks/Condition;
+
+    .line 30
+    .line 31
+    const v0, 0xea60
+
+    .line 32
+    .line 33
+    .line 34
+    sput-char v0, Ltw;->l:C
+
+    .line 35
+    .line 36
+    const-wide v0, 0xdf8475800L
+
+    .line 37
+    .line 38
+    .line 39
+    .line 40
+    .line 41
+    sput-wide v0, Ltw;->m:J
+
+    .line 42
+    .line 43
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -21,174 +120,216 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Ltw;->a:Ljava/lang/Object;
+    const/4 v0, -0x1
 
     .line 5
+    iput v0, p0, Ltw;->f:I
+
     .line 6
-    iput-object p2, p0, Ltw;->b:Lhw;
-
     .line 7
-    .line 8
-    iput-object p3, p0, Ltw;->c:Lxl2;
-
-    .line 9
-    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+.method public final i()V
+    .locals 5
 
     .line 1
-    if-ne p0, p1, :cond_0
+    iget-wide v0, p0, Lft6;->c:J
 
     .line 2
     .line 3
-    goto :goto_0
+    iget-boolean v2, p0, Lft6;->a:Z
 
     .line 4
-    :cond_0
-    instance-of v0, p1, Ltw;
-
     .line 5
+    const-wide/16 v3, 0x0
+
     .line 6
-    if-eqz v0, :cond_1
-
     .line 7
+    cmp-long v0, v0, v3
+
     .line 8
-    check-cast p1, Ltw;
-
     .line 9
+    if-nez v0, :cond_0
+
     .line 10
-    iget-object v0, p1, Ltw;->b:Lhw;
-
     .line 11
-    .line 12
-    iget-object v1, p0, Ltw;->b:Lhw;
+    if-nez v2, :cond_0
 
+    .line 12
     .line 13
+    return-void
+
     .line 14
-    invoke-static {v1, v0}, Los2;->d0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    :cond_0
+    sget-object v0, Ltw;->j:Ljava/util/concurrent/locks/ReentrantLock;
 
     .line 15
     .line 16
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+
     .line 17
-    move-result v0
-
     .line 18
-    if-eqz v0, :cond_1
-
     .line 19
+    :try_start_0
+    iget-byte v1, p0, Ltw;->e:B
+
     .line 20
-    iget-object v0, p0, Ltw;->a:Ljava/lang/Object;
-
     .line 21
-    .line 22
-    iget-object v2, p1, Ltw;->a:Ljava/lang/Object;
+    if-nez v1, :cond_1
 
+    .line 22
     .line 23
+    const/4 v1, 0x1
+
     .line 24
-    invoke-virtual {v1, v0, v2}, Lhw;->a(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iput-byte v1, p0, Ltw;->e:B
 
     .line 25
     .line 26
+    invoke-static {p0}, Ls77;->H(Ltw;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
     .line 27
-    move-result v0
-
     .line 28
-    if-eqz v0, :cond_1
-
     .line 29
-    .line 30
-    iget-object p0, p0, Ltw;->c:Lxl2;
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
+    .line 30
     .line 31
     .line 32
-    iget-object p1, p1, Ltw;->c:Lxl2;
+    return-void
 
     .line 33
+    :catchall_0
+    move-exception p0
+
     .line 34
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    goto :goto_0
 
     .line 35
+    :cond_1
+    :try_start_1
+    const-string p0, "Unbalanced enter/exit"
+
     .line 36
     .line 37
-    move-result p0
+    new-instance v1, Ljava/lang/IllegalStateException;
 
     .line 38
-    if-eqz p0, :cond_1
-
     .line 39
+    invoke-direct {v1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
     .line 40
-    :goto_0
-    const/4 p0, 0x1
-
     .line 41
-    return p0
-
     .line 42
-    :cond_1
-    const/4 p0, 0x0
+    throw v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 43
-    return p0
+    :goto_0
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    .line 44
+    .line 45
+    .line 46
+    throw p0
 .end method
 
-.method public final hashCode()I
-    .locals 3
+.method public final j()Z
+    .locals 4
 
     .line 1
-    iget-object v0, p0, Ltw;->b:Lhw;
+    sget-object v0, Ltw;->j:Ljava/util/concurrent/locks/ReentrantLock;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
     .line 4
     .line 5
     .line 6
-    move-result v1
+    :try_start_0
+    iget-byte v1, p0, Ltw;->e:B
 
     .line 7
-    mul-int/lit8 v1, v1, 0x1f
-
     .line 8
+    const/4 v2, 0x0
+
     .line 9
-    iget-object v2, p0, Ltw;->a:Ljava/lang/Object;
+    iput-byte v2, p0, Ltw;->e:B
 
     .line 10
     .line 11
-    invoke-virtual {v0, v2}, Lhw;->b(Ljava/lang/Object;)I
+    const/4 v3, 0x1
 
     .line 12
+    if-ne v1, v3, :cond_0
+
     .line 13
     .line 14
-    move-result v0
+    sget-object v1, Ltw;->h:Lo7;
 
     .line 15
-    add-int/2addr v0, v1
-
     .line 16
-    mul-int/lit8 v0, v0, 0x1f
+    invoke-virtual {v1, p0}, Lo7;->o(Ltw;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 17
     .line 18
-    iget-object p0, p0, Ltw;->c:Lxl2;
-
     .line 19
-    .line 20
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
+    .line 20
     .line 21
     .line 22
+    return v2
+
     .line 23
-    move-result p0
+    :catchall_0
+    move-exception p0
 
     .line 24
-    add-int/2addr p0, v0
+    goto :goto_0
 
     .line 25
-    return p0
+    :cond_0
+    const/4 p0, 0x2
+
+    .line 26
+    if-ne v1, p0, :cond_1
+
+    .line 27
+    .line 28
+    move v2, v3
+
+    .line 29
+    :cond_1
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    .line 30
+    .line 31
+    .line 32
+    return v2
+
+    .line 33
+    :goto_0
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    .line 34
+    .line 35
+    .line 36
+    throw p0
+.end method
+
+.method public k()V
+    .locals 0
+
+    .line 1
+    return-void
 .end method

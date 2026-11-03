@@ -1,489 +1,440 @@
 .class public final Ldl4;
-.super Lwl4;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.super Lfa6;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Landroid/os/Parcelable;
+.implements Lv66;
+.implements Lu96;
+.implements Las3;
+
+
+# static fields
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Ldl4;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 
 # instance fields
-.field public final c:F
-
-.field public final d:F
-
-.field public final e:F
-
-.field public final f:Z
-
-.field public final g:Z
-
-.field public final h:F
-
-.field public final i:F
+.field public k:Lt66;
 
 
 # direct methods
-.method public constructor <init>(FFFZZFF)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    const/4 v0, 0x3
+    new-instance v0, Lj6;
 
     .line 2
-    invoke-direct {p0, v0}, Lwl4;-><init>(I)V
-
     .line 3
+    const/16 v1, 0xc
+
     .line 4
     .line 5
-    iput p1, p0, Ldl4;->c:F
+    invoke-direct {v0, v1}, Lj6;-><init>(B)V
 
     .line 6
     .line 7
-    iput p2, p0, Ldl4;->d:F
+    .line 8
+    sput-object v0, Ldl4;->CREATOR:Landroid/os/Parcelable$Creator;
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+.method public constructor <init>(I)V
+    .locals 4
+
+    .line 1
+    invoke-direct {p0}, Lfa6;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-static {}, Lq66;->h()Lj66;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object v0
 
     .line 8
+    new-instance v1, Lt66;
+
     .line 9
-    iput p3, p0, Ldl4;->e:F
-
     .line 10
-    .line 11
-    iput-boolean p4, p0, Ldl4;->f:Z
+    invoke-virtual {v0}, Lj66;->g()J
 
+    .line 11
     .line 12
     .line 13
-    iput-boolean p5, p0, Ldl4;->g:Z
+    move-result-wide v2
 
     .line 14
-    .line 15
-    iput p6, p0, Ldl4;->h:F
+    invoke-direct {v1, p1, v2, v3}, Lt66;-><init>(IJ)V
 
+    .line 15
     .line 16
     .line 17
-    iput p7, p0, Ldl4;->i:F
+    instance-of v0, v0, Lm72;
 
     .line 18
     .line 19
+    if-nez v0, :cond_0
+
+    .line 20
+    .line 21
+    new-instance v0, Lt66;
+
+    .line 22
+    .line 23
+    const-wide/16 v2, 0x1
+
+    .line 24
+    .line 25
+    invoke-direct {v0, p1, v2, v3}, Lt66;-><init>(IJ)V
+
+    .line 26
+    .line 27
+    .line 28
+    iput-object v0, v1, Lga6;->b:Lga6;
+
+    .line 29
+    .line 30
+    :cond_0
+    iput-object v1, p0, Ldl4;->k:Lt66;
+
+    .line 31
+    .line 32
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final a()Lga6;
+    .locals 0
 
     .line 1
-    const/4 v0, 0x1
+    iget-object p0, p0, Ldl4;->k:Lt66;
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of v1, p1, Ldl4;
-
-    .line 6
-    .line 7
-    const/4 v2, 0x0
-
-    .line 8
-    if-nez v1, :cond_1
-
-    .line 9
-    .line 10
-    return v2
-
-    .line 11
-    :cond_1
-    check-cast p1, Ldl4;
-
-    .line 12
-    .line 13
-    iget v1, p0, Ldl4;->c:F
-
-    .line 14
-    .line 15
-    iget v3, p1, Ldl4;->c:F
-
-    .line 16
-    .line 17
-    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
-
-    .line 18
-    .line 19
-    .line 20
-    move-result v1
-
-    .line 21
-    if-eqz v1, :cond_2
-
-    .line 22
-    .line 23
-    return v2
-
-    .line 24
-    :cond_2
-    iget v1, p0, Ldl4;->d:F
-
-    .line 25
-    .line 26
-    iget v3, p1, Ldl4;->d:F
-
-    .line 27
-    .line 28
-    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
-
-    .line 29
-    .line 30
-    .line 31
-    move-result v1
-
-    .line 32
-    if-eqz v1, :cond_3
-
-    .line 33
-    .line 34
-    return v2
-
-    .line 35
-    :cond_3
-    iget v1, p0, Ldl4;->e:F
-
-    .line 36
-    .line 37
-    iget v3, p1, Ldl4;->e:F
-
-    .line 38
-    .line 39
-    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
-
-    .line 40
-    .line 41
-    .line 42
-    move-result v1
-
-    .line 43
-    if-eqz v1, :cond_4
-
-    .line 44
-    .line 45
-    return v2
-
-    .line 46
-    :cond_4
-    iget-boolean v1, p0, Ldl4;->f:Z
-
-    .line 47
-    .line 48
-    iget-boolean v3, p1, Ldl4;->f:Z
-
-    .line 49
-    .line 50
-    if-eq v1, v3, :cond_5
-
-    .line 51
-    .line 52
-    return v2
-
-    .line 53
-    :cond_5
-    iget-boolean v1, p0, Ldl4;->g:Z
-
-    .line 54
-    .line 55
-    iget-boolean v3, p1, Ldl4;->g:Z
-
-    .line 56
-    .line 57
-    if-eq v1, v3, :cond_6
-
-    .line 58
-    .line 59
-    return v2
-
-    .line 60
-    :cond_6
-    iget v1, p0, Ldl4;->h:F
-
-    .line 61
-    .line 62
-    iget v3, p1, Ldl4;->h:F
-
-    .line 63
-    .line 64
-    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
-
-    .line 65
-    .line 66
-    .line 67
-    move-result v1
-
-    .line 68
-    if-eqz v1, :cond_7
-
-    .line 69
-    .line 70
-    return v2
-
-    .line 71
-    :cond_7
-    iget p0, p0, Ldl4;->i:F
-
-    .line 72
-    .line 73
-    iget p1, p1, Ldl4;->i:F
-
-    .line 74
-    .line 75
-    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
-
-    .line 76
-    .line 77
-    .line 78
-    move-result p0
-
-    .line 79
-    if-eqz p0, :cond_8
-
-    .line 80
-    .line 81
-    return v2
-
-    .line 82
-    :cond_8
-    return v0
+    return-object p0
 .end method
 
-.method public final hashCode()I
-    .locals 3
+.method public final b(Lga6;Lga6;Lga6;)Lga6;
+    .locals 0
 
     .line 1
-    iget v0, p0, Ldl4;->c:F
+    move-object p0, p2
 
     .line 2
-    .line 3
-    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
+    check-cast p0, Lt66;
 
+    .line 3
     .line 4
+    check-cast p3, Lt66;
+
     .line 5
     .line 6
-    move-result v0
+    iget p0, p0, Lt66;->c:I
 
     .line 7
-    const/16 v1, 0x1f
-
     .line 8
-    .line 9
-    mul-int/2addr v0, v1
+    iget p1, p3, Lt66;->c:I
 
+    .line 9
     .line 10
-    iget v2, p0, Ldl4;->d:F
+    if-ne p0, p1, :cond_0
 
     .line 11
     .line 12
-    invoke-static {v2, v0, v1}, Lxu1;->c(FII)I
+    return-object p2
 
     .line 13
+    :cond_0
+    const/4 p0, 0x0
+
     .line 14
-    .line 15
-    move-result v0
+    return-object p0
+.end method
 
-    .line 16
-    iget v2, p0, Ldl4;->e:F
+.method public final c(Lga6;)V
+    .locals 0
 
-    .line 17
-    .line 18
-    invoke-static {v2, v0, v1}, Lxu1;->c(FII)I
+    .line 1
+    check-cast p1, Lt66;
 
-    .line 19
-    .line 20
-    .line 21
-    move-result v0
+    .line 2
+    .line 3
+    iput-object p1, p0, Ldl4;->k:Lt66;
 
-    .line 22
-    iget-boolean v2, p0, Ldl4;->f:Z
+    .line 4
+    .line 5
+    return-void
+.end method
 
-    .line 23
-    .line 24
-    invoke-static {v0, v1, v2}, Lv66;->f(IIZ)I
+.method public final d()Lx66;
+    .locals 0
 
-    .line 25
-    .line 26
-    .line 27
-    move-result v0
+    .line 1
+    sget-object p0, Lsc5;->F:Lsc5;
 
-    .line 28
-    iget-boolean v2, p0, Ldl4;->g:Z
+    .line 2
+    .line 3
+    return-object p0
+.end method
 
-    .line 29
-    .line 30
-    invoke-static {v0, v1, v2}, Lv66;->f(IIZ)I
+.method public final describeContents()I
+    .locals 0
 
-    .line 31
-    .line 32
-    .line 33
-    move-result v0
+    .line 1
+    const/4 p0, 0x0
 
-    .line 34
-    iget v2, p0, Ldl4;->h:F
-
-    .line 35
-    .line 36
-    invoke-static {v2, v0, v1}, Lxu1;->c(FII)I
-
-    .line 37
-    .line 38
-    .line 39
-    move-result v0
-
-    .line 40
-    iget p0, p0, Ldl4;->i:F
-
-    .line 41
-    .line 42
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 43
-    .line 44
-    .line 45
-    move-result p0
-
-    .line 46
-    add-int/2addr p0, v0
-
-    .line 47
+    .line 2
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 5
+.method public final g()I
+    .locals 1
 
     .line 1
-    const-string v0, ", verticalEllipseRadius="
+    iget-object v0, p0, Ldl4;->k:Lt66;
 
     .line 2
     .line 3
-    const-string v1, ", theta="
+    invoke-static {v0, p0}, Lq66;->s(Lga6;Lea6;)Lga6;
 
     .line 4
     .line 5
-    const-string v2, "ArcTo(horizontalEllipseRadius="
-
     .line 6
+    move-result-object p0
+
     .line 7
-    iget v3, p0, Ldl4;->c:F
+    check-cast p0, Lt66;
 
     .line 8
     .line 9
-    iget v4, p0, Ldl4;->d:F
+    iget p0, p0, Lt66;->c:I
 
     .line 10
     .line 11
-    invoke-static {v2, v3, v0, v4, v1}, Lxu1;->u(Ljava/lang/String;FLjava/lang/String;FLjava/lang/String;)Ljava/lang/StringBuilder;
+    return p0
+.end method
+
+.method public final getValue()Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Ldl4;->g()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    return-object p0
+.end method
+
+.method public final h(I)V
+    .locals 4
+
+    .line 1
+    iget-object v0, p0, Ldl4;->k:Lt66;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Lq66;->g(Lga6;Lea6;)Lga6;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, Lt66;
+
+    .line 8
+    .line 9
+    iget v1, v0, Lt66;->c:I
+
+    .line 10
+    .line 11
+    if-eq v1, p1, :cond_0
 
     .line 12
     .line 13
-    .line 14
-    move-result-object v0
+    iget-object v1, p0, Ldl4;->k:Lt66;
 
+    .line 14
     .line 15
-    iget v1, p0, Ldl4;->e:F
+    sget-object v2, Lq66;->c:Ljava/lang/Object;
 
     .line 16
     .line 17
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    monitor-enter v2
 
     .line 18
+    :try_start_0
+    invoke-static {}, Lq66;->h()Lj66;
+
     .line 19
     .line 20
-    const-string v1, ", isMoreThanHalf="
-
     .line 21
+    move-result-object v3
+
     .line 22
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1, p0, v3, v0}, Lq66;->n(Lga6;Lfa6;Lj66;Lga6;)Lga6;
 
     .line 23
     .line 24
     .line 25
-    iget-boolean v1, p0, Ldl4;->f:Z
+    move-result-object v0
 
     .line 26
-    .line 27
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    check-cast v0, Lt66;
 
+    .line 27
     .line 28
+    iput p1, v0, Lt66;->c:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
     .line 29
     .line 30
-    const-string v1, ", isPositiveArc="
+    monitor-exit v2
 
     .line 31
-    .line 32
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v3, p0}, Lq66;->l(Lj66;Lea6;)V
 
+    .line 32
     .line 33
     .line 34
+    return-void
+
     .line 35
-    iget-boolean v1, p0, Ldl4;->g:Z
+    :catchall_0
+    move-exception p0
 
     .line 36
+    monitor-exit v2
+
     .line 37
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    throw p0
 
     .line 38
-    .line 39
-    .line 40
-    const-string v1, ", arcStartX="
+    :cond_0
+    return-void
+.end method
 
-    .line 41
-    .line 42
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+.method public final setValue(Ljava/lang/Object;)V
+    .locals 0
 
-    .line 43
-    .line 44
-    .line 45
-    iget v1, p0, Ldl4;->h:F
+    .line 1
+    check-cast p1, Ljava/lang/Number;
 
-    .line 46
-    .line 47
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    .line 2
+    .line 3
+    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
 
-    .line 48
-    .line 49
-    .line 50
-    const-string v1, ", arcStartY="
+    .line 4
+    .line 5
+    .line 6
+    move-result p1
 
-    .line 51
-    .line 52
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 7
+    invoke-virtual {p0, p1}, Ldl4;->h(I)V
 
-    .line 53
-    .line 54
-    .line 55
-    iget p0, p0, Ldl4;->i:F
+    .line 8
+    .line 9
+    .line 10
+    return-void
+.end method
 
-    .line 56
-    .line 57
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-    .line 58
-    .line 59
-    .line 60
-    const-string p0, ")"
+    .line 1
+    iget-object v0, p0, Ldl4;->k:Lt66;
 
-    .line 61
-    .line 62
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Lq66;->g(Lga6;Lea6;)Lga6;
 
-    .line 63
-    .line 64
-    .line 65
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
 
-    .line 66
-    .line 67
-    .line 68
+    .line 7
+    check-cast v0, Lt66;
+
+    .line 8
+    .line 9
+    iget v0, v0, Lt66;->c:I
+
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    const-string v1, "MutableIntState(value="
+
+    .line 16
+    .line 17
+    const-string v2, ")@"
+
+    .line 18
+    .line 19
+    invoke-static {v0, p0, v1, v2}, Lqq5;->j(IILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 20
+    .line 21
+    .line 22
     move-result-object p0
 
-    .line 69
+    .line 23
     return-object p0
+.end method
+
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Ldl4;->g()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 6
+    .line 7
+    .line 8
+    return-void
 .end method

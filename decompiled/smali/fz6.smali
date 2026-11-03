@@ -1,239 +1,326 @@
-.class public abstract Lfz6;
+.class public final Lfz6;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lly6;
 
 
-# static fields
-.field public static final a:Lmp1;
+# instance fields
+.field public final synthetic j:B
 
-.field public static final b:Lmp1;
+.field public final synthetic k:Ljava/lang/Object;
 
-.field public static final c:Lmp1;
-
-.field public static final d:Lmp1;
-
-.field public static final e:Lmp1;
-
-.field public static final f:Lmp1;
-
-.field public static final g:Lmp1;
-
-.field public static final h:Lmp1;
+.field public final synthetic l:Lky6;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(Ljava/lang/Object;Lky6;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lvq6;
+    iput-byte p3, p0, Lfz6;->j:B
 
     .line 2
     .line 3
-    const/4 v1, 0x5
+    iput-object p1, p0, Lfz6;->k:Ljava/lang/Object;
 
     .line 4
-    invoke-direct {v0, v1}, Lvq6;-><init>(B)V
-
     .line 5
+    iput-object p2, p0, Lfz6;->l:Lky6;
+
     .line 6
     .line 7
-    new-instance v1, Lmp1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 8
     .line 9
-    const/4 v2, 0x1
-
     .line 10
-    invoke-direct {v1, v0, v2}, Lmp1;-><init>(Lg52;B)V
+    return-void
+.end method
 
+
+# virtual methods
+.method public final a(Lm82;Lrz6;)Lky6;
+    .locals 3
+
+    .line 1
+    iget-byte p1, p0, Lfz6;->j:B
+
+    .line 2
+    .line 3
+    iget-object v0, p0, Lfz6;->l:Lky6;
+
+    .line 4
+    .line 5
+    const/4 v1, 0x0
+
+    .line 6
+    iget-object v2, p0, Lfz6;->k:Ljava/lang/Object;
+
+    .line 7
+    .line 8
+    packed-switch p1, :pswitch_data_0
+
+    .line 9
+    .line 10
     .line 11
+    check-cast v2, Lrz6;
+
     .line 12
     .line 13
-    sput-object v1, Lfz6;->a:Lmp1;
+    invoke-virtual {p2, v2}, Lrz6;->equals(Ljava/lang/Object;)Z
 
     .line 14
     .line 15
-    new-instance v0, Lv43;
-
     .line 16
+    move-result p0
+
     .line 17
-    const/16 v1, 0x15
+    if-eqz p0, :cond_0
 
     .line 18
     .line 19
-    invoke-direct {v0, v1}, Lv43;-><init>(B)V
+    goto :goto_0
 
     .line 20
+    :cond_0
+    move-object v0, v1
+
     .line 21
+    :goto_0
+    return-object v0
+
     .line 22
-    new-instance v1, Lmp1;
+    :pswitch_0
+    iget-object p1, p2, Lrz6;->a:Ljava/lang/Class;
 
     .line 23
     .line 24
-    invoke-direct {v1, v0, v2}, Lmp1;-><init>(Lg52;B)V
+    check-cast v2, Ljava/lang/Class;
 
     .line 25
     .line 26
-    .line 27
-    sput-object v1, Lfz6;->b:Lmp1;
+    invoke-virtual {v2, p1}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
 
+    .line 27
     .line 28
     .line 29
-    new-instance v0, Lv43;
+    move-result p2
 
     .line 30
-    .line 31
-    const/16 v1, 0x15
+    if-nez p2, :cond_1
 
+    .line 31
     .line 32
+    goto :goto_1
+
     .line 33
-    invoke-direct {v0, v1}, Lv43;-><init>(B)V
+    :cond_1
+    new-instance v1, Lyt0;
 
     .line 34
     .line 35
-    .line 36
-    new-instance v1, Lmp1;
+    invoke-direct {v1, p0, p1}, Lyt0;-><init>(Lfz6;Ljava/lang/Class;)V
 
+    .line 36
     .line 37
     .line 38
-    invoke-direct {v1, v0, v2}, Lmp1;-><init>(Lg52;B)V
+    :goto_1
+    return-object v1
+
+    .line 39
+    :pswitch_1
+    iget-object p0, p2, Lrz6;->a:Ljava/lang/Class;
+
+    .line 40
+    .line 41
+    check-cast v2, Ljava/lang/Class;
+
+    .line 42
+    .line 43
+    if-ne p0, v2, :cond_2
+
+    .line 44
+    .line 45
+    goto :goto_2
+
+    .line 46
+    :cond_2
+    move-object v0, v1
+
+    .line 47
+    :goto_2
+    return-object v0
+
+    .line 48
+    nop
+
+    .line 49
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 5
+
+    .line 1
+    iget-byte v0, p0, Lfz6;->j:B
+
+    .line 2
+    .line 3
+    const-string v1, "]"
+
+    .line 4
+    .line 5
+    iget-object v2, p0, Lfz6;->l:Lky6;
+
+    .line 6
+    .line 7
+    const-string v3, ",adapter="
+
+    .line 8
+    .line 9
+    iget-object v4, p0, Lfz6;->k:Ljava/lang/Object;
+
+    .line 10
+    .line 11
+    packed-switch v0, :pswitch_data_0
+
+    .line 12
+    .line 13
+    .line 14
+    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-object p0
+
+    .line 18
+    return-object p0
+
+    .line 19
+    :pswitch_0
+    new-instance p0, Ljava/lang/StringBuilder;
+
+    .line 20
+    .line 21
+    const-string v0, "Factory[typeHierarchy="
+
+    .line 22
+    .line 23
+    invoke-direct {p0, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 24
+    .line 25
+    .line 26
+    check-cast v4, Ljava/lang/Class;
+
+    .line 27
+    .line 28
+    invoke-virtual {v4}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object v0
+
+    .line 32
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 33
+    .line 34
+    .line 35
+    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 36
+    .line 37
+    .line 38
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 39
     .line 40
     .line 41
-    sput-object v1, Lfz6;->c:Lmp1;
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 42
     .line 43
-    new-instance v0, Lvq6;
-
     .line 44
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
     .line 45
-    const/4 v1, 0x6
-
     .line 46
-    invoke-direct {v0, v1}, Lvq6;-><init>(B)V
-
     .line 47
+    move-result-object p0
+
     .line 48
+    return-object p0
+
     .line 49
-    new-instance v1, Lmp1;
+    :pswitch_1
+    new-instance p0, Ljava/lang/StringBuilder;
 
     .line 50
     .line 51
-    invoke-direct {v1, v0, v2}, Lmp1;-><init>(Lg52;B)V
+    const-string v0, "Factory[type="
 
     .line 52
     .line 53
-    .line 54
-    sput-object v1, Lfz6;->d:Lmp1;
+    invoke-direct {p0, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    .line 54
     .line 55
     .line 56
-    new-instance v0, Lv43;
+    check-cast v4, Ljava/lang/Class;
 
     .line 57
     .line 58
-    const/16 v1, 0x15
+    invoke-virtual {v4}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     .line 59
     .line 60
-    invoke-direct {v0, v1}, Lv43;-><init>(B)V
-
     .line 61
-    .line 62
-    .line 63
-    new-instance v1, Lmp1;
+    move-result-object v0
 
+    .line 62
+    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 63
     .line 64
     .line 65
-    invoke-direct {v1, v0, v2}, Lmp1;-><init>(Lg52;B)V
+    invoke-virtual {p0, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 66
     .line 67
     .line 68
-    sput-object v1, Lfz6;->e:Lmp1;
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 69
     .line 70
-    new-instance v0, Lv43;
-
     .line 71
-    .line 72
-    const/16 v1, 0x15
+    invoke-virtual {p0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 72
     .line 73
     .line 74
-    invoke-direct {v0, v1}, Lv43;-><init>(B)V
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 75
     .line 76
     .line 77
-    new-instance v1, Lmp1;
+    move-result-object p0
 
     .line 78
+    return-object p0
+
     .line 79
-    invoke-direct {v1, v0, v2}, Lmp1;-><init>(Lg52;B)V
-
-    .line 80
-    .line 81
-    .line 82
-    sput-object v1, Lfz6;->f:Lmp1;
-
-    .line 83
-    .line 84
-    new-instance v0, Lv43;
-
-    .line 85
-    .line 86
-    const/16 v1, 0x15
-
-    .line 87
-    .line 88
-    invoke-direct {v0, v1}, Lv43;-><init>(B)V
-
-    .line 89
-    .line 90
-    .line 91
-    new-instance v1, Lmp1;
-
-    .line 92
-    .line 93
-    invoke-direct {v1, v0, v2}, Lmp1;-><init>(Lg52;B)V
-
-    .line 94
-    .line 95
-    .line 96
-    sput-object v1, Lfz6;->g:Lmp1;
-
-    .line 97
-    .line 98
-    new-instance v0, Lv43;
-
-    .line 99
-    .line 100
-    const/16 v1, 0x15
-
-    .line 101
-    .line 102
-    invoke-direct {v0, v1}, Lv43;-><init>(B)V
-
-    .line 103
-    .line 104
-    .line 105
-    new-instance v1, Lmp1;
-
-    .line 106
-    .line 107
-    invoke-direct {v1, v0, v2}, Lmp1;-><init>(Lg52;B)V
-
-    .line 108
-    .line 109
-    .line 110
-    sput-object v1, Lfz6;->h:Lmp1;
-
-    .line 111
-    .line 112
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

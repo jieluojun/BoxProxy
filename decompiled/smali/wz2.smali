@@ -1,217 +1,184 @@
-.class public final Lwz2;
-.super Ljz2;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.class public final enum Lwz2;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic b:La03;
+# static fields
+.field public static final enum j:Lwz2;
 
-.field public final synthetic c:Lv52;
+.field public static final enum k:Lwz2;
+
+.field public static final enum l:Lwz2;
+
+.field public static final enum m:Lwz2;
+
+.field public static final enum n:Lwz2;
+
+.field public static final synthetic o:[Lwz2;
 
 
 # direct methods
-.method public constructor <init>(La03;Lv52;Ljava/lang/String;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 7
 
     .line 1
-    iput-object p1, p0, Lwz2;->b:La03;
+    new-instance v0, Lwz2;
 
     .line 2
     .line 3
-    iput-object p2, p0, Lwz2;->c:Lv52;
+    const-string v1, "Measuring"
 
     .line 4
     .line 5
-    invoke-direct {p0, p3}, Ljz2;-><init>(Ljava/lang/String;)V
+    const/4 v2, 0x0
 
     .line 6
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 7
     .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final c(Lvh3;Ljava/util/List;J)Lth3;
-    .locals 6
-
-    .line 1
-    iget-object v2, p0, Lwz2;->b:La03;
-
-    .line 2
-    .line 3
-    iget-object p2, v2, La03;->q:Luz2;
-
-    .line 4
-    .line 5
-    invoke-interface {p1}, Lgs2;->getLayoutDirection()Lwy2;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object v0
-
     .line 9
-    iput-object v0, p2, Luz2;->j:Lwy2;
+    sput-object v0, Lwz2;->j:Lwz2;
 
     .line 10
     .line 11
-    invoke-interface {p1}, Lbh1;->a()F
+    new-instance v1, Lwz2;
 
     .line 12
     .line 13
-    .line 14
-    move-result v0
+    const-string v2, "LookaheadMeasuring"
 
+    .line 14
     .line 15
-    iput v0, p2, Luz2;->k:F
+    const/4 v3, 0x1
 
     .line 16
-    .line 17
-    invoke-interface {p1}, Lbh1;->v()F
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 17
     .line 18
     .line 19
-    .line 20
-    move-result v0
+    sput-object v1, Lwz2;->k:Lwz2;
 
+    .line 20
     .line 21
-    iput v0, p2, Luz2;->l:F
+    new-instance v2, Lwz2;
 
     .line 22
     .line 23
-    invoke-interface {p1}, Lgs2;->E()Z
+    const-string v3, "LayingOut"
 
     .line 24
     .line 25
+    const/4 v4, 0x2
+
     .line 26
-    move-result p1
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 27
-    iget-object p0, p0, Lwz2;->c:Lv52;
-
     .line 28
     .line 29
-    const/4 v0, 0x0
+    sput-object v2, Lwz2;->l:Lwz2;
 
     .line 30
-    if-nez p1, :cond_0
-
     .line 31
+    new-instance v3, Lwz2;
+
     .line 32
-    iget-object p1, v2, La03;->j:Lmz2;
-
     .line 33
-    .line 34
-    iget-object p1, p1, Lmz2;->q:Lmz2;
+    const-string v4, "LookaheadLayingOut"
 
+    .line 34
     .line 35
+    const/4 v5, 0x3
+
     .line 36
-    if-eqz p1, :cond_0
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 37
     .line 38
-    iput v0, v2, La03;->n:I
-
     .line 39
+    sput-object v3, Lwz2;->m:Lwz2;
+
     .line 40
-    iget-object p1, v2, La03;->r:Lrz2;
-
     .line 41
+    new-instance v4, Lwz2;
+
     .line 42
-    new-instance p2, Lw51;
-
     .line 43
+    const-string v5, "Idle"
+
     .line 44
-    invoke-direct {p2, p3, p4}, Lw51;-><init>(J)V
-
     .line 45
-    .line 46
-    .line 47
-    invoke-interface {p0, p1, p2}, Lv52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v6, 0x4
 
+    .line 46
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 47
     .line 48
     .line 49
-    .line 50
-    move-result-object p0
+    sput-object v4, Lwz2;->n:Lwz2;
 
+    .line 50
     .line 51
-    move-object v1, p0
+    filled-new-array {v0, v1, v2, v3, v4}, [Lwz2;
 
     .line 52
-    check-cast v1, Lth3;
-
     .line 53
     .line 54
-    iget v3, v2, La03;->n:I
+    move-result-object v0
 
     .line 55
+    sput-object v0, Lwz2;->o:[Lwz2;
+
     .line 56
-    new-instance v0, Lvz2;
-
     .line 57
-    .line 58
-    const/4 v5, 0x0
+    return-void
+.end method
 
-    .line 59
-    move-object v4, v1
+.method public static valueOf(Ljava/lang/String;)Lwz2;
+    .locals 1
 
-    .line 60
-    invoke-direct/range {v0 .. v5}, Lvz2;-><init>(Lth3;La03;ILth3;B)V
+    .line 1
+    const-class v0, Lwz2;
 
-    .line 61
-    .line 62
-    .line 63
-    return-object v0
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    .line 64
-    :cond_0
-    iput v0, v2, La03;->m:I
-
-    .line 65
-    .line 66
-    new-instance p1, Lw51;
-
-    .line 67
-    .line 68
-    invoke-direct {p1, p3, p4}, Lw51;-><init>(J)V
-
-    .line 69
-    .line 70
-    .line 71
-    invoke-interface {p0, p2, p1}, Lv52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 72
-    .line 73
-    .line 74
+    .line 4
+    .line 5
+    .line 6
     move-result-object p0
 
-    .line 75
-    move-object v1, p0
+    .line 7
+    check-cast p0, Lwz2;
 
-    .line 76
-    check-cast v1, Lth3;
+    .line 8
+    .line 9
+    return-object p0
+.end method
 
-    .line 77
-    .line 78
-    iget v3, v2, La03;->m:I
+.method public static values()[Lwz2;
+    .locals 1
 
-    .line 79
-    .line 80
-    new-instance v0, Lvz2;
+    .line 1
+    sget-object v0, Lwz2;->o:[Lwz2;
 
-    .line 81
-    .line 82
-    const/4 v5, 0x1
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    .line 83
-    move-object v4, v1
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
 
-    .line 84
-    invoke-direct/range {v0 .. v5}, Lvz2;-><init>(Lth3;La03;ILth3;B)V
+    .line 7
+    check-cast v0, [Lwz2;
 
-    .line 85
-    .line 86
-    .line 87
+    .line 8
+    .line 9
     return-object v0
 .end method

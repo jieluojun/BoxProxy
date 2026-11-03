@@ -1,2311 +1,1153 @@
 .class public final Lxb1;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Ltp1;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final j:F
+.field public final a:Loa;
 
-.field public final k:F
+.field public final b:Lsr6;
 
-.field public final l:F
+.field public final c:Ljava/lang/Object;
 
-.field public final m:F
+.field public d:Z
 
-.field public final n:F
+.field public e:Z
 
-.field public final o:F
+.field public f:Z
+
+.field public g:Z
+
+.field public h:Z
+
+.field public i:Z
+
+.field public j:Lno6;
+
+.field public k:Lfp6;
+
+.field public l:Lm94;
+
+.field public m:Lo52;
+
+.field public n:Ls85;
+
+.field public o:Ls85;
+
+.field public final p:Landroid/view/inputmethod/CursorAnchorInfo$Builder;
+
+.field public final q:[F
+
+.field public final r:Landroid/graphics/Matrix;
 
 
 # direct methods
-.method public constructor <init>(FFFF)V
-    .locals 24
+.method public constructor <init>(Loa;Lsr6;)V
+    .locals 0
 
     .line 1
-    move-object/from16 v0, p0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    move/from16 v1, p1
-
     .line 4
+    iput-object p1, p0, Lxb1;->a:Loa;
+
     .line 5
-    move/from16 v2, p2
-
     .line 6
+    iput-object p2, p0, Lxb1;->b:Lsr6;
+
     .line 7
-    move/from16 v3, p3
-
     .line 8
+    new-instance p1, Ljava/lang/Object;
+
     .line 9
-    move/from16 v4, p4
-
     .line 10
-    .line 11
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
+    .line 11
     .line 12
     .line 13
+    iput-object p1, p0, Lxb1;->c:Ljava/lang/Object;
+
     .line 14
-    iput v1, v0, Lxb1;->j:F
-
     .line 15
+    sget-object p1, Lnd;->o:Lnd;
+
     .line 16
-    iput v2, v0, Lxb1;->k:F
-
     .line 17
+    iput-object p1, p0, Lxb1;->m:Lo52;
+
     .line 18
-    iput v3, v0, Lxb1;->l:F
-
     .line 19
+    new-instance p1, Landroid/view/inputmethod/CursorAnchorInfo$Builder;
+
     .line 20
-    iput v4, v0, Lxb1;->m:F
-
     .line 21
-    .line 22
-    invoke-static {v1}, Ljava/lang/Float;->isNaN(F)Z
+    invoke-direct {p1}, Landroid/view/inputmethod/CursorAnchorInfo$Builder;-><init>()V
 
+    .line 22
     .line 23
     .line 24
-    .line 25
-    move-result v5
+    iput-object p1, p0, Lxb1;->p:Landroid/view/inputmethod/CursorAnchorInfo$Builder;
 
+    .line 25
     .line 26
-    const/4 v6, 0x0
+    invoke-static {}, Lbi3;->a()[F
 
     .line 27
-    const/4 v7, 0x1
-
     .line 28
-    if-nez v5, :cond_0
-
     .line 29
+    move-result-object p1
+
     .line 30
-    invoke-static {v2}, Ljava/lang/Float;->isNaN(F)Z
+    iput-object p1, p0, Lxb1;->q:[F
 
     .line 31
     .line 32
-    .line 33
-    move-result v5
+    new-instance p1, Landroid/graphics/Matrix;
 
+    .line 33
     .line 34
-    if-nez v5, :cond_0
+    invoke-direct {p1}, Landroid/graphics/Matrix;-><init>()V
 
     .line 35
     .line 36
-    invoke-static {v3}, Ljava/lang/Float;->isNaN(F)Z
-
     .line 37
+    iput-object p1, p0, Lxb1;->r:Landroid/graphics/Matrix;
+
     .line 38
     .line 39
-    move-result v5
-
-    .line 40
-    if-nez v5, :cond_0
-
-    .line 41
-    .line 42
-    invoke-static {v4}, Ljava/lang/Float;->isNaN(F)Z
-
-    .line 43
-    .line 44
-    .line 45
-    move-result v5
-
-    .line 46
-    if-nez v5, :cond_0
-
-    .line 47
-    .line 48
-    move v5, v7
-
-    .line 49
-    goto :goto_0
-
-    .line 50
-    :cond_0
-    move v5, v6
-
-    .line 51
-    :goto_0
-    if-nez v5, :cond_1
-
-    .line 52
-    .line 53
-    const-string v5, "Parameters to CubicBezierEasing cannot be NaN. Actual parameters are: "
-
-    .line 54
-    .line 55
-    const-string v8, ", "
-
-    .line 56
-    .line 57
-    invoke-static {v5, v1, v8, v2, v8}, Lxu1;->u(Ljava/lang/String;FLjava/lang/String;FLjava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 58
-    .line 59
-    .line 60
-    move-result-object v1
-
-    .line 61
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 62
-    .line 63
-    .line 64
-    invoke-virtual {v1, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 65
-    .line 66
-    .line 67
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 68
-    .line 69
-    .line 70
-    const-string v3, "."
-
-    .line 71
-    .line 72
-    invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 73
-    .line 74
-    .line 75
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 76
-    .line 77
-    .line 78
-    move-result-object v1
-
-    .line 79
-    invoke-static {v1}, Luq4;->a(Ljava/lang/String;)V
-
-    .line 80
-    .line 81
-    .line 82
-    :cond_1
-    const/4 v1, 0x5
-
-    .line 83
-    new-array v1, v1, [F
-
-    .line 84
-    .line 85
-    const/4 v3, 0x0
-
-    .line 86
-    sub-float v5, v2, v3
-
-    .line 87
-    .line 88
-    const/high16 v8, 0x40400000    # 3.0f
-
-    .line 89
-    .line 90
-    mul-float/2addr v5, v8
-
-    .line 91
-    sub-float v9, v4, v2
-
-    .line 92
-    .line 93
-    mul-float/2addr v9, v8
-
-    .line 94
-    const/high16 v10, 0x3f800000    # 1.0f
-
-    .line 95
-    .line 96
-    sub-float v11, v10, v4
-
-    .line 97
-    .line 98
-    mul-float/2addr v11, v8
-
-    .line 99
-    float-to-double v12, v5
-
-    .line 100
-    float-to-double v14, v9
-
-    .line 101
-    move/from16 p1, v8
-
-    .line 102
-    .line 103
-    move/from16 p3, v9
-
-    .line 104
-    .line 105
-    float-to-double v8, v11
-
-    .line 106
-    const-wide/high16 v16, 0x4000000000000000L    # 2.0
-
-    .line 107
-    .line 108
-    mul-double v18, v14, v16
-
-    .line 109
-    .line 110
-    sub-double v20, v12, v18
-
-    .line 111
-    .line 112
-    add-double v20, v20, v8
-
-    .line 113
-    .line 114
-    const-wide/16 v22, 0x0
-
-    .line 115
-    .line 116
-    cmpg-double v22, v20, v22
-
-    .line 117
-    .line 118
-    if-nez v22, :cond_3
-
-    .line 119
-    .line 120
-    cmpg-double v7, v14, v8
-
-    .line 121
-    .line 122
-    if-nez v7, :cond_2
-
-    .line 123
-    .line 124
-    move v7, v6
-
-    .line 125
-    goto :goto_1
-
-    .line 126
-    :cond_2
-    sub-double v12, v18, v8
-
-    .line 127
-    .line 128
-    mul-double v8, v8, v16
-
-    .line 129
-    .line 130
-    sub-double v18, v18, v8
-
-    .line 131
-    .line 132
-    div-double v12, v12, v18
-
-    .line 133
-    .line 134
-    double-to-float v7, v12
-
-    .line 135
-    invoke-static {v7, v1, v6}, Lu77;->Y(F[FI)I
-
-    .line 136
-    .line 137
-    .line 138
-    move-result v7
-
-    .line 139
-    goto :goto_1
-
-    .line 140
-    :cond_3
-    mul-double v16, v14, v14
-
-    .line 141
-    .line 142
-    mul-double/2addr v8, v12
-
-    .line 143
-    sub-double v16, v16, v8
-
-    .line 144
-    .line 145
-    invoke-static/range {v16 .. v17}, Ljava/lang/Math;->sqrt(D)D
-
-    .line 146
-    .line 147
-    .line 148
-    move-result-wide v8
-
-    .line 149
-    neg-double v8, v8
-
-    .line 150
-    neg-double v12, v12
-
-    .line 151
-    add-double/2addr v12, v14
-
-    .line 152
-    add-double v14, v8, v12
-
-    .line 153
-    .line 154
-    neg-double v14, v14
-
-    .line 155
-    div-double v14, v14, v20
-
-    .line 156
-    .line 157
-    double-to-float v14, v14
-
-    .line 158
-    invoke-static {v14, v1, v6}, Lu77;->Y(F[FI)I
-
-    .line 159
-    .line 160
-    .line 161
-    move-result v14
-
-    .line 162
-    sub-double/2addr v8, v12
-
-    .line 163
-    div-double v8, v8, v20
-
-    .line 164
-    .line 165
-    double-to-float v8, v8
-
-    .line 166
-    invoke-static {v8, v1, v14}, Lu77;->Y(F[FI)I
-
-    .line 167
-    .line 168
-    .line 169
-    move-result v8
-
-    .line 170
-    add-int/2addr v8, v14
-
-    .line 171
-    if-le v8, v7, :cond_4
-
-    .line 172
-    .line 173
-    aget v9, v1, v6
-
-    .line 174
-    .line 175
-    aget v12, v1, v7
-
-    .line 176
-    .line 177
-    cmpl-float v13, v9, v12
-
-    .line 178
-    .line 179
-    if-lez v13, :cond_5
-
-    .line 180
-    .line 181
-    aput v12, v1, v6
-
-    .line 182
-    .line 183
-    aput v9, v1, v7
-
-    .line 184
-    .line 185
-    :cond_4
-    move v7, v8
-
-    .line 186
-    goto :goto_1
-
-    .line 187
-    :cond_5
-    cmpg-float v7, v9, v12
-
-    .line 188
-    .line 189
-    if-nez v7, :cond_4
-
-    .line 190
-    .line 191
-    add-int/lit8 v7, v8, -0x1
-
-    .line 192
-    .line 193
-    :goto_1
-    sub-float v9, p3, v5
-
-    .line 194
-    .line 195
-    const/high16 v8, 0x40000000    # 2.0f
-
-    .line 196
-    .line 197
-    mul-float/2addr v9, v8
-
-    .line 198
-    sub-float v11, v11, p3
-
-    .line 199
-    .line 200
-    mul-float/2addr v11, v8
-
-    .line 201
-    neg-float v12, v9
-
-    .line 202
-    sub-float/2addr v11, v9
-
-    .line 203
-    div-float/2addr v12, v11
-
-    .line 204
-    invoke-static {v12, v1, v7}, Lu77;->Y(F[FI)I
-
-    .line 205
-    .line 206
-    .line 207
-    move-result v9
-
-    .line 208
-    add-int/2addr v9, v7
-
-    .line 209
-    invoke-static {v3, v10}, Ljava/lang/Math;->min(FF)F
-
-    .line 210
-    .line 211
-    .line 212
-    move-result v7
-
-    .line 213
-    invoke-static {v3, v10}, Ljava/lang/Math;->max(FF)F
-
-    .line 214
-    .line 215
-    .line 216
-    move-result v11
-
-    .line 217
-    :goto_2
-    if-ge v6, v9, :cond_6
-
-    .line 218
-    .line 219
-    aget v12, v1, v6
-
-    .line 220
-    .line 221
-    sub-float v13, v2, v4
-
-    .line 222
-    .line 223
-    mul-float v13, v13, p1
-
-    .line 224
-    .line 225
-    add-float/2addr v13, v10
-
-    .line 226
-    sub-float/2addr v13, v3
-
-    .line 227
-    mul-float v14, v2, v8
-
-    .line 228
-    .line 229
-    sub-float v14, v4, v14
-
-    .line 230
-    .line 231
-    add-float/2addr v14, v3
-
-    .line 232
-    mul-float v14, v14, p1
-
-    .line 233
-    .line 234
-    mul-float/2addr v13, v12
-
-    .line 235
-    add-float/2addr v13, v14
-
-    .line 236
-    mul-float/2addr v13, v12
-
-    .line 237
-    add-float/2addr v13, v5
-
-    .line 238
-    mul-float/2addr v13, v12
-
-    .line 239
-    add-float/2addr v13, v3
-
-    .line 240
-    invoke-static {v7, v13}, Ljava/lang/Math;->min(FF)F
-
-    .line 241
-    .line 242
-    .line 243
-    move-result v7
-
-    .line 244
-    invoke-static {v11, v13}, Ljava/lang/Math;->max(FF)F
-
-    .line 245
-    .line 246
-    .line 247
-    move-result v11
-
-    .line 248
-    add-int/lit8 v6, v6, 0x1
-
-    .line 249
-    .line 250
-    goto :goto_2
-
-    .line 251
-    :cond_6
-    invoke-static {v7, v11}, Llz1;->a(FF)J
-
-    .line 252
-    .line 253
-    .line 254
-    move-result-wide v1
-
-    .line 255
-    const/16 v3, 0x20
-
-    .line 256
-    .line 257
-    shr-long v3, v1, v3
-
-    .line 258
-    .line 259
-    long-to-int v3, v3
-
-    .line 260
-    invoke-static {v3}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    .line 261
-    .line 262
-    .line 263
-    move-result v3
-
-    .line 264
-    iput v3, v0, Lxb1;->n:F
-
-    .line 265
-    .line 266
-    const-wide v3, 0xffffffffL
-
-    .line 267
-    .line 268
-    .line 269
-    .line 270
-    .line 271
-    and-long/2addr v1, v3
-
-    .line 272
-    long-to-int v1, v1
-
-    .line 273
-    invoke-static {v1}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    .line 274
-    .line 275
-    .line 276
-    move-result v1
-
-    .line 277
-    iput v1, v0, Lxb1;->o:F
-
-    .line 278
-    .line 279
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
-
-    .line 1
-    instance-of v0, p1, Lxb1;
-
-    .line 2
-    .line 3
-    if-eqz v0, :cond_0
-
-    .line 4
-    .line 5
-    check-cast p1, Lxb1;
-
-    .line 6
-    .line 7
-    iget v0, p1, Lxb1;->j:F
-
-    .line 8
-    .line 9
-    iget v1, p0, Lxb1;->j:F
-
-    .line 10
-    .line 11
-    cmpg-float v0, v1, v0
-
-    .line 12
-    .line 13
-    if-nez v0, :cond_0
-
-    .line 14
-    .line 15
-    iget v0, p0, Lxb1;->k:F
-
-    .line 16
-    .line 17
-    iget v1, p1, Lxb1;->k:F
-
-    .line 18
-    .line 19
-    cmpg-float v0, v0, v1
-
-    .line 20
-    .line 21
-    if-nez v0, :cond_0
-
-    .line 22
-    .line 23
-    iget v0, p0, Lxb1;->l:F
-
-    .line 24
-    .line 25
-    iget v1, p1, Lxb1;->l:F
-
-    .line 26
-    .line 27
-    cmpg-float v0, v0, v1
-
-    .line 28
-    .line 29
-    if-nez v0, :cond_0
-
-    .line 30
-    .line 31
-    iget p0, p0, Lxb1;->m:F
-
-    .line 32
-    .line 33
-    iget p1, p1, Lxb1;->m:F
-
-    .line 34
-    .line 35
-    cmpg-float p0, p0, p1
-
-    .line 36
-    .line 37
-    if-nez p0, :cond_0
-
-    .line 38
-    .line 39
-    const/4 p0, 0x1
-
-    .line 40
-    return p0
-
-    .line 41
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 42
-    return p0
-.end method
-
-.method public final f(F)F
-    .locals 30
+.method public final a()V
+    .locals 29
 
     .line 1
     move-object/from16 v0, p0
 
     .line 2
     .line 3
-    move/from16 v1, p1
+    iget-object v1, v0, Lxb1;->b:Lsr6;
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    iget-object v2, v1, Lsr6;->l:Ljava/lang/Object;
 
     .line 6
-    cmpl-float v3, v1, v2
-
     .line 7
+    check-cast v2, Lt03;
+
     .line 8
-    if-lez v3, :cond_25
-
     .line 9
-    .line 10
-    const/high16 v3, 0x3f800000    # 1.0f
+    invoke-interface {v2}, Lt03;->getValue()Ljava/lang/Object;
 
+    .line 10
     .line 11
     .line 12
-    cmpg-float v4, v1, v3
+    move-result-object v3
 
     .line 13
+    check-cast v3, Landroid/view/inputmethod/InputMethodManager;
+
     .line 14
-    if-gez v4, :cond_25
-
     .line 15
+    iget-object v1, v1, Lsr6;->k:Ljava/lang/Object;
+
     .line 16
-    const/high16 v4, 0x34000000
-
     .line 17
-    .line 18
-    invoke-static {v1, v4}, Ljava/lang/Math;->max(FF)F
+    check-cast v1, Landroid/view/View;
 
+    .line 18
     .line 19
+    invoke-virtual {v3, v1}, Landroid/view/inputmethod/InputMethodManager;->isActive(Landroid/view/View;)Z
+
     .line 20
     .line 21
-    move-result v4
-
     .line 22
-    sub-float v5, v2, v4
+    move-result v3
 
     .line 23
-    .line 24
-    iget v6, v0, Lxb1;->j:F
+    if-nez v3, :cond_0
 
+    .line 24
     .line 25
+    return-void
+
     .line 26
-    sub-float v7, v6, v4
+    :cond_0
+    iget-object v3, v0, Lxb1;->m:Lo52;
 
     .line 27
     .line 28
-    iget v8, v0, Lxb1;->l:F
+    new-instance v4, Lbi3;
 
     .line 29
     .line 30
-    sub-float v9, v8, v4
+    iget-object v5, v0, Lxb1;->q:[F
 
     .line 31
     .line 32
-    sub-float v4, v3, v4
+    invoke-direct {v4, v5}, Lbi3;-><init>([F)V
 
     .line 33
     .line 34
-    float-to-double v10, v5
-
     .line 35
-    float-to-double v12, v7
+    invoke-interface {v3, v4}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 36
-    const-wide/high16 v14, 0x4000000000000000L    # 2.0
-
     .line 37
     .line 38
-    mul-double/2addr v12, v14
+    iget-object v3, v0, Lxb1;->a:Loa;
 
     .line 39
-    sub-double v12, v10, v12
-
     .line 40
-    .line 41
-    move/from16 v16, v2
+    invoke-virtual {v3, v5}, Loa;->p([F)V
 
+    .line 41
     .line 42
     .line 43
-    move/from16 v17, v3
+    iget-object v3, v0, Lxb1;->r:Landroid/graphics/Matrix;
 
     .line 44
     .line 45
-    float-to-double v2, v9
+    invoke-static {v3, v5}, Lf47;->l0(Landroid/graphics/Matrix;[F)V
 
     .line 46
-    add-double/2addr v12, v2
-
     .line 47
-    const-wide/high16 v2, 0x4008000000000000L    # 3.0
-
     .line 48
-    .line 49
-    mul-double/2addr v12, v2
+    iget-object v4, v0, Lxb1;->j:Lno6;
 
+    .line 49
     .line 50
-    move-wide/from16 v18, v2
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 51
     .line 52
-    sub-float v2, v7, v5
-
     .line 53
-    .line 54
-    float-to-double v2, v2
+    iget-wide v5, v4, Lno6;->b:J
 
+    .line 54
     .line 55
-    mul-double v2, v2, v18
+    iget-object v7, v0, Lxb1;->l:Lm94;
 
     .line 56
     .line 57
-    neg-float v5, v5
+    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 58
-    move-wide/from16 v20, v14
-
     .line 59
     .line 60
-    float-to-double v14, v5
+    iget-object v8, v0, Lxb1;->k:Lfp6;
 
     .line 61
-    sub-float/2addr v7, v9
-
     .line 62
-    move-wide/from16 v22, v12
+    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 63
     .line 64
-    float-to-double v12, v7
-
     .line 65
-    mul-double v12, v12, v18
+    iget-object v9, v8, Lfp6;->b:Lwp3;
 
     .line 66
     .line 67
-    add-double/2addr v12, v14
+    iget-object v10, v0, Lxb1;->n:Ls85;
 
     .line 68
-    float-to-double v4, v4
-
     .line 69
-    add-double/2addr v12, v4
+    invoke-virtual {v10}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 70
-    const-wide/16 v4, 0x0
-
     .line 71
     .line 72
-    sub-double v14, v12, v4
+    iget v11, v10, Ls85;->d:F
 
     .line 73
     .line 74
-    invoke-static {v14, v15}, Ljava/lang/Math;->abs(D)D
+    iget v12, v10, Ls85;->b:F
 
     .line 75
     .line 76
-    .line 77
-    move-result-wide v14
+    iget-object v13, v0, Lxb1;->o:Ls85;
 
+    .line 77
     .line 78
-    const-wide v24, 0x3e7ad7f29abcaf48L    # 1.0E-7
+    invoke-virtual {v13}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 79
     .line 80
     .line 81
+    iget-boolean v14, v0, Lxb1;->f:Z
+
     .line 82
     .line 83
-    cmpg-double v7, v14, v24
+    iget-boolean v15, v0, Lxb1;->g:Z
 
     .line 84
     .line 85
-    const/high16 v9, 0x40000000    # 2.0f
+    move-object/from16 v16, v2
 
     .line 86
     .line 87
-    const v14, 0x358cedba    # 1.05E-6f
+    iget-boolean v2, v0, Lxb1;->h:Z
 
     .line 88
     .line 89
+    move/from16 v17, v2
+
     .line 90
-    const/high16 v15, 0x7fc00000    # Float.NaN
-
     .line 91
+    iget-boolean v2, v0, Lxb1;->i:Z
+
     .line 92
-    if-gez v7, :cond_b
-
     .line 93
+    move/from16 v25, v2
+
     .line 94
-    sub-double v12, v22, v4
-
     .line 95
-    .line 96
-    invoke-static {v12, v13}, Ljava/lang/Math;->abs(D)D
+    iget-object v2, v0, Lxb1;->p:Landroid/view/inputmethod/CursorAnchorInfo$Builder;
 
+    .line 96
     .line 97
+    invoke-virtual {v2}, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->reset()V
+
     .line 98
     .line 99
-    move-result-wide v12
-
     .line 100
-    cmpg-double v7, v12, v24
+    invoke-virtual {v2, v3}, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->setMatrix(Landroid/graphics/Matrix;)Landroid/view/inputmethod/CursorAnchorInfo$Builder;
 
     .line 101
     .line 102
-    if-gez v7, :cond_4
-
     .line 103
+    iget-object v3, v4, Lno6;->c:Laq6;
+
     .line 104
-    sub-double v4, v2, v4
-
     .line 105
-    .line 106
-    invoke-static {v4, v5}, Ljava/lang/Math;->abs(D)D
+    move-wide/from16 v18, v5
 
+    .line 106
     .line 107
+    invoke-static/range {v18 .. v19}, Laq6;->g(J)I
+
     .line 108
     .line 109
-    move-result-wide v4
-
     .line 110
-    cmpg-double v4, v4, v24
+    move-result v5
 
     .line 111
-    .line 112
-    if-gez v4, :cond_0
+    invoke-static/range {v18 .. v19}, Laq6;->f(J)I
 
+    .line 112
     .line 113
     .line 114
-    goto/16 :goto_f
+    move-result v6
 
     .line 115
+    invoke-virtual {v2, v5, v6}, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->setSelectionRange(II)Landroid/view/inputmethod/CursorAnchorInfo$Builder;
+
     .line 116
-    :cond_0
-    neg-double v4, v10
-
     .line 117
-    div-double/2addr v4, v2
-
     .line 118
-    double-to-float v2, v4
+    sget-object v6, Ldb5;->k:Ldb5;
 
     .line 119
-    cmpg-float v3, v2, v16
-
     .line 120
+    move-object/from16 v18, v2
+
     .line 121
-    if-gez v3, :cond_1
-
     .line 122
-    .line 123
-    goto :goto_0
+    const/16 v26, 0x1
 
+    .line 123
     .line 124
-    :cond_1
-    move/from16 v16, v2
+    if-eqz v14, :cond_8
 
     .line 125
     .line 126
-    :goto_0
-    cmpl-float v3, v16, v17
+    if-gez v5, :cond_1
 
     .line 127
     .line 128
-    if-lez v3, :cond_2
+    goto :goto_3
 
     .line 129
-    .line 130
-    move/from16 v3, v17
+    :cond_1
+    invoke-interface {v7, v5}, Lm94;->g(I)I
 
+    .line 130
     .line 131
     .line 132
-    goto :goto_1
+    move-result v5
 
     .line 133
-    :cond_2
-    move/from16 v3, v16
+    invoke-virtual {v8, v5}, Lfp6;->c(I)Ls85;
 
     .line 134
     .line 135
-    :goto_1
-    sub-float v2, v3, v2
-
     .line 136
+    move-result-object v14
+
     .line 137
-    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
+    iget v2, v14, Ls85;->a:F
 
     .line 138
     .line 139
-    .line 140
-    move-result v2
+    move-object/from16 v27, v1
 
+    .line 140
     .line 141
-    cmpl-float v2, v2, v14
+    iget-wide v0, v8, Lfp6;->c:J
 
     .line 142
     .line 143
-    if-lez v2, :cond_3
+    const/16 v19, 0x20
 
     .line 144
     .line 145
-    goto/16 :goto_f
+    shr-long v0, v0, v19
 
     .line 146
     .line 147
-    :cond_3
-    move v15, v3
+    long-to-int v0, v0
 
     .line 148
-    goto/16 :goto_f
+    int-to-float v0, v0
 
     .line 149
+    const/4 v1, 0x0
+
     .line 150
-    :cond_4
-    mul-double v4, v2, v2
+    invoke-static {v2, v1, v0}, Lg23;->q(FFF)F
 
     .line 151
     .line 152
-    const-wide/high16 v12, 0x4010000000000000L    # 4.0
-
     .line 153
+    move-result v0
+
     .line 154
-    mul-double v12, v12, v22
+    iget v1, v14, Ls85;->b:F
 
     .line 155
     .line 156
-    mul-double/2addr v12, v10
+    invoke-static {v10, v0, v1}, Lns6;->i(Ls85;FF)Z
 
     .line 157
-    sub-double/2addr v4, v12
-
     .line 158
-    invoke-static {v4, v5}, Ljava/lang/Math;->sqrt(D)D
-
     .line 159
-    .line 160
-    .line 161
-    move-result-wide v4
+    move-result v1
 
+    .line 160
+    iget v2, v14, Ls85;->d:F
+
+    .line 161
     .line 162
-    mul-double v12, v22, v20
+    invoke-static {v10, v0, v2}, Lns6;->i(Ls85;FF)Z
 
     .line 163
     .line 164
-    sub-double v10, v4, v2
-
     .line 165
+    move-result v2
+
     .line 166
-    div-double/2addr v10, v12
+    invoke-virtual {v8, v5}, Lfp6;->a(I)Ldb5;
 
     .line 167
-    double-to-float v7, v10
-
     .line 168
-    cmpg-float v10, v7, v16
-
     .line 169
+    move-result-object v5
+
     .line 170
-    if-gez v10, :cond_5
+    if-ne v5, v6, :cond_2
 
     .line 171
     .line 172
-    move/from16 v10, v16
+    move/from16 v5, v26
 
     .line 173
     .line 174
-    goto :goto_2
+    goto :goto_0
 
     .line 175
-    :cond_5
-    move v10, v7
+    :cond_2
+    const/4 v5, 0x0
 
     .line 176
-    :goto_2
-    cmpl-float v11, v10, v17
+    :goto_0
+    if-nez v1, :cond_4
 
     .line 177
     .line 178
-    if-lez v11, :cond_6
+    if-eqz v2, :cond_3
 
     .line 179
     .line 180
-    move/from16 v10, v17
+    goto :goto_1
 
     .line 181
-    .line 182
-    :cond_6
-    sub-float v7, v10, v7
+    :cond_3
+    const/16 v19, 0x0
 
+    .line 182
     .line 183
+    goto :goto_2
+
     .line 184
-    invoke-static {v7}, Ljava/lang/Math;->abs(F)F
+    :cond_4
+    :goto_1
+    move/from16 v19, v26
 
     .line 185
     .line 186
-    .line 187
-    move-result v7
+    :goto_2
+    if-eqz v1, :cond_5
 
+    .line 187
     .line 188
-    cmpl-float v7, v7, v14
+    if-nez v2, :cond_6
 
     .line 189
     .line 190
-    if-lez v7, :cond_7
+    :cond_5
+    or-int/lit8 v19, v19, 0x2
 
     .line 191
     .line 192
-    move v10, v15
+    :cond_6
+    if-eqz v5, :cond_7
 
     .line 193
-    :cond_7
-    invoke-static {v10}, Ljava/lang/Float;->isNaN(F)Z
-
     .line 194
+    or-int/lit8 v19, v19, 0x4
+
     .line 195
     .line 196
-    move-result v7
+    :cond_7
+    move/from16 v23, v19
 
     .line 197
-    if-nez v7, :cond_8
-
     .line 198
-    .line 199
-    move v15, v10
+    iget v1, v14, Ls85;->b:F
 
+    .line 199
     .line 200
-    goto/16 :goto_f
+    iget v2, v14, Ls85;->d:F
 
     .line 201
     .line 202
-    :cond_8
-    neg-double v2, v2
+    move/from16 v22, v2
 
     .line 203
-    sub-double/2addr v2, v4
-
     .line 204
-    div-double/2addr v2, v12
+    move/from16 v19, v0
 
     .line 205
-    double-to-float v2, v2
-
     .line 206
-    cmpg-float v3, v2, v16
+    move/from16 v20, v1
 
     .line 207
     .line 208
-    if-gez v3, :cond_9
+    move/from16 v21, v2
 
     .line 209
     .line 210
-    goto :goto_3
+    invoke-virtual/range {v18 .. v23}, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->setInsertionMarkerLocation(FFFFI)Landroid/view/inputmethod/CursorAnchorInfo$Builder;
 
     .line 211
-    :cond_9
-    move/from16 v16, v2
-
     .line 212
     .line 213
-    :goto_3
-    cmpl-float v3, v16, v17
-
-    .line 214
-    .line 215
-    if-lez v3, :cond_a
-
-    .line 216
-    .line 217
-    move/from16 v3, v17
-
-    .line 218
-    .line 219
     goto :goto_4
 
+    .line 214
+    :cond_8
+    :goto_3
+    move-object/from16 v27, v1
+
+    .line 215
+    .line 216
+    :goto_4
+    move-object/from16 v0, v18
+
+    .line 217
+    .line 218
+    if-eqz v15, :cond_12
+
+    .line 219
     .line 220
-    :cond_a
-    move/from16 v3, v16
+    const/4 v1, -0x1
 
     .line 221
+    if-eqz v3, :cond_9
+
     .line 222
-    :goto_4
-    sub-float v2, v3, v2
-
     .line 223
-    .line 224
-    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
+    iget-wide v14, v3, Laq6;->a:J
 
+    .line 224
     .line 225
+    invoke-static {v14, v15}, Laq6;->g(J)I
+
     .line 226
     .line 227
+    .line 228
     move-result v2
 
-    .line 228
-    cmpl-float v2, v2, v14
-
     .line 229
+    goto :goto_5
+
     .line 230
-    if-lez v2, :cond_3
+    :cond_9
+    move v2, v1
 
     .line 231
+    :goto_5
+    if-eqz v3, :cond_a
+
     .line 232
-    goto/16 :goto_f
-
     .line 233
+    iget-wide v14, v3, Laq6;->a:J
+
     .line 234
-    :cond_b
-    div-double v22, v22, v12
-
     .line 235
+    invoke-static {v14, v15}, Laq6;->f(J)I
+
     .line 236
-    div-double/2addr v2, v12
-
     .line 237
-    div-double/2addr v10, v12
-
     .line 238
-    mul-double v26, v2, v18
+    move-result v1
 
     .line 239
+    :cond_a
+    if-ltz v2, :cond_12
+
     .line 240
-    const-wide/high16 v28, 0x4022000000000000L    # 9.0
-
     .line 241
+    if-ge v2, v1, :cond_12
+
     .line 242
-    move-wide/from16 v24, v22
-
     .line 243
-    .line 244
-    invoke-static/range {v22 .. v29}, Lv66;->b(DDDD)D
+    iget-object v3, v4, Lno6;->a:Lai;
 
+    .line 244
     .line 245
+    iget-object v3, v3, Lai;->k:Ljava/lang/String;
+
     .line 246
     .line 247
-    move-result-wide v12
+    invoke-virtual {v3, v2, v1}, Ljava/lang/String;->subSequence(II)Ljava/lang/CharSequence;
 
     .line 248
-    mul-double v20, v20, v22
-
     .line 249
     .line 250
-    mul-double v20, v20, v22
+    move-result-object v3
 
     .line 251
-    .line 252
-    mul-double v20, v20, v22
+    invoke-virtual {v0, v2, v3}, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->setComposingText(ILjava/lang/CharSequence;)Landroid/view/inputmethod/CursorAnchorInfo$Builder;
 
+    .line 252
     .line 253
     .line 254
-    mul-double v24, v22, v28
+    invoke-interface {v7, v2}, Lm94;->g(I)I
 
     .line 255
     .line 256
-    mul-double v24, v24, v2
-
     .line 257
+    move-result v3
+
     .line 258
-    sub-double v20, v20, v24
+    invoke-interface {v7, v1}, Lm94;->g(I)I
 
     .line 259
     .line 260
-    const-wide/high16 v2, 0x403b000000000000L    # 27.0
-
     .line 261
+    move-result v4
+
     .line 262
-    mul-double/2addr v10, v2
+    sub-int v5, v4, v3
 
     .line 263
-    add-double v10, v10, v20
-
     .line 264
+    mul-int/lit8 v5, v5, 0x4
+
     .line 265
-    const-wide/high16 v2, 0x404b000000000000L    # 54.0
-
     .line 266
-    .line 267
-    div-double/2addr v10, v2
+    new-array v5, v5, [F
 
+    .line 267
     .line 268
-    mul-double v2, v10, v10
+    invoke-static {v3, v4}, Leg3;->f(II)J
 
     .line 269
     .line 270
-    mul-double v20, v12, v12
-
     .line 271
+    move-result-wide v14
+
     .line 272
-    mul-double v12, v12, v20
+    invoke-virtual {v9, v14, v15, v5}, Lwp3;->a(J[F)V
 
     .line 273
     .line 274
-    add-double/2addr v2, v12
-
     .line 275
-    move-wide/from16 v20, v4
+    :goto_6
+    if-ge v2, v1, :cond_12
 
     .line 276
     .line 277
-    div-double v4, v22, v18
+    invoke-interface {v7, v2}, Lm94;->g(I)I
 
     .line 278
     .line 279
-    cmpg-double v7, v2, v20
-
     .line 280
+    move-result v4
+
     .line 281
-    if-gez v7, :cond_18
+    sub-int v14, v4, v3
 
     .line 282
     .line 283
-    neg-double v2, v12
+    mul-int/lit8 v14, v14, 0x4
 
     .line 284
-    invoke-static {v2, v3}, Ljava/lang/Math;->sqrt(D)D
-
     .line 285
+    aget v15, v5, v14
+
     .line 286
     .line 287
-    move-result-wide v2
+    add-int/lit8 v18, v14, 0x1
 
     .line 288
-    neg-double v10, v10
-
     .line 289
-    div-double/2addr v10, v2
+    move-object/from16 v19, v0
 
     .line 290
-    const-wide/high16 v12, -0x4010000000000000L    # -1.0
-
     .line 291
+    aget v0, v5, v18
+
     .line 292
-    cmpg-double v7, v10, v12
-
     .line 293
+    add-int/lit8 v18, v14, 0x2
+
     .line 294
-    if-gez v7, :cond_c
-
     .line 295
-    .line 296
-    move-wide v10, v12
+    move/from16 v28, v1
 
+    .line 296
     .line 297
-    :cond_c
-    const-wide/high16 v12, 0x3ff0000000000000L    # 1.0
+    aget v1, v5, v18
 
     .line 298
     .line 299
-    cmpl-double v7, v10, v12
+    add-int/lit8 v14, v14, 0x3
 
     .line 300
     .line 301
-    if-lez v7, :cond_d
+    aget v14, v5, v14
 
     .line 302
     .line 303
-    move-wide v10, v12
+    move/from16 v18, v2
 
     .line 304
-    :cond_d
-    invoke-static {v10, v11}, Ljava/lang/Math;->acos(D)D
-
     .line 305
+    iget v2, v10, Ls85;->a:F
+
     .line 306
     .line 307
-    move-result-wide v10
+    cmpg-float v2, v2, v1
 
     .line 308
-    double-to-float v2, v2
-
     .line 309
-    invoke-static {v2}, Lkr5;->v(F)F
+    if-gez v2, :cond_b
 
     .line 310
     .line 311
-    .line 312
-    move-result v2
+    move/from16 v20, v26
 
+    .line 312
     .line 313
-    mul-float/2addr v2, v9
+    goto :goto_7
 
     .line 314
-    float-to-double v2, v2
+    :cond_b
+    const/16 v20, 0x0
 
     .line 315
-    div-double v12, v10, v18
-
     .line 316
-    .line 317
-    invoke-static {v12, v13}, Ljava/lang/Math;->cos(D)D
+    :goto_7
+    iget v2, v10, Ls85;->c:F
 
+    .line 317
     .line 318
+    cmpg-float v2, v15, v2
+
     .line 319
     .line 320
-    move-result-wide v12
+    if-gez v2, :cond_c
 
     .line 321
-    mul-double/2addr v12, v2
-
     .line 322
-    sub-double/2addr v12, v4
+    move/from16 v2, v26
 
     .line 323
-    double-to-float v7, v12
-
     .line 324
-    cmpg-float v12, v7, v16
+    goto :goto_8
 
     .line 325
+    :cond_c
+    const/4 v2, 0x0
+
     .line 326
-    if-gez v12, :cond_e
+    :goto_8
+    and-int v2, v20, v2
 
     .line 327
     .line 328
-    move/from16 v12, v16
+    cmpg-float v20, v12, v14
 
     .line 329
     .line 330
-    goto :goto_5
+    if-gez v20, :cond_d
 
     .line 331
-    :cond_e
-    move v12, v7
-
     .line 332
-    :goto_5
-    cmpl-float v13, v12, v17
+    move/from16 v20, v26
 
     .line 333
     .line 334
-    if-lez v13, :cond_f
+    goto :goto_9
 
     .line 335
+    :cond_d
+    const/16 v20, 0x0
+
     .line 336
-    move/from16 v12, v17
-
     .line 337
+    :goto_9
+    and-int v2, v2, v20
+
     .line 338
-    :cond_f
-    sub-float v7, v12, v7
-
     .line 339
-    .line 340
-    invoke-static {v7}, Ljava/lang/Math;->abs(F)F
+    cmpg-float v20, v0, v11
 
+    .line 340
     .line 341
+    if-gez v20, :cond_e
+
     .line 342
     .line 343
-    move-result v7
+    move/from16 v20, v26
 
     .line 344
-    cmpl-float v7, v7, v14
-
     .line 345
+    goto :goto_a
+
     .line 346
-    if-lez v7, :cond_10
+    :cond_e
+    const/16 v20, 0x0
 
     .line 347
     .line 348
-    move v12, v15
+    :goto_a
+    and-int v2, v2, v20
 
     .line 349
-    :cond_10
-    invoke-static {v12}, Ljava/lang/Float;->isNaN(F)Z
-
     .line 350
+    invoke-static {v10, v15, v0}, Lns6;->i(Ls85;FF)Z
+
     .line 351
     .line 352
-    move-result v7
-
     .line 353
-    if-nez v7, :cond_11
+    move-result v20
 
     .line 354
-    .line 355
-    :goto_6
-    move v15, v12
+    if-eqz v20, :cond_f
 
+    .line 355
     .line 356
-    goto/16 :goto_f
+    invoke-static {v10, v1, v14}, Lns6;->i(Ls85;FF)Z
 
     .line 357
     .line 358
-    :cond_11
-    const-wide v12, 0x401921fb54442d18L    # 6.283185307179586
-
     .line 359
+    move-result v20
+
     .line 360
+    if-nez v20, :cond_10
+
     .line 361
     .line 362
-    .line 363
-    add-double/2addr v12, v10
+    :cond_f
+    or-int/lit8 v2, v2, 0x2
 
+    .line 363
     .line 364
-    div-double v12, v12, v18
+    :cond_10
+    invoke-virtual {v8, v4}, Lfp6;->a(I)Ldb5;
 
     .line 365
     .line 366
-    invoke-static {v12, v13}, Ljava/lang/Math;->cos(D)D
-
     .line 367
-    .line 368
-    .line 369
-    move-result-wide v12
+    move-result-object v4
 
+    .line 368
+    if-ne v4, v6, :cond_11
+
+    .line 369
     .line 370
-    mul-double/2addr v12, v2
+    or-int/lit8 v2, v2, 0x4
 
     .line 371
-    sub-double/2addr v12, v4
-
     .line 372
-    double-to-float v7, v12
+    :cond_11
+    move-object/from16 v20, v19
 
     .line 373
-    cmpg-float v12, v7, v16
-
     .line 374
+    move/from16 v19, v18
+
     .line 375
-    if-gez v12, :cond_12
-
     .line 376
+    move-object/from16 v18, v20
+
     .line 377
-    move/from16 v12, v16
-
     .line 378
-    .line 379
-    goto :goto_7
+    move/from16 v21, v0
 
+    .line 379
     .line 380
-    :cond_12
-    move v12, v7
+    move/from16 v22, v1
 
     .line 381
-    :goto_7
-    cmpl-float v13, v12, v17
-
     .line 382
+    move/from16 v24, v2
+
     .line 383
-    if-lez v13, :cond_13
-
     .line 384
+    move/from16 v23, v14
+
     .line 385
-    move/from16 v12, v17
-
     .line 386
+    move/from16 v20, v15
+
     .line 387
-    :cond_13
-    sub-float v7, v12, v7
-
     .line 388
-    .line 389
-    invoke-static {v7}, Ljava/lang/Math;->abs(F)F
+    invoke-virtual/range {v18 .. v24}, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->addCharacterBounds(IFFFFI)Landroid/view/inputmethod/CursorAnchorInfo$Builder;
 
+    .line 389
     .line 390
     .line 391
-    .line 392
-    move-result v7
+    move-object/from16 v0, v18
 
+    .line 392
     .line 393
-    cmpl-float v7, v7, v14
+    move/from16 v18, v19
 
     .line 394
     .line 395
-    if-lez v7, :cond_14
+    add-int/lit8 v2, v18, 0x1
 
     .line 396
     .line 397
-    move v12, v15
+    move/from16 v1, v28
 
     .line 398
-    :cond_14
-    invoke-static {v12}, Ljava/lang/Float;->isNaN(F)Z
-
     .line 399
-    .line 400
-    .line 401
-    move-result v7
+    goto :goto_6
 
+    .line 400
+    :cond_12
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 401
     .line 402
-    if-nez v7, :cond_15
+    const/16 v2, 0x21
 
     .line 403
     .line 404
-    goto :goto_6
+    if-lt v1, v2, :cond_13
 
     .line 405
-    :cond_15
-    const-wide v12, 0x402921fb54442d18L    # 12.566370614359172
-
     .line 406
+    if-eqz v17, :cond_13
+
     .line 407
     .line 408
+    invoke-static {v0, v13}, La5;->m(Landroid/view/inputmethod/CursorAnchorInfo$Builder;Ls85;)V
+
     .line 409
     .line 410
-    add-double/2addr v10, v12
-
     .line 411
-    div-double v10, v10, v18
+    :cond_13
+    const/16 v2, 0x22
 
     .line 412
     .line 413
-    invoke-static {v10, v11}, Ljava/lang/Math;->cos(D)D
+    if-lt v1, v2, :cond_15
 
     .line 414
     .line 415
-    .line 416
-    move-result-wide v10
+    if-eqz v25, :cond_15
 
+    .line 416
     .line 417
-    mul-double/2addr v10, v2
+    invoke-virtual {v10}, Ls85;->h()Z
 
     .line 418
-    sub-double/2addr v10, v4
-
     .line 419
-    double-to-float v2, v10
-
     .line 420
-    cmpg-float v3, v2, v16
+    move-result v1
 
     .line 421
+    if-nez v1, :cond_15
+
     .line 422
-    if-gez v3, :cond_16
-
     .line 423
-    .line 424
-    goto :goto_8
+    iget v1, v9, Lwp3;->f:I
 
+    .line 424
     .line 425
-    :cond_16
-    move/from16 v16, v2
+    add-int/lit8 v1, v1, -0x1
 
     .line 426
     .line 427
-    :goto_8
-    cmpl-float v3, v16, v17
+    if-gez v1, :cond_14
 
     .line 428
     .line 429
-    if-lez v3, :cond_17
+    const/4 v1, 0x0
 
     .line 430
-    .line 431
-    move/from16 v3, v17
+    :cond_14
+    invoke-virtual {v9, v12}, Lwp3;->e(F)I
 
+    .line 431
     .line 432
     .line 433
-    goto :goto_9
+    move-result v2
 
     .line 434
-    :cond_17
-    move/from16 v3, v16
+    const/4 v3, 0x0
 
     .line 435
-    .line 436
-    :goto_9
-    sub-float v2, v3, v2
+    invoke-static {v2, v3, v1}, Lg23;->r(III)I
 
+    .line 436
     .line 437
     .line 438
-    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
+    move-result v2
 
     .line 439
+    invoke-virtual {v9, v11}, Lwp3;->e(F)I
+
     .line 440
     .line 441
-    move-result v2
-
     .line 442
-    cmpl-float v2, v2, v14
+    move-result v4
 
     .line 443
-    .line 444
-    if-lez v2, :cond_3
+    invoke-static {v4, v3, v1}, Lg23;->r(III)I
 
+    .line 444
     .line 445
     .line 446
-    goto/16 :goto_f
+    move-result v1
 
     .line 447
+    if-gt v2, v1, :cond_15
+
     .line 448
-    :cond_18
-    if-nez v7, :cond_1f
-
     .line 449
+    :goto_b
+    invoke-virtual {v8, v2}, Lfp6;->f(I)F
+
     .line 450
-    double-to-float v2, v10
-
     .line 451
-    invoke-static {v2}, Lkr5;->v(F)F
-
     .line 452
+    move-result v3
+
     .line 453
+    invoke-virtual {v9, v2}, Lwp3;->f(I)F
+
     .line 454
-    move-result v2
-
     .line 455
-    neg-float v2, v2
-
     .line 456
-    mul-float v3, v2, v9
+    move-result v4
 
     .line 457
+    invoke-virtual {v8, v2}, Lfp6;->g(I)F
+
     .line 458
-    double-to-float v4, v4
-
     .line 459
-    sub-float/2addr v3, v4
-
     .line 460
-    cmpg-float v5, v3, v16
+    move-result v5
 
     .line 461
-    .line 462
-    if-gez v5, :cond_19
+    invoke-virtual {v9, v2}, Lwp3;->b(I)F
 
+    .line 462
     .line 463
     .line 464
-    move/from16 v5, v16
+    move-result v6
 
     .line 465
+    invoke-static {v0, v3, v4, v5, v6}, Lkc;->n(Landroid/view/inputmethod/CursorAnchorInfo$Builder;FFFF)V
+
     .line 466
-    goto :goto_a
-
     .line 467
-    :cond_19
-    move v5, v3
-
     .line 468
-    :goto_a
-    cmpl-float v7, v5, v17
+    if-eq v2, v1, :cond_15
 
     .line 469
     .line 470
-    if-lez v7, :cond_1a
+    add-int/lit8 v2, v2, 0x1
 
     .line 471
     .line 472
-    move/from16 v5, v17
+    goto :goto_b
 
     .line 473
-    .line 474
-    :cond_1a
-    sub-float v3, v5, v3
+    :cond_15
+    invoke-virtual {v0}, Landroid/view/inputmethod/CursorAnchorInfo$Builder;->build()Landroid/view/inputmethod/CursorAnchorInfo;
 
+    .line 474
     .line 475
     .line 476
-    invoke-static {v3}, Ljava/lang/Math;->abs(F)F
+    move-result-object v0
 
     .line 477
+    invoke-interface/range {v16 .. v16}, Lt03;->getValue()Ljava/lang/Object;
+
     .line 478
     .line 479
-    move-result v3
-
     .line 480
-    cmpl-float v3, v3, v14
+    move-result-object v1
 
     .line 481
+    check-cast v1, Landroid/view/inputmethod/InputMethodManager;
+
     .line 482
-    if-lez v3, :cond_1b
-
     .line 483
-    .line 484
-    move v5, v15
+    move-object/from16 v2, v27
 
+    .line 484
     .line 485
-    :cond_1b
-    invoke-static {v5}, Ljava/lang/Float;->isNaN(F)Z
+    invoke-virtual {v1, v2, v0}, Landroid/view/inputmethod/InputMethodManager;->updateCursorAnchorInfo(Landroid/view/View;Landroid/view/inputmethod/CursorAnchorInfo;)V
 
     .line 486
     .line 487
     .line 488
-    move-result v3
+    const/4 v3, 0x0
 
     .line 489
-    if-nez v3, :cond_1c
+    move-object/from16 v0, p0
 
     .line 490
     .line 491
-    move v15, v5
+    iput-boolean v3, v0, Lxb1;->e:Z
 
     .line 492
-    goto :goto_f
-
     .line 493
-    :cond_1c
-    neg-float v2, v2
-
-    .line 494
-    sub-float/2addr v2, v4
-
-    .line 495
-    cmpg-float v3, v2, v16
-
-    .line 496
-    .line 497
-    if-gez v3, :cond_1d
-
-    .line 498
-    .line 499
-    goto :goto_b
-
-    .line 500
-    :cond_1d
-    move/from16 v16, v2
-
-    .line 501
-    .line 502
-    :goto_b
-    cmpl-float v3, v16, v17
-
-    .line 503
-    .line 504
-    if-lez v3, :cond_1e
-
-    .line 505
-    .line 506
-    move/from16 v3, v17
-
-    .line 507
-    .line 508
-    goto :goto_c
-
-    .line 509
-    :cond_1e
-    move/from16 v3, v16
-
-    .line 510
-    .line 511
-    :goto_c
-    sub-float v2, v3, v2
-
-    .line 512
-    .line 513
-    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
-
-    .line 514
-    .line 515
-    .line 516
-    move-result v2
-
-    .line 517
-    cmpl-float v2, v2, v14
-
-    .line 518
-    .line 519
-    if-lez v2, :cond_3
-
-    .line 520
-    .line 521
-    goto :goto_f
-
-    .line 522
-    :cond_1f
-    invoke-static {v2, v3}, Ljava/lang/Math;->sqrt(D)D
-
-    .line 523
-    .line 524
-    .line 525
-    move-result-wide v2
-
-    .line 526
-    neg-double v12, v10
-
-    .line 527
-    add-double/2addr v12, v2
-
-    .line 528
-    double-to-float v7, v12
-
-    .line 529
-    invoke-static {v7}, Lkr5;->v(F)F
-
-    .line 530
-    .line 531
-    .line 532
-    move-result v7
-
-    .line 533
-    add-double/2addr v10, v2
-
-    .line 534
-    double-to-float v2, v10
-
-    .line 535
-    invoke-static {v2}, Lkr5;->v(F)F
-
-    .line 536
-    .line 537
-    .line 538
-    move-result v2
-
-    .line 539
-    sub-float/2addr v7, v2
-
-    .line 540
-    float-to-double v2, v7
-
-    .line 541
-    sub-double/2addr v2, v4
-
-    .line 542
-    double-to-float v2, v2
-
-    .line 543
-    cmpg-float v3, v2, v16
-
-    .line 544
-    .line 545
-    if-gez v3, :cond_20
-
-    .line 546
-    .line 547
-    goto :goto_d
-
-    .line 548
-    :cond_20
-    move/from16 v16, v2
-
-    .line 549
-    .line 550
-    :goto_d
-    cmpl-float v3, v16, v17
-
-    .line 551
-    .line 552
-    if-lez v3, :cond_21
-
-    .line 553
-    .line 554
-    move/from16 v3, v17
-
-    .line 555
-    .line 556
-    goto :goto_e
-
-    .line 557
-    :cond_21
-    move/from16 v3, v16
-
-    .line 558
-    .line 559
-    :goto_e
-    sub-float v2, v3, v2
-
-    .line 560
-    .line 561
-    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
-
-    .line 562
-    .line 563
-    .line 564
-    move-result v2
-
-    .line 565
-    cmpl-float v2, v2, v14
-
-    .line 566
-    .line 567
-    if-lez v2, :cond_3
-
-    .line 568
-    .line 569
-    :goto_f
-    invoke-static {v15}, Ljava/lang/Float;->isNaN(F)Z
-
-    .line 570
-    .line 571
-    .line 572
-    move-result v2
-
-    .line 573
-    iget v3, v0, Lxb1;->m:F
-
-    .line 574
-    .line 575
-    iget v4, v0, Lxb1;->k:F
-
-    .line 576
-    .line 577
-    if-nez v2, :cond_24
-
-    .line 578
-    .line 579
-    const v1, 0x3eaaaaab
-
-    .line 580
-    .line 581
-    .line 582
-    sub-float v2, v4, v3
-
-    .line 583
-    .line 584
-    add-float/2addr v2, v1
-
-    .line 585
-    mul-float/2addr v9, v4
-
-    .line 586
-    sub-float/2addr v3, v9
-
-    .line 587
-    mul-float/2addr v2, v15
-
-    .line 588
-    add-float/2addr v2, v3
-
-    .line 589
-    mul-float/2addr v2, v15
-
-    .line 590
-    add-float/2addr v2, v4
-
-    .line 591
-    const/high16 v1, 0x40400000    # 3.0f
-
-    .line 592
-    .line 593
-    mul-float/2addr v2, v1
-
-    .line 594
-    mul-float/2addr v2, v15
-
-    .line 595
-    iget v1, v0, Lxb1;->n:F
-
-    .line 596
-    .line 597
-    cmpg-float v3, v2, v1
-
-    .line 598
-    .line 599
-    if-gez v3, :cond_22
-
-    .line 600
-    .line 601
-    move v2, v1
-
-    .line 602
-    :cond_22
-    iget v0, v0, Lxb1;->o:F
-
-    .line 603
-    .line 604
-    cmpl-float v1, v2, v0
-
-    .line 605
-    .line 606
-    if-lez v1, :cond_23
-
-    .line 607
-    .line 608
-    return v0
-
-    .line 609
-    :cond_23
-    return v2
-
-    .line 610
-    :cond_24
-    new-instance v0, Ljava/lang/IllegalArgumentException;
-
-    .line 611
-    .line 612
-    const-string v2, "The cubic curve with parameters ("
-
-    .line 613
-    .line 614
-    const-string v5, ", "
-
-    .line 615
-    .line 616
-    invoke-static {v2, v6, v5, v4, v5}, Lxu1;->u(Ljava/lang/String;FLjava/lang/String;FLjava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 617
-    .line 618
-    .line 619
-    move-result-object v2
-
-    .line 620
-    invoke-virtual {v2, v8}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 621
-    .line 622
-    .line 623
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 624
-    .line 625
-    .line 626
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 627
-    .line 628
-    .line 629
-    const-string v3, ") has no solution at "
-
-    .line 630
-    .line 631
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 632
-    .line 633
-    .line 634
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 635
-    .line 636
-    .line 637
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 638
-    .line 639
-    .line 640
-    move-result-object v1
-
-    .line 641
-    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    .line 642
-    .line 643
-    .line 644
-    throw v0
-
-    .line 645
-    :cond_25
-    return v1
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    .line 1
-    iget v0, p0, Lxb1;->j:F
-
-    .line 2
-    .line 3
-    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    const/16 v1, 0x1f
-
-    .line 8
-    .line 9
-    mul-int/2addr v0, v1
-
-    .line 10
-    iget v2, p0, Lxb1;->k:F
-
-    .line 11
-    .line 12
-    invoke-static {v2, v0, v1}, Lxu1;->c(FII)I
-
-    .line 13
-    .line 14
-    .line 15
-    move-result v0
-
-    .line 16
-    iget v2, p0, Lxb1;->l:F
-
-    .line 17
-    .line 18
-    invoke-static {v2, v0, v1}, Lxu1;->c(FII)I
-
-    .line 19
-    .line 20
-    .line 21
-    move-result v0
-
-    .line 22
-    iget p0, p0, Lxb1;->m:F
-
-    .line 23
-    .line 24
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 25
-    .line 26
-    .line 27
-    move-result p0
-
-    .line 28
-    add-int/2addr p0, v0
-
-    .line 29
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 5
-
-    .line 1
-    const-string v0, ", b="
-
-    .line 2
-    .line 3
-    const-string v1, ", c="
-
-    .line 4
-    .line 5
-    const-string v2, "CubicBezierEasing(a="
-
-    .line 6
-    .line 7
-    iget v3, p0, Lxb1;->j:F
-
-    .line 8
-    .line 9
-    iget v4, p0, Lxb1;->k:F
-
-    .line 10
-    .line 11
-    invoke-static {v2, v3, v0, v4, v1}, Lxu1;->u(Ljava/lang/String;FLjava/lang/String;FLjava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object v0
-
-    .line 15
-    iget v1, p0, Lxb1;->l:F
-
-    .line 16
-    .line 17
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 18
-    .line 19
-    .line 20
-    const-string v1, ", d="
-
-    .line 21
-    .line 22
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 23
-    .line 24
-    .line 25
-    iget p0, p0, Lxb1;->m:F
-
-    .line 26
-    .line 27
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 28
-    .line 29
-    .line 30
-    const-string p0, ")"
-
-    .line 31
-    .line 32
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 33
-    .line 34
-    .line 35
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 36
-    .line 37
-    .line 38
-    move-result-object p0
-
-    .line 39
-    return-object p0
+    return-void
 .end method

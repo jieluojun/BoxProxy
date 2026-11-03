@@ -1,115 +1,69 @@
-.class public final synthetic Lg44;
-.super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lv52;
+.class public final Lg44;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public synthetic j:Ljava/lang/Object;
 
-.field public final synthetic k:Ljava/util/ArrayList;
+.field public final synthetic k:Lo44;
+
+.field public l:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/ArrayList;IB)V
+.method public constructor <init>(Lo44;Lz71;)V
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Lg44;->j:B
+    iput-object p1, p0, Lg44;->k:Lo44;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lg44;->k:Ljava/util/ArrayList;
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
     .line 4
     .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 6
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Lg44;->j:B
+    iput-object p1, p0, Lg44;->j:Ljava/lang/Object;
 
     .line 2
     .line 3
-    sget-object v1, Ld07;->a:Ld07;
+    iget p1, p0, Lg44;->l:I
 
     .line 4
     .line 5
-    const/4 v2, 0x1
+    const/high16 v0, -0x80000000
 
     .line 6
-    iget-object p0, p0, Lg44;->k:Ljava/util/ArrayList;
-
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    check-cast p1, Lz01;
+    iput p1, p0, Lg44;->l:I
 
     .line 9
     .line 10
-    check-cast p2, Ljava/lang/Integer;
+    iget-object p1, p0, Lg44;->k:Lo44;
 
     .line 11
     .line 12
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p1, p0}, Lo44;->b(Lz71;)Ljava/lang/Object;
 
     .line 13
     .line 14
     .line 15
-    packed-switch v0, :pswitch_data_0
+    move-result-object p0
 
     .line 16
-    .line 17
-    .line 18
-    invoke-static {v2}, Lkr5;->i0(I)I
-
-    .line 19
-    .line 20
-    .line 21
-    move-result p2
-
-    .line 22
-    invoke-static {p0, p1, p2}, Los2;->s(Ljava/util/ArrayList;Lz01;I)V
-
-    .line 23
-    .line 24
-    .line 25
-    return-object v1
-
-    .line 26
-    :pswitch_0
-    invoke-static {v2}, Lkr5;->i0(I)I
-
-    .line 27
-    .line 28
-    .line 29
-    move-result p2
-
-    .line 30
-    invoke-static {p0, p1, p2}, Lns2;->B(Ljava/util/ArrayList;Lz01;I)V
-
-    .line 31
-    .line 32
-    .line 33
-    return-object v1
-
-    .line 34
-    nop
-
-    .line 35
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

@@ -1,141 +1,47 @@
-.class public abstract Ldv5;
+.class public interface abstract Ldv5;
 .super Ljava/lang/Object;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:I
+# virtual methods
+.method public abstract a()Z
+.end method
 
-.field public static final b:Lct1;
+.method public abstract b()Lxt5;
+.end method
 
-.field public static final c:Lct1;
+.method public abstract c(J)Lxt5;
+.end method
 
-.field public static final d:Lct1;
+.method public abstract d()Lgu5;
+.end method
 
-.field public static final e:Lct1;
+.method public abstract e()Lxt5;
+.end method
 
-.field public static final f:I
+.method public abstract f()Lxt5;
+.end method
 
+.method public abstract g()I
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public abstract getSize()I
+.end method
 
-    .line 1
-    const/16 v0, 0x64
+.method public abstract h(Ldv5;)Z
+.end method
 
-    .line 2
-    .line 3
-    const-string v1, "kotlinx.coroutines.semaphore.maxSpinCycles"
+.method public abstract i(Lgu5;)Lfr3;
+.end method
 
-    .line 4
-    .line 5
-    const/16 v2, 0xc
+.method public abstract j()I
+.end method
 
-    .line 6
-    .line 7
-    invoke-static {v0, v1, v2}, Lf63;->N(ILjava/lang/String;I)I
+.method public abstract k()Lxt5;
+.end method
 
-    .line 8
-    .line 9
-    .line 10
-    move-result v0
+.method public abstract l()Lmb1;
+.end method
 
-    .line 11
-    sput v0, Ldv5;->a:I
-
-    .line 12
-    .line 13
-    new-instance v0, Lct1;
-
-    .line 14
-    .line 15
-    const-string v1, "PERMIT"
-
-    .line 16
-    .line 17
-    const/4 v3, 0x1
-
-    .line 18
-    invoke-direct {v0, v1, v3}, Lct1;-><init>(Ljava/lang/String;B)V
-
-    .line 19
-    .line 20
-    .line 21
-    sput-object v0, Ldv5;->b:Lct1;
-
-    .line 22
-    .line 23
-    new-instance v0, Lct1;
-
-    .line 24
-    .line 25
-    const-string v1, "TAKEN"
-
-    .line 26
-    .line 27
-    invoke-direct {v0, v1, v3}, Lct1;-><init>(Ljava/lang/String;B)V
-
-    .line 28
-    .line 29
-    .line 30
-    sput-object v0, Ldv5;->c:Lct1;
-
-    .line 31
-    .line 32
-    new-instance v0, Lct1;
-
-    .line 33
-    .line 34
-    const-string v1, "BROKEN"
-
-    .line 35
-    .line 36
-    invoke-direct {v0, v1, v3}, Lct1;-><init>(Ljava/lang/String;B)V
-
-    .line 37
-    .line 38
-    .line 39
-    sput-object v0, Ldv5;->d:Lct1;
-
-    .line 40
-    .line 41
-    new-instance v0, Lct1;
-
-    .line 42
-    .line 43
-    const-string v1, "CANCELLED"
-
-    .line 44
-    .line 45
-    invoke-direct {v0, v1, v3}, Lct1;-><init>(Ljava/lang/String;B)V
-
-    .line 46
-    .line 47
-    .line 48
-    sput-object v0, Ldv5;->e:Lct1;
-
-    .line 49
-    .line 50
-    const-string v0, "kotlinx.coroutines.semaphore.segmentSize"
-
-    .line 51
-    .line 52
-    const/16 v1, 0x10
-
-    .line 53
-    .line 54
-    invoke-static {v1, v0, v2}, Lf63;->N(ILjava/lang/String;I)I
-
-    .line 55
-    .line 56
-    .line 57
-    move-result v0
-
-    .line 58
-    sput v0, Ldv5;->f:I
-
-    .line 59
-    .line 60
-    return-void
+.method public abstract m(Lyi2;)V
 .end method

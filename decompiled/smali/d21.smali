@@ -1,75 +1,64 @@
-.class public final synthetic Ld21;
-.super Lg62;
-.source "r8-map-id-bdc8586294418607a182a29083cabdb2a42f97ff1fc1098c76819abe64115e68"
-
-# interfaces
-.implements Lg52;
+.class public final Ld21;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final k:Ld21;
+# instance fields
+.field public final a:S
+
+.field public final b:Ld52;
+
+.field public final c:Lc21;
+
+.field public d:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
-
-    .line 1
-    new-instance v0, Ld21;
-
-    .line 2
-    .line 3
-    const-string v4, "currentTimeMillis()J"
-
-    .line 4
-    .line 5
-    const/4 v5, 0x0
-
-    .line 6
-    const/4 v1, 0x0
-
-    .line 7
-    const-class v2, Ljava/lang/System;
-
-    .line 8
-    .line 9
-    const-string v3, "currentTimeMillis"
-
-    .line 10
-    .line 11
-    invoke-direct/range {v0 .. v5}, Lg62;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 12
-    .line 13
-    .line 14
-    sput-object v0, Ld21;->k:Ld21;
-
-    .line 15
-    .line 16
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
+.method public constructor <init>()V
     .locals 2
 
     .line 1
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    sget-object v0, Lz11;->k:Lz11;
 
     .line 2
     .line 3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 4
-    move-result-wide v0
-
     .line 5
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
     .line 6
+    const/16 v1, 0x80
+
     .line 7
     .line 8
-    move-result-object p0
+    iput-short v1, p0, Ld21;->a:S
 
     .line 9
-    return-object p0
+    .line 10
+    iput-object v0, p0, Ld21;->b:Ld52;
+
+    .line 11
+    .line 12
+    new-instance v0, Lc21;
+
+    .line 13
+    .line 14
+    invoke-direct {v0, p0}, Lc21;-><init>(Ld21;)V
+
+    .line 15
+    .line 16
+    .line 17
+    iput-object v0, p0, Ld21;->c:Lc21;
+
+    .line 18
+    .line 19
+    const-wide/high16 v0, -0x8000000000000000L
+
+    .line 20
+    .line 21
+    iput-wide v0, p0, Ld21;->d:J
+
+    .line 22
+    .line 23
+    return-void
 .end method
