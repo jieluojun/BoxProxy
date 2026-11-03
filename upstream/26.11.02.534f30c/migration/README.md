@@ -105,3 +105,15 @@ Sing-Box `version` 优先、失败退出状态检查和首个非空输出行；M
 PID、CPU、进程详情等运行信息依旧实时获取。
 主机回归按执行次数验证：三次打开执行三次版本查询，但不做多余 linker 扫描、不运行无关核心，
 并验证旧版本缓存即使匹配当前文件身份也不会被读取。主机耗时不能冒充真机帧率，实际流畅度仍需设备复测。
+
+## 内置 sing-box 配置更新
+
+`assets/box/sing-box/mianliu.json` 已按用户提供的 `免流.json.txt` 原样替换，并同步更新
+`full.json` 的新增文件 SHA-256。TUN 模板改用 `interface_name: singbox`，添加
+`dns_mode: hijack`、`dns_address: [172.18.0.2]` 与 `auto_redirect: true`，移除原 `stack` 字段；
+其余配置保持上传文件内容，不修改 mihomo 模板或核心配置改写逻辑。
+
+首次初始化和“恢复默认配置”都读取此 asset，输出为核心目录中的 `sing-box/免流.json`。
+覆盖安装不会自动覆盖用户已经生成/编辑过的配置；已有安装需要在 sing-box 的基础代理配置页
+通过“+”菜单恢复默认配置，原配置保留为 `.bak`。使用前仍需用实际选择的 sing-box fork
+检查配置兼容性并验证 TUN/DNS/路由；JSON 解析和 APK 构建不代表核心实际运行已通过。
