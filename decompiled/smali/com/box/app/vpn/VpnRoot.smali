@@ -435,17 +435,16 @@
     return v0
 .end method
 
-# Without root the core version scripts (details dialog / update dialog, which need su) are answered here:
-# the version comes from VpnBridge.coreVersion (private copy run through the linker, cached).
-# Returns null when SCRIPT is not one of those scripts or root is available.
-.method public static ver(Ljava/lang/String;)Lnc5;
+# Without root the core version scripts (details dialog / update dialog) cannot run the core themselves
+# (no exec on external storage): the version comes from VpnBridge.coreVersion instead and is spliced into
+# the script. Everything else in the script (pid, CPU ...) still runs as before. Returns SCRIPT unchanged
+# when it is not one of those scripts, root is available or no version is known yet.
+.method public static verScript(Ljava/lang/String;)Ljava/lang/String;
     .locals 7
 
     if-nez p0, :cond_a
 
-    const/4 v0, 0x0
-
-    return-object v0
+    return-object p0
 
     :cond_a
     :try_start_0
@@ -455,9 +454,7 @@
 
     if-nez v0, :cond_b
 
-    const/4 v0, 0x0
-
-    return-object v0
+    return-object p0
 
     :cond_b
     const-string v0, "core_version="
@@ -516,41 +513,83 @@
 
     move-result-object v4
 
-    if-eqz v2, :cond_out
+    invoke-virtual {v4}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    if-eqz v5, :cond_none
+
+    const-string v5, "\'"
+
+    const-string v6, "\'\\\'\'"
+
+    invoke-virtual {v4, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object v4
+
+    if-eqz v2, :cond_upd
 
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
 
+    const-string v6, "core_version=\'"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v4, "\n---SEP---\n\n---SEP---\n"
+    const-string v6, "\'"
 
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v5
 
-    :cond_out
-    new-instance v5, Lnc5;
+    const-string v6, "core_version=\"\""
 
-    const/4 v6, 0x0
+    invoke-virtual {p0, v6, v5}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
-    const-string v0, ""
+    move-result-object p0
 
-    invoke-direct {v5, v6, v4, v0}, Lnc5;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    const-string v5, "if [ -x \"$core_path\" ]; then"
 
-    return-object v5
+    const-string v6, "if [ -z \"$core_version\" ] && [ -x \"$core_path\" ]; then"
+
+    invoke-virtual {p0, v5, v6}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    :cond_upd
+    new-instance v5, Ljava/lang/StringBuilder;
+
+    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v6, "printf \'%s\\n\' \'"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v6, "\'"
+
+    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
 
     :cond_none
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    const/4 v0, 0x0
-
-    return-object v0
+    return-object p0
 .end method
 
 .method public static skip(Ljava/lang/String;)Z

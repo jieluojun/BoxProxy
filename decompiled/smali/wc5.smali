@@ -279,16 +279,10 @@
 
     :cond_vpn_run
 
-    # no root: the core version scripts are answered without su (VpnRoot.ver)
-    invoke-static {p3}, Lcom/box/app/vpn/VpnRoot;->ver(Ljava/lang/String;)Lnc5;
+    # no root: splice the core version into the version scripts (VpnRoot.verScript)
+    invoke-static {p3}, Lcom/box/app/vpn/VpnRoot;->verScript(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v0
-
-    if-eqz v0, :cond_nover
-
-    return-object v0
-
-    :cond_nover
+    move-result-object p3
 
     .line 1
     invoke-static {p3}, Lra7;->R(Ljava/lang/Object;)Ljava/util/List;
