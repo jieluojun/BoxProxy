@@ -356,18 +356,15 @@ root 在外部存储（FUSE / sdcardfs，挂载带 `noexec`）上执行 boxctl /
 
 | 内容 | 位置 |
 |---|---|
-| `bin`（boxctl、内核）、`scripts`（脚本） | `/data/user/0/<包名>/files/box/{bin,scripts}`（应用私有） |
-| 其余（`box.db`、`run` / `state`、配置、各内核目录 …） | `/storage/emulated/0/Android/data/<包名>/files/box/…`（外部存储，文件管理器能看到） |
+| `bin`（boxctl、内核） | `/data/user/0/<包名>/files/box/bin`（应用私有） |
+| 其余（`box.db`、`scripts`、`run` / `state`、配置、各内核目录 …） | `/storage/emulated/0/Android/data/<包名>/files/box/…`（外部存储，文件管理器能看到） |
 
 * `lb0.k()`（`Lab0`）只此一处定路径：`a/c/d/e`（home、run、state、box.db）外部，`b/f/g`（bin、boxctl、boxbpf）私有；没有外部存储时全部退回私有目录。
-  `scripts`：`i16.c()`（脚本页 / 执行 / 种子脚本）以及 `au` / `ff` 里取 `Lab0.a` 的地方改成 `BoxDir.sdir()`（= 私有 box 目录）再拼 `scripts`。
   **不再有按 root 状态切换目录的逻辑**，内置配置的「只种一次」标记是单一的 `box_seed`。
-* **不做任何迁移**（`BoxDir.migrate` 已删）：升级后私有 `bin` / `scripts` 是空的，需要重新下载内核、重新建脚本；
-  外部原有的 `bin` / `scripts` / `box.db` 保持原样，应用不复制也不删除。135 / 136 版放在私有目录的 `box.db` 也不会搬回外部，外部没有 `box.db` 时会重新生成。
+* **不做任何迁移**：升级后私有 `bin` 是空的，需要重新下载内核；外部原有的 `bin` / `box.db` / `scripts` 保持原样，应用不复制也不删除。
+  135 / 136 版放在私有目录的 `box.db` 也不会搬回外部。（`scripts` 曾短暂改到私有目录，已撤销，仍在外部 `box/scripts`，与最初一致。）
 * root 模式：boxctl 要求 `bin` / `run` / `state` 在同一个 `--home` 下。所以 `BoxctlFix.wrap` 与开机脚本让 root 以外部存储的真实路径
   （`/data/media/<用户>/Android/data/<包名>/files/box`）为 `--home`，并在那里建符号链接 `bin -> 私有 bin`；
-  参数里 `/storage/emulated/…`（含 `--db`）照旧改成 `/data/media/…`。私有 `bin` 里有内容时才会删掉外部旧的真实 `bin` 目录。**不再建 `box.db` 的链接。**
-  root 之前建的 `box.db` 符号链接不会被清理，仍指向私有那份旧数据库；应用读写外部 `box.db` 时会经过这个链接，需要的话手动 `su -c rm` 删掉它。
-* 文件编辑器（脚本页点开脚本）按「相对 box 目录的路径」`scripts/<名字>.sh` 取文件：`qm5.o` 开头加了 `BoxDir.scriptFile`，`scripts` / `scripts/…` 改成解析到私有 `scripts`（规范化后必须仍在该目录内），其它路径不变。
-* **副作用**：`scripts` 不在外部 `box/` 下了，凡是以 `box/` 为根的功能（文件管理页的目录列表、备份 / 还原里的「脚本」项）不再包含它；脚本页本身照常。
+  参数里 `/storage/emulated/…`（含 `--db`）照旧改成 `/data/media/…`。私有 `bin` 里有内容时才会删掉外部旧的真实 `bin` 目录。**不建 `box.db` 的链接。**
+  root 之前建的 `box.db` 符号链接不会被清理，仍指向私有那份旧数据库；需要的话手动 `su -c rm` 删掉它。
 * VPN 模式不经过 boxctl：`box-vpn.sh` 的参数来自 `Lab0`（内核路径 = 私有 `bin`，运行目录 = 外部），无需额外处理；`fix_own` 保留。真机未验证。

@@ -3,12 +3,12 @@
 .source "BoxDir.java"
 
 # 工作目录的划分（有 root / 无 root 一样）：
-#   bin（boxctl、内核）、scripts（脚本） -> 应用私有目录  /data/user/0/<包名>/files/box/{bin,scripts}
-#   其余（box.db / run / state / 配置 / 各内核的目录 …） -> /storage/emulated/0/Android/data/<包名>/files/box/…（外部存储）
+#   bin（boxctl、内核） -> 应用私有目录  /data/user/0/<包名>/files/box/bin
+#   其余（box.db / scripts / run / state / 配置 / 各内核的目录 …） -> /storage/emulated/0/Android/data/<包名>/files/box/…（外部存储）
 # 外部存储（FUSE / sdcardfs）挂载带 noexec，root 在上面执行 boxctl / 内核会 Permission denied；私有目录在 /data 上没有这个限制。
 # root 模式下 boxctl 要求 bin / run / state 在同一个 --home 下：BoxctlFix 与开机脚本让 root 以外部存储的真实路径
 # （/data/media/<用户>/Android/data/<包名>/files/box）为 --home，并在那里建符号链接 bin -> 私有 bin。
-# 不做任何迁移：升级后私有 bin / scripts 是空的，外部原有的 bin / scripts / box.db 保持原样、不复制不删除。
+# 不做任何迁移：升级后私有 bin 是空的，外部原有的 bin / box.db 保持原样、不复制不删除。
 
 # direct methods
 .method private constructor <init>()V
@@ -39,133 +39,7 @@
     return-object v0
 .end method
 
-# 脚本目录（scripts）的父目录 = 私有 box 目录（au / ff / i16 里原来取 Lab0.a 的地方改取它）
-.method public static sdir()Ljava/io/File;
-    .locals 1
-
-    invoke-static {}, Lsa7;->p()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0}, Lcom/box/app/vpn/BoxDir;->ibox(Landroid/content/Context;)Ljava/io/File;
-
-    move-result-object v0
-
-    return-object v0
-.end method
-
-# 相对路径 "scripts" / "scripts/…" -> 私有 scripts 目录里的文件（规范化后必须仍在 scripts 目录里）；其它路径返回 null
-.method public static scriptFile(Ljava/lang/String;)Ljava/io/File;
-    .locals 6
-
-    const/4 v5, 0x0
-
-    if-nez p0, :cond_a
-
-    return-object v5
-
-    :cond_a
-    :try_start_0
-    invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object p0
-
-    const-string v0, "/"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_none
-
-    const-string v0, "scripts"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-nez v1, :cond_go
-
-    const-string v0, "scripts/"
-
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_none
-
-    :cond_go
-    invoke-static {}, Lcom/box/app/vpn/BoxDir;->sdir()Ljava/io/File;
-
-    move-result-object v2
-
-    new-instance v3, Ljava/io/File;
-
-    const-string v0, "scripts"
-
-    invoke-direct {v3, v2, v0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    invoke-virtual {v3}, Ljava/io/File;->getCanonicalFile()Ljava/io/File;
-
-    move-result-object v3
-
-    new-instance v4, Ljava/io/File;
-
-    invoke-direct {v4, v2, p0}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    invoke-virtual {v4}, Ljava/io/File;->getCanonicalFile()Ljava/io/File;
-
-    move-result-object v4
-
-    invoke-virtual {v4}, Ljava/io/File;->getPath()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {v3}, Ljava/io/File;->getPath()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v2
-
-    if-nez v2, :cond_ok
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    const-string v1, "/"
-
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_none
-
-    :cond_ok
-    return-object v4
-    :try_end_0
-    .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
-
-    :cond_none
-    return-object v5
-
-    :catch_0
-    move-exception v0
-
-    return-object v5
-.end method
-
-# 私有目录里的 box 目录（放 bin 和 scripts）
+# 私有目录里的 box 目录（放 bin）
 .method public static ibox(Landroid/content/Context;)Ljava/io/File;
     .locals 3
 

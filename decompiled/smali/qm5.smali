@@ -514,32 +514,6 @@
 .method public static o(Ljava/lang/String;)Lpu;
     .locals 10
 
-    # scripts/<name> 在私有目录里（BoxDir.sdir()/scripts），不在外部 home 下
-    invoke-static {p0}, Lcom/box/app/vpn/BoxDir;->scriptFile(Ljava/lang/String;)Ljava/io/File;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_noscripts
-
-    new-instance v2, Lpu;
-
-    const/4 v6, 0x0
-
-    const/16 v7, 0xe
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    move-object v3, v0
-
-    invoke-direct/range {v2 .. v7}, Lpu;-><init>(Ljava/lang/Object;Ljava/lang/String;Lbc4;Ljava/lang/Throwable;I)V
-
-    return-object v2
-
-    :cond_noscripts
-
-
     .line 1
     invoke-static {p0}, Lw96;->v0(Ljava/lang/CharSequence;)Z
 

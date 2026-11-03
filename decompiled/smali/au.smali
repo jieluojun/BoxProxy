@@ -2772,9 +2772,15 @@
 
     .line 614
     .line 615
-    invoke-static {}, Lcom/box/app/vpn/BoxDir;->sdir()Ljava/io/File;
+    invoke-static {}, Llb0;->k()Lab0;
 
+    .line 616
+    .line 617
+    .line 618
     move-result-object v2
+
+    .line 619
+    iget-object v2, v2, Lab0;->a:Ljava/io/File;
 
     .line 620
     .line 621
@@ -2800,9 +2806,15 @@
 
     .line 632
     .line 633
-    invoke-static {}, Lcom/box/app/vpn/BoxDir;->sdir()Ljava/io/File;
+    invoke-static {}, Llb0;->k()Lab0;
 
+    .line 634
+    .line 635
+    .line 636
     move-result-object v4
+
+    .line 637
+    iget-object v4, v4, Lab0;->a:Ljava/io/File;
 
     .line 638
     .line 639
