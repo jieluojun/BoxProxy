@@ -58,8 +58,9 @@
     return-object p0
 .end method
 
-# Like ld(), for the core-details script (qt0): the core's version is cached (size + mtime) in
-# /data/local/tmp/.boxproxy-ver-<hash>, so reopening the dialog does not start the core 2-3 times.
+# Like ld(), for the core-details script (qt0): start the known cores once with the argument that works
+# for them (sing-box/xray/hysteria: version, mihomo: -v) instead of probing --version, -v, version in turn.
+# Unknown cores / failures still fall through to the original chain.
 .method public static ld2(Ljava/lang/String;)Ljava/lang/String;
     .locals 3
 
@@ -73,19 +74,11 @@
     return-object p0
 
     :cond_root
-    const-string v0, "if [ -x \"$core_path\" ]; then"
+    const-string v0, "core_version=\"$(\"$core_path\" --version 2>/dev/null | head -n 1)\""
 
-    const-string v1, "_ck=\"$(stat -c \'%s %Y\' \"$core_path\" 2>/dev/null)\"; _cf=\"${BPCACHE:-/data/local/tmp}/.boxproxy-ver-$(echo \"$core_path\" | cksum | cut -d\' \' -f1)\"; if [ -n \"$_ck\" ] && [ -f \"$_cf\" ] && [ \"$(sed -n 1p \"$_cf\")\" = \"$_ck\" ]; then core_version=\"$(sed -n 2p \"$_cf\")\"; elif [ -x \"$core_path\" ]; then"
+    const-string v1, "case \"${core_path##*/}\" in sing-box*|xray*|hysteria*) core_version=\"$(\"$core_path\" version 2>/dev/null | head -n 1)\";; mihomo*) core_version=\"$(\"$core_path\" -v 2>/dev/null | head -n 1)\";; esac; [ -z \"$core_version\" ] && core_version=\"$(\"$core_path\" --version 2>/dev/null | head -n 1)\""
 
     invoke-virtual {p0, v0, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v0, "echo \"$core_version\""
-
-    const-string v1, "[ -n \"$core_version\" ] && [ -n \"$_ck\" ] && printf \'%s\\n%s\\n\' \"$_ck\" \"$core_version\" > \"$_cf\" 2>/dev/null; echo \"$core_version\""
-
-    invoke-virtual {v2, v0, v1}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v2
 

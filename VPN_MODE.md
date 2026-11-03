@@ -358,7 +358,7 @@ monitor 重新拉起自己 / 派生 worker 时如果只沿用 `--db`，工作目
 现在 `qt0` / `qa1` 的这两处在交给 `wc5.f` 之前用 `BoxctlFix.ld(脚本)`（= `LdFix.wrap(bin 目录, 脚本)`）包一层，和 root 启动核心时用同一套库路径（复用 `/data/local/tmp/.boxproxy-ld-*` 缓存）。
 VPN 模式（`isVpnMode`）不包：应用身份写不了 `/data/local/tmp` 缓存，每次都会重新探测（每次最多 30 轮 `find`），会拖慢并可能超时。真机未验证。
 
-### 运行详情打开卡一下：版本缓存（`BoxctlFix.ld2`）
+### 运行详情打开卡一下：已知核心只启动一次（`BoxctlFix.ld2`）
 
-root 下 sing-box 的版本现在能取到了，但脚本每次打开都要把核心启动 2～3 次（`--version`、`-v` 失败，`version` 成功），sing-box 启动比 mihomo 慢，所以点开详情会卡一下。
-`ld2` 在 `ld` 之前改写详情脚本：按核心文件的「大小 + 修改时间」把版本缓存在 `/data/local/tmp/.boxproxy-ver-<路径哈希>`，命中就直接读，不再启动核心；核心文件变了或缓存没有才重新取并写入。VPN 模式不改写。第一次打开仍会慢一次。
+root 下 sing-box 的版本现在能取到了，但详情脚本每次要把核心依次用 `--version`、`-v`、`version` 启动 2～3 次，sing-box 启动比 mihomo 慢，所以点开详情会卡一下。
+不用缓存：`ld2` 在 `ld` 之前改写详情脚本的第一次尝试——核心文件名以 `sing-box` / `xray` / `hysteria` 开头的直接用 `version`，`mihomo` 开头的直接用 `-v`，各只启动一次；取不到（或其它核心）时仍按原来的 `--version`、`-v`、`version` 顺序继续。VPN 模式不改写。
