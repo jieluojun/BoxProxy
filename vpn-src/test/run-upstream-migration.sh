@@ -50,6 +50,8 @@ BOXPROXY_TEST_PROJECT="$project" BOXPROXY_TEST_PROBE_CLASS=lt0 \
     python3 -m unittest discover -s vpn-src/test -p 'test_core_version.py' -v
 BOXPROXY_TEST_PROJECT="$project" \
     python3 -m unittest discover -s vpn-src/test -p 'test_core_update_version.py' -v
+BOXPROXY_TEST_PROJECT="$project" \
+    python3 -m unittest discover -s vpn-src/test -p 'test_core_detail_performance.py' -v
 python3 -m unittest discover -s vpn-src/test -p 'test_upstream_migration.py' -v
 python3 -m unittest discover -s vpn-src/test -p 'test_core_config_history.py' -v
 python3 -m unittest discover -s vpn-src/test -p 'test_full_migration.py' -v

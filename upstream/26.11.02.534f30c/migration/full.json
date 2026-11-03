@@ -98,7 +98,7 @@
     "smali/k37.smali": "db615dcd4e48ab62249a9da884a2423de8be01f2a33aeb5e5361095c2ffed70d",
     "smali/kc3.smali": "6d5da43bc75831878cc0543bfc2b8496054c6613f5cd63888cf5ac1f7a30de28",
     "smali/kf3.smali": "ad1c2cdd506a2655a4a85bb764c367eefe15e1e5db51f3317f66ee3c2620a8ab",
-    "smali/lt0.smali": "b4891c8bce52b55c10b27dc5695e3a882dc5826d720730cd509f459f2568191c",
+    "smali/lt0.smali": "f7fd58e8a70c77098ba7ea5531f44d4ab9e3aaa64de7a80118fcca383bbef97d",
     "smali/lw4.smali": "dda06bde4b8704184a197959a9a1f26d2f42376c6b7a559585af5e703d6767e8",
     "smali/ma1.smali": "c5fcbd8032b131428834f77b2d4a4463ed6fde1268499a5153cb4308f2dfccc7",
     "smali/mk5.smali": "9954fb738ab2d00fc28725150d943be8b32cdb3ca71c77d4b6a0534ba2e82a30",
@@ -417,7 +417,7 @@
     "smali/com/box/app/cfg/JParser.smali": "b3864730b73383c8e0735ac8fc2550c44024c8aad0c6c93a40b73aedeb55d4c9",
     "smali/com/box/app/cfg/JStyle.smali": "61a12c5a4ab83556e12e1f9869efa8c4e722e5610b9f90f267a8b0bef41f0c05",
     "smali/com/box/app/cfg/JW.smali": "eb92e73381ca06e51fb21a2ffd700cbcce4a6081e35d541683bb716f058060ed",
-    "smali/com/box/app/cfg/LdFix.smali": "490bfd89e3651d0e56b2790bed7b2474063a1845fcebb9a0ca978e8a651752b1",
+    "smali/com/box/app/cfg/LdFix.smali": "9978a0e7526648547637bce2dc63ea1ca90696a8fe077f11dc5d078e9108fed4",
     "smali/com/box/app/cfg/Leaf.smali": "660dc24c7349d0b54e9bda45f6b57871de33a1bf1544becf29c268cb38048407",
     "smali/com/box/app/cfg/Opt.smali": "9175bc094cf99c47af75f1186ef9ce1a862dfb9ed6d3990f3be10b2bfd781e26",
     "smali/com/box/app/cfg/Pages2Kt$cycleRow$1.smali": "d1c9aec3c83142a76387991308d8abb4f946f7302b4805b7764162594a1f3c18",
@@ -11082,6 +11082,10 @@
     {
       "target": "Lma1;->d(Ljava/io/File;Lz71;)Ljava/lang/Object;",
       "reason": "Fix update-core dialog version probe: real path, dynamic libraries, core-specific successful flags and isolated shell"
+    },
+    {
+      "target": "Llt0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+      "reason": "Reduce detail-popup work: immutable version cache with binary identity invalidation, direct execution fast path and active-core-only linker fallback; running process and CPU remain live"
     }
   ]
 }
