@@ -46,7 +46,7 @@
       "title": "内核 fork 菜单、下载和识别",
       "operations": 15,
       "status": "validated",
-      "reviewNote": "Validated after full 139 customization with manual conflict resolution.",
+      "reviewNote": "Direct manual fix completed; 5 conflicts resolved without bundle/apply_bundle.",
       "pendingCount": 5,
       "approvedCount": 0
     },
@@ -55,7 +55,7 @@
       "title": "VPN、非 root 引导、权限与服务",
       "operations": 96,
       "status": "validated",
-      "reviewNote": "Validated after full 139 customization with manual conflict resolution.",
+      "reviewNote": "Direct manual fix completed; 5 conflicts resolved without bundle/apply_bundle.",
       "approvedCount": 1,
       "pendingCount": 41
     },
@@ -128,5 +128,6 @@
   "pr49Status": "carried",
   "fullBindingReviewCompleted": true,
   "remainingMethodConflicts": 0,
-  "manualVerificationNote": "5 method conflicts verified manually against 139 source: vpn-runtime:00077 (identical present), 00806 (Lci3/E present), 00825 (no new ref -> kept old), core-downloads:00803 (Lgf3/z present); customization preserved; PR49 carried."
+  "manualVerificationNote": "5 method conflicts verified manually against 139 source: vpn-runtime:00077 (identical present), 00806 (Lci3/E present), 00825 (no new ref -> kept old), core-downloads:00803 (Lgf3/z present); customization preserved; PR49 carried.",
+  "manualDirectMethodUsed": true
 }
