@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "status": "ready-for-review",
-  "releaseReady": true,
-  "runtimeProjectReplaced": true,
+  "status": "migration-in-progress-not-for-release",
+  "releaseReady": false,
+  "runtimeProjectReplaced": false,
   "sourceVersionName": "26.11.02.534f30c",
   "sourceVersionCode": 134,
   "targetVersionName": "26.11.05.d5c365e",
@@ -12,41 +12,41 @@
   "sourceBundleSha256": "fe1212477fdb6dd8ab941d990809d660499ec2104b06f405ac1b2ad2fd3b3f6f",
   "targetTreeSha256": "84dc510f50b557e54cd46580b3704901c7aa7a3f74d55ec1d355d80878731d5a",
   "vanillaRebuildPassed": true,
-  "bindingsReviewed": true,
-  "customRebuildPassed": true,
-  "behaviorRegressionPassed": true,
+  "bindingsReviewed": false,
+  "customRebuildPassed": false,
+  "behaviorRegressionPassed": false,
   "androidDeviceVerified": true,
   "features": [
     {
       "id": "config-history",
       "title": "每内核配置历史与默认配置恢复",
       "operations": 32,
-      "status": "validated",
-      "reviewNote": "Validated after full 139 customization with manual conflict resolution.",
+      "status": "pending-review-and-migration",
+      "reviewNote": "Reverted to original 134 customization; direct manual migration restart.",
       "approvedCount": 0
     },
     {
       "id": "root-runtime",
       "title": "root 路径、动态库与实时版本查询",
       "operations": 13,
-      "status": "validated",
-      "reviewNote": "Validated after full 139 customization with manual conflict resolution.",
+      "status": "pending-review-and-migration",
+      "reviewNote": "Reverted to original 134 customization; direct manual migration restart.",
       "approvedCount": 0
     },
     {
       "id": "editor-forms",
       "title": "编辑器、可视化、锚点与 schema",
       "operations": 863,
-      "status": "validated",
-      "reviewNote": "Validated after full 139 customization with manual conflict resolution.",
+      "status": "pending-review-and-migration",
+      "reviewNote": "Reverted to original 134 customization; direct manual migration restart.",
       "approvedCount": 0
     },
     {
       "id": "core-downloads",
       "title": "内核 fork 菜单、下载和识别",
       "operations": 15,
-      "status": "validated",
-      "reviewNote": "Direct manual fix completed; 5 conflicts resolved without bundle/apply_bundle.",
+      "status": "pending-review-and-migration",
+      "reviewNote": "Reverted to original 134 customization; direct manual migration restart.",
       "pendingCount": 5,
       "approvedCount": 0
     },
@@ -54,8 +54,8 @@
       "id": "vpn-runtime",
       "title": "VPN、非 root 引导、权限与服务",
       "operations": 96,
-      "status": "validated",
-      "reviewNote": "Direct manual fix completed; 5 conflicts resolved without bundle/apply_bundle.",
+      "status": "pending-review-and-migration",
+      "reviewNote": "Reverted to original 134 customization; direct manual migration restart.",
       "approvedCount": 1,
       "pendingCount": 41
     },
@@ -63,24 +63,24 @@
       "id": "preferences-ui",
       "title": "设置、过滤提示、电池与自启入口",
       "operations": 19,
-      "status": "validated",
-      "reviewNote": "Validated after full 139 customization with manual conflict resolution.",
+      "status": "pending-review-and-migration",
+      "reviewNote": "Reverted to original 134 customization; direct manual migration restart.",
       "approvedCount": 0
     },
     {
       "id": "bundled-configs",
       "title": "内置配置与辅助资源",
       "operations": 2,
-      "status": "validated",
-      "reviewNote": "Validated after full 139 customization with manual conflict resolution.",
+      "status": "pending-review-and-migration",
+      "reviewNote": "Reverted to original 134 customization; direct manual migration restart.",
       "approvedCount": 0
     },
     {
       "id": "shared-runtime",
       "title": "共享依赖与其余接入点",
       "operations": 470,
-      "status": "validated",
-      "reviewNote": "Validated after full 139 customization with manual conflict resolution.",
+      "status": "pending-review-and-migration",
+      "reviewNote": "Reverted to original 134 customization; direct manual migration restart.",
       "approvedCount": 0
     }
   ],
@@ -101,7 +101,7 @@
       "commit": "6b93680153369a3a671306ba7440456b3631c8e9",
       "path": "assets/box/sing-box/mianliu.json",
       "sha256": "dfdedffae90de3daf457b155834d58389834d43a32e8f9aff837a4c9ee2bcd89",
-      "status": "validated"
+      "status": "pending"
     }
   ],
   "upstreamChangesToPreserve": [
