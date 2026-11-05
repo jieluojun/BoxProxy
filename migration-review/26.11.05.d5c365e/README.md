@@ -66,3 +66,11 @@ python3 scripts/customization_bundle.py export --bundle .tools/current.boxpatch
 python3 scripts/customization_bundle.py bindings --bundle .tools/current.boxpatch --target .tools/next/decompiled --output .tools/next-bindings.json
 # 然后运行 migration-review/26.11.05.d5c365e/scripts 中的匹配脚本（fp.py / match.py / members.py）
 ```
+
+## 审核记录
+
+- 审核者：用户（按其确认的规则）。
+- 已批准：类型 `tier1-unique-fingerprint` / `tier2-round0` / `tier3-full-signature`；成员 `method-body-exact` / `field-unique`。
+- 待复核（`pending-recheck`）：`field-ordinal`、`method-signature-unique-body-differs` 等其余候选。
+- 未解析项（`type-unresolved`、`needs-manual`）：仍需人工移植或显式绑定。
+- `bindings-candidate.json` 仍为 `reviewed: false`，未应用，未发布。
