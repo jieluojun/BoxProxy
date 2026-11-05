@@ -45,7 +45,10 @@
       "id": "vpn-runtime",
       "title": "VPN、非 root 引导、权限与服务",
       "operations": 96,
-      "status": "pending-review-and-migration"
+      "status": "partial-reviewed",
+      "reviewNote": "1/42 vpn-runtime candidates approved (00077 identical descriptor); rest pending class-rename semantic check",
+      "approvedCount": 1,
+      "pendingCount": 41
     },
     {
       "id": "preferences-ui",
