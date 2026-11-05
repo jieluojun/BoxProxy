@@ -22,7 +22,7 @@
       "title": "每内核配置历史与默认配置恢复",
       "operations": 32,
       "status": "pending-review-and-migration",
-      "reviewNote": "Reverted to original 134 customization; direct manual migration restart.",
+      "reviewNote": "重新开始：直接手工从 134 迁移全部定制",
       "approvedCount": 0
     },
     {
@@ -30,7 +30,7 @@
       "title": "root 路径、动态库与实时版本查询",
       "operations": 13,
       "status": "pending-review-and-migration",
-      "reviewNote": "Reverted to original 134 customization; direct manual migration restart.",
+      "reviewNote": "重新开始：直接手工从 134 迁移全部定制",
       "approvedCount": 0
     },
     {
@@ -38,7 +38,7 @@
       "title": "编辑器、可视化、锚点与 schema",
       "operations": 863,
       "status": "pending-review-and-migration",
-      "reviewNote": "Reverted to original 134 customization; direct manual migration restart.",
+      "reviewNote": "重新开始：直接手工从 134 迁移全部定制",
       "approvedCount": 0
     },
     {
@@ -46,7 +46,7 @@
       "title": "内核 fork 菜单、下载和识别",
       "operations": 15,
       "status": "pending-review-and-migration",
-      "reviewNote": "Reverted to original 134 customization; direct manual migration restart.",
+      "reviewNote": "重新开始：直接手工从 134 迁移全部定制",
       "pendingCount": 5,
       "approvedCount": 0
     },
@@ -55,7 +55,7 @@
       "title": "VPN、非 root 引导、权限与服务",
       "operations": 96,
       "status": "pending-review-and-migration",
-      "reviewNote": "Reverted to original 134 customization; direct manual migration restart.",
+      "reviewNote": "重新开始：直接手工从 134 迁移全部定制",
       "approvedCount": 1,
       "pendingCount": 41
     },
@@ -64,7 +64,7 @@
       "title": "设置、过滤提示、电池与自启入口",
       "operations": 19,
       "status": "pending-review-and-migration",
-      "reviewNote": "Reverted to original 134 customization; direct manual migration restart.",
+      "reviewNote": "重新开始：直接手工从 134 迁移全部定制",
       "approvedCount": 0
     },
     {
@@ -72,7 +72,7 @@
       "title": "内置配置与辅助资源",
       "operations": 2,
       "status": "pending-review-and-migration",
-      "reviewNote": "Reverted to original 134 customization; direct manual migration restart.",
+      "reviewNote": "重新开始：直接手工从 134 迁移全部定制",
       "approvedCount": 0
     },
     {
@@ -80,7 +80,7 @@
       "title": "共享依赖与其余接入点",
       "operations": 470,
       "status": "pending-review-and-migration",
-      "reviewNote": "Reverted to original 134 customization; direct manual migration restart.",
+      "reviewNote": "重新开始：直接手工从 134 迁移全部定制",
       "approvedCount": 0
     }
   ],
