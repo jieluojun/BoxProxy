@@ -1,182 +1,118 @@
-.class public final Ly94;
-.super Lgw3;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final enum Ly94;
+.super Ljava/lang/Enum;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final c:Landroid/window/OnBackInvokedDispatcher;
+# static fields
+.field public static final enum j:Ly94;
 
-.field public final d:I
+.field public static final enum k:Ly94;
 
-.field public final e:Landroid/window/OnBackInvokedCallback;
-
-.field public f:Z
+.field public static final synthetic l:[Ly94;
 
 
 # direct methods
-.method public constructor <init>(Landroid/window/OnBackInvokedDispatcher;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ly94;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Ly94;->c:Landroid/window/OnBackInvokedDispatcher;
+    const-string v1, "Api"
 
+    .line 4
     .line 5
+    const/4 v2, 0x0
+
     .line 6
-    iput p2, p0, Ly94;->d:I
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
-    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
-
     .line 9
+    sput-object v0, Ly94;->j:Ly94;
+
     .line 10
-    const/16 p2, 0x21
-
     .line 11
+    new-instance v1, Ly94;
+
     .line 12
-    if-ne p1, p2, :cond_0
-
     .line 13
-    .line 14
-    new-instance p1, Lpi;
+    const-string v2, "Local"
 
+    .line 14
     .line 15
+    const/4 v3, 0x1
+
     .line 16
-    const/4 p2, 0x2
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
-    invoke-direct {p1, p0, p2}, Lpi;-><init>(Ljava/lang/Object;B)V
-
     .line 18
     .line 19
-    .line 20
-    goto :goto_0
+    sput-object v1, Ly94;->k:Ly94;
 
+    .line 20
     .line 21
-    :cond_0
-    new-instance p1, Lz94;
+    filled-new-array {v0, v1}, [Ly94;
 
     .line 22
     .line 23
-    invoke-direct {p1, p0}, Lz94;-><init>(Ly94;)V
-
     .line 24
+    move-result-object v0
+
     .line 25
+    sput-object v0, Ly94;->l:[Ly94;
+
     .line 26
-    :goto_0
-    iput-object p1, p0, Ly94;->e:Landroid/window/OnBackInvokedCallback;
-
     .line 27
-    .line 28
     return-void
 .end method
 
-
-# virtual methods
-.method public final d(Z)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Ly94;->f(Z)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public final e()V
+.method public static valueOf(Ljava/lang/String;)Ly94;
     .locals 1
 
     .line 1
-    const/4 v0, 0x0
-
-    .line 2
-    invoke-virtual {p0, v0}, Ly94;->f(Z)V
-
-    .line 3
-    .line 4
-    .line 5
-    return-void
-.end method
-
-.method public final f(Z)V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Ly94;->e:Landroid/window/OnBackInvokedCallback;
+    const-class v0, Ly94;
 
     .line 2
     .line 3
-    if-eqz p1, :cond_0
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     .line 4
     .line 5
-    iget-boolean v1, p0, Ly94;->f:Z
-
     .line 6
+    move-result-object p0
+
     .line 7
-    if-nez v1, :cond_0
+    check-cast p0, Ly94;
 
     .line 8
     .line 9
-    iget-object p1, p0, Ly94;->c:Landroid/window/OnBackInvokedDispatcher;
+    return-object p0
+.end method
 
-    .line 10
-    .line 11
-    iget v1, p0, Ly94;->d:I
+.method public static values()[Ly94;
+    .locals 1
 
-    .line 12
-    .line 13
-    invoke-static {p1, v1, v0}, Lqr2;->i(Landroid/window/OnBackInvokedDispatcher;ILandroid/window/OnBackInvokedCallback;)V
+    .line 1
+    sget-object v0, Ly94;->l:[Ly94;
 
-    .line 14
-    .line 15
-    .line 16
-    const/4 p1, 0x1
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    .line 17
-    iput-boolean p1, p0, Ly94;->f:Z
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
 
-    .line 18
-    .line 19
-    return-void
+    .line 7
+    check-cast v0, [Ly94;
 
-    .line 20
-    :cond_0
-    if-nez p1, :cond_1
-
-    .line 21
-    .line 22
-    iget-boolean p1, p0, Ly94;->f:Z
-
-    .line 23
-    .line 24
-    if-eqz p1, :cond_1
-
-    .line 25
-    .line 26
-    iget-object p1, p0, Ly94;->c:Landroid/window/OnBackInvokedDispatcher;
-
-    .line 27
-    .line 28
-    invoke-static {p1, v0}, Lqr2;->j(Landroid/window/OnBackInvokedDispatcher;Landroid/window/OnBackInvokedCallback;)V
-
-    .line 29
-    .line 30
-    .line 31
-    const/4 p1, 0x0
-
-    .line 32
-    iput-boolean p1, p0, Ly94;->f:Z
-
-    .line 33
-    .line 34
-    :cond_1
-    return-void
+    .line 8
+    .line 9
+    return-object v0
 .end method

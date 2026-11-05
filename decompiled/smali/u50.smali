@@ -1,47 +1,73 @@
 .class public final Lu50;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Lz81;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# static fields
-.field public static final synthetic a:Lu50;
+# instance fields
+.field public j:Le62;
 
-.field public static final b:Ljava/lang/String;
+.field public k:Lcb6;
+
+.field public synthetic l:Ljava/lang/Object;
+
+.field public m:I
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 8
 
     .line 1
-    new-instance v0, Lu50;
+    iput-object p1, p0, Lu50;->l:Ljava/lang/Object;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iget p1, p0, Lu50;->m:I
 
     .line 4
     .line 5
-    .line 6
-    sput-object v0, Lu50;->a:Lu50;
+    const/high16 v0, -0x80000000
 
+    .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    const-class v0, Lv50;
+    iput p1, p0, Lu50;->m:I
 
     .line 9
     .line 10
-    invoke-virtual {v0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+    const/4 v5, 0x0
 
     .line 11
+    const/4 v6, 0x0
+
     .line 12
+    const/4 v0, 0x0
+
     .line 13
-    move-result-object v0
+    const/4 v1, 0x0
 
     .line 14
-    sput-object v0, Lu50;->b:Ljava/lang/String;
+    const/4 v2, 0x0
 
     .line 15
+    const/4 v3, 0x0
+
     .line 16
-    return-void
+    const/4 v4, 0x0
+
+    .line 17
+    move-object v7, p0
+
+    .line 18
+    invoke-static/range {v0 .. v7}, Lim;->q(Lac1;Lgg;IFLqm4;FLe62;Lz81;)Ljava/lang/Object;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object p0
+
+    .line 22
+    return-object p0
 .end method

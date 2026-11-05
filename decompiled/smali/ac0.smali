@@ -1,181 +1,74 @@
-.class public final synthetic Lac0;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lo52;
+.class public final Lac0;
+.super Lz81;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final synthetic j:Ljava/util/ArrayList;
+.field public j:Ljava/io/File;
 
-.field public final synthetic k:Z
+.field public synthetic k:Ljava/lang/Object;
 
-.field public final synthetic l:I
+.field public final synthetic l:Ljc0;
 
-.field public final synthetic m:Z
-
-.field public final synthetic n:Lyb0;
-
-.field public final synthetic o:F
-
-.field public final synthetic p:Lmn2;
-
-.field public final synthetic q:Las3;
+.field public m:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/ArrayList;ZIZLyb0;FLmn2;Las3;)V
+.method public constructor <init>(Ljc0;Lz81;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lac0;->l:Ljc0;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lac0;->j:Ljava/util/ArrayList;
+    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
 
+    .line 4
     .line 5
     .line 6
-    iput-boolean p2, p0, Lac0;->k:Z
-
-    .line 7
-    .line 8
-    iput p3, p0, Lac0;->l:I
-
-    .line 9
-    .line 10
-    iput-boolean p4, p0, Lac0;->m:Z
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Lac0;->n:Lyb0;
-
-    .line 13
-    .line 14
-    iput p6, p0, Lac0;->o:F
-
-    .line 15
-    .line 16
-    iput-object p7, p0, Lac0;->p:Lmn2;
-
-    .line 17
-    .line 18
-    iput-object p8, p0, Lac0;->q:Las3;
-
-    .line 19
-    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 12
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    check-cast p1, Ly33;
+    iput-object p1, p0, Lac0;->k:Ljava/lang/Object;
 
     .line 2
     .line 3
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget p1, p0, Lac0;->m:I
 
     .line 4
     .line 5
-    .line 6
-    iget-object v1, p0, Lac0;->j:Ljava/util/ArrayList;
+    const/high16 v0, -0x80000000
 
+    .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+    iput p1, p0, Lac0;->m:I
 
     .line 9
     .line 10
+    iget-object p1, p0, Lac0;->l:Ljc0;
+
     .line 11
-    move-result v10
-
     .line 12
-    new-instance v11, Lpd;
-
-    .line 13
-    .line 14
-    const/4 v0, 0x3
-
-    .line 15
-    invoke-direct {v11, v1, v0}, Lpd;-><init>(Ljava/util/ArrayList;B)V
-
-    .line 16
-    .line 17
-    .line 18
-    new-instance v0, Lhc0;
-
-    .line 19
-    .line 20
-    iget-boolean v3, p0, Lac0;->k:Z
-
-    .line 21
-    .line 22
-    iget v4, p0, Lac0;->l:I
-
-    .line 23
-    .line 24
-    iget-boolean v5, p0, Lac0;->m:Z
-
-    .line 25
-    .line 26
-    iget-object v6, p0, Lac0;->n:Lyb0;
-
-    .line 27
-    .line 28
-    iget v7, p0, Lac0;->o:F
-
-    .line 29
-    .line 30
-    iget-object v8, p0, Lac0;->p:Lmn2;
-
-    .line 31
-    .line 32
-    iget-object v9, p0, Lac0;->q:Las3;
-
-    .line 33
-    .line 34
-    move-object v2, v1
-
-    .line 35
-    invoke-direct/range {v0 .. v9}, Lhc0;-><init>(Ljava/util/ArrayList;Ljava/util/ArrayList;ZIZLyb0;FLmn2;Las3;)V
-
-    .line 36
-    .line 37
-    .line 38
-    new-instance p0, Loy0;
-
-    .line 39
-    .line 40
-    const v1, 0x799532c4
-
-    .line 41
-    .line 42
-    .line 43
-    const/4 v2, 0x1
-
-    .line 44
-    invoke-direct {p0, v1, v2, v0}, Loy0;-><init>(IZLa62;)V
-
-    .line 45
-    .line 46
-    .line 47
     const/4 v0, 0x0
 
-    .line 48
-    invoke-virtual {p1, v10, v0, v11, p0}, Ly33;->Z(ILo52;Lo52;Loy0;)V
+    .line 13
+    invoke-virtual {p1, v0, p0}, Ljc0;->b(Ljava/io/File;Lz81;)Ljava/lang/Object;
 
-    .line 49
-    .line 50
-    .line 51
-    sget-object p0, Lk27;->a:Lk27;
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p0
 
-    .line 52
-    .line 53
+    .line 17
     return-object p0
 .end method

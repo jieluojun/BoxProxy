@@ -1,522 +1,352 @@
 .class public final Lko4;
-.super Luf6;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Ls52;
+.implements Lk96;
 
 
 # instance fields
-.field public j:Lps3;
+.field public final j:Lve0;
 
-.field public k:Llo4;
+.field public final k:Lje0;
 
-.field public l:J
+.field public l:Lbv5;
 
-.field public m:B
+.field public m:I
 
-.field public synthetic n:Ljava/lang/Object;
+.field public n:Z
 
-.field public final synthetic o:Ljava/lang/CharSequence;
-
-.field public final synthetic p:J
-
-.field public final synthetic q:Llo4;
+.field public o:J
 
 
 # direct methods
-.method public constructor <init>(JLy71;Llo4;Ljava/lang/CharSequence;)V
+.method public constructor <init>(Lve0;)V
     .locals 0
 
     .line 1
-    iput-object p5, p0, Lko4;->o:Ljava/lang/CharSequence;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-wide p1, p0, Lko4;->p:J
-
     .line 4
+    iput-object p1, p0, Lko4;->j:Lve0;
+
     .line 5
-    iput-object p4, p0, Lko4;->q:Llo4;
-
     .line 6
+    invoke-interface {p1}, Lve0;->l()Lje0;
+
     .line 7
-    const/4 p1, 0x2
-
     .line 8
-    invoke-direct {p0, p1, p3}, Luf6;-><init>(ILy71;)V
-
     .line 9
+    move-result-object p1
+
     .line 10
+    iput-object p1, p0, Lko4;->k:Lje0;
+
     .line 11
+    .line 12
+    iget-object p1, p1, Lje0;->j:Lbv5;
+
+    .line 13
+    .line 14
+    iput-object p1, p0, Lko4;->l:Lbv5;
+
+    .line 15
+    .line 16
+    if-eqz p1, :cond_0
+
+    .line 17
+    .line 18
+    iget p1, p1, Lbv5;->b:I
+
+    .line 19
+    .line 20
+    goto :goto_0
+
+    .line 21
+    :cond_0
+    const/4 p1, -0x1
+
+    .line 22
+    :goto_0
+    iput p1, p0, Lko4;->m:I
+
+    .line 23
+    .line 24
     return-void
 .end method
 
 
 # virtual methods
-.method public final create(Ljava/lang/Object;Ly71;)Ly71;
-    .locals 6
-
-    .line 1
-    new-instance v0, Lko4;
-
-    .line 2
-    .line 3
-    iget-wide v1, p0, Lko4;->p:J
-
-    .line 4
-    .line 5
-    iget-object v4, p0, Lko4;->q:Llo4;
-
-    .line 6
-    .line 7
-    iget-object v5, p0, Lko4;->o:Ljava/lang/CharSequence;
-
-    .line 8
-    .line 9
-    move-object v3, p2
-
-    .line 10
-    invoke-direct/range {v0 .. v5}, Lko4;-><init>(JLy71;Llo4;Ljava/lang/CharSequence;)V
-
-    .line 11
-    .line 12
-    .line 13
-    iput-object p1, v0, Lko4;->n:Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    return-object v0
-.end method
-
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a()Luu6;
     .locals 0
 
     .line 1
-    check-cast p1, Landroid/view/textclassifier/TextClassifier;
+    iget-object p0, p0, Lko4;->j:Lve0;
 
     .line 2
     .line 3
-    check-cast p2, Ly71;
+    invoke-interface {p0}, Lk96;->a()Luu6;
 
     .line 4
     .line 5
-    invoke-virtual {p0, p1, p2}, Lko4;->create(Ljava/lang/Object;Ly71;)Ly71;
-
     .line 6
+    move-result-object p0
+
     .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    check-cast p0, Lko4;
-
-    .line 10
-    .line 11
-    sget-object p1, Lk27;->a:Lk27;
-
-    .line 12
-    .line 13
-    invoke-virtual {p0, p1}, Lko4;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p0
-
-    .line 17
     return-object p0
 .end method
 
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 12
+.method public final close()V
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Lko4;->m:B
+    const/4 v0, 0x1
+
+    .line 2
+    iput-boolean v0, p0, Lko4;->n:Z
+
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public final u(Lje0;J)J
+    .locals 8
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    const/4 v1, 0x2
-
     .line 4
-    const/4 v2, 0x1
+    const-wide/16 v0, 0x0
 
     .line 5
-    const/4 v3, 0x0
-
     .line 6
-    if-eqz v0, :cond_2
+    cmp-long v2, p2, v0
 
     .line 7
     .line 8
-    if-eq v0, v2, :cond_1
+    if-ltz v2, :cond_6
 
     .line 9
     .line 10
-    if-ne v0, v1, :cond_0
+    iget-boolean v3, p0, Lko4;->n:Z
 
     .line 11
     .line 12
-    iget-wide v0, p0, Lko4;->l:J
+    if-nez v3, :cond_5
 
     .line 13
     .line 14
-    invoke-static {p1}, Leg3;->S(Ljava/lang/Object;)V
+    iget-object v3, p0, Lko4;->l:Lbv5;
 
     .line 15
     .line 16
+    iget-object v4, p0, Lko4;->k:Lje0;
+
     .line 17
-    goto/16 :goto_2
-
     .line 18
+    if-eqz v3, :cond_1
+
     .line 19
-    :cond_0
-    const-string p0, "call to \'resume\' before \'invoke\' with coroutine"
-
     .line 20
-    .line 21
-    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
+    iget-object v5, v4, Lje0;->j:Lbv5;
 
+    .line 21
     .line 22
+    if-ne v3, v5, :cond_0
+
     .line 23
     .line 24
-    return-object v3
+    iget v3, p0, Lko4;->m:I
 
     .line 25
-    :cond_1
-    iget-wide v0, p0, Lko4;->l:J
-
     .line 26
-    .line 27
-    iget-object v2, p0, Lko4;->k:Llo4;
+    invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 27
     .line 28
     .line 29
-    iget-object v4, p0, Lko4;->j:Lps3;
+    iget v5, v5, Lbv5;->b:I
 
     .line 30
     .line 31
-    iget-object p0, p0, Lko4;->n:Ljava/lang/Object;
+    if-ne v3, v5, :cond_0
 
     .line 32
     .line 33
-    check-cast p0, Ltj6;
-
-    .line 34
-    .line 35
-    invoke-static {p1}, Leg3;->S(Ljava/lang/Object;)V
-
-    .line 36
-    .line 37
-    .line 38
     goto :goto_0
 
+    .line 34
+    :cond_0
+    const-string p0, "Peek source is invalid because upstream source was used"
+
+    .line 35
+    .line 36
+    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+
+    .line 37
+    .line 38
     .line 39
-    :cond_2
-    invoke-static {p1}, Leg3;->S(Ljava/lang/Object;)V
+    return-wide v0
 
     .line 40
+    :cond_1
+    :goto_0
+    if-nez v2, :cond_2
+
     .line 41
     .line 42
-    iget-object p1, p0, Lko4;->n:Ljava/lang/Object;
+    return-wide v0
 
     .line 43
-    .line 44
-    move-object v8, p1
+    :cond_2
+    iget-wide v0, p0, Lko4;->o:J
 
+    .line 44
     .line 45
-    check-cast v8, Landroid/view/textclassifier/TextClassifier;
+    const-wide/16 v2, 0x1
 
     .line 46
     .line 47
-    new-instance p1, Landroid/view/textclassifier/TextSelection$Request$Builder;
+    add-long/2addr v0, v2
 
     .line 48
+    iget-object v2, p0, Lko4;->j:Lve0;
+
     .line 49
-    iget-wide v4, p0, Lko4;->p:J
-
     .line 50
-    .line 51
-    invoke-static {v4, v5}, Laq6;->g(J)I
+    invoke-interface {v2, v0, v1}, Lve0;->h(J)Z
 
+    .line 51
     .line 52
     .line 53
-    .line 54
     move-result v0
 
-    .line 55
-    invoke-static {v4, v5}, Laq6;->f(J)I
+    .line 54
+    if-nez v0, :cond_3
 
+    .line 55
     .line 56
+    const-wide/16 p0, -0x1
+
     .line 57
     .line 58
-    move-result v4
+    return-wide p0
 
     .line 59
-    iget-object v5, p0, Lko4;->o:Ljava/lang/CharSequence;
+    :cond_3
+    iget-object v0, p0, Lko4;->l:Lbv5;
 
     .line 60
     .line 61
-    invoke-direct {p1, v5, v0, v4}, Landroid/view/textclassifier/TextSelection$Request$Builder;-><init>(Ljava/lang/CharSequence;II)V
+    if-nez v0, :cond_4
 
     .line 62
     .line 63
+    iget-object v0, v4, Lje0;->j:Lbv5;
+
     .line 64
-    iget-object v4, p0, Lko4;->q:Llo4;
-
     .line 65
-    .line 66
-    invoke-virtual {v4}, Llo4;->c()Landroid/os/LocaleList;
+    if-eqz v0, :cond_4
 
+    .line 66
     .line 67
+    iput-object v0, p0, Lko4;->l:Lbv5;
+
     .line 68
     .line 69
-    move-result-object v0
+    iget v0, v0, Lbv5;->b:I
 
     .line 70
-    invoke-virtual {p1, v0}, Landroid/view/textclassifier/TextSelection$Request$Builder;->setDefaultLocales(Landroid/os/LocaleList;)Landroid/view/textclassifier/TextSelection$Request$Builder;
-
     .line 71
+    iput v0, p0, Lko4;->m:I
+
     .line 72
     .line 73
-    move-result-object p1
+    :cond_4
+    iget-wide v0, v4, Lje0;->k:J
 
     .line 74
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
     .line 75
-    .line 76
-    const/16 v6, 0x1f
+    iget-wide v2, p0, Lko4;->o:J
 
+    .line 76
     .line 77
+    sub-long/2addr v0, v2
+
     .line 78
-    if-lt v0, v6, :cond_3
+    invoke-static {p2, p3, v0, v1}, Ljava/lang/Math;->min(JJ)J
 
     .line 79
     .line 80
-    invoke-static {p1}, Lbb;->w(Landroid/view/textclassifier/TextSelection$Request$Builder;)V
-
     .line 81
-    .line 82
-    .line 83
-    :cond_3
-    invoke-virtual {p1}, Landroid/view/textclassifier/TextSelection$Request$Builder;->build()Landroid/view/textclassifier/TextSelection$Request;
+    move-result-wide v6
 
+    .line 82
+    iget-object v2, p0, Lko4;->k:Lje0;
+
+    .line 83
     .line 84
+    iget-wide v4, p0, Lko4;->o:J
+
     .line 85
     .line 86
-    move-result-object p1
+    move-object v3, p1
 
     .line 87
-    invoke-interface {v8, p1}, Landroid/view/textclassifier/TextClassifier;->suggestSelection(Landroid/view/textclassifier/TextSelection$Request;)Landroid/view/textclassifier/TextSelection;
+    invoke-virtual/range {v2 .. v7}, Lje0;->f(Lje0;JJ)V
 
     .line 88
     .line 89
     .line 90
-    move-result-object p1
+    iget-wide p1, p0, Lko4;->o:J
 
     .line 91
-    invoke-virtual {p1}, Landroid/view/textclassifier/TextSelection;->getSelectionStartIndex()I
-
     .line 92
-    .line 93
-    .line 94
-    move-result v7
+    add-long/2addr p1, v6
 
+    .line 93
+    iput-wide p1, p0, Lko4;->o:J
+
+    .line 94
     .line 95
-    invoke-virtual {p1}, Landroid/view/textclassifier/TextSelection;->getSelectionEndIndex()I
+    return-wide v6
 
     .line 96
+    :cond_5
+    const-string p0, "closed"
+
     .line 97
     .line 98
-    move-result v9
+    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
 
     .line 99
-    invoke-static {v7, v9}, Leg3;->f(II)J
-
     .line 100
     .line 101
+    return-wide v0
+
     .line 102
-    move-result-wide v9
+    :cond_6
+    const-string p0, "byteCount < 0: "
 
     .line 103
-    sget-object v11, Lcb1;->j:Lcb1;
-
     .line 104
-    .line 105
-    if-lt v0, v6, :cond_5
+    invoke-static {p2, p3, p0}, Loc1;->n(JLjava/lang/String;)Ljava/lang/String;
 
+    .line 105
     .line 106
     .line 107
-    invoke-static {p1}, Lbb;->m(Landroid/view/textclassifier/TextSelection;)Landroid/view/textclassifier/TextClassification;
+    move-result-object p0
 
     .line 108
+    invoke-static {p0}, Ljw1;->d(Ljava/lang/Object;)V
+
     .line 109
     .line 110
-    move-result-object v0
-
     .line 111
-    if-eqz v0, :cond_5
-
-    .line 112
-    .line 113
-    invoke-static {p1}, Lbb;->m(Landroid/view/textclassifier/TextSelection;)Landroid/view/textclassifier/TextClassification;
-
-    .line 114
-    .line 115
-    .line 116
-    move-result-object p1
-
-    .line 117
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 118
-    .line 119
-    .line 120
-    invoke-virtual {v4, v5, v9, v10, p1}, Llo4;->b(Ljava/lang/CharSequence;JLandroid/view/textclassifier/TextClassification;)Ltj6;
-
-    .line 121
-    .line 122
-    .line 123
-    move-result-object p1
-
-    .line 124
-    iget-object v0, v4, Llo4;->e:Lps3;
-
-    .line 125
-    .line 126
-    iput-object p1, p0, Lko4;->n:Ljava/lang/Object;
-
-    .line 127
-    .line 128
-    iput-object v0, p0, Lko4;->j:Lps3;
-
-    .line 129
-    .line 130
-    iput-object v4, p0, Lko4;->k:Llo4;
-
-    .line 131
-    .line 132
-    iput-wide v9, p0, Lko4;->l:J
-
-    .line 133
-    .line 134
-    iput-byte v2, p0, Lko4;->m:B
-
-    .line 135
-    .line 136
-    invoke-virtual {v0, p0}, Lps3;->e(Ly71;)Ljava/lang/Object;
-
-    .line 137
-    .line 138
-    .line 139
-    move-result-object p0
-
-    .line 140
-    if-ne p0, v11, :cond_4
-
-    .line 141
-    .line 142
-    goto :goto_1
-
-    .line 143
-    :cond_4
-    move-object p0, p1
-
-    .line 144
-    move-object v2, v4
-
-    .line 145
-    move-object v4, v0
-
-    .line 146
-    move-wide v0, v9
-
-    .line 147
-    :goto_0
-    :try_start_0
-    iget-object p1, v2, Llo4;->g:Lgl4;
-
-    .line 148
-    .line 149
-    invoke-virtual {p1, p0}, Lgl4;->setValue(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 150
-    .line 151
-    .line 152
-    invoke-virtual {v4, v3}, Lps3;->g(Ljava/lang/Object;)V
-
-    .line 153
-    .line 154
-    .line 155
-    goto :goto_2
-
-    .line 156
-    :catchall_0
-    move-exception v0
-
-    .line 157
-    move-object p0, v0
-
-    .line 158
-    invoke-virtual {v4, v3}, Lps3;->g(Ljava/lang/Object;)V
-
-    .line 159
-    .line 160
-    .line 161
-    throw p0
-
-    .line 162
-    :cond_5
-    iput-wide v9, p0, Lko4;->l:J
-
-    .line 163
-    .line 164
-    iput-byte v1, p0, Lko4;->m:B
-
-    .line 165
-    .line 166
-    iget-object v5, p0, Lko4;->o:Ljava/lang/CharSequence;
-
-    .line 167
-    .line 168
-    move-wide v6, v9
-
-    .line 169
-    move-object v9, p0
-
-    .line 170
-    invoke-virtual/range {v4 .. v9}, Llo4;->a(Ljava/lang/CharSequence;JLandroid/view/textclassifier/TextClassifier;Lz71;)Ljava/lang/Object;
-
-    .line 171
-    .line 172
-    .line 173
-    move-result-object p0
-
-    .line 174
-    if-ne p0, v11, :cond_6
-
-    .line 175
-    .line 176
-    :goto_1
-    return-object v11
-
-    .line 177
-    :cond_6
-    move-wide v0, v6
-
-    .line 178
-    :goto_2
-    new-instance p0, Laq6;
-
-    .line 179
-    .line 180
-    invoke-direct {p0, v0, v1}, Laq6;-><init>(J)V
-
-    .line 181
-    .line 182
-    .line 183
-    return-object p0
+    return-wide v0
 .end method

@@ -1,104 +1,123 @@
 .class public final Lfu1;
-.super Lz71;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Llt1;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public j:Lu76;
-
-.field public k:Lmy0;
-
-.field public l:Ldm2;
-
-.field public m:Ljava/lang/Object;
-
-.field public n:Ldd4;
-
-.field public o:Liv1;
-
-.field public p:I
-
-.field public synthetic q:Ljava/lang/Object;
-
-.field public final synthetic r:Lju1;
-
-.field public s:I
+.field public final j:Ljava/lang/ref/WeakReference;
 
 
 # direct methods
-.method public constructor <init>(Lju1;Lz71;)V
-    .locals 0
+.method public constructor <init>(Landroid/widget/EditText;)V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lfu1;->r:Lju1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
-
     .line 4
+    new-instance v0, Ljava/lang/ref/WeakReference;
+
     .line 5
     .line 6
+    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+
+    .line 7
+    .line 8
+    .line 9
+    iput-object v0, p0, Lfu1;->j:Ljava/lang/ref/WeakReference;
+
+    .line 10
+    .line 11
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 8
+.method public final b()V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lfu1;->q:Ljava/lang/Object;
+    iget-object v0, p0, Lfu1;->j:Ljava/lang/ref/WeakReference;
 
     .line 2
     .line 3
-    iget p1, p0, Lfu1;->s:I
+    invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
+    move-result-object v0
+
     .line 7
-    or-int/2addr p1, v0
+    check-cast v0, Landroid/widget/EditText;
 
     .line 8
-    iput p1, p0, Lfu1;->s:I
-
     .line 9
-    .line 10
-    const/4 v5, 0x0
+    if-nez v0, :cond_0
 
+    .line 10
     .line 11
-    const/4 v6, 0x0
+    goto :goto_0
 
     .line 12
-    iget-object v0, p0, Lfu1;->r:Lju1;
+    :cond_0
+    invoke-virtual {v0}, Landroid/view/View;->getHandler()Landroid/os/Handler;
 
     .line 13
     .line 14
-    const/4 v1, 0x0
-
     .line 15
-    const/4 v2, 0x0
+    move-result-object v0
 
     .line 16
-    const/4 v3, 0x0
+    if-nez v0, :cond_1
 
     .line 17
-    const/4 v4, 0x0
-
     .line 18
-    move-object v7, p0
+    :goto_0
+    return-void
 
     .line 19
-    invoke-virtual/range {v0 .. v7}, Lju1;->a(Lu76;Lmy0;Ldm2;Ljava/lang/Object;Ldd4;Liv1;Lz71;)Ljava/lang/Object;
+    :cond_1
+    invoke-virtual {v0, p0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     .line 20
     .line 21
     .line 22
+    return-void
+.end method
+
+.method public final run()V
+    .locals 1
+
+    .line 1
+    iget-object p0, p0, Lfu1;->j:Ljava/lang/ref/WeakReference;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
     move-result-object p0
 
-    .line 23
-    return-object p0
+    .line 7
+    check-cast p0, Landroid/widget/EditText;
+
+    .line 8
+    .line 9
+    const/4 v0, 0x1
+
+    .line 10
+    invoke-static {p0, v0}, Lgu1;->a(Landroid/widget/EditText;I)V
+
+    .line 11
+    .line 12
+    .line 13
+    return-void
 .end method

@@ -1,1002 +1,981 @@
-.class public final Lif6;
+.class public final synthetic Lif6;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lt62;
 
 
 # instance fields
-.field public A:Ljava/lang/CharSequence;
+.field public final synthetic j:B
 
-.field public B:Ljava/lang/CharSequence;
+.field public final synthetic k:Lef6;
 
-.field public C:Landroid/content/res/ColorStateList;
+.field public final synthetic l:Z
 
-.field public D:Landroid/graphics/PorterDuff$Mode;
+.field public final synthetic m:Ljava/util/Set;
 
-.field public final synthetic E:Ljf6;
+.field public final synthetic n:Lp62;
 
-.field public final a:Landroid/view/Menu;
+.field public final synthetic o:Le62;
 
-.field public b:I
-
-.field public c:I
-
-.field public d:I
-
-.field public e:I
-
-.field public f:Z
-
-.field public g:Z
-
-.field public h:Z
-
-.field public i:I
-
-.field public j:I
-
-.field public k:Ljava/lang/CharSequence;
-
-.field public l:Ljava/lang/CharSequence;
-
-.field public m:I
-
-.field public n:C
-
-.field public o:I
-
-.field public p:C
-
-.field public q:I
-
-.field public r:I
-
-.field public s:Z
-
-.field public t:Z
-
-.field public u:Z
-
-.field public v:I
-
-.field public w:I
-
-.field public x:Ljava/lang/String;
-
-.field public y:Ljava/lang/String;
-
-.field public z:Lij3;
+.field public final synthetic p:Le62;
 
 
 # direct methods
-.method public constructor <init>(Ljf6;Landroid/view/Menu;)V
+.method public synthetic constructor <init>(Lef6;ZLjava/util/Set;Le62;Lp62;Le62;IB)V
     .locals 0
 
-    .line 1
+    .line 20
+    iput-byte p8, p0, Lif6;->j:B
+
+    iput-object p1, p0, Lif6;->k:Lef6;
+
+    iput-boolean p2, p0, Lif6;->l:Z
+
+    iput-object p3, p0, Lif6;->m:Ljava/util/Set;
+
+    iput-object p4, p0, Lif6;->o:Le62;
+
+    iput-object p5, p0, Lif6;->n:Lp62;
+
+    iput-object p6, p0, Lif6;->p:Le62;
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lef6;ZLjava/util/Set;Lp62;Le62;Le62;)V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x1
+
     .line 2
+    iput-byte v0, p0, Lif6;->j:B
+
     .line 3
     .line 4
-    iput-object p1, p0, Lif6;->E:Ljf6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 5
     .line 6
-    const/4 p1, 0x0
-
     .line 7
-    iput-object p1, p0, Lif6;->C:Landroid/content/res/ColorStateList;
+    iput-object p1, p0, Lif6;->k:Lef6;
 
     .line 8
     .line 9
-    iput-object p1, p0, Lif6;->D:Landroid/graphics/PorterDuff$Mode;
+    iput-boolean p2, p0, Lif6;->l:Z
 
     .line 10
     .line 11
-    iput-object p2, p0, Lif6;->a:Landroid/view/Menu;
+    iput-object p3, p0, Lif6;->m:Ljava/util/Set;
 
     .line 12
     .line 13
-    const/4 p1, 0x0
+    iput-object p4, p0, Lif6;->n:Lp62;
 
     .line 14
-    iput p1, p0, Lif6;->b:I
-
     .line 15
+    iput-object p5, p0, Lif6;->o:Le62;
+
     .line 16
-    iput p1, p0, Lif6;->c:I
-
     .line 17
+    iput-object p6, p0, Lif6;->p:Le62;
+
     .line 18
-    iput p1, p0, Lif6;->d:I
-
     .line 19
-    .line 20
-    iput p1, p0, Lif6;->e:I
-
-    .line 21
-    .line 22
-    const/4 p1, 0x1
-
-    .line 23
-    iput-boolean p1, p0, Lif6;->f:Z
-
-    .line 24
-    .line 25
-    iput-boolean p1, p0, Lif6;->g:Z
-
-    .line 26
-    .line 27
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 36
 
     .line 1
-    :try_start_0
-    iget-object p0, p0, Lif6;->E:Ljf6;
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
-    iget-object p0, p0, Ljf6;->c:Landroid/content/Context;
+    iget-byte v1, v0, Lif6;->j:B
 
     .line 4
     .line 5
-    invoke-virtual {p0}, Landroid/content/Context;->getClassLoader()Ljava/lang/ClassLoader;
+    const/16 v2, 0x9
 
     .line 6
     .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    const/4 v0, 0x0
-
-    .line 10
-    invoke-static {p1, v0, p0}, Ljava/lang/Class;->forName(Ljava/lang/String;ZLjava/lang/ClassLoader;)Ljava/lang/Class;
-
-    .line 11
-    .line 12
-    .line 13
-    move-result-object p0
-
-    .line 14
-    invoke-virtual {p0, p2}, Ljava/lang/Class;->getConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
-
-    .line 15
-    .line 16
-    .line 17
-    move-result-object p0
-
-    .line 18
-    const/4 p2, 0x1
-
-    .line 19
-    invoke-virtual {p0, p2}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
-
-    .line 20
-    .line 21
-    .line 22
-    invoke-virtual {p0, p3}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 23
-    .line 24
-    .line 25
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 26
-    return-object p0
-
-    .line 27
-    :catch_0
-    move-exception p0
-
-    .line 28
-    new-instance p2, Ljava/lang/StringBuilder;
-
-    .line 29
-    .line 30
-    const-string p3, "Cannot instantiate class: "
-
-    .line 31
-    .line 32
-    invoke-direct {p2, p3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 33
-    .line 34
-    .line 35
-    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 36
-    .line 37
-    .line 38
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 39
-    .line 40
-    .line 41
-    move-result-object p1
-
-    .line 42
-    const-string p2, "SupportMenuInflater"
-
-    .line 43
-    .line 44
-    invoke-static {p2, p1, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 45
-    .line 46
-    .line 47
-    const/4 p0, 0x0
-
-    .line 48
-    return-object p0
-.end method
-
-.method public final b(Landroid/view/MenuItem;)V
-    .locals 8
-
-    .line 1
-    iget-object v0, p0, Lif6;->E:Ljf6;
-
-    .line 2
-    .line 3
-    iget-object v1, v0, Ljf6;->c:Landroid/content/Context;
-
-    .line 4
-    .line 5
-    iget-boolean v2, p0, Lif6;->s:Z
-
-    .line 6
-    .line 7
-    invoke-interface {p1, v2}, Landroid/view/MenuItem;->setChecked(Z)Landroid/view/MenuItem;
+    sget-object v3, La47;->a:La47;
 
     .line 8
     .line 9
+    packed-switch v1, :pswitch_data_0
+
     .line 10
-    move-result-object v2
-
     .line 11
-    iget-boolean v3, p0, Lif6;->t:Z
-
     .line 12
-    .line 13
-    invoke-interface {v2, v3}, Landroid/view/MenuItem;->setVisible(Z)Landroid/view/MenuItem;
+    move-object/from16 v10, p1
 
+    .line 13
     .line 14
+    check-cast v10, Lz11;
+
     .line 15
     .line 16
-    move-result-object v2
+    move-object/from16 v1, p2
 
     .line 17
-    iget-boolean v3, p0, Lif6;->u:Z
-
     .line 18
-    .line 19
-    invoke-interface {v2, v3}, Landroid/view/MenuItem;->setEnabled(Z)Landroid/view/MenuItem;
+    check-cast v1, Ljava/lang/Integer;
 
+    .line 19
     .line 20
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 21
     .line 22
-    move-result-object v2
-
     .line 23
-    iget v3, p0, Lif6;->r:I
+    invoke-static {v2}, Lqu5;->f0(I)I
 
     .line 24
     .line 25
-    const/4 v4, 0x0
-
     .line 26
-    const/4 v5, 0x1
+    move-result v11
 
     .line 27
-    if-lt v3, v5, :cond_0
+    iget-object v4, v0, Lif6;->k:Lef6;
 
     .line 28
     .line 29
-    move v3, v5
+    iget-boolean v5, v0, Lif6;->l:Z
 
     .line 30
-    goto :goto_0
-
     .line 31
-    :cond_0
-    move v3, v4
+    iget-object v6, v0, Lif6;->m:Ljava/util/Set;
 
     .line 32
-    :goto_0
-    invoke-interface {v2, v3}, Landroid/view/MenuItem;->setCheckable(Z)Landroid/view/MenuItem;
-
     .line 33
+    iget-object v7, v0, Lif6;->o:Le62;
+
     .line 34
     .line 35
-    move-result-object v2
+    iget-object v8, v0, Lif6;->n:Lp62;
 
     .line 36
-    iget-object v3, p0, Lif6;->l:Ljava/lang/CharSequence;
-
     .line 37
-    .line 38
-    invoke-interface {v2, v3}, Landroid/view/MenuItem;->setTitleCondensed(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
+    iget-object v9, v0, Lif6;->p:Le62;
 
+    .line 38
     .line 39
+    invoke-static/range {v4 .. v11}, Lsi3;->A(Lef6;ZLjava/util/Set;Le62;Lp62;Le62;Lz11;I)V
+
     .line 40
     .line 41
-    move-result-object v2
-
     .line 42
-    iget v3, p0, Lif6;->m:I
+    return-object v3
 
     .line 43
-    .line 44
-    invoke-interface {v2, v3}, Landroid/view/MenuItem;->setIcon(I)Landroid/view/MenuItem;
+    :pswitch_0
+    iget-object v13, v0, Lif6;->k:Lef6;
 
+    .line 44
     .line 45
+    iget-object v1, v13, Lef6;->k:Ljava/util/List;
+
     .line 46
     .line 47
-    iget v2, p0, Lif6;->v:I
+    move-object/from16 v2, p1
 
     .line 48
     .line 49
-    if-ltz v2, :cond_1
+    check-cast v2, Lz11;
 
     .line 50
     .line 51
-    invoke-interface {p1, v2}, Landroid/view/MenuItem;->setShowAsAction(I)V
+    move-object/from16 v4, p2
 
     .line 52
     .line 53
+    check-cast v4, Ljava/lang/Integer;
+
     .line 54
-    :cond_1
-    iget-object v2, p0, Lif6;->y:Ljava/lang/String;
-
     .line 55
-    .line 56
-    if-eqz v2, :cond_4
+    invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
+    .line 56
     .line 57
     .line 58
-    invoke-virtual {v1}, Landroid/content/Context;->isRestricted()Z
+    move-result v4
 
     .line 59
+    and-int/lit8 v5, v4, 0x3
+
     .line 60
     .line 61
-    move-result v2
+    const/4 v6, 0x2
 
     .line 62
-    if-nez v2, :cond_3
+    const/4 v7, 0x0
 
     .line 63
+    const/4 v8, 0x1
+
     .line 64
-    new-instance v2, Lhf6;
+    if-eq v5, v6, :cond_0
 
     .line 65
     .line 66
-    iget-object v3, v0, Ljf6;->d:Ljava/lang/Object;
+    move v5, v8
 
     .line 67
+    goto :goto_0
+
     .line 68
-    if-nez v3, :cond_2
+    :cond_0
+    move v5, v7
 
     .line 69
+    :goto_0
+    and-int/2addr v4, v8
+
     .line 70
-    invoke-static {v1}, Ljf6;->a(Ljava/lang/Object;)Ljava/lang/Object;
+    check-cast v2, Lt72;
 
     .line 71
     .line 72
+    invoke-virtual {v2, v4, v5}, Lt72;->T(IZ)Z
+
     .line 73
-    move-result-object v3
-
     .line 74
-    iput-object v3, v0, Ljf6;->d:Ljava/lang/Object;
-
     .line 75
+    move-result v4
+
     .line 76
-    :cond_2
-    iget-object v1, p0, Lif6;->y:Ljava/lang/String;
+    if-eqz v4, :cond_5
 
     .line 77
     .line 78
-    invoke-direct {v2}, Lhf6;-><init>()V
+    sget-object v4, Ltp3;->j:Ltp3;
 
     .line 79
     .line 80
+    const/high16 v5, 0x3f800000    # 1.0f
+
     .line 81
-    iput-object v3, v2, Lhf6;->b:Ljava/lang/Object;
-
     .line 82
-    .line 83
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {v4, v5}, Lc66;->d(Lwp3;F)Lwp3;
 
+    .line 83
     .line 84
     .line 85
-    .line 86
-    move-result-object v3
-
-    .line 87
-    :try_start_0
-    sget-object v6, Lhf6;->d:[Ljava/lang/Class;
-
-    .line 88
-    .line 89
-    invoke-virtual {v3, v1, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
-    .line 90
-    .line 91
-    .line 92
     move-result-object v6
 
+    .line 86
+    new-instance v9, Lwv;
+
+    .line 87
+    .line 88
+    new-instance v10, Ljw1;
+
+    .line 89
+    .line 90
+    const/4 v11, 0x3
+
+    .line 91
+    invoke-direct {v10, v11}, Ljw1;-><init>(B)V
+
+    .line 92
     .line 93
-    iput-object v6, v2, Lhf6;->c:Ljava/lang/Object;
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
     .line 94
-    .line 95
-    invoke-interface {p1, v2}, Landroid/view/MenuItem;->setOnMenuItemClickListener(Landroid/view/MenuItem$OnMenuItemClickListener;)Landroid/view/MenuItem;
+    const/high16 v11, 0x41400000    # 12.0f
 
+    .line 95
     .line 96
+    invoke-direct {v9, v11, v8, v10}, Lwv;-><init>(FZLjw1;)V
+
     .line 97
     .line 98
-    goto :goto_1
-
     .line 99
-    :catch_0
-    move-exception p0
+    sget-object v10, Lr6;->x:Lo20;
 
     .line 100
-    new-instance p1, Landroid/view/InflateException;
-
     .line 101
+    const/4 v11, 0x6
+
     .line 102
-    const-string v0, "Couldn\'t resolve menu item onClick handler "
+    invoke-static {v9, v10, v2, v11}, Lmx0;->a(Lxv;Le8;Lz11;I)Lox0;
 
     .line 103
     .line 104
-    const-string v2, " in class "
-
     .line 105
+    move-result-object v9
+
     .line 106
-    invoke-static {v0, v1, v2}, Lh86;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-wide v10, v2, Lt72;->U:J
 
     .line 107
     .line 108
+    invoke-static {v10, v11}, Ljava/lang/Long;->hashCode(J)I
+
     .line 109
-    move-result-object v0
-
     .line 110
-    invoke-virtual {v3}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
     .line 111
+    move-result v10
+
     .line 112
+    invoke-virtual {v2}, Lt72;->m()Lro4;
+
     .line 113
-    move-result-object v1
-
     .line 114
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 115
-    .line 116
-    .line 117
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v11
 
+    .line 116
+    invoke-static {v2, v6}, Ldn;->T(Lz11;Lwp3;)Lwp3;
+
+    .line 117
     .line 118
     .line 119
+    move-result-object v6
+
     .line 120
-    move-result-object v0
+    sget-object v12, Lq11;->d:Lr6;
 
     .line 121
-    invoke-direct {p1, v0}, Landroid/view/InflateException;-><init>(Ljava/lang/String;)V
-
     .line 122
+    invoke-virtual {v12}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 123
     .line 124
-    invoke-virtual {p1, p0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
-
     .line 125
+    invoke-virtual {v2}, Lt72;->f0()V
+
     .line 126
     .line 127
-    throw p1
-
     .line 128
-    :cond_3
-    const-string p0, "The android:onClick attribute cannot be used within a restricted context"
+    iget-boolean v12, v2, Lt72;->T:Z
 
     .line 129
     .line 130
-    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
+    if-eqz v12, :cond_1
 
     .line 131
     .line 132
-    .line 133
-    return-void
+    sget-object v12, Lj13;->b0:Lz02;
 
+    .line 133
     .line 134
-    :cond_4
-    :goto_1
-    iget v1, p0, Lif6;->r:I
+    invoke-virtual {v2, v12}, Lt72;->l(Le62;)V
 
     .line 135
     .line 136
-    const/4 v2, 0x2
-
     .line 137
-    if-lt v1, v2, :cond_7
+    goto :goto_1
 
     .line 138
-    .line 139
-    instance-of v1, p1, Lgj3;
+    :cond_1
+    invoke-virtual {v2}, Lt72;->o0()V
 
+    .line 139
     .line 140
     .line 141
-    if-eqz v1, :cond_5
+    :goto_1
+    sget-object v12, Lr6;->R:Lw01;
 
     .line 142
     .line 143
-    move-object v1, p1
+    invoke-static {v2, v12, v9}, Lu47;->h(Lz11;Lt62;Ljava/lang/Object;)V
 
     .line 144
-    check-cast v1, Lgj3;
-
     .line 145
     .line 146
-    iget v2, v1, Lgj3;->x:I
+    sget-object v9, Lr6;->Q:Lw01;
 
     .line 147
     .line 148
-    and-int/lit8 v2, v2, -0x5
+    invoke-static {v2, v9, v11}, Lu47;->h(Lz11;Lt62;Ljava/lang/Object;)V
 
     .line 149
     .line 150
-    or-int/lit8 v2, v2, 0x4
-
     .line 151
-    .line 152
-    iput v2, v1, Lgj3;->x:I
+    invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
+    .line 152
     .line 153
     .line 154
-    goto :goto_4
+    move-result-object v9
 
     .line 155
-    :cond_5
-    instance-of v1, p1, Llj3;
+    sget-object v10, Lr6;->S:Lw01;
 
     .line 156
     .line 157
-    if-eqz v1, :cond_7
+    invoke-static {v2, v10, v9}, Lu47;->h(Lz11;Lt62;Ljava/lang/Object;)V
 
     .line 158
     .line 159
-    move-object v1, p1
-
     .line 160
-    check-cast v1, Llj3;
+    invoke-static {v2}, Lu47;->g(Lz11;)V
 
     .line 161
     .line 162
-    iget-object v2, v1, Llj3;->c:Lkf6;
-
     .line 163
+    sget-object v9, Lr6;->P:Lw01;
+
     .line 164
-    :try_start_1
-    iget-object v3, v1, Llj3;->d:Ljava/lang/reflect/Method;
-
     .line 165
-    .line 166
-    if-nez v3, :cond_6
+    invoke-static {v2, v9, v6}, Lu47;->h(Lz11;Lt62;Ljava/lang/Object;)V
 
+    .line 166
     .line 167
     .line 168
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const v6, 0x7f0f046a
 
     .line 169
     .line 170
     .line 171
-    move-result-object v3
+    invoke-static {v6, v2}, Lru5;->e0(ILz11;)Ljava/lang/String;
 
     .line 172
-    const-string v6, "setExclusiveCheckable"
-
     .line 173
     .line 174
-    sget-object v7, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
+    move-result-object v14
 
     .line 175
-    .line 176
-    filled-new-array {v7}, [Ljava/lang/Class;
+    invoke-interface {v1}, Ljava/util/List;->size()I
 
+    .line 176
     .line 177
     .line 178
+    move-result v6
+
     .line 179
-    move-result-object v7
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 180
-    invoke-virtual {v3, v6, v7}, Ljava/lang/Class;->getDeclaredMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
-
     .line 181
     .line 182
+    move-result-object v6
+
     .line 183
-    move-result-object v3
+    filled-new-array {v6}, [Ljava/lang/Object;
 
     .line 184
-    iput-object v3, v1, Llj3;->d:Ljava/lang/reflect/Method;
-
     .line 185
     .line 186
-    goto :goto_2
+    move-result-object v6
 
     .line 187
-    :catch_1
-    move-exception v1
+    const v9, 0x7f0f00be
 
     .line 188
-    goto :goto_3
-
     .line 189
-    :cond_6
-    :goto_2
-    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
     .line 190
-    .line 191
-    filled-new-array {v1}, [Ljava/lang/Object;
+    invoke-static {v9, v6, v2}, Lru5;->f0(I[Ljava/lang/Object;Lz11;)Ljava/lang/String;
 
+    .line 191
     .line 192
     .line 193
+    move-result-object v15
+
     .line 194
-    move-result-object v1
+    new-instance v6, Lbu0;
 
     .line 195
-    invoke-virtual {v3, v2, v1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1
-    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
-
     .line 196
+    iget-object v9, v0, Lif6;->p:Le62;
+
     .line 197
     .line 198
-    goto :goto_4
+    iget-boolean v10, v0, Lif6;->l:Z
 
     .line 199
-    :goto_3
-    const-string v2, "MenuItemWrapper"
-
     .line 200
-    .line 201
-    const-string v3, "Error while calling setExclusiveCheckable"
+    invoke-direct {v6, v9, v13, v10}, Lbu0;-><init>(Le62;Lef6;Z)V
 
+    .line 201
     .line 202
     .line 203
-    invoke-static {v2, v3, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    const v9, 0x22c4d60e
 
     .line 204
     .line 205
     .line 206
-    :cond_7
-    :goto_4
-    iget-object v1, p0, Lif6;->x:Ljava/lang/String;
+    invoke-static {v9, v6, v2}, Lfm;->f0(ILb72;Lz11;)Lqz0;
 
     .line 207
     .line 208
-    if-eqz v1, :cond_8
-
     .line 209
+    move-result-object v17
+
     .line 210
-    sget-object v2, Ljf6;->e:[Ljava/lang/Class;
+    const/16 v19, 0xc00
 
     .line 211
     .line 212
-    iget-object v0, v0, Ljf6;->a:[Ljava/lang/Object;
+    const/16 v16, 0x0
 
     .line 213
     .line 214
-    invoke-virtual {p0, v1, v2, v0}, Lif6;->a(Ljava/lang/String;[Ljava/lang/Class;[Ljava/lang/Object;)Ljava/lang/Object;
+    move-object/from16 v18, v2
 
     .line 215
     .line 216
+    invoke-static/range {v14 .. v19}, Ldn;->s(Ljava/lang/String;Ljava/lang/String;Lwp3;Lqz0;Lz11;I)V
+
     .line 217
-    move-result-object v0
-
     .line 218
-    check-cast v0, Landroid/view/View;
-
     .line 219
-    .line 220
-    invoke-interface {p1, v0}, Landroid/view/MenuItem;->setActionView(Landroid/view/View;)Landroid/view/MenuItem;
+    invoke-interface {v1}, Ljava/util/List;->isEmpty()Z
 
+    .line 220
     .line 221
     .line 222
+    move-result v1
+
     .line 223
-    move v4, v5
+    if-eqz v1, :cond_2
 
     .line 224
-    :cond_8
-    iget v0, p0, Lif6;->w:I
-
     .line 225
-    .line 226
-    if-lez v0, :cond_a
+    const v1, -0x363e2064    # -1588211.5f
 
+    .line 226
     .line 227
     .line 228
-    if-nez v4, :cond_9
+    invoke-virtual {v2, v1}, Lt72;->c0(I)V
 
     .line 229
     .line 230
-    invoke-interface {p1, v0}, Landroid/view/MenuItem;->setActionView(I)Landroid/view/MenuItem;
-
     .line 231
+    const v1, 0x7f0f0469
+
     .line 232
     .line 233
-    goto :goto_5
-
     .line 234
-    :cond_9
-    const-string v0, "SupportMenuInflater"
+    invoke-static {v1, v2}, Lru5;->e0(ILz11;)Ljava/lang/String;
 
     .line 235
     .line 236
-    const-string v1, "Ignoring attribute \'itemActionViewLayout\'. Action view already specified."
-
     .line 237
+    move-result-object v14
+
     .line 238
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+    sget-object v1, Lvw0;->a:Lkq1;
 
     .line 239
     .line 240
-    .line 241
-    :cond_a
-    :goto_5
-    iget-object v0, p0, Lif6;->z:Lij3;
+    invoke-virtual {v2, v1}, Lt72;->k(Lrv4;)Ljava/lang/Object;
 
+    .line 241
     .line 242
     .line 243
-    if-eqz v0, :cond_c
+    move-result-object v1
 
     .line 244
+    check-cast v1, Luw0;
+
     .line 245
-    instance-of v1, p1, Lkf6;
-
     .line 246
-    .line 247
-    if-eqz v1, :cond_b
+    invoke-virtual {v1}, Luw0;->n()J
 
+    .line 247
     .line 248
     .line 249
-    move-object v1, p1
+    move-result-wide v16
 
     .line 250
-    check-cast v1, Lkf6;
+    const/16 v1, 0xd
 
     .line 251
     .line 252
-    invoke-interface {v1, v0}, Lkf6;->a(Lij3;)Lkf6;
+    invoke-static {v1}, Lru5;->z(I)J
 
     .line 253
     .line 254
     .line 255
-    goto :goto_6
+    move-result-wide v18
 
     .line 256
-    :cond_b
-    const-string v0, "MenuItemCompat"
+    const/16 v34, 0x0
 
     .line 257
     .line 258
-    const-string v1, "setActionProvider: item does not implement SupportMenuItem; ignoring"
+    const v35, 0x3ffea
 
     .line 259
     .line 260
-    invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
     .line 261
+    const/4 v15, 0x0
+
     .line 262
+    const/16 v20, 0x0
+
     .line 263
-    :cond_c
-    :goto_6
-    iget-object v0, p0, Lif6;->A:Ljava/lang/CharSequence;
-
     .line 264
+    const/16 v21, 0x0
+
     .line 265
-    instance-of v1, p1, Lkf6;
-
     .line 266
+    const-wide/16 v22, 0x0
+
     .line 267
-    if-eqz v1, :cond_d
-
     .line 268
-    .line 269
-    move-object v2, p1
+    const/16 v24, 0x0
 
+    .line 269
     .line 270
-    check-cast v2, Lkf6;
+    const-wide/16 v25, 0x0
 
     .line 271
     .line 272
-    invoke-interface {v2, v0}, Lkf6;->setContentDescription(Ljava/lang/CharSequence;)Lkf6;
+    const/16 v27, 0x0
 
     .line 273
     .line 274
-    .line 275
-    goto :goto_7
+    const/16 v28, 0x0
 
+    .line 275
     .line 276
-    :cond_d
-    invoke-interface {p1, v0}, Landroid/view/MenuItem;->setContentDescription(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
+    const/16 v29, 0x0
 
     .line 277
     .line 278
+    const/16 v30, 0x0
+
     .line 279
-    :goto_7
-    iget-object v0, p0, Lif6;->B:Ljava/lang/CharSequence;
-
     .line 280
+    const/16 v31, 0x0
+
     .line 281
-    if-eqz v1, :cond_e
-
     .line 282
-    .line 283
-    move-object v2, p1
+    const/16 v33, 0x6000
 
+    .line 283
     .line 284
-    check-cast v2, Lkf6;
+    move-object/from16 v32, v2
 
     .line 285
     .line 286
-    invoke-interface {v2, v0}, Lkf6;->setTooltipText(Ljava/lang/CharSequence;)Lkf6;
+    invoke-static/range {v14 .. v35}, Lqu5;->q(Ljava/lang/String;Lwp3;JJLb52;Ld42;JLal6;JIZIILls6;Lz11;III)V
 
     .line 287
     .line 288
     .line 289
-    goto :goto_8
+    invoke-virtual {v2, v7}, Lt72;->r(Z)V
 
     .line 290
-    :cond_e
-    invoke-interface {p1, v0}, Landroid/view/MenuItem;->setTooltipText(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
-
     .line 291
     .line 292
+    goto :goto_2
+
     .line 293
-    :goto_8
-    iget-char v0, p0, Lif6;->n:C
+    :cond_2
+    const v1, -0x3639fd2f
 
     .line 294
     .line 295
-    iget v2, p0, Lif6;->o:I
-
     .line 296
-    .line 297
-    if-eqz v1, :cond_f
+    invoke-virtual {v2, v1}, Lt72;->c0(I)V
 
+    .line 297
     .line 298
     .line 299
-    move-object v3, p1
+    invoke-virtual {v2, v13}, Lt72;->i(Ljava/lang/Object;)Z
 
     .line 300
-    check-cast v3, Lkf6;
-
     .line 301
     .line 302
-    invoke-interface {v3, v0, v2}, Lkf6;->setAlphabeticShortcut(CI)Landroid/view/MenuItem;
+    move-result v1
 
     .line 303
+    invoke-virtual {v2, v10}, Lt72;->h(Z)Z
+
     .line 304
     .line 305
-    goto :goto_9
-
     .line 306
-    :cond_f
-    invoke-interface {p1, v0, v2}, Landroid/view/MenuItem;->setAlphabeticShortcut(CI)Landroid/view/MenuItem;
+    move-result v6
 
     .line 307
+    or-int/2addr v1, v6
+
     .line 308
+    iget-object v15, v0, Lif6;->m:Ljava/util/Set;
+
     .line 309
-    :goto_9
-    iget-char v0, p0, Lif6;->p:C
-
     .line 310
-    .line 311
-    iget v2, p0, Lif6;->q:I
+    invoke-virtual {v2, v15}, Lt72;->i(Ljava/lang/Object;)Z
 
+    .line 311
     .line 312
     .line 313
-    if-eqz v1, :cond_10
+    move-result v6
 
     .line 314
+    or-int/2addr v1, v6
+
     .line 315
-    move-object v3, p1
+    iget-object v6, v0, Lif6;->n:Lp62;
 
     .line 316
-    check-cast v3, Lkf6;
-
     .line 317
-    .line 318
-    invoke-interface {v3, v0, v2}, Lkf6;->setNumericShortcut(CI)Landroid/view/MenuItem;
+    invoke-virtual {v2, v6}, Lt72;->g(Ljava/lang/Object;)Z
 
+    .line 318
     .line 319
     .line 320
+    move-result v9
+
     .line 321
-    goto :goto_a
+    or-int/2addr v1, v9
 
     .line 322
-    :cond_10
-    invoke-interface {p1, v0, v2}, Landroid/view/MenuItem;->setNumericShortcut(CI)Landroid/view/MenuItem;
+    invoke-virtual {v2}, Lt72;->O()Ljava/lang/Object;
 
     .line 323
     .line 324
     .line 325
-    :goto_a
-    iget-object v0, p0, Lif6;->D:Landroid/graphics/PorterDuff$Mode;
+    move-result-object v9
 
     .line 326
+    if-nez v1, :cond_3
+
     .line 327
-    if-eqz v0, :cond_12
-
     .line 328
+    sget-object v1, Lx11;->a:Lv8;
+
     .line 329
-    if-eqz v1, :cond_11
-
     .line 330
-    .line 331
-    move-object v2, p1
+    if-ne v9, v1, :cond_4
 
+    .line 331
     .line 332
-    check-cast v2, Lkf6;
+    :cond_3
+    new-instance v12, Llf6;
 
     .line 333
     .line 334
-    invoke-interface {v2, v0}, Lkf6;->setIconTintMode(Landroid/graphics/PorterDuff$Mode;)Landroid/view/MenuItem;
+    const/16 v17, 0x1
 
     .line 335
     .line 336
-    .line 337
-    goto :goto_b
+    move-object/from16 v16, v6
 
+    .line 337
     .line 338
-    :cond_11
-    invoke-interface {p1, v0}, Landroid/view/MenuItem;->setIconTintMode(Landroid/graphics/PorterDuff$Mode;)Landroid/view/MenuItem;
+    move v14, v10
 
     .line 339
+    invoke-direct/range {v12 .. v17}, Llf6;-><init>(Lef6;ZLjava/util/Set;Lp62;B)V
+
     .line 340
     .line 341
-    :cond_12
-    :goto_b
-    iget-object p0, p0, Lif6;->C:Landroid/content/res/ColorStateList;
-
     .line 342
-    .line 343
-    if-eqz p0, :cond_14
+    invoke-virtual {v2, v12}, Lt72;->l0(Ljava/lang/Object;)V
 
+    .line 343
     .line 344
     .line 345
-    if-eqz v1, :cond_13
+    move-object v9, v12
 
     .line 346
+    :cond_4
+    move-object/from16 v17, v9
+
     .line 347
-    check-cast p1, Lkf6;
-
     .line 348
-    .line 349
-    invoke-interface {p1, p0}, Lkf6;->setIconTintList(Landroid/content/res/ColorStateList;)Landroid/view/MenuItem;
+    check-cast v17, Lp62;
 
+    .line 349
     .line 350
+    const/16 v19, 0x0
+
     .line 351
     .line 352
-    goto :goto_c
+    const/4 v14, 0x0
 
     .line 353
-    :cond_13
-    invoke-interface {p1, p0}, Landroid/view/MenuItem;->setIconTintList(Landroid/content/res/ColorStateList;)Landroid/view/MenuItem;
+    const/4 v15, 0x0
 
     .line 354
+    const/16 v16, 0x0
+
     .line 355
     .line 356
-    :cond_14
-    :goto_c
-    return-void
+    move-object/from16 v18, v2
+
+    .line 357
+    .line 358
+    invoke-static/range {v14 .. v19}, Lgj3;->c(Lwp3;FLxv;Lp62;Lz11;I)V
+
+    .line 359
+    .line 360
+    .line 361
+    invoke-virtual {v2, v7}, Lt72;->r(Z)V
+
+    .line 362
+    .line 363
+    .line 364
+    :goto_2
+    const v1, 0x104000a
+
+    .line 365
+    .line 366
+    .line 367
+    invoke-static {v1, v2}, Lru5;->e0(ILz11;)Ljava/lang/String;
+
+    .line 368
+    .line 369
+    .line 370
+    move-result-object v14
+
+    .line 371
+    invoke-static {v4, v5}, Lc66;->d(Lwp3;F)Lwp3;
+
+    .line 372
+    .line 373
+    .line 374
+    move-result-object v16
+
+    .line 375
+    invoke-static {v2}, Lef0;->b(Lz11;)Lil6;
+
+    .line 376
+    .line 377
+    .line 378
+    move-result-object v21
+
+    .line 379
+    const/16 v25, 0x180
+
+    .line 380
+    .line 381
+    const/16 v26, 0xf78
+
+    .line 382
+    .line 383
+    iget-object v15, v0, Lif6;->o:Le62;
+
+    .line 384
+    .line 385
+    const/16 v17, 0x0
+
+    .line 386
+    .line 387
+    const/16 v18, 0x0
+
+    .line 388
+    .line 389
+    const/16 v19, 0x0
+
+    .line 390
+    .line 391
+    const/16 v20, 0x0
+
+    .line 392
+    .line 393
+    const/16 v22, 0x0
+
+    .line 394
+    .line 395
+    const/16 v23, 0x0
+
+    .line 396
+    .line 397
+    move-object/from16 v24, v2
+
+    .line 398
+    .line 399
+    invoke-static/range {v14 .. v26}, Lhq;->u(Ljava/lang/String;Le62;Lwp3;ZFFFLil6;Lnj4;Lwo2;Lz11;II)V
+
+    .line 400
+    .line 401
+    .line 402
+    invoke-virtual {v2, v8}, Lt72;->r(Z)V
+
+    .line 403
+    .line 404
+    .line 405
+    goto :goto_3
+
+    .line 406
+    :cond_5
+    invoke-virtual {v2}, Lt72;->W()V
+
+    .line 407
+    .line 408
+    .line 409
+    :goto_3
+    return-object v3
+
+    .line 410
+    :pswitch_1
+    move-object/from16 v15, p1
+
+    .line 411
+    .line 412
+    check-cast v15, Lz11;
+
+    .line 413
+    .line 414
+    move-object/from16 v1, p2
+
+    .line 415
+    .line 416
+    check-cast v1, Ljava/lang/Integer;
+
+    .line 417
+    .line 418
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 419
+    .line 420
+    .line 421
+    invoke-static {v2}, Lqu5;->f0(I)I
+
+    .line 422
+    .line 423
+    .line 424
+    move-result v16
+
+    .line 425
+    iget-object v9, v0, Lif6;->k:Lef6;
+
+    .line 426
+    .line 427
+    iget-boolean v10, v0, Lif6;->l:Z
+
+    .line 428
+    .line 429
+    iget-object v11, v0, Lif6;->m:Ljava/util/Set;
+
+    .line 430
+    .line 431
+    iget-object v12, v0, Lif6;->o:Le62;
+
+    .line 432
+    .line 433
+    iget-object v13, v0, Lif6;->n:Lp62;
+
+    .line 434
+    .line 435
+    iget-object v14, v0, Lif6;->p:Le62;
+
+    .line 436
+    .line 437
+    invoke-static/range {v9 .. v16}, Lhi3;->s(Lef6;ZLjava/util/Set;Le62;Lp62;Le62;Lz11;I)V
+
+    .line 438
+    .line 439
+    .line 440
+    return-object v3
+
+    .line 441
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

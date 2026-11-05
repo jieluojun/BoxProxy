@@ -1,14 +1,17 @@
 .class public final Lxr5;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lnj4;
 
 
 # instance fields
-.field public final a:Lwr5;
+.field public final a:Lum4;
 
 
 # direct methods
-.method public constructor <init>(Landroidx/core/widget/NestedScrollView;)V
+.method public constructor <init>()V
     .locals 2
 
     .line 1
@@ -17,51 +20,165 @@
     .line 2
     .line 3
     .line 4
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    new-instance v0, Lpj4;
 
     .line 5
     .line 6
-    const/16 v1, 0x23
+    const/4 v1, 0x0
 
     .line 7
-    .line 8
-    if-lt v0, v1, :cond_0
+    invoke-direct {v0, v1, v1, v1, v1}, Lpj4;-><init>(FFFF)V
 
+    .line 8
     .line 9
     .line 10
-    new-instance v0, Lvr5;
+    invoke-static {v0}, Lne3;->G(Ljava/lang/Object;)Lum4;
 
     .line 11
     .line 12
-    invoke-direct {v0, p1}, Lvr5;-><init>(Landroidx/core/widget/NestedScrollView;)V
+    .line 13
+    move-result-object v0
+
+    .line 14
+    iput-object v0, p0, Lxr5;->a:Lum4;
+
+    .line 15
+    .line 16
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lt03;)F
+    .locals 0
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    iget-object p0, p0, Lxr5;->a:Lum4;
+
+    .line 5
+    .line 6
+    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
+
+    .line 7
+    .line 8
+    .line 9
+    move-result-object p0
+
+    .line 10
+    check-cast p0, Lnj4;
+
+    .line 11
+    .line 12
+    invoke-interface {p0, p1}, Lnj4;->a(Lt03;)F
 
     .line 13
     .line 14
     .line 15
-    iput-object v0, p0, Lxr5;->a:Lwr5;
+    move-result p0
 
     .line 16
-    .line 17
-    return-void
+    return p0
+.end method
 
-    .line 18
-    :cond_0
-    new-instance p1, Lo35;
+.method public final b(Lt03;)F
+    .locals 0
 
-    .line 19
-    .line 20
-    const/16 v0, 0xf
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 21
-    .line 22
-    invoke-direct {p1, v0}, Lo35;-><init>(B)V
+    .line 2
+    .line 3
+    .line 4
+    iget-object p0, p0, Lxr5;->a:Lum4;
 
-    .line 23
-    .line 24
-    .line 25
-    iput-object p1, p0, Lxr5;->a:Lwr5;
+    .line 5
+    .line 6
+    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
 
-    .line 26
-    .line 27
-    return-void
+    .line 7
+    .line 8
+    .line 9
+    move-result-object p0
+
+    .line 10
+    check-cast p0, Lnj4;
+
+    .line 11
+    .line 12
+    invoke-interface {p0, p1}, Lnj4;->b(Lt03;)F
+
+    .line 13
+    .line 14
+    .line 15
+    move-result p0
+
+    .line 16
+    return p0
+.end method
+
+.method public final c()F
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lxr5;->a:Lum4;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lnj4;
+
+    .line 8
+    .line 9
+    invoke-interface {p0}, Lnj4;->c()F
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    return p0
+.end method
+
+.method public final d()F
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lxr5;->a:Lum4;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lnj4;
+
+    .line 8
+    .line 9
+    invoke-interface {p0}, Lnj4;->d()F
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    return p0
 .end method

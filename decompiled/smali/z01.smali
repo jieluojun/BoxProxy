@@ -1,262 +1,268 @@
 .class public final Lz01;
-.super Lgr0;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Landroid/view/View$DragShadowBuilder;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final l:Z
+.field public final a:Lbi1;
+
+.field public final b:J
+
+.field public final c:Lp62;
 
 
 # direct methods
-.method public constructor <init>(Lo7;Z)V
+.method public constructor <init>(Lbi1;JLp62;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1}, Lgr0;-><init>(Lo7;)V
+    invoke-direct {p0}, Landroid/view/View$DragShadowBuilder;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    iput-boolean p2, p0, Lz01;->l:Z
+    iput-object p1, p0, Lz01;->a:Lbi1;
 
     .line 5
     .line 6
+    iput-wide p2, p0, Lz01;->b:J
+
+    .line 7
+    .line 8
+    iput-object p4, p0, Lz01;->c:Lp62;
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final d(B)V
-    .locals 1
+.method public final onDrawShadow(Landroid/graphics/Canvas;)V
+    .locals 9
 
     .line 1
-    iget-boolean v0, p0, Lz01;->l:Z
+    new-instance v0, Lzi0;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_0
+    invoke-direct {v0}, Lzi0;-><init>()V
 
     .line 4
     .line 5
-    and-int/lit16 p1, p1, 0xff
-
     .line 6
-    .line 7
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    sget-object v1, Lw9;->a:Landroid/graphics/Canvas;
 
+    .line 7
     .line 8
+    new-instance v1, Lv9;
+
     .line 9
     .line 10
-    move-result-object p1
+    invoke-direct {v1}, Lv9;-><init>()V
 
     .line 11
-    invoke-virtual {p0, p1}, Lgr0;->i(Ljava/lang/String;)V
-
     .line 12
     .line 13
-    .line 14
-    return-void
+    iput-object p1, v1, Lv9;->a:Landroid/graphics/Canvas;
 
+    .line 14
     .line 15
-    :cond_0
-    and-int/lit16 p1, p1, 0xff
+    iget-object p1, v0, Lzi0;->j:Lyi0;
 
     .line 16
     .line 17
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    iget-object v2, p1, Lyi0;->a:Lyh1;
 
     .line 18
     .line 19
-    .line 20
-    move-result-object p1
+    iget-object v3, p1, Lyi0;->b:Lt03;
 
+    .line 20
     .line 21
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v4, p1, Lyi0;->c:Lxi0;
 
     .line 22
     .line 23
+    iget-wide v5, p1, Lyi0;->d:J
+
     .line 24
-    iget-object p0, p0, Lgr0;->k:Ljava/lang/Object;
-
     .line 25
+    iget-object v7, p0, Lz01;->a:Lbi1;
+
     .line 26
-    check-cast p0, Lo7;
-
     .line 27
-    .line 28
-    invoke-virtual {p0, p1}, Lo7;->q(Ljava/lang/String;)V
+    iput-object v7, p1, Lyi0;->a:Lyh1;
 
+    .line 28
     .line 29
+    sget-object v7, Lt03;->j:Lt03;
+
     .line 30
     .line 31
+    iput-object v7, p1, Lyi0;->b:Lt03;
+
+    .line 32
+    .line 33
+    iput-object v1, p1, Lyi0;->c:Lxi0;
+
+    .line 34
+    .line 35
+    iget-wide v7, p0, Lz01;->b:J
+
+    .line 36
+    .line 37
+    iput-wide v7, p1, Lyi0;->d:J
+
+    .line 38
+    .line 39
+    invoke-virtual {v1}, Lv9;->o()V
+
+    .line 40
+    .line 41
+    .line 42
+    iget-object p0, p0, Lz01;->c:Lp62;
+
+    .line 43
+    .line 44
+    invoke-interface {p0, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 45
+    .line 46
+    .line 47
+    invoke-virtual {v1}, Lv9;->j()V
+
+    .line 48
+    .line 49
+    .line 50
+    iput-object v2, p1, Lyi0;->a:Lyh1;
+
+    .line 51
+    .line 52
+    iput-object v3, p1, Lyi0;->b:Lt03;
+
+    .line 53
+    .line 54
+    iput-object v4, p1, Lyi0;->c:Lxi0;
+
+    .line 55
+    .line 56
+    iput-wide v5, p1, Lyi0;->d:J
+
+    .line 57
+    .line 58
     return-void
 .end method
 
-.method public final f(I)V
-    .locals 1
+.method public final onProvideShadowMetrics(Landroid/graphics/Point;Landroid/graphics/Point;)V
+    .locals 5
 
     .line 1
-    iget-boolean v0, p0, Lz01;->l:Z
+    const/16 v0, 0x20
 
     .line 2
     .line 3
-    invoke-static {p1}, Ljava/lang/Integer;->toUnsignedString(I)Ljava/lang/String;
+    iget-wide v1, p0, Lz01;->b:J
 
     .line 4
     .line 5
-    .line 6
-    move-result-object p1
+    shr-long v3, v1, v0
 
+    .line 6
     .line 7
-    if-eqz v0, :cond_0
+    long-to-int v0, v3
 
     .line 8
-    .line 9
-    invoke-virtual {p0, p1}, Lgr0;->i(Ljava/lang/String;)V
-
-    .line 10
-    .line 11
-    .line 12
-    return-void
-
-    .line 13
-    :cond_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 14
-    .line 15
-    .line 16
-    iget-object p0, p0, Lgr0;->k:Ljava/lang/Object;
-
-    .line 17
-    .line 18
-    check-cast p0, Lo7;
-
-    .line 19
-    .line 20
-    invoke-virtual {p0, p1}, Lo7;->q(Ljava/lang/String;)V
-
-    .line 21
-    .line 22
-    .line 23
-    return-void
-.end method
-
-.method public final g(J)V
-    .locals 1
-
-    .line 1
-    iget-boolean v0, p0, Lz01;->l:Z
-
-    .line 2
-    .line 3
-    invoke-static {p1, p2}, Ljava/lang/Long;->toUnsignedString(J)Ljava/lang/String;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p1
-
-    .line 7
-    if-eqz v0, :cond_0
-
-    .line 8
-    .line 9
-    invoke-virtual {p0, p1}, Lgr0;->i(Ljava/lang/String;)V
-
-    .line 10
-    .line 11
-    .line 12
-    return-void
-
-    .line 13
-    :cond_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 14
-    .line 15
-    .line 16
-    iget-object p0, p0, Lgr0;->k:Ljava/lang/Object;
-
-    .line 17
-    .line 18
-    check-cast p0, Lo7;
-
-    .line 19
-    .line 20
-    invoke-virtual {p0, p1}, Lo7;->q(Ljava/lang/String;)V
-
-    .line 21
-    .line 22
-    .line 23
-    return-void
-.end method
-
-.method public final h(S)V
-    .locals 2
-
-    .line 1
-    iget-boolean v0, p0, Lz01;->l:Z
-
-    .line 2
-    .line 3
-    const v1, 0xffff
-
-    .line 4
-    .line 5
-    .line 6
-    if-eqz v0, :cond_0
-
-    .line 7
-    .line 8
-    and-int/2addr p1, v1
+    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     .line 9
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
     .line 10
     .line 11
+    move-result v0
+
     .line 12
-    move-result-object p1
+    iget-object p0, p0, Lz01;->a:Lbi1;
 
     .line 13
-    invoke-virtual {p0, p1}, Lgr0;->i(Ljava/lang/String;)V
-
     .line 14
+    invoke-interface {p0, v0}, Lyh1;->m1(F)F
+
     .line 15
     .line 16
-    return-void
-
     .line 17
-    :cond_0
-    and-int/2addr p1, v1
+    move-result v0
 
     .line 18
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+    invoke-interface {p0, v0}, Lyh1;->t0(F)I
 
     .line 19
     .line 20
     .line 21
-    move-result-object p1
+    move-result v0
 
     .line 22
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-wide v3, 0xffffffffL
 
     .line 23
     .line 24
     .line 25
-    iget-object p0, p0, Lgr0;->k:Ljava/lang/Object;
-
     .line 26
     .line 27
-    check-cast p0, Lo7;
+    and-long/2addr v1, v3
 
     .line 28
+    long-to-int v1, v1
+
     .line 29
-    invoke-virtual {p0, p1}, Lo7;->q(Ljava/lang/String;)V
+    invoke-static {v1}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     .line 30
     .line 31
     .line 32
+    move-result v1
+
+    .line 33
+    invoke-interface {p0, v1}, Lyh1;->m1(F)F
+
+    .line 34
+    .line 35
+    .line 36
+    move-result v1
+
+    .line 37
+    invoke-interface {p0, v1}, Lyh1;->t0(F)I
+
+    .line 38
+    .line 39
+    .line 40
+    move-result p0
+
+    .line 41
+    invoke-virtual {p1, v0, p0}, Landroid/graphics/Point;->set(II)V
+
+    .line 42
+    .line 43
+    .line 44
+    iget p0, p1, Landroid/graphics/Point;->x:I
+
+    .line 45
+    .line 46
+    div-int/lit8 p0, p0, 0x2
+
+    .line 47
+    .line 48
+    iget p1, p1, Landroid/graphics/Point;->y:I
+
+    .line 49
+    .line 50
+    div-int/lit8 p1, p1, 0x2
+
+    .line 51
+    .line 52
+    invoke-virtual {p2, p0, p1}, Landroid/graphics/Point;->set(II)V
+
+    .line 53
+    .line 54
+    .line 55
     return-void
 .end method

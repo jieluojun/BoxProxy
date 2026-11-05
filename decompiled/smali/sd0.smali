@@ -1,39 +1,80 @@
-.class public interface abstract Lsd0;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final Lsd0;
+.super Lz81;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
-# interfaces
-.implements Lt76;
-.implements Ljava/nio/channels/ReadableByteChannel;
+
+# instance fields
+.field public j:Lga5;
+
+.field public k:[Ljava/lang/Object;
+
+.field public l:I
+
+.field public m:I
+
+.field public synthetic n:Ljava/lang/Object;
+
+.field public final synthetic o:Ltd0;
+
+.field public p:I
+
+
+# direct methods
+.method public constructor <init>(Ltd0;Lz81;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lsd0;->o:Ltd0;
+
+    .line 2
+    .line 3
+    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract F(Ljava/nio/charset/Charset;)Ljava/lang/String;
-.end method
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-.method public abstract G()Ljava/io/InputStream;
-.end method
+    .line 1
+    iput-object p1, p0, Lsd0;->n:Ljava/lang/Object;
 
-.method public abstract d(Lbg0;)J
-.end method
+    .line 2
+    .line 3
+    iget p1, p0, Lsd0;->p:I
 
-.method public abstract h(J)Z
-.end method
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
 
-.method public abstract j()[B
-.end method
+    .line 6
+    .line 7
+    or-int/2addr p1, v0
 
-.method public abstract l()Lgd0;
-.end method
+    .line 8
+    iput p1, p0, Lsd0;->p:I
 
-.method public abstract n(Lcd4;)I
-.end method
+    .line 9
+    .line 10
+    iget-object p1, p0, Lsd0;->o:Ltd0;
 
-.method public abstract peek()Le75;
-.end method
+    .line 11
+    .line 12
+    const/4 v0, 0x0
 
-.method public abstract r(JLbg0;)Z
-.end method
+    .line 13
+    invoke-virtual {p1, v0, p0}, Ltd0;->a(Lga5;Lz81;)Ljava/lang/Object;
 
-.method public abstract y(Lrd0;)J
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p0
+
+    .line 17
+    return-object p0
 .end method

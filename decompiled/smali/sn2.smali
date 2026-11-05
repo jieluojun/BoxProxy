@@ -1,11 +1,20 @@
-.class public final Lsn2;
-.super Lt87;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public interface abstract Lsn2;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Ljava/lang/AutoCloseable;
 
 
-# instance fields
-.field public g:Lon2;
+# virtual methods
+.method public abstract B()Lve0;
+.end method
 
-.field public h:J
+.method public abstract getFileSystem()Lxy1;
+.end method
 
-.field public i:Z
+.method public abstract o()Lkn4;
+.end method
+
+.method public abstract s()Lwu;
+.end method

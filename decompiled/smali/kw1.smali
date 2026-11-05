@@ -1,134 +1,155 @@
-.class public final Lkw1;
-.super Lgw1;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public abstract Lkw1;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+
+# static fields
+.field public static final a:Lhw1;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/InputStream;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0, p1}, Lgw1;-><init>(Ljava/io/InputStream;)V
+    new-instance v0, Lhw1;
 
     .line 2
     .line 3
-    .line 4
-    invoke-virtual {p1}, Ljava/io/InputStream;->markSupported()Z
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
+    .line 4
     .line 5
     .line 6
+    sput-object v0, Lkw1;->a:Lhw1;
+
     .line 7
-    move-result p1
-
     .line 8
-    if-eqz p1, :cond_0
-
-    .line 9
-    .line 10
-    iget-object p0, p0, Lgw1;->j:Ljava/io/DataInputStream;
-
-    .line 11
-    .line 12
-    const p1, 0x7fffffff
-
-    .line 13
-    .line 14
-    .line 15
-    invoke-virtual {p0, p1}, Ljava/io/InputStream;->mark(I)V
-
-    .line 16
-    .line 17
-    .line 18
-    return-void
-
-    .line 19
-    :cond_0
-    const-string p0, "Cannot create SeekableByteOrderedDataInputStream with stream that does not support mark/reset"
-
-    .line 20
-    .line 21
-    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
-
-    .line 22
-    .line 23
-    .line 24
-    const/4 p0, 0x0
-
-    .line 25
-    throw p0
-.end method
-
-.method public constructor <init>([B)V
-    .locals 0
-
-    .line 26
-    invoke-direct {p0, p1}, Lgw1;-><init>([B)V
-
-    .line 27
-    iget-object p0, p0, Lgw1;->j:Ljava/io/DataInputStream;
-
-    const p1, 0x7fffffff
-
-    invoke-virtual {p0, p1}, Ljava/io/InputStream;->mark(I)V
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final c(J)V
-    .locals 3
+.method public a(Lw85;)V
+    .locals 0
 
     .line 1
-    iget v0, p0, Lgw1;->k:I
+    return-void
+.end method
+
+.method public b(Lw85;Ljava/net/InetSocketAddress;Ljava/net/Proxy;)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    int-to-long v1, v0
-
     .line 4
-    cmp-long v1, v1, p1
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 5
     .line 6
-    if-lez v1, :cond_0
-
     .line 7
-    .line 8
-    const/4 v0, 0x0
+    return-void
+.end method
 
-    .line 9
-    iput v0, p0, Lgw1;->k:I
+.method public c(Lw85;Ljava/net/InetSocketAddress;Ljava/net/Proxy;Ljava/io/IOException;)V
+    .locals 0
 
-    .line 10
-    .line 11
-    iget-object v0, p0, Lgw1;->j:Ljava/io/DataInputStream;
+    .line 1
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 12
-    .line 13
-    invoke-virtual {v0}, Ljava/io/InputStream;->reset()V
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 14
-    .line 15
-    .line 16
-    goto :goto_0
+    .line 5
+    .line 6
+    .line 7
+    return-void
+.end method
 
-    .line 17
-    :cond_0
-    int-to-long v0, v0
+.method public d(Lw85;Ljava/net/InetSocketAddress;Ljava/net/Proxy;)V
+    .locals 0
 
-    .line 18
-    sub-long/2addr p1, v0
+    .line 1
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 19
-    :goto_0
-    long-to-int p1, p1
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 20
-    invoke-virtual {p0, p1}, Lgw1;->b(I)V
+    .line 5
+    .line 6
+    .line 7
+    return-void
+.end method
 
-    .line 21
-    .line 22
-    .line 23
+.method public e(Lw85;Lx85;)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public f(Lw85;Ljava/lang/String;Ljava/util/ArrayList;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public g(Lw85;Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public h(Lw85;Lgc5;)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public i(Lw85;Lcd5;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public j(Lw85;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public k(Lw85;Lda2;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public l(Lw85;)V
+    .locals 0
+
+    .line 1
     return-void
 .end method

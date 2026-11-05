@@ -1,47 +1,35 @@
-.class public final Lrs6;
+.class public abstract Lrs6;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lhr5;
 
 
-# instance fields
-.field public final a:Lsa1;
-
-.field public final b:[Ljava/lang/Object;
-
-.field public final c:[Lmw6;
-
-.field public d:I
+# static fields
+.field public static final a:Lzp6;
 
 
 # direct methods
-.method public constructor <init>(ILsa1;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lzp6;
 
     .line 2
     .line 3
+    const/4 v1, 0x1
+
     .line 4
-    iput-object p2, p0, Lrs6;->a:Lsa1;
+    invoke-direct {v0, v1}, Lzp6;-><init>(B)V
 
     .line 5
     .line 6
-    new-array p2, p1, [Ljava/lang/Object;
-
     .line 7
+    sput-object v0, Lrs6;->a:Lzp6;
+
     .line 8
-    iput-object p2, p0, Lrs6;->b:[Ljava/lang/Object;
-
     .line 9
-    .line 10
-    new-array p1, p1, [Lmw6;
-
-    .line 11
-    .line 12
-    iput-object p1, p0, Lrs6;->c:[Lmw6;
-
-    .line 13
-    .line 14
     return-void
 .end method

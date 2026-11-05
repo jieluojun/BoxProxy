@@ -1,102 +1,82 @@
 .class public final Ll7;
-.super Landroid/os/Handler;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 
 
 # instance fields
-.field public a:Ljava/lang/ref/WeakReference;
+.field public final synthetic j:Lp7;
+
+.field public final synthetic k:Lm7;
 
 
-# virtual methods
-.method public final handleMessage(Landroid/os/Message;)V
-    .locals 2
+# direct methods
+.method public constructor <init>(Lm7;Lp7;)V
+    .locals 0
 
     .line 1
-    iget v0, p1, Landroid/os/Message;->what:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/4 v1, -0x3
-
     .line 4
-    if-eq v0, v1, :cond_1
+    iput-object p1, p0, Ll7;->k:Lm7;
 
     .line 5
     .line 6
-    const/4 v1, -0x2
+    iput-object p2, p0, Ll7;->j:Lp7;
 
     .line 7
-    if-eq v0, v1, :cond_1
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
+    .locals 0
+
+    .line 1
+    iget-object p1, p0, Ll7;->k:Lm7;
+
+    .line 2
+    .line 3
+    iget-object p2, p1, Lm7;->h:Landroid/content/DialogInterface$OnClickListener;
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Ll7;->j:Lp7;
+
+    .line 6
+    .line 7
+    iget-object p4, p0, Lp7;->b:Lr7;
 
     .line 8
     .line 9
-    const/4 v1, -0x1
+    invoke-interface {p2, p4, p3}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
 
     .line 10
-    if-eq v0, v1, :cond_1
-
     .line 11
     .line 12
-    const/4 p0, 0x1
+    iget-boolean p1, p1, Lm7;->i:Z
 
     .line 13
-    if-eq v0, p0, :cond_0
-
     .line 14
-    .line 15
-    return-void
+    if-nez p1, :cond_0
 
+    .line 15
     .line 16
-    :cond_0
-    iget-object p0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
+    iget-object p0, p0, Lp7;->b:Lr7;
 
     .line 17
     .line 18
-    check-cast p0, Landroid/content/DialogInterface;
+    invoke-virtual {p0}, Lr7;->dismiss()V
 
     .line 19
     .line 20
-    invoke-interface {p0}, Landroid/content/DialogInterface;->dismiss()V
-
     .line 21
-    .line 22
-    .line 23
-    return-void
-
-    .line 24
-    :cond_1
-    iget-object v0, p1, Landroid/os/Message;->obj:Ljava/lang/Object;
-
-    .line 25
-    .line 26
-    check-cast v0, Landroid/content/DialogInterface$OnClickListener;
-
-    .line 27
-    .line 28
-    iget-object p0, p0, Ll7;->a:Ljava/lang/ref/WeakReference;
-
-    .line 29
-    .line 30
-    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
-
-    .line 31
-    .line 32
-    .line 33
-    move-result-object p0
-
-    .line 34
-    check-cast p0, Landroid/content/DialogInterface;
-
-    .line 35
-    .line 36
-    iget p1, p1, Landroid/os/Message;->what:I
-
-    .line 37
-    .line 38
-    invoke-interface {v0, p0, p1}, Landroid/content/DialogInterface$OnClickListener;->onClick(Landroid/content/DialogInterface;I)V
-
-    .line 39
-    .line 40
-    .line 41
+    :cond_0
     return-void
 .end method

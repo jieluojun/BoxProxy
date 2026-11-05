@@ -1,97 +1,90 @@
 .class public final Lbh5;
-.super Lz71;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lch5;
 
 
-# instance fields
-.field public j:Lih5;
-
-.field public k:Ljava/io/File;
-
-.field public synthetic l:Ljava/lang/Object;
-
-.field public final synthetic m:Lhh5;
-
-.field public n:I
+# static fields
+.field public static final a:Lbh5;
 
 
 # direct methods
-.method public constructor <init>(Lhh5;Lz71;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lbh5;->m:Lhh5;
+    new-instance v0, Lbh5;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
     .line 6
+    sput-object v0, Lbh5;->a:Lbh5;
+
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
     .line 1
-    iput-object p1, p0, Lbh5;->l:Ljava/lang/Object;
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    iget p1, p0, Lbh5;->n:I
+    if-ne p0, p1, :cond_0
 
+    .line 3
     .line 4
+    return v0
+
     .line 5
-    const/high16 v0, -0x80000000
+    :cond_0
+    instance-of p0, p1, Lbh5;
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    if-nez p0, :cond_1
 
     .line 8
-    iput p1, p0, Lbh5;->n:I
-
     .line 9
+    const/4 p0, 0x0
+
     .line 10
-    iget-object p1, p0, Lbh5;->m:Lhh5;
+    return p0
 
     .line 11
-    .line 12
-    const/4 v0, 0x0
+    :cond_1
+    return v0
+.end method
 
-    .line 13
-    invoke-virtual {p1, v0, p0}, Lhh5;->b(Lih5;Lz71;)Ljava/io/Serializable;
+.method public final hashCode()I
+    .locals 0
 
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p0
+    .line 1
+    const p0, 0x3fe6b9fb
 
-    .line 17
-    sget-object p1, Lcb1;->j:Lcb1;
+    .line 2
+    .line 3
+    .line 4
+    return p0
+.end method
 
-    .line 18
-    .line 19
-    if-ne p0, p1, :cond_0
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    .line 20
-    .line 21
+    .line 1
+    const-string p0, "Unmatched"
+
+    .line 2
+    .line 3
     return-object p0
-
-    .line 22
-    :cond_0
-    new-instance p1, Lub5;
-
-    .line 23
-    .line 24
-    invoke-direct {p1, p0}, Lub5;-><init>(Ljava/lang/Object;)V
-
-    .line 25
-    .line 26
-    .line 27
-    return-object p1
 .end method

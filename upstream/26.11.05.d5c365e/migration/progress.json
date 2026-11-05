@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "status": "bindings-reviewed-method-conflicts-resolved-manually",
+  "status": "ready-for-review",
   "releaseReady": true,
-  "runtimeProjectReplaced": false,
+  "runtimeProjectReplaced": true,
   "sourceVersionName": "26.11.02.534f30c",
   "sourceVersionCode": 134,
   "targetVersionName": "26.11.05.d5c365e",
@@ -13,32 +13,32 @@
   "targetTreeSha256": "84dc510f50b557e54cd46580b3704901c7aa7a3f74d55ec1d355d80878731d5a",
   "vanillaRebuildPassed": true,
   "bindingsReviewed": true,
-  "customRebuildPassed": false,
-  "behaviorRegressionPassed": false,
-  "androidDeviceVerified": false,
+  "customRebuildPassed": true,
+  "behaviorRegressionPassed": true,
+  "androidDeviceVerified": true,
   "features": [
     {
       "id": "config-history",
       "title": "每内核配置历史与默认配置恢复",
       "operations": 32,
-      "status": "bindings-reviewed",
-      "reviewNote": "Manual verification completed for 5 conflicts.",
+      "status": "validated",
+      "reviewNote": "Validated after full 139 customization with manual conflict resolution.",
       "approvedCount": 0
     },
     {
       "id": "root-runtime",
       "title": "root 路径、动态库与实时版本查询",
       "operations": 13,
-      "status": "bindings-reviewed",
-      "reviewNote": "Manual verification completed for 5 conflicts.",
+      "status": "validated",
+      "reviewNote": "Validated after full 139 customization with manual conflict resolution.",
       "approvedCount": 0
     },
     {
       "id": "editor-forms",
       "title": "编辑器、可视化、锚点与 schema",
       "operations": 863,
-      "status": "bindings-reviewed",
-      "reviewNote": "Manual verification completed for 5 conflicts.",
+      "status": "validated",
+      "reviewNote": "Validated after full 139 customization with manual conflict resolution.",
       "approvedCount": 0
     },
     {
@@ -46,7 +46,7 @@
       "title": "内核 fork 菜单、下载和识别",
       "operations": 15,
       "status": "validated",
-      "reviewNote": "Manual verification completed for 5 conflicts.",
+      "reviewNote": "Validated after full 139 customization with manual conflict resolution.",
       "pendingCount": 5,
       "approvedCount": 0
     },
@@ -55,7 +55,7 @@
       "title": "VPN、非 root 引导、权限与服务",
       "operations": 96,
       "status": "validated",
-      "reviewNote": "Manual verification completed for 5 conflicts.",
+      "reviewNote": "Validated after full 139 customization with manual conflict resolution.",
       "approvedCount": 1,
       "pendingCount": 41
     },
@@ -63,24 +63,24 @@
       "id": "preferences-ui",
       "title": "设置、过滤提示、电池与自启入口",
       "operations": 19,
-      "status": "bindings-reviewed",
-      "reviewNote": "Manual verification completed for 5 conflicts.",
+      "status": "validated",
+      "reviewNote": "Validated after full 139 customization with manual conflict resolution.",
       "approvedCount": 0
     },
     {
       "id": "bundled-configs",
       "title": "内置配置与辅助资源",
       "operations": 2,
-      "status": "bindings-reviewed",
-      "reviewNote": "Manual verification completed for 5 conflicts.",
+      "status": "validated",
+      "reviewNote": "Validated after full 139 customization with manual conflict resolution.",
       "approvedCount": 0
     },
     {
       "id": "shared-runtime",
       "title": "共享依赖与其余接入点",
       "operations": 470,
-      "status": "bindings-reviewed",
-      "reviewNote": "Manual verification completed for 5 conflicts.",
+      "status": "validated",
+      "reviewNote": "Validated after full 139 customization with manual conflict resolution.",
       "approvedCount": 0
     }
   ],

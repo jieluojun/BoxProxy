@@ -1,115 +1,170 @@
-.class public final synthetic Lvr0;
+.class public final Lvr0;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lo52;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final a:I
 
-.field public final synthetic k:Lor0;
+.field public final b:Ljava/lang/reflect/Method;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lor0;B)V
+.method public constructor <init>(ILjava/lang/reflect/Method;)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lvr0;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lvr0;->k:Lor0;
-
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p1, p0, Lvr0;->a:I
 
+    .line 5
     .line 6
+    iput-object p2, p0, Lvr0;->b:Ljava/lang/reflect/Method;
+
     .line 7
     .line 8
+    const/4 p0, 0x1
+
+    .line 9
+    invoke-virtual {p2, p0}, Ljava/lang/reflect/AccessibleObject;->setAccessible(Z)V
+
+    .line 10
+    .line 11
+    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 2
 
     .line 1
-    iget-byte v0, p0, Lvr0;->j:B
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
-    sget-object v1, Lk27;->a:Lk27;
+    goto :goto_0
 
     .line 4
+    :cond_0
+    instance-of v0, p1, Lvr0;
+
     .line 5
-    iget-object p0, p0, Lvr0;->k:Lor0;
-
     .line 6
-    .line 7
-    check-cast p1, Ljava/lang/String;
+    if-nez v0, :cond_1
 
+    .line 7
     .line 8
+    goto :goto_1
+
     .line 9
-    packed-switch v0, :pswitch_data_0
+    :cond_1
+    check-cast p1, Lvr0;
 
     .line 10
     .line 11
-    .line 12
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget v0, p0, Lvr0;->a:I
 
+    .line 12
     .line 13
+    iget v1, p1, Lvr0;->a:I
+
     .line 14
     .line 15
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-ne v0, v1, :cond_2
 
     .line 16
     .line 17
+    iget-object p0, p0, Lvr0;->b:Ljava/lang/reflect/Method;
+
     .line 18
-    iget-object p0, p0, Lor0;->g:Las3;
-
     .line 19
-    .line 20
-    invoke-interface {p0, p1}, Las3;->setValue(Ljava/lang/Object;)V
+    invoke-virtual {p0}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
 
+    .line 20
     .line 21
     .line 22
+    move-result-object p0
+
     .line 23
-    return-object v1
+    iget-object p1, p1, Lvr0;->b:Ljava/lang/reflect/Method;
 
     .line 24
-    :pswitch_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 25
+    invoke-virtual {p1}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+
     .line 26
     .line 27
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 28
-    .line 29
-    .line 30
-    iget-object p0, p0, Lor0;->g:Las3;
+    move-result-object p1
 
+    .line 29
+    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    .line 30
     .line 31
     .line 32
-    invoke-interface {p0, p1}, Las3;->setValue(Ljava/lang/Object;)V
+    move-result p0
 
     .line 33
+    if-eqz p0, :cond_2
+
     .line 34
     .line 35
-    return-object v1
+    :goto_0
+    const/4 p0, 0x1
 
     .line 36
-    nop
+    return p0
 
     .line 37
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    :cond_2
+    :goto_1
+    const/4 p0, 0x0
+
+    .line 38
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lvr0;->a:I
+
+    .line 2
+    .line 3
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Lvr0;->b:Ljava/lang/reflect/Method;
+
+    .line 6
+    .line 7
+    invoke-virtual {p0}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p0
+
+    .line 11
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    add-int/2addr p0, v0
+
+    .line 16
+    return p0
 .end method

@@ -1,120 +1,21 @@
-.class public final synthetic Lbt4;
+.class public abstract Lbt4;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lo52;
-
-
-# instance fields
-.field public final synthetic j:Landroid/content/Context;
-
-.field public final synthetic k:Landroid/content/pm/ResolveInfo;
-
-.field public final synthetic l:Z
-
-.field public final synthetic m:Ljava/lang/CharSequence;
-
-.field public final synthetic n:J
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/content/Context;Landroid/content/pm/ResolveInfo;ZLjava/lang/CharSequence;J)V
-    .locals 0
+.method public static final a(Ljava/lang/String;)V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lbt4;->j:Landroid/content/Context;
-
-    .line 5
-    .line 6
-    iput-object p2, p0, Lbt4;->k:Landroid/content/pm/ResolveInfo;
-
-    .line 7
-    .line 8
-    iput-boolean p3, p0, Lbt4;->l:Z
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Lbt4;->m:Ljava/lang/CharSequence;
-
-    .line 11
-    .line 12
-    iput-wide p5, p0, Lbt4;->n:J
-
-    .line 13
-    .line 14
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
-
-    .line 1
-    check-cast p1, Lkk6;
-
-    .line 2
-    .line 3
-    sget-object v0, Lxa;->k0:Laz0;
+    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     .line 4
     .line 5
-    iget-boolean v1, p0, Lbt4;->l:Z
-
     .line 6
-    .line 7
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object v3
-
-    .line 11
-    new-instance v5, Laq6;
-
-    .line 12
-    .line 13
-    iget-wide v1, p0, Lbt4;->n:J
-
-    .line 14
-    .line 15
-    invoke-direct {v5, v1, v2}, Laq6;-><init>(J)V
-
-    .line 16
-    .line 17
-    .line 18
-    iget-object v1, p0, Lbt4;->j:Landroid/content/Context;
-
-    .line 19
-    .line 20
-    iget-object v2, p0, Lbt4;->k:Landroid/content/pm/ResolveInfo;
-
-    .line 21
-    .line 22
-    iget-object v4, p0, Lbt4;->m:Ljava/lang/CharSequence;
-
-    .line 23
-    .line 24
-    invoke-virtual/range {v0 .. v5}, Laz0;->c(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 25
-    .line 26
-    .line 27
-    invoke-interface {p1}, Lkk6;->close()V
-
-    .line 28
-    .line 29
-    .line 30
-    sget-object p0, Lk27;->a:Lk27;
-
-    .line 31
-    .line 32
-    return-object p0
+    throw v0
 .end method

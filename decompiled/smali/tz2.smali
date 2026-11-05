@@ -1,22 +1,25 @@
-.class public final Ltz2;
-.super Lpe3;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final synthetic Ltz2;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Ljava/util/function/Predicate;
 
 
 # instance fields
-.field public final synthetic J:Luz2;
+.field public final synthetic a:B
 
 
 # direct methods
-.method public constructor <init>(Luz2;)V
+.method public synthetic constructor <init>(B)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Ltz2;->J:Luz2;
+    iput-byte p1, p0, Ltz2;->a:B
 
     .line 2
     .line 3
-    invoke-direct {p0, p1}, Lpe3;-><init>(Lm64;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
@@ -26,270 +29,127 @@
 
 
 # virtual methods
-.method public final K0(Le8;)I
-    .locals 1
+.method public final test(Ljava/lang/Object;)Z
+    .locals 0
 
     .line 1
-    invoke-static {p0, p1}, Lx37;->l(Lne3;Le8;)I
+    iget-byte p0, p0, Ltz2;->a:B
 
     .line 2
     .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    iget-object p0, p0, Lpe3;->I:Lir3;
-
-    .line 6
-    .line 7
-    invoke-virtual {p0, v0, p1}, Lir3;->g(ILjava/lang/Object;)V
-
-    .line 8
-    .line 9
-    .line 10
-    return v0
-.end method
-
-.method public final W(I)I
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Ltz2;->J:Luz2;
-
-    .line 2
-    .line 3
-    iget-object v1, v0, Luz2;->l0:Lsz2;
+    packed-switch p0, :pswitch_data_0
 
     .line 4
     .line 5
-    iget-object v0, v0, Lm64;->E:Lm64;
-
     .line 6
-    .line 7
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast p1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;
 
+    .line 7
     .line 8
+    if-eqz p1, :cond_0
+
     .line 9
     .line 10
-    invoke-virtual {v0}, Lm64;->z1()Lpe3;
+    const/4 p0, 0x1
 
     .line 11
+    goto :goto_0
+
     .line 12
+    :cond_0
+    const/4 p0, 0x0
+
     .line 13
-    move-result-object v0
+    :goto_0
+    return p0
 
     .line 14
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :pswitch_0
+    check-cast p1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;
 
     .line 15
     .line 16
-    .line 17
-    invoke-interface {v1, p0, v0, p1}, Lsz2;->v0(Lne3;Lci3;I)I
+    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->m(Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;)Z
 
+    .line 17
     .line 18
     .line 19
-    .line 20
     move-result p0
 
-    .line 21
-    return p0
-.end method
-
-.method public final e(J)Lxn4;
-    .locals 2
-
-    .line 1
-    invoke-virtual {p0, p1, p2}, Lxn4;->D0(J)V
-
-    .line 2
-    .line 3
-    .line 4
-    new-instance v0, Ls51;
-
-    .line 5
-    .line 6
-    invoke-direct {v0, p1, p2}, Ls51;-><init>(J)V
-
-    .line 7
-    .line 8
-    .line 9
-    iget-object v0, p0, Ltz2;->J:Luz2;
-
-    .line 10
-    .line 11
-    iget-object v1, v0, Luz2;->l0:Lsz2;
-
-    .line 12
-    .line 13
-    iget-object v0, v0, Lm64;->E:Lm64;
-
-    .line 14
-    .line 15
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 16
-    .line 17
-    .line 18
-    invoke-virtual {v0}, Lm64;->z1()Lpe3;
-
-    .line 19
     .line 20
+    return p0
+
     .line 21
-    move-result-object v0
+    :pswitch_1
+    check-cast p1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPair;
 
     .line 22
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 23
+    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->c(Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPair;)Z
+
     .line 24
     .line 25
-    invoke-interface {v1, p0, v0, p1, p2}, Lsz2;->h(Lki3;Lci3;J)Lii3;
-
     .line 26
+    move-result p0
+
     .line 27
+    return p0
+
     .line 28
-    move-result-object p1
+    :pswitch_2
+    check-cast p1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;
 
     .line 29
-    invoke-virtual {p0, p1}, Lpe3;->t1(Lii3;)V
-
     .line 30
+    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->j(Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;)Z
+
     .line 31
     .line 32
-    return-object p0
-.end method
-
-.method public final f(I)I
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Ltz2;->J:Luz2;
-
-    .line 2
-    .line 3
-    iget-object v1, v0, Luz2;->l0:Lsz2;
-
-    .line 4
-    .line 5
-    iget-object v0, v0, Lm64;->E:Lm64;
-
-    .line 6
-    .line 7
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 8
-    .line 9
-    .line 10
-    invoke-virtual {v0}, Lm64;->z1()Lpe3;
-
-    .line 11
-    .line 12
-    .line 13
-    move-result-object v0
-
-    .line 14
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 15
-    .line 16
-    .line 17
-    invoke-interface {v1, p0, v0, p1}, Lsz2;->z(Lne3;Lci3;I)I
-
-    .line 18
-    .line 19
-    .line 20
+    .line 33
     move-result p0
 
-    .line 21
+    .line 34
     return p0
-.end method
 
-.method public final i0(I)I
-    .locals 2
+    .line 35
+    :pswitch_3
+    check-cast p1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;
 
-    .line 1
-    iget-object v0, p0, Ltz2;->J:Luz2;
+    .line 36
+    .line 37
+    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->d(Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;)Z
 
-    .line 2
-    .line 3
-    iget-object v1, v0, Luz2;->l0:Lsz2;
-
-    .line 4
-    .line 5
-    iget-object v0, v0, Lm64;->E:Lm64;
-
-    .line 6
-    .line 7
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 8
-    .line 9
-    .line 10
-    invoke-virtual {v0}, Lm64;->z1()Lpe3;
-
-    .line 11
-    .line 12
-    .line 13
-    move-result-object v0
-
-    .line 14
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 15
-    .line 16
-    .line 17
-    invoke-interface {v1, p0, v0, p1}, Lsz2;->l(Lne3;Lci3;I)I
-
-    .line 18
-    .line 19
-    .line 20
+    .line 38
+    .line 39
+    .line 40
     move-result p0
 
-    .line 21
+    .line 41
     return p0
-.end method
 
-.method public final j0(I)I
-    .locals 2
+    .line 42
+    :pswitch_4
+    check-cast p1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPairConditional;
 
-    .line 1
-    iget-object v0, p0, Ltz2;->J:Luz2;
+    .line 43
+    .line 44
+    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->e(Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPairConditional;)Z
 
-    .line 2
-    .line 3
-    iget-object v1, v0, Luz2;->l0:Lsz2;
-
-    .line 4
-    .line 5
-    iget-object v0, v0, Lm64;->E:Lm64;
-
-    .line 6
-    .line 7
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 8
-    .line 9
-    .line 10
-    invoke-virtual {v0}, Lm64;->z1()Lpe3;
-
-    .line 11
-    .line 12
-    .line 13
-    move-result-object v0
-
-    .line 14
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 15
-    .line 16
-    .line 17
-    invoke-interface {v1, p0, v0, p1}, Lsz2;->W(Lne3;Lci3;I)I
-
-    .line 18
-    .line 19
-    .line 20
+    .line 45
+    .line 46
+    .line 47
     move-result p0
 
-    .line 21
+    .line 48
     return p0
+
+    .line 49
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

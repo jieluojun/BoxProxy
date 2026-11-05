@@ -1,31 +1,25 @@
 .class public final synthetic Ljh6;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Ls52;
+.implements Lp62;
 
 
 # instance fields
-.field public final synthetic j:Z
+.field public final synthetic j:Lna5;
 
-.field public final synthetic k:Ld52;
+.field public final synthetic k:F
 
-.field public final synthetic l:Lko3;
+.field public final synthetic l:Lmh;
 
-.field public final synthetic m:Z
+.field public final synthetic m:Lsh;
 
-.field public final synthetic n:J
-
-.field public final synthetic o:J
-
-.field public final synthetic p:Loy0;
-
-.field public final synthetic q:I
+.field public final synthetic n:Lp62;
 
 
 # direct methods
-.method public synthetic constructor <init>(ZLd52;Lko3;ZJJLoy0;I)V
+.method public synthetic constructor <init>(Lna5;FLmh;Lsh;Lp62;)V
     .locals 0
 
     .line 1
@@ -34,115 +28,91 @@
     .line 2
     .line 3
     .line 4
-    iput-boolean p1, p0, Ljh6;->j:Z
+    iput-object p1, p0, Ljh6;->j:Lna5;
 
     .line 5
     .line 6
-    iput-object p2, p0, Ljh6;->k:Ld52;
+    iput p2, p0, Ljh6;->k:F
 
     .line 7
     .line 8
-    iput-object p3, p0, Ljh6;->l:Lko3;
+    iput-object p3, p0, Ljh6;->l:Lmh;
 
     .line 9
     .line 10
-    iput-boolean p4, p0, Ljh6;->m:Z
+    iput-object p4, p0, Ljh6;->m:Lsh;
 
     .line 11
     .line 12
-    iput-wide p5, p0, Ljh6;->n:J
+    iput-object p5, p0, Ljh6;->n:Lp62;
 
     .line 13
     .line 14
-    iput-wide p7, p0, Ljh6;->o:J
-
-    .line 15
-    .line 16
-    iput-object p9, p0, Ljh6;->p:Loy0;
-
-    .line 17
-    .line 18
-    iput p10, p0, Ljh6;->q:I
-
-    .line 19
-    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 11
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 7
 
     .line 1
-    move-object v9, p1
+    check-cast p1, Ljava/lang/Long;
 
     .line 2
-    check-cast v9, Lv01;
-
     .line 3
-    .line 4
-    check-cast p2, Ljava/lang/Integer;
+    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
+    .line 4
     .line 5
     .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result-wide v1
 
     .line 7
+    iget-object p1, p0, Ljh6;->j:Lna5;
+
     .line 8
     .line 9
-    iget p1, p0, Ljh6;->q:I
+    iget-object p1, p1, Lna5;->j:Ljava/lang/Object;
 
     .line 10
     .line 11
-    or-int/lit8 p1, p1, 0x1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 12
     .line 13
-    invoke-static {p1}, Lw23;->h0(I)I
-
     .line 14
-    .line 15
-    .line 16
-    move-result v10
+    move-object v0, p1
 
+    .line 15
+    check-cast v0, Lqh;
+
+    .line 16
     .line 17
-    iget-boolean v0, p0, Ljh6;->j:Z
+    iget v3, p0, Ljh6;->k:F
 
     .line 18
     .line 19
-    iget-object v1, p0, Ljh6;->k:Ld52;
+    iget-object v4, p0, Ljh6;->l:Lmh;
 
     .line 20
     .line 21
-    iget-object v2, p0, Ljh6;->l:Lko3;
+    iget-object v5, p0, Ljh6;->m:Lsh;
 
     .line 22
     .line 23
-    iget-boolean v3, p0, Ljh6;->m:Z
+    iget-object v6, p0, Ljh6;->n:Lp62;
 
     .line 24
     .line 25
-    iget-wide v4, p0, Ljh6;->n:J
+    invoke-static/range {v0 .. v6}, Lff3;->u(Lqh;JFLmh;Lsh;Lp62;)V
 
     .line 26
     .line 27
-    iget-wide v6, p0, Ljh6;->o:J
-
     .line 28
+    sget-object p0, La47;->a:La47;
+
     .line 29
-    iget-object v8, p0, Ljh6;->p:Loy0;
-
     .line 30
-    .line 31
-    invoke-static/range {v0 .. v10}, Lv33;->k(ZLd52;Lko3;ZJJLoy0;Lv01;I)V
-
-    .line 32
-    .line 33
-    .line 34
-    sget-object p0, Lk27;->a:Lk27;
-
-    .line 35
-    .line 36
     return-object p0
 .end method

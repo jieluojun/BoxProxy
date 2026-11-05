@@ -1,31 +1,43 @@
 .class public final Lv85;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Ljava/io/Serializable;
+.super Ltx;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public j:Z
+.field public final synthetic n:Lw85;
 
 
-# virtual methods
-.method public final toString()Ljava/lang/String;
+# direct methods
+.method public constructor <init>(Lw85;)V
     .locals 0
 
     .line 1
-    iget-boolean p0, p0, Lv85;->j:Z
+    iput-object p1, p0, Lv85;->n:Lw85;
 
     .line 2
     .line 3
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Z)Ljava/lang/String;
+    invoke-direct {p0}, Ltx;-><init>()V
 
     .line 4
     .line 5
     .line 6
-    move-result-object p0
+    return-void
+.end method
 
-    .line 7
-    return-object p0
+
+# virtual methods
+.method public final k()V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lv85;->n:Lw85;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lw85;->c()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
 .end method

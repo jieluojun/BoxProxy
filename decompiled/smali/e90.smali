@@ -1,153 +1,256 @@
-.class public final Le90;
+.class public final synthetic Le90;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lo52;
+.implements Lz72;
 
 
-# instance fields
-.field public final synthetic j:B
+# static fields
+.field public static final a:Le90;
 
-.field public final synthetic k:Lyu3;
-
-.field public final synthetic l:Loy0;
+.field private static final descriptor:Luy5;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lyu3;Loy0;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    iput-byte p3, p0, Le90;->j:B
+    new-instance v0, Le90;
 
     .line 2
     .line 3
-    iput-object p1, p0, Le90;->k:Lyu3;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
-    iput-object p2, p0, Le90;->l:Loy0;
-
     .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Le90;->a:Le90;
 
+    .line 7
     .line 8
+    new-instance v1, Llq4;
+
     .line 9
     .line 10
+    const-string v2, "com.box.app.ui.app.BoxAppRoute.RuntimeFileEditor"
+
+    .line 11
+    .line 12
+    const/4 v3, 0x1
+
+    .line 13
+    invoke-direct {v1, v2, v0, v3}, Llq4;-><init>(Ljava/lang/String;Lz72;I)V
+
+    .line 14
+    .line 15
+    .line 16
+    const-string v0, "relativePath"
+
+    .line 17
+    .line 18
+    const/4 v2, 0x0
+
+    .line 19
+    invoke-virtual {v1, v0, v2}, Llq4;->l(Ljava/lang/String;Z)V
+
+    .line 20
+    .line 21
+    .line 22
+    sput-object v1, Le90;->descriptor:Luy5;
+
+    .line 23
+    .line 24
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final a()[Lqy2;
+    .locals 2
 
     .line 1
-    iget-byte v0, p0, Le90;->j:B
+    const/4 p0, 0x1
 
     .line 2
+    new-array p0, p0, [Lqy2;
+
     .line 3
-    iget-object v1, p0, Le90;->l:Loy0;
-
     .line 4
-    .line 5
-    const-string v2, "top.yukonga.miuix.kmp.nav.swipeDismiss"
+    sget-object v0, Lxc6;->a:Lxc6;
 
+    .line 5
     .line 6
+    const/4 v1, 0x0
+
     .line 7
-    iget-object p0, p0, Le90;->k:Lyu3;
+    aput-object v0, p0, v1
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_0
+    return-object p0
+.end method
+
+.method public final b(Lwe1;)Ljava/lang/Object;
+    .locals 7
+
+    .line 1
+    sget-object p0, Le90;->descriptor:Luy5;
+
+    .line 2
+    .line 3
+    invoke-interface {p1, p0}, Lwe1;->C(Luy5;)Lg21;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p1
+
+    .line 7
+    const/4 v0, 0x1
+
+    .line 8
+    const/4 v1, 0x0
+
+    .line 9
+    const/4 v2, 0x0
 
     .line 10
+    move v3, v0
+
     .line 11
+    move v4, v1
+
     .line 12
-    check-cast p1, Lo80;
+    :goto_0
+    if-eqz v3, :cond_2
 
     .line 13
     .line 14
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-interface {p1, p0}, Lg21;->h(Luy5;)I
 
     .line 15
     .line 16
     .line 17
-    check-cast p1, Lh80;
+    move-result v5
 
     .line 18
+    const/4 v6, -0x1
+
     .line 19
-    invoke-static {v2, p0}, Ljava/util/Collections;->singletonMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map;
+    if-eq v5, v6, :cond_1
 
     .line 20
     .line 21
-    .line 22
-    move-result-object p0
+    if-nez v5, :cond_0
 
+    .line 22
     .line 23
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-interface {p1, p0, v1}, Lg21;->p(Luy5;I)Ljava/lang/String;
 
     .line 24
     .line 25
     .line 26
-    new-instance v0, Lau3;
+    move-result-object v2
 
     .line 27
+    move v4, v0
+
     .line 28
-    invoke-direct {v0, p1, p1, p0, v1}, Lau3;-><init>(Lo80;Ljava/lang/Object;Ljava/util/Map;Lt52;)V
+    goto :goto_0
 
     .line 29
+    :cond_0
+    new-instance p0, Lc47;
+
     .line 30
     .line 31
-    return-object v0
+    invoke-direct {p0, v5}, Lc47;-><init>(I)V
 
     .line 32
-    :pswitch_0
-    check-cast p1, Lo80;
-
     .line 33
     .line 34
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    throw p0
 
     .line 35
+    :cond_1
+    move v3, v1
+
     .line 36
+    goto :goto_0
+
     .line 37
-    check-cast p1, Ll70;
+    :cond_2
+    invoke-interface {p1, p0}, Lg21;->s(Luy5;)V
 
     .line 38
     .line 39
-    invoke-static {v2, p0}, Ljava/util/Collections;->singletonMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map;
-
     .line 40
+    new-instance p0, Lg90;
+
     .line 41
     .line 42
-    move-result-object p0
+    invoke-direct {p0, v4, v2}, Lg90;-><init>(ILjava/lang/String;)V
 
     .line 43
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 44
     .line 45
-    .line 46
-    new-instance v0, Lau3;
+    return-object p0
+.end method
 
-    .line 47
-    .line 48
-    invoke-direct {v0, p1, p1, p0, v1}, Lau3;-><init>(Lo80;Ljava/lang/Object;Ljava/util/Map;Lt52;)V
+.method public final c()Luy5;
+    .locals 0
 
-    .line 49
-    .line 50
-    .line 51
-    return-object v0
+    .line 1
+    sget-object p0, Le90;->descriptor:Luy5;
 
-    .line 52
-    nop
+    .line 2
+    .line 3
+    return-object p0
+.end method
 
-    .line 53
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+.method public final d(Lqc6;Ljava/lang/Object;)V
+    .locals 1
+
+    .line 1
+    check-cast p2, Lg90;
+
+    .line 2
+    .line 3
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
+    .line 5
+    .line 6
+    sget-object p0, Le90;->descriptor:Luy5;
+
+    .line 7
+    .line 8
+    invoke-virtual {p1, p0}, Lqc6;->a(Luy5;)Lqc6;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object p1
+
+    .line 12
+    iget-object p2, p2, Lg90;->a:Ljava/lang/String;
+
+    .line 13
+    .line 14
+    const/4 v0, 0x0
+
+    .line 15
+    invoke-virtual {p1, p0, v0, p2}, Lqc6;->r(Luy5;ILjava/lang/String;)V
+
+    .line 16
+    .line 17
+    .line 18
+    invoke-virtual {p1, p0}, Lqc6;->s(Luy5;)V
+
+    .line 19
+    .line 20
+    .line 21
+    return-void
 .end method

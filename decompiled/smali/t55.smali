@@ -1,182 +1,131 @@
-.class public abstract Lt55;
+.class public final synthetic Lt55;
 .super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lp62;
 
 
-# static fields
-.field public static final a:[I
+# instance fields
+.field public final synthetic j:Llp4;
 
-.field public static final b:[I
+.field public final synthetic k:Ly65;
+
+.field public final synthetic l:Z
+
+.field public final synthetic m:F
+
+.field public final synthetic n:F
+
+.field public final synthetic o:Ln06;
 
 
 # direct methods
-.method public static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Llp4;Ly65;ZFFLn06;)V
+    .locals 0
 
     .line 1
-    const/16 v0, 0x41
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    new-array v0, v0, [I
-
     .line 4
-    .line 5
-    fill-array-data v0, :array_0
+    iput-object p1, p0, Lt55;->j:Llp4;
 
+    .line 5
     .line 6
+    iput-object p2, p0, Lt55;->k:Ly65;
+
     .line 7
     .line 8
-    sput-object v0, Lt55;->a:[I
+    iput-boolean p3, p0, Lt55;->l:Z
 
     .line 9
     .line 10
-    const/16 v0, 0x2b
+    iput p4, p0, Lt55;->m:F
 
     .line 11
     .line 12
-    new-array v0, v0, [I
+    iput p5, p0, Lt55;->n:F
 
     .line 13
     .line 14
-    fill-array-data v0, :array_1
+    iput-object p6, p0, Lt55;->o:Ln06;
 
     .line 15
     .line 16
-    .line 17
-    sput-object v0, Lt55;->b:[I
+    return-void
+.end method
 
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 7
+
+    .line 1
+    move-object v0, p1
+
+    .line 2
+    check-cast v0, Lkp4;
+
+    .line 3
+    .line 4
+    new-instance v1, Lu55;
+
+    .line 5
+    .line 6
+    iget-object v2, p0, Lt55;->k:Ly65;
+
+    .line 7
+    .line 8
+    iget-boolean v3, p0, Lt55;->l:Z
+
+    .line 9
+    .line 10
+    iget v4, p0, Lt55;->m:F
+
+    .line 11
+    .line 12
+    iget v5, p0, Lt55;->n:F
+
+    .line 13
+    .line 14
+    iget-object v6, p0, Lt55;->o:Ln06;
+
+    .line 15
+    .line 16
+    invoke-direct/range {v1 .. v6}, Lu55;-><init>(Ly65;ZFFLn06;)V
+
+    .line 17
     .line 18
     .line 19
-    return-void
+    const/4 v5, 0x4
 
     .line 20
-    nop
+    iget-object p0, p0, Lt55;->j:Llp4;
 
     .line 21
-    :array_0
-    .array-data 4
-        0x7f0400d2
-        0x7f0400d3
-        0x7f0400d4
-        0x7f0400d5
-        0x7f0400d6
-        0x7f0400d7
-        0x7f0400d8
-        0x7f0400d9
-        0x7f0400da
-        0x7f0400db
-        0x7f0400dc
-        0x7f0400dd
-        0x7f0400de
-        0x7f0400df
-        0x7f0400e0
-        0x7f0400e1
-        0x7f0400e2
-        0x7f0400e3
-        0x7f0400e4
-        0x7f0400e5
-        0x7f0400e6
-        0x7f0400e7
-        0x7f0400e8
-        0x7f0400e9
-        0x7f0400ea
-        0x7f0400eb
-        0x7f0400fe
-        0x7f0400ff
-        0x7f040100
-        0x7f040101
-        0x7f040102
-        0x7f040103
-        0x7f040104
-        0x7f040105
-        0x7f040106
-        0x7f040107
-        0x7f040108
-        0x7f040109
-        0x7f04010a
-        0x7f04010f
-        0x7f040110
-        0x7f040111
-        0x7f040112
-        0x7f040113
-        0x7f040114
-        0x7f040115
-        0x7f040116
-        0x7f040117
-        0x7f040118
-        0x7f040119
-        0x7f04011a
-        0x7f04011b
-        0x7f04012a
-        0x7f04012b
-        0x7f04012c
-        0x7f04012d
-        0x7f04012e
-        0x7f04012f
-        0x7f040130
-        0x7f040131
-        0x7f040132
-        0x7f040133
-        0x7f040134
-        0x7f040135
-        0x7f040136
-    .end array-data
-
     .line 22
+    const/4 v2, 0x0
+
     .line 23
+    const/4 v3, 0x0
+
     .line 24
+    move-object v4, v1
+
     .line 25
+    move-object v1, p0
+
     .line 26
+    invoke-static/range {v0 .. v5}, Lkp4;->q(Lkp4;Llp4;IILp62;I)V
+
     .line 27
     .line 28
     .line 29
+    sget-object p0, La47;->a:La47;
+
     .line 30
     .line 31
-    .line 32
-    :array_1
-    .array-data 4
-        0x7f0400ce
-        0x7f0400cf
-        0x7f0400d0
-        0x7f0400d1
-        0x7f0400ec
-        0x7f0400ed
-        0x7f0400ee
-        0x7f0400ef
-        0x7f0400f0
-        0x7f0400f1
-        0x7f0400f2
-        0x7f0400f3
-        0x7f0400f4
-        0x7f0400f5
-        0x7f0400f6
-        0x7f0400f7
-        0x7f0400f8
-        0x7f0400f9
-        0x7f0400fa
-        0x7f0400fb
-        0x7f0400fc
-        0x7f0400fd
-        0x7f04010b
-        0x7f04010c
-        0x7f04010d
-        0x7f04010e
-        0x7f04011c
-        0x7f04011d
-        0x7f04011e
-        0x7f04011f
-        0x7f040120
-        0x7f040121
-        0x7f040122
-        0x7f040123
-        0x7f040124
-        0x7f040125
-        0x7f040126
-        0x7f040127
-        0x7f040128
-        0x7f040129
-        0x7f040137
-        0x7f040138
-        0x7f040139
-    .end array-data
+    return-object p0
 .end method

@@ -1,70 +1,178 @@
-.class public final Lg57;
-.super Ljo3;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lil4;
+.class public abstract Lg57;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public x:Ln10;
+# static fields
+.field public static final a:[Landroid/graphics/Bitmap$Config;
+
+.field public static final b:Landroid/graphics/Bitmap$Config;
 
 
-# virtual methods
-.method public final f(Lyg1;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    instance-of p1, p2, Lhe5;
+    sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     .line 2
     .line 3
-    if-eqz p1, :cond_0
+    sget-object v1, Landroid/graphics/Bitmap$Config;->RGBA_F16:Landroid/graphics/Bitmap$Config;
 
     .line 4
     .line 5
-    check-cast p2, Lhe5;
+    filled-new-array {v0, v1}, [Landroid/graphics/Bitmap$Config;
 
     .line 6
     .line 7
-    goto :goto_0
-
     .line 8
-    :cond_0
-    const/4 p2, 0x0
+    move-result-object v0
 
     .line 9
-    :goto_0
-    if-nez p2, :cond_1
+    sput-object v0, Lg57;->a:[Landroid/graphics/Bitmap$Config;
 
     .line 10
     .line 11
-    new-instance p2, Lhe5;
+    sget-object v0, Landroid/graphics/Bitmap$Config;->HARDWARE:Landroid/graphics/Bitmap$Config;
 
     .line 12
     .line 13
-    invoke-direct {p2}, Lhe5;-><init>()V
+    sput-object v0, Lg57;->b:Landroid/graphics/Bitmap$Config;
 
     .line 14
     .line 15
+    return-void
+.end method
+
+.method public static final a(Landroid/graphics/drawable/Drawable;)I
+    .locals 1
+
+    .line 1
+    instance-of v0, p0, Landroid/graphics/drawable/BitmapDrawable;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    move-object v0, p0
+
+    .line 6
+    check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
+
+    .line 7
+    .line 8
+    goto :goto_0
+
+    .line 9
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 10
+    :goto_0
+    if-eqz v0, :cond_1
+
+    .line 11
+    .line 12
+    invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object v0
+
     .line 16
-    :cond_1
-    iget-object p0, p0, Lg57;->x:Ln10;
+    if-eqz v0, :cond_1
 
     .line 17
     .line 18
-    new-instance p1, Llb1;
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I
 
     .line 19
     .line 20
-    invoke-direct {p1, p0}, Llb1;-><init>(Ln10;)V
-
     .line 21
+    move-result p0
+
     .line 22
+    return p0
+
     .line 23
-    iput-object p1, p2, Lhe5;->c:Lt87;
+    :cond_1
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
 
     .line 24
     .line 25
-    return-object p2
+    .line 26
+    move-result p0
+
+    .line 27
+    return p0
+.end method
+
+.method public static final b(Landroid/graphics/drawable/Drawable;)I
+    .locals 1
+
+    .line 1
+    instance-of v0, p0, Landroid/graphics/drawable/BitmapDrawable;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    move-object v0, p0
+
+    .line 6
+    check-cast v0, Landroid/graphics/drawable/BitmapDrawable;
+
+    .line 7
+    .line 8
+    goto :goto_0
+
+    .line 9
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 10
+    :goto_0
+    if-eqz v0, :cond_1
+
+    .line 11
+    .line 12
+    invoke-virtual {v0}, Landroid/graphics/drawable/BitmapDrawable;->getBitmap()Landroid/graphics/Bitmap;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object v0
+
+    .line 16
+    if-eqz v0, :cond_1
+
+    .line 17
+    .line 18
+    invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result p0
+
+    .line 22
+    return p0
+
+    .line 23
+    :cond_1
+    invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    .line 24
+    .line 25
+    .line 26
+    move-result p0
+
+    .line 27
+    return p0
 .end method

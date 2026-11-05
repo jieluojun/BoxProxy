@@ -1,57 +1,51 @@
-.class public abstract Ldw2;
-.super Lhv2;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public Ldw2;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
-
-# static fields
-.field public static final Companion:Lcw2;
+# interfaces
+.implements Lb07;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method private constructor <init>()V
+    .locals 0
 
     .line 1
-    new-instance v0, Lcw2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 4
-    .line 5
-    .line 6
-    sput-object v0, Ldw2;->Companion:Lcw2;
+    return-void
+.end method
 
-    .line 7
-    .line 8
+.method public synthetic constructor <init>(I)V
+    .locals 0
+
+    .line 5
+    invoke-direct {p0}, Ldw2;-><init>()V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Ljava/lang/String;
+.method public final a(Ln92;Lh17;)La07;
     .locals 0
 
     .line 1
-    const-string p0, "null"
+    new-instance p0, Ljava/lang/AssertionError;
 
     .line 2
     .line 3
-    return-object p0
-.end method
+    const-string p1, "Factory should not be used"
 
-.method public toString()Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Ldw2;->a()Ljava/lang/String;
-
-    .line 2
-    .line 3
     .line 4
-    move-result-object p0
-
     .line 5
-    return-object p0
+    invoke-direct {p0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
 .end method

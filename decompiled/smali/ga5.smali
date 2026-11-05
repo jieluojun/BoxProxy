@@ -1,24 +1,20 @@
 .class public final Lga5;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lbb1;
-.implements Lda5;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # static fields
-.field public static final n:Luh0;
+.field public static final e:Lga5;
 
 
 # instance fields
-.field public final j:Lsa1;
+.field public final a:F
 
-.field public final k:Lsa1;
+.field public final b:F
 
-.field public final l:Lga5;
+.field public final c:F
 
-.field public volatile m:Lsa1;
+.field public final d:F
 
 
 # direct methods
@@ -26,26 +22,26 @@
     .locals 2
 
     .line 1
-    new-instance v0, Luh0;
+    new-instance v0, Lga5;
 
     .line 2
     .line 3
     const/4 v1, 0x0
 
     .line 4
-    invoke-direct {v0, v1}, Luh0;-><init>(B)V
+    invoke-direct {v0, v1, v1, v1, v1}, Lga5;-><init>(FFFF)V
 
     .line 5
     .line 6
     .line 7
-    sput-object v0, Lga5;->n:Luh0;
+    sput-object v0, Lga5;->e:Lga5;
 
     .line 8
     .line 9
     return-void
 .end method
 
-.method public constructor <init>(Lsa1;Lsa1;)V
+.method public constructor <init>(FFFF)V
     .locals 0
 
     .line 1
@@ -54,137 +50,30 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lga5;->j:Lsa1;
+    iput p1, p0, Lga5;->a:F
 
     .line 5
     .line 6
-    iput-object p2, p0, Lga5;->k:Lsa1;
+    iput p2, p0, Lga5;->b:F
 
     .line 7
     .line 8
-    iput-object p0, p0, Lga5;->l:Lga5;
+    iput p3, p0, Lga5;->c:F
 
     .line 9
     .line 10
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method public final b()V
-    .locals 3
-
-    .line 1
-    iget-object v0, p0, Lga5;->l:Lga5;
-
-    .line 2
-    .line 3
-    monitor-enter v0
-
-    .line 4
-    :try_start_0
-    iget-object v1, p0, Lga5;->m:Lsa1;
-
-    .line 5
-    .line 6
-    if-nez v1, :cond_0
-
-    .line 7
-    .line 8
-    sget-object v1, Lga5;->n:Luh0;
-
-    .line 9
-    .line 10
-    iput-object v1, p0, Lga5;->m:Lsa1;
+    iput p4, p0, Lga5;->d:F
 
     .line 11
     .line 12
-    goto :goto_0
-
-    .line 13
-    :catchall_0
-    move-exception p0
-
-    .line 14
-    goto :goto_1
-
-    .line 15
-    :cond_0
-    new-instance p0, Lvw1;
-
-    .line 16
-    .line 17
-    invoke-direct {p0}, Lvw1;-><init>()V
-
-    .line 18
-    .line 19
-    .line 20
-    sget-object v2, Liv1;->r:Liv1;
-
-    .line 21
-    .line 22
-    invoke-interface {v1, v2}, Lsa1;->p(Lra1;)Lqa1;
-
-    .line 23
-    .line 24
-    .line 25
-    move-result-object v1
-
-    .line 26
-    check-cast v1, Lxt2;
-
-    .line 27
-    .line 28
-    if-eqz v1, :cond_1
-
-    .line 29
-    .line 30
-    invoke-interface {v1, p0}, Lxt2;->c(Ljava/util/concurrent/CancellationException;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 31
-    .line 32
-    .line 33
-    :cond_1
-    :goto_0
-    monitor-exit v0
-
-    .line 34
-    return-void
-
-    .line 35
-    :goto_1
-    monitor-exit v0
-
-    .line 36
-    throw p0
-.end method
-
-.method public final d()V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Lga5;->b()V
-
-    .line 2
-    .line 3
-    .line 4
     return-void
 .end method
 
-.method public final e()Lsa1;
-    .locals 5
+.method public static b(Lga5;FFFI)Lga5;
+    .locals 2
 
     .line 1
-    iget-object v0, p0, Lga5;->m:Lsa1;
+    and-int/lit8 v0, p4, 0x1
 
     .line 2
     .line 3
@@ -192,264 +81,1186 @@
 
     .line 4
     .line 5
-    sget-object v1, Lga5;->n:Luh0;
+    iget p1, p0, Lga5;->a:F
 
     .line 6
     .line 7
-    if-ne v0, v1, :cond_4
+    :cond_0
+    iget v0, p0, Lga5;->b:F
 
     .line 8
     .line 9
-    :cond_0
-    iget-object v0, p0, Lga5;->j:Lsa1;
+    and-int/lit8 v1, p4, 0x4
 
     .line 10
     .line 11
-    sget-object v1, Lj11;->k:Li11;
+    if-eqz v1, :cond_1
 
     .line 12
     .line 13
-    invoke-interface {v0, v1}, Lsa1;->p(Lra1;)Lqa1;
+    iget p2, p0, Lga5;->c:F
 
     .line 14
     .line 15
-    .line 16
-    move-result-object v0
+    :cond_1
+    and-int/lit8 p4, p4, 0x8
 
+    .line 16
     .line 17
-    check-cast v0, Lj11;
+    if-eqz p4, :cond_2
 
     .line 18
     .line 19
-    if-eqz v0, :cond_1
+    iget p3, p0, Lga5;->d:F
 
     .line 20
     .line 21
-    new-instance v1, Lfa5;
+    :cond_2
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 22
     .line 23
-    invoke-direct {v1, v0, p0}, Lfa5;-><init>(Lj11;Lga5;)V
+    .line 24
+    new-instance p0, Lga5;
+
+    .line 25
+    .line 26
+    invoke-direct {p0, p1, v0, p2, p3}, Lga5;-><init>(FFFF)V
+
+    .line 27
+    .line 28
+    .line 29
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public final a(J)Z
+    .locals 4
+
+    .line 1
+    const/16 v0, 0x20
+
+    .line 2
+    .line 3
+    shr-long v0, p1, v0
+
+    .line 4
+    .line 5
+    long-to-int v0, v0
+
+    .line 6
+    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 7
+    .line 8
+    .line 9
+    move-result v0
+
+    .line 10
+    const-wide v1, 0xffffffffL
+
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    and-long/2addr p1, v1
+
+    .line 16
+    long-to-int p1, p1
+
+    .line 17
+    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 18
+    .line 19
+    .line 20
+    move-result p1
+
+    .line 21
+    iget p2, p0, Lga5;->a:F
+
+    .line 22
+    .line 23
+    cmpl-float p2, v0, p2
+
+    .line 24
+    .line 25
+    const/4 v1, 0x0
+
+    .line 26
+    const/4 v2, 0x1
+
+    .line 27
+    if-ltz p2, :cond_0
+
+    .line 28
+    .line 29
+    move p2, v2
+
+    .line 30
+    goto :goto_0
+
+    .line 31
+    :cond_0
+    move p2, v1
+
+    .line 32
+    :goto_0
+    iget v3, p0, Lga5;->c:F
+
+    .line 33
+    .line 34
+    cmpg-float v0, v0, v3
+
+    .line 35
+    .line 36
+    if-gez v0, :cond_1
+
+    .line 37
+    .line 38
+    move v0, v2
+
+    .line 39
+    goto :goto_1
+
+    .line 40
+    :cond_1
+    move v0, v1
+
+    .line 41
+    :goto_1
+    and-int/2addr p2, v0
+
+    .line 42
+    iget v0, p0, Lga5;->b:F
+
+    .line 43
+    .line 44
+    cmpl-float v0, p1, v0
+
+    .line 45
+    .line 46
+    if-ltz v0, :cond_2
+
+    .line 47
+    .line 48
+    move v0, v2
+
+    .line 49
+    goto :goto_2
+
+    .line 50
+    :cond_2
+    move v0, v1
+
+    .line 51
+    :goto_2
+    and-int/2addr p2, v0
+
+    .line 52
+    iget p0, p0, Lga5;->d:F
+
+    .line 53
+    .line 54
+    cmpg-float p0, p1, p0
+
+    .line 55
+    .line 56
+    if-gez p0, :cond_3
+
+    .line 57
+    .line 58
+    move v1, v2
+
+    .line 59
+    :cond_3
+    and-int p0, p2, v1
+
+    .line 60
+    .line 61
+    return p0
+.end method
+
+.method public final c()J
+    .locals 6
+
+    .line 1
+    iget v0, p0, Lga5;->c:F
+
+    .line 2
+    .line 3
+    iget v1, p0, Lga5;->a:F
+
+    .line 4
+    .line 5
+    sub-float/2addr v0, v1
+
+    .line 6
+    const/high16 v2, 0x40000000    # 2.0f
+
+    .line 7
+    .line 8
+    div-float/2addr v0, v2
+
+    .line 9
+    add-float/2addr v0, v1
+
+    .line 10
+    invoke-static {v0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 11
+    .line 12
+    .line 13
+    move-result v0
+
+    .line 14
+    int-to-long v0, v0
+
+    .line 15
+    iget p0, p0, Lga5;->d:F
+
+    .line 16
+    .line 17
+    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 18
+    .line 19
+    .line 20
+    move-result p0
+
+    .line 21
+    int-to-long v2, p0
+
+    .line 22
+    const/16 p0, 0x20
+
+    .line 23
+    .line 24
+    shl-long/2addr v0, p0
+
+    .line 25
+    const-wide v4, 0xffffffffL
+
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    .line 30
+    and-long/2addr v2, v4
+
+    .line 31
+    or-long/2addr v0, v2
+
+    .line 32
+    return-wide v0
+.end method
+
+.method public final d()J
+    .locals 6
+
+    .line 1
+    iget v0, p0, Lga5;->c:F
+
+    .line 2
+    .line 3
+    iget v1, p0, Lga5;->a:F
+
+    .line 4
+    .line 5
+    sub-float/2addr v0, v1
+
+    .line 6
+    const/high16 v2, 0x40000000    # 2.0f
+
+    .line 7
+    .line 8
+    div-float/2addr v0, v2
+
+    .line 9
+    add-float/2addr v0, v1
+
+    .line 10
+    iget v1, p0, Lga5;->d:F
+
+    .line 11
+    .line 12
+    iget p0, p0, Lga5;->b:F
+
+    .line 13
+    .line 14
+    sub-float/2addr v1, p0
+
+    .line 15
+    div-float/2addr v1, v2
+
+    .line 16
+    add-float/2addr v1, p0
+
+    .line 17
+    invoke-static {v0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 18
+    .line 19
+    .line 20
+    move-result p0
+
+    .line 21
+    int-to-long v2, p0
+
+    .line 22
+    invoke-static {v1}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 23
+    .line 24
+    .line 25
+    move-result p0
+
+    .line 26
+    int-to-long v0, p0
+
+    .line 27
+    const/16 p0, 0x20
+
+    .line 28
+    .line 29
+    shl-long/2addr v2, p0
+
+    .line 30
+    const-wide v4, 0xffffffffL
+
+    .line 31
+    .line 32
+    .line 33
+    .line 34
+    .line 35
+    and-long/2addr v0, v4
+
+    .line 36
+    or-long/2addr v0, v2
+
+    .line 37
+    return-wide v0
+.end method
+
+.method public final e()J
+    .locals 6
+
+    .line 1
+    iget v0, p0, Lga5;->c:F
+
+    .line 2
+    .line 3
+    iget v1, p0, Lga5;->a:F
+
+    .line 4
+    .line 5
+    sub-float/2addr v0, v1
+
+    .line 6
+    iget v1, p0, Lga5;->d:F
+
+    .line 7
+    .line 8
+    iget p0, p0, Lga5;->b:F
+
+    .line 9
+    .line 10
+    sub-float/2addr v1, p0
+
+    .line 11
+    invoke-static {v0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    int-to-long v2, p0
+
+    .line 16
+    invoke-static {v1}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 17
+    .line 18
+    .line 19
+    move-result p0
+
+    .line 20
+    int-to-long v0, p0
+
+    .line 21
+    const/16 p0, 0x20
+
+    .line 22
+    .line 23
+    shl-long/2addr v2, p0
+
+    .line 24
+    const-wide v4, 0xffffffffL
+
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    .line 29
+    and-long/2addr v0, v4
+
+    .line 30
+    or-long/2addr v0, v2
+
+    .line 31
+    return-wide v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lga5;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Lga5;
+
+    .line 12
+    .line 13
+    iget v1, p0, Lga5;->a:F
+
+    .line 14
+    .line 15
+    iget v3, p1, Lga5;->a:F
+
+    .line 16
+    .line 17
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v1
+
+    .line 21
+    if-eqz v1, :cond_2
+
+    .line 22
+    .line 23
+    return v2
+
+    .line 24
+    :cond_2
+    iget v1, p0, Lga5;->b:F
+
+    .line 25
+    .line 26
+    iget v3, p1, Lga5;->b:F
+
+    .line 27
+    .line 28
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
+
+    .line 29
+    .line 30
+    .line 31
+    move-result v1
+
+    .line 32
+    if-eqz v1, :cond_3
+
+    .line 33
+    .line 34
+    return v2
+
+    .line 35
+    :cond_3
+    iget v1, p0, Lga5;->c:F
+
+    .line 36
+    .line 37
+    iget v3, p1, Lga5;->c:F
+
+    .line 38
+    .line 39
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
+
+    .line 40
+    .line 41
+    .line 42
+    move-result v1
+
+    .line 43
+    if-eqz v1, :cond_4
+
+    .line 44
+    .line 45
+    return v2
+
+    .line 46
+    :cond_4
+    iget p0, p0, Lga5;->d:F
+
+    .line 47
+    .line 48
+    iget p1, p1, Lga5;->d:F
+
+    .line 49
+    .line 50
+    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
+
+    .line 51
+    .line 52
+    .line 53
+    move-result p0
+
+    .line 54
+    if-eqz p0, :cond_5
+
+    .line 55
+    .line 56
+    return v2
+
+    .line 57
+    :cond_5
+    return v0
+.end method
+
+.method public final f()J
+    .locals 6
+
+    .line 1
+    iget v0, p0, Lga5;->a:F
+
+    .line 2
+    .line 3
+    invoke-static {v0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    int-to-long v0, v0
+
+    .line 8
+    iget p0, p0, Lga5;->b:F
+
+    .line 9
+    .line 10
+    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 11
+    .line 12
+    .line 13
+    move-result p0
+
+    .line 14
+    int-to-long v2, p0
+
+    .line 15
+    const/16 p0, 0x20
+
+    .line 16
+    .line 17
+    shl-long/2addr v0, p0
+
+    .line 18
+    const-wide v4, 0xffffffffL
+
+    .line 19
+    .line 20
+    .line 21
+    .line 22
+    .line 23
+    and-long/2addr v2, v4
+
+    .line 24
+    or-long/2addr v0, v2
+
+    .line 25
+    return-wide v0
+.end method
+
+.method public final g(Lga5;)Lga5;
+    .locals 5
+
+    .line 1
+    new-instance v0, Lga5;
+
+    .line 2
+    .line 3
+    iget v1, p0, Lga5;->a:F
+
+    .line 4
+    .line 5
+    iget v2, p1, Lga5;->a:F
+
+    .line 6
+    .line 7
+    invoke-static {v1, v2}, Ljava/lang/Math;->max(FF)F
+
+    .line 8
+    .line 9
+    .line 10
+    move-result v1
+
+    .line 11
+    iget v2, p0, Lga5;->b:F
+
+    .line 12
+    .line 13
+    iget v3, p1, Lga5;->b:F
+
+    .line 14
+    .line 15
+    invoke-static {v2, v3}, Ljava/lang/Math;->max(FF)F
+
+    .line 16
+    .line 17
+    .line 18
+    move-result v2
+
+    .line 19
+    iget v3, p0, Lga5;->c:F
+
+    .line 20
+    .line 21
+    iget v4, p1, Lga5;->c:F
+
+    .line 22
+    .line 23
+    invoke-static {v3, v4}, Ljava/lang/Math;->min(FF)F
 
     .line 24
     .line 25
     .line 26
-    goto :goto_0
+    move-result v3
 
     .line 27
-    :cond_1
-    sget-object v1, Lmt1;->j:Lmt1;
+    iget p0, p0, Lga5;->d:F
 
     .line 28
     .line 29
-    :goto_0
-    iget-object v0, p0, Lga5;->l:Lga5;
+    iget p1, p1, Lga5;->d:F
 
     .line 30
     .line 31
-    monitor-enter v0
+    invoke-static {p0, p1}, Ljava/lang/Math;->min(FF)F
 
     .line 32
-    :try_start_0
-    iget-object v2, p0, Lga5;->m:Lsa1;
-
     .line 33
     .line 34
-    if-nez v2, :cond_2
+    move-result p0
 
     .line 35
-    .line 36
-    iget-object v2, p0, Lga5;->j:Lsa1;
+    invoke-direct {v0, v1, v2, v3, p0}, Lga5;-><init>(FFFF)V
 
+    .line 36
     .line 37
     .line 38
-    sget-object v3, Liv1;->r:Liv1;
-
-    .line 39
-    .line 40
-    invoke-interface {v2, v3}, Lsa1;->p(Lra1;)Lqa1;
-
-    .line 41
-    .line 42
-    .line 43
-    move-result-object v3
-
-    .line 44
-    check-cast v3, Lxt2;
-
-    .line 45
-    .line 46
-    new-instance v4, Lzt2;
-
-    .line 47
-    .line 48
-    invoke-direct {v4, v3}, Lzt2;-><init>(Lxt2;)V
-
-    .line 49
-    .line 50
-    .line 51
-    invoke-interface {v2, v4}, Lsa1;->m(Lsa1;)Lsa1;
-
-    .line 52
-    .line 53
-    .line 54
-    move-result-object v2
-
-    .line 55
-    iget-object v3, p0, Lga5;->k:Lsa1;
-
-    .line 56
-    .line 57
-    invoke-interface {v2, v3}, Lsa1;->m(Lsa1;)Lsa1;
-
-    .line 58
-    .line 59
-    .line 60
-    move-result-object v2
-
-    .line 61
-    invoke-interface {v2, v1}, Lsa1;->m(Lsa1;)Lsa1;
-
-    .line 62
-    .line 63
-    .line 64
-    move-result-object v1
-
-    .line 65
-    goto :goto_1
-
-    .line 66
-    :catchall_0
-    move-exception p0
-
-    .line 67
-    goto :goto_2
-
-    .line 68
-    :cond_2
-    sget-object v3, Lga5;->n:Luh0;
-
-    .line 69
-    .line 70
-    if-ne v2, v3, :cond_3
-
-    .line 71
-    .line 72
-    iget-object v2, p0, Lga5;->j:Lsa1;
-
-    .line 73
-    .line 74
-    sget-object v3, Liv1;->r:Liv1;
-
-    .line 75
-    .line 76
-    invoke-interface {v2, v3}, Lsa1;->p(Lra1;)Lqa1;
-
-    .line 77
-    .line 78
-    .line 79
-    move-result-object v3
-
-    .line 80
-    check-cast v3, Lxt2;
-
-    .line 81
-    .line 82
-    new-instance v4, Lzt2;
-
-    .line 83
-    .line 84
-    invoke-direct {v4, v3}, Lzt2;-><init>(Lxt2;)V
-
-    .line 85
-    .line 86
-    .line 87
-    new-instance v3, Lvw1;
-
-    .line 88
-    .line 89
-    invoke-direct {v3}, Lvw1;-><init>()V
-
-    .line 90
-    .line 91
-    .line 92
-    invoke-virtual {v4, v3}, Leu2;->y(Ljava/lang/Object;)Z
-
-    .line 93
-    .line 94
-    .line 95
-    invoke-interface {v2, v4}, Lsa1;->m(Lsa1;)Lsa1;
-
-    .line 96
-    .line 97
-    .line 98
-    move-result-object v2
-
-    .line 99
-    iget-object v3, p0, Lga5;->k:Lsa1;
-
-    .line 100
-    .line 101
-    invoke-interface {v2, v3}, Lsa1;->m(Lsa1;)Lsa1;
-
-    .line 102
-    .line 103
-    .line 104
-    move-result-object v2
-
-    .line 105
-    invoke-interface {v2, v1}, Lsa1;->m(Lsa1;)Lsa1;
-
-    .line 106
-    .line 107
-    .line 108
-    move-result-object v1
-
-    .line 109
-    goto :goto_1
-
-    .line 110
-    :cond_3
-    move-object v1, v2
-
-    .line 111
-    :goto_1
-    iput-object v1, p0, Lga5;->m:Lsa1;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 112
-    .line 113
-    monitor-exit v0
-
-    .line 114
-    move-object v0, v1
-
-    .line 115
-    :cond_4
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 116
-    .line 117
-    .line 118
     return-object v0
-
-    .line 119
-    :goto_2
-    monitor-exit v0
-
-    .line 120
-    throw p0
 .end method
 
-.method public final h()V
-    .locals 0
+.method public final h()Z
+    .locals 4
 
     .line 1
-    invoke-virtual {p0}, Lga5;->b()V
+    iget v0, p0, Lga5;->a:F
 
     .line 2
     .line 3
+    iget v1, p0, Lga5;->c:F
+
     .line 4
-    return-void
+    .line 5
+    cmpl-float v0, v0, v1
+
+    .line 6
+    .line 7
+    const/4 v1, 0x0
+
+    .line 8
+    const/4 v2, 0x1
+
+    .line 9
+    if-ltz v0, :cond_0
+
+    .line 10
+    .line 11
+    move v0, v2
+
+    .line 12
+    goto :goto_0
+
+    .line 13
+    :cond_0
+    move v0, v1
+
+    .line 14
+    :goto_0
+    iget v3, p0, Lga5;->b:F
+
+    .line 15
+    .line 16
+    iget p0, p0, Lga5;->d:F
+
+    .line 17
+    .line 18
+    cmpl-float p0, v3, p0
+
+    .line 19
+    .line 20
+    if-ltz p0, :cond_1
+
+    .line 21
+    .line 22
+    move v1, v2
+
+    .line 23
+    :cond_1
+    or-int p0, v0, v1
+
+    .line 24
+    .line 25
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    .line 1
+    iget v0, p0, Lga5;->a:F
+
+    .line 2
+    .line 3
+    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    const/16 v1, 0x1f
+
+    .line 8
+    .line 9
+    mul-int/2addr v0, v1
+
+    .line 10
+    iget v2, p0, Lga5;->b:F
+
+    .line 11
+    .line 12
+    invoke-static {v2, v0, v1}, Loc1;->d(FII)I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result v0
+
+    .line 16
+    iget v2, p0, Lga5;->c:F
+
+    .line 17
+    .line 18
+    invoke-static {v2, v0, v1}, Loc1;->d(FII)I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v0
+
+    .line 22
+    iget p0, p0, Lga5;->d:F
+
+    .line 23
+    .line 24
+    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
+
+    .line 25
+    .line 26
+    .line 27
+    move-result p0
+
+    .line 28
+    add-int/2addr p0, v0
+
+    .line 29
+    return p0
+.end method
+
+.method public final i(Lga5;)Z
+    .locals 5
+
+    .line 1
+    iget v0, p0, Lga5;->a:F
+
+    .line 2
+    .line 3
+    iget v1, p1, Lga5;->c:F
+
+    .line 4
+    .line 5
+    cmpg-float v0, v0, v1
+
+    .line 6
+    .line 7
+    const/4 v1, 0x0
+
+    .line 8
+    const/4 v2, 0x1
+
+    .line 9
+    if-gez v0, :cond_0
+
+    .line 10
+    .line 11
+    move v0, v2
+
+    .line 12
+    goto :goto_0
+
+    .line 13
+    :cond_0
+    move v0, v1
+
+    .line 14
+    :goto_0
+    iget v3, p1, Lga5;->a:F
+
+    .line 15
+    .line 16
+    iget v4, p0, Lga5;->c:F
+
+    .line 17
+    .line 18
+    cmpg-float v3, v3, v4
+
+    .line 19
+    .line 20
+    if-gez v3, :cond_1
+
+    .line 21
+    .line 22
+    move v3, v2
+
+    .line 23
+    goto :goto_1
+
+    .line 24
+    :cond_1
+    move v3, v1
+
+    .line 25
+    :goto_1
+    and-int/2addr v0, v3
+
+    .line 26
+    iget v3, p0, Lga5;->b:F
+
+    .line 27
+    .line 28
+    iget v4, p1, Lga5;->d:F
+
+    .line 29
+    .line 30
+    cmpg-float v3, v3, v4
+
+    .line 31
+    .line 32
+    if-gez v3, :cond_2
+
+    .line 33
+    .line 34
+    move v3, v2
+
+    .line 35
+    goto :goto_2
+
+    .line 36
+    :cond_2
+    move v3, v1
+
+    .line 37
+    :goto_2
+    and-int/2addr v0, v3
+
+    .line 38
+    iget p1, p1, Lga5;->b:F
+
+    .line 39
+    .line 40
+    iget p0, p0, Lga5;->d:F
+
+    .line 41
+    .line 42
+    cmpg-float p0, p1, p0
+
+    .line 43
+    .line 44
+    if-gez p0, :cond_3
+
+    .line 45
+    .line 46
+    move v1, v2
+
+    .line 47
+    :cond_3
+    and-int p0, v0, v1
+
+    .line 48
+    .line 49
+    return p0
+.end method
+
+.method public final j(FF)Lga5;
+    .locals 4
+
+    .line 1
+    new-instance v0, Lga5;
+
+    .line 2
+    .line 3
+    iget v1, p0, Lga5;->a:F
+
+    .line 4
+    .line 5
+    add-float/2addr v1, p1
+
+    .line 6
+    iget v2, p0, Lga5;->b:F
+
+    .line 7
+    .line 8
+    add-float/2addr v2, p2
+
+    .line 9
+    iget v3, p0, Lga5;->c:F
+
+    .line 10
+    .line 11
+    add-float/2addr v3, p1
+
+    .line 12
+    iget p0, p0, Lga5;->d:F
+
+    .line 13
+    .line 14
+    add-float/2addr p0, p2
+
+    .line 15
+    invoke-direct {v0, v1, v2, v3, p0}, Lga5;-><init>(FFFF)V
+
+    .line 16
+    .line 17
+    .line 18
+    return-object v0
+.end method
+
+.method public final k(J)Lga5;
+    .locals 5
+
+    .line 1
+    new-instance v0, Lga5;
+
+    .line 2
+    .line 3
+    const/16 v1, 0x20
+
+    .line 4
+    .line 5
+    shr-long v1, p1, v1
+
+    .line 6
+    .line 7
+    long-to-int v1, v1
+
+    .line 8
+    invoke-static {v1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 9
+    .line 10
+    .line 11
+    move-result v2
+
+    .line 12
+    iget v3, p0, Lga5;->a:F
+
+    .line 13
+    .line 14
+    add-float/2addr v2, v3
+
+    .line 15
+    const-wide v3, 0xffffffffL
+
+    .line 16
+    .line 17
+    .line 18
+    .line 19
+    .line 20
+    and-long/2addr p1, v3
+
+    .line 21
+    long-to-int p1, p1
+
+    .line 22
+    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 23
+    .line 24
+    .line 25
+    move-result p2
+
+    .line 26
+    iget v3, p0, Lga5;->b:F
+
+    .line 27
+    .line 28
+    add-float/2addr p2, v3
+
+    .line 29
+    iget v3, p0, Lga5;->c:F
+
+    .line 30
+    .line 31
+    invoke-static {v1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 32
+    .line 33
+    .line 34
+    move-result v1
+
+    .line 35
+    add-float/2addr v1, v3
+
+    .line 36
+    iget p0, p0, Lga5;->d:F
+
+    .line 37
+    .line 38
+    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 39
+    .line 40
+    .line 41
+    move-result p1
+
+    .line 42
+    add-float/2addr p1, p0
+
+    .line 43
+    invoke-direct {v0, v2, p2, v1, p1}, Lga5;-><init>(FFFF)V
+
+    .line 44
+    .line 45
+    .line 46
+    return-object v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 5
+
+    .line 1
+    iget v0, p0, Lga5;->a:F
+
+    .line 2
+    .line 3
+    invoke-static {v0}, Laq;->e0(F)Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    iget v1, p0, Lga5;->b:F
+
+    .line 8
+    .line 9
+    invoke-static {v1}, Laq;->e0(F)Ljava/lang/String;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    iget v2, p0, Lga5;->c:F
+
+    .line 14
+    .line 15
+    invoke-static {v2}, Laq;->e0(F)Ljava/lang/String;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object v2
+
+    .line 19
+    iget p0, p0, Lga5;->d:F
+
+    .line 20
+    .line 21
+    invoke-static {p0}, Laq;->e0(F)Ljava/lang/String;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object p0
+
+    .line 25
+    const-string v3, "Rect.fromLTRB("
+
+    .line 26
+    .line 27
+    const-string v4, ", "
+
+    .line 28
+    .line 29
+    invoke-static {v3, v0, v4, v1, v4}, Loc1;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 30
+    .line 31
+    .line 32
+    move-result-object v0
+
+    .line 33
+    const-string v1, ")"
+
+    .line 34
+    .line 35
+    invoke-static {v0, v2, v4, p0, v1}, Loc1;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 36
+    .line 37
+    .line 38
+    move-result-object p0
+
+    .line 39
+    return-object p0
 .end method

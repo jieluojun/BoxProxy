@@ -1,76 +1,118 @@
-.class public final synthetic Li67;
-.super Ld62;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lo52;
+.class public final enum Li67;
+.super Ljava/lang/Enum;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # static fields
-.field public static final k:Li67;
+.field public static final enum j:Li67;
+
+.field public static final enum k:Li67;
+
+.field public static final synthetic l:[Li67;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 4
 
     .line 1
     new-instance v0, Li67;
 
     .line 2
     .line 3
-    const-string v4, "getParent()Landroid/view/ViewParent;"
+    const-string v1, "Lsq2"
 
     .line 4
     .line 5
-    const/4 v5, 0x0
+    const/4 v2, 0x0
 
     .line 6
-    const/4 v1, 0x1
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
-    const-class v2, Landroid/view/ViewParent;
-
     .line 8
     .line 9
-    const-string v3, "getParent"
+    sput-object v0, Li67;->j:Li67;
 
     .line 10
     .line 11
-    invoke-direct/range {v0 .. v5}, Ld62;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    new-instance v1, Li67;
 
     .line 12
     .line 13
-    .line 14
-    sput-object v0, Li67;->k:Li67;
+    const-string v2, "Impulse"
 
+    .line 14
     .line 15
+    const/4 v3, 0x1
+
     .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    sput-object v1, Li67;->k:Li67;
+
+    .line 20
+    .line 21
+    filled-new-array {v0, v1}, [Li67;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object v0
+
+    .line 25
+    sput-object v0, Li67;->l:[Li67;
+
+    .line 26
+    .line 27
     return-void
 .end method
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public static valueOf(Ljava/lang/String;)Li67;
+    .locals 1
 
     .line 1
-    check-cast p1, Landroid/view/ViewParent;
+    const-class v0, Li67;
 
     .line 2
     .line 3
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     .line 4
     .line 5
     .line 6
-    invoke-interface {p1}, Landroid/view/ViewParent;->getParent()Landroid/view/ViewParent;
-
-    .line 7
-    .line 8
-    .line 9
     move-result-object p0
 
-    .line 10
+    .line 7
+    check-cast p0, Li67;
+
+    .line 8
+    .line 9
     return-object p0
+.end method
+
+.method public static values()[Li67;
+    .locals 1
+
+    .line 1
+    sget-object v0, Li67;->l:[Li67;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Li67;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

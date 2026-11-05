@@ -1,86 +1,46 @@
 .class public final Lv42;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Landroid/os/Parcelable;
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lv42;",
-            ">;"
-        }
-    .end annotation
-.end field
+.implements Ls42;
 
 
 # instance fields
-.field public j:Ljava/lang/String;
+.field public final a:Ljava/util/ArrayList;
 
-.field public k:I
+.field public final b:I
+
+.field public final c:I
+
+.field public final d:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    .line 1
-    new-instance v0, Lj6;
-
-    .line 2
-    .line 3
-    const/4 v1, 0x5
-
-    .line 4
-    invoke-direct {v0, v1}, Lj6;-><init>(B)V
-
-    .line 5
-    .line 6
-    .line 7
-    sput-object v0, Lv42;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    .line 8
-    .line 9
-    return-void
-.end method
-
-
-# virtual methods
-.method public final describeContents()I
+.method public constructor <init>(Ljava/util/ArrayList;IILjava/lang/String;)V
     .locals 0
 
     .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 0
-
-    .line 1
-    iget-object p2, p0, Lv42;->j:Ljava/lang/String;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeString(Ljava/lang/String;)V
-
     .line 4
+    iput-object p1, p0, Lv42;->a:Ljava/util/ArrayList;
+
     .line 5
     .line 6
-    iget p0, p0, Lv42;->k:I
+    iput p2, p0, Lv42;->c:I
 
     .line 7
     .line 8
-    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
+    iput p3, p0, Lv42;->b:I
 
     .line 9
     .line 10
+    iput-object p4, p0, Lv42;->d:Ljava/lang/String;
+
     .line 11
+    .line 12
     return-void
 .end method

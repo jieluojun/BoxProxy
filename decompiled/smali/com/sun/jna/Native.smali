@@ -1,6 +1,6 @@
 .class public final Lcom/sun/jna/Native;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
 .implements Lcom/sun/jna/Version;
@@ -289,7 +289,7 @@
 
     .line 35
     .line 36
-    invoke-static {v5, v0, v6}, Lpb1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v5, v0, v6}, Loc1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 37
     .line 38
@@ -596,7 +596,7 @@
 
     .line 193
     .line 194
-    invoke-static {v3, v4, v5}, Lh86;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v4, v5}, Ly96;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 195
     .line 196
@@ -629,7 +629,7 @@
 
     .line 208
     .line 209
-    invoke-static {v2, v3, v4, v0, v5}, Lpb1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v3, v4, v0, v5}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 210
     .line 211
@@ -642,7 +642,7 @@
 
     .line 215
     .line 216
-    invoke-static {v2, v0, v3, v0, v4}, Lpb1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0, v3, v0, v4}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 217
     .line 218
@@ -655,7 +655,7 @@
 
     .line 222
     .line 223
-    invoke-static {v2, v0, v3, v0, v4}, Lpb1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-static {v2, v0, v3, v0, v4}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 224
     .line 225
@@ -1999,7 +1999,7 @@
 
     .line 251
     .line 252
-    invoke-static {v1, v4, p1, p0, v0}, Lpb1;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v1, v4, p1, p0, v0}, Loc1;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 253
     .line 254
@@ -2007,7 +2007,7 @@
     move-result-object p0
 
     .line 256
-    invoke-static {p0}, Lvd1;->m(Ljava/lang/String;)V
+    invoke-static {p0}, Lue1;->m(Ljava/lang/String;)V
 
     .line 257
     .line 258
@@ -2526,7 +2526,7 @@
     move-result-object p0
 
     .line 492
-    invoke-static {p0}, Lvd1;->m(Ljava/lang/String;)V
+    invoke-static {p0}, Lue1;->m(Ljava/lang/String;)V
 
     .line 493
     .line 494
@@ -2700,7 +2700,7 @@
 
     .line 62
     .line 63
-    invoke-static {v0, p0, v1}, Lvd1;->h(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v0, p0, v1}, Lue1;->h(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 64
     .line 65
@@ -3102,7 +3102,7 @@
 
     .line 22
     .line 23
-    invoke-static {v0}, Ljv1;->e(Ljava/lang/String;)V
+    invoke-static {v0}, Ljw1;->e(Ljava/lang/String;)V
 
     .line 24
     .line 25
@@ -3115,7 +3115,7 @@
 
     .line 28
     .line 29
-    invoke-static {v0}, Ljv1;->e(Ljava/lang/String;)V
+    invoke-static {v0}, Ljw1;->e(Ljava/lang/String;)V
 
     .line 30
     .line 31
@@ -4117,7 +4117,7 @@
 
     .line 67
     .line 68
-    invoke-static {v2, p0, v3, v1}, Ls94;->j(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v2, p0, v3, v1}, Lgb4;->j(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 69
     .line 70
@@ -4323,7 +4323,7 @@
     :cond_0
     const-string p0, "Object is not a properly initialized Library interface instance"
 
-    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
 
     return-object v0
 
@@ -4331,7 +4331,7 @@
     :cond_1
     const-string p0, "library object passed to getNativeLibrary in not a proxy"
 
-    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
 
     return-object v0
 
@@ -4339,7 +4339,7 @@
     :cond_2
     const-string p0, "null passed to getNativeLibrary"
 
-    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
 
     return-object v0
 .end method
@@ -4479,7 +4479,7 @@
 
     .line 56
     .line 57
-    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
 
     .line 58
     .line 59
@@ -4847,7 +4847,7 @@
 
     .line 163
     .line 164
-    invoke-static {v1, p0, v0}, Lvd1;->o(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v1, p0, v0}, Lue1;->o(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 165
     .line 166
@@ -4968,12 +4968,12 @@
     const-string p1, "Arrays of length zero not allowed: "
 
     .line 189
-    invoke-static {p1, p0}, Lpb1;->o(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
+    invoke-static {p1, p0}, Loc1;->o(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
 
     move-result-object p0
 
     .line 190
-    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
 
     return v1
 
@@ -6774,7 +6774,7 @@
 
     .line 45
     .line 46
-    invoke-static {v1, p1, p2, p0, v0}, Lvd1;->i(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v1, p1, p2, p0, v0}, Lue1;->i(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 47
     .line 48
@@ -6970,7 +6970,7 @@
 
     .line 43
     .line 44
-    invoke-static {v1, p1, p2, p0, v0}, Lvd1;->i(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v1, p1, p2, p0, v0}, Lue1;->i(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 45
     .line 46
@@ -7593,7 +7593,7 @@
 
     .line 193
     .line 194
-    invoke-static {v6, v1, v7}, Lh86;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v6, v1, v7}, Ly96;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 195
     .line 196
@@ -8270,7 +8270,7 @@
 
     .line 36
     .line 37
-    invoke-static {v0, v2, v1}, Lpb1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v2, v1}, Loc1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 38
     .line 39
@@ -10761,7 +10761,7 @@
 
     .line 43
     .line 44
-    invoke-static {p0, v1}, Lvd1;->w(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-static {p0, v1}, Lue1;->w(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 45
     .line 46
@@ -10774,7 +10774,7 @@
 
     .line 49
     .line 50
-    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
 
     .line 51
     .line 52

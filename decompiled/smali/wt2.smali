@@ -1,201 +1,198 @@
-.class public abstract Lwt2;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final Lwt2;
+.super Ltt2;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# static fields
-.field public static final a:I
+# instance fields
+.field public y:Lst2;
+
+.field public z:Z
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 7
+# virtual methods
+.method public final E1(Lmj3;J)J
+    .locals 1
 
     .line 1
-    const-string v0, "java.version"
+    iget-object p0, p0, Lwt2;->y:Lst2;
 
     .line 2
     .line 3
-    invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+    sget-object v0, Lst2;->j:Lst2;
 
     .line 4
     .line 5
-    .line 6
-    move-result-object v0
+    if-ne p0, v0, :cond_0
 
+    .line 6
     .line 7
-    const/4 v1, 0x0
+    invoke-static {p2, p3}, Ls61;->h(J)I
 
     .line 8
-    const/4 v2, -0x1
-
     .line 9
-    :try_start_0
-    const-string v3, "[._]"
-
     .line 10
+    move-result p0
+
     .line 11
-    const/4 v4, 0x3
+    invoke-interface {p1, p0}, Lmj3;->W(I)I
 
     .line 12
-    invoke-virtual {v0, v3, v4}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    goto :goto_0
+
+    .line 16
+    :cond_0
+    invoke-static {p2, p3}, Ls61;->h(J)I
+
+    .line 17
+    .line 18
+    .line 19
+    move-result p0
+
+    .line 20
+    invoke-interface {p1, p0}, Lmj3;->i0(I)I
+
+    .line 21
+    .line 22
+    .line 23
+    move-result p0
+
+    .line 24
+    :goto_0
+    const/4 p1, 0x0
+
+    .line 25
+    if-gez p0, :cond_1
+
+    .line 26
+    .line 27
+    move p0, p1
+
+    .line 28
+    :cond_1
+    if-ltz p0, :cond_2
+
+    .line 29
+    .line 30
+    goto :goto_1
+
+    .line 31
+    :cond_2
+    const-string p2, "width must be >= 0"
+
+    .line 32
+    .line 33
+    invoke-static {p2}, Lbq2;->a(Ljava/lang/String;)V
+
+    .line 34
+    .line 35
+    .line 36
+    :goto_1
+    const p2, 0x7fffffff
+
+    .line 37
+    .line 38
+    .line 39
+    invoke-static {p0, p0, p1, p2}, Lt61;->h(IIII)J
+
+    .line 40
+    .line 41
+    .line 42
+    move-result-wide p0
+
+    .line 43
+    return-wide p0
+.end method
+
+.method public final F1()Z
+    .locals 0
+
+    .line 1
+    iget-boolean p0, p0, Lwt2;->z:Z
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public final l(Lnf3;Lmj3;I)I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lwt2;->y:Lst2;
+
+    .line 2
+    .line 3
+    sget-object p1, Lst2;->j:Lst2;
+
+    .line 4
+    .line 5
+    if-ne p0, p1, :cond_0
+
+    .line 6
+    .line 7
+    invoke-interface {p2, p3}, Lmj3;->W(I)I
+
+    .line 8
+    .line 9
+    .line 10
+    move-result p0
+
+    .line 11
+    return p0
+
+    .line 12
+    :cond_0
+    invoke-interface {p2, p3}, Lmj3;->i0(I)I
 
     .line 13
     .line 14
     .line 15
-    move-result-object v3
+    move-result p0
 
     .line 16
-    aget-object v4, v3, v1
+    return p0
+.end method
 
-    .line 17
-    .line 18
-    invoke-static {v4}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+.method public final v0(Lnf3;Lmj3;I)I
+    .locals 0
 
-    .line 19
-    .line 20
-    .line 21
-    move-result v4
+    .line 1
+    iget-object p0, p0, Lwt2;->y:Lst2;
 
-    .line 22
-    const/4 v5, 0x1
+    .line 2
+    .line 3
+    sget-object p1, Lst2;->j:Lst2;
 
-    .line 23
-    if-ne v4, v5, :cond_0
+    .line 4
+    .line 5
+    if-ne p0, p1, :cond_0
 
-    .line 24
-    .line 25
-    array-length v6, v3
+    .line 6
+    .line 7
+    invoke-interface {p2, p3}, Lmj3;->W(I)I
 
-    .line 26
-    if-le v6, v5, :cond_0
+    .line 8
+    .line 9
+    .line 10
+    move-result p0
 
-    .line 27
-    .line 28
-    aget-object v3, v3, v5
+    .line 11
+    return p0
 
-    .line 29
-    .line 30
-    invoke-static {v3}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    .line 31
-    .line 32
-    .line 33
-    move-result v4
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 34
-    goto :goto_0
-
-    .line 35
-    :catch_0
-    move v4, v2
-
-    .line 36
+    .line 12
     :cond_0
-    :goto_0
-    if-ne v4, v2, :cond_2
+    invoke-interface {p2, p3}, Lmj3;->i0(I)I
 
-    .line 37
-    .line 38
-    :try_start_1
-    new-instance v3, Ljava/lang/StringBuilder;
+    .line 13
+    .line 14
+    .line 15
+    move-result p0
 
-    .line 39
-    .line 40
-    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 41
-    .line 42
-    .line 43
-    :goto_1
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    .line 44
-    .line 45
-    .line 46
-    move-result v4
-
-    .line 47
-    if-ge v1, v4, :cond_1
-
-    .line 48
-    .line 49
-    invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
-
-    .line 50
-    .line 51
-    .line 52
-    move-result v4
-
-    .line 53
-    invoke-static {v4}, Ljava/lang/Character;->isDigit(C)Z
-
-    .line 54
-    .line 55
-    .line 56
-    move-result v5
-
-    .line 57
-    if-eqz v5, :cond_1
-
-    .line 58
-    .line 59
-    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 60
-    .line 61
-    .line 62
-    add-int/lit8 v1, v1, 0x1
-
-    .line 63
-    .line 64
-    goto :goto_1
-
-    .line 65
-    :cond_1
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 66
-    .line 67
-    .line 68
-    move-result-object v0
-
-    .line 69
-    invoke-static {v0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    .line 70
-    .line 71
-    .line 72
-    move-result v0
-    :try_end_1
-    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1
-
-    .line 73
-    move v4, v0
-
-    .line 74
-    goto :goto_2
-
-    .line 75
-    :catch_1
-    move v4, v2
-
-    .line 76
-    :cond_2
-    :goto_2
-    if-ne v4, v2, :cond_3
-
-    .line 77
-    .line 78
-    const/4 v4, 0x6
-
-    .line 79
-    :cond_3
-    sput v4, Lwt2;->a:I
-
-    .line 80
-    .line 81
-    return-void
+    .line 16
+    return p0
 .end method

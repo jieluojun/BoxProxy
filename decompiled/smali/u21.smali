@@ -1,219 +1,219 @@
-.class public final synthetic Lu21;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lt52;
+.class public final Lu21;
+.super Lrv4;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final synthetic b:B
 
-.field public final synthetic k:Lcb5;
+.field public final c:Lv21;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcb5;B)V
-    .locals 0
+.method public constructor <init>(Lp62;)V
+    .locals 2
 
     .line 1
-    iput-byte p2, p0, Lu21;->j:B
+    const/4 v0, 0x0
 
     .line 2
+    iput-byte v0, p0, Lu21;->b:B
+
     .line 3
-    iput-object p1, p0, Lu21;->k:Lcb5;
-
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lgu0;
 
+    .line 5
     .line 6
+    const/16 v1, 0xd
+
     .line 7
     .line 8
+    invoke-direct {v0, v1}, Lgu0;-><init>(B)V
+
+    .line 9
+    .line 10
+    .line 11
+    invoke-direct {p0, v0}, Lrv4;-><init>(Le62;)V
+
+    .line 12
+    .line 13
+    .line 14
+    new-instance v0, Lv21;
+
+    .line 15
+    .line 16
+    invoke-direct {v0, p1}, Lv21;-><init>(Lp62;)V
+
+    .line 17
+    .line 18
+    .line 19
+    iput-object v0, p0, Lu21;->c:Lv21;
+
+    .line 20
+    .line 21
+    return-void
+.end method
+
+.method public constructor <init>(Lpw0;)V
+    .locals 2
+
+    const/4 v0, 0x1
+
+    iput-byte v0, p0, Lu21;->b:B
+
+    .line 22
+    new-instance v0, Loz5;
+
+    const/16 v1, 0x18
+
+    invoke-direct {v0, v1}, Loz5;-><init>(B)V
+
+    .line 23
+    invoke-direct {p0, v0}, Lrv4;-><init>(Le62;)V
+
+    .line 24
+    new-instance v0, Lv21;
+
+    invoke-direct {v0, p1}, Lv21;-><init>(Lp62;)V
+
+    iput-object v0, p0, Lu21;->c:Lv21;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+.method public final a(Ljava/lang/Object;)Ltv4;
+    .locals 11
 
     .line 1
-    iget-byte v0, p0, Lu21;->j:B
+    iget-byte v0, p0, Lu21;->b:B
 
     .line 2
     .line 3
-    sget-object v1, Lk27;->a:Lk27;
+    const/4 v1, 0x0
 
     .line 4
+    const/4 v2, 0x1
+
     .line 5
-    const/16 v2, 0x10
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
-    const/4 v3, 0x1
-
     .line 8
-    const/4 v4, 0x0
+    new-instance v3, Ltv4;
 
     .line 9
-    iget-object p0, p0, Lu21;->k:Lcb5;
-
     .line 10
+    if-nez p1, :cond_0
+
     .line 11
-    check-cast p1, Lnw0;
-
     .line 12
+    move v6, v2
+
     .line 13
-    check-cast p2, Lv01;
-
-    .line 14
-    .line 15
-    check-cast p3, Ljava/lang/Integer;
-
-    .line 16
-    .line 17
-    invoke-virtual {p3}, Ljava/lang/Integer;->intValue()I
-
-    .line 18
-    .line 19
-    .line 20
-    move-result p3
-
-    .line 21
-    packed-switch v0, :pswitch_data_0
-
-    .line 22
-    .line 23
-    .line 24
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 25
-    .line 26
-    .line 27
-    and-int/lit8 p1, p3, 0x11
-
-    .line 28
-    .line 29
-    if-eq p1, v2, :cond_0
-
-    .line 30
-    .line 31
-    move p1, v3
-
-    .line 32
     goto :goto_0
 
-    .line 33
+    .line 14
     :cond_0
-    move p1, v4
+    move v6, v1
 
-    .line 34
+    .line 15
     :goto_0
-    and-int/2addr p3, v3
+    const/4 v8, 0x0
 
-    .line 35
-    check-cast p2, Ls62;
+    .line 16
+    const/4 v9, 0x0
 
-    .line 36
-    .line 37
-    invoke-virtual {p2, p3, p1}, Ls62;->T(IZ)Z
+    .line 17
+    const/4 v7, 0x0
 
-    .line 38
-    .line 39
-    .line 40
-    move-result p1
+    .line 18
+    move-object v4, p0
 
-    .line 41
-    if-eqz p1, :cond_1
+    .line 19
+    move-object v5, p1
 
-    .line 42
-    .line 43
-    invoke-static {p0, p2, v4}, Lkf3;->l(Lcb5;Lv01;I)V
+    .line 20
+    invoke-direct/range {v3 .. v9}, Ltv4;-><init>(Lrv4;Ljava/lang/Object;ZLo86;Lp62;Z)V
 
-    .line 44
-    .line 45
-    .line 46
+    .line 21
+    .line 22
+    .line 23
+    return-object v3
+
+    .line 24
+    :pswitch_0
+    move-object v4, p0
+
+    .line 25
+    move-object v5, p1
+
+    .line 26
+    new-instance p0, Ltv4;
+
+    .line 27
+    .line 28
+    if-nez v5, :cond_1
+
+    .line 29
+    .line 30
+    move v7, v2
+
+    .line 31
     goto :goto_1
 
-    .line 47
+    .line 32
     :cond_1
-    invoke-virtual {p2}, Ls62;->W()V
+    move v7, v1
 
-    .line 48
-    .line 49
-    .line 50
+    .line 33
     :goto_1
-    return-object v1
+    const/4 v9, 0x0
 
-    .line 51
-    :pswitch_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .line 34
+    const/4 v10, 0x1
 
-    .line 52
-    .line 53
-    .line 54
-    and-int/lit8 p1, p3, 0x11
+    .line 35
+    const/4 v8, 0x0
 
-    .line 55
-    .line 56
-    if-eq p1, v2, :cond_2
+    .line 36
+    move-object v6, v5
 
-    .line 57
-    .line 58
-    move p1, v3
+    .line 37
+    move-object v5, v4
 
-    .line 59
-    goto :goto_2
+    .line 38
+    move-object v4, p0
 
-    .line 60
-    :cond_2
-    move p1, v4
+    .line 39
+    invoke-direct/range {v4 .. v10}, Ltv4;-><init>(Lrv4;Ljava/lang/Object;ZLo86;Lp62;Z)V
 
-    .line 61
-    :goto_2
-    and-int/2addr p3, v3
+    .line 40
+    .line 41
+    .line 42
+    return-object v4
 
-    .line 62
-    check-cast p2, Ls62;
-
-    .line 63
-    .line 64
-    invoke-virtual {p2, p3, p1}, Ls62;->T(IZ)Z
-
-    .line 65
-    .line 66
-    .line 67
-    move-result p1
-
-    .line 68
-    if-eqz p1, :cond_3
-
-    .line 69
-    .line 70
-    invoke-static {p0, p2, v4}, Lqz6;->c(Lcb5;Lv01;I)V
-
-    .line 71
-    .line 72
-    .line 73
-    goto :goto_3
-
-    .line 74
-    :cond_3
-    invoke-virtual {p2}, Ls62;->W()V
-
-    .line 75
-    .line 76
-    .line 77
-    :goto_3
-    return-object v1
-
-    .line 78
-    nop
-
-    .line 79
+    .line 43
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0
     .end packed-switch
+.end method
+
+.method public final b()Ll57;
+    .locals 1
+
+    .line 1
+    iget-byte v0, p0, Lu21;->b:B
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lu21;->c:Lv21;
+
+    .line 4
+    .line 5
+    return-object p0
 .end method

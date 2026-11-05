@@ -1,150 +1,202 @@
-.class public final Ld70;
+.class public final synthetic Ld70;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lo80;
+.implements Lt62;
 
 
-# static fields
-.field public static final INSTANCE:Ld70;
+# instance fields
+.field public final synthetic j:I
 
-.field public static final synthetic a:Lt03;
+.field public final synthetic k:F
+
+.field public final synthetic l:Z
+
+.field public final synthetic m:Lkv;
+
+.field public final synthetic n:Lnv;
+
+.field public final synthetic o:Lz27;
+
+.field public final synthetic p:Ljava/util/List;
+
+.field public final synthetic q:Lkg3;
+
+.field public final synthetic r:Lla0;
+
+.field public final synthetic s:Lka0;
+
+.field public final synthetic t:Z
+
+.field public final synthetic u:Lry3;
+
+.field public final synthetic v:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(IFZLkv;Lnv;Lz27;Ljava/util/List;Lkg3;Lla0;Lka0;ZLry3;I)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ld70;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    iput p1, p0, Ld70;->j:I
+
     .line 5
     .line 6
-    sput-object v0, Ld70;->INSTANCE:Ld70;
+    iput p2, p0, Ld70;->k:F
 
     .line 7
     .line 8
-    new-instance v0, Lfu;
+    iput-boolean p3, p0, Ld70;->l:Z
 
     .line 9
     .line 10
-    const/16 v1, 0x14
+    iput-object p4, p0, Ld70;->m:Lkv;
 
     .line 11
     .line 12
-    invoke-direct {v0, v1}, Lfu;-><init>(B)V
+    iput-object p5, p0, Ld70;->n:Lnv;
 
     .line 13
     .line 14
+    iput-object p6, p0, Ld70;->o:Lz27;
+
     .line 15
-    sget-object v1, Lt43;->j:Lt43;
-
     .line 16
-    .line 17
-    invoke-static {v1, v0}, Loc7;->Q(Lt43;Ld52;)Lt03;
+    iput-object p7, p0, Ld70;->p:Ljava/util/List;
 
+    .line 17
     .line 18
+    iput-object p8, p0, Ld70;->q:Lkg3;
+
     .line 19
     .line 20
-    move-result-object v0
+    iput-object p9, p0, Ld70;->r:Lla0;
 
     .line 21
-    sput-object v0, Ld70;->a:Lt03;
-
     .line 22
+    iput-object p10, p0, Ld70;->s:Lka0;
+
     .line 23
+    .line 24
+    iput-boolean p11, p0, Ld70;->t:Z
+
+    .line 25
+    .line 26
+    iput-object p12, p0, Ld70;->u:Lry3;
+
+    .line 27
+    .line 28
+    iput p13, p0, Ld70;->v:I
+
+    .line 29
+    .line 30
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 14
 
     .line 1
-    const/4 v0, 0x1
+    move-object v12, p1
 
     .line 2
-    if-ne p0, p1, :cond_0
+    check-cast v12, Lz11;
 
     .line 3
     .line 4
-    return v0
+    move-object/from16 v0, p2
 
     .line 5
-    :cond_0
-    instance-of p0, p1, Ld70;
-
     .line 6
+    check-cast v0, Ljava/lang/Integer;
+
     .line 7
-    if-nez p0, :cond_1
-
     .line 8
-    .line 9
-    const/4 p0, 0x0
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 9
     .line 10
-    return p0
-
     .line 11
-    :cond_1
-    return v0
-.end method
+    iget v0, p0, Ld70;->v:I
 
-.method public final hashCode()I
-    .locals 0
+    .line 12
+    .line 13
+    or-int/lit8 v0, v0, 0x1
 
-    .line 1
-    const p0, 0x1221652e
+    .line 14
+    .line 15
+    invoke-static {v0}, Lqu5;->f0(I)I
 
-    .line 2
-    .line 3
-    .line 4
-    return p0
-.end method
+    .line 16
+    .line 17
+    .line 18
+    move-result v13
 
-.method public final serializer()Lgx2;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lgx2;"
-        }
-    .end annotation
+    .line 19
+    iget v0, p0, Ld70;->j:I
 
-    .line 1
-    sget-object p0, Ld70;->a:Lt03;
+    .line 20
+    .line 21
+    iget v1, p0, Ld70;->k:F
 
-    .line 2
-    .line 3
-    invoke-interface {p0}, Lt03;->getValue()Ljava/lang/Object;
+    .line 22
+    .line 23
+    iget-boolean v2, p0, Ld70;->l:Z
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
+    .line 24
+    .line 25
+    iget-object v3, p0, Ld70;->m:Lkv;
 
-    .line 7
-    check-cast p0, Lgx2;
+    .line 26
+    .line 27
+    iget-object v4, p0, Ld70;->n:Lnv;
 
-    .line 8
-    .line 9
-    return-object p0
-.end method
+    .line 28
+    .line 29
+    iget-object v5, p0, Ld70;->o:Lz27;
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    .line 30
+    .line 31
+    iget-object v6, p0, Ld70;->p:Ljava/util/List;
 
-    .line 1
-    const-string p0, "AboutSponsorship"
+    .line 32
+    .line 33
+    iget-object v7, p0, Ld70;->q:Lkg3;
 
-    .line 2
-    .line 3
+    .line 34
+    .line 35
+    iget-object v8, p0, Ld70;->r:Lla0;
+
+    .line 36
+    .line 37
+    iget-object v9, p0, Ld70;->s:Lka0;
+
+    .line 38
+    .line 39
+    iget-boolean v10, p0, Ld70;->t:Z
+
+    .line 40
+    .line 41
+    iget-object v11, p0, Ld70;->u:Lry3;
+
+    .line 42
+    .line 43
+    invoke-static/range {v0 .. v13}, Lqe1;->d(IFZLkv;Lnv;Lz27;Ljava/util/List;Lkg3;Lla0;Lka0;ZLry3;Lz11;I)V
+
+    .line 44
+    .line 45
+    .line 46
+    sget-object p0, La47;->a:La47;
+
+    .line 47
+    .line 48
     return-object p0
 .end method

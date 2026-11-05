@@ -1,181 +1,69 @@
 .class public final Li82;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Lvp3;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Ljava/util/Iterator;
-.implements Lvw2;
+.implements Lcz6;
+
+
+# static fields
+.field public static final y:Lm21;
 
 
 # instance fields
-.field public final j:Lt56;
-
-.field public final k:I
-
-.field public l:I
-
-.field public final m:I
+.field public final x:Lh82;
 
 
 # direct methods
-.method public constructor <init>(Lt56;II)V
+.method static constructor <clinit>()V
+    .locals 2
+
+    .line 1
+    new-instance v0, Lm21;
+
+    .line 2
+    .line 3
+    const/16 v1, 0x10
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Lm21;-><init>(B)V
+
+    .line 6
+    .line 7
+    .line 8
+    sput-object v0, Li82;->y:Lm21;
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+.method public constructor <init>(Lh82;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lvp3;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Li82;->j:Lt56;
+    iput-object p1, p0, Li82;->x:Lh82;
 
     .line 5
     .line 6
-    iput p3, p0, Li82;->k:I
-
-    .line 7
-    .line 8
-    iput p2, p0, Li82;->l:I
-
-    .line 9
-    .line 10
-    iget p2, p1, Lt56;->q:I
-
-    .line 11
-    .line 12
-    iput p2, p0, Li82;->m:I
-
-    .line 13
-    .line 14
-    iget-boolean p0, p1, Lt56;->p:Z
-
-    .line 15
-    .line 16
-    if-eqz p0, :cond_0
-
-    .line 17
-    .line 18
-    invoke-static {}, Lv56;->e()V
-
-    .line 19
-    .line 20
-    .line 21
-    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .locals 1
+.method public final C()Ljava/lang/Object;
+    .locals 0
 
     .line 1
-    iget v0, p0, Li82;->l:I
+    sget-object p0, Li82;->y:Lm21;
 
     .line 2
     .line 3
-    iget p0, p0, Li82;->k:I
-
-    .line 4
-    .line 5
-    if-ge v0, p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public final next()Ljava/lang/Object;
-    .locals 5
-
-    .line 1
-    iget-object v0, p0, Li82;->j:Lt56;
-
-    .line 2
-    .line 3
-    iget v1, v0, Lt56;->q:I
-
-    .line 4
-    .line 5
-    iget v2, p0, Li82;->m:I
-
-    .line 6
-    .line 7
-    if-eq v1, v2, :cond_0
-
-    .line 8
-    .line 9
-    invoke-static {}, Lv56;->e()V
-
-    .line 10
-    .line 11
-    .line 12
-    :cond_0
-    iget v1, p0, Li82;->l:I
-
-    .line 13
-    .line 14
-    iget-object v3, v0, Lt56;->j:[I
-
-    .line 15
-    .line 16
-    mul-int/lit8 v4, v1, 0x5
-
-    .line 17
-    .line 18
-    add-int/lit8 v4, v4, 0x3
-
-    .line 19
-    .line 20
-    aget v3, v3, v4
-
-    .line 21
-    .line 22
-    add-int/2addr v3, v1
-
-    .line 23
-    iput v3, p0, Li82;->l:I
-
-    .line 24
-    .line 25
-    new-instance p0, Lu56;
-
-    .line 26
-    .line 27
-    invoke-direct {p0, v0, v1, v2}, Lu56;-><init>(Lt56;II)V
-
-    .line 28
-    .line 29
-    .line 30
     return-object p0
-.end method
-
-.method public final remove()V
-    .locals 1
-
-    .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    .line 2
-    .line 3
-    const-string v0, "Operation is not supported for read-only collection"
-
-    .line 4
-    .line 5
-    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    throw p0
 .end method

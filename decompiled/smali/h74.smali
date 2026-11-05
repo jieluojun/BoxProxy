@@ -1,24 +1,20 @@
 .class public final enum Lh74;
 .super Ljava/lang/Enum;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # static fields
-.field public static final k:Lnb3;
+.field public static final enum k:Lh74;
 
 .field public static final enum l:Lh74;
 
-.field public static final enum m:Lh74;
+.field public static final synthetic m:[Lh74;
 
-.field public static final enum n:Lh74;
-
-.field public static final synthetic o:[Lh74;
-
-.field public static final synthetic p:Lzu1;
+.field public static final synthetic n:Lzv1;
 
 
 # instance fields
-.field public final j:Ljava/lang/String;
+.field public final j:I
 
 
 # direct methods
@@ -33,45 +29,43 @@
     const/4 v1, 0x0
 
     .line 4
-    const-string v2, "panel"
+    const v2, 0x7f0f02b6
 
     .line 5
     .line 6
-    const-string v3, "Panel"
-
     .line 7
-    .line 8
-    invoke-direct {v0, v1, v3, v2}, Lh74;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    const-string v3, "Connectivity"
 
+    .line 8
     .line 9
+    invoke-direct {v0, v1, v3, v2}, Lh74;-><init>(ILjava/lang/String;I)V
+
     .line 10
     .line 11
-    sput-object v0, Lh74;->l:Lh74;
-
     .line 12
+    sput-object v0, Lh74;->k:Lh74;
+
     .line 13
+    .line 14
     new-instance v1, Lh74;
 
-    .line 14
     .line 15
+    .line 16
     const/4 v2, 0x1
 
-    .line 16
-    const-string v3, "web_ui"
-
     .line 17
-    .line 18
-    const-string v4, "WebUi"
+    const v3, 0x7f0f02b8
 
+    .line 18
     .line 19
     .line 20
-    invoke-direct {v1, v2, v4, v3}, Lh74;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    const-string v4, "Speed"
 
     .line 21
     .line 22
-    .line 23
-    sput-object v1, Lh74;->m:Lh74;
+    invoke-direct {v1, v2, v4, v3}, Lh74;-><init>(ILjava/lang/String;I)V
 
+    .line 23
     .line 24
     .line 25
     new-instance v2, Lh74;
@@ -81,72 +75,53 @@
     const/4 v3, 0x2
 
     .line 28
-    const-string v4, "app"
+    const v4, 0x7f0f02b7
 
     .line 29
     .line 30
-    const-string v5, "App"
-
     .line 31
-    .line 32
-    invoke-direct {v2, v3, v5, v4}, Lh74;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    const-string v5, "IpQuality"
 
+    .line 32
     .line 33
+    invoke-direct {v2, v3, v5, v4}, Lh74;-><init>(ILjava/lang/String;I)V
+
     .line 34
     .line 35
-    sput-object v2, Lh74;->n:Lh74;
-
     .line 36
+    sput-object v2, Lh74;->l:Lh74;
+
     .line 37
+    .line 38
     filled-new-array {v0, v1, v2}, [Lh74;
 
-    .line 38
     .line 39
     .line 40
+    .line 41
     move-result-object v0
 
-    .line 41
-    sput-object v0, Lh74;->o:[Lh74;
-
     .line 42
+    sput-object v0, Lh74;->m:[Lh74;
+
     .line 43
-    new-instance v1, Lzu1;
-
     .line 44
-    .line 45
-    invoke-direct {v1, v0}, Lzu1;-><init>([Ljava/lang/Enum;)V
+    new-instance v1, Lzv1;
 
+    .line 45
     .line 46
+    invoke-direct {v1, v0}, Lzv1;-><init>([Ljava/lang/Enum;)V
+
     .line 47
     .line 48
-    sput-object v1, Lh74;->p:Lzu1;
-
     .line 49
+    sput-object v1, Lh74;->n:Lzv1;
+
     .line 50
-    new-instance v0, Lnb3;
-
     .line 51
-    .line 52
-    const/16 v1, 0xb
-
-    .line 53
-    .line 54
-    const/4 v2, 0x0
-
-    .line 55
-    invoke-direct {v0, v1, v2}, Lnb3;-><init>(BZ)V
-
-    .line 56
-    .line 57
-    .line 58
-    sput-object v0, Lh74;->k:Lnb3;
-
-    .line 59
-    .line 60
     return-void
 .end method
 
-.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(ILjava/lang/String;I)V
     .locals 0
 
     .line 1
@@ -155,7 +130,7 @@
     .line 2
     .line 3
     .line 4
-    iput-object p3, p0, Lh74;->j:Ljava/lang/String;
+    iput p3, p0, Lh74;->j:I
 
     .line 5
     .line 6
@@ -189,7 +164,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lh74;->o:[Lh74;
+    sget-object v0, Lh74;->m:[Lh74;
 
     .line 2
     .line 3

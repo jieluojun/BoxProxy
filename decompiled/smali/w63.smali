@@ -1,19 +1,21 @@
 .class public final synthetic Lw63;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lb3;
+.implements Ly63;
 
 
 # instance fields
-.field public final synthetic j:Lz63;
+.field public final synthetic j:Li73;
 
-.field public final synthetic k:I
+.field public final synthetic k:Lna5;
+
+.field public final synthetic l:Lp62;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lz63;I)V
+.method public synthetic constructor <init>(Li73;Lna5;Lp62;)V
     .locals 0
 
     .line 1
@@ -22,62 +24,113 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lw63;->j:Lz63;
+    iput-object p1, p0, Lw63;->j:Li73;
 
     .line 5
     .line 6
-    iput p2, p0, Lw63;->k:I
+    iput-object p2, p0, Lw63;->k:Lna5;
 
     .line 7
     .line 8
+    iput-object p3, p0, Lw63;->l:Lp62;
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(I[Ljava/lang/Object;)V
+.method public final f(La73;Ls63;)V
     .locals 1
 
     .line 1
-    iget-object p2, p0, Lw63;->j:Lz63;
+    sget-object p1, Lx63;->a:[I
 
     .line 2
     .line 3
-    iget-object v0, p2, Ld3;->j:Lqt0;
+    invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
 
     .line 4
     .line 5
-    if-eqz v0, :cond_1
-
     .line 6
+    move-result p2
+
     .line 7
-    if-lez p1, :cond_0
+    aget p1, p1, p2
 
     .line 8
     .line 9
-    goto :goto_0
+    const/4 p2, 0x1
 
     .line 10
-    :cond_0
-    new-instance p1, Lzx0;
+    iget-object v0, p0, Lw63;->k:Lna5;
 
     .line 11
     .line 12
-    iget p0, p0, Lw63;->k:I
+    if-eq p1, p2, :cond_2
 
     .line 13
     .line 14
-    invoke-direct {p1, p2, v0, p0}, Lzx0;-><init>(Lz63;Lqt0;I)V
+    const/4 p0, 0x2
 
     .line 15
+    if-eq p1, p0, :cond_0
+
     .line 16
     .line 17
-    invoke-virtual {v0, p1}, Lqt0;->d0(Ljava/lang/Runnable;)V
+    return-void
 
     .line 18
+    :cond_0
+    iget-object p0, v0, Lna5;->j:Ljava/lang/Object;
+
     .line 19
     .line 20
+    check-cast p0, Lez;
+
+    .line 21
+    .line 22
+    if-eqz p0, :cond_1
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Lez;->a()V
+
+    .line 25
+    .line 26
+    .line 27
     :cond_1
-    :goto_0
+    const/4 p0, 0x0
+
+    .line 28
+    iput-object p0, v0, Lna5;->j:Ljava/lang/Object;
+
+    .line 29
+    .line 30
+    return-void
+
+    .line 31
+    :cond_2
+    iget-object p1, p0, Lw63;->l:Lp62;
+
+    .line 32
+    .line 33
+    iget-object p0, p0, Lw63;->j:Li73;
+
+    .line 34
+    .line 35
+    invoke-interface {p1, p0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 36
+    .line 37
+    .line 38
+    move-result-object p0
+
+    .line 39
+    iput-object p0, v0, Lna5;->j:Ljava/lang/Object;
+
+    .line 40
+    .line 41
     return-void
 .end method

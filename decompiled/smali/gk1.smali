@@ -1,118 +1,171 @@
-.class public final synthetic Lgk1;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final Lgk1;
+.super Lvs5;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
-# interfaces
-.implements Ls52;
+
+# static fields
+.field public static final synthetic n:J
 
 
 # instance fields
-.field public final synthetic j:Lko3;
-
-.field public final synthetic k:F
-
-.field public final synthetic l:J
-
-.field public final synthetic m:B
-
-.field public final synthetic n:B
+.field private volatile synthetic _decision$volatile:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lko3;FJII)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v0, Luw;->a:Lsun/misc/Unsafe;
 
     .line 2
     .line 3
+    const-class v1, Lgk1;
+
     .line 4
-    iput-object p1, p0, Lgk1;->j:Lko3;
-
     .line 5
+    const-string v2, "_decision$volatile"
+
     .line 6
-    iput p2, p0, Lgk1;->k:F
-
     .line 7
-    .line 8
-    iput-wide p3, p0, Lgk1;->l:J
+    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
+    .line 8
     .line 9
     .line 10
-    iput-byte p5, p0, Lgk1;->m:B
+    move-result-object v1
 
     .line 11
-    .line 12
-    iput-byte p6, p0, Lgk1;->n:B
+    invoke-virtual {v0, v1}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
 
+    .line 12
     .line 13
     .line 14
+    move-result-wide v0
+
+    .line 15
+    sput-wide v0, Lgk1;->n:J
+
+    .line 16
+    .line 17
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
+.method public final s(Ljava/lang/Object;)V
+    .locals 0
 
     .line 1
-    move-object v4, p1
+    invoke-virtual {p0, p1}, Lgk1;->u(Ljava/lang/Object;)V
 
     .line 2
-    check-cast v4, Lv01;
-
     .line 3
     .line 4
-    check-cast p2, Ljava/lang/Integer;
+    return-void
+.end method
 
+.method public final u(Ljava/lang/Object;)V
+    .locals 6
+
+    .line 1
+    :goto_0
+    sget-object v0, Luw;->a:Lsun/misc/Unsafe;
+
+    .line 2
+    .line 3
+    sget-wide v2, Lgk1;->n:J
+
+    .line 4
     .line 5
-    .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0, p0, v2, v3}, Lsun/misc/Unsafe;->getIntVolatile(Ljava/lang/Object;J)I
 
+    .line 6
     .line 7
     .line 8
+    move-result v1
+
     .line 9
-    iget-byte p1, p0, Lgk1;->m:B
+    if-eqz v1, :cond_1
 
     .line 10
     .line 11
-    or-int/lit8 p1, p1, 0x1
+    const/4 v0, 0x1
 
     .line 12
-    .line 13
-    invoke-static {p1}, Lw23;->h0(I)I
+    if-ne v1, v0, :cond_0
 
+    .line 13
     .line 14
+    iget-object p0, p0, Lvs5;->m:Ly81;
+
     .line 15
     .line 16
-    move-result v5
+    invoke-static {p0}, Lpr;->I(Ly81;)Ly81;
 
     .line 17
-    iget-object v0, p0, Lgk1;->j:Lko3;
-
     .line 18
     .line 19
-    iget v1, p0, Lgk1;->k:F
+    move-result-object p0
 
     .line 20
-    .line 21
-    iget-wide v2, p0, Lgk1;->l:J
+    invoke-static {p1}, Lyt;->b0(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 21
     .line 22
     .line 23
-    iget-byte v6, p0, Lgk1;->n:B
+    move-result-object p1
 
     .line 24
-    .line 25
-    invoke-static/range {v0 .. v6}, Llv;->B(Lko3;FJLv01;II)V
+    invoke-static {p0, p1}, Lp60;->J(Ly81;Ljava/lang/Object;)V
 
+    .line 25
     .line 26
     .line 27
+    return-void
+
     .line 28
-    sget-object p0, Lk27;->a:Lk27;
+    :cond_0
+    const-string p0, "Already resumed"
 
     .line 29
     .line 30
-    return-object p0
+    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+
+    .line 31
+    .line 32
+    .line 33
+    return-void
+
+    .line 34
+    :cond_1
+    const/4 v4, 0x0
+
+    .line 35
+    const/4 v5, 0x2
+
+    .line 36
+    move-object v1, p0
+
+    .line 37
+    invoke-virtual/range {v0 .. v5}, Lsun/misc/Unsafe;->compareAndSwapInt(Ljava/lang/Object;JII)Z
+
+    .line 38
+    .line 39
+    .line 40
+    move-result p0
+
+    .line 41
+    if-eqz p0, :cond_2
+
+    .line 42
+    .line 43
+    return-void
+
+    .line 44
+    :cond_2
+    move-object p0, v1
+
+    .line 45
+    goto :goto_0
 .end method

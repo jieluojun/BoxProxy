@@ -1,32 +1,27 @@
-.class public final synthetic Lca4;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Ljava/lang/AutoCloseable;
+.class public final Lca4;
+.super Ljava/net/ProxySelector;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final synthetic j:Lh63;
-
-.field public final synthetic k:Lmf1;
+# static fields
+.field public static final a:Lca4;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lh63;Lmf1;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lca4;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lca4;->j:Lh63;
+    invoke-direct {v0}, Ljava/net/ProxySelector;-><init>()V
 
+    .line 4
     .line 5
     .line 6
-    iput-object p2, p0, Lca4;->k:Lmf1;
+    sput-object v0, Lca4;->a:Lca4;
 
     .line 7
     .line 8
@@ -35,22 +30,48 @@
 
 
 # virtual methods
-.method public final close()V
-    .locals 1
+.method public final connectFailed(Ljava/net/URI;Ljava/net/SocketAddress;Ljava/io/IOException;)V
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lca4;->j:Lh63;
+    return-void
+.end method
+
+.method public final select(Ljava/net/URI;)Ljava/util/List;
+    .locals 0
+
+    .line 1
+    if-eqz p1, :cond_0
 
     .line 2
     .line 3
-    iget-object p0, p0, Lca4;->k:Lmf1;
+    sget-object p0, Ljava/net/Proxy;->NO_PROXY:Ljava/net/Proxy;
 
     .line 4
     .line 5
-    invoke-virtual {v0, p0}, Lh63;->f(Ld63;)V
+    invoke-static {p0}, Lim;->Q(Ljava/lang/Object;)Ljava/util/List;
 
     .line 6
     .line 7
     .line 8
-    return-void
+    move-result-object p0
+
+    .line 9
+    return-object p0
+
+    .line 10
+    :cond_0
+    const-string p0, "uri must not be null"
+
+    .line 11
+    .line 12
+    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+
+    .line 13
+    .line 14
+    .line 15
+    const/4 p0, 0x0
+
+    .line 16
+    return-object p0
 .end method

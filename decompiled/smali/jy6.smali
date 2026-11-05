@@ -1,24 +1,28 @@
 .class public final Ljy6;
-.super Lky6;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Lz81;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final synthetic a:Lky6;
+.field public synthetic j:Ljava/lang/Object;
+
+.field public final synthetic k:Lky6;
+
+.field public l:I
 
 
 # direct methods
-.method public constructor <init>(Lky6;)V
+.method public constructor <init>(Lky6;Lz81;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ljy6;->k:Lky6;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Ljy6;->a:Lky6;
+    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
 
+    .line 4
     .line 5
     .line 6
     return-void
@@ -26,95 +30,44 @@
 
 
 # virtual methods
-.method public final b(Lhw2;)Ljava/lang/Object;
-    .locals 2
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    invoke-virtual {p1}, Lhw2;->L()I
+    iput-object p1, p0, Ljy6;->j:Ljava/lang/Object;
 
     .line 2
     .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    const/16 v1, 0x9
-
-    .line 6
-    .line 7
-    if-ne v0, v1, :cond_0
-
-    .line 8
-    .line 9
-    invoke-virtual {p1}, Lhw2;->H()V
-
-    .line 10
-    .line 11
-    .line 12
-    const/4 p0, 0x0
-
-    .line 13
-    return-object p0
-
-    .line 14
-    :cond_0
-    iget-object p0, p0, Ljy6;->a:Lky6;
-
-    .line 15
-    .line 16
-    invoke-virtual {p0, p1}, Lky6;->b(Lhw2;)Ljava/lang/Object;
-
-    .line 17
-    .line 18
-    .line 19
-    move-result-object p0
-
-    .line 20
-    return-object p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v1, "NullSafeTypeAdapter["
+    iget p1, p0, Ljy6;->l:I
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    iget-object p0, p0, Ljy6;->a:Lky6;
+    iput p1, p0, Ljy6;->l:I
 
     .line 9
     .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    iget-object p1, p0, Ljy6;->k:Lky6;
 
     .line 11
     .line 12
+    const/4 v0, 0x0
+
     .line 13
-    const-string p0, "]"
+    invoke-virtual {p1, v0, p0}, Lky6;->b(Lze;Lz81;)V
 
     .line 14
     .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 16
+    sget-object p0, Lbc1;->j:Lbc1;
+
     .line 17
     .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-object p0
-
-    .line 22
     return-object p0
 .end method

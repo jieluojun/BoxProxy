@@ -1,73 +1,60 @@
-.class public final Luy5;
-.super Landroid/text/style/CharacterStyle;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-
-# instance fields
-.field public final a:I
-
-.field public final b:F
-
-.field public final c:F
-
-.field public final d:F
-
-
-# direct methods
-.method public constructor <init>(IFFF)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Landroid/text/style/CharacterStyle;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput p1, p0, Luy5;->a:I
-
-    .line 5
-    .line 6
-    iput p2, p0, Luy5;->b:F
-
-    .line 7
-    .line 8
-    iput p3, p0, Luy5;->c:F
-
-    .line 9
-    .line 10
-    iput p4, p0, Luy5;->d:F
-
-    .line 11
-    .line 12
-    return-void
-.end method
+.class public interface abstract Luy5;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # virtual methods
-.method public final updateDrawState(Landroid/text/TextPaint;)V
-    .locals 3
+.method public abstract a(Ljava/lang/String;)I
+.end method
+
+.method public abstract b()Ljava/lang/String;
+.end method
+
+.method public abstract c()Ldj3;
+.end method
+
+.method public abstract d()I
+.end method
+
+.method public abstract e(I)Ljava/lang/String;
+.end method
+
+.method public f()Z
+    .locals 0
 
     .line 1
-    iget v0, p0, Luy5;->c:F
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public getAnnotations()Ljava/util/List;
+    .locals 0
+
+    .line 1
+    sget-object p0, Lqu1;->j:Lqu1;
 
     .line 2
     .line 3
-    iget v1, p0, Luy5;->a:I
+    return-object p0
+.end method
 
-    .line 4
-    .line 5
-    iget v2, p0, Luy5;->d:F
+.method public h()Z
+    .locals 0
 
-    .line 6
-    .line 7
-    iget p0, p0, Luy5;->b:F
+    .line 1
+    const/4 p0, 0x0
 
-    .line 8
-    .line 9
-    invoke-virtual {p1, v2, p0, v0, v1}, Landroid/graphics/Paint;->setShadowLayer(FFFI)V
+    .line 2
+    return p0
+.end method
 
-    .line 10
-    .line 11
-    .line 12
-    return-void
+.method public abstract i(I)Ljava/util/List;
+.end method
+
+.method public abstract j(I)Luy5;
+.end method
+
+.method public abstract k(I)Z
 .end method

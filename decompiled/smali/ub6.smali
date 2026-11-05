@@ -1,160 +1,177 @@
 .class public final Lub6;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Lka2;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Ljava/util/Iterator;
+.implements Lfy2;
 
 
 # instance fields
-.field public a:Lfp2;
-
-.field public b:Ljava/util/ArrayList;
-
-.field public c:I
-
-.field public d:Z
+.field public final synthetic o:B
 
 
 # direct methods
-.method public constructor <init>(Lfp2;)V
-    .locals 1
+.method public synthetic constructor <init>(Lu86;Ljava/util/Iterator;B)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p3, p0, Lub6;->o:B
 
     .line 2
     .line 3
-    .line 4
-    const v0, 0x7fffffff
+    invoke-direct {p0, p1, p2}, Lka2;-><init>(Lu86;Ljava/util/Iterator;)V
 
+    .line 4
     .line 5
     .line 6
-    .line 7
-    iput v0, p0, Lub6;->c:I
-
-    .line 8
-    .line 9
-    const/4 v0, 0x0
-
-    .line 10
-    iput-boolean v0, p0, Lub6;->d:Z
-
-    .line 11
-    .line 12
-    iput-object p1, p0, Lub6;->a:Lfp2;
-
-    .line 13
-    .line 14
-    new-instance p1, Ljava/util/ArrayList;
-
-    .line 15
-    .line 16
-    const/16 v0, 0x80
-
-    .line 17
-    .line 18
-    invoke-direct {p1, v0}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 19
-    .line 20
-    .line 21
-    iput-object p1, p0, Lub6;->b:Ljava/util/ArrayList;
-
-    .line 22
-    .line 23
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final next()Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    iget-object v0, p0, Lub6;->b:Ljava/util/ArrayList;
+    iget-byte v0, p0, Lub6;->o:B
 
     .line 2
     .line 3
-    if-eqz v0, :cond_1
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
-    const/4 v0, -0x1
-
     .line 6
-    const/4 v1, 0x0
+    iget-object v0, p0, Lka2;->n:Ljava/lang/Object;
 
     .line 7
-    :goto_0
-    iget-object v2, p0, Lub6;->b:Ljava/util/ArrayList;
-
     .line 8
-    .line 9
-    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+    check-cast v0, Ljava/util/Map$Entry;
 
+    .line 9
     .line 10
+    if-eqz v0, :cond_0
+
     .line 11
     .line 12
-    move-result v2
+    invoke-virtual {p0}, Lka2;->a()V
 
     .line 13
-    add-int/lit8 v2, v2, -0x1
-
     .line 14
     .line 15
-    if-ge v1, v2, :cond_1
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
     .line 16
     .line 17
-    iget-object v2, p0, Lub6;->b:Ljava/util/ArrayList;
-
     .line 18
+    move-result-object p0
+
     .line 19
-    add-int/lit8 v1, v1, 0x1
+    return-object p0
 
     .line 20
-    .line 21
-    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
 
+    .line 21
     .line 22
+    invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
+
     .line 23
     .line 24
-    move-result-object v2
-
     .line 25
-    check-cast v2, Lnt0;
+    throw p0
 
     .line 26
+    :pswitch_0
+    iget-object v0, p0, Lka2;->n:Ljava/lang/Object;
+
     .line 27
-    iget v2, v2, Lnt0;->c:I
-
     .line 28
+    check-cast v0, Ljava/util/Map$Entry;
+
     .line 29
-    if-le v0, v2, :cond_0
-
     .line 30
+    if-eqz v0, :cond_1
+
     .line 31
-    iget-object p0, p0, Lub6;->b:Ljava/util/ArrayList;
-
     .line 32
-    .line 33
-    sget-object v0, Lnt0;->f:Lqa;
+    invoke-virtual {p0}, Lka2;->a()V
 
+    .line 33
     .line 34
     .line 35
-    invoke-static {p0, v0}, Ljava/util/Collections;->sort(Ljava/util/List;Ljava/util/Comparator;)V
+    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     .line 36
     .line 37
     .line 38
-    return-void
+    move-result-object p0
 
     .line 39
-    :cond_0
-    move v0, v2
+    return-object p0
 
     .line 40
-    goto :goto_0
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalStateException;
 
     .line 41
-    :cond_1
-    return-void
+    .line 42
+    invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    .line 43
+    .line 44
+    .line 45
+    throw p0
+
+    .line 46
+    :pswitch_1
+    invoke-virtual {p0}, Lka2;->a()V
+
+    .line 47
+    .line 48
+    .line 49
+    iget-object v0, p0, Lka2;->m:Ljava/lang/Object;
+
+    .line 50
+    .line 51
+    check-cast v0, Ljava/util/Map$Entry;
+
+    .line 52
+    .line 53
+    if-eqz v0, :cond_2
+
+    .line 54
+    .line 55
+    new-instance v0, Ltb6;
+
+    .line 56
+    .line 57
+    invoke-direct {v0, p0}, Ltb6;-><init>(Lub6;)V
+
+    .line 58
+    .line 59
+    .line 60
+    return-object v0
+
+    .line 61
+    :cond_2
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    .line 62
+    .line 63
+    invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    .line 64
+    .line 65
+    .line 66
+    throw p0
+
+    .line 67
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

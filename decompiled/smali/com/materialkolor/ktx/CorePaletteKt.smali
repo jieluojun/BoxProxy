@@ -1,10 +1,10 @@
 .class public final Lcom/materialkolor/ktx/CorePaletteKt;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # direct methods
-.method public static final contentOf-4WTKRHQ(Lv81;J)Lw81;
+.method public static final contentOf-4WTKRHQ(Lv91;J)Lw91;
     .locals 0
 
     .line 1
@@ -14,7 +14,7 @@
     throw p0
 .end method
 
-.method public static final from-4WTKRHQ(Lv81;J)Lw81;
+.method public static final from-4WTKRHQ(Lv91;J)Lw91;
     .locals 0
 
     .line 1
@@ -24,7 +24,7 @@
     throw p0
 .end method
 
-.method public static final of-4WTKRHQ(Lv81;J)Lw81;
+.method public static final of-4WTKRHQ(Lv91;J)Lw91;
     .locals 0
 
     .line 1

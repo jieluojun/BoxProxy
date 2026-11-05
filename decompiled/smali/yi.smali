@@ -1,325 +1,315 @@
-.class public final enum Lyi;
-.super Ljava/lang/Enum;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final synthetic Lyi;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
-
-# static fields
-.field public static final enum k:Lyi;
-
-.field public static final enum l:Lyi;
-
-.field public static final enum m:Lyi;
-
-.field public static final enum n:Lyi;
-
-.field public static final enum o:Lyi;
-
-.field public static final enum p:Lyi;
-
-.field public static final enum q:Lyi;
-
-.field public static final enum r:Lyi;
-
-.field public static final synthetic s:[Lyi;
-
-.field public static final synthetic t:Lzu1;
+# interfaces
+.implements Le62;
 
 
 # instance fields
-.field public final j:I
+.field public final synthetic j:B
+
+.field public final synthetic k:Ljava/lang/String;
+
+.field public final synthetic l:Lmt3;
+
+.field public final synthetic m:Landroid/content/Context;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 11
+.method public synthetic constructor <init>(Ljava/lang/String;Lmt3;Landroid/content/Context;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lyi;
+    iput-byte p4, p0, Lyi;->j:B
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    iput-object p1, p0, Lyi;->k:Ljava/lang/String;
 
     .line 4
-    const v2, 0x7f0f02ee
-
     .line 5
+    iput-object p2, p0, Lyi;->l:Lmt3;
+
     .line 6
     .line 7
-    const-string v3, "Overview"
+    iput-object p3, p0, Lyi;->m:Landroid/content/Context;
 
     .line 8
     .line 9
-    invoke-direct {v0, v1, v3, v2}, Lyi;-><init>(ILjava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 10
     .line 11
     .line 12
-    sput-object v0, Lyi;->k:Lyi;
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 6
+
+    .line 1
+    iget-byte v0, p0, Lyi;->j:B
+
+    .line 2
+    .line 3
+    sget-object v1, La47;->a:La47;
+
+    .line 4
+    .line 5
+    const/4 v2, 0x0
+
+    .line 6
+    const-string v3, "api_config_reveal_preferences"
+
+    .line 7
+    .line 8
+    iget-object v4, p0, Lyi;->m:Landroid/content/Context;
+
+    .line 9
+    .line 10
+    iget-object v5, p0, Lyi;->l:Lmt3;
+
+    .line 11
+    .line 12
+    iget-object p0, p0, Lyi;->k:Ljava/lang/String;
 
     .line 13
     .line 14
-    new-instance v1, Lyi;
+    packed-switch v0, :pswitch_data_0
 
     .line 15
     .line 16
-    const/4 v2, 0x1
-
     .line 17
-    const v3, 0x7f0f0210
+    invoke-interface {v5}, Lmb6;->getValue()Ljava/lang/Object;
 
     .line 18
     .line 19
     .line 20
-    const-string v4, "ProxySelector"
+    move-result-object v0
 
     .line 21
-    .line 22
-    invoke-direct {v1, v2, v4, v3}, Lyi;-><init>(ILjava/lang/String;I)V
+    check-cast v0, Ljava/lang/Boolean;
 
+    .line 22
     .line 23
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
     .line 24
     .line 25
-    sput-object v1, Lyi;->l:Lyi;
-
     .line 26
+    move-result v0
+
     .line 27
-    new-instance v2, Lyi;
+    xor-int/lit8 v0, v0, 0x1
 
     .line 28
     .line 29
-    const/4 v3, 0x2
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 30
-    const v4, 0x7f0f0151
-
     .line 31
     .line 32
+    move-result-object v0
+
     .line 33
-    const-string v5, "Subscription"
+    invoke-interface {v5, v0}, Lmt3;->setValue(Ljava/lang/Object;)V
 
     .line 34
     .line 35
-    invoke-direct {v2, v3, v5, v4}, Lyi;-><init>(ILjava/lang/String;I)V
-
     .line 36
+    if-eqz p0, :cond_0
+
     .line 37
     .line 38
-    sput-object v2, Lyi;->m:Lyi;
+    invoke-interface {v5}, Lmb6;->getValue()Ljava/lang/Object;
 
     .line 39
     .line 40
-    new-instance v3, Lyi;
-
     .line 41
+    move-result-object v0
+
     .line 42
-    const/4 v4, 0x3
+    check-cast v0, Ljava/lang/Boolean;
 
     .line 43
-    const v5, 0x7f0f02ed
-
     .line 44
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
     .line 45
     .line 46
-    const-string v6, "Connections"
-
     .line 47
+    move-result v0
+
     .line 48
-    invoke-direct {v3, v4, v6, v5}, Lyi;-><init>(ILjava/lang/String;I)V
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 49
     .line 50
     .line 51
-    sput-object v3, Lyi;->n:Lyi;
+    invoke-virtual {v4}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     .line 52
     .line 53
-    new-instance v4, Lyi;
-
     .line 54
+    move-result-object v4
+
     .line 55
-    const/4 v5, 0x4
+    invoke-virtual {v4, v3, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
     .line 56
-    const v6, 0x7f0f0382
-
     .line 57
     .line 58
+    move-result-object v2
+
     .line 59
-    const-string v7, "Rules"
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 60
     .line 61
-    invoke-direct {v4, v5, v7, v6}, Lyi;-><init>(ILjava/lang/String;I)V
-
     .line 62
+    invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
     .line 63
     .line 64
-    sput-object v4, Lyi;->o:Lyi;
-
     .line 65
+    move-result-object v2
+
     .line 66
-    new-instance v5, Lyi;
+    invoke-interface {v2, p0, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     .line 67
     .line 68
-    const/4 v6, 0x5
-
     .line 69
-    const v7, 0x7f0f038c
+    move-result-object p0
 
     .line 70
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
+
     .line 71
     .line 72
-    const-string v8, "RuleProviders"
-
     .line 73
+    :cond_0
+    return-object v1
+
     .line 74
-    invoke-direct {v5, v6, v8, v7}, Lyi;-><init>(ILjava/lang/String;I)V
+    :pswitch_0
+    invoke-interface {v5}, Lmb6;->getValue()Ljava/lang/Object;
 
     .line 75
     .line 76
     .line 77
-    sput-object v5, Lyi;->p:Lyi;
+    move-result-object v0
 
     .line 78
+    check-cast v0, Ljava/lang/Boolean;
+
     .line 79
-    new-instance v6, Lyi;
-
     .line 80
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
     .line 81
-    const/4 v7, 0x6
-
     .line 82
-    const v8, 0x7f0f0173
-
     .line 83
+    move-result v0
+
     .line 84
+    xor-int/lit8 v0, v0, 0x1
+
     .line 85
-    const-string v9, "Logs"
-
     .line 86
-    .line 87
-    invoke-direct {v6, v7, v9, v8}, Lyi;-><init>(ILjava/lang/String;I)V
+    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
+    .line 87
     .line 88
     .line 89
+    move-result-object v0
+
     .line 90
-    sput-object v6, Lyi;->q:Lyi;
+    invoke-interface {v5, v0}, Lmt3;->setValue(Ljava/lang/Object;)V
 
     .line 91
     .line 92
-    new-instance v7, Lyi;
-
     .line 93
-    .line 94
-    const/4 v8, 0x7
+    if-eqz p0, :cond_1
 
+    .line 94
     .line 95
-    const v9, 0x7f0f038d
+    invoke-interface {v5}, Lmb6;->getValue()Ljava/lang/Object;
 
     .line 96
     .line 97
     .line 98
-    const-string v10, "Route"
+    move-result-object v0
 
     .line 99
-    .line 100
-    invoke-direct {v7, v8, v10, v9}, Lyi;-><init>(ILjava/lang/String;I)V
+    check-cast v0, Ljava/lang/Boolean;
 
+    .line 100
     .line 101
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+
     .line 102
     .line 103
-    sput-object v7, Lyi;->r:Lyi;
-
     .line 104
+    move-result v0
+
     .line 105
-    filled-new-array/range {v0 .. v7}, [Lyi;
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 106
     .line 107
     .line 108
-    move-result-object v0
+    invoke-virtual {v4}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     .line 109
-    sput-object v0, Lyi;->s:[Lyi;
-
     .line 110
     .line 111
-    new-instance v1, Lzu1;
+    move-result-object v4
 
     .line 112
-    .line 113
-    invoke-direct {v1, v0}, Lzu1;-><init>([Ljava/lang/Enum;)V
+    invoke-virtual {v4, v3, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
 
+    .line 113
     .line 114
     .line 115
+    move-result-object v2
+
     .line 116
-    sput-object v1, Lyi;->t:Lzu1;
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 117
     .line 118
-    return-void
-.end method
+    .line 119
+    invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
-.method public constructor <init>(ILjava/lang/String;I)V
-    .locals 0
+    .line 120
+    .line 121
+    .line 122
+    move-result-object v2
 
-    .line 1
-    invoke-direct {p0, p2, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    .line 123
+    invoke-interface {v2, p0, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 2
-    .line 3
-    .line 4
-    iput p3, p0, Lyi;->j:I
-
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lyi;
-    .locals 1
-
-    .line 1
-    const-class v0, Lyi;
-
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    .line 4
-    .line 5
-    .line 6
+    .line 124
+    .line 125
+    .line 126
     move-result-object p0
 
-    .line 7
-    check-cast p0, Lyi;
+    .line 127
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
-    .line 8
-    .line 9
-    return-object p0
-.end method
+    .line 128
+    .line 129
+    .line 130
+    :cond_1
+    return-object v1
 
-.method public static values()[Lyi;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lyi;->s:[Lyi;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [Lyi;
-
-    .line 8
-    .line 9
-    return-object v0
+    .line 131
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

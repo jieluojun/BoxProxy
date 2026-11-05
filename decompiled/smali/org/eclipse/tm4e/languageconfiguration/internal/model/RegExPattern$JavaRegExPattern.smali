@@ -1,6 +1,6 @@
 .class final Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern$JavaRegExPattern;
 .super Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # annotations

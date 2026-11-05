@@ -1,27 +1,34 @@
 .class public final Ls47;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lm47;
+.super Lz81;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final j:B
+.field public j:Lb72;
+
+.field public k:Le62;
+
+.field public l:F
+
+.field public synthetic m:Ljava/lang/Object;
+
+.field public final synthetic n:Lt47;
+
+.field public o:I
 
 
 # direct methods
-.method public constructor <init>(I)V
+.method public constructor <init>(Lt47;Lz81;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ls47;->n:Lt47;
 
     .line 2
     .line 3
-    .line 4
-    iput-byte p1, p0, Ls47;->j:B
+    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
 
+    .line 4
     .line 5
     .line 6
     return-void
@@ -29,64 +36,43 @@
 
 
 # virtual methods
-.method public final o()I
-    .locals 0
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    iget-byte p0, p0, Ls47;->j:B
+    iput-object p1, p0, Ls47;->m:Ljava/lang/Object;
 
     .line 2
     .line 3
-    return p0
-.end method
-
-.method public final p(JLth;Lth;Lth;)Lth;
-    .locals 0
-
-    .line 1
-    return-object p5
-.end method
-
-.method public final r()I
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final s(JLth;Lth;Lth;)Lth;
-    .locals 4
-
-    .line 1
-    iget-byte p0, p0, Ls47;->j:B
-
-    .line 2
-    .line 3
-    int-to-long v0, p0
+    iget p1, p0, Ls47;->o:I
 
     .line 4
-    const-wide/32 v2, 0xf4240
-
     .line 5
+    const/high16 v0, -0x80000000
+
     .line 6
     .line 7
-    mul-long/2addr v0, v2
+    or-int/2addr p1, v0
 
     .line 8
-    cmp-long p0, p1, v0
+    iput p1, p0, Ls47;->o:I
 
     .line 9
     .line 10
-    if-gez p0, :cond_0
+    iget-object p1, p0, Ls47;->n:Lt47;
 
     .line 11
     .line 12
-    return-object p3
+    const/4 v0, 0x0
 
     .line 13
-    :cond_0
-    return-object p4
+    invoke-virtual {p1, v0, v0, p0}, Lt47;->a(Lqf;Lnt;Lz81;)Ljava/lang/Object;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p0
+
+    .line 17
+    return-object p0
 .end method

@@ -1,427 +1,531 @@
 .class public final Le23;
-.super Ljo3;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lsz2;
-
-
-# static fields
-.field public static final A:Lc23;
+.implements Lo33;
 
 
 # instance fields
-.field public x:Lf23;
-
-.field public y:Lr77;
-
-.field public z:Lid4;
+.field public final a:Lc33;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lc33;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lc23;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    iput-object p1, p0, Le23;->a:Lc33;
+
     .line 5
     .line 6
-    sput-object v0, Le23;->A:Lc23;
-
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final E1(La23;I)Z
-    .locals 4
+.method public final a()I
+    .locals 0
 
     .line 1
-    const/4 v0, 0x5
+    iget-object p0, p0, Le23;->a:Lc33;
 
     .line 2
-    const/4 v1, 0x0
-
     .line 3
-    const/4 v2, 0x1
+    invoke-virtual {p0}, Lc33;->h()Lr23;
 
     .line 4
-    if-ne p2, v0, :cond_0
-
     .line 5
     .line 6
-    goto :goto_0
+    move-result-object p0
 
     .line 7
-    :cond_0
-    const/4 v0, 0x6
+    iget p0, p0, Lr23;->s:I
 
     .line 8
-    if-ne p2, v0, :cond_1
-
     .line 9
-    .line 10
-    :goto_0
-    iget-object v0, p0, Le23;->z:Lid4;
-
-    .line 11
-    .line 12
-    sget-object v3, Lid4;->k:Lid4;
-
-    .line 13
-    .line 14
-    if-ne v0, v3, :cond_5
-
-    .line 15
-    .line 16
-    goto :goto_4
-
-    .line 17
-    :cond_1
-    const/4 v0, 0x3
-
-    .line 18
-    if-ne p2, v0, :cond_2
-
-    .line 19
-    .line 20
-    goto :goto_1
-
-    .line 21
-    :cond_2
-    const/4 v0, 0x4
-
-    .line 22
-    if-ne p2, v0, :cond_3
-
-    .line 23
-    .line 24
-    :goto_1
-    iget-object v0, p0, Le23;->z:Lid4;
-
-    .line 25
-    .line 26
-    sget-object v3, Lid4;->j:Lid4;
-
-    .line 27
-    .line 28
-    if-ne v0, v3, :cond_5
-
-    .line 29
-    .line 30
-    goto :goto_4
-
-    .line 31
-    :cond_3
-    if-ne p2, v2, :cond_4
-
-    .line 32
-    .line 33
-    goto :goto_2
-
-    .line 34
-    :cond_4
-    const/4 v0, 0x2
-
-    .line 35
-    if-ne p2, v0, :cond_8
-
-    .line 36
-    .line 37
-    :cond_5
-    :goto_2
-    invoke-virtual {p0, p2}, Le23;->F1(I)Z
-
-    .line 38
-    .line 39
-    .line 40
-    move-result p2
-
-    .line 41
-    if-eqz p2, :cond_6
-
-    .line 42
-    .line 43
-    iget p1, p1, La23;->b:I
-
-    .line 44
-    .line 45
-    iget-object p0, p0, Le23;->x:Lf23;
-
-    .line 46
-    .line 47
-    invoke-interface {p0}, Lf23;->a()I
-
-    .line 48
-    .line 49
-    .line 50
-    move-result p0
-
-    .line 51
-    sub-int/2addr p0, v2
-
-    .line 52
-    if-ge p1, p0, :cond_7
-
-    .line 53
-    .line 54
-    goto :goto_3
-
-    .line 55
-    :cond_6
-    iget p0, p1, La23;->a:I
-
-    .line 56
-    .line 57
-    if-lez p0, :cond_7
-
-    .line 58
-    .line 59
-    :goto_3
-    return v2
-
-    .line 60
-    :cond_7
-    :goto_4
-    return v1
-
-    .line 61
-    :cond_8
-    const-string p0, "Lazy list does not support beyond bounds layout for the specified direction"
-
-    .line 62
-    .line 63
-    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
-
-    .line 64
-    .line 65
-    .line 66
-    return v1
+    return p0
 .end method
 
-.method public final F1(I)Z
-    .locals 3
+.method public final b()Z
+    .locals 0
 
     .line 1
-    const/4 v0, 0x0
+    iget-object p0, p0, Le23;->a:Lc33;
 
     .line 2
-    const/4 v1, 0x1
-
     .line 3
-    if-ne p1, v1, :cond_0
+    invoke-virtual {p0}, Lc33;->h()Lr23;
 
     .line 4
     .line 5
-    return v0
-
     .line 6
-    :cond_0
-    const/4 v2, 0x2
+    move-result-object p0
 
     .line 7
-    if-ne p1, v2, :cond_1
+    iget-object p0, p0, Lr23;->p:Ljava/util/List;
 
     .line 8
     .line 9
-    return v1
+    invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
 
     .line 10
-    :cond_1
-    const/4 v2, 0x5
-
     .line 11
-    if-ne p1, v2, :cond_2
-
     .line 12
+    move-result p0
+
     .line 13
-    return v0
+    xor-int/lit8 p0, p0, 0x1
 
     .line 14
-    :cond_2
-    const/4 v2, 0x6
-
     .line 15
-    if-ne p1, v2, :cond_3
+    return p0
+.end method
+
+.method public final c()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Le23;->a:Lc33;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lc33;->h()Lr23;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    iget-object p0, p0, Lr23;->p:Ljava/util/List;
+
+    .line 8
+    .line 9
+    invoke-static {p0}, Lcv0;->H0(Ljava/util/List;)Ljava/lang/Object;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    check-cast p0, Ls23;
+
+    .line 14
+    .line 15
+    iget p0, p0, Ls23;->a:I
 
     .line 16
     .line 17
+    return p0
+.end method
+
+.method public final d()I
+    .locals 15
+
+    .line 1
+    iget-object p0, p0, Le23;->a:Lc33;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lc33;->h()Lr23;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    iget-object v0, v0, Lr23;->p:Ljava/util/List;
+
+    .line 8
+    .line 9
+    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v0
+
+    .line 13
+    const/4 v1, 0x0
+
+    .line 14
+    if-eqz v0, :cond_0
+
+    .line 15
+    .line 16
     return v1
 
+    .line 17
+    :cond_0
+    invoke-virtual {p0}, Lc33;->h()Lr23;
+
     .line 18
-    :cond_3
-    const/4 v2, 0x3
-
     .line 19
-    if-ne p1, v2, :cond_6
-
     .line 20
+    move-result-object v0
+
     .line 21
-    invoke-static {p0}, Lp87;->b0(Lmg1;)La03;
+    iget-object v2, v0, Lr23;->t:Lwe4;
 
     .line 22
     .line 23
-    .line 24
-    move-result-object p0
+    const/16 v3, 0x20
 
+    .line 24
     .line 25
-    iget-object p0, p0, La03;->I:Lkz2;
+    const-wide v4, 0xffffffffL
 
     .line 26
     .line 27
-    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
-
     .line 28
     .line 29
     .line 30
-    move-result p0
+    sget-object v6, Lwe4;->j:Lwe4;
 
     .line 31
-    if-eqz p0, :cond_5
-
     .line 32
+    if-ne v2, v6, :cond_1
+
     .line 33
-    if-ne p0, v1, :cond_4
-
     .line 34
+    invoke-virtual {v0}, Lr23;->i()J
+
     .line 35
-    return v1
-
     .line 36
-    :cond_4
-    invoke-static {}, Lvd1;->a()V
-
     .line 37
+    move-result-wide v7
+
     .line 38
+    and-long/2addr v7, v4
+
     .line 39
     :goto_0
-    const/4 p0, 0x0
+    long-to-int v0, v7
 
     .line 40
-    return p0
+    goto :goto_1
 
     .line 41
-    :cond_5
-    return v0
+    :cond_1
+    invoke-virtual {v0}, Lr23;->i()J
 
     .line 42
-    :cond_6
-    const/4 v2, 0x4
-
     .line 43
-    if-ne p1, v2, :cond_9
-
     .line 44
+    move-result-wide v7
+
     .line 45
-    invoke-static {p0}, Lp87;->b0(Lmg1;)La03;
+    shr-long/2addr v7, v3
 
     .line 46
+    goto :goto_0
+
     .line 47
+    :goto_1
+    invoke-virtual {p0}, Lc33;->h()Lr23;
+
     .line 48
+    .line 49
+    .line 50
     move-result-object p0
 
-    .line 49
-    iget-object p0, p0, La03;->I:Lkz2;
-
-    .line 50
     .line 51
-    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
+    iget-object v2, p0, Lr23;->t:Lwe4;
 
     .line 52
     .line 53
-    .line 54
-    move-result p0
+    iget-object v7, p0, Lr23;->p:Ljava/util/List;
 
+    .line 54
     .line 55
-    if-eqz p0, :cond_8
+    const/4 v8, 0x1
 
     .line 56
-    .line 57
-    if-ne p0, v1, :cond_7
+    if-ne v2, v6, :cond_2
 
+    .line 57
     .line 58
+    move v2, v8
+
     .line 59
-    return v0
+    goto :goto_2
 
     .line 60
-    :cond_7
-    invoke-static {}, Lvd1;->a()V
+    :cond_2
+    move v2, v1
 
     .line 61
+    :goto_2
+    invoke-interface {v7}, Ljava/util/List;->isEmpty()Z
+
     .line 62
     .line 63
-    goto :goto_0
-
     .line 64
-    :cond_8
-    return v1
+    move-result v6
 
     .line 65
-    :cond_9
-    const-string p0, "Lazy list does not support beyond bounds layout for the specified direction"
+    if-eqz v6, :cond_3
 
     .line 66
     .line 67
-    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
+    goto :goto_9
 
     .line 68
+    :cond_3
+    move v6, v1
+
     .line 69
+    move v9, v6
+
     .line 70
-    goto :goto_0
+    move v10, v9
+
+    .line 71
+    :goto_3
+    invoke-interface {v7}, Ljava/util/List;->size()I
+
+    .line 72
+    .line 73
+    .line 74
+    move-result v11
+
+    .line 75
+    if-ge v6, v11, :cond_9
+
+    .line 76
+    .line 77
+    invoke-interface {v7, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    .line 78
+    .line 79
+    .line 80
+    move-result-object v11
+
+    .line 81
+    check-cast v11, Ls23;
+
+    .line 82
+    .line 83
+    if-eqz v2, :cond_4
+
+    .line 84
+    .line 85
+    iget v11, v11, Ls23;->x:I
+
+    .line 86
+    .line 87
+    goto :goto_4
+
+    .line 88
+    :cond_4
+    iget v11, v11, Ls23;->y:I
+
+    .line 89
+    .line 90
+    :goto_4
+    const/4 v12, -0x1
+
+    .line 91
+    if-ne v11, v12, :cond_5
+
+    .line 92
+    .line 93
+    add-int/lit8 v6, v6, 0x1
+
+    .line 94
+    .line 95
+    goto :goto_3
+
+    .line 96
+    :cond_5
+    move v12, v1
+
+    .line 97
+    :goto_5
+    invoke-interface {v7}, Ljava/util/List;->size()I
+
+    .line 98
+    .line 99
+    .line 100
+    move-result v13
+
+    .line 101
+    if-ge v6, v13, :cond_8
+
+    .line 102
+    .line 103
+    invoke-interface {v7, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    .line 104
+    .line 105
+    .line 106
+    move-result-object v13
+
+    .line 107
+    check-cast v13, Ls23;
+
+    .line 108
+    .line 109
+    if-eqz v2, :cond_6
+
+    .line 110
+    .line 111
+    iget v13, v13, Ls23;->x:I
+
+    .line 112
+    .line 113
+    goto :goto_6
+
+    .line 114
+    :cond_6
+    iget v13, v13, Ls23;->y:I
+
+    .line 115
+    .line 116
+    :goto_6
+    if-ne v13, v11, :cond_8
+
+    .line 117
+    .line 118
+    if-eqz v2, :cond_7
+
+    .line 119
+    .line 120
+    invoke-interface {v7, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    .line 121
+    .line 122
+    .line 123
+    move-result-object v13
+
+    .line 124
+    check-cast v13, Ls23;
+
+    .line 125
+    .line 126
+    iget-wide v13, v13, Ls23;->v:J
+
+    .line 127
+    .line 128
+    and-long/2addr v13, v4
+
+    .line 129
+    :goto_7
+    long-to-int v13, v13
+
+    .line 130
+    goto :goto_8
+
+    .line 131
+    :cond_7
+    invoke-interface {v7, v6}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    .line 132
+    .line 133
+    .line 134
+    move-result-object v13
+
+    .line 135
+    check-cast v13, Ls23;
+
+    .line 136
+    .line 137
+    iget-wide v13, v13, Ls23;->v:J
+
+    .line 138
+    .line 139
+    shr-long/2addr v13, v3
+
+    .line 140
+    goto :goto_7
+
+    .line 141
+    :goto_8
+    invoke-static {v12, v13}, Ljava/lang/Math;->max(II)I
+
+    .line 142
+    .line 143
+    .line 144
+    move-result v12
+
+    .line 145
+    add-int/lit8 v6, v6, 0x1
+
+    .line 146
+    .line 147
+    goto :goto_5
+
+    .line 148
+    :cond_8
+    add-int/2addr v9, v12
+
+    .line 149
+    add-int/lit8 v10, v10, 0x1
+
+    .line 150
+    .line 151
+    goto :goto_3
+
+    .line 152
+    :cond_9
+    div-int/2addr v9, v10
+
+    .line 153
+    iget p0, p0, Lr23;->v:I
+
+    .line 154
+    .line 155
+    add-int v1, v9, p0
+
+    .line 156
+    .line 157
+    :goto_9
+    if-nez v1, :cond_a
+
+    .line 158
+    .line 159
+    goto :goto_a
+
+    .line 160
+    :cond_a
+    div-int/2addr v0, v1
+
+    .line 161
+    if-ge v0, v8, :cond_b
+
+    .line 162
+    .line 163
+    :goto_a
+    return v8
+
+    .line 164
+    :cond_b
+    return v0
 .end method
 
-.method public final h(Lki3;Lci3;J)Lii3;
-    .locals 1
+.method public final e()I
+    .locals 0
 
     .line 1
-    invoke-interface {p2, p3, p4}, Lci3;->e(J)Lxn4;
+    iget-object p0, p0, Le23;->a:Lc33;
 
     .line 2
     .line 3
+    invoke-virtual {p0}, Lc33;->g()I
+
     .line 4
-    move-result-object p0
-
     .line 5
-    iget p2, p0, Lxn4;->j:I
-
     .line 6
+    move-result p0
+
     .line 7
-    iget p3, p0, Lxn4;->k:I
-
-    .line 8
-    .line 9
-    new-instance p4, Lt2;
-
-    .line 10
-    .line 11
-    const/16 v0, 0xf
-
-    .line 12
-    .line 13
-    invoke-direct {p4, p0, v0}, Lt2;-><init>(Lxn4;B)V
-
-    .line 14
-    .line 15
-    .line 16
-    sget-object p0, Lrt1;->j:Lrt1;
-
-    .line 17
-    .line 18
-    invoke-interface {p1, p2, p3, p0, p4}, Lki3;->O0(IILjava/util/Map;Lo52;)Lii3;
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-object p0
-
-    .line 22
-    return-object p0
+    return p0
 .end method

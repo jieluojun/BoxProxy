@@ -1,6 +1,6 @@
 .class public final Lcom/sun/jna/Platform;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # static fields
@@ -1132,7 +1132,7 @@
 
     .line 27
     .line 28
-    invoke-static {p0, p2, p1}, Lpb1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p2, p1}, Loc1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 29
     .line 30
@@ -1148,7 +1148,7 @@
 
     .line 34
     .line 35
-    invoke-static {p0, p1}, Lqq5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lhs5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 36
     .line 37
@@ -1164,7 +1164,7 @@
 
     .line 41
     .line 42
-    invoke-static {p0, p1}, Lqq5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lhs5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 43
     .line 44
@@ -1180,7 +1180,7 @@
 
     .line 48
     .line 49
-    invoke-static {p0, p1}, Lqq5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lhs5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 50
     .line 51
@@ -1232,7 +1232,7 @@
 
     .line 71
     .line 72
-    invoke-static {p0, p1}, Lqq5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lhs5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 73
     .line 74
@@ -1248,7 +1248,7 @@
 
     .line 78
     .line 79
-    invoke-static {p0, p1}, Lqq5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lhs5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 80
     .line 81
@@ -1264,7 +1264,7 @@
 
     .line 85
     .line 86
-    invoke-static {p0, p1}, Lqq5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lhs5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 87
     .line 88
@@ -1280,7 +1280,7 @@
 
     .line 92
     .line 93
-    invoke-static {p0, p1}, Lqq5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lhs5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 94
     .line 95
@@ -1296,7 +1296,7 @@
 
     .line 99
     .line 100
-    invoke-static {p0, p1}, Lqq5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lhs5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 101
     .line 102
@@ -1312,7 +1312,7 @@
 
     .line 106
     .line 107
-    invoke-static {p0, p1}, Lqq5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lhs5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 108
     .line 109
@@ -1328,7 +1328,7 @@
 
     .line 113
     .line 114
-    invoke-static {p0, p1}, Lqq5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lhs5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 115
     .line 116

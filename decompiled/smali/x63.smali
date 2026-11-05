@@ -1,158 +1,127 @@
-.class public final synthetic Lx63;
+.class public abstract synthetic Lx63;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Ll61;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final synthetic j:Ly63;
-
-.field public final synthetic k:Ls36;
-
-.field public final synthetic l:Lik4;
-
-.field public final synthetic m:Lk20;
-
-.field public final synthetic n:Lk20;
+# static fields
+.field public static final synthetic a:[I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ly63;Ls36;Lik4;Lk20;Lk20;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p1, p0, Lx63;->j:Ly63;
-
-    .line 5
-    .line 6
-    iput-object p2, p0, Lx63;->k:Ls36;
-
-    .line 7
-    .line 8
-    iput-object p3, p0, Lx63;->l:Lik4;
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Lx63;->m:Lk20;
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Lx63;->n:Lk20;
-
-    .line 13
-    .line 14
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(ILe71;Lk61;)V
+.method static constructor <clinit>()V
     .locals 3
 
     .line 1
-    iget p1, p2, Le71;->l:I
+    invoke-static {}, Ls63;->values()[Ls63;
 
     .line 2
     .line 3
-    iget-object v0, p0, Lx63;->k:Ls36;
-
     .line 4
+    move-result-object v0
+
     .line 5
-    const/4 v1, 0x0
+    array-length v0, v0
 
     .line 6
-    iget-object v2, p0, Lx63;->l:Lik4;
+    new-array v0, v0, [I
 
     .line 7
     .line 8
-    invoke-virtual {v0, p2, v1, p1, v2}, Ls36;->b(Ljava/lang/CharSequence;IILik4;)F
+    :try_start_0
+    sget-object v1, Ls63;->ON_START:Ls63;
 
     .line 9
     .line 10
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
     .line 11
-    move-result p1
-
     .line 12
-    float-to-int p1, p1
-
     .line 13
-    iget-object p2, p0, Lx63;->j:Ly63;
+    move-result v1
 
     .line 14
+    const/4 v2, 0x1
+
     .line 15
-    iget-object v0, p2, Ly63;->q:Lz63;
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 16
     .line 17
-    invoke-virtual {v0}, Ld3;->t()V
+    :catch_0
+    :try_start_1
+    sget-object v1, Ls63;->ON_STOP:Ls63;
 
     .line 18
     .line 19
-    .line 20
-    sget-object v0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
+    .line 20
     .line 21
     .line 22
-    invoke-static {}, Lz63;->v()V
+    move-result v1
 
     .line 23
-    .line 24
-    .line 25
-    invoke-virtual {p2}, Ly63;->b()Z
+    const/4 v2, 0x2
 
+    .line 24
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    .line 25
     .line 26
+    :catch_1
+    :try_start_2
+    sget-object v1, Ls63;->ON_RESUME:Ls63;
+
     .line 27
     .line 28
-    move-result p2
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     .line 29
-    if-eqz p2, :cond_0
-
     .line 30
     .line 31
-    iget-object p2, p0, Lx63;->m:Lk20;
+    move-result v1
 
     .line 32
+    const/4 v2, 0x3
+
     .line 33
-    iget p3, p2, Lk20;->e:I
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 34
     .line 35
-    invoke-virtual {p2, p3, p1}, Lk20;->a(II)V
+    :catch_2
+    :try_start_3
+    sget-object v1, Ls63;->ON_PAUSE:Ls63;
 
     .line 36
     .line 37
-    .line 38
-    iget-object p0, p0, Lx63;->n:Lk20;
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
+    .line 38
     .line 39
     .line 40
-    iget p1, p0, Lk20;->e:I
+    move-result v1
 
     .line 41
+    const/4 v2, 0x4
+
     .line 42
-    invoke-virtual {p0, p1, v1}, Lk20;->a(II)V
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
     .line 43
     .line 44
+    :catch_3
+    sput-object v0, Lx63;->a:[I
+
     .line 45
-    return-void
-
     .line 46
-    :cond_0
-    const/4 p0, 0x1
-
-    .line 47
-    iput-boolean p0, p3, Lk61;->a:Z
-
-    .line 48
-    .line 49
     return-void
 .end method

@@ -1,76 +1,78 @@
-.class public final Lfb0;
-.super Lz71;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public abstract Lfb0;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public j:Ljava/io/File;
+# static fields
+.field public static final a:Ltc1;
 
-.field public k:Ljava/io/File;
+.field public static final b:Ltc1;
 
-.field public synthetic l:Ljava/lang/Object;
+.field public static final c:Ltc1;
 
-.field public final synthetic m:Lgb0;
-
-.field public n:I
+.field public static final d:Ltc1;
 
 
 # direct methods
-.method public constructor <init>(Lgb0;Lz71;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    iput-object p1, p0, Lfb0;->m:Lgb0;
+    sget-object v0, Ltq1;->a:Ltc1;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
+    sput-object v0, Lfb0;->a:Ltc1;
 
     .line 4
     .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iput-object p1, p0, Lfb0;->l:Ljava/lang/Object;
-
-    .line 2
-    .line 3
-    iget p1, p0, Lfb0;->n:I
-
-    .line 4
-    .line 5
-    const/high16 v0, -0x80000000
+    sget-object v0, Ltq1;->b:Ltc1;
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    sput-object v0, Lfb0;->b:Ltc1;
 
     .line 8
-    iput p1, p0, Lfb0;->n:I
-
     .line 9
+    sget-object v0, Ltq1;->c:Ltc1;
+
     .line 10
-    iget-object p1, p0, Lfb0;->m:Lgb0;
-
     .line 11
-    .line 12
-    const/4 v0, 0x0
+    sput-object v0, Lfb0;->c:Ltc1;
 
+    .line 12
     .line 13
-    invoke-virtual {p1, v0, v0, p0}, Lgb0;->x(Ljava/io/File;[BLz71;)Ljava/lang/Object;
+    new-instance v0, Ltc1;
 
     .line 14
     .line 15
-    .line 16
-    move-result-object p0
+    const v1, 0x3dcccccd    # 0.1f
 
+    .line 16
     .line 17
-    return-object p0
+    .line 18
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    .line 19
+    .line 20
+    const v3, 0x3d4ccccd    # 0.05f
+
+    .line 21
+    .line 22
+    .line 23
+    const v4, 0x3f333333    # 0.7f
+
+    .line 24
+    .line 25
+    .line 26
+    invoke-direct {v0, v3, v4, v1, v2}, Ltc1;-><init>(FFFF)V
+
+    .line 27
+    .line 28
+    .line 29
+    sput-object v0, Lfb0;->d:Ltc1;
+
+    .line 30
+    .line 31
+    return-void
 .end method

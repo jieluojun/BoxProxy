@@ -1,69 +1,75 @@
 .class public final Lqz1;
-.super Lz71;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lhr1;
 
 
-# instance fields
-.field public synthetic j:Ljava/lang/Object;
-
-.field public final synthetic k:Lrz1;
-
-.field public l:I
-
-
-# direct methods
-.method public constructor <init>(Lrz1;Lz71;)V
+# virtual methods
+.method public final a(Ljr1;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lqz1;->k:Lrz1;
+    const/4 p0, -0x1
 
     .line 2
-    .line 3
-    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
+    iput p0, p1, Ljr1;->d:I
 
+    .line 3
     .line 4
+    iput p0, p1, Ljr1;->e:I
+
     .line 5
     .line 6
     return-void
 .end method
 
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lqz1;->j:Ljava/lang/Object;
+    instance-of p0, p1, Lqz1;
 
     .line 2
     .line 3
-    iget p1, p0, Lqz1;->l:I
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    const-class p0, Lqz1;
+
+    .line 2
+    .line 3
+    invoke-static {p0}, Loa5;->a(Ljava/lang/Class;)Lsr0;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
-    .line 7
-    or-int/2addr p1, v0
-
-    .line 8
-    iput p1, p0, Lqz1;->l:I
-
-    .line 9
-    .line 10
-    iget-object p1, p0, Lqz1;->k:Lrz1;
-
-    .line 11
-    .line 12
-    invoke-virtual {p1, p0}, Lrz1;->b(Lz71;)Ljava/lang/Object;
-
-    .line 13
-    .line 14
-    .line 15
     move-result-object p0
 
-    .line 16
+    .line 7
+    invoke-virtual {p0}, Lsr0;->hashCode()I
+
+    .line 8
+    .line 9
+    .line 10
+    move-result p0
+
+    .line 11
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    const-string p0, "FinishComposingTextCommand()"
+
+    .line 2
+    .line 3
     return-object p0
 .end method

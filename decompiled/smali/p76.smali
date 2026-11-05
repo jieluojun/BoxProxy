@@ -1,211 +1,85 @@
-.class public final Lp76;
-.super Lad0;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lds2;
+.class public final enum Lp76;
+.super Ljava/lang/Enum;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final a:J
+# static fields
+.field public static final enum j:Lp76;
+
+.field public static final enum k:Lp76;
+
+.field public static final synthetic l:[Lp76;
 
 
 # direct methods
-.method public constructor <init>(J)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lp76;
 
     .line 2
     .line 3
-    .line 4
-    iput-wide p1, p0, Lp76;->a:J
-
-    .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(FLjava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    const/4 p0, 0x0
-
-    throw p0
-.end method
-
-.method public final b(FJLbd4;)V
-    .locals 2
-
-    .line 1
-    const/high16 p2, 0x3f800000    # 1.0f
-
-    .line 2
-    .line 3
-    invoke-virtual {p4, p2}, Lbd4;->p(F)V
+    const-string v1, "Replace"
 
     .line 4
     .line 5
+    const/4 v2, 0x0
+
     .line 6
-    cmpg-float p2, p1, p2
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
-    iget-wide v0, p0, Lp76;->a:J
-
     .line 9
+    sput-object v0, Lp76;->j:Lp76;
+
     .line 10
-    if-nez p2, :cond_0
-
     .line 11
-    .line 12
-    goto :goto_0
+    new-instance v1, Lp76;
 
+    .line 12
     .line 13
-    :cond_0
-    invoke-static {v0, v1}, Lhu0;->d(J)F
+    const-string v2, "Merge"
 
     .line 14
     .line 15
+    const/4 v3, 0x1
+
     .line 16
-    move-result p0
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
-    mul-float/2addr p0, p1
-
     .line 18
-    invoke-static {v0, v1, p0}, Lhu0;->c(JF)J
-
     .line 19
+    sput-object v1, Lp76;->k:Lp76;
+
     .line 20
     .line 21
-    move-result-wide v0
+    filled-new-array {v0, v1}, [Lp76;
 
     .line 22
-    :goto_0
-    invoke-virtual {p4, v0, v1}, Lbd4;->r(J)V
-
     .line 23
     .line 24
+    move-result-object v0
+
     .line 25
-    iget-object p0, p4, Lbd4;->d:Ljava/lang/Object;
+    sput-object v0, Lp76;->l:[Lp76;
 
     .line 26
     .line 27
-    check-cast p0, Landroid/graphics/Shader;
-
-    .line 28
-    .line 29
-    if-eqz p0, :cond_1
-
-    .line 30
-    .line 31
-    const/4 p0, 0x0
-
-    .line 32
-    invoke-virtual {p4, p0}, Lbd4;->u(Landroid/graphics/Shader;)V
-
-    .line 33
-    .line 34
-    .line 35
-    :cond_1
     return-void
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
+.method public static valueOf(Ljava/lang/String;)Lp76;
+    .locals 1
 
     .line 1
-    if-ne p0, p1, :cond_0
+    const-class v0, Lp76;
 
     .line 2
     .line 3
-    goto :goto_1
-
-    .line 4
-    :cond_0
-    instance-of v0, p1, Lp76;
-
-    .line 5
-    .line 6
-    if-nez v0, :cond_1
-
-    .line 7
-    .line 8
-    goto :goto_0
-
-    .line 9
-    :cond_1
-    check-cast p1, Lp76;
-
-    .line 10
-    .line 11
-    iget-wide v0, p1, Lp76;->a:J
-
-    .line 12
-    .line 13
-    iget-wide p0, p0, Lp76;->a:J
-
-    .line 14
-    .line 15
-    invoke-static {p0, p1, v0, v1}, Lm07;->a(JJ)Z
-
-    .line 16
-    .line 17
-    .line 18
-    move-result p0
-
-    .line 19
-    if-nez p0, :cond_2
-
-    .line 20
-    .line 21
-    :goto_0
-    const/4 p0, 0x0
-
-    .line 22
-    return p0
-
-    .line 23
-    :cond_2
-    :goto_1
-    const/4 p0, 0x1
-
-    .line 24
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    .line 1
-    iget-wide v0, p0, Lp76;->a:J
-
-    .line 2
-    .line 3
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    iget-wide v0, p0, Lp76;->a:J
-
-    .line 2
-    .line 3
-    invoke-static {v0, v1}, Lhu0;->i(J)Ljava/lang/String;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     .line 4
     .line 5
@@ -213,21 +87,32 @@
     move-result-object p0
 
     .line 7
-    const-string v0, "SolidColor(value="
+    check-cast p0, Lp76;
 
     .line 8
     .line 9
-    const-string v1, ")"
-
-    .line 10
-    .line 11
-    invoke-static {v0, p0, v1}, Lpb1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object p0
-
-    .line 15
     return-object p0
+.end method
+
+.method public static values()[Lp76;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lp76;->l:[Lp76;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lp76;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

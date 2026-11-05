@@ -1,65 +1,119 @@
-.class public final Luw5;
+.class public abstract Luw5;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lg02;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final j:Ltw5;
+# static fields
+.field public static final a:Lcy5;
 
 
 # direct methods
-.method public constructor <init>(Ldt4;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lcy5;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Luw5;->j:Ltw5;
+    const-string v1, "SelectionHandleInfo"
 
+    .line 4
     .line 5
+    invoke-direct {v0, v1}, Lcy5;-><init>(Ljava/lang/String;)V
+
     .line 6
+    .line 7
+    .line 8
+    sput-object v0, Luw5;->a:Lcy5;
+
+    .line 9
+    .line 10
     return-void
 .end method
 
-
-# virtual methods
-.method public final e(Ljava/lang/Object;Ly71;)Ljava/lang/Object;
-    .locals 0
+.method public static final a(J)J
+    .locals 6
 
     .line 1
-    iget-object p0, p0, Luw5;->j:Ltw5;
+    const/16 v0, 0x20
 
     .line 2
     .line 3
-    invoke-interface {p0, p2, p1}, Ltw5;->a(Ly71;Ljava/lang/Object;)Ljava/lang/Object;
+    shr-long v1, p0, v0
 
     .line 4
     .line 5
+    long-to-int v1, v1
+
     .line 6
-    move-result-object p0
+    invoke-static {v1}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     .line 7
-    sget-object p1, Lcb1;->j:Lcb1;
-
     .line 8
     .line 9
-    if-ne p0, p1, :cond_0
+    move-result v1
 
     .line 10
+    const-wide v2, 0xffffffffL
+
     .line 11
-    return-object p0
-
     .line 12
-    :cond_0
-    sget-object p0, Lk27;->a:Lk27;
-
     .line 13
     .line 14
-    return-object p0
+    .line 15
+    and-long/2addr p0, v2
+
+    .line 16
+    long-to-int p0, p0
+
+    .line 17
+    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 18
+    .line 19
+    .line 20
+    move-result p0
+
+    .line 21
+    const/high16 p1, 0x3f800000    # 1.0f
+
+    .line 22
+    .line 23
+    sub-float/2addr p0, p1
+
+    .line 24
+    invoke-static {v1}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 25
+    .line 26
+    .line 27
+    move-result p1
+
+    .line 28
+    int-to-long v4, p1
+
+    .line 29
+    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 30
+    .line 31
+    .line 32
+    move-result p0
+
+    .line 33
+    int-to-long p0, p0
+
+    .line 34
+    shl-long v0, v4, v0
+
+    .line 35
+    .line 36
+    and-long/2addr p0, v2
+
+    .line 37
+    or-long/2addr p0, v0
+
+    .line 38
+    return-wide p0
 .end method

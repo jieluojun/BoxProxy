@@ -1,139 +1,52 @@
 .class public final Llk6;
-.super Lxj6;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Lz81;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final b:Landroid/view/textclassifier/TextClassification;
+.field public j:Lrh6;
 
-.field public final c:I
+.field public k:Lpq4;
 
-.field public final d:Landroid/graphics/drawable/Drawable;
+.field public synthetic l:Ljava/lang/Object;
 
-
-# direct methods
-.method public constructor <init>(Ljava/lang/Object;Landroid/view/textclassifier/TextClassification;ILandroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0, p1}, Lxj6;-><init>(Ljava/lang/Object;)V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p2, p0, Llk6;->b:Landroid/view/textclassifier/TextClassification;
-
-    .line 5
-    .line 6
-    iput p3, p0, Llk6;->c:I
-
-    .line 7
-    .line 8
-    iput-object p4, p0, Llk6;->d:Landroid/graphics/drawable/Drawable;
-
-    .line 9
-    .line 10
-    return-void
-.end method
+.field public m:I
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    iput-object p1, p0, Llk6;->l:Ljava/lang/Object;
 
     .line 2
     .line 3
-    const-string v1, "TextContextMenuTextClassificationItem(key="
+    iget p1, p0, Llk6;->m:I
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    iget-object v1, p0, Lxj6;->a:Ljava/lang/Object;
+    iput p1, p0, Llk6;->m:I
 
     .line 9
     .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const/4 p1, 0x0
 
     .line 11
+    invoke-static {p1, p1, p0}, Lmk6;->j(Lrh6;Lpq4;Lc00;)Ljava/lang/Object;
+
     .line 12
     .line 13
-    const-string v1, ", textClassification="
-
     .line 14
-    .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    iget-object v1, p0, Llk6;->b:Landroid/view/textclassifier/TextClassification;
-
-    .line 19
-    .line 20
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 21
-    .line 22
-    .line 23
-    const-string v1, ", index="
-
-    .line 24
-    .line 25
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 26
-    .line 27
-    .line 28
-    iget v1, p0, Llk6;->c:I
-
-    .line 29
-    .line 30
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 31
-    .line 32
-    .line 33
-    const-string v1, ", icon="
-
-    .line 34
-    .line 35
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 36
-    .line 37
-    .line 38
-    iget-object p0, p0, Llk6;->d:Landroid/graphics/drawable/Drawable;
-
-    .line 39
-    .line 40
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 41
-    .line 42
-    .line 43
-    const-string p0, ")"
-
-    .line 44
-    .line 45
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 46
-    .line 47
-    .line 48
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 49
-    .line 50
-    .line 51
     move-result-object p0
 
-    .line 52
+    .line 15
     return-object p0
 .end method

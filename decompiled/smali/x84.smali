@@ -1,1991 +1,2236 @@
-.class public interface abstract Lx84;
+.class public final Lx84;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# static fields
-.field public static final a:[Ljava/lang/String;
+# instance fields
+.field public final a:Landroid/content/Context;
 
-.field public static final b:[I
+.field public final b:Ljava/util/ArrayList;
+
+.field public final c:Ljava/util/ArrayList;
+
+.field public final d:Ljava/util/ArrayList;
+
+.field public e:Ljava/lang/CharSequence;
+
+.field public f:Ljava/lang/CharSequence;
+
+.field public g:Landroid/app/PendingIntent;
+
+.field public h:Z
+
+.field public i:Lr82;
+
+.field public j:Ljava/lang/String;
+
+.field public k:Landroid/os/Bundle;
+
+.field public l:Z
+
+.field public final m:Landroid/app/Notification;
+
+.field public n:Z
+
+.field public final o:Ljava/util/ArrayList;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 25
+.method public constructor <init>(Lcom/box/app/notification/BoxPersistentNotificationService;)V
+    .locals 3
 
     .line 1
-    sget-boolean v0, Lv11;->K:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/16 v2, 0x12
-
     .line 4
+    new-instance v0, Ljava/util/ArrayList;
+
     .line 5
-    const/16 v3, 0x11
-
     .line 6
-    .line 7
-    const/16 v4, 0x10
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
+    .line 7
     .line 8
     .line 9
-    const/16 v5, 0xf
+    iput-object v0, p0, Lx84;->b:Ljava/util/ArrayList;
 
     .line 10
     .line 11
-    const/16 v6, 0xe
+    new-instance v0, Ljava/util/ArrayList;
 
     .line 12
     .line 13
-    const/16 v7, 0xd
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 14
     .line 15
-    const/16 v8, 0xc
-
     .line 16
+    iput-object v0, p0, Lx84;->c:Ljava/util/ArrayList;
+
     .line 17
-    const/16 v9, 0xb
-
     .line 18
+    new-instance v0, Ljava/util/ArrayList;
+
     .line 19
-    const/16 v10, 0xa
-
     .line 20
-    .line 21
-    const/16 v11, 0x9
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
+    .line 21
     .line 22
     .line 23
-    const/16 v12, 0x8
+    iput-object v0, p0, Lx84;->d:Ljava/util/ArrayList;
 
     .line 24
     .line 25
-    const/4 v13, 0x7
+    const/4 v0, 0x1
 
     .line 26
-    const/4 v14, 0x3
+    iput-boolean v0, p0, Lx84;->h:Z
 
     .line 27
-    const/16 v15, 0x64
-
     .line 28
+    const/4 v0, 0x0
+
     .line 29
-    const/16 v16, 0x2
+    iput-boolean v0, p0, Lx84;->l:Z
 
     .line 30
     .line 31
-    const/16 v17, 0x5
+    new-instance v0, Landroid/app/Notification;
 
     .line 32
     .line 33
-    const/16 v18, 0x6
+    invoke-direct {v0}, Landroid/app/Notification;-><init>()V
 
     .line 34
     .line 35
-    const/16 v19, 0x1
-
     .line 36
+    iput-object v0, p0, Lx84;->m:Landroid/app/Notification;
+
     .line 37
-    const/16 v20, 0x4
-
     .line 38
+    iput-object p1, p0, Lx84;->a:Landroid/content/Context;
+
     .line 39
-    const/16 v21, 0x0
-
     .line 40
-    .line 41
-    if-eqz v0, :cond_0
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
+    .line 41
     .line 42
     .line 43
-    const/16 v22, 0x13
+    move-result-wide v1
 
     .line 44
-    .line 45
-    new-array v1, v15, [Ljava/lang/String;
+    iput-wide v1, v0, Landroid/app/Notification;->when:J
 
+    .line 45
     .line 46
+    const/4 p1, -0x1
+
     .line 47
-    const-string v23, "finish"
+    iput p1, v0, Landroid/app/Notification;->audioStreamType:I
 
     .line 48
     .line 49
-    aput-object v23, v1, v21
+    new-instance p1, Ljava/util/ArrayList;
 
     .line 50
     .line 51
-    const-string v23, "end"
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     .line 52
     .line 53
-    aput-object v23, v1, v19
-
     .line 54
+    iput-object p1, p0, Lx84;->o:Ljava/util/ArrayList;
+
     .line 55
-    const-string v23, "exact1"
-
     .line 56
+    return-void
+.end method
+
+.method public static b(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    .locals 2
+
+    .line 1
+    if-nez p0, :cond_0
+
+    .line 2
+    .line 3
+    return-object p0
+
+    .line 4
+    :cond_0
+    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
+
+    .line 5
+    .line 6
+    .line 7
+    move-result v0
+
+    .line 8
+    const/16 v1, 0x1400
+
+    .line 9
+    .line 10
+    if-le v0, v1, :cond_1
+
+    .line 11
+    .line 12
+    const/4 v0, 0x0
+
+    .line 13
+    invoke-interface {p0, v0, v1}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p0
+
+    .line 17
+    :cond_1
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public final a()Landroid/app/Notification;
+    .locals 20
+
+    .line 1
+    move-object/from16 v0, p0
+
+    .line 2
+    .line 3
+    new-instance v1, Landroid/os/Bundle;
+
+    .line 4
+    .line 5
+    invoke-direct {v1}, Landroid/os/Bundle;-><init>()V
+
+    .line 6
+    .line 7
+    .line 8
+    new-instance v2, Landroid/app/Notification$Builder;
+
+    .line 9
+    .line 10
+    iget-object v3, v0, Lx84;->a:Landroid/content/Context;
+
+    .line 11
+    .line 12
+    const-string v4, "box_persistent_status"
+
+    .line 13
+    .line 14
+    invoke-direct {v2, v3, v4}, Landroid/app/Notification$Builder;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+
+    .line 15
+    .line 16
+    .line 17
+    iget-object v3, v0, Lx84;->m:Landroid/app/Notification;
+
+    .line 18
+    .line 19
+    iget-wide v5, v3, Landroid/app/Notification;->when:J
+
+    .line 20
+    .line 21
+    invoke-virtual {v2, v5, v6}, Landroid/app/Notification$Builder;->setWhen(J)Landroid/app/Notification$Builder;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object v5
+
+    .line 25
+    iget v6, v3, Landroid/app/Notification;->icon:I
+
+    .line 26
+    .line 27
+    iget v7, v3, Landroid/app/Notification;->iconLevel:I
+
+    .line 28
+    .line 29
+    invoke-virtual {v5, v6, v7}, Landroid/app/Notification$Builder;->setSmallIcon(II)Landroid/app/Notification$Builder;
+
+    .line 30
+    .line 31
+    .line 32
+    move-result-object v5
+
+    .line 33
+    iget-object v6, v3, Landroid/app/Notification;->contentView:Landroid/widget/RemoteViews;
+
+    .line 34
+    .line 35
+    invoke-virtual {v5, v6}, Landroid/app/Notification$Builder;->setContent(Landroid/widget/RemoteViews;)Landroid/app/Notification$Builder;
+
+    .line 36
+    .line 37
+    .line 38
+    move-result-object v5
+
+    .line 39
+    iget-object v6, v3, Landroid/app/Notification;->tickerText:Ljava/lang/CharSequence;
+
+    .line 40
+    .line 41
+    const/4 v7, 0x0
+
+    .line 42
+    invoke-virtual {v5, v6, v7}, Landroid/app/Notification$Builder;->setTicker(Ljava/lang/CharSequence;Landroid/widget/RemoteViews;)Landroid/app/Notification$Builder;
+
+    .line 43
+    .line 44
+    .line 45
+    move-result-object v5
+
+    .line 46
+    iget-object v6, v3, Landroid/app/Notification;->vibrate:[J
+
+    .line 47
+    .line 48
+    invoke-virtual {v5, v6}, Landroid/app/Notification$Builder;->setVibrate([J)Landroid/app/Notification$Builder;
+
+    .line 49
+    .line 50
+    .line 51
+    move-result-object v5
+
+    .line 52
+    iget v6, v3, Landroid/app/Notification;->ledARGB:I
+
+    .line 53
+    .line 54
+    iget v8, v3, Landroid/app/Notification;->ledOnMS:I
+
+    .line 55
+    .line 56
+    iget v9, v3, Landroid/app/Notification;->ledOffMS:I
+
     .line 57
-    aput-object v23, v1, v16
-
     .line 58
-    .line 59
-    const-string v23, "exact2"
+    invoke-virtual {v5, v6, v8, v9}, Landroid/app/Notification$Builder;->setLights(III)Landroid/app/Notification$Builder;
 
+    .line 59
     .line 60
     .line 61
-    aput-object v23, v1, v14
+    move-result-object v5
 
     .line 62
-    .line 63
-    const-string v23, "exact3"
+    iget v6, v3, Landroid/app/Notification;->flags:I
 
+    .line 63
     .line 64
+    const/4 v8, 0x2
+
     .line 65
-    aput-object v23, v1, v20
+    and-int/2addr v6, v8
 
     .line 66
+    const/4 v9, 0x1
+
     .line 67
-    const-string v23, "exact4"
+    const/4 v10, 0x0
 
     .line 68
-    .line 69
-    aput-object v23, v1, v17
+    if-eqz v6, :cond_0
 
+    .line 69
     .line 70
+    move v6, v9
+
     .line 71
-    const-string v23, "exact5"
+    goto :goto_0
 
     .line 72
+    :cond_0
+    move v6, v10
+
     .line 73
-    aput-object v23, v1, v18
+    :goto_0
+    invoke-virtual {v5, v6}, Landroid/app/Notification$Builder;->setOngoing(Z)Landroid/app/Notification$Builder;
 
     .line 74
     .line 75
-    const-string v23, "exactn"
-
     .line 76
+    move-result-object v5
+
     .line 77
-    aput-object v23, v1, v13
+    iget v6, v3, Landroid/app/Notification;->flags:I
 
     .line 78
     .line 79
-    const-string v23, "exactmb2-n1"
+    and-int/lit8 v6, v6, 0x8
 
     .line 80
     .line 81
-    aput-object v23, v1, v12
+    if-eqz v6, :cond_1
 
     .line 82
     .line 83
-    const-string v23, "exactmb2-n2"
+    move v6, v9
 
     .line 84
+    goto :goto_1
+
     .line 85
-    aput-object v23, v1, v11
+    :cond_1
+    move v6, v10
 
     .line 86
-    .line 87
-    const-string v23, "exactmb2-n3"
+    :goto_1
+    invoke-virtual {v5, v6}, Landroid/app/Notification$Builder;->setOnlyAlertOnce(Z)Landroid/app/Notification$Builder;
 
+    .line 87
     .line 88
     .line 89
-    aput-object v23, v1, v10
+    move-result-object v5
 
     .line 90
+    iget v6, v3, Landroid/app/Notification;->flags:I
+
     .line 91
-    const-string v23, "exactmb2-n"
-
     .line 92
+    and-int/lit8 v6, v6, 0x10
+
     .line 93
-    aput-object v23, v1, v9
-
     .line 94
-    .line 95
-    const-string v23, "exactmb3n"
+    if-eqz v6, :cond_2
 
+    .line 95
     .line 96
+    move v6, v9
+
     .line 97
-    aput-object v23, v1, v8
+    goto :goto_2
 
     .line 98
+    :cond_2
+    move v6, v10
+
     .line 99
-    const-string v23, "exactmbn"
+    :goto_2
+    invoke-virtual {v5, v6}, Landroid/app/Notification$Builder;->setAutoCancel(Z)Landroid/app/Notification$Builder;
 
     .line 100
     .line 101
-    aput-object v23, v1, v7
-
     .line 102
+    move-result-object v5
+
     .line 103
-    const-string v23, "exact1-ic"
+    iget v6, v3, Landroid/app/Notification;->defaults:I
 
     .line 104
     .line 105
-    aput-object v23, v1, v6
+    invoke-virtual {v5, v6}, Landroid/app/Notification$Builder;->setDefaults(I)Landroid/app/Notification$Builder;
 
     .line 106
     .line 107
-    const-string v23, "exactn-ic"
-
     .line 108
+    move-result-object v5
+
     .line 109
-    aput-object v23, v1, v5
+    iget-object v6, v0, Lx84;->e:Ljava/lang/CharSequence;
 
     .line 110
     .line 111
-    const-string v23, "cclass"
+    invoke-virtual {v5, v6}, Landroid/app/Notification$Builder;->setContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
     .line 112
     .line 113
-    aput-object v23, v1, v4
-
     .line 114
+    move-result-object v5
+
     .line 115
-    const-string v23, "cclass-mb"
+    iget-object v6, v0, Lx84;->f:Ljava/lang/CharSequence;
 
     .line 116
     .line 117
-    aput-object v23, v1, v3
+    invoke-virtual {v5, v6}, Landroid/app/Notification$Builder;->setContentText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
     .line 118
     .line 119
-    const-string v23, "cclass-mix"
-
     .line 120
+    move-result-object v5
+
     .line 121
-    aput-object v23, v1, v2
+    invoke-virtual {v5, v7}, Landroid/app/Notification$Builder;->setContentInfo(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
     .line 122
     .line 123
-    const-string v23, "cclass-not"
-
     .line 124
+    move-result-object v5
+
     .line 125
-    aput-object v23, v1, v22
+    iget-object v6, v0, Lx84;->g:Landroid/app/PendingIntent;
 
     .line 126
     .line 127
-    const/16 v23, 0x14
+    invoke-virtual {v5, v6}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
 
     .line 128
     .line 129
-    const-string v24, "cclass-mb-not"
-
     .line 130
+    move-result-object v5
+
     .line 131
-    aput-object v24, v1, v23
+    iget-object v6, v3, Landroid/app/Notification;->deleteIntent:Landroid/app/PendingIntent;
 
     .line 132
     .line 133
-    const/16 v23, 0x15
+    invoke-virtual {v5, v6}, Landroid/app/Notification$Builder;->setDeleteIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
 
     .line 134
     .line 135
-    const-string v24, "cclass-mix-not"
-
     .line 136
+    move-result-object v5
+
     .line 137
-    aput-object v24, v1, v23
+    iget v6, v3, Landroid/app/Notification;->flags:I
 
     .line 138
     .line 139
-    const/16 v23, 0x16
+    and-int/lit16 v6, v6, 0x80
 
     .line 140
     .line 141
-    const-string v24, "anychar"
+    if-eqz v6, :cond_3
 
     .line 142
     .line 143
-    aput-object v24, v1, v23
+    move v6, v9
 
     .line 144
+    goto :goto_3
+
     .line 145
-    const/16 v23, 0x17
+    :cond_3
+    move v6, v10
 
     .line 146
-    .line 147
-    const-string v24, "anychar-ml"
+    :goto_3
+    invoke-virtual {v5, v7, v6}, Landroid/app/Notification$Builder;->setFullScreenIntent(Landroid/app/PendingIntent;Z)Landroid/app/Notification$Builder;
 
+    .line 147
     .line 148
     .line 149
-    aput-object v24, v1, v23
+    move-result-object v5
 
     .line 150
-    .line 151
-    const/16 v23, 0x18
+    invoke-virtual {v5, v10}, Landroid/app/Notification$Builder;->setNumber(I)Landroid/app/Notification$Builder;
 
+    .line 151
     .line 152
     .line 153
-    const-string v24, "anychar*"
+    move-result-object v5
 
     .line 154
-    .line 155
-    aput-object v24, v1, v23
+    invoke-virtual {v5, v10, v10, v10}, Landroid/app/Notification$Builder;->setProgress(IIZ)Landroid/app/Notification$Builder;
 
+    .line 155
     .line 156
     .line 157
-    const/16 v23, 0x19
+    invoke-virtual {v2, v7}, Landroid/app/Notification$Builder;->setLargeIcon(Landroid/graphics/drawable/Icon;)Landroid/app/Notification$Builder;
 
     .line 158
     .line 159
-    const-string v24, "anychar-ml*"
-
     .line 160
-    .line 161
-    aput-object v24, v1, v23
+    invoke-virtual {v2, v7}, Landroid/app/Notification$Builder;->setSubText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
+    .line 161
     .line 162
     .line 163
-    const/16 v23, 0x1a
+    move-result-object v5
 
     .line 164
-    .line 165
-    const-string v24, "anychar*-peek-next"
+    invoke-virtual {v5, v10}, Landroid/app/Notification$Builder;->setUsesChronometer(Z)Landroid/app/Notification$Builder;
 
+    .line 165
     .line 166
     .line 167
-    aput-object v24, v1, v23
+    move-result-object v5
 
     .line 168
-    .line 169
-    const/16 v23, 0x1b
+    invoke-virtual {v5, v10}, Landroid/app/Notification$Builder;->setPriority(I)Landroid/app/Notification$Builder;
 
+    .line 169
     .line 170
     .line 171
-    const-string v24, "anychar-ml*-peek-next"
+    iget-object v5, v0, Lx84;->b:Ljava/util/ArrayList;
 
     .line 172
     .line 173
-    aput-object v24, v1, v23
+    invoke-virtual {v5}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     .line 174
     .line 175
-    const/16 v23, 0x1c
-
     .line 176
+    move-result-object v5
+
     .line 177
-    const-string v24, "word"
+    :goto_4
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     .line 178
     .line 179
-    aput-object v24, v1, v23
-
     .line 180
+    move-result v6
+
     .line 181
-    const/16 v23, 0x1d
+    const-string v11, "android.support.allowGeneratedReplies"
 
     .line 182
     .line 183
-    const-string v24, "not-word"
+    if-eqz v6, :cond_11
 
     .line 184
     .line 185
-    aput-object v24, v1, v23
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     .line 186
     .line 187
-    const/16 v23, 0x1e
-
     .line 188
+    move-result-object v6
+
     .line 189
-    const-string v24, "word-bound"
+    check-cast v6, Lw84;
 
     .line 190
     .line 191
-    aput-object v24, v1, v23
+    iget-object v12, v6, Lw84;->b:Landroidx/core/graphics/drawable/IconCompat;
 
     .line 192
     .line 193
-    const/16 v23, 0x1f
+    if-nez v12, :cond_4
 
     .line 194
     .line 195
-    const-string v24, "not-word-bound"
+    iget v13, v6, Lw84;->e:I
 
     .line 196
     .line 197
-    aput-object v24, v1, v23
+    if-eqz v13, :cond_4
 
     .line 198
     .line 199
-    const/16 v23, 0x20
+    invoke-static {v13}, Landroidx/core/graphics/drawable/IconCompat;->a(I)Landroidx/core/graphics/drawable/IconCompat;
 
     .line 200
     .line 201
-    const-string v24, "word-begin"
-
     .line 202
+    move-result-object v12
+
     .line 203
-    aput-object v24, v1, v23
+    iput-object v12, v6, Lw84;->b:Landroidx/core/graphics/drawable/IconCompat;
 
     .line 204
     .line 205
-    const/16 v23, 0x21
+    :cond_4
+    iget-object v13, v6, Lw84;->a:Landroid/os/Bundle;
 
     .line 206
     .line 207
-    const-string v24, "word-end"
+    new-instance v14, Landroid/app/Notification$Action$Builder;
 
     .line 208
     .line 209
-    aput-object v24, v1, v23
+    if-eqz v12, :cond_b
 
     .line 210
     .line 211
-    const/16 v23, 0x22
+    iget v15, v12, Landroidx/core/graphics/drawable/IconCompat;->a:I
 
     .line 212
     .line 213
-    const-string v24, "ascii-word"
+    packed-switch v15, :pswitch_data_0
 
     .line 214
     .line 215
-    aput-object v24, v1, v23
-
     .line 216
+    :pswitch_0
+    const-string v0, "Unknown type"
+
     .line 217
-    const/16 v23, 0x23
-
     .line 218
-    .line 219
-    const-string v24, "not-ascii-word"
+    invoke-static {v0}, Ljw1;->h(Ljava/lang/String;)V
 
+    .line 219
     .line 220
     .line 221
-    aput-object v24, v1, v23
+    return-object v7
 
     .line 222
+    :pswitch_1
+    sget v15, Landroid/os/Build$VERSION;->SDK_INT:I
+
     .line 223
-    const/16 v23, 0x24
-
     .line 224
+    move-object/from16 v16, v7
+
     .line 225
-    const-string v24, "ascii-word-bound"
-
     .line 226
+    const/16 v7, 0x1e
+
     .line 227
-    aput-object v24, v1, v23
-
     .line 228
+    if-lt v15, v7, :cond_5
+
     .line 229
-    const/16 v23, 0x25
-
     .line 230
-    .line 231
-    const-string v24, "not-ascii-word-bound"
+    invoke-virtual {v12}, Landroidx/core/graphics/drawable/IconCompat;->c()Landroid/net/Uri;
 
+    .line 231
     .line 232
     .line 233
-    aput-object v24, v1, v23
+    move-result-object v7
 
     .line 234
-    .line 235
-    const/16 v23, 0x26
+    invoke-static {v7}, Lb5;->a(Landroid/net/Uri;)Landroid/graphics/drawable/Icon;
 
+    .line 235
     .line 236
     .line 237
-    const-string v24, "ascii-word-begin"
+    move-result-object v7
 
     .line 238
+    :goto_5
+    move/from16 v17, v10
+
     .line 239
-    aput-object v24, v1, v23
-
     .line 240
+    goto/16 :goto_8
+
     .line 241
-    const/16 v23, 0x27
-
     .line 242
+    :cond_5
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
     .line 243
-    const-string v24, "ascii-word-end"
-
     .line 244
-    .line 245
-    aput-object v24, v1, v23
+    invoke-virtual {v12}, Landroidx/core/graphics/drawable/IconCompat;->c()Landroid/net/Uri;
 
+    .line 245
     .line 246
     .line 247
-    const/16 v23, 0x28
+    move-result-object v1
 
     .line 248
+    new-instance v2, Ljava/lang/StringBuilder;
+
     .line 249
-    const-string v24, "begin-buf"
-
     .line 250
+    const-string v3, "Context is required to resolve the file uri of the icon: "
+
     .line 251
-    aput-object v24, v1, v23
-
     .line 252
-    .line 253
-    const/16 v23, 0x29
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    .line 253
     .line 254
     .line 255
-    const-string v24, "end-buf"
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 256
     .line 257
-    aput-object v24, v1, v23
-
     .line 258
-    .line 259
-    const/16 v23, 0x2a
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    .line 259
     .line 260
     .line 261
-    const-string v24, "begin-line"
+    move-result-object v1
 
     .line 262
-    .line 263
-    aput-object v24, v1, v23
+    invoke-direct {v0, v1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
+    .line 263
     .line 264
     .line 265
-    const/16 v23, 0x2b
+    throw v0
 
     .line 266
+    :pswitch_2
+    move-object/from16 v16, v7
+
     .line 267
-    const-string v24, "end-line"
-
     .line 268
+    iget-object v7, v12, Landroidx/core/graphics/drawable/IconCompat;->b:Ljava/lang/Object;
+
     .line 269
-    aput-object v24, v1, v23
-
     .line 270
+    check-cast v7, Landroid/graphics/Bitmap;
+
     .line 271
-    const/16 v23, 0x2c
-
     .line 272
-    .line 273
-    const-string v24, "semi-end-buf"
+    invoke-static {v7}, Landroid/graphics/drawable/Icon;->createWithAdaptiveBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Icon;
 
+    .line 273
     .line 274
     .line 275
-    aput-object v24, v1, v23
+    move-result-object v7
 
     .line 276
+    goto :goto_5
+
     .line 277
-    const/16 v23, 0x2d
+    :pswitch_3
+    move-object/from16 v16, v7
 
     .line 278
     .line 279
-    const-string v24, "begin-position"
+    iget-object v7, v12, Landroidx/core/graphics/drawable/IconCompat;->b:Ljava/lang/Object;
 
     .line 280
     .line 281
-    aput-object v24, v1, v23
+    check-cast v7, Ljava/lang/String;
 
     .line 282
     .line 283
-    const/16 v23, 0x2e
+    invoke-static {v7}, Landroid/graphics/drawable/Icon;->createWithContentUri(Ljava/lang/String;)Landroid/graphics/drawable/Icon;
 
     .line 284
     .line 285
-    const-string v24, "backref1"
-
     .line 286
+    move-result-object v7
+
     .line 287
-    aput-object v24, v1, v23
+    goto :goto_5
 
     .line 288
+    :pswitch_4
+    move-object/from16 v16, v7
+
     .line 289
-    const/16 v23, 0x2f
-
     .line 290
+    iget-object v7, v12, Landroidx/core/graphics/drawable/IconCompat;->b:Ljava/lang/Object;
+
     .line 291
-    const-string v24, "backref2"
-
     .line 292
+    check-cast v7, [B
+
     .line 293
-    aput-object v24, v1, v23
-
     .line 294
+    iget v15, v12, Landroidx/core/graphics/drawable/IconCompat;->e:I
+
     .line 295
-    const/16 v23, 0x30
-
     .line 296
+    move/from16 v17, v10
+
     .line 297
-    const-string v24, "backrefn"
-
     .line 298
+    iget v10, v12, Landroidx/core/graphics/drawable/IconCompat;->f:I
+
     .line 299
-    aput-object v24, v1, v23
-
     .line 300
-    .line 301
-    const/16 v23, 0x31
+    invoke-static {v7, v15, v10}, Landroid/graphics/drawable/Icon;->createWithData([BII)Landroid/graphics/drawable/Icon;
 
+    .line 301
     .line 302
     .line 303
-    const-string v24, "backrefn-ic"
+    move-result-object v7
 
     .line 304
+    goto :goto_8
+
     .line 305
-    aput-object v24, v1, v23
+    :pswitch_5
+    move-object/from16 v16, v7
 
     .line 306
     .line 307
-    const/16 v23, 0x32
+    move/from16 v17, v10
 
     .line 308
     .line 309
-    const-string v24, "backref_multi"
+    const/4 v7, -0x1
 
     .line 310
+    if-ne v15, v7, :cond_6
+
     .line 311
-    aput-object v24, v1, v23
-
     .line 312
+    iget-object v7, v12, Landroidx/core/graphics/drawable/IconCompat;->b:Ljava/lang/Object;
+
     .line 313
-    const/16 v23, 0x33
-
     .line 314
+    check-cast v7, Landroid/graphics/drawable/Icon;
+
     .line 315
-    const-string v24, "backref_multi-ic"
-
     .line 316
-    .line 317
-    aput-object v24, v1, v23
+    invoke-virtual {v7}, Landroid/graphics/drawable/Icon;->getResPackage()Ljava/lang/String;
 
+    .line 317
     .line 318
     .line 319
-    const/16 v23, 0x34
+    move-result-object v7
 
     .line 320
+    goto :goto_7
+
     .line 321
-    const-string v24, "backref_at_level"
+    :cond_6
+    if-ne v15, v8, :cond_9
 
     .line 322
     .line 323
-    aput-object v24, v1, v23
+    iget-object v10, v12, Landroidx/core/graphics/drawable/IconCompat;->j:Ljava/lang/String;
 
     .line 324
     .line 325
-    const/16 v23, 0x35
+    if-eqz v10, :cond_8
 
     .line 326
     .line 327
-    const-string v24, "mem-start"
+    invoke-static {v10}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     .line 328
     .line 329
-    aput-object v24, v1, v23
-
     .line 330
+    move-result v10
+
     .line 331
-    const/16 v23, 0x36
+    if-eqz v10, :cond_7
 
     .line 332
     .line 333
-    const-string v24, "mem-start-push"
+    goto :goto_6
 
     .line 334
-    .line 335
-    aput-object v24, v1, v23
+    :cond_7
+    iget-object v7, v12, Landroidx/core/graphics/drawable/IconCompat;->j:Ljava/lang/String;
 
+    .line 335
     .line 336
+    goto :goto_7
+
     .line 337
-    const/16 v23, 0x37
+    :cond_8
+    :goto_6
+    iget-object v10, v12, Landroidx/core/graphics/drawable/IconCompat;->b:Ljava/lang/Object;
 
     .line 338
     .line 339
-    const-string v24, "mem-end-push"
+    check-cast v10, Ljava/lang/String;
 
     .line 340
     .line 341
-    aput-object v24, v1, v23
+    const-string v15, ":"
 
     .line 342
     .line 343
-    const/16 v23, 0x38
+    invoke-virtual {v10, v15, v7}, Ljava/lang/String;->split(Ljava/lang/String;I)[Ljava/lang/String;
 
     .line 344
     .line 345
-    const-string v24, "mem-end-push-rec"
-
     .line 346
+    move-result-object v7
+
     .line 347
-    aput-object v24, v1, v23
+    aget-object v7, v7, v17
 
     .line 348
     .line 349
-    const/16 v23, 0x39
+    :goto_7
+    iget v10, v12, Landroidx/core/graphics/drawable/IconCompat;->e:I
 
     .line 350
     .line 351
-    const-string v24, "mem-end"
+    invoke-static {v7, v10}, Landroid/graphics/drawable/Icon;->createWithResource(Ljava/lang/String;I)Landroid/graphics/drawable/Icon;
 
     .line 352
     .line 353
-    aput-object v24, v1, v23
-
     .line 354
+    move-result-object v7
+
     .line 355
-    const/16 v23, 0x3a
+    goto :goto_8
 
     .line 356
+    :cond_9
+    const-string v0, "called getResPackage() on "
+
     .line 357
-    const-string v24, "mem-end-rec"
-
     .line 358
-    .line 359
-    aput-object v24, v1, v23
+    invoke-static {v0, v12}, Lue1;->u(Ljava/lang/String;Ljava/lang/Object;)V
 
+    .line 359
     .line 360
     .line 361
-    const/16 v23, 0x3b
+    return-object v16
 
     .line 362
+    :pswitch_6
+    move-object/from16 v16, v7
+
     .line 363
-    const-string v24, "keep"
-
     .line 364
+    move/from16 v17, v10
+
     .line 365
-    aput-object v24, v1, v23
-
     .line 366
+    iget-object v7, v12, Landroidx/core/graphics/drawable/IconCompat;->b:Ljava/lang/Object;
+
     .line 367
-    const/16 v23, 0x3c
-
     .line 368
+    check-cast v7, Landroid/graphics/Bitmap;
+
     .line 369
-    const-string v24, "fail"
-
     .line 370
-    .line 371
-    aput-object v24, v1, v23
+    invoke-static {v7}, Landroid/graphics/drawable/Icon;->createWithBitmap(Landroid/graphics/Bitmap;)Landroid/graphics/drawable/Icon;
 
+    .line 371
     .line 372
     .line 373
-    const/16 v23, 0x3d
+    move-result-object v7
 
     .line 374
+    :goto_8
+    iget-object v10, v12, Landroidx/core/graphics/drawable/IconCompat;->g:Landroid/content/res/ColorStateList;
+
     .line 375
-    const-string v24, "jump"
-
     .line 376
+    if-eqz v10, :cond_a
+
     .line 377
-    aput-object v24, v1, v23
-
     .line 378
-    .line 379
-    const/16 v23, 0x3e
+    invoke-virtual {v7, v10}, Landroid/graphics/drawable/Icon;->setTintList(Landroid/content/res/ColorStateList;)Landroid/graphics/drawable/Icon;
 
+    .line 379
     .line 380
     .line 381
-    const-string v24, "push"
+    :cond_a
+    iget-object v10, v12, Landroidx/core/graphics/drawable/IconCompat;->h:Landroid/graphics/PorterDuff$Mode;
 
     .line 382
     .line 383
-    aput-object v24, v1, v23
+    sget-object v12, Landroidx/core/graphics/drawable/IconCompat;->k:Landroid/graphics/PorterDuff$Mode;
 
     .line 384
     .line 385
-    const/16 v23, 0x3f
+    if-eq v10, v12, :cond_c
 
     .line 386
     .line 387
-    const-string v24, "pop"
+    invoke-virtual {v7, v10}, Landroid/graphics/drawable/Icon;->setTintMode(Landroid/graphics/PorterDuff$Mode;)Landroid/graphics/drawable/Icon;
 
     .line 388
     .line 389
-    aput-object v24, v1, v23
-
     .line 390
+    goto :goto_9
+
     .line 391
-    const/16 v23, 0x40
+    :pswitch_7
+    move-object/from16 v16, v7
 
     .line 392
     .line 393
-    const-string v24, "push-or-jump-e1"
+    move/from16 v17, v10
 
     .line 394
     .line 395
-    aput-object v24, v1, v23
+    iget-object v7, v12, Landroidx/core/graphics/drawable/IconCompat;->b:Ljava/lang/Object;
 
     .line 396
     .line 397
-    const/16 v23, 0x41
+    check-cast v7, Landroid/graphics/drawable/Icon;
 
     .line 398
     .line 399
-    const-string v24, "push-if-peek-next"
+    goto :goto_9
 
     .line 400
+    :cond_b
+    move-object/from16 v16, v7
+
     .line 401
-    aput-object v24, v1, v23
-
     .line 402
+    move/from16 v17, v10
+
     .line 403
-    const/16 v23, 0x42
-
     .line 404
+    :cond_c
+    :goto_9
+    iget-object v10, v6, Lw84;->f:Ljava/lang/CharSequence;
+
     .line 405
-    const-string v24, "repeat"
-
     .line 406
+    iget-object v12, v6, Lw84;->g:Landroid/app/PendingIntent;
+
     .line 407
-    aput-object v24, v1, v23
-
     .line 408
-    .line 409
-    const/16 v23, 0x43
+    invoke-direct {v14, v7, v10, v12}, Landroid/app/Notification$Action$Builder;-><init>(Landroid/graphics/drawable/Icon;Ljava/lang/CharSequence;Landroid/app/PendingIntent;)V
 
+    .line 409
     .line 410
     .line 411
-    const-string v24, "repeat-ng"
+    iget-object v7, v6, Lw84;->c:[Lvb5;
 
     .line 412
     .line 413
-    aput-object v24, v1, v23
+    if-eqz v7, :cond_e
 
     .line 414
     .line 415
-    const/16 v23, 0x44
+    array-length v10, v7
 
     .line 416
-    .line 417
-    const-string v24, "repeat-inc"
+    new-array v12, v10, [Landroid/app/RemoteInput;
 
+    .line 417
     .line 418
+    array-length v15, v7
+
     .line 419
-    aput-object v24, v1, v23
+    if-gtz v15, :cond_d
 
     .line 420
     .line 421
-    const/16 v23, 0x45
+    move/from16 v7, v17
 
     .line 422
     .line 423
-    const-string v24, "repeat-inc-ng"
+    :goto_a
+    if-ge v7, v10, :cond_e
 
     .line 424
     .line 425
-    aput-object v24, v1, v23
+    aget-object v15, v12, v7
 
     .line 426
     .line 427
-    const/16 v23, 0x46
+    invoke-virtual {v14, v15}, Landroid/app/Notification$Action$Builder;->addRemoteInput(Landroid/app/RemoteInput;)Landroid/app/Notification$Action$Builder;
 
     .line 428
     .line 429
-    const-string v24, "repeat-inc-sg"
-
     .line 430
-    .line 431
-    aput-object v24, v1, v23
+    add-int/lit8 v7, v7, 0x1
 
+    .line 431
     .line 432
+    goto :goto_a
+
     .line 433
-    const/16 v23, 0x47
+    :cond_d
+    aget-object v0, v7, v17
 
     .line 434
     .line 435
-    const-string v24, "repeat-inc-ng-sg"
+    new-instance v0, Landroid/app/RemoteInput$Builder;
 
     .line 436
     .line 437
-    aput-object v24, v1, v23
+    throw v16
 
     .line 438
+    :cond_e
+    new-instance v7, Landroid/os/Bundle;
+
     .line 439
-    const/16 v23, 0x48
-
     .line 440
-    .line 441
-    const-string v24, "null-check-start"
+    invoke-direct {v7, v13}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
 
+    .line 441
     .line 442
     .line 443
-    aput-object v24, v1, v23
+    invoke-virtual {v7, v11, v9}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
 
     .line 444
     .line 445
-    const/16 v23, 0x49
-
     .line 446
-    .line 447
-    const-string v24, "null-check-end"
+    invoke-virtual {v14, v9}, Landroid/app/Notification$Action$Builder;->setAllowGeneratedReplies(Z)Landroid/app/Notification$Action$Builder;
 
+    .line 447
     .line 448
     .line 449
-    aput-object v24, v1, v23
+    const-string v10, "android.support.action.semanticAction"
 
     .line 450
     .line 451
-    const/16 v23, 0x4a
+    move/from16 v11, v17
 
     .line 452
     .line 453
-    const-string v24, "null-check-end-memst"
+    invoke-virtual {v7, v10, v11}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
     .line 454
     .line 455
-    aput-object v24, v1, v23
-
     .line 456
-    .line 457
-    const/16 v23, 0x4b
+    invoke-virtual {v14, v11}, Landroid/app/Notification$Action$Builder;->setSemanticAction(I)Landroid/app/Notification$Action$Builder;
 
+    .line 457
     .line 458
     .line 459
-    const-string v24, "null-check-end-memst-push"
+    invoke-virtual {v14, v11}, Landroid/app/Notification$Action$Builder;->setContextual(Z)Landroid/app/Notification$Action$Builder;
 
     .line 460
     .line 461
-    aput-object v24, v1, v23
-
     .line 462
+    sget v10, Landroid/os/Build$VERSION;->SDK_INT:I
+
     .line 463
-    const/16 v23, 0x4c
-
     .line 464
+    const/16 v11, 0x1f
+
     .line 465
-    const-string v24, "push-pos"
-
     .line 466
+    if-lt v10, v11, :cond_f
+
     .line 467
-    aput-object v24, v1, v23
-
     .line 468
-    .line 469
-    const/16 v23, 0x4d
+    invoke-static {v14}, Lfb;->g(Landroid/app/Notification$Action$Builder;)V
 
+    .line 469
     .line 470
     .line 471
-    const-string v24, "pop-pos"
+    :cond_f
+    const/16 v11, 0x25
 
     .line 472
     .line 473
-    aput-object v24, v1, v23
+    if-lt v10, v11, :cond_10
 
     .line 474
     .line 475
-    const/16 v23, 0x4e
+    invoke-static {v14}, Lta;->a(Landroid/app/Notification$Action$Builder;)V
 
     .line 476
     .line 477
-    const-string v24, "push-pos-not"
-
     .line 478
-    .line 479
-    aput-object v24, v1, v23
+    invoke-static {v14}, Lta;->d(Landroid/app/Notification$Action$Builder;)V
 
+    .line 479
     .line 480
     .line 481
-    const/16 v23, 0x4f
+    :cond_10
+    const-string v10, "android.support.action.showsUserInterface"
 
     .line 482
     .line 483
-    const-string v24, "fail-pos"
+    iget-boolean v6, v6, Lw84;->d:Z
 
     .line 484
     .line 485
-    aput-object v24, v1, v23
+    invoke-virtual {v7, v10, v6}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
 
     .line 486
     .line 487
-    const/16 v23, 0x50
-
     .line 488
-    .line 489
-    const-string v24, "push-stop-bt"
+    invoke-virtual {v14, v7}, Landroid/app/Notification$Action$Builder;->addExtras(Landroid/os/Bundle;)Landroid/app/Notification$Action$Builder;
 
+    .line 489
     .line 490
     .line 491
-    aput-object v24, v1, v23
+    invoke-virtual {v14}, Landroid/app/Notification$Action$Builder;->build()Landroid/app/Notification$Action;
 
     .line 492
     .line 493
-    const/16 v23, 0x51
-
     .line 494
+    move-result-object v6
+
     .line 495
-    const-string v24, "pop-stop-bt"
+    invoke-virtual {v2, v6}, Landroid/app/Notification$Builder;->addAction(Landroid/app/Notification$Action;)Landroid/app/Notification$Builder;
 
     .line 496
     .line 497
-    aput-object v24, v1, v23
-
     .line 498
-    .line 499
-    const/16 v23, 0x52
+    move-object/from16 v7, v16
 
+    .line 499
     .line 500
+    const/4 v10, 0x0
+
     .line 501
-    const-string v24, "look-behind"
+    goto/16 :goto_4
 
     .line 502
     .line 503
-    aput-object v24, v1, v23
+    :cond_11
+    move-object/from16 v16, v7
 
     .line 504
     .line 505
-    const/16 v23, 0x53
+    iget-object v5, v0, Lx84;->k:Landroid/os/Bundle;
 
     .line 506
     .line 507
-    const-string v24, "push-look-behind-not"
+    if-eqz v5, :cond_12
 
     .line 508
     .line 509
-    aput-object v24, v1, v23
+    invoke-virtual {v1, v5}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
     .line 510
     .line 511
-    const/16 v23, 0x54
-
     .line 512
+    :cond_12
+    iget-boolean v5, v0, Lx84;->h:Z
+
     .line 513
-    const-string v24, "fail-look-behind-not"
-
     .line 514
-    .line 515
-    aput-object v24, v1, v23
+    invoke-virtual {v2, v5}, Landroid/app/Notification$Builder;->setShowWhen(Z)Landroid/app/Notification$Builder;
 
+    .line 515
     .line 516
     .line 517
-    const/16 v23, 0x55
+    const/4 v5, 0x0
 
     .line 518
-    .line 519
-    const-string v24, "push-absent-pos"
+    invoke-virtual {v2, v5}, Landroid/app/Notification$Builder;->setLocalOnly(Z)Landroid/app/Notification$Builder;
 
+    .line 519
     .line 520
     .line 521
-    aput-object v24, v1, v23
+    move-object/from16 v6, v16
 
     .line 522
     .line 523
-    const/16 v23, 0x56
+    invoke-virtual {v2, v6}, Landroid/app/Notification$Builder;->setGroup(Ljava/lang/String;)Landroid/app/Notification$Builder;
 
     .line 524
     .line 525
-    const-string v24, "absent"
-
     .line 526
-    .line 527
-    aput-object v24, v1, v23
+    invoke-virtual {v2, v6}, Landroid/app/Notification$Builder;->setSortKey(Ljava/lang/String;)Landroid/app/Notification$Builder;
 
+    .line 527
     .line 528
     .line 529
-    const/16 v23, 0x57
+    invoke-virtual {v2, v5}, Landroid/app/Notification$Builder;->setGroupSummary(Z)Landroid/app/Notification$Builder;
 
     .line 530
     .line 531
-    const-string v24, "absent-end"
-
     .line 532
+    iget-object v7, v0, Lx84;->j:Ljava/lang/String;
+
     .line 533
-    aput-object v24, v1, v23
-
     .line 534
-    .line 535
-    const/16 v23, 0x58
+    invoke-virtual {v2, v7}, Landroid/app/Notification$Builder;->setCategory(Ljava/lang/String;)Landroid/app/Notification$Builder;
 
+    .line 535
     .line 536
     .line 537
-    const-string v24, "call"
+    invoke-virtual {v2, v5}, Landroid/app/Notification$Builder;->setColor(I)Landroid/app/Notification$Builder;
 
     .line 538
     .line 539
-    aput-object v24, v1, v23
-
     .line 540
+    iget-boolean v5, v0, Lx84;->l:Z
+
     .line 541
-    const/16 v23, 0x59
-
     .line 542
-    .line 543
-    const-string v24, "return"
+    invoke-virtual {v2, v5}, Landroid/app/Notification$Builder;->setVisibility(I)Landroid/app/Notification$Builder;
 
+    .line 543
     .line 544
     .line 545
-    aput-object v24, v1, v23
+    invoke-virtual {v2, v6}, Landroid/app/Notification$Builder;->setPublicVersion(Landroid/app/Notification;)Landroid/app/Notification$Builder;
 
     .line 546
     .line 547
-    const/16 v23, 0x5a
-
     .line 548
+    iget-object v5, v3, Landroid/app/Notification;->sound:Landroid/net/Uri;
+
     .line 549
-    const-string v24, "condition"
-
     .line 550
+    iget-object v6, v3, Landroid/app/Notification;->audioAttributes:Landroid/media/AudioAttributes;
+
     .line 551
-    aput-object v24, v1, v23
-
     .line 552
-    .line 553
-    const/16 v23, 0x5b
+    invoke-virtual {v2, v5, v6}, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri;Landroid/media/AudioAttributes;)Landroid/app/Notification$Builder;
 
+    .line 553
     .line 554
     .line 555
-    const-string v24, "state-check-push"
+    iget-object v5, v0, Lx84;->o:Ljava/util/ArrayList;
 
     .line 556
     .line 557
-    aput-object v24, v1, v23
+    invoke-virtual {v5}, Ljava/util/ArrayList;->isEmpty()Z
 
     .line 558
     .line 559
-    const/16 v23, 0x5c
-
     .line 560
+    move-result v6
+
     .line 561
-    const-string v24, "state-check-push-or-jump"
+    if-nez v6, :cond_13
 
     .line 562
     .line 563
-    aput-object v24, v1, v23
+    invoke-virtual {v5}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     .line 564
     .line 565
-    const/16 v23, 0x5d
-
     .line 566
+    move-result-object v5
+
     .line 567
-    const-string v24, "state-check"
+    :goto_b
+    invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     .line 568
     .line 569
-    aput-object v24, v1, v23
-
     .line 570
+    move-result v6
+
     .line 571
-    const/16 v23, 0x5e
+    if-eqz v6, :cond_13
 
     .line 572
     .line 573
-    const-string v24, "state-check-anychar*"
+    invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     .line 574
     .line 575
-    aput-object v24, v1, v23
-
     .line 576
+    move-result-object v6
+
     .line 577
-    const/16 v23, 0x5f
+    check-cast v6, Ljava/lang/String;
 
     .line 578
     .line 579
-    const-string v24, "state-check-anychar-ml*"
+    invoke-virtual {v2, v6}, Landroid/app/Notification$Builder;->addPerson(Ljava/lang/String;)Landroid/app/Notification$Builder;
 
     .line 580
     .line 581
-    aput-object v24, v1, v23
-
     .line 582
+    goto :goto_b
+
     .line 583
-    const/16 v23, 0x60
+    :cond_13
+    iget-object v5, v0, Lx84;->d:Ljava/util/ArrayList;
 
     .line 584
     .line 585
-    const-string v24, "set-option-push"
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     .line 586
     .line 587
-    aput-object v24, v1, v23
-
     .line 588
+    move-result v6
+
     .line 589
-    const/16 v23, 0x61
+    if-lez v6, :cond_1c
 
     .line 590
     .line 591
-    const-string v24, "set-option"
+    iget-object v6, v0, Lx84;->k:Landroid/os/Bundle;
 
     .line 592
     .line 593
-    aput-object v24, v1, v23
+    if-nez v6, :cond_14
 
     .line 594
     .line 595
-    const/16 v23, 0x62
+    new-instance v6, Landroid/os/Bundle;
 
     .line 596
     .line 597
-    const-string v24, "exact1-ic-sb"
+    invoke-direct {v6}, Landroid/os/Bundle;-><init>()V
 
     .line 598
     .line 599
-    aput-object v24, v1, v23
-
     .line 600
+    iput-object v6, v0, Lx84;->k:Landroid/os/Bundle;
+
     .line 601
-    const/16 v23, 0x63
-
     .line 602
+    :cond_14
+    const-string v7, "android.car.EXTENSIONS"
+
     .line 603
-    const-string v24, "exactn-ic-sb"
-
     .line 604
-    .line 605
-    aput-object v24, v1, v23
+    invoke-virtual {v6, v7}, Landroid/os/Bundle;->getBundle(Ljava/lang/String;)Landroid/os/Bundle;
 
+    .line 605
     .line 606
     .line 607
-    goto :goto_0
+    move-result-object v6
 
     .line 608
-    :cond_0
-    const/16 v22, 0x13
+    if-nez v6, :cond_15
 
     .line 609
     .line 610
-    const/4 v1, 0x0
+    new-instance v6, Landroid/os/Bundle;
 
     .line 611
-    :goto_0
-    sput-object v1, Lx84;->a:[Ljava/lang/String;
-
     .line 612
-    .line 613
-    if-eqz v0, :cond_1
+    invoke-direct {v6}, Landroid/os/Bundle;-><init>()V
 
+    .line 613
     .line 614
     .line 615
-    new-array v0, v15, [I
+    :cond_15
+    new-instance v8, Landroid/os/Bundle;
 
     .line 616
     .line 617
-    aput v21, v0, v21
+    invoke-direct {v8, v6}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
 
     .line 618
     .line 619
-    aput v21, v0, v19
-
     .line 620
-    .line 621
-    const/4 v1, -0x1
+    new-instance v10, Landroid/os/Bundle;
 
+    .line 621
     .line 622
-    aput v1, v0, v16
+    invoke-direct {v10}, Landroid/os/Bundle;-><init>()V
 
     .line 623
     .line 624
-    aput v1, v0, v14
-
     .line 625
+    const/4 v12, 0x0
+
     .line 626
-    aput v1, v0, v20
+    :goto_c
+    invoke-virtual {v5}, Ljava/util/ArrayList;->size()I
 
     .line 627
     .line 628
-    aput v1, v0, v17
-
     .line 629
+    move-result v13
+
     .line 630
-    aput v1, v0, v18
+    if-ge v12, v13, :cond_1a
 
     .line 631
     .line 632
-    aput v1, v0, v13
+    invoke-static {v12}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     .line 633
     .line 634
-    aput v1, v0, v12
-
     .line 635
+    move-result-object v13
+
     .line 636
-    aput v1, v0, v11
+    invoke-virtual {v5, v12}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     .line 637
     .line 638
-    aput v1, v0, v10
-
     .line 639
+    move-result-object v14
+
     .line 640
-    aput v1, v0, v9
+    check-cast v14, Lw84;
 
     .line 641
     .line 642
-    aput v1, v0, v8
+    new-instance v15, Landroid/os/Bundle;
 
     .line 643
     .line 644
-    aput v1, v0, v7
+    invoke-direct {v15}, Landroid/os/Bundle;-><init>()V
 
     .line 645
     .line 646
-    aput v1, v0, v6
-
     .line 647
+    iget-object v9, v14, Lw84;->b:Landroidx/core/graphics/drawable/IconCompat;
+
     .line 648
-    aput v1, v0, v5
-
     .line 649
+    move-object/from16 v18, v4
+
     .line 650
-    aput v1, v0, v4
-
     .line 651
+    if-nez v9, :cond_16
+
     .line 652
-    aput v1, v0, v3
-
     .line 653
+    iget v4, v14, Lw84;->e:I
+
     .line 654
-    aput v1, v0, v2
-
     .line 655
+    if-eqz v4, :cond_16
+
     .line 656
-    aput v1, v0, v22
-
     .line 657
-    .line 658
-    const/16 v2, 0x14
+    invoke-static {v4}, Landroidx/core/graphics/drawable/IconCompat;->a(I)Landroidx/core/graphics/drawable/IconCompat;
 
+    .line 658
     .line 659
     .line 660
-    aput v1, v0, v2
+    move-result-object v9
 
     .line 661
+    iput-object v9, v14, Lw84;->b:Landroidx/core/graphics/drawable/IconCompat;
+
     .line 662
-    const/16 v2, 0x15
-
     .line 663
+    :cond_16
+    iget-object v4, v14, Lw84;->a:Landroid/os/Bundle;
+
     .line 664
-    aput v1, v0, v2
-
     .line 665
+    if-eqz v9, :cond_17
+
     .line 666
-    const/16 v2, 0x16
-
     .line 667
-    .line 668
-    aput v21, v0, v2
+    invoke-virtual {v9}, Landroidx/core/graphics/drawable/IconCompat;->b()I
 
+    .line 668
     .line 669
     .line 670
-    const/16 v2, 0x17
+    move-result v9
 
     .line 671
-    .line 672
-    aput v21, v0, v2
+    :goto_d
+    move-object/from16 v19, v5
 
+    .line 672
     .line 673
+    goto :goto_e
+
     .line 674
-    const/16 v2, 0x18
+    :cond_17
+    const/4 v9, 0x0
 
     .line 675
+    goto :goto_d
+
     .line 676
-    aput v21, v0, v2
+    :goto_e
+    const-string v5, "icon"
 
     .line 677
     .line 678
-    const/16 v2, 0x19
+    invoke-virtual {v15, v5, v9}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
     .line 679
     .line 680
-    aput v21, v0, v2
-
     .line 681
+    const-string v5, "title"
+
     .line 682
-    const/16 v2, 0x1a
-
     .line 683
+    iget-object v9, v14, Lw84;->f:Ljava/lang/CharSequence;
+
     .line 684
-    aput v1, v0, v2
-
     .line 685
-    .line 686
-    const/16 v2, 0x1b
+    invoke-virtual {v15, v5, v9}, Landroid/os/Bundle;->putCharSequence(Ljava/lang/String;Ljava/lang/CharSequence;)V
 
+    .line 686
     .line 687
     .line 688
-    aput v1, v0, v2
+    const-string v5, "actionIntent"
 
     .line 689
     .line 690
-    const/16 v2, 0x1c
+    iget-object v9, v14, Lw84;->g:Landroid/app/PendingIntent;
 
     .line 691
     .line 692
-    aput v21, v0, v2
+    invoke-virtual {v15, v5, v9}, Landroid/os/Bundle;->putParcelable(Ljava/lang/String;Landroid/os/Parcelable;)V
 
     .line 693
     .line 694
-    const/16 v2, 0x1d
-
     .line 695
+    new-instance v5, Landroid/os/Bundle;
+
     .line 696
-    aput v21, v0, v2
-
     .line 697
-    .line 698
-    const/16 v2, 0x1e
+    invoke-direct {v5, v4}, Landroid/os/Bundle;-><init>(Landroid/os/Bundle;)V
 
+    .line 698
     .line 699
     .line 700
-    aput v21, v0, v2
+    const/4 v4, 0x1
 
     .line 701
-    .line 702
-    const/16 v2, 0x1f
+    invoke-virtual {v5, v11, v4}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
 
+    .line 702
     .line 703
     .line 704
-    aput v21, v0, v2
+    const-string v4, "extras"
 
     .line 705
     .line 706
-    const/16 v2, 0x20
+    invoke-virtual {v15, v4, v5}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     .line 707
     .line 708
-    aput v21, v0, v2
-
     .line 709
+    iget-object v4, v14, Lw84;->c:[Lvb5;
+
     .line 710
-    const/16 v2, 0x21
-
     .line 711
-    .line 712
-    aput v21, v0, v2
+    if-nez v4, :cond_18
 
+    .line 712
     .line 713
+    const/4 v5, 0x0
+
     .line 714
-    const/16 v2, 0x22
+    goto :goto_f
 
     .line 715
+    :cond_18
+    array-length v5, v4
+
     .line 716
-    aput v21, v0, v2
+    new-array v5, v5, [Landroid/os/Bundle;
 
     .line 717
     .line 718
-    const/16 v2, 0x23
+    array-length v9, v4
 
     .line 719
+    if-gtz v9, :cond_19
+
     .line 720
-    aput v21, v0, v2
-
     .line 721
+    :goto_f
+    const-string v4, "remoteInputs"
+
     .line 722
-    const/16 v2, 0x24
-
     .line 723
-    .line 724
-    aput v21, v0, v2
+    invoke-virtual {v15, v4, v5}, Landroid/os/Bundle;->putParcelableArray(Ljava/lang/String;[Landroid/os/Parcelable;)V
 
+    .line 724
     .line 725
     .line 726
-    const/16 v2, 0x25
+    const-string v4, "showsUserInterface"
 
     .line 727
     .line 728
-    aput v21, v0, v2
+    iget-boolean v5, v14, Lw84;->d:Z
 
     .line 729
     .line 730
-    const/16 v2, 0x26
+    invoke-virtual {v15, v4, v5}, Landroid/os/BaseBundle;->putBoolean(Ljava/lang/String;Z)V
 
     .line 731
     .line 732
-    aput v21, v0, v2
-
     .line 733
-    .line 734
-    const/16 v2, 0x27
+    const-string v4, "semanticAction"
 
+    .line 734
     .line 735
+    const/4 v5, 0x0
+
     .line 736
-    aput v21, v0, v2
+    invoke-virtual {v15, v4, v5}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
     .line 737
     .line 738
-    const/16 v2, 0x28
-
     .line 739
-    .line 740
-    aput v21, v0, v2
+    invoke-virtual {v10, v13, v15}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
+    .line 740
     .line 741
     .line 742
-    const/16 v2, 0x29
+    add-int/lit8 v12, v12, 0x1
 
     .line 743
     .line 744
-    aput v21, v0, v2
+    move-object/from16 v4, v18
 
     .line 745
     .line 746
-    const/16 v2, 0x2a
+    move-object/from16 v5, v19
 
     .line 747
     .line 748
-    aput v21, v0, v2
+    const/4 v9, 0x1
 
     .line 749
+    goto :goto_c
+
     .line 750
-    const/16 v2, 0x2b
+    :cond_19
+    const/4 v5, 0x0
 
     .line 751
+    aget-object v0, v4, v5
+
     .line 752
-    aput v21, v0, v2
-
     .line 753
+    new-instance v0, Landroid/os/Bundle;
+
     .line 754
-    const/16 v2, 0x2c
-
     .line 755
-    .line 756
-    aput v21, v0, v2
+    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
+    .line 756
     .line 757
     .line 758
-    const/16 v2, 0x2d
+    const/16 v16, 0x0
 
     .line 759
     .line 760
-    aput v21, v0, v2
+    throw v16
 
     .line 761
+    :cond_1a
+    move-object/from16 v18, v4
+
     .line 762
-    const/16 v2, 0x2e
-
     .line 763
+    const-string v4, "invisible_actions"
+
     .line 764
-    aput v21, v0, v2
-
     .line 765
-    .line 766
-    const/16 v2, 0x2f
+    invoke-virtual {v6, v4, v10}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
+    .line 766
     .line 767
     .line 768
-    aput v21, v0, v2
+    invoke-virtual {v8, v4, v10}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     .line 769
     .line 770
-    const/16 v2, 0x30
-
     .line 771
+    iget-object v4, v0, Lx84;->k:Landroid/os/Bundle;
+
     .line 772
-    aput v20, v0, v2
-
     .line 773
+    if-nez v4, :cond_1b
+
     .line 774
-    const/16 v2, 0x31
-
     .line 775
+    new-instance v4, Landroid/os/Bundle;
+
     .line 776
-    aput v1, v0, v2
-
     .line 777
-    .line 778
-    const/16 v2, 0x32
+    invoke-direct {v4}, Landroid/os/Bundle;-><init>()V
 
+    .line 778
     .line 779
     .line 780
-    aput v1, v0, v2
+    iput-object v4, v0, Lx84;->k:Landroid/os/Bundle;
 
     .line 781
     .line 782
-    const/16 v2, 0x33
+    :cond_1b
+    invoke-virtual {v4, v7, v6}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
     .line 783
     .line 784
-    aput v1, v0, v2
-
     .line 785
-    .line 786
-    const/16 v2, 0x34
+    invoke-virtual {v1, v7, v8}, Landroid/os/Bundle;->putBundle(Ljava/lang/String;Landroid/os/Bundle;)V
 
+    .line 786
     .line 787
     .line 788
-    aput v1, v0, v2
+    goto :goto_10
 
     .line 789
+    :cond_1c
+    move-object/from16 v18, v4
+
     .line 790
-    const/16 v2, 0x35
-
     .line 791
+    :goto_10
+    iget-object v1, v0, Lx84;->k:Landroid/os/Bundle;
+
     .line 792
-    aput v20, v0, v2
-
     .line 793
-    .line 794
-    const/16 v2, 0x36
+    invoke-virtual {v2, v1}, Landroid/app/Notification$Builder;->setExtras(Landroid/os/Bundle;)Landroid/app/Notification$Builder;
 
+    .line 794
     .line 795
     .line 796
-    aput v20, v0, v2
+    const/4 v6, 0x0
 
     .line 797
-    .line 798
-    const/16 v2, 0x37
+    invoke-virtual {v2, v6}, Landroid/app/Notification$Builder;->setRemoteInputHistory([Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
+    .line 798
     .line 799
     .line 800
-    aput v20, v0, v2
+    const/4 v5, 0x0
 
     .line 801
-    .line 802
-    const/16 v2, 0x38
+    invoke-virtual {v2, v5}, Landroid/app/Notification$Builder;->setBadgeIconType(I)Landroid/app/Notification$Builder;
 
+    .line 802
     .line 803
     .line 804
-    aput v20, v0, v2
+    invoke-virtual {v2, v6}, Landroid/app/Notification$Builder;->setSettingsText(Ljava/lang/CharSequence;)Landroid/app/Notification$Builder;
 
     .line 805
     .line 806
-    const/16 v2, 0x39
-
     .line 807
-    .line 808
-    aput v20, v0, v2
+    invoke-virtual {v2, v6}, Landroid/app/Notification$Builder;->setShortcutId(Ljava/lang/String;)Landroid/app/Notification$Builder;
 
+    .line 808
     .line 809
     .line 810
-    const/16 v2, 0x3a
+    const-wide/16 v7, 0x0
 
     .line 811
     .line 812
-    aput v20, v0, v2
+    invoke-virtual {v2, v7, v8}, Landroid/app/Notification$Builder;->setTimeoutAfter(J)Landroid/app/Notification$Builder;
 
     .line 813
     .line 814
-    const/16 v2, 0x3b
-
     .line 815
-    .line 816
-    aput v21, v0, v2
+    invoke-virtual {v2, v5}, Landroid/app/Notification$Builder;->setGroupAlertBehavior(I)Landroid/app/Notification$Builder;
 
+    .line 816
     .line 817
     .line 818
-    const/16 v2, 0x3c
+    invoke-static/range {v18 .. v18}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     .line 819
     .line 820
-    aput v21, v0, v2
-
     .line 821
+    move-result v1
+
     .line 822
-    const/16 v2, 0x3d
+    if-nez v1, :cond_1d
 
     .line 823
     .line 824
-    aput v19, v0, v2
+    invoke-virtual {v2, v6}, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri;)Landroid/app/Notification$Builder;
 
     .line 825
     .line 826
-    const/16 v2, 0x3e
-
     .line 827
+    move-result-object v1
+
     .line 828
-    aput v19, v0, v2
+    invoke-virtual {v1, v5}, Landroid/app/Notification$Builder;->setDefaults(I)Landroid/app/Notification$Builder;
 
     .line 829
     .line 830
-    const/16 v2, 0x3f
-
     .line 831
+    move-result-object v1
+
     .line 832
-    aput v21, v0, v2
+    invoke-virtual {v1, v5, v5, v5}, Landroid/app/Notification$Builder;->setLights(III)Landroid/app/Notification$Builder;
 
     .line 833
     .line 834
-    const/16 v2, 0x40
-
     .line 835
+    move-result-object v1
+
     .line 836
-    aput v1, v0, v2
+    invoke-virtual {v1, v6}, Landroid/app/Notification$Builder;->setVibrate([J)Landroid/app/Notification$Builder;
 
     .line 837
     .line 838
-    const/16 v2, 0x41
-
     .line 839
+    :cond_1d
+    iget-object v1, v0, Lx84;->c:Ljava/util/ArrayList;
+
     .line 840
-    aput v1, v0, v2
-
     .line 841
-    .line 842
-    const/16 v2, 0x42
+    invoke-virtual {v1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
+    .line 842
     .line 843
     .line 844
-    aput v1, v0, v2
+    move-result-object v1
 
     .line 845
-    .line 846
-    const/16 v2, 0x43
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
+    .line 846
     .line 847
     .line 848
-    aput v1, v0, v2
+    move-result v4
 
     .line 849
-    .line 850
-    const/16 v2, 0x44
+    if-nez v4, :cond_24
 
+    .line 850
     .line 851
+    const/4 v4, 0x1
+
     .line 852
-    aput v20, v0, v2
+    invoke-virtual {v2, v4}, Landroid/app/Notification$Builder;->setAllowSystemGeneratedContextualActions(Z)Landroid/app/Notification$Builder;
 
     .line 853
     .line 854
-    const/16 v2, 0x45
-
     .line 855
-    .line 856
-    aput v20, v0, v2
+    invoke-virtual {v2, v6}, Landroid/app/Notification$Builder;->setBubbleMetadata(Landroid/app/Notification$BubbleMetadata;)Landroid/app/Notification$Builder;
 
+    .line 856
     .line 857
     .line 858
-    const/16 v2, 0x46
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     .line 859
     .line 860
-    aput v20, v0, v2
+    const/16 v4, 0x24
 
     .line 861
     .line 862
-    const/16 v2, 0x47
+    if-lt v1, v4, :cond_1e
 
     .line 863
     .line 864
-    aput v20, v0, v2
+    invoke-static {v2}, Ld5;->e(Landroid/app/Notification$Builder;)V
 
     .line 865
     .line 866
-    const/16 v2, 0x48
-
     .line 867
+    :cond_1e
+    iget-boolean v1, v0, Lx84;->n:Z
+
     .line 868
-    aput v20, v0, v2
-
     .line 869
+    if-eqz v1, :cond_20
+
     .line 870
-    const/16 v2, 0x49
-
     .line 871
-    .line 872
-    aput v20, v0, v2
+    invoke-virtual {v2, v6}, Landroid/app/Notification$Builder;->setVibrate([J)Landroid/app/Notification$Builder;
 
+    .line 872
     .line 873
     .line 874
-    const/16 v2, 0x4a
+    invoke-virtual {v2, v6}, Landroid/app/Notification$Builder;->setSound(Landroid/net/Uri;)Landroid/app/Notification$Builder;
 
     .line 875
     .line 876
-    aput v20, v0, v2
-
     .line 877
+    iget v1, v3, Landroid/app/Notification;->defaults:I
+
     .line 878
-    const/16 v2, 0x4b
-
     .line 879
+    and-int/lit8 v1, v1, -0x4
+
     .line 880
-    aput v20, v0, v2
-
     .line 881
+    iput v1, v3, Landroid/app/Notification;->defaults:I
+
     .line 882
-    const/16 v2, 0x4c
-
     .line 883
-    .line 884
-    aput v21, v0, v2
+    invoke-virtual {v2, v1}, Landroid/app/Notification$Builder;->setDefaults(I)Landroid/app/Notification$Builder;
 
+    .line 884
     .line 885
     .line 886
-    const/16 v2, 0x4d
+    invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     .line 887
     .line 888
-    aput v21, v0, v2
-
     .line 889
+    move-result v1
+
     .line 890
-    const/16 v2, 0x4e
+    if-eqz v1, :cond_1f
 
     .line 891
     .line 892
-    aput v19, v0, v2
+    const-string v1, "silent"
 
     .line 893
     .line 894
-    const/16 v2, 0x4f
+    invoke-virtual {v2, v1}, Landroid/app/Notification$Builder;->setGroup(Ljava/lang/String;)Landroid/app/Notification$Builder;
 
     .line 895
     .line 896
-    aput v21, v0, v2
-
     .line 897
+    :cond_1f
+    const/4 v4, 0x1
+
     .line 898
-    const/16 v2, 0x50
+    invoke-virtual {v2, v4}, Landroid/app/Notification$Builder;->setGroupAlertBehavior(I)Landroid/app/Notification$Builder;
 
     .line 899
     .line 900
-    aput v21, v0, v2
-
     .line 901
+    :cond_20
+    iget-object v1, v0, Lx84;->i:Lr82;
+
     .line 902
-    const/16 v2, 0x51
-
     .line 903
+    if-eqz v1, :cond_21
+
     .line 904
-    aput v21, v0, v2
-
     .line 905
+    new-instance v3, Landroid/app/Notification$BigTextStyle;
+
     .line 906
-    const/16 v2, 0x52
-
     .line 907
-    .line 908
-    aput v1, v0, v2
+    invoke-direct {v3, v2}, Landroid/app/Notification$BigTextStyle;-><init>(Landroid/app/Notification$Builder;)V
 
+    .line 908
     .line 909
     .line 910
-    const/16 v2, 0x53
+    const/4 v6, 0x0
 
     .line 911
-    .line 912
-    aput v1, v0, v2
+    invoke-virtual {v3, v6}, Landroid/app/Notification$BigTextStyle;->setBigContentTitle(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;
 
+    .line 912
     .line 913
     .line 914
-    const/16 v2, 0x54
+    move-result-object v3
 
     .line 915
+    iget-object v4, v1, Lr82;->l:Ljava/lang/Object;
+
     .line 916
-    aput v21, v0, v2
-
     .line 917
+    check-cast v4, Ljava/lang/CharSequence;
+
     .line 918
-    const/16 v2, 0x55
-
     .line 919
-    .line 920
-    aput v21, v0, v2
+    invoke-virtual {v3, v4}, Landroid/app/Notification$BigTextStyle;->bigText(Ljava/lang/CharSequence;)Landroid/app/Notification$BigTextStyle;
 
+    .line 920
     .line 921
     .line 922
-    const/16 v2, 0x56
+    :cond_21
+    invoke-virtual {v2}, Landroid/app/Notification$Builder;->build()Landroid/app/Notification;
 
     .line 923
     .line 924
-    aput v19, v0, v2
-
     .line 925
+    move-result-object v2
+
     .line 926
-    const/16 v2, 0x57
+    if-eqz v1, :cond_22
 
     .line 927
     .line 928
-    aput v21, v0, v2
+    iget-object v0, v0, Lx84;->i:Lr82;
 
     .line 929
     .line 930
-    const/16 v2, 0x58
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 931
     .line 932
-    aput v16, v0, v2
-
     .line 933
+    :cond_22
+    if-eqz v1, :cond_23
+
     .line 934
-    const/16 v2, 0x59
-
     .line 935
+    iget-object v0, v2, Landroid/app/Notification;->extras:Landroid/os/Bundle;
+
     .line 936
-    aput v21, v0, v2
-
     .line 937
+    if-eqz v0, :cond_23
+
     .line 938
-    const/16 v2, 0x5a
-
     .line 939
+    const-string v1, "androidx.core.app.NotificationCompat$BigTextStyle"
+
     .line 940
-    aput v1, v0, v2
-
     .line 941
+    const-string v3, "androidx.core.app.extra.COMPAT_TEMPLATE"
+
     .line 942
-    const/16 v2, 0x5b
-
     .line 943
-    .line 944
-    aput v1, v0, v2
+    invoke-virtual {v0, v3, v1}, Landroid/os/BaseBundle;->putString(Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 944
     .line 945
     .line 946
-    const/16 v2, 0x5c
+    :cond_23
+    return-object v2
 
     .line 947
-    .line 948
-    aput v1, v0, v2
+    :cond_24
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
+    .line 948
     .line 949
     .line 950
-    const/16 v2, 0x5d
+    move-result-object v0
 
     .line 951
-    .line 952
-    aput v18, v0, v2
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 952
     .line 953
     .line 954
-    const/16 v2, 0x5e
+    invoke-static {}, Lue1;->t()V
 
     .line 955
     .line 956
-    aput v18, v0, v2
-
     .line 957
-    .line 958
-    const/16 v2, 0x5f
+    const/16 v16, 0x0
 
+    .line 958
     .line 959
+    return-object v16
+
     .line 960
-    aput v18, v0, v2
+    nop
 
     .line 961
-    .line 962
-    const/16 v2, 0x60
+    :pswitch_data_0
+    .packed-switch -0x1
+        :pswitch_7
+        :pswitch_0
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+    .end packed-switch
+.end method
 
-    .line 963
-    .line 964
-    aput v17, v0, v2
+.method public final c(I)V
+    .locals 1
 
-    .line 965
-    .line 966
-    const/16 v2, 0x61
+    .line 1
+    iget-object p0, p0, Lx84;->m:Landroid/app/Notification;
 
-    .line 967
-    .line 968
-    aput v17, v0, v2
+    .line 2
+    .line 3
+    iget v0, p0, Landroid/app/Notification;->flags:I
 
-    .line 969
-    .line 970
-    const/16 v2, 0x62
+    .line 4
+    .line 5
+    or-int/2addr p1, v0
 
-    .line 971
-    .line 972
-    aput v1, v0, v2
+    .line 6
+    iput p1, p0, Landroid/app/Notification;->flags:I
 
-    .line 973
-    .line 974
-    const/16 v2, 0x63
+    .line 7
+    .line 8
+    return-void
+.end method
 
-    .line 975
-    .line 976
-    aput v1, v0, v2
+.method public final d(Lr82;)V
+    .locals 1
 
-    .line 977
-    .line 978
-    goto :goto_1
+    .line 1
+    iget-object v0, p0, Lx84;->i:Lr82;
 
-    .line 979
-    :cond_1
-    const/4 v0, 0x0
+    .line 2
+    .line 3
+    if-eq v0, p1, :cond_0
 
-    .line 980
-    :goto_1
-    sput-object v0, Lx84;->b:[I
+    .line 4
+    .line 5
+    iput-object p1, p0, Lx84;->i:Lr82;
 
-    .line 981
-    .line 982
+    .line 6
+    .line 7
+    iget-object v0, p1, Lr82;->k:Ljava/lang/Object;
+
+    .line 8
+    .line 9
+    check-cast v0, Lx84;
+
+    .line 10
+    .line 11
+    if-eq v0, p0, :cond_0
+
+    .line 12
+    .line 13
+    iput-object p0, p1, Lr82;->k:Ljava/lang/Object;
+
+    .line 14
+    .line 15
+    invoke-virtual {p0, p1}, Lx84;->d(Lr82;)V
+
+    .line 16
+    .line 17
+    .line 18
+    :cond_0
     return-void
 .end method

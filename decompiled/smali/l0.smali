@@ -1,21 +1,21 @@
 .class public final synthetic Ll0;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Ld52;
+.implements Le62;
 
 
 # instance fields
 .field public final synthetic j:B
 
-.field public final synthetic k:Lh37;
+.field public final synthetic k:Lx47;
 
 .field public final synthetic l:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lh37;Ljava/lang/String;B)V
+.method public synthetic constructor <init>(Lx47;Ljava/lang/String;B)V
     .locals 0
 
     .line 1
@@ -23,7 +23,7 @@
 
     .line 2
     .line 3
-    iput-object p1, p0, Ll0;->k:Lh37;
+    iput-object p1, p0, Ll0;->k:Lx47;
 
     .line 4
     .line 5
@@ -49,7 +49,7 @@
 
     .line 2
     .line 3
-    sget-object v1, Lk27;->a:Lk27;
+    sget-object v1, La47;->a:La47;
 
     .line 4
     .line 5
@@ -57,7 +57,7 @@
 
     .line 6
     .line 7
-    iget-object p0, p0, Ll0;->k:Lh37;
+    iget-object p0, p0, Ll0;->k:Lx47;
 
     .line 8
     .line 9
@@ -66,11 +66,11 @@
     .line 10
     .line 11
     .line 12
-    check-cast p0, Ljf;
+    check-cast p0, Lmf;
 
     .line 13
     .line 14
-    invoke-virtual {p0, v2}, Ljf;->a(Ljava/lang/String;)V
+    invoke-virtual {p0, v2}, Lmf;->a(Ljava/lang/String;)V
 
     .line 15
     .line 16
@@ -79,11 +79,11 @@
 
     .line 18
     :pswitch_0
-    check-cast p0, Ljf;
+    check-cast p0, Lmf;
 
     .line 19
     .line 20
-    invoke-virtual {p0, v2}, Ljf;->a(Ljava/lang/String;)V
+    invoke-virtual {p0, v2}, Lmf;->a(Ljava/lang/String;)V
 
     .line 21
     .line 22
@@ -92,11 +92,11 @@
 
     .line 24
     :pswitch_1
-    check-cast p0, Ljf;
+    check-cast p0, Lmf;
 
     .line 25
     .line 26
-    invoke-virtual {p0, v2}, Ljf;->a(Ljava/lang/String;)V
+    invoke-virtual {p0, v2}, Lmf;->a(Ljava/lang/String;)V
 
     .line 27
     .line 28

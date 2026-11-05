@@ -1,106 +1,115 @@
 .class public final Ly27;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lt03;
-.implements Ljava/io/Serializable;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public j:Ld52;
-
-.field public k:Ljava/lang/Object;
+# static fields
+.field public static final a:Landroid/os/Handler;
 
 
-# virtual methods
-.method public final getValue()Ljava/lang/Object;
+# direct methods
+.method static constructor <clinit>()V
     .locals 2
 
     .line 1
-    iget-object v0, p0, Ly27;->k:Ljava/lang/Object;
+    new-instance v0, Landroid/os/Handler;
 
     .line 2
     .line 3
-    sget-object v1, Lsc5;->M:Lsc5;
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     .line 4
     .line 5
-    if-ne v0, v1, :cond_0
-
     .line 6
+    move-result-object v1
+
     .line 7
-    iget-object v0, p0, Ly27;->j:Ld52;
+    invoke-direct {v0, v1}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
 
     .line 8
     .line 9
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 10
+    sput-object v0, Ly27;->a:Landroid/os/Handler;
+
     .line 11
     .line 12
-    invoke-interface {v0}, Ld52;->invoke()Ljava/lang/Object;
-
-    .line 13
-    .line 14
-    .line 15
-    move-result-object v0
-
-    .line 16
-    iput-object v0, p0, Ly27;->k:Ljava/lang/Object;
-
-    .line 17
-    .line 18
-    const/4 v1, 0x0
-
-    .line 19
-    iput-object v1, p0, Ly27;->j:Ld52;
-
-    .line 20
-    .line 21
-    :cond_0
-    return-object v0
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public static a(Landroid/content/Context;Ljava/lang/String;Lw27;)V
     .locals 2
 
     .line 1
-    iget-object v0, p0, Ly27;->k:Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    sget-object v1, Lsc5;->M:Lsc5;
-
     .line 4
-    .line 5
-    if-eq v0, v1, :cond_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 5
     .line 6
     .line 7
-    invoke-virtual {p0}, Ly27;->getValue()Ljava/lang/Object;
+    invoke-static {p1}, Lad6;->y0(Ljava/lang/CharSequence;)Z
 
     .line 8
     .line 9
     .line 10
-    move-result-object p0
+    move-result v0
 
     .line 11
-    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+    if-eqz v0, :cond_0
 
     .line 12
     .line 13
+    return-void
+
     .line 14
-    move-result-object p0
+    :cond_0
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     .line 15
-    return-object p0
-
     .line 16
-    :cond_0
-    const-string p0, "Lazy value not initialized yet."
-
     .line 17
+    move-result-object p0
+
     .line 18
-    return-object p0
+    new-instance v0, Lse;
+
+    .line 19
+    .line 20
+    const/4 v1, 0x3
+
+    .line 21
+    invoke-direct {v0, p0, p1, p2, v1}, Lse;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;B)V
+
+    .line 22
+    .line 23
+    .line 24
+    sget-object p0, Ly27;->a:Landroid/os/Handler;
+
+    .line 25
+    .line 26
+    invoke-virtual {p0, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+
+    .line 27
+    .line 28
+    .line 29
+    return-void
+.end method
+
+.method public static synthetic b(Landroid/content/Context;Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    sget-object v0, Lw27;->j:Lw27;
+
+    .line 2
+    .line 3
+    invoke-static {p0, p1, v0}, Ly27;->a(Landroid/content/Context;Ljava/lang/String;Lw27;)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
 .end method

@@ -1,183 +1,271 @@
-.class public final enum Ldx4;
-.super Ljava/lang/Enum;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final synthetic Ldx4;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
-
-# static fields
-.field public static final k:Lnb3;
-
-.field public static final enum l:Ldx4;
-
-.field public static final enum m:Ldx4;
-
-.field public static final synthetic n:[Ldx4;
-
-.field public static final synthetic o:Lzu1;
+# interfaces
+.implements Le62;
 
 
 # instance fields
-.field public final j:Ljava/lang/String;
+.field public final synthetic j:B
+
+.field public final synthetic k:Ljava/lang/String;
+
+.field public final synthetic l:Lz45;
+
+.field public final synthetic m:Le55;
+
+.field public final synthetic n:Lgw4;
+
+.field public final synthetic o:Landroid/content/Context;
+
+.field public final synthetic p:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public synthetic constructor <init>(Ljava/lang/String;Lz45;Le55;Lgw4;Landroid/content/Context;Ljava/lang/String;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ldx4;
+    iput-byte p7, p0, Ldx4;->j:B
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    iput-object p1, p0, Ldx4;->k:Ljava/lang/String;
 
     .line 4
-    const-string v2, "standard"
-
     .line 5
+    iput-object p2, p0, Ldx4;->l:Lz45;
+
     .line 6
-    const-string v3, "Standard"
-
     .line 7
-    .line 8
-    invoke-direct {v0, v1, v3, v2}, Ldx4;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    iput-object p3, p0, Ldx4;->m:Le55;
 
+    .line 8
     .line 9
+    iput-object p4, p0, Ldx4;->n:Lgw4;
+
     .line 10
     .line 11
-    sput-object v0, Ldx4;->l:Ldx4;
+    iput-object p5, p0, Ldx4;->o:Landroid/content/Context;
 
     .line 12
     .line 13
-    new-instance v1, Ldx4;
+    iput-object p6, p0, Ldx4;->p:Ljava/lang/String;
 
     .line 14
     .line 15
-    const/4 v2, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 16
-    const-string v3, "compact"
-
     .line 17
     .line 18
-    const-string v4, "Compact"
+    return-void
+.end method
 
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 7
+
+    .line 1
+    iget-byte v0, p0, Ldx4;->j:B
+
+    .line 2
+    .line 3
+    sget-object v1, La47;->a:La47;
+
+    .line 4
+    .line 5
+    iget-object v2, p0, Ldx4;->p:Ljava/lang/String;
+
+    .line 6
+    .line 7
+    iget-object v3, p0, Ldx4;->o:Landroid/content/Context;
+
+    .line 8
+    .line 9
+    iget-object v4, p0, Ldx4;->n:Lgw4;
+
+    .line 10
+    .line 11
+    iget-object v5, p0, Ldx4;->m:Le55;
+
+    .line 12
+    .line 13
+    iget-object v6, p0, Ldx4;->l:Lz45;
+
+    .line 14
+    .line 15
+    iget-object p0, p0, Ldx4;->k:Ljava/lang/String;
+
+    .line 16
+    .line 17
+    packed-switch v0, :pswitch_data_0
+
+    .line 18
     .line 19
     .line 20
-    invoke-direct {v1, v2, v4, v3}, Ldx4;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    iget-object v0, v6, Lz45;->a:Ljava/lang/String;
 
     .line 21
     .line 22
-    .line 23
-    sput-object v1, Ldx4;->m:Ldx4;
+    invoke-static {p0, v0}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
 
+    .line 23
     .line 24
     .line 25
-    filled-new-array {v0, v1}, [Ldx4;
+    move-result p0
 
     .line 26
+    if-eqz p0, :cond_0
+
     .line 27
     .line 28
-    move-result-object v0
+    sget-object p0, Lwn3;->a:Lwn3;
 
     .line 29
-    sput-object v0, Ldx4;->n:[Ldx4;
-
     .line 30
-    .line 31
-    new-instance v1, Lzu1;
+    invoke-static {v5}, Lwn3;->m(Le55;)Z
 
+    .line 31
     .line 32
     .line 33
-    invoke-direct {v1, v0}, Lzu1;-><init>([Ljava/lang/Enum;)V
+    move-result p0
 
     .line 34
+    if-eqz p0, :cond_0
+
     .line 35
     .line 36
-    sput-object v1, Ldx4;->o:Lzu1;
+    new-instance p0, Lgd3;
 
     .line 37
     .line 38
-    new-instance v0, Lnb3;
+    const/16 v0, 0xd
 
     .line 39
     .line 40
-    const/16 v1, 0x1b
+    invoke-direct {p0, v3, v2, v0}, Lgd3;-><init>(Landroid/content/Context;Ljava/lang/String;B)V
 
     .line 41
     .line 42
-    const/4 v2, 0x0
-
     .line 43
-    invoke-direct {v0, v1, v2}, Lnb3;-><init>(BZ)V
+    invoke-virtual {v4, v5, p0}, Lgw4;->a(Le55;Lp62;)V
 
     .line 44
     .line 45
     .line 46
-    sput-object v0, Ldx4;->k:Lnb3;
+    goto :goto_0
 
     .line 47
+    :cond_0
+    new-instance p0, Lgd3;
+
     .line 48
-    return-void
-.end method
+    .line 49
+    const/16 v6, 0xe
 
-.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
-    .locals 0
+    .line 50
+    .line 51
+    invoke-direct {p0, v3, v2, v6}, Lgd3;-><init>(Landroid/content/Context;Ljava/lang/String;B)V
 
-    .line 1
-    invoke-direct {p0, p2, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    .line 52
+    .line 53
+    .line 54
+    invoke-virtual {v4, v5, v0, p0}, Lgw4;->n(Le55;Ljava/lang/String;Lp62;)V
 
-    .line 2
-    .line 3
-    .line 4
-    iput-object p3, p0, Ldx4;->j:Ljava/lang/String;
+    .line 55
+    .line 56
+    .line 57
+    :goto_0
+    return-object v1
 
-    .line 5
-    .line 6
-    return-void
-.end method
+    .line 58
+    :pswitch_0
+    iget-object v0, v6, Lz45;->a:Ljava/lang/String;
 
-.method public static valueOf(Ljava/lang/String;)Ldx4;
-    .locals 1
+    .line 59
+    .line 60
+    invoke-static {p0, v0}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    .line 1
-    const-class v0, Ldx4;
+    .line 61
+    .line 62
+    .line 63
+    move-result p0
 
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    .line 64
+    if-eqz p0, :cond_1
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
+    .line 65
+    .line 66
+    sget-object p0, Lwn3;->a:Lwn3;
 
-    .line 7
-    check-cast p0, Ldx4;
+    .line 67
+    .line 68
+    invoke-static {v5}, Lwn3;->m(Le55;)Z
 
-    .line 8
-    .line 9
-    return-object p0
-.end method
+    .line 69
+    .line 70
+    .line 71
+    move-result p0
 
-.method public static values()[Ldx4;
-    .locals 1
+    .line 72
+    if-eqz p0, :cond_1
 
-    .line 1
-    sget-object v0, Ldx4;->n:[Ldx4;
+    .line 73
+    .line 74
+    new-instance p0, Lgd3;
 
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    .line 75
+    .line 76
+    const/4 v0, 0x4
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
+    .line 77
+    invoke-direct {p0, v3, v2, v0}, Lgd3;-><init>(Landroid/content/Context;Ljava/lang/String;B)V
 
-    .line 7
-    check-cast v0, [Ldx4;
+    .line 78
+    .line 79
+    .line 80
+    invoke-virtual {v4, v5, p0}, Lgw4;->a(Le55;Lp62;)V
 
-    .line 8
-    .line 9
-    return-object v0
+    .line 81
+    .line 82
+    .line 83
+    goto :goto_1
+
+    .line 84
+    :cond_1
+    iget-object p0, v6, Lz45;->a:Ljava/lang/String;
+
+    .line 85
+    .line 86
+    new-instance v0, Lgd3;
+
+    .line 87
+    .line 88
+    const/4 v6, 0x5
+
+    .line 89
+    invoke-direct {v0, v3, v2, v6}, Lgd3;-><init>(Landroid/content/Context;Ljava/lang/String;B)V
+
+    .line 90
+    .line 91
+    .line 92
+    invoke-virtual {v4, v5, p0, v0}, Lgw4;->n(Le55;Ljava/lang/String;Lp62;)V
+
+    .line 93
+    .line 94
+    .line 95
+    :goto_1
+    return-object v1
+
+    .line 96
+    nop
+
+    .line 97
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,99 +1,217 @@
 .class public final synthetic Lz7;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Ljava/util/function/Supplier;
+.implements Lt62;
 
 
 # instance fields
-.field public final synthetic a:B
+.field public final synthetic j:Lqz0;
+
+.field public final synthetic k:Lwp3;
+
+.field public final synthetic l:Lt62;
+
+.field public final synthetic m:Lt62;
+
+.field public final synthetic n:Ln06;
+
+.field public final synthetic o:J
+
+.field public final synthetic p:J
+
+.field public final synthetic q:J
+
+.field public final synthetic r:J
+
+.field public final synthetic s:J
 
 
 # direct methods
-.method public synthetic constructor <init>(B)V
+.method public synthetic constructor <init>(Lqz0;Lwp3;Lt62;Lt62;Ln06;JJJJJI)V
     .locals 0
 
     .line 1
-    iput-byte p1, p0, Lz7;->a:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    iput-object p1, p0, Lz7;->j:Lqz0;
+
     .line 5
     .line 6
+    iput-object p2, p0, Lz7;->k:Lwp3;
+
+    .line 7
+    .line 8
+    iput-object p3, p0, Lz7;->l:Lt62;
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Lz7;->m:Lt62;
+
+    .line 11
+    .line 12
+    iput-object p5, p0, Lz7;->n:Ln06;
+
+    .line 13
+    .line 14
+    iput-wide p6, p0, Lz7;->o:J
+
+    .line 15
+    .line 16
+    iput-wide p8, p0, Lz7;->p:J
+
+    .line 17
+    .line 18
+    iput-wide p10, p0, Lz7;->q:J
+
+    .line 19
+    .line 20
+    iput-wide p12, p0, Lz7;->r:J
+
+    .line 21
+    .line 22
+    iput-wide p14, p0, Lz7;->s:J
+
+    .line 23
+    .line 24
     return-void
 .end method
 
 
 # virtual methods
-.method public final get()Ljava/lang/Object;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 19
 
     .line 1
-    iget-byte p0, p0, Lz7;->a:B
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
-    packed-switch p0, :pswitch_data_0
+    move-object/from16 v15, p1
 
     .line 4
     .line 5
+    check-cast v15, Lz11;
+
     .line 6
-    new-instance p0, Ljava/util/NoSuchElementException;
-
     .line 7
+    move-object/from16 v1, p2
+
     .line 8
-    const-string v0, "No more Events found."
-
     .line 9
-    .line 10
-    invoke-direct {p0, v0}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
+    check-cast v1, Ljava/lang/Integer;
 
+    .line 10
     .line 11
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 12
     .line 13
-    return-object p0
-
     .line 14
-    :pswitch_0
-    new-instance p0, Ljava/util/HashSet;
+    const/4 v1, 0x7
 
     .line 15
-    .line 16
-    invoke-direct {p0}, Ljava/util/HashSet;-><init>()V
+    invoke-static {v1}, Lqu5;->f0(I)I
 
+    .line 16
     .line 17
     .line 18
+    move-result v16
+
     .line 19
-    return-object p0
+    iget-object v1, v0, Lz7;->j:Lqz0;
 
     .line 20
-    :pswitch_1
-    new-instance p0, Ljava/lang/NullPointerException;
-
     .line 21
+    move-object v2, v1
+
     .line 22
-    const-string v0, "Anchor is required in AliasEvent"
+    iget-object v1, v0, Lz7;->k:Lwp3;
 
     .line 23
     .line 24
-    invoke-direct {p0, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
+    move-object v3, v2
 
     .line 25
+    iget-object v2, v0, Lz7;->l:Lt62;
+
     .line 26
     .line 27
-    return-object p0
+    move-object v4, v3
 
     .line 28
-    nop
+    iget-object v3, v0, Lz7;->m:Lt62;
 
     .line 29
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 30
+    move-object v5, v4
+
+    .line 31
+    iget-object v4, v0, Lz7;->n:Ln06;
+
+    .line 32
+    .line 33
+    move-object v7, v5
+
+    .line 34
+    iget-wide v5, v0, Lz7;->o:J
+
+    .line 35
+    .line 36
+    move-object v9, v7
+
+    .line 37
+    iget-wide v7, v0, Lz7;->p:J
+
+    .line 38
+    .line 39
+    move-object v11, v9
+
+    .line 40
+    iget-wide v9, v0, Lz7;->q:J
+
+    .line 41
+    .line 42
+    move-object v13, v11
+
+    .line 43
+    iget-wide v11, v0, Lz7;->r:J
+
+    .line 44
+    .line 45
+    move-object v14, v1
+
+    .line 46
+    iget-wide v0, v0, Lz7;->s:J
+
+    .line 47
+    .line 48
+    move-wide/from16 v17, v0
+
+    .line 49
+    .line 50
+    move-object v0, v13
+
+    .line 51
+    move-object v1, v14
+
+    .line 52
+    move-wide/from16 v13, v17
+
+    .line 53
+    .line 54
+    invoke-static/range {v0 .. v16}, La8;->a(Lqz0;Lwp3;Lt62;Lt62;Ln06;JJJJJLz11;I)V
+
+    .line 55
+    .line 56
+    .line 57
+    sget-object v0, La47;->a:La47;
+
+    .line 58
+    .line 59
+    return-object v0
 .end method

@@ -1,80 +1,86 @@
-.class public final Lw9;
+.class public abstract Lw9;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Ler0;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final a:Lfp2;
+# static fields
+.field public static final a:Landroid/graphics/Canvas;
 
 
 # direct methods
-.method public constructor <init>(Lfp2;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Landroid/graphics/Canvas;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lw9;->a:Lfp2;
+    invoke-direct {v0}, Landroid/graphics/Canvas;-><init>()V
 
+    .line 4
     .line 5
     .line 6
+    sput-object v0, Lw9;->a:Landroid/graphics/Canvas;
+
+    .line 7
+    .line 8
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(Lcr0;)V
-    .locals 0
+.method public static final a(Llc;)Lv9;
+    .locals 2
 
     .line 1
-    iget-object p0, p0, Lw9;->a:Lfp2;
+    new-instance v0, Lv9;
 
     .line 2
     .line 3
-    if-nez p1, :cond_0
+    invoke-direct {v0}, Lv9;-><init>()V
 
     .line 4
     .line 5
-    invoke-virtual {p0}, Lfp2;->r()Landroid/content/ClipboardManager;
-
     .line 6
+    new-instance v1, Landroid/graphics/Canvas;
+
     .line 7
     .line 8
-    move-result-object p0
+    invoke-static {p0}, Lxt2;->L(Lan2;)Landroid/graphics/Bitmap;
 
     .line 9
-    invoke-virtual {p0}, Landroid/content/ClipboardManager;->clearPrimaryClip()V
-
     .line 10
     .line 11
-    .line 12
-    goto :goto_0
-
-    .line 13
-    :cond_0
-    invoke-virtual {p0}, Lfp2;->r()Landroid/content/ClipboardManager;
-
-    .line 14
-    .line 15
-    .line 16
     move-result-object p0
 
+    .line 12
+    invoke-direct {v1, p0}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+
+    .line 13
+    .line 14
+    .line 15
+    iput-object v1, v0, Lv9;->a:Landroid/graphics/Canvas;
+
+    .line 16
     .line 17
-    iget-object p1, p1, Lcr0;->a:Landroid/content/ClipData;
+    return-object v0
+.end method
 
-    .line 18
-    .line 19
-    invoke-virtual {p0, p1}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
+.method public static final b(Lxi0;)Landroid/graphics/Canvas;
+    .locals 0
 
-    .line 20
-    .line 21
-    .line 22
-    :goto_0
-    return-void
+    .line 1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    check-cast p0, Lv9;
+
+    .line 5
+    .line 6
+    iget-object p0, p0, Lv9;->a:Landroid/graphics/Canvas;
+
+    .line 7
+    .line 8
+    return-object p0
 .end method

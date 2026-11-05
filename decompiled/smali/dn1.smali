@@ -1,33 +1,49 @@
-.class public final Ldn1;
-.super Ljo3;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lhn1;
+.class public abstract synthetic Ldn1;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public x:Lo52;
+# static fields
+.field public static final synthetic a:[I
 
 
-# virtual methods
-.method public final o0(Lc03;)V
-    .locals 0
+# direct methods
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    iget-object p0, p0, Ldn1;->x:Lo52;
+    invoke-static {}, Llm1;->values()[Llm1;
 
     .line 2
     .line 3
-    invoke-interface {p0, p1}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 4
+    move-result-object v0
+
     .line 5
+    array-length v0, v0
+
     .line 6
-    invoke-virtual {p1}, Lc03;->c()V
+    new-array v0, v0, [I
 
     .line 7
     .line 8
+    const/4 v1, 0x2
+
     .line 9
+    const/4 v2, 0x1
+
+    .line 10
+    :try_start_0
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 11
+    .line 12
+    :catch_0
+    sput-object v0, Ldn1;->a:[I
+
+    .line 13
+    .line 14
     return-void
 .end method

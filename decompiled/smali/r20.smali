@@ -1,91 +1,310 @@
 .class public final Lr20;
-.super Lqs4;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Lxz;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public a:[Z
-
-.field public b:I
+# static fields
+.field public static final x:Lr20;
 
 
-# virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 1
+# direct methods
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    iget-object v0, p0, Lr20;->a:[Z
+    const/16 v0, 0x100
 
     .line 2
     .line 3
-    iget p0, p0, Lr20;->b:I
+    new-array v0, v0, [I
 
     .line 4
     .line 5
-    invoke-static {v0, p0}, Ljava/util/Arrays;->copyOf([ZI)[Z
+    fill-array-data v0, :array_0
 
     .line 6
     .line 7
     .line 8
-    move-result-object p0
+    new-instance v1, Lr20;
 
     .line 9
-    return-object p0
-.end method
-
-.method public final b(I)V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lr20;->a:[Z
-
-    .line 2
-    .line 3
-    array-length v1, v0
-
-    .line 4
-    if-ge v1, p1, :cond_1
-
-    .line 5
-    .line 6
-    array-length v1, v0
-
-    .line 7
-    mul-int/lit8 v1, v1, 0x2
-
-    .line 8
-    .line 9
-    if-ge p1, v1, :cond_0
-
     .line 10
-    .line 11
-    move p1, v1
+    const-string v2, "Big5-HKSCS"
 
+    .line 11
     .line 12
-    :cond_0
-    invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([ZI)[Z
+    const/4 v3, 0x2
 
     .line 13
+    invoke-direct {v1, v2, v0, v3}, Lxz;-><init>(Ljava/lang/String;[II)V
+
     .line 14
     .line 15
-    move-result-object p1
-
     .line 16
-    iput-object p1, p0, Lr20;->a:[Z
+    sput-object v1, Lr20;->x:Lr20;
 
     .line 17
     .line 18
-    :cond_1
     return-void
-.end method
 
-.method public final d()I
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lr20;->b:I
-
-    .line 2
-    .line 3
-    return p0
+    .line 19
+    :array_0
+    .array-data 4
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x1
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x2
+        0x1
+    .end array-data
 .end method

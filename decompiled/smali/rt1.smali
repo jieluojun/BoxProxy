@@ -1,274 +1,68 @@
 .class public final Lrt1;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Ljava/util/Map;
-.implements Ljava/io/Serializable;
-.implements Lvw2;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # static fields
-.field public static final j:Lrt1;
+.field public static final a:Le6;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 3
 
     .line 1
-    new-instance v0, Lrt1;
+    new-instance v0, Le6;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const/16 v1, 0xc
 
     .line 4
     .line 5
-    .line 6
-    sput-object v0, Lrt1;->j:Lrt1;
-
-    .line 7
-    .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final clear()V
-    .locals 1
-
-    .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    .line 2
-    .line 3
-    const-string v0, "Operation is not supported for read-only collection"
-
-    .line 4
-    .line 5
-    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    const/4 v2, 0x0
 
     .line 6
+    invoke-direct {v0, v1, v2}, Le6;-><init>(BZ)V
+
     .line 7
-    .line 8
-    throw p0
-.end method
-
-.method public final containsKey(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final bridge containsValue(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final bridge entrySet()Ljava/util/Set;
-    .locals 0
-
-    .line 1
-    sget-object p0, Lxt1;->j:Lxt1;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    instance-of p0, p1, Ljava/util/Map;
-
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
-
-    .line 4
-    .line 5
-    check-cast p1, Ljava/util/Map;
-
-    .line 6
-    .line 7
-    invoke-interface {p1}, Ljava/util/Map;->isEmpty()Z
-
     .line 8
     .line 9
+    invoke-static {}, Lot1;->d()Z
+
     .line 10
-    move-result p0
-
     .line 11
-    if-eqz p0, :cond_0
-
     .line 12
+    move-result v1
+
     .line 13
-    const/4 p0, 0x1
+    if-eqz v1, :cond_0
 
     .line 14
-    return p0
-
     .line 15
-    :cond_0
-    const/4 p0, 0x0
+    invoke-virtual {v0}, Le6;->y()Lmb6;
 
     .line 16
-    return p0
-.end method
+    .line 17
+    .line 18
+    move-result-object v1
 
-.method public final get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    .line 19
+    goto :goto_0
 
-    .line 1
-    const/4 p0, 0x0
+    .line 20
+    :cond_0
+    const/4 v1, 0x0
 
-    .line 2
-    return-object p0
-.end method
+    .line 21
+    :goto_0
+    iput-object v1, v0, Le6;->k:Ljava/lang/Object;
 
-.method public final hashCode()I
-    .locals 0
+    .line 22
+    .line 23
+    sput-object v0, Lrt1;->a:Le6;
 
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final isEmpty()Z
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x1
-
-    .line 2
-    return p0
-.end method
-
-.method public final bridge keySet()Ljava/util/Set;
-    .locals 0
-
-    .line 1
-    sget-object p0, Lxt1;->j:Lxt1;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final bridge synthetic put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    .line 2
-    .line 3
-    const-string p1, "Operation is not supported for read-only collection"
-
-    .line 4
-    .line 5
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    throw p0
-.end method
-
-.method public final putAll(Ljava/util/Map;)V
-    .locals 0
-
-    .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    .line 2
-    .line 3
-    const-string p1, "Operation is not supported for read-only collection"
-
-    .line 4
-    .line 5
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    throw p0
-.end method
-
-.method public final remove(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    .line 2
-    .line 3
-    const-string p1, "Operation is not supported for read-only collection"
-
-    .line 4
-    .line 5
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    throw p0
-.end method
-
-.method public final remove(Ljava/lang/Object;Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 9
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    const-string p1, "Operation is not supported for read-only collection"
-
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    throw p0
-.end method
-
-.method public final size()I
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    const-string p0, "{}"
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final bridge values()Ljava/util/Collection;
-    .locals 0
-
-    .line 1
-    sget-object p0, Lqt1;->j:Lqt1;
-
-    .line 2
-    .line 3
-    return-object p0
+    .line 24
+    .line 25
+    return-void
 .end method
