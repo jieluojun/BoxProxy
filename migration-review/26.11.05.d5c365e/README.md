@@ -64,7 +64,7 @@
 ```sh
 python3 scripts/customization_bundle.py export --bundle .tools/current.boxpatch
 python3 scripts/customization_bundle.py bindings --bundle .tools/current.boxpatch --target .tools/next/decompiled --output .tools/next-bindings.json
-# 然后运行 migration-review/26.11.05.d5c365e/scripts 中的匹配脚本（fp.py / match.py / members.py）
+# 然后运行 scripts/candidate_bindings 中的匹配脚本（fp.py / match.py / members.py）
 ```
 
 ## 审核记录
