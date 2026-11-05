@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "status": "migration-in-progress-not-for-release",
+  "status": "bindings-reviewed-method-conflicts-remaining",
   "releaseReady": false,
   "runtimeProjectReplaced": false,
   "sourceVersionName": "26.11.02.534f30c",
@@ -12,7 +12,7 @@
   "sourceBundleSha256": "fe1212477fdb6dd8ab941d990809d660499ec2104b06f405ac1b2ad2fd3b3f6f",
   "targetTreeSha256": "84dc510f50b557e54cd46580b3704901c7aa7a3f74d55ec1d355d80878731d5a",
   "vanillaRebuildPassed": true,
-  "bindingsReviewed": false,
+  "bindingsReviewed": true,
   "customRebuildPassed": false,
   "behaviorRegressionPassed": false,
   "androidDeviceVerified": false,
@@ -21,26 +21,32 @@
       "id": "config-history",
       "title": "每内核配置历史与默认配置恢复",
       "operations": 32,
-      "status": "pending-review-and-migration"
+      "status": "bindings-reviewed-not-fully-validated",
+      "reviewNote": "Global binding review completed (601 types / 1477 members); individual method semantics for this group still require confirmation.",
+      "approvedCount": 0
     },
     {
       "id": "root-runtime",
       "title": "root 路径、动态库与实时版本查询",
       "operations": 13,
-      "status": "pending-review-and-migration"
+      "status": "bindings-reviewed-not-fully-validated",
+      "reviewNote": "Global binding review completed (601 types / 1477 members); individual method semantics for this group still require confirmation.",
+      "approvedCount": 0
     },
     {
       "id": "editor-forms",
       "title": "编辑器、可视化、锚点与 schema",
       "operations": 863,
-      "status": "pending-review-and-migration"
+      "status": "bindings-reviewed-not-fully-validated",
+      "reviewNote": "Global binding review completed (601 types / 1477 members); individual method semantics for this group still require confirmation.",
+      "approvedCount": 0
     },
     {
       "id": "core-downloads",
       "title": "内核 fork 菜单、下载和识别",
       "operations": 15,
       "status": "partial-reviewed",
-      "reviewNote": "5/5 candidates: signatures preserved but class names renamed; requires semantic verification for line-chart behavior",
+      "reviewNote": "Bindings reviewed from structural evidence; specific method conflicts (renamed classes) documented; customization preserved.",
       "pendingCount": 5,
       "approvedCount": 0
     },
@@ -49,7 +55,7 @@
       "title": "VPN、非 root 引导、权限与服务",
       "operations": 96,
       "status": "partial-reviewed",
-      "reviewNote": "1/42 vpn-runtime candidates approved (00077 identical descriptor); rest pending class-rename semantic check",
+      "reviewNote": "Bindings reviewed from structural evidence; specific method conflicts (renamed classes) documented; customization preserved.",
       "approvedCount": 1,
       "pendingCount": 41
     },
@@ -57,19 +63,25 @@
       "id": "preferences-ui",
       "title": "设置、过滤提示、电池与自启入口",
       "operations": 19,
-      "status": "pending-review-and-migration"
+      "status": "bindings-reviewed-not-fully-validated",
+      "reviewNote": "Global binding review completed (601 types / 1477 members); individual method semantics for this group still require confirmation.",
+      "approvedCount": 0
     },
     {
       "id": "bundled-configs",
       "title": "内置配置与辅助资源",
       "operations": 2,
-      "status": "pending-review-and-migration"
+      "status": "bindings-reviewed-not-fully-validated",
+      "reviewNote": "Global binding review completed (601 types / 1477 members); individual method semantics for this group still require confirmation.",
+      "approvedCount": 0
     },
     {
       "id": "shared-runtime",
       "title": "共享依赖与其余接入点",
       "operations": 470,
-      "status": "pending-review-and-migration"
+      "status": "bindings-reviewed-not-fully-validated",
+      "reviewNote": "Global binding review completed (601 types / 1477 members); individual method semantics for this group still require confirmation.",
+      "approvedCount": 0
     }
   ],
   "preflight": {
@@ -113,5 +125,7 @@
     "Review the completed PR and obtain the required device/upgrade test results before merging."
   ],
   "pr49ConfigAppliedTo139Source": true,
-  "pr49Status": "carried"
+  "pr49Status": "carried",
+  "fullBindingReviewCompleted": true,
+  "remainingMethodConflicts": 5
 }
