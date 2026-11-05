@@ -156,13 +156,17 @@
     {
       "type": "tun",
       "tag": "tun-in",
-      "interface_name": "sing",
+      "interface_name": "singbox",
       "address": [
         "172.18.0.1/30"
       ],
       "mtu": 9000,
-      "stack": "system",
-      "auto_route": true
+      "dns_mode": "hijack",
+      "dns_address": [
+        "172.18.0.2"
+      ],
+      "auto_route": true,
+      "auto_redirect": true
     }
   ],
   "outbounds": [
