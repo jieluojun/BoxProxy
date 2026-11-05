@@ -2085,7 +2085,10 @@
     "Lxr0;-><init>(Liu;ZLo52;B)V": "Lxr0;-><init>(Liu;ZLo52;B)V",
     "Lz91;-><init>(Lk22;Lbl5;Ld52;Las3;Las3;Las3;Las3;)V": "Lz91;-><init>(Lk22;Lbl5;Ld52;Las3;Las3;Las3;Las3;)V"
   },
-  "adaptations": {},
+  "adaptations": {
+    "vpn-runtime:00806": "Lci3;->E(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V",
+    "core-downloads:00803": "Lgf3;->z(Ljava/util/List;Ljava/util/Map;Lz11;)Ljava/util/ArrayList;"
+  },
   "UNVERIFIED_method_candidates": [],
   "warning": "Reviewed binding generated from reproducible structural vote evidence; all contracts explicitly reviewed."
 }
