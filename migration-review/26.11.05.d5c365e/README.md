@@ -74,3 +74,14 @@ python3 scripts/customization_bundle.py bindings --bundle .tools/current.boxpatc
 - 待复核（`pending-recheck`）：`field-ordinal`、`method-signature-unique-body-differs` 等其余候选。
 - 未解析项（`type-unresolved`、`needs-manual`）：仍需人工移植或显式绑定。
 - `bindings-candidate.json` 仍为 `reviewed: false`，未应用，未发布。
+
+## 自动复核（第二轮，非批准）
+
+对 405 个 `pending-recheck` 成员做了可重复的一致性检查（仅检查，不等于审核批准）：
+
+- `recheck-consistent`（292）：字段类型在完整映射后一致。字段名称和顺序对应仍未验证。
+- `recheck-consistent-unmapped-refs`（37）：方法体除未映射的混淆引用外一致。
+- `recheck-needs-manual`（76）：方法体确有差异，需人工审核。
+
+修正：上一轮把 651 个无候选成员误标为 `pending-recheck`，现已恢复为 `needs-manual`。
+批准仍需审核者确认，`bindings-candidate.json` 仍为 `reviewed: false`。
