@@ -1,0 +1,11 @@
+mixed-port: 7890
+proxies:
+  - { name: DNS_Hijack, type: dns }
+  - { name: 直连出口, type: direct }
+  - {name: 山东 阿里云, type: vmess, server: 3xui.886725.xyz, port: 80, cipher: auto, uuid: 2123fbff-5884-6045-6818-6571c992127b, alterId: 0, tls: false, network: http, http-opts: {path: [/], headers: {Host: [v.qq.com]}, method: GET}}
+  - {name: 广东 阿里云, type: vmess, server: 8.138.87.197, port: 8080, uuid: 2701a9a4-4582-4dc5-0462-37f4901fa63c, alterId: 0, cipher: auto, udp: true, network: http, http-opts: {path: [/], headers: {Host: [v.qq.com]}}, tls: false}
+  - {name: 青海 IPv6, type: vmess, server: zzf.de5.net, port: 18552, uuid: 2701a9a4-4582-4dc5-0462-37f4901fa63c, alterId: 0, cipher: auto, network: ws, ws-opts: {path: /, headers: {Host: a.com}}, tls: true}
+proxy-groups:
+  - {name: Proxy, type: select, proxies: [直连出口, 山东 阿里云, 广东 阿里云]}
+rules:
+  - MATCH,Proxy

@@ -1,0 +1,153 @@
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+ipv6: false
+external-controller: 0.0.0.0:9090
+secret: ""
+unified-delay: true
+tcp-concurrent: true
+find-process-mode: strict
+global-client-fingerprint: chrome
+profile:
+  store-selected: true
+  store-fake-ip: true
+tun:
+  enable: true
+  stack: mixed
+  dns-hijack: [any:53, tcp://any:53]
+  auto-route: true
+  auto-detect-interface: true
+  mtu: 9000
+  route-exclude-address: [10.0.0.0/8]
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: false
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter: ['*.lan', 'time.*.com']
+  default-nameserver: [223.5.5.5, 119.29.29.29]
+  nameserver: ['https://dns.alidns.com/dns-query', 'tls://dot.pub']
+  nameserver-policy:
+    'geosite:cn': [223.5.5.5]
+    '+.example.com': ['https://1.1.1.1/dns-query']
+  proxy-server-nameserver: [223.5.5.5]
+sniffer:
+  enable: true
+  sniff:
+    HTTP: {ports: [80, 8080-8880], override-destination: true}
+    TLS: {ports: [443, 8443]}
+  skip-domain: ['Mijia Cloud']
+listeners:
+  - name: mixed-in
+    type: mixed
+    port: 7891
+    listen: 0.0.0.0
+  - name: tun-in
+    type: tun
+    stack: system
+tunnels:
+  - tcp/udp,127.0.0.1:6553,114.114.114.114:53,proxy
+  - network: [tcp]
+    address: 127.0.0.1:7777
+    target: example.com:80
+    proxy: DIRECT
+hosts:
+  'a.example.com': 1.2.3.4
+  'b.example.com': [1.2.3.5, 1.2.3.6]
+proxies:
+  - {name: ss1, type: ss, server: 1.1.1.1, port: 8388, cipher: aes-256-gcm, password: pw, udp: true}
+  - name: vm1
+    type: vmess
+    server: v.example.com
+    port: 443
+    uuid: 11111111-1111-1111-1111-111111111111
+    alterId: 0
+    cipher: auto
+    tls: true
+    network: ws
+    ws-opts:
+      path: /ws
+      headers:
+        Host: v.example.com
+  - name: tr1
+    type: trojan
+    server: t.example.com
+    port: 443
+    password: pw
+    sni: t.example.com
+    skip-cert-verify: false
+  - name: hy1
+    type: hysteria2
+    server: h.example.com
+    port: 443
+    password: pw
+  - name: vl1
+    type: vless
+    server: l.example.com
+    port: 443
+    uuid: 11111111-1111-1111-1111-111111111112
+    network: tcp
+    tls: true
+    reality-opts:
+      public-key: abc
+      short-id: 01
+    client-fingerprint: chrome
+proxy-groups:
+  - name: Proxy
+    type: select
+    proxies: [auto, ss1, vm1, DIRECT]
+    use: [sub1]
+  - name: auto
+    type: url-test
+    proxies: [ss1, vm1, tr1]
+    url: http://www.gstatic.com/generate_204
+    interval: 300
+    tolerance: 50
+  - name: fb
+    type: fallback
+    proxies: [ss1, tr1]
+  - name: lb
+    type: load-balance
+    strategy: consistent-hashing
+    proxies: [ss1, tr1]
+proxy-providers:
+  sub1:
+    type: http
+    url: https://example.com/sub
+    interval: 3600
+    path: ./providers/sub1.yaml
+    health-check: {enable: true, url: http://www.gstatic.com/generate_204, interval: 600}
+    override:
+      udp: true
+      additional-prefix: "[x] "
+  file1:
+    type: file
+    path: ./providers/file1.yaml
+rule-providers:
+  ads:
+    type: http
+    behavior: domain
+    format: yaml
+    url: https://example.com/ads.yaml
+    path: ./ruleset/ads.yaml
+    interval: 86400
+  cn:
+    type: file
+    behavior: ipcidr
+    path: ./ruleset/cn.yaml
+rules:
+  - RULE-SET,ads,REJECT
+  - DOMAIN-SUFFIX,google.com,Proxy
+  - DOMAIN-KEYWORD,youtube,Proxy
+  - GEOIP,CN,DIRECT
+  - PROCESS-NAME,com.tencent.mm,DIRECT
+  - AND,((DOMAIN,a.com),(NETWORK,UDP)),REJECT
+  - MATCH,Proxy
+sub-rules:
+  sr1:
+    - DOMAIN,x.com,DIRECT
+geodata-mode: true
+geox-url:
+  geoip: https://example.com/geoip.dat
