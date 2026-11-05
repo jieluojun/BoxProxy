@@ -85,3 +85,8 @@ python3 scripts/customization_bundle.py bindings --bundle .tools/current.boxpatc
 
 修正：上一轮把 651 个无候选成员误标为 `pending-recheck`，现已恢复为 `needs-manual`。
 批准仍需审核者确认，`bindings-candidate.json` 仍为 `reviewed: false`。
+
+## 未解析类型的评分候选（第三轮，非批准）
+
+对 205 个未解析类型，按字段类型与方法签名的重合度（已映射类型）评分，84 个达到 0.6 以上，标为 `candidate-scored`。
+其中 26 个得分为 1.0，但多数仍有并列候选，不能自动视为唯一对应。这些候选仅供审核参考，不构成绑定。
