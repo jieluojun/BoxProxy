@@ -2,6 +2,20 @@
 
 **状态：未审核、未应用、未发布。`reviewed` 为 false。正式 `decompiled/` 保持 134 定制版不变。**
 
+**决定（用户确认）**：审核由用户负责；本版暂不发布，134 仍是正式版本。
+无法提供 Android 14+ 的 `framework-res.apk`，因此本环境无法做构建验证。
+
+## 审核清单
+
+`review-sheet.csv` 逐条列出所有类型和成员候选，列：`kind, old, candidate_new, evidence_tier, status, notes`。
+- `type` / `member`（pending）：有候选，需确认语义后审核。
+- `type-unresolved`（needs-manual）：无可靠候选，`notes` 中给出同字段/方法数的候选类，供人工移植参考。
+- `member`（needs-manual）：无候选，需显式绑定。
+
+审核时重点检查：参数和返回值是否一致、静态/实例是否一致、Compose 常量与枚举/switch 语义、
+以及 36 个指令守卫失败的方法（需在 `adaptations` 中适配）。
+
+
 ## 来源
 
 - 新版 APK：`BoxProxy-26.11.05.d5c365e-arm64-v8a.apk.txt`（zip 有效，versionCode 139，包名 com.boxproxy.box）。
