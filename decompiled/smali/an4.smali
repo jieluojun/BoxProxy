@@ -1,203 +1,226 @@
 .class public final Lan4;
-.super Lvp3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lb13;
+.implements Lpa1;
 
 
 # instance fields
-.field public x:F
-
-.field public y:Lrm4;
+.field public final a:F
 
 
-# virtual methods
-.method public final h(Luj3;Lmj3;J)Lsj3;
-    .locals 4
+# direct methods
+.method public constructor <init>(F)V
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lan4;->y:Lrm4;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const v1, 0x7fffffff
+    .line 4
+    iput p1, p0, Lan4;->a:F
+
+    .line 5
+    .line 6
+    const/4 p0, 0x0
+
+    .line 7
+    cmpg-float p0, p1, p0
+
+    .line 8
+    .line 9
+    if-ltz p0, :cond_1
+
+    .line 10
+    .line 11
+    const/high16 p0, 0x42c80000    # 100.0f
+
+    .line 12
+    .line 13
+    cmpl-float p0, p1, p0
+
+    .line 14
+    .line 15
+    if-lez p0, :cond_0
+
+    .line 16
+    .line 17
+    goto :goto_0
+
+    .line 18
+    :cond_0
+    return-void
+
+    .line 19
+    :cond_1
+    :goto_0
+    const-string p0, "The percent should be in the range of [0, 100]"
+
+    .line 20
+    .line 21
+    invoke-static {p0}, Lso2;->a(Ljava/lang/String;)V
+
+    .line 22
+    .line 23
+    .line 24
+    return-void
+.end method
+
+
+# virtual methods
+.method public final b(JLyg1;)F
+    .locals 0
+
+    .line 1
+    invoke-static {p1, p2}, Lg46;->b(J)F
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p1
+
+    .line 5
+    iget p0, p0, Lan4;->a:F
+
+    .line 6
+    .line 7
+    const/high16 p2, 0x42c80000    # 100.0f
+
+    .line 8
+    .line 9
+    div-float/2addr p0, p2
+
+    .line 10
+    mul-float/2addr p0, p1
+
+    .line 11
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lan4;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Lan4;
+
+    .line 12
+    .line 13
+    iget p0, p0, Lan4;->a:F
+
+    .line 14
+    .line 15
+    iget p1, p1, Lan4;->a:F
+
+    .line 16
+    .line 17
+    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
+
+    .line 18
+    .line 19
+    .line 20
+    move-result p0
+
+    .line 21
+    if-eqz p0, :cond_2
+
+    .line 22
+    .line 23
+    return v2
+
+    .line 24
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lan4;->a:F
+
+    .line 2
+    .line 3
+    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
 
     .line 4
     .line 5
     .line 6
-    if-eqz v0, :cond_0
+    move-result p0
 
     .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "CornerSize(size = "
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
     .line 8
-    invoke-virtual {v0}, Lrm4;->getValue()Ljava/lang/Object;
+    iget p0, p0, Lan4;->a:F
 
     .line 9
     .line 10
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
     .line 11
-    move-result-object v2
-
     .line 12
-    check-cast v2, Ljava/lang/Number;
-
     .line 13
-    .line 14
-    invoke-virtual {v2}, Ljava/lang/Number;->intValue()I
+    const-string p0, "%)"
 
+    .line 14
     .line 15
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 16
     .line 17
-    move-result v2
-
     .line 18
-    if-eq v2, v1, :cond_0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 19
     .line 20
-    invoke-virtual {v0}, Lrm4;->getValue()Ljava/lang/Object;
-
     .line 21
+    move-result-object p0
+
     .line 22
-    .line 23
-    move-result-object v0
-
-    .line 24
-    check-cast v0, Ljava/lang/Number;
-
-    .line 25
-    .line 26
-    invoke-virtual {v0}, Ljava/lang/Number;->floatValue()F
-
-    .line 27
-    .line 28
-    .line 29
-    move-result v0
-
-    .line 30
-    iget p0, p0, Lan4;->x:F
-
-    .line 31
-    .line 32
-    mul-float/2addr v0, p0
-
-    .line 33
-    invoke-static {v0}, Ljava/lang/Math;->round(F)I
-
-    .line 34
-    .line 35
-    .line 36
-    move-result p0
-
-    .line 37
-    goto :goto_0
-
-    .line 38
-    :cond_0
-    move p0, v1
-
-    .line 39
-    :goto_0
-    invoke-static {p3, p4}, Ls61;->k(J)I
-
-    .line 40
-    .line 41
-    .line 42
-    move-result v0
-
-    .line 43
-    if-eq p0, v1, :cond_1
-
-    .line 44
-    .line 45
-    move v2, p0
-
-    .line 46
-    goto :goto_1
-
-    .line 47
-    :cond_1
-    invoke-static {p3, p4}, Ls61;->j(J)I
-
-    .line 48
-    .line 49
-    .line 50
-    move-result v2
-
-    .line 51
-    :goto_1
-    invoke-static {p3, p4}, Ls61;->i(J)I
-
-    .line 52
-    .line 53
-    .line 54
-    move-result v3
-
-    .line 55
-    if-eq p0, v1, :cond_2
-
-    .line 56
-    .line 57
-    goto :goto_2
-
-    .line 58
-    :cond_2
-    invoke-static {p3, p4}, Ls61;->h(J)I
-
-    .line 59
-    .line 60
-    .line 61
-    move-result p0
-
-    .line 62
-    :goto_2
-    invoke-static {v0, v3, v2, p0}, Lt61;->a(IIII)J
-
-    .line 63
-    .line 64
-    .line 65
-    move-result-wide p3
-
-    .line 66
-    invoke-interface {p2, p3, p4}, Lmj3;->e(J)Llp4;
-
-    .line 67
-    .line 68
-    .line 69
-    move-result-object p0
-
-    .line 70
-    iget p2, p0, Llp4;->j:I
-
-    .line 71
-    .line 72
-    iget p3, p0, Llp4;->k:I
-
-    .line 73
-    .line 74
-    new-instance p4, Lv2;
-
-    .line 75
-    .line 76
-    const/16 v0, 0x14
-
-    .line 77
-    .line 78
-    invoke-direct {p4, p0, v0}, Lv2;-><init>(Llp4;B)V
-
-    .line 79
-    .line 80
-    .line 81
-    sget-object p0, Lru1;->j:Lru1;
-
-    .line 82
-    .line 83
-    invoke-interface {p1, p2, p3, p0, p4}, Luj3;->O0(IILjava/util/Map;Lp62;)Lsj3;
-
-    .line 84
-    .line 85
-    .line 86
-    move-result-object p0
-
-    .line 87
     return-object p0
 .end method

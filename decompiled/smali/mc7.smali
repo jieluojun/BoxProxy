@@ -1,424 +1,1131 @@
 .class public final Lmc7;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+
+# static fields
+.field public static final w:Ljava/util/WeakHashMap;
 
 
 # instance fields
-.field public final synthetic a:Luc7;
+.field public final a:Lag;
 
-.field public final synthetic b:Lnd7;
+.field public final b:Lag;
 
-.field public final synthetic c:Lnd7;
+.field public final c:Lag;
 
-.field public final synthetic d:I
+.field public final d:Lag;
 
-.field public final synthetic e:Landroid/view/View;
+.field public final e:Lag;
+
+.field public final f:Lag;
+
+.field public final g:Lag;
+
+.field public final h:Lag;
+
+.field public final i:Lag;
+
+.field public final j:La47;
+
+.field public final k:Lgl4;
+
+.field public final l:Lh27;
+
+.field public final m:La47;
+
+.field public final n:La47;
+
+.field public final o:La47;
+
+.field public final p:La47;
+
+.field public final q:La47;
+
+.field public final r:La47;
+
+.field public final s:La47;
+
+.field public final t:Z
+
+.field public u:I
+
+.field public final v:Ltp2;
 
 
 # direct methods
-.method public constructor <init>(Luc7;Lnd7;Lnd7;ILandroid/view/View;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljava/util/WeakHashMap;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lmc7;->a:Luc7;
+    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
 
+    .line 4
     .line 5
     .line 6
-    iput-object p2, p0, Lmc7;->b:Lnd7;
+    sput-object v0, Lmc7;->w:Ljava/util/WeakHashMap;
 
     .line 7
     .line 8
-    iput-object p3, p0, Lmc7;->c:Lnd7;
-
-    .line 9
-    .line 10
-    iput p4, p0, Lmc7;->d:I
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Lmc7;->e:Landroid/view/View;
-
-    .line 13
-    .line 14
     return-void
 .end method
 
-
-# virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 14
+.method public constructor <init>(Landroid/view/View;)V
+    .locals 16
 
     .line 1
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
     .line 4
-    move-result p1
-
     .line 5
-    iget-object v0, p0, Lmc7;->a:Luc7;
-
     .line 6
-    .line 7
-    iget-object v1, v0, Luc7;->a:Ltc7;
+    new-instance v1, Lag;
 
+    .line 7
     .line 8
+    const/4 v2, 0x4
+
     .line 9
-    invoke-virtual {v1, p1}, Ltc7;->e(F)V
+    const-string v3, "captionBar"
 
     .line 10
     .line 11
-    .line 12
-    invoke-virtual {v1}, Ltc7;->c()F
+    invoke-direct {v1, v2, v3}, Lag;-><init>(ILjava/lang/String;)V
 
+    .line 12
     .line 13
     .line 14
-    .line 15
-    move-result p1
+    iput-object v1, v0, Lmc7;->a:Lag;
 
+    .line 15
     .line 16
-    sget-object v1, Lpc7;->e:Landroid/view/animation/PathInterpolator;
+    new-instance v3, Lag;
 
     .line 17
     .line 18
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    const/16 v4, 0x80
 
     .line 19
     .line 20
-    const/16 v2, 0x24
+    const-string v5, "displayCutout"
 
     .line 21
     .line 22
-    iget-object v3, p0, Lmc7;->b:Lnd7;
+    invoke-direct {v3, v4, v5}, Lag;-><init>(ILjava/lang/String;)V
 
     .line 23
     .line 24
-    if-lt v1, v2, :cond_0
-
     .line 25
+    iput-object v3, v0, Lmc7;->b:Lag;
+
     .line 26
-    new-instance v1, Lad7;
-
     .line 27
-    .line 28
-    invoke-direct {v1, v3}, Lad7;-><init>(Lnd7;)V
+    new-instance v5, Lag;
 
+    .line 28
     .line 29
+    const/16 v6, 0x8
+
     .line 30
     .line 31
-    goto :goto_0
+    const-string v7, "ime"
 
     .line 32
-    :cond_0
-    const/16 v2, 0x23
-
     .line 33
-    .line 34
-    if-lt v1, v2, :cond_1
+    invoke-direct {v5, v6, v7}, Lag;-><init>(ILjava/lang/String;)V
 
+    .line 34
     .line 35
     .line 36
-    new-instance v1, Lzc7;
+    iput-object v5, v0, Lmc7;->c:Lag;
 
     .line 37
     .line 38
-    invoke-direct {v1, v3}, Lzc7;-><init>(Lnd7;)V
+    new-instance v7, Lag;
 
     .line 39
     .line 40
-    .line 41
-    goto :goto_0
+    const/16 v8, 0x20
 
+    .line 41
     .line 42
-    :cond_1
-    const/16 v2, 0x22
+    const-string v9, "mandatorySystemGestures"
 
     .line 43
     .line 44
-    if-lt v1, v2, :cond_2
+    invoke-direct {v7, v8, v9}, Lag;-><init>(ILjava/lang/String;)V
 
     .line 45
     .line 46
-    new-instance v1, Lyc7;
-
     .line 47
-    .line 48
-    invoke-direct {v1, v3}, Lyc7;-><init>(Lnd7;)V
+    iput-object v7, v0, Lmc7;->d:Lag;
 
+    .line 48
     .line 49
+    new-instance v9, Lag;
+
     .line 50
     .line 51
-    goto :goto_0
+    const/4 v10, 0x2
 
     .line 52
-    :cond_2
-    const/16 v2, 0x1f
+    const-string v11, "navigationBars"
 
     .line 53
     .line 54
-    if-lt v1, v2, :cond_3
+    invoke-direct {v9, v10, v11}, Lag;-><init>(ILjava/lang/String;)V
 
     .line 55
     .line 56
-    new-instance v1, Lxc7;
-
     .line 57
-    .line 58
-    invoke-direct {v1, v3}, Lxc7;-><init>(Lnd7;)V
+    iput-object v9, v0, Lmc7;->e:Lag;
 
+    .line 58
     .line 59
+    new-instance v11, Lag;
+
     .line 60
     .line 61
-    goto :goto_0
+    const/4 v12, 0x1
 
     .line 62
-    :cond_3
-    const/16 v2, 0x1e
+    const-string v13, "statusBars"
 
     .line 63
     .line 64
-    if-lt v1, v2, :cond_4
+    invoke-direct {v11, v12, v13}, Lag;-><init>(ILjava/lang/String;)V
 
     .line 65
     .line 66
-    new-instance v1, Lwc7;
-
     .line 67
-    .line 68
-    invoke-direct {v1, v3}, Lwc7;-><init>(Lnd7;)V
+    iput-object v11, v0, Lmc7;->f:Lag;
 
+    .line 68
     .line 69
+    new-instance v13, Lag;
+
     .line 70
     .line 71
-    goto :goto_0
+    const/16 v14, 0x207
 
     .line 72
-    :cond_4
-    new-instance v1, Lvc7;
-
     .line 73
-    .line 74
-    invoke-direct {v1, v3}, Lvc7;-><init>(Lnd7;)V
+    const-string v15, "systemBars"
 
+    .line 74
     .line 75
+    invoke-direct {v13, v14, v15}, Lag;-><init>(ILjava/lang/String;)V
+
     .line 76
     .line 77
-    :goto_0
-    const/4 v2, 0x1
-
     .line 78
-    :goto_1
-    const/16 v4, 0x200
+    iput-object v13, v0, Lmc7;->g:Lag;
 
     .line 79
     .line 80
-    if-gt v2, v4, :cond_6
+    new-instance v15, Lag;
 
     .line 81
     .line 82
-    iget v4, p0, Lmc7;->d:I
+    const/16 v8, 0x10
 
     .line 83
     .line 84
-    and-int/2addr v4, v2
+    const-string v6, "systemGestures"
 
     .line 85
-    iget-object v5, v3, Lnd7;->a:Lkd7;
-
     .line 86
-    .line 87
-    if-nez v4, :cond_5
+    invoke-direct {v15, v8, v6}, Lag;-><init>(ILjava/lang/String;)V
 
+    .line 87
     .line 88
     .line 89
-    invoke-virtual {v5, v2}, Lkd7;->i(I)Lyq2;
+    iput-object v15, v0, Lmc7;->h:Lag;
 
     .line 90
     .line 91
-    .line 92
-    move-result-object v4
+    new-instance v6, Lag;
 
+    .line 92
     .line 93
-    invoke-virtual {v1, v2, v4}, Lbd7;->d(ILyq2;)V
+    const/16 v8, 0x40
 
     .line 94
     .line 95
-    .line 96
-    goto :goto_2
+    const-string v4, "tappableElement"
 
+    .line 96
     .line 97
-    :cond_5
-    invoke-virtual {v5, v2}, Lkd7;->i(I)Lyq2;
+    invoke-direct {v6, v8, v4}, Lag;-><init>(ILjava/lang/String;)V
 
     .line 98
     .line 99
     .line 100
-    move-result-object v4
+    iput-object v6, v0, Lmc7;->i:Lag;
 
     .line 101
-    iget-object v5, p0, Lmc7;->c:Lnd7;
-
     .line 102
+    new-instance v4, La47;
+
     .line 103
-    iget-object v5, v5, Lnd7;->a:Lkd7;
-
     .line 104
+    new-instance v8, Lyp2;
+
     .line 105
-    invoke-virtual {v5, v2}, Lkd7;->i(I)Lyq2;
-
     .line 106
+    const/4 v14, 0x0
+
     .line 107
+    invoke-direct {v8, v14, v14, v14, v14}, Lyp2;-><init>(IIII)V
+
     .line 108
-    move-result-object v5
-
     .line 109
-    iget v6, v4, Lyq2;->a:I
-
     .line 110
+    const-string v14, "waterfall"
+
     .line 111
-    iget v7, v5, Lyq2;->a:I
-
     .line 112
+    invoke-direct {v4, v8, v14}, La47;-><init>(Lyp2;Ljava/lang/String;)V
+
     .line 113
-    sub-int/2addr v6, v7
-
     .line 114
-    int-to-float v6, v6
-
     .line 115
-    const/high16 v7, 0x3f800000    # 1.0f
+    iput-object v4, v0, Lmc7;->j:La47;
 
     .line 116
     .line 117
-    sub-float/2addr v7, p1
+    const/4 v8, 0x0
 
     .line 118
-    mul-float/2addr v6, v7
+    invoke-static {v8}, Lg23;->M(Ljava/lang/Object;)Lgl4;
 
     .line 119
-    float-to-double v8, v6
-
     .line 120
-    const-wide/high16 v10, 0x3fe0000000000000L    # 0.5
-
     .line 121
+    move-result-object v14
+
     .line 122
-    add-double/2addr v8, v10
+    iput-object v14, v0, Lmc7;->k:Lgl4;
 
     .line 123
-    double-to-int v6, v8
-
     .line 124
-    iget v8, v4, Lyq2;->b:I
+    new-instance v14, Lh27;
 
     .line 125
     .line 126
-    iget v9, v5, Lyq2;->b:I
+    invoke-direct {v14, v13, v5}, Lh27;-><init>(Lfb7;Lfb7;)V
 
     .line 127
     .line 128
-    sub-int/2addr v8, v9
-
     .line 129
-    int-to-float v8, v8
+    new-instance v8, Lh27;
 
     .line 130
-    mul-float/2addr v8, v7
-
     .line 131
-    float-to-double v8, v8
+    invoke-direct {v8, v14, v3}, Lh27;-><init>(Lfb7;Lfb7;)V
 
     .line 132
-    add-double/2addr v8, v10
-
     .line 133
-    double-to-int v8, v8
-
     .line 134
-    iget v9, v4, Lyq2;->c:I
+    iput-object v8, v0, Lmc7;->l:Lh27;
 
     .line 135
     .line 136
-    iget v12, v5, Lyq2;->c:I
+    new-instance v14, Lh27;
 
     .line 137
     .line 138
-    sub-int/2addr v9, v12
+    invoke-direct {v14, v6, v7}, Lh27;-><init>(Lfb7;Lfb7;)V
 
     .line 139
-    int-to-float v9, v9
-
     .line 140
-    mul-float/2addr v9, v7
-
     .line 141
-    float-to-double v12, v9
+    new-instance v12, Lh27;
 
     .line 142
-    add-double/2addr v12, v10
-
     .line 143
-    double-to-int v9, v12
+    invoke-direct {v12, v14, v15}, Lh27;-><init>(Lfb7;Lfb7;)V
 
     .line 144
-    iget v12, v4, Lyq2;->d:I
-
     .line 145
     .line 146
-    iget v5, v5, Lyq2;->d:I
+    new-instance v14, Lh27;
 
     .line 147
     .line 148
-    sub-int/2addr v12, v5
+    invoke-direct {v14, v12, v4}, Lh27;-><init>(Lfb7;Lfb7;)V
 
     .line 149
-    int-to-float v5, v12
-
     .line 150
-    mul-float/2addr v5, v7
-
     .line 151
-    float-to-double v12, v5
+    new-instance v4, Lh27;
 
     .line 152
-    add-double/2addr v12, v10
-
     .line 153
-    double-to-int v5, v12
+    invoke-direct {v4, v8, v14}, Lh27;-><init>(Lfb7;Lfb7;)V
 
     .line 154
-    invoke-static {v4, v6, v8, v9, v5}, Lnd7;->a(Lyq2;IIII)Lyq2;
-
     .line 155
     .line 156
-    .line 157
-    move-result-object v4
+    const-string v4, "captionBarIgnoringVisibility"
 
+    .line 157
     .line 158
-    invoke-virtual {v1, v2, v4}, Lbd7;->d(ILyq2;)V
+    invoke-static {v2, v4}, Lx07;->h(ILjava/lang/String;)La47;
 
     .line 159
     .line 160
     .line 161
-    :goto_2
-    shl-int/lit8 v2, v2, 0x1
+    move-result-object v4
 
     .line 162
+    iput-object v4, v0, Lmc7;->m:La47;
+
     .line 163
+    .line 164
+    const-string v4, "navigationBarsIgnoringVisibility"
+
+    .line 165
+    .line 166
+    invoke-static {v10, v4}, Lx07;->h(ILjava/lang/String;)La47;
+
+    .line 167
+    .line 168
+    .line 169
+    move-result-object v4
+
+    .line 170
+    iput-object v4, v0, Lmc7;->n:La47;
+
+    .line 171
+    .line 172
+    const-string v4, "statusBarsIgnoringVisibility"
+
+    .line 173
+    .line 174
+    const/4 v8, 0x1
+
+    .line 175
+    invoke-static {v8, v4}, Lx07;->h(ILjava/lang/String;)La47;
+
+    .line 176
+    .line 177
+    .line 178
+    move-result-object v4
+
+    .line 179
+    iput-object v4, v0, Lmc7;->o:La47;
+
+    .line 180
+    .line 181
+    const-string v4, "systemBarsIgnoringVisibility"
+
+    .line 182
+    .line 183
+    const/16 v8, 0x207
+
+    .line 184
+    .line 185
+    invoke-static {v8, v4}, Lx07;->h(ILjava/lang/String;)La47;
+
+    .line 186
+    .line 187
+    .line 188
+    move-result-object v4
+
+    .line 189
+    iput-object v4, v0, Lmc7;->p:La47;
+
+    .line 190
+    .line 191
+    const-string v4, "tappableElementIgnoringVisibility"
+
+    .line 192
+    .line 193
+    const/16 v8, 0x40
+
+    .line 194
+    .line 195
+    invoke-static {v8, v4}, Lx07;->h(ILjava/lang/String;)La47;
+
+    .line 196
+    .line 197
+    .line 198
+    move-result-object v4
+
+    .line 199
+    iput-object v4, v0, Lmc7;->q:La47;
+
+    .line 200
+    .line 201
+    new-instance v4, La47;
+
+    .line 202
+    .line 203
+    new-instance v8, Lyp2;
+
+    .line 204
+    .line 205
+    const/4 v12, 0x0
+
+    .line 206
+    invoke-direct {v8, v12, v12, v12, v12}, Lyp2;-><init>(IIII)V
+
+    .line 207
+    .line 208
+    .line 209
+    const-string v14, "imeAnimationTarget"
+
+    .line 210
+    .line 211
+    invoke-direct {v4, v8, v14}, La47;-><init>(Lyp2;Ljava/lang/String;)V
+
+    .line 212
+    .line 213
+    .line 214
+    iput-object v4, v0, Lmc7;->r:La47;
+
+    .line 215
+    .line 216
+    new-instance v4, La47;
+
+    .line 217
+    .line 218
+    new-instance v8, Lyp2;
+
+    .line 219
+    .line 220
+    invoke-direct {v8, v12, v12, v12, v12}, Lyp2;-><init>(IIII)V
+
+    .line 221
+    .line 222
+    .line 223
+    const-string v14, "imeAnimationSource"
+
+    .line 224
+    .line 225
+    invoke-direct {v4, v8, v14}, La47;-><init>(Lyp2;Ljava/lang/String;)V
+
+    .line 226
+    .line 227
+    .line 228
+    iput-object v4, v0, Lmc7;->s:La47;
+
+    .line 229
+    .line 230
+    invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+
+    .line 231
+    .line 232
+    .line 233
+    move-result-object v4
+
+    .line 234
+    instance-of v8, v4, Landroid/view/View;
+
+    .line 235
+    .line 236
+    if-eqz v8, :cond_0
+
+    .line 237
+    .line 238
+    check-cast v4, Landroid/view/View;
+
+    .line 239
+    .line 240
+    goto :goto_0
+
+    .line 241
+    :cond_0
+    const/4 v4, 0x0
+
+    .line 242
+    :goto_0
+    if-eqz v4, :cond_1
+
+    .line 243
+    .line 244
+    const v8, 0x7f090054
+
+    .line 245
+    .line 246
+    .line 247
+    invoke-virtual {v4, v8}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+
+    .line 248
+    .line 249
+    .line 250
+    move-result-object v4
+
+    .line 251
     goto :goto_1
 
+    .line 252
+    :cond_1
+    const/4 v4, 0x0
+
+    .line 253
+    :goto_1
+    instance-of v8, v4, Ljava/lang/Boolean;
+
+    .line 254
+    .line 255
+    if-eqz v8, :cond_2
+
+    .line 256
+    .line 257
+    move-object v8, v4
+
+    .line 258
+    check-cast v8, Ljava/lang/Boolean;
+
+    .line 259
+    .line 260
+    goto :goto_2
+
+    .line 261
+    :cond_2
+    const/4 v8, 0x0
+
+    .line 262
+    :goto_2
+    if-eqz v8, :cond_3
+
+    .line 263
+    .line 264
+    invoke-virtual {v8}, Ljava/lang/Boolean;->booleanValue()Z
+
+    .line 265
+    .line 266
+    .line 267
+    move-result v14
+
+    .line 268
+    goto :goto_3
+
+    .line 269
+    :cond_3
+    move v14, v12
+
+    .line 270
+    :goto_3
+    iput-boolean v14, v0, Lmc7;->t:Z
+
+    .line 271
+    .line 272
+    new-instance v4, Ltp2;
+
+    .line 273
+    .line 274
+    invoke-direct {v4, v0}, Ltp2;-><init>(Lmc7;)V
+
+    .line 275
+    .line 276
+    .line 277
+    iput-object v4, v0, Lmc7;->v:Ltp2;
+
+    .line 278
+    .line 279
+    sget-object v0, Ld67;->a:Ljava/util/WeakHashMap;
+
+    .line 280
+    .line 281
+    invoke-static/range {p1 .. p1}, Ly57;->a(Landroid/view/View;)Lic7;
+
+    .line 282
+    .line 283
+    .line 284
+    move-result-object v0
+
+    .line 285
+    if-eqz v0, :cond_4
+
+    .line 286
+    .line 287
+    iget-object v0, v0, Lic7;->a:Lfc7;
+
+    .line 288
+    .line 289
+    invoke-virtual {v0, v2}, Lfc7;->u(I)Z
+
+    .line 290
+    .line 291
+    .line 292
+    move-result v2
+
+    .line 293
+    invoke-virtual {v1, v2}, Lag;->f(Z)V
+
+    .line 294
+    .line 295
+    .line 296
+    const/16 v1, 0x80
+
+    .line 297
+    .line 298
+    invoke-virtual {v0, v1}, Lfc7;->u(I)Z
+
+    .line 299
+    .line 300
+    .line 301
+    move-result v1
+
+    .line 302
+    invoke-virtual {v3, v1}, Lag;->f(Z)V
+
+    .line 303
+    .line 304
+    .line 305
+    const/16 v1, 0x8
+
+    .line 306
+    .line 307
+    invoke-virtual {v0, v1}, Lfc7;->u(I)Z
+
+    .line 308
+    .line 309
+    .line 310
+    move-result v1
+
+    .line 311
+    invoke-virtual {v5, v1}, Lag;->f(Z)V
+
+    .line 312
+    .line 313
+    .line 314
+    const/16 v1, 0x20
+
+    .line 315
+    .line 316
+    invoke-virtual {v0, v1}, Lfc7;->u(I)Z
+
+    .line 317
+    .line 318
+    .line 319
+    move-result v1
+
+    .line 320
+    invoke-virtual {v7, v1}, Lag;->f(Z)V
+
+    .line 321
+    .line 322
+    .line 323
+    invoke-virtual {v0, v10}, Lfc7;->u(I)Z
+
+    .line 324
+    .line 325
+    .line 326
+    move-result v1
+
+    .line 327
+    invoke-virtual {v9, v1}, Lag;->f(Z)V
+
+    .line 328
+    .line 329
+    .line 330
+    const/4 v8, 0x1
+
+    .line 331
+    invoke-virtual {v0, v8}, Lfc7;->u(I)Z
+
+    .line 332
+    .line 333
+    .line 334
+    move-result v1
+
+    .line 335
+    invoke-virtual {v11, v1}, Lag;->f(Z)V
+
+    .line 336
+    .line 337
+    .line 338
+    const/16 v8, 0x207
+
+    .line 339
+    .line 340
+    invoke-virtual {v0, v8}, Lfc7;->u(I)Z
+
+    .line 341
+    .line 342
+    .line 343
+    move-result v1
+
+    .line 344
+    invoke-virtual {v13, v1}, Lag;->f(Z)V
+
+    .line 345
+    .line 346
+    .line 347
+    const/16 v1, 0x10
+
+    .line 348
+    .line 349
+    invoke-virtual {v0, v1}, Lfc7;->u(I)Z
+
+    .line 350
+    .line 351
+    .line 352
+    move-result v1
+
+    .line 353
+    invoke-virtual {v15, v1}, Lag;->f(Z)V
+
+    .line 354
+    .line 355
+    .line 356
+    const/16 v8, 0x40
+
+    .line 357
+    .line 358
+    invoke-virtual {v0, v8}, Lfc7;->u(I)Z
+
+    .line 359
+    .line 360
+    .line 361
+    move-result v0
+
+    .line 362
+    invoke-virtual {v6, v0}, Lag;->f(Z)V
+
+    .line 363
+    .line 364
+    .line 365
+    :cond_4
+    return-void
+.end method
+
+.method public static b(Lmc7;Lic7;)V
+    .locals 5
+
+    .line 1
+    iget-object v0, p0, Lmc7;->a:Lag;
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    invoke-virtual {v0, p1, v1}, Lag;->g(Lic7;I)V
+
+    .line 5
+    .line 6
+    .line 7
+    iget-object v0, p0, Lmc7;->c:Lag;
+
+    .line 8
+    .line 9
+    invoke-virtual {v0, p1, v1}, Lag;->g(Lic7;I)V
+
+    .line 10
+    .line 11
+    .line 12
+    iget-object v0, p0, Lmc7;->b:Lag;
+
+    .line 13
+    .line 14
+    invoke-virtual {v0, p1, v1}, Lag;->g(Lic7;I)V
+
+    .line 15
+    .line 16
+    .line 17
+    iget-object v0, p0, Lmc7;->e:Lag;
+
+    .line 18
+    .line 19
+    invoke-virtual {v0, p1, v1}, Lag;->g(Lic7;I)V
+
+    .line 20
+    .line 21
+    .line 22
+    iget-object v0, p0, Lmc7;->f:Lag;
+
+    .line 23
+    .line 24
+    invoke-virtual {v0, p1, v1}, Lag;->g(Lic7;I)V
+
+    .line 25
+    .line 26
+    .line 27
+    iget-object v0, p0, Lmc7;->g:Lag;
+
+    .line 28
+    .line 29
+    invoke-virtual {v0, p1, v1}, Lag;->g(Lic7;I)V
+
+    .line 30
+    .line 31
+    .line 32
+    iget-object v0, p0, Lmc7;->h:Lag;
+
+    .line 33
+    .line 34
+    invoke-virtual {v0, p1, v1}, Lag;->g(Lic7;I)V
+
+    .line 35
+    .line 36
+    .line 37
+    iget-object v0, p0, Lmc7;->i:Lag;
+
+    .line 38
+    .line 39
+    invoke-virtual {v0, p1, v1}, Lag;->g(Lic7;I)V
+
+    .line 40
+    .line 41
+    .line 42
+    iget-object v0, p0, Lmc7;->d:Lag;
+
+    .line 43
+    .line 44
+    invoke-virtual {v0, p1, v1}, Lag;->g(Lic7;I)V
+
+    .line 45
+    .line 46
+    .line 47
+    iget-object v0, p0, Lmc7;->m:La47;
+
+    .line 48
+    .line 49
+    const/4 v2, 0x4
+
+    .line 50
+    iget-object v3, p1, Lic7;->a:Lfc7;
+
+    .line 51
+    .line 52
+    invoke-virtual {v3, v2}, Lfc7;->j(I)Lpp2;
+
+    .line 53
+    .line 54
+    .line 55
+    move-result-object v2
+
+    .line 56
+    invoke-static {v2}, Lo17;->d(Lpp2;)Lyp2;
+
+    .line 57
+    .line 58
+    .line 59
+    move-result-object v2
+
+    .line 60
+    invoke-virtual {v0, v2}, La47;->f(Lyp2;)V
+
+    .line 61
+    .line 62
+    .line 63
+    iget-object v0, p0, Lmc7;->n:La47;
+
+    .line 64
+    .line 65
+    iget-object v2, p1, Lic7;->a:Lfc7;
+
+    .line 66
+    .line 67
+    const/4 v3, 0x2
+
+    .line 68
+    invoke-virtual {v2, v3}, Lfc7;->j(I)Lpp2;
+
+    .line 69
+    .line 70
+    .line 71
+    move-result-object v2
+
+    .line 72
+    invoke-static {v2}, Lo17;->d(Lpp2;)Lyp2;
+
+    .line 73
+    .line 74
+    .line 75
+    move-result-object v2
+
+    .line 76
+    invoke-virtual {v0, v2}, La47;->f(Lyp2;)V
+
+    .line 77
+    .line 78
+    .line 79
+    iget-object v0, p0, Lmc7;->o:La47;
+
+    .line 80
+    .line 81
+    iget-object v2, p1, Lic7;->a:Lfc7;
+
+    .line 82
+    .line 83
+    const/4 v3, 0x1
+
+    .line 84
+    invoke-virtual {v2, v3}, Lfc7;->j(I)Lpp2;
+
+    .line 85
+    .line 86
+    .line 87
+    move-result-object v2
+
+    .line 88
+    invoke-static {v2}, Lo17;->d(Lpp2;)Lyp2;
+
+    .line 89
+    .line 90
+    .line 91
+    move-result-object v2
+
+    .line 92
+    invoke-virtual {v0, v2}, La47;->f(Lyp2;)V
+
+    .line 93
+    .line 94
+    .line 95
+    iget-object v0, p0, Lmc7;->p:La47;
+
+    .line 96
+    .line 97
+    const/16 v2, 0x207
+
+    .line 98
+    .line 99
+    iget-object v4, p1, Lic7;->a:Lfc7;
+
+    .line 100
+    .line 101
+    invoke-virtual {v4, v2}, Lfc7;->j(I)Lpp2;
+
+    .line 102
+    .line 103
+    .line 104
+    move-result-object v2
+
+    .line 105
+    invoke-static {v2}, Lo17;->d(Lpp2;)Lyp2;
+
+    .line 106
+    .line 107
+    .line 108
+    move-result-object v2
+
+    .line 109
+    invoke-virtual {v0, v2}, La47;->f(Lyp2;)V
+
+    .line 110
+    .line 111
+    .line 112
+    iget-object v0, p0, Lmc7;->q:La47;
+
+    .line 113
+    .line 114
+    const/16 v2, 0x40
+
+    .line 115
+    .line 116
+    iget-object v4, p1, Lic7;->a:Lfc7;
+
+    .line 117
+    .line 118
+    invoke-virtual {v4, v2}, Lfc7;->j(I)Lpp2;
+
+    .line 119
+    .line 120
+    .line 121
+    move-result-object v2
+
+    .line 122
+    invoke-static {v2}, Lo17;->d(Lpp2;)Lyp2;
+
+    .line 123
+    .line 124
+    .line 125
+    move-result-object v2
+
+    .line 126
+    invoke-virtual {v0, v2}, La47;->f(Lyp2;)V
+
+    .line 127
+    .line 128
+    .line 129
+    iget-object p1, p1, Lic7;->a:Lfc7;
+
+    .line 130
+    .line 131
+    invoke-virtual {p1}, Lfc7;->h()Lmj1;
+
+    .line 132
+    .line 133
+    .line 134
+    move-result-object p1
+
+    .line 135
+    iget-object v0, p0, Lmc7;->j:La47;
+
+    .line 136
+    .line 137
+    if-eqz p1, :cond_0
+
+    .line 138
+    .line 139
+    invoke-virtual {p1}, Lmj1;->a()Lpp2;
+
+    .line 140
+    .line 141
+    .line 142
+    move-result-object v2
+
+    .line 143
+    goto :goto_0
+
+    .line 144
+    :cond_0
+    sget-object v2, Lpp2;->e:Lpp2;
+
+    .line 145
+    .line 146
+    :goto_0
+    invoke-static {v2}, Lo17;->d(Lpp2;)Lyp2;
+
+    .line 147
+    .line 148
+    .line 149
+    move-result-object v2
+
+    .line 150
+    invoke-virtual {v0, v2}, La47;->f(Lyp2;)V
+
+    .line 151
+    .line 152
+    .line 153
+    const/4 v0, 0x0
+
+    .line 154
+    if-eqz p1, :cond_2
+
+    .line 155
+    .line 156
+    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 157
+    .line 158
+    const/16 v4, 0x1f
+
+    .line 159
+    .line 160
+    if-lt v2, v4, :cond_1
+
+    .line 161
+    .line 162
+    iget-object p1, p1, Lmj1;->a:Landroid/view/DisplayCutout;
+
+    .line 163
     .line 164
-    :cond_6
-    invoke-virtual {v1}, Lvc7;->b()Lnd7;
+    invoke-static {p1}, Ldb;->c(Landroid/view/DisplayCutout;)Landroid/graphics/Path;
 
     .line 165
     .line 166
@@ -426,22 +1133,186 @@
     move-result-object p1
 
     .line 168
-    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
+    goto :goto_1
 
     .line 169
-    .line 170
-    .line 171
-    move-result-object v0
+    :cond_1
+    move-object p1, v0
 
+    .line 170
+    :goto_1
+    if-eqz p1, :cond_2
+
+    .line 171
     .line 172
-    iget-object p0, p0, Lmc7;->e:Landroid/view/View;
+    new-instance v0, Lzc;
 
     .line 173
     .line 174
-    invoke-static {p0, p1, v0}, Lpc7;->h(Landroid/view/View;Lnd7;Ljava/util/List;)V
+    invoke-direct {v0, p1}, Lzc;-><init>(Landroid/graphics/Path;)V
 
     .line 175
     .line 176
     .line 177
+    :cond_2
+    iget-object p0, p0, Lmc7;->k:Lgl4;
+
+    .line 178
+    .line 179
+    invoke-virtual {p0, v0}, Lgl4;->setValue(Ljava/lang/Object;)V
+
+    .line 180
+    .line 181
+    .line 182
+    sget-object p0, Lq66;->c:Ljava/lang/Object;
+
+    .line 183
+    .line 184
+    monitor-enter p0
+
+    .line 185
+    :try_start_0
+    sget-object p1, Lq66;->j:Lm72;
+
+    .line 186
+    .line 187
+    iget-object p1, p1, Lzr3;->h:Lvr3;
+
+    .line 188
+    .line 189
+    if-eqz p1, :cond_3
+
+    .line 190
+    .line 191
+    invoke-virtual {p1}, Lvr3;->h()Z
+
+    .line 192
+    .line 193
+    .line 194
+    move-result p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 195
+    if-ne p1, v3, :cond_3
+
+    .line 196
+    .line 197
+    move v1, v3
+
+    .line 198
+    :cond_3
+    monitor-exit p0
+
+    .line 199
+    if-eqz v1, :cond_4
+
+    .line 200
+    .line 201
+    invoke-static {}, Lq66;->c()V
+
+    .line 202
+    .line 203
+    .line 204
+    :cond_4
+    return-void
+
+    .line 205
+    :catchall_0
+    move-exception p1
+
+    .line 206
+    monitor-exit p0
+
+    .line 207
+    throw p1
+.end method
+
+
+# virtual methods
+.method public final a(Landroid/view/View;)V
+    .locals 2
+
+    .line 1
+    iget v0, p0, Lmc7;->u:I
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_1
+
+    .line 4
+    .line 5
+    iget-object v0, p0, Lmc7;->v:Ltp2;
+
+    .line 6
+    .line 7
+    const/4 v1, 0x0
+
+    .line 8
+    iput-boolean v1, v0, Ltp2;->m:Z
+
+    .line 9
+    .line 10
+    iput-boolean v1, v0, Ltp2;->n:Z
+
+    .line 11
+    .line 12
+    const/4 v1, 0x0
+
+    .line 13
+    iput-object v1, v0, Ltp2;->o:Lic7;
+
+    .line 14
+    .line 15
+    sget-object v1, Ld67;->a:Ljava/util/WeakHashMap;
+
+    .line 16
+    .line 17
+    invoke-static {p1, v0}, Lx57;->c(Landroid/view/View;Lx94;)V
+
+    .line 18
+    .line 19
+    .line 20
+    invoke-virtual {p1}, Landroid/view/View;->isAttachedToWindow()Z
+
+    .line 21
+    .line 22
+    .line 23
+    move-result v1
+
+    .line 24
+    if-eqz v1, :cond_0
+
+    .line 25
+    .line 26
+    invoke-virtual {p1}, Landroid/view/View;->requestApplyInsets()V
+
+    .line 27
+    .line 28
+    .line 29
+    :cond_0
+    invoke-virtual {p1, v0}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+
+    .line 30
+    .line 31
+    .line 32
+    invoke-static {p1, v0}, Lpb7;->a(Landroid/view/View;Lgb7;)V
+
+    .line 33
+    .line 34
+    .line 35
+    :cond_1
+    iget p1, p0, Lmc7;->u:I
+
+    .line 36
+    .line 37
+    add-int/lit8 p1, p1, 0x1
+
+    .line 38
+    .line 39
+    iput p1, p0, Lmc7;->u:I
+
+    .line 40
+    .line 41
     return-void
 .end method

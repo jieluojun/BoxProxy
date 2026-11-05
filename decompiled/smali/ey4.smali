@@ -1,183 +1,181 @@
-.class public final enum Ley4;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Ley4;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-
-# static fields
-.field public static final k:Ljc3;
-
-.field public static final enum l:Ley4;
-
-.field public static final enum m:Ley4;
-
-.field public static final synthetic n:[Ley4;
-
-.field public static final synthetic o:Lzv1;
+# interfaces
+.implements Ld52;
 
 
 # instance fields
-.field public final j:Ljava/lang/String;
+.field public final synthetic j:B
+
+.field public final synthetic k:Lo52;
+
+.field public final synthetic l:Lo52;
+
+.field public final synthetic m:I
+
+.field public final synthetic n:Las3;
+
+.field public final synthetic o:Las3;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public synthetic constructor <init>(Lo52;Lo52;ILas3;Las3;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ley4;
+    iput-byte p6, p0, Ley4;->j:B
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    iput-object p1, p0, Ley4;->k:Lo52;
 
     .line 4
-    const-string v2, "auto"
-
     .line 5
+    iput-object p2, p0, Ley4;->l:Lo52;
+
     .line 6
-    const-string v3, "Auto"
-
     .line 7
-    .line 8
-    invoke-direct {v0, v1, v3, v2}, Ley4;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    iput p3, p0, Ley4;->m:I
 
+    .line 8
     .line 9
+    iput-object p4, p0, Ley4;->n:Las3;
+
     .line 10
     .line 11
-    sput-object v0, Ley4;->l:Ley4;
+    iput-object p5, p0, Ley4;->o:Las3;
 
     .line 12
     .line 13
-    new-instance v1, Ley4;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 14
     .line 15
-    const/4 v2, 0x1
-
     .line 16
-    const-string v3, "fixed"
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 8
+
+    .line 1
+    iget-byte v0, p0, Ley4;->j:B
+
+    .line 2
+    .line 3
+    sget-object v1, Lk27;->a:Lk27;
+
+    .line 4
+    .line 5
+    const/4 v2, 0x0
+
+    .line 6
+    sget-object v3, Lsw4;->m:Lsw4;
+
+    .line 7
+    .line 8
+    iget-object v4, p0, Ley4;->o:Las3;
+
+    .line 9
+    .line 10
+    iget-object v5, p0, Ley4;->n:Las3;
+
+    .line 11
+    .line 12
+    iget v6, p0, Ley4;->m:I
+
+    .line 13
+    .line 14
+    iget-object v7, p0, Ley4;->l:Lo52;
+
+    .line 15
+    .line 16
+    iget-object p0, p0, Ley4;->k:Lo52;
 
     .line 17
     .line 18
-    const-string v4, "Fixed"
+    packed-switch v0, :pswitch_data_0
 
     .line 19
     .line 20
-    invoke-direct {v1, v2, v4, v3}, Ley4;-><init>(ILjava/lang/String;Ljava/lang/String;)V
-
     .line 21
+    invoke-interface {p0, v3}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 22
     .line 23
-    sput-object v1, Ley4;->m:Ley4;
-
     .line 24
-    .line 25
-    filled-new-array {v0, v1}, [Ley4;
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
+    .line 25
     .line 26
     .line 27
+    move-result-object p0
+
     .line 28
-    move-result-object v0
+    invoke-interface {v7, p0}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 29
-    sput-object v0, Ley4;->n:[Ley4;
-
     .line 30
     .line 31
-    new-instance v1, Lzv1;
+    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     .line 32
     .line 33
-    invoke-direct {v1, v0}, Lzv1;-><init>([Ljava/lang/Enum;)V
+    invoke-interface {v5, p0}, Las3;->setValue(Ljava/lang/Object;)V
 
     .line 34
     .line 35
     .line 36
-    sput-object v1, Ley4;->o:Lzv1;
+    invoke-interface {v4, v2}, Las3;->setValue(Ljava/lang/Object;)V
 
     .line 37
     .line 38
-    new-instance v0, Ljc3;
-
     .line 39
+    return-object v1
+
     .line 40
-    const/16 v1, 0x1a
+    :pswitch_0
+    invoke-interface {p0, v3}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 41
     .line 42
-    const/4 v2, 0x0
-
     .line 43
-    invoke-direct {v0, v1, v2}, Ljc3;-><init>(BZ)V
+    invoke-static {v6}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 44
     .line 45
     .line 46
-    sput-object v0, Ley4;->k:Ljc3;
-
-    .line 47
-    .line 48
-    return-void
-.end method
-
-.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0, p2, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p3, p0, Ley4;->j:Ljava/lang/String;
-
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Ley4;
-    .locals 1
-
-    .line 1
-    const-class v0, Ley4;
-
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    .line 4
-    .line 5
-    .line 6
     move-result-object p0
 
-    .line 7
-    check-cast p0, Ley4;
+    .line 47
+    invoke-interface {v7, p0}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 8
-    .line 9
-    return-object p0
-.end method
+    .line 48
+    .line 49
+    .line 50
+    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
-.method public static values()[Ley4;
-    .locals 1
+    .line 51
+    .line 52
+    invoke-interface {v5, p0}, Las3;->setValue(Ljava/lang/Object;)V
 
-    .line 1
-    sget-object v0, Ley4;->n:[Ley4;
+    .line 53
+    .line 54
+    .line 55
+    invoke-interface {v4, v2}, Las3;->setValue(Ljava/lang/Object;)V
 
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    .line 56
+    .line 57
+    .line 58
+    return-object v1
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [Ley4;
-
-    .line 8
-    .line 9
-    return-object v0
+    .line 59
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

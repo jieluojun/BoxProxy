@@ -1,84 +1,52 @@
 .class public final Lzt3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Ljava/util/concurrent/atomic/AtomicReference;
+.field public final a:Lo80;
 
-.field public final b:Lbu3;
+.field public final b:Ljava/util/Map;
+
+.field public final c:Lt52;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Lo80;Ljava/util/Map;Lt52;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
     .line 4
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 5
     .line 6
-    const/4 v1, 0x0
-
     .line 7
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 8
     .line 9
     .line 10
-    iput-object v0, p0, Lzt3;->a:Ljava/util/concurrent/atomic/AtomicReference;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 11
     .line 12
-    new-instance v0, Lbu3;
-
     .line 13
-    .line 14
-    invoke-direct {v0}, Lbu3;-><init>()V
+    iput-object p1, p0, Lzt3;->a:Lo80;
 
+    .line 14
     .line 15
+    iput-object p2, p0, Lzt3;->b:Ljava/util/Map;
+
     .line 16
     .line 17
-    iput-object v0, p0, Lzt3;->b:Lbu3;
+    iput-object p3, p0, Lzt3;->c:Lt52;
 
     .line 18
     .line 19
     return-void
-.end method
-
-.method public static a(Lzt3;Lp62;Ly81;)Ljava/lang/Object;
-    .locals 2
-
-    .line 1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    new-instance v0, Lu60;
-
-    .line 5
-    .line 6
-    const/4 v1, 0x0
-
-    .line 7
-    invoke-direct {v0, p0, p1, v1}, Lu60;-><init>(Lzt3;Lp62;Ly81;)V
-
-    .line 8
-    .line 9
-    .line 10
-    invoke-static {v0, p2}, Lhq;->H(Lt62;Ly81;)Ljava/lang/Object;
-
-    .line 11
-    .line 12
-    .line 13
-    move-result-object p0
-
-    .line 14
-    return-object p0
 .end method

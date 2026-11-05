@@ -1,44 +1,250 @@
-.class public interface abstract Ls03;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Ls03;
+.super Ljava/lang/Number;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# instance fields
+.field public final j:Ljava/lang/String;
+
+
+# direct methods
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Number;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Ls03;->j:Ljava/lang/String;
+
+    .line 5
+    .line 6
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract A()Z
+.method public final doubleValue()D
+    .locals 2
+
+    .line 1
+    iget-object p0, p0, Ls03;->j:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    invoke-static {p0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-wide v0
+
+    .line 7
+    return-wide v0
 .end method
 
-.method public abstract C([F)V
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    if-ne p0, p1, :cond_0
+
+    .line 2
+    .line 3
+    const/4 p0, 0x1
+
+    .line 4
+    return p0
+
+    .line 5
+    :cond_0
+    instance-of v0, p1, Ls03;
+
+    .line 6
+    .line 7
+    if-eqz v0, :cond_1
+
+    .line 8
+    .line 9
+    check-cast p1, Ls03;
+
+    .line 10
+    .line 11
+    iget-object p0, p0, Ls03;->j:Ljava/lang/String;
+
+    .line 12
+    .line 13
+    iget-object p1, p1, Ls03;->j:Ljava/lang/String;
+
+    .line 14
+    .line 15
+    invoke-virtual {p0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    return p0
+
+    .line 20
+    :cond_1
+    const/4 p0, 0x0
+
+    .line 21
+    return p0
 .end method
 
-.method public abstract D(Ls03;J)J
+.method public final floatValue()F
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls03;->j:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    invoke-static {p0}, Ljava/lang/Float;->parseFloat(Ljava/lang/String;)F
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
 .end method
 
-.method public abstract H(Ls03;[F)V
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls03;->j:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
 .end method
 
-.method public abstract O(Ls03;Z)Lga5;
+.method public final intValue()I
+    .locals 2
+
+    .line 1
+    iget-object p0, p0, Ls03;->j:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    :try_start_0
+    invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 7
+    return p0
+
+    .line 8
+    :catch_0
+    :try_start_1
+    invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-wide v0
+    :try_end_1
+    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1
+
+    .line 12
+    long-to-int p0, v0
+
+    .line 13
+    return p0
+
+    .line 14
+    :catch_1
+    invoke-static {p0}, Leg3;->D(Ljava/lang/String;)Ljava/math/BigDecimal;
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-object p0
+
+    .line 18
+    invoke-virtual {p0}, Ljava/math/BigDecimal;->intValue()I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result p0
+
+    .line 22
+    return p0
 .end method
 
-.method public abstract Q()J
+.method public final longValue()J
+    .locals 2
+
+    .line 1
+    iget-object p0, p0, Ls03;->j:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    :try_start_0
+    invoke-static {p0}, Ljava/lang/Long;->parseLong(Ljava/lang/String;)J
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-wide v0
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 7
+    return-wide v0
+
+    .line 8
+    :catch_0
+    invoke-static {p0}, Leg3;->D(Ljava/lang/String;)Ljava/math/BigDecimal;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object p0
+
+    .line 12
+    invoke-virtual {p0}, Ljava/math/BigDecimal;->longValue()J
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-wide v0
+
+    .line 16
+    return-wide v0
 .end method
 
-.method public abstract T(J)J
-.end method
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-.method public abstract d(J)J
-.end method
+    .line 1
+    iget-object p0, p0, Ls03;->j:Ljava/lang/String;
 
-.method public abstract g(J)J
-.end method
-
-.method public abstract i(J)J
-.end method
-
-.method public abstract o()Ls03;
-.end method
-
-.method public abstract w(Ls03;J)J
-.end method
-
-.method public abstract z(J)J
+    .line 2
+    .line 3
+    return-object p0
 .end method

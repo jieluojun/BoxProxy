@@ -1,248 +1,142 @@
-.class public final Lyi2;
+.class public final synthetic Lyi2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lo52;
 
 
 # instance fields
-.field public final a:Z
+.field public final synthetic j:B
 
-.field public final b:Z
-
-.field public final c:Ljava/lang/String;
+.field public final synthetic k:Lv85;
 
 
 # direct methods
-.method public constructor <init>(ZZLjava/lang/String;)V
+.method public synthetic constructor <init>(Lv85;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p2, p0, Lyi2;->j:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Lyi2;->k:Lv85;
+
     .line 4
-    iput-boolean p1, p0, Lyi2;->a:Z
-
     .line 5
-    .line 6
-    iput-boolean p2, p0, Lyi2;->b:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6
     .line 7
     .line 8
-    iput-object p3, p0, Lyi2;->c:Ljava/lang/String;
-
-    .line 9
-    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
     .line 1
-    const/4 v0, 0x1
+    iget-byte v0, p0, Lyi2;->j:B
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
+    const/4 v1, 0x0
+
     .line 4
-    return v0
+    iget-object p0, p0, Lyi2;->k:Lv85;
 
     .line 5
-    :cond_0
-    instance-of v1, p1, Lyi2;
-
     .line 6
+    packed-switch v0, :pswitch_data_0
+
     .line 7
-    const/4 v2, 0x0
-
     .line 8
-    if-nez v1, :cond_1
-
     .line 9
-    .line 10
-    return v2
+    check-cast p1, Lxt5;
 
+    .line 10
     .line 11
-    :cond_1
-    check-cast p1, Lyi2;
+    iget-object p1, p1, Lxt5;->f:Lfp6;
 
     .line 12
     .line 13
-    iget-boolean v1, p0, Lyi2;->a:Z
+    iget-object p1, p1, Lfp6;->a:Lep6;
 
     .line 14
     .line 15
-    iget-boolean v3, p1, Lyi2;->a:Z
+    iget-object p1, p1, Lep6;->a:Lai;
 
     .line 16
     .line 17
-    if-eq v1, v3, :cond_2
+    iget-object p1, p1, Lai;->k:Ljava/lang/String;
 
     .line 18
     .line 19
-    return v2
+    invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     .line 20
-    :cond_2
-    iget-boolean v1, p0, Lyi2;->b:Z
-
     .line 21
     .line 22
-    iget-boolean v3, p1, Lyi2;->b:Z
+    move-result p1
 
     .line 23
+    if-lez p1, :cond_0
+
     .line 24
-    if-eq v1, v3, :cond_3
-
     .line 25
-    .line 26
-    return v2
+    iput-boolean v1, p0, Lv85;->j:Z
 
+    .line 26
     .line 27
-    :cond_3
-    iget-object p0, p0, Lyi2;->c:Ljava/lang/String;
+    :cond_0
+    sget-object p0, Lk27;->a:Lk27;
 
     .line 28
     .line 29
-    iget-object p1, p1, Lyi2;->c:Ljava/lang/String;
+    return-object p0
 
     .line 30
-    .line 31
-    invoke-static {p0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    :pswitch_0
+    check-cast p1, Lzi2;
 
+    .line 31
     .line 32
+    iget-boolean p1, p1, Lzi2;->z:Z
+
     .line 33
     .line 34
-    move-result p0
+    if-eqz p1, :cond_1
 
     .line 35
-    if-nez p0, :cond_4
-
     .line 36
+    iput-boolean v1, p0, Lv85;->j:Z
+
     .line 37
-    return v2
-
     .line 38
-    :cond_4
-    return v0
-.end method
+    sget-object p0, Lox6;->l:Lox6;
 
-.method public final hashCode()I
-    .locals 3
-
-    .line 1
-    iget-boolean v0, p0, Lyi2;->a:Z
-
-    .line 2
-    .line 3
-    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    const/16 v1, 0x1f
-
-    .line 8
-    .line 9
-    mul-int/2addr v0, v1
-
-    .line 10
-    iget-boolean v2, p0, Lyi2;->b:Z
-
-    .line 11
-    .line 12
-    invoke-static {v0, v1, v2}, Loc1;->f(IIZ)I
-
-    .line 13
-    .line 14
-    .line 15
-    move-result v0
-
-    .line 16
-    iget-object p0, p0, Lyi2;->c:Ljava/lang/String;
-
-    .line 17
-    .line 18
-    if-nez p0, :cond_0
-
-    .line 19
-    .line 20
-    const/4 p0, 0x0
-
-    .line 21
+    .line 39
+    .line 40
     goto :goto_0
 
-    .line 22
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+    .line 41
+    :cond_1
+    sget-object p0, Lox6;->j:Lox6;
 
-    .line 23
-    .line 24
-    .line 25
-    move-result p0
-
-    .line 26
+    .line 42
+    .line 43
     :goto_0
-    add-int/2addr v0, p0
-
-    .line 27
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 5
-
-    .line 1
-    const-string v0, ", changed="
-
-    .line 2
-    .line 3
-    const-string v1, ", error="
-
-    .line 4
-    .line 5
-    const-string v2, "RefreshResult(success="
-
-    .line 6
-    .line 7
-    iget-boolean v3, p0, Lyi2;->a:Z
-
-    .line 8
-    .line 9
-    iget-boolean v4, p0, Lyi2;->b:Z
-
-    .line 10
-    .line 11
-    invoke-static {v2, v0, v1, v3, v4}, Lhs5;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZ)Ljava/lang/StringBuilder;
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object v0
-
-    .line 15
-    const-string v1, ")"
-
-    .line 16
-    .line 17
-    iget-object p0, p0, Lyi2;->c:Ljava/lang/String;
-
-    .line 18
-    .line 19
-    invoke-static {v0, p0, v1}, Ly96;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 20
-    .line 21
-    .line 22
-    move-result-object p0
-
-    .line 23
     return-object p0
+
+    .line 44
+    nop
+
+    .line 45
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

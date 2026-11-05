@@ -1,406 +1,188 @@
-.class public final Lsn;
-.super Llh6;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lsn;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lp62;
+.implements Ls52;
 
 
 # instance fields
-.field public j:Z
+.field public final synthetic j:Ls52;
 
-.field public final synthetic k:Ljava/util/LinkedHashSet;
+.field public final synthetic k:Lko3;
 
-.field public final synthetic l:Lna5;
+.field public final synthetic l:Ls52;
 
-.field public final synthetic m:Lorg/json/JSONObject;
+.field public final synthetic m:Lt52;
 
-.field public final synthetic n:Ljava/io/File;
+.field public final synthetic n:Lc8;
 
-.field public final synthetic o:Ljava/util/ArrayList;
+.field public final synthetic o:F
 
-.field public final synthetic p:Landroid/content/Context;
+.field public final synthetic p:F
+
+.field public final synthetic q:Ls63;
+
+.field public final synthetic r:Llv6;
+
+.field public final synthetic s:Luw1;
+
+.field public final synthetic t:S
+
+.field public final synthetic u:S
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/LinkedHashSet;Lna5;Lorg/json/JSONObject;Ljava/io/File;Ljava/util/ArrayList;Landroid/content/Context;Ly81;)V
+.method public synthetic constructor <init>(Ls52;Lko3;Ls52;Lt52;Lc8;FFLs63;Llv6;Luw1;II)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lsn;->k:Ljava/util/LinkedHashSet;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p2, p0, Lsn;->l:Lna5;
-
     .line 4
+    iput-object p1, p0, Lsn;->j:Ls52;
+
     .line 5
-    iput-object p3, p0, Lsn;->m:Lorg/json/JSONObject;
-
     .line 6
+    iput-object p2, p0, Lsn;->k:Lko3;
+
     .line 7
-    iput-object p4, p0, Lsn;->n:Ljava/io/File;
-
     .line 8
+    iput-object p3, p0, Lsn;->l:Ls52;
+
     .line 9
-    iput-object p5, p0, Lsn;->o:Ljava/util/ArrayList;
-
     .line 10
+    iput-object p4, p0, Lsn;->m:Lt52;
+
     .line 11
-    iput-object p6, p0, Lsn;->p:Landroid/content/Context;
-
     .line 12
-    .line 13
-    const/4 p1, 0x1
+    iput-object p5, p0, Lsn;->n:Lc8;
 
+    .line 13
     .line 14
-    invoke-direct {p0, p1, p7}, Llh6;-><init>(ILy81;)V
+    iput p6, p0, Lsn;->o:F
 
     .line 15
     .line 16
+    iput p7, p0, Lsn;->p:F
+
     .line 17
+    .line 18
+    iput-object p8, p0, Lsn;->q:Ls63;
+
+    .line 19
+    .line 20
+    iput-object p9, p0, Lsn;->r:Llv6;
+
+    .line 21
+    .line 22
+    iput-object p10, p0, Lsn;->s:Luw1;
+
+    .line 23
+    .line 24
+    iput-short p11, p0, Lsn;->t:S
+
+    .line 25
+    .line 26
+    iput-short p12, p0, Lsn;->u:S
+
+    .line 27
+    .line 28
     return-void
 .end method
 
 
 # virtual methods
-.method public final create(Ly81;)Ly81;
-    .locals 8
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 13
 
     .line 1
-    new-instance v0, Lsn;
+    move-object v10, p1
 
     .line 2
+    check-cast v10, Lv01;
+
     .line 3
-    iget-object v5, p0, Lsn;->o:Ljava/util/ArrayList;
-
     .line 4
+    check-cast p2, Ljava/lang/Integer;
+
     .line 5
-    iget-object v6, p0, Lsn;->p:Landroid/content/Context;
-
     .line 6
-    .line 7
-    iget-object v1, p0, Lsn;->k:Ljava/util/LinkedHashSet;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 7
     .line 8
     .line 9
-    iget-object v2, p0, Lsn;->l:Lna5;
+    iget-short p1, p0, Lsn;->t:S
 
     .line 10
     .line 11
-    iget-object v3, p0, Lsn;->m:Lorg/json/JSONObject;
+    or-int/lit8 p1, p1, 0x1
 
     .line 12
     .line 13
-    iget-object v4, p0, Lsn;->n:Ljava/io/File;
+    invoke-static {p1}, Lw23;->h0(I)I
 
     .line 14
     .line 15
-    move-object v7, p1
-
     .line 16
-    invoke-direct/range {v0 .. v7}, Lsn;-><init>(Ljava/util/LinkedHashSet;Lna5;Lorg/json/JSONObject;Ljava/io/File;Ljava/util/ArrayList;Landroid/content/Context;Ly81;)V
+    move-result v11
 
     .line 17
+    iget-object v0, p0, Lsn;->j:Ls52;
+
     .line 18
     .line 19
-    return-object v0
-.end method
-
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    check-cast p1, Ly81;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lsn;->create(Ly81;)Ly81;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Lsn;
-
-    .line 8
-    .line 9
-    sget-object p1, La47;->a:La47;
-
-    .line 10
-    .line 11
-    invoke-virtual {p0, p1}, Lsn;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object p0
-
-    .line 15
-    return-object p0
-.end method
-
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 8
-
-    .line 1
-    iget-boolean v0, p0, Lsn;->j:Z
-
-    .line 2
-    .line 3
-    const/4 v1, 0x0
-
-    .line 4
-    const/4 v2, 0x1
-
-    .line 5
-    if-eqz v0, :cond_1
-
-    .line 6
-    .line 7
-    if-ne v0, v2, :cond_0
-
-    .line 8
-    .line 9
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 10
-    .line 11
-    .line 12
-    goto :goto_1
-
-    .line 13
-    :cond_0
-    const-string p0, "call to \'resume\' before \'invoke\' with coroutine"
-
-    .line 14
-    .line 15
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
-
-    .line 16
-    .line 17
-    .line 18
-    return-object v1
-
-    .line 19
-    :cond_1
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    iget-object v1, p0, Lsn;->k:Lko3;
 
     .line 20
     .line 21
+    iget-object v2, p0, Lsn;->l:Ls52;
+
     .line 22
-    sget-object p1, Loz;->m:Loz;
-
     .line 23
+    iget-object v3, p0, Lsn;->m:Lt52;
+
     .line 24
-    iget-object v0, p0, Lsn;->k:Ljava/util/LinkedHashSet;
-
     .line 25
-    .line 26
-    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    iget-object v4, p0, Lsn;->n:Lc8;
 
+    .line 26
     .line 27
+    iget v5, p0, Lsn;->o:F
+
     .line 28
     .line 29
-    move-result v3
+    iget v6, p0, Lsn;->p:F
 
     .line 30
-    if-eqz v3, :cond_3
-
     .line 31
+    iget-object v7, p0, Lsn;->q:Ls63;
+
     .line 32
-    iget-object v3, p0, Lsn;->l:Lna5;
-
     .line 33
+    iget-object v8, p0, Lsn;->r:Llv6;
+
     .line 34
-    iget-object v3, v3, Lna5;->j:Ljava/lang/Object;
-
     .line 35
+    iget-object v9, p0, Lsn;->s:Luw1;
+
     .line 36
-    check-cast v3, Ljava/io/File;
-
     .line 37
+    iget-short v12, p0, Lsn;->u:S
+
     .line 38
-    if-eqz v3, :cond_3
-
     .line 39
-    .line 40
-    sget-object v4, Lzn;->a:Lzn;
+    invoke-static/range {v0 .. v12}, Lao;->a(Ls52;Lko3;Ls52;Lt52;Lc8;FFLs63;Llv6;Luw1;Lv01;II)V
 
+    .line 40
     .line 41
     .line 42
-    invoke-virtual {v3}, Ljava/io/File;->isFile()Z
+    sget-object p0, Lk27;->a:Lk27;
 
     .line 43
     .line 44
-    .line 45
-    move-result v4
-
-    .line 46
-    if-eqz v4, :cond_3
-
-    .line 47
-    .line 48
-    invoke-virtual {v3}, Ljava/io/File;->length()J
-
-    .line 49
-    .line 50
-    .line 51
-    move-result-wide v4
-
-    .line 52
-    const-wide/16 v6, 0x0
-
-    .line 53
-    .line 54
-    cmp-long v4, v4, v6
-
-    .line 55
-    .line 56
-    if-gtz v4, :cond_2
-
-    .line 57
-    .line 58
-    goto :goto_0
-
-    .line 59
-    :cond_2
-    sget-object v4, Lza0;->a:Lza0;
-
-    .line 60
-    .line 61
-    invoke-virtual {v4, v3}, Lza0;->l(Ljava/io/File;)V
-
-    .line 62
-    .line 63
-    .line 64
-    :cond_3
-    :goto_0
-    iget-object v3, p0, Lsn;->m:Lorg/json/JSONObject;
-
-    .line 65
-    .line 66
-    const-string v4, "preferences"
-
-    .line 67
-    .line 68
-    invoke-virtual {v3, v4}, Lorg/json/JSONObject;->optJSONObject(Ljava/lang/String;)Lorg/json/JSONObject;
-
-    .line 69
-    .line 70
-    .line 71
-    move-result-object v3
-
-    .line 72
-    if-eqz v3, :cond_5
-
-    .line 73
-    .line 74
-    invoke-interface {v0, p1}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    .line 75
-    .line 76
-    .line 77
-    move-result p1
-
-    .line 78
-    if-eqz p1, :cond_4
-
-    .line 79
-    .line 80
-    move-object v1, v3
-
-    .line 81
-    :cond_4
-    if-eqz v1, :cond_5
-
-    .line 82
-    .line 83
-    sget-object p1, Lzn;->a:Lzn;
-
-    .line 84
-    .line 85
-    iget-object p1, p0, Lsn;->p:Landroid/content/Context;
-
-    .line 86
-    .line 87
-    invoke-static {p1, v1}, Lzn;->j(Landroid/content/Context;Lorg/json/JSONObject;)V
-
-    .line 88
-    .line 89
-    .line 90
-    :cond_5
-    sget-object p1, Lzn;->a:Lzn;
-
-    .line 91
-    .line 92
-    iput-boolean v2, p0, Lsn;->j:Z
-
-    .line 93
-    .line 94
-    iget-object v0, p0, Lsn;->n:Ljava/io/File;
-
-    .line 95
-    .line 96
-    iget-object v1, p0, Lsn;->o:Ljava/util/ArrayList;
-
-    .line 97
-    .line 98
-    invoke-virtual {p1, v0, v1, p0}, Lzn;->k(Ljava/io/File;Ljava/util/ArrayList;Lz81;)Ljava/lang/Object;
-
-    .line 99
-    .line 100
-    .line 101
-    move-result-object p0
-
-    .line 102
-    sget-object p1, Lbc1;->j:Lbc1;
-
-    .line 103
-    .line 104
-    if-ne p0, p1, :cond_6
-
-    .line 105
-    .line 106
-    return-object p1
-
-    .line 107
-    :cond_6
-    :goto_1
-    sget-object p0, Lza0;->a:Lza0;
-
-    .line 108
-    .line 109
-    new-instance p1, Lz90;
-
-    .line 110
-    .line 111
-    const/16 v0, 0x8
-
-    .line 112
-    .line 113
-    invoke-direct {p1, v0}, Lz90;-><init>(B)V
-
-    .line 114
-    .line 115
-    .line 116
-    invoke-virtual {p0, p1}, Lza0;->o(Lp62;)Ljava/lang/Object;
-
-    .line 117
-    .line 118
-    .line 119
-    move-result-object p0
-
-    .line 120
-    check-cast p0, Lwb0;
-
-    .line 121
-    .line 122
-    sget-object p0, La47;->a:La47;
-
-    .line 123
-    .line 124
     return-object p0
 .end method

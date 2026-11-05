@@ -1,37 +1,66 @@
-.class public final Lq8;
-.super Ldv6;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Lq8;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final c:Lm8;
+# static fields
+.field public static final a:Ley6;
+
+.field public static final b:Ll;
 
 
 # direct methods
-.method public constructor <init>(Lm8;Ljava/util/Optional;Ljava/util/Optional;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-direct {p0, p2, p3}, Ldv6;-><init>(Ljava/util/Optional;Ljava/util/Optional;)V
+    const/4 v0, 0x0
 
     .line 2
+    const/4 v1, 0x7
+
     .line 3
+    const/4 v2, 0x0
+
     .line 4
-    iput-object p1, p0, Lq8;->c:Lm8;
+    invoke-static {v2, v2, v0, v1}, Luu6;->Y(IILrp1;I)Ley6;
 
     .line 5
     .line 6
+    .line 7
+    move-result-object v0
+
+    .line 8
+    sput-object v0, Lq8;->a:Ley6;
+
+    .line 9
+    .line 10
+    new-instance v0, Ll;
+
+    .line 11
+    .line 12
+    const/16 v1, 0x9
+
+    .line 13
+    .line 14
+    invoke-direct {v0, v1}, Ll;-><init>(B)V
+
+    .line 15
+    .line 16
+    .line 17
+    sput-object v0, Lq8;->b:Ll;
+
+    .line 18
+    .line 19
+    const v0, 0x3dcccccd    # 0.1f
+
+    .line 20
+    .line 21
+    .line 22
+    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+
+    .line 23
+    .line 24
+    .line 25
     return-void
-.end method
-
-
-# virtual methods
-.method public final a()I
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x2
-
-    .line 2
-    return p0
 .end method

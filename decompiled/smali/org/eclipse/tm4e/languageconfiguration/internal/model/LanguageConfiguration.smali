@@ -1,10 +1,10 @@
 .class public Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field private static final log:Lqe3;
+.field private static final log:Ltd3;
 
 
 # instance fields
@@ -86,7 +86,7 @@
     move-result-object v0
 
     .line 7
-    invoke-static {v0}, Lqe3;->a(Ljava/lang/String;)Lqe3;
+    invoke-static {v0}, Ltd3;->a(Ljava/lang/String;)Ltd3;
 
     .line 8
     .line 9
@@ -94,7 +94,7 @@
     move-result-object v0
 
     .line 11
-    sput-object v0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->log:Lqe3;
+    sput-object v0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->log:Ltd3;
 
     .line 12
     .line 13
@@ -136,11 +136,11 @@
     return-void
 .end method
 
-.method public static synthetic a(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/FoldingRules;
+.method public static synthetic a(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/FoldingRules;
     .locals 0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->lambda$load$6(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/FoldingRules;
+    invoke-static {p0, p1, p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->lambda$load$6(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/FoldingRules;
 
     .line 2
     .line 3
@@ -151,11 +151,11 @@
     return-object p0
 .end method
 
-.method public static synthetic b(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;
+.method public static synthetic b(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;
     .locals 0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->lambda$load$1(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;
+    invoke-static {p0, p1, p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->lambda$load$1(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;
 
     .line 2
     .line 3
@@ -211,11 +211,11 @@
     return p0
 .end method
 
-.method public static synthetic f(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPairConditional;
+.method public static synthetic f(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPairConditional;
     .locals 0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->lambda$load$5(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPairConditional;
+    invoke-static {p0, p1, p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->lambda$load$5(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPairConditional;
 
     .line 2
     .line 3
@@ -226,11 +226,11 @@
     return-object p0
 .end method
 
-.method public static synthetic g(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Ljava/lang/String;
+.method public static synthetic g(Liv2;Ljava/lang/reflect/Type;Lfv2;)Ljava/lang/String;
     .locals 0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->lambda$load$0(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Ljava/lang/String;
+    invoke-static {p0, p1, p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->lambda$load$0(Liv2;Ljava/lang/reflect/Type;Lfv2;)Ljava/lang/String;
 
     .line 2
     .line 3
@@ -241,7 +241,7 @@
     return-object p0
 .end method
 
-.method private static getAsBoolean(Lsw2;Z)Z
+.method private static getAsBoolean(Liv2;Z)Z
     .locals 4
 
     .line 1
@@ -250,7 +250,7 @@
     .line 2
     .line 3
     :try_start_0
-    invoke-virtual {p0}, Lsw2;->a()Z
+    invoke-virtual {p0}, Liv2;->a()Z
 
     .line 4
     .line 5
@@ -267,7 +267,7 @@
     move-exception v0
 
     .line 9
-    sget-object v1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->log:Lqe3;
+    sget-object v1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->log:Ltd3;
 
     .line 10
     .line 11
@@ -306,7 +306,7 @@
     move-result-object p0
 
     .line 30
-    iget-object v1, v1, Lqe3;->a:Ljava/lang/String;
+    iget-object v1, v1, Ltd3;->a:Ljava/lang/String;
 
     .line 31
     .line 32
@@ -319,7 +319,7 @@
     return p1
 .end method
 
-.method private static getAsInteger(Lsw2;)Ljava/lang/Integer;
+.method private static getAsInteger(Liv2;)Ljava/lang/Integer;
     .locals 4
 
     .line 1
@@ -328,7 +328,7 @@
     .line 2
     .line 3
     :try_start_0
-    invoke-virtual {p0}, Lsw2;->b()I
+    invoke-virtual {p0}, Liv2;->b()I
 
     .line 4
     .line 5
@@ -353,7 +353,7 @@
     move-exception v0
 
     .line 13
-    sget-object v1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->log:Lqe3;
+    sget-object v1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->log:Ltd3;
 
     .line 14
     .line 15
@@ -392,7 +392,7 @@
     move-result-object p0
 
     .line 34
-    iget-object v1, v1, Lqe3;->a:Ljava/lang/String;
+    iget-object v1, v1, Ltd3;->a:Ljava/lang/String;
 
     .line 35
     .line 36
@@ -408,7 +408,7 @@
     return-object p0
 .end method
 
-.method private static getAsPattern(Lsw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
+.method private static getAsPattern(Liv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
     .locals 2
 
     .line 1
@@ -423,7 +423,7 @@
 
     .line 5
     :cond_0
-    instance-of v1, p0, Ljx2;
+    instance-of v1, p0, Lzv2;
 
     .line 6
     .line 7
@@ -431,7 +431,7 @@
 
     .line 8
     .line 9
-    check-cast p0, Ljx2;
+    check-cast p0, Lzv2;
 
     .line 10
     .line 11
@@ -439,7 +439,7 @@
 
     .line 12
     .line 13
-    invoke-virtual {p0, v1}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, v1}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 14
     .line 15
@@ -447,7 +447,7 @@
     move-result-object v1
 
     .line 17
-    invoke-static {v1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Lsw2;)Ljava/lang/String;
+    invoke-static {v1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Liv2;)Ljava/lang/String;
 
     .line 18
     .line 19
@@ -467,7 +467,7 @@
 
     .line 25
     .line 26
-    invoke-virtual {p0, v0}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, v0}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 27
     .line 28
@@ -475,7 +475,7 @@
     move-result-object p0
 
     .line 30
-    invoke-static {p0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Lsw2;)Ljava/lang/String;
+    invoke-static {p0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Liv2;)Ljava/lang/String;
 
     .line 31
     .line 32
@@ -495,7 +495,7 @@
 
     .line 39
     :cond_2
-    invoke-static {p0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Lsw2;)Ljava/lang/String;
+    invoke-static {p0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Liv2;)Ljava/lang/String;
 
     .line 40
     .line 41
@@ -514,7 +514,7 @@
     return-object p0
 .end method
 
-.method private static getAsString(Lsw2;)Ljava/lang/String;
+.method private static getAsString(Liv2;)Ljava/lang/String;
     .locals 4
 
     .line 1
@@ -523,7 +523,7 @@
     .line 2
     .line 3
     :try_start_0
-    invoke-virtual {p0}, Lsw2;->d()Ljava/lang/String;
+    invoke-virtual {p0}, Liv2;->d()Ljava/lang/String;
 
     .line 4
     .line 5
@@ -540,7 +540,7 @@
     move-exception v0
 
     .line 9
-    sget-object v1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->log:Lqe3;
+    sget-object v1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->log:Ltd3;
 
     .line 10
     .line 11
@@ -579,7 +579,7 @@
     move-result-object p0
 
     .line 30
-    iget-object v1, v1, Lqe3;->a:Ljava/lang/String;
+    iget-object v1, v1, Ltd3;->a:Ljava/lang/String;
 
     .line 31
     .line 32
@@ -595,11 +595,11 @@
     return-object p0
 .end method
 
-.method public static synthetic h(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPair;
+.method public static synthetic h(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPair;
     .locals 0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->lambda$load$4(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPair;
+    invoke-static {p0, p1, p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->lambda$load$4(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPair;
 
     .line 2
     .line 3
@@ -610,11 +610,11 @@
     return-object p0
 .end method
 
-.method public static synthetic i(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;
+.method public static synthetic i(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;
     .locals 0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->lambda$load$3(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;
+    invoke-static {p0, p1, p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->lambda$load$3(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;
 
     .line 2
     .line 3
@@ -640,11 +640,11 @@
     return p0
 .end method
 
-.method public static synthetic k(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/CommentRule;
+.method public static synthetic k(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/CommentRule;
     .locals 0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->lambda$load$2(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/CommentRule;
+    invoke-static {p0, p1, p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->lambda$load$2(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/CommentRule;
 
     .line 2
     .line 3
@@ -655,11 +655,11 @@
     return-object p0
 .end method
 
-.method public static synthetic l(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentationRules;
+.method public static synthetic l(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentationRules;
     .locals 0
 
     .line 1
-    invoke-static {p0, p1, p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->lambda$load$7(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentationRules;
+    invoke-static {p0, p1, p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->lambda$load$7(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentationRules;
 
     .line 2
     .line 3
@@ -670,7 +670,7 @@
     return-object p0
 .end method
 
-.method private static lambda$load$0(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Ljava/lang/String;
+.method private static lambda$load$0(Liv2;Ljava/lang/reflect/Type;Lfv2;)Ljava/lang/String;
     .locals 0
 
     .line 1
@@ -679,7 +679,7 @@
     .line 2
     .line 3
     .line 4
-    instance-of p1, p0, Ljx2;
+    instance-of p1, p0, Lzv2;
 
     .line 5
     .line 6
@@ -687,7 +687,7 @@
 
     .line 7
     .line 8
-    invoke-virtual {p0}, Lsw2;->c()Ljx2;
+    invoke-virtual {p0}, Liv2;->c()Lzv2;
 
     .line 9
     .line 10
@@ -695,7 +695,7 @@
     move-result-object p0
 
     .line 12
-    iget-object p1, p0, Ljx2;->j:Lw93;
+    iget-object p1, p0, Lzv2;->j:La93;
 
     .line 13
     .line 14
@@ -703,7 +703,7 @@
 
     .line 15
     .line 16
-    invoke-virtual {p1, p2}, Lw93;->containsKey(Ljava/lang/Object;)Z
+    invoke-virtual {p1, p2}, La93;->containsKey(Ljava/lang/Object;)Z
 
     .line 17
     .line 18
@@ -715,7 +715,7 @@
 
     .line 21
     .line 22
-    invoke-virtual {p0, p2}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, p2}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 23
     .line 24
@@ -728,7 +728,7 @@
     .line 27
     .line 28
     .line 29
-    instance-of p1, p1, Lox2;
+    instance-of p1, p1, Lew2;
 
     .line 30
     .line 31
@@ -736,7 +736,7 @@
 
     .line 32
     .line 33
-    invoke-virtual {p0, p2}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, p2}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 34
     .line 35
@@ -744,7 +744,7 @@
     move-result-object p0
 
     .line 37
-    invoke-virtual {p0}, Lsw2;->d()Ljava/lang/String;
+    invoke-virtual {p0}, Liv2;->d()Ljava/lang/String;
 
     .line 38
     .line 39
@@ -763,7 +763,7 @@
 
     .line 44
     :cond_1
-    invoke-virtual {p0}, Lsw2;->d()Ljava/lang/String;
+    invoke-virtual {p0}, Liv2;->d()Ljava/lang/String;
 
     .line 45
     .line 46
@@ -774,7 +774,7 @@
     return-object p0
 .end method
 
-.method private static lambda$load$1(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;
+.method private static lambda$load$1(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;
     .locals 4
 
     .line 1
@@ -783,7 +783,7 @@
     .line 2
     .line 3
     .line 4
-    instance-of p1, p0, Ljx2;
+    instance-of p1, p0, Lzv2;
 
     .line 5
     .line 6
@@ -798,7 +798,7 @@
 
     .line 10
     :cond_0
-    invoke-virtual {p0}, Lsw2;->c()Ljx2;
+    invoke-virtual {p0}, Liv2;->c()Lzv2;
 
     .line 11
     .line 12
@@ -810,7 +810,7 @@
 
     .line 15
     .line 16
-    invoke-virtual {p0, p1}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, p1}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 17
     .line 18
@@ -818,7 +818,7 @@
     move-result-object p1
 
     .line 20
-    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsPattern(Lsw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
+    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsPattern(Liv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
     .line 21
     .line 22
@@ -838,7 +838,7 @@
 
     .line 28
     .line 29
-    invoke-virtual {p0, v0}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, v0}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 30
     .line 31
@@ -850,7 +850,7 @@
 
     .line 34
     .line 35
-    instance-of v1, v0, Ljx2;
+    instance-of v1, v0, Lzv2;
 
     .line 36
     .line 37
@@ -858,7 +858,7 @@
 
     .line 38
     .line 39
-    invoke-virtual {v0}, Lsw2;->c()Ljx2;
+    invoke-virtual {v0}, Liv2;->c()Lzv2;
 
     .line 40
     .line 41
@@ -870,7 +870,7 @@
 
     .line 44
     .line 45
-    invoke-virtual {v0, v1}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {v0, v1}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 46
     .line 47
@@ -878,7 +878,7 @@
     move-result-object v1
 
     .line 49
-    invoke-static {v1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Lsw2;)Ljava/lang/String;
+    invoke-static {v1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Liv2;)Ljava/lang/String;
 
     .line 50
     .line 51
@@ -894,7 +894,7 @@
 
     .line 56
     .line 57
-    invoke-virtual {p0, p2}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, p2}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 58
     .line 59
@@ -902,7 +902,7 @@
     move-result-object p2
 
     .line 61
-    invoke-static {p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsPattern(Lsw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
+    invoke-static {p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsPattern(Liv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
     .line 62
     .line 63
@@ -914,7 +914,7 @@
 
     .line 66
     .line 67
-    invoke-virtual {p0, v2}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, v2}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 68
     .line 69
@@ -922,7 +922,7 @@
     move-result-object p0
 
     .line 71
-    invoke-static {p0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsPattern(Lsw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
+    invoke-static {p0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsPattern(Liv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
     .line 72
     .line 73
@@ -942,7 +942,7 @@
 
     .line 80
     .line 81
-    invoke-virtual {v0, v2}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {v0, v2}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 82
     .line 83
@@ -950,7 +950,7 @@
     move-result-object v2
 
     .line 85
-    invoke-static {v2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Lsw2;)Ljava/lang/String;
+    invoke-static {v2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Liv2;)Ljava/lang/String;
 
     .line 86
     .line 87
@@ -962,7 +962,7 @@
 
     .line 90
     .line 91
-    invoke-virtual {v0, v3}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {v0, v3}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 92
     .line 93
@@ -970,7 +970,7 @@
     move-result-object v0
 
     .line 95
-    invoke-static {v0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsInteger(Lsw2;)Ljava/lang/Integer;
+    invoke-static {v0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsInteger(Liv2;)Ljava/lang/Integer;
 
     .line 96
     .line 97
@@ -1066,7 +1066,7 @@
     return p0
 .end method
 
-.method private static lambda$load$2(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/CommentRule;
+.method private static lambda$load$2(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/CommentRule;
     .locals 2
 
     .line 1
@@ -1075,7 +1075,7 @@
     .line 2
     .line 3
     .line 4
-    instance-of p1, p0, Ljx2;
+    instance-of p1, p0, Lzv2;
 
     .line 5
     .line 6
@@ -1090,7 +1090,7 @@
 
     .line 10
     :cond_0
-    invoke-virtual {p0}, Lsw2;->c()Ljx2;
+    invoke-virtual {p0}, Liv2;->c()Lzv2;
 
     .line 11
     .line 12
@@ -1102,7 +1102,7 @@
 
     .line 15
     .line 16
-    invoke-virtual {p0, p1}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, p1}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 17
     .line 18
@@ -1110,7 +1110,7 @@
     move-result-object p1
 
     .line 20
-    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Lsw2;)Ljava/lang/String;
+    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Liv2;)Ljava/lang/String;
 
     .line 21
     .line 22
@@ -1122,7 +1122,7 @@
 
     .line 25
     .line 26
-    invoke-virtual {p0, v0}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, v0}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 27
     .line 28
@@ -1134,7 +1134,7 @@
 
     .line 31
     .line 32
-    instance-of v0, p0, Lhw2;
+    instance-of v0, p0, Lxu2;
 
     .line 33
     .line 34
@@ -1142,11 +1142,11 @@
 
     .line 35
     .line 36
-    check-cast p0, Lhw2;
+    check-cast p0, Lxu2;
 
     .line 37
     .line 38
-    iget-object v0, p0, Lhw2;->j:Ljava/util/ArrayList;
+    iget-object v0, p0, Lxu2;->j:Ljava/util/ArrayList;
 
     .line 39
     .line 40
@@ -1168,7 +1168,7 @@
     const/4 v0, 0x0
 
     .line 48
-    invoke-virtual {p0, v0}, Lhw2;->e(I)Lsw2;
+    invoke-virtual {p0, v0}, Lxu2;->e(I)Liv2;
 
     .line 49
     .line 50
@@ -1176,7 +1176,7 @@
     move-result-object v0
 
     .line 52
-    invoke-static {v0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Lsw2;)Ljava/lang/String;
+    invoke-static {v0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Liv2;)Ljava/lang/String;
 
     .line 53
     .line 54
@@ -1187,7 +1187,7 @@
     const/4 v1, 0x1
 
     .line 57
-    invoke-virtual {p0, v1}, Lhw2;->e(I)Lsw2;
+    invoke-virtual {p0, v1}, Lxu2;->e(I)Liv2;
 
     .line 58
     .line 59
@@ -1195,7 +1195,7 @@
     move-result-object p0
 
     .line 61
-    invoke-static {p0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Lsw2;)Ljava/lang/String;
+    invoke-static {p0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Liv2;)Ljava/lang/String;
 
     .line 62
     .line 63
@@ -1253,7 +1253,7 @@
     return-object p0
 .end method
 
-.method private static lambda$load$3(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;
+.method private static lambda$load$3(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;
     .locals 0
 
     .line 1
@@ -1262,7 +1262,7 @@
     .line 2
     .line 3
     .line 4
-    instance-of p1, p0, Lhw2;
+    instance-of p1, p0, Lxu2;
 
     .line 5
     .line 6
@@ -1274,11 +1274,11 @@
 
     .line 9
     :cond_0
-    check-cast p0, Lhw2;
+    check-cast p0, Lxu2;
 
     .line 10
     .line 11
-    iget-object p1, p0, Lhw2;->j:Ljava/util/ArrayList;
+    iget-object p1, p0, Lxu2;->j:Ljava/util/ArrayList;
 
     .line 12
     .line 13
@@ -1304,7 +1304,7 @@
     const/4 p1, 0x0
 
     .line 22
-    invoke-virtual {p0, p1}, Lhw2;->e(I)Lsw2;
+    invoke-virtual {p0, p1}, Lxu2;->e(I)Liv2;
 
     .line 23
     .line 24
@@ -1312,7 +1312,7 @@
     move-result-object p1
 
     .line 26
-    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Lsw2;)Ljava/lang/String;
+    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Liv2;)Ljava/lang/String;
 
     .line 27
     .line 28
@@ -1323,7 +1323,7 @@
     const/4 p2, 0x1
 
     .line 31
-    invoke-virtual {p0, p2}, Lhw2;->e(I)Lsw2;
+    invoke-virtual {p0, p2}, Lxu2;->e(I)Liv2;
 
     .line 32
     .line 33
@@ -1331,7 +1331,7 @@
     move-result-object p0
 
     .line 35
-    invoke-static {p0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Lsw2;)Ljava/lang/String;
+    invoke-static {p0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Liv2;)Ljava/lang/String;
 
     .line 36
     .line 37
@@ -1371,7 +1371,7 @@
     return-object p0
 .end method
 
-.method private static lambda$load$4(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPair;
+.method private static lambda$load$4(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPair;
     .locals 1
 
     .line 1
@@ -1380,7 +1380,7 @@
     .line 2
     .line 3
     .line 4
-    instance-of p1, p0, Lhw2;
+    instance-of p1, p0, Lxu2;
 
     .line 5
     .line 6
@@ -1391,11 +1391,11 @@
 
     .line 8
     .line 9
-    check-cast p0, Lhw2;
+    check-cast p0, Lxu2;
 
     .line 10
     .line 11
-    iget-object p1, p0, Lhw2;->j:Ljava/util/ArrayList;
+    iget-object p1, p0, Lxu2;->j:Ljava/util/ArrayList;
 
     .line 12
     .line 13
@@ -1421,7 +1421,7 @@
     const/4 p1, 0x0
 
     .line 22
-    invoke-virtual {p0, p1}, Lhw2;->e(I)Lsw2;
+    invoke-virtual {p0, p1}, Lxu2;->e(I)Liv2;
 
     .line 23
     .line 24
@@ -1429,7 +1429,7 @@
     move-result-object p1
 
     .line 26
-    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Lsw2;)Ljava/lang/String;
+    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Liv2;)Ljava/lang/String;
 
     .line 27
     .line 28
@@ -1440,7 +1440,7 @@
     const/4 v0, 0x1
 
     .line 31
-    invoke-virtual {p0, v0}, Lhw2;->e(I)Lsw2;
+    invoke-virtual {p0, v0}, Lxu2;->e(I)Liv2;
 
     .line 32
     .line 33
@@ -1448,7 +1448,7 @@
     move-result-object p0
 
     .line 35
-    invoke-static {p0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Lsw2;)Ljava/lang/String;
+    invoke-static {p0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Liv2;)Ljava/lang/String;
 
     .line 36
     .line 37
@@ -1460,7 +1460,7 @@
 
     .line 40
     :cond_1
-    instance-of p1, p0, Ljx2;
+    instance-of p1, p0, Lzv2;
 
     .line 41
     .line 42
@@ -1468,7 +1468,7 @@
 
     .line 43
     .line 44
-    invoke-virtual {p0}, Lsw2;->c()Ljx2;
+    invoke-virtual {p0}, Liv2;->c()Lzv2;
 
     .line 45
     .line 46
@@ -1480,7 +1480,7 @@
 
     .line 49
     .line 50
-    invoke-virtual {p0, p1}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, p1}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 51
     .line 52
@@ -1488,7 +1488,7 @@
     move-result-object p1
 
     .line 54
-    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Lsw2;)Ljava/lang/String;
+    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Liv2;)Ljava/lang/String;
 
     .line 55
     .line 56
@@ -1500,7 +1500,7 @@
 
     .line 59
     .line 60
-    invoke-virtual {p0, v0}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, v0}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 61
     .line 62
@@ -1508,7 +1508,7 @@
     move-result-object p0
 
     .line 64
-    invoke-static {p0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Lsw2;)Ljava/lang/String;
+    invoke-static {p0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Liv2;)Ljava/lang/String;
 
     .line 65
     .line 66
@@ -1553,7 +1553,7 @@
     return-object p2
 .end method
 
-.method private static lambda$load$5(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPairConditional;
+.method private static lambda$load$5(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPairConditional;
     .locals 3
 
     .line 1
@@ -1574,7 +1574,7 @@
     .line 8
     .line 9
     .line 10
-    instance-of v0, p0, Lhw2;
+    instance-of v0, p0, Lxu2;
 
     .line 11
     .line 12
@@ -1585,11 +1585,11 @@
 
     .line 14
     .line 15
-    check-cast p0, Lhw2;
+    check-cast p0, Lxu2;
 
     .line 16
     .line 17
-    iget-object v0, p0, Lhw2;->j:Ljava/util/ArrayList;
+    iget-object v0, p0, Lxu2;->j:Ljava/util/ArrayList;
 
     .line 18
     .line 19
@@ -1613,7 +1613,7 @@
     const/4 p2, 0x0
 
     .line 28
-    invoke-virtual {p0, p2}, Lhw2;->e(I)Lsw2;
+    invoke-virtual {p0, p2}, Lxu2;->e(I)Liv2;
 
     .line 29
     .line 30
@@ -1621,7 +1621,7 @@
     move-result-object p2
 
     .line 32
-    invoke-static {p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Lsw2;)Ljava/lang/String;
+    invoke-static {p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Liv2;)Ljava/lang/String;
 
     .line 33
     .line 34
@@ -1632,7 +1632,7 @@
     const/4 v0, 0x1
 
     .line 37
-    invoke-virtual {p0, v0}, Lhw2;->e(I)Lsw2;
+    invoke-virtual {p0, v0}, Lxu2;->e(I)Liv2;
 
     .line 38
     .line 39
@@ -1640,7 +1640,7 @@
     move-result-object p0
 
     .line 41
-    invoke-static {p0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Lsw2;)Ljava/lang/String;
+    invoke-static {p0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Liv2;)Ljava/lang/String;
 
     .line 42
     .line 43
@@ -1652,7 +1652,7 @@
 
     .line 46
     :cond_1
-    instance-of p2, p0, Ljx2;
+    instance-of p2, p0, Lzv2;
 
     .line 47
     .line 48
@@ -1660,7 +1660,7 @@
 
     .line 49
     .line 50
-    invoke-virtual {p0}, Lsw2;->c()Ljx2;
+    invoke-virtual {p0}, Liv2;->c()Lzv2;
 
     .line 51
     .line 52
@@ -1672,7 +1672,7 @@
 
     .line 55
     .line 56
-    invoke-virtual {p0, p2}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, p2}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 57
     .line 58
@@ -1680,7 +1680,7 @@
     move-result-object p2
 
     .line 60
-    invoke-static {p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Lsw2;)Ljava/lang/String;
+    invoke-static {p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Liv2;)Ljava/lang/String;
 
     .line 61
     .line 62
@@ -1692,7 +1692,7 @@
 
     .line 65
     .line 66
-    invoke-virtual {p0, v0}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, v0}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 67
     .line 68
@@ -1700,7 +1700,7 @@
     move-result-object v0
 
     .line 70
-    invoke-static {v0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Lsw2;)Ljava/lang/String;
+    invoke-static {v0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Liv2;)Ljava/lang/String;
 
     .line 71
     .line 72
@@ -1712,7 +1712,7 @@
 
     .line 75
     .line 76
-    invoke-virtual {p0, v2}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, v2}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 77
     .line 78
@@ -1724,7 +1724,7 @@
 
     .line 81
     .line 82
-    instance-of v2, p0, Lhw2;
+    instance-of v2, p0, Lxu2;
 
     .line 83
     .line 84
@@ -1732,11 +1732,11 @@
 
     .line 85
     .line 86
-    check-cast p0, Lhw2;
+    check-cast p0, Lxu2;
 
     .line 87
     .line 88
-    iget-object p0, p0, Lhw2;->j:Ljava/util/ArrayList;
+    iget-object p0, p0, Lxu2;->j:Ljava/util/ArrayList;
 
     .line 89
     .line 90
@@ -1770,11 +1770,11 @@
     move-result-object v2
 
     .line 104
-    check-cast v2, Lsw2;
+    check-cast v2, Liv2;
 
     .line 105
     .line 106
-    invoke-static {v2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Lsw2;)Ljava/lang/String;
+    invoke-static {v2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsString(Liv2;)Ljava/lang/String;
 
     .line 107
     .line 108
@@ -1838,7 +1838,7 @@
     return-object v1
 .end method
 
-.method private static lambda$load$6(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/FoldingRules;
+.method private static lambda$load$6(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/FoldingRules;
     .locals 2
 
     .line 1
@@ -1847,7 +1847,7 @@
     .line 2
     .line 3
     .line 4
-    instance-of p1, p0, Ljx2;
+    instance-of p1, p0, Lzv2;
 
     .line 5
     .line 6
@@ -1862,7 +1862,7 @@
 
     .line 10
     :cond_0
-    invoke-virtual {p0}, Lsw2;->c()Ljx2;
+    invoke-virtual {p0}, Liv2;->c()Lzv2;
 
     .line 11
     .line 12
@@ -1874,7 +1874,7 @@
 
     .line 15
     .line 16
-    invoke-virtual {p0, p1}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, p1}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 17
     .line 18
@@ -1886,7 +1886,7 @@
 
     .line 21
     .line 22
-    instance-of v0, p1, Ljx2;
+    instance-of v0, p1, Lzv2;
 
     .line 23
     .line 24
@@ -1894,7 +1894,7 @@
 
     .line 25
     .line 26
-    invoke-virtual {p1}, Lsw2;->c()Ljx2;
+    invoke-virtual {p1}, Liv2;->c()Lzv2;
 
     .line 27
     .line 28
@@ -1906,7 +1906,7 @@
 
     .line 31
     .line 32
-    invoke-virtual {p1, v0}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p1, v0}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 33
     .line 34
@@ -1914,7 +1914,7 @@
     move-result-object v0
 
     .line 36
-    invoke-static {v0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsPattern(Lsw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
+    invoke-static {v0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsPattern(Liv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
     .line 37
     .line 38
@@ -1926,7 +1926,7 @@
 
     .line 41
     .line 42
-    invoke-virtual {p1, v1}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p1, v1}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 43
     .line 44
@@ -1934,7 +1934,7 @@
     move-result-object p1
 
     .line 46
-    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsPattern(Lsw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
+    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsPattern(Liv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
     .line 47
     .line 48
@@ -1954,7 +1954,7 @@
 
     .line 55
     .line 56
-    invoke-virtual {p0, p2}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, p2}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 57
     .line 58
@@ -1965,7 +1965,7 @@
     const/4 p2, 0x0
 
     .line 61
-    invoke-static {p0, p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsBoolean(Lsw2;Z)Z
+    invoke-static {p0, p2}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsBoolean(Liv2;Z)Z
 
     .line 62
     .line 63
@@ -1986,7 +1986,7 @@
     return-object p2
 .end method
 
-.method private static lambda$load$7(Lsw2;Ljava/lang/reflect/Type;Lpw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentationRules;
+.method private static lambda$load$7(Liv2;Ljava/lang/reflect/Type;Lfv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentationRules;
     .locals 3
 
     .line 1
@@ -1995,7 +1995,7 @@
     .line 2
     .line 3
     .line 4
-    instance-of p1, p0, Ljx2;
+    instance-of p1, p0, Lzv2;
 
     .line 5
     .line 6
@@ -2010,7 +2010,7 @@
 
     .line 10
     :cond_0
-    invoke-virtual {p0}, Lsw2;->c()Ljx2;
+    invoke-virtual {p0}, Liv2;->c()Lzv2;
 
     .line 11
     .line 12
@@ -2022,7 +2022,7 @@
 
     .line 15
     .line 16
-    invoke-virtual {p0, p1}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, p1}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 17
     .line 18
@@ -2030,7 +2030,7 @@
     move-result-object p1
 
     .line 20
-    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsPattern(Lsw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
+    invoke-static {p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsPattern(Liv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
     .line 21
     .line 22
@@ -2050,7 +2050,7 @@
 
     .line 28
     .line 29
-    invoke-virtual {p0, v0}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, v0}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 30
     .line 31
@@ -2058,7 +2058,7 @@
     move-result-object v0
 
     .line 33
-    invoke-static {v0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsPattern(Lsw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
+    invoke-static {v0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsPattern(Liv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
     .line 34
     .line 35
@@ -2082,7 +2082,7 @@
 
     .line 43
     .line 44
-    invoke-virtual {p0, v1}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, v1}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 45
     .line 46
@@ -2090,7 +2090,7 @@
     move-result-object v1
 
     .line 48
-    invoke-static {v1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsPattern(Lsw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
+    invoke-static {v1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsPattern(Liv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
     .line 49
     .line 50
@@ -2102,7 +2102,7 @@
 
     .line 53
     .line 54
-    invoke-virtual {p0, v2}, Ljx2;->e(Ljava/lang/String;)Lsw2;
+    invoke-virtual {p0, v2}, Lzv2;->e(Ljava/lang/String;)Liv2;
 
     .line 55
     .line 56
@@ -2110,7 +2110,7 @@
     move-result-object p0
 
     .line 58
-    invoke-static {p0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsPattern(Lsw2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
+    invoke-static {p0}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/LanguageConfiguration;->getAsPattern(Liv2;)Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
 
     .line 59
     .line 60
@@ -2221,23 +2221,23 @@
     move-result-object p0
 
     .line 26
-    new-instance v0, Lo92;
+    new-instance v0, Ln82;
 
     .line 27
     .line 28
-    invoke-direct {v0}, Lo92;-><init>()V
+    invoke-direct {v0}, Ln82;-><init>()V
 
     .line 29
     .line 30
     .line 31
-    new-instance v1, Lsz2;
+    new-instance v1, Liy2;
 
     .line 32
     .line 33
     const/4 v2, 0x0
 
     .line 34
-    invoke-direct {v1, v2}, Lsz2;-><init>(B)V
+    invoke-direct {v1, v2}, Liy2;-><init>(B)V
 
     .line 35
     .line 36
@@ -2246,19 +2246,19 @@
 
     .line 38
     .line 39
-    invoke-virtual {v0, v3, v1}, Lo92;->b(Ljava/lang/Class;Lsz2;)V
+    invoke-virtual {v0, v3, v1}, Ln82;->b(Ljava/lang/Class;Liy2;)V
 
     .line 40
     .line 41
     .line 42
-    new-instance v1, Lsz2;
+    new-instance v1, Liy2;
 
     .line 43
     .line 44
     const/4 v3, 0x2
 
     .line 45
-    invoke-direct {v1, v3}, Lsz2;-><init>(B)V
+    invoke-direct {v1, v3}, Liy2;-><init>(B)V
 
     .line 46
     .line 47
@@ -2267,19 +2267,19 @@
 
     .line 49
     .line 50
-    invoke-virtual {v0, v4, v1}, Lo92;->b(Ljava/lang/Class;Lsz2;)V
+    invoke-virtual {v0, v4, v1}, Ln82;->b(Ljava/lang/Class;Liy2;)V
 
     .line 51
     .line 52
     .line 53
-    new-instance v1, Lsz2;
+    new-instance v1, Liy2;
 
     .line 54
     .line 55
     const/4 v4, 0x3
 
     .line 56
-    invoke-direct {v1, v4}, Lsz2;-><init>(B)V
+    invoke-direct {v1, v4}, Liy2;-><init>(B)V
 
     .line 57
     .line 58
@@ -2288,19 +2288,19 @@
 
     .line 60
     .line 61
-    invoke-virtual {v0, v5, v1}, Lo92;->b(Ljava/lang/Class;Lsz2;)V
+    invoke-virtual {v0, v5, v1}, Ln82;->b(Ljava/lang/Class;Liy2;)V
 
     .line 62
     .line 63
     .line 64
-    new-instance v1, Lsz2;
+    new-instance v1, Liy2;
 
     .line 65
     .line 66
     const/4 v5, 0x4
 
     .line 67
-    invoke-direct {v1, v5}, Lsz2;-><init>(B)V
+    invoke-direct {v1, v5}, Liy2;-><init>(B)V
 
     .line 68
     .line 69
@@ -2309,19 +2309,19 @@
 
     .line 71
     .line 72
-    invoke-virtual {v0, v6, v1}, Lo92;->b(Ljava/lang/Class;Lsz2;)V
+    invoke-virtual {v0, v6, v1}, Ln82;->b(Ljava/lang/Class;Liy2;)V
 
     .line 73
     .line 74
     .line 75
-    new-instance v1, Lsz2;
+    new-instance v1, Liy2;
 
     .line 76
     .line 77
     const/4 v6, 0x5
 
     .line 78
-    invoke-direct {v1, v6}, Lsz2;-><init>(B)V
+    invoke-direct {v1, v6}, Liy2;-><init>(B)V
 
     .line 79
     .line 80
@@ -2330,19 +2330,19 @@
 
     .line 82
     .line 83
-    invoke-virtual {v0, v6, v1}, Lo92;->b(Ljava/lang/Class;Lsz2;)V
+    invoke-virtual {v0, v6, v1}, Ln82;->b(Ljava/lang/Class;Liy2;)V
 
     .line 84
     .line 85
     .line 86
-    new-instance v1, Lsz2;
+    new-instance v1, Liy2;
 
     .line 87
     .line 88
     const/4 v6, 0x6
 
     .line 89
-    invoke-direct {v1, v6}, Lsz2;-><init>(B)V
+    invoke-direct {v1, v6}, Liy2;-><init>(B)V
 
     .line 90
     .line 91
@@ -2351,19 +2351,19 @@
 
     .line 93
     .line 94
-    invoke-virtual {v0, v6, v1}, Lo92;->b(Ljava/lang/Class;Lsz2;)V
+    invoke-virtual {v0, v6, v1}, Ln82;->b(Ljava/lang/Class;Liy2;)V
 
     .line 95
     .line 96
     .line 97
-    new-instance v1, Lsz2;
+    new-instance v1, Liy2;
 
     .line 98
     .line 99
     const/4 v6, 0x7
 
     .line 100
-    invoke-direct {v1, v6}, Lsz2;-><init>(B)V
+    invoke-direct {v1, v6}, Liy2;-><init>(B)V
 
     .line 101
     .line 102
@@ -2372,19 +2372,19 @@
 
     .line 104
     .line 105
-    invoke-virtual {v0, v6, v1}, Lo92;->b(Ljava/lang/Class;Lsz2;)V
+    invoke-virtual {v0, v6, v1}, Ln82;->b(Ljava/lang/Class;Liy2;)V
 
     .line 106
     .line 107
     .line 108
-    new-instance v1, Lsz2;
+    new-instance v1, Liy2;
 
     .line 109
     .line 110
     const/4 v6, 0x1
 
     .line 111
-    invoke-direct {v1, v6}, Lsz2;-><init>(B)V
+    invoke-direct {v1, v6}, Liy2;-><init>(B)V
 
     .line 112
     .line 113
@@ -2393,12 +2393,12 @@
 
     .line 115
     .line 116
-    invoke-virtual {v0, v7, v1}, Lo92;->b(Ljava/lang/Class;Lsz2;)V
+    invoke-virtual {v0, v7, v1}, Ln82;->b(Ljava/lang/Class;Liy2;)V
 
     .line 117
     .line 118
     .line 119
-    invoke-virtual {v0}, Lo92;->a()Ln92;
+    invoke-virtual {v0}, Ln82;->a()Lm82;
 
     .line 120
     .line 121
@@ -2406,7 +2406,7 @@
     move-result-object v0
 
     .line 123
-    new-instance v1, Lh17;
+    new-instance v1, Lrz6;
 
     .line 124
     .line 125
@@ -2414,7 +2414,7 @@
 
     .line 126
     .line 127
-    invoke-direct {v1, v7}, Lh17;-><init>(Ljava/lang/reflect/Type;)V
+    invoke-direct {v1, v7}, Lrz6;-><init>(Ljava/lang/reflect/Type;)V
 
     .line 128
     .line 129
@@ -2439,7 +2439,7 @@
     .line 137
     .line 138
     .line 139
-    invoke-virtual {v0, v7, v1}, Ln92;->a(Ljava/io/Reader;Lh17;)Ljava/lang/Object;
+    invoke-virtual {v0, v7, v1}, Lm82;->a(Ljava/io/Reader;Lrz6;)Ljava/lang/Object;
 
     .line 140
     .line 141
@@ -2472,11 +2472,11 @@
 
     .line 154
     :cond_1
-    new-instance v1, Ltz2;
+    new-instance v1, Ljy2;
 
     .line 155
     .line 156
-    invoke-direct {v1, v2}, Ltz2;-><init>(B)V
+    invoke-direct {v1, v2}, Ljy2;-><init>(B)V
 
     .line 157
     .line 158
@@ -2507,11 +2507,11 @@
 
     .line 171
     :cond_2
-    new-instance v1, Ltz2;
+    new-instance v1, Ljy2;
 
     .line 172
     .line 173
-    invoke-direct {v1, v6}, Ltz2;-><init>(B)V
+    invoke-direct {v1, v6}, Ljy2;-><init>(B)V
 
     .line 174
     .line 175
@@ -2542,11 +2542,11 @@
 
     .line 188
     :cond_3
-    new-instance v1, Ltz2;
+    new-instance v1, Ljy2;
 
     .line 189
     .line 190
-    invoke-direct {v1, v3}, Ltz2;-><init>(B)V
+    invoke-direct {v1, v3}, Ljy2;-><init>(B)V
 
     .line 191
     .line 192
@@ -2577,11 +2577,11 @@
 
     .line 205
     :cond_4
-    new-instance v1, Ltz2;
+    new-instance v1, Ljy2;
 
     .line 206
     .line 207
-    invoke-direct {v1, v4}, Ltz2;-><init>(B)V
+    invoke-direct {v1, v4}, Ljy2;-><init>(B)V
 
     .line 208
     .line 209
@@ -2612,11 +2612,11 @@
 
     .line 222
     :cond_5
-    new-instance v1, Ltz2;
+    new-instance v1, Ljy2;
 
     .line 223
     .line 224
-    invoke-direct {v1, v5}, Ltz2;-><init>(B)V
+    invoke-direct {v1, v5}, Ljy2;-><init>(B)V
 
     .line 225
     .line 226

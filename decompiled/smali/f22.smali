@@ -1,33 +1,32 @@
 .class public final Lf22;
-.super Lz81;
+.super Lro3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lro3;"
+    }
+.end annotation
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
-
-.field public k:I
-
-.field public final synthetic l:Lol;
-
-.field public m:Ljava/lang/Object;
-
-.field public n:Lh12;
-
-.field public o:I
+.field public final synthetic j:Lg22;
 
 
 # direct methods
-.method public constructor <init>(Lol;Ly81;)V
+.method public constructor <init>(Lg22;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lf22;->l:Lol;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
     .line 4
+    iput-object p1, p0, Lf22;->j:Lg22;
+
     .line 5
     .line 6
     return-void
@@ -35,43 +34,72 @@
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a()Ljo3;
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lf22;->j:Ljava/lang/Object;
+    iget-object p0, p0, Lf22;->j:Lg22;
 
     .line 2
     .line 3
-    iget p1, p0, Lf22;->k:I
+    iget-object p0, p0, Lg22;->c:Lt22;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    return-object p0
+.end method
+
+.method public final b(Ljo3;)V
+    .locals 0
+
+    .line 1
+    check-cast p1, Lt22;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 0
+
+    .line 1
+    if-ne p1, p0, :cond_0
+
+    .line 2
+    .line 3
+    const/4 p0, 0x1
+
+    .line 4
+    return p0
+
+    .line 5
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 6
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lf22;->j:Lg22;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lg22;->c:Lt22;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lf22;->k:I
+    move-result p0
 
     .line 9
-    .line 10
-    iget-object p1, p0, Lf22;->l:Lol;
-
-    .line 11
-    .line 12
-    const/4 v0, 0x0
-
-    .line 13
-    invoke-virtual {p1, v0, p0}, Lol;->e(Ljava/lang/Object;Ly81;)Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p0
-
-    .line 17
-    return-object p0
+    return p0
 .end method

@@ -1,399 +1,299 @@
-.class public final Loy5;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ljava/util/Iterator;
-.implements Ly81;
-.implements Lfy2;
+.class public abstract Loy5;
+.super Lad0;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public j:B
+.field public a:Lgt4;
 
-.field public k:Ljava/lang/Object;
-
-.field public l:Ly81;
+.field public b:J
 
 
-# virtual methods
-.method public final a()Ljava/lang/RuntimeException;
-    .locals 3
+# direct methods
+.method public constructor <init>()V
+    .locals 2
 
     .line 1
-    iget-byte v0, p0, Loy5;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/4 v1, 0x4
-
     .line 4
-    if-eq v0, v1, :cond_1
+    const-wide v0, 0x7fc000007fc00000L    # 2.247117487993712E307
 
     .line 5
     .line 6
-    const/4 v1, 0x5
-
-    .line 7
-    if-eq v0, v1, :cond_0
-
-    .line 8
-    .line 9
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    .line 10
-    .line 11
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    .line 12
-    .line 13
-    const-string v2, "Unexpected state of the iterator: "
-
-    .line 14
-    .line 15
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 16
-    .line 17
-    .line 18
-    iget-byte p0, p0, Loy5;->j:B
-
-    .line 19
-    .line 20
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 21
-    .line 22
-    .line 23
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 24
-    .line 25
-    .line 26
-    move-result-object p0
-
-    .line 27
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    .line 28
-    .line 29
-    .line 30
-    return-object v0
-
-    .line 31
-    :cond_0
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    .line 32
-    .line 33
-    const-string v0, "Iterator has failed."
-
-    .line 34
-    .line 35
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    .line 36
-    .line 37
-    .line 38
-    return-object p0
-
-    .line 39
-    :cond_1
-    new-instance p0, Ljava/util/NoSuchElementException;
-
-    .line 40
-    .line 41
-    invoke-direct {p0}, Ljava/util/NoSuchElementException;-><init>()V
-
-    .line 42
-    .line 43
-    .line 44
-    return-object p0
-.end method
-
-.method public final b(Ly81;Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    iput-object p2, p0, Loy5;->k:Ljava/lang/Object;
-
-    .line 2
-    .line 3
-    const/4 p2, 0x3
-
-    .line 4
-    iput-byte p2, p0, Loy5;->j:B
-
-    .line 5
-    .line 6
-    iput-object p1, p0, Loy5;->l:Ly81;
-
     .line 7
     .line 8
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 9
+    iput-wide v0, p0, Loy5;->b:J
+
     .line 10
     .line 11
     return-void
 .end method
 
-.method public final getContext()Lrb1;
-    .locals 0
 
-    .line 1
-    sget-object p0, Lmu1;->j:Lmu1;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final hasNext()Z
-    .locals 3
-
-    .line 1
-    :goto_0
-    iget-byte v0, p0, Loy5;->j:B
-
-    .line 2
-    .line 3
-    const/4 v1, 0x0
-
-    .line 4
-    if-eqz v0, :cond_3
-
-    .line 5
-    .line 6
-    const/4 v2, 0x1
-
-    .line 7
-    if-eq v0, v2, :cond_2
-
-    .line 8
-    .line 9
-    const/4 v1, 0x2
-
-    .line 10
-    if-eq v0, v1, :cond_1
-
-    .line 11
-    .line 12
-    const/4 v1, 0x3
-
-    .line 13
-    if-eq v0, v1, :cond_1
-
-    .line 14
-    .line 15
-    const/4 v1, 0x4
-
-    .line 16
-    if-ne v0, v1, :cond_0
-
-    .line 17
-    .line 18
-    const/4 p0, 0x0
-
-    .line 19
-    return p0
-
-    .line 20
-    :cond_0
-    invoke-virtual {p0}, Loy5;->a()Ljava/lang/RuntimeException;
-
-    .line 21
-    .line 22
-    .line 23
-    move-result-object p0
-
-    .line 24
-    throw p0
-
-    .line 25
-    :cond_1
-    return v2
-
-    .line 26
-    :cond_2
-    throw v1
-
-    .line 27
-    :cond_3
-    const/4 v0, 0x5
-
-    .line 28
-    iput-byte v0, p0, Loy5;->j:B
-
-    .line 29
-    .line 30
-    iget-object v0, p0, Loy5;->l:Ly81;
-
-    .line 31
-    .line 32
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 33
-    .line 34
-    .line 35
-    iput-object v1, p0, Loy5;->l:Ly81;
-
-    .line 36
-    .line 37
-    sget-object v1, La47;->a:La47;
-
-    .line 38
-    .line 39
-    invoke-interface {v0, v1}, Ly81;->resumeWith(Ljava/lang/Object;)V
-
-    .line 40
-    .line 41
-    .line 42
-    goto :goto_0
-.end method
-
-.method public final next()Ljava/lang/Object;
+# virtual methods
+.method public final b(FJLbd4;)V
     .locals 4
 
     .line 1
-    iget-byte v0, p0, Loy5;->j:B
+    iget-object v0, p0, Loy5;->a:Lgt4;
 
     .line 2
     .line 3
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_2
+    if-eqz v0, :cond_0
 
     .line 5
     .line 6
-    const/4 v2, 0x1
+    iget-wide v2, p0, Loy5;->b:J
 
     .line 7
-    if-eq v0, v2, :cond_2
-
     .line 8
+    invoke-static {v2, v3, p2, p3}, Lg46;->a(JJ)Z
+
     .line 9
-    const/4 v3, 0x2
-
     .line 10
-    if-eq v0, v3, :cond_1
-
     .line 11
+    move-result v2
+
     .line 12
-    const/4 v2, 0x3
+    if-nez v2, :cond_3
 
     .line 13
-    if-ne v0, v2, :cond_0
-
     .line 14
+    :cond_0
+    invoke-static {p2, p3}, Lg46;->c(J)Z
+
     .line 15
-    const/4 v0, 0x0
-
     .line 16
-    iput-byte v0, p0, Loy5;->j:B
-
     .line 17
+    move-result v0
+
     .line 18
-    iget-object v0, p0, Loy5;->k:Ljava/lang/Object;
+    if-eqz v0, :cond_1
 
     .line 19
     .line 20
-    iput-object v1, p0, Loy5;->k:Ljava/lang/Object;
+    iput-object v1, p0, Loy5;->a:Lgt4;
 
     .line 21
     .line 22
-    return-object v0
+    const-wide p2, 0x7fc000007fc00000L    # 2.247117487993712E307
 
     .line 23
-    :cond_0
-    invoke-virtual {p0}, Loy5;->a()Ljava/lang/RuntimeException;
-
     .line 24
     .line 25
     .line 26
-    move-result-object p0
-
     .line 27
-    throw p0
+    iput-wide p2, p0, Loy5;->b:J
 
     .line 28
-    :cond_1
-    iput-byte v2, p0, Loy5;->j:B
-
     .line 29
+    move-object v0, v1
+
     .line 30
-    throw v1
+    goto :goto_0
 
     .line 31
-    :cond_2
-    invoke-virtual {p0}, Loy5;->hasNext()Z
+    :cond_1
+    iget-object v0, p0, Loy5;->a:Lgt4;
 
     .line 32
     .line 33
-    .line 34
-    move-result v0
+    if-nez v0, :cond_2
 
+    .line 34
     .line 35
-    if-eqz v0, :cond_3
+    new-instance v0, Lgt4;
 
     .line 36
     .line 37
-    invoke-virtual {p0}, Loy5;->next()Ljava/lang/Object;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     .line 38
     .line 39
     .line 40
-    move-result-object p0
+    iput-object v0, p0, Loy5;->a:Lgt4;
 
     .line 41
-    return-object p0
-
     .line 42
-    :cond_3
-    invoke-static {}, Lue1;->p()V
+    :cond_2
+    invoke-virtual {p0, p2, p3}, Loy5;->c(J)Landroid/graphics/Shader;
 
     .line 43
     .line 44
     .line 45
-    return-object v1
-.end method
+    move-result-object v2
 
-.method public final remove()V
-    .locals 1
+    .line 46
+    iput-object v2, v0, Lgt4;->j:Ljava/lang/Object;
 
-    .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    .line 47
+    .line 48
+    iput-object v0, p0, Loy5;->a:Lgt4;
 
-    .line 2
-    .line 3
-    const-string v0, "Operation is not supported for read-only collection"
+    .line 49
+    .line 50
+    iput-wide p2, p0, Loy5;->b:J
 
-    .line 4
-    .line 5
-    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    .line 51
+    .line 52
+    :cond_3
+    :goto_0
+    iget-object p0, p4, Lbd4;->c:Ljava/lang/Object;
 
-    .line 6
-    .line 7
-    .line 8
-    throw p0
-.end method
+    .line 53
+    .line 54
+    check-cast p0, Landroid/graphics/Paint;
 
-.method public final resumeWith(Ljava/lang/Object;)V
-    .locals 0
+    .line 55
+    .line 56
+    sget-object p2, Lzd7;->a:Lzd7;
 
-    .line 1
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    .line 57
+    .line 58
+    invoke-virtual {p2, p0}, Lzd7;->a(Landroid/graphics/Paint;)J
 
-    .line 2
-    .line 3
-    .line 4
-    const/4 p1, 0x4
+    .line 59
+    .line 60
+    .line 61
+    move-result-wide p2
 
-    .line 5
-    iput-byte p1, p0, Loy5;->j:B
+    .line 62
+    const-wide/high16 v2, -0x100000000000000L
 
-    .line 6
-    .line 7
+    .line 63
+    .line 64
+    invoke-static {p2, p3, v2, v3}, Lm07;->a(JJ)Z
+
+    .line 65
+    .line 66
+    .line 67
+    move-result p0
+
+    .line 68
+    if-nez p0, :cond_4
+
+    .line 69
+    .line 70
+    invoke-virtual {p4, v2, v3}, Lbd4;->r(J)V
+
+    .line 71
+    .line 72
+    .line 73
+    :cond_4
+    iget-object p0, p4, Lbd4;->d:Ljava/lang/Object;
+
+    .line 74
+    .line 75
+    check-cast p0, Landroid/graphics/Shader;
+
+    .line 76
+    .line 77
+    if-eqz v0, :cond_5
+
+    .line 78
+    .line 79
+    iget-object p2, v0, Lgt4;->j:Ljava/lang/Object;
+
+    .line 80
+    .line 81
+    check-cast p2, Landroid/graphics/Shader;
+
+    .line 82
+    .line 83
+    goto :goto_1
+
+    .line 84
+    :cond_5
+    move-object p2, v1
+
+    .line 85
+    :goto_1
+    invoke-static {p0, p2}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 86
+    .line 87
+    .line 88
+    move-result p0
+
+    .line 89
+    if-nez p0, :cond_7
+
+    .line 90
+    .line 91
+    if-eqz v0, :cond_6
+
+    .line 92
+    .line 93
+    iget-object p0, v0, Lgt4;->j:Ljava/lang/Object;
+
+    .line 94
+    .line 95
+    move-object v1, p0
+
+    .line 96
+    check-cast v1, Landroid/graphics/Shader;
+
+    .line 97
+    .line 98
+    :cond_6
+    invoke-virtual {p4, v1}, Lbd4;->u(Landroid/graphics/Shader;)V
+
+    .line 99
+    .line 100
+    .line 101
+    :cond_7
+    iget-object p0, p4, Lbd4;->c:Ljava/lang/Object;
+
+    .line 102
+    .line 103
+    check-cast p0, Landroid/graphics/Paint;
+
+    .line 104
+    .line 105
+    invoke-virtual {p0}, Landroid/graphics/Paint;->getAlpha()I
+
+    .line 106
+    .line 107
+    .line 108
+    move-result p0
+
+    .line 109
+    int-to-float p0, p0
+
+    .line 110
+    const/high16 p2, 0x437f0000    # 255.0f
+
+    .line 111
+    .line 112
+    div-float/2addr p0, p2
+
+    .line 113
+    cmpg-float p0, p0, p1
+
+    .line 114
+    .line 115
+    if-nez p0, :cond_8
+
+    .line 116
+    .line 117
     return-void
+
+    .line 118
+    :cond_8
+    invoke-virtual {p4, p1}, Lbd4;->p(F)V
+
+    .line 119
+    .line 120
+    .line 121
+    return-void
+.end method
+
+.method public abstract c(J)Landroid/graphics/Shader;
 .end method

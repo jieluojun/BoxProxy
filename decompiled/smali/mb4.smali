@@ -1,21 +1,45 @@
-.class public final Lmb4;
-.super Lsx3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Lmb4;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# static fields
+.field public static final e:Ljava/util/concurrent/atomic/AtomicLong;
 
 
 # instance fields
-.field public final c:Landroid/window/OnBackInvokedDispatcher;
+.field public final a:Ljava/lang/String;
 
-.field public final d:I
+.field public final b:I
 
-.field public final e:Landroid/window/OnBackInvokedCallback;
+.field public final c:[B
 
-.field public f:Z
+.field public final d:J
 
 
 # direct methods
-.method public constructor <init>(Landroid/window/OnBackInvokedDispatcher;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicLong;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicLong;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    sput-object v0, Lmb4;->e:Ljava/util/concurrent/atomic/AtomicLong;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+.method public constructor <init>([BLjava/lang/String;)V
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,160 +47,322 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lmb4;->c:Landroid/window/OnBackInvokedDispatcher;
+    sget-object v0, Lmb4;->e:Ljava/util/concurrent/atomic/AtomicLong;
 
     .line 5
     .line 6
-    iput p2, p0, Lmb4;->d:I
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicLong;->incrementAndGet()J
 
     .line 7
     .line 8
-    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
-
     .line 9
+    move-result-wide v0
+
     .line 10
-    const/16 p2, 0x21
+    iput-wide v0, p0, Lmb4;->d:J
 
     .line 11
     .line 12
-    if-ne p1, p2, :cond_0
+    iput-object p2, p0, Lmb4;->a:Ljava/lang/String;
 
     .line 13
     .line 14
-    new-instance p1, Lti;
+    iput-object p1, p0, Lmb4;->c:[B
 
     .line 15
     .line 16
-    const/4 p2, 0x2
+    array-length p1, p1
 
     .line 17
-    invoke-direct {p1, p0, p2}, Lti;-><init>(Ljava/lang/Object;B)V
+    iput p1, p0, Lmb4;->b:I
 
     .line 18
     .line 19
+    return-void
+.end method
+
+.method public static c(Ljava/lang/String;)Lmb4;
+    .locals 3
+
+    .line 1
+    sget-object v0, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, v0}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    array-length v1, v0
+
+    .line 8
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    .line 9
+    .line 10
+    .line 11
+    move-result v2
+
+    .line 12
+    if-ne v1, v2, :cond_0
+
+    .line 13
+    .line 14
+    new-instance v1, Llb4;
+
+    .line 15
+    .line 16
+    invoke-direct {v1, v0, p0}, Lmb4;-><init>([BLjava/lang/String;)V
+
+    .line 17
+    .line 18
+    .line 19
+    return-object v1
+
     .line 20
-    goto :goto_0
+    :cond_0
+    new-instance v1, Lkb4;
 
     .line 21
-    :cond_0
-    new-instance p1, Lnb4;
-
     .line 22
-    .line 23
-    invoke-direct {p1, p0}, Lnb4;-><init>(Lmb4;)V
+    invoke-direct {v1, v0, p0}, Lkb4;-><init>([BLjava/lang/String;)V
 
+    .line 23
     .line 24
     .line 25
-    .line 26
-    :goto_0
-    iput-object p1, p0, Lmb4;->e:Landroid/window/OnBackInvokedCallback;
-
-    .line 27
-    .line 28
-    return-void
+    return-object v1
 .end method
 
 
 # virtual methods
-.method public final d(Z)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Lmb4;->f(Z)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public final e()V
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x0
-
-    .line 2
-    invoke-virtual {p0, v0}, Lmb4;->f(Z)V
-
-    .line 3
-    .line 4
-    .line 5
-    return-void
-.end method
-
-.method public final f(Z)V
+.method public a(I)I
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lmb4;->e:Landroid/window/OnBackInvokedCallback;
+    iget v0, p0, Lmb4;->b:I
 
     .line 2
     .line 3
-    if-eqz p1, :cond_0
+    if-ne p1, v0, :cond_0
 
     .line 4
     .line 5
-    iget-boolean v1, p0, Lmb4;->f:Z
+    goto :goto_0
 
     .line 6
+    :cond_0
+    if-ltz p1, :cond_1
+
     .line 7
-    if-nez v1, :cond_0
-
     .line 8
-    .line 9
-    iget-object p1, p0, Lmb4;->c:Landroid/window/OnBackInvokedDispatcher;
+    if-ge p1, v0, :cond_1
 
+    .line 9
     .line 10
+    :goto_0
+    return p1
+
     .line 11
-    iget v1, p0, Lmb4;->d:I
+    :cond_1
+    add-int/lit8 v0, v0, -0x1
 
     .line 12
     .line 13
-    invoke-static {p1, v1, v0}, Lzs2;->i(Landroid/window/OnBackInvokedDispatcher;ILandroid/window/OnBackInvokedCallback;)V
+    const-string v1, "Char"
+
+    .line 14
+    .line 15
+    invoke-virtual {p0, p1, v1, v0}, Lmb4;->d(ILjava/lang/String;I)V
+
+    .line 16
+    .line 17
+    .line 18
+    const/4 p0, 0x0
+
+    .line 19
+    throw p0
+.end method
+
+.method public b(I)I
+    .locals 2
+
+    .line 1
+    iget v0, p0, Lmb4;->b:I
+
+    .line 2
+    .line 3
+    if-ne p1, v0, :cond_0
+
+    .line 4
+    .line 5
+    goto :goto_0
+
+    .line 6
+    :cond_0
+    if-ltz p1, :cond_1
+
+    .line 7
+    .line 8
+    if-ge p1, v0, :cond_1
+
+    .line 9
+    .line 10
+    :goto_0
+    return p1
+
+    .line 11
+    :cond_1
+    add-int/lit8 v0, v0, -0x1
+
+    .line 12
+    .line 13
+    const-string v1, "Byte"
+
+    .line 14
+    .line 15
+    invoke-virtual {p0, p1, v1, v0}, Lmb4;->d(ILjava/lang/String;I)V
+
+    .line 16
+    .line 17
+    .line 18
+    const/4 p0, 0x0
+
+    .line 19
+    throw p0
+.end method
+
+.method public final d(ILjava/lang/String;I)V
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/ArrayIndexOutOfBoundsException;
+
+    .line 2
+    .line 3
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    .line 4
+    .line 5
+    invoke-direct {v1, p2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    const-string p2, " index "
+
+    .line 9
+    .line 10
+    invoke-virtual {v1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 14
     .line 15
     .line 16
-    const/4 p1, 0x1
+    const-string p1, " is out of range 0.."
 
     .line 17
-    iput-boolean p1, p0, Lmb4;->f:Z
-
     .line 18
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 19
-    return-void
-
     .line 20
-    :cond_0
-    if-nez p1, :cond_1
-
     .line 21
-    .line 22
-    iget-boolean p1, p0, Lmb4;->f:Z
+    invoke-virtual {v1, p3}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    .line 22
     .line 23
     .line 24
-    if-eqz p1, :cond_1
+    const-string p1, " of "
 
     .line 25
     .line 26
-    iget-object p1, p0, Lmb4;->c:Landroid/window/OnBackInvokedDispatcher;
+    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 27
     .line 28
-    invoke-static {p1, v0}, Lzs2;->j(Landroid/window/OnBackInvokedDispatcher;Landroid/window/OnBackInvokedCallback;)V
-
     .line 29
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
     .line 30
     .line 31
-    const/4 p1, 0x0
-
     .line 32
-    iput-boolean p1, p0, Lmb4;->f:Z
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 33
     .line 34
-    :cond_1
-    return-void
+    .line 35
+    move-result-object p0
+
+    .line 36
+    invoke-direct {v0, p0}, Ljava/lang/ArrayIndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    .line 37
+    .line 38
+    .line 39
+    throw v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v1
+
+    .line 7
+    invoke-virtual {v1}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v1
+
+    .line 11
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 12
+    .line 13
+    .line 14
+    const-string v1, "[string=\""
+
+    .line 15
+    .line 16
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 17
+    .line 18
+    .line 19
+    iget-object p0, p0, Lmb4;->a:Ljava/lang/String;
+
+    .line 20
+    .line 21
+    const-string v1, "\"]"
+
+    .line 22
+    .line 23
+    invoke-static {v0, p0, v1}, Lh86;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object p0
+
+    .line 27
+    return-object p0
 .end method

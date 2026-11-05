@@ -1,78 +1,28 @@
-.class public final Liz2;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Liz2;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public j:Ljava/lang/Object;
-
-.field public k:Llh6;
-
-.field public l:Lbu3;
-
-.field public synthetic m:Ljava/lang/Object;
-
-.field public final synthetic n:Lit6;
-
-.field public o:I
+# static fields
+.field public static final a:Landroid/text/Layout$Alignment;
 
 
 # direct methods
-.method public constructor <init>(Lit6;Lz81;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Liz2;->n:Lit6;
-
-    .line 2
-    .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.method static constructor <clinit>()V
     .locals 1
 
     .line 1
-    iput-object p1, p0, Liz2;->m:Ljava/lang/Object;
+    sget-object v0, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
 
     .line 2
     .line 3
-    iget p1, p0, Liz2;->o:I
+    sput-object v0, Liz2;->a:Landroid/text/Layout$Alignment;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    sget-object v0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR:Landroid/text/TextDirectionHeuristic;
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
-    .line 8
-    iput p1, p0, Liz2;->o:I
-
-    .line 9
-    .line 10
-    iget-object p1, p0, Liz2;->n:Lit6;
-
-    .line 11
-    .line 12
-    const/4 v0, 0x0
-
-    .line 13
-    invoke-virtual {p1, v0, v0, p0}, Lit6;->u(Ljava/io/Serializable;Lp62;Lz81;)Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p0
-
-    .line 17
-    return-object p0
+    return-void
 .end method

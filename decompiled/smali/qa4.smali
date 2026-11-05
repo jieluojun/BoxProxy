@@ -1,48 +1,25 @@
-.class public abstract Lqa4;
+.class public final Lqa4;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Lus3;
+# instance fields
+.field public final a:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(J)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lus3;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/4 v1, 0x0
-
     .line 4
-    invoke-direct {v0, v1}, Lus3;-><init>(I)V
+    iput-wide p1, p0, Lqa4;->a:J
 
     .line 5
     .line 6
-    .line 7
-    sput-object v0, Lqa4;->a:Lus3;
-
-    .line 8
-    .line 9
     return-void
-.end method
-
-.method public static final a()Lus3;
-    .locals 1
-
-    .line 1
-    new-instance v0, Lus3;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Lus3;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    return-object v0
 .end method

@@ -1,69 +1,46 @@
 .class public final Lue6;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
+.field public final a:Ljava/lang/Class;
 
-.field public final synthetic k:Lwe6;
+.field public final b:Ljava/lang/ref/WeakReference;
 
-.field public l:I
+.field public final c:Ltv1;
 
 
 # direct methods
-.method public constructor <init>(Lwe6;Lz81;)V
+.method public constructor <init>(Ltv1;Ljava/lang/Class;Luv1;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lue6;->k:Lwe6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
     .line 4
+    iput-object p2, p0, Lue6;->a:Ljava/lang/Class;
+
     .line 5
     .line 6
-    return-void
-.end method
+    new-instance p2, Ljava/lang/ref/WeakReference;
 
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iput-object p1, p0, Lue6;->j:Ljava/lang/Object;
-
-    .line 2
-    .line 3
-    iget p1, p0, Lue6;->l:I
-
-    .line 4
-    .line 5
-    const/high16 v0, -0x80000000
-
-    .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lue6;->l:I
+    invoke-direct {p2, p3}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
 
     .line 9
     .line 10
-    iget-object p1, p0, Lue6;->k:Lwe6;
-
     .line 11
-    .line 12
-    invoke-virtual {p1, p0}, Lwe6;->a(Lz81;)Ljava/lang/Object;
+    iput-object p2, p0, Lue6;->b:Ljava/lang/ref/WeakReference;
 
+    .line 12
     .line 13
+    iput-object p1, p0, Lue6;->c:Ltv1;
+
     .line 14
     .line 15
-    move-result-object p0
-
-    .line 16
-    return-object p0
+    return-void
 .end method

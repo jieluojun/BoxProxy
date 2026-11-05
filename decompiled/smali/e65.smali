@@ -1,441 +1,947 @@
-.class public final Le65;
-.super Llh6;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lt62;
+.class public abstract Le65;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic j:B
+# static fields
+.field public static final a:Ld65;
 
-.field public k:Z
+.field public static final b:Ld65;
 
-.field public final synthetic l:Lv65;
+.field public static final c:Ld65;
 
-.field public final synthetic m:Le62;
+.field public static final d:Ld65;
+
+.field public static final e:Ld65;
+
+.field public static final f:Ld65;
+
+.field public static final g:Ld65;
+
+.field public static final h:Ld65;
+
+.field public static final i:Ld65;
+
+.field public static final j:Ld65;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lv65;Le62;Ly81;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 16
 
     .line 1
-    iput-byte p4, p0, Le65;->j:B
+    new-instance v0, Ld65;
 
     .line 2
     .line 3
-    iput-object p1, p0, Le65;->l:Lv65;
+    sget-object v2, Lpl2;->b:Lba7;
 
     .line 4
     .line 5
-    iput-object p2, p0, Le65;->m:Le62;
+    sget-object v3, Lsc5;->s:Lsc5;
 
     .line 6
     .line 7
-    const/4 p1, 0x2
-
-    .line 8
-    invoke-direct {p0, p1, p3}, Llh6;-><init>(ILy81;)V
-
-    .line 9
-    .line 10
-    .line 11
-    return-void
-.end method
-
-
-# virtual methods
-.method public final create(Ljava/lang/Object;Ly81;)Ly81;
-    .locals 2
-
-    .line 1
-    iget-byte p1, p0, Le65;->j:B
-
-    .line 2
-    .line 3
-    iget-object v0, p0, Le65;->m:Le62;
-
-    .line 4
-    .line 5
-    iget-object p0, p0, Le65;->l:Lv65;
-
-    .line 6
-    .line 7
-    packed-switch p1, :pswitch_data_0
+    sget-object v4, Lf65;->a:Lcf7;
 
     .line 8
     .line 9
-    .line 10
-    new-instance p1, Le65;
+    sget-object v5, Lf65;->b:Lcf7;
 
+    .line 10
     .line 11
+    sget-object v6, Lf65;->c:Lcf7;
+
     .line 12
-    const/4 v1, 0x1
-
     .line 13
-    invoke-direct {p1, p0, v0, p2, v1}, Le65;-><init>(Lv65;Le62;Ly81;B)V
+    new-instance v7, Liq4;
 
     .line 14
     .line 15
-    .line 16
-    return-object p1
-
-    .line 17
-    :pswitch_0
-    new-instance p1, Le65;
-
-    .line 18
-    .line 19
-    const/4 v1, 0x0
-
-    .line 20
-    invoke-direct {p1, p0, v0, p2, v1}, Le65;-><init>(Lv65;Le62;Ly81;B)V
-
-    .line 21
-    .line 22
-    .line 23
-    return-object p1
-
-    .line 24
-    nop
-
-    .line 25
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
-
-    .line 1
-    iget-byte v0, p0, Le65;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    check-cast p1, Lac1;
-
-    .line 6
-    .line 7
-    check-cast p2, Ly81;
-
-    .line 8
-    .line 9
-    packed-switch v0, :pswitch_data_0
-
-    .line 10
-    .line 11
-    .line 12
-    invoke-virtual {p0, p1, p2}, Le65;->create(Ljava/lang/Object;Ly81;)Ly81;
-
-    .line 13
-    .line 14
-    .line 15
-    move-result-object p0
+    const/4 v1, 0x4
 
     .line 16
-    check-cast p0, Le65;
+    invoke-direct {v7, v1}, Liq4;-><init>(B)V
 
     .line 17
     .line 18
-    invoke-virtual {p0, v1}, Le65;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 19
+    const-string v1, "sRGB"
+
     .line 20
     .line 21
-    move-result-object p0
+    invoke-direct/range {v0 .. v7}, Ld65;-><init>(Ljava/lang/String;Lba7;Lb65;Lcf7;Lcf7;Lcf7;Ls52;)V
 
     .line 22
-    return-object p0
-
     .line 23
-    :pswitch_0
-    invoke-virtual {p0, p1, p2}, Le65;->create(Ljava/lang/Object;Ly81;)Ly81;
-
     .line 24
+    move-object v9, v3
+
     .line 25
+    sput-object v0, Le65;->a:Ld65;
+
     .line 26
-    move-result-object p0
-
     .line 27
-    check-cast p0, Le65;
+    sget-object v12, Liv1;->K:Liv1;
 
     .line 28
     .line 29
-    invoke-virtual {p0, v1}, Le65;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v1, "Linear sRGB"
 
     .line 30
     .line 31
-    .line 32
-    move-result-object p0
-
-    .line 33
-    return-object p0
-
-    .line 34
-    nop
-
-    .line 35
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 8
-
-    .line 1
-    iget-byte v0, p0, Le65;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    iget-object v2, p0, Le65;->m:Le62;
-
-    .line 6
-    .line 7
-    iget-object v3, p0, Le65;->l:Lv65;
-
-    .line 8
-    .line 9
-    const-string v4, "call to \'resume\' before \'invoke\' with coroutine"
-
-    .line 10
-    .line 11
-    sget-object v5, Lbc1;->j:Lbc1;
-
-    .line 12
-    .line 13
-    const/4 v6, 0x1
-
-    .line 14
-    const/4 v7, 0x0
-
-    .line 15
-    packed-switch v0, :pswitch_data_0
-
-    .line 16
-    .line 17
-    .line 18
-    iget-boolean v0, p0, Le65;->k:Z
-
-    .line 19
-    .line 20
-    if-eqz v0, :cond_1
-
-    .line 21
-    .line 22
-    if-ne v0, v6, :cond_0
-
-    .line 23
-    .line 24
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 25
-    .line 26
-    .line 27
-    goto :goto_0
-
-    .line 28
-    :cond_0
-    invoke-static {v4}, Ljw1;->e(Ljava/lang/String;)V
-
-    .line 29
-    .line 30
-    .line 31
-    move-object v1, v7
+    move-object v3, v12
 
     .line 32
-    goto :goto_0
+    invoke-static/range {v1 .. v6}, Lf65;->a(Ljava/lang/String;Lba7;Lb65;Lcf7;Lcf7;Lcf7;)Ld65;
 
     .line 33
-    :cond_1
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
     .line 34
     .line 35
+    move-result-object v0
+
     .line 36
-    iput-boolean v6, p0, Le65;->k:Z
+    sput-object v0, Le65;->b:Ld65;
 
     .line 37
     .line 38
-    invoke-virtual {v3, v2, p0}, Lv65;->m(Le62;Lz81;)Ljava/lang/Object;
+    sget-object v4, Lf65;->d:Lba7;
 
     .line 39
     .line 40
-    .line 41
-    move-result-object p0
+    sget-object v13, Lf65;->e:Lcf7;
 
+    .line 41
     .line 42
-    if-ne p0, v5, :cond_2
+    sget-object v14, Lf65;->f:Lcf7;
 
     .line 43
     .line 44
-    move-object v1, v5
+    sget-object v15, Lf65;->g:Lcf7;
 
     .line 45
-    :cond_2
-    :goto_0
-    return-object v1
-
     .line 46
-    :pswitch_0
-    iget-boolean v0, p0, Le65;->k:Z
+    const-string v10, "ACES2065-1"
 
     .line 47
     .line 48
-    if-eqz v0, :cond_4
+    move-object v11, v4
 
     .line 49
-    .line 50
-    if-ne v0, v6, :cond_3
+    invoke-static/range {v10 .. v15}, Lf65;->a(Ljava/lang/String;Lba7;Lb65;Lcf7;Lcf7;Lcf7;)Ld65;
 
+    .line 50
     .line 51
     .line 52
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    move-result-object v0
 
     .line 53
+    sput-object v0, Le65;->c:Ld65;
+
     .line 54
     .line 55
-    goto :goto_2
+    sget-object v5, Ld;->j:Ld;
 
     .line 56
-    :cond_3
-    invoke-static {v4}, Ljw1;->e(Ljava/lang/String;)V
-
     .line 57
+    sget-object v6, Lf65;->h:Lcf7;
+
     .line 58
     .line 59
-    move-object v1, v7
+    sget-object v7, Lf65;->i:Lcf7;
 
     .line 60
-    goto :goto_2
-
     .line 61
-    :cond_4
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    sget-object v8, Lf65;->j:Lcf7;
 
     .line 62
     .line 63
+    const-string v3, "ACEScc"
+
     .line 64
-    iput-boolean v6, p0, Le65;->k:Z
-
     .line 65
-    .line 66
-    invoke-virtual {v3}, Lv65;->e()Z
+    invoke-static/range {v3 .. v8}, Lf65;->a(Ljava/lang/String;Lba7;Lb65;Lcf7;Lcf7;Lcf7;)Ld65;
 
+    .line 66
     .line 67
     .line 68
-    .line 69
-    move-result p1
+    const-string v3, "ACEScct"
 
+    .line 69
     .line 70
-    if-eqz p1, :cond_6
+    sget-object v5, Le;->j:Le;
 
     .line 71
     .line 72
-    invoke-interface {v2}, Le62;->invoke()Ljava/lang/Object;
+    invoke-static/range {v3 .. v8}, Lf65;->a(Ljava/lang/String;Lba7;Lb65;Lcf7;Lcf7;Lcf7;)Ld65;
 
     .line 73
     .line 74
     .line 75
-    move-result-object p1
+    const-string v10, "ACEScg"
 
     .line 76
-    check-cast p1, Ljava/lang/Boolean;
-
     .line 77
+    move-object v13, v6
+
     .line 78
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    move-object v14, v7
 
     .line 79
+    move-object v15, v8
+
     .line 80
+    invoke-static/range {v10 .. v15}, Lf65;->a(Ljava/lang/String;Lba7;Lb65;Lcf7;Lcf7;Lcf7;)Ld65;
+
     .line 81
-    move-result p1
-
     .line 82
-    if-nez p1, :cond_6
-
     .line 83
+    move-result-object v0
+
     .line 84
-    iget-object p1, v3, Lv65;->r:Lhv2;
+    sput-object v0, Le65;->d:Ld65;
 
     .line 85
     .line 86
-    if-eqz p1, :cond_5
+    new-instance v3, La65;
 
     .line 87
     .line 88
-    invoke-interface {p1, v7}, Lhv2;->c(Ljava/util/concurrent/CancellationException;)V
+    const-wide v0, 0x4001980000000000L    # 2.19921875
 
     .line 89
     .line 90
     .line 91
-    :cond_5
-    const/4 p1, 0x0
-
     .line 92
-    invoke-virtual {v3, p1}, Lv65;->l(Z)V
-
     .line 93
+    invoke-direct {v3, v0, v1}, La65;-><init>(D)V
+
     .line 94
     .line 95
-    sget-object p1, Lbb5;->a:Lbb5;
-
     .line 96
-    .line 97
-    invoke-virtual {v3, p1}, Lv65;->j(Leb5;)V
+    new-instance v4, Lcf7;
 
+    .line 97
     .line 98
+    const-wide v0, 0x3fe47ae147ae147bL    # 0.64
+
     .line 99
     .line 100
-    invoke-virtual {v3, p0}, Lv65;->n(Lz81;)Ljava/lang/Object;
-
     .line 101
     .line 102
     .line 103
-    move-result-object p0
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     .line 104
-    if-ne p0, v5, :cond_6
-
     .line 105
     .line 106
-    goto :goto_1
+    move-result-object v0
 
     .line 107
-    :cond_6
-    move-object p0, v1
+    const-wide v5, 0x3fd51eb851eb851fL    # 0.33
 
     .line 108
-    :goto_1
-    if-ne p0, v5, :cond_7
-
     .line 109
     .line 110
-    move-object v1, v5
-
     .line 111
-    :cond_7
-    :goto_2
-    return-object v1
-
     .line 112
-    nop
+    invoke-static {v5, v6}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     .line 113
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 114
+    .line 115
+    move-result-object v10
+
+    .line 116
+    invoke-direct {v4, v0, v10}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+
+    .line 117
+    .line 118
+    .line 119
+    new-instance v5, Lcf7;
+
+    .line 120
+    .line 121
+    const-wide v6, 0x3fcae147ae147ae1L    # 0.21
+
+    .line 122
+    .line 123
+    .line 124
+    .line 125
+    .line 126
+    invoke-static {v6, v7}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 127
+    .line 128
+    .line 129
+    move-result-object v1
+
+    .line 130
+    const-wide v6, 0x3fe6b851eb851eb8L    # 0.71
+
+    .line 131
+    .line 132
+    .line 133
+    .line 134
+    .line 135
+    invoke-static {v6, v7}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 136
+    .line 137
+    .line 138
+    move-result-object v6
+
+    .line 139
+    invoke-direct {v5, v1, v6}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+
+    .line 140
+    .line 141
+    .line 142
+    new-instance v6, Lcf7;
+
+    .line 143
+    .line 144
+    const-wide v7, 0x3fc3333333333333L    # 0.15
+
+    .line 145
+    .line 146
+    .line 147
+    .line 148
+    .line 149
+    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 150
+    .line 151
+    .line 152
+    move-result-object v11
+
+    .line 153
+    const-wide v7, 0x3faeb851eb851eb8L    # 0.06
+
+    .line 154
+    .line 155
+    .line 156
+    .line 157
+    .line 158
+    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 159
+    .line 160
+    .line 161
+    move-result-object v12
+
+    .line 162
+    invoke-direct {v6, v11, v12}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+
+    .line 163
+    .line 164
+    .line 165
+    const-string v1, "Adobe RGB"
+
+    .line 166
+    .line 167
+    invoke-static/range {v1 .. v6}, Lf65;->a(Ljava/lang/String;Lba7;Lb65;Lcf7;Lcf7;Lcf7;)Ld65;
+
+    .line 168
+    .line 169
+    .line 170
+    move-result-object v1
+
+    .line 171
+    sput-object v1, Le65;->e:Ld65;
+
+    .line 172
+    .line 173
+    new-instance v1, Ld65;
+
+    .line 174
+    .line 175
+    sget-object v4, Lux;->j:Lux;
+
+    .line 176
+    .line 177
+    new-instance v5, Lcf7;
+
+    .line 178
+    .line 179
+    const-wide v6, 0x3fe6a7ef9db22d0eL    # 0.708
+
+    .line 180
+    .line 181
+    .line 182
+    .line 183
+    .line 184
+    invoke-static {v6, v7}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 185
+    .line 186
+    .line 187
+    move-result-object v3
+
+    .line 188
+    const-wide v6, 0x3fd2b020c49ba5e3L    # 0.292
+
+    .line 189
+    .line 190
+    .line 191
+    .line 192
+    .line 193
+    invoke-static {v6, v7}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 194
+    .line 195
+    .line 196
+    move-result-object v6
+
+    .line 197
+    invoke-direct {v5, v3, v6}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+
+    .line 198
+    .line 199
+    .line 200
+    new-instance v6, Lcf7;
+
+    .line 201
+    .line 202
+    const-wide v7, 0x3fc5c28f5c28f5c3L    # 0.17
+
+    .line 203
+    .line 204
+    .line 205
+    .line 206
+    .line 207
+    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 208
+    .line 209
+    .line 210
+    move-result-object v3
+
+    .line 211
+    const-wide v7, 0x3fe9810624dd2f1bL    # 0.797
+
+    .line 212
+    .line 213
+    .line 214
+    .line 215
+    .line 216
+    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 217
+    .line 218
+    .line 219
+    move-result-object v7
+
+    .line 220
+    invoke-direct {v6, v3, v7}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+
+    .line 221
+    .line 222
+    .line 223
+    new-instance v7, Lcf7;
+
+    .line 224
+    .line 225
+    const-wide v13, 0x3fc0c49ba5e353f8L    # 0.131
+
+    .line 226
+    .line 227
+    .line 228
+    .line 229
+    .line 230
+    invoke-static {v13, v14}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 231
+    .line 232
+    .line 233
+    move-result-object v3
+
+    .line 234
+    const-wide v13, 0x3fa78d4fdf3b645aL    # 0.046
+
+    .line 235
+    .line 236
+    .line 237
+    .line 238
+    .line 239
+    invoke-static {v13, v14}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 240
+    .line 241
+    .line 242
+    move-result-object v8
+
+    .line 243
+    invoke-direct {v7, v3, v8}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+
+    .line 244
+    .line 245
+    .line 246
+    new-instance v8, Liq4;
+
+    .line 247
+    .line 248
+    const/4 v3, 0x5
+
+    .line 249
+    invoke-direct {v8, v3}, Liq4;-><init>(B)V
+
+    .line 250
+    .line 251
+    .line 252
+    move-object v3, v2
+
+    .line 253
+    const-string v2, "BT.2020"
+
+    .line 254
+    .line 255
+    invoke-direct/range {v1 .. v8}, Ld65;-><init>(Ljava/lang/String;Lba7;Lb65;Lcf7;Lcf7;Lcf7;Ls52;)V
+
+    .line 256
+    .line 257
+    .line 258
+    move-object v2, v3
+
+    .line 259
+    sput-object v1, Le65;->f:Ld65;
+
+    .line 260
+    .line 261
+    sget-object v3, Lvx;->j:Lvx;
+
+    .line 262
+    .line 263
+    new-instance v4, Lcf7;
+
+    .line 264
+    .line 265
+    invoke-direct {v4, v0, v10}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+
+    .line 266
+    .line 267
+    .line 268
+    new-instance v5, Lcf7;
+
+    .line 269
+    .line 270
+    const-wide v0, 0x3fd3333333333333L    # 0.3
+
+    .line 271
+    .line 272
+    .line 273
+    .line 274
+    .line 275
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 276
+    .line 277
+    .line 278
+    move-result-object v0
+
+    .line 279
+    const-wide v6, 0x3fe3333333333333L    # 0.6
+
+    .line 280
+    .line 281
+    .line 282
+    .line 283
+    .line 284
+    invoke-static {v6, v7}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 285
+    .line 286
+    .line 287
+    move-result-object v1
+
+    .line 288
+    invoke-direct {v5, v0, v1}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+
+    .line 289
+    .line 290
+    .line 291
+    new-instance v6, Lcf7;
+
+    .line 292
+    .line 293
+    invoke-direct {v6, v11, v12}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+
+    .line 294
+    .line 295
+    .line 296
+    const-string v1, "BT.709"
+
+    .line 297
+    .line 298
+    invoke-static/range {v1 .. v6}, Lf65;->a(Ljava/lang/String;Lba7;Lb65;Lcf7;Lcf7;Lcf7;)Ld65;
+
+    .line 299
+    .line 300
+    .line 301
+    move-result-object v0
+
+    .line 302
+    sput-object v0, Le65;->g:Ld65;
+
+    .line 303
+    .line 304
+    new-instance v4, Lba7;
+
+    .line 305
+    .line 306
+    new-instance v0, Lcf7;
+
+    .line 307
+    .line 308
+    const-wide v5, 0x3fd4189374bc6a7fL    # 0.314
+
+    .line 309
+    .line 310
+    .line 311
+    .line 312
+    .line 313
+    invoke-static {v5, v6}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 314
+    .line 315
+    .line 316
+    move-result-object v1
+
+    .line 317
+    const-wide v5, 0x3fd676c8b4395810L    # 0.351
+
+    .line 318
+    .line 319
+    .line 320
+    .line 321
+    .line 322
+    invoke-static {v5, v6}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 323
+    .line 324
+    .line 325
+    move-result-object v3
+
+    .line 326
+    invoke-direct {v0, v1, v3}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+
+    .line 327
+    .line 328
+    .line 329
+    const-string v1, "DCI P3"
+
+    .line 330
+    .line 331
+    invoke-direct {v4, v1, v0}, Lba7;-><init>(Ljava/lang/String;Lcf7;)V
+
+    .line 332
+    .line 333
+    .line 334
+    new-instance v5, La65;
+
+    .line 335
+    .line 336
+    const-wide v0, 0x4004cccccccccccdL    # 2.6
+
+    .line 337
+    .line 338
+    .line 339
+    .line 340
+    .line 341
+    invoke-direct {v5, v0, v1}, La65;-><init>(D)V
+
+    .line 342
+    .line 343
+    .line 344
+    new-instance v6, Lcf7;
+
+    .line 345
+    .line 346
+    const-wide v0, 0x3fe5c28f5c28f5c3L    # 0.68
+
+    .line 347
+    .line 348
+    .line 349
+    .line 350
+    .line 351
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 352
+    .line 353
+    .line 354
+    move-result-object v0
+
+    .line 355
+    const-wide v7, 0x3fd47ae147ae147bL    # 0.32
+
+    .line 356
+    .line 357
+    .line 358
+    .line 359
+    .line 360
+    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 361
+    .line 362
+    .line 363
+    move-result-object v1
+
+    .line 364
+    invoke-direct {v6, v0, v1}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+
+    .line 365
+    .line 366
+    .line 367
+    new-instance v7, Lcf7;
+
+    .line 368
+    .line 369
+    const-wide v13, 0x3fd0f5c28f5c28f6L    # 0.265
+
+    .line 370
+    .line 371
+    .line 372
+    .line 373
+    .line 374
+    invoke-static {v13, v14}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 375
+    .line 376
+    .line 377
+    move-result-object v10
+
+    .line 378
+    const-wide v13, 0x3fe6147ae147ae14L    # 0.69
+
+    .line 379
+    .line 380
+    .line 381
+    .line 382
+    .line 383
+    invoke-static {v13, v14}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 384
+    .line 385
+    .line 386
+    move-result-object v13
+
+    .line 387
+    invoke-direct {v7, v10, v13}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+
+    .line 388
+    .line 389
+    .line 390
+    new-instance v8, Lcf7;
+
+    .line 391
+    .line 392
+    invoke-direct {v8, v11, v12}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+
+    .line 393
+    .line 394
+    .line 395
+    const-string v3, "DCI P3"
+
+    .line 396
+    .line 397
+    invoke-static/range {v3 .. v8}, Lf65;->a(Ljava/lang/String;Lba7;Lb65;Lcf7;Lcf7;Lcf7;)Ld65;
+
+    .line 398
+    .line 399
+    .line 400
+    move-result-object v3
+
+    .line 401
+    sput-object v3, Le65;->h:Ld65;
+
+    .line 402
+    .line 403
+    new-instance v4, Lcf7;
+
+    .line 404
+    .line 405
+    invoke-direct {v4, v0, v1}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+
+    .line 406
+    .line 407
+    .line 408
+    new-instance v5, Lcf7;
+
+    .line 409
+    .line 410
+    invoke-direct {v5, v10, v13}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+
+    .line 411
+    .line 412
+    .line 413
+    new-instance v6, Lcf7;
+
+    .line 414
+    .line 415
+    invoke-direct {v6, v11, v12}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+
+    .line 416
+    .line 417
+    .line 418
+    const-string v1, "Display P3"
+
+    .line 419
+    .line 420
+    move-object v3, v9
+
+    .line 421
+    invoke-static/range {v1 .. v6}, Lf65;->a(Ljava/lang/String;Lba7;Lb65;Lcf7;Lcf7;Lcf7;)Ld65;
+
+    .line 422
+    .line 423
+    .line 424
+    move-result-object v0
+
+    .line 425
+    sput-object v0, Le65;->i:Ld65;
+
+    .line 426
+    .line 427
+    sget-object v2, Lpl2;->a:Lba7;
+
+    .line 428
+    .line 429
+    sget-object v3, Liv1;->L:Liv1;
+
+    .line 430
+    .line 431
+    new-instance v4, Lcf7;
+
+    .line 432
+    .line 433
+    const-wide v0, 0x3fe782a9930be0dfL    # 0.7347
+
+    .line 434
+    .line 435
+    .line 436
+    .line 437
+    .line 438
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 439
+    .line 440
+    .line 441
+    move-result-object v0
+
+    .line 442
+    const-wide v5, 0x3fd0faacd9e83e42L    # 0.2653
+
+    .line 443
+    .line 444
+    .line 445
+    .line 446
+    .line 447
+    invoke-static {v5, v6}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 448
+    .line 449
+    .line 450
+    move-result-object v1
+
+    .line 451
+    invoke-direct {v4, v0, v1}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+
+    .line 452
+    .line 453
+    .line 454
+    new-instance v5, Lcf7;
+
+    .line 455
+    .line 456
+    const-wide v0, 0x3fc46dc5d6388659L    # 0.1596
+
+    .line 457
+    .line 458
+    .line 459
+    .line 460
+    .line 461
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 462
+    .line 463
+    .line 464
+    move-result-object v0
+
+    .line 465
+    const-wide v6, 0x3feae48e8a71de6aL    # 0.8404
+
+    .line 466
+    .line 467
+    .line 468
+    .line 469
+    .line 470
+    invoke-static {v6, v7}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 471
+    .line 472
+    .line 473
+    move-result-object v1
+
+    .line 474
+    invoke-direct {v5, v0, v1}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+
+    .line 475
+    .line 476
+    .line 477
+    new-instance v6, Lcf7;
+
+    .line 478
+    .line 479
+    const-wide v0, 0x3fa2bd3c36113405L    # 0.0366
+
+    .line 480
+    .line 481
+    .line 482
+    .line 483
+    .line 484
+    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 485
+    .line 486
+    .line 487
+    move-result-object v0
+
+    .line 488
+    const-wide v7, 0x3f1a36e2eb1c432dL    # 1.0E-4
+
+    .line 489
+    .line 490
+    .line 491
+    .line 492
+    .line 493
+    invoke-static {v7, v8}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 494
+    .line 495
+    .line 496
+    move-result-object v1
+
+    .line 497
+    invoke-direct {v6, v0, v1}, Lcf7;-><init>(Ljava/lang/Double;Ljava/lang/Double;)V
+
+    .line 498
+    .line 499
+    .line 500
+    const-string v1, "ROMM RGB"
+
+    .line 501
+    .line 502
+    invoke-static/range {v1 .. v6}, Lf65;->a(Ljava/lang/String;Lba7;Lb65;Lcf7;Lcf7;Lcf7;)Ld65;
+
+    .line 503
+    .line 504
+    .line 505
+    move-result-object v0
+
+    .line 506
+    sput-object v0, Le65;->j:Ld65;
+
+    .line 507
+    .line 508
+    return-void
 .end method

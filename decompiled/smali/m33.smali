@@ -1,77 +1,85 @@
 .class public final Lm33;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ld20;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic a:Ln33;
+.field public j:Lg43;
 
-.field public final synthetic b:Lna5;
+.field public k:Lv85;
 
-.field public final synthetic c:I
+.field public l:Lz85;
 
+.field public m:Lx85;
 
-# direct methods
-.method public constructor <init>(Ln33;Lna5;I)V
-    .locals 0
+.field public n:I
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public o:I
 
-    .line 2
-    .line 3
-    .line 4
-    iput-object p1, p0, Lm33;->a:Ln33;
+.field public p:B
 
-    .line 5
-    .line 6
-    iput-object p2, p0, Lm33;->b:Lna5;
+.field public q:I
 
-    .line 7
-    .line 8
-    iput p3, p0, Lm33;->c:I
+.field public r:F
 
-    .line 9
-    .line 10
-    return-void
-.end method
+.field public s:F
+
+.field public t:F
+
+.field public synthetic u:Ljava/lang/Object;
+
+.field public v:I
 
 
 # virtual methods
-.method public final a()Z
-    .locals 2
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
     .line 1
-    iget-object v0, p0, Lm33;->b:Lna5;
+    iput-object p1, p0, Lm33;->u:Ljava/lang/Object;
 
     .line 2
     .line 3
-    iget-object v0, v0, Lna5;->j:Ljava/lang/Object;
+    iget p1, p0, Lm33;->v:I
 
     .line 4
     .line 5
-    check-cast v0, Lj33;
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
-    iget v1, p0, Lm33;->c:I
+    or-int/2addr p1, v0
 
     .line 8
-    .line 9
-    iget-object p0, p0, Lm33;->a:Ln33;
+    iput p1, p0, Lm33;->v:I
 
+    .line 9
     .line 10
+    const/4 v3, 0x0
+
     .line 11
-    invoke-virtual {p0, v0, v1}, Ln33;->E1(Lj33;I)Z
+    const/4 v4, 0x0
 
     .line 12
+    const/4 v0, 0x0
+
     .line 13
+    const/4 v1, 0x0
+
     .line 14
-    move-result p0
+    const/4 v2, 0x0
 
     .line 15
-    return p0
+    move-object v5, p0
+
+    .line 16
+    invoke-static/range {v0 .. v5}, Ln33;->g(Lg43;IIILyg1;Lz71;)Ljava/lang/Object;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    return-object p0
 .end method

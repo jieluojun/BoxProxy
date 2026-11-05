@@ -1,77 +1,128 @@
-.class public abstract Lxq;
+.class public final synthetic Lxq;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
-# static fields
-.field public static final a:Lzf3;
+# instance fields
+.field public final synthetic j:Lzq;
 
-.field public static b:Landroid/graphics/Paint;
+.field public final synthetic k:Lko3;
+
+.field public final synthetic l:Z
+
+.field public final synthetic m:Ld52;
+
+.field public final synthetic n:S
+
+.field public final synthetic o:B
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lzq;Lko3;ZLd52;II)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lzf3;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/16 v1, 0x1e
-
     .line 4
-    .line 5
-    invoke-direct {v0, v1}, Lzf3;-><init>(I)V
+    iput-object p1, p0, Lxq;->j:Lzq;
 
+    .line 5
     .line 6
+    iput-object p2, p0, Lxq;->k:Lko3;
+
     .line 7
     .line 8
-    sput-object v0, Lxq;->a:Lzf3;
+    iput-boolean p3, p0, Lxq;->l:Z
 
     .line 9
     .line 10
+    iput-object p4, p0, Lxq;->m:Ld52;
+
+    .line 11
+    .line 12
+    iput-short p5, p0, Lxq;->n:S
+
+    .line 13
+    .line 14
+    iput-byte p6, p0, Lxq;->o:B
+
+    .line 15
+    .line 16
     return-void
 .end method
 
-.method public static a(Landroid/widget/TextView;Ljava/lang/String;)V
-    .locals 1
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 7
 
     .line 1
-    invoke-virtual {p0}, Landroid/widget/TextView;->getFontVariationSettings()Ljava/lang/String;
+    move-object v4, p1
 
     .line 2
+    check-cast v4, Lv01;
+
     .line 3
     .line 4
-    move-result-object v0
+    check-cast p2, Ljava/lang/Integer;
 
     .line 5
-    invoke-static {v0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-
     .line 6
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 7
     .line 8
-    move-result v0
-
     .line 9
-    if-eqz v0, :cond_0
+    iget-short p1, p0, Lxq;->n:S
 
     .line 10
     .line 11
-    const-string v0, ""
+    or-int/lit8 p1, p1, 0x1
 
     .line 12
     .line 13
-    invoke-virtual {p0, v0}, Landroid/widget/TextView;->setFontVariationSettings(Ljava/lang/String;)Z
+    invoke-static {p1}, Lw23;->h0(I)I
 
     .line 14
     .line 15
     .line 16
-    :cond_0
-    invoke-virtual {p0, p1}, Landroid/widget/TextView;->setFontVariationSettings(Ljava/lang/String;)Z
+    move-result v5
 
     .line 17
+    iget-object v0, p0, Lxq;->j:Lzq;
+
     .line 18
     .line 19
-    return-void
+    iget-object v1, p0, Lxq;->k:Lko3;
+
+    .line 20
+    .line 21
+    iget-boolean v2, p0, Lxq;->l:Z
+
+    .line 22
+    .line 23
+    iget-object v3, p0, Lxq;->m:Ld52;
+
+    .line 24
+    .line 25
+    iget-byte v6, p0, Lxq;->o:B
+
+    .line 26
+    .line 27
+    invoke-static/range {v0 .. v6}, Lps2;->a(Lzq;Lko3;ZLd52;Lv01;II)V
+
+    .line 28
+    .line 29
+    .line 30
+    sget-object p0, Lk27;->a:Lk27;
+
+    .line 31
+    .line 32
+    return-object p0
 .end method

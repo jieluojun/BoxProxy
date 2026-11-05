@@ -1,8 +1,18 @@
-.class public interface abstract Lc23;
+.class public final Lc23;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lb10;
 
 
 # virtual methods
-.method public abstract getValue()Ljava/lang/Object;
+.method public final a()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
 .end method

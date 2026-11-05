@@ -1,112 +1,168 @@
 .class public final Lyw0;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lzw0;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Lyw0;
+# instance fields
+.field public final a:Ljava/util/Optional;
+
+.field public final b:Ljava/lang/String;
+
+.field public final c:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lww0;)V
+    .locals 3
 
     .line 1
-    new-instance v0, Lyw0;
+    iget-object v0, p1, Lfv1;->a:Ljava/util/Optional;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iget-object v1, p1, Lfv1;->b:Ljava/util/Optional;
 
     .line 4
     .line 5
-    .line 6
-    sput-object v0, Lyw0;->a:Lyw0;
+    iget-object v2, p1, Lww0;->d:Ljava/lang/String;
 
+    .line 6
     .line 7
+    iget p1, p1, Lww0;->c:I
+
     .line 8
+    .line 9
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 10
+    .line 11
+    .line 12
+    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 13
+    .line 14
+    .line 15
+    iput-object v0, p0, Lyw0;->a:Ljava/util/Optional;
+
+    .line 16
+    .line 17
+    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 18
+    .line 19
+    .line 20
+    invoke-static {v2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 21
+    .line 22
+    .line 23
+    iput-object v2, p0, Lyw0;->b:Ljava/lang/String;
+
+    .line 24
+    .line 25
+    if-eqz p1, :cond_0
+
+    .line 26
+    .line 27
+    iput p1, p0, Lyw0;->c:I
+
+    .line 28
+    .line 29
     return-void
+
+    .line 30
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 31
+    throw p0
 .end method
 
 
 # virtual methods
-.method public final a(Llx0;)D
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
     .line 1
-    iget-wide p0, p1, Llx0;->i:D
+    const-class v0, Lyw0;
 
     .line 2
     .line 3
-    return-wide p0
-.end method
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
-.method public final b(Llx0;)D
-    .locals 0
-
-    .line 1
-    iget-wide p0, p1, Llx0;->h:D
-
-    .line 2
-    .line 3
-    return-wide p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
     .line 4
-    return v0
-
     .line 5
-    :cond_0
-    instance-of p0, p1, Lyw0;
-
     .line 6
+    move-result-object v0
+
     .line 7
-    if-nez p0, :cond_1
+    const-string v1, "<"
 
     .line 8
     .line 9
-    const/4 p0, 0x0
+    const-string v2, " (type="
 
     .line 10
-    return p0
-
     .line 11
-    :cond_1
-    return v0
-.end method
+    invoke-static {v1, v0, v2}, Lh86;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public final hashCode()I
-    .locals 0
+    .line 12
+    .line 13
+    .line 14
+    move-result-object v0
 
-    .line 1
-    const p0, -0x5fbfdde2
+    .line 15
+    iget v1, p0, Lyw0;->c:I
 
-    .line 2
-    .line 3
-    .line 4
-    return p0
-.end method
+    .line 16
+    .line 17
+    invoke-static {v1}, Lh86;->E(I)Ljava/lang/String;
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    .line 18
+    .line 19
+    .line 20
+    move-result-object v1
 
-    .line 1
-    const-string p0, "Stacked"
+    .line 21
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2
-    .line 3
+    .line 22
+    .line 23
+    .line 24
+    const-string v1, ", value="
+
+    .line 25
+    .line 26
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 27
+    .line 28
+    .line 29
+    iget-object p0, p0, Lyw0;->b:Ljava/lang/String;
+
+    .line 30
+    .line 31
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 32
+    .line 33
+    .line 34
+    const-string p0, ")>"
+
+    .line 35
+    .line 36
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 37
+    .line 38
+    .line 39
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 40
+    .line 41
+    .line 42
+    move-result-object p0
+
+    .line 43
     return-object p0
 .end method

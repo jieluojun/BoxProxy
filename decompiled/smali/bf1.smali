@@ -1,123 +1,71 @@
 .class public final Lbf1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lsh0;
+.implements Lzy1;
 
 
-# static fields
-.field public static final b:Ljava/util/Set;
+# instance fields
+.field public a:Ltd1;
+
+.field public final b:Lxi1;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
+.method public constructor <init>(Ltd1;)V
+    .locals 1
 
     .line 1
-    const/16 v0, 0x12c
+    sget-object v0, Lg4;->b:Lxi1;
 
     .line 2
     .line 3
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
     .line 6
-    move-result-object v1
+    iput-object p1, p0, Lbf1;->a:Ltd1;
 
     .line 7
-    const/16 v0, 0x12d
+    .line 8
+    iput-object v0, p0, Lbf1;->b:Lxi1;
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lcs5;FLy71;)Ljava/lang/Object;
+    .locals 2
+
+    .line 1
+    new-instance v0, Laf1;
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    invoke-direct {v0, p2, p0, p1, v1}, Laf1;-><init>(FLbf1;Lcs5;Ly71;)V
+
+    .line 5
+    .line 6
+    .line 7
+    iget-object p0, p0, Lbf1;->b:Lxi1;
 
     .line 8
     .line 9
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-static {p0, v0, p3}, Lx37;->e0(Lsa1;Ls52;Ly71;)Ljava/lang/Object;
 
     .line 10
     .line 11
     .line 12
-    move-result-object v2
+    move-result-object p0
 
     .line 13
-    const/16 v0, 0x194
-
-    .line 14
-    .line 15
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object v3
-
-    .line 19
-    const/16 v0, 0x195
-
-    .line 20
-    .line 21
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 22
-    .line 23
-    .line 24
-    move-result-object v4
-
-    .line 25
-    const/16 v0, 0x19a
-
-    .line 26
-    .line 27
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 28
-    .line 29
-    .line 30
-    move-result-object v5
-
-    .line 31
-    const/16 v0, 0x19e
-
-    .line 32
-    .line 33
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 34
-    .line 35
-    .line 36
-    move-result-object v6
-
-    .line 37
-    const/16 v0, 0x1f5
-
-    .line 38
-    .line 39
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 40
-    .line 41
-    .line 42
-    move-result-object v7
-
-    .line 43
-    filled-new-array/range {v1 .. v7}, [Ljava/lang/Integer;
-
-    .line 44
-    .line 45
-    .line 46
-    move-result-object v0
-
-    .line 47
-    invoke-static {v0}, Lpw;->M0([Ljava/lang/Object;)Ljava/util/Set;
-
-    .line 48
-    .line 49
-    .line 50
-    move-result-object v0
-
-    .line 51
-    sput-object v0, Lbf1;->b:Ljava/util/Set;
-
-    .line 52
-    .line 53
-    return-void
+    return-object p0
 .end method

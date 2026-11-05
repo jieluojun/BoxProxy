@@ -1,59 +1,42 @@
 .class public final Lay1;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ldy1;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Ljava/util/LinkedHashMap;
+.field public b:Z
 
 
-# direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    .line 17
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 18
-    new-instance v0, Ljava/util/LinkedHashMap;
-
-    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
-
-    iput-object v0, p0, Lay1;->a:Ljava/util/LinkedHashMap;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lby1;)V
+# virtual methods
+.method public final a()Ljava/io/File;
     .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-boolean v0, p0, Lay1;->b:Z
 
     .line 2
     .line 3
-    .line 4
-    iget-object p1, p1, Lby1;->a:Ljava/util/Map;
+    if-eqz v0, :cond_0
 
+    .line 4
     .line 5
+    const/4 p0, 0x0
+
     .line 6
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-object p0
 
     .line 7
+    :cond_0
+    const/4 v0, 0x1
+
     .line 8
+    iput-boolean v0, p0, Lay1;->b:Z
+
     .line 9
-    new-instance v0, Ljava/util/LinkedHashMap;
-
     .line 10
+    iget-object p0, p0, Ldy1;->a:Ljava/io/File;
+
     .line 11
-    invoke-direct {v0, p1}, Ljava/util/LinkedHashMap;-><init>(Ljava/util/Map;)V
-
     .line 12
-    .line 13
-    .line 14
-    iput-object v0, p0, Lay1;->a:Ljava/util/LinkedHashMap;
-
-    .line 15
-    .line 16
-    return-void
+    return-object p0
 .end method

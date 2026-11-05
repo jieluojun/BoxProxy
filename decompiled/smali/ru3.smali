@@ -1,35 +1,9 @@
 .class public final Lru3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Luu3;
-
-
-# static fields
-.field public static final a:Lru3;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Lru3;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    sput-object v0, Lru3;->a:Lru3;
-
-    .line 7
-    .line 8
-    return-void
-.end method
+.implements Ltu3;
 
 
 # virtual methods
@@ -56,33 +30,114 @@
 
     .line 8
     .line 9
-    const/4 p0, 0x0
+    goto :goto_0
 
     .line 10
-    return p0
+    :cond_1
+    const/high16 p0, 0x3f800000    # 1.0f
 
     .line 11
-    :cond_1
+    .line 12
+    invoke-static {p0, p0}, Ljava/lang/Float;->compare(FF)I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result p0
+
+    .line 16
+    if-eqz p0, :cond_2
+
+    .line 17
+    .line 18
+    goto :goto_0
+
+    .line 19
+    :cond_2
+    const/high16 p0, 0x43120000    # 146.0f
+
+    .line 20
+    .line 21
+    invoke-static {p0, p0}, Ljava/lang/Float;->compare(FF)I
+
+    .line 22
+    .line 23
+    .line 24
+    move-result p0
+
+    .line 25
+    if-eqz p0, :cond_3
+
+    .line 26
+    .line 27
+    :goto_0
+    const/4 p0, 0x0
+
+    .line 28
+    return p0
+
+    .line 29
+    :cond_3
     return v0
 .end method
 
 .method public final hashCode()I
-    .locals 0
+    .locals 2
 
     .line 1
-    const p0, -0x4fa73665
+    const/high16 p0, 0x3f800000    # 1.0f
 
     .line 2
     .line 3
+    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
+
     .line 4
-    return p0
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    const/16 v0, 0x1f
+
+    .line 8
+    .line 9
+    mul-int/2addr p0, v0
+
+    .line 10
+    const/high16 v1, 0x43120000    # 146.0f
+
+    .line 11
+    .line 12
+    invoke-static {v1, p0, v0}, Lpb1;->d(FII)I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result p0
+
+    .line 16
+    const/4 v0, 0x1
+
+    .line 17
+    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v0
+
+    .line 21
+    add-int/2addr v0, p0
+
+    .line 22
+    return v0
 .end method
 
 .method public final toString()Ljava/lang/String;
     .locals 0
 
     .line 1
-    const-string p0, "Push"
+    const-string p0, "Spring(dampingRatio=1.0, stiffness=146.0, clampOvershoot=true)"
 
     .line 2
     .line 3

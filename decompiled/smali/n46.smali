@@ -1,555 +1,840 @@
 .class public final Ln46;
-.super Llh6;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljo3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lp62;
+.implements Lsz2;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public A:F
 
-.field public k:Z
+.field public B:Z
 
-.field public final synthetic l:Lo46;
+.field public x:F
 
-.field public final synthetic m:Li46;
+.field public y:F
 
-.field public final synthetic n:Lp62;
-
-
-# direct methods
-.method public constructor <init>(Li46;Lo46;Lp62;Ly81;)V
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x0
-
-    .line 2
-    iput-byte v0, p0, Ln46;->j:B
-
-    .line 3
-    .line 4
-    iput-object p1, p0, Ln46;->m:Li46;
-
-    .line 5
-    .line 6
-    iput-object p2, p0, Ln46;->l:Lo46;
-
-    .line 7
-    .line 8
-    iput-object p3, p0, Ln46;->n:Lp62;
-
-    .line 9
-    .line 10
-    const/4 p1, 0x1
-
-    .line 11
-    invoke-direct {p0, p1, p4}, Llh6;-><init>(ILy81;)V
-
-    .line 12
-    .line 13
-    .line 14
-    return-void
-.end method
-
-.method public constructor <init>(Lo46;Li46;Lp62;Ly81;)V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput-byte v0, p0, Ln46;->j:B
-
-    .line 15
-    iput-object p1, p0, Ln46;->l:Lo46;
-
-    iput-object p2, p0, Ln46;->m:Li46;
-
-    iput-object p3, p0, Ln46;->n:Lp62;
-
-    invoke-direct {p0, v0, p4}, Llh6;-><init>(ILy81;)V
-
-    return-void
-.end method
+.field public z:F
 
 
 # virtual methods
-.method public final create(Ly81;)Ly81;
-    .locals 3
+.method public final E1(Lki3;)J
+    .locals 6
 
     .line 1
-    iget-byte v0, p0, Ln46;->j:B
+    iget v0, p0, Ln46;->z:F
 
     .line 2
     .line 3
-    iget-object v1, p0, Ln46;->n:Lp62;
+    invoke-static {v0}, Ljava/lang/Float;->isNaN(F)Z
 
     .line 4
     .line 5
-    iget-object v2, p0, Ln46;->m:Li46;
-
     .line 6
+    move-result v0
+
     .line 7
-    iget-object p0, p0, Ln46;->l:Lo46;
-
-    .line 8
-    .line 9
-    packed-switch v0, :pswitch_data_0
-
-    .line 10
-    .line 11
-    .line 12
-    new-instance v0, Ln46;
-
-    .line 13
-    .line 14
-    invoke-direct {v0, p0, v2, v1, p1}, Ln46;-><init>(Lo46;Li46;Lp62;Ly81;)V
-
-    .line 15
-    .line 16
-    .line 17
-    return-object v0
-
-    .line 18
-    :pswitch_0
-    new-instance v0, Ln46;
-
-    .line 19
-    .line 20
-    invoke-direct {v0, v2, p0, v1, p1}, Ln46;-><init>(Li46;Lo46;Lp62;Ly81;)V
-
-    .line 21
-    .line 22
-    .line 23
-    return-object v0
-
-    .line 24
-    nop
-
-    .line 25
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
-
-    .line 1
-    iget-byte v0, p0, Ln46;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    check-cast p1, Ly81;
-
-    .line 6
-    .line 7
-    packed-switch v0, :pswitch_data_0
+    const v1, 0x7fffffff
 
     .line 8
     .line 9
     .line 10
-    invoke-virtual {p0, p1}, Ln46;->create(Ly81;)Ly81;
+    const/4 v2, 0x0
 
     .line 11
-    .line 12
-    .line 13
-    move-result-object p0
-
-    .line 14
-    check-cast p0, Ln46;
-
-    .line 15
-    .line 16
-    invoke-virtual {p0, v1}, Ln46;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 17
-    .line 18
-    .line 19
-    move-result-object p0
-
-    .line 20
-    return-object p0
-
-    .line 21
-    :pswitch_0
-    invoke-virtual {p0, p1}, Ln46;->create(Ly81;)Ly81;
-
-    .line 22
-    .line 23
-    .line 24
-    move-result-object p0
-
-    .line 25
-    check-cast p0, Ln46;
-
-    .line 26
-    .line 27
-    invoke-virtual {p0, v1}, Ln46;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 28
-    .line 29
-    .line 30
-    move-result-object p0
-
-    .line 31
-    return-object p0
-
-    .line 32
-    nop
-
-    .line 33
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 16
-
-    .line 1
-    move-object/from16 v0, p0
-
-    .line 2
-    .line 3
-    iget-byte v1, v0, Ln46;->j:B
-
-    .line 4
-    .line 5
-    sget-object v2, La47;->a:La47;
-
-    .line 6
-    .line 7
-    iget-object v3, v0, Ln46;->n:Lp62;
-
-    .line 8
-    .line 9
-    const-string v4, "call to \'resume\' before \'invoke\' with coroutine"
-
-    .line 10
-    .line 11
-    sget-object v5, Lbc1;->j:Lbc1;
+    if-nez v0, :cond_0
 
     .line 12
     .line 13
-    iget-object v6, v0, Ln46;->l:Lo46;
+    iget v0, p0, Ln46;->z:F
 
     .line 14
     .line 15
-    iget-object v7, v0, Ln46;->m:Li46;
+    invoke-interface {p1, v0}, Lyg1;->t0(F)I
 
     .line 16
     .line 17
-    const/4 v8, 0x1
-
     .line 18
-    const/4 v9, 0x0
+    move-result v0
 
     .line 19
-    packed-switch v1, :pswitch_data_0
+    if-gez v0, :cond_1
 
     .line 20
     .line 21
+    move v0, v2
+
     .line 22
-    iget-object v1, v6, Lo46;->e:Lum4;
-
-    .line 23
-    .line 24
-    iget-boolean v10, v0, Ln46;->k:Z
-
-    .line 25
-    .line 26
-    if-eqz v10, :cond_1
-
-    .line 27
-    .line 28
-    if-ne v10, v8, :cond_0
-
-    .line 29
-    .line 30
-    :try_start_0
-    invoke-static/range {p1 .. p1}, Lsi3;->l0(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 31
-    .line 32
-    .line 33
-    move-object/from16 v0, p1
-
-    .line 34
-    .line 35
     goto :goto_0
 
-    .line 36
-    :catchall_0
-    move-exception v0
+    .line 23
+    :cond_0
+    move v0, v1
 
+    .line 24
+    :cond_1
+    :goto_0
+    iget v3, p0, Ln46;->A:F
+
+    .line 25
+    .line 26
+    invoke-static {v3}, Ljava/lang/Float;->isNaN(F)Z
+
+    .line 27
+    .line 28
+    .line 29
+    move-result v3
+
+    .line 30
+    if-nez v3, :cond_2
+
+    .line 31
+    .line 32
+    iget v3, p0, Ln46;->A:F
+
+    .line 33
+    .line 34
+    invoke-interface {p1, v3}, Lyg1;->t0(F)I
+
+    .line 35
+    .line 36
     .line 37
-    goto :goto_2
+    move-result v3
 
     .line 38
-    :cond_0
-    invoke-static {v4}, Ljw1;->e(Ljava/lang/String;)V
+    if-gez v3, :cond_3
 
     .line 39
     .line 40
-    .line 41
-    move-object v2, v9
+    move v3, v2
 
-    .line 42
+    .line 41
     goto :goto_1
 
+    .line 42
+    :cond_2
+    move v3, v1
+
     .line 43
-    :cond_1
-    invoke-static/range {p1 .. p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    :cond_3
+    :goto_1
+    iget v4, p0, Ln46;->x:F
 
     .line 44
     .line 45
-    .line 46
-    iget-object v4, v7, Li46;->a:Ljava/lang/String;
+    invoke-static {v4}, Ljava/lang/Float;->isNaN(F)Z
 
+    .line 46
     .line 47
     .line 48
-    invoke-virtual {v1, v4}, Lum4;->setValue(Ljava/lang/Object;)V
+    move-result v4
 
     .line 49
+    if-nez v4, :cond_6
+
     .line 50
     .line 51
-    :try_start_1
-    iget-object v11, v7, Li46;->a:Ljava/lang/String;
+    iget v4, p0, Ln46;->x:F
 
     .line 52
     .line 53
-    iput-boolean v8, v0, Ln46;->k:Z
+    invoke-interface {p1, v4}, Lyg1;->t0(F)I
 
     .line 54
     .line 55
-    sget-object v12, Le46;->k:Le46;
-
     .line 56
+    move-result v4
+
     .line 57
-    sget-object v4, Llk1;->a:Log1;
+    if-gez v4, :cond_4
 
     .line 58
     .line 59
-    sget-object v4, Lfg1;->l:Lfg1;
+    move v4, v2
 
     .line 60
-    .line 61
-    new-instance v10, Lk46;
+    :cond_4
+    if-le v4, v0, :cond_5
 
+    .line 61
     .line 62
+    move v4, v0
+
     .line 63
-    const/4 v15, 0x0
+    :cond_5
+    if-eq v4, v1, :cond_6
 
     .line 64
-    const-wide/16 v13, 0x7530
-
     .line 65
+    goto :goto_2
+
     .line 66
-    invoke-direct/range {v10 .. v15}, Lk46;-><init>(Ljava/lang/String;Le46;JLy81;)V
+    :cond_6
+    move v4, v2
 
     .line 67
+    :goto_2
+    iget v5, p0, Ln46;->y:F
+
     .line 68
     .line 69
-    invoke-static {v4, v10, v0}, Lbn0;->S(Lrb1;Lt62;Ly81;)Ljava/lang/Object;
+    invoke-static {v5}, Ljava/lang/Float;->isNaN(F)Z
 
     .line 70
     .line 71
     .line 72
-    move-result-object v0
+    move-result v5
 
     .line 73
-    if-ne v0, v5, :cond_2
+    if-nez v5, :cond_9
 
     .line 74
     .line 75
-    move-object v2, v5
+    iget p0, p0, Ln46;->y:F
 
     .line 76
-    goto :goto_1
-
     .line 77
-    :cond_2
-    :goto_0
-    check-cast v0, Ljv;
+    invoke-interface {p1, p0}, Lyg1;->t0(F)I
 
     .line 78
     .line 79
-    iget-object v4, v0, Ljv;->a:Ljava/lang/Object;
-
     .line 80
+    move-result p0
+
     .line 81
-    check-cast v4, Lf46;
+    if-gez p0, :cond_7
 
     .line 82
     .line 83
-    iget-object v5, v6, Lo46;->f:Lum4;
+    move p0, v2
+
+    .line 84
+    :cond_7
+    if-le p0, v3, :cond_8
+
+    .line 85
+    .line 86
+    move p0, v3
+
+    .line 87
+    :cond_8
+    if-eq p0, v1, :cond_9
+
+    .line 88
+    .line 89
+    move v2, p0
+
+    .line 90
+    :cond_9
+    invoke-static {v4, v0, v2, v3}, Lt51;->a(IIII)J
+
+    .line 91
+    .line 92
+    .line 93
+    move-result-wide p0
+
+    .line 94
+    return-wide p0
+.end method
+
+.method public final W(Lne3;Lci3;I)I
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0, p1}, Ln46;->E1(Lki3;)J
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-wide v0
+
+    .line 5
+    invoke-static {v0, v1}, Ls51;->f(J)Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p1
+
+    .line 9
+    if-eqz p1, :cond_0
+
+    .line 10
+    .line 11
+    invoke-static {v0, v1}, Ls51;->h(J)I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    return p0
+
+    .line 16
+    :cond_0
+    iget-boolean p0, p0, Ln46;->B:Z
+
+    .line 17
+    .line 18
+    if-eqz p0, :cond_1
+
+    .line 19
+    .line 20
+    goto :goto_0
+
+    .line 21
+    :cond_1
+    invoke-static {p3, v0, v1}, Lt51;->g(IJ)I
+
+    .line 22
+    .line 23
+    .line 24
+    move-result p3
+
+    .line 25
+    :goto_0
+    invoke-interface {p2, p3}, Lci3;->j0(I)I
+
+    .line 26
+    .line 27
+    .line 28
+    move-result p0
+
+    .line 29
+    invoke-static {p0, v0, v1}, Lt51;->f(IJ)I
+
+    .line 30
+    .line 31
+    .line 32
+    move-result p0
+
+    .line 33
+    return p0
+.end method
+
+.method public final h(Lki3;Lci3;J)Lii3;
+    .locals 6
+
+    .line 1
+    invoke-virtual {p0, p1}, Ln46;->E1(Lki3;)J
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-wide v0
+
+    .line 5
+    iget-boolean v2, p0, Ln46;->B:Z
+
+    .line 6
+    .line 7
+    if-eqz v2, :cond_0
+
+    .line 8
+    .line 9
+    invoke-static {p3, p4, v0, v1}, Lt51;->e(JJ)J
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-wide p3
+
+    .line 13
+    goto :goto_4
+
+    .line 14
+    :cond_0
+    iget v2, p0, Ln46;->x:F
+
+    .line 15
+    .line 16
+    invoke-static {v2}, Ljava/lang/Float;->isNaN(F)Z
+
+    .line 17
+    .line 18
+    .line 19
+    move-result v2
+
+    .line 20
+    if-nez v2, :cond_1
+
+    .line 21
+    .line 22
+    invoke-static {v0, v1}, Ls51;->k(J)I
+
+    .line 23
+    .line 24
+    .line 25
+    move-result v2
+
+    .line 26
+    goto :goto_0
+
+    .line 27
+    :cond_1
+    invoke-static {p3, p4}, Ls51;->k(J)I
+
+    .line 28
+    .line 29
+    .line 30
+    move-result v2
+
+    .line 31
+    invoke-static {v0, v1}, Ls51;->i(J)I
+
+    .line 32
+    .line 33
+    .line 34
+    move-result v3
+
+    .line 35
+    if-le v2, v3, :cond_2
+
+    .line 36
+    .line 37
+    move v2, v3
+
+    .line 38
+    :cond_2
+    :goto_0
+    iget v3, p0, Ln46;->z:F
+
+    .line 39
+    .line 40
+    invoke-static {v3}, Ljava/lang/Float;->isNaN(F)Z
+
+    .line 41
+    .line 42
+    .line 43
+    move-result v3
+
+    .line 44
+    if-nez v3, :cond_3
+
+    .line 45
+    .line 46
+    invoke-static {v0, v1}, Ls51;->i(J)I
+
+    .line 47
+    .line 48
+    .line 49
+    move-result v3
+
+    .line 50
+    goto :goto_1
+
+    .line 51
+    :cond_3
+    invoke-static {p3, p4}, Ls51;->i(J)I
+
+    .line 52
+    .line 53
+    .line 54
+    move-result v3
+
+    .line 55
+    invoke-static {v0, v1}, Ls51;->k(J)I
+
+    .line 56
+    .line 57
+    .line 58
+    move-result v4
+
+    .line 59
+    if-ge v3, v4, :cond_4
+
+    .line 60
+    .line 61
+    move v3, v4
+
+    .line 62
+    :cond_4
+    :goto_1
+    iget v4, p0, Ln46;->y:F
+
+    .line 63
+    .line 64
+    invoke-static {v4}, Ljava/lang/Float;->isNaN(F)Z
+
+    .line 65
+    .line 66
+    .line 67
+    move-result v4
+
+    .line 68
+    if-nez v4, :cond_5
+
+    .line 69
+    .line 70
+    invoke-static {v0, v1}, Ls51;->j(J)I
+
+    .line 71
+    .line 72
+    .line 73
+    move-result v4
+
+    .line 74
+    goto :goto_2
+
+    .line 75
+    :cond_5
+    invoke-static {p3, p4}, Ls51;->j(J)I
+
+    .line 76
+    .line 77
+    .line 78
+    move-result v4
+
+    .line 79
+    invoke-static {v0, v1}, Ls51;->h(J)I
+
+    .line 80
+    .line 81
+    .line 82
+    move-result v5
+
+    .line 83
+    if-le v4, v5, :cond_6
 
     .line 84
     .line 85
-    invoke-virtual {v5, v4}, Lum4;->setValue(Ljava/lang/Object;)V
+    move v4, v5
 
     .line 86
+    :cond_6
+    :goto_2
+    iget p0, p0, Ln46;->A:F
+
     .line 87
     .line 88
-    invoke-virtual {v6}, Lo46;->c()V
+    invoke-static {p0}, Ljava/lang/Float;->isNaN(F)Z
 
     .line 89
     .line 90
     .line 91
-    invoke-interface {v3, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    move-result p0
 
     .line 92
+    if-nez p0, :cond_7
+
     .line 93
     .line 94
-    invoke-virtual {v1, v9}, Lum4;->setValue(Ljava/lang/Object;)V
+    invoke-static {v0, v1}, Ls51;->h(J)I
 
     .line 95
     .line 96
     .line 97
-    :goto_1
-    return-object v2
+    move-result p0
 
     .line 98
-    :goto_2
-    invoke-virtual {v1, v9}, Lum4;->setValue(Ljava/lang/Object;)V
-
-    .line 99
-    .line 100
-    .line 101
-    throw v0
-
-    .line 102
-    :pswitch_0
-    iget-boolean v1, v0, Ln46;->k:Z
-
-    .line 103
-    .line 104
-    if-eqz v1, :cond_4
-
-    .line 105
-    .line 106
-    if-ne v1, v8, :cond_3
-
-    .line 107
-    .line 108
-    invoke-static/range {p1 .. p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 109
-    .line 110
-    .line 111
-    move-object/from16 v0, p1
-
-    .line 112
-    .line 113
     goto :goto_3
 
+    .line 99
+    :cond_7
+    invoke-static {p3, p4}, Ls51;->h(J)I
+
+    .line 100
+    .line 101
+    .line 102
+    move-result p0
+
+    .line 103
+    invoke-static {v0, v1}, Ls51;->j(J)I
+
+    .line 104
+    .line 105
+    .line 106
+    move-result p3
+
+    .line 107
+    if-ge p0, p3, :cond_8
+
+    .line 108
+    .line 109
+    move p0, p3
+
+    .line 110
+    :cond_8
+    :goto_3
+    invoke-static {v2, v3, v4, p0}, Lt51;->a(IIII)J
+
+    .line 111
+    .line 112
+    .line 113
+    move-result-wide p3
+
     .line 114
-    :cond_3
-    invoke-static {v4}, Ljw1;->e(Ljava/lang/String;)V
+    :goto_4
+    invoke-interface {p2, p3, p4}, Lci3;->e(J)Lxn4;
 
     .line 115
     .line 116
     .line 117
-    move-object v2, v9
+    move-result-object p0
 
     .line 118
-    goto :goto_4
+    iget p2, p0, Lxn4;->j:I
 
     .line 119
-    :cond_4
-    invoke-static/range {p1 .. p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
     .line 120
+    iget p3, p0, Lxn4;->k:I
+
     .line 121
     .line 122
-    iget-object v1, v7, Li46;->a:Ljava/lang/String;
+    new-instance p4, Lt2;
 
     .line 123
     .line 124
-    iput-boolean v8, v0, Ln46;->k:Z
+    const/16 v0, 0x16
 
     .line 125
     .line 126
-    sget-object v4, Llk1;->a:Log1;
+    invoke-direct {p4, p0, v0}, Lt2;-><init>(Lxn4;B)V
 
     .line 127
     .line 128
-    sget-object v4, Lfg1;->l:Lfg1;
-
     .line 129
+    sget-object p0, Lrt1;->j:Lrt1;
+
     .line 130
-    new-instance v7, Lku;
-
     .line 131
-    .line 132
-    invoke-direct {v7, v1, v9, v8}, Lku;-><init>(Ljava/lang/String;Ly81;B)V
+    invoke-interface {p1, p2, p3, p0, p4}, Lki3;->O0(IILjava/util/Map;Lo52;)Lii3;
 
+    .line 132
     .line 133
     .line 134
+    move-result-object p0
+
     .line 135
-    invoke-static {v4, v7, v0}, Lbn0;->S(Lrb1;Lt62;Ly81;)Ljava/lang/Object;
+    return-object p0
+.end method
 
-    .line 136
-    .line 137
-    .line 138
-    move-result-object v0
+.method public final l(Lne3;Lci3;I)I
+    .locals 2
 
-    .line 139
-    if-ne v0, v5, :cond_5
+    .line 1
+    invoke-virtual {p0, p1}, Ln46;->E1(Lki3;)J
 
-    .line 140
-    .line 141
-    move-object v2, v5
+    .line 2
+    .line 3
+    .line 4
+    move-result-wide v0
 
-    .line 142
-    goto :goto_4
+    .line 5
+    invoke-static {v0, v1}, Ls51;->g(J)Z
 
-    .line 143
-    :cond_5
-    :goto_3
-    check-cast v0, Ljv;
+    .line 6
+    .line 7
+    .line 8
+    move-result p1
 
-    .line 144
-    .line 145
-    iget-object v1, v0, Ljv;->a:Ljava/lang/Object;
+    .line 9
+    if-eqz p1, :cond_0
 
-    .line 146
-    .line 147
-    if-eqz v1, :cond_6
+    .line 10
+    .line 11
+    invoke-static {v0, v1}, Ls51;->i(J)I
 
-    .line 148
-    .line 149
-    invoke-virtual {v6}, Lo46;->c()V
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
 
-    .line 150
-    .line 151
-    .line 152
-    :cond_6
-    invoke-interface {v3, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 15
+    return p0
 
-    .line 153
-    .line 154
-    .line 155
-    :goto_4
-    return-object v2
+    .line 16
+    :cond_0
+    iget-boolean p0, p0, Ln46;->B:Z
 
-    .line 156
-    nop
+    .line 17
+    .line 18
+    if-eqz p0, :cond_1
 
-    .line 157
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 19
+    .line 20
+    goto :goto_0
+
+    .line 21
+    :cond_1
+    invoke-static {p3, v0, v1}, Lt51;->f(IJ)I
+
+    .line 22
+    .line 23
+    .line 24
+    move-result p3
+
+    .line 25
+    :goto_0
+    invoke-interface {p2, p3}, Lci3;->i0(I)I
+
+    .line 26
+    .line 27
+    .line 28
+    move-result p0
+
+    .line 29
+    invoke-static {p0, v0, v1}, Lt51;->g(IJ)I
+
+    .line 30
+    .line 31
+    .line 32
+    move-result p0
+
+    .line 33
+    return p0
+.end method
+
+.method public final v0(Lne3;Lci3;I)I
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0, p1}, Ln46;->E1(Lki3;)J
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-wide v0
+
+    .line 5
+    invoke-static {v0, v1}, Ls51;->g(J)Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p1
+
+    .line 9
+    if-eqz p1, :cond_0
+
+    .line 10
+    .line 11
+    invoke-static {v0, v1}, Ls51;->i(J)I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    return p0
+
+    .line 16
+    :cond_0
+    iget-boolean p0, p0, Ln46;->B:Z
+
+    .line 17
+    .line 18
+    if-eqz p0, :cond_1
+
+    .line 19
+    .line 20
+    goto :goto_0
+
+    .line 21
+    :cond_1
+    invoke-static {p3, v0, v1}, Lt51;->f(IJ)I
+
+    .line 22
+    .line 23
+    .line 24
+    move-result p3
+
+    .line 25
+    :goto_0
+    invoke-interface {p2, p3}, Lci3;->W(I)I
+
+    .line 26
+    .line 27
+    .line 28
+    move-result p0
+
+    .line 29
+    invoke-static {p0, v0, v1}, Lt51;->g(IJ)I
+
+    .line 30
+    .line 31
+    .line 32
+    move-result p0
+
+    .line 33
+    return p0
+.end method
+
+.method public final z(Lne3;Lci3;I)I
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0, p1}, Ln46;->E1(Lki3;)J
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-wide v0
+
+    .line 5
+    invoke-static {v0, v1}, Ls51;->f(J)Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p1
+
+    .line 9
+    if-eqz p1, :cond_0
+
+    .line 10
+    .line 11
+    invoke-static {v0, v1}, Ls51;->h(J)I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    return p0
+
+    .line 16
+    :cond_0
+    iget-boolean p0, p0, Ln46;->B:Z
+
+    .line 17
+    .line 18
+    if-eqz p0, :cond_1
+
+    .line 19
+    .line 20
+    goto :goto_0
+
+    .line 21
+    :cond_1
+    invoke-static {p3, v0, v1}, Lt51;->g(IJ)I
+
+    .line 22
+    .line 23
+    .line 24
+    move-result p3
+
+    .line 25
+    :goto_0
+    invoke-interface {p2, p3}, Lci3;->f(I)I
+
+    .line 26
+    .line 27
+    .line 28
+    move-result p0
+
+    .line 29
+    invoke-static {p0, v0, v1}, Lt51;->f(IJ)I
+
+    .line 30
+    .line 31
+    .line 32
+    move-result p0
+
+    .line 33
+    return p0
 .end method

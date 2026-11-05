@@ -1,86 +1,131 @@
 .class public final Lsx2;
-.super Lh00;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Landroid/text/method/MetaKeyKeyListener;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final d:Ljava/util/regex/Pattern;
+# instance fields
+.field public final a:Lqt0;
 
-.field public static final e:Ljava/util/regex/Pattern;
+.field public final b:Landroid/text/Editable;
 
-.field public static final f:Ljava/util/regex/Pattern;
-
-.field public static final g:Ljava/util/regex/Pattern;
+.field public c:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lqt0;)V
+    .locals 2
 
     .line 1
-    const-string v0, "^(?:true|false)$"
+    invoke-direct {p0}, Landroid/text/method/MetaKeyKeyListener;-><init>()V
 
     .line 2
     .line 3
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
     .line 4
+    invoke-static {}, Landroid/text/Editable$Factory;->getInstance()Landroid/text/Editable$Factory;
+
     .line 5
     .line 6
-    move-result-object v0
-
     .line 7
-    sput-object v0, Lsx2;->d:Ljava/util/regex/Pattern;
+    move-result-object v0
 
     .line 8
+    const-string v1, ""
+
     .line 9
-    const-string v0, "^(-?(0|[1-9][0-9]*)(\\.[0-9]*)?([eE][-+]?[0-9]+)?)|(-?\\.inf)|(\\.nan)$"
-
     .line 10
-    .line 11
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-virtual {v0, v1}, Landroid/text/Editable$Factory;->newEditable(Ljava/lang/CharSequence;)Landroid/text/Editable;
 
+    .line 11
     .line 12
     .line 13
-    .line 14
     move-result-object v0
 
-    .line 15
-    sput-object v0, Lsx2;->e:Ljava/util/regex/Pattern;
+    .line 14
+    iput-object v0, p0, Lsx2;->b:Landroid/text/Editable;
 
+    .line 15
     .line 16
+    const/4 v0, 0x0
+
     .line 17
-    const-string v0, "^-?(0|[1-9][0-9]*)$"
+    iput-boolean v0, p0, Lsx2;->c:Z
 
     .line 18
     .line 19
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    iput-object p1, p0, Lsx2;->a:Lqt0;
 
     .line 20
     .line 21
-    .line 22
-    move-result-object v0
-
-    .line 23
-    sput-object v0, Lsx2;->f:Ljava/util/regex/Pattern;
-
-    .line 24
-    .line 25
-    const-string v0, "^(?:null)$"
-
-    .line 26
-    .line 27
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    .line 28
-    .line 29
-    .line 30
-    move-result-object v0
-
-    .line 31
-    sput-object v0, Lsx2;->g:Ljava/util/regex/Pattern;
-
-    .line 32
-    .line 33
     return-void
+.end method
+
+
+# virtual methods
+.method public final a()Z
+    .locals 1
+
+    .line 1
+    iget-object p0, p0, Lsx2;->b:Landroid/text/Editable;
+
+    .line 2
+    .line 3
+    const/4 v0, 0x2
+
+    .line 4
+    invoke-static {p0, v0}, Landroid/text/method/MetaKeyKeyListener;->getMetaState(Ljava/lang/CharSequence;I)I
+
+    .line 5
+    .line 6
+    .line 7
+    move-result p0
+
+    .line 8
+    const/4 v0, 0x1
+
+    .line 9
+    if-ne p0, v0, :cond_0
+
+    .line 10
+    .line 11
+    return v0
+
+    .line 12
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 13
+    return p0
+.end method
+
+.method public final b()Z
+    .locals 1
+
+    .line 1
+    iget-object p0, p0, Lsx2;->b:Landroid/text/Editable;
+
+    .line 2
+    .line 3
+    const/4 v0, 0x1
+
+    .line 4
+    invoke-static {p0, v0}, Landroid/text/method/MetaKeyKeyListener;->getMetaState(Ljava/lang/CharSequence;I)I
+
+    .line 5
+    .line 6
+    .line 7
+    move-result p0
+
+    .line 8
+    if-ne p0, v0, :cond_0
+
+    .line 9
+    .line 10
+    return v0
+
+    .line 11
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 12
+    return p0
 .end method

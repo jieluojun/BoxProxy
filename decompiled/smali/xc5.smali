@@ -1,31 +1,61 @@
 .class public final Lxc5;
-.super Lwu;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lyc5;
 
 
-# instance fields
-.field public final c:Ljava/lang/String;
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-.field public final d:I
+    .line 1
+    const/4 v0, 0x1
 
+    .line 2
+    if-ne p0, p1, :cond_0
 
-# direct methods
-.method public constructor <init>(Ljava/lang/String;I)V
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of p0, p1, Lxc5;
+
+    .line 6
+    .line 7
+    if-nez p0, :cond_1
+
+    .line 8
+    .line 9
+    const/4 p0, 0x0
+
+    .line 10
+    return p0
+
+    .line 11
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const p0, 0x3da3d70a    # 0.08f
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lxc5;->c:Ljava/lang/String;
+    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
 
     .line 5
     .line 6
-    iput p2, p0, Lxc5;->d:I
-
     .line 7
+    move-result p0
+
     .line 8
-    return-void
+    return p0
 .end method

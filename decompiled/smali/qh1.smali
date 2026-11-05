@@ -1,268 +1,307 @@
 .class public final Lqh1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lnv0;
+.implements Landroid/hardware/SensorEventListener;
 
 
 # instance fields
-.field public final synthetic a:B
+.field public final synthetic a:[F
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final synthetic b:[F
+
+.field public final synthetic c:Lv85;
+
+.field public final synthetic d:Lw85;
+
+.field public final synthetic e:Lw85;
+
+.field public final synthetic f:Lw85;
+
+.field public final synthetic g:Lw85;
+
+.field public final synthetic h:Las3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;B)V
+.method public constructor <init>([F[FLv85;Lw85;Lw85;Lw85;Lw85;Las3;)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lqh1;->a:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lqh1;->b:Ljava/lang/Object;
-
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lqh1;->a:[F
 
+    .line 5
     .line 6
+    iput-object p2, p0, Lqh1;->b:[F
+
     .line 7
     .line 8
+    iput-object p3, p0, Lqh1;->c:Lv85;
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Lqh1;->d:Lw85;
+
+    .line 11
+    .line 12
+    iput-object p5, p0, Lqh1;->e:Lw85;
+
+    .line 13
+    .line 14
+    iput-object p6, p0, Lqh1;->f:Lw85;
+
+    .line 15
+    .line 16
+    iput-object p7, p0, Lqh1;->g:Lw85;
+
+    .line 17
+    .line 18
+    iput-object p8, p0, Lqh1;->h:Las3;
+
+    .line 19
+    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 5
+.method public final onAccuracyChanged(Landroid/hardware/Sensor;I)V
+    .locals 0
 
     .line 1
-    iget-byte v0, p0, Lqh1;->a:B
+    return-void
+.end method
+
+.method public final onSensorChanged(Landroid/hardware/SensorEvent;)V
+    .locals 10
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    iget-object p0, p0, Lqh1;->b:Ljava/lang/Object;
-
     .line 4
-    .line 5
-    packed-switch v0, :pswitch_data_0
+    iget-object p1, p1, Landroid/hardware/SensorEvent;->values:[F
 
+    .line 5
     .line 6
+    iget-object v0, p0, Lqh1;->a:[F
+
     .line 7
     .line 8
-    check-cast p0, Lqe5;
+    invoke-static {v0, p1}, Landroid/hardware/SensorManager;->getRotationMatrixFromVector([F[F)V
 
     .line 9
     .line 10
-    iget-wide v0, p0, Lqe5;->c:J
-
     .line 11
-    .line 12
-    return-wide v0
+    iget-object p1, p0, Lqh1;->b:[F
 
+    .line 12
     .line 13
-    :pswitch_0
-    check-cast p0, Lrh1;
+    invoke-static {v0, p1}, Landroid/hardware/SensorManager;->getOrientation([F[F)[F
 
     .line 14
     .line 15
-    sget-object v0, Lee5;->b:Lu21;
-
     .line 16
+    const/4 v1, 0x6
+
     .line 17
-    invoke-static {p0, v0}, Laq;->G(Lq21;Lrv4;)Ljava/lang/Object;
+    aget v1, v0, v1
 
     .line 18
     .line 19
+    neg-float v1, v1
+
     .line 20
-    move-result-object v0
+    const/4 v2, 0x7
 
     .line 21
-    check-cast v0, Lae5;
+    aget v0, v0, v2
 
     .line 22
     .line 23
-    sget-object v0, Lfj3;->b:Lkq1;
+    neg-float v0, v0
 
     .line 24
-    .line 25
-    invoke-static {p0, v0}, Laq;->G(Lq21;Lrv4;)Ljava/lang/Object;
+    iget-object v2, p0, Lqh1;->c:Lv85;
 
+    .line 25
     .line 26
+    iget-boolean v3, v2, Lv85;->j:Z
+
     .line 27
     .line 28
-    move-result-object p0
+    iget-object v4, p0, Lqh1;->g:Lw85;
 
     .line 29
-    check-cast p0, Lcj3;
-
     .line 30
-    .line 31
-    iget-object p0, p0, Lcj3;->a:Lpv0;
+    iget-object v5, p0, Lqh1;->f:Lw85;
 
+    .line 31
     .line 32
+    const/4 v6, 0x2
+
     .line 33
-    iget-wide v0, p0, Lpv0;->f:J
+    iget-object v7, p0, Lqh1;->e:Lw85;
 
     .line 34
     .line 35
-    return-wide v0
+    const/4 v8, 0x1
 
     .line 36
-    :pswitch_1
-    check-cast p0, Lrh1;
+    iget-object v9, p0, Lqh1;->d:Lw85;
 
     .line 37
     .line 38
-    sget-object v0, Lee5;->b:Lu21;
+    if-nez v3, :cond_0
 
     .line 39
     .line 40
-    invoke-static {p0, v0}, Laq;->G(Lq21;Lrv4;)Ljava/lang/Object;
+    aget v3, p1, v8
 
     .line 41
     .line 42
-    .line 43
-    move-result-object v0
+    iput v3, v9, Lw85;->j:F
 
+    .line 43
     .line 44
-    check-cast v0, Lae5;
+    aget p1, p1, v6
 
     .line 45
     .line 46
-    sget-object v0, Lfj3;->b:Lkq1;
+    iput p1, v7, Lw85;->j:F
 
     .line 47
     .line 48
-    invoke-static {p0, v0}, Laq;->G(Lq21;Lrv4;)Ljava/lang/Object;
+    iput v1, v5, Lw85;->j:F
 
     .line 49
     .line 50
-    .line 51
-    move-result-object p0
+    iput v0, v4, Lw85;->j:F
 
+    .line 51
     .line 52
-    check-cast p0, Lcj3;
+    iput-boolean v8, v2, Lv85;->j:Z
 
     .line 53
     .line 54
-    iget-object p0, p0, Lcj3;->a:Lpv0;
+    goto :goto_0
 
     .line 55
+    :cond_0
+    iget v2, v9, Lw85;->j:F
+
     .line 56
-    iget-wide v0, p0, Lpv0;->g:J
-
     .line 57
-    .line 58
-    return-wide v0
+    aget v3, p1, v8
 
+    .line 58
     .line 59
-    :pswitch_2
-    check-cast p0, Lrh1;
+    const v8, 0x3e19999a    # 0.15f
 
     .line 60
     .line 61
-    iget-object v0, p0, Lrh1;->C:Lqh1;
-
     .line 62
-    .line 63
-    iget-object v0, v0, Lqh1;->b:Ljava/lang/Object;
+    invoke-static {v3, v2, v8, v2}, Lh86;->b(FFFF)F
 
+    .line 63
     .line 64
     .line 65
-    check-cast v0, Lqe5;
+    move-result v2
 
     .line 66
+    iput v2, v9, Lw85;->j:F
+
     .line 67
-    iget-wide v0, v0, Lqe5;->c:J
-
     .line 68
+    iget v2, v7, Lw85;->j:F
+
     .line 69
-    const-wide/16 v2, 0x10
-
     .line 70
+    aget p1, p1, v6
+
     .line 71
-    cmp-long v4, v0, v2
-
     .line 72
-    .line 73
-    if-eqz v4, :cond_0
+    invoke-static {p1, v2, v8, v2}, Lh86;->b(FFFF)F
 
+    .line 73
     .line 74
     .line 75
-    goto :goto_0
+    move-result p1
 
     .line 76
-    :cond_0
-    sget-object v0, Lee5;->b:Lu21;
+    iput p1, v7, Lw85;->j:F
 
     .line 77
     .line 78
-    invoke-static {p0, v0}, Laq;->G(Lq21;Lrv4;)Ljava/lang/Object;
+    iget p1, v5, Lw85;->j:F
 
     .line 79
     .line 80
+    invoke-static {v1, p1, v8, p1}, Lh86;->b(FFFF)F
+
     .line 81
-    move-result-object v0
-
     .line 82
-    check-cast v0, Lae5;
-
     .line 83
+    move-result p1
+
     .line 84
-    if-eqz v0, :cond_1
+    iput p1, v5, Lw85;->j:F
 
     .line 85
     .line 86
-    iget-wide v0, v0, Lae5;->a:J
+    iget p1, v4, Lw85;->j:F
 
     .line 87
     .line 88
-    cmp-long v2, v0, v2
+    invoke-static {v0, p1, v8, p1}, Lh86;->b(FFFF)F
 
     .line 89
     .line 90
-    if-eqz v2, :cond_1
-
     .line 91
+    move-result v0
+
     .line 92
-    goto :goto_0
+    iput v0, v4, Lw85;->j:F
 
     .line 93
-    :cond_1
-    sget-object v0, Lu71;->a:Lkq1;
-
     .line 94
-    .line 95
-    invoke-static {p0, v0}, Laq;->G(Lq21;Lrv4;)Ljava/lang/Object;
+    :goto_0
+    new-instance p1, Lnh1;
 
+    .line 95
     .line 96
+    iget v1, v9, Lw85;->j:F
+
     .line 97
     .line 98
-    move-result-object p0
+    iget v2, v7, Lw85;->j:F
 
     .line 99
-    check-cast p0, Ljv0;
-
     .line 100
+    iget v3, v5, Lw85;->j:F
+
     .line 101
-    iget-wide v0, p0, Ljv0;->a:J
-
     .line 102
+    invoke-direct {p1, v1, v2, v3, v0}, Lnh1;-><init>(FFFF)V
+
     .line 103
-    :goto_0
-    return-wide v0
-
     .line 104
-    nop
-
     .line 105
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    iget-object p0, p0, Lqh1;->h:Las3;
+
+    .line 106
+    .line 107
+    invoke-interface {p0, p1}, Las3;->setValue(Ljava/lang/Object;)V
+
+    .line 108
+    .line 109
+    .line 110
+    return-void
 .end method

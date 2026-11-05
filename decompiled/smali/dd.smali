@@ -1,46 +1,73 @@
-.class public abstract Ldd;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Ldd;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# instance fields
+.field public synthetic j:Ljava/lang/Object;
+
+.field public final synthetic k:Led;
+
+.field public l:I
 
 
 # direct methods
-.method public static final a()Lbd;
-    .locals 2
+.method public constructor <init>(Led;Lz71;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lbd;
+    iput-object p1, p0, Ldd;->k:Led;
 
     .line 2
     .line 3
-    new-instance v1, Landroid/graphics/Path;
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
     .line 4
     .line 5
-    invoke-direct {v1}, Landroid/graphics/Path;-><init>()V
-
     .line 6
-    .line 7
-    .line 8
-    invoke-direct {v0, v1}, Lbd;-><init>(Landroid/graphics/Path;)V
-
-    .line 9
-    .line 10
-    .line 11
-    return-object v0
+    return-void
 .end method
 
-.method public static final b(Ljava/lang/String;)V
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     .line 1
-    new-instance v0, Ljava/lang/IllegalStateException;
+    iput-object p1, p0, Ldd;->j:Ljava/lang/Object;
 
     .line 2
     .line 3
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iget p1, p0, Ldd;->l:I
 
     .line 4
     .line 5
+    const/high16 v0, -0x80000000
+
     .line 6
-    throw v0
+    .line 7
+    or-int/2addr p1, v0
+
+    .line 8
+    iput p1, p0, Ldd;->l:I
+
+    .line 9
+    .line 10
+    iget-object p1, p0, Ldd;->k:Led;
+
+    .line 11
+    .line 12
+    const/4 v0, 0x0
+
+    .line 13
+    invoke-virtual {p1, v0, p0}, Led;->a(Loo4;Lz71;)V
+
+    .line 14
+    .line 15
+    .line 16
+    sget-object p0, Lcb1;->j:Lcb1;
+
+    .line 17
+    .line 18
+    return-object p0
 .end method

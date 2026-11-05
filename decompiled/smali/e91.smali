@@ -1,184 +1,80 @@
-.class public final enum Le91;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Le91;
+.super Ljo3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lcw5;
 
 
-# static fields
-.field public static final enum j:Le91;
+# instance fields
+.field public x:Z
 
-.field public static final enum k:Le91;
+.field public final y:Z
 
-.field public static final enum l:Le91;
-
-.field public static final enum m:Le91;
-
-.field public static final enum n:Le91;
-
-.field public static final synthetic o:[Le91;
+.field public z:Lo52;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
+.method public constructor <init>(ZZLo52;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Le91;
+    invoke-direct {p0}, Ljo3;-><init>()V
 
     .line 2
     .line 3
-    const-string v1, "Gzip"
-
     .line 4
-    .line 5
-    const/4 v2, 0x0
+    iput-boolean p1, p0, Le91;->x:Z
 
+    .line 5
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-boolean p2, p0, Le91;->y:Z
 
     .line 7
     .line 8
+    iput-object p3, p0, Le91;->z:Lo52;
+
     .line 9
-    sput-object v0, Le91;->j:Le91;
-
     .line 10
-    .line 11
-    new-instance v1, Le91;
-
-    .line 12
-    .line 13
-    const-string v2, "TarGz"
-
-    .line 14
-    .line 15
-    const/4 v3, 0x1
-
-    .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 17
-    .line 18
-    .line 19
-    sput-object v1, Le91;->k:Le91;
-
-    .line 20
-    .line 21
-    new-instance v2, Le91;
-
-    .line 22
-    .line 23
-    const-string v3, "Tar"
-
-    .line 24
-    .line 25
-    const/4 v4, 0x2
-
-    .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 27
-    .line 28
-    .line 29
-    sput-object v2, Le91;->l:Le91;
-
-    .line 30
-    .line 31
-    new-instance v3, Le91;
-
-    .line 32
-    .line 33
-    const-string v4, "Zip"
-
-    .line 34
-    .line 35
-    const/4 v5, 0x3
-
-    .line 36
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 37
-    .line 38
-    .line 39
-    sput-object v3, Le91;->m:Le91;
-
-    .line 40
-    .line 41
-    new-instance v4, Le91;
-
-    .line 42
-    .line 43
-    const-string v5, "Direct"
-
-    .line 44
-    .line 45
-    const/4 v6, 0x4
-
-    .line 46
-    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 47
-    .line 48
-    .line 49
-    sput-object v4, Le91;->n:Le91;
-
-    .line 50
-    .line 51
-    filled-new-array {v0, v1, v2, v3, v4}, [Le91;
-
-    .line 52
-    .line 53
-    .line 54
-    move-result-object v0
-
-    .line 55
-    sput-object v0, Le91;->o:[Le91;
-
-    .line 56
-    .line 57
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Le91;
-    .locals 1
+
+# virtual methods
+.method public final Q0(Llw5;)V
+    .locals 0
 
     .line 1
-    const-class v0, Le91;
+    iget-object p0, p0, Le91;->z:Lo52;
 
     .line 2
     .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-interface {p0, p1}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 4
     .line 5
     .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Le91;
-
-    .line 8
-    .line 9
-    return-object p0
+    return-void
 .end method
 
-.method public static values()[Le91;
-    .locals 1
+.method public final V0()Z
+    .locals 0
 
     .line 1
-    sget-object v0, Le91;->o:[Le91;
+    iget-boolean p0, p0, Le91;->y:Z
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    return p0
+.end method
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
+.method public final W0()Z
+    .locals 0
 
-    .line 7
-    check-cast v0, [Le91;
+    .line 1
+    iget-boolean p0, p0, Le91;->x:Z
 
-    .line 8
-    .line 9
-    return-object v0
+    .line 2
+    .line 3
+    return p0
 .end method

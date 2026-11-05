@@ -1,482 +1,429 @@
-.class public final Lyw;
+.class public final synthetic Lyw;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lpy1;
+.implements Ljava/util/function/Consumer;
 
 
 # instance fields
 .field public final synthetic a:B
 
+.field public final synthetic b:Ljava/lang/Object;
+
 
 # direct methods
-.method public synthetic constructor <init>(B)V
+.method public synthetic constructor <init>(Ljava/lang/Object;B)V
     .locals 0
 
     .line 1
-    iput-byte p1, p0, Lyw;->a:B
+    iput-byte p2, p0, Lyw;->a:B
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lyw;->b:Ljava/lang/Object;
 
     .line 4
     .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 6
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;Lre4;Lf95;)Lqy1;
-    .locals 5
+.method public final accept(Ljava/lang/Object;)V
+    .locals 2
 
     .line 1
-    iget-byte p0, p0, Lyw;->a:B
+    iget-byte v0, p0, Lyw;->a:B
 
     .line 2
     .line 3
-    const/4 p3, 0x0
+    const-string v1, "pattern="
 
     .line 4
-    const/4 v0, 0x1
-
     .line 5
-    const/4 v1, 0x2
+    iget-object p0, p0, Lyw;->b:Ljava/lang/Object;
 
     .line 6
-    const-string v2, "android_asset"
-
     .line 7
-    .line 8
-    const-string v3, "file"
+    packed-switch v0, :pswitch_data_0
 
+    .line 8
     .line 9
     .line 10
-    const/4 v4, 0x0
+    check-cast p0, Las3;
 
     .line 11
-    packed-switch p0, :pswitch_data_0
-
     .line 12
+    check-cast p1, Ljava/lang/Boolean;
+
     .line 13
     .line 14
-    check-cast p1, Lv47;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 15
     .line 16
-    iget-object p0, p1, Lv47;->c:Ljava/lang/String;
-
     .line 17
-    .line 18
-    const-string p3, "android.resource"
+    invoke-interface {p0, p1}, Las3;->setValue(Ljava/lang/Object;)V
 
+    .line 18
     .line 19
     .line 20
-    invoke-static {p0, p3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    return-void
 
     .line 21
+    :pswitch_0
+    check-cast p0, Lpe5;
+
     .line 22
     .line 23
-    move-result p0
+    check-cast p1, Ljava/lang/StringBuilder;
 
     .line 24
-    if-nez p0, :cond_0
-
     .line 25
-    .line 26
-    goto :goto_0
+    const-string v0, "id="
 
+    .line 26
     .line 27
-    :cond_0
-    new-instance v4, Lzw;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 28
     .line 29
-    const/4 p0, 0x5
-
     .line 30
-    invoke-direct {v4, p1, p2, p0}, Lzw;-><init>(Lv47;Lre4;B)V
+    iget-object v0, p0, Lpe5;->a:Lte5;
 
     .line 31
     .line 32
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
     .line 33
-    :goto_0
-    return-object v4
-
     .line 34
-    :pswitch_0
-    check-cast p1, Lv47;
-
     .line 35
+    const-string v0, ",name="
+
     .line 36
-    iget-object p0, p1, Lv47;->c:Ljava/lang/String;
-
     .line 37
-    .line 38
-    const-string p3, "jar:file"
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 38
     .line 39
     .line 40
-    invoke-static {p0, p3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-object p0, p0, Lpe5;->b:Ljava/lang/String;
 
     .line 41
     .line 42
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 43
-    move-result p0
-
     .line 44
-    if-nez p0, :cond_1
-
     .line 45
+    return-void
+
     .line 46
-    goto :goto_1
+    :pswitch_1
+    check-cast p0, Lul4;
 
     .line 47
-    :cond_1
-    new-instance v4, Lzw;
-
     .line 48
-    .line 49
-    const/4 p0, 0x4
+    check-cast p1, Let4;
 
+    .line 49
     .line 50
-    invoke-direct {v4, p1, p2, p0}, Lzw;-><init>(Lv47;Lre4;B)V
+    invoke-interface {p1}, Let4;->a()Lfv1;
 
     .line 51
     .line 52
     .line 53
-    :goto_1
-    return-object v4
+    move-result-object p1
 
     .line 54
-    :pswitch_1
-    check-cast p1, Lv47;
+    invoke-static {p1}, Ljava/util/Optional;->of(Ljava/lang/Object;)Ljava/util/Optional;
 
     .line 55
     .line 56
-    iget-object p0, p1, Lv47;->c:Ljava/lang/String;
-
     .line 57
+    move-result-object p1
+
     .line 58
-    if-eqz p0, :cond_2
+    iput-object p1, p0, Lul4;->n:Ljava/util/Optional;
 
     .line 59
     .line 60
-    invoke-virtual {p0, v3}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    return-void
 
     .line 61
+    :pswitch_2
+    check-cast p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;
+
     .line 62
     .line 63
-    move-result p0
+    check-cast p1, Ljava/lang/StringBuilder;
 
     .line 64
-    if-eqz p0, :cond_4
-
     .line 65
-    .line 66
-    :cond_2
-    iget-object p0, p1, Lv47;->e:Ljava/lang/String;
+    invoke-static {p0, p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;->a(Lorg/eclipse/tm4e/languageconfiguration/internal/model/OnEnterRule;Ljava/lang/StringBuilder;)V
 
+    .line 66
     .line 67
     .line 68
-    if-eqz p0, :cond_4
+    return-void
 
     .line 69
+    :pswitch_3
+    check-cast p0, Lvs3;
+
     .line 70
-    sget-object p0, Lg57;->a:[Landroid/graphics/Bitmap$Config;
-
     .line 71
+    check-cast p1, Ljava/lang/StringBuilder;
+
     .line 72
-    iget-object p0, p1, Lv47;->c:Ljava/lang/String;
-
     .line 73
-    .line 74
-    invoke-static {p0, v3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 74
     .line 75
     .line 76
-    .line 77
-    move-result p0
+    iget-object p0, p0, Lvs3;->a:Ljava/lang/String;
 
+    .line 77
     .line 78
-    if-eqz p0, :cond_3
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 79
     .line 80
-    invoke-static {p1}, Ly47;->g(Lv47;)Ljava/util/List;
-
     .line 81
-    .line 82
-    .line 83
-    move-result-object p0
+    return-void
 
+    .line 82
+    :pswitch_4
+    check-cast p0, Lgu2;
+
+    .line 83
     .line 84
-    invoke-static {p0}, Lcv0;->B0(Ljava/util/List;)Ljava/lang/Object;
+    check-cast p1, Ljava/lang/StringBuilder;
 
     .line 85
     .line 86
+    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 87
-    move-result-object p0
-
     .line 88
-    invoke-static {p0, v2}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
     .line 89
+    iget-object p0, p0, Lgu2;->d:Ljava/lang/String;
+
     .line 90
     .line 91
-    move-result p0
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 92
-    if-eqz p0, :cond_3
-
     .line 93
     .line 94
-    goto :goto_2
+    return-void
 
     .line 95
-    :cond_3
-    new-instance v4, Lzw;
+    :pswitch_5
+    check-cast p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentForEnter;
 
     .line 96
     .line 97
-    const/4 p0, 0x3
+    check-cast p1, Ljava/lang/StringBuilder;
 
     .line 98
-    invoke-direct {v4, p1, p2, p0}, Lzw;-><init>(Lv47;Lre4;B)V
-
     .line 99
+    invoke-static {p0, p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentForEnter;->a(Lorg/eclipse/tm4e/languageconfiguration/internal/model/IndentForEnter;Ljava/lang/StringBuilder;)V
+
     .line 100
     .line 101
-    :cond_4
-    :goto_2
-    return-object v4
-
     .line 102
-    :pswitch_2
-    check-cast p1, Landroid/graphics/drawable/Drawable;
+    return-void
 
     .line 103
+    :pswitch_6
+    check-cast p0, Ls72;
+
     .line 104
-    new-instance p0, Lxg0;
-
     .line 105
-    .line 106
-    invoke-direct {p0, p1, p2, v1}, Lxg0;-><init>(Ljava/lang/Object;Lre4;B)V
+    check-cast p1, Ljava/lang/StringBuilder;
 
+    .line 106
     .line 107
+    const-string v0, "name="
+
     .line 108
     .line 109
-    return-object p0
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 110
-    :pswitch_3
-    check-cast p1, Lv47;
-
     .line 111
     .line 112
-    iget-object p0, p1, Lv47;->c:Ljava/lang/String;
+    iget-object v0, p0, Ls72;->g:Lu65;
 
     .line 113
     .line 114
-    const-string p3, "data"
+    const-string v1, "name"
 
     .line 115
     .line 116
-    invoke-static {p0, p3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v0, v1}, Ljava/util/AbstractMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 117
     .line 118
     .line 119
-    move-result p0
+    move-result-object v0
 
     .line 120
-    if-nez p0, :cond_5
+    check-cast v0, Ljava/lang/String;
 
     .line 121
     .line 122
-    goto :goto_3
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 123
-    :cond_5
-    new-instance v4, Lzw;
-
     .line 124
     .line 125
-    invoke-direct {v4, p1, p2, v1}, Lzw;-><init>(Lv47;Lre4;B)V
+    const-string v0, ", "
 
     .line 126
     .line 127
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 128
-    :goto_3
-    return-object v4
-
     .line 129
-    :pswitch_4
-    check-cast p1, Lv47;
-
     .line 130
+    const-string v0, "scopeName="
+
     .line 131
-    iget-object p0, p1, Lv47;->c:Ljava/lang/String;
-
     .line 132
-    .line 133
-    const-string p3, "content"
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 133
     .line 134
     .line 135
-    invoke-static {p0, p3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-object p0, p0, Ls72;->a:Ljava/lang/String;
 
     .line 136
     .line 137
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 138
-    move-result p0
-
     .line 139
-    if-nez p0, :cond_6
-
     .line 140
+    return-void
+
     .line 141
-    goto :goto_4
+    :pswitch_7
+    check-cast p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/FoldingRules;
 
     .line 142
-    :cond_6
-    new-instance v4, Lzw;
-
     .line 143
-    .line 144
-    invoke-direct {v4, p1, p2, v0}, Lzw;-><init>(Lv47;Lre4;B)V
+    check-cast p1, Ljava/lang/StringBuilder;
 
+    .line 144
     .line 145
+    invoke-static {p0, p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/FoldingRules;->a(Lorg/eclipse/tm4e/languageconfiguration/internal/model/FoldingRules;Ljava/lang/StringBuilder;)V
+
     .line 146
     .line 147
-    :goto_4
-    return-object v4
-
     .line 148
-    :pswitch_5
-    check-cast p1, Ljava/nio/ByteBuffer;
+    return-void
 
     .line 149
+    :pswitch_8
+    check-cast p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction;
+
     .line 150
-    new-instance p0, Lxg0;
-
     .line 151
-    .line 152
-    invoke-direct {p0, p1, p2, v0}, Lxg0;-><init>(Ljava/lang/Object;Lre4;B)V
+    check-cast p1, Ljava/lang/StringBuilder;
 
+    .line 152
     .line 153
+    invoke-static {p0, p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction;->a(Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction;Ljava/lang/StringBuilder;)V
+
     .line 154
     .line 155
-    return-object p0
-
     .line 156
-    :pswitch_6
-    check-cast p1, [B
+    return-void
 
     .line 157
+    :pswitch_9
+    check-cast p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CompleteEnterAction;
+
     .line 158
-    new-instance p0, Lxg0;
-
     .line 159
-    .line 160
-    invoke-direct {p0, p1, p2, p3}, Lxg0;-><init>(Ljava/lang/Object;Lre4;B)V
+    check-cast p1, Ljava/lang/StringBuilder;
 
+    .line 160
     .line 161
+    invoke-static {p0, p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CompleteEnterAction;->b(Lorg/eclipse/tm4e/languageconfiguration/internal/model/CompleteEnterAction;Ljava/lang/StringBuilder;)V
+
     .line 162
     .line 163
-    return-object p0
-
     .line 164
-    :pswitch_7
-    check-cast p1, Landroid/graphics/Bitmap;
+    return-void
 
     .line 165
+    :pswitch_a
+    check-cast p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CommentRule;
+
     .line 166
-    new-instance p0, Lz20;
-
     .line 167
-    .line 168
-    invoke-direct {p0, p1}, Lz20;-><init>(Landroid/graphics/Bitmap;)V
+    check-cast p1, Ljava/lang/StringBuilder;
 
+    .line 168
     .line 169
+    invoke-static {p0, p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CommentRule;->a(Lorg/eclipse/tm4e/languageconfiguration/internal/model/CommentRule;Ljava/lang/StringBuilder;)V
+
     .line 170
     .line 171
-    return-object p0
-
     .line 172
-    :pswitch_8
-    check-cast p1, Lv47;
+    return-void
 
     .line 173
+    :pswitch_b
+    check-cast p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;
+
     .line 174
-    sget-object p0, Lg57;->a:[Landroid/graphics/Bitmap$Config;
-
     .line 175
+    check-cast p1, Ljava/lang/StringBuilder;
+
     .line 176
-    iget-object p0, p1, Lv47;->c:Ljava/lang/String;
-
     .line 177
-    .line 178
-    invoke-static {p0, v3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;->a(Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;Ljava/lang/StringBuilder;)V
 
+    .line 178
     .line 179
     .line 180
+    return-void
+
     .line 181
-    move-result p0
+    :pswitch_c
+    check-cast p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPairConditional;
 
     .line 182
-    if-eqz p0, :cond_7
-
     .line 183
-    .line 184
-    invoke-static {p1}, Ly47;->g(Lv47;)Ljava/util/List;
+    check-cast p1, Ljava/lang/StringBuilder;
 
+    .line 184
     .line 185
+    invoke-static {p0, p1}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPairConditional;->b(Lorg/eclipse/tm4e/languageconfiguration/internal/model/AutoClosingPairConditional;Ljava/lang/StringBuilder;)V
+
     .line 186
     .line 187
-    move-result-object p0
-
     .line 188
-    invoke-static {p0}, Lcv0;->B0(Ljava/util/List;)Ljava/lang/Object;
+    return-void
 
     .line 189
-    .line 190
-    .line 191
-    move-result-object p0
-
-    .line 192
-    invoke-static {p0, v2}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 193
-    .line 194
-    .line 195
-    move-result p0
-
-    .line 196
-    if-eqz p0, :cond_7
-
-    .line 197
-    .line 198
-    new-instance v4, Lzw;
-
-    .line 199
-    .line 200
-    invoke-direct {v4, p1, p2, p3}, Lzw;-><init>(Lv47;Lre4;B)V
-
-    .line 201
-    .line 202
-    .line 203
-    :cond_7
-    return-object v4
-
-    .line 204
-    nop
-
-    .line 205
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
         :pswitch_8
         :pswitch_7
         :pswitch_6

@@ -1,28 +1,26 @@
 .class public final Lch2;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public j:Li91;
+.field public synthetic j:Ljava/lang/Object;
 
-.field public synthetic k:Ljava/lang/Object;
+.field public final synthetic k:Lsr6;
 
-.field public final synthetic l:Ldh2;
-
-.field public m:I
+.field public l:I
 
 
 # direct methods
-.method public constructor <init>(Ldh2;Lz81;)V
+.method public constructor <init>(Lsr6;Lz71;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lch2;->l:Ldh2;
+    iput-object p1, p0, Lch2;->k:Lsr6;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
     .line 4
     .line 5
@@ -36,11 +34,11 @@
     .locals 1
 
     .line 1
-    iput-object p1, p0, Lch2;->k:Ljava/lang/Object;
+    iput-object p1, p0, Lch2;->j:Ljava/lang/Object;
 
     .line 2
     .line 3
-    iget p1, p0, Lch2;->m:I
+    iget p1, p0, Lch2;->l:I
 
     .line 4
     .line 5
@@ -51,24 +49,21 @@
     or-int/2addr p1, v0
 
     .line 8
-    iput p1, p0, Lch2;->m:I
+    iput p1, p0, Lch2;->l:I
 
     .line 9
     .line 10
-    iget-object p1, p0, Lch2;->l:Ldh2;
+    iget-object p1, p0, Lch2;->k:Lsr6;
 
     .line 11
     .line 12
-    const/4 v0, 0x0
+    invoke-virtual {p1, p0}, Lsr6;->e0(Lz71;)Ljava/lang/Object;
 
     .line 13
-    invoke-virtual {p1, v0, p0}, Ldh2;->a(Li91;Lz81;)Ljava/lang/Object;
-
     .line 14
     .line 15
-    .line 16
     move-result-object p0
 
-    .line 17
+    .line 16
     return-object p0
 .end method

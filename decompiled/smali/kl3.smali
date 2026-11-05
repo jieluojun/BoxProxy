@@ -1,213 +1,149 @@
-.class public abstract Lkl3;
+.class public final synthetic Lkl3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ld52;
 
 
-# static fields
-.field public static final a:Ln8;
+# instance fields
+.field public final synthetic j:B
 
-.field public static final b:Ln8;
+.field public final synthetic k:Lbm3;
 
-.field public static final c:Ltb7;
+.field public final synthetic l:Lvk3;
 
-.field public static final d:Ltb7;
-
-.field public static final e:Lo8;
-
-.field public static final f:Lo8;
-
-.field public static final g:Lo8;
-
-.field public static final h:Lub7;
-
-.field public static final i:Lub7;
+.field public final synthetic m:Landroid/content/Context;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(Lbm3;Lvk3;Landroid/content/Context;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ln8;
+    iput-byte p4, p0, Lkl3;->j:B
 
     .line 2
     .line 3
-    sget-object v1, Lr6;->x:Lo20;
+    iput-object p1, p0, Lkl3;->k:Lbm3;
 
     .line 4
     .line 5
-    invoke-direct {v0, v1, v1}, Ln8;-><init>(Lo20;Lo20;)V
+    iput-object p2, p0, Lkl3;->l:Lvk3;
 
     .line 6
     .line 7
+    iput-object p3, p0, Lkl3;->m:Landroid/content/Context;
+
     .line 8
-    sput-object v0, Lkl3;->a:Ln8;
-
     .line 9
-    .line 10
-    new-instance v0, Ln8;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 10
     .line 11
     .line 12
-    sget-object v2, Lr6;->z:Lo20;
+    return-void
+.end method
 
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 6
+
+    .line 1
+    iget-byte v0, p0, Lkl3;->j:B
+
+    .line 2
+    .line 3
+    sget-object v1, Lk27;->a:Lk27;
+
+    .line 4
+    .line 5
+    iget-object v2, p0, Lkl3;->m:Landroid/content/Context;
+
+    .line 6
+    .line 7
+    iget-object v3, p0, Lkl3;->l:Lvk3;
+
+    .line 8
+    .line 9
+    iget-object p0, p0, Lkl3;->k:Lbm3;
+
+    .line 10
+    .line 11
+    packed-switch v0, :pswitch_data_0
+
+    .line 12
     .line 13
     .line 14
-    invoke-direct {v0, v1, v2}, Ln8;-><init>(Lo20;Lo20;)V
+    iget-object v0, p0, Lbm3;->a:Ljava/lang/String;
 
     .line 15
     .line 16
+    iget-boolean p0, p0, Lbm3;->b:Z
+
     .line 17
-    new-instance v0, Ln8;
-
     .line 18
-    .line 19
-    invoke-direct {v0, v2, v2}, Ln8;-><init>(Lo20;Lo20;)V
+    xor-int/lit8 p0, p0, 0x1
 
+    .line 19
     .line 20
+    new-instance v4, Lxf2;
+
     .line 21
     .line 22
-    sput-object v0, Lkl3;->b:Ln8;
+    const/16 v5, 0xe
 
     .line 23
     .line 24
-    new-instance v0, Ln8;
+    invoke-direct {v4, v2, v5}, Lxf2;-><init>(Landroid/content/Context;B)V
 
     .line 25
     .line 26
-    invoke-direct {v0, v2, v1}, Ln8;-><init>(Lo20;Lo20;)V
-
     .line 27
+    invoke-virtual {v3, v0, p0, v4}, Lvk3;->j(Ljava/lang/String;ZLo52;)V
+
     .line 28
     .line 29
-    new-instance v0, Ltb7;
-
     .line 30
+    return-object v1
+
     .line 31
-    sget-object v1, Lqe1;->c:Lm20;
+    :pswitch_0
+    iget-object v0, p0, Lbm3;->a:Ljava/lang/String;
 
     .line 32
     .line 33
-    invoke-direct {v0, v1}, Ltb7;-><init>(Lm20;)V
+    iget-boolean p0, p0, Lbm3;->b:Z
 
     .line 34
     .line 35
+    xor-int/lit8 p0, p0, 0x1
+
     .line 36
-    sput-object v0, Lkl3;->c:Ltb7;
-
     .line 37
-    .line 38
-    new-instance v0, Ltb7;
+    new-instance v4, Lxf2;
 
+    .line 38
     .line 39
+    const/4 v5, 0x7
+
     .line 40
-    sget-object v1, Lqe1;->d:Lm20;
+    invoke-direct {v4, v2, v5}, Lxf2;-><init>(Landroid/content/Context;B)V
 
     .line 41
     .line 42
-    invoke-direct {v0, v1}, Ltb7;-><init>(Lm20;)V
-
     .line 43
+    invoke-virtual {v3, v0, p0, v4}, Lvk3;->j(Ljava/lang/String;ZLo52;)V
+
     .line 44
     .line 45
-    sput-object v0, Lkl3;->d:Ltb7;
-
     .line 46
+    return-object v1
+
     .line 47
-    new-instance v0, Lo8;
-
-    .line 48
-    .line 49
-    sget-object v1, Lr6;->u:Lp20;
-
-    .line 50
-    .line 51
-    sget-object v2, Lr6;->w:Lp20;
-
-    .line 52
-    .line 53
-    invoke-direct {v0, v1, v2}, Lo8;-><init>(Lp20;Lp20;)V
-
-    .line 54
-    .line 55
-    .line 56
-    sput-object v0, Lkl3;->e:Lo8;
-
-    .line 57
-    .line 58
-    new-instance v0, Lo8;
-
-    .line 59
-    .line 60
-    invoke-direct {v0, v1, v1}, Lo8;-><init>(Lp20;Lp20;)V
-
-    .line 61
-    .line 62
-    .line 63
-    new-instance v0, Lo8;
-
-    .line 64
-    .line 65
-    invoke-direct {v0, v2, v1}, Lo8;-><init>(Lp20;Lp20;)V
-
-    .line 66
-    .line 67
-    .line 68
-    sput-object v0, Lkl3;->f:Lo8;
-
-    .line 69
-    .line 70
-    new-instance v0, Lo8;
-
-    .line 71
-    .line 72
-    invoke-direct {v0, v2, v2}, Lo8;-><init>(Lp20;Lp20;)V
-
-    .line 73
-    .line 74
-    .line 75
-    new-instance v0, Lo8;
-
-    .line 76
-    .line 77
-    sget-object v3, Lr6;->v:Lp20;
-
-    .line 78
-    .line 79
-    invoke-direct {v0, v3, v1}, Lo8;-><init>(Lp20;Lp20;)V
-
-    .line 80
-    .line 81
-    .line 82
-    sput-object v0, Lkl3;->g:Lo8;
-
-    .line 83
-    .line 84
-    new-instance v0, Lub7;
-
-    .line 85
-    .line 86
-    invoke-direct {v0, v1}, Lub7;-><init>(Lp20;)V
-
-    .line 87
-    .line 88
-    .line 89
-    sput-object v0, Lkl3;->h:Lub7;
-
-    .line 90
-    .line 91
-    new-instance v0, Lub7;
-
-    .line 92
-    .line 93
-    invoke-direct {v0, v2}, Lub7;-><init>(Lp20;)V
-
-    .line 94
-    .line 95
-    .line 96
-    sput-object v0, Lkl3;->i:Lub7;
-
-    .line 97
-    .line 98
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,102 +1,118 @@
-.class public abstract Lfy3;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lfy3;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final a:J
+.field public static final enum j:Lfy3;
 
-.field public static final b:J
+.field public static final enum k:Lfy3;
 
-.field public static final c:F
-
-.field public static final d:F
-
-.field public static final e:F
-
-.field public static final f:F
-
-.field public static final g:F
-
-.field public static final h:F
+.field public static final synthetic l:[Lfy3;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 4
 
     .line 1
-    const/16 v0, 0xc
+    new-instance v0, Lfy3;
 
     .line 2
     .line 3
-    invoke-static {v0}, Lru5;->z(I)J
+    const-string v1, "Download"
+
+    .line 4
+    .line 5
+    const/4 v2, 0x0
+
+    .line 6
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 7
+    .line 8
+    .line 9
+    sput-object v0, Lfy3;->j:Lfy3;
+
+    .line 10
+    .line 11
+    new-instance v1, Lfy3;
+
+    .line 12
+    .line 13
+    const-string v2, "Upload"
+
+    .line 14
+    .line 15
+    const/4 v3, 0x1
+
+    .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    sput-object v1, Lfy3;->k:Lfy3;
+
+    .line 20
+    .line 21
+    filled-new-array {v0, v1}, [Lfy3;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object v0
+
+    .line 25
+    sput-object v0, Lfy3;->l:[Lfy3;
+
+    .line 26
+    .line 27
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lfy3;
+    .locals 1
+
+    .line 1
+    const-class v0, Lfy3;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     .line 4
     .line 5
     .line 6
-    move-result-wide v0
+    move-result-object p0
 
     .line 7
-    sput-wide v0, Lfy3;->a:J
+    check-cast p0, Lfy3;
 
     .line 8
     .line 9
-    const/16 v0, 0x10
+    return-object p0
+.end method
 
-    .line 10
-    .line 11
-    invoke-static {v0}, Lru5;->z(I)J
+.method public static values()[Lfy3;
+    .locals 1
 
-    .line 12
-    .line 13
-    .line 14
-    move-result-wide v0
+    .line 1
+    sget-object v0, Lfy3;->l:[Lfy3;
 
-    .line 15
-    sput-wide v0, Lfy3;->b:J
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    .line 16
-    .line 17
-    const/high16 v0, 0x41400000    # 12.0f
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
 
-    .line 18
-    .line 19
-    sput v0, Lfy3;->c:F
+    .line 7
+    check-cast v0, [Lfy3;
 
-    .line 20
-    .line 21
-    const/high16 v0, 0x41800000    # 16.0f
-
-    .line 22
-    .line 23
-    sput v0, Lfy3;->d:F
-
-    .line 24
-    .line 25
-    const/high16 v1, 0x40800000    # 4.0f
-
-    .line 26
-    .line 27
-    sput v1, Lfy3;->e:F
-
-    .line 28
-    .line 29
-    const/high16 v1, 0x41600000    # 14.0f
-
-    .line 30
-    .line 31
-    sput v1, Lfy3;->f:F
-
-    .line 32
-    .line 33
-    sput v1, Lfy3;->g:F
-
-    .line 34
-    .line 35
-    sput v0, Lfy3;->h:F
-
-    .line 36
-    .line 37
-    return-void
+    .line 8
+    .line 9
+    return-object v0
 .end method

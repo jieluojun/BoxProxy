@@ -1,16 +1,45 @@
 .class public final Lji;
-.super Lr74;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# virtual methods
-.method public final getName()Ljava/lang/String;
-    .locals 0
+# static fields
+.field public static final a:Lji;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    const-string p0, "Any Char"
+    new-instance v0, Lji;
 
     .line 2
     .line 3
-    return-object p0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    sput-object v0, Lji;->a:Lji;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Landroid/view/WindowManager$LayoutParams;)V
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x3
+
+    .line 2
+    iput p0, p1, Landroid/view/WindowManager$LayoutParams;->layoutInDisplayCutoutMode:I
+
+    .line 3
+    .line 4
+    return-void
 .end method

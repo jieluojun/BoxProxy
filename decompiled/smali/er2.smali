@@ -1,183 +1,153 @@
-.class public final synthetic Ler2;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lp62;
+.class public final Ler2;
+.super Lkr2;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:I
-
-.field public final synthetic l:Llp4;
-
-.field public final synthetic m:I
+.field public final b:J
 
 
 # direct methods
-.method public synthetic constructor <init>(ILlp4;I)V
-    .locals 1
+.method public constructor <init>(J)V
+    .locals 0
 
     .line 1
-    const/4 v0, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-byte v0, p0, Ler2;->j:B
-
     .line 3
     .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-wide p1, p0, Ler2;->b:J
 
     .line 5
     .line 6
-    .line 7
-    iput p1, p0, Ler2;->k:I
-
-    .line 8
-    .line 9
-    iput-object p2, p0, Ler2;->l:Llp4;
-
-    .line 10
-    .line 11
-    iput p3, p0, Ler2;->m:I
-
-    .line 12
-    .line 13
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Llp4;IIB)V
-    .locals 0
-
-    .line 14
-    iput-byte p4, p0, Ler2;->j:B
-
-    iput-object p1, p0, Ler2;->l:Llp4;
-
-    iput p2, p0, Ler2;->k:I
-
-    iput p3, p0, Ler2;->m:I
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+.method public final a()J
+    .locals 2
 
     .line 1
-    iget-byte v0, p0, Ler2;->j:B
+    iget-wide v0, p0, Ler2;->b:J
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    return-wide v0
+.end method
 
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 5
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
     .line 4
+    return v0
+
     .line 5
-    iget v2, p0, Ler2;->m:I
+    :cond_0
+    instance-of v1, p1, Ler2;
 
     .line 6
     .line 7
-    iget v3, p0, Ler2;->k:I
+    const/4 v2, 0x0
 
     .line 8
-    .line 9
-    iget-object p0, p0, Ler2;->l:Llp4;
+    if-nez v1, :cond_1
 
+    .line 9
     .line 10
+    return v2
+
     .line 11
-    check-cast p1, Lkp4;
+    :cond_1
+    check-cast p1, Ler2;
 
     .line 12
     .line 13
-    packed-switch v0, :pswitch_data_0
+    iget-wide v3, p0, Ler2;->b:J
 
     .line 14
     .line 15
-    .line 16
-    invoke-static {p1, p0, v3, v2}, Lkp4;->h(Lkp4;Llp4;II)V
+    iget-wide p0, p1, Ler2;->b:J
 
+    .line 16
     .line 17
+    invoke-static {v3, v4, p0, p1}, Ld43;->u(JJ)Z
+
     .line 18
     .line 19
-    return-object v1
-
     .line 20
-    :pswitch_0
-    iget v0, p0, Llp4;->j:I
+    move-result p0
 
     .line 21
-    .line 22
-    sub-int/2addr v3, v0
+    if-nez p0, :cond_2
 
+    .line 22
     .line 23
-    int-to-float v0, v3
+    return v2
 
     .line 24
-    const/high16 v3, 0x40000000    # 2.0f
+    :cond_2
+    return v0
+.end method
 
-    .line 25
-    .line 26
-    div-float/2addr v0, v3
+.method public final hashCode()I
+    .locals 2
 
-    .line 27
-    invoke-static {v0}, Lkj3;->P(F)I
+    .line 1
+    iget-wide v0, p0, Ler2;->b:J
 
-    .line 28
-    .line 29
-    .line 30
-    move-result v0
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
-    .line 31
-    iget v4, p0, Llp4;->k:I
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
 
-    .line 32
-    .line 33
-    sub-int/2addr v2, v4
+    .line 7
+    return p0
+.end method
 
-    .line 34
-    int-to-float v2, v2
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    .line 35
-    div-float/2addr v2, v3
+    .line 1
+    iget-wide v0, p0, Ler2;->b:J
 
-    .line 36
-    invoke-static {v2}, Lkj3;->P(F)I
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Ld43;->c0(J)Ljava/lang/String;
 
-    .line 37
-    .line 38
-    .line 39
-    move-result v2
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
 
-    .line 40
-    invoke-static {p1, p0, v0, v2}, Lkp4;->h(Lkp4;Llp4;II)V
+    .line 7
+    const-string v0, "LongPress(point="
 
-    .line 41
-    .line 42
-    .line 43
-    return-object v1
+    .line 8
+    .line 9
+    const-string v1, ")"
 
-    .line 44
-    :pswitch_1
-    invoke-static {p1, p0, v3, v2}, Lkp4;->h(Lkp4;Llp4;II)V
+    .line 10
+    .line 11
+    invoke-static {v0, p0, v1}, Lpb1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 45
-    .line 46
-    .line 47
-    return-object v1
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
 
-    .line 48
-    nop
-
-    .line 49
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 15
+    return-object p0
 .end method

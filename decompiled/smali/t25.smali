@@ -1,119 +1,76 @@
-.class public final synthetic Lt25;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Le62;
+.class public final Lt25;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public j:J
 
-.field public final synthetic k:Lp62;
+.field public k:J
+
+.field public synthetic l:Ljava/lang/Object;
+
+.field public final synthetic m:Ly25;
+
+.field public n:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lp62;B)V
+.method public constructor <init>(Ly25;Ly71;)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lt25;->j:B
+    iput-object p1, p0, Lt25;->m:Ly25;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lt25;->k:Lp62;
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
     .line 4
     .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 6
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 2
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Lt25;->j:B
+    iput-object p1, p0, Lt25;->l:Ljava/lang/Object;
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    iget p1, p0, Lt25;->n:I
 
     .line 4
     .line 5
-    iget-object p0, p0, Lt25;->k:Lp62;
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_0
+    or-int/2addr p1, v0
 
     .line 8
+    iput p1, p0, Lt25;->n:I
+
     .line 9
     .line 10
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    iget-object p1, p0, Lt25;->m:Ly25;
 
     .line 11
     .line 12
-    invoke-interface {p0, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v0, 0x0
 
     .line 13
+    invoke-virtual {p1, v0, p0}, Ly25;->h(ZLy71;)Ljava/lang/Object;
+
     .line 14
     .line 15
-    return-object v1
-
     .line 16
-    :pswitch_0
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    move-result-object p0
 
     .line 17
-    .line 18
-    invoke-interface {p0, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 19
-    .line 20
-    .line 21
-    return-object v1
-
-    .line 22
-    :pswitch_1
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    .line 23
-    .line 24
-    invoke-interface {p0, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 25
-    .line 26
-    .line 27
-    return-object v1
-
-    .line 28
-    :pswitch_2
-    sget-object v0, Ley4;->l:Ley4;
-
-    .line 29
-    .line 30
-    invoke-interface {p0, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 31
-    .line 32
-    .line 33
-    return-object v1
-
-    .line 34
-    nop
-
-    .line 35
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

@@ -1,36 +1,25 @@
-.class public final Lon;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lon;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ljz1;
 
 
 # instance fields
-.field public j:Ljava/io/OutputStream;
-
-.field public k:Ljava/util/Set;
-
-.field public l:Landroid/content/Context;
-
-.field public m:Ljava/util/List;
-
-.field public n:Ljava/lang/Object;
-
-.field public synthetic o:Ljava/lang/Object;
-
-.field public final synthetic p:Lzn;
-
-.field public q:I
+.field public final synthetic a:B
 
 
 # direct methods
-.method public constructor <init>(Lzn;Lz81;)V
+.method public synthetic constructor <init>(B)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lon;->p:Lzn;
+    iput-byte p1, p0, Lon;->a:B
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
@@ -40,64 +29,37 @@
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke()F
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lon;->o:Ljava/lang/Object;
+    iget-byte p0, p0, Lon;->a:B
 
     .line 2
     .line 3
-    iget p1, p0, Lon;->q:I
+    packed-switch p0, :pswitch_data_0
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
+    const/4 p0, 0x0
+
     .line 7
-    or-int/2addr p1, v0
+    return p0
 
     .line 8
-    iput p1, p0, Lon;->q:I
+    :pswitch_0
+    const/4 p0, 0x0
 
     .line 9
+    return p0
+
     .line 10
-    iget-object p1, p0, Lon;->p:Lzn;
+    nop
 
     .line 11
-    .line 12
-    const/4 v0, 0x0
-
-    .line 13
-    invoke-virtual {p1, v0, v0, v0, p0}, Lzn;->h(Landroid/content/Context;Ljava/io/OutputStream;Ljava/util/Set;Lz81;)Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p0
-
-    .line 17
-    sget-object p1, Lbc1;->j:Lbc1;
-
-    .line 18
-    .line 19
-    if-ne p0, p1, :cond_0
-
-    .line 20
-    .line 21
-    return-object p0
-
-    .line 22
-    :cond_0
-    new-instance p1, Lid5;
-
-    .line 23
-    .line 24
-    invoke-direct {p1, p0}, Lid5;-><init>(Ljava/lang/Object;)V
-
-    .line 25
-    .line 26
-    .line 27
-    return-object p1
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

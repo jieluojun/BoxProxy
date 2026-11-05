@@ -1,1212 +1,725 @@
-.class public final Lun;
-.super Llh6;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lun;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lt62;
+.implements Lo52;
 
 
 # instance fields
 .field public final synthetic j:B
 
-.field public k:Z
-
-.field public synthetic l:Ljava/lang/Object;
+.field public final synthetic k:Lu96;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILy81;B)V
+.method public synthetic constructor <init>(Lu96;B)V
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Lun;->j:B
+    iput-byte p2, p0, Lun;->j:B
 
     .line 2
     .line 3
-    invoke-direct {p0, p1, p2}, Llh6;-><init>(ILy81;)V
+    iput-object p1, p0, Lun;->k:Lu96;
 
     .line 4
     .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 6
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final create(Ljava/lang/Object;Ly81;)Ly81;
-    .locals 2
-
-    .line 1
-    iget-byte p0, p0, Lun;->j:B
-
-    .line 2
-    .line 3
-    packed-switch p0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    new-instance p0, Lun;
-
-    .line 7
-    .line 8
-    const/4 v0, 0x2
-
-    .line 9
-    const/4 v1, 0x6
-
-    .line 10
-    invoke-direct {p0, v0, p2, v1}, Lun;-><init>(ILy81;B)V
-
-    .line 11
-    .line 12
-    .line 13
-    iput-object p1, p0, Lun;->l:Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    return-object p0
-
-    .line 16
-    :pswitch_0
-    new-instance p0, Lun;
-
-    .line 17
-    .line 18
-    const/4 v0, 0x2
-
-    .line 19
-    const/4 v1, 0x5
-
-    .line 20
-    invoke-direct {p0, v0, p2, v1}, Lun;-><init>(ILy81;B)V
-
-    .line 21
-    .line 22
-    .line 23
-    iput-object p1, p0, Lun;->l:Ljava/lang/Object;
-
-    .line 24
-    .line 25
-    return-object p0
-
-    .line 26
-    :pswitch_1
-    new-instance p0, Lun;
-
-    .line 27
-    .line 28
-    const/4 v0, 0x2
-
-    .line 29
-    const/4 v1, 0x4
-
-    .line 30
-    invoke-direct {p0, v0, p2, v1}, Lun;-><init>(ILy81;B)V
-
-    .line 31
-    .line 32
-    .line 33
-    iput-object p1, p0, Lun;->l:Ljava/lang/Object;
-
-    .line 34
-    .line 35
-    return-object p0
-
-    .line 36
-    :pswitch_2
-    new-instance p0, Lun;
-
-    .line 37
-    .line 38
-    const/4 v0, 0x2
-
-    .line 39
-    const/4 v1, 0x3
-
-    .line 40
-    invoke-direct {p0, v0, p2, v1}, Lun;-><init>(ILy81;B)V
-
-    .line 41
-    .line 42
-    .line 43
-    iput-object p1, p0, Lun;->l:Ljava/lang/Object;
-
-    .line 44
-    .line 45
-    return-object p0
-
-    .line 46
-    :pswitch_3
-    new-instance p0, Lun;
-
-    .line 47
-    .line 48
-    const/4 v0, 0x2
-
-    .line 49
-    const/4 v1, 0x2
-
-    .line 50
-    invoke-direct {p0, v0, p2, v1}, Lun;-><init>(ILy81;B)V
-
-    .line 51
-    .line 52
-    .line 53
-    iput-object p1, p0, Lun;->l:Ljava/lang/Object;
-
-    .line 54
-    .line 55
-    return-object p0
-
-    .line 56
-    :pswitch_4
-    new-instance p0, Lun;
-
-    .line 57
-    .line 58
-    const/4 v0, 0x2
-
-    .line 59
-    const/4 v1, 0x1
-
-    .line 60
-    invoke-direct {p0, v0, p2, v1}, Lun;-><init>(ILy81;B)V
-
-    .line 61
-    .line 62
-    .line 63
-    iput-object p1, p0, Lun;->l:Ljava/lang/Object;
-
-    .line 64
-    .line 65
-    return-object p0
-
-    .line 66
-    :pswitch_5
-    new-instance p0, Lun;
-
-    .line 67
-    .line 68
-    const/4 v0, 0x2
-
-    .line 69
-    const/4 v1, 0x0
-
-    .line 70
-    invoke-direct {p0, v0, p2, v1}, Lun;-><init>(ILy81;B)V
-
-    .line 71
-    .line 72
-    .line 73
-    iput-object p1, p0, Lun;->l:Ljava/lang/Object;
-
-    .line 74
-    .line 75
-    return-object p0
-
-    .line 76
-    nop
-
-    .line 77
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 12
 
     .line 1
     iget-byte v0, p0, Lun;->j:B
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_0
+    iget-object p0, p0, Lun;->k:Lu96;
 
     .line 6
     .line 7
-    .line 8
-    check-cast p1, Lca7;
+    packed-switch v0, :pswitch_data_0
 
+    .line 8
     .line 9
     .line 10
-    check-cast p2, Ly81;
+    move-object v2, p1
 
     .line 11
-    .line 12
-    invoke-virtual {p0, p1, p2}, Lun;->create(Ljava/lang/Object;Ly81;)Ly81;
+    check-cast v2, Lin1;
 
+    .line 12
     .line 13
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 14
     .line 15
-    move-result-object p0
-
     .line 16
-    check-cast p0, Lun;
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
 
     .line 17
     .line 18
-    invoke-virtual {p0, v1}, Lun;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 19
-    .line 20
-    .line 21
     move-result-object p0
 
+    .line 20
+    check-cast p0, Lhu0;
+
+    .line 21
     .line 22
-    return-object p0
+    iget-wide v3, p0, Lhu0;->a:J
 
     .line 23
-    :pswitch_0
-    check-cast p1, Lca7;
-
     .line 24
+    const/4 v8, 0x0
+
     .line 25
-    check-cast p2, Ly81;
+    const/16 v9, 0x7e
 
     .line 26
     .line 27
-    invoke-virtual {p0, p1, p2}, Lun;->create(Ljava/lang/Object;Ly81;)Ly81;
+    const/4 v5, 0x0
 
     .line 28
+    const-wide/16 v6, 0x0
+
     .line 29
     .line 30
-    move-result-object p0
+    invoke-static/range {v2 .. v9}, Lin1;->Y(Lin1;JFJLjn1;I)V
 
     .line 31
-    check-cast p0, Lun;
-
     .line 32
     .line 33
-    invoke-virtual {p0, v1}, Lun;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    return-object v1
 
     .line 34
+    :pswitch_0
+    check-cast p1, Lb82;
+
     .line 35
     .line 36
-    move-result-object p0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 37
-    return-object p0
-
     .line 38
-    :pswitch_1
-    check-cast p1, Ljava/lang/String;
-
     .line 39
-    .line 40
-    check-cast p2, Ly81;
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
 
+    .line 40
     .line 41
     .line 42
-    invoke-virtual {p0, p1, p2}, Lun;->create(Ljava/lang/Object;Ly81;)Ly81;
+    move-result-object v0
 
     .line 43
+    check-cast v0, Ljava/lang/Number;
+
     .line 44
     .line 45
-    move-result-object p0
+    invoke-virtual {v0}, Ljava/lang/Number;->floatValue()F
 
     .line 46
-    check-cast p0, Lun;
-
     .line 47
     .line 48
-    invoke-virtual {p0, v1}, Lun;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result v0
 
     .line 49
+    invoke-interface {p1, v0}, Lb82;->a0(F)V
+
     .line 50
     .line 51
-    move-result-object p0
-
     .line 52
-    return-object p0
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
 
     .line 53
+    .line 54
+    .line 55
+    move-result-object p0
+
+    .line 56
+    check-cast p0, Ljava/lang/Number;
+
+    .line 57
+    .line 58
+    invoke-virtual {p0}, Ljava/lang/Number;->floatValue()F
+
+    .line 59
+    .line 60
+    .line 61
+    move-result p0
+
+    .line 62
+    invoke-interface {p1, p0}, Lb82;->z0(F)V
+
+    .line 63
+    .line 64
+    .line 65
+    return-object v1
+
+    .line 66
+    :pswitch_1
+    check-cast p1, Lyg1;
+
+    .line 67
+    .line 68
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 69
+    .line 70
+    .line 71
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
+
+    .line 72
+    .line 73
+    .line 74
+    move-result-object p0
+
+    .line 75
+    check-cast p0, Lxk1;
+
+    .line 76
+    .line 77
+    iget p0, p0, Lxk1;->j:F
+
+    .line 78
+    .line 79
+    invoke-interface {p1, p0}, Lyg1;->t0(F)I
+
+    .line 80
+    .line 81
+    .line 82
+    move-result p0
+
+    .line 83
+    int-to-long p0, p0
+
+    .line 84
+    const/16 v0, 0x20
+
+    .line 85
+    .line 86
+    shl-long/2addr p0, v0
+
+    .line 87
+    new-instance v0, Lsq2;
+
+    .line 88
+    .line 89
+    invoke-direct {v0, p0, p1}, Lsq2;-><init>(J)V
+
+    .line 90
+    .line 91
+    .line 92
+    return-object v0
+
+    .line 93
     :pswitch_2
-    check-cast p1, Ly35;
-
-    .line 54
-    .line 55
-    check-cast p2, Ly81;
-
-    .line 56
-    .line 57
-    invoke-virtual {p0, p1, p2}, Lun;->create(Ljava/lang/Object;Ly81;)Ly81;
-
-    .line 58
-    .line 59
-    .line 60
-    move-result-object p0
-
-    .line 61
-    check-cast p0, Lun;
-
-    .line 62
-    .line 63
-    invoke-virtual {p0, v1}, Lun;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 64
-    .line 65
-    .line 66
-    move-result-object p0
-
-    .line 67
-    return-object p0
-
-    .line 68
-    :pswitch_3
-    check-cast p1, Lac1;
-
-    .line 69
-    .line 70
-    check-cast p2, Ly81;
-
-    .line 71
-    .line 72
-    invoke-virtual {p0, p1, p2}, Lun;->create(Ljava/lang/Object;Ly81;)Ly81;
-
-    .line 73
-    .line 74
-    .line 75
-    move-result-object p0
-
-    .line 76
-    check-cast p0, Lun;
-
-    .line 77
-    .line 78
-    invoke-virtual {p0, v1}, Lun;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 79
-    .line 80
-    .line 81
-    move-result-object p0
-
-    .line 82
-    return-object p0
-
-    .line 83
-    :pswitch_4
-    check-cast p1, Lac1;
-
-    .line 84
-    .line 85
-    check-cast p2, Ly81;
-
-    .line 86
-    .line 87
-    invoke-virtual {p0, p1, p2}, Lun;->create(Ljava/lang/Object;Ly81;)Ly81;
-
-    .line 88
-    .line 89
-    .line 90
-    move-result-object p0
-
-    .line 91
-    check-cast p0, Lun;
-
-    .line 92
-    .line 93
-    invoke-virtual {p0, v1}, Lun;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object v2, p1
 
     .line 94
+    check-cast v2, Lin1;
+
     .line 95
     .line 96
-    move-result-object p0
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 97
-    return-object p0
-
     .line 98
-    :pswitch_5
-    check-cast p1, Lgn;
-
     .line 99
-    .line 100
-    check-cast p2, Ly81;
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
 
-    .line 101
-    .line 102
-    invoke-virtual {p0, p1, p2}, Lun;->create(Ljava/lang/Object;Ly81;)Ly81;
-
-    .line 103
-    .line 104
-    .line 105
-    move-result-object p0
-
-    .line 106
-    check-cast p0, Lun;
-
-    .line 107
-    .line 108
-    invoke-virtual {p0, v1}, Lun;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 109
-    .line 110
-    .line 111
-    move-result-object p0
-
-    .line 112
-    return-object p0
-
-    .line 113
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
-
-    .line 1
-    iget-byte v0, p0, Lun;->j:B
-
-    .line 2
-    .line 3
-    const/16 v1, 0x16
-
-    .line 4
-    .line 5
-    sget-object v2, La47;->a:La47;
-
-    .line 6
-    .line 7
-    const-string v3, "call to \'resume\' before \'invoke\' with coroutine"
-
-    .line 8
-    .line 9
-    sget-object v4, Lbc1;->j:Lbc1;
-
-    .line 10
-    .line 11
-    const/4 v5, 0x1
-
-    .line 12
-    const/4 v6, 0x0
-
-    .line 13
-    packed-switch v0, :pswitch_data_0
-
-    .line 14
-    .line 15
-    .line 16
-    iget-object v0, p0, Lun;->l:Ljava/lang/Object;
-
-    .line 17
-    .line 18
-    check-cast v0, Lca7;
-
-    .line 19
-    .line 20
-    iget-boolean v2, p0, Lun;->k:Z
-
-    .line 21
-    .line 22
-    if-eqz v2, :cond_1
-
-    .line 23
-    .line 24
-    if-ne v2, v5, :cond_0
-
-    .line 25
-    .line 26
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 27
-    .line 28
-    .line 29
-    goto :goto_0
-
-    .line 30
-    :cond_0
-    invoke-static {v3}, Ljw1;->e(Ljava/lang/String;)V
-
-    .line 31
-    .line 32
-    .line 33
-    move-object v4, v6
-
-    .line 34
-    goto :goto_1
-
-    .line 35
-    :cond_1
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 36
-    .line 37
-    .line 38
-    iput-object v6, p0, Lun;->l:Ljava/lang/Object;
-
-    .line 39
-    .line 40
-    iput-boolean v5, p0, Lun;->k:Z
-
-    .line 41
-    .line 42
-    sget-object p1, Llk1;->a:Log1;
-
-    .line 43
-    .line 44
-    sget-object p1, Lfg1;->l:Lfg1;
-
-    .line 45
-    .line 46
-    new-instance v2, Le9;
-
-    .line 47
-    .line 48
-    invoke-direct {v2, v0, v6, v1}, Le9;-><init>(Ljava/lang/Object;Ly81;B)V
-
-    .line 49
-    .line 50
-    .line 51
-    invoke-static {p1, v2, p0}, Lbn0;->S(Lrb1;Lt62;Ly81;)Ljava/lang/Object;
-
-    .line 52
-    .line 53
-    .line 54
-    move-result-object p1
-
-    .line 55
-    if-ne p1, v4, :cond_2
-
-    .line 56
-    .line 57
-    goto :goto_1
-
-    .line 58
-    :cond_2
-    :goto_0
-    check-cast p1, Lda7;
-
-    .line 59
-    .line 60
-    iget-object v4, p1, Lda7;->a:Ljava/lang/String;
-
-    .line 61
-    .line 62
-    :goto_1
-    return-object v4
-
-    .line 63
-    :pswitch_0
-    iget-object v0, p0, Lun;->l:Ljava/lang/Object;
-
-    .line 64
-    .line 65
-    check-cast v0, Lca7;
-
-    .line 66
-    .line 67
-    iget-boolean v2, p0, Lun;->k:Z
-
-    .line 68
-    .line 69
-    if-eqz v2, :cond_4
-
-    .line 70
-    .line 71
-    if-ne v2, v5, :cond_3
-
-    .line 72
-    .line 73
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 74
-    .line 75
-    .line 76
-    goto :goto_2
-
-    .line 77
-    :cond_3
-    invoke-static {v3}, Ljw1;->e(Ljava/lang/String;)V
-
-    .line 78
-    .line 79
-    .line 80
-    move-object v4, v6
-
-    .line 81
-    goto :goto_3
-
-    .line 82
-    :cond_4
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 83
-    .line 84
-    .line 85
-    iput-object v6, p0, Lun;->l:Ljava/lang/Object;
-
-    .line 86
-    .line 87
-    iput-boolean v5, p0, Lun;->k:Z
-
-    .line 88
-    .line 89
-    sget-object p1, Llk1;->a:Log1;
-
-    .line 90
-    .line 91
-    sget-object p1, Lfg1;->l:Lfg1;
-
-    .line 92
-    .line 93
-    new-instance v2, Le9;
-
-    .line 94
-    .line 95
-    invoke-direct {v2, v0, v6, v1}, Le9;-><init>(Ljava/lang/Object;Ly81;B)V
-
-    .line 96
-    .line 97
-    .line 98
-    invoke-static {p1, v2, p0}, Lbn0;->S(Lrb1;Lt62;Ly81;)Ljava/lang/Object;
-
-    .line 99
     .line 100
     .line 101
-    move-result-object p1
-
     .line 102
-    if-ne p1, v4, :cond_5
+    move-result-object p0
 
     .line 103
-    .line 104
-    goto :goto_3
+    check-cast p0, Lhu0;
 
+    .line 104
     .line 105
-    :cond_5
-    :goto_2
-    check-cast p1, Lda7;
+    iget-wide v3, p0, Lhu0;->a:J
 
     .line 106
     .line 107
-    iget-object v4, p1, Lda7;->a:Ljava/lang/String;
+    const/4 v10, 0x0
 
     .line 108
-    .line 109
-    :goto_3
-    return-object v4
+    const/16 v11, 0x7e
 
+    .line 109
     .line 110
-    :pswitch_1
-    iget-object v0, p0, Lun;->l:Ljava/lang/Object;
+    const-wide/16 v5, 0x0
 
     .line 111
     .line 112
-    check-cast v0, Ljava/lang/String;
+    const-wide/16 v7, 0x0
 
     .line 113
     .line 114
-    iget-boolean v1, p0, Lun;->k:Z
+    const/4 v9, 0x0
 
     .line 115
-    .line 116
-    if-eqz v1, :cond_7
+    invoke-static/range {v2 .. v11}, Lin1;->p0(Lin1;JJJFII)V
 
+    .line 116
     .line 117
     .line 118
-    if-ne v1, v5, :cond_6
+    return-object v1
 
     .line 119
-    .line 120
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    :pswitch_3
+    check-cast p1, Lb82;
 
+    .line 120
     .line 121
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 122
     .line 123
-    goto :goto_4
-
     .line 124
-    :cond_6
-    invoke-static {v3}, Ljw1;->e(Ljava/lang/String;)V
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
 
     .line 125
     .line 126
     .line 127
-    move-object p1, v6
+    move-result-object p0
 
     .line 128
-    goto :goto_4
+    check-cast p0, Ljava/lang/Number;
 
     .line 129
-    :cond_7
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
     .line 130
+    invoke-virtual {p0}, Ljava/lang/Number;->floatValue()F
+
     .line 131
     .line 132
-    sget-object p1, Ljf5;->a:Ljf5;
-
     .line 133
+    move-result p0
+
     .line 134
-    iput-object v6, p0, Lun;->l:Ljava/lang/Object;
+    invoke-interface {p1, p0}, Lb82;->t(F)V
 
     .line 135
     .line 136
-    iput-boolean v5, p0, Lun;->k:Z
-
     .line 137
+    return-object v1
+
     .line 138
-    const-wide/32 v1, 0xea60
+    :pswitch_4
+    check-cast p1, Lb82;
 
     .line 139
     .line 140
-    .line 141
-    invoke-static {v1, v2, p0, v0}, Ljf5;->f(JLy81;Ljava/lang/String;)Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 141
     .line 142
     .line 143
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
+
     .line 144
-    move-result-object p1
-
     .line 145
-    if-ne p1, v4, :cond_8
-
     .line 146
+    move-result-object v0
+
     .line 147
-    move-object p1, v4
+    check-cast v0, Ljava/lang/Number;
 
     .line 148
-    :cond_8
-    :goto_4
-    return-object p1
-
     .line 149
-    :pswitch_2
-    iget-object v0, p0, Lun;->l:Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Number;->floatValue()F
 
     .line 150
     .line 151
-    check-cast v0, Ly35;
-
     .line 152
+    move-result v0
+
     .line 153
-    iget-boolean v1, p0, Lun;->k:Z
+    invoke-interface {p1, v0}, Lb82;->a0(F)V
 
     .line 154
     .line 155
-    if-eqz v1, :cond_a
-
     .line 156
-    .line 157
-    if-ne v1, v5, :cond_9
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
 
+    .line 157
     .line 158
     .line 159
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    move-result-object p0
 
     .line 160
+    check-cast p0, Ljava/lang/Number;
+
     .line 161
     .line 162
-    goto :goto_5
+    invoke-virtual {p0}, Ljava/lang/Number;->floatValue()F
 
     .line 163
-    :cond_9
-    invoke-static {v3}, Ljw1;->e(Ljava/lang/String;)V
-
     .line 164
     .line 165
+    move-result p0
+
     .line 166
-    move-object p1, v6
+    invoke-interface {p1, p0}, Lb82;->z0(F)V
 
     .line 167
-    goto :goto_5
-
     .line 168
-    :cond_a
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
     .line 169
+    return-object v1
+
     .line 170
+    :pswitch_5
+    check-cast p1, Lb82;
+
     .line 171
-    sget-object p1, Ll45;->a:Ll45;
-
     .line 172
-    .line 173
-    iput-object v6, p0, Lun;->l:Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 173
     .line 174
     .line 175
-    iput-boolean v5, p0, Lun;->k:Z
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
 
     .line 176
     .line 177
-    invoke-virtual {p1, v0, p0}, Ll45;->l(Ly35;Lz81;)Ljava/lang/Object;
-
     .line 178
-    .line 179
-    .line 180
-    move-result-object p1
+    move-result-object v0
 
+    .line 179
+    check-cast v0, Ljava/lang/Number;
+
+    .line 180
     .line 181
-    if-ne p1, v4, :cond_b
+    invoke-virtual {v0}, Ljava/lang/Number;->floatValue()F
 
     .line 182
     .line 183
-    move-object p1, v4
-
     .line 184
-    :cond_b
-    :goto_5
-    return-object p1
+    move-result v0
 
     .line 185
-    :pswitch_3
-    iget-object v0, p0, Lun;->l:Ljava/lang/Object;
+    const v2, 0x3fe66666    # 1.8f
 
     .line 186
     .line 187
-    check-cast v0, Lac1;
-
     .line 188
+    mul-float/2addr v0, v2
+
     .line 189
-    iget-boolean v1, p0, Lun;->k:Z
+    const/high16 v2, 0x3f800000    # 1.0f
 
     .line 190
     .line 191
-    if-eqz v1, :cond_d
+    add-float/2addr v0, v2
 
     .line 192
-    .line 193
-    if-ne v1, v5, :cond_c
+    invoke-interface {p1, v0}, Lb82;->a0(F)V
 
+    .line 193
     .line 194
     .line 195
-    goto :goto_6
+    invoke-interface {p1, v0}, Lb82;->z0(F)V
 
     .line 196
-    :cond_c
-    invoke-static {v3}, Ljw1;->e(Ljava/lang/String;)V
-
     .line 197
     .line 198
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
+
     .line 199
-    move-object v2, v6
-
     .line 200
-    goto :goto_7
-
     .line 201
-    :cond_d
-    :goto_6
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    move-result-object p0
 
     .line 202
+    check-cast p0, Ljava/lang/Number;
+
     .line 203
     .line 204
-    :cond_e
-    invoke-interface {v0}, Lac1;->e()Lrb1;
+    invoke-virtual {p0}, Ljava/lang/Number;->floatValue()F
 
     .line 205
     .line 206
     .line 207
-    move-result-object p1
+    move-result p0
 
     .line 208
-    invoke-static {p1}, Lyt;->Q(Lrb1;)Z
+    sub-float/2addr v2, p0
 
     .line 209
+    const p0, 0x3ee66666    # 0.45f
+
     .line 210
     .line 211
-    move-result p1
-
     .line 212
-    if-eqz p1, :cond_f
+    mul-float/2addr v2, p0
 
     .line 213
-    .line 214
-    new-instance p1, Lij4;
+    invoke-interface {p1, v2}, Lb82;->t(F)V
 
+    .line 214
     .line 215
     .line 216
-    const/4 v1, 0x5
+    return-object v1
 
     .line 217
-    invoke-direct {p1, v1}, Lij4;-><init>(B)V
+    :pswitch_6
+    check-cast p1, Lb82;
 
     .line 218
     .line 219
-    .line 220
-    iput-object v0, p0, Lun;->l:Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 220
     .line 221
     .line 222
-    iput-boolean v5, p0, Lun;->k:Z
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
 
     .line 223
     .line 224
-    invoke-interface {p0}, Ly81;->getContext()Lrb1;
-
     .line 225
-    .line 226
-    .line 227
-    move-result-object v1
+    move-result-object p0
 
+    .line 226
+    check-cast p0, Ljava/lang/Number;
+
+    .line 227
     .line 228
-    invoke-static {v1}, Ljj3;->z(Lrb1;)Llf;
+    invoke-virtual {p0}, Ljava/lang/Number;->floatValue()F
 
     .line 229
     .line 230
     .line 231
-    move-result-object v1
+    move-result p0
 
     .line 232
-    invoke-virtual {v1, p1, p0}, Llf;->a(Lp62;Ly81;)Ljava/lang/Object;
+    invoke-interface {p1, p0}, Lb82;->t(F)V
 
     .line 233
     .line 234
     .line 235
-    move-result-object p1
+    return-object v1
 
     .line 236
-    if-ne p1, v4, :cond_e
+    :pswitch_7
+    check-cast p1, Lb82;
 
     .line 237
     .line 238
-    move-object v2, v4
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
 
     .line 239
-    :cond_f
-    :goto_7
-    return-object v2
-
     .line 240
-    :pswitch_4
-    iget-boolean v0, p0, Lun;->k:Z
-
     .line 241
+    move-result-object p0
+
     .line 242
-    if-eqz v0, :cond_11
+    check-cast p0, Ljava/lang/Number;
 
     .line 243
     .line 244
-    if-ne v0, v5, :cond_10
+    invoke-virtual {p0}, Ljava/lang/Number;->floatValue()F
 
     .line 245
     .line 246
-    iget-object v0, p0, Lun;->l:Ljava/lang/Object;
-
     .line 247
+    move-result p0
+
     .line 248
-    check-cast v0, Lac1;
+    invoke-interface {p1, p0}, Lb82;->t(F)V
 
     .line 249
     .line 250
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
     .line 251
-    .line 252
-    .line 253
-    goto :goto_8
+    return-object v1
 
+    .line 252
+    :pswitch_8
+    check-cast p1, Lb82;
+
+    .line 253
     .line 254
-    :cond_10
-    invoke-static {v3}, Ljw1;->e(Ljava/lang/String;)V
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 255
     .line 256
     .line 257
-    move-object v2, v6
+    invoke-static {p0}, Ld02;->c(Lu96;)F
 
     .line 258
-    goto :goto_9
-
     .line 259
-    :cond_11
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
     .line 260
-    .line 261
-    .line 262
-    iget-object p1, p0, Lun;->l:Ljava/lang/Object;
+    move-result p0
 
+    .line 261
+    invoke-interface {p1, p0}, Lb82;->w0(F)V
+
+    .line 262
     .line 263
     .line 264
-    check-cast p1, Lac1;
+    return-object v1
 
     .line 265
-    .line 266
-    move-object v0, p1
+    :pswitch_9
+    check-cast p1, Lb82;
 
+    .line 266
     .line 267
-    :cond_12
-    :goto_8
-    invoke-interface {v0}, Lac1;->e()Lrb1;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 268
     .line 269
     .line 270
-    move-result-object p1
+    invoke-static {p0}, Ld02;->c(Lu96;)F
 
     .line 271
-    invoke-static {p1}, Lyt;->Q(Lrb1;)Z
-
     .line 272
     .line 273
+    move-result p0
+
     .line 274
-    move-result p1
+    invoke-interface {p1, p0}, Lb82;->w0(F)V
 
     .line 275
-    if-eqz p1, :cond_13
-
     .line 276
     .line 277
-    new-instance p1, Lo44;
+    return-object v1
 
     .line 278
+    :pswitch_a
+    check-cast p1, Lb82;
+
     .line 279
-    const/16 v1, 0x14
-
     .line 280
-    .line 281
-    invoke-direct {p1, v1}, Lo44;-><init>(B)V
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
 
+    .line 281
     .line 282
     .line 283
+    move-result-object p0
+
     .line 284
-    iput-object v0, p0, Lun;->l:Ljava/lang/Object;
+    check-cast p0, Ljava/lang/Number;
 
     .line 285
     .line 286
-    iput-boolean v5, p0, Lun;->k:Z
+    invoke-virtual {p0}, Ljava/lang/Number;->floatValue()F
 
     .line 287
     .line 288
-    invoke-interface {p0}, Ly81;->getContext()Lrb1;
-
     .line 289
+    move-result p0
+
     .line 290
+    invoke-interface {p1, p0}, Lb82;->t(F)V
+
     .line 291
-    move-result-object v1
-
     .line 292
-    invoke-static {v1}, Ljj3;->z(Lrb1;)Llf;
-
     .line 293
+    return-object v1
+
     .line 294
+    :pswitch_b
+    move-object v2, p1
+
     .line 295
-    move-result-object v1
+    check-cast v2, Lin1;
 
     .line 296
-    invoke-virtual {v1, p1, p0}, Llf;->a(Lp62;Ly81;)Ljava/lang/Object;
-
     .line 297
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
+
     .line 298
     .line 299
-    move-result-object p1
-
     .line 300
-    if-ne p1, v4, :cond_12
+    move-result-object p0
 
     .line 301
-    .line 302
-    move-object v2, v4
+    check-cast p0, Lhu0;
 
+    .line 302
     .line 303
-    :cond_13
-    :goto_9
-    return-object v2
+    iget-wide v3, p0, Lhu0;->a:J
 
     .line 304
-    :pswitch_5
-    iget-object v0, p0, Lun;->l:Ljava/lang/Object;
-
     .line 305
+    const/4 p0, 0x0
+
     .line 306
-    check-cast v0, Lgn;
+    sget-object p1, Lyu0;->u:Lic5;
 
     .line 307
     .line 308
-    iget-boolean v1, p0, Lun;->k:Z
+    invoke-static {p0, p0, p0, p0, p1}, Lmt6;->a(FFFFLvu0;)J
 
     .line 309
     .line 310
-    if-eqz v1, :cond_15
-
     .line 311
+    move-result-wide p0
+
     .line 312
-    if-ne v1, v5, :cond_14
+    invoke-static {v3, v4, p0, p1}, Lm07;->a(JJ)Z
 
     .line 313
     .line 314
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
     .line 315
-    .line 316
-    .line 317
-    goto :goto_a
+    move-result p0
 
+    .line 316
+    if-nez p0, :cond_0
+
+    .line 317
     .line 318
-    :cond_14
-    invoke-static {v3}, Ljw1;->e(Ljava/lang/String;)V
+    const/4 v10, 0x0
 
     .line 319
+    const/16 v11, 0x7e
+
     .line 320
     .line 321
-    move-object v2, v6
+    const-wide/16 v5, 0x0
 
     .line 322
-    goto :goto_a
-
     .line 323
-    :cond_15
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    const-wide/16 v7, 0x0
 
     .line 324
     .line 325
+    const/4 v9, 0x0
+
     .line 326
-    iput-object v6, p0, Lun;->l:Ljava/lang/Object;
+    invoke-static/range {v2 .. v11}, Lin1;->p0(Lin1;JJJFII)V
 
     .line 327
     .line 328
-    iput-boolean v5, p0, Lun;->k:Z
-
     .line 329
+    :cond_0
+    return-object v1
+
     .line 330
-    invoke-virtual {v0, p0}, Lgn;->a(Lz81;)Ljava/lang/Object;
-
-    .line 331
-    .line 332
-    .line 333
-    move-result-object p0
-
-    .line 334
-    if-ne p0, v4, :cond_16
-
-    .line 335
-    .line 336
-    move-object v2, v4
-
-    .line 337
-    :cond_16
-    :goto_a
-    return-object v2
-
-    .line 338
     nop
 
-    .line 339
+    .line 331
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
         :pswitch_5
         :pswitch_4
         :pswitch_3

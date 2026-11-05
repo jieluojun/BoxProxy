@@ -1,6 +1,6 @@
 .class public abstract Lcom/sun/jna/Union;
 .super Lcom/sun/jna/Structure;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
@@ -378,7 +378,7 @@
 
     .line 49
     .line 50
-    invoke-static {v0, p1, v1, p0}, Lgb4;->j(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v0, p1, v1, p0}, Ls94;->j(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 51
     .line 52
@@ -590,7 +590,7 @@
 
     .line 38
     .line 39
-    invoke-static {v0, p1, v1, p0}, Lgb4;->j(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v0, p1, v1, p0}, Ls94;->j(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 40
     .line 41
@@ -628,7 +628,7 @@
 
     const-string v1, " in "
 
-    invoke-static {v0, p1, v1, p0}, Lgb4;->j(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {v0, p1, v1, p0}, Ls94;->j(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
     return-void
 .end method

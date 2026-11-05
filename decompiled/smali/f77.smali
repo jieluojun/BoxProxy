@@ -1,74 +1,23 @@
 .class public final Lf77;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
-.implements Landroid/view/View$OnAttachStateChangeListener;
+.implements Lsj1;
 
 
 # instance fields
-.field public final j:Ljava/util/WeakHashMap;
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    new-instance v0, Ljava/util/WeakHashMap;
-
-    .line 5
-    .line 6
-    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
-
-    .line 7
-    .line 8
-    .line 9
-    iput-object v0, p0, Lf77;->j:Ljava/util/WeakHashMap;
-
-    .line 10
-    .line 11
-    return-void
-.end method
+.field public volatile j:Leg1;
 
 
 # virtual methods
-.method public final onGlobalLayout()V
+.method public final a()Ldg1;
     .locals 0
 
     .line 1
-    return-void
-.end method
-
-.method public final onViewAttachedToWindow(Landroid/view/View;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    iget-object p0, p0, Lf77;->j:Leg1;
 
     .line 2
     .line 3
-    .line 4
-    move-result-object p1
-
-    .line 5
-    invoke-virtual {p1, p0}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
-
-    .line 6
-    .line 7
-    .line 8
-    return-void
-.end method
-
-.method public final onViewDetachedFromWindow(Landroid/view/View;)V
-    .locals 0
-
-    .line 1
-    return-void
+    return-object p0
 .end method

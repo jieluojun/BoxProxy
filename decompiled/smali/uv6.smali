@@ -1,20 +1,34 @@
-.class public final Luv6;
+.class public final synthetic Luv6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Lo52;
 
 
 # instance fields
-.field public final j:Lx5;
+.field public final synthetic j:Lxn4;
 
-.field public final synthetic k:Lwv6;
+.field public final synthetic k:I
+
+.field public final synthetic l:J
+
+.field public final synthetic m:Lxn4;
+
+.field public final synthetic n:Lxn4;
+
+.field public final synthetic o:Lxn4;
+
+.field public final synthetic p:Lxn4;
+
+.field public final synthetic q:Lxn4;
+
+.field public final synthetic r:I
 
 
 # direct methods
-.method public constructor <init>(Lwv6;)V
-    .locals 3
+.method public synthetic constructor <init>(Lxn4;IJLxn4;Lxn4;Lxn4;Lxn4;Lxn4;I)V
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,130 +36,307 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Luv6;->k:Lwv6;
+    iput-object p1, p0, Luv6;->j:Lxn4;
 
     .line 5
     .line 6
-    new-instance v0, Lx5;
+    iput p2, p0, Luv6;->k:I
 
     .line 7
     .line 8
-    iget-object v1, p1, Lwv6;->a:Landroidx/appcompat/widget/Toolbar;
+    iput-wide p3, p0, Luv6;->l:J
 
     .line 9
     .line 10
-    invoke-virtual {v1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    iput-object p5, p0, Luv6;->m:Lxn4;
 
     .line 11
     .line 12
-    .line 13
-    move-result-object v1
+    iput-object p6, p0, Luv6;->n:Lxn4;
 
+    .line 13
     .line 14
-    iget-object p1, p1, Lwv6;->h:Ljava/lang/CharSequence;
+    iput-object p7, p0, Luv6;->o:Lxn4;
 
     .line 15
     .line 16
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p8, p0, Luv6;->p:Lxn4;
 
     .line 17
     .line 18
+    iput-object p9, p0, Luv6;->q:Lxn4;
+
     .line 19
-    const/16 v2, 0x1000
-
     .line 20
+    iput p10, p0, Luv6;->r:I
+
     .line 21
-    iput v2, v0, Lx5;->e:I
-
     .line 22
-    .line 23
-    iput v2, v0, Lx5;->g:I
-
-    .line 24
-    .line 25
-    const/4 v2, 0x0
-
-    .line 26
-    iput-object v2, v0, Lx5;->l:Landroid/content/res/ColorStateList;
-
-    .line 27
-    .line 28
-    iput-object v2, v0, Lx5;->m:Landroid/graphics/PorterDuff$Mode;
-
-    .line 29
-    .line 30
-    const/4 v2, 0x0
-
-    .line 31
-    iput-boolean v2, v0, Lx5;->n:Z
-
-    .line 32
-    .line 33
-    iput-boolean v2, v0, Lx5;->o:Z
-
-    .line 34
-    .line 35
-    const/16 v2, 0x10
-
-    .line 36
-    .line 37
-    iput v2, v0, Lx5;->p:I
-
-    .line 38
-    .line 39
-    iput-object v1, v0, Lx5;->i:Landroid/content/Context;
-
-    .line 40
-    .line 41
-    iput-object p1, v0, Lx5;->a:Ljava/lang/CharSequence;
-
-    .line 42
-    .line 43
-    iput-object v0, p0, Luv6;->j:Lx5;
-
-    .line 44
-    .line 45
     return-void
 .end method
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
-    .locals 1
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 10
 
     .line 1
-    iget-object p1, p0, Luv6;->k:Lwv6;
+    check-cast p1, Lwn4;
 
     .line 2
     .line 3
-    iget-object v0, p1, Lwv6;->k:Landroid/view/Window$Callback;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 4
     .line 5
-    if-eqz v0, :cond_0
-
     .line 6
+    iget-object v0, p0, Luv6;->j:Lxn4;
+
     .line 7
-    iget-boolean p1, p1, Lwv6;->l:Z
-
     .line 8
+    iget v1, v0, Lxn4;->k:I
+
     .line 9
-    if-eqz p1, :cond_0
-
     .line 10
-    .line 11
-    const/4 p1, 0x0
+    div-int/lit8 v1, v1, 0x2
 
+    .line 11
     .line 12
-    iget-object p0, p0, Luv6;->j:Lx5;
+    iget v2, p0, Luv6;->k:I
 
     .line 13
     .line 14
-    invoke-interface {v0, p1, p0}, Landroid/view/Window$Callback;->onMenuItemSelected(ILandroid/view/MenuItem;)Z
+    sub-int v1, v2, v1
 
     .line 15
     .line 16
+    const/4 v3, 0x0
+
     .line 17
+    invoke-static {p1, v0, v3, v1}, Lwn4;->l(Lwn4;Lxn4;II)V
+
+    .line 18
+    .line 19
+    .line 20
+    iget-wide v4, p0, Luv6;->l:J
+
+    .line 21
+    .line 22
+    invoke-static {v4, v5}, Ls51;->i(J)I
+
+    .line 23
+    .line 24
+    .line 25
+    move-result v1
+
+    .line 26
+    iget-object v6, p0, Luv6;->m:Lxn4;
+
+    .line 27
+    .line 28
+    iget v7, v6, Lxn4;->j:I
+
+    .line 29
+    .line 30
+    sub-int/2addr v1, v7
+
+    .line 31
+    div-int/lit8 v1, v1, 0x2
+
+    .line 32
+    .line 33
+    iget v0, v0, Lxn4;->j:I
+
+    .line 34
+    .line 35
+    iget-object v8, p0, Luv6;->n:Lxn4;
+
+    .line 36
+    .line 37
+    if-ge v1, v0, :cond_0
+
+    .line 38
+    .line 39
+    sub-int/2addr v0, v1
+
+    .line 40
+    :goto_0
+    add-int/2addr v1, v0
+
+    .line 41
+    goto :goto_1
+
+    .line 42
     :cond_0
-    return-void
+    add-int/2addr v7, v1
+
+    .line 43
+    invoke-static {v4, v5}, Ls51;->i(J)I
+
+    .line 44
+    .line 45
+    .line 46
+    move-result v0
+
+    .line 47
+    iget v9, v8, Lxn4;->j:I
+
+    .line 48
+    .line 49
+    sub-int/2addr v0, v9
+
+    .line 50
+    if-le v7, v0, :cond_1
+
+    .line 51
+    .line 52
+    invoke-static {v4, v5}, Ls51;->i(J)I
+
+    .line 53
+    .line 54
+    .line 55
+    move-result v0
+
+    .line 56
+    iget v7, v8, Lxn4;->j:I
+
+    .line 57
+    .line 58
+    sub-int/2addr v0, v7
+
+    .line 59
+    iget v7, v6, Lxn4;->j:I
+
+    .line 60
+    .line 61
+    add-int/2addr v7, v1
+
+    .line 62
+    sub-int/2addr v0, v7
+
+    .line 63
+    goto :goto_0
+
+    .line 64
+    :cond_1
+    :goto_1
+    iget v0, v6, Lxn4;->k:I
+
+    .line 65
+    .line 66
+    div-int/lit8 v0, v0, 0x2
+
+    .line 67
+    .line 68
+    sub-int v0, v2, v0
+
+    .line 69
+    .line 70
+    invoke-static {p1, v6, v1, v0}, Lwn4;->l(Lwn4;Lxn4;II)V
+
+    .line 71
+    .line 72
+    .line 73
+    iget-object v0, p0, Luv6;->o:Lxn4;
+
+    .line 74
+    .line 75
+    if-eqz v0, :cond_2
+
+    .line 76
+    .line 77
+    invoke-static {v4, v5}, Ls51;->i(J)I
+
+    .line 78
+    .line 79
+    .line 80
+    move-result v1
+
+    .line 81
+    iget v7, v0, Lxn4;->j:I
+
+    .line 82
+    .line 83
+    sub-int/2addr v1, v7
+
+    .line 84
+    div-int/lit8 v1, v1, 0x2
+
+    .line 85
+    .line 86
+    iget v6, v6, Lxn4;->k:I
+
+    .line 87
+    .line 88
+    div-int/lit8 v6, v6, 0x2
+
+    .line 89
+    .line 90
+    add-int/2addr v6, v2
+
+    .line 91
+    invoke-static {p1, v0, v1, v6}, Lwn4;->l(Lwn4;Lxn4;II)V
+
+    .line 92
+    .line 93
+    .line 94
+    :cond_2
+    invoke-static {v4, v5}, Ls51;->i(J)I
+
+    .line 95
+    .line 96
+    .line 97
+    move-result v0
+
+    .line 98
+    iget v1, v8, Lxn4;->j:I
+
+    .line 99
+    .line 100
+    sub-int/2addr v0, v1
+
+    .line 101
+    iget v1, v8, Lxn4;->k:I
+
+    .line 102
+    .line 103
+    div-int/lit8 v1, v1, 0x2
+
+    .line 104
+    .line 105
+    sub-int/2addr v2, v1
+
+    .line 106
+    invoke-static {p1, v8, v0, v2}, Lwn4;->l(Lwn4;Lxn4;II)V
+
+    .line 107
+    .line 108
+    .line 109
+    iget-object v0, p0, Luv6;->p:Lxn4;
+
+    .line 110
+    .line 111
+    invoke-static {p1, v0, v3, v3}, Lwn4;->l(Lwn4;Lxn4;II)V
+
+    .line 112
+    .line 113
+    .line 114
+    iget-object v0, p0, Luv6;->q:Lxn4;
+
+    .line 115
+    .line 116
+    iget p0, p0, Luv6;->r:I
+
+    .line 117
+    .line 118
+    invoke-static {p1, v0, v3, p0}, Lwn4;->l(Lwn4;Lxn4;II)V
+
+    .line 119
+    .line 120
+    .line 121
+    sget-object p0, Lk27;->a:Lk27;
+
+    .line 122
+    .line 123
+    return-object p0
 .end method

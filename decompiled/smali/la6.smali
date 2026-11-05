@@ -1,486 +1,355 @@
 .class public final Lla6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lwd1;
 
 
 # instance fields
-.field public a:F
-
-.field public b:D
-
-.field public c:F
+.field public final a:Lqw5;
 
 
-# virtual methods
-.method public final a(FFJ)J
-    .locals 20
+# direct methods
+.method public constructor <init>(Lqw5;)V
+    .locals 0
 
     .line 1
-    move-object/from16 v0, p0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    move/from16 v1, p2
-
     .line 4
+    iput-object p1, p0, Lla6;->a:Lqw5;
+
     .line 5
-    iget v2, v0, Lla6;->a:F
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final create(Lu76;Ldd4;Lxl2;)Lyd1;
+    .locals 5
+
+    .line 1
+    invoke-static {p2}, Lgm2;->a(Ldd4;)Landroid/graphics/Bitmap$Config;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p3
+
+    .line 5
+    iget-object v0, p2, Ldd4;->a:Landroid/content/Context;
 
     .line 6
     .line 7
-    sub-float v2, p1, v2
+    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     .line 8
     .line 9
-    move-wide/from16 v3, p3
+    const/4 v2, 0x0
 
     .line 10
-    .line 11
-    long-to-double v3, v3
+    if-eq p3, v1, :cond_0
 
+    .line 11
     .line 12
-    const-wide v5, 0x408f400000000000L    # 1000.0
+    sget-object v1, Landroid/graphics/Bitmap$Config;->HARDWARE:Landroid/graphics/Bitmap$Config;
 
     .line 13
     .line 14
+    if-ne p3, v1, :cond_6
+
     .line 15
     .line 16
-    .line 17
-    div-double/2addr v3, v5
+    :cond_0
+    iget-object p3, p1, Lu76;->a:Lim2;
 
+    .line 17
     .line 18
-    iget v5, v0, Lla6;->c:F
+    invoke-interface {p3}, Lim2;->getFileSystem()Lxx1;
 
     .line 19
     .line 20
-    float-to-double v6, v5
-
     .line 21
-    float-to-double v8, v5
+    move-result-object v1
 
     .line 22
-    mul-double/2addr v6, v8
+    sget-object v3, Lxx1;->j:Lqw2;
 
     .line 23
-    neg-float v8, v5
-
     .line 24
-    float-to-double v8, v8
+    if-ne v1, v3, :cond_1
 
     .line 25
-    iget-wide v10, v0, Lla6;->b:D
-
     .line 26
+    invoke-interface {p3}, Lim2;->o()Lwl4;
+
     .line 27
-    mul-double/2addr v8, v10
-
     .line 28
-    const/high16 v12, 0x3f800000    # 1.0f
-
     .line 29
+    move-result-object v1
+
     .line 30
-    cmpl-float v13, v5, v12
+    if-eqz v1, :cond_1
 
     .line 31
     .line 32
-    const-wide/high16 v14, 0x3ff0000000000000L    # 1.0
+    invoke-virtual {v1}, Lwl4;->toFile()Ljava/io/File;
 
     .line 33
     .line 34
-    if-lez v13, :cond_0
-
     .line 35
+    move-result-object p3
+
     .line 36
-    sub-double/2addr v6, v14
+    invoke-static {p3}, Landroid/graphics/ImageDecoder;->createSource(Ljava/io/File;)Landroid/graphics/ImageDecoder$Source;
 
     .line 37
-    invoke-static {v6, v7}, Ljava/lang/Math;->sqrt(D)D
-
     .line 38
     .line 39
+    move-result-object p3
+
     .line 40
-    move-result-wide v5
+    goto :goto_0
 
     .line 41
-    mul-double/2addr v5, v10
+    :cond_1
+    invoke-interface {p3}, Lim2;->s()Lx37;
 
     .line 42
-    add-double v10, v8, v5
-
     .line 43
     .line 44
-    sub-double/2addr v8, v5
+    move-result-object p3
 
     .line 45
-    float-to-double v5, v2
+    instance-of v1, p3, Lyv;
 
     .line 46
-    mul-double v12, v8, v5
-
     .line 47
-    .line 48
-    float-to-double v1, v1
+    if-eqz v1, :cond_2
 
+    .line 48
     .line 49
-    sub-double/2addr v12, v1
+    invoke-virtual {v0}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
 
     .line 50
-    sub-double v1, v8, v10
-
     .line 51
     .line 52
-    div-double/2addr v12, v1
+    move-result-object v0
 
     .line 53
-    sub-double/2addr v5, v12
+    check-cast p3, Lyv;
 
     .line 54
-    mul-double v1, v8, v3
-
     .line 55
-    .line 56
-    invoke-static {v1, v2}, Ljava/lang/Math;->exp(D)D
+    iget-object p3, p3, Lyv;->g:Ljava/lang/String;
 
+    .line 56
     .line 57
+    invoke-static {v0, p3}, Landroid/graphics/ImageDecoder;->createSource(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/ImageDecoder$Source;
+
     .line 58
     .line 59
-    move-result-wide v14
-
     .line 60
-    mul-double/2addr v14, v5
+    move-result-object p3
 
     .line 61
-    mul-double/2addr v3, v10
+    goto :goto_0
 
     .line 62
-    invoke-static {v3, v4}, Ljava/lang/Math;->exp(D)D
+    :cond_2
+    instance-of v1, p3, Lg71;
 
     .line 63
     .line 64
-    .line 65
-    move-result-wide v16
+    if-eqz v1, :cond_3
 
+    .line 65
     .line 66
-    mul-double v16, v16, v12
+    :try_start_0
+    check-cast p3, Lg71;
 
     .line 67
     .line 68
-    add-double v16, v16, v14
+    iget-object p3, p3, Lg71;->g:Landroid/content/res/AssetFileDescriptor;
 
     .line 69
     .line 70
-    mul-double/2addr v5, v8
+    invoke-virtual {p3}, Landroid/content/res/AssetFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
 
     .line 71
-    invoke-static {v1, v2}, Ljava/lang/Math;->exp(D)D
-
     .line 72
     .line 73
+    move-result-object v0
+
     .line 74
-    move-result-wide v1
+    invoke-virtual {p3}, Landroid/content/res/AssetFileDescriptor;->getStartOffset()J
 
     .line 75
-    mul-double/2addr v1, v5
-
     .line 76
-    mul-double/2addr v12, v10
-
     .line 77
-    invoke-static {v3, v4}, Ljava/lang/Math;->exp(D)D
-
-    .line 78
-    .line 79
-    .line 80
     move-result-wide v3
 
+    .line 78
+    sget v1, Landroid/system/OsConstants;->SEEK_SET:I
+
+    .line 79
+    .line 80
+    invoke-static {v0, v3, v4, v1}, Landroid/system/Os;->lseek(Ljava/io/FileDescriptor;JI)J
+
     .line 81
-    mul-double/2addr v3, v12
-
     .line 82
-    :goto_0
-    add-double/2addr v3, v1
-
     .line 83
-    goto :goto_1
+    new-instance v0, Lut2;
 
     .line 84
-    :cond_0
-    cmpg-float v5, v5, v12
-
     .line 85
+    const/4 v1, 0x2
+
     .line 86
-    if-nez v5, :cond_1
+    invoke-direct {v0, p3, v1}, Lut2;-><init>(Ljava/lang/Object;B)V
 
     .line 87
     .line 88
-    float-to-double v5, v1
-
     .line 89
-    float-to-double v1, v2
+    invoke-static {v0}, Landroid/graphics/ImageDecoder;->createSource(Ljava/util/concurrent/Callable;)Landroid/graphics/ImageDecoder$Source;
 
     .line 90
-    mul-double v7, v10, v1
-
     .line 91
     .line 92
-    add-double/2addr v7, v5
+    move-result-object p3
+    :try_end_0
+    .catch Landroid/system/ErrnoException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 93
-    neg-double v5, v10
+    goto :goto_0
 
     .line 94
-    mul-double/2addr v5, v3
+    :cond_3
+    instance-of v1, p3, Ljb5;
 
     .line 95
-    mul-double/2addr v3, v7
-
     .line 96
-    add-double/2addr v3, v1
+    if-eqz v1, :cond_4
 
     .line 97
-    invoke-static {v5, v6}, Ljava/lang/Math;->exp(D)D
-
     .line 98
-    .line 99
-    .line 100
-    move-result-wide v1
+    move-object v1, p3
 
+    .line 99
+    check-cast v1, Ljb5;
+
+    .line 100
     .line 101
-    mul-double v16, v1, v3
+    iget-object v3, v1, Ljb5;->g:Ljava/lang/String;
 
     .line 102
     .line 103
-    invoke-static {v5, v6}, Ljava/lang/Math;->exp(D)D
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
 
     .line 104
     .line 105
     .line 106
-    move-result-wide v1
+    move-result-object v4
 
     .line 107
-    mul-double/2addr v1, v3
+    invoke-virtual {v3, v4}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 108
-    iget-wide v3, v0, Lla6;->b:D
-
     .line 109
     .line 110
-    neg-double v3, v3
+    move-result v3
 
     .line 111
-    mul-double/2addr v1, v3
+    if-eqz v3, :cond_4
 
     .line 112
-    invoke-static {v5, v6}, Ljava/lang/Math;->exp(D)D
-
     .line 113
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
     .line 114
     .line 115
-    move-result-wide v3
-
     .line 116
-    mul-double/2addr v3, v7
+    move-result-object p3
 
     .line 117
-    goto :goto_0
+    iget v0, v1, Ljb5;->h:I
 
     .line 118
-    :cond_1
-    sub-double v5, v14, v6
-
     .line 119
-    .line 120
-    invoke-static {v5, v6}, Ljava/lang/Math;->sqrt(D)D
+    invoke-static {p3, v0}, Landroid/graphics/ImageDecoder;->createSource(Landroid/content/res/Resources;I)Landroid/graphics/ImageDecoder$Source;
 
+    .line 120
     .line 121
     .line 122
+    move-result-object p3
+
     .line 123
-    move-result-wide v5
+    goto :goto_0
 
     .line 124
-    mul-double/2addr v5, v10
+    :cond_4
+    instance-of v0, p3, Lyf0;
 
     .line 125
-    div-double/2addr v14, v5
-
     .line 126
-    neg-double v10, v8
+    if-eqz v0, :cond_5
 
     .line 127
-    float-to-double v12, v2
-
     .line 128
-    mul-double/2addr v10, v12
+    check-cast p3, Lyf0;
 
     .line 129
-    float-to-double v1, v1
-
     .line 130
-    add-double/2addr v10, v1
+    iget-object p3, p3, Lyf0;->g:Ljava/nio/ByteBuffer;
 
     .line 131
-    mul-double/2addr v10, v14
-
     .line 132
-    mul-double v1, v5, v3
+    invoke-static {p3}, Landroid/graphics/ImageDecoder;->createSource(Ljava/nio/ByteBuffer;)Landroid/graphics/ImageDecoder$Source;
 
     .line 133
     .line 134
-    mul-double/2addr v3, v8
-
     .line 135
-    invoke-static {v3, v4}, Ljava/lang/Math;->exp(D)D
+    move-result-object p3
 
     .line 136
+    goto :goto_0
+
     .line 137
+    :catch_0
+    :cond_5
+    move-object p3, v2
+
     .line 138
-    move-result-wide v14
+    :goto_0
+    if-nez p3, :cond_7
 
     .line 139
-    invoke-static {v1, v2}, Ljava/lang/Math;->cos(D)D
-
     .line 140
-    .line 141
-    .line 142
-    move-result-wide v16
+    :cond_6
+    return-object v2
 
+    .line 141
+    :cond_7
+    new-instance v0, Lw10;
+
+    .line 142
     .line 143
-    mul-double v16, v16, v12
+    iget-object p1, p1, Lu76;->a:Lim2;
 
     .line 144
     .line 145
-    invoke-static {v1, v2}, Ljava/lang/Math;->sin(D)D
+    iget-object p0, p0, Lla6;->a:Lqw5;
 
     .line 146
     .line 147
+    invoke-direct {v0, p3, p1, p2, p0}, Lw10;-><init>(Landroid/graphics/ImageDecoder$Source;Ljava/lang/AutoCloseable;Ldd4;Lqw5;)V
+
     .line 148
-    move-result-wide v18
-
     .line 149
-    mul-double v18, v18, v10
-
     .line 150
-    .line 151
-    add-double v18, v18, v16
-
-    .line 152
-    .line 153
-    mul-double v16, v18, v14
-
-    .line 154
-    .line 155
-    mul-double v8, v8, v16
-
-    .line 156
-    .line 157
-    invoke-static {v3, v4}, Ljava/lang/Math;->exp(D)D
-
-    .line 158
-    .line 159
-    .line 160
-    move-result-wide v3
-
-    .line 161
-    neg-double v14, v5
-
-    .line 162
-    mul-double/2addr v14, v12
-
-    .line 163
-    invoke-static {v1, v2}, Ljava/lang/Math;->sin(D)D
-
-    .line 164
-    .line 165
-    .line 166
-    move-result-wide v12
-
-    .line 167
-    mul-double/2addr v12, v14
-
-    .line 168
-    mul-double/2addr v5, v10
-
-    .line 169
-    invoke-static {v1, v2}, Ljava/lang/Math;->cos(D)D
-
-    .line 170
-    .line 171
-    .line 172
-    move-result-wide v1
-
-    .line 173
-    mul-double/2addr v1, v5
-
-    .line 174
-    add-double/2addr v1, v12
-
-    .line 175
-    mul-double/2addr v1, v3
-
-    .line 176
-    add-double v3, v1, v8
-
-    .line 177
-    .line 178
-    :goto_1
-    iget v0, v0, Lla6;->a:F
-
-    .line 179
-    .line 180
-    float-to-double v0, v0
-
-    .line 181
-    add-double v0, v16, v0
-
-    .line 182
-    .line 183
-    double-to-float v0, v0
-
-    .line 184
-    double-to-float v1, v3
-
-    .line 185
-    invoke-static {v0}, Ljava/lang/Float;->floatToRawIntBits(F)I
-
-    .line 186
-    .line 187
-    .line 188
-    move-result v0
-
-    .line 189
-    int-to-long v2, v0
-
-    .line 190
-    invoke-static {v1}, Ljava/lang/Float;->floatToRawIntBits(F)I
-
-    .line 191
-    .line 192
-    .line 193
-    move-result v0
-
-    .line 194
-    int-to-long v0, v0
-
-    .line 195
-    const/16 v4, 0x20
-
-    .line 196
-    .line 197
-    shl-long/2addr v2, v4
-
-    .line 198
-    const-wide v4, 0xffffffffL
-
-    .line 199
-    .line 200
-    .line 201
-    .line 202
-    .line 203
-    and-long/2addr v0, v4
-
-    .line 204
-    or-long/2addr v0, v2
-
-    .line 205
-    return-wide v0
+    return-object v0
 .end method

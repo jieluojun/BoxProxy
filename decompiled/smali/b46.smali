@@ -1,87 +1,55 @@
-.class public final synthetic Lb46;
+.class public abstract Lb46;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lp62;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic j:B
+# static fields
+.field public static final a:Lom;
 
-.field public final synthetic k:Lo46;
+.field public static final b:Lr77;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lo46;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    iput-byte p2, p0, Lb46;->j:B
+    new-instance v0, Lom;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lb46;->k:Lo46;
+    const/4 v1, 0x1
 
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, v1}, Lom;-><init>(B)V
 
+    .line 5
     .line 6
     .line 7
-    .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
-
-    .line 1
-    iget-byte v0, p0, Lb46;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    iget-object p0, p0, Lb46;->k:Lo46;
-
-    .line 6
-    .line 7
-    check-cast p1, Ljava/lang/String;
+    sput-object v0, Lb46;->a:Lom;
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_0
+    new-instance v0, Lr77;
 
     .line 10
     .line 11
-    .line 12
-    invoke-virtual {p0, p1}, Lo46;->e(Ljava/lang/String;)V
+    sget-object v1, Lk27;->a:Lk27;
 
+    .line 12
     .line 13
+    const/16 v2, 0x10
+
     .line 14
     .line 15
-    return-object v1
+    invoke-direct {v0, v1, v2}, Lr77;-><init>(Ljava/lang/Object;B)V
 
     .line 16
-    :pswitch_0
-    invoke-virtual {p0, p1}, Lo46;->f(Ljava/lang/String;)V
-
     .line 17
     .line 18
+    sput-object v0, Lb46;->b:Lr77;
+
     .line 19
-    return-object v1
-
     .line 20
-    nop
-
-    .line 21
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

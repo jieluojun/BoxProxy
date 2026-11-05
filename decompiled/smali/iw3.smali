@@ -1,23 +1,23 @@
 .class public final Liw3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:F
+.field public final a:Lgl4;
 
-.field public b:Lhw3;
+.field public final b:Lgl4;
 
-.field public c:F
+.field public final c:Lgl4;
 
-.field public d:F
+.field public final d:Lgl4;
 
-.field public e:F
+.field public e:Lyz0;
 
 
 # direct methods
-.method public constructor <init>(F)V
-    .locals 1
+.method public constructor <init>()V
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,248 +25,65 @@
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Liw3;->a:F
+    sget-object v0, Ljw3;->a:Ljw3;
 
     .line 5
     .line 6
-    const/4 v0, 0x0
+    invoke-static {v0}, Lg23;->M(Ljava/lang/Object;)Lgl4;
 
     .line 7
-    cmpl-float v0, p1, v0
-
     .line 8
     .line 9
-    if-ltz v0, :cond_0
+    move-result-object v0
 
     .line 10
-    .line 11
-    invoke-static {p1}, Ljava/lang/Math;->abs(F)F
+    iput-object v0, p0, Liw3;->a:Lgl4;
 
+    .line 11
     .line 12
+    sget-object v0, Lqt1;->j:Lqt1;
+
     .line 13
     .line 14
-    move-result p1
+    invoke-static {v0}, Lg23;->M(Ljava/lang/Object;)Lgl4;
 
     .line 15
-    const v0, 0x7f7fffff    # Float.MAX_VALUE
-
     .line 16
     .line 17
+    move-result-object v1
+
     .line 18
-    cmpg-float p1, p1, v0
+    iput-object v1, p0, Liw3;->b:Lgl4;
 
     .line 19
     .line 20
-    if-gtz p1, :cond_0
+    sget-object v1, Lew3;->a:Lew3;
 
     .line 21
     .line 22
-    sget-object p1, Lhw3;->j:Lhw3;
+    invoke-static {v1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
 
     .line 23
     .line 24
-    iput-object p1, p0, Liw3;->b:Lhw3;
-
     .line 25
+    move-result-object v1
+
     .line 26
+    iput-object v1, p0, Liw3;->c:Lgl4;
+
+    .line 27
+    .line 28
+    invoke-static {v0}, Lg23;->M(Ljava/lang/Object;)Lgl4;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object v0
+
+    .line 32
+    iput-object v0, p0, Liw3;->d:Lgl4;
+
+    .line 33
+    .line 34
     return-void
-
-    .line 27
-    :cond_0
-    const-string p0, "touchSlop must be finite and non-negative"
-
-    .line 28
-    .line 29
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
-
-    .line 30
-    .line 31
-    .line 32
-    const/4 p0, 0x0
-
-    .line 33
-    throw p0
-.end method
-
-
-# virtual methods
-.method public final a()Lgw3;
-    .locals 3
-
-    .line 1
-    iget v0, p0, Liw3;->d:F
-
-    .line 2
-    .line 3
-    iget v1, p0, Liw3;->a:F
-
-    .line 4
-    .line 5
-    cmpg-float v2, v0, v1
-
-    .line 6
-    .line 7
-    if-lez v2, :cond_2
-
-    .line 8
-    .line 9
-    iget v2, p0, Liw3;->e:F
-
-    .line 10
-    .line 11
-    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
-
-    .line 12
-    .line 13
-    .line 14
-    move-result v2
-
-    .line 15
-    cmpg-float v0, v0, v2
-
-    .line 16
-    .line 17
-    if-gez v0, :cond_0
-
-    .line 18
-    .line 19
-    goto :goto_0
-
-    .line 20
-    :cond_0
-    iget v0, p0, Liw3;->d:F
-
-    .line 21
-    .line 22
-    sub-float/2addr v0, v1
-
-    .line 23
-    const/4 v1, 0x0
-
-    .line 24
-    cmpg-float v2, v0, v1
-
-    .line 25
-    .line 26
-    if-gez v2, :cond_1
-
-    .line 27
-    .line 28
-    move v0, v1
-
-    .line 29
-    :cond_1
-    iput v0, p0, Liw3;->c:F
-
-    .line 30
-    .line 31
-    sget-object v0, Lhw3;->m:Lhw3;
-
-    .line 32
-    .line 33
-    iput-object v0, p0, Liw3;->b:Lhw3;
-
-    .line 34
-    .line 35
-    sget-object p0, Lgw3;->l:Lgw3;
-
-    .line 36
-    .line 37
-    return-object p0
-
-    .line 38
-    :cond_2
-    :goto_0
-    sget-object p0, Lgw3;->j:Lgw3;
-
-    .line 39
-    .line 40
-    return-object p0
-.end method
-
-.method public final b()Lgw3;
-    .locals 2
-
-    .line 1
-    iget-object p0, p0, Liw3;->b:Lhw3;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    const/4 v0, 0x0
-
-    .line 8
-    if-eqz p0, :cond_3
-
-    .line 9
-    .line 10
-    const/4 v1, 0x1
-
-    .line 11
-    if-eq p0, v1, :cond_3
-
-    .line 12
-    .line 13
-    const/4 v1, 0x2
-
-    .line 14
-    if-eq p0, v1, :cond_2
-
-    .line 15
-    .line 16
-    const/4 v1, 0x3
-
-    .line 17
-    if-eq p0, v1, :cond_1
-
-    .line 18
-    .line 19
-    const/4 v1, 0x4
-
-    .line 20
-    if-ne p0, v1, :cond_0
-
-    .line 21
-    .line 22
-    sget-object p0, Lgw3;->m:Lgw3;
-
-    .line 23
-    .line 24
-    return-object p0
-
-    .line 25
-    :cond_0
-    invoke-static {}, Lue1;->a()V
-
-    .line 26
-    .line 27
-    .line 28
-    return-object v0
-
-    .line 29
-    :cond_1
-    sget-object p0, Lgw3;->l:Lgw3;
-
-    .line 30
-    .line 31
-    return-object p0
-
-    .line 32
-    :cond_2
-    sget-object p0, Lgw3;->k:Lgw3;
-
-    .line 33
-    .line 34
-    return-object p0
-
-    .line 35
-    :cond_3
-    return-object v0
 .end method

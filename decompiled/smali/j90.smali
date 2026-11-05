@@ -1,150 +1,141 @@
 .class public final Lj90;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lq90;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final INSTANCE:Lj90;
+# instance fields
+.field public a:Ljava/util/Set;
 
-.field public static final synthetic a:Lc23;
+.field public final b:Lgl4;
+
+.field public c:Landroid/net/Uri;
+
+.field public final d:Lgl4;
+
+.field public final e:Lgl4;
+
+.field public final f:Lgl4;
+
+.field public final g:Lgl4;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Llu;)V
     .locals 2
 
     .line 1
-    new-instance v0, Lj90;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    sget-object v0, Lny;->k:Lt8;
+
     .line 5
     .line 6
-    sput-object v0, Lj90;->INSTANCE:Lj90;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 7
     .line 8
-    new-instance v0, Lw80;
-
     .line 9
+    sget-object v0, Lny;->l:Ljava/util/Set;
+
     .line 10
-    const/16 v1, 0x9
-
     .line 11
+    iput-object v0, p0, Lj90;->a:Ljava/util/Set;
+
     .line 12
-    invoke-direct {v0, v1}, Lw80;-><init>(B)V
-
     .line 13
-    .line 14
-    .line 15
-    sget-object v1, Lr53;->j:Lr53;
+    const/4 v0, 0x0
 
+    .line 14
+    invoke-static {v0}, Lg23;->M(Ljava/lang/Object;)Lgl4;
+
+    .line 15
     .line 16
     .line 17
-    invoke-static {v1, v0}, Lcs;->H(Lr53;Le62;)Lc23;
+    move-result-object v1
 
     .line 18
+    iput-object v1, p0, Lj90;->b:Lgl4;
+
     .line 19
     .line 20
-    move-result-object v0
+    iget-boolean v1, p1, Llu;->d:Z
 
     .line 21
-    sput-object v0, Lj90;->a:Lc23;
-
     .line 22
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
     .line 23
+    .line 24
+    .line 25
+    move-result-object v1
+
+    .line 26
+    invoke-static {v1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
+
+    .line 27
+    .line 28
+    .line 29
+    move-result-object v1
+
+    .line 30
+    iput-object v1, p0, Lj90;->d:Lgl4;
+
+    .line 31
+    .line 32
+    iget-boolean v1, p1, Llu;->e:Z
+
+    .line 33
+    .line 34
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 35
+    .line 36
+    .line 37
+    move-result-object v1
+
+    .line 38
+    invoke-static {v1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
+
+    .line 39
+    .line 40
+    .line 41
+    move-result-object v1
+
+    .line 42
+    iput-object v1, p0, Lj90;->e:Lgl4;
+
+    .line 43
+    .line 44
+    iget-object p1, p1, Llu;->f:Ljava/lang/String;
+
+    .line 45
+    .line 46
+    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
+
+    .line 47
+    .line 48
+    .line 49
+    move-result-object p1
+
+    .line 50
+    iput-object p1, p0, Lj90;->f:Lgl4;
+
+    .line 51
+    .line 52
+    invoke-static {v0}, Lg23;->M(Ljava/lang/Object;)Lgl4;
+
+    .line 53
+    .line 54
+    .line 55
+    move-result-object p1
+
+    .line 56
+    iput-object p1, p0, Lj90;->g:Lgl4;
+
+    .line 57
+    .line 58
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of p0, p1, Lj90;
-
-    .line 6
-    .line 7
-    if-nez p0, :cond_1
-
-    .line 8
-    .line 9
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-
-    .line 11
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    .line 1
-    const p0, 0x5bde1dd
-
-    .line 2
-    .line 3
-    .line 4
-    return p0
-.end method
-
-.method public final serializer()Lqy2;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lqy2;"
-        }
-    .end annotation
-
-    .line 1
-    sget-object p0, Lj90;->a:Lc23;
-
-    .line 2
-    .line 3
-    invoke-interface {p0}, Lc23;->getValue()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Lqy2;
-
-    .line 8
-    .line 9
-    return-object p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    const-string p0, "ShellScripts"
-
-    .line 2
-    .line 3
-    return-object p0
 .end method

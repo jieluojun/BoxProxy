@@ -1,143 +1,119 @@
 .class public final synthetic Ls34;
-.super Ld7;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lp62;
+.implements Ld52;
 
 
 # instance fields
-.field public final synthetic q:B
+.field public final synthetic j:B
+
+.field public final synthetic k:Lr34;
+
+.field public final synthetic l:Las3;
 
 
 # direct methods
-.method public synthetic constructor <init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;IB)V
+.method public synthetic constructor <init>(Lr34;Las3;B)V
     .locals 0
 
     .line 1
-    iput-byte p7, p0, Ls34;->q:B
+    iput-byte p3, p0, Ls34;->j:B
 
     .line 2
     .line 3
-    invoke-direct/range {p0 .. p6}, Ld7;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    iput-object p1, p0, Ls34;->k:Lr34;
 
     .line 4
     .line 5
+    iput-object p2, p0, Ls34;->l:Las3;
+
     .line 6
+    .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 8
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final invoke()Ljava/lang/Object;
+    .locals 6
 
     .line 1
-    iget-byte v0, p0, Ls34;->q:B
+    iget-byte v0, p0, Ls34;->j:B
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
-    sget-object v2, La47;->a:La47;
-
     .line 5
+    const/4 v2, 0x0
+
     .line 6
-    iget-object p0, p0, Ld7;->j:Ljava/lang/Object;
+    iget-object v3, p0, Ls34;->l:Las3;
 
     .line 7
     .line 8
-    packed-switch v0, :pswitch_data_0
+    iget-object p0, p0, Ls34;->k:Lr34;
 
     .line 9
     .line 10
-    .line 11
-    check-cast p1, Lzn2;
+    packed-switch v0, :pswitch_data_0
 
+    .line 11
     .line 12
     .line 13
-    iget p1, p1, Lzn2;->a:I
+    sget-object v0, Lz34;->a:Ljava/lang/Object;
 
     .line 14
     .line 15
-    check-cast p0, Len6;
+    iget-wide v4, p0, Lr34;->a:J
 
     .line 16
     .line 17
-    invoke-virtual {p0, p1}, Len6;->H1(I)Z
+    invoke-static {v4, v5}, Lz34;->b(J)V
 
     .line 18
     .line 19
     .line 20
-    return-object v2
+    invoke-interface {v3, v2}, Las3;->setValue(Ljava/lang/Object;)V
 
     .line 21
-    :pswitch_0
-    check-cast p1, Lft5;
-
     .line 22
     .line 23
-    check-cast p0, Lot3;
+    return-object v1
 
     .line 24
-    .line 25
-    invoke-virtual {p0, p1}, Lot3;->b(Ljava/lang/Object;)V
+    :pswitch_0
+    sget-object v0, Lz34;->a:Ljava/lang/Object;
 
+    .line 25
     .line 26
+    iget-wide v4, p0, Lr34;->a:J
+
     .line 27
     .line 28
-    return-object v2
+    invoke-static {v4, v5}, Lz34;->b(J)V
 
     .line 29
-    :pswitch_1
-    check-cast p1, Li24;
-
     .line 30
     .line 31
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-interface {v3, v2}, Las3;->setValue(Ljava/lang/Object;)V
 
     .line 32
     .line 33
     .line 34
-    check-cast p0, Lp24;
+    return-object v1
 
     .line 35
-    .line 36
-    invoke-virtual {p0, p1, v1}, Lp24;->h(Li24;Ly44;)V
-
-    .line 37
-    .line 38
-    .line 39
-    return-object v2
-
-    .line 40
-    :pswitch_2
-    check-cast p1, Li24;
-
-    .line 41
-    .line 42
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 43
-    .line 44
-    .line 45
-    check-cast p0, Lp24;
-
-    .line 46
-    .line 47
-    invoke-virtual {p0, p1, v1}, Lp24;->h(Li24;Ly44;)V
-
-    .line 48
-    .line 49
-    .line 50
-    return-object v2
-
-    .line 51
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

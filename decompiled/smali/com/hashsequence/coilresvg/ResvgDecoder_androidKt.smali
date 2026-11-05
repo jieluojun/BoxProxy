@@ -1,6 +1,6 @@
 .class public final Lcom/hashsequence/coilresvg/ResvgDecoder_androidKt;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # direct methods
@@ -36,20 +36,20 @@
     return p0
 .end method
 
-.method public static final renderSvgImage([BLre4;Ly81;)Ljava/lang/Object;
+.method public static final renderSvgImage([BLdd4;Ly71;)Ljava/lang/Object;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "([B",
-            "Lre4;",
-            "Ly81;",
+            "Ldd4;",
+            "Ly71;",
             ")",
             "Ljava/lang/Object;"
         }
     .end annotation
 
     .line 1
-    sget-object v0, Llk1;->a:Log1;
+    sget-object v0, Llj1;->a:Lpf1;
 
     .line 2
     .line 3
@@ -60,12 +60,12 @@
     const/4 v2, 0x0
 
     .line 6
-    invoke-direct {v1, p0, p1, v2}, Lcom/hashsequence/coilresvg/ResvgDecoder_androidKt$renderSvgImage$2;-><init>([BLre4;Ly81;)V
+    invoke-direct {v1, p0, p1, v2}, Lcom/hashsequence/coilresvg/ResvgDecoder_androidKt$renderSvgImage$2;-><init>([BLdd4;Ly71;)V
 
     .line 7
     .line 8
     .line 9
-    invoke-static {v0, v1, p2}, Lbn0;->S(Lrb1;Lt62;Ly81;)Ljava/lang/Object;
+    invoke-static {v0, v1, p2}, Lx37;->e0(Lsa1;Ls52;Ly71;)Ljava/lang/Object;
 
     .line 10
     .line 11

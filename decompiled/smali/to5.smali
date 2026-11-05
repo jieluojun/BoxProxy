@@ -1,120 +1,179 @@
 .class public final Lto5;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Le62;
+.implements Lt03;
+.implements Ljava/io/Serializable;
+
+
+# static fields
+.field public static final l:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public volatile j:Ld52;
 
-.field public final synthetic k:Lha2;
-
-.field public final synthetic l:Lbq5;
-
-.field public final synthetic m:Llp5;
+.field public volatile k:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lha2;Lbq5;Llp5;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    iput-byte p4, p0, Lto5;->j:B
+    const-class v0, Ljava/lang/Object;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lto5;->k:Lha2;
+    const-string v1, "k"
 
     .line 4
     .line 5
-    iput-object p2, p0, Lto5;->l:Lbq5;
+    const-class v2, Lto5;
 
     .line 6
     .line 7
-    iput-object p3, p0, Lto5;->m:Llp5;
+    invoke-static {v2, v0, v1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     .line 8
     .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 10
+    move-result-object v0
+
     .line 11
+    sput-object v0, Lto5;->l:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
     .line 12
+    .line 13
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 5
+.method public final getValue()Ljava/lang/Object;
+    .locals 4
 
     .line 1
-    iget-byte v0, p0, Lto5;->j:B
+    iget-object v0, p0, Lto5;->k:Ljava/lang/Object;
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    sget-object v1, Lsc5;->M:Lsc5;
 
     .line 4
     .line 5
-    iget-object v2, p0, Lto5;->m:Llp5;
+    if-eq v0, v1, :cond_0
 
     .line 6
     .line 7
-    iget-object v3, p0, Lto5;->l:Lbq5;
+    return-object v0
 
     .line 8
-    .line 9
-    const/4 v4, 0x0
+    :cond_0
+    iget-object v0, p0, Lto5;->j:Ld52;
 
+    .line 9
     .line 10
-    iget-object p0, p0, Lto5;->k:Lha2;
+    if-eqz v0, :cond_3
 
     .line 11
     .line 12
-    packed-switch v0, :pswitch_data_0
+    invoke-interface {v0}, Ld52;->invoke()Ljava/lang/Object;
 
     .line 13
     .line 14
     .line 15
-    check-cast p0, Lqp4;
+    move-result-object v0
 
     .line 16
-    .line 17
-    invoke-virtual {p0, v4}, Lqp4;->a(I)V
+    sget-object v2, Lto5;->l:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
+    .line 17
     .line 18
+    :cond_1
+    invoke-virtual {v2, p0, v1, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+
     .line 19
     .line 20
-    invoke-virtual {v3, v2}, Lbq5;->d(Llp5;)V
-
     .line 21
-    .line 22
-    .line 23
-    return-object v1
+    move-result v3
 
+    .line 22
+    if-eqz v3, :cond_2
+
+    .line 23
     .line 24
-    :pswitch_0
-    check-cast p0, Lqp4;
+    const/4 v1, 0x0
 
     .line 25
+    iput-object v1, p0, Lto5;->j:Ld52;
+
     .line 26
-    invoke-virtual {p0, v4}, Lqp4;->a(I)V
-
     .line 27
-    .line 28
-    .line 29
-    invoke-virtual {v3, v2}, Lbq5;->d(Llp5;)V
+    return-object v0
 
+    .line 28
+    :cond_2
+    invoke-virtual {v2, p0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 29
     .line 30
     .line 31
-    .line 32
-    return-object v1
+    move-result-object v3
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 32
+    if-eq v3, v1, :cond_1
+
+    .line 33
+    .line 34
+    :cond_3
+    iget-object p0, p0, Lto5;->k:Ljava/lang/Object;
+
+    .line 35
+    .line 36
+    return-object p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lto5;->k:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    sget-object v1, Lsc5;->M:Lsc5;
+
+    .line 4
+    .line 5
+    if-eq v0, v1, :cond_0
+
+    .line 6
+    .line 7
+    invoke-virtual {p0}, Lto5;->getValue()Ljava/lang/Object;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p0
+
+    .line 11
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    return-object p0
+
+    .line 16
+    :cond_0
+    const-string p0, "Lazy value not initialized yet."
+
+    .line 17
+    .line 18
+    return-object p0
 .end method

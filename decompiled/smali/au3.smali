@@ -1,236 +1,301 @@
 .class public final Lau3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lsi0;
-.implements Lx87;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final j:Lti0;
+.field public final a:Ljava/lang/Object;
 
-.field public final synthetic k:Lbu3;
+.field public final b:Lgl4;
+
+.field public final c:Lgl4;
 
 
 # direct methods
-.method public constructor <init>(Lbu3;Lti0;)V
+.method public constructor <init>(Lo80;Ljava/lang/Object;Ljava/util/Map;Lt52;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lau3;->k:Lbu3;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lau3;->j:Lti0;
-
     .line 7
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 8
+    .line 9
+    .line 10
+    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 11
+    .line 12
+    .line 13
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 14
+    .line 15
+    .line 16
+    iput-object p2, p0, Lau3;->a:Ljava/lang/Object;
+
+    .line 17
+    .line 18
+    new-instance p2, Lzt3;
+
+    .line 19
+    .line 20
+    invoke-direct {p2, p1, p3, p4}, Lzt3;-><init>(Lo80;Ljava/util/Map;Lt52;)V
+
+    .line 21
+    .line 22
+    .line 23
+    invoke-static {p2}, Lg23;->M(Ljava/lang/Object;)Lgl4;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object p1
+
+    .line 27
+    iput-object p1, p0, Lau3;->b:Lgl4;
+
+    .line 28
+    .line 29
+    new-instance p1, Llu3;
+
+    .line 30
+    .line 31
+    sget-object p2, Lmu3;->j:Lmu3;
+
+    .line 32
+    .line 33
+    const/4 p3, 0x0
+
+    .line 34
+    invoke-direct {p1, p2, p3}, Llu3;-><init>(Lmu3;Z)V
+
+    .line 35
+    .line 36
+    .line 37
+    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
+
+    .line 38
+    .line 39
+    .line 40
+    move-result-object p1
+
+    .line 41
+    iput-object p1, p0, Lau3;->c:Lgl4;
+
+    .line 42
+    .line 43
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lcv5;I)V
-    .locals 0
+.method public final a(ILv01;)V
+    .locals 5
 
     .line 1
-    iget-object p0, p0, Lau3;->j:Lti0;
+    check-cast p2, Ls62;
 
     .line 2
     .line 3
-    invoke-virtual {p0, p1, p2}, Lti0;->a(Lcv5;I)V
+    const v0, -0x4309ed16
 
     .line 4
     .line 5
     .line 6
-    return-void
-.end method
-
-.method public final getContext()Lrb1;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lau3;->j:Lti0;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lti0;->n:Lrb1;
-
-    .line 4
-    .line 5
-    return-object p0
-.end method
-
-.method public final h(Ljava/lang/Object;Lu62;)V
-    .locals 3
-
-    .line 1
-    check-cast p1, La47;
-
-    .line 2
-    .line 3
-    sget-object p2, Lbu3;->i:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    .line 4
-    .line 5
-    const/4 v0, 0x0
-
-    .line 6
-    iget-object v1, p0, Lau3;->k:Lbu3;
+    invoke-virtual {p2, v0}, Ls62;->d0(I)Lv01;
 
     .line 7
     .line 8
-    invoke-virtual {p2, v1, v0}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-
     .line 9
+    invoke-virtual {p2, p0}, Ls62;->i(Ljava/lang/Object;)Z
+
     .line 10
     .line 11
-    new-instance p2, Ln53;
-
     .line 12
+    move-result v0
+
     .line 13
-    const/4 v0, 0x5
+    const/4 v1, 0x2
 
     .line 14
-    invoke-direct {p2, v1, p0, v0}, Ln53;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
+    if-eqz v0, :cond_0
 
     .line 15
     .line 16
+    const/4 v0, 0x4
+
     .line 17
-    iget-object p0, p0, Lau3;->j:Lti0;
+    goto :goto_0
 
     .line 18
+    :cond_0
+    move v0, v1
+
     .line 19
-    iget v0, p0, Lhk1;->l:I
+    :goto_0
+    or-int/2addr v0, p1
 
     .line 20
-    .line 21
-    new-instance v1, Lcp3;
+    and-int/lit8 v2, v0, 0x3
 
+    .line 21
     .line 22
+    const/4 v3, 0x0
+
     .line 23
-    const/4 v2, 0x4
+    const/4 v4, 0x1
 
     .line 24
-    invoke-direct {v1, p2, v2}, Lcp3;-><init>(Ljava/lang/Object;B)V
+    if-eq v2, v1, :cond_1
 
     .line 25
     .line 26
+    move v1, v4
+
     .line 27
-    invoke-virtual {p0, p1, v0, v1}, Lti0;->B(Ljava/lang/Object;ILu62;)V
+    goto :goto_1
 
     .line 28
+    :cond_1
+    move v1, v3
+
     .line 29
+    :goto_1
+    and-int/2addr v0, v4
+
     .line 30
+    invoke-virtual {p2, v0, v1}, Ls62;->T(IZ)Z
+
+    .line 31
+    .line 32
+    .line 33
+    move-result v0
+
+    .line 34
+    if-eqz v0, :cond_2
+
+    .line 35
+    .line 36
+    invoke-virtual {p0}, Lau3;->c()Lzt3;
+
+    .line 37
+    .line 38
+    .line 39
+    move-result-object v0
+
+    .line 40
+    iget-object v1, v0, Lzt3;->c:Lt52;
+
+    .line 41
+    .line 42
+    iget-object v0, v0, Lzt3;->a:Lo80;
+
+    .line 43
+    .line 44
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    .line 45
+    .line 46
+    .line 47
+    move-result-object v2
+
+    .line 48
+    invoke-interface {v1, v0, p2, v2}, Lt52;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 49
+    .line 50
+    .line 51
+    goto :goto_2
+
+    .line 52
+    :cond_2
+    invoke-virtual {p2}, Ls62;->W()V
+
+    .line 53
+    .line 54
+    .line 55
+    :goto_2
+    invoke-virtual {p2}, Ls62;->u()Lg85;
+
+    .line 56
+    .line 57
+    .line 58
+    move-result-object p2
+
+    .line 59
+    if-eqz p2, :cond_3
+
+    .line 60
+    .line 61
+    new-instance v0, Lst3;
+
+    .line 62
+    .line 63
+    invoke-direct {v0, p0, p1}, Lst3;-><init>(Lau3;I)V
+
+    .line 64
+    .line 65
+    .line 66
+    iput-object v0, p2, Lg85;->d:Ls52;
+
+    .line 67
+    .line 68
+    :cond_3
     return-void
 .end method
 
-.method public final i(Ljava/lang/Object;Lu62;)Lau1;
-    .locals 1
+.method public final b()Llu3;
+    .locals 0
 
     .line 1
-    check-cast p1, La47;
+    iget-object p0, p0, Lau3;->c:Lgl4;
 
     .line 2
     .line 3
-    new-instance p2, Lcp3;
+    invoke-virtual {p0}, Lgl4;->getValue()Ljava/lang/Object;
 
     .line 4
     .line 5
-    iget-object v0, p0, Lau3;->k:Lbu3;
-
     .line 6
+    move-result-object p0
+
     .line 7
-    invoke-direct {p2, v0, p0}, Lcp3;-><init>(Lbu3;Lau3;)V
+    check-cast p0, Llu3;
 
     .line 8
     .line 9
-    .line 10
-    iget-object p0, p0, Lau3;->j:Lti0;
-
-    .line 11
-    .line 12
-    invoke-virtual {p0, p1, p2}, Lti0;->E(Ljava/lang/Object;Lu62;)Lau1;
-
-    .line 13
-    .line 14
-    .line 15
-    move-result-object p0
-
-    .line 16
-    if-eqz p0, :cond_0
-
-    .line 17
-    .line 18
-    sget-object p1, Lbu3;->i:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    .line 19
-    .line 20
-    const/4 p2, 0x0
-
-    .line 21
-    invoke-virtual {p1, v0, p2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->set(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    .line 22
-    .line 23
-    .line 24
-    :cond_0
     return-object p0
 .end method
 
-.method public final l(Ljava/lang/Throwable;)Z
+.method public final c()Lzt3;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lau3;->j:Lti0;
+    iget-object p0, p0, Lau3;->b:Lgl4;
 
     .line 2
     .line 3
-    invoke-virtual {p0, p1}, Lti0;->l(Ljava/lang/Throwable;)Z
+    invoke-virtual {p0}, Lgl4;->getValue()Ljava/lang/Object;
 
     .line 4
     .line 5
     .line 6
-    move-result p0
+    move-result-object p0
 
     .line 7
-    return p0
-.end method
+    check-cast p0, Lzt3;
 
-.method public final r(Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lau3;->j:Lti0;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lti0;->r(Ljava/lang/Object;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public final resumeWith(Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lau3;->j:Lti0;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lti0;->resumeWith(Ljava/lang/Object;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
+    .line 8
+    .line 9
+    return-object p0
 .end method

@@ -1,19 +1,23 @@
 .class public final Lyd5;
-.super La3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lpa1;
+.implements Lkq6;
 
 
 # instance fields
-.field public l:I
+.field public a:F
 
-.field public m:I
+.field public final synthetic b:Ljava/lang/Object;
 
-.field public final synthetic n:Lzd5;
+.field public final synthetic c:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lzd5;)V
-    .locals 1
+.method public constructor <init>(Lmq6;Lhq6;)V
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -21,102 +25,178 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lyd5;->n:Lzd5;
+    iput-object p1, p0, Lyd5;->c:Ljava/lang/Object;
 
     .line 5
     .line 6
-    iget v0, p1, Lzd5;->m:I
+    iput-object p2, p0, Lyd5;->b:Ljava/lang/Object;
 
     .line 7
     .line 8
-    iput v0, p0, Lyd5;->l:I
+    const/4 p1, 0x0
 
     .line 9
-    .line 10
-    iget p1, p1, Lzd5;->l:I
+    iput p1, p0, Lyd5;->a:F
 
+    .line 10
     .line 11
+    return-void
+.end method
+
+.method public constructor <init>(Lpa1;Lpa1;F)V
+    .locals 0
+
     .line 12
-    iput p1, p0, Lyd5;->m:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 13
-    .line 14
+    iput-object p1, p0, Lyd5;->b:Ljava/lang/Object;
+
+    iput-object p2, p0, Lyd5;->c:Ljava/lang/Object;
+
+    iput p3, p0, Lyd5;->a:F
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 4
+.method public a(Ljava/util/ArrayList;ZLsm3;)Z
+    .locals 8
 
     .line 1
-    iget v0, p0, Lyd5;->l:I
+    iget-object v0, p0, Lyd5;->c:Ljava/lang/Object;
 
     .line 2
     .line 3
-    if-nez v0, :cond_0
+    move-object v1, v0
 
     .line 4
-    .line 5
-    const/4 v0, 0x2
+    check-cast v1, Lmq6;
 
+    .line 5
     .line 6
-    iput-byte v0, p0, La3;->j:B
+    iget v6, p0, Lyd5;->a:F
 
     .line 7
     .line 8
-    return-void
+    iget-object v0, p0, Lyd5;->b:Ljava/lang/Object;
 
     .line 9
-    :cond_0
-    iget-object v1, p0, Lyd5;->n:Lzd5;
-
     .line 10
+    move-object v7, v0
+
     .line 11
-    iget-object v2, v1, Lzd5;->j:[Ljava/lang/Object;
+    check-cast v7, Lhq6;
 
     .line 12
     .line 13
-    iget v3, p0, Lyd5;->m:I
+    const/4 v5, 0x0
 
     .line 14
+    move-object v2, p1
+
     .line 15
-    aget-object v2, v2, v3
+    move v3, p2
 
     .line 16
+    move-object v4, p3
+
     .line 17
-    iput-object v2, p0, La3;->k:Ljava/lang/Object;
+    invoke-virtual/range {v1 .. v7}, Lmq6;->h(Ljava/util/ArrayList;ZLsm3;Landroid/graphics/Canvas;FLhq6;)F
 
     .line 18
     .line 19
-    const/4 v2, 0x1
-
     .line 20
-    iput-byte v2, p0, La3;->j:B
+    move-result p1
 
     .line 21
-    .line 22
-    add-int/2addr v3, v2
+    iget p2, p0, Lyd5;->a:F
 
+    .line 22
     .line 23
-    iget v1, v1, Lzd5;->k:I
+    add-float/2addr p2, p1
 
     .line 24
-    .line 25
-    rem-int/2addr v3, v1
+    iput p2, p0, Lyd5;->a:F
 
+    .line 25
     .line 26
-    iput v3, p0, Lyd5;->m:I
+    iget p0, v7, Lhq6;->c:F
 
     .line 27
     .line 28
-    add-int/lit8 v0, v0, -0x1
+    const/4 p1, 0x0
 
     .line 29
-    .line 30
-    iput v0, p0, Lyd5;->l:I
+    cmpl-float p0, p0, p1
 
+    .line 30
     .line 31
+    if-eqz p0, :cond_0
+
     .line 32
-    return-void
+    .line 33
+    const/4 p0, 0x1
+
+    .line 34
+    return p0
+
+    .line 35
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 36
+    return p0
+.end method
+
+.method public b(JLyg1;)F
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lyd5;->b:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    check-cast v0, Lpa1;
+
+    .line 4
+    .line 5
+    invoke-interface {v0, p1, p2, p3}, Lpa1;->b(JLyg1;)F
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v0
+
+    .line 9
+    iget-object v1, p0, Lyd5;->c:Ljava/lang/Object;
+
+    .line 10
+    .line 11
+    check-cast v1, Lpa1;
+
+    .line 12
+    .line 13
+    invoke-interface {v1, p1, p2, p3}, Lpa1;->b(JLyg1;)F
+
+    .line 14
+    .line 15
+    .line 16
+    move-result p1
+
+    .line 17
+    iget p0, p0, Lyd5;->a:F
+
+    .line 18
+    .line 19
+    invoke-static {v0, p1, p0}, Lu23;->C(FFF)F
+
+    .line 20
+    .line 21
+    .line 22
+    move-result p0
+
+    .line 23
+    return p0
 .end method

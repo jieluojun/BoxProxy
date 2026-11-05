@@ -1,359 +1,268 @@
-.class public final Lfl6;
+.class public final synthetic Lfl6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lo52;
 
 
 # instance fields
-.field public final a:Lei;
+.field public final synthetic j:B
 
-.field public b:Lei;
+.field public final synthetic k:Z
 
-.field public c:Z
-
-.field public d:Lkr3;
+.field public final synthetic l:Lnl6;
 
 
 # direct methods
-.method public constructor <init>(Lei;Lei;)V
+.method public synthetic constructor <init>(ZLnl6;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p3, p0, Lfl6;->j:B
 
     .line 2
     .line 3
+    iput-boolean p1, p0, Lfl6;->k:Z
+
     .line 4
-    iput-object p1, p0, Lfl6;->a:Lei;
-
     .line 5
+    iput-object p2, p0, Lfl6;->l:Lnl6;
+
     .line 6
-    iput-object p2, p0, Lfl6;->b:Lei;
-
     .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 8
-    const/4 p1, 0x0
-
     .line 9
-    iput-boolean p1, p0, Lfl6;->c:Z
-
     .line 10
-    .line 11
-    const/4 p1, 0x0
-
-    .line 12
-    iput-object p1, p0, Lfl6;->d:Lkr3;
-
-    .line 13
-    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 4
 
     .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of v1, p1, Lfl6;
-
-    .line 6
-    .line 7
-    const/4 v2, 0x0
-
-    .line 8
-    if-nez v1, :cond_1
-
-    .line 9
-    .line 10
-    return v2
-
-    .line 11
-    :cond_1
-    check-cast p1, Lfl6;
-
-    .line 12
-    .line 13
-    iget-object v1, p0, Lfl6;->a:Lei;
-
-    .line 14
-    .line 15
-    iget-object v3, p1, Lfl6;->a:Lei;
-
-    .line 16
-    .line 17
-    invoke-static {v1, v3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 18
-    .line 19
-    .line 20
-    move-result v1
-
-    .line 21
-    if-nez v1, :cond_2
-
-    .line 22
-    .line 23
-    return v2
-
-    .line 24
-    :cond_2
-    iget-object v1, p0, Lfl6;->b:Lei;
-
-    .line 25
-    .line 26
-    iget-object v3, p1, Lfl6;->b:Lei;
-
-    .line 27
-    .line 28
-    invoke-static {v1, v3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 29
-    .line 30
-    .line 31
-    move-result v1
-
-    .line 32
-    if-nez v1, :cond_3
-
-    .line 33
-    .line 34
-    return v2
-
-    .line 35
-    :cond_3
-    iget-boolean v1, p0, Lfl6;->c:Z
-
-    .line 36
-    .line 37
-    iget-boolean v3, p1, Lfl6;->c:Z
-
-    .line 38
-    .line 39
-    if-eq v1, v3, :cond_4
-
-    .line 40
-    .line 41
-    return v2
-
-    .line 42
-    :cond_4
-    iget-object p0, p0, Lfl6;->d:Lkr3;
-
-    .line 43
-    .line 44
-    iget-object p1, p1, Lfl6;->d:Lkr3;
-
-    .line 45
-    .line 46
-    invoke-static {p0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 47
-    .line 48
-    .line 49
-    move-result p0
-
-    .line 50
-    if-nez p0, :cond_5
-
-    .line 51
-    .line 52
-    return v2
-
-    .line 53
-    :cond_5
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 3
-
-    .line 1
-    iget-object v0, p0, Lfl6;->a:Lei;
+    iget-byte v0, p0, Lfl6;->j:B
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Lei;->hashCode()I
+    const/4 v1, 0x1
 
     .line 4
+    iget-object v2, p0, Lfl6;->l:Lnl6;
+
     .line 5
     .line 6
-    move-result v0
+    iget-boolean p0, p0, Lfl6;->k:Z
 
     .line 7
-    const/16 v1, 0x1f
-
     .line 8
+    const/4 v3, 0x0
+
     .line 9
-    mul-int/2addr v0, v1
+    packed-switch v0, :pswitch_data_0
 
     .line 10
-    iget-object v2, p0, Lfl6;->b:Lei;
-
     .line 11
     .line 12
-    invoke-virtual {v2}, Lei;->hashCode()I
+    check-cast p1, Lai;
 
     .line 13
     .line 14
-    .line 15
-    move-result v2
-
-    .line 16
-    add-int/2addr v2, v0
-
-    .line 17
-    mul-int/2addr v2, v1
-
-    .line 18
-    iget-boolean v0, p0, Lfl6;->c:Z
-
-    .line 19
-    .line 20
-    invoke-static {v2, v1, v0}, Loc1;->f(IIZ)I
-
-    .line 21
-    .line 22
-    .line 23
-    move-result v0
-
-    .line 24
-    iget-object p0, p0, Lfl6;->d:Lkr3;
-
-    .line 25
-    .line 26
     if-nez p0, :cond_0
 
-    .line 27
-    .line 28
-    const/4 p0, 0x0
-
-    .line 29
-    goto :goto_0
-
-    .line 30
-    :cond_0
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    .line 31
-    .line 32
-    .line 33
-    move-result p0
-
-    .line 34
-    :goto_0
-    add-int/2addr v0, p0
-
-    .line 35
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 5
-
-    .line 1
-    iget-object v0, p0, Lfl6;->b:Lei;
-
-    .line 2
-    .line 3
-    iget-boolean v1, p0, Lfl6;->c:Z
-
-    .line 4
-    .line 5
-    iget-object v2, p0, Lfl6;->d:Lkr3;
-
-    .line 6
-    .line 7
-    new-instance v3, Ljava/lang/StringBuilder;
-
-    .line 8
-    .line 9
-    const-string v4, "TextSubstitutionValue(original="
-
-    .line 10
-    .line 11
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 12
-    .line 13
-    .line 14
-    iget-object p0, p0, Lfl6;->a:Lei;
-
     .line 15
     .line 16
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move v1, v3
 
     .line 17
+    goto :goto_0
+
     .line 18
+    :cond_0
+    iget-object p0, v2, Lnl6;->z:Lxw6;
+
     .line 19
-    const-string p0, ", substitution="
-
     .line 20
-    .line 21
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/16 v0, 0x1c
 
+    .line 21
     .line 22
+    invoke-static {p0, p1, v3, v3, v0}, Lxw6;->h(Lxw6;Ljava/lang/CharSequence;ZZI)V
+
     .line 23
     .line 24
-    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
     .line 25
+    :goto_0
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
     .line 26
     .line 27
-    const-string p0, ", isShowingSubstitution="
-
     .line 28
+    move-result-object p0
+
     .line 29
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-object p0
 
     .line 30
+    :pswitch_0
+    check-cast p1, Lai;
+
     .line 31
     .line 32
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    if-nez p0, :cond_1
 
     .line 33
     .line 34
+    move v1, v3
+
     .line 35
-    const-string p0, ", layoutCache="
+    goto :goto_1
 
     .line 36
-    .line 37
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_1
+    iget-object p0, v2, Lnl6;->z:Lxw6;
 
+    .line 37
     .line 38
+    invoke-virtual {p0, p1}, Lxw6;->g(Ljava/lang/CharSequence;)V
+
     .line 39
     .line 40
-    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
     .line 41
+    :goto_1
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
     .line 42
     .line 43
-    const-string p0, ")"
-
     .line 44
+    move-result-object p0
+
     .line 45
-    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-object p0
 
     .line 46
+    :pswitch_1
+    check-cast p1, Lcc;
+
     .line 47
     .line 48
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-nez p0, :cond_2
 
     .line 49
     .line 50
+    move v1, v3
+
     .line 51
-    move-result-object p0
+    goto :goto_3
 
     .line 52
+    :cond_2
+    iget-object p0, p1, Lcc;->a:Landroid/view/autofill/AutofillValue;
+
+    .line 53
+    .line 54
+    invoke-virtual {p0}, Landroid/view/autofill/AutofillValue;->isText()Z
+
+    .line 55
+    .line 56
+    .line 57
+    move-result p1
+
+    .line 58
+    const/4 v0, 0x0
+
+    .line 59
+    if-eqz p1, :cond_3
+
+    .line 60
+    .line 61
+    invoke-virtual {p0}, Landroid/view/autofill/AutofillValue;->getTextValue()Ljava/lang/CharSequence;
+
+    .line 62
+    .line 63
+    .line 64
+    move-result-object p0
+
+    .line 65
+    goto :goto_2
+
+    .line 66
+    :cond_3
+    move-object p0, v0
+
+    .line 67
+    :goto_2
+    if-eqz p0, :cond_4
+
+    .line 68
+    .line 69
+    iget-object p1, v2, Lnl6;->z:Lxw6;
+
+    .line 70
+    .line 71
+    invoke-virtual {p1, p0}, Lxw6;->g(Ljava/lang/CharSequence;)V
+
+    .line 72
+    .line 73
+    .line 74
+    :cond_4
+    iget-object p0, v2, Lnl6;->R:Lgl4;
+
+    .line 75
+    .line 76
+    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    .line 77
+    .line 78
+    invoke-virtual {p0, p1}, Lgl4;->setValue(Ljava/lang/Object;)V
+
+    .line 79
+    .line 80
+    .line 81
+    invoke-virtual {v2}, Ljo3;->s1()Lbb1;
+
+    .line 82
+    .line 83
+    .line 84
+    move-result-object p0
+
+    .line 85
+    new-instance p1, Ljl6;
+
+    .line 86
+    .line 87
+    const/4 v3, 0x3
+
+    .line 88
+    invoke-direct {p1, v2, v0, v3}, Ljl6;-><init>(Lnl6;Ly71;B)V
+
+    .line 89
+    .line 90
+    .line 91
+    invoke-static {p0, v0, v0, p1, v3}, Lx37;->J(Lbb1;Lsa1;Leb1;Ls52;I)Lk96;
+
+    .line 92
+    .line 93
+    .line 94
+    :goto_3
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 95
+    .line 96
+    .line 97
+    move-result-object p0
+
+    .line 98
     return-object p0
+
+    .line 99
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

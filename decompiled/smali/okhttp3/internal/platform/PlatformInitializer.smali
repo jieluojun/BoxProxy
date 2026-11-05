@@ -1,16 +1,16 @@
 .class public final Lokhttp3/internal/platform/PlatformInitializer;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lrp2;
+.implements Lho2;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lrp2;"
+        "Lho2;"
     }
 .end annotation
 
@@ -34,7 +34,7 @@
     .locals 0
 
     .line 1
-    sget-object p0, Lqu1;->j:Lqu1;
+    sget-object p0, Lqt1;->j:Lqt1;
 
     .line 2
     .line 3
@@ -50,11 +50,11 @@
     .line 2
     .line 3
     .line 4
-    sget-object p0, Lpp4;->a:Lq9;
+    sget-object p0, Lbo4;->a:Lo9;
 
     .line 5
     .line 6
-    sget-object p0, Lpp4;->a:Lq9;
+    sget-object p0, Lbo4;->a:Lo9;
 
     .line 7
     .line 8
@@ -74,12 +74,12 @@
 
     .line 13
     .line 14
-    iput-object p1, p0, Lq9;->c:Landroid/content/Context;
+    iput-object p1, p0, Lo9;->c:Landroid/content/Context;
 
     .line 15
     .line 16
     :cond_1
-    sget-object p0, Lpp4;->a:Lq9;
+    sget-object p0, Lbo4;->a:Lo9;
 
     .line 17
     .line 18

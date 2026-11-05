@@ -1,32 +1,59 @@
 .class public abstract Lw37;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Lgf;
+# instance fields
+.field public a:Lv90;
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+# virtual methods
+.method public abstract a(Lin1;)V
+.end method
+
+.method public b()Lo52;
+    .locals 0
 
     .line 1
-    new-instance v0, Lgf;
+    iget-object p0, p0, Lw37;->a:Lv90;
 
     .line 2
     .line 3
-    const/4 v1, 0x4
+    return-object p0
+.end method
 
+.method public final c()V
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, Lw37;->b()Lo52;
+
+    .line 2
+    .line 3
     .line 4
-    invoke-direct {v0, v1}, Lgf;-><init>(B)V
+    move-result-object v0
 
     .line 5
+    if-eqz v0, :cond_0
+
     .line 6
     .line 7
-    sput-object v0, Lw37;->a:Lgf;
+    invoke-interface {v0, p0}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 8
     .line 9
+    .line 10
+    :cond_0
+    return-void
+.end method
+
+.method public d(Lv90;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lw37;->a:Lv90;
+
+    .line 2
+    .line 3
     return-void
 .end method

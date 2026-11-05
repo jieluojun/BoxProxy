@@ -1,238 +1,140 @@
-.class public final Lgr4;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lgr4;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final a:Lum4;
+# static fields
+.field public static final enum j:Lgr4;
 
-.field public final b:Lum4;
+.field public static final enum k:Lgr4;
 
-.field public final c:Lum4;
+.field public static final enum l:Lgr4;
 
-.field public final d:Lum4;
-
-.field public final e:Lum4;
-
-.field public final f:Lum4;
-
-.field public final g:Lum4;
+.field public static final synthetic m:[Lgr4;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lgr4;
 
     .line 2
     .line 3
-    .line 4
-    const/4 v0, 0x0
+    const-string v1, "Start"
 
+    .line 4
     .line 5
-    invoke-static {v0}, Lne3;->G(Ljava/lang/Object;)Lum4;
+    const/4 v2, 0x0
 
     .line 6
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 7
     .line 8
-    move-result-object v1
-
     .line 9
-    iput-object v1, p0, Lgr4;->a:Lum4;
+    sput-object v0, Lgr4;->j:Lgr4;
 
     .line 10
     .line 11
-    invoke-static {v0}, Lne3;->G(Ljava/lang/Object;)Lum4;
+    new-instance v1, Lgr4;
 
     .line 12
     .line 13
-    .line 14
-    move-result-object v1
+    const-string v2, "Center"
 
+    .line 14
     .line 15
-    iput-object v1, p0, Lgr4;->b:Lum4;
+    const/4 v3, 0x1
 
     .line 16
-    .line 17
-    invoke-static {v0}, Lne3;->G(Ljava/lang/Object;)Lum4;
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 17
     .line 18
     .line 19
-    .line 20
-    move-result-object v1
+    sput-object v1, Lgr4;->k:Lgr4;
 
+    .line 20
     .line 21
-    iput-object v1, p0, Lgr4;->c:Lum4;
+    new-instance v2, Lgr4;
 
     .line 22
     .line 23
-    invoke-static {v0}, Lne3;->G(Ljava/lang/Object;)Lum4;
+    const-string v3, "End"
 
     .line 24
     .line 25
+    const/4 v4, 0x2
+
     .line 26
-    move-result-object v1
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 27
-    iput-object v1, p0, Lgr4;->d:Lum4;
-
     .line 28
     .line 29
-    invoke-static {v0}, Lne3;->G(Ljava/lang/Object;)Lum4;
+    sput-object v2, Lgr4;->l:Lgr4;
 
     .line 30
     .line 31
+    filled-new-array {v0, v1, v2}, [Lgr4;
+
     .line 32
+    .line 33
+    .line 34
     move-result-object v0
 
-    .line 33
-    iput-object v0, p0, Lgr4;->e:Lum4;
-
-    .line 34
     .line 35
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    sput-object v0, Lgr4;->m:[Lgr4;
 
     .line 36
     .line 37
-    invoke-static {v0}, Lne3;->G(Ljava/lang/Object;)Lum4;
+    return-void
+.end method
 
-    .line 38
-    .line 39
-    .line 40
-    move-result-object v1
+.method public static valueOf(Ljava/lang/String;)Lgr4;
+    .locals 1
 
-    .line 41
-    iput-object v1, p0, Lgr4;->f:Lum4;
+    .line 1
+    const-class v0, Lgr4;
 
-    .line 42
-    .line 43
-    invoke-static {v0}, Lne3;->G(Ljava/lang/Object;)Lum4;
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    .line 44
-    .line 45
-    .line 46
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lgr4;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Lgr4;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lgr4;->m:[Lgr4;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
     move-result-object v0
 
-    .line 47
-    iput-object v0, p0, Lgr4;->g:Lum4;
-
-    .line 48
-    .line 49
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(La45;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lgr4;->a:Lum4;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lum4;->setValue(Ljava/lang/Object;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public final b(La45;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lgr4;->d:Lum4;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lum4;->setValue(Ljava/lang/Object;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public final c(Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lgr4;->e:Lum4;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lum4;->setValue(Ljava/lang/Object;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public final d(Z)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lgr4;->f:Lum4;
-
-    .line 2
-    .line 3
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p1
-
     .line 7
-    invoke-virtual {p0, p1}, Lum4;->setValue(Ljava/lang/Object;)V
+    check-cast v0, [Lgr4;
 
     .line 8
     .line 9
-    .line 10
-    return-void
-.end method
-
-.method public final e(Z)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lgr4;->g:Lum4;
-
-    .line 2
-    .line 3
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p1
-
-    .line 7
-    invoke-virtual {p0, p1}, Lum4;->setValue(Ljava/lang/Object;)V
-
-    .line 8
-    .line 9
-    .line 10
-    return-void
-.end method
-
-.method public final f(La45;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lgr4;->c:Lum4;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lum4;->setValue(Ljava/lang/Object;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
+    return-object v0
 .end method

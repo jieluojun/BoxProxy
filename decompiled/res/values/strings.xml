@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="abc_action_bar_up_description">Navigate up</string>
     <string name="abc_action_mode_done">Done</string>
@@ -322,6 +322,7 @@
     <string name="home_ip_geo_unavailable">Unavailable</string>
     <string name="home_ip_interface_label">Interface</string>
     <string name="home_ip_loading">Loading</string>
+    <string name="home_ip_loading_detail">Detecting current network information</string>
     <string name="home_ip_mode_lan">LAN</string>
     <string name="home_ip_mode_wan">WAN</string>
     <string name="home_latency_refresh">Refresh latency</string>
@@ -801,13 +802,8 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="rules_search_hint">Search rules or rule sets</string>
     <string name="rules_tab_providers">Rule sets</string>
     <string name="rules_tab_route">Route</string>
-    <string name="rules_trace_failure_connect">Could not open a TCP connection to the server</string>
-    <string name="rules_trace_failure_dns">Domain name could not be resolved</string>
-    <string name="rules_trace_failure_exchange">The connection closed before the response completed</string>
-    <string name="rules_trace_failure_invalid_target">This is not a valid HTTP(S) target</string>
-    <string name="rules_trace_failure_protocol">The server violated the protocol during the exchange</string>
-    <string name="rules_trace_failure_timeout">The request exceeded the probe deadline</string>
-    <string name="rules_trace_failure_tls">TLS handshake failed or the certificate was rejected</string>
+    <string name="rules_trace_attempt_failed">failed</string>
+    <string name="rules_trace_attempt_ok">connected</string>
     <string name="rules_trace_step_dns">DNS lookup</string>
     <string name="rules_trace_step_first_byte">First byte</string>
     <string name="rules_trace_step_response">Response</string>
@@ -917,7 +913,6 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="service_accelerated_download_prefix_title">Accelerated URL Prefix</string>
     <string name="service_accelerated_download_subtitle">Use an accelerated channel for downloads</string>
     <string name="service_accelerated_download_title">Accelerated Download</string>
-    <string name="service_auto_start_subtitle">Install a root boot script to start the service after boot</string>
     <string name="service_auto_start_title">Auto Start On Boot</string>
     <string name="settings_backup_action">Backup</string>
     <string name="settings_backup_cleanup_failed">Failed to clean old files before restore</string>
@@ -1165,4 +1160,17 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="wifi_match_picker_location_required">Enable location to scan Wi-Fi</string>
     <string name="wifi_match_picker_permission_required">Wi-Fi permission required</string>
     <string name="wifi_match_ssid_hint">SSID</string>
+<string name="proxy_core_mihomo_dingtalk">Mihomo Smart + eBPF + 钉钉直连</string>
+    <string name="proxy_core_sing_box_dingtalk">Sing-Box Smart + eBPF + 钉钉直连</string>
+    <string name="proxy_config_restore_default">Restore default config</string>
+    <string name="proxy_config_restore_done">Restored default config: %1$s</string>
+    <string name="proxy_config_restore_done_bak">Restored default config: %1$s (old file backed up as %1$s.bak)</string>
+    <string name="proxy_config_restore_failed">Failed to restore default config: %1$s</string>
+    <string name="proxy_config_restore_none">The current core has no built-in default config</string>
+    <string name="proxy_mode_vpn">VPN</string>
+    <string name="service_auto_start_subtitle">Install a root boot script to start the service after boot (the VPN run mode needs the app auto-start permission)</string>
+    <string name="proxy_selector_hide_unavailable">Hide unavailable nodes</string>
+    <string name="service_battery_unrestricted_title">Unrestricted battery usage</string>
+    <string name="service_battery_unrestricted_subtitle">Exempt the app from battery optimization so the system does not freeze or kill it in the background (turning it off opens the system settings page)</string>
+    <string name="service_battery_unrestricted_already">Battery optimization is already off</string>
 </resources>

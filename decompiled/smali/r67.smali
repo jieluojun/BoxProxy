@@ -1,70 +1,63 @@
-.class public final Lr67;
-.super Lvp3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lwm4;
-
-
-# instance fields
-.field public x:Lp20;
+.class public interface abstract Lr67;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # virtual methods
-.method public final f(Lyh1;Ljava/lang/Object;)Ljava/lang/Object;
+.method public a(Ljava/lang/Class;)Ln67;
     .locals 0
 
     .line 1
-    instance-of p1, p2, Lxf5;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     .line 2
     .line 3
-    if-eqz p1, :cond_0
+    const-string p1, "`Factory.create(String, CreationExtras)` is not implemented. You may need to override the method and provide a custom implementation. Note that using `Factory.create(String)` is not supported and considered an error."
 
     .line 4
     .line 5
-    check-cast p2, Lxf5;
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     .line 6
     .line 7
-    goto :goto_0
-
     .line 8
-    :cond_0
-    const/4 p2, 0x0
+    throw p0
+.end method
+
+.method public b(Ljava/lang/Class;Lqq3;)Ln67;
+    .locals 0
+
+    .line 1
+    invoke-interface {p0, p1}, Lr67;->a(Ljava/lang/Class;)Ln67;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method public c(Lqq0;Lqq3;)Ln67;
+    .locals 0
+
+    .line 1
+    invoke-static {p1}, Lf47;->a0(Lqq0;)Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p1
+
+    .line 5
+    invoke-interface {p0, p1, p2}, Lr67;->b(Ljava/lang/Class;Lqq3;)Ln67;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
 
     .line 9
-    :goto_0
-    if-nez p2, :cond_1
-
-    .line 10
-    .line 11
-    new-instance p2, Lxf5;
-
-    .line 12
-    .line 13
-    invoke-direct {p2}, Lxf5;-><init>()V
-
-    .line 14
-    .line 15
-    .line 16
-    :cond_1
-    iget-object p0, p0, Lr67;->x:Lp20;
-
-    .line 17
-    .line 18
-    new-instance p1, Lkc1;
-
-    .line 19
-    .line 20
-    invoke-direct {p1, p0}, Lkc1;-><init>(Lp20;)V
-
-    .line 21
-    .line 22
-    .line 23
-    iput-object p1, p2, Lxf5;->c:Lyr;
-
-    .line 24
-    .line 25
-    return-object p2
+    return-object p0
 .end method

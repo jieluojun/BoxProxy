@@ -1,1083 +1,314 @@
 .class public final Loq1;
-.super Ld00;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Thread;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final y:Loq1;
+# instance fields
+.field public final j:Landroid/os/Bundle;
+
+.field public final k:Lxm0;
+
+.field public final l:Lhy2;
+
+.field public final m:Lj71;
+
+.field public final n:Lpx0;
+
+.field public o:J
+
+.field public p:Z
+
+.field public final synthetic q:Lpq1;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 10
+.method public constructor <init>(Lpq1;JLpx0;)V
+    .locals 0
 
     .line 1
-    const/16 v0, 0x100
+    iput-object p1, p0, Loq1;->q:Lpq1;
 
     .line 2
     .line 3
-    new-array v1, v0, [I
+    invoke-direct {p0}, Ljava/lang/Thread;-><init>()V
 
     .line 4
     .line 5
-    fill-array-data v1, :array_0
-
     .line 6
+    iput-wide p2, p0, Loq1;->o:J
+
     .line 7
     .line 8
-    new-array v2, v0, [I
+    iget-object p1, p1, Lpq1;->x:Lqt0;
 
     .line 9
     .line 10
-    fill-array-data v2, :array_1
+    invoke-virtual {p1}, Lqt0;->getCursor()Lwb1;
 
     .line 11
     .line 12
     .line 13
-    new-array v0, v0, [I
+    move-result-object p2
 
     .line 14
-    .line 15
-    fill-array-data v0, :array_2
+    iget-object p2, p2, Lwb1;->c:Lxm0;
 
+    .line 15
     .line 16
+    invoke-virtual {p2}, Lxm0;->a()Lxm0;
+
     .line 17
     .line 18
-    filled-new-array {v1, v2, v0}, [[I
-
     .line 19
-    .line 20
-    .line 21
-    move-result-object v8
+    move-result-object p2
 
+    .line 20
+    iput-object p2, p0, Loq1;->k:Lxm0;
+
+    .line 21
     .line 22
-    new-instance v3, Loq1;
+    invoke-virtual {p1}, Lqt0;->getEditorLanguage()Lhy2;
 
     .line 23
     .line 24
-    sget-object v7, Ld00;->x:[I
-
     .line 25
+    move-result-object p2
+
     .line 26
-    sget-object v9, Lg17;->b:[S
+    iput-object p2, p0, Loq1;->l:Lhy2;
 
     .line 27
     .line 28
-    const-string v4, "EUC-JP"
+    new-instance p2, Lj71;
 
     .line 29
     .line 30
-    const/4 v5, 0x1
+    invoke-virtual {p1}, Lqt0;->getText()Ln61;
 
     .line 31
-    const/4 v6, 0x3
-
     .line 32
-    invoke-direct/range {v3 .. v9}, Lv37;-><init>(Ljava/lang/String;II[I[[I[S)V
-
     .line 33
-    .line 34
-    .line 35
-    sput-object v3, Loq1;->y:Loq1;
+    move-result-object p3
 
+    .line 34
+    invoke-direct {p2, p3}, Lj71;-><init>(Ln61;)V
+
+    .line 35
     .line 36
     .line 37
-    return-void
+    iput-object p2, p0, Loq1;->m:Lj71;
 
     .line 38
-    nop
-
     .line 39
-    :array_0
-    .array-data 4
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        0x1
-        0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        -0x2
-    .end array-data
+    iput-object p0, p2, Lvl4;->n:Ljava/lang/Object;
 
     .line 40
     .line 41
+    iput-object p4, p0, Loq1;->n:Lpx0;
+
     .line 42
     .line 43
+    invoke-virtual {p1}, Lqt0;->getExtraArguments()Landroid/os/Bundle;
+
     .line 44
     .line 45
     .line 46
+    move-result-object p1
+
     .line 47
+    iput-object p1, p0, Loq1;->j:Landroid/os/Bundle;
+
     .line 48
     .line 49
+    const/4 p1, 0x0
+
     .line 50
+    iput-boolean p1, p0, Loq1;->p:Z
+
     .line 51
     .line 52
-    .line 53
-    .line 54
-    .line 55
-    .line 56
-    .line 57
-    .line 58
-    .line 59
-    .line 60
-    .line 61
-    .line 62
-    .line 63
-    .line 64
-    .line 65
-    .line 66
-    .line 67
-    .line 68
-    .line 69
-    .line 70
-    .line 71
-    .line 72
-    .line 73
-    .line 74
-    .line 75
-    .line 76
-    .line 77
-    .line 78
-    .line 79
-    .line 80
-    .line 81
-    .line 82
-    .line 83
-    .line 84
-    .line 85
-    .line 86
-    .line 87
-    .line 88
-    .line 89
-    .line 90
-    .line 91
-    .line 92
-    .line 93
-    .line 94
-    .line 95
-    .line 96
-    .line 97
-    .line 98
-    .line 99
-    .line 100
-    .line 101
-    .line 102
-    .line 103
-    .line 104
-    .line 105
-    .line 106
-    .line 107
-    .line 108
-    :array_1
-    .array-data 4
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x1
-        -0x2
-    .end array-data
-
-    :array_2
-    .array-data 4
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        -0x2
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        0x1
-        -0x2
-    .end array-data
+    return-void
 .end method
 
 
 # virtual methods
-.method public final r(II[B)I
-    .locals 5
+.method public final run()V
+    .locals 7
 
     .line 1
-    aget-byte v0, p3, p1
+    iget-object v0, p0, Loq1;->q:Lpq1;
 
     .line 2
     .line 3
-    and-int/lit16 v0, v0, 0xff
+    iget-object v1, v0, Lpq1;->x:Lqt0;
 
     .line 4
     .line 5
-    iget-object v1, p0, Ldr3;->s:[I
+    iget-object v2, p0, Loq1;->n:Lpx0;
 
     .line 6
     .line 7
-    aget v1, v1, v0
+    :try_start_0
+    iget-object v3, p0, Loq1;->l:Lhy2;
 
     .line 8
     .line 9
-    const/4 v2, 0x1
+    iget-object v4, p0, Loq1;->m:Lj71;
 
     .line 10
-    const/4 v3, -0x1
-
     .line 11
-    if-gez v1, :cond_0
+    iget-object v5, p0, Loq1;->k:Lxm0;
 
     .line 12
     .line 13
-    if-ne v1, v3, :cond_4
+    iget-object v6, p0, Loq1;->j:Landroid/os/Bundle;
 
     .line 14
     .line 15
-    return v2
+    invoke-interface {v3, v4, v5, v2, v6}, Lhy2;->c(Lj71;Lxm0;Lpx0;Landroid/os/Bundle;)V
 
     .line 16
-    :cond_0
-    add-int/lit8 v4, p1, 0x1
-
     .line 17
     .line 18
-    if-ne v4, p2, :cond_1
+    iget-object v3, v2, Lpx0;->a:Ljava/util/ArrayList;
 
     .line 19
     .line 20
-    invoke-virtual {p0, v0, v2}, Ldr3;->G(II)I
+    invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
 
     .line 21
     .line 22
     .line 23
-    move-result p0
+    move-result v3
 
     .line 24
-    return p0
+    iget-object v4, v2, Lpx0;->b:Ljava/util/ArrayList;
 
     .line 25
-    :cond_1
-    iget-object v2, p0, Ldr3;->r:[[I
-
     .line 26
-    .line 27
-    aget-object v1, v2, v1
+    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
+    .line 27
     .line 28
     .line 29
-    aget-byte v4, p3, v4
+    move-result v4
 
     .line 30
+    add-int/2addr v4, v3
+
     .line 31
-    and-int/lit16 v4, v4, 0xff
+    if-lez v4, :cond_0
 
     .line 32
     .line 33
-    aget v1, v1, v4
+    iget-object v0, v0, Lpq1;->B:Loq1;
 
     .line 34
     .line 35
-    const/4 v4, 0x2
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     .line 36
-    if-gez v1, :cond_2
-
     .line 37
     .line 38
-    if-ne v1, v3, :cond_4
+    move-result-object v3
 
     .line 39
-    .line 40
-    return v4
+    if-ne v0, v3, :cond_1
 
+    .line 40
     .line 41
-    :cond_2
-    add-int/2addr p1, v4
+    const/4 v0, 0x1
 
     .line 42
-    if-ne p1, p2, :cond_3
+    invoke-virtual {v2, v0}, Lpx0;->b(Z)V
 
     .line 43
     .line 44
-    invoke-virtual {p0, v0, v4}, Ldr3;->G(II)I
-
     .line 45
-    .line 46
-    .line 47
-    move-result p0
+    goto :goto_0
 
+    .line 46
+    :cond_0
+    new-instance v2, Lkq1;
+
+    .line 47
     .line 48
-    return p0
+    const/4 v3, 0x3
 
     .line 49
-    :cond_3
-    aget-object p0, v2, v1
+    invoke-direct {v2, v0, v3}, Lkq1;-><init>(Lpq1;B)V
 
     .line 50
     .line 51
-    aget-byte p1, p3, p1
-
     .line 52
-    .line 53
-    and-int/lit16 p1, p1, 0xff
+    invoke-virtual {v1, v2}, Lqt0;->d0(Ljava/lang/Runnable;)V
 
+    .line 53
     .line 54
     .line 55
-    aget p0, p0, p1
+    :cond_1
+    :goto_0
+    new-instance v0, Lr2;
 
     .line 56
     .line 57
-    if-ne p0, v3, :cond_4
+    const/16 v2, 0x8
 
     .line 58
     .line 59
-    const/4 p0, 0x3
+    invoke-direct {v0, p0, v2}, Lr2;-><init>(Ljava/lang/Object;B)V
 
     .line 60
-    return p0
-
     .line 61
-    :cond_4
-    return v3
+    .line 62
+    invoke-virtual {v1, v0}, Lqt0;->d0(Ljava/lang/Runnable;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 63
+    .line 64
+    .line 65
+    return-void
+
+    .line 66
+    :catch_0
+    move-exception p0
+
+    .line 67
+    instance-of v0, p0, Llx0;
+
+    .line 68
+    .line 69
+    const-string v1, "CompletionThread"
+
+    .line 70
+    .line 71
+    if-eqz v0, :cond_2
+
+    .line 72
+    .line 73
+    const-string p0, "Completion is cancelled"
+
+    .line 74
+    .line 75
+    invoke-static {v1, p0}, Landroid/util/Log;->v(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 76
+    .line 77
+    .line 78
+    goto :goto_1
+
+    .line 79
+    :cond_2
+    const-string v0, "Completion failed"
+
+    .line 80
+    .line 81
+    invoke-static {v1, v0, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
+    .line 82
+    .line 83
+    .line 84
+    :goto_1
+    return-void
 .end method

@@ -1,19 +1,33 @@
 .class public final Lk7;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Lwx5;
+.field public final a:Landroid/view/ContextThemeWrapper;
 
-.field public final b:Lfs2;
+.field public final b:Landroid/view/LayoutInflater;
 
-.field public final c:Z
+.field public c:Landroid/graphics/drawable/Drawable;
+
+.field public d:Ljava/lang/CharSequence;
+
+.field public e:Landroid/view/View;
+
+.field public f:Lcj3;
+
+.field public g:Landroid/widget/ListAdapter;
+
+.field public h:Landroid/content/DialogInterface$OnClickListener;
+
+.field public i:Z
+
+.field public j:I
 
 
 # direct methods
-.method public constructor <init>(Lwx5;Lfs2;Z)V
-    .locals 0
+.method public constructor <init>(Landroid/view/ContextThemeWrapper;)V
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -21,17 +35,36 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lk7;->a:Lwx5;
+    const/4 v0, -0x1
 
     .line 5
+    iput v0, p0, Lk7;->j:I
+
     .line 6
-    iput-object p2, p0, Lk7;->b:Lfs2;
-
     .line 7
-    .line 8
-    iput-boolean p3, p0, Lk7;->c:Z
+    iput-object p1, p0, Lk7;->a:Landroid/view/ContextThemeWrapper;
 
+    .line 8
     .line 9
+    const-string v0, "layout_inflater"
+
     .line 10
+    .line 11
+    invoke-virtual {p1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p1
+
+    .line 15
+    check-cast p1, Landroid/view/LayoutInflater;
+
+    .line 16
+    .line 17
+    iput-object p1, p0, Lk7;->b:Landroid/view/LayoutInflater;
+
+    .line 18
+    .line 19
     return-void
 .end method

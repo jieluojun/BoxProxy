@@ -1,8 +1,25 @@
-.class public interface abstract Lm71;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lm71;
+.super Ljava/lang/IllegalArgumentException;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# virtual methods
-.method public abstract a(ILe81;Lvj1;)V
+# instance fields
+.field public final j:J
+
+
+# direct methods
+.method public constructor <init>(J)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/IllegalArgumentException;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-wide p1, p0, Lm71;->j:J
+
+    .line 5
+    .line 6
+    return-void
 .end method

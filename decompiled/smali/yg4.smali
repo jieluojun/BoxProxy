@@ -1,155 +1,150 @@
-.class public abstract Lyg4;
+.class public final synthetic Lyg4;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ld52;
 
 
-# static fields
-.field public static final a:Lkq1;
+# instance fields
+.field public final synthetic j:B
+
+.field public final synthetic k:Ljava/lang/String;
+
+.field public final synthetic l:Las3;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(Las3;Ljava/lang/String;)V
+    .locals 1
 
     .line 1
-    new-instance v0, Lq54;
+    const/4 v0, 0x0
 
     .line 2
+    iput-byte v0, p0, Lyg4;->j:B
+
     .line 3
-    const/16 v1, 0x10
-
     .line 4
-    .line 5
-    invoke-direct {v0, v1}, Lq54;-><init>(B)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 5
     .line 6
     .line 7
+    iput-object p1, p0, Lyg4;->l:Las3;
+
     .line 8
-    new-instance v1, Lkq1;
-
     .line 9
+    iput-object p2, p0, Lyg4;->k:Ljava/lang/String;
+
     .line 10
-    const/4 v2, 0x0
-
     .line 11
-    invoke-direct {v1, v0, v2}, Lkq1;-><init>(Le62;B)V
-
-    .line 12
-    .line 13
-    .line 14
-    sput-object v1, Lyg4;->a:Lkq1;
-
-    .line 15
-    .line 16
     return-void
 .end method
 
-.method public static final a(Lwp3;ZZLe62;)Lwp3;
-    .locals 0
+.method public synthetic constructor <init>(Ljava/lang/String;Las3;)V
+    .locals 1
+
+    .line 12
+    const/4 v0, 0x1
+
+    iput-byte v0, p0, Lyg4;->j:B
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lyg4;->k:Ljava/lang/String;
+
+    iput-object p2, p0, Lyg4;->l:Las3;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
 
     .line 1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-byte v0, p0, Lyg4;->j:B
 
     .line 2
     .line 3
-    .line 4
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object v1, Lk27;->a:Lk27;
 
+    .line 4
     .line 5
+    iget-object v2, p0, Lyg4;->l:Las3;
+
     .line 6
     .line 7
-    invoke-interface {p3}, Le62;->invoke()Ljava/lang/Object;
+    iget-object p0, p0, Lyg4;->k:Ljava/lang/String;
 
     .line 8
     .line 9
+    packed-switch v0, :pswitch_data_0
+
     .line 10
-    move-result-object p3
-
     .line 11
-    check-cast p3, Ljava/lang/Boolean;
-
     .line 12
-    .line 13
-    invoke-virtual {p3}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-interface {v2}, Lu96;->getValue()Ljava/lang/Object;
 
+    .line 13
     .line 14
     .line 15
+    move-result-object v0
+
     .line 16
-    move-result p3
+    check-cast v0, Ljava/lang/String;
 
     .line 17
-    if-nez p3, :cond_0
-
     .line 18
+    invoke-static {v0, p0}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
     .line 19
-    return-object p0
-
     .line 20
-    :cond_0
-    invoke-static {p0}, Lbn;->F(Lwp3;)Lwp3;
-
     .line 21
-    .line 22
-    .line 23
-    move-result-object p0
+    move-result v0
 
+    .line 22
+    if-eqz v0, :cond_0
+
+    .line 23
     .line 24
-    new-instance p3, Lwg4;
+    const/4 p0, 0x0
 
     .line 25
-    .line 26
-    invoke-direct {p3, p1, p2}, Lwg4;-><init>(ZZ)V
+    :cond_0
+    invoke-interface {v2, p0}, Las3;->setValue(Ljava/lang/Object;)V
 
+    .line 26
     .line 27
     .line 28
+    return-object v1
+
     .line 29
-    invoke-interface {p0, p3}, Lwp3;->d0(Lwp3;)Lwp3;
+    :pswitch_0
+    invoke-interface {v2}, Lu96;->getValue()Ljava/lang/Object;
 
     .line 30
     .line 31
     .line 32
-    move-result-object p0
+    move-result-object v0
 
     .line 33
-    return-object p0
-.end method
+    check-cast v0, Lo52;
 
-.method public static b(Lwp3;)Lwp3;
-    .locals 2
+    .line 34
+    .line 35
+    invoke-interface {v0, p0}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .line 36
+    .line 37
+    .line 38
+    return-object v1
 
-    .line 2
-    .line 3
-    .line 4
-    invoke-static {p0}, Lbn;->F(Lwp3;)Lwp3;
-
-    .line 5
-    .line 6
-    .line 7
-    move-result-object p0
-
-    .line 8
-    new-instance v0, Lwg4;
-
-    .line 9
-    .line 10
-    const/4 v1, 0x1
-
-    .line 11
-    invoke-direct {v0, v1, v1}, Lwg4;-><init>(ZZ)V
-
-    .line 12
-    .line 13
-    .line 14
-    invoke-interface {p0, v0}, Lwp3;->d0(Lwp3;)Lwp3;
-
-    .line 15
-    .line 16
-    .line 17
-    move-result-object p0
-
-    .line 18
-    return-object p0
+    .line 39
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

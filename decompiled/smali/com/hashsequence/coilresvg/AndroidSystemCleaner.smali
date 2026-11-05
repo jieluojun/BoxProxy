@@ -1,6 +1,6 @@
 .class final Lcom/hashsequence/coilresvg/AndroidSystemCleaner;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
 .implements Lcom/hashsequence/coilresvg/UniffiCleaner;
@@ -20,7 +20,7 @@
     .line 2
     .line 3
     .line 4
-    invoke-static {}, Lz4;->n()Ljava/lang/ref/Cleaner;
+    invoke-static {}, Lx4;->n()Ljava/lang/ref/Cleaner;
 
     .line 5
     .line 6
@@ -73,7 +73,7 @@
     .line 14
     .line 15
     .line 16
-    invoke-static {p0, p1, v1}, Lz4;->m(Ljava/lang/ref/Cleaner;Ljava/lang/Object;Ljava/lang/Runnable;)Ljava/lang/ref/Cleaner$Cleanable;
+    invoke-static {p0, p1, v1}, Lx4;->m(Ljava/lang/ref/Cleaner;Ljava/lang/Object;Ljava/lang/Runnable;)Ljava/lang/ref/Cleaner$Cleanable;
 
     .line 17
     .line 18

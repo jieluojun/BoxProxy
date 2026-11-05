@@ -1,9 +1,9 @@
 .class public final Ld;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lp75;
+.implements Lb65;
 
 
 # static fields
@@ -45,7 +45,7 @@
     move-result-wide v0
 
     .line 17
-    sget-wide v2, Lp61;->a:D
+    sget-wide v2, Lp51;->a:D
 
     .line 18
     .line 19
@@ -127,7 +127,7 @@
     sub-double/2addr p0, v1
 
     .line 25
-    invoke-static {v5, v6, p0, p1}, Ldn;->b0(DD)D
+    invoke-static {v5, v6, p0, p1}, Lt87;->S(DD)D
 
     .line 26
     .line 27
@@ -266,7 +266,7 @@
     move-result-wide p0
 
     .line 35
-    sget-wide v0, Lp61;->a:D
+    sget-wide v0, Lp51;->a:D
 
     .line 36
     .line 37
@@ -292,7 +292,7 @@
     move-result-wide p0
 
     .line 45
-    sget-wide v0, Lp61;->a:D
+    sget-wide v0, Lp51;->a:D
 
     .line 46
     .line 47

@@ -1,172 +1,77 @@
-.class final Lbc4;
-.super Ldq3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lbc4;
+.super Lwc4;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ldq3;"
-    }
-.end annotation
-
-
-# instance fields
-.field public final j:Lp62;
+# static fields
+.field public static final c:Lbc4;
 
 
 # direct methods
-.method public constructor <init>(Lp62;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lbc4;
 
     .line 2
     .line 3
+    const/4 v1, 0x0
+
     .line 4
-    iput-object p1, p0, Lbc4;->j:Lp62;
+    const/4 v2, 0x1
 
     .line 5
+    invoke-direct {v0, v1, v2, v2}, Lwc4;-><init>(III)V
+
     .line 6
+    .line 7
+    .line 8
+    sput-object v0, Lbc4;->c:Lbc4;
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lvp3;
-    .locals 3
-
-    .line 1
-    new-instance v0, Lcc4;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Lvp3;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    iget-object p0, p0, Lbc4;->j:Lp62;
-
-    .line 7
-    .line 8
-    iput-object p0, v0, Lcc4;->x:Lp62;
-
-    .line 9
-    .line 10
-    const-wide v1, -0x7fffffff80000000L    # -1.0609978955E-314
-
-    .line 11
-    .line 12
-    .line 13
-    .line 14
-    .line 15
-    iput-wide v1, v0, Lcc4;->y:J
-
-    .line 16
-    .line 17
-    return-object v0
-.end method
-
-.method public final b(Lvp3;)V
-    .locals 2
-
-    .line 1
-    check-cast p1, Lcc4;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lbc4;->j:Lp62;
-
-    .line 4
-    .line 5
-    iput-object p0, p1, Lcc4;->x:Lp62;
-
-    .line 6
-    .line 7
-    const-wide v0, -0x7fffffff80000000L    # -1.0609978955E-314
-
-    .line 8
-    .line 9
-    .line 10
-    .line 11
-    .line 12
-    iput-wide v0, p1, Lcc4;->y:J
-
-    .line 13
-    .line 14
-    return-void
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of v1, p1, Lbc4;
-
-    .line 6
-    .line 7
-    const/4 v2, 0x0
-
-    .line 8
-    if-nez v1, :cond_1
-
-    .line 9
-    .line 10
-    return v2
-
-    .line 11
-    :cond_1
-    check-cast p1, Lbc4;
-
-    .line 12
-    .line 13
-    iget-object p1, p1, Lbc4;->j:Lp62;
-
-    .line 14
-    .line 15
-    iget-object p0, p0, Lbc4;->j:Lp62;
-
-    .line 16
-    .line 17
-    if-ne p0, p1, :cond_2
-
-    .line 18
-    .line 19
-    return v0
-
-    .line 20
-    :cond_2
-    return v2
-.end method
-
-.method public final hashCode()I
+.method public final a(Lnp2;Lqu;Lw56;Lca5;Lyc4;)V
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lbc4;->j:Lp62;
+    const/4 p0, 0x0
 
     .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {p1, p0}, Lnp2;->c(I)Ljava/lang/Object;
 
+    .line 3
     .line 4
     .line 5
+    move-result-object p0
+
     .line 6
-    move-result p0
+    check-cast p0, Lm62;
 
     .line 7
-    return p0
+    .line 8
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 9
+    .line 10
+    .line 11
+    invoke-virtual {p3, p0}, Lw56;->c(Lm62;)I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    invoke-virtual {p3, p0}, Lw56;->k(I)V
+
+    .line 16
+    .line 17
+    .line 18
+    return-void
 .end method

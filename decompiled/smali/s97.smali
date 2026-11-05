@@ -1,168 +1,148 @@
 .class public final synthetic Ls97;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lt62;
+.implements Landroid/webkit/ValueCallback;
 
 
 # instance fields
-.field public final synthetic j:Ljava/util/List;
+.field public final synthetic a:B
 
-.field public final synthetic k:Ljava/util/ArrayList;
+.field public final synthetic b:Lyk5;
 
-.field public final synthetic l:Ljava/lang/String;
-
-.field public final synthetic m:Lca7;
-
-.field public final synthetic n:Le62;
-
-.field public final synthetic o:Lp62;
-
-.field public final synthetic p:Lp62;
-
-.field public final synthetic q:Le62;
-
-.field public final synthetic r:Lp62;
-
-.field public final synthetic s:I
+.field public final synthetic c:Landroid/webkit/CookieManager;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/List;Ljava/util/ArrayList;Ljava/lang/String;Lca7;Le62;Lp62;Lp62;Le62;Lp62;I)V
-    .locals 0
+.method public synthetic constructor <init>(Landroid/webkit/CookieManager;Lyk5;)V
+    .locals 1
 
-    .line 1
+    .line 12
+    const/4 v0, 0x0
+
+    iput-byte v0, p0, Ls97;->a:B
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    iput-object p1, p0, Ls97;->c:Landroid/webkit/CookieManager;
+
+    iput-object p2, p0, Ls97;->b:Lyk5;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lyk5;Landroid/webkit/CookieManager;)V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x1
+
     .line 2
+    iput-byte v0, p0, Ls97;->a:B
+
     .line 3
     .line 4
-    iput-object p1, p0, Ls97;->j:Ljava/util/List;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 5
     .line 6
-    iput-object p2, p0, Ls97;->k:Ljava/util/ArrayList;
-
     .line 7
+    iput-object p1, p0, Ls97;->b:Lyk5;
+
     .line 8
-    iput-object p3, p0, Ls97;->l:Ljava/lang/String;
-
     .line 9
+    iput-object p2, p0, Ls97;->c:Landroid/webkit/CookieManager;
+
     .line 10
-    iput-object p4, p0, Ls97;->m:Lca7;
-
     .line 11
-    .line 12
-    iput-object p5, p0, Ls97;->n:Le62;
-
-    .line 13
-    .line 14
-    iput-object p6, p0, Ls97;->o:Lp62;
-
-    .line 15
-    .line 16
-    iput-object p7, p0, Ls97;->p:Lp62;
-
-    .line 17
-    .line 18
-    iput-object p8, p0, Ls97;->q:Le62;
-
-    .line 19
-    .line 20
-    iput-object p9, p0, Ls97;->r:Lp62;
-
-    .line 21
-    .line 22
-    iput p10, p0, Ls97;->s:I
-
-    .line 23
-    .line 24
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 11
+.method public final onReceiveValue(Ljava/lang/Object;)V
+    .locals 2
 
     .line 1
-    move-object v9, p1
+    iget-byte v0, p0, Ls97;->a:B
 
     .line 2
-    check-cast v9, Lz11;
-
     .line 3
+    iget-object v1, p0, Ls97;->c:Landroid/webkit/CookieManager;
+
     .line 4
-    check-cast p2, Ljava/lang/Integer;
-
     .line 5
-    .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, Ls97;->b:Lyk5;
 
+    .line 6
     .line 7
+    check-cast p1, Ljava/lang/Boolean;
+
     .line 8
     .line 9
-    iget p1, p0, Ls97;->s:I
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
-    or-int/lit8 p1, p1, 0x1
-
     .line 12
-    .line 13
-    invoke-static {p1}, Lqu5;->f0(I)I
+    :try_start_0
+    invoke-virtual {v1}, Landroid/webkit/CookieManager;->flush()V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 13
     .line 14
     .line 15
+    goto :goto_0
+
     .line 16
-    move-result v10
+    :catch_0
+    move-exception p1
 
     .line 17
-    iget-object v0, p0, Ls97;->j:Ljava/util/List;
+    const-string v0, "WebViewContent"
 
     .line 18
     .line 19
-    iget-object v1, p0, Ls97;->k:Ljava/util/ArrayList;
+    const-string v1, "flush cookies failed"
 
     .line 20
     .line 21
-    iget-object v2, p0, Ls97;->l:Ljava/lang/String;
+    invoke-static {v0, v1, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
     .line 22
     .line 23
-    iget-object v3, p0, Ls97;->m:Lca7;
-
     .line 24
-    .line 25
-    iget-object v4, p0, Ls97;->n:Le62;
+    :goto_0
+    invoke-virtual {p0}, Lyk5;->invoke()Ljava/lang/Object;
 
+    .line 25
     .line 26
     .line 27
-    iget-object v5, p0, Ls97;->o:Lp62;
+    return-void
 
     .line 28
+    :pswitch_0
+    new-instance p1, Ls97;
+
     .line 29
-    iget-object v6, p0, Ls97;->p:Lp62;
-
     .line 30
-    .line 31
-    iget-object v7, p0, Ls97;->q:Le62;
+    invoke-direct {p1, p0, v1}, Ls97;-><init>(Lyk5;Landroid/webkit/CookieManager;)V
 
+    .line 31
     .line 32
     .line 33
-    iget-object v8, p0, Ls97;->r:Lp62;
+    invoke-virtual {v1, p1}, Landroid/webkit/CookieManager;->removeAllCookies(Landroid/webkit/ValueCallback;)V
 
     .line 34
     .line 35
-    invoke-static/range {v0 .. v10}, Ltz6;->b(Ljava/util/List;Ljava/util/ArrayList;Ljava/lang/String;Lca7;Le62;Lp62;Lp62;Le62;Lp62;Lz11;I)V
-
     .line 36
-    .line 37
-    .line 38
-    sget-object p0, La47;->a:La47;
+    return-void
 
-    .line 39
-    .line 40
-    return-object p0
+    .line 37
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

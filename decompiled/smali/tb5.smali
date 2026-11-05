@@ -1,135 +1,149 @@
 .class public final Ltb5;
-.super Lx2;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lub1;
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public final synthetic k:Ln21;
-
-.field public final synthetic l:Lub5;
+.field public final j:Ljava/lang/Throwable;
 
 
 # direct methods
-.method public constructor <init>(Ln21;Lub5;)V
-    .locals 1
+.method public constructor <init>(Ljava/lang/Throwable;)V
+    .locals 0
 
     .line 1
-    sget-object v0, Lr6;->a0:Lr6;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    iput-object p1, p0, Ltb5;->k:Ln21;
-
     .line 4
-    .line 5
-    iput-object p2, p0, Ltb5;->l:Lub5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 5
     .line 6
     .line 7
-    invoke-direct {p0, v0}, Lx2;-><init>(Lqb1;)V
+    iput-object p1, p0, Ltb5;->j:Ljava/lang/Throwable;
 
     .line 8
     .line 9
-    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final q(Lrb1;Ljava/lang/Throwable;)V
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
     .line 1
-    new-instance v0, Lw;
+    instance-of v0, p1, Ltb5;
 
     .line 2
     .line 3
-    const/16 v1, 0x18
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    iget-object v2, p0, Ltb5;->k:Ln21;
+    check-cast p1, Ltb5;
 
     .line 6
     .line 7
-    iget-object p0, p0, Ltb5;->l:Lub5;
+    iget-object p1, p1, Ltb5;->j:Ljava/lang/Throwable;
 
     .line 8
     .line 9
-    invoke-direct {v0, v2, p0, v1}, Lw;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
+    iget-object p0, p0, Ltb5;->j:Ljava/lang/Throwable;
 
     .line 10
     .line 11
-    .line 12
-    invoke-static {p2, v0}, Lzm;->d0(Ljava/lang/Throwable;Le62;)Z
+    invoke-static {p0, p1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
 
+    .line 12
     .line 13
     .line 14
+    move-result p0
+
     .line 15
-    iget-object v0, p0, Lub5;->k:Lrb1;
+    if-eqz p0, :cond_0
 
     .line 16
     .line 17
-    sget-object v1, Lr6;->a0:Lr6;
+    const/4 p0, 0x1
 
     .line 18
+    return p0
+
     .line 19
-    invoke-interface {v0, v1}, Lrb1;->p(Lqb1;)Lpb1;
+    :cond_0
+    const/4 p0, 0x0
 
     .line 20
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ltb5;->j:Ljava/lang/Throwable;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "Failure("
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object p0, p0, Ltb5;->j:Ljava/lang/Throwable;
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const/16 p0, 0x29
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 19
+    .line 20
     .line 21
-    .line 22
-    move-result-object v0
-
-    .line 23
-    check-cast v0, Lub1;
-
-    .line 24
-    .line 25
-    if-eqz v0, :cond_0
-
-    .line 26
-    .line 27
-    invoke-interface {v0, p1, p2}, Lub1;->q(Lrb1;Ljava/lang/Throwable;)V
-
-    .line 28
-    .line 29
-    .line 30
-    return-void
-
-    .line 31
-    :cond_0
-    iget-object p0, p0, Lub5;->j:Lrb1;
-
-    .line 32
-    .line 33
-    invoke-interface {p0, v1}, Lrb1;->p(Lqb1;)Lpb1;
-
-    .line 34
-    .line 35
-    .line 36
     move-result-object p0
 
-    .line 37
-    check-cast p0, Lub1;
-
-    .line 38
-    .line 39
-    if-eqz p0, :cond_1
-
-    .line 40
-    .line 41
-    invoke-interface {p0, p1, p2}, Lub1;->q(Lrb1;Ljava/lang/Throwable;)V
-
-    .line 42
-    .line 43
-    .line 44
-    return-void
-
-    .line 45
-    :cond_1
-    throw p2
+    .line 22
+    return-object p0
 .end method

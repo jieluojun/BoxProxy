@@ -1,77 +1,210 @@
-.class public final Leh3;
-.super Lzu0;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Leh3;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
-# virtual methods
-.method public final a()I
+# instance fields
+.field public final synthetic j:Ls52;
+
+.field public final synthetic k:Ld52;
+
+.field public final synthetic l:Lko3;
+
+.field public final synthetic m:Ls52;
+
+.field public final synthetic n:Z
+
+.field public final synthetic o:B
+
+.field public final synthetic p:B
+
+.field public final synthetic q:Lhj3;
+
+.field public final synthetic r:Lej3;
+
+.field public final synthetic s:Lzh4;
+
+.field public final synthetic t:I
+
+.field public final synthetic u:I
+
+.field public final synthetic v:S
+
+
+# direct methods
+.method public synthetic constructor <init>(Ls52;Ld52;Lko3;Ls52;ZIILhj3;Lej3;Lzh4;III)V
     .locals 0
 
     .line 1
-    const/4 p0, 0x6
-
-    .line 2
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const-string v1, "+MAP"
-
     .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iput-object p1, p0, Leh3;->j:Ls52;
 
+    .line 5
     .line 6
+    iput-object p2, p0, Leh3;->k:Ld52;
+
     .line 7
     .line 8
-    iget v1, p0, Lzu0;->f:I
+    iput-object p3, p0, Leh3;->l:Lko3;
 
     .line 9
     .line 10
-    const/4 v2, 0x1
+    iput-object p4, p0, Leh3;->m:Ls52;
 
     .line 11
-    if-ne v1, v2, :cond_0
+    .line 12
+    iput-boolean p5, p0, Leh3;->n:Z
+
+    .line 13
+    .line 14
+    iput-byte p6, p0, Leh3;->o:B
+
+    .line 15
+    .line 16
+    iput-byte p7, p0, Leh3;->p:B
+
+    .line 17
+    .line 18
+    iput-object p8, p0, Leh3;->q:Lhj3;
+
+    .line 19
+    .line 20
+    iput-object p9, p0, Leh3;->r:Lej3;
+
+    .line 21
+    .line 22
+    iput-object p10, p0, Leh3;->s:Lzh4;
+
+    .line 23
+    .line 24
+    iput p11, p0, Leh3;->t:I
+
+    .line 25
+    .line 26
+    iput p12, p0, Leh3;->u:I
+
+    .line 27
+    .line 28
+    iput-short p13, p0, Leh3;->v:S
+
+    .line 29
+    .line 30
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 14
+
+    .line 1
+    move-object v10, p1
+
+    .line 2
+    check-cast v10, Lv01;
+
+    .line 3
+    .line 4
+    move-object/from16 v0, p2
+
+    .line 5
+    .line 6
+    check-cast v0, Ljava/lang/Integer;
+
+    .line 7
+    .line 8
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 9
+    .line 10
+    .line 11
+    iget v0, p0, Leh3;->t:I
 
     .line 12
     .line 13
-    const-string v1, " {}"
+    or-int/lit8 v0, v0, 0x1
 
     .line 14
     .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0}, Lw23;->h0(I)I
 
     .line 16
     .line 17
     .line 18
-    :cond_0
-    invoke-super {p0}, Lzu0;->toString()Ljava/lang/String;
+    move-result v11
 
     .line 19
+    iget v0, p0, Leh3;->u:I
+
     .line 20
     .line 21
-    move-result-object p0
+    invoke-static {v0}, Lw23;->h0(I)I
 
     .line 22
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 23
     .line 24
+    move-result v12
+
     .line 25
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v0, p0, Leh3;->j:Ls52;
 
     .line 26
     .line 27
-    .line 28
-    move-result-object p0
+    iget-object v1, p0, Leh3;->k:Ld52;
 
+    .line 28
     .line 29
+    iget-object v2, p0, Leh3;->l:Lko3;
+
+    .line 30
+    .line 31
+    iget-object v3, p0, Leh3;->m:Ls52;
+
+    .line 32
+    .line 33
+    iget-boolean v4, p0, Leh3;->n:Z
+
+    .line 34
+    .line 35
+    iget-byte v5, p0, Leh3;->o:B
+
+    .line 36
+    .line 37
+    iget-byte v6, p0, Leh3;->p:B
+
+    .line 38
+    .line 39
+    iget-object v7, p0, Leh3;->q:Lhj3;
+
+    .line 40
+    .line 41
+    iget-object v8, p0, Leh3;->r:Lej3;
+
+    .line 42
+    .line 43
+    iget-object v9, p0, Leh3;->s:Lzh4;
+
+    .line 44
+    .line 45
+    iget-short v13, p0, Leh3;->v:S
+
+    .line 46
+    .line 47
+    invoke-static/range {v0 .. v13}, Lkh3;->e(Ls52;Ld52;Lko3;Ls52;ZIILhj3;Lej3;Lzh4;Lv01;III)V
+
+    .line 48
+    .line 49
+    .line 50
+    sget-object p0, Lk27;->a:Lk27;
+
+    .line 51
+    .line 52
     return-object p0
 .end method

@@ -1,16 +1,16 @@
 .class public Landroidx/emoji2/text/EmojiCompatInitializer;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lrp2;
+.implements Lho2;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lrp2;"
+        "Lho2;"
     }
 .end annotation
 
@@ -53,20 +53,20 @@
     .locals 3
 
     .line 1
-    new-instance v0, Ln42;
+    new-instance v0, Lm32;
 
     .line 2
     .line 3
-    new-instance v1, Le6;
+    new-instance v1, Lc6;
 
     .line 4
     .line 5
-    invoke-direct {v1, p1}, Le6;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, p1}, Lc6;-><init>(Landroid/content/Context;)V
 
     .line 6
     .line 7
     .line 8
-    invoke-direct {v0, v1}, Ln42;-><init>(Lnt1;)V
+    invoke-direct {v0, v1}, Lm32;-><init>(Lns1;)V
 
     .line 9
     .line 10
@@ -74,11 +74,11 @@
     const/4 v1, 0x1
 
     .line 12
-    iput-boolean v1, v0, Ln42;->b:Z
+    iput-boolean v1, v0, Lm32;->b:Z
 
     .line 13
     .line 14
-    sget-object v1, Lot1;->k:Lot1;
+    sget-object v1, Los1;->k:Los1;
 
     .line 15
     .line 16
@@ -86,7 +86,7 @@
 
     .line 17
     .line 18
-    sget-object v1, Lot1;->j:Ljava/lang/Object;
+    sget-object v1, Los1;->j:Ljava/lang/Object;
 
     .line 19
     .line 20
@@ -94,7 +94,7 @@
 
     .line 21
     :try_start_0
-    sget-object v2, Lot1;->k:Lot1;
+    sget-object v2, Los1;->k:Los1;
 
     .line 22
     .line 23
@@ -102,16 +102,16 @@
 
     .line 24
     .line 25
-    new-instance v2, Lot1;
+    new-instance v2, Los1;
 
     .line 26
     .line 27
-    invoke-direct {v2, v0}, Lot1;-><init>(Ln42;)V
+    invoke-direct {v2, v0}, Los1;-><init>(Lm32;)V
 
     .line 28
     .line 29
     .line 30
-    sput-object v2, Lot1;->k:Lot1;
+    sput-object v2, Los1;->k:Los1;
 
     .line 31
     .line 32
@@ -144,7 +144,7 @@
     .line 39
     :cond_1
     :goto_2
-    invoke-static {p1}, Lit6;->M(Landroid/content/Context;)Lit6;
+    invoke-static {p1}, Lsr6;->M(Landroid/content/Context;)Lsr6;
 
     .line 40
     .line 41
@@ -161,7 +161,7 @@
     .line 46
     .line 47
     .line 48
-    sget-object v1, Lit6;->p:Ljava/lang/Object;
+    sget-object v1, Lsr6;->p:Ljava/lang/Object;
 
     .line 49
     .line 50
@@ -169,7 +169,7 @@
 
     .line 51
     :try_start_1
-    iget-object v2, p1, Lit6;->k:Ljava/lang/Object;
+    iget-object v2, p1, Lsr6;->k:Ljava/lang/Object;
 
     .line 52
     .line 53
@@ -198,7 +198,7 @@
     .line 64
     .line 65
     .line 66
-    invoke-virtual {p1, v0, v2}, Lit6;->F(Ljava/lang/Class;Ljava/util/HashSet;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v2}, Lsr6;->F(Ljava/lang/Class;Ljava/util/HashSet;)Ljava/lang/Object;
 
     .line 67
     .line 68
@@ -223,11 +223,11 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
     .line 74
-    check-cast v2, La73;
+    check-cast v2, Le63;
 
     .line 75
     .line 76
-    invoke-interface {v2}, La73;->h()Ld73;
+    invoke-interface {v2}, Le63;->h()Lh63;
 
     .line 77
     .line 78
@@ -235,16 +235,16 @@
     move-result-object p1
 
     .line 80
-    new-instance v0, Lpt1;
+    new-instance v0, Lps1;
 
     .line 81
     .line 82
-    invoke-direct {v0, p0, p1}, Lpt1;-><init>(Landroidx/emoji2/text/EmojiCompatInitializer;Ld73;)V
+    invoke-direct {v0, p0, p1}, Lps1;-><init>(Landroidx/emoji2/text/EmojiCompatInitializer;Lh63;)V
 
     .line 83
     .line 84
     .line 85
-    invoke-virtual {p1, v0}, Ld73;->a(Lz63;)V
+    invoke-virtual {p1, v0}, Lh63;->a(Ld63;)V
 
     .line 86
     .line 87

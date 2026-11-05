@@ -1,68 +1,52 @@
-.class public final Lge7;
+.class public abstract Lge7;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Landroid/view/View$OnAttachStateChangeListener;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic j:Landroid/view/View;
+# static fields
+.field public static final a:Lfe7;
 
-.field public final synthetic k:Lba5;
+.field public static final b:Lfe7;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;Lba5;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lfe7;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lge7;->j:Landroid/view/View;
-
-    .line 5
-    .line 6
-    iput-object p2, p0, Lge7;->k:Lba5;
-
-    .line 7
-    .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final onViewAttachedToWindow(Landroid/view/View;)V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method public final onViewDetachedFromWindow(Landroid/view/View;)V
-    .locals 0
-
-    .line 1
-    iget-object p1, p0, Lge7;->j:Landroid/view/View;
-
-    .line 2
-    .line 3
-    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+    sget-object v1, Lpl2;->b:Lba7;
 
     .line 4
     .line 5
-    .line 6
-    iget-object p0, p0, Lge7;->k:Lba5;
+    invoke-direct {v0, v1}, Lfe7;-><init>(Lba7;)V
 
+    .line 6
     .line 7
     .line 8
-    invoke-virtual {p0}, Lba5;->A()V
+    sput-object v0, Lge7;->a:Lfe7;
 
     .line 9
     .line 10
+    new-instance v0, Lfe7;
+
     .line 11
+    .line 12
+    sget-object v1, Lpl2;->a:Lba7;
+
+    .line 13
+    .line 14
+    invoke-direct {v0, v1}, Lfe7;-><init>(Lba7;)V
+
+    .line 15
+    .line 16
+    .line 17
+    sput-object v0, Lge7;->b:Lfe7;
+
+    .line 18
+    .line 19
     return-void
 .end method

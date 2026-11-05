@@ -1,401 +1,220 @@
-.class public abstract Lfr5;
+.class public final Lfr5;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lw72;
 
 
-# static fields
-.field public static final a:Ljava/util/List;
+# instance fields
+.field public a:Lmr3;
 
-.field public static final b:Ljava/util/List;
+.field public b:Lw72;
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+# virtual methods
+.method public final a(Ly72;)V
+    .locals 0
 
     .line 1
-    const-class v0, Landroid/app/Application;
+    iget-object p0, p0, Lfr5;->b:Lw72;
 
     .line 2
     .line 3
-    const-class v1, Lvq5;
+    if-eqz p0, :cond_0
 
     .line 4
     .line 5
-    filled-new-array {v0, v1}, [Ljava/lang/Class;
+    invoke-interface {p0, p1}, Lw72;->a(Ly72;)V
 
     .line 6
     .line 7
     .line 8
-    move-result-object v0
-
-    .line 9
-    invoke-static {v0}, Lim;->R([Ljava/lang/Object;)Ljava/util/List;
-
-    .line 10
-    .line 11
-    .line 12
-    move-result-object v0
-
-    .line 13
-    sput-object v0, Lfr5;->a:Ljava/util/List;
-
-    .line 14
-    .line 15
-    invoke-static {v1}, Lim;->Q(Ljava/lang/Object;)Ljava/util/List;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object v0
-
-    .line 19
-    sput-object v0, Lfr5;->b:Ljava/util/List;
-
-    .line 20
-    .line 21
+    :cond_0
     return-void
 .end method
 
-.method public static final a(Ljava/lang/Class;Ljava/util/List;)Ljava/lang/reflect/Constructor;
-    .locals 6
+.method public final b()Lfp2;
+    .locals 1
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, Lfr5;->b:Lw72;
 
     .line 2
     .line 3
-    .line 4
-    invoke-virtual {p0}, Ljava/lang/Class;->getConstructors()[Ljava/lang/reflect/Constructor;
+    if-eqz p0, :cond_0
 
+    .line 4
     .line 5
+    const/4 v0, 0x1
+
     .line 6
+    goto :goto_0
+
     .line 7
-    move-result-object v0
+    :cond_0
+    const/4 v0, 0x0
 
     .line 8
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :goto_0
+    if-nez v0, :cond_1
 
     .line 9
     .line 10
-    .line 11
-    array-length v1, v0
+    const-string v0, "GraphicsContext not provided"
 
+    .line 11
     .line 12
-    const/4 v2, 0x0
+    invoke-static {v0}, Lpo2;->b(Ljava/lang/String;)V
 
     .line 13
-    :goto_0
-    if-ge v2, v1, :cond_3
-
     .line 14
     .line 15
-    aget-object v3, v0, v2
+    :cond_1
+    invoke-interface {p0}, Lw72;->b()Lfp2;
 
     .line 16
     .line 17
-    invoke-virtual {v3}, Ljava/lang/reflect/Constructor;->getParameterTypes()[Ljava/lang/Class;
-
     .line 18
+    move-result-object p0
+
     .line 19
-    .line 20
-    move-result-object v4
-
-    .line 21
-    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 22
-    .line 23
-    .line 24
-    invoke-static {v4}, Lpw;->L0([Ljava/lang/Object;)Ljava/util/List;
-
-    .line 25
-    .line 26
-    .line 27
-    move-result-object v4
-
-    .line 28
-    invoke-virtual {p1, v4}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    .line 29
-    .line 30
-    .line 31
-    move-result v5
-
-    .line 32
-    if-eqz v5, :cond_0
-
-    .line 33
-    .line 34
-    return-object v3
-
-    .line 35
-    :cond_0
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    .line 36
-    .line 37
-    .line 38
-    move-result v3
-
-    .line 39
-    invoke-interface {v4}, Ljava/util/List;->size()I
-
-    .line 40
-    .line 41
-    .line 42
-    move-result v5
-
-    .line 43
-    if-ne v3, v5, :cond_2
-
-    .line 44
-    .line 45
-    invoke-interface {v4, p1}, Ljava/util/List;->containsAll(Ljava/util/Collection;)Z
-
-    .line 46
-    .line 47
-    .line 48
-    move-result v3
-
-    .line 49
-    if-nez v3, :cond_1
-
-    .line 50
-    .line 51
-    goto :goto_1
-
-    .line 52
-    :cond_1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    .line 53
-    .line 54
-    invoke-virtual {p0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    .line 55
-    .line 56
-    .line 57
-    move-result-object p0
-
-    .line 58
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    .line 59
-    .line 60
-    const-string v2, "Class "
-
-    .line 61
-    .line 62
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 63
-    .line 64
-    .line 65
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 66
-    .line 67
-    .line 68
-    const-string p0, " must have parameters in the proper order: "
-
-    .line 69
-    .line 70
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 71
-    .line 72
-    .line 73
-    invoke-virtual {v1, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 74
-    .line 75
-    .line 76
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 77
-    .line 78
-    .line 79
-    move-result-object p0
-
-    .line 80
-    invoke-direct {v0, p0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    .line 81
-    .line 82
-    .line 83
-    throw v0
-
-    .line 84
-    :cond_2
-    :goto_1
-    add-int/lit8 v2, v2, 0x1
-
-    .line 85
-    .line 86
-    goto :goto_0
-
-    .line 87
-    :cond_3
-    const/4 p0, 0x0
-
-    .line 88
     return-object p0
 .end method
 
-.method public static final varargs b(Ljava/lang/Class;Ljava/lang/reflect/Constructor;[Ljava/lang/Object;)Ly77;
-    .locals 2
+.method public final c()Ly72;
+    .locals 3
 
     .line 1
-    const/4 v0, 0x0
+    iget-object v0, p0, Lfr5;->b:Lw72;
 
     .line 2
-    :try_start_0
-    array-length v1, p2
-
     .line 3
-    invoke-static {p2, v1}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
+    goto :goto_0
+
     .line 6
-    move-result-object p2
+    :cond_0
+    const-string v1, "GraphicsContext not provided"
 
     .line 7
-    invoke-virtual {p1, p2}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 8
+    invoke-static {v1}, Lpo2;->b(Ljava/lang/String;)V
+
     .line 9
     .line 10
-    move-result-object p1
-
     .line 11
-    check-cast p1, Ly77;
-    :try_end_0
-    .catch Ljava/lang/IllegalAccessException; {:try_start_0 .. :try_end_0} :catch_2
-    .catch Ljava/lang/InstantiationException; {:try_start_0 .. :try_end_0} :catch_1
-    .catch Ljava/lang/reflect/InvocationTargetException; {:try_start_0 .. :try_end_0} :catch_0
+    :goto_0
+    invoke-interface {v0}, Lw72;->c()Ly72;
 
     .line 12
     .line 13
-    return-object p1
-
     .line 14
-    :catch_0
-    move-exception p1
+    move-result-object v0
 
     .line 15
-    goto :goto_0
+    iget-object v1, p0, Lfr5;->a:Lmr3;
 
     .line 16
-    :catch_1
-    move-exception p1
-
     .line 17
-    goto :goto_1
+    if-nez v1, :cond_1
 
     .line 18
-    :catch_2
-    move-exception p1
-
     .line 19
-    goto :goto_2
+    sget-object v1, Ld94;->a:[Ljava/lang/Object;
 
     .line 20
-    :goto_0
-    const-string p2, "An exception happened in constructor of "
-
     .line 21
+    new-instance v1, Lmr3;
+
     .line 22
-    invoke-static {p2, p0}, Loc1;->o(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
+    .line 23
+    const/4 v2, 0x1
+
+    .line 24
+    invoke-direct {v1, v2}, Lmr3;-><init>(I)V
+
+    .line 25
+    .line 26
+    .line 27
+    invoke-virtual {v1, v0}, Lmr3;->a(Ljava/lang/Object;)V
+
+    .line 28
+    .line 29
+    .line 30
+    iput-object v1, p0, Lfr5;->a:Lmr3;
+
+    .line 31
+    .line 32
+    return-object v0
+
+    .line 33
+    :cond_1
+    invoke-virtual {v1, v0}, Lmr3;->a(Ljava/lang/Object;)V
+
+    .line 34
+    .line 35
+    .line 36
+    return-object v0
+.end method
+
+.method public final d()V
+    .locals 5
+
+    .line 1
+    iget-object v0, p0, Lfr5;->a:Lmr3;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_1
+
+    .line 4
+    .line 5
+    iget-object v1, v0, Lmr3;->a:[Ljava/lang/Object;
+
+    .line 6
+    .line 7
+    iget v2, v0, Lmr3;->b:I
+
+    .line 8
+    .line 9
+    const/4 v3, 0x0
+
+    .line 10
+    :goto_0
+    if-ge v3, v2, :cond_0
+
+    .line 11
+    .line 12
+    aget-object v4, v1, v3
+
+    .line 13
+    .line 14
+    check-cast v4, Ly72;
+
+    .line 15
+    .line 16
+    invoke-virtual {p0, v4}, Lfr5;->a(Ly72;)V
+
+    .line 17
+    .line 18
+    .line 19
+    add-int/lit8 v3, v3, 0x1
+
+    .line 20
+    .line 21
+    goto :goto_0
+
+    .line 22
+    :cond_0
+    invoke-virtual {v0}, Lmr3;->d()V
 
     .line 23
     .line 24
     .line 25
-    move-result-object p0
-
-    .line 26
-    invoke-virtual {p1}, Ljava/lang/reflect/InvocationTargetException;->getCause()Ljava/lang/Throwable;
-
-    .line 27
-    .line 28
-    .line 29
-    move-result-object p1
-
-    .line 30
-    invoke-static {p0, p1}, Lue1;->j(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 31
-    .line 32
-    .line 33
-    return-object v0
-
-    .line 34
-    :goto_1
-    new-instance p2, Ljava/lang/RuntimeException;
-
-    .line 35
-    .line 36
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 37
-    .line 38
-    const-string v1, "A "
-
-    .line 39
-    .line 40
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 41
-    .line 42
-    .line 43
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 44
-    .line 45
-    .line 46
-    const-string p0, " cannot be instantiated."
-
-    .line 47
-    .line 48
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 49
-    .line 50
-    .line 51
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 52
-    .line 53
-    .line 54
-    move-result-object p0
-
-    .line 55
-    invoke-direct {p2, p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 56
-    .line 57
-    .line 58
-    throw p2
-
-    .line 59
-    :goto_2
-    const-string p2, "Failed to access "
-
-    .line 60
-    .line 61
-    invoke-static {p2, p0}, Loc1;->o(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
-
-    .line 62
-    .line 63
-    .line 64
-    move-result-object p0
-
-    .line 65
-    invoke-static {p0, p1}, Lue1;->j(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 66
-    .line 67
-    .line 68
-    return-object v0
+    :cond_1
+    return-void
 .end method

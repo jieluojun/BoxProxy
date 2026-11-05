@@ -1,75 +1,91 @@
-.class public abstract Ls37;
+.class public abstract synthetic Ls37;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final a:[[I
-
-.field public static final b:[Lu37;
-
-.field public static final c:[[I
-
-.field public static final d:[Lu37;
-
-.field public static final e:Lfh0;
+.field public static final synthetic a:[I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 7
+    .locals 6
 
     .line 1
-    const-string v0, "CaseUnfold_12"
+    invoke-static {}, Lsd3;->values()[Lsd3;
 
     .line 2
     .line 3
-    const/4 v1, 0x2
-
     .line 4
-    invoke-static {v1, v0}, Lv37;->L(ILjava/lang/String;)[Ljava/lang/Object;
-
-    .line 5
-    .line 6
-    .line 7
     move-result-object v0
 
+    .line 5
+    array-length v0, v0
+
+    .line 6
+    new-array v0, v0, [I
+
+    .line 7
     .line 8
-    const/4 v2, 0x0
+    const/4 v1, 0x1
 
     .line 9
-    aget-object v3, v0, v2
+    const/4 v2, 0x0
 
     .line 10
-    .line 11
-    check-cast v3, [[I
+    :try_start_0
+    aput v1, v0, v2
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 11
     .line 12
+    :catch_0
+    const/4 v2, 0x2
+
     .line 13
-    sput-object v3, Ls37;->a:[[I
+    :try_start_1
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 14
     .line 15
-    const/4 v4, 0x1
+    :catch_1
+    const/4 v3, 0x3
 
     .line 16
-    aget-object v0, v0, v4
+    :try_start_2
+    aput v3, v0, v2
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 17
     .line 18
-    check-cast v0, [Lu37;
+    :catch_2
+    const/4 v4, 0x4
 
     .line 19
-    .line 20
-    sput-object v0, Ls37;->b:[Lu37;
+    :try_start_3
+    aput v4, v0, v3
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
+    .line 20
     .line 21
+    :catch_3
+    const/4 v5, 0x5
+
     .line 22
-    const-string v0, "CaseUnfold_12_Locale"
+    :try_start_4
+    aput v5, v0, v4
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
     .line 23
     .line 24
-    invoke-static {v1, v0}, Lv37;->L(ILjava/lang/String;)[Ljava/lang/Object;
+    :catch_4
+    invoke-static {}, Landroid/widget/ImageView$ScaleType;->values()[Landroid/widget/ImageView$ScaleType;
 
     .line 25
     .line 26
@@ -77,120 +93,96 @@
     move-result-object v0
 
     .line 28
-    aget-object v5, v0, v2
+    array-length v0, v0
 
     .line 29
+    new-array v0, v0, [I
+
     .line 30
-    check-cast v5, [[I
-
     .line 31
+    :try_start_5
+    sget-object v5, Landroid/widget/ImageView$ScaleType;->FIT_START:Landroid/widget/ImageView$ScaleType;
+
     .line 32
-    sput-object v5, Ls37;->c:[[I
-
     .line 33
-    .line 34
-    aget-object v0, v0, v4
+    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
 
+    .line 34
     .line 35
     .line 36
-    check-cast v0, [Lu37;
+    move-result v5
 
     .line 37
+    aput v1, v0, v5
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
     .line 38
-    sput-object v0, Ls37;->d:[Lu37;
-
     .line 39
+    :catch_5
+    :try_start_6
+    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
+
     .line 40
-    new-instance v0, Lfh0;
-
     .line 41
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
     .line 42
-    array-length v4, v3
-
     .line 43
-    array-length v6, v5
-
     .line 44
-    add-int/2addr v4, v6
+    move-result v1
 
     .line 45
-    invoke-direct {v0, v4, v1}, Lfh0;-><init>(IB)V
+    aput v2, v0, v1
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
 
     .line 46
     .line 47
-    .line 48
-    move v1, v2
+    :catch_6
+    :try_start_7
+    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_END:Landroid/widget/ImageView$ScaleType;
 
+    .line 48
     .line 49
-    :goto_0
-    array-length v4, v3
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     .line 50
-    if-ge v1, v4, :cond_0
-
     .line 51
     .line 52
-    aget-object v4, v3, v1
+    move-result v1
 
     .line 53
+    aput v3, v0, v1
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
+
     .line 54
-    sget-object v6, Ls37;->b:[Lu37;
-
     .line 55
+    :catch_7
+    :try_start_8
+    sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER_INSIDE:Landroid/widget/ImageView$ScaleType;
+
     .line 56
-    aget-object v6, v6, v1
-
     .line 57
-    .line 58
-    invoke-virtual {v0, v4, v6}, Lfh0;->k([ILu37;)V
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
+    .line 58
     .line 59
     .line 60
+    move-result v1
+
     .line 61
-    add-int/lit8 v1, v1, 0x1
+    aput v4, v0, v1
+    :try_end_8
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_8
 
     .line 62
     .line 63
-    goto :goto_0
+    :catch_8
+    sput-object v0, Ls37;->a:[I
 
     .line 64
-    :cond_0
-    :goto_1
-    array-length v1, v5
-
     .line 65
-    if-ge v2, v1, :cond_1
-
-    .line 66
-    .line 67
-    aget-object v1, v5, v2
-
-    .line 68
-    .line 69
-    sget-object v3, Ls37;->d:[Lu37;
-
-    .line 70
-    .line 71
-    aget-object v3, v3, v2
-
-    .line 72
-    .line 73
-    invoke-virtual {v0, v1, v3}, Lfh0;->k([ILu37;)V
-
-    .line 74
-    .line 75
-    .line 76
-    add-int/lit8 v2, v2, 0x1
-
-    .line 77
-    .line 78
-    goto :goto_1
-
-    .line 79
-    :cond_1
-    sput-object v0, Ls37;->e:Lfh0;
-
-    .line 80
-    .line 81
     return-void
 .end method

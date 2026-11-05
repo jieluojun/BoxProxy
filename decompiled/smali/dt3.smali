@@ -1,97 +1,90 @@
 .class public final Ldt3;
-.super Let3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lpy2;
-.implements Lp62;
+.implements Lit3;
+
+
+# static fields
+.field public static final a:Ldt3;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-    .locals 6
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    sget-object v1, Lfi0;->NO_RECEIVER:Ljava/lang/Object;
+    new-instance v0, Ldt3;
 
     .line 2
     .line 3
-    move-object v0, p0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     .line 4
-    move-object v2, p1
-
     .line 5
-    move-object v3, p2
-
     .line 6
-    move-object v4, p3
+    sput-object v0, Ldt3;->a:Ldt3;
 
     .line 7
-    move v5, p4
-
     .line 8
-    invoke-direct/range {v0 .. v5}, Lmv4;-><init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 9
-    .line 10
-    .line 11
     return-void
 .end method
 
 
 # virtual methods
-.method public final computeReflected()Lcy2;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
     .line 1
-    sget-object v0, Loa5;->a:Lpa5;
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-ne p0, p1, :cond_0
 
-    .line 4
-    .line 5
-    .line 6
-    return-object p0
-.end method
-
-.method public final d()V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Lmv4;->getReflected()Lpy2;
-
-    .line 2
     .line 3
     .line 4
-    move-result-object p0
+    return v0
 
     .line 5
-    check-cast p0, Ldt3;
+    :cond_0
+    instance-of p0, p1, Ldt3;
 
     .line 6
     .line 7
-    invoke-virtual {p0}, Ldt3;->d()V
+    if-nez p0, :cond_1
 
     .line 8
     .line 9
+    const/4 p0, 0x0
+
     .line 10
-    return-void
+    return p0
+
+    .line 11
+    :cond_1
+    return v0
 .end method
 
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final hashCode()I
     .locals 0
 
     .line 1
-    invoke-virtual {p0}, Ldt3;->d()V
+    const p0, -0x4fa83647
 
     .line 2
     .line 3
     .line 4
-    const/4 p0, 0x0
+    return p0
+.end method
 
-    .line 5
-    throw p0
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    const-string p0, "None"
+
+    .line 2
+    .line 3
+    return-object p0
 .end method

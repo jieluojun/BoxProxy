@@ -1,13 +1,10 @@
-.class public final Lpu3;
+.class public abstract Lpu3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Luu3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final a:Lpu3;
+.field public static final a:Lou3;
 
 
 # direct methods
@@ -15,76 +12,18 @@
     .locals 1
 
     .line 1
-    new-instance v0, Lpu3;
+    new-instance v0, Lou3;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0}, Lou3;-><init>()V
 
     .line 4
     .line 5
     .line 6
-    sput-object v0, Lpu3;->a:Lpu3;
+    sput-object v0, Lpu3;->a:Lou3;
 
     .line 7
     .line 8
     return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of p0, p1, Lpu3;
-
-    .line 6
-    .line 7
-    if-nez p0, :cond_1
-
-    .line 8
-    .line 9
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-
-    .line 11
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    .line 1
-    const p0, -0x4fa83647
-
-    .line 2
-    .line 3
-    .line 4
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    const-string p0, "None"
-
-    .line 2
-    .line 3
-    return-object p0
 .end method

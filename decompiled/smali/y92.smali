@@ -1,519 +1,1338 @@
 .class public final Ly92;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Ltw5;
+.implements Ljava/util/ListIterator;
+.implements Lvw2;
 
 
 # instance fields
-.field public final a:Landroid/graphics/drawable/Drawable;
+.field public final synthetic j:B
 
-.field public final b:I
+.field public k:I
 
-.field public final c:I
+.field public l:I
 
-.field public d:I
+.field public m:I
 
-.field public final e:I
-
-.field public final f:Landroid/graphics/Paint;
+.field public final n:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
-    .locals 3
+.method public constructor <init>(Laa2;II)V
+    .locals 1
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
     const/4 v0, 0x0
 
-    .line 5
-    iput v0, p0, Ly92;->d:I
+    iput-byte v0, p0, Ly92;->j:B
 
+    and-int/lit8 p3, p3, 0x1
+
+    if-eqz p3, :cond_0
+
+    move p2, v0
+
+    .line 21
+    :cond_0
+    iget-object p3, p1, Laa2;->j:Lmr3;
+
+    .line 22
+    iget p3, p3, Lmr3;->b:I
+
+    .line 23
+    invoke-direct {p0, p1, p2, v0, p3}, Ly92;-><init>(Laa2;III)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Laa2;III)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput-byte v0, p0, Ly92;->j:B
+
+    .line 24
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Ly92;->n:Ljava/lang/Object;
+
+    .line 25
+    iput p2, p0, Ly92;->k:I
+
+    .line 26
+    iput p3, p0, Ly92;->l:I
+
+    .line 27
+    iput p4, p0, Ly92;->m:I
+
+    return-void
+.end method
+
+.method public constructor <init>(Ld93;I)V
+    .locals 1
+
+    const/4 v0, 0x1
+
+    iput-byte v0, p0, Ly92;->j:B
+
+    .line 28
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 29
+    iput-object p1, p0, Ly92;->n:Ljava/lang/Object;
+
+    .line 30
+    iput p2, p0, Ly92;->k:I
+
+    const/4 p2, -0x1
+
+    .line 31
+    iput p2, p0, Ly92;->l:I
+
+    .line 32
+    invoke-static {p1}, Ld93;->c(Ld93;)I
+
+    move-result p1
+
+    iput p1, p0, Ly92;->m:I
+
+    return-void
+.end method
+
+.method public constructor <init>(Le93;I)V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x2
+
+    .line 2
+    iput-byte v0, p0, Ly92;->j:B
+
+    .line 3
+    .line 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 5
     .line 6
     .line 7
-    const v0, 0x7f080063
+    iput-object p1, p0, Ly92;->n:Ljava/lang/Object;
 
     .line 8
     .line 9
+    iput p2, p0, Ly92;->k:I
+
     .line 10
-    invoke-virtual {p1, v0}, Landroid/content/Context;->getDrawable(I)Landroid/graphics/drawable/Drawable;
-
     .line 11
-    .line 12
-    .line 13
-    move-result-object v0
+    const/4 p2, -0x1
 
+    .line 12
+    iput p2, p0, Ly92;->l:I
+
+    .line 13
     .line 14
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+    invoke-static {p1}, Le93;->c(Le93;)I
 
     .line 15
     .line 16
     .line 17
-    move-result-object v0
+    move-result p1
 
     .line 18
-    iput-object v0, p0, Ly92;->a:Landroid/graphics/drawable/Drawable;
+    iput p1, p0, Ly92;->m:I
 
     .line 19
     .line 20
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    .line 21
-    .line 22
-    .line 23
-    move-result-object v0
-
-    .line 24
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    .line 25
-    .line 26
-    .line 27
-    move-result-object v0
-
-    .line 28
-    const/4 v1, 0x1
-
-    .line 29
-    const/high16 v2, 0x41a00000    # 20.0f
-
-    .line 30
-    .line 31
-    invoke-static {v1, v2, v0}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
-
-    .line 32
-    .line 33
-    .line 34
-    move-result v0
-
-    .line 35
-    float-to-int v0, v0
-
-    .line 36
-    iput v0, p0, Ly92;->b:I
-
-    .line 37
-    .line 38
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    .line 39
-    .line 40
-    .line 41
-    move-result-object v0
-
-    .line 42
-    invoke-virtual {v0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    .line 43
-    .line 44
-    .line 45
-    move-result-object v0
-
-    .line 46
-    const/high16 v2, 0x41f00000    # 30.0f
-
-    .line 47
-    .line 48
-    invoke-static {v1, v2, v0}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
-
-    .line 49
-    .line 50
-    .line 51
-    move-result v0
-
-    .line 52
-    float-to-int v0, v0
-
-    .line 53
-    iput v0, p0, Ly92;->c:I
-
-    .line 54
-    .line 55
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    .line 56
-    .line 57
-    .line 58
-    move-result-object p1
-
-    .line 59
-    invoke-virtual {p1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    .line 60
-    .line 61
-    .line 62
-    move-result-object p1
-
-    .line 63
-    const/high16 v0, 0x41b00000    # 22.0f
-
-    .line 64
-    .line 65
-    invoke-static {v1, v0, p1}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
-
-    .line 66
-    .line 67
-    .line 68
-    move-result p1
-
-    .line 69
-    float-to-int p1, p1
-
-    .line 70
-    iput p1, p0, Ly92;->e:I
-
-    .line 71
-    .line 72
-    new-instance p1, Landroid/graphics/Paint;
-
-    .line 73
-    .line 74
-    invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
-
-    .line 75
-    .line 76
-    .line 77
-    iput-object p1, p0, Ly92;->f:Landroid/graphics/Paint;
-
-    .line 78
-    .line 79
-    invoke-virtual {p1, v1}, Landroid/graphics/Paint;->setAntiAlias(Z)V
-
-    .line 80
-    .line 81
-    .line 82
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/graphics/Canvas;IFFILsw5;)V
-    .locals 6
+.method public a()V
+    .locals 1
 
     .line 1
-    iget v0, p0, Ly92;->e:I
+    iget-object v0, p0, Ly92;->n:Ljava/lang/Object;
 
     .line 2
     .line 3
-    int-to-float v0, v0
+    check-cast v0, Ld93;
 
     .line 4
-    const/high16 v1, 0x40000000    # 2.0f
+    .line 5
+    iget-object v0, v0, Ld93;->n:Le93;
+
+    .line 6
+    .line 7
+    invoke-static {v0}, Le93;->c(Le93;)I
+
+    .line 8
+    .line 9
+    .line 10
+    move-result v0
+
+    .line 11
+    iget p0, p0, Ly92;->m:I
+
+    .line 12
+    .line 13
+    if-ne v0, p0, :cond_0
+
+    .line 14
+    .line 15
+    return-void
+
+    .line 16
+    :cond_0
+    new-instance p0, Ljava/util/ConcurrentModificationException;
+
+    .line 17
+    .line 18
+    invoke-direct {p0}, Ljava/util/ConcurrentModificationException;-><init>()V
+
+    .line 19
+    .line 20
+    .line 21
+    throw p0
+.end method
+
+.method public final add(Ljava/lang/Object;)V
+    .locals 4
+
+    .line 1
+    iget-byte v0, p0, Ly92;->j:B
+
+    .line 2
+    .line 3
+    const/4 v1, -0x1
+
+    .line 4
+    iget-object v2, p0, Ly92;->n:Ljava/lang/Object;
 
     .line 5
     .line 6
-    div-float/2addr v0, v1
+    packed-switch v0, :pswitch_data_0
 
     .line 7
-    move v2, p5
-
     .line 8
-    iget-object p5, p0, Ly92;->f:Landroid/graphics/Paint;
-
     .line 9
-    .line 10
-    invoke-virtual {p5, v2}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {p0}, Ly92;->b()V
 
+    .line 10
     .line 11
     .line 12
-    .line 13
-    const/4 v3, 0x0
+    check-cast v2, Le93;
 
+    .line 13
     .line 14
-    if-eqz p2, :cond_0
+    iget v0, p0, Ly92;->k:I
 
     .line 15
     .line 16
-    const/4 v4, -0x1
+    add-int/lit8 v3, v0, 0x1
 
     .line 17
-    if-ne p2, v4, :cond_1
-
     .line 18
-    .line 19
-    :cond_0
-    move p2, p4
+    iput v3, p0, Ly92;->k:I
 
+    .line 19
     .line 20
-    goto :goto_5
+    invoke-virtual {v2, v0, p1}, Le93;->add(ILjava/lang/Object;)V
 
     .line 21
-    :cond_1
-    const/4 v2, 0x1
-
     .line 22
-    if-ne p2, v2, :cond_2
-
     .line 23
-    .line 24
-    move v3, v2
+    iput v1, p0, Ly92;->l:I
 
+    .line 24
     .line 25
-    :cond_2
-    if-eqz v3, :cond_3
+    invoke-static {v2}, Le93;->c(Le93;)I
 
     .line 26
     .line 27
-    sub-float/2addr p3, v0
-
     .line 28
-    :goto_0
-    move v4, p3
+    move-result p1
 
     .line 29
-    move p2, p4
+    iput p1, p0, Ly92;->m:I
 
     .line 30
-    goto :goto_1
-
     .line 31
-    :cond_3
-    add-float/2addr p3, v0
+    return-void
 
     .line 32
-    goto :goto_0
+    :pswitch_0
+    invoke-virtual {p0}, Ly92;->a()V
 
     .line 33
-    :goto_1
-    add-float p4, p2, v0
-
     .line 34
     .line 35
-    invoke-virtual {p1, v4, p4, v0, p5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    check-cast v2, Ld93;
+
+    .line 36
+    .line 37
+    iget v0, p0, Ly92;->k:I
+
+    .line 38
+    .line 39
+    add-int/lit8 v3, v0, 0x1
+
+    .line 40
+    .line 41
+    iput v3, p0, Ly92;->k:I
+
+    .line 42
+    .line 43
+    invoke-virtual {v2, v0, p1}, Ld93;->add(ILjava/lang/Object;)V
+
+    .line 44
+    .line 45
+    .line 46
+    iput v1, p0, Ly92;->l:I
+
+    .line 47
+    .line 48
+    invoke-static {v2}, Ld93;->c(Ld93;)I
+
+    .line 49
+    .line 50
+    .line 51
+    move-result p1
+
+    .line 52
+    iput p1, p0, Ly92;->m:I
+
+    .line 53
+    .line 54
+    return-void
+
+    .line 55
+    :pswitch_1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 56
+    .line 57
+    const-string p1, "Operation is not supported for read-only collection"
+
+    .line 58
+    .line 59
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 60
+    .line 61
+    .line 62
+    throw p0
+
+    .line 63
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public b()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Ly92;->n:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    check-cast v0, Le93;
+
+    .line 4
+    .line 5
+    invoke-static {v0}, Le93;->c(Le93;)I
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v0
+
+    .line 9
+    iget p0, p0, Ly92;->m:I
+
+    .line 10
+    .line 11
+    if-ne v0, p0, :cond_0
+
+    .line 12
+    .line 13
+    return-void
+
+    .line 14
+    :cond_0
+    new-instance p0, Ljava/util/ConcurrentModificationException;
+
+    .line 15
+    .line 16
+    invoke-direct {p0}, Ljava/util/ConcurrentModificationException;-><init>()V
+
+    .line 17
+    .line 18
+    .line 19
+    throw p0
+.end method
+
+.method public final hasNext()Z
+    .locals 4
+
+    .line 1
+    iget-byte v0, p0, Ly92;->j:B
+
+    .line 2
+    .line 3
+    iget-object v1, p0, Ly92;->n:Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    const/4 v2, 0x0
+
+    .line 6
+    const/4 v3, 0x1
+
+    .line 7
+    packed-switch v0, :pswitch_data_0
+
+    .line 8
+    .line 9
+    .line 10
+    iget p0, p0, Ly92;->k:I
+
+    .line 11
+    .line 12
+    check-cast v1, Le93;
+
+    .line 13
+    .line 14
+    iget v0, v1, Le93;->k:I
+
+    .line 15
+    .line 16
+    if-ge p0, v0, :cond_0
+
+    .line 17
+    .line 18
+    move v2, v3
+
+    .line 19
+    :cond_0
+    return v2
+
+    .line 20
+    :pswitch_0
+    iget p0, p0, Ly92;->k:I
+
+    .line 21
+    .line 22
+    check-cast v1, Ld93;
+
+    .line 23
+    .line 24
+    iget v0, v1, Ld93;->l:I
+
+    .line 25
+    .line 26
+    if-ge p0, v0, :cond_1
+
+    .line 27
+    .line 28
+    move v2, v3
+
+    .line 29
+    :cond_1
+    return v2
+
+    .line 30
+    :pswitch_1
+    iget v0, p0, Ly92;->k:I
+
+    .line 31
+    .line 32
+    iget p0, p0, Ly92;->m:I
+
+    .line 33
+    .line 34
+    if-ge v0, p0, :cond_2
+
+    .line 35
+    .line 36
+    move v2, v3
+
+    .line 37
+    :cond_2
+    return v2
+
+    .line 38
+    nop
+
+    .line 39
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final hasPrevious()Z
+    .locals 1
+
+    .line 1
+    iget-byte v0, p0, Ly92;->j:B
+
+    .line 2
+    .line 3
+    packed-switch v0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    iget p0, p0, Ly92;->k:I
+
+    .line 7
+    .line 8
+    if-lez p0, :cond_0
+
+    .line 9
+    .line 10
+    const/4 p0, 0x1
+
+    .line 11
+    goto :goto_0
+
+    .line 12
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 13
+    :goto_0
+    return p0
+
+    .line 14
+    :pswitch_0
+    iget p0, p0, Ly92;->k:I
+
+    .line 15
+    .line 16
+    if-lez p0, :cond_1
+
+    .line 17
+    .line 18
+    const/4 p0, 0x1
+
+    .line 19
+    goto :goto_1
+
+    .line 20
+    :cond_1
+    const/4 p0, 0x0
+
+    .line 21
+    :goto_1
+    return p0
+
+    .line 22
+    :pswitch_1
+    iget v0, p0, Ly92;->k:I
+
+    .line 23
+    .line 24
+    iget p0, p0, Ly92;->l:I
+
+    .line 25
+    .line 26
+    if-le v0, p0, :cond_2
+
+    .line 27
+    .line 28
+    const/4 p0, 0x1
+
+    .line 29
+    goto :goto_2
+
+    .line 30
+    :cond_2
+    const/4 p0, 0x0
+
+    .line 31
+    :goto_2
+    return p0
+
+    .line 32
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final next()Ljava/lang/Object;
+    .locals 4
+
+    .line 1
+    iget-byte v0, p0, Ly92;->j:B
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    iget-object v2, p0, Ly92;->n:Ljava/lang/Object;
+
+    .line 5
+    .line 6
+    packed-switch v0, :pswitch_data_0
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Ly92;->b()V
+
+    .line 10
+    .line 11
+    .line 12
+    iget v0, p0, Ly92;->k:I
+
+    .line 13
+    .line 14
+    check-cast v2, Le93;
+
+    .line 15
+    .line 16
+    iget v3, v2, Le93;->k:I
+
+    .line 17
+    .line 18
+    if-ge v0, v3, :cond_0
+
+    .line 19
+    .line 20
+    add-int/lit8 v1, v0, 0x1
+
+    .line 21
+    .line 22
+    iput v1, p0, Ly92;->k:I
+
+    .line 23
+    .line 24
+    iput v0, p0, Ly92;->l:I
+
+    .line 25
+    .line 26
+    iget-object p0, v2, Le93;->j:[Ljava/lang/Object;
+
+    .line 27
+    .line 28
+    aget-object v1, p0, v0
+
+    .line 29
+    .line 30
+    goto :goto_0
+
+    .line 31
+    :cond_0
+    invoke-static {}, Lvd1;->p()V
+
+    .line 32
+    .line 33
+    .line 34
+    :goto_0
+    return-object v1
+
+    .line 35
+    :pswitch_0
+    invoke-virtual {p0}, Ly92;->a()V
 
     .line 36
     .line 37
     .line 38
-    if-eqz v3, :cond_4
+    iget v0, p0, Ly92;->k:I
 
     .line 39
     .line 40
-    move p0, v4
+    check-cast v2, Ld93;
 
     .line 41
-    goto :goto_2
-
     .line 42
-    :cond_4
-    sub-float p0, v4, v0
+    iget v3, v2, Ld93;->l:I
 
     .line 43
     .line 44
-    :goto_2
-    if-eqz v3, :cond_5
+    if-ge v0, v3, :cond_1
 
     .line 45
     .line 46
-    add-float p3, v4, v0
+    add-int/lit8 v1, v0, 0x1
 
     .line 47
     .line 48
-    move-object v5, p1
+    iput v1, p0, Ly92;->k:I
 
     .line 49
-    move p1, p0
-
     .line 50
-    move-object p0, v5
+    iput v0, p0, Ly92;->l:I
 
     .line 51
-    goto :goto_3
-
     .line 52
-    :cond_5
-    move-object p3, p1
+    iget-object p0, v2, Ld93;->j:[Ljava/lang/Object;
 
     .line 53
-    move p1, p0
-
     .line 54
-    move-object p0, p3
+    iget v1, v2, Ld93;->k:I
 
     .line 55
-    move p3, v4
+    .line 56
+    add-int/2addr v1, v0
+
+    .line 57
+    aget-object v1, p0, v1
+
+    .line 58
+    .line 59
+    goto :goto_1
+
+    .line 60
+    :cond_1
+    invoke-static {}, Lvd1;->p()V
+
+    .line 61
+    .line 62
+    .line 63
+    :goto_1
+    return-object v1
+
+    .line 64
+    :pswitch_1
+    check-cast v2, Laa2;
+
+    .line 65
+    .line 66
+    iget-object v0, v2, Laa2;->j:Lmr3;
+
+    .line 67
+    .line 68
+    iget v1, p0, Ly92;->k:I
+
+    .line 69
+    .line 70
+    add-int/lit8 v2, v1, 0x1
+
+    .line 71
+    .line 72
+    iput v2, p0, Ly92;->k:I
+
+    .line 73
+    .line 74
+    invoke-virtual {v0, v1}, Lmr3;->g(I)Ljava/lang/Object;
+
+    .line 75
+    .line 76
+    .line 77
+    move-result-object p0
+
+    .line 78
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 79
+    .line 80
+    .line 81
+    check-cast p0, Ljo3;
+
+    .line 82
+    .line 83
+    return-object p0
+
+    .line 84
+    nop
+
+    .line 85
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final nextIndex()I
+    .locals 1
+
+    .line 1
+    iget-byte v0, p0, Ly92;->j:B
+
+    .line 2
+    .line 3
+    packed-switch v0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    iget p0, p0, Ly92;->k:I
+
+    .line 7
+    .line 8
+    return p0
+
+    .line 9
+    :pswitch_0
+    iget p0, p0, Ly92;->k:I
+
+    .line 10
+    .line 11
+    return p0
+
+    .line 12
+    :pswitch_1
+    iget v0, p0, Ly92;->k:I
+
+    .line 13
+    .line 14
+    iget p0, p0, Ly92;->l:I
+
+    .line 15
+    .line 16
+    sub-int/2addr v0, p0
+
+    .line 17
+    return v0
+
+    .line 18
+    nop
+
+    .line 19
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final previous()Ljava/lang/Object;
+    .locals 3
+
+    .line 1
+    iget-byte v0, p0, Ly92;->j:B
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    iget-object v2, p0, Ly92;->n:Ljava/lang/Object;
+
+    .line 5
+    .line 6
+    packed-switch v0, :pswitch_data_0
+
+    .line 7
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Ly92;->b()V
+
+    .line 10
+    .line 11
+    .line 12
+    iget v0, p0, Ly92;->k:I
+
+    .line 13
+    .line 14
+    if-lez v0, :cond_0
+
+    .line 15
+    .line 16
+    add-int/lit8 v0, v0, -0x1
+
+    .line 17
+    .line 18
+    iput v0, p0, Ly92;->k:I
+
+    .line 19
+    .line 20
+    iput v0, p0, Ly92;->l:I
+
+    .line 21
+    .line 22
+    check-cast v2, Le93;
+
+    .line 23
+    .line 24
+    iget-object p0, v2, Le93;->j:[Ljava/lang/Object;
+
+    .line 25
+    .line 26
+    aget-object v1, p0, v0
+
+    .line 27
+    .line 28
+    goto :goto_0
+
+    .line 29
+    :cond_0
+    invoke-static {}, Lvd1;->p()V
+
+    .line 30
+    .line 31
+    .line 32
+    :goto_0
+    return-object v1
+
+    .line 33
+    :pswitch_0
+    invoke-virtual {p0}, Ly92;->a()V
+
+    .line 34
+    .line 35
+    .line 36
+    iget v0, p0, Ly92;->k:I
+
+    .line 37
+    .line 38
+    if-lez v0, :cond_1
+
+    .line 39
+    .line 40
+    add-int/lit8 v0, v0, -0x1
+
+    .line 41
+    .line 42
+    iput v0, p0, Ly92;->k:I
+
+    .line 43
+    .line 44
+    iput v0, p0, Ly92;->l:I
+
+    .line 45
+    .line 46
+    check-cast v2, Ld93;
+
+    .line 47
+    .line 48
+    iget-object p0, v2, Ld93;->j:[Ljava/lang/Object;
+
+    .line 49
+    .line 50
+    iget v1, v2, Ld93;->k:I
+
+    .line 51
+    .line 52
+    add-int/2addr v1, v0
+
+    .line 53
+    aget-object v1, p0, v1
+
+    .line 54
+    .line 55
+    goto :goto_1
 
     .line 56
-    :goto_3
-    invoke-virtual/range {p0 .. p5}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+    :cond_1
+    invoke-static {}, Lvd1;->p()V
 
     .line 57
     .line 58
     .line 59
-    sub-float p0, v4, v0
+    :goto_1
+    return-object v1
 
     .line 60
-    .line 61
-    add-float/2addr v4, v0
+    :pswitch_1
+    check-cast v2, Laa2;
 
+    .line 61
     .line 62
-    mul-float/2addr v0, v1
+    iget-object v0, v2, Laa2;->j:Lmr3;
 
     .line 63
-    add-float/2addr v0, p2
-
     .line 64
-    if-eqz v3, :cond_6
+    iget v1, p0, Ly92;->k:I
 
     .line 65
     .line 66
-    goto :goto_4
+    add-int/lit8 v1, v1, -0x1
 
     .line 67
-    :cond_6
-    const/4 v2, 0x2
-
     .line 68
-    :goto_4
-    iput v2, p6, Lsw5;->b:I
+    iput v1, p0, Ly92;->k:I
 
     .line 69
     .line 70
-    iget-object p1, p6, Lsw5;->a:Landroid/graphics/RectF;
+    invoke-virtual {v0, v1}, Lmr3;->g(I)Ljava/lang/Object;
 
     .line 71
     .line 72
-    invoke-virtual {p1, p0, p2, v4, v0}, Landroid/graphics/RectF;->set(FFFF)V
-
     .line 73
+    move-result-object p0
+
     .line 74
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 75
-    return-void
-
     .line 76
-    :goto_5
-    iget p4, p0, Ly92;->d:I
-
     .line 77
-    .line 78
-    iget-object p5, p0, Ly92;->a:Landroid/graphics/drawable/Drawable;
+    check-cast p0, Ljo3;
 
+    .line 78
     .line 79
+    return-object p0
+
     .line 80
-    if-eq p4, v2, :cond_7
+    nop
 
     .line 81
-    .line 82
-    iput v2, p0, Ly92;->d:I
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    .line 83
-    .line 84
-    new-instance p4, Landroid/graphics/PorterDuffColorFilter;
+.method public final previousIndex()I
+    .locals 1
 
-    .line 85
-    .line 86
-    sget-object v0, Landroid/graphics/PorterDuff$Mode;->SRC_ATOP:Landroid/graphics/PorterDuff$Mode;
+    .line 1
+    iget-byte v0, p0, Ly92;->j:B
 
-    .line 87
-    .line 88
-    invoke-direct {p4, v2, v0}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    .line 2
+    .line 3
+    packed-switch v0, :pswitch_data_0
 
-    .line 89
-    .line 90
-    .line 91
-    invoke-virtual {p5, p4}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    .line 4
+    .line 5
+    .line 6
+    iget p0, p0, Ly92;->k:I
 
-    .line 92
-    .line 93
-    .line 94
-    :cond_7
-    iget p4, p0, Ly92;->b:I
+    .line 7
+    .line 8
+    :goto_0
+    add-int/lit8 p0, p0, -0x1
 
-    .line 95
-    .line 96
-    int-to-float p4, p4
+    .line 9
+    .line 10
+    return p0
 
-    .line 97
-    const/high16 v0, 0x3f800000    # 1.0f
+    .line 11
+    :pswitch_0
+    iget p0, p0, Ly92;->k:I
 
-    .line 98
-    .line 99
-    mul-float/2addr p4, v0
+    .line 12
+    .line 13
+    goto :goto_0
 
-    .line 100
-    div-float/2addr p4, v1
+    .line 14
+    :pswitch_1
+    iget v0, p0, Ly92;->k:I
 
-    .line 101
-    sub-float v1, p3, p4
+    .line 15
+    .line 16
+    iget p0, p0, Ly92;->l:I
 
-    .line 102
-    .line 103
-    float-to-int v1, v1
+    .line 17
+    .line 18
+    sub-int/2addr v0, p0
 
-    .line 104
-    float-to-int v2, p2
+    .line 19
+    add-int/lit8 v0, v0, -0x1
 
-    .line 105
-    add-float/2addr p4, p3
+    .line 20
+    .line 21
+    return v0
 
-    .line 106
-    float-to-int p3, p4
+    .line 22
+    nop
 
-    .line 107
-    iget p0, p0, Ly92;->c:I
+    .line 23
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
 
-    .line 108
-    .line 109
-    int-to-float p0, p0
+.method public final remove()V
+    .locals 4
 
-    .line 110
-    mul-float/2addr p0, v0
+    .line 1
+    iget-byte v0, p0, Ly92;->j:B
 
-    .line 111
-    add-float/2addr p0, p2
+    .line 2
+    .line 3
+    const-string v1, "Call next() or previous() before removing element from the iterator."
 
-    .line 112
-    float-to-int p0, p0
+    .line 4
+    .line 5
+    const/4 v2, -0x1
 
-    .line 113
-    invoke-virtual {p5, v1, v2, p3, p0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    .line 6
+    iget-object v3, p0, Ly92;->n:Ljava/lang/Object;
 
-    .line 114
-    .line 115
-    .line 116
-    const/16 p2, 0xff
+    .line 7
+    .line 8
+    packed-switch v0, :pswitch_data_0
 
-    .line 117
-    .line 118
-    invoke-virtual {p5, p2}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
+    .line 9
+    .line 10
+    .line 11
+    check-cast v3, Le93;
 
-    .line 119
-    .line 120
-    .line 121
-    invoke-virtual {p5, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+    .line 12
+    .line 13
+    invoke-virtual {p0}, Ly92;->b()V
 
-    .line 122
-    .line 123
-    .line 124
-    int-to-float p1, v1
+    .line 14
+    .line 15
+    .line 16
+    iget v0, p0, Ly92;->l:I
 
-    .line 125
-    int-to-float p2, v2
+    .line 17
+    .line 18
+    if-eq v0, v2, :cond_0
 
-    .line 126
-    int-to-float p3, p3
+    .line 19
+    .line 20
+    invoke-virtual {v3, v0}, Le93;->b(I)Ljava/lang/Object;
 
-    .line 127
-    int-to-float p0, p0
+    .line 21
+    .line 22
+    .line 23
+    iget v0, p0, Ly92;->l:I
 
-    .line 128
-    iput v3, p6, Lsw5;->b:I
+    .line 24
+    .line 25
+    iput v0, p0, Ly92;->k:I
 
-    .line 129
-    .line 130
-    iget-object p4, p6, Lsw5;->a:Landroid/graphics/RectF;
+    .line 26
+    .line 27
+    iput v2, p0, Ly92;->l:I
 
-    .line 131
-    .line 132
-    invoke-virtual {p4, p1, p2, p3, p0}, Landroid/graphics/RectF;->set(FFFF)V
+    .line 28
+    .line 29
+    invoke-static {v3}, Le93;->c(Le93;)I
 
-    .line 133
-    .line 134
-    .line 135
+    .line 30
+    .line 31
+    .line 32
+    move-result v0
+
+    .line 33
+    iput v0, p0, Ly92;->m:I
+
+    .line 34
+    .line 35
+    goto :goto_0
+
+    .line 36
+    :cond_0
+    invoke-static {v1}, Ljv1;->e(Ljava/lang/String;)V
+
+    .line 37
+    .line 38
+    .line 39
+    :goto_0
     return-void
+
+    .line 40
+    :pswitch_0
+    check-cast v3, Ld93;
+
+    .line 41
+    .line 42
+    invoke-virtual {p0}, Ly92;->a()V
+
+    .line 43
+    .line 44
+    .line 45
+    iget v0, p0, Ly92;->l:I
+
+    .line 46
+    .line 47
+    if-eq v0, v2, :cond_1
+
+    .line 48
+    .line 49
+    invoke-virtual {v3, v0}, Ld93;->b(I)Ljava/lang/Object;
+
+    .line 50
+    .line 51
+    .line 52
+    iget v0, p0, Ly92;->l:I
+
+    .line 53
+    .line 54
+    iput v0, p0, Ly92;->k:I
+
+    .line 55
+    .line 56
+    iput v2, p0, Ly92;->l:I
+
+    .line 57
+    .line 58
+    invoke-static {v3}, Ld93;->c(Ld93;)I
+
+    .line 59
+    .line 60
+    .line 61
+    move-result v0
+
+    .line 62
+    iput v0, p0, Ly92;->m:I
+
+    .line 63
+    .line 64
+    goto :goto_1
+
+    .line 65
+    :cond_1
+    invoke-static {v1}, Ljv1;->e(Ljava/lang/String;)V
+
+    .line 66
+    .line 67
+    .line 68
+    :goto_1
+    return-void
+
+    .line 69
+    :pswitch_1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 70
+    .line 71
+    const-string v0, "Operation is not supported for read-only collection"
+
+    .line 72
+    .line 73
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 74
+    .line 75
+    .line 76
+    throw p0
+
+    .line 77
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final set(Ljava/lang/Object;)V
+    .locals 4
+
+    .line 1
+    iget-byte v0, p0, Ly92;->j:B
+
+    .line 2
+    .line 3
+    const-string v1, "Call next() or previous() before replacing element from the iterator."
+
+    .line 4
+    .line 5
+    iget-object v2, p0, Ly92;->n:Ljava/lang/Object;
+
+    .line 6
+    .line 7
+    const/4 v3, -0x1
+
+    .line 8
+    packed-switch v0, :pswitch_data_0
+
+    .line 9
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Ly92;->b()V
+
+    .line 12
+    .line 13
+    .line 14
+    iget p0, p0, Ly92;->l:I
+
+    .line 15
+    .line 16
+    if-eq p0, v3, :cond_0
+
+    .line 17
+    .line 18
+    check-cast v2, Le93;
+
+    .line 19
+    .line 20
+    invoke-virtual {v2, p0, p1}, Le93;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    .line 21
+    .line 22
+    .line 23
+    goto :goto_0
+
+    .line 24
+    :cond_0
+    invoke-static {v1}, Ljv1;->e(Ljava/lang/String;)V
+
+    .line 25
+    .line 26
+    .line 27
+    :goto_0
+    return-void
+
+    .line 28
+    :pswitch_0
+    invoke-virtual {p0}, Ly92;->a()V
+
+    .line 29
+    .line 30
+    .line 31
+    iget p0, p0, Ly92;->l:I
+
+    .line 32
+    .line 33
+    if-eq p0, v3, :cond_1
+
+    .line 34
+    .line 35
+    check-cast v2, Ld93;
+
+    .line 36
+    .line 37
+    invoke-virtual {v2, p0, p1}, Ld93;->set(ILjava/lang/Object;)Ljava/lang/Object;
+
+    .line 38
+    .line 39
+    .line 40
+    goto :goto_1
+
+    .line 41
+    :cond_1
+    invoke-static {v1}, Ljv1;->e(Ljava/lang/String;)V
+
+    .line 42
+    .line 43
+    .line 44
+    :goto_1
+    return-void
+
+    .line 45
+    :pswitch_1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 46
+    .line 47
+    const-string p1, "Operation is not supported for read-only collection"
+
+    .line 48
+    .line 49
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 50
+    .line 51
+    .line 52
+    throw p0
+
+    .line 53
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,194 +1,95 @@
 .class public final Lgf;
-.super Ljava/lang/ThreadLocal;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Landroid/view/Choreographer$FrameCallback;
 
 
 # instance fields
-.field public final synthetic a:B
+.field public final synthetic j:Lrh0;
+
+.field public final synthetic k:Lo52;
 
 
 # direct methods
-.method public synthetic constructor <init>(B)V
+.method public constructor <init>(Lrh0;Lhf;Lo52;)V
     .locals 0
 
     .line 1
-    iput-byte p1, p0, Lgf;->a:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ljava/lang/ThreadLocal;-><init>()V
-
     .line 4
+    iput-object p1, p0, Lgf;->j:Lrh0;
+
     .line 5
     .line 6
+    iput-object p3, p0, Lgf;->k:Lo52;
+
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final initialValue()Ljava/lang/Object;
-    .locals 2
+.method public final doFrame(J)V
+    .locals 1
 
     .line 1
-    iget-byte p0, p0, Lgf;->a:B
+    iget-object v0, p0, Lgf;->k:Lo52;
 
     .line 2
     .line 3
-    packed-switch p0, :pswitch_data_0
+    :try_start_0
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     .line 4
     .line 5
     .line 6
-    const/16 p0, 0x400
+    move-result-object p1
 
     .line 7
-    .line 8
-    new-array p0, p0, [C
+    invoke-interface {v0, p1}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 8
     .line 9
     .line 10
-    return-object p0
+    move-result-object p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 11
-    :pswitch_0
-    new-instance p0, Lys5;
+    goto :goto_0
 
     .line 12
+    :catchall_0
+    move-exception p1
+
     .line 13
-    invoke-direct {p0}, Lys5;-><init>()V
+    new-instance p2, Ltb5;
 
     .line 14
     .line 15
+    invoke-direct {p2, p1}, Ltb5;-><init>(Ljava/lang/Throwable;)V
+
     .line 16
-    return-object p0
-
     .line 17
-    :pswitch_1
-    new-instance p0, Ljava/util/Random;
-
     .line 18
+    move-object p1, p2
+
     .line 19
-    invoke-direct {p0}, Ljava/util/Random;-><init>()V
+    :goto_0
+    iget-object p0, p0, Lgf;->j:Lrh0;
 
     .line 20
     .line 21
+    invoke-virtual {p0, p1}, Lrh0;->resumeWith(Ljava/lang/Object;)V
+
     .line 22
-    return-object p0
-
     .line 23
-    :pswitch_2
-    new-instance p0, Ljava/text/SimpleDateFormat;
-
     .line 24
-    .line 25
-    const-string v0, "EEE, dd MMM yyyy HH:mm:ss \'GMT\'"
-
-    .line 26
-    .line 27
-    sget-object v1, Ljava/util/Locale;->US:Ljava/util/Locale;
-
-    .line 28
-    .line 29
-    invoke-direct {p0, v0, v1}, Ljava/text/SimpleDateFormat;-><init>(Ljava/lang/String;Ljava/util/Locale;)V
-
-    .line 30
-    .line 31
-    .line 32
-    const/4 v0, 0x0
-
-    .line 33
-    invoke-virtual {p0, v0}, Ljava/text/DateFormat;->setLenient(Z)V
-
-    .line 34
-    .line 35
-    .line 36
-    sget-object v0, Lfg7;->a:Ljava/util/TimeZone;
-
-    .line 37
-    .line 38
-    invoke-virtual {p0, v0}, Ljava/text/DateFormat;->setTimeZone(Ljava/util/TimeZone;)V
-
-    .line 39
-    .line 40
-    .line 41
-    return-object p0
-
-    .line 42
-    :pswitch_3
-    new-instance p0, Ljf;
-
-    .line 43
-    .line 44
-    invoke-static {}, Landroid/view/Choreographer;->getInstance()Landroid/view/Choreographer;
-
-    .line 45
-    .line 46
-    .line 47
-    move-result-object v0
-
-    .line 48
-    invoke-static {}, Landroid/os/Looper;->myLooper()Landroid/os/Looper;
-
-    .line 49
-    .line 50
-    .line 51
-    move-result-object v1
-
-    .line 52
-    if-eqz v1, :cond_0
-
-    .line 53
-    .line 54
-    invoke-static {v1}, Landroid/os/Handler;->createAsync(Landroid/os/Looper;)Landroid/os/Handler;
-
-    .line 55
-    .line 56
-    .line 57
-    move-result-object v1
-
-    .line 58
-    invoke-direct {p0, v0, v1}, Ljf;-><init>(Landroid/view/Choreographer;Landroid/os/Handler;)V
-
-    .line 59
-    .line 60
-    .line 61
-    iget-object v0, p0, Ljf;->u:Llf;
-
-    .line 62
-    .line 63
-    invoke-static {p0, v0}, Lzm;->W(Lpb1;Lrb1;)Lrb1;
-
-    .line 64
-    .line 65
-    .line 66
-    move-result-object p0
-
-    .line 67
-    goto :goto_0
-
-    .line 68
-    :cond_0
-    const-string p0, "no Looper on this thread"
-
-    .line 69
-    .line 70
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
-
-    .line 71
-    .line 72
-    .line 73
-    const/4 p0, 0x0
-
-    .line 74
-    :goto_0
-    return-object p0
-
-    .line 75
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

@@ -1,15 +1,15 @@
 .class public final Ld80;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # virtual methods
-.method public final serializer()Lqy2;
+.method public final serializer()Lgx2;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lqy2;"
+            "Lgx2;"
         }
     .end annotation
 

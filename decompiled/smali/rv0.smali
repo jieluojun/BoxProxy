@@ -1,509 +1,571 @@
-.class public final Lrv0;
+.class public abstract Lrv0;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Le62;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Lvy6;
+# static fields
+.field public static final synthetic a:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lvy6;B)V
-    .locals 0
-
-    .line 1
-    iput-byte p2, p0, Lrv0;->j:B
-
-    .line 2
-    .line 3
-    iput-object p1, p0, Lrv0;->k:Lvy6;
-
-    .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 6
-    .line 7
-    .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
+.method static constructor <clinit>()V
     .locals 1
 
     .line 1
-    iget-byte v0, p0, Lrv0;->j:B
+    new-instance v0, Ljava/lang/ThreadLocal;
 
     .line 2
     .line 3
-    iget-object p0, p0, Lrv0;->k:Lvy6;
+    return-void
+.end method
 
+.method public static a(DDD)I
+    .locals 17
+
+    .line 1
+    const-wide v0, 0x4009ecbfb15b573fL    # 3.2406
+
+    .line 2
+    .line 3
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_0
-
     .line 6
+    mul-double v0, v0, p0
+
     .line 7
     .line 8
-    iget-object p0, p0, Luy6;->d:Lum4;
+    const-wide v2, -0x400767a0f9096bbaL    # -1.5372
 
     .line 9
     .line 10
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
-
     .line 11
     .line 12
     .line 13
-    move-result-object p0
+    mul-double v2, v2, p2
 
     .line 14
-    return-object p0
-
     .line 15
-    :pswitch_0
-    invoke-virtual {p0}, Luy6;->f()Lqy6;
+    add-double/2addr v2, v0
 
     .line 16
+    const-wide v0, -0x402016f0068db8bbL    # -0.4986
+
     .line 17
     .line 18
-    move-result-object p0
-
     .line 19
-    return-object p0
-
     .line 20
-    :pswitch_1
-    iget-object p0, p0, Luy6;->d:Lum4;
-
     .line 21
+    mul-double v0, v0, p4
+
     .line 22
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
-
     .line 23
-    .line 24
-    .line 25
-    move-result-object p0
+    add-double/2addr v0, v2
 
+    .line 24
+    const-wide/high16 v2, 0x4059000000000000L    # 100.0
+
+    .line 25
     .line 26
-    return-object p0
+    div-double/2addr v0, v2
 
     .line 27
-    :pswitch_2
-    invoke-virtual {p0}, Luy6;->f()Lqy6;
+    const-wide v4, -0x4010fec56d5cfaadL    # -0.9689
 
     .line 28
     .line 29
     .line 30
-    move-result-object p0
-
     .line 31
-    return-object p0
-
     .line 32
-    :pswitch_3
-    invoke-virtual {p0}, Luy6;->f()Lqy6;
+    mul-double v4, v4, p0
 
     .line 33
     .line 34
+    const-wide v6, 0x3ffe0346dc5d6388L    # 1.8758
+
     .line 35
-    move-result-object p0
-
     .line 36
-    return-object p0
-
     .line 37
-    :pswitch_4
-    iget-object p0, p0, Luy6;->d:Lum4;
-
     .line 38
     .line 39
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
+    mul-double v6, v6, p2
 
     .line 40
     .line 41
+    add-double/2addr v6, v4
+
     .line 42
-    move-result-object p0
+    const-wide v4, 0x3fa53f7ced916873L    # 0.0415
 
     .line 43
-    return-object p0
-
     .line 44
-    :pswitch_5
-    invoke-virtual {p0}, Luy6;->f()Lqy6;
-
     .line 45
     .line 46
     .line 47
-    move-result-object p0
+    mul-double v4, v4, p4
 
     .line 48
-    return-object p0
-
     .line 49
-    :pswitch_6
-    iget-object p0, p0, Luy6;->d:Lum4;
+    add-double/2addr v4, v6
 
     .line 50
+    div-double/2addr v4, v2
+
     .line 51
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
+    const-wide v6, 0x3fac84b5dcc63f14L    # 0.0557
 
     .line 52
     .line 53
     .line 54
-    move-result-object p0
-
     .line 55
-    return-object p0
-
     .line 56
-    :pswitch_7
-    invoke-virtual {p0}, Luy6;->f()Lqy6;
+    mul-double v6, v6, p0
 
     .line 57
     .line 58
+    const-wide v8, -0x4035e353f7ced917L    # -0.204
+
     .line 59
-    move-result-object p0
-
     .line 60
-    return-object p0
-
     .line 61
-    :pswitch_8
-    iget-object p0, p0, Luy6;->d:Lum4;
-
     .line 62
     .line 63
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
+    mul-double v8, v8, p2
 
     .line 64
     .line 65
+    add-double/2addr v8, v6
+
     .line 66
-    move-result-object p0
+    const-wide v6, 0x3ff0e978d4fdf3b6L    # 1.057
 
     .line 67
-    return-object p0
-
     .line 68
-    :pswitch_9
-    iget-object p0, p0, Luy6;->d:Lum4;
-
     .line 69
     .line 70
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
-
     .line 71
+    mul-double v6, v6, p4
+
     .line 72
     .line 73
-    move-result-object p0
+    add-double/2addr v6, v8
 
     .line 74
-    return-object p0
+    div-double/2addr v6, v2
 
     .line 75
-    :pswitch_a
-    invoke-virtual {p0}, Luy6;->f()Lqy6;
+    const-wide v2, 0x3f69a5c37387b719L    # 0.0031308
 
     .line 76
     .line 77
     .line 78
-    move-result-object p0
-
     .line 79
-    return-object p0
-
     .line 80
-    :pswitch_b
-    iget-object p0, p0, Luy6;->d:Lum4;
+    cmpl-double v8, v0, v2
 
     .line 81
     .line 82
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
+    const-wide v9, 0x4029d70a3d70a3d7L    # 12.92
 
     .line 83
     .line 84
     .line 85
-    move-result-object p0
-
     .line 86
-    return-object p0
-
     .line 87
-    :pswitch_c
-    invoke-virtual {p0}, Luy6;->f()Lqy6;
+    const-wide v11, 0x3fac28f5c28f5c29L    # 0.055
 
     .line 88
     .line 89
     .line 90
-    move-result-object p0
-
     .line 91
-    return-object p0
-
     .line 92
-    :pswitch_d
-    iget-object p0, p0, Luy6;->d:Lum4;
+    const-wide v13, 0x3fdaaaaaaaaaaaabL    # 0.4166666666666667
 
     .line 93
     .line 94
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
-
     .line 95
     .line 96
     .line 97
-    move-result-object p0
+    const-wide v15, 0x3ff0e147ae147ae1L    # 1.055
 
     .line 98
-    return-object p0
-
     .line 99
-    :pswitch_e
-    invoke-virtual {p0}, Luy6;->f()Lqy6;
-
     .line 100
     .line 101
     .line 102
-    move-result-object p0
+    if-lez v8, :cond_0
 
     .line 103
-    return-object p0
-
     .line 104
-    :pswitch_f
-    iget-object p0, p0, Luy6;->d:Lum4;
+    invoke-static {v0, v1, v13, v14}, Ljava/lang/Math;->pow(DD)D
 
     .line 105
     .line 106
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
-
     .line 107
+    move-result-wide v0
+
     .line 108
+    mul-double/2addr v0, v15
+
     .line 109
-    move-result-object p0
+    sub-double/2addr v0, v11
 
     .line 110
-    return-object p0
+    goto :goto_0
 
     .line 111
-    :pswitch_10
-    invoke-virtual {p0}, Luy6;->f()Lqy6;
+    :cond_0
+    mul-double/2addr v0, v9
 
     .line 112
+    :goto_0
+    cmpl-double v8, v4, v2
+
     .line 113
     .line 114
-    move-result-object p0
+    if-lez v8, :cond_1
 
     .line 115
-    return-object p0
-
     .line 116
-    :pswitch_11
-    iget-object p0, p0, Luy6;->d:Lum4;
+    invoke-static {v4, v5, v13, v14}, Ljava/lang/Math;->pow(DD)D
 
     .line 117
     .line 118
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
-
     .line 119
+    move-result-wide v4
+
     .line 120
+    mul-double/2addr v4, v15
+
     .line 121
-    move-result-object p0
+    sub-double/2addr v4, v11
 
     .line 122
-    return-object p0
+    goto :goto_1
 
     .line 123
-    :pswitch_12
-    invoke-virtual {p0}, Luy6;->f()Lqy6;
+    :cond_1
+    mul-double/2addr v4, v9
 
     .line 124
+    :goto_1
+    cmpl-double v2, v6, v2
+
     .line 125
     .line 126
-    move-result-object p0
+    if-lez v2, :cond_2
 
     .line 127
-    return-object p0
-
     .line 128
-    :pswitch_13
-    invoke-virtual {p0}, Luy6;->f()Lqy6;
+    invoke-static {v6, v7, v13, v14}, Ljava/lang/Math;->pow(DD)D
 
     .line 129
     .line 130
     .line 131
-    move-result-object p0
+    move-result-wide v2
 
     .line 132
-    return-object p0
+    mul-double/2addr v2, v15
 
     .line 133
-    :pswitch_14
-    iget-object p0, p0, Luy6;->d:Lum4;
+    sub-double/2addr v2, v11
 
     .line 134
+    goto :goto_2
+
     .line 135
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
+    :cond_2
+    mul-double v2, v6, v9
 
     .line 136
     .line 137
+    :goto_2
+    const-wide v6, 0x406fe00000000000L    # 255.0
+
     .line 138
-    move-result-object p0
-
     .line 139
-    return-object p0
-
     .line 140
-    :pswitch_15
-    invoke-virtual {p0}, Luy6;->f()Lqy6;
-
     .line 141
     .line 142
+    mul-double/2addr v0, v6
+
     .line 143
-    move-result-object p0
+    invoke-static {v0, v1}, Ljava/lang/Math;->round(D)J
 
     .line 144
-    return-object p0
-
     .line 145
-    :pswitch_16
-    iget-object p0, p0, Luy6;->d:Lum4;
-
     .line 146
+    move-result-wide v0
+
     .line 147
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
+    long-to-int v0, v0
 
     .line 148
+    const/16 v1, 0xff
+
     .line 149
     .line 150
-    move-result-object p0
+    const/4 v8, 0x0
 
     .line 151
-    return-object p0
+    if-gez v0, :cond_3
 
     .line 152
-    :pswitch_17
-    invoke-virtual {p0}, Luy6;->f()Lqy6;
-
     .line 153
+    move v0, v8
+
     .line 154
+    goto :goto_3
+
     .line 155
-    move-result-object p0
+    :cond_3
+    invoke-static {v0, v1}, Ljava/lang/Math;->min(II)I
 
     .line 156
-    return-object p0
-
     .line 157
-    :pswitch_18
-    iget-object p0, p0, Luy6;->d:Lum4;
-
     .line 158
+    move-result v0
+
     .line 159
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
+    :goto_3
+    mul-double/2addr v4, v6
 
     .line 160
+    invoke-static {v4, v5}, Ljava/lang/Math;->round(D)J
+
     .line 161
     .line 162
-    move-result-object p0
-
     .line 163
-    return-object p0
+    move-result-wide v4
 
     .line 164
-    :pswitch_19
-    invoke-virtual {p0}, Luy6;->f()Lqy6;
+    long-to-int v4, v4
 
     .line 165
+    if-gez v4, :cond_4
+
     .line 166
     .line 167
-    move-result-object p0
+    move v4, v8
 
     .line 168
-    return-object p0
+    goto :goto_4
 
     .line 169
-    :pswitch_1a
-    iget-object p0, p0, Luy6;->d:Lum4;
+    :cond_4
+    invoke-static {v4, v1}, Ljava/lang/Math;->min(II)I
 
     .line 170
     .line 171
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
-
     .line 172
+    move-result v4
+
     .line 173
+    :goto_4
+    mul-double/2addr v2, v6
+
     .line 174
-    move-result-object p0
+    invoke-static {v2, v3}, Ljava/lang/Math;->round(D)J
 
     .line 175
-    return-object p0
-
     .line 176
-    :pswitch_1b
-    iget-object p0, p0, Luy6;->d:Lum4;
-
     .line 177
+    move-result-wide v2
+
     .line 178
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
+    long-to-int v2, v2
 
     .line 179
+    if-gez v2, :cond_5
+
     .line 180
     .line 181
-    move-result-object p0
+    goto :goto_5
 
     .line 182
-    return-object p0
+    :cond_5
+    invoke-static {v2, v1}, Ljava/lang/Math;->min(II)I
 
     .line 183
-    :pswitch_1c
-    invoke-virtual {p0}, Luy6;->f()Lqy6;
-
     .line 184
     .line 185
+    move-result v8
+
     .line 186
-    move-result-object p0
+    :goto_5
+    invoke-static {v0, v4, v8}, Landroid/graphics/Color;->rgb(III)I
 
     .line 187
-    return-object p0
-
     .line 188
-    nop
-
     .line 189
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1c
-        :pswitch_1b
-        :pswitch_1a
-        :pswitch_19
-        :pswitch_18
-        :pswitch_17
-        :pswitch_16
-        :pswitch_15
-        :pswitch_14
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    move-result v0
+
+    .line 190
+    return v0
+.end method
+
+.method public static b(II)I
+    .locals 6
+
+    .line 1
+    invoke-static {p1}, Landroid/graphics/Color;->alpha(I)I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    invoke-static {p0}, Landroid/graphics/Color;->alpha(I)I
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v1
+
+    .line 9
+    rsub-int v2, v0, 0xff
+
+    .line 10
+    .line 11
+    rsub-int v3, v1, 0xff
+
+    .line 12
+    .line 13
+    mul-int/2addr v3, v2
+
+    .line 14
+    div-int/lit16 v3, v3, 0xff
+
+    .line 15
+    .line 16
+    rsub-int v2, v3, 0xff
+
+    .line 17
+    .line 18
+    invoke-static {p0}, Landroid/graphics/Color;->red(I)I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v3
+
+    .line 22
+    invoke-static {p1}, Landroid/graphics/Color;->red(I)I
+
+    .line 23
+    .line 24
+    .line 25
+    move-result v4
+
+    .line 26
+    invoke-static {v3, v1, v4, v0, v2}, Lrv0;->c(IIIII)I
+
+    .line 27
+    .line 28
+    .line 29
+    move-result v3
+
+    .line 30
+    invoke-static {p0}, Landroid/graphics/Color;->green(I)I
+
+    .line 31
+    .line 32
+    .line 33
+    move-result v4
+
+    .line 34
+    invoke-static {p1}, Landroid/graphics/Color;->green(I)I
+
+    .line 35
+    .line 36
+    .line 37
+    move-result v5
+
+    .line 38
+    invoke-static {v4, v1, v5, v0, v2}, Lrv0;->c(IIIII)I
+
+    .line 39
+    .line 40
+    .line 41
+    move-result v4
+
+    .line 42
+    invoke-static {p0}, Landroid/graphics/Color;->blue(I)I
+
+    .line 43
+    .line 44
+    .line 45
+    move-result p0
+
+    .line 46
+    invoke-static {p1}, Landroid/graphics/Color;->blue(I)I
+
+    .line 47
+    .line 48
+    .line 49
+    move-result p1
+
+    .line 50
+    invoke-static {p0, v1, p1, v0, v2}, Lrv0;->c(IIIII)I
+
+    .line 51
+    .line 52
+    .line 53
+    move-result p0
+
+    .line 54
+    invoke-static {v2, v3, v4, p0}, Landroid/graphics/Color;->argb(IIII)I
+
+    .line 55
+    .line 56
+    .line 57
+    move-result p0
+
+    .line 58
+    return p0
+.end method
+
+.method public static c(IIIII)I
+    .locals 0
+
+    .line 1
+    if-nez p4, :cond_0
+
+    .line 2
+    .line 3
+    const/4 p0, 0x0
+
+    .line 4
+    return p0
+
+    .line 5
+    :cond_0
+    mul-int/lit16 p0, p0, 0xff
+
+    .line 6
+    .line 7
+    mul-int/2addr p0, p1
+
+    .line 8
+    mul-int/2addr p2, p3
+
+    .line 9
+    rsub-int p1, p1, 0xff
+
+    .line 10
+    .line 11
+    mul-int/2addr p1, p2
+
+    .line 12
+    add-int/2addr p1, p0
+
+    .line 13
+    mul-int/lit16 p4, p4, 0xff
+
+    .line 14
+    .line 15
+    div-int/2addr p1, p4
+
+    .line 16
+    return p1
 .end method

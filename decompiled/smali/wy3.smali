@@ -1,80 +1,128 @@
-.class public final Lwy3;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lwy3;
+.super Ld62;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lo52;
 
 
-# instance fields
-.field public synthetic j:Ljava/lang/Object;
-
-.field public final synthetic k:Lyy3;
-
-.field public l:I
+# static fields
+.field public static final k:Lwy3;
 
 
 # direct methods
-.method public constructor <init>(Lyy3;Lz81;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
     .line 1
-    iput-object p1, p0, Lwy3;->k:Lyy3;
+    new-instance v0, Lwy3;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    const-string v4, "ConnectivityChecker(Landroid/content/Context;)Lcoil3/network/ConnectivityChecker;"
 
     .line 4
     .line 5
+    const/4 v5, 0x1
+
     .line 6
+    const/4 v1, 0x1
+
+    .line 7
+    const-class v2, Lg51;
+
+    .line 8
+    .line 9
+    const-string v3, "ConnectivityChecker"
+
+    .line 10
+    .line 11
+    invoke-direct/range {v0 .. v5}, Ld62;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 12
+    .line 13
+    .line 14
+    sput-object v0, Lwy3;->k:Lwy3;
+
+    .line 15
+    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lwy3;->j:Ljava/lang/Object;
+    check-cast p1, Landroid/content/Context;
 
     .line 2
     .line 3
-    iget p1, p0, Lwy3;->l:I
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
+    move-result-object p0
+
     .line 7
-    or-int/2addr p1, v0
+    const-class p1, Landroid/net/ConnectivityManager;
 
     .line 8
-    iput p1, p0, Lwy3;->l:I
-
     .line 9
-    .line 10
-    const-wide/16 v1, 0x0
+    invoke-virtual {p0, p1}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
 
+    .line 10
     .line 11
     .line 12
-    const-wide/16 v3, 0x0
+    move-result-object p1
 
     .line 13
+    check-cast p1, Landroid/net/ConnectivityManager;
+
     .line 14
-    iget-object v0, p0, Lwy3;->k:Lyy3;
-
     .line 15
-    .line 16
-    move-object v5, p0
+    if-eqz p1, :cond_0
 
+    .line 16
     .line 17
-    invoke-virtual/range {v0 .. v5}, Lyy3;->a(JJLz81;)Ljava/lang/Object;
+    const-string v0, "android.permission.ACCESS_NETWORK_STATE"
 
     .line 18
     .line 19
-    .line 20
-    move-result-object p0
+    invoke-static {p0, v0}, Lr97;->p(Landroid/content/Context;Ljava/lang/String;)I
 
+    .line 20
     .line 21
+    .line 22
+    move-result p0
+
+    .line 23
+    if-nez p0, :cond_0
+
+    .line 24
+    .line 25
+    :try_start_0
+    new-instance p0, Lf51;
+
+    .line 26
+    .line 27
+    invoke-direct {p0, p1}, Lf51;-><init>(Landroid/net/ConnectivityManager;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 28
+    .line 29
+    .line 30
+    return-object p0
+
+    .line 31
+    :catch_0
+    :cond_0
+    sget-object p0, Le51;->a:Ld51;
+
+    .line 32
+    .line 33
     return-object p0
 .end method

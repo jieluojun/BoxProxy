@@ -1,96 +1,145 @@
 .class public final Lk43;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Luf6;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
 # instance fields
-.field public final a:I
+.field public final synthetic j:Ll43;
 
-.field public final b:Ljava/util/ArrayList;
+.field public final synthetic k:I
 
-.field public final synthetic c:Lm43;
+.field public final synthetic l:I
 
 
 # direct methods
-.method public constructor <init>(Lm43;I)V
+.method public constructor <init>(Ll43;IILy71;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lk43;->j:Ll43;
 
     .line 2
     .line 3
+    iput p2, p0, Lk43;->k:I
+
     .line 4
-    iput-object p1, p0, Lk43;->c:Lm43;
-
     .line 5
-    .line 6
-    iput p2, p0, Lk43;->a:I
+    iput p3, p0, Lk43;->l:I
 
+    .line 6
     .line 7
+    const/4 p1, 0x2
+
     .line 8
-    new-instance p1, Ljava/util/ArrayList;
+    invoke-direct {p0, p1, p4}, Luf6;-><init>(ILy71;)V
 
     .line 9
     .line 10
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
-
     .line 11
-    .line 12
-    .line 13
-    iput-object p1, p0, Lk43;->b:Ljava/util/ArrayList;
-
-    .line 14
-    .line 15
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)V
-    .locals 4
+.method public final create(Ljava/lang/Object;Ly71;)Ly71;
+    .locals 2
 
     .line 1
-    iget-object v0, p0, Lk43;->c:Lm43;
+    new-instance p1, Lk43;
 
     .line 2
     .line 3
-    iget-object v1, v0, Lm43;->c:Lyj1;
+    iget v0, p0, Lk43;->k:I
 
     .line 4
     .line 5
-    if-nez v1, :cond_0
+    iget v1, p0, Lk43;->l:I
 
     .line 6
     .line 7
-    return-void
+    iget-object p0, p0, Lk43;->j:Ll43;
 
     .line 8
-    :cond_0
-    iget-object v0, v0, Lm43;->b:Lit6;
-
     .line 9
-    .line 10
-    new-instance v2, Lht4;
+    invoke-direct {p1, p0, v0, v1, p2}, Lk43;-><init>(Ll43;IILy71;)V
 
+    .line 10
     .line 11
     .line 12
-    const/4 v3, 0x0
+    return-object p1
+.end method
 
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    check-cast p1, Lcs5;
+
+    .line 2
+    .line 3
+    check-cast p2, Ly71;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0, p1, p2}, Lk43;->create(Ljava/lang/Object;Ly71;)Ly71;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    check-cast p0, Lk43;
+
+    .line 10
+    .line 11
+    sget-object p1, Lk27;->a:Lk27;
+
+    .line 12
     .line 13
-    invoke-direct {v2, v1, p1, v0, v3}, Lht4;-><init>(Lyj1;ILit6;Lp62;)V
+    invoke-virtual {p0, p1}, Lk43;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 14
     .line 15
     .line 16
-    iget-object p0, p0, Lk43;->b:Ljava/util/ArrayList;
+    return-object p1
+.end method
 
-    .line 17
-    .line 18
-    invoke-virtual {p0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
-    .line 19
-    .line 20
-    .line 21
-    return-void
+    .line 1
+    invoke-static {p1}, Leg3;->S(Ljava/lang/Object;)V
+
+    .line 2
+    .line 3
+    .line 4
+    iget p1, p0, Lk43;->l:I
+
+    .line 5
+    .line 6
+    const/4 v0, 0x1
+
+    .line 7
+    iget-object v1, p0, Lk43;->j:Ll43;
+
+    .line 8
+    .line 9
+    iget p0, p0, Lk43;->k:I
+
+    .line 10
+    .line 11
+    invoke-virtual {v1, p0, p1, v0}, Ll43;->n(IIZ)V
+
+    .line 12
+    .line 13
+    .line 14
+    sget-object p0, Lk27;->a:Lk27;
+
+    .line 15
+    .line 16
+    return-object p0
 .end method

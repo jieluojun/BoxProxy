@@ -1,145 +1,150 @@
-.class public final Lwh1;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lny5;
+.class public final enum Lwh1;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic a:B
+# static fields
+.field public static final enum j:Lwh1;
 
-.field public final b:Ljava/lang/Object;
+.field public static final enum k:Lwh1;
 
-.field public final c:Ljava/lang/Object;
+.field public static final synthetic l:[Lwh1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
     .line 1
-    iput-byte p3, p0, Lwh1;->a:B
+    new-instance v0, Lwh1;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lwh1;->b:Ljava/lang/Object;
+    const-string v1, "NONE"
 
     .line 4
     .line 5
-    iput-object p2, p0, Lwh1;->c:Ljava/lang/Object;
+    const/4 v2, 0x0
 
     .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 8
-    .line 9
-    .line 10
-    return-void
-.end method
-
-
-# virtual methods
-.method public final iterator()Ljava/util/Iterator;
-    .locals 2
-
-    .line 1
-    iget-byte v0, p0, Lwh1;->a:B
-
-    .line 2
-    .line 3
-    packed-switch v0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    new-instance v0, La82;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
-    invoke-direct {v0, p0}, La82;-><init>(Lwh1;)V
-
     .line 9
+    sput-object v0, Lwh1;->j:Lwh1;
+
     .line 10
     .line 11
-    return-object v0
+    new-instance v1, Lwh1;
 
     .line 12
-    :pswitch_0
-    iget-object v0, p0, Lwh1;->b:Ljava/lang/Object;
-
     .line 13
-    .line 14
-    check-cast v0, Lny5;
+    const-string v2, "LINE"
 
+    .line 14
     .line 15
+    const/4 v3, 0x1
+
     .line 16
-    invoke-static {v0}, Lry5;->p0(Lny5;)Ljava/util/ArrayList;
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
     .line 18
     .line 19
-    move-result-object v0
+    new-instance v2, Lwh1;
 
     .line 20
-    iget-object p0, p0, Lwh1;->c:Ljava/lang/Object;
-
     .line 21
-    .line 22
-    check-cast p0, Ljava/util/Comparator;
+    const-string v3, "DOUBLE_LINE"
 
+    .line 22
     .line 23
+    const/4 v4, 0x2
+
     .line 24
-    invoke-static {v0, p0}, Lgv0;->m0(Ljava/util/List;Ljava/util/Comparator;)V
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 25
     .line 26
     .line 27
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    new-instance v3, Lwh1;
 
     .line 28
     .line 29
-    .line 30
-    move-result-object p0
+    const-string v4, "WAVY_LINE"
 
+    .line 30
     .line 31
-    return-object p0
+    const/4 v5, 0x3
 
     .line 32
-    :pswitch_1
-    new-instance v0, La82;
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 33
     .line 34
-    const/4 v1, 0x0
-
     .line 35
-    invoke-direct {v0, p0, v1}, La82;-><init>(Lwh1;B)V
+    sput-object v3, Lwh1;->k:Lwh1;
 
     .line 36
     .line 37
+    filled-new-array {v0, v1, v2, v3}, [Lwh1;
+
     .line 38
-    return-object v0
-
     .line 39
-    :pswitch_2
-    new-instance v0, Lvh1;
-
     .line 40
+    move-result-object v0
+
     .line 41
-    invoke-direct {v0, p0}, Lvh1;-><init>(Lwh1;)V
+    sput-object v0, Lwh1;->l:[Lwh1;
 
     .line 42
     .line 43
-    .line 44
-    return-object v0
+    return-void
+.end method
 
-    .line 45
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+.method public static valueOf(Ljava/lang/String;)Lwh1;
+    .locals 1
+
+    .line 1
+    const-class v0, Lwh1;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lwh1;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Lwh1;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lwh1;->l:[Lwh1;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, [Lwh1;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lwh1;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

@@ -1,24 +1,41 @@
-.class public interface abstract Le32;
+.class public abstract Le32;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# static fields
+.field public static final a:Ls06;
 
 
 # direct methods
-.method public static synthetic a(Le32;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    const/4 v0, 0x0
+    new-instance v0, Ls06;
 
     .line 2
-    check-cast p0, Lh32;
-
     .line 3
+    const/4 v1, 0x6
+
     .line 4
-    invoke-virtual {p0, v0}, Lh32;->b(Z)V
+    invoke-direct {v0, v1}, Ls06;-><init>(B)V
 
     .line 5
     .line 6
     .line 7
+    sput-object v0, Le32;->a:Ls06;
+
+    .line 8
+    .line 9
+    new-instance v0, Lt8;
+
+    .line 10
+    .line 11
+    invoke-direct {v0}, Lt8;-><init>()V
+
+    .line 12
+    .line 13
+    .line 14
     return-void
 .end method

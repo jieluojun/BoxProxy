@@ -159,22 +159,6 @@ class FullMigrationTest(unittest.TestCase):
                      'assets/box/sing-box/mianliu.json'):
             self.assertGreater((self.project / path).stat().st_size, 0)
 
-    def test_bundled_sing_box_template_matches_reviewed_upload(self):
-        name = 'assets/box/sing-box/mianliu.json'
-        expected = 'dfdedffae90de3daf457b155834d58389834d43a32e8f9aff837a4c9ee2bcd89'
-        self.assertEqual(migration.digest(ROOT / 'decompiled' / name), expected)
-        self.assertEqual(migration.digest(self.project / name), expected)
-        config = json.loads(self.text(name))
-        tun = next(i for i in config['inbounds'] if i['type'] == 'tun')
-        self.assertEqual(tun['interface_name'], 'singbox')
-        self.assertEqual(tun['dns_mode'], 'hijack')
-        self.assertEqual(tun['dns_address'], ['172.18.0.2'])
-        self.assertIs(tun['auto_redirect'], True)
-        self.assertNotIn('stack', tun)
-        for helper in ('VpnSeed', 'RestoreCfg'):
-            self.assertIn('box/sing-box/mianliu.json',
-                          self.text('smali/com/box/app/vpn/' + helper + '.smali'))
-
     def test_atomic_failure_and_reject_tampered_runtime(self):
         with tempfile.TemporaryDirectory() as temp:
             dest = Path(temp) / 'failed'

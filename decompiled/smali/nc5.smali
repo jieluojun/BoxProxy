@@ -1,74 +1,163 @@
 .class public final Lnc5;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.super Landroid/view/ViewGroup;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public j:Lo42;
+.field public final j:B
 
-.field public k:Lp42;
+.field public final k:Ljava/util/ArrayList;
 
-.field public l:Landroid/os/Handler;
+.field public final l:Ljava/util/ArrayList;
+
+.field public final m:Lq72;
+
+.field public n:I
 
 
-# virtual methods
-.method public final run()V
-    .locals 5
+# direct methods
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 4
 
     .line 1
-    :try_start_0
-    iget-object v0, p0, Lnc5;->j:Lo42;
+    invoke-direct {p0, p1}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Lo42;->call()Ljava/lang/Object;
-
     .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    const/4 v0, 0x5
 
+    .line 5
+    iput-byte v0, p0, Lnc5;->j:B
+
+    .line 6
     .line 7
-    goto :goto_0
+    new-instance v0, Ljava/util/ArrayList;
 
     .line 8
-    :catch_0
-    const/4 v0, 0x0
-
     .line 9
-    :goto_0
-    iget-object v1, p0, Lnc5;->k:Lp42;
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 10
     .line 11
-    iget-object p0, p0, Lnc5;->l:Landroid/os/Handler;
-
     .line 12
+    iput-object v0, p0, Lnc5;->k:Ljava/util/ArrayList;
+
     .line 13
-    new-instance v2, Lc6;
-
     .line 14
-    .line 15
-    const/4 v3, 0x3
+    new-instance v1, Ljava/util/ArrayList;
 
+    .line 15
     .line 16
-    const/4 v4, 0x0
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
     .line 17
-    invoke-direct {v2, v1, v4, v0, v3}, Lc6;-><init>(Ljava/lang/Object;ZLjava/lang/Object;B)V
-
     .line 18
     .line 19
-    .line 20
-    invoke-virtual {p0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    iput-object v1, p0, Lnc5;->l:Ljava/util/ArrayList;
 
+    .line 20
     .line 21
+    new-instance v2, Lq72;
+
     .line 22
     .line 23
+    const/16 v3, 0x18
+
+    .line 24
+    .line 25
+    invoke-direct {v2, v3}, Lq72;-><init>(B)V
+
+    .line 26
+    .line 27
+    .line 28
+    iput-object v2, p0, Lnc5;->m:Lq72;
+
+    .line 29
+    .line 30
+    const/4 v2, 0x0
+
+    .line 31
+    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->setClipChildren(Z)V
+
+    .line 32
+    .line 33
+    .line 34
+    new-instance v2, Loc5;
+
+    .line 35
+    .line 36
+    invoke-direct {v2, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+
+    .line 37
+    .line 38
+    .line 39
+    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    .line 40
+    .line 41
+    .line 42
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 43
+    .line 44
+    .line 45
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 46
+    .line 47
+    .line 48
+    const/4 p1, 0x1
+
+    .line 49
+    iput p1, p0, Lnc5;->n:I
+
+    .line 50
+    .line 51
+    const p1, 0x7f090070
+
+    .line 52
+    .line 53
+    .line 54
+    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    .line 55
+    .line 56
+    invoke-virtual {p0, p1, v0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+
+    .line 57
+    .line 58
+    .line 59
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onLayout(ZIIII)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public final onMeasure(II)V
+    .locals 0
+
+    .line 1
+    const/4 p1, 0x0
+
+    .line 2
+    invoke-virtual {p0, p1, p1}, Landroid/view/View;->setMeasuredDimension(II)V
+
+    .line 3
+    .line 4
+    .line 5
+    return-void
+.end method
+
+.method public final requestLayout()V
+    .locals 0
+
+    .line 1
     return-void
 .end method

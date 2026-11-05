@@ -1,145 +1,264 @@
-.class public final Lcw3;
+.class public final synthetic Lcw3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lew3;
+.implements Ld52;
 
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+# instance fields
+.field public final synthetic j:Lyz0;
 
-    .line 1
-    const/4 v0, 0x1
+.field public final synthetic k:Z
 
-    .line 2
-    if-ne p0, p1, :cond_0
+.field public final synthetic l:Ld52;
 
-    .line 3
-    .line 4
-    return v0
+.field public final synthetic m:Ld52;
 
-    .line 5
-    :cond_0
-    instance-of p0, p1, Lcw3;
+.field public final synthetic n:Z
 
-    .line 6
-    .line 7
-    if-nez p0, :cond_1
+.field public final synthetic o:Ld52;
 
-    .line 8
-    .line 9
-    goto :goto_0
+.field public final synthetic p:Ld52;
 
-    .line 10
-    :cond_1
-    const/high16 p0, 0x3f800000    # 1.0f
+.field public final synthetic q:Liw3;
 
-    .line 11
-    .line 12
-    invoke-static {p0, p0}, Ljava/lang/Float;->compare(FF)I
 
-    .line 13
-    .line 14
-    .line 15
-    move-result p0
-
-    .line 16
-    if-eqz p0, :cond_2
-
-    .line 17
-    .line 18
-    goto :goto_0
-
-    .line 19
-    :cond_2
-    const/high16 p0, 0x43120000    # 146.0f
-
-    .line 20
-    .line 21
-    invoke-static {p0, p0}, Ljava/lang/Float;->compare(FF)I
-
-    .line 22
-    .line 23
-    .line 24
-    move-result p0
-
-    .line 25
-    if-eqz p0, :cond_3
-
-    .line 26
-    .line 27
-    :goto_0
-    const/4 p0, 0x0
-
-    .line 28
-    return p0
-
-    .line 29
-    :cond_3
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    .line 1
-    const/high16 p0, 0x3f800000    # 1.0f
-
-    .line 2
-    .line 3
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    const/16 v0, 0x1f
-
-    .line 8
-    .line 9
-    mul-int/2addr p0, v0
-
-    .line 10
-    const/high16 v1, 0x43120000    # 146.0f
-
-    .line 11
-    .line 12
-    invoke-static {v1, p0, v0}, Loc1;->d(FII)I
-
-    .line 13
-    .line 14
-    .line 15
-    move-result p0
-
-    .line 16
-    const/4 v0, 0x1
-
-    .line 17
-    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    .line 18
-    .line 19
-    .line 20
-    move-result v0
-
-    .line 21
-    add-int/2addr v0, p0
-
-    .line 22
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
+# direct methods
+.method public synthetic constructor <init>(Lyz0;ZLd52;Ld52;ZLd52;Ld52;Liw3;)V
     .locals 0
 
     .line 1
-    const-string p0, "Spring(dampingRatio=1.0, stiffness=146.0, clampOvershoot=true)"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
+    .line 4
+    iput-object p1, p0, Lcw3;->j:Lyz0;
+
+    .line 5
+    .line 6
+    iput-boolean p2, p0, Lcw3;->k:Z
+
+    .line 7
+    .line 8
+    iput-object p3, p0, Lcw3;->l:Ld52;
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Lcw3;->m:Ld52;
+
+    .line 11
+    .line 12
+    iput-boolean p5, p0, Lcw3;->n:Z
+
+    .line 13
+    .line 14
+    iput-object p6, p0, Lcw3;->o:Ld52;
+
+    .line 15
+    .line 16
+    iput-object p7, p0, Lcw3;->p:Ld52;
+
+    .line 17
+    .line 18
+    iput-object p8, p0, Lcw3;->q:Liw3;
+
+    .line 19
+    .line 20
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lcw3;->j:Lyz0;
+
+    .line 2
+    .line 3
+    iget-boolean v1, v0, Law3;->f:Z
+
+    .line 4
+    .line 5
+    iget-boolean v2, p0, Lcw3;->k:Z
+
+    .line 6
+    .line 7
+    if-ne v1, v2, :cond_0
+
+    .line 8
+    .line 9
+    goto :goto_0
+
+    .line 10
+    :cond_0
+    iput-boolean v2, v0, Law3;->f:Z
+
+    .line 11
+    .line 12
+    iget-object v1, v0, Law3;->g:Lwv3;
+
+    .line 13
+    .line 14
+    if-eqz v1, :cond_1
+
+    .line 15
+    .line 16
+    iget-object v1, v1, Lwv3;->e:Lhw3;
+
+    .line 17
+    .line 18
+    if-eqz v1, :cond_1
+
+    .line 19
+    .line 20
+    invoke-virtual {v1}, Lhw3;->b()V
+
+    .line 21
+    .line 22
+    .line 23
+    :cond_1
+    :goto_0
+    iget-object v1, p0, Lcw3;->l:Ld52;
+
+    .line 24
+    .line 25
+    iput-object v1, v0, Lyz0;->i:Ld52;
+
+    .line 26
+    .line 27
+    iget-boolean v1, p0, Lcw3;->n:Z
+
+    .line 28
+    .line 29
+    invoke-virtual {v0, v1}, Law3;->j(Z)V
+
+    .line 30
+    .line 31
+    .line 32
+    iget-object v1, p0, Lcw3;->o:Ld52;
+
+    .line 33
+    .line 34
+    iput-object v1, v0, Lyz0;->j:Ld52;
+
+    .line 35
+    .line 36
+    iget-object v1, p0, Lcw3;->p:Ld52;
+
+    .line 37
+    .line 38
+    iput-object v1, v0, Lyz0;->k:Ld52;
+
+    .line 39
+    .line 40
+    iget-object p0, p0, Lcw3;->q:Liw3;
+
+    .line 41
+    .line 42
+    iget-object v1, p0, Liw3;->c:Lgl4;
+
+    .line 43
+    .line 44
+    invoke-virtual {v1}, Lgl4;->getValue()Ljava/lang/Object;
+
+    .line 45
+    .line 46
+    .line 47
+    move-result-object v1
+
+    .line 48
+    check-cast v1, Lfw3;
+
+    .line 49
+    .line 50
+    iget-object v2, p0, Liw3;->b:Lgl4;
+
+    .line 51
+    .line 52
+    invoke-virtual {v2}, Lgl4;->getValue()Ljava/lang/Object;
+
+    .line 53
+    .line 54
+    .line 55
+    move-result-object v2
+
+    .line 56
+    check-cast v2, Ljava/util/List;
+
+    .line 57
+    .line 58
+    iget-object p0, p0, Liw3;->d:Lgl4;
+
+    .line 59
+    .line 60
+    invoke-virtual {p0}, Lgl4;->getValue()Ljava/lang/Object;
+
+    .line 61
+    .line 62
+    .line 63
+    move-result-object p0
+
+    .line 64
+    check-cast p0, Ljava/util/List;
+
+    .line 65
+    .line 66
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 67
+    .line 68
+    .line 69
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 70
+    .line 71
+    .line 72
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 73
+    .line 74
+    .line 75
+    iput-object v1, v0, Law3;->a:Lfw3;
+
+    .line 76
+    .line 77
+    iput-object v2, v0, Law3;->b:Ljava/util/List;
+
+    .line 78
+    .line 79
+    iput-object p0, v0, Law3;->c:Ljava/util/List;
+
+    .line 80
+    .line 81
+    iget-object p0, v0, Law3;->g:Lwv3;
+
+    .line 82
+    .line 83
+    if-eqz p0, :cond_2
+
+    .line 84
+    .line 85
+    iget-object p0, p0, Lwv3;->e:Lhw3;
+
+    .line 86
+    .line 87
+    if-eqz p0, :cond_2
+
+    .line 88
+    .line 89
+    invoke-virtual {p0, v0}, Lhw3;->d(Law3;)V
+
+    .line 90
+    .line 91
+    .line 92
+    :cond_2
+    sget-object p0, Lk27;->a:Lk27;
+
+    .line 93
+    .line 94
     return-object p0
 .end method

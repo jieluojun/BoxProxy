@@ -1,26 +1,26 @@
 .class public final Lub0;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
 .field public synthetic j:Ljava/lang/Object;
 
-.field public final synthetic k:Lcom/box/app/notification/BoxPersistentNotificationService;
+.field public final synthetic k:Lwb0;
 
 .field public l:I
 
 
 # direct methods
-.method public constructor <init>(Lcom/box/app/notification/BoxPersistentNotificationService;Lz81;)V
+.method public constructor <init>(Lwb0;Lz71;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lub0;->k:Lcom/box/app/notification/BoxPersistentNotificationService;
+    iput-object p1, p0, Lub0;->k:Lwb0;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
     .line 4
     .line 5
@@ -53,24 +53,20 @@
 
     .line 9
     .line 10
-    sget p1, Lcom/box/app/notification/BoxPersistentNotificationService;->s:I
+    iget-object p1, p0, Lub0;->k:Lwb0;
 
     .line 11
     .line 12
-    iget-object p1, p0, Lub0;->k:Lcom/box/app/notification/BoxPersistentNotificationService;
-
-    .line 13
-    .line 14
     const/4 v0, 0x0
 
-    .line 15
-    invoke-virtual {p1, v0, p0}, Lcom/box/app/notification/BoxPersistentNotificationService;->e(ZLz81;)Ljava/lang/Object;
+    .line 13
+    invoke-virtual {p1, v0, v0, p0}, Lwb0;->a(Lsb0;Ljava/lang/String;Lz71;)Ljava/lang/Object;
 
+    .line 14
+    .line 15
     .line 16
-    .line 17
-    .line 18
     move-result-object p0
 
-    .line 19
+    .line 17
     return-object p0
 .end method

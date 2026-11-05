@@ -1,141 +1,235 @@
 .class public final Lvq2;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ltq2;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lkr0;
 
 
-# instance fields
-.field public final a:Z
-
-.field public final b:Z
+# static fields
+.field public static final m:Lvq2;
 
 
 # direct methods
-.method public constructor <init>(ZZ)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lvq2;
 
     .line 2
     .line 3
+    const/4 v1, 0x1
+
     .line 4
-    iput-boolean p1, p0, Lvq2;->a:Z
+    const/4 v2, 0x0
 
     .line 5
-    .line 6
-    iput-boolean p2, p0, Lvq2;->b:Z
+    invoke-direct {v0, v1, v2, v1}, Ltq2;-><init>(III)V
 
+    .line 6
     .line 7
     .line 8
+    sput-object v0, Lvq2;->m:Lvq2;
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final b()Ljava/lang/Comparable;
+    .locals 0
 
     .line 1
-    const/4 v0, 0x1
+    iget p0, p0, Ltq2;->j:I
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
-    .line 4
-    return v0
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
+    .line 4
     .line 5
-    :cond_0
-    instance-of v1, p1, Lvq2;
+    .line 6
+    move-result-object p0
+
+    .line 7
+    return-object p0
+.end method
+
+.method public final c()Ljava/lang/Comparable;
+    .locals 0
+
+    .line 1
+    iget p0, p0, Ltq2;->k:I
+
+    .line 2
+    .line 3
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    return-object p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    .line 1
+    instance-of v0, p1, Lvq2;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_2
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Lvq2;->isEmpty()Z
 
     .line 6
     .line 7
-    const/4 v2, 0x0
-
     .line 8
-    if-nez v1, :cond_1
+    move-result v0
 
     .line 9
-    .line 10
-    return v2
+    if-eqz v0, :cond_0
 
+    .line 10
     .line 11
-    :cond_1
-    check-cast p1, Lvq2;
+    move-object v0, p1
 
     .line 12
+    check-cast v0, Lvq2;
+
     .line 13
-    iget-boolean v1, p1, Lvq2;->a:Z
-
     .line 14
-    .line 15
-    iget-boolean v3, p0, Lvq2;->a:Z
+    invoke-virtual {v0}, Lvq2;->isEmpty()Z
 
+    .line 15
     .line 16
     .line 17
-    if-eq v3, v1, :cond_2
+    move-result v0
 
     .line 18
-    .line 19
-    return v2
+    if-nez v0, :cond_1
 
+    .line 19
     .line 20
-    :cond_2
-    iget-boolean p0, p0, Lvq2;->b:Z
+    :cond_0
+    check-cast p1, Lvq2;
 
     .line 21
     .line 22
-    iget-boolean p1, p1, Lvq2;->b:Z
+    iget v0, p1, Ltq2;->j:I
 
     .line 23
     .line 24
-    if-eq p0, p1, :cond_3
+    iget v1, p0, Ltq2;->j:I
 
     .line 25
     .line 26
-    return v2
+    if-ne v1, v0, :cond_2
 
     .line 27
-    :cond_3
-    return v0
+    .line 28
+    iget p0, p0, Ltq2;->k:I
+
+    .line 29
+    .line 30
+    iget p1, p1, Ltq2;->k:I
+
+    .line 31
+    .line 32
+    if-ne p0, p1, :cond_2
+
+    .line 33
+    .line 34
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 35
+    return p0
+
+    .line 36
+    :cond_2
+    const/4 p0, 0x0
+
+    .line 37
+    return p0
 .end method
 
 .method public final hashCode()I
     .locals 1
 
     .line 1
-    iget-boolean v0, p0, Lvq2;->a:Z
+    invoke-virtual {p0}, Lvq2;->isEmpty()Z
 
     .line 2
     .line 3
-    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
-
     .line 4
-    .line 5
-    .line 6
     move-result v0
 
+    .line 5
+    if-eqz v0, :cond_0
+
+    .line 6
     .line 7
-    mul-int/lit8 v0, v0, 0x1f
+    const/4 p0, -0x1
 
     .line 8
+    return p0
+
     .line 9
-    iget-boolean p0, p0, Lvq2;->b:Z
+    :cond_0
+    iget v0, p0, Ltq2;->j:I
 
     .line 10
     .line 11
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+    mul-int/lit8 v0, v0, 0x1f
 
     .line 12
     .line 13
-    .line 14
-    move-result p0
+    iget p0, p0, Ltq2;->k:I
 
+    .line 14
     .line 15
-    add-int/2addr p0, v0
+    add-int/2addr v0, p0
 
     .line 16
+    return v0
+.end method
+
+.method public final isEmpty()Z
+    .locals 1
+
+    .line 1
+    iget v0, p0, Ltq2;->j:I
+
+    .line 2
+    .line 3
+    iget p0, p0, Ltq2;->k:I
+
+    .line 4
+    .line 5
+    if-le v0, p0, :cond_0
+
+    .line 6
+    .line 7
+    const/4 p0, 0x1
+
+    .line 8
+    return p0
+
+    .line 9
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 10
     return p0
 .end method
 
@@ -147,58 +241,45 @@
 
     .line 2
     .line 3
-    const-string v1, "InputTextSuggestionState(isCommittedByInputMethodEditor="
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
     .line 6
+    iget v1, p0, Ltq2;->j:I
+
     .line 7
     .line 8
-    iget-boolean v1, p0, Lvq2;->a:Z
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 9
     .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
     .line 11
+    const-string v1, ".."
+
     .line 12
     .line 13
-    const-string v1, ", suggestionSelected="
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 14
     .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 16
+    iget p0, p0, Ltq2;->k:I
+
     .line 17
     .line 18
-    iget-boolean p0, p0, Lvq2;->b:Z
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
     .line 19
     .line 20
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
     .line 21
-    .line 22
-    .line 23
-    const-string p0, ")"
-
-    .line 24
-    .line 25
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 26
-    .line 27
-    .line 28
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 29
-    .line 30
-    .line 31
+    .line 22
+    .line 23
+    .line 24
     move-result-object p0
 
-    .line 32
+    .line 25
     return-object p0
 .end method

@@ -1,6 +1,6 @@
 .class public final synthetic Lfa;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
 .implements Ljava/lang/Runnable;
@@ -9,215 +9,242 @@
 # instance fields
 .field public final synthetic j:B
 
-.field public final synthetic k:Lqa;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lqa;B)V
+.method public synthetic constructor <init>()V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    iput-byte v0, p0, Lfa;->j:B
+
+    .line 3
+    .line 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 5
+    .line 6
+    .line 7
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lbq;I)V
+    .locals 0
+
+    .line 8
+    const/4 p1, 0x1
+
+    iput-byte p1, p0, Lfa;->j:B
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method private final a()V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lfa;->j:B
-
-    .line 2
-    .line 3
-    iput-object p1, p0, Lfa;->k:Lqa;
-
-    .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 6
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 6
 
     .line 1
-    iget-byte v0, p0, Lfa;->j:B
+    iget-byte p0, p0, Lfa;->j:B
 
     .line 2
     .line 3
-    iget-object p0, p0, Lfa;->k:Lqa;
+    packed-switch p0, :pswitch_data_0
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_0
-
     .line 6
+    return-void
+
     .line 7
+    :pswitch_0
+    sget-object p0, Loa;->V0:Lmr3;
+
     .line 8
-    invoke-virtual {p0}, Lqa;->getRoot()Lj13;
-
     .line 9
-    .line 10
-    .line 11
-    move-result-object p0
+    monitor-enter p0
 
+    .line 10
+    :try_start_0
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 11
     .line 12
-    invoke-static {p0}, Lqa;->j(Lj13;)V
+    iget-object v1, p0, Lmr3;->a:[Ljava/lang/Object;
 
     .line 13
     .line 14
-    .line 15
-    return-void
+    iget v2, p0, Lmr3;->b:I
 
+    .line 15
     .line 16
-    :pswitch_0
-    invoke-virtual {p0}, Lqa;->getRoot()Lj13;
+    const/4 v3, 0x0
 
     .line 17
+    const/16 v4, 0x1e
+
     .line 18
     .line 19
-    move-result-object p0
+    if-ge v0, v4, :cond_1
 
     .line 20
-    invoke-static {p0}, Lqa;->j(Lj13;)V
-
     .line 21
+    :goto_0
+    if-ge v3, v2, :cond_2
+
     .line 22
     .line 23
-    return-void
+    :try_start_1
+    aget-object v0, v1, v3
 
     .line 24
-    :pswitch_1
-    const/4 v0, 0x0
-
     .line 25
-    iput-boolean v0, p0, Lqa;->H0:Z
+    check-cast v0, Loa;
 
     .line 26
     .line 27
-    iget-object v0, p0, Lqa;->x0:Landroid/view/MotionEvent;
+    invoke-virtual {v0}, Loa;->getShowLayoutBounds()Z
 
     .line 28
     .line 29
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 30
-    .line 31
-    .line 32
-    invoke-virtual {v0}, Landroid/view/MotionEvent;->getActionMasked()I
+    move-result v4
 
+    .line 31
+    sget-object v5, Loa;->S0:Ljava/lang/Class;
+
+    .line 32
     .line 33
+    invoke-static {}, Lnc7;->B()Z
+
     .line 34
     .line 35
-    move-result v1
-
     .line 36
-    const/16 v2, 0xa
+    move-result v5
 
     .line 37
-    .line 38
-    if-ne v1, v2, :cond_0
+    invoke-virtual {v0, v5}, Loa;->setShowLayoutBounds(Z)V
 
+    .line 38
     .line 39
     .line 40
-    invoke-virtual {p0, v0}, Lqa;->G(Landroid/view/MotionEvent;)I
+    invoke-virtual {v0}, Loa;->getShowLayoutBounds()Z
 
     .line 41
     .line 42
     .line 43
-    goto :goto_0
+    move-result v5
 
     .line 44
-    :cond_0
-    const-string p0, "The ACTION_HOVER_EXIT event was not cleared."
+    if-eq v4, v5, :cond_0
 
     .line 45
     .line 46
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+    new-instance v4, Lda;
 
     .line 47
     .line 48
+    const/4 v5, 0x2
+
     .line 49
-    :goto_0
-    return-void
+    invoke-direct {v4, v0, v5}, Lda;-><init>(Loa;B)V
 
     .line 50
-    :pswitch_2
-    iget-object p0, p0, Lqa;->r:Law;
-
     .line 51
     .line 52
-    const-string v0, "AndroidOwner:outOfFrameExecutor"
+    invoke-virtual {v0, v4}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
     .line 53
     .line 54
-    invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
-
     .line 55
+    goto :goto_1
+
     .line 56
+    :catchall_0
+    move-exception v0
+
     .line 57
-    :goto_1
-    :try_start_0
-    invoke-virtual {p0}, Law;->isEmpty()Z
+    goto :goto_3
 
     .line 58
+    :cond_0
+    :goto_1
+    add-int/lit8 v3, v3, 0x1
+
     .line 59
     .line 60
-    move-result v0
+    goto :goto_0
 
     .line 61
-    if-nez v0, :cond_1
+    :cond_1
+    :goto_2
+    if-ge v3, v2, :cond_2
 
     .line 62
     .line 63
-    invoke-virtual {p0}, Law;->removeLast()Ljava/lang/Object;
+    aget-object v0, v1, v3
 
     .line 64
     .line 65
-    .line 66
-    move-result-object v0
+    check-cast v0, Loa;
 
+    .line 66
     .line 67
-    check-cast v0, Le62;
+    new-instance v4, Lda;
 
     .line 68
     .line 69
-    invoke-interface {v0}, Le62;->invoke()Ljava/lang/Object;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const/4 v5, 0x3
 
     .line 70
+    invoke-direct {v4, v0, v5}, Lda;-><init>(Loa;B)V
+
     .line 71
     .line 72
-    goto :goto_1
-
     .line 73
-    :cond_1
-    invoke-static {}, Landroid/os/Trace;->endSection()V
+    invoke-virtual {v0, v4}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 74
     .line 75
     .line 76
-    return-void
+    add-int/lit8 v3, v3, 0x1
 
     .line 77
-    :catchall_0
-    move-exception p0
-
     .line 78
-    invoke-static {}, Landroid/os/Trace;->endSection()V
+    goto :goto_2
 
     .line 79
+    :cond_2
+    monitor-exit p0
+
     .line 80
+    return-void
+
     .line 81
-    throw p0
+    :goto_3
+    monitor-exit p0
 
     .line 82
-    nop
+    throw v0
 
     .line 83
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

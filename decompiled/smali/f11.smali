@@ -1,270 +1,172 @@
-.class public final Lf11;
-.super Ljava/lang/RuntimeException;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# instance fields
-.field public final j:Lys3;
-
-.field public final k:Lys3;
-
-.field public final l:Ljs3;
-
-.field public final m:I
-
-
-# direct methods
-.method public constructor <init>(Lys3;Lys3;Ljs3;ILjava/lang/Exception;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0, p5}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p1, p0, Lf11;->j:Lys3;
-
-    .line 5
-    .line 6
-    iput-object p2, p0, Lf11;->k:Lys3;
-
-    .line 7
-    .line 8
-    iput-object p3, p0, Lf11;->l:Ljs3;
-
-    .line 9
-    .line 10
-    iput p4, p0, Lf11;->m:I
-
-    .line 11
-    .line 12
-    return-void
-.end method
+.class public abstract Lf11;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # virtual methods
-.method public final getMessage()Ljava/lang/String;
-    .locals 8
+.method public abstract a(Ll11;Ls52;)V
+.end method
+
+.method public abstract b(Ll11;Lc36;Ls52;)Lvr3;
+.end method
+
+.method public abstract c(Lpp3;)V
+.end method
+
+.method public d()V
+    .locals 0
 
     .line 1
-    new-instance v0, Le11;
+    return-void
+.end method
+
+.method public e()Z
+    .locals 0
+
+    .line 1
+    sget-object p0, Ln85;->A:Ljava/util/concurrent/atomic/AtomicReference;
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
     .line 4
-    invoke-direct {v0, p0, v1}, Le11;-><init>(Lf11;Ly81;)V
-
     .line 5
     .line 6
+    move-result-object p0
+
     .line 7
-    invoke-static {v0}, Lhi3;->N(Lt62;)Loy5;
+    check-cast p0, Ljava/lang/Boolean;
 
     .line 8
     .line 9
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
     .line 10
-    move-result-object v0
-
     .line 11
-    invoke-virtual {v0}, Loy5;->hasNext()Z
-
     .line 12
+    move-result p0
+
     .line 13
-    .line 14
-    move-result v1
+    return p0
+.end method
 
-    .line 15
-    if-nez v1, :cond_0
+.method public f()Z
+    .locals 0
 
-    .line 16
-    .line 17
-    sget-object v0, Lqu1;->j:Lqu1;
+    .line 1
+    const/4 p0, 0x0
 
-    .line 18
-    .line 19
-    goto :goto_1
+    .line 2
+    return p0
+.end method
 
-    .line 20
-    :cond_0
-    invoke-virtual {v0}, Loy5;->next()Ljava/lang/Object;
+.method public g()Z
+    .locals 0
 
-    .line 21
-    .line 22
-    .line 23
-    move-result-object v1
+    .line 1
+    const/4 p0, 0x0
 
-    .line 24
-    invoke-virtual {v0}, Loy5;->hasNext()Z
+    .line 2
+    return p0
+.end method
 
-    .line 25
-    .line 26
-    .line 27
-    move-result v2
+.method public h()J
+    .locals 2
 
-    .line 28
-    if-nez v2, :cond_1
+    .line 1
+    const-wide/16 v0, 0x3e8
 
-    .line 29
-    .line 30
-    invoke-static {v1}, Lim;->Q(Ljava/lang/Object;)Ljava/util/List;
+    .line 2
+    .line 3
+    return-wide v0
+.end method
 
-    .line 31
-    .line 32
-    .line 33
-    move-result-object v0
+.method public i()Le11;
+    .locals 0
 
-    .line 34
-    goto :goto_1
+    .line 1
+    const/4 p0, 0x0
 
-    .line 35
-    :cond_1
-    new-instance v2, Ljava/util/ArrayList;
-
-    .line 36
-    .line 37
-    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
-
-    .line 38
-    .line 39
-    .line 40
-    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 41
-    .line 42
-    .line 43
-    :goto_0
-    invoke-virtual {v0}, Loy5;->hasNext()Z
-
-    .line 44
-    .line 45
-    .line 46
-    move-result v1
-
-    .line 47
-    if-eqz v1, :cond_2
-
-    .line 48
-    .line 49
-    invoke-virtual {v0}, Loy5;->next()Ljava/lang/Object;
-
-    .line 50
-    .line 51
-    .line 52
-    move-result-object v1
-
-    .line 53
-    invoke-virtual {v2, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 54
-    .line 55
-    .line 56
-    goto :goto_0
-
-    .line 57
-    :cond_2
-    move-object v0, v2
-
-    .line 58
-    :goto_1
-    const/16 v1, 0x32
-
-    .line 59
-    .line 60
-    invoke-static {v1, v0}, Lcv0;->V0(ILjava/util/List;)Ljava/util/List;
-
-    .line 61
-    .line 62
-    .line 63
-    move-result-object v2
-
-    .line 64
-    const/4 v6, 0x0
-
-    .line 65
-    const/16 v7, 0x3e
-
-    .line 66
-    .line 67
-    const-string v3, "\n"
-
-    .line 68
-    .line 69
-    const/4 v4, 0x0
-
-    .line 70
-    const/4 v5, 0x0
-
-    .line 71
-    invoke-static/range {v2 .. v7}, Lcv0;->G0(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/String;Ljava/lang/String;Lp62;I)Ljava/lang/String;
-
-    .line 72
-    .line 73
-    .line 74
-    move-result-object v0
-
-    .line 75
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    .line 76
-    .line 77
-    const-string v2, "\n            |Failed to execute op number "
-
-    .line 78
-    .line 79
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 80
-    .line 81
-    .line 82
-    iget p0, p0, Lf11;->m:I
-
-    .line 83
-    .line 84
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 85
-    .line 86
-    .line 87
-    const-string p0, ":\n            |"
-
-    .line 88
-    .line 89
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 90
-    .line 91
-    .line 92
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 93
-    .line 94
-    .line 95
-    const-string p0, "\n            "
-
-    .line 96
-    .line 97
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 98
-    .line 99
-    .line 100
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 101
-    .line 102
-    .line 103
-    move-result-object p0
-
-    .line 104
-    invoke-static {p0}, Lbd6;->X(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 105
-    .line 106
-    .line 107
-    move-result-object p0
-
-    .line 108
+    .line 2
     return-object p0
+.end method
+
+.method public j()Ldn4;
+    .locals 0
+
+    .line 1
+    sget-object p0, Lg11;->a:Ldn4;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public abstract k()Lsa1;
+.end method
+
+.method public l()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public abstract m(Lpp3;)V
+.end method
+
+.method public abstract n(Ll11;)V
+.end method
+
+.method public abstract o(Lpp3;Lop3;Lqu;)V
+.end method
+
+.method public abstract p(Lpp3;)Lop3;
+.end method
+
+.method public abstract q(Ll11;Lc36;Lvr3;)Lvr3;
+.end method
+
+.method public r(Ljava/util/Set;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public s(Ls62;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public abstract t(Lg85;)V
+.end method
+
+.method public abstract u(Ll11;)V
+.end method
+
+.method public abstract v(Lep2;)Lsh0;
+.end method
+
+.method public w()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public x(Ls62;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public abstract y(Ll11;)V
 .end method

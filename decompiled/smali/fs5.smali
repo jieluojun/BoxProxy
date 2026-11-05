@@ -1,68 +1,109 @@
 .class public final Lfs5;
-.super Ldv6;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final c:Ljava/lang/String;
-
-.field public final d:Z
-
-.field public final e:Les5;
+.field public final a:J
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;ZLes5;Ljava/util/Optional;Ljava/util/Optional;)V
+.method public synthetic constructor <init>(J)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p4, p5}, Ldv6;-><init>(Ljava/util/Optional;Ljava/util/Optional;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lfs5;->c:Ljava/lang/String;
+    iput-wide p1, p0, Lfs5;->a:J
 
     .line 5
     .line 6
-    iput-boolean p2, p0, Lfs5;->d:Z
-
-    .line 7
-    .line 8
-    invoke-static {p3}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 9
-    .line 10
-    .line 11
-    iput-object p3, p0, Lfs5;->e:Les5;
-
-    .line 12
-    .line 13
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()I
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
     .line 1
-    const/16 p0, 0x10
+    instance-of v0, p1, Lfs5;
 
     .line 2
     .line 3
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
+    goto :goto_0
+
+    .line 6
+    :cond_0
+    check-cast p1, Lfs5;
+
+    .line 7
+    .line 8
+    iget-wide v0, p1, Lfs5;->a:J
+
+    .line 9
+    .line 10
+    iget-wide p0, p0, Lfs5;->a:J
+
+    .line 11
+    .line 12
+    cmp-long p0, p0, v0
+
+    .line 13
+    .line 14
+    if-eqz p0, :cond_1
+
+    .line 15
+    .line 16
+    :goto_0
+    const/4 p0, 0x0
+
+    .line 17
+    return p0
+
+    .line 18
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 19
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lfs5;->a:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
     return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 2
+    .locals 3
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 2
     .line 3
-    const-string v1, "<scalar> plain="
+    const-string v1, "ScrollValue(bits="
 
     .line 4
     .line 5
@@ -71,58 +112,31 @@
     .line 6
     .line 7
     .line 8
-    iget-boolean v1, p0, Lfs5;->d:Z
+    iget-wide v1, p0, Lfs5;->a:J
 
     .line 9
     .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     .line 11
     .line 12
     .line 13
-    const-string v1, " style="
+    const-string p0, ")"
 
     .line 14
     .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 16
     .line 17
     .line 18
-    iget-object v1, p0, Lfs5;->e:Les5;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 19
     .line 20
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
     .line 21
-    .line 22
-    .line 23
-    const-string v1, " value="
-
-    .line 24
-    .line 25
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 26
-    .line 27
-    .line 28
-    iget-object p0, p0, Lfs5;->c:Ljava/lang/String;
-
-    .line 29
-    .line 30
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 31
-    .line 32
-    .line 33
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 34
-    .line 35
-    .line 36
     move-result-object p0
 
-    .line 37
+    .line 22
     return-object p0
 .end method

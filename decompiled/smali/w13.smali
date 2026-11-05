@@ -1,67 +1,328 @@
 .class public final Lw13;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lh3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic a:B
+.field public j:Landroid/view/MotionEvent;
 
-.field public final synthetic b:Lx13;
+.field public final k:I
 
-.field public final synthetic c:Ljava/lang/Object;
+.field public l:Ljava/util/ArrayList;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lx13;Ljava/lang/Object;B)V
+.method public constructor <init>(Landroid/view/MotionEvent;I)V
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Lw13;->a:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lw13;->b:Lx13;
-
     .line 4
+    iput-object p1, p0, Lw13;->j:Landroid/view/MotionEvent;
+
     .line 5
-    iput-object p2, p0, Lw13;->c:Ljava/lang/Object;
-
     .line 6
+    iput p2, p0, Lw13;->k:I
+
     .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 8
-    .line 9
-    .line 10
-    return-void
-.end method
-
-.method private final a()V
-    .locals 0
-
-    .line 1
     return-void
 .end method
 
 
 # virtual methods
-.method public b()Lp13;
-    .locals 2
+.method public final a()I
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lw13;->b:Lx13;
+    invoke-virtual {p0}, Lw13;->b()Ljava/util/List;
 
     .line 2
     .line 3
-    iget-object v1, v0, Lx13;->s:Lgt3;
-
     .line 4
+    move-result-object p0
+
     .line 5
-    iget-object p0, p0, Lw13;->c:Ljava/lang/Object;
+    check-cast p0, Ljava/util/ArrayList;
 
     .line 6
     .line 7
-    invoke-virtual {v1, p0}, Lgt3;->g(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
+
+    .line 8
+    .line 9
+    .line 10
+    move-result p0
+
+    .line 11
+    return p0
+.end method
+
+.method public final b()Ljava/util/List;
+    .locals 18
+
+    .line 1
+    move-object/from16 v0, p0
+
+    .line 2
+    .line 3
+    iget-object v1, v0, Lw13;->l:Ljava/util/ArrayList;
+
+    .line 4
+    .line 5
+    if-nez v1, :cond_2
+
+    .line 6
+    .line 7
+    iget-object v1, v0, Lw13;->j:Landroid/view/MotionEvent;
+
+    .line 8
+    .line 9
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 10
+    .line 11
+    .line 12
+    invoke-virtual {v1}, Landroid/view/MotionEvent;->getHistorySize()I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result v2
+
+    .line 16
+    new-instance v3, Ljava/util/ArrayList;
+
+    .line 17
+    .line 18
+    invoke-direct {v3, v2}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 19
+    .line 20
+    .line 21
+    const/4 v4, 0x0
+
+    .line 22
+    :goto_0
+    if-ge v4, v2, :cond_1
+
+    .line 23
+    .line 24
+    iget v5, v0, Lw13;->k:I
+
+    .line 25
+    .line 26
+    invoke-virtual {v1, v5, v4}, Landroid/view/MotionEvent;->getHistoricalX(II)F
+
+    .line 27
+    .line 28
+    .line 29
+    move-result v6
+
+    .line 30
+    invoke-virtual {v1, v5, v4}, Landroid/view/MotionEvent;->getHistoricalY(II)F
+
+    .line 31
+    .line 32
+    .line 33
+    move-result v5
+
+    .line 34
+    invoke-static {v6}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 35
+    .line 36
+    .line 37
+    move-result v7
+
+    .line 38
+    const v8, 0x7fffffff
+
+    .line 39
+    .line 40
+    .line 41
+    and-int/2addr v7, v8
+
+    .line 42
+    const/high16 v9, 0x7f800000    # Float.POSITIVE_INFINITY
+
+    .line 43
+    .line 44
+    if-ge v7, v9, :cond_0
+
+    .line 45
+    .line 46
+    invoke-static {v5}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 47
+    .line 48
+    .line 49
+    move-result v7
+
+    .line 50
+    and-int/2addr v7, v8
+
+    .line 51
+    if-ge v7, v9, :cond_0
+
+    .line 52
+    .line 53
+    new-instance v10, Lw92;
+
+    .line 54
+    .line 55
+    invoke-virtual {v1, v4}, Landroid/view/MotionEvent;->getHistoricalEventTime(I)J
+
+    .line 56
+    .line 57
+    .line 58
+    move-result-wide v11
+
+    .line 59
+    invoke-static {v6}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 60
+    .line 61
+    .line 62
+    move-result v6
+
+    .line 63
+    int-to-long v6, v6
+
+    .line 64
+    invoke-static {v5}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 65
+    .line 66
+    .line 67
+    move-result v5
+
+    .line 68
+    int-to-long v8, v5
+
+    .line 69
+    const/16 v5, 0x20
+
+    .line 70
+    .line 71
+    shl-long v5, v6, v5
+
+    .line 72
+    .line 73
+    const-wide v13, 0xffffffffL
+
+    .line 74
+    .line 75
+    .line 76
+    .line 77
+    .line 78
+    and-long v7, v8, v13
+
+    .line 79
+    .line 80
+    or-long v13, v5, v7
+
+    .line 81
+    .line 82
+    const/high16 v15, 0x3f800000    # 1.0f
+
+    .line 83
+    .line 84
+    const-wide/16 v16, 0x0
+
+    .line 85
+    .line 86
+    invoke-direct/range {v10 .. v17}, Lw92;-><init>(JJFJ)V
+
+    .line 87
+    .line 88
+    .line 89
+    invoke-virtual {v3, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 90
+    .line 91
+    .line 92
+    :cond_0
+    add-int/lit8 v4, v4, 0x1
+
+    .line 93
+    .line 94
+    goto :goto_0
+
+    .line 95
+    :cond_1
+    iput-object v3, v0, Lw13;->l:Ljava/util/ArrayList;
+
+    .line 96
+    .line 97
+    const/4 v1, 0x0
+
+    .line 98
+    iput-object v1, v0, Lw13;->j:Landroid/view/MotionEvent;
+
+    .line 99
+    .line 100
+    return-object v3
+
+    .line 101
+    :cond_2
+    return-object v1
+.end method
+
+.method public final bridge contains(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    instance-of v0, p1, Lw92;
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
+    const/4 p0, 0x0
+
+    .line 6
+    return p0
+
+    .line 7
+    :cond_0
+    check-cast p1, Lw92;
+
+    .line 8
+    .line 9
+    invoke-super {p0, p1}, Lp2;->contains(Ljava/lang/Object;)Z
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    return p0
+.end method
+
+.method public final get(I)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Lw13;->b()Ljava/util/List;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    check-cast p0, Ljava/util/ArrayList;
+
+    .line 6
+    .line 7
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     .line 8
     .line 9
@@ -69,94 +330,77 @@
     move-result-object p0
 
     .line 11
-    check-cast p0, Lj13;
+    check-cast p0, Lw92;
 
     .line 12
     .line 13
-    if-eqz p0, :cond_0
-
-    .line 14
-    .line 15
-    iget-object v0, v0, Lx13;->o:Lgt3;
-
-    .line 16
-    .line 17
-    invoke-virtual {v0, p0}, Lgt3;->g(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 18
-    .line 19
-    .line 20
-    move-result-object p0
-
-    .line 21
-    check-cast p0, Lp13;
-
-    .line 22
-    .line 23
-    return-object p0
-
-    .line 24
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 25
     return-object p0
 .end method
 
-.method public final c()Z
-    .locals 2
+.method public final bridge indexOf(Ljava/lang/Object;)I
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Lw13;->a:B
+    instance-of v0, p1, Lw92;
 
     .line 2
     .line 3
-    const/4 v1, 0x1
+    if-nez v0, :cond_0
 
     .line 4
-    packed-switch v0, :pswitch_data_0
-
     .line 5
+    const/4 p0, -0x1
+
     .line 6
+    return p0
+
     .line 7
-    invoke-virtual {p0}, Lw13;->b()Lp13;
+    :cond_0
+    check-cast p1, Lw92;
 
     .line 8
     .line 9
+    invoke-super {p0, p1}, Lh3;->indexOf(Ljava/lang/Object;)I
+
     .line 10
-    move-result-object p0
-
     .line 11
-    if-eqz p0, :cond_0
-
     .line 12
+    move-result p0
+
     .line 13
-    iget-object p0, p0, Lp13;->f:Lho4;
+    return p0
+.end method
 
-    .line 14
-    .line 15
-    if-eqz p0, :cond_0
+.method public final bridge lastIndexOf(Ljava/lang/Object;)I
+    .locals 1
 
-    .line 16
-    .line 17
-    invoke-virtual {p0}, Lho4;->c()Z
+    .line 1
+    instance-of v0, p1, Lw92;
 
-    .line 18
-    .line 19
-    .line 20
-    move-result v1
+    .line 2
+    .line 3
+    if-nez v0, :cond_0
 
-    .line 21
+    .line 4
+    .line 5
+    const/4 p0, -0x1
+
+    .line 6
+    return p0
+
+    .line 7
     :cond_0
-    :pswitch_0
-    return v1
+    check-cast p1, Lw92;
 
-    .line 22
-    nop
+    .line 8
+    .line 9
+    invoke-super {p0, p1}, Lh3;->lastIndexOf(Ljava/lang/Object;)I
 
-    .line 23
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    return p0
 .end method

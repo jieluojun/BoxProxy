@@ -1,42 +1,94 @@
 .class public final Lzn4;
-.super Lfo4;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final c:F
+.field public final a:J
 
-.field public final d:F
+.field public final b:J
 
 
 # direct methods
-.method public constructor <init>(FF)V
-    .locals 1
+.method public constructor <init>(JJ)V
+    .locals 4
 
     .line 1
-    const/4 v0, 0x3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    invoke-direct {p0, v0}, Lfo4;-><init>(I)V
-
     .line 3
     .line 4
+    iput-wide p1, p0, Lzn4;->a:J
+
     .line 5
-    iput p1, p0, Lzn4;->c:F
-
     .line 6
-    .line 7
-    iput p2, p0, Lzn4;->d:F
+    iput-wide p3, p0, Lzn4;->b:J
 
+    .line 7
     .line 8
+    const-wide v0, 0xff00000000L
+
     .line 9
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    and-long p0, p1, v0
+
+    .line 14
+    .line 15
+    const-wide/16 v2, 0x0
+
+    .line 16
+    .line 17
+    cmp-long p0, p0, v2
+
+    .line 18
+    .line 19
+    if-nez p0, :cond_0
+
+    .line 20
+    .line 21
+    const-string p0, "width cannot be TextUnit.Unspecified"
+
+    .line 22
+    .line 23
+    invoke-static {p0}, Lqo2;->a(Ljava/lang/String;)V
+
+    .line 24
+    .line 25
+    .line 26
+    :cond_0
+    and-long p0, p3, v0
+
+    .line 27
+    .line 28
+    cmp-long p0, p0, v2
+
+    .line 29
+    .line 30
+    if-nez p0, :cond_1
+
+    .line 31
+    .line 32
+    const-string p0, "height cannot be TextUnit.Unspecified"
+
+    .line 33
+    .line 34
+    invoke-static {p0}, Lqo2;->a(Ljava/lang/String;)V
+
+    .line 35
+    .line 36
+    .line 37
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+    .locals 5
 
     .line 1
     const/4 v0, 0x1
@@ -54,66 +106,67 @@
 
     .line 6
     .line 7
-    const/4 v2, 0x0
-
-    .line 8
     if-nez v1, :cond_1
 
+    .line 8
     .line 9
-    .line 10
-    return v2
+    goto :goto_0
 
-    .line 11
+    .line 10
     :cond_1
     check-cast p1, Lzn4;
 
+    .line 11
     .line 12
+    iget-wide v1, p1, Lzn4;->a:J
+
     .line 13
-    iget v1, p0, Lzn4;->c:F
-
     .line 14
+    iget-wide v3, p0, Lzn4;->a:J
+
     .line 15
-    iget v3, p1, Lzn4;->c:F
-
     .line 16
-    .line 17
-    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
+    invoke-static {v3, v4, v1, v2}, Ldr6;->a(JJ)Z
 
+    .line 17
     .line 18
     .line 19
-    .line 20
     move-result v1
 
-    .line 21
-    if-eqz v1, :cond_2
+    .line 20
+    if-nez v1, :cond_2
 
+    .line 21
     .line 22
+    goto :goto_0
+
     .line 23
-    return v2
+    :cond_2
+    iget-wide v1, p0, Lzn4;->b:J
 
     .line 24
-    :cond_2
-    iget p0, p0, Lzn4;->d:F
-
     .line 25
+    iget-wide p0, p1, Lzn4;->b:J
+
     .line 26
-    iget p1, p1, Lzn4;->d:F
-
     .line 27
-    .line 28
-    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
+    invoke-static {v1, v2, p0, p1}, Ldr6;->a(JJ)Z
 
+    .line 28
     .line 29
     .line 30
-    .line 31
     move-result p0
 
-    .line 32
-    if-eqz p0, :cond_3
+    .line 31
+    if-nez p0, :cond_3
 
+    .line 32
     .line 33
+    :goto_0
+    const/4 p0, 0x0
+
     .line 34
-    return v2
+    return p0
 
     .line 35
     :cond_3
@@ -121,14 +174,14 @@
 .end method
 
 .method public final hashCode()I
-    .locals 1
+    .locals 4
 
     .line 1
-    iget v0, p0, Lzn4;->c:F
+    iget-wide v0, p0, Lzn4;->a:J
 
     .line 2
     .line 3
-    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
     .line 4
     .line 5
@@ -136,59 +189,89 @@
     move-result v0
 
     .line 7
-    mul-int/lit8 v0, v0, 0x1f
+    const/16 v1, 0x1f
 
     .line 8
     .line 9
-    iget p0, p0, Lzn4;->d:F
+    mul-int/2addr v0, v1
 
     .line 10
-    .line 11
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
+    iget-wide v2, p0, Lzn4;->b:J
 
+    .line 11
     .line 12
+    invoke-static {v0, v1, v2, v3}, Lqq5;->d(IIJ)I
+
     .line 13
     .line 14
+    .line 15
     move-result p0
 
-    .line 15
-    add-int/2addr p0, v0
-
     .line 16
-    return p0
+    const/4 v0, 0x7
+
+    .line 17
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v0
+
+    .line 21
+    add-int/2addr v0, p0
+
+    .line 22
+    return v0
 .end method
 
 .method public final toString()Ljava/lang/String;
     .locals 4
 
     .line 1
-    const-string v0, ", dy="
+    iget-wide v0, p0, Lzn4;->a:J
 
     .line 2
     .line 3
-    const-string v1, ")"
+    invoke-static {v0, v1}, Ldr6;->d(J)Ljava/lang/String;
 
     .line 4
     .line 5
-    const-string v2, "RelativeMoveTo(dx="
-
     .line 6
+    move-result-object v0
+
     .line 7
-    iget v3, p0, Lzn4;->c:F
+    iget-wide v1, p0, Lzn4;->b:J
 
     .line 8
     .line 9
-    iget p0, p0, Lzn4;->d:F
+    invoke-static {v1, v2}, Ldr6;->d(J)Ljava/lang/String;
 
     .line 10
     .line 11
-    invoke-static {v2, v3, v0, p0, v1}, Ly96;->o(Ljava/lang/String;FLjava/lang/String;FLjava/lang/String;)Ljava/lang/String;
-
     .line 12
-    .line 13
-    .line 14
     move-result-object p0
 
+    .line 13
+    const-string v1, ", height="
+
+    .line 14
     .line 15
+    const-string v2, ", placeholderVerticalAlign=TextCenter)"
+
+    .line 16
+    .line 17
+    const-string v3, "Placeholder(width="
+
+    .line 18
+    .line 19
+    invoke-static {v3, v0, v1, p0, v2}, Lpb1;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-object p0
+
+    .line 23
     return-object p0
 .end method

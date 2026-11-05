@@ -1,20 +1,35 @@
-.class public interface abstract Lqq3;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lqq3;
+.super Ljb1;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# virtual methods
-.method public abstract a()V
-.end method
+# direct methods
+.method public constructor <init>(Ljb1;)V
+    .locals 0
 
-.method public abstract b(J)Z
-.end method
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.method public abstract c(JLzv5;I)Z
-.end method
+    .line 2
+    .line 3
+    .line 4
+    iget-object p1, p1, Ljb1;->a:Ljava/util/LinkedHashMap;
 
-.method public abstract d(JLzv5;)Z
-.end method
+    .line 5
+    .line 6
+    invoke-direct {p0}, Ljb1;-><init>()V
 
-.method public abstract e(J)Z
+    .line 7
+    .line 8
+    .line 9
+    iget-object p0, p0, Ljb1;->a:Ljava/util/LinkedHashMap;
+
+    .line 10
+    .line 11
+    invoke-interface {p0, p1}, Ljava/util/Map;->putAll(Ljava/util/Map;)V
+
+    .line 12
+    .line 13
+    .line 14
+    return-void
 .end method

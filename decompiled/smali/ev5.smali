@@ -1,430 +1,211 @@
-.class public abstract Lev5;
+.class public final Lev5;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Lbv5;
+# instance fields
+.field public final a:J
 
-.field public static final b:I
+.field public final b:J
 
-.field public static final c:[Ljava/util/concurrent/atomic/AtomicReference;
+.field public final c:Ljz2;
+
+.field public final d:Z
+
+.field public final e:Lgu5;
+
+.field public final f:Ldv5;
+
+.field public final g:Lwm;
+
+.field public final h:Z
+
+.field public final i:Lcr3;
+
+.field public final j:Ljava/util/ArrayList;
+
+.field public k:I
+
+.field public l:I
+
+.field public m:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
+.method public constructor <init>(JJLjz2;ZLgu5;Ldv5;Lwm;Z)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lbv5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/4 v6, 0x0
-
     .line 4
-    new-array v1, v6, [B
+    iput-wide p1, p0, Lev5;->a:J
 
     .line 5
     .line 6
-    const/4 v4, 0x0
+    iput-wide p3, p0, Lev5;->b:J
 
     .line 7
-    const/4 v5, 0x0
-
     .line 8
-    const/4 v2, 0x0
+    iput-object p5, p0, Lev5;->c:Ljz2;
 
     .line 9
-    const/4 v3, 0x0
-
     .line 10
-    invoke-direct/range {v0 .. v5}, Lbv5;-><init>([BIIZZ)V
+    iput-boolean p6, p0, Lev5;->d:Z
 
     .line 11
     .line 12
+    iput-object p7, p0, Lev5;->e:Lgu5;
+
     .line 13
-    sput-object v0, Lev5;->a:Lbv5;
-
     .line 14
-    .line 15
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
+    iput-object p8, p0, Lev5;->f:Ldv5;
 
+    .line 15
     .line 16
+    iput-object p9, p0, Lev5;->g:Lwm;
+
     .line 17
     .line 18
-    move-result-object v0
+    iput-boolean p10, p0, Lev5;->h:Z
 
     .line 19
-    invoke-virtual {v0}, Ljava/lang/Runtime;->availableProcessors()I
-
     .line 20
+    sget p1, Lxd3;->a:I
+
     .line 21
     .line 22
-    move-result v0
+    new-instance p1, Lcr3;
 
     .line 23
-    mul-int/lit8 v0, v0, 0x2
-
     .line 24
+    const/4 p2, 0x6
+
     .line 25
-    add-int/lit8 v0, v0, -0x1
+    invoke-direct {p1, p2}, Lcr3;-><init>(I)V
 
     .line 26
     .line 27
-    invoke-static {v0}, Ljava/lang/Integer;->highestOneBit(I)I
-
     .line 28
+    iput-object p1, p0, Lev5;->i:Lcr3;
+
     .line 29
     .line 30
-    move-result v0
+    new-instance p1, Ljava/util/ArrayList;
 
     .line 31
-    sput v0, Lev5;->b:I
-
     .line 32
-    .line 33
-    new-array v1, v0, [Ljava/util/concurrent/atomic/AtomicReference;
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
+    .line 33
     .line 34
     .line 35
-    :goto_0
-    if-ge v6, v0, :cond_0
+    iput-object p1, p0, Lev5;->j:Ljava/util/ArrayList;
 
     .line 36
     .line 37
-    new-instance v2, Ljava/util/concurrent/atomic/AtomicReference;
+    const/4 p1, -0x1
 
     .line 38
-    .line 39
-    invoke-direct {v2}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
+    iput p1, p0, Lev5;->k:I
 
+    .line 39
     .line 40
+    iput p1, p0, Lev5;->l:I
+
     .line 41
     .line 42
-    aput-object v2, v1, v6
+    iput p1, p0, Lev5;->m:I
 
     .line 43
     .line 44
-    add-int/lit8 v6, v6, 0x1
-
-    .line 45
-    .line 46
-    goto :goto_0
-
-    .line 47
-    :cond_0
-    sput-object v1, Lev5;->c:[Ljava/util/concurrent/atomic/AtomicReference;
-
-    .line 48
-    .line 49
     return-void
 .end method
 
-.method public static final a(Lbv5;)V
-    .locals 6
+
+# virtual methods
+.method public final a(ILti1;Lti1;)I
+    .locals 1
 
     .line 1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v0, -0x1
 
     .line 2
+    if-eq p1, v0, :cond_0
+
     .line 3
     .line 4
-    iget-object v0, p0, Lbv5;->f:Lbv5;
+    goto :goto_0
 
     .line 5
-    .line 6
-    if-nez v0, :cond_4
+    :cond_0
+    invoke-static {p2, p3}, Le33;->K(Lti1;Lti1;)Lti1;
 
+    .line 6
     .line 7
     .line 8
-    iget-object v0, p0, Lbv5;->g:Lbv5;
+    move-result-object p2
 
     .line 9
-    .line 10
-    if-nez v0, :cond_4
+    invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
 
+    .line 10
     .line 11
     .line 12
-    iget-boolean v0, p0, Lbv5;->d:Z
+    move-result p2
 
     .line 13
+    const/4 p3, 0x1
+
     .line 14
-    if-eqz v0, :cond_0
+    if-eqz p2, :cond_3
 
     .line 15
     .line 16
-    goto :goto_0
+    if-eq p2, p3, :cond_2
 
     .line 17
-    :cond_0
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
     .line 18
-    .line 19
-    .line 20
-    move-result-object v0
+    const/4 p0, 0x2
 
+    .line 19
+    if-ne p2, p0, :cond_1
+
+    .line 20
     .line 21
-    invoke-virtual {v0}, Ljava/lang/Thread;->getId()J
+    :goto_0
+    return p1
 
     .line 22
+    :cond_1
+    invoke-static {}, Lvd1;->a()V
+
     .line 23
     .line 24
-    move-result-wide v0
-
     .line 25
-    sget v2, Lev5;->b:I
+    const/4 p0, 0x0
 
     .line 26
+    return p0
+
     .line 27
-    int-to-long v2, v2
-
-    .line 28
-    const-wide/16 v4, 0x1
-
-    .line 29
-    .line 30
-    sub-long/2addr v2, v4
-
-    .line 31
-    and-long/2addr v0, v2
-
-    .line 32
-    long-to-int v0, v0
-
-    .line 33
-    sget-object v1, Lev5;->c:[Ljava/util/concurrent/atomic/AtomicReference;
-
-    .line 34
-    .line 35
-    aget-object v0, v1, v0
-
-    .line 36
-    .line 37
-    sget-object v1, Lev5;->a:Lbv5;
-
-    .line 38
-    .line 39
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 40
-    .line 41
-    .line 42
-    move-result-object v2
-
-    .line 43
-    check-cast v2, Lbv5;
-
-    .line 44
-    .line 45
-    if-ne v2, v1, :cond_1
-
-    .line 46
-    .line 47
-    :goto_0
-    return-void
-
-    .line 48
-    :cond_1
-    const/4 v1, 0x0
-
-    .line 49
-    if-eqz v2, :cond_2
-
-    .line 50
-    .line 51
-    iget v3, v2, Lbv5;->c:I
-
-    .line 52
-    .line 53
-    goto :goto_1
-
-    .line 54
     :cond_2
-    move v3, v1
-
-    .line 55
-    :goto_1
-    const/high16 v4, 0x10000
-
-    .line 56
-    .line 57
-    if-lt v3, v4, :cond_3
-
-    .line 58
-    .line 59
-    invoke-virtual {v0, v2}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-
-    .line 60
-    .line 61
-    .line 62
-    return-void
-
-    .line 63
-    :cond_3
-    iput-object v2, p0, Lbv5;->f:Lbv5;
-
-    .line 64
-    .line 65
-    iput v1, p0, Lbv5;->b:I
-
-    .line 66
-    .line 67
-    add-int/lit16 v3, v3, 0x2000
-
-    .line 68
-    .line 69
-    iput v3, p0, Lbv5;->c:I
-
-    .line 70
-    .line 71
-    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-
-    .line 72
-    .line 73
-    .line 74
-    return-void
-
-    .line 75
-    :cond_4
-    const-string p0, "Failed requirement."
-
-    .line 76
-    .line 77
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
-
-    .line 78
-    .line 79
-    .line 80
-    return-void
-.end method
-
-.method public static final b()Lbv5;
-    .locals 6
-
-    .line 1
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
-
-    .line 5
-    invoke-virtual {v0}, Ljava/lang/Thread;->getId()J
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-wide v0
-
-    .line 9
-    sget v2, Lev5;->b:I
-
-    .line 10
-    .line 11
-    int-to-long v2, v2
-
-    .line 12
-    const-wide/16 v4, 0x1
-
-    .line 13
-    .line 14
-    sub-long/2addr v2, v4
-
-    .line 15
-    and-long/2addr v0, v2
-
-    .line 16
-    long-to-int v0, v0
-
-    .line 17
-    sget-object v1, Lev5;->c:[Ljava/util/concurrent/atomic/AtomicReference;
-
-    .line 18
-    .line 19
-    aget-object v0, v1, v0
-
-    .line 20
-    .line 21
-    sget-object v1, Lev5;->a:Lbv5;
-
-    .line 22
-    .line 23
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->getAndSet(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 24
-    .line 25
-    .line 26
-    move-result-object v2
-
-    .line 27
-    check-cast v2, Lbv5;
+    iget p0, p0, Lev5;->m:I
 
     .line 28
     .line 29
-    if-ne v2, v1, :cond_0
+    return p0
 
     .line 30
+    :cond_3
+    iget p0, p0, Lev5;->m:I
+
     .line 31
-    new-instance v0, Lbv5;
-
     .line 32
+    sub-int/2addr p0, p3
+
     .line 33
-    invoke-direct {v0}, Lbv5;-><init>()V
-
-    .line 34
-    .line 35
-    .line 36
-    return-object v0
-
-    .line 37
-    :cond_0
-    const/4 v1, 0x0
-
-    .line 38
-    if-nez v2, :cond_1
-
-    .line 39
-    .line 40
-    invoke-virtual {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-
-    .line 41
-    .line 42
-    .line 43
-    new-instance v0, Lbv5;
-
-    .line 44
-    .line 45
-    invoke-direct {v0}, Lbv5;-><init>()V
-
-    .line 46
-    .line 47
-    .line 48
-    return-object v0
-
-    .line 49
-    :cond_1
-    iget-object v3, v2, Lbv5;->f:Lbv5;
-
-    .line 50
-    .line 51
-    invoke-virtual {v0, v3}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
-
-    .line 52
-    .line 53
-    .line 54
-    iput-object v1, v2, Lbv5;->f:Lbv5;
-
-    .line 55
-    .line 56
-    const/4 v0, 0x0
-
-    .line 57
-    iput v0, v2, Lbv5;->c:I
-
-    .line 58
-    .line 59
-    return-object v2
+    return p0
 .end method

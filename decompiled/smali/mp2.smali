@@ -1,33 +1,30 @@
-.class public final synthetic Lmp2;
+.class public final Lmp2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Le62;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final a:Z
 
-.field public final synthetic k:Lac1;
+.field public final b:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lac1;B)V
+.method public constructor <init>(ZZ)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lmp2;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lmp2;->k:Lac1;
-
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-boolean p1, p0, Lmp2;->a:Z
 
+    .line 5
     .line 6
+    iput-boolean p2, p0, Lmp2;->b:Z
+
     .line 7
     .line 8
     return-void
@@ -35,65 +32,173 @@
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lmp2;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Lmp2;
+
+    .line 12
+    .line 13
+    iget-boolean v1, p1, Lmp2;->a:Z
+
+    .line 14
+    .line 15
+    iget-boolean v3, p0, Lmp2;->a:Z
+
+    .line 16
+    .line 17
+    if-eq v3, v1, :cond_2
+
+    .line 18
+    .line 19
+    return v2
+
+    .line 20
+    :cond_2
+    iget-boolean p0, p0, Lmp2;->b:Z
+
+    .line 21
+    .line 22
+    iget-boolean p1, p1, Lmp2;->b:Z
+
+    .line 23
+    .line 24
+    if-eq p0, p1, :cond_3
+
+    .line 25
+    .line 26
+    return v2
+
+    .line 27
+    :cond_3
+    return v0
+.end method
+
+.method public final hashCode()I
     .locals 1
 
     .line 1
-    iget-byte v0, p0, Lmp2;->j:B
+    iget-boolean v0, p0, Lmp2;->a:Z
 
     .line 2
     .line 3
-    iget-object p0, p0, Lmp2;->k:Lac1;
+    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_0
+    .line 6
+    move-result v0
+
+    .line 7
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 8
+    .line 9
+    iget-boolean p0, p0, Lmp2;->b:Z
+
+    .line 10
+    .line 11
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    add-int/2addr p0, v0
+
+    .line 16
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "InputTextSuggestionState(isCommittedByInputMethodEditor="
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 6
     .line 7
     .line 8
-    new-instance v0, Ljn5;
+    iget-boolean v1, p0, Lmp2;->a:Z
 
     .line 9
     .line 10
-    invoke-direct {v0, p0}, Ljn5;-><init>(Lac1;)V
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     .line 11
     .line 12
     .line 13
-    return-object v0
+    const-string v1, ", suggestionSelected="
 
     .line 14
-    :pswitch_0
-    invoke-interface {p0}, Lac1;->e()Lrb1;
-
     .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 16
     .line 17
-    move-result-object p0
-
     .line 18
-    invoke-static {p0}, Lff3;->C(Lrb1;)F
+    iget-boolean p0, p0, Lmp2;->b:Z
 
     .line 19
     .line 20
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
     .line 21
-    move-result p0
-
     .line 22
-    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
     .line 23
+    const-string p0, ")"
+
     .line 24
     .line 25
-    move-result-object p0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 26
-    return-object p0
-
     .line 27
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 28
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    return-object p0
 .end method

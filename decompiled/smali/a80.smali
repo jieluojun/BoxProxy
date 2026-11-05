@@ -1,15 +1,15 @@
 .class public final La80;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lq90;
+.implements Lo80;
 
 
 # static fields
 .field public static final INSTANCE:La80;
 
-.field public static final synthetic a:Lc23;
+.field public static final synthetic a:Lt03;
 
 
 # direct methods
@@ -30,35 +30,34 @@
 
     .line 7
     .line 8
-    new-instance v0, Lev;
+    new-instance v0, Lu70;
 
     .line 9
     .line 10
-    const/16 v1, 0x12
+    const/4 v1, 0x5
 
     .line 11
-    .line 12
-    invoke-direct {v0, v1}, Lev;-><init>(B)V
+    invoke-direct {v0, v1}, Lu70;-><init>(B)V
 
+    .line 12
     .line 13
     .line 14
+    sget-object v1, Lt43;->j:Lt43;
+
     .line 15
-    sget-object v1, Lr53;->j:Lr53;
-
     .line 16
-    .line 17
-    invoke-static {v1, v0}, Lcs;->H(Lr53;Le62;)Lc23;
+    invoke-static {v1, v0}, Loc7;->Q(Lt43;Ld52;)Lt03;
 
+    .line 17
     .line 18
     .line 19
-    .line 20
     move-result-object v0
 
-    .line 21
-    sput-object v0, La80;->a:Lc23;
+    .line 20
+    sput-object v0, La80;->a:Lt03;
 
+    .line 21
     .line 22
-    .line 23
     return-void
 .end method
 
@@ -101,7 +100,7 @@
     .locals 0
 
     .line 1
-    const p0, -0x5fcf41f8
+    const p0, 0x5e90c3e8
 
     .line 2
     .line 3
@@ -109,21 +108,21 @@
     return p0
 .end method
 
-.method public final serializer()Lqy2;
+.method public final serializer()Lgx2;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lqy2;"
+            "Lgx2;"
         }
     .end annotation
 
     .line 1
-    sget-object p0, La80;->a:Lc23;
+    sget-object p0, La80;->a:Lt03;
 
     .line 2
     .line 3
-    invoke-interface {p0}, Lc23;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lt03;->getValue()Ljava/lang/Object;
 
     .line 4
     .line 5
@@ -131,7 +130,7 @@
     move-result-object p0
 
     .line 7
-    check-cast p0, Lqy2;
+    check-cast p0, Lgx2;
 
     .line 8
     .line 9
@@ -142,7 +141,7 @@
     .locals 0
 
     .line 1
-    const-string p0, "About"
+    const-string p0, "ProxySelector"
 
     .line 2
     .line 3

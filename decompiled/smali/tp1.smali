@@ -1,52 +1,88 @@
 .class public abstract Ltp1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final synthetic a:I
+.field public static final a:Lub1;
+
+.field public static final b:Lub1;
+
+.field public static final c:Lvd1;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 4
+    .locals 5
 
     .line 1
-    const/4 v0, 0x4
+    new-instance v0, Lub1;
 
     .line 2
-    new-array v1, v0, [Ljava/lang/ThreadLocal;
-
     .line 3
+    const v1, 0x3ecccccd    # 0.4f
+
     .line 4
+    .line 5
+    .line 6
     const/4 v2, 0x0
 
-    .line 5
-    :goto_0
-    if-ge v2, v0, :cond_0
-
-    .line 6
     .line 7
-    new-instance v3, Ljava/lang/ThreadLocal;
+    const v3, 0x3e4ccccd    # 0.2f
 
     .line 8
     .line 9
-    invoke-direct {v3}, Ljava/lang/ThreadLocal;-><init>()V
-
     .line 10
+    const/high16 v4, 0x3f800000    # 1.0f
+
     .line 11
     .line 12
-    aput-object v3, v1, v2
+    invoke-direct {v0, v1, v2, v3, v4}, Lub1;-><init>(FFFF)V
 
     .line 13
     .line 14
-    add-int/lit8 v2, v2, 0x1
-
     .line 15
-    .line 16
-    goto :goto_0
+    sput-object v0, Ltp1;->a:Lub1;
 
+    .line 16
     .line 17
-    :cond_0
+    new-instance v0, Lub1;
+
+    .line 18
+    .line 19
+    invoke-direct {v0, v2, v2, v3, v4}, Lub1;-><init>(FFFF)V
+
+    .line 20
+    .line 21
+    .line 22
+    new-instance v0, Lub1;
+
+    .line 23
+    .line 24
+    invoke-direct {v0, v1, v2, v4, v4}, Lub1;-><init>(FFFF)V
+
+    .line 25
+    .line 26
+    .line 27
+    sput-object v0, Ltp1;->b:Lub1;
+
+    .line 28
+    .line 29
+    new-instance v0, Lvd1;
+
+    .line 30
+    .line 31
+    const/4 v1, 0x6
+
+    .line 32
+    invoke-direct {v0, v1}, Lvd1;-><init>(B)V
+
+    .line 33
+    .line 34
+    .line 35
+    sput-object v0, Ltp1;->c:Lvd1;
+
+    .line 36
+    .line 37
     return-void
 .end method

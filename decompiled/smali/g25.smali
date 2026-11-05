@@ -1,241 +1,118 @@
-.class public final Lg25;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Le62;
+.class public final enum Lg25;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic j:B
+# static fields
+.field public static final enum j:Lg25;
 
-.field public final synthetic k:Ln45;
+.field public static final enum k:Lg25;
 
-.field public final synthetic l:Ljava/lang/String;
-
-.field public final synthetic m:Lo35;
+.field public static final synthetic l:[Lg25;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ln45;Ljava/lang/String;Lo35;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    iput-byte p4, p0, Lg25;->j:B
+    new-instance v0, Lg25;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lg25;->k:Ln45;
+    const-string v1, "Full"
 
     .line 4
     .line 5
-    iput-object p2, p0, Lg25;->l:Ljava/lang/String;
+    const/4 v2, 0x0
 
     .line 6
-    .line 7
-    iput-object p3, p0, Lg25;->m:Lo35;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 7
     .line 8
     .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lg25;->j:Lg25;
 
     .line 10
     .line 11
-    .line 12
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 5
-
-    .line 1
-    iget-byte v0, p0, Lg25;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    const/16 v2, 0xa
-
-    .line 6
-    .line 7
-    iget-object v3, p0, Lg25;->m:Lo35;
-
-    .line 8
-    .line 9
-    iget-object v4, p0, Lg25;->l:Ljava/lang/String;
-
-    .line 10
-    .line 11
-    iget-object p0, p0, Lg25;->k:Ln45;
+    new-instance v1, Lg25;
 
     .line 12
     .line 13
-    packed-switch v0, :pswitch_data_0
+    const-string v2, "SearchOnly"
 
     .line 14
     .line 15
+    const/4 v3, 0x1
+
     .line 16
-    iget-object v0, v3, Lo35;->c:Ljava/util/List;
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
     .line 18
-    new-instance v3, Ljava/util/ArrayList;
-
     .line 19
-    .line 20
-    invoke-static {v0, v2}, Ldv0;->j0(Ljava/lang/Iterable;I)I
+    sput-object v1, Lg25;->k:Lg25;
 
+    .line 20
     .line 21
+    filled-new-array {v0, v1}, [Lg25;
+
     .line 22
     .line 23
-    move-result v2
-
     .line 24
-    invoke-direct {v3, v2}, Ljava/util/ArrayList;-><init>(I)V
+    move-result-object v0
 
     .line 25
+    sput-object v0, Lg25;->l:[Lg25;
+
     .line 26
     .line 27
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    return-void
+.end method
 
-    .line 28
-    .line 29
-    .line 30
+.method public static valueOf(Ljava/lang/String;)Lg25;
+    .locals 1
+
+    .line 1
+    const-class v0, Lg25;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lg25;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Lg25;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lg25;->l:[Lg25;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
     move-result-object v0
 
-    .line 31
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    .line 7
+    check-cast v0, [Lg25;
 
-    .line 32
-    .line 33
-    .line 34
-    move-result v2
-
-    .line 35
-    if-eqz v2, :cond_0
-
-    .line 36
-    .line 37
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 38
-    .line 39
-    .line 40
-    move-result-object v2
-
-    .line 41
-    check-cast v2, Lb45;
-
-    .line 42
-    .line 43
-    iget-object v2, v2, Lb45;->a:Ljava/lang/String;
-
-    .line 44
-    .line 45
-    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 46
-    .line 47
-    .line 48
-    goto :goto_0
-
-    .line 49
-    :cond_0
-    invoke-virtual {p0, v4, v3}, Ln45;->u(Ljava/lang/String;Ljava/util/List;)V
-
-    .line 50
-    .line 51
-    .line 52
-    return-object v1
-
-    .line 53
-    :pswitch_0
-    iget-object v0, v3, Lo35;->c:Ljava/util/List;
-
-    .line 54
-    .line 55
-    new-instance v3, Ljava/util/ArrayList;
-
-    .line 56
-    .line 57
-    invoke-static {v0, v2}, Ldv0;->j0(Ljava/lang/Iterable;I)I
-
-    .line 58
-    .line 59
-    .line 60
-    move-result v2
-
-    .line 61
-    invoke-direct {v3, v2}, Ljava/util/ArrayList;-><init>(I)V
-
-    .line 62
-    .line 63
-    .line 64
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-
-    .line 65
-    .line 66
-    .line 67
-    move-result-object v0
-
-    .line 68
-    :goto_1
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 69
-    .line 70
-    .line 71
-    move-result v2
-
-    .line 72
-    if-eqz v2, :cond_1
-
-    .line 73
-    .line 74
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 75
-    .line 76
-    .line 77
-    move-result-object v2
-
-    .line 78
-    check-cast v2, Lb45;
-
-    .line 79
-    .line 80
-    iget-object v2, v2, Lb45;->a:Ljava/lang/String;
-
-    .line 81
-    .line 82
-    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 83
-    .line 84
-    .line 85
-    goto :goto_1
-
-    .line 86
-    :cond_1
-    invoke-virtual {p0, v4, v3}, Ln45;->u(Ljava/lang/String;Ljava/util/List;)V
-
-    .line 87
-    .line 88
-    .line 89
-    return-object v1
-
-    .line 90
-    nop
-
-    .line 91
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 8
+    .line 9
+    return-object v0
 .end method

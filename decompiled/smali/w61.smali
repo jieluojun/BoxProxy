@@ -1,99 +1,181 @@
-.class public interface abstract Lw61;
+.class public final Lw61;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# virtual methods
-.method public abstract a(Ls74;)Ljava/lang/Object;
-.end method
+# instance fields
+.field public final a:Lzc6;
 
-.method public b(Ls74;Ljava/lang/Object;)V
-    .locals 1
+.field public final b:Lrh0;
+
+
+# direct methods
+.method public constructor <init>(Lzc6;Lrh0;)V
+    .locals 0
 
     .line 1
-    iget-boolean p2, p1, Ls74;->c:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    if-eqz p2, :cond_0
+    .line 4
+    iput-object p1, p0, Lw61;->a:Lzc6;
+
+    .line 5
+    .line 6
+    iput-object p2, p0, Lw61;->b:Lrh0;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    .line 1
+    iget-object v0, p0, Lw61;->b:Lrh0;
+
+    .line 2
+    .line 3
+    iget-object v1, v0, Lrh0;->n:Lsa1;
 
     .line 4
     .line 5
-    new-instance p1, Ljava/lang/IllegalStateException;
+    sget-object v2, Lxa1;->k:Li11;
 
     .line 6
     .line 7
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-interface {v1, v2}, Lsa1;->p(Lra1;)Lqa1;
 
     .line 8
     .line 9
     .line 10
-    move-result-object p0
+    move-result-object v1
 
     .line 11
-    invoke-virtual {p0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+    if-nez v1, :cond_0
 
     .line 12
     .line 13
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
     .line 14
-    move-result-object p0
-
     .line 15
-    const-string p2, "Not implemented in "
-
     .line 16
+    move-result v1
+
     .line 17
-    invoke-virtual {p2, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    const/16 v2, 0x10
 
     .line 18
     .line 19
+    invoke-static {v2}, Lam0;->k(I)V
+
     .line 20
-    move-result-object p0
-
     .line 21
-    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
     .line 22
+    invoke-static {v1, v2}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
+
     .line 23
     .line 24
-    throw p1
-
     .line 25
-    :cond_0
-    new-instance p0, Lmf7;
+    move-result-object v1
 
     .line 26
-    .line 27
-    new-instance p2, Ljava/lang/StringBuilder;
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 27
     .line 28
     .line 29
-    const-string v0, "Unexpected recursive structure for Node: "
+    iget-object p0, p0, Lw61;->a:Lzc6;
 
     .line 30
     .line 31
-    invoke-direct {p2, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p0}, Lzc6;->invoke()Ljava/lang/Object;
 
     .line 32
     .line 33
     .line 34
-    invoke-virtual {p2, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    move-result-object p0
 
     .line 35
+    new-instance v2, Ljava/lang/StringBuilder;
+
     .line 36
     .line 37
-    invoke-virtual {p2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const-string v3, "Request@"
 
     .line 38
     .line 39
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
     .line 40
-    move-result-object p1
-
     .line 41
-    invoke-direct {p0, p1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
     .line 42
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 43
     .line 44
-    throw p0
+    .line 45
+    const-string v1, "(currentBounds()="
+
+    .line 46
+    .line 47
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 48
+    .line 49
+    .line 50
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 51
+    .line 52
+    .line 53
+    const-string p0, ", continuation="
+
+    .line 54
+    .line 55
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 56
+    .line 57
+    .line 58
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 59
+    .line 60
+    .line 61
+    const-string p0, ")"
+
+    .line 62
+    .line 63
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 64
+    .line 65
+    .line 66
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 67
+    .line 68
+    .line 69
+    move-result-object p0
+
+    .line 70
+    return-object p0
+
+    .line 71
+    :cond_0
+    invoke-static {}, Lvd1;->t()V
+
+    .line 72
+    .line 73
+    .line 74
+    const/4 p0, 0x0
+
+    .line 75
+    return-object p0
 .end method

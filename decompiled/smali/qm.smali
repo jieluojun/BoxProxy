@@ -1,107 +1,69 @@
-.class public final synthetic Lqm;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lp62;
+.class public final Lqm;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public synthetic j:Ljava/lang/Object;
 
-.field public final synthetic k:Ldk;
+.field public final synthetic k:Lrm;
 
-.field public final synthetic l:Z
+.field public l:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ldk;ZB)V
+.method public constructor <init>(Lrm;Lz71;)V
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Lqm;->j:B
+    iput-object p1, p0, Lqm;->k:Lrm;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lqm;->k:Ldk;
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
     .line 4
     .line 5
-    iput-boolean p2, p0, Lqm;->l:Z
-
     .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 8
-    .line 9
-    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Lqm;->j:B
+    iput-object p1, p0, Lqm;->j:Ljava/lang/Object;
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    iget p1, p0, Lqm;->l:I
 
     .line 4
     .line 5
-    iget-boolean v2, p0, Lqm;->l:Z
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
-    iget-object p0, p0, Lqm;->k:Ldk;
+    or-int/2addr p1, v0
 
     .line 8
+    iput p1, p0, Lqm;->l:I
+
     .line 9
-    check-cast p1, Lek;
-
     .line 10
-    .line 11
-    packed-switch v0, :pswitch_data_0
+    iget-object p1, p0, Lqm;->k:Lrm;
 
+    .line 11
     .line 12
+    invoke-virtual {p1, p0}, Lrm;->a(Lz71;)Ljava/lang/Object;
+
     .line 13
     .line 14
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 15
+    move-result-object p0
+
     .line 16
-    .line 17
-    invoke-virtual {p0, p1, v2}, Ldk;->a(Lek;Z)V
-
-    .line 18
-    .line 19
-    .line 20
-    return-object v1
-
-    .line 21
-    :pswitch_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 22
-    .line 23
-    .line 24
-    invoke-virtual {p0, p1, v2}, Ldk;->a(Lek;Z)V
-
-    .line 25
-    .line 26
-    .line 27
-    return-object v1
-
-    .line 28
-    nop
-
-    .line 29
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

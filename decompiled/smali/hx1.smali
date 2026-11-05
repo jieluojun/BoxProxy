@@ -1,1929 +1,345 @@
 .class public final Lhx1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Landroid/view/animation/Interpolator;
 
 
-# instance fields
-.field public final a:I
-
-.field public final b:I
-
-.field public final c:J
-
-.field public final d:[B
+# static fields
+.field public static final a:[F
 
 
 # direct methods
-.method public constructor <init>(II[B)V
-    .locals 6
+.method static constructor <clinit>()V
+    .locals 1
 
-    const-wide/16 v1, -0x1
+    .line 1
+    const/16 v0, 0xc9
 
-    move-object v0, p0
+    .line 2
+    .line 3
+    new-array v0, v0, [F
 
-    move v4, p1
+    .line 4
+    .line 5
+    fill-array-data v0, :array_0
 
-    move v5, p2
+    .line 6
+    .line 7
+    .line 8
+    sput-object v0, Lhx1;->a:[F
 
-    move-object v3, p3
-
-    .line 13
-    invoke-direct/range {v0 .. v5}, Lhx1;-><init>(J[BII)V
-
+    .line 9
+    .line 10
     return-void
-.end method
-
-.method public constructor <init>(J[BII)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput p4, p0, Lhx1;->a:I
-
-    .line 5
-    .line 6
-    iput p5, p0, Lhx1;->b:I
-
-    .line 7
-    .line 8
-    iput-wide p1, p0, Lhx1;->c:J
-
-    .line 9
-    .line 10
-    iput-object p3, p0, Lhx1;->d:[B
 
     .line 11
-    .line 12
-    return-void
-.end method
-
-.method public static a(JLjava/nio/ByteOrder;)Lhx1;
-    .locals 3
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    new-array v1, v0, [J
-
-    .line 3
-    .line 4
-    const/4 v2, 0x0
-
-    .line 5
-    aput-wide p0, v1, v2
-
-    .line 6
-    .line 7
-    sget-object p0, Llx1;->C:[I
-
-    .line 8
-    .line 9
-    const/4 p1, 0x4
-
-    .line 10
-    aget p0, p0, p1
-
-    .line 11
-    .line 12
-    new-array p0, p0, [B
-
-    .line 13
-    .line 14
-    invoke-static {p0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
-
-    .line 15
-    .line 16
-    .line 17
-    move-result-object p0
-
-    .line 18
-    invoke-virtual {p0, p2}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
-
-    .line 19
-    .line 20
-    .line 21
-    aget-wide v1, v1, v2
-
-    .line 22
-    .line 23
-    long-to-int p2, v1
-
-    .line 24
-    invoke-virtual {p0, p2}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
-    .line 25
-    .line 26
-    .line 27
-    new-instance p2, Lhx1;
-
-    .line 28
-    .line 29
-    invoke-virtual {p0}, Ljava/nio/ByteBuffer;->array()[B
-
-    .line 30
-    .line 31
-    .line 32
-    move-result-object p0
-
-    .line 33
-    invoke-direct {p2, p1, v0, p0}, Lhx1;-><init>(II[B)V
-
-    .line 34
-    .line 35
-    .line 36
-    return-object p2
-.end method
-
-.method public static b(Ljx1;Ljava/nio/ByteOrder;)Lhx1;
-    .locals 4
-
-    .line 1
-    filled-new-array {p0}, [Ljx1;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    sget-object v0, Llx1;->C:[I
-
-    .line 6
-    .line 7
-    const/4 v1, 0x5
-
-    .line 8
-    aget v0, v0, v1
-
-    .line 9
-    .line 10
-    new-array v0, v0, [B
-
-    .line 11
-    .line 12
-    invoke-static {v0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
-
-    .line 13
-    .line 14
-    .line 15
-    move-result-object v0
-
-    .line 16
-    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
-
-    .line 17
-    .line 18
-    .line 19
-    const/4 p1, 0x0
-
-    .line 20
-    aget-object p0, p0, p1
-
-    .line 21
-    .line 22
-    iget-wide v2, p0, Ljx1;->a:J
-
-    .line 23
-    .line 24
-    long-to-int p1, v2
-
-    .line 25
-    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
-    .line 26
-    .line 27
-    .line 28
-    iget-wide p0, p0, Ljx1;->b:J
-
-    .line 29
-    .line 30
-    long-to-int p0, p0
-
-    .line 31
-    invoke-virtual {v0, p0}, Ljava/nio/ByteBuffer;->putInt(I)Ljava/nio/ByteBuffer;
-
-    .line 32
-    .line 33
-    .line 34
-    new-instance p0, Lhx1;
-
-    .line 35
-    .line 36
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
-
-    .line 37
-    .line 38
-    .line 39
-    move-result-object p1
-
-    .line 40
-    const/4 v0, 0x1
-
-    .line 41
-    invoke-direct {p0, v1, v0, p1}, Lhx1;-><init>(II[B)V
-
-    .line 42
-    .line 43
-    .line 44
-    return-object p0
-.end method
-
-.method public static c(ILjava/nio/ByteOrder;)Lhx1;
-    .locals 2
-
-    .line 1
-    filled-new-array {p0}, [I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    sget-object v0, Llx1;->C:[I
-
-    .line 6
-    .line 7
-    const/4 v1, 0x3
-
-    .line 8
-    aget v0, v0, v1
-
-    .line 9
-    .line 10
-    new-array v0, v0, [B
-
-    .line 11
-    .line 12
-    invoke-static {v0}, Ljava/nio/ByteBuffer;->wrap([B)Ljava/nio/ByteBuffer;
-
-    .line 13
-    .line 14
-    .line 15
-    move-result-object v0
-
-    .line 16
-    invoke-virtual {v0, p1}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
-
-    .line 17
-    .line 18
-    .line 19
-    const/4 p1, 0x0
-
-    .line 20
-    aget p0, p0, p1
-
-    .line 21
-    .line 22
-    int-to-short p0, p0
-
-    .line 23
-    invoke-virtual {v0, p0}, Ljava/nio/ByteBuffer;->putShort(S)Ljava/nio/ByteBuffer;
-
-    .line 24
-    .line 25
-    .line 26
-    new-instance p0, Lhx1;
-
-    .line 27
-    .line 28
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->array()[B
-
-    .line 29
-    .line 30
-    .line 31
-    move-result-object p1
-
-    .line 32
-    const/4 v0, 0x1
-
-    .line 33
-    invoke-direct {p0, v1, v0, p1}, Lhx1;-><init>(II[B)V
-
-    .line 34
-    .line 35
-    .line 36
-    return-object p0
+    :array_0
+    .array-data 4
+        0x0
+        0x38d1b717    # 1.0E-4f
+        0x3951b717    # 2.0E-4f
+        0x3a03126f    # 5.0E-4f
+        0x3a51b717    # 8.0E-4f
+        0x3aaa64c3    # 0.0013f
+        0x3aebedfa    # 0.0018f
+        0x3b1d4952    # 0.0024f
+        0x3b51b717    # 0.0032f
+        0x3b83126f    # 0.004f
+        0x3ba0902e    # 0.0049f
+        0x3bc154ca    # 0.0059f
+        0x3be21965    # 0.0069f
+        0x3c04b5dd    # 0.0081f
+        0x3c185f07    # 0.0093f
+        0x3c2dab9f    # 0.0106f
+        0x3c449ba6    # 0.012f
+        0x3c5d2f1b    # 0.0135f
+        0x3c7765fe    # 0.0151f
+        0x3c88ce70    # 0.0167f
+        0x3c96bb99    # 0.0184f
+        0x3ca4a8c1    # 0.0201f
+        0x3cb43958    # 0.022f
+        0x3cc3c9ef    # 0.0239f
+        0x3cd42c3d    # 0.0259f
+        0x3ce48e8a    # 0.0279f
+        0x3cf5c28f    # 0.03f
+        0x3d03e426    # 0.0322f
+        0x3d0d4fdf    # 0.0345f
+        0x3d16bb99    # 0.0368f
+        0x3d202752    # 0.0391f
+        0x3d2a64c3    # 0.0416f
+        0x3d34a234    # 0.0441f
+        0x3d3edfa4    # 0.0466f
+        0x3d4985f0    # 0.0492f
+        0x3d549518    # 0.0519f
+        0x3d600d1b    # 0.0547f
+        0x3d6b1c43    # 0.0574f
+        0x3d76fd22    # 0.0603f
+        0x3d816f00    # 0.0632f
+        0x3d8793de    # 0.0662f
+        0x3d8db8bb    # 0.0692f
+        0x3d93dd98    # 0.0722f
+        0x3d9a6b51    # 0.0754f
+        0x3da0c49c    # 0.0785f
+        0x3da75254    # 0.0817f
+        0x3dae147b    # 0.085f
+        0x3db50b0f    # 0.0884f
+        0x3dbbcd36    # 0.0917f
+        0x3dc2f838    # 0.0952f
+        0x3dc9eecc    # 0.0986f
+        0x3dd119ce    # 0.1021f
+        0x3dd8793e    # 0.1057f
+        0x3ddfd8ae    # 0.1093f
+        0x3de76c8b    # 0.113f
+        0x3def0069    # 0.1167f
+        0x3df6c8b4    # 0.1205f
+        0x3dfe9100    # 0.1243f
+        0x3e032ca5    # 0.1281f
+        0x3e072b02    # 0.132f
+        0x3e0b295f    # 0.1359f
+        0x3e0f41f2    # 0.1399f
+        0x3e135a86    # 0.1439f
+        0x3e178d50    # 0.148f
+        0x3e1bc01a    # 0.1521f
+        0x3e1ff2e5    # 0.1562f
+        0x3e243fe6    # 0.1604f
+        0x3e28a71e    # 0.1647f
+        0x3e2cf41f    # 0.1689f
+        0x3e315b57    # 0.1732f
+        0x3e35dcc6    # 0.1776f
+        0x3e3a5e35    # 0.182f
+        0x3e3edfa4    # 0.1864f
+        0x3e437b4a    # 0.1909f
+        0x3e4816f0    # 0.1954f
+        0x3e4cb296    # 0.1999f
+        0x3e516873    # 0.2045f
+        0x3e561e4f    # 0.2091f
+        0x3e5aee63    # 0.2138f
+        0x3e5fa440    # 0.2184f
+        0x3e648e8a    # 0.2232f
+        0x3e695e9e    # 0.2279f
+        0x3e6e48e9    # 0.2327f
+        0x3e734d6a    # 0.2376f
+        0x3e7837b5    # 0.2424f
+        0x3e7d3c36    # 0.2473f
+        0x3e812d77    # 0.2523f
+        0x3e83afb8    # 0.2572f
+        0x3e863f14    # 0.2622f
+        0x3e88db8c    # 0.2673f
+        0x3e8b6ae8    # 0.2723f
+        0x3e8e075f    # 0.2774f
+        0x3e90b0f2    # 0.2826f
+        0x3e934d6a    # 0.2877f
+        0x3e95f6fd    # 0.2929f
+        0x3e98adac    # 0.2982f
+        0x3e9b573f    # 0.3034f
+        0x3e9e0ded    # 0.3087f
+        0x3ea0d1b7    # 0.3141f
+        0x3ea38866    # 0.3194f
+        0x3ea64c30    # 0.3248f
+        0x3ea90ff9    # 0.3302f
+        0x3eabe0df    # 0.3357f
+        0x3eaeb1c4    # 0.3412f
+        0x3eb182aa    # 0.3467f
+        0x3eb4538f    # 0.3522f
+        0x3eb73190    # 0.3578f
+        0x3eba0f91    # 0.3634f
+        0x3ebced91    # 0.369f
+        0x3ebfd8ae    # 0.3747f
+        0x3ec2c3ca    # 0.3804f
+        0x3ec5aee6    # 0.3861f
+        0x3ec89a02    # 0.3918f
+        0x3ecb923a    # 0.3976f
+        0x3ece8a72    # 0.4034f
+        0x3ed182aa    # 0.4092f
+        0x3ed487fd    # 0.4151f
+        0x3ed78d50    # 0.421f
+        0x3eda92a3    # 0.4269f
+        0x3edda512    # 0.4329f
+        0x3ee0aa65    # 0.4388f
+        0x3ee3bcd3    # 0.4448f
+        0x3ee6cf42    # 0.4508f
+        0x3ee9eecc    # 0.4569f
+        0x3eed0e56    # 0.463f
+        0x3ef02de0    # 0.4691f
+        0x3ef34d6a    # 0.4752f
+        0x3ef67a10    # 0.4814f
+        0x3ef9a6b5    # 0.4876f
+        0x3efcd35b    # 0.4938f
+        0x3f000000    # 0.5f
+        0x3f019ce0    # 0.5063f
+        0x3f0339c1    # 0.5126f
+        0x3f04d6a1    # 0.5189f
+        0x3f067382    # 0.5252f
+        0x3f0816f0    # 0.5316f
+        0x3f09ba5e    # 0.538f
+        0x3f0b5dcc    # 0.5444f
+        0x3f0d013b    # 0.5508f
+        0x3f0eab36    # 0.5573f
+        0x3f105532    # 0.5638f
+        0x3f11ff2e    # 0.5703f
+        0x3f13a92a    # 0.5768f
+        0x3f1559b4    # 0.5834f
+        0x3f170a3d    # 0.59f
+        0x3f18bac7    # 0.5966f
+        0x3f1a71de    # 0.6033f
+        0x3f1c2268    # 0.6099f
+        0x3f1dd97f    # 0.6166f
+        0x3f1f9097    # 0.6233f
+        0x3f214e3c    # 0.6301f
+        0x3f230be1    # 0.6369f
+        0x3f24c2f8    # 0.6436f
+        0x3f26872b    # 0.6505f
+        0x3f2844d0    # 0.6573f
+        0x3f2a0903    # 0.6642f
+        0x3f2bc6a8    # 0.671f
+        0x3f2d9168    # 0.678f
+        0x3f2f559b    # 0.6849f
+        0x3f31205c    # 0.6919f
+        0x3f32e48f    # 0.6988f
+        0x3f34b5dd    # 0.7059f
+        0x3f36809d    # 0.7129f
+        0x3f384b5e    # 0.7199f
+        0x3f3a1cac    # 0.727f
+        0x3f3bedfa    # 0.7341f
+        0x3f3dc5d6    # 0.7413f
+        0x3f3f9724    # 0.7484f
+        0x3f416f00    # 0.7556f
+        0x3f4346dc    # 0.7628f
+        0x3f451eb8    # 0.77f
+        0x3f46fd22    # 0.7773f
+        0x3f48db8c    # 0.7846f
+        0x3f4ab9f5    # 0.7919f
+        0x3f4c985f    # 0.7992f
+        0x3f4e7d56    # 0.8066f
+        0x3f50624e    # 0.814f
+        0x3f524745    # 0.8214f
+        0x3f542c3d    # 0.8288f
+        0x3f5617c2    # 0.8363f
+        0x3f57fcb9    # 0.8437f
+        0x3f59eecc    # 0.8513f
+        0x3f5bda51    # 0.8588f
+        0x3f5dcc64    # 0.8664f
+        0x3f5fbe77    # 0.874f
+        0x3f61b08a    # 0.8816f
+        0x3f63a29c    # 0.8892f
+        0x3f659b3d    # 0.8969f
+        0x3f6793de    # 0.9046f
+        0x3f69930c    # 0.9124f
+        0x3f6b8bac    # 0.9201f
+        0x3f6d9168    # 0.928f
+        0x3f6f9097    # 0.9358f
+        0x3f719653    # 0.9437f
+        0x3f739c0f    # 0.9516f
+        0x3f75a1cb    # 0.9595f
+        0x3f77ae14    # 0.9675f
+        0x3f79ba5e    # 0.9755f
+        0x3f7bcd36    # 0.9836f
+        0x3f7de69b    # 0.9918f
+        0x3f800000    # 1.0f
+    .end array-data
 .end method
 
 
 # virtual methods
-.method public final d(Ljava/nio/ByteOrder;)D
-    .locals 3
+.method public final getInterpolation(F)F
+    .locals 2
 
     .line 1
-    invoke-virtual {p0, p1}, Lhx1;->g(Ljava/nio/ByteOrder;)Ljava/io/Serializable;
+    const/high16 p0, 0x3f800000    # 1.0f
 
     .line 2
     .line 3
-    .line 4
-    move-result-object p0
+    cmpl-float v0, p1, p0
 
+    .line 4
     .line 5
-    if-eqz p0, :cond_9
+    if-ltz v0, :cond_0
 
     .line 6
     .line 7
-    instance-of p1, p0, Ljava/lang/String;
-
-    .line 8
-    .line 9
-    if-eqz p1, :cond_0
-
-    .line 10
-    .line 11
-    check-cast p0, Ljava/lang/String;
-
-    .line 12
-    .line 13
-    invoke-static {p0}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-wide p0
-
-    .line 17
-    return-wide p0
-
-    .line 18
-    :cond_0
-    instance-of p1, p0, [J
-
-    .line 19
-    .line 20
-    const-string v0, "There are more than one component"
-
-    .line 21
-    .line 22
-    const/4 v1, 0x0
-
-    .line 23
-    const/4 v2, 0x1
-
-    .line 24
-    if-eqz p1, :cond_2
-
-    .line 25
-    .line 26
-    check-cast p0, [J
-
-    .line 27
-    .line 28
-    array-length p1, p0
-
-    .line 29
-    if-ne p1, v2, :cond_1
-
-    .line 30
-    .line 31
-    aget-wide p0, p0, v1
-
-    .line 32
-    .line 33
-    long-to-double p0, p0
-
-    .line 34
-    return-wide p0
-
-    .line 35
-    :cond_1
-    new-instance p0, Ljava/lang/NumberFormatException;
-
-    .line 36
-    .line 37
-    invoke-direct {p0, v0}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
-
-    .line 38
-    .line 39
-    .line 40
-    throw p0
-
-    .line 41
-    :cond_2
-    instance-of p1, p0, [I
-
-    .line 42
-    .line 43
-    if-eqz p1, :cond_4
-
-    .line 44
-    .line 45
-    check-cast p0, [I
-
-    .line 46
-    .line 47
-    array-length p1, p0
-
-    .line 48
-    if-ne p1, v2, :cond_3
-
-    .line 49
-    .line 50
-    aget p0, p0, v1
-
-    .line 51
-    .line 52
-    int-to-double p0, p0
-
-    .line 53
-    return-wide p0
-
-    .line 54
-    :cond_3
-    new-instance p0, Ljava/lang/NumberFormatException;
-
-    .line 55
-    .line 56
-    invoke-direct {p0, v0}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
-
-    .line 57
-    .line 58
-    .line 59
-    throw p0
-
-    .line 60
-    :cond_4
-    instance-of p1, p0, [D
-
-    .line 61
-    .line 62
-    if-eqz p1, :cond_6
-
-    .line 63
-    .line 64
-    check-cast p0, [D
-
-    .line 65
-    .line 66
-    array-length p1, p0
-
-    .line 67
-    if-ne p1, v2, :cond_5
-
-    .line 68
-    .line 69
-    aget-wide p0, p0, v1
-
-    .line 70
-    .line 71
-    return-wide p0
-
-    .line 72
-    :cond_5
-    new-instance p0, Ljava/lang/NumberFormatException;
-
-    .line 73
-    .line 74
-    invoke-direct {p0, v0}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
-
-    .line 75
-    .line 76
-    .line 77
-    throw p0
-
-    .line 78
-    :cond_6
-    instance-of p1, p0, [Ljx1;
-
-    .line 79
-    .line 80
-    if-eqz p1, :cond_8
-
-    .line 81
-    .line 82
-    check-cast p0, [Ljx1;
-
-    .line 83
-    .line 84
-    array-length p1, p0
-
-    .line 85
-    if-ne p1, v2, :cond_7
-
-    .line 86
-    .line 87
-    aget-object p0, p0, v1
-
-    .line 88
-    .line 89
-    iget-wide v0, p0, Ljx1;->a:J
-
-    .line 90
-    .line 91
-    long-to-double v0, v0
-
-    .line 92
-    iget-wide p0, p0, Ljx1;->b:J
-
-    .line 93
-    .line 94
-    long-to-double p0, p0
-
-    .line 95
-    div-double/2addr v0, p0
-
-    .line 96
-    return-wide v0
-
-    .line 97
-    :cond_7
-    new-instance p0, Ljava/lang/NumberFormatException;
-
-    .line 98
-    .line 99
-    invoke-direct {p0, v0}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
-
-    .line 100
-    .line 101
-    .line 102
-    throw p0
-
-    .line 103
-    :cond_8
-    new-instance p0, Ljava/lang/NumberFormatException;
-
-    .line 104
-    .line 105
-    const-string p1, "Couldn\'t find a double value"
-
-    .line 106
-    .line 107
-    invoke-direct {p0, p1}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
-
-    .line 108
-    .line 109
-    .line 110
-    throw p0
-
-    .line 111
-    :cond_9
-    new-instance p0, Ljava/lang/NumberFormatException;
-
-    .line 112
-    .line 113
-    const-string p1, "NULL can\'t be converted to a double value"
-
-    .line 114
-    .line 115
-    invoke-direct {p0, p1}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
-
-    .line 116
-    .line 117
-    .line 118
-    throw p0
-.end method
-
-.method public final e(Ljava/nio/ByteOrder;)I
-    .locals 3
-
-    .line 1
-    invoke-virtual {p0, p1}, Lhx1;->g(Ljava/nio/ByteOrder;)Ljava/io/Serializable;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    if-eqz p0, :cond_5
-
-    .line 6
-    .line 7
-    instance-of p1, p0, Ljava/lang/String;
-
-    .line 8
-    .line 9
-    if-eqz p1, :cond_0
-
-    .line 10
-    .line 11
-    check-cast p0, Ljava/lang/String;
-
-    .line 12
-    .line 13
-    invoke-static {p0}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
-
-    .line 14
-    .line 15
-    .line 16
-    move-result p0
-
-    .line 17
     return p0
 
-    .line 18
-    :cond_0
-    instance-of p1, p0, [J
-
-    .line 19
-    .line 20
-    const-string v0, "There are more than one component"
-
-    .line 21
-    .line 22
-    const/4 v1, 0x0
-
-    .line 23
-    const/4 v2, 0x1
-
-    .line 24
-    if-eqz p1, :cond_2
-
-    .line 25
-    .line 26
-    check-cast p0, [J
-
-    .line 27
-    .line 28
-    array-length p1, p0
-
-    .line 29
-    if-ne p1, v2, :cond_1
-
-    .line 30
-    .line 31
-    aget-wide p0, p0, v1
-
-    .line 32
-    .line 33
-    long-to-int p0, p0
-
-    .line 34
-    return p0
-
-    .line 35
-    :cond_1
-    new-instance p0, Ljava/lang/NumberFormatException;
-
-    .line 36
-    .line 37
-    invoke-direct {p0, v0}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
-
-    .line 38
-    .line 39
-    .line 40
-    throw p0
-
-    .line 41
-    :cond_2
-    instance-of p1, p0, [I
-
-    .line 42
-    .line 43
-    if-eqz p1, :cond_4
-
-    .line 44
-    .line 45
-    check-cast p0, [I
-
-    .line 46
-    .line 47
-    array-length p1, p0
-
-    .line 48
-    if-ne p1, v2, :cond_3
-
-    .line 49
-    .line 50
-    aget p0, p0, v1
-
-    .line 51
-    .line 52
-    return p0
-
-    .line 53
-    :cond_3
-    new-instance p0, Ljava/lang/NumberFormatException;
-
-    .line 54
-    .line 55
-    invoke-direct {p0, v0}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
-
-    .line 56
-    .line 57
-    .line 58
-    throw p0
-
-    .line 59
-    :cond_4
-    new-instance p0, Ljava/lang/NumberFormatException;
-
-    .line 60
-    .line 61
-    const-string p1, "Couldn\'t find a integer value"
-
-    .line 62
-    .line 63
-    invoke-direct {p0, p1}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
-
-    .line 64
-    .line 65
-    .line 66
-    throw p0
-
-    .line 67
-    :cond_5
-    new-instance p0, Ljava/lang/NumberFormatException;
-
-    .line 68
-    .line 69
-    const-string p1, "NULL can\'t be converted to a integer value"
-
-    .line 70
-    .line 71
-    invoke-direct {p0, p1}, Ljava/lang/NumberFormatException;-><init>(Ljava/lang/String;)V
-
-    .line 72
-    .line 73
-    .line 74
-    throw p0
-.end method
-
-.method public final f(Ljava/nio/ByteOrder;)Ljava/lang/String;
-    .locals 5
-
-    .line 1
-    invoke-virtual {p0, p1}, Lhx1;->g(Ljava/nio/ByteOrder;)Ljava/io/Serializable;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    if-nez p0, :cond_0
-
-    .line 6
-    .line 7
-    goto/16 :goto_4
-
     .line 8
-    .line 9
     :cond_0
-    instance-of p1, p0, Ljava/lang/String;
-
-    .line 10
-    .line 11
-    if-eqz p1, :cond_1
-
-    .line 12
-    .line 13
-    check-cast p0, Ljava/lang/String;
-
-    .line 14
-    .line 15
-    return-object p0
-
-    .line 16
-    :cond_1
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    .line 17
-    .line 18
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 19
-    .line 20
-    .line 21
-    instance-of v0, p0, [J
-
-    .line 22
-    .line 23
-    const-string v1, ","
-
-    .line 24
-    .line 25
-    const/4 v2, 0x0
-
-    .line 26
-    if-eqz v0, :cond_4
-
-    .line 27
-    .line 28
-    check-cast p0, [J
-
-    .line 29
-    .line 30
-    :cond_2
-    :goto_0
-    array-length v0, p0
-
-    .line 31
-    if-ge v2, v0, :cond_3
-
-    .line 32
-    .line 33
-    aget-wide v3, p0, v2
-
-    .line 34
-    .line 35
-    invoke-virtual {p1, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    .line 36
-    .line 37
-    .line 38
-    add-int/lit8 v2, v2, 0x1
-
-    .line 39
-    .line 40
-    array-length v0, p0
-
-    .line 41
-    if-eq v2, v0, :cond_2
-
-    .line 42
-    .line 43
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 44
-    .line 45
-    .line 46
-    goto :goto_0
-
-    .line 47
-    :cond_3
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 48
-    .line 49
-    .line 50
-    move-result-object p0
-
-    .line 51
-    return-object p0
-
-    .line 52
-    :cond_4
-    instance-of v0, p0, [I
-
-    .line 53
-    .line 54
-    if-eqz v0, :cond_7
-
-    .line 55
-    .line 56
-    check-cast p0, [I
-
-    .line 57
-    .line 58
-    :cond_5
-    :goto_1
-    array-length v0, p0
-
-    .line 59
-    if-ge v2, v0, :cond_6
-
-    .line 60
-    .line 61
-    aget v0, p0, v2
-
-    .line 62
-    .line 63
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 64
-    .line 65
-    .line 66
-    add-int/lit8 v2, v2, 0x1
-
-    .line 67
-    .line 68
-    array-length v0, p0
-
-    .line 69
-    if-eq v2, v0, :cond_5
-
-    .line 70
-    .line 71
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 72
-    .line 73
-    .line 74
-    goto :goto_1
-
-    .line 75
-    :cond_6
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 76
-    .line 77
-    .line 78
-    move-result-object p0
-
-    .line 79
-    return-object p0
-
-    .line 80
-    :cond_7
-    instance-of v0, p0, [D
-
-    .line 81
-    .line 82
-    if-eqz v0, :cond_a
-
-    .line 83
-    .line 84
-    check-cast p0, [D
-
-    .line 85
-    .line 86
-    :cond_8
-    :goto_2
-    array-length v0, p0
-
-    .line 87
-    if-ge v2, v0, :cond_9
-
-    .line 88
-    .line 89
-    aget-wide v3, p0, v2
-
-    .line 90
-    .line 91
-    invoke-virtual {p1, v3, v4}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
-    .line 92
-    .line 93
-    .line 94
-    add-int/lit8 v2, v2, 0x1
-
-    .line 95
-    .line 96
-    array-length v0, p0
-
-    .line 97
-    if-eq v2, v0, :cond_8
-
-    .line 98
-    .line 99
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 100
-    .line 101
-    .line 102
-    goto :goto_2
-
-    .line 103
-    :cond_9
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 104
-    .line 105
-    .line 106
-    move-result-object p0
-
-    .line 107
-    return-object p0
-
-    .line 108
-    :cond_a
-    instance-of v0, p0, [Ljx1;
-
-    .line 109
-    .line 110
-    if-eqz v0, :cond_d
-
-    .line 111
-    .line 112
-    check-cast p0, [Ljx1;
-
-    .line 113
-    .line 114
-    :cond_b
-    :goto_3
-    array-length v0, p0
-
-    .line 115
-    if-ge v2, v0, :cond_c
-
-    .line 116
-    .line 117
-    aget-object v0, p0, v2
-
-    .line 118
-    .line 119
-    iget-wide v3, v0, Ljx1;->a:J
-
-    .line 120
-    .line 121
-    invoke-virtual {p1, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    .line 122
-    .line 123
-    .line 124
-    const/16 v0, 0x2f
-
-    .line 125
-    .line 126
-    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 127
-    .line 128
-    .line 129
-    aget-object v0, p0, v2
-
-    .line 130
-    .line 131
-    iget-wide v3, v0, Ljx1;->b:J
-
-    .line 132
-    .line 133
-    invoke-virtual {p1, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    .line 134
-    .line 135
-    .line 136
-    add-int/lit8 v2, v2, 0x1
-
-    .line 137
-    .line 138
-    array-length v0, p0
-
-    .line 139
-    if-eq v2, v0, :cond_b
-
-    .line 140
-    .line 141
-    invoke-virtual {p1, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 142
-    .line 143
-    .line 144
-    goto :goto_3
-
-    .line 145
-    :cond_c
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 146
-    .line 147
-    .line 148
-    move-result-object p0
-
-    .line 149
-    return-object p0
-
-    .line 150
-    :cond_d
-    :goto_4
     const/4 p0, 0x0
 
-    .line 151
-    return-object p0
-.end method
-
-.method public final g(Ljava/nio/ByteOrder;)Ljava/io/Serializable;
-    .locals 12
-
-    .line 1
-    iget-object v0, p0, Lhx1;->d:[B
-
-    .line 2
-    .line 3
-    const-string v1, "IOException occurred while closing InputStream"
-
-    .line 4
-    .line 5
-    const-string v2, "ExifInterface"
-
-    .line 6
-    .line 7
-    const/4 v3, 0x0
-
-    .line 8
-    :try_start_0
-    new-instance v4, Lgx1;
-
     .line 9
-    .line 10
-    invoke-direct {v4, v0}, Lgx1;-><init>([B)V
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_5
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    cmpg-float v0, p1, p0
 
+    .line 10
     .line 11
+    if-gtz v0, :cond_1
+
     .line 12
     .line 13
-    :try_start_1
-    iput-object p1, v4, Lgx1;->l:Ljava/nio/ByteOrder;
+    return p0
 
     .line 14
-    .line 15
-    iget p1, p0, Lhx1;->a:I
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    :cond_1
+    const/high16 p0, 0x43480000    # 200.0f
 
+    .line 15
     .line 16
+    mul-float/2addr p0, p1
+
     .line 17
-    const-wide v5, 0xffffffffL
+    float-to-int p0, p0
 
     .line 18
+    const/16 v0, 0xc7
+
     .line 19
     .line 20
+    invoke-static {p0, v0}, Ljava/lang/Math;->min(II)I
+
     .line 21
     .line 22
-    const/4 v7, 0x0
-
     .line 23
-    iget p0, p0, Lhx1;->b:I
+    move-result p0
 
     .line 24
+    int-to-float v0, p0
+
     .line 25
-    packed-switch p1, :pswitch_data_0
+    const v1, 0x3ba3d70a    # 0.005f
 
     .line 26
     .line 27
     .line 28
-    :try_start_2
-    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
+    mul-float/2addr v0, v1
 
     .line 29
+    sub-float/2addr p1, v0
+
     .line 30
+    div-float/2addr p1, v1
+
     .line 31
-    return-object v3
+    sget-object v0, Lhx1;->a:[F
 
     .line 32
-    :catch_0
-    move-exception p0
-
     .line 33
-    invoke-static {v2, v1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    aget v1, v0, p0
 
     .line 34
     .line 35
-    .line 36
-    return-object v3
+    add-int/lit8 p0, p0, 0x1
 
+    .line 36
     .line 37
-    :pswitch_0
-    :try_start_3
-    new-array p1, p0, [D
+    aget p0, v0, p0
 
     .line 38
     .line 39
-    :goto_0
-    if-ge v7, p0, :cond_0
+    invoke-static {p0, v1, p1, v1}, Lh86;->b(FFFF)F
 
     .line 40
     .line 41
-    invoke-virtual {v4}, Lgx1;->readDouble()D
-
     .line 42
+    move-result p0
+
     .line 43
-    .line 44
-    move-result-wide v5
-
-    .line 45
-    aput-wide v5, p1, v7
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    .line 46
-    .line 47
-    add-int/lit8 v7, v7, 0x1
-
-    .line 48
-    .line 49
-    goto :goto_0
-
-    .line 50
-    :catchall_0
-    move-exception p0
-
-    .line 51
-    move-object v3, v4
-
-    .line 52
-    goto/16 :goto_10
-
-    .line 53
-    .line 54
-    :catch_1
-    move-exception p0
-
-    .line 55
-    goto/16 :goto_e
-
-    .line 56
-    .line 57
-    :cond_0
-    :try_start_4
-    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
-    :try_end_4
-    .catch Ljava/io/IOException; {:try_start_4 .. :try_end_4} :catch_2
-
-    .line 58
-    .line 59
-    .line 60
-    return-object p1
-
-    .line 61
-    :catch_2
-    move-exception p0
-
-    .line 62
-    invoke-static {v2, v1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 63
-    .line 64
-    .line 65
-    return-object p1
-
-    .line 66
-    :pswitch_1
-    :try_start_5
-    new-array p1, p0, [D
-
-    .line 67
-    .line 68
-    :goto_1
-    if-ge v7, p0, :cond_0
-
-    .line 69
-    .line 70
-    invoke-virtual {v4}, Lgx1;->readFloat()F
-
-    .line 71
-    .line 72
-    .line 73
-    move-result v0
-
-    .line 74
-    float-to-double v5, v0
-
-    .line 75
-    aput-wide v5, p1, v7
-
-    .line 76
-    .line 77
-    add-int/lit8 v7, v7, 0x1
-
-    .line 78
-    .line 79
-    goto :goto_1
-
-    .line 80
-    :pswitch_2
-    new-array p1, p0, [Ljx1;
-
-    .line 81
-    .line 82
-    :goto_2
-    if-ge v7, p0, :cond_0
-
-    .line 83
-    .line 84
-    invoke-virtual {v4}, Lgx1;->readInt()I
-
-    .line 85
-    .line 86
-    .line 87
-    move-result v0
-
-    .line 88
-    int-to-long v5, v0
-
-    .line 89
-    invoke-virtual {v4}, Lgx1;->readInt()I
-
-    .line 90
-    .line 91
-    .line 92
-    move-result v0
-
-    .line 93
-    int-to-long v8, v0
-
-    .line 94
-    new-instance v0, Ljx1;
-
-    .line 95
-    .line 96
-    invoke-direct {v0, v5, v6, v8, v9}, Ljx1;-><init>(JJ)V
-
-    .line 97
-    .line 98
-    .line 99
-    aput-object v0, p1, v7
-
-    .line 100
-    .line 101
-    add-int/lit8 v7, v7, 0x1
-
-    .line 102
-    .line 103
-    goto :goto_2
-
-    .line 104
-    :pswitch_3
-    new-array p1, p0, [I
-
-    .line 105
-    .line 106
-    :goto_3
-    if-ge v7, p0, :cond_0
-
-    .line 107
-    .line 108
-    invoke-virtual {v4}, Lgx1;->readInt()I
-
-    .line 109
-    .line 110
-    .line 111
-    move-result v0
-
-    .line 112
-    aput v0, p1, v7
-
-    .line 113
-    .line 114
-    add-int/lit8 v7, v7, 0x1
-
-    .line 115
-    .line 116
-    goto :goto_3
-
-    .line 117
-    :pswitch_4
-    new-array p1, p0, [I
-
-    .line 118
-    .line 119
-    :goto_4
-    if-ge v7, p0, :cond_0
-
-    .line 120
-    .line 121
-    invoke-virtual {v4}, Lgx1;->readShort()S
-
-    .line 122
-    .line 123
-    .line 124
-    move-result v0
-
-    .line 125
-    aput v0, p1, v7
-
-    .line 126
-    .line 127
-    add-int/lit8 v7, v7, 0x1
-
-    .line 128
-    .line 129
-    goto :goto_4
-
-    .line 130
-    :pswitch_5
-    new-array p1, p0, [Ljx1;
-
-    .line 131
-    .line 132
-    :goto_5
-    if-ge v7, p0, :cond_0
-
-    .line 133
-    .line 134
-    invoke-virtual {v4}, Lgx1;->readInt()I
-
-    .line 135
-    .line 136
-    .line 137
-    move-result v0
-
-    .line 138
-    int-to-long v8, v0
-
-    .line 139
-    and-long/2addr v8, v5
-
-    .line 140
-    invoke-virtual {v4}, Lgx1;->readInt()I
-
-    .line 141
-    .line 142
-    .line 143
-    move-result v0
-
-    .line 144
-    int-to-long v10, v0
-
-    .line 145
-    and-long/2addr v10, v5
-
-    .line 146
-    new-instance v0, Ljx1;
-
-    .line 147
-    .line 148
-    invoke-direct {v0, v8, v9, v10, v11}, Ljx1;-><init>(JJ)V
-
-    .line 149
-    .line 150
-    .line 151
-    aput-object v0, p1, v7
-
-    .line 152
-    .line 153
-    add-int/lit8 v7, v7, 0x1
-
-    .line 154
-    .line 155
-    goto :goto_5
-
-    .line 156
-    :pswitch_6
-    new-array p1, p0, [J
-
-    .line 157
-    .line 158
-    :goto_6
-    if-ge v7, p0, :cond_0
-
-    .line 159
-    .line 160
-    invoke-virtual {v4}, Lgx1;->readInt()I
-
-    .line 161
-    .line 162
-    .line 163
-    move-result v0
-
-    .line 164
-    int-to-long v8, v0
-
-    .line 165
-    and-long/2addr v8, v5
-
-    .line 166
-    aput-wide v8, p1, v7
-
-    .line 167
-    .line 168
-    add-int/lit8 v7, v7, 0x1
-
-    .line 169
-    .line 170
-    goto :goto_6
-
-    .line 171
-    :pswitch_7
-    new-array p1, p0, [I
-
-    .line 172
-    .line 173
-    :goto_7
-    if-ge v7, p0, :cond_0
-
-    .line 174
-    .line 175
-    invoke-virtual {v4}, Lgx1;->readUnsignedShort()I
-
-    .line 176
-    .line 177
-    .line 178
-    move-result v0
-
-    .line 179
-    aput v0, p1, v7
-
-    .line 180
-    .line 181
-    add-int/lit8 v7, v7, 0x1
-
-    .line 182
-    .line 183
-    goto :goto_7
-
-    .line 184
-    :pswitch_8
-    sget-object p1, Llx1;->D:[B
-
-    .line 185
-    .line 186
-    array-length p1, p1
-
-    .line 187
-    if-lt p0, p1, :cond_3
-
-    .line 188
-    .line 189
-    move p1, v7
-
-    .line 190
-    :goto_8
-    sget-object v5, Llx1;->D:[B
-
-    .line 191
-    .line 192
-    array-length v6, v5
-
-    .line 193
-    if-ge p1, v6, :cond_2
-
-    .line 194
-    .line 195
-    aget-byte v6, v0, p1
-
-    .line 196
-    .line 197
-    aget-byte v5, v5, p1
-
-    .line 198
-    .line 199
-    if-eq v6, v5, :cond_1
-
-    .line 200
-    .line 201
-    goto :goto_9
-
-    .line 202
-    :cond_1
-    add-int/lit8 p1, p1, 0x1
-
-    .line 203
-    .line 204
-    goto :goto_8
-
-    .line 205
-    :cond_2
-    array-length v7, v5
-
-    .line 206
-    :cond_3
-    :goto_9
-    new-instance p1, Ljava/lang/StringBuilder;
-
-    .line 207
-    .line 208
-    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 209
-    .line 210
-    .line 211
-    :goto_a
-    if-ge v7, p0, :cond_6
-
-    .line 212
-    .line 213
-    aget-byte v5, v0, v7
-
-    .line 214
-    .line 215
-    if-nez v5, :cond_4
-
-    .line 216
-    .line 217
-    goto :goto_c
-
-    .line 218
-    :cond_4
-    const/16 v6, 0x20
-
-    .line 219
-    .line 220
-    if-lt v5, v6, :cond_5
-
-    .line 221
-    .line 222
-    int-to-char v5, v5
-
-    .line 223
-    invoke-virtual {p1, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 224
-    .line 225
-    .line 226
-    goto :goto_b
-
-    .line 227
-    :cond_5
-    const/16 v5, 0x3f
-
-    .line 228
-    .line 229
-    invoke-virtual {p1, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 230
-    .line 231
-    .line 232
-    :goto_b
-    add-int/lit8 v7, v7, 0x1
-
-    .line 233
-    .line 234
-    goto :goto_a
-
-    .line 235
-    :cond_6
-    :goto_c
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 236
-    .line 237
-    .line 238
-    move-result-object p0
-    :try_end_5
-    .catch Ljava/io/IOException; {:try_start_5 .. :try_end_5} :catch_1
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
-
-    .line 239
-    :goto_d
-    :try_start_6
-    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
-    :try_end_6
-    .catch Ljava/io/IOException; {:try_start_6 .. :try_end_6} :catch_3
-
-    .line 240
-    .line 241
-    .line 242
-    return-object p0
-
-    .line 243
-    :catch_3
-    move-exception p1
-
-    .line 244
-    invoke-static {v2, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 245
-    .line 246
-    .line 247
-    return-object p0
-
-    .line 248
-    :pswitch_9
-    :try_start_7
-    array-length p0, v0
-
-    .line 249
-    const/4 p1, 0x1
-
-    .line 250
-    if-ne p0, p1, :cond_7
-
-    .line 251
-    .line 252
-    aget-byte p0, v0, v7
-
-    .line 253
-    .line 254
-    if-ltz p0, :cond_7
-
-    .line 255
-    .line 256
-    if-gt p0, p1, :cond_7
-
-    .line 257
-    .line 258
-    new-instance v0, Ljava/lang/String;
-
-    .line 259
-    .line 260
-    add-int/lit8 p0, p0, 0x30
-
-    .line 261
-    .line 262
-    int-to-char p0, p0
-
-    .line 263
-    new-array p1, p1, [C
-
-    .line 264
-    .line 265
-    aput-char p0, p1, v7
-
-    .line 266
-    .line 267
-    invoke-direct {v0, p1}, Ljava/lang/String;-><init>([C)V
-    :try_end_7
-    .catch Ljava/io/IOException; {:try_start_7 .. :try_end_7} :catch_1
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
-
-    .line 268
-    .line 269
-    .line 270
-    :try_start_8
-    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
-    :try_end_8
-    .catch Ljava/io/IOException; {:try_start_8 .. :try_end_8} :catch_4
-
-    .line 271
-    .line 272
-    .line 273
-    return-object v0
-
-    .line 274
-    :catch_4
-    move-exception p0
-
-    .line 275
-    invoke-static {v2, v1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 276
-    .line 277
-    .line 278
-    return-object v0
-
-    .line 279
-    :cond_7
-    :try_start_9
-    new-instance p0, Ljava/lang/String;
-
-    .line 280
-    .line 281
-    sget-object p1, Llx1;->L:Ljava/nio/charset/Charset;
-
-    .line 282
-    .line 283
-    invoke-direct {p0, v0, p1}, Ljava/lang/String;-><init>([BLjava/nio/charset/Charset;)V
-    :try_end_9
-    .catch Ljava/io/IOException; {:try_start_9 .. :try_end_9} :catch_1
-    .catchall {:try_start_9 .. :try_end_9} :catchall_0
-
-    .line 284
-    .line 285
-    .line 286
-    goto :goto_d
-
-    .line 287
-    :catchall_1
-    move-exception p0
-
-    .line 288
-    goto :goto_10
-
-    .line 289
-    :catch_5
-    move-exception p0
-
-    .line 290
-    move-object v4, v3
-
-    .line 291
-    :goto_e
-    :try_start_a
-    const-string p1, "IOException occurred during reading a value"
-
-    .line 292
-    .line 293
-    invoke-static {v2, p1, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-    :try_end_a
-    .catchall {:try_start_a .. :try_end_a} :catchall_0
-
-    .line 294
-    .line 295
-    .line 296
-    if-eqz v4, :cond_8
-
-    .line 297
-    .line 298
-    :try_start_b
-    invoke-virtual {v4}, Ljava/io/InputStream;->close()V
-    :try_end_b
-    .catch Ljava/io/IOException; {:try_start_b .. :try_end_b} :catch_6
-
-    .line 299
-    .line 300
-    .line 301
-    goto :goto_f
-
-    .line 302
-    :catch_6
-    move-exception p0
-
-    .line 303
-    invoke-static {v2, v1, p0}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 304
-    .line 305
-    .line 306
-    :cond_8
-    :goto_f
-    return-object v3
-
-    .line 307
-    :goto_10
-    if-eqz v3, :cond_9
-
-    .line 308
-    .line 309
-    :try_start_c
-    invoke-virtual {v3}, Ljava/io/InputStream;->close()V
-    :try_end_c
-    .catch Ljava/io/IOException; {:try_start_c .. :try_end_c} :catch_7
-
-    .line 310
-    .line 311
-    .line 312
-    goto :goto_11
-
-    .line 313
-    :catch_7
-    move-exception p1
-
-    .line 314
-    invoke-static {v2, v1, p1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 315
-    .line 316
-    .line 317
-    :cond_9
-    :goto_11
-    throw p0
-
-    .line 318
-    nop
-
-    .line 319
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_9
-        :pswitch_8
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v1, "("
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    sget-object v1, Llx1;->B:[Ljava/lang/String;
-
-    .line 9
-    .line 10
-    iget v2, p0, Lhx1;->a:I
-
-    .line 11
-    .line 12
-    aget-object v1, v1, v2
-
-    .line 13
-    .line 14
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 15
-    .line 16
-    .line 17
-    const-string v1, ", data length:"
-
-    .line 18
-    .line 19
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 20
-    .line 21
-    .line 22
-    iget-object p0, p0, Lhx1;->d:[B
-
-    .line 23
-    .line 24
-    array-length p0, p0
-
-    .line 25
-    const-string v1, ")"
-
-    .line 26
-    .line 27
-    invoke-static {v1, v0, p0}, Lhs5;->n(Ljava/lang/String;Ljava/lang/StringBuilder;I)Ljava/lang/String;
-
-    .line 28
-    .line 29
-    .line 30
-    move-result-object p0
-
-    .line 31
-    return-object p0
+    return p0
 .end method

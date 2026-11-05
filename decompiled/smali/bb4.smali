@@ -1,74 +1,69 @@
 .class public final Lbb4;
-.super Lvp3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lb13;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public x:F
+.field public synthetic j:Ljava/lang/Object;
 
-.field public y:F
+.field public final synthetic k:Liv1;
 
-.field public z:Z
+.field public l:I
 
 
-# virtual methods
-.method public final h(Luj3;Lmj3;J)Lsj3;
-    .locals 2
-
-    .line 1
-    invoke-interface {p2, p3, p4}, Lmj3;->e(J)Llp4;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p2
-
-    .line 5
-    iget p3, p2, Llp4;->j:I
-
-    .line 6
-    .line 7
-    iget p4, p2, Llp4;->k:I
-
-    .line 8
-    .line 9
-    new-instance v0, Lf03;
-
-    .line 10
-    .line 11
-    const/16 v1, 0x12
-
-    .line 12
-    .line 13
-    invoke-direct {v0, p0, p2, v1}, Lf03;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
-
-    .line 14
-    .line 15
-    .line 16
-    sget-object p0, Lru1;->j:Lru1;
-
-    .line 17
-    .line 18
-    invoke-interface {p1, p3, p4, p0, v0}, Luj3;->O0(IILjava/util/Map;Lp62;)Lsj3;
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-object p0
-
-    .line 22
-    return-object p0
-.end method
-
-.method public final t1()Z
+# direct methods
+.method public constructor <init>(Liv1;Lz71;)V
     .locals 0
 
     .line 1
-    const/4 p0, 0x0
+    iput-object p1, p0, Lbb4;->k:Liv1;
 
     .line 2
-    return p0
+    .line 3
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iput-object p1, p0, Lbb4;->j:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Lbb4;->l:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
+
+    .line 6
+    .line 7
+    or-int/2addr p1, v0
+
+    .line 8
+    iput p1, p0, Lbb4;->l:I
+
+    .line 9
+    .line 10
+    iget-object p1, p0, Lbb4;->k:Liv1;
+
+    .line 11
+    .line 12
+    invoke-virtual {p1, p0}, Liv1;->v(Lz71;)Ljava/lang/Enum;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p0
+
+    .line 16
+    return-object p0
 .end method

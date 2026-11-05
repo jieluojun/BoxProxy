@@ -1,76 +1,222 @@
-.class public final Lg45;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lg45;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lo52;
 
 
 # instance fields
-.field public j:J
+.field public final synthetic j:Lk55;
 
-.field public k:J
+.field public final synthetic k:Z
 
-.field public synthetic l:Ljava/lang/Object;
+.field public final synthetic l:F
 
-.field public final synthetic m:Ll45;
+.field public final synthetic m:F
 
-.field public n:I
+.field public final synthetic n:Lvy5;
 
 
 # direct methods
-.method public constructor <init>(Ll45;Ly81;)V
+.method public synthetic constructor <init>(Lk55;ZFFLvy5;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lg45;->m:Ll45;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
     .line 4
+    iput-object p1, p0, Lg45;->j:Lk55;
+
     .line 5
     .line 6
+    iput-boolean p2, p0, Lg45;->k:Z
+
+    .line 7
+    .line 8
+    iput p3, p0, Lg45;->l:F
+
+    .line 9
+    .line 10
+    iput p4, p0, Lg45;->m:F
+
+    .line 11
+    .line 12
+    iput-object p5, p0, Lg45;->n:Lvy5;
+
+    .line 13
+    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 8
 
     .line 1
-    iput-object p1, p0, Lg45;->l:Ljava/lang/Object;
+    check-cast p1, Lb82;
 
     .line 2
     .line 3
-    iget p1, p0, Lg45;->n:I
+    iget-object v0, p0, Lg45;->j:Lk55;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    invoke-virtual {v0}, Lk55;->c()F
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lg45;->n:I
+    move-result v1
 
     .line 9
+    const/4 v2, 0x0
+
     .line 10
-    iget-object p1, p0, Lg45;->m:Ll45;
+    cmpl-float v1, v1, v2
 
     .line 11
     .line 12
-    const/4 v0, 0x0
+    const/4 v3, 0x1
 
     .line 13
-    invoke-virtual {p1, v0, p0}, Ll45;->h(ZLy81;)Ljava/lang/Object;
+    if-gtz v1, :cond_1
 
     .line 14
     .line 15
-    .line 16
-    move-result-object p0
+    iget-boolean v1, p0, Lg45;->k:Z
 
+    .line 16
     .line 17
+    if-eqz v1, :cond_0
+
+    .line 18
+    .line 19
+    goto :goto_0
+
+    .line 20
+    :cond_0
+    const/4 v1, 0x0
+
+    .line 21
+    goto :goto_1
+
+    .line 22
+    :cond_1
+    :goto_0
+    move v1, v3
+
+    .line 23
+    :goto_1
+    invoke-virtual {v0}, Lk55;->c()F
+
+    .line 24
+    .line 25
+    .line 26
+    move-result v0
+
+    .line 27
+    iget v4, p0, Lg45;->l:F
+
+    .line 28
+    .line 29
+    invoke-interface {p1, v4}, Lyg1;->t0(F)I
+
+    .line 30
+    .line 31
+    .line 32
+    move-result v4
+
+    .line 33
+    int-to-float v4, v4
+
+    .line 34
+    mul-float/2addr v0, v4
+
+    .line 35
+    invoke-interface {p1}, Lb82;->b()J
+
+    .line 36
+    .line 37
+    .line 38
+    move-result-wide v4
+
+    .line 39
+    const-wide v6, 0xffffffffL
+
+    .line 40
+    .line 41
+    .line 42
+    .line 43
+    .line 44
+    and-long/2addr v4, v6
+
+    .line 45
+    long-to-int v4, v4
+
+    .line 46
+    invoke-static {v4}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 47
+    .line 48
+    .line 49
+    move-result v4
+
+    .line 50
+    sub-float/2addr v0, v4
+
+    .line 51
+    invoke-interface {p1, v0}, Lb82;->S(F)V
+
+    .line 52
+    .line 53
+    .line 54
+    if-eqz v1, :cond_2
+
+    .line 55
+    .line 56
+    invoke-interface {p1}, Lyg1;->a()F
+
+    .line 57
+    .line 58
+    .line 59
+    move-result v0
+
+    .line 60
+    iget v1, p0, Lg45;->m:F
+
+    .line 61
+    .line 62
+    mul-float v2, v0, v1
+
+    .line 63
+    .line 64
+    :cond_2
+    invoke-interface {p1, v2}, Lb82;->B(F)V
+
+    .line 65
+    .line 66
+    .line 67
+    iget-object p0, p0, Lg45;->n:Lvy5;
+
+    .line 68
+    .line 69
+    invoke-interface {p1, p0}, Lb82;->J(Lvy5;)V
+
+    .line 70
+    .line 71
+    .line 72
+    invoke-interface {p1, v3}, Lb82;->m0(Z)V
+
+    .line 73
+    .line 74
+    .line 75
+    sget-object p0, Lk27;->a:Lk27;
+
+    .line 76
+    .line 77
     return-object p0
 .end method

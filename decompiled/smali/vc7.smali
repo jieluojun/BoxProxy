@@ -1,269 +1,314 @@
-.class public Lvc7;
-.super Lbd7;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lvc7;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final e:Landroid/view/WindowInsets$Builder;
+.field public final a:Lt50;
+
+.field public final b:F
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    .line 24
-    invoke-direct {p0}, Lbd7;-><init>()V
-
-    .line 25
-    new-instance v0, Landroid/view/WindowInsets$Builder;
-
-    invoke-direct {v0}, Landroid/view/WindowInsets$Builder;-><init>()V
-
-    iput-object v0, p0, Lvc7;->e:Landroid/view/WindowInsets$Builder;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lnd7;)V
+.method public constructor <init>(Landroid/graphics/Rect;F)V
     .locals 1
 
     .line 1
-    invoke-direct {p0, p1}, Lbd7;-><init>(Lnd7;)V
+    new-instance v0, Lt50;
 
     .line 2
     .line 3
-    .line 4
-    invoke-virtual {p1}, Lnd7;->b()Landroid/view/WindowInsets;
+    invoke-direct {v0, p1}, Lt50;-><init>(Landroid/graphics/Rect;)V
 
+    .line 4
     .line 5
     .line 6
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 7
-    move-result-object p1
-
     .line 8
-    if-eqz p1, :cond_0
-
     .line 9
+    iput-object v0, p0, Lvc7;->a:Lt50;
+
     .line 10
-    new-instance v0, Landroid/view/WindowInsets$Builder;
-
     .line 11
-    .line 12
-    invoke-direct {v0, p1}, Landroid/view/WindowInsets$Builder;-><init>(Landroid/view/WindowInsets;)V
+    iput p2, p0, Lvc7;->b:F
 
+    .line 12
     .line 13
+    return-void
+.end method
+
+.method public constructor <init>(Lt50;F)V
+    .locals 0
+
     .line 14
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 15
-    goto :goto_0
+    iput-object p1, p0, Lvc7;->a:Lt50;
 
     .line 16
-    :cond_0
-    new-instance v0, Landroid/view/WindowInsets$Builder;
+    iput p2, p0, Lvc7;->b:F
 
-    .line 17
-    .line 18
-    invoke-direct {v0}, Landroid/view/WindowInsets$Builder;-><init>()V
-
-    .line 19
-    .line 20
-    .line 21
-    :goto_0
-    iput-object v0, p0, Lvc7;->e:Landroid/view/WindowInsets$Builder;
-
-    .line 22
-    .line 23
     return-void
 .end method
 
 
 # virtual methods
-.method public b()Lnd7;
+.method public final a()Landroid/graphics/Rect;
     .locals 4
 
     .line 1
-    invoke-virtual {p0}, Lbd7;->a()V
+    iget-object p0, p0, Lvc7;->a:Lt50;
 
     .line 2
     .line 3
-    .line 4
-    iget-object v0, p0, Lvc7;->e:Landroid/view/WindowInsets$Builder;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 4
     .line 5
     .line 6
-    invoke-virtual {v0}, Landroid/view/WindowInsets$Builder;->build()Landroid/view/WindowInsets;
+    new-instance v0, Landroid/graphics/Rect;
 
     .line 7
     .line 8
-    .line 9
-    move-result-object v0
+    iget v1, p0, Lt50;->a:I
 
+    .line 9
     .line 10
-    const/4 v1, 0x0
+    iget v2, p0, Lt50;->b:I
 
     .line 11
-    invoke-static {v0, v1}, Lnd7;->c(Landroid/view/WindowInsets;Landroid/view/View;)Lnd7;
-
     .line 12
+    iget v3, p0, Lt50;->c:I
+
     .line 13
     .line 14
-    move-result-object v0
+    iget p0, p0, Lt50;->d:I
 
     .line 15
-    iget-object v2, p0, Lbd7;->b:[Lyq2;
+    .line 16
+    invoke-direct {v0, v1, v2, v3, p0}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    .line 17
+    .line 18
+    .line 19
+    return-object v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    if-eqz p1, :cond_1
+
+    .line 6
+    .line 7
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v1
+
+    .line 11
+    goto :goto_0
+
+    .line 12
+    :cond_1
+    const/4 v1, 0x0
+
+    .line 13
+    :goto_0
+    const-class v2, Lvc7;
+
+    .line 14
+    .line 15
+    invoke-virtual {v2, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 16
     .line 17
-    iget-object v3, v0, Lnd7;->a:Lkd7;
-
     .line 18
+    move-result v1
+
     .line 19
-    invoke-virtual {v3, v2}, Lkd7;->w([Lyq2;)V
+    const/4 v2, 0x0
 
     .line 20
+    if-nez v1, :cond_2
+
     .line 21
     .line 22
-    invoke-virtual {v3, v1}, Lkd7;->v(Lpk1;)V
+    return v2
 
     .line 23
+    :cond_2
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 24
     .line 25
-    iget-object v1, p0, Lbd7;->c:[[Landroid/graphics/Rect;
-
     .line 26
-    .line 27
-    invoke-virtual {v3, v1}, Lkd7;->A([[Landroid/graphics/Rect;)V
+    check-cast p1, Lvc7;
 
+    .line 27
     .line 28
+    iget-object v1, p0, Lvc7;->a:Lt50;
+
     .line 29
     .line 30
-    iget-object p0, p0, Lbd7;->d:[[Landroid/graphics/Rect;
+    iget-object v3, p1, Lvc7;->a:Lt50;
 
     .line 31
     .line 32
-    invoke-virtual {v3, p0}, Lkd7;->B([[Landroid/graphics/Rect;)V
+    invoke-static {v1, v3}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 33
     .line 34
     .line 35
-    return-object v0
+    move-result v1
+
+    .line 36
+    if-nez v1, :cond_3
+
+    .line 37
+    .line 38
+    return v2
+
+    .line 39
+    :cond_3
+    iget p0, p0, Lvc7;->b:F
+
+    .line 40
+    .line 41
+    iget p1, p1, Lvc7;->b:F
+
+    .line 42
+    .line 43
+    cmpg-float p0, p0, p1
+
+    .line 44
+    .line 45
+    if-nez p0, :cond_4
+
+    .line 46
+    .line 47
+    return v0
+
+    .line 48
+    :cond_4
+    return v2
 .end method
 
-.method public e(Lyq2;)V
-    .locals 0
+.method public final hashCode()I
+    .locals 1
 
     .line 1
-    iget-object p0, p0, Lvc7;->e:Landroid/view/WindowInsets$Builder;
+    iget-object v0, p0, Lvc7;->a:Lt50;
 
     .line 2
     .line 3
-    invoke-virtual {p1}, Lyq2;->d()Landroid/graphics/Insets;
+    invoke-virtual {v0}, Lt50;->hashCode()I
 
     .line 4
     .line 5
     .line 6
-    move-result-object p1
+    move-result v0
 
     .line 7
-    invoke-virtual {p0, p1}, Landroid/view/WindowInsets$Builder;->setMandatorySystemGestureInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
+    mul-int/lit8 v0, v0, 0x1f
 
     .line 8
     .line 9
+    iget p0, p0, Lvc7;->b:F
+
     .line 10
-    return-void
+    .line 11
+    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    add-int/2addr p0, v0
+
+    .line 16
+    return p0
 .end method
 
-.method public f(Lyq2;)V
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
     .line 1
-    iget-object p0, p0, Lvc7;->e:Landroid/view/WindowInsets$Builder;
+    new-instance v0, Ljava/lang/StringBuilder;
 
     .line 2
     .line 3
-    invoke-virtual {p1}, Lyq2;->d()Landroid/graphics/Insets;
+    const-string v1, "WindowMetrics(_bounds="
 
     .line 4
     .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
     .line 6
-    move-result-object p1
-
     .line 7
-    invoke-virtual {p0, p1}, Landroid/view/WindowInsets$Builder;->setStableInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
-
     .line 8
+    iget-object v1, p0, Lvc7;->a:Lt50;
+
     .line 9
     .line 10
-    return-void
-.end method
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-.method public g(Lyq2;)V
-    .locals 0
+    .line 11
+    .line 12
+    .line 13
+    const-string v1, ", density="
 
-    .line 1
-    iget-object p0, p0, Lvc7;->e:Landroid/view/WindowInsets$Builder;
+    .line 14
+    .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2
-    .line 3
-    invoke-virtual {p1}, Lyq2;->d()Landroid/graphics/Insets;
+    .line 16
+    .line 17
+    .line 18
+    iget p0, p0, Lvc7;->b:F
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p1
+    .line 19
+    .line 20
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    .line 7
-    invoke-virtual {p0, p1}, Landroid/view/WindowInsets$Builder;->setSystemGestureInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
+    .line 21
+    .line 22
+    .line 23
+    const/16 p0, 0x29
 
-    .line 8
-    .line 9
-    .line 10
-    return-void
-.end method
+    .line 24
+    .line 25
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
-.method public h(Lyq2;)V
-    .locals 0
+    .line 26
+    .line 27
+    .line 28
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 1
-    iget-object p0, p0, Lvc7;->e:Landroid/view/WindowInsets$Builder;
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
 
-    .line 2
-    .line 3
-    invoke-virtual {p1}, Lyq2;->d()Landroid/graphics/Insets;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p1
-
-    .line 7
-    invoke-virtual {p0, p1}, Landroid/view/WindowInsets$Builder;->setSystemWindowInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
-
-    .line 8
-    .line 9
-    .line 10
-    return-void
-.end method
-
-.method public i(Lyq2;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lvc7;->e:Landroid/view/WindowInsets$Builder;
-
-    .line 2
-    .line 3
-    invoke-virtual {p1}, Lyq2;->d()Landroid/graphics/Insets;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p1
-
-    .line 7
-    invoke-virtual {p0, p1}, Landroid/view/WindowInsets$Builder;->setTappableElementInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
-
-    .line 8
-    .line 9
-    .line 10
-    return-void
+    .line 32
+    return-object p0
 .end method

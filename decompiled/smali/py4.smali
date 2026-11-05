@@ -1,22 +1,10 @@
-.class public final enum Lpy4;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract synthetic Lpy4;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final k:Ljc3;
-
-.field public static final enum l:Lpy4;
-
-.field public static final enum m:Lpy4;
-
-.field public static final synthetic n:[Lpy4;
-
-.field public static final synthetic o:Lzv1;
-
-
-# instance fields
-.field public final j:Ljava/lang/String;
+.field public static final synthetic a:[I
 
 
 # direct methods
@@ -24,160 +12,163 @@
     .locals 5
 
     .line 1
-    new-instance v0, Lpy4;
+    invoke-static {}, Ldx4;->values()[Ldx4;
 
     .line 2
     .line 3
-    const/4 v1, 0x0
-
     .line 4
-    const-string v2, "standard"
+    move-result-object v0
 
     .line 5
+    array-length v0, v0
+
     .line 6
-    const-string v3, "Standard"
+    new-array v0, v0, [I
 
     .line 7
     .line 8
-    invoke-direct {v0, v1, v3, v2}, Lpy4;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    const/4 v1, 0x0
 
     .line 9
-    .line 10
-    .line 11
-    sput-object v0, Lpy4;->l:Lpy4;
+    const/4 v2, 0x1
 
+    .line 10
+    :try_start_0
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 11
     .line 12
+    :catch_0
+    const/4 v3, 0x2
+
     .line 13
-    new-instance v1, Lpy4;
+    :try_start_1
+    aput v3, v0, v2
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 14
     .line 15
-    const/4 v2, 0x1
+    :catch_1
+    invoke-static {}, La25;->values()[La25;
 
     .line 16
-    const-string v3, "compact"
-
     .line 17
     .line 18
-    const-string v4, "Compact"
+    move-result-object v0
 
     .line 19
+    array-length v0, v0
+
     .line 20
-    invoke-direct {v1, v2, v4, v3}, Lpy4;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    new-array v0, v0, [I
 
     .line 21
     .line 22
+    :try_start_2
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
     .line 23
-    sput-object v1, Lpy4;->m:Lpy4;
-
     .line 24
+    :catch_2
+    :try_start_3
+    aput v3, v0, v2
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+
     .line 25
-    filled-new-array {v0, v1}, [Lpy4;
-
     .line 26
-    .line 27
-    .line 28
-    move-result-object v0
+    :catch_3
+    const/4 v4, 0x3
 
+    .line 27
+    :try_start_4
+    aput v4, v0, v3
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+
+    .line 28
     .line 29
-    sput-object v0, Lpy4;->n:[Lpy4;
+    :catch_4
+    invoke-static {}, Lg35;->values()[Lg35;
 
     .line 30
     .line 31
-    new-instance v1, Lzv1;
-
     .line 32
+    move-result-object v0
+
     .line 33
-    invoke-direct {v1, v0}, Lzv1;-><init>([Ljava/lang/Enum;)V
+    array-length v0, v0
 
     .line 34
+    new-array v0, v0, [I
+
     .line 35
     .line 36
-    sput-object v1, Lpy4;->o:Lzv1;
+    :try_start_5
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
 
     .line 37
     .line 38
-    new-instance v0, Ljc3;
+    :catch_5
+    :try_start_6
+    aput v3, v0, v2
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
 
     .line 39
     .line 40
-    const/16 v1, 0x1b
+    :catch_6
+    :try_start_7
+    aput v4, v0, v4
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
 
     .line 41
     .line 42
-    const/4 v2, 0x0
+    :catch_7
+    const/4 v1, 0x4
 
     .line 43
-    invoke-direct {v0, v1, v2}, Ljc3;-><init>(BZ)V
+    :try_start_8
+    aput v1, v0, v3
+    :try_end_8
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_8
 
     .line 44
     .line 45
+    :catch_8
+    const/4 v2, 0x5
+
     .line 46
-    sput-object v0, Lpy4;->k:Ljc3;
+    :try_start_9
+    aput v2, v0, v1
+    :try_end_9
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_9
 
     .line 47
     .line 48
+    :catch_9
+    const/4 v1, 0x6
+
+    .line 49
+    :try_start_a
+    aput v1, v0, v2
+    :try_end_a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_a} :catch_a
+
+    .line 50
+    .line 51
+    :catch_a
+    sput-object v0, Lpy4;->a:[I
+
+    .line 52
+    .line 53
     return-void
-.end method
-
-.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0, p2, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p3, p0, Lpy4;->j:Ljava/lang/String;
-
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lpy4;
-    .locals 1
-
-    .line 1
-    const-class v0, Lpy4;
-
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Lpy4;
-
-    .line 8
-    .line 9
-    return-object p0
-.end method
-
-.method public static values()[Lpy4;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lpy4;->n:[Lpy4;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [Lpy4;
-
-    .line 8
-    .line 9
-    return-object v0
 .end method

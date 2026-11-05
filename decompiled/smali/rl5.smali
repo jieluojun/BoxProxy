@@ -1,399 +1,280 @@
-.class public final synthetic Lrl5;
+.class public final Lrl5;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lt62;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final a:Las3;
 
-.field public final synthetic k:I
+.field public final b:Las3;
 
-.field public final synthetic l:I
-
-.field public final synthetic m:Z
-
-.field public final synthetic n:Z
-
-.field public final synthetic o:Le62;
-
-.field public final synthetic p:Le62;
-
-.field public final synthetic q:Z
-
-.field public final synthetic r:Ljava/util/List;
-
-.field public final synthetic s:Z
-
-.field public final synthetic t:Le62;
-
-.field public final synthetic u:Le62;
-
-.field public final synthetic v:Lp62;
-
-.field public final synthetic w:Le62;
-
-.field public final synthetic x:Le62;
+.field public final c:Las3;
 
 
 # direct methods
-.method public synthetic constructor <init>(IIZZLe62;Le62;ZLjava/util/List;ZLe62;Le62;Lp62;Le62;Le62;IB)V
-    .locals 1
+.method public constructor <init>(Las3;Las3;Las3;)V
+    .locals 0
 
     .line 1
-    move/from16 v0, p16
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    iput-byte v0, p0, Lrl5;->j:B
-
     .line 4
-    .line 5
-    iput p1, p0, Lrl5;->k:I
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 5
     .line 6
     .line 7
-    iput p2, p0, Lrl5;->l:I
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 8
     .line 9
-    iput-boolean p3, p0, Lrl5;->m:Z
-
     .line 10
-    .line 11
-    iput-boolean p4, p0, Lrl5;->n:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 11
     .line 12
     .line 13
-    iput-object p5, p0, Lrl5;->o:Le62;
+    iput-object p1, p0, Lrl5;->a:Las3;
 
     .line 14
     .line 15
-    iput-object p6, p0, Lrl5;->p:Le62;
+    iput-object p2, p0, Lrl5;->b:Las3;
 
     .line 16
     .line 17
-    iput-boolean p7, p0, Lrl5;->q:Z
+    iput-object p3, p0, Lrl5;->c:Las3;
 
     .line 18
     .line 19
-    iput-object p8, p0, Lrl5;->r:Ljava/util/List;
-
-    .line 20
-    .line 21
-    iput-boolean p9, p0, Lrl5;->s:Z
-
-    .line 22
-    .line 23
-    iput-object p10, p0, Lrl5;->t:Le62;
-
-    .line 24
-    .line 25
-    iput-object p11, p0, Lrl5;->u:Le62;
-
-    .line 26
-    .line 27
-    iput-object p12, p0, Lrl5;->v:Lp62;
-
-    .line 28
-    .line 29
-    iput-object p13, p0, Lrl5;->w:Le62;
-
-    .line 30
-    .line 31
-    iput-object p14, p0, Lrl5;->x:Le62;
-
-    .line 32
-    .line 33
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 34
-    .line 35
-    .line 36
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 36
+.method public final a(Landroid/content/Context;)Lsl5;
+    .locals 3
 
     .line 1
-    move-object/from16 v0, p0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    iget-byte v1, v0, Lrl5;->j:B
-
     .line 4
+    new-instance v0, Lsl5;
+
     .line 5
-    sget-object v2, La47;->a:La47;
-
     .line 6
-    .line 7
-    const/4 v3, 0x1
+    iget-object v1, p0, Lrl5;->a:Las3;
 
+    .line 7
     .line 8
-    packed-switch v1, :pswitch_data_0
+    invoke-interface {v1}, Lu96;->getValue()Ljava/lang/Object;
 
     .line 9
     .line 10
     .line 11
-    move-object/from16 v18, p1
+    move-result-object v1
 
     .line 12
+    check-cast v1, Ljava/lang/String;
+
     .line 13
-    check-cast v18, Lz11;
-
     .line 14
-    .line 15
-    move-object/from16 v1, p2
+    invoke-static {v1}, Lib6;->a1(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
+    .line 15
     .line 16
     .line 17
-    check-cast v1, Ljava/lang/Integer;
+    move-result-object v1
 
     .line 18
-    .line 19
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
+    .line 19
     .line 20
     .line 21
+    move-result-object v1
+
     .line 22
-    invoke-static {v3}, Lqu5;->f0(I)I
+    iget-object v2, p0, Lrl5;->b:Las3;
 
     .line 23
     .line 24
+    invoke-interface {v2}, Lu96;->getValue()Ljava/lang/Object;
+
     .line 25
-    move-result v19
-
     .line 26
-    iget v4, v0, Lrl5;->k:I
-
     .line 27
+    move-result-object v2
+
     .line 28
-    iget v5, v0, Lrl5;->l:I
+    check-cast v2, Ljava/lang/String;
 
     .line 29
     .line 30
-    iget-boolean v6, v0, Lrl5;->m:Z
+    invoke-static {v2}, Lib6;->a1(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     .line 31
     .line 32
-    iget-boolean v7, v0, Lrl5;->n:Z
-
     .line 33
+    move-result-object v2
+
     .line 34
-    iget-object v8, v0, Lrl5;->o:Le62;
+    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     .line 35
     .line 36
-    iget-object v9, v0, Lrl5;->p:Le62;
-
     .line 37
+    move-result-object v2
+
     .line 38
-    iget-boolean v10, v0, Lrl5;->q:Z
+    iget-object p0, p0, Lrl5;->c:Las3;
 
     .line 39
     .line 40
-    iget-object v11, v0, Lrl5;->r:Ljava/util/List;
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
 
     .line 41
     .line 42
-    iget-boolean v12, v0, Lrl5;->s:Z
-
     .line 43
+    move-result-object p0
+
     .line 44
-    iget-object v13, v0, Lrl5;->t:Le62;
+    check-cast p0, Ljava/lang/String;
 
     .line 45
     .line 46
-    iget-object v14, v0, Lrl5;->u:Le62;
+    invoke-direct {v0, v1, v2, p0}, Lsl5;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 47
     .line 48
-    iget-object v15, v0, Lrl5;->v:Lp62;
-
     .line 49
-    .line 50
-    iget-object v1, v0, Lrl5;->w:Le62;
+    invoke-static {v1}, Lib6;->A0(Ljava/lang/CharSequence;)Z
 
+    .line 50
     .line 51
     .line 52
-    iget-object v0, v0, Lrl5;->x:Le62;
+    move-result p0
 
     .line 53
+    const/4 v1, 0x0
+
     .line 54
-    move-object/from16 v17, v0
+    if-nez p0, :cond_0
 
     .line 55
     .line 56
-    move-object/from16 v16, v1
+    invoke-static {v2}, Lib6;->A0(Ljava/lang/CharSequence;)Z
 
     .line 57
     .line 58
-    invoke-static/range {v4 .. v19}, Lgj3;->p(IIZZLe62;Le62;ZLjava/util/List;ZLe62;Le62;Lp62;Le62;Le62;Lz11;I)V
-
     .line 59
-    .line 60
-    .line 61
-    return-object v2
+    move-result p0
 
+    .line 60
+    if-nez p0, :cond_0
+
+    .line 61
     .line 62
-    :pswitch_0
-    move-object/from16 v34, p1
+    goto :goto_0
 
     .line 63
+    :cond_0
+    move-object v0, v1
+
     .line 64
-    check-cast v34, Lz11;
+    :goto_0
+    if-nez v0, :cond_1
 
     .line 65
     .line 66
-    move-object/from16 v1, p2
+    return-object v1
 
     .line 67
+    :cond_1
+    iget-object p0, v0, Lsl5;->c:Ljava/lang/String;
+
     .line 68
-    check-cast v1, Ljava/lang/Integer;
-
     .line 69
-    .line 70
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 70
     .line 71
     .line 72
+    const-string v1, "download_preferences"
+
     .line 73
-    invoke-static {v3}, Lqu5;->f0(I)I
-
     .line 74
+    const/4 v2, 0x0
+
     .line 75
+    invoke-virtual {p1, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
     .line 76
-    move-result v35
-
     .line 77
-    iget v1, v0, Lrl5;->k:I
-
     .line 78
+    move-result-object p1
+
     .line 79
-    iget v3, v0, Lrl5;->l:I
+    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     .line 80
     .line 81
-    iget-boolean v4, v0, Lrl5;->m:Z
-
     .line 82
+    move-result-object p1
+
     .line 83
-    iget-boolean v5, v0, Lrl5;->n:Z
+    invoke-static {p0}, Lib6;->a1(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     .line 84
     .line 85
-    iget-object v6, v0, Lrl5;->o:Le62;
-
     .line 86
+    move-result-object p0
+
     .line 87
-    iget-object v7, v0, Lrl5;->p:Le62;
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     .line 88
     .line 89
-    iget-boolean v8, v0, Lrl5;->q:Z
-
     .line 90
+    move-result-object p0
+
     .line 91
-    iget-object v9, v0, Lrl5;->r:Ljava/util/List;
+    invoke-static {p0}, Lib6;->A0(Ljava/lang/CharSequence;)Z
 
     .line 92
     .line 93
-    iget-boolean v10, v0, Lrl5;->s:Z
-
     .line 94
+    move-result v1
+
     .line 95
-    iget-object v11, v0, Lrl5;->t:Le62;
+    if-eqz v1, :cond_2
 
     .line 96
     .line 97
-    iget-object v12, v0, Lrl5;->u:Le62;
+    const-string p0, "boxproxy"
 
     .line 98
     .line 99
-    iget-object v13, v0, Lrl5;->v:Lp62;
+    :cond_2
+    const-string v1, "user_agent"
 
     .line 100
     .line 101
-    iget-object v14, v0, Lrl5;->w:Le62;
+    invoke-interface {p1, v1, p0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     .line 102
     .line 103
-    iget-object v0, v0, Lrl5;->x:Le62;
-
     .line 104
+    move-result-object p0
+
     .line 105
-    move-object/from16 v33, v0
+    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     .line 106
     .line 107
-    move/from16 v20, v1
-
     .line 108
-    .line 109
-    move/from16 v21, v3
-
-    .line 110
-    .line 111
-    move/from16 v22, v4
-
-    .line 112
-    .line 113
-    move/from16 v23, v5
-
-    .line 114
-    .line 115
-    move-object/from16 v24, v6
-
-    .line 116
-    .line 117
-    move-object/from16 v25, v7
-
-    .line 118
-    .line 119
-    move/from16 v26, v8
-
-    .line 120
-    .line 121
-    move-object/from16 v27, v9
-
-    .line 122
-    .line 123
-    move/from16 v28, v10
-
-    .line 124
-    .line 125
-    move-object/from16 v29, v11
-
-    .line 126
-    .line 127
-    move-object/from16 v30, v12
-
-    .line 128
-    .line 129
-    move-object/from16 v31, v13
-
-    .line 130
-    .line 131
-    move-object/from16 v32, v14
-
-    .line 132
-    .line 133
-    invoke-static/range {v20 .. v35}, Lsi3;->r(IIZZLe62;Le62;ZLjava/util/List;ZLe62;Le62;Lp62;Le62;Le62;Lz11;I)V
-
-    .line 134
-    .line 135
-    .line 136
-    return-object v2
-
-    .line 137
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

@@ -1,161 +1,419 @@
-.class public La17;
-.super La07;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final La17;
+.super Lwy1;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# static fields
+.field public static final w:La17;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, La17;
 
     .line 2
     .line 3
+    const-string v1, "UTF-32BE"
+
     .line 4
+    .line 5
+    invoke-direct {v0, v1}, Lwy1;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    sput-object v0, La17;->w:La17;
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lrx2;)Ljava/lang/Object;
-    .locals 3
+.method public final f(II[B)I
+    .locals 2
 
     .line 1
-    invoke-virtual {p1}, Lrx2;->L()I
+    add-int/lit8 p0, p2, 0x1
 
     .line 2
     .line 3
-    .line 4
-    move-result p0
+    const/high16 v0, -0x1000000
 
+    .line 4
     .line 5
-    const/16 v0, 0x9
+    and-int/2addr v0, p1
+
+    .line 6
+    ushr-int/lit8 v0, v0, 0x18
+
+    .line 7
+    .line 8
+    int-to-byte v0, v0
+
+    .line 9
+    aput-byte v0, p3, p2
+
+    .line 10
+    .line 11
+    add-int/lit8 v0, p2, 0x2
+
+    .line 12
+    .line 13
+    const/high16 v1, 0xff0000
+
+    .line 14
+    .line 15
+    and-int/2addr v1, p1
+
+    .line 16
+    ushr-int/lit8 v1, v1, 0x10
+
+    .line 17
+    .line 18
+    int-to-byte v1, v1
+
+    .line 19
+    aput-byte v1, p3, p0
+
+    .line 20
+    .line 21
+    add-int/lit8 p2, p2, 0x3
+
+    .line 22
+    .line 23
+    const p0, 0xff00
+
+    .line 24
+    .line 25
+    .line 26
+    and-int/2addr p0, p1
+
+    .line 27
+    ushr-int/lit8 p0, p0, 0x8
+
+    .line 28
+    .line 29
+    int-to-byte p0, p0
+
+    .line 30
+    aput-byte p0, p3, v0
+
+    .line 31
+    .line 32
+    and-int/lit16 p0, p1, 0xff
+
+    .line 33
+    .line 34
+    int-to-byte p0, p0
+
+    .line 35
+    aput-byte p0, p3, p2
+
+    .line 36
+    .line 37
+    const/4 p0, 0x4
+
+    .line 38
+    return p0
+.end method
+
+.method public final m(II[B)Z
+    .locals 0
+
+    .line 1
+    add-int/lit8 p0, p1, 0x3
+
+    .line 2
+    .line 3
+    if-ge p0, p2, :cond_0
+
+    .line 4
+    .line 5
+    aget-byte p0, p3, p0
 
     .line 6
     .line 7
-    if-ne p0, v0, :cond_0
+    const/16 p2, 0xa
 
     .line 8
     .line 9
-    invoke-virtual {p1}, Lrx2;->H()V
+    if-ne p0, p2, :cond_0
+
+    .line 10
+    .line 11
+    add-int/lit8 p0, p1, 0x2
+
+    .line 12
+    .line 13
+    aget-byte p0, p3, p0
+
+    .line 14
+    .line 15
+    if-nez p0, :cond_0
+
+    .line 16
+    .line 17
+    add-int/lit8 p0, p1, 0x1
+
+    .line 18
+    .line 19
+    aget-byte p0, p3, p0
+
+    .line 20
+    .line 21
+    if-nez p0, :cond_0
+
+    .line 22
+    .line 23
+    aget-byte p0, p3, p1
+
+    .line 24
+    .line 25
+    if-nez p0, :cond_0
+
+    .line 26
+    .line 27
+    const/4 p0, 0x1
+
+    .line 28
+    return p0
+
+    .line 29
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 30
+    return p0
+.end method
+
+.method public final s(I[BLur1;I[B)I
+    .locals 6
+
+    .line 1
+    iget v0, p3, Lur1;->c:I
+
+    .line 2
+    .line 3
+    add-int/lit8 v1, v0, 0x3
+
+    .line 4
+    .line 5
+    aget-byte v2, p2, v1
+
+    .line 6
+    .line 7
+    and-int/lit16 v2, v2, 0xff
+
+    .line 8
+    .line 9
+    invoke-static {v2}, Lw2;->i(I)Z
 
     .line 10
     .line 11
     .line 12
-    const/4 p0, 0x0
+    move-result v2
 
     .line 13
-    return-object p0
+    if-eqz v2, :cond_0
 
     .line 14
-    :cond_0
-    :try_start_0
-    invoke-virtual {p1}, Lrx2;->z()I
-
     .line 15
+    add-int/lit8 v2, v0, 0x2
+
     .line 16
     .line 17
-    move-result p0
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+    aget-byte v2, p2, v2
 
     .line 18
-    const/16 v0, 0xff
-
     .line 19
+    if-nez v2, :cond_0
+
     .line 20
-    if-gt p0, v0, :cond_1
-
     .line 21
+    add-int/lit8 v2, v0, 0x1
+
     .line 22
-    const/16 v0, -0x80
-
     .line 23
+    aget-byte v2, p2, v2
+
     .line 24
-    if-lt p0, v0, :cond_1
-
     .line 25
-    .line 26
-    int-to-byte p0, p0
+    if-nez v2, :cond_0
 
+    .line 26
     .line 27
-    invoke-static {p0}, Ljava/lang/Byte;->valueOf(B)Ljava/lang/Byte;
+    aget-byte v0, p2, v0
 
     .line 28
     .line 29
-    .line 30
-    move-result-object p0
+    if-nez v0, :cond_0
 
+    .line 30
     .line 31
-    return-object p0
+    const/4 p0, 0x0
 
     .line 32
-    :cond_1
-    new-instance v0, Lyw2;
+    aput-byte p0, p5, p0
 
     .line 33
     .line 34
-    const-string v1, "Lossy conversion from "
+    const/4 p1, 0x1
 
     .line 35
-    .line 36
-    const-string v2, " to byte; at path "
+    aput-byte p0, p5, p1
 
+    .line 36
     .line 37
+    const/4 p1, 0x2
+
     .line 38
-    invoke-static {p0, v1, v2}, Loc1;->t(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    aput-byte p0, p5, p1
 
     .line 39
     .line 40
-    .line 41
-    move-result-object p0
+    sget-object p0, Ln50;->b:[B
 
+    .line 41
     .line 42
-    const/4 v1, 0x1
+    aget-byte p1, p2, v1
 
     .line 43
-    invoke-virtual {p1, v1}, Lrx2;->p(Z)Ljava/lang/String;
-
     .line 44
+    and-int/lit16 p1, p1, 0xff
+
     .line 45
     .line 46
-    move-result-object p1
+    aget-byte p0, p0, p1
 
     .line 47
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 48
-    .line 49
-    .line 50
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const/4 p1, 0x3
 
+    .line 49
+    aput-byte p0, p5, p1
+
+    .line 50
     .line 51
+    iget p0, p3, Lur1;->c:I
+
     .line 52
     .line 53
-    move-result-object p0
+    const/4 p1, 0x4
 
     .line 54
-    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    add-int/2addr p0, p1
 
     .line 55
+    iput p0, p3, Lur1;->c:I
+
     .line 56
     .line 57
-    throw v0
+    return p1
 
     .line 58
-    :catch_0
-    move-exception p0
+    :cond_0
+    move-object v0, p0
 
     .line 59
-    new-instance p1, Lyw2;
+    move v1, p1
 
     .line 60
+    move-object v2, p2
+
     .line 61
-    invoke-direct {p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
+    move-object v3, p3
 
     .line 62
+    move v4, p4
+
     .line 63
+    move-object v5, p5
+
     .line 64
-    throw p1
+    invoke-super/range {v0 .. v5}, Lf27;->s(I[BLur1;I[B)I
+
+    .line 65
+    .line 66
+    .line 67
+    move-result p0
+
+    .line 68
+    return p0
+.end method
+
+.method public final t(II[B)I
+    .locals 0
+
+    .line 1
+    aget-byte p0, p3, p1
+
+    .line 2
+    .line 3
+    and-int/lit16 p0, p0, 0xff
+
+    .line 4
+    .line 5
+    mul-int/lit16 p0, p0, 0x100
+
+    .line 6
+    .line 7
+    add-int/lit8 p2, p1, 0x1
+
+    .line 8
+    .line 9
+    aget-byte p2, p3, p2
+
+    .line 10
+    .line 11
+    and-int/lit16 p2, p2, 0xff
+
+    .line 12
+    .line 13
+    add-int/2addr p0, p2
+
+    .line 14
+    mul-int/lit16 p0, p0, 0x100
+
+    .line 15
+    .line 16
+    add-int/lit8 p2, p1, 0x2
+
+    .line 17
+    .line 18
+    aget-byte p2, p3, p2
+
+    .line 19
+    .line 20
+    and-int/lit16 p2, p2, 0xff
+
+    .line 21
+    .line 22
+    add-int/2addr p0, p2
+
+    .line 23
+    mul-int/lit16 p0, p0, 0x100
+
+    .line 24
+    .line 25
+    add-int/lit8 p1, p1, 0x3
+
+    .line 26
+    .line 27
+    aget-byte p1, p3, p1
+
+    .line 28
+    .line 29
+    and-int/lit16 p1, p1, 0xff
+
+    .line 30
+    .line 31
+    add-int/2addr p0, p1
+
+    .line 32
+    return p0
 .end method

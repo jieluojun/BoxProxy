@@ -1,6 +1,6 @@
 .class public Lcom/sun/jna/NativeLibrary;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
 .implements Ljava/io/Closeable;
@@ -576,7 +576,7 @@
 
     .line 225
     .line 226
-    invoke-static {v12, v4}, Lhs5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v12, v4}, Lqq5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 227
     .line 228
@@ -592,7 +592,7 @@
 
     .line 233
     .line 234
-    invoke-static {v12, v4}, Lhs5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v12, v4}, Lqq5;->l(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 235
     .line 236
@@ -1314,7 +1314,7 @@
 
     .line 16
     .line 17
-    invoke-static {p1, p0}, Lue1;->j(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-static {p1, p0}, Lvd1;->j(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 18
     .line 19
@@ -2718,7 +2718,7 @@
     .line 82
     :cond_7
     :goto_1
-    invoke-static {v0, v1, v3}, Loc1;->C(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, v3}, Lpb1;->C(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 83
     .line 84
@@ -4448,7 +4448,7 @@
 
     .line 683
     .line 684
-    invoke-static {v0, v1, v2}, Ly96;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v0, v1, v2}, Lh86;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 685
     .line 686
@@ -4601,7 +4601,7 @@
 
     .line 756
     .line 757
-    invoke-static {v7, v1, v8, v2}, Lhs5;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v7, v1, v8, v2}, Lqq5;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 758
     .line 759
@@ -5255,7 +5255,7 @@
 
     .line 131
     .line 132
-    invoke-static {p0, v2, p0}, Loc1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v2, p0}, Lpb1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 133
     .line 134
@@ -5287,7 +5287,7 @@
 
     .line 145
     .line 146
-    invoke-static {v4, v6, p0}, Loc1;->C(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v4, v6, p0}, Lpb1;->C(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 147
     .line 148
@@ -6389,7 +6389,7 @@
 
     .line 17
     .line 18
-    invoke-static {v1, p1, v2}, Ly96;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v1, p1, v2}, Lh86;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 19
     .line 20

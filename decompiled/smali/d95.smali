@@ -1,366 +1,419 @@
 .class public final Ld95;
-.super Llh6;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lt62;
+.super Lq43;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final d:Ljava/lang/reflect/Method;
 
-.field public k:Z
+.field public final e:Ljava/lang/reflect/Method;
 
-.field public final synthetic l:Lf95;
+.field public final f:Ljava/lang/reflect/Method;
 
-.field public final synthetic m:Lnn2;
+.field public final g:Ljava/lang/reflect/Method;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lf95;Lnn2;Ly81;B)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 3
 
     .line 1
-    iput-byte p4, p0, Ld95;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Ld95;->l:Lf95;
-
     .line 4
+    const-class v0, Ljava/lang/Class;
+
     .line 5
-    iput-object p2, p0, Ld95;->m:Lnn2;
-
     .line 6
-    .line 7
-    const/4 p1, 0x2
+    const-string v1, "isRecord"
 
+    .line 7
     .line 8
-    invoke-direct {p0, p1, p3}, Llh6;-><init>(ILy81;)V
+    const/4 v2, 0x0
 
     .line 9
+    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
     .line 10
     .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    iput-object v1, p0, Ld95;->d:Ljava/lang/reflect/Method;
+
+    .line 14
+    .line 15
+    const-string v1, "getRecordComponents"
+
+    .line 16
+    .line 17
+    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object v0
+
+    .line 21
+    iput-object v0, p0, Ld95;->e:Ljava/lang/reflect/Method;
+
+    .line 22
+    .line 23
+    const-string v0, "java.lang.reflect.RecordComponent"
+
+    .line 24
+    .line 25
+    invoke-static {v0}, Ljava/lang/Class;->forName(Ljava/lang/String;)Ljava/lang/Class;
+
+    .line 26
+    .line 27
+    .line 28
+    move-result-object v0
+
+    .line 29
+    const-string v1, "getName"
+
+    .line 30
+    .line 31
+    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    .line 32
+    .line 33
+    .line 34
+    move-result-object v1
+
+    .line 35
+    iput-object v1, p0, Ld95;->f:Ljava/lang/reflect/Method;
+
+    .line 36
+    .line 37
+    const-string v1, "getType"
+
+    .line 38
+    .line 39
+    invoke-virtual {v0, v1, v2}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
+    .line 40
+    .line 41
+    .line 42
+    move-result-object v0
+
+    .line 43
+    iput-object v0, p0, Ld95;->g:Ljava/lang/reflect/Method;
+
+    .line 44
+    .line 45
     return-void
 .end method
 
 
 # virtual methods
-.method public final create(Ljava/lang/Object;Ly81;)Ly81;
-    .locals 2
+.method public final B(Ljava/lang/Class;)Z
+    .locals 1
 
     .line 1
-    iget-byte p1, p0, Ld95;->j:B
+    :try_start_0
+    iget-object p0, p0, Ld95;->d:Ljava/lang/reflect/Method;
 
     .line 2
     .line 3
-    iget-object v0, p0, Ld95;->m:Lnn2;
+    const/4 v0, 0x0
 
     .line 4
-    .line 5
-    iget-object p0, p0, Ld95;->l:Lf95;
+    invoke-virtual {p0, p1, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 5
     .line 6
     .line 7
-    packed-switch p1, :pswitch_data_0
-
-    .line 8
-    .line 9
-    .line 10
-    new-instance p1, Ld95;
-
-    .line 11
-    .line 12
-    const/4 v1, 0x1
-
-    .line 13
-    invoke-direct {p1, p0, v0, p2, v1}, Ld95;-><init>(Lf95;Lnn2;Ly81;B)V
-
-    .line 14
-    .line 15
-    .line 16
-    return-object p1
-
-    .line 17
-    :pswitch_0
-    new-instance p1, Ld95;
-
-    .line 18
-    .line 19
-    const/4 v1, 0x0
-
-    .line 20
-    invoke-direct {p1, p0, v0, p2, v1}, Ld95;-><init>(Lf95;Lnn2;Ly81;B)V
-
-    .line 21
-    .line 22
-    .line 23
-    return-object p1
-
-    .line 24
-    nop
-
-    .line 25
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
-
-    .line 1
-    iget-byte v0, p0, Ld95;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    check-cast p1, Lac1;
-
-    .line 6
-    .line 7
-    check-cast p2, Ly81;
-
-    .line 8
-    .line 9
-    packed-switch v0, :pswitch_data_0
-
-    .line 10
-    .line 11
-    .line 12
-    invoke-virtual {p0, p1, p2}, Ld95;->create(Ljava/lang/Object;Ly81;)Ly81;
-
-    .line 13
-    .line 14
-    .line 15
     move-result-object p0
 
+    .line 8
+    check-cast p0, Ljava/lang/Boolean;
+
+    .line 9
+    .line 10
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+
+    .line 11
+    .line 12
+    .line 13
+    move-result p0
+    :try_end_0
+    .catch Ljava/lang/ReflectiveOperationException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 14
+    return p0
+
+    .line 15
+    :catch_0
+    move-exception p0
+
     .line 16
-    check-cast p0, Ld95;
+    const-string p1, "Unexpected ReflectiveOperationException occurred (Gson 2.13.2). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior."
 
     .line 17
     .line 18
-    invoke-virtual {p0, v1}, Ld95;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1, p0}, Lvd1;->j(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 19
     .line 20
     .line 21
-    move-result-object p0
+    const/4 p0, 0x0
 
     .line 22
-    return-object p0
-
-    .line 23
-    :pswitch_0
-    invoke-virtual {p0, p1, p2}, Ld95;->create(Ljava/lang/Object;Ly81;)Ly81;
-
-    .line 24
-    .line 25
-    .line 26
-    move-result-object p0
-
-    .line 27
-    check-cast p0, Ld95;
-
-    .line 28
-    .line 29
-    invoke-virtual {p0, v1}, Ld95;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 30
-    .line 31
-    .line 32
-    move-result-object p0
-
-    .line 33
-    return-object p0
-
-    .line 34
-    nop
-
-    .line 35
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method
 
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
+.method public final t(Ljava/lang/reflect/Field;Ljava/lang/Class;)Ljava/lang/reflect/Method;
+    .locals 0
 
     .line 1
-    iget-byte v0, p0, Ld95;->j:B
+    const/4 p0, 0x0
 
     .line 2
-    .line 3
-    iget-object v1, p0, Ld95;->m:Lnn2;
+    :try_start_0
+    invoke-virtual {p1}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
 
+    .line 3
     .line 4
     .line 5
-    iget-object v2, p0, Ld95;->l:Lf95;
+    move-result-object p1
 
     .line 6
+    invoke-virtual {p2, p1, p0}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;
+
     .line 7
+    .line 8
+    .line 9
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/ReflectiveOperationException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 10
+    return-object p0
+
+    .line 11
+    :catch_0
+    move-exception p1
+
+    .line 12
+    const-string p2, "Unexpected ReflectiveOperationException occurred (Gson 2.13.2). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior."
+
+    .line 13
+    .line 14
+    invoke-static {p2, p1}, Lvd1;->j(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 15
+    .line 16
+    .line 17
+    return-object p0
+.end method
+
+.method public final u(Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
+    .locals 6
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    :try_start_0
+    iget-object v1, p0, Ld95;->e:Ljava/lang/reflect/Method;
+
+    .line 3
+    .line 4
+    invoke-virtual {v1, p1, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object v1
+
+    .line 8
+    check-cast v1, [Ljava/lang/Object;
+
+    .line 9
+    .line 10
+    array-length v2, v1
+
+    .line 11
+    new-array v2, v2, [Ljava/lang/Class;
+
+    .line 12
+    .line 13
     const/4 v3, 0x0
 
-    .line 8
-    const-string v4, "call to \'resume\' before \'invoke\' with coroutine"
-
-    .line 9
-    .line 10
-    sget-object v5, Lbc1;->j:Lbc1;
-
-    .line 11
-    .line 12
-    const/4 v6, 0x1
-
-    .line 13
-    packed-switch v0, :pswitch_data_0
-
     .line 14
+    :goto_0
+    array-length v4, v1
+
     .line 15
+    if-ge v3, v4, :cond_0
+
     .line 16
-    iget-boolean v0, p0, Ld95;->k:Z
-
     .line 17
+    iget-object v4, p0, Ld95;->g:Ljava/lang/reflect/Method;
+
     .line 18
-    if-eqz v0, :cond_1
-
     .line 19
+    aget-object v5, v1, v3
+
     .line 20
-    if-ne v0, v6, :cond_0
-
     .line 21
-    .line 22
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-virtual {v4, v5, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 22
     .line 23
     .line 24
+    move-result-object v4
+
     .line 25
-    goto :goto_0
+    check-cast v4, Ljava/lang/Class;
 
     .line 26
-    :cond_0
-    invoke-static {v4}, Ljw1;->e(Ljava/lang/String;)V
-
     .line 27
+    aput-object v4, v2, v3
+
     .line 28
     .line 29
-    move-object p1, v3
+    add-int/lit8 v3, v3, 0x1
 
     .line 30
+    .line 31
     goto :goto_0
 
-    .line 31
-    :cond_1
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
     .line 32
+    :catch_0
+    move-exception p0
+
     .line 33
+    goto :goto_1
+
     .line 34
-    iput-boolean v6, p0, Ld95;->k:Z
+    :cond_0
+    invoke-virtual {p1, v2}, Ljava/lang/Class;->getDeclaredConstructor([Ljava/lang/Class;)Ljava/lang/reflect/Constructor;
 
     .line 35
     .line 36
-    sget p1, Lf95;->f:I
-
     .line 37
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/ReflectiveOperationException; {:try_start_0 .. :try_end_0} :catch_0
+
     .line 38
-    invoke-virtual {v2, v1, v6, p0}, Lf95;->a(Lnn2;ILz81;)Ljava/lang/Object;
+    return-object p0
 
     .line 39
+    :goto_1
+    const-string p1, "Unexpected ReflectiveOperationException occurred (Gson 2.13.2). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior."
+
     .line 40
     .line 41
-    move-result-object p1
+    invoke-static {p1, p0}, Lvd1;->j(Ljava/lang/String;Ljava/lang/Throwable;)V
 
     .line 42
-    if-ne p1, v5, :cond_2
-
     .line 43
     .line 44
-    move-object p1, v5
+    return-object v0
+.end method
 
-    .line 45
-    :cond_2
-    :goto_0
-    return-object p1
+.method public final w(Ljava/lang/Class;)[Ljava/lang/String;
+    .locals 5
 
-    .line 46
-    :pswitch_0
-    iget-boolean v0, p0, Ld95;->k:Z
+    .line 1
+    const/4 v0, 0x0
 
-    .line 47
-    .line 48
-    if-eqz v0, :cond_4
+    .line 2
+    :try_start_0
+    iget-object v1, p0, Ld95;->e:Ljava/lang/reflect/Method;
 
-    .line 49
-    .line 50
-    if-ne v0, v6, :cond_3
+    .line 3
+    .line 4
+    invoke-virtual {v1, p1, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 51
-    .line 52
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 53
-    .line 54
-    .line 55
-    goto :goto_1
-
-    .line 56
-    :cond_3
-    invoke-static {v4}, Ljw1;->e(Ljava/lang/String;)V
-
-    .line 57
-    .line 58
-    .line 59
-    move-object p1, v3
-
-    .line 60
-    goto :goto_1
-
-    .line 61
-    :cond_4
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 62
-    .line 63
-    .line 64
-    iput-boolean v6, p0, Ld95;->k:Z
-
-    .line 65
-    .line 66
-    sget p1, Lf95;->f:I
-
-    .line 67
-    .line 68
-    const/4 p1, 0x0
-
-    .line 69
-    invoke-virtual {v2, v1, p1, p0}, Lf95;->a(Lnn2;ILz81;)Ljava/lang/Object;
-
-    .line 70
-    .line 71
-    .line 72
+    .line 5
+    .line 6
+    .line 7
     move-result-object p1
 
-    .line 73
-    if-ne p1, v5, :cond_5
+    .line 8
+    check-cast p1, [Ljava/lang/Object;
 
-    .line 74
-    .line 75
-    move-object p1, v5
+    .line 9
+    .line 10
+    array-length v1, p1
 
-    .line 76
-    :cond_5
+    .line 11
+    new-array v1, v1, [Ljava/lang/String;
+
+    .line 12
+    .line 13
+    const/4 v2, 0x0
+
+    .line 14
+    :goto_0
+    array-length v3, p1
+
+    .line 15
+    if-ge v2, v3, :cond_0
+
+    .line 16
+    .line 17
+    iget-object v3, p0, Ld95;->f:Ljava/lang/reflect/Method;
+
+    .line 18
+    .line 19
+    aget-object v4, p1, v2
+
+    .line 20
+    .line 21
+    invoke-virtual {v3, v4, v0}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object v3
+
+    .line 25
+    check-cast v3, Ljava/lang/String;
+
+    .line 26
+    .line 27
+    aput-object v3, v1, v2
+    :try_end_0
+    .catch Ljava/lang/ReflectiveOperationException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 28
+    .line 29
+    add-int/lit8 v2, v2, 0x1
+
+    .line 30
+    .line 31
+    goto :goto_0
+
+    .line 32
+    :catch_0
+    move-exception p0
+
+    .line 33
+    goto :goto_1
+
+    .line 34
+    :cond_0
+    return-object v1
+
+    .line 35
     :goto_1
-    return-object p1
+    const-string p1, "Unexpected ReflectiveOperationException occurred (Gson 2.13.2). To support Java records, reflection is utilized to read out information about records. All these invocations happens after it is established that records exist in the JVM. This exception is unexpected behavior."
 
-    .line 77
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 36
+    .line 37
+    invoke-static {p1, p0}, Lvd1;->j(Ljava/lang/String;Ljava/lang/Throwable;)V
+
+    .line 38
+    .line 39
+    .line 40
+    return-object v0
 .end method

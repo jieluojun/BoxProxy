@@ -1,92 +1,249 @@
-.class public final Lrv3;
+.class public final synthetic Lrv3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-
-# static fields
-.field public static final d:Lrv3;
+# interfaces
+.implements Ld52;
 
 
 # instance fields
-.field public final a:Lcw3;
+.field public final synthetic j:B
 
-.field public final b:Lcw3;
+.field public final synthetic k:Lyg1;
 
-.field public final c:Ldw3;
+.field public final synthetic l:Ldl4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public synthetic constructor <init>(Lyg1;Ldl4;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lrv3;
+    iput-byte p3, p0, Lrv3;->j:B
 
     .line 2
     .line 3
-    new-instance v1, Lcw3;
+    iput-object p1, p0, Lrv3;->k:Lyg1;
 
     .line 4
     .line 5
-    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lrv3;->l:Ldl4;
 
     .line 6
     .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 8
-    new-instance v2, Lcw3;
+    .line 9
+    .line 10
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 8
+
+    .line 1
+    iget-byte v0, p0, Lrv3;->j:B
+
+    .line 2
+    .line 3
+    const-wide v1, 0xffffffffL
+
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    const/16 v3, 0x20
 
     .line 9
     .line 10
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
+    const/high16 v4, 0x41400000    # 12.0f
 
     .line 11
     .line 12
+    const/high16 v5, 0x40000000    # 2.0f
+
     .line 13
-    new-instance v3, Ldw3;
-
     .line 14
+    iget-object v6, p0, Lrv3;->l:Ldl4;
+
     .line 15
-    sget-object v4, Law3;->a:Lzv3;
-
     .line 16
-    .line 17
-    invoke-direct {v3, v4}, Ldw3;-><init>(Lrq1;)V
+    const/high16 v7, 0x42600000    # 56.0f
 
+    .line 17
     .line 18
+    iget-object p0, p0, Lrv3;->k:Lyg1;
+
     .line 19
     .line 20
-    invoke-direct {v0, v1, v2, v3}, Lrv3;-><init>(Lcw3;Lcw3;Ldw3;)V
+    packed-switch v0, :pswitch_data_0
 
     .line 21
     .line 22
     .line 23
-    sput-object v0, Lrv3;->d:Lrv3;
+    invoke-virtual {v6}, Ldl4;->g()I
 
     .line 24
     .line 25
-    return-void
-.end method
+    .line 26
+    move-result v0
 
-.method public constructor <init>(Lcw3;Lcw3;Ldw3;)V
-    .locals 0
+    .line 27
+    invoke-interface {p0, v7}, Lyg1;->t0(F)I
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 28
+    .line 29
+    .line 30
+    move-result v6
 
-    .line 2
-    .line 3
-    .line 4
-    iput-object p1, p0, Lrv3;->a:Lcw3;
+    .line 31
+    sub-int/2addr v0, v6
 
-    .line 5
-    .line 6
-    iput-object p2, p0, Lrv3;->b:Lcw3;
+    .line 32
+    int-to-float v0, v0
 
-    .line 7
-    .line 8
-    iput-object p3, p0, Lrv3;->c:Ldw3;
+    .line 33
+    div-float/2addr v0, v5
 
-    .line 9
-    .line 10
-    return-void
+    .line 34
+    invoke-interface {p0, v4}, Lyg1;->N(F)F
+
+    .line 35
+    .line 36
+    .line 37
+    move-result p0
+
+    .line 38
+    invoke-static {v0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 39
+    .line 40
+    .line 41
+    move-result v0
+
+    .line 42
+    int-to-long v4, v0
+
+    .line 43
+    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 44
+    .line 45
+    .line 46
+    move-result p0
+
+    .line 47
+    int-to-long v6, p0
+
+    .line 48
+    shl-long v3, v4, v3
+
+    .line 49
+    .line 50
+    and-long v0, v6, v1
+
+    .line 51
+    .line 52
+    or-long/2addr v0, v3
+
+    .line 53
+    new-instance p0, Lj94;
+
+    .line 54
+    .line 55
+    invoke-direct {p0, v0, v1}, Lj94;-><init>(J)V
+
+    .line 56
+    .line 57
+    .line 58
+    return-object p0
+
+    .line 59
+    :pswitch_0
+    invoke-interface {p0, v7}, Lyg1;->t0(F)I
+
+    .line 60
+    .line 61
+    .line 62
+    move-result v0
+
+    .line 63
+    invoke-virtual {v6}, Ldl4;->g()I
+
+    .line 64
+    .line 65
+    .line 66
+    move-result v6
+
+    .line 67
+    sub-int/2addr v6, v0
+
+    .line 68
+    int-to-float v0, v6
+
+    .line 69
+    div-float/2addr v0, v5
+
+    .line 70
+    invoke-interface {p0, v4}, Lyg1;->N(F)F
+
+    .line 71
+    .line 72
+    .line 73
+    move-result p0
+
+    .line 74
+    invoke-static {v0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 75
+    .line 76
+    .line 77
+    move-result v0
+
+    .line 78
+    int-to-long v4, v0
+
+    .line 79
+    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 80
+    .line 81
+    .line 82
+    move-result p0
+
+    .line 83
+    int-to-long v6, p0
+
+    .line 84
+    shl-long v3, v4, v3
+
+    .line 85
+    .line 86
+    and-long v0, v6, v1
+
+    .line 87
+    .line 88
+    or-long/2addr v0, v3
+
+    .line 89
+    new-instance p0, Lj94;
+
+    .line 90
+    .line 91
+    invoke-direct {p0, v0, v1}, Lj94;-><init>(J)V
+
+    .line 92
+    .line 93
+    .line 94
+    return-object p0
+
+    .line 95
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

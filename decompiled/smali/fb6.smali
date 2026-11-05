@@ -1,20 +1,104 @@
 .class public final Lfb6;
-.super Ly61;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lgx2;
 
 
-# virtual methods
-.method public final a(Ls74;)Ljava/lang/Object;
-    .locals 0
+# static fields
+.field public static final a:Lfb6;
+
+.field public static final b:Lus4;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    check-cast p1, Lds5;
+    new-instance v0, Lfb6;
 
     .line 2
     .line 3
-    iget-object p0, p1, Lds5;->e:Ljava/lang/String;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
+    .line 6
+    sput-object v0, Lfb6;->a:Lfb6;
+
+    .line 7
+    .line 8
+    new-instance v0, Lus4;
+
+    .line 9
+    .line 10
+    const-string v1, "kotlin.String"
+
+    .line 11
+    .line 12
+    sget-object v2, Lts4;->q:Lts4;
+
+    .line 13
+    .line 14
+    invoke-direct {v0, v1, v2}, Lus4;-><init>(Ljava/lang/String;Lts4;)V
+
+    .line 15
+    .line 16
+    .line 17
+    sput-object v0, Lfb6;->b:Lus4;
+
+    .line 18
+    .line 19
+    return-void
+.end method
+
+
+# virtual methods
+.method public final b(Lxd1;)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    invoke-interface {p1}, Lxd1;->A()Ljava/lang/String;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
     return-object p0
+.end method
+
+.method public final c()Lcx5;
+    .locals 0
+
+    .line 1
+    sget-object p0, Lfb6;->b:Lus4;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public final d(Lya6;Ljava/lang/Object;)V
+    .locals 0
+
+    .line 1
+    check-cast p2, Ljava/lang/String;
+
+    .line 2
+    .line 3
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
+    .line 5
+    .line 6
+    invoke-virtual {p1, p2}, Lya6;->q(Ljava/lang/String;)V
+
+    .line 7
+    .line 8
+    .line 9
+    return-void
 .end method

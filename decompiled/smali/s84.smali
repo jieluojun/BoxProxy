@@ -1,30 +1,32 @@
-.class public final Ls84;
+.class public Ls84;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Luy5;
+.implements Landroid/view/inputmethod/InputConnection;
 
 
-# static fields
-.field public static final a:Ls84;
+# instance fields
+.field public final a:Lv90;
+
+.field public b:Landroid/view/inputmethod/InputConnection;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Landroid/view/inputmethod/InputConnection;Lv90;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ls84;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    iput-object p2, p0, Ls84;->a:Lv90;
+
     .line 5
     .line 6
-    sput-object v0, Ls84;->a:Ls84;
+    iput-object p1, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
 
     .line 7
     .line 8
@@ -33,202 +35,794 @@
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)I
+.method public final beginBatchEdit()Z
     .locals 0
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
 
     .line 2
     .line 3
+    if-eqz p0, :cond_0
+
     .line 4
-    new-instance p0, Ljava/lang/IllegalStateException;
-
     .line 5
-    .line 6
-    const-string p1, "Descriptor for type `kotlin.Nothing` does not have elements"
+    invoke-interface {p0}, Landroid/view/inputmethod/InputConnection;->beginBatchEdit()Z
 
+    .line 6
     .line 7
     .line 8
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    move-result p0
 
     .line 9
+    return p0
+
     .line 10
-    .line 11
-    throw p0
-.end method
-
-.method public final b()Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    const-string p0, "kotlin.Nothing"
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final c()Ldj3;
-    .locals 0
-
-    .line 1
-    sget-object p0, Lkd6;->h:Lkd6;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final d()I
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final e(I)Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    .line 2
-    .line 3
-    const-string p1, "Descriptor for type `kotlin.Nothing` does not have elements"
-
-    .line 4
-    .line 5
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    throw p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    if-ne p0, p1, :cond_0
-
-    .line 2
-    .line 3
-    const/4 p0, 0x1
-
-    .line 4
-    return p0
-
-    .line 5
     :cond_0
     const/4 p0, 0x0
 
-    .line 6
+    .line 11
     return p0
 .end method
 
-.method public final hashCode()I
+.method public final clearMetaKeyStates(I)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0, p1}, Landroid/view/inputmethod/InputConnection;->clearMetaKeyStates(I)Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
+.end method
+
+.method public final closeConnection()V
     .locals 1
 
     .line 1
-    sget-object p0, Lkd6;->h:Lkd6;
+    iget-object v0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ldj3;->hashCode()I
+    if-eqz v0, :cond_1
 
     .line 4
     .line 5
-    .line 6
-    move-result p0
+    if-eqz v0, :cond_0
 
+    .line 6
     .line 7
-    mul-int/lit8 p0, p0, 0x1f
+    invoke-interface {v0}, Landroid/view/inputmethod/InputConnection;->closeConnection()V
 
     .line 8
     .line 9
-    const v0, -0x6c61e840
+    .line 10
+    const/4 v0, 0x0
+
+    .line 11
+    iput-object v0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 12
+    .line 13
+    :cond_0
+    iget-object v0, p0, Ls84;->a:Lv90;
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, p0}, Lv90;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 16
+    .line 17
+    .line 18
+    :cond_1
+    return-void
+.end method
+
+.method public final commitCompletion(Landroid/view/inputmethod/CompletionInfo;)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0, p1}, Landroid/view/inputmethod/InputConnection;->commitCompletion(Landroid/view/inputmethod/CompletionInfo;)Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
 
     .line 10
-    .line 11
-    .line 12
-    add-int/2addr p0, v0
+    :cond_0
+    const/4 p0, 0x0
 
-    .line 13
+    .line 11
     return p0
 .end method
 
-.method public final i(I)Ljava/util/List;
+.method public final commitContent(Landroid/view/inputmethod/InputContentInfo;ILandroid/os/Bundle;)Z
     .locals 0
 
     .line 1
-    new-instance p0, Ljava/lang/IllegalStateException;
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
 
     .line 2
     .line 3
-    const-string p1, "Descriptor for type `kotlin.Nothing` does not have elements"
+    if-eqz p0, :cond_0
 
     .line 4
     .line 5
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-interface {p0, p1, p2, p3}, Landroid/view/inputmethod/InputConnection;->commitContent(Landroid/view/inputmethod/InputContentInfo;ILandroid/os/Bundle;)Z
 
     .line 6
     .line 7
     .line 8
-    throw p0
+    move-result p0
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
 .end method
 
-.method public final j(I)Luy5;
+.method public final commitCorrection(Landroid/view/inputmethod/CorrectionInfo;)Z
     .locals 0
 
     .line 1
-    new-instance p0, Ljava/lang/IllegalStateException;
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
 
     .line 2
     .line 3
-    const-string p1, "Descriptor for type `kotlin.Nothing` does not have elements"
+    if-eqz p0, :cond_0
 
     .line 4
     .line 5
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-interface {p0, p1}, Landroid/view/inputmethod/InputConnection;->commitCorrection(Landroid/view/inputmethod/CorrectionInfo;)Z
 
     .line 6
     .line 7
     .line 8
-    throw p0
+    move-result p0
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
 .end method
 
-.method public final k(I)Z
+.method public final commitText(Ljava/lang/CharSequence;I)Z
     .locals 0
 
     .line 1
-    new-instance p0, Ljava/lang/IllegalStateException;
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
 
     .line 2
     .line 3
-    const-string p1, "Descriptor for type `kotlin.Nothing` does not have elements"
+    if-eqz p0, :cond_0
 
     .line 4
     .line 5
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    invoke-interface {p0, p1, p2}, Landroid/view/inputmethod/InputConnection;->commitText(Ljava/lang/CharSequence;I)Z
 
     .line 6
     .line 7
     .line 8
-    throw p0
+    move-result p0
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public final deleteSurroundingText(II)Z
     .locals 0
 
     .line 1
-    const-string p0, "NothingSerialDescriptor"
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
 
     .line 2
     .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0, p1, p2}, Landroid/view/inputmethod/InputConnection;->deleteSurroundingText(II)Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
+.end method
+
+.method public final deleteSurroundingTextInCodePoints(II)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0, p1, p2}, Landroid/view/inputmethod/InputConnection;->deleteSurroundingTextInCodePoints(II)Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
+.end method
+
+.method public final endBatchEdit()Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0}, Landroid/view/inputmethod/InputConnection;->endBatchEdit()Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
+.end method
+
+.method public final finishComposingText()Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0}, Landroid/view/inputmethod/InputConnection;->finishComposingText()Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
+.end method
+
+.method public final getCursorCapsMode(I)I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0, p1}, Landroid/view/inputmethod/InputConnection;->getCursorCapsMode(I)I
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
+.end method
+
+.method public final getExtractedText(Landroid/view/inputmethod/ExtractedTextRequest;I)Landroid/view/inputmethod/ExtractedText;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0, p1, p2}, Landroid/view/inputmethod/InputConnection;->getExtractedText(Landroid/view/inputmethod/ExtractedTextRequest;I)Landroid/view/inputmethod/ExtractedText;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
     return-object p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return-object p0
+.end method
+
+.method public final getHandler()Landroid/os/Handler;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0}, Landroid/view/inputmethod/InputConnection;->getHandler()Landroid/os/Handler;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    return-object p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return-object p0
+.end method
+
+.method public final getSelectedText(I)Ljava/lang/CharSequence;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0, p1}, Landroid/view/inputmethod/InputConnection;->getSelectedText(I)Ljava/lang/CharSequence;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    return-object p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return-object p0
+.end method
+
+.method public final getTextAfterCursor(II)Ljava/lang/CharSequence;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0, p1, p2}, Landroid/view/inputmethod/InputConnection;->getTextAfterCursor(II)Ljava/lang/CharSequence;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    return-object p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return-object p0
+.end method
+
+.method public final getTextBeforeCursor(II)Ljava/lang/CharSequence;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0, p1, p2}, Landroid/view/inputmethod/InputConnection;->getTextBeforeCursor(II)Ljava/lang/CharSequence;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    return-object p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return-object p0
+.end method
+
+.method public final performContextMenuAction(I)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0, p1}, Landroid/view/inputmethod/InputConnection;->performContextMenuAction(I)Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
+.end method
+
+.method public final performEditorAction(I)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0, p1}, Landroid/view/inputmethod/InputConnection;->performEditorAction(I)Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
+.end method
+
+.method public final performPrivateCommand(Ljava/lang/String;Landroid/os/Bundle;)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0, p1, p2}, Landroid/view/inputmethod/InputConnection;->performPrivateCommand(Ljava/lang/String;Landroid/os/Bundle;)Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
+.end method
+
+.method public final reportFullscreenMode(Z)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0, p1}, Landroid/view/inputmethod/InputConnection;->reportFullscreenMode(Z)Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
+.end method
+
+.method public final requestCursorUpdates(I)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0, p1}, Landroid/view/inputmethod/InputConnection;->requestCursorUpdates(I)Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
+.end method
+
+.method public final sendKeyEvent(Landroid/view/KeyEvent;)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0, p1}, Landroid/view/inputmethod/InputConnection;->sendKeyEvent(Landroid/view/KeyEvent;)Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
+.end method
+
+.method public final setComposingRegion(II)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0, p1, p2}, Landroid/view/inputmethod/InputConnection;->setComposingRegion(II)Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
+.end method
+
+.method public final setComposingText(Ljava/lang/CharSequence;I)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0, p1, p2}, Landroid/view/inputmethod/InputConnection;->setComposingText(Ljava/lang/CharSequence;I)Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
+.end method
+
+.method public final setSelection(II)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls84;->b:Landroid/view/inputmethod/InputConnection;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0, p1, p2}, Landroid/view/inputmethod/InputConnection;->setSelection(II)Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
 .end method

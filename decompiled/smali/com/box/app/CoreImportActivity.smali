@@ -1,6 +1,6 @@
 .class public final Lcom/box/app/CoreImportActivity;
-.super Lxo;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lgo;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
@@ -8,7 +8,7 @@
 
 
 # instance fields
-.field public J:Lnv;
+.field public J:Lou;
 
 
 # direct methods
@@ -16,7 +16,7 @@
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Lxo;-><init>()V
+    invoke-direct {p0}, Lgo;-><init>()V
 
     .line 2
     .line 3
@@ -35,7 +35,7 @@
     .line 2
     .line 3
     .line 4
-    invoke-static {p1}, Ldn;->f0(Landroid/content/Context;)Landroid/content/Context;
+    invoke-static {p1}, Lp87;->i0(Landroid/content/Context;)Landroid/content/Context;
 
     .line 5
     .line 6
@@ -43,7 +43,7 @@
     move-result-object p1
 
     .line 8
-    invoke-super {p0, p1}, Lxo;->attachBaseContext(Landroid/content/Context;)V
+    invoke-super {p0, p1}, Lgo;->attachBaseContext(Landroid/content/Context;)V
 
     .line 9
     .line 10
@@ -55,11 +55,11 @@
     .locals 3
 
     .line 1
-    sget-object v0, Lnv;->f:Lv8;
+    sget-object v0, Lou;->f:Lt8;
 
     .line 2
     .line 3
-    invoke-virtual {v0, p0}, Lv8;->u(Landroid/content/Context;)Lnv;
+    invoke-virtual {v0, p0}, Lt8;->u(Landroid/content/Context;)Lou;
 
     .line 4
     .line 5
@@ -67,19 +67,19 @@
     move-result-object v0
 
     .line 7
-    iput-object v0, p0, Lcom/box/app/CoreImportActivity;->J:Lnv;
+    iput-object v0, p0, Lcom/box/app/CoreImportActivity;->J:Lou;
 
     .line 8
     .line 9
-    iget-object v0, v0, Lnv;->e:Lq85;
+    iget-object v0, v0, Lou;->e:Lc75;
 
     .line 10
     .line 11
-    iget-object v0, v0, Lq85;->j:Lpb6;
+    iget-object v0, v0, Lc75;->j:Lx96;
 
     .line 12
     .line 13
-    invoke-virtual {v0}, Lpb6;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lx96;->getValue()Ljava/lang/Object;
 
     .line 14
     .line 15
@@ -87,20 +87,20 @@
     move-result-object v0
 
     .line 17
-    check-cast v0, Lkv;
+    check-cast v0, Llu;
 
     .line 18
     .line 19
-    iget-object v0, v0, Lkv;->b:Lur;
+    iget-object v0, v0, Llu;->b:Lar;
 
     .line 20
     .line 21
-    invoke-static {p0, v0}, Ldn;->u(Lxo;Lur;)V
+    invoke-static {p0, v0}, Lp87;->v(Lgo;Lar;)V
 
     .line 22
     .line 23
     .line 24
-    invoke-super {p0, p1}, Lxo;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lgo;->onCreate(Landroid/os/Bundle;)V
 
     .line 25
     .line 26
@@ -265,7 +265,7 @@
 
     .line 106
     .line 107
-    invoke-static {p1}, Lz4;->l(Landroid/content/Intent;)Ljava/lang/Object;
+    invoke-static {p1}, Lx4;->l(Landroid/content/Intent;)Ljava/lang/Object;
 
     .line 108
     .line 109
@@ -333,7 +333,7 @@
     .line 137
     .line 138
     .line 139
-    invoke-static {p0, p1}, Lx27;->g(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-static {p0, p1}, Lh17;->e(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 140
     .line 141
@@ -347,40 +347,39 @@
 
     .line 146
     :cond_4
-    new-instance v0, Lv90;
+    new-instance v0, Lz21;
 
     .line 147
     .line 148
-    const/16 v1, 0x1c
+    const/4 v1, 0x3
 
     .line 149
-    .line 150
-    invoke-direct {v0, p0, p1, v1}, Lv90;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
+    invoke-direct {v0, p0, p1, v1}, Lz21;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
 
+    .line 150
     .line 151
     .line 152
-    .line 153
-    new-instance p1, Lqz0;
+    new-instance p1, Loy0;
 
+    .line 153
     .line 154
-    .line 155
     const v1, -0xe07d86f
 
+    .line 155
     .line 156
     .line 157
-    .line 158
     const/4 v2, 0x1
 
-    .line 159
-    invoke-direct {p1, v1, v2, v0}, Lqz0;-><init>(IZLjava/lang/Object;)V
+    .line 158
+    invoke-direct {p1, v1, v2, v0}, Loy0;-><init>(IZLa62;)V
 
+    .line 159
     .line 160
     .line 161
-    .line 162
-    invoke-static {p0, p1}, Lfz0;->a(Lxo;Lqz0;)V
+    invoke-static {p0, p1}, Ldy0;->a(Lgo;Loy0;)V
 
+    .line 162
     .line 163
     .line 164
-    .line 165
     return-void
 .end method

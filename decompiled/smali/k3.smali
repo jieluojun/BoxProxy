@@ -1,177 +1,41 @@
 .class public abstract Lk3;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/util/AbstractSet;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Ljava/util/ListIterator;
-.implements Lfy2;
-
-
-# instance fields
-.field public j:I
-
-.field public k:I
+.implements Ljava/util/Set;
+.implements Lzw2;
 
 
 # direct methods
-.method public constructor <init>(II)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Ljava/util/AbstractSet;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Lk3;->j:I
-
-    .line 5
-    .line 6
-    iput p2, p0, Lk3;->k:I
-
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public add(Ljava/lang/Object;)V
+.method public abstract a()I
+.end method
+
+.method public final bridge size()I
     .locals 0
 
     .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    invoke-virtual {p0}, Lk3;->a()I
 
     .line 2
     .line 3
-    const-string p1, "Operation is not supported for read-only collection"
-
     .line 4
-    .line 5
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    move-result p0
 
-    .line 6
-    .line 7
-    .line 8
-    throw p0
-.end method
-
-.method public final hasNext()Z
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lk3;->j:I
-
-    .line 2
-    .line 3
-    iget p0, p0, Lk3;->k:I
-
-    .line 4
-    .line 5
-    if-ge v0, p0, :cond_0
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public final hasPrevious()Z
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lk3;->j:I
-
-    .line 2
-    .line 3
-    if-lez p0, :cond_0
-
-    .line 4
-    .line 5
-    const/4 p0, 0x1
-
-    .line 6
-    return p0
-
-    .line 7
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 8
-    return p0
-.end method
-
-.method public final nextIndex()I
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lk3;->j:I
-
-    .line 2
-    .line 3
-    return p0
-.end method
-
-.method public final previousIndex()I
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lk3;->j:I
-
-    .line 2
-    .line 3
-    add-int/lit8 p0, p0, -0x1
-
-    .line 4
     .line 5
     return p0
-.end method
-
-.method public remove()V
-    .locals 1
-
-    .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    .line 2
-    .line 3
-    const-string v0, "Operation is not supported for read-only collection"
-
-    .line 4
-    .line 5
-    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    throw p0
-.end method
-
-.method public set(Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    .line 2
-    .line 3
-    const-string p1, "Operation is not supported for read-only collection"
-
-    .line 4
-    .line 5
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    throw p0
 .end method
