@@ -1,78 +1,129 @@
-.class public final Lyw5;
-.super Lxt0;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final synthetic Lyw5;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lx62;
 
 
-# virtual methods
-.method public final a()I
+# instance fields
+.field public final synthetic j:Lax5;
+
+
+# direct methods
+.method public synthetic constructor <init>(Lax5;)V
     .locals 0
 
     .line 1
-    const/16 p0, 0x9
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    return p0
+    .line 4
+    iput-object p1, p0, Lyw5;->j:Lax5;
+
+    .line 5
+    .line 6
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+
+# virtual methods
+.method public final g(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lt72;Ljava/lang/Integer;)Ljava/lang/Object;
+    .locals 7
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    check-cast p1, Ljava/lang/Boolean;
 
     .line 2
     .line 3
-    const-string v1, "+SEQ"
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
     .line 6
+    move-result p1
+
     .line 7
+    check-cast p2, Ls03;
+
     .line 8
-    iget v1, p0, Lxt0;->f:I
-
     .line 9
-    .line 10
-    const/4 v2, 0x1
+    check-cast p3, Lxa4;
 
+    .line 10
     .line 11
-    if-ne v1, v2, :cond_0
+    check-cast p4, Lxa4;
 
     .line 12
     .line 13
-    const-string v1, " []"
+    check-cast p5, Ljava/lang/Boolean;
 
     .line 14
     .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p5}, Ljava/lang/Boolean;->booleanValue()Z
 
     .line 16
     .line 17
     .line 18
-    :cond_0
-    invoke-super {p0}, Lxt0;->toString()Ljava/lang/String;
+    move-result v5
 
     .line 19
-    .line 20
-    .line 21
-    move-result-object p0
+    move-object v6, p6
 
+    .line 20
+    check-cast v6, Lzv5;
+
+    .line 21
     .line 22
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-wide p5, p3, Lxa4;->a:J
 
     .line 23
     .line 24
-    .line 25
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    iget-object v0, p0, Lyw5;->j:Lax5;
 
+    .line 25
     .line 26
+    invoke-virtual {v0, p2, p5, p6}, Lax5;->b(Ls03;J)J
+
     .line 27
     .line 28
+    .line 29
+    move-result-wide v1
+
+    .line 30
+    iget-wide p3, p4, Lxa4;->a:J
+
+    .line 31
+    .line 32
+    invoke-virtual {v0, p2, p3, p4}, Lax5;->b(Ls03;J)J
+
+    .line 33
+    .line 34
+    .line 35
+    move-result-wide v3
+
+    .line 36
+    invoke-virtual {v0, p1}, Lax5;->n(Z)V
+
+    .line 37
+    .line 38
+    .line 39
+    invoke-virtual/range {v0 .. v6}, Lax5;->s(JJZLzv5;)Z
+
+    .line 40
+    .line 41
+    .line 42
+    move-result p0
+
+    .line 43
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 44
+    .line 45
+    .line 46
     move-result-object p0
 
-    .line 29
+    .line 47
     return-object p0
 .end method

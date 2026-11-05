@@ -1,331 +1,245 @@
-.class public final synthetic Lab7;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Ls52;
+.class public final Lab7;
+.super Lbj;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final synthetic j:Z
-
-.field public final synthetic k:Lko3;
-
-.field public final synthetic l:Ljava/lang/String;
-
-.field public final synthetic m:J
-
-.field public final synthetic n:Ljava/lang/String;
-
-.field public final synthetic o:J
-
-.field public final synthetic p:J
-
-.field public final synthetic q:Z
-
-.field public final synthetic r:Ld52;
-
-.field public final synthetic s:J
-
-.field public final synthetic t:J
-
-.field public final synthetic u:Z
-
-.field public final synthetic v:F
-
-.field public final synthetic w:Loy0;
-
-.field public final synthetic x:I
-
-.field public final synthetic y:C
+.field public final synthetic e:B
 
 
 # direct methods
-.method public synthetic constructor <init>(ZLko3;Ljava/lang/String;JLjava/lang/String;JJZLd52;JJZFLoy0;II)V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p3, p0, Lab7;->e:B
 
     .line 2
     .line 3
+    const/4 p3, 0x2
+
     .line 4
-    iput-boolean p1, p0, Lab7;->j:Z
+    invoke-direct {p0, p1, p2, p3}, Lbj;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 5
     .line 6
-    iput-object p2, p0, Lab7;->k:Lko3;
-
     .line 7
-    .line 8
-    iput-object p3, p0, Lab7;->l:Ljava/lang/String;
-
-    .line 9
-    .line 10
-    iput-wide p4, p0, Lab7;->m:J
-
-    .line 11
-    .line 12
-    iput-object p6, p0, Lab7;->n:Ljava/lang/String;
-
-    .line 13
-    .line 14
-    iput-wide p7, p0, Lab7;->o:J
-
-    .line 15
-    .line 16
-    iput-wide p9, p0, Lab7;->p:J
-
-    .line 17
-    .line 18
-    iput-boolean p11, p0, Lab7;->q:Z
-
-    .line 19
-    .line 20
-    iput-object p12, p0, Lab7;->r:Ld52;
-
-    .line 21
-    .line 22
-    iput-wide p13, p0, Lab7;->s:J
-
-    .line 23
-    .line 24
-    move-wide p1, p15
-
-    .line 25
-    iput-wide p1, p0, Lab7;->t:J
-
-    .line 26
-    .line 27
-    move/from16 p1, p17
-
-    .line 28
-    .line 29
-    iput-boolean p1, p0, Lab7;->u:Z
-
-    .line 30
-    .line 31
-    move/from16 p1, p18
-
-    .line 32
-    .line 33
-    iput p1, p0, Lab7;->v:F
-
-    .line 34
-    .line 35
-    move-object/from16 p1, p19
-
-    .line 36
-    .line 37
-    iput-object p1, p0, Lab7;->w:Loy0;
-
-    .line 38
-    .line 39
-    move/from16 p1, p20
-
-    .line 40
-    .line 41
-    iput p1, p0, Lab7;->x:I
-
-    .line 42
-    .line 43
-    move/from16 p1, p21
-
-    .line 44
-    .line 45
-    iput-char p1, p0, Lab7;->y:C
-
-    .line 46
-    .line 47
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 23
+.method public final a()Z
+    .locals 6
 
     .line 1
-    move-object/from16 v0, p0
+    iget-byte v0, p0, Lab7;->e:B
 
     .line 2
     .line 3
-    move-object/from16 v19, p1
+    const/4 v1, 0x0
 
     .line 4
-    .line 5
-    check-cast v19, Lv01;
+    packed-switch v0, :pswitch_data_0
 
+    .line 5
     .line 6
     .line 7
-    move-object/from16 v1, p2
+    const-string v0, "MULTI_PROFILE"
 
     .line 8
     .line 9
-    check-cast v1, Ljava/lang/Integer;
+    invoke-static {v0}, Lbb7;->a(Ljava/lang/String;)Z
 
     .line 10
     .line 11
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 12
-    .line 13
-    .line 14
-    iget v1, v0, Lab7;->x:I
+    move-result v0
 
+    .line 13
+    if-nez v0, :cond_0
+
+    .line 14
     .line 15
+    goto :goto_0
+
     .line 16
-    or-int/lit8 v1, v1, 0x1
+    :cond_0
+    invoke-super {p0}, Lbj;->a()Z
 
     .line 17
     .line 18
-    invoke-static {v1}, Lw23;->h0(I)I
-
     .line 19
+    move-result v1
+
     .line 20
+    :goto_0
+    return v1
+
     .line 21
-    move-result v20
+    :pswitch_0
+    invoke-super {p0}, Lbj;->a()Z
 
     .line 22
-    iget-boolean v1, v0, Lab7;->j:Z
-
     .line 23
     .line 24
-    move v2, v1
+    move-result p0
 
     .line 25
-    iget-object v1, v0, Lab7;->k:Lko3;
+    if-nez p0, :cond_1
 
     .line 26
     .line 27
-    move v3, v2
+    goto :goto_1
 
     .line 28
-    iget-object v2, v0, Lab7;->l:Ljava/lang/String;
+    :cond_1
+    const-string p0, "MULTI_PROCESS"
 
     .line 29
     .line 30
-    move v5, v3
+    invoke-static {p0}, Lbb7;->a(Ljava/lang/String;)Z
 
     .line 31
-    iget-wide v3, v0, Lab7;->m:J
-
     .line 32
     .line 33
-    move v6, v5
+    move-result p0
 
     .line 34
-    iget-object v5, v0, Lab7;->n:Ljava/lang/String;
+    if-eqz p0, :cond_3
 
     .line 35
     .line 36
-    move v8, v6
+    sget-object p0, Lka7;->a:Ljava/util/WeakHashMap;
 
     .line 37
-    iget-wide v6, v0, Lab7;->o:J
-
     .line 38
-    .line 39
-    move v10, v8
+    sget-object p0, Lbb7;->b:Lbj;
 
+    .line 39
     .line 40
-    iget-wide v8, v0, Lab7;->p:J
+    invoke-virtual {p0}, Lbj;->a()Z
 
     .line 41
     .line 42
-    move v11, v10
-
     .line 43
-    iget-boolean v10, v0, Lab7;->q:Z
+    move-result p0
 
     .line 44
-    .line 45
-    move v12, v11
+    if-eqz p0, :cond_2
 
+    .line 45
     .line 46
-    iget-object v11, v0, Lab7;->r:Ld52;
+    sget-object p0, Lcb7;->a:Leb7;
 
     .line 47
     .line 48
-    move v14, v12
+    invoke-interface {p0}, Leb7;->getStatics()Lorg/chromium/support_lib_boundary/StaticsBoundaryInterface;
 
     .line 49
-    iget-wide v12, v0, Lab7;->s:J
-
     .line 50
     .line 51
-    move/from16 v16, v14
+    move-result-object p0
 
     .line 52
-    .line 53
-    iget-wide v14, v0, Lab7;->t:J
+    invoke-interface {p0}, Lorg/chromium/support_lib_boundary/StaticsBoundaryInterface;->isMultiProcessEnabled()Z
 
+    .line 53
     .line 54
     .line 55
-    move-object/from16 v17, v1
+    move-result v1
 
     .line 56
+    goto :goto_1
+
     .line 57
-    iget-boolean v1, v0, Lab7;->u:Z
+    :cond_2
+    const-string p0, "This method is not supported by the current version of the framework and the current WebView APK"
 
     .line 58
     .line 59
-    move/from16 v18, v1
+    invoke-static {p0}, Lue1;->d(Ljava/lang/String;)V
 
     .line 60
     .line 61
-    iget v1, v0, Lab7;->v:F
-
     .line 62
+    :cond_3
+    :goto_1
+    return v1
+
     .line 63
-    move/from16 v21, v1
+    :pswitch_1
+    invoke-super {p0}, Lbj;->a()Z
 
     .line 64
     .line 65
-    iget-object v1, v0, Lab7;->w:Loy0;
-
     .line 66
+    move-result p0
+
     .line 67
-    iget-char v0, v0, Lab7;->y:C
+    if-nez p0, :cond_4
 
     .line 68
     .line 69
-    move/from16 v22, v21
+    goto :goto_2
 
     .line 70
+    :cond_4
+    sget-object p0, Lka7;->a:Ljava/util/WeakHashMap;
+
     .line 71
-    move/from16 v21, v0
-
     .line 72
-    .line 73
-    move/from16 v0, v16
+    invoke-static {}, Landroid/webkit/WebView;->getCurrentWebViewPackage()Landroid/content/pm/PackageInfo;
 
+    .line 73
     .line 74
     .line 75
-    move/from16 v16, v18
+    move-result-object p0
 
     .line 76
-    .line 77
-    move-object/from16 v18, v1
+    if-nez p0, :cond_5
 
+    .line 77
     .line 78
+    goto :goto_2
+
     .line 79
-    move-object/from16 v1, v17
+    :cond_5
+    invoke-virtual {p0}, Landroid/content/pm/PackageInfo;->getLongVersionCode()J
 
     .line 80
     .line 81
-    move/from16 v17, v22
-
     .line 82
+    move-result-wide v2
+
     .line 83
-    invoke-static/range {v0 .. v21}, Lr37;->c(ZLko3;Ljava/lang/String;JLjava/lang/String;JJZLd52;JJZFLoy0;Lv01;II)V
+    const-wide/32 v4, 0x25f34560
 
     .line 84
     .line 85
     .line 86
-    sget-object v0, Lk27;->a:Lk27;
+    cmp-long p0, v2, v4
 
     .line 87
     .line 88
-    return-object v0
+    if-ltz p0, :cond_6
+
+    .line 89
+    .line 90
+    const/4 v1, 0x1
+
+    .line 91
+    :cond_6
+    :goto_2
+    return v1
+
+    .line 92
+    nop
+
+    .line 93
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

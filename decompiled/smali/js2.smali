@@ -1,85 +1,201 @@
-.class public final enum Ljs2;
-.super Ljava/lang/Enum;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final Ljs2;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# static fields
-.field public static final enum j:Ljs2;
-
-.field public static final enum k:Ljs2;
-
-.field public static final synthetic l:[Ljs2;
+# instance fields
+.field public final a:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(J)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljs2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const-string v1, "Min"
+    .line 4
+    iput-wide p1, p0, Ljs2;->a:J
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public static final a(JJ)Z
+    .locals 0
+
+    .line 1
+    cmp-long p0, p0, p2
+
+    .line 2
+    .line 3
+    if-nez p0, :cond_0
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    const/4 p0, 0x1
 
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    return p0
+
+    .line 7
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 8
+    return p0
+.end method
+
+.method public static b(J)Ljava/lang/String;
+    .locals 3
+
+    .line 1
+    const/16 v0, 0x20
+
+    .line 2
+    .line 3
+    shr-long v0, p0, v0
+
+    .line 4
+    .line 5
+    long-to-int v0, v0
+
+    .line 6
+    const-wide v1, 0xffffffffL
 
     .line 7
     .line 8
     .line 9
-    sput-object v0, Ljs2;->j:Ljs2;
-
     .line 10
     .line 11
-    new-instance v1, Ljs2;
+    and-long/2addr p0, v1
 
     .line 12
+    long-to-int p0, p0
+
     .line 13
-    const-string v2, "Max"
+    new-instance p1, Ljava/lang/StringBuilder;
 
     .line 14
     .line 15
-    const/4 v3, 0x1
+    invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 17
     .line 18
-    .line 19
-    sput-object v1, Ljs2;->k:Ljs2;
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    .line 19
     .line 20
     .line 21
-    filled-new-array {v0, v1}, [Ljs2;
+    const-string v0, " x "
 
     .line 22
     .line 23
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 24
-    move-result-object v0
-
     .line 25
-    sput-object v0, Ljs2;->l:[Ljs2;
-
     .line 26
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
     .line 27
-    return-void
+    .line 28
+    .line 29
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 30
+    .line 31
+    .line 32
+    move-result-object p0
+
+    .line 33
+    return-object p0
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Ljs2;
-    .locals 1
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
     .line 1
-    const-class v0, Ljs2;
+    instance-of v0, p1, Ljs2;
 
     .line 2
     .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
+    goto :goto_0
+
+    .line 6
+    :cond_0
+    check-cast p1, Ljs2;
+
+    .line 7
+    .line 8
+    iget-wide v0, p1, Ljs2;->a:J
+
+    .line 9
+    .line 10
+    iget-wide p0, p0, Ljs2;->a:J
+
+    .line 11
+    .line 12
+    cmp-long p0, p0, v0
+
+    .line 13
+    .line 14
+    if-eqz p0, :cond_1
+
+    .line 15
+    .line 16
+    :goto_0
+    const/4 p0, 0x0
+
+    .line 17
+    return p0
+
+    .line 18
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 19
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Ljs2;->a:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Ljs2;->a:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Ljs2;->b(J)Ljava/lang/String;
 
     .line 4
     .line 5
@@ -87,32 +203,5 @@
     move-result-object p0
 
     .line 7
-    check-cast p0, Ljs2;
-
-    .line 8
-    .line 9
     return-object p0
-.end method
-
-.method public static values()[Ljs2;
-    .locals 1
-
-    .line 1
-    sget-object v0, Ljs2;->l:[Ljs2;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [Ljs2;
-
-    .line 8
-    .line 9
-    return-object v0
 .end method

@@ -1,241 +1,1081 @@
-.class public final synthetic Lll2;
+.class public final Lll2;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Ls52;
+.implements La96;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final j:I
 
-.field public final synthetic k:Ljava/lang/String;
+.field public final k:Lel2;
 
-.field public final synthetic l:Lko3;
+.field public final l:Lbc7;
 
-.field public final synthetic m:J
+.field public m:J
 
-.field public final synthetic n:I
+.field public n:J
 
-.field public final synthetic o:B
+.field public final o:Ljava/util/ArrayDeque;
 
-.field public final synthetic p:Ljava/lang/Object;
+.field public p:Z
+
+.field public final q:Ljl2;
+
+.field public final r:Lil2;
+
+.field public final s:Lkl2;
+
+.field public final t:Lkl2;
+
+.field public u:Lcw1;
+
+.field public v:Ljava/io/IOException;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/String;Lko3;JIIB)V
-    .locals 0
+.method public constructor <init>(ILel2;ZZLpa2;)V
+    .locals 3
 
     .line 1
-    iput-byte p8, p0, Lll2;->j:B
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lll2;->p:Ljava/lang/Object;
-
     .line 4
-    .line 5
-    iput-object p2, p0, Lll2;->k:Ljava/lang/String;
-
-    .line 6
-    .line 7
-    iput-object p3, p0, Lll2;->l:Lko3;
-
-    .line 8
-    .line 9
-    iput-wide p4, p0, Lll2;->m:J
-
-    .line 10
-    .line 11
-    iput p6, p0, Lll2;->n:I
-
-    .line 12
-    .line 13
-    iput-byte p7, p0, Lll2;->o:B
-
-    .line 14
-    .line 15
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 16
-    .line 17
-    .line 18
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 21
-
-    .line 1
-    move-object/from16 v0, p0
-
-    .line 2
-    .line 3
-    iget-byte v1, v0, Lll2;->j:B
-
-    .line 4
     .line 5
-    sget-object v2, Lk27;->a:Lk27;
-
     .line 6
     .line 7
-    iget v3, v0, Lll2;->n:I
+    iput p1, p0, Lll2;->j:I
 
     .line 8
     .line 9
-    iget-object v4, v0, Lll2;->p:Ljava/lang/Object;
+    iput-object p2, p0, Lll2;->k:Lel2;
 
     .line 10
     .line 11
-    packed-switch v1, :pswitch_data_0
+    new-instance v0, Lbc7;
 
     .line 12
     .line 13
+    invoke-direct {v0, p1}, Lbc7;-><init>(I)V
+
     .line 14
-    move-object v5, v4
-
     .line 15
-    check-cast v5, Lkk4;
-
     .line 16
+    iput-object v0, p0, Lll2;->l:Lbc7;
+
     .line 17
-    move-object/from16 v10, p1
-
     .line 18
+    iget-object p1, p2, Lel2;->B:Ljz5;
+
     .line 19
-    check-cast v10, Lv01;
-
     .line 20
-    .line 21
-    move-object/from16 v1, p2
+    invoke-virtual {p1}, Ljz5;->a()I
 
+    .line 21
     .line 22
     .line 23
-    check-cast v1, Ljava/lang/Integer;
+    move-result p1
 
     .line 24
+    int-to-long v0, p1
+
     .line 25
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-wide v0, p0, Lll2;->n:J
 
     .line 26
     .line 27
+    new-instance p1, Ljava/util/ArrayDeque;
+
     .line 28
-    or-int/lit8 v1, v3, 0x1
-
     .line 29
-    .line 30
-    invoke-static {v1}, Lw23;->h0(I)I
+    invoke-direct {p1}, Ljava/util/ArrayDeque;-><init>()V
 
+    .line 30
     .line 31
     .line 32
-    .line 33
-    move-result v11
+    iput-object p1, p0, Lll2;->o:Ljava/util/ArrayDeque;
 
+    .line 33
     .line 34
-    iget-object v6, v0, Lll2;->k:Ljava/lang/String;
+    new-instance v0, Ljl2;
 
     .line 35
     .line 36
-    iget-object v7, v0, Lll2;->l:Lko3;
+    iget-object p2, p2, Lel2;->A:Ljz5;
 
     .line 37
     .line 38
-    iget-wide v8, v0, Lll2;->m:J
+    invoke-virtual {p2}, Ljz5;->a()I
 
     .line 39
     .line 40
-    iget-byte v12, v0, Lll2;->o:B
-
     .line 41
+    move-result p2
+
     .line 42
-    invoke-static/range {v5 .. v12}, Lol2;->b(Lkk4;Ljava/lang/String;Lko3;JLv01;II)V
+    int-to-long v1, p2
 
     .line 43
+    invoke-direct {v0, p0, v1, v2, p4}, Ljl2;-><init>(Lll2;JZ)V
+
     .line 44
     .line 45
-    return-object v2
-
     .line 46
-    :pswitch_0
-    move-object v13, v4
+    iput-object v0, p0, Lll2;->q:Ljl2;
 
     .line 47
-    check-cast v13, Llm2;
-
     .line 48
+    new-instance p2, Lil2;
+
     .line 49
-    move-object/from16 v18, p1
-
     .line 50
-    .line 51
-    check-cast v18, Lv01;
+    invoke-direct {p2, p0, p3}, Lil2;-><init>(Lll2;Z)V
 
+    .line 51
     .line 52
     .line 53
-    move-object/from16 v1, p2
+    iput-object p2, p0, Lll2;->r:Lil2;
 
     .line 54
     .line 55
-    check-cast v1, Ljava/lang/Integer;
+    new-instance p2, Lkl2;
 
     .line 56
     .line 57
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p2, p0}, Lkl2;-><init>(Lll2;)V
 
     .line 58
     .line 59
     .line 60
-    or-int/lit8 v1, v3, 0x1
+    iput-object p2, p0, Lll2;->s:Lkl2;
 
     .line 61
     .line 62
-    invoke-static {v1}, Lw23;->h0(I)I
+    new-instance p2, Lkl2;
 
     .line 63
     .line 64
+    invoke-direct {p2, p0}, Lkl2;-><init>(Lll2;)V
+
     .line 65
-    move-result v19
-
     .line 66
-    iget-object v14, v0, Lll2;->k:Ljava/lang/String;
-
     .line 67
-    .line 68
-    iget-object v15, v0, Lll2;->l:Lko3;
+    iput-object p2, p0, Lll2;->t:Lkl2;
 
+    .line 68
     .line 69
+    const/4 p2, 0x0
+
     .line 70
-    iget-wide v3, v0, Lll2;->m:J
+    if-eqz p5, :cond_1
 
     .line 71
     .line 72
-    iget-byte v0, v0, Lll2;->o:B
+    invoke-virtual {p0}, Lll2;->i()Z
 
     .line 73
     .line 74
-    move/from16 v20, v0
-
     .line 75
+    move-result p0
+
     .line 76
-    move-wide/from16 v16, v3
+    if-nez p0, :cond_0
 
     .line 77
     .line 78
-    invoke-static/range {v13 .. v20}, Lnl2;->a(Llm2;Ljava/lang/String;Lko3;JLv01;II)V
+    invoke-virtual {p1, p5}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
 
     .line 79
     .line 80
     .line 81
-    return-object v2
+    return-void
 
     .line 82
-    nop
+    :cond_0
+    const-string p0, "locally-initiated streams shouldn\'t have headers yet"
 
     .line 83
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 84
+    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+
+    .line 85
+    .line 86
+    .line 87
+    throw p2
+
+    .line 88
+    :cond_1
+    invoke-virtual {p0}, Lll2;->i()Z
+
+    .line 89
+    .line 90
+    .line 91
+    move-result p0
+
+    .line 92
+    if-eqz p0, :cond_2
+
+    .line 93
+    .line 94
+    return-void
+
+    .line 95
+    :cond_2
+    const-string p0, "remotely-initiated streams should have headers"
+
+    .line 96
+    .line 97
+    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+
+    .line 98
+    .line 99
+    .line 100
+    throw p2
+.end method
+
+
+# virtual methods
+.method public final a()V
+    .locals 2
+
+    .line 1
+    sget-object v0, Lfg7;->a:Ljava/util/TimeZone;
+
+    .line 2
+    .line 3
+    monitor-enter p0
+
+    .line 4
+    :try_start_0
+    iget-object v0, p0, Lll2;->q:Ljl2;
+
+    .line 5
+    .line 6
+    iget-boolean v1, v0, Ljl2;->k:Z
+
+    .line 7
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    iget-boolean v0, v0, Ljl2;->n:Z
+
+    .line 11
+    .line 12
+    if-eqz v0, :cond_1
+
+    .line 13
+    .line 14
+    iget-object v0, p0, Lll2;->r:Lil2;
+
+    .line 15
+    .line 16
+    iget-boolean v1, v0, Lil2;->j:Z
+
+    .line 17
+    .line 18
+    if-nez v1, :cond_0
+
+    .line 19
+    .line 20
+    iget-boolean v0, v0, Lil2;->l:Z
+
+    .line 21
+    .line 22
+    if-eqz v0, :cond_1
+
+    .line 23
+    .line 24
+    goto :goto_0
+
+    .line 25
+    :catchall_0
+    move-exception v0
+
+    .line 26
+    goto :goto_2
+
+    .line 27
+    :cond_0
+    :goto_0
+    const/4 v0, 0x1
+
+    .line 28
+    goto :goto_1
+
+    .line 29
+    :cond_1
+    const/4 v0, 0x0
+
+    .line 30
+    :goto_1
+    invoke-virtual {p0}, Lll2;->j()Z
+
+    .line 31
+    .line 32
+    .line 33
+    move-result v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 34
+    monitor-exit p0
+
+    .line 35
+    if-eqz v0, :cond_2
+
+    .line 36
+    .line 37
+    sget-object v0, Lcw1;->q:Lcw1;
+
+    .line 38
+    .line 39
+    const/4 v1, 0x0
+
+    .line 40
+    invoke-virtual {p0, v0, v1}, Lll2;->d(Lcw1;Ljava/io/IOException;)V
+
+    .line 41
+    .line 42
+    .line 43
+    return-void
+
+    .line 44
+    :cond_2
+    if-nez v1, :cond_3
+
+    .line 45
+    .line 46
+    iget-object v0, p0, Lll2;->k:Lel2;
+
+    .line 47
+    .line 48
+    iget p0, p0, Lll2;->j:I
+
+    .line 49
+    .line 50
+    invoke-virtual {v0, p0}, Lel2;->f(I)Lll2;
+
+    .line 51
+    .line 52
+    .line 53
+    :cond_3
+    return-void
+
+    .line 54
+    :goto_2
+    monitor-exit p0
+
+    .line 55
+    throw v0
+.end method
+
+.method public final b()V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lll2;->r:Lil2;
+
+    .line 2
+    .line 3
+    iget-boolean v1, v0, Lil2;->l:Z
+
+    .line 4
+    .line 5
+    if-nez v1, :cond_3
+
+    .line 6
+    .line 7
+    iget-boolean v0, v0, Lil2;->j:Z
+
+    .line 8
+    .line 9
+    if-nez v0, :cond_2
+
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Lll2;->h()Lcw1;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object v0
+
+    .line 15
+    if-eqz v0, :cond_1
+
+    .line 16
+    .line 17
+    iget-object v0, p0, Lll2;->v:Ljava/io/IOException;
+
+    .line 18
+    .line 19
+    if-eqz v0, :cond_0
+
+    .line 20
+    .line 21
+    goto :goto_0
+
+    .line 22
+    :cond_0
+    new-instance v0, Lnc6;
+
+    .line 23
+    .line 24
+    invoke-virtual {p0}, Lll2;->h()Lcw1;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object p0
+
+    .line 28
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 29
+    .line 30
+    .line 31
+    invoke-direct {v0, p0}, Lnc6;-><init>(Lcw1;)V
+
+    .line 32
+    .line 33
+    .line 34
+    :goto_0
+    throw v0
+
+    .line 35
+    :cond_1
+    return-void
+
+    .line 36
+    :cond_2
+    const-string p0, "stream finished"
+
+    .line 37
+    .line 38
+    invoke-static {p0}, Lue1;->m(Ljava/lang/String;)V
+
+    .line 39
+    .line 40
+    .line 41
+    return-void
+
+    .line 42
+    :cond_3
+    const-string p0, "stream closed"
+
+    .line 43
+    .line 44
+    invoke-static {p0}, Lue1;->m(Ljava/lang/String;)V
+
+    .line 45
+    .line 46
+    .line 47
+    return-void
+.end method
+
+.method public final c()Lk96;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lll2;->q:Ljl2;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public final cancel()V
+    .locals 1
+
+    .line 1
+    sget-object v0, Lcw1;->q:Lcw1;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, v0}, Lll2;->g(Lcw1;)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final d(Lcw1;Ljava/io/IOException;)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0, p1, p2}, Lll2;->f(Lcw1;Ljava/io/IOException;)Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p2
+
+    .line 5
+    if-nez p2, :cond_0
+
+    .line 6
+    .line 7
+    return-void
+
+    .line 8
+    :cond_0
+    iget-object p2, p0, Lll2;->k:Lel2;
+
+    .line 9
+    .line 10
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 11
+    .line 12
+    .line 13
+    iget-object p2, p2, Lel2;->G:Lml2;
+
+    .line 14
+    .line 15
+    iget p0, p0, Lll2;->j:I
+
+    .line 16
+    .line 17
+    invoke-virtual {p2, p0, p1}, Lml2;->m(ILcw1;)V
+
+    .line 18
+    .line 19
+    .line 20
+    return-void
+.end method
+
+.method public final e()Ls56;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lll2;->r:Lil2;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public final f(Lcw1;Ljava/io/IOException;)Z
+    .locals 2
+
+    .line 1
+    sget-object v0, Lfg7;->a:Ljava/util/TimeZone;
+
+    .line 2
+    .line 3
+    monitor-enter p0
+
+    .line 4
+    :try_start_0
+    invoke-virtual {p0}, Lll2;->h()Lcw1;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 8
+    const/4 v1, 0x0
+
+    .line 9
+    if-eqz v0, :cond_0
+
+    .line 10
+    .line 11
+    monitor-exit p0
+
+    .line 12
+    return v1
+
+    .line 13
+    :cond_0
+    :try_start_1
+    iput-object p1, p0, Lll2;->u:Lcw1;
+
+    .line 14
+    .line 15
+    iput-object p2, p0, Lll2;->v:Ljava/io/IOException;
+
+    .line 16
+    .line 17
+    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
+
+    .line 18
+    .line 19
+    .line 20
+    iget-object p1, p0, Lll2;->q:Ljl2;
+
+    .line 21
+    .line 22
+    iget-boolean p1, p1, Ljl2;->k:Z
+
+    .line 23
+    .line 24
+    if-eqz p1, :cond_1
+
+    .line 25
+    .line 26
+    iget-object p1, p0, Lll2;->r:Lil2;
+
+    .line 27
+    .line 28
+    iget-boolean p1, p1, Lil2;->j:Z
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 29
+    .line 30
+    if-eqz p1, :cond_1
+
+    .line 31
+    .line 32
+    monitor-exit p0
+
+    .line 33
+    return v1
+
+    .line 34
+    :catchall_0
+    move-exception p1
+
+    .line 35
+    goto :goto_0
+
+    .line 36
+    :cond_1
+    monitor-exit p0
+
+    .line 37
+    iget-object p1, p0, Lll2;->k:Lel2;
+
+    .line 38
+    .line 39
+    iget p0, p0, Lll2;->j:I
+
+    .line 40
+    .line 41
+    invoke-virtual {p1, p0}, Lel2;->f(I)Lll2;
+
+    .line 42
+    .line 43
+    .line 44
+    const/4 p0, 0x1
+
+    .line 45
+    return p0
+
+    .line 46
+    :goto_0
+    monitor-exit p0
+
+    .line 47
+    throw p1
+.end method
+
+.method public final g(Lcw1;)V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    invoke-virtual {p0, p1, v0}, Lll2;->f(Lcw1;Ljava/io/IOException;)Z
+
+    .line 3
+    .line 4
+    .line 5
+    move-result v0
+
+    .line 6
+    if-nez v0, :cond_0
+
+    .line 7
+    .line 8
+    return-void
+
+    .line 9
+    :cond_0
+    iget-object v0, p0, Lll2;->k:Lel2;
+
+    .line 10
+    .line 11
+    iget p0, p0, Lll2;->j:I
+
+    .line 12
+    .line 13
+    invoke-virtual {v0, p0, p1}, Lel2;->m(ILcw1;)V
+
+    .line 14
+    .line 15
+    .line 16
+    return-void
+.end method
+
+.method public final h()Lcw1;
+    .locals 1
+
+    .line 1
+    monitor-enter p0
+
+    .line 2
+    :try_start_0
+    iget-object v0, p0, Lll2;->u:Lcw1;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 3
+    .line 4
+    monitor-exit p0
+
+    .line 5
+    return-object v0
+
+    .line 6
+    :catchall_0
+    move-exception v0
+
+    .line 7
+    monitor-exit p0
+
+    .line 8
+    throw v0
+.end method
+
+.method public final i()Z
+    .locals 3
+
+    .line 1
+    iget v0, p0, Lll2;->j:I
+
+    .line 2
+    .line 3
+    const/4 v1, 0x1
+
+    .line 4
+    and-int/2addr v0, v1
+
+    .line 5
+    const/4 v2, 0x0
+
+    .line 6
+    if-ne v0, v1, :cond_0
+
+    .line 7
+    .line 8
+    move v0, v1
+
+    .line 9
+    goto :goto_0
+
+    .line 10
+    :cond_0
+    move v0, v2
+
+    .line 11
+    :goto_0
+    iget-object p0, p0, Lll2;->k:Lel2;
+
+    .line 12
+    .line 13
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 14
+    .line 15
+    .line 16
+    if-ne v1, v0, :cond_1
+
+    .line 17
+    .line 18
+    return v1
+
+    .line 19
+    :cond_1
+    return v2
+.end method
+
+.method public final j()Z
+    .locals 3
+
+    .line 1
+    monitor-enter p0
+
+    .line 2
+    :try_start_0
+    invoke-virtual {p0}, Lll2;->h()Lcw1;
+
+    .line 3
+    .line 4
+    .line 5
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 6
+    const/4 v1, 0x0
+
+    .line 7
+    if-eqz v0, :cond_0
+
+    .line 8
+    .line 9
+    monitor-exit p0
+
+    .line 10
+    return v1
+
+    .line 11
+    :cond_0
+    :try_start_1
+    iget-object v0, p0, Lll2;->q:Ljl2;
+
+    .line 12
+    .line 13
+    iget-boolean v2, v0, Ljl2;->k:Z
+
+    .line 14
+    .line 15
+    if-nez v2, :cond_1
+
+    .line 16
+    .line 17
+    iget-boolean v0, v0, Ljl2;->n:Z
+
+    .line 18
+    .line 19
+    if-eqz v0, :cond_3
+
+    .line 20
+    .line 21
+    goto :goto_0
+
+    .line 22
+    :catchall_0
+    move-exception v0
+
+    .line 23
+    goto :goto_1
+
+    .line 24
+    :cond_1
+    :goto_0
+    iget-object v0, p0, Lll2;->r:Lil2;
+
+    .line 25
+    .line 26
+    iget-boolean v2, v0, Lil2;->j:Z
+
+    .line 27
+    .line 28
+    if-nez v2, :cond_2
+
+    .line 29
+    .line 30
+    iget-boolean v0, v0, Lil2;->l:Z
+
+    .line 31
+    .line 32
+    if-eqz v0, :cond_3
+
+    .line 33
+    .line 34
+    :cond_2
+    iget-boolean v0, p0, Lll2;->p:Z
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 35
+    .line 36
+    if-eqz v0, :cond_3
+
+    .line 37
+    .line 38
+    monitor-exit p0
+
+    .line 39
+    return v1
+
+    .line 40
+    :cond_3
+    monitor-exit p0
+
+    .line 41
+    const/4 p0, 0x1
+
+    .line 42
+    return p0
+
+    .line 43
+    :goto_1
+    monitor-exit p0
+
+    .line 44
+    throw v0
+.end method
+
+.method public final k(Lpa2;Z)V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    sget-object v0, Lfg7;->a:Ljava/util/TimeZone;
+
+    .line 5
+    .line 6
+    monitor-enter p0
+
+    .line 7
+    :try_start_0
+    iget-boolean v0, p0, Lll2;->p:Z
+
+    .line 8
+    .line 9
+    const/4 v1, 0x1
+
+    .line 10
+    if-eqz v0, :cond_1
+
+    .line 11
+    .line 12
+    const-string v0, ":status"
+
+    .line 13
+    .line 14
+    invoke-virtual {p1, v0}, Lpa2;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-object v0
+
+    .line 18
+    if-nez v0, :cond_1
+
+    .line 19
+    .line 20
+    const-string v0, ":method"
+
+    .line 21
+    .line 22
+    invoke-virtual {p1, v0}, Lpa2;->a(Ljava/lang/String;)Ljava/lang/String;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object v0
+
+    .line 26
+    if-eqz v0, :cond_0
+
+    .line 27
+    .line 28
+    goto :goto_0
+
+    .line 29
+    :cond_0
+    iget-object p1, p0, Lll2;->q:Ljl2;
+
+    .line 30
+    .line 31
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 32
+    .line 33
+    .line 34
+    goto :goto_1
+
+    .line 35
+    :catchall_0
+    move-exception p1
+
+    .line 36
+    goto :goto_2
+
+    .line 37
+    :cond_1
+    :goto_0
+    iput-boolean v1, p0, Lll2;->p:Z
+
+    .line 38
+    .line 39
+    iget-object v0, p0, Lll2;->o:Ljava/util/ArrayDeque;
+
+    .line 40
+    .line 41
+    invoke-virtual {v0, p1}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
+
+    .line 42
+    .line 43
+    .line 44
+    :goto_1
+    if-eqz p2, :cond_2
+
+    .line 45
+    .line 46
+    iget-object p1, p0, Lll2;->q:Ljl2;
+
+    .line 47
+    .line 48
+    iput-boolean v1, p1, Ljl2;->k:Z
+
+    .line 49
+    .line 50
+    :cond_2
+    invoke-virtual {p0}, Lll2;->j()Z
+
+    .line 51
+    .line 52
+    .line 53
+    move-result p1
+
+    .line 54
+    invoke-virtual {p0}, Ljava/lang/Object;->notifyAll()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 55
+    .line 56
+    .line 57
+    monitor-exit p0
+
+    .line 58
+    if-nez p1, :cond_3
+
+    .line 59
+    .line 60
+    iget-object p1, p0, Lll2;->k:Lel2;
+
+    .line 61
+    .line 62
+    iget p0, p0, Lll2;->j:I
+
+    .line 63
+    .line 64
+    invoke-virtual {p1, p0}, Lel2;->f(I)Lll2;
+
+    .line 65
+    .line 66
+    .line 67
+    :cond_3
+    return-void
+
+    .line 68
+    :goto_2
+    monitor-exit p0
+
+    .line 69
+    throw p1
 .end method

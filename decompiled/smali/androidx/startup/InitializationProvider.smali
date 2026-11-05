@@ -1,6 +1,6 @@
 .class public Landroidx/startup/InitializationProvider;
 .super Landroid/content/ContentProvider;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # direct methods
@@ -106,7 +106,7 @@
 
     .line 12
     .line 13
-    invoke-static {v0}, Lsr6;->M(Landroid/content/Context;)Lsr6;
+    invoke-static {v0}, Lit6;->M(Landroid/content/Context;)Lit6;
 
     .line 14
     .line 15
@@ -122,7 +122,7 @@
     move-result-object p0
 
     .line 21
-    iget-object v1, v0, Lsr6;->m:Ljava/lang/Object;
+    iget-object v1, v0, Lit6;->m:Ljava/lang/Object;
 
     .line 22
     .line 23
@@ -135,7 +135,7 @@
 
     .line 26
     .line 27
-    invoke-static {v2}, Lu23;->l(Ljava/lang/String;)V
+    invoke-static {v2}, Lfh3;->p(Ljava/lang/String;)V
 
     .line 28
     .line 29
@@ -173,7 +173,7 @@
 
     .line 46
     .line 47
-    invoke-virtual {v0, p0}, Lsr6;->E(Landroid/os/Bundle;)V
+    invoke-virtual {v0, p0}, Lit6;->E(Landroid/os/Bundle;)V
     :try_end_0
     .catch Landroid/content/pm/PackageManager$NameNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
@@ -194,7 +194,7 @@
 
     .line 55
     :try_start_1
-    new-instance v0, Lmx0;
+    new-instance v0, Loy0;
 
     .line 56
     .line 57
@@ -229,7 +229,7 @@
 
     .line 68
     :cond_1
-    new-instance p0, Lmx0;
+    new-instance p0, Loy0;
 
     .line 69
     .line 70

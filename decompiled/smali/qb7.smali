@@ -1,269 +1,69 @@
-.class public Lqb7;
-.super Lwb7;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final Lqb7;
+.super Lz81;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final e:Landroid/view/WindowInsets$Builder;
+.field public synthetic j:Ljava/lang/Object;
+
+.field public final synthetic k:Lrb7;
+
+.field public l:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    .line 24
-    invoke-direct {p0}, Lwb7;-><init>()V
-
-    .line 25
-    new-instance v0, Landroid/view/WindowInsets$Builder;
-
-    invoke-direct {v0}, Landroid/view/WindowInsets$Builder;-><init>()V
-
-    iput-object v0, p0, Lqb7;->e:Landroid/view/WindowInsets$Builder;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lic7;)V
-    .locals 1
+.method public constructor <init>(Lrb7;Lz81;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0, p1}, Lwb7;-><init>(Lic7;)V
+    iput-object p1, p0, Lqb7;->k:Lrb7;
 
     .line 2
     .line 3
-    .line 4
-    invoke-virtual {p1}, Lic7;->b()Landroid/view/WindowInsets;
+    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
 
+    .line 4
     .line 5
     .line 6
-    .line 7
-    move-result-object p1
-
-    .line 8
-    if-eqz p1, :cond_0
-
-    .line 9
-    .line 10
-    new-instance v0, Landroid/view/WindowInsets$Builder;
-
-    .line 11
-    .line 12
-    invoke-direct {v0, p1}, Landroid/view/WindowInsets$Builder;-><init>(Landroid/view/WindowInsets;)V
-
-    .line 13
-    .line 14
-    .line 15
-    goto :goto_0
-
-    .line 16
-    :cond_0
-    new-instance v0, Landroid/view/WindowInsets$Builder;
-
-    .line 17
-    .line 18
-    invoke-direct {v0}, Landroid/view/WindowInsets$Builder;-><init>()V
-
-    .line 19
-    .line 20
-    .line 21
-    :goto_0
-    iput-object v0, p0, Lqb7;->e:Landroid/view/WindowInsets$Builder;
-
-    .line 22
-    .line 23
     return-void
 .end method
 
 
 # virtual methods
-.method public b()Lic7;
-    .locals 4
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    invoke-virtual {p0}, Lwb7;->a()V
+    iput-object p1, p0, Lqb7;->j:Ljava/lang/Object;
 
     .line 2
     .line 3
+    iget p1, p0, Lqb7;->l:I
+
     .line 4
-    iget-object v0, p0, Lqb7;->e:Landroid/view/WindowInsets$Builder;
-
     .line 5
+    const/high16 v0, -0x80000000
+
     .line 6
-    invoke-virtual {v0}, Landroid/view/WindowInsets$Builder;->build()Landroid/view/WindowInsets;
-
     .line 7
-    .line 8
-    .line 9
-    move-result-object v0
+    or-int/2addr p1, v0
 
+    .line 8
+    iput p1, p0, Lqb7;->l:I
+
+    .line 9
     .line 10
-    const/4 v1, 0x0
+    iget-object p1, p0, Lqb7;->k:Lrb7;
 
     .line 11
-    invoke-static {v0, v1}, Lic7;->c(Landroid/view/WindowInsets;Landroid/view/View;)Lic7;
-
     .line 12
+    invoke-virtual {p1, p0}, Lrb7;->b(Lz81;)Ljava/lang/Object;
+
     .line 13
     .line 14
-    move-result-object v0
-
     .line 15
-    iget-object v2, p0, Lwb7;->b:[Lpp2;
+    move-result-object p0
 
     .line 16
-    .line 17
-    iget-object v3, v0, Lic7;->a:Lfc7;
-
-    .line 18
-    .line 19
-    invoke-virtual {v3, v2}, Lfc7;->w([Lpp2;)V
-
-    .line 20
-    .line 21
-    .line 22
-    invoke-virtual {v3, v1}, Lfc7;->v(Lpj1;)V
-
-    .line 23
-    .line 24
-    .line 25
-    iget-object v1, p0, Lwb7;->c:[[Landroid/graphics/Rect;
-
-    .line 26
-    .line 27
-    invoke-virtual {v3, v1}, Lfc7;->A([[Landroid/graphics/Rect;)V
-
-    .line 28
-    .line 29
-    .line 30
-    iget-object p0, p0, Lwb7;->d:[[Landroid/graphics/Rect;
-
-    .line 31
-    .line 32
-    invoke-virtual {v3, p0}, Lfc7;->B([[Landroid/graphics/Rect;)V
-
-    .line 33
-    .line 34
-    .line 35
-    return-object v0
-.end method
-
-.method public e(Lpp2;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lqb7;->e:Landroid/view/WindowInsets$Builder;
-
-    .line 2
-    .line 3
-    invoke-virtual {p1}, Lpp2;->d()Landroid/graphics/Insets;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p1
-
-    .line 7
-    invoke-virtual {p0, p1}, Landroid/view/WindowInsets$Builder;->setMandatorySystemGestureInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
-
-    .line 8
-    .line 9
-    .line 10
-    return-void
-.end method
-
-.method public f(Lpp2;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lqb7;->e:Landroid/view/WindowInsets$Builder;
-
-    .line 2
-    .line 3
-    invoke-virtual {p1}, Lpp2;->d()Landroid/graphics/Insets;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p1
-
-    .line 7
-    invoke-virtual {p0, p1}, Landroid/view/WindowInsets$Builder;->setStableInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
-
-    .line 8
-    .line 9
-    .line 10
-    return-void
-.end method
-
-.method public g(Lpp2;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lqb7;->e:Landroid/view/WindowInsets$Builder;
-
-    .line 2
-    .line 3
-    invoke-virtual {p1}, Lpp2;->d()Landroid/graphics/Insets;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p1
-
-    .line 7
-    invoke-virtual {p0, p1}, Landroid/view/WindowInsets$Builder;->setSystemGestureInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
-
-    .line 8
-    .line 9
-    .line 10
-    return-void
-.end method
-
-.method public h(Lpp2;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lqb7;->e:Landroid/view/WindowInsets$Builder;
-
-    .line 2
-    .line 3
-    invoke-virtual {p1}, Lpp2;->d()Landroid/graphics/Insets;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p1
-
-    .line 7
-    invoke-virtual {p0, p1}, Landroid/view/WindowInsets$Builder;->setSystemWindowInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
-
-    .line 8
-    .line 9
-    .line 10
-    return-void
-.end method
-
-.method public i(Lpp2;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lqb7;->e:Landroid/view/WindowInsets$Builder;
-
-    .line 2
-    .line 3
-    invoke-virtual {p1}, Lpp2;->d()Landroid/graphics/Insets;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p1
-
-    .line 7
-    invoke-virtual {p0, p1}, Landroid/view/WindowInsets$Builder;->setTappableElementInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
-
-    .line 8
-    .line 9
-    .line 10
-    return-void
+    return-object p0
 .end method

@@ -1,170 +1,294 @@
-.class public final Lgf1;
-.super Ldw1;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final synthetic Lgf1;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Ljava/util/concurrent/Executor;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final l:Lgf1;
+# instance fields
+.field public final synthetic j:Ljf1;
 
-.field public static final m:Lua1;
+.field public final synthetic k:I
+
+.field public final synthetic l:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(Ljf1;II)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lgf1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {v0}, Lua1;-><init>()V
-
     .line 4
+    iput-object p1, p0, Lgf1;->j:Ljf1;
+
     .line 5
     .line 6
-    sput-object v0, Lgf1;->l:Lgf1;
+    iput p2, p0, Lgf1;->k:I
 
     .line 7
     .line 8
-    sget-object v0, Ln27;->l:Ln27;
+    iput p3, p0, Lgf1;->l:I
 
     .line 9
     .line 10
-    sget v1, Lug6;->a:I
-
-    .line 11
-    .line 12
-    const/16 v2, 0x40
-
-    .line 13
-    .line 14
-    if-ge v2, v1, :cond_0
-
-    .line 15
-    .line 16
-    goto :goto_0
-
-    .line 17
-    :cond_0
-    move v1, v2
-
-    .line 18
-    :goto_0
-    const/16 v2, 0xc
-
-    .line 19
-    .line 20
-    const-string v3, "kotlinx.coroutines.io.parallelism"
-
-    .line 21
-    .line 22
-    invoke-static {v1, v3, v2}, Ln33;->L(ILjava/lang/String;I)I
-
-    .line 23
-    .line 24
-    .line 25
-    move-result v1
-
-    .line 26
-    invoke-virtual {v0, v1}, Ln27;->K(I)Lua1;
-
-    .line 27
-    .line 28
-    .line 29
-    move-result-object v0
-
-    .line 30
-    sput-object v0, Lgf1;->m:Lua1;
-
-    .line 31
-    .line 32
     return-void
 .end method
 
 
 # virtual methods
-.method public final I(Lsa1;Ljava/lang/Runnable;)V
-    .locals 0
+.method public final run()V
+    .locals 8
 
     .line 1
-    sget-object p0, Lgf1;->m:Lua1;
+    iget-object v0, p0, Lgf1;->j:Ljf1;
 
     .line 2
     .line 3
-    invoke-virtual {p0, p1, p2}, Lua1;->I(Lsa1;Ljava/lang/Runnable;)V
+    iget v1, p0, Lgf1;->k:I
 
     .line 4
     .line 5
+    iget p0, p0, Lgf1;->l:I
+
     .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_0
+
+    .line 9
+    .line 10
+    if-nez p0, :cond_0
+
+    .line 11
+    .line 12
+    iget-object p0, v0, Ljf1;->k:Ljava/lang/Object;
+
+    .line 13
+    .line 14
+    check-cast p0, Landroid/widget/ListView;
+
+    .line 15
+    .line 16
+    invoke-virtual {p0, v2, v2}, Landroid/widget/AbsListView;->setSelectionFromTop(II)V
+
+    .line 17
+    .line 18
+    .line 19
     return-void
-.end method
 
-.method public final K(I)Lua1;
-    .locals 0
+    .line 20
+    :cond_0
+    move v3, v2
 
-    .line 1
-    sget-object p0, Ln27;->l:Ln27;
+    .line 21
+    :goto_0
+    iget-object v4, v0, Ljf1;->k:Ljava/lang/Object;
 
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Ln27;->K(I)Lua1;
+    .line 22
+    .line 23
+    check-cast v4, Landroid/widget/ListView;
 
-    .line 4
-    .line 5
-    .line 6
+    .line 24
+    .line 25
+    invoke-virtual {v4}, Landroid/widget/AdapterView;->getFirstVisiblePosition()I
+
+    .line 26
+    .line 27
+    .line 28
+    move-result v4
+
+    .line 29
+    const/4 v5, 0x1
+
+    .line 30
+    add-int/2addr v4, v5
+
+    .line 31
+    const/16 v6, 0x64
+
+    .line 32
+    .line 33
+    if-le v4, v1, :cond_1
+
+    .line 34
+    .line 35
+    iget-object v4, v0, Ljf1;->k:Ljava/lang/Object;
+
+    .line 36
+    .line 37
+    check-cast v4, Landroid/widget/ListView;
+
+    .line 38
+    .line 39
+    const/4 v7, -0x1
+
+    .line 40
+    invoke-virtual {v4, v7}, Landroid/widget/AbsListView;->canScrollList(I)Z
+
+    .line 41
+    .line 42
+    .line 43
+    move-result v4
+
+    .line 44
+    if-eqz v4, :cond_1
+
+    .line 45
+    .line 46
+    if-ge v3, v6, :cond_1
+
+    .line 47
+    .line 48
+    div-int/lit8 v4, p0, 0x2
+
+    .line 49
+    .line 50
+    invoke-virtual {v0, v4}, Ljf1;->w(I)V
+
+    .line 51
+    .line 52
+    .line 53
+    add-int/lit8 v3, v3, 0x1
+
+    .line 54
+    .line 55
+    goto :goto_0
+
+    .line 56
+    :cond_1
+    :goto_1
+    iget-object v4, v0, Ljf1;->k:Ljava/lang/Object;
+
+    .line 57
+    .line 58
+    check-cast v4, Landroid/widget/ListView;
+
+    .line 59
+    .line 60
+    invoke-virtual {v4}, Landroid/widget/AdapterView;->getLastVisiblePosition()I
+
+    .line 61
+    .line 62
+    .line 63
+    move-result v4
+
+    .line 64
+    sub-int/2addr v4, v5
+
+    .line 65
+    if-ge v4, v1, :cond_2
+
+    .line 66
+    .line 67
+    iget-object v4, v0, Ljf1;->k:Ljava/lang/Object;
+
+    .line 68
+    .line 69
+    check-cast v4, Landroid/widget/ListView;
+
+    .line 70
+    .line 71
+    invoke-virtual {v4, v5}, Landroid/widget/AbsListView;->canScrollList(I)Z
+
+    .line 72
+    .line 73
+    .line 74
+    move-result v4
+
+    .line 75
+    if-eqz v4, :cond_2
+
+    .line 76
+    .line 77
+    if-ge v2, v6, :cond_2
+
+    .line 78
+    .line 79
+    neg-int v4, p0
+
+    .line 80
+    div-int/lit8 v4, v4, 0x2
+
+    .line 81
+    .line 82
+    invoke-virtual {v0, v4}, Ljf1;->w(I)V
+
+    .line 83
+    .line 84
+    .line 85
+    add-int/lit8 v2, v2, 0x1
+
+    .line 86
+    .line 87
+    goto :goto_1
+
+    .line 88
+    :cond_2
+    if-ge v3, v6, :cond_4
+
+    .line 89
+    .line 90
+    if-lt v2, v6, :cond_3
+
+    .line 91
+    .line 92
+    goto :goto_2
+
+    .line 93
+    :cond_3
+    return-void
+
+    .line 94
+    :cond_4
+    :goto_2
+    const-string p0, ", upScrolls="
+
+    .line 95
+    .line 96
+    const-string v0, ", downScrolls="
+
+    .line 97
+    .line 98
+    const-string v4, "ensureListPositionVisible hit iteration limit: position="
+
+    .line 99
+    .line 100
+    invoke-static {v1, v3, v4, p0, v0}, Loc1;->s(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 101
+    .line 102
+    .line 103
     move-result-object p0
 
-    .line 7
-    return-object p0
-.end method
+    .line 104
+    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-.method public final close()V
-    .locals 1
+    .line 105
+    .line 106
+    .line 107
+    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 1
-    new-instance p0, Ljava/lang/IllegalStateException;
+    .line 108
+    .line 109
+    .line 110
+    move-result-object p0
 
-    .line 2
-    .line 3
-    const-string v0, "Cannot be invoked on Dispatchers.IO"
+    .line 111
+    const-string v0, "DefaultCompletionLayout"
 
-    .line 4
-    .line 5
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    .line 112
+    .line 113
+    invoke-static {v0, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 6
-    .line 7
-    .line 8
-    throw p0
-.end method
-
-.method public final execute(Ljava/lang/Runnable;)V
-    .locals 1
-
-    .line 1
-    sget-object v0, Lmt1;->j:Lmt1;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, v0, p1}, Lua1;->H(Lsa1;Ljava/lang/Runnable;)V
-
-    .line 4
-    .line 5
-    .line 6
+    .line 114
+    .line 115
+    .line 116
     return-void
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    const-string p0, "Dispatchers.IO"
-
-    .line 2
-    .line 3
-    return-object p0
 .end method

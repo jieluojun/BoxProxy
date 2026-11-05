@@ -1,165 +1,651 @@
-.class public abstract Luh3;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final Luh3;
+.super Lj3;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# static fields
-.field public static final a:Lnb3;
+# instance fields
+.field public final synthetic j:B
 
-.field public static final b:Loa1;
-
-.field public static final c:Loa1;
-
-.field public static final d:[F
-
-.field public static final e:[F
-
-.field public static f:Lae5;
-
-.field public static g:Lae5;
-
-.field public static h:Lae5;
-
-.field public static i:Lae5;
-
-.field public static j:Lae5;
-
-.field public static k:Lae5;
-
-.field public static l:Lae5;
-
-.field public static m:Lae5;
+.field public final k:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(Ljava/lang/Object;B)V
+    .locals 0
+
+    .line 13
+    iput-byte p2, p0, Luh3;->j:B
+
+    iput-object p1, p0, Luh3;->k:Ljava/lang/Object;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/util/List;)V
+    .locals 1
 
     .line 1
-    new-instance v0, Lnb3;
+    const/4 v0, 0x1
+
+    .line 2
+    iput-byte v0, p0, Luh3;->j:B
+
+    .line 3
+    .line 4
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 5
+    .line 6
+    .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 8
+    .line 9
+    .line 10
+    iput-object p1, p0, Luh3;->k:Ljava/lang/Object;
+
+    .line 11
+    .line 12
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()I
+    .locals 1
+
+    .line 1
+    iget-byte v0, p0, Luh3;->j:B
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    iget-object p0, p0, Luh3;->k:Ljava/lang/Object;
 
     .line 4
-    const/4 v2, 0x2
-
     .line 5
-    invoke-direct {v0, v2, v1}, Lnb3;-><init>(BZ)V
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
     .line 8
-    sput-object v0, Luh3;->a:Lnb3;
+    check-cast p0, Ljava/util/ArrayList;
 
     .line 9
     .line 10
-    new-instance v0, Loa1;
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     .line 11
     .line 12
-    const v1, 0x3e19999a    # 0.15f
-
     .line 13
+    move-result p0
+
     .line 14
+    return p0
+
     .line 15
-    invoke-direct {v0, v2, v1}, Loa1;-><init>(IF)V
+    :pswitch_0
+    check-cast p0, Ljava/util/List;
 
     .line 16
     .line 17
-    .line 18
-    sput-object v0, Luh3;->b:Loa1;
+    invoke-interface {p0}, Ljava/util/List;->size()I
 
+    .line 18
     .line 19
     .line 20
-    new-instance v0, Loa1;
+    move-result p0
 
     .line 21
+    return p0
+
     .line 22
-    new-instance v0, Loa1;
+    :pswitch_1
+    check-cast p0, Lwh3;
 
     .line 23
     .line 24
-    new-instance v0, Loa1;
+    iget-object p0, p0, Lwh3;->a:Ljava/util/regex/Matcher;
 
     .line 25
     .line 26
-    const/high16 v1, 0x3f000000    # 0.5f
+    invoke-virtual {p0}, Ljava/util/regex/Matcher;->groupCount()I
 
     .line 27
     .line 28
-    invoke-direct {v0, v2, v1}, Loa1;-><init>(IF)V
-
     .line 29
+    move-result p0
+
     .line 30
+    add-int/lit8 p0, p0, 0x1
+
     .line 31
-    sput-object v0, Luh3;->c:Loa1;
-
     .line 32
-    .line 33
-    new-instance v0, Loa1;
+    return p0
 
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public bridge contains(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    iget-byte v0, p0, Luh3;->j:B
+
+    .line 2
+    .line 3
+    packed-switch v0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    invoke-super {p0, p1}, Lr2;->contains(Ljava/lang/Object;)Z
+
+    .line 7
+    .line 8
+    .line 9
+    move-result p0
+
+    .line 10
+    return p0
+
+    .line 11
+    :pswitch_0
+    instance-of v0, p1, Ljava/lang/String;
+
+    .line 12
+    .line 13
+    if-nez v0, :cond_0
+
+    .line 14
+    .line 15
+    const/4 p0, 0x0
+
+    .line 16
+    goto :goto_0
+
+    .line 17
+    :cond_0
+    check-cast p1, Ljava/lang/String;
+
+    .line 18
+    .line 19
+    invoke-super {p0, p1}, Lr2;->contains(Ljava/lang/Object;)Z
+
+    .line 20
+    .line 21
+    .line 22
+    move-result p0
+
+    .line 23
+    :goto_0
+    return p0
+
+    .line 24
+    nop
+
+    .line 25
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final get(I)Ljava/lang/Object;
+    .locals 4
+
+    .line 1
+    iget-byte v0, p0, Luh3;->j:B
+
+    .line 2
+    .line 3
+    const/4 v1, 0x1
+
+    .line 4
+    iget-object v2, p0, Luh3;->k:Ljava/lang/Object;
+
+    .line 5
+    .line 6
+    packed-switch v0, :pswitch_data_0
+
+    .line 7
+    .line 8
+    .line 9
+    check-cast v2, Ljava/util/ArrayList;
+
+    .line 10
+    .line 11
+    invoke-virtual {v2}, Ljava/util/ArrayList;->size()I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    sub-int/2addr p0, v1
+
+    .line 16
+    sub-int/2addr p0, p1
+
+    .line 17
+    invoke-virtual {v2, p0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object p0
+
+    .line 21
+    return-object p0
+
+    .line 22
+    :pswitch_0
+    check-cast v2, Ljava/util/List;
+
+    .line 23
+    .line 24
+    if-ltz p1, :cond_0
+
+    .line 25
+    .line 26
+    invoke-static {p0}, Lim;->L(Ljava/util/List;)I
+
+    .line 27
+    .line 28
+    .line 29
+    move-result v0
+
+    .line 30
+    if-gt p1, v0, :cond_0
+
+    .line 31
+    .line 32
+    invoke-static {p0}, Lim;->L(Ljava/util/List;)I
+
+    .line 33
     .line 34
     .line 35
-    invoke-static {}, Lbi3;->a()[F
+    move-result p0
 
     .line 36
+    sub-int/2addr p0, p1
+
     .line 37
+    invoke-interface {v2, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
     .line 38
-    move-result-object v0
-
     .line 39
-    const/high16 v1, -0x3dcc0000    # -45.0f
-
     .line 40
+    move-result-object p0
+
     .line 41
-    invoke-static {v0, v1}, Lbi3;->e([FF)V
+    return-object p0
 
     .line 42
+    :cond_0
+    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
+
     .line 43
     .line 44
-    sput-object v0, Luh3;->d:[F
+    const-string v2, "Element index "
 
     .line 45
     .line 46
-    invoke-static {}, Lbi3;->a()[F
+    const-string v3, " must be in range ["
 
     .line 47
     .line 48
+    invoke-static {p1, v2, v3}, Loc1;->t(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 49
-    move-result-object v0
-
     .line 50
-    const/high16 v1, -0x3d4c0000    # -90.0f
-
     .line 51
+    move-result-object p1
+
     .line 52
-    invoke-static {v0, v1}, Lbi3;->e([FF)V
+    new-instance v2, Les2;
 
     .line 53
     .line 54
+    const/4 v3, 0x0
+
     .line 55
-    sput-object v0, Luh3;->e:[F
+    invoke-static {p0}, Lim;->L(Ljava/util/List;)I
 
     .line 56
     .line 57
-    invoke-static {}, Lbi3;->a()[F
-
     .line 58
+    move-result p0
+
     .line 59
+    invoke-direct {v2, v3, p0, v1}, Lcs2;-><init>(III)V
+
     .line 60
-    move-result-object v0
-
     .line 61
-    const/high16 v1, -0x3cf90000    # -135.0f
-
     .line 62
-    .line 63
-    invoke-static {v0, v1}, Lbi3;->e([FF)V
+    invoke-virtual {p1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    .line 63
     .line 64
     .line 65
+    const-string p0, "]."
+
     .line 66
-    return-void
+    .line 67
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 68
+    .line 69
+    .line 70
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 71
+    .line 72
+    .line 73
+    move-result-object p0
+
+    .line 74
+    invoke-direct {v0, p0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    .line 75
+    .line 76
+    .line 77
+    throw v0
+
+    .line 78
+    :pswitch_1
+    check-cast v2, Lwh3;
+
+    .line 79
+    .line 80
+    iget-object p0, v2, Lwh3;->a:Ljava/util/regex/Matcher;
+
+    .line 81
+    .line 82
+    invoke-virtual {p0, p1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
+
+    .line 83
+    .line 84
+    .line 85
+    move-result-object p0
+
+    .line 86
+    if-nez p0, :cond_1
+
+    .line 87
+    .line 88
+    const-string p0, ""
+
+    .line 89
+    .line 90
+    :cond_1
+    return-object p0
+
+    .line 91
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public bridge indexOf(Ljava/lang/Object;)I
+    .locals 1
+
+    .line 1
+    iget-byte v0, p0, Luh3;->j:B
+
+    .line 2
+    .line 3
+    packed-switch v0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    invoke-super {p0, p1}, Lj3;->indexOf(Ljava/lang/Object;)I
+
+    .line 7
+    .line 8
+    .line 9
+    move-result p0
+
+    .line 10
+    return p0
+
+    .line 11
+    :pswitch_0
+    instance-of v0, p1, Ljava/lang/String;
+
+    .line 12
+    .line 13
+    if-nez v0, :cond_0
+
+    .line 14
+    .line 15
+    const/4 p0, -0x1
+
+    .line 16
+    goto :goto_0
+
+    .line 17
+    :cond_0
+    check-cast p1, Ljava/lang/String;
+
+    .line 18
+    .line 19
+    invoke-super {p0, p1}, Lj3;->indexOf(Ljava/lang/Object;)I
+
+    .line 20
+    .line 21
+    .line 22
+    move-result p0
+
+    .line 23
+    :goto_0
+    return p0
+
+    .line 24
+    nop
+
+    .line 25
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public iterator()Ljava/util/Iterator;
+    .locals 2
+
+    .line 1
+    iget-byte v0, p0, Luh3;->j:B
+
+    .line 2
+    .line 3
+    packed-switch v0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    invoke-super {p0}, Lj3;->iterator()Ljava/util/Iterator;
+
+    .line 7
+    .line 8
+    .line 9
+    move-result-object p0
+
+    .line 10
+    return-object p0
+
+    .line 11
+    :pswitch_0
+    new-instance v0, Lrd5;
+
+    .line 12
+    .line 13
+    const/4 v1, 0x0
+
+    .line 14
+    invoke-direct {v0, p0, v1}, Lrd5;-><init>(Luh3;I)V
+
+    .line 15
+    .line 16
+    .line 17
+    return-object v0
+
+    .line 18
+    nop
+
+    .line 19
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public bridge lastIndexOf(Ljava/lang/Object;)I
+    .locals 1
+
+    .line 1
+    iget-byte v0, p0, Luh3;->j:B
+
+    .line 2
+    .line 3
+    packed-switch v0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    invoke-super {p0, p1}, Lj3;->lastIndexOf(Ljava/lang/Object;)I
+
+    .line 7
+    .line 8
+    .line 9
+    move-result p0
+
+    .line 10
+    return p0
+
+    .line 11
+    :pswitch_0
+    instance-of v0, p1, Ljava/lang/String;
+
+    .line 12
+    .line 13
+    if-nez v0, :cond_0
+
+    .line 14
+    .line 15
+    const/4 p0, -0x1
+
+    .line 16
+    goto :goto_0
+
+    .line 17
+    :cond_0
+    check-cast p1, Ljava/lang/String;
+
+    .line 18
+    .line 19
+    invoke-super {p0, p1}, Lj3;->lastIndexOf(Ljava/lang/Object;)I
+
+    .line 20
+    .line 21
+    .line 22
+    move-result p0
+
+    .line 23
+    :goto_0
+    return p0
+
+    .line 24
+    nop
+
+    .line 25
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public listIterator()Ljava/util/ListIterator;
+    .locals 2
+
+    .line 1
+    iget-byte v0, p0, Luh3;->j:B
+
+    .line 2
+    .line 3
+    packed-switch v0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    invoke-super {p0}, Lj3;->listIterator()Ljava/util/ListIterator;
+
+    .line 7
+    .line 8
+    .line 9
+    move-result-object p0
+
+    .line 10
+    return-object p0
+
+    .line 11
+    :pswitch_0
+    new-instance v0, Lrd5;
+
+    .line 12
+    .line 13
+    const/4 v1, 0x0
+
+    .line 14
+    invoke-direct {v0, p0, v1}, Lrd5;-><init>(Luh3;I)V
+
+    .line 15
+    .line 16
+    .line 17
+    return-object v0
+
+    .line 18
+    nop
+
+    .line 19
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public listIterator(I)Ljava/util/ListIterator;
+    .locals 1
+
+    iget-byte v0, p0, Luh3;->j:B
+
+    packed-switch v0, :pswitch_data_0
+
+    invoke-super {p0, p1}, Lj3;->listIterator(I)Ljava/util/ListIterator;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 19
+    :pswitch_0
+    new-instance v0, Lrd5;
+
+    invoke-direct {v0, p0, p1}, Lrd5;-><init>(Luh3;I)V
+
+    return-object v0
+
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method

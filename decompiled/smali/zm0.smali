@@ -1,302 +1,159 @@
 .class public final Lzm0;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Ljava/text/CharacterIterator;
+.super Lka2;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final j:Ljava/lang/CharSequence;
+.field public final o:[B
 
-.field public k:I
+.field public final p:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/CharSequence;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lka2;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lzm0;->j:Ljava/lang/CharSequence;
+    const/4 v0, 0x0
 
     .line 5
+    iput-object v0, p0, Lzm0;->o:[B
+
     .line 6
+    .line 7
+    const/4 v0, 0x0
+
+    .line 8
+    iput v0, p0, Lzm0;->p:I
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+.method public constructor <init>(ILka2;Ljava/lang/Object;[BILka2;)V
+    .locals 0
+
+    .line 11
+    invoke-direct {p0, p1, p2, p3, p6}, Lka2;-><init>(ILka2;Ljava/lang/Object;Lka2;)V
+
+    .line 12
+    iput-object p4, p0, Lzm0;->o:[B
+
+    .line 13
+    iput p5, p0, Lzm0;->p:I
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final clone()Ljava/lang/Object;
-    .locals 2
+.method public final b(II[B)Z
+    .locals 5
 
     .line 1
-    new-instance v0, Lzm0;
+    sub-int v0, p2, p1
 
     .line 2
     .line 3
-    iget-object v1, p0, Lzm0;->j:Ljava/lang/CharSequence;
+    const/4 v1, 0x0
 
     .line 4
-    .line 5
-    invoke-direct {v0, v1}, Lzm0;-><init>(Ljava/lang/CharSequence;)V
+    iget v2, p0, Lzm0;->p:I
 
+    .line 5
     .line 6
+    if-eq v0, v2, :cond_0
+
     .line 7
     .line 8
-    iget p0, p0, Lzm0;->k:I
+    goto :goto_1
 
     .line 9
-    .line 10
-    iput p0, v0, Lzm0;->k:I
-
-    .line 11
-    .line 12
-    return-object v0
-.end method
-
-.method public final current()C
-    .locals 3
-
-    .line 1
-    iget v0, p0, Lzm0;->k:I
-
-    .line 2
-    .line 3
-    iget-object v1, p0, Lzm0;->j:Ljava/lang/CharSequence;
-
-    .line 4
-    .line 5
-    invoke-interface {v1}, Ljava/lang/CharSequence;->length()I
-
-    .line 6
-    .line 7
-    .line 8
-    move-result v2
-
-    .line 9
-    if-ne v0, v2, :cond_0
+    :cond_0
+    iget-object p0, p0, Lzm0;->o:[B
 
     .line 10
     .line 11
-    const p0, 0xffff
+    if-ne p3, p0, :cond_1
 
     .line 12
     .line 13
+    goto :goto_2
+
     .line 14
-    return p0
+    :cond_1
+    move v0, v1
 
     .line 15
-    :cond_0
-    iget p0, p0, Lzm0;->k:I
+    :goto_0
+    if-ge p1, p2, :cond_3
 
     .line 16
     .line 17
-    invoke-interface {v1, p0}, Ljava/lang/CharSequence;->charAt(I)C
+    sget-object v2, Lg17;->c:[B
 
     .line 18
     .line 19
-    .line 20
-    move-result p0
+    add-int/lit8 v3, p1, 0x1
 
+    .line 20
     .line 21
-    return p0
-.end method
+    aget-byte p1, p3, p1
 
-.method public final first()C
-    .locals 1
+    .line 22
+    .line 23
+    and-int/lit16 p1, p1, 0xff
 
-    .line 1
-    const/4 v0, 0x0
+    .line 24
+    .line 25
+    aget-byte p1, v2, p1
 
-    .line 2
-    iput v0, p0, Lzm0;->k:I
+    .line 26
+    .line 27
+    add-int/lit8 v4, v0, 0x1
 
-    .line 3
-    .line 4
-    invoke-virtual {p0}, Lzm0;->current()C
+    .line 28
+    .line 29
+    aget-byte v0, p0, v0
 
-    .line 5
-    .line 6
-    .line 7
-    move-result p0
+    .line 30
+    .line 31
+    and-int/lit16 v0, v0, 0xff
 
-    .line 8
-    return p0
-.end method
+    .line 32
+    .line 33
+    aget-byte v0, v2, v0
 
-.method public final getBeginIndex()I
-    .locals 0
+    .line 34
+    .line 35
+    if-eq p1, v0, :cond_2
 
-    .line 1
-    const/4 p0, 0x0
+    .line 36
+    .line 37
+    :goto_1
+    return v1
 
-    .line 2
-    return p0
-.end method
+    .line 38
+    :cond_2
+    move p1, v3
 
-.method public final getEndIndex()I
-    .locals 0
+    .line 39
+    move v0, v4
 
-    .line 1
-    iget-object p0, p0, Lzm0;->j:Ljava/lang/CharSequence;
+    .line 40
+    goto :goto_0
 
-    .line 2
-    .line 3
-    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
+    .line 41
+    :cond_3
+    :goto_2
+    const/4 p0, 0x1
 
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final getIndex()I
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lzm0;->k:I
-
-    .line 2
-    .line 3
-    return p0
-.end method
-
-.method public final last()C
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lzm0;->j:Ljava/lang/CharSequence;
-
-    .line 2
-    .line 3
-    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    add-int/lit8 v0, v0, -0x1
-
-    .line 8
-    .line 9
-    iput v0, p0, Lzm0;->k:I
-
-    .line 10
-    .line 11
-    if-gez v0, :cond_0
-
-    .line 12
-    .line 13
-    const/4 v0, 0x0
-
-    .line 14
-    iput v0, p0, Lzm0;->k:I
-
-    .line 15
-    .line 16
-    :cond_0
-    invoke-virtual {p0}, Lzm0;->current()C
-
-    .line 17
-    .line 18
-    .line 19
-    move-result p0
-
-    .line 20
-    return p0
-.end method
-
-.method public final next()C
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lzm0;->k:I
-
-    .line 2
-    .line 3
-    add-int/lit8 v0, v0, 0x1
-
-    .line 4
-    .line 5
-    iput v0, p0, Lzm0;->k:I
-
-    .line 6
-    .line 7
-    invoke-virtual {p0}, Lzm0;->current()C
-
-    .line 8
-    .line 9
-    .line 10
-    move-result p0
-
-    .line 11
-    return p0
-.end method
-
-.method public final previous()C
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lzm0;->k:I
-
-    .line 2
-    .line 3
-    add-int/lit8 v0, v0, -0x1
-
-    .line 4
-    .line 5
-    iput v0, p0, Lzm0;->k:I
-
-    .line 6
-    .line 7
-    if-gez v0, :cond_0
-
-    .line 8
-    .line 9
-    const/4 v0, 0x0
-
-    .line 10
-    iput v0, p0, Lzm0;->k:I
-
-    .line 11
-    .line 12
-    :cond_0
-    invoke-virtual {p0}, Lzm0;->current()C
-
-    .line 13
-    .line 14
-    .line 15
-    move-result p0
-
-    .line 16
-    return p0
-.end method
-
-.method public final setIndex(I)C
-    .locals 0
-
-    .line 1
-    iput p1, p0, Lzm0;->k:I
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lzm0;->current()C
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
+    .line 42
     return p0
 .end method

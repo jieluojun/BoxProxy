@@ -1,143 +1,130 @@
-.class public final enum Lzu0;
-.super Ljava/lang/Enum;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public abstract Lzu0;
+.super Lb84;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# static fields
-.field public static final j:Lt8;
+# instance fields
+.field public final d:Ljava/util/Optional;
 
-.field public static final k:Lzu0;
+.field public final e:Z
 
-.field public static final enum l:Lzu0;
-
-.field public static final enum m:Lzu0;
-
-.field public static final synthetic n:[Lzu0;
+.field public final f:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Ljava/util/Optional;Ljava/util/Optional;ZILjava/util/Optional;Ljava/util/Optional;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lzu0;
+    invoke-direct {p0, p1, p5, p6}, Lb84;-><init>(Ljava/util/Optional;Ljava/util/Optional;Ljava/util/Optional;)V
 
     .line 2
     .line 3
-    const-string v1, "SPEC_2021"
-
     .line 4
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 5
-    const/4 v2, 0x0
-
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 7
+    iput-object p2, p0, Lzu0;->d:Ljava/util/Optional;
+
     .line 8
     .line 9
-    sput-object v0, Lzu0;->l:Lzu0;
+    iput-boolean p3, p0, Lzu0;->e:Z
 
     .line 10
     .line 11
-    new-instance v1, Lzu0;
+    if-eqz p4, :cond_0
 
     .line 12
     .line 13
-    const-string v2, "SPEC_2025"
+    iput p4, p0, Lzu0;->f:I
 
     .line 14
     .line 15
-    const/4 v3, 0x1
+    return-void
 
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    :cond_0
+    const/4 p0, 0x0
 
     .line 17
+    throw p0
+.end method
+
+
+# virtual methods
+.method public toString()Ljava/lang/String;
+    .locals 3
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    new-instance v1, Lyu0;
+
+    .line 7
+    .line 8
+    const/4 v2, 0x0
+
+    .line 9
+    invoke-direct {v1, v0, v2}, Lyu0;-><init>(Ljava/lang/StringBuilder;B)V
+
+    .line 10
+    .line 11
+    .line 12
+    iget-object v2, p0, Lb84;->c:Ljava/util/Optional;
+
+    .line 13
+    .line 14
+    invoke-virtual {v2, v1}, Ljava/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
+
+    .line 15
+    .line 16
+    .line 17
+    iget-boolean v1, p0, Lzu0;->e:Z
+
     .line 18
     .line 19
-    sput-object v1, Lzu0;->m:Lzu0;
+    if-nez v1, :cond_0
 
     .line 20
     .line 21
-    filled-new-array {v0, v1}, [Lzu0;
+    new-instance v1, Lyu0;
 
     .line 22
     .line 23
+    const/4 v2, 0x1
+
     .line 24
-    move-result-object v1
+    invoke-direct {v1, v0, v2}, Lyu0;-><init>(Ljava/lang/StringBuilder;B)V
 
     .line 25
-    sput-object v1, Lzu0;->n:[Lzu0;
-
     .line 26
     .line 27
-    new-instance v1, Lt8;
+    iget-object p0, p0, Lzu0;->d:Ljava/util/Optional;
 
     .line 28
     .line 29
-    const/16 v2, 0x1a
+    invoke-virtual {p0, v1}, Ljava/util/Optional;->ifPresent(Ljava/util/function/Consumer;)V
 
     .line 30
     .line 31
-    invoke-direct {v1, v2}, Lt8;-><init>(B)V
-
     .line 32
+    :cond_0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
     .line 33
     .line 34
-    sput-object v1, Lzu0;->j:Lt8;
-
     .line 35
-    .line 36
-    sput-object v0, Lzu0;->k:Lzu0;
-
-    .line 37
-    .line 38
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lzu0;
-    .locals 1
-
-    .line 1
-    const-class v0, Lzu0;
-
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    .line 4
-    .line 5
-    .line 6
     move-result-object p0
 
-    .line 7
-    check-cast p0, Lzu0;
-
-    .line 8
-    .line 9
+    .line 36
     return-object p0
-.end method
-
-.method public static values()[Lzu0;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lzu0;->n:[Lzu0;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [Lzu0;
-
-    .line 8
-    .line 9
-    return-object v0
 .end method

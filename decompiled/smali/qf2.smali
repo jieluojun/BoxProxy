@@ -1,72 +1,138 @@
-.class public final Lqf2;
-.super Lz71;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final synthetic Lqf2;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lt62;
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
+.field public final synthetic j:Lad0;
 
-.field public final synthetic k:Lsf2;
+.field public final synthetic k:F
 
-.field public l:I
+.field public final synthetic l:F
+
+.field public final synthetic m:F
+
+.field public final synthetic n:J
+
+.field public final synthetic o:Ljava/util/List;
+
+.field public final synthetic p:I
 
 
 # direct methods
-.method public constructor <init>(Lsf2;Lz71;)V
+.method public synthetic constructor <init>(Lad0;FFFJLjava/util/List;I)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lqf2;->k:Lsf2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
-
     .line 4
+    iput-object p1, p0, Lqf2;->j:Lad0;
+
     .line 5
     .line 6
+    iput p2, p0, Lqf2;->k:F
+
+    .line 7
+    .line 8
+    iput p3, p0, Lqf2;->l:F
+
+    .line 9
+    .line 10
+    iput p4, p0, Lqf2;->m:F
+
+    .line 11
+    .line 12
+    iput-wide p5, p0, Lqf2;->n:J
+
+    .line 13
+    .line 14
+    iput-object p7, p0, Lqf2;->o:Ljava/util/List;
+
+    .line 15
+    .line 16
+    iput p8, p0, Lqf2;->p:I
+
+    .line 17
+    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 9
 
     .line 1
-    iput-object p1, p0, Lqf2;->j:Ljava/lang/Object;
+    move-object v7, p1
 
     .line 2
+    check-cast v7, Lz11;
+
     .line 3
-    iget p1, p0, Lqf2;->l:I
-
     .line 4
+    check-cast p2, Ljava/lang/Integer;
+
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lqf2;->l:I
-
     .line 9
+    iget p1, p0, Lqf2;->p:I
+
     .line 10
-    iget-object p1, p0, Lqf2;->k:Lsf2;
-
     .line 11
-    .line 12
-    const/4 v0, 0x0
+    or-int/lit8 p1, p1, 0x1
 
+    .line 12
     .line 13
-    invoke-virtual {p1, v0, p0}, Lsf2;->a(Ljava/lang/String;Lz71;)Ljava/lang/Object;
+    invoke-static {p1}, Lqu5;->f0(I)I
 
     .line 14
     .line 15
     .line 16
-    move-result-object p0
+    move-result v8
 
     .line 17
+    iget-object v0, p0, Lqf2;->j:Lad0;
+
+    .line 18
+    .line 19
+    iget v1, p0, Lqf2;->k:F
+
+    .line 20
+    .line 21
+    iget v2, p0, Lqf2;->l:F
+
+    .line 22
+    .line 23
+    iget v3, p0, Lqf2;->m:F
+
+    .line 24
+    .line 25
+    iget-wide v4, p0, Lqf2;->n:J
+
+    .line 26
+    .line 27
+    iget-object v6, p0, Lqf2;->o:Ljava/util/List;
+
+    .line 28
+    .line 29
+    invoke-static/range {v0 .. v8}, Lpr;->m(Lad0;FFFJLjava/util/List;Lz11;I)V
+
+    .line 30
+    .line 31
+    .line 32
+    sget-object p0, La47;->a:La47;
+
+    .line 33
+    .line 34
     return-object p0
 .end method

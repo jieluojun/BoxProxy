@@ -1,69 +1,142 @@
-.class public final Lka7;
-.super Lz71;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public abstract Lka7;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public synthetic j:Ljava/lang/Object;
-
-.field public final synthetic k:Lma7;
-
-.field public l:I
+# static fields
+.field public static final a:Ljava/util/WeakHashMap;
 
 
 # direct methods
-.method public constructor <init>(Lma7;Lz71;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lka7;->k:Lma7;
-
-    .line 2
-    .line 3
-    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.method static constructor <clinit>()V
     .locals 1
 
     .line 1
-    iput-object p1, p0, Lka7;->j:Ljava/lang/Object;
+    const-string v0, "*"
 
     .line 2
     .line 3
-    iget p1, p0, Lka7;->l:I
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
-    .line 7
-    or-int/2addr p1, v0
+    const-string v0, ""
 
+    .line 7
     .line 8
-    iput p1, p0, Lka7;->l:I
+    invoke-static {v0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     .line 9
     .line 10
-    iget-object p1, p0, Lka7;->k:Lma7;
-
     .line 11
-    .line 12
-    invoke-virtual {p1, p0}, Lma7;->a(Lz71;)Ljava/lang/Object;
+    new-instance v0, Ljava/util/WeakHashMap;
 
+    .line 12
     .line 13
+    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
+
     .line 14
     .line 15
-    move-result-object p0
+    .line 16
+    sput-object v0, Lka7;->a:Ljava/util/WeakHashMap;
+
+    .line 17
+    .line 18
+    return-void
+.end method
+
+.method public static a(Landroid/webkit/WebView;)Ldb7;
+    .locals 3
+
+    .line 1
+    sget-object v0, Lbb7;->d:Lbj;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Lbj;->a()Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    if-eqz v0, :cond_1
+
+    .line 8
+    .line 9
+    sget-object v0, Lka7;->a:Ljava/util/WeakHashMap;
+
+    .line 10
+    .line 11
+    invoke-virtual {v0, p0}, Ljava/util/WeakHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object v1
+
+    .line 15
+    check-cast v1, Ldb7;
 
     .line 16
-    return-object p0
+    .line 17
+    if-nez v1, :cond_0
+
+    .line 18
+    .line 19
+    new-instance v1, Ldb7;
+
+    .line 20
+    .line 21
+    sget-object v2, Lcb7;->a:Leb7;
+
+    .line 22
+    .line 23
+    invoke-interface {v2, p0}, Leb7;->createWebView(Landroid/webkit/WebView;)Lorg/chromium/support_lib_boundary/WebViewProviderBoundaryInterface;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object v2
+
+    .line 27
+    invoke-direct {v1, v2}, Ldb7;-><init>(Lorg/chromium/support_lib_boundary/WebViewProviderBoundaryInterface;)V
+
+    .line 28
+    .line 29
+    .line 30
+    invoke-virtual {v0, p0, v1}, Ljava/util/WeakHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 31
+    .line 32
+    .line 33
+    :cond_0
+    return-object v1
+
+    .line 34
+    :cond_1
+    new-instance v0, Ldb7;
+
+    .line 35
+    .line 36
+    sget-object v1, Lcb7;->a:Leb7;
+
+    .line 37
+    .line 38
+    invoke-interface {v1, p0}, Leb7;->createWebView(Landroid/webkit/WebView;)Lorg/chromium/support_lib_boundary/WebViewProviderBoundaryInterface;
+
+    .line 39
+    .line 40
+    .line 41
+    move-result-object p0
+
+    .line 42
+    invoke-direct {v0, p0}, Ldb7;-><init>(Lorg/chromium/support_lib_boundary/WebViewProviderBoundaryInterface;)V
+
+    .line 43
+    .line 44
+    .line 45
+    return-object v0
 .end method

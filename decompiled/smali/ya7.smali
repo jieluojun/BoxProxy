@@ -1,622 +1,330 @@
-.class public final Lya7;
-.super Lh6;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lyi3;
+.class public abstract Lya7;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final l:Landroid/content/Context;
+# static fields
+.field public static final a:Lqp2;
 
-.field public final m:Laj3;
-
-.field public n:Lfp2;
-
-.field public o:Ljava/lang/ref/WeakReference;
-
-.field public final synthetic p:Lza7;
+.field public static final b:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lza7;Landroid/content/Context;Lfp2;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p1, p0, Lya7;->p:Lza7;
-
-    .line 5
-    .line 6
-    iput-object p2, p0, Lya7;->l:Landroid/content/Context;
-
-    .line 7
-    .line 8
-    iput-object p3, p0, Lya7;->n:Lfp2;
-
-    .line 9
-    .line 10
-    new-instance p1, Laj3;
-
-    .line 11
-    .line 12
-    invoke-direct {p1, p2}, Laj3;-><init>(Landroid/content/Context;)V
-
-    .line 13
-    .line 14
-    .line 15
-    const/4 p2, 0x1
-
-    .line 16
-    iput-boolean p2, p1, Laj3;->l:Z
-
-    .line 17
-    .line 18
-    iput-object p1, p0, Lya7;->m:Laj3;
-
-    .line 19
-    .line 20
-    iput-object p0, p1, Laj3;->e:Lyi3;
-
-    .line 21
-    .line 22
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()V
+.method static constructor <clinit>()V
     .locals 3
 
     .line 1
-    iget-object v0, p0, Lya7;->p:Lza7;
+    new-instance v0, Lqp2;
 
     .line 2
     .line 3
-    iget-object v1, v0, Lza7;->i:Lya7;
+    const-string v1, "^[a-z][a-z0-9+.-]*://"
 
     .line 4
     .line 5
-    if-eq v1, p0, :cond_0
+    sget-object v2, Lkb5;->k:Lkb5;
 
     .line 6
     .line 7
-    return-void
+    invoke-direct {v0, v1, v2}, Lqp2;-><init>(Ljava/lang/String;Lkb5;)V
 
     .line 8
-    :cond_0
-    iget-boolean v1, v0, Lza7;->p:Z
-
     .line 9
     .line 10
-    if-eqz v1, :cond_1
+    sput-object v0, Lya7;->a:Lqp2;
 
     .line 11
     .line 12
-    iput-object p0, v0, Lza7;->j:Lya7;
+    const-string v0, "(function(){\n  if (window.__boxDownloadHookInstalled) return;\n  window.__boxDownloadHookInstalled = true;\n  function guessMimeFromName(name) {\n    try {\n      var ext = (name || \'\').split(\'.\').pop().toLowerCase();\n      if (ext === \'json\') return \'application/json\';\n      if (ext === \'txt\' || ext === \'log\') return \'text/plain\';\n      if (ext === \'yaml\' || ext === \'yml\') return \'application/yaml\';\n    } catch(e) {}\n    return \'\';\n  }\n  function sniffMimeFromText(text) {\n    try {\n      var sample = (text || \'\').trim();\n      if (!sample) return \'\';\n      if (sample[0] === \'{\' || sample[0] === \'[\') return \'application/json\';\n    } catch(e) {}\n    return \'\';\n  }\n  async function readAsBase64AndMimeFromUrl(href) {\n    if (href.startsWith(\'data:\')) {\n      try {\n        var comma = href.indexOf(\',\');\n        var meta = href.substring(5, comma > 0 ? comma : href.length);\n        var mime = meta.split(\';\')[0] || \'\';\n        var b64 = comma > 0 ? href.substring(comma + 1) : \'\';\n        return { b64: b64, mime: mime };\n      } catch(e) {\n        return { b64: \'\', mime: \'\' };\n      }\n    }\n    const response = await fetch(href);\n    const blob = await response.blob();\n    var mime = (blob && blob.type) ? blob.type : \'\';\n    var b64 = await new Promise(function(resolve, reject){\n      const reader = new FileReader();\n      reader.onloadend = function(){\n        try {\n          var value = reader.result || \'\';\n          var idx = value.indexOf(\',\');\n          resolve(idx >= 0 ? value.substring(idx + 1) : value);\n        } catch(e) { reject(e); }\n      };\n      reader.onerror = reject;\n      reader.readAsDataURL(blob);\n    });\n    if (!mime) {\n      try {\n        var text = await blob.text();\n        mime = sniffMimeFromText(text);\n      } catch(e) {}\n    }\n    return { b64: b64, mime: mime };\n  }\n  const originalClick = HTMLAnchorElement.prototype.click;\n  HTMLAnchorElement.prototype.click = function(){\n    try {\n      var downloadName = this.getAttribute(\'download\') || \'\';\n      var href = this.getAttribute(\'href\') || this.href || \'\';\n      if (downloadName && (href.startsWith(\'blob:\') || href.startsWith(\'data:\'))) {\n        (async () => {\n          try {\n            var info = await readAsBase64AndMimeFromUrl(href);\n            var mime = info.mime || guessMimeFromName(downloadName) || \'application/octet-stream\';\n            var b64 = info.b64 || \'\';\n            if (window.BoxAndroid && window.BoxAndroid.postMessage) {\n              window.BoxAndroid.postMessage(JSON.stringify({\n                type: \'save-file\',\n                fileName: downloadName,\n                mimeType: mime,\n                base64: b64\n              }));\n            }\n          } catch(e) {}\n        })();\n        return;\n      }\n    } catch(e) {}\n    return originalClick.apply(this, arguments);\n  };\n})();"
 
     .line 13
     .line 14
-    iget-object v1, p0, Lya7;->n:Lfp2;
+    sput-object v0, Lya7;->b:Ljava/lang/String;
 
     .line 15
     .line 16
-    iput-object v1, v0, Lza7;->k:Lfp2;
+    return-void
+.end method
 
-    .line 17
-    .line 18
-    goto :goto_0
+.method public static final a(Ljava/lang/String;)Z
+    .locals 4
 
-    .line 19
-    :cond_1
-    iget-object v1, p0, Lya7;->n:Lfp2;
+    .line 1
+    invoke-static {p0, p0}, Ly96;->p(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 20
-    .line 21
-    invoke-virtual {v1, p0}, Lfp2;->A(Lh6;)V
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
 
-    .line 22
-    .line 23
-    .line 24
-    :goto_0
+    .line 5
+    invoke-static {p0}, Lad6;->y0(Ljava/lang/CharSequence;)Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v0
+
+    .line 9
     const/4 v1, 0x0
 
+    .line 10
+    if-eqz v0, :cond_0
+
+    .line 11
+    .line 12
+    goto :goto_0
+
+    .line 13
+    :cond_0
+    sget-object v0, Lya7;->a:Lqp2;
+
+    .line 14
+    .line 15
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 16
+    .line 17
+    .line 18
+    iget-object v0, v0, Lqp2;->k:Ljava/lang/Object;
+
+    .line 19
+    .line 20
+    check-cast v0, Ljava/util/regex/Pattern;
+
+    .line 21
+    .line 22
+    invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+
+    .line 23
+    .line 24
     .line 25
-    iput-object v1, p0, Lya7;->n:Lfp2;
+    move-result-object v0
 
     .line 26
+    invoke-virtual {v0}, Ljava/util/regex/Matcher;->find()Z
+
     .line 27
-    const/4 p0, 0x0
-
     .line 28
-    invoke-virtual {v0, p0}, Lza7;->a(Z)V
-
     .line 29
+    move-result v0
+
     .line 30
+    const/4 v2, 0x1
+
     .line 31
-    iget-object p0, v0, Lza7;->f:Landroidx/appcompat/widget/ActionBarContextView;
+    if-eqz v0, :cond_3
 
     .line 32
     .line 33
-    iget-object v2, p0, Landroidx/appcompat/widget/ActionBarContextView;->t:Landroid/view/View;
+    const-string v0, "http://"
 
     .line 34
     .line 35
-    if-nez v2, :cond_2
+    invoke-static {p0, v0, v2}, Lhd6;->S(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     .line 36
     .line 37
-    invoke-virtual {p0}, Landroidx/appcompat/widget/ActionBarContextView;->e()V
-
     .line 38
+    move-result v0
+
     .line 39
+    if-nez v0, :cond_2
+
     .line 40
-    :cond_2
-    iget-object p0, v0, Lza7;->c:Landroidx/appcompat/widget/ActionBarOverlayLayout;
-
     .line 41
+    const-string v0, "https://"
+
     .line 42
-    iget-boolean v2, v0, Lza7;->u:Z
-
     .line 43
-    .line 44
-    invoke-virtual {p0, v2}, Landroidx/appcompat/widget/ActionBarOverlayLayout;->setHideOnContentScrollEnabled(Z)V
+    invoke-static {p0, v0, v2}, Lhd6;->S(Ljava/lang/String;Ljava/lang/String;Z)Z
 
+    .line 44
     .line 45
     .line 46
+    move-result p0
+
     .line 47
-    iput-object v1, v0, Lza7;->i:Lya7;
+    if-eqz p0, :cond_1
 
     .line 48
     .line 49
-    return-void
-.end method
+    goto :goto_1
 
-.method public final b()Landroid/view/View;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lya7;->o:Ljava/lang/ref/WeakReference;
-
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
-
-    .line 4
-    .line 5
-    invoke-virtual {p0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    check-cast p0, Landroid/view/View;
-
-    .line 10
-    .line 11
-    return-object p0
-
-    .line 12
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 13
-    return-object p0
-.end method
-
-.method public final c()Laj3;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lya7;->m:Laj3;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final d(Laj3;Landroid/view/MenuItem;)Z
-    .locals 0
-
-    .line 1
-    iget-object p1, p0, Lya7;->n:Lfp2;
-
-    .line 2
-    .line 3
-    if-eqz p1, :cond_0
-
-    .line 4
-    .line 5
-    iget-object p1, p1, Lfp2;->k:Ljava/lang/Object;
-
-    .line 6
-    .line 7
-    check-cast p1, Lke1;
-
-    .line 8
-    .line 9
-    invoke-virtual {p1, p0, p2}, Lke1;->u(Lh6;Landroid/view/MenuItem;)Z
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    return p0
-
-    .line 14
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 15
-    return p0
-.end method
-
-.method public final e()Landroid/view/MenuInflater;
-    .locals 1
-
-    .line 1
-    new-instance v0, Ljf6;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lya7;->l:Landroid/content/Context;
-
-    .line 4
-    .line 5
-    invoke-direct {v0, p0}, Ljf6;-><init>(Landroid/content/Context;)V
-
-    .line 6
-    .line 7
-    .line 8
-    return-object v0
-.end method
-
-.method public final f()Ljava/lang/CharSequence;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lya7;->p:Lza7;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lza7;->f:Landroidx/appcompat/widget/ActionBarContextView;
-
-    .line 4
-    .line 5
-    invoke-virtual {p0}, Landroidx/appcompat/widget/ActionBarContextView;->getSubtitle()Ljava/lang/CharSequence;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    return-object p0
-.end method
-
-.method public final g()Ljava/lang/CharSequence;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lya7;->p:Lza7;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lza7;->f:Landroidx/appcompat/widget/ActionBarContextView;
-
-    .line 4
-    .line 5
-    invoke-virtual {p0}, Landroidx/appcompat/widget/ActionBarContextView;->getTitle()Ljava/lang/CharSequence;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    return-object p0
-.end method
-
-.method public final h(Laj3;)V
-    .locals 0
-
-    .line 1
-    iget-object p1, p0, Lya7;->n:Lfp2;
-
-    .line 2
-    .line 3
-    if-nez p1, :cond_0
-
-    .line 4
-    .line 5
-    goto :goto_0
-
-    .line 6
-    :cond_0
-    invoke-virtual {p0}, Lya7;->i()V
-
-    .line 7
-    .line 8
-    .line 9
-    iget-object p0, p0, Lya7;->p:Lza7;
-
-    .line 10
-    .line 11
-    iget-object p0, p0, Lza7;->f:Landroidx/appcompat/widget/ActionBarContextView;
-
-    .line 12
-    .line 13
-    iget-object p0, p0, Landroidx/appcompat/widget/ActionBarContextView;->m:Ld6;
-
-    .line 14
-    .line 15
-    if-eqz p0, :cond_1
-
-    .line 16
-    .line 17
-    invoke-virtual {p0}, Ld6;->l()Z
-
-    .line 18
-    .line 19
-    .line 20
+    .line 50
     :cond_1
     :goto_0
-    return-void
+    return v1
+
+    .line 51
+    :cond_2
+    :goto_1
+    return v2
+
+    .line 52
+    :cond_3
+    move v0, v1
+
+    .line 53
+    :goto_2
+    invoke-virtual {p0}, Ljava/lang/String;->length()I
+
+    .line 54
+    .line 55
+    .line 56
+    move-result v3
+
+    .line 57
+    if-ge v0, v3, :cond_5
+
+    .line 58
+    .line 59
+    invoke-virtual {p0, v0}, Ljava/lang/String;->charAt(I)C
+
+    .line 60
+    .line 61
+    .line 62
+    move-result v3
+
+    .line 63
+    invoke-static {v3}, Lim;->P(C)Z
+
+    .line 64
+    .line 65
+    .line 66
+    move-result v3
+
+    .line 67
+    if-eqz v3, :cond_4
+
+    .line 68
+    .line 69
+    move v1, v2
+
+    .line 70
+    goto :goto_3
+
+    .line 71
+    :cond_4
+    add-int/lit8 v0, v0, 0x1
+
+    .line 72
+    .line 73
+    goto :goto_2
+
+    .line 74
+    :cond_5
+    :goto_3
+    xor-int/lit8 p0, v1, 0x1
+
+    .line 75
+    .line 76
+    return p0
 .end method
 
-.method public final i()V
-    .locals 2
+.method public static final b(Ljava/lang/String;)Ljava/lang/String;
+    .locals 3
 
     .line 1
-    iget-object v0, p0, Lya7;->p:Lza7;
+    invoke-static {p0, p0}, Ly96;->p(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 2
     .line 3
-    iget-object v0, v0, Lza7;->i:Lya7;
-
     .line 4
+    move-result-object p0
+
     .line 5
-    if-eq v0, p0, :cond_0
+    const-string v0, "http://"
 
     .line 6
     .line 7
-    return-void
+    const/4 v1, 0x1
 
     .line 8
-    :cond_0
-    iget-object v0, p0, Lya7;->m:Laj3;
+    invoke-static {p0, v0, v1}, Lhd6;->S(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     .line 9
     .line 10
-    invoke-virtual {v0}, Laj3;->w()V
-
     .line 11
+    move-result v2
+
     .line 12
+    if-nez v2, :cond_1
+
     .line 13
-    :try_start_0
-    iget-object v1, p0, Lya7;->n:Lfp2;
-
     .line 14
-    .line 15
-    invoke-virtual {v1, p0, v0}, Lfp2;->B(Lh6;Landroid/view/Menu;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    const-string v2, "https://"
 
+    .line 15
     .line 16
+    invoke-static {p0, v2, v1}, Lhd6;->S(Ljava/lang/String;Ljava/lang/String;Z)Z
+
     .line 17
     .line 18
-    invoke-virtual {v0}, Laj3;->v()V
-
     .line 19
-    .line 20
-    .line 21
-    return-void
+    move-result v1
 
+    .line 20
+    if-eqz v1, :cond_0
+
+    .line 21
     .line 22
-    :catchall_0
-    move-exception p0
+    goto :goto_0
 
     .line 23
-    invoke-virtual {v0}, Laj3;->v()V
+    :cond_0
+    invoke-virtual {v0, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     .line 24
     .line 25
     .line 26
-    throw p0
+    move-result-object p0
+
+    .line 27
+    :cond_1
+    :goto_0
+    return-object p0
 .end method
 
-.method public final j()Z
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lya7;->p:Lza7;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lza7;->f:Landroidx/appcompat/widget/ActionBarContextView;
-
-    .line 4
-    .line 5
-    iget-boolean p0, p0, Landroidx/appcompat/widget/ActionBarContextView;->B:Z
-
-    .line 6
-    .line 7
-    return p0
-.end method
-
-.method public final k(Landroid/view/View;)V
+.method public static c(Ljava/lang/String;Le62;)V
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lya7;->p:Lza7;
+    :try_start_0
+    invoke-interface {p1}, Le62;->invoke()Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 2
     .line 3
-    iget-object v0, v0, Lza7;->f:Landroidx/appcompat/widget/ActionBarContextView;
-
     .line 4
-    .line 5
-    invoke-virtual {v0, p1}, Landroidx/appcompat/widget/ActionBarContextView;->setCustomView(Landroid/view/View;)V
-
-    .line 6
-    .line 7
-    .line 8
-    new-instance v0, Ljava/lang/ref/WeakReference;
-
-    .line 9
-    .line 10
-    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    .line 11
-    .line 12
-    .line 13
-    iput-object v0, p0, Lya7;->o:Ljava/lang/ref/WeakReference;
-
-    .line 14
-    .line 15
     return-void
-.end method
 
-.method public final l(I)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lya7;->p:Lza7;
-
-    .line 2
-    .line 3
-    iget-object v0, v0, Lza7;->a:Landroid/content/Context;
-
-    .line 4
     .line 5
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    :catch_0
+    move-exception p1
 
     .line 6
+    const-string v0, " failed"
+
     .line 7
     .line 8
-    move-result-object v0
+    invoke-virtual {p0, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     .line 9
-    invoke-virtual {v0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
     .line 10
     .line 11
+    move-result-object p0
+
     .line 12
-    move-result-object p1
+    const-string v0, "WebViewContent"
 
     .line 13
-    invoke-virtual {p0, p1}, Lya7;->m(Ljava/lang/CharSequence;)V
-
     .line 14
+    invoke-static {v0, p0, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+
     .line 15
     .line 16
-    return-void
-.end method
-
-.method public final m(Ljava/lang/CharSequence;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lya7;->p:Lza7;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lza7;->f:Landroidx/appcompat/widget/ActionBarContextView;
-
-    .line 4
-    .line 5
-    invoke-virtual {p0, p1}, Landroidx/appcompat/widget/ActionBarContextView;->setSubtitle(Ljava/lang/CharSequence;)V
-
-    .line 6
-    .line 7
-    .line 8
-    return-void
-.end method
-
-.method public final n(I)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lya7;->p:Lza7;
-
-    .line 2
-    .line 3
-    iget-object v0, v0, Lza7;->a:Landroid/content/Context;
-
-    .line 4
-    .line 5
-    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object v0
-
-    .line 9
-    invoke-virtual {v0, p1}, Landroid/content/res/Resources;->getString(I)Ljava/lang/String;
-
-    .line 10
-    .line 11
-    .line 12
-    move-result-object p1
-
-    .line 13
-    invoke-virtual {p0, p1}, Lya7;->o(Ljava/lang/CharSequence;)V
-
-    .line 14
-    .line 15
-    .line 16
-    return-void
-.end method
-
-.method public final o(Ljava/lang/CharSequence;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lya7;->p:Lza7;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lza7;->f:Landroidx/appcompat/widget/ActionBarContextView;
-
-    .line 4
-    .line 5
-    invoke-virtual {p0, p1}, Landroidx/appcompat/widget/ActionBarContextView;->setTitle(Ljava/lang/CharSequence;)V
-
-    .line 6
-    .line 7
-    .line 8
-    return-void
-.end method
-
-.method public final p(Z)V
-    .locals 0
-
-    .line 1
-    iput-boolean p1, p0, Lh6;->k:Z
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lya7;->p:Lza7;
-
-    .line 4
-    .line 5
-    iget-object p0, p0, Lza7;->f:Landroidx/appcompat/widget/ActionBarContextView;
-
-    .line 6
-    .line 7
-    invoke-virtual {p0, p1}, Landroidx/appcompat/widget/ActionBarContextView;->setTitleOptional(Z)V
-
-    .line 8
-    .line 9
-    .line 10
+    .line 17
     return-void
 .end method

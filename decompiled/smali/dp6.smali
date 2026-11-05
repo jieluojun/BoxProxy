@@ -1,151 +1,71 @@
 .class public final Ldp6;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-
-# static fields
-.field public static final c:Ljava/lang/ThreadLocal;
+.super Lz81;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final a:Landroid/text/Editable;
+.field public j:Lep6;
 
-.field public final b:Landroid/text/DynamicLayout;
+.field public synthetic k:Ljava/lang/Object;
+
+.field public final synthetic l:Lep6;
+
+.field public m:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lep6;Lz81;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/lang/ThreadLocal;
+    iput-object p1, p0, Ldp6;->l:Lep6;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
+    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
 
     .line 4
     .line 5
     .line 6
-    sput-object v0, Ldp6;->c:Ljava/lang/ThreadLocal;
-
-    .line 7
-    .line 8
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 3
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldp6;->k:Ljava/lang/Object;
 
     .line 2
     .line 3
-    .line 4
-    invoke-static {}, Landroid/text/Editable$Factory;->getInstance()Landroid/text/Editable$Factory;
+    iget p1, p0, Ldp6;->m:I
 
+    .line 4
     .line 5
+    const/high16 v0, -0x80000000
+
     .line 6
     .line 7
-    move-result-object v0
+    or-int/2addr p1, v0
 
     .line 8
-    const-string v1, ""
+    iput p1, p0, Ldp6;->m:I
 
     .line 9
     .line 10
-    invoke-virtual {v0, v1}, Landroid/text/Editable$Factory;->newEditable(Ljava/lang/CharSequence;)Landroid/text/Editable;
+    iget-object p1, p0, Ldp6;->l:Lep6;
 
     .line 11
     .line 12
+    invoke-virtual {p1, p0}, Lep6;->t(Lz81;)Ljava/lang/Object;
+
     .line 13
-    move-result-object v0
-
     .line 14
-    iput-object v0, p0, Ldp6;->a:Landroid/text/Editable;
-
     .line 15
+    move-result-object p0
+
     .line 16
-    new-instance v1, Landroid/text/TextPaint;
-
-    .line 17
-    .line 18
-    invoke-direct {v1}, Landroid/text/TextPaint;-><init>()V
-
-    .line 19
-    .line 20
-    .line 21
-    const v2, 0x3fffffff    # 1.9999999f
-
-    .line 22
-    .line 23
-    .line 24
-    invoke-static {v0, v1, v2}, Landroid/text/DynamicLayout$Builder;->obtain(Ljava/lang/CharSequence;Landroid/text/TextPaint;I)Landroid/text/DynamicLayout$Builder;
-
-    .line 25
-    .line 26
-    .line 27
-    move-result-object v0
-
-    .line 28
-    const/4 v1, 0x1
-
-    .line 29
-    invoke-virtual {v0, v1}, Landroid/text/DynamicLayout$Builder;->setIncludePad(Z)Landroid/text/DynamicLayout$Builder;
-
-    .line 30
-    .line 31
-    .line 32
-    move-result-object v0
-
-    .line 33
-    const/4 v1, 0x0
-
-    .line 34
-    invoke-virtual {v0, v1, v1}, Landroid/text/DynamicLayout$Builder;->setLineSpacing(FF)Landroid/text/DynamicLayout$Builder;
-
-    .line 35
-    .line 36
-    .line 37
-    move-result-object v0
-
-    .line 38
-    sget-object v1, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR:Landroid/text/TextDirectionHeuristic;
-
-    .line 39
-    .line 40
-    invoke-virtual {v0, v1}, Landroid/text/DynamicLayout$Builder;->setTextDirection(Landroid/text/TextDirectionHeuristic;)Landroid/text/DynamicLayout$Builder;
-
-    .line 41
-    .line 42
-    .line 43
-    move-result-object v0
-
-    .line 44
-    sget-object v1, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
-
-    .line 45
-    .line 46
-    invoke-virtual {v0, v1}, Landroid/text/DynamicLayout$Builder;->setAlignment(Landroid/text/Layout$Alignment;)Landroid/text/DynamicLayout$Builder;
-
-    .line 47
-    .line 48
-    .line 49
-    move-result-object v0
-
-    .line 50
-    invoke-virtual {v0}, Landroid/text/DynamicLayout$Builder;->build()Landroid/text/DynamicLayout;
-
-    .line 51
-    .line 52
-    .line 53
-    move-result-object v0
-
-    .line 54
-    iput-object v0, p0, Ldp6;->b:Landroid/text/DynamicLayout;
-
-    .line 55
-    .line 56
-    return-void
+    return-object p0
 .end method

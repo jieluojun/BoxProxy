@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="abc_action_bar_up_description">向上瀏覽</string>
     <string name="abc_action_mode_done">完成</string>
@@ -321,7 +321,6 @@
     <string name="home_ip_geo_unavailable">暫不可用</string>
     <string name="home_ip_interface_label">介面</string>
     <string name="home_ip_loading">讀取中</string>
-    <string name="home_ip_loading_detail">正在偵測目前網路資訊</string>
     <string name="home_ip_mode_lan">LAN</string>
     <string name="home_ip_mode_wan">WAN</string>
     <string name="home_latency_refresh">重新整理延遲</string>
@@ -801,8 +800,13 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="rules_search_hint">搜尋本頁規則</string>
     <string name="rules_tab_providers">規則集</string>
     <string name="rules_tab_route">鏈路</string>
-    <string name="rules_trace_attempt_failed">失敗</string>
-    <string name="rules_trace_attempt_ok">已連線</string>
+    <string name="rules_trace_failure_connect">無法與伺服器建立 TCP 連線</string>
+    <string name="rules_trace_failure_dns">網域名稱解析失敗</string>
+    <string name="rules_trace_failure_exchange">連線在回應完成前被關閉</string>
+    <string name="rules_trace_failure_invalid_target">這不是有效的 HTTP(S) 目標</string>
+    <string name="rules_trace_failure_protocol">伺服器在互動過程中違反了協定</string>
+    <string name="rules_trace_failure_timeout">請求超出了探測時限</string>
+    <string name="rules_trace_failure_tls">TLS 握手失敗或憑證被拒絕</string>
     <string name="rules_trace_step_dns">DNS 解析</string>
     <string name="rules_trace_step_first_byte">首位元組</string>
     <string name="rules_trace_step_response">回應</string>
@@ -912,6 +916,7 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="service_accelerated_download_prefix_title">加速位址</string>
     <string name="service_accelerated_download_subtitle">為下載資源啟用加速通道</string>
     <string name="service_accelerated_download_title">加速下載</string>
+    <string name="service_auto_start_subtitle">安裝 Root 開機腳本，開機後自動啟動服務</string>
     <string name="service_auto_start_title">開機自啟</string>
     <string name="settings_backup_action">備份</string>
     <string name="settings_backup_cleanup_failed">還原前清理舊檔案失敗</string>
@@ -1155,16 +1160,4 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="wifi_match_picker_location_required">請開啟定位以掃描 Wi-Fi</string>
     <string name="wifi_match_picker_permission_required">需要 Wi-Fi 權限</string>
     <string name="wifi_match_ssid_hint">SSID</string>
-<string name="proxy_core_mihomo_dingtalk">Mihomo Smart + eBPF + 钉钉直连</string>
-    <string name="proxy_core_sing_box_dingtalk">Sing-Box Smart + eBPF + 钉钉直连</string>
-    <string name="proxy_config_restore_default">恢復預設設定</string>
-    <string name="proxy_config_restore_done">已恢復預設設定：%1$s</string>
-    <string name="proxy_config_restore_done_bak">已恢復預設設定：%1$s（原檔案已備份為 %1$s.bak）</string>
-    <string name="proxy_config_restore_failed">恢復預設設定失敗：%1$s</string>
-    <string name="proxy_config_restore_none">目前核心沒有內建預設設定</string>
-    <string name="service_auto_start_subtitle">安裝 Root 開機腳本，開機後自動啟動服務（VPN 執行模式需授予應用程式自啟動權限）</string>
-    <string name="proxy_selector_hide_unavailable">隱藏不可用節點</string>
-    <string name="service_battery_unrestricted_title">電池最佳化無限制</string>
-    <string name="service_battery_unrestricted_subtitle">將應用程式加入電池最佳化白名單，避免背景被系統凍結或結束（關閉需在系統設定頁中操作）</string>
-    <string name="service_battery_unrestricted_already">電池最佳化已關閉</string>
 </resources>

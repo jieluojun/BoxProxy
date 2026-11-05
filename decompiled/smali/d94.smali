@@ -1,237 +1,195 @@
-.class public abstract Ld94;
+.class public final synthetic Ld94;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lt62;
 
 
-# static fields
-.field public static final a:[Ljava/lang/Object;
+# instance fields
+.field public final synthetic j:B
 
-.field public static final b:Lmr3;
+.field public final synthetic k:Ljava/lang/String;
+
+.field public final synthetic l:Ljava/lang/String;
+
+.field public final synthetic m:Z
+
+.field public final synthetic n:Lp62;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;ZLp62;IB)V
+    .locals 0
 
     .line 1
-    const/4 v0, 0x0
+    iput-byte p6, p0, Ld94;->j:B
 
     .line 2
-    new-array v1, v0, [Ljava/lang/Object;
-
     .line 3
+    iput-object p1, p0, Ld94;->k:Ljava/lang/String;
+
     .line 4
-    sput-object v1, Ld94;->a:[Ljava/lang/Object;
-
     .line 5
+    iput-object p2, p0, Ld94;->l:Ljava/lang/String;
+
     .line 6
-    new-instance v1, Lmr3;
-
     .line 7
-    .line 8
-    invoke-direct {v1, v0}, Lmr3;-><init>(I)V
+    iput-boolean p3, p0, Ld94;->m:Z
 
+    .line 8
     .line 9
+    iput-object p4, p0, Ld94;->n:Lp62;
+
     .line 10
     .line 11
-    sput-object v1, Ld94;->b:Lmr3;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 12
     .line 13
+    .line 14
     return-void
 .end method
 
-.method public static final a(ILjava/util/List;)V
-    .locals 3
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 16
 
     .line 1
-    invoke-interface {p1}, Ljava/util/List;->size()I
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
-    .line 4
-    move-result p1
+    iget-byte v1, v0, Ld94;->j:B
 
+    .line 4
     .line 5
-    if-ltz p0, :cond_0
+    sget-object v2, La47;->a:La47;
 
     .line 6
     .line 7
-    if-ge p0, p1, :cond_0
+    const/16 v3, 0x181
 
     .line 8
     .line 9
-    return-void
+    packed-switch v1, :pswitch_data_0
 
     .line 10
-    :cond_0
-    const-string v0, " is out of bounds. The list has "
-
     .line 11
     .line 12
-    const-string v1, " elements."
+    move-object/from16 v8, p1
 
     .line 13
     .line 14
-    const-string v2, "Index "
+    check-cast v8, Lz11;
 
     .line 15
     .line 16
-    invoke-static {p0, p1, v2, v0, v1}, Lpb1;->l(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-object/from16 v1, p2
 
     .line 17
     .line 18
-    .line 19
-    move-result-object p0
+    check-cast v1, Ljava/lang/Integer;
 
+    .line 19
     .line 20
-    invoke-static {p0}, Lvd1;->q(Ljava/lang/String;)V
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 21
     .line 22
     .line 23
-    return-void
-.end method
+    invoke-static {v3}, Lqu5;->f0(I)I
 
-.method public static final b(IILjava/util/List;)V
-    .locals 2
-
-    .line 1
-    invoke-interface {p2}, Ljava/util/List;->size()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p2
-
-    .line 5
-    if-gt p0, p1, :cond_2
-
-    .line 6
-    .line 7
-    if-ltz p0, :cond_1
-
-    .line 8
-    .line 9
-    if-gt p1, p2, :cond_0
-
-    .line 10
-    .line 11
-    return-void
-
-    .line 12
-    :cond_0
-    new-instance p0, Ljava/lang/StringBuilder;
-
-    .line 13
-    .line 14
-    const-string v0, "toIndex ("
-
-    .line 15
-    .line 16
-    invoke-direct {p0, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 17
-    .line 18
-    .line 19
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 20
-    .line 21
-    .line 22
-    const-string p1, ") is more than than the list size ("
-
-    .line 23
     .line 24
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 25
     .line 26
+    move-result v9
+
     .line 27
-    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget-object v4, v0, Ld94;->k:Ljava/lang/String;
 
     .line 28
     .line 29
+    iget-object v5, v0, Ld94;->l:Ljava/lang/String;
+
     .line 30
-    const/16 p1, 0x29
-
     .line 31
-    .line 32
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    iget-boolean v6, v0, Ld94;->m:Z
 
+    .line 32
     .line 33
+    iget-object v7, v0, Ld94;->n:Lp62;
+
     .line 34
     .line 35
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static/range {v4 .. v9}, Llg3;->j(Ljava/lang/String;Ljava/lang/String;ZLp62;Lz11;I)V
 
     .line 36
     .line 37
     .line 38
-    move-result-object p0
+    return-object v2
 
     .line 39
-    new-instance p1, Ljava/lang/IndexOutOfBoundsException;
+    :pswitch_0
+    move-object/from16 v14, p1
 
     .line 40
     .line 41
-    invoke-direct {p1, p0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+    check-cast v14, Lz11;
 
     .line 42
     .line 43
-    .line 44
-    throw p1
+    move-object/from16 v1, p2
 
+    .line 44
     .line 45
-    :cond_1
-    const-string p1, "fromIndex ("
+    check-cast v1, Ljava/lang/Integer;
 
     .line 46
     .line 47
-    const-string p2, ") is less than 0."
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 48
     .line 49
-    invoke-static {p0, p1, p2}, Lpb1;->m(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
     .line 50
+    invoke-static {v3}, Lqu5;->f0(I)I
+
     .line 51
     .line 52
-    move-result-object p0
-
     .line 53
-    invoke-static {p0}, Lvd1;->q(Ljava/lang/String;)V
+    move-result v15
 
     .line 54
+    iget-object v10, v0, Ld94;->k:Ljava/lang/String;
+
     .line 55
     .line 56
-    return-void
+    iget-object v11, v0, Ld94;->l:Ljava/lang/String;
 
     .line 57
-    :cond_2
-    const-string p2, ") is greater than toIndex ("
-
     .line 58
+    iget-boolean v12, v0, Ld94;->m:Z
+
     .line 59
-    const-string v0, ")."
-
     .line 60
+    iget-object v13, v0, Ld94;->n:Lp62;
+
     .line 61
-    const-string v1, "Indices are out of order. fromIndex ("
-
     .line 62
-    .line 63
-    invoke-static {p0, p1, v1, p2, v0}, Lpb1;->l(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static/range {v10 .. v15}, Lq94;->f(Ljava/lang/String;Ljava/lang/String;ZLp62;Lz11;I)V
 
+    .line 63
     .line 64
     .line 65
+    return-object v2
+
     .line 66
-    move-result-object p0
+    nop
 
     .line 67
-    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
-
-    .line 68
-    .line 69
-    .line 70
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

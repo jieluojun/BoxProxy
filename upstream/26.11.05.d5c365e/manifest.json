@@ -1,0 +1,22 @@
+{
+  "packageName": "com.boxproxy.box",
+  "versionName": "26.11.05.d5c365e",
+  "versionCode": 139,
+  "apktoolVersion": "2.9.3",
+  "sourceArchive": "apktool-source.tar.gz",
+  "sourceFileCount": 9660,
+  "sourceBytes": 114944519,
+  "status": "decoded-and-vanilla-rebuild-verified; customization-migration-incomplete",
+  "provenance": "Decoded locally from the user-supplied APK pinned by inputSha256 with hash-verified apktool 2.9.3. The decoded archive was independently verified and rebuilt; this is NOT custom APK or Android device validation.",
+  "sourceArchiveSha256": "c4ea99e9436f29b611700ade7c9f0ad67e2302785579fe7d26378e7e0344875b",
+  "abi": "arm64-v8a",
+  "inputFile": "BoxProxy-26.11.05.d5c365e-arm64-v8a.apk.txt",
+  "inputSha256": "4bf0a0d531038663781761692a169202fbf09893a2a385d38e011053bcf19093",
+  "apktoolSha256": "7956eb04194300ce0d0a84ad18771eebc94b89fb8d1ddcce8ea4c056818646f4",
+  "migration": {
+    "status": "migration-in-progress-not-for-release",
+    "runtimeProjectReplaced": false,
+    "androidDeviceVerified": false,
+    "progress": "migration/progress.json"
+  }
+}

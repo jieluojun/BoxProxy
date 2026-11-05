@@ -1,208 +1,336 @@
-.class public abstract Lej6;
+.class public final Lej6;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# static fields
-.field public static final a:Ljava/lang/String;
+# instance fields
+.field public final a:J
 
-.field public static final b:J
+.field public final b:J
 
-.field public static final c:I
+.field public final c:J
 
-.field public static final d:I
-
-.field public static final e:J
-
-.field public static final f:Liv1;
+.field public final d:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
+.method public constructor <init>(JJJJ)V
+    .locals 0
 
     .line 1
-    const-string v0, "kotlinx.coroutines.scheduler.default.name"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    sget v1, Lug6;->a:I
-
     .line 4
-    .line 5
-    :try_start_0
-    invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+    iput-wide p1, p0, Lej6;->a:J
 
+    .line 5
     .line 6
+    iput-wide p3, p0, Lej6;->b:J
+
     .line 7
     .line 8
-    move-result-object v0
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    iput-wide p5, p0, Lej6;->c:J
 
     .line 9
-    goto :goto_0
-
     .line 10
-    :catch_0
-    const/4 v0, 0x0
+    iput-wide p7, p0, Lej6;->d:J
 
     .line 11
-    :goto_0
-    if-nez v0, :cond_0
+    .line 12
+    return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    .line 1
+    if-ne p0, p1, :cond_0
+
+    .line 2
+    .line 3
+    goto :goto_1
+
+    .line 4
+    :cond_0
+    instance-of v0, p1, Lej6;
+
+    .line 5
+    .line 6
+    if-nez v0, :cond_1
+
+    .line 7
+    .line 8
+    goto :goto_0
+
+    .line 9
+    :cond_1
+    check-cast p1, Lej6;
+
+    .line 10
+    .line 11
+    iget-wide v0, p0, Lej6;->a:J
 
     .line 12
     .line 13
-    const-string v0, "DefaultDispatcher"
+    iget-wide v2, p1, Lej6;->a:J
 
     .line 14
     .line 15
-    :cond_0
-    sput-object v0, Lej6;->a:Ljava/lang/String;
+    invoke-static {v0, v1, v2, v3}, Lc27;->a(JJ)Z
 
     .line 16
     .line 17
-    const-wide/16 v4, 0x1
-
     .line 18
+    move-result v0
+
     .line 19
-    const-wide v6, 0x7fffffffffffffffL
+    if-nez v0, :cond_2
 
     .line 20
     .line 21
+    goto :goto_0
+
     .line 22
+    :cond_2
+    iget-wide v0, p0, Lej6;->b:J
+
     .line 23
     .line 24
-    const-string v1, "kotlinx.coroutines.scheduler.resolution.ns"
+    iget-wide v2, p1, Lej6;->b:J
 
     .line 25
     .line 26
-    const-wide/32 v2, 0x186a0
+    invoke-static {v0, v1, v2, v3}, Lc27;->a(JJ)Z
 
     .line 27
     .line 28
     .line 29
-    invoke-static/range {v1 .. v7}, Ln33;->K(Ljava/lang/String;JJJ)J
+    move-result v0
 
     .line 30
+    if-nez v0, :cond_3
+
     .line 31
     .line 32
-    move-result-wide v0
+    goto :goto_0
 
     .line 33
-    sput-wide v0, Lej6;->b:J
+    :cond_3
+    iget-wide v0, p0, Lej6;->c:J
 
     .line 34
     .line 35
-    sget v0, Lug6;->a:I
+    iget-wide v2, p1, Lej6;->c:J
 
     .line 36
     .line 37
-    const/4 v1, 0x2
+    invoke-static {v0, v1, v2, v3}, Lc27;->a(JJ)Z
 
     .line 38
-    if-ge v0, v1, :cond_1
-
     .line 39
     .line 40
-    move v0, v1
+    move-result v0
 
     .line 41
-    :cond_1
-    const/16 v1, 0x8
+    if-nez v0, :cond_4
 
     .line 42
     .line 43
-    const-string v2, "kotlinx.coroutines.scheduler.core.pool.size"
+    goto :goto_0
 
     .line 44
-    .line 45
-    invoke-static {v0, v2, v1}, Ln33;->L(ILjava/lang/String;I)I
+    :cond_4
+    iget-wide v0, p0, Lej6;->d:J
 
+    .line 45
     .line 46
+    iget-wide p0, p1, Lej6;->d:J
+
     .line 47
     .line 48
-    move-result v0
+    invoke-static {v0, v1, p0, p1}, Lc27;->a(JJ)Z
 
     .line 49
-    sput v0, Lej6;->c:I
-
     .line 50
     .line 51
-    const v0, 0x1ffffe
+    move-result p0
 
     .line 52
+    if-nez p0, :cond_5
+
     .line 53
     .line 54
-    const/4 v1, 0x4
+    :goto_0
+    const/4 p0, 0x0
 
     .line 55
-    const-string v2, "kotlinx.coroutines.scheduler.max.pool.size"
+    return p0
 
     .line 56
-    .line 57
-    invoke-static {v0, v2, v1}, Ln33;->L(ILjava/lang/String;I)I
+    :cond_5
+    :goto_1
+    const/4 p0, 0x1
 
-    .line 58
-    .line 59
-    .line 60
+    .line 57
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 4
+
+    .line 1
+    iget-wide v0, p0, Lej6;->a:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    .line 4
+    .line 5
+    .line 6
     move-result v0
 
-    .line 61
-    sput v0, Lej6;->d:I
+    .line 7
+    const/16 v1, 0x1f
 
-    .line 62
-    .line 63
-    const-wide/16 v4, 0x1
+    .line 8
+    .line 9
+    mul-int/2addr v0, v1
 
-    .line 64
-    .line 65
-    const-wide v6, 0x7fffffffffffffffL
+    .line 10
+    iget-wide v2, p0, Lej6;->b:J
 
-    .line 66
-    .line 67
-    .line 68
-    .line 69
-    .line 70
-    const-string v1, "kotlinx.coroutines.scheduler.keep.alive.sec"
+    .line 11
+    .line 12
+    invoke-static {v0, v1, v2, v3}, Lhs5;->d(IIJ)I
 
-    .line 71
-    .line 72
-    const-wide/16 v2, 0x3c
+    .line 13
+    .line 14
+    .line 15
+    move-result v0
 
-    .line 73
-    .line 74
-    invoke-static/range {v1 .. v7}, Ln33;->K(Ljava/lang/String;JJJ)J
+    .line 16
+    iget-wide v2, p0, Lej6;->c:J
 
-    .line 75
-    .line 76
-    .line 77
-    move-result-wide v0
+    .line 17
+    .line 18
+    invoke-static {v0, v1, v2, v3}, Lhs5;->d(IIJ)I
 
-    .line 78
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
+    .line 19
+    .line 20
+    .line 21
+    move-result v0
 
-    .line 79
-    .line 80
-    invoke-virtual {v2, v0, v1}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
+    .line 22
+    iget-wide v1, p0, Lej6;->d:J
 
-    .line 81
-    .line 82
-    .line 83
-    move-result-wide v0
+    .line 23
+    .line 24
+    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
 
-    .line 84
-    sput-wide v0, Lej6;->e:J
+    .line 25
+    .line 26
+    .line 27
+    move-result p0
 
-    .line 85
-    .line 86
-    sget-object v0, Liv1;->y:Liv1;
+    .line 28
+    add-int/2addr p0, v0
 
-    .line 87
-    .line 88
-    sput-object v0, Lej6;->f:Liv1;
+    .line 29
+    return p0
+.end method
 
-    .line 89
-    .line 90
-    return-void
+.method public final toString()Ljava/lang/String;
+    .locals 6
+
+    .line 1
+    iget-wide v0, p0, Lej6;->a:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Ljv0;->i(J)Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    iget-wide v1, p0, Lej6;->b:J
+
+    .line 8
+    .line 9
+    invoke-static {v1, v2}, Ljv0;->i(J)Ljava/lang/String;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    iget-wide v2, p0, Lej6;->c:J
+
+    .line 14
+    .line 15
+    invoke-static {v2, v3}, Ljv0;->i(J)Ljava/lang/String;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object v2
+
+    .line 19
+    iget-wide v3, p0, Lej6;->d:J
+
+    .line 20
+    .line 21
+    invoke-static {v3, v4}, Ljv0;->i(J)Ljava/lang/String;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object p0
+
+    .line 25
+    const-string v3, ", contentColor="
+
+    .line 26
+    .line 27
+    const-string v4, ", selectedBackgroundColor="
+
+    .line 28
+    .line 29
+    const-string v5, "TabRowColors(backgroundColor="
+
+    .line 30
+    .line 31
+    invoke-static {v5, v0, v3, v1, v4}, Loc1;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 32
+    .line 33
+    .line 34
+    move-result-object v0
+
+    .line 35
+    const-string v1, ", selectedContentColor="
+
+    .line 36
+    .line 37
+    const-string v3, ")"
+
+    .line 38
+    .line 39
+    invoke-static {v0, v2, v1, p0, v3}, Loc1;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 40
+    .line 41
+    .line 42
+    move-result-object p0
+
+    .line 43
+    return-object p0
 .end method

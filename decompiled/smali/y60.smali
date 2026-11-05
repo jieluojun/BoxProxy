@@ -1,20 +1,21 @@
 .class public final Ly60;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lo80;
+.implements Lx60;
+.implements Lce7;
 
 
 # static fields
-.field public static final INSTANCE:Ly60;
+.field public static final j:Ly60;
 
-.field public static final synthetic a:Lt03;
+.field public static final k:Ly60;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method static synthetic constructor <clinit>()V
+    .locals 1
 
     .line 1
     new-instance v0, Ly60;
@@ -26,104 +27,37 @@
     .line 4
     .line 5
     .line 6
-    sput-object v0, Ly60;->INSTANCE:Ly60;
+    sput-object v0, Ly60;->j:Ly60;
 
     .line 7
     .line 8
-    new-instance v0, Lfu;
+    new-instance v0, Ly60;
 
     .line 9
     .line 10
-    const/16 v1, 0x12
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     .line 11
     .line 12
-    invoke-direct {v0, v1}, Lfu;-><init>(B)V
-
     .line 13
+    sput-object v0, Ly60;->k:Ly60;
+
     .line 14
     .line 15
-    sget-object v1, Lt43;->j:Lt43;
-
-    .line 16
-    .line 17
-    invoke-static {v1, v0}, Loc7;->Q(Lt43;Ld52;)Lt03;
-
-    .line 18
-    .line 19
-    .line 20
-    move-result-object v0
-
-    .line 21
-    sput-object v0, Ly60;->a:Lt03;
-
-    .line 22
-    .line 23
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of p0, p1, Ly60;
-
-    .line 6
-    .line 7
-    if-nez p0, :cond_1
-
-    .line 8
-    .line 9
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-
-    .line 11
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
+.method public d(Landroid/app/Activity;)Landroid/graphics/Rect;
     .locals 0
 
     .line 1
-    const p0, -0x5fcf41f8
+    const-class p0, Landroid/view/WindowManager;
 
     .line 2
     .line 3
-    .line 4
-    return p0
-.end method
-
-.method public final serializer()Lgx2;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lgx2;"
-        }
-    .end annotation
-
-    .line 1
-    sget-object p0, Ly60;->a:Lt03;
-
-    .line 2
-    .line 3
-    invoke-interface {p0}, Lt03;->getValue()Ljava/lang/Object;
+    invoke-virtual {p1, p0}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
 
     .line 4
     .line 5
@@ -131,20 +65,103 @@
     move-result-object p0
 
     .line 7
-    check-cast p0, Lgx2;
+    check-cast p0, Landroid/view/WindowManager;
 
     .line 8
     .line 9
+    invoke-interface {p0}, Landroid/view/WindowManager;->getCurrentWindowMetrics()Landroid/view/WindowMetrics;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    invoke-virtual {p0}, Landroid/view/WindowMetrics;->getBounds()Landroid/graphics/Rect;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p0
+
+    .line 17
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 18
+    .line 19
+    .line 20
     return-object p0
 .end method
 
-.method public final toString()Ljava/lang/String;
+.method public f(Landroid/content/Context;Lzh1;)Lyd7;
     .locals 0
 
     .line 1
-    const-string p0, "About"
+    const-class p0, Landroid/view/WindowManager;
 
     .line 2
     .line 3
-    return-object p0
+    invoke-virtual {p1, p0}, Landroid/content/Context;->getSystemService(Ljava/lang/Class;)Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Landroid/view/WindowManager;
+
+    .line 8
+    .line 9
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p1
+
+    .line 13
+    invoke-virtual {p1}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p1
+
+    .line 17
+    iget p1, p1, Landroid/util/DisplayMetrics;->density:F
+
+    .line 18
+    .line 19
+    new-instance p2, Lyd7;
+
+    .line 20
+    .line 21
+    invoke-interface {p0}, Landroid/view/WindowManager;->getCurrentWindowMetrics()Landroid/view/WindowMetrics;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object p0
+
+    .line 25
+    invoke-virtual {p0}, Landroid/view/WindowMetrics;->getBounds()Landroid/graphics/Rect;
+
+    .line 26
+    .line 27
+    .line 28
+    move-result-object p0
+
+    .line 29
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 30
+    .line 31
+    .line 32
+    invoke-direct {p2, p0, p1}, Lyd7;-><init>(Landroid/graphics/Rect;F)V
+
+    .line 33
+    .line 34
+    .line 35
+    return-object p2
 .end method

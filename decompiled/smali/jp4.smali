@@ -1,37 +1,45 @@
-.class public final Ljp4;
+.class public abstract Ljp4;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final a:J
-
-.field public final b:J
-
-.field public final c:Z
+# static fields
+.field public static final a:Lkq1;
 
 
 # direct methods
-.method public constructor <init>(JJZ)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lq54;
 
     .line 2
     .line 3
+    const/16 v1, 0x16
+
     .line 4
-    iput-wide p1, p0, Ljp4;->a:J
-
     .line 5
-    .line 6
-    iput-wide p3, p0, Ljp4;->b:J
+    invoke-direct {v0, v1}, Lq54;-><init>(B)V
 
+    .line 6
     .line 7
     .line 8
-    iput-boolean p5, p0, Ljp4;->c:Z
+    new-instance v1, Lkq1;
 
     .line 9
     .line 10
+    const/4 v2, 0x0
+
+    .line 11
+    invoke-direct {v1, v0, v2}, Lkq1;-><init>(Le62;B)V
+
+    .line 12
+    .line 13
+    .line 14
+    sput-object v1, Ljp4;->a:Lkq1;
+
+    .line 15
+    .line 16
     return-void
 .end method

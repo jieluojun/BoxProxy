@@ -1,6 +1,6 @@
 .class Lcom/sun/jna/CallbackReference$DefaultCallbackProxy;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
 .implements Lcom/sun/jna/CallbackProxy;
@@ -249,7 +249,7 @@
 
     .line 99
     .line 100
-    invoke-static {p0, p2}, Lvd1;->w(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-static {p0, p2}, Lue1;->w(Ljava/lang/String;Ljava/lang/Object;)V
 
     .line 101
     .line 102

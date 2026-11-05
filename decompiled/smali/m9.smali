@@ -1,173 +1,85 @@
 .class public final Lm9;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lno1;
+.super Ljava/lang/Throwable;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final a:Lno1;
+.field public final j:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Loo1;)V
-    .locals 0
+.method public constructor <init>(ZZLuf1;Ljava/lang/Object;)V
+    .locals 3
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p0}, Ljava/lang/Throwable;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, ",didLookahead="
 
     .line 5
     .line 6
-    .line 7
-    iput-object p1, p0, Lm9;->a:Lno1;
+    const-string v1, ",anchors="
 
+    .line 7
     .line 8
+    const-string v2, "AnchoredDraggableState was not initialized correctly. isLookingAhead="
+
     .line 9
+    .line 10
+    invoke-static {v2, v0, v1, p1, p2}, Lhs5;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZ)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    move-result-object p1
+
+    .line 14
+    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 15
+    .line 16
+    .line 17
+    const-string p2, ",targetValue="
+
+    .line 18
+    .line 19
+    invoke-virtual {p1, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 20
+    .line 21
+    .line 22
+    invoke-virtual {p1, p4}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 23
+    .line 24
+    .line 25
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 26
+    .line 27
+    .line 28
+    move-result-object p1
+
+    .line 29
+    iput-object p1, p0, Lm9;->j:Ljava/lang/String;
+
+    .line 30
+    .line 31
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 2
+.method public final getMessage()Ljava/lang/String;
+    .locals 0
 
     .line 1
-    iget-object p0, p0, Lm9;->a:Lno1;
+    iget-object p0, p0, Lm9;->j:Ljava/lang/String;
 
     .line 2
     .line 3
-    invoke-interface {p0}, Lno1;->a()J
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-wide v0
-
-    .line 7
-    return-wide v0
-.end method
-
-.method public final b(JJLwq2;Lkz2;)J
-    .locals 4
-
-    .line 1
-    invoke-virtual {p5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    invoke-virtual {p6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 5
-    .line 6
-    .line 7
-    iget p0, p5, Lwq2;->c:I
-
-    .line 8
-    .line 9
-    const/16 p6, 0x20
-
-    .line 10
-    .line 11
-    shr-long v0, p3, p6
-
-    .line 12
-    .line 13
-    long-to-int v0, v0
-
-    .line 14
-    sub-int/2addr p0, v0
-
-    .line 15
-    const/4 v0, 0x0
-
-    .line 16
-    if-gez p0, :cond_0
-
-    .line 17
-    .line 18
-    move p0, v0
-
-    .line 19
-    :cond_0
-    iget v1, p5, Lwq2;->d:I
-
-    .line 20
-    .line 21
-    const-wide v2, 0xffffffffL
-
-    .line 22
-    .line 23
-    .line 24
-    .line 25
-    .line 26
-    and-long/2addr p3, v2
-
-    .line 27
-    long-to-int p3, p3
-
-    .line 28
-    add-int p4, v1, p3
-
-    .line 29
-    .line 30
-    and-long/2addr p1, v2
-
-    .line 31
-    long-to-int p1, p1
-
-    .line 32
-    if-gt p4, p1, :cond_1
-
-    .line 33
-    .line 34
-    goto :goto_1
-
-    .line 35
-    :cond_1
-    iget p1, p5, Lwq2;->b:I
-
-    .line 36
-    .line 37
-    sub-int/2addr p1, p3
-
-    .line 38
-    if-gez p1, :cond_2
-
-    .line 39
-    .line 40
-    goto :goto_0
-
-    .line 41
-    :cond_2
-    move v0, p1
-
-    .line 42
-    :goto_0
-    move v1, v0
-
-    .line 43
-    :goto_1
-    int-to-long p0, p0
-
-    .line 44
-    shl-long/2addr p0, p6
-
-    .line 45
-    int-to-long p2, v1
-
-    .line 46
-    and-long/2addr p2, v2
-
-    .line 47
-    or-long/2addr p0, p2
-
-    .line 48
-    return-wide p0
+    return-object p0
 .end method

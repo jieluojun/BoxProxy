@@ -1,140 +1,77 @@
-.class public final enum Lti1;
-.super Ljava/lang/Enum;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final Lti1;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# static fields
-.field public static final enum j:Lti1;
+# instance fields
+.field public final a:Ljava/lang/String;
 
-.field public static final enum k:Lti1;
+.field public final b:Ljava/lang/String;
 
-.field public static final enum l:Lti1;
+.field public final c:J
 
-.field public static final synthetic m:[Lti1;
+.field public d:J
+
+.field public e:I
+
+.field public final f:I
+
+.field public final g:I
+
+.field public h:[I
+
+.field public final i:Ljava/util/TreeMap;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;JIII[ILjava/util/TreeMap;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lti1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const-string v1, "BEFORE"
-
     .line 4
-    .line 5
-    const/4 v2, 0x0
+    iput-object p1, p0, Lti1;->a:Ljava/lang/String;
 
+    .line 5
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p2, p0, Lti1;->b:Ljava/lang/String;
 
     .line 7
     .line 8
+    iput-wide p3, p0, Lti1;->c:J
+
     .line 9
-    sput-object v0, Lti1;->j:Lti1;
-
     .line 10
+    const-wide/16 p1, 0x0
+
     .line 11
-    new-instance v1, Lti1;
-
     .line 12
+    iput-wide p1, p0, Lti1;->d:J
+
     .line 13
-    const-string v2, "ON"
-
     .line 14
-    .line 15
-    const/4 v3, 0x1
+    iput p5, p0, Lti1;->e:I
 
+    .line 15
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput p6, p0, Lti1;->f:I
 
     .line 17
     .line 18
+    iput p7, p0, Lti1;->g:I
+
     .line 19
-    sput-object v1, Lti1;->k:Lti1;
-
     .line 20
+    iput-object p8, p0, Lti1;->h:[I
+
     .line 21
-    new-instance v2, Lti1;
-
     .line 22
+    iput-object p9, p0, Lti1;->i:Ljava/util/TreeMap;
+
     .line 23
-    const-string v3, "AFTER"
-
     .line 24
-    .line 25
-    const/4 v4, 0x2
-
-    .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 27
-    .line 28
-    .line 29
-    sput-object v2, Lti1;->l:Lti1;
-
-    .line 30
-    .line 31
-    filled-new-array {v0, v1, v2}, [Lti1;
-
-    .line 32
-    .line 33
-    .line 34
-    move-result-object v0
-
-    .line 35
-    sput-object v0, Lti1;->m:[Lti1;
-
-    .line 36
-    .line 37
     return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lti1;
-    .locals 1
-
-    .line 1
-    const-class v0, Lti1;
-
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Lti1;
-
-    .line 8
-    .line 9
-    return-object p0
-.end method
-
-.method public static values()[Lti1;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lti1;->m:[Lti1;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [Lti1;
-
-    .line 8
-    .line 9
-    return-object v0
 .end method

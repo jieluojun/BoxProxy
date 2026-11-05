@@ -1,52 +1,70 @@
 .class public final Lcc4;
-.super Lwc4;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Lvp3;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lyj3;
 
 
-# static fields
-.field public static final c:Lcc4;
+# instance fields
+.field public x:Lp62;
 
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    .line 1
-    new-instance v0, Lcc4;
-
-    .line 2
-    .line 3
-    const/4 v1, 0x0
-
-    .line 4
-    const/4 v2, 0x3
-
-    .line 5
-    invoke-direct {v0, v1, v1, v2}, Lwc4;-><init>(III)V
-
-    .line 6
-    .line 7
-    .line 8
-    sput-object v0, Lcc4;->c:Lcc4;
-
-    .line 9
-    .line 10
-    return-void
-.end method
+.field public y:J
 
 
 # virtual methods
-.method public final a(Lnp2;Lqu;Lw56;Lca5;Lyc4;)V
+.method public final d(J)V
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lcc4;->y:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1, p1, p2}, Ljs2;->a(JJ)Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    if-nez v0, :cond_0
+
+    .line 8
+    .line 9
+    iget-object v0, p0, Lcc4;->x:Lp62;
+
+    .line 10
+    .line 11
+    new-instance v1, Ljs2;
+
+    .line 12
+    .line 13
+    invoke-direct {v1, p1, p2}, Ljs2;-><init>(J)V
+
+    .line 14
+    .line 15
+    .line 16
+    invoke-interface {v0, v1}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 17
+    .line 18
+    .line 19
+    iput-wide p1, p0, Lcc4;->y:J
+
+    .line 20
+    .line 21
+    :cond_0
+    return-void
+.end method
+
+.method public final t1()Z
     .locals 0
 
     .line 1
-    const/4 p0, 0x0
+    const/4 p0, 0x1
 
     .line 2
-    invoke-virtual {p3, p0}, Lw56;->k(I)V
-
-    .line 3
-    .line 4
-    .line 5
-    return-void
+    return p0
 .end method

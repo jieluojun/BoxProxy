@@ -1,547 +1,184 @@
-.class public final Las5;
-.super Ljo3;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lsz2;
-.implements Lcw5;
+.class public final enum Las5;
+.super Ljava/lang/Enum;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public x:Les5;
+# static fields
+.field public static final enum j:Las5;
 
-.field public y:Z
+.field public static final enum k:Las5;
+
+.field public static final enum l:Las5;
+
+.field public static final enum m:Las5;
+
+.field public static final enum n:Las5;
+
+.field public static final synthetic o:[Las5;
 
 
-# virtual methods
-.method public final Q0(Llw5;)V
-    .locals 4
+# direct methods
+.method static constructor <clinit>()V
+    .locals 7
 
     .line 1
-    invoke-static {p1}, Ljw5;->p(Llw5;)V
+    new-instance v0, Las5;
 
     .line 2
     .line 3
+    const-string v1, "TopBar"
+
     .line 4
-    new-instance v0, Lmr5;
-
     .line 5
-    .line 6
-    new-instance v1, Lzr5;
-
-    .line 7
-    .line 8
     const/4 v2, 0x0
 
+    .line 6
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 7
+    .line 8
     .line 9
-    invoke-direct {v1, p0, v2}, Lzr5;-><init>(Las5;B)V
+    sput-object v0, Las5;->j:Las5;
 
     .line 10
     .line 11
-    .line 12
-    new-instance v2, Lzr5;
+    new-instance v1, Las5;
 
+    .line 12
     .line 13
+    const-string v2, "MainContent"
+
     .line 14
+    .line 15
     const/4 v3, 0x1
 
-    .line 15
-    invoke-direct {v2, p0, v3}, Lzr5;-><init>(Las5;B)V
-
     .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 17
     .line 18
-    invoke-direct {v0, v1, v2}, Lmr5;-><init>(Ld52;Ld52;)V
-
     .line 19
+    sput-object v1, Las5;->k:Las5;
+
     .line 20
     .line 21
-    iget-boolean p0, p0, Las5;->y:Z
+    new-instance v2, Las5;
 
     .line 22
     .line 23
-    if-eqz p0, :cond_0
+    const-string v3, "Snackbar"
 
     .line 24
     .line 25
-    sget-object p0, Lhw5;->x:Lkw5;
+    const/4 v4, 0x2
 
     .line 26
-    .line 27
-    sget-object v1, Ljw5;->a:[Lfx2;
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 27
     .line 28
     .line 29
-    const/16 v2, 0xe
+    sput-object v2, Las5;->l:Las5;
 
     .line 30
     .line 31
-    aget-object v1, v1, v2
+    new-instance v3, Las5;
 
     .line 32
     .line 33
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-string v4, "Fab"
 
     .line 34
     .line 35
+    const/4 v5, 0x3
+
     .line 36
-    invoke-interface {p1, p0, v0}, Llw5;->a(Lkw5;Ljava/lang/Object;)V
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 37
     .line 38
     .line 39
-    return-void
+    sput-object v3, Las5;->m:Las5;
 
     .line 40
-    :cond_0
-    sget-object p0, Lhw5;->w:Lkw5;
-
     .line 41
+    new-instance v4, Las5;
+
     .line 42
-    sget-object v1, Ljw5;->a:[Lfx2;
-
     .line 43
-    .line 44
-    const/16 v2, 0xd
+    const-string v5, "BottomBar"
 
+    .line 44
     .line 45
+    const/4 v6, 0x4
+
     .line 46
-    aget-object v1, v1, v2
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 47
     .line 48
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 49
+    sput-object v4, Las5;->n:Las5;
+
     .line 50
     .line 51
-    invoke-interface {p1, p0, v0}, Llw5;->a(Lkw5;Ljava/lang/Object;)V
+    filled-new-array {v0, v1, v2, v3, v4}, [Las5;
 
     .line 52
     .line 53
     .line 54
-    return-void
-.end method
-
-.method public final W(Lne3;Lci3;I)I
-    .locals 0
-
-    .line 1
-    iget-boolean p0, p0, Las5;->y:Z
-
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
-
-    .line 4
-    .line 5
-    goto :goto_0
-
-    .line 6
-    :cond_0
-    const p3, 0x7fffffff
-
-    .line 7
-    .line 8
-    .line 9
-    :goto_0
-    invoke-interface {p2, p3}, Lci3;->j0(I)I
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    return p0
-.end method
-
-.method public final h(Lki3;Lci3;J)Lii3;
-    .locals 9
-
-    .line 1
-    iget-boolean v0, p0, Las5;->y:Z
-
-    .line 2
-    .line 3
-    if-eqz v0, :cond_0
-
-    .line 4
-    .line 5
-    sget-object v0, Lid4;->j:Lid4;
-
-    .line 6
-    .line 7
-    goto :goto_0
-
-    .line 8
-    :cond_0
-    sget-object v0, Lid4;->k:Lid4;
-
-    .line 9
-    .line 10
-    :goto_0
-    invoke-static {p3, p4, v0}, Lt87;->n(JLid4;)V
-
-    .line 11
-    .line 12
-    .line 13
-    iget-boolean v0, p0, Las5;->y:Z
-
-    .line 14
-    .line 15
-    const v1, 0x7fffffff
-
-    .line 16
-    .line 17
-    .line 18
-    if-eqz v0, :cond_1
-
-    .line 19
-    .line 20
-    move v7, v1
-
-    .line 21
-    goto :goto_1
-
-    .line 22
-    :cond_1
-    invoke-static {p3, p4}, Ls51;->h(J)I
-
-    .line 23
-    .line 24
-    .line 25
-    move-result v0
-
-    .line 26
-    move v7, v0
-
-    .line 27
-    :goto_1
-    iget-boolean v0, p0, Las5;->y:Z
-
-    .line 28
-    .line 29
-    if-eqz v0, :cond_2
-
-    .line 30
-    .line 31
-    invoke-static {p3, p4}, Ls51;->i(J)I
-
-    .line 32
-    .line 33
-    .line 34
-    move-result v1
-
-    .line 35
-    :cond_2
-    move v5, v1
-
-    .line 36
-    const/4 v6, 0x0
-
-    .line 37
-    const/4 v8, 0x5
-
-    .line 38
-    const/4 v4, 0x0
-
-    .line 39
-    move-wide v2, p3
-
-    .line 40
-    invoke-static/range {v2 .. v8}, Ls51;->b(JIIIII)J
-
-    .line 41
-    .line 42
-    .line 43
-    move-result-wide p3
-
-    .line 44
-    invoke-interface {p2, p3, p4}, Lci3;->e(J)Lxn4;
-
-    .line 45
-    .line 46
-    .line 47
-    move-result-object p2
-
-    .line 48
-    iget p3, p2, Lxn4;->j:I
-
-    .line 49
-    .line 50
-    invoke-static {v2, v3}, Ls51;->i(J)I
-
-    .line 51
-    .line 52
-    .line 53
-    move-result p4
-
-    .line 54
-    if-le p3, p4, :cond_3
+    move-result-object v0
 
     .line 55
+    sput-object v0, Las5;->o:[Las5;
+
     .line 56
-    move p3, p4
-
     .line 57
-    :cond_3
-    iget p4, p2, Lxn4;->k:I
+    return-void
+.end method
 
-    .line 58
-    .line 59
-    invoke-static {v2, v3}, Ls51;->h(J)I
+.method public static valueOf(Ljava/lang/String;)Las5;
+    .locals 1
 
-    .line 60
-    .line 61
-    .line 62
-    move-result v0
+    .line 1
+    const-class v0, Las5;
 
-    .line 63
-    if-le p4, v0, :cond_4
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    .line 64
-    .line 65
-    move p4, v0
-
-    .line 66
-    :cond_4
-    iget v0, p2, Lxn4;->k:I
-
-    .line 67
-    .line 68
-    sub-int/2addr v0, p4
-
-    .line 69
-    iget v1, p2, Lxn4;->j:I
-
-    .line 70
-    .line 71
-    sub-int/2addr v1, p3
-
-    .line 72
-    iget-boolean v2, p0, Las5;->y:Z
-
-    .line 73
-    .line 74
-    if-eqz v2, :cond_5
-
-    .line 75
-    .line 76
-    goto :goto_2
-
-    .line 77
-    :cond_5
-    move v0, v1
-
-    .line 78
-    :goto_2
-    iget-object v1, p0, Las5;->x:Les5;
-
-    .line 79
-    .line 80
-    invoke-virtual {v1, v0}, Les5;->f(I)V
-
-    .line 81
-    .line 82
-    .line 83
-    iget-object v1, p0, Las5;->x:Les5;
-
-    .line 84
-    .line 85
-    iget-boolean v2, p0, Las5;->y:Z
-
-    .line 86
-    .line 87
-    if-eqz v2, :cond_6
-
-    .line 88
-    .line 89
-    move v2, p4
-
-    .line 90
-    goto :goto_3
-
-    .line 91
-    :cond_6
-    move v2, p3
-
-    .line 92
-    :goto_3
-    iget-object v1, v1, Les5;->b:Ldl4;
-
-    .line 93
-    .line 94
-    invoke-virtual {v1, v2}, Ldl4;->h(I)V
-
-    .line 95
-    .line 96
-    .line 97
-    iget-object v1, p0, Las5;->x:Les5;
-
-    .line 98
-    .line 99
-    iget-boolean v2, p0, Las5;->y:Z
-
-    .line 100
-    .line 101
-    if-eqz v2, :cond_7
-
-    .line 102
-    .line 103
-    iget v2, p2, Lxn4;->k:I
-
-    .line 104
-    .line 105
-    goto :goto_4
-
-    .line 106
-    :cond_7
-    iget v2, p2, Lxn4;->j:I
-
-    .line 107
-    .line 108
-    :goto_4
-    iget-object v1, v1, Les5;->c:Ldl4;
-
-    .line 109
-    .line 110
-    invoke-virtual {v1, v2}, Ldl4;->h(I)V
-
-    .line 111
-    .line 112
-    .line 113
-    iget-object v1, p0, Las5;->x:Les5;
-
-    .line 114
-    .line 115
-    iget-object v1, v1, Les5;->d:Lgl4;
-
-    .line 116
-    .line 117
-    sget-object v2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    .line 118
-    .line 119
-    invoke-virtual {v1, v2}, Lgl4;->setValue(Ljava/lang/Object;)V
-
-    .line 120
-    .line 121
-    .line 122
-    new-instance v1, Lwg3;
-
-    .line 123
-    .line 124
-    const/4 v2, 0x2
-
-    .line 125
-    invoke-direct {v1, v2, v0, p0, p2}, Lwg3;-><init>(BILjava/lang/Object;Ljava/lang/Object;)V
-
-    .line 126
-    .line 127
-    .line 128
-    sget-object p0, Lrt1;->j:Lrt1;
-
-    .line 129
-    .line 130
-    invoke-interface {p1, p3, p4, p0, v1}, Lki3;->O0(IILjava/util/Map;Lo52;)Lii3;
-
-    .line 131
-    .line 132
-    .line 133
+    .line 4
+    .line 5
+    .line 6
     move-result-object p0
 
-    .line 134
+    .line 7
+    check-cast p0, Las5;
+
+    .line 8
+    .line 9
     return-object p0
 .end method
 
-.method public final l(Lne3;Lci3;I)I
-    .locals 0
+.method public static values()[Las5;
+    .locals 1
 
     .line 1
-    iget-boolean p0, p0, Las5;->y:Z
+    sget-object v0, Las5;->o:[Las5;
 
     .line 2
     .line 3
-    if-eqz p0, :cond_0
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     .line 4
     .line 5
-    const p3, 0x7fffffff
-
     .line 6
-    .line 7
-    .line 8
-    :cond_0
-    invoke-interface {p2, p3}, Lci3;->i0(I)I
-
-    .line 9
-    .line 10
-    .line 11
-    move-result p0
-
-    .line 12
-    return p0
-.end method
-
-.method public final v0(Lne3;Lci3;I)I
-    .locals 0
-
-    .line 1
-    iget-boolean p0, p0, Las5;->y:Z
-
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
-
-    .line 4
-    .line 5
-    const p3, 0x7fffffff
-
-    .line 6
-    .line 7
-    .line 8
-    :cond_0
-    invoke-interface {p2, p3}, Lci3;->W(I)I
-
-    .line 9
-    .line 10
-    .line 11
-    move-result p0
-
-    .line 12
-    return p0
-.end method
-
-.method public final z(Lne3;Lci3;I)I
-    .locals 0
-
-    .line 1
-    iget-boolean p0, p0, Las5;->y:Z
-
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
-
-    .line 4
-    .line 5
-    goto :goto_0
-
-    .line 6
-    :cond_0
-    const p3, 0x7fffffff
+    move-result-object v0
 
     .line 7
+    check-cast v0, [Las5;
+
     .line 8
     .line 9
-    :goto_0
-    invoke-interface {p2, p3}, Lci3;->f(I)I
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    return p0
+    return-object v0
 .end method

@@ -1,19 +1,25 @@
 .class public final synthetic Lsa7;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lu52;
+.implements Landroid/webkit/DownloadListener;
 
 
 # instance fields
-.field public final synthetic j:Z
+.field public final synthetic a:Ljava/lang/String;
 
-.field public final synthetic k:Las3;
+.field public final synthetic b:Lmt3;
+
+.field public final synthetic c:Lp62;
+
+.field public final synthetic d:Ljava/lang/String;
+
+.field public final synthetic e:Log3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Las3;Z)V
+.method public synthetic constructor <init>(Ljava/lang/String;Lmt3;Lp62;Ljava/lang/String;Log3;)V
     .locals 0
 
     .line 1
@@ -22,362 +28,260 @@
     .line 2
     .line 3
     .line 4
-    iput-boolean p2, p0, Lsa7;->j:Z
+    iput-object p1, p0, Lsa7;->a:Ljava/lang/String;
 
     .line 5
     .line 6
-    iput-object p1, p0, Lsa7;->k:Las3;
+    iput-object p2, p0, Lsa7;->b:Lmt3;
 
     .line 7
     .line 8
+    iput-object p3, p0, Lsa7;->c:Lp62;
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Lsa7;->d:Ljava/lang/String;
+
+    .line 11
+    .line 12
+    iput-object p5, p0, Lsa7;->e:Log3;
+
+    .line 13
+    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final j(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
+.method public final onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
+    .locals 7
 
     .line 1
-    check-cast p1, Ljava/lang/Boolean;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
     .line 4
+    const-string p5, "blob:"
+
     .line 5
     .line 6
-    move-result p1
+    const/4 p6, 0x0
 
     .line 7
-    check-cast p2, Ls52;
+    invoke-static {p1, p5, p6}, Lhd6;->S(Ljava/lang/String;Ljava/lang/String;Z)Z
 
     .line 8
     .line 9
-    check-cast p3, Lv01;
-
     .line 10
+    move-result p5
+
     .line 11
-    check-cast p4, Ljava/lang/Integer;
+    if-nez p5, :cond_4
 
     .line 12
     .line 13
-    invoke-virtual {p4}, Ljava/lang/Integer;->intValue()I
+    const-string p5, "data:"
 
     .line 14
     .line 15
+    invoke-static {p1, p5, p6}, Lhd6;->S(Ljava/lang/String;Ljava/lang/String;Z)Z
+
     .line 16
-    move-result p4
-
     .line 17
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 18
-    .line 19
-    .line 20
-    and-int/lit8 v0, p4, 0x6
+    move-result p5
 
+    .line 19
+    if-eqz p5, :cond_0
+
+    .line 20
     .line 21
+    goto :goto_1
+
     .line 22
-    if-nez v0, :cond_1
+    :cond_0
+    invoke-static {p1, p3, p4}, Landroid/webkit/URLUtil;->guessFileName(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 23
     .line 24
-    move-object v0, p3
-
     .line 25
-    check-cast v0, Ls62;
+    move-result-object v2
 
     .line 26
-    .line 27
-    invoke-virtual {v0, p1}, Ls62;->h(Z)Z
+    const-string p3, "application/octet-stream"
 
+    .line 27
     .line 28
+    if-eqz p4, :cond_2
+
     .line 29
     .line 30
-    move-result v0
+    invoke-static {p4}, Lad6;->y0(Ljava/lang/CharSequence;)Z
 
     .line 31
-    if-eqz v0, :cond_0
-
     .line 32
     .line 33
-    const/4 v0, 0x4
+    move-result p5
 
     .line 34
-    goto :goto_0
+    if-eqz p5, :cond_1
 
     .line 35
-    :cond_0
-    const/4 v0, 0x2
-
     .line 36
-    :goto_0
-    or-int/2addr v0, p4
-
-    .line 37
-    goto :goto_1
-
-    .line 38
-    :cond_1
-    move v0, p4
-
-    .line 39
-    :goto_1
-    and-int/lit8 p4, p4, 0x30
-
-    .line 40
-    .line 41
-    if-nez p4, :cond_3
-
-    .line 42
-    .line 43
     move-object p4, p3
 
+    .line 37
+    :cond_1
+    move-object v3, p4
+
+    .line 38
+    goto :goto_0
+
+    .line 39
+    :cond_2
+    move-object v3, p3
+
+    .line 40
+    :goto_0
+    invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;
+
+    .line 41
+    .line 42
+    .line 43
+    move-result-object p3
+
     .line 44
-    check-cast p4, Ls62;
+    invoke-virtual {p3, p1}, Landroid/webkit/CookieManager;->getCookie(Ljava/lang/String;)Ljava/lang/String;
 
     .line 45
     .line 46
-    invoke-virtual {p4, p2}, Ls62;->i(Ljava/lang/Object;)Z
-
     .line 47
-    .line 48
-    .line 49
-    move-result p4
+    move-result-object v5
 
+    .line 48
+    new-instance v0, Lmo4;
+
+    .line 49
     .line 50
-    if-eqz p4, :cond_2
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 51
     .line 52
-    const/16 p4, 0x20
-
     .line 53
-    .line 54
-    goto :goto_2
+    if-nez p2, :cond_3
 
+    .line 54
     .line 55
-    :cond_2
-    const/16 p4, 0x10
+    const-string p2, ""
 
     .line 56
     .line 57
-    :goto_2
-    or-int/2addr v0, p4
+    :cond_3
+    move-object v4, p2
 
     .line 58
-    :cond_3
-    and-int/lit16 p4, v0, 0x93
+    iget-object v6, p0, Lsa7;->a:Ljava/lang/String;
 
     .line 59
     .line 60
-    const/16 v1, 0x92
+    move-object v1, p1
 
     .line 61
+    invoke-direct/range {v0 .. v6}, Lmo4;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
     .line 62
-    const/4 v2, 0x1
-
     .line 63
-    const/4 v3, 0x0
-
     .line 64
-    if-eq p4, v1, :cond_4
+    iget-object p1, p0, Lsa7;->b:Lmt3;
 
     .line 65
     .line 66
-    move p4, v2
+    invoke-interface {p1, v0}, Lmt3;->setValue(Ljava/lang/Object;)V
 
     .line 67
-    goto :goto_3
-
     .line 68
-    :cond_4
-    move p4, v3
-
     .line 69
-    :goto_3
-    and-int/2addr v0, v2
+    new-instance p1, Landroid/content/Intent;
 
     .line 70
-    check-cast p3, Ls62;
-
     .line 71
-    .line 72
-    invoke-virtual {p3, v0, p4}, Ls62;->T(IZ)Z
+    const-string p2, "android.intent.action.CREATE_DOCUMENT"
 
+    .line 72
     .line 73
+    invoke-direct {p1, p2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
+
     .line 74
     .line 75
-    move-result p4
-
     .line 76
-    if-eqz p4, :cond_8
+    const-string p2, "android.intent.category.OPENABLE"
 
     .line 77
     .line 78
-    if-eqz p1, :cond_7
+    invoke-virtual {p1, p2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
 
     .line 79
     .line 80
-    const p1, -0x3b13a3ba
-
     .line 81
+    invoke-virtual {p1, v3}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
+
     .line 82
     .line 83
-    invoke-virtual {p3, p1}, Ls62;->c0(I)V
-
     .line 84
+    const-string p2, "android.intent.extra.TITLE"
+
     .line 85
     .line 86
-    iget-boolean p1, p0, Lsa7;->j:Z
+    invoke-virtual {p1, p2, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
 
     .line 87
     .line 88
-    invoke-virtual {p3, p1}, Ls62;->h(Z)Z
-
     .line 89
+    new-instance p2, Landroid/os/Handler;
+
     .line 90
     .line 91
-    move-result p4
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     .line 92
-    iget-object p0, p0, Lsa7;->k:Las3;
-
     .line 93
     .line 94
-    invoke-virtual {p3, p0}, Ls62;->g(Ljava/lang/Object;)Z
+    move-result-object p3
 
     .line 95
+    invoke-direct {p2, p3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
+
     .line 96
     .line 97
-    move-result v0
-
     .line 98
-    or-int/2addr p4, v0
+    new-instance p3, Lta7;
 
     .line 99
-    invoke-virtual {p3}, Ls62;->O()Ljava/lang/Object;
-
     .line 100
+    iget-object p4, p0, Lsa7;->c:Lp62;
+
     .line 101
     .line 102
-    move-result-object v0
+    iget-object p5, p0, Lsa7;->d:Ljava/lang/String;
 
     .line 103
-    if-nez p4, :cond_5
-
     .line 104
+    iget-object p0, p0, Lsa7;->e:Log3;
+
     .line 105
-    sget-object p4, Lt01;->a:Lt8;
-
     .line 106
-    .line 107
-    if-ne v0, p4, :cond_6
+    invoke-direct {p3, p4, p5, p0, p1}, Lta7;-><init>(Lp62;Ljava/lang/String;Log3;Landroid/content/Intent;)V
 
+    .line 107
     .line 108
     .line 109
-    :cond_5
-    new-instance v0, Lmg4;
+    invoke-virtual {p2, p3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
 
     .line 110
     .line 111
-    invoke-direct {v0, p0, p1}, Lmg4;-><init>(Las3;Z)V
-
     .line 112
-    .line 113
-    .line 114
-    invoke-virtual {p3, v0}, Ls62;->l0(Ljava/lang/Object;)V
-
-    .line 115
-    .line 116
-    .line 117
-    :cond_6
-    check-cast v0, Ld52;
-
-    .line 118
-    .line 119
-    invoke-static {}, Ldy6;->i()Lji1;
-
-    .line 120
-    .line 121
-    .line 122
-    move-result-object p0
-
-    .line 123
-    new-instance p1, Lvy0;
-
-    .line 124
-    .line 125
-    const/16 p4, 0x16
-
-    .line 126
-    .line 127
-    invoke-direct {p1, p2, p4}, Lvy0;-><init>(Ls52;B)V
-
-    .line 128
-    .line 129
-    .line 130
-    const p2, 0x75dbb70
-
-    .line 131
-    .line 132
-    .line 133
-    invoke-static {p2, p1, p3}, Lr97;->M(ILa62;Lv01;)Loy0;
-
-    .line 134
-    .line 135
-    .line 136
-    move-result-object p1
-
-    .line 137
-    const/16 p2, 0x180
-
-    .line 138
-    .line 139
-    invoke-static {v0, p0, p1, p3, p2}, Lam0;->c(Ld52;Lji1;Loy0;Lv01;I)V
-
-    .line 140
-    .line 141
-    .line 142
-    invoke-virtual {p3, v3}, Ls62;->r(Z)V
-
-    .line 143
-    .line 144
-    .line 145
-    goto :goto_4
-
-    .line 146
-    :cond_7
-    const p0, -0x3b0c3840
-
-    .line 147
-    .line 148
-    .line 149
-    invoke-virtual {p3, p0}, Ls62;->c0(I)V
-
-    .line 150
-    .line 151
-    .line 152
-    invoke-virtual {p3, v3}, Ls62;->r(Z)V
-
-    .line 153
-    .line 154
-    .line 155
-    goto :goto_4
-
-    .line 156
-    :cond_8
-    invoke-virtual {p3}, Ls62;->W()V
-
-    .line 157
-    .line 158
-    .line 159
-    :goto_4
-    sget-object p0, Lk27;->a:Lk27;
-
-    .line 160
-    .line 161
-    return-object p0
+    :cond_4
+    :goto_1
+    return-void
 .end method

@@ -1,395 +1,69 @@
-.class public final synthetic Lmt4;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lo52;
+.class public final Lmt4;
+.super Lz81;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final synthetic j:F
+.field public synthetic j:Ljava/lang/Object;
 
-.field public final synthetic k:F
+.field public final synthetic k:Lqt4;
 
-.field public final synthetic l:F
-
-.field public final synthetic m:J
-
-.field public final synthetic n:Lu96;
+.field public l:I
 
 
 # direct methods
-.method public synthetic constructor <init>(FFFJLbo2;)V
+.method public constructor <init>(Lqt4;Lz81;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lmt4;->k:Lqt4;
 
     .line 2
     .line 3
-    .line 4
-    iput p1, p0, Lmt4;->j:F
+    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
 
+    .line 4
     .line 5
     .line 6
-    iput p2, p0, Lmt4;->k:F
-
-    .line 7
-    .line 8
-    iput p3, p0, Lmt4;->l:F
-
-    .line 9
-    .line 10
-    iput-wide p4, p0, Lmt4;->m:J
-
-    .line 11
-    .line 12
-    iput-object p6, p0, Lmt4;->n:Lu96;
-
-    .line 13
-    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 16
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    move-object/from16 v0, p0
+    iput-object p1, p0, Lmt4;->j:Ljava/lang/Object;
 
     .line 2
     .line 3
-    move-object/from16 v1, p1
+    iget p1, p0, Lmt4;->l:I
 
     .line 4
     .line 5
-    check-cast v1, Lin1;
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    or-int/2addr p1, v0
 
     .line 8
+    iput p1, p0, Lmt4;->l:I
+
     .line 9
     .line 10
-    iget v2, v0, Lmt4;->j:F
+    iget-object p1, p0, Lmt4;->k:Lqt4;
 
     .line 11
     .line 12
-    invoke-interface {v1, v2}, Lyg1;->N(F)F
+    invoke-virtual {p1, p0}, Lqt4;->c(Lz81;)Ljava/lang/Object;
 
     .line 13
     .line 14
     .line 15
-    move-result v4
+    move-result-object p0
 
     .line 16
-    iget v2, v0, Lmt4;->k:F
-
-    .line 17
-    .line 18
-    invoke-interface {v1, v2}, Lyg1;->N(F)F
-
-    .line 19
-    .line 20
-    .line 21
-    move-result v9
-
-    .line 22
-    invoke-interface {v1}, Lin1;->b()J
-
-    .line 23
-    .line 24
-    .line 25
-    move-result-wide v2
-
-    .line 26
-    const/16 v10, 0x20
-
-    .line 27
-    .line 28
-    shr-long/2addr v2, v10
-
-    .line 29
-    long-to-int v2, v2
-
-    .line 30
-    invoke-static {v2}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    .line 31
-    .line 32
-    .line 33
-    move-result v2
-
-    .line 34
-    const/high16 v11, 0x40000000    # 2.0f
-
-    .line 35
-    .line 36
-    div-float/2addr v2, v11
-
-    .line 37
-    invoke-interface {v1}, Lin1;->b()J
-
-    .line 38
-    .line 39
-    .line 40
-    move-result-wide v5
-
-    .line 41
-    const-wide v12, 0xffffffffL
-
-    .line 42
-    .line 43
-    .line 44
-    .line 45
-    .line 46
-    and-long/2addr v5, v12
-
-    .line 47
-    long-to-int v3, v5
-
-    .line 48
-    invoke-static {v3}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    .line 49
-    .line 50
-    .line 51
-    move-result v3
-
-    .line 52
-    div-float/2addr v3, v11
-
-    .line 53
-    invoke-static {v2}, Ljava/lang/Float;->floatToRawIntBits(F)I
-
-    .line 54
-    .line 55
-    .line 56
-    move-result v2
-
-    .line 57
-    int-to-long v5, v2
-
-    .line 58
-    invoke-static {v3}, Ljava/lang/Float;->floatToRawIntBits(F)I
-
-    .line 59
-    .line 60
-    .line 61
-    move-result v2
-
-    .line 62
-    int-to-long v2, v2
-
-    .line 63
-    shl-long/2addr v5, v10
-
-    .line 64
-    and-long/2addr v2, v12
-
-    .line 65
-    or-long v14, v5, v2
-
-    .line 66
-    .line 67
-    iget v2, v0, Lmt4;->l:F
-
-    .line 68
-    .line 69
-    invoke-interface {v1, v2}, Lyg1;->N(F)F
-
-    .line 70
-    .line 71
-    .line 72
-    move-result v2
-
-    .line 73
-    sub-float/2addr v2, v4
-
-    .line 74
-    div-float/2addr v2, v11
-
-    .line 75
-    new-instance v3, Lqb6;
-
-    .line 76
-    .line 77
-    const/4 v7, 0x0
-
-    .line 78
-    const/16 v8, 0x1a
-
-    .line 79
-    .line 80
-    const/4 v5, 0x0
-
-    .line 81
-    const/4 v6, 0x1
-
-    .line 82
-    invoke-direct/range {v3 .. v8}, Lqb6;-><init>(FFIII)V
-
-    .line 83
-    .line 84
-    .line 85
-    const/16 v8, 0x68
-
-    .line 86
-    .line 87
-    move v4, v2
-
-    .line 88
-    move-object v7, v3
-
-    .line 89
-    iget-wide v2, v0, Lmt4;->m:J
-
-    .line 90
-    .line 91
-    move-wide v5, v14
-
-    .line 92
-    invoke-static/range {v1 .. v8}, Lin1;->Y(Lin1;JFJLjn1;I)V
-
-    .line 93
-    .line 94
-    .line 95
-    mul-float/2addr v11, v9
-
-    .line 96
-    sub-float/2addr v4, v11
-
-    .line 97
-    iget-object v0, v0, Lmt4;->n:Lu96;
-
-    .line 98
-    .line 99
-    invoke-interface {v0}, Lu96;->getValue()Ljava/lang/Object;
-
-    .line 100
-    .line 101
-    .line 102
-    move-result-object v0
-
-    .line 103
-    check-cast v0, Ljava/lang/Number;
-
-    .line 104
-    .line 105
-    invoke-virtual {v0}, Ljava/lang/Number;->floatValue()F
-
-    .line 106
-    .line 107
-    .line 108
-    move-result v0
-
-    .line 109
-    const v7, 0x3c8efa35
-
-    .line 110
-    .line 111
-    .line 112
-    mul-float/2addr v0, v7
-
-    .line 113
-    float-to-double v7, v0
-
-    .line 114
-    invoke-static {v7, v8}, Ljava/lang/Math;->cos(D)D
-
-    .line 115
-    .line 116
-    .line 117
-    move-result-wide v14
-
-    .line 118
-    double-to-float v0, v14
-
-    .line 119
-    mul-float/2addr v0, v4
-
-    .line 120
-    invoke-static {v7, v8}, Ljava/lang/Math;->sin(D)D
-
-    .line 121
-    .line 122
-    .line 123
-    move-result-wide v7
-
-    .line 124
-    double-to-float v7, v7
-
-    .line 125
-    mul-float/2addr v4, v7
-
-    .line 126
-    invoke-static {v0}, Ljava/lang/Float;->floatToRawIntBits(F)I
-
-    .line 127
-    .line 128
-    .line 129
-    move-result v0
-
-    .line 130
-    int-to-long v7, v0
-
-    .line 131
-    invoke-static {v4}, Ljava/lang/Float;->floatToRawIntBits(F)I
-
-    .line 132
-    .line 133
-    .line 134
-    move-result v0
-
-    .line 135
-    int-to-long v14, v0
-
-    .line 136
-    shl-long/2addr v7, v10
-
-    .line 137
-    and-long v10, v14, v12
-
-    .line 138
-    .line 139
-    or-long/2addr v7, v10
-
-    .line 140
-    invoke-static {v5, v6, v7, v8}, Lj94;->g(JJ)J
-
-    .line 141
-    .line 142
-    .line 143
-    move-result-wide v4
-
-    .line 144
-    const/4 v6, 0x0
-
-    .line 145
-    const/16 v7, 0x78
-
-    .line 146
-    .line 147
-    move-object v0, v1
-
-    .line 148
-    move-wide v1, v2
-
-    .line 149
-    move v3, v9
-
-    .line 150
-    invoke-static/range {v0 .. v7}, Lin1;->Y(Lin1;JFJLjn1;I)V
-
-    .line 151
-    .line 152
-    .line 153
-    sget-object v0, Lk27;->a:Lk27;
-
-    .line 154
-    .line 155
-    return-object v0
+    return-object p0
 .end method

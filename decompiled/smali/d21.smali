@@ -1,64 +1,262 @@
 .class public final Ld21;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Lis0;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final a:S
-
-.field public final b:Ld52;
-
-.field public final c:Lc21;
-
-.field public d:J
+.field public final l:Z
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 2
+.method public constructor <init>(Lq7;Z)V
+    .locals 0
 
     .line 1
-    sget-object v0, Lz11;->k:Lz11;
+    invoke-direct {p0, p1}, Lis0;-><init>(Lq7;)V
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 4
+    iput-boolean p2, p0, Ld21;->l:Z
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final d(B)V
+    .locals 1
+
+    .line 1
+    iget-boolean v0, p0, Ld21;->l:Z
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    and-int/lit16 p1, p1, 0xff
+
+    .line 6
+    .line 7
+    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p1
+
+    .line 11
+    invoke-virtual {p0, p1}, Lis0;->i(Ljava/lang/String;)V
+
+    .line 12
+    .line 13
+    .line 14
+    return-void
+
+    .line 15
+    :cond_0
+    and-int/lit16 p1, p1, 0xff
+
+    .line 16
+    .line 17
+    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object p1
+
+    .line 21
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 22
+    .line 23
+    .line 24
+    iget-object p0, p0, Lis0;->k:Ljava/lang/Object;
+
+    .line 25
+    .line 26
+    check-cast p0, Lq7;
+
+    .line 27
+    .line 28
+    invoke-virtual {p0, p1}, Lq7;->q(Ljava/lang/String;)V
+
+    .line 29
+    .line 30
+    .line 31
+    return-void
+.end method
+
+.method public final f(I)V
+    .locals 1
+
+    .line 1
+    iget-boolean v0, p0, Ld21;->l:Z
+
+    .line 2
+    .line 3
+    invoke-static {p1}, Ljava/lang/Integer;->toUnsignedString(I)Ljava/lang/String;
 
     .line 4
     .line 5
     .line 6
-    const/16 v1, 0x80
+    move-result-object p1
+
+    .line 7
+    if-eqz v0, :cond_0
+
+    .line 8
+    .line 9
+    invoke-virtual {p0, p1}, Lis0;->i(Ljava/lang/String;)V
+
+    .line 10
+    .line 11
+    .line 12
+    return-void
+
+    .line 13
+    :cond_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 14
+    .line 15
+    .line 16
+    iget-object p0, p0, Lis0;->k:Ljava/lang/Object;
+
+    .line 17
+    .line 18
+    check-cast p0, Lq7;
+
+    .line 19
+    .line 20
+    invoke-virtual {p0, p1}, Lq7;->q(Ljava/lang/String;)V
+
+    .line 21
+    .line 22
+    .line 23
+    return-void
+.end method
+
+.method public final g(J)V
+    .locals 1
+
+    .line 1
+    iget-boolean v0, p0, Ld21;->l:Z
+
+    .line 2
+    .line 3
+    invoke-static {p1, p2}, Ljava/lang/Long;->toUnsignedString(J)Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p1
+
+    .line 7
+    if-eqz v0, :cond_0
+
+    .line 8
+    .line 9
+    invoke-virtual {p0, p1}, Lis0;->i(Ljava/lang/String;)V
+
+    .line 10
+    .line 11
+    .line 12
+    return-void
+
+    .line 13
+    :cond_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 14
+    .line 15
+    .line 16
+    iget-object p0, p0, Lis0;->k:Ljava/lang/Object;
+
+    .line 17
+    .line 18
+    check-cast p0, Lq7;
+
+    .line 19
+    .line 20
+    invoke-virtual {p0, p1}, Lq7;->q(Ljava/lang/String;)V
+
+    .line 21
+    .line 22
+    .line 23
+    return-void
+.end method
+
+.method public final h(S)V
+    .locals 2
+
+    .line 1
+    iget-boolean v0, p0, Ld21;->l:Z
+
+    .line 2
+    .line 3
+    const v1, 0xffff
+
+    .line 4
+    .line 5
+    .line 6
+    if-eqz v0, :cond_0
 
     .line 7
     .line 8
-    iput-short v1, p0, Ld21;->a:S
+    and-int/2addr p1, v1
 
     .line 9
-    .line 10
-    iput-object v0, p0, Ld21;->b:Ld52;
+    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
+    .line 10
     .line 11
     .line 12
-    new-instance v0, Lc21;
+    move-result-object p1
 
     .line 13
-    .line 14
-    invoke-direct {v0, p0}, Lc21;-><init>(Ld21;)V
+    invoke-virtual {p0, p1}, Lis0;->i(Ljava/lang/String;)V
 
+    .line 14
     .line 15
     .line 16
+    return-void
+
     .line 17
-    iput-object v0, p0, Ld21;->c:Lc21;
+    :cond_0
+    and-int/2addr p1, v1
 
     .line 18
-    .line 19
-    const-wide/high16 v0, -0x8000000000000000L
+    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
 
+    .line 19
     .line 20
     .line 21
-    iput-wide v0, p0, Ld21;->d:J
+    move-result-object p1
 
     .line 22
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 23
+    .line 24
+    .line 25
+    iget-object p0, p0, Lis0;->k:Ljava/lang/Object;
+
+    .line 26
+    .line 27
+    check-cast p0, Lq7;
+
+    .line 28
+    .line 29
+    invoke-virtual {p0, p1}, Lq7;->q(Ljava/lang/String;)V
+
+    .line 30
+    .line 31
+    .line 32
     return-void
 .end method

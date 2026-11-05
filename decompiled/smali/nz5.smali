@@ -1,54 +1,93 @@
-.class public final Lnz5;
+.class public final synthetic Lnz5;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Le62;
 
 
 # instance fields
-.field public final a:Las3;
+.field public final synthetic j:B
 
-.field public final b:Las3;
+.field public final synthetic k:Lp62;
 
-.field public final c:Las3;
-
-.field public final d:Las3;
-
-.field public final e:Las3;
+.field public final synthetic l:Ljava/util/LinkedHashSet;
 
 
 # direct methods
-.method public constructor <init>(Las3;Las3;Las3;Las3;Las3;)V
+.method public synthetic constructor <init>(Lp62;Ljava/util/LinkedHashSet;B)V
     .locals 0
 
     .line 1
-    invoke-static {p1, p2, p3, p4, p5}, Lpb1;->y(Las3;Las3;Las3;Las3;Las3;)V
+    iput-byte p3, p0, Lnz5;->j:B
 
     .line 2
     .line 3
-    .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lnz5;->k:Lp62;
 
+    .line 4
     .line 5
+    iput-object p2, p0, Lnz5;->l:Ljava/util/LinkedHashSet;
+
     .line 6
     .line 7
-    iput-object p1, p0, Lnz5;->a:Las3;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 8
     .line 9
-    iput-object p2, p0, Lnz5;->b:Las3;
+    .line 10
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
+
+    .line 1
+    iget-byte v0, p0, Lnz5;->j:B
+
+    .line 2
+    .line 3
+    sget-object v1, La47;->a:La47;
+
+    .line 4
+    .line 5
+    iget-object v2, p0, Lnz5;->l:Ljava/util/LinkedHashSet;
+
+    .line 6
+    .line 7
+    iget-object p0, p0, Lnz5;->k:Lp62;
+
+    .line 8
+    .line 9
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
-    iput-object p3, p0, Lnz5;->c:Las3;
-
     .line 12
-    .line 13
-    iput-object p4, p0, Lnz5;->d:Las3;
+    invoke-interface {p0, v2}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 13
     .line 14
     .line 15
-    iput-object p5, p0, Lnz5;->e:Las3;
+    return-object v1
 
     .line 16
+    :pswitch_0
+    invoke-interface {p0, v2}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 17
-    return-void
+    .line 18
+    .line 19
+    return-object v1
+
+    .line 20
+    nop
+
+    .line 21
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

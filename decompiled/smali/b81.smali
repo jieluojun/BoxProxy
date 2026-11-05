@@ -1,479 +1,622 @@
 .class public final Lb81;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements La81;
+.implements Lc81;
 
 
 # instance fields
-.field public final a:D
+.field public final synthetic j:B
 
-.field public final b:D
+.field public k:Landroid/content/ClipData;
 
-.field public final c:D
+.field public l:B
 
-.field public final d:D
+.field public m:I
+
+.field public n:Landroid/net/Uri;
+
+.field public o:Landroid/os/Bundle;
 
 
 # direct methods
-.method public constructor <init>(DDDD)V
-    .locals 0
+.method public synthetic constructor <init>()V
+    .locals 1
 
-    .line 1
+    .line 75
+    const/4 v0, 0x0
+
+    iput-byte v0, p0, Lb81;->j:B
+
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    .line 3
-    .line 4
-    iput-wide p1, p0, Lb81;->a:D
-
-    .line 5
-    .line 6
-    iput-wide p3, p0, Lb81;->b:D
-
-    .line 7
-    .line 8
-    iput-wide p5, p0, Lb81;->c:D
-
-    .line 9
-    .line 10
-    iput-wide p7, p0, Lb81;->d:D
-
-    .line 11
-    .line 12
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(D)D
-    .locals 11
-
-    .line 1
-    const-wide/high16 v0, -0x4010000000000000L    # -1.0
-
-    .line 2
-    .line 3
-    cmpg-double v2, p1, v0
-
-    .line 4
-    .line 5
-    iget-wide v3, p0, Lb81;->a:D
-
-    .line 6
-    .line 7
-    if-gtz v2, :cond_0
-
-    .line 8
-    .line 9
-    return-wide v3
-
-    .line 10
-    :cond_0
-    const-wide/16 v5, 0x0
-
-    .line 11
-    .line 12
-    cmpg-double v2, p1, v5
-
-    .line 13
-    .line 14
-    iget-wide v7, p0, Lb81;->b:D
-
-    .line 15
-    .line 16
-    const-wide/high16 v9, 0x3ff0000000000000L    # 1.0
-
-    .line 17
-    .line 18
-    if-gez v2, :cond_1
-
-    .line 19
-    .line 20
-    sub-double/2addr p1, v0
-
-    .line 21
-    div-double/2addr p1, v9
-
-    .line 22
-    sub-double/2addr v9, p1
-
-    .line 23
-    mul-double/2addr v9, v3
-
-    .line 24
-    mul-double/2addr p1, v7
-
-    .line 25
-    :goto_0
-    add-double/2addr p1, v9
-
-    .line 26
-    return-wide p1
-
-    .line 27
-    :cond_1
-    const-wide/high16 v0, 0x3fe0000000000000L    # 0.5
-
-    .line 28
-    .line 29
-    cmpg-double v2, p1, v0
-
-    .line 30
-    .line 31
-    iget-wide v3, p0, Lb81;->c:D
-
-    .line 32
-    .line 33
-    if-gez v2, :cond_2
-
-    .line 34
-    .line 35
-    sub-double/2addr p1, v5
-
-    .line 36
-    div-double/2addr p1, v0
-
-    .line 37
-    sub-double/2addr v9, p1
-
-    .line 38
-    mul-double/2addr v9, v7
-
-    .line 39
-    mul-double/2addr p1, v3
-
-    .line 40
-    goto :goto_0
-
-    .line 41
-    :cond_2
-    cmpg-double v2, p1, v9
-
-    .line 42
-    .line 43
-    iget-wide v5, p0, Lb81;->d:D
-
-    .line 44
-    .line 45
-    if-gez v2, :cond_3
-
-    .line 46
-    .line 47
-    sub-double/2addr p1, v0
-
-    .line 48
-    div-double/2addr p1, v0
-
-    .line 49
-    sub-double/2addr v9, p1
-
-    .line 50
-    mul-double/2addr v9, v3
-
-    .line 51
-    mul-double/2addr p1, v5
-
-    .line 52
-    goto :goto_0
-
-    .line 53
-    :cond_3
-    return-wide v5
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
+.method public constructor <init>(Lb81;)V
+    .locals 4
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p0, p1, :cond_0
+    iput-byte v0, p0, Lb81;->j:B
 
     .line 3
     .line 4
-    return v0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 5
-    :cond_0
-    instance-of v1, p1, Lb81;
-
     .line 6
     .line 7
-    const/4 v2, 0x0
+    iget-object v1, p1, Lb81;->k:Landroid/content/ClipData;
 
     .line 8
-    if-nez v1, :cond_1
-
     .line 9
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 10
-    return v2
-
     .line 11
-    :cond_1
-    check-cast p1, Lb81;
-
     .line 12
+    iput-object v1, p0, Lb81;->k:Landroid/content/ClipData;
+
     .line 13
-    iget-wide v3, p0, Lb81;->a:D
-
     .line 14
-    .line 15
-    iget-wide v5, p1, Lb81;->a:D
+    iget-byte v1, p1, Lb81;->l:B
 
+    .line 15
     .line 16
+    const/4 v2, 0x0
+
     .line 17
-    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+    if-ltz v1, :cond_2
 
     .line 18
     .line 19
+    const/4 v3, 0x5
+
     .line 20
-    move-result v1
+    if-gt v1, v3, :cond_1
 
     .line 21
-    if-eqz v1, :cond_2
-
     .line 22
-    .line 23
-    return v2
+    iput-byte v1, p0, Lb81;->l:B
 
+    .line 23
     .line 24
-    :cond_2
-    iget-wide v3, p0, Lb81;->b:D
+    iget v1, p1, Lb81;->m:I
 
     .line 25
     .line 26
-    iget-wide v5, p1, Lb81;->b:D
+    and-int/lit8 v3, v1, 0x1
 
     .line 27
     .line 28
-    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
+    if-ne v3, v1, :cond_0
 
     .line 29
     .line 30
-    .line 31
-    move-result v1
+    iput v1, p0, Lb81;->m:I
 
+    .line 31
     .line 32
-    if-eqz v1, :cond_3
+    iget-object v0, p1, Lb81;->n:Landroid/net/Uri;
 
     .line 33
     .line 34
-    return v2
+    iput-object v0, p0, Lb81;->n:Landroid/net/Uri;
 
     .line 35
-    :cond_3
-    iget-wide v3, p0, Lb81;->c:D
-
     .line 36
+    iget-object p1, p1, Lb81;->o:Landroid/os/Bundle;
+
     .line 37
-    iget-wide v5, p1, Lb81;->c:D
-
     .line 38
+    iput-object p1, p0, Lb81;->o:Landroid/os/Bundle;
+
     .line 39
-    invoke-static {v3, v4, v5, v6}, Ljava/lang/Double;->compare(DD)I
-
     .line 40
+    return-void
+
     .line 41
+    :cond_0
+    invoke-static {v1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
+
     .line 42
-    move-result v1
-
     .line 43
-    if-eqz v1, :cond_4
-
     .line 44
+    move-result-object p0
+
     .line 45
-    return v2
+    invoke-static {v0}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     .line 46
-    :cond_4
-    iget-wide v3, p0, Lb81;->d:D
-
     .line 47
     .line 48
-    iget-wide p0, p1, Lb81;->d:D
+    move-result-object p1
 
     .line 49
-    .line 50
-    invoke-static {v3, v4, p0, p1}, Ljava/lang/Double;->compare(DD)I
+    const-string v0, " are allowed"
 
+    .line 50
     .line 51
+    const-string v1, "Requested flags 0x"
+
     .line 52
     .line 53
-    move-result p0
+    const-string v3, ", but only 0x"
 
     .line 54
-    if-eqz p0, :cond_5
-
     .line 55
-    .line 56
-    return v2
+    invoke-static {v1, p0, v3, p1, v0}, Lue1;->i(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)V
 
+    .line 56
     .line 57
-    :cond_5
-    return v0
+    .line 58
+    throw v2
+
+    .line 59
+    :cond_1
+    sget-object p0, Ljava/util/Locale;->US:Ljava/util/Locale;
+
+    .line 60
+    .line 61
+    const-string p0, "source is out of range of [0, 5] (too high)"
+
+    .line 62
+    .line 63
+    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+
+    .line 64
+    .line 65
+    .line 66
+    throw v2
+
+    .line 67
+    :cond_2
+    sget-object p0, Ljava/util/Locale;->US:Ljava/util/Locale;
+
+    .line 68
+    .line 69
+    const-string p0, "source is out of range of [0, 5] (too low)"
+
+    .line 70
+    .line 71
+    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+
+    .line 72
+    .line 73
+    .line 74
+    throw v2
 .end method
 
-.method public final hashCode()I
-    .locals 4
+
+# virtual methods
+.method public b()Landroid/view/ContentInfo;
+    .locals 0
 
     .line 1
-    iget-wide v0, p0, Lb81;->a:D
+    const/4 p0, 0x0
+
+    .line 2
+    return-object p0
+.end method
+
+.method public build()Ld81;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ld81;
 
     .line 2
     .line 3
-    invoke-static {v0, v1}, Ljava/lang/Double;->hashCode(D)I
+    new-instance v1, Lb81;
 
     .line 4
     .line 5
+    invoke-direct {v1, p0}, Lb81;-><init>(Lb81;)V
+
     .line 6
-    move-result v0
-
     .line 7
-    const/16 v1, 0x1f
-
     .line 8
+    invoke-direct {v0, v1}, Ld81;-><init>(Lc81;)V
+
     .line 9
-    mul-int/2addr v0, v1
-
     .line 10
-    iget-wide v2, p0, Lb81;->b:D
-
     .line 11
-    .line 12
-    invoke-static {v2, v3, v0, v1}, Lqq5;->c(DII)I
+    return-object v0
+.end method
 
-    .line 13
-    .line 14
-    .line 15
-    move-result v0
+.method public c()I
+    .locals 0
 
-    .line 16
-    iget-wide v2, p0, Lb81;->c:D
+    .line 1
+    iget-byte p0, p0, Lb81;->l:B
 
-    .line 17
-    .line 18
-    invoke-static {v2, v3, v0, v1}, Lqq5;->c(DII)I
-
-    .line 19
-    .line 20
-    .line 21
-    move-result v0
-
-    .line 22
-    iget-wide v1, p0, Lb81;->d:D
-
-    .line 23
-    .line 24
-    invoke-static {v1, v2}, Ljava/lang/Double;->hashCode(D)I
-
-    .line 25
-    .line 26
-    .line 27
-    move-result p0
-
-    .line 28
-    add-int/2addr p0, v0
-
-    .line 29
+    .line 2
+    .line 3
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+.method public f()Landroid/content/ClipData;
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object p0, p0, Lb81;->k:Landroid/content/ClipData;
 
     .line 2
     .line 3
-    const-string v1, "ContrastCurve(low="
+    return-object p0
+.end method
+
+.method public j()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lb81;->m:I
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public k(Landroid/net/Uri;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lb81;->n:Landroid/net/Uri;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+.method public l(I)V
+    .locals 0
+
+    .line 1
+    iput p1, p0, Lb81;->m:I
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+.method public setExtras(Landroid/os/Bundle;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lb81;->o:Landroid/os/Bundle;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 5
+
+    .line 1
+    iget-byte v0, p0, Lb81;->j:B
+
+    .line 2
+    .line 3
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
     .line 6
+    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
     .line 7
     .line 8
-    iget-wide v1, p0, Lb81;->a:D
-
     .line 9
+    move-result-object p0
+
     .line 10
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    return-object p0
 
     .line 11
+    :pswitch_0
+    iget-object v0, p0, Lb81;->n:Landroid/net/Uri;
+
     .line 12
     .line 13
-    const-string v1, ", normal="
+    new-instance v1, Ljava/lang/StringBuilder;
 
     .line 14
     .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v2, "ContentInfoCompat{clip="
 
     .line 16
     .line 17
-    .line 18
-    iget-wide v1, p0, Lb81;->b:D
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    .line 18
     .line 19
     .line 20
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    iget-object v2, p0, Lb81;->k:Landroid/content/ClipData;
 
     .line 21
     .line 22
-    .line 23
-    const-string v1, ", medium="
+    invoke-virtual {v2}, Landroid/content/ClipData;->getDescription()Landroid/content/ClipDescription;
 
+    .line 23
     .line 24
     .line 25
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result-object v2
 
     .line 26
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
     .line 27
     .line 28
-    iget-wide v1, p0, Lb81;->c:D
-
     .line 29
-    .line 30
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+    const-string v2, ", source="
 
+    .line 30
     .line 31
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 32
     .line 33
-    const-string v1, ", high="
-
     .line 34
-    .line 35
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-byte v2, p0, Lb81;->l:B
 
+    .line 35
     .line 36
+    if-eqz v2, :cond_5
+
     .line 37
     .line 38
-    iget-wide v1, p0, Lb81;->d:D
+    const/4 v3, 0x1
 
     .line 39
+    if-eq v2, v3, :cond_4
+
     .line 40
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
-
     .line 41
-    .line 42
-    .line 43
-    const-string p0, ")"
+    const/4 v3, 0x2
 
+    .line 42
+    if-eq v2, v3, :cond_3
+
+    .line 43
     .line 44
+    const/4 v3, 0x3
+
     .line 45
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    if-eq v2, v3, :cond_2
 
     .line 46
     .line 47
+    const/4 v3, 0x4
+
     .line 48
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-eq v2, v3, :cond_1
 
     .line 49
     .line 50
+    const/4 v3, 0x5
+
     .line 51
-    move-result-object p0
+    if-eq v2, v3, :cond_0
 
     .line 52
+    .line 53
+    invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    .line 54
+    .line 55
+    .line 56
+    move-result-object v2
+
+    .line 57
+    goto :goto_0
+
+    .line 58
+    :cond_0
+    const-string v2, "SOURCE_PROCESS_TEXT"
+
+    .line 59
+    .line 60
+    goto :goto_0
+
+    .line 61
+    :cond_1
+    const-string v2, "SOURCE_AUTOFILL"
+
+    .line 62
+    .line 63
+    goto :goto_0
+
+    .line 64
+    :cond_2
+    const-string v2, "SOURCE_DRAG_AND_DROP"
+
+    .line 65
+    .line 66
+    goto :goto_0
+
+    .line 67
+    :cond_3
+    const-string v2, "SOURCE_INPUT_METHOD"
+
+    .line 68
+    .line 69
+    goto :goto_0
+
+    .line 70
+    :cond_4
+    const-string v2, "SOURCE_CLIPBOARD"
+
+    .line 71
+    .line 72
+    goto :goto_0
+
+    .line 73
+    :cond_5
+    const-string v2, "SOURCE_APP"
+
+    .line 74
+    .line 75
+    :goto_0
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 76
+    .line 77
+    .line 78
+    const-string v2, ", flags="
+
+    .line 79
+    .line 80
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 81
+    .line 82
+    .line 83
+    iget v2, p0, Lb81;->m:I
+
+    .line 84
+    .line 85
+    and-int/lit8 v3, v2, 0x1
+
+    .line 86
+    .line 87
+    if-eqz v3, :cond_6
+
+    .line 88
+    .line 89
+    const-string v2, "FLAG_CONVERT_TO_PLAIN_TEXT"
+
+    .line 90
+    .line 91
+    goto :goto_1
+
+    .line 92
+    :cond_6
+    invoke-static {v2}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    .line 93
+    .line 94
+    .line 95
+    move-result-object v2
+
+    .line 96
+    :goto_1
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 97
+    .line 98
+    .line 99
+    const-string v2, ""
+
+    .line 100
+    .line 101
+    if-nez v0, :cond_7
+
+    .line 102
+    .line 103
+    move-object v0, v2
+
+    .line 104
+    goto :goto_2
+
+    .line 105
+    :cond_7
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    .line 106
+    .line 107
+    const-string v4, ", hasLinkUri("
+
+    .line 108
+    .line 109
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 110
+    .line 111
+    .line 112
+    invoke-virtual {v0}, Landroid/net/Uri;->toString()Ljava/lang/String;
+
+    .line 113
+    .line 114
+    .line 115
+    move-result-object v0
+
+    .line 116
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    .line 117
+    .line 118
+    .line 119
+    move-result v0
+
+    .line 120
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 121
+    .line 122
+    .line 123
+    const-string v0, ")"
+
+    .line 124
+    .line 125
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 126
+    .line 127
+    .line 128
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 129
+    .line 130
+    .line 131
+    move-result-object v0
+
+    .line 132
+    :goto_2
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 133
+    .line 134
+    .line 135
+    iget-object p0, p0, Lb81;->o:Landroid/os/Bundle;
+
+    .line 136
+    .line 137
+    if-nez p0, :cond_8
+
+    .line 138
+    .line 139
+    goto :goto_3
+
+    .line 140
+    :cond_8
+    const-string v2, ", hasExtras"
+
+    .line 141
+    .line 142
+    :goto_3
+    const-string p0, "}"
+
+    .line 143
+    .line 144
+    invoke-static {v1, v2, p0}, Ly96;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 145
+    .line 146
+    .line 147
+    move-result-object p0
+
+    .line 148
     return-object p0
+
+    .line 149
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method

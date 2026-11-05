@@ -1,24 +1,14 @@
-.class public Lk96;
-.super Lu2;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public interface abstract Lk96;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Ljava/io/Closeable;
 
 
 # virtual methods
-.method public final P(Ljava/lang/Throwable;)Z
-    .locals 0
+.method public abstract a()Luu6;
+.end method
 
-    .line 1
-    iget-object p0, p0, Lu2;->l:Lsa1;
-
-    .line 2
-    .line 3
-    invoke-static {p0, p1}, Ls77;->E(Lsa1;Ljava/lang/Throwable;)V
-
-    .line 4
-    .line 5
-    .line 6
-    const/4 p0, 0x1
-
-    .line 7
-    return p0
+.method public abstract u(Lje0;J)J
 .end method

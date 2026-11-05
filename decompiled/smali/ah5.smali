@@ -1,105 +1,142 @@
 .class public final Lah5;
-.super Lz71;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lch5;
 
 
 # instance fields
-.field public j:Lih5;
-
-.field public k:Ljava/io/File;
-
-.field public l:Ljava/lang/String;
-
-.field public m:Ljava/lang/Object;
-
-.field public n:Ljava/util/List;
-
-.field public o:Lps3;
-
-.field public synthetic p:Ljava/lang/Object;
-
-.field public final synthetic q:Lhh5;
-
-.field public r:I
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lhh5;Lz71;)V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lah5;->q:Lhh5;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
-
     .line 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 5
     .line 6
+    .line 7
+    iput-object p1, p0, Lah5;->a:Ljava/lang/String;
+
+    .line 8
+    .line 9
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
     .line 1
-    iput-object p1, p0, Lah5;->p:Ljava/lang/Object;
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    iget p1, p0, Lah5;->r:I
+    if-ne p0, p1, :cond_0
 
+    .line 3
     .line 4
+    return v0
+
     .line 5
-    const/high16 v0, -0x80000000
+    :cond_0
+    instance-of v1, p1, Lah5;
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    const/4 v2, 0x0
 
     .line 8
-    iput p1, p0, Lah5;->r:I
+    if-nez v1, :cond_1
 
     .line 9
     .line 10
-    iget-object p1, p0, Lah5;->q:Lhh5;
+    return v2
 
     .line 11
-    .line 12
-    const/4 v0, 0x0
+    :cond_1
+    check-cast p1, Lah5;
 
+    .line 12
     .line 13
-    invoke-virtual {p1, p0, v0, v0}, Lhh5;->a(Lz71;Lih5;Ljava/io/File;)Ljava/lang/Object;
+    iget-object p0, p0, Lah5;->a:Ljava/lang/String;
 
     .line 14
     .line 15
-    .line 16
-    move-result-object p0
+    iget-object p1, p1, Lah5;->a:Ljava/lang/String;
 
+    .line 16
     .line 17
-    sget-object p1, Lcb1;->j:Lcb1;
+    invoke-static {p0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 18
     .line 19
-    if-ne p0, p1, :cond_0
-
     .line 20
+    move-result p0
+
     .line 21
-    return-object p0
+    if-nez p0, :cond_2
 
     .line 22
-    :cond_0
-    new-instance p1, Lub5;
-
     .line 23
-    .line 24
-    invoke-direct {p1, p0}, Lub5;-><init>(Ljava/lang/Object;)V
+    return v2
 
-    .line 25
-    .line 26
-    .line 27
-    return-object p1
+    .line 24
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lah5;->a:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    const-string v0, "Unknown(reason="
+
+    .line 2
+    .line 3
+    const-string v1, ")"
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Lah5;->a:Ljava/lang/String;
+
+    .line 6
+    .line 7
+    invoke-static {v0, p0, v1}, Loc1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p0
+
+    .line 11
+    return-object p0
 .end method

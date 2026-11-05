@@ -1,6 +1,6 @@
 .class public final Lcom/hashsequence/coilresvg/UniffiLib;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
 .implements Lcom/sun/jna/Library;
@@ -9,7 +9,7 @@
 # static fields
 .field public static final $stable:I
 
-.field private static final CLEANER$delegate:Lt03;
+.field private static final CLEANER$delegate:Lc23;
 
 .field public static final INSTANCE:Lcom/hashsequence/coilresvg/UniffiLib;
 
@@ -57,29 +57,29 @@
     .line 19
     .line 20
     .line 21
-    new-instance v0, Ljp6;
+    new-instance v0, Lzl6;
 
     .line 22
     .line 23
-    const/16 v1, 0xe
+    const/16 v1, 0x12
 
     .line 24
     .line 25
-    invoke-direct {v0, v1}, Ljp6;-><init>(B)V
+    invoke-direct {v0, v1}, Lzl6;-><init>(B)V
 
     .line 26
     .line 27
     .line 28
-    new-instance v1, Llg6;
+    new-instance v1, Lci6;
 
     .line 29
     .line 30
-    invoke-direct {v1, v0}, Llg6;-><init>(Ld52;)V
+    invoke-direct {v1, v0}, Lci6;-><init>(Le62;)V
 
     .line 31
     .line 32
     .line 33
-    sput-object v1, Lcom/hashsequence/coilresvg/UniffiLib;->CLEANER$delegate:Lt03;
+    sput-object v1, Lcom/hashsequence/coilresvg/UniffiLib;->CLEANER$delegate:Lc23;
 
     .line 34
     .line 35
@@ -332,11 +332,11 @@
     .locals 0
 
     .line 1
-    sget-object p0, Lcom/hashsequence/coilresvg/UniffiLib;->CLEANER$delegate:Lt03;
+    sget-object p0, Lcom/hashsequence/coilresvg/UniffiLib;->CLEANER$delegate:Lc23;
 
     .line 2
     .line 3
-    invoke-interface {p0}, Lt03;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lc23;->getValue()Ljava/lang/Object;
 
     .line 4
     .line 5

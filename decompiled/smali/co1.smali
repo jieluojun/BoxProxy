@@ -1,29 +1,33 @@
-.class public interface abstract Lco1;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final Lco1;
+.super Lvp3;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lgo1;
 
 
-# static fields
-.field public static final f:Lp6;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    sget-object v0, Lp6;->f0:Lp6;
-
-    .line 2
-    .line 3
-    sput-object v0, Lco1;->f:Lp6;
-
-    .line 4
-    .line 5
-    return-void
-.end method
+# instance fields
+.field public x:Lp62;
 
 
 # virtual methods
-.method public abstract c(Lvy5;JLkz2;Lyg1;Lry5;)Lbo1;
+.method public final o0(Ll13;)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lco1;->x:Lp62;
+
+    .line 2
+    .line 3
+    invoke-interface {p0, p1}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    invoke-virtual {p1}, Ll13;->c()V
+
+    .line 7
+    .line 8
+    .line 9
+    return-void
 .end method

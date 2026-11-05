@@ -1,153 +1,148 @@
-.class public interface abstract Lki3;
+.class public final synthetic Lki3;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lhs2;
+.implements Lt62;
 
 
-# virtual methods
-.method public O0(IILjava/util/Map;Lo52;)Lii3;
-    .locals 6
+# instance fields
+.field public final synthetic j:Z
 
-    .line 1
-    const/4 v4, 0x0
+.field public final synthetic k:Le62;
 
-    .line 2
-    move-object v0, p0
+.field public final synthetic l:Lwp3;
 
-    .line 3
-    move v1, p1
+.field public final synthetic m:Lrs4;
 
-    .line 4
-    move v2, p2
+.field public final synthetic n:Z
 
-    .line 5
-    move-object v3, p3
+.field public final synthetic o:Lqz0;
 
-    .line 6
-    move-object v5, p4
+.field public final synthetic p:I
 
-    .line 7
-    invoke-interface/range {v0 .. v5}, Lki3;->s0(IILjava/util/Map;Lo52;Lo52;)Lii3;
+.field public final synthetic q:B
 
-    .line 8
-    .line 9
-    .line 10
-    move-result-object p0
 
-    .line 11
-    return-object p0
-.end method
-
-.method public s0(IILjava/util/Map;Lo52;Lo52;)Lii3;
-    .locals 8
+# direct methods
+.method public synthetic constructor <init>(ZLe62;Lwp3;Lrs4;ZLqz0;II)V
+    .locals 0
 
     .line 1
-    const/high16 v0, -0x1000000
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    and-int v1, p1, v0
-
     .line 4
+    iput-boolean p1, p0, Lki3;->j:Z
+
     .line 5
-    if-nez v1, :cond_0
-
     .line 6
-    .line 7
-    and-int/2addr v0, p2
+    iput-object p2, p0, Lki3;->k:Le62;
 
+    .line 7
     .line 8
-    if-nez v0, :cond_0
+    iput-object p3, p0, Lki3;->l:Lwp3;
 
     .line 9
     .line 10
-    goto :goto_0
+    iput-object p4, p0, Lki3;->m:Lrs4;
 
     .line 11
-    :cond_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
     .line 12
+    iput-boolean p5, p0, Lki3;->n:Z
+
     .line 13
-    const-string v1, "Size("
-
     .line 14
-    .line 15
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iput-object p6, p0, Lki3;->o:Lqz0;
 
+    .line 15
     .line 16
+    iput p7, p0, Lki3;->p:I
+
     .line 17
     .line 18
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iput-byte p8, p0, Lki3;->q:B
 
     .line 19
     .line 20
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 9
+
+    .line 1
+    move-object v6, p1
+
+    .line 2
+    check-cast v6, Lz11;
+
+    .line 3
+    .line 4
+    check-cast p2, Ljava/lang/Integer;
+
+    .line 5
+    .line 6
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 7
+    .line 8
+    .line 9
+    iget p1, p0, Lki3;->p:I
+
+    .line 10
+    .line 11
+    or-int/lit8 p1, p1, 0x1
+
+    .line 12
+    .line 13
+    invoke-static {p1}, Lqu5;->f0(I)I
+
+    .line 14
+    .line 15
+    .line 16
+    move-result v7
+
+    .line 17
+    iget-boolean v0, p0, Lki3;->j:Z
+
+    .line 18
+    .line 19
+    iget-object v1, p0, Lki3;->k:Le62;
+
+    .line 20
     .line 21
-    const-string v1, " x "
+    iget-object v2, p0, Lki3;->l:Lwp3;
 
     .line 22
     .line 23
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    iget-object v3, p0, Lki3;->m:Lrs4;
 
     .line 24
     .line 25
-    .line 26
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    iget-boolean v4, p0, Lki3;->n:Z
 
+    .line 26
     .line 27
+    iget-object v5, p0, Lki3;->o:Lqz0;
+
     .line 28
     .line 29
-    const-string v1, ") is out of range. Each dimension must be between 0 and 16777215."
+    iget-byte v8, p0, Lki3;->q:B
 
     .line 30
     .line 31
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static/range {v0 .. v8}, Lpi3;->c(ZLe62;Lwp3;Lrs4;ZLqz0;Lz11;II)V
 
     .line 32
     .line 33
     .line 34
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    sget-object p0, La47;->a:La47;
 
     .line 35
     .line 36
-    .line 37
-    move-result-object v0
-
-    .line 38
-    invoke-static {v0}, Lpo2;->b(Ljava/lang/String;)V
-
-    .line 39
-    .line 40
-    .line 41
-    :goto_0
-    new-instance v1, Lji3;
-
-    .line 42
-    .line 43
-    move-object v6, p0
-
-    .line 44
-    move v2, p1
-
-    .line 45
-    move v3, p2
-
-    .line 46
-    move-object v4, p3
-
-    .line 47
-    move-object v5, p4
-
-    .line 48
-    move-object v7, p5
-
-    .line 49
-    invoke-direct/range {v1 .. v7}, Lji3;-><init>(IILjava/util/Map;Lo52;Lki3;Lo52;)V
-
-    .line 50
-    .line 51
-    .line 52
-    return-object v1
+    return-object p0
 .end method

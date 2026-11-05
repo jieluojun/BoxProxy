@@ -1,141 +1,157 @@
-.class public final synthetic Lu74;
+.class public final Lu74;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Ld52;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public a:Lvp3;
 
-.field public final synthetic k:Lo52;
+.field public b:I
 
-.field public final synthetic l:Lcl4;
+.field public c:Lys3;
+
+.field public d:Lys3;
+
+.field public e:Z
+
+.field public final synthetic f:Ll9;
 
 
 # direct methods
-.method public synthetic constructor <init>(BLo52;Lcl4;)V
+.method public constructor <init>(Ll9;Lvp3;ILys3;Lys3;Z)V
     .locals 0
 
     .line 1
-    iput-byte p1, p0, Lu74;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p2, p0, Lu74;->k:Lo52;
-
     .line 4
+    iput-object p1, p0, Lu74;->f:Ll9;
+
     .line 5
-    iput-object p3, p0, Lu74;->l:Lcl4;
-
     .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lu74;->a:Lvp3;
 
+    .line 7
     .line 8
+    iput p3, p0, Lu74;->b:I
+
     .line 9
     .line 10
+    iput-object p4, p0, Lu74;->c:Lys3;
+
+    .line 11
+    .line 12
+    iput-object p5, p0, Lu74;->d:Lys3;
+
+    .line 13
+    .line 14
+    iput-boolean p6, p0, Lu74;->e:Z
+
+    .line 15
+    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
+.method public final a(II)Z
+    .locals 2
 
     .line 1
-    iget-byte v0, p0, Lu74;->j:B
+    iget-object v0, p0, Lu74;->c:Lys3;
 
     .line 2
     .line 3
-    sget-object v1, Lk27;->a:Lk27;
+    iget v1, p0, Lu74;->b:I
 
     .line 4
     .line 5
-    iget-object v2, p0, Lu74;->l:Lcl4;
+    add-int/2addr v1, p1
 
     .line 6
-    .line 7
-    iget-object p0, p0, Lu74;->k:Lo52;
+    invoke-virtual {v0, v1}, Lys3;->g(I)Ljava/lang/Object;
 
+    .line 7
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_0
+    move-result-object p1
 
     .line 10
+    check-cast p1, Lup3;
+
     .line 11
     .line 12
-    invoke-virtual {v2}, Lcl4;->g()F
+    iget-object v0, p0, Lu74;->d:Lys3;
 
     .line 13
     .line 14
-    .line 15
-    move-result v0
+    iget p0, p0, Lu74;->b:I
 
+    .line 15
     .line 16
-    invoke-static {v0}, Lai3;->E(F)I
+    add-int/2addr p0, p2
 
     .line 17
+    invoke-virtual {v0, p0}, Lys3;->g(I)Ljava/lang/Object;
+
     .line 18
     .line 19
-    move-result v0
-
     .line 20
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object p0
 
     .line 21
+    check-cast p0, Lup3;
+
     .line 22
     .line 23
-    move-result-object v0
+    invoke-static {p1, p0}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 24
-    invoke-interface {p0, v0}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 25
     .line 26
+    move-result p2
+
     .line 27
-    return-object v1
+    if-eqz p2, :cond_0
 
     .line 28
-    :pswitch_0
-    invoke-virtual {v2}, Lcl4;->g()F
-
     .line 29
+    goto :goto_0
+
     .line 30
+    :cond_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 31
-    move-result v0
-
     .line 32
-    invoke-static {v0}, Lai3;->E(F)I
-
     .line 33
+    move-result-object p1
+
     .line 34
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 35
-    move-result v0
-
     .line 36
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
     .line 37
-    .line 38
-    .line 39
-    move-result-object v0
+    move-result-object p0
 
+    .line 38
+    if-ne p1, p0, :cond_1
+
+    .line 39
     .line 40
-    invoke-interface {p0, v0}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    :goto_0
+    const/4 p0, 0x1
 
     .line 41
+    return p0
+
     .line 42
+    :cond_1
+    const/4 p0, 0x0
+
     .line 43
-    return-object v1
-
-    .line 44
-    nop
-
-    .line 45
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

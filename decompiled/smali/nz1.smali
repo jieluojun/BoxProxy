@@ -1,24 +1,25 @@
 .class public final Lnz1;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lez1;
+.implements Ljava/util/Iterator;
+.implements Lfy2;
 
 
 # instance fields
-.field public final a:I
+.field public final j:Ljava/util/Iterator;
 
-.field public final b:Lrp1;
+.field public k:I
 
-.field public final c:J
+.field public l:Ljava/lang/Object;
 
-.field public final d:J
+.field public final synthetic m:Loz1;
 
 
 # direct methods
-.method public constructor <init>(IILrp1;)V
-    .locals 4
+.method public constructor <init>(Loz1;)V
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,273 +27,245 @@
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Lnz1;->a:I
+    iput-object p1, p0, Lnz1;->m:Loz1;
 
     .line 5
     .line 6
-    iput-object p3, p0, Lnz1;->b:Lrp1;
+    iget-object p1, p1, Loz1;->a:Lny5;
 
     .line 7
     .line 8
-    int-to-long v0, p1
+    invoke-interface {p1}, Lny5;->iterator()Ljava/util/Iterator;
 
     .line 9
-    const-wide/32 v2, 0xf4240
-
     .line 10
     .line 11
+    move-result-object p1
+
     .line 12
-    mul-long/2addr v0, v2
+    iput-object p1, p0, Lnz1;->j:Ljava/util/Iterator;
 
     .line 13
-    iput-wide v0, p0, Lnz1;->c:J
-
     .line 14
+    const/4 p1, -0x1
+
     .line 15
-    int-to-long p1, p2
+    iput p1, p0, Lnz1;->k:I
 
     .line 16
-    mul-long/2addr p1, v2
-
     .line 17
-    iput-wide p1, p0, Lnz1;->d:J
-
-    .line 18
-    .line 19
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(JFFF)F
+.method public final a()V
     .locals 3
 
     .line 1
-    iget-wide v0, p0, Lnz1;->d:J
+    :cond_0
+    iget-object v0, p0, Lnz1;->j:Ljava/util/Iterator;
 
     .line 2
     .line 3
-    sub-long/2addr p1, v0
-
-    .line 4
-    const-wide/16 v0, 0x0
-
-    .line 5
-    .line 6
-    cmp-long p5, p1, v0
-
-    .line 7
-    .line 8
-    if-gez p5, :cond_0
-
-    .line 9
-    .line 10
-    move-wide p1, v0
-
-    .line 11
-    :cond_0
-    iget-wide v0, p0, Lnz1;->c:J
-
-    .line 12
-    .line 13
-    cmp-long p5, p1, v0
-
-    .line 14
-    .line 15
-    if-lez p5, :cond_1
-
-    .line 16
-    .line 17
-    move-wide p1, v0
-
-    .line 18
-    :cond_1
-    iget p5, p0, Lnz1;->a:I
-
-    .line 19
-    .line 20
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    .line 21
-    .line 22
-    if-nez p5, :cond_2
-
-    .line 23
-    .line 24
-    move p1, v2
-
-    .line 25
-    goto :goto_0
-
-    .line 26
-    :cond_2
-    long-to-float p1, p1
-
-    .line 27
-    long-to-float p2, v0
-
-    .line 28
-    div-float/2addr p1, p2
-
-    .line 29
-    :goto_0
-    iget-object p0, p0, Lnz1;->b:Lrp1;
-
-    .line 30
-    .line 31
-    invoke-interface {p0, p1}, Lrp1;->f(F)F
-
-    .line 32
-    .line 33
-    .line 34
-    move-result p0
-
-    .line 35
-    sub-float/2addr v2, p0
-
-    .line 36
-    mul-float/2addr v2, p3
-
-    .line 37
-    mul-float/2addr p4, p0
-
-    .line 38
-    add-float/2addr p4, v2
-
-    .line 39
-    return p4
-.end method
-
-.method public final c(JFFF)F
-    .locals 9
-
-    .line 1
-    iget-wide v1, p0, Lnz1;->d:J
-
-    .line 2
-    .line 3
-    sub-long v1, p1, v1
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 4
     .line 5
-    const-wide/16 v3, 0x0
-
     .line 6
+    move-result v1
+
     .line 7
-    cmp-long v5, v1, v3
+    if-eqz v1, :cond_1
 
     .line 8
     .line 9
-    if-gez v5, :cond_0
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     .line 10
     .line 11
-    move-wide v1, v3
-
     .line 12
-    :cond_0
-    iget-wide v5, p0, Lnz1;->c:J
+    move-result-object v0
 
     .line 13
+    iget-object v1, p0, Lnz1;->m:Loz1;
+
     .line 14
-    cmp-long v7, v1, v5
-
     .line 15
+    iget-object v2, v1, Loz1;->c:Lp62;
+
     .line 16
-    if-lez v7, :cond_1
-
     .line 17
+    invoke-interface {v2, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 18
-    move-wide v6, v5
-
     .line 19
-    goto :goto_0
-
     .line 20
-    :cond_1
-    move-wide v6, v1
+    move-result-object v2
 
     .line 21
-    :goto_0
-    cmp-long v1, v6, v3
+    check-cast v2, Ljava/lang/Boolean;
 
     .line 22
     .line 23
-    if-nez v1, :cond_2
+    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
 
     .line 24
     .line 25
-    return p5
-
     .line 26
-    :cond_2
-    const-wide/32 v1, 0xf4240
+    move-result v2
 
     .line 27
+    iget-boolean v1, v1, Loz1;->b:Z
+
     .line 28
     .line 29
-    sub-long v1, v6, v1
+    if-ne v2, v1, :cond_0
 
     .line 30
     .line 31
-    move-object v0, p0
+    iput-object v0, p0, Lnz1;->l:Ljava/lang/Object;
 
     .line 32
-    move v3, p3
-
     .line 33
-    move v4, p4
+    const/4 v0, 0x1
 
     .line 34
-    move v5, p5
+    iput v0, p0, Lnz1;->k:I
 
     .line 35
-    invoke-virtual/range {v0 .. v5}, Lnz1;->b(JFFF)F
-
     .line 36
+    return-void
+
     .line 37
+    :cond_1
+    const/4 v0, 0x0
+
     .line 38
-    move-result v8
+    iput v0, p0, Lnz1;->k:I
 
     .line 39
-    move-wide v1, v6
-
     .line 40
-    invoke-virtual/range {v0 .. v5}, Lnz1;->b(JFFF)F
-
-    .line 41
-    .line 42
-    .line 43
-    move-result v0
-
-    .line 44
-    sub-float/2addr v0, v8
-
-    .line 45
-    const/high16 v1, 0x447a0000    # 1000.0f
-
-    .line 46
-    .line 47
-    mul-float/2addr v0, v1
-
-    .line 48
-    return v0
+    return-void
 .end method
 
-.method public final d(FFF)J
+.method public final hasNext()Z
     .locals 2
 
     .line 1
-    iget-wide p1, p0, Lnz1;->d:J
+    iget v0, p0, Lnz1;->k:I
 
     .line 2
     .line 3
-    iget-wide v0, p0, Lnz1;->c:J
+    const/4 v1, -0x1
+
+    .line 4
+    if-ne v0, v1, :cond_0
+
+    .line 5
+    .line 6
+    invoke-virtual {p0}, Lnz1;->a()V
+
+    .line 7
+    .line 8
+    .line 9
+    :cond_0
+    iget p0, p0, Lnz1;->k:I
+
+    .line 10
+    .line 11
+    const/4 v0, 0x1
+
+    .line 12
+    if-ne p0, v0, :cond_1
+
+    .line 13
+    .line 14
+    return v0
+
+    .line 15
+    :cond_1
+    const/4 p0, 0x0
+
+    .line 16
+    return p0
+.end method
+
+.method public final next()Ljava/lang/Object;
+    .locals 3
+
+    .line 1
+    iget v0, p0, Lnz1;->k:I
+
+    .line 2
+    .line 3
+    const/4 v1, -0x1
+
+    .line 4
+    if-ne v0, v1, :cond_0
+
+    .line 5
+    .line 6
+    invoke-virtual {p0}, Lnz1;->a()V
+
+    .line 7
+    .line 8
+    .line 9
+    :cond_0
+    iget v0, p0, Lnz1;->k:I
+
+    .line 10
+    .line 11
+    if-eqz v0, :cond_1
+
+    .line 12
+    .line 13
+    iget-object v0, p0, Lnz1;->l:Ljava/lang/Object;
+
+    .line 14
+    .line 15
+    const/4 v2, 0x0
+
+    .line 16
+    iput-object v2, p0, Lnz1;->l:Ljava/lang/Object;
+
+    .line 17
+    .line 18
+    iput v1, p0, Lnz1;->k:I
+
+    .line 19
+    .line 20
+    return-object v0
+
+    .line 21
+    :cond_1
+    invoke-static {}, Lue1;->p()V
+
+    .line 22
+    .line 23
+    .line 24
+    const/4 p0, 0x0
+
+    .line 25
+    return-object p0
+.end method
+
+.method public final remove()V
+    .locals 1
+
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 2
+    .line 3
+    const-string v0, "Operation is not supported for read-only collection"
 
     .line 4
     .line 5
-    add-long/2addr p1, v0
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
     .line 6
-    return-wide p1
+    .line 7
+    .line 8
+    throw p0
 .end method

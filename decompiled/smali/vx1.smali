@@ -1,56 +1,94 @@
-.class public final synthetic Lvx1;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lwx1;
+.class public final Lvx1;
+.super Ljava/util/concurrent/CancellationException;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# virtual methods
-.method public final a(Ljava/lang/String;)Ljava/io/InputStream;
-    .locals 0
+# instance fields
+.field public final synthetic j:B
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
-    new-instance p0, Ljava/io/File;
+    const/4 v0, 0x0
 
     .line 2
-    .line 3
-    invoke-direct {p0, p1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    iput-byte v0, p0, Lvx1;->j:B
 
+    .line 3
     .line 4
+    const-string v0, "The coroutine was canceled because it left the composition"
+
     .line 5
     .line 6
-    invoke-virtual {p0}, Ljava/io/File;->isFile()Z
+    invoke-direct {p0, v0}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
 
     .line 7
     .line 8
     .line 9
-    move-result p1
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Ljava/lang/String;)V
+    .locals 1
 
     .line 10
-    if-eqz p1, :cond_0
+    const/4 v0, 0x1
 
+    iput-byte v0, p0, Lvx1;->j:B
+
+    invoke-direct {p0, p1}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final fillInStackTrace()Ljava/lang/Throwable;
+    .locals 1
+
+    .line 1
+    iget-byte v0, p0, Lvx1;->j:B
+
+    .line 2
+    .line 3
+    packed-switch v0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    sget-object v0, Lbf0;->c0:[Ljava/lang/StackTraceElement;
+
+    .line 7
+    .line 8
+    invoke-virtual {p0, v0}, Ljava/lang/Throwable;->setStackTrace([Ljava/lang/StackTraceElement;)V
+
+    .line 9
+    .line 10
     .line 11
+    return-object p0
+
     .line 12
-    :try_start_0
-    new-instance p1, Ljava/io/FileInputStream;
+    :pswitch_0
+    sget-object v0, Lg61;->i0:[Ljava/lang/StackTraceElement;
 
     .line 13
     .line 14
-    invoke-direct {p1, p0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
-    :try_end_0
-    .catch Ljava/io/FileNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {p0, v0}, Ljava/lang/Throwable;->setStackTrace([Ljava/lang/StackTraceElement;)V
 
     .line 15
     .line 16
     .line 17
-    return-object p1
+    return-object p0
 
     .line 18
-    :catch_0
-    :cond_0
-    const/4 p0, 0x0
+    nop
 
     .line 19
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

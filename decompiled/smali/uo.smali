@@ -1,804 +1,625 @@
-.class public final Luo;
+.class public abstract Luo;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lx94;
-.implements Lck3;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final synthetic j:Lcp;
+# static fields
+.field public static final a:Ljava/util/List;
+
+.field public static final b:Ljava/util/List;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcp;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 77
 
     .line 1
-    iput-object p1, p0, Luo;->j:Lcp;
+    const-string v75, "me.ele"
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v76, "tv.danmaku.bili"
 
     .line 4
     .line 5
+    const-string v1, "cn.wps"
+
     .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public a(Laj3;Z)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Luo;->j:Lcp;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lcp;->u(Laj3;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public g(Landroid/view/View;Lic7;)Lic7;
-    .locals 12
-
-    .line 1
-    iget-object v0, p2, Lic7;->a:Lfc7;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Lfc7;->n()Lpp2;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v1
-
     .line 7
-    iget v1, v1, Lpp2;->b:I
+    const-string v2, "com.abc"
 
     .line 8
     .line 9
-    invoke-virtual {v0}, Lfc7;->n()Lpp2;
+    const-string v3, "com.alicloud"
 
     .line 10
     .line 11
-    .line 12
-    move-result-object v2
+    const-string v4, "com.alibaba"
 
+    .line 12
     .line 13
-    iget v2, v2, Lpp2;->b:I
+    const-string v5, "com.alipay"
 
     .line 14
     .line 15
-    iget-object p0, p0, Luo;->j:Lcp;
+    const-string v6, "com.aliyun"
 
     .line 16
     .line 17
-    iget-object v3, p0, Lcp;->D:Landroidx/appcompat/widget/ActionBarContextView;
+    const-string v7, "com.amap"
 
     .line 18
     .line 19
-    if-eqz v3, :cond_5
+    const-string v8, "com.anjuke"
 
     .line 20
     .line 21
-    invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    const-string v9, "com.autonavi"
 
     .line 22
     .line 23
-    .line 24
-    move-result-object v3
+    const-string v10, "com.baidu"
 
+    .line 24
     .line 25
-    instance-of v3, v3, Landroid/view/ViewGroup$MarginLayoutParams;
+    const-string v11, "com.bilibili"
 
     .line 26
     .line 27
-    if-eqz v3, :cond_5
+    const-string v12, "com.boc"
 
     .line 28
     .line 29
-    iget-object v3, p0, Lcp;->D:Landroidx/appcompat/widget/ActionBarContextView;
+    const-string v13, "com.bocsoft"
 
     .line 30
     .line 31
-    invoke-virtual {v3}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    const-string v14, "com.bytedance"
 
     .line 32
     .line 33
-    .line 34
-    move-result-object v3
+    const-string v15, "com.ccb"
 
+    .line 34
     .line 35
-    check-cast v3, Landroid/view/ViewGroup$MarginLayoutParams;
+    const-string v16, "com.cheetahmobile"
 
     .line 36
     .line 37
-    iget-object v4, p0, Lcp;->D:Landroidx/appcompat/widget/ActionBarContextView;
+    const-string v17, "com.chinamworld"
 
     .line 38
     .line 39
-    invoke-virtual {v4}, Landroid/view/View;->isShown()Z
+    const-string v18, "com.cib"
 
     .line 40
     .line 41
-    .line 42
-    move-result v4
+    const-string v19, "com.cmbchina"
 
+    .line 42
     .line 43
-    const/4 v5, 0x0
+    const-string v20, "com.coloros"
 
     .line 44
-    if-eqz v4, :cond_4
-
     .line 45
+    const-string v21, "com.ctrip"
+
     .line 46
-    iget-object v4, p0, Lcp;->j0:Landroid/graphics/Rect;
-
     .line 47
+    const-string v22, "com.dianping"
+
     .line 48
-    if-nez v4, :cond_0
-
     .line 49
+    const-string v23, "com.didichuxing"
+
     .line 50
-    new-instance v4, Landroid/graphics/Rect;
-
     .line 51
-    .line 52
-    invoke-direct {v4}, Landroid/graphics/Rect;-><init>()V
+    const-string v24, "com.douban"
 
+    .line 52
     .line 53
+    const-string v25, "com.eg.android.alipaygphone"
+
     .line 54
     .line 55
-    iput-object v4, p0, Lcp;->j0:Landroid/graphics/Rect;
+    const-string v26, "com.flyme"
 
     .line 56
     .line 57
-    new-instance v4, Landroid/graphics/Rect;
+    const-string v27, "com.gionee"
 
     .line 58
     .line 59
-    invoke-direct {v4}, Landroid/graphics/Rect;-><init>()V
+    const-string v28, "com.heytap"
 
     .line 60
     .line 61
+    const-string v29, "com.hihonor"
+
     .line 62
-    iput-object v4, p0, Lcp;->k0:Landroid/graphics/Rect;
-
     .line 63
+    const-string v30, "com.huawei"
+
     .line 64
-    :cond_0
-    iget-object v4, p0, Lcp;->j0:Landroid/graphics/Rect;
-
     .line 65
+    const-string v31, "com.hypergryph"
+
     .line 66
-    iget-object v6, p0, Lcp;->k0:Landroid/graphics/Rect;
-
     .line 67
-    .line 68
-    invoke-virtual {v0}, Lfc7;->n()Lpp2;
+    const-string v32, "com.icbc"
 
+    .line 68
     .line 69
+    const-string v33, "com.ifeng"
+
     .line 70
     .line 71
-    move-result-object v7
+    const-string v34, "com.iflytek"
 
     .line 72
-    iget v7, v7, Lpp2;->a:I
-
     .line 73
-    .line 74
-    invoke-virtual {v0}, Lfc7;->n()Lpp2;
+    const-string v35, "com.iqiyi"
 
+    .line 74
     .line 75
+    const-string v36, "com.jd"
+
     .line 76
     .line 77
-    move-result-object v8
+    const-string v37, "com.jingdong"
 
     .line 78
-    iget v8, v8, Lpp2;->b:I
-
     .line 79
-    .line 80
-    invoke-virtual {v0}, Lfc7;->n()Lpp2;
+    const-string v38, "com.kuaishou"
 
+    .line 80
     .line 81
+    const-string v39, "com.kugou"
+
     .line 82
     .line 83
-    move-result-object v9
+    const-string v40, "com.kuwo"
 
     .line 84
-    iget v9, v9, Lpp2;->c:I
-
     .line 85
-    .line 86
-    invoke-virtual {v0}, Lfc7;->n()Lpp2;
+    const-string v41, "com.letv"
 
+    .line 86
     .line 87
+    const-string v42, "com.lianjia"
+
     .line 88
     .line 89
-    move-result-object v10
+    const-string v43, "com.meituan"
 
     .line 90
-    iget v10, v10, Lpp2;->d:I
-
     .line 91
-    .line 92
-    invoke-virtual {v4, v7, v8, v9, v10}, Landroid/graphics/Rect;->set(IIII)V
+    const-string v44, "com.meizu"
 
+    .line 92
     .line 93
+    const-string v45, "com.mihoyo"
+
     .line 94
     .line 95
-    const/4 v7, 0x2
+    const-string v46, "com.miui"
 
     .line 96
-    invoke-virtual {v0, v7}, Lfc7;->i(I)Lpp2;
-
     .line 97
+    const-string v47, "com.netease"
+
     .line 98
     .line 99
-    move-result-object v7
+    const-string v48, "com.oneplus"
 
     .line 100
-    iget-object v8, p0, Lcp;->I:Landroid/view/ViewGroup;
-
     .line 101
+    const-string v49, "com.oplus"
+
     .line 102
-    new-instance v9, Landroid/view/WindowInsets$Builder;
-
     .line 103
-    .line 104
-    invoke-direct {v9}, Landroid/view/WindowInsets$Builder;-><init>()V
+    const-string v50, "com.oppo"
 
+    .line 104
     .line 105
+    const-string v51, "com.pingan"
+
     .line 106
     .line 107
-    invoke-static {v4}, Landroid/graphics/Insets;->of(Landroid/graphics/Rect;)Landroid/graphics/Insets;
+    const-string v52, "com.qidian"
 
     .line 108
     .line 109
-    .line 110
-    move-result-object v10
+    const-string v53, "com.qihoo"
 
+    .line 110
     .line 111
-    invoke-virtual {v9, v10}, Landroid/view/WindowInsets$Builder;->setSystemWindowInsets(Landroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
+    const-string v54, "com.qq"
 
     .line 112
     .line 113
-    .line 114
-    move-result-object v9
+    const-string v55, "com.sankuai"
 
+    .line 114
     .line 115
-    invoke-virtual {v9}, Landroid/view/WindowInsets$Builder;->build()Landroid/view/WindowInsets;
+    const-string v56, "com.sdu.didi"
 
     .line 116
     .line 117
-    .line 118
-    move-result-object v9
+    const-string v57, "com.sina"
 
+    .line 118
     .line 119
-    invoke-virtual {v8, v9, v6}, Landroid/view/View;->computeSystemWindowInsets(Landroid/view/WindowInsets;Landroid/graphics/Rect;)Landroid/view/WindowInsets;
+    const-string v58, "com.smile"
 
     .line 120
     .line 121
-    .line 122
-    move-result-object v8
+    const-string v59, "com.sohu"
 
+    .line 122
     .line 123
-    invoke-virtual {v8}, Landroid/view/WindowInsets;->getSystemWindowInsets()Landroid/graphics/Insets;
+    const-string v60, "com.ss.android"
 
     .line 124
     .line 125
-    .line 126
-    move-result-object v8
+    const-string v61, "com.taobao"
 
+    .line 126
     .line 127
-    iget v9, v8, Landroid/graphics/Insets;->left:I
+    const-string v62, "com.tencent"
 
     .line 128
     .line 129
-    iget v10, v8, Landroid/graphics/Insets;->top:I
+    const-string v63, "com.tmall"
 
     .line 130
     .line 131
-    iget v11, v8, Landroid/graphics/Insets;->right:I
+    const-string v64, "com.tudou"
 
     .line 132
     .line 133
-    iget v8, v8, Landroid/graphics/Insets;->bottom:I
+    const-string v65, "com.unionpay"
 
     .line 134
     .line 135
-    invoke-virtual {v4, v9, v10, v11, v8}, Landroid/graphics/Rect;->set(IIII)V
+    const-string v66, "com.vivo"
 
     .line 136
     .line 137
+    const-string v67, "com.weibo"
+
     .line 138
-    iget v8, v6, Landroid/graphics/Rect;->left:I
-
     .line 139
+    const-string v68, "com.xiaomi"
+
     .line 140
-    iget v9, v6, Landroid/graphics/Rect;->top:I
-
     .line 141
+    const-string v69, "com.xingin"
+
     .line 142
-    iget v10, v6, Landroid/graphics/Rect;->right:I
-
     .line 143
+    const-string v70, "com.xunmeng"
+
     .line 144
-    iget v6, v6, Landroid/graphics/Rect;->bottom:I
-
     .line 145
+    const-string v71, "com.youdao"
+
     .line 146
-    iget v11, v7, Lpp2;->a:I
-
     .line 147
-    .line 148
-    sub-int/2addr v11, v8
+    const-string v72, "com.youku"
 
+    .line 148
     .line 149
-    invoke-static {v5, v11}, Ljava/lang/Math;->max(II)I
+    const-string v73, "com.zhihu"
 
     .line 150
     .line 151
-    .line 152
-    move-result v8
+    const-string v74, "ctrip.android"
 
+    .line 152
     .line 153
-    iget v11, v7, Lpp2;->b:I
+    filled-new-array/range {v1 .. v76}, [Ljava/lang/String;
 
     .line 154
     .line 155
-    sub-int/2addr v11, v9
-
     .line 156
-    invoke-static {v5, v11}, Ljava/lang/Math;->max(II)I
+    move-result-object v0
 
     .line 157
+    invoke-static {v0}, Lim;->R([Ljava/lang/Object;)Ljava/util/List;
+
     .line 158
     .line 159
-    move-result v9
-
     .line 160
-    iget v11, v7, Lpp2;->c:I
+    move-result-object v0
 
     .line 161
-    .line 162
-    sub-int/2addr v11, v10
+    sput-object v0, Luo;->a:Ljava/util/List;
 
+    .line 162
     .line 163
-    invoke-static {v5, v11}, Ljava/lang/Math;->max(II)I
+    const-string v40, "org.mozilla"
 
     .line 164
     .line 165
-    .line 166
-    move-result v10
+    const-string v41, "org.telegram"
 
+    .line 166
     .line 167
-    iget v7, v7, Lpp2;->d:I
+    const-string v1, "ai.openai"
 
     .line 168
     .line 169
-    sub-int/2addr v7, v6
+    const-string v2, "app.revanced"
 
     .line 170
-    invoke-static {v5, v7}, Ljava/lang/Math;->max(II)I
-
     .line 171
+    const-string v3, "com.adobe"
+
     .line 172
     .line 173
-    move-result v6
+    const-string v4, "com.airbnb"
 
     .line 174
-    invoke-static {v8, v9, v10, v6}, Lpp2;->b(IIII)Lpp2;
-
     .line 175
+    const-string v5, "com.amazon"
+
     .line 176
     .line 177
-    move-result-object v6
+    const-string v6, "com.android.chrome"
 
     .line 178
-    iget v7, v6, Lpp2;->c:I
-
     .line 179
+    const-string v7, "com.apple"
+
     .line 180
-    iget v8, v3, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
-
     .line 181
+    const-string v8, "com.booking"
+
     .line 182
-    iget v6, v6, Lpp2;->a:I
-
     .line 183
+    const-string v9, "com.discord"
+
     .line 184
-    if-ne v8, v6, :cond_2
-
     .line 185
+    const-string v10, "com.dropbox"
+
     .line 186
-    iget v8, v3, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
-
     .line 187
+    const-string v11, "com.duolingo"
+
     .line 188
-    if-eq v8, v7, :cond_1
-
     .line 189
-    .line 190
-    goto :goto_0
+    const-string v12, "com.ebay"
 
+    .line 190
     .line 191
-    :cond_1
-    move v8, v5
+    const-string v13, "com.expedia"
 
     .line 192
-    goto :goto_1
-
     .line 193
-    :cond_2
-    :goto_0
-    iput v6, v3, Landroid/view/ViewGroup$MarginLayoutParams;->leftMargin:I
+    const-string v14, "com.facebook"
 
     .line 194
     .line 195
-    iput v7, v3, Landroid/view/ViewGroup$MarginLayoutParams;->rightMargin:I
+    const-string v15, "com.github"
 
     .line 196
     .line 197
-    const/4 v8, 0x1
+    const-string v16, "com.google"
 
     .line 198
-    :goto_1
-    iget-object v9, p0, Lcp;->D:Landroidx/appcompat/widget/ActionBarContextView;
-
     .line 199
+    const-string v17, "com.instagram"
+
     .line 200
-    iget v10, v4, Landroid/graphics/Rect;->left:I
-
     .line 201
-    .line 202
-    sub-int/2addr v10, v6
+    const-string v18, "com.linkedin"
 
+    .line 202
     .line 203
-    iget v6, v4, Landroid/graphics/Rect;->top:I
+    const-string v19, "com.medium"
 
     .line 204
     .line 205
-    iget v11, v4, Landroid/graphics/Rect;->right:I
+    const-string v20, "com.microsoft"
 
     .line 206
     .line 207
-    sub-int/2addr v11, v7
+    const-string v21, "com.netflix"
 
     .line 208
-    iput v10, v9, Landroidx/appcompat/widget/ActionBarContextView;->D:I
-
     .line 209
+    const-string v22, "com.nintendo"
+
     .line 210
-    iput v6, v9, Landroidx/appcompat/widget/ActionBarContextView;->E:I
-
     .line 211
+    const-string v23, "com.openai"
+
     .line 212
-    iput v11, v9, Landroidx/appcompat/widget/ActionBarContextView;->F:I
-
     .line 213
-    .line 214
-    invoke-virtual {v9}, Landroidx/appcompat/widget/ActionBarContextView;->k()V
+    const-string v24, "com.paypal"
 
+    .line 214
     .line 215
+    const-string v25, "com.pinterest"
+
     .line 216
     .line 217
-    iget-boolean v6, p0, Lcp;->O:Z
+    const-string v26, "com.quora"
 
     .line 218
     .line 219
-    if-nez v6, :cond_3
+    const-string v27, "com.reddit"
 
     .line 220
     .line 221
-    iget v4, v4, Landroid/graphics/Rect;->top:I
+    const-string v28, "com.skype"
 
     .line 222
     .line 223
-    if-lez v4, :cond_3
+    const-string v29, "com.slack"
 
     .line 224
     .line 225
-    move v2, v5
+    const-string v30, "com.snapchat"
 
     .line 226
-    :cond_3
-    move v5, v8
-
     .line 227
-    :cond_4
-    if-eqz v5, :cond_5
+    const-string v31, "com.spotify"
 
     .line 228
     .line 229
-    iget-object p0, p0, Lcp;->D:Landroidx/appcompat/widget/ActionBarContextView;
+    const-string v32, "com.twitter"
 
     .line 230
     .line 231
-    invoke-virtual {p0, v3}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    const-string v33, "com.uber"
 
     .line 232
     .line 233
+    const-string v34, "com.valvesoftware"
+
     .line 234
-    :cond_5
-    if-eq v1, v2, :cond_b
-
     .line 235
-    .line 236
-    invoke-virtual {v0}, Lfc7;->n()Lpp2;
+    const-string v35, "com.whatsapp"
 
+    .line 236
     .line 237
+    const-string v36, "com.x"
+
     .line 238
     .line 239
-    move-result-object p0
+    const-string v37, "com.yahoo"
 
     .line 240
-    iget p0, p0, Lpp2;->a:I
-
     .line 241
-    .line 242
-    invoke-virtual {v0}, Lfc7;->n()Lpp2;
+    const-string v38, "com.zhiliaoapp.musically"
 
+    .line 242
     .line 243
+    const-string v39, "jp."
+
     .line 244
     .line 245
-    move-result-object v1
+    filled-new-array/range {v1 .. v41}, [Ljava/lang/String;
 
     .line 246
-    iget v1, v1, Lpp2;->c:I
-
     .line 247
     .line 248
-    invoke-virtual {v0}, Lfc7;->n()Lpp2;
+    move-result-object v0
 
     .line 249
+    invoke-static {v0}, Lim;->R([Ljava/lang/Object;)Ljava/util/List;
+
     .line 250
     .line 251
-    move-result-object v0
-
     .line 252
-    iget v0, v0, Lpp2;->d:I
+    move-result-object v0
 
     .line 253
+    sput-object v0, Luo;->b:Ljava/util/List;
+
     .line 254
-    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
-
     .line 255
-    .line 256
-    const/16 v4, 0x24
-
-    .line 257
-    .line 258
-    if-lt v3, v4, :cond_6
-
-    .line 259
-    .line 260
-    new-instance v3, Lvb7;
-
-    .line 261
-    .line 262
-    invoke-direct {v3, p2}, Lvb7;-><init>(Lic7;)V
-
-    .line 263
-    .line 264
-    .line 265
-    goto :goto_2
-
-    .line 266
-    :cond_6
-    const/16 v4, 0x23
-
-    .line 267
-    .line 268
-    if-lt v3, v4, :cond_7
-
-    .line 269
-    .line 270
-    new-instance v3, Lub7;
-
-    .line 271
-    .line 272
-    invoke-direct {v3, p2}, Lub7;-><init>(Lic7;)V
-
-    .line 273
-    .line 274
-    .line 275
-    goto :goto_2
-
-    .line 276
-    :cond_7
-    const/16 v4, 0x22
-
-    .line 277
-    .line 278
-    if-lt v3, v4, :cond_8
-
-    .line 279
-    .line 280
-    new-instance v3, Ltb7;
-
-    .line 281
-    .line 282
-    invoke-direct {v3, p2}, Ltb7;-><init>(Lic7;)V
-
-    .line 283
-    .line 284
-    .line 285
-    goto :goto_2
-
-    .line 286
-    :cond_8
-    const/16 v4, 0x1f
-
-    .line 287
-    .line 288
-    if-lt v3, v4, :cond_9
-
-    .line 289
-    .line 290
-    new-instance v3, Lsb7;
-
-    .line 291
-    .line 292
-    invoke-direct {v3, p2}, Lsb7;-><init>(Lic7;)V
-
-    .line 293
-    .line 294
-    .line 295
-    goto :goto_2
-
-    .line 296
-    :cond_9
-    const/16 v4, 0x1e
-
-    .line 297
-    .line 298
-    if-lt v3, v4, :cond_a
-
-    .line 299
-    .line 300
-    new-instance v3, Lrb7;
-
-    .line 301
-    .line 302
-    invoke-direct {v3, p2}, Lrb7;-><init>(Lic7;)V
-
-    .line 303
-    .line 304
-    .line 305
-    goto :goto_2
-
-    .line 306
-    :cond_a
-    new-instance v3, Lqb7;
-
-    .line 307
-    .line 308
-    invoke-direct {v3, p2}, Lqb7;-><init>(Lic7;)V
-
-    .line 309
-    .line 310
-    .line 311
-    :goto_2
-    invoke-static {p0, v2, v1, v0}, Lpp2;->b(IIII)Lpp2;
-
-    .line 312
-    .line 313
-    .line 314
-    move-result-object p0
-
-    .line 315
-    invoke-virtual {v3, p0}, Lqb7;->h(Lpp2;)V
-
-    .line 316
-    .line 317
-    .line 318
-    invoke-virtual {v3}, Lqb7;->b()Lic7;
-
-    .line 319
-    .line 320
-    .line 321
-    move-result-object p2
-
-    .line 322
-    :cond_b
-    sget-object p0, Ld67;->a:Ljava/util/WeakHashMap;
-
-    .line 323
-    .line 324
-    invoke-virtual {p2}, Lic7;->b()Landroid/view/WindowInsets;
-
-    .line 325
-    .line 326
-    .line 327
-    move-result-object p0
-
-    .line 328
-    if-eqz p0, :cond_c
-
-    .line 329
-    .line 330
-    invoke-virtual {p1, p0}, Landroid/view/View;->onApplyWindowInsets(Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
-
-    .line 331
-    .line 332
-    .line 333
-    move-result-object v0
-
-    .line 334
-    invoke-virtual {v0, p0}, Landroid/view/WindowInsets;->equals(Ljava/lang/Object;)Z
-
-    .line 335
-    .line 336
-    .line 337
-    move-result p0
-
-    .line 338
-    if-nez p0, :cond_c
-
-    .line 339
-    .line 340
-    invoke-static {v0, p1}, Lic7;->c(Landroid/view/WindowInsets;Landroid/view/View;)Lic7;
-
-    .line 341
-    .line 342
-    .line 343
-    move-result-object p0
-
-    .line 344
-    return-object p0
-
-    .line 345
-    :cond_c
-    return-object p2
+    return-void
 .end method
 
-.method public n(Laj3;)Z
-    .locals 1
+.method public static a(Ljava/lang/String;Ljava/lang/String;)Z
+    .locals 3
 
     .line 1
-    iget-object p0, p0, Luo;->j:Lcp;
+    sget-object v0, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
 
     .line 2
     .line 3
-    iget-object p0, p0, Lcp;->u:Landroid/view/Window;
+    invoke-virtual {p1, v0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
 
     .line 4
     .line 5
-    invoke-virtual {p0}, Landroid/view/Window;->getCallback()Landroid/view/Window$Callback;
-
     .line 6
+    move-result-object p1
+
     .line 7
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 8
-    move-result-object p0
-
     .line 9
-    if-eqz p0, :cond_0
-
     .line 10
-    .line 11
-    const/16 v0, 0x6c
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
+    .line 11
     .line 12
     .line 13
-    invoke-interface {p0, v0, p1}, Landroid/view/Window$Callback;->onMenuOpened(ILandroid/view/Menu;)Z
+    move-result v0
 
     .line 14
+    if-nez v0, :cond_1
+
     .line 15
     .line 16
-    :cond_0
-    const/4 p0, 0x1
+    const-string v0, "."
 
     .line 17
+    .line 18
+    invoke-virtual {p1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object v1
+
+    .line 22
+    const/4 v2, 0x0
+
+    .line 23
+    invoke-static {p0, v1, v2}, Lhd6;->S(Ljava/lang/String;Ljava/lang/String;Z)Z
+
+    .line 24
+    .line 25
+    .line 26
+    move-result v1
+
+    .line 27
+    if-nez v1, :cond_1
+
+    .line 28
+    .line 29
+    invoke-static {p1, v0, v2}, Lhd6;->b0(Ljava/lang/String;Ljava/lang/String;Z)Z
+
+    .line 30
+    .line 31
+    .line 32
+    move-result v0
+
+    .line 33
+    if-eqz v0, :cond_0
+
+    .line 34
+    .line 35
+    invoke-static {p0, p1, v2}, Lhd6;->S(Ljava/lang/String;Ljava/lang/String;Z)Z
+
+    .line 36
+    .line 37
+    .line 38
+    move-result p0
+
+    .line 39
+    if-eqz p0, :cond_0
+
+    .line 40
+    .line 41
+    goto :goto_0
+
+    .line 42
+    :cond_0
+    return v2
+
+    .line 43
+    :cond_1
+    :goto_0
+    const/4 p0, 0x1
+
+    .line 44
     return p0
 .end method

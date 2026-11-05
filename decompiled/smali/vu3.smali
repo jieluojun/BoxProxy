@@ -1,6 +1,6 @@
 .class public final enum Lvu3;
 .super Ljava/lang/Enum;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # static fields
@@ -8,23 +8,19 @@
 
 .field public static final enum k:Lvu3;
 
-.field public static final enum l:Lvu3;
-
-.field public static final enum m:Lvu3;
-
-.field public static final synthetic n:[Lvu3;
+.field public static final synthetic l:[Lvu3;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 4
 
     .line 1
     new-instance v0, Lvu3;
 
     .line 2
     .line 3
-    const-string v1, "Continue"
+    const-string v1, "Leading"
 
     .line 4
     .line 5
@@ -44,7 +40,7 @@
 
     .line 12
     .line 13
-    const-string v2, "YieldToChild"
+    const-string v2, "All"
 
     .line 14
     .line 15
@@ -60,58 +56,18 @@
 
     .line 20
     .line 21
-    new-instance v2, Lvu3;
+    filled-new-array {v0, v1}, [Lvu3;
 
     .line 22
     .line 23
-    const-string v3, "ClaimNavigation"
-
     .line 24
-    .line 25
-    const/4 v4, 0x2
-
-    .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 27
-    .line 28
-    .line 29
-    sput-object v2, Lvu3;->l:Lvu3;
-
-    .line 30
-    .line 31
-    new-instance v3, Lvu3;
-
-    .line 32
-    .line 33
-    const-string v4, "Cancelled"
-
-    .line 34
-    .line 35
-    const/4 v5, 0x3
-
-    .line 36
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 37
-    .line 38
-    .line 39
-    sput-object v3, Lvu3;->m:Lvu3;
-
-    .line 40
-    .line 41
-    filled-new-array {v0, v1, v2, v3}, [Lvu3;
-
-    .line 42
-    .line 43
-    .line 44
     move-result-object v0
 
-    .line 45
-    sput-object v0, Lvu3;->n:[Lvu3;
+    .line 25
+    sput-object v0, Lvu3;->l:[Lvu3;
 
-    .line 46
-    .line 47
+    .line 26
+    .line 27
     return-void
 .end method
 
@@ -142,7 +98,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lvu3;->n:[Lvu3;
+    sget-object v0, Lvu3;->l:[Lvu3;
 
     .line 2
     .line 3

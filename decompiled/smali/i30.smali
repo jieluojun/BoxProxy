@@ -1,29 +1,22 @@
-.class public final synthetic Li30;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class final Li30;
+.super Ldq3;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
-# interfaces
-.implements Ls52;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ldq3;"
+    }
+.end annotation
 
 
 # instance fields
-.field public final synthetic j:Ljava/util/List;
-
-.field public final synthetic k:Ljf3;
-
-.field public final synthetic l:Lko3;
-
-.field public final synthetic m:Lfb7;
-
-.field public final synthetic n:J
-
-.field public final synthetic o:I
-
-.field public final synthetic p:B
+.field public final j:Lp62;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/List;Ljf3;Lko3;Lfb7;JII)V
+.method public constructor <init>(Lp62;)V
     .locals 0
 
     .line 1
@@ -32,107 +25,167 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Li30;->j:Ljava/util/List;
+    iput-object p1, p0, Li30;->j:Lp62;
 
     .line 5
     .line 6
-    iput-object p2, p0, Li30;->k:Ljf3;
-
-    .line 7
-    .line 8
-    iput-object p3, p0, Li30;->l:Lko3;
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Li30;->m:Lfb7;
-
-    .line 11
-    .line 12
-    iput-wide p5, p0, Li30;->n:J
-
-    .line 13
-    .line 14
-    iput p7, p0, Li30;->o:I
-
-    .line 15
-    .line 16
-    iput-byte p8, p0, Li30;->p:B
-
-    .line 17
-    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 9
+.method public final a()Lvp3;
+    .locals 1
 
     .line 1
-    move-object v6, p1
+    new-instance v0, Lj30;
 
     .line 2
-    check-cast v6, Lv01;
-
     .line 3
+    iget-object p0, p0, Li30;->j:Lp62;
+
     .line 4
-    check-cast p2, Ljava/lang/Integer;
-
     .line 5
-    .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {v0, p0}, Lj30;-><init>(Lp62;)V
 
+    .line 6
     .line 7
     .line 8
+    return-object v0
+.end method
+
+.method public final b(Lvp3;)V
+    .locals 1
+
+    .line 1
+    check-cast p1, Lj30;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Li30;->j:Lp62;
+
+    .line 4
+    .line 5
+    iput-object p0, p1, Lj30;->x:Lp62;
+
+    .line 6
+    .line 7
+    iget-object v0, p1, Lvp3;->j:Lvp3;
+
+    .line 8
     .line 9
-    iget p1, p0, Li30;->o:I
+    iget-boolean v0, v0, Lvp3;->w:Z
 
     .line 10
     .line 11
-    or-int/lit8 p1, p1, 0x1
+    if-nez v0, :cond_0
 
     .line 12
     .line 13
-    invoke-static {p1}, Lw23;->h0(I)I
+    goto :goto_0
 
     .line 14
+    :cond_0
+    const/4 v0, 0x2
+
     .line 15
+    invoke-static {p1, v0}, Lhq;->e0(Lmh1;I)La84;
+
     .line 16
-    move-result v7
-
     .line 17
-    iget-object v0, p0, Li30;->j:Ljava/util/List;
-
     .line 18
+    move-result-object p1
+
     .line 19
-    iget-object v1, p0, Li30;->k:Ljf3;
+    iget-object p1, p1, La84;->E:La84;
 
     .line 20
     .line 21
-    iget-object v2, p0, Li30;->l:Lko3;
+    if-eqz p1, :cond_1
 
     .line 22
     .line 23
-    iget-object v3, p0, Li30;->m:Lfb7;
+    const/4 v0, 0x1
 
     .line 24
-    .line 25
-    iget-wide v4, p0, Li30;->n:J
+    invoke-virtual {p1, p0, v0}, La84;->b2(Lp62;Z)V
 
+    .line 25
     .line 26
     .line 27
-    iget-byte v8, p0, Li30;->p:B
+    :cond_1
+    :goto_0
+    return-void
+.end method
 
-    .line 28
-    .line 29
-    invoke-static/range {v0 .. v8}, Lk37;->f(Ljava/util/List;Ljf3;Lko3;Lfb7;JLv01;II)V
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
-    .line 30
-    .line 31
-    .line 32
-    sget-object p0, Lk27;->a:Lk27;
+    .line 1
+    const/4 v0, 0x1
 
-    .line 33
-    .line 34
-    return-object p0
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Li30;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Li30;
+
+    .line 12
+    .line 13
+    iget-object p1, p1, Li30;->j:Lp62;
+
+    .line 14
+    .line 15
+    iget-object p0, p0, Li30;->j:Lp62;
+
+    .line 16
+    .line 17
+    if-eq p0, p1, :cond_2
+
+    .line 18
+    .line 19
+    return v2
+
+    .line 20
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Li30;->j:Lp62;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
 .end method

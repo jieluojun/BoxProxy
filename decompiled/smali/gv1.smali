@@ -1,44 +1,98 @@
-.class public abstract Lgv1;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final Lgv1;
+.super Lz81;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final a:Lqt0;
+.field public j:Lnn2;
 
-.field public b:B
+.field public k:Ljava/lang/Object;
+
+.field public l:Liw1;
+
+.field public m:Lna5;
+
+.field public n:Lna5;
+
+.field public o:Lna5;
+
+.field public p:Lna5;
+
+.field public synthetic q:Ljava/lang/Object;
+
+.field public final synthetic r:Ljv1;
+
+.field public s:I
 
 
 # direct methods
-.method public constructor <init>(Lqt0;)V
+.method public constructor <init>(Ljv1;Lz81;)V
     .locals 0
 
     .line 1
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    iput-object p1, p0, Lgv1;->r:Ljv1;
 
     .line 2
     .line 3
-    .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
 
+    .line 4
     .line 5
     .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
+
+    .line 1
+    iput-object p1, p0, Lgv1;->q:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Lgv1;->s:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
+
+    .line 6
     .line 7
-    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    or-int/2addr p1, v0
 
     .line 8
+    iput p1, p0, Lgv1;->s:I
+
     .line 9
     .line 10
-    iput-object p1, p0, Lgv1;->a:Lqt0;
+    const/4 v3, 0x0
 
     .line 11
+    const/4 v4, 0x0
+
     .line 12
-    const/4 p1, 0x0
+    iget-object v0, p0, Lgv1;->r:Ljv1;
 
     .line 13
-    iput-byte p1, p0, Lgv1;->b:B
-
     .line 14
+    const/4 v1, 0x0
+
     .line 15
-    return-void
+    const/4 v2, 0x0
+
+    .line 16
+    move-object v5, p0
+
+    .line 17
+    invoke-virtual/range {v0 .. v5}, Ljv1;->b(Lnn2;Ljava/lang/Object;Lre4;Liw1;Lz81;)Ljava/lang/Object;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object p0
+
+    .line 21
+    return-object p0
 .end method

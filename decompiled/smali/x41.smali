@@ -1,410 +1,240 @@
-.class public final synthetic Lx41;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Ls52;
+.class public final enum Lx41;
+.super Ljava/lang/Enum;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final synthetic A:Ld52;
+# static fields
+.field public static final enum j:Lx41;
 
-.field public final synthetic B:Ld52;
+.field public static final synthetic k:[Lx41;
 
-.field public final synthetic C:Ld52;
-
-.field public final synthetic D:Lko3;
-
-.field public final synthetic j:Ld52;
-
-.field public final synthetic k:Lo52;
-
-.field public final synthetic l:Z
-
-.field public final synthetic m:Z
-
-.field public final synthetic n:Lhu0;
-
-.field public final synthetic o:Z
-
-.field public final synthetic p:Z
-
-.field public final synthetic q:Z
-
-.field public final synthetic r:Z
-
-.field public final synthetic s:F
-
-.field public final synthetic t:F
-
-.field public final synthetic u:F
-
-.field public final synthetic v:Lko3;
-
-.field public final synthetic w:F
-
-.field public final synthetic x:Lo52;
-
-.field public final synthetic y:Lo52;
-
-.field public final synthetic z:Lo52;
+.field public static final synthetic l:Lzv1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ld52;Lo52;ZZLhu0;ZZZZFFFLko3;FLo52;Lo52;Lo52;Ld52;Ld52;Ld52;Lko3;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 11
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lx41;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lx41;->j:Ld52;
-
-    .line 5
-    .line 6
-    iput-object p2, p0, Lx41;->k:Lo52;
-
-    .line 7
-    .line 8
-    iput-boolean p3, p0, Lx41;->l:Z
-
-    .line 9
-    .line 10
-    iput-boolean p4, p0, Lx41;->m:Z
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Lx41;->n:Lhu0;
-
-    .line 13
-    .line 14
-    iput-boolean p6, p0, Lx41;->o:Z
-
-    .line 15
-    .line 16
-    iput-boolean p7, p0, Lx41;->p:Z
-
-    .line 17
-    .line 18
-    iput-boolean p8, p0, Lx41;->q:Z
-
-    .line 19
-    .line 20
-    iput-boolean p9, p0, Lx41;->r:Z
-
-    .line 21
-    .line 22
-    iput p10, p0, Lx41;->s:F
-
-    .line 23
-    .line 24
-    iput p11, p0, Lx41;->t:F
-
-    .line 25
-    .line 26
-    iput p12, p0, Lx41;->u:F
-
-    .line 27
-    .line 28
-    iput-object p13, p0, Lx41;->v:Lko3;
-
-    .line 29
-    .line 30
-    iput p14, p0, Lx41;->w:F
-
-    .line 31
-    .line 32
-    iput-object p15, p0, Lx41;->x:Lo52;
-
-    .line 33
-    .line 34
-    move-object/from16 p1, p16
-
-    .line 35
-    .line 36
-    iput-object p1, p0, Lx41;->y:Lo52;
-
-    .line 37
-    .line 38
-    move-object/from16 p1, p17
-
-    .line 39
-    .line 40
-    iput-object p1, p0, Lx41;->z:Lo52;
-
-    .line 41
-    .line 42
-    move-object/from16 p1, p18
-
-    .line 43
-    .line 44
-    iput-object p1, p0, Lx41;->A:Ld52;
-
-    .line 45
-    .line 46
-    move-object/from16 p1, p19
-
-    .line 47
-    .line 48
-    iput-object p1, p0, Lx41;->B:Ld52;
-
-    .line 49
-    .line 50
-    move-object/from16 p1, p20
-
-    .line 51
-    .line 52
-    iput-object p1, p0, Lx41;->C:Ld52;
-
-    .line 53
-    .line 54
-    move-object/from16 p1, p21
-
-    .line 55
-    .line 56
-    iput-object p1, p0, Lx41;->D:Lko3;
-
-    .line 57
-    .line 58
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 24
-
-    .line 1
-    move-object/from16 v0, p0
-
-    .line 2
-    .line 3
-    move-object/from16 v21, p1
+    const-string v1, "Host"
 
     .line 4
     .line 5
-    check-cast v21, Lv01;
+    const/4 v2, 0x0
 
     .line 6
-    .line 7
-    move-object/from16 v1, p2
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 7
     .line 8
     .line 9
-    check-cast v1, Ljava/lang/Integer;
+    sput-object v0, Lx41;->j:Lx41;
 
     .line 10
     .line 11
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v1, Lx41;
 
     .line 12
     .line 13
+    const-string v2, "Rule"
+
     .line 14
-    const v1, 0x36c36c31
-
     .line 15
-    .line 16
-    .line 17
-    invoke-static {v1}, Lw23;->h0(I)I
+    const/4 v3, 0x1
 
+    .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 17
     .line 18
     .line 19
-    .line 20
-    move-result v22
+    new-instance v2, Lx41;
 
+    .line 20
     .line 21
-    iget-object v1, v0, Lx41;->j:Ld52;
+    const-string v3, "Type"
 
     .line 22
     .line 23
-    move-object v2, v1
+    const/4 v4, 0x2
 
     .line 24
-    iget-object v1, v0, Lx41;->k:Lo52;
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 25
     .line 26
-    move-object v3, v2
-
     .line 27
-    iget-boolean v2, v0, Lx41;->l:Z
+    new-instance v3, Lx41;
 
     .line 28
     .line 29
-    move-object v4, v3
+    const-string v4, "ConnectedAt"
 
     .line 30
-    iget-boolean v3, v0, Lx41;->m:Z
-
     .line 31
+    const/4 v5, 0x3
+
     .line 32
-    move-object v5, v4
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 33
-    iget-object v4, v0, Lx41;->n:Lhu0;
-
     .line 34
     .line 35
-    move-object v6, v5
+    new-instance v4, Lx41;
 
     .line 36
-    iget-boolean v5, v0, Lx41;->o:Z
-
     .line 37
-    .line 38
-    move-object v7, v6
+    const-string v5, "Download"
 
+    .line 38
     .line 39
-    iget-boolean v6, v0, Lx41;->p:Z
+    const/4 v6, 0x4
 
     .line 40
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 41
-    move-object v8, v7
-
     .line 42
-    iget-boolean v7, v0, Lx41;->q:Z
-
     .line 43
-    .line 44
-    move-object v9, v8
+    new-instance v5, Lx41;
 
+    .line 44
     .line 45
-    iget-boolean v8, v0, Lx41;->r:Z
+    const-string v6, "Upload"
 
     .line 46
     .line 47
-    move-object v10, v9
+    const/4 v7, 0x5
 
     .line 48
-    iget v9, v0, Lx41;->s:F
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 49
     .line 50
-    move-object v11, v10
-
     .line 51
-    iget v10, v0, Lx41;->t:F
+    new-instance v6, Lx41;
 
     .line 52
     .line 53
-    move-object v12, v11
+    const-string v7, "DownloadSpeed"
 
     .line 54
-    iget v11, v0, Lx41;->u:F
-
     .line 55
+    const/4 v8, 0x6
+
     .line 56
-    move-object v13, v12
+    invoke-direct {v6, v7, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 57
-    iget-object v12, v0, Lx41;->v:Lko3;
-
     .line 58
     .line 59
-    move-object v14, v13
+    new-instance v7, Lx41;
 
     .line 60
-    iget v13, v0, Lx41;->w:F
-
     .line 61
-    .line 62
-    move-object v15, v14
+    const-string v8, "UploadSpeed"
 
+    .line 62
     .line 63
-    iget-object v14, v0, Lx41;->x:Lo52;
+    const/4 v9, 0x7
 
     .line 64
-    .line 65
-    move-object/from16 v16, v15
+    invoke-direct {v7, v8, v9}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 65
     .line 66
     .line 67
-    iget-object v15, v0, Lx41;->y:Lo52;
+    new-instance v8, Lx41;
 
     .line 68
     .line 69
-    move-object/from16 v17, v1
+    const-string v9, "SourceIp"
 
     .line 70
     .line 71
-    iget-object v1, v0, Lx41;->z:Lo52;
+    const/16 v10, 0x8
 
     .line 72
     .line 73
-    move-object/from16 v18, v1
+    invoke-direct {v8, v9, v10}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 74
     .line 75
-    iget-object v1, v0, Lx41;->A:Ld52;
-
     .line 76
-    .line 77
-    move-object/from16 v19, v1
+    filled-new-array/range {v0 .. v8}, [Lx41;
 
+    .line 77
     .line 78
     .line 79
-    iget-object v1, v0, Lx41;->B:Ld52;
+    move-result-object v0
 
     .line 80
+    sput-object v0, Lx41;->k:[Lx41;
+
     .line 81
-    move-object/from16 v20, v1
-
     .line 82
+    new-instance v1, Lzv1;
+
     .line 83
-    iget-object v1, v0, Lx41;->C:Ld52;
-
     .line 84
-    .line 85
-    iget-object v0, v0, Lx41;->D:Lko3;
+    invoke-direct {v1, v0}, Lzv1;-><init>([Ljava/lang/Enum;)V
 
+    .line 85
     .line 86
     .line 87
-    move-object/from16 v23, v20
+    sput-object v1, Lx41;->l:Lzv1;
 
     .line 88
     .line 89
-    move-object/from16 v20, v0
+    return-void
+.end method
 
-    .line 90
-    .line 91
-    move-object/from16 v0, v16
+.method public static valueOf(Ljava/lang/String;)Lx41;
+    .locals 1
 
-    .line 92
-    .line 93
-    move-object/from16 v16, v18
+    .line 1
+    const-class v0, Lx41;
 
-    .line 94
-    .line 95
-    move-object/from16 v18, v23
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    .line 96
-    .line 97
-    move-object/from16 v23, v19
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
 
-    .line 98
-    .line 99
-    move-object/from16 v19, v1
+    .line 7
+    check-cast p0, Lx41;
 
-    .line 100
-    .line 101
-    move-object/from16 v1, v17
+    .line 8
+    .line 9
+    return-object p0
+.end method
 
-    .line 102
-    .line 103
-    move-object/from16 v17, v23
+.method public static values()[Lx41;
+    .locals 1
 
-    .line 104
-    .line 105
-    invoke-static/range {v0 .. v22}, Luu6;->d(Ld52;Lo52;ZZLhu0;ZZZZFFFLko3;FLo52;Lo52;Lo52;Ld52;Ld52;Ld52;Lko3;Lv01;I)V
+    .line 1
+    sget-object v0, Lx41;->k:[Lx41;
 
-    .line 106
-    .line 107
-    .line 108
-    sget-object v0, Lk27;->a:Lk27;
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    .line 109
-    .line 110
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lx41;
+
+    .line 8
+    .line 9
     return-object v0
 .end method

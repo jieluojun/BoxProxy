@@ -1,0 +1,20 @@
+{
+  "reviewed": true,
+  "featureGroup": "core-downloads",
+  "reviewDate": "2026-11-06",
+  "status": "partial-reviewed",
+  "approvedCount": 0,
+  "totalCandidates": 5,
+  "note": "5 candidates (00803/00804/00812/01280/01282) all single-candidate with preserved signatures but renamed classes (Ld53->Lgf3, Ldv6->Lqw6, Lgb0->Ljc0, Lma1->Llb1). These relate to download/upload speed line-chart rendering per changelog. Not approved automatically because renamed class may change chart data-binding logic.",
+  "pendingVerification": [
+    "core-downloads:00803",
+    "core-downloads:00804",
+    "core-downloads:00812",
+    "core-downloads:01280",
+    "core-downloads:01282"
+  ],
+  "signatureCheck": "All 5 keep same method descriptor; only class names differ.",
+  "relatedUpstreamFeature": "download/upload speed line charts (new upstream behavior to preserve)",
+  "releaseReady": false,
+  "bindingFile": "upstream/26.11.05.d5c365e/migration/bindings.unreviewed.json (main unreviewed)"
+}

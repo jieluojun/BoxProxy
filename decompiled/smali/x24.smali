@@ -1,295 +1,470 @@
-.class public final enum Lx24;
-.super Ljava/lang/Enum;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final synthetic Lx24;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
-
-# static fields
-.field public static final k:Lnb3;
-
-.field public static final enum l:Lx24;
-
-.field public static final enum m:Lx24;
-
-.field public static final enum n:Lx24;
-
-.field public static final enum o:Lx24;
-
-.field public static final synthetic p:[Lx24;
-
-.field public static final synthetic q:Lzu1;
+# interfaces
+.implements Lt62;
 
 
 # instance fields
-.field public final j:Ljava/lang/String;
+.field public final synthetic j:B
+
+.field public final synthetic k:Lux1;
+
+.field public final synthetic l:Le62;
+
+.field public final synthetic m:Lp24;
+
+.field public final synthetic n:Lmt3;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 10
+.method public synthetic constructor <init>(Lux1;Le62;Lp24;Lmt3;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lx24;
+    iput-byte p5, p0, Lx24;->j:B
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    iput-object p1, p0, Lx24;->k:Lux1;
 
     .line 4
-    const-string v2, "wifi"
-
     .line 5
+    iput-object p2, p0, Lx24;->l:Le62;
+
     .line 6
-    const-string v3, "WIFI"
-
     .line 7
-    .line 8
-    invoke-direct {v0, v1, v3, v2}, Lx24;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    iput-object p3, p0, Lx24;->m:Lp24;
 
+    .line 8
     .line 9
+    iput-object p4, p0, Lx24;->n:Lmt3;
+
     .line 10
     .line 11
-    sput-object v0, Lx24;->l:Lx24;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 12
     .line 13
-    new-instance v1, Lx24;
+    .line 14
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 19
+
+    .line 1
+    move-object/from16 v0, p0
+
+    .line 2
+    .line 3
+    iget-byte v1, v0, Lx24;->j:B
+
+    .line 4
+    .line 5
+    sget-object v2, La47;->a:La47;
+
+    .line 6
+    .line 7
+    const/4 v3, 0x2
+
+    .line 8
+    const/4 v4, 0x1
+
+    .line 9
+    const/4 v5, 0x0
+
+    .line 10
+    packed-switch v1, :pswitch_data_0
+
+    .line 11
+    .line 12
+    .line 13
+    move-object/from16 v1, p1
 
     .line 14
     .line 15
-    const/4 v2, 0x1
+    check-cast v1, Lz11;
 
     .line 16
-    const-string v3, "wifi_ssid"
-
     .line 17
+    move-object/from16 v6, p2
+
     .line 18
-    const-string v4, "WIFI_SSID"
-
     .line 19
-    .line 20
-    invoke-direct {v1, v2, v4, v3}, Lx24;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    check-cast v6, Ljava/lang/Integer;
 
+    .line 20
     .line 21
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
+
     .line 22
     .line 23
-    sput-object v1, Lx24;->m:Lx24;
-
     .line 24
+    move-result v6
+
     .line 25
-    new-instance v2, Lx24;
+    and-int/lit8 v7, v6, 0x3
 
     .line 26
     .line 27
-    const/4 v3, 0x2
+    if-eq v7, v3, :cond_0
 
     .line 28
-    const-string v4, "wifi_bssid"
-
     .line 29
+    move v5, v4
+
     .line 30
-    const-string v5, "WIFI_BSSID"
+    :cond_0
+    and-int/lit8 v3, v6, 0x1
 
     .line 31
     .line 32
-    invoke-direct {v2, v3, v5, v4}, Lx24;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    check-cast v1, Lt72;
 
     .line 33
     .line 34
-    .line 35
-    sput-object v2, Lx24;->n:Lx24;
+    invoke-virtual {v1, v3, v5}, Lt72;->T(IZ)Z
 
+    .line 35
     .line 36
     .line 37
-    new-instance v3, Lx24;
+    move-result v3
 
     .line 38
-    .line 39
-    const/4 v4, 0x3
+    if-eqz v3, :cond_1
 
+    .line 39
     .line 40
-    const-string v5, "cellular"
+    invoke-static {v1}, Lgj3;->W(Lz11;)Lwp3;
 
     .line 41
     .line 42
-    const-string v6, "CELLULAR"
-
     .line 43
+    move-result-object v6
+
     .line 44
-    invoke-direct {v3, v4, v6, v5}, Lx24;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    invoke-static {v1}, Lgj3;->Y(Lz11;)J
 
     .line 45
     .line 46
     .line 47
-    new-instance v4, Lx24;
+    move-result-wide v8
 
     .line 48
-    .line 49
-    const/4 v5, 0x4
+    new-instance v10, Lx24;
 
+    .line 49
     .line 50
-    const-string v6, "mcc_mnc"
+    const/4 v15, 0x0
 
     .line 51
+    iget-object v11, v0, Lx24;->k:Lux1;
+
     .line 52
-    const-string v7, "MCC_MNC"
-
     .line 53
-    .line 54
-    invoke-direct {v4, v5, v7, v6}, Lx24;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    iget-object v12, v0, Lx24;->l:Le62;
 
+    .line 54
     .line 55
+    iget-object v13, v0, Lx24;->m:Lp24;
+
     .line 56
     .line 57
-    sput-object v4, Lx24;->o:Lx24;
+    iget-object v14, v0, Lx24;->n:Lmt3;
 
     .line 58
     .line 59
-    new-instance v5, Lx24;
+    invoke-direct/range {v10 .. v15}, Lx24;-><init>(Lux1;Le62;Lp24;Lmt3;B)V
 
     .line 60
     .line 61
-    const/4 v6, 0x5
-
     .line 62
-    const-string v7, "sim1"
+    const v0, -0x33fed244    # -3.386341E7f
 
     .line 63
     .line 64
-    const-string v8, "SIM1"
-
     .line 65
-    .line 66
-    invoke-direct {v5, v6, v8, v7}, Lx24;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    invoke-static {v0, v10, v1}, Lfm;->f0(ILb72;Lz11;)Lqz0;
 
+    .line 66
     .line 67
     .line 68
+    move-result-object v15
+
     .line 69
-    new-instance v6, Lx24;
+    const/high16 v17, 0xc00000
 
     .line 70
     .line 71
-    const/4 v7, 0x6
+    const/16 v18, 0x7a
 
     .line 72
-    const-string v8, "sim2"
-
     .line 73
+    const/4 v7, 0x0
+
     .line 74
-    const-string v9, "SIM2"
+    const-wide/16 v10, 0x0
 
     .line 75
     .line 76
-    invoke-direct {v6, v7, v9, v8}, Lx24;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    const/4 v12, 0x0
 
     .line 77
+    const/4 v13, 0x0
+
     .line 78
+    const/4 v14, 0x0
+
     .line 79
-    filled-new-array/range {v0 .. v6}, [Lx24;
+    move-object/from16 v16, v1
 
     .line 80
     .line 81
+    invoke-static/range {v6 .. v18}, Lhh6;->a(Lwp3;Ln06;JJFFLc40;Lqz0;Lz11;II)V
+
     .line 82
-    move-result-object v0
-
     .line 83
-    sput-object v0, Lx24;->p:[Lx24;
-
     .line 84
+    goto :goto_0
+
     .line 85
-    new-instance v1, Lzu1;
+    :cond_1
+    move-object/from16 v16, v1
 
     .line 86
     .line 87
-    invoke-direct {v1, v0}, Lzu1;-><init>([Ljava/lang/Enum;)V
+    invoke-virtual/range {v16 .. v16}, Lt72;->W()V
 
     .line 88
     .line 89
     .line 90
-    sput-object v1, Lx24;->q:Lzu1;
+    :goto_0
+    return-object v2
 
     .line 91
+    :pswitch_0
+    move-object/from16 v1, p1
+
     .line 92
-    new-instance v0, Lnb3;
-
     .line 93
+    check-cast v1, Lz11;
+
     .line 94
-    const/16 v1, 0x8
-
     .line 95
-    .line 96
-    const/4 v2, 0x0
+    move-object/from16 v6, p2
 
+    .line 96
     .line 97
-    invoke-direct {v0, v1, v2}, Lnb3;-><init>(BZ)V
+    check-cast v6, Ljava/lang/Integer;
 
     .line 98
     .line 99
-    .line 100
-    sput-object v0, Lx24;->k:Lnb3;
+    invoke-virtual {v6}, Ljava/lang/Integer;->intValue()I
 
+    .line 100
     .line 101
     .line 102
-    return-void
-.end method
+    move-result v6
 
-.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
-    .locals 0
+    .line 103
+    and-int/lit8 v7, v6, 0x3
 
-    .line 1
-    invoke-direct {p0, p2, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    .line 104
+    .line 105
+    if-eq v7, v3, :cond_2
 
-    .line 2
-    .line 3
-    .line 4
-    iput-object p3, p0, Lx24;->j:Ljava/lang/String;
+    .line 106
+    .line 107
+    move v3, v4
 
-    .line 5
-    .line 6
-    return-void
-.end method
+    .line 108
+    goto :goto_1
 
-.method public static valueOf(Ljava/lang/String;)Lx24;
-    .locals 1
+    .line 109
+    :cond_2
+    move v3, v5
 
-    .line 1
-    const-class v0, Lx24;
+    .line 110
+    :goto_1
+    and-int/2addr v4, v6
 
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    .line 111
+    check-cast v1, Lt72;
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
+    .line 112
+    .line 113
+    invoke-virtual {v1, v4, v3}, Lt72;->T(IZ)Z
 
-    .line 7
-    check-cast p0, Lx24;
+    .line 114
+    .line 115
+    .line 116
+    move-result v3
 
-    .line 8
-    .line 9
-    return-object p0
-.end method
+    .line 117
+    if-eqz v3, :cond_3
 
-.method public static values()[Lx24;
-    .locals 1
+    .line 118
+    .line 119
+    invoke-static {v1}, Lgj3;->X(Lz11;)Lyw6;
 
-    .line 1
-    sget-object v0, Lx24;->p:[Lx24;
+    .line 120
+    .line 121
+    .line 122
+    move-result-object v14
 
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    .line 123
+    sget-object v3, Lrd7;->w:Ljava/util/WeakHashMap;
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
+    .line 124
+    .line 125
+    invoke-static {v1}, Le37;->a(Lz11;)Lrd7;
 
-    .line 7
-    check-cast v0, [Lx24;
+    .line 126
+    .line 127
+    .line 128
+    move-result-object v3
 
-    .line 8
-    .line 9
-    return-object v0
+    .line 129
+    iget-object v3, v3, Lrd7;->l:Lx37;
+
+    .line 130
+    .line 131
+    new-instance v13, Lo73;
+
+    .line 132
+    .line 133
+    const/16 v4, 0x1f
+
+    .line 134
+    .line 135
+    invoke-direct {v13, v3, v4}, Lo73;-><init>(Lkc7;I)V
+
+    .line 136
+    .line 137
+    .line 138
+    sget-object v6, Lxt2;->x:Lqz0;
+
+    .line 139
+    .line 140
+    new-instance v3, Lfn3;
+
+    .line 141
+    .line 142
+    const/16 v4, 0xa
+
+    .line 143
+    .line 144
+    iget-object v7, v0, Lx24;->l:Le62;
+
+    .line 145
+    .line 146
+    invoke-direct {v3, v7, v4}, Lfn3;-><init>(Le62;B)V
+
+    .line 147
+    .line 148
+    .line 149
+    const v4, 0x475402d
+
+    .line 150
+    .line 151
+    .line 152
+    invoke-static {v4, v3, v1}, Lfm;->f0(ILb72;Lz11;)Lqz0;
+
+    .line 153
+    .line 154
+    .line 155
+    move-result-object v8
+
+    .line 156
+    new-instance v3, Lc34;
+
+    .line 157
+    .line 158
+    iget-object v4, v0, Lx24;->m:Lp24;
+
+    .line 159
+    .line 160
+    iget-object v7, v0, Lx24;->n:Lmt3;
+
+    .line 161
+    .line 162
+    invoke-direct {v3, v4, v7, v5}, Lc34;-><init>(Lp24;Lmt3;B)V
+
+    .line 163
+    .line 164
+    .line 165
+    const v4, 0x6d789856
+
+    .line 166
+    .line 167
+    .line 168
+    invoke-static {v4, v3, v1}, Lfm;->f0(ILb72;Lz11;)Lqz0;
+
+    .line 169
+    .line 170
+    .line 171
+    move-result-object v9
+
+    .line 172
+    const/16 v17, 0x6c06
+
+    .line 173
+    .line 174
+    const/16 v18, 0xe6
+
+    .line 175
+    .line 176
+    const/4 v7, 0x0
+
+    .line 177
+    const/4 v10, 0x0
+
+    .line 178
+    const/4 v11, 0x0
+
+    .line 179
+    const/4 v12, 0x0
+
+    .line 180
+    iget-object v15, v0, Lx24;->k:Lux1;
+
+    .line 181
+    .line 182
+    move-object/from16 v16, v1
+
+    .line 183
+    .line 184
+    invoke-static/range {v6 .. v18}, Lso;->a(Lt62;Lwp3;Lt62;Lu62;Le8;FFLo73;Lyw6;Lux1;Lz11;II)V
+
+    .line 185
+    .line 186
+    .line 187
+    goto :goto_2
+
+    .line 188
+    :cond_3
+    move-object/from16 v16, v1
+
+    .line 189
+    .line 190
+    invoke-virtual/range {v16 .. v16}, Lt72;->W()V
+
+    .line 191
+    .line 192
+    .line 193
+    :goto_2
+    return-object v2
+
+    .line 194
+    nop
+
+    .line 195
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

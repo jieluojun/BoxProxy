@@ -1,128 +1,80 @@
-.class public Lpt1;
+.class public final Lpt1;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lhy2;
+.implements Ljg1;
 
 
-# static fields
-.field public static final a:Lsr6;
+# instance fields
+.field public final synthetic j:Ld73;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Landroidx/emoji2/text/EmojiCompatInitializer;Ld73;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lsr6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/4 v1, 0x0
-
     .line 4
-    invoke-direct {v0, v1}, Lsr6;-><init>(Lig6;)V
+    iput-object p2, p0, Lpt1;->j:Ld73;
 
     .line 5
     .line 6
-    .line 7
-    sput-object v0, Lpt1;->a:Lsr6;
-
-    .line 8
-    .line 9
     return-void
 .end method
 
 
 # virtual methods
-.method public a()Lq4;
-    .locals 0
+.method public final onResume(La73;)V
+    .locals 3
 
     .line 1
-    sget-object p0, Lot1;->c:Lot1;
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final b()I
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public c(Lj71;Lxm0;Lpx0;Landroid/os/Bundle;)V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method public d()[Lx54;
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    new-array p0, p0, [Lx54;
-
     .line 3
     .line 4
-    return-object p0
-.end method
+    move-result-object p1
 
-.method public destroy()V
-    .locals 0
+    .line 5
+    invoke-static {p1}, Lx21;->a(Landroid/os/Looper;)Landroid/os/Handler;
 
-    .line 1
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p1
+
+    .line 9
+    new-instance v0, Lhi0;
+
+    .line 10
+    .line 11
+    invoke-direct {v0}, Lhi0;-><init>()V
+
+    .line 12
+    .line 13
+    .line 14
+    const-wide/16 v1, 0x1f4
+
+    .line 15
+    .line 16
+    invoke-virtual {p1, v0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+
+    .line 17
+    .line 18
+    .line 19
+    iget-object p1, p0, Lpt1;->j:Ld73;
+
+    .line 20
+    .line 21
+    invoke-virtual {p1, p0}, Ld73;->f(Lz63;)V
+
+    .line 22
+    .line 23
+    .line 24
     return-void
-.end method
-
-.method public final e(Lj71;II)I
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final f()Lp6;
-    .locals 0
-
-    .line 1
-    sget-object p0, Lp6;->j0:Lp6;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public g()Lsr6;
-    .locals 0
-
-    .line 1
-    sget-object p0, Lpt1;->a:Lsr6;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public h()Z
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
 .end method

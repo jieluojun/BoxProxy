@@ -1,80 +1,41 @@
-.class public final Lf01;
-.super Lz71;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public abstract Lf01;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public j:Ljava/lang/Object;
-
-.field public k:Lwq2;
-
-.field public l:I
-
-.field public m:I
-
-.field public synthetic n:Ljava/lang/Object;
-
-.field public final synthetic o:Lh01;
-
-.field public p:I
+# static fields
+.field public static final a:Lqz0;
 
 
 # direct methods
-.method public constructor <init>(Lh01;Lz71;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    iput-object p1, p0, Lf01;->o:Lh01;
+    sget-object v0, Lji0;->n:Lji0;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
+    new-instance v1, Lqz0;
 
     .line 4
     .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iput-object p1, p0, Lf01;->n:Ljava/lang/Object;
-
-    .line 2
-    .line 3
-    iget p1, p0, Lf01;->p:I
-
-    .line 4
-    .line 5
-    const/high16 v0, -0x80000000
+    const v2, 0x7c578ec2
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lf01;->p:I
+    const/4 v3, 0x0
 
     .line 9
-    .line 10
-    iget-object p1, p0, Lf01;->o:Lh01;
+    invoke-direct {v1, v2, v3, v0}, Lqz0;-><init>(IZLjava/lang/Object;)V
 
+    .line 10
     .line 11
     .line 12
-    const/4 v0, 0x0
+    sput-object v1, Lf01;->a:Lqz0;
 
     .line 13
-    invoke-virtual {p1, v0, v0, p0}, Lh01;->a(Landroid/view/ScrollCaptureSession;Lwq2;Lz71;)Ljava/lang/Object;
-
     .line 14
-    .line 15
-    .line 16
-    move-result-object p0
-
-    .line 17
-    return-object p0
+    return-void
 .end method

@@ -1,10 +1,14 @@
 .class public final enum Lr35;
 .super Ljava/lang/Enum;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # static fields
-.field public static final m:Lo35;
+.field public static final k:Ljc3;
+
+.field public static final enum l:Lr35;
+
+.field public static final enum m:Lr35;
 
 .field public static final enum n:Lr35;
 
@@ -12,297 +16,193 @@
 
 .field public static final enum p:Lr35;
 
-.field public static final enum q:Lr35;
+.field public static final synthetic q:[Lr35;
 
-.field public static final enum r:Lr35;
-
-.field public static final synthetic s:[Lr35;
-
-.field public static final synthetic t:Lzu1;
+.field public static final synthetic r:Lzv1;
 
 
 # instance fields
 .field public final j:Ljava/lang/String;
 
-.field public final k:Ljava/lang/String;
-
-.field public final l:Ljava/util/Set;
-
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 17
+    .locals 8
 
     .line 1
     new-instance v0, Lr35;
 
     .line 2
     .line 3
-    const-string v6, ".yaml"
+    const/4 v1, 0x0
 
     .line 4
+    const-string v2, "defaultsort"
+
     .line 5
-    const-string v7, ".yml"
-
     .line 6
-    .line 7
-    filled-new-array {v6, v7}, [Ljava/lang/String;
+    const-string v3, "Config"
 
+    .line 7
     .line 8
+    invoke-direct {v0, v1, v3, v2}, Lr35;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
     .line 9
     .line 10
-    move-result-object v1
-
     .line 11
-    invoke-static {v1}, Lqv;->S0([Ljava/lang/Object;)Ljava/util/Set;
+    sput-object v0, Lr35;->l:Lr35;
 
     .line 12
     .line 13
-    .line 14
-    move-result-object v5
+    new-instance v1, Lr35;
 
+    .line 14
     .line 15
-    const-string v1, "Mihomo"
+    const/4 v2, 0x1
 
     .line 16
-    .line 17
-    const/4 v2, 0x0
+    const-string v3, "nameasc"
 
+    .line 17
     .line 18
-    const-string v3, "mihomo"
+    const-string v4, "NameAscending"
 
     .line 19
     .line 20
-    const-string v4, "mihomo"
+    invoke-direct {v1, v2, v4, v3}, Lr35;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
     .line 21
     .line 22
-    invoke-direct/range {v0 .. v5}, Lr35;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Set;)V
-
     .line 23
+    sput-object v1, Lr35;->m:Lr35;
+
     .line 24
     .line 25
-    sput-object v0, Lr35;->n:Lr35;
+    new-instance v2, Lr35;
 
     .line 26
     .line 27
-    new-instance v8, Lr35;
+    const/4 v3, 0x2
 
     .line 28
+    const-string v4, "namedesc"
+
     .line 29
-    const-string v1, ".jsonc"
-
     .line 30
+    const-string v5, "NameDescending"
+
     .line 31
-    const-string v2, ".json"
-
     .line 32
-    .line 33
-    filled-new-array {v2, v1, v6, v7}, [Ljava/lang/String;
+    invoke-direct {v2, v3, v5, v4}, Lr35;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
+    .line 33
     .line 34
     .line 35
-    .line 36
-    move-result-object v1
+    sput-object v2, Lr35;->n:Lr35;
 
+    .line 36
     .line 37
-    invoke-static {v1}, Lqv;->S0([Ljava/lang/Object;)Ljava/util/Set;
+    new-instance v3, Lr35;
 
     .line 38
     .line 39
+    const/4 v4, 0x3
+
     .line 40
-    move-result-object v13
+    const-string v5, "latencyasc"
 
     .line 41
-    const-string v9, "SingBox"
-
     .line 42
-    .line 43
-    const/4 v10, 0x1
+    const-string v6, "LatencyAscending"
 
+    .line 43
     .line 44
-    const-string v11, "sing-box"
+    invoke-direct {v3, v4, v6, v5}, Lr35;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
     .line 45
     .line 46
-    const-string v12, "sing-box"
-
     .line 47
-    .line 48
-    invoke-direct/range {v8 .. v13}, Lr35;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Set;)V
+    sput-object v3, Lr35;->o:Lr35;
 
+    .line 48
     .line 49
+    new-instance v4, Lr35;
+
     .line 50
     .line 51
-    sput-object v8, Lr35;->o:Lr35;
+    const/4 v5, 0x4
 
     .line 52
+    const-string v6, "latencydesc"
+
     .line 53
-    new-instance v9, Lr35;
-
     .line 54
+    const-string v7, "LatencyDescending"
+
     .line 55
-    const-string v13, "xray"
-
     .line 56
-    .line 57
-    invoke-static {v2}, Lqx5;->g0(Ljava/lang/Object;)Ljava/util/Set;
+    invoke-direct {v4, v5, v7, v6}, Lr35;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
+    .line 57
     .line 58
     .line 59
-    .line 60
-    move-result-object v14
+    sput-object v4, Lr35;->p:Lr35;
 
+    .line 60
     .line 61
-    const-string v10, "Xray"
+    filled-new-array {v0, v1, v2, v3, v4}, [Lr35;
 
     .line 62
     .line 63
-    const/4 v11, 0x2
-
     .line 64
-    const-string v12, "xray"
+    move-result-object v0
 
     .line 65
-    .line 66
-    invoke-direct/range {v9 .. v14}, Lr35;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Set;)V
+    sput-object v0, Lr35;->q:[Lr35;
 
+    .line 66
     .line 67
+    new-instance v1, Lzv1;
+
     .line 68
     .line 69
-    sput-object v9, Lr35;->p:Lr35;
+    invoke-direct {v1, v0}, Lzv1;-><init>([Ljava/lang/Enum;)V
 
     .line 70
     .line 71
-    new-instance v10, Lr35;
-
     .line 72
+    sput-object v1, Lr35;->r:Lzv1;
+
     .line 73
-    const-string v14, "v2fly"
-
     .line 74
-    .line 75
-    invoke-static {v2}, Lqx5;->g0(Ljava/lang/Object;)Ljava/util/Set;
+    new-instance v0, Ljc3;
 
+    .line 75
     .line 76
+    const/16 v1, 0x1d
+
     .line 77
     .line 78
-    move-result-object v15
+    const/4 v2, 0x0
 
     .line 79
-    const-string v11, "V2fly"
+    invoke-direct {v0, v1, v2}, Ljc3;-><init>(BZ)V
 
     .line 80
     .line 81
-    const/4 v12, 0x3
-
     .line 82
-    const-string v13, "v2fly"
+    sput-object v0, Lr35;->k:Ljc3;
 
     .line 83
     .line 84
-    invoke-direct/range {v10 .. v15}, Lr35;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Set;)V
-
-    .line 85
-    .line 86
-    .line 87
-    sput-object v10, Lr35;->q:Lr35;
-
-    .line 88
-    .line 89
-    new-instance v11, Lr35;
-
-    .line 90
-    .line 91
-    filled-new-array {v6, v7}, [Ljava/lang/String;
-
-    .line 92
-    .line 93
-    .line 94
-    move-result-object v1
-
-    .line 95
-    invoke-static {v1}, Lqv;->S0([Ljava/lang/Object;)Ljava/util/Set;
-
-    .line 96
-    .line 97
-    .line 98
-    move-result-object v16
-
-    .line 99
-    const-string v12, "Hysteria"
-
-    .line 100
-    .line 101
-    const/4 v13, 0x4
-
-    .line 102
-    const-string v14, "hysteria"
-
-    .line 103
-    .line 104
-    const-string v15, "hysteria"
-
-    .line 105
-    .line 106
-    invoke-direct/range {v11 .. v16}, Lr35;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Set;)V
-
-    .line 107
-    .line 108
-    .line 109
-    sput-object v11, Lr35;->r:Lr35;
-
-    .line 110
-    .line 111
-    filled-new-array {v0, v8, v9, v10, v11}, [Lr35;
-
-    .line 112
-    .line 113
-    .line 114
-    move-result-object v0
-
-    .line 115
-    sput-object v0, Lr35;->s:[Lr35;
-
-    .line 116
-    .line 117
-    new-instance v1, Lzu1;
-
-    .line 118
-    .line 119
-    invoke-direct {v1, v0}, Lzu1;-><init>([Ljava/lang/Enum;)V
-
-    .line 120
-    .line 121
-    .line 122
-    sput-object v1, Lr35;->t:Lzu1;
-
-    .line 123
-    .line 124
-    new-instance v0, Lo35;
-
-    .line 125
-    .line 126
-    const/4 v1, 0x2
-
-    .line 127
-    invoke-direct {v0, v1}, Lo35;-><init>(B)V
-
-    .line 128
-    .line 129
-    .line 130
-    sput-object v0, Lr35;->m:Lo35;
-
-    .line 131
-    .line 132
     return-void
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Set;)V
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0, p2, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 2
     .line 3
@@ -311,14 +211,6 @@
 
     .line 5
     .line 6
-    iput-object p4, p0, Lr35;->k:Ljava/lang/String;
-
-    .line 7
-    .line 8
-    iput-object p5, p0, Lr35;->l:Ljava/util/Set;
-
-    .line 9
-    .line 10
     return-void
 .end method
 
@@ -349,7 +241,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lr35;->s:[Lr35;
+    sget-object v0, Lr35;->q:[Lr35;
 
     .line 2
     .line 3

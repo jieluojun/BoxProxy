@@ -1,161 +1,139 @@
-.class public final synthetic Lgr6;
+.class public abstract synthetic Lgr6;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lo52;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final synthetic j:F
-
-.field public final synthetic k:F
-
-.field public final synthetic l:F
-
-.field public final synthetic m:Lo20;
+# static fields
+.field public static final synthetic a:[I
 
 
 # direct methods
-.method public synthetic constructor <init>(FFFLo20;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->values()[Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
 
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Lgr6;->j:F
+    move-result-object v0
 
     .line 5
+    array-length v0, v0
+
     .line 6
-    iput p2, p0, Lgr6;->k:F
+    new-array v0, v0, [I
 
     .line 7
     .line 8
-    iput p3, p0, Lgr6;->l:F
+    sput-object v0, Lgr6;->a:[I
 
     .line 9
     .line 10
-    iput-object p4, p0, Lgr6;->m:Lo20;
+    :try_start_0
+    sget-object v1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->None:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
 
     .line 11
     .line 12
-    return-void
-.end method
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
-
-    .line 1
-    check-cast p1, Lan1;
-
-    .line 2
-    .line 3
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 4
-    .line 5
-    .line 6
-    iget v0, p0, Lgr6;->j:F
-
-    .line 7
-    .line 8
-    const/4 v1, 0x0
-
-    .line 9
-    const/high16 v2, 0x43160000    # 150.0f
-
-    .line 10
-    .line 11
-    invoke-static {v0, v1, v2}, Lg23;->q(FFF)F
-
-    .line 12
     .line 13
     .line 14
-    move-result v0
-
     .line 15
-    iget v3, p0, Lgr6;->k:F
+    move-result v1
 
     .line 16
+    const/4 v2, 0x1
+
     .line 17
-    invoke-static {v3, v1, v2}, Lg23;->q(FFF)F
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 18
     .line 19
-    .line 20
-    move-result v2
+    :catch_0
+    :try_start_1
+    sget-object v0, Lgr6;->a:[I
 
+    .line 20
     .line 21
-    iget v3, p0, Lgr6;->l:F
+    sget-object v1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->Indent:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
 
     .line 22
     .line 23
-    cmpg-float v1, v3, v1
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     .line 24
     .line 25
-    if-gtz v1, :cond_0
-
     .line 26
+    move-result v1
+
     .line 27
-    goto :goto_0
+    const/4 v2, 0x2
 
     .line 28
-    :cond_0
-    iput v3, p1, Lan1;->q:F
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 29
     .line 30
-    :goto_0
-    iget-object p0, p0, Lgr6;->m:Lo20;
+    :catch_1
+    :try_start_2
+    sget-object v0, Lgr6;->a:[I
 
     .line 31
     .line 32
-    iget v1, p0, Lo20;->b:F
+    sget-object v1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->IndentOutdent:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
 
     .line 33
     .line 34
-    iget v3, p0, Lo20;->c:F
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     .line 35
     .line 36
-    iget v4, p0, Lo20;->d:F
-
     .line 37
+    move-result v1
+
     .line 38
-    invoke-static {p1, v1, v3, v4}, Lns6;->g(Lan1;FFF)V
+    const/4 v2, 0x3
 
     .line 39
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
     .line 40
     .line 41
-    iget v1, p1, Lan1;->j:F
+    :catch_2
+    :try_start_3
+    sget-object v0, Lgr6;->a:[I
 
     .line 42
     .line 43
-    mul-float/2addr v0, v1
+    sget-object v1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->Outdent:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
 
     .line 44
-    mul-float/2addr v2, v1
-
     .line 45
-    invoke-static {p1, v0, v2}, Lmt6;->j(Lan1;FF)V
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     .line 46
     .line 47
     .line 48
-    invoke-static {p1, p0}, Lmt6;->i(Lan1;Lo20;)V
+    move-result v1
 
     .line 49
-    .line 50
-    .line 51
-    sget-object p0, Lk27;->a:Lk27;
+    const/4 v2, 0x4
 
+    .line 50
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+
+    .line 51
     .line 52
-    .line 53
-    return-object p0
+    :catch_3
+    return-void
 .end method

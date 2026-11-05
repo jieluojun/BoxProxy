@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="abc_action_bar_up_description">Перейти вверх</string>
     <string name="abc_action_mode_done">Готово</string>
@@ -321,7 +321,6 @@
     <string name="home_ip_geo_unavailable">Недоступно</string>
     <string name="home_ip_interface_label">Интерфейс</string>
     <string name="home_ip_loading">Загрузка</string>
-    <string name="home_ip_loading_detail">Определение текущей информации о сети</string>
     <string name="home_ip_mode_lan">LAN</string>
     <string name="home_ip_mode_wan">WAN</string>
     <string name="home_latency_refresh">Обновить задержку</string>
@@ -801,8 +800,13 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="rules_search_hint">Поиск по этой странице</string>
     <string name="rules_tab_providers">Наборы правил</string>
     <string name="rules_tab_route">Маршрут</string>
-    <string name="rules_trace_attempt_failed">ошибка</string>
-    <string name="rules_trace_attempt_ok">подключено</string>
+    <string name="rules_trace_failure_connect">Не удалось открыть TCP-соединение с сервером</string>
+    <string name="rules_trace_failure_dns">Не удалось разрешить доменное имя</string>
+    <string name="rules_trace_failure_exchange">Соединение закрылось до завершения ответа</string>
+    <string name="rules_trace_failure_invalid_target">Это не корректный адрес HTTP(S)</string>
+    <string name="rules_trace_failure_protocol">Сервер нарушил протокол во время обмена</string>
+    <string name="rules_trace_failure_timeout">Запрос превысил лимит времени проверки</string>
+    <string name="rules_trace_failure_tls">Сбой TLS-рукопожатия или сертификат отклонён</string>
     <string name="rules_trace_step_dns">Разрешение DNS</string>
     <string name="rules_trace_step_first_byte">Первый байт</string>
     <string name="rules_trace_step_response">Ответ</string>
@@ -1156,14 +1160,4 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="wifi_match_picker_location_required">Включите геолокацию для сканирования Wi-Fi</string>
     <string name="wifi_match_picker_permission_required">Требуется разрешение на Wi-Fi</string>
     <string name="wifi_match_ssid_hint">SSID</string>
-<string name="proxy_core_mihomo_dingtalk">Mihomo Smart + eBPF + 钉钉直连</string>
-    <string name="proxy_core_sing_box_dingtalk">Sing-Box Smart + eBPF + 钉钉直连</string>
-    <string name="proxy_config_restore_default">Восстановить конфигурацию по умолчанию</string>
-    <string name="proxy_config_restore_done">Конфигурация по умолчанию восстановлена: %1$s</string>
-    <string name="proxy_config_restore_done_bak">Конфигурация по умолчанию восстановлена: %1$s (старый файл сохранён как %1$s.bak)</string>
-    <string name="proxy_config_restore_failed">Не удалось восстановить конфигурацию по умолчанию: %1$s</string>
-    <string name="proxy_config_restore_none">Для текущего ядра нет встроенной конфигурации по умолчанию</string>
-    <string name="service_battery_unrestricted_title">Без ограничений батареи</string>
-    <string name="service_battery_unrestricted_subtitle">Исключить приложение из оптимизации батареи, чтобы система не замораживала и не завершала его в фоне (отключение — на странице системных настроек)</string>
-    <string name="service_battery_unrestricted_already">Оптимизация батареи уже отключена</string>
 </resources>

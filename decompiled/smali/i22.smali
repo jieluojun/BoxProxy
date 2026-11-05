@@ -1,89 +1,158 @@
-.class public final Li22;
+.class public final synthetic Li22;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lh22;
+.implements Lt62;
 
 
 # instance fields
-.field public a:Z
+.field public final synthetic j:Lwp3;
 
-.field public b:Lk22;
+.field public final synthetic k:Lvv;
 
-.field public c:Lk22;
+.field public final synthetic l:Lxv;
 
-.field public d:Lk22;
+.field public final synthetic m:Lp20;
 
-.field public e:Lk22;
+.field public final synthetic n:I
 
-.field public f:Lk22;
+.field public final synthetic o:I
 
-.field public g:Lk22;
+.field public final synthetic p:Lqz0;
 
-.field public h:Lk22;
+.field public final synthetic q:I
 
-.field public i:Lk22;
+.field public final synthetic r:B
 
-.field public j:Lo52;
 
-.field public k:Lo52;
+# direct methods
+.method public synthetic constructor <init>(Lwp3;Lvv;Lxv;Lp20;IILqz0;II)V
+    .locals 0
 
-.field public l:Ls85;
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Li22;->j:Lwp3;
+
+    .line 5
+    .line 6
+    iput-object p2, p0, Li22;->k:Lvv;
+
+    .line 7
+    .line 8
+    iput-object p3, p0, Li22;->l:Lxv;
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Li22;->m:Lp20;
+
+    .line 11
+    .line 12
+    iput p5, p0, Li22;->n:I
+
+    .line 13
+    .line 14
+    iput p6, p0, Li22;->o:I
+
+    .line 15
+    .line 16
+    iput-object p7, p0, Li22;->p:Lqz0;
+
+    .line 17
+    .line 18
+    iput p8, p0, Li22;->q:I
+
+    .line 19
+    .line 20
+    iput-byte p9, p0, Li22;->r:B
+
+    .line 21
+    .line 22
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a(Lv12;)V
-    .locals 0
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 10
 
     .line 1
-    iput-object p1, p0, Li22;->j:Lo52;
+    move-object v7, p1
 
     .line 2
+    check-cast v7, Lz11;
+
     .line 3
-    return-void
-.end method
+    .line 4
+    check-cast p2, Ljava/lang/Integer;
 
-.method public final b()Z
-    .locals 0
+    .line 5
+    .line 6
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 1
-    iget-boolean p0, p0, Li22;->a:Z
+    .line 7
+    .line 8
+    .line 9
+    iget p1, p0, Li22;->q:I
 
-    .line 2
-    .line 3
-    return p0
-.end method
+    .line 10
+    .line 11
+    or-int/lit8 p1, p1, 0x1
 
-.method public final c(Z)V
-    .locals 0
+    .line 12
+    .line 13
+    invoke-static {p1}, Lqu5;->f0(I)I
 
-    .line 1
-    iput-boolean p1, p0, Li22;->a:Z
+    .line 14
+    .line 15
+    .line 16
+    move-result v8
 
-    .line 2
-    .line 3
-    return-void
-.end method
+    .line 17
+    iget-object v0, p0, Li22;->j:Lwp3;
 
-.method public final d(Ls85;)V
-    .locals 0
+    .line 18
+    .line 19
+    iget-object v1, p0, Li22;->k:Lvv;
 
-    .line 1
-    iput-object p1, p0, Li22;->l:Ls85;
+    .line 20
+    .line 21
+    iget-object v2, p0, Li22;->l:Lxv;
 
-    .line 2
-    .line 3
-    return-void
-.end method
+    .line 22
+    .line 23
+    iget-object v3, p0, Li22;->m:Lp20;
 
-.method public final e(Lv12;)V
-    .locals 0
+    .line 24
+    .line 25
+    iget v4, p0, Li22;->n:I
 
-    .line 1
-    iput-object p1, p0, Li22;->k:Lo52;
+    .line 26
+    .line 27
+    iget v5, p0, Li22;->o:I
 
-    .line 2
-    .line 3
-    return-void
+    .line 28
+    .line 29
+    iget-object v6, p0, Li22;->p:Lqz0;
+
+    .line 30
+    .line 31
+    iget-byte v9, p0, Li22;->r:B
+
+    .line 32
+    .line 33
+    invoke-static/range {v0 .. v9}, Lhq;->i(Lwp3;Lvv;Lxv;Lp20;IILqz0;Lz11;II)V
+
+    .line 34
+    .line 35
+    .line 36
+    sget-object p0, La47;->a:La47;
+
+    .line 37
+    .line 38
+    return-object p0
 .end method

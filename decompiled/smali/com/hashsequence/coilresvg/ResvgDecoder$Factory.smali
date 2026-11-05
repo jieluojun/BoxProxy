@@ -1,9 +1,9 @@
 .class public final Lcom/hashsequence/coilresvg/ResvgDecoder$Factory;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lwd1;
+.implements Lve1;
 
 
 # annotations
@@ -28,7 +28,7 @@
 
 .field private static final Companion:Lcom/hashsequence/coilresvg/ResvgDecoder$Factory$Companion;
 
-.field private static final LEFT_ANGLE_BRACKET:Lbg0;
+.field private static final LEFT_ANGLE_BRACKET:Ldh0;
 
 .field private static final MIME_TYPE_SVG:Ljava/lang/String; = "image/svg+xml"
 
@@ -36,7 +36,7 @@
 
 .field private static final SVG_DETECT_BUFFER_SIZE:J = 0x400L
 
-.field private static final SVG_TAG:Lbg0;
+.field private static final SVG_TAG:Ldh0;
 
 
 # direct methods
@@ -51,7 +51,7 @@
     const/4 v1, 0x0
 
     .line 4
-    invoke-direct {v0, v1}, Lcom/hashsequence/coilresvg/ResvgDecoder$Factory$Companion;-><init>(Lle1;)V
+    invoke-direct {v0, v1}, Lcom/hashsequence/coilresvg/ResvgDecoder$Factory$Companion;-><init>(Lkf1;)V
 
     .line 5
     .line 6
@@ -60,7 +60,7 @@
 
     .line 8
     .line 9
-    sget-object v0, Lbg0;->m:Lbg0;
+    sget-object v0, Ldh0;->m:Ldh0;
 
     .line 10
     .line 11
@@ -68,7 +68,7 @@
 
     .line 12
     .line 13
-    invoke-static {v0}, Lt8;->q(Ljava/lang/String;)Lbg0;
+    invoke-static {v0}, Lv8;->q(Ljava/lang/String;)Ldh0;
 
     .line 14
     .line 15
@@ -76,7 +76,7 @@
     move-result-object v0
 
     .line 17
-    sput-object v0, Lcom/hashsequence/coilresvg/ResvgDecoder$Factory;->SVG_TAG:Lbg0;
+    sput-object v0, Lcom/hashsequence/coilresvg/ResvgDecoder$Factory;->SVG_TAG:Ldh0;
 
     .line 18
     .line 19
@@ -84,7 +84,7 @@
 
     .line 20
     .line 21
-    invoke-static {v0}, Lt8;->q(Ljava/lang/String;)Lbg0;
+    invoke-static {v0}, Lv8;->q(Ljava/lang/String;)Ldh0;
 
     .line 22
     .line 23
@@ -92,7 +92,7 @@
     move-result-object v0
 
     .line 25
-    sput-object v0, Lcom/hashsequence/coilresvg/ResvgDecoder$Factory;->LEFT_ANGLE_BRACKET:Lbg0;
+    sput-object v0, Lcom/hashsequence/coilresvg/ResvgDecoder$Factory;->LEFT_ANGLE_BRACKET:Ldh0;
 
     .line 26
     .line 27
@@ -111,7 +111,7 @@
     return-void
 .end method
 
-.method private final isSvg(Lsd0;Ljava/lang/String;)Z
+.method private final isSvg(Lve0;Ljava/lang/String;)Z
     .locals 2
 
     .line 1
@@ -119,7 +119,7 @@
 
     .line 2
     .line 3
-    invoke-static {p2, p0}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p2, p0}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 4
     .line 5
@@ -135,7 +135,7 @@
 
     .line 10
     .line 11
-    invoke-static {p2, p0}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p2, p0}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 12
     .line 13
@@ -151,11 +151,11 @@
 
     .line 18
     .line 19
-    sget-object p0, Lcom/hashsequence/coilresvg/ResvgDecoder$Factory;->LEFT_ANGLE_BRACKET:Lbg0;
+    sget-object p0, Lcom/hashsequence/coilresvg/ResvgDecoder$Factory;->LEFT_ANGLE_BRACKET:Ldh0;
 
     .line 20
     .line 21
-    invoke-interface {p1, v0, v1, p0}, Lsd0;->r(JLbg0;)Z
+    invoke-interface {p1, v0, v1, p0}, Lve0;->r(JLdh0;)Z
 
     .line 22
     .line 23
@@ -167,11 +167,11 @@
 
     .line 26
     .line 27
-    sget-object p0, Lcom/hashsequence/coilresvg/ResvgDecoder$Factory;->SVG_TAG:Lbg0;
+    sget-object p0, Lcom/hashsequence/coilresvg/ResvgDecoder$Factory;->SVG_TAG:Ldh0;
 
     .line 28
     .line 29
-    invoke-interface {p1, p0}, Lsd0;->d(Lbg0;)J
+    invoke-interface {p1, p0}, Lve0;->d(Ldh0;)J
 
     .line 30
     .line 31
@@ -211,7 +211,7 @@
 
 
 # virtual methods
-.method public create(Lu76;Ldd4;Lxl2;)Lyd1;
+.method public create(Ll96;Lre4;Lhn2;)Lxe1;
     .locals 1
 
     .line 1
@@ -230,11 +230,11 @@
     .line 8
     .line 9
     .line 10
-    iget-object p3, p1, Lu76;->a:Lim2;
+    iget-object p3, p1, Ll96;->a:Lsn2;
 
     .line 11
     .line 12
-    invoke-interface {p3}, Lim2;->B()Lsd0;
+    invoke-interface {p3}, Lsn2;->B()Lve0;
 
     .line 13
     .line 14
@@ -242,11 +242,11 @@
     move-result-object v0
 
     .line 16
-    iget-object p1, p1, Lu76;->b:Ljava/lang/String;
+    iget-object p1, p1, Ll96;->b:Ljava/lang/String;
 
     .line 17
     .line 18
-    invoke-direct {p0, v0, p1}, Lcom/hashsequence/coilresvg/ResvgDecoder$Factory;->isSvg(Lsd0;Ljava/lang/String;)Z
+    invoke-direct {p0, v0, p1}, Lcom/hashsequence/coilresvg/ResvgDecoder$Factory;->isSvg(Lve0;Ljava/lang/String;)Z
 
     .line 19
     .line 20
@@ -269,7 +269,7 @@
 
     .line 27
     .line 28
-    invoke-direct {p0, p3, p2}, Lcom/hashsequence/coilresvg/ResvgDecoder;-><init>(Lim2;Ldd4;)V
+    invoke-direct {p0, p3, p2}, Lcom/hashsequence/coilresvg/ResvgDecoder;-><init>(Lsn2;Lre4;)V
 
     .line 29
     .line 30

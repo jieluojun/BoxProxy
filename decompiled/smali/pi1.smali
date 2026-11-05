@@ -1,90 +1,81 @@
-.class public final Lpi1;
+.class public abstract synthetic Lpi1;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lqi1;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # static fields
-.field public static final a:Lpi1;
+.field public static final synthetic a:[I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 3
 
     .line 1
-    new-instance v0, Lpi1;
+    invoke-static {}, Ls63;->values()[Ls63;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    move-result-object v0
+
     .line 5
+    array-length v0, v0
+
     .line 6
-    sput-object v0, Lpi1;->a:Lpi1;
+    new-array v0, v0, [I
 
     .line 7
     .line 8
-    return-void
-.end method
+    :try_start_0
+    sget-object v1, Ls63;->ON_START:Ls63;
 
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of p0, p1, Lpi1;
-
-    .line 6
-    .line 7
-    if-nez p0, :cond_1
-
-    .line 8
     .line 9
-    const/4 p0, 0x0
-
     .line 10
-    return p0
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     .line 11
-    :cond_1
-    return v0
-.end method
+    .line 12
+    .line 13
+    move-result v1
 
-.method public final hashCode()I
-    .locals 0
+    .line 14
+    const/4 v2, 0x1
 
-    .line 1
-    const p0, -0x7ccbb3bb
+    .line 15
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2
-    .line 3
-    .line 4
-    return p0
-.end method
+    .line 16
+    .line 17
+    :catch_0
+    :try_start_1
+    sget-object v1, Ls63;->ON_STOP:Ls63;
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    .line 18
+    .line 19
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    .line 1
-    const-string p0, "Undefined"
+    .line 20
+    .line 21
+    .line 22
+    move-result v1
 
-    .line 2
-    .line 3
-    return-object p0
+    .line 23
+    const/4 v2, 0x2
+
+    .line 24
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    .line 25
+    .line 26
+    :catch_1
+    sput-object v0, Lpi1;->a:[I
+
+    .line 27
+    .line 28
+    return-void
 .end method

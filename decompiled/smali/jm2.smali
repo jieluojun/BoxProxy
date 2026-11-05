@@ -1,205 +1,375 @@
 .class public final Ljm2;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Lnm2;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:F
-
-.field public final c:F
-
-.field public final d:F
-
-.field public final e:F
-
-.field public final f:F
-
-.field public final g:F
-
-.field public final h:F
-
-.field public final i:Ljava/util/List;
-
-.field public final j:Ljava/util/ArrayList;
+# static fields
+.field public static final u:Ljm2;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;FFFFFFFLjava/util/List;I)V
-    .locals 3
+.method static constructor <clinit>()V
+    .locals 7
 
     .line 1
-    and-int/lit8 v0, p10, 0x1
+    const/16 v0, 0x100
 
     .line 2
     .line 3
-    if-eqz v0, :cond_0
+    new-array v3, v0, [S
 
     .line 4
     .line 5
-    const-string p1, ""
+    fill-array-data v3, :array_0
 
     .line 6
     .line 7
-    :cond_0
-    and-int/lit8 v0, p10, 0x2
-
     .line 8
-    .line 9
-    const/4 v1, 0x0
+    new-instance v1, Ljm2;
 
+    .line 9
     .line 10
-    if-eqz v0, :cond_1
+    sget-object v4, Lg17;->c:[B
 
     .line 11
     .line 12
-    move p2, v1
+    const/4 v5, 0x0
 
     .line 13
-    :cond_1
-    and-int/lit8 v0, p10, 0x4
+    const/4 v6, 0x1
 
     .line 14
+    const-string v2, "ISO-8859-6"
+
     .line 15
-    if-eqz v0, :cond_2
-
     .line 16
+    invoke-direct/range {v1 .. v6}, Lym0;-><init>(Ljava/lang/String;[S[B[[IZ)V
+
     .line 17
-    move p3, v1
-
     .line 18
-    :cond_2
-    and-int/lit8 v0, p10, 0x8
-
     .line 19
-    .line 20
-    if-eqz v0, :cond_3
+    sput-object v1, Ljm2;->u:Ljm2;
 
+    .line 20
     .line 21
+    return-void
+
     .line 22
-    move p4, v1
+    nop
 
     .line 23
-    :cond_3
-    and-int/lit8 v0, p10, 0x10
+    :array_0
+    .array-data 2
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x420cs
+        0x4209s
+        0x4208s
+        0x4208s
+        0x4208s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4008s
+        0x4284s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x78b0s
+        0x78b0s
+        0x78b0s
+        0x78b0s
+        0x78b0s
+        0x78b0s
+        0x78b0s
+        0x78b0s
+        0x78b0s
+        0x78b0s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x7ca2s
+        0x7ca2s
+        0x7ca2s
+        0x7ca2s
+        0x7ca2s
+        0x7ca2s
+        0x74a2s
+        0x74a2s
+        0x74a2s
+        0x74a2s
+        0x74a2s
+        0x74a2s
+        0x74a2s
+        0x74a2s
+        0x74a2s
+        0x74a2s
+        0x74a2s
+        0x74a2s
+        0x74a2s
+        0x74a2s
+        0x74a2s
+        0x74a2s
+        0x74a2s
+        0x74a2s
+        0x74a2s
+        0x74a2s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x51a0s
+        0x41a0s
+        0x78e2s
+        0x78e2s
+        0x78e2s
+        0x78e2s
+        0x78e2s
+        0x78e2s
+        0x70e2s
+        0x70e2s
+        0x70e2s
+        0x70e2s
+        0x70e2s
+        0x70e2s
+        0x70e2s
+        0x70e2s
+        0x70e2s
+        0x70e2s
+        0x70e2s
+        0x70e2s
+        0x70e2s
+        0x70e2s
+        0x70e2s
+        0x70e2s
+        0x70e2s
+        0x70e2s
+        0x70e2s
+        0x70e2s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x41a0s
+        0x4008s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x8s
+        0x284s
+        0x0s
+        0x0s
+        0x0s
+        0xa0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x1a0s
+        0x1a0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x1a0s
+        0x0s
+        0x0s
+        0x0s
+        0x1a0s
+        0x0s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x30a2s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+        0x0s
+    .end array-data
+.end method
 
-    .line 24
-    .line 25
-    const/high16 v2, 0x3f800000    # 1.0f
 
-    .line 26
-    .line 27
-    if-eqz v0, :cond_4
+# virtual methods
+.method public final A()[B
+    .locals 0
 
-    .line 28
-    .line 29
-    move p5, v2
+    .line 1
+    iget-object p0, p0, Lh56;->q:[B
 
-    .line 30
-    :cond_4
-    and-int/lit8 v0, p10, 0x20
+    .line 2
+    .line 3
+    return-object p0
+.end method
 
-    .line 31
-    .line 32
-    if-eqz v0, :cond_5
+.method public final a(ILw82;)V
+    .locals 0
 
-    .line 33
-    .line 34
-    move p6, v2
+    .line 1
+    invoke-static {p2}, Ly2;->b(Lw82;)V
 
-    .line 35
-    :cond_5
-    and-int/lit8 v0, p10, 0x40
-
-    .line 36
-    .line 37
-    if-eqz v0, :cond_6
-
-    .line 38
-    .line 39
-    move p7, v1
-
-    .line 40
-    :cond_6
-    and-int/lit16 v0, p10, 0x80
-
-    .line 41
-    .line 42
-    if-eqz v0, :cond_7
-
-    .line 43
-    .line 44
-    move p8, v1
-
-    .line 45
-    :cond_7
-    and-int/lit16 p10, p10, 0x100
-
-    .line 46
-    .line 47
-    if-eqz p10, :cond_8
-
-    .line 48
-    .line 49
-    sget-object p9, Lqt1;->j:Lqt1;
-
-    .line 50
-    .line 51
-    :cond_8
-    new-instance p10, Ljava/util/ArrayList;
-
-    .line 52
-    .line 53
-    invoke-direct {p10}, Ljava/util/ArrayList;-><init>()V
-
-    .line 54
-    .line 55
-    .line 56
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 57
-    .line 58
-    .line 59
-    iput-object p1, p0, Ljm2;->a:Ljava/lang/String;
-
-    .line 60
-    .line 61
-    iput p2, p0, Ljm2;->b:F
-
-    .line 62
-    .line 63
-    iput p3, p0, Ljm2;->c:F
-
-    .line 64
-    .line 65
-    iput p4, p0, Ljm2;->d:F
-
-    .line 66
-    .line 67
-    iput p5, p0, Ljm2;->e:F
-
-    .line 68
-    .line 69
-    iput p6, p0, Ljm2;->f:F
-
-    .line 70
-    .line 71
-    iput p7, p0, Ljm2;->g:F
-
-    .line 72
-    .line 73
-    iput p8, p0, Ljm2;->h:F
-
-    .line 74
-    .line 75
-    iput-object p9, p0, Ljm2;->i:Ljava/util/List;
-
-    .line 76
-    .line 77
-    iput-object p10, p0, Ljm2;->j:Ljava/util/ArrayList;
-
-    .line 78
-    .line 79
+    .line 2
+    .line 3
+    .line 4
     return-void
+.end method
+
+.method public final e(I[BII)[Lxm0;
+    .locals 0
+
+    .line 1
+    invoke-static {p2, p3}, Ly2;->c([BI)[Lxm0;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method public final s(I[BLus1;I[B)I
+    .locals 0
+
+    .line 1
+    invoke-static {p2, p3, p5}, Ly2;->d([BLus1;[B)V
+
+    .line 2
+    .line 3
+    .line 4
+    const/4 p0, 0x1
+
+    .line 5
+    return p0
 .end method

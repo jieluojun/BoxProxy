@@ -1,167 +1,150 @@
-.class public final synthetic Ll90;
+.class public final Ll90;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lo52;
+.implements Lq90;
 
 
-# instance fields
-.field public final synthetic j:B
+# static fields
+.field public static final INSTANCE:Ll90;
 
-.field public final synthetic k:Lj90;
-
-.field public final synthetic l:Lou;
+.field public static final synthetic a:Lc23;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lj90;Lou;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    iput-byte p3, p0, Ll90;->j:B
+    new-instance v0, Ll90;
 
     .line 2
     .line 3
-    iput-object p1, p0, Ll90;->k:Lj90;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
-    iput-object p2, p0, Ll90;->l:Lou;
-
     .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Ll90;->INSTANCE:Ll90;
 
+    .line 7
     .line 8
+    new-instance v0, Lw80;
+
     .line 9
     .line 10
+    const/16 v1, 0xb
+
+    .line 11
+    .line 12
+    invoke-direct {v0, v1}, Lw80;-><init>(B)V
+
+    .line 13
+    .line 14
+    .line 15
+    sget-object v1, Lr53;->j:Lr53;
+
+    .line 16
+    .line 17
+    invoke-static {v1, v0}, Lcs;->H(Lr53;Le62;)Lc23;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object v0
+
+    .line 21
+    sput-object v0, Ll90;->a:Lc23;
+
+    .line 22
+    .line 23
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Ll90;->j:B
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    sget-object v1, Lk27;->a:Lk27;
+    if-ne p0, p1, :cond_0
 
+    .line 3
     .line 4
+    return v0
+
     .line 5
-    iget-object v2, p0, Ll90;->l:Lou;
+    :cond_0
+    instance-of p0, p1, Ll90;
 
     .line 6
     .line 7
-    iget-object p0, p0, Ll90;->k:Lj90;
+    if-nez p0, :cond_1
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_0
+    const/4 p0, 0x0
 
     .line 10
+    return p0
+
     .line 11
-    .line 12
-    check-cast p1, Ljava/lang/String;
+    :cond_1
+    return v0
+.end method
 
-    .line 13
-    .line 14
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.method public final hashCode()I
+    .locals 0
 
-    .line 15
-    .line 16
-    .line 17
-    iget-object p0, p0, Lj90;->f:Lgl4;
+    .line 1
+    const p0, -0x7626b260
 
-    .line 18
-    .line 19
-    invoke-virtual {p0, p1}, Lgl4;->setValue(Ljava/lang/Object;)V
+    .line 2
+    .line 3
+    .line 4
+    return p0
+.end method
 
-    .line 20
-    .line 21
-    .line 22
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.method public final serializer()Lqy2;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lqy2;"
+        }
+    .end annotation
 
-    .line 23
-    .line 24
-    .line 25
-    new-instance p0, Lq;
+    .line 1
+    sget-object p0, Ll90;->a:Lc23;
 
-    .line 26
-    .line 27
-    const/4 v0, 0x5
+    .line 2
+    .line 3
+    invoke-interface {p0}, Lc23;->getValue()Ljava/lang/Object;
 
-    .line 28
-    invoke-direct {p0, p1, v0}, Lq;-><init>(Ljava/lang/String;B)V
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
 
-    .line 29
-    .line 30
-    .line 31
-    invoke-virtual {v2, p0}, Lou;->c(Lo52;)V
+    .line 7
+    check-cast p0, Lqy2;
 
-    .line 32
-    .line 33
-    .line 34
-    return-object v1
+    .line 8
+    .line 9
+    return-object p0
+.end method
 
-    .line 35
-    :pswitch_0
-    check-cast p1, Ljava/lang/Boolean;
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    .line 36
-    .line 37
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    .line 1
+    const-string p0, "SubscriptionDetails"
 
-    .line 38
-    .line 39
-    .line 40
-    move-result v0
-
-    .line 41
-    iget-object p0, p0, Lj90;->e:Lgl4;
-
-    .line 42
-    .line 43
-    invoke-virtual {p0, p1}, Lgl4;->setValue(Ljava/lang/Object;)V
-
-    .line 44
-    .line 45
-    .line 46
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 47
-    .line 48
-    .line 49
-    new-instance p0, Lwq;
-
-    .line 50
-    .line 51
-    const/16 p1, 0x9
-
-    .line 52
-    .line 53
-    invoke-direct {p0, p1, v0}, Lwq;-><init>(BZ)V
-
-    .line 54
-    .line 55
-    .line 56
-    invoke-virtual {v2, p0}, Lou;->c(Lo52;)V
-
-    .line 57
-    .line 58
-    .line 59
-    return-object v1
-
-    .line 60
-    nop
-
-    .line 61
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 2
+    .line 3
+    return-object p0
 .end method

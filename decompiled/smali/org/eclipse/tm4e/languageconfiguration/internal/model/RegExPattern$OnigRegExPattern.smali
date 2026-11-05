@@ -1,6 +1,6 @@
 .class final Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern$OnigRegExPattern;
 .super Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # annotations
@@ -15,7 +15,7 @@
 
 
 # instance fields
-.field final regex:Lgb4;
+.field final regex:Luc4;
 
 
 # direct methods
@@ -59,7 +59,7 @@
 
     .line 17
     :goto_0
-    sget-boolean v0, Lnb4;->a:Z
+    sget-boolean v0, Lbd4;->a:Z
 
     .line 18
     .line 19
@@ -67,11 +67,11 @@
 
     .line 20
     .line 21
-    new-instance v0, Lgu2;
+    new-instance v0, Lqv2;
 
     .line 22
     .line 23
-    invoke-direct {v0, p1, p2}, Lgu2;-><init>(Ljava/lang/String;Z)V
+    invoke-direct {v0, p1, p2}, Lqv2;-><init>(Ljava/lang/String;Z)V
 
     .line 24
     .line 25
@@ -80,17 +80,17 @@
 
     .line 27
     :cond_1
-    new-instance v0, Lvs3;
+    new-instance v0, Lhu3;
 
     .line 28
     .line 29
-    invoke-direct {v0, p1, p2}, Lvs3;-><init>(Ljava/lang/String;Z)V
+    invoke-direct {v0, p1, p2}, Lhu3;-><init>(Ljava/lang/String;Z)V
 
     .line 30
     .line 31
     .line 32
     :goto_1
-    iput-object v0, p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern$OnigRegExPattern;->regex:Lgb4;
+    iput-object v0, p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern$OnigRegExPattern;->regex:Luc4;
 
     .line 33
     .line 34
@@ -103,11 +103,11 @@
     .locals 3
 
     .line 1
-    iget-object p0, p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern$OnigRegExPattern;->regex:Lgb4;
+    iget-object p0, p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern$OnigRegExPattern;->regex:Luc4;
 
     .line 2
     .line 3
-    invoke-static {p1}, Lmb4;->c(Ljava/lang/String;)Lmb4;
+    invoke-static {p1}, Lad4;->c(Ljava/lang/String;)Lad4;
 
     .line 4
     .line 5
@@ -115,7 +115,7 @@
     move-result-object v0
 
     .line 7
-    invoke-interface {p0, v0}, Lgb4;->a(Lmb4;)Lhb4;
+    invoke-interface {p0, v0}, Luc4;->a(Lad4;)Lvc4;
 
     .line 8
     .line 9
@@ -130,7 +130,7 @@
 
     .line 13
     .line 14
-    invoke-interface {p0}, Lhb4;->count()I
+    invoke-interface {p0}, Lvc4;->count()I
 
     .line 15
     .line 16
@@ -145,7 +145,7 @@
 
     .line 20
     .line 21
-    invoke-interface {p0, v0}, Lhb4;->b(I)I
+    invoke-interface {p0, v0}, Lvc4;->b(I)I
 
     .line 22
     .line 23
@@ -176,11 +176,11 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern$OnigRegExPattern;->regex:Lgb4;
+    iget-object p0, p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern$OnigRegExPattern;->regex:Luc4;
 
     .line 2
     .line 3
-    invoke-static {p1}, Lmb4;->c(Ljava/lang/String;)Lmb4;
+    invoke-static {p1}, Lad4;->c(Ljava/lang/String;)Lad4;
 
     .line 4
     .line 5
@@ -188,7 +188,7 @@
     move-result-object p1
 
     .line 7
-    invoke-interface {p0, p1}, Lgb4;->a(Lmb4;)Lhb4;
+    invoke-interface {p0, p1}, Luc4;->a(Lad4;)Lvc4;
 
     .line 8
     .line 9
@@ -217,11 +217,11 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern$OnigRegExPattern;->regex:Lgb4;
+    iget-object p0, p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/RegExPattern$OnigRegExPattern;->regex:Luc4;
 
     .line 2
     .line 3
-    invoke-interface {p0}, Lgb4;->b()Ljava/lang/String;
+    invoke-interface {p0}, Luc4;->b()Ljava/lang/String;
 
     .line 4
     .line 5

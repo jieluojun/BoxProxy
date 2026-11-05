@@ -1,21 +1,38 @@
-.class public final Lyw1;
-.super Ljava/io/ByteArrayOutputStream;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public interface abstract Lyw1;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # virtual methods
-.method public final b()[B
-    .locals 0
+.method public abstract a(Lgc5;)V
+.end method
 
-    .line 1
-    iget-object p0, p0, Ljava/io/ByteArrayOutputStream;->buf:[B
+.method public abstract b(Lcd5;)Lk96;
+.end method
 
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.method public abstract c()V
+.end method
 
-    .line 4
-    .line 5
-    .line 6
-    return-object p0
+.method public abstract cancel()V
+.end method
+
+.method public abstract d()Z
+.end method
+
+.method public abstract e()V
+.end method
+
+.method public abstract f()La96;
+.end method
+
+.method public abstract g(Lgc5;J)Ls56;
+.end method
+
+.method public abstract h()Lxw1;
+.end method
+
+.method public abstract i(Lcd5;)J
+.end method
+
+.method public abstract j(Z)Lbd5;
 .end method

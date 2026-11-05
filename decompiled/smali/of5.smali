@@ -1,90 +1,202 @@
 .class public final Lof5;
-.super Lz71;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lob1;
+.implements Las6;
 
 
 # instance fields
-.field public j:Lvf5;
+.field public a:F
 
-.field public k:Ljava/lang/String;
+.field public final synthetic b:Ljava/lang/Object;
 
-.field public l:Lq72;
-
-.field public m:Ljava/util/List;
-
-.field public n:Ljava/lang/String;
-
-.field public o:Ljava/util/Collection;
-
-.field public p:Ljava/util/Iterator;
-
-.field public q:Lnf5;
-
-.field public r:Ljava/util/Collection;
-
-.field public synthetic s:Ljava/lang/Object;
-
-.field public final synthetic t:Lpf5;
-
-.field public u:I
+.field public final synthetic c:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lpf5;Lz71;)V
+.method public constructor <init>(Lcs6;Lxr6;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lof5;->t:Lpf5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
-
     .line 4
+    iput-object p1, p0, Lof5;->c:Ljava/lang/Object;
+
     .line 5
     .line 6
+    iput-object p2, p0, Lof5;->b:Ljava/lang/Object;
+
+    .line 7
+    .line 8
+    const/4 p1, 0x0
+
+    .line 9
+    iput p1, p0, Lof5;->a:F
+
+    .line 10
+    .line 11
+    return-void
+.end method
+
+.method public constructor <init>(Lob1;Lob1;F)V
+    .locals 0
+
+    .line 12
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 13
+    iput-object p1, p0, Lof5;->b:Ljava/lang/Object;
+
+    iput-object p2, p0, Lof5;->c:Ljava/lang/Object;
+
+    iput p3, p0, Lof5;->a:F
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public a(Ljava/util/ArrayList;ZLbo3;)Z
+    .locals 8
 
     .line 1
-    iput-object p1, p0, Lof5;->s:Ljava/lang/Object;
+    iget-object v0, p0, Lof5;->c:Ljava/lang/Object;
 
     .line 2
     .line 3
-    iget p1, p0, Lof5;->u:I
+    move-object v1, v0
 
     .line 4
+    check-cast v1, Lcs6;
+
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
-    .line 7
-    or-int/2addr p1, v0
+    iget v6, p0, Lof5;->a:F
 
+    .line 7
     .line 8
-    iput p1, p0, Lof5;->u:I
+    iget-object v0, p0, Lof5;->b:Ljava/lang/Object;
 
     .line 9
     .line 10
-    iget-object p1, p0, Lof5;->t:Lpf5;
+    move-object v7, v0
 
     .line 11
-    .line 12
-    const/4 v0, 0x0
+    check-cast v7, Lxr6;
 
+    .line 12
     .line 13
-    invoke-virtual {p1, v0, v0, v0, p0}, Lpf5;->j(Lvf5;Ljava/lang/String;Lq72;Lz71;)Ljava/lang/Object;
+    const/4 v5, 0x0
+
+    .line 14
+    move-object v2, p1
+
+    .line 15
+    move v3, p2
+
+    .line 16
+    move-object v4, p3
+
+    .line 17
+    invoke-virtual/range {v1 .. v7}, Lcs6;->h(Ljava/util/ArrayList;ZLbo3;Landroid/graphics/Canvas;FLxr6;)F
+
+    .line 18
+    .line 19
+    .line 20
+    move-result p1
+
+    .line 21
+    iget p2, p0, Lof5;->a:F
+
+    .line 22
+    .line 23
+    add-float/2addr p2, p1
+
+    .line 24
+    iput p2, p0, Lof5;->a:F
+
+    .line 25
+    .line 26
+    iget p0, v7, Lxr6;->c:F
+
+    .line 27
+    .line 28
+    const/4 p1, 0x0
+
+    .line 29
+    cmpl-float p0, p0, p1
+
+    .line 30
+    .line 31
+    if-eqz p0, :cond_0
+
+    .line 32
+    .line 33
+    const/4 p0, 0x1
+
+    .line 34
+    return p0
+
+    .line 35
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 36
+    return p0
+.end method
+
+.method public b(JLyh1;)F
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lof5;->b:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    check-cast v0, Lob1;
+
+    .line 4
+    .line 5
+    invoke-interface {v0, p1, p2, p3}, Lob1;->b(JLyh1;)F
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v0
+
+    .line 9
+    iget-object v1, p0, Lof5;->c:Ljava/lang/Object;
+
+    .line 10
+    .line 11
+    check-cast v1, Lob1;
+
+    .line 12
+    .line 13
+    invoke-interface {v1, p1, p2, p3}, Lob1;->b(JLyh1;)F
 
     .line 14
     .line 15
     .line 16
-    move-result-object p0
+    move-result p1
 
     .line 17
-    return-object p0
+    iget p0, p0, Lof5;->a:F
+
+    .line 18
+    .line 19
+    invoke-static {v0, p1, p0}, Ljj3;->I(FFF)F
+
+    .line 20
+    .line 21
+    .line 22
+    move-result p0
+
+    .line 23
+    return p0
 .end method

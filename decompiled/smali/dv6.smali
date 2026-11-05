@@ -1,109 +1,271 @@
 .class public abstract Ldv6;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# static fields
-.field public static final a:Ljava/util/List;
+# instance fields
+.field public final a:Ljava/util/Optional;
 
-.field public static final b:Ljava/util/List;
+.field public final b:Ljava/util/Optional;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 11
+.method public constructor <init>(Ljava/util/Optional;Ljava/util/Optional;)V
+    .locals 0
 
-    const-string v0, "mihomo"
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v1, "mihomo_smart"
+    .line 2
+    .line 3
+    .line 4
+    invoke-static {p1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v2, "mihomo_dingtalk"
+    .line 5
+    .line 6
+    .line 7
+    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v3, "sing-box"
+    .line 8
+    .line 9
+    .line 10
+    iput-object p1, p0, Ldv6;->a:Ljava/util/Optional;
 
-    const-string v4, "sing-box_ref1nd"
+    .line 11
+    .line 12
+    iput-object p2, p0, Ldv6;->b:Ljava/util/Optional;
 
-    const-string v5, "sing-box_dingtalk"
-
-    const-string v6, "xray"
-
-    const-string v7, "v2fly"
-
-    const-string v8, "hysteria"
-
-    filled-new-array/range {v0 .. v8}, [Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {v0}, Loc7;->S([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    sput-object v0, Ldv6;->a:Ljava/util/List;
-
-    const v0, 0x7f0f0306
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v1
-
-    const v0, 0x7f0f0307
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v2
-
-    const v0, 0x7f0f050c
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    const v0, 0x7f0f0308
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v4
-
-    const v0, 0x7f0f0309
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v5
-
-    const v0, 0x7f0f050d
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v6
-
-    const v0, 0x7f0f030c
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v7
-
-    const v0, 0x7f0f030b
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v8
-
-    const v0, 0x7f0f0305
-
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v9
-
-    filled-new-array/range {v1 .. v9}, [Ljava/lang/Integer;
-
-    move-result-object v0
-
-    invoke-static {v0}, Loc7;->S([Ljava/lang/Object;)Ljava/util/List;
-
-    move-result-object v0
-
-    sput-object v0, Ldv6;->b:Ljava/util/List;
-
+    .line 13
+    .line 14
     return-void
+.end method
+
+
+# virtual methods
+.method public a()I
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x1
+
+    .line 2
+    return p0
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Ldv6;->a()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    packed-switch p0, :pswitch_data_0
+
+    .line 6
+    .line 7
+    .line 8
+    const/4 p0, 0x0
+
+    .line 9
+    throw p0
+
+    .line 10
+    :pswitch_0
+    const-string p0, ":"
+
+    .line 11
+    .line 12
+    goto :goto_0
+
+    .line 13
+    :pswitch_1
+    const-string p0, "#"
+
+    .line 14
+    .line 15
+    goto :goto_0
+
+    .line 16
+    :pswitch_2
+    const-string p0, "<tag>"
+
+    .line 17
+    .line 18
+    goto :goto_0
+
+    .line 19
+    :pswitch_3
+    const-string p0, "<stream start>"
+
+    .line 20
+    .line 21
+    goto :goto_0
+
+    .line 22
+    :pswitch_4
+    const-string p0, "<stream end>"
+
+    .line 23
+    .line 24
+    goto :goto_0
+
+    .line 25
+    :pswitch_5
+    const-string p0, "<scalar>"
+
+    .line 26
+    .line 27
+    goto :goto_0
+
+    .line 28
+    :pswitch_6
+    const-string p0, "?"
+
+    .line 29
+    .line 30
+    goto :goto_0
+
+    .line 31
+    :pswitch_7
+    const-string p0, "["
+
+    .line 32
+    .line 33
+    goto :goto_0
+
+    .line 34
+    :pswitch_8
+    const-string p0, "]"
+
+    .line 35
+    .line 36
+    goto :goto_0
+
+    .line 37
+    :pswitch_9
+    const-string p0, "{"
+
+    .line 38
+    .line 39
+    goto :goto_0
+
+    .line 40
+    :pswitch_a
+    const-string p0, "}"
+
+    .line 41
+    .line 42
+    goto :goto_0
+
+    .line 43
+    :pswitch_b
+    const-string p0, ","
+
+    .line 44
+    .line 45
+    goto :goto_0
+
+    .line 46
+    :pswitch_c
+    const-string p0, "<document start>"
+
+    .line 47
+    .line 48
+    goto :goto_0
+
+    .line 49
+    :pswitch_d
+    const-string p0, "<document end>"
+
+    .line 50
+    .line 51
+    goto :goto_0
+
+    .line 52
+    :pswitch_e
+    const-string p0, "<directive>"
+
+    .line 53
+    .line 54
+    goto :goto_0
+
+    .line 55
+    :pswitch_f
+    const-string p0, "<block sequence start>"
+
+    .line 56
+    .line 57
+    goto :goto_0
+
+    .line 58
+    :pswitch_10
+    const-string p0, "<block mapping start>"
+
+    .line 59
+    .line 60
+    goto :goto_0
+
+    .line 61
+    :pswitch_11
+    const-string p0, "-"
+
+    .line 62
+    .line 63
+    goto :goto_0
+
+    .line 64
+    :pswitch_12
+    const-string p0, "<block end>"
+
+    .line 65
+    .line 66
+    goto :goto_0
+
+    .line 67
+    :pswitch_13
+    const-string p0, "<anchor>"
+
+    .line 68
+    .line 69
+    goto :goto_0
+
+    .line 70
+    :pswitch_14
+    const-string p0, "<alias>"
+
+    .line 71
+    .line 72
+    :goto_0
+    return-object p0
+
+    .line 73
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

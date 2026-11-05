@@ -1,154 +1,198 @@
 .class public abstract La3;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Ljava/util/Iterator;
+.implements Lfy2;
 
 
 # instance fields
-.field public final j:Lc3;
+.field public j:B
 
-.field public final synthetic k:Ld3;
-
-
-# direct methods
-.method public constructor <init>(Ld3;Lc3;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p1, p0, La3;->k:Ld3;
-
-    .line 5
-    .line 6
-    iput-object p2, p0, La3;->j:Lc3;
-
-    .line 7
-    .line 8
-    return-void
-.end method
+.field public k:Ljava/lang/Object;
 
 
 # virtual methods
-.method public abstract a()Ljava/lang/Object;
+.method public abstract a()V
 .end method
 
-.method public b()Z
-    .locals 0
+.method public final hasNext()Z
+    .locals 3
 
     .line 1
-    iget-object p0, p0, La3;->k:Ld3;
+    iget-byte v0, p0, La3;->j:B
 
     .line 2
     .line 3
-    iget-object p0, p0, Ld3;->j:Lqt0;
+    const/4 v1, 0x0
 
     .line 4
+    const/4 v2, 0x1
+
     .line 5
-    if-eqz p0, :cond_0
+    if-eqz v0, :cond_2
 
     .line 6
     .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    return p0
-
-    .line 9
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-.end method
-
-.method public final run()V
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, La3;->b()Z
-
-    .line 2
-    .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    if-eqz v0, :cond_0
-
-    .line 6
-    .line 7
-    invoke-virtual {p0}, La3;->a()Ljava/lang/Object;
+    if-eq v0, v2, :cond_1
 
     .line 8
     .line 9
+    const/4 p0, 0x2
+
     .line 10
-    move-result-object v0
+    if-ne v0, p0, :cond_0
 
     .line 11
-    iget-object p0, p0, La3;->j:Lc3;
-
     .line 12
+    return v1
+
     .line 13
-    invoke-virtual {p0, v0}, Lc3;->a(Ljava/lang/Object;)V
+    :cond_0
+    const-string p0, "hasNext called when the iterator is in the FAILED state."
 
     .line 14
     .line 15
+    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+
     .line 16
-    return-void
-
     .line 17
-    :cond_0
-    iget-object p0, p0, La3;->j:Lc3;
-
     .line 18
+    const/4 p0, 0x0
+
     .line 19
-    monitor-enter p0
+    return p0
 
     .line 20
-    :try_start_0
-    iget v0, p0, Lc3;->e:I
+    :cond_1
+    return v2
 
     .line 21
+    :cond_2
+    const/4 v0, 0x3
+
     .line 22
-    add-int/lit8 v0, v0, 0x1
+    iput-byte v0, p0, La3;->j:B
 
     .line 23
     .line 24
-    iput v0, p0, Lc3;->e:I
+    invoke-virtual {p0}, La3;->a()V
 
     .line 25
     .line 26
-    const/4 v0, 0x0
-
     .line 27
-    invoke-virtual {p0, v0}, Lc3;->a(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    iget-byte p0, p0, La3;->j:B
 
     .line 28
     .line 29
-    .line 30
-    monitor-exit p0
+    if-ne p0, v2, :cond_3
 
+    .line 30
     .line 31
-    return-void
+    return v2
 
     .line 32
-    :catchall_0
-    move-exception v0
+    :cond_3
+    return v1
+.end method
 
+.method public final next()Ljava/lang/Object;
+    .locals 4
+
+    .line 1
+    iget-byte v0, p0, La3;->j:B
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    const/4 v2, 0x1
+
+    .line 5
+    if-ne v0, v2, :cond_0
+
+    .line 6
+    .line 7
+    iput-byte v1, p0, La3;->j:B
+
+    .line 8
+    .line 9
+    iget-object p0, p0, La3;->k:Ljava/lang/Object;
+
+    .line 10
+    .line 11
+    return-object p0
+
+    .line 12
+    :cond_0
+    const/4 v3, 0x2
+
+    .line 13
+    if-eq v0, v3, :cond_1
+
+    .line 14
+    .line 15
+    const/4 v0, 0x3
+
+    .line 16
+    iput-byte v0, p0, La3;->j:B
+
+    .line 17
+    .line 18
+    invoke-virtual {p0}, La3;->a()V
+
+    .line 19
+    .line 20
+    .line 21
+    iget-byte v0, p0, La3;->j:B
+
+    .line 22
+    .line 23
+    if-ne v0, v2, :cond_1
+
+    .line 24
+    .line 25
+    iput-byte v1, p0, La3;->j:B
+
+    .line 26
+    .line 27
+    iget-object p0, p0, La3;->k:Ljava/lang/Object;
+
+    .line 28
+    .line 29
+    return-object p0
+
+    .line 30
+    :cond_1
+    invoke-static {}, Lue1;->p()V
+
+    .line 31
+    .line 32
     .line 33
-    :try_start_1
-    monitor-exit p0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    const/4 p0, 0x0
 
     .line 34
-    throw v0
+    return-object p0
+.end method
+
+.method public final remove()V
+    .locals 1
+
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 2
+    .line 3
+    const-string v0, "Operation is not supported for read-only collection"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
 .end method

@@ -1,128 +1,193 @@
 .class public final Lk92;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Ljava/util/Iterator;
+.super La07;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public j:Lj92;
-
-.field public final synthetic k:Ldg0;
+.field public final synthetic a:B
 
 
 # direct methods
-.method public constructor <init>(Ldg0;)V
+.method public synthetic constructor <init>(B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p1, p0, Lk92;->a:B
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lk92;->k:Ldg0;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 4
     .line 5
     .line 6
-    iget-object p1, p1, Ldg0;->l:Lj92;
-
-    .line 7
-    .line 8
-    iget-object p1, p1, Lj92;->m:Ljava/lang/Object;
-
-    .line 9
-    .line 10
-    check-cast p1, Lj92;
-
-    .line 11
-    .line 12
-    iput-object p1, p0, Lk92;->j:Lj92;
-
-    .line 13
-    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final hasNext()Z
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lk92;->j:Lj92;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lk92;->k:Ldg0;
-
-    .line 4
-    .line 5
-    iget-object p0, p0, Ldg0;->l:Lj92;
-
-    .line 6
-    .line 7
-    if-eq v0, p0, :cond_0
-
-    .line 8
-    .line 9
-    const/4 p0, 0x1
-
-    .line 10
-    return p0
-
-    .line 11
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 12
-    return p0
-.end method
-
-.method public final next()Ljava/lang/Object;
+.method public final b(Lrx2;)Ljava/lang/Object;
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lk92;->j:Lj92;
+    iget-byte p0, p0, Lk92;->a:B
 
     .line 2
     .line 3
-    iget-object v1, v0, Lj92;->m:Ljava/lang/Object;
+    const/16 v0, 0x9
 
     .line 4
     .line 5
-    check-cast v1, Lj92;
+    const/4 v1, 0x0
 
     .line 6
-    .line 7
-    iput-object v1, p0, Lk92;->j:Lj92;
+    packed-switch p0, :pswitch_data_0
 
+    .line 7
     .line 8
     .line 9
-    iget-object p0, v0, Lj92;->n:Ljava/lang/Object;
+    invoke-virtual {p1}, Lrx2;->R()V
 
     .line 10
     .line 11
-    return-object p0
+    .line 12
+    return-object v1
+
+    .line 13
+    :pswitch_0
+    invoke-virtual {p1}, Lrx2;->L()I
+
+    .line 14
+    .line 15
+    .line 16
+    move-result p0
+
+    .line 17
+    if-ne p0, v0, :cond_0
+
+    .line 18
+    .line 19
+    invoke-virtual {p1}, Lrx2;->H()V
+
+    .line 20
+    .line 21
+    .line 22
+    goto :goto_0
+
+    .line 23
+    :cond_0
+    invoke-virtual {p1}, Lrx2;->x()D
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-wide p0
+
+    .line 27
+    double-to-float p0, p0
+
+    .line 28
+    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object v1
+
+    .line 32
+    :goto_0
+    return-object v1
+
+    .line 33
+    :pswitch_1
+    invoke-virtual {p1}, Lrx2;->L()I
+
+    .line 34
+    .line 35
+    .line 36
+    move-result p0
+
+    .line 37
+    if-ne p0, v0, :cond_1
+
+    .line 38
+    .line 39
+    invoke-virtual {p1}, Lrx2;->H()V
+
+    .line 40
+    .line 41
+    .line 42
+    goto :goto_1
+
+    .line 43
+    :cond_1
+    invoke-virtual {p1}, Lrx2;->x()D
+
+    .line 44
+    .line 45
+    .line 46
+    move-result-wide p0
+
+    .line 47
+    invoke-static {p0, p1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 48
+    .line 49
+    .line 50
+    move-result-object v1
+
+    .line 51
+    :goto_1
+    return-object v1
+
+    .line 52
+    nop
+
+    .line 53
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final remove()V
+.method public toString()Ljava/lang/String;
     .locals 1
 
     .line 1
-    new-instance p0, Lcu1;
+    iget-byte v0, p0, Lk92;->a:B
 
     .line 2
     .line 3
-    const-string v0, "not supported operation exception"
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
-    invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
     .line 6
+    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
     .line 7
     .line 8
-    throw p0
+    .line 9
+    move-result-object p0
+
+    .line 10
+    return-object p0
+
+    .line 11
+    :pswitch_0
+    const-string p0, "AnonymousOrNonStaticLocalClassAdapter"
+
+    .line 12
+    .line 13
+    return-object p0
+
+    .line 14
+    nop
+
+    .line 15
+    :pswitch_data_0
+    .packed-switch 0x2
+        :pswitch_0
+    .end packed-switch
 .end method

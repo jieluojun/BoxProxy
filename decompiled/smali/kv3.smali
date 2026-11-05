@@ -1,80 +1,63 @@
-.class public abstract Lkv3;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final Lkv3;
+.super Lz81;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# static fields
-.field public static final a:J
+# instance fields
+.field public synthetic j:Ljava/lang/Object;
 
-.field public static final b:F
-
-.field public static final c:F
-
-.field public static final d:F
-
-.field public static final e:F
-
-.field public static final f:F
+.field public k:I
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
     .line 1
-    const/16 v0, 0xc
+    iput-object p1, p0, Lkv3;->j:Ljava/lang/Object;
 
     .line 2
     .line 3
-    invoke-static {v0}, Lg23;->G(I)J
+    iget p1, p0, Lkv3;->k:I
 
     .line 4
     .line 5
-    .line 6
-    move-result-wide v0
+    const/high16 v0, -0x80000000
 
+    .line 6
     .line 7
-    sput-wide v0, Lkv3;->a:J
+    or-int/2addr p1, v0
 
     .line 8
-    .line 9
-    const/high16 v0, 0x41000000    # 8.0f
+    iput p1, p0, Lkv3;->k:I
 
+    .line 9
     .line 10
+    const/4 v3, 0x0
+
     .line 11
-    sput v0, Lkv3;->b:F
+    const/4 v4, 0x0
 
     .line 12
+    const/4 v0, 0x0
+
     .line 13
-    sput v0, Lkv3;->c:F
+    const/4 v1, 0x0
 
     .line 14
+    const/4 v2, 0x0
+
     .line 15
-    const/high16 v0, 0x3f000000    # 0.5f
+    move-object v5, p0
 
     .line 16
-    .line 17
-    sput v0, Lkv3;->d:F
+    invoke-static/range {v0 .. v5}, Lci3;->X(Lgg;FLew3;FLe62;Lz81;)Ljava/lang/Object;
 
+    .line 17
     .line 18
     .line 19
-    const v0, 0x3f19999a    # 0.6f
+    move-result-object p0
 
     .line 20
-    .line 21
-    .line 22
-    sput v0, Lkv3;->e:F
-
-    .line 23
-    .line 24
-    const v0, 0x3ecccccd    # 0.4f
-
-    .line 25
-    .line 26
-    .line 27
-    sput v0, Lkv3;->f:F
-
-    .line 28
-    .line 29
-    return-void
+    return-object p0
 .end method

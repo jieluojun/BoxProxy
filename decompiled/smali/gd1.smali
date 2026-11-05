@@ -1,39 +1,39 @@
-.class public final Lgd1;
+.class public final synthetic Lgd1;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lg02;
+.implements Le62;
 
 
 # instance fields
-.field public final synthetic j:Lg02;
+.field public final synthetic j:B
 
-.field public final synthetic k:Ljd1;
+.field public final synthetic k:Lgr4;
 
-.field public final synthetic l:F
+.field public final synthetic l:La45;
 
 
 # direct methods
-.method public constructor <init>(Lg02;Ljd1;F)V
+.method public synthetic constructor <init>(Lgr4;La45;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p3, p0, Lgd1;->j:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Lgd1;->k:Lgr4;
+
     .line 4
-    iput-object p1, p0, Lgd1;->j:Lg02;
-
     .line 5
+    iput-object p2, p0, Lgd1;->l:La45;
+
     .line 6
-    iput-object p2, p0, Lgd1;->k:Ljd1;
-
     .line 7
-    .line 8
-    iput p3, p0, Lgd1;->l:F
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 8
     .line 9
     .line 10
     return-void
@@ -41,213 +41,151 @@
 
 
 # virtual methods
-.method public final e(Ljava/lang/Object;Ly71;)Ljava/lang/Object;
+.method public final invoke()Ljava/lang/Object;
     .locals 4
 
     .line 1
-    instance-of v0, p2, Lfd1;
+    iget-byte v0, p0, Lgd1;->j:B
 
     .line 2
     .line 3
-    if-eqz v0, :cond_0
+    const/4 v1, 0x0
 
     .line 4
-    .line 5
-    move-object v0, p2
+    sget-object v2, La47;->a:La47;
 
+    .line 5
     .line 6
-    check-cast v0, Lfd1;
+    iget-object v3, p0, Lgd1;->l:La45;
 
     .line 7
     .line 8
-    iget v1, v0, Lfd1;->k:I
+    iget-object p0, p0, Lgd1;->k:Lgr4;
 
     .line 9
     .line 10
-    const/high16 v2, -0x80000000
+    packed-switch v0, :pswitch_data_0
 
     .line 11
     .line 12
-    and-int v3, v1, v2
-
     .line 13
+    iget-object v0, v3, La45;->a:Ljava/lang/String;
+
     .line 14
-    if-eqz v3, :cond_0
-
     .line 15
+    invoke-virtual {p0, v1}, Lgr4;->a(La45;)V
+
     .line 16
-    sub-int/2addr v1, v2
-
     .line 17
-    iput v1, v0, Lfd1;->k:I
-
     .line 18
+    invoke-virtual {p0, v0}, Lgr4;->c(Ljava/lang/String;)V
+
     .line 19
-    goto :goto_0
-
     .line 20
-    :cond_0
-    new-instance v0, Lfd1;
-
     .line 21
+    return-object v2
+
     .line 22
-    invoke-direct {v0, p0, p2}, Lfd1;-><init>(Lgd1;Ly71;)V
+    :pswitch_0
+    invoke-virtual {p0, v1}, Lgr4;->a(La45;)V
 
     .line 23
     .line 24
     .line 25
-    :goto_0
-    iget-object p2, v0, Lfd1;->j:Ljava/lang/Object;
+    invoke-virtual {p0, v3}, Lgr4;->b(La45;)V
 
     .line 26
     .line 27
-    iget v1, v0, Lfd1;->k:I
-
     .line 28
+    return-object v2
+
     .line 29
-    const/4 v2, 0x1
+    :pswitch_1
+    invoke-virtual {p0, v1}, Lgr4;->a(La45;)V
 
     .line 30
-    if-eqz v1, :cond_2
-
     .line 31
     .line 32
-    if-ne v1, v2, :cond_1
+    invoke-virtual {p0, v3}, Lgr4;->f(La45;)V
 
     .line 33
     .line 34
-    invoke-static {p2}, Leg3;->S(Ljava/lang/Object;)V
-
     .line 35
+    return-object v2
+
     .line 36
+    :pswitch_2
+    invoke-virtual {p0, v3}, Lgr4;->a(La45;)V
+
     .line 37
-    goto :goto_1
-
     .line 38
-    :cond_1
-    const-string p0, "call to \'resume\' before \'invoke\' with coroutine"
-
     .line 39
+    return-object v2
+
     .line 40
-    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
+    :pswitch_3
+    iget-object v0, v3, La45;->a:Ljava/lang/String;
 
     .line 41
     .line 42
+    invoke-virtual {p0, v1}, Lgr4;->a(La45;)V
+
     .line 43
-    const/4 p0, 0x0
-
     .line 44
-    return-object p0
-
     .line 45
-    :cond_2
-    invoke-static {p2}, Leg3;->S(Ljava/lang/Object;)V
+    invoke-virtual {p0, v0}, Lgr4;->c(Ljava/lang/String;)V
 
     .line 46
     .line 47
     .line 48
-    move-object p2, p1
+    return-object v2
 
     .line 49
-    check-cast p2, Ljava/lang/Number;
+    :pswitch_4
+    invoke-virtual {p0, v1}, Lgr4;->a(La45;)V
 
     .line 50
     .line 51
-    invoke-virtual {p2}, Ljava/lang/Number;->floatValue()F
-
     .line 52
+    invoke-virtual {p0, v3}, Lgr4;->b(La45;)V
+
     .line 53
     .line 54
-    move-result p2
-
     .line 55
-    iget-object v1, p0, Lgd1;->k:Ljd1;
+    return-object v2
 
     .line 56
-    .line 57
-    iget-object v1, v1, Ljd1;->m:Ldg;
+    :pswitch_5
+    invoke-virtual {p0, v1}, Lgr4;->a(La45;)V
 
+    .line 57
     .line 58
     .line 59
-    iget-object v1, v1, Ldg;->f:Lgl4;
+    invoke-virtual {p0, v3}, Lgr4;->f(La45;)V
 
     .line 60
     .line 61
-    invoke-virtual {v1}, Lgl4;->getValue()Ljava/lang/Object;
-
     .line 62
+    return-object v2
+
     .line 63
+    :pswitch_6
+    invoke-virtual {p0, v3}, Lgr4;->a(La45;)V
+
     .line 64
-    move-result-object v1
-
     .line 65
-    check-cast v1, Ljava/lang/Number;
-
     .line 66
+    return-object v2
+
     .line 67
-    invoke-virtual {v1}, Ljava/lang/Number;->floatValue()F
-
-    .line 68
-    .line 69
-    .line 70
-    move-result v1
-
-    .line 71
-    sub-float/2addr p2, v1
-
-    .line 72
-    invoke-static {p2}, Ljava/lang/Math;->abs(F)F
-
-    .line 73
-    .line 74
-    .line 75
-    move-result p2
-
-    .line 76
-    iget v1, p0, Lgd1;->l:F
-
-    .line 77
-    .line 78
-    cmpg-float p2, p2, v1
-
-    .line 79
-    .line 80
-    if-gez p2, :cond_3
-
-    .line 81
-    .line 82
-    iput v2, v0, Lfd1;->k:I
-
-    .line 83
-    .line 84
-    iget-object p0, p0, Lgd1;->j:Lg02;
-
-    .line 85
-    .line 86
-    invoke-interface {p0, p1, v0}, Lg02;->e(Ljava/lang/Object;Ly71;)Ljava/lang/Object;
-
-    .line 87
-    .line 88
-    .line 89
-    move-result-object p0
-
-    .line 90
-    sget-object p1, Lcb1;->j:Lcb1;
-
-    .line 91
-    .line 92
-    if-ne p0, p1, :cond_3
-
-    .line 93
-    .line 94
-    return-object p1
-
-    .line 95
-    :cond_3
-    :goto_1
-    sget-object p0, Lk27;->a:Lk27;
-
-    .line 96
-    .line 97
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

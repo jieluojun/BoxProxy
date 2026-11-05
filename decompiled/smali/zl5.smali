@@ -1,467 +1,215 @@
 .class public final synthetic Lzl5;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Ld52;
+.implements Le62;
 
 
 # instance fields
 .field public final synthetic j:B
 
-.field public final synthetic k:Lho5;
+.field public final synthetic k:Lum5;
+
+.field public final synthetic l:Le62;
+
+.field public final synthetic m:Lmt3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lho5;B)V
+.method public synthetic constructor <init>(Lum5;Le62;Lmt3;B)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lzl5;->j:B
+    iput-byte p4, p0, Lzl5;->j:B
 
     .line 2
     .line 3
-    iput-object p1, p0, Lzl5;->k:Lho5;
+    iput-object p1, p0, Lzl5;->k:Lum5;
 
     .line 4
     .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lzl5;->l:Le62;
 
     .line 6
     .line 7
+    iput-object p3, p0, Lzl5;->m:Lmt3;
+
     .line 8
+    .line 9
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 10
+    .line 11
+    .line 12
     return-void
 .end method
 
 
 # virtual methods
 .method public final invoke()Ljava/lang/Object;
-    .locals 3
+    .locals 5
 
     .line 1
     iget-byte v0, p0, Lzl5;->j:B
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    sget-object v1, La47;->a:La47;
 
     .line 4
-    iget-object p0, p0, Lzl5;->k:Lho5;
-
     .line 5
+    const/4 v2, 0x0
+
     .line 6
-    packed-switch v0, :pswitch_data_0
+    iget-object v3, p0, Lzl5;->m:Lmt3;
 
     .line 7
     .line 8
+    iget-object v4, p0, Lzl5;->l:Le62;
+
     .line 9
-    iget-object v0, p0, Lho5;->g:Ljava/lang/Object;
-
     .line 10
-    .line 11
-    monitor-enter v0
+    iget-object p0, p0, Lzl5;->k:Lum5;
 
+    .line 11
     .line 12
-    :try_start_0
-    iput-object v1, p0, Lho5;->f:Ldo5;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    packed-switch v0, :pswitch_data_0
 
     .line 13
     .line 14
-    monitor-exit v0
-
     .line 15
-    iget-object v0, p0, Lho5;->b:Lio5;
+    invoke-virtual {p0, v2}, Lum5;->j(Z)V
 
     .line 16
     .line 17
-    iget-object v0, v0, Lio5;->o:Las3;
-
     .line 18
-    .line 19
-    sget-object v2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    invoke-interface {v3}, Lmb6;->getValue()Ljava/lang/Object;
 
+    .line 19
     .line 20
     .line 21
-    invoke-interface {v0, v2}, Las3;->setValue(Ljava/lang/Object;)V
+    move-result-object v0
 
     .line 22
+    check-cast v0, Ljava/lang/Boolean;
+
     .line 23
     .line 24
-    iget-object p0, p0, Lho5;->b:Lio5;
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     .line 25
     .line 26
-    iget-object p0, p0, Lio5;->p:Las3;
-
     .line 27
+    move-result v0
+
     .line 28
-    invoke-interface {p0, v1}, Las3;->setValue(Ljava/lang/Object;)V
+    if-eqz v0, :cond_0
 
     .line 29
     .line 30
-    .line 31
-    sget-object p0, Lk27;->a:Lk27;
+    invoke-interface {v4}, Le62;->invoke()Ljava/lang/Object;
 
+    .line 31
     .line 32
     .line 33
-    return-object p0
+    goto :goto_0
 
     .line 34
-    :catchall_0
-    move-exception p0
+    :cond_0
+    iget-object v0, p0, Lum5;->c:Lmt3;
 
     .line 35
-    monitor-exit v0
-
     .line 36
-    throw p0
+    sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     .line 37
-    :pswitch_0
-    iget-object v0, p0, Lho5;->e:Ljava/lang/Object;
-
     .line 38
+    invoke-interface {v0, v2}, Lmt3;->setValue(Ljava/lang/Object;)V
+
     .line 39
-    monitor-enter v0
-
     .line 40
-    :try_start_1
-    iput-object v1, p0, Lho5;->d:Leo5;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
     .line 41
-    .line 42
-    monitor-exit v0
+    iget-object p0, p0, Lum5;->i:Lmt3;
 
+    .line 42
     .line 43
-    iget-object v0, p0, Lho5;->b:Lio5;
+    invoke-interface {p0, v2}, Lmt3;->setValue(Ljava/lang/Object;)V
 
     .line 44
     .line 45
-    iget-object v0, v0, Lio5;->m:Las3;
-
     .line 46
+    :goto_0
+    return-object v1
+
     .line 47
-    sget-object v2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    :pswitch_0
+    invoke-virtual {p0, v2}, Lum5;->j(Z)V
 
     .line 48
     .line 49
-    invoke-interface {v0, v2}, Las3;->setValue(Ljava/lang/Object;)V
-
     .line 50
+    invoke-interface {v3}, Lmb6;->getValue()Ljava/lang/Object;
+
     .line 51
     .line 52
-    iget-object p0, p0, Lho5;->b:Lio5;
-
     .line 53
+    move-result-object v0
+
     .line 54
-    iget-object p0, p0, Lio5;->n:Las3;
+    check-cast v0, Ljava/lang/Boolean;
 
     .line 55
     .line 56
-    invoke-interface {p0, v1}, Las3;->setValue(Ljava/lang/Object;)V
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     .line 57
     .line 58
     .line 59
-    sget-object p0, Lk27;->a:Lk27;
+    move-result v0
 
     .line 60
-    .line 61
-    return-object p0
+    if-eqz v0, :cond_1
 
+    .line 61
     .line 62
-    :catchall_1
-    move-exception p0
+    invoke-interface {v4}, Le62;->invoke()Ljava/lang/Object;
 
     .line 63
-    monitor-exit v0
-
     .line 64
-    throw p0
-
     .line 65
-    :pswitch_1
-    sget-object v0, Lrn5;->k:Lrn5;
+    goto :goto_1
 
     .line 66
-    .line 67
-    invoke-virtual {p0, v0}, Lho5;->b(Lrn5;)V
+    :cond_1
+    iget-object v0, p0, Lum5;->c:Lmt3;
 
+    .line 67
     .line 68
+    sget-object v2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
     .line 69
     .line 70
-    sget-object p0, Lk27;->a:Lk27;
+    invoke-interface {v0, v2}, Lmt3;->setValue(Ljava/lang/Object;)V
 
     .line 71
     .line 72
-    return-object p0
-
     .line 73
-    :pswitch_2
-    sget-object v0, Lrn5;->j:Lrn5;
+    iget-object p0, p0, Lum5;->i:Lmt3;
 
     .line 74
     .line 75
-    invoke-virtual {p0, v0}, Lho5;->b(Lrn5;)V
+    invoke-interface {p0, v2}, Lmt3;->setValue(Ljava/lang/Object;)V
 
     .line 76
     .line 77
     .line 78
-    sget-object p0, Lk27;->a:Lk27;
+    :goto_1
+    return-object v1
 
     .line 79
-    .line 80
-    return-object p0
-
-    .line 81
-    :pswitch_3
-    sget-object v0, Lrn5;->k:Lrn5;
-
-    .line 82
-    .line 83
-    invoke-virtual {p0, v0}, Lho5;->c(Lrn5;)V
-
-    .line 84
-    .line 85
-    .line 86
-    sget-object p0, Lk27;->a:Lk27;
-
-    .line 87
-    .line 88
-    return-object p0
-
-    .line 89
-    :pswitch_4
-    sget-object v0, Lrn5;->j:Lrn5;
-
-    .line 90
-    .line 91
-    invoke-virtual {p0, v0}, Lho5;->c(Lrn5;)V
-
-    .line 92
-    .line 93
-    .line 94
-    sget-object p0, Lk27;->a:Lk27;
-
-    .line 95
-    .line 96
-    return-object p0
-
-    .line 97
-    :pswitch_5
-    iget-object v0, p0, Lho5;->e:Ljava/lang/Object;
-
-    .line 98
-    .line 99
-    monitor-enter v0
-
-    .line 100
-    :try_start_2
-    iput-object v1, p0, Lho5;->d:Leo5;
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_2
-
-    .line 101
-    .line 102
-    monitor-exit v0
-
-    .line 103
-    iget-object v0, p0, Lho5;->b:Lio5;
-
-    .line 104
-    .line 105
-    iget-object v0, v0, Lio5;->m:Las3;
-
-    .line 106
-    .line 107
-    sget-object v2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    .line 108
-    .line 109
-    invoke-interface {v0, v2}, Las3;->setValue(Ljava/lang/Object;)V
-
-    .line 110
-    .line 111
-    .line 112
-    iget-object p0, p0, Lho5;->b:Lio5;
-
-    .line 113
-    .line 114
-    iget-object p0, p0, Lio5;->n:Las3;
-
-    .line 115
-    .line 116
-    invoke-interface {p0, v1}, Las3;->setValue(Ljava/lang/Object;)V
-
-    .line 117
-    .line 118
-    .line 119
-    sget-object p0, Lk27;->a:Lk27;
-
-    .line 120
-    .line 121
-    return-object p0
-
-    .line 122
-    :catchall_2
-    move-exception p0
-
-    .line 123
-    monitor-exit v0
-
-    .line 124
-    throw p0
-
-    .line 125
-    :pswitch_6
-    sget-object v0, Lrn5;->j:Lrn5;
-
-    .line 126
-    .line 127
-    invoke-virtual {p0, v0}, Lho5;->b(Lrn5;)V
-
-    .line 128
-    .line 129
-    .line 130
-    sget-object p0, Lk27;->a:Lk27;
-
-    .line 131
-    .line 132
-    return-object p0
-
-    .line 133
-    :pswitch_7
-    sget-object v0, Lrn5;->j:Lrn5;
-
-    .line 134
-    .line 135
-    invoke-virtual {p0, v0}, Lho5;->c(Lrn5;)V
-
-    .line 136
-    .line 137
-    .line 138
-    sget-object p0, Lk27;->a:Lk27;
-
-    .line 139
-    .line 140
-    return-object p0
-
-    .line 141
-    :pswitch_8
-    sget-object v0, Lrn5;->k:Lrn5;
-
-    .line 142
-    .line 143
-    invoke-virtual {p0, v0}, Lho5;->b(Lrn5;)V
-
-    .line 144
-    .line 145
-    .line 146
-    sget-object p0, Lk27;->a:Lk27;
-
-    .line 147
-    .line 148
-    return-object p0
-
-    .line 149
-    :pswitch_9
-    sget-object v0, Lrn5;->k:Lrn5;
-
-    .line 150
-    .line 151
-    invoke-virtual {p0, v0}, Lho5;->c(Lrn5;)V
-
-    .line 152
-    .line 153
-    .line 154
-    sget-object p0, Lk27;->a:Lk27;
-
-    .line 155
-    .line 156
-    return-object p0
-
-    .line 157
-    :pswitch_a
-    iget-object v0, p0, Lho5;->g:Ljava/lang/Object;
-
-    .line 158
-    .line 159
-    monitor-enter v0
-
-    .line 160
-    :try_start_3
-    iput-object v1, p0, Lho5;->f:Ldo5;
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_3
-
-    .line 161
-    .line 162
-    monitor-exit v0
-
-    .line 163
-    iget-object v0, p0, Lho5;->b:Lio5;
-
-    .line 164
-    .line 165
-    iget-object v0, v0, Lio5;->o:Las3;
-
-    .line 166
-    .line 167
-    sget-object v2, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    .line 168
-    .line 169
-    invoke-interface {v0, v2}, Las3;->setValue(Ljava/lang/Object;)V
-
-    .line 170
-    .line 171
-    .line 172
-    iget-object p0, p0, Lho5;->b:Lio5;
-
-    .line 173
-    .line 174
-    iget-object p0, p0, Lio5;->p:Las3;
-
-    .line 175
-    .line 176
-    invoke-interface {p0, v1}, Las3;->setValue(Ljava/lang/Object;)V
-
-    .line 177
-    .line 178
-    .line 179
-    sget-object p0, Lk27;->a:Lk27;
-
-    .line 180
-    .line 181
-    return-object p0
-
-    .line 182
-    :catchall_3
-    move-exception p0
-
-    .line 183
-    monitor-exit v0
-
-    .line 184
-    throw p0
-
-    .line 185
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

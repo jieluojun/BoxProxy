@@ -1,513 +1,525 @@
-.class public abstract Lu90;
+.class public final synthetic Lu90;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Le62;
 
 
-# static fields
-.field public static volatile a:Z
+# instance fields
+.field public final synthetic j:B
 
-.field public static volatile b:Ljava/util/Set;
+.field public final synthetic k:Lr90;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Lr90;B)V
+    .locals 0
 
     .line 1
-    sget-object v0, Lxt1;->j:Lxt1;
+    iput-byte p2, p0, Lu90;->j:B
 
     .line 2
     .line 3
-    sput-object v0, Lu90;->b:Ljava/util/Set;
+    iput-object p1, p0, Lu90;->k:Lr90;
 
     .line 4
     .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 6
+    .line 7
+    .line 8
     return-void
 .end method
 
-.method public static a(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 3
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 5
 
     .line 1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-byte v0, p0, Lu90;->j:B
 
     .line 2
     .line 3
+    sget-object v1, Ltg2;->m:Ltg2;
+
     .line 4
-    invoke-static {p0, p1}, Lu90;->e(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Lmx5;
-
     .line 5
-    .line 6
-    .line 7
-    move-result-object v0
-
-    .line 8
-    iget-object v0, v0, Lmx5;->j:Lsf3;
-
-    .line 9
-    .line 10
-    invoke-virtual {v0, p2}, Lsf3;->containsKey(Ljava/lang/Object;)Z
-
-    .line 11
-    .line 12
-    .line 13
-    move-result v0
-
-    .line 14
-    if-nez v0, :cond_0
-
-    .line 15
-    .line 16
-    const-string v0, " ADD COLUMN "
-
-    .line 17
-    .line 18
-    const-string v1, " "
-
-    .line 19
-    .line 20
-    const-string v2, "ALTER TABLE "
-
-    .line 21
-    .line 22
-    invoke-static {v2, p1, v0, p2, v1}, Lpb1;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 23
-    .line 24
-    .line 25
-    move-result-object p1
-
-    .line 26
-    invoke-virtual {p1, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 27
-    .line 28
-    .line 29
-    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 30
-    .line 31
-    .line 32
-    move-result-object p1
-
-    .line 33
-    invoke-virtual {p0, p1}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 34
-    .line 35
-    .line 36
-    :cond_0
-    return-void
-.end method
-
-.method public static b(Landroid/database/sqlite/SQLiteDatabase;Ljava/util/Set;Ljava/lang/String;Ljava/lang/String;)Ljava/util/Set;
-    .locals 2
-
-    .line 1
-    invoke-interface {p1, p2}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    .line 2
-    .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    if-eqz v0, :cond_0
+    const-string v2, "run/state/config/startup-config"
 
     .line 6
     .line 7
-    return-object p1
+    const/16 v3, 0x12
 
     .line 8
-    :cond_0
-    new-instance v0, Ljava/lang/StringBuilder;
-
     .line 9
+    sget-object v4, La47;->a:La47;
+
     .line 10
-    const-string v1, "ALTER TABLE runtime_profile ADD COLUMN "
-
     .line 11
-    .line 12
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object p0, p0, Lu90;->k:Lr90;
 
+    .line 12
     .line 13
+    packed-switch v0, :pswitch_data_0
+
     .line 14
     .line 15
-    invoke-virtual {v0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 16
+    iget-object p0, p0, Lr90;->e:Lry3;
+
     .line 17
     .line 18
-    const-string v1, " "
+    sget-object v0, Lf80;->INSTANCE:Lf80;
 
     .line 19
     .line 20
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
 
     .line 21
     .line 22
     .line 23
-    invoke-virtual {v0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return-object v4
 
     .line 24
+    :pswitch_0
+    iget-object p0, p0, Lr90;->e:Lry3;
+
     .line 25
     .line 26
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    sget-object v0, Lb80;->INSTANCE:Lb80;
 
     .line 27
     .line 28
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
+
     .line 29
-    move-result-object p3
-
     .line 30
-    invoke-virtual {p0, p3}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
     .line 31
-    .line 32
-    .line 33
-    invoke-static {p1, p2}, Lqx5;->U(Ljava/util/Set;Ljava/lang/Object;)Ljava/util/LinkedHashSet;
+    return-object v4
 
+    .line 32
+    :pswitch_1
+    iget-object v0, p0, Lr90;->b:Lnv;
+
+    .line 33
     .line 34
+    iget-object p0, p0, Lr90;->a:Lkv;
+
     .line 35
     .line 36
-    move-result-object p0
+    iget-boolean p0, p0, Lkv;->M:Z
 
     .line 37
-    return-object p0
-.end method
-
-.method public static c(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Z
-    .locals 1
-
-    .line 1
-    const-string v0, "SELECT 1 FROM sqlite_master WHERE type = \'table\' AND name = ? LIMIT 1"
-
-    .line 2
-    .line 3
-    filled-new-array {p1}, [Ljava/lang/String;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p1
-
-    .line 7
-    invoke-virtual {p0, v0, p1}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object p0
-
-    .line 11
-    :try_start_0
-    invoke-interface {p0}, Landroid/database/Cursor;->moveToFirst()Z
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 15
-    invoke-interface {p0}, Ljava/io/Closeable;->close()V
-
-    .line 16
-    .line 17
-    .line 18
-    return p1
-
-    .line 19
-    :catchall_0
-    move-exception p1
-
-    .line 20
-    :try_start_1
-    throw p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    .line 21
-    :catchall_1
-    move-exception v0
-
-    .line 22
-    invoke-static {p0, p1}, Lp87;->z(Ljava/io/Closeable;Ljava/lang/Throwable;)V
-
-    .line 23
-    .line 24
-    .line 25
-    throw v0
-.end method
-
-.method public static d(Landroid/database/sqlite/SQLiteDatabase;)V
-    .locals 1
-
-    .line 1
-    const-string v0, "hotspot_settings"
-
-    .line 2
-    .line 3
-    invoke-static {p0, v0}, Lu90;->c(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Z
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    if-eqz v0, :cond_0
-
-    .line 8
-    .line 9
-    const-string v0, "INSERT OR IGNORE INTO shared_network_settings (id, mac_filter, mac_mode) SELECT id, mac_filter, mac_mode FROM hotspot_settings"
-
-    .line 10
-    .line 11
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 12
-    .line 13
-    .line 14
-    :cond_0
-    const-string v0, "hotspot_interface_settings"
-
-    .line 15
-    .line 16
-    invoke-static {p0, v0}, Lu90;->c(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Z
-
-    .line 17
-    .line 18
-    .line 19
-    move-result v0
-
-    .line 20
-    if-eqz v0, :cond_1
-
-    .line 21
-    .line 22
-    const-string v0, "INSERT OR IGNORE INTO shared_network_interface_settings (id, initialized) SELECT id, initialized FROM hotspot_interface_settings"
-
-    .line 23
-    .line 24
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 25
-    .line 26
-    .line 27
-    :cond_1
-    const-string v0, "hotspot_ap_interfaces"
-
-    .line 28
-    .line 29
-    invoke-static {p0, v0}, Lu90;->c(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Z
-
-    .line 30
-    .line 31
-    .line 32
-    move-result v0
-
-    .line 33
-    if-eqz v0, :cond_2
-
-    .line 34
-    .line 35
-    const-string v0, "INSERT INTO shared_network_interfaces(value) SELECT DISTINCT legacy.value FROM hotspot_ap_interfaces legacy WHERE TRIM(legacy.value) <> \'\' AND NOT EXISTS (SELECT 1 FROM shared_network_interfaces dest WHERE dest.value = legacy.value)"
-
-    .line 36
-    .line 37
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
     .line 38
+    xor-int/lit8 p0, p0, 0x1
+
     .line 39
     .line 40
-    :cond_2
-    const-string v0, "hotspot_macs"
-
-    .line 41
-    .line 42
-    invoke-static {p0, v0}, Lu90;->c(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Z
-
-    .line 43
-    .line 44
-    .line 45
-    move-result v0
-
-    .line 46
-    if-eqz v0, :cond_3
-
-    .line 47
-    .line 48
-    const-string v0, "INSERT INTO shared_network_macs(value) SELECT DISTINCT legacy.value FROM hotspot_macs legacy WHERE TRIM(legacy.value) <> \'\' AND NOT EXISTS (SELECT 1 FROM shared_network_macs dest WHERE dest.value = legacy.value)"
-
-    .line 49
-    .line 50
-    invoke-virtual {p0, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
-
-    .line 51
-    .line 52
-    .line 53
-    :cond_3
-    return-void
-.end method
-
-.method public static e(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)Lmx5;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v1, "PRAGMA table_info("
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 9
-    .line 10
-    .line 11
-    const-string p1, ")"
-
-    .line 12
-    .line 13
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 14
-    .line 15
-    .line 16
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 17
-    .line 18
-    .line 19
-    move-result-object p1
-
-    .line 20
-    const/4 v0, 0x0
-
-    .line 21
-    invoke-virtual {p0, p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
-
-    .line 22
-    .line 23
-    .line 24
-    move-result-object p0
-
-    .line 25
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 26
-    .line 27
-    .line 28
-    :try_start_0
-    new-instance p1, Lmx5;
-
-    .line 29
-    .line 30
-    invoke-direct {p1}, Lmx5;-><init>()V
-
-    .line 31
-    .line 32
-    .line 33
-    :cond_0
-    :goto_0
-    invoke-interface {p0}, Landroid/database/Cursor;->moveToNext()Z
-
-    .line 34
-    .line 35
-    .line 36
-    move-result v0
-
-    .line 37
-    if-eqz v0, :cond_1
-
-    .line 38
-    .line 39
-    const/4 v0, 0x1
-
-    .line 40
-    invoke-interface {p0, v0}, Landroid/database/Cursor;->isNull(I)Z
-
-    .line 41
-    .line 42
-    .line 43
-    move-result v1
-
-    .line 44
-    if-nez v1, :cond_0
-
-    .line 45
-    .line 46
-    invoke-interface {p0, v0}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    .line 47
-    .line 48
-    .line 49
-    move-result-object v0
-
-    .line 50
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 51
-    .line 52
-    .line 53
-    invoke-virtual {p1, v0}, Lmx5;->add(Ljava/lang/Object;)Z
+    .line 41
+    .line 42
+    .line 43
+    new-instance v1, Lqr;
 
+    .line 44
+    .line 45
+    invoke-direct {v1, v3, p0}, Lqr;-><init>(BZ)V
+
+    .line 46
+    .line 47
+    .line 48
+    invoke-virtual {v0, v1}, Lnv;->c(Lp62;)V
+
+    .line 49
+    .line 50
+    .line 51
+    return-object v4
+
+    .line 52
+    :pswitch_2
+    iget-object p0, p0, Lr90;->e:Lry3;
+
+    .line 53
     .line 54
+    sget-object v0, Lx80;->INSTANCE:Lx80;
+
     .line 55
     .line 56
-    goto :goto_0
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
 
     .line 57
-    :catchall_0
-    move-exception p1
-
     .line 58
-    goto :goto_1
-
     .line 59
-    :cond_1
-    invoke-static {p1}, Lqx5;->u(Lmx5;)Lmx5;
+    return-object v4
 
     .line 60
+    :pswitch_3
+    iget-object p0, p0, Lr90;->e:Lry3;
+
     .line 61
     .line 62
-    move-result-object p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    new-instance v0, Lg90;
 
     .line 63
-    invoke-interface {p0}, Ljava/io/Closeable;->close()V
-
     .line 64
+    invoke-direct {v0, v2}, Lg90;-><init>(Ljava/lang/String;)V
+
     .line 65
     .line 66
-    return-object p1
-
     .line 67
-    :goto_1
-    :try_start_1
-    throw p1
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
 
     .line 68
-    :catchall_1
-    move-exception v0
-
     .line 69
-    invoke-static {p0, p1}, Lp87;->z(Ljava/io/Closeable;Ljava/lang/Throwable;)V
-
     .line 70
+    return-object v4
+
     .line 71
+    :pswitch_4
+    iget-object p0, p0, Lr90;->e:Lry3;
+
     .line 72
-    throw v0
+    .line 73
+    sget-object v0, Lf80;->INSTANCE:Lf80;
+
+    .line 74
+    .line 75
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
+
+    .line 76
+    .line 77
+    .line 78
+    return-object v4
+
+    .line 79
+    :pswitch_5
+    iget-object p0, p0, Lr90;->e:Lry3;
+
+    .line 80
+    .line 81
+    sget-object v0, Lb80;->INSTANCE:Lb80;
+
+    .line 82
+    .line 83
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
+
+    .line 84
+    .line 85
+    .line 86
+    return-object v4
+
+    .line 87
+    :pswitch_6
+    iget-object p0, p0, Lr90;->e:Lry3;
+
+    .line 88
+    .line 89
+    sget-object v0, Ln90;->INSTANCE:Ln90;
+
+    .line 90
+    .line 91
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
+
+    .line 92
+    .line 93
+    .line 94
+    return-object v4
+
+    .line 95
+    :pswitch_7
+    iget-object v0, p0, Lr90;->b:Lnv;
+
+    .line 96
+    .line 97
+    iget-object p0, p0, Lr90;->a:Lkv;
+
+    .line 98
+    .line 99
+    iget-boolean p0, p0, Lkv;->M:Z
+
+    .line 100
+    .line 101
+    xor-int/lit8 p0, p0, 0x1
+
+    .line 102
+    .line 103
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 104
+    .line 105
+    .line 106
+    new-instance v1, Lqr;
+
+    .line 107
+    .line 108
+    invoke-direct {v1, v3, p0}, Lqr;-><init>(BZ)V
+
+    .line 109
+    .line 110
+    .line 111
+    invoke-virtual {v0, v1}, Lnv;->c(Lp62;)V
+
+    .line 112
+    .line 113
+    .line 114
+    return-object v4
+
+    .line 115
+    :pswitch_8
+    iget-object p0, p0, Lr90;->e:Lry3;
+
+    .line 116
+    .line 117
+    sget-object v0, Lx80;->INSTANCE:Lx80;
+
+    .line 118
+    .line 119
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
+
+    .line 120
+    .line 121
+    .line 122
+    return-object v4
+
+    .line 123
+    :pswitch_9
+    iget-object p0, p0, Lr90;->e:Lry3;
+
+    .line 124
+    .line 125
+    new-instance v0, Lg90;
+
+    .line 126
+    .line 127
+    invoke-direct {v0, v2}, Lg90;-><init>(Ljava/lang/String;)V
+
+    .line 128
+    .line 129
+    .line 130
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
+
+    .line 131
+    .line 132
+    .line 133
+    return-object v4
+
+    .line 134
+    :pswitch_a
+    iget-object p0, p0, Lr90;->f:Lp62;
+
+    .line 135
+    .line 136
+    sget-object v0, Ld90;->INSTANCE:Ld90;
+
+    .line 137
+    .line 138
+    invoke-interface {p0, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 139
+    .line 140
+    .line 141
+    return-object v4
+
+    .line 142
+    :pswitch_b
+    iget-object p0, p0, Lr90;->f:Lp62;
+
+    .line 143
+    .line 144
+    sget-object v0, Lk80;->INSTANCE:Lk80;
+
+    .line 145
+    .line 146
+    invoke-interface {p0, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 147
+    .line 148
+    .line 149
+    return-object v4
+
+    .line 150
+    :pswitch_c
+    iget-object p0, p0, Lr90;->g:Lt62;
+
+    .line 151
+    .line 152
+    sget-object v0, Lc90;->INSTANCE:Lc90;
+
+    .line 153
+    .line 154
+    invoke-interface {p0, v0, v1}, Lt62;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 155
+    .line 156
+    .line 157
+    return-object v4
+
+    .line 158
+    :pswitch_d
+    iget-object p0, p0, Lr90;->e:Lry3;
+
+    .line 159
+    .line 160
+    sget-object v0, Ln90;->INSTANCE:Ln90;
+
+    .line 161
+    .line 162
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
+
+    .line 163
+    .line 164
+    .line 165
+    return-object v4
+
+    .line 166
+    :pswitch_e
+    iget-object p0, p0, Lr90;->e:Lry3;
+
+    .line 167
+    .line 168
+    sget-object v0, Ln90;->INSTANCE:Ln90;
+
+    .line 169
+    .line 170
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
+
+    .line 171
+    .line 172
+    .line 173
+    return-object v4
+
+    .line 174
+    :pswitch_f
+    iget-object p0, p0, Lr90;->e:Lry3;
+
+    .line 175
+    .line 176
+    sget-object v0, Ln90;->INSTANCE:Ln90;
+
+    .line 177
+    .line 178
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
+
+    .line 179
+    .line 180
+    .line 181
+    return-object v4
+
+    .line 182
+    :pswitch_10
+    iget-object p0, p0, Lr90;->f:Lp62;
+
+    .line 183
+    .line 184
+    sget-object v0, Ld90;->INSTANCE:Ld90;
+
+    .line 185
+    .line 186
+    invoke-interface {p0, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 187
+    .line 188
+    .line 189
+    return-object v4
+
+    .line 190
+    :pswitch_11
+    iget-object p0, p0, Lr90;->f:Lp62;
+
+    .line 191
+    .line 192
+    sget-object v0, Lk80;->INSTANCE:Lk80;
+
+    .line 193
+    .line 194
+    invoke-interface {p0, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 195
+    .line 196
+    .line 197
+    return-object v4
+
+    .line 198
+    :pswitch_12
+    iget-object p0, p0, Lr90;->g:Lt62;
+
+    .line 199
+    .line 200
+    sget-object v0, Lc90;->INSTANCE:Lc90;
+
+    .line 201
+    .line 202
+    invoke-interface {p0, v0, v1}, Lt62;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 203
+    .line 204
+    .line 205
+    return-object v4
+
+    .line 206
+    :pswitch_13
+    iget-object p0, p0, Lr90;->e:Lry3;
+
+    .line 207
+    .line 208
+    sget-object v0, Ln90;->INSTANCE:Ln90;
+
+    .line 209
+    .line 210
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
+
+    .line 211
+    .line 212
+    .line 213
+    return-object v4
+
+    .line 214
+    :pswitch_14
+    iget-object p0, p0, Lr90;->e:Lry3;
+
+    .line 215
+    .line 216
+    sget-object v0, Ln90;->INSTANCE:Ln90;
+
+    .line 217
+    .line 218
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
+
+    .line 219
+    .line 220
+    .line 221
+    return-object v4
+
+    .line 222
+    nop
+
+    .line 223
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

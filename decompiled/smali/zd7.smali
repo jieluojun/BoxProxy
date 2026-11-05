@@ -1,10 +1,12 @@
 .class public final Lzd7;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # static fields
-.field public static final a:Lzd7;
+.field public static final synthetic a:Lzd7;
+
+.field public static final b:Lbe7;
 
 
 # direct methods
@@ -25,103 +27,18 @@
 
     .line 7
     .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Landroid/graphics/Paint;)J
-    .locals 4
-
-    .line 1
-    invoke-virtual {p1}, Landroid/graphics/Paint;->getColorLong()J
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-wide p0
-
-    .line 5
-    const-wide/16 v0, 0x3f
-
-    .line 6
-    .line 7
-    and-long/2addr v0, p0
-
-    .line 8
-    const-wide/16 v2, 0x10
+    new-instance v0, Lbe7;
 
     .line 9
     .line 10
-    cmp-long v2, v0, v2
+    invoke-direct {v0}, Lbe7;-><init>()V
 
     .line 11
     .line 12
-    if-gez v2, :cond_0
-
     .line 13
+    sput-object v0, Lzd7;->b:Lbe7;
+
     .line 14
-    goto :goto_0
-
     .line 15
-    :cond_0
-    const-wide/16 v2, -0x40
-
-    .line 16
-    .line 17
-    and-long/2addr p0, v2
-
-    .line 18
-    const-wide/16 v2, 0x1
-
-    .line 19
-    .line 20
-    add-long/2addr v0, v2
-
-    .line 21
-    or-long/2addr p0, v0
-
-    .line 22
-    :goto_0
-    return-wide p0
-.end method
-
-.method public final b(Landroid/graphics/Paint;I)V
-    .locals 0
-
-    .line 1
-    invoke-static {p2}, Lr87;->T(I)Landroid/graphics/BlendMode;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setBlendMode(Landroid/graphics/BlendMode;)V
-
-    .line 6
-    .line 7
-    .line 8
-    return-void
-.end method
-
-.method public final c(Landroid/graphics/Paint;J)V
-    .locals 0
-
-    .line 1
-    invoke-static {p2, p3}, Lr97;->R(J)J
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-wide p2
-
-    .line 5
-    invoke-virtual {p1, p2, p3}, Landroid/graphics/Paint;->setColor(J)V
-
-    .line 6
-    .line 7
-    .line 8
     return-void
 .end method
