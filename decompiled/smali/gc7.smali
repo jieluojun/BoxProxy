@@ -1,188 +1,209 @@
-.class public final synthetic Lgc7;
+.class public abstract Lgc7;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lt62;
-
-
-# instance fields
-.field public final synthetic j:Ljava/util/List;
-
-.field public final synthetic k:I
-
-.field public final synthetic l:Ljava/lang/String;
-
-.field public final synthetic m:Lwp3;
-
-.field public final synthetic n:Ll00;
-
-.field public final synthetic o:Ll00;
-
-.field public final synthetic p:Ldp1;
-
-.field public final synthetic q:Lnj4;
-
-.field public final synthetic r:Z
-
-.field public final synthetic s:Z
-
-.field public final synthetic t:Lp62;
-
-.field public final synthetic u:I
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/List;ILjava/lang/String;Lwp3;Ll00;Ll00;Ldp1;Lnj4;ZZLp62;I)V
-    .locals 0
+.method public static a(I)I
+    .locals 4
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
 
     .line 2
+    const/4 v1, 0x1
+
     .line 3
+    move v2, v1
+
     .line 4
-    iput-object p1, p0, Lgc7;->j:Ljava/util/List;
+    :goto_0
+    const/16 v3, 0x200
 
     .line 5
     .line 6
-    iput p2, p0, Lgc7;->k:I
+    if-gt v2, v3, :cond_9
 
     .line 7
     .line 8
-    iput-object p3, p0, Lgc7;->l:Ljava/lang/String;
+    and-int v3, p0, v2
 
     .line 9
     .line 10
-    iput-object p4, p0, Lgc7;->m:Lwp3;
+    if-eqz v3, :cond_8
 
     .line 11
     .line 12
-    iput-object p5, p0, Lgc7;->n:Ll00;
+    if-eq v2, v1, :cond_7
 
     .line 13
     .line 14
-    iput-object p6, p0, Lgc7;->o:Ll00;
+    const/4 v3, 0x2
 
     .line 15
-    .line 16
-    iput-object p7, p0, Lgc7;->p:Ldp1;
+    if-eq v2, v3, :cond_6
 
+    .line 16
     .line 17
+    const/4 v3, 0x4
+
     .line 18
-    iput-object p8, p0, Lgc7;->q:Lnj4;
+    if-eq v2, v3, :cond_5
 
     .line 19
     .line 20
-    iput-boolean p9, p0, Lgc7;->r:Z
+    const/16 v3, 0x8
 
     .line 21
     .line 22
-    iput-boolean p10, p0, Lgc7;->s:Z
+    if-eq v2, v3, :cond_4
 
     .line 23
     .line 24
-    iput-object p11, p0, Lgc7;->t:Lp62;
+    const/16 v3, 0x10
 
     .line 25
     .line 26
-    iput p12, p0, Lgc7;->u:I
+    if-eq v2, v3, :cond_3
 
     .line 27
     .line 28
-    return-void
-.end method
+    const/16 v3, 0x20
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 13
-
-    .line 1
-    move-object v11, p1
-
-    .line 2
-    check-cast v11, Lz11;
-
-    .line 3
-    .line 4
-    check-cast p2, Ljava/lang/Integer;
-
-    .line 5
-    .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 7
-    .line 8
-    .line 9
-    iget p1, p0, Lgc7;->u:I
-
-    .line 10
-    .line 11
-    or-int/lit8 p1, p1, 0x1
-
-    .line 12
-    .line 13
-    invoke-static {p1}, Lqu5;->f0(I)I
-
-    .line 14
-    .line 15
-    .line 16
-    move-result v12
-
-    .line 17
-    iget-object v0, p0, Lgc7;->j:Ljava/util/List;
-
-    .line 18
-    .line 19
-    iget v1, p0, Lgc7;->k:I
-
-    .line 20
-    .line 21
-    iget-object v2, p0, Lgc7;->l:Ljava/lang/String;
-
-    .line 22
-    .line 23
-    iget-object v3, p0, Lgc7;->m:Lwp3;
-
-    .line 24
-    .line 25
-    iget-object v4, p0, Lgc7;->n:Ll00;
-
-    .line 26
-    .line 27
-    iget-object v5, p0, Lgc7;->o:Ll00;
-
-    .line 28
     .line 29
-    iget-object v6, p0, Lgc7;->p:Ldp1;
-
     .line 30
+    if-eq v2, v3, :cond_2
+
     .line 31
-    iget-object v7, p0, Lgc7;->q:Lnj4;
-
     .line 32
+    const/16 v3, 0x40
+
     .line 33
-    iget-boolean v8, p0, Lgc7;->r:Z
-
     .line 34
+    if-eq v2, v3, :cond_1
+
     .line 35
-    iget-boolean v9, p0, Lgc7;->s:Z
-
     .line 36
+    const/16 v3, 0x80
+
     .line 37
-    iget-object v10, p0, Lgc7;->t:Lp62;
-
     .line 38
+    if-eq v2, v3, :cond_0
+
     .line 39
-    invoke-static/range {v0 .. v12}, Ll17;->d(Ljava/util/List;ILjava/lang/String;Lwp3;Ll00;Ll00;Ldp1;Lnj4;ZZLp62;Lz11;I)V
-
     .line 40
-    .line 41
-    .line 42
-    sget-object p0, La47;->a:La47;
+    goto :goto_2
 
+    .line 41
+    :cond_0
+    invoke-static {}, Llb7;->t()I
+
+    .line 42
     .line 43
     .line 44
-    return-object p0
+    move-result v3
+
+    .line 45
+    :goto_1
+    or-int/2addr v0, v3
+
+    .line 46
+    goto :goto_2
+
+    .line 47
+    :cond_1
+    invoke-static {}, Llb7;->s()I
+
+    .line 48
+    .line 49
+    .line 50
+    move-result v3
+
+    .line 51
+    goto :goto_1
+
+    .line 52
+    :cond_2
+    invoke-static {}, Llb7;->r()I
+
+    .line 53
+    .line 54
+    .line 55
+    move-result v3
+
+    .line 56
+    goto :goto_1
+
+    .line 57
+    :cond_3
+    invoke-static {}, Llb7;->q()I
+
+    .line 58
+    .line 59
+    .line 60
+    move-result v3
+
+    .line 61
+    goto :goto_1
+
+    .line 62
+    :cond_4
+    invoke-static {}, Lv4;->y()I
+
+    .line 63
+    .line 64
+    .line 65
+    move-result v3
+
+    .line 66
+    goto :goto_1
+
+    .line 67
+    :cond_5
+    invoke-static {}, Llb7;->o()I
+
+    .line 68
+    .line 69
+    .line 70
+    move-result v3
+
+    .line 71
+    goto :goto_1
+
+    .line 72
+    :cond_6
+    invoke-static {}, Llb7;->l()I
+
+    .line 73
+    .line 74
+    .line 75
+    move-result v3
+
+    .line 76
+    goto :goto_1
+
+    .line 77
+    :cond_7
+    invoke-static {}, Llb7;->b()I
+
+    .line 78
+    .line 79
+    .line 80
+    move-result v3
+
+    .line 81
+    goto :goto_1
+
+    .line 82
+    :cond_8
+    :goto_2
+    shl-int/lit8 v2, v2, 0x1
+
+    .line 83
+    .line 84
+    goto :goto_0
+
+    .line 85
+    :cond_9
+    return v0
 .end method

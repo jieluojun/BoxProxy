@@ -1,158 +1,157 @@
-.class public final synthetic Lij6;
+.class public abstract Lij6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lt62;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic j:Ljava/lang/String;
-
-.field public final synthetic k:I
-
-.field public final synthetic l:Z
-
-.field public final synthetic m:Le62;
-
-.field public final synthetic n:F
-
-.field public final synthetic o:F
-
-.field public final synthetic p:J
-
-.field public final synthetic q:Lf8;
-
-.field public final synthetic r:I
+# static fields
+.field public static final a:Lgt4;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;IZLe62;FFJLf8;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lgt4;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lij6;->j:Ljava/lang/String;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
+    .line 4
     .line 5
     .line 6
-    iput p2, p0, Lij6;->k:I
+    const/4 v1, 0x0
 
     .line 7
+    iput-object v1, v0, Lgt4;->j:Ljava/lang/Object;
+
     .line 8
-    iput-boolean p3, p0, Lij6;->l:Z
-
     .line 9
+    sput-object v0, Lij6;->a:Lgt4;
+
     .line 10
-    iput-object p4, p0, Lij6;->m:Le62;
-
     .line 11
-    .line 12
-    iput p5, p0, Lij6;->n:F
-
-    .line 13
-    .line 14
-    iput p6, p0, Lij6;->o:F
-
-    .line 15
-    .line 16
-    iput-wide p7, p0, Lij6;->p:J
-
-    .line 17
-    .line 18
-    iput-object p9, p0, Lij6;->q:Lf8;
-
-    .line 19
-    .line 20
-    iput p10, p0, Lij6;->r:I
-
-    .line 21
-    .line 22
     return-void
 .end method
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 11
+.method public static a(I)[F
+    .locals 3
 
     .line 1
-    move-object v9, p1
+    sget-object v0, Lij6;->a:Lgt4;
 
     .line 2
-    check-cast v9, Lz11;
-
     .line 3
+    monitor-enter v0
+
     .line 4
-    check-cast p2, Ljava/lang/Integer;
+    :try_start_0
+    iget-object v1, v0, Lgt4;->j:Ljava/lang/Object;
 
     .line 5
     .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast v1, [F
 
     .line 7
     .line 8
+    const/4 v2, 0x0
+
     .line 9
-    iget p1, p0, Lij6;->r:I
+    iput-object v2, v0, Lgt4;->j:Ljava/lang/Object;
 
     .line 10
     .line 11
-    or-int/lit8 p1, p1, 0x1
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 12
+    if-eqz v1, :cond_1
+
     .line 13
-    invoke-static {p1}, Lqu5;->f0(I)I
-
     .line 14
-    .line 15
-    .line 16
-    move-result v10
+    array-length v0, v1
 
+    .line 15
+    if-ge v0, p0, :cond_0
+
+    .line 16
     .line 17
-    iget-object v0, p0, Lij6;->j:Ljava/lang/String;
+    goto :goto_0
 
     .line 18
+    :cond_0
+    return-object v1
+
     .line 19
-    iget v1, p0, Lij6;->k:I
+    :cond_1
+    :goto_0
+    new-array p0, p0, [F
 
     .line 20
     .line 21
-    iget-boolean v2, p0, Lij6;->l:Z
+    return-object p0
 
     .line 22
+    :catchall_0
+    move-exception p0
+
     .line 23
-    iget-object v3, p0, Lij6;->m:Le62;
+    :try_start_1
+    monitor-exit v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 24
-    .line 25
-    iget v4, p0, Lij6;->n:F
+    throw p0
+.end method
 
-    .line 26
-    .line 27
-    iget v5, p0, Lij6;->o:F
+.method public static b([F)V
+    .locals 3
 
-    .line 28
-    .line 29
-    iget-wide v6, p0, Lij6;->p:J
+    .line 1
+    sget-object v0, Lij6;->a:Lgt4;
 
-    .line 30
-    .line 31
-    iget-object v8, p0, Lij6;->q:Lf8;
+    .line 2
+    .line 3
+    array-length v1, p0
 
-    .line 32
-    .line 33
-    invoke-static/range {v0 .. v10}, Ldj3;->l(Ljava/lang/String;IZLe62;FFJLf8;Lz11;I)V
+    .line 4
+    const/16 v2, 0x3e8
 
-    .line 34
-    .line 35
-    .line 36
-    sget-object p0, La47;->a:La47;
+    .line 5
+    .line 6
+    if-le v1, v2, :cond_0
 
-    .line 37
-    .line 38
-    return-object p0
+    .line 7
+    .line 8
+    return-void
+
+    .line 9
+    :cond_0
+    monitor-enter v0
+
+    .line 10
+    :try_start_0
+    iput-object p0, v0, Lgt4;->j:Ljava/lang/Object;
+
+    .line 11
+    .line 12
+    monitor-exit v0
+
+    .line 13
+    return-void
+
+    .line 14
+    :catchall_0
+    move-exception p0
+
+    .line 15
+    monitor-exit v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 16
+    throw p0
 .end method

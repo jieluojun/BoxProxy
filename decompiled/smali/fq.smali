@@ -1,739 +1,585 @@
 .class public final Lfq;
-.super Landroid/widget/RadioButton;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final j:Lfp;
+.field public final a:Landroid/widget/TextView;
 
-.field public final k:Lzo;
+.field public final b:Lj61;
 
-.field public final l:Lzq;
+.field public c:Landroid/graphics/Typeface;
 
-.field public m:Lzp;
+.field public d:Landroid/graphics/Typeface;
+
+.field public e:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
-    .locals 1
+.method public constructor <init>(Landroid/widget/TextView;Lj61;)V
+    .locals 0
 
     .line 1
-    const v0, 0x7f040156
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    invoke-direct {p0, p1, p2, v0}, Landroid/widget/RadioButton;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;I)V
+    iput-object p1, p0, Lfq;->a:Landroid/widget/TextView;
 
     .line 5
     .line 6
+    iput-object p2, p0, Lfq;->b:Lj61;
+
     .line 7
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
     .line 8
-    .line 9
-    .line 10
-    move-result-object p1
-
-    .line 11
-    invoke-static {p0, p1}, Lcu6;->a(Landroid/view/View;Landroid/content/Context;)V
-
-    .line 12
-    .line 13
-    .line 14
-    new-instance p1, Lfp;
-
-    .line 15
-    .line 16
-    invoke-direct {p1, p0}, Lfp;-><init>(Landroid/widget/TextView;)V
-
-    .line 17
-    .line 18
-    .line 19
-    iput-object p1, p0, Lfq;->j:Lfp;
-
-    .line 20
-    .line 21
-    invoke-virtual {p1, p2, v0}, Lfp;->c(Landroid/util/AttributeSet;I)V
-
-    .line 22
-    .line 23
-    .line 24
-    new-instance p1, Lzo;
-
-    .line 25
-    .line 26
-    invoke-direct {p1, p0}, Lzo;-><init>(Landroid/view/View;)V
-
-    .line 27
-    .line 28
-    .line 29
-    iput-object p1, p0, Lfq;->k:Lzo;
-
-    .line 30
-    .line 31
-    invoke-virtual {p1, p2, v0}, Lzo;->q(Landroid/util/AttributeSet;I)V
-
-    .line 32
-    .line 33
-    .line 34
-    new-instance p1, Lzq;
-
-    .line 35
-    .line 36
-    invoke-direct {p1, p0}, Lzq;-><init>(Landroid/widget/TextView;)V
-
-    .line 37
-    .line 38
-    .line 39
-    iput-object p1, p0, Lfq;->l:Lzq;
-
-    .line 40
-    .line 41
-    invoke-virtual {p1, p2, v0}, Lzq;->g(Landroid/util/AttributeSet;I)V
-
-    .line 42
-    .line 43
-    .line 44
-    invoke-direct {p0}, Lfq;->getEmojiTextViewHelper()Lzp;
-
-    .line 45
-    .line 46
-    .line 47
-    move-result-object p0
-
-    .line 48
-    invoke-virtual {p0, p2, v0}, Lzp;->a(Landroid/util/AttributeSet;I)V
-
-    .line 49
-    .line 50
-    .line 51
     return-void
-.end method
-
-.method private getEmojiTextViewHelper()Lzp;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lfq;->m:Lzp;
-
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
-
-    .line 4
-    .line 5
-    new-instance v0, Lzp;
-
-    .line 6
-    .line 7
-    invoke-direct {v0, p0}, Lzp;-><init>(Landroid/widget/TextView;)V
-
-    .line 8
-    .line 9
-    .line 10
-    iput-object v0, p0, Lfq;->m:Lzp;
-
-    .line 11
-    .line 12
-    :cond_0
-    return-object v0
 .end method
 
 
 # virtual methods
-.method public final drawableStateChanged()V
-    .locals 1
+.method public final a(Ljava/lang/String;)Z
+    .locals 17
 
     .line 1
-    invoke-super {p0}, Landroid/view/View;->drawableStateChanged()V
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
+    move-object/from16 v1, p1
+
     .line 4
-    iget-object v0, p0, Lfq;->k:Lzo;
-
     .line 5
+    iget-object v2, v0, Lfq;->c:Landroid/graphics/Typeface;
+
     .line 6
-    if-eqz v0, :cond_0
-
     .line 7
-    .line 8
-    invoke-virtual {v0}, Lzo;->b()V
+    iget-object v3, v0, Lfq;->a:Landroid/widget/TextView;
 
+    .line 8
     .line 9
+    invoke-virtual {v3}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
+
     .line 10
     .line 11
-    :cond_0
-    iget-object p0, p0, Lfq;->l:Lzq;
-
     .line 12
+    move-result-object v4
+
     .line 13
-    if-eqz p0, :cond_1
+    iget-object v5, v0, Lfq;->d:Landroid/graphics/Typeface;
 
     .line 14
     .line 15
-    invoke-virtual {p0}, Lzq;->b()V
+    invoke-virtual {v4}, Landroid/graphics/Paint;->getTypeface()Landroid/graphics/Typeface;
 
     .line 16
     .line 17
     .line 18
-    :cond_1
-    return-void
-.end method
+    move-result-object v6
 
-.method public getSupportBackgroundTintList()Landroid/content/res/ColorStateList;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lfq;->k:Lzo;
-
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
-
-    .line 4
-    .line 5
-    invoke-virtual {p0}, Lzo;->o()Landroid/content/res/ColorStateList;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    return-object p0
-
-    .line 10
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 11
-    return-object p0
-.end method
-
-.method public getSupportBackgroundTintMode()Landroid/graphics/PorterDuff$Mode;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lfq;->k:Lzo;
-
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
-
-    .line 4
-    .line 5
-    invoke-virtual {p0}, Lzo;->p()Landroid/graphics/PorterDuff$Mode;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    return-object p0
-
-    .line 10
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 11
-    return-object p0
-.end method
-
-.method public getSupportButtonTintList()Landroid/content/res/ColorStateList;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lfq;->j:Lfp;
-
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
-
-    .line 4
-    .line 5
-    iget-object p0, p0, Lfp;->a:Landroid/content/res/ColorStateList;
-
-    .line 6
-    .line 7
-    return-object p0
-
-    .line 8
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 9
-    return-object p0
-.end method
-
-.method public getSupportButtonTintMode()Landroid/graphics/PorterDuff$Mode;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lfq;->j:Lfp;
-
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
-
-    .line 4
-    .line 5
-    iget-object p0, p0, Lfp;->b:Landroid/graphics/PorterDuff$Mode;
-
-    .line 6
-    .line 7
-    return-object p0
-
-    .line 8
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 9
-    return-object p0
-.end method
-
-.method public getSupportCompoundDrawablesTintList()Landroid/content/res/ColorStateList;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lfq;->l:Lzq;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lzq;->e()Landroid/content/res/ColorStateList;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
-.end method
-
-.method public getSupportCompoundDrawablesTintMode()Landroid/graphics/PorterDuff$Mode;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lfq;->l:Lzq;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lzq;->f()Landroid/graphics/PorterDuff$Mode;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
-.end method
-
-.method public setAllCaps(Z)V
-    .locals 0
-
-    .line 1
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setAllCaps(Z)V
-
-    .line 2
-    .line 3
-    .line 4
-    invoke-direct {p0}, Lfq;->getEmojiTextViewHelper()Lzp;
-
-    .line 5
-    .line 6
-    .line 7
-    move-result-object p0
-
-    .line 8
-    invoke-virtual {p0, p1}, Lzp;->b(Z)V
-
-    .line 9
-    .line 10
-    .line 11
-    return-void
-.end method
-
-.method public setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    .line 1
-    invoke-super {p0, p1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 2
-    .line 3
-    .line 4
-    iget-object p0, p0, Lfq;->k:Lzo;
-
-    .line 5
-    .line 6
-    if-eqz p0, :cond_0
-
-    .line 7
-    .line 8
-    invoke-virtual {p0}, Lzo;->r()V
-
-    .line 9
-    .line 10
-    .line 11
-    :cond_0
-    return-void
-.end method
-
-.method public setBackgroundResource(I)V
-    .locals 0
-
-    .line 1
-    invoke-super {p0, p1}, Landroid/view/View;->setBackgroundResource(I)V
-
-    .line 2
-    .line 3
-    .line 4
-    iget-object p0, p0, Lfq;->k:Lzo;
-
-    .line 5
-    .line 6
-    if-eqz p0, :cond_0
-
-    .line 7
-    .line 8
-    invoke-virtual {p0, p1}, Lzo;->s(I)V
-
-    .line 9
-    .line 10
-    .line 11
-    :cond_0
-    return-void
-.end method
-
-.method public setButtonDrawable(I)V
-    .locals 1
-
-    .line 23
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    move-result-object v0
-
-    invoke-static {v0, p1}, Lhq;->M(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object p1
-
-    invoke-virtual {p0, p1}, Lfq;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    return-void
-.end method
-
-.method public setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
-    .locals 0
-
-    .line 1
-    invoke-super {p0, p1}, Landroid/widget/CompoundButton;->setButtonDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 2
-    .line 3
-    .line 4
-    iget-object p0, p0, Lfq;->j:Lfp;
-
-    .line 5
-    .line 6
-    if-eqz p0, :cond_1
-
-    .line 7
-    .line 8
-    iget-boolean p1, p0, Lfp;->e:Z
-
-    .line 9
-    .line 10
-    if-eqz p1, :cond_0
-
-    .line 11
-    .line 12
-    const/4 p1, 0x0
-
-    .line 13
-    iput-boolean p1, p0, Lfp;->e:Z
-
-    .line 14
-    .line 15
-    return-void
-
-    .line 16
-    :cond_0
-    const/4 p1, 0x1
-
-    .line 17
-    iput-boolean p1, p0, Lfp;->e:Z
-
-    .line 18
     .line 19
-    invoke-virtual {p0}, Lfp;->a()V
+    if-eq v5, v6, :cond_0
 
     .line 20
     .line 21
+    const-string v2, "FontVarSettings"
+
     .line 22
+    .line 23
+    const-string v5, "getPaint().getTypeface() changed unexpectedly. App code should not modify the result of getPaint()."
+
+    .line 24
+    .line 25
+    invoke-static {v2, v5}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 26
+    .line 27
+    .line 28
+    invoke-virtual {v4}, Landroid/graphics/Paint;->getTypeface()Landroid/graphics/Typeface;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object v2
+
+    .line 32
+    :cond_0
+    sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 33
+    .line 34
+    const/16 v5, 0x1f
+
+    .line 35
+    .line 36
+    const v6, 0x7fffffff
+
+    .line 37
+    .line 38
+    .line 39
+    const/4 v7, 0x0
+
+    .line 40
+    if-lt v4, v5, :cond_1
+
+    .line 41
+    .line 42
+    invoke-virtual {v3}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 43
+    .line 44
+    .line 45
+    move-result-object v3
+
+    .line 46
+    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    .line 47
+    .line 48
+    .line 49
+    move-result-object v3
+
+    .line 50
+    invoke-virtual {v3}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    .line 51
+    .line 52
+    .line 53
+    move-result-object v3
+
+    .line 54
+    invoke-static {v3}, Lbb;->b(Landroid/content/res/Configuration;)I
+
+    .line 55
+    .line 56
+    .line 57
+    move-result v3
+
+    .line 58
+    if-ne v3, v6, :cond_2
+
+    .line 59
+    .line 60
     :cond_1
-    return-void
-.end method
+    move v3, v7
 
-.method public final setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-    .locals 0
+    .line 61
+    :cond_2
+    if-ne v3, v6, :cond_3
 
-    .line 1
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setCompoundDrawables(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    .line 62
+    .line 63
+    move v3, v7
 
-    .line 2
-    .line 3
-    .line 4
-    iget-object p0, p0, Lfq;->l:Lzq;
+    .line 64
+    :cond_3
+    new-instance v4, Ldq;
 
-    .line 5
-    .line 6
-    if-eqz p0, :cond_0
+    .line 65
+    .line 66
+    invoke-direct {v4, v2, v1, v3}, Ldq;-><init>(Landroid/graphics/Typeface;Ljava/lang/String;I)V
 
-    .line 7
-    .line 8
-    invoke-virtual {p0}, Lzq;->b()V
+    .line 67
+    .line 68
+    .line 69
+    sget-object v5, Leq;->a:Lye3;
 
-    .line 9
-    .line 10
-    .line 11
-    :cond_0
-    return-void
-.end method
+    .line 70
+    .line 71
+    invoke-virtual {v5, v4}, Lye3;->a(Ljava/lang/Object;)Ljava/lang/Object;
 
-.method public final setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
-    .locals 0
+    .line 72
+    .line 73
+    .line 74
+    move-result-object v6
 
-    .line 1
-    invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/TextView;->setCompoundDrawablesRelative(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    .line 75
+    check-cast v6, Landroid/graphics/Typeface;
 
-    .line 2
-    .line 3
-    .line 4
-    iget-object p0, p0, Lfq;->l:Lzq;
+    .line 76
+    .line 77
+    if-eqz v6, :cond_4
 
-    .line 5
-    .line 6
-    if-eqz p0, :cond_0
+    .line 78
+    .line 79
+    const/16 v16, 0x1
 
-    .line 7
-    .line 8
-    invoke-virtual {p0}, Lzq;->b()V
+    .line 80
+    .line 81
+    goto/16 :goto_7
 
-    .line 9
-    .line 10
-    .line 11
-    :cond_0
-    return-void
-.end method
+    .line 82
+    .line 83
+    :cond_4
+    sget-object v6, Leq;->b:Landroid/graphics/Paint;
 
-.method public setEmojiCompatEnabled(Z)V
-    .locals 0
+    .line 84
+    .line 85
+    if-eqz v6, :cond_5
 
-    .line 1
-    invoke-direct {p0}, Lfq;->getEmojiTextViewHelper()Lzp;
+    .line 86
+    .line 87
+    goto :goto_0
 
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
+    .line 88
+    :cond_5
+    new-instance v6, Landroid/graphics/Paint;
 
-    .line 5
-    invoke-virtual {p0, p1}, Lzp;->c(Z)V
+    .line 89
+    .line 90
+    invoke-direct {v6}, Landroid/graphics/Paint;-><init>()V
 
-    .line 6
-    .line 7
-    .line 8
-    return-void
-.end method
+    .line 91
+    .line 92
+    .line 93
+    sput-object v6, Leq;->b:Landroid/graphics/Paint;
 
-.method public setFilters([Landroid/text/InputFilter;)V
-    .locals 1
+    .line 94
+    .line 95
+    :goto_0
+    if-nez v3, :cond_6
 
-    .line 1
-    invoke-direct {p0}, Lfq;->getEmojiTextViewHelper()Lzp;
+    .line 96
+    .line 97
+    goto :goto_1
 
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
+    .line 98
+    :cond_6
+    invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    .line 5
-    iget-object v0, v0, Lzp;->b:Lb97;
+    .line 99
+    .line 100
+    .line 101
+    move-result v9
 
-    .line 6
-    .line 7
-    iget-object v0, v0, Lb97;->k:Ljava/lang/Object;
+    .line 102
+    if-eqz v9, :cond_7
 
-    .line 8
-    .line 9
-    check-cast v0, Ldn;
+    .line 103
+    .line 104
+    new-array v9, v7, [Landroid/graphics/fonts/FontVariationAxis;
 
-    .line 10
-    .line 11
-    invoke-virtual {v0, p1}, Ldn;->M([Landroid/text/InputFilter;)[Landroid/text/InputFilter;
+    .line 105
+    .line 106
+    goto :goto_2
 
-    .line 12
-    .line 13
-    .line 14
-    move-result-object p1
+    .line 107
+    :cond_7
+    invoke-static {v1}, Landroid/graphics/fonts/FontVariationAxis;->fromFontVariationSettings(Ljava/lang/String;)[Landroid/graphics/fonts/FontVariationAxis;
 
-    .line 15
-    invoke-super {p0, p1}, Landroid/widget/TextView;->setFilters([Landroid/text/InputFilter;)V
+    .line 108
+    .line 109
+    .line 110
+    move-result-object v9
 
-    .line 16
-    .line 17
-    .line 18
-    return-void
-.end method
+    .line 111
+    if-nez v9, :cond_8
 
-.method public setSupportBackgroundTintList(Landroid/content/res/ColorStateList;)V
-    .locals 0
+    .line 112
+    .line 113
+    :goto_1
+    move-object v3, v1
 
-    .line 1
-    iget-object p0, p0, Lfq;->k:Lzo;
+    .line 114
+    const/16 v16, 0x1
 
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
+    .line 115
+    .line 116
+    goto :goto_6
 
-    .line 4
-    .line 5
-    invoke-virtual {p0, p1}, Lzo;->y(Landroid/content/res/ColorStateList;)V
+    .line 117
+    :cond_8
+    :goto_2
+    move v10, v7
 
-    .line 6
-    .line 7
-    .line 8
-    :cond_0
-    return-void
-.end method
+    .line 118
+    move v11, v10
 
-.method public setSupportBackgroundTintMode(Landroid/graphics/PorterDuff$Mode;)V
-    .locals 0
+    .line 119
+    :goto_3
+    array-length v12, v9
 
-    .line 1
-    iget-object p0, p0, Lfq;->k:Lzo;
+    .line 120
+    const/high16 v13, 0x447a0000    # 1000.0f
 
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
+    .line 121
+    .line 122
+    const/high16 v14, 0x3f800000    # 1.0f
 
-    .line 4
-    .line 5
-    invoke-virtual {p0, p1}, Lzo;->z(Landroid/graphics/PorterDuff$Mode;)V
+    .line 123
+    .line 124
+    const-string v15, "wght"
 
-    .line 6
-    .line 7
-    .line 8
-    :cond_0
-    return-void
-.end method
+    .line 125
+    .line 126
+    if-ge v10, v12, :cond_b
 
-.method public setSupportButtonTintList(Landroid/content/res/ColorStateList;)V
-    .locals 0
+    .line 127
+    .line 128
+    aget-object v12, v9, v10
 
-    .line 1
-    iget-object p0, p0, Lfq;->j:Lfp;
+    .line 129
+    .line 130
+    const/16 v16, 0x1
 
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
+    .line 131
+    .line 132
+    invoke-virtual {v12}, Landroid/graphics/fonts/FontVariationAxis;->getTag()Ljava/lang/String;
 
-    .line 4
-    .line 5
-    iput-object p1, p0, Lfp;->a:Landroid/content/res/ColorStateList;
+    .line 133
+    .line 134
+    .line 135
+    move-result-object v8
 
-    .line 6
-    .line 7
-    const/4 p1, 0x1
+    .line 136
+    invoke-virtual {v15, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 8
-    iput-boolean p1, p0, Lfp;->c:Z
+    .line 137
+    .line 138
+    .line 139
+    move-result v8
 
-    .line 9
-    .line 10
-    invoke-virtual {p0}, Lfp;->a()V
+    .line 140
+    if-eqz v8, :cond_a
 
-    .line 11
-    .line 12
-    .line 13
-    :cond_0
-    return-void
-.end method
+    .line 141
+    .line 142
+    new-instance v8, Landroid/graphics/fonts/FontVariationAxis;
 
-.method public setSupportButtonTintMode(Landroid/graphics/PorterDuff$Mode;)V
-    .locals 0
+    .line 143
+    .line 144
+    invoke-virtual {v12}, Landroid/graphics/fonts/FontVariationAxis;->getStyleValue()F
 
-    .line 1
-    iget-object p0, p0, Lfq;->j:Lfp;
+    .line 145
+    .line 146
+    .line 147
+    move-result v11
 
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
+    .line 148
+    int-to-float v12, v3
 
-    .line 4
-    .line 5
-    iput-object p1, p0, Lfp;->b:Landroid/graphics/PorterDuff$Mode;
+    .line 149
+    add-float/2addr v11, v12
 
-    .line 6
-    .line 7
-    const/4 p1, 0x1
+    .line 150
+    cmpg-float v12, v11, v14
 
-    .line 8
-    iput-boolean p1, p0, Lfp;->d:Z
+    .line 151
+    .line 152
+    if-gez v12, :cond_9
 
-    .line 9
-    .line 10
-    invoke-virtual {p0}, Lfp;->a()V
+    .line 153
+    .line 154
+    goto :goto_4
 
-    .line 11
-    .line 12
-    .line 13
-    :cond_0
-    return-void
-.end method
+    .line 155
+    :cond_9
+    invoke-static {v11, v13}, Ljava/lang/Math;->min(FF)F
 
-.method public setSupportCompoundDrawablesTintList(Landroid/content/res/ColorStateList;)V
-    .locals 0
+    .line 156
+    .line 157
+    .line 158
+    move-result v14
 
-    .line 1
-    iget-object p0, p0, Lfq;->l:Lzq;
+    .line 159
+    :goto_4
+    invoke-direct {v8, v15, v14}, Landroid/graphics/fonts/FontVariationAxis;-><init>(Ljava/lang/String;F)V
 
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lzq;->i(Landroid/content/res/ColorStateList;)V
+    .line 160
+    .line 161
+    .line 162
+    aput-object v8, v9, v10
 
-    .line 4
-    .line 5
-    .line 6
-    invoke-virtual {p0}, Lzq;->b()V
+    .line 163
+    .line 164
+    move/from16 v11, v16
 
-    .line 7
-    .line 8
-    .line 9
-    return-void
-.end method
+    .line 165
+    .line 166
+    :cond_a
+    add-int/lit8 v10, v10, 0x1
 
-.method public setSupportCompoundDrawablesTintMode(Landroid/graphics/PorterDuff$Mode;)V
-    .locals 0
+    .line 167
+    .line 168
+    goto :goto_3
 
-    .line 1
-    iget-object p0, p0, Lfq;->l:Lzq;
+    .line 169
+    :cond_b
+    const/16 v16, 0x1
 
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lzq;->j(Landroid/graphics/PorterDuff$Mode;)V
+    .line 170
+    .line 171
+    if-nez v11, :cond_d
 
-    .line 4
-    .line 5
-    .line 6
-    invoke-virtual {p0}, Lzq;->b()V
+    .line 172
+    .line 173
+    array-length v8, v9
 
-    .line 7
-    .line 8
-    .line 9
-    return-void
+    .line 174
+    add-int/lit8 v8, v8, 0x1
+
+    .line 175
+    .line 176
+    new-array v8, v8, [Landroid/graphics/fonts/FontVariationAxis;
+
+    .line 177
+    .line 178
+    array-length v10, v9
+
+    .line 179
+    invoke-static {v9, v7, v8, v7, v10}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 180
+    .line 181
+    .line 182
+    array-length v9, v9
+
+    .line 183
+    new-instance v10, Landroid/graphics/fonts/FontVariationAxis;
+
+    .line 184
+    .line 185
+    add-int/lit16 v3, v3, 0x190
+
+    .line 186
+    .line 187
+    int-to-float v3, v3
+
+    .line 188
+    cmpg-float v11, v3, v14
+
+    .line 189
+    .line 190
+    if-gez v11, :cond_c
+
+    .line 191
+    .line 192
+    goto :goto_5
+
+    .line 193
+    :cond_c
+    invoke-static {v3, v13}, Ljava/lang/Math;->min(FF)F
+
+    .line 194
+    .line 195
+    .line 196
+    move-result v14
+
+    .line 197
+    :goto_5
+    invoke-direct {v10, v15, v14}, Landroid/graphics/fonts/FontVariationAxis;-><init>(Ljava/lang/String;F)V
+
+    .line 198
+    .line 199
+    .line 200
+    aput-object v10, v8, v9
+
+    .line 201
+    .line 202
+    move-object v9, v8
+
+    .line 203
+    :cond_d
+    invoke-static {v9}, Landroid/graphics/fonts/FontVariationAxis;->toFontVariationSettings([Landroid/graphics/fonts/FontVariationAxis;)Ljava/lang/String;
+
+    .line 204
+    .line 205
+    .line 206
+    move-result-object v3
+
+    .line 207
+    :goto_6
+    invoke-virtual {v6}, Landroid/graphics/Paint;->getFontVariationSettings()Ljava/lang/String;
+
+    .line 208
+    .line 209
+    .line 210
+    move-result-object v8
+
+    .line 211
+    invoke-static {v8, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 212
+    .line 213
+    .line 214
+    move-result v8
+
+    .line 215
+    const/4 v9, 0x0
+
+    .line 216
+    if-eqz v8, :cond_e
+
+    .line 217
+    .line 218
+    invoke-virtual {v6, v9}, Landroid/graphics/Paint;->setFontVariationSettings(Ljava/lang/String;)Z
+
+    .line 219
+    .line 220
+    .line 221
+    :cond_e
+    invoke-virtual {v6, v2}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
+
+    .line 222
+    .line 223
+    .line 224
+    invoke-virtual {v6, v3}, Landroid/graphics/Paint;->setFontVariationSettings(Ljava/lang/String;)Z
+
+    .line 225
+    .line 226
+    .line 227
+    move-result v2
+
+    .line 228
+    if-eqz v2, :cond_f
+
+    .line 229
+    .line 230
+    invoke-virtual {v6}, Landroid/graphics/Paint;->getTypeface()Landroid/graphics/Typeface;
+
+    .line 231
+    .line 232
+    .line 233
+    move-result-object v6
+
+    .line 234
+    invoke-virtual {v5, v4, v6}, Lye3;->b(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 235
+    .line 236
+    .line 237
+    goto :goto_7
+
+    .line 238
+    :cond_f
+    move-object v6, v9
+
+    .line 239
+    :goto_7
+    if-eqz v6, :cond_10
+
+    .line 240
+    .line 241
+    iput-object v6, v0, Lfq;->d:Landroid/graphics/Typeface;
+
+    .line 242
+    .line 243
+    iget-object v2, v0, Lfq;->b:Lj61;
+
+    .line 244
+    .line 245
+    invoke-interface {v2, v6}, Lj61;->accept(Ljava/lang/Object;)V
+
+    .line 246
+    .line 247
+    .line 248
+    iput-object v1, v0, Lfq;->e:Ljava/lang/String;
+
+    .line 249
+    .line 250
+    return v16
+
+    .line 251
+    :cond_10
+    return v7
 .end method

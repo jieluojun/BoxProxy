@@ -1,74 +1,437 @@
-.class public final Lqn;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lqn;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
 # instance fields
-.field public j:Lyb0;
+.field public final synthetic A:F
 
-.field public synthetic k:Ljava/lang/Object;
+.field public final synthetic B:Lzh4;
 
-.field public final synthetic l:Lzn;
+.field public final synthetic C:I
 
-.field public m:I
+.field public final synthetic D:I
+
+.field public final synthetic j:Lko3;
+
+.field public final synthetic k:Ljz1;
+
+.field public final synthetic l:J
+
+.field public final synthetic m:J
+
+.field public final synthetic n:J
+
+.field public final synthetic o:J
+
+.field public final synthetic p:Ls52;
+
+.field public final synthetic q:Lvq6;
+
+.field public final synthetic r:Ls52;
+
+.field public final synthetic s:Lvq6;
+
+.field public final synthetic t:Ld52;
+
+.field public final synthetic u:Lyu;
+
+.field public final synthetic v:Lc8;
+
+.field public final synthetic w:I
+
+.field public final synthetic x:Z
+
+.field public final synthetic y:Ls52;
+
+.field public final synthetic z:Loy0;
 
 
 # direct methods
-.method public constructor <init>(Lzn;Lz81;)V
+.method public synthetic constructor <init>(Lko3;Ljz1;JJJJLs52;Lvq6;Ls52;Lvq6;Ld52;Lyu;Lc8;IZLs52;Loy0;FLzh4;II)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lqn;->l:Lzn;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
     .line 4
+    iput-object p1, p0, Lqn;->j:Lko3;
+
     .line 5
     .line 6
+    iput-object p2, p0, Lqn;->k:Ljz1;
+
+    .line 7
+    .line 8
+    iput-wide p3, p0, Lqn;->l:J
+
+    .line 9
+    .line 10
+    iput-wide p5, p0, Lqn;->m:J
+
+    .line 11
+    .line 12
+    iput-wide p7, p0, Lqn;->n:J
+
+    .line 13
+    .line 14
+    iput-wide p9, p0, Lqn;->o:J
+
+    .line 15
+    .line 16
+    iput-object p11, p0, Lqn;->p:Ls52;
+
+    .line 17
+    .line 18
+    iput-object p12, p0, Lqn;->q:Lvq6;
+
+    .line 19
+    .line 20
+    iput-object p13, p0, Lqn;->r:Ls52;
+
+    .line 21
+    .line 22
+    iput-object p14, p0, Lqn;->s:Lvq6;
+
+    .line 23
+    .line 24
+    iput-object p15, p0, Lqn;->t:Ld52;
+
+    .line 25
+    .line 26
+    move-object/from16 p1, p16
+
+    .line 27
+    .line 28
+    iput-object p1, p0, Lqn;->u:Lyu;
+
+    .line 29
+    .line 30
+    move-object/from16 p1, p17
+
+    .line 31
+    .line 32
+    iput-object p1, p0, Lqn;->v:Lc8;
+
+    .line 33
+    .line 34
+    move/from16 p1, p18
+
+    .line 35
+    .line 36
+    iput p1, p0, Lqn;->w:I
+
+    .line 37
+    .line 38
+    move/from16 p1, p19
+
+    .line 39
+    .line 40
+    iput-boolean p1, p0, Lqn;->x:Z
+
+    .line 41
+    .line 42
+    move-object/from16 p1, p20
+
+    .line 43
+    .line 44
+    iput-object p1, p0, Lqn;->y:Ls52;
+
+    .line 45
+    .line 46
+    move-object/from16 p1, p21
+
+    .line 47
+    .line 48
+    iput-object p1, p0, Lqn;->z:Loy0;
+
+    .line 49
+    .line 50
+    move/from16 p1, p22
+
+    .line 51
+    .line 52
+    iput p1, p0, Lqn;->A:F
+
+    .line 53
+    .line 54
+    move-object/from16 p1, p23
+
+    .line 55
+    .line 56
+    iput-object p1, p0, Lqn;->B:Lzh4;
+
+    .line 57
+    .line 58
+    move/from16 p1, p24
+
+    .line 59
+    .line 60
+    iput p1, p0, Lqn;->C:I
+
+    .line 61
+    .line 62
+    move/from16 p1, p25
+
+    .line 63
+    .line 64
+    iput p1, p0, Lqn;->D:I
+
+    .line 65
+    .line 66
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 27
 
     .line 1
-    iput-object p1, p0, Lqn;->k:Ljava/lang/Object;
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
-    iget p1, p0, Lqn;->m:I
+    move-object/from16 v23, p1
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    check-cast v23, Lv01;
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    move-object/from16 v1, p2
 
     .line 8
-    iput p1, p0, Lqn;->m:I
-
     .line 9
+    check-cast v1, Ljava/lang/Integer;
+
     .line 10
-    iget-object p1, p0, Lqn;->l:Lzn;
-
     .line 11
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 12
-    const/4 v0, 0x0
-
     .line 13
-    invoke-virtual {p1, v0, v0, p0}, Lzn;->k(Ljava/io/File;Ljava/util/ArrayList;Lz81;)Ljava/lang/Object;
-
     .line 14
+    iget v1, v0, Lqn;->C:I
+
     .line 15
     .line 16
-    move-result-object p0
+    or-int/lit8 v1, v1, 0x1
 
     .line 17
-    return-object p0
+    .line 18
+    invoke-static {v1}, Lw23;->h0(I)I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v24
+
+    .line 22
+    iget v1, v0, Lqn;->D:I
+
+    .line 23
+    .line 24
+    invoke-static {v1}, Lw23;->h0(I)I
+
+    .line 25
+    .line 26
+    .line 27
+    move-result v25
+
+    .line 28
+    iget-object v1, v0, Lqn;->j:Lko3;
+
+    .line 29
+    .line 30
+    move-object v2, v1
+
+    .line 31
+    iget-object v1, v0, Lqn;->k:Ljz1;
+
+    .line 32
+    .line 33
+    move-object v4, v2
+
+    .line 34
+    iget-wide v2, v0, Lqn;->l:J
+
+    .line 35
+    .line 36
+    move-object v6, v4
+
+    .line 37
+    iget-wide v4, v0, Lqn;->m:J
+
+    .line 38
+    .line 39
+    move-object v8, v6
+
+    .line 40
+    iget-wide v6, v0, Lqn;->n:J
+
+    .line 41
+    .line 42
+    move-object v10, v8
+
+    .line 43
+    iget-wide v8, v0, Lqn;->o:J
+
+    .line 44
+    .line 45
+    move-object v11, v10
+
+    .line 46
+    iget-object v10, v0, Lqn;->p:Ls52;
+
+    .line 47
+    .line 48
+    move-object v12, v11
+
+    .line 49
+    iget-object v11, v0, Lqn;->q:Lvq6;
+
+    .line 50
+    .line 51
+    move-object v13, v12
+
+    .line 52
+    iget-object v12, v0, Lqn;->r:Ls52;
+
+    .line 53
+    .line 54
+    move-object v14, v13
+
+    .line 55
+    iget-object v13, v0, Lqn;->s:Lvq6;
+
+    .line 56
+    .line 57
+    move-object v15, v14
+
+    .line 58
+    iget-object v14, v0, Lqn;->t:Ld52;
+
+    .line 59
+    .line 60
+    move-object/from16 v16, v15
+
+    .line 61
+    .line 62
+    iget-object v15, v0, Lqn;->u:Lyu;
+
+    .line 63
+    .line 64
+    move-object/from16 v17, v1
+
+    .line 65
+    .line 66
+    iget-object v1, v0, Lqn;->v:Lc8;
+
+    .line 67
+    .line 68
+    move-object/from16 v18, v1
+
+    .line 69
+    .line 70
+    iget v1, v0, Lqn;->w:I
+
+    .line 71
+    .line 72
+    move/from16 v19, v1
+
+    .line 73
+    .line 74
+    iget-boolean v1, v0, Lqn;->x:Z
+
+    .line 75
+    .line 76
+    move/from16 v20, v1
+
+    .line 77
+    .line 78
+    iget-object v1, v0, Lqn;->y:Ls52;
+
+    .line 79
+    .line 80
+    move-object/from16 v21, v1
+
+    .line 81
+    .line 82
+    iget-object v1, v0, Lqn;->z:Loy0;
+
+    .line 83
+    .line 84
+    move-object/from16 v22, v1
+
+    .line 85
+    .line 86
+    iget v1, v0, Lqn;->A:F
+
+    .line 87
+    .line 88
+    iget-object v0, v0, Lqn;->B:Lzh4;
+
+    .line 89
+    .line 90
+    move-object/from16 v26, v22
+
+    .line 91
+    .line 92
+    move-object/from16 v22, v0
+
+    .line 93
+    .line 94
+    move-object/from16 v0, v16
+
+    .line 95
+    .line 96
+    move-object/from16 v16, v18
+
+    .line 97
+    .line 98
+    move/from16 v18, v20
+
+    .line 99
+    .line 100
+    move-object/from16 v20, v26
+
+    .line 101
+    .line 102
+    move-object/from16 v26, v21
+
+    .line 103
+    .line 104
+    move/from16 v21, v1
+
+    .line 105
+    .line 106
+    move-object/from16 v1, v17
+
+    .line 107
+    .line 108
+    move/from16 v17, v19
+
+    .line 109
+    .line 110
+    move-object/from16 v19, v26
+
+    .line 111
+    .line 112
+    invoke-static/range {v0 .. v25}, Lao;->d(Lko3;Ljz1;JJJJLs52;Lvq6;Ls52;Lvq6;Ld52;Lyu;Lc8;IZLs52;Loy0;FLzh4;Lv01;II)V
+
+    .line 113
+    .line 114
+    .line 115
+    sget-object v0, Lk27;->a:Lk27;
+
+    .line 116
+    .line 117
+    return-object v0
 .end method

@@ -1,306 +1,547 @@
-.class public final synthetic Lxl0;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Lxl0;
+.super Lr36;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Lt62;
+
+# static fields
+.field public static final t:[I
 
 
 # instance fields
-.field public final synthetic j:Ljava/util/List;
+.field public final r:[[I
 
-.field public final synthetic k:Lip1;
-
-.field public final synthetic l:Lp62;
-
-.field public final synthetic m:Lp62;
-
-.field public final synthetic n:Lt62;
-
-.field public final synthetic o:Le62;
-
-.field public final synthetic p:Le62;
-
-.field public final synthetic q:Lwa3;
-
-.field public final synthetic r:J
-
-.field public final synthetic s:Ldp1;
-
-.field public final synthetic t:Le62;
-
-.field public final synthetic u:Le62;
-
-.field public final synthetic v:J
-
-.field public final synthetic w:Le62;
+.field public final s:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/List;Lip1;Lp62;Lp62;Lt62;Le62;Le62;Lwa3;JLdp1;Le62;Le62;JLe62;)V
+.method static constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    const/16 v0, 0x73
+
+    .line 2
+    .line 3
+    filled-new-array {v0, v0}, [I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    sput-object v0, Lxl0;->t:[I
+
+    .line 8
+    .line 9
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;[S[B[[IZ)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2, p3}, Lr36;-><init>(Ljava/lang/String;[S[B)V
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lxl0;->j:Ljava/util/List;
+    iput-object p4, p0, Lxl0;->r:[[I
 
     .line 5
     .line 6
-    iput-object p2, p0, Lxl0;->k:Lip1;
+    iput-boolean p5, p0, Lxl0;->s:Z
 
     .line 7
     .line 8
-    iput-object p3, p0, Lxl0;->l:Lp62;
+    return-void
+.end method
+
+.method public static B(I[[IZLv72;)V
+    .locals 6
+
+    .line 1
+    invoke-static {p3}, Lw2;->b(Lv72;)V
+
+    .line 2
+    .line 3
+    .line 4
+    const/4 v0, 0x1
+
+    .line 5
+    new-array v1, v0, [I
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    aput v2, v1, v2
 
     .line 9
     .line 10
-    iput-object p4, p0, Lxl0;->m:Lp62;
+    move v3, v2
 
     .line 11
+    :goto_0
+    if-ge v3, p0, :cond_0
+
     .line 12
-    iput-object p5, p0, Lxl0;->n:Lt62;
-
     .line 13
+    aget-object v4, p1, v3
+
     .line 14
-    iput-object p6, p0, Lxl0;->o:Le62;
-
     .line 15
+    aget v5, v4, v0
+
     .line 16
-    iput-object p7, p0, Lxl0;->p:Le62;
-
     .line 17
+    aput v5, v1, v2
+
     .line 18
-    iput-object p8, p0, Lxl0;->q:Lwa3;
-
     .line 19
+    aget v4, v4, v2
+
     .line 20
-    iput-wide p9, p0, Lxl0;->r:J
-
     .line 21
-    .line 22
-    iput-object p11, p0, Lxl0;->s:Ldp1;
+    invoke-static {v4, v1, v0, p3}, Lp6;->h(I[IILv72;)V
 
+    .line 22
     .line 23
     .line 24
-    iput-object p12, p0, Lxl0;->t:Le62;
+    aget-object v4, p1, v3
 
     .line 25
     .line 26
-    iput-object p13, p0, Lxl0;->u:Le62;
+    aget v5, v4, v2
 
     .line 27
     .line 28
-    iput-wide p14, p0, Lxl0;->v:J
+    aput v5, v1, v2
 
     .line 29
     .line 30
-    move-object/from16 p1, p16
+    aget v4, v4, v0
 
     .line 31
     .line 32
-    iput-object p1, p0, Lxl0;->w:Le62;
+    invoke-static {v4, v1, v0, p3}, Lp6;->h(I[IILv72;)V
 
     .line 33
     .line 34
+    .line 35
+    add-int/lit8 v3, v3, 0x1
+
+    .line 36
+    .line 37
+    goto :goto_0
+
+    .line 38
+    :cond_0
+    if-eqz p2, :cond_1
+
+    .line 39
+    .line 40
+    sget-object p0, Lxl0;->t:[I
+
+    .line 41
+    .line 42
+    const/4 p1, 0x2
+
+    .line 43
+    const/16 p2, 0xdf
+
+    .line 44
+    .line 45
+    invoke-static {p2, p0, p1, p3}, Lp6;->h(I[IILv72;)V
+
+    .line 46
+    .line 47
+    .line 48
+    :cond_1
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 24
+.method public a(ILv72;)V
+    .locals 1
 
     .line 1
-    move-object/from16 v0, p0
+    iget-object p1, p0, Lxl0;->r:[[I
 
     .line 2
     .line 3
-    move-object/from16 v1, p1
+    array-length v0, p1
 
     .line 4
+    iget-boolean p0, p0, Lxl0;->s:Z
+
     .line 5
-    check-cast v1, Lz11;
-
     .line 6
-    .line 7
-    move-object/from16 v2, p2
+    invoke-static {v0, p1, p0, p2}, Lxl0;->B(I[[IZLv72;)V
 
+    .line 7
     .line 8
     .line 9
-    check-cast v2, Ljava/lang/Integer;
+    return-void
+.end method
 
+.method public e(I[BII)[Lwl0;
+    .locals 8
+
+    .line 1
+    iget-object p1, p0, Lxl0;->r:[[I
+
+    .line 2
+    .line 3
+    array-length v0, p1
+
+    .line 4
+    aget-byte v1, p2, p3
+
+    .line 5
+    .line 6
+    and-int/lit16 v1, v1, 0xff
+
+    .line 7
+    .line 8
+    const/16 v2, 0x41
+
+    .line 9
     .line 10
+    iget-boolean p0, p0, Lxl0;->s:Z
+
     .line 11
-    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
-
     .line 12
-    .line 13
-    .line 14
-    move-result v2
+    const/4 v3, 0x2
 
+    .line 13
+    const/16 v4, 0xdf
+
+    .line 14
     .line 15
-    and-int/lit8 v3, v2, 0x3
+    const/16 v5, 0x73
 
     .line 16
     .line 17
-    const/4 v4, 0x2
+    const/16 v6, 0x53
 
     .line 18
-    const/4 v5, 0x1
-
     .line 19
-    if-eq v3, v4, :cond_0
+    const/4 v7, 0x1
 
     .line 20
-    .line 21
-    move v3, v5
+    if-gt v2, v1, :cond_2
 
+    .line 21
     .line 22
-    goto :goto_0
+    const/16 v2, 0x5a
 
     .line 23
-    :cond_0
-    const/4 v3, 0x0
-
     .line 24
-    :goto_0
-    and-int/2addr v2, v5
+    if-gt v1, v2, :cond_2
 
     .line 25
-    check-cast v1, Lt72;
-
     .line 26
-    .line 27
-    invoke-virtual {v1, v2, v3}, Lt72;->T(IZ)Z
+    add-int/lit8 p1, v1, 0x20
 
+    .line 27
     .line 28
+    invoke-static {v7, p1}, Lwl0;->g(II)Lwl0;
+
     .line 29
     .line 30
-    move-result v2
-
     .line 31
-    if-eqz v2, :cond_1
+    move-result-object p1
 
     .line 32
+    if-ne v1, v6, :cond_1
+
     .line 33
-    iget-object v2, v0, Lxl0;->q:Lwa3;
-
     .line 34
-    .line 35
-    iget-object v11, v2, Lwa3;->e:Lns4;
+    if-eqz p0, :cond_1
 
+    .line 35
     .line 36
+    add-int/2addr p3, v7
+
     .line 37
-    iget-wide v12, v2, Lwa3;->d:J
+    if-le p4, p3, :cond_1
 
     .line 38
     .line 39
-    const/16 v23, 0x0
+    aget-byte p0, p2, p3
 
     .line 40
     .line 41
-    iget-object v4, v0, Lxl0;->j:Ljava/util/List;
+    if-eq p0, v6, :cond_0
 
     .line 42
     .line 43
-    iget-object v5, v0, Lxl0;->k:Lip1;
+    if-ne p0, v5, :cond_1
 
     .line 44
     .line 45
-    iget-object v6, v0, Lxl0;->l:Lp62;
+    :cond_0
+    invoke-static {v3, v4}, Lwl0;->g(II)Lwl0;
 
     .line 46
     .line 47
-    iget-object v7, v0, Lxl0;->m:Lp62;
-
     .line 48
+    move-result-object p0
+
     .line 49
-    iget-object v8, v0, Lxl0;->n:Lt62;
+    filled-new-array {p1, p0}, [Lwl0;
 
     .line 50
     .line 51
-    iget-object v9, v0, Lxl0;->o:Le62;
-
     .line 52
+    move-result-object p0
+
     .line 53
-    iget-object v10, v0, Lxl0;->p:Le62;
+    return-object p0
 
     .line 54
-    .line 55
-    iget-wide v14, v0, Lxl0;->r:J
+    :cond_1
+    filled-new-array {p1}, [Lwl0;
 
+    .line 55
     .line 56
     .line 57
-    iget-object v2, v0, Lxl0;->s:Ldp1;
+    move-result-object p0
 
     .line 58
+    return-object p0
+
     .line 59
-    iget-object v3, v0, Lxl0;->t:Le62;
+    :cond_2
+    const/16 v2, 0x61
 
     .line 60
     .line 61
-    move-object/from16 v22, v1
+    if-gt v2, v1, :cond_5
 
     .line 62
     .line 63
-    iget-object v1, v0, Lxl0;->u:Le62;
+    const/16 v2, 0x7a
 
     .line 64
     .line 65
-    move-object/from16 v18, v1
+    if-gt v1, v2, :cond_5
 
     .line 66
     .line 67
-    move-object/from16 v16, v2
+    add-int/lit8 p1, v1, -0x20
 
     .line 68
     .line 69
-    iget-wide v1, v0, Lxl0;->v:J
+    invoke-static {v7, p1}, Lwl0;->g(II)Lwl0;
 
     .line 70
     .line 71
-    iget-object v0, v0, Lxl0;->w:Le62;
-
     .line 72
+    move-result-object p1
+
     .line 73
-    move-object/from16 v21, v0
+    if-ne v1, v5, :cond_4
 
     .line 74
     .line 75
-    move-wide/from16 v19, v1
+    if-eqz p0, :cond_4
 
     .line 76
     .line 77
-    move-object/from16 v17, v3
+    add-int/2addr p3, v7
 
     .line 78
-    .line 79
-    invoke-static/range {v4 .. v23}, Lwm0;->a(Ljava/util/List;Lip1;Lp62;Lp62;Lt62;Le62;Le62;Lns4;JJLdp1;Le62;Le62;JLe62;Lz11;I)V
+    if-le p4, p3, :cond_4
 
+    .line 79
     .line 80
+    aget-byte p0, p2, p3
+
     .line 81
     .line 82
-    goto :goto_1
+    if-eq p0, v5, :cond_3
 
     .line 83
-    :cond_1
-    move-object/from16 v22, v1
-
     .line 84
-    .line 85
-    invoke-virtual/range {v22 .. v22}, Lt72;->W()V
+    if-ne p0, v6, :cond_4
 
+    .line 85
     .line 86
+    :cond_3
+    invoke-static {v3, v4}, Lwl0;->g(II)Lwl0;
+
     .line 87
     .line 88
-    :goto_1
-    sget-object v0, La47;->a:La47;
-
     .line 89
+    move-result-object p0
+
     .line 90
-    return-object v0
+    filled-new-array {p1, p0}, [Lwl0;
+
+    .line 91
+    .line 92
+    .line 93
+    move-result-object p0
+
+    .line 94
+    return-object p0
+
+    .line 95
+    :cond_4
+    filled-new-array {p1}, [Lwl0;
+
+    .line 96
+    .line 97
+    .line 98
+    move-result-object p0
+
+    .line 99
+    return-object p0
+
+    .line 100
+    :cond_5
+    if-ne v1, v4, :cond_6
+
+    .line 101
+    .line 102
+    if-eqz p0, :cond_6
+
+    .line 103
+    .line 104
+    invoke-static {v7, v5, v5}, Lwl0;->h(III)Lwl0;
+
+    .line 105
+    .line 106
+    .line 107
+    move-result-object p0
+
+    .line 108
+    invoke-static {v7, v6, v6}, Lwl0;->h(III)Lwl0;
+
+    .line 109
+    .line 110
+    .line 111
+    move-result-object p1
+
+    .line 112
+    invoke-static {v7, v5, v6}, Lwl0;->h(III)Lwl0;
+
+    .line 113
+    .line 114
+    .line 115
+    move-result-object p2
+
+    .line 116
+    invoke-static {v7, v6, v5}, Lwl0;->h(III)Lwl0;
+
+    .line 117
+    .line 118
+    .line 119
+    move-result-object p3
+
+    .line 120
+    filled-new-array {p0, p1, p2, p3}, [Lwl0;
+
+    .line 121
+    .line 122
+    .line 123
+    move-result-object p0
+
+    .line 124
+    return-object p0
+
+    .line 125
+    :cond_6
+    const/4 p0, 0x0
+
+    .line 126
+    move p2, p0
+
+    .line 127
+    :goto_0
+    if-ge p2, v0, :cond_9
+
+    .line 128
+    .line 129
+    aget-object p3, p1, p2
+
+    .line 130
+    .line 131
+    aget p4, p3, p0
+
+    .line 132
+    .line 133
+    if-ne v1, p4, :cond_7
+
+    .line 134
+    .line 135
+    aget p0, p3, v7
+
+    .line 136
+    .line 137
+    invoke-static {v7, p0}, Lwl0;->g(II)Lwl0;
+
+    .line 138
+    .line 139
+    .line 140
+    move-result-object p0
+
+    .line 141
+    filled-new-array {p0}, [Lwl0;
+
+    .line 142
+    .line 143
+    .line 144
+    move-result-object p0
+
+    .line 145
+    return-object p0
+
+    .line 146
+    :cond_7
+    aget p3, p3, v7
+
+    .line 147
+    .line 148
+    if-ne v1, p3, :cond_8
+
+    .line 149
+    .line 150
+    invoke-static {v7, p4}, Lwl0;->g(II)Lwl0;
+
+    .line 151
+    .line 152
+    .line 153
+    move-result-object p0
+
+    .line 154
+    filled-new-array {p0}, [Lwl0;
+
+    .line 155
+    .line 156
+    .line 157
+    move-result-object p0
+
+    .line 158
+    return-object p0
+
+    .line 159
+    :cond_8
+    add-int/lit8 p2, p2, 0x1
+
+    .line 160
+    .line 161
+    goto :goto_0
+
+    .line 162
+    :cond_9
+    sget-object p0, Lwl0;->d:[Lwl0;
+
+    .line 163
+    .line 164
+    return-object p0
 .end method

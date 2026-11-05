@@ -1,10 +1,10 @@
 .class public final Lcom/materialkolor/ktx/HctKt;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # direct methods
-.method public static final from-4WTKRHQ(Lma2;J)Lna2;
+.method public static final from-4WTKRHQ(Ll92;J)Lm92;
     .locals 0
 
     .line 1
@@ -13,7 +13,7 @@
     .line 2
     .line 3
     .line 4
-    invoke-static {p1, p2}, Lzm;->c0(J)I
+    invoke-static {p1, p2}, Lmt6;->e0(J)I
 
     .line 5
     .line 6
@@ -21,11 +21,11 @@
     move-result p0
 
     .line 8
-    new-instance p1, Lna2;
+    new-instance p1, Lm92;
 
     .line 9
     .line 10
-    invoke-direct {p1, p0}, Lna2;-><init>(I)V
+    invoke-direct {p1, p0}, Lm92;-><init>(I)V
 
     .line 11
     .line 12
@@ -33,7 +33,7 @@
     return-object p1
 .end method
 
-.method public static final toColor(Lna2;)J
+.method public static final toColor(Lm92;)J
     .locals 2
 
     .line 1
@@ -42,7 +42,7 @@
     .line 2
     .line 3
     .line 4
-    iget p0, p0, Lna2;->a:I
+    iget p0, p0, Lm92;->a:I
 
     .line 5
     .line 6
@@ -65,10 +65,10 @@
         value = {
             "(",
             "Ljava/util/List<",
-            "Lna2;",
+            "Lm92;",
             ">;)",
             "Ljava/util/List<",
-            "Ljv0;",
+            "Lhu0;",
             ">;"
         }
     .end annotation
@@ -87,7 +87,7 @@
 
     .line 7
     .line 8
-    invoke-static {p0, v1}, Ldv0;->j0(Ljava/lang/Iterable;I)I
+    invoke-static {p0, v1}, Lbu0;->p0(Ljava/lang/Iterable;I)I
 
     .line 9
     .line 10
@@ -129,11 +129,11 @@
     move-result-object v1
 
     .line 29
-    check-cast v1, Lna2;
+    check-cast v1, Lm92;
 
     .line 30
     .line 31
-    invoke-static {v1}, Lcom/materialkolor/ktx/HctKt;->toColor(Lna2;)J
+    invoke-static {v1}, Lcom/materialkolor/ktx/HctKt;->toColor(Lm92;)J
 
     .line 32
     .line 33
@@ -141,11 +141,11 @@
     move-result-wide v1
 
     .line 35
-    new-instance v3, Ljv0;
+    new-instance v3, Lhu0;
 
     .line 36
     .line 37
-    invoke-direct {v3, v1, v2}, Ljv0;-><init>(J)V
+    invoke-direct {v3, v1, v2}, Lhu0;-><init>(J)V
 
     .line 38
     .line 39
@@ -162,15 +162,15 @@
     return-object v0
 .end method
 
-.method public static final toHct-8_81llA(J)Lna2;
+.method public static final toHct-8_81llA(J)Lm92;
     .locals 1
 
     .line 1
-    sget-object v0, Lna2;->e:Lma2;
+    sget-object v0, Lm92;->e:Ll92;
 
     .line 2
     .line 3
-    invoke-static {v0, p0, p1}, Lcom/materialkolor/ktx/HctKt;->from-4WTKRHQ(Lma2;J)Lna2;
+    invoke-static {v0, p0, p1}, Lcom/materialkolor/ktx/HctKt;->from-4WTKRHQ(Ll92;J)Lm92;
 
     .line 4
     .line 5
@@ -187,10 +187,10 @@
         value = {
             "(",
             "Ljava/util/List<",
-            "Ljv0;",
+            "Lhu0;",
             ">;)",
             "Ljava/util/List<",
-            "Lna2;",
+            "Lm92;",
             ">;"
         }
     .end annotation
@@ -209,7 +209,7 @@
 
     .line 7
     .line 8
-    invoke-static {p0, v1}, Ldv0;->j0(Ljava/lang/Iterable;I)I
+    invoke-static {p0, v1}, Lbu0;->p0(Ljava/lang/Iterable;I)I
 
     .line 9
     .line 10
@@ -251,15 +251,15 @@
     move-result-object v1
 
     .line 29
-    check-cast v1, Ljv0;
+    check-cast v1, Lhu0;
 
     .line 30
     .line 31
-    iget-wide v1, v1, Ljv0;->a:J
+    iget-wide v1, v1, Lhu0;->a:J
 
     .line 32
     .line 33
-    invoke-static {v1, v2}, Lcom/materialkolor/ktx/HctKt;->toHct-8_81llA(J)Lna2;
+    invoke-static {v1, v2}, Lcom/materialkolor/ktx/HctKt;->toHct-8_81llA(J)Lm92;
 
     .line 34
     .line 35

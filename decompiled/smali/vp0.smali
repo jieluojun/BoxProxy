@@ -1,81 +1,185 @@
-.class public final Lvp0;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lvp0;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
 # instance fields
-.field public j:Ljava/lang/String;
+.field public final synthetic j:Lro0;
 
-.field public k:Lbu3;
+.field public final synthetic k:J
 
-.field public l:Z
+.field public final synthetic l:J
 
-.field public synthetic m:Ljava/lang/Object;
+.field public final synthetic m:J
 
-.field public final synthetic n:Laq0;
+.field public final synthetic n:J
 
-.field public o:I
+.field public final synthetic o:J
+
+.field public final synthetic p:Loy0;
+
+.field public final synthetic q:Lko3;
 
 
 # direct methods
-.method public constructor <init>(Laq0;Lz81;)V
+.method public synthetic constructor <init>(Lro0;JJJJJLoy0;Lko3;I)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lvp0;->n:Laq0;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
     .line 4
+    iput-object p1, p0, Lvp0;->j:Lro0;
+
     .line 5
     .line 6
+    iput-wide p2, p0, Lvp0;->k:J
+
+    .line 7
+    .line 8
+    iput-wide p4, p0, Lvp0;->l:J
+
+    .line 9
+    .line 10
+    iput-wide p6, p0, Lvp0;->m:J
+
+    .line 11
+    .line 12
+    iput-wide p8, p0, Lvp0;->n:J
+
+    .line 13
+    .line 14
+    iput-wide p10, p0, Lvp0;->o:J
+
+    .line 15
+    .line 16
+    iput-object p12, p0, Lvp0;->p:Loy0;
+
+    .line 17
+    .line 18
+    iput-object p13, p0, Lvp0;->q:Lko3;
+
+    .line 19
+    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 16
 
     .line 1
-    iput-object p1, p0, Lvp0;->m:Ljava/lang/Object;
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
-    iget p1, p0, Lvp0;->o:I
+    move-object/from16 v13, p1
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    check-cast v13, Lv01;
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    move-object/from16 v1, p2
 
     .line 8
-    iput p1, p0, Lvp0;->o:I
-
     .line 9
-    .line 10
-    const/4 p1, 0x0
+    check-cast v1, Ljava/lang/Integer;
 
+    .line 10
     .line 11
-    const/4 v0, 0x0
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 12
-    iget-object v1, p0, Lvp0;->n:Laq0;
-
     .line 13
     .line 14
-    invoke-virtual {v1, p1, v0, p0}, Laq0;->b(Ljava/lang/String;ZLz81;)Ljava/lang/Object;
+    const v1, 0x180009
 
     .line 15
     .line 16
     .line 17
-    move-result-object p0
+    invoke-static {v1}, Lw23;->h0(I)I
 
     .line 18
-    return-object p0
+    .line 19
+    .line 20
+    move-result v14
+
+    .line 21
+    iget-object v1, v0, Lvp0;->j:Lro0;
+
+    .line 22
+    .line 23
+    move-object v3, v1
+
+    .line 24
+    iget-wide v1, v0, Lvp0;->k:J
+
+    .line 25
+    .line 26
+    move-object v5, v3
+
+    .line 27
+    iget-wide v3, v0, Lvp0;->l:J
+
+    .line 28
+    .line 29
+    move-object v7, v5
+
+    .line 30
+    iget-wide v5, v0, Lvp0;->m:J
+
+    .line 31
+    .line 32
+    move-object v9, v7
+
+    .line 33
+    iget-wide v7, v0, Lvp0;->n:J
+
+    .line 34
+    .line 35
+    move-object v11, v9
+
+    .line 36
+    iget-wide v9, v0, Lvp0;->o:J
+
+    .line 37
+    .line 38
+    move-object v12, v11
+
+    .line 39
+    iget-object v11, v0, Lvp0;->p:Loy0;
+
+    .line 40
+    .line 41
+    iget-object v0, v0, Lvp0;->q:Lko3;
+
+    .line 42
+    .line 43
+    move-object v15, v12
+
+    .line 44
+    move-object v12, v0
+
+    .line 45
+    move-object v0, v15
+
+    .line 46
+    invoke-static/range {v0 .. v14}, Lxa;->i(Lro0;JJJJJLoy0;Lko3;Lv01;I)V
+
+    .line 47
+    .line 48
+    .line 49
+    sget-object v0, Lk27;->a:Lk27;
+
+    .line 50
+    .line 51
+    return-object v0
 .end method

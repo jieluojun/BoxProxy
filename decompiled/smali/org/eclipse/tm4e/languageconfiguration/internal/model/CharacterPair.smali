@@ -1,6 +1,6 @@
 .class public Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
@@ -229,19 +229,19 @@
     .locals 2
 
     .line 1
-    new-instance v0, Lyx;
+    new-instance v0, Lyw;
 
     .line 2
     .line 3
     const/4 v1, 0x1
 
     .line 4
-    invoke-direct {v0, p0, v1}, Lyx;-><init>(Ljava/lang/Object;B)V
+    invoke-direct {v0, p0, v1}, Lyw;-><init>(Ljava/lang/Object;B)V
 
     .line 5
     .line 6
     .line 7
-    invoke-static {p0, v0}, Lyc6;->e(Ljava/lang/Object;Ljava/util/function/Consumer;)Ljava/lang/String;
+    invoke-static {p0, v0}, Lgb6;->e(Ljava/lang/Object;Ljava/util/function/Consumer;)Ljava/lang/String;
 
     .line 8
     .line 9

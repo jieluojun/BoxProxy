@@ -1,25 +1,17 @@
-.class public final synthetic La65;
+.class public final La65;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lt62;
+.implements Lb65;
 
 
 # instance fields
-.field public final synthetic j:Lv65;
-
-.field public final synthetic k:F
-
-.field public final synthetic l:J
-
-.field public final synthetic m:Lwp3;
-
-.field public final synthetic n:I
+.field public final j:D
 
 
 # direct methods
-.method public synthetic constructor <init>(Lv65;FJLwp3;I)V
+.method public constructor <init>(D)V
     .locals 0
 
     .line 1
@@ -28,91 +20,194 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, La65;->j:Lv65;
+    iput-wide p1, p0, La65;->j:D
 
     .line 5
     .line 6
-    iput p2, p0, La65;->k:F
-
-    .line 7
-    .line 8
-    iput-wide p3, p0, La65;->l:J
-
-    .line 9
-    .line 10
-    iput-object p5, p0, La65;->m:Lwp3;
-
-    .line 11
-    .line 12
-    iput p6, p0, La65;->n:I
-
-    .line 13
-    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
+.method public final d(F)F
+    .locals 2
 
     .line 1
-    move-object v5, p1
+    iget-wide v0, p0, La65;->j:D
 
     .line 2
-    check-cast v5, Lz11;
-
     .line 3
+    float-to-double p0, p1
+
     .line 4
-    check-cast p2, Ljava/lang/Integer;
+    invoke-static {p0, p1, v0, v1}, Lt87;->S(DD)D
 
     .line 5
     .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .line 7
+    move-result-wide p0
+
+    .line 8
+    double-to-float p0, p0
+
+    .line 9
+    return p0
+.end method
+
+.method public final e(F)F
+    .locals 4
+
+    .line 1
+    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
+
+    .line 2
+    .line 3
+    iget-wide v2, p0, La65;->j:D
+
+    .line 4
+    .line 5
+    div-double/2addr v0, v2
+
+    .line 6
+    float-to-double p0, p1
 
     .line 7
+    invoke-static {p0, p1, v0, v1}, Lt87;->S(DD)D
+
     .line 8
     .line 9
-    iget p1, p0, La65;->n:I
-
     .line 10
+    move-result-wide p0
+
     .line 11
-    or-int/lit8 p1, p1, 0x1
+    double-to-float p0, p0
+
+    .line 12
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 5
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, La65;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, La65;
 
     .line 12
     .line 13
-    invoke-static {p1}, Lqu5;->f0(I)I
+    iget-wide v3, p0, La65;->j:D
 
     .line 14
     .line 15
-    .line 16
-    move-result v6
+    iget-wide p0, p1, La65;->j:D
 
+    .line 16
     .line 17
-    iget-object v0, p0, La65;->j:Lv65;
+    invoke-static {v3, v4, p0, p1}, Ljava/lang/Double;->compare(DD)I
 
     .line 18
     .line 19
-    iget v1, p0, La65;->k:F
-
     .line 20
+    move-result p0
+
     .line 21
-    iget-wide v2, p0, La65;->l:J
+    if-eqz p0, :cond_2
 
     .line 22
     .line 23
-    iget-object v4, p0, La65;->m:Lwp3;
+    return v2
 
     .line 24
-    .line 25
-    invoke-static/range {v0 .. v6}, Li65;->c(Lv65;FJLwp3;Lz11;I)V
+    :cond_2
+    return v0
+.end method
 
-    .line 26
-    .line 27
-    .line 28
-    sget-object p0, La47;->a:La47;
+.method public final hashCode()I
+    .locals 2
 
-    .line 29
-    .line 30
+    .line 1
+    iget-wide v0, p0, La65;->j:D
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Ljava/lang/Double;->hashCode(D)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 3
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "GammaTransferFunctions(gamma="
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-wide v1, p0, La65;->j:D
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(D)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const/16 p0, 0x29
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object p0
+
+    .line 22
     return-object p0
 .end method

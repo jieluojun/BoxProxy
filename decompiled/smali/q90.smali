@@ -1,24 +1,21 @@
-.class public interface abstract Lq90;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lq90;
+.super Ljo3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lil4;
 
 
-# static fields
-.field public static final Companion:Lj80;
+# instance fields
+.field public x:Ld8;
+
+.field public y:Z
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
+# virtual methods
+.method public final f(Lyg1;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
     .line 1
-    sget-object v0, Lj80;->a:Lj80;
-
-    .line 2
-    .line 3
-    sput-object v0, Lq90;->Companion:Lj80;
-
-    .line 4
-    .line 5
-    return-void
+    return-object p0
 .end method

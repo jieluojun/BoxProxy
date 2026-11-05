@@ -1,134 +1,181 @@
-.class public final synthetic Lng2;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lng2;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Lp62;
+
+# static fields
+.field public static final enum l:Lng2;
+
+.field public static final enum m:Lng2;
+
+.field public static final enum n:Lng2;
+
+.field public static final synthetic o:[Lng2;
 
 
 # instance fields
-.field public final synthetic j:La73;
+.field public final j:Z
 
-.field public final synthetic k:Z
-
-.field public final synthetic l:Z
-
-.field public final synthetic m:Ljava/lang/Object;
+.field public final k:I
 
 
 # direct methods
-.method public synthetic constructor <init>(La73;ZZLjava/lang/Object;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 7
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lng2;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lng2;->j:La73;
-
-    .line 5
-    .line 6
-    iput-boolean p2, p0, Lng2;->k:Z
-
-    .line 7
-    .line 8
-    iput-boolean p3, p0, Lng2;->l:Z
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Lng2;->m:Ljava/lang/Object;
-
-    .line 11
-    .line 12
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
-
-    .line 1
-    check-cast p1, Lvk1;
-
-    .line 2
-    .line 3
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const v1, 0x7f0f0184
 
     .line 4
     .line 5
     .line 6
-    new-instance v3, Lja5;
+    const/4 v2, 0x0
 
     .line 7
+    const-string v3, "Start"
+
     .line 8
-    invoke-direct {v3}, Ljava/lang/Object;-><init>()V
-
     .line 9
-    .line 10
-    .line 11
-    new-instance v0, Lpg2;
+    const/4 v4, 0x1
 
+    .line 10
+    invoke-direct {v0, v2, v1, v3, v4}, Lng2;-><init>(IILjava/lang/String;Z)V
+
+    .line 11
     .line 12
     .line 13
-    iget-boolean v1, p0, Lng2;->k:Z
+    sput-object v0, Lng2;->l:Lng2;
 
     .line 14
     .line 15
-    iget-object v2, p0, Lng2;->j:La73;
+    new-instance v1, Lng2;
 
     .line 16
     .line 17
-    iget-boolean v4, p0, Lng2;->l:Z
+    const-string v3, "Stop"
 
     .line 18
     .line 19
-    iget-object v5, p0, Lng2;->m:Ljava/lang/Object;
+    const v5, 0x7f0f0186
 
     .line 20
     .line 21
-    invoke-direct/range {v0 .. v5}, Lpg2;-><init>(ZLa73;Lja5;ZLjava/lang/Object;)V
-
     .line 22
+    invoke-direct {v1, v4, v5, v3, v2}, Lng2;-><init>(IILjava/lang/String;Z)V
+
     .line 23
     .line 24
-    move p0, v1
-
     .line 25
-    move-object v1, v2
+    sput-object v1, Lng2;->m:Lng2;
 
     .line 26
-    invoke-interface {v1}, La73;->h()Ld73;
-
     .line 27
+    new-instance v2, Lng2;
+
     .line 28
     .line 29
-    move-result-object p1
+    const/4 v3, 0x2
 
     .line 30
-    invoke-virtual {p1, v0}, Ld73;->a(Lz63;)V
+    const v5, 0x7f0f0182
 
     .line 31
     .line 32
     .line 33
-    invoke-static {p0, v1, v3, v4, v5}, Lyr;->I(ZLa73;Lja5;ZLjava/lang/Object;)V
+    const-string v6, "Restart"
 
     .line 34
     .line 35
+    invoke-direct {v2, v3, v5, v6, v4}, Lng2;-><init>(IILjava/lang/String;Z)V
+
     .line 36
-    move-object v2, v0
-
     .line 37
-    new-instance v0, Lrg2;
-
     .line 38
-    .line 39
-    invoke-direct/range {v0 .. v5}, Lrg2;-><init>(La73;Lpg2;Lja5;ZLjava/lang/Object;)V
+    sput-object v2, Lng2;->n:Lng2;
 
+    .line 39
     .line 40
+    filled-new-array {v0, v1, v2}, [Lng2;
+
     .line 41
     .line 42
+    .line 43
+    move-result-object v0
+
+    .line 44
+    sput-object v0, Lng2;->o:[Lng2;
+
+    .line 45
+    .line 46
+    return-void
+.end method
+
+.method public constructor <init>(IILjava/lang/String;Z)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p3, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-boolean p4, p0, Lng2;->j:Z
+
+    .line 5
+    .line 6
+    iput p2, p0, Lng2;->k:I
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lng2;
+    .locals 1
+
+    .line 1
+    const-class v0, Lng2;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lng2;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Lng2;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lng2;->o:[Lng2;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lng2;
+
+    .line 8
+    .line 9
     return-object v0
 .end method

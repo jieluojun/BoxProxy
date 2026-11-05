@@ -1,23 +1,23 @@
 .class public final Lhk3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lvv;
+.implements Ljava/io/Closeable;
 
 
 # instance fields
-.field public final j:F
+.field public final j:Z
 
-.field public final k:Z
+.field public final k:Lgd0;
 
-.field public final l:Z
+.field public l:Ljava/util/zip/Inflater;
 
-.field public final m:F
+.field public m:Lfo2;
 
 
 # direct methods
-.method public constructor <init>(FZZ)V
+.method public constructor <init>(Z)V
     .locals 0
 
     .line 1
@@ -26,218 +26,56 @@
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Lhk3;->j:F
+    iput-boolean p1, p0, Lhk3;->j:Z
 
     .line 5
     .line 6
-    iput-boolean p2, p0, Lhk3;->k:Z
+    new-instance p1, Lgd0;
 
     .line 7
     .line 8
-    iput-boolean p3, p0, Lhk3;->l:Z
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
     .line 9
     .line 10
-    add-float/2addr p1, p1
-
     .line 11
-    const/4 p2, 0x0
+    iput-object p1, p0, Lhk3;->k:Lgd0;
 
     .line 12
-    add-float/2addr p1, p2
-
     .line 13
-    const/high16 p3, 0x40000000    # 2.0f
-
-    .line 14
-    .line 15
-    div-float/2addr p1, p3
-
-    .line 16
-    add-float/2addr p1, p2
-
-    .line 17
-    iput p1, p0, Lhk3;->m:F
-
-    .line 18
-    .line 19
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()F
-    .locals 0
+.method public final close()V
+    .locals 1
 
     .line 1
-    iget p0, p0, Lhk3;->m:F
+    iget-object v0, p0, Lhk3;->m:Lfo2;
 
     .line 2
     .line 3
-    return p0
-.end method
+    if-eqz v0, :cond_0
 
-.method public final d(Lyh1;I[ILt03;[I)V
-    .locals 8
-
-    .line 1
-    array-length v0, p3
-
-    .line 2
-    if-nez v0, :cond_0
-
-    .line 3
     .line 4
-    goto :goto_4
-
     .line 5
-    :cond_0
-    iget v0, p0, Lhk3;->j:F
+    invoke-virtual {v0}, Lfo2;->close()V
 
     .line 6
     .line 7
-    invoke-interface {p1, v0}, Lyh1;->t0(F)I
-
     .line 8
-    .line 9
-    .line 10
-    move-result p1
+    :cond_0
+    const/4 v0, 0x0
 
+    .line 9
+    iput-object v0, p0, Lhk3;->m:Lfo2;
+
+    .line 10
     .line 11
-    array-length v0, p3
+    iput-object v0, p0, Lhk3;->l:Ljava/util/zip/Inflater;
 
     .line 12
-    const/4 v1, 0x0
-
     .line 13
-    move v2, v1
-
-    .line 14
-    move v3, v2
-
-    .line 15
-    :goto_0
-    if-ge v2, v0, :cond_6
-
-    .line 16
-    .line 17
-    aget v4, p3, v2
-
-    .line 18
-    .line 19
-    add-int/lit8 v5, v3, 0x1
-
-    .line 20
-    .line 21
-    if-nez v3, :cond_2
-
-    .line 22
-    .line 23
-    :cond_1
-    move v6, v1
-
-    .line 24
-    goto :goto_2
-
-    .line 25
-    :cond_2
-    iget-boolean v6, p0, Lhk3;->k:Z
-
-    .line 26
-    .line 27
-    const/4 v7, 0x1
-
-    .line 28
-    if-ne v3, v7, :cond_3
-
-    .line 29
-    .line 30
-    if-eqz v6, :cond_3
-
-    .line 31
-    .line 32
-    aget v6, p3, v1
-
-    .line 33
-    .line 34
-    add-int/2addr v6, p1
-
-    .line 35
-    goto :goto_2
-
-    .line 36
-    :cond_3
-    if-ne v3, v7, :cond_4
-
-    .line 37
-    .line 38
-    if-nez v6, :cond_4
-
-    .line 39
-    .line 40
-    iget-boolean v6, p0, Lhk3;->l:Z
-
-    .line 41
-    .line 42
-    if-eqz v6, :cond_4
-
-    .line 43
-    .line 44
-    :goto_1
-    sub-int v6, p2, v4
-
-    .line 45
-    .line 46
-    goto :goto_2
-
-    .line 47
-    :cond_4
-    const/4 v6, 0x2
-
-    .line 48
-    if-ne v3, v6, :cond_1
-
-    .line 49
-    .line 50
-    goto :goto_1
-
-    .line 51
-    :goto_2
-    sget-object v7, Lt03;->j:Lt03;
-
-    .line 52
-    .line 53
-    if-ne p4, v7, :cond_5
-
-    .line 54
-    .line 55
-    goto :goto_3
-
-    .line 56
-    :cond_5
-    sub-int v6, p2, v6
-
-    .line 57
-    .line 58
-    sub-int/2addr v6, v4
-
-    .line 59
-    :goto_3
-    aput v6, p5, v3
-
-    .line 60
-    .line 61
-    add-int/lit8 v2, v2, 0x1
-
-    .line 62
-    .line 63
-    move v3, v5
-
-    .line 64
-    goto :goto_0
-
-    .line 65
-    :cond_6
-    :goto_4
     return-void
 .end method

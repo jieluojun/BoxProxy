@@ -1,101 +1,202 @@
-.class public final synthetic Lp36;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lp36;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Le62;
+
+# static fields
+.field public static final enum n:Lp36;
+
+.field public static final enum o:Lp36;
+
+.field public static final synthetic p:[Lp36;
+
+.field public static final synthetic q:Lzu1;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final j:Ljava/lang/String;
 
-.field public final synthetic k:Lp62;
+.field public final k:Ljava/lang/String;
 
-.field public final synthetic l:Li46;
+.field public final l:Ljava/lang/String;
+
+.field public final m:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lp62;Li46;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 8
 
     .line 1
-    iput-byte p3, p0, Lp36;->j:B
+    new-instance v0, Lp36;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lp36;->k:Lp62;
+    const-string v5, "schema/sing-box-official.json"
 
     .line 4
     .line 5
-    iput-object p2, p0, Lp36;->l:Li46;
+    const-string v6, "sing-box-official.json"
 
     .line 6
     .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v1, "OFFICIAL"
 
     .line 8
     .line 9
-    .line 10
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
-
-    .line 1
-    iget-byte v0, p0, Lp36;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    iget-object v2, p0, Lp36;->l:Li46;
-
-    .line 6
-    .line 7
-    iget-object p0, p0, Lp36;->k:Lp62;
-
-    .line 8
-    .line 9
-    packed-switch v0, :pswitch_data_0
+    const/4 v2, 0x0
 
     .line 10
+    const-string v3, "sing-box"
+
     .line 11
     .line 12
-    iget-object v0, v2, Li46;->b:Ljava/lang/String;
+    const-string v4, "https://sing-box.sagernet.org/schema.json"
 
     .line 13
     .line 14
-    invoke-interface {p0, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct/range {v0 .. v6}, Lp36;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 15
     .line 16
     .line 17
-    return-object v1
+    sput-object v0, Lp36;->n:Lp36;
 
     .line 18
-    :pswitch_0
-    iget-object v0, v2, Li46;->b:Ljava/lang/String;
-
     .line 19
+    new-instance v1, Lp36;
+
     .line 20
-    invoke-interface {p0, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 21
-    .line 22
-    .line 23
-    return-object v1
+    const/4 v6, 0x0
 
+    .line 22
+    const-string v7, "sing-box-ref1nd.json"
+
+    .line 23
     .line 24
-    nop
+    const-string v2, "REF1ND"
 
     .line 25
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 26
+    const/4 v3, 0x1
+
+    .line 27
+    const-string v4, "sing-box_ref1nd"
+
+    .line 28
+    .line 29
+    const-string v5, "https://raw.githubusercontent.com/reF1nd/sing-box/reF1nd-testing/docs/schema.json"
+
+    .line 30
+    .line 31
+    invoke-direct/range {v1 .. v7}, Lp36;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 32
+    .line 33
+    .line 34
+    sput-object v1, Lp36;->o:Lp36;
+
+    .line 35
+    .line 36
+    filled-new-array {v0, v1}, [Lp36;
+
+    .line 37
+    .line 38
+    .line 39
+    move-result-object v0
+
+    .line 40
+    sput-object v0, Lp36;->p:[Lp36;
+
+    .line 41
+    .line 42
+    new-instance v1, Lzu1;
+
+    .line 43
+    .line 44
+    invoke-direct {v1, v0}, Lzu1;-><init>([Ljava/lang/Enum;)V
+
+    .line 45
+    .line 46
+    .line 47
+    sput-object v1, Lp36;->q:Lzu1;
+
+    .line 48
+    .line 49
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p3, p0, Lp36;->j:Ljava/lang/String;
+
+    .line 5
+    .line 6
+    iput-object p4, p0, Lp36;->k:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    iput-object p5, p0, Lp36;->l:Ljava/lang/String;
+
+    .line 9
+    .line 10
+    iput-object p6, p0, Lp36;->m:Ljava/lang/String;
+
+    .line 11
+    .line 12
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lp36;
+    .locals 1
+
+    .line 1
+    const-class v0, Lp36;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lp36;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Lp36;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lp36;->p:[Lp36;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lp36;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

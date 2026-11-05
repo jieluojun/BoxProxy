@@ -1,71 +1,49 @@
-.class public final Lag1;
+.class public abstract Lag1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lzz1;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public a:Lse1;
-
-.field public final b:Lxj1;
+# static fields
+.field public static final a:Loq6;
 
 
 # direct methods
-.method public constructor <init>(Lse1;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 6
 
     .line 1
-    sget-object v0, Li4;->b:Lxj1;
+    new-instance v0, Loq6;
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const v1, 0x3ecccccd    # 0.4f
 
     .line 4
     .line 5
     .line 6
-    iput-object p1, p0, Lag1;->a:Lse1;
+    const-wide v2, -0xbd790c00000000L
 
     .line 7
     .line 8
-    iput-object v0, p0, Lag1;->b:Lxj1;
-
     .line 9
-    .line 10
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Ltt5;FLy81;)Ljava/lang/Object;
-    .locals 2
-
-    .line 1
-    new-instance v0, Lzf1;
-
-    .line 2
-    .line 3
-    const/4 v1, 0x0
-
-    .line 4
-    invoke-direct {v0, p2, p0, p1, v1}, Lzf1;-><init>(FLag1;Ltt5;Ly81;)V
-
-    .line 5
-    .line 6
-    .line 7
-    iget-object p0, p0, Lag1;->b:Lxj1;
-
-    .line 8
-    .line 9
-    invoke-static {p0, v0, p3}, Lbn0;->S(Lrb1;Lt62;Ly81;)Ljava/lang/Object;
-
     .line 10
     .line 11
-    .line 12
-    move-result-object p0
+    invoke-static {v2, v3, v1}, Lhu0;->c(JF)J
 
+    .line 12
     .line 13
-    return-object p0
+    .line 14
+    move-result-wide v4
+
+    .line 15
+    invoke-direct {v0, v2, v3, v4, v5}, Loq6;-><init>(JJ)V
+
+    .line 16
+    .line 17
+    .line 18
+    sput-object v0, Lag1;->a:Loq6;
+
+    .line 19
+    .line 20
+    return-void
 .end method

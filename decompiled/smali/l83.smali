@@ -1,19 +1,22 @@
 .class public final Ll83;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lel0;
+.implements Ljava/util/Iterator;
+.implements Lvw2;
 
 
 # instance fields
-.field public final a:Ljava/util/ArrayList;
+.field public j:Ljava/lang/String;
 
-.field public final b:Ljava/util/ArrayList;
+.field public k:Z
+
+.field public final synthetic l:Lsv;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/ArrayList;Ljava/util/ArrayList;)V
+.method public constructor <init>(Lsv;)V
     .locals 0
 
     .line 1
@@ -22,160 +25,145 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Ll83;->a:Ljava/util/ArrayList;
+    iput-object p1, p0, Ll83;->l:Lsv;
 
     .line 5
     .line 6
-    iput-object p2, p0, Ll83;->b:Ljava/util/ArrayList;
-
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lfs3;)Lfl0;
-    .locals 2
+.method public final hasNext()Z
+    .locals 3
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v0, p0, Ll83;->j:Ljava/lang/String;
 
     .line 2
     .line 3
+    const/4 v1, 0x1
+
     .line 4
-    new-instance v0, Lm83;
+    if-nez v0, :cond_0
 
     .line 5
     .line 6
-    iget-object v1, p0, Ll83;->a:Ljava/util/ArrayList;
+    iget-boolean v2, p0, Ll83;->k:Z
 
     .line 7
     .line 8
-    iget-object p0, p0, Ll83;->b:Ljava/util/ArrayList;
+    if-nez v2, :cond_0
 
     .line 9
     .line 10
-    invoke-direct {v0, v1, p0, p1}, Lm83;-><init>(Ljava/util/ArrayList;Ljava/util/ArrayList;Lfs3;)V
+    iget-object v0, p0, Ll83;->l:Lsv;
 
     .line 11
     .line 12
+    iget-object v0, v0, Lsv;->b:Ljava/lang/Object;
+
     .line 13
-    return-object v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
-
-    .line 1
-    if-eq p0, p1, :cond_1
-
-    .line 2
-    .line 3
-    instance-of v0, p1, Ll83;
-
-    .line 4
-    .line 5
-    if-eqz v0, :cond_0
-
-    .line 6
-    .line 7
-    check-cast p1, Ll83;
-
-    .line 8
-    .line 9
-    iget-object v0, p1, Ll83;->a:Ljava/util/ArrayList;
-
-    .line 10
-    .line 11
-    iget-object v1, p0, Ll83;->a:Ljava/util/ArrayList;
-
-    .line 12
-    .line 13
-    invoke-virtual {v1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
     .line 14
+    check-cast v0, Ljava/io/BufferedReader;
+
     .line 15
     .line 16
-    move-result v0
+    invoke-virtual {v0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
     .line 17
-    if-eqz v0, :cond_0
-
     .line 18
     .line 19
-    iget-object p0, p0, Ll83;->b:Ljava/util/ArrayList;
+    move-result-object v0
 
     .line 20
+    iput-object v0, p0, Ll83;->j:Ljava/lang/String;
+
     .line 21
-    iget-object p1, p1, Ll83;->b:Ljava/util/ArrayList;
-
     .line 22
-    .line 23
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    if-nez v0, :cond_0
 
+    .line 23
     .line 24
+    iput-boolean v1, p0, Ll83;->k:Z
+
     .line 25
     .line 26
-    move-result p0
+    :cond_0
+    if-eqz v0, :cond_1
 
     .line 27
-    if-eqz p0, :cond_0
-
     .line 28
-    .line 29
-    goto :goto_0
+    return v1
 
-    .line 30
-    :cond_0
+    .line 29
+    :cond_1
     const/4 p0, 0x0
 
-    .line 31
-    return p0
-
-    .line 32
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
-    .line 33
+    .line 30
     return p0
 .end method
 
-.method public final hashCode()I
+.method public final next()Ljava/lang/Object;
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Ll83;->hasNext()Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    const/4 v1, 0x0
+
+    .line 6
+    if-eqz v0, :cond_0
+
+    .line 7
+    .line 8
+    iget-object v0, p0, Ll83;->j:Ljava/lang/String;
+
+    .line 9
+    .line 10
+    iput-object v1, p0, Ll83;->j:Ljava/lang/String;
+
+    .line 11
+    .line 12
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 13
+    .line 14
+    .line 15
+    return-object v0
+
+    .line 16
+    :cond_0
+    invoke-static {}, Lvd1;->p()V
+
+    .line 17
+    .line 18
+    .line 19
+    return-object v1
+.end method
+
+.method public final remove()V
     .locals 1
 
     .line 1
-    iget-object v0, p0, Ll83;->a:Ljava/util/ArrayList;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    const-string v0, "Operation is not supported for read-only collection"
 
     .line 4
     .line 5
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
     .line 6
-    move-result v0
-
     .line 7
-    mul-int/lit8 v0, v0, 0x1f
-
     .line 8
-    .line 9
-    iget-object p0, p0, Ll83;->b:Ljava/util/ArrayList;
-
-    .line 10
-    .line 11
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    add-int/2addr p0, v0
-
-    .line 16
-    return p0
+    throw p0
 .end method

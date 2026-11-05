@@ -1,87 +1,62 @@
 .class public final Loy;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Loy;
+# instance fields
+.field public j:Ldn;
 
+.field public k:Ls52;
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.field public l:Ls52;
 
-    .line 1
-    new-instance v0, Loy;
+.field public m:Ljava/lang/Object;
 
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+.field public n:Ljava/lang/Throwable;
 
-    .line 4
-    .line 5
-    .line 6
-    sput-object v0, Loy;->a:Loy;
+.field public o:Ljava/lang/Throwable;
 
-    .line 7
-    .line 8
-    return-void
-.end method
+.field public p:I
+
+.field public synthetic q:Ljava/lang/Object;
+
+.field public r:I
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     .line 1
-    const/4 v0, 0x1
+    iput-object p1, p0, Loy;->q:Ljava/lang/Object;
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
-    .line 4
-    return v0
+    iget p1, p0, Loy;->r:I
 
+    .line 4
     .line 5
-    :cond_0
-    instance-of p0, p1, Loy;
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
-    if-nez p0, :cond_1
+    or-int/2addr p1, v0
 
     .line 8
-    .line 9
-    const/4 p0, 0x0
+    iput p1, p0, Loy;->r:I
 
+    .line 9
     .line 10
-    return p0
+    const/4 p1, 0x0
 
     .line 11
-    :cond_1
-    return v0
-.end method
+    invoke-static {p1, p1, p1, p1, p0}, Lam0;->L(Lcn;Ldn;Len;Lfn;Lz71;)Ljava/lang/Object;
 
-.method public final hashCode()I
-    .locals 0
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
 
-    .line 1
-    const p0, 0x223a56c
-
-    .line 2
-    .line 3
-    .line 4
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    const-string p0, "Bottom"
-
-    .line 2
-    .line 3
+    .line 15
     return-object p0
 .end method

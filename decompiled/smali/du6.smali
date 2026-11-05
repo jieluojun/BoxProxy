@@ -1,79 +1,129 @@
-.class public abstract Ldu6;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Ldu6;
+.super Lb2;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final a:Ljava/lang/ThreadLocal;
+.field public static final CREATOR:Landroid/os/Parcelable$Creator;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Landroid/os/Parcelable$Creator<",
+            "Ldu6;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
+# instance fields
+.field public l:I
+
+.field public m:Z
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
     .line 1
-    new-instance v0, Ljava/lang/ThreadLocal;
+    new-instance v0, Lfl4;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
+    const/4 v1, 0x2
 
     .line 4
+    invoke-direct {v0, v1}, Lfl4;-><init>(B)V
+
     .line 5
     .line 6
-    sput-object v0, Ldu6;->a:Ljava/lang/ThreadLocal;
-
     .line 7
-    .line 8
-    return-void
-.end method
-
-.method public static a()Llw1;
-    .locals 3
-
-    .line 1
-    sget-object v0, Ldu6;->a:Ljava/lang/ThreadLocal;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v1
-
-    .line 7
-    check-cast v1, Llw1;
+    sput-object v0, Ldu6;->CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 8
     .line 9
-    if-nez v1, :cond_0
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p1, p2}, Lb2;-><init>(Landroid/os/Parcel;Ljava/lang/ClassLoader;)V
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    .line 5
+    .line 6
+    .line 7
+    move-result p2
+
+    .line 8
+    iput p2, p0, Ldu6;->l:I
+
+    .line 9
+    .line 10
+    invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
+
+    .line 11
+    .line 12
+    .line 13
+    move-result p1
+
+    .line 14
+    if-eqz p1, :cond_0
+
+    .line 15
+    .line 16
+    const/4 p1, 0x1
+
+    .line 17
+    goto :goto_0
+
+    .line 18
+    :cond_0
+    const/4 p1, 0x0
+
+    .line 19
+    :goto_0
+    iput-boolean p1, p0, Ldu6;->m:Z
+
+    .line 20
+    .line 21
+    return-void
+.end method
+
+
+# virtual methods
+.method public final writeToParcel(Landroid/os/Parcel;I)V
+    .locals 0
+
+    .line 1
+    invoke-super {p0, p1, p2}, Lb2;->writeToParcel(Landroid/os/Parcel;I)V
+
+    .line 2
+    .line 3
+    .line 4
+    iget p2, p0, Ldu6;->l:I
+
+    .line 5
+    .line 6
+    invoke-virtual {p1, p2}, Landroid/os/Parcel;->writeInt(I)V
+
+    .line 7
+    .line 8
+    .line 9
+    iget-boolean p0, p0, Ldu6;->m:Z
 
     .line 10
     .line 11
-    new-instance v1, Lo30;
+    invoke-virtual {p1, p0}, Landroid/os/Parcel;->writeInt(I)V
 
     .line 12
     .line 13
-    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
-
     .line 14
-    .line 15
-    .line 16
-    move-result-object v2
-
-    .line 17
-    invoke-direct {v1, v2}, Lo30;-><init>(Ljava/lang/Thread;)V
-
-    .line 18
-    .line 19
-    .line 20
-    invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
-
-    .line 21
-    .line 22
-    .line 23
-    :cond_0
-    return-object v1
+    return-void
 .end method

@@ -1,100 +1,73 @@
 .class public final Le27;
-.super Lcu4;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public a:[J
-
-.field public b:I
+.field public final a:[I
 
 
-# virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 1
+# direct methods
+.method public constructor <init>(Ljava/io/DataInputStream;)V
+    .locals 4
 
     .line 1
-    iget-object v0, p0, Le27;->a:[J
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iget p0, p0, Le27;->b:I
-
     .line 4
-    .line 5
-    invoke-static {v0, p0}, Ljava/util/Arrays;->copyOf([JI)[J
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    new-instance v0, Ld27;
-
-    .line 10
-    .line 11
-    invoke-direct {v0, p0}, Ld27;-><init>([J)V
-
-    .line 12
-    .line 13
-    .line 14
-    return-object v0
-.end method
-
-.method public final b(I)V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Le27;->a:[J
-
-    .line 2
-    .line 3
-    array-length v1, v0
-
-    .line 4
-    if-ge v1, p1, :cond_1
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
 
     .line 5
     .line 6
-    array-length v1, v0
-
     .line 7
-    mul-int/lit8 v1, v1, 0x2
+    move-result v0
 
     .line 8
+    and-int/lit8 v0, v0, 0x7
+
     .line 9
-    if-ge p1, v1, :cond_0
-
     .line 10
-    .line 11
-    move p1, v1
+    new-array v1, v0, [I
 
+    .line 11
     .line 12
-    :cond_0
-    invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([JI)[J
+    iput-object v1, p0, Le27;->a:[I
 
     .line 13
     .line 14
+    const/4 v1, 0x0
+
     .line 15
-    move-result-object p1
+    :goto_0
+    if-ge v1, v0, :cond_0
 
     .line 16
-    iput-object p1, p0, Le27;->a:[J
-
     .line 17
+    iget-object v2, p0, Le27;->a:[I
+
     .line 18
-    :cond_1
+    .line 19
+    invoke-virtual {p1}, Ljava/io/DataInputStream;->readInt()I
+
+    .line 20
+    .line 21
+    .line 22
+    move-result v3
+
+    .line 23
+    aput v3, v2, v1
+
+    .line 24
+    .line 25
+    add-int/lit8 v1, v1, 0x1
+
+    .line 26
+    .line 27
+    goto :goto_0
+
+    .line 28
+    :cond_0
     return-void
-.end method
-
-.method public final d()I
-    .locals 0
-
-    .line 1
-    iget p0, p0, Le27;->b:I
-
-    .line 2
-    .line 3
-    return p0
 .end method

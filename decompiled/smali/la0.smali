@@ -1,141 +1,78 @@
 .class public final Lla0;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public a:Ljava/util/Set;
+.field public j:Lka0;
 
-.field public final b:Lum4;
+.field public synthetic k:Ljava/lang/Object;
 
-.field public c:Landroid/net/Uri;
+.field public final synthetic l:Lcom/box/app/notification/BoxPersistentNotificationService;
 
-.field public final d:Lum4;
-
-.field public final e:Lum4;
-
-.field public final f:Lum4;
-
-.field public final g:Lum4;
+.field public m:I
 
 
 # direct methods
-.method public constructor <init>(Lkv;)V
-    .locals 2
+.method public constructor <init>(Lcom/box/app/notification/BoxPersistentNotificationService;Lz71;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lla0;->l:Lcom/box/app/notification/BoxPersistentNotificationService;
 
     .line 2
     .line 3
-    .line 4
-    sget-object v0, Loz;->k:Lv8;
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
+    .line 4
     .line 5
     .line 6
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-void
+.end method
 
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iput-object p1, p0, Lla0;->k:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Lla0;->m:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
+
+    .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
+    iput p1, p0, Lla0;->m:I
+
     .line 9
-    sget-object v0, Loz;->l:Ljava/util/Set;
-
     .line 10
-    .line 11
-    iput-object v0, p0, Lla0;->a:Ljava/util/Set;
+    sget p1, Lcom/box/app/notification/BoxPersistentNotificationService;->s:I
 
+    .line 11
     .line 12
+    iget-object p1, p0, Lla0;->l:Lcom/box/app/notification/BoxPersistentNotificationService;
+
     .line 13
+    .line 14
     const/4 v0, 0x0
 
-    .line 14
-    invoke-static {v0}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
     .line 15
+    invoke-virtual {p1, v0, v0, p0}, Lcom/box/app/notification/BoxPersistentNotificationService;->a(ZZLz71;)Ljava/lang/Object;
+
     .line 16
     .line 17
-    move-result-object v1
-
     .line 18
-    iput-object v1, p0, Lla0;->b:Lum4;
+    move-result-object p0
 
     .line 19
-    .line 20
-    iget-boolean v1, p1, Lkv;->d:Z
-
-    .line 21
-    .line 22
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 23
-    .line 24
-    .line 25
-    move-result-object v1
-
-    .line 26
-    invoke-static {v1}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
-    .line 27
-    .line 28
-    .line 29
-    move-result-object v1
-
-    .line 30
-    iput-object v1, p0, Lla0;->d:Lum4;
-
-    .line 31
-    .line 32
-    iget-boolean v1, p1, Lkv;->e:Z
-
-    .line 33
-    .line 34
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 35
-    .line 36
-    .line 37
-    move-result-object v1
-
-    .line 38
-    invoke-static {v1}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
-    .line 39
-    .line 40
-    .line 41
-    move-result-object v1
-
-    .line 42
-    iput-object v1, p0, Lla0;->e:Lum4;
-
-    .line 43
-    .line 44
-    iget-object p1, p1, Lkv;->f:Ljava/lang/String;
-
-    .line 45
-    .line 46
-    invoke-static {p1}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
-    .line 47
-    .line 48
-    .line 49
-    move-result-object p1
-
-    .line 50
-    iput-object p1, p0, Lla0;->f:Lum4;
-
-    .line 51
-    .line 52
-    invoke-static {v0}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
-    .line 53
-    .line 54
-    .line 55
-    move-result-object p1
-
-    .line 56
-    iput-object p1, p0, Lla0;->g:Lum4;
-
-    .line 57
-    .line 58
-    return-void
+    return-object p0
 .end method

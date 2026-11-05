@@ -1,6 +1,6 @@
 .class public final Lf;
-.super Lh56;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lr36;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
@@ -16,11 +16,11 @@
 
     .line 2
     .line 3
-    sget-object v1, Lg17;->b:[S
+    sget-object v1, Ln50;->a:[S
 
     .line 4
     .line 5
-    sget-object v2, Lg17;->c:[B
+    sget-object v2, Ln50;->b:[B
 
     .line 6
     .line 7
@@ -28,7 +28,7 @@
 
     .line 8
     .line 9
-    invoke-direct {v0, v3, v1, v2}, Lh56;-><init>(Ljava/lang/String;[S[B)V
+    invoke-direct {v0, v3, v1, v2}, Lr36;-><init>(Ljava/lang/String;[S[B)V
 
     .line 10
     .line 11
@@ -46,7 +46,7 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lh56;->q:[B
+    iget-object p0, p0, Lr36;->q:[B
 
     .line 2
     .line 3

@@ -1,17 +1,22 @@
-.class public final synthetic Lna4;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class final Lna4;
+.super Lro3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Ljava/util/function/BiFunction;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lro3;"
+    }
+.end annotation
 
 
 # instance fields
-.field public final synthetic a:Ljava/util/IdentityHashMap;
+.field public final j:Lo52;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/IdentityHashMap;)V
+.method public constructor <init>(Lo52;)V
     .locals 0
 
     .line 1
@@ -20,7 +25,7 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lna4;->a:Ljava/util/IdentityHashMap;
+    iput-object p1, p0, Lna4;->j:Lo52;
 
     .line 5
     .line 6
@@ -29,32 +34,139 @@
 
 
 # virtual methods
-.method public final apply(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+.method public final a()Ljo3;
+    .locals 3
 
     .line 1
-    if-nez p2, :cond_0
+    new-instance v0, Loa4;
 
     .line 2
     .line 3
-    const/4 p0, 0x0
+    invoke-direct {v0}, Ljo3;-><init>()V
 
     .line 4
-    return-object p0
-
     .line 5
-    :cond_0
-    iget-object p0, p0, Lna4;->a:Ljava/util/IdentityHashMap;
+    .line 6
+    iget-object p0, p0, Lna4;->j:Lo52;
+
+    .line 7
+    .line 8
+    iput-object p0, v0, Loa4;->x:Lo52;
+
+    .line 9
+    .line 10
+    const-wide v1, -0x7fffffff80000000L    # -1.0609978955E-314
+
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    iput-wide v1, v0, Loa4;->y:J
+
+    .line 16
+    .line 17
+    return-object v0
+.end method
+
+.method public final b(Ljo3;)V
+    .locals 2
+
+    .line 1
+    check-cast p1, Loa4;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lna4;->j:Lo52;
+
+    .line 4
+    .line 5
+    iput-object p0, p1, Loa4;->x:Lo52;
 
     .line 6
     .line 7
-    invoke-static {p2, p0}, Loa4;->a(Ljava/lang/Object;Ljava/util/IdentityHashMap;)Ljava/lang/Object;
+    const-wide v0, -0x7fffffff80000000L    # -1.0609978955E-314
 
     .line 8
     .line 9
     .line 10
-    move-result-object p0
+    .line 11
+    .line 12
+    iput-wide v0, p1, Loa4;->y:J
+
+    .line 13
+    .line 14
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lna4;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
 
     .line 11
-    return-object p0
+    :cond_1
+    check-cast p1, Lna4;
+
+    .line 12
+    .line 13
+    iget-object p1, p1, Lna4;->j:Lo52;
+
+    .line 14
+    .line 15
+    iget-object p0, p0, Lna4;->j:Lo52;
+
+    .line 16
+    .line 17
+    if-ne p0, p1, :cond_2
+
+    .line 18
+    .line 19
+    return v0
+
+    .line 20
+    :cond_2
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lna4;->j:Lo52;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
 .end method

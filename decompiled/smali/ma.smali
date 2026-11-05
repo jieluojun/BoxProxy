@@ -1,19 +1,22 @@
 .class public final Lma;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lro3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Luq4;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lro3;"
+    }
+.end annotation
 
 
 # instance fields
-.field public a:Ltq4;
-
-.field public final synthetic b:Lqa;
+.field public final synthetic j:Loa;
 
 
 # direct methods
-.method public constructor <init>(Lqa;)V
+.method public constructor <init>(Loa;)V
     .locals 0
 
     .line 1
@@ -22,18 +25,71 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lma;->b:Lqa;
+    iput-object p1, p0, Lma;->j:Loa;
 
     .line 5
     .line 6
-    sget-object p0, Ltq4;->a:Liw1;
+    return-void
+.end method
 
+
+# virtual methods
+.method public final a()Ljo3;
+    .locals 1
+
+    .line 1
+    new-instance v0, Lga;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lma;->j:Loa;
+
+    .line 4
+    .line 5
+    invoke-direct {v0, p0}, Lga;-><init>(Loa;)V
+
+    .line 6
     .line 7
     .line 8
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-object v0
+.end method
 
-    .line 9
-    .line 10
-    .line 11
-    return-void
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 0
+
+    .line 1
+    if-ne p1, p0, :cond_0
+
+    .line 2
+    .line 3
+    const/4 p0, 0x1
+
+    .line 4
+    return p0
+
+    .line 5
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 6
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lma;->j:Loa;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
 .end method

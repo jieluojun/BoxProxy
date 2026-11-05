@@ -1,193 +1,240 @@
-.class public final synthetic Lhf6;
+.class public final Lhf6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lt62;
+.implements Landroid/view/MenuItem$OnMenuItemClickListener;
+
+
+# static fields
+.field public static final d:[Ljava/lang/Class;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final synthetic a:B
 
-.field public final synthetic k:Laj2;
+.field public b:Ljava/lang/Object;
 
-.field public final synthetic l:Z
-
-.field public final synthetic m:Le62;
-
-.field public final synthetic n:Lwp3;
+.field public c:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Laj2;ZLe62;Lwp3;IB)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    iput-byte p6, p0, Lhf6;->j:B
+    const-class v0, Landroid/view/MenuItem;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lhf6;->k:Laj2;
+    filled-new-array {v0}, [Ljava/lang/Class;
 
     .line 4
     .line 5
-    iput-boolean p2, p0, Lhf6;->l:Z
-
     .line 6
+    move-result-object v0
+
     .line 7
-    iput-object p3, p0, Lhf6;->m:Le62;
+    sput-object v0, Lhf6;->d:[Ljava/lang/Class;
 
     .line 8
     .line 9
-    iput-object p4, p0, Lhf6;->n:Lwp3;
+    return-void
+.end method
+
+.method public synthetic constructor <init>()V
+    .locals 1
+
+    .line 12
+    const/4 v0, 0x0
+
+    iput-byte v0, p0, Lhf6;->a:B
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+.method public constructor <init>(Llj3;Landroid/view/MenuItem$OnMenuItemClickListener;)V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    iput-byte v0, p0, Lhf6;->a:B
+
+    .line 3
+    .line 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 5
+    .line 6
+    .line 7
+    iput-object p1, p0, Lhf6;->c:Ljava/lang/Object;
+
+    .line 8
+    .line 9
+    iput-object p2, p0, Lhf6;->b:Ljava/lang/Object;
 
     .line 10
     .line 11
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 12
-    .line 13
-    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 16
+.method public final onMenuItemClick(Landroid/view/MenuItem;)Z
+    .locals 3
 
     .line 1
-    move-object/from16 v0, p0
+    iget-byte v0, p0, Lhf6;->a:B
 
     .line 2
     .line 3
-    iget-byte v1, v0, Lhf6;->j:B
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
-    sget-object v2, La47;->a:La47;
-
     .line 6
+    iget-object v0, p0, Lhf6;->b:Ljava/lang/Object;
+
     .line 7
-    const/16 v3, 0xc01
-
     .line 8
-    .line 9
-    packed-switch v1, :pswitch_data_0
+    check-cast v0, Landroid/view/MenuItem$OnMenuItemClickListener;
 
+    .line 9
     .line 10
+    iget-object p0, p0, Lhf6;->c:Ljava/lang/Object;
+
     .line 11
     .line 12
-    move-object/from16 v8, p1
+    check-cast p0, Llj3;
 
     .line 13
     .line 14
-    check-cast v8, Lz11;
+    invoke-virtual {p0, p1}, Lq4;->j(Landroid/view/MenuItem;)Landroid/view/MenuItem;
 
     .line 15
     .line 16
-    move-object/from16 v1, p2
-
     .line 17
+    move-result-object p0
+
     .line 18
-    check-cast v1, Ljava/lang/Integer;
+    invoke-interface {v0, p0}, Landroid/view/MenuItem$OnMenuItemClickListener;->onMenuItemClick(Landroid/view/MenuItem;)Z
 
     .line 19
     .line 20
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 21
+    move-result p0
+
     .line 22
+    return p0
+
     .line 23
-    invoke-static {v3}, Lqu5;->f0(I)I
+    :pswitch_0
+    iget-object v0, p0, Lhf6;->b:Ljava/lang/Object;
 
     .line 24
     .line 25
-    .line 26
-    move-result v9
+    iget-object p0, p0, Lhf6;->c:Ljava/lang/Object;
 
+    .line 26
     .line 27
-    iget-object v4, v0, Lhf6;->k:Laj2;
+    check-cast p0, Ljava/lang/reflect/Method;
 
     .line 28
     .line 29
-    iget-boolean v5, v0, Lhf6;->l:Z
+    :try_start_0
+    invoke-virtual {p0}, Ljava/lang/reflect/Method;->getReturnType()Ljava/lang/Class;
 
     .line 30
     .line 31
-    iget-object v6, v0, Lhf6;->m:Le62;
-
     .line 32
+    move-result-object v1
+
     .line 33
-    iget-object v7, v0, Lhf6;->n:Lwp3;
+    sget-object v2, Ljava/lang/Boolean;->TYPE:Ljava/lang/Class;
 
     .line 34
     .line 35
-    invoke-static/range {v4 .. v9}, Lsi3;->z(Laj2;ZLe62;Lwp3;Lz11;I)V
+    if-ne v1, v2, :cond_0
 
     .line 36
     .line 37
+    filled-new-array {p1}, [Ljava/lang/Object;
+
     .line 38
-    return-object v2
-
     .line 39
-    :pswitch_0
-    move-object/from16 v14, p1
-
     .line 40
+    move-result-object p1
+
     .line 41
-    check-cast v14, Lz11;
+    invoke-virtual {p0, v0, p1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 42
     .line 43
-    move-object/from16 v1, p2
-
     .line 44
+    move-result-object p0
+
     .line 45
-    check-cast v1, Ljava/lang/Integer;
+    check-cast p0, Ljava/lang/Boolean;
 
     .line 46
     .line 47
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
 
     .line 48
     .line 49
     .line 50
-    invoke-static {v3}, Lqu5;->f0(I)I
+    move-result p0
 
     .line 51
+    goto :goto_0
+
     .line 52
+    :cond_0
+    filled-new-array {p1}, [Ljava/lang/Object;
+
     .line 53
-    move-result v15
-
     .line 54
-    iget-object v10, v0, Lhf6;->k:Laj2;
-
     .line 55
+    move-result-object p1
+
     .line 56
-    iget-boolean v11, v0, Lhf6;->l:Z
+    invoke-virtual {p0, v0, p1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 57
     .line 58
-    iget-object v12, v0, Lhf6;->m:Le62;
-
     .line 59
+    const/4 p0, 0x1
+
     .line 60
-    iget-object v13, v0, Lhf6;->n:Lwp3;
+    :goto_0
+    return p0
 
     .line 61
+    :catch_0
+    move-exception p0
+
     .line 62
-    invoke-static/range {v10 .. v15}, Lhi3;->r(Laj2;ZLe62;Lwp3;Lz11;I)V
+    new-instance p1, Ljava/lang/RuntimeException;
 
     .line 63
     .line 64
-    .line 65
-    return-object v2
+    invoke-direct {p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
+    .line 65
     .line 66
+    .line 67
+    throw p1
+
+    .line 68
     nop
 
-    .line 67
+    .line 69
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

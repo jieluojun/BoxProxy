@@ -1,150 +1,225 @@
-.class public final Lp90;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lq90;
+.class final Lp90;
+.super Lro3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final INSTANCE:Lp90;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lro3;"
+    }
+.end annotation
 
-.field public static final synthetic a:Lc23;
+
+# instance fields
+.field public final j:Ld8;
+
+.field public final k:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Ld8;Z)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lp90;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    iput-object p1, p0, Lp90;->j:Ld8;
+
     .line 5
     .line 6
-    sput-object v0, Lp90;->INSTANCE:Lp90;
+    iput-boolean p2, p0, Lp90;->k:Z
 
     .line 7
     .line 8
-    new-instance v0, Lw80;
-
-    .line 9
-    .line 10
-    const/16 v1, 0xf
-
-    .line 11
-    .line 12
-    invoke-direct {v0, v1}, Lw80;-><init>(B)V
-
-    .line 13
-    .line 14
-    .line 15
-    sget-object v1, Lr53;->j:Lr53;
-
-    .line 16
-    .line 17
-    invoke-static {v1, v0}, Lcs;->H(Lr53;Le62;)Lc23;
-
-    .line 18
-    .line 19
-    .line 20
-    move-result-object v0
-
-    .line 21
-    sput-object v0, Lp90;->a:Lc23;
-
-    .line 22
-    .line 23
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method public final a()Ljo3;
+    .locals 2
+
+    .line 1
+    new-instance v0, Lq90;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Ljo3;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object v1, p0, Lp90;->j:Ld8;
+
+    .line 7
+    .line 8
+    iput-object v1, v0, Lq90;->x:Ld8;
+
+    .line 9
+    .line 10
+    iget-boolean p0, p0, Lp90;->k:Z
+
+    .line 11
+    .line 12
+    iput-boolean p0, v0, Lq90;->y:Z
+
+    .line 13
+    .line 14
+    return-object v0
+.end method
+
+.method public final b(Ljo3;)V
     .locals 1
 
     .line 1
-    const/4 v0, 0x1
+    check-cast p1, Lq90;
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
-    .line 4
-    return v0
+    iget-object v0, p0, Lp90;->j:Ld8;
 
+    .line 4
     .line 5
-    :cond_0
-    instance-of p0, p1, Lp90;
+    iput-object v0, p1, Lq90;->x:Ld8;
 
     .line 6
     .line 7
-    if-nez p0, :cond_1
+    iget-boolean p0, p0, Lp90;->k:Z
 
     .line 8
     .line 9
-    const/4 p0, 0x0
+    iput-boolean p0, p1, Lq90;->y:Z
 
     .line 10
-    return p0
+    .line 11
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    .line 1
+    if-ne p0, p1, :cond_0
+
+    .line 2
+    .line 3
+    goto :goto_1
+
+    .line 4
+    :cond_0
+    instance-of v0, p1, Lp90;
+
+    .line 5
+    .line 6
+    if-eqz v0, :cond_1
+
+    .line 7
+    .line 8
+    check-cast p1, Lp90;
+
+    .line 9
+    .line 10
+    goto :goto_0
 
     .line 11
     :cond_1
-    return v0
-.end method
+    const/4 p1, 0x0
 
-.method public final hashCode()I
-    .locals 0
+    .line 12
+    :goto_0
+    if-nez p1, :cond_2
 
-    .line 1
-    const p0, -0x5e98147d
+    .line 13
+    .line 14
+    goto :goto_2
 
-    .line 2
-    .line 3
-    .line 4
+    .line 15
+    :cond_2
+    iget-object v0, p0, Lp90;->j:Ld8;
+
+    .line 16
+    .line 17
+    iget-object v1, p1, Lp90;->j:Ld8;
+
+    .line 18
+    .line 19
+    invoke-static {v0, v1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 20
+    .line 21
+    .line 22
+    move-result v0
+
+    .line 23
+    if-eqz v0, :cond_3
+
+    .line 24
+    .line 25
+    iget-boolean p0, p0, Lp90;->k:Z
+
+    .line 26
+    .line 27
+    iget-boolean p1, p1, Lp90;->k:Z
+
+    .line 28
+    .line 29
+    if-ne p0, p1, :cond_3
+
+    .line 30
+    .line 31
+    :goto_1
+    const/4 p0, 0x1
+
+    .line 32
+    return p0
+
+    .line 33
+    :cond_3
+    :goto_2
+    const/4 p0, 0x0
+
+    .line 34
     return p0
 .end method
 
-.method public final serializer()Lqy2;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lqy2;"
-        }
-    .end annotation
+.method public final hashCode()I
+    .locals 1
 
     .line 1
-    sget-object p0, Lp90;->a:Lc23;
+    iget-object v0, p0, Lp90;->j:Ld8;
 
     .line 2
     .line 3
-    invoke-interface {p0}, Lc23;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     .line 4
     .line 5
     .line 6
-    move-result-object p0
+    move-result v0
 
     .line 7
-    check-cast p0, Lqy2;
+    mul-int/lit8 v0, v0, 0x1f
 
     .line 8
     .line 9
-    return-object p0
-.end method
+    iget-boolean p0, p0, Lp90;->k:Z
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    .line 10
+    .line 11
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
 
-    .line 1
-    const-string p0, "WebUi"
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
 
-    .line 2
-    .line 3
-    return-object p0
+    .line 15
+    add-int/2addr p0, v0
+
+    .line 16
+    return p0
 .end method

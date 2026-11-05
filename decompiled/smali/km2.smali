@@ -1,1297 +1,877 @@
 .class public final Lkm2;
-.super Lnm2;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final u:Lkm2;
+# instance fields
+.field public final a:Ljava/lang/String;
+
+.field public final b:F
+
+.field public final c:F
+
+.field public final d:F
+
+.field public final e:F
+
+.field public final f:J
+
+.field public final g:I
+
+.field public final h:Z
+
+.field public final i:Ljava/util/ArrayList;
+
+.field public final j:Ljm2;
+
+.field public k:Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 39
+.method public constructor <init>(Ljava/lang/String;FFFFJIZI)V
+    .locals 11
 
     .line 1
-    const/16 v0, 0x100
+    move/from16 v0, p10
 
     .line 2
     .line 3
-    new-array v3, v0, [S
+    and-int/lit8 v1, v0, 0x1
 
     .line 4
     .line 5
-    fill-array-data v3, :array_0
+    if-eqz v1, :cond_0
 
     .line 6
     .line 7
+    const-string p1, ""
+
     .line 8
-    new-array v4, v0, [B
-
     .line 9
-    .line 10
-    fill-array-data v4, :array_1
+    :cond_0
+    and-int/lit8 v1, v0, 0x20
 
+    .line 10
     .line 11
+    if-eqz v1, :cond_1
+
     .line 12
     .line 13
-    const/16 v0, 0xb6
+    const/4 v1, 0x0
 
     .line 14
+    sget-object v2, Lyu0;->u:Lic5;
+
     .line 15
-    const/16 v1, 0xdc
-
     .line 16
-    .line 17
-    filled-new-array {v0, v1}, [I
+    invoke-static {v1, v1, v1, v1, v2}, Lmt6;->a(FFFFLvu0;)J
 
+    .line 17
     .line 18
     .line 19
+    move-result-wide v1
+
     .line 20
-    move-result-object v5
+    goto :goto_0
 
     .line 21
-    const/16 v0, 0xb8
+    :cond_1
+    move-wide/from16 v1, p6
 
     .line 22
     .line 23
-    const/16 v1, 0xdd
+    :goto_0
+    and-int/lit8 v3, v0, 0x40
 
     .line 24
     .line 25
-    filled-new-array {v0, v1}, [I
+    if-eqz v3, :cond_2
 
     .line 26
     .line 27
+    const/4 v3, 0x5
+
     .line 28
-    move-result-object v6
+    goto :goto_1
 
     .line 29
-    const/16 v0, 0xb9
+    :cond_2
+    move/from16 v3, p8
 
     .line 30
     .line 31
-    const/16 v1, 0xde
+    :goto_1
+    and-int/lit16 v0, v0, 0x80
 
     .line 32
     .line 33
-    filled-new-array {v0, v1}, [I
+    if-eqz v0, :cond_3
 
     .line 34
     .line 35
+    const/4 v0, 0x0
+
     .line 36
-    move-result-object v7
+    goto :goto_2
 
     .line 37
-    const/16 v0, 0xba
+    :cond_3
+    move/from16 v0, p9
 
     .line 38
     .line 39
-    const/16 v1, 0xdf
+    :goto_2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 40
     .line 41
-    filled-new-array {v0, v1}, [I
-
     .line 42
+    iput-object p1, p0, Lkm2;->a:Ljava/lang/String;
+
     .line 43
     .line 44
-    move-result-object v8
+    iput p2, p0, Lkm2;->b:F
 
     .line 45
-    const/16 v0, 0xbc
-
     .line 46
+    iput p3, p0, Lkm2;->c:F
+
     .line 47
-    const/16 v1, 0xfc
-
     .line 48
-    .line 49
-    filled-new-array {v0, v1}, [I
+    iput p4, p0, Lkm2;->d:F
 
+    .line 49
     .line 50
+    move/from16 p1, p5
+
     .line 51
     .line 52
-    move-result-object v9
+    iput p1, p0, Lkm2;->e:F
 
     .line 53
-    const/16 v0, 0xbe
-
     .line 54
+    iput-wide v1, p0, Lkm2;->f:J
+
     .line 55
-    const/16 v1, 0xfd
-
     .line 56
-    .line 57
-    filled-new-array {v0, v1}, [I
+    iput v3, p0, Lkm2;->g:I
 
+    .line 57
     .line 58
+    iput-boolean v0, p0, Lkm2;->h:Z
+
     .line 59
     .line 60
-    move-result-object v10
+    new-instance p1, Ljava/util/ArrayList;
 
     .line 61
-    const/16 v0, 0xbf
-
     .line 62
-    .line 63
-    const/16 v1, 0xfe
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
+    .line 63
     .line 64
     .line 65
-    filled-new-array {v0, v1}, [I
+    iput-object p1, p0, Lkm2;->i:Ljava/util/ArrayList;
 
     .line 66
     .line 67
-    .line 68
-    move-result-object v11
+    new-instance v0, Ljm2;
 
+    .line 68
     .line 69
-    const/16 v0, 0xc1
+    const/4 v9, 0x0
 
     .line 70
-    .line 71
-    const/16 v1, 0xe1
+    const/16 v10, 0x3ff
 
+    .line 71
     .line 72
+    const/4 v1, 0x0
+
     .line 73
-    filled-new-array {v0, v1}, [I
+    const/4 v2, 0x0
 
     .line 74
+    const/4 v3, 0x0
+
     .line 75
+    const/4 v4, 0x0
+
     .line 76
-    move-result-object v12
+    const/4 v5, 0x0
 
     .line 77
-    const/16 v0, 0xc2
+    const/4 v6, 0x0
 
     .line 78
+    const/4 v7, 0x0
+
     .line 79
-    const/16 v1, 0xe2
+    const/4 v8, 0x0
 
     .line 80
-    .line 81
-    filled-new-array {v0, v1}, [I
+    invoke-direct/range {v0 .. v10}, Ljm2;-><init>(Ljava/lang/String;FFFFFFFLjava/util/List;I)V
 
+    .line 81
     .line 82
     .line 83
-    .line 84
-    move-result-object v13
+    iput-object v0, p0, Lkm2;->j:Ljm2;
 
+    .line 84
     .line 85
-    const/16 v0, 0xc3
+    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 86
     .line 87
-    const/16 v1, 0xe3
-
     .line 88
-    .line 89
-    filled-new-array {v0, v1}, [I
+    return-void
+.end method
 
+.method public static b(Lkm2;Ljava/util/List;ILp76;FLp76;FFIIFI)V
+    .locals 19
+
+    .line 1
+    move-object/from16 v0, p0
+
+    .line 2
+    .line 3
+    move/from16 v1, p11
+
+    .line 4
+    .line 5
+    and-int/lit8 v2, v1, 0x2
+
+    .line 6
+    .line 7
+    const/4 v3, 0x0
+
+    .line 8
+    if-eqz v2, :cond_0
+
+    .line 9
+    .line 10
+    move v7, v3
+
+    .line 11
+    goto :goto_0
+
+    .line 12
+    :cond_0
+    move/from16 v7, p2
+
+    .line 13
+    .line 14
+    :goto_0
+    and-int/lit8 v2, v1, 0x8
+
+    .line 15
+    .line 16
+    const/4 v4, 0x0
+
+    .line 17
+    if-eqz v2, :cond_1
+
+    .line 18
+    .line 19
+    move-object v8, v4
+
+    .line 20
+    goto :goto_1
+
+    .line 21
+    :cond_1
+    move-object/from16 v8, p3
+
+    .line 22
+    .line 23
+    :goto_1
+    and-int/lit8 v2, v1, 0x10
+
+    .line 24
+    .line 25
+    const/high16 v5, 0x3f800000    # 1.0f
+
+    .line 26
+    .line 27
+    if-eqz v2, :cond_2
+
+    .line 28
+    .line 29
+    move v9, v5
+
+    .line 30
+    goto :goto_2
+
+    .line 31
+    :cond_2
+    move/from16 v9, p4
+
+    .line 32
+    .line 33
+    :goto_2
+    and-int/lit8 v2, v1, 0x20
+
+    .line 34
+    .line 35
+    if-eqz v2, :cond_3
+
+    .line 36
+    .line 37
+    move-object v10, v4
+
+    .line 38
+    goto :goto_3
+
+    .line 39
+    :cond_3
+    move-object/from16 v10, p5
+
+    .line 40
+    .line 41
+    :goto_3
+    and-int/lit8 v2, v1, 0x40
+
+    .line 42
+    .line 43
+    if-eqz v2, :cond_4
+
+    .line 44
+    .line 45
+    move v11, v5
+
+    .line 46
+    goto :goto_4
+
+    .line 47
+    :cond_4
+    move/from16 v11, p6
+
+    .line 48
+    .line 49
+    :goto_4
+    and-int/lit16 v2, v1, 0x80
+
+    .line 50
+    .line 51
+    if-eqz v2, :cond_5
+
+    .line 52
+    .line 53
+    const/4 v2, 0x0
+
+    .line 54
+    move v12, v2
+
+    .line 55
+    goto :goto_5
+
+    .line 56
+    :cond_5
+    move/from16 v12, p7
+
+    .line 57
+    .line 58
+    :goto_5
+    and-int/lit16 v2, v1, 0x100
+
+    .line 59
+    .line 60
+    if-eqz v2, :cond_6
+
+    .line 61
+    .line 62
+    move v13, v3
+
+    .line 63
+    goto :goto_6
+
+    .line 64
+    :cond_6
+    move/from16 v13, p8
+
+    .line 65
+    .line 66
+    :goto_6
+    and-int/lit16 v2, v1, 0x200
+
+    .line 67
+    .line 68
+    if-eqz v2, :cond_7
+
+    .line 69
+    .line 70
+    move v14, v3
+
+    .line 71
+    goto :goto_7
+
+    .line 72
+    :cond_7
+    move/from16 v14, p9
+
+    .line 73
+    .line 74
+    :goto_7
+    and-int/lit16 v1, v1, 0x400
+
+    .line 75
+    .line 76
+    if-eqz v1, :cond_8
+
+    .line 77
+    .line 78
+    const/high16 v1, 0x40800000    # 4.0f
+
+    .line 79
+    .line 80
+    move v15, v1
+
+    .line 81
+    goto :goto_8
+
+    .line 82
+    :cond_8
+    move/from16 v15, p10
+
+    .line 83
+    .line 84
+    :goto_8
+    iget-boolean v1, v0, Lkm2;->k:Z
+
+    .line 85
+    .line 86
+    if-eqz v1, :cond_9
+
+    .line 87
+    .line 88
+    const-string v1, "ImageVector.Builder is single use, create a new instance to create a new ImageVector"
+
+    .line 89
     .line 90
+    invoke-static {v1}, Lpo2;->b(Ljava/lang/String;)V
+
     .line 91
     .line 92
-    move-result-object v14
-
     .line 93
-    const/16 v0, 0xc4
+    :cond_9
+    iget-object v0, v0, Lkm2;->i:Ljava/util/ArrayList;
 
     .line 94
     .line 95
-    const/16 v1, 0xe4
+    const/4 v1, 0x1
 
     .line 96
-    .line 97
-    filled-new-array {v0, v1}, [I
+    invoke-static {v1, v0}, Lh86;->j(ILjava/util/ArrayList;)Ljava/lang/Object;
 
+    .line 97
     .line 98
     .line 99
+    move-result-object v0
+
     .line 100
-    move-result-object v15
+    check-cast v0, Ljm2;
 
     .line 101
-    const/16 v0, 0xc5
-
     .line 102
+    iget-object v0, v0, Ljm2;->j:Ljava/util/ArrayList;
+
     .line 103
-    const/16 v1, 0xe5
-
     .line 104
-    .line 105
-    filled-new-array {v0, v1}, [I
+    new-instance v4, Lj47;
 
+    .line 105
     .line 106
+    const-string v5, ""
+
     .line 107
     .line 108
-    move-result-object v16
+    const/16 v16, 0x0
 
     .line 109
-    const/16 v0, 0xc6
-
     .line 110
+    const/high16 v17, 0x3f800000    # 1.0f
+
     .line 111
-    const/16 v1, 0xe6
-
     .line 112
-    .line 113
-    filled-new-array {v0, v1}, [I
+    const/16 v18, 0x0
 
+    .line 113
     .line 114
+    move-object/from16 v6, p1
+
     .line 115
     .line 116
-    move-result-object v17
+    invoke-direct/range {v4 .. v18}, Lj47;-><init>(Ljava/lang/String;Ljava/util/List;ILad0;FLad0;FFIIFFFF)V
 
     .line 117
-    const/16 v0, 0xc7
-
     .line 118
     .line 119
-    const/16 v1, 0xe7
+    invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 120
     .line 121
-    filled-new-array {v0, v1}, [I
-
     .line 122
-    .line 123
-    .line 124
-    move-result-object v18
-
-    .line 125
-    const/16 v0, 0xc8
-
-    .line 126
-    .line 127
-    const/16 v1, 0xe8
-
-    .line 128
-    .line 129
-    filled-new-array {v0, v1}, [I
-
-    .line 130
-    .line 131
-    .line 132
-    move-result-object v19
-
-    .line 133
-    const/16 v0, 0xc9
-
-    .line 134
-    .line 135
-    const/16 v1, 0xe9
-
-    .line 136
-    .line 137
-    filled-new-array {v0, v1}, [I
-
-    .line 138
-    .line 139
-    .line 140
-    move-result-object v20
-
-    .line 141
-    const/16 v0, 0xca
-
-    .line 142
-    .line 143
-    const/16 v1, 0xea
-
-    .line 144
-    .line 145
-    filled-new-array {v0, v1}, [I
-
-    .line 146
-    .line 147
-    .line 148
-    move-result-object v21
-
-    .line 149
-    const/16 v0, 0xcb
-
-    .line 150
-    .line 151
-    const/16 v1, 0xeb
-
-    .line 152
-    .line 153
-    filled-new-array {v0, v1}, [I
-
-    .line 154
-    .line 155
-    .line 156
-    move-result-object v22
-
-    .line 157
-    const/16 v0, 0xcc
-
-    .line 158
-    .line 159
-    const/16 v1, 0xec
-
-    .line 160
-    .line 161
-    filled-new-array {v0, v1}, [I
-
-    .line 162
-    .line 163
-    .line 164
-    move-result-object v23
-
-    .line 165
-    const/16 v0, 0xcd
-
-    .line 166
-    .line 167
-    const/16 v1, 0xed
-
-    .line 168
-    .line 169
-    filled-new-array {v0, v1}, [I
-
-    .line 170
-    .line 171
-    .line 172
-    move-result-object v24
-
-    .line 173
-    const/16 v0, 0xce
-
-    .line 174
-    .line 175
-    const/16 v1, 0xee
-
-    .line 176
-    .line 177
-    filled-new-array {v0, v1}, [I
-
-    .line 178
-    .line 179
-    .line 180
-    move-result-object v25
-
-    .line 181
-    const/16 v0, 0xcf
-
-    .line 182
-    .line 183
-    const/16 v1, 0xef
-
-    .line 184
-    .line 185
-    filled-new-array {v0, v1}, [I
-
-    .line 186
-    .line 187
-    .line 188
-    move-result-object v26
-
-    .line 189
-    const/16 v0, 0xd0
-
-    .line 190
-    .line 191
-    const/16 v1, 0xf0
-
-    .line 192
-    .line 193
-    filled-new-array {v0, v1}, [I
-
-    .line 194
-    .line 195
-    .line 196
-    move-result-object v27
-
-    .line 197
-    const/16 v0, 0xd1
-
-    .line 198
-    .line 199
-    const/16 v1, 0xf1
-
-    .line 200
-    .line 201
-    filled-new-array {v0, v1}, [I
-
-    .line 202
-    .line 203
-    .line 204
-    move-result-object v28
-
-    .line 205
-    const/16 v0, 0xd2
-
-    .line 206
-    .line 207
-    const/16 v1, 0xf2
-
-    .line 208
-    .line 209
-    filled-new-array {v0, v1}, [I
-
-    .line 210
-    .line 211
-    .line 212
-    move-result-object v29
-
-    .line 213
-    const/16 v0, 0xd3
-
-    .line 214
-    .line 215
-    const/16 v1, 0xf3
-
-    .line 216
-    .line 217
-    filled-new-array {v0, v1}, [I
-
-    .line 218
-    .line 219
-    .line 220
-    move-result-object v30
-
-    .line 221
-    const/16 v0, 0xd4
-
-    .line 222
-    .line 223
-    const/16 v1, 0xf4
-
-    .line 224
-    .line 225
-    filled-new-array {v0, v1}, [I
-
-    .line 226
-    .line 227
-    .line 228
-    move-result-object v31
-
-    .line 229
-    const/16 v0, 0xd5
-
-    .line 230
-    .line 231
-    const/16 v1, 0xf5
-
-    .line 232
-    .line 233
-    filled-new-array {v0, v1}, [I
-
-    .line 234
-    .line 235
-    .line 236
-    move-result-object v32
-
-    .line 237
-    const/16 v0, 0xd6
-
-    .line 238
-    .line 239
-    const/16 v1, 0xf6
-
-    .line 240
-    .line 241
-    filled-new-array {v0, v1}, [I
-
-    .line 242
-    .line 243
-    .line 244
-    move-result-object v33
-
-    .line 245
-    const/16 v0, 0xd7
-
-    .line 246
-    .line 247
-    const/16 v1, 0xf7
-
-    .line 248
-    .line 249
-    filled-new-array {v0, v1}, [I
-
-    .line 250
-    .line 251
-    .line 252
-    move-result-object v34
-
-    .line 253
-    const/16 v0, 0xd8
-
-    .line 254
-    .line 255
-    const/16 v1, 0xf8
-
-    .line 256
-    .line 257
-    filled-new-array {v0, v1}, [I
-
-    .line 258
-    .line 259
-    .line 260
-    move-result-object v35
-
-    .line 261
-    const/16 v0, 0xd9
-
-    .line 262
-    .line 263
-    const/16 v1, 0xf9
-
-    .line 264
-    .line 265
-    filled-new-array {v0, v1}, [I
-
-    .line 266
-    .line 267
-    .line 268
-    move-result-object v36
-
-    .line 269
-    const/16 v0, 0xda
-
-    .line 270
-    .line 271
-    const/16 v1, 0xfa
-
-    .line 272
-    .line 273
-    filled-new-array {v0, v1}, [I
-
-    .line 274
-    .line 275
-    .line 276
-    move-result-object v37
-
-    .line 277
-    const/16 v0, 0xdb
-
-    .line 278
-    .line 279
-    const/16 v1, 0xfb
-
-    .line 280
-    .line 281
-    filled-new-array {v0, v1}, [I
-
-    .line 282
-    .line 283
-    .line 284
-    move-result-object v38
-
-    .line 285
-    filled-new-array/range {v5 .. v38}, [[I
-
-    .line 286
-    .line 287
-    .line 288
-    move-result-object v5
-
-    .line 289
-    new-instance v1, Lkm2;
-
-    .line 290
-    .line 291
-    const-string v2, "ISO-8859-7"
-
-    .line 292
-    .line 293
-    const/4 v6, 0x0
-
-    .line 294
-    invoke-direct/range {v1 .. v6}, Lym0;-><init>(Ljava/lang/String;[S[B[[IZ)V
-
-    .line 295
-    .line 296
-    .line 297
-    sput-object v1, Lkm2;->u:Lkm2;
-
-    .line 298
-    .line 299
     return-void
-
-    .line 300
-    nop
-
-    .line 301
-    :array_0
-    .array-data 2
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x420cs
-        0x4209s
-        0x4208s
-        0x4208s
-        0x4208s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4284s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x78b0s
-        0x78b0s
-        0x78b0s
-        0x78b0s
-        0x78b0s
-        0x78b0s
-        0x78b0s
-        0x78b0s
-        0x78b0s
-        0x78b0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x7ca2s
-        0x7ca2s
-        0x7ca2s
-        0x7ca2s
-        0x7ca2s
-        0x7ca2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x51a0s
-        0x41a0s
-        0x78e2s
-        0x78e2s
-        0x78e2s
-        0x78e2s
-        0x78e2s
-        0x78e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x4008s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x284s
-        0x1a0s
-        0x1a0s
-        0xa0s
-        0x0s
-        0x0s
-        0xa0s
-        0xa0s
-        0xa0s
-        0xa0s
-        0x0s
-        0x1a0s
-        0xa0s
-        0x1a0s
-        0x0s
-        0x1a0s
-        0xa0s
-        0xa0s
-        0x10a0s
-        0x10a0s
-        0xa0s
-        0xa0s
-        0x34a2s
-        0x1a0s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x1a0s
-        0x34a2s
-        0x10a0s
-        0x34a2s
-        0x34a2s
-        0x30e2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x0s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x34a2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x30e2s
-        0x0s
-    .end array-data
-
-    .line 302
-    .line 303
-    .line 304
-    .line 305
-    .line 306
-    .line 307
-    .line 308
-    .line 309
-    .line 310
-    .line 311
-    .line 312
-    .line 313
-    .line 314
-    .line 315
-    .line 316
-    .line 317
-    .line 318
-    .line 319
-    .line 320
-    .line 321
-    .line 322
-    .line 323
-    .line 324
-    .line 325
-    .line 326
-    .line 327
-    .line 328
-    .line 329
-    .line 330
-    .line 331
-    .line 332
-    .line 333
-    .line 334
-    .line 335
-    .line 336
-    .line 337
-    .line 338
-    .line 339
-    .line 340
-    .line 341
-    .line 342
-    .line 343
-    .line 344
-    .line 345
-    .line 346
-    .line 347
-    .line 348
-    .line 349
-    .line 350
-    .line 351
-    .line 352
-    .line 353
-    .line 354
-    .line 355
-    .line 356
-    .line 357
-    .line 358
-    .line 359
-    .line 360
-    .line 361
-    .line 362
-    .line 363
-    .line 364
-    .line 365
-    .line 366
-    .line 367
-    .line 368
-    .line 369
-    .line 370
-    .line 371
-    .line 372
-    .line 373
-    .line 374
-    .line 375
-    .line 376
-    .line 377
-    .line 378
-    .line 379
-    .line 380
-    .line 381
-    .line 382
-    .line 383
-    .line 384
-    .line 385
-    .line 386
-    .line 387
-    .line 388
-    .line 389
-    .line 390
-    .line 391
-    .line 392
-    .line 393
-    .line 394
-    .line 395
-    .line 396
-    .line 397
-    .line 398
-    .line 399
-    .line 400
-    .line 401
-    .line 402
-    .line 403
-    .line 404
-    .line 405
-    .line 406
-    .line 407
-    :array_1
-    .array-data 1
-        0x0t
-        0x1t
-        0x2t
-        0x3t
-        0x4t
-        0x5t
-        0x6t
-        0x7t
-        0x8t
-        0x9t
-        0xat
-        0xbt
-        0xct
-        0xdt
-        0xet
-        0xft
-        0x10t
-        0x11t
-        0x12t
-        0x13t
-        0x14t
-        0x15t
-        0x16t
-        0x17t
-        0x18t
-        0x19t
-        0x1at
-        0x1bt
-        0x1ct
-        0x1dt
-        0x1et
-        0x1ft
-        0x20t
-        0x21t
-        0x22t
-        0x23t
-        0x24t
-        0x25t
-        0x26t
-        0x27t
-        0x28t
-        0x29t
-        0x2at
-        0x2bt
-        0x2ct
-        0x2dt
-        0x2et
-        0x2ft
-        0x30t
-        0x31t
-        0x32t
-        0x33t
-        0x34t
-        0x35t
-        0x36t
-        0x37t
-        0x38t
-        0x39t
-        0x3at
-        0x3bt
-        0x3ct
-        0x3dt
-        0x3et
-        0x3ft
-        0x40t
-        0x61t
-        0x62t
-        0x63t
-        0x64t
-        0x65t
-        0x66t
-        0x67t
-        0x68t
-        0x69t
-        0x6at
-        0x6bt
-        0x6ct
-        0x6dt
-        0x6et
-        0x6ft
-        0x70t
-        0x71t
-        0x72t
-        0x73t
-        0x74t
-        0x75t
-        0x76t
-        0x77t
-        0x78t
-        0x79t
-        0x7at
-        0x5bt
-        0x5ct
-        0x5dt
-        0x5et
-        0x5ft
-        0x60t
-        0x61t
-        0x62t
-        0x63t
-        0x64t
-        0x65t
-        0x66t
-        0x67t
-        0x68t
-        0x69t
-        0x6at
-        0x6bt
-        0x6ct
-        0x6dt
-        0x6et
-        0x6ft
-        0x70t
-        0x71t
-        0x72t
-        0x73t
-        0x74t
-        0x75t
-        0x76t
-        0x77t
-        0x78t
-        0x79t
-        0x7at
-        0x7bt
-        0x7ct
-        0x7dt
-        0x7et
-        0x7ft
-        -0x80t
-        -0x7ft
-        -0x7et
-        -0x7dt
-        -0x7ct
-        -0x7bt
-        -0x7at
-        -0x79t
-        -0x78t
-        -0x77t
-        -0x76t
-        -0x75t
-        -0x74t
-        -0x73t
-        -0x72t
-        -0x71t
-        -0x70t
-        -0x6ft
-        -0x6et
-        -0x6dt
-        -0x6ct
-        -0x6bt
-        -0x6at
-        -0x69t
-        -0x68t
-        -0x67t
-        -0x66t
-        -0x65t
-        -0x64t
-        -0x63t
-        -0x62t
-        -0x61t
-        -0x60t
-        -0x5ft
-        -0x5et
-        -0x5dt
-        -0x5ct
-        -0x5bt
-        -0x5at
-        -0x59t
-        -0x58t
-        -0x57t
-        -0x56t
-        -0x55t
-        -0x54t
-        -0x53t
-        -0x52t
-        -0x51t
-        -0x50t
-        -0x4ft
-        -0x4et
-        -0x4dt
-        -0x4ct
-        -0x4bt
-        -0x24t
-        -0x49t
-        -0x23t
-        -0x22t
-        -0x21t
-        -0x45t
-        -0x4t
-        -0x43t
-        -0x3t
-        -0x2t
-        -0x40t
-        -0x1ft
-        -0x1et
-        -0x1dt
-        -0x1ct
-        -0x1bt
-        -0x1at
-        -0x19t
-        -0x18t
-        -0x17t
-        -0x16t
-        -0x15t
-        -0x14t
-        -0x13t
-        -0x12t
-        -0x11t
-        -0x10t
-        -0xft
-        -0x2et
-        -0xdt
-        -0xct
-        -0xbt
-        -0xat
-        -0x9t
-        -0x8t
-        -0x7t
-        -0x6t
-        -0x5t
-        -0x24t
-        -0x23t
-        -0x22t
-        -0x21t
-        -0x20t
-        -0x1ft
-        -0x1et
-        -0x1dt
-        -0x1ct
-        -0x1bt
-        -0x1at
-        -0x19t
-        -0x18t
-        -0x17t
-        -0x16t
-        -0x15t
-        -0x14t
-        -0x13t
-        -0x12t
-        -0x11t
-        -0x10t
-        -0xft
-        -0xet
-        -0xdt
-        -0xct
-        -0xbt
-        -0xat
-        -0x9t
-        -0x8t
-        -0x7t
-        -0x6t
-        -0x5t
-        -0x4t
-        -0x3t
-        -0x2t
-        -0x1t
-    .end array-data
 .end method
 
 
 # virtual methods
-.method public final A()[B
-    .locals 0
+.method public final a(Ljava/lang/String;FFFFFFFLjava/util/List;)V
+    .locals 12
 
     .line 1
-    iget-object p0, p0, Lh56;->q:[B
+    iget-boolean v0, p0, Lkm2;->k:Z
 
     .line 2
     .line 3
-    return-object p0
-.end method
-
-.method public final s(I[BLus1;I[B)I
-    .locals 0
-
-    .line 1
-    iget p1, p3, Lus1;->c:I
-
-    .line 2
-    .line 3
-    aget-byte p2, p2, p1
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    and-int/lit16 p2, p2, 0xff
+    const-string v0, "ImageVector.Builder is single use, create a new instance to create a new ImageVector"
 
     .line 6
     .line 7
-    iget-object p0, p0, Lh56;->q:[B
+    invoke-static {v0}, Lpo2;->b(Ljava/lang/String;)V
 
     .line 8
     .line 9
-    aget-byte p0, p0, p2
-
     .line 10
-    .line 11
-    const/4 p2, 0x0
+    :cond_0
+    new-instance v1, Ljm2;
 
+    .line 11
     .line 12
-    aput-byte p0, p5, p2
+    const/16 v11, 0x200
 
     .line 13
     .line 14
-    const/4 p0, 0x1
+    move-object v2, p1
 
     .line 15
-    add-int/2addr p1, p0
+    move v3, p2
 
     .line 16
-    iput p1, p3, Lus1;->c:I
+    move v4, p3
 
     .line 17
+    move/from16 v5, p4
+
     .line 18
-    return p0
+    .line 19
+    move/from16 v6, p5
+
+    .line 20
+    .line 21
+    move/from16 v7, p6
+
+    .line 22
+    .line 23
+    move/from16 v8, p7
+
+    .line 24
+    .line 25
+    move/from16 v9, p8
+
+    .line 26
+    .line 27
+    move-object/from16 v10, p9
+
+    .line 28
+    .line 29
+    invoke-direct/range {v1 .. v11}, Ljm2;-><init>(Ljava/lang/String;FFFFFFFLjava/util/List;I)V
+
+    .line 30
+    .line 31
+    .line 32
+    iget-object p0, p0, Lkm2;->i:Ljava/util/ArrayList;
+
+    .line 33
+    .line 34
+    invoke-virtual {p0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 35
+    .line 36
+    .line 37
+    return-void
+.end method
+
+.method public final c()Llm2;
+    .locals 14
+
+    .line 1
+    iget-boolean v0, p0, Lkm2;->k:Z
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    const-string v0, "ImageVector.Builder is single use, create a new instance to create a new ImageVector"
+
+    .line 6
+    .line 7
+    invoke-static {v0}, Lpo2;->b(Ljava/lang/String;)V
+
+    .line 8
+    .line 9
+    .line 10
+    :cond_0
+    :goto_0
+    iget-object v0, p0, Lkm2;->i:Ljava/util/ArrayList;
+
+    .line 11
+    .line 12
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result v0
+
+    .line 16
+    const/4 v1, 0x1
+
+    .line 17
+    if-le v0, v1, :cond_1
+
+    .line 18
+    .line 19
+    invoke-virtual {p0}, Lkm2;->d()V
+
+    .line 20
+    .line 21
+    .line 22
+    goto :goto_0
+
+    .line 23
+    :cond_1
+    new-instance v2, Llm2;
+
+    .line 24
+    .line 25
+    new-instance v3, Lg47;
+
+    .line 26
+    .line 27
+    iget-object v0, p0, Lkm2;->j:Ljm2;
+
+    .line 28
+    .line 29
+    iget-object v4, v0, Ljm2;->a:Ljava/lang/String;
+
+    .line 30
+    .line 31
+    iget v5, v0, Ljm2;->b:F
+
+    .line 32
+    .line 33
+    iget v6, v0, Ljm2;->c:F
+
+    .line 34
+    .line 35
+    iget v7, v0, Ljm2;->d:F
+
+    .line 36
+    .line 37
+    iget v8, v0, Ljm2;->e:F
+
+    .line 38
+    .line 39
+    iget v9, v0, Ljm2;->f:F
+
+    .line 40
+    .line 41
+    iget v10, v0, Ljm2;->g:F
+
+    .line 42
+    .line 43
+    iget v11, v0, Ljm2;->h:F
+
+    .line 44
+    .line 45
+    iget-object v12, v0, Ljm2;->i:Ljava/util/List;
+
+    .line 46
+    .line 47
+    iget-object v13, v0, Ljm2;->j:Ljava/util/ArrayList;
+
+    .line 48
+    .line 49
+    invoke-direct/range {v3 .. v13}, Lg47;-><init>(Ljava/lang/String;FFFFFFFLjava/util/List;Ljava/util/ArrayList;)V
+
+    .line 50
+    .line 51
+    .line 52
+    iget v11, p0, Lkm2;->g:I
+
+    .line 53
+    .line 54
+    iget-boolean v12, p0, Lkm2;->h:Z
+
+    .line 55
+    .line 56
+    move-object v8, v3
+
+    .line 57
+    iget-object v3, p0, Lkm2;->a:Ljava/lang/String;
+
+    .line 58
+    .line 59
+    iget v4, p0, Lkm2;->b:F
+
+    .line 60
+    .line 61
+    iget v5, p0, Lkm2;->c:F
+
+    .line 62
+    .line 63
+    iget v6, p0, Lkm2;->d:F
+
+    .line 64
+    .line 65
+    iget v7, p0, Lkm2;->e:F
+
+    .line 66
+    .line 67
+    iget-wide v9, p0, Lkm2;->f:J
+
+    .line 68
+    .line 69
+    invoke-direct/range {v2 .. v12}, Llm2;-><init>(Ljava/lang/String;FFFFLg47;JIZ)V
+
+    .line 70
+    .line 71
+    .line 72
+    iput-boolean v1, p0, Lkm2;->k:Z
+
+    .line 73
+    .line 74
+    return-object v2
+.end method
+
+.method public final d()V
+    .locals 12
+
+    .line 1
+    iget-boolean v0, p0, Lkm2;->k:Z
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    const-string v0, "ImageVector.Builder is single use, create a new instance to create a new ImageVector"
+
+    .line 6
+    .line 7
+    invoke-static {v0}, Lpo2;->b(Ljava/lang/String;)V
+
+    .line 8
+    .line 9
+    .line 10
+    :cond_0
+    iget-object p0, p0, Lkm2;->i:Ljava/util/ArrayList;
+
+    .line 11
+    .line 12
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result v0
+
+    .line 16
+    const/4 v1, 0x1
+
+    .line 17
+    sub-int/2addr v0, v1
+
+    .line 18
+    invoke-virtual {p0, v0}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object v0
+
+    .line 22
+    check-cast v0, Ljm2;
+
+    .line 23
+    .line 24
+    invoke-static {v1, p0}, Lh86;->j(ILjava/util/ArrayList;)Ljava/lang/Object;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object p0
+
+    .line 28
+    check-cast p0, Ljm2;
+
+    .line 29
+    .line 30
+    iget-object p0, p0, Ljm2;->j:Ljava/util/ArrayList;
+
+    .line 31
+    .line 32
+    new-instance v1, Lg47;
+
+    .line 33
+    .line 34
+    iget-object v2, v0, Ljm2;->a:Ljava/lang/String;
+
+    .line 35
+    .line 36
+    iget v3, v0, Ljm2;->b:F
+
+    .line 37
+    .line 38
+    iget v4, v0, Ljm2;->c:F
+
+    .line 39
+    .line 40
+    iget v5, v0, Ljm2;->d:F
+
+    .line 41
+    .line 42
+    iget v6, v0, Ljm2;->e:F
+
+    .line 43
+    .line 44
+    iget v7, v0, Ljm2;->f:F
+
+    .line 45
+    .line 46
+    iget v8, v0, Ljm2;->g:F
+
+    .line 47
+    .line 48
+    iget v9, v0, Ljm2;->h:F
+
+    .line 49
+    .line 50
+    iget-object v10, v0, Ljm2;->i:Ljava/util/List;
+
+    .line 51
+    .line 52
+    iget-object v11, v0, Ljm2;->j:Ljava/util/ArrayList;
+
+    .line 53
+    .line 54
+    invoke-direct/range {v1 .. v11}, Lg47;-><init>(Ljava/lang/String;FFFFFFFLjava/util/List;Ljava/util/ArrayList;)V
+
+    .line 55
+    .line 56
+    .line 57
+    invoke-virtual {p0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 58
+    .line 59
+    .line 60
+    return-void
 .end method

@@ -1,172 +1,161 @@
-.class public abstract Lj21;
+.class public final synthetic Lj21;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
-# virtual methods
-.method public abstract a(Lp21;Lt62;)V
-.end method
+# instance fields
+.field public final synthetic j:B
 
-.method public abstract b(Lp21;Ls46;Lt62;)Lht3;
-.end method
+.field public final synthetic k:Lf21;
 
-.method public abstract c(Lbr3;)V
-.end method
+.field public final synthetic l:Ljava/lang/String;
 
-.method public d()V
+
+# direct methods
+.method public synthetic constructor <init>(Lf21;Ljava/lang/String;IB)V
     .locals 0
 
     .line 1
-    return-void
-.end method
-
-.method public e()Z
-    .locals 0
-
-    .line 1
-    sget-object p0, Lba5;->A:Ljava/util/concurrent/atomic/AtomicReference;
+    iput-byte p4, p0, Lj21;->j:B
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+    iput-object p1, p0, Lj21;->k:Lf21;
 
     .line 4
     .line 5
-    .line 6
-    move-result-object p0
+    iput-object p2, p0, Lj21;->l:Ljava/lang/String;
 
+    .line 6
     .line 7
-    check-cast p0, Ljava/lang/Boolean;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 8
     .line 9
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
     .line 10
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
+
+    .line 1
+    iget-byte v0, p0, Lj21;->j:B
+
+    .line 2
+    .line 3
+    sget-object v1, Lk27;->a:Lk27;
+
+    .line 4
+    .line 5
+    const/4 v2, 0x1
+
+    .line 6
+    iget-object v3, p0, Lj21;->l:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    iget-object p0, p0, Lj21;->k:Lf21;
+
+    .line 9
+    .line 10
+    check-cast p1, Lv01;
+
     .line 11
     .line 12
-    move-result p0
+    check-cast p2, Ljava/lang/Integer;
 
     .line 13
-    return p0
-.end method
+    .line 14
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.method public f()Z
-    .locals 0
+    .line 15
+    .line 16
+    .line 17
+    packed-switch v0, :pswitch_data_0
 
-    .line 1
-    const/4 p0, 0x0
+    .line 18
+    .line 19
+    .line 20
+    invoke-static {v2}, Lw23;->h0(I)I
 
-    .line 2
-    return p0
-.end method
+    .line 21
+    .line 22
+    .line 23
+    move-result p2
 
-.method public g()Z
-    .locals 0
+    .line 24
+    invoke-static {p0, v3, p1, p2}, Llv;->u(Lf21;Ljava/lang/String;Lv01;I)V
 
-    .line 1
-    const/4 p0, 0x0
+    .line 25
+    .line 26
+    .line 27
+    return-object v1
 
-    .line 2
-    return p0
-.end method
+    .line 28
+    :pswitch_0
+    invoke-static {v2}, Lw23;->h0(I)I
 
-.method public h()J
-    .locals 2
+    .line 29
+    .line 30
+    .line 31
+    move-result p2
 
-    .line 1
-    const-wide/16 v0, 0x3e8
+    .line 32
+    invoke-static {p0, v3, p1, p2}, Lkf3;->m(Lf21;Ljava/lang/String;Lv01;I)V
 
-    .line 2
-    .line 3
-    return-wide v0
-.end method
+    .line 33
+    .line 34
+    .line 35
+    return-object v1
 
-.method public i()Li21;
-    .locals 0
+    .line 36
+    :pswitch_1
+    invoke-static {v2}, Lw23;->h0(I)I
 
-    .line 1
-    const/4 p0, 0x0
+    .line 37
+    .line 38
+    .line 39
+    move-result p2
 
-    .line 2
-    return-object p0
-.end method
+    .line 40
+    invoke-static {p0, v3, p1, p2}, Lk37;->k(Lf21;Ljava/lang/String;Lv01;I)V
 
-.method public j()Lro4;
-    .locals 0
+    .line 41
+    .line 42
+    .line 43
+    return-object v1
 
-    .line 1
-    sget-object p0, Lk21;->a:Lro4;
+    .line 44
+    :pswitch_2
+    invoke-static {v2}, Lw23;->h0(I)I
 
-    .line 2
-    .line 3
-    return-object p0
-.end method
+    .line 45
+    .line 46
+    .line 47
+    move-result p2
 
-.method public abstract k()Lrb1;
-.end method
+    .line 48
+    invoke-static {p0, v3, p1, p2}, Lqz6;->d(Lf21;Ljava/lang/String;Lv01;I)V
 
-.method public l()Z
-    .locals 0
+    .line 49
+    .line 50
+    .line 51
+    return-object v1
 
-    .line 1
-    const/4 p0, 0x0
+    .line 52
+    nop
 
-    .line 2
-    return p0
-.end method
-
-.method public abstract m(Lbr3;)V
-.end method
-
-.method public abstract n(Lp21;)V
-.end method
-
-.method public abstract o(Lbr3;Lar3;Lpv;)V
-.end method
-
-.method public abstract p(Lbr3;)Lar3;
-.end method
-
-.method public abstract q(Lp21;Ls46;Lht3;)Lht3;
-.end method
-
-.method public r(Ljava/util/Set;)V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method public s(Lt72;)V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method public abstract t(Lu95;)V
-.end method
-
-.method public abstract u(Lp21;)V
-.end method
-
-.method public abstract v(Lgn2;)Lui0;
-.end method
-
-.method public w()V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method public x(Lt72;)V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method public abstract y(Lp21;)V
+    .line 53
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

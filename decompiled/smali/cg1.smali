@@ -1,67 +1,120 @@
 .class public final Lcg1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lr67;
 
 
 # static fields
-.field public static final b:Ljava/lang/ThreadLocal;
+.field public static final b:Lcg1;
 
 
 # instance fields
-.field public final a:Landroid/text/TextPaint;
+.field public final synthetic a:B
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 2
 
     .line 1
-    new-instance v0, Ljava/lang/ThreadLocal;
+    new-instance v0, Lcg1;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
+    const/4 v1, 0x0
 
     .line 4
+    invoke-direct {v0, v1}, Lcg1;-><init>(B)V
+
     .line 5
     .line 6
-    sput-object v0, Lcg1;->b:Ljava/lang/ThreadLocal;
-
     .line 7
+    sput-object v0, Lcg1;->b:Lcg1;
+
     .line 8
+    .line 9
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 1
+.method public synthetic constructor <init>(B)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p1, p0, Lcg1;->a:B
 
     .line 2
     .line 3
-    .line 4
-    new-instance v0, Landroid/text/TextPaint;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 4
     .line 5
     .line 6
-    invoke-direct {v0}, Landroid/text/TextPaint;-><init>()V
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Ljava/lang/Class;)Ln67;
+    .locals 0
+
+    .line 1
+    iget-byte p0, p0, Lcg1;->a:B
+
+    .line 2
+    .line 3
+    packed-switch p0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    new-instance p0, Lta3;
 
     .line 7
     .line 8
-    .line 9
-    iput-object v0, p0, Lcg1;->a:Landroid/text/TextPaint;
+    invoke-direct {p0}, Lta3;-><init>()V
 
+    .line 9
     .line 10
     .line 11
-    const/high16 p0, 0x41200000    # 10.0f
+    return-object p0
 
     .line 12
-    .line 13
-    invoke-virtual {v0, p0}, Landroid/graphics/Paint;->setTextSize(F)V
+    :pswitch_0
+    new-instance p0, Ly42;
 
+    .line 13
     .line 14
+    const/4 p1, 0x1
+
     .line 15
+    invoke-direct {p0, p1}, Ly42;-><init>(Z)V
+
     .line 16
-    return-void
+    .line 17
+    .line 18
+    return-object p0
+
+    .line 19
+    :pswitch_1
+    invoke-static {p1}, Lt67;->x(Ljava/lang/Class;)Ln67;
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-object p0
+
+    .line 23
+    return-object p0
+
+    .line 24
+    nop
+
+    .line 25
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,109 +1,308 @@
-.class public final synthetic Lir4;
+.class public abstract Lir4;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Le62;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic j:B
+# static fields
+.field public static final a:[[B
 
-.field public final synthetic k:Lp62;
+.field public static final b:[I
 
-.field public final synthetic l:Lzr4;
+.field public static final c:Ldg0;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lp62;Lzr4;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 15
 
     .line 1
-    iput-byte p3, p0, Lir4;->j:B
+    const-string v0, "alnum"
 
     .line 2
     .line 3
-    iput-object p1, p0, Lir4;->k:Lp62;
+    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
 
     .line 4
     .line 5
-    iput-object p2, p0, Lir4;->l:Lzr4;
-
     .line 6
+    move-result-object v1
+
     .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v0, "alpha"
 
     .line 8
     .line 9
-    .line 10
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
-
-    .line 1
-    iget-byte v0, p0, Lir4;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    iget-object v2, p0, Lir4;->l:Lzr4;
-
-    .line 6
-    .line 7
-    iget-object p0, p0, Lir4;->k:Lp62;
-
-    .line 8
-    .line 9
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
 
     .line 10
     .line 11
     .line 12
-    invoke-virtual {v2}, Lzr4;->a()Ljava/util/List;
+    move-result-object v2
 
     .line 13
+    const-string v0, "blank"
+
     .line 14
     .line 15
-    move-result-object v0
+    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
 
     .line 16
-    invoke-interface {p0, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 17
     .line 18
+    move-result-object v3
+
     .line 19
-    return-object v1
+    const-string v0, "cntrl"
 
     .line 20
-    :pswitch_0
-    invoke-virtual {v2}, Lzr4;->a()Ljava/util/List;
-
     .line 21
+    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
+
     .line 22
     .line 23
-    move-result-object v0
-
     .line 24
-    invoke-interface {p0, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object v4
 
     .line 25
+    const-string v0, "digit"
+
     .line 26
     .line 27
-    return-object v1
+    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
 
     .line 28
-    nop
-
     .line 29
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 30
+    move-result-object v5
+
+    .line 31
+    const-string v0, "graph"
+
+    .line 32
+    .line 33
+    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
+
+    .line 34
+    .line 35
+    .line 36
+    move-result-object v6
+
+    .line 37
+    const-string v0, "lower"
+
+    .line 38
+    .line 39
+    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
+
+    .line 40
+    .line 41
+    .line 42
+    move-result-object v7
+
+    .line 43
+    const-string v0, "print"
+
+    .line 44
+    .line 45
+    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
+
+    .line 46
+    .line 47
+    .line 48
+    move-result-object v8
+
+    .line 49
+    const-string v0, "punct"
+
+    .line 50
+    .line 51
+    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
+
+    .line 52
+    .line 53
+    .line 54
+    move-result-object v9
+
+    .line 55
+    const-string v0, "space"
+
+    .line 56
+    .line 57
+    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
+
+    .line 58
+    .line 59
+    .line 60
+    move-result-object v10
+
+    .line 61
+    const-string v0, "upper"
+
+    .line 62
+    .line 63
+    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
+
+    .line 64
+    .line 65
+    .line 66
+    move-result-object v11
+
+    .line 67
+    const-string v0, "xdigit"
+
+    .line 68
+    .line 69
+    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
+
+    .line 70
+    .line 71
+    .line 72
+    move-result-object v12
+
+    .line 73
+    const-string v0, "ascii"
+
+    .line 74
+    .line 75
+    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
+
+    .line 76
+    .line 77
+    .line 78
+    move-result-object v13
+
+    .line 79
+    const-string v0, "word"
+
+    .line 80
+    .line 81
+    invoke-virtual {v0}, Ljava/lang/String;->getBytes()[B
+
+    .line 82
+    .line 83
+    .line 84
+    move-result-object v14
+
+    .line 85
+    filled-new-array/range {v1 .. v14}, [[B
+
+    .line 86
+    .line 87
+    .line 88
+    move-result-object v0
+
+    .line 89
+    sput-object v0, Lir4;->a:[[B
+
+    .line 90
+    .line 91
+    const/16 v0, 0xe
+
+    .line 92
+    .line 93
+    new-array v0, v0, [I
+
+    .line 94
+    .line 95
+    fill-array-data v0, :array_0
+
+    .line 96
+    .line 97
+    .line 98
+    sput-object v0, Lir4;->b:[I
+
+    .line 99
+    .line 100
+    new-instance v0, Ldg0;
+
+    .line 101
+    .line 102
+    const/16 v1, 0x13
+
+    .line 103
+    .line 104
+    const/4 v2, 0x1
+
+    .line 105
+    invoke-direct {v0, v1, v2}, Ldg0;-><init>(IB)V
+
+    .line 106
+    .line 107
+    .line 108
+    sput-object v0, Lir4;->c:Ldg0;
+
+    .line 109
+    .line 110
+    const/4 v0, 0x0
+
+    .line 111
+    :goto_0
+    sget-object v1, Lir4;->b:[I
+
+    .line 112
+    .line 113
+    array-length v2, v1
+
+    .line 114
+    if-ge v0, v2, :cond_0
+
+    .line 115
+    .line 116
+    sget-object v2, Lir4;->c:Ldg0;
+
+    .line 117
+    .line 118
+    sget-object v3, Lir4;->a:[[B
+
+    .line 119
+    .line 120
+    aget-object v3, v3, v0
+
+    .line 121
+    .line 122
+    aget v1, v1, v0
+
+    .line 123
+    .line 124
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    .line 125
+    .line 126
+    .line 127
+    move-result-object v1
+
+    .line 128
+    invoke-virtual {v2, v3, v1}, Ldg0;->h([BLjava/lang/Integer;)V
+
+    .line 129
+    .line 130
+    .line 131
+    add-int/lit8 v0, v0, 0x1
+
+    .line 132
+    .line 133
+    goto :goto_0
+
+    .line 134
+    :cond_0
+    return-void
+
+    .line 135
+    :array_0
+    .array-data 4
+        0xd
+        0x1
+        0x2
+        0x3
+        0x4
+        0x5
+        0x6
+        0x7
+        0x8
+        0x9
+        0xa
+        0xb
+        0xe
+        0xc
+    .end array-data
 .end method

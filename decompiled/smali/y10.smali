@@ -1,310 +1,496 @@
 .class public final Ly10;
-.super Lgd5;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lt62;
+.implements Lql2;
 
 
 # instance fields
-.field public k:Lpq4;
-
-.field public l:Z
-
-.field public synthetic m:Ljava/lang/Object;
-
-.field public final synthetic n:Lac1;
-
-.field public final synthetic o:Lxw6;
+.field public final a:Landroid/graphics/Bitmap;
 
 
 # direct methods
-.method public constructor <init>(Lac1;Lxw6;Ly81;)V
+.method public constructor <init>(Landroid/graphics/Bitmap;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Ly10;->n:Lac1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p2, p0, Ly10;->o:Lxw6;
-
     .line 4
+    iput-object p1, p0, Ly10;->a:Landroid/graphics/Bitmap;
+
     .line 5
-    const/4 p1, 0x2
-
     .line 6
-    invoke-direct {p0, p1, p3}, Lgd5;-><init>(ILy81;)V
-
-    .line 7
-    .line 8
-    .line 9
     return-void
 .end method
 
 
 # virtual methods
-.method public final create(Ljava/lang/Object;Ly81;)Ly81;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ly10;
-
-    .line 2
-    .line 3
-    iget-object v1, p0, Ly10;->n:Lac1;
-
-    .line 4
-    .line 5
-    iget-object p0, p0, Ly10;->o:Lxw6;
-
-    .line 6
-    .line 7
-    invoke-direct {v0, v1, p0, p2}, Ly10;-><init>(Lac1;Lxw6;Ly81;)V
-
-    .line 8
-    .line 9
-    .line 10
-    iput-object p1, v0, Ly10;->m:Ljava/lang/Object;
-
-    .line 11
-    .line 12
-    return-object v0
-.end method
-
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a()I
     .locals 0
 
     .line 1
-    check-cast p1, Lrh6;
+    iget-object p0, p0, Ly10;->a:Landroid/graphics/Bitmap;
 
     .line 2
     .line 3
-    check-cast p2, Ly81;
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     .line 4
     .line 5
-    invoke-virtual {p0, p1, p2}, Ly10;->create(Ljava/lang/Object;Ly81;)Ly81;
-
     .line 6
+    move-result p0
+
     .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    check-cast p0, Ly10;
-
-    .line 10
-    .line 11
-    sget-object p1, La47;->a:La47;
-
-    .line 12
-    .line 13
-    invoke-virtual {p0, p1}, Ly10;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
-    sget-object p0, Lbc1;->j:Lbc1;
-
-    .line 17
-    .line 18
-    return-object p0
+    return p0
 .end method
 
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
+.method public final b()I
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Ly10;->m:Ljava/lang/Object;
+    iget-object p0, p0, Ly10;->a:Landroid/graphics/Bitmap;
 
     .line 2
     .line 3
-    check-cast v0, Lrh6;
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
     .line 4
     .line 5
-    iget-boolean v1, p0, Ly10;->l:Z
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final c()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x1
+
+    .line 2
+    return p0
+.end method
+
+.method public final d(Landroid/graphics/Canvas;)V
+    .locals 2
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    const/4 v1, 0x0
+
+    .line 3
+    iget-object p0, p0, Ly10;->a:Landroid/graphics/Bitmap;
+
+    .line 4
+    .line 5
+    invoke-virtual {p1, p0, v0, v0, v1}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
     .line 6
     .line 7
-    const/4 v2, 0x0
+    .line 8
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Ly10;
+
+    .line 6
+    .line 7
+    if-nez v1, :cond_1
 
     .line 8
-    const/4 v3, 0x1
-
     .line 9
-    if-eqz v1, :cond_1
+    goto :goto_0
+
+    .line 10
+    :cond_1
+    check-cast p1, Ly10;
+
+    .line 11
+    .line 12
+    iget-object p0, p0, Ly10;->a:Landroid/graphics/Bitmap;
+
+    .line 13
+    .line 14
+    iget-object p1, p1, Ly10;->a:Landroid/graphics/Bitmap;
+
+    .line 15
+    .line 16
+    invoke-static {p0, p1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 17
+    .line 18
+    .line 19
+    move-result p0
+
+    .line 20
+    if-nez p0, :cond_2
+
+    .line 21
+    .line 22
+    :goto_0
+    const/4 p0, 0x0
+
+    .line 23
+    return p0
+
+    .line 24
+    :cond_2
+    return v0
+.end method
+
+.method public final getSize()J
+    .locals 5
+
+    .line 1
+    iget-object p0, p0, Ly10;->a:Landroid/graphics/Bitmap;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->isRecycled()Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    if-nez v0, :cond_4
+
+    .line 8
+    .line 9
+    :try_start_0
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getAllocationByteCount()I
 
     .line 10
     .line 11
-    if-ne v1, v3, :cond_0
-
     .line 12
+    move-result p0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
     .line 13
-    iget-object v1, p0, Ly10;->k:Lpq4;
+    goto :goto_2
 
     .line 14
-    .line 15
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    :catch_0
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
+    .line 15
     .line 16
     .line 17
+    move-result v0
+
     .line 18
-    goto :goto_1
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     .line 19
-    :cond_0
-    const-string p0, "call to \'resume\' before \'invoke\' with coroutine"
-
     .line 20
     .line 21
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+    move-result v1
 
     .line 22
+    mul-int/2addr v1, v0
+
     .line 23
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
+
     .line 24
-    return-object v2
-
     .line 25
-    :cond_1
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
     .line 26
+    move-result-object p0
+
     .line 27
+    sget-object v0, Landroid/graphics/Bitmap$Config;->ALPHA_8:Landroid/graphics/Bitmap$Config;
+
     .line 28
-    sget-object p1, Lpq4;->k:Lpq4;
-
     .line 29
-    .line 30
-    move-object v1, p1
+    if-ne p0, v0, :cond_0
 
+    .line 30
     .line 31
-    :cond_2
-    :goto_0
-    iput-object v0, p0, Ly10;->m:Ljava/lang/Object;
+    const/4 p0, 0x1
 
     .line 32
+    goto :goto_1
+
     .line 33
-    iput-object v1, p0, Ly10;->k:Lpq4;
+    :cond_0
+    sget-object v0, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
 
     .line 34
     .line 35
-    iput-boolean v3, p0, Ly10;->l:Z
+    const/4 v2, 0x2
 
     .line 36
-    .line 37
-    invoke-virtual {v0, v1, p0}, Lrh6;->c(Lpq4;Ly81;)Ljava/lang/Object;
+    if-ne p0, v0, :cond_1
 
+    .line 37
     .line 38
+    :goto_0
+    move p0, v2
+
     .line 39
+    goto :goto_1
+
     .line 40
-    move-result-object p1
+    :cond_1
+    sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_4444:Landroid/graphics/Bitmap$Config;
 
     .line 41
-    sget-object v4, Lbc1;->j:Lbc1;
-
     .line 42
-    .line 43
-    if-ne p1, v4, :cond_3
+    if-ne p0, v0, :cond_2
 
+    .line 43
     .line 44
+    goto :goto_0
+
     .line 45
-    return-object v4
+    :cond_2
+    sget-object v0, Landroid/graphics/Bitmap$Config;->RGBA_F16:Landroid/graphics/Bitmap$Config;
 
     .line 46
-    :cond_3
-    :goto_1
-    check-cast p1, Loq4;
-
     .line 47
+    if-ne p0, v0, :cond_3
+
     .line 48
-    iget-object v4, p1, Loq4;->a:Ljava/util/List;
-
     .line 49
-    .line 50
-    const/4 v5, 0x0
+    const/16 p0, 0x8
 
+    .line 50
     .line 51
-    invoke-interface {v4, v5}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    goto :goto_1
 
     .line 52
+    :cond_3
+    const/4 p0, 0x4
+
     .line 53
+    :goto_1
+    mul-int/2addr p0, v1
+
     .line 54
-    move-result-object v4
+    :goto_2
+    int-to-long v0, p0
 
     .line 55
-    check-cast v4, Lwq4;
+    return-wide v0
 
     .line 56
-    .line 57
-    iget v4, v4, Lwq4;->i:I
+    :cond_4
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getWidth()I
 
+    .line 57
     .line 58
     .line 59
-    const/4 v5, 0x2
+    move-result v0
 
     .line 60
-    if-ne v4, v5, :cond_2
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getHeight()I
 
     .line 61
     .line 62
-    iget p1, p1, Loq4;->f:I
-
     .line 63
+    move-result v1
+
     .line 64
-    const/4 v4, 0x4
+    invoke-virtual {p0}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;
 
     .line 65
-    iget-object v6, p0, Ly10;->o:Lxw6;
-
     .line 66
     .line 67
-    if-ne p1, v4, :cond_4
+    move-result-object v2
 
     .line 68
+    new-instance v3, Ljava/lang/StringBuilder;
+
     .line 69
-    new-instance p1, Lt10;
-
     .line 70
-    .line 71
-    invoke-direct {p1, v6, v2, v5}, Lt10;-><init>(Lxw6;Ly81;B)V
+    const-string v4, "Cannot obtain size for recycled bitmap: "
 
+    .line 71
     .line 72
+    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
     .line 73
     .line 74
-    const/4 v4, 0x3
-
     .line 75
-    iget-object v5, p0, Ly10;->n:Lac1;
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 76
     .line 77
-    invoke-static {v5, v2, v2, p1, v4}, Lbn0;->H(Lac1;Lrb1;Ldc1;Lt62;I)Lcb6;
-
     .line 78
+    const-string p0, " ["
+
     .line 79
     .line 80
-    goto :goto_0
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 81
-    :cond_4
-    const/4 v4, 0x5
-
     .line 82
-    if-ne p1, v4, :cond_2
-
     .line 83
-    .line 84
-    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    .line 84
     .line 85
     .line 86
-    .line 87
-    invoke-virtual {v6}, Lxw6;->a()V
+    const-string p0, " x "
 
+    .line 87
     .line 88
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 89
     .line 90
-    goto :goto_0
+    .line 91
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 92
+    .line 93
+    .line 94
+    const-string p0, "] + "
+
+    .line 95
+    .line 96
+    invoke-virtual {v3, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 97
+    .line 98
+    .line 99
+    invoke-virtual {v3, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 100
+    .line 101
+    .line 102
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 103
+    .line 104
+    .line 105
+    move-result-object p0
+
+    .line 106
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    .line 107
+    .line 108
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 109
+    .line 110
+    .line 111
+    move-result-object p0
+
+    .line 112
+    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    .line 113
+    .line 114
+    .line 115
+    throw v0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    .line 1
+    iget-object p0, p0, Ly10;->a:Landroid/graphics/Bitmap;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    mul-int/lit8 p0, p0, 0x1f
+
+    .line 8
+    .line 9
+    const/4 v0, 0x1
+
+    .line 10
+    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    .line 11
+    .line 12
+    .line 13
+    move-result v0
+
+    .line 14
+    add-int/2addr v0, p0
+
+    .line 15
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "BitmapImage(bitmap="
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object p0, p0, Ly10;->a:Landroid/graphics/Bitmap;
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const-string p0, ", shareable=true)"
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object p0
+
+    .line 22
+    return-object p0
 .end method

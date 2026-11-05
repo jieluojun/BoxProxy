@@ -1,79 +1,171 @@
-.class public abstract Lw57;
+.class public final Lw57;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Landroid/view/View$OnApplyWindowInsetsListener;
 
 
-# static fields
-.field public static final a:[I
+# instance fields
+.field public a:Lic7;
 
-.field public static final b:[F
+.field public final synthetic b:Landroid/view/View;
 
-.field public static final c:Le6;
+.field public final synthetic c:Lx94;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>(Landroid/view/View;Lx94;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()V"
+        }
+    .end annotation
+
+    .line 1
+    iput-object p1, p0, Lw57;->b:Landroid/view/View;
+
+    .line 2
+    .line 3
+    iput-object p2, p0, Lw57;->c:Lx94;
+
+    .line 4
+    .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 6
+    .line 7
+    .line 8
+    const/4 p1, 0x0
+
+    .line 9
+    iput-object p1, p0, Lw57;->a:Lic7;
+
+    .line 10
+    .line 11
+    return-void
+.end method
+
+
+# virtual methods
+.method public onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
     .locals 5
 
     .line 1
-    const/4 v0, 0x0
+    invoke-static {p2, p1}, Lic7;->c(Landroid/view/WindowInsets;Landroid/view/View;)Lic7;
 
     .line 2
-    new-array v1, v0, [I
-
     .line 3
     .line 4
-    sput-object v1, Lw57;->a:[I
+    move-result-object v0
 
     .line 5
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
     .line 6
-    new-array v0, v0, [F
-
     .line 7
+    iget-object v2, p0, Lw57;->c:Lx94;
+
     .line 8
-    sput-object v0, Lw57;->b:[F
-
     .line 9
+    const/16 v3, 0x1e
+
     .line 10
-    new-instance v0, Le6;
-
     .line 11
-    .line 12
-    const/4 v1, 0x2
+    if-ge v1, v3, :cond_0
 
+    .line 12
     .line 13
-    new-array v2, v1, [I
+    iget-object v4, p0, Lw57;->b:Landroid/view/View;
 
     .line 14
     .line 15
-    new-array v3, v1, [F
+    invoke-static {p2, v4}, Lx57;->a(Landroid/view/WindowInsets;Landroid/view/View;)V
 
     .line 16
     .line 17
-    new-array v4, v1, [F
-
     .line 18
+    iget-object p2, p0, Lw57;->a:Lic7;
+
     .line 19
-    new-array v1, v1, [F
-
     .line 20
-    .line 21
-    filled-new-array {v4, v1}, [[F
+    invoke-virtual {v0, p2}, Lic7;->equals(Ljava/lang/Object;)Z
 
+    .line 21
     .line 22
     .line 23
+    move-result p2
+
     .line 24
-    move-result-object v1
+    if-eqz p2, :cond_0
 
     .line 25
-    invoke-direct {v0, v2, v3, v1}, Le6;-><init>([I[F[[F)V
-
     .line 26
+    invoke-interface {v2, p1, v0}, Lx94;->g(Landroid/view/View;Lic7;)Lic7;
+
     .line 27
     .line 28
-    sput-object v0, Lw57;->c:Le6;
-
     .line 29
+    move-result-object p0
+
     .line 30
-    return-void
+    invoke-virtual {p0}, Lic7;->b()Landroid/view/WindowInsets;
+
+    .line 31
+    .line 32
+    .line 33
+    move-result-object p0
+
+    .line 34
+    return-object p0
+
+    .line 35
+    :cond_0
+    iput-object v0, p0, Lw57;->a:Lic7;
+
+    .line 36
+    .line 37
+    invoke-interface {v2, p1, v0}, Lx94;->g(Landroid/view/View;Lic7;)Lic7;
+
+    .line 38
+    .line 39
+    .line 40
+    move-result-object p0
+
+    .line 41
+    if-lt v1, v3, :cond_1
+
+    .line 42
+    .line 43
+    invoke-virtual {p0}, Lic7;->b()Landroid/view/WindowInsets;
+
+    .line 44
+    .line 45
+    .line 46
+    move-result-object p0
+
+    .line 47
+    return-object p0
+
+    .line 48
+    :cond_1
+    sget-object p2, Ld67;->a:Ljava/util/WeakHashMap;
+
+    .line 49
+    .line 50
+    invoke-virtual {p1}, Landroid/view/View;->requestApplyInsets()V
+
+    .line 51
+    .line 52
+    .line 53
+    invoke-virtual {p0}, Lic7;->b()Landroid/view/WindowInsets;
+
+    .line 54
+    .line 55
+    .line 56
+    move-result-object p0
+
+    .line 57
+    return-object p0
 .end method

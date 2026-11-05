@@ -1,6 +1,6 @@
 .class public final Lcom/box/app/PanelSheetActivity;
-.super Lxo;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lgo;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
@@ -8,7 +8,7 @@
 
 
 # instance fields
-.field public J:Lnv;
+.field public J:Lou;
 
 .field public final K:Ljava/lang/Object;
 
@@ -18,7 +18,7 @@
     .locals 1
 
     .line 1
-    invoke-direct {p0}, Lxo;-><init>()V
+    invoke-direct {p0}, Lgo;-><init>()V
 
     .line 2
     .line 3
@@ -50,7 +50,7 @@
     .line 2
     .line 3
     .line 4
-    invoke-static {p1}, Ldn;->f0(Landroid/content/Context;)Landroid/content/Context;
+    invoke-static {p1}, Lp87;->i0(Landroid/content/Context;)Landroid/content/Context;
 
     .line 5
     .line 6
@@ -58,7 +58,7 @@
     move-result-object p1
 
     .line 8
-    invoke-super {p0, p1}, Lxo;->attachBaseContext(Landroid/content/Context;)V
+    invoke-super {p0, p1}, Lgo;->attachBaseContext(Landroid/content/Context;)V
 
     .line 9
     .line 10
@@ -90,11 +90,11 @@
     .locals 3
 
     .line 1
-    sget-object v0, Lnv;->f:Lv8;
+    sget-object v0, Lou;->f:Lt8;
 
     .line 2
     .line 3
-    invoke-virtual {v0, p0}, Lv8;->u(Landroid/content/Context;)Lnv;
+    invoke-virtual {v0, p0}, Lt8;->u(Landroid/content/Context;)Lou;
 
     .line 4
     .line 5
@@ -102,19 +102,19 @@
     move-result-object v0
 
     .line 7
-    iput-object v0, p0, Lcom/box/app/PanelSheetActivity;->J:Lnv;
+    iput-object v0, p0, Lcom/box/app/PanelSheetActivity;->J:Lou;
 
     .line 8
     .line 9
-    iget-object v0, v0, Lnv;->e:Lq85;
+    iget-object v0, v0, Lou;->e:Lc75;
 
     .line 10
     .line 11
-    iget-object v0, v0, Lq85;->j:Lpb6;
+    iget-object v0, v0, Lc75;->j:Lx96;
 
     .line 12
     .line 13
-    invoke-virtual {v0}, Lpb6;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lx96;->getValue()Ljava/lang/Object;
 
     .line 14
     .line 15
@@ -122,20 +122,20 @@
     move-result-object v0
 
     .line 17
-    check-cast v0, Lkv;
+    check-cast v0, Llu;
 
     .line 18
     .line 19
-    iget-object v0, v0, Lkv;->b:Lur;
+    iget-object v0, v0, Llu;->b:Lar;
 
     .line 20
     .line 21
-    invoke-static {p0, v0}, Ldn;->u(Lxo;Lur;)V
+    invoke-static {p0, v0}, Lp87;->v(Lgo;Lar;)V
 
     .line 22
     .line 23
     .line 24
-    invoke-super {p0, p1}, Lxo;->onCreate(Landroid/os/Bundle;)V
+    invoke-super {p0, p1}, Lgo;->onCreate(Landroid/os/Bundle;)V
 
     .line 25
     .line 26
@@ -228,20 +228,20 @@
     .line 71
     .line 72
     .line 73
-    new-instance v0, Lef3;
+    new-instance v0, Lxy2;
 
     .line 74
     .line 75
-    const/16 v1, 0x17
+    const/16 v1, 0x1a
 
     .line 76
     .line 77
-    invoke-direct {v0, p0, v1}, Lef3;-><init>(Ljava/lang/Object;B)V
+    invoke-direct {v0, p0, v1}, Lxy2;-><init>(Ljava/lang/Object;B)V
 
     .line 78
     .line 79
     .line 80
-    new-instance v1, Lqz0;
+    new-instance v1, Loy0;
 
     .line 81
     .line 82
@@ -250,12 +250,12 @@
     .line 83
     .line 84
     .line 85
-    invoke-direct {v1, v2, p1, v0}, Lqz0;-><init>(IZLjava/lang/Object;)V
+    invoke-direct {v1, v2, p1, v0}, Loy0;-><init>(IZLa62;)V
 
     .line 86
     .line 87
     .line 88
-    invoke-static {p0, v1}, Lfz0;->a(Lxo;Lqz0;)V
+    invoke-static {p0, v1}, Ldy0;->a(Lgo;Loy0;)V
 
     .line 89
     .line 90
@@ -267,12 +267,12 @@
     .locals 1
 
     .line 1
-    invoke-super {p0}, Lxo;->onStart()V
+    invoke-super {p0}, Lgo;->onStart()V
 
     .line 2
     .line 3
     .line 4
-    sget-object v0, Lsh2;->a:Lsh2;
+    sget-object v0, Llg2;->a:Llg2;
 
     .line 5
     .line 6
@@ -280,7 +280,7 @@
 
     .line 7
     .line 8
-    invoke-virtual {v0, p0}, Lsh2;->a(Ljava/lang/Object;)V
+    invoke-virtual {v0, p0}, Llg2;->a(Ljava/lang/Object;)V
 
     .line 9
     .line 10
@@ -292,7 +292,7 @@
     .locals 2
 
     .line 1
-    sget-object v0, Lsh2;->a:Lsh2;
+    sget-object v0, Llg2;->a:Llg2;
 
     .line 2
     .line 3
@@ -300,12 +300,12 @@
 
     .line 4
     .line 5
-    invoke-virtual {v0, v1}, Lsh2;->c(Ljava/lang/Object;)V
+    invoke-virtual {v0, v1}, Llg2;->c(Ljava/lang/Object;)V
 
     .line 6
     .line 7
     .line 8
-    invoke-super {p0}, Lxo;->onStop()V
+    invoke-super {p0}, Lgo;->onStop()V
 
     .line 9
     .line 10

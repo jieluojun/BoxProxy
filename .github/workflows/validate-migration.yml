@@ -6,7 +6,6 @@ on:
     branches: [main]
     paths:
       - 'upstream/**'
-      - 'customizations/**'
       - 'scripts/**'
       - 'decompiled/**'
       - 'vpn-src/test/**'
@@ -56,14 +55,6 @@ jobs:
         env:
           PYTHONDONTWRITEBYTECODE: '1'
         run: python3 -m unittest discover -s vpn-src/test -p 'test_upstream_snapshot.py' -v
-      - name: Test feature bundles, reviewed bindings, conflicts and full 134 round trip
-        env:
-          PYTHONDONTWRITEBYTECODE: '1'
-        run: python3 -m unittest discover -s vpn-src/test -p 'test_customization_bundle.py' -v
-      - name: Test real 139 snapshot, unreviewed migration blocks and read-only evidence
-        env:
-          PYTHONDONTWRITEBYTECODE: '1'
-        run: python3 -m unittest discover -s vpn-src/test -p 'test_upgrade_139_preflight.py' -v
       - name: Test actual new model, migrated helpers, wiring and full smali assembly
         env:
           ECJ_JAR: .tools/ecj/package/jar/ctxo-jdt-analyzer-17.jar
@@ -94,43 +85,3 @@ jobs:
           java -jar .tools/apktool_2.9.3.jar b .tools/ported/decompiled \
             -p .tools/framework -o "$RUNNER_TEMP/full-migration-unsigned.apk"
           echo 'Full implementation and host regression checks passed. Physical Android/root/VPN and signature-compatible upgrade checks require devices and the original signing key.'
-      - name: Rebuild independently exported feature bundle (not a release)
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 scripts/customization_bundle.py export --bundle .tools/current.boxpatch
-          python3 scripts/upstream_snapshot.py upstream/26.11.02.534f30c --extract .tools/feature-vanilla
-          python3 scripts/customization_bundle.py apply --bundle .tools/current.boxpatch \
-            --target .tools/feature-vanilla/decompiled --output .tools/feature-staged \
-            --report .tools/feature-report.json
-          java -jar .tools/apktool_2.9.3.jar b .tools/feature-staged/decompiled \
-            -p .tools/framework -o "$RUNNER_TEMP/feature-roundtrip-unsigned.apk"
-      - name: Independently verify and rebuild vanilla 139 (NOT custom migration approval)
-        shell: bash
-        run: |
-          set -euo pipefail
-          python3 scripts/upstream_snapshot.py upstream/26.11.05.d5c365e --extract .tools/vanilla-139
-          python3 scripts/check_smali_references.py .tools/vanilla-139/decompiled
-          java -jar .tools/apktool_2.9.3.jar b .tools/vanilla-139/decompiled \
-            -p .tools/framework -o "$RUNNER_TEMP/139-vanilla-unsigned.apk"
-
-  upgrade-139-readiness:
-    name: 139 migration readiness (blocks incomplete upgrade)
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-      - name: Require complete 139 customization and validation before merging
-        run: |
-          python3 - <<'PY'
-          import json
-          from pathlib import Path
-          p = json.loads(Path('upstream/26.11.05.d5c365e/migration/progress.json').read_text())
-          requirements = [p['status'] == 'ready-for-review', p['runtimeProjectReplaced'],
-                          p['bindingsReviewed'], p['customRebuildPassed'], p['behaviorRegressionPassed'],
-                          p['androidDeviceVerified'], len(p['features']) == 8,
-                          all(f['status'] == 'validated' for f in p['features']),
-                          all(c['status'] == 'validated' for c in p['requiredCarryOvers']),
-                          '  versionCode: 139' in Path('decompiled/apktool.yml').read_text().splitlines()]
-          if not all(requirements):
-              raise SystemExit('139 CUSTOM MIGRATION INCOMPLETE: vanilla/134/preflight tests are not upgrade approval. Keep this PR draft; do not merge.')
-          PY

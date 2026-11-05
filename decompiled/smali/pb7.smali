@@ -1,69 +1,184 @@
 .class public final Lpb7;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
-
-.field public final synthetic k:Lrb7;
-
-.field public l:I
+.field public a:Lob7;
 
 
 # direct methods
-.method public constructor <init>(Lrb7;Lz81;)V
-    .locals 0
+.method public constructor <init>(ILandroid/view/animation/Interpolator;J)V
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Lpb7;->k:Lrb7;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
     .line 4
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
     .line 5
     .line 6
-    return-void
-.end method
+    const/16 v1, 0x1e
 
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iput-object p1, p0, Lpb7;->j:Ljava/lang/Object;
-
-    .line 2
-    .line 3
-    iget p1, p0, Lpb7;->l:I
-
-    .line 4
-    .line 5
-    const/high16 v0, -0x80000000
-
-    .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lpb7;->l:I
+    if-lt v0, v1, :cond_0
 
     .line 9
     .line 10
-    iget-object p1, p0, Lpb7;->k:Lrb7;
+    new-instance v0, Lnb7;
 
     .line 11
     .line 12
-    invoke-virtual {p1, p0}, Lrb7;->a(Lz81;)Ljava/lang/Object;
+    invoke-static {p1, p2, p3, p4}, Lv4;->i(ILandroid/view/animation/Interpolator;J)Landroid/view/WindowInsetsAnimation;
 
     .line 13
     .line 14
     .line 15
-    move-result-object p0
+    move-result-object p1
 
     .line 16
-    return-object p0
+    invoke-direct {v0, p1}, Lnb7;-><init>(Landroid/view/WindowInsetsAnimation;)V
+
+    .line 17
+    .line 18
+    .line 19
+    iput-object v0, p0, Lpb7;->a:Lob7;
+
+    .line 20
+    .line 21
+    return-void
+
+    .line 22
+    :cond_0
+    new-instance v0, Lkb7;
+
+    .line 23
+    .line 24
+    invoke-direct {v0, p1, p2, p3, p4}, Lob7;-><init>(ILandroid/view/animation/Interpolator;J)V
+
+    .line 25
+    .line 26
+    .line 27
+    iput-object v0, p0, Lpb7;->a:Lob7;
+
+    .line 28
+    .line 29
+    return-void
+.end method
+
+.method public static a(Landroid/view/View;Lgb7;)V
+    .locals 3
+
+    .line 1
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 2
+    .line 3
+    const/16 v1, 0x1e
+
+    .line 4
+    .line 5
+    const/4 v2, 0x0
+
+    .line 6
+    if-lt v0, v1, :cond_1
+
+    .line 7
+    .line 8
+    if-eqz p1, :cond_0
+
+    .line 9
+    .line 10
+    new-instance v2, Lmb7;
+
+    .line 11
+    .line 12
+    invoke-direct {v2, p1}, Lmb7;-><init>(Lgb7;)V
+
+    .line 13
+    .line 14
+    .line 15
+    :cond_0
+    invoke-static {p0, v2}, Lv4;->q(Landroid/view/View;Lmb7;)V
+
+    .line 16
+    .line 17
+    .line 18
+    return-void
+
+    .line 19
+    :cond_1
+    sget-object v0, Lkb7;->e:Landroid/view/animation/PathInterpolator;
+
+    .line 20
+    .line 21
+    if-eqz p1, :cond_2
+
+    .line 22
+    .line 23
+    new-instance v2, Ljb7;
+
+    .line 24
+    .line 25
+    invoke-direct {v2, p0, p1}, Ljb7;-><init>(Landroid/view/View;Lgb7;)V
+
+    .line 26
+    .line 27
+    .line 28
+    :cond_2
+    const p1, 0x7f0900d0
+
+    .line 29
+    .line 30
+    .line 31
+    invoke-virtual {p0, p1, v2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+
+    .line 32
+    .line 33
+    .line 34
+    const p1, 0x7f0900c6
+
+    .line 35
+    .line 36
+    .line 37
+    invoke-virtual {p0, p1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+
+    .line 38
+    .line 39
+    .line 40
+    move-result-object p1
+
+    .line 41
+    if-nez p1, :cond_3
+
+    .line 42
+    .line 43
+    const p1, 0x7f0900c7
+
+    .line 44
+    .line 45
+    .line 46
+    invoke-virtual {p0, p1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+
+    .line 47
+    .line 48
+    .line 49
+    move-result-object p1
+
+    .line 50
+    if-nez p1, :cond_3
+
+    .line 51
+    .line 52
+    invoke-virtual {p0, v2}, Landroid/view/View;->setOnApplyWindowInsetsListener(Landroid/view/View$OnApplyWindowInsetsListener;)V
+
+    .line 53
+    .line 54
+    .line 55
+    :cond_3
+    return-void
 .end method

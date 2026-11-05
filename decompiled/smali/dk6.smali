@@ -1,57 +1,95 @@
 .class public final Ldk6;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lng1;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lm11;
+.implements Li72;
 
 
 # instance fields
-.field public j:Lrh6;
+.field public final A:Lgl4;
 
-.field public k:Lpq4;
-
-.field public l:Z
-
-.field public synthetic m:Ljava/lang/Object;
-
-.field public n:I
+.field public z:Ls52;
 
 
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+# direct methods
+.method public constructor <init>(Ls52;)V
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Ldk6;->m:Ljava/lang/Object;
+    invoke-direct {p0}, Lng1;-><init>()V
 
     .line 2
     .line 3
-    iget p1, p0, Ldk6;->n:I
-
     .line 4
+    iput-object p1, p0, Ldk6;->z:Ls52;
+
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
-    .line 7
-    or-int/2addr p1, v0
+    sget-object p1, Liv1;->z:Liv1;
 
+    .line 7
     .line 8
-    iput p1, p0, Ldk6;->n:I
+    new-instance v0, Lgl4;
 
     .line 9
     .line 10
-    const/4 p1, 0x0
+    const/4 v1, 0x0
 
     .line 11
-    const/4 v0, 0x0
+    invoke-direct {v0, v1, p1}, Lgl4;-><init>(Ljava/lang/Object;Lx66;)V
 
     .line 12
-    invoke-static {p1, v0, p1, p0}, Lmk6;->a(Lrh6;ZLpq4;Ly81;)Ljava/lang/Object;
-
     .line 13
     .line 14
-    .line 15
-    move-result-object p0
+    iput-object v0, p0, Ldk6;->A:Lgl4;
 
+    .line 15
     .line 16
-    return-object p0
+    new-instance p1, Lv3;
+
+    .line 17
+    .line 18
+    const/16 v0, 0xb
+
+    .line 19
+    .line 20
+    invoke-direct {p1, p0, v0}, Lv3;-><init>(Ljava/lang/Object;B)V
+
+    .line 21
+    .line 22
+    .line 23
+    invoke-static {p1}, Lwf6;->a(Landroidx/compose/ui/input/pointer/PointerInputEventHandler;)Lbg6;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object p1
+
+    .line 27
+    invoke-virtual {p0, p1}, Lng1;->E1(Lmg1;)V
+
+    .line 28
+    .line 29
+    .line 30
+    return-void
+.end method
+
+
+# virtual methods
+.method public final H(Lm64;)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ldk6;->A:Lgl4;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Lgl4;->setValue(Ljava/lang/Object;)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
 .end method

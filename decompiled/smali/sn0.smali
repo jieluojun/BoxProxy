@@ -1,479 +1,244 @@
 .class public final Lsn0;
-.super Lcv5;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lau2;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final p:Lqe0;
-
-.field public final synthetic q:Ljava/util/concurrent/atomic/AtomicReferenceArray;
+.field public final n:Lrh0;
 
 
 # direct methods
-.method public constructor <init>(JLsn0;Lqe0;I)V
+.method public constructor <init>(Lrh0;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1, p2, p3, p5}, Lcv5;-><init>(JLcv5;I)V
+    invoke-direct {p0}, Ltb3;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    iput-object p4, p0, Lsn0;->p:Lqe0;
+    iput-object p1, p0, Lsn0;->n:Lrh0;
 
     .line 5
     .line 6
-    new-instance p1, Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    .line 7
-    .line 8
-    sget p2, Lse0;->b:I
-
-    .line 9
-    .line 10
-    mul-int/lit8 p2, p2, 0x2
-
-    .line 11
-    .line 12
-    invoke-direct {p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;-><init>(I)V
-
-    .line 13
-    .line 14
-    .line 15
-    iput-object p1, p0, Lsn0;->q:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    .line 16
-    .line 17
     return-void
 .end method
 
 
 # virtual methods
-.method public final g()I
+.method public final m()Z
     .locals 0
 
     .line 1
-    sget p0, Lse0;->b:I
+    const/4 p0, 0x1
 
     .line 2
-    .line 3
     return p0
 .end method
 
-.method public final h(ILrb1;)V
-    .locals 4
+.method public final n(Ljava/lang/Throwable;)V
+    .locals 14
 
     .line 1
-    sget p2, Lse0;->b:I
+    invoke-virtual {p0}, Lau2;->l()Leu2;
 
     .line 2
     .line 3
-    if-lt p1, p2, :cond_0
-
     .line 4
+    move-result-object p1
+
     .line 5
-    const/4 v0, 0x1
+    iget-object p0, p0, Lsn0;->n:Lrh0;
 
     .line 6
-    goto :goto_0
-
     .line 7
-    :cond_0
-    const/4 v0, 0x0
+    invoke-virtual {p0, p1}, Lrh0;->p(Leu2;)Ljava/lang/Throwable;
 
     .line 8
-    :goto_0
-    if-eqz v0, :cond_1
-
     .line 9
     .line 10
-    sub-int/2addr p1, p2
+    move-result-object v5
 
     .line 11
-    :cond_1
-    mul-int/lit8 p2, p1, 0x2
+    invoke-virtual {p0}, Lrh0;->x()Z
 
     .line 12
     .line 13
-    iget-object v1, p0, Lsn0;->q:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
     .line 14
+    move-result p1
+
     .line 15
-    invoke-virtual {v1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
+    if-nez p1, :cond_0
 
     .line 16
     .line 17
+    goto :goto_1
+
     .line 18
-    :cond_2
-    :goto_1
-    invoke-virtual {p0, p1}, Lsn0;->l(I)Ljava/lang/Object;
+    :cond_0
+    iget-object p1, p0, Lrh0;->m:Ly71;
 
     .line 19
     .line 20
+    move-object v1, p1
+
     .line 21
-    move-result-object p2
+    check-cast v1, Lfj1;
 
     .line 22
-    instance-of v1, p2, Lx87;
-
     .line 23
+    sget-wide v12, Lfj1;->q:J
+
     .line 24
-    iget-object v2, p0, Lsn0;->p:Lqe0;
-
     .line 25
-    .line 26
-    const/4 v3, 0x0
+    :goto_0
+    sget-object p1, Lvv;->a:Lsun/misc/Unsafe;
 
+    .line 26
     .line 27
-    if-nez v1, :cond_9
+    invoke-virtual {p1, v1, v12, v13}, Lsun/misc/Unsafe;->getObjectVolatile(Ljava/lang/Object;J)Ljava/lang/Object;
 
     .line 28
     .line 29
-    instance-of v1, p2, Ly87;
-
     .line 30
+    move-result-object v10
+
     .line 31
-    if-eqz v1, :cond_3
+    sget-object v4, Lxa;->f0:Lat1;
 
     .line 32
     .line 33
-    goto :goto_3
+    invoke-static {v10, v4}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 34
-    :cond_3
-    sget-object v1, Lse0;->j:Lau1;
-
     .line 35
     .line 36
-    if-eq p2, v1, :cond_8
+    move-result p1
 
     .line 37
+    if-eqz p1, :cond_3
+
     .line 38
-    sget-object v1, Lse0;->k:Lau1;
-
     .line 39
+    :cond_1
+    sget-object v0, Lvv;->a:Lsun/misc/Unsafe;
+
     .line 40
-    if-ne p2, v1, :cond_4
-
     .line 41
-    .line 42
-    goto :goto_2
+    sget-wide v2, Lfj1;->q:J
 
+    .line 42
     .line 43
-    :cond_4
-    sget-object v1, Lse0;->g:Lau1;
+    invoke-virtual/range {v0 .. v5}, Lsun/misc/Unsafe;->compareAndSwapObject(Ljava/lang/Object;JLjava/lang/Object;Ljava/lang/Object;)Z
 
     .line 44
     .line 45
-    if-eq p2, v1, :cond_2
-
     .line 46
+    move-result p1
+
     .line 47
-    sget-object v1, Lse0;->f:Lau1;
+    if-eqz p1, :cond_2
 
     .line 48
     .line 49
-    if-ne p2, v1, :cond_5
+    goto :goto_2
 
     .line 50
+    :cond_2
+    invoke-virtual {v0, v1, v12, v13}, Lsun/misc/Unsafe;->getObjectVolatile(Ljava/lang/Object;J)Ljava/lang/Object;
+
     .line 51
-    goto :goto_1
-
     .line 52
-    :cond_5
-    sget-object p0, Lse0;->i:Lau1;
-
     .line 53
+    move-result-object p1
+
     .line 54
-    if-eq p2, p0, :cond_b
+    if-eq p1, v4, :cond_1
 
     .line 55
     .line 56
-    sget-object p0, Lse0;->d:Lau1;
+    goto :goto_0
 
     .line 57
+    :cond_3
+    instance-of p1, v10, Ljava/lang/Throwable;
+
     .line 58
-    if-ne p2, p0, :cond_6
-
     .line 59
-    .line 60
-    goto :goto_5
+    if-eqz p1, :cond_4
 
+    .line 60
     .line 61
-    :cond_6
-    sget-object p0, Lse0;->l:Lau1;
+    goto :goto_2
 
     .line 62
+    :cond_4
+    sget-object v6, Lvv;->a:Lsun/misc/Unsafe;
+
     .line 63
-    if-ne p2, p0, :cond_7
-
     .line 64
-    .line 65
-    goto :goto_5
+    sget-wide v8, Lfj1;->q:J
 
+    .line 65
     .line 66
-    :cond_7
-    const-string p0, "unexpected state: "
+    const/4 v11, 0x0
 
     .line 67
+    move-object v7, v1
+
     .line 68
-    invoke-static {p0, p2}, Lue1;->g(Ljava/lang/String;Ljava/lang/Object;)V
+    invoke-virtual/range {v6 .. v11}, Lsun/misc/Unsafe;->compareAndSwapObject(Ljava/lang/Object;JLjava/lang/Object;Ljava/lang/Object;)Z
 
     .line 69
     .line 70
     .line 71
-    return-void
+    move-result p1
 
     .line 72
-    :cond_8
-    :goto_2
-    invoke-virtual {p0, p1, v3}, Lsn0;->n(ILjava/lang/Object;)V
+    if-eqz p1, :cond_6
 
     .line 73
     .line 74
-    .line 75
-    if-eqz v0, :cond_b
+    :goto_1
+    invoke-virtual {p0, v5}, Lrh0;->l(Ljava/lang/Throwable;)Z
 
+    .line 75
     .line 76
     .line 77
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p0}, Lrh0;->x()Z
 
     .line 78
     .line 79
     .line 80
-    return-void
+    move-result p1
 
     .line 81
-    :cond_9
-    :goto_3
-    if-eqz v0, :cond_a
+    if-nez p1, :cond_5
 
     .line 82
     .line 83
-    sget-object v1, Lse0;->j:Lau1;
+    invoke-virtual {p0}, Lrh0;->n()V
 
     .line 84
     .line 85
-    goto :goto_4
-
     .line 86
-    :cond_a
-    sget-object v1, Lse0;->k:Lau1;
+    :cond_5
+    :goto_2
+    return-void
 
     .line 87
-    .line 88
-    :goto_4
-    invoke-virtual {p0, p1, p2, v1}, Lsn0;->k(ILjava/lang/Object;Ljava/lang/Object;)Z
+    :cond_6
+    invoke-virtual {v6, v1, v12, v13}, Lsun/misc/Unsafe;->getObjectVolatile(Ljava/lang/Object;J)Ljava/lang/Object;
 
+    .line 88
     .line 89
     .line 90
+    move-result-object p1
+
     .line 91
-    move-result p2
+    if-eq p1, v10, :cond_4
 
     .line 92
-    if-eqz p2, :cond_2
-
     .line 93
-    .line 94
-    invoke-virtual {p0, p1, v3}, Lsn0;->n(ILjava/lang/Object;)V
-
-    .line 95
-    .line 96
-    .line 97
-    xor-int/lit8 p2, v0, 0x1
-
-    .line 98
-    .line 99
-    invoke-virtual {p0, p1, p2}, Lsn0;->m(IZ)V
-
-    .line 100
-    .line 101
-    .line 102
-    if-eqz v0, :cond_b
-
-    .line 103
-    .line 104
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 105
-    .line 106
-    .line 107
-    :cond_b
-    :goto_5
-    return-void
-.end method
-
-.method public final k(ILjava/lang/Object;Ljava/lang/Object;)Z
-    .locals 3
-
-    .line 1
-    mul-int/lit8 p1, p1, 0x2
-
-    .line 2
-    .line 3
-    const/4 v0, 0x1
-
-    .line 4
-    add-int/2addr p1, v0
-
-    .line 5
-    :cond_0
-    iget-object v1, p0, Lsn0;->q:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    .line 6
-    .line 7
-    invoke-virtual {v1, p1, p2, p3}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->compareAndSet(ILjava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 8
-    .line 9
-    .line 10
-    move-result v2
-
-    .line 11
-    if-eqz v2, :cond_1
-
-    .line 12
-    .line 13
-    return v0
-
-    .line 14
-    :cond_1
-    invoke-virtual {v1, p1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
-
-    .line 15
-    .line 16
-    .line 17
-    move-result-object v1
-
-    .line 18
-    if-eq v1, p2, :cond_0
-
-    .line 19
-    .line 20
-    const/4 p0, 0x0
-
-    .line 21
-    return p0
-.end method
-
-.method public final l(I)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    mul-int/lit8 p1, p1, 0x2
-
-    .line 2
-    .line 3
-    add-int/lit8 p1, p1, 0x1
-
-    .line 4
-    .line 5
-    iget-object p0, p0, Lsn0;->q:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    .line 6
-    .line 7
-    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->get(I)Ljava/lang/Object;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object p0
-
-    .line 11
-    return-object p0
-.end method
-
-.method public final m(IZ)V
-    .locals 4
-
-    .line 1
-    if-eqz p2, :cond_0
-
-    .line 2
-    .line 3
-    iget-object p2, p0, Lsn0;->p:Lqe0;
-
-    .line 4
-    .line 5
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 6
-    .line 7
-    .line 8
-    sget v0, Lse0;->b:I
-
-    .line 9
-    .line 10
-    int-to-long v0, v0
-
-    .line 11
-    iget-wide v2, p0, Lcv5;->m:J
-
-    .line 12
-    .line 13
-    mul-long/2addr v2, v0
-
-    .line 14
-    int-to-long v0, p1
-
-    .line 15
-    add-long/2addr v2, v0
-
-    .line 16
-    invoke-virtual {p2, v2, v3}, Lqe0;->K(J)V
-
-    .line 17
-    .line 18
-    .line 19
-    :cond_0
-    invoke-virtual {p0}, Lcv5;->i()V
-
-    .line 20
-    .line 21
-    .line 22
-    return-void
-.end method
-
-.method public final n(ILjava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    mul-int/lit8 p1, p1, 0x2
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lsn0;->q:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    .line 4
-    .line 5
-    invoke-virtual {p0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
-
-    .line 6
-    .line 7
-    .line 8
-    return-void
-.end method
-
-.method public final o(ILjava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    mul-int/lit8 p1, p1, 0x2
-
-    .line 2
-    .line 3
-    add-int/lit8 p1, p1, 0x1
-
-    .line 4
-    .line 5
-    iget-object p0, p0, Lsn0;->q:Ljava/util/concurrent/atomic/AtomicReferenceArray;
-
-    .line 6
-    .line 7
-    invoke-virtual {p0, p1, p2}, Ljava/util/concurrent/atomic/AtomicReferenceArray;->set(ILjava/lang/Object;)V
-
-    .line 8
-    .line 9
-    .line 10
-    return-void
+    goto :goto_0
 .end method

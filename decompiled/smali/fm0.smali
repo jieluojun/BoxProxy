@@ -1,258 +1,427 @@
 .class public final Lfm0;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lgm0;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Landroidx/compose/ui/input/pointer/PointerInputEventHandler;
+
+# static fields
+.field public static final synthetic o:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
 
 # instance fields
-.field public final synthetic a:B
+.field private volatile synthetic consumed$volatile:I
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final m:Lem0;
 
-.field public final synthetic c:Ljava/lang/Object;
+.field public final n:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    iput-byte p3, p0, Lfm0;->a:B
+    const-class v0, Lfm0;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lfm0;->b:Ljava/lang/Object;
+    const-string v1, "consumed$volatile"
 
     .line 4
     .line 5
-    iput-object p2, p0, Lfm0;->c:Ljava/lang/Object;
+    invoke-static {v0, v1}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
     .line 6
     .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 8
+    move-result-object v0
+
+    .line 9
+    sput-object v0, Lfm0;->o:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+
+    .line 10
+    .line 11
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lem0;Z)V
+    .locals 6
+
+    .line 1
+    const/4 v4, -0x3
+
+    .line 2
+    sget-object v5, Lid0;->j:Lid0;
+
+    .line 3
+    .line 4
+    sget-object v3, Lmt1;->j:Lmt1;
+
+    .line 5
+    .line 6
+    move-object v0, p0
+
+    .line 7
+    move-object v1, p1
 
     .line 8
+    move v2, p2
+
     .line 9
+    invoke-direct/range {v0 .. v5}, Lfm0;-><init>(Lem0;ZLsa1;ILid0;)V
+
     .line 10
+    .line 11
+    .line 12
+    return-void
+.end method
+
+.method public constructor <init>(Lem0;ZLsa1;ILid0;)V
+    .locals 0
+
+    .line 13
+    invoke-direct {p0, p3, p4, p5}, Lgm0;-><init>(Lsa1;ILid0;)V
+
+    .line 14
+    iput-object p1, p0, Lfm0;->m:Lem0;
+
+    .line 15
+    iput-boolean p2, p0, Lfm0;->n:Z
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Lar4;Ly81;)Ljava/lang/Object;
-    .locals 9
+.method public final a(Lg02;Ly71;)Ljava/lang/Object;
+    .locals 4
 
     .line 1
-    iget-byte v0, p0, Lfm0;->a:B
+    iget v0, p0, Lgm0;->k:I
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    const/4 v1, -0x3
 
     .line 4
+    sget-object v2, Lcb1;->j:Lcb1;
+
     .line 5
-    sget-object v2, Lbc1;->j:Lbc1;
-
     .line 6
-    .line 7
-    const/4 v3, 0x0
+    if-ne v0, v1, :cond_2
 
+    .line 7
     .line 8
-    iget-object v4, p0, Lfm0;->c:Ljava/lang/Object;
+    iget-boolean v0, p0, Lfm0;->n:Z
 
     .line 9
     .line 10
-    iget-object p0, p0, Lfm0;->b:Ljava/lang/Object;
+    if-eqz v0, :cond_1
 
     .line 11
     .line 12
-    packed-switch v0, :pswitch_data_0
+    sget-object v1, Lfm0;->o:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
     .line 13
     .line 14
+    const/4 v3, 0x1
+
     .line 15
-    new-instance v0, Lf52;
+    invoke-virtual {v1, p0, v3}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->getAndSet(Ljava/lang/Object;I)I
 
     .line 16
     .line 17
-    check-cast p0, Lax5;
-
     .line 18
+    move-result v1
+
     .line 19
-    check-cast v4, Lcw5;
+    if-eq v1, v3, :cond_0
 
     .line 20
     .line 21
-    const/4 v5, 0x2
+    goto :goto_0
 
     .line 22
-    invoke-direct {v0, p0, v4, v3, v5}, Lf52;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ly81;B)V
+    :cond_0
+    const-string p0, "ReceiveChannel.consumeAsFlow can be collected just once"
 
     .line 23
     .line 24
-    .line 25
-    invoke-static {p1, v0, p2}, Lzm;->v(Lar4;Lt62;Ly81;)Ljava/lang/Object;
+    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
 
+    .line 25
     .line 26
     .line 27
+    const/4 p0, 0x0
+
     .line 28
-    move-result-object p0
+    return-object p0
 
     .line 29
-    if-ne p0, v2, :cond_0
+    :cond_1
+    :goto_0
+    iget-object p0, p0, Lfm0;->m:Lem0;
 
     .line 30
     .line 31
-    move-object v1, p0
+    invoke-static {p1, p0, v0, p2}, Lns6;->n(Lg02;Lem0;ZLy71;)Ljava/lang/Object;
 
     .line 32
-    :cond_0
-    return-object v1
-
     .line 33
-    :pswitch_0
-    check-cast p0, Lp62;
-
     .line 34
+    move-result-object p0
+
     .line 35
-    check-cast v4, Lt62;
+    if-ne p0, v2, :cond_3
 
     .line 36
     .line 37
-    new-instance v0, Lxg1;
-
-    .line 38
-    .line 39
-    const/16 v1, 0xe
-
-    .line 40
-    .line 41
-    invoke-direct {v0, p0, v4, v1}, Lxg1;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
-
-    .line 42
-    .line 43
-    .line 44
-    new-instance p0, Lzf7;
-
-    .line 45
-    .line 46
-    invoke-direct {p0, v0, v3}, Lzf7;-><init>(Lxg1;Ly81;)V
-
-    .line 47
-    .line 48
-    .line 49
-    invoke-static {p1, p0, p2}, Lzm;->v(Lar4;Lt62;Ly81;)Ljava/lang/Object;
-
-    .line 50
-    .line 51
-    .line 52
-    move-result-object p0
-
-    .line 53
     return-object p0
 
-    .line 54
-    :pswitch_1
-    new-instance v3, Lsa1;
-
-    .line 55
-    .line 56
-    move-object v5, p0
-
-    .line 57
-    check-cast v5, Lkm6;
-
-    .line 58
-    .line 59
-    move-object v6, v4
-
-    .line 60
-    check-cast v6, Lep6;
-
-    .line 61
-    .line 62
-    const/4 v7, 0x0
-
-    .line 63
-    const/4 v8, 0x0
-
-    .line 64
-    move-object v4, p1
-
-    .line 65
-    invoke-direct/range {v3 .. v8}, Lsa1;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ly81;B)V
-
-    .line 66
-    .line 67
-    .line 68
-    invoke-static {v3, p2}, Lhq;->H(Lt62;Ly81;)Ljava/lang/Object;
-
-    .line 69
-    .line 70
-    .line 71
-    move-result-object p0
-
-    .line 72
-    if-ne p0, v2, :cond_1
-
-    .line 73
-    .line 74
-    move-object v1, p0
-
-    .line 75
-    :cond_1
-    return-object v1
-
-    .line 76
-    :pswitch_2
-    check-cast p0, Lmt3;
-
-    .line 77
-    .line 78
-    check-cast v4, Lmt3;
-
-    .line 79
-    .line 80
-    new-instance v0, Lul0;
-
-    .line 81
-    .line 82
-    const/4 v5, 0x1
-
-    .line 83
-    invoke-direct {v0, p0, v4, v5}, Lul0;-><init>(Lmt3;Lmt3;B)V
-
-    .line 84
-    .line 85
-    .line 86
-    const/4 p0, 0x7
-
-    .line 87
-    invoke-static {p1, v3, v0, p2, p0}, Lmk6;->e(Lar4;Lu62;Lp62;Ly81;I)Ljava/lang/Object;
-
-    .line 88
-    .line 89
-    .line 90
-    move-result-object p0
-
-    .line 91
-    if-ne p0, v2, :cond_2
-
-    .line 92
-    .line 93
-    move-object v1, p0
-
-    .line 94
+    .line 38
     :cond_2
-    return-object v1
+    invoke-super {p0, p1, p2}, Lgm0;->a(Lg02;Ly71;)Ljava/lang/Object;
 
-    .line 95
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 39
+    .line 40
+    .line 41
+    move-result-object p0
+
+    .line 42
+    if-ne p0, v2, :cond_3
+
+    .line 43
+    .line 44
+    return-object p0
+
+    .line 45
+    :cond_3
+    sget-object p0, Lk27;->a:Lk27;
+
+    .line 46
+    .line 47
+    return-object p0
+.end method
+
+.method public final c()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "channel="
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object p0, p0, Lfm0;->m:Lem0;
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p0
+
+    .line 17
+    return-object p0
+.end method
+
+.method public final e(Ldt4;Ly71;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    new-instance v0, Luw5;
+
+    .line 2
+    .line 3
+    invoke-direct {v0, p1}, Luw5;-><init>(Ldt4;)V
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object p1, p0, Lfm0;->m:Lem0;
+
+    .line 7
+    .line 8
+    iget-boolean p0, p0, Lfm0;->n:Z
+
+    .line 9
+    .line 10
+    invoke-static {v0, p1, p0, p2}, Lns6;->n(Lg02;Lem0;ZLy71;)Ljava/lang/Object;
+
+    .line 11
+    .line 12
+    .line 13
+    move-result-object p0
+
+    .line 14
+    sget-object p1, Lcb1;->j:Lcb1;
+
+    .line 15
+    .line 16
+    if-ne p0, p1, :cond_0
+
+    .line 17
+    .line 18
+    return-object p0
+
+    .line 19
+    :cond_0
+    sget-object p0, Lk27;->a:Lk27;
+
+    .line 20
+    .line 21
+    return-object p0
+.end method
+
+.method public final g(Lsa1;ILid0;)Lgm0;
+    .locals 6
+
+    .line 1
+    new-instance v0, Lfm0;
+
+    .line 2
+    .line 3
+    iget-object v1, p0, Lfm0;->m:Lem0;
+
+    .line 4
+    .line 5
+    iget-boolean v2, p0, Lfm0;->n:Z
+
+    .line 6
+    .line 7
+    move-object v3, p1
+
+    .line 8
+    move v4, p2
+
+    .line 9
+    move-object v5, p3
+
+    .line 10
+    invoke-direct/range {v0 .. v5}, Lfm0;-><init>(Lem0;ZLsa1;ILid0;)V
+
+    .line 11
+    .line 12
+    .line 13
+    return-object v0
+.end method
+
+.method public final h()Lf02;
+    .locals 2
+
+    .line 1
+    new-instance v0, Lfm0;
+
+    .line 2
+    .line 3
+    iget-object v1, p0, Lfm0;->m:Lem0;
+
+    .line 4
+    .line 5
+    iget-boolean p0, p0, Lfm0;->n:Z
+
+    .line 6
+    .line 7
+    invoke-direct {v0, v1, p0}, Lfm0;-><init>(Lem0;Z)V
+
+    .line 8
+    .line 9
+    .line 10
+    return-object v0
+.end method
+
+.method public final i(Lbb1;)Lem0;
+    .locals 2
+
+    .line 1
+    iget-boolean v0, p0, Lfm0;->n:Z
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_1
+
+    .line 4
+    .line 5
+    sget-object v0, Lfm0;->o:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+
+    .line 6
+    .line 7
+    const/4 v1, 0x1
+
+    .line 8
+    invoke-virtual {v0, p0, v1}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->getAndSet(Ljava/lang/Object;I)I
+
+    .line 9
+    .line 10
+    .line 11
+    move-result v0
+
+    .line 12
+    if-eq v0, v1, :cond_0
+
+    .line 13
+    .line 14
+    goto :goto_0
+
+    .line 15
+    :cond_0
+    const-string p0, "ReceiveChannel.consumeAsFlow can be collected just once"
+
+    .line 16
+    .line 17
+    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
+
+    .line 18
+    .line 19
+    .line 20
+    const/4 p0, 0x0
+
+    .line 21
+    return-object p0
+
+    .line 22
+    :cond_1
+    :goto_0
+    iget v0, p0, Lgm0;->k:I
+
+    .line 23
+    .line 24
+    const/4 v1, -0x3
+
+    .line 25
+    if-ne v0, v1, :cond_2
+
+    .line 26
+    .line 27
+    iget-object p0, p0, Lfm0;->m:Lem0;
+
+    .line 28
+    .line 29
+    return-object p0
+
+    .line 30
+    :cond_2
+    invoke-super {p0, p1}, Lgm0;->i(Lbb1;)Lem0;
+
+    .line 31
+    .line 32
+    .line 33
+    move-result-object p0
+
+    .line 34
+    return-object p0
 .end method

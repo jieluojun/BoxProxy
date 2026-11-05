@@ -1,1077 +1,659 @@
 .class public final synthetic Lnr1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Luw1;
+.implements Lfq6;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final synthetic a:Lsr1;
 
-.field public final synthetic k:Lpr1;
+.field public final synthetic b:I
+
+.field public final synthetic c:Lmq6;
+
+.field public final synthetic d:I
+
+.field public final synthetic e:I
+
+.field public final synthetic f:I
+
+.field public final synthetic g:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lpr1;B)V
+.method public synthetic constructor <init>(Lsr1;ILmq6;IIII)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lnr1;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lnr1;->k:Lpr1;
-
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lnr1;->a:Lsr1;
 
+    .line 5
     .line 6
+    iput p2, p0, Lnr1;->b:I
+
     .line 7
     .line 8
+    iput-object p3, p0, Lnr1;->c:Lmq6;
+
+    .line 9
+    .line 10
+    iput p4, p0, Lnr1;->d:I
+
+    .line 11
+    .line 12
+    iput p5, p0, Lnr1;->e:I
+
+    .line 13
+    .line 14
+    iput p6, p0, Lnr1;->f:I
+
+    .line 15
+    .line 16
+    iput p7, p0, Lnr1;->g:I
+
+    .line 17
+    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lgw1;Lk71;)V
-    .locals 7
+.method public final a(Landroid/graphics/Canvas;Landroid/text/GetChars;IIIIZFFLnq6;Ly76;)V
+    .locals 19
 
     .line 1
-    iget-byte p2, p0, Lnr1;->j:B
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
-    const/4 v0, 0x3
+    iget v1, v0, Lnr1;->b:I
 
     .line 4
-    const/4 v1, 0x0
-
     .line 5
-    const/4 v2, 0x1
+    and-int/lit8 v2, v1, 0x1
 
     .line 6
-    const/4 v3, 0x2
-
     .line 7
-    iget-object p0, p0, Lnr1;->k:Lpr1;
+    iget-object v3, v0, Lnr1;->a:Lsr1;
 
     .line 8
     .line 9
-    packed-switch p2, :pswitch_data_0
+    iget-object v5, v0, Lnr1;->c:Lmq6;
 
     .line 10
     .line 11
-    .line 12
-    check-cast p1, Ljs1;
+    iget v14, v0, Lnr1;->d:I
 
+    .line 12
     .line 13
+    move v15, v14
+
     .line 14
-    iput-boolean v1, p0, Lpr1;->L:Z
+    if-eqz v2, :cond_0
 
     .line 15
     .line 16
-    iget-object p1, p0, Lpr1;->H:Ltw1;
+    const/4 v14, 0x0
 
     .line 17
-    .line 18
-    invoke-virtual {p1, v1}, Ltw1;->d(Z)V
+    move-object/from16 v4, p1
 
+    .line 18
     .line 19
+    move-object/from16 v6, p2
+
     .line 20
     .line 21
-    invoke-virtual {p0}, Lpr1;->e()V
+    move/from16 v7, p3
 
     .line 22
     .line 23
-    .line 24
-    invoke-virtual {p0}, Lpr1;->f()V
+    move/from16 v8, p4
 
+    .line 24
     .line 25
+    move/from16 v9, p5
+
     .line 26
     .line 27
-    return-void
+    move/from16 v10, p6
 
     .line 28
-    :pswitch_0
-    check-cast p1, Lbw5;
-
     .line 29
-    .line 30
-    invoke-virtual {p1}, Lbw5;->a()Z
+    move/from16 v11, p7
 
+    .line 30
     .line 31
+    move/from16 v12, p8
+
     .line 32
     .line 33
-    move-result p2
+    move/from16 v13, p9
 
     .line 34
-    iget-object v1, p1, Lbw5;->c:Lyn0;
-
     .line 35
-    .line 36
-    if-nez p2, :cond_4
+    invoke-virtual/range {v3 .. v15}, Lsr1;->w(Landroid/graphics/Canvas;Lmq6;Landroid/text/GetChars;IIIIZFFII)V
 
+    .line 36
     .line 37
     .line 38
-    iget-byte p1, p1, Lbw5;->e:B
+    :cond_0
+    and-int/lit8 v16, v1, 0x2
 
     .line 39
     .line 40
-    const/4 p2, 0x4
+    iget v14, v0, Lnr1;->e:I
 
     .line 41
-    if-eq p1, p2, :cond_4
-
     .line 42
-    .line 43
-    if-eq p1, v3, :cond_4
+    if-eqz v16, :cond_1
 
+    .line 43
     .line 44
+    move v4, v15
+
     .line 45
-    if-eq p1, v0, :cond_4
+    move v15, v14
 
     .line 46
+    move v14, v4
+
     .line 47
-    const/4 p2, 0x6
+    move-object/from16 v4, p1
 
     .line 48
-    if-eq p1, p2, :cond_4
-
     .line 49
+    move-object/from16 v6, p2
+
     .line 50
-    if-nez p1, :cond_0
-
     .line 51
-    .line 52
-    goto :goto_0
+    move/from16 v7, p3
 
+    .line 52
     .line 53
-    :cond_0
-    iget-object p2, p0, Lpr1;->I:Lyn0;
+    move/from16 v8, p4
 
     .line 54
     .line 55
-    if-nez p2, :cond_1
+    move/from16 v9, p5
 
     .line 56
     .line 57
-    invoke-virtual {v1}, Lyn0;->a()Lyn0;
+    move/from16 v10, p6
 
     .line 58
     .line 59
-    .line 60
-    move-result-object p1
+    move/from16 v11, p7
 
+    .line 60
     .line 61
-    iput-object p1, p0, Lpr1;->I:Lyn0;
+    move/from16 v12, p8
 
     .line 62
     .line 63
-    goto :goto_1
+    move/from16 v13, p9
 
     .line 64
-    :cond_1
-    const/4 v0, 0x7
-
     .line 65
-    if-ne p1, v0, :cond_5
+    invoke-virtual/range {v3 .. v15}, Lsr1;->w(Landroid/graphics/Canvas;Lmq6;Landroid/text/GetChars;IIIIZFFII)V
 
     .line 66
     .line 67
-    iget p1, p2, Lyn0;->b:I
-
     .line 68
-    .line 69
-    iget p2, v1, Lyn0;->b:I
+    move/from16 v18, v15
 
+    .line 69
     .line 70
+    move v15, v14
+
     .line 71
-    if-eq p1, p2, :cond_2
+    move/from16 v14, v18
 
     .line 72
     .line 73
-    invoke-virtual {p0}, Lpr1;->f()V
+    :cond_1
+    and-int/lit8 v17, v1, 0x4
 
     .line 74
     .line 75
+    move v4, v15
+
     .line 76
-    goto :goto_1
+    iget v15, v0, Lnr1;->f:I
 
     .line 77
-    :cond_2
-    iget-object p1, p0, Lis1;->j:Landroid/widget/PopupWindow;
-
     .line 78
-    .line 79
-    invoke-virtual {p1}, Landroid/widget/PopupWindow;->isShowing()Z
+    if-eqz v17, :cond_2
 
+    .line 79
     .line 80
+    move-object/from16 v6, p2
+
     .line 81
     .line 82
-    move-result p1
+    move/from16 v7, p3
 
     .line 83
-    if-eqz p1, :cond_5
-
     .line 84
+    move/from16 v8, p4
+
     .line 85
-    iget-object p1, p0, Lpr1;->I:Lyn0;
-
     .line 86
+    move/from16 v9, p5
+
     .line 87
-    iget p1, p1, Lyn0;->c:I
-
     .line 88
+    move/from16 v10, p6
+
     .line 89
-    iget p2, v1, Lyn0;->c:I
-
     .line 90
-    .line 91
-    sub-int/2addr p1, p2
+    move/from16 v11, p7
 
+    .line 91
     .line 92
-    invoke-static {p1}, Ljava/lang/Math;->abs(I)I
+    move/from16 v12, p8
 
     .line 93
     .line 94
-    .line 95
-    move-result p1
+    move/from16 v13, p9
 
+    .line 95
     .line 96
-    if-gt p1, v2, :cond_5
+    move/from16 p10, v1
 
     .line 97
     .line 98
-    iget p1, v1, Lyn0;->c:I
+    move v1, v4
 
     .line 99
+    move-object/from16 v4, p1
+
     .line 100
-    if-lez p1, :cond_3
-
     .line 101
-    .line 102
-    invoke-virtual {p0}, Lpr1;->h()V
+    invoke-virtual/range {v3 .. v15}, Lsr1;->w(Landroid/graphics/Canvas;Lmq6;Landroid/text/GetChars;IIIIZFFII)V
 
+    .line 102
     .line 103
     .line 104
+    goto :goto_0
+
     .line 105
-    goto :goto_1
+    :cond_2
+    move/from16 p10, v1
 
     .line 106
-    :cond_3
-    invoke-virtual {p0}, Lpr1;->f()V
-
     .line 107
-    .line 108
-    .line 109
-    goto :goto_1
+    move v1, v4
 
-    .line 110
-    :cond_4
+    .line 108
     :goto_0
-    invoke-virtual {p0}, Lpr1;->f()V
+    and-int/lit8 v4, p10, 0x40
+
+    .line 109
+    .line 110
+    if-eqz v4, :cond_8
 
     .line 111
     .line 112
-    .line 113
-    :cond_5
-    :goto_1
-    return-void
+    iget-object v4, v3, Lsr1;->E:Lwb1;
 
+    .line 113
     .line 114
-    :pswitch_1
-    check-cast p1, Les1;
+    invoke-virtual {v4}, Lwb1;->a()Z
 
     .line 115
     .line 116
-    iget p2, p1, Les1;->e:I
-
     .line 117
+    move-result v4
+
     .line 118
-    iget-object v1, p1, Les1;->d:Landroid/view/KeyEvent;
+    if-eqz v4, :cond_8
 
     .line 119
     .line 120
-    if-ne p2, v3, :cond_10
+    iget-object v4, v3, Lsr1;->E:Lwb1;
 
     .line 121
     .line 122
-    iget-boolean p2, p1, Les1;->g:Z
+    iget-object v6, v4, Lwb1;->c:Lxm0;
 
     .line 123
     .line 124
-    if-nez p2, :cond_10
+    iget v7, v6, Lxm0;->b:I
 
     .line 125
     .line 126
-    invoke-virtual {v1}, Landroid/view/KeyEvent;->getMetaState()I
+    iget v0, v0, Lnr1;->g:I
 
     .line 127
     .line 128
-    .line 129
-    move-result p2
+    if-lt v0, v7, :cond_8
 
+    .line 129
     .line 130
-    and-int/lit16 p2, p2, 0x1000
+    iget-object v4, v4, Lwb1;->d:Lxm0;
 
     .line 131
     .line 132
-    if-eqz p2, :cond_6
+    iget v8, v4, Lxm0;->b:I
 
     .line 133
     .line 134
-    goto/16 :goto_3
+    if-gt v0, v8, :cond_8
 
     .line 135
     .line 136
-    :cond_6
-    iget-boolean p2, p1, Les1;->f:Z
+    if-ne v0, v7, :cond_3
 
     .line 137
     .line 138
-    if-nez p2, :cond_10
+    iget v6, v6, Lxm0;->c:I
 
     .line 139
     .line 140
-    iget-object p2, p0, Lis1;->j:Landroid/widget/PopupWindow;
+    goto :goto_1
 
     .line 141
+    :cond_3
+    const/4 v6, 0x0
+
     .line 142
-    invoke-virtual {p2}, Landroid/widget/PopupWindow;->isShowing()Z
+    :goto_1
+    if-ne v0, v8, :cond_4
 
     .line 143
     .line 144
-    .line 145
-    move-result p2
+    iget v15, v4, Lxm0;->c:I
 
+    .line 145
     .line 146
-    if-eqz p2, :cond_10
+    :cond_4
+    and-int/lit8 v0, p10, 0xe
 
     .line 147
     .line 148
-    invoke-virtual {v1}, Landroid/view/KeyEvent;->getKeyCode()I
+    if-nez v0, :cond_5
 
     .line 149
     .line 150
-    .line 151
-    move-result p2
+    move-object/from16 v4, p1
 
+    .line 151
     .line 152
-    const/16 v1, 0x13
+    move/from16 v7, p3
 
     .line 153
     .line 154
-    const/4 v3, -0x1
+    move/from16 v8, p4
 
     .line 155
-    if-eq p2, v1, :cond_d
-
     .line 156
+    move/from16 v9, p5
+
     .line 157
-    const/16 v1, 0x14
-
     .line 158
+    move/from16 v10, p6
+
     .line 159
-    if-eq p2, v1, :cond_c
-
     .line 160
+    move/from16 v11, p7
+
     .line 161
-    const/16 v1, 0x3d
-
     .line 162
+    move/from16 v12, p8
+
     .line 163
-    if-eq p2, v1, :cond_a
-
     .line 164
-    .line 165
-    const/16 v1, 0x42
+    move/from16 v13, p9
 
+    .line 165
     .line 166
+    move v14, v6
+
     .line 167
-    if-eq p2, v1, :cond_8
+    move-object/from16 v6, p2
 
     .line 168
     .line 169
-    const/16 p1, 0x5c
+    invoke-virtual/range {v3 .. v15}, Lsr1;->w(Landroid/graphics/Canvas;Lmq6;Landroid/text/GetChars;IIIIZFFII)V
 
     .line 170
     .line 171
-    if-eq p2, p1, :cond_7
-
     .line 172
+    return-void
+
     .line 173
-    const/16 p1, 0x5d
+    :cond_5
+    move-object v4, v3
 
     .line 174
+    move v0, v14
+
     .line 175
-    if-eq p2, p1, :cond_7
+    move v3, v15
 
     .line 176
+    move v14, v6
+
     .line 177
-    goto/16 :goto_3
+    if-nez v2, :cond_6
 
     .line 178
     .line 179
-    :cond_7
-    invoke-virtual {p0}, Lpr1;->f()V
+    invoke-static {v1, v3}, Ljava/lang/Math;->min(II)I
 
     .line 180
     .line 181
     .line 182
-    goto/16 :goto_3
+    move-result v15
 
     .line 183
+    move-object/from16 v6, p2
+
     .line 184
-    :cond_8
-    iget p2, p0, Lpr1;->E:I
-
     .line 185
+    move/from16 v7, p3
+
     .line 186
-    if-ne p2, v3, :cond_9
-
     .line 187
+    move/from16 v8, p4
+
     .line 188
-    iget-object p2, p0, Lpr1;->x:Lsu0;
-
     .line 189
-    .line 190
-    invoke-virtual {p2}, Lsu0;->getProps()Lrj1;
+    move/from16 v9, p5
 
+    .line 190
     .line 191
+    move/from16 v10, p6
+
     .line 192
     .line 193
-    move-result-object p2
+    move/from16 v11, p7
 
     .line 194
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 195
+    move/from16 v12, p8
+
     .line 196
     .line 197
-    invoke-virtual {p0}, Lpr1;->g()V
+    move/from16 v13, p9
 
     .line 198
     .line 199
+    move v2, v3
+
     .line 200
-    :cond_9
-    iget p2, p0, Lpr1;->E:I
+    move-object v3, v4
 
     .line 201
-    .line 202
-    invoke-virtual {p0, p2}, Lpr1;->i(I)Z
+    move-object/from16 v4, p1
 
+    .line 202
     .line 203
+    invoke-virtual/range {v3 .. v15}, Lsr1;->w(Landroid/graphics/Canvas;Lmq6;Landroid/text/GetChars;IIIIZFFII)V
+
     .line 204
     .line 205
-    move-result p0
-
     .line 206
-    if-eqz p0, :cond_10
+    move-object v4, v3
 
     .line 207
+    :goto_2
+    move v3, v14
+
     .line 208
-    sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    .line 209
-    .line 210
-    iput-object p0, p1, Les1;->c:Ljava/lang/Boolean;
-
-    .line 211
-    .line 212
-    iput-byte v0, p1, Lgw1;->b:B
-
-    .line 213
-    .line 214
     goto :goto_3
 
-    .line 215
-    :cond_a
-    iget p2, p0, Lpr1;->E:I
+    .line 209
+    :cond_6
+    move v2, v3
 
+    .line 210
+    goto :goto_2
+
+    .line 211
+    :goto_3
+    if-nez v16, :cond_7
+
+    .line 212
+    .line 213
+    invoke-static {v1, v3}, Ljava/lang/Math;->max(II)I
+
+    .line 214
+    .line 215
     .line 216
+    move-result v14
+
     .line 217
-    if-ne p2, v3, :cond_b
+    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
 
     .line 218
     .line 219
-    invoke-virtual {p0}, Lpr1;->g()V
-
     .line 220
+    move-result v15
+
     .line 221
+    move-object/from16 v6, p2
+
     .line 222
-    :cond_b
-    iget p2, p0, Lpr1;->E:I
-
     .line 223
-    .line 224
-    invoke-virtual {p0, p2}, Lpr1;->i(I)Z
+    move/from16 v7, p3
 
+    .line 224
     .line 225
+    move/from16 v8, p4
+
     .line 226
     .line 227
-    move-result p0
+    move/from16 v9, p5
 
     .line 228
-    if-eqz p0, :cond_10
-
     .line 229
+    move/from16 v10, p6
+
     .line 230
-    sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
     .line 231
+    move/from16 v11, p7
+
     .line 232
-    iput-object p0, p1, Les1;->c:Ljava/lang/Boolean;
-
     .line 233
+    move/from16 v12, p8
+
     .line 234
-    iput-byte v0, p1, Lgw1;->b:B
-
     .line 235
-    .line 236
-    goto :goto_3
+    move/from16 v13, p9
 
+    .line 236
     .line 237
-    :cond_c
-    invoke-virtual {p0}, Lpr1;->g()V
+    move v1, v3
 
     .line 238
+    move-object v3, v4
+
     .line 239
+    move-object/from16 v4, p1
+
     .line 240
-    sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
     .line 241
-    .line 242
-    iput-object p0, p1, Les1;->c:Ljava/lang/Boolean;
+    invoke-virtual/range {v3 .. v15}, Lsr1;->w(Landroid/graphics/Canvas;Lmq6;Landroid/text/GetChars;IIIIZFFII)V
 
+    .line 242
     .line 243
     .line 244
-    iput-byte v0, p1, Lgw1;->b:B
+    goto :goto_4
 
     .line 245
+    :cond_7
+    move v1, v3
+
     .line 246
-    goto :goto_3
+    move-object v3, v4
 
     .line 247
-    :cond_d
-    iget-object p2, p0, Lpr1;->G:Ljf1;
+    :goto_4
+    if-nez v17, :cond_8
 
     .line 248
     .line 249
-    iget-object p2, p2, Ljf1;->k:Ljava/lang/Object;
+    invoke-static {v0, v1}, Ljava/lang/Math;->max(II)I
 
     .line 250
     .line 251
-    check-cast p2, Landroid/widget/ListView;
-
     .line 252
+    move-result v14
+
     .line 253
-    iget v1, p0, Lpr1;->E:I
+    move-object/from16 v4, p1
 
     .line 254
     .line 255
-    sub-int/2addr v1, v2
+    move-object/from16 v6, p2
 
     .line 256
-    if-gez v1, :cond_e
-
     .line 257
-    .line 258
-    goto :goto_2
+    move/from16 v7, p3
 
+    .line 258
     .line 259
-    :cond_e
-    iput v1, p0, Lpr1;->E:I
+    move/from16 v8, p4
 
     .line 260
     .line 261
-    invoke-virtual {p2}, Landroid/widget/AdapterView;->getAdapter()Landroid/widget/Adapter;
+    move/from16 v9, p5
 
     .line 262
     .line 263
-    .line 264
-    move-result-object p2
+    move/from16 v10, p6
 
+    .line 264
     .line 265
-    check-cast p2, Lff1;
+    move/from16 v11, p7
 
     .line 266
     .line 267
-    invoke-virtual {p2}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
+    move/from16 v12, p8
 
     .line 268
     .line 269
-    .line 270
-    iget p2, p0, Lpr1;->E:I
+    move/from16 v13, p9
 
+    .line 270
     .line 271
+    move v15, v2
+
     .line 272
-    if-eq p2, v3, :cond_f
+    invoke-virtual/range {v3 .. v15}, Lsr1;->w(Landroid/graphics/Canvas;Lmq6;Landroid/text/GetChars;IIIIZFFII)V
 
     .line 273
     .line 274
-    iget-object v1, p0, Lpr1;->G:Ljf1;
-
     .line 275
-    .line 276
-    iget-object p0, p0, Lpr1;->F:Lff1;
-
-    .line 277
-    .line 278
-    iget-object p0, p0, Lff1;->a:Lpr1;
-
-    .line 279
-    .line 280
-    iget-object p0, p0, Lpr1;->x:Lsu0;
-
-    .line 281
-    .line 282
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    .line 283
-    .line 284
-    .line 285
-    move-result-object p0
-
-    .line 286
-    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
-
-    .line 287
-    .line 288
-    .line 289
-    move-result-object p0
-
-    .line 290
-    invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
-
-    .line 291
-    .line 292
-    .line 293
-    move-result-object p0
-
-    .line 294
-    const/high16 v3, 0x42340000    # 45.0f
-
-    .line 295
-    .line 296
-    invoke-static {v2, v3, p0}, Landroid/util/TypedValue;->applyDimension(IFLandroid/util/DisplayMetrics;)F
-
-    .line 297
-    .line 298
-    .line 299
-    move-result p0
-
-    .line 300
-    float-to-int p0, p0
-
-    .line 301
-    iget-object v2, v1, Ljf1;->k:Ljava/lang/Object;
-
-    .line 302
-    .line 303
-    check-cast v2, Landroid/widget/ListView;
-
-    .line 304
-    .line 305
-    new-instance v3, Lgf1;
-
-    .line 306
-    .line 307
-    invoke-direct {v3, v1, p2, p0}, Lgf1;-><init>(Ljf1;II)V
-
-    .line 308
-    .line 309
-    .line 310
-    invoke-virtual {v2, v3}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
-
-    .line 311
-    .line 312
-    .line 313
-    :cond_f
-    :goto_2
-    sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    .line 314
-    .line 315
-    iput-object p0, p1, Les1;->c:Ljava/lang/Boolean;
-
-    .line 316
-    .line 317
-    iput-byte v0, p1, Lgw1;->b:B
-
-    .line 318
-    .line 319
-    :cond_10
-    :goto_3
+    :cond_8
     return-void
-
-    .line 320
-    :pswitch_2
-    check-cast p1, Ljt5;
-
-    .line 321
-    .line 322
-    iget-byte p1, p1, Ljt5;->g:B
-
-    .line 323
-    .line 324
-    if-ne p1, v2, :cond_11
-
-    .line 325
-    .line 326
-    invoke-virtual {p0, v1}, Lpr1;->k(Z)V
-
-    .line 327
-    .line 328
-    .line 329
-    goto :goto_4
-
-    .line 330
-    :cond_11
-    if-ne p1, v3, :cond_13
-
-    .line 331
-    .line 332
-    iget-object p1, p0, Lpr1;->x:Lsu0;
-
-    .line 333
-    .line 334
-    invoke-virtual {p1}, Lsu0;->getDpUnit()F
-
-    .line 335
-    .line 336
-    .line 337
-    move-result p1
-
-    .line 338
-    const/high16 p2, 0x44fa0000    # 2000.0f
-
-    .line 339
-    .line 340
-    mul-float/2addr p1, p2
-
-    .line 341
-    const/4 p2, 0x0
-
-    .line 342
-    invoke-static {p2}, Ljava/lang/Math;->abs(F)F
-
-    .line 343
-    .line 344
-    .line 345
-    move-result v0
-
-    .line 346
-    cmpl-float v0, v0, p1
-
-    .line 347
-    .line 348
-    if-gez v0, :cond_12
-
-    .line 349
-    .line 350
-    invoke-static {p2}, Ljava/lang/Math;->abs(F)F
-
-    .line 351
-    .line 352
-    .line 353
-    move-result p2
-
-    .line 354
-    cmpl-float p1, p2, p1
-
-    .line 355
-    .line 356
-    if-ltz p1, :cond_13
-
-    .line 357
-    .line 358
-    :cond_12
-    invoke-virtual {p0}, Lpr1;->f()V
-
-    .line 359
-    .line 360
-    .line 361
-    :cond_13
-    :goto_4
-    return-void
-
-    .line 362
-    :pswitch_3
-    check-cast p1, Ls71;
-
-    .line 363
-    .line 364
-    iget-object p2, p0, Lis1;->j:Landroid/widget/PopupWindow;
-
-    .line 365
-    .line 366
-    iget-object v4, p0, Lpr1;->x:Lsu0;
-
-    .line 367
-    .line 368
-    iget-boolean v5, p1, Ls71;->f:Z
-
-    .line 369
-    .line 370
-    if-nez v5, :cond_1c
-
-    .line 371
-    .line 372
-    iget-boolean v5, p0, Lpr1;->L:Z
-
-    .line 373
-    .line 374
-    if-eqz v5, :cond_1c
-
-    .line 375
-    .line 376
-    iget-byte v5, p1, Ls71;->c:B
-
-    .line 377
-    .line 378
-    if-ne v5, v2, :cond_14
-
-    .line 379
-    .line 380
-    goto :goto_8
-
-    .line 381
-    :cond_14
-    iget-object v6, p1, Ls71;->d:Lyn0;
-
-    .line 382
-    .line 383
-    iget-object p1, p1, Ls71;->e:Lyn0;
-
-    .line 384
-    .line 385
-    if-eq v5, v3, :cond_18
-
-    .line 386
-    .line 387
-    if-eq v5, v0, :cond_15
-
-    .line 388
-    .line 389
-    goto :goto_7
-
-    .line 390
-    :cond_15
-    iget-object v0, v4, Lsu0;->q:Lds1;
-
-    .line 391
-    .line 392
-    iget-object v0, v0, Lds1;->b:Lf21;
-
-    .line 393
-    .line 394
-    invoke-virtual {v0}, Lf21;->a()Z
-
-    .line 395
-    .line 396
-    .line 397
-    move-result v0
-
-    .line 398
-    if-nez v0, :cond_1b
-
-    .line 399
-    .line 400
-    invoke-virtual {p2}, Landroid/widget/PopupWindow;->isShowing()Z
-
-    .line 401
-    .line 402
-    .line 403
-    move-result p2
-
-    .line 404
-    if-eqz p2, :cond_1b
-
-    .line 405
-    .line 406
-    iget p2, v6, Lyn0;->b:I
-
-    .line 407
-    .line 408
-    iget v0, p1, Lyn0;->b:I
-
-    .line 409
-    .line 410
-    if-ne p2, v0, :cond_17
-
-    .line 411
-    .line 412
-    iget p2, v6, Lyn0;->c:I
-
-    .line 413
-    .line 414
-    iget p1, p1, Lyn0;->c:I
-
-    .line 415
-    .line 416
-    sub-int/2addr p1, v2
-
-    .line 417
-    if-eq p2, p1, :cond_16
-
-    .line 418
-    .line 419
-    goto :goto_5
-
-    .line 420
-    :cond_16
-    invoke-virtual {p0, v2}, Lpr1;->k(Z)V
-
-    .line 421
-    .line 422
-    .line 423
-    move v1, v2
-
-    .line 424
-    goto :goto_7
-
-    .line 425
-    :cond_17
-    :goto_5
-    invoke-virtual {p0}, Lpr1;->f()V
-
-    .line 426
-    .line 427
-    .line 428
-    goto :goto_7
-
-    .line 429
-    :cond_18
-    iget-object v0, v4, Lsu0;->q:Lds1;
-
-    .line 430
-    .line 431
-    iget-object v0, v0, Lds1;->b:Lf21;
-
-    .line 432
-    .line 433
-    invoke-virtual {v0}, Lf21;->a()Z
-
-    .line 434
-    .line 435
-    .line 436
-    move-result v0
-
-    .line 437
-    if-eqz v0, :cond_19
-
-    .line 438
-    .line 439
-    invoke-virtual {v4}, Lsu0;->getProps()Lrj1;
-
-    .line 440
-    .line 441
-    .line 442
-    move-result-object v0
-
-    .line 443
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 444
-    .line 445
-    .line 446
-    :cond_19
-    iget v0, p1, Lyn0;->c:I
-
-    .line 447
-    .line 448
-    if-eqz v0, :cond_1a
-
-    .line 449
-    .line 450
-    iget v0, v6, Lyn0;->b:I
-
-    .line 451
-    .line 452
-    iget p1, p1, Lyn0;->b:I
-
-    .line 453
-    .line 454
-    if-ne v0, p1, :cond_1a
-
-    .line 455
-    .line 456
-    move v1, v2
-
-    .line 457
-    goto :goto_6
-
-    .line 458
-    :cond_1a
-    invoke-virtual {p0}, Lpr1;->f()V
-
-    .line 459
-    .line 460
-    .line 461
-    :goto_6
-    invoke-virtual {p2}, Landroid/widget/PopupWindow;->isShowing()Z
-
-    .line 462
-    .line 463
-    .line 464
-    move-result p1
-
-    .line 465
-    invoke-virtual {p0, p1}, Lpr1;->k(Z)V
-
-    .line 466
-    .line 467
-    .line 468
-    :cond_1b
-    :goto_7
-    if-eqz v1, :cond_1d
-
-    .line 469
-    .line 470
-    invoke-virtual {p0}, Lpr1;->h()V
-
-    .line 471
-    .line 472
-    .line 473
-    goto :goto_9
-
-    .line 474
-    :cond_1c
-    :goto_8
-    invoke-virtual {p0}, Lpr1;->f()V
-
-    .line 475
-    .line 476
-    .line 477
-    :cond_1d
-    :goto_9
-    return-void
-
-    .line 478
-    :pswitch_4
-    check-cast p1, Lvv0;
-
-    .line 479
-    .line 480
-    invoke-virtual {p0}, Lpr1;->d()V
-
-    .line 481
-    .line 482
-    .line 483
-    return-void
-
-    .line 484
-    nop
-
-    .line 485
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

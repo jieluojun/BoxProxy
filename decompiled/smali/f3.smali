@@ -1,131 +1,227 @@
-.class public abstract Lf3;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lf3;
+.super Le3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lp03;
-
-
-# static fields
-.field public static final l:Ljava/util/concurrent/ThreadPoolExecutor;
+.implements Ljava/util/ListIterator;
 
 
 # instance fields
-.field public j:Lsu0;
-
-.field public k:Ln71;
+.field public final synthetic m:Lh3;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 9
+.method public constructor <init>(Lh3;I)V
+    .locals 1
 
     .line 1
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
+    iput-object p1, p0, Lf3;->m:Lh3;
 
     .line 2
     .line 3
+    const/4 v0, 0x0
+
     .line 4
-    move-result-object v0
+    invoke-direct {p0, p1, v0}, Le3;-><init>(Ljava/lang/Object;B)V
 
     .line 5
-    invoke-virtual {v0}, Ljava/lang/Runtime;->availableProcessors()I
-
     .line 6
     .line 7
+    invoke-virtual {p1}, Lp2;->a()I
+
     .line 8
-    move-result v0
-
     .line 9
-    const/4 v1, 0x2
-
     .line 10
-    invoke-static {v1, v0}, Ljava/lang/Math;->max(II)I
+    move-result p1
 
     .line 11
+    if-ltz p2, :cond_0
+
     .line 12
     .line 13
-    move-result v4
+    if-gt p2, p1, :cond_0
 
     .line 14
-    new-instance v2, Ljava/util/concurrent/ThreadPoolExecutor;
-
     .line 15
-    .line 16
-    new-instance v8, Ljava/util/concurrent/LinkedBlockingQueue;
+    iput p2, p0, Le3;->k:I
 
+    .line 16
     .line 17
+    return-void
+
     .line 18
-    const/16 v0, 0x80
+    :cond_0
+    const-string p0, "index: "
 
     .line 19
     .line 20
-    invoke-direct {v8, v0}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>(I)V
+    const-string v0, ", size: "
 
     .line 21
     .line 22
+    invoke-static {p2, p1, p0, v0}, Lqq5;->j(IILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
     .line 23
-    const/4 v3, 0x2
-
     .line 24
-    const-wide/16 v5, 0x1
-
     .line 25
+    move-result-object p0
+
     .line 26
-    sget-object v7, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
+    invoke-static {p0}, Lvd1;->q(Ljava/lang/String;)V
 
     .line 27
     .line 28
-    invoke-direct/range {v2 .. v8}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;)V
-
     .line 29
+    const/4 p0, 0x0
+
     .line 30
-    .line 31
-    sput-object v2, Lf3;->l:Ljava/util/concurrent/ThreadPoolExecutor;
-
-    .line 32
-    .line 33
-    return-void
-.end method
-
-.method public constructor <init>(Lsu0;Ln71;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p1, p0, Lf3;->j:Lsu0;
-
-    .line 5
-    .line 6
-    iput-object p2, p0, Lf3;->k:Ln71;
-
-    .line 7
-    .line 8
-    return-void
+    throw p0
 .end method
 
 
 # virtual methods
-.method public final t()V
+.method public final add(Ljava/lang/Object;)V
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lf3;->j:Lsu0;
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Lsu0;->getInlayHints()Lup2;
+    const-string p1, "Operation is not supported for read-only collection"
 
     .line 4
     .line 5
-    .line 6
-    sget-object p0, Ljava/util/Collections;->EMPTY_LIST:Ljava/util/List;
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
+    .line 6
     .line 7
     .line 8
-    return-void
+    throw p0
+.end method
+
+.method public final hasPrevious()Z
+    .locals 0
+
+    .line 1
+    iget p0, p0, Le3;->k:I
+
+    .line 2
+    .line 3
+    if-lez p0, :cond_0
+
+    .line 4
+    .line 5
+    const/4 p0, 0x1
+
+    .line 6
+    return p0
+
+    .line 7
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 8
+    return p0
+.end method
+
+.method public final nextIndex()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Le3;->k:I
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public final previous()Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, Lf3;->hasPrevious()Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    if-eqz v0, :cond_0
+
+    .line 6
+    .line 7
+    iget v0, p0, Le3;->k:I
+
+    .line 8
+    .line 9
+    add-int/lit8 v0, v0, -0x1
+
+    .line 10
+    .line 11
+    iput v0, p0, Le3;->k:I
+
+    .line 12
+    .line 13
+    iget-object p0, p0, Lf3;->m:Lh3;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    return-object p0
+
+    .line 20
+    :cond_0
+    invoke-static {}, Lvd1;->p()V
+
+    .line 21
+    .line 22
+    .line 23
+    const/4 p0, 0x0
+
+    .line 24
+    return-object p0
+.end method
+
+.method public final previousIndex()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Le3;->k:I
+
+    .line 2
+    .line 3
+    add-int/lit8 p0, p0, -0x1
+
+    .line 4
+    .line 5
+    return p0
+.end method
+
+.method public final set(Ljava/lang/Object;)V
+    .locals 0
+
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 2
+    .line 3
+    const-string p1, "Operation is not supported for read-only collection"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
 .end method

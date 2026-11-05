@@ -1,478 +1,537 @@
 .class public final synthetic Lbx4;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lp62;
+.implements Ld52;
 
 
 # instance fields
 .field public final synthetic j:B
 
-.field public final synthetic k:Ljava/lang/String;
-
-.field public final synthetic l:Landroid/content/Context;
-
-.field public final synthetic m:Ljava/lang/String;
+.field public final synthetic k:Las3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;Landroid/content/Context;Ljava/lang/String;B)V
+.method public synthetic constructor <init>(Las3;B)V
     .locals 0
 
     .line 1
-    iput-byte p4, p0, Lbx4;->j:B
+    iput-byte p2, p0, Lbx4;->j:B
 
     .line 2
     .line 3
-    iput-object p1, p0, Lbx4;->k:Ljava/lang/String;
+    iput-object p1, p0, Lbx4;->k:Las3;
 
     .line 4
     .line 5
-    iput-object p2, p0, Lbx4;->l:Landroid/content/Context;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 6
     .line 7
-    iput-object p3, p0, Lbx4;->m:Ljava/lang/String;
-
     .line 8
-    .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 10
-    .line 11
-    .line 12
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;B)V
-    .locals 0
-
-    .line 13
-    iput-byte p4, p0, Lbx4;->j:B
-
-    iput-object p1, p0, Lbx4;->k:Ljava/lang/String;
-
-    iput-object p2, p0, Lbx4;->m:Ljava/lang/String;
-
-    iput-object p3, p0, Lbx4;->l:Landroid/content/Context;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Lbx4;->j:B
 
     .line 2
     .line 3
-    const v1, 0x7f0f03cd
+    const/4 v1, 0x0
 
     .line 4
+    sget-object v2, Lk27;->a:Lk27;
+
     .line 5
     .line 6
-    const/4 v2, 0x0
+    iget-object p0, p0, Lbx4;->k:Las3;
 
     .line 7
-    sget-object v3, La47;->a:La47;
-
     .line 8
-    .line 9
-    iget-object v4, p0, Lbx4;->l:Landroid/content/Context;
+    packed-switch v0, :pswitch_data_0
 
+    .line 9
     .line 10
     .line 11
-    iget-object v5, p0, Lbx4;->m:Ljava/lang/String;
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     .line 12
     .line 13
-    iget-object p0, p0, Lbx4;->k:Ljava/lang/String;
+    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
 
     .line 14
     .line 15
-    packed-switch v0, :pswitch_data_0
-
     .line 16
+    return-object v2
+
     .line 17
+    :pswitch_0
+    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
     .line 18
-    check-cast p1, Lxb0;
-
     .line 19
-    .line 20
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
 
+    .line 20
     .line 21
     .line 22
+    return-object v2
+
     .line 23
-    iget-object v0, p1, Lxb0;->a:Ljava/lang/Object;
+    :pswitch_1
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     .line 24
     .line 25
-    if-eqz v0, :cond_1
+    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
 
     .line 26
     .line 27
-    :cond_0
-    move-object v5, p0
-
     .line 28
-    goto :goto_0
+    return-object v2
 
     .line 29
-    :cond_1
-    iget-object p0, p1, Lxb0;->b:Ljava/lang/String;
+    :pswitch_2
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
 
     .line 30
     .line 31
-    if-nez p0, :cond_0
-
     .line 32
+    move-result-object p0
+
     .line 33
-    :goto_0
-    invoke-static {v4, v5, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    check-cast p0, Lnj5;
 
     .line 34
     .line 35
+    return-object p0
+
     .line 36
-    move-result-object p0
+    :pswitch_3
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
 
     .line 37
-    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
-
     .line 38
     .line 39
+    move-result-object p0
+
     .line 40
-    return-object v3
+    check-cast p0, Ljava/lang/String;
 
     .line 41
-    :pswitch_0
-    check-cast p1, Ljv;
-
     .line 42
+    return-object p0
+
     .line 43
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :pswitch_4
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
 
     .line 44
     .line 45
     .line 46
-    iget-object v0, p1, Ljv;->a:Ljava/lang/Object;
+    move-result-object p0
 
     .line 47
-    .line 48
-    iget-object p1, p1, Ljv;->b:Ljava/lang/String;
+    check-cast p0, Ljava/lang/String;
 
+    .line 48
     .line 49
+    return-object p0
+
     .line 50
-    if-eqz v0, :cond_3
+    :pswitch_5
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
 
     .line 51
     .line 52
-    if-eqz p1, :cond_2
-
     .line 53
+    move-result-object p0
+
     .line 54
-    filled-new-array {p1}, [Ljava/lang/Object;
+    check-cast p0, Ljava/lang/String;
 
     .line 55
     .line 56
+    return-object p0
+
     .line 57
-    move-result-object p1
+    :pswitch_6
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
 
     .line 58
-    invoke-virtual {v4, v1, p1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
     .line 59
     .line 60
-    .line 61
-    move-result-object v5
-
-    .line 62
-    if-nez v5, :cond_5
-
-    .line 63
-    .line 64
-    :cond_2
-    move-object v5, p0
-
-    .line 65
-    goto :goto_1
-
-    .line 66
-    :cond_3
-    if-nez p1, :cond_4
-
-    .line 67
-    .line 68
-    goto :goto_1
-
-    .line 69
-    :cond_4
-    move-object v5, p1
-
-    .line 70
-    :cond_5
-    :goto_1
-    invoke-static {v4, v5, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
-    .line 71
-    .line 72
-    .line 73
     move-result-object p0
 
+    .line 61
+    check-cast p0, Ljava/lang/String;
+
+    .line 62
+    .line 63
+    return-object p0
+
+    .line 64
+    :pswitch_7
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
+
+    .line 65
+    .line 66
+    .line 67
+    move-result-object p0
+
+    .line 68
+    check-cast p0, Ljava/lang/String;
+
+    .line 69
+    .line 70
+    return-object p0
+
+    .line 71
+    :pswitch_8
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
+
+    .line 72
+    .line 73
     .line 74
-    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
+    move-result-object p0
 
     .line 75
+    check-cast p0, Ljava/lang/Boolean;
+
     .line 76
     .line 77
-    return-object v3
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 78
-    :pswitch_1
-    check-cast p1, Ljv;
-
     .line 79
     .line 80
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-object p0
 
     .line 81
+    :pswitch_9
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
+
     .line 82
     .line 83
-    iget-object v0, p1, Ljv;->a:Ljava/lang/Object;
-
     .line 84
+    move-result-object p0
+
     .line 85
-    iget-object p1, p1, Ljv;->b:Ljava/lang/String;
+    check-cast p0, Landroid/content/Context;
 
     .line 86
     .line 87
-    if-eqz v0, :cond_7
+    return-object p0
 
     .line 88
-    .line 89
-    if-eqz p1, :cond_6
+    :pswitch_a
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
 
+    .line 89
     .line 90
     .line 91
-    filled-new-array {p1}, [Ljava/lang/Object;
-
-    .line 92
-    .line 93
-    .line 94
-    move-result-object p1
-
-    .line 95
-    invoke-virtual {v4, v1, p1}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
-
-    .line 96
-    .line 97
-    .line 98
-    move-result-object v5
-
-    .line 99
-    if-nez v5, :cond_9
-
-    .line 100
-    .line 101
-    :cond_6
-    move-object v5, p0
-
-    .line 102
-    goto :goto_2
-
-    .line 103
-    :cond_7
-    if-nez p1, :cond_8
-
-    .line 104
-    .line 105
-    goto :goto_2
-
-    .line 106
-    :cond_8
-    move-object v5, p1
-
-    .line 107
-    :cond_9
-    :goto_2
-    invoke-static {v4, v5, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
-    .line 108
-    .line 109
-    .line 110
     move-result-object p0
 
+    .line 92
+    check-cast p0, Ljava/lang/Boolean;
+
+    .line 93
+    .line 94
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 95
+    .line 96
+    .line 97
+    return-object p0
+
+    .line 98
+    :pswitch_b
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
+
+    .line 99
+    .line 100
+    .line 101
+    move-result-object p0
+
+    .line 102
+    check-cast p0, Ld52;
+
+    .line 103
+    .line 104
+    invoke-interface {p0}, Ld52;->invoke()Ljava/lang/Object;
+
+    .line 105
+    .line 106
+    .line 107
+    return-object v2
+
+    .line 108
+    :pswitch_c
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
+
+    .line 109
+    .line 110
     .line 111
-    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
+    move-result-object p0
 
     .line 112
+    check-cast p0, Lh35;
+
     .line 113
     .line 114
-    return-object v3
+    return-object p0
 
     .line 115
-    :pswitch_2
-    check-cast p1, Lxb0;
+    :pswitch_d
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
 
     .line 116
     .line 117
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 118
-    .line 119
-    .line 120
-    iget-object v0, p1, Lxb0;->a:Ljava/lang/Object;
+    move-result-object p0
 
+    .line 119
+    check-cast p0, Ljava/lang/String;
+
+    .line 120
     .line 121
+    return-object p0
+
     .line 122
-    if-eqz v0, :cond_b
+    :pswitch_e
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
 
     .line 123
     .line 124
-    :cond_a
-    move-object v5, p0
-
     .line 125
-    goto :goto_3
+    move-result-object p0
 
     .line 126
-    :cond_b
-    iget-object p0, p1, Lxb0;->b:Ljava/lang/String;
+    check-cast p0, Ljava/lang/Boolean;
 
     .line 127
     .line 128
-    if-nez p0, :cond_a
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 129
     .line 130
-    :goto_3
-    invoke-static {v4, v5, v2}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-
     .line 131
+    return-object p0
+
     .line 132
+    :pswitch_f
+    invoke-interface {p0, v1}, Las3;->setValue(Ljava/lang/Object;)V
+
     .line 133
-    move-result-object p0
-
     .line 134
-    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
-
     .line 135
-    .line 136
-    .line 137
-    return-object v3
+    return-object v2
 
+    .line 136
+    :pswitch_10
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    .line 137
     .line 138
-    :pswitch_3
-    check-cast p1, Ljava/lang/String;
+    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
 
     .line 139
     .line 140
-    if-eqz p1, :cond_e
-
     .line 141
+    return-object v2
+
     .line 142
-    invoke-static {p1}, Lad6;->y0(Ljava/lang/CharSequence;)Z
+    :pswitch_11
+    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     .line 143
     .line 144
+    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
+
     .line 145
-    move-result v0
-
     .line 146
-    if-eqz v0, :cond_c
-
     .line 147
+    return-object v2
+
     .line 148
-    goto :goto_4
+    :pswitch_12
+    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
     .line 149
-    :cond_c
-    move-object p0, p1
-
     .line 150
-    :goto_4
-    if-nez p0, :cond_d
+    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
 
     .line 151
     .line 152
-    goto :goto_5
-
     .line 153
-    :cond_d
-    move-object v5, p0
+    return-object v2
 
     .line 154
-    :goto_5
-    invoke-static {v4, v5}, Lx27;->h(Landroid/content/Context;Ljava/lang/String;)V
+    :pswitch_13
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     .line 155
     .line 156
+    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
+
     .line 157
-    :cond_e
-    return-object v3
-
     .line 158
-    :pswitch_4
-    check-cast p1, Ljava/lang/String;
-
     .line 159
+    return-object v2
+
     .line 160
-    if-eqz p1, :cond_11
+    :pswitch_14
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     .line 161
     .line 162
-    invoke-static {p1}, Lad6;->y0(Ljava/lang/CharSequence;)Z
+    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
 
     .line 163
     .line 164
     .line 165
-    move-result v0
+    return-object v2
 
     .line 166
-    if-eqz v0, :cond_f
+    :pswitch_15
+    invoke-interface {p0, v1}, Las3;->setValue(Ljava/lang/Object;)V
 
     .line 167
     .line 168
-    goto :goto_6
-
     .line 169
-    :cond_f
-    move-object p0, p1
+    return-object v2
 
     .line 170
-    :goto_6
-    if-nez p0, :cond_10
+    :pswitch_16
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     .line 171
     .line 172
-    goto :goto_7
+    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
 
     .line 173
-    :cond_10
-    move-object v5, p0
-
     .line 174
-    :goto_7
-    invoke-static {v4, v5}, Lx27;->h(Landroid/content/Context;Ljava/lang/String;)V
-
     .line 175
-    .line 176
-    .line 177
-    :cond_11
-    return-object v3
+    return-object v2
 
+    .line 176
+    :pswitch_17
+    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    .line 177
     .line 178
-    nop
+    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
 
     .line 179
+    .line 180
+    .line 181
+    return-object v2
+
+    .line 182
+    :pswitch_18
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    .line 183
+    .line 184
+    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
+
+    .line 185
+    .line 186
+    .line 187
+    return-object v2
+
+    .line 188
+    :pswitch_19
+    invoke-interface {p0, v1}, Las3;->setValue(Ljava/lang/Object;)V
+
+    .line 189
+    .line 190
+    .line 191
+    return-object v2
+
+    .line 192
+    :pswitch_1a
+    sget-object v0, Lg35;->j:Lg35;
+
+    .line 193
+    .line 194
+    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
+
+    .line 195
+    .line 196
+    .line 197
+    return-object v2
+
+    .line 198
+    :pswitch_1b
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
+
+    .line 199
+    .line 200
+    .line 201
+    move-result-object p0
+
+    .line 202
+    check-cast p0, Ljava/lang/Boolean;
+
+    .line 203
+    .line 204
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 205
+    .line 206
+    .line 207
+    return-object p0
+
+    .line 208
+    :pswitch_1c
+    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
+
+    .line 209
+    .line 210
+    .line 211
+    move-result-object p0
+
+    .line 212
+    check-cast p0, Ljava/util/Map;
+
+    .line 213
+    .line 214
+    return-object p0
+
+    .line 215
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_1c
+        :pswitch_1b
+        :pswitch_1a
+        :pswitch_19
+        :pswitch_18
+        :pswitch_17
+        :pswitch_16
+        :pswitch_15
+        :pswitch_14
+        :pswitch_13
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
         :pswitch_4
         :pswitch_3
         :pswitch_2

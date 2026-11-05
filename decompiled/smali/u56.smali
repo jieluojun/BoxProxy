@@ -1,19 +1,23 @@
 .class public final Lu56;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lwo2;
+.implements Lh11;
+.implements Ljava/lang/Iterable;
+.implements Lvw2;
 
 
 # instance fields
-.field public final a:F
+.field public final j:Lt56;
 
-.field public final b:Lma6;
+.field public final k:I
+
+.field public final l:I
 
 
 # direct methods
-.method public constructor <init>(FLma6;)V
+.method public constructor <init>(Lt56;II)V
     .locals 0
 
     .line 1
@@ -22,132 +26,90 @@
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Lu56;->a:F
+    iput-object p1, p0, Lu56;->j:Lt56;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lu56;->b:Lma6;
+    iput p2, p0, Lu56;->k:I
 
     .line 7
     .line 8
+    iput p3, p0, Lu56;->l:I
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lvs2;)Lmh1;
-    .locals 2
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    new-instance v0, Lt56;
-
-    .line 5
-    .line 6
-    iget v1, p0, Lu56;->a:F
-
-    .line 7
-    .line 8
-    iget-object p0, p0, Lu56;->b:Lma6;
-
-    .line 9
-    .line 10
-    invoke-direct {v0, p1, v1, p0}, Lt56;-><init>(Lvs2;FLma6;)V
-
-    .line 11
-    .line 12
-    .line 13
-    return-object v0
-.end method
-
 .method public final equals(Ljava/lang/Object;)Z
     .locals 2
 
     .line 1
-    if-ne p0, p1, :cond_0
+    instance-of v0, p1, Lu56;
 
     .line 2
     .line 3
-    goto :goto_1
+    if-eqz v0, :cond_1
 
     .line 4
-    :cond_0
-    instance-of v0, p1, Lu56;
-
     .line 5
-    .line 6
-    if-nez v0, :cond_1
-
-    .line 7
-    .line 8
-    goto :goto_0
-
-    .line 9
-    :cond_1
     check-cast p1, Lu56;
+
+    .line 6
+    .line 7
+    iget v0, p1, Lu56;->k:I
+
+    .line 8
+    .line 9
+    iget v1, p0, Lu56;->k:I
 
     .line 10
     .line 11
-    iget v0, p0, Lu56;->a:F
+    if-ne v0, v1, :cond_1
 
     .line 12
     .line 13
-    iget v1, p1, Lu56;->a:F
+    iget v0, p1, Lu56;->l:I
 
     .line 14
     .line 15
-    invoke-static {v0, v1}, Ljava/lang/Float;->compare(FF)I
+    iget v1, p0, Lu56;->l:I
 
     .line 16
     .line 17
-    .line 18
-    move-result v0
+    if-ne v0, v1, :cond_1
 
+    .line 18
     .line 19
-    if-eqz v0, :cond_2
+    iget-object p1, p1, Lu56;->j:Lt56;
 
     .line 20
     .line 21
-    goto :goto_0
+    iget-object p0, p0, Lu56;->j:Lt56;
 
     .line 22
-    :cond_2
-    iget-object p0, p0, Lu56;->b:Lma6;
-
     .line 23
-    .line 24
-    iget-object p1, p1, Lu56;->b:Lma6;
+    if-eq p1, p0, :cond_0
 
+    .line 24
     .line 25
+    goto :goto_0
+
     .line 26
-    invoke-virtual {p0, p1}, Lma6;->equals(Ljava/lang/Object;)Z
+    :cond_0
+    const/4 p0, 0x1
 
     .line 27
+    return p0
+
     .line 28
-    .line 29
-    move-result p0
-
-    .line 30
-    if-nez p0, :cond_3
-
-    .line 31
-    .line 32
+    :cond_1
     :goto_0
     const/4 p0, 0x0
 
-    .line 33
-    return p0
-
-    .line 34
-    :cond_3
-    :goto_1
-    const/4 p0, 0x1
-
-    .line 35
+    .line 29
     return p0
 .end method
 
@@ -155,11 +117,11 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lu56;->a:F
+    iget-object v0, p0, Lu56;->j:Lt56;
 
     .line 2
     .line 3
-    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
     .line 4
     .line 5
@@ -171,84 +133,82 @@
 
     .line 8
     .line 9
-    iget-object p0, p0, Lu56;->b:Lma6;
+    iget p0, p0, Lu56;->k:I
 
     .line 10
     .line 11
-    invoke-virtual {p0}, Lma6;->hashCode()I
+    add-int/2addr v0, p0
 
     .line 12
-    .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    add-int/2addr p0, v0
-
-    .line 16
-    return p0
+    return v0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final iterator()Ljava/util/Iterator;
+    .locals 5
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object v0, p0, Lu56;->j:Lt56;
 
     .line 2
     .line 3
-    const-string v1, "SinkFeedback(sinkAmount="
+    iget v1, v0, Lt56;->q:I
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget v2, p0, Lu56;->l:I
 
     .line 6
     .line 7
+    if-eq v1, v2, :cond_0
+
     .line 8
-    iget v1, p0, Lu56;->a:F
-
     .line 9
-    .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+    invoke-static {}, Lv56;->e()V
 
+    .line 10
     .line 11
     .line 12
+    :cond_0
+    iget p0, p0, Lu56;->k:I
+
     .line 13
-    const-string v1, ", animationSpec="
-
     .line 14
-    .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, p0}, Lt56;->h(I)Lu62;
 
+    .line 15
     .line 16
     .line 17
+    new-instance v1, Li82;
+
     .line 18
-    iget-object p0, p0, Lu56;->b:Lma6;
-
     .line 19
-    .line 20
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    add-int/lit8 v2, p0, 0x1
 
+    .line 20
     .line 21
+    iget-object v3, v0, Lt56;->j:[I
+
     .line 22
     .line 23
-    const-string p0, ")"
+    mul-int/lit8 v4, p0, 0x5
 
     .line 24
     .line 25
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    add-int/lit8 v4, v4, 0x3
 
     .line 26
     .line 27
+    aget v3, v3, v4
+
     .line 28
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
     .line 29
-    .line 30
-    .line 31
-    move-result-object p0
+    add-int/2addr v3, p0
 
+    .line 30
+    invoke-direct {v1, v0, v2, v3}, Li82;-><init>(Lt56;II)V
+
+    .line 31
     .line 32
-    return-object p0
+    .line 33
+    return-object v1
 .end method

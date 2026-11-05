@@ -1,27 +1,14 @@
-.class public final synthetic Lrb3;
+.class public final Lrb3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lt62;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:Le62;
-
-.field public final synthetic k:Lwp3;
-
-.field public final synthetic l:J
-
-.field public final synthetic m:J
-
-.field public final synthetic n:Ln06;
-
-.field public final synthetic o:Ljava/util/List;
+.field public final a:Landroid/os/LocaleList;
 
 
 # direct methods
-.method public synthetic constructor <init>(Le62;Lwp3;JJLn06;Ljava/util/List;I)V
+.method public constructor <init>(Landroid/os/LocaleList;)V
     .locals 0
 
     .line 1
@@ -30,98 +17,76 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lrb3;->j:Le62;
+    iput-object p1, p0, Lrb3;->a:Landroid/os/LocaleList;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lrb3;->k:Lwp3;
-
-    .line 7
-    .line 8
-    iput-wide p3, p0, Lrb3;->l:J
-
-    .line 9
-    .line 10
-    iput-wide p5, p0, Lrb3;->m:J
-
-    .line 11
-    .line 12
-    iput-object p7, p0, Lrb3;->n:Ln06;
-
-    .line 13
-    .line 14
-    iput-object p8, p0, Lrb3;->o:Ljava/util/List;
-
-    .line 15
-    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 10
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 0
 
     .line 1
-    move-object v8, p1
+    check-cast p1, Lrb3;
 
     .line 2
-    check-cast v8, Lz11;
-
     .line 3
+    iget-object p1, p1, Lrb3;->a:Landroid/os/LocaleList;
+
     .line 4
-    check-cast p2, Ljava/lang/Integer;
-
     .line 5
-    .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, Lrb3;->a:Landroid/os/LocaleList;
 
+    .line 6
     .line 7
+    invoke-virtual {p0, p1}, Landroid/os/LocaleList;->equals(Ljava/lang/Object;)Z
+
     .line 8
     .line 9
-    const/4 p1, 0x1
-
     .line 10
-    invoke-static {p1}, Lqu5;->f0(I)I
+    move-result p0
 
     .line 11
-    .line 12
-    .line 13
-    move-result v9
+    return p0
+.end method
 
-    .line 14
-    iget-object v0, p0, Lrb3;->j:Le62;
+.method public final hashCode()I
+    .locals 0
 
-    .line 15
-    .line 16
-    iget-object v1, p0, Lrb3;->k:Lwp3;
+    .line 1
+    iget-object p0, p0, Lrb3;->a:Landroid/os/LocaleList;
 
-    .line 17
-    .line 18
-    iget-wide v2, p0, Lrb3;->l:J
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/os/LocaleList;->hashCode()I
 
-    .line 19
-    .line 20
-    iget-wide v4, p0, Lrb3;->m:J
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
 
-    .line 21
-    .line 22
-    iget-object v6, p0, Lrb3;->n:Ln06;
+    .line 7
+    return p0
+.end method
 
-    .line 23
-    .line 24
-    iget-object v7, p0, Lrb3;->o:Ljava/util/List;
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    .line 25
-    .line 26
-    invoke-static/range {v0 .. v9}, Lkj3;->g(Le62;Lwp3;JJLn06;Ljava/util/List;Lz11;I)V
+    .line 1
+    iget-object p0, p0, Lrb3;->a:Landroid/os/LocaleList;
 
-    .line 27
-    .line 28
-    .line 29
-    sget-object p0, La47;->a:La47;
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Landroid/os/LocaleList;->toString()Ljava/lang/String;
 
-    .line 30
-    .line 31
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
     return-object p0
 .end method

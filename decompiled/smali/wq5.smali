@@ -1,157 +1,179 @@
-.class public final Lwq5;
+.class public abstract Lwq5;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ly63;
-.implements Ljava/lang/AutoCloseable;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final j:Ljava/lang/String;
+# static fields
+.field public static final a:[J
 
-.field public final k:Lvq5;
-
-.field public l:Z
+.field public static final b:Lur3;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lvq5;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x2
 
     .line 2
+    new-array v0, v0, [J
+
     .line 3
     .line 4
-    iput-object p1, p0, Lwq5;->j:Ljava/lang/String;
-
-    .line 5
-    .line 6
-    iput-object p2, p0, Lwq5;->k:Lvq5;
-
-    .line 7
-    .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final b(Lr82;Ld73;)V
-    .locals 1
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    fill-array-data v0, :array_0
 
     .line 5
     .line 6
     .line 7
-    iget-boolean v0, p0, Lwq5;->l:Z
+    sput-object v0, Lwq5;->a:[J
 
     .line 8
     .line 9
-    if-nez v0, :cond_0
+    new-instance v0, Lur3;
 
     .line 10
     .line 11
-    const/4 v0, 0x1
+    const/4 v1, 0x0
 
     .line 12
-    iput-boolean v0, p0, Lwq5;->l:Z
+    invoke-direct {v0, v1}, Lur3;-><init>(I)V
 
     .line 13
     .line 14
-    invoke-virtual {p2, p0}, Ld73;->a(Lz63;)V
-
     .line 15
+    sput-object v0, Lwq5;->b:Lur3;
+
     .line 16
     .line 17
-    iget-object p2, p0, Lwq5;->k:Lvq5;
+    return-void
 
     .line 18
+    nop
+
     .line 19
-    iget-object p2, p2, Lvq5;->a:Lw82;
-
-    .line 20
-    .line 21
-    iget-object p2, p2, Lw82;->a:Ljava/lang/Object;
-
-    .line 22
-    .line 23
-    check-cast p2, Lyk1;
-
-    .line 24
-    .line 25
-    iget-object p0, p0, Lwq5;->j:Ljava/lang/String;
-
-    .line 26
-    .line 27
-    invoke-virtual {p1, p0, p2}, Lr82;->c0(Ljava/lang/String;Lbr5;)V
-
-    .line 28
-    .line 29
-    .line 30
-    return-void
-
-    .line 31
-    :cond_0
-    const-string p0, "Already attached to lifecycleOwner"
-
-    .line 32
-    .line 33
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
-
-    .line 34
-    .line 35
-    .line 36
-    return-void
+    :array_0
+    .array-data 8
+        -0x7f7f7f7f7f7f7f01L    # -2.937446524423077E-306
+        -0x1
+    .end array-data
 .end method
 
-.method public final close()V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method public final f(La73;Ls63;)V
+.method public static final a(I)I
     .locals 1
 
     .line 1
-    sget-object v0, Ls63;->ON_DESTROY:Ls63;
+    const/4 v0, 0x7
 
     .line 2
-    .line 3
-    if-ne p2, v0, :cond_0
+    if-ne p0, v0, :cond_0
 
+    .line 3
     .line 4
+    const/4 p0, 0x6
+
     .line 5
-    const/4 p2, 0x0
+    return p0
 
     .line 6
-    iput-boolean p2, p0, Lwq5;->l:Z
+    :cond_0
+    div-int/lit8 v0, p0, 0x8
 
     .line 7
     .line 8
-    invoke-interface {p1}, La73;->h()Ld73;
+    sub-int/2addr p0, v0
+
+    .line 9
+    return p0
+.end method
+
+.method public static final b(I)I
+    .locals 0
+
+    .line 1
+    if-nez p0, :cond_0
+
+    .line 2
+    .line 3
+    const/4 p0, 0x6
+
+    .line 4
+    return p0
+
+    .line 5
+    :cond_0
+    mul-int/lit8 p0, p0, 0x2
+
+    .line 6
+    .line 7
+    add-int/lit8 p0, p0, 0x1
+
+    .line 8
+    .line 9
+    return p0
+.end method
+
+.method public static final c(I)I
+    .locals 1
+
+    .line 1
+    if-lez p0, :cond_0
+
+    .line 2
+    .line 3
+    const/4 v0, -0x1
+
+    .line 4
+    invoke-static {p0}, Ljava/lang/Integer;->numberOfLeadingZeros(I)I
+
+    .line 5
+    .line 6
+    .line 7
+    move-result p0
+
+    .line 8
+    ushr-int p0, v0, p0
 
     .line 9
     .line 10
+    return p0
+
     .line 11
-    move-result-object p1
+    :cond_0
+    const/4 p0, 0x0
 
     .line 12
-    invoke-virtual {p1, p0}, Ld73;->f(Lz63;)V
+    return p0
+.end method
 
-    .line 13
-    .line 14
-    .line 15
+.method public static final d(I)I
+    .locals 2
+
+    .line 1
+    const/4 v0, 0x7
+
+    .line 2
+    if-ne p0, v0, :cond_0
+
+    .line 3
+    .line 4
+    const/16 p0, 0x8
+
+    .line 5
+    .line 6
+    return p0
+
+    .line 7
     :cond_0
-    return-void
+    add-int/lit8 v1, p0, -0x1
+
+    .line 8
+    .line 9
+    div-int/2addr v1, v0
+
+    .line 10
+    add-int/2addr v1, p0
+
+    .line 11
+    return v1
 .end method

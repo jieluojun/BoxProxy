@@ -1,14 +1,16 @@
 .class public final Ltf4;
-.super Lne3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final f:Lga5;
+.field public final a:I
+
+.field public final b:Lno0;
 
 
 # direct methods
-.method public constructor <init>(Lga5;)V
+.method public constructor <init>(ILno0;)V
     .locals 0
 
     .line 1
@@ -17,17 +19,21 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Ltf4;->f:Lga5;
+    iput p1, p0, Ltf4;->a:I
 
     .line 5
     .line 6
+    iput-object p2, p0, Ltf4;->b:Lno0;
+
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
 .method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+    .locals 2
 
     .line 1
     if-ne p0, p1, :cond_0
@@ -54,67 +60,147 @@
 
     .line 10
     .line 11
-    iget-object p1, p1, Ltf4;->f:Lga5;
+    iget v0, p0, Ltf4;->a:I
 
     .line 12
     .line 13
-    iget-object p0, p0, Ltf4;->f:Lga5;
+    iget v1, p1, Ltf4;->a:I
 
     .line 14
     .line 15
-    invoke-virtual {p0, p1}, Lga5;->equals(Ljava/lang/Object;)Z
+    if-eq v0, v1, :cond_2
 
     .line 16
     .line 17
+    goto :goto_0
+
     .line 18
-    move-result p0
+    :cond_2
+    iget-object p0, p0, Ltf4;->b:Lno0;
 
     .line 19
-    if-nez p0, :cond_2
-
     .line 20
+    iget-object p1, p1, Ltf4;->b:Lno0;
+
     .line 21
+    .line 22
+    if-eq p0, p1, :cond_3
+
+    .line 23
+    .line 24
     :goto_0
     const/4 p0, 0x0
 
-    .line 22
+    .line 25
     return p0
 
-    .line 23
-    :cond_2
+    .line 26
+    :cond_3
     :goto_1
     const/4 p0, 0x1
 
-    .line 24
+    .line 27
     return p0
 .end method
 
 .method public final hashCode()I
-    .locals 0
+    .locals 1
 
     .line 1
-    iget-object p0, p0, Ltf4;->f:Lga5;
+    iget v0, p0, Ltf4;->a:I
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Lga5;->hashCode()I
+    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
 
     .line 4
     .line 5
     .line 6
-    move-result p0
+    move-result v0
 
     .line 7
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 8
+    .line 9
+    iget-object p0, p0, Ltf4;->b:Lno0;
+
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    add-int/2addr p0, v0
+
+    .line 16
     return p0
 .end method
 
-.method public final x()Lga5;
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
     .line 1
-    iget-object p0, p0, Ltf4;->f:Lga5;
+    new-instance v0, Ljava/lang/StringBuilder;
 
     .line 2
     .line 3
+    const-string v1, "OverviewDimensionOption(labelRes="
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget v1, p0, Ltf4;->a:I
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const-string v1, ", dimension="
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    iget-object p0, p0, Ltf4;->b:Lno0;
+
+    .line 19
+    .line 20
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 21
+    .line 22
+    .line 23
+    const-string p0, ")"
+
+    .line 24
+    .line 25
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 26
+    .line 27
+    .line 28
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
     return-object p0
 .end method

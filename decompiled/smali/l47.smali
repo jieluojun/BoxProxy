@@ -1,98 +1,79 @@
-.class public final Ll47;
-.super Ln47;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Ll47;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic b:Ljava/lang/reflect/Method;
+# static fields
+.field public static final a:[I
+
+.field public static final b:[F
+
+.field public static final c:Lc6;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/reflect/Method;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
 
     .line 2
+    new-array v1, v0, [I
+
     .line 3
     .line 4
-    iput-object p1, p0, Ll47;->b:Ljava/lang/reflect/Method;
+    sput-object v1, Ll47;->a:[I
 
     .line 5
     .line 6
-    return-void
-.end method
+    new-array v0, v0, [F
 
-
-# virtual methods
-.method public final a(Ljava/lang/Class;)Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    invoke-static {p1}, Loq2;->o(Ljava/lang/Class;)Ljava/lang/String;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
-
-    .line 5
-    if-nez v0, :cond_0
-
-    .line 6
     .line 7
-    const-class v0, Ljava/lang/Object;
-
     .line 8
-    .line 9
-    filled-new-array {p1, v0}, [Ljava/lang/Object;
+    sput-object v0, Ll47;->b:[F
 
+    .line 9
     .line 10
+    new-instance v0, Lc6;
+
     .line 11
     .line 12
-    move-result-object p1
+    const/4 v1, 0x2
 
     .line 13
-    iget-object p0, p0, Ll47;->b:Ljava/lang/reflect/Method;
+    new-array v2, v1, [I
 
     .line 14
     .line 15
-    const/4 v0, 0x0
+    new-array v3, v1, [F
 
     .line 16
-    invoke-virtual {p0, v0, p1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 17
+    new-array v4, v1, [F
+
     .line 18
     .line 19
-    move-result-object p0
+    new-array v1, v1, [F
 
     .line 20
-    return-object p0
-
     .line 21
-    :cond_0
-    new-instance p0, Ljava/lang/AssertionError;
+    filled-new-array {v4, v1}, [[F
 
     .line 22
     .line 23
-    const-string p1, "UnsafeAllocator is used for non-instantiable type: "
-
     .line 24
+    move-result-object v1
+
     .line 25
-    invoke-virtual {p1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    invoke-direct {v0, v2, v3, v1}, Lc6;-><init>([I[F[[F)V
 
     .line 26
     .line 27
     .line 28
-    move-result-object p1
+    sput-object v0, Ll47;->c:Lc6;
 
     .line 29
-    invoke-direct {p0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
     .line 30
-    .line 31
-    .line 32
-    throw p0
+    return-void
 .end method

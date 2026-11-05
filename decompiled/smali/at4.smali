@@ -1,37 +1,83 @@
-.class public abstract Lat4;
+.class public final Lat4;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# instance fields
+.field public final a:I
 
 
 # direct methods
-.method public static final a(Ljava/lang/String;)V
-    .locals 1
+.method public constructor <init>(I)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
     .line 4
+    iput p1, p0, Lat4;->a:I
+
     .line 5
     .line 6
-    throw v0
+    return-void
 .end method
 
-.method public static final b(Ljava/lang/String;)V
-    .locals 1
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
     .line 1
-    new-instance v0, Ljava/lang/IllegalStateException;
+    instance-of v0, p1, Lat4;
 
     .line 2
     .line 3
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    const/4 v1, 0x0
 
     .line 4
+    if-nez v0, :cond_0
+
     .line 5
     .line 6
-    throw v0
+    return v1
+
+    .line 7
+    :cond_0
+    check-cast p1, Lat4;
+
+    .line 8
+    .line 9
+    iget p1, p1, Lat4;->a:I
+
+    .line 10
+    .line 11
+    iget p0, p0, Lat4;->a:I
+
+    .line 12
+    .line 13
+    if-ne p0, p1, :cond_1
+
+    .line 14
+    .line 15
+    const/4 p0, 0x1
+
+    .line 16
+    return p0
+
+    .line 17
+    :cond_1
+    return v1
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lat4;->a:I
+
+    .line 2
+    .line 3
+    return p0
 .end method

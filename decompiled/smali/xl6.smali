@@ -1,242 +1,108 @@
-.class public final enum Lxl6;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lxl6;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-
-# static fields
-.field public static final synthetic k:[Lxl6;
+# interfaces
+.implements Ls52;
 
 
 # instance fields
-.field public final j:Ljava/lang/Object;
+.field public final synthetic j:J
+
+.field public final synthetic k:Lvq6;
+
+.field public final synthetic l:Ls52;
+
+.field public final synthetic m:S
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 10
-
-    .line 1
-    new-instance v0, Lxl6;
-
-    .line 2
-    .line 3
-    sget-object v3, La57;->y0:Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    const v4, 0x1040003
-
-    .line 6
-    .line 7
-    .line 8
-    const v5, 0x1010311
-
-    .line 9
-    .line 10
-    .line 11
-    const-string v1, "Cut"
-
-    .line 12
-    .line 13
-    const/4 v2, 0x0
-
-    .line 14
-    invoke-direct/range {v0 .. v5}, Lxl6;-><init>(Ljava/lang/String;ILjava/lang/Object;II)V
-
-    .line 15
-    .line 16
-    .line 17
-    new-instance v1, Lxl6;
-
-    .line 18
-    .line 19
-    sget-object v4, La57;->z0:Ljava/lang/Object;
-
-    .line 20
-    .line 21
-    const v5, 0x1040001
-
-    .line 22
-    .line 23
-    .line 24
-    const v6, 0x1010312
-
-    .line 25
-    .line 26
-    .line 27
-    const-string v2, "Copy"
-
-    .line 28
-    .line 29
-    const/4 v3, 0x1
-
-    .line 30
-    invoke-direct/range {v1 .. v6}, Lxl6;-><init>(Ljava/lang/String;ILjava/lang/Object;II)V
-
-    .line 31
-    .line 32
-    .line 33
-    new-instance v2, Lxl6;
-
-    .line 34
-    .line 35
-    sget-object v5, La57;->A0:Ljava/lang/Object;
-
-    .line 36
-    .line 37
-    const v6, 0x104000b
-
-    .line 38
-    .line 39
-    .line 40
-    const v7, 0x1010313
-
-    .line 41
-    .line 42
-    .line 43
-    const-string v3, "Paste"
-
-    .line 44
-    .line 45
-    const/4 v4, 0x2
-
-    .line 46
-    invoke-direct/range {v2 .. v7}, Lxl6;-><init>(Ljava/lang/String;ILjava/lang/Object;II)V
-
-    .line 47
-    .line 48
-    .line 49
-    new-instance v3, Lxl6;
-
-    .line 50
-    .line 51
-    sget-object v6, La57;->B0:Ljava/lang/Object;
-
-    .line 52
-    .line 53
-    const v7, 0x104000d
-
-    .line 54
-    .line 55
-    .line 56
-    const v8, 0x101037e
-
-    .line 57
-    .line 58
-    .line 59
-    const-string v4, "SelectAll"
-
-    .line 60
-    .line 61
-    const/4 v5, 0x3
-
-    .line 62
-    invoke-direct/range {v3 .. v8}, Lxl6;-><init>(Ljava/lang/String;ILjava/lang/Object;II)V
-
-    .line 63
-    .line 64
-    .line 65
-    new-instance v4, Lxl6;
-
-    .line 66
-    .line 67
-    sget-object v7, La57;->C0:Ljava/lang/Object;
-
-    .line 68
-    .line 69
-    const v8, 0x104001a
-
-    .line 70
-    .line 71
-    .line 72
-    const/4 v9, 0x0
-
-    .line 73
-    const-string v5, "Autofill"
-
-    .line 74
-    .line 75
-    const/4 v6, 0x4
-
-    .line 76
-    invoke-direct/range {v4 .. v9}, Lxl6;-><init>(Ljava/lang/String;ILjava/lang/Object;II)V
-
-    .line 77
-    .line 78
-    .line 79
-    filled-new-array {v0, v1, v2, v3, v4}, [Lxl6;
-
-    .line 80
-    .line 81
-    .line 82
-    move-result-object v0
-
-    .line 83
-    sput-object v0, Lxl6;->k:[Lxl6;
-
-    .line 84
-    .line 85
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/Object;II)V
+.method public synthetic constructor <init>(JLvq6;Ls52;I)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    iput-object p3, p0, Lxl6;->j:Ljava/lang/Object;
+    iput-wide p1, p0, Lxl6;->j:J
 
     .line 5
     .line 6
+    iput-object p3, p0, Lxl6;->k:Lvq6;
+
+    .line 7
+    .line 8
+    iput-object p4, p0, Lxl6;->l:Ls52;
+
+    .line 9
+    .line 10
+    iput-short p5, p0, Lxl6;->m:S
+
+    .line 11
+    .line 12
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lxl6;
-    .locals 1
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
     .line 1
-    const-class v0, Lxl6;
+    move-object v4, p1
 
     .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    check-cast v4, Lv01;
 
+    .line 3
     .line 4
+    check-cast p2, Ljava/lang/Integer;
+
     .line 5
     .line 6
-    move-result-object p0
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 7
-    check-cast p0, Lxl6;
-
     .line 8
     .line 9
+    iget-short p1, p0, Lxl6;->m:S
+
+    .line 10
+    .line 11
+    or-int/lit8 p1, p1, 0x1
+
+    .line 12
+    .line 13
+    invoke-static {p1}, Lw23;->h0(I)I
+
+    .line 14
+    .line 15
+    .line 16
+    move-result v5
+
+    .line 17
+    iget-wide v0, p0, Lxl6;->j:J
+
+    .line 18
+    .line 19
+    iget-object v2, p0, Lxl6;->k:Lvq6;
+
+    .line 20
+    .line 21
+    iget-object v3, p0, Lxl6;->l:Ls52;
+
+    .line 22
+    .line 23
+    invoke-static/range {v0 .. v5}, Lv33;->d(JLvq6;Ls52;Lv01;I)V
+
+    .line 24
+    .line 25
+    .line 26
+    sget-object p0, Lk27;->a:Lk27;
+
+    .line 27
+    .line 28
     return-object p0
-.end method
-
-.method public static values()[Lxl6;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lxl6;->k:[Lxl6;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [Lxl6;
-
-    .line 8
-    .line 9
-    return-object v0
 .end method

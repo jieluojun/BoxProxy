@@ -1,156 +1,48 @@
 .class public final Lcn4;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lgn4;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:Ltc3;
-
-.field public final c:Ljava/lang/String;
-
-
-# direct methods
-.method public constructor <init>(Ljava/lang/String;Ltc3;Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 5
-    .line 6
-    .line 7
-    iput-object p1, p0, Lcn4;->a:Ljava/lang/String;
-
-    .line 8
-    .line 9
-    iput-object p2, p0, Lcn4;->b:Ltc3;
-
-    .line 10
-    .line 11
-    iput-object p3, p0, Lcn4;->c:Ljava/lang/String;
-
-    .line 12
-    .line 13
-    return-void
-.end method
+.field public p:Ldn4;
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
+.method public final bridge synthetic a()Len4;
+    .locals 0
 
     .line 1
-    if-ne p0, p1, :cond_0
+    invoke-virtual {p0}, Lcn4;->d()Ldn4;
 
     .line 2
     .line 3
-    goto :goto_1
-
     .line 4
-    :cond_0
-    instance-of v0, p1, Lcn4;
+    move-result-object p0
 
     .line 5
-    .line 6
-    if-nez v0, :cond_1
-
-    .line 7
-    .line 8
-    goto :goto_0
-
-    .line 9
-    :cond_1
-    check-cast p1, Lcn4;
-
-    .line 10
-    .line 11
-    iget-object v0, p0, Lcn4;->a:Ljava/lang/String;
-
-    .line 12
-    .line 13
-    iget-object v1, p1, Lcn4;->a:Ljava/lang/String;
-
-    .line 14
-    .line 15
-    invoke-static {v0, v1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 16
-    .line 17
-    .line 18
-    move-result v0
-
-    .line 19
-    if-nez v0, :cond_2
-
-    .line 20
-    .line 21
-    goto :goto_0
-
-    .line 22
-    :cond_2
-    iget-object v0, p0, Lcn4;->b:Ltc3;
-
-    .line 23
-    .line 24
-    iget-object v1, p1, Lcn4;->b:Ltc3;
-
-    .line 25
-    .line 26
-    if-eq v0, v1, :cond_3
-
-    .line 27
-    .line 28
-    goto :goto_0
-
-    .line 29
-    :cond_3
-    iget-object p0, p0, Lcn4;->c:Ljava/lang/String;
-
-    .line 30
-    .line 31
-    iget-object p1, p1, Lcn4;->c:Ljava/lang/String;
-
-    .line 32
-    .line 33
-    invoke-static {p0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 34
-    .line 35
-    .line 36
-    move-result p0
-
-    .line 37
-    if-nez p0, :cond_4
-
-    .line 38
-    .line 39
-    :goto_0
-    const/4 p0, 0x0
-
-    .line 40
-    return p0
-
-    .line 41
-    :cond_4
-    :goto_1
-    const/4 p0, 0x1
-
-    .line 42
-    return p0
+    return-object p0
 .end method
 
-.method public final hashCode()I
-    .locals 2
+.method public final bridge synthetic b()Len4;
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lcn4;->a:Ljava/lang/String;
+    invoke-virtual {p0}, Lcn4;->d()Ldn4;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method public final bridge containsKey(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    instance-of v0, p1, Leu4;
 
     .line 2
     .line 3
@@ -158,131 +50,241 @@
 
     .line 4
     .line 5
-    const/4 v0, 0x0
+    const/4 p0, 0x0
 
     .line 6
-    goto :goto_0
+    return p0
 
     .line 7
     :cond_0
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    check-cast p1, Leu4;
 
     .line 8
     .line 9
+    invoke-super {p0, p1}, Lgn4;->containsKey(Ljava/lang/Object;)Z
+
     .line 10
-    move-result v0
-
     .line 11
-    :goto_0
-    mul-int/lit8 v0, v0, 0x1f
-
     .line 12
-    .line 13
-    iget-object v1, p0, Lcn4;->b:Ltc3;
-
-    .line 14
-    .line 15
-    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
-
-    .line 16
-    .line 17
-    .line 18
-    move-result v1
-
-    .line 19
-    add-int/2addr v1, v0
-
-    .line 20
-    mul-int/lit8 v1, v1, 0x1f
-
-    .line 21
-    .line 22
-    iget-object p0, p0, Lcn4;->c:Ljava/lang/String;
-
-    .line 23
-    .line 24
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
-
-    .line 25
-    .line 26
-    .line 27
     move-result p0
 
-    .line 28
-    add-int/2addr p0, v1
-
-    .line 29
+    .line 13
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final bridge containsValue(Ljava/lang/Object;)Z
+    .locals 1
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    instance-of v0, p1, Lz37;
 
     .line 2
     .line 3
-    const-string v1, "ParsedLogMetadata(timestampLabel="
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const/4 p0, 0x0
+
+    .line 6
+    return p0
+
+    .line 7
+    :cond_0
+    check-cast p1, Lz37;
+
+    .line 8
+    .line 9
+    invoke-super {p0, p1}, Ljava/util/AbstractMap;->containsValue(Ljava/lang/Object;)Z
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    return p0
+.end method
+
+.method public final d()Ldn4;
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lgn4;->l:Lxx6;
+
+    .line 2
+    .line 3
+    iget-object v1, p0, Lcn4;->p:Ldn4;
+
+    .line 4
+    .line 5
+    iget-object v2, v1, Len4;->j:Lxx6;
 
     .line 6
     .line 7
-    .line 8
-    iget-object v1, p0, Lcn4;->a:Ljava/lang/String;
+    if-ne v0, v2, :cond_0
 
+    .line 8
     .line 9
+    goto :goto_0
+
     .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :cond_0
+    new-instance v0, Lnb3;
 
     .line 11
     .line 12
+    const/4 v1, 0x4
+
     .line 13
-    const-string v1, ", level="
+    const/4 v2, 0x0
 
     .line 14
-    .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v0, v1, v2}, Lnb3;-><init>(BZ)V
 
+    .line 15
     .line 16
     .line 17
+    iput-object v0, p0, Lgn4;->k:Lnb3;
+
     .line 18
-    iget-object v1, p0, Lcn4;->b:Ltc3;
-
     .line 19
-    .line 20
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    new-instance v1, Ldn4;
 
+    .line 20
     .line 21
+    iget-object v0, p0, Lgn4;->l:Lxx6;
+
     .line 22
     .line 23
-    const-string v1, ", body="
+    iget v2, p0, Lgn4;->o:I
 
     .line 24
     .line 25
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v1, v0, v2}, Len4;-><init>(Lxx6;I)V
 
     .line 26
     .line 27
     .line 28
-    const-string v1, ")"
+    :goto_0
+    iput-object v1, p0, Lcn4;->p:Ldn4;
 
     .line 29
     .line 30
-    iget-object p0, p0, Lcn4;->c:Ljava/lang/String;
+    return-object v1
+.end method
 
-    .line 31
-    .line 32
-    invoke-static {v0, p0, v1}, Ly96;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+.method public final bridge get(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-    .line 33
-    .line 34
-    .line 35
+    .line 1
+    instance-of v0, p1, Leu4;
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
+    const/4 p0, 0x0
+
+    .line 6
+    return-object p0
+
+    .line 7
+    :cond_0
+    check-cast p1, Leu4;
+
+    .line 8
+    .line 9
+    invoke-super {p0, p1}, Lgn4;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 10
+    .line 11
+    .line 12
     move-result-object p0
 
-    .line 36
+    .line 13
+    check-cast p0, Lz37;
+
+    .line 14
+    .line 15
+    return-object p0
+.end method
+
+.method public final bridge getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    instance-of v0, p1, Leu4;
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
+    return-object p2
+
+    .line 6
+    :cond_0
+    check-cast p1, Leu4;
+
+    .line 7
+    .line 8
+    check-cast p2, Lz37;
+
+    .line 9
+    .line 10
+    invoke-super {p0, p1, p2}, Ljava/util/AbstractMap;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 11
+    .line 12
+    .line 13
+    move-result-object p0
+
+    .line 14
+    check-cast p0, Lz37;
+
+    .line 15
+    .line 16
+    return-object p0
+.end method
+
+.method public final bridge remove(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    instance-of v0, p1, Leu4;
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
+    const/4 p0, 0x0
+
+    .line 6
+    return-object p0
+
+    .line 7
+    :cond_0
+    check-cast p1, Leu4;
+
+    .line 8
+    .line 9
+    invoke-super {p0, p1}, Lgn4;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    check-cast p0, Lz37;
+
+    .line 14
+    .line 15
     return-object p0
 .end method

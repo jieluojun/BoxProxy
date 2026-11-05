@@ -1,239 +1,130 @@
-.class public final Lnp4;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lnp4;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final a:J
+# static fields
+.field public static final enum j:Lnp4;
 
-.field public final b:J
+.field public static final enum k:Lnp4;
+
+.field public static final enum l:Lnp4;
+
+.field public static final synthetic m:[Lnp4;
 
 
 # direct methods
-.method public constructor <init>(JJ)V
-    .locals 4
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-wide p1, p0, Lnp4;->a:J
-
-    .line 5
-    .line 6
-    iput-wide p3, p0, Lnp4;->b:J
-
-    .line 7
-    .line 8
-    const-wide v0, 0xff00000000L
-
-    .line 9
-    .line 10
-    .line 11
-    .line 12
-    .line 13
-    and-long p0, p1, v0
-
-    .line 14
-    .line 15
-    const-wide/16 v2, 0x0
-
-    .line 16
-    .line 17
-    cmp-long p0, p0, v2
-
-    .line 18
-    .line 19
-    if-nez p0, :cond_0
-
-    .line 20
-    .line 21
-    const-string p0, "width cannot be TextUnit.Unspecified"
-
-    .line 22
-    .line 23
-    invoke-static {p0}, Laq2;->a(Ljava/lang/String;)V
-
-    .line 24
-    .line 25
-    .line 26
-    :cond_0
-    and-long p0, p3, v0
-
-    .line 27
-    .line 28
-    cmp-long p0, p0, v2
-
-    .line 29
-    .line 30
-    if-nez p0, :cond_1
-
-    .line 31
-    .line 32
-    const-string p0, "height cannot be TextUnit.Unspecified"
-
-    .line 33
-    .line 34
-    invoke-static {p0}, Laq2;->a(Ljava/lang/String;)V
-
-    .line 35
-    .line 36
-    .line 37
-    :cond_1
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method static constructor <clinit>()V
     .locals 5
 
     .line 1
-    const/4 v0, 0x1
+    new-instance v0, Lnp4;
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
-    .line 4
-    return v0
+    const-string v1, "Unknown"
 
+    .line 4
     .line 5
-    :cond_0
-    instance-of v1, p1, Lnp4;
+    const/4 v2, 0x0
 
     .line 6
-    .line 7
-    if-nez v1, :cond_1
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 7
     .line 8
     .line 9
-    goto :goto_0
+    sput-object v0, Lnp4;->j:Lnp4;
 
     .line 10
-    :cond_1
-    check-cast p1, Lnp4;
-
     .line 11
+    new-instance v1, Lnp4;
+
     .line 12
-    iget-wide v1, p1, Lnp4;->a:J
-
     .line 13
-    .line 14
-    iget-wide v3, p0, Lnp4;->a:J
+    const-string v2, "Dispatching"
 
+    .line 14
     .line 15
+    const/4 v3, 0x1
+
     .line 16
-    invoke-static {v3, v4, v1, v2}, Lts6;->a(JJ)Z
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
     .line 18
     .line 19
-    move-result v1
+    sput-object v1, Lnp4;->k:Lnp4;
 
     .line 20
-    if-nez v1, :cond_2
-
     .line 21
-    .line 22
-    goto :goto_0
+    new-instance v2, Lnp4;
 
+    .line 22
     .line 23
-    :cond_2
-    iget-wide v1, p0, Lnp4;->b:J
+    const-string v3, "NotDispatching"
 
     .line 24
     .line 25
-    iget-wide p0, p1, Lnp4;->b:J
+    const/4 v4, 0x2
 
     .line 26
-    .line 27
-    invoke-static {v1, v2, p0, p1}, Lts6;->a(JJ)Z
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 27
     .line 28
     .line 29
-    .line 30
-    move-result p0
+    sput-object v2, Lnp4;->l:Lnp4;
 
+    .line 30
     .line 31
-    if-nez p0, :cond_3
+    filled-new-array {v0, v1, v2}, [Lnp4;
 
     .line 32
     .line 33
-    :goto_0
-    const/4 p0, 0x0
-
     .line 34
-    return p0
+    move-result-object v0
 
     .line 35
-    :cond_3
-    return v0
+    sput-object v0, Lnp4;->m:[Lnp4;
+
+    .line 36
+    .line 37
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 4
+.method public static valueOf(Ljava/lang/String;)Lnp4;
+    .locals 1
 
     .line 1
-    iget-wide v0, p0, Lnp4;->a:J
+    const-class v0, Lnp4;
 
     .line 2
     .line 3
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     .line 4
     .line 5
     .line 6
-    move-result v0
+    move-result-object p0
 
     .line 7
-    const/16 v1, 0x1f
+    check-cast p0, Lnp4;
 
     .line 8
     .line 9
-    mul-int/2addr v0, v1
-
-    .line 10
-    iget-wide v2, p0, Lnp4;->b:J
-
-    .line 11
-    .line 12
-    invoke-static {v0, v1, v2, v3}, Lhs5;->d(IIJ)I
-
-    .line 13
-    .line 14
-    .line 15
-    move-result p0
-
-    .line 16
-    const/4 v0, 0x7
-
-    .line 17
-    invoke-static {v0}, Ljava/lang/Integer;->hashCode(I)I
-
-    .line 18
-    .line 19
-    .line 20
-    move-result v0
-
-    .line 21
-    add-int/2addr v0, p0
-
-    .line 22
-    return v0
+    return-object p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
+.method public static values()[Lnp4;
+    .locals 1
 
     .line 1
-    iget-wide v0, p0, Lnp4;->a:J
+    sget-object v0, Lnp4;->m:[Lnp4;
 
     .line 2
     .line 3
-    invoke-static {v0, v1}, Lts6;->d(J)Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     .line 4
     .line 5
@@ -241,37 +132,9 @@
     move-result-object v0
 
     .line 7
-    iget-wide v1, p0, Lnp4;->b:J
+    check-cast v0, [Lnp4;
 
     .line 8
     .line 9
-    invoke-static {v1, v2}, Lts6;->d(J)Ljava/lang/String;
-
-    .line 10
-    .line 11
-    .line 12
-    move-result-object p0
-
-    .line 13
-    const-string v1, ", height="
-
-    .line 14
-    .line 15
-    const-string v2, ", placeholderVerticalAlign=TextCenter)"
-
-    .line 16
-    .line 17
-    const-string v3, "Placeholder(width="
-
-    .line 18
-    .line 19
-    invoke-static {v3, v0, v1, p0, v2}, Loc1;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 20
-    .line 21
-    .line 22
-    move-result-object p0
-
-    .line 23
-    return-object p0
+    return-object v0
 .end method

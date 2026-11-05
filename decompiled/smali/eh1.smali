@@ -1,75 +1,181 @@
-.class public Leh1;
-.super Lw2;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ldh1;
+.class public final Leh1;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# virtual methods
-.method public final g()Ljava/lang/Object;
-    .locals 1
+# static fields
+.field public static final c:Leh1;
+
+
+# instance fields
+.field public final a:J
+
+.field public final b:J
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-virtual {p0}, Lov2;->O()Ljava/lang/Object;
+    new-instance v0, Leh1;
+
+    .line 2
+    .line 3
+    const-wide/16 v1, 0x0
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1, v2, v1, v2}, Leh1;-><init>(JJ)V
+
+    .line 6
+    .line 7
+    .line 8
+    sput-object v0, Leh1;->c:Leh1;
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+.method public constructor <init>(JJ)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    move-result-object p0
+    iput-wide p1, p0, Leh1;->a:J
 
     .line 5
-    instance-of v0, p0, Lmo2;
+    .line 6
+    iput-wide p3, p0, Leh1;->b:J
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Leh1;
 
     .line 6
     .line 7
-    if-nez v0, :cond_1
+    const/4 v2, 0x0
 
     .line 8
-    .line 9
-    instance-of v0, p0, Lmy0;
+    if-nez v1, :cond_1
 
+    .line 9
     .line 10
+    goto :goto_0
+
     .line 11
-    if-nez v0, :cond_0
+    :cond_1
+    check-cast p1, Leh1;
 
     .line 12
     .line 13
-    invoke-static {p0}, Lg61;->S(Ljava/lang/Object;)Ljava/lang/Object;
+    iget-wide v3, p1, Leh1;->a:J
 
     .line 14
     .line 15
-    .line 16
-    move-result-object p0
+    iget-wide v5, p0, Leh1;->a:J
 
+    .line 16
     .line 17
-    return-object p0
+    invoke-static {v5, v6, v3, v4}, Lar2;->a(JJ)Z
 
     .line 18
-    :cond_0
-    check-cast p0, Lmy0;
-
     .line 19
     .line 20
-    iget-object p0, p0, Lmy0;->a:Ljava/lang/Throwable;
+    move-result v1
 
     .line 21
-    .line 22
-    throw p0
+    if-nez v1, :cond_2
 
+    .line 22
     .line 23
-    :cond_1
-    const-string p0, "This job has not completed yet"
+    :goto_0
+    return v2
 
     .line 24
-    .line 25
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+    :cond_2
+    iget-wide v3, p0, Leh1;->b:J
 
+    .line 25
     .line 26
+    iget-wide p0, p1, Leh1;->b:J
+
     .line 27
     .line 28
-    const/4 p0, 0x0
+    cmp-long p0, v3, p0
 
     .line 29
-    return-object p0
+    .line 30
+    if-nez p0, :cond_3
+
+    .line 31
+    .line 32
+    return v0
+
+    .line 33
+    :cond_3
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 3
+
+    .line 1
+    iget-wide v0, p0, Leh1;->a:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 8
+    .line 9
+    iget-wide v1, p0, Leh1;->b:J
+
+    .line 10
+    .line 11
+    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    add-int/2addr p0, v0
+
+    .line 16
+    return p0
 .end method

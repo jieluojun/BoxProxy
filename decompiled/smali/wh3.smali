@@ -1,230 +1,236 @@
-.class public final Lwh3;
+.class public final synthetic Lwh3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
 # instance fields
-.field public final a:Ljava/util/regex/Matcher;
+.field public final synthetic j:B
 
-.field public final b:Ljava/lang/CharSequence;
+.field public final synthetic k:La07;
 
-.field public final c:Lvh3;
-
-.field public d:Luh3;
+.field public final synthetic l:Ls52;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/regex/Matcher;Ljava/lang/CharSequence;)V
+.method public synthetic constructor <init>(La07;Ls52;B)V
     .locals 0
 
     .line 1
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-byte p3, p0, Lwh3;->j:B
 
     .line 2
     .line 3
-    .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lwh3;->k:La07;
 
+    .line 4
     .line 5
+    iput-object p2, p0, Lwh3;->l:Ls52;
+
     .line 6
     .line 7
-    iput-object p1, p0, Lwh3;->a:Ljava/util/regex/Matcher;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 8
     .line 9
-    iput-object p2, p0, Lwh3;->b:Ljava/lang/CharSequence;
-
     .line 10
-    .line 11
-    new-instance p1, Lvh3;
-
-    .line 12
-    .line 13
-    const/4 p2, 0x0
-
-    .line 14
-    invoke-direct {p1, p0, p2}, Lvh3;-><init>(Ljava/lang/Object;B)V
-
-    .line 15
-    .line 16
-    .line 17
-    iput-object p1, p0, Lwh3;->c:Lvh3;
-
-    .line 18
-    .line 19
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/util/List;
-    .locals 2
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
     .line 1
-    iget-object v0, p0, Lwh3;->d:Luh3;
+    iget-byte v0, p0, Lwh3;->j:B
 
     .line 2
     .line 3
-    if-nez v0, :cond_0
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
     .line 5
-    new-instance v0, Luh3;
+    const/4 v2, 0x2
 
     .line 6
-    .line 7
-    const/4 v1, 0x0
-
-    .line 8
-    invoke-direct {v0, p0, v1}, Luh3;-><init>(Ljava/lang/Object;B)V
-
-    .line 9
-    .line 10
-    .line 11
-    iput-object v0, p0, Lwh3;->d:Luh3;
-
-    .line 12
-    .line 13
-    :cond_0
-    return-object v0
-.end method
-
-.method public final b()Les2;
-    .locals 1
-
-    .line 1
-    iget-object p0, p0, Lwh3;->a:Ljava/util/regex/Matcher;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/util/regex/Matcher;->start()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
+    const/4 v3, 0x0
 
     .line 7
-    invoke-virtual {p0}, Ljava/util/regex/Matcher;->end()I
+    iget-object v4, p0, Lwh3;->l:Ls52;
 
     .line 8
     .line 9
-    .line 10
-    move-result p0
+    iget-object p0, p0, Lwh3;->k:La07;
 
+    .line 10
     .line 11
-    invoke-static {v0, p0}, Lgf3;->g0(II)Les2;
+    const/4 v5, 0x1
 
     .line 12
+    check-cast p1, Lv01;
+
     .line 13
     .line 14
-    move-result-object p0
+    check-cast p2, Ljava/lang/Integer;
 
     .line 15
-    return-object p0
-.end method
-
-.method public final c()Lwh3;
-    .locals 4
-
-    .line 1
-    iget-object v0, p0, Lwh3;->a:Ljava/util/regex/Matcher;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->end()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v1
-
-    .line 7
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->end()I
-
-    .line 8
-    .line 9
-    .line 10
-    move-result v2
-
-    .line 11
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->start()I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result v3
-
-    .line 15
-    if-ne v2, v3, :cond_0
-
     .line 16
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
+
     .line 17
-    const/4 v2, 0x1
-
     .line 18
-    goto :goto_0
-
     .line 19
-    :cond_0
-    const/4 v2, 0x0
+    move-result p2
 
     .line 20
-    :goto_0
-    add-int/2addr v1, v2
+    packed-switch v0, :pswitch_data_0
 
     .line 21
-    iget-object p0, p0, Lwh3;->b:Ljava/lang/CharSequence;
-
     .line 22
     .line 23
-    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
+    and-int/lit8 v0, p2, 0x3
 
     .line 24
     .line 25
-    .line 26
-    move-result v2
+    if-eq v0, v2, :cond_0
 
+    .line 26
     .line 27
-    if-gt v1, v2, :cond_1
+    move v0, v5
 
     .line 28
+    goto :goto_0
+
     .line 29
-    invoke-virtual {v0}, Ljava/util/regex/Matcher;->pattern()Ljava/util/regex/Pattern;
+    :cond_0
+    move v0, v3
 
     .line 30
-    .line 31
-    .line 32
-    move-result-object v0
+    :goto_0
+    and-int/2addr p2, v5
 
+    .line 31
+    check-cast p1, Ls62;
+
+    .line 32
     .line 33
-    invoke-virtual {v0, p0}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
+    invoke-virtual {p1, p2, v0}, Ls62;->T(IZ)Z
 
     .line 34
     .line 35
     .line 36
-    move-result-object v0
+    move-result p2
 
     .line 37
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-eqz p2, :cond_1
 
     .line 38
     .line 39
-    .line 40
-    invoke-static {v0, v1, p0}, Lgf3;->D(Ljava/util/regex/Matcher;ILjava/lang/CharSequence;)Lwh3;
+    iget-object p0, p0, La07;->j:Lvq6;
 
+    .line 40
     .line 41
+    invoke-static {p0, v4, p1, v3}, Lap6;->a(Lvq6;Ls52;Lv01;I)V
+
     .line 42
     .line 43
-    move-result-object p0
-
     .line 44
-    return-object p0
+    goto :goto_1
 
     .line 45
     :cond_1
-    const/4 p0, 0x0
+    invoke-virtual {p1}, Ls62;->W()V
 
     .line 46
-    return-object p0
+    .line 47
+    .line 48
+    :goto_1
+    return-object v1
+
+    .line 49
+    :pswitch_0
+    and-int/lit8 v0, p2, 0x3
+
+    .line 50
+    .line 51
+    if-eq v0, v2, :cond_2
+
+    .line 52
+    .line 53
+    move v3, v5
+
+    .line 54
+    :cond_2
+    and-int/2addr p2, v5
+
+    .line 55
+    check-cast p1, Ls62;
+
+    .line 56
+    .line 57
+    invoke-virtual {p1, p2, v3}, Ls62;->T(IZ)Z
+
+    .line 58
+    .line 59
+    .line 60
+    move-result p2
+
+    .line 61
+    if-eqz p2, :cond_3
+
+    .line 62
+    .line 63
+    new-instance p2, Lwh3;
+
+    .line 64
+    .line 65
+    invoke-direct {p2, p0, v4, v5}, Lwh3;-><init>(La07;Ls52;B)V
+
+    .line 66
+    .line 67
+    .line 68
+    const p0, -0xe658f05
+
+    .line 69
+    .line 70
+    .line 71
+    invoke-static {p0, p2, p1}, Lr97;->M(ILa62;Lv01;)Loy0;
+
+    .line 72
+    .line 73
+    .line 74
+    move-result-object p0
+
+    .line 75
+    const/4 p2, 0x6
+
+    .line 76
+    invoke-static {p0, p1, p2}, Llr4;->a(Loy0;Lv01;I)V
+
+    .line 77
+    .line 78
+    .line 79
+    goto :goto_2
+
+    .line 80
+    :cond_3
+    invoke-virtual {p1}, Ls62;->W()V
+
+    .line 81
+    .line 82
+    .line 83
+    :goto_2
+    return-object v1
+
+    .line 84
+    nop
+
+    .line 85
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

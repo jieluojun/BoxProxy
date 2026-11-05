@@ -1,10 +1,17 @@
-.class public Ls07;
-.super La07;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Ls07;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ljava/lang/Comparable;
+
+
+# instance fields
+.field public final j:S
 
 
 # direct methods
-.method public constructor <init>()V
+.method public synthetic constructor <init>(S)V
     .locals 0
 
     .line 1
@@ -13,89 +20,141 @@
     .line 2
     .line 3
     .line 4
+    iput-short p1, p0, Ls07;->j:S
+
+    .line 5
+    .line 6
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lrx2;)Ljava/lang/Object;
-    .locals 4
+.method public final synthetic compareTo(Ljava/lang/Object;)I
+    .locals 1
 
     .line 1
-    invoke-virtual {p1}, Lrx2;->J()Ljava/lang/String;
+    check-cast p1, Ls07;
 
     .line 2
     .line 3
-    .line 4
-    move-result-object p0
+    iget-short p1, p1, Ls07;->j:S
 
+    .line 4
     .line 5
-    :try_start_0
-    invoke-static {p0}, Ljava/util/Currency;->getInstance(Ljava/lang/String;)Ljava/util/Currency;
+    iget-short p0, p0, Ls07;->j:S
 
     .line 6
     .line 7
+    const v0, 0xffff
+
     .line 8
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
     .line 9
-    return-object p0
-
     .line 10
-    :catch_0
-    move-exception v0
+    and-int/2addr p0, v0
 
     .line 11
-    new-instance v1, Lyw2;
+    and-int/2addr p1, v0
 
     .line 12
-    .line 13
-    const-string v2, "Failed parsing \'"
+    invoke-static {p0, p1}, Lps2;->y(II)I
 
+    .line 13
     .line 14
     .line 15
-    const-string v3, "\' as Currency; at path "
+    move-result p0
 
     .line 16
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    instance-of v0, p1, Ls07;
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
+    goto :goto_0
+
+    .line 6
+    :cond_0
+    check-cast p1, Ls07;
+
+    .line 7
+    .line 8
+    iget-short p1, p1, Ls07;->j:S
+
+    .line 9
+    .line 10
+    iget-short p0, p0, Ls07;->j:S
+
+    .line 11
+    .line 12
+    if-eq p0, p1, :cond_1
+
+    .line 13
+    .line 14
+    :goto_0
+    const/4 p0, 0x0
+
+    .line 15
+    return p0
+
+    .line 16
+    :cond_1
+    const/4 p0, 0x1
+
     .line 17
-    invoke-static {v2, p0, v3}, Ly96;->u(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    return p0
+.end method
 
-    .line 18
-    .line 19
-    .line 20
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-short p0, p0, Ls07;->j:S
+
+    .line 2
+    .line 3
+    invoke-static {p0}, Ljava/lang/Short;->hashCode(S)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    iget-short p0, p0, Ls07;->j:S
+
+    .line 2
+    .line 3
+    const v0, 0xffff
+
+    .line 4
+    .line 5
+    .line 6
+    and-int/2addr p0, v0
+
+    .line 7
+    invoke-static {p0}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
+
+    .line 8
+    .line 9
+    .line 10
     move-result-object p0
 
-    .line 21
-    const/4 v2, 0x1
-
-    .line 22
-    invoke-virtual {p1, v2}, Lrx2;->p(Z)Ljava/lang/String;
-
-    .line 23
-    .line 24
-    .line 25
-    move-result-object p1
-
-    .line 26
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 27
-    .line 28
-    .line 29
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 30
-    .line 31
-    .line 32
-    move-result-object p0
-
-    .line 33
-    invoke-direct {v1, p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-
-    .line 34
-    .line 35
-    .line 36
-    throw v1
+    .line 11
+    return-object p0
 .end method

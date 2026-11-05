@@ -1,59 +1,91 @@
-.class public final Lnw5;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lnw5;
+.super Ld62;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
-# instance fields
-.field public j:Lrh6;
-
-.field public k:Lkm6;
-
-.field public l:Lma5;
-
-.field public m:J
-
-.field public synthetic n:Ljava/lang/Object;
-
-.field public o:I
+# static fields
+.field public static final k:Lnw5;
 
 
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+# direct methods
+.method static constructor <clinit>()V
+    .locals 6
 
     .line 1
-    iput-object p1, p0, Lnw5;->n:Ljava/lang/Object;
+    new-instance v0, Lnw5;
 
     .line 2
     .line 3
-    iget p1, p0, Lnw5;->o:I
+    const-string v4, "createSegment(JLkotlinx/coroutines/sync/SemaphoreSegment;)Lkotlinx/coroutines/sync/SemaphoreSegment;"
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    const/4 v5, 0x1
 
     .line 6
+    const/4 v1, 0x2
+
     .line 7
-    or-int/2addr p1, v0
+    const-class v2, Lrw5;
 
     .line 8
-    iput p1, p0, Lnw5;->o:I
-
     .line 9
-    .line 10
-    const/4 p1, 0x0
+    const-string v3, "createSegment"
 
+    .line 10
     .line 11
-    const/4 v0, 0x0
+    invoke-direct/range {v0 .. v5}, Ld62;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
     .line 12
-    invoke-static {p1, p1, p1, v0, p0}, Lgf3;->f0(Lrh6;Lkm6;Loq4;ILc00;)Ljava/lang/Object;
-
     .line 13
     .line 14
-    .line 15
-    move-result-object p0
+    sput-object v0, Lnw5;->k:Lnw5;
 
+    .line 15
     .line 16
-    return-object p0
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    .line 1
+    check-cast p1, Ljava/lang/Number;
+
+    .line 2
+    .line 3
+    invoke-virtual {p1}, Ljava/lang/Number;->longValue()J
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-wide p0
+
+    .line 7
+    check-cast p2, Lsw5;
+
+    .line 8
+    .line 9
+    sget v0, Lrw5;->a:I
+
+    .line 10
+    .line 11
+    new-instance v0, Lsw5;
+
+    .line 12
+    .line 13
+    const/4 v1, 0x0
+
+    .line 14
+    invoke-direct {v0, p0, p1, p2, v1}, Lsw5;-><init>(JLsw5;I)V
+
+    .line 15
+    .line 16
+    .line 17
+    return-object v0
 .end method

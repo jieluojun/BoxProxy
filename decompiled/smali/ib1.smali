@@ -1,76 +1,29 @@
 .class public final Lib1;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljb1;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public j:Ljava/lang/String;
-
-.field public k:Ljava/io/File;
-
-.field public synthetic l:Ljava/lang/Object;
-
-.field public final synthetic m:Llb1;
-
-.field public n:I
+# static fields
+.field public static final b:Lib1;
 
 
 # direct methods
-.method public constructor <init>(Llb1;Lz81;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lib1;->m:Llb1;
-
-    .line 2
-    .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.method static constructor <clinit>()V
     .locals 1
 
     .line 1
-    iput-object p1, p0, Lib1;->l:Ljava/lang/Object;
+    new-instance v0, Lib1;
 
     .line 2
     .line 3
-    iget p1, p0, Lib1;->n:I
+    invoke-direct {v0}, Ljb1;-><init>()V
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
+    sput-object v0, Lib1;->b:Lib1;
+
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lib1;->n:I
-
-    .line 9
-    .line 10
-    iget-object p1, p0, Lib1;->m:Llb1;
-
-    .line 11
-    .line 12
-    const/4 v0, 0x0
-
-    .line 13
-    invoke-virtual {p1, v0, p0}, Llb1;->e(Ljava/lang/String;Lz81;)Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p0
-
-    .line 17
-    return-object p0
+    return-void
 .end method

@@ -1,149 +1,142 @@
-.class public final Lg5;
-.super Landroid/view/accessibility/AccessibilityNodeProvider;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Lg5;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final a:Lb97;
+# static fields
+.field public static final a:Lko3;
+
+.field public static final b:Lko3;
 
 
 # direct methods
-.method public constructor <init>(Lb97;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
     .line 1
-    invoke-direct {p0}, Landroid/view/accessibility/AccessibilityNodeProvider;-><init>()V
+    new-instance v0, Lsy0;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lg5;->a:Lb97;
-
-    .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final addExtraDataToAccessibilityNodeInfo(ILandroid/view/accessibility/AccessibilityNodeInfo;Ljava/lang/String;Landroid/os/Bundle;)V
-    .locals 1
-
-    .line 1
-    new-instance v0, Lf5;
-
-    .line 2
-    .line 3
-    invoke-direct {v0, p2}, Lf5;-><init>(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    const/16 v1, 0x12
 
     .line 4
     .line 5
-    .line 6
-    iget-object p0, p0, Lg5;->a:Lb97;
+    invoke-direct {v0, v1}, Lsy0;-><init>(B)V
 
+    .line 6
     .line 7
     .line 8
-    invoke-virtual {p0, p1, v0, p3, p4}, Lb97;->c(ILf5;Ljava/lang/String;Landroid/os/Bundle;)V
+    sget-object v1, Lho3;->j:Lho3;
 
     .line 9
     .line 10
-    .line 11
-    return-void
-.end method
-
-.method public final createAccessibilityNodeInfo(I)Landroid/view/accessibility/AccessibilityNodeInfo;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lg5;->a:Lb97;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lb97;->j(I)Lf5;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    if-nez p0, :cond_0
-
-    .line 8
-    .line 9
-    const/4 p0, 0x0
-
-    .line 10
-    return-object p0
+    invoke-static {v1, v0}, Lhj6;->K(Lko3;Lt52;)Lko3;
 
     .line 11
-    :cond_0
-    iget-object p0, p0, Lf5;->a:Landroid/view/accessibility/AccessibilityNodeInfo;
-
     .line 12
     .line 13
-    return-object p0
-.end method
+    move-result-object v0
 
-.method public final findAccessibilityNodeInfosByText(Ljava/lang/String;I)Ljava/util/List;
-    .locals 0
+    .line 14
+    new-instance v2, Ll;
 
-    .line 1
-    const/4 p0, 0x0
+    .line 15
+    .line 16
+    const/4 v3, 0x7
 
-    .line 2
-    return-object p0
-.end method
+    .line 17
+    invoke-direct {v2, v3}, Ll;-><init>(B)V
 
-.method public final findFocus(I)Landroid/view/accessibility/AccessibilityNodeInfo;
-    .locals 0
+    .line 18
+    .line 19
+    .line 20
+    const/4 v3, 0x1
 
-    .line 1
-    iget-object p0, p0, Lg5;->a:Lb97;
+    .line 21
+    invoke-static {v0, v3, v2}, Lbw5;->a(Lko3;ZLo52;)Lko3;
 
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lb97;->p(I)Lf5;
+    .line 22
+    .line 23
+    .line 24
+    move-result-object v0
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
+    .line 25
+    const/4 v2, 0x2
 
-    .line 7
-    if-nez p0, :cond_0
+    .line 26
+    const/high16 v4, 0x41200000    # 10.0f
 
-    .line 8
-    .line 9
-    const/4 p0, 0x0
+    .line 27
+    .line 28
+    const/4 v5, 0x0
 
-    .line 10
-    return-object p0
+    .line 29
+    invoke-static {v0, v4, v5, v2}, Llv;->u0(Lko3;FFI)Lko3;
 
-    .line 11
-    :cond_0
-    iget-object p0, p0, Lf5;->a:Landroid/view/accessibility/AccessibilityNodeInfo;
+    .line 30
+    .line 31
+    .line 32
+    move-result-object v0
 
-    .line 12
-    .line 13
-    return-object p0
-.end method
+    .line 33
+    sput-object v0, Lg5;->a:Lko3;
 
-.method public final performAction(IILandroid/os/Bundle;)Z
-    .locals 0
+    .line 34
+    .line 35
+    new-instance v0, Lsy0;
 
-    .line 1
-    iget-object p0, p0, Lg5;->a:Lb97;
+    .line 36
+    .line 37
+    const/16 v2, 0x13
 
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1, p2, p3}, Lb97;->x(IILandroid/os/Bundle;)Z
+    .line 38
+    .line 39
+    invoke-direct {v0, v2}, Lsy0;-><init>(B)V
 
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
+    .line 40
+    .line 41
+    .line 42
+    invoke-static {v1, v0}, Lhj6;->K(Lko3;Lt52;)Lko3;
 
-    .line 7
-    return p0
+    .line 43
+    .line 44
+    .line 45
+    move-result-object v0
+
+    .line 46
+    new-instance v1, Ll;
+
+    .line 47
+    .line 48
+    const/16 v2, 0x8
+
+    .line 49
+    .line 50
+    invoke-direct {v1, v2}, Ll;-><init>(B)V
+
+    .line 51
+    .line 52
+    .line 53
+    invoke-static {v0, v3, v1}, Lbw5;->a(Lko3;ZLo52;)Lko3;
+
+    .line 54
+    .line 55
+    .line 56
+    move-result-object v0
+
+    .line 57
+    invoke-static {v0, v5, v4, v3}, Llv;->u0(Lko3;FFI)Lko3;
+
+    .line 58
+    .line 59
+    .line 60
+    move-result-object v0
+
+    .line 61
+    sput-object v0, Lg5;->b:Lko3;
+
+    .line 62
+    .line 63
+    return-void
 .end method

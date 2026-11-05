@@ -1,24 +1,35 @@
-.class final Lya4;
-.super Ldq3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lya4;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ldq3;"
-    }
-.end annotation
+# interfaces
+.implements Ls52;
 
 
 # instance fields
-.field public final j:F
+.field public final synthetic j:Laz2;
 
-.field public final k:F
+.field public final synthetic k:Z
+
+.field public final synthetic l:Z
+
+.field public final synthetic m:Ljava/util/List;
+
+.field public final synthetic n:Z
+
+.field public final synthetic o:Ld52;
+
+.field public final synthetic p:Ljava/lang/String;
+
+.field public final synthetic q:Z
+
+.field public final synthetic r:I
+
+.field public final synthetic s:S
 
 
 # direct methods
-.method public constructor <init>(FF)V
+.method public synthetic constructor <init>(Laz2;ZZLjava/util/List;ZLd52;Ljava/lang/String;ZII)V
     .locals 0
 
     .line 1
@@ -27,343 +38,131 @@
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Lya4;->j:F
+    iput-object p1, p0, Lya4;->j:Laz2;
 
     .line 5
     .line 6
-    iput p2, p0, Lya4;->k:F
+    iput-boolean p2, p0, Lya4;->k:Z
 
     .line 7
     .line 8
+    iput-boolean p3, p0, Lya4;->l:Z
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Lya4;->m:Ljava/util/List;
+
+    .line 11
+    .line 12
+    iput-boolean p5, p0, Lya4;->n:Z
+
+    .line 13
+    .line 14
+    iput-object p6, p0, Lya4;->o:Ld52;
+
+    .line 15
+    .line 16
+    iput-object p7, p0, Lya4;->p:Ljava/lang/String;
+
+    .line 17
+    .line 18
+    iput-boolean p8, p0, Lya4;->q:Z
+
+    .line 19
+    .line 20
+    iput p9, p0, Lya4;->r:I
+
+    .line 21
+    .line 22
+    iput-short p10, p0, Lya4;->s:S
+
+    .line 23
+    .line 24
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lvp3;
-    .locals 2
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 11
 
     .line 1
-    new-instance v0, Lbb4;
+    move-object v8, p1
 
     .line 2
-    .line 3
-    invoke-direct {v0}, Lvp3;-><init>()V
+    check-cast v8, Lv01;
 
+    .line 3
     .line 4
+    check-cast p2, Ljava/lang/Integer;
+
     .line 5
     .line 6
-    iget v1, p0, Lya4;->j:F
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 7
     .line 8
-    iput v1, v0, Lbb4;->x:F
-
     .line 9
+    iget p1, p0, Lya4;->r:I
+
     .line 10
-    iget p0, p0, Lya4;->k:F
-
     .line 11
-    .line 12
-    iput p0, v0, Lbb4;->y:F
-
-    .line 13
-    .line 14
-    const/4 p0, 0x1
-
-    .line 15
-    iput-boolean p0, v0, Lbb4;->z:Z
-
-    .line 16
-    .line 17
-    return-object v0
-.end method
-
-.method public final b(Lvp3;)V
-    .locals 4
-
-    .line 1
-    check-cast p1, Lbb4;
-
-    .line 2
-    .line 3
-    iget v0, p1, Lbb4;->x:F
-
-    .line 4
-    .line 5
-    iget v1, p0, Lya4;->j:F
-
-    .line 6
-    .line 7
-    invoke-static {v0, v1}, Lxl1;->b(FF)Z
-
-    .line 8
-    .line 9
-    .line 10
-    move-result v0
-
-    .line 11
-    iget p0, p0, Lya4;->k:F
+    or-int/lit8 p1, p1, 0x1
 
     .line 12
     .line 13
-    const/4 v2, 0x1
+    invoke-static {p1}, Lw23;->h0(I)I
 
     .line 14
-    if-eqz v0, :cond_0
-
     .line 15
     .line 16
-    iget v0, p1, Lbb4;->y:F
+    move-result v9
 
     .line 17
+    iget-object v0, p0, Lya4;->j:Laz2;
+
     .line 18
-    invoke-static {v0, p0}, Lxl1;->b(FF)Z
-
     .line 19
+    iget-boolean v1, p0, Lya4;->k:Z
+
     .line 20
     .line 21
-    move-result v0
+    iget-boolean v2, p0, Lya4;->l:Z
 
     .line 22
-    if-eqz v0, :cond_0
-
     .line 23
+    iget-object v3, p0, Lya4;->m:Ljava/util/List;
+
     .line 24
-    iget-boolean v0, p1, Lbb4;->z:Z
-
     .line 25
+    iget-boolean v4, p0, Lya4;->n:Z
+
     .line 26
-    if-eq v0, v2, :cond_1
-
     .line 27
-    .line 28
-    :cond_0
-    invoke-static {p1}, Lhq;->h0(Lmh1;)Lj13;
+    iget-object v5, p0, Lya4;->o:Ld52;
 
+    .line 28
     .line 29
+    iget-object v6, p0, Lya4;->p:Ljava/lang/String;
+
     .line 30
     .line 31
-    move-result-object v0
+    iget-boolean v7, p0, Lya4;->q:Z
 
     .line 32
-    const/4 v3, 0x0
-
     .line 33
-    invoke-virtual {v0, v3}, Lj13;->V(Z)V
+    iget-short v10, p0, Lya4;->s:S
 
     .line 34
     .line 35
-    .line 36
-    :cond_1
-    iput v1, p1, Lbb4;->x:F
+    invoke-static/range {v0 .. v10}, Lps2;->n(Laz2;ZZLjava/util/List;ZLd52;Ljava/lang/String;ZLv01;II)V
 
+    .line 36
     .line 37
     .line 38
-    iput p0, p1, Lbb4;->y:F
+    sget-object p0, Lk27;->a:Lk27;
 
     .line 39
     .line 40
-    iput-boolean v2, p1, Lbb4;->z:Z
-
-    .line 41
-    .line 42
-    return-void
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of v1, p1, Lya4;
-
-    .line 6
-    .line 7
-    if-eqz v1, :cond_1
-
-    .line 8
-    .line 9
-    check-cast p1, Lya4;
-
-    .line 10
-    .line 11
-    goto :goto_0
-
-    .line 12
-    :cond_1
-    const/4 p1, 0x0
-
-    .line 13
-    :goto_0
-    if-nez p1, :cond_2
-
-    .line 14
-    .line 15
-    goto :goto_1
-
-    .line 16
-    :cond_2
-    iget v1, p0, Lya4;->j:F
-
-    .line 17
-    .line 18
-    iget v2, p1, Lya4;->j:F
-
-    .line 19
-    .line 20
-    invoke-static {v1, v2}, Lxl1;->b(FF)Z
-
-    .line 21
-    .line 22
-    .line 23
-    move-result v1
-
-    .line 24
-    if-eqz v1, :cond_3
-
-    .line 25
-    .line 26
-    iget p0, p0, Lya4;->k:F
-
-    .line 27
-    .line 28
-    iget p1, p1, Lya4;->k:F
-
-    .line 29
-    .line 30
-    invoke-static {p0, p1}, Lxl1;->b(FF)Z
-
-    .line 31
-    .line 32
-    .line 33
-    move-result p0
-
-    .line 34
-    if-eqz p0, :cond_3
-
-    .line 35
-    .line 36
-    return v0
-
-    .line 37
-    :cond_3
-    :goto_1
-    const/4 p0, 0x0
-
-    .line 38
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    .line 1
-    iget v0, p0, Lya4;->j:F
-
-    .line 2
-    .line 3
-    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    const/16 v1, 0x1f
-
-    .line 8
-    .line 9
-    mul-int/2addr v0, v1
-
-    .line 10
-    iget p0, p0, Lya4;->k:F
-
-    .line 11
-    .line 12
-    invoke-static {p0, v0, v1}, Loc1;->d(FII)I
-
-    .line 13
-    .line 14
-    .line 15
-    move-result p0
-
-    .line 16
-    const/4 v0, 0x1
-
-    .line 17
-    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    .line 18
-    .line 19
-    .line 20
-    move-result v0
-
-    .line 21
-    add-int/2addr v0, p0
-
-    .line 22
-    return v0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    .line 1
-    iget v0, p0, Lya4;->j:F
-
-    .line 2
-    .line 3
-    invoke-static {v0}, Lxl1;->c(F)Ljava/lang/String;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    iget p0, p0, Lya4;->k:F
-
-    .line 8
-    .line 9
-    invoke-static {p0}, Lxl1;->c(F)Ljava/lang/String;
-
-    .line 10
-    .line 11
-    .line 12
-    move-result-object p0
-
-    .line 13
-    const-string v1, ", y="
-
-    .line 14
-    .line 15
-    const-string v2, ", rtlAware=true)"
-
-    .line 16
-    .line 17
-    const-string v3, "OffsetModifierElement(x="
-
-    .line 18
-    .line 19
-    invoke-static {v3, v0, v1, p0, v2}, Loc1;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 20
-    .line 21
-    .line 22
-    move-result-object p0
-
-    .line 23
     return-object p0
 .end method

@@ -1,6 +1,6 @@
 .class public Lcom/sun/jna/win32/StdCallFunctionMapper;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
 .implements Lcom/sun/jna/FunctionMapper;
@@ -104,7 +104,7 @@
 
     .line 32
     .line 33
-    invoke-static {p0, p1}, Loc1;->o(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
+    invoke-static {p0, p1}, Lpb1;->o(Ljava/lang/String;Ljava/lang/Class;)Ljava/lang/String;
 
     .line 34
     .line 35
@@ -112,7 +112,7 @@
     move-result-object p0
 
     .line 37
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
 
     .line 38
     .line 39

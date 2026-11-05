@@ -1,137 +1,41 @@
-.class final Lvw;
-.super Ldq3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ldq3;"
-    }
-.end annotation
+.class public final Lvw;
+.super Ljava/util/concurrent/atomic/AtomicInteger;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # virtual methods
-.method public final b(Lvp3;)V
+.method public final byteValue()B
     .locals 0
 
     .line 1
-    check-cast p1, Lww;
+    invoke-super {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->intValue()I
 
     .line 2
     .line 3
-    const/high16 p0, 0x3f800000    # 1.0f
-
     .line 4
-    .line 5
-    iput p0, p1, Lww;->x:F
-
-    .line 6
-    .line 7
-    const/4 p0, 0x1
-
-    .line 8
-    iput-boolean p0, p1, Lww;->y:Z
-
-    .line 9
-    .line 10
-    return-void
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of p0, p1, Lvw;
-
-    .line 6
-    .line 7
-    if-eqz p0, :cond_1
-
-    .line 8
-    .line 9
-    move-object p0, p1
-
-    .line 10
-    check-cast p0, Lvw;
-
-    .line 11
-    .line 12
-    goto :goto_0
-
-    .line 13
-    :cond_1
-    const/4 p0, 0x0
-
-    .line 14
-    :goto_0
-    if-nez p0, :cond_2
-
-    .line 15
-    .line 16
-    const/4 p0, 0x0
-
-    .line 17
-    return p0
-
-    .line 18
-    :cond_2
-    check-cast p1, Lvw;
-
-    .line 19
-    .line 20
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 21
-    .line 22
-    .line 23
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    .line 1
-    const/high16 p0, 0x3f800000    # 1.0f
-
-    .line 2
-    .line 3
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 4
-    .line 5
-    .line 6
     move-result p0
 
-    .line 7
-    mul-int/lit8 p0, p0, 0x1f
+    .line 5
+    int-to-byte p0, p0
 
-    .line 8
-    .line 9
-    const/4 v0, 0x1
+    .line 6
+    return p0
+.end method
 
-    .line 10
-    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
+.method public final shortValue()S
+    .locals 0
 
-    .line 11
-    .line 12
-    .line 13
-    move-result v0
+    .line 1
+    invoke-super {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->intValue()I
 
-    .line 14
-    add-int/2addr v0, p0
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
 
-    .line 15
-    return v0
+    .line 5
+    int-to-short p0, p0
+
+    .line 6
+    return p0
 .end method

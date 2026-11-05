@@ -1,44 +1,79 @@
 .class public abstract Los6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final a:Lkq1;
+.field public static final a:Ljava/lang/ThreadLocal;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 1
 
     .line 1
-    new-instance v0, Lzl6;
+    new-instance v0, Ljava/lang/ThreadLocal;
 
     .line 2
     .line 3
-    const/4 v1, 0x6
+    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
 
     .line 4
-    invoke-direct {v0, v1}, Lzl6;-><init>(B)V
-
     .line 5
     .line 6
+    sput-object v0, Los6;->a:Ljava/lang/ThreadLocal;
+
     .line 7
-    new-instance v1, Lkq1;
+    .line 8
+    return-void
+.end method
+
+.method public static a()Llv1;
+    .locals 3
+
+    .line 1
+    sget-object v0, Los6;->a:Ljava/lang/ThreadLocal;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v1
+
+    .line 7
+    check-cast v1, Llv1;
 
     .line 8
     .line 9
-    const/4 v2, 0x1
+    if-nez v1, :cond_0
 
     .line 10
-    invoke-direct {v1, v0, v2}, Lkq1;-><init>(Le62;B)V
-
     .line 11
+    new-instance v1, Lm20;
+
     .line 12
     .line 13
-    sput-object v1, Los6;->a:Lkq1;
+    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
 
     .line 14
     .line 15
-    return-void
+    .line 16
+    move-result-object v2
+
+    .line 17
+    invoke-direct {v1, v2}, Lm20;-><init>(Ljava/lang/Thread;)V
+
+    .line 18
+    .line 19
+    .line 20
+    invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+
+    .line 21
+    .line 22
+    .line 23
+    :cond_0
+    return-object v1
 .end method

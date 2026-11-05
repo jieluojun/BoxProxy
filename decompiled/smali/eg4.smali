@@ -1,91 +1,96 @@
 .class public final synthetic Leg4;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lp62;
+.implements Ls52;
 
 
 # instance fields
 .field public final synthetic j:B
 
-.field public final synthetic k:Lun6;
+.field public final synthetic k:Loh4;
+
+.field public final synthetic l:Ld52;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lun6;B)V
+.method public synthetic constructor <init>(Loh4;Ld52;IB)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Leg4;->j:B
+    iput-byte p4, p0, Leg4;->j:B
 
     .line 2
     .line 3
-    iput-object p1, p0, Leg4;->k:Lun6;
+    iput-object p1, p0, Leg4;->k:Loh4;
 
     .line 4
     .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Leg4;->l:Ld52;
 
     .line 6
     .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 8
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
     .line 1
     iget-byte v0, p0, Leg4;->j:B
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
     .line 5
-    iget-object p0, p0, Leg4;->k:Lun6;
+    const/4 v2, 0x1
 
     .line 6
+    iget-object v3, p0, Leg4;->l:Ld52;
+
     .line 7
-    check-cast p1, Lc92;
-
     .line 8
-    .line 9
-    packed-switch v0, :pswitch_data_0
+    iget-object p0, p0, Leg4;->k:Loh4;
 
+    .line 9
     .line 10
+    check-cast p1, Lv01;
+
     .line 11
     .line 12
-    invoke-virtual {p0}, Lun6;->invoke()F
+    check-cast p2, Ljava/lang/Integer;
 
     .line 13
     .line 14
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 15
-    move-result p0
-
     .line 16
-    invoke-interface {p1, p0}, Lc92;->t(F)V
-
     .line 17
+    packed-switch v0, :pswitch_data_0
+
     .line 18
     .line 19
-    return-object v1
-
     .line 20
-    :pswitch_0
-    invoke-virtual {p0}, Lun6;->invoke()F
+    invoke-static {v2}, Lw23;->h0(I)I
 
     .line 21
     .line 22
     .line 23
-    move-result p0
+    move-result p2
 
     .line 24
-    invoke-interface {p1, p0}, Lc92;->t(F)V
+    invoke-static {p0, v3, p1, p2}, Lxa;->J(Loh4;Ld52;Lv01;I)V
 
     .line 25
     .line 26
@@ -93,16 +98,16 @@
     return-object v1
 
     .line 28
-    :pswitch_1
-    invoke-virtual {p0}, Lun6;->invoke()F
+    :pswitch_0
+    invoke-static {v2}, Lw23;->h0(I)I
 
     .line 29
     .line 30
     .line 31
-    move-result p0
+    move-result p2
 
     .line 32
-    invoke-interface {p1, p0}, Lc92;->t(F)V
+    invoke-static {p0, v3, p1, p2}, Lwe7;->S(Loh4;Ld52;Lv01;I)V
 
     .line 33
     .line 34
@@ -110,120 +115,11 @@
     return-object v1
 
     .line 36
-    :pswitch_2
-    invoke-virtual {p0}, Lun6;->invoke()F
-
-    .line 37
-    .line 38
-    .line 39
-    move-result p0
-
-    .line 40
-    invoke-interface {p1, p0}, Lc92;->t(F)V
-
-    .line 41
-    .line 42
-    .line 43
-    return-object v1
-
-    .line 44
-    :pswitch_3
-    invoke-virtual {p0}, Lun6;->invoke()F
-
-    .line 45
-    .line 46
-    .line 47
-    move-result p0
-
-    .line 48
-    invoke-interface {p1, p0}, Lc92;->t(F)V
-
-    .line 49
-    .line 50
-    .line 51
-    return-object v1
-
-    .line 52
-    :pswitch_4
-    invoke-virtual {p0}, Lun6;->invoke()F
-
-    .line 53
-    .line 54
-    .line 55
-    move-result p0
-
-    .line 56
-    invoke-interface {p1, p0}, Lc92;->t(F)V
-
-    .line 57
-    .line 58
-    .line 59
-    return-object v1
-
-    .line 60
-    :pswitch_5
-    invoke-virtual {p0}, Lun6;->invoke()F
-
-    .line 61
-    .line 62
-    .line 63
-    move-result p0
-
-    .line 64
-    invoke-interface {p1, p0}, Lc92;->t(F)V
-
-    .line 65
-    .line 66
-    .line 67
-    return-object v1
-
-    .line 68
-    :pswitch_6
-    invoke-virtual {p0}, Lun6;->invoke()F
-
-    .line 69
-    .line 70
-    .line 71
-    move-result p0
-
-    .line 72
-    invoke-interface {p1, p0}, Lc92;->t(F)V
-
-    .line 73
-    .line 74
-    .line 75
-    return-object v1
-
-    .line 76
-    :pswitch_7
-    invoke-virtual {p0}, Lun6;->invoke()F
-
-    .line 77
-    .line 78
-    .line 79
-    move-result p0
-
-    .line 80
-    invoke-interface {p1, p0}, Lc92;->t(F)V
-
-    .line 81
-    .line 82
-    .line 83
-    return-object v1
-
-    .line 84
     nop
 
-    .line 85
+    .line 37
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

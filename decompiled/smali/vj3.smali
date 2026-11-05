@@ -1,34 +1,34 @@
-.class public final Lvj3;
+.class public Lvj3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:I
+.field public final a:Landroid/content/Context;
 
-.field public final b:Ljava/util/List;
+.field public final b:Laj3;
 
-.field public final c:J
+.field public final c:Z
 
-.field public final d:Ljava/lang/Object;
+.field public final d:I
 
-.field public final e:Lp20;
+.field public e:Landroid/view/View;
 
-.field public final f:Lt03;
+.field public f:I
 
-.field public final g:Z
+.field public g:Z
 
-.field public final h:I
+.field public h:Lck3;
 
-.field public final i:[I
+.field public i:Ltj3;
 
-.field public j:I
+.field public j:Landroid/widget/PopupWindow$OnDismissListener;
 
-.field public k:I
+.field public final k:Luj3;
 
 
 # direct methods
-.method public constructor <init>(IILjava/util/List;JLjava/lang/Object;Lp20;Lt03;)V
+.method public constructor <init>(Landroid/content/Context;Laj3;Landroid/view/View;ZII)V
     .locals 0
 
     .line 1
@@ -37,454 +37,488 @@
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Lvj3;->a:I
+    const p6, 0x800003
 
     .line 5
     .line 6
-    iput-object p3, p0, Lvj3;->b:Ljava/util/List;
-
     .line 7
+    iput p6, p0, Lvj3;->f:I
+
     .line 8
-    iput-wide p4, p0, Lvj3;->c:J
-
     .line 9
+    new-instance p6, Luj3;
+
     .line 10
-    iput-object p6, p0, Lvj3;->d:Ljava/lang/Object;
-
     .line 11
-    .line 12
-    iput-object p7, p0, Lvj3;->e:Lp20;
+    invoke-direct {p6, p0}, Luj3;-><init>(Lvj3;)V
 
+    .line 12
     .line 13
     .line 14
-    iput-object p8, p0, Lvj3;->f:Lt03;
+    iput-object p6, p0, Lvj3;->k:Luj3;
 
     .line 15
     .line 16
-    const/4 p1, 0x0
+    iput-object p1, p0, Lvj3;->a:Landroid/content/Context;
 
     .line 17
-    iput-boolean p1, p0, Lvj3;->g:Z
-
     .line 18
-    .line 19
-    invoke-interface {p3}, Ljava/util/Collection;->size()I
+    iput-object p2, p0, Lvj3;->b:Laj3;
 
+    .line 19
     .line 20
+    iput-object p3, p0, Lvj3;->e:Landroid/view/View;
+
     .line 21
     .line 22
-    move-result p2
+    iput-boolean p4, p0, Lvj3;->c:Z
 
     .line 23
-    move p4, p1
-
     .line 24
-    :goto_0
-    if-ge p1, p2, :cond_1
+    iput p5, p0, Lvj3;->d:I
 
     .line 25
     .line 26
-    invoke-interface {p3, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    .line 27
-    .line 28
-    .line 29
-    move-result-object p5
-
-    .line 30
-    check-cast p5, Llp4;
-
-    .line 31
-    .line 32
-    iget-boolean p6, p0, Lvj3;->g:Z
-
-    .line 33
-    .line 34
-    if-nez p6, :cond_0
-
-    .line 35
-    .line 36
-    iget p5, p5, Llp4;->k:I
-
-    .line 37
-    .line 38
-    goto :goto_1
-
-    .line 39
-    :cond_0
-    iget p5, p5, Llp4;->j:I
-
-    .line 40
-    .line 41
-    :goto_1
-    invoke-static {p4, p5}, Ljava/lang/Math;->max(II)I
-
-    .line 42
-    .line 43
-    .line 44
-    move-result p4
-
-    .line 45
-    add-int/lit8 p1, p1, 0x1
-
-    .line 46
-    .line 47
-    goto :goto_0
-
-    .line 48
-    :cond_1
-    iput p4, p0, Lvj3;->h:I
-
-    .line 49
-    .line 50
-    iget-object p1, p0, Lvj3;->b:Ljava/util/List;
-
-    .line 51
-    .line 52
-    invoke-interface {p1}, Ljava/util/List;->size()I
-
-    .line 53
-    .line 54
-    .line 55
-    move-result p1
-
-    .line 56
-    mul-int/lit8 p1, p1, 0x2
-
-    .line 57
-    .line 58
-    new-array p1, p1, [I
-
-    .line 59
-    .line 60
-    iput-object p1, p0, Lvj3;->i:[I
-
-    .line 61
-    .line 62
-    const/high16 p1, -0x80000000
-
-    .line 63
-    .line 64
-    iput p1, p0, Lvj3;->k:I
-
-    .line 65
-    .line 66
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(I)V
-    .locals 6
+.method public final a()Ltj3;
+    .locals 8
 
     .line 1
-    iget v0, p0, Lvj3;->j:I
+    iget-object v0, p0, Lvj3;->i:Ltj3;
 
     .line 2
     .line 3
-    add-int/2addr v0, p1
-
-    .line 4
-    iput v0, p0, Lvj3;->j:I
-
-    .line 5
-    .line 6
-    iget-object v0, p0, Lvj3;->i:[I
-
-    .line 7
-    .line 8
-    array-length v1, v0
-
-    .line 9
-    const/4 v2, 0x0
-
-    .line 10
-    :goto_0
-    if-ge v2, v1, :cond_3
-
-    .line 11
-    .line 12
-    iget-boolean v3, p0, Lvj3;->g:Z
-
-    .line 13
-    .line 14
-    if-eqz v3, :cond_0
-
-    .line 15
-    .line 16
-    rem-int/lit8 v4, v2, 0x2
-
-    .line 17
-    .line 18
-    const/4 v5, 0x1
-
-    .line 19
-    if-eq v4, v5, :cond_1
-
-    .line 20
-    .line 21
-    :cond_0
-    if-nez v3, :cond_2
-
-    .line 22
-    .line 23
-    rem-int/lit8 v3, v2, 0x2
-
-    .line 24
-    .line 25
-    if-nez v3, :cond_2
-
-    .line 26
-    .line 27
-    :cond_1
-    aget v3, v0, v2
-
-    .line 28
-    .line 29
-    add-int/2addr v3, p1
-
-    .line 30
-    aput v3, v0, v2
-
-    .line 31
-    .line 32
-    :cond_2
-    add-int/lit8 v2, v2, 0x1
-
-    .line 33
-    .line 34
-    goto :goto_0
-
-    .line 35
-    :cond_3
-    return-void
-.end method
-
-.method public final b(III)V
-    .locals 11
-
-    .line 1
-    iput p1, p0, Lvj3;->j:I
-
-    .line 2
-    .line 3
-    iget-boolean v0, p0, Lvj3;->g:Z
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
-    if-eqz v0, :cond_0
+    const-string v0, "window"
 
     .line 6
     .line 7
-    move v1, p3
+    iget-object v1, p0, Lvj3;->a:Landroid/content/Context;
 
     .line 8
-    goto :goto_0
-
     .line 9
-    :cond_0
-    move v1, p2
+    invoke-virtual {v1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     .line 10
-    :goto_0
-    iput v1, p0, Lvj3;->k:I
-
     .line 11
     .line 12
-    iget-object v1, p0, Lvj3;->b:Ljava/util/List;
+    move-result-object v0
 
     .line 13
-    .line 14
-    invoke-interface {v1}, Ljava/util/Collection;->size()I
+    check-cast v0, Landroid/view/WindowManager;
 
+    .line 14
     .line 15
+    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
     .line 16
     .line 17
-    move-result v2
-
     .line 18
-    const/4 v3, 0x0
+    move-result-object v0
 
     .line 19
-    :goto_1
-    if-ge v3, v2, :cond_4
+    new-instance v2, Landroid/graphics/Point;
 
     .line 20
     .line 21
-    invoke-interface {v1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-direct {v2}, Landroid/graphics/Point;-><init>()V
 
     .line 22
     .line 23
     .line 24
-    move-result-object v4
+    invoke-virtual {v0, v2}, Landroid/view/Display;->getRealSize(Landroid/graphics/Point;)V
 
     .line 25
-    check-cast v4, Llp4;
-
     .line 26
     .line 27
-    mul-int/lit8 v5, v3, 0x2
+    iget v0, v2, Landroid/graphics/Point;->x:I
 
     .line 28
     .line 29
-    iget-object v6, p0, Lvj3;->i:[I
+    iget v2, v2, Landroid/graphics/Point;->y:I
 
     .line 30
     .line 31
-    if-eqz v0, :cond_2
+    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
 
     .line 32
     .line 33
-    iget v7, v4, Llp4;->j:I
-
     .line 34
+    move-result v0
+
     .line 35
-    sub-int v7, p2, v7
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     .line 36
     .line 37
-    int-to-float v7, v7
-
     .line 38
-    const/high16 v8, 0x40000000    # 2.0f
+    move-result-object v1
 
     .line 39
+    const v2, 0x7f070016
+
     .line 40
-    div-float/2addr v7, v8
-
     .line 41
-    iget-object v8, p0, Lvj3;->f:Lt03;
-
     .line 42
-    .line 43
-    sget-object v9, Lt03;->j:Lt03;
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
+    .line 43
     .line 44
     .line 45
-    const/4 v10, 0x0
+    move-result v1
 
     .line 46
-    if-ne v8, v9, :cond_1
+    iget-object v3, p0, Lvj3;->a:Landroid/content/Context;
 
     .line 47
     .line 48
-    goto :goto_2
+    if-lt v0, v1, :cond_0
 
     .line 49
-    :cond_1
-    const/high16 v8, -0x40800000    # -1.0f
-
     .line 50
-    .line 51
-    mul-float/2addr v10, v8
+    new-instance v0, Lhl0;
 
+    .line 51
     .line 52
-    :goto_2
-    const/high16 v8, 0x3f800000    # 1.0f
+    iget-object v1, p0, Lvj3;->e:Landroid/view/View;
 
     .line 53
     .line 54
-    add-float/2addr v8, v10
+    iget v2, p0, Lvj3;->d:I
 
     .line 55
-    mul-float/2addr v8, v7
-
     .line 56
-    invoke-static {v8}, Ljava/lang/Math;->round(F)I
+    iget-boolean v4, p0, Lvj3;->c:Z
 
     .line 57
     .line 58
+    invoke-direct {v0, v3, v1, v2, v4}, Lhl0;-><init>(Landroid/content/Context;Landroid/view/View;IZ)V
+
     .line 59
-    move-result v7
-
     .line 60
-    aput v7, v6, v5
-
     .line 61
+    goto :goto_0
+
     .line 62
-    add-int/lit8 v5, v5, 0x1
+    :cond_0
+    new-instance v2, Lo96;
 
     .line 63
     .line 64
-    aput p1, v6, v5
+    iget-object v5, p0, Lvj3;->e:Landroid/view/View;
 
     .line 65
     .line 66
-    iget v4, v4, Llp4;->k:I
+    iget v6, p0, Lvj3;->d:I
 
     .line 67
     .line 68
-    :goto_3
-    add-int/2addr p1, v4
+    iget-boolean v7, p0, Lvj3;->c:Z
 
     .line 69
-    goto :goto_4
-
     .line 70
-    :cond_2
-    aput p1, v6, v5
+    iget-object v4, p0, Lvj3;->b:Laj3;
 
     .line 71
     .line 72
-    add-int/lit8 v5, v5, 0x1
+    invoke-direct/range {v2 .. v7}, Lo96;-><init>(Landroid/content/Context;Laj3;Landroid/view/View;IZ)V
 
     .line 73
     .line 74
-    iget-object v7, p0, Lvj3;->e:Lp20;
-
     .line 75
+    move-object v0, v2
+
     .line 76
-    if-eqz v7, :cond_3
+    :goto_0
+    iget-object v1, p0, Lvj3;->b:Laj3;
 
     .line 77
     .line 78
-    iget v8, v4, Llp4;->k:I
+    invoke-virtual {v0, v1}, Ltj3;->l(Laj3;)V
 
     .line 79
     .line 80
-    invoke-virtual {v7, v8, p3}, Lp20;->a(II)I
-
     .line 81
+    iget-object v1, p0, Lvj3;->k:Luj3;
+
     .line 82
     .line 83
-    move-result v7
+    invoke-virtual {v0, v1}, Ltj3;->r(Landroid/widget/PopupWindow$OnDismissListener;)V
 
     .line 84
-    aput v7, v6, v5
-
     .line 85
     .line 86
-    iget v4, v4, Llp4;->j:I
+    iget-object v1, p0, Lvj3;->e:Landroid/view/View;
 
     .line 87
     .line 88
-    goto :goto_3
+    invoke-virtual {v0, v1}, Ltj3;->n(Landroid/view/View;)V
 
     .line 89
-    :goto_4
-    add-int/lit8 v3, v3, 0x1
-
     .line 90
     .line 91
-    goto :goto_1
+    iget-object v1, p0, Lvj3;->h:Lck3;
 
     .line 92
-    :cond_3
-    const-string p0, "null verticalAlignment"
-
     .line 93
-    .line 94
-    invoke-static {p0}, Loc1;->i(Ljava/lang/String;)Loy0;
+    invoke-interface {v0, v1}, Ldk3;->e(Lck3;)V
 
+    .line 94
     .line 95
     .line 96
-    .line 97
-    move-result-object p0
+    iget-boolean v1, p0, Lvj3;->g:Z
 
+    .line 97
     .line 98
-    throw p0
+    invoke-virtual {v0, v1}, Ltj3;->o(Z)V
 
     .line 99
-    :cond_4
+    .line 100
+    .line 101
+    iget v1, p0, Lvj3;->f:I
+
+    .line 102
+    .line 103
+    invoke-virtual {v0, v1}, Ltj3;->p(I)V
+
+    .line 104
+    .line 105
+    .line 106
+    iput-object v0, p0, Lvj3;->i:Ltj3;
+
+    .line 107
+    .line 108
+    :cond_1
+    return-object v0
+.end method
+
+.method public final b()Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lvj3;->i:Ltj3;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0}, Le36;->b()Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    if-eqz p0, :cond_0
+
+    .line 10
+    .line 11
+    const/4 p0, 0x1
+
+    .line 12
+    return p0
+
+    .line 13
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 14
+    return p0
+.end method
+
+.method public c()V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    iput-object v0, p0, Lvj3;->i:Ltj3;
+
+    .line 3
+    .line 4
+    iget-object p0, p0, Lvj3;->j:Landroid/widget/PopupWindow$OnDismissListener;
+
+    .line 5
+    .line 6
+    if-eqz p0, :cond_0
+
+    .line 7
+    .line 8
+    invoke-interface {p0}, Landroid/widget/PopupWindow$OnDismissListener;->onDismiss()V
+
+    .line 9
+    .line 10
+    .line 11
+    :cond_0
+    return-void
+.end method
+
+.method public final d(IIZZ)V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Lvj3;->a()Ltj3;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0, p4}, Ltj3;->s(Z)V
+
+    .line 6
+    .line 7
+    .line 8
+    if-eqz p3, :cond_1
+
+    .line 9
+    .line 10
+    iget p3, p0, Lvj3;->f:I
+
+    .line 11
+    .line 12
+    iget-object p4, p0, Lvj3;->e:Landroid/view/View;
+
+    .line 13
+    .line 14
+    invoke-virtual {p4}, Landroid/view/View;->getLayoutDirection()I
+
+    .line 15
+    .line 16
+    .line 17
+    move-result p4
+
+    .line 18
+    invoke-static {p3, p4}, Landroid/view/Gravity;->getAbsoluteGravity(II)I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result p3
+
+    .line 22
+    and-int/lit8 p3, p3, 0x7
+
+    .line 23
+    .line 24
+    const/4 p4, 0x5
+
+    .line 25
+    if-ne p3, p4, :cond_0
+
+    .line 26
+    .line 27
+    iget-object p3, p0, Lvj3;->e:Landroid/view/View;
+
+    .line 28
+    .line 29
+    invoke-virtual {p3}, Landroid/view/View;->getWidth()I
+
+    .line 30
+    .line 31
+    .line 32
+    move-result p3
+
+    .line 33
+    sub-int/2addr p1, p3
+
+    .line 34
+    :cond_0
+    invoke-virtual {v0, p1}, Ltj3;->q(I)V
+
+    .line 35
+    .line 36
+    .line 37
+    invoke-virtual {v0, p2}, Ltj3;->t(I)V
+
+    .line 38
+    .line 39
+    .line 40
+    iget-object p0, p0, Lvj3;->a:Landroid/content/Context;
+
+    .line 41
+    .line 42
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    .line 43
+    .line 44
+    .line 45
+    move-result-object p0
+
+    .line 46
+    invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    .line 47
+    .line 48
+    .line 49
+    move-result-object p0
+
+    .line 50
+    iget p0, p0, Landroid/util/DisplayMetrics;->density:F
+
+    .line 51
+    .line 52
+    const/high16 p3, 0x42400000    # 48.0f
+
+    .line 53
+    .line 54
+    mul-float/2addr p0, p3
+
+    .line 55
+    const/high16 p3, 0x40000000    # 2.0f
+
+    .line 56
+    .line 57
+    div-float/2addr p0, p3
+
+    .line 58
+    float-to-int p0, p0
+
+    .line 59
+    new-instance p3, Landroid/graphics/Rect;
+
+    .line 60
+    .line 61
+    sub-int p4, p1, p0
+
+    .line 62
+    .line 63
+    sub-int v1, p2, p0
+
+    .line 64
+    .line 65
+    add-int/2addr p1, p0
+
+    .line 66
+    add-int/2addr p2, p0
+
+    .line 67
+    invoke-direct {p3, p4, v1, p1, p2}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    .line 68
+    .line 69
+    .line 70
+    iput-object p3, v0, Ltj3;->j:Landroid/graphics/Rect;
+
+    .line 71
+    .line 72
+    :cond_1
+    invoke-interface {v0}, Le36;->d()V
+
+    .line 73
+    .line 74
+    .line 75
     return-void
 .end method

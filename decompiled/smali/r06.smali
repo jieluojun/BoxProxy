@@ -1,311 +1,140 @@
-.class public final Lr06;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lr06;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public a:Lt03;
+# static fields
+.field public static final enum j:Lr06;
 
-.field public b:J
+.field public static final enum k:Lr06;
 
-.field public c:Ljava/lang/Object;
+.field public static final enum l:Lr06;
 
-.field public d:Ljava/lang/Object;
-
-.field public e:Ljava/lang/Object;
-
-.field public f:Ljava/lang/Object;
-
-.field public final g:Ljava/lang/Object;
+.field public static final synthetic m:[Lr06;
 
 
 # direct methods
-.method public constructor <init>(Le62;)V
-    .locals 2
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 27
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 28
-    iput-object p1, p0, Lr06;->c:Ljava/lang/Object;
-
-    const-wide v0, 0x7fc000007fc00000L    # 2.247117487993712E307
-
-    .line 29
-    iput-wide v0, p0, Lr06;->b:J
-
-    .line 30
-    new-instance p1, Lq06;
-
-    const/4 v0, 0x0
-
-    invoke-direct {p1, p0, v0}, Lq06;-><init>(Ljava/lang/Object;B)V
-
-    iput-object p1, p0, Lr06;->g:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lt03;Lyh1;Lc42;Lls6;Ljava/lang/Object;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lr06;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lr06;->a:Lt03;
+    const-string v1, "START"
 
+    .line 4
     .line 5
+    const/4 v2, 0x0
+
     .line 6
-    iput-object p2, p0, Lr06;->c:Ljava/lang/Object;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
-    iput-object p3, p0, Lr06;->d:Ljava/lang/Object;
-
     .line 9
+    sput-object v0, Lr06;->j:Lr06;
+
     .line 10
-    iput-object p4, p0, Lr06;->e:Ljava/lang/Object;
-
     .line 11
+    new-instance v1, Lr06;
+
     .line 12
-    iput-object p5, p0, Lr06;->f:Ljava/lang/Object;
-
     .line 13
-    .line 14
-    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    const-string v2, "STOP"
 
+    .line 14
     .line 15
+    const/4 v3, 0x1
+
     .line 16
-    invoke-static {p1}, Lne3;->G(Ljava/lang/Object;)Lum4;
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
     .line 18
     .line 19
-    move-result-object p1
-
-    .line 20
-    iput-object p1, p0, Lr06;->g:Ljava/lang/Object;
-
-    .line 21
-    .line 22
-    const-wide/16 p1, 0x0
-
-    .line 23
-    .line 24
-    iput-wide p1, p0, Lr06;->b:J
-
-    .line 25
-    .line 26
-    return-void
-.end method
-
-.method public static a(Lr06;Lt03;Lyh1;Lls6;I)V
-    .locals 3
-
-    .line 1
-    and-int/lit8 v0, p4, 0x1
-
-    .line 2
-    .line 3
-    if-eqz v0, :cond_0
-
-    .line 4
-    .line 5
-    iget-object p1, p0, Lr06;->a:Lt03;
-
-    .line 6
-    .line 7
-    :cond_0
-    and-int/lit8 v0, p4, 0x2
-
-    .line 8
-    .line 9
-    if-eqz v0, :cond_1
-
-    .line 10
-    .line 11
-    iget-object p2, p0, Lr06;->c:Ljava/lang/Object;
-
-    .line 12
-    .line 13
-    check-cast p2, Lyh1;
-
-    .line 14
-    .line 15
-    :cond_1
-    iget-object v0, p0, Lr06;->d:Ljava/lang/Object;
-
-    .line 16
-    .line 17
-    check-cast v0, Lc42;
-
-    .line 18
-    .line 19
-    and-int/lit8 p4, p4, 0x8
+    sput-object v1, Lr06;->k:Lr06;
 
     .line 20
     .line 21
-    if-eqz p4, :cond_2
+    new-instance v2, Lr06;
 
     .line 22
     .line 23
-    iget-object p3, p0, Lr06;->e:Ljava/lang/Object;
+    const-string v3, "STOP_AND_RESET_REPLAY_CACHE"
 
     .line 24
     .line 25
-    check-cast p3, Lls6;
+    const/4 v4, 0x2
 
     .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 27
-    :cond_2
-    iget-object p4, p0, Lr06;->f:Ljava/lang/Object;
-
     .line 28
     .line 29
-    iget-object v1, p0, Lr06;->a:Lt03;
+    sput-object v2, Lr06;->l:Lr06;
 
     .line 30
     .line 31
-    iget-object v2, p0, Lr06;->g:Ljava/lang/Object;
+    filled-new-array {v0, v1, v2}, [Lr06;
 
     .line 32
     .line 33
-    check-cast v2, Lum4;
-
     .line 34
+    move-result-object v0
+
     .line 35
-    if-ne p1, v1, :cond_5
+    sput-object v0, Lr06;->m:[Lr06;
 
     .line 36
     .line 37
-    iget-object v1, p0, Lr06;->c:Ljava/lang/Object;
-
-    .line 38
-    .line 39
-    check-cast v1, Lyh1;
-
-    .line 40
-    .line 41
-    invoke-static {p2, v1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 42
-    .line 43
-    .line 44
-    move-result v1
-
-    .line 45
-    if-eqz v1, :cond_5
-
-    .line 46
-    .line 47
-    iget-object v1, p0, Lr06;->d:Ljava/lang/Object;
-
-    .line 48
-    .line 49
-    check-cast v1, Lc42;
-
-    .line 50
-    .line 51
-    invoke-static {v0, v1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 52
-    .line 53
-    .line 54
-    move-result v1
-
-    .line 55
-    if-eqz v1, :cond_5
-
-    .line 56
-    .line 57
-    iget-object v1, p0, Lr06;->e:Ljava/lang/Object;
-
-    .line 58
-    .line 59
-    check-cast v1, Lls6;
-
-    .line 60
-    .line 61
-    invoke-static {p3, v1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 62
-    .line 63
-    .line 64
-    move-result v1
-
-    .line 65
-    if-nez v1, :cond_3
-
-    .line 66
-    .line 67
-    goto :goto_0
-
-    .line 68
-    :cond_3
-    iget-object p1, p0, Lr06;->f:Ljava/lang/Object;
-
-    .line 69
-    .line 70
-    invoke-static {p4, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 71
-    .line 72
-    .line 73
-    move-result p1
-
-    .line 74
-    if-nez p1, :cond_4
-
-    .line 75
-    .line 76
-    iput-object p4, p0, Lr06;->f:Ljava/lang/Object;
-
-    .line 77
-    .line 78
-    sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    .line 79
-    .line 80
-    invoke-virtual {v2, p0}, Lum4;->setValue(Ljava/lang/Object;)V
-
-    .line 81
-    .line 82
-    .line 83
-    :cond_4
     return-void
+.end method
 
-    .line 84
-    :cond_5
-    :goto_0
-    iput-object p1, p0, Lr06;->a:Lt03;
+.method public static valueOf(Ljava/lang/String;)Lr06;
+    .locals 1
 
-    .line 85
-    .line 86
-    iput-object p2, p0, Lr06;->c:Ljava/lang/Object;
+    .line 1
+    const-class v0, Lr06;
 
-    .line 87
-    .line 88
-    iput-object v0, p0, Lr06;->d:Ljava/lang/Object;
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    .line 89
-    .line 90
-    iput-object p3, p0, Lr06;->e:Ljava/lang/Object;
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
 
-    .line 91
-    .line 92
-    sget-object p0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    .line 7
+    check-cast p0, Lr06;
 
-    .line 93
-    .line 94
-    invoke-virtual {v2, p0}, Lum4;->setValue(Ljava/lang/Object;)V
+    .line 8
+    .line 9
+    return-object p0
+.end method
 
-    .line 95
-    .line 96
-    .line 97
-    return-void
+.method public static values()[Lr06;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lr06;->m:[Lr06;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lr06;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

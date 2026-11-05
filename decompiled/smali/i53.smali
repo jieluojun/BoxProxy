@@ -1,32 +1,24 @@
 .class public final Li53;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Landroid/text/style/MetricAffectingSpan;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public j:Lst3;
-
-.field public k:Llh6;
-
-.field public synthetic l:Ljava/lang/Object;
-
-.field public final synthetic m:Lk53;
-
-.field public n:I
+.field public final j:F
 
 
 # direct methods
-.method public constructor <init>(Lk53;Lz81;)V
+.method public constructor <init>(F)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Li53;->m:Lk53;
+    invoke-direct {p0}, Landroid/text/style/MetricAffectingSpan;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
     .line 4
+    iput p1, p0, Li53;->j:F
+
     .line 5
     .line 6
     return-void
@@ -34,43 +26,108 @@
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final updateDrawState(Landroid/text/TextPaint;)V
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Li53;->l:Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/graphics/Paint;->getTextSize()F
 
     .line 2
     .line 3
-    iget p1, p0, Li53;->n:I
-
     .line 4
+    move-result v0
+
     .line 5
-    const/high16 v0, -0x80000000
+    invoke-virtual {p1}, Landroid/graphics/Paint;->getTextScaleX()F
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Li53;->n:I
+    move-result v1
 
     .line 9
-    .line 10
-    iget-object p1, p0, Li53;->m:Lk53;
+    mul-float/2addr v1, v0
 
-    .line 11
-    .line 12
+    .line 10
     const/4 v0, 0x0
 
+    .line 11
+    cmpg-float v0, v1, v0
+
+    .line 12
     .line 13
-    invoke-virtual {p1, v0, v0, p0}, Lk53;->d(Lst3;Lt62;Lz81;)Ljava/lang/Object;
+    if-nez v0, :cond_0
 
     .line 14
     .line 15
+    return-void
+
     .line 16
-    move-result-object p0
+    :cond_0
+    iget p0, p0, Li53;->j:F
 
     .line 17
-    return-object p0
+    .line 18
+    div-float/2addr p0, v1
+
+    .line 19
+    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setLetterSpacing(F)V
+
+    .line 20
+    .line 21
+    .line 22
+    return-void
+.end method
+
+.method public final updateMeasureState(Landroid/text/TextPaint;)V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p1}, Landroid/graphics/Paint;->getTextSize()F
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    invoke-virtual {p1}, Landroid/graphics/Paint;->getTextScaleX()F
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v1
+
+    .line 9
+    mul-float/2addr v1, v0
+
+    .line 10
+    const/4 v0, 0x0
+
+    .line 11
+    cmpg-float v0, v1, v0
+
+    .line 12
+    .line 13
+    if-nez v0, :cond_0
+
+    .line 14
+    .line 15
+    return-void
+
+    .line 16
+    :cond_0
+    iget p0, p0, Li53;->j:F
+
+    .line 17
+    .line 18
+    div-float/2addr p0, v1
+
+    .line 19
+    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setLetterSpacing(F)V
+
+    .line 20
+    .line 21
+    .line 22
+    return-void
 .end method

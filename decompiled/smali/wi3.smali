@@ -1,223 +1,473 @@
-.class public final synthetic Lwi3;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lt62;
+.class public final Lwi3;
+.super Landroid/widget/BaseAdapter;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final a:Laj3;
 
-.field public final synthetic k:J
+.field public b:I
 
-.field public final synthetic l:Lqz0;
+.field public c:Z
 
-.field public final synthetic m:I
+.field public final d:Z
 
-.field public final synthetic n:B
+.field public final e:Landroid/view/LayoutInflater;
 
-.field public final synthetic o:Ljava/lang/Object;
+.field public final f:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;JLqz0;IIB)V
-    .locals 0
+.method public constructor <init>(Laj3;Landroid/view/LayoutInflater;ZI)V
+    .locals 1
 
     .line 1
-    iput-byte p7, p0, Lwi3;->j:B
+    invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lwi3;->o:Ljava/lang/Object;
-
     .line 4
+    const/4 v0, -0x1
+
     .line 5
-    iput-wide p2, p0, Lwi3;->k:J
+    iput v0, p0, Lwi3;->b:I
 
     .line 6
     .line 7
-    iput-object p4, p0, Lwi3;->l:Lqz0;
+    iput-boolean p3, p0, Lwi3;->d:Z
 
     .line 8
     .line 9
-    iput p5, p0, Lwi3;->m:I
+    iput-object p2, p0, Lwi3;->e:Landroid/view/LayoutInflater;
 
     .line 10
     .line 11
-    iput-byte p6, p0, Lwi3;->n:B
+    iput-object p1, p0, Lwi3;->a:Laj3;
 
     .line 12
     .line 13
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p4, p0, Lwi3;->f:I
 
     .line 14
     .line 15
+    invoke-virtual {p0}, Lwi3;->a()V
+
     .line 16
+    .line 17
+    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 19
+.method public final a()V
+    .locals 5
 
     .line 1
-    move-object/from16 v0, p0
+    iget-object v0, p0, Lwi3;->a:Laj3;
 
     .line 2
     .line 3
-    iget-byte v1, v0, Lwi3;->j:B
+    iget-object v1, v0, Laj3;->v:Lgj3;
 
     .line 4
     .line 5
-    sget-object v2, La47;->a:La47;
+    if-eqz v1, :cond_1
 
     .line 6
     .line 7
-    iget v3, v0, Lwi3;->m:I
+    invoke-virtual {v0}, Laj3;->i()V
 
     .line 8
     .line 9
-    iget-object v4, v0, Lwi3;->o:Ljava/lang/Object;
-
     .line 10
-    .line 11
-    packed-switch v1, :pswitch_data_0
+    iget-object v0, v0, Laj3;->j:Ljava/util/ArrayList;
 
+    .line 11
     .line 12
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
     .line 13
     .line 14
-    move-object v5, v4
-
     .line 15
-    check-cast v5, Ljava/lang/String;
+    move-result v2
 
     .line 16
+    const/4 v3, 0x0
+
     .line 17
-    move-object/from16 v9, p1
+    :goto_0
+    if-ge v3, v2, :cond_1
 
     .line 18
     .line 19
-    check-cast v9, Lz11;
+    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     .line 20
     .line 21
-    move-object/from16 v1, p2
-
     .line 22
+    move-result-object v4
+
     .line 23
-    check-cast v1, Ljava/lang/Integer;
+    check-cast v4, Lgj3;
 
     .line 24
     .line 25
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-ne v4, v1, :cond_0
+
+    .line 26
+    .line 27
+    iput v3, p0, Lwi3;->b:I
+
+    .line 28
+    .line 29
+    return-void
+
+    .line 30
+    :cond_0
+    add-int/lit8 v3, v3, 0x1
+
+    .line 31
+    .line 32
+    goto :goto_0
+
+    .line 33
+    :cond_1
+    const/4 v0, -0x1
+
+    .line 34
+    iput v0, p0, Lwi3;->b:I
+
+    .line 35
+    .line 36
+    return-void
+.end method
+
+.method public final b(I)Lgj3;
+    .locals 2
+
+    .line 1
+    iget-boolean v0, p0, Lwi3;->d:Z
+
+    .line 2
+    .line 3
+    iget-object v1, p0, Lwi3;->a:Laj3;
+
+    .line 4
+    .line 5
+    if-eqz v0, :cond_0
+
+    .line 6
+    .line 7
+    invoke-virtual {v1}, Laj3;->i()V
+
+    .line 8
+    .line 9
+    .line 10
+    iget-object v0, v1, Laj3;->j:Ljava/util/ArrayList;
+
+    .line 11
+    .line 12
+    goto :goto_0
+
+    .line 13
+    :cond_0
+    invoke-virtual {v1}, Laj3;->l()Ljava/util/ArrayList;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object v0
+
+    .line 17
+    :goto_0
+    iget p0, p0, Lwi3;->b:I
+
+    .line 18
+    .line 19
+    if-ltz p0, :cond_1
+
+    .line 20
+    .line 21
+    if-lt p1, p0, :cond_1
+
+    .line 22
+    .line 23
+    add-int/lit8 p1, p1, 0x1
+
+    .line 24
+    .line 25
+    :cond_1
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     .line 26
     .line 27
     .line 28
-    or-int/lit8 v1, v3, 0x1
+    move-result-object p0
 
     .line 29
+    check-cast p0, Lgj3;
+
     .line 30
-    invoke-static {v1}, Lqu5;->f0(I)I
+    .line 31
+    return-object p0
+.end method
+
+.method public final getCount()I
+    .locals 2
+
+    .line 1
+    iget-boolean v0, p0, Lwi3;->d:Z
+
+    .line 2
+    .line 3
+    iget-object v1, p0, Lwi3;->a:Laj3;
+
+    .line 4
+    .line 5
+    if-eqz v0, :cond_0
+
+    .line 6
+    .line 7
+    invoke-virtual {v1}, Laj3;->i()V
+
+    .line 8
+    .line 9
+    .line 10
+    iget-object v0, v1, Laj3;->j:Ljava/util/ArrayList;
+
+    .line 11
+    .line 12
+    goto :goto_0
+
+    .line 13
+    :cond_0
+    invoke-virtual {v1}, Laj3;->l()Ljava/util/ArrayList;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object v0
+
+    .line 17
+    :goto_0
+    iget p0, p0, Lwi3;->b:I
+
+    .line 18
+    .line 19
+    if-gez p0, :cond_1
+
+    .line 20
+    .line 21
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    .line 22
+    .line 23
+    .line 24
+    move-result p0
+
+    .line 25
+    return p0
+
+    .line 26
+    :cond_1
+    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+
+    .line 27
+    .line 28
+    .line 29
+    move-result p0
+
+    .line 30
+    add-int/lit8 p0, p0, -0x1
 
     .line 31
     .line 32
+    return p0
+.end method
+
+.method public final bridge synthetic getItem(I)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0, p1}, Lwi3;->b(I)Lgj3;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method public final getItemId(I)J
+    .locals 0
+
+    .line 1
+    int-to-long p0, p1
+
+    .line 2
+    return-wide p0
+.end method
+
+.method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .locals 5
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    if-nez p2, :cond_0
+
+    .line 3
+    .line 4
+    iget-object p2, p0, Lwi3;->e:Landroid/view/LayoutInflater;
+
+    .line 5
+    .line 6
+    iget v1, p0, Lwi3;->f:I
+
+    .line 7
+    .line 8
+    invoke-virtual {p2, v1, p3, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object p2
+
+    .line 12
+    :cond_0
+    invoke-virtual {p0, p1}, Lwi3;->b(I)Lgj3;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p3
+
+    .line 16
+    iget p3, p3, Lgj3;->b:I
+
+    .line 17
+    .line 18
+    add-int/lit8 v1, p1, -0x1
+
+    .line 19
+    .line 20
+    if-ltz v1, :cond_1
+
+    .line 21
+    .line 22
+    invoke-virtual {p0, v1}, Lwi3;->b(I)Lgj3;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object v1
+
+    .line 26
+    iget v1, v1, Lgj3;->b:I
+
+    .line 27
+    .line 28
+    goto :goto_0
+
+    .line 29
+    :cond_1
+    move v1, p3
+
+    .line 30
+    :goto_0
+    move-object v2, p2
+
+    .line 31
+    check-cast v2, Landroidx/appcompat/view/menu/ListMenuItemView;
+
+    .line 32
     .line 33
-    move-result v10
+    iget-object v3, p0, Lwi3;->a:Laj3;
 
     .line 34
-    iget-wide v6, v0, Lwi3;->k:J
-
     .line 35
-    .line 36
-    iget-object v8, v0, Lwi3;->l:Lqz0;
+    invoke-virtual {v3}, Laj3;->m()Z
 
+    .line 36
     .line 37
     .line 38
-    iget-byte v11, v0, Lwi3;->n:B
+    move-result v3
 
     .line 39
+    const/4 v4, 0x1
+
     .line 40
-    invoke-static/range {v5 .. v11}, Lqu5;->n(Ljava/lang/String;JLqz0;Lz11;II)V
+    if-eqz v3, :cond_2
 
     .line 41
     .line 42
-    .line 43
-    return-object v2
+    if-eq p3, v1, :cond_2
 
+    .line 43
     .line 44
-    :pswitch_0
-    move-object v12, v4
+    move v0, v4
 
     .line 45
-    check-cast v12, Lwp3;
+    :cond_2
+    invoke-virtual {v2, v0}, Landroidx/appcompat/view/menu/ListMenuItemView;->setGroupDividerEnabled(Z)V
 
     .line 46
     .line 47
-    move-object/from16 v16, p1
-
     .line 48
+    move-object p3, p2
+
     .line 49
-    check-cast v16, Lz11;
+    check-cast p3, Lek3;
 
     .line 50
     .line 51
-    move-object/from16 v1, p2
+    iget-boolean v0, p0, Lwi3;->c:Z
 
     .line 52
     .line 53
-    check-cast v1, Ljava/lang/Integer;
+    if-eqz v0, :cond_3
 
     .line 54
     .line 55
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v2, v4}, Landroidx/appcompat/view/menu/ListMenuItemView;->setForceShowIcon(Z)V
 
     .line 56
     .line 57
     .line 58
-    or-int/lit8 v1, v3, 0x1
+    :cond_3
+    invoke-virtual {p0, p1}, Lwi3;->b(I)Lgj3;
 
     .line 59
     .line 60
-    invoke-static {v1}, Lqu5;->f0(I)I
-
     .line 61
+    move-result-object p0
+
     .line 62
+    invoke-interface {p3, p0}, Lek3;->a(Lgj3;)V
+
     .line 63
-    move-result v17
-
     .line 64
-    iget-wide v13, v0, Lwi3;->k:J
-
     .line 65
-    .line 66
-    iget-object v15, v0, Lwi3;->l:Lqz0;
+    return-object p2
+.end method
 
-    .line 67
-    .line 68
-    iget-byte v0, v0, Lwi3;->n:B
+.method public final notifyDataSetChanged()V
+    .locals 0
 
-    .line 69
-    .line 70
-    move/from16 v18, v0
+    .line 1
+    invoke-virtual {p0}, Lwi3;->a()V
 
-    .line 71
-    .line 72
-    invoke-static/range {v12 .. v18}, Lzi3;->g(Lwp3;JLqz0;Lz11;II)V
+    .line 2
+    .line 3
+    .line 4
+    invoke-super {p0}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
 
-    .line 73
-    .line 74
-    .line 75
-    return-object v2
-
-    .line 76
-    nop
-
-    .line 77
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 5
+    .line 6
+    .line 7
+    return-void
 .end method

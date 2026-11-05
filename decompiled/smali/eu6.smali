@@ -1,385 +1,140 @@
-.class public final Leu6;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Leu6;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final a:I
+# static fields
+.field public static final enum j:Leu6;
 
-.field public final b:[J
+.field public static final enum k:Leu6;
 
-.field public final c:[Ljava/lang/Object;
+.field public static final enum l:Leu6;
+
+.field public static final synthetic m:[Leu6;
 
 
 # direct methods
-.method public constructor <init>(I[J[Ljava/lang/Object;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Leu6;
 
     .line 2
     .line 3
-    .line 4
-    iput p1, p0, Leu6;->a:I
+    const-string v1, "Uninitialized"
 
+    .line 4
     .line 5
+    const/4 v2, 0x0
+
     .line 6
-    iput-object p2, p0, Leu6;->b:[J
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
-    iput-object p3, p0, Leu6;->c:[Ljava/lang/Object;
-
     .line 9
+    sput-object v0, Leu6;->j:Leu6;
+
     .line 10
+    .line 11
+    new-instance v1, Leu6;
+
+    .line 12
+    .line 13
+    const-string v2, "Detached"
+
+    .line 14
+    .line 15
+    const/4 v3, 0x1
+
+    .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    sput-object v1, Leu6;->k:Leu6;
+
+    .line 20
+    .line 21
+    new-instance v2, Leu6;
+
+    .line 22
+    .line 23
+    const-string v3, "Attached"
+
+    .line 24
+    .line 25
+    const/4 v4, 0x2
+
+    .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 27
+    .line 28
+    .line 29
+    sput-object v2, Leu6;->l:Leu6;
+
+    .line 30
+    .line 31
+    filled-new-array {v0, v1, v2}, [Leu6;
+
+    .line 32
+    .line 33
+    .line 34
+    move-result-object v0
+
+    .line 35
+    sput-object v0, Leu6;->m:[Leu6;
+
+    .line 36
+    .line 37
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(J)I
-    .locals 7
+.method public static valueOf(Ljava/lang/String;)Leu6;
+    .locals 1
 
     .line 1
-    iget v0, p0, Leu6;->a:I
+    const-class v0, Leu6;
 
     .line 2
     .line 3
-    add-int/lit8 v0, v0, -0x1
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     .line 4
     .line 5
-    const/4 v1, -0x1
-
     .line 6
-    if-eq v0, v1, :cond_5
+    move-result-object p0
 
     .line 7
+    check-cast p0, Leu6;
+
     .line 8
-    iget-object p0, p0, Leu6;->b:[J
-
     .line 9
-    .line 10
-    const/4 v2, 0x0
-
-    .line 11
-    if-eqz v0, :cond_3
-
-    .line 12
-    .line 13
-    :goto_0
-    if-gt v2, v0, :cond_2
-
-    .line 14
-    .line 15
-    add-int v1, v2, v0
-
-    .line 16
-    .line 17
-    ushr-int/lit8 v1, v1, 0x1
-
-    .line 18
-    .line 19
-    aget-wide v3, p0, v1
-
-    .line 20
-    .line 21
-    sub-long/2addr v3, p1
-
-    .line 22
-    const-wide/16 v5, 0x0
-
-    .line 23
-    .line 24
-    cmp-long v3, v3, v5
-
-    .line 25
-    .line 26
-    if-gez v3, :cond_0
-
-    .line 27
-    .line 28
-    add-int/lit8 v2, v1, 0x1
-
-    .line 29
-    .line 30
-    goto :goto_0
-
-    .line 31
-    :cond_0
-    if-lez v3, :cond_1
-
-    .line 32
-    .line 33
-    add-int/lit8 v0, v1, -0x1
-
-    .line 34
-    .line 35
-    goto :goto_0
-
-    .line 36
-    :cond_1
-    return v1
-
-    .line 37
-    :cond_2
-    add-int/lit8 v2, v2, 0x1
-
-    .line 38
-    .line 39
-    neg-int p0, v2
-
-    .line 40
-    return p0
-
-    .line 41
-    :cond_3
-    aget-wide v3, p0, v2
-
-    .line 42
-    .line 43
-    cmp-long p0, v3, p1
-
-    .line 44
-    .line 45
-    if-nez p0, :cond_4
-
-    .line 46
-    .line 47
-    return v2
-
-    .line 48
-    :cond_4
-    if-lez p0, :cond_5
-
-    .line 49
-    .line 50
-    const/4 p0, -0x2
-
-    .line 51
-    return p0
-
-    .line 52
-    :cond_5
-    return v1
+    return-object p0
 .end method
 
-.method public final b(JLjava/lang/Object;)Leu6;
-    .locals 13
+.method public static values()[Leu6;
+    .locals 1
 
     .line 1
-    iget-object v0, p0, Leu6;->c:[Ljava/lang/Object;
+    sget-object v0, Leu6;->m:[Leu6;
 
     .line 2
     .line 3
-    array-length v1, v0
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     .line 4
-    const/4 v2, 0x0
-
     .line 5
-    move v3, v2
-
     .line 6
-    move v4, v3
+    move-result-object v0
 
     .line 7
-    :goto_0
-    if-ge v3, v1, :cond_1
+    check-cast v0, [Leu6;
 
     .line 8
     .line 9
-    aget-object v5, v0, v3
-
-    .line 10
-    .line 11
-    if-eqz v5, :cond_0
-
-    .line 12
-    .line 13
-    add-int/lit8 v4, v4, 0x1
-
-    .line 14
-    .line 15
-    :cond_0
-    add-int/lit8 v3, v3, 0x1
-
-    .line 16
-    .line 17
-    goto :goto_0
-
-    .line 18
-    :cond_1
-    add-int/lit8 v1, v4, 0x1
-
-    .line 19
-    .line 20
-    new-array v3, v1, [J
-
-    .line 21
-    .line 22
-    new-array v5, v1, [Ljava/lang/Object;
-
-    .line 23
-    .line 24
-    const/4 v6, 0x1
-
-    .line 25
-    if-le v1, v6, :cond_7
-
-    .line 26
-    .line 27
-    move v6, v2
-
-    .line 28
-    :goto_1
-    iget-object v7, p0, Leu6;->b:[J
-
-    .line 29
-    .line 30
-    iget v8, p0, Leu6;->a:I
-
-    .line 31
-    .line 32
-    if-ge v2, v1, :cond_4
-
-    .line 33
-    .line 34
-    if-ge v6, v8, :cond_4
-
-    .line 35
-    .line 36
-    aget-wide v9, v7, v6
-
-    .line 37
-    .line 38
-    aget-object v11, v0, v6
-
-    .line 39
-    .line 40
-    cmp-long v12, v9, p1
-
-    .line 41
-    .line 42
-    if-lez v12, :cond_2
-
-    .line 43
-    .line 44
-    aput-wide p1, v3, v2
-
-    .line 45
-    .line 46
-    aput-object p3, v5, v2
-
-    .line 47
-    .line 48
-    add-int/lit8 v2, v2, 0x1
-
-    .line 49
-    .line 50
-    goto :goto_2
-
-    .line 51
-    :cond_2
-    if-eqz v11, :cond_3
-
-    .line 52
-    .line 53
-    aput-wide v9, v3, v2
-
-    .line 54
-    .line 55
-    aput-object v11, v5, v2
-
-    .line 56
-    .line 57
-    add-int/lit8 v2, v2, 0x1
-
-    .line 58
-    .line 59
-    :cond_3
-    add-int/lit8 v6, v6, 0x1
-
-    .line 60
-    .line 61
-    goto :goto_1
-
-    .line 62
-    :cond_4
-    :goto_2
-    if-ne v6, v8, :cond_5
-
-    .line 63
-    .line 64
-    aput-wide p1, v3, v4
-
-    .line 65
-    .line 66
-    aput-object p3, v5, v4
-
-    .line 67
-    .line 68
-    goto :goto_4
-
-    .line 69
-    :cond_5
-    :goto_3
-    if-ge v2, v1, :cond_8
-
-    .line 70
-    .line 71
-    aget-wide v8, v7, v6
-
-    .line 72
-    .line 73
-    aget-object p0, v0, v6
-
-    .line 74
-    .line 75
-    if-eqz p0, :cond_6
-
-    .line 76
-    .line 77
-    aput-wide v8, v3, v2
-
-    .line 78
-    .line 79
-    aput-object p0, v5, v2
-
-    .line 80
-    .line 81
-    add-int/lit8 v2, v2, 0x1
-
-    .line 82
-    .line 83
-    :cond_6
-    add-int/lit8 v6, v6, 0x1
-
-    .line 84
-    .line 85
-    goto :goto_3
-
-    .line 86
-    :cond_7
-    aput-wide p1, v3, v2
-
-    .line 87
-    .line 88
-    aput-object p3, v5, v2
-
-    .line 89
-    .line 90
-    :cond_8
-    :goto_4
-    new-instance p0, Leu6;
-
-    .line 91
-    .line 92
-    invoke-direct {p0, v1, v3, v5}, Leu6;-><init>(I[J[Ljava/lang/Object;)V
-
-    .line 93
-    .line 94
-    .line 95
-    return-object p0
+    return-object v0
 .end method

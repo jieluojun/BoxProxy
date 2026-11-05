@@ -1,209 +1,247 @@
-.class public final enum Lv84;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lv84;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-
-# static fields
-.field public static final k:Ljc3;
-
-.field public static final enum l:Lv84;
-
-.field public static final enum m:Lv84;
-
-.field public static final enum n:Lv84;
-
-.field public static final synthetic o:[Lv84;
-
-.field public static final synthetic p:Lzv1;
+# interfaces
+.implements Lly6;
 
 
 # instance fields
-.field public final j:Ljava/lang/String;
+.field public final synthetic j:B
+
+.field public final synthetic k:Lky6;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public synthetic constructor <init>(Lky6;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lv84;
+    iput-byte p2, p0, Lv84;->j:B
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    iput-object p1, p0, Lv84;->k:Lky6;
 
     .line 4
-    const-string v2, "panel"
-
     .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 6
-    const-string v3, "Panel"
+    .line 7
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lm82;Lrz6;)Lky6;
+    .locals 1
+
+    .line 1
+    iget-byte p1, p0, Lv84;->j:B
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lv84;->k:Lky6;
+
+    .line 4
+    .line 5
+    const/4 v0, 0x0
+
+    .line 6
+    packed-switch p1, :pswitch_data_0
 
     .line 7
     .line 8
-    invoke-direct {v0, v1, v3, v2}, Lv84;-><init>(ILjava/lang/String;Ljava/lang/String;)V
-
     .line 9
+    iget-object p1, p2, Lrz6;->a:Ljava/lang/Class;
+
     .line 10
     .line 11
-    sput-object v0, Lv84;->l:Lv84;
+    const-class p2, Ljava/util/Calendar;
 
     .line 12
     .line 13
-    new-instance v1, Lv84;
+    if-eq p1, p2, :cond_0
 
     .line 14
     .line 15
-    const/4 v2, 0x1
+    const-class p2, Ljava/util/GregorianCalendar;
 
     .line 16
-    const-string v3, "web_ui"
+    .line 17
+    if-ne p1, p2, :cond_1
 
+    .line 18
+    .line 19
+    :cond_0
+    move-object v0, p0
+
+    .line 20
+    check-cast v0, Ldz6;
+
+    .line 21
+    .line 22
+    :cond_1
+    return-object v0
+
+    .line 23
+    :pswitch_0
+    iget-object p1, p2, Lrz6;->a:Ljava/lang/Class;
+
+    .line 24
+    .line 25
+    const-class p2, Ljava/lang/Number;
+
+    .line 26
+    .line 27
+    if-ne p1, p2, :cond_2
+
+    .line 28
+    .line 29
+    move-object v0, p0
+
+    .line 30
+    check-cast v0, Lw84;
+
+    .line 31
+    .line 32
+    :cond_2
+    return-object v0
+
+    .line 33
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    iget-byte v0, p0, Lv84;->j:B
+
+    .line 2
+    .line 3
+    packed-switch v0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 7
+    .line 8
+    .line 9
+    move-result-object p0
+
+    .line 10
+    return-object p0
+
+    .line 11
+    :pswitch_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 12
+    .line 13
+    const-string v1, "Factory[type="
+
+    .line 14
+    .line 15
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 16
     .line 17
     .line 18
-    const-string v4, "WebUi"
+    const-class v1, Ljava/util/Calendar;
 
     .line 19
     .line 20
-    invoke-direct {v1, v2, v4, v3}, Lv84;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
     .line 21
     .line 22
     .line 23
-    sput-object v1, Lv84;->m:Lv84;
+    move-result-object v1
 
     .line 24
-    .line 25
-    new-instance v2, Lv84;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 25
     .line 26
     .line 27
-    const/4 v3, 0x2
+    const-string v1, "+"
 
     .line 28
-    const-string v4, "app"
-
     .line 29
-    .line 30
-    const-string v5, "App"
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 30
     .line 31
     .line 32
-    invoke-direct {v2, v3, v5, v4}, Lv84;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    const-class v1, Ljava/util/GregorianCalendar;
 
     .line 33
     .line 34
-    .line 35
-    sput-object v2, Lv84;->n:Lv84;
+    invoke-virtual {v1}, Ljava/lang/Class;->getName()Ljava/lang/String;
 
+    .line 35
     .line 36
     .line 37
-    filled-new-array {v0, v1, v2}, [Lv84;
+    move-result-object v1
 
     .line 38
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 39
     .line 40
-    move-result-object v0
-
     .line 41
-    sput-object v0, Lv84;->o:[Lv84;
+    const-string v1, ",adapter="
 
     .line 42
     .line 43
-    new-instance v1, Lzv1;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 44
     .line 45
-    invoke-direct {v1, v0}, Lzv1;-><init>([Ljava/lang/Enum;)V
-
     .line 46
+    iget-object p0, p0, Lv84;->k:Lky6;
+
     .line 47
     .line 48
-    sput-object v1, Lv84;->p:Lzv1;
+    check-cast p0, Ldz6;
 
     .line 49
     .line 50
-    new-instance v0, Ljc3;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 51
     .line 52
-    const/16 v1, 0xb
-
     .line 53
-    .line 54
-    const/4 v2, 0x0
+    const-string p0, "]"
 
+    .line 54
     .line 55
-    invoke-direct {v0, v1, v2}, Ljc3;-><init>(BZ)V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 56
     .line 57
     .line 58
-    sput-object v0, Lv84;->k:Ljc3;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 59
     .line 60
-    return-void
-.end method
-
-.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0, p2, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p3, p0, Lv84;->j:Ljava/lang/String;
-
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lv84;
-    .locals 1
-
-    .line 1
-    const-class v0, Lv84;
-
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    .line 4
-    .line 5
-    .line 6
+    .line 61
     move-result-object p0
 
-    .line 7
-    check-cast p0, Lv84;
-
-    .line 8
-    .line 9
+    .line 62
     return-object p0
-.end method
 
-.method public static values()[Lv84;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lv84;->o:[Lv84;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [Lv84;
-
-    .line 8
-    .line 9
-    return-object v0
+    .line 63
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method

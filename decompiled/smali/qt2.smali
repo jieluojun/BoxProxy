@@ -1,21 +1,31 @@
-.class public interface abstract Lqt2;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lyh1;
+.class public final Lqt2;
+.super Ljava/util/concurrent/CancellationException;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# virtual methods
-.method public E()Z
+# instance fields
+.field public final j:I
+
+.field public final k:Loh;
+
+
+# direct methods
+.method public constructor <init>(ILoh;)V
     .locals 0
 
     .line 1
-    const/4 p0, 0x0
+    invoke-direct {p0}, Ljava/util/concurrent/CancellationException;-><init>()V
 
     .line 2
-    return p0
-.end method
+    .line 3
+    .line 4
+    iput p1, p0, Lqt2;->j:I
 
-.method public abstract getLayoutDirection()Lt03;
+    .line 5
+    .line 6
+    iput-object p2, p0, Lqt2;->k:Loh;
+
+    .line 7
+    .line 8
+    return-void
 .end method

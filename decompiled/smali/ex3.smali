@@ -1,158 +1,133 @@
-.class public final synthetic Lex3;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lt62;
+.class public final enum Lex3;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic j:Lcg5;
+# static fields
+.field public static final enum j:Lex3;
 
-.field public final synthetic k:Z
+.field public static final enum k:Lex3;
 
-.field public final synthetic l:Le62;
+.field public static final synthetic l:[Lex3;
 
-.field public final synthetic m:Lvn2;
-
-.field public final synthetic n:Ljava/lang/String;
-
-.field public final synthetic o:Lwp3;
-
-.field public final synthetic p:Z
-
-.field public final synthetic q:Lxw3;
-
-.field public final synthetic r:I
+.field public static final synthetic m:Lzu1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcg5;ZLe62;Lvn2;Ljava/lang/String;Lwp3;ZLxw3;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lex3;
 
     .line 2
     .line 3
+    const-string v1, "Collapsed"
+
     .line 4
-    iput-object p1, p0, Lex3;->j:Lcg5;
-
     .line 5
+    const/4 v2, 0x0
+
     .line 6
-    iput-boolean p2, p0, Lex3;->k:Z
-
-    .line 7
-    .line 8
-    iput-object p3, p0, Lex3;->l:Le62;
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Lex3;->m:Lvn2;
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Lex3;->n:Ljava/lang/String;
-
-    .line 13
-    .line 14
-    iput-object p6, p0, Lex3;->o:Lwp3;
-
-    .line 15
-    .line 16
-    iput-boolean p7, p0, Lex3;->p:Z
-
-    .line 17
-    .line 18
-    iput-object p8, p0, Lex3;->q:Lxw3;
-
-    .line 19
-    .line 20
-    iput p9, p0, Lex3;->r:I
-
-    .line 21
-    .line 22
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 10
-
-    .line 1
-    move-object v8, p1
-
-    .line 2
-    check-cast v8, Lz11;
-
-    .line 3
-    .line 4
-    check-cast p2, Ljava/lang/Integer;
-
-    .line 5
-    .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
     .line 9
-    iget p1, p0, Lex3;->r:I
+    sput-object v0, Lex3;->j:Lex3;
 
     .line 10
     .line 11
-    or-int/lit8 p1, p1, 0x1
+    new-instance v1, Lex3;
 
     .line 12
     .line 13
-    invoke-static {p1}, Lqu5;->f0(I)I
+    const-string v2, "Expanded"
 
     .line 14
     .line 15
+    const/4 v3, 0x1
+
     .line 16
-    move-result v9
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
-    iget-object v0, p0, Lex3;->j:Lcg5;
-
     .line 18
     .line 19
-    iget-boolean v1, p0, Lex3;->k:Z
+    sput-object v1, Lex3;->k:Lex3;
 
     .line 20
     .line 21
-    iget-object v2, p0, Lex3;->l:Le62;
+    filled-new-array {v0, v1}, [Lex3;
 
     .line 22
     .line 23
-    iget-object v3, p0, Lex3;->m:Lvn2;
-
     .line 24
+    move-result-object v0
+
     .line 25
-    iget-object v4, p0, Lex3;->n:Ljava/lang/String;
+    sput-object v0, Lex3;->l:[Lex3;
 
     .line 26
     .line 27
-    iget-object v5, p0, Lex3;->o:Lwp3;
+    new-instance v1, Lzu1;
 
     .line 28
     .line 29
-    iget-boolean v6, p0, Lex3;->p:Z
+    invoke-direct {v1, v0}, Lzu1;-><init>([Ljava/lang/Enum;)V
 
     .line 30
     .line 31
-    iget-object v7, p0, Lex3;->q:Lxw3;
-
     .line 32
+    sput-object v1, Lex3;->m:Lzu1;
+
     .line 33
-    invoke-static/range {v0 .. v9}, Lgx3;->b(Lcg5;ZLe62;Lvn2;Ljava/lang/String;Lwp3;ZLxw3;Lz11;I)V
-
     .line 34
-    .line 35
-    .line 36
-    sget-object p0, La47;->a:La47;
+    return-void
+.end method
 
-    .line 37
-    .line 38
+.method public static valueOf(Ljava/lang/String;)Lex3;
+    .locals 1
+
+    .line 1
+    const-class v0, Lex3;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lex3;
+
+    .line 8
+    .line 9
     return-object p0
+.end method
+
+.method public static values()[Lex3;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lex3;->l:[Lex3;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lex3;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

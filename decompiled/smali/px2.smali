@@ -1,116 +1,227 @@
-.class public final Lpx2;
-.super Lb3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class final Lpx2;
+.super Lro3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lro3;"
+    }
+.end annotation
 
 
 # instance fields
-.field public final f:Lrw2;
+.field public final j:Lo52;
+
+.field public final k:Lo52;
 
 
 # direct methods
-.method public constructor <init>(Lbw2;Lrw2;Ljava/lang/String;)V
+.method public constructor <init>(Lo52;Lo52;)V
     .locals 0
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object p1, p0, Lpx2;->j:Lo52;
 
     .line 5
     .line 6
+    iput-object p2, p0, Lpx2;->k:Lo52;
+
     .line 7
-    invoke-direct {p0, p1, p3}, Lb3;-><init>(Lbw2;Ljava/lang/String;)V
-
     .line 8
-    .line 9
-    .line 10
-    iput-object p2, p0, Lpx2;->f:Lrw2;
-
-    .line 11
-    .line 12
-    const-string p1, "primitive"
-
-    .line 13
-    .line 14
-    iget-object p0, p0, Lb3;->a:Ljava/util/ArrayList;
-
-    .line 15
-    .line 16
-    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 17
-    .line 18
-    .line 19
     return-void
 .end method
 
 
 # virtual methods
-.method public final E(Ljava/lang/String;)Lrw2;
-    .locals 1
+.method public final a()Ljo3;
+    .locals 2
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v0, Lrx2;
 
     .line 2
     .line 3
-    .line 4
-    const-string v0, "primitive"
+    invoke-direct {v0}, Ljo3;-><init>()V
 
+    .line 4
     .line 5
     .line 6
-    if-ne p1, v0, :cond_0
+    iget-object v1, p0, Lpx2;->j:Lo52;
 
     .line 7
     .line 8
-    iget-object p0, p0, Lpx2;->f:Lrw2;
+    iput-object v1, v0, Lrx2;->x:Lo52;
 
     .line 9
     .line 10
-    return-object p0
+    iget-object p0, p0, Lpx2;->k:Lo52;
 
     .line 11
+    .line 12
+    iput-object p0, v0, Lrx2;->y:Lo52;
+
+    .line 13
+    .line 14
+    return-object v0
+.end method
+
+.method public final b(Ljo3;)V
+    .locals 1
+
+    .line 1
+    check-cast p1, Lrx2;
+
+    .line 2
+    .line 3
+    iget-object v0, p0, Lpx2;->j:Lo52;
+
+    .line 4
+    .line 5
+    iput-object v0, p1, Lrx2;->x:Lo52;
+
+    .line 6
+    .line 7
+    iget-object p0, p0, Lpx2;->k:Lo52;
+
+    .line 8
+    .line 9
+    iput-object p0, p1, Lrx2;->y:Lo52;
+
+    .line 10
+    .line 11
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
     :cond_0
-    const-string p0, "This input can only handle primitives with \'primitive\' tag"
+    instance-of v1, p1, Lpx2;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Lpx2;
 
     .line 12
     .line 13
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+    iget-object v1, p1, Lpx2;->j:Lo52;
 
     .line 14
     .line 15
+    iget-object v3, p0, Lpx2;->j:Lo52;
+
     .line 16
-    const/4 p0, 0x0
-
     .line 17
-    return-object p0
+    if-eq v3, v1, :cond_2
+
+    .line 18
+    .line 19
+    return v2
+
+    .line 20
+    :cond_2
+    iget-object p0, p0, Lpx2;->k:Lo52;
+
+    .line 21
+    .line 22
+    iget-object p1, p1, Lpx2;->k:Lo52;
+
+    .line 23
+    .line 24
+    if-eq p0, p1, :cond_3
+
+    .line 25
+    .line 26
+    return v2
+
+    .line 27
+    :cond_3
+    return v0
 .end method
 
-.method public final S()Lrw2;
-    .locals 0
+.method public final hashCode()I
+    .locals 2
 
     .line 1
-    iget-object p0, p0, Lpx2;->f:Lrw2;
+    const/4 v0, 0x0
 
     .line 2
-    .line 3
-    return-object p0
-.end method
+    iget-object v1, p0, Lpx2;->j:Lo52;
 
-.method public final h(Luy5;)I
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
     .line 3
     .line 4
-    const/4 p0, 0x0
+    if-eqz v1, :cond_0
 
     .line 5
-    return p0
+    .line 6
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    .line 7
+    .line 8
+    .line 9
+    move-result v1
+
+    .line 10
+    goto :goto_0
+
+    .line 11
+    :cond_0
+    move v1, v0
+
+    .line 12
+    :goto_0
+    mul-int/lit8 v1, v1, 0x1f
+
+    .line 13
+    .line 14
+    iget-object p0, p0, Lpx2;->k:Lo52;
+
+    .line 15
+    .line 16
+    if-eqz p0, :cond_1
+
+    .line 17
+    .line 18
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v0
+
+    .line 22
+    :cond_1
+    add-int/2addr v1, v0
+
+    .line 23
+    return v1
 .end method

@@ -1,163 +1,122 @@
-.class public final Lmx1;
-.super Ljava/io/InputStream;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Lmx1;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final j:Ljava/io/InputStream;
-
-.field public k:I
+.field public final a:Ljava/util/List;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/InputStream;)V
+.method public constructor <init>(Ljava/util/List;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lmx1;->j:Ljava/io/InputStream;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 5
     .line 6
-    const/high16 p1, 0x40000000    # 2.0f
-
     .line 7
-    .line 8
-    iput p1, p0, Lmx1;->k:I
+    iput-object p1, p0, Lmx1;->a:Ljava/util/List;
 
+    .line 8
     .line 9
-    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final available()I
-    .locals 0
+.method public a(Lyo4;)Lmx1;
+    .locals 4
 
     .line 1
-    iget p0, p0, Lmx1;->k:I
+    invoke-static {}, Loc7;->t()Le93;
 
     .line 2
     .line 3
-    return p0
-.end method
-
-.method public final close()V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lmx1;->j:Ljava/io/InputStream;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/io/InputStream;->close()V
-
     .line 4
+    move-result-object v0
+
     .line 5
+    iget-object p0, p0, Lmx1;->a:Ljava/util/List;
+
     .line 6
-    return-void
-.end method
-
-.method public final read()I
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lmx1;->j:Ljava/io/InputStream;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
     .line 7
-    const/4 v1, -0x1
+    invoke-interface {p0}, Ljava/util/Collection;->size()I
 
     .line 8
-    if-ne v0, v1, :cond_0
-
     .line 9
     .line 10
-    const/4 v1, 0x0
+    move-result v1
 
     .line 11
-    iput v1, p0, Lmx1;->k:I
+    const/4 v2, 0x0
 
     .line 12
+    :goto_0
+    if-ge v2, v1, :cond_0
+
     .line 13
-    :cond_0
-    return v0
-.end method
-
-.method public final read([B)I
-    .locals 1
-
     .line 14
-    iget-object v0, p0, Lmx1;->j:Ljava/io/InputStream;
-
-    invoke-virtual {v0, p1}, Ljava/io/InputStream;->read([B)I
-
-    move-result p1
-
-    const/4 v0, -0x1
-
-    if-ne p1, v0, :cond_0
-
-    const/4 v0, 0x0
+    invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     .line 15
-    iput v0, p0, Lmx1;->k:I
-
-    :cond_0
-    return p1
-.end method
-
-.method public final read([BII)I
-    .locals 1
-
     .line 16
-    iget-object v0, p0, Lmx1;->j:Ljava/io/InputStream;
-
-    invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
-
-    move-result p1
-
-    const/4 p2, -0x1
-
-    if-ne p1, p2, :cond_0
-
-    const/4 p2, 0x0
-
     .line 17
-    iput p2, p0, Lmx1;->k:I
+    move-result-object v3
 
+    .line 18
+    check-cast v3, Ltb1;
+
+    .line 19
+    .line 20
+    invoke-virtual {v3, p1}, Ltb1;->e(Lyo4;)Lrq3;
+
+    .line 21
+    .line 22
+    .line 23
+    move-result-object v3
+
+    .line 24
+    invoke-virtual {v0, v3}, Le93;->add(Ljava/lang/Object;)Z
+
+    .line 25
+    .line 26
+    .line 27
+    add-int/lit8 v2, v2, 0x1
+
+    .line 28
+    .line 29
+    goto :goto_0
+
+    .line 30
     :cond_0
-    return p1
-.end method
+    invoke-static {v0}, Loc7;->l(Le93;)Le93;
 
-.method public final skip(J)J
-    .locals 0
+    .line 31
+    .line 32
+    .line 33
+    move-result-object p0
 
-    .line 1
-    iget-object p0, p0, Lmx1;->j:Ljava/io/InputStream;
+    .line 34
+    new-instance p1, Llx1;
 
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1, p2}, Ljava/io/InputStream;->skip(J)J
+    .line 35
+    .line 36
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-wide p0
+    .line 37
+    .line 38
+    .line 39
+    invoke-direct {p1, p0}, Lmx1;-><init>(Ljava/util/List;)V
 
-    .line 7
-    return-wide p0
+    .line 40
+    .line 41
+    .line 42
+    return-object p1
 .end method

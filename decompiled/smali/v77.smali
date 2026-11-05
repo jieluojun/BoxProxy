@@ -1,23 +1,17 @@
-.class public final synthetic Lv77;
+.class public final Lv77;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lm71;
+.implements Lw77;
 
 
 # instance fields
-.field public final synthetic a:Li56;
-
-.field public final synthetic b:Lwl4;
-
-.field public final synthetic c:Lhs3;
-
-.field public final synthetic d:[I
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Li56;Lwl4;Lhs3;[I)V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 0
 
     .line 1
@@ -26,97 +20,120 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lv77;->a:Li56;
+    iput-object p1, p0, Lv77;->a:Ljava/lang/String;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lv77;->b:Lwl4;
-
-    .line 7
-    .line 8
-    iput-object p3, p0, Lv77;->c:Lhs3;
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Lv77;->d:[I
-
-    .line 11
-    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(ILe81;Lvj1;)V
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
     .line 1
-    const/4 p3, 0x0
+    if-ne p0, p1, :cond_0
 
     .line 2
-    iget v0, p2, Le81;->l:I
-
     .line 3
+    goto :goto_1
+
     .line 4
-    iget-object v1, p0, Lv77;->a:Li56;
+    :cond_0
+    instance-of v0, p1, Lv77;
 
     .line 5
     .line 6
-    iget-object v2, p0, Lv77;->b:Lwl4;
+    if-nez v0, :cond_1
 
     .line 7
     .line 8
-    invoke-virtual {v1, p2, p3, v0, v2}, Li56;->b(Ljava/lang/CharSequence;IILwl4;)F
+    goto :goto_0
 
     .line 9
+    :cond_1
+    check-cast p1, Lv77;
+
     .line 10
     .line 11
-    move-result p2
+    iget-object p0, p0, Lv77;->a:Ljava/lang/String;
 
     .line 12
-    float-to-double p2, p2
-
     .line 13
-    invoke-static {p2, p3}, Ljava/lang/Math;->ceil(D)D
+    iget-object p1, p1, Lv77;->a:Ljava/lang/String;
 
     .line 14
     .line 15
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
     .line 16
-    move-result-wide p2
-
     .line 17
-    double-to-int p2, p2
-
     .line 18
-    iget-object p3, p0, Lv77;->c:Lhs3;
+    move-result p0
 
     .line 19
-    .line 20
-    iget v0, p3, Lhs3;->a:I
+    if-nez p0, :cond_2
 
+    .line 20
     .line 21
+    :goto_0
+    const/4 p0, 0x0
+
     .line 22
-    if-le p2, v0, :cond_0
+    return p0
 
     .line 23
+    :cond_2
+    :goto_1
+    const/4 p0, 0x1
+
     .line 24
-    iput p2, p3, Lhs3;->a:I
+    return p0
+.end method
 
-    .line 25
-    .line 26
-    :cond_0
-    iget-object p0, p0, Lv77;->d:[I
+.method public final hashCode()I
+    .locals 0
 
-    .line 27
-    .line 28
-    if-eqz p0, :cond_1
+    .line 1
+    iget-object p0, p0, Lv77;->a:Ljava/lang/String;
 
-    .line 29
-    .line 30
-    aput p2, p0, p1
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
-    .line 31
-    .line 32
-    :cond_1
-    return-void
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    const-string v0, "ZashboardDetected(pageUrl="
+
+    .line 2
+    .line 3
+    const-string v1, ")"
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Lv77;->a:Ljava/lang/String;
+
+    .line 6
+    .line 7
+    invoke-static {v0, p0, v1}, Lpb1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p0
+
+    .line 11
+    return-object p0
 .end method

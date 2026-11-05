@@ -1,31 +1,39 @@
 .class public final Ln11;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final a:Ljava/util/List;
+# static fields
+.field public static final synthetic a:Ln11;
 
-.field public final b:Z
+.field public static final b:Ldn4;
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/List;Z)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ln11;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Ln11;->a:Ljava/util/List;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
+    .line 4
     .line 5
     .line 6
-    iput-boolean p2, p0, Ln11;->b:Z
+    sput-object v0, Ln11;->a:Ln11;
 
     .line 7
     .line 8
+    sget-object v0, Ldn4;->m:Ldn4;
+
+    .line 9
+    .line 10
+    sput-object v0, Ln11;->b:Ldn4;
+
+    .line 11
+    .line 12
     return-void
 .end method

@@ -1,159 +1,208 @@
 .class public final synthetic La00;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Ljava/util/function/Supplier;
+.implements Ld52;
 
 
 # instance fields
-.field public final synthetic a:B
+.field public final synthetic j:B
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final synthetic k:Z
+
+.field public final synthetic l:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;B)V
+.method public synthetic constructor <init>(Ljava/lang/Object;ZB)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, La00;->a:B
+    iput-byte p3, p0, La00;->j:B
 
     .line 2
     .line 3
-    iput-object p1, p0, La00;->b:Ljava/lang/Object;
+    iput-object p1, p0, La00;->l:Ljava/lang/Object;
 
     .line 4
     .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-boolean p2, p0, La00;->k:Z
 
     .line 6
     .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 8
+    .line 9
+    .line 10
+    return-void
+.end method
+
+.method public synthetic constructor <init>(ZLjava/lang/Object;B)V
+    .locals 0
+
+    .line 11
+    iput-byte p3, p0, La00;->j:B
+
+    iput-boolean p1, p0, La00;->k:Z
+
+    iput-object p2, p0, La00;->l:Ljava/lang/Object;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final get()Ljava/lang/Object;
-    .locals 6
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
 
     .line 1
-    iget-byte v0, p0, La00;->a:B
+    iget-byte v0, p0, La00;->j:B
 
     .line 2
     .line 3
-    iget-object p0, p0, La00;->b:Ljava/lang/Object;
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_0
+    iget-boolean v2, p0, La00;->k:Z
 
     .line 6
     .line 7
-    .line 8
-    return-object p0
+    iget-object p0, p0, La00;->l:Ljava/lang/Object;
 
+    .line 8
     .line 9
-    :pswitch_0
-    check-cast p0, Ljava/util/Map;
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
-    new-instance v0, Ljava/util/HashMap;
-
     .line 12
-    .line 13
-    invoke-direct {v0, p0}, Ljava/util/HashMap;-><init>(Ljava/util/Map;)V
+    check-cast p0, Ln57;
 
+    .line 13
     .line 14
+    iget-object p0, p0, Ln57;->k:Lgl4;
+
     .line 15
     .line 16
-    return-object v0
+    invoke-static {v2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 17
-    :pswitch_1
-    check-cast p0, Ljava/util/List;
-
     .line 18
     .line 19
-    new-instance v0, Ljava/util/ArrayList;
+    move-result-object v0
 
     .line 20
-    .line 21
-    invoke-direct {v0, p0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    invoke-virtual {p0, v0}, Lgl4;->setValue(Ljava/lang/Object;)V
 
+    .line 21
     .line 22
     .line 23
+    return-object v1
+
     .line 24
-    return-object v0
+    :pswitch_0
+    check-cast p0, Lwv3;
 
     .line 25
-    :pswitch_2
-    check-cast p0, Ls74;
-
     .line 26
-    .line 27
-    new-instance v0, Lb21;
+    :try_start_0
+    invoke-virtual {p0}, Lwv3;->d()V
 
+    .line 27
     .line 28
     .line 29
-    invoke-static {}, Ljava/util/Optional;->empty()Ljava/util/Optional;
+    iget-boolean v0, p0, Lwv3;->d:Z
 
     .line 30
     .line 31
-    .line 32
-    move-result-object v2
+    if-ne v0, v2, :cond_0
 
+    .line 32
     .line 33
-    iget-object v1, p0, Ls74;->b:Lak6;
+    goto :goto_0
 
     .line 34
+    :cond_0
+    iput-boolean v2, p0, Lwv3;->d:Z
+
     .line 35
-    new-instance v3, Ljava/lang/StringBuilder;
-
     .line 36
+    iget-object p0, p0, Lwv3;->e:Lhw3;
+
     .line 37
-    const-string v4, "could not determine a constructor for the tag "
-
     .line 38
-    .line 39
-    invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p0}, Lhw3;->b()V
+    :try_end_0
+    .catch Ljava/lang/IllegalStateException; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 39
     .line 40
     .line 41
+    :catch_0
+    :goto_0
+    return-object v1
+
     .line 42
-    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    :pswitch_1
+    check-cast p0, Lpc;
 
     .line 43
     .line 44
-    .line 45
-    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-eqz v2, :cond_1
 
+    .line 45
     .line 46
+    invoke-virtual {p0}, Lpc;->i()Lyr3;
+
     .line 47
     .line 48
-    move-result-object v3
-
     .line 49
-    iget-object v4, p0, Ls74;->a:Ljava/util/Optional;
+    move-result-object p0
 
     .line 50
-    .line 51
-    const/4 v5, 0x0
+    if-eqz p0, :cond_1
 
+    .line 51
     .line 52
-    const/4 v1, 0x0
+    check-cast p0, Lhz5;
 
     .line 53
-    invoke-direct/range {v0 .. v5}, Lb21;-><init>(Ljava/lang/String;Ljava/util/Optional;Ljava/lang/String;Ljava/util/Optional;Ljava/lang/Exception;)V
-
     .line 54
+    invoke-virtual {p0, v1}, Lhz5;->f(Ljava/lang/Object;)Z
+
     .line 55
     .line 56
-    return-object v0
-
     .line 57
+    :cond_1
+    return-object v1
+
+    .line 58
+    :pswitch_2
+    check-cast p0, Lyr3;
+
+    .line 59
+    .line 60
+    if-eqz v2, :cond_2
+
+    .line 61
+    .line 62
+    invoke-interface {p0, v1}, Lyr3;->f(Ljava/lang/Object;)Z
+
+    .line 63
+    .line 64
+    .line 65
+    :cond_2
+    return-object v1
+
+    .line 66
+    nop
+
+    .line 67
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_2

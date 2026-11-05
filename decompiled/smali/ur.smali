@@ -1,242 +1,257 @@
-.class public final enum Lur;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lur;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-
-# static fields
-.field public static final l:Lv8;
-
-.field public static final enum m:Lur;
-
-.field public static final synthetic n:[Lur;
-
-.field public static final synthetic o:Lzv1;
+# interfaces
+.implements Ld52;
 
 
 # instance fields
-.field public final j:Ljava/lang/String;
+.field public final synthetic j:B
 
-.field public final k:Ljava/lang/String;
+.field public final synthetic k:Z
+
+.field public final synthetic l:Lo52;
+
+.field public final synthetic m:Liq1;
+
+.field public final synthetic n:Las3;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
+.method public synthetic constructor <init>(Lo52;Las3;Liq1;ZB)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lur;
+    iput-byte p5, p0, Lur;->j:B
 
     .line 2
     .line 3
-    const-string v1, "system"
+    iput-boolean p4, p0, Lur;->k:Z
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    iput-object p1, p0, Lur;->l:Lo52;
 
     .line 6
-    const-string v3, "System"
-
     .line 7
-    .line 8
-    const/4 v4, 0x0
+    iput-object p3, p0, Lur;->m:Liq1;
 
+    .line 8
     .line 9
-    invoke-direct {v0, v3, v1, v4, v2}, Lur;-><init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
+    iput-object p2, p0, Lur;->n:Las3;
 
     .line 10
     .line 11
-    .line 12
-    sput-object v0, Lur;->m:Lur;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 12
     .line 13
     .line 14
-    new-instance v1, Lur;
+    return-void
+.end method
 
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 5
+
+    .line 1
+    iget-byte v0, p0, Lur;->j:B
+
+    .line 2
+    .line 3
+    sget-object v1, Lk27;->a:Lk27;
+
+    .line 4
+    .line 5
+    iget-object v2, p0, Lur;->n:Las3;
+
+    .line 6
+    .line 7
+    iget-object v3, p0, Lur;->m:Liq1;
+
+    .line 8
+    .line 9
+    iget-object v4, p0, Lur;->l:Lo52;
+
+    .line 10
+    .line 11
+    iget-boolean p0, p0, Lur;->k:Z
+
+    .line 12
+    .line 13
+    packed-switch v0, :pswitch_data_0
+
+    .line 14
     .line 15
     .line 16
-    const/4 v2, 0x1
+    if-nez p0, :cond_0
 
     .line 17
-    const-string v3, "zh-CN"
-
     .line 18
+    goto :goto_0
+
     .line 19
-    const-string v4, "SimplifiedChinese"
+    :cond_0
+    invoke-interface {v2}, Lu96;->getValue()Ljava/lang/Object;
 
     .line 20
     .line 21
-    invoke-direct {v1, v4, v3, v2, v3}, Lur;-><init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
-
     .line 22
+    move-result-object p0
+
     .line 23
+    check-cast p0, Ljava/util/List;
+
     .line 24
-    new-instance v2, Lur;
-
     .line 25
-    .line 26
-    const/4 v3, 0x2
+    iget-wide v2, v3, Liq1;->a:J
 
+    .line 26
     .line 27
-    const-string v4, "zh-TW"
+    invoke-static {p0, v2, v3}, Le34;->d(Ljava/util/List;J)Ljava/util/List;
 
     .line 28
     .line 29
-    const-string v5, "TraditionalChinese"
-
     .line 30
+    move-result-object p0
+
     .line 31
-    invoke-direct {v2, v5, v4, v3, v4}, Lur;-><init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
+    invoke-interface {v4, p0}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 32
     .line 33
     .line 34
-    new-instance v3, Lur;
+    :goto_0
+    return-object v1
 
     .line 35
-    .line 36
-    const/4 v4, 0x3
+    :pswitch_0
+    if-nez p0, :cond_1
 
+    .line 36
     .line 37
-    const-string v5, "en"
+    goto :goto_1
 
     .line 38
-    .line 39
-    const-string v6, "English"
+    :cond_1
+    invoke-interface {v2}, Lu96;->getValue()Ljava/lang/Object;
 
+    .line 39
     .line 40
     .line 41
-    invoke-direct {v3, v6, v5, v4, v5}, Lur;-><init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
+    move-result-object p0
 
     .line 42
+    check-cast p0, Ljava/util/List;
+
     .line 43
     .line 44
-    new-instance v4, Lur;
+    iget-wide v2, v3, Liq1;->a:J
 
     .line 45
     .line 46
-    const/4 v5, 0x4
+    invoke-static {p0, v2, v3}, Le34;->d(Ljava/util/List;J)Ljava/util/List;
 
     .line 47
-    const-string v6, "ru"
-
     .line 48
     .line 49
-    const-string v7, "Russian"
+    move-result-object p0
 
     .line 50
-    .line 51
-    invoke-direct {v4, v7, v6, v5, v6}, Lur;-><init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
+    invoke-interface {v4, p0}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 51
     .line 52
     .line 53
+    :goto_1
+    return-object v1
+
     .line 54
-    filled-new-array {v0, v1, v2, v3, v4}, [Lur;
+    :pswitch_1
+    if-eqz p0, :cond_2
 
     .line 55
     .line 56
+    invoke-interface {v2}, Lu96;->getValue()Ljava/lang/Object;
+
     .line 57
-    move-result-object v0
-
     .line 58
-    sput-object v0, Lur;->n:[Lur;
-
     .line 59
+    move-result-object p0
+
     .line 60
-    new-instance v1, Lzv1;
+    check-cast p0, Ljava/util/List;
 
     .line 61
     .line 62
-    invoke-direct {v1, v0}, Lzv1;-><init>([Ljava/lang/Enum;)V
+    iget-wide v2, v3, Liq1;->a:J
 
     .line 63
     .line 64
-    .line 65
-    sput-object v1, Lur;->o:Lzv1;
+    invoke-static {p0, v2, v3}, Le34;->d(Ljava/util/List;J)Ljava/util/List;
 
+    .line 65
     .line 66
     .line 67
-    new-instance v0, Lv8;
-
-    .line 68
-    .line 69
-    const/4 v1, 0x5
-
-    .line 70
-    invoke-direct {v0, v1}, Lv8;-><init>(B)V
-
-    .line 71
-    .line 72
-    .line 73
-    sput-object v0, Lur;->l:Lv8;
-
-    .line 74
-    .line 75
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0, p1, p3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p2, p0, Lur;->j:Ljava/lang/String;
-
-    .line 5
-    .line 6
-    iput-object p4, p0, Lur;->k:Ljava/lang/String;
-
-    .line 7
-    .line 8
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lur;
-    .locals 1
-
-    .line 1
-    const-class v0, Lur;
-
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    .line 4
-    .line 5
-    .line 6
     move-result-object p0
 
-    .line 7
-    check-cast p0, Lur;
+    .line 68
+    invoke-interface {v4, p0}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 8
-    .line 9
-    return-object p0
-.end method
+    .line 69
+    .line 70
+    .line 71
+    :cond_2
+    return-object v1
 
-.method public static values()[Lur;
-    .locals 1
+    .line 72
+    :pswitch_2
+    if-eqz p0, :cond_3
 
-    .line 1
-    sget-object v0, Lur;->n:[Lur;
+    .line 73
+    .line 74
+    invoke-interface {v2}, Lu96;->getValue()Ljava/lang/Object;
 
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    .line 75
+    .line 76
+    .line 77
+    move-result-object p0
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
+    .line 78
+    check-cast p0, Ljava/util/List;
 
-    .line 7
-    check-cast v0, [Lur;
+    .line 79
+    .line 80
+    iget-wide v2, v3, Liq1;->a:J
 
-    .line 8
-    .line 9
-    return-object v0
+    .line 81
+    .line 82
+    invoke-static {p0, v2, v3}, Le34;->d(Ljava/util/List;J)Ljava/util/List;
+
+    .line 83
+    .line 84
+    .line 85
+    move-result-object p0
+
+    .line 86
+    invoke-interface {v4, p0}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 87
+    .line 88
+    .line 89
+    :cond_3
+    return-object v1
+
+    .line 90
+    nop
+
+    .line 91
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

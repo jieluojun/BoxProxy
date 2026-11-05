@@ -1,6 +1,6 @@
 .class public final enum Lht5;
 .super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
@@ -8,9 +8,7 @@
 
 .field public static final enum k:Lht5;
 
-.field public static final enum l:Lht5;
-
-.field public static final synthetic m:[Lht5;
+.field public static final synthetic l:[Lht5;
 
 
 # direct methods
@@ -22,7 +20,7 @@
 
     .line 2
     .line 3
-    const-string v1, "Idle"
+    const-string v1, "Inherit"
 
     .line 4
     .line 5
@@ -42,7 +40,7 @@
 
     .line 12
     .line 13
-    const-string v2, "TopBoundaryHit"
+    const-string v2, "SecureOn"
 
     .line 14
     .line 15
@@ -62,7 +60,7 @@
 
     .line 22
     .line 23
-    const-string v3, "BottomBoundaryHit"
+    const-string v3, "SecureOff"
 
     .line 24
     .line 25
@@ -74,22 +72,18 @@
     .line 27
     .line 28
     .line 29
-    sput-object v2, Lht5;->l:Lht5;
+    filled-new-array {v0, v1, v2}, [Lht5;
 
     .line 30
     .line 31
-    filled-new-array {v0, v1, v2}, [Lht5;
-
     .line 32
-    .line 33
-    .line 34
     move-result-object v0
 
-    .line 35
-    sput-object v0, Lht5;->m:[Lht5;
+    .line 33
+    sput-object v0, Lht5;->l:[Lht5;
 
-    .line 36
-    .line 37
+    .line 34
+    .line 35
     return-void
 .end method
 
@@ -120,7 +114,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lht5;->m:[Lht5;
+    sget-object v0, Lht5;->l:[Lht5;
 
     .line 2
     .line 3

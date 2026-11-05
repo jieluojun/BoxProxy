@@ -1,69 +1,50 @@
-.class public abstract Ljc5;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Ljc5;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Lhc5;
+# instance fields
+.field public j:Lag6;
 
+.field public synthetic k:Ljava/lang/Object;
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    .line 1
-    sget-object v0, Ldh0;->m:Ldh0;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 4
-    .line 5
-    .line 6
-    new-instance v1, Lhc5;
-
-    .line 7
-    .line 8
-    invoke-direct {v1, v0}, Lhc5;-><init>(Ldh0;)V
-
-    .line 9
-    .line 10
-    .line 11
-    sput-object v1, Ljc5;->a:Lhc5;
-
-    .line 12
-    .line 13
-    return-void
-.end method
+.field public l:I
 
 
 # virtual methods
-.method public abstract a()J
-.end method
-
-.method public b()Lck3;
-    .locals 0
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    sget-object p0, Lck3;->c:Lqp2;
+    iput-object p1, p0, Ljc5;->k:Ljava/lang/Object;
 
     .line 2
     .line 3
-    const-string p0, "application/octet-stream"
+    iget p1, p0, Ljc5;->l:I
 
     .line 4
     .line 5
-    invoke-static {p0}, Lyh3;->A(Ljava/lang/String;)Lck3;
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    move-result-object p0
+    iput p1, p0, Ljc5;->l:I
 
     .line 9
-    return-object p0
-.end method
+    .line 10
+    const/4 p1, 0x0
 
-.method public abstract c(Lr85;)V
+    .line 11
+    invoke-static {p1, p0}, Lq43;->l(Lag6;Lbz;)Ljava/lang/Object;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    return-object p0
 .end method

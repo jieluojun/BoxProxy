@@ -1,204 +1,312 @@
 .class public final Lkb4;
-.super Lxv0;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lmb4;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final d:[F
+# instance fields
+.field public f:[I
 
-.field public static final e:[F
-
-.field public static final f:[F
-
-.field public static final g:[F
+.field public final g:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>([BLjava/lang/String;)V
+    .locals 0
 
     .line 1
-    const/16 v0, 0x9
+    invoke-direct {p0, p1, p2}, Lmb4;-><init>([BLjava/lang/String;)V
 
     .line 2
     .line 3
-    new-array v1, v0, [F
-
     .line 4
-    .line 5
-    fill-array-data v1, :array_0
+    invoke-virtual {p2}, Ljava/lang/String;->length()I
 
+    .line 5
     .line 6
     .line 7
+    move-result p1
+
     .line 8
-    sget-object v2, Lc7;->l:Lc7;
+    add-int/lit8 p1, p1, -0x1
 
     .line 9
     .line 10
-    iget-object v2, v2, Lc7;->k:[F
+    iput p1, p0, Lkb4;->g:I
 
     .line 11
     .line 12
-    const/4 v3, 0x3
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(I)I
+    .locals 2
+
+    .line 1
+    iget v0, p0, Lkb4;->g:I
+
+    .line 2
+    .line 3
+    add-int/lit8 v1, v0, 0x1
+
+    .line 4
+    .line 5
+    if-ne p1, v1, :cond_0
+
+    .line 6
+    .line 7
+    iget p0, p0, Lmb4;->b:I
+
+    .line 8
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    if-ltz p1, :cond_3
+
+    .line 11
+    .line 12
+    if-gt p1, v0, :cond_3
 
     .line 13
-    new-array v4, v3, [F
-
     .line 14
-    .line 15
-    fill-array-data v4, :array_1
+    if-nez p1, :cond_1
 
+    .line 15
     .line 16
+    const/4 p0, 0x0
+
     .line 17
+    return p0
+
     .line 18
-    new-array v3, v3, [F
+    :cond_1
+    invoke-virtual {p0}, Lkb4;->e()[I
 
     .line 19
     .line 20
-    fill-array-data v3, :array_2
-
     .line 21
-    .line 22
-    .line 23
-    invoke-static {v2, v4, v3}, Lhq;->C([F[F[F)[F
+    move-result-object p0
 
+    .line 22
+    invoke-static {p0, p1}, Ljava/util/Arrays;->binarySearch([II)I
+
+    .line 23
     .line 24
     .line 25
+    move-result v0
+
     .line 26
-    move-result-object v2
+    :goto_0
+    if-lez v0, :cond_2
 
     .line 27
-    invoke-static {v1, v2}, Lhq;->T([F[F)[F
-
     .line 28
+    add-int/lit8 v1, v0, -0x1
+
     .line 29
     .line 30
-    move-result-object v1
+    aget v1, p0, v1
 
     .line 31
-    sput-object v1, Lkb4;->d:[F
-
     .line 32
+    if-ne v1, p1, :cond_2
+
     .line 33
-    new-array v0, v0, [F
-
     .line 34
-    .line 35
-    fill-array-data v0, :array_3
+    add-int/lit8 v0, v0, -0x1
 
+    .line 35
     .line 36
+    goto :goto_0
+
     .line 37
+    :cond_2
+    return v0
+
     .line 38
-    sput-object v0, Lkb4;->e:[F
+    :cond_3
+    const-string v1, "Char"
 
     .line 39
     .line 40
-    invoke-static {v1}, Lhq;->Q([F)[F
+    invoke-virtual {p0, p1, v1, v0}, Lmb4;->d(ILjava/lang/String;I)V
 
     .line 41
     .line 42
     .line 43
-    move-result-object v1
+    const/4 p0, 0x0
 
     .line 44
-    sput-object v1, Lkb4;->f:[F
+    throw p0
+.end method
 
-    .line 45
-    .line 46
-    invoke-static {v0}, Lhq;->Q([F)[F
+.method public final b(I)I
+    .locals 2
 
-    .line 47
-    .line 48
-    .line 49
-    move-result-object v0
+    .line 1
+    iget v0, p0, Lmb4;->b:I
 
-    .line 50
-    sput-object v0, Lkb4;->g:[F
+    .line 2
+    .line 3
+    if-ne p1, v0, :cond_0
 
-    .line 51
-    .line 52
-    return-void
+    .line 4
+    .line 5
+    iget p0, p0, Lkb4;->g:I
 
-    .line 53
-    :array_0
-    .array-data 4
-        0x3f51a598
-        0x3d071acd
-        0x3d456dae
-        0x3eb94699
-        0x3f6de762
-        0x3e875b04
-        -0x41fc0c33
-        0x3d140d73
-        0x3f22441b
-    .end array-data
+    .line 6
+    .line 7
+    add-int/lit8 p0, p0, 0x1
 
-    .line 54
-    .line 55
-    .line 56
-    .line 57
-    .line 58
-    .line 59
-    .line 60
-    .line 61
-    .line 62
-    .line 63
-    .line 64
-    .line 65
-    .line 66
-    .line 67
-    .line 68
-    .line 69
-    .line 70
-    .line 71
-    .line 72
-    .line 73
-    .line 74
-    .line 75
-    :array_1
-    .array-data 4
-        0x3f76d699    # 0.964212f
-        0x3f800000    # 1.0f
-        0x3f533f8a
-    .end array-data
+    .line 8
+    .line 9
+    return p0
 
-    .line 76
-    .line 77
-    .line 78
-    .line 79
-    .line 80
-    .line 81
-    .line 82
-    .line 83
-    .line 84
-    .line 85
-    :array_2
-    .array-data 4
-        0x3f734f49
-        0x3f800000    # 1.0f
-        0x3f8b6117
-    .end array-data
+    .line 10
+    :cond_0
+    if-ltz p1, :cond_2
 
-    .line 86
-    .line 87
-    .line 88
-    .line 89
-    .line 90
-    .line 91
-    .line 92
-    .line 93
-    .line 94
-    .line 95
-    :array_3
-    .array-data 4
-        0x3e578152
-        0x3ffd2f0e
-        0x3cd434b4
-        0x3f4b2a89
-        -0x3fe491f2
-        0x3f4863bb
-        -0x447a9132
-        0x3ee6b438
-        -0x40b0faa0
-    .end array-data
+    .line 11
+    .line 12
+    if-ge p1, v0, :cond_2
+
+    .line 13
+    .line 14
+    if-nez p1, :cond_1
+
+    .line 15
+    .line 16
+    const/4 p0, 0x0
+
+    .line 17
+    return p0
+
+    .line 18
+    :cond_1
+    invoke-virtual {p0}, Lkb4;->e()[I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object p0
+
+    .line 22
+    aget p0, p0, p1
+
+    .line 23
+    .line 24
+    return p0
+
+    .line 25
+    :cond_2
+    const-string v1, "Byte"
+
+    .line 26
+    .line 27
+    add-int/lit8 v0, v0, -0x1
+
+    .line 28
+    .line 29
+    invoke-virtual {p0, p1, v1, v0}, Lmb4;->d(ILjava/lang/String;I)V
+
+    .line 30
+    .line 31
+    .line 32
+    const/4 p0, 0x0
+
+    .line 33
+    throw p0
+.end method
+
+.method public final e()[I
+    .locals 7
+
+    .line 1
+    iget-object v0, p0, Lkb4;->f:[I
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_2
+
+    .line 4
+    .line 5
+    iget v0, p0, Lmb4;->b:I
+
+    .line 6
+    .line 7
+    new-array v1, v0, [I
+
+    .line 8
+    .line 9
+    add-int/lit8 v2, v0, -0x1
+
+    .line 10
+    .line 11
+    const/4 v3, 0x0
+
+    .line 12
+    move v4, v3
+
+    .line 13
+    :goto_0
+    if-gt v3, v2, :cond_1
+
+    .line 14
+    .line 15
+    sget-object v5, Lc17;->x:Lc17;
+
+    .line 16
+    .line 17
+    iget-object v6, p0, Lmb4;->c:[B
+
+    .line 18
+    .line 19
+    invoke-virtual {v5, v3, v0, v6}, Lc17;->r(II[B)I
+
+    .line 20
+    .line 21
+    .line 22
+    move-result v5
+
+    .line 23
+    add-int/2addr v5, v3
+
+    .line 24
+    :goto_1
+    if-ge v3, v5, :cond_0
+
+    .line 25
+    .line 26
+    aput v4, v1, v3
+
+    .line 27
+    .line 28
+    add-int/lit8 v3, v3, 0x1
+
+    .line 29
+    .line 30
+    goto :goto_1
+
+    .line 31
+    :cond_0
+    add-int/lit8 v4, v4, 0x1
+
+    .line 32
+    .line 33
+    goto :goto_0
+
+    .line 34
+    :cond_1
+    iput-object v1, p0, Lkb4;->f:[I
+
+    .line 35
+    .line 36
+    return-object v1
+
+    .line 37
+    :cond_2
+    return-object v0
 .end method

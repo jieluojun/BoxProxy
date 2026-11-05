@@ -1,130 +1,80 @@
-.class public final enum Lw92;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lw92;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final enum j:Lw92;
+# instance fields
+.field public final a:J
 
-.field public static final enum k:Lw92;
+.field public final b:J
 
-.field public static final enum l:Lw92;
+.field public final c:F
 
-.field public static final synthetic m:[Lw92;
+.field public final d:J
+
+.field public final e:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(JJFJ)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lw92;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const-string v1, "None"
-
     .line 4
-    .line 5
-    const/4 v2, 0x0
+    iput-wide p1, p0, Lw92;->a:J
 
+    .line 5
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-wide p3, p0, Lw92;->b:J
 
     .line 7
     .line 8
+    iput p5, p0, Lw92;->c:F
+
     .line 9
-    sput-object v0, Lw92;->j:Lw92;
-
     .line 10
+    iput-wide p6, p0, Lw92;->d:J
+
     .line 11
-    new-instance v1, Lw92;
-
     .line 12
+    const-wide/16 p1, 0x0
+
     .line 13
-    const-string v2, "Selection"
-
     .line 14
+    iput-wide p1, p0, Lw92;->e:J
+
     .line 15
-    const/4 v3, 0x1
-
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 17
-    .line 18
-    .line 19
-    sput-object v1, Lw92;->k:Lw92;
-
-    .line 20
-    .line 21
-    new-instance v2, Lw92;
-
-    .line 22
-    .line 23
-    const-string v3, "Cursor"
-
-    .line 24
-    .line 25
-    const/4 v4, 0x2
-
-    .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 27
-    .line 28
-    .line 29
-    sput-object v2, Lw92;->l:Lw92;
-
-    .line 30
-    .line 31
-    filled-new-array {v0, v1, v2}, [Lw92;
-
-    .line 32
-    .line 33
-    .line 34
-    move-result-object v0
-
-    .line 35
-    sput-object v0, Lw92;->m:[Lw92;
-
-    .line 36
-    .line 37
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lw92;
-    .locals 1
+.method public constructor <init>(JJFJJ)V
+    .locals 0
 
-    .line 1
-    const-class v0, Lw92;
+    .line 17
+    invoke-direct/range {p0 .. p7}, Lw92;-><init>(JJFJ)V
 
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    .line 18
+    iput-wide p8, p0, Lw92;->e:J
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Lw92;
-
-    .line 8
-    .line 9
-    return-object p0
+    return-void
 .end method
 
-.method public static values()[Lw92;
-    .locals 1
+
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
     .line 1
-    sget-object v0, Lw92;->m:[Lw92;
+    iget-wide v0, p0, Lw92;->b:J
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-static {v0, v1}, Lj94;->i(J)Ljava/lang/String;
 
     .line 4
     .line 5
@@ -132,9 +82,102 @@
     move-result-object v0
 
     .line 7
-    check-cast v0, [Lw92;
+    iget-wide v1, p0, Lw92;->d:J
 
     .line 8
     .line 9
-    return-object v0
+    invoke-static {v1, v2}, Lj94;->i(J)Ljava/lang/String;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    .line 14
+    .line 15
+    const-string v3, "HistoricalChange(uptimeMillis="
+
+    .line 16
+    .line 17
+    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 18
+    .line 19
+    .line 20
+    iget-wide v3, p0, Lw92;->a:J
+
+    .line 21
+    .line 22
+    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    .line 23
+    .line 24
+    .line 25
+    const-string v3, ", position="
+
+    .line 26
+    .line 27
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 28
+    .line 29
+    .line 30
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 31
+    .line 32
+    .line 33
+    const-string v0, ", scaleFactor="
+
+    .line 34
+    .line 35
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 36
+    .line 37
+    .line 38
+    iget p0, p0, Lw92;->c:F
+
+    .line 39
+    .line 40
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    .line 41
+    .line 42
+    .line 43
+    const-string p0, ", panOffset="
+
+    .line 44
+    .line 45
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 46
+    .line 47
+    .line 48
+    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 49
+    .line 50
+    .line 51
+    const-string p0, ")"
+
+    .line 52
+    .line 53
+    invoke-virtual {v2, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 54
+    .line 55
+    .line 56
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 57
+    .line 58
+    .line 59
+    move-result-object p0
+
+    .line 60
+    return-object p0
 .end method

@@ -1,6 +1,6 @@
 .class public final Lcom/box/app/notification/BoxPersistentNotificationService;
 .super Landroid/app/Service;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
@@ -8,23 +8,23 @@
 
 
 # instance fields
-.field public final j:Lw81;
+.field public final j:Lw71;
 
-.field public final k:Lba4;
+.field public final k:Lo84;
 
-.field public l:Ljb0;
+.field public l:Lga0;
 
-.field public m:Ljb0;
+.field public m:Lga0;
 
-.field public n:Lcb6;
+.field public n:Lk96;
 
-.field public o:Ltr;
+.field public o:Lzq;
 
 .field public p:Landroid/app/Notification;
 
 .field public q:Z
 
-.field public r:Lnb0;
+.field public r:Lka0;
 
 
 # direct methods
@@ -37,7 +37,7 @@
     .line 2
     .line 3
     .line 4
-    invoke-static {}, Ljj3;->n()Lwg6;
+    invoke-static {}, Ly43;->h()Lff6;
 
     .line 5
     .line 6
@@ -45,19 +45,19 @@
     move-result-object v0
 
     .line 8
-    sget-object v1, Llk1;->a:Log1;
+    sget-object v1, Llj1;->a:Lpf1;
 
     .line 9
     .line 10
-    sget-object v1, Lig3;->a:Laa2;
+    sget-object v1, Lhf3;->a:Lz82;
 
     .line 11
     .line 12
-    iget-object v1, v1, Laa2;->o:Laa2;
+    iget-object v1, v1, Lz82;->o:Lz82;
 
     .line 13
     .line 14
-    invoke-static {v0, v1}, Lzm;->W(Lpb1;Lrb1;)Lrb1;
+    invoke-static {v0, v1}, Lx37;->R(Lqa1;Lsa1;)Lsa1;
 
     .line 15
     .line 16
@@ -65,7 +65,7 @@
     move-result-object v0
 
     .line 18
-    invoke-static {v0}, Lhq;->g(Lrb1;)Lw81;
+    invoke-static {v0}, Lp87;->f(Lsa1;)Lw71;
 
     .line 19
     .line 20
@@ -73,38 +73,38 @@
     move-result-object v0
 
     .line 22
-    iput-object v0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->j:Lw81;
+    iput-object v0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->j:Lw71;
 
     .line 23
     .line 24
-    new-instance v0, Lba4;
+    new-instance v0, Lo84;
 
     .line 25
     .line 26
     const/4 v1, 0x0
 
     .line 27
-    invoke-direct {v0, v1, v1}, Lba4;-><init>(BZ)V
+    invoke-direct {v0, v1, v1}, Lo84;-><init>(BZ)V
 
     .line 28
     .line 29
     .line 30
-    iput-object v0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->k:Lba4;
+    iput-object v0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->k:Lo84;
 
     .line 31
     .line 32
-    sget-object v0, Ltr;->l:Ltr;
+    sget-object v0, Lzq;->l:Lzq;
 
     .line 33
     .line 34
-    iput-object v0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->o:Ltr;
+    iput-object v0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->o:Lzq;
 
     .line 35
     .line 36
     return-void
 .end method
 
-.method public static synthetic h(Lcom/box/app/notification/BoxPersistentNotificationService;ZLlh6;I)Ljava/lang/Object;
+.method public static synthetic h(Lcom/box/app/notification/BoxPersistentNotificationService;ZLuf6;I)Ljava/lang/Object;
     .locals 1
 
     .line 1
@@ -123,7 +123,7 @@
 
     .line 7
     :cond_0
-    invoke-virtual {p0, v0, p1, p2}, Lcom/box/app/notification/BoxPersistentNotificationService;->g(ZZLz81;)Ljava/lang/Object;
+    invoke-virtual {p0, v0, p1, p2}, Lcom/box/app/notification/BoxPersistentNotificationService;->g(ZZLz71;)Ljava/lang/Object;
 
     .line 8
     .line 9
@@ -136,7 +136,7 @@
 
 
 # virtual methods
-.method public final a(ZZLz81;)Ljava/lang/Object;
+.method public final a(ZZLz71;)Ljava/lang/Object;
     .locals 17
 
     .line 1
@@ -152,7 +152,7 @@
 
     .line 6
     .line 7
-    instance-of v3, v2, Lob0;
+    instance-of v3, v2, Lla0;
 
     .line 8
     .line 9
@@ -163,11 +163,11 @@
     move-object v3, v2
 
     .line 12
-    check-cast v3, Lob0;
+    check-cast v3, Lla0;
 
     .line 13
     .line 14
-    iget v4, v3, Lob0;->m:I
+    iget v4, v3, Lla0;->m:I
 
     .line 15
     .line 16
@@ -186,7 +186,7 @@
     sub-int/2addr v4, v5
 
     .line 23
-    iput v4, v3, Lob0;->m:I
+    iput v4, v3, Lla0;->m:I
 
     .line 24
     .line 25
@@ -194,21 +194,21 @@
 
     .line 26
     :cond_0
-    new-instance v3, Lob0;
+    new-instance v3, Lla0;
 
     .line 27
     .line 28
-    invoke-direct {v3, v0, v2}, Lob0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Lz81;)V
+    invoke-direct {v3, v0, v2}, Lla0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Lz71;)V
 
     .line 29
     .line 30
     .line 31
     :goto_0
-    iget-object v2, v3, Lob0;->k:Ljava/lang/Object;
+    iget-object v2, v3, Lla0;->k:Ljava/lang/Object;
 
     .line 32
     .line 33
-    iget v4, v3, Lob0;->m:I
+    iget v4, v3, Lla0;->m:I
 
     .line 34
     .line 35
@@ -233,7 +233,7 @@
 
     .line 43
     .line 44
-    invoke-static {v2}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-static {v2}, Leg3;->S(Ljava/lang/Object;)V
 
     .line 45
     .line 46
@@ -247,7 +247,7 @@
 
     .line 50
     .line 51
-    invoke-static {v0}, Ljw1;->e(Ljava/lang/String;)V
+    invoke-static {v0}, Ljv1;->e(Ljava/lang/String;)V
 
     .line 52
     .line 53
@@ -256,11 +256,11 @@
 
     .line 55
     :cond_2
-    iget-object v1, v3, Lob0;->j:Lnb0;
+    iget-object v1, v3, Lla0;->j:Lka0;
 
     .line 56
     .line 57
-    invoke-static {v2}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-static {v2}, Leg3;->S(Ljava/lang/Object;)V
 
     .line 58
     .line 59
@@ -269,12 +269,12 @@
 
     .line 61
     :cond_3
-    invoke-static {v2}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-static {v2}, Leg3;->S(Ljava/lang/Object;)V
 
     .line 62
     .line 63
     .line 64
-    iget-object v2, v0, Lcom/box/app/notification/BoxPersistentNotificationService;->r:Lnb0;
+    iget-object v2, v0, Lcom/box/app/notification/BoxPersistentNotificationService;->r:Lka0;
 
     .line 65
     .line 66
@@ -282,7 +282,7 @@
 
     .line 67
     .line 68
-    sget-object v4, Lbc1;->j:Lbc1;
+    sget-object v4, Lcb1;->j:Lcb1;
 
     .line 69
     .line 70
@@ -294,27 +294,27 @@
 
     .line 73
     .line 74
-    new-instance v1, Lpb0;
+    new-instance v1, Lma0;
 
     .line 75
     .line 76
     const/4 v5, 0x0
 
     .line 77
-    invoke-direct {v1, v0, v7, v5}, Lpb0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Ly81;B)V
+    invoke-direct {v1, v0, v7, v5}, Lma0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Ly71;B)V
 
     .line 78
     .line 79
     .line 80
-    iput-object v2, v3, Lob0;->j:Lnb0;
+    iput-object v2, v3, Lla0;->j:Lka0;
 
     .line 81
     .line 82
-    iput v6, v3, Lob0;->m:I
+    iput v6, v3, Lla0;->m:I
 
     .line 83
     .line 84
-    invoke-static {v8, v9, v1, v3}, Lgj3;->v0(JLt62;Lz81;)Ljava/lang/Object;
+    invoke-static {v8, v9, v1, v3}, Leg3;->f0(JLs52;Lz71;)Ljava/lang/Object;
 
     .line 85
     .line 86
@@ -342,7 +342,7 @@
     .line 95
     .line 96
     :goto_1
-    check-cast v2, Lqc0;
+    check-cast v2, Lnb0;
 
     .line 97
     .line 98
@@ -350,11 +350,11 @@
 
     .line 99
     .line 100
-    iget-object v10, v2, Lqc0;->b:Ljava/lang/String;
+    iget-object v10, v2, Lnb0;->b:Ljava/lang/String;
 
     .line 101
     .line 102
-    iget-boolean v3, v2, Lqc0;->a:Z
+    iget-boolean v3, v2, Lnb0;->a:Z
 
     .line 103
     .line 104
@@ -362,15 +362,15 @@
 
     .line 105
     .line 106
-    iget-object v3, v1, Lnb0;->a:Lqc0;
+    iget-object v3, v1, Lka0;->a:Lnb0;
 
     .line 107
     .line 108
-    iget-object v3, v3, Lqc0;->b:Ljava/lang/String;
+    iget-object v3, v3, Lnb0;->b:Ljava/lang/String;
 
     .line 109
     .line 110
-    invoke-static {v10, v3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v10, v3}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 111
     .line 112
@@ -382,35 +382,35 @@
 
     .line 115
     .line 116
-    new-instance v3, Lnb0;
+    new-instance v3, Lka0;
 
     .line 117
     .line 118
-    iget-object v4, v1, Lnb0;->a:Lqc0;
+    iget-object v4, v1, Lka0;->a:Lnb0;
 
     .line 119
     .line 120
-    iget-object v11, v4, Lqc0;->c:Ljava/lang/Integer;
+    iget-object v11, v4, Lnb0;->c:Ljava/lang/Integer;
 
     .line 121
     .line 122
-    iget-object v12, v4, Lqc0;->d:Ljava/lang/Long;
+    iget-object v12, v4, Lnb0;->d:Ljava/lang/Long;
 
     .line 123
     .line 124
-    iget-boolean v9, v2, Lqc0;->a:Z
+    iget-boolean v9, v2, Lnb0;->a:Z
 
     .line 125
     .line 126
-    iget v13, v2, Lqc0;->e:F
+    iget v13, v2, Lnb0;->e:F
 
     .line 127
     .line 128
-    iget v14, v2, Lqc0;->f:I
+    iget v14, v2, Lnb0;->f:I
 
     .line 129
     .line 130
-    iget v15, v2, Lqc0;->g:I
+    iget v15, v2, Lnb0;->g:I
 
     .line 131
     .line 132
@@ -419,25 +419,25 @@
     .line 133
     .line 134
     .line 135
-    new-instance v8, Lqc0;
+    new-instance v8, Lnb0;
 
     .line 136
     .line 137
-    invoke-direct/range {v8 .. v15}, Lqc0;-><init>(ZLjava/lang/String;Ljava/lang/Integer;Ljava/lang/Long;FII)V
+    invoke-direct/range {v8 .. v15}, Lnb0;-><init>(ZLjava/lang/String;Ljava/lang/Integer;Ljava/lang/Long;FII)V
 
     .line 138
     .line 139
     .line 140
-    iget-wide v1, v1, Lnb0;->b:J
+    iget-wide v1, v1, Lka0;->b:J
 
     .line 141
     .line 142
-    invoke-direct {v3, v8, v1, v2}, Lnb0;-><init>(Lqc0;J)V
+    invoke-direct {v3, v8, v1, v2}, Lka0;-><init>(Lnb0;J)V
 
     .line 143
     .line 144
     .line 145
-    iput-object v3, v0, Lcom/box/app/notification/BoxPersistentNotificationService;->r:Lnb0;
+    iput-object v3, v0, Lcom/box/app/notification/BoxPersistentNotificationService;->r:Lka0;
 
     .line 146
     .line 147
@@ -453,7 +453,7 @@
 
     .line 151
     :cond_6
-    new-instance v1, Lnb0;
+    new-instance v1, Lka0;
 
     .line 152
     .line 153
@@ -465,12 +465,12 @@
     move-result-wide v3
 
     .line 157
-    invoke-direct {v1, v2, v3, v4}, Lnb0;-><init>(Lqc0;J)V
+    invoke-direct {v1, v2, v3, v4}, Lka0;-><init>(Lnb0;J)V
 
     .line 158
     .line 159
     .line 160
-    iget-boolean v2, v2, Lqc0;->a:Z
+    iget-boolean v2, v2, Lnb0;->a:Z
 
     .line 161
     .line 162
@@ -482,7 +482,7 @@
 
     .line 165
     :cond_7
-    iput-object v7, v0, Lcom/box/app/notification/BoxPersistentNotificationService;->r:Lnb0;
+    iput-object v7, v0, Lcom/box/app/notification/BoxPersistentNotificationService;->r:Lka0;
 
     .line 166
     .line 167
@@ -499,24 +499,24 @@
     .line 171
     .line 172
     :cond_9
-    new-instance v2, Lum;
+    new-instance v2, Lim;
 
     .line 173
     .line 174
-    invoke-direct {v2, v0, v1, v7, v6}, Lum;-><init>(Ljava/lang/Object;ZLy81;B)V
+    invoke-direct {v2, v0, v1, v7, v6}, Lim;-><init>(Ljava/lang/Object;ZLy71;B)V
 
     .line 175
     .line 176
     .line 177
-    iput-object v7, v3, Lob0;->j:Lnb0;
+    iput-object v7, v3, Lla0;->j:Lka0;
 
     .line 178
     .line 179
-    iput v5, v3, Lob0;->m:I
+    iput v5, v3, Lla0;->m:I
 
     .line 180
     .line 181
-    invoke-static {v8, v9, v2, v3}, Lgj3;->v0(JLt62;Lz81;)Ljava/lang/Object;
+    invoke-static {v8, v9, v2, v3}, Leg3;->f0(JLs52;Lz71;)Ljava/lang/Object;
 
     .line 182
     .line 183
@@ -534,7 +534,7 @@
     .line 188
     :cond_a
     :goto_3
-    check-cast v2, Lqc0;
+    check-cast v2, Lnb0;
 
     .line 189
     .line 190
@@ -542,7 +542,7 @@
 
     .line 191
     .line 192
-    new-instance v7, Lnb0;
+    new-instance v7, Lka0;
 
     .line 193
     .line 194
@@ -554,24 +554,24 @@
     move-result-wide v3
 
     .line 198
-    invoke-direct {v7, v2, v3, v4}, Lnb0;-><init>(Lqc0;J)V
+    invoke-direct {v7, v2, v3, v4}, Lka0;-><init>(Lnb0;J)V
 
     .line 199
     .line 200
     .line 201
     :cond_b
-    iput-object v7, v0, Lcom/box/app/notification/BoxPersistentNotificationService;->r:Lnb0;
+    iput-object v7, v0, Lcom/box/app/notification/BoxPersistentNotificationService;->r:Lka0;
 
     .line 202
     .line 203
     return-object v7
 .end method
 
-.method public final b(ZLz81;)Ljava/lang/Object;
+.method public final b(ZLz71;)Ljava/lang/Object;
     .locals 11
 
     .line 1
-    instance-of v0, p2, Lrb0;
+    instance-of v0, p2, Loa0;
 
     .line 2
     .line 3
@@ -582,11 +582,11 @@
     move-object v0, p2
 
     .line 6
-    check-cast v0, Lrb0;
+    check-cast v0, Loa0;
 
     .line 7
     .line 8
-    iget v1, v0, Lrb0;->r:I
+    iget v1, v0, Loa0;->r:I
 
     .line 9
     .line 10
@@ -605,7 +605,7 @@
     sub-int/2addr v1, v2
 
     .line 17
-    iput v1, v0, Lrb0;->r:I
+    iput v1, v0, Loa0;->r:I
 
     .line 18
     .line 19
@@ -613,21 +613,21 @@
 
     .line 20
     :cond_0
-    new-instance v0, Lrb0;
+    new-instance v0, Loa0;
 
     .line 21
     .line 22
-    invoke-direct {v0, p0, p2}, Lrb0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Lz81;)V
+    invoke-direct {v0, p0, p2}, Loa0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Lz71;)V
 
     .line 23
     .line 24
     .line 25
     :goto_0
-    iget-object p0, v0, Lrb0;->p:Ljava/lang/Object;
+    iget-object p0, v0, Loa0;->p:Ljava/lang/Object;
 
     .line 26
     .line 27
-    iget p2, v0, Lrb0;->r:I
+    iget p2, v0, Loa0;->r:I
 
     .line 28
     .line 29
@@ -643,7 +643,7 @@
     const/4 v4, 0x1
 
     .line 33
-    sget-object v5, Lbc1;->j:Lbc1;
+    sget-object v5, Lcb1;->j:Lcb1;
 
     .line 34
     .line 35
@@ -659,23 +659,23 @@
 
     .line 40
     .line 41
-    iget p1, v0, Lrb0;->n:I
+    iget p1, v0, Loa0;->n:I
 
     .line 42
     .line 43
-    iget p2, v0, Lrb0;->m:I
+    iget p2, v0, Loa0;->m:I
 
     .line 44
     .line 45
-    iget-boolean v6, v0, Lrb0;->j:Z
+    iget-boolean v6, v0, Loa0;->j:Z
 
     .line 46
     .line 47
-    iget-object v7, v0, Lrb0;->k:Lna5;
+    iget-object v7, v0, Loa0;->k:Lz85;
 
     .line 48
     .line 49
-    invoke-static {p0}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-static {p0}, Leg3;->S(Ljava/lang/Object;)V
 
     .line 50
     .line 51
@@ -689,7 +689,7 @@
 
     .line 55
     .line 56
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
 
     .line 57
     .line 58
@@ -698,31 +698,31 @@
 
     .line 60
     :cond_2
-    iget p1, v0, Lrb0;->o:I
+    iget p1, v0, Loa0;->o:I
 
     .line 61
     .line 62
-    iget p2, v0, Lrb0;->n:I
+    iget p2, v0, Loa0;->n:I
 
     .line 63
     .line 64
-    iget v6, v0, Lrb0;->m:I
+    iget v6, v0, Loa0;->m:I
 
     .line 65
     .line 66
-    iget-boolean v7, v0, Lrb0;->j:Z
+    iget-boolean v7, v0, Loa0;->j:Z
 
     .line 67
     .line 68
-    iget-object v8, v0, Lrb0;->l:Lna5;
+    iget-object v8, v0, Loa0;->l:Lz85;
 
     .line 69
     .line 70
-    iget-object v9, v0, Lrb0;->k:Lna5;
+    iget-object v9, v0, Loa0;->k:Lz85;
 
     .line 71
     .line 72
-    invoke-static {p0}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-static {p0}, Leg3;->S(Ljava/lang/Object;)V
 
     .line 73
     .line 74
@@ -740,12 +740,12 @@
 
     .line 79
     :cond_3
-    invoke-static {p0}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-static {p0}, Leg3;->S(Ljava/lang/Object;)V
 
     .line 80
     .line 81
     .line 82
-    new-instance p0, Lna5;
+    new-instance p0, Lz85;
 
     .line 83
     .line 84
@@ -783,52 +783,52 @@
 
     .line 96
     .line 97
-    iput-object v8, v0, Lrb0;->k:Lna5;
+    iput-object v8, v0, Loa0;->k:Lz85;
 
     .line 98
     .line 99
-    iput-object v8, v0, Lrb0;->l:Lna5;
+    iput-object v8, v0, Loa0;->l:Lz85;
 
     .line 100
     .line 101
-    iput-boolean p0, v0, Lrb0;->j:Z
+    iput-boolean p0, v0, Loa0;->j:Z
 
     .line 102
     .line 103
-    iput p2, v0, Lrb0;->m:I
+    iput p2, v0, Loa0;->m:I
 
     .line 104
     .line 105
-    iput p1, v0, Lrb0;->n:I
+    iput p1, v0, Loa0;->n:I
 
     .line 106
     .line 107
-    iput p1, v0, Lrb0;->o:I
+    iput p1, v0, Loa0;->o:I
 
     .line 108
     .line 109
-    iput v4, v0, Lrb0;->r:I
+    iput v4, v0, Loa0;->r:I
 
     .line 110
     .line 111
-    sget-object v6, Llk1;->a:Log1;
+    sget-object v6, Llj1;->a:Lpf1;
 
     .line 112
     .line 113
-    sget-object v6, Lfg1;->l:Lfg1;
+    sget-object v6, Lgf1;->l:Lgf1;
 
     .line 114
     .line 115
-    new-instance v7, Lrc0;
+    new-instance v7, Lob0;
 
     .line 116
     .line 117
-    invoke-direct {v7, v2, v4, v4, v1}, Lrc0;-><init>(ZZZLy81;)V
+    invoke-direct {v7, v2, v4, v4, v1}, Lob0;-><init>(ZZZLy71;)V
 
     .line 118
     .line 119
     .line 120
-    invoke-static {v6, v7, v0}, Lbn0;->S(Lrb1;Lt62;Ly81;)Ljava/lang/Object;
+    invoke-static {v6, v7, v0}, Lx37;->e0(Lsa1;Ls52;Ly71;)Ljava/lang/Object;
 
     .line 121
     .line 122
@@ -860,26 +860,26 @@
 
     .line 132
     :goto_3
-    check-cast p0, Loc0;
+    check-cast p0, Llb0;
 
     .line 133
     .line 134
-    iget-object p0, p0, Loc0;->a:Lqc0;
+    iget-object p0, p0, Llb0;->a:Lnb0;
 
     .line 135
     .line 136
-    iput-object p0, v9, Lna5;->j:Ljava/lang/Object;
+    iput-object p0, v9, Lz85;->j:Ljava/lang/Object;
 
     .line 137
     .line 138
-    iget-object p0, v8, Lna5;->j:Ljava/lang/Object;
+    iget-object p0, v8, Lz85;->j:Ljava/lang/Object;
 
     .line 139
     .line 140
     move-object v9, p0
 
     .line 141
-    check-cast v9, Lqc0;
+    check-cast v9, Lnb0;
 
     .line 142
     .line 143
@@ -887,7 +887,7 @@
 
     .line 144
     .line 145
-    iget-boolean v9, v9, Lqc0;->a:Z
+    iget-boolean v9, v9, Lnb0;->a:Z
 
     .line 146
     .line 147
@@ -911,31 +911,31 @@
 
     .line 155
     .line 156
-    iput-object v8, v0, Lrb0;->k:Lna5;
+    iput-object v8, v0, Loa0;->k:Lz85;
 
     .line 157
     .line 158
-    iput-object v1, v0, Lrb0;->l:Lna5;
+    iput-object v1, v0, Loa0;->l:Lz85;
 
     .line 159
     .line 160
-    iput-boolean v7, v0, Lrb0;->j:Z
+    iput-boolean v7, v0, Loa0;->j:Z
 
     .line 161
     .line 162
-    iput v6, v0, Lrb0;->m:I
+    iput v6, v0, Loa0;->m:I
 
     .line 163
     .line 164
-    iput p2, v0, Lrb0;->n:I
+    iput p2, v0, Loa0;->n:I
 
     .line 165
     .line 166
-    iput p1, v0, Lrb0;->o:I
+    iput p1, v0, Loa0;->o:I
 
     .line 167
     .line 168
-    iput v3, v0, Lrb0;->r:I
+    iput v3, v0, Loa0;->r:I
 
     .line 169
     .line 170
@@ -943,7 +943,7 @@
 
     .line 171
     .line 172
-    invoke-static {p0, p1, v0}, Laq;->H(JLy81;)Ljava/lang/Object;
+    invoke-static {p0, p1, v0}, Ls77;->o(JLy71;)Ljava/lang/Object;
 
     .line 173
     .line 174
@@ -1004,18 +1004,18 @@
 
     .line 193
     :cond_9
-    iget-object p0, v8, Lna5;->j:Ljava/lang/Object;
+    iget-object p0, v8, Lz85;->j:Ljava/lang/Object;
 
     .line 194
     .line 195
     return-object p0
 .end method
 
-.method public final c(Lkv;Lz81;)Ljava/lang/Object;
+.method public final c(Llu;Lz71;)Ljava/lang/Object;
     .locals 4
 
     .line 1
-    instance-of v0, p2, Lsb0;
+    instance-of v0, p2, Lpa0;
 
     .line 2
     .line 3
@@ -1026,11 +1026,11 @@
     move-object v0, p2
 
     .line 6
-    check-cast v0, Lsb0;
+    check-cast v0, Lpa0;
 
     .line 7
     .line 8
-    iget v1, v0, Lsb0;->l:I
+    iget v1, v0, Lpa0;->l:I
 
     .line 9
     .line 10
@@ -1049,7 +1049,7 @@
     sub-int/2addr v1, v2
 
     .line 17
-    iput v1, v0, Lsb0;->l:I
+    iput v1, v0, Lpa0;->l:I
 
     .line 18
     .line 19
@@ -1057,21 +1057,21 @@
 
     .line 20
     :cond_0
-    new-instance v0, Lsb0;
+    new-instance v0, Lpa0;
 
     .line 21
     .line 22
-    invoke-direct {v0, p0, p2}, Lsb0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Lz81;)V
+    invoke-direct {v0, p0, p2}, Lpa0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Lz71;)V
 
     .line 23
     .line 24
     .line 25
     :goto_0
-    iget-object p2, v0, Lsb0;->j:Ljava/lang/Object;
+    iget-object p2, v0, Lpa0;->j:Ljava/lang/Object;
 
     .line 26
     .line 27
-    iget v1, v0, Lsb0;->l:I
+    iget v1, v0, Lpa0;->l:I
 
     .line 28
     .line 29
@@ -1089,7 +1089,7 @@
 
     .line 34
     .line 35
-    invoke-static {p2}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-static {p2}, Leg3;->S(Ljava/lang/Object;)V
 
     .line 36
     .line 37
@@ -1102,7 +1102,7 @@
 
     .line 40
     .line 41
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
 
     .line 42
     .line 43
@@ -1111,12 +1111,12 @@
 
     .line 45
     :cond_2
-    invoke-static {p2}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-static {p2}, Leg3;->S(Ljava/lang/Object;)V
 
     .line 46
     .line 47
     .line 48
-    iget-object p0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->l:Ljb0;
+    iget-object p0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->l:Lga0;
 
     .line 49
     .line 50
@@ -1129,11 +1129,11 @@
     .line 53
     .line 54
     .line 55
-    iget-object p0, p1, Lkv;->i:Ljava/lang/String;
+    iget-object p0, p1, Llu;->i:Ljava/lang/String;
 
     .line 56
     .line 57
-    iget-object p1, p1, Lkv;->j:Ljava/lang/String;
+    iget-object p1, p1, Llu;->j:Ljava/lang/String;
 
     .line 58
     .line 59
@@ -1141,7 +1141,7 @@
 
     .line 60
     .line 61
-    invoke-static {p0, p2, p1}, Loc1;->C(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, p2, p1}, Lpb1;->C(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 62
     .line 63
@@ -1156,7 +1156,7 @@
     const/4 p2, 0x0
 
     .line 68
-    invoke-static {p0, p1, p2}, Lad6;->m0(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Z
+    invoke-static {p0, p1, p2}, Lib6;->o0(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Z
 
     .line 69
     .line 70
@@ -1172,7 +1172,7 @@
 
     .line 75
     .line 76
-    invoke-static {p0, p1, p2}, Lad6;->m0(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Z
+    invoke-static {p0, p1, p2}, Lib6;->o0(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Z
 
     .line 77
     .line 78
@@ -1188,7 +1188,7 @@
 
     .line 83
     .line 84
-    invoke-static {p0, p1, p2}, Lad6;->m0(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Z
+    invoke-static {p0, p1, p2}, Lib6;->o0(Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)Z
 
     .line 85
     .line 86
@@ -1204,11 +1204,11 @@
 
     .line 91
     :cond_3
-    new-instance p0, Lz84;
+    new-instance p0, Ll74;
 
     .line 92
     .line 93
-    invoke-direct {p0, v3, v3, v3}, Lz84;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, v3, v3, v3}, Ll74;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 94
     .line 95
@@ -1218,15 +1218,15 @@
     .line 97
     :cond_4
     :goto_1
-    sget-object p0, Llk1;->a:Log1;
+    sget-object p0, Llj1;->a:Lpf1;
 
     .line 98
     .line 99
-    sget-object p0, Lfg1;->l:Lfg1;
+    sget-object p0, Lgf1;->l:Lgf1;
 
     .line 100
     .line 101
-    new-instance p1, Lff;
+    new-instance p1, Lcf;
 
     .line 102
     .line 103
@@ -1236,16 +1236,16 @@
     const/4 v1, 0x2
 
     .line 105
-    invoke-direct {p1, v1, v3, p2}, Lff;-><init>(ILy81;B)V
+    invoke-direct {p1, v1, v3, p2}, Lcf;-><init>(ILy71;B)V
 
     .line 106
     .line 107
     .line 108
-    iput v2, v0, Lsb0;->l:I
+    iput v2, v0, Lpa0;->l:I
 
     .line 109
     .line 110
-    invoke-static {p0, p1, v0}, Lbn0;->S(Lrb1;Lt62;Ly81;)Ljava/lang/Object;
+    invoke-static {p0, p1, v0}, Lx37;->e0(Lsa1;Ls52;Ly71;)Ljava/lang/Object;
 
     .line 111
     .line 112
@@ -1253,7 +1253,7 @@
     move-result-object p2
 
     .line 114
-    sget-object p0, Lbc1;->j:Lbc1;
+    sget-object p0, Lcb1;->j:Lcb1;
 
     .line 115
     .line 116
@@ -1266,15 +1266,15 @@
     .line 119
     :cond_5
     :goto_2
-    check-cast p2, Lwb0;
+    check-cast p2, Lta0;
 
     .line 120
     .line 121
-    iget-object p0, p2, Lwb0;->a:Ljava/lang/String;
+    iget-object p0, p2, Lta0;->a:Ljava/lang/String;
 
     .line 122
     .line 123
-    invoke-static {p0}, Lad6;->Y0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-static {p0}, Lib6;->a1(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     .line 124
     .line 125
@@ -1310,11 +1310,11 @@
 
     .line 139
     :goto_3
-    iget-object p1, p2, Lwb0;->b:Ljava/lang/String;
+    iget-object p1, p2, Lta0;->b:Ljava/lang/String;
 
     .line 140
     .line 141
-    invoke-static {p1}, Lad6;->Y0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-static {p1}, Lib6;->a1(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     .line 142
     .line 143
@@ -1350,11 +1350,11 @@
 
     .line 157
     :goto_4
-    iget-object p2, p2, Lwb0;->h:Ljava/lang/String;
+    iget-object p2, p2, Lta0;->h:Ljava/lang/String;
 
     .line 158
     .line 159
-    invoke-static {p2}, Lad6;->Y0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-static {p2}, Lib6;->a1(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     .line 160
     .line 161
@@ -1386,11 +1386,11 @@
 
     .line 174
     :cond_8
-    new-instance p2, Lz84;
+    new-instance p2, Ll74;
 
     .line 175
     .line 176
-    invoke-direct {p2, p0, p1, v3}, Lz84;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p2, p0, p1, v3}, Ll74;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 177
     .line 178
@@ -1403,7 +1403,7 @@
 
     .line 181
     .line 182
-    invoke-static {p0}, Lyt2;->q0(Ljava/lang/String;)V
+    invoke-static {p0}, Lps2;->N(Ljava/lang/String;)V
 
     .line 183
     .line 184
@@ -1411,11 +1411,11 @@
     throw v3
 .end method
 
-.method public final d(Lkv;Lz81;)Ljava/lang/Object;
+.method public final d(Llu;Lz71;)Ljava/lang/Object;
     .locals 4
 
     .line 1
-    instance-of v0, p2, Ltb0;
+    instance-of v0, p2, Lqa0;
 
     .line 2
     .line 3
@@ -1426,11 +1426,11 @@
     move-object v0, p2
 
     .line 6
-    check-cast v0, Ltb0;
+    check-cast v0, Lqa0;
 
     .line 7
     .line 8
-    iget v1, v0, Ltb0;->l:I
+    iget v1, v0, Lqa0;->l:I
 
     .line 9
     .line 10
@@ -1449,7 +1449,7 @@
     sub-int/2addr v1, v2
 
     .line 17
-    iput v1, v0, Ltb0;->l:I
+    iput v1, v0, Lqa0;->l:I
 
     .line 18
     .line 19
@@ -1457,21 +1457,21 @@
 
     .line 20
     :cond_0
-    new-instance v0, Ltb0;
+    new-instance v0, Lqa0;
 
     .line 21
     .line 22
-    invoke-direct {v0, p0, p2}, Ltb0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Lz81;)V
+    invoke-direct {v0, p0, p2}, Lqa0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Lz71;)V
 
     .line 23
     .line 24
     .line 25
     :goto_0
-    iget-object p2, v0, Ltb0;->j:Ljava/lang/Object;
+    iget-object p2, v0, Lqa0;->j:Ljava/lang/Object;
 
     .line 26
     .line 27
-    iget v1, v0, Ltb0;->l:I
+    iget v1, v0, Lqa0;->l:I
 
     .line 28
     .line 29
@@ -1490,7 +1490,7 @@
     .line 34
     .line 35
     :try_start_0
-    invoke-static {p2}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-static {p2}, Leg3;->S(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -1513,7 +1513,7 @@
 
     .line 42
     .line 43
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
 
     .line 44
     .line 45
@@ -1522,17 +1522,17 @@
 
     .line 47
     :cond_2
-    invoke-static {p2}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-static {p2}, Leg3;->S(Ljava/lang/Object;)V
 
     .line 48
     .line 49
     .line 50
     :try_start_1
-    iput v3, v0, Ltb0;->l:I
+    iput v3, v0, Lqa0;->l:I
 
     .line 51
     .line 52
-    invoke-virtual {p0, p1, v0}, Lcom/box/app/notification/BoxPersistentNotificationService;->c(Lkv;Lz81;)Ljava/lang/Object;
+    invoke-virtual {p0, p1, v0}, Lcom/box/app/notification/BoxPersistentNotificationService;->c(Llu;Lz71;)Ljava/lang/Object;
 
     .line 53
     .line 54
@@ -1543,7 +1543,7 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 56
-    sget-object p0, Lbc1;->j:Lbc1;
+    sget-object p0, Lcb1;->j:Lcb1;
 
     .line 57
     .line 58
@@ -1557,7 +1557,7 @@
     :cond_3
     :goto_1
     :try_start_2
-    check-cast p2, Lz84;
+    check-cast p2, Ll74;
     :try_end_2
     .catch Ljava/util/concurrent/CancellationException; {:try_start_2 .. :try_end_2} :catch_1
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
@@ -1581,11 +1581,11 @@
     .line 69
     .line 70
     .line 71
-    new-instance p0, Lz84;
+    new-instance p0, Ll74;
 
     .line 72
     .line 73
-    invoke-direct {p0, v2, v2, v2}, Lz84;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct {p0, v2, v2, v2}, Ll74;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 74
     .line 75
@@ -1600,11 +1600,11 @@
     throw p0
 .end method
 
-.method public final e(ZLz81;)Ljava/lang/Object;
+.method public final e(ZLz71;)Ljava/lang/Object;
     .locals 4
 
     .line 1
-    instance-of v0, p2, Lub0;
+    instance-of v0, p2, Lra0;
 
     .line 2
     .line 3
@@ -1615,11 +1615,11 @@
     move-object v0, p2
 
     .line 6
-    check-cast v0, Lub0;
+    check-cast v0, Lra0;
 
     .line 7
     .line 8
-    iget v1, v0, Lub0;->l:I
+    iget v1, v0, Lra0;->l:I
 
     .line 9
     .line 10
@@ -1638,7 +1638,7 @@
     sub-int/2addr v1, v2
 
     .line 17
-    iput v1, v0, Lub0;->l:I
+    iput v1, v0, Lra0;->l:I
 
     .line 18
     .line 19
@@ -1646,28 +1646,28 @@
 
     .line 20
     :cond_0
-    new-instance v0, Lub0;
+    new-instance v0, Lra0;
 
     .line 21
     .line 22
-    invoke-direct {v0, p0, p2}, Lub0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Lz81;)V
+    invoke-direct {v0, p0, p2}, Lra0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Lz71;)V
 
     .line 23
     .line 24
     .line 25
     :goto_0
-    iget-object p2, v0, Lub0;->j:Ljava/lang/Object;
+    iget-object p2, v0, Lra0;->j:Ljava/lang/Object;
 
     .line 26
     .line 27
-    iget v1, v0, Lub0;->l:I
+    iget v1, v0, Lra0;->l:I
 
     .line 28
     .line 29
     const/4 v2, 0x0
 
     .line 30
-    iget-object p0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->k:Lba4;
+    iget-object p0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->k:Lo84;
 
     .line 31
     .line 32
@@ -1683,7 +1683,7 @@
     .line 36
     .line 37
     :try_start_0
-    invoke-static {p2}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-static {p2}, Leg3;->S(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_1
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -1706,7 +1706,7 @@
 
     .line 44
     .line 45
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
 
     .line 46
     .line 47
@@ -1715,17 +1715,17 @@
 
     .line 49
     :cond_2
-    invoke-static {p2}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-static {p2}, Leg3;->S(Ljava/lang/Object;)V
 
     .line 50
     .line 51
     .line 52
     :try_start_1
-    iput v3, v0, Lub0;->l:I
+    iput v3, v0, Lra0;->l:I
 
     .line 53
     .line 54
-    invoke-virtual {p0, p1, v0}, Lba4;->n(ZLz81;)Ljava/lang/Object;
+    invoke-virtual {p0, p1, v0}, Lo84;->n(ZLz71;)Ljava/lang/Object;
 
     .line 55
     .line 56
@@ -1736,7 +1736,7 @@
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
     .line 58
-    sget-object p1, Lbc1;->j:Lbc1;
+    sget-object p1, Lcb1;->j:Lcb1;
 
     .line 59
     .line 60
@@ -1750,7 +1750,7 @@
     :cond_3
     :goto_1
     :try_start_2
-    check-cast p2, Lz94;
+    check-cast p2, Lm84;
     :try_end_2
     .catch Ljava/util/concurrent/CancellationException; {:try_start_2 .. :try_end_2} :catch_1
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
@@ -1774,7 +1774,7 @@
     .line 71
     .line 72
     .line 73
-    iput-object v2, p0, Lba4;->k:Ljava/lang/Object;
+    iput-object v2, p0, Lo84;->k:Ljava/lang/Object;
 
     .line 74
     .line 75
@@ -1887,7 +1887,7 @@
     return-void
 .end method
 
-.method public final g(ZZLz81;)Ljava/lang/Object;
+.method public final g(ZZLz71;)Ljava/lang/Object;
     .locals 29
 
     .line 1
@@ -1907,7 +1907,7 @@
 
     .line 8
     .line 9
-    instance-of v4, v0, Lvb0;
+    instance-of v4, v0, Lsa0;
 
     .line 10
     .line 11
@@ -1918,11 +1918,11 @@
     move-object v4, v0
 
     .line 14
-    check-cast v4, Lvb0;
+    check-cast v4, Lsa0;
 
     .line 15
     .line 16
-    iget v5, v4, Lvb0;->q:I
+    iget v5, v4, Lsa0;->q:I
 
     .line 17
     .line 18
@@ -1941,7 +1941,7 @@
     sub-int/2addr v5, v6
 
     .line 25
-    iput v5, v4, Lvb0;->q:I
+    iput v5, v4, Lsa0;->q:I
 
     .line 26
     .line 27
@@ -1949,25 +1949,25 @@
 
     .line 28
     :cond_0
-    new-instance v4, Lvb0;
+    new-instance v4, Lsa0;
 
     .line 29
     .line 30
-    invoke-direct {v4, v1, v0}, Lvb0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Lz81;)V
+    invoke-direct {v4, v1, v0}, Lsa0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Lz71;)V
 
     .line 31
     .line 32
     .line 33
     :goto_0
-    iget-object v0, v4, Lvb0;->o:Ljava/lang/Object;
+    iget-object v0, v4, Lsa0;->o:Ljava/lang/Object;
 
     .line 34
     .line 35
-    iget v5, v4, Lvb0;->q:I
+    iget v5, v4, Lsa0;->q:I
 
     .line 36
     .line 37
-    iget-object v6, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->k:Lba4;
+    iget-object v6, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->k:Lo84;
 
     .line 38
     .line 39
@@ -1986,7 +1986,7 @@
     const/4 v11, 0x1
 
     .line 44
-    sget-object v12, Lbc1;->j:Lbc1;
+    sget-object v12, Lcb1;->j:Lcb1;
 
     .line 45
     .line 46
@@ -2006,19 +2006,19 @@
 
     .line 53
     .line 54
-    iget-object v2, v4, Lvb0;->n:Lz94;
+    iget-object v2, v4, Lsa0;->n:Lm84;
 
     .line 55
     .line 56
-    iget-object v3, v4, Lvb0;->m:Lnb0;
+    iget-object v3, v4, Lsa0;->m:Lka0;
 
     .line 57
     .line 58
-    iget-object v4, v4, Lvb0;->l:Lkv;
+    iget-object v4, v4, Lsa0;->l:Llu;
 
     .line 59
     .line 60
-    invoke-static {v0}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-static {v0}, Leg3;->S(Ljava/lang/Object;)V
 
     .line 61
     .line 62
@@ -2032,7 +2032,7 @@
 
     .line 66
     .line 67
-    invoke-static {v0}, Ljw1;->e(Ljava/lang/String;)V
+    invoke-static {v0}, Ljv1;->e(Ljava/lang/String;)V
 
     .line 68
     .line 69
@@ -2041,23 +2041,23 @@
 
     .line 71
     :cond_2
-    iget-boolean v2, v4, Lvb0;->k:Z
+    iget-boolean v2, v4, Lsa0;->k:Z
 
     .line 72
     .line 73
-    iget-boolean v3, v4, Lvb0;->j:Z
+    iget-boolean v3, v4, Lsa0;->j:Z
 
     .line 74
     .line 75
-    iget-object v5, v4, Lvb0;->m:Lnb0;
+    iget-object v5, v4, Lsa0;->m:Lka0;
 
     .line 76
     .line 77
-    iget-object v6, v4, Lvb0;->l:Lkv;
+    iget-object v6, v4, Lsa0;->l:Llu;
 
     .line 78
     .line 79
-    invoke-static {v0}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-static {v0}, Leg3;->S(Ljava/lang/Object;)V
 
     .line 80
     .line 81
@@ -2078,20 +2078,20 @@
     .line 88
     .line 89
     :cond_3
-    iget-boolean v2, v4, Lvb0;->k:Z
+    iget-boolean v2, v4, Lsa0;->k:Z
 
     .line 90
     .line 91
-    iget-boolean v3, v4, Lvb0;->j:Z
+    iget-boolean v3, v4, Lsa0;->j:Z
 
     .line 92
     .line 93
-    iget-object v5, v4, Lvb0;->l:Lkv;
+    iget-object v5, v4, Lsa0;->l:Llu;
 
     .line 94
     .line 95
     :try_start_0
-    invoke-static {v0}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-static {v0}, Leg3;->S(Ljava/lang/Object;)V
     :try_end_0
     .catch Ljava/util/concurrent/CancellationException; {:try_start_0 .. :try_end_0} :catch_2
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -2132,12 +2132,12 @@
 
     .line 111
     :cond_4
-    invoke-static {v0}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-static {v0}, Leg3;->S(Ljava/lang/Object;)V
 
     .line 112
     .line 113
     .line 114
-    sget-object v0, Lnv;->f:Lv8;
+    sget-object v0, Lou;->f:Lt8;
 
     .line 115
     .line 116
@@ -2154,7 +2154,7 @@
     .line 121
     .line 122
     .line 123
-    invoke-virtual {v0, v5}, Lv8;->u(Landroid/content/Context;)Lnv;
+    invoke-virtual {v0, v5}, Lt8;->u(Landroid/content/Context;)Lou;
 
     .line 124
     .line 125
@@ -2162,15 +2162,15 @@
     move-result-object v0
 
     .line 127
-    iget-object v0, v0, Lnv;->e:Lq85;
+    iget-object v0, v0, Lou;->e:Lc75;
 
     .line 128
     .line 129
-    iget-object v0, v0, Lq85;->j:Lpb6;
+    iget-object v0, v0, Lc75;->j:Lx96;
 
     .line 130
     .line 131
-    invoke-virtual {v0}, Lpb6;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Lx96;->getValue()Ljava/lang/Object;
 
     .line 132
     .line 133
@@ -2181,11 +2181,11 @@
     move-object v5, v0
 
     .line 136
-    check-cast v5, Lkv;
+    check-cast v5, Llu;
 
     .line 137
     .line 138
-    iget-boolean v0, v5, Lkv;->g:Z
+    iget-boolean v0, v5, Llu;->g:Z
 
     .line 139
     .line 140
@@ -2213,7 +2213,7 @@
 
     .line 150
     .line 151
-    invoke-static {v1, v0}, Lza;->s(Landroid/content/Context;Ljava/lang/String;)I
+    invoke-static {v1, v0}, Lr97;->p(Landroid/content/Context;Ljava/lang/String;)I
 
     .line 152
     .line 153
@@ -2227,23 +2227,23 @@
     .line 157
     :goto_1
     :try_start_1
-    iput-object v5, v4, Lvb0;->l:Lkv;
+    iput-object v5, v4, Lsa0;->l:Llu;
 
     .line 158
     .line 159
-    iput-boolean v2, v4, Lvb0;->j:Z
+    iput-boolean v2, v4, Lsa0;->j:Z
 
     .line 160
     .line 161
-    iput-boolean v3, v4, Lvb0;->k:Z
+    iput-boolean v3, v4, Lsa0;->k:Z
 
     .line 162
     .line 163
-    iput v11, v4, Lvb0;->q:I
+    iput v11, v4, Lsa0;->q:I
 
     .line 164
     .line 165
-    invoke-virtual {v1, v2, v3, v4}, Lcom/box/app/notification/BoxPersistentNotificationService;->a(ZZLz81;)Ljava/lang/Object;
+    invoke-virtual {v1, v2, v3, v4}, Lcom/box/app/notification/BoxPersistentNotificationService;->a(ZZLz71;)Ljava/lang/Object;
 
     .line 166
     .line 167
@@ -2260,7 +2260,7 @@
     .line 172
     :cond_6
     :goto_2
-    check-cast v0, Lnb0;
+    check-cast v0, Lka0;
     :try_end_1
     .catch Ljava/util/concurrent/CancellationException; {:try_start_1 .. :try_end_1} :catch_2
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
@@ -2316,11 +2316,11 @@
 
     .line 193
     .line 194
-    iget-object v13, v0, Lnb0;->a:Lqc0;
+    iget-object v13, v0, Lka0;->a:Lnb0;
 
     .line 195
     .line 196
-    iget-boolean v13, v13, Lqc0;->a:Z
+    iget-boolean v13, v13, Lnb0;->a:Z
 
     .line 197
     .line 198
@@ -2328,31 +2328,31 @@
 
     .line 199
     .line 200
-    iget-boolean v6, v5, Lkv;->K:Z
+    iget-boolean v6, v5, Llu;->K:Z
 
     .line 201
     .line 202
-    iput-object v5, v4, Lvb0;->l:Lkv;
+    iput-object v5, v4, Lsa0;->l:Llu;
 
     .line 203
     .line 204
-    iput-object v0, v4, Lvb0;->m:Lnb0;
+    iput-object v0, v4, Lsa0;->m:Lka0;
 
     .line 205
     .line 206
-    iput-boolean v3, v4, Lvb0;->j:Z
+    iput-boolean v3, v4, Lsa0;->j:Z
 
     .line 207
     .line 208
-    iput-boolean v2, v4, Lvb0;->k:Z
+    iput-boolean v2, v4, Lsa0;->k:Z
 
     .line 209
     .line 210
-    iput v8, v4, Lvb0;->q:I
+    iput v8, v4, Lsa0;->q:I
 
     .line 211
     .line 212
-    invoke-virtual {v1, v6, v4}, Lcom/box/app/notification/BoxPersistentNotificationService;->e(ZLz81;)Ljava/lang/Object;
+    invoke-virtual {v1, v6, v4}, Lcom/box/app/notification/BoxPersistentNotificationService;->e(ZLz71;)Ljava/lang/Object;
 
     .line 213
     .line 214
@@ -2386,35 +2386,35 @@
     .line 225
     .line 226
     :goto_5
-    check-cast v0, Lz94;
+    check-cast v0, Lm84;
 
     .line 227
     .line 228
-    iput-object v6, v4, Lvb0;->l:Lkv;
+    iput-object v6, v4, Lsa0;->l:Llu;
 
     .line 229
     .line 230
-    iput-object v3, v4, Lvb0;->m:Lnb0;
+    iput-object v3, v4, Lsa0;->m:Lka0;
 
     .line 231
     .line 232
-    iput-object v0, v4, Lvb0;->n:Lz94;
+    iput-object v0, v4, Lsa0;->n:Lm84;
 
     .line 233
     .line 234
-    iput-boolean v5, v4, Lvb0;->j:Z
+    iput-boolean v5, v4, Lsa0;->j:Z
 
     .line 235
     .line 236
-    iput-boolean v2, v4, Lvb0;->k:Z
+    iput-boolean v2, v4, Lsa0;->k:Z
 
     .line 237
     .line 238
-    iput v7, v4, Lvb0;->q:I
+    iput v7, v4, Lsa0;->q:I
 
     .line 239
     .line 240
-    invoke-virtual {v1, v6, v4}, Lcom/box/app/notification/BoxPersistentNotificationService;->d(Lkv;Lz81;)Ljava/lang/Object;
+    invoke-virtual {v1, v6, v4}, Lcom/box/app/notification/BoxPersistentNotificationService;->d(Llu;Lz71;)Ljava/lang/Object;
 
     .line 241
     .line 242
@@ -2444,11 +2444,11 @@
 
     .line 251
     :goto_7
-    check-cast v0, Lz84;
+    check-cast v0, Ll74;
 
     .line 252
     .line 253
-    iget-object v5, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->l:Ljb0;
+    iget-object v5, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->l:Lga0;
 
     .line 254
     .line 255
@@ -2456,15 +2456,15 @@
 
     .line 256
     .line 257
-    iget-object v6, v3, Lnb0;->a:Lqc0;
+    iget-object v6, v3, Lka0;->a:Lnb0;
 
     .line 258
     .line 259
-    iget-wide v12, v3, Lnb0;->b:J
+    iget-wide v12, v3, Lka0;->b:J
 
     .line 260
     .line 261
-    iget-object v3, v5, Ljb0;->a:Landroid/content/Context;
+    iget-object v3, v5, Lga0;->a:Landroid/content/Context;
 
     .line 262
     .line 263
@@ -2473,7 +2473,7 @@
     .line 264
     .line 265
     .line 266
-    iget-object v5, v6, Lqc0;->d:Ljava/lang/Long;
+    iget-object v5, v6, Lnb0;->d:Ljava/lang/Long;
 
     .line 267
     .line 268
@@ -2490,11 +2490,11 @@
 
     .line 274
     .line 275
-    iget-object v14, v2, Lz94;->c:Ljava/lang/Long;
+    iget-object v14, v2, Lm84;->c:Ljava/lang/Long;
 
     .line 276
     .line 277
-    sget-object v15, Lmg2;->a:Lmg2;
+    sget-object v15, Lff2;->a:Lff2;
 
     .line 278
     .line 279
@@ -2506,7 +2506,7 @@
     move-result-wide v14
 
     .line 283
-    invoke-static {v14, v15}, Lmg2;->j(J)Ljava/lang/String;
+    invoke-static {v14, v15}, Lff2;->j(J)Ljava/lang/String;
 
     .line 284
     .line 285
@@ -2531,11 +2531,11 @@
 
     .line 293
     .line 294
-    iget-object v14, v2, Lz94;->d:Ljava/lang/Long;
+    iget-object v14, v2, Lm84;->d:Ljava/lang/Long;
 
     .line 295
     .line 296
-    sget-object v15, Lmg2;->a:Lmg2;
+    sget-object v15, Lff2;->a:Lff2;
 
     .line 297
     .line 298
@@ -2547,7 +2547,7 @@
     move-result-wide v14
 
     .line 302
-    invoke-static {v14, v15}, Lmg2;->j(J)Ljava/lang/String;
+    invoke-static {v14, v15}, Lff2;->j(J)Ljava/lang/String;
 
     .line 303
     .line 304
@@ -2586,11 +2586,11 @@
     .line 319
     .line 320
     .line 321
-    iget-object v14, v6, Lqc0;->b:Ljava/lang/String;
+    iget-object v14, v6, Lnb0;->b:Ljava/lang/String;
 
     .line 322
     .line 323
-    invoke-static {v14}, Lad6;->y0(Ljava/lang/CharSequence;)Z
+    invoke-static {v14}, Lib6;->A0(Ljava/lang/CharSequence;)Z
 
     .line 324
     .line 325
@@ -2615,7 +2615,7 @@
     .line 333
     .line 334
     :goto_a
-    iget-object v14, v0, Lz84;->a:Ljava/lang/String;
+    iget-object v14, v0, Ll74;->a:Ljava/lang/String;
 
     .line 335
     .line 336
@@ -2631,7 +2631,7 @@
 
     .line 341
     :cond_c
-    invoke-static {v14}, Lad6;->y0(Ljava/lang/CharSequence;)Z
+    invoke-static {v14}, Lib6;->A0(Ljava/lang/CharSequence;)Z
 
     .line 342
     .line 343
@@ -2656,7 +2656,7 @@
     .line 351
     .line 352
     :goto_b
-    iget-object v14, v0, Lz84;->b:Ljava/lang/String;
+    iget-object v14, v0, Ll74;->b:Ljava/lang/String;
 
     .line 353
     .line 354
@@ -2668,7 +2668,7 @@
 
     .line 357
     :cond_e
-    invoke-static {v14}, Lad6;->y0(Ljava/lang/CharSequence;)Z
+    invoke-static {v14}, Lib6;->A0(Ljava/lang/CharSequence;)Z
 
     .line 358
     .line 359
@@ -2693,7 +2693,7 @@
     .line 367
     .line 368
     :goto_c
-    iget-object v0, v0, Lz84;->c:Ljava/lang/String;
+    iget-object v0, v0, Ll74;->c:Ljava/lang/String;
 
     .line 369
     .line 370
@@ -2705,7 +2705,7 @@
 
     .line 373
     :cond_10
-    invoke-static {v0}, Lad6;->y0(Ljava/lang/CharSequence;)Z
+    invoke-static {v0}, Lib6;->A0(Ljava/lang/CharSequence;)Z
 
     .line 374
     .line 375
@@ -2786,7 +2786,7 @@
 
     .line 409
     :cond_12
-    iget-object v5, v6, Lqc0;->c:Ljava/lang/Integer;
+    iget-object v5, v6, Lnb0;->c:Ljava/lang/Integer;
 
     .line 410
     .line 411
@@ -3032,7 +3032,7 @@
     .line 526
     :cond_17
     :goto_11
-    iget v0, v6, Lqc0;->e:F
+    iget v0, v6, Lnb0;->e:F
 
     .line 527
     .line 528
@@ -3091,7 +3091,7 @@
     move-result-object v0
 
     .line 554
-    iget v3, v6, Lqc0;->f:I
+    iget v3, v6, Lnb0;->f:I
 
     .line 555
     .line 556
@@ -3135,7 +3135,7 @@
 
     .line 576
     .line 577
-    sget-object v3, Lmg2;->a:Lmg2;
+    sget-object v3, Lff2;->a:Lff2;
 
     .line 578
     .line 579
@@ -3143,7 +3143,7 @@
 
     .line 580
     .line 581
-    iget-wide v5, v2, Lz94;->a:J
+    iget-wide v5, v2, Lm84;->a:J
 
     .line 582
     .line 583
@@ -3159,7 +3159,7 @@
     long-to-double v5, v5
 
     .line 587
-    invoke-static {v5, v6}, Lmg2;->k(D)Ljava/lang/String;
+    invoke-static {v5, v6}, Lff2;->k(D)Ljava/lang/String;
 
     .line 588
     .line 589
@@ -3171,7 +3171,7 @@
 
     .line 592
     .line 593
-    iget-wide v2, v2, Lz94;->b:J
+    iget-wide v2, v2, Lm84;->b:J
 
     .line 594
     .line 595
@@ -3187,7 +3187,7 @@
     long-to-double v2, v2
 
     .line 599
-    invoke-static {v2, v3}, Lmg2;->k(D)Ljava/lang/String;
+    invoke-static {v2, v3}, Lff2;->k(D)Ljava/lang/String;
 
     .line 600
     .line 601
@@ -3199,7 +3199,7 @@
 
     .line 604
     .line 605
-    new-instance v15, Ly84;
+    new-instance v15, Lk74;
 
     .line 606
     .line 607
@@ -3207,16 +3207,16 @@
 
     .line 608
     .line 609
-    invoke-direct/range {v15 .. v27}, Ly84;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-direct/range {v15 .. v27}, Lk74;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 610
     .line 611
     .line 612
-    iget-object v0, v4, Lkv;->i:Ljava/lang/String;
+    iget-object v0, v4, Llu;->i:Ljava/lang/String;
 
     .line 613
     .line 614
-    invoke-static {v0, v15}, Ljb0;->b(Ljava/lang/String;Ly84;)Ljava/lang/String;
+    invoke-static {v0, v15}, Lga0;->b(Ljava/lang/String;Lk74;)Ljava/lang/String;
 
     .line 615
     .line 616
@@ -3224,7 +3224,7 @@
     move-result-object v0
 
     .line 618
-    invoke-static {v0}, Lad6;->y0(Ljava/lang/CharSequence;)Z
+    invoke-static {v0}, Lib6;->A0(Ljava/lang/CharSequence;)Z
 
     .line 619
     .line 620
@@ -3241,11 +3241,11 @@
     .line 625
     .line 626
     :cond_1c
-    iget-object v2, v4, Lkv;->j:Ljava/lang/String;
+    iget-object v2, v4, Llu;->j:Ljava/lang/String;
 
     .line 627
     .line 628
-    invoke-static {v2, v15}, Ljb0;->b(Ljava/lang/String;Ly84;)Ljava/lang/String;
+    invoke-static {v2, v15}, Lga0;->b(Ljava/lang/String;Lk74;)Ljava/lang/String;
 
     .line 629
     .line 630
@@ -3253,7 +3253,7 @@
     move-result-object v2
 
     .line 632
-    invoke-static {v2}, Lad6;->Y0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-static {v2}, Lib6;->a1(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     .line 633
     .line 634
@@ -3269,7 +3269,7 @@
     move-result-object v2
 
     .line 640
-    invoke-static {v2}, Lad6;->y0(Ljava/lang/CharSequence;)Z
+    invoke-static {v2}, Lib6;->A0(Ljava/lang/CharSequence;)Z
 
     .line 641
     .line 642
@@ -3285,7 +3285,7 @@
 
     .line 647
     .line 648
-    invoke-static {v5, v15}, Ljb0;->b(Ljava/lang/String;Ly84;)Ljava/lang/String;
+    invoke-static {v5, v15}, Lga0;->b(Ljava/lang/String;Lk74;)Ljava/lang/String;
 
     .line 649
     .line 650
@@ -3293,7 +3293,7 @@
     move-result-object v2
 
     .line 652
-    invoke-static {v2}, Lad6;->Y0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-static {v2}, Lib6;->a1(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     .line 653
     .line 654
@@ -3310,7 +3310,7 @@
 
     .line 660
     :cond_1d
-    invoke-static {v2}, Lad6;->y0(Ljava/lang/CharSequence;)Z
+    invoke-static {v2}, Lib6;->A0(Ljava/lang/CharSequence;)Z
 
     .line 661
     .line 662
@@ -3322,7 +3322,7 @@
 
     .line 665
     .line 666
-    invoke-static {v5, v15}, Ljb0;->b(Ljava/lang/String;Ly84;)Ljava/lang/String;
+    invoke-static {v5, v15}, Lga0;->b(Ljava/lang/String;Lk74;)Ljava/lang/String;
 
     .line 667
     .line 668
@@ -3330,7 +3330,7 @@
     move-result-object v3
 
     .line 670
-    invoke-static {v3}, Lad6;->Y0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-static {v3}, Lib6;->a1(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     .line 671
     .line 672
@@ -3354,17 +3354,17 @@
 
     .line 680
     :goto_14
-    new-instance v5, Lg93;
+    new-instance v5, Lk83;
 
     .line 681
     .line 682
-    invoke-direct {v5, v2}, Lg93;-><init>(Ljava/lang/CharSequence;)V
+    invoke-direct {v5, v2}, Lk83;-><init>(Ljava/lang/CharSequence;)V
 
     .line 683
     .line 684
     .line 685
     :cond_1f
-    invoke-virtual {v5}, Lg93;->hasNext()Z
+    invoke-virtual {v5}, Lk83;->hasNext()Z
 
     .line 686
     .line 687
@@ -3376,7 +3376,7 @@
 
     .line 690
     .line 691
-    invoke-virtual {v5}, Lg93;->next()Ljava/lang/Object;
+    invoke-virtual {v5}, Lk83;->next()Ljava/lang/Object;
 
     .line 692
     .line 693
@@ -3391,7 +3391,7 @@
 
     .line 697
     .line 698
-    invoke-static {v6}, Lad6;->y0(Ljava/lang/CharSequence;)Z
+    invoke-static {v6}, Lib6;->A0(Ljava/lang/CharSequence;)Z
 
     .line 699
     .line 700
@@ -3433,11 +3433,11 @@
     .line 715
     .line 716
     .line 717
-    new-instance v13, Lx84;
+    new-instance v13, Lj74;
 
     .line 718
     .line 719
-    invoke-direct {v13, v1}, Lx84;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;)V
+    invoke-direct {v13, v1}, Lj74;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;)V
 
     .line 720
     .line 721
@@ -3447,7 +3447,7 @@
     .line 723
     .line 724
     .line 725
-    iget-object v6, v13, Lx84;->m:Landroid/app/Notification;
+    iget-object v6, v13, Lj74;->m:Landroid/app/Notification;
 
     .line 726
     .line 727
@@ -3455,7 +3455,7 @@
 
     .line 728
     .line 729
-    invoke-static {v0}, Lx84;->b(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-static {v0}, Lj74;->b(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     .line 730
     .line 731
@@ -3463,11 +3463,11 @@
     move-result-object v0
 
     .line 733
-    iput-object v0, v13, Lx84;->e:Ljava/lang/CharSequence;
+    iput-object v0, v13, Lj74;->e:Ljava/lang/CharSequence;
 
     .line 734
     .line 735
-    invoke-static {v2}, Lx84;->b(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-static {v2}, Lj74;->b(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     .line 736
     .line 737
@@ -3475,11 +3475,11 @@
     move-result-object v0
 
     .line 739
-    iput-object v0, v13, Lx84;->f:Ljava/lang/CharSequence;
+    iput-object v0, v13, Lj74;->f:Ljava/lang/CharSequence;
 
     .line 740
     .line 741
-    new-instance v0, Lr82;
+    new-instance v0, Lq72;
 
     .line 742
     .line 743
@@ -3487,12 +3487,12 @@
 
     .line 744
     .line 745
-    invoke-direct {v0, v2, v9}, Lr82;-><init>(BZ)V
+    invoke-direct {v0, v2, v9}, Lq72;-><init>(BZ)V
 
     .line 746
     .line 747
     .line 748
-    invoke-static {v3}, Lx84;->b(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-static {v3}, Lj74;->b(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     .line 749
     .line 750
@@ -3500,16 +3500,16 @@
     move-result-object v2
 
     .line 752
-    iput-object v2, v0, Lr82;->l:Ljava/lang/Object;
+    iput-object v2, v0, Lq72;->l:Ljava/lang/Object;
 
     .line 753
     .line 754
-    invoke-virtual {v13, v0}, Lx84;->d(Lr82;)V
+    invoke-virtual {v13, v0}, Lj74;->d(Lq72;)V
 
     .line 755
     .line 756
     .line 757
-    iget-object v0, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->m:Ljb0;
+    iget-object v0, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->m:Lga0;
 
     .line 758
     .line 759
@@ -3521,7 +3521,7 @@
 
     .line 762
     .line 763
-    iget-object v3, v4, Lkv;->k:Lv84;
+    iget-object v3, v4, Llu;->k:Lh74;
 
     .line 764
     .line 765
@@ -3553,7 +3553,7 @@
 
     .line 778
     .line 779
-    invoke-virtual {v0, v5, v3}, Ljb0;->c(ILjava/lang/String;)Landroid/app/PendingIntent;
+    invoke-virtual {v0, v5, v3}, Lga0;->c(ILjava/lang/String;)Landroid/app/PendingIntent;
 
     .line 780
     .line 781
@@ -3565,7 +3565,7 @@
 
     .line 784
     :cond_22
-    invoke-static {}, Lue1;->a()V
+    invoke-static {}, Lvd1;->a()V
 
     .line 785
     .line 786
@@ -3578,7 +3578,7 @@
 
     .line 789
     .line 790
-    invoke-virtual {v0, v5, v3}, Ljb0;->c(ILjava/lang/String;)Landroid/app/PendingIntent;
+    invoke-virtual {v0, v5, v3}, Lga0;->c(ILjava/lang/String;)Landroid/app/PendingIntent;
 
     .line 791
     .line 792
@@ -3590,7 +3590,7 @@
 
     .line 795
     :cond_24
-    iget-object v0, v0, Ljb0;->a:Landroid/content/Context;
+    iget-object v0, v0, Lga0;->a:Landroid/content/Context;
 
     .line 796
     .line 797
@@ -3643,11 +3643,11 @@
     .line 822
     .line 823
     :goto_16
-    iput-object v0, v13, Lx84;->g:Landroid/app/PendingIntent;
+    iput-object v0, v13, Lj74;->g:Landroid/app/PendingIntent;
 
     .line 824
     .line 825
-    invoke-virtual {v13, v8}, Lx84;->c(I)V
+    invoke-virtual {v13, v8}, Lj74;->c(I)V
 
     .line 826
     .line 827
@@ -3656,16 +3656,16 @@
 
     .line 829
     .line 830
-    invoke-virtual {v13, v0}, Lx84;->c(I)V
+    invoke-virtual {v13, v0}, Lj74;->c(I)V
 
     .line 831
     .line 832
     .line 833
-    iput-boolean v11, v13, Lx84;->n:Z
+    iput-boolean v11, v13, Lj74;->n:Z
 
     .line 834
     .line 835
-    iput-boolean v9, v13, Lx84;->h:Z
+    iput-boolean v9, v13, Lj74;->h:Z
 
     .line 836
     .line 837
@@ -3673,15 +3673,15 @@
 
     .line 838
     .line 839
-    iput-object v0, v13, Lx84;->j:Ljava/lang/String;
+    iput-object v0, v13, Lj74;->j:Ljava/lang/String;
 
     .line 840
     .line 841
-    iput-boolean v11, v13, Lx84;->l:Z
+    iput-boolean v11, v13, Lj74;->l:Z
 
     .line 842
     .line 843
-    iget-object v12, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->m:Ljb0;
+    iget-object v12, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->m:Lga0;
 
     .line 844
     .line 845
@@ -3689,15 +3689,15 @@
 
     .line 846
     .line 847
-    iget-boolean v14, v4, Lkv;->l:Z
+    iget-boolean v14, v4, Llu;->l:Z
 
     .line 848
     .line 849
-    iget-object v15, v4, Lkv;->m:Ljava/lang/String;
+    iget-object v15, v4, Llu;->m:Ljava/lang/String;
 
     .line 850
     .line 851
-    iget-object v0, v4, Lkv;->n:Lu84;
+    iget-object v0, v4, Llu;->n:Lg74;
 
     .line 852
     .line 853
@@ -3705,7 +3705,7 @@
 
     .line 854
     .line 855
-    iget-object v3, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->o:Ltr;
+    iget-object v3, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->o:Lzq;
 
     .line 856
     .line 857
@@ -3717,12 +3717,12 @@
 
     .line 860
     .line 861
-    invoke-virtual/range {v12 .. v18}, Ljb0;->a(Lx84;ZLjava/lang/String;Lu84;ILtr;)V
+    invoke-virtual/range {v12 .. v18}, Lga0;->a(Lj74;ZLjava/lang/String;Lg74;ILzq;)V
 
     .line 862
     .line 863
     .line 864
-    iget-object v12, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->m:Ljb0;
+    iget-object v12, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->m:Lga0;
 
     .line 865
     .line 866
@@ -3730,15 +3730,15 @@
 
     .line 867
     .line 868
-    iget-boolean v14, v4, Lkv;->o:Z
+    iget-boolean v14, v4, Llu;->o:Z
 
     .line 869
     .line 870
-    iget-object v15, v4, Lkv;->p:Ljava/lang/String;
+    iget-object v15, v4, Llu;->p:Ljava/lang/String;
 
     .line 871
     .line 872
-    iget-object v0, v4, Lkv;->q:Lu84;
+    iget-object v0, v4, Llu;->q:Lg74;
 
     .line 873
     .line 874
@@ -3746,7 +3746,7 @@
 
     .line 875
     .line 876
-    iget-object v3, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->o:Ltr;
+    iget-object v3, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->o:Lzq;
 
     .line 877
     .line 878
@@ -3758,12 +3758,12 @@
 
     .line 881
     .line 882
-    invoke-virtual/range {v12 .. v18}, Ljb0;->a(Lx84;ZLjava/lang/String;Lu84;ILtr;)V
+    invoke-virtual/range {v12 .. v18}, Lga0;->a(Lj74;ZLjava/lang/String;Lg74;ILzq;)V
 
     .line 883
     .line 884
     .line 885
-    iget-object v12, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->m:Ljb0;
+    iget-object v12, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->m:Lga0;
 
     .line 886
     .line 887
@@ -3771,15 +3771,15 @@
 
     .line 888
     .line 889
-    iget-boolean v14, v4, Lkv;->r:Z
+    iget-boolean v14, v4, Llu;->r:Z
 
     .line 890
     .line 891
-    iget-object v15, v4, Lkv;->s:Ljava/lang/String;
+    iget-object v15, v4, Llu;->s:Ljava/lang/String;
 
     .line 892
     .line 893
-    iget-object v0, v4, Lkv;->t:Lu84;
+    iget-object v0, v4, Llu;->t:Lg74;
 
     .line 894
     .line 895
@@ -3787,7 +3787,7 @@
 
     .line 896
     .line 897
-    iget-object v2, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->o:Ltr;
+    iget-object v2, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->o:Lzq;
 
     .line 898
     .line 899
@@ -3799,12 +3799,12 @@
 
     .line 902
     .line 903
-    invoke-virtual/range {v12 .. v18}, Ljb0;->a(Lx84;ZLjava/lang/String;Lu84;ILtr;)V
+    invoke-virtual/range {v12 .. v18}, Lga0;->a(Lj74;ZLjava/lang/String;Lg74;ILzq;)V
 
     .line 904
     .line 905
     .line 906
-    iget-object v0, v13, Lx84;->k:Landroid/os/Bundle;
+    iget-object v0, v13, Lj74;->k:Landroid/os/Bundle;
 
     .line 907
     .line 908
@@ -3821,7 +3821,7 @@
     .line 913
     .line 914
     .line 915
-    iput-object v0, v13, Lx84;->k:Landroid/os/Bundle;
+    iput-object v0, v13, Lj74;->k:Landroid/os/Bundle;
 
     .line 916
     .line 917
@@ -3835,7 +3835,7 @@
     .line 920
     .line 921
     .line 922
-    invoke-virtual {v13}, Lx84;->a()Landroid/app/Notification;
+    invoke-virtual {v13}, Lj74;->a()Landroid/app/Notification;
 
     .line 923
     .line 924
@@ -3862,7 +3862,7 @@
 
     .line 934
     :cond_27
-    invoke-static {v2}, Lyt2;->q0(Ljava/lang/String;)V
+    invoke-static {v2}, Lps2;->N(Ljava/lang/String;)V
 
     .line 935
     .line 936
@@ -3871,7 +3871,7 @@
 
     .line 938
     :cond_28
-    invoke-static {v2}, Lyt2;->q0(Ljava/lang/String;)V
+    invoke-static {v2}, Lps2;->N(Ljava/lang/String;)V
 
     .line 939
     .line 940
@@ -3880,7 +3880,7 @@
 
     .line 942
     :cond_29
-    invoke-static {v2}, Lyt2;->q0(Ljava/lang/String;)V
+    invoke-static {v2}, Lps2;->N(Ljava/lang/String;)V
 
     .line 943
     .line 944
@@ -3889,7 +3889,7 @@
 
     .line 946
     :cond_2a
-    invoke-static {v2}, Lyt2;->q0(Ljava/lang/String;)V
+    invoke-static {v2}, Lps2;->N(Ljava/lang/String;)V
 
     .line 947
     .line 948
@@ -3902,7 +3902,7 @@
 
     .line 951
     .line 952
-    invoke-static {v0}, Lyt2;->q0(Ljava/lang/String;)V
+    invoke-static {v0}, Lps2;->N(Ljava/lang/String;)V
 
     .line 953
     .line 954
@@ -3919,11 +3919,11 @@
 
     .line 959
     .line 960
-    iput-object v10, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->r:Lnb0;
+    iput-object v10, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->r:Lka0;
 
     .line 961
     .line 962
-    iput-object v10, v6, Lba4;->k:Ljava/lang/Object;
+    iput-object v10, v6, Lo84;->k:Ljava/lang/Object;
 
     .line 963
     .line 964
@@ -3994,11 +3994,11 @@
 
     .line 993
     .line 994
-    iput-object v10, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->r:Lnb0;
+    iput-object v10, v1, Lcom/box/app/notification/BoxPersistentNotificationService;->r:Lka0;
 
     .line 995
     .line 996
-    iput-object v10, v6, Lba4;->k:Ljava/lang/Object;
+    iput-object v10, v6, Lo84;->k:Ljava/lang/Object;
 
     .line 997
     .line 998
@@ -4090,7 +4090,7 @@
     move-result-object v0
 
     .line 23
-    sget-object v1, Ltr;->k:Lv8;
+    sget-object v1, Lzq;->k:Lt8;
 
     .line 24
     .line 25
@@ -4099,7 +4099,7 @@
     .line 26
     .line 27
     .line 28
-    invoke-static {v0}, Lv8;->t(Ljava/lang/String;)Ltr;
+    invoke-static {v0}, Lt8;->t(Ljava/lang/String;)Lzq;
 
     .line 29
     .line 30
@@ -4107,11 +4107,11 @@
     move-result-object v0
 
     .line 32
-    iput-object v0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->o:Ltr;
+    iput-object v0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->o:Lzq;
 
     .line 33
     .line 34
-    new-instance v0, Ljb0;
+    new-instance v0, Lga0;
 
     .line 35
     .line 36
@@ -4128,16 +4128,16 @@
     .line 41
     .line 42
     .line 43
-    invoke-direct {v0, v1}, Ljb0;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v1}, Lga0;-><init>(Landroid/content/Context;)V
 
     .line 44
     .line 45
     .line 46
-    iput-object v0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->l:Ljb0;
+    iput-object v0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->l:Lga0;
 
     .line 47
     .line 48
-    new-instance v0, Ljb0;
+    new-instance v0, Lga0;
 
     .line 49
     .line 50
@@ -4154,12 +4154,12 @@
     .line 55
     .line 56
     .line 57
-    invoke-direct {v0, v1}, Ljb0;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, v1}, Lga0;-><init>(Landroid/content/Context;)V
 
     .line 58
     .line 59
     .line 60
-    iput-object v0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->m:Ljb0;
+    iput-object v0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->m:Lga0;
 
     .line 61
     .line 62
@@ -4264,7 +4264,7 @@
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->n:Lcb6;
+    iget-object v0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->n:Lk96;
 
     .line 2
     .line 3
@@ -4275,17 +4275,17 @@
 
     .line 5
     .line 6
-    invoke-virtual {v0, v1}, Lov2;->c(Ljava/util/concurrent/CancellationException;)V
+    invoke-virtual {v0, v1}, Leu2;->c(Ljava/util/concurrent/CancellationException;)V
 
     .line 7
     .line 8
     .line 9
     :cond_0
-    iput-object v1, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->n:Lcb6;
+    iput-object v1, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->n:Lk96;
 
     .line 10
     .line 11
-    iput-object v1, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->r:Lnb0;
+    iput-object v1, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->r:Lka0;
 
     .line 12
     .line 13
@@ -4317,19 +4317,19 @@
     .line 25
     .line 26
     :cond_1
-    iget-object v0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->k:Lba4;
+    iget-object v0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->k:Lo84;
 
     .line 27
     .line 28
-    iput-object v1, v0, Lba4;->k:Ljava/lang/Object;
+    iput-object v1, v0, Lo84;->k:Ljava/lang/Object;
 
     .line 29
     .line 30
-    iget-object v0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->j:Lw81;
+    iget-object v0, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->j:Lw71;
 
     .line 31
     .line 32
-    invoke-static {v0, v1}, Lhq;->B(Lac1;Ljava/util/concurrent/CancellationException;)V
+    invoke-static {v0, v1}, Lp87;->y(Lbb1;Ljava/util/concurrent/CancellationException;)V
 
     .line 33
     .line 34
@@ -4346,7 +4346,7 @@
     .locals 6
 
     .line 1
-    sget-object p2, Ltr;->k:Lv8;
+    sget-object p2, Lzq;->k:Lt8;
 
     .line 2
     .line 3
@@ -4378,7 +4378,7 @@
     .line 15
     .line 16
     .line 17
-    invoke-static {v0}, Lv8;->t(Ljava/lang/String;)Ltr;
+    invoke-static {v0}, Lt8;->t(Ljava/lang/String;)Lzq;
 
     .line 18
     .line 19
@@ -4431,7 +4431,7 @@
     .line 41
     .line 42
     .line 43
-    invoke-static {v0}, Lv8;->t(Ljava/lang/String;)Ltr;
+    invoke-static {v0}, Lt8;->t(Ljava/lang/String;)Lzq;
 
     .line 44
     .line 45
@@ -4440,7 +4440,7 @@
 
     .line 47
     :goto_0
-    iput-object p2, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->o:Ltr;
+    iput-object p2, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->o:Lzq;
 
     .line 48
     .line 49
@@ -4458,11 +4458,11 @@
 
     .line 54
     .line 55
-    new-instance p2, Lx84;
+    new-instance p2, Lj74;
 
     .line 56
     .line 57
-    invoke-direct {p2, p0}, Lx84;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;)V
+    invoke-direct {p2, p0}, Lj74;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;)V
 
     .line 58
     .line 59
@@ -4472,7 +4472,7 @@
     .line 61
     .line 62
     .line 63
-    iget-object v3, p2, Lx84;->m:Landroid/app/Notification;
+    iget-object v3, p2, Lj74;->m:Landroid/app/Notification;
 
     .line 64
     .line 65
@@ -4480,7 +4480,7 @@
 
     .line 66
     .line 67
-    const v2, 0x7f0f04a5
+    const v2, 0x7f0f04a7
 
     .line 68
     .line 69
@@ -4493,7 +4493,7 @@
     move-result-object v2
 
     .line 74
-    invoke-static {v2}, Lx84;->b(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-static {v2}, Lj74;->b(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     .line 75
     .line 76
@@ -4501,11 +4501,11 @@
     move-result-object v2
 
     .line 78
-    iput-object v2, p2, Lx84;->e:Ljava/lang/CharSequence;
+    iput-object v2, p2, Lj74;->e:Ljava/lang/CharSequence;
 
     .line 79
     .line 80
-    const v2, 0x7f0f04a6
+    const v2, 0x7f0f04a8
 
     .line 81
     .line 82
@@ -4518,7 +4518,7 @@
     move-result-object v2
 
     .line 87
-    invoke-static {v2}, Lx84;->b(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    invoke-static {v2}, Lj74;->b(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
 
     .line 88
     .line 89
@@ -4526,11 +4526,11 @@
     move-result-object v2
 
     .line 91
-    iput-object v2, p2, Lx84;->f:Ljava/lang/CharSequence;
+    iput-object v2, p2, Lj74;->f:Ljava/lang/CharSequence;
 
     .line 92
     .line 93
-    invoke-virtual {p2, v0}, Lx84;->c(I)V
+    invoke-virtual {p2, v0}, Lj74;->c(I)V
 
     .line 94
     .line 95
@@ -4539,16 +4539,16 @@
 
     .line 97
     .line 98
-    invoke-virtual {p2, v2}, Lx84;->c(I)V
+    invoke-virtual {p2, v2}, Lj74;->c(I)V
 
     .line 99
     .line 100
     .line 101
-    iput-boolean v1, p2, Lx84;->n:Z
+    iput-boolean v1, p2, Lj74;->n:Z
 
     .line 102
     .line 103
-    iput-boolean p3, p2, Lx84;->h:Z
+    iput-boolean p3, p2, Lj74;->h:Z
 
     .line 104
     .line 105
@@ -4556,11 +4556,11 @@
 
     .line 106
     .line 107
-    iput-object v2, p2, Lx84;->j:Ljava/lang/String;
+    iput-object v2, p2, Lj74;->j:Ljava/lang/String;
 
     .line 108
     .line 109
-    iget-object v2, p2, Lx84;->k:Landroid/os/Bundle;
+    iget-object v2, p2, Lj74;->k:Landroid/os/Bundle;
 
     .line 110
     .line 111
@@ -4577,7 +4577,7 @@
     .line 116
     .line 117
     .line 118
-    iput-object v2, p2, Lx84;->k:Landroid/os/Bundle;
+    iput-object v2, p2, Lj74;->k:Landroid/os/Bundle;
 
     .line 119
     .line 120
@@ -4591,7 +4591,7 @@
     .line 123
     .line 124
     .line 125
-    invoke-virtual {p2}, Lx84;->a()Landroid/app/Notification;
+    invoke-virtual {p2}, Lj74;->a()Landroid/app/Notification;
 
     .line 126
     .line 127
@@ -4636,7 +4636,7 @@
     const/4 v2, 0x3
 
     .line 145
-    iget-object v3, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->j:Lw81;
+    iget-object v3, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->j:Lw71;
 
     .line 146
     .line 147
@@ -4703,16 +4703,16 @@
 
     .line 178
     :cond_5
-    new-instance p1, Lqb0;
+    new-instance p1, Lna0;
 
     .line 179
     .line 180
-    invoke-direct {p1, p0, p2, p3}, Lqb0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Ly81;B)V
+    invoke-direct {p1, p0, p2, p3}, Lna0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Ly71;B)V
 
     .line 181
     .line 182
     .line 183
-    invoke-static {v3, p2, p2, p1, v2}, Lbn0;->H(Lac1;Lrb1;Ldc1;Lt62;I)Lcb6;
+    invoke-static {v3, p2, p2, p1, v2}, Lx37;->J(Lbb1;Lsa1;Leb1;Ls52;I)Lk96;
 
     .line 184
     .line 185
@@ -4741,16 +4741,16 @@
 
     .line 196
     :cond_7
-    new-instance p1, Lqb0;
+    new-instance p1, Lna0;
 
     .line 197
     .line 198
-    invoke-direct {p1, p0, p2, v1}, Lqb0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Ly81;B)V
+    invoke-direct {p1, p0, p2, v1}, Lna0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Ly71;B)V
 
     .line 199
     .line 200
     .line 201
-    invoke-static {v3, p2, p2, p1, v2}, Lbn0;->H(Lac1;Lrb1;Ldc1;Lt62;I)Lcb6;
+    invoke-static {v3, p2, p2, p1, v2}, Lx37;->J(Lbb1;Lsa1;Leb1;Ls52;I)Lk96;
 
     .line 202
     .line 203
@@ -4779,16 +4779,16 @@
 
     .line 214
     :cond_9
-    new-instance p1, Lqb0;
+    new-instance p1, Lna0;
 
     .line 215
     .line 216
-    invoke-direct {p1, p0, p2, v0}, Lqb0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Ly81;B)V
+    invoke-direct {p1, p0, p2, v0}, Lna0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Ly71;B)V
 
     .line 217
     .line 218
     .line 219
-    invoke-static {v3, p2, p2, p1, v2}, Lbn0;->H(Lac1;Lrb1;Ldc1;Lt62;I)Lcb6;
+    invoke-static {v3, p2, p2, p1, v2}, Lx37;->J(Lbb1;Lsa1;Leb1;Ls52;I)Lk96;
 
     .line 220
     .line 221
@@ -4798,7 +4798,7 @@
     .line 223
     :cond_a
     :goto_2
-    iget-object p1, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->n:Lcb6;
+    iget-object p1, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->n:Lk96;
 
     .line 224
     .line 225
@@ -4806,16 +4806,16 @@
 
     .line 226
     .line 227
-    new-instance p1, Lpb0;
+    new-instance p1, Lma0;
 
     .line 228
     .line 229
-    invoke-direct {p1, p0, p2, v1}, Lpb0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Ly81;B)V
+    invoke-direct {p1, p0, p2, v1}, Lma0;-><init>(Lcom/box/app/notification/BoxPersistentNotificationService;Ly71;B)V
 
     .line 230
     .line 231
     .line 232
-    invoke-static {v3, p2, p2, p1, v2}, Lbn0;->H(Lac1;Lrb1;Ldc1;Lt62;I)Lcb6;
+    invoke-static {v3, p2, p2, p1, v2}, Lx37;->J(Lbb1;Lsa1;Leb1;Ls52;I)Lk96;
 
     .line 233
     .line 234
@@ -4824,19 +4824,19 @@
 
     .line 236
     :cond_b
-    new-instance p1, Le9;
+    new-instance p1, Lc9;
 
     .line 237
     .line 238
     const/4 p3, 0x4
 
     .line 239
-    invoke-direct {p1, p0, p2, p3}, Le9;-><init>(Ljava/lang/Object;Ly81;B)V
+    invoke-direct {p1, p0, p2, p3}, Lc9;-><init>(Ljava/lang/Object;Ly71;B)V
 
     .line 240
     .line 241
     .line 242
-    invoke-static {v3, p2, p2, p1, v2}, Lbn0;->H(Lac1;Lrb1;Ldc1;Lt62;I)Lcb6;
+    invoke-static {v3, p2, p2, p1, v2}, Lx37;->J(Lbb1;Lsa1;Leb1;Ls52;I)Lk96;
 
     .line 243
     .line 244
@@ -4844,7 +4844,7 @@
     move-result-object p1
 
     .line 246
-    iput-object p1, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->n:Lcb6;
+    iput-object p1, p0, Lcom/box/app/notification/BoxPersistentNotificationService;->n:Lk96;
 
     .line 247
     .line 248

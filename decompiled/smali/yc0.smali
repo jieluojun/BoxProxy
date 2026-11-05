@@ -1,73 +1,57 @@
-.class public final Lyc0;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Lyc0;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public j:Ljava/lang/String;
+# static fields
+.field public static final a:Lq11;
 
-.field public k:I
-
-.field public synthetic l:Ljava/lang/Object;
-
-.field public final synthetic m:Lzc0;
-
-.field public n:I
+.field public static final b:Lxc0;
 
 
 # direct methods
-.method public constructor <init>(Lzc0;Lz81;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Lyc0;->m:Lzc0;
+    new-instance v0, Lx80;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    const/16 v1, 0x13
 
     .line 4
     .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iput-object p1, p0, Lyc0;->l:Ljava/lang/Object;
-
-    .line 2
-    .line 3
-    iget p1, p0, Lyc0;->n:I
-
-    .line 4
-    .line 5
-    const/high16 v0, -0x80000000
+    invoke-direct {v0, v1}, Lx80;-><init>(B)V
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lyc0;->n:I
+    new-instance v1, Lq11;
 
     .line 9
     .line 10
-    iget-object p1, p0, Lyc0;->m:Lzc0;
+    invoke-direct {v1, v0}, Lq11;-><init>(Lo52;)V
 
     .line 11
     .line 12
-    invoke-virtual {p1, p0}, Lzc0;->b(Lz81;)Ljava/lang/Object;
-
     .line 13
+    sput-object v1, Lyc0;->a:Lq11;
+
     .line 14
     .line 15
-    move-result-object p0
+    new-instance v0, Lxc0;
 
     .line 16
-    return-object p0
+    .line 17
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    .line 18
+    .line 19
+    .line 20
+    sput-object v0, Lyc0;->b:Lxc0;
+
+    .line 21
+    .line 22
+    return-void
 .end method

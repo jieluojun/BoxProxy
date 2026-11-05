@@ -1,62 +1,56 @@
 .class public final Lc52;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Lc52;
+# instance fields
+.field public final a:Ljava/lang/Object;
+
+.field public b:Z
+
+.field public final c:Ljava/util/ArrayList;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Lc52;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    sput-object v0, Lc52;->a:Lc52;
-
-    .line 7
-    .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Landroid/content/Context;)I
+.method public constructor <init>(Ljava/util/concurrent/Executor;Lsx0;)V
     .locals 0
 
     .line 1
-    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
     .line 4
-    move-result-object p0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 5
-    invoke-virtual {p0}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
-
     .line 6
     .line 7
-    .line 8
-    move-result-object p0
+    new-instance p1, Ljava/lang/Object;
 
+    .line 8
     .line 9
-    invoke-static {p0}, Ldb;->b(Landroid/content/res/Configuration;)I
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
     .line 10
     .line 11
     .line 12
-    move-result p0
+    iput-object p1, p0, Lc52;->a:Ljava/lang/Object;
 
     .line 13
-    return p0
+    .line 14
+    new-instance p1, Ljava/util/ArrayList;
+
+    .line 15
+    .line 16
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    .line 17
+    .line 18
+    .line 19
+    iput-object p1, p0, Lc52;->c:Ljava/util/ArrayList;
+
+    .line 20
+    .line 21
+    return-void
 .end method

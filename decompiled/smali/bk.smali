@@ -1,74 +1,82 @@
 .class public final Lbk;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public j:I
+.field public final a:Lyi;
 
-.field public synthetic k:Ljava/lang/Object;
+.field public final b:Z
 
-.field public final synthetic l:Ldk;
+.field public final c:Lo52;
 
-.field public m:I
+.field public final d:Ld52;
+
+.field public final e:Ls52;
+
+.field public final f:Lt52;
+
+.field public final g:Ls52;
+
+.field public final h:Loy0;
 
 
 # direct methods
-.method public constructor <init>(Ldk;Lz81;)V
+.method public constructor <init>(Lyi;ZLo52;Ld52;Ls52;Lt52;Ls52;Loy0;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lbk;->l:Ldk;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
     .line 4
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iput-object p1, p0, Lbk;->k:Ljava/lang/Object;
-
-    .line 2
-    .line 3
-    iget p1, p0, Lbk;->m:I
-
-    .line 4
-    .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 8
-    iput p1, p0, Lbk;->m:I
-
     .line 9
     .line 10
-    iget-object p1, p0, Lbk;->l:Ldk;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 11
     .line 12
-    const/4 v0, 0x0
-
     .line 13
-    invoke-virtual {p1, v0, p0}, Ldk;->d(ZLz81;)Ljava/lang/Object;
+    iput-object p1, p0, Lbk;->a:Lyi;
 
     .line 14
     .line 15
-    .line 16
-    move-result-object p0
+    iput-boolean p2, p0, Lbk;->b:Z
 
+    .line 16
     .line 17
-    return-object p0
+    iput-object p3, p0, Lbk;->c:Lo52;
+
+    .line 18
+    .line 19
+    iput-object p4, p0, Lbk;->d:Ld52;
+
+    .line 20
+    .line 21
+    iput-object p5, p0, Lbk;->e:Ls52;
+
+    .line 22
+    .line 23
+    iput-object p6, p0, Lbk;->f:Lt52;
+
+    .line 24
+    .line 25
+    iput-object p7, p0, Lbk;->g:Ls52;
+
+    .line 26
+    .line 27
+    iput-object p8, p0, Lbk;->h:Loy0;
+
+    .line 28
+    .line 29
+    return-void
 .end method

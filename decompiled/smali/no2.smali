@@ -1,25 +1,37 @@
-.class public final Lno2;
+.class public abstract Lno2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# instance fields
-.field public final a:Lmo2;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # direct methods
-.method public constructor <init>(Lmo2;)V
-    .locals 0
+.method public static final a(Ljava/lang/String;)V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lno2;->a:Lmo2;
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
+    .line 4
     .line 5
     .line 6
-    return-void
+    throw v0
+.end method
+
+.method public static final b(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    .line 2
+    .line 3
+    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    throw v0
 .end method

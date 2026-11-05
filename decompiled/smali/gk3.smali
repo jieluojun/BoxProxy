@@ -1,473 +1,779 @@
-.class public final Lgk3;
-.super Landroid/widget/BaseAdapter;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public Lgk3;
+.super Lq4;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Landroid/view/Menu;
 
 
 # instance fields
-.field public final a:Lkk3;
-
-.field public b:I
-
-.field public c:Z
-
-.field public final d:Z
-
-.field public final e:Landroid/view/LayoutInflater;
-
-.field public final f:I
+.field public final c:Laj3;
 
 
 # direct methods
-.method public constructor <init>(Lkk3;Landroid/view/LayoutInflater;ZI)V
-    .locals 1
+.method public constructor <init>(Landroid/content/Context;Laj3;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Landroid/widget/BaseAdapter;-><init>()V
+    invoke-direct {p0, p1}, Lq4;-><init>(Landroid/content/Context;)V
 
     .line 2
     .line 3
     .line 4
-    const/4 v0, -0x1
+    if-eqz p2, :cond_0
 
     .line 5
-    iput v0, p0, Lgk3;->b:I
-
     .line 6
-    .line 7
-    iput-boolean p3, p0, Lgk3;->d:Z
+    iput-object p2, p0, Lgk3;->c:Laj3;
 
+    .line 7
     .line 8
+    return-void
+
     .line 9
-    iput-object p2, p0, Lgk3;->e:Landroid/view/LayoutInflater;
+    :cond_0
+    const-string p0, "Wrapped Object can not be null."
 
     .line 10
     .line 11
-    iput-object p1, p0, Lgk3;->a:Lkk3;
+    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
 
     .line 12
     .line 13
-    iput p4, p0, Lgk3;->f:I
-
     .line 14
-    .line 15
-    invoke-virtual {p0}, Lgk3;->a()V
+    const/4 p0, 0x0
 
-    .line 16
-    .line 17
-    .line 18
-    return-void
+    .line 15
+    throw p0
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 5
-
-    .line 1
-    iget-object v0, p0, Lgk3;->a:Lkk3;
-
-    .line 2
-    .line 3
-    iget-object v1, v0, Lkk3;->v:Lqk3;
-
-    .line 4
-    .line 5
-    if-eqz v1, :cond_1
-
-    .line 6
-    .line 7
-    invoke-virtual {v0}, Lkk3;->i()V
-
-    .line 8
-    .line 9
-    .line 10
-    iget-object v0, v0, Lkk3;->j:Ljava/util/ArrayList;
-
-    .line 11
-    .line 12
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+.method public final add(I)Landroid/view/MenuItem;
+    .locals 1
 
     .line 13
-    .line 14
-    .line 15
-    move-result v2
+    iget-object v0, p0, Lgk3;->c:Laj3;
 
-    .line 16
-    const/4 v3, 0x0
+    invoke-virtual {v0, p1}, Laj3;->add(I)Landroid/view/MenuItem;
 
-    .line 17
-    :goto_0
-    if-ge v3, v2, :cond_1
+    move-result-object p1
 
-    .line 18
-    .line 19
-    invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lq4;->j(Landroid/view/MenuItem;)Landroid/view/MenuItem;
 
-    .line 20
-    .line 21
-    .line 22
-    move-result-object v4
-
-    .line 23
-    check-cast v4, Lqk3;
-
-    .line 24
-    .line 25
-    if-ne v4, v1, :cond_0
-
-    .line 26
-    .line 27
-    iput v3, p0, Lgk3;->b:I
-
-    .line 28
-    .line 29
-    return-void
-
-    .line 30
-    :cond_0
-    add-int/lit8 v3, v3, 0x1
-
-    .line 31
-    .line 32
-    goto :goto_0
-
-    .line 33
-    :cond_1
-    const/4 v0, -0x1
-
-    .line 34
-    iput v0, p0, Lgk3;->b:I
-
-    .line 35
-    .line 36
-    return-void
-.end method
-
-.method public final b(I)Lqk3;
-    .locals 2
-
-    .line 1
-    iget-boolean v0, p0, Lgk3;->d:Z
-
-    .line 2
-    .line 3
-    iget-object v1, p0, Lgk3;->a:Lkk3;
-
-    .line 4
-    .line 5
-    if-eqz v0, :cond_0
-
-    .line 6
-    .line 7
-    invoke-virtual {v1}, Lkk3;->i()V
-
-    .line 8
-    .line 9
-    .line 10
-    iget-object v0, v1, Lkk3;->j:Ljava/util/ArrayList;
-
-    .line 11
-    .line 12
-    goto :goto_0
-
-    .line 13
-    :cond_0
-    invoke-virtual {v1}, Lkk3;->l()Ljava/util/ArrayList;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object v0
-
-    .line 17
-    :goto_0
-    iget p0, p0, Lgk3;->b:I
-
-    .line 18
-    .line 19
-    if-ltz p0, :cond_1
-
-    .line 20
-    .line 21
-    if-lt p1, p0, :cond_1
-
-    .line 22
-    .line 23
-    add-int/lit8 p1, p1, 0x1
-
-    .line 24
-    .line 25
-    :cond_1
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    .line 26
-    .line 27
-    .line 28
     move-result-object p0
 
-    .line 29
-    check-cast p0, Lqk3;
-
-    .line 30
-    .line 31
     return-object p0
 .end method
 
-.method public final getCount()I
-    .locals 2
-
-    .line 1
-    iget-boolean v0, p0, Lgk3;->d:Z
-
-    .line 2
-    .line 3
-    iget-object v1, p0, Lgk3;->a:Lkk3;
-
-    .line 4
-    .line 5
-    if-eqz v0, :cond_0
-
-    .line 6
-    .line 7
-    invoke-virtual {v1}, Lkk3;->i()V
-
-    .line 8
-    .line 9
-    .line 10
-    iget-object v0, v1, Lkk3;->j:Ljava/util/ArrayList;
-
-    .line 11
-    .line 12
-    goto :goto_0
-
-    .line 13
-    :cond_0
-    invoke-virtual {v1}, Lkk3;->l()Ljava/util/ArrayList;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object v0
+.method public final add(IIII)Landroid/view/MenuItem;
+    .locals 1
 
     .line 17
-    :goto_0
-    iget p0, p0, Lgk3;->b:I
+    iget-object v0, p0, Lgk3;->c:Laj3;
 
-    .line 18
-    .line 19
-    if-gez p0, :cond_1
+    invoke-virtual {v0, p1, p2, p3, p4}, Laj3;->add(IIII)Landroid/view/MenuItem;
 
-    .line 20
-    .line 21
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    move-result-object p1
 
-    .line 22
-    .line 23
-    .line 24
-    move-result p0
+    invoke-virtual {p0, p1}, Lq4;->j(Landroid/view/MenuItem;)Landroid/view/MenuItem;
 
-    .line 25
-    return p0
-
-    .line 26
-    :cond_1
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    .line 27
-    .line 28
-    .line 29
-    move-result p0
-
-    .line 30
-    add-int/lit8 p0, p0, -0x1
-
-    .line 31
-    .line 32
-    return p0
-.end method
-
-.method public final bridge synthetic getItem(I)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Lgk3;->b(I)Lqk3;
-
-    .line 2
-    .line 3
-    .line 4
     move-result-object p0
 
-    .line 5
     return-object p0
 .end method
 
-.method public final getItemId(I)J
-    .locals 0
+.method public final add(IIILjava/lang/CharSequence;)Landroid/view/MenuItem;
+    .locals 1
 
-    .line 1
-    int-to-long p0, p1
+    .line 14
+    iget-object v0, p0, Lgk3;->c:Laj3;
 
-    .line 2
-    return-wide p0
+    .line 15
+    invoke-virtual {v0, p1, p2, p3, p4}, Laj3;->a(IIILjava/lang/CharSequence;)Lgj3;
+
+    move-result-object p1
+
+    .line 16
+    invoke-virtual {p0, p1}, Lq4;->j(Landroid/view/MenuItem;)Landroid/view/MenuItem;
+
+    move-result-object p0
+
+    return-object p0
 .end method
 
-.method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
-    .locals 5
+.method public final add(Ljava/lang/CharSequence;)Landroid/view/MenuItem;
+    .locals 2
 
     .line 1
-    const/4 v0, 0x0
+    iget-object v0, p0, Lgk3;->c:Laj3;
 
     .line 2
-    if-nez p2, :cond_0
-
     .line 3
+    const/4 v1, 0x0
+
     .line 4
-    iget-object p2, p0, Lgk3;->e:Landroid/view/LayoutInflater;
+    invoke-virtual {v0, v1, v1, v1, p1}, Laj3;->a(IIILjava/lang/CharSequence;)Lgj3;
 
     .line 5
     .line 6
-    iget v1, p0, Lgk3;->f:I
-
     .line 7
+    move-result-object p1
+
     .line 8
-    invoke-virtual {p2, v1, p3, v0}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
+    invoke-virtual {p0, p1}, Lq4;->j(Landroid/view/MenuItem;)Landroid/view/MenuItem;
 
     .line 9
     .line 10
     .line 11
-    move-result-object p2
+    move-result-object p0
 
     .line 12
+    return-object p0
+.end method
+
+.method public final addIntentOptions(IIILandroid/content/ComponentName;[Landroid/content/Intent;Landroid/content/Intent;I[Landroid/view/MenuItem;)I
+    .locals 11
+
+    .line 1
+    move-object/from16 v0, p8
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    array-length v1, v0
+
+    .line 6
+    new-array v1, v1, [Landroid/view/MenuItem;
+
+    .line 7
+    .line 8
+    :goto_0
+    move-object v10, v1
+
+    .line 9
+    goto :goto_1
+
+    .line 10
     :cond_0
-    invoke-virtual {p0, p1}, Lgk3;->b(I)Lqk3;
+    const/4 v1, 0x0
+
+    .line 11
+    goto :goto_0
+
+    .line 12
+    :goto_1
+    iget-object v2, p0, Lgk3;->c:Laj3;
 
     .line 13
     .line 14
+    move v3, p1
+
     .line 15
-    move-result-object p3
+    move v4, p2
 
     .line 16
-    iget p3, p3, Lqk3;->b:I
+    move v5, p3
 
     .line 17
+    move-object v6, p4
+
     .line 18
-    add-int/lit8 v1, p1, -0x1
+    move-object/from16 v7, p5
 
     .line 19
     .line 20
-    if-ltz v1, :cond_1
+    move-object/from16 v8, p6
 
     .line 21
     .line 22
-    invoke-virtual {p0, v1}, Lgk3;->b(I)Lqk3;
+    move/from16 v9, p7
 
     .line 23
     .line 24
+    invoke-virtual/range {v2 .. v10}, Laj3;->addIntentOptions(IIILandroid/content/ComponentName;[Landroid/content/Intent;Landroid/content/Intent;I[Landroid/view/MenuItem;)I
+
     .line 25
-    move-result-object v1
-
     .line 26
-    iget v1, v1, Lqk3;->b:I
-
     .line 27
+    move-result p1
+
     .line 28
-    goto :goto_0
+    if-eqz v10, :cond_1
 
     .line 29
-    :cond_1
-    move v1, p3
-
     .line 30
-    :goto_0
-    move-object v2, p2
+    array-length p2, v10
 
     .line 31
-    check-cast v2, Landroidx/appcompat/view/menu/ListMenuItemView;
+    const/4 p3, 0x0
 
     .line 32
+    :goto_2
+    if-ge p3, p2, :cond_1
+
     .line 33
-    iget-object v3, p0, Lgk3;->a:Lkk3;
-
     .line 34
-    .line 35
-    invoke-virtual {v3}, Lkk3;->m()Z
+    aget-object p4, v10, p3
 
+    .line 35
     .line 36
+    invoke-virtual {p0, p4}, Lq4;->j(Landroid/view/MenuItem;)Landroid/view/MenuItem;
+
     .line 37
     .line 38
-    move-result v3
-
     .line 39
-    const/4 v4, 0x1
+    move-result-object p4
 
     .line 40
-    if-eqz v3, :cond_2
+    aput-object p4, v0, p3
 
     .line 41
     .line 42
-    if-eq p3, v1, :cond_2
+    add-int/lit8 p3, p3, 0x1
 
     .line 43
     .line 44
-    move v0, v4
+    goto :goto_2
 
     .line 45
-    :cond_2
-    invoke-virtual {v2, v0}, Landroidx/appcompat/view/menu/ListMenuItemView;->setGroupDividerEnabled(Z)V
-
-    .line 46
-    .line 47
-    .line 48
-    move-object p3, p2
-
-    .line 49
-    check-cast p3, Lol3;
-
-    .line 50
-    .line 51
-    iget-boolean v0, p0, Lgk3;->c:Z
-
-    .line 52
-    .line 53
-    if-eqz v0, :cond_3
-
-    .line 54
-    .line 55
-    invoke-virtual {v2, v4}, Landroidx/appcompat/view/menu/ListMenuItemView;->setForceShowIcon(Z)V
-
-    .line 56
-    .line 57
-    .line 58
-    :cond_3
-    invoke-virtual {p0, p1}, Lgk3;->b(I)Lqk3;
-
-    .line 59
-    .line 60
-    .line 61
-    move-result-object p0
-
-    .line 62
-    invoke-interface {p3, p0}, Lol3;->a(Lqk3;)V
-
-    .line 63
-    .line 64
-    .line 65
-    return-object p2
+    :cond_1
+    return p1
 .end method
 
-.method public final notifyDataSetChanged()V
+.method public final addSubMenu(I)Landroid/view/SubMenu;
     .locals 0
 
+    .line 9
+    iget-object p0, p0, Lgk3;->c:Laj3;
+
+    invoke-virtual {p0, p1}, Laj3;->addSubMenu(I)Landroid/view/SubMenu;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final addSubMenu(IIII)Landroid/view/SubMenu;
+    .locals 0
+
+    .line 11
+    iget-object p0, p0, Lgk3;->c:Laj3;
+
+    .line 12
+    invoke-virtual {p0, p1, p2, p3, p4}, Laj3;->addSubMenu(IIII)Landroid/view/SubMenu;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final addSubMenu(IIILjava/lang/CharSequence;)Landroid/view/SubMenu;
+    .locals 0
+
+    .line 10
+    iget-object p0, p0, Lgk3;->c:Laj3;
+
+    invoke-virtual {p0, p1, p2, p3, p4}, Laj3;->addSubMenu(IIILjava/lang/CharSequence;)Landroid/view/SubMenu;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
+.method public final addSubMenu(Ljava/lang/CharSequence;)Landroid/view/SubMenu;
+    .locals 1
+
     .line 1
-    invoke-virtual {p0}, Lgk3;->a()V
+    iget-object p0, p0, Lgk3;->c:Laj3;
 
     .line 2
     .line 3
+    const/4 v0, 0x0
+
     .line 4
-    invoke-super {p0}, Landroid/widget/BaseAdapter;->notifyDataSetChanged()V
+    invoke-virtual {p0, v0, v0, v0, p1}, Laj3;->addSubMenu(IIILjava/lang/CharSequence;)Landroid/view/SubMenu;
 
     .line 5
     .line 6
     .line 7
+    move-result-object p0
+
+    .line 8
+    return-object p0
+.end method
+
+.method public final clear()V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lq4;->b:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    check-cast v0, Lg36;
+
+    .line 4
+    .line 5
+    if-eqz v0, :cond_0
+
+    .line 6
+    .line 7
+    invoke-virtual {v0}, Lg36;->clear()V
+
+    .line 8
+    .line 9
+    .line 10
+    :cond_0
+    iget-object p0, p0, Lgk3;->c:Laj3;
+
+    .line 11
+    .line 12
+    invoke-virtual {p0}, Laj3;->clear()V
+
+    .line 13
+    .line 14
+    .line 15
     return-void
+.end method
+
+.method public final close()V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lgk3;->c:Laj3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Laj3;->close()V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final findItem(I)Landroid/view/MenuItem;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lgk3;->c:Laj3;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0, p1}, Laj3;->findItem(I)Landroid/view/MenuItem;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p1
+
+    .line 7
+    invoke-virtual {p0, p1}, Lq4;->j(Landroid/view/MenuItem;)Landroid/view/MenuItem;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p0
+
+    .line 11
+    return-object p0
+.end method
+
+.method public final getItem(I)Landroid/view/MenuItem;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lgk3;->c:Laj3;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0, p1}, Laj3;->getItem(I)Landroid/view/MenuItem;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p1
+
+    .line 7
+    invoke-virtual {p0, p1}, Lq4;->j(Landroid/view/MenuItem;)Landroid/view/MenuItem;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p0
+
+    .line 11
+    return-object p0
+.end method
+
+.method public final hasVisibleItems()Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lgk3;->c:Laj3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Laj3;->hasVisibleItems()Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final isShortcutKey(ILandroid/view/KeyEvent;)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lgk3;->c:Laj3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1, p2}, Laj3;->isShortcutKey(ILandroid/view/KeyEvent;)Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final performIdentifierAction(II)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lgk3;->c:Laj3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1, p2}, Laj3;->performIdentifierAction(II)Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final performShortcut(ILandroid/view/KeyEvent;I)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lgk3;->c:Laj3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1, p2, p3}, Laj3;->performShortcut(ILandroid/view/KeyEvent;I)Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final removeGroup(I)V
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lq4;->b:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    check-cast v0, Lg36;
+
+    .line 4
+    .line 5
+    if-nez v0, :cond_0
+
+    .line 6
+    .line 7
+    goto :goto_1
+
+    .line 8
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 9
+    :goto_0
+    iget-object v1, p0, Lq4;->b:Ljava/lang/Object;
+
+    .line 10
+    .line 11
+    check-cast v1, Lg36;
+
+    .line 12
+    .line 13
+    iget v2, v1, Lg36;->l:I
+
+    .line 14
+    .line 15
+    if-ge v0, v2, :cond_2
+
+    .line 16
+    .line 17
+    invoke-virtual {v1, v0}, Lg36;->e(I)Ljava/lang/Object;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object v1
+
+    .line 21
+    check-cast v1, Lkf6;
+
+    .line 22
+    .line 23
+    invoke-interface {v1}, Landroid/view/MenuItem;->getGroupId()I
+
+    .line 24
+    .line 25
+    .line 26
+    move-result v1
+
+    .line 27
+    if-ne v1, p1, :cond_1
+
+    .line 28
+    .line 29
+    iget-object v1, p0, Lq4;->b:Ljava/lang/Object;
+
+    .line 30
+    .line 31
+    check-cast v1, Lg36;
+
+    .line 32
+    .line 33
+    invoke-virtual {v1, v0}, Lg36;->f(I)Ljava/lang/Object;
+
+    .line 34
+    .line 35
+    .line 36
+    add-int/lit8 v0, v0, -0x1
+
+    .line 37
+    .line 38
+    :cond_1
+    add-int/lit8 v0, v0, 0x1
+
+    .line 39
+    .line 40
+    goto :goto_0
+
+    .line 41
+    :cond_2
+    :goto_1
+    iget-object p0, p0, Lgk3;->c:Laj3;
+
+    .line 42
+    .line 43
+    invoke-virtual {p0, p1}, Laj3;->removeGroup(I)V
+
+    .line 44
+    .line 45
+    .line 46
+    return-void
+.end method
+
+.method public final removeItem(I)V
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lq4;->b:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    check-cast v0, Lg36;
+
+    .line 4
+    .line 5
+    if-nez v0, :cond_0
+
+    .line 6
+    .line 7
+    goto :goto_1
+
+    .line 8
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 9
+    :goto_0
+    iget-object v1, p0, Lq4;->b:Ljava/lang/Object;
+
+    .line 10
+    .line 11
+    check-cast v1, Lg36;
+
+    .line 12
+    .line 13
+    iget v2, v1, Lg36;->l:I
+
+    .line 14
+    .line 15
+    if-ge v0, v2, :cond_2
+
+    .line 16
+    .line 17
+    invoke-virtual {v1, v0}, Lg36;->e(I)Ljava/lang/Object;
+
+    .line 18
+    .line 19
+    .line 20
+    move-result-object v1
+
+    .line 21
+    check-cast v1, Lkf6;
+
+    .line 22
+    .line 23
+    invoke-interface {v1}, Landroid/view/MenuItem;->getItemId()I
+
+    .line 24
+    .line 25
+    .line 26
+    move-result v1
+
+    .line 27
+    if-ne v1, p1, :cond_1
+
+    .line 28
+    .line 29
+    iget-object v1, p0, Lq4;->b:Ljava/lang/Object;
+
+    .line 30
+    .line 31
+    check-cast v1, Lg36;
+
+    .line 32
+    .line 33
+    invoke-virtual {v1, v0}, Lg36;->f(I)Ljava/lang/Object;
+
+    .line 34
+    .line 35
+    .line 36
+    goto :goto_1
+
+    .line 37
+    :cond_1
+    add-int/lit8 v0, v0, 0x1
+
+    .line 38
+    .line 39
+    goto :goto_0
+
+    .line 40
+    :cond_2
+    :goto_1
+    iget-object p0, p0, Lgk3;->c:Laj3;
+
+    .line 41
+    .line 42
+    invoke-virtual {p0, p1}, Laj3;->removeItem(I)V
+
+    .line 43
+    .line 44
+    .line 45
+    return-void
+.end method
+
+.method public final setGroupCheckable(IZZ)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lgk3;->c:Laj3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1, p2, p3}, Laj3;->setGroupCheckable(IZZ)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final setGroupEnabled(IZ)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lgk3;->c:Laj3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1, p2}, Laj3;->setGroupEnabled(IZ)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final setGroupVisible(IZ)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lgk3;->c:Laj3;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1, p2}, Laj3;->setGroupVisible(IZ)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final setQwertyMode(Z)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lgk3;->c:Laj3;
+
+    .line 2
+    .line 3
+    invoke-interface {p0, p1}, Landroid/view/Menu;->setQwertyMode(Z)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final size()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lgk3;->c:Laj3;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Laj3;->f:Ljava/util/ArrayList;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
 .end method

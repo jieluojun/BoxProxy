@@ -1,10 +1,10 @@
 .class public final Lcom/materialkolor/ktx/BlendKt;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # direct methods
-.method public static final blend-IbeAmgk(Ld30;JJF)J
+.method public static final blend-IbeAmgk(Lb20;JJF)J
     .locals 0
 
     .line 1
@@ -13,7 +13,7 @@
     .line 2
     .line 3
     .line 4
-    invoke-static {p1, p2}, Lzm;->c0(J)I
+    invoke-static {p1, p2}, Lmt6;->e0(J)I
 
     .line 5
     .line 6
@@ -21,7 +21,7 @@
     move-result p0
 
     .line 8
-    invoke-static {p3, p4}, Lzm;->c0(J)I
+    invoke-static {p3, p4}, Lmt6;->e0(J)I
 
     .line 9
     .line 10
@@ -32,7 +32,7 @@
     float-to-double p2, p5
 
     .line 13
-    invoke-static {p2, p3, p0, p1}, Ld30;->a(DII)I
+    invoke-static {p2, p3, p0, p1}, Lb20;->a(DII)I
 
     .line 14
     .line 15
@@ -57,7 +57,7 @@
     .locals 6
 
     .line 1
-    sget-object v0, Ld30;->a:Ld30;
+    sget-object v0, Lb20;->a:Lb20;
 
     .line 2
     .line 3
@@ -70,7 +70,7 @@
     move v5, p4
 
     .line 6
-    invoke-static/range {v0 .. v5}, Lcom/materialkolor/ktx/BlendKt;->blend-IbeAmgk(Ld30;JJF)J
+    invoke-static/range {v0 .. v5}, Lcom/materialkolor/ktx/BlendKt;->blend-IbeAmgk(Lb20;JJF)J
 
     .line 7
     .line 8
@@ -109,7 +109,7 @@
     return-wide p0
 .end method
 
-.method public static final blendHue-IbeAmgk(Ld30;JJF)J
+.method public static final blendHue-IbeAmgk(Lb20;JJF)J
     .locals 6
 
     .line 1
@@ -118,7 +118,7 @@
     .line 2
     .line 3
     .line 4
-    invoke-static {p1, p2}, Lzm;->c0(J)I
+    invoke-static {p1, p2}, Lmt6;->e0(J)I
 
     .line 5
     .line 6
@@ -126,7 +126,7 @@
     move-result p0
 
     .line 8
-    invoke-static {p3, p4}, Lzm;->c0(J)I
+    invoke-static {p3, p4}, Lmt6;->e0(J)I
 
     .line 9
     .line 10
@@ -137,7 +137,7 @@
     float-to-double p2, p5
 
     .line 13
-    invoke-static {p2, p3, p0, p1}, Ld30;->a(DII)I
+    invoke-static {p2, p3, p0, p1}, Lb20;->a(DII)I
 
     .line 14
     .line 15
@@ -145,7 +145,7 @@
     move-result p1
 
     .line 17
-    invoke-static {p1}, Lbn0;->x(I)Lki0;
+    invoke-static {p1}, Lx37;->w(I)Lih0;
 
     .line 18
     .line 19
@@ -153,7 +153,7 @@
     move-result-object p1
 
     .line 21
-    invoke-static {p0}, Lbn0;->x(I)Lki0;
+    invoke-static {p0}, Lx37;->w(I)Lih0;
 
     .line 22
     .line 23
@@ -161,15 +161,15 @@
     move-result-object p2
 
     .line 25
-    iget-wide v0, p1, Lki0;->a:D
+    iget-wide v0, p1, Lih0;->a:D
 
     .line 26
     .line 27
-    iget-wide v2, p2, Lki0;->b:D
+    iget-wide v2, p2, Lih0;->b:D
 
     .line 28
     .line 29
-    invoke-static {p0}, Lqe1;->Q(I)D
+    invoke-static {p0}, Los2;->G(I)D
 
     .line 30
     .line 31
@@ -177,7 +177,7 @@
     move-result-wide v4
 
     .line 33
-    invoke-static/range {v0 .. v5}, Lbf0;->R(DDD)I
+    invoke-static/range {v0 .. v5}, Lq50;->W(DDD)I
 
     .line 34
     .line 35
@@ -185,12 +185,12 @@
     move-result p0
 
     .line 37
-    invoke-static {p0}, Lbn0;->x(I)Lki0;
+    invoke-static {p0}, Lx37;->w(I)Lih0;
 
     .line 38
     .line 39
     .line 40
-    invoke-static {p0}, Lqe1;->Q(I)D
+    invoke-static {p0}, Los2;->G(I)D
 
     .line 41
     .line 42
@@ -212,7 +212,7 @@
     .locals 6
 
     .line 1
-    sget-object v0, Ld30;->a:Ld30;
+    sget-object v0, Lb20;->a:Lb20;
 
     .line 2
     .line 3
@@ -225,7 +225,7 @@
     move v5, p4
 
     .line 6
-    invoke-static/range {v0 .. v5}, Lcom/materialkolor/ktx/BlendKt;->blendHue-IbeAmgk(Ld30;JJF)J
+    invoke-static/range {v0 .. v5}, Lcom/materialkolor/ktx/BlendKt;->blendHue-IbeAmgk(Lb20;JJF)J
 
     .line 7
     .line 8

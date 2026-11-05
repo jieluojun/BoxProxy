@@ -1,36 +1,48 @@
-.class public abstract synthetic Lli6;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lli6;
+.super Ljo3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:I
+# instance fields
+.field public x:Z
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
     .line 1
-    invoke-static {}, Ljava/lang/Runtime;->getRuntime()Ljava/lang/Runtime;
+    const-string p0, "<tail>"
 
     .line 2
     .line 3
+    return-object p0
+.end method
+
+.method public final w1()V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    iput-boolean v0, p0, Lli6;->x:Z
+
+    .line 3
     .line 4
-    move-result-object v0
+    return-void
+.end method
 
-    .line 5
-    invoke-virtual {v0}, Ljava/lang/Runtime;->availableProcessors()I
+.method public final x1()V
+    .locals 1
 
-    .line 6
-    .line 7
-    .line 8
-    move-result v0
+    .line 1
+    const/4 v0, 0x0
 
-    .line 9
-    sput v0, Lli6;->a:I
+    .line 2
+    iput-boolean v0, p0, Lli6;->x:Z
 
-    .line 10
-    .line 11
+    .line 3
+    .line 4
     return-void
 .end method

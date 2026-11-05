@@ -1,150 +1,24 @@
-.class public final Lo80;
+.class public interface abstract Lo80;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lq90;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final INSTANCE:Lo80;
-
-.field public static final synthetic a:Lc23;
+.field public static final Companion:Lh70;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
-
-    .line 1
-    new-instance v0, Lo80;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    sput-object v0, Lo80;->INSTANCE:Lo80;
-
-    .line 7
-    .line 8
-    new-instance v0, Lev;
-
-    .line 9
-    .line 10
-    const/16 v1, 0x1c
-
-    .line 11
-    .line 12
-    invoke-direct {v0, v1}, Lev;-><init>(B)V
-
-    .line 13
-    .line 14
-    .line 15
-    sget-object v1, Lr53;->j:Lr53;
-
-    .line 16
-    .line 17
-    invoke-static {v1, v0}, Lcs;->H(Lr53;Le62;)Lc23;
-
-    .line 18
-    .line 19
-    .line 20
-    move-result-object v0
-
-    .line 21
-    sput-object v0, Lo80;->a:Lc23;
-
-    .line 22
-    .line 23
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
     .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of p0, p1, Lo80;
-
-    .line 6
-    .line 7
-    if-nez p0, :cond_1
-
-    .line 8
-    .line 9
-    const/4 p0, 0x0
-
-    .line 10
-    return p0
-
-    .line 11
-    :cond_1
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    .line 1
-    const p0, 0x36bcafde
+    sget-object v0, Lh70;->a:Lh70;
 
     .line 2
     .line 3
-    .line 4
-    return p0
-.end method
-
-.method public final serializer()Lqy2;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lqy2;"
-        }
-    .end annotation
-
-    .line 1
-    sget-object p0, Lo80;->a:Lc23;
-
-    .line 2
-    .line 3
-    invoke-interface {p0}, Lc23;->getValue()Ljava/lang/Object;
+    sput-object v0, Lo80;->Companion:Lh70;
 
     .line 4
     .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Lqy2;
-
-    .line 8
-    .line 9
-    return-object p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    const-string p0, "Main"
-
-    .line 2
-    .line 3
-    return-object p0
+    return-void
 .end method

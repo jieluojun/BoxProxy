@@ -1,14 +1,20 @@
 .class public final Lyn2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Ljava/util/HashMap;
+.field public final a:Lx9;
+
+.field public b:I
+
+.field public c:Z
+
+.field public final d:Landroid/view/GestureDetector;
 
 
 # direct methods
-.method public constructor <init>()V
+.method public constructor <init>(Landroid/content/Context;Lx9;)V
     .locals 1
 
     .line 1
@@ -17,18 +23,38 @@
     .line 2
     .line 3
     .line 4
-    new-instance v0, Ljava/util/HashMap;
+    iput-object p2, p0, Lyn2;->a:Lx9;
 
     .line 5
     .line 6
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    const/4 p2, 0x0
 
     .line 7
+    iput p2, p0, Lyn2;->b:I
+
     .line 8
     .line 9
-    iput-object v0, p0, Lyn2;->a:Ljava/util/HashMap;
+    new-instance p2, Landroid/view/GestureDetector;
 
     .line 10
     .line 11
+    new-instance v0, Lxn2;
+
+    .line 12
+    .line 13
+    invoke-direct {v0, p0}, Lxn2;-><init>(Lyn2;)V
+
+    .line 14
+    .line 15
+    .line 16
+    invoke-direct {p2, p1, v0}, Landroid/view/GestureDetector;-><init>(Landroid/content/Context;Landroid/view/GestureDetector$OnGestureListener;)V
+
+    .line 17
+    .line 18
+    .line 19
+    iput-object p2, p0, Lyn2;->d:Landroid/view/GestureDetector;
+
+    .line 20
+    .line 21
     return-void
 .end method

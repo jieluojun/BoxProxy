@@ -1,28 +1,57 @@
 .class public final Lzb4;
-.super Lvp3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lj82;
+.super Lwc4;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public x:Lp62;
+# static fields
+.field public static final c:Lzb4;
 
 
-# virtual methods
-.method public final H(La84;)V
-    .locals 0
+# direct methods
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    iget-object p0, p0, Lzb4;->x:Lp62;
+    new-instance v0, Lzb4;
 
     .line 2
     .line 3
-    invoke-interface {p0, p1}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v1, 0x0
 
     .line 4
+    const/4 v2, 0x3
+
     .line 5
+    invoke-direct {v0, v1, v1, v2}, Lwc4;-><init>(III)V
+
     .line 6
+    .line 7
+    .line 8
+    sput-object v0, Lzb4;->c:Lzb4;
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lnp2;Lqu;Lw56;Lca5;Lyc4;)V
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    invoke-static {p3, p2, p0}, Lw23;->Q(Lw56;Lqu;I)V
+
+    .line 3
+    .line 4
+    .line 5
+    invoke-virtual {p3}, Lw56;->i()V
+
+    .line 6
+    .line 7
+    .line 8
     return-void
 .end method

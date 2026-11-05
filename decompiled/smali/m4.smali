@@ -1,68 +1,85 @@
 .class public final Lm4;
-.super Ljava/io/IOException;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Landroid/text/style/ClickableSpan;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# instance fields
+.field public final j:I
+
+.field public final k:Ld5;
+
+.field public final l:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/File;)V
-    .locals 2
+.method public constructor <init>(ILd5;I)V
+    .locals 0
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    new-instance v0, Ljava/lang/StringBuilder;
+    iput p1, p0, Lm4;->j:I
 
     .line 5
     .line 6
-    invoke-virtual {p1}, Ljava/io/File;->toString()Ljava/lang/String;
+    iput-object p2, p0, Lm4;->k:Ld5;
 
     .line 7
     .line 8
-    .line 9
-    move-result-object p1
+    iput p3, p0, Lm4;->l:I
 
+    .line 9
     .line 10
-    invoke-direct {v0, p1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onClick(Landroid/view/View;)V
+    .locals 2
+
+    .line 1
+    new-instance p1, Landroid/os/Bundle;
+
+    .line 2
+    .line 3
+    invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    const-string v0, "ACCESSIBILITY_CLICKABLE_SPAN_ID"
+
+    .line 7
+    .line 8
+    iget v1, p0, Lm4;->j:I
+
+    .line 9
+    .line 10
+    invoke-virtual {p1, v0, v1}, Landroid/os/BaseBundle;->putInt(Ljava/lang/String;I)V
 
     .line 11
     .line 12
     .line 13
-    const-string p1, ": "
+    iget v0, p0, Lm4;->l:I
 
     .line 14
     .line 15
-    const-string v1, "Cannot list files in a directory"
+    iget-object p0, p0, Lm4;->k:Ld5;
 
     .line 16
     .line 17
-    invoke-virtual {p1, v1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    iget-object p0, p0, Ld5;->a:Landroid/view/accessibility/AccessibilityNodeInfo;
 
     .line 18
     .line 19
+    invoke-virtual {p0, v0, p1}, Landroid/view/accessibility/AccessibilityNodeInfo;->performAction(ILandroid/os/Bundle;)Z
+
     .line 20
-    move-result-object p1
-
     .line 21
-    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 22
-    .line 23
-    .line 24
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 25
-    .line 26
-    .line 27
-    move-result-object p1
-
-    .line 28
-    invoke-direct {p0, p1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    .line 29
-    .line 30
-    .line 31
     return-void
 .end method

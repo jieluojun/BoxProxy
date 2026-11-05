@@ -1,41 +1,11 @@
-.class public final Lqa1;
+.class public interface abstract Lqa1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lcb4;
-
-
-# instance fields
-.field public final synthetic a:J
-
-
-# direct methods
-.method public constructor <init>(J)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-wide p1, p0, Lqa1;->a:J
-
-    .line 5
-    .line 6
-    return-void
-.end method
+.implements Lsa1;
 
 
 # virtual methods
-.method public final a()J
-    .locals 2
-
-    .line 1
-    iget-wide v0, p0, Lqa1;->a:J
-
-    .line 2
-    .line 3
-    return-wide v0
+.method public abstract getKey()Lra1;
 .end method

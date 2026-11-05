@@ -1,124 +1,187 @@
-.class public final Lzt2;
-.super Lfd5;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public Lzt2;
+.super Leu2;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public j:B
-
-.field public final synthetic k:Lt62;
-
-.field public final synthetic l:Ly81;
+.field public final l:Z
 
 
 # direct methods
-.method public constructor <init>(Ly81;Ly81;Lt62;)V
-    .locals 0
+.method public constructor <init>(Lxt2;)V
+    .locals 6
 
     .line 1
-    iput-object p3, p0, Lzt2;->k:Lt62;
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    iput-object p2, p0, Lzt2;->l:Ly81;
+    invoke-direct {p0, v0}, Leu2;-><init>(Z)V
 
+    .line 3
     .line 4
     .line 5
-    invoke-direct {p0, p1}, Lfd5;-><init>(Ly81;)V
+    invoke-virtual {p0, p1}, Leu2;->R(Lxt2;)V
 
     .line 6
     .line 7
     .line 8
+    sget-object p1, Lvv;->a:Lsun/misc/Unsafe;
+
+    .line 9
+    .line 10
+    sget-wide v1, Leu2;->j:J
+
+    .line 11
+    .line 12
+    invoke-virtual {p1, p0, v1, v2}, Lsun/misc/Unsafe;->getObjectVolatile(Ljava/lang/Object;J)Ljava/lang/Object;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p1
+
+    .line 16
+    check-cast p1, Ltn0;
+
+    .line 17
+    .line 18
+    instance-of v3, p1, Lun0;
+
+    .line 19
+    .line 20
+    const/4 v4, 0x0
+
+    .line 21
+    if-eqz v3, :cond_0
+
+    .line 22
+    .line 23
+    check-cast p1, Lun0;
+
+    .line 24
+    .line 25
+    goto :goto_0
+
+    .line 26
+    :cond_0
+    move-object p1, v4
+
+    .line 27
+    :goto_0
+    const/4 v3, 0x0
+
+    .line 28
+    if-eqz p1, :cond_3
+
+    .line 29
+    .line 30
+    invoke-virtual {p1}, Lau2;->l()Leu2;
+
+    .line 31
+    .line 32
+    .line 33
+    move-result-object p1
+
+    .line 34
+    :goto_1
+    invoke-virtual {p1}, Leu2;->L()Z
+
+    .line 35
+    .line 36
+    .line 37
+    move-result v5
+
+    .line 38
+    if-eqz v5, :cond_1
+
+    .line 39
+    .line 40
+    goto :goto_3
+
+    .line 41
+    :cond_1
+    sget-object v5, Lvv;->a:Lsun/misc/Unsafe;
+
+    .line 42
+    .line 43
+    invoke-virtual {v5, p1, v1, v2}, Lsun/misc/Unsafe;->getObjectVolatile(Ljava/lang/Object;J)Ljava/lang/Object;
+
+    .line 44
+    .line 45
+    .line 46
+    move-result-object p1
+
+    .line 47
+    check-cast p1, Ltn0;
+
+    .line 48
+    .line 49
+    instance-of v5, p1, Lun0;
+
+    .line 50
+    .line 51
+    if-eqz v5, :cond_2
+
+    .line 52
+    .line 53
+    check-cast p1, Lun0;
+
+    .line 54
+    .line 55
+    goto :goto_2
+
+    .line 56
+    :cond_2
+    move-object p1, v4
+
+    .line 57
+    :goto_2
+    if-eqz p1, :cond_3
+
+    .line 58
+    .line 59
+    invoke-virtual {p1}, Lau2;->l()Leu2;
+
+    .line 60
+    .line 61
+    .line 62
+    move-result-object p1
+
+    .line 63
+    goto :goto_1
+
+    .line 64
+    :cond_3
+    move v0, v3
+
+    .line 65
+    :goto_3
+    iput-boolean v0, p0, Lzt2;->l:Z
+
+    .line 66
+    .line 67
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final L()Z
+    .locals 0
 
     .line 1
-    iget-byte v0, p0, Lzt2;->j:B
+    iget-boolean p0, p0, Lzt2;->l:Z
 
     .line 2
     .line 3
-    const/4 v1, 0x2
+    return p0
+.end method
 
-    .line 4
-    const/4 v2, 0x1
+.method public final M()Z
+    .locals 0
 
-    .line 5
-    if-eqz v0, :cond_1
+    .line 1
+    const/4 p0, 0x1
 
-    .line 6
-    .line 7
-    if-ne v0, v2, :cond_0
-
-    .line 8
-    .line 9
-    iput-byte v1, p0, Lzt2;->j:B
-
-    .line 10
-    .line 11
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 12
-    .line 13
-    .line 14
-    return-object p1
-
-    .line 15
-    :cond_0
-    const-string p0, "This coroutine had already completed"
-
-    .line 16
-    .line 17
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
-
-    .line 18
-    .line 19
-    .line 20
-    const/4 p0, 0x0
-
-    .line 21
-    return-object p0
-
-    .line 22
-    :cond_1
-    iput-byte v2, p0, Lzt2;->j:B
-
-    .line 23
-    .line 24
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 25
-    .line 26
-    .line 27
-    iget-object p1, p0, Lzt2;->k:Lt62;
-
-    .line 28
-    .line 29
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 30
-    .line 31
-    .line 32
-    invoke-static {v1, p1}, Lg17;->I(ILjava/lang/Object;)V
-
-    .line 33
-    .line 34
-    .line 35
-    iget-object v0, p0, Lzt2;->l:Ly81;
-
-    .line 36
-    .line 37
-    invoke-interface {p1, v0, p0}, Lt62;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 38
-    .line 39
-    .line 40
-    move-result-object p0
-
-    .line 41
-    return-object p0
+    .line 2
+    return p0
 .end method

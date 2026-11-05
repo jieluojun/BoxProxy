@@ -1,74 +1,72 @@
-.class public abstract synthetic Ljp3;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Ljp3;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final synthetic a:[I
+# instance fields
+.field public j:Lkp3;
+
+.field public k:Lz85;
+
+.field public l:Ly85;
+
+.field public m:Lz85;
+
+.field public synthetic n:Ljava/lang/Object;
+
+.field public o:I
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 4
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 7
 
     .line 1
-    invoke-static {}, Luv0;->values()[Luv0;
+    iput-object p1, p0, Ljp3;->n:Ljava/lang/Object;
 
     .line 2
     .line 3
-    .line 4
-    move-result-object v0
+    iget p1, p0, Ljp3;->o:I
 
+    .line 4
     .line 5
-    array-length v0, v0
+    const/high16 v0, -0x80000000
 
     .line 6
-    new-array v0, v0, [I
-
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    const/4 v1, 0x3
+    iput p1, p0, Ljp3;->o:I
 
     .line 9
-    const/4 v2, 0x1
-
     .line 10
-    :try_start_0
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    const/4 v3, 0x0
 
     .line 11
-    .line 12
-    :catch_0
-    const/4 v2, 0x4
+    const-wide/16 v4, 0x0
 
+    .line 12
     .line 13
-    const/4 v3, 0x2
+    const/4 v0, 0x0
 
     .line 14
-    :try_start_1
-    aput v3, v0, v2
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+    const/4 v1, 0x0
 
     .line 15
+    const/4 v2, 0x0
+
     .line 16
-    :catch_1
-    const/4 v2, 0x5
+    move-object v6, p0
 
     .line 17
-    :try_start_2
-    aput v1, v0, v2
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+    invoke-static/range {v0 .. v6}, Lkp3;->g(Lkp3;Lz85;Ly85;Lz85;JLz71;)Ljava/lang/Object;
 
     .line 18
     .line 19
-    :catch_2
-    sput-object v0, Ljp3;->a:[I
-
     .line 20
+    move-result-object p0
+
     .line 21
-    return-void
+    return-object p0
 .end method

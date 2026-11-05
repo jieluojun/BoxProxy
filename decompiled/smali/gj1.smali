@@ -1,74 +1,171 @@
 .class public final Lgj1;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ler5;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# static fields
+.field public static final synthetic n:J
 
 
 # instance fields
-.field public j:F
-
-.field public synthetic k:Ljava/lang/Object;
-
-.field public final synthetic l:Lol;
-
-.field public m:I
+.field private volatile synthetic _decision$volatile:I
 
 
 # direct methods
-.method public constructor <init>(Lol;Ly81;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    iput-object p1, p0, Lgj1;->l:Lol;
+    sget-object v0, Lvv;->a:Lsun/misc/Unsafe;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    const-class v1, Lgj1;
 
     .line 4
     .line 5
+    const-string v2, "_decision$volatile"
+
     .line 6
+    .line 7
+    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v1
+
+    .line 11
+    invoke-virtual {v0, v1}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-wide v0
+
+    .line 15
+    sput-wide v0, Lgj1;->n:J
+
+    .line 16
+    .line 17
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final s(Ljava/lang/Object;)V
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lgj1;->k:Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Lgj1;->u(Ljava/lang/Object;)V
 
     .line 2
     .line 3
-    iget p1, p0, Lgj1;->m:I
+    .line 4
+    return-void
+.end method
+
+.method public final u(Ljava/lang/Object;)V
+    .locals 6
+
+    .line 1
+    :goto_0
+    sget-object v0, Lvv;->a:Lsun/misc/Unsafe;
+
+    .line 2
+    .line 3
+    sget-wide v2, Lgj1;->n:J
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    invoke-virtual {v0, p0, v2, v3}, Lsun/misc/Unsafe;->getIntVolatile(Ljava/lang/Object;J)I
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lgj1;->m:I
+    move-result v1
 
     .line 9
-    .line 10
-    iget-object p1, p0, Lgj1;->l:Lol;
+    if-eqz v1, :cond_1
 
+    .line 10
     .line 11
+    const/4 v0, 0x1
+
     .line 12
-    const/4 v0, 0x0
+    if-ne v1, v0, :cond_0
 
     .line 13
-    invoke-virtual {p1, v0, p0}, Lol;->a(Lxx3;Ly81;)Ljava/lang/Object;
-
     .line 14
+    iget-object p0, p0, Ler5;->m:Ly71;
+
     .line 15
     .line 16
-    move-result-object p0
+    invoke-static {p0}, Loc7;->L(Ly71;)Ly71;
 
     .line 17
-    return-object p0
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    invoke-static {p1}, Lr87;->Q(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 21
+    .line 22
+    .line 23
+    move-result-object p1
+
+    .line 24
+    invoke-static {p0, p1}, Lxa;->n0(Ly71;Ljava/lang/Object;)V
+
+    .line 25
+    .line 26
+    .line 27
+    return-void
+
+    .line 28
+    :cond_0
+    const-string p0, "Already resumed"
+
+    .line 29
+    .line 30
+    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
+
+    .line 31
+    .line 32
+    .line 33
+    return-void
+
+    .line 34
+    :cond_1
+    const/4 v4, 0x0
+
+    .line 35
+    const/4 v5, 0x2
+
+    .line 36
+    move-object v1, p0
+
+    .line 37
+    invoke-virtual/range {v0 .. v5}, Lsun/misc/Unsafe;->compareAndSwapInt(Ljava/lang/Object;JII)Z
+
+    .line 38
+    .line 39
+    .line 40
+    move-result p0
+
+    .line 41
+    if-eqz p0, :cond_2
+
+    .line 42
+    .line 43
+    return-void
+
+    .line 44
+    :cond_2
+    move-object p0, v1
+
+    .line 45
+    goto :goto_0
 .end method

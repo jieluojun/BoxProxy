@@ -1,129 +1,158 @@
 .class public final synthetic Lw15;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Le62;
+.implements Ld52;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final synthetic j:Z
 
-.field public final synthetic k:Ln45;
+.field public final synthetic k:Ln25;
 
-.field public final synthetic l:La45;
+.field public final synthetic l:La35;
+
+.field public final synthetic m:Ljava/util/List;
+
+.field public final synthetic n:I
+
+.field public final synthetic o:Z
+
+.field public final synthetic p:Ljava/util/Map;
+
+.field public final synthetic q:Las3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ln45;La45;B)V
+.method public synthetic constructor <init>(ZLn25;La35;Ljava/util/List;IZLjava/util/Map;Las3;)V
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Lw15;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lw15;->k:Ln45;
-
     .line 4
+    iput-boolean p1, p0, Lw15;->j:Z
+
     .line 5
-    iput-object p2, p0, Lw15;->l:La45;
-
     .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lw15;->k:Ln25;
 
+    .line 7
     .line 8
+    iput-object p3, p0, Lw15;->l:La35;
+
     .line 9
     .line 10
+    iput-object p4, p0, Lw15;->m:Ljava/util/List;
+
+    .line 11
+    .line 12
+    iput p5, p0, Lw15;->n:I
+
+    .line 13
+    .line 14
+    iput-boolean p6, p0, Lw15;->o:Z
+
+    .line 15
+    .line 16
+    iput-object p7, p0, Lw15;->p:Ljava/util/Map;
+
+    .line 17
+    .line 18
+    iput-object p8, p0, Lw15;->q:Las3;
+
+    .line 19
+    .line 20
     return-void
 .end method
 
 
 # virtual methods
 .method public final invoke()Ljava/lang/Object;
-    .locals 3
+    .locals 5
 
     .line 1
-    iget-byte v0, p0, Lw15;->j:B
+    iget-object v0, p0, Lw15;->k:Ln25;
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    iget-object v0, v0, Ln25;->a:Ljava/lang/String;
 
     .line 4
     .line 5
-    iget-object v2, p0, Lw15;->l:La45;
+    iget-boolean v1, p0, Lw15;->j:Z
 
     .line 6
     .line 7
-    iget-object p0, p0, Lw15;->k:Ln45;
+    iget-object v2, p0, Lw15;->l:La35;
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_0
+    if-eqz v1, :cond_0
 
     .line 10
     .line 11
+    iget-object v1, p0, Lw15;->p:Ljava/util/Map;
+
     .line 12
-    iget-object v0, v2, La45;->a:Ljava/lang/String;
-
     .line 13
-    .line 14
-    invoke-virtual {p0, v0}, Ln45;->t(Ljava/lang/String;)V
+    iget-object p0, p0, Lw15;->q:Las3;
 
+    .line 14
     .line 15
+    invoke-static {v1, v2, p0, v0}, Lyd0;->C(Ljava/util/Map;La35;Las3;Ljava/lang/String;)V
+
     .line 16
     .line 17
-    return-object v1
-
     .line 18
-    :pswitch_0
-    iget-object v0, v2, La45;->a:Ljava/lang/String;
+    goto :goto_0
 
     .line 19
-    .line 20
-    invoke-virtual {p0, v0}, Ln45;->t(Ljava/lang/String;)V
+    :cond_0
+    invoke-virtual {v2}, La35;->e()Ljava/util/List;
 
+    .line 20
     .line 21
     .line 22
+    move-result-object v1
+
     .line 23
-    return-object v1
+    iget-object v3, p0, Lw15;->m:Ljava/util/List;
 
     .line 24
-    :pswitch_1
-    iget-object v0, v2, La45;->a:Ljava/lang/String;
-
     .line 25
-    .line 26
-    invoke-virtual {p0, v0}, Ln45;->t(Ljava/lang/String;)V
+    iget v4, p0, Lw15;->n:I
 
+    .line 26
     .line 27
+    iget-boolean p0, p0, Lw15;->o:Z
+
     .line 28
     .line 29
-    return-object v1
+    invoke-static {v1, v0, v3, v4, p0}, Lqx5;->m0(Ljava/util/List;Ljava/lang/String;Ljava/util/List;IZ)Ljava/util/List;
 
     .line 30
-    :pswitch_2
-    iget-object v0, v2, La45;->a:Ljava/lang/String;
-
     .line 31
     .line 32
-    invoke-virtual {p0, v0}, Ln45;->t(Ljava/lang/String;)V
+    move-result-object p0
 
     .line 33
+    iget-object v0, v2, La35;->d:Las3;
+
     .line 34
     .line 35
-    return-object v1
+    invoke-interface {v0, p0}, Las3;->setValue(Ljava/lang/Object;)V
 
     .line 36
-    nop
-
     .line 37
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 38
+    :goto_0
+    sget-object p0, Lk27;->a:Lk27;
+
+    .line 39
+    .line 40
+    return-object p0
 .end method

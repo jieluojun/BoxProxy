@@ -1,104 +1,124 @@
-.class public abstract synthetic Lsb4;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lsb4;
+.super Lwc4;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
-.field public static final synthetic a:[I
+.field public static final c:Lsb4;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 3
+    .locals 4
 
     .line 1
-    invoke-static {}, Ls63;->values()[Ls63;
+    new-instance v0, Lsb4;
 
     .line 2
     .line 3
+    const/4 v1, 0x2
+
     .line 4
-    move-result-object v0
+    const/4 v2, 0x1
 
     .line 5
-    array-length v0, v0
+    const/4 v3, 0x0
 
     .line 6
-    new-array v0, v0, [I
+    invoke-direct {v0, v3, v1, v2}, Lwc4;-><init>(III)V
 
     .line 7
     .line 8
-    :try_start_0
-    sget-object v1, Ls63;->ON_START:Ls63;
+    .line 9
+    sput-object v0, Lsb4;->c:Lsb4;
+
+    .line 10
+    .line 11
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Lnp2;Lqu;Lw56;Lca5;Lyc4;)V
+    .locals 1
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    invoke-virtual {p1, p0}, Lnp2;->c(I)Ljava/lang/Object;
+
+    .line 3
+    .line 4
+    .line 5
+    move-result-object p3
+
+    .line 6
+    check-cast p3, Lxq2;
+
+    .line 7
+    .line 8
+    iget p3, p3, Lxq2;->a:I
 
     .line 9
     .line 10
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    const/4 p4, 0x1
 
     .line 11
+    invoke-virtual {p1, p4}, Lnp2;->c(I)Ljava/lang/Object;
+
     .line 12
     .line 13
-    move-result v1
-
     .line 14
-    const/4 v2, 0x1
+    move-result-object p1
 
     .line 15
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+    check-cast p1, Ljava/util/List;
 
     .line 16
     .line 17
-    :catch_0
-    :try_start_1
-    sget-object v1, Ls63;->ON_STOP:Ls63;
+    invoke-interface {p1}, Ljava/util/Collection;->size()I
 
     .line 18
     .line 19
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
     .line 20
-    .line 21
-    .line 22
-    move-result v1
+    move-result p4
 
+    .line 21
+    :goto_0
+    if-ge p0, p4, :cond_0
+
+    .line 22
     .line 23
-    const/4 v2, 0x2
+    invoke-interface {p1, p0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     .line 24
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
     .line 25
     .line 26
-    :catch_1
-    :try_start_2
-    sget-object v1, Ls63;->ON_DESTROY:Ls63;
+    move-result-object p5
 
     .line 27
-    .line 28
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    add-int v0, p3, p0
 
+    .line 28
     .line 29
+    invoke-interface {p2, v0, p5}, Lqu;->h(ILjava/lang/Object;)V
+
     .line 30
     .line 31
-    move-result v1
-
     .line 32
-    const/4 v2, 0x3
+    invoke-interface {p2, v0, p5}, Lqu;->k(ILjava/lang/Object;)V
 
     .line 33
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
     .line 34
     .line 35
-    :catch_2
-    sput-object v0, Lsb4;->a:[I
+    add-int/lit8 p0, p0, 0x1
 
     .line 36
     .line 37
+    goto :goto_0
+
+    .line 38
+    :cond_0
     return-void
 .end method

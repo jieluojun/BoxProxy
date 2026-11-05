@@ -1,416 +1,495 @@
 .class public final Lwj3;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lxn1;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Lsc1;
+.field public final v:B
 
-.field public final b:F
+.field public final w:B
 
-.field public c:F
+.field public x:Lfj3;
 
-.field public d:F
-
-.field public final synthetic e:Lxj3;
+.field public y:Lgj3;
 
 
 # direct methods
-.method public constructor <init>(Lxj3;Lsc1;FF)V
+.method public constructor <init>(Landroid/content/Context;Z)V
     .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1, p2}, Lxn1;-><init>(Landroid/content/Context;Z)V
 
     .line 2
     .line 3
     .line 4
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     .line 5
     .line 6
     .line 7
-    iput-object p1, p0, Lwj3;->e:Lxj3;
+    move-result-object p1
 
     .line 8
-    .line 9
-    iput-object p2, p0, Lwj3;->a:Lsc1;
+    invoke-virtual {p1}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
 
+    .line 9
     .line 10
     .line 11
-    cmpl-float v0, p4, p3
+    move-result-object p1
 
     .line 12
+    const/4 p2, 0x1
+
     .line 13
-    if-ltz v0, :cond_0
+    invoke-virtual {p1}, Landroid/content/res/Configuration;->getLayoutDirection()I
 
     .line 14
     .line 15
-    iget-object p1, p1, Lxj3;->j:Lm21;
-
     .line 16
+    move-result p1
+
     .line 17
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/16 v0, 0x16
 
     .line 18
     .line 19
+    const/16 v1, 0x15
+
     .line 20
-    const/high16 p1, 0x7f800000    # Float.POSITIVE_INFINITY
-
     .line 21
-    .line 22
-    invoke-static {p2, p1}, Lm21;->j(Lsc1;F)J
+    if-ne p2, p1, :cond_0
 
+    .line 22
     .line 23
+    iput-byte v1, p0, Lwj3;->v:B
+
     .line 24
     .line 25
-    move-result-wide p1
+    iput-byte v0, p0, Lwj3;->w:B
 
     .line 26
-    const-wide v0, 0xffffffffL
-
     .line 27
-    .line 28
-    .line 29
-    .line 30
-    .line 31
-    and-long/2addr p1, v0
-
-    .line 32
-    long-to-int p1, p1
-
-    .line 33
-    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    .line 34
-    .line 35
-    .line 36
-    move-result p1
-
-    .line 37
-    iput p1, p0, Lwj3;->b:F
-
-    .line 38
-    .line 39
-    iput p3, p0, Lwj3;->c:F
-
-    .line 40
-    .line 41
-    iput p4, p0, Lwj3;->d:F
-
-    .line 42
-    .line 43
     return-void
 
-    .line 44
+    .line 28
     :cond_0
-    const-string p0, "endOutlineProgress is expected to be equal or greater than startOutlineProgress"
+    iput-byte v0, p0, Lwj3;->v:B
 
-    .line 45
-    .line 46
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+    .line 29
+    .line 30
+    iput-byte v1, p0, Lwj3;->w:B
 
-    .line 47
-    .line 48
-    .line 49
-    const/4 p0, 0x0
-
-    .line 50
-    throw p0
+    .line 31
+    .line 32
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a(F)Lbm4;
-    .locals 5
+.method public final onHoverEvent(Landroid/view/MotionEvent;)Z
+    .locals 4
 
     .line 1
-    iget v0, p0, Lwj3;->c:F
+    iget-object v0, p0, Lwj3;->x:Lfj3;
 
     .line 2
     .line 3
-    iget v1, p0, Lwj3;->d:F
+    if-eqz v0, :cond_3
 
     .line 4
     .line 5
-    invoke-static {p1, v0, v1}, Lgf3;->t(FFF)F
+    invoke-virtual {p0}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
 
     .line 6
     .line 7
     .line 8
-    move-result p1
+    move-result-object v0
 
     .line 9
-    iget v0, p0, Lwj3;->d:F
+    instance-of v1, v0, Landroid/widget/HeaderViewListAdapter;
 
     .line 10
     .line 11
-    iget v1, p0, Lwj3;->c:F
+    if-eqz v1, :cond_0
 
     .line 12
     .line 13
-    sub-float/2addr v0, v1
+    check-cast v0, Landroid/widget/HeaderViewListAdapter;
 
     .line 14
-    sub-float v1, p1, v1
-
     .line 15
+    invoke-virtual {v0}, Landroid/widget/HeaderViewListAdapter;->getHeadersCount()I
+
     .line 16
-    div-float/2addr v1, v0
-
     .line 17
-    iget-object v0, p0, Lwj3;->e:Lxj3;
-
     .line 18
+    move-result v1
+
     .line 19
-    iget-object v2, v0, Lxj3;->j:Lm21;
+    invoke-virtual {v0}, Landroid/widget/HeaderViewListAdapter;->getWrappedAdapter()Landroid/widget/ListAdapter;
 
     .line 20
     .line 21
-    iget v3, p0, Lwj3;->b:F
-
     .line 22
+    move-result-object v0
+
     .line 23
-    mul-float/2addr v1, v3
+    check-cast v0, Lwi3;
 
     .line 24
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 25
-    .line 26
-    .line 27
-    iget-object v2, p0, Lwj3;->a:Lsc1;
+    goto :goto_0
 
+    .line 26
+    :cond_0
+    check-cast v0, Lwi3;
+
+    .line 27
     .line 28
+    const/4 v1, 0x0
+
     .line 29
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :goto_0
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     .line 30
     .line 31
     .line 32
-    invoke-static {v2, v1}, Lm21;->j(Lsc1;F)J
+    move-result v2
 
     .line 33
+    const/16 v3, 0xa
+
     .line 34
     .line 35
-    move-result-wide v3
+    if-eq v2, v3, :cond_1
 
     .line 36
-    const/16 v1, 0x20
-
     .line 37
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
     .line 38
-    shr-long/2addr v3, v1
-
     .line 39
-    long-to-int v1, v3
-
     .line 40
-    invoke-static {v1}, Ljava/lang/Float;->intBitsToFloat(I)F
+    move-result v2
 
     .line 41
+    float-to-int v2, v2
+
     .line 42
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
     .line 43
-    move-result v1
-
     .line 44
-    const/4 v3, 0x0
-
     .line 45
-    cmpg-float v3, v3, v1
+    move-result v3
 
     .line 46
+    float-to-int v3, v3
+
     .line 47
-    if-gtz v3, :cond_0
+    invoke-virtual {p0, v2, v3}, Landroid/widget/AbsListView;->pointToPosition(II)I
 
     .line 48
     .line 49
-    const/high16 v3, 0x3f800000    # 1.0f
-
     .line 50
+    move-result v2
+
     .line 51
-    cmpg-float v3, v1, v3
+    const/4 v3, -0x1
 
     .line 52
-    .line 53
-    if-gtz v3, :cond_0
+    if-eq v2, v3, :cond_1
 
+    .line 53
     .line 54
+    sub-int/2addr v2, v1
+
     .line 55
-    invoke-virtual {v2, v1}, Lsc1;->d(F)Lbm4;
+    if-ltz v2, :cond_1
 
     .line 56
     .line 57
+    invoke-virtual {v0}, Lwi3;->getCount()I
+
     .line 58
-    move-result-object v1
-
     .line 59
-    iget-object v2, v1, Lbm4;->j:Ljava/lang/Object;
-
     .line 60
+    move-result v1
+
     .line 61
-    check-cast v2, Lsc1;
+    if-ge v2, v1, :cond_1
 
     .line 62
     .line 63
-    iget-object v1, v1, Lbm4;->k:Ljava/lang/Object;
+    invoke-virtual {v0, v2}, Lwi3;->b(I)Lgj3;
 
     .line 64
     .line 65
-    check-cast v1, Lsc1;
-
     .line 66
+    move-result-object v1
+
     .line 67
-    new-instance v3, Lwj3;
+    goto :goto_1
 
     .line 68
+    :cond_1
+    const/4 v1, 0x0
+
     .line 69
-    iget v4, p0, Lwj3;->c:F
+    :goto_1
+    iget-object v2, p0, Lwj3;->y:Lgj3;
 
     .line 70
     .line 71
-    invoke-direct {v3, v0, v2, v4, p1}, Lwj3;-><init>(Lxj3;Lsc1;FF)V
+    if-eq v2, v1, :cond_3
 
     .line 72
     .line 73
+    iget-object v0, v0, Lwi3;->a:Laj3;
+
     .line 74
-    new-instance v2, Lwj3;
+    .line 75
+    if-eqz v2, :cond_2
+
+    .line 76
+    .line 77
+    iget-object v3, p0, Lwj3;->x:Lfj3;
+
+    .line 78
+    .line 79
+    invoke-interface {v3, v0, v2}, Lfj3;->a(Laj3;Landroid/view/MenuItem;)V
+
+    .line 80
+    .line 81
+    .line 82
+    :cond_2
+    iput-object v1, p0, Lwj3;->y:Lgj3;
+
+    .line 83
+    .line 84
+    if-eqz v1, :cond_3
+
+    .line 85
+    .line 86
+    iget-object v2, p0, Lwj3;->x:Lfj3;
+
+    .line 87
+    .line 88
+    invoke-interface {v2, v0, v1}, Lfj3;->i(Laj3;Lgj3;)V
+
+    .line 89
+    .line 90
+    .line 91
+    :cond_3
+    invoke-super {p0, p1}, Lxn1;->onHoverEvent(Landroid/view/MotionEvent;)Z
+
+    .line 92
+    .line 93
+    .line 94
+    move-result p0
+
+    .line 95
+    return p0
+.end method
+
+.method public final onKeyDown(ILandroid/view/KeyEvent;)Z
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->getSelectedView()Landroid/view/View;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    check-cast v0, Landroidx/appcompat/view/menu/ListMenuItemView;
+
+    .line 6
+    .line 7
+    const/4 v1, 0x1
+
+    .line 8
+    if-eqz v0, :cond_1
+
+    .line 9
+    .line 10
+    iget-byte v2, p0, Lwj3;->v:B
+
+    .line 11
+    .line 12
+    if-ne p1, v2, :cond_1
+
+    .line 13
+    .line 14
+    invoke-virtual {v0}, Landroid/view/View;->isEnabled()Z
+
+    .line 15
+    .line 16
+    .line 17
+    move-result p1
+
+    .line 18
+    if-eqz p1, :cond_0
+
+    .line 19
+    .line 20
+    invoke-virtual {v0}, Landroidx/appcompat/view/menu/ListMenuItemView;->getItemData()Lgj3;
+
+    .line 21
+    .line 22
+    .line 23
+    move-result-object p1
+
+    .line 24
+    invoke-virtual {p1}, Lgj3;->hasSubMenu()Z
+
+    .line 25
+    .line 26
+    .line 27
+    move-result p1
+
+    .line 28
+    if-eqz p1, :cond_0
+
+    .line 29
+    .line 30
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->getSelectedItemPosition()I
+
+    .line 31
+    .line 32
+    .line 33
+    move-result p1
+
+    .line 34
+    invoke-virtual {p0}, Landroid/widget/AdapterView;->getSelectedItemId()J
+
+    .line 35
+    .line 36
+    .line 37
+    move-result-wide v2
+
+    .line 38
+    invoke-virtual {p0, v0, p1, v2, v3}, Landroid/widget/AdapterView;->performItemClick(Landroid/view/View;IJ)Z
+
+    .line 39
+    .line 40
+    .line 41
+    :cond_0
+    return v1
+
+    .line 42
+    :cond_1
+    if-eqz v0, :cond_3
+
+    .line 43
+    .line 44
+    iget-byte v0, p0, Lwj3;->w:B
+
+    .line 45
+    .line 46
+    if-ne p1, v0, :cond_3
+
+    .line 47
+    .line 48
+    const/4 p1, -0x1
+
+    .line 49
+    invoke-virtual {p0, p1}, Landroid/widget/AdapterView;->setSelection(I)V
+
+    .line 50
+    .line 51
+    .line 52
+    invoke-virtual {p0}, Landroid/widget/ListView;->getAdapter()Landroid/widget/ListAdapter;
+
+    .line 53
+    .line 54
+    .line 55
+    move-result-object p0
+
+    .line 56
+    instance-of p1, p0, Landroid/widget/HeaderViewListAdapter;
+
+    .line 57
+    .line 58
+    if-eqz p1, :cond_2
+
+    .line 59
+    .line 60
+    check-cast p0, Landroid/widget/HeaderViewListAdapter;
+
+    .line 61
+    .line 62
+    invoke-virtual {p0}, Landroid/widget/HeaderViewListAdapter;->getWrappedAdapter()Landroid/widget/ListAdapter;
+
+    .line 63
+    .line 64
+    .line 65
+    move-result-object p0
+
+    .line 66
+    check-cast p0, Lwi3;
+
+    .line 67
+    .line 68
+    goto :goto_0
+
+    .line 69
+    :cond_2
+    check-cast p0, Lwi3;
+
+    .line 70
+    .line 71
+    :goto_0
+    iget-object p0, p0, Lwi3;->a:Laj3;
+
+    .line 72
+    .line 73
+    const/4 p1, 0x0
+
+    .line 74
+    invoke-virtual {p0, p1}, Laj3;->c(Z)V
 
     .line 75
     .line 76
-    iget p0, p0, Lwj3;->d:F
-
     .line 77
+    return v1
+
     .line 78
-    invoke-direct {v2, v0, v1, p1, p0}, Lwj3;-><init>(Lxj3;Lsc1;FF)V
+    :cond_3
+    invoke-super {p0, p1, p2}, Landroid/view/View;->onKeyDown(ILandroid/view/KeyEvent;)Z
 
     .line 79
     .line 80
     .line 81
-    new-instance p0, Lbm4;
+    move-result p0
 
     .line 82
-    .line 83
-    invoke-direct {p0, v3, v2}, Lbm4;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-
-    .line 84
-    .line 85
-    .line 86
-    return-object p0
-
-    .line 87
-    :cond_0
-    const-string p0, "Cubic cut point is expected to be between 0 and 1"
-
-    .line 88
-    .line 89
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
-
-    .line 90
-    .line 91
-    .line 92
-    const/4 p0, 0x0
-
-    .line 93
-    return-object p0
+    return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public setHoverListener(Lfj3;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    iput-object p1, p0, Lwj3;->x:Lfj3;
 
     .line 2
     .line 3
-    const-string v1, "MeasuredCubic(outlineProgress=["
+    return-void
+.end method
 
+.method public bridge synthetic setSelector(Landroid/graphics/drawable/Drawable;)V
+    .locals 0
+
+    .line 1
+    invoke-super {p0, p1}, Lxn1;->setSelector(Landroid/graphics/drawable/Drawable;)V
+
+    .line 2
+    .line 3
     .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    iget v1, p0, Lwj3;->c:F
-
-    .line 9
-    .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 11
-    .line 12
-    .line 13
-    const-string v1, " .. "
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    iget v1, p0, Lwj3;->d:F
-
-    .line 19
-    .line 20
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 21
-    .line 22
-    .line 23
-    const-string v1, "], size="
-
-    .line 24
-    .line 25
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 26
-    .line 27
-    .line 28
-    iget v1, p0, Lwj3;->b:F
-
-    .line 29
-    .line 30
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 31
-    .line 32
-    .line 33
-    const-string v1, ", cubic="
-
-    .line 34
-    .line 35
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 36
-    .line 37
-    .line 38
-    iget-object p0, p0, Lwj3;->a:Lsc1;
-
-    .line 39
-    .line 40
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 41
-    .line 42
-    .line 43
-    const/16 p0, 0x29
-
-    .line 44
-    .line 45
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 46
-    .line 47
-    .line 48
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 49
-    .line 50
-    .line 51
-    move-result-object p0
-
-    .line 52
-    return-object p0
+    return-void
 .end method

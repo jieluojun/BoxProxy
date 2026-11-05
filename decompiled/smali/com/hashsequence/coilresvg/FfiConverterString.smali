@@ -1,6 +1,6 @@
 .class public final Lcom/hashsequence/coilresvg/FfiConverterString;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
 .implements Lcom/hashsequence/coilresvg/FfiConverter;
@@ -190,7 +190,7 @@
 
     .line 33
     .line 34
-    sget-object v1, Ldo0;->a:Ljava/nio/charset/Charset;
+    sget-object v1, Lcn0;->a:Ljava/nio/charset/Charset;
 
     .line 35
     .line 36
@@ -318,7 +318,7 @@
     .line 2
     .line 3
     .line 4
-    invoke-static {p1}, Lhd6;->a0(Ljava/lang/String;)[B
+    invoke-static {p1}, Lpb6;->b0(Ljava/lang/String;)[B
 
     .line 5
     .line 6
@@ -453,7 +453,7 @@
 
     .line 16
     .line 17
-    sget-object v0, Ldo0;->a:Ljava/nio/charset/Charset;
+    sget-object v0, Lcn0;->a:Ljava/nio/charset/Charset;
 
     .line 18
     .line 19
@@ -490,7 +490,7 @@
     .line 5
     .line 6
     .line 7
-    invoke-static {p1}, Lhd6;->a0(Ljava/lang/String;)[B
+    invoke-static {p1}, Lpb6;->b0(Ljava/lang/String;)[B
 
     .line 8
     .line 9

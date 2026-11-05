@@ -1,72 +1,140 @@
 .class public final Lvn3;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
+.field public final a:Las3;
 
-.field public final synthetic k:Lwn3;
+.field public final b:F
 
-.field public l:I
+.field public final c:Lgl4;
+
+.field public final d:Lgl4;
+
+.field public final e:Lgl4;
+
+.field public final f:Lgl4;
+
+.field public final g:Lgl4;
+
+.field public final h:Lgl4;
+
+.field public final i:Lgl4;
 
 
 # direct methods
-.method public constructor <init>(Lwn3;Lz81;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lvn3;->k:Lwn3;
-
-    .line 2
-    .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.method public constructor <init>(Las3;F)V
     .locals 1
 
     .line 1
-    iput-object p1, p0, Lvn3;->j:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iget p1, p0, Lvn3;->l:I
-
     .line 4
+    iput-object p1, p0, Lvn3;->a:Las3;
+
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
-    .line 7
-    or-int/2addr p1, v0
+    iput p2, p0, Lvn3;->b:F
 
+    .line 7
     .line 8
-    iput p1, p0, Lvn3;->l:I
+    const/4 p1, 0x0
 
     .line 9
-    .line 10
-    iget-object p1, p0, Lvn3;->k:Lwn3;
+    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
 
+    .line 10
     .line 11
     .line 12
-    const/4 v0, 0x0
+    move-result-object p2
 
     .line 13
-    invoke-virtual {p1, v0, v0, p0}, Lwn3;->q(Le55;Ljava/util/ArrayList;Lz81;)Ljava/lang/Object;
+    iput-object p2, p0, Lvn3;->c:Lgl4;
 
     .line 14
     .line 15
-    .line 16
-    move-result-object p0
+    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
 
+    .line 16
     .line 17
-    return-object p0
+    .line 18
+    move-result-object p2
+
+    .line 19
+    iput-object p2, p0, Lvn3;->d:Lgl4;
+
+    .line 20
+    .line 21
+    sget-object p2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    .line 22
+    .line 23
+    invoke-static {p2}, Lg23;->M(Ljava/lang/Object;)Lgl4;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object v0
+
+    .line 27
+    iput-object v0, p0, Lvn3;->e:Lgl4;
+
+    .line 28
+    .line 29
+    invoke-static {p2}, Lg23;->M(Ljava/lang/Object;)Lgl4;
+
+    .line 30
+    .line 31
+    .line 32
+    move-result-object p2
+
+    .line 33
+    iput-object p2, p0, Lvn3;->f:Lgl4;
+
+    .line 34
+    .line 35
+    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
+
+    .line 36
+    .line 37
+    .line 38
+    move-result-object p2
+
+    .line 39
+    iput-object p2, p0, Lvn3;->g:Lgl4;
+
+    .line 40
+    .line 41
+    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
+
+    .line 42
+    .line 43
+    .line 44
+    move-result-object p1
+
+    .line 45
+    iput-object p1, p0, Lvn3;->h:Lgl4;
+
+    .line 46
+    .line 47
+    sget-object p1, Lq50;->f:Loy0;
+
+    .line 48
+    .line 49
+    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
+
+    .line 50
+    .line 51
+    .line 52
+    move-result-object p1
+
+    .line 53
+    iput-object p1, p0, Lvn3;->i:Lgl4;
+
+    .line 54
+    .line 55
+    return-void
 .end method

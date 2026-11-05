@@ -1,36 +1,30 @@
 .class public final Lvb0;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public j:Z
+.field public j:Ljava/lang/String;
 
-.field public k:Z
+.field public k:I
 
-.field public l:Lkv;
+.field public synthetic l:Ljava/lang/Object;
 
-.field public m:Lnb0;
+.field public final synthetic m:Lwb0;
 
-.field public n:Lz94;
-
-.field public synthetic o:Ljava/lang/Object;
-
-.field public final synthetic p:Lcom/box/app/notification/BoxPersistentNotificationService;
-
-.field public q:I
+.field public n:I
 
 
 # direct methods
-.method public constructor <init>(Lcom/box/app/notification/BoxPersistentNotificationService;Lz81;)V
+.method public constructor <init>(Lwb0;Lz71;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lvb0;->p:Lcom/box/app/notification/BoxPersistentNotificationService;
+    iput-object p1, p0, Lvb0;->m:Lwb0;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
     .line 4
     .line 5
@@ -44,11 +38,11 @@
     .locals 1
 
     .line 1
-    iput-object p1, p0, Lvb0;->o:Ljava/lang/Object;
+    iput-object p1, p0, Lvb0;->l:Ljava/lang/Object;
 
     .line 2
     .line 3
-    iget p1, p0, Lvb0;->q:I
+    iget p1, p0, Lvb0;->n:I
 
     .line 4
     .line 5
@@ -59,28 +53,21 @@
     or-int/2addr p1, v0
 
     .line 8
-    iput p1, p0, Lvb0;->q:I
+    iput p1, p0, Lvb0;->n:I
 
     .line 9
     .line 10
-    sget p1, Lcom/box/app/notification/BoxPersistentNotificationService;->s:I
+    iget-object p1, p0, Lvb0;->m:Lwb0;
 
     .line 11
     .line 12
-    iget-object p1, p0, Lvb0;->p:Lcom/box/app/notification/BoxPersistentNotificationService;
+    invoke-virtual {p1, p0}, Lwb0;->b(Lz71;)Ljava/lang/Object;
 
     .line 13
     .line 14
-    const/4 v0, 0x0
-
     .line 15
-    invoke-virtual {p1, v0, v0, p0}, Lcom/box/app/notification/BoxPersistentNotificationService;->g(ZZLz81;)Ljava/lang/Object;
-
-    .line 16
-    .line 17
-    .line 18
     move-result-object p0
 
-    .line 19
+    .line 16
     return-object p0
 .end method

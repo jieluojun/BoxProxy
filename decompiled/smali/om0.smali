@@ -1,27 +1,14 @@
-.class public final synthetic Lom0;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lp62;
+.class public final Lom0;
+.super Lpm0;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:Le62;
-
-.field public final synthetic k:F
-
-.field public final synthetic l:Z
-
-.field public final synthetic m:Lfs2;
-
-.field public final synthetic n:Lfs2;
-
-.field public final synthetic o:J
+.field public final a:Ljava/lang/Throwable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Le62;FZLfs2;Lfs2;J)V
+.method public constructor <init>(Ljava/lang/Throwable;)V
     .locals 0
 
     .line 1
@@ -30,96 +17,136 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lom0;->j:Le62;
+    iput-object p1, p0, Lom0;->a:Ljava/lang/Throwable;
 
     .line 5
     .line 6
-    iput p2, p0, Lom0;->k:F
-
-    .line 7
-    .line 8
-    iput-boolean p3, p0, Lom0;->l:Z
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Lom0;->m:Lfs2;
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Lom0;->n:Lfs2;
-
-    .line 13
-    .line 14
-    iput-wide p6, p0, Lom0;->o:J
-
-    .line 15
-    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 9
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
     .line 1
-    check-cast p1, Lnh0;
+    instance-of v0, p1, Lom0;
 
     .line 2
     .line 3
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    .line 6
-    invoke-static {}, Ldd;->a()Lbd;
+    check-cast p1, Lom0;
 
+    .line 6
     .line 7
+    iget-object p1, p1, Lom0;->a:Ljava/lang/Throwable;
+
     .line 8
     .line 9
-    move-result-object v4
+    iget-object p0, p0, Lom0;->a:Ljava/lang/Throwable;
 
     .line 10
-    new-instance v0, Lnm0;
+    .line 11
+    invoke-static {p0, p1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    if-eqz p0, :cond_0
+
+    .line 16
+    .line 17
+    const/4 p0, 0x1
+
+    .line 18
+    return p0
+
+    .line 19
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 20
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lom0;->a:Ljava/lang/Throwable;
+
+    .line 2
+    .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "Closed("
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object p0, p0, Lom0;->a:Ljava/lang/Throwable;
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 11
     .line 12
-    iget-object v1, p0, Lom0;->j:Le62;
-
     .line 13
+    const/16 p0, 0x29
+
     .line 14
-    iget v2, p0, Lom0;->k:F
-
     .line 15
-    .line 16
-    iget-boolean v3, p0, Lom0;->l:Z
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
+    .line 16
     .line 17
     .line 18
-    iget-object v5, p0, Lom0;->m:Lfs2;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 19
     .line 20
-    iget-object v6, p0, Lom0;->n:Lfs2;
-
     .line 21
-    .line 22
-    iget-wide v7, p0, Lom0;->o:J
-
-    .line 23
-    .line 24
-    invoke-direct/range {v0 .. v8}, Lnm0;-><init>(Le62;FZLbd;Lfs2;Lfs2;J)V
-
-    .line 25
-    .line 26
-    .line 27
-    invoke-virtual {p1, v0}, Lnh0;->c(Lp62;)Le6;
-
-    .line 28
-    .line 29
-    .line 30
     move-result-object p0
 
-    .line 31
+    .line 22
     return-object p0
 .end method

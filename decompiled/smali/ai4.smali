@@ -1,190 +1,151 @@
-.class public final synthetic Lai4;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class final Lai4;
+.super Lro3;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Le62;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lro3;"
+    }
+.end annotation
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Lmt3;
-
-.field public final synthetic l:Z
+.field public final j:Lzh4;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lmt3;Z)V
-    .locals 1
+.method public constructor <init>(Lzh4;)V
+    .locals 0
 
     .line 1
-    const/4 v0, 0x2
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-byte v0, p0, Lai4;->j:B
-
     .line 3
     .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lai4;->j:Lzh4;
 
     .line 5
     .line 6
-    .line 7
-    iput-boolean p2, p0, Lai4;->l:Z
-
-    .line 8
-    .line 9
-    iput-object p1, p0, Lai4;->k:Lmt3;
-
-    .line 10
-    .line 11
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lmt3;ZB)V
-    .locals 0
-
-    .line 12
-    iput-byte p3, p0, Lai4;->j:B
-
-    iput-object p1, p0, Lai4;->k:Lmt3;
-
-    iput-boolean p2, p0, Lai4;->l:Z
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
+.method public final a()Ljo3;
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Lai4;->j:B
+    new-instance v0, Lci4;
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    invoke-direct {v0}, Ljo3;-><init>()V
 
     .line 4
     .line 5
-    iget-object v2, p0, Lai4;->k:Lmt3;
+    .line 6
+    iget-object p0, p0, Lai4;->j:Lzh4;
+
+    .line 7
+    .line 8
+    iput-object p0, v0, Lci4;->x:Lzh4;
+
+    .line 9
+    .line 10
+    return-object v0
+.end method
+
+.method public final b(Ljo3;)V
+    .locals 0
+
+    .line 1
+    check-cast p1, Lci4;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lai4;->j:Lzh4;
+
+    .line 4
+    .line 5
+    iput-object p0, p1, Lci4;->x:Lzh4;
 
     .line 6
     .line 7
-    iget-boolean p0, p0, Lai4;->l:Z
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    instance-of v0, p1, Lai4;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    check-cast p1, Lai4;
+
+    .line 6
+    .line 7
+    goto :goto_0
 
     .line 8
+    :cond_0
+    const/4 p1, 0x0
+
     .line 9
-    packed-switch v0, :pswitch_data_0
+    :goto_0
+    if-nez p1, :cond_1
 
     .line 10
     .line 11
+    const/4 p0, 0x0
+
     .line 12
-    if-eqz p0, :cond_0
+    return p0
 
     .line 13
-    .line 14
-    invoke-interface {v2}, Lmb6;->getValue()Ljava/lang/Object;
+    :cond_1
+    iget-object p0, p0, Lai4;->j:Lzh4;
 
+    .line 14
     .line 15
+    iget-object p1, p1, Lai4;->j:Lzh4;
+
     .line 16
     .line 17
-    move-result-object p0
+    invoke-static {p0, p1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 18
-    check-cast p0, Le62;
-
     .line 19
     .line 20
-    if-eqz p0, :cond_0
+    move-result p0
 
     .line 21
-    .line 22
-    invoke-interface {p0}, Le62;->invoke()Ljava/lang/Object;
+    return p0
+.end method
 
-    .line 23
-    .line 24
-    .line 25
-    :cond_0
-    return-object v1
+.method public final hashCode()I
+    .locals 0
 
-    .line 26
-    :pswitch_0
-    invoke-interface {v2}, Lmb6;->getValue()Ljava/lang/Object;
+    .line 1
+    iget-object p0, p0, Lai4;->j:Lzh4;
 
-    .line 27
-    .line 28
-    .line 29
-    move-result-object v0
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    .line 30
-    check-cast v0, Lp62;
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
 
-    .line 31
-    .line 32
-    xor-int/lit8 p0, p0, 0x1
-
-    .line 33
-    .line 34
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 35
-    .line 36
-    .line 37
-    move-result-object p0
-
-    .line 38
-    invoke-interface {v0, p0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 39
-    .line 40
-    .line 41
-    return-object v1
-
-    .line 42
-    :pswitch_1
-    invoke-interface {v2}, Lmb6;->getValue()Ljava/lang/Object;
-
-    .line 43
-    .line 44
-    .line 45
-    move-result-object v0
-
-    .line 46
-    check-cast v0, Lp62;
-
-    .line 47
-    .line 48
-    xor-int/lit8 p0, p0, 0x1
-
-    .line 49
-    .line 50
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 51
-    .line 52
-    .line 53
-    move-result-object p0
-
-    .line 54
-    invoke-interface {v0, p0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 55
-    .line 56
-    .line 57
-    return-object v1
-
-    .line 58
-    nop
-
-    .line 59
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 7
+    return p0
 .end method

@@ -1,356 +1,275 @@
-.class public final Lpo;
+.class public final synthetic Lpo;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Le62;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic j:B
 
-.field public final k:Ljava/lang/Object;
-
-.field public final synthetic l:Ljava/lang/Object;
+.field public final synthetic k:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Lel2;Lhl2;)V
-    .locals 1
-
-    const/4 v0, 0x1
-
-    iput-byte v0, p0, Lpo;->j:B
-
-    .line 12
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lpo;->l:Ljava/lang/Object;
-
-    .line 13
-    iput-object p2, p0, Lpo;->k:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lyw6;Le62;)V
-    .locals 1
+.method public synthetic constructor <init>(Landroid/content/Context;B)V
+    .locals 0
 
     .line 1
-    const/4 v0, 0x0
+    iput-byte p2, p0, Lpo;->j:B
 
     .line 2
-    iput-byte v0, p0, Lpo;->j:B
-
     .line 3
+    iput-object p1, p0, Lpo;->k:Landroid/content/Context;
+
     .line 4
+    .line 5
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5
     .line 6
     .line 7
-    iput-object p1, p0, Lpo;->k:Ljava/lang/Object;
-
     .line 8
-    .line 9
-    iput-object p2, p0, Lpo;->l:Ljava/lang/Object;
-
-    .line 10
-    .line 11
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 5
+.method public final run()V
+    .locals 10
 
     .line 1
     iget-byte v0, p0, Lpo;->j:B
 
     .line 2
     .line 3
-    iget-object v1, p0, Lpo;->k:Ljava/lang/Object;
+    iget-object p0, p0, Lpo;->k:Landroid/content/Context;
 
     .line 4
     .line 5
-    iget-object v2, p0, Lpo;->l:Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_0
-
     .line 8
+    new-instance v0, Lft4;
+
     .line 9
     .line 10
-    check-cast v2, Lel2;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     .line 11
     .line 12
-    check-cast v1, Lhl2;
-
     .line 13
-    .line 14
-    sget-object v0, Lcw1;->n:Lcw1;
+    sget-object v1, Lkf3;->t0:Lnb3;
 
+    .line 14
     .line 15
+    const/4 v2, 0x0
+
     .line 16
-    const/4 v3, 0x1
+    invoke-static {p0, v0, v1, v2}, Lkf3;->A0(Landroid/content/Context;Ljava/util/concurrent/Executor;Lht4;Z)V
 
     .line 17
-    const/4 v4, 0x0
-
     .line 18
-    :try_start_0
-    invoke-virtual {v1, v3, p0}, Lhl2;->b(ZLpo;)Z
-
     .line 19
-    .line 20
-    .line 21
-    move-result v3
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_1
-    .catchall {:try_start_0 .. :try_end_0} :catchall_2
+    return-void
 
+    .line 20
+    :pswitch_0
+    new-instance v3, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    .line 21
     .line 22
-    if-eqz v3, :cond_1
+    new-instance v9, Ljava/util/concurrent/LinkedBlockingQueue;
 
     .line 23
     .line 24
-    :cond_0
-    const/4 v3, 0x0
+    invoke-direct {v9}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
 
     .line 25
-    :try_start_1
-    invoke-virtual {v1, v3, p0}, Lhl2;->b(ZLpo;)Z
-
     .line 26
     .line 27
+    const/4 v4, 0x0
+
     .line 28
-    move-result v3
+    const/4 v5, 0x1
 
     .line 29
-    if-nez v3, :cond_0
+    const-wide/16 v6, 0x0
 
     .line 30
     .line 31
-    sget-object p0, Lcw1;->l:Lcw1;
-    :try_end_1
-    .catch Ljava/io/IOException; {:try_start_1 .. :try_end_1} :catch_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    sget-object v8, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
     .line 32
     .line 33
-    :try_start_2
-    sget-object v0, Lcw1;->q:Lcw1;
-    :try_end_2
-    .catch Ljava/io/IOException; {:try_start_2 .. :try_end_2} :catch_0
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    invoke-direct/range {v3 .. v9}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;)V
 
     .line 34
     .line 35
-    invoke-virtual {v2, p0, v0, v4}, Lel2;->b(Lcw1;Lcw1;Ljava/io/IOException;)V
-
     .line 36
+    new-instance v0, Lpo;
+
     .line 37
     .line 38
-    :goto_0
-    invoke-static {v1}, Ldg7;->b(Ljava/io/Closeable;)V
+    const/4 v1, 0x3
 
     .line 39
+    invoke-direct {v0, p0, v1}, Lpo;-><init>(Landroid/content/Context;B)V
+
     .line 40
     .line 41
-    goto :goto_4
-
     .line 42
-    :catchall_0
-    move-exception v3
+    invoke-virtual {v3, v0}, Ljava/util/concurrent/ThreadPoolExecutor;->execute(Ljava/lang/Runnable;)V
 
     .line 43
-    goto :goto_5
-
     .line 44
-    :catch_0
-    move-exception v3
-
     .line 45
-    move-object v4, v3
+    return-void
 
     .line 46
-    goto :goto_3
+    :pswitch_1
+    invoke-static {p0}, Lso;->p(Landroid/content/Context;)V
 
     .line 47
-    :catchall_1
-    move-exception v3
-
     .line 48
-    :goto_1
-    move-object p0, v0
-
     .line 49
-    goto :goto_5
+    return-void
 
     .line 50
-    :catch_1
-    move-exception p0
+    :pswitch_2
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     .line 51
-    move-object v4, p0
-
     .line 52
-    move-object p0, v0
+    const/16 v1, 0x21
 
     .line 53
-    goto :goto_3
-
     .line 54
-    :cond_1
-    :try_start_3
-    new-instance p0, Ljava/io/IOException;
+    const/4 v2, 0x1
 
     .line 55
+    if-lt v0, v1, :cond_1
+
     .line 56
-    const-string v3, "Required SETTINGS preface not received"
-
     .line 57
-    .line 58
-    invoke-direct {p0, v3}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+    new-instance v0, Landroid/content/ComponentName;
 
+    .line 58
     .line 59
+    const-string v1, "androidx.appcompat.app.AppLocalesMetadataHolderService"
+
     .line 60
     .line 61
-    throw p0
-    :try_end_3
-    .catch Ljava/io/IOException; {:try_start_3 .. :try_end_3} :catch_1
-    .catchall {:try_start_3 .. :try_end_3} :catchall_2
+    invoke-direct {v0, p0, v1}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 
     .line 62
-    :goto_2
-    move-object v3, p0
-
     .line 63
-    goto :goto_1
-
     .line 64
-    :catchall_2
-    move-exception p0
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
 
     .line 65
-    goto :goto_2
-
     .line 66
-    :goto_3
-    :try_start_4
-    sget-object p0, Lcw1;->m:Lcw1;
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
-
     .line 67
+    move-result-object v1
+
     .line 68
-    invoke-virtual {v2, p0, p0, v4}, Lel2;->b(Lcw1;Lcw1;Ljava/io/IOException;)V
+    invoke-virtual {v1, v0}, Landroid/content/pm/PackageManager;->getComponentEnabledSetting(Landroid/content/ComponentName;)I
 
     .line 69
     .line 70
     .line 71
-    goto :goto_0
+    move-result v1
 
     .line 72
-    :goto_4
-    sget-object p0, La47;->a:La47;
+    if-eq v1, v2, :cond_1
 
     .line 73
     .line 74
-    return-object p0
+    invoke-static {}, Lso;->b()Lqb3;
 
     .line 75
-    :goto_5
-    invoke-virtual {v2, p0, v0, v4}, Lel2;->b(Lcw1;Lcw1;Ljava/io/IOException;)V
-
     .line 76
     .line 77
+    move-result-object v1
+
     .line 78
-    invoke-static {v1}, Ldg7;->b(Ljava/io/Closeable;)V
+    invoke-virtual {v1}, Lqb3;->b()Z
 
     .line 79
     .line 80
     .line 81
-    throw v3
+    move-result v1
 
     .line 82
-    :pswitch_0
-    check-cast v1, Lyw6;
+    if-eqz v1, :cond_0
 
     .line 83
     .line 84
-    check-cast v2, Le62;
+    invoke-static {p0}, Lai3;->C(Landroid/content/Context;)Ljava/lang/String;
 
     .line 85
     .line 86
-    invoke-interface {v2}, Le62;->invoke()Ljava/lang/Object;
-
     .line 87
-    .line 88
-    .line 89
-    move-result-object p0
+    move-result-object v1
 
+    .line 88
+    const-string v3, "locale"
+
+    .line 89
     .line 90
-    check-cast p0, Ljava/lang/Number;
+    invoke-virtual {p0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     .line 91
     .line 92
-    invoke-virtual {p0}, Ljava/lang/Number;->floatValue()F
-
     .line 93
-    .line 94
-    .line 95
-    move-result p0
+    move-result-object v3
 
+    .line 94
+    if-eqz v3, :cond_0
+
+    .line 95
     .line 96
-    iget-wide v2, v1, Lyw6;->a:J
+    invoke-static {v1}, Landroid/os/LocaleList;->forLanguageTags(Ljava/lang/String;)Landroid/os/LocaleList;
 
     .line 97
     .line 98
-    iget-wide v0, v1, Lyw6;->b:J
-
     .line 99
+    move-result-object v1
+
     .line 100
-    sget-object v4, Ltq1;->c:Ltc1;
+    invoke-static {v3, v1}, La5;->j(Ljava/lang/Object;Landroid/os/LocaleList;)V
 
     .line 101
     .line 102
-    invoke-virtual {v4, p0}, Ltc1;->f(F)F
-
     .line 103
+    :cond_0
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
     .line 104
     .line 105
-    move-result p0
-
     .line 106
-    invoke-static {v2, v3, v0, v1, p0}, Lzm;->R(JJF)J
+    move-result-object p0
 
     .line 107
+    invoke-virtual {p0, v0, v2, v2}, Landroid/content/pm/PackageManager;->setComponentEnabledSetting(Landroid/content/ComponentName;II)V
+
     .line 108
     .line 109
-    move-result-wide v0
-
     .line 110
-    new-instance p0, Ljv0;
+    :cond_1
+    sput-boolean v2, Lso;->o:Z
 
     .line 111
     .line 112
-    invoke-direct {p0, v0, v1}, Ljv0;-><init>(J)V
+    return-void
 
     .line 113
-    .line 114
-    .line 115
-    return-object p0
-
-    .line 116
-    nop
-
-    .line 117
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

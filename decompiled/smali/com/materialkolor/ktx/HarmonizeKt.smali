@@ -1,10 +1,10 @@
 .class public final Lcom/materialkolor/ktx/HarmonizeKt;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # direct methods
-.method public static final harmonize-IbeAmgk(Ld30;JJZ)J
+.method public static final harmonize-IbeAmgk(Lb20;JJZ)J
     .locals 8
 
     .line 1
@@ -26,11 +26,11 @@
 
     .line 10
     :cond_0
-    sget-object p0, Lna2;->e:Lma2;
+    sget-object p0, Lm92;->e:Ll92;
 
     .line 11
     .line 12
-    invoke-static {p0, p1, p2}, Lcom/materialkolor/ktx/HctKt;->from-4WTKRHQ(Lma2;J)Lna2;
+    invoke-static {p0, p1, p2}, Lcom/materialkolor/ktx/HctKt;->from-4WTKRHQ(Ll92;J)Lm92;
 
     .line 13
     .line 14
@@ -38,7 +38,7 @@
     move-result-object p1
 
     .line 16
-    invoke-static {p0, p3, p4}, Lcom/materialkolor/ktx/HctKt;->from-4WTKRHQ(Lma2;J)Lna2;
+    invoke-static {p0, p3, p4}, Lcom/materialkolor/ktx/HctKt;->from-4WTKRHQ(Ll92;J)Lm92;
 
     .line 17
     .line 18
@@ -56,11 +56,11 @@
     .line 24
     .line 25
     .line 26
-    iget-wide p2, p1, Lna2;->b:D
+    iget-wide p2, p1, Lm92;->b:D
 
     .line 27
     .line 28
-    iget-wide p4, p0, Lna2;->b:D
+    iget-wide p4, p0, Lm92;->b:D
 
     .line 29
     .line 30
@@ -191,19 +191,19 @@
     move-wide v2, v0
 
     .line 89
-    iget-wide v4, p1, Lna2;->c:D
+    iget-wide v4, p1, Lm92;->c:D
 
     .line 90
     .line 91
-    iget-wide v6, p1, Lna2;->d:D
+    iget-wide v6, p1, Lm92;->d:D
 
     .line 92
     .line 93
-    new-instance p0, Lna2;
+    new-instance p0, Lm92;
 
     .line 94
     .line 95
-    invoke-static/range {v2 .. v7}, Lbf0;->R(DDD)I
+    invoke-static/range {v2 .. v7}, Lq50;->W(DDD)I
 
     .line 96
     .line 97
@@ -211,12 +211,12 @@
     move-result p1
 
     .line 99
-    invoke-direct {p0, p1}, Lna2;-><init>(I)V
+    invoke-direct {p0, p1}, Lm92;-><init>(I)V
 
     .line 100
     .line 101
     .line 102
-    invoke-static {p0}, Lcom/materialkolor/ktx/HctKt;->toColor(Lna2;)J
+    invoke-static {p0}, Lcom/materialkolor/ktx/HctKt;->toColor(Lm92;)J
 
     .line 103
     .line 104
@@ -227,7 +227,7 @@
     return-wide p0
 .end method
 
-.method public static synthetic harmonize-IbeAmgk$default(Ld30;JJZILjava/lang/Object;)J
+.method public static synthetic harmonize-IbeAmgk$default(Lb20;JJZILjava/lang/Object;)J
     .locals 6
 
     .line 1
@@ -255,7 +255,7 @@
     move v5, p5
 
     .line 10
-    invoke-static/range {v0 .. v5}, Lcom/materialkolor/ktx/HarmonizeKt;->harmonize-IbeAmgk(Ld30;JJZ)J
+    invoke-static/range {v0 .. v5}, Lcom/materialkolor/ktx/HarmonizeKt;->harmonize-IbeAmgk(Lb20;JJZ)J
 
     .line 11
     .line 12
@@ -270,7 +270,7 @@
     .locals 6
 
     .line 1
-    sget-object v0, Ld30;->a:Ld30;
+    sget-object v0, Lb20;->a:Lb20;
 
     .line 2
     .line 3
@@ -283,7 +283,7 @@
     move v5, p4
 
     .line 6
-    invoke-static/range {v0 .. v5}, Lcom/materialkolor/ktx/HarmonizeKt;->harmonize-IbeAmgk(Ld30;JJZ)J
+    invoke-static/range {v0 .. v5}, Lcom/materialkolor/ktx/HarmonizeKt;->harmonize-IbeAmgk(Lb20;JJZ)J
 
     .line 7
     .line 8
@@ -321,7 +321,7 @@
     return-wide p0
 .end method
 
-.method public static final harmonizeWithPrimary-bw27NRU(Lpv0;JZ)J
+.method public static final harmonizeWithPrimary-bw27NRU(Lnu0;JZ)J
     .locals 6
 
     .line 1
@@ -330,11 +330,11 @@
     .line 2
     .line 3
     .line 4
-    sget-object v0, Ld30;->a:Ld30;
+    sget-object v0, Lb20;->a:Lb20;
 
     .line 5
     .line 6
-    iget-wide v3, p0, Lpv0;->a:J
+    iget-wide v3, p0, Lnu0;->a:J
 
     .line 7
     .line 8
@@ -344,7 +344,7 @@
     move v5, p3
 
     .line 10
-    invoke-static/range {v0 .. v5}, Lcom/materialkolor/ktx/HarmonizeKt;->harmonize-IbeAmgk(Ld30;JJZ)J
+    invoke-static/range {v0 .. v5}, Lcom/materialkolor/ktx/HarmonizeKt;->harmonize-IbeAmgk(Lb20;JJZ)J
 
     .line 11
     .line 12
@@ -355,7 +355,7 @@
     return-wide p0
 .end method
 
-.method public static synthetic harmonizeWithPrimary-bw27NRU$default(Lpv0;JZILjava/lang/Object;)J
+.method public static synthetic harmonizeWithPrimary-bw27NRU$default(Lnu0;JZILjava/lang/Object;)J
     .locals 0
 
     .line 1
@@ -371,7 +371,7 @@
 
     .line 6
     :cond_0
-    invoke-static {p0, p1, p2, p3}, Lcom/materialkolor/ktx/HarmonizeKt;->harmonizeWithPrimary-bw27NRU(Lpv0;JZ)J
+    invoke-static {p0, p1, p2, p3}, Lcom/materialkolor/ktx/HarmonizeKt;->harmonizeWithPrimary-bw27NRU(Lnu0;JZ)J
 
     .line 7
     .line 8

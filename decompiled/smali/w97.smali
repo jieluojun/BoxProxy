@@ -1,1700 +1,1765 @@
-.class public final synthetic Lw97;
+.class public abstract Lw97;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lu62;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic j:B
+# static fields
+.field public static final a:Lxi;
 
-.field public final synthetic k:Ljava/lang/String;
+.field public static final b:Lxi;
 
-.field public final synthetic l:Z
+.field public static final c:Lxi;
 
-.field public final synthetic m:Z
-
-.field public final synthetic n:Ljava/lang/Object;
-
-.field public final synthetic o:Ljava/lang/Object;
-
-.field public final synthetic p:Ljava/lang/Object;
+.field public static final d:Lxi;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;Lh97;ZLjava/lang/String;ZLjava/lang/String;)V
-    .locals 1
-
-    .line 20
-    const/4 v0, 0x0
-
-    iput-byte v0, p0, Lw97;->j:B
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lw97;->k:Ljava/lang/String;
-
-    iput-object p2, p0, Lw97;->p:Ljava/lang/Object;
-
-    iput-boolean p3, p0, Lw97;->l:Z
-
-    iput-object p4, p0, Lw97;->n:Ljava/lang/Object;
-
-    iput-boolean p5, p0, Lw97;->m:Z
-
-    iput-object p6, p0, Lw97;->o:Ljava/lang/Object;
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Llh5;Ljava/lang/String;ZLjava/util/List;Lp62;Z)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    iput-byte v0, p0, Lw97;->j:B
-
-    .line 3
-    .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 5
-    .line 6
-    .line 7
-    iput-object p1, p0, Lw97;->n:Ljava/lang/Object;
-
-    .line 8
-    .line 9
-    iput-object p2, p0, Lw97;->k:Ljava/lang/String;
-
-    .line 10
-    .line 11
-    iput-boolean p3, p0, Lw97;->l:Z
-
-    .line 12
-    .line 13
-    iput-object p4, p0, Lw97;->o:Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    iput-object p5, p0, Lw97;->p:Ljava/lang/Object;
-
-    .line 16
-    .line 17
-    iput-boolean p6, p0, Lw97;->m:Z
-
-    .line 18
-    .line 19
-    return-void
-.end method
-
-
-# virtual methods
-.method public final b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 30
-
-    .line 1
-    move-object/from16 v0, p0
+    new-instance v0, Lxi;
 
     .line 2
     .line 3
-    iget-byte v1, v0, Lw97;->j:B
+    const-string v1, "VISUAL_STATE_CALLBACK"
 
     .line 4
     .line 5
-    sget-object v2, La47;->a:La47;
+    const/4 v2, 0x0
 
     .line 6
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
     .line 7
-    const/4 v3, 0x2
-
     .line 8
-    const/4 v4, 0x0
-
     .line 9
-    const/4 v5, 0x1
+    new-instance v0, Lxi;
 
     .line 10
-    iget-object v6, v0, Lw97;->p:Ljava/lang/Object;
-
     .line 11
+    const-string v1, "OFF_SCREEN_PRERASTER"
+
     .line 12
-    iget-object v7, v0, Lw97;->o:Ljava/lang/Object;
-
     .line 13
-    .line 14
-    iget-object v8, v0, Lw97;->n:Ljava/lang/Object;
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
+    .line 14
     .line 15
     .line 16
-    packed-switch v1, :pswitch_data_0
+    new-instance v0, Lxi;
 
     .line 17
     .line 18
-    .line 19
-    check-cast v8, Llh5;
+    const-string v1, "SAFE_BROWSING_ENABLE"
 
+    .line 19
     .line 20
+    const/4 v2, 0x4
+
     .line 21
-    move-object v12, v7
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 22
-    check-cast v12, Ljava/util/List;
-
     .line 23
     .line 24
-    move-object v13, v6
+    new-instance v0, Lxi;
 
     .line 25
-    check-cast v13, Lp62;
-
     .line 26
-    .line 27
-    move-object/from16 v1, p1
+    const-string v1, "DISABLED_ACTION_MODE_MENU_ITEMS"
 
+    .line 27
     .line 28
+    const/4 v2, 0x1
+
     .line 29
-    check-cast v1, Lpx0;
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 30
     .line 31
-    move-object/from16 v6, p2
-
     .line 32
+    new-instance v0, Lxi;
+
     .line 33
-    check-cast v6, Lz11;
-
     .line 34
-    .line 35
-    move-object/from16 v7, p3
+    const-string v1, "START_SAFE_BROWSING"
 
+    .line 35
     .line 36
+    const/4 v2, 0x5
+
     .line 37
-    check-cast v7, Ljava/lang/Integer;
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 38
     .line 39
-    invoke-virtual {v7}, Ljava/lang/Integer;->intValue()I
-
     .line 40
+    new-instance v0, Lxi;
+
     .line 41
     .line 42
-    move-result v7
+    const/4 v1, 0x5
 
     .line 43
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-string v2, "SAFE_BROWSING_WHITELIST"
 
     .line 44
     .line 45
-    .line 46
-    and-int/lit8 v1, v7, 0x11
+    invoke-direct {v0, v2, v2, v1}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
+    .line 46
     .line 47
     .line 48
-    const/16 v9, 0x10
+    new-instance v0, Lxi;
 
     .line 49
     .line 50
-    if-eq v1, v9, :cond_0
+    const-string v3, "SAFE_BROWSING_ALLOWLIST"
 
     .line 51
     .line 52
-    move v4, v5
+    invoke-direct {v0, v2, v3, v1}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 53
-    :cond_0
-    and-int/lit8 v1, v7, 0x1
-
     .line 54
     .line 55
-    check-cast v6, Lt72;
+    new-instance v0, Lxi;
 
     .line 56
     .line 57
-    invoke-virtual {v6, v1, v4}, Lt72;->T(IZ)Z
+    invoke-direct {v0, v3, v2, v1}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 58
     .line 59
     .line 60
-    move-result v1
+    new-instance v0, Lxi;
 
     .line 61
-    if-eqz v1, :cond_1
-
     .line 62
-    .line 63
-    new-instance v1, Ldj5;
+    invoke-direct {v0, v3, v3, v1}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
+    .line 63
     .line 64
     .line 65
-    invoke-direct {v1, v8, v3}, Ldj5;-><init>(Llh5;B)V
+    new-instance v0, Lxi;
 
     .line 66
     .line 67
+    const-string v1, "SAFE_BROWSING_PRIVACY_POLICY_URL"
+
     .line 68
-    const v3, -0x2cdf26eb
-
     .line 69
-    .line 70
-    .line 71
-    invoke-static {v3, v1, v6}, Lfm;->f0(ILb72;Lz11;)Lqz0;
+    const/4 v2, 0x5
 
+    .line 70
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
+    .line 71
     .line 72
     .line 73
-    .line 74
-    move-result-object v1
+    new-instance v0, Lxi;
 
+    .line 74
     .line 75
-    const/4 v3, 0x6
+    const-string v1, "SERVICE_WORKER_BASIC_USAGE"
 
     .line 76
-    invoke-static {v1, v6, v3}, Lgj3;->o(Lqz0;Lz11;I)V
-
     .line 77
-    .line 78
-    .line 79
-    new-instance v9, Lvt0;
+    const/4 v2, 0x1
 
+    .line 78
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
+    .line 79
     .line 80
     .line 81
-    iget-object v10, v0, Lw97;->k:Ljava/lang/String;
+    new-instance v0, Lxi;
 
     .line 82
     .line 83
-    iget-boolean v11, v0, Lw97;->l:Z
+    const-string v1, "SERVICE_WORKER_CACHE_MODE"
 
     .line 84
     .line 85
-    iget-boolean v14, v0, Lw97;->m:Z
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 86
     .line 87
-    invoke-direct/range {v9 .. v14}, Lvt0;-><init>(Ljava/lang/String;ZLjava/util/List;Lp62;Z)V
-
     .line 88
+    new-instance v0, Lxi;
+
     .line 89
     .line 90
-    const v0, -0xc8f9ec2
+    const-string v1, "SERVICE_WORKER_CONTENT_ACCESS"
 
     .line 91
     .line 92
-    .line 93
-    invoke-static {v0, v9, v6}, Lfm;->f0(ILb72;Lz11;)Lqz0;
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
+    .line 93
     .line 94
     .line 95
-    .line 96
-    move-result-object v0
+    new-instance v0, Lxi;
 
+    .line 96
     .line 97
-    invoke-static {v0, v6, v3}, Lgj3;->o(Lqz0;Lz11;I)V
+    const-string v1, "SERVICE_WORKER_FILE_ACCESS"
 
     .line 98
     .line 99
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
     .line 100
-    goto :goto_0
-
     .line 101
-    :cond_1
-    invoke-virtual {v6}, Lt72;->W()V
-
     .line 102
+    new-instance v0, Lxi;
+
     .line 103
     .line 104
-    :goto_0
-    return-object v2
+    const-string v1, "SERVICE_WORKER_BLOCK_NETWORK_LOADS"
 
     .line 105
-    :pswitch_0
-    move-object v9, v6
-
     .line 106
-    check-cast v9, Lh97;
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 107
     .line 108
-    move-object v1, v8
-
     .line 109
-    check-cast v1, Ljava/lang/String;
+    new-instance v0, Lxi;
 
     .line 110
     .line 111
-    move-object/from16 v18, v7
+    const-string v1, "SERVICE_WORKER_SHOULD_INTERCEPT_REQUEST"
 
     .line 112
     .line 113
-    check-cast v18, Ljava/lang/String;
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 114
     .line 115
-    move-object/from16 v6, p1
-
     .line 116
+    new-instance v0, Lxi;
+
     .line 117
-    check-cast v6, Lnj4;
-
     .line 118
-    .line 119
-    move-object/from16 v7, p2
+    const-string v1, "RECEIVE_WEB_RESOURCE_ERROR"
 
+    .line 119
     .line 120
+    const/4 v2, 0x0
+
     .line 121
-    check-cast v7, Lz11;
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 122
     .line 123
-    move-object/from16 v8, p3
-
     .line 124
+    new-instance v0, Lxi;
+
     .line 125
-    check-cast v8, Ljava/lang/Integer;
-
     .line 126
-    .line 127
-    invoke-virtual {v8}, Ljava/lang/Integer;->intValue()I
+    const-string v1, "RECEIVE_HTTP_ERROR"
 
+    .line 127
     .line 128
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
     .line 129
     .line 130
-    move-result v8
-
     .line 131
-    sget-object v15, Lr6;->p:Lq20;
+    new-instance v0, Lxi;
 
     .line 132
     .line 133
-    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-string v1, "SHOULD_OVERRIDE_WITH_REDIRECTS"
 
     .line 134
     .line 135
+    const/4 v2, 0x1
+
     .line 136
-    and-int/lit8 v10, v8, 0x6
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 137
     .line 138
-    if-nez v10, :cond_3
-
     .line 139
-    .line 140
-    move-object v10, v7
+    new-instance v0, Lxi;
 
+    .line 140
     .line 141
-    check-cast v10, Lt72;
+    const-string v1, "SAFE_BROWSING_HIT"
 
     .line 142
     .line 143
-    invoke-virtual {v10, v6}, Lt72;->g(Ljava/lang/Object;)Z
+    const/4 v2, 0x5
 
     .line 144
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
     .line 145
     .line 146
-    move-result v10
-
     .line 147
-    if-eqz v10, :cond_2
+    new-instance v0, Lxi;
 
     .line 148
     .line 149
-    const/4 v10, 0x4
+    const-string v1, "WEB_RESOURCE_REQUEST_IS_REDIRECT"
 
     .line 150
-    goto :goto_1
-
     .line 151
-    :cond_2
-    move v10, v3
+    const/4 v2, 0x1
 
     .line 152
-    :goto_1
-    or-int/2addr v8, v10
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 153
-    :cond_3
-    and-int/lit8 v10, v8, 0x13
-
     .line 154
     .line 155
-    const/16 v12, 0x12
+    new-instance v0, Lxi;
 
     .line 156
     .line 157
-    if-eq v10, v12, :cond_4
+    const-string v1, "WEB_RESOURCE_ERROR_GET_DESCRIPTION"
 
     .line 158
     .line 159
-    move v10, v5
+    const/4 v2, 0x0
 
     .line 160
-    goto :goto_2
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 161
-    :cond_4
-    move v10, v4
-
     .line 162
-    :goto_2
-    and-int/2addr v8, v5
-
     .line 163
-    check-cast v7, Lt72;
+    new-instance v0, Lxi;
 
     .line 164
     .line 165
-    invoke-virtual {v7, v8, v10}, Lt72;->T(IZ)Z
+    const-string v1, "WEB_RESOURCE_ERROR_GET_CODE"
 
     .line 166
     .line 167
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
     .line 168
-    move-result v8
-
     .line 169
-    if-eqz v8, :cond_15
-
     .line 170
+    new-instance v0, Lxi;
+
     .line 171
-    sget-object v8, Lc66;->c:Ljz1;
-
     .line 172
+    const-string v1, "SAFE_BROWSING_RESPONSE_BACK_TO_SAFETY"
+
     .line 173
-    invoke-static {v8, v6}, Lag7;->E(Lwp3;Lnj4;)Lwp3;
-
     .line 174
+    const/4 v2, 0x5
+
     .line 175
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
     .line 176
-    move-result-object v6
-
     .line 177
-    sget-object v10, Lr6;->l:Lq20;
-
     .line 178
-    .line 179
-    invoke-static {v10, v4}, Lcb0;->c(Lf8;Z)Lrj3;
+    new-instance v0, Lxi;
 
+    .line 179
     .line 180
+    const-string v1, "SAFE_BROWSING_RESPONSE_PROCEED"
+
     .line 181
     .line 182
-    move-result-object v10
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 183
-    iget-wide v12, v7, Lt72;->U:J
-
     .line 184
     .line 185
-    invoke-static {v12, v13}, Ljava/lang/Long;->hashCode(J)I
+    new-instance v0, Lxi;
 
     .line 186
     .line 187
-    .line 188
-    move-result v12
+    const-string v1, "SAFE_BROWSING_RESPONSE_SHOW_INTERSTITIAL"
 
+    .line 188
     .line 189
-    invoke-virtual {v7}, Lt72;->m()Lro4;
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 190
     .line 191
     .line 192
-    move-result-object v13
+    new-instance v0, Lxi;
 
     .line 193
-    invoke-static {v7, v6}, Ldn;->T(Lz11;Lwp3;)Lwp3;
-
     .line 194
+    const-string v1, "WEB_MESSAGE_PORT_POST_MESSAGE"
+
     .line 195
     .line 196
-    move-result-object v6
+    const/4 v2, 0x0
 
     .line 197
-    sget-object v14, Lq11;->d:Lr6;
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 198
     .line 199
-    invoke-virtual {v14}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 200
+    new-instance v0, Lxi;
+
     .line 201
     .line 202
-    invoke-virtual {v7}, Lt72;->f0()V
+    const-string v1, "WEB_MESSAGE_PORT_CLOSE"
 
     .line 203
     .line 204
-    .line 205
-    iget-boolean v14, v7, Lt72;->T:Z
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
+    .line 205
     .line 206
     .line 207
-    sget-object v3, Lj13;->b0:Lz02;
+    new-instance v0, Lxi;
 
     .line 208
     .line 209
-    if-eqz v14, :cond_5
+    const-string v1, "WEB_MESSAGE_ARRAY_BUFFER"
 
     .line 210
     .line 211
-    invoke-virtual {v7, v3}, Lt72;->l(Le62;)V
+    const/4 v2, 0x2
 
     .line 212
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
     .line 213
     .line 214
-    goto :goto_3
-
     .line 215
-    :cond_5
-    invoke-virtual {v7}, Lt72;->o0()V
+    sput-object v0, Lw97;->a:Lxi;
 
     .line 216
     .line 217
+    new-instance v0, Lxi;
+
     .line 218
-    :goto_3
-    sget-object v14, Lr6;->R:Lw01;
-
     .line 219
+    const-string v1, "WEB_MESSAGE_PORT_SET_MESSAGE_CALLBACK"
+
     .line 220
-    invoke-static {v7, v14, v10}, Lu47;->h(Lz11;Lt62;Ljava/lang/Object;)V
-
     .line 221
-    .line 222
-    .line 223
-    sget-object v10, Lr6;->Q:Lw01;
+    const/4 v2, 0x0
 
+    .line 222
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
+    .line 223
     .line 224
     .line 225
-    invoke-static {v7, v10, v13}, Lu47;->h(Lz11;Lt62;Ljava/lang/Object;)V
+    new-instance v0, Lxi;
 
     .line 226
     .line 227
-    .line 228
-    invoke-static {v12}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const-string v1, "CREATE_WEB_MESSAGE_CHANNEL"
 
+    .line 228
     .line 229
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
     .line 230
     .line 231
-    move-result-object v12
-
     .line 232
-    sget-object v13, Lr6;->S:Lw01;
+    new-instance v0, Lxi;
 
     .line 233
     .line 234
-    invoke-static {v7, v13, v12}, Lu47;->h(Lz11;Lt62;Ljava/lang/Object;)V
+    const-string v1, "POST_WEB_MESSAGE"
 
     .line 235
     .line 236
-    .line 237
-    invoke-static {v7}, Lu47;->g(Lz11;)V
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
+    .line 237
     .line 238
     .line 239
+    new-instance v0, Lxi;
+
     .line 240
-    sget-object v12, Lr6;->P:Lw01;
-
     .line 241
-    .line 242
-    invoke-static {v7, v12, v6}, Lu47;->h(Lz11;Lt62;Ljava/lang/Object;)V
+    const-string v1, "WEB_MESSAGE_CALLBACK_ON_MESSAGE"
 
+    .line 242
     .line 243
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
     .line 244
     .line 245
-    iget-object v6, v0, Lw97;->k:Ljava/lang/String;
-
     .line 246
+    new-instance v0, Lxi;
+
     .line 247
-    iget-boolean v5, v0, Lw97;->l:Z
-
     .line 248
-    .line 249
-    if-nez v6, :cond_6
+    const-string v1, "GET_WEB_VIEW_CLIENT"
 
+    .line 249
     .line 250
+    const/4 v2, 0x4
+
     .line 251
-    const v0, 0x3ebdf135
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 252
     .line 253
     .line 254
-    invoke-virtual {v7, v0}, Lt72;->c0(I)V
+    new-instance v0, Lxi;
 
     .line 255
     .line 256
-    .line 257
-    invoke-virtual {v7, v4}, Lt72;->r(Z)V
+    const-string v1, "GET_WEB_CHROME_CLIENT"
 
+    .line 257
     .line 258
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
     .line 259
     .line 260
-    move-object/from16 v29, v1
-
     .line 261
+    new-instance v0, Lxi;
+
     .line 262
-    move-object/from16 v28, v2
-
     .line 263
-    .line 264
-    move/from16 v25, v5
+    const-string v1, "GET_WEB_VIEW_RENDERER"
 
+    .line 264
     .line 265
+    const/4 v2, 0x7
+
     .line 266
-    move-object v4, v7
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 267
-    move-object v5, v10
-
     .line 268
-    move-object v1, v12
-
     .line 269
-    move-object v6, v13
+    new-instance v0, Lxi;
 
     .line 270
-    move-object v2, v14
-
     .line 271
-    move-object v0, v15
+    const-string v1, "WEB_VIEW_RENDERER_TERMINATE"
 
     .line 272
-    move-object v13, v8
-
     .line 273
-    goto/16 :goto_7
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 274
     .line 275
-    :cond_6
-    const v11, 0x3ebdf136
-
     .line 276
+    new-instance v0, Lxi;
+
     .line 277
     .line 278
-    invoke-virtual {v7, v11}, Lt72;->c0(I)V
+    const-string v1, "TRACING_CONTROLLER_BASIC_USAGE"
 
     .line 279
     .line 280
+    const/4 v2, 0x6
+
     .line 281
-    if-eqz v5, :cond_f
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 282
     .line 283
-    const v11, 0x1f45b701
-
     .line 284
+    new-instance v0, Lt96;
+
     .line 285
     .line 286
-    invoke-virtual {v7, v11}, Lt72;->c0(I)V
+    invoke-direct {v0}, Lt96;-><init>()V
 
     .line 287
     .line 288
     .line 289
-    invoke-virtual {v9}, Lh97;->h()I
+    new-instance v0, Lt96;
 
     .line 290
     .line 291
+    invoke-direct {v0}, Lt96;-><init>()V
+
     .line 292
-    move-result v16
-
     .line 293
-    iget-object v11, v9, Lh97;->s:Lmt3;
-
     .line 294
-    .line 295
-    invoke-interface {v11}, Lmb6;->getValue()Ljava/lang/Object;
+    new-instance v0, Lt96;
 
+    .line 295
     .line 296
+    invoke-direct {v0}, Lt96;-><init>()V
+
     .line 297
     .line 298
-    move-result-object v11
-
     .line 299
-    check-cast v11, Ljava/lang/Number;
+    new-instance v0, Lxi;
 
     .line 300
     .line 301
-    invoke-virtual {v11}, Ljava/lang/Number;->intValue()I
+    const-string v1, "WEB_VIEW_RENDERER_CLIENT_BASIC_USAGE"
 
     .line 302
     .line 303
+    const/4 v2, 0x7
+
     .line 304
-    move-result v17
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 305
-    iget-object v11, v9, Lh97;->p:Lmt3;
-
     .line 306
     .line 307
-    invoke-interface {v11}, Lmb6;->getValue()Ljava/lang/Object;
+    new-instance v0, Lxi;
 
     .line 308
     .line 309
-    .line 310
-    move-result-object v11
+    const-string v1, "ALGORITHMIC_DARKENING"
 
+    .line 310
     .line 311
-    check-cast v11, Ljava/lang/Number;
+    const/16 v2, 0x8
 
     .line 312
     .line 313
-    invoke-virtual {v11}, Ljava/lang/Number;->intValue()I
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 314
     .line 315
     .line 316
-    move-result v19
+    const-string v0, "\\A\\d+"
 
     .line 317
-    iget-object v11, v9, Lh97;->q:Lmt3;
-
     .line 318
-    .line 319
-    invoke-interface {v11}, Lmb6;->getValue()Ljava/lang/Object;
+    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
 
+    .line 319
     .line 320
     .line 321
-    .line 322
-    move-result-object v11
+    new-instance v0, Lxi;
 
+    .line 322
     .line 323
-    check-cast v11, Ljava/lang/Number;
+    const-string v1, "PROXY_OVERRIDE:3"
 
     .line 324
     .line 325
-    invoke-virtual {v11}, Ljava/lang/Number;->intValue()I
+    const/4 v2, 0x2
 
     .line 326
+    const-string v3, "PROXY_OVERRIDE"
+
     .line 327
     .line 328
-    move-result v20
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 329
-    invoke-virtual {v7, v9}, Lt72;->g(Ljava/lang/Object;)Z
-
     .line 330
     .line 331
-    .line 332
-    move-result v11
+    new-instance v0, Lxi;
 
+    .line 332
     .line 333
-    invoke-virtual {v7}, Lt72;->O()Ljava/lang/Object;
+    const-string v1, "MULTI_PROCESS_QUERY"
 
     .line 334
     .line 335
-    .line 336
-    move-result-object v4
+    const-string v3, "MULTI_PROCESS"
 
+    .line 336
     .line 337
-    move-object/from16 p2, v8
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 338
     .line 339
-    sget-object v8, Lx11;->a:Lv8;
-
     .line 340
+    sput-object v0, Lw97;->b:Lxi;
+
     .line 341
-    if-nez v11, :cond_7
-
     .line 342
+    new-instance v0, Lxi;
+
     .line 343
-    if-ne v4, v8, :cond_8
-
     .line 344
-    .line 345
-    :cond_7
-    move-object/from16 v23, v7
+    const-string v1, "FORCE_DARK"
 
+    .line 345
     .line 346
+    const/4 v2, 0x7
+
     .line 347
-    goto :goto_4
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 348
-    :cond_8
-    move-object/from16 p1, v7
-
     .line 349
     .line 350
-    move-object v7, v4
+    new-instance v0, Lxi;
 
     .line 351
-    move-object/from16 v4, p1
-
     .line 352
-    .line 353
-    move-object/from16 v21, p2
+    const-string v1, "FORCE_DARK_BEHAVIOR"
 
+    .line 353
     .line 354
+    const/4 v2, 0x2
+
     .line 355
-    move-object/from16 v29, v1
+    const-string v3, "FORCE_DARK_STRATEGY"
 
     .line 356
     .line 357
-    move-object/from16 v28, v2
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 358
     .line 359
-    move/from16 v25, v5
-
     .line 360
+    new-instance v0, Lxi;
+
     .line 361
-    move-object/from16 v22, v6
-
     .line 362
-    .line 363
-    move-object v5, v10
+    const-string v1, "WEB_MESSAGE_LISTENER"
 
+    .line 363
     .line 364
-    move-object v1, v12
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 365
-    move-object v6, v13
-
     .line 366
-    move-object v2, v14
-
     .line 367
-    move-object/from16 p1, v15
+    sput-object v0, Lw97;->c:Lxi;
 
     .line 368
     .line 369
-    move-object v15, v8
+    new-instance v0, Lxi;
 
     .line 370
-    goto :goto_5
-
     .line 371
-    :goto_4
-    new-instance v7, Li45;
+    const-string v1, "DOCUMENT_START_SCRIPT:1"
 
     .line 372
     .line 373
-    move-object v4, v13
+    const-string v3, "DOCUMENT_START_SCRIPT"
 
     .line 374
-    const/4 v13, 0x0
-
     .line 375
-    move-object v11, v14
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 376
-    const/16 v14, 0x1c
-
     .line 377
     .line 378
-    move-object/from16 v21, v8
+    new-instance v0, Lxi;
 
     .line 379
     .line 380
-    const/4 v8, 0x1
+    const-string v1, "PROXY_OVERRIDE_REVERSE_BYPASS"
 
     .line 381
-    move-object/from16 v22, v10
-
     .line 382
-    .line 383
-    const-class v10, Lh97;
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
+    .line 383
     .line 384
     .line 385
-    move-object/from16 v24, v11
+    new-instance v0, Lxi;
 
     .line 386
     .line 387
-    const-string v11, "onWebLoadingChanged"
+    const-string v1, "GET_VARIATIONS_HEADER"
 
     .line 388
     .line 389
-    move-object/from16 v25, v12
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 390
     .line 391
-    const-string v12, "onWebLoadingChanged(Z)V"
-
     .line 392
+    new-instance v0, Lxi;
+
     .line 393
-    move-object/from16 v29, v1
-
     .line 394
+    const-string v1, "ENTERPRISE_AUTHENTICATION_APP_LINK_POLICY"
+
     .line 395
-    move-object/from16 v28, v2
-
     .line 396
-    .line 397
-    move-object/from16 p1, v15
+    invoke-direct {v0, v1, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
+    .line 397
     .line 398
     .line 399
-    move-object/from16 v15, v21
+    new-instance v0, Lxi;
 
     .line 400
     .line 401
-    move-object/from16 v2, v24
+    const-string v1, "GET_COOKIE_INFO"
 
     .line 402
     .line 403
-    move-object/from16 v1, v25
+    const-string v3, "GET_COOKIE_INFO"
 
     .line 404
     .line 405
-    move-object/from16 v21, p2
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 406
     .line 407
-    move/from16 v25, v5
-
     .line 408
+    new-instance v0, Lxi;
+
     .line 409
-    move-object/from16 v5, v22
-
     .line 410
+    const-string v1, "REQUESTED_WITH_HEADER_ALLOW_LIST"
+
     .line 411
-    move-object/from16 v22, v6
-
     .line 412
-    .line 413
-    move-object v6, v4
+    const-string v3, "REQUESTED_WITH_HEADER_ALLOW_LIST"
 
+    .line 413
     .line 414
-    move-object/from16 v4, v23
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 415
     .line 416
-    invoke-direct/range {v7 .. v14}, Li45;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;IB)V
-
     .line 417
+    new-instance v0, Lxi;
+
     .line 418
     .line 419
-    invoke-virtual {v4, v7}, Lt72;->l0(Ljava/lang/Object;)V
+    const/4 v1, 0x2
 
     .line 420
+    const-string v2, "USER_AGENT_METADATA"
+
     .line 421
     .line 422
-    :goto_5
-    move-object/from16 v24, v7
+    invoke-direct {v0, v2, v2, v1}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 423
     .line 424
-    check-cast v24, Ley2;
-
     .line 425
-    .line 426
-    invoke-virtual {v4, v9}, Lt72;->g(Ljava/lang/Object;)Z
+    new-instance v0, Lv97;
 
+    .line 426
     .line 427
+    const-string v1, "USER_AGENT_METADATA_FORM_FACTORS"
+
     .line 428
     .line 429
-    move-result v7
+    const/4 v3, 0x0
 
     .line 430
-    invoke-virtual {v4}, Lt72;->O()Ljava/lang/Object;
+    invoke-direct {v0, v1, v2, v3}, Lv97;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 431
     .line 432
     .line 433
-    move-result-object v8
+    new-instance v0, Lv97;
 
     .line 434
-    if-nez v7, :cond_9
-
     .line 435
-    .line 436
-    if-ne v8, v15, :cond_a
+    const-string v1, "MULTI_PROFILE"
 
+    .line 436
     .line 437
+    const/4 v2, 0x1
+
     .line 438
-    :cond_9
-    new-instance v7, Li45;
+    const-string v3, "MULTI_PROFILE"
 
     .line 439
     .line 440
-    const/4 v13, 0x0
+    invoke-direct {v0, v3, v1, v2}, Lv97;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 441
-    const/16 v14, 0x1d
-
     .line 442
     .line 443
-    const/4 v8, 0x1
+    new-instance v0, Lxi;
 
     .line 444
-    const-class v10, Lh97;
-
     .line 445
-    .line 446
-    const-string v11, "onWebErrorChanged"
+    const-string v1, "ATTRIBUTION_BEHAVIOR"
 
+    .line 446
     .line 447
+    const/4 v2, 0x2
+
     .line 448
-    const-string v12, "onWebErrorChanged(Ljava/lang/String;)V"
+    const-string v3, "ATTRIBUTION_REGISTRATION_BEHAVIOR"
 
     .line 449
     .line 450
-    invoke-direct/range {v7 .. v14}, Li45;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;IB)V
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 451
     .line 452
     .line 453
-    invoke-virtual {v4, v7}, Lt72;->l0(Ljava/lang/Object;)V
+    new-instance v0, Lxi;
 
     .line 454
     .line 455
-    .line 456
-    move-object v8, v7
+    const-string v1, "WEBVIEW_INTEGRITY_API_STATUS"
 
+    .line 456
     .line 457
-    :cond_a
-    check-cast v8, Ley2;
+    const-string v3, "WEBVIEW_MEDIA_INTEGRITY_API_STATUS"
 
     .line 458
     .line 459
-    invoke-virtual {v4, v9}, Lt72;->g(Ljava/lang/Object;)Z
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 460
     .line 461
     .line 462
-    move-result v7
+    new-instance v0, Lxi;
 
     .line 463
-    invoke-virtual {v4}, Lt72;->O()Ljava/lang/Object;
-
     .line 464
+    const-string v1, "MUTE_AUDIO"
+
     .line 465
     .line 466
-    move-result-object v10
+    const-string v3, "MUTE_AUDIO"
 
     .line 467
-    if-nez v7, :cond_b
-
     .line 468
-    .line 469
-    if-ne v10, v15, :cond_c
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
+    .line 469
     .line 470
     .line 471
-    :cond_b
-    new-instance v10, Lee6;
+    new-instance v0, Lxi;
 
     .line 472
     .line 473
-    const/4 v7, 0x3
+    const-string v1, "WEB_AUTHENTICATION"
 
     .line 474
-    invoke-direct {v10, v9, v7}, Lee6;-><init>(Lh97;B)V
-
     .line 475
+    const-string v3, "WEB_AUTHENTICATION"
+
     .line 476
     .line 477
-    invoke-virtual {v4, v10}, Lt72;->l0(Ljava/lang/Object;)V
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 478
     .line 479
     .line 480
-    :cond_c
-    check-cast v10, Lp62;
+    new-instance v0, Lxi;
 
     .line 481
     .line 482
-    check-cast v24, Lp62;
+    const-string v1, "SPECULATIVE_LOADING"
 
     .line 483
     .line 484
-    check-cast v8, Lp62;
+    const-string v3, "SPECULATIVE_LOADING_STATUS"
 
     .line 485
     .line 486
-    invoke-virtual {v4, v9}, Lt72;->g(Ljava/lang/Object;)Z
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 487
     .line 488
     .line 489
-    move-result v7
+    new-instance v0, Lxi;
 
     .line 490
-    invoke-virtual {v4}, Lt72;->O()Ljava/lang/Object;
-
     .line 491
+    const-string v1, "BACK_FORWARD_CACHE"
+
     .line 492
     .line 493
-    move-result-object v11
+    const-string v3, "BACK_FORWARD_CACHE"
 
     .line 494
-    if-nez v7, :cond_d
-
     .line 495
-    .line 496
-    if-ne v11, v15, :cond_e
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
+    .line 496
     .line 497
     .line 498
-    :cond_d
-    new-instance v11, Lee6;
+    new-instance v0, Lxi;
 
     .line 499
     .line 500
-    const/4 v7, 0x4
+    const-string v1, "BACK_FORWARD_CACHE_SETTINGS"
 
     .line 501
-    invoke-direct {v11, v9, v7}, Lee6;-><init>(Lh97;B)V
-
     .line 502
+    const-string v3, "BACK_FORWARD_CACHE_SETTINGS"
+
     .line 503
     .line 504
-    invoke-virtual {v4, v11}, Lt72;->l0(Ljava/lang/Object;)V
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 505
     .line 506
     .line 507
-    :cond_e
-    check-cast v11, Lp62;
+    new-instance v0, Lxi;
 
     .line 508
     .line 509
-    move/from16 v15, v19
+    const-string v1, "BACK_FORWARD_CACHE_SETTINGS_V3"
 
     .line 510
     .line 511
-    move-object/from16 v19, v10
+    const-string v3, "BACK_FORWARD_CACHE_SETTINGS_EXPERIMENTAL_V3"
 
     .line 512
     .line 513
-    move-object/from16 v10, v22
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 514
     .line 515
-    move-object/from16 v22, v11
-
     .line 516
+    new-instance v0, Lxi;
+
     .line 517
-    move/from16 v11, v16
-
     .line 518
+    const-string v1, "BACK_FORWARD_CACHE_SETTINGS_V4"
+
     .line 519
-    move/from16 v16, v20
-
     .line 520
+    const-string v3, "BACK_FORWARD_CACHE_SETTINGS_EXPERIMENTAL_V4"
+
     .line 521
-    move-object/from16 v20, v24
-
     .line 522
-    .line 523
-    const/16 v24, 0xc00
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
+    .line 523
     .line 524
     .line 525
-    const/4 v14, 0x0
+    new-instance v0, Lxi;
 
     .line 526
-    iget-boolean v0, v0, Lw97;->m:Z
-
     .line 527
+    const-string v1, "WEB_STORAGE_DELETE_BROWSING_DATA"
+
     .line 528
-    move-object/from16 v23, v4
-
     .line 529
+    const-string v3, "DELETE_BROWSING_DATA"
+
     .line 530
-    move/from16 v12, v17
-
     .line 531
-    .line 532
-    move-object/from16 v13, v21
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
+    .line 532
     .line 533
     .line 534
-    move/from16 v17, v0
+    new-instance v0, Lv97;
 
     .line 535
     .line 536
-    move-object/from16 v21, v8
+    const-string v1, "PREFETCH_URL_V5"
 
     .line 537
     .line 538
-    move-object/from16 v0, p1
+    const-string v3, "PREFETCH_URL_V5"
 
     .line 539
     .line 540
-    invoke-static/range {v10 .. v24}, La57;->t(Ljava/lang/String;IILwp3;ZIIZLjava/lang/String;Lp62;Lp62;Lp62;Lp62;Lz11;I)V
+    invoke-direct {v0, v3, v1, v2}, Lv97;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 541
     .line 542
     .line 543
-    const/4 v7, 0x0
+    new-instance v0, Lxi;
 
     .line 544
-    invoke-virtual {v4, v7}, Lt72;->r(Z)V
-
     .line 545
+    const-string v1, "ASYNC_WEBVIEW_STARTUP_V2"
+
     .line 546
     .line 547
-    goto :goto_6
+    invoke-direct {v0, v1}, Lxi;-><init>(Ljava/lang/String;)V
 
     .line 548
-    :cond_f
-    move-object v0, v7
-
     .line 549
-    move v7, v4
-
     .line 550
-    move-object v4, v0
+    new-instance v0, Lxi;
 
     .line 551
-    move-object/from16 v29, v1
-
     .line 552
+    const-string v1, "ASYNC_WEBVIEW_STARTUP"
+
     .line 553
-    move-object/from16 v28, v2
-
     .line 554
-    .line 555
-    move/from16 v25, v5
+    invoke-direct {v0, v1}, Lxi;-><init>(Ljava/lang/String;)V
 
+    .line 555
     .line 556
     .line 557
-    move-object v5, v10
+    new-instance v0, Lxi;
 
     .line 558
-    move-object v1, v12
-
     .line 559
-    move-object v6, v13
+    const-string v1, "ASYNC_WEBVIEW_STARTUP_ASYNC_STARTUP_LOCATIONS"
 
     .line 560
-    move-object v2, v14
-
     .line 561
-    move-object v0, v15
+    invoke-direct {v0, v1}, Lxi;-><init>(Ljava/lang/String;)V
 
     .line 562
-    move-object v13, v8
-
     .line 563
-    const v8, 0x1f51c324
-
     .line 564
+    new-instance v0, Lxi;
+
     .line 565
     .line 566
-    invoke-virtual {v4, v8}, Lt72;->c0(I)V
+    const-string v1, "DEFAULT_TRAFFICSTATS_TAGGING"
 
     .line 567
     .line 568
-    .line 569
-    invoke-virtual {v4, v7}, Lt72;->r(Z)V
+    const-string v3, "DEFAULT_TRAFFICSTATS_TAGGING"
 
+    .line 569
     .line 570
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
     .line 571
     .line 572
-    :goto_6
-    invoke-virtual {v4, v7}, Lt72;->r(Z)V
-
     .line 573
+    new-instance v0, Lxi;
+
     .line 574
     .line 575
-    :goto_7
-    invoke-virtual {v9}, Lh97;->f()Z
+    const-string v1, "PRERENDER_URL_V3"
 
     .line 576
     .line 577
-    .line 578
-    move-result v7
+    const-string v3, "PRERENDER_URL_V2"
 
+    .line 578
     .line 579
-    if-nez v7, :cond_10
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 580
     .line 581
-    iget-object v7, v9, Lh97;->k:Lmt3;
-
     .line 582
-    .line 583
-    invoke-interface {v7}, Lmb6;->getValue()Ljava/lang/Object;
+    new-instance v0, Lxi;
 
+    .line 583
     .line 584
+    const-string v1, "SPECULATIVE_LOADING_CONFIG_V2"
+
     .line 585
     .line 586
-    move-result-object v7
+    const-string v3, "SPECULATIVE_LOADING_CONFIG_V2"
 
     .line 587
-    check-cast v7, Ljava/lang/Boolean;
-
     .line 588
-    .line 589
-    invoke-virtual {v7}, Ljava/lang/Boolean;->booleanValue()Z
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
+    .line 589
     .line 590
     .line 591
-    .line 592
-    move-result v7
+    new-instance v0, Lxi;
 
+    .line 592
     .line 593
-    if-eqz v7, :cond_11
+    const-string v1, "PREFETCH_CACHE_V1"
 
     .line 594
     .line 595
-    if-eqz v25, :cond_11
+    const-string v3, "PREFETCH_CACHE_V1"
 
     .line 596
     .line 597
-    :cond_10
-    const/4 v7, 0x0
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 598
-    goto :goto_8
-
     .line 599
-    :cond_11
-    const v1, 0x3ed0a8a6
-
     .line 600
+    new-instance v0, Lxi;
+
     .line 601
     .line 602
-    invoke-virtual {v4, v1}, Lt72;->c0(I)V
+    const-string v1, "PREFETCH_WITH_CALLBACK_RESULT_V1"
 
     .line 603
     .line 604
+    invoke-direct {v0, v1}, Lxi;-><init>(Ljava/lang/String;)V
+
     .line 605
-    const/4 v7, 0x0
-
     .line 606
-    invoke-virtual {v4, v7}, Lt72;->r(Z)V
-
     .line 607
+    new-instance v0, Lxi;
+
     .line 608
     .line 609
-    goto :goto_a
+    const-string v1, "SET_MAX_PRERENDERS_V1"
 
     .line 610
-    :goto_8
-    const v8, 0x3eccf2e9
-
     .line 611
+    const-string v3, "SET_MAX_PRERENDERS_V1"
+
     .line 612
     .line 613
-    invoke-virtual {v4, v8}, Lt72;->c0(I)V
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 614
     .line 615
     .line 616
-    invoke-static {v0, v7}, Lcb0;->c(Lf8;Z)Lrj3;
+    new-instance v0, Lxi;
 
     .line 617
     .line 618
-    .line 619
-    move-result-object v8
+    const-string v1, "SAVE_STATE"
 
+    .line 619
     .line 620
-    iget-wide v9, v4, Lt72;->U:J
+    const-string v3, "SAVE_STATE"
 
     .line 621
     .line 622
-    invoke-static {v9, v10}, Ljava/lang/Long;->hashCode(J)I
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 623
     .line 624
     .line 625
-    move-result v7
+    new-instance v0, Lxi;
 
     .line 626
-    invoke-virtual {v4}, Lt72;->m()Lro4;
-
     .line 627
+    const-string v1, "NAVIGATION_GET_WEB_RESOURCE_ERROR"
+
     .line 628
     .line 629
-    move-result-object v9
+    const-string v3, "NAVIGATION_GET_WEB_RESOURCE_ERROR"
 
     .line 630
-    invoke-static {v4, v13}, Ldn;->T(Lz11;Lwp3;)Lwp3;
-
     .line 631
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
     .line 632
     .line 633
-    move-result-object v10
-
     .line 634
-    invoke-virtual {v4}, Lt72;->f0()V
+    new-instance v0, Lxi;
 
     .line 635
     .line 636
+    const-string v1, "PAGE_GET_URL"
+
     .line 637
-    iget-boolean v11, v4, Lt72;->T:Z
-
     .line 638
+    const-string v3, "NAVIGATION_LISTENER"
+
     .line 639
-    if-eqz v11, :cond_12
-
     .line 640
-    .line 641
-    invoke-virtual {v4, v3}, Lt72;->l(Le62;)V
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
+    .line 641
     .line 642
     .line 643
-    .line 644
-    goto :goto_9
+    new-instance v0, Lxi;
 
+    .line 644
     .line 645
-    :cond_12
-    invoke-virtual {v4}, Lt72;->o0()V
+    const-string v1, "PROVIDER_WEAKLY_REF_WEBVIEW"
 
     .line 646
     .line 647
-    .line 648
-    :goto_9
-    invoke-static {v4, v2, v8}, Lu47;->h(Lz11;Lt62;Ljava/lang/Object;)V
+    const-string v3, "PROVIDER_WEAKLY_REF_WEBVIEW"
 
+    .line 648
     .line 649
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
     .line 650
     .line 651
-    invoke-static {v4, v5, v9}, Lu47;->h(Lz11;Lt62;Ljava/lang/Object;)V
-
     .line 652
+    sput-object v0, Lw97;->d:Lxi;
+
     .line 653
     .line 654
-    invoke-static {v7, v4, v6, v4}, Ly96;->y(ILt72;Lw01;Lt72;)V
+    new-instance v0, Lxi;
 
     .line 655
     .line 656
-    .line 657
-    invoke-static {v4, v1, v10}, Lu47;->h(Lz11;Lt62;Ljava/lang/Object;)V
+    const-string v1, "PAYMENT_REQUEST"
 
+    .line 657
     .line 658
+    const-string v3, "PAYMENT_REQUEST"
+
     .line 659
     .line 660
-    const/16 v26, 0x180
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 661
     .line 662
-    const/16 v27, 0x3b
-
     .line 663
+    new-instance v0, Lxi;
+
     .line 664
-    const/16 v19, 0x0
-
     .line 665
+    const-string v1, "WEBVIEW_BUILDER_V1"
+
     .line 666
-    const-wide/16 v20, 0x0
-
     .line 667
+    const-string v3, "WEBVIEW_BUILDER_EXPERIMENTAL_V1"
+
     .line 668
-    const/high16 v22, 0x40200000    # 2.5f
-
     .line 669
-    .line 670
-    const/16 v23, 0x0
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
+    .line 670
     .line 671
     .line 672
-    const/16 v24, 0x0
+    new-instance v0, Lxi;
 
     .line 673
     .line 674
-    move-object/from16 v25, v4
+    const-string v1, "WEBVIEW_BUILDER_V2"
 
     .line 675
     .line 676
-    invoke-static/range {v19 .. v27}, Lgv4;->a(Lwp3;JFIFLz11;II)V
+    const-string v3, "WEBVIEW_BUILDER_EXPERIMENTAL_V2"
 
     .line 677
     .line 678
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
     .line 679
-    const/4 v1, 0x1
-
     .line 680
-    invoke-virtual {v4, v1}, Lt72;->r(Z)V
-
     .line 681
+    new-instance v0, Lxi;
+
     .line 682
     .line 683
-    const/4 v7, 0x0
+    const-string v1, "COOKIE_INTERCEPT"
 
     .line 684
-    invoke-virtual {v4, v7}, Lt72;->r(Z)V
-
     .line 685
+    const-string v3, "COOKIE_INTERCEPT"
+
     .line 686
     .line 687
-    :goto_a
-    if-eqz v29, :cond_13
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 688
     .line 689
-    invoke-static/range {v29 .. v29}, Lad6;->y0(Ljava/lang/CharSequence;)Z
-
     .line 690
+    new-instance v0, Lxi;
+
     .line 691
     .line 692
-    move-result v1
+    const-string v1, "WARM_UP_RENDERER_PROCESS"
 
     .line 693
-    if-eqz v1, :cond_14
-
     .line 694
-    .line 695
-    :cond_13
-    const/4 v7, 0x0
+    const-string v3, "WARM_UP_RENDERER_PROCESS"
 
+    .line 695
     .line 696
-    goto :goto_c
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 697
-    :cond_14
-    const v1, 0x3ed1a97d
-
     .line 698
     .line 699
-    .line 700
-    invoke-virtual {v4, v1}, Lt72;->c0(I)V
+    new-instance v0, Lxi;
 
+    .line 700
     .line 701
+    const-string v1, "CUSTOM_REQUEST_HEADERS"
+
     .line 702
     .line 703
-    sget-object v1, Llc0;->a:Llc0;
+    const-string v3, "CUSTOM_REQUEST_HEADERS"
 
     .line 704
     .line 705
-    sget-object v2, Ltp3;->j:Ltp3;
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 706
     .line 707
-    invoke-virtual {v1, v2, v0}, Llc0;->a(Lwp3;Lf8;)Lwp3;
-
     .line 708
+    new-instance v0, Lt96;
+
     .line 709
     .line 710
-    move-result-object v0
+    invoke-direct {v0}, Lt96;-><init>()V
 
     .line 711
-    const/high16 v1, 0x41c00000    # 24.0f
-
     .line 712
     .line 713
-    const/4 v2, 0x0
+    new-instance v0, Lt96;
 
     .line 714
-    const/4 v3, 0x2
-
     .line 715
-    invoke-static {v0, v1, v2, v3}, Lag7;->H(Lwp3;FFI)Lwp3;
+    invoke-direct {v0}, Lt96;-><init>()V
 
     .line 716
     .line 717
     .line 718
-    move-result-object v19
+    new-instance v0, Lt96;
 
     .line 719
-    new-instance v0, Llr;
-
     .line 720
-    .line 721
-    const/16 v1, 0x15
+    invoke-direct {v0}, Lt96;-><init>()V
 
+    .line 721
     .line 722
     .line 723
-    move-object/from16 v8, v29
+    new-instance v0, Lxi;
 
     .line 724
     .line 725
-    invoke-direct {v0, v8, v1}, Llr;-><init>(Ljava/lang/String;B)V
+    const-string v1, "PRECONNECT"
 
     .line 726
     .line 727
-    .line 728
-    const v1, 0x54ca5569
+    const-string v3, "PRECONNECT"
 
+    .line 728
     .line 729
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
     .line 730
     .line 731
-    invoke-static {v1, v0, v4}, Lfm;->f0(ILb72;Lz11;)Lqz0;
-
     .line 732
+    new-instance v0, Lxi;
+
     .line 733
     .line 734
-    move-result-object v23
+    const-string v1, "ENQUEUE_PRECONNECT"
 
     .line 735
-    const/16 v25, 0x6000
-
     .line 736
+    const-string v3, "ENQUEUE_PRECONNECT"
+
     .line 737
-    const/16 v20, 0x0
-
     .line 738
-    .line 739
-    const/16 v21, 0x0
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
+    .line 739
     .line 740
     .line 741
-    const/16 v22, 0x0
+    new-instance v0, Lxi;
 
     .line 742
     .line 743
-    move-object/from16 v24, v4
+    const-string v1, "ADD_QUIC_HINTS_V1"
 
     .line 744
     .line 745
-    invoke-static/range {v19 .. v25}, Lhq;->h(Lwp3;Ln06;Lej0;Lgj0;Lqz0;Lz11;I)V
+    const-string v3, "ADD_QUIC_HINTS"
 
     .line 746
     .line 747
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
     .line 748
-    const/4 v7, 0x0
-
     .line 749
-    invoke-virtual {v4, v7}, Lt72;->r(Z)V
-
     .line 750
+    new-instance v0, Lxi;
+
     .line 751
     .line 752
-    :goto_b
-    const/4 v1, 0x1
+    const-string v1, "HYPERLINK_CONTEXT_MENU_ITEMS"
 
     .line 753
-    goto :goto_d
-
     .line 754
-    :goto_c
-    const v0, 0x3ed9c566
+    const-string v3, "HYPERLINK_CONTEXT_MENU_ITEMS"
 
     .line 755
     .line 756
-    .line 757
-    invoke-virtual {v4, v0}, Lt72;->c0(I)V
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
+    .line 757
     .line 758
     .line 759
-    .line 760
-    invoke-virtual {v4, v7}, Lt72;->r(Z)V
+    new-instance v0, Lxi;
 
+    .line 760
     .line 761
+    const-string v1, "JS_INJECTION_IN_FRAME_AND_WORLD"
+
     .line 762
     .line 763
-    goto :goto_b
+    const-string v3, "JS_INJECTION_IN_FRAME_AND_WORLD"
 
     .line 764
-    :goto_d
-    invoke-virtual {v4, v1}, Lt72;->r(Z)V
-
     .line 765
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
     .line 766
     .line 767
-    goto :goto_e
-
     .line 768
-    :cond_15
-    move-object/from16 v28, v2
+    new-instance v0, Lxi;
 
     .line 769
     .line 770
-    move-object v4, v7
+    const-string v1, "WEBVIEW_NAVIGATE_V1"
 
     .line 771
-    invoke-virtual {v4}, Lt72;->W()V
-
     .line 772
+    const-string v3, "WEBVIEW_NAVIGATE_EXPERIMENTAL_V1"
+
     .line 773
     .line 774
-    :goto_e
-    return-object v28
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
 
     .line 775
+    .line 776
+    .line 777
+    new-instance v0, Lxi;
+
+    .line 778
+    .line 779
+    const-string v1, "DOWNLOAD_FAVICONS_ENABLED"
+
+    .line 780
+    .line 781
+    const-string v3, "DOWNLOAD_FAVICONS_ENABLED"
+
+    .line 782
+    .line 783
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
+    .line 784
+    .line 785
+    .line 786
+    new-instance v0, Lxi;
+
+    .line 787
+    .line 788
+    const-string v1, "HTTP_CACHE_MANAGER"
+
+    .line 789
+    .line 790
+    const-string v3, "HTTP_CACHE_MANAGER"
+
+    .line 791
+    .line 792
+    invoke-direct {v0, v3, v1, v2}, Lxi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
+    .line 793
+    .line 794
+    .line 795
+    return-void
+.end method
+
+.method public static a(Ljava/lang/String;)Z
+    .locals 5
+
+    .line 1
+    sget-object v0, Lxi;->d:Ljava/util/HashSet;
+
+    .line 2
+    .line 3
+    invoke-static {v0}, Ljava/util/Collections;->unmodifiableSet(Ljava/util/Set;)Ljava/util/Set;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    new-instance v1, Ljava/util/HashSet;
+
+    .line 8
+    .line 9
+    invoke-direct {v1}, Ljava/util/HashSet;-><init>()V
+
+    .line 10
+    .line 11
+    .line 12
+    invoke-interface {v0}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object v0
+
+    .line 16
+    :cond_0
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+
+    .line 17
+    .line 18
+    .line 19
+    move-result v2
+
+    .line 20
+    if-eqz v2, :cond_1
+
+    .line 21
+    .line 22
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object v2
+
+    .line 26
+    check-cast v2, Lxi;
+
+    .line 27
+    .line 28
+    iget-object v3, v2, Lxi;->a:Ljava/lang/String;
+
+    .line 29
+    .line 30
+    invoke-virtual {v3, p0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    .line 31
+    .line 32
+    .line 33
+    move-result v3
+
+    .line 34
+    if-eqz v3, :cond_0
+
+    .line 35
+    .line 36
+    invoke-virtual {v1, v2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    .line 37
+    .line 38
+    .line 39
+    goto :goto_0
+
+    .line 40
+    :cond_1
+    invoke-virtual {v1}, Ljava/util/HashSet;->isEmpty()Z
+
+    .line 41
+    .line 42
+    .line 43
+    move-result v0
+
+    .line 44
+    if-nez v0, :cond_6
+
+    .line 45
+    .line 46
+    invoke-virtual {v1}, Ljava/util/HashSet;->iterator()Ljava/util/Iterator;
+
+    .line 47
+    .line 48
+    .line 49
+    move-result-object p0
+
+    .line 50
+    :cond_2
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    .line 51
+    .line 52
+    .line 53
+    move-result v0
+
+    .line 54
+    const/4 v1, 0x0
+
+    .line 55
+    if-eqz v0, :cond_5
+
+    .line 56
+    .line 57
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    .line 58
+    .line 59
+    .line 60
+    move-result-object v0
+
+    .line 61
+    check-cast v0, Lxi;
+
+    .line 62
+    .line 63
+    iget-byte v2, v0, Lxi;->c:B
+
+    .line 64
+    .line 65
+    const/4 v3, 0x1
+
+    .line 66
+    packed-switch v2, :pswitch_data_0
+
+    .line 67
+    .line 68
+    .line 69
+    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 70
+    .line 71
+    const/16 v4, 0x21
+
+    .line 72
+    .line 73
+    if-lt v2, v4, :cond_3
+
+    .line 74
+    .line 75
+    :pswitch_0
+    move v1, v3
+
+    .line 76
+    :cond_3
+    :pswitch_1
+    if-nez v1, :cond_4
+
+    .line 77
+    .line 78
+    invoke-virtual {v0}, Lxi;->a()Z
+
+    .line 79
+    .line 80
+    .line 81
+    move-result v0
+
+    .line 82
+    if-eqz v0, :cond_2
+
+    .line 83
+    .line 84
+    :cond_4
+    return v3
+
+    .line 85
+    :cond_5
+    return v1
+
+    .line 86
+    :cond_6
+    new-instance v0, Ljava/lang/RuntimeException;
+
+    .line 87
+    .line 88
+    const-string v1, "Unknown feature "
+
+    .line 89
+    .line 90
+    invoke-virtual {v1, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
+    .line 91
+    .line 92
+    .line 93
+    move-result-object p0
+
+    .line 94
+    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    .line 95
+    .line 96
+    .line 97
+    throw v0
+
+    .line 98
+    nop
+
+    .line 99
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_0
+        :pswitch_0
+        :pswitch_1
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
+        :pswitch_0
         :pswitch_0
     .end packed-switch
 .end method

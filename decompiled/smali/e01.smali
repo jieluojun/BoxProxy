@@ -1,41 +1,38 @@
-.class public abstract Le01;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Le01;
+.super Ljava/lang/IllegalStateException;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final a:Lqz0;
+# instance fields
+.field public final j:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
     .line 1
-    sget-object v0, Lji0;->m:Lji0;
+    invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
 
     .line 2
     .line 3
-    new-instance v1, Lqz0;
-
     .line 4
+    iput-object p1, p0, Le01;->j:Ljava/lang/String;
+
     .line 5
-    const v2, 0x6c097b1b
-
     .line 6
-    .line 7
-    .line 8
-    const/4 v3, 0x0
-
-    .line 9
-    invoke-direct {v1, v2, v3, v0}, Lqz0;-><init>(IZLjava/lang/Object;)V
-
-    .line 10
-    .line 11
-    .line 12
-    sput-object v1, Le01;->a:Lqz0;
-
-    .line 13
-    .line 14
     return-void
+.end method
+
+
+# virtual methods
+.method public final getMessage()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Le01;->j:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    return-object p0
 .end method

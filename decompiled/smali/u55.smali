@@ -1,222 +1,236 @@
-.class public final synthetic Lu55;
+.class public abstract Lu55;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lp62;
 
 
-# instance fields
-.field public final synthetic j:Ly65;
+# static fields
+.field public static final a:[I
 
-.field public final synthetic k:Z
+.field public static final b:[I
 
-.field public final synthetic l:F
+.field public static final c:[I
 
-.field public final synthetic m:F
+.field public static final d:[I
 
-.field public final synthetic n:Ln06;
+.field public static final e:[I
+
+.field public static final f:[I
 
 
 # direct methods
-.method public synthetic constructor <init>(Ly65;ZFFLn06;)V
-    .locals 0
+.method public static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const v0, 0x7f04002b
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lu55;->j:Ly65;
+    const v1, 0x7f0400b4
 
     .line 5
     .line 6
-    iput-boolean p2, p0, Lu55;->k:Z
-
     .line 7
-    .line 8
-    iput p3, p0, Lu55;->l:F
+    const v2, 0x10101a5
 
+    .line 8
     .line 9
     .line 10
-    iput p4, p0, Lu55;->m:F
+    const v3, 0x101031f
 
     .line 11
     .line 12
-    iput-object p5, p0, Lu55;->n:Ln06;
-
     .line 13
-    .line 14
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 8
-
-    .line 1
-    check-cast p1, Lc92;
-
-    .line 2
-    .line 3
-    iget-object v0, p0, Lu55;->j:Ly65;
-
-    .line 4
-    .line 5
-    invoke-virtual {v0}, Ly65;->c()F
-
-    .line 6
-    .line 7
-    .line 8
-    move-result v1
-
-    .line 9
-    const/4 v2, 0x0
-
-    .line 10
-    cmpl-float v1, v1, v2
-
-    .line 11
-    .line 12
-    const/4 v3, 0x1
-
-    .line 13
-    if-gtz v1, :cond_1
+    const v4, 0x1010647
 
     .line 14
     .line 15
-    iget-boolean v1, p0, Lu55;->k:Z
-
     .line 16
-    .line 17
-    if-eqz v1, :cond_0
+    filled-new-array {v2, v3, v4, v0, v1}, [I
 
+    .line 17
     .line 18
     .line 19
-    goto :goto_0
+    move-result-object v0
 
     .line 20
-    :cond_0
-    const/4 v1, 0x0
+    sput-object v0, Lu55;->a:[I
 
     .line 21
-    goto :goto_1
-
     .line 22
-    :cond_1
-    :goto_0
-    move v1, v3
+    const/16 v0, 0x8
 
     .line 23
-    :goto_1
-    invoke-virtual {v0}, Ly65;->c()F
-
     .line 24
+    new-array v0, v0, [I
+
     .line 25
     .line 26
-    move-result v0
+    fill-array-data v0, :array_0
 
     .line 27
-    iget v4, p0, Lu55;->l:F
-
     .line 28
     .line 29
-    invoke-interface {p1, v4}, Lyh1;->t0(F)I
+    sput-object v0, Lu55;->b:[I
 
     .line 30
     .line 31
-    .line 32
-    move-result v4
+    const/16 v0, 0xa
 
+    .line 32
     .line 33
-    int-to-float v4, v4
+    new-array v0, v0, [I
 
     .line 34
-    mul-float/2addr v0, v4
-
     .line 35
-    invoke-interface {p1}, Lc92;->b()J
+    fill-array-data v0, :array_1
 
     .line 36
     .line 37
     .line 38
-    move-result-wide v4
+    sput-object v0, Lu55;->c:[I
 
     .line 39
-    const-wide v6, 0xffffffffL
-
     .line 40
+    const v0, 0x7f04009b
+
     .line 41
     .line 42
     .line 43
+    const v1, 0x7f04009c
+
     .line 44
-    and-long/2addr v4, v6
-
     .line 45
-    long-to-int v4, v4
-
     .line 46
-    invoke-static {v4}, Ljava/lang/Float;->intBitsToFloat(I)F
+    const v3, 0x7f04009e
 
     .line 47
     .line 48
     .line 49
-    move-result v4
+    filled-new-array {v0, v1, v3}, [I
 
     .line 50
-    sub-float/2addr v0, v4
-
     .line 51
-    invoke-interface {p1, v0}, Lc92;->S(F)V
-
     .line 52
+    move-result-object v0
+
     .line 53
+    sput-object v0, Lu55;->d:[I
+
     .line 54
-    if-eqz v1, :cond_2
-
     .line 55
-    .line 56
-    invoke-interface {p1}, Lyh1;->a()F
+    const/16 v0, 0xc
 
+    .line 56
     .line 57
+    new-array v0, v0, [I
+
     .line 58
     .line 59
-    move-result v0
+    fill-array-data v0, :array_2
 
     .line 60
-    iget v1, p0, Lu55;->m:F
-
     .line 61
     .line 62
-    mul-float v2, v0, v1
+    sput-object v0, Lu55;->e:[I
 
     .line 63
     .line 64
-    :cond_2
-    invoke-interface {p1, v2}, Lc92;->B(F)V
+    const v0, 0x1010514
 
     .line 65
     .line 66
     .line 67
-    iget-object p0, p0, Lu55;->n:Ln06;
+    filled-new-array {v2, v0}, [I
 
     .line 68
     .line 69
-    invoke-interface {p1, p0}, Lc92;->J(Ln06;)V
-
     .line 70
-    .line 71
-    .line 72
-    invoke-interface {p1, v3}, Lc92;->m0(Z)V
+    move-result-object v0
 
+    .line 71
+    sput-object v0, Lu55;->f:[I
+
+    .line 72
     .line 73
+    return-void
+
     .line 74
+    nop
+
     .line 75
-    sget-object p0, La47;->a:La47;
+    :array_0
+    .array-data 4
+        0x7f040095
+        0x7f040096
+        0x7f040097
+        0x7f040098
+        0x7f040099
+        0x7f04009a
+        0x7f04009b
+        0x7f04009c
+    .end array-data
 
     .line 76
     .line 77
-    return-object p0
+    .line 78
+    .line 79
+    .line 80
+    .line 81
+    .line 82
+    .line 83
+    .line 84
+    .line 85
+    .line 86
+    .line 87
+    .line 88
+    .line 89
+    .line 90
+    .line 91
+    .line 92
+    .line 93
+    .line 94
+    .line 95
+    :array_1
+    .array-data 4
+        0x1010532
+        0x1010533
+        0x101053f
+        0x101056f
+        0x1010570
+        0x7f040093
+        0x7f04009d
+        0x7f04009e
+        0x7f04009f
+        0x7f0401b7
+    .end array-data
+
+    .line 96
+    .line 97
+    .line 98
+    .line 99
+    .line 100
+    .line 101
+    .line 102
+    .line 103
+    .line 104
+    .line 105
+    .line 106
+    .line 107
+    .line 108
+    :array_2
+    .array-data 4
+        0x101019d
+        0x101019e
+        0x10101a1
+        0x10101a2
+        0x10101a3
+        0x10101a4
+        0x1010201
+        0x101020b
+        0x1010510
+        0x1010511
+        0x1010512
+        0x1010513
+    .end array-data
 .end method

@@ -1,375 +1,333 @@
 .class public final Lzl2;
-.super Lnm2;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lkk4;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final u:Lzl2;
+# instance fields
+.field public final o:Lql2;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
+.method public constructor <init>(Lql2;)V
+    .locals 0
 
     .line 1
-    const/16 v0, 0x100
+    invoke-direct {p0}, Lkk4;-><init>()V
 
     .line 2
     .line 3
-    new-array v3, v0, [S
-
     .line 4
+    iput-object p1, p0, Lzl2;->o:Lql2;
+
     .line 5
-    fill-array-data v3, :array_0
-
     .line 6
-    .line 7
-    .line 8
-    new-instance v1, Lzl2;
-
-    .line 9
-    .line 10
-    sget-object v4, Lg17;->c:[B
-
-    .line 11
-    .line 12
-    const/4 v5, 0x0
-
-    .line 13
-    const/4 v6, 0x1
-
-    .line 14
-    const-string v2, "ISO-8859-11"
-
-    .line 15
-    .line 16
-    invoke-direct/range {v1 .. v6}, Lym0;-><init>(Ljava/lang/String;[S[B[[IZ)V
-
-    .line 17
-    .line 18
-    .line 19
-    sput-object v1, Lzl2;->u:Lzl2;
-
-    .line 20
-    .line 21
     return-void
-
-    .line 22
-    nop
-
-    .line 23
-    :array_0
-    .array-data 2
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x420cs
-        0x4209s
-        0x4208s
-        0x4208s
-        0x4208s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4008s
-        0x4284s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x78b0s
-        0x78b0s
-        0x78b0s
-        0x78b0s
-        0x78b0s
-        0x78b0s
-        0x78b0s
-        0x78b0s
-        0x78b0s
-        0x78b0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x7ca2s
-        0x7ca2s
-        0x7ca2s
-        0x7ca2s
-        0x7ca2s
-        0x7ca2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x74a2s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x51a0s
-        0x41a0s
-        0x78e2s
-        0x78e2s
-        0x78e2s
-        0x78e2s
-        0x78e2s
-        0x78e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x70e2s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x41a0s
-        0x4008s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x8s
-        0x284s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x30a2s
-        0x0s
-        0x0s
-        0x0s
-        0x0s
-    .end array-data
 .end method
 
 
 # virtual methods
-.method public final A()[B
-    .locals 0
+.method public final g()J
+    .locals 6
 
     .line 1
-    iget-object p0, p0, Lh56;->q:[B
+    iget-object p0, p0, Lzl2;->o:Lql2;
 
     .line 2
     .line 3
-    return-object p0
+    invoke-interface {p0}, Lql2;->b()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    const/high16 v1, 0x7fc00000    # Float.NaN
+
+    .line 8
+    .line 9
+    if-lez v0, :cond_0
+
+    .line 10
+    .line 11
+    int-to-float v0, v0
+
+    .line 12
+    goto :goto_0
+
+    .line 13
+    :cond_0
+    move v0, v1
+
+    .line 14
+    :goto_0
+    invoke-interface {p0}, Lql2;->a()I
+
+    .line 15
+    .line 16
+    .line 17
+    move-result p0
+
+    .line 18
+    if-lez p0, :cond_1
+
+    .line 19
+    .line 20
+    int-to-float v1, p0
+
+    .line 21
+    :cond_1
+    invoke-static {v0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 22
+    .line 23
+    .line 24
+    move-result p0
+
+    .line 25
+    int-to-long v2, p0
+
+    .line 26
+    invoke-static {v1}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 27
+    .line 28
+    .line 29
+    move-result p0
+
+    .line 30
+    int-to-long v0, p0
+
+    .line 31
+    const/16 p0, 0x20
+
+    .line 32
+    .line 33
+    shl-long/2addr v2, p0
+
+    .line 34
+    const-wide v4, 0xffffffffL
+
+    .line 35
+    .line 36
+    .line 37
+    .line 38
+    .line 39
+    and-long/2addr v0, v4
+
+    .line 40
+    or-long/2addr v0, v2
+
+    .line 41
+    return-wide v0
 .end method
 
-.method public final a(ILw82;)V
-    .locals 0
+.method public final i(Lin1;)V
+    .locals 8
 
     .line 1
-    invoke-static {p2}, Ly2;->b(Lw82;)V
+    iget-object p0, p0, Lzl2;->o:Lql2;
 
     .line 2
     .line 3
+    invoke-interface {p0}, Lql2;->b()I
+
     .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    const/high16 v1, 0x3f800000    # 1.0f
+
+    .line 8
+    .line 9
+    if-lez v0, :cond_0
+
+    .line 10
+    .line 11
+    invoke-interface {p1}, Lin1;->b()J
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-wide v2
+
+    .line 15
+    const/16 v4, 0x20
+
+    .line 16
+    .line 17
+    shr-long/2addr v2, v4
+
+    .line 18
+    long-to-int v2, v2
+
+    .line 19
+    invoke-static {v2}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 20
+    .line 21
+    .line 22
+    move-result v2
+
+    .line 23
+    int-to-float v0, v0
+
+    .line 24
+    div-float/2addr v2, v0
+
+    .line 25
+    goto :goto_0
+
+    .line 26
+    :cond_0
+    move v2, v1
+
+    .line 27
+    :goto_0
+    invoke-interface {p0}, Lql2;->a()I
+
+    .line 28
+    .line 29
+    .line 30
+    move-result v0
+
+    .line 31
+    if-lez v0, :cond_1
+
+    .line 32
+    .line 33
+    invoke-interface {p1}, Lin1;->b()J
+
+    .line 34
+    .line 35
+    .line 36
+    move-result-wide v3
+
+    .line 37
+    const-wide v5, 0xffffffffL
+
+    .line 38
+    .line 39
+    .line 40
+    .line 41
+    .line 42
+    and-long/2addr v3, v5
+
+    .line 43
+    long-to-int v1, v3
+
+    .line 44
+    invoke-static {v1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 45
+    .line 46
+    .line 47
+    move-result v1
+
+    .line 48
+    int-to-float v0, v0
+
+    .line 49
+    div-float/2addr v1, v0
+
+    .line 50
+    :cond_1
+    invoke-interface {p1}, Lin1;->X()Lsr6;
+
+    .line 51
+    .line 52
+    .line 53
+    move-result-object v0
+
+    .line 54
+    invoke-virtual {v0}, Lsr6;->P()J
+
+    .line 55
+    .line 56
+    .line 57
+    move-result-wide v3
+
+    .line 58
+    invoke-virtual {v0}, Lsr6;->J()Lvh0;
+
+    .line 59
+    .line 60
+    .line 61
+    move-result-object v5
+
+    .line 62
+    invoke-interface {v5}, Lvh0;->o()V
+
+    .line 63
+    .line 64
+    .line 65
+    :try_start_0
+    iget-object v5, v0, Lsr6;->k:Ljava/lang/Object;
+
+    .line 66
+    .line 67
+    check-cast v5, Lr77;
+
+    .line 68
+    .line 69
+    const-wide/16 v6, 0x0
+
+    .line 70
+    .line 71
+    invoke-virtual {v5, v2, v1, v6, v7}, Lr77;->A(FFJ)V
+
+    .line 72
+    .line 73
+    .line 74
+    invoke-interface {p1}, Lin1;->X()Lsr6;
+
+    .line 75
+    .line 76
+    .line 77
+    move-result-object p1
+
+    .line 78
+    invoke-virtual {p1}, Lsr6;->J()Lvh0;
+
+    .line 79
+    .line 80
+    .line 81
+    move-result-object p1
+
+    .line 82
+    invoke-static {p1}, Lu9;->b(Lvh0;)Landroid/graphics/Canvas;
+
+    .line 83
+    .line 84
+    .line 85
+    move-result-object p1
+
+    .line 86
+    invoke-interface {p0, p1}, Lql2;->d(Landroid/graphics/Canvas;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 87
+    .line 88
+    .line 89
+    invoke-static {v0, v3, v4}, Lh86;->z(Lsr6;J)V
+
+    .line 90
+    .line 91
+    .line 92
     return-void
-.end method
 
-.method public final e(I[BII)[Lxm0;
-    .locals 0
+    .line 93
+    :catchall_0
+    move-exception p0
 
-    .line 1
-    invoke-static {p2, p3}, Ly2;->c([BI)[Lxm0;
+    .line 94
+    invoke-static {v0, v3, v4}, Lh86;->z(Lsr6;J)V
 
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public final s(I[BLus1;I[B)I
-    .locals 0
-
-    .line 1
-    invoke-static {p2, p3, p5}, Ly2;->d([BLus1;[B)V
-
-    .line 2
-    .line 3
-    .line 4
-    const/4 p0, 0x1
-
-    .line 5
-    return p0
+    .line 95
+    .line 96
+    .line 97
+    throw p0
 .end method

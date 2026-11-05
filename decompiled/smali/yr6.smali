@@ -1,23 +1,29 @@
-.class public final Lyr6;
+.class public final synthetic Lyr6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Las6;
+.implements Ls52;
 
 
 # instance fields
-.field public a:F
+.field public final synthetic j:Llu;
 
-.field public final b:Lxr6;
+.field public final synthetic k:Lqr6;
 
-.field public c:Landroid/graphics/Canvas;
+.field public final synthetic l:Lko3;
 
-.field public final synthetic d:Lcs6;
+.field public final synthetic m:Z
+
+.field public final synthetic n:I
+
+.field public final synthetic o:I
+
+.field public final synthetic p:B
 
 
 # direct methods
-.method public constructor <init>(Lcs6;Lxr6;)V
+.method public synthetic constructor <init>(Llu;Lqr6;Lko3;ZIII)V
     .locals 0
 
     .line 1
@@ -26,95 +32,107 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lyr6;->d:Lcs6;
+    iput-object p1, p0, Lyr6;->j:Llu;
 
     .line 5
     .line 6
-    const/4 p1, 0x0
+    iput-object p2, p0, Lyr6;->k:Lqr6;
 
     .line 7
-    iput p1, p0, Lyr6;->a:F
-
     .line 8
-    .line 9
-    iput-object p2, p0, Lyr6;->b:Lxr6;
+    iput-object p3, p0, Lyr6;->l:Lko3;
 
+    .line 9
     .line 10
+    iput-boolean p4, p0, Lyr6;->m:Z
+
     .line 11
+    .line 12
+    iput p5, p0, Lyr6;->n:I
+
+    .line 13
+    .line 14
+    iput p6, p0, Lyr6;->o:I
+
+    .line 15
+    .line 16
+    iput-byte p7, p0, Lyr6;->p:B
+
+    .line 17
+    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/ArrayList;ZLbo3;)Z
-    .locals 7
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 8
 
     .line 1
-    iget v5, p0, Lyr6;->a:F
+    move-object v5, p1
 
     .line 2
+    check-cast v5, Lv01;
+
     .line 3
-    iget-object v4, p0, Lyr6;->c:Landroid/graphics/Canvas;
-
     .line 4
+    check-cast p2, Ljava/lang/Integer;
+
     .line 5
-    iget-object v6, p0, Lyr6;->b:Lxr6;
-
     .line 6
-    .line 7
-    iget-object v0, p0, Lyr6;->d:Lcs6;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 7
     .line 8
     .line 9
-    move-object v1, p1
+    iget p1, p0, Lyr6;->o:I
 
     .line 10
-    move v2, p2
-
     .line 11
-    move-object v3, p3
+    or-int/lit8 p1, p1, 0x1
 
     .line 12
-    invoke-virtual/range {v0 .. v6}, Lcs6;->h(Ljava/util/ArrayList;ZLbo3;Landroid/graphics/Canvas;FLxr6;)F
-
     .line 13
+    invoke-static {p1}, Lw23;->h0(I)I
+
     .line 14
     .line 15
-    move-result p1
-
     .line 16
-    add-float/2addr v5, p1
+    move-result v6
 
     .line 17
-    iput v5, p0, Lyr6;->a:F
+    iget-object v0, p0, Lyr6;->j:Llu;
 
     .line 18
     .line 19
-    iget-object p0, p0, Lyr6;->b:Lxr6;
+    iget-object v1, p0, Lyr6;->k:Lqr6;
 
     .line 20
     .line 21
-    iget p0, p0, Lxr6;->c:F
+    iget-object v2, p0, Lyr6;->l:Lko3;
 
     .line 22
     .line 23
-    cmpg-float p0, v5, p0
+    iget-boolean v3, p0, Lyr6;->m:Z
 
     .line 24
     .line 25
-    if-gez p0, :cond_0
+    iget v4, p0, Lyr6;->n:I
 
     .line 26
     .line 27
-    const/4 p0, 0x1
+    iget-byte v7, p0, Lyr6;->p:B
 
     .line 28
-    return p0
-
     .line 29
-    :cond_0
-    const/4 p0, 0x0
+    invoke-static/range {v0 .. v7}, Lds6;->d(Llu;Lqr6;Lko3;ZILv01;II)V
 
     .line 30
-    return p0
+    .line 31
+    .line 32
+    sget-object p0, Lk27;->a:Lk27;
+
+    .line 33
+    .line 34
+    return-object p0
 .end method

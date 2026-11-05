@@ -1,353 +1,577 @@
 .class public final Lxo1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ljava/util/Iterator;
-.implements Lfy2;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public a:Ljava/lang/String;
 
-.field public final k:Ljava/util/Iterator;
+.field public b:Lo52;
 
-.field public l:I
+.field public c:Lo52;
 
+.field public d:Z
 
-# direct methods
-.method public constructor <init>(Ljava/util/Iterator;)V
-    .locals 1
+.field public e:Lo52;
 
-    const/4 v0, 0x1
+.field public f:Lo52;
 
-    iput-byte v0, p0, Lxo1;->j:B
+.field public g:Lo52;
 
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.field public h:Lo52;
 
-    .line 20
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.field public i:Lo52;
 
-    iput-object p1, p0, Lxo1;->k:Ljava/util/Iterator;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lyo1;)V
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x0
-
-    .line 2
-    iput-byte v0, p0, Lxo1;->j:B
-
-    .line 3
-    .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 5
-    .line 6
-    .line 7
-    iget-object v0, p1, Lyo1;->a:Lny5;
-
-    .line 8
-    .line 9
-    invoke-interface {v0}, Lny5;->iterator()Ljava/util/Iterator;
-
-    .line 10
-    .line 11
-    .line 12
-    move-result-object v0
-
-    .line 13
-    iput-object v0, p0, Lxo1;->k:Ljava/util/Iterator;
-
-    .line 14
-    .line 15
-    iget p1, p1, Lyo1;->b:I
-
-    .line 16
-    .line 17
-    iput p1, p0, Lxo1;->l:I
-
-    .line 18
-    .line 19
-    return-void
-.end method
+.field public j:Lo52;
 
 
 # virtual methods
-.method public final hasNext()Z
-    .locals 2
+.method public final a()Lyo1;
+    .locals 13
 
     .line 1
-    iget-byte v0, p0, Lxo1;->j:B
+    iget-object v0, p0, Lxo1;->f:Lo52;
 
     .line 2
     .line 3
-    iget-object v1, p0, Lxo1;->k:Ljava/util/Iterator;
+    const/4 v1, 0x0
 
     .line 4
-    .line 5
-    packed-switch v0, :pswitch_data_0
+    const-string v2, "Color "
 
+    .line 5
     .line 6
+    if-nez v0, :cond_1
+
     .line 7
     .line 8
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v3, p0, Lxo1;->g:Lo52;
 
     .line 9
     .line 10
+    if-nez v3, :cond_0
+
     .line 11
-    move-result p0
-
     .line 12
-    return p0
-
-    .line 13
-    :goto_0
-    :pswitch_0
-    iget v0, p0, Lxo1;->l:I
-
-    .line 14
-    .line 15
-    if-lez v0, :cond_0
-
-    .line 16
-    .line 17
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 18
-    .line 19
-    .line 20
-    move-result v0
-
-    .line 21
-    if-eqz v0, :cond_0
-
-    .line 22
-    .line 23
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 24
-    .line 25
-    .line 26
-    iget v0, p0, Lxo1;->l:I
-
-    .line 27
-    .line 28
-    add-int/lit8 v0, v0, -0x1
-
-    .line 29
-    .line 30
-    iput v0, p0, Lxo1;->l:I
-
-    .line 31
-    .line 32
     goto :goto_0
 
-    .line 33
-    :cond_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 34
-    .line 35
-    .line 36
-    move-result p0
-
-    .line 37
-    return p0
-
-    .line 38
-    nop
-
-    .line 39
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final next()Ljava/lang/Object;
-    .locals 4
-
-    .line 1
-    iget-byte v0, p0, Lxo1;->j:B
-
-    .line 2
-    .line 3
-    iget-object v1, p0, Lxo1;->k:Ljava/util/Iterator;
-
-    .line 4
-    .line 5
-    packed-switch v0, :pswitch_data_0
-
-    .line 6
-    .line 7
-    .line 8
-    new-instance v0, Lso2;
-
-    .line 9
-    .line 10
-    iget v2, p0, Lxo1;->l:I
-
-    .line 11
-    .line 12
-    add-int/lit8 v3, v2, 0x1
-
     .line 13
+    :cond_0
+    iget-object p0, p0, Lxo1;->a:Ljava/lang/String;
+
     .line 14
-    iput v3, p0, Lxo1;->l:I
-
     .line 15
+    const-string v0, " has secondBackground defined, but background is not defined."
+
     .line 16
-    if-ltz v2, :cond_0
-
     .line 17
-    .line 18
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {v2, p0, v0}, Lpb1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
+    .line 18
     .line 19
     .line 20
-    .line 21
     move-result-object p0
 
-    .line 22
-    invoke-direct {v0, v2, p0}, Lso2;-><init>(ILjava/lang/Object;)V
+    .line 21
+    invoke-static {p0}, Ljv1;->d(Ljava/lang/Object;)V
 
+    .line 22
     .line 23
     .line 24
+    return-object v1
+
     .line 25
-    return-object v0
+    :cond_1
+    :goto_0
+    if-nez v0, :cond_3
 
     .line 26
-    :cond_0
-    invoke-static {}, Lim;->i0()V
-
     .line 27
+    iget-object v3, p0, Lxo1;->h:Lo52;
+
     .line 28
     .line 29
-    const/4 p0, 0x0
+    if-nez v3, :cond_2
 
     .line 30
-    throw p0
-
     .line 31
-    :goto_0
-    :pswitch_0
-    iget v0, p0, Lxo1;->l:I
+    goto :goto_1
 
     .line 32
+    :cond_2
+    iget-object p0, p0, Lxo1;->a:Ljava/lang/String;
+
     .line 33
-    if-lez v0, :cond_1
-
     .line 34
-    .line 35
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+    const-string v0, " has contrastCurve defined, but background is not defined."
 
+    .line 35
     .line 36
+    invoke-static {v2, p0, v0}, Lpb1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
     .line 37
     .line 38
-    move-result v0
-
     .line 39
-    if-eqz v0, :cond_1
+    move-result-object p0
 
     .line 40
-    .line 41
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-static {p0}, Ljv1;->d(Ljava/lang/Object;)V
 
+    .line 41
     .line 42
     .line 43
+    return-object v1
+
     .line 44
-    iget v0, p0, Lxo1;->l:I
+    :cond_3
+    :goto_1
+    if-eqz v0, :cond_5
 
     .line 45
     .line 46
-    add-int/lit8 v0, v0, -0x1
+    iget-object v3, p0, Lxo1;->h:Lo52;
 
     .line 47
     .line 48
-    iput v0, p0, Lxo1;->l:I
+    if-eqz v3, :cond_4
 
     .line 49
     .line 50
-    goto :goto_0
+    goto :goto_2
 
     .line 51
-    :cond_1
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    :cond_4
+    iget-object p0, p0, Lxo1;->a:Ljava/lang/String;
 
     .line 52
     .line 53
-    .line 54
-    move-result-object p0
+    const-string v0, " has background defined, but contrastCurve is not defined."
 
+    .line 54
     .line 55
-    return-object p0
+    invoke-static {v2, p0, v0}, Lpb1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 56
-    nop
-
     .line 57
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 58
+    move-result-object p0
+
+    .line 59
+    invoke-static {p0}, Ljv1;->d(Ljava/lang/Object;)V
+
+    .line 60
+    .line 61
+    .line 62
+    return-object v1
+
+    .line 63
+    :cond_5
+    :goto_2
+    iget-object v1, p0, Lxo1;->c:Lo52;
+
+    .line 64
+    .line 65
+    if-nez v1, :cond_7
+
+    .line 66
+    .line 67
+    if-nez v0, :cond_6
+
+    .line 68
+    .line 69
+    new-instance v0, Lnv0;
+
+    .line 70
+    .line 71
+    const/16 v1, 0x1a
+
+    .line 72
+    .line 73
+    invoke-direct {v0, v1}, Lnv0;-><init>(B)V
+
+    .line 74
+    .line 75
+    .line 76
+    move-object v1, v0
+
+    .line 77
+    goto :goto_3
+
+    .line 78
+    :cond_6
+    new-instance v1, Ld40;
+
+    .line 79
+    .line 80
+    const/4 v2, 0x3
+
+    .line 81
+    invoke-direct {v1, v0, v2}, Ld40;-><init>(Lo52;B)V
+
+    .line 82
+    .line 83
+    .line 84
+    :cond_7
+    :goto_3
+    move-object v5, v1
+
+    .line 85
+    new-instance v2, Lyo1;
+
+    .line 86
+    .line 87
+    iget-object v3, p0, Lxo1;->a:Ljava/lang/String;
+
+    .line 88
+    .line 89
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 90
+    .line 91
+    .line 92
+    iget-object v4, p0, Lxo1;->b:Lo52;
+
+    .line 93
+    .line 94
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 95
+    .line 96
+    .line 97
+    iget-boolean v6, p0, Lxo1;->d:Z
+
+    .line 98
+    .line 99
+    iget-object v7, p0, Lxo1;->e:Lo52;
+
+    .line 100
+    .line 101
+    iget-object v8, p0, Lxo1;->f:Lo52;
+
+    .line 102
+    .line 103
+    iget-object v9, p0, Lxo1;->g:Lo52;
+
+    .line 104
+    .line 105
+    iget-object v10, p0, Lxo1;->h:Lo52;
+
+    .line 106
+    .line 107
+    iget-object v11, p0, Lxo1;->i:Lo52;
+
+    .line 108
+    .line 109
+    iget-object v12, p0, Lxo1;->j:Lo52;
+
+    .line 110
+    .line 111
+    invoke-direct/range {v2 .. v12}, Lyo1;-><init>(Ljava/lang/String;Lo52;Lo52;ZLo52;Lo52;Lo52;Lo52;Lo52;Lo52;)V
+
+    .line 112
+    .line 113
+    .line 114
+    return-object v2
 .end method
 
-.method public final remove()V
-    .locals 1
+.method public final b(Lyo1;)Lxo1;
+    .locals 9
 
     .line 1
-    iget-byte p0, p0, Lxo1;->j:B
+    iget-object v0, p0, Lxo1;->a:Ljava/lang/String;
 
     .line 2
     .line 3
-    packed-switch p0, :pswitch_data_0
+    iget-object v1, p1, Lyo1;->a:Ljava/lang/String;
 
     .line 4
     .line 5
-    .line 6
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    invoke-static {v0, v1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
 
+    .line 6
     .line 7
     .line 8
-    const-string v0, "Operation is not supported for read-only collection"
+    move-result v0
 
     .line 9
+    const/4 v2, 0x0
+
     .line 10
-    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    sget-object v3, Lzu0;->m:Lzu0;
 
     .line 11
     .line 12
-    .line 13
-    throw p0
+    const-string v4, "."
 
+    .line 13
     .line 14
-    :pswitch_0
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    const-string v5, " with color "
 
     .line 15
     .line 16
-    const-string v0, "Operation is not supported for read-only collection"
+    const-string v6, "Attempting to extend color "
 
     .line 17
     .line 18
-    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    if-eqz v0, :cond_3
 
     .line 19
     .line 20
-    .line 21
-    throw p0
+    iget-boolean v0, p0, Lxo1;->d:Z
 
+    .line 21
     .line 22
-    nop
+    iget-boolean v7, p1, Lyo1;->d:Z
 
     .line 23
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 24
+    iget-object v8, p0, Lxo1;->a:Ljava/lang/String;
+
+    .line 25
+    .line 26
+    if-ne v0, v7, :cond_0
+
+    .line 27
+    .line 28
+    new-instance v0, Lxo1;
+
+    .line 29
+    .line 30
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    .line 31
+    .line 32
+    .line 33
+    invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 34
+    .line 35
+    .line 36
+    iput-object v8, v0, Lxo1;->a:Ljava/lang/String;
+
+    .line 37
+    .line 38
+    iget-boolean v1, p0, Lxo1;->d:Z
+
+    .line 39
+    .line 40
+    iput-boolean v1, v0, Lxo1;->d:Z
+
+    .line 41
+    .line 42
+    new-instance v1, Lwo1;
+
+    .line 43
+    .line 44
+    const/4 v2, 0x0
+
+    .line 45
+    invoke-direct {v1, p1, p0, v2}, Lwo1;-><init>(Lyo1;Lxo1;B)V
+
+    .line 46
+    .line 47
+    .line 48
+    iput-object v1, v0, Lxo1;->b:Lo52;
+
+    .line 49
+    .line 50
+    new-instance v1, Lwo1;
+
+    .line 51
+    .line 52
+    const/4 v2, 0x1
+
+    .line 53
+    invoke-direct {v1, p1, p0, v2}, Lwo1;-><init>(Lyo1;Lxo1;B)V
+
+    .line 54
+    .line 55
+    .line 56
+    iput-object v1, v0, Lxo1;->c:Lo52;
+
+    .line 57
+    .line 58
+    new-instance v1, Lwo1;
+
+    .line 59
+    .line 60
+    const/4 v2, 0x2
+
+    .line 61
+    invoke-direct {v1, p1, p0, v2}, Lwo1;-><init>(Lyo1;Lxo1;B)V
+
+    .line 62
+    .line 63
+    .line 64
+    iput-object v1, v0, Lxo1;->e:Lo52;
+
+    .line 65
+    .line 66
+    new-instance v1, Lwo1;
+
+    .line 67
+    .line 68
+    const/4 v2, 0x3
+
+    .line 69
+    invoke-direct {v1, p1, p0, v2}, Lwo1;-><init>(Lyo1;Lxo1;B)V
+
+    .line 70
+    .line 71
+    .line 72
+    iput-object v1, v0, Lxo1;->f:Lo52;
+
+    .line 73
+    .line 74
+    new-instance v1, Lwo1;
+
+    .line 75
+    .line 76
+    const/4 v2, 0x4
+
+    .line 77
+    invoke-direct {v1, p1, p0, v2}, Lwo1;-><init>(Lyo1;Lxo1;B)V
+
+    .line 78
+    .line 79
+    .line 80
+    iput-object v1, v0, Lxo1;->g:Lo52;
+
+    .line 81
+    .line 82
+    new-instance v1, Lwo1;
+
+    .line 83
+    .line 84
+    const/4 v2, 0x5
+
+    .line 85
+    invoke-direct {v1, p1, p0, v2}, Lwo1;-><init>(Lyo1;Lxo1;B)V
+
+    .line 86
+    .line 87
+    .line 88
+    iput-object v1, v0, Lxo1;->h:Lo52;
+
+    .line 89
+    .line 90
+    new-instance v1, Lwo1;
+
+    .line 91
+    .line 92
+    const/4 v2, 0x6
+
+    .line 93
+    invoke-direct {v1, p1, p0, v2}, Lwo1;-><init>(Lyo1;Lxo1;B)V
+
+    .line 94
+    .line 95
+    .line 96
+    iput-object v1, v0, Lxo1;->i:Lo52;
+
+    .line 97
+    .line 98
+    new-instance v1, Lwo1;
+
+    .line 99
+    .line 100
+    const/4 v2, 0x7
+
+    .line 101
+    invoke-direct {v1, p1, p0, v2}, Lwo1;-><init>(Lyo1;Lxo1;B)V
+
+    .line 102
+    .line 103
+    .line 104
+    iput-object v1, v0, Lxo1;->j:Lo52;
+
+    .line 105
+    .line 106
+    return-object v0
+
+    .line 107
+    :cond_0
+    const-string p0, "foreground"
+
+    .line 108
+    .line 109
+    const-string p1, "background"
+
+    .line 110
+    .line 111
+    if-eqz v0, :cond_1
+
+    .line 112
+    .line 113
+    move-object v0, p1
+
+    .line 114
+    goto :goto_0
+
+    .line 115
+    :cond_1
+    move-object v0, p0
+
+    .line 116
+    :goto_0
+    if-eqz v7, :cond_2
+
+    .line 117
+    .line 118
+    move-object p0, p1
+
+    .line 119
+    :cond_2
+    const-string p1, " as a "
+
+    .line 120
+    .line 121
+    invoke-static {v6, v8, p1, v0, v5}, Lpb1;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 122
+    .line 123
+    .line 124
+    move-result-object v0
+
+    .line 125
+    const-string v5, " for spec version "
+
+    .line 126
+    .line 127
+    invoke-static {v0, v1, p1, p0, v5}, Lpb1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 128
+    .line 129
+    .line 130
+    invoke-static {v0, v3, v4}, Lvd1;->k(Ljava/lang/StringBuilder;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 131
+    .line 132
+    .line 133
+    return-object v2
+
+    .line 134
+    :cond_3
+    iget-object p0, p0, Lxo1;->a:Ljava/lang/String;
+
+    .line 135
+    .line 136
+    const-string p1, " of different name for spec version "
+
+    .line 137
+    .line 138
+    invoke-static {v6, p0, v5, v1, p1}, Lpb1;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 139
+    .line 140
+    .line 141
+    move-result-object p0
+
+    .line 142
+    invoke-static {p0, v3, v4}, Lvd1;->k(Ljava/lang/StringBuilder;Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 143
+    .line 144
+    .line 145
+    return-object v2
 .end method

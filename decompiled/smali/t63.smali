@@ -1,199 +1,375 @@
-.class public final enum Lt63;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lt63;
+.super Lj42;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# static fields
-.field public static final enum j:Lt63;
+# instance fields
+.field public final k:J
 
-.field public static final enum k:Lt63;
+.field public final l:Z
 
-.field public static final enum l:Lt63;
-
-.field public static final enum m:Lt63;
-
-.field public static final enum n:Lt63;
-
-.field public static final synthetic o:[Lt63;
-
-.field public static final synthetic p:Lzv1;
+.field public m:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 7
+.method public constructor <init>(Lt76;JZ)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lt63;
+    invoke-direct {p0, p1}, Lj42;-><init>(Lt76;)V
 
     .line 2
     .line 3
-    const-string v1, "DESTROYED"
-
     .line 4
-    .line 5
-    const/4 v2, 0x0
+    iput-wide p2, p0, Lt63;->k:J
 
+    .line 5
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-boolean p4, p0, Lt63;->l:Z
 
     .line 7
     .line 8
+    const-wide/16 p0, 0x0
+
     .line 9
-    sput-object v0, Lt63;->j:Lt63;
-
     .line 10
+    cmp-long p0, p2, p0
+
     .line 11
-    new-instance v1, Lt63;
-
     .line 12
-    .line 13
-    const-string v2, "INITIALIZED"
+    if-ltz p0, :cond_0
 
+    .line 13
     .line 14
+    return-void
+
     .line 15
-    const/4 v3, 0x1
+    :cond_0
+    const-string p0, "byteCount < 0: "
 
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 17
+    invoke-static {p2, p3, p0}, Lpb1;->n(JLjava/lang/String;)Ljava/lang/String;
+
     .line 18
     .line 19
-    sput-object v1, Lt63;->k:Lt63;
-
     .line 20
+    move-result-object p0
+
     .line 21
-    new-instance v2, Lt63;
+    invoke-static {p0}, Ljv1;->d(Ljava/lang/Object;)V
 
     .line 22
     .line 23
-    const-string v3, "CREATED"
-
     .line 24
-    .line 25
-    const/4 v4, 0x2
+    const/4 p0, 0x0
 
+    .line 25
+    throw p0
+.end method
+
+
+# virtual methods
+.method public final u(Lgd0;J)J
+    .locals 16
+
+    .line 1
+    move-object/from16 v0, p0
+
+    .line 2
+    .line 3
+    move-object/from16 v1, p1
+
+    .line 4
+    .line 5
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 6
+    .line 7
+    .line 8
+    iget-wide v2, v0, Lt63;->m:J
+
+    .line 9
+    .line 10
+    iget-wide v4, v0, Lt63;->k:J
+
+    .line 11
+    .line 12
+    sub-long v2, v4, v2
+
+    .line 13
+    .line 14
+    const-wide/16 v6, 0x0
+
+    .line 15
+    .line 16
+    cmp-long v8, v2, v6
+
+    .line 17
+    .line 18
+    const-string v9, " bytes but got "
+
+    .line 19
+    .line 20
+    const-string v10, "expected "
+
+    .line 21
+    .line 22
+    if-ltz v8, :cond_6
+
+    .line 23
+    .line 24
+    iget-boolean v11, v0, Lt63;->l:Z
+
+    .line 25
     .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    const-wide/16 v12, -0x1
 
     .line 27
     .line 28
+    if-eqz v11, :cond_1
+
     .line 29
-    sput-object v2, Lt63;->l:Lt63;
-
     .line 30
-    .line 31
-    new-instance v3, Lt63;
+    const-wide/16 v14, 0x1
 
+    .line 31
     .line 32
+    add-long/2addr v2, v14
+
     .line 33
-    const-string v4, "STARTED"
+    cmp-long v11, p2, v2
 
     .line 34
     .line 35
-    const/4 v5, 0x3
+    if-lez v11, :cond_0
 
     .line 36
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 37
-    .line 38
-    .line 39
-    sput-object v3, Lt63;->m:Lt63;
+    goto :goto_0
 
+    .line 38
+    :cond_0
+    move-wide/from16 v2, p2
+
+    .line 39
     .line 40
+    goto :goto_0
+
     .line 41
-    new-instance v4, Lt63;
+    :cond_1
+    if-nez v8, :cond_2
 
     .line 42
     .line 43
-    const-string v5, "RESUMED"
+    goto :goto_1
 
     .line 44
-    .line 45
-    const/4 v6, 0x4
+    :cond_2
+    cmp-long v11, p2, v2
 
+    .line 45
     .line 46
-    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    if-lez v11, :cond_0
 
     .line 47
     .line 48
+    :goto_0
+    iget-object v11, v0, Lj42;->j:Lt76;
+
     .line 49
-    sput-object v4, Lt63;->n:Lt63;
-
     .line 50
-    .line 51
-    filled-new-array {v0, v1, v2, v3, v4}, [Lt63;
+    invoke-interface {v11, v1, v2, v3}, Lt76;->u(Lgd0;J)J
 
+    .line 51
     .line 52
     .line 53
+    move-result-wide v2
+
     .line 54
-    move-result-object v0
+    cmp-long v11, v2, v12
 
     .line 55
-    sput-object v0, Lt63;->o:[Lt63;
-
     .line 56
+    if-nez v11, :cond_4
+
     .line 57
-    new-instance v1, Lzv1;
-
     .line 58
+    if-nez v8, :cond_3
+
     .line 59
-    invoke-direct {v1, v0}, Lzv1;-><init>([Ljava/lang/Enum;)V
-
     .line 60
+    :goto_1
+    return-wide v12
+
     .line 61
+    :cond_3
+    new-instance v1, Ljava/io/EOFException;
+
     .line 62
-    sput-object v1, Lt63;->p:Lzv1;
-
     .line 63
+    invoke-static {v4, v5, v10, v9}, Lqq5;->o(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 64
-    return-void
-.end method
+    .line 65
+    .line 66
+    move-result-object v2
 
-.method public static valueOf(Ljava/lang/String;)Lt63;
-    .locals 1
+    .line 67
+    iget-wide v3, v0, Lt63;->m:J
 
-    .line 1
-    const-class v0, Lt63;
+    .line 68
+    .line 69
+    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    .line 70
+    .line 71
+    .line 72
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Lt63;
-
-    .line 8
-    .line 9
-    return-object p0
-.end method
-
-.method public static values()[Lt63;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lt63;->o:[Lt63;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
+    .line 73
+    .line 74
+    .line 75
     move-result-object v0
 
-    .line 7
-    check-cast v0, [Lt63;
+    .line 76
+    invoke-direct {v1, v0}, Ljava/io/EOFException;-><init>(Ljava/lang/String;)V
 
-    .line 8
-    .line 9
-    return-object v0
+    .line 77
+    .line 78
+    .line 79
+    throw v1
+
+    .line 80
+    :cond_4
+    iget-wide v11, v0, Lt63;->m:J
+
+    .line 81
+    .line 82
+    add-long/2addr v11, v2
+
+    .line 83
+    iput-wide v11, v0, Lt63;->m:J
+
+    .line 84
+    .line 85
+    sub-long/2addr v11, v4
+
+    .line 86
+    cmp-long v6, v11, v6
+
+    .line 87
+    .line 88
+    if-gtz v6, :cond_5
+
+    .line 89
+    .line 90
+    return-wide v2
+
+    .line 91
+    :cond_5
+    iget-wide v2, v1, Lgd0;->k:J
+
+    .line 92
+    .line 93
+    sub-long/2addr v2, v11
+
+    .line 94
+    new-instance v6, Lgd0;
+
+    .line 95
+    .line 96
+    invoke-direct {v6}, Ljava/lang/Object;-><init>()V
+
+    .line 97
+    .line 98
+    .line 99
+    invoke-virtual {v6, v1}, Lgd0;->M(Lt76;)V
+
+    .line 100
+    .line 101
+    .line 102
+    invoke-virtual {v1, v6, v2, v3}, Lgd0;->e(Lgd0;J)V
+
+    .line 103
+    .line 104
+    .line 105
+    invoke-virtual {v6}, Lgd0;->b()V
+
+    .line 106
+    .line 107
+    .line 108
+    new-instance v1, Ljava/io/IOException;
+
+    .line 109
+    .line 110
+    invoke-static {v4, v5, v10, v9}, Lqq5;->o(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 111
+    .line 112
+    .line 113
+    move-result-object v2
+
+    .line 114
+    iget-wide v3, v0, Lt63;->m:J
+
+    .line 115
+    .line 116
+    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    .line 117
+    .line 118
+    .line 119
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 120
+    .line 121
+    .line 122
+    move-result-object v0
+
+    .line 123
+    invoke-direct {v1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    .line 124
+    .line 125
+    .line 126
+    throw v1
+
+    .line 127
+    :cond_6
+    new-instance v1, Ljava/io/IOException;
+
+    .line 128
+    .line 129
+    invoke-static {v4, v5, v10, v9}, Lqq5;->o(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 130
+    .line 131
+    .line 132
+    move-result-object v2
+
+    .line 133
+    iget-wide v3, v0, Lt63;->m:J
+
+    .line 134
+    .line 135
+    invoke-virtual {v2, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    .line 136
+    .line 137
+    .line 138
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 139
+    .line 140
+    .line 141
+    move-result-object v0
+
+    .line 142
+    invoke-direct {v1, v0}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
+
+    .line 143
+    .line 144
+    .line 145
+    throw v1
 .end method

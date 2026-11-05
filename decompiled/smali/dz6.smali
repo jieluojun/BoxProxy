@@ -1,22 +1,10 @@
-.class final Ldz6;
-.super Ldq3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ldq3;"
-    }
-.end annotation
-
-
-# instance fields
-.field public final j:Lm43;
+.class public Ldz6;
+.super Lky6;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # direct methods
-.method public constructor <init>(Lm43;)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
@@ -25,180 +13,389 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Ldz6;->j:Lm43;
-
-    .line 5
-    .line 6
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lvp3;
-    .locals 1
+.method public final b(Lhw2;)Ljava/lang/Object;
+    .locals 11
 
     .line 1
-    new-instance v0, Lez6;
+    invoke-virtual {p1}, Lhw2;->L()I
 
     .line 2
     .line 3
-    invoke-direct {v0}, Lvp3;-><init>()V
-
     .line 4
-    .line 5
-    .line 6
-    iget-object p0, p0, Ldz6;->j:Lm43;
-
-    .line 7
-    .line 8
-    iput-object p0, v0, Lez6;->x:Lm43;
-
-    .line 9
-    .line 10
-    return-object v0
-.end method
-
-.method public final b(Lvp3;)V
-    .locals 0
-
-    .line 1
-    check-cast p1, Lez6;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Ldz6;->j:Lm43;
-
-    .line 4
-    .line 5
-    iput-object p0, p1, Lez6;->x:Lm43;
-
-    .line 6
-    .line 7
-    return-void
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of v1, p1, Ldz6;
-
-    .line 6
-    .line 7
-    const/4 v2, 0x0
-
-    .line 8
-    if-nez v1, :cond_1
-
-    .line 9
-    .line 10
-    return v2
-
-    .line 11
-    :cond_1
-    check-cast p1, Ldz6;
-
-    .line 12
-    .line 13
-    iget-object p0, p0, Ldz6;->j:Lm43;
-
-    .line 14
-    .line 15
-    iget-object p1, p1, Ldz6;->j:Lm43;
-
-    .line 16
-    .line 17
-    invoke-static {p0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 18
-    .line 19
-    .line 20
     move-result p0
 
+    .line 5
+    const/16 v0, 0x9
+
+    .line 6
+    .line 7
+    if-ne p0, v0, :cond_0
+
+    .line 8
+    .line 9
+    invoke-virtual {p1}, Lhw2;->H()V
+
+    .line 10
+    .line 11
+    .line 12
+    const/4 p0, 0x0
+
+    .line 13
+    return-object p0
+
+    .line 14
+    :cond_0
+    invoke-virtual {p1}, Lhw2;->c()V
+
+    .line 15
+    .line 16
+    .line 17
+    const/4 p0, 0x0
+
+    .line 18
+    move v1, p0
+
+    .line 19
+    move v2, v1
+
+    .line 20
+    move v3, v2
+
     .line 21
-    if-nez p0, :cond_2
+    move v4, v3
 
     .line 22
+    move v5, v4
+
     .line 23
-    return v2
+    move v6, v5
 
     .line 24
+    :goto_0
+    invoke-virtual {p1}, Lhw2;->L()I
+
+    .line 25
+    .line 26
+    .line 27
+    move-result v0
+
+    .line 28
+    const/4 v7, 0x4
+
+    .line 29
+    if-eq v0, v7, :cond_7
+
+    .line 30
+    .line 31
+    invoke-virtual {p1}, Lhw2;->D()Ljava/lang/String;
+
+    .line 32
+    .line 33
+    .line 34
+    move-result-object v0
+
+    .line 35
+    invoke-virtual {p1}, Lhw2;->z()I
+
+    .line 36
+    .line 37
+    .line 38
+    move-result v8
+
+    .line 39
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    .line 40
+    .line 41
+    .line 42
+    move-result v9
+
+    .line 43
+    const/4 v10, -0x1
+
+    .line 44
+    sparse-switch v9, :sswitch_data_0
+
+    .line 45
+    .line 46
+    .line 47
+    :goto_1
+    move v7, v10
+
+    .line 48
+    goto :goto_2
+
+    .line 49
+    :sswitch_0
+    const-string v7, "hourOfDay"
+
+    .line 50
+    .line 51
+    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    .line 52
+    .line 53
+    .line 54
+    move-result v0
+
+    .line 55
+    if-nez v0, :cond_1
+
+    .line 56
+    .line 57
+    goto :goto_1
+
+    .line 58
+    :cond_1
+    const/4 v7, 0x5
+
+    .line 59
+    goto :goto_2
+
+    .line 60
+    :sswitch_1
+    const-string v9, "month"
+
+    .line 61
+    .line 62
+    invoke-virtual {v0, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    .line 63
+    .line 64
+    .line 65
+    move-result v0
+
+    .line 66
+    if-nez v0, :cond_6
+
+    .line 67
+    .line 68
+    goto :goto_1
+
+    .line 69
+    :sswitch_2
+    const-string v7, "year"
+
+    .line 70
+    .line 71
+    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    .line 72
+    .line 73
+    .line 74
+    move-result v0
+
+    .line 75
+    if-nez v0, :cond_2
+
+    .line 76
+    .line 77
+    goto :goto_1
+
+    .line 78
     :cond_2
-    return v0
-.end method
+    const/4 v7, 0x3
 
-.method public final hashCode()I
-    .locals 0
+    .line 79
+    goto :goto_2
 
-    .line 1
-    iget-object p0, p0, Ldz6;->j:Lm43;
+    .line 80
+    :sswitch_3
+    const-string v7, "second"
 
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    .line 81
+    .line 82
+    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
+    .line 83
+    .line 84
+    .line 85
+    move-result v0
 
-    .line 7
-    return p0
-.end method
+    .line 86
+    if-nez v0, :cond_3
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+    .line 87
+    .line 88
+    goto :goto_1
 
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 89
+    :cond_3
+    const/4 v7, 0x2
 
-    .line 2
-    .line 3
-    const-string v1, "TraversablePrefetchStateModifierElement(prefetchState="
+    .line 90
+    goto :goto_2
 
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    .line 91
+    :sswitch_4
+    const-string v7, "minute"
 
-    .line 6
-    .line 7
-    .line 8
-    iget-object p0, p0, Ldz6;->j:Lm43;
+    .line 92
+    .line 93
+    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 9
-    .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    .line 94
+    .line 95
+    .line 96
+    move-result v0
 
-    .line 11
-    .line 12
-    .line 13
-    const-string p0, ")"
+    .line 97
+    if-nez v0, :cond_4
 
-    .line 14
-    .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 98
+    .line 99
+    goto :goto_1
 
-    .line 16
-    .line 17
-    .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 100
+    :cond_4
+    const/4 v7, 0x1
 
-    .line 19
-    .line 20
-    .line 21
-    move-result-object p0
+    .line 101
+    goto :goto_2
 
-    .line 22
-    return-object p0
+    .line 102
+    :sswitch_5
+    const-string v7, "dayOfMonth"
+
+    .line 103
+    .line 104
+    invoke-virtual {v0, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    .line 105
+    .line 106
+    .line 107
+    move-result v0
+
+    .line 108
+    if-nez v0, :cond_5
+
+    .line 109
+    .line 110
+    goto :goto_1
+
+    .line 111
+    :cond_5
+    move v7, p0
+
+    .line 112
+    :cond_6
+    :goto_2
+    packed-switch v7, :pswitch_data_0
+
+    .line 113
+    .line 114
+    .line 115
+    goto :goto_0
+
+    .line 116
+    :pswitch_0
+    move v4, v8
+
+    .line 117
+    goto :goto_0
+
+    .line 118
+    :pswitch_1
+    move v2, v8
+
+    .line 119
+    goto :goto_0
+
+    .line 120
+    :pswitch_2
+    move v1, v8
+
+    .line 121
+    goto :goto_0
+
+    .line 122
+    :pswitch_3
+    move v6, v8
+
+    .line 123
+    goto :goto_0
+
+    .line 124
+    :pswitch_4
+    move v5, v8
+
+    .line 125
+    goto :goto_0
+
+    .line 126
+    :pswitch_5
+    move v3, v8
+
+    .line 127
+    goto :goto_0
+
+    .line 128
+    :cond_7
+    invoke-virtual {p1}, Lhw2;->k()V
+
+    .line 129
+    .line 130
+    .line 131
+    new-instance v0, Ljava/util/GregorianCalendar;
+
+    .line 132
+    .line 133
+    invoke-direct/range {v0 .. v6}, Ljava/util/GregorianCalendar;-><init>(IIIIII)V
+
+    .line 134
+    .line 135
+    .line 136
+    return-object v0
+
+    .line 137
+    :sswitch_data_0
+    .sparse-switch
+        -0x4667c053 -> :sswitch_5
+        -0x400459ec -> :sswitch_4
+        -0x3604bb8c -> :sswitch_3
+        0x38883d -> :sswitch_2
+        0x6342280 -> :sswitch_1
+        0x3ab9c2c1 -> :sswitch_0
+    .end sparse-switch
+
+    .line 138
+    .line 139
+    .line 140
+    .line 141
+    .line 142
+    .line 143
+    .line 144
+    .line 145
+    .line 146
+    .line 147
+    .line 148
+    .line 149
+    .line 150
+    .line 151
+    .line 152
+    .line 153
+    .line 154
+    .line 155
+    .line 156
+    .line 157
+    .line 158
+    .line 159
+    .line 160
+    .line 161
+    .line 162
+    .line 163
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

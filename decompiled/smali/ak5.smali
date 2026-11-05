@@ -1,294 +1,351 @@
 .class public final synthetic Lak5;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lt62;
+.implements Ls52;
 
 
 # instance fields
-.field public final synthetic j:Le62;
+.field public final synthetic j:B
 
 .field public final synthetic k:Z
 
-.field public final synthetic l:Z
+.field public final synthetic l:Lp36;
 
-.field public final synthetic m:Ljv0;
+.field public final synthetic m:Z
 
-.field public final synthetic n:Lgl5;
+.field public final synthetic n:Z
 
-.field public final synthetic o:Laj5;
+.field public final synthetic o:Z
 
-.field public final synthetic p:F
+.field public final synthetic p:Z
 
-.field public final synthetic q:F
+.field public final synthetic q:Ld52;
 
-.field public final synthetic r:F
+.field public final synthetic r:Ld52;
 
-.field public final synthetic s:Lwp3;
+.field public final synthetic s:Ld52;
 
-.field public final synthetic t:Lp62;
+.field public final synthetic t:Ld52;
 
-.field public final synthetic u:Lp62;
+.field public final synthetic u:Lo52;
 
-.field public final synthetic v:Le62;
-
-.field public final synthetic w:Le62;
-
-.field public final synthetic x:Le62;
-
-.field public final synthetic y:Lwp3;
+.field public final synthetic v:Ld52;
 
 
 # direct methods
-.method public synthetic constructor <init>(Le62;ZZLjv0;Lgl5;Laj5;FFFLwp3;Lp62;Lp62;Le62;Le62;Le62;Lwp3;I)V
+.method public synthetic constructor <init>(ZLp36;ZZZZLd52;Ld52;Ld52;Ld52;Lo52;Ld52;IB)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p14, p0, Lak5;->j:B
 
     .line 2
     .line 3
+    iput-boolean p1, p0, Lak5;->k:Z
+
     .line 4
-    iput-object p1, p0, Lak5;->j:Le62;
-
     .line 5
+    iput-object p2, p0, Lak5;->l:Lp36;
+
     .line 6
-    iput-boolean p2, p0, Lak5;->k:Z
-
     .line 7
+    iput-boolean p3, p0, Lak5;->m:Z
+
     .line 8
-    iput-boolean p3, p0, Lak5;->l:Z
-
     .line 9
+    iput-boolean p4, p0, Lak5;->n:Z
+
     .line 10
-    iput-object p4, p0, Lak5;->m:Ljv0;
-
     .line 11
+    iput-boolean p5, p0, Lak5;->o:Z
+
     .line 12
-    iput-object p5, p0, Lak5;->n:Lgl5;
-
     .line 13
+    iput-boolean p6, p0, Lak5;->p:Z
+
     .line 14
-    iput-object p6, p0, Lak5;->o:Laj5;
-
     .line 15
+    iput-object p7, p0, Lak5;->q:Ld52;
+
     .line 16
-    iput p7, p0, Lak5;->p:F
-
     .line 17
+    iput-object p8, p0, Lak5;->r:Ld52;
+
     .line 18
-    iput p8, p0, Lak5;->q:F
-
     .line 19
+    iput-object p9, p0, Lak5;->s:Ld52;
+
     .line 20
-    iput p9, p0, Lak5;->r:F
-
     .line 21
+    iput-object p10, p0, Lak5;->t:Ld52;
+
     .line 22
-    iput-object p10, p0, Lak5;->s:Lwp3;
-
     .line 23
+    iput-object p11, p0, Lak5;->u:Lo52;
+
     .line 24
-    iput-object p11, p0, Lak5;->t:Lp62;
-
     .line 25
+    iput-object p12, p0, Lak5;->v:Ld52;
+
     .line 26
-    iput-object p12, p0, Lak5;->u:Lp62;
-
     .line 27
-    .line 28
-    iput-object p13, p0, Lak5;->v:Le62;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 28
     .line 29
     .line 30
-    iput-object p14, p0, Lak5;->w:Le62;
-
-    .line 31
-    .line 32
-    iput-object p15, p0, Lak5;->x:Le62;
-
-    .line 33
-    .line 34
-    move-object/from16 p1, p16
-
-    .line 35
-    .line 36
-    iput-object p1, p0, Lak5;->y:Lwp3;
-
-    .line 37
-    .line 38
     return-void
 .end method
 
 
 # virtual methods
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 19
+    .locals 32
 
     .line 1
     move-object/from16 v0, p0
 
     .line 2
     .line 3
-    move-object/from16 v16, p1
+    iget-byte v1, v0, Lak5;->j:B
 
     .line 4
     .line 5
-    check-cast v16, Lz11;
+    sget-object v2, Lk27;->a:Lk27;
 
     .line 6
     .line 7
-    move-object/from16 v1, p2
+    const/4 v3, 0x1
 
     .line 8
-    .line 9
-    check-cast v1, Ljava/lang/Integer;
+    packed-switch v1, :pswitch_data_0
 
+    .line 9
     .line 10
     .line 11
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-object/from16 v16, p1
 
     .line 12
     .line 13
+    check-cast v16, Lv01;
+
     .line 14
-    const/16 v1, 0xdb1
-
     .line 15
-    .line 16
-    invoke-static {v1}, Lqu5;->f0(I)I
+    move-object/from16 v1, p2
 
+    .line 16
     .line 17
+    check-cast v1, Ljava/lang/Integer;
+
     .line 18
     .line 19
-    move-result v17
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 20
-    iget-object v1, v0, Lak5;->j:Le62;
-
     .line 21
     .line 22
-    move-object v2, v1
+    invoke-static {v3}, Lw23;->h0(I)I
 
     .line 23
-    iget-boolean v1, v0, Lak5;->k:Z
-
     .line 24
     .line 25
-    move-object v3, v2
+    move-result v17
 
     .line 26
-    iget-boolean v2, v0, Lak5;->l:Z
+    iget-boolean v4, v0, Lak5;->k:Z
 
     .line 27
     .line 28
-    move-object v4, v3
+    iget-object v5, v0, Lak5;->l:Lp36;
 
     .line 29
-    iget-object v3, v0, Lak5;->m:Ljv0;
-
     .line 30
-    .line 31
-    move-object v5, v4
+    iget-boolean v6, v0, Lak5;->m:Z
 
+    .line 31
     .line 32
-    iget-object v4, v0, Lak5;->n:Lgl5;
+    iget-boolean v7, v0, Lak5;->n:Z
 
     .line 33
     .line 34
-    move-object v6, v5
+    iget-boolean v8, v0, Lak5;->o:Z
 
     .line 35
-    iget-object v5, v0, Lak5;->o:Laj5;
-
     .line 36
-    .line 37
-    move-object v7, v6
+    iget-boolean v9, v0, Lak5;->p:Z
 
+    .line 37
     .line 38
-    iget v6, v0, Lak5;->p:F
+    iget-object v10, v0, Lak5;->q:Ld52;
 
     .line 39
     .line 40
-    move-object v8, v7
+    iget-object v11, v0, Lak5;->r:Ld52;
 
     .line 41
-    iget v7, v0, Lak5;->q:F
-
     .line 42
-    .line 43
-    move-object v9, v8
+    iget-object v12, v0, Lak5;->s:Ld52;
 
+    .line 43
     .line 44
-    iget v8, v0, Lak5;->r:F
+    iget-object v13, v0, Lak5;->t:Ld52;
 
     .line 45
     .line 46
-    move-object v10, v9
+    iget-object v14, v0, Lak5;->u:Lo52;
 
     .line 47
-    iget-object v9, v0, Lak5;->s:Lwp3;
-
     .line 48
-    .line 49
-    move-object v11, v10
+    iget-object v15, v0, Lak5;->v:Ld52;
 
+    .line 49
     .line 50
-    iget-object v10, v0, Lak5;->t:Lp62;
+    invoke-static/range {v4 .. v17}, Lg23;->f(ZLp36;ZZZZLd52;Ld52;Ld52;Ld52;Lo52;Ld52;Lv01;I)V
 
     .line 51
     .line 52
-    move-object v12, v11
-
     .line 53
-    iget-object v11, v0, Lak5;->u:Lp62;
+    return-object v2
 
     .line 54
-    .line 55
-    move-object v13, v12
+    :pswitch_0
+    move-object/from16 v30, p1
 
+    .line 55
     .line 56
-    iget-object v12, v0, Lak5;->v:Le62;
+    check-cast v30, Lv01;
 
     .line 57
     .line 58
-    move-object v14, v13
+    move-object/from16 v1, p2
 
     .line 59
-    iget-object v13, v0, Lak5;->w:Le62;
-
     .line 60
-    .line 61
-    move-object v15, v14
+    check-cast v1, Ljava/lang/Integer;
 
+    .line 61
     .line 62
-    iget-object v14, v0, Lak5;->x:Le62;
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 63
     .line 64
-    iget-object v0, v0, Lak5;->y:Lwp3;
-
     .line 65
-    .line 66
-    move-object/from16 v18, v15
+    invoke-static {v3}, Lw23;->h0(I)I
 
+    .line 66
     .line 67
     .line 68
-    move-object v15, v0
+    move-result v31
 
     .line 69
-    move-object/from16 v0, v18
+    iget-boolean v1, v0, Lak5;->k:Z
 
     .line 70
     .line 71
-    invoke-static/range {v0 .. v17}, Lag7;->q(Le62;ZZLjv0;Lgl5;Laj5;FFFLwp3;Lp62;Lp62;Le62;Le62;Le62;Lwp3;Lz11;I)V
+    iget-object v3, v0, Lak5;->l:Lp36;
 
     .line 72
     .line 73
-    .line 74
-    sget-object v0, La47;->a:La47;
+    iget-boolean v4, v0, Lak5;->m:Z
 
+    .line 74
     .line 75
+    iget-boolean v5, v0, Lak5;->n:Z
+
     .line 76
-    return-object v0
+    .line 77
+    iget-boolean v6, v0, Lak5;->o:Z
+
+    .line 78
+    .line 79
+    iget-boolean v7, v0, Lak5;->p:Z
+
+    .line 80
+    .line 81
+    iget-object v8, v0, Lak5;->q:Ld52;
+
+    .line 82
+    .line 83
+    iget-object v9, v0, Lak5;->r:Ld52;
+
+    .line 84
+    .line 85
+    iget-object v10, v0, Lak5;->s:Ld52;
+
+    .line 86
+    .line 87
+    iget-object v11, v0, Lak5;->t:Ld52;
+
+    .line 88
+    .line 89
+    iget-object v12, v0, Lak5;->u:Lo52;
+
+    .line 90
+    .line 91
+    iget-object v0, v0, Lak5;->v:Ld52;
+
+    .line 92
+    .line 93
+    move-object/from16 v29, v0
+
+    .line 94
+    .line 95
+    move/from16 v18, v1
+
+    .line 96
+    .line 97
+    move-object/from16 v19, v3
+
+    .line 98
+    .line 99
+    move/from16 v20, v4
+
+    .line 100
+    .line 101
+    move/from16 v21, v5
+
+    .line 102
+    .line 103
+    move/from16 v22, v6
+
+    .line 104
+    .line 105
+    move/from16 v23, v7
+
+    .line 106
+    .line 107
+    move-object/from16 v24, v8
+
+    .line 108
+    .line 109
+    move-object/from16 v25, v9
+
+    .line 110
+    .line 111
+    move-object/from16 v26, v10
+
+    .line 112
+    .line 113
+    move-object/from16 v27, v11
+
+    .line 114
+    .line 115
+    move-object/from16 v28, v12
+
+    .line 116
+    .line 117
+    invoke-static/range {v18 .. v31}, Lqx5;->i(ZLp36;ZZZZLd52;Ld52;Ld52;Ld52;Lo52;Ld52;Lv01;I)V
+
+    .line 118
+    .line 119
+    .line 120
+    return-object v2
+
+    .line 121
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

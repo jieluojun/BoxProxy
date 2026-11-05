@@ -1,208 +1,682 @@
-.class public abstract Lvk6;
+.class public final Lvk6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ljava/lang/CharSequence;
 
 
-# static fields
-.field public static final a:Ljava/lang/String;
+# instance fields
+.field public final j:Ljava/util/List;
 
-.field public static final b:J
+.field public final k:Lmo6;
 
-.field public static final c:I
+.field public final l:Ljava/lang/CharSequence;
 
-.field public static final d:I
+.field public final m:J
 
-.field public static final e:J
+.field public final n:Laq6;
 
-.field public static final f:Liw1;
+.field public final o:Lnk4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
+.method public constructor <init>(Ljava/lang/CharSequence;JLaq6;Lnk4;Ljava/util/List;Ljava/util/List;Lmo6;I)V
+    .locals 1
 
     .line 1
-    const-string v0, "kotlinx.coroutines.scheduler.default.name"
+    and-int/lit8 p7, p9, 0x4
 
     .line 2
     .line 3
-    sget v1, Lli6;->a:I
-
-    .line 4
-    .line 5
-    :try_start_0
-    invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object v0
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 9
-    goto :goto_0
-
-    .line 10
-    :catch_0
     const/4 v0, 0x0
 
+    .line 4
+    if-eqz p7, :cond_0
+
+    .line 5
+    .line 6
+    move-object p4, v0
+
+    .line 7
+    :cond_0
+    and-int/lit8 p7, p9, 0x8
+
+    .line 8
+    .line 9
+    if-eqz p7, :cond_1
+
+    .line 10
     .line 11
-    :goto_0
-    if-nez v0, :cond_0
+    move-object p5, v0
 
     .line 12
+    :cond_1
+    and-int/lit8 p7, p9, 0x10
+
     .line 13
-    const-string v0, "DefaultDispatcher"
-
     .line 14
-    .line 15
-    :cond_0
-    sput-object v0, Lvk6;->a:Ljava/lang/String;
+    if-eqz p7, :cond_2
 
+    .line 15
     .line 16
+    move-object p6, v0
+
     .line 17
-    const-wide/16 v4, 0x1
+    :cond_2
+    and-int/lit8 p7, p9, 0x40
 
     .line 18
     .line 19
-    const-wide v6, 0x7fffffffffffffffL
+    if-eqz p7, :cond_3
 
     .line 20
     .line 21
+    move-object p8, v0
+
     .line 22
+    :cond_3
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 23
     .line 24
-    const-string v1, "kotlinx.coroutines.scheduler.resolution.ns"
-
     .line 25
-    .line 26
-    const-wide/32 v2, 0x186a0
+    iput-object p6, p0, Lvk6;->j:Ljava/util/List;
 
+    .line 26
     .line 27
+    iput-object p8, p0, Lvk6;->k:Lmo6;
+
     .line 28
     .line 29
-    invoke-static/range {v1 .. v7}, Lei3;->X(Ljava/lang/String;JJJ)J
+    instance-of p6, p1, Lvk6;
 
     .line 30
     .line 31
-    .line 32
-    move-result-wide v0
+    if-eqz p6, :cond_4
 
+    .line 32
     .line 33
-    sput-wide v0, Lvk6;->b:J
+    move-object p6, p1
+
+    .line 34
+    check-cast p6, Lvk6;
+
+    .line 35
+    .line 36
+    iget-object p6, p6, Lvk6;->l:Ljava/lang/CharSequence;
+
+    .line 37
+    .line 38
+    goto :goto_0
+
+    .line 39
+    :cond_4
+    move-object p6, p1
+
+    .line 40
+    :goto_0
+    iput-object p6, p0, Lvk6;->l:Ljava/lang/CharSequence;
+
+    .line 41
+    .line 42
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    .line 43
+    .line 44
+    .line 45
+    move-result p6
+
+    .line 46
+    invoke-static {p6, p2, p3}, Leg3;->i(IJ)J
+
+    .line 47
+    .line 48
+    .line 49
+    move-result-wide p2
+
+    .line 50
+    iput-wide p2, p0, Lvk6;->m:J
+
+    .line 51
+    .line 52
+    if-eqz p4, :cond_5
+
+    .line 53
+    .line 54
+    iget-wide p2, p4, Laq6;->a:J
+
+    .line 55
+    .line 56
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    .line 57
+    .line 58
+    .line 59
+    move-result p4
+
+    .line 60
+    invoke-static {p4, p2, p3}, Leg3;->i(IJ)J
+
+    .line 61
+    .line 62
+    .line 63
+    move-result-wide p2
+
+    .line 64
+    new-instance p4, Laq6;
+
+    .line 65
+    .line 66
+    invoke-direct {p4, p2, p3}, Laq6;-><init>(J)V
+
+    .line 67
+    .line 68
+    .line 69
+    goto :goto_1
+
+    .line 70
+    :cond_5
+    move-object p4, v0
+
+    .line 71
+    :goto_1
+    iput-object p4, p0, Lvk6;->n:Laq6;
+
+    .line 72
+    .line 73
+    if-eqz p5, :cond_6
+
+    .line 74
+    .line 75
+    iget-object p2, p5, Lnk4;->k:Ljava/lang/Object;
+
+    .line 76
+    .line 77
+    check-cast p2, Laq6;
+
+    .line 78
+    .line 79
+    iget-wide p2, p2, Laq6;->a:J
+
+    .line 80
+    .line 81
+    invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
+
+    .line 82
+    .line 83
+    .line 84
+    move-result p1
+
+    .line 85
+    invoke-static {p1, p2, p3}, Leg3;->i(IJ)J
+
+    .line 86
+    .line 87
+    .line 88
+    move-result-wide p1
+
+    .line 89
+    new-instance p3, Laq6;
+
+    .line 90
+    .line 91
+    invoke-direct {p3, p1, p2}, Laq6;-><init>(J)V
+
+    .line 92
+    .line 93
+    .line 94
+    iget-object p1, p5, Lnk4;->j:Ljava/lang/Object;
+
+    .line 95
+    .line 96
+    new-instance v0, Lnk4;
+
+    .line 97
+    .line 98
+    invoke-direct {v0, p1, p3}, Lnk4;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 99
+    .line 100
+    .line 101
+    :cond_6
+    iput-object v0, p0, Lvk6;->o:Lnk4;
+
+    .line 102
+    .line 103
+    return-void
+.end method
+
+
+# virtual methods
+.method public final charAt(I)C
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lvk6;->l:Ljava/lang/CharSequence;
+
+    .line 2
+    .line 3
+    invoke-interface {p0, p1}, Ljava/lang/CharSequence;->charAt(I)C
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 6
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    const/4 v1, 0x0
+
+    .line 6
+    if-nez p1, :cond_1
+
+    .line 7
+    .line 8
+    return v1
+
+    .line 9
+    :cond_1
+    const-class v2, Lvk6;
+
+    .line 10
+    .line 11
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object v3
+
+    .line 15
+    if-eq v2, v3, :cond_2
+
+    .line 16
+    .line 17
+    return v1
+
+    .line 18
+    :cond_2
+    check-cast p1, Lvk6;
+
+    .line 19
+    .line 20
+    iget-wide v2, p0, Lvk6;->m:J
+
+    .line 21
+    .line 22
+    iget-wide v4, p1, Lvk6;->m:J
+
+    .line 23
+    .line 24
+    invoke-static {v2, v3, v4, v5}, Laq6;->c(JJ)Z
+
+    .line 25
+    .line 26
+    .line 27
+    move-result v2
+
+    .line 28
+    if-nez v2, :cond_3
+
+    .line 29
+    .line 30
+    return v1
+
+    .line 31
+    :cond_3
+    iget-object v2, p0, Lvk6;->n:Laq6;
+
+    .line 32
+    .line 33
+    iget-object v3, p1, Lvk6;->n:Laq6;
 
     .line 34
     .line 35
-    sget v0, Lli6;->a:I
+    invoke-static {v2, v3}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 36
     .line 37
-    const/4 v1, 0x2
-
     .line 38
-    if-ge v0, v1, :cond_1
+    move-result v2
 
     .line 39
-    .line 40
-    move v0, v1
+    if-nez v2, :cond_4
 
+    .line 40
     .line 41
-    :cond_1
-    const/16 v1, 0x8
+    return v1
 
     .line 42
+    :cond_4
+    iget-object v2, p0, Lvk6;->o:Lnk4;
+
     .line 43
-    const-string v2, "kotlinx.coroutines.scheduler.core.pool.size"
-
     .line 44
-    .line 45
-    invoke-static {v0, v2, v1}, Lei3;->Y(ILjava/lang/String;I)I
+    iget-object v3, p1, Lvk6;->o:Lnk4;
 
+    .line 45
     .line 46
+    invoke-static {v2, v3}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+
     .line 47
     .line 48
-    move-result v0
-
     .line 49
-    sput v0, Lvk6;->c:I
+    move-result v2
 
     .line 50
+    if-nez v2, :cond_5
+
     .line 51
-    const v0, 0x1ffffe
-
     .line 52
-    .line 53
-    .line 54
-    const/4 v1, 0x4
+    return v1
 
+    .line 53
+    :cond_5
+    iget-object v2, p0, Lvk6;->j:Ljava/util/List;
+
+    .line 54
     .line 55
-    const-string v2, "kotlinx.coroutines.scheduler.max.pool.size"
+    iget-object v3, p1, Lvk6;->j:Ljava/util/List;
 
     .line 56
     .line 57
-    invoke-static {v0, v2, v1}, Lei3;->Y(ILjava/lang/String;I)I
+    invoke-static {v2, v3}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 58
     .line 59
     .line 60
-    move-result v0
+    move-result v2
 
     .line 61
-    sput v0, Lvk6;->d:I
+    if-nez v2, :cond_6
 
     .line 62
     .line 63
-    const-wide/16 v4, 0x1
+    return v1
 
     .line 64
-    .line 65
-    const-wide v6, 0x7fffffffffffffffL
+    :cond_6
+    iget-object v2, p1, Lvk6;->l:Ljava/lang/CharSequence;
 
+    .line 65
     .line 66
+    iget-object v3, p0, Lvk6;->l:Ljava/lang/CharSequence;
+
     .line 67
     .line 68
+    invoke-static {v3, v2}, Lpb6;->a0(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
     .line 69
     .line 70
-    const-string v1, "kotlinx.coroutines.scheduler.keep.alive.sec"
-
     .line 71
+    move-result v2
+
     .line 72
-    const-wide/16 v2, 0x3c
+    if-nez v2, :cond_7
 
     .line 73
     .line 74
-    invoke-static/range {v1 .. v7}, Lei3;->X(Ljava/lang/String;JJJ)J
+    return v1
 
     .line 75
+    :cond_7
+    iget-object p0, p0, Lvk6;->k:Lmo6;
+
     .line 76
     .line 77
-    move-result-wide v0
+    iget-object p1, p1, Lvk6;->k:Lmo6;
 
     .line 78
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
     .line 79
-    .line 80
-    invoke-virtual {v2, v0, v1}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
+    invoke-static {p0, p1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
 
+    .line 80
     .line 81
     .line 82
+    move-result p0
+
     .line 83
-    move-result-wide v0
+    if-nez p0, :cond_8
 
     .line 84
-    sput-wide v0, Lvk6;->e:J
-
     .line 85
+    return v1
+
     .line 86
-    sget-object v0, Liw1;->y:Liw1;
+    :cond_8
+    return v0
+.end method
 
-    .line 87
-    .line 88
-    sput-object v0, Lvk6;->f:Liw1;
+.method public final hashCode()I
+    .locals 5
 
-    .line 89
-    .line 90
-    return-void
+    .line 1
+    iget-object v0, p0, Lvk6;->l:Ljava/lang/CharSequence;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    const/16 v1, 0x1f
+
+    .line 8
+    .line 9
+    mul-int/2addr v0, v1
+
+    .line 10
+    sget v2, Laq6;->c:I
+
+    .line 11
+    .line 12
+    iget-wide v2, p0, Lvk6;->m:J
+
+    .line 13
+    .line 14
+    invoke-static {v0, v1, v2, v3}, Lqq5;->d(IIJ)I
+
+    .line 15
+    .line 16
+    .line 17
+    move-result v0
+
+    .line 18
+    const/4 v2, 0x0
+
+    .line 19
+    iget-object v3, p0, Lvk6;->n:Laq6;
+
+    .line 20
+    .line 21
+    if-eqz v3, :cond_0
+
+    .line 22
+    .line 23
+    iget-wide v3, v3, Laq6;->a:J
+
+    .line 24
+    .line 25
+    invoke-static {v3, v4}, Ljava/lang/Long;->hashCode(J)I
+
+    .line 26
+    .line 27
+    .line 28
+    move-result v3
+
+    .line 29
+    goto :goto_0
+
+    .line 30
+    :cond_0
+    move v3, v2
+
+    .line 31
+    :goto_0
+    add-int/2addr v0, v3
+
+    .line 32
+    mul-int/2addr v0, v1
+
+    .line 33
+    iget-object v3, p0, Lvk6;->o:Lnk4;
+
+    .line 34
+    .line 35
+    if-eqz v3, :cond_1
+
+    .line 36
+    .line 37
+    invoke-virtual {v3}, Lnk4;->hashCode()I
+
+    .line 38
+    .line 39
+    .line 40
+    move-result v3
+
+    .line 41
+    goto :goto_1
+
+    .line 42
+    :cond_1
+    move v3, v2
+
+    .line 43
+    :goto_1
+    add-int/2addr v0, v3
+
+    .line 44
+    mul-int/2addr v0, v1
+
+    .line 45
+    iget-object v3, p0, Lvk6;->j:Ljava/util/List;
+
+    .line 46
+    .line 47
+    if-eqz v3, :cond_2
+
+    .line 48
+    .line 49
+    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
+
+    .line 50
+    .line 51
+    .line 52
+    move-result v3
+
+    .line 53
+    goto :goto_2
+
+    .line 54
+    :cond_2
+    move v3, v2
+
+    .line 55
+    :goto_2
+    add-int/2addr v0, v3
+
+    .line 56
+    mul-int/2addr v0, v1
+
+    .line 57
+    iget-object p0, p0, Lvk6;->k:Lmo6;
+
+    .line 58
+    .line 59
+    if-eqz p0, :cond_3
+
+    .line 60
+    .line 61
+    invoke-virtual {p0}, Lmo6;->hashCode()I
+
+    .line 62
+    .line 63
+    .line 64
+    move-result v2
+
+    .line 65
+    :cond_3
+    add-int/2addr v0, v2
+
+    .line 66
+    return v0
+.end method
+
+.method public final length()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lvk6;->l:Ljava/lang/CharSequence;
+
+    .line 2
+    .line 3
+    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final subSequence(II)Ljava/lang/CharSequence;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lvk6;->l:Ljava/lang/CharSequence;
+
+    .line 2
+    .line 3
+    invoke-interface {p0, p1, p2}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    return-object p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lvk6;->l:Ljava/lang/CharSequence;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    return-object p0
 .end method

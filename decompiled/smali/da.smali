@@ -1,6 +1,6 @@
 .class public final synthetic Lda;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
 .implements Ljava/lang/Runnable;
@@ -9,11 +9,11 @@
 # instance fields
 .field public final synthetic j:B
 
-.field public final synthetic k:Le62;
+.field public final synthetic k:Loa;
 
 
 # direct methods
-.method public synthetic constructor <init>(Le62;B)V
+.method public synthetic constructor <init>(Loa;B)V
     .locals 0
 
     .line 1
@@ -21,7 +21,7 @@
 
     .line 2
     .line 3
-    iput-object p1, p0, Lda;->k:Le62;
+    iput-object p1, p0, Lda;->k:Loa;
 
     .line 4
     .line 5
@@ -36,14 +36,14 @@
 
 # virtual methods
 .method public final run()V
-    .locals 1
+    .locals 3
 
     .line 1
     iget-byte v0, p0, Lda;->j:B
 
     .line 2
     .line 3
-    iget-object p0, p0, Lda;->k:Le62;
+    iget-object p0, p0, Lda;->k:Loa;
 
     .line 4
     .line 5
@@ -52,16 +52,15 @@
     .line 6
     .line 7
     .line 8
-    invoke-interface {p0}, Le62;->invoke()Ljava/lang/Object;
+    invoke-virtual {p0}, Loa;->getRoot()La03;
 
     .line 9
     .line 10
     .line 11
-    return-void
+    move-result-object p0
 
     .line 12
-    :pswitch_0
-    invoke-interface {p0}, Le62;->invoke()Ljava/lang/Object;
+    invoke-static {p0}, Loa;->j(La03;)V
 
     .line 13
     .line 14
@@ -69,17 +68,16 @@
     return-void
 
     .line 16
-    :pswitch_1
-    invoke-interface {p0}, Le62;->invoke()Ljava/lang/Object;
+    :pswitch_0
+    invoke-virtual {p0}, Loa;->getRoot()La03;
 
     .line 17
     .line 18
     .line 19
-    return-void
+    move-result-object p0
 
     .line 20
-    :pswitch_2
-    invoke-interface {p0}, Le62;->invoke()Ljava/lang/Object;
+    invoke-static {p0}, Loa;->j(La03;)V
 
     .line 21
     .line 22
@@ -87,30 +85,137 @@
     return-void
 
     .line 24
-    :pswitch_3
-    invoke-interface {p0}, Le62;->invoke()Ljava/lang/Object;
+    :pswitch_1
+    const/4 v0, 0x0
 
     .line 25
+    iput-boolean v0, p0, Loa;->H0:Z
+
     .line 26
     .line 27
-    return-void
+    iget-object v0, p0, Loa;->x0:Landroid/view/MotionEvent;
 
     .line 28
-    :pswitch_4
-    invoke-interface {p0}, Le62;->invoke()Ljava/lang/Object;
-
     .line 29
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 30
     .line 31
+    .line 32
+    invoke-virtual {v0}, Landroid/view/MotionEvent;->getActionMasked()I
+
+    .line 33
+    .line 34
+    .line 35
+    move-result v1
+
+    .line 36
+    const/16 v2, 0xa
+
+    .line 37
+    .line 38
+    if-ne v1, v2, :cond_0
+
+    .line 39
+    .line 40
+    invoke-virtual {p0, v0}, Loa;->G(Landroid/view/MotionEvent;)I
+
+    .line 41
+    .line 42
+    .line 43
+    goto :goto_0
+
+    .line 44
+    :cond_0
+    const-string p0, "The ACTION_HOVER_EXIT event was not cleared."
+
+    .line 45
+    .line 46
+    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
+
+    .line 47
+    .line 48
+    .line 49
+    :goto_0
     return-void
 
-    .line 32
+    .line 50
+    :pswitch_2
+    iget-object p0, p0, Loa;->r:Lbv;
+
+    .line 51
+    .line 52
+    const-string v0, "AndroidOwner:outOfFrameExecutor"
+
+    .line 53
+    .line 54
+    invoke-static {v0}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
+
+    .line 55
+    .line 56
+    .line 57
+    :goto_1
+    :try_start_0
+    invoke-virtual {p0}, Lbv;->isEmpty()Z
+
+    .line 58
+    .line 59
+    .line 60
+    move-result v0
+
+    .line 61
+    if-nez v0, :cond_1
+
+    .line 62
+    .line 63
+    invoke-virtual {p0}, Lbv;->removeLast()Ljava/lang/Object;
+
+    .line 64
+    .line 65
+    .line 66
+    move-result-object v0
+
+    .line 67
+    check-cast v0, Ld52;
+
+    .line 68
+    .line 69
+    invoke-interface {v0}, Ld52;->invoke()Ljava/lang/Object;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 70
+    .line 71
+    .line 72
+    goto :goto_1
+
+    .line 73
+    :cond_1
+    invoke-static {}, Landroid/os/Trace;->endSection()V
+
+    .line 74
+    .line 75
+    .line 76
+    return-void
+
+    .line 77
+    :catchall_0
+    move-exception p0
+
+    .line 78
+    invoke-static {}, Landroid/os/Trace;->endSection()V
+
+    .line 79
+    .line 80
+    .line 81
+    throw p0
+
+    .line 82
     nop
 
+    .line 83
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_4
-        :pswitch_3
         :pswitch_2
         :pswitch_1
         :pswitch_0

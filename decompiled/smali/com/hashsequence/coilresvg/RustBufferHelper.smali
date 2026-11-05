@@ -1,6 +1,6 @@
 .class public final Lcom/hashsequence/coilresvg/RustBufferHelper;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # static fields
@@ -93,7 +93,7 @@
     .line 8
     .line 9
     .line 10
-    invoke-virtual {v0, v1}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lp62;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lo52;)Ljava/lang/Object;
 
     .line 11
     .line 12
@@ -121,7 +121,7 @@
 
     .line 22
     .line 23
-    invoke-static {p1, p2}, Lc27;->b(J)Ljava/lang/String;
+    invoke-static {p1, p2}, Lm07;->b(J)Ljava/lang/String;
 
     .line 24
     .line 25
@@ -137,7 +137,7 @@
 
     .line 30
     .line 31
-    invoke-static {p2, p1, v0}, Loc1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p2, p1, v0}, Lpb1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 32
     .line 33
@@ -179,7 +179,7 @@
     .line 11
     .line 12
     .line 13
-    invoke-virtual {v0, v1}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lp62;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lo52;)Ljava/lang/Object;
 
     .line 14
     .line 15

@@ -1,17 +1,14 @@
 .class public final Lqp4;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lha2;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Landroid/view/View;
+.field public final a:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/View;)V
+.method public synthetic constructor <init>(I)V
     .locals 0
 
     .line 1
@@ -20,334 +17,166 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lqp4;->a:Landroid/view/View;
+    iput p1, p0, Lqp4;->a:I
 
     .line 5
     .line 6
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(I)V
-    .locals 9
+.method public static a(I)Ljava/lang/String;
+    .locals 1
 
     .line 1
-    const/4 v0, -0x1
+    const/4 v0, 0x1
 
     .line 2
-    const/4 v1, 0x0
+    if-eq p0, v0, :cond_3
 
     .line 3
-    const/4 v2, 0x1
-
     .line 4
-    const/16 v3, 0x11
+    const/4 v0, 0x2
 
     .line 5
-    .line 6
-    const/16 v4, 0xd
+    if-eq p0, v0, :cond_2
 
+    .line 6
     .line 7
+    const/4 v0, 0x3
+
     .line 8
-    const/4 v5, 0x6
+    if-eq p0, v0, :cond_1
 
     .line 9
-    const/16 v6, 0x10
-
     .line 10
+    const/4 v0, 0x4
+
     .line 11
-    if-ne p1, v6, :cond_0
+    if-eq p0, v0, :cond_0
 
     .line 12
     .line 13
-    move v7, v6
+    const-string p0, "Unknown"
 
     .line 14
-    goto :goto_0
-
     .line 15
-    :cond_0
-    if-ne p1, v5, :cond_1
+    return-object p0
 
     .line 16
-    .line 17
-    move v7, v5
+    :cond_0
+    const-string p0, "Eraser"
 
+    .line 17
     .line 18
-    goto :goto_0
+    return-object p0
 
     .line 19
     :cond_1
-    if-ne p1, v4, :cond_2
+    const-string p0, "Stylus"
 
     .line 20
     .line 21
-    move v7, v4
+    return-object p0
 
     .line 22
-    goto :goto_0
+    :cond_2
+    const-string p0, "Mouse"
 
     .line 23
-    :cond_2
-    const/16 v7, 0x17
-
     .line 24
+    return-object p0
+
     .line 25
-    if-ne p1, v7, :cond_3
+    :cond_3
+    const-string p0, "Touch"
 
     .line 26
     .line 27
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    instance-of v0, p1, Lqp4;
+
+    .line 2
+    .line 3
+    if-nez v0, :cond_0
+
+    .line 4
+    .line 5
     goto :goto_0
 
-    .line 28
-    :cond_3
-    const/4 v7, 0x3
+    .line 6
+    :cond_0
+    check-cast p1, Lqp4;
 
-    .line 29
-    if-ne p1, v7, :cond_4
+    .line 7
+    .line 8
+    iget p1, p1, Lqp4;->a:I
 
-    .line 30
-    .line 31
-    goto :goto_0
+    .line 9
+    .line 10
+    iget p0, p0, Lqp4;->a:I
 
-    .line 32
-    :cond_4
-    if-nez p1, :cond_5
+    .line 11
+    .line 12
+    if-eq p0, p1, :cond_1
 
-    .line 33
-    .line 34
-    move v7, v1
-
-    .line 35
-    goto :goto_0
-
-    .line 36
-    :cond_5
-    if-ne p1, v3, :cond_6
-
-    .line 37
-    .line 38
-    move v7, v3
-
-    .line 39
-    goto :goto_0
-
-    .line 40
-    :cond_6
-    const/16 v7, 0x1b
-
-    .line 41
-    .line 42
-    if-ne p1, v7, :cond_7
-
-    .line 43
-    .line 44
-    goto :goto_0
-
-    .line 45
-    :cond_7
-    const/16 v7, 0x1a
-
-    .line 46
-    .line 47
-    if-ne p1, v7, :cond_8
-
-    .line 48
-    .line 49
-    goto :goto_0
-
-    .line 50
-    :cond_8
-    const/16 v7, 0x9
-
-    .line 51
-    .line 52
-    if-ne p1, v7, :cond_9
-
-    .line 53
-    .line 54
-    goto :goto_0
-
-    .line 55
-    :cond_9
-    const/16 v7, 0x16
-
-    .line 56
-    .line 57
-    if-ne p1, v7, :cond_a
-
-    .line 58
-    .line 59
-    goto :goto_0
-
-    .line 60
-    :cond_a
-    const/16 v7, 0x15
-
-    .line 61
-    .line 62
-    if-ne p1, v7, :cond_b
-
-    .line 63
-    .line 64
-    goto :goto_0
-
-    .line 65
-    :cond_b
-    if-ne p1, v2, :cond_c
-
-    .line 66
-    .line 67
-    move v7, v2
-
-    .line 68
-    goto :goto_0
-
-    .line 69
-    :cond_c
-    move v7, v0
-
-    .line 70
+    .line 13
+    .line 14
     :goto_0
-    sget-object p1, Lo77;->a:Ljava/util/WeakHashMap;
+    const/4 p0, 0x0
 
-    .line 71
-    .line 72
-    if-ne v7, v0, :cond_d
+    .line 15
+    return p0
 
-    .line 73
-    .line 74
-    move v1, v0
+    .line 16
+    :cond_1
+    const/4 p0, 0x1
 
-    .line 75
-    goto :goto_3
+    .line 17
+    return p0
+.end method
 
-    .line 76
-    :cond_d
-    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
+.method public final hashCode()I
+    .locals 0
 
-    .line 77
-    .line 78
-    const/16 v8, 0x22
+    .line 1
+    iget p0, p0, Lqp4;->a:I
 
-    .line 79
-    .line 80
-    if-ge p1, v8, :cond_e
+    .line 2
+    .line 3
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
-    .line 81
-    .line 82
-    packed-switch v7, :pswitch_data_0
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
 
-    .line 83
-    .line 84
-    .line 85
-    goto :goto_1
+    .line 7
+    return p0
+.end method
 
-    .line 86
-    :pswitch_0
-    move v7, v1
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    .line 87
-    goto :goto_1
+    .line 1
+    iget p0, p0, Lqp4;->a:I
 
-    .line 88
-    :pswitch_1
-    const/4 v7, 0x4
+    .line 2
+    .line 3
+    invoke-static {p0}, Lqp4;->a(I)Ljava/lang/String;
 
-    .line 89
-    goto :goto_1
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
 
-    .line 90
-    :pswitch_2
-    move v7, v5
-
-    .line 91
-    :cond_e
-    :goto_1
-    const/16 v8, 0x1e
-
-    .line 92
-    .line 93
-    if-ge p1, v8, :cond_11
-
-    .line 94
-    .line 95
-    const/16 p1, 0xc
-
-    .line 96
-    .line 97
-    if-eq v7, p1, :cond_10
-
-    .line 98
-    .line 99
-    if-eq v7, v4, :cond_f
-
-    .line 100
-    .line 101
-    if-eq v7, v6, :cond_10
-
-    .line 102
-    .line 103
-    if-eq v7, v3, :cond_12
-
-    .line 104
-    .line 105
-    goto :goto_2
-
-    .line 106
-    :cond_f
-    move v1, v5
-
-    .line 107
-    goto :goto_3
-
-    .line 108
-    :cond_10
-    move v1, v2
-
-    .line 109
-    goto :goto_3
-
-    .line 110
-    :cond_11
-    :goto_2
-    move v1, v7
-
-    .line 111
-    :cond_12
-    :goto_3
-    if-ne v1, v0, :cond_13
-
-    .line 112
-    .line 113
-    return-void
-
-    .line 114
-    :cond_13
-    iget-object p0, p0, Lqp4;->a:Landroid/view/View;
-
-    .line 115
-    .line 116
-    invoke-virtual {p0, v1}, Landroid/view/View;->performHapticFeedback(I)Z
-
-    .line 117
-    .line 118
-    .line 119
-    return-void
-
-    .line 120
-    nop
-
-    .line 121
-    :pswitch_data_0
-    .packed-switch 0x15
-        :pswitch_2
-        :pswitch_1
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-        :pswitch_2
-        :pswitch_1
-    .end packed-switch
+    .line 7
+    return-object p0
 .end method

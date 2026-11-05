@@ -1,28 +1,33 @@
-.class public final Lpi;
+.class public final synthetic Lpi;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Landroid/window/OnBackInvokedCallback;
 
 
-# static fields
-.field public static final a:Lpi;
+# instance fields
+.field public final synthetic a:B
+
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Ljava/lang/Object;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lpi;
+    iput-byte p2, p0, Lpi;->a:B
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lpi;->b:Ljava/lang/Object;
 
     .line 4
     .line 5
-    .line 6
-    sput-object v0, Lpi;->a:Lpi;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6
     .line 7
     .line 8
     return-void
@@ -30,103 +35,86 @@
 
 
 # virtual methods
-.method public final a(Landroid/view/Window;)I
+.method public final onBackInvoked()V
     .locals 1
 
     .line 1
-    invoke-virtual {p1}, Landroid/view/Window;->getWindowManager()Landroid/view/WindowManager;
+    iget-byte v0, p0, Lpi;->a:B
 
     .line 2
     .line 3
-    .line 4
-    move-result-object p0
+    iget-object p0, p0, Lpi;->b:Ljava/lang/Object;
 
+    .line 4
     .line 5
-    invoke-interface {p0}, Landroid/view/WindowManager;->getCurrentWindowMetrics()Landroid/view/WindowMetrics;
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
     .line 8
-    move-result-object p0
+    check-cast p0, Lzt6;
 
     .line 9
-    invoke-virtual {p0}, Landroid/view/WindowMetrics;->getWindowInsets()Landroid/view/WindowInsets;
-
     .line 10
+    invoke-virtual {p0}, Lzt6;->run()V
+
     .line 11
     .line 12
-    move-result-object p1
-
     .line 13
-    invoke-static {}, Landroid/view/WindowInsets$Type;->systemBars()I
+    return-void
 
     .line 14
+    :pswitch_0
+    check-cast p0, Ly94;
+
     .line 15
     .line 16
-    move-result v0
+    invoke-virtual {p0}, Lgw3;->b()V
 
     .line 17
-    invoke-virtual {p1, v0}, Landroid/view/WindowInsets;->getInsets(I)Landroid/graphics/Insets;
-
     .line 18
     .line 19
+    return-void
+
     .line 20
-    move-result-object p1
+    :pswitch_1
+    check-cast p0, Lcp;
 
     .line 21
-    iget v0, p1, Landroid/graphics/Insets;->top:I
-
     .line 22
-    .line 23
-    iget p1, p1, Landroid/graphics/Insets;->bottom:I
+    invoke-virtual {p0}, Lcp;->G()Z
 
+    .line 23
     .line 24
     .line 25
-    add-int/2addr v0, p1
+    return-void
 
     .line 26
-    invoke-virtual {p0}, Landroid/view/WindowMetrics;->getBounds()Landroid/graphics/Rect;
+    :pswitch_2
+    check-cast p0, Ld52;
 
     .line 27
     .line 28
-    .line 29
-    move-result-object p0
+    if-eqz p0, :cond_0
 
+    .line 29
     .line 30
-    invoke-virtual {p0}, Landroid/graphics/Rect;->height()I
+    invoke-interface {p0}, Ld52;->invoke()Ljava/lang/Object;
 
     .line 31
     .line 32
     .line 33
-    move-result p0
+    :cond_0
+    return-void
 
     .line 34
-    sub-int/2addr p0, v0
+    nop
 
     .line 35
-    return p0
-.end method
-
-.method public final b(Landroid/view/WindowManager$LayoutParams;I)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1, p2}, Landroid/view/WindowManager$LayoutParams;->setFitInsetsSides(I)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public final c(Landroid/view/WindowManager$LayoutParams;I)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1, p2}, Landroid/view/WindowManager$LayoutParams;->setFitInsetsTypes(I)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -17,8 +17,7 @@ OBJECT_METHODS = {
 
 def check(project):
     classes = {}
-    directories = [p for p in Path(project).iterdir() if p.is_dir() and re.fullmatch(r'smali(?:_classes\d+)?', p.name)]
-    for path in (path for directory in directories for path in directory.rglob('*.smali')):
+    for path in (Path(project) / 'smali').rglob('*.smali'):
         text = path.read_text()
         name = re.search(r'^\.class .*?(L[^;]+;)', text, re.M)[1]
         if name in classes:

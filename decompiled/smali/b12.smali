@@ -1,180 +1,52 @@
-.class public final synthetic Lb12;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lp62;
+.class public final Lb12;
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public j:Lz85;
 
-.field public final synthetic k:Lqm4;
+.field public k:Lgl;
 
+.field public synthetic l:Ljava/lang/Object;
 
-# direct methods
-.method public synthetic constructor <init>(Lqm4;B)V
-    .locals 0
-
-    .line 1
-    iput-byte p2, p0, Lb12;->j:B
-
-    .line 2
-    .line 3
-    iput-object p1, p0, Lb12;->k:Lqm4;
-
-    .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 6
-    .line 7
-    .line 8
-    return-void
-.end method
+.field public m:I
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Lb12;->j:B
+    iput-object p1, p0, Lb12;->l:Ljava/lang/Object;
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    iget p1, p0, Lb12;->m:I
 
     .line 4
     .line 5
-    iget-object p0, p0, Lb12;->k:Lqm4;
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_0
+    or-int/2addr p1, v0
 
     .line 8
+    iput p1, p0, Lb12;->m:I
+
     .line 9
     .line 10
-    check-cast p1, Ljava/lang/Float;
+    const/4 p1, 0x0
 
     .line 11
-    .line 12
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+    invoke-static {p1, p1, p0}, Lam0;->v(Lf02;Ls52;Lz71;)Ljava/lang/Object;
 
+    .line 12
     .line 13
     .line 14
-    .line 15
-    move-result p1
-
-    .line 16
-    invoke-virtual {p0, p1}, Lqm4;->h(F)V
-
-    .line 17
-    .line 18
-    .line 19
-    return-object v1
-
-    .line 20
-    :pswitch_0
-    check-cast p1, Ljava/lang/Float;
-
-    .line 21
-    .line 22
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    .line 23
-    .line 24
-    .line 25
-    move-result p1
-
-    .line 26
-    invoke-virtual {p0, p1}, Lqm4;->h(F)V
-
-    .line 27
-    .line 28
-    .line 29
-    return-object v1
-
-    .line 30
-    :pswitch_1
-    check-cast p1, Lxa4;
-
-    .line 31
-    .line 32
-    invoke-virtual {p0}, Lqm4;->g()F
-
-    .line 33
-    .line 34
-    .line 35
-    move-result p0
-
-    .line 36
-    iget-wide v0, p1, Lxa4;->a:J
-
-    .line 37
-    .line 38
-    const/16 p1, 0x20
-
-    .line 39
-    .line 40
-    shr-long/2addr v0, p1
-
-    .line 41
-    long-to-int p1, v0
-
-    .line 42
-    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    .line 43
-    .line 44
-    .line 45
-    move-result p1
-
-    .line 46
-    const/4 v0, 0x0
-
-    .line 47
-    cmpg-float v0, v0, p1
-
-    .line 48
-    .line 49
-    const/4 v1, 0x0
-
-    .line 50
-    if-gtz v0, :cond_0
-
-    .line 51
-    .line 52
-    cmpg-float p0, p1, p0
-
-    .line 53
-    .line 54
-    if-gtz p0, :cond_0
-
-    .line 55
-    .line 56
-    const/4 v1, 0x1
-
-    .line 57
-    :cond_0
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 58
-    .line 59
-    .line 60
     move-result-object p0
 
-    .line 61
+    .line 15
     return-object p0
-
-    .line 62
-    nop
-
-    .line 63
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

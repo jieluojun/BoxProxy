@@ -1,22 +1,14 @@
 .class public final Lta5;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lva5;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Ljava/lang/reflect/Field;
-
-.field public final b:Ljava/lang/String;
-
-.field public final synthetic c:La07;
-
-.field public final synthetic d:Z
-
-.field public final synthetic e:Z
+.field public final synthetic b:Lbg0;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/reflect/Field;Ljava/lang/reflect/Method;La07;La07;ZZ)V
+.method public constructor <init>(Lbg0;)V
     .locals 0
 
     .line 1
@@ -25,33 +17,59 @@
     .line 2
     .line 3
     .line 4
-    iput-object p5, p0, Lta5;->c:La07;
+    iput-object p1, p0, Lta5;->b:Lbg0;
 
     .line 5
     .line 6
-    iput-boolean p6, p0, Lta5;->d:Z
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()J
+    .locals 2
+
+    .line 1
+    iget-object p0, p0, Lta5;->b:Lbg0;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lbg0;->d()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
 
     .line 7
+    int-to-long v0, p0
+
     .line 8
-    iput-boolean p7, p0, Lta5;->e:Z
+    return-wide v0
+.end method
 
-    .line 9
-    .line 10
-    iput-object p2, p0, Lta5;->a:Ljava/lang/reflect/Field;
+.method public final b()Lsi3;
+    .locals 0
 
-    .line 11
-    .line 12
-    invoke-virtual {p2}, Ljava/lang/reflect/Field;->getName()Ljava/lang/String;
+    .line 1
+    const/4 p0, 0x0
 
-    .line 13
-    .line 14
-    .line 15
-    move-result-object p1
+    .line 2
+    return-object p0
+.end method
 
-    .line 16
-    iput-object p1, p0, Lta5;->b:Ljava/lang/String;
+.method public final c(Ld75;)V
+    .locals 0
 
-    .line 17
-    .line 18
+    .line 1
+    iget-object p0, p0, Lta5;->b:Lbg0;
+
+    .line 2
+    .line 3
+    invoke-virtual {p1, p0}, Ld75;->f(Lbg0;)Lrd0;
+
+    .line 4
+    .line 5
+    .line 6
     return-void
 .end method

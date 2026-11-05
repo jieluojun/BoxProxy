@@ -1,142 +1,89 @@
-.class public final Lmz6;
-.super Llz6;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# instance fields
-.field public final synthetic m:B
+.class public Lmz6;
+.super Lky6;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # direct methods
-.method public synthetic constructor <init>(B)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
-    iput-byte p1, p0, Lmz6;->m:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0}, Llz6;-><init>()V
-
     .line 4
-    .line 5
-    .line 6
     return-void
 .end method
 
 
 # virtual methods
-.method public final next()Ljava/lang/Object;
-    .locals 3
+.method public final b(Lhw2;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Lmz6;->m:B
+    invoke-virtual {p1}, Lhw2;->L()I
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_0
-
     .line 4
+    move-result p0
+
     .line 5
+    const/16 v0, 0x9
+
     .line 6
-    iget v0, p0, Llz6;->l:I
-
     .line 7
+    if-ne p0, v0, :cond_0
+
     .line 8
-    add-int/lit8 v1, v0, 0x2
-
     .line 9
-    .line 10
-    iput v1, p0, Llz6;->l:I
+    invoke-virtual {p1}, Lhw2;->H()V
 
+    .line 10
     .line 11
     .line 12
-    iget-object p0, p0, Llz6;->j:[Ljava/lang/Object;
+    const/4 p0, 0x0
 
     .line 13
+    return-object p0
+
     .line 14
-    add-int/lit8 v0, v0, 0x1
+    :cond_0
+    :try_start_0
+    invoke-virtual {p1}, Lhw2;->z()I
 
     .line 15
     .line 16
-    aget-object p0, p0, v0
-
     .line 17
+    move-result p0
+
     .line 18
-    return-object p0
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 19
-    :pswitch_0
-    iget v0, p0, Llz6;->l:I
-
     .line 20
     .line 21
-    add-int/lit8 v1, v0, 0x2
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 22
-    .line 23
-    iput v1, p0, Llz6;->l:I
-
-    .line 24
-    .line 25
-    iget-object p0, p0, Llz6;->j:[Ljava/lang/Object;
-
-    .line 26
-    .line 27
-    aget-object p0, p0, v0
-
-    .line 28
-    .line 29
     return-object p0
 
-    .line 30
-    :pswitch_1
-    iget v0, p0, Llz6;->l:I
+    .line 23
+    :catch_0
+    move-exception p0
 
-    .line 31
-    .line 32
-    add-int/lit8 v1, v0, 0x2
+    .line 24
+    new-instance p1, Lov2;
 
-    .line 33
-    .line 34
-    iput v1, p0, Llz6;->l:I
+    .line 25
+    .line 26
+    invoke-direct {p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
 
-    .line 35
-    .line 36
-    new-instance v1, Lwg3;
-
-    .line 37
-    .line 38
-    iget-object p0, p0, Llz6;->j:[Ljava/lang/Object;
-
-    .line 39
-    .line 40
-    aget-object v2, p0, v0
-
-    .line 41
-    .line 42
-    add-int/lit8 v0, v0, 0x1
-
-    .line 43
-    .line 44
-    aget-object p0, p0, v0
-
-    .line 45
-    .line 46
-    const/4 v0, 0x0
-
-    .line 47
-    invoke-direct {v1, v2, p0, v0}, Lwg3;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
-
-    .line 48
-    .line 49
-    .line 50
-    return-object v1
-
-    .line 51
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 27
+    .line 28
+    .line 29
+    throw p1
 .end method

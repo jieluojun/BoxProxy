@@ -1,47 +1,37 @@
 .class public final Lje7;
-.super Landroid/database/ContentObserver;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lv2;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+
+# static fields
+.field public static final l:Lmg6;
 
 
 # instance fields
-.field public final synthetic a:Lqe0;
+.field public k:Z
 
 
 # direct methods
-.method public constructor <init>(Lqe0;Landroid/os/Handler;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Lje7;->a:Lqe0;
+    new-instance v0, Lmg6;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Landroid/database/ContentObserver;-><init>(Landroid/os/Handler;)V
+    const/16 v1, 0x13
 
     .line 4
     .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final onChange(ZLandroid/net/Uri;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lje7;->a:Lqe0;
-
-    .line 2
-    .line 3
-    sget-object p1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    invoke-interface {p0, p1}, Lly5;->n(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v0, v1}, Lmg6;-><init>(B)V
 
     .line 6
     .line 7
     .line 8
+    sput-object v0, Lje7;->l:Lmg6;
+
+    .line 9
+    .line 10
     return-void
 .end method

@@ -1,358 +1,369 @@
-.class public final Lnq5;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lnq5;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Lrb5;
+
+# static fields
+.field public static final enum k:Lnq5;
+
+.field public static final enum l:Lnq5;
+
+.field public static final enum m:Lnq5;
+
+.field public static final enum n:Lnq5;
+
+.field public static final enum o:Lnq5;
+
+.field public static final synthetic p:[Lnq5;
 
 
 # instance fields
-.field public j:Lhr5;
-
-.field public k:Lrq5;
-
-.field public l:Ljava/lang/String;
-
-.field public m:Ljava/lang/Object;
-
-.field public n:[Ljava/lang/Object;
-
-.field public o:Lqq5;
-
-.field public final p:Ldp5;
+.field public final j:Ljava/util/Optional;
 
 
 # direct methods
-.method public constructor <init>(Lhr5;Lrq5;Ljava/lang/String;Ljava/lang/Object;[Ljava/lang/Object;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 9
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lnq5;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lnq5;->j:Lhr5;
-
-    .line 5
-    .line 6
-    iput-object p2, p0, Lnq5;->k:Lrq5;
-
-    .line 7
-    .line 8
-    iput-object p3, p0, Lnq5;->l:Ljava/lang/String;
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Lnq5;->m:Ljava/lang/Object;
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Lnq5;->n:[Ljava/lang/Object;
-
-    .line 13
-    .line 14
-    new-instance p1, Ldp5;
-
-    .line 15
-    .line 16
-    const/4 p2, 0x1
-
-    .line 17
-    invoke-direct {p1, p0, p2}, Ldp5;-><init>(Ljava/lang/Object;B)V
-
-    .line 18
-    .line 19
-    .line 20
-    iput-object p1, p0, Lnq5;->p:Ldp5;
-
-    .line 21
-    .line 22
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Lnq5;->b()V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public final b()V
-    .locals 4
-
-    .line 1
-    iget-object v0, p0, Lnq5;->k:Lrq5;
-
-    .line 2
-    .line 3
-    iget-object v1, p0, Lnq5;->o:Lqq5;
+    const/16 v1, 0x22
 
     .line 4
     .line 5
-    if-nez v1, :cond_4
+    invoke-static {v1}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     .line 6
     .line 7
-    if-eqz v0, :cond_3
-
     .line 8
+    move-result-object v1
+
     .line 9
-    iget-object v1, p0, Lnq5;->p:Ldp5;
+    invoke-static {v1}, Ljava/util/Optional;->of(Ljava/lang/Object;)Ljava/util/Optional;
 
     .line 10
     .line 11
-    invoke-virtual {v1}, Ldp5;->invoke()Ljava/lang/Object;
-
     .line 12
-    .line 13
-    .line 14
-    move-result-object v2
+    move-result-object v1
 
+    .line 13
+    const-string v2, "DOUBLE_QUOTED"
+
+    .line 14
     .line 15
-    if-eqz v2, :cond_2
+    const/4 v3, 0x0
 
     .line 16
-    .line 17
-    invoke-interface {v0, v2}, Lrq5;->d(Ljava/lang/Object;)Z
+    invoke-direct {v0, v2, v3, v1}, Lnq5;-><init>(Ljava/lang/String;ILjava/util/Optional;)V
 
+    .line 17
     .line 18
     .line 19
-    .line 20
-    move-result v3
+    sput-object v0, Lnq5;->k:Lnq5;
 
+    .line 20
     .line 21
-    if-nez v3, :cond_2
+    new-instance v1, Lnq5;
 
     .line 22
     .line 23
-    new-instance p0, Ljava/lang/IllegalArgumentException;
+    const/16 v2, 0x27
 
     .line 24
     .line 25
-    instance-of v0, v2, Lm86;
+    invoke-static {v2}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     .line 26
     .line 27
-    if-eqz v0, :cond_1
-
     .line 28
+    move-result-object v2
+
     .line 29
-    check-cast v2, Lm86;
+    invoke-static {v2}, Ljava/util/Optional;->of(Ljava/lang/Object;)Ljava/util/Optional;
 
     .line 30
     .line 31
-    invoke-interface {v2}, Lm86;->d()Lo86;
-
     .line 32
-    .line 33
-    .line 34
-    move-result-object v0
+    move-result-object v2
 
+    .line 33
+    const-string v3, "SINGLE_QUOTED"
+
+    .line 34
     .line 35
-    sget-object v1, Liw1;->z:Liw1;
+    const/4 v4, 0x1
 
     .line 36
-    .line 37
-    if-eq v0, v1, :cond_0
+    invoke-direct {v1, v3, v4, v2}, Lnq5;-><init>(Ljava/lang/String;ILjava/util/Optional;)V
 
+    .line 37
     .line 38
     .line 39
-    invoke-interface {v2}, Lm86;->d()Lo86;
+    sput-object v1, Lnq5;->l:Lnq5;
 
     .line 40
     .line 41
-    .line 42
-    move-result-object v0
+    new-instance v2, Lnq5;
 
+    .line 42
     .line 43
-    sget-object v1, Lge5;->F:Lge5;
+    const/16 v3, 0x7c
 
     .line 44
     .line 45
-    if-eq v0, v1, :cond_0
+    invoke-static {v3}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     .line 46
     .line 47
-    invoke-interface {v2}, Lm86;->d()Lo86;
-
     .line 48
+    move-result-object v3
+
     .line 49
+    invoke-static {v3}, Ljava/util/Optional;->of(Ljava/lang/Object;)Ljava/util/Optional;
+
     .line 50
-    move-result-object v0
-
     .line 51
-    sget-object v1, Liw1;->M:Liw1;
-
     .line 52
+    move-result-object v3
+
     .line 53
-    if-eq v0, v1, :cond_0
+    const-string v4, "LITERAL"
 
     .line 54
     .line 55
-    const-string v0, "If you use a custom SnapshotMutationPolicy for your MutableState you have to write a custom Saver"
+    const/4 v5, 0x2
 
     .line 56
+    invoke-direct {v2, v4, v5, v3}, Lnq5;-><init>(Ljava/lang/String;ILjava/util/Optional;)V
+
     .line 57
-    goto :goto_0
-
     .line 58
-    :cond_0
-    invoke-interface {v2}, Lmb6;->getValue()Ljava/lang/Object;
-
     .line 59
+    sput-object v2, Lnq5;->m:Lnq5;
+
     .line 60
     .line 61
-    move-result-object v0
+    new-instance v3, Lnq5;
 
     .line 62
-    new-instance v1, Ljava/lang/StringBuilder;
-
     .line 63
+    const/16 v4, 0x3e
+
     .line 64
-    const-string v2, "MutableState containing "
-
     .line 65
-    .line 66
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-static {v4}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
+    .line 66
     .line 67
     .line 68
+    move-result-object v4
+
     .line 69
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-static {v4}, Ljava/util/Optional;->of(Ljava/lang/Object;)Ljava/util/Optional;
 
     .line 70
     .line 71
     .line 72
-    const-string v0, " cannot be saved using the current SaveableStateRegistry. The default implementation only supports types which can be stored inside the Bundle. Please consider implementing a custom Saver for this class and pass it as a stateSaver parameter to rememberSaveable()."
+    move-result-object v4
 
     .line 73
+    const-string v5, "FOLDED"
+
     .line 74
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 75
-    .line 76
-    .line 77
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    const/4 v6, 0x3
 
+    .line 76
+    invoke-direct {v3, v5, v6, v4}, Lnq5;-><init>(Ljava/lang/String;ILjava/util/Optional;)V
+
+    .line 77
     .line 78
     .line 79
-    .line 80
-    move-result-object v0
+    sput-object v3, Lnq5;->n:Lnq5;
 
+    .line 80
     .line 81
-    goto :goto_0
+    new-instance v4, Lnq5;
 
     .line 82
-    :cond_1
-    invoke-static {v2}, Lqu5;->H(Ljava/lang/Object;)Ljava/lang/String;
-
     .line 83
+    const/16 v5, 0x4a
+
     .line 84
     .line 85
-    move-result-object v0
+    invoke-static {v5}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
 
     .line 86
-    :goto_0
-    invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
     .line 87
     .line 88
+    move-result-object v5
+
     .line 89
-    throw p0
+    invoke-static {v5}, Ljava/util/Optional;->of(Ljava/lang/Object;)Ljava/util/Optional;
 
     .line 90
-    :cond_2
-    iget-object v2, p0, Lnq5;->l:Ljava/lang/String;
-
     .line 91
     .line 92
-    invoke-interface {v0, v2, v1}, Lrq5;->a(Ljava/lang/String;Le62;)Lqq5;
+    move-result-object v5
 
     .line 93
+    const-string v6, "JSON_SCALAR_STYLE"
+
     .line 94
     .line 95
-    move-result-object v0
+    const/4 v7, 0x4
 
     .line 96
-    iput-object v0, p0, Lnq5;->o:Lqq5;
+    invoke-direct {v4, v6, v7, v5}, Lnq5;-><init>(Ljava/lang/String;ILjava/util/Optional;)V
 
     .line 97
     .line 98
-    :cond_3
-    return-void
-
     .line 99
-    :cond_4
-    const-string p0, "entry("
+    new-instance v5, Lnq5;
 
     .line 100
     .line 101
-    const-string v0, ") is not null"
+    const/4 v6, 0x5
 
     .line 102
-    .line 103
-    invoke-static {p0, v1, v0}, Lue1;->s(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {}, Ljava/util/Optional;->empty()Ljava/util/Optional;
 
+    .line 103
     .line 104
     .line 105
+    move-result-object v7
+
     .line 106
+    const-string v8, "PLAIN"
+
+    .line 107
+    .line 108
+    invoke-direct {v5, v8, v6, v7}, Lnq5;-><init>(Ljava/lang/String;ILjava/util/Optional;)V
+
+    .line 109
+    .line 110
+    .line 111
+    sput-object v5, Lnq5;->o:Lnq5;
+
+    .line 112
+    .line 113
+    filled-new-array/range {v0 .. v5}, [Lnq5;
+
+    .line 114
+    .line 115
+    .line 116
+    move-result-object v0
+
+    .line 117
+    sput-object v0, Lnq5;->p:[Lnq5;
+
+    .line 118
+    .line 119
     return-void
 .end method
 
-.method public final d()V
+.method public constructor <init>(Ljava/lang/String;ILjava/util/Optional;)V
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lnq5;->o:Lqq5;
+    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 2
     .line 3
-    if-eqz p0, :cond_0
-
     .line 4
+    iput-object p3, p0, Lnq5;->j:Ljava/util/Optional;
+
     .line 5
-    check-cast p0, Lit6;
-
     .line 6
-    .line 7
-    invoke-virtual {p0}, Lit6;->w0()V
-
-    .line 8
-    .line 9
-    .line 10
-    :cond_0
     return-void
 .end method
 
-.method public final h()V
-    .locals 0
+.method public static valueOf(Ljava/lang/String;)Lnq5;
+    .locals 1
 
     .line 1
-    iget-object p0, p0, Lnq5;->o:Lqq5;
+    const-class v0, Lnq5;
 
     .line 2
     .line 3
-    if-eqz p0, :cond_0
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     .line 4
     .line 5
-    check-cast p0, Lit6;
-
     .line 6
+    move-result-object p0
+
     .line 7
-    invoke-virtual {p0}, Lit6;->w0()V
+    check-cast p0, Lnq5;
 
     .line 8
     .line 9
+    return-object p0
+.end method
+
+.method public static values()[Lnq5;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lnq5;->p:[Lnq5;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, [Lnq5;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lnq5;
+
+    .line 8
+    .line 9
+    return-object v0
+.end method
+
+
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    const/16 v0, 0x3a
+
+    .line 2
+    .line 3
+    invoke-static {v0}, Ljava/lang/Character;->valueOf(C)Ljava/lang/Character;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    iget-object p0, p0, Lnq5;->j:Ljava/util/Optional;
+
+    .line 8
+    .line 9
+    invoke-virtual {p0, v0}, Ljava/util/Optional;->orElse(Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 10
-    :cond_0
-    return-void
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p0
+
+    .line 17
+    return-object p0
 .end method

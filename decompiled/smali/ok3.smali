@@ -1,385 +1,402 @@
 .class public final Lok3;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Luf6;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lo52;
 
 
 # instance fields
-.field public final a:J
+.field public final synthetic j:B
 
-.field public final b:J
+.field public k:Z
 
-.field public final c:J
+.field public final synthetic l:Lvk3;
 
-.field public final d:J
+.field public final synthetic m:Landroid/content/Context;
 
-.field public final e:J
-
-.field public final f:J
+.field public final synthetic n:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(JJJJJJ)V
+.method public synthetic constructor <init>(Lvk3;Landroid/content/Context;Ljava/lang/String;Ly71;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p5, p0, Lok3;->j:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Lok3;->l:Lvk3;
+
     .line 4
-    iput-wide p1, p0, Lok3;->a:J
-
     .line 5
+    iput-object p2, p0, Lok3;->m:Landroid/content/Context;
+
     .line 6
-    iput-wide p3, p0, Lok3;->b:J
-
     .line 7
-    .line 8
-    iput-wide p5, p0, Lok3;->c:J
+    iput-object p3, p0, Lok3;->n:Ljava/lang/String;
 
+    .line 8
     .line 9
+    const/4 p1, 0x1
+
     .line 10
-    iput-wide p7, p0, Lok3;->d:J
+    invoke-direct {p0, p1, p4}, Luf6;-><init>(ILy71;)V
 
     .line 11
     .line 12
-    iput-wide p9, p0, Lok3;->e:J
-
     .line 13
-    .line 14
-    iput-wide p11, p0, Lok3;->f:J
-
-    .line 15
-    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 5
+.method public final create(Ly71;)Ly71;
+    .locals 8
 
     .line 1
-    const-wide/16 v0, 0x0
+    iget-byte v0, p0, Lok3;->j:B
 
     .line 2
     .line 3
-    invoke-static {v0, v1, v0, v1}, Lc27;->a(JJ)Z
+    packed-switch v0, :pswitch_data_0
 
     .line 4
     .line 5
     .line 6
-    move-result v0
+    new-instance v1, Lok3;
 
     .line 7
-    if-ne p0, p1, :cond_0
-
     .line 8
-    .line 9
-    goto :goto_0
+    iget-object v4, p0, Lok3;->n:Ljava/lang/String;
 
+    .line 9
     .line 10
-    :cond_0
-    if-eqz p1, :cond_a
+    const/4 v6, 0x1
 
     .line 11
+    iget-object v2, p0, Lok3;->l:Lvk3;
+
     .line 12
-    instance-of v1, p1, Lok3;
-
     .line 13
-    .line 14
-    if-nez v1, :cond_1
+    iget-object v3, p0, Lok3;->m:Landroid/content/Context;
 
+    .line 14
     .line 15
+    move-object v5, p1
+
     .line 16
-    goto :goto_1
+    invoke-direct/range {v1 .. v6}, Lok3;-><init>(Lvk3;Landroid/content/Context;Ljava/lang/String;Ly71;B)V
 
     .line 17
-    :cond_1
-    check-cast p1, Lok3;
-
     .line 18
     .line 19
-    iget-wide v1, p1, Lok3;->a:J
+    return-object v1
 
     .line 20
+    :pswitch_0
+    move-object v5, p1
+
     .line 21
-    iget-wide v3, p0, Lok3;->a:J
+    new-instance v2, Lok3;
 
     .line 22
     .line 23
-    invoke-static {v3, v4, v1, v2}, Lc27;->a(JJ)Z
+    move-object v6, v5
 
     .line 24
+    iget-object v5, p0, Lok3;->n:Ljava/lang/String;
+
     .line 25
     .line 26
-    move-result v1
+    const/4 v7, 0x0
 
     .line 27
-    if-nez v1, :cond_2
+    iget-object v3, p0, Lok3;->l:Lvk3;
 
     .line 28
     .line 29
-    goto :goto_1
+    iget-object v4, p0, Lok3;->m:Landroid/content/Context;
 
     .line 30
-    :cond_2
-    if-nez v0, :cond_3
+    .line 31
+    invoke-direct/range {v2 .. v7}, Lok3;-><init>(Lvk3;Landroid/content/Context;Ljava/lang/String;Ly71;B)V
+
+    .line 32
+    .line 33
+    .line 34
+    return-object v2
+
+    .line 35
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    .line 1
+    iget-byte v0, p0, Lok3;->j:B
+
+    .line 2
+    .line 3
+    sget-object v1, Lk27;->a:Lk27;
+
+    .line 4
+    .line 5
+    check-cast p1, Ly71;
+
+    .line 6
+    .line 7
+    packed-switch v0, :pswitch_data_0
+
+    .line 8
+    .line 9
+    .line 10
+    invoke-virtual {p0, p1}, Lok3;->create(Ly71;)Ly71;
+
+    .line 11
+    .line 12
+    .line 13
+    move-result-object p0
+
+    .line 14
+    check-cast p0, Lok3;
+
+    .line 15
+    .line 16
+    invoke-virtual {p0, v1}, Lok3;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    return-object p0
+
+    .line 21
+    :pswitch_0
+    invoke-virtual {p0, p1}, Lok3;->create(Ly71;)Ly71;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object p0
+
+    .line 25
+    check-cast p0, Lok3;
+
+    .line 26
+    .line 27
+    invoke-virtual {p0, v1}, Lok3;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 28
+    .line 29
+    .line 30
+    move-result-object p0
 
     .line 31
+    return-object p0
+
     .line 32
-    goto :goto_1
+    nop
 
     .line 33
-    :cond_3
-    iget-wide v1, p0, Lok3;->b:J
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 8
+
+    .line 1
+    iget-byte v0, p0, Lok3;->j:B
+
+    .line 2
+    .line 3
+    iget-object v1, p0, Lok3;->n:Ljava/lang/String;
+
+    .line 4
+    .line 5
+    iget-object v2, p0, Lok3;->m:Landroid/content/Context;
+
+    .line 6
+    .line 7
+    iget-object v3, p0, Lok3;->l:Lvk3;
+
+    .line 8
+    .line 9
+    const/4 v4, 0x0
+
+    .line 10
+    const-string v5, "call to \'resume\' before \'invoke\' with coroutine"
+
+    .line 11
+    .line 12
+    sget-object v6, Lcb1;->j:Lcb1;
+
+    .line 13
+    .line 14
+    const/4 v7, 0x1
+
+    .line 15
+    packed-switch v0, :pswitch_data_0
+
+    .line 16
+    .line 17
+    .line 18
+    iget-boolean v0, p0, Lok3;->k:Z
+
+    .line 19
+    .line 20
+    if-eqz v0, :cond_1
+
+    .line 21
+    .line 22
+    if-ne v0, v7, :cond_0
+
+    .line 23
+    .line 24
+    invoke-static {p1}, Leg3;->S(Ljava/lang/Object;)V
+
+    .line 25
+    .line 26
+    .line 27
+    goto :goto_0
+
+    .line 28
+    :cond_0
+    invoke-static {v5}, Ljv1;->e(Ljava/lang/String;)V
+
+    .line 29
+    .line 30
+    .line 31
+    move-object p1, v4
+
+    .line 32
+    goto :goto_0
+
+    .line 33
+    :cond_1
+    invoke-static {p1}, Leg3;->S(Ljava/lang/Object;)V
 
     .line 34
     .line 35
-    iget-wide v3, p1, Lok3;->b:J
-
     .line 36
-    .line 37
-    invoke-static {v1, v2, v3, v4}, Lc27;->a(JJ)Z
+    sget-object p1, Lnm3;->a:Lnm3;
 
+    .line 37
     .line 38
+    iget-object v0, v3, Lvk3;->a:Lr35;
+
     .line 39
     .line 40
-    move-result v1
+    iput-boolean v7, p0, Lok3;->k:Z
 
     .line 41
-    if-nez v1, :cond_4
-
     .line 42
+    invoke-virtual {p1, v0, v2, v1, p0}, Lnm3;->o(Lr35;Landroid/content/Context;Ljava/lang/String;Lz71;)Ljava/lang/Object;
+
     .line 43
-    goto :goto_1
-
     .line 44
-    :cond_4
-    iget-wide v1, p0, Lok3;->c:J
-
     .line 45
+    move-result-object p1
+
     .line 46
-    iget-wide v3, p1, Lok3;->c:J
+    if-ne p1, v6, :cond_2
 
     .line 47
     .line 48
-    invoke-static {v1, v2, v3, v4}, Lc27;->a(JJ)Z
+    move-object p1, v6
 
     .line 49
-    .line 50
-    .line 51
-    move-result v1
+    :cond_2
+    :goto_0
+    return-object p1
 
+    .line 50
+    :pswitch_0
+    iget-boolean v0, p0, Lok3;->k:Z
+
+    .line 51
     .line 52
-    if-nez v1, :cond_5
+    if-eqz v0, :cond_4
 
     .line 53
     .line 54
-    goto :goto_1
+    if-ne v0, v7, :cond_3
 
     .line 55
-    :cond_5
-    iget-wide v1, p0, Lok3;->d:J
-
     .line 56
-    .line 57
-    iget-wide v3, p1, Lok3;->d:J
+    invoke-static {p1}, Leg3;->S(Ljava/lang/Object;)V
 
+    .line 57
     .line 58
     .line 59
-    invoke-static {v1, v2, v3, v4}, Lc27;->a(JJ)Z
-
-    .line 60
-    .line 61
-    .line 62
-    move-result v1
-
-    .line 63
-    if-nez v1, :cond_6
-
-    .line 64
-    .line 65
     goto :goto_1
 
-    .line 66
-    :cond_6
-    iget-wide v1, p0, Lok3;->e:J
+    .line 60
+    :cond_3
+    invoke-static {v5}, Ljv1;->e(Ljava/lang/String;)V
 
+    .line 61
+    .line 62
+    .line 63
+    move-object p1, v4
+
+    .line 64
+    goto :goto_1
+
+    .line 65
+    :cond_4
+    invoke-static {p1}, Leg3;->S(Ljava/lang/Object;)V
+
+    .line 66
     .line 67
     .line 68
-    iget-wide v3, p1, Lok3;->e:J
+    sget-object p1, Lnm3;->a:Lnm3;
 
     .line 69
     .line 70
-    invoke-static {v1, v2, v3, v4}, Lc27;->a(JJ)Z
+    iget-object v0, v3, Lvk3;->a:Lr35;
 
     .line 71
     .line 72
-    .line 73
-    move-result v1
+    iput-boolean v7, p0, Lok3;->k:Z
 
+    .line 73
     .line 74
-    if-nez v1, :cond_7
+    invoke-virtual {p1, v0, v2, v1, p0}, Lnm3;->c(Lr35;Landroid/content/Context;Ljava/lang/String;Lz71;)Ljava/lang/Object;
 
     .line 75
     .line 76
-    goto :goto_1
-
     .line 77
-    :cond_7
-    iget-wide v1, p0, Lok3;->f:J
+    move-result-object p1
 
     .line 78
-    .line 79
-    iget-wide p0, p1, Lok3;->f:J
+    if-ne p1, v6, :cond_5
 
+    .line 79
     .line 80
+    move-object p1, v6
+
     .line 81
-    invoke-static {v1, v2, p0, p1}, Lc27;->a(JJ)Z
+    :cond_5
+    :goto_1
+    return-object p1
 
     .line 82
+    nop
+
     .line 83
-    .line 84
-    move-result p0
-
-    .line 85
-    if-nez p0, :cond_8
-
-    .line 86
-    .line 87
-    goto :goto_1
-
-    .line 88
-    :cond_8
-    if-nez v0, :cond_9
-
-    .line 89
-    .line 90
-    goto :goto_1
-
-    .line 91
-    :cond_9
-    :goto_0
-    const/4 p0, 0x1
-
-    .line 92
-    return p0
-
-    .line 93
-    :cond_a
-    :goto_1
-    const/4 p0, 0x0
-
-    .line 94
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 6
-
-    .line 1
-    iget-wide v0, p0, Lok3;->a:J
-
-    .line 2
-    .line 3
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    const/16 v1, 0x1f
-
-    .line 8
-    .line 9
-    mul-int/2addr v0, v1
-
-    .line 10
-    const-wide/16 v2, 0x0
-
-    .line 11
-    .line 12
-    invoke-static {v0, v1, v2, v3}, Lhs5;->d(IIJ)I
-
-    .line 13
-    .line 14
-    .line 15
-    move-result v0
-
-    .line 16
-    iget-wide v4, p0, Lok3;->b:J
-
-    .line 17
-    .line 18
-    invoke-static {v0, v1, v4, v5}, Lhs5;->d(IIJ)I
-
-    .line 19
-    .line 20
-    .line 21
-    move-result v0
-
-    .line 22
-    iget-wide v4, p0, Lok3;->c:J
-
-    .line 23
-    .line 24
-    invoke-static {v0, v1, v4, v5}, Lhs5;->d(IIJ)I
-
-    .line 25
-    .line 26
-    .line 27
-    move-result v0
-
-    .line 28
-    iget-wide v4, p0, Lok3;->d:J
-
-    .line 29
-    .line 30
-    invoke-static {v0, v1, v4, v5}, Lhs5;->d(IIJ)I
-
-    .line 31
-    .line 32
-    .line 33
-    move-result v0
-
-    .line 34
-    iget-wide v4, p0, Lok3;->e:J
-
-    .line 35
-    .line 36
-    invoke-static {v0, v1, v4, v5}, Lhs5;->d(IIJ)I
-
-    .line 37
-    .line 38
-    .line 39
-    move-result v0
-
-    .line 40
-    iget-wide v4, p0, Lok3;->f:J
-
-    .line 41
-    .line 42
-    invoke-static {v0, v1, v4, v5}, Lhs5;->d(IIJ)I
-
-    .line 43
-    .line 44
-    .line 45
-    move-result p0
-
-    .line 46
-    invoke-static {v2, v3}, Ljava/lang/Long;->hashCode(J)I
-
-    .line 47
-    .line 48
-    .line 49
-    move-result v0
-
-    .line 50
-    add-int/2addr v0, p0
-
-    .line 51
-    return v0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

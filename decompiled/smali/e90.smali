@@ -1,256 +1,153 @@
-.class public final synthetic Le90;
+.class public final Le90;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lz72;
+.implements Lo52;
 
 
-# static fields
-.field public static final a:Le90;
+# instance fields
+.field public final synthetic j:B
 
-.field private static final descriptor:Luy5;
+.field public final synthetic k:Lyu3;
+
+.field public final synthetic l:Loy0;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(Lyu3;Loy0;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Le90;
+    iput-byte p3, p0, Le90;->j:B
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Le90;->k:Lyu3;
 
     .line 4
     .line 5
+    iput-object p2, p0, Le90;->l:Loy0;
+
     .line 6
-    sput-object v0, Le90;->a:Le90;
-
     .line 7
-    .line 8
-    new-instance v1, Llq4;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 8
     .line 9
     .line 10
-    const-string v2, "com.box.app.ui.app.BoxAppRoute.RuntimeFileEditor"
-
-    .line 11
-    .line 12
-    const/4 v3, 0x1
-
-    .line 13
-    invoke-direct {v1, v2, v0, v3}, Llq4;-><init>(Ljava/lang/String;Lz72;I)V
-
-    .line 14
-    .line 15
-    .line 16
-    const-string v0, "relativePath"
-
-    .line 17
-    .line 18
-    const/4 v2, 0x0
-
-    .line 19
-    invoke-virtual {v1, v0, v2}, Llq4;->l(Ljava/lang/String;Z)V
-
-    .line 20
-    .line 21
-    .line 22
-    sput-object v1, Le90;->descriptor:Luy5;
-
-    .line 23
-    .line 24
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()[Lqy2;
-    .locals 2
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
     .line 1
-    const/4 p0, 0x1
-
-    .line 2
-    new-array p0, p0, [Lqy2;
-
-    .line 3
-    .line 4
-    sget-object v0, Lxc6;->a:Lxc6;
-
-    .line 5
-    .line 6
-    const/4 v1, 0x0
-
-    .line 7
-    aput-object v0, p0, v1
-
-    .line 8
-    .line 9
-    return-object p0
-.end method
-
-.method public final b(Lwe1;)Ljava/lang/Object;
-    .locals 7
-
-    .line 1
-    sget-object p0, Le90;->descriptor:Luy5;
+    iget-byte v0, p0, Le90;->j:B
 
     .line 2
     .line 3
-    invoke-interface {p1, p0}, Lwe1;->C(Luy5;)Lg21;
+    iget-object v1, p0, Le90;->l:Loy0;
 
     .line 4
     .line 5
-    .line 6
-    move-result-object p1
+    const-string v2, "top.yukonga.miuix.kmp.nav.swipeDismiss"
 
+    .line 6
     .line 7
-    const/4 v0, 0x1
+    iget-object p0, p0, Le90;->k:Lyu3;
 
     .line 8
-    const/4 v1, 0x0
-
     .line 9
-    const/4 v2, 0x0
+    packed-switch v0, :pswitch_data_0
 
     .line 10
-    move v3, v0
-
     .line 11
-    move v4, v1
-
     .line 12
-    :goto_0
-    if-eqz v3, :cond_2
+    check-cast p1, Lo80;
 
     .line 13
     .line 14
-    invoke-interface {p1, p0}, Lg21;->h(Luy5;)I
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 15
     .line 16
     .line 17
-    move-result v5
+    check-cast p1, Lh80;
 
     .line 18
-    const/4 v6, -0x1
-
     .line 19
-    if-eq v5, v6, :cond_1
+    invoke-static {v2, p0}, Ljava/util/Collections;->singletonMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map;
 
     .line 20
     .line 21
-    if-nez v5, :cond_0
-
     .line 22
+    move-result-object p0
+
     .line 23
-    invoke-interface {p1, p0, v1}, Lg21;->p(Luy5;I)Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 24
     .line 25
     .line 26
-    move-result-object v2
+    new-instance v0, Lau3;
 
     .line 27
-    move v4, v0
-
     .line 28
-    goto :goto_0
+    invoke-direct {v0, p1, p1, p0, v1}, Lau3;-><init>(Lo80;Ljava/lang/Object;Ljava/util/Map;Lt52;)V
 
     .line 29
-    :cond_0
-    new-instance p0, Lc47;
-
     .line 30
     .line 31
-    invoke-direct {p0, v5}, Lc47;-><init>(I)V
+    return-object v0
 
     .line 32
+    :pswitch_0
+    check-cast p1, Lo80;
+
     .line 33
     .line 34
-    throw p0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 35
-    :cond_1
-    move v3, v1
-
     .line 36
-    goto :goto_0
-
     .line 37
-    :cond_2
-    invoke-interface {p1, p0}, Lg21;->s(Luy5;)V
+    check-cast p1, Ll70;
 
     .line 38
     .line 39
-    .line 40
-    new-instance p0, Lg90;
+    invoke-static {v2, p0}, Ljava/util/Collections;->singletonMap(Ljava/lang/Object;Ljava/lang/Object;)Ljava/util/Map;
 
+    .line 40
     .line 41
     .line 42
-    invoke-direct {p0, v4, v2}, Lg90;-><init>(ILjava/lang/String;)V
+    move-result-object p0
 
     .line 43
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 44
     .line 45
-    return-object p0
-.end method
+    .line 46
+    new-instance v0, Lau3;
 
-.method public final c()Luy5;
-    .locals 0
+    .line 47
+    .line 48
+    invoke-direct {v0, p1, p1, p0, v1}, Lau3;-><init>(Lo80;Ljava/lang/Object;Ljava/util/Map;Lt52;)V
 
-    .line 1
-    sget-object p0, Le90;->descriptor:Luy5;
+    .line 49
+    .line 50
+    .line 51
+    return-object v0
 
-    .line 2
-    .line 3
-    return-object p0
-.end method
+    .line 52
+    nop
 
-.method public final d(Lqc6;Ljava/lang/Object;)V
-    .locals 1
-
-    .line 1
-    check-cast p2, Lg90;
-
-    .line 2
-    .line 3
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 4
-    .line 5
-    .line 6
-    sget-object p0, Le90;->descriptor:Luy5;
-
-    .line 7
-    .line 8
-    invoke-virtual {p1, p0}, Lqc6;->a(Luy5;)Lqc6;
-
-    .line 9
-    .line 10
-    .line 11
-    move-result-object p1
-
-    .line 12
-    iget-object p2, p2, Lg90;->a:Ljava/lang/String;
-
-    .line 13
-    .line 14
-    const/4 v0, 0x0
-
-    .line 15
-    invoke-virtual {p1, p0, v0, p2}, Lqc6;->r(Luy5;ILjava/lang/String;)V
-
-    .line 16
-    .line 17
-    .line 18
-    invoke-virtual {p1, p0}, Lqc6;->s(Luy5;)V
-
-    .line 19
-    .line 20
-    .line 21
-    return-void
+    .line 53
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

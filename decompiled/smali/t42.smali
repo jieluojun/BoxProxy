@@ -1,17 +1,14 @@
 .class public final Lt42;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ls42;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:[Lu42;
+.field public final synthetic a:Lw42;
 
 
 # direct methods
-.method public constructor <init>([Lu42;)V
+.method public constructor <init>(Lw42;)V
     .locals 0
 
     .line 1
@@ -20,7 +17,7 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lt42;->a:[Lu42;
+    iput-object p1, p0, Lt42;->a:Lw42;
 
     .line 5
     .line 6

@@ -1,33 +1,33 @@
-.class public final Lqe4;
-.super Lj3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lqe4;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Ljava/util/RandomAccess;
+.implements Lo52;
 
 
 # instance fields
-.field public final j:[Ldh0;
+.field public final synthetic j:B
 
-.field public final k:[I
+.field public final synthetic k:Ldm6;
 
 
 # direct methods
-.method public constructor <init>([Ldh0;[I)V
+.method public synthetic constructor <init>(Ldm6;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p2, p0, Lqe4;->j:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Lqe4;->k:Ldm6;
+
     .line 4
-    iput-object p1, p0, Lqe4;->j:[Ldh0;
-
     .line 5
-    .line 6
-    iput-object p2, p0, Lqe4;->k:[I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6
     .line 7
     .line 8
     return-void
@@ -35,133 +35,195 @@
 
 
 # virtual methods
-.method public final a()I
-    .locals 0
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
     .line 1
-    iget-object p0, p0, Lqe4;->j:[Ldh0;
+    iget-byte v0, p0, Lqe4;->j:B
 
     .line 2
     .line 3
-    array-length p0, p0
-
-    .line 4
-    return p0
-.end method
-
-.method public final bridge contains(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    instance-of v0, p1, Ldh0;
-
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
     .line 5
-    const/4 p0, 0x0
+    iget-object p0, p0, Lqe4;->k:Ldm6;
 
     .line 6
-    return p0
-
     .line 7
-    :cond_0
-    check-cast p1, Ldh0;
+    check-cast p1, Lb82;
 
     .line 8
     .line 9
-    invoke-super {p0, p1}, Lr2;->contains(Ljava/lang/Object;)Z
+    packed-switch v0, :pswitch_data_0
 
     .line 10
     .line 11
     .line 12
-    move-result p0
+    invoke-virtual {p0}, Ldm6;->invoke()F
 
     .line 13
-    return p0
-.end method
-
-.method public final get(I)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lqe4;->j:[Ldh0;
-
-    .line 2
-    .line 3
-    aget-object p0, p0, p1
-
-    .line 4
-    .line 5
-    return-object p0
-.end method
-
-.method public final bridge indexOf(Ljava/lang/Object;)I
-    .locals 1
-
-    .line 1
-    instance-of v0, p1, Ldh0;
-
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
-
-    .line 4
-    .line 5
-    const/4 p0, -0x1
-
-    .line 6
-    return p0
-
-    .line 7
-    :cond_0
-    check-cast p1, Ldh0;
-
-    .line 8
-    .line 9
-    invoke-super {p0, p1}, Lj3;->indexOf(Ljava/lang/Object;)I
-
-    .line 10
-    .line 11
-    .line 12
+    .line 14
+    .line 15
     move-result p0
 
-    .line 13
-    return p0
-.end method
+    .line 16
+    invoke-interface {p1, p0}, Lb82;->t(F)V
 
-.method public final bridge lastIndexOf(Ljava/lang/Object;)I
-    .locals 1
+    .line 17
+    .line 18
+    .line 19
+    return-object v1
 
-    .line 1
-    instance-of v0, p1, Ldh0;
+    .line 20
+    :pswitch_0
+    invoke-virtual {p0}, Ldm6;->invoke()F
 
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
-
-    .line 4
-    .line 5
-    const/4 p0, -0x1
-
-    .line 6
-    return p0
-
-    .line 7
-    :cond_0
-    check-cast p1, Ldh0;
-
-    .line 8
-    .line 9
-    invoke-super {p0, p1}, Lj3;->lastIndexOf(Ljava/lang/Object;)I
-
-    .line 10
-    .line 11
-    .line 12
+    .line 21
+    .line 22
+    .line 23
     move-result p0
 
-    .line 13
-    return p0
+    .line 24
+    invoke-interface {p1, p0}, Lb82;->t(F)V
+
+    .line 25
+    .line 26
+    .line 27
+    return-object v1
+
+    .line 28
+    :pswitch_1
+    invoke-virtual {p0}, Ldm6;->invoke()F
+
+    .line 29
+    .line 30
+    .line 31
+    move-result p0
+
+    .line 32
+    invoke-interface {p1, p0}, Lb82;->t(F)V
+
+    .line 33
+    .line 34
+    .line 35
+    return-object v1
+
+    .line 36
+    :pswitch_2
+    invoke-virtual {p0}, Ldm6;->invoke()F
+
+    .line 37
+    .line 38
+    .line 39
+    move-result p0
+
+    .line 40
+    invoke-interface {p1, p0}, Lb82;->t(F)V
+
+    .line 41
+    .line 42
+    .line 43
+    return-object v1
+
+    .line 44
+    :pswitch_3
+    invoke-virtual {p0}, Ldm6;->invoke()F
+
+    .line 45
+    .line 46
+    .line 47
+    move-result p0
+
+    .line 48
+    invoke-interface {p1, p0}, Lb82;->t(F)V
+
+    .line 49
+    .line 50
+    .line 51
+    return-object v1
+
+    .line 52
+    :pswitch_4
+    invoke-virtual {p0}, Ldm6;->invoke()F
+
+    .line 53
+    .line 54
+    .line 55
+    move-result p0
+
+    .line 56
+    invoke-interface {p1, p0}, Lb82;->t(F)V
+
+    .line 57
+    .line 58
+    .line 59
+    return-object v1
+
+    .line 60
+    :pswitch_5
+    invoke-virtual {p0}, Ldm6;->invoke()F
+
+    .line 61
+    .line 62
+    .line 63
+    move-result p0
+
+    .line 64
+    invoke-interface {p1, p0}, Lb82;->t(F)V
+
+    .line 65
+    .line 66
+    .line 67
+    return-object v1
+
+    .line 68
+    :pswitch_6
+    invoke-virtual {p0}, Ldm6;->invoke()F
+
+    .line 69
+    .line 70
+    .line 71
+    move-result p0
+
+    .line 72
+    invoke-interface {p1, p0}, Lb82;->t(F)V
+
+    .line 73
+    .line 74
+    .line 75
+    return-object v1
+
+    .line 76
+    :pswitch_7
+    invoke-virtual {p0}, Ldm6;->invoke()F
+
+    .line 77
+    .line 78
+    .line 79
+    move-result p0
+
+    .line 80
+    invoke-interface {p1, p0}, Lb82;->t(F)V
+
+    .line 81
+    .line 82
+    .line 83
+    return-object v1
+
+    .line 84
+    nop
+
+    .line 85
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

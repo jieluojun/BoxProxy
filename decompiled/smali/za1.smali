@@ -1,213 +1,184 @@
-.class public final synthetic Lza1;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Le62;
+.class public final enum Lza1;
+.super Ljava/lang/Enum;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
-# instance fields
-.field public final synthetic j:B
+# static fields
+.field public static final enum j:Lza1;
 
-.field public final synthetic k:Lu62;
+.field public static final enum k:Lza1;
 
-.field public final synthetic l:Lrm4;
+.field public static final enum l:Lza1;
 
-.field public final synthetic m:Lmt3;
+.field public static final enum m:Lza1;
 
-.field public final synthetic n:Lmt3;
+.field public static final enum n:Lza1;
+
+.field public static final synthetic o:[Lza1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lu62;Lrm4;Lmt3;Lmt3;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 7
 
     .line 1
-    iput-byte p5, p0, Lza1;->j:B
+    new-instance v0, Lza1;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lza1;->k:Lu62;
+    const-string v1, "CPU_ACQUIRED"
 
     .line 4
     .line 5
-    iput-object p2, p0, Lza1;->l:Lrm4;
+    const/4 v2, 0x0
 
     .line 6
-    .line 7
-    iput-object p3, p0, Lza1;->m:Lmt3;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 7
     .line 8
     .line 9
-    iput-object p4, p0, Lza1;->n:Lmt3;
+    sput-object v0, Lza1;->j:Lza1;
 
     .line 10
     .line 11
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v1, Lza1;
 
     .line 12
     .line 13
-    .line 14
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 5
-
-    .line 1
-    iget-byte v0, p0, Lza1;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    iget-object v2, p0, Lza1;->n:Lmt3;
-
-    .line 6
-    .line 7
-    iget-object v3, p0, Lza1;->m:Lmt3;
-
-    .line 8
-    .line 9
-    iget-object v4, p0, Lza1;->l:Lrm4;
-
-    .line 10
-    .line 11
-    iget-object p0, p0, Lza1;->k:Lu62;
-
-    .line 12
-    .line 13
-    packed-switch v0, :pswitch_data_0
+    const-string v2, "BLOCKING"
 
     .line 14
     .line 15
+    const/4 v3, 0x1
+
     .line 16
-    invoke-virtual {v4}, Lrm4;->g()I
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
     .line 18
     .line 19
-    move-result v0
+    sput-object v1, Lza1;->k:Lza1;
 
     .line 20
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
     .line 21
+    new-instance v2, Lza1;
+
     .line 22
     .line 23
-    move-result-object v0
+    const-string v3, "PARKING"
 
     .line 24
-    invoke-interface {v3}, Lmb6;->getValue()Ljava/lang/Object;
-
     .line 25
+    const/4 v4, 0x2
+
     .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 27
-    move-result-object v3
-
     .line 28
-    check-cast v3, Ljava/lang/Boolean;
-
     .line 29
-    .line 30
-    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+    sput-object v2, Lza1;->l:Lza1;
 
+    .line 30
     .line 31
+    new-instance v3, Lza1;
+
     .line 32
     .line 33
-    invoke-interface {v2}, Lmb6;->getValue()Ljava/lang/Object;
+    const-string v4, "DORMANT"
 
     .line 34
     .line 35
+    const/4 v5, 0x3
+
     .line 36
-    move-result-object v2
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 37
-    check-cast v2, Ljava/lang/Boolean;
-
     .line 38
     .line 39
-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+    sput-object v3, Lza1;->m:Lza1;
 
     .line 40
     .line 41
-    .line 42
-    invoke-interface {p0, v0, v3, v2}, Lu62;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    new-instance v4, Lza1;
 
+    .line 42
     .line 43
+    const-string v5, "TERMINATED"
+
     .line 44
     .line 45
-    return-object v1
+    const/4 v6, 0x4
 
     .line 46
-    :pswitch_0
-    invoke-virtual {v4}, Lrm4;->g()I
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 47
     .line 48
     .line 49
-    move-result v0
+    sput-object v4, Lza1;->n:Lza1;
 
     .line 50
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
     .line 51
+    filled-new-array {v0, v1, v2, v3, v4}, [Lza1;
+
     .line 52
     .line 53
+    .line 54
     move-result-object v0
 
-    .line 54
-    invoke-interface {v3}, Lmb6;->getValue()Ljava/lang/Object;
-
     .line 55
+    sput-object v0, Lza1;->o:[Lza1;
+
     .line 56
     .line 57
-    move-result-object v3
+    return-void
+.end method
 
-    .line 58
-    check-cast v3, Ljava/lang/Boolean;
+.method public static valueOf(Ljava/lang/String;)Lza1;
+    .locals 1
 
-    .line 59
-    .line 60
-    invoke-virtual {v3}, Ljava/lang/Boolean;->booleanValue()Z
+    .line 1
+    const-class v0, Lza1;
 
-    .line 61
-    .line 62
-    .line 63
-    invoke-interface {v2}, Lmb6;->getValue()Ljava/lang/Object;
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    .line 64
-    .line 65
-    .line 66
-    move-result-object v2
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
 
-    .line 67
-    check-cast v2, Ljava/lang/Boolean;
+    .line 7
+    check-cast p0, Lza1;
 
-    .line 68
-    .line 69
-    invoke-virtual {v2}, Ljava/lang/Boolean;->booleanValue()Z
+    .line 8
+    .line 9
+    return-object p0
+.end method
 
-    .line 70
-    .line 71
-    .line 72
-    invoke-interface {p0, v0, v3, v2}, Lu62;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+.method public static values()[Lza1;
+    .locals 1
 
-    .line 73
-    .line 74
-    .line 75
-    return-object v1
+    .line 1
+    sget-object v0, Lza1;->o:[Lza1;
 
-    .line 76
-    nop
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    .line 77
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lza1;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

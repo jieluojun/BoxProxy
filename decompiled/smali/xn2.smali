@@ -1,16 +1,17 @@
 .class public final Lxn2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Landroid/view/GestureDetector$OnGestureListener;
 
 
 # instance fields
-.field public final a:Landroid/content/res/Resources$Theme;
-
-.field public final b:I
+.field public final synthetic a:Lyn2;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/res/Resources$Theme;I)V
+.method public constructor <init>(Lyn2;)V
     .locals 0
 
     .line 1
@@ -19,194 +20,226 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lxn2;->a:Landroid/content/res/Resources$Theme;
+    iput-object p1, p0, Lxn2;->a:Lyn2;
 
     .line 5
     .line 6
-    iput p2, p0, Lxn2;->b:I
-
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final onDown(Landroid/view/MotionEvent;)Z
+    .locals 0
 
     .line 1
-    const/4 v0, 0x1
+    const/4 p0, 0x1
 
     .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of v1, p1, Lxn2;
-
-    .line 6
-    .line 7
-    const/4 v2, 0x0
-
-    .line 8
-    if-nez v1, :cond_1
-
-    .line 9
-    .line 10
-    return v2
-
-    .line 11
-    :cond_1
-    check-cast p1, Lxn2;
-
-    .line 12
-    .line 13
-    iget-object v1, p0, Lxn2;->a:Landroid/content/res/Resources$Theme;
-
-    .line 14
-    .line 15
-    iget-object v3, p1, Lxn2;->a:Landroid/content/res/Resources$Theme;
-
-    .line 16
-    .line 17
-    invoke-static {v1, v3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 18
-    .line 19
-    .line 20
-    move-result v1
-
-    .line 21
-    if-nez v1, :cond_2
-
-    .line 22
-    .line 23
-    return v2
-
-    .line 24
-    :cond_2
-    iget p0, p0, Lxn2;->b:I
-
-    .line 25
-    .line 26
-    iget p1, p1, Lxn2;->b:I
-
-    .line 27
-    .line 28
-    if-eq p0, p1, :cond_3
-
-    .line 29
-    .line 30
-    return v2
-
-    .line 31
-    :cond_3
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lxn2;->a:Landroid/content/res/Resources$Theme;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Landroid/content/res/Resources$Theme;->hashCode()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    mul-int/lit8 v0, v0, 0x1f
-
-    .line 8
-    .line 9
-    iget p0, p0, Lxn2;->b:I
-
-    .line 10
-    .line 11
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    add-int/2addr p0, v0
-
-    .line 16
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final onFling(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+    .locals 3
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object p0, p0, Lxn2;->a:Lyn2;
 
     .line 2
     .line 3
-    const-string v1, "Key(theme="
+    iget-object p1, p0, Lyn2;->a:Lx9;
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-boolean p2, p0, Lyn2;->c:Z
 
     .line 6
     .line 7
+    const/4 v0, 0x1
+
     .line 8
-    iget-object v1, p0, Lxn2;->a:Landroid/content/res/Resources$Theme;
+    if-eqz p2, :cond_0
 
     .line 9
     .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    goto :goto_0
 
     .line 11
+    :cond_0
+    iget p0, p0, Lyn2;->b:I
+
     .line 12
     .line 13
-    const-string v1, ", id="
+    const/4 p2, 0x0
 
     .line 14
+    const/4 v1, 0x0
+
     .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v2, 0x2
 
     .line 16
+    if-ne p0, v0, :cond_2
+
     .line 17
     .line 18
-    iget p0, p0, Lxn2;->b:I
+    invoke-static {p3}, Ljava/lang/Math;->abs(F)F
 
     .line 19
     .line 20
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
     .line 21
-    .line 22
-    .line 23
-    const-string p0, ")"
+    move-result p0
 
+    .line 22
+    invoke-static {p4}, Ljava/lang/Math;->abs(F)F
+
+    .line 23
     .line 24
     .line 25
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result p4
 
     .line 26
+    cmpl-float p0, p0, p4
+
     .line 27
     .line 28
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    if-lez p0, :cond_4
 
     .line 29
     .line 30
+    cmpl-float p0, p3, v1
+
     .line 31
+    .line 32
+    if-lez p0, :cond_1
+
+    .line 33
+    .line 34
+    move v2, v0
+
+    .line 35
+    :cond_1
+    iget-object p0, p1, Lx9;->k:Loa;
+
+    .line 36
+    .line 37
+    invoke-virtual {p0}, Loa;->getFocusOwner()Ld22;
+
+    .line 38
+    .line 39
+    .line 40
     move-result-object p0
 
-    .line 32
-    return-object p0
+    .line 41
+    check-cast p0, Lg22;
+
+    .line 42
+    .line 43
+    invoke-virtual {p0, v2, p2}, Lg22;->i(IZ)Z
+
+    .line 44
+    .line 45
+    .line 46
+    return v0
+
+    .line 47
+    :cond_2
+    if-ne p0, v2, :cond_4
+
+    .line 48
+    .line 49
+    invoke-static {p4}, Ljava/lang/Math;->abs(F)F
+
+    .line 50
+    .line 51
+    .line 52
+    move-result p0
+
+    .line 53
+    invoke-static {p3}, Ljava/lang/Math;->abs(F)F
+
+    .line 54
+    .line 55
+    .line 56
+    move-result p3
+
+    .line 57
+    cmpl-float p0, p0, p3
+
+    .line 58
+    .line 59
+    if-lez p0, :cond_4
+
+    .line 60
+    .line 61
+    cmpl-float p0, p4, v1
+
+    .line 62
+    .line 63
+    if-lez p0, :cond_3
+
+    .line 64
+    .line 65
+    move v2, v0
+
+    .line 66
+    :cond_3
+    iget-object p0, p1, Lx9;->k:Loa;
+
+    .line 67
+    .line 68
+    invoke-virtual {p0}, Loa;->getFocusOwner()Ld22;
+
+    .line 69
+    .line 70
+    .line 71
+    move-result-object p0
+
+    .line 72
+    check-cast p0, Lg22;
+
+    .line 73
+    .line 74
+    invoke-virtual {p0, v2, p2}, Lg22;->i(IZ)Z
+
+    .line 75
+    .line 76
+    .line 77
+    :cond_4
+    :goto_0
+    return v0
+.end method
+
+.method public final onLongPress(Landroid/view/MotionEvent;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public final onScroll(Landroid/view/MotionEvent;Landroid/view/MotionEvent;FF)Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x1
+
+    .line 2
+    return p0
+.end method
+
+.method public final onShowPress(Landroid/view/MotionEvent;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public final onSingleTapUp(Landroid/view/MotionEvent;)Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x1
+
+    .line 2
+    return p0
 .end method

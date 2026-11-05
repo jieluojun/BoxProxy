@@ -1,89 +1,51 @@
 .class public final Lfs3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-
-# static fields
-.field public static final b:Lfs3;
+# interfaces
+.implements Lfb7;
 
 
 # instance fields
-.field public final a:Ljava/util/LinkedHashMap;
+.field public final a:Lgl4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lfb7;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lfs3;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Lfs3;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    sput-object v0, Lfs3;->b:Lfs3;
-
-    .line 7
-    .line 8
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    .line 15
-    sget-object v0, Lru1;->j:Lru1;
-
-    invoke-direct {p0, v0}, Lfs3;-><init>(Ljava/util/Map;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/util/Map;)V
-    .locals 1
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 2
+    .line 3
+    .line 4
+    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
+
     .line 5
     .line 6
     .line 7
-    new-instance v0, Ljava/util/LinkedHashMap;
+    move-result-object p1
 
     .line 8
+    iput-object p1, p0, Lfs3;->a:Lgl4;
+
     .line 9
-    invoke-direct {v0, p1}, Ljava/util/LinkedHashMap;-><init>(Ljava/util/Map;)V
-
     .line 10
-    .line 11
-    .line 12
-    iput-object v0, p0, Lfs3;->a:Ljava/util/LinkedHashMap;
-
-    .line 13
-    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lm21;)Ljava/lang/Object;
+.method public final a(Lyg1;)I
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lfs3;->a:Ljava/util/LinkedHashMap;
+    iget-object p0, p0, Lfs3;->a:Lgl4;
 
     .line 2
     .line 3
-    invoke-virtual {p0, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p0}, Lgl4;->getValue()Ljava/lang/Object;
 
     .line 4
     .line 5
@@ -91,90 +53,110 @@
     move-result-object p0
 
     .line 7
-    if-nez p0, :cond_0
+    check-cast p0, Lfb7;
 
     .line 8
     .line 9
-    const/4 p0, 0x0
-
-    .line 10
-    :cond_0
-    return-object p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    if-eq p0, p1, :cond_1
-
-    .line 2
-    .line 3
-    instance-of v0, p1, Lfs3;
-
-    .line 4
-    .line 5
-    if-eqz v0, :cond_0
-
-    .line 6
-    .line 7
-    check-cast p1, Lfs3;
-
-    .line 8
-    .line 9
-    iget-object p1, p1, Lfs3;->a:Ljava/util/LinkedHashMap;
+    invoke-interface {p0, p1}, Lfb7;->a(Lyg1;)I
 
     .line 10
     .line 11
-    iget-object p0, p0, Lfs3;->a:Ljava/util/LinkedHashMap;
-
     .line 12
-    .line 13
-    invoke-static {p0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 14
-    .line 15
-    .line 16
     move-result p0
 
-    .line 17
-    if-eqz p0, :cond_0
-
-    .line 18
-    .line 19
-    goto :goto_0
-
-    .line 20
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 21
-    return p0
-
-    .line 22
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
-    .line 23
+    .line 13
     return p0
 .end method
 
-.method public final hashCode()I
+.method public final b(Lyg1;)I
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lfs3;->a:Ljava/util/LinkedHashMap;
+    iget-object p0, p0, Lfs3;->a:Lgl4;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    invoke-virtual {p0}, Lgl4;->getValue()Ljava/lang/Object;
 
     .line 4
     .line 5
     .line 6
-    move-result p0
+    move-result-object p0
 
     .line 7
+    check-cast p0, Lfb7;
+
+    .line 8
+    .line 9
+    invoke-interface {p0, p1}, Lfb7;->b(Lyg1;)I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    return p0
+.end method
+
+.method public final c(Lyg1;Lkz2;)I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lfs3;->a:Lgl4;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lgl4;->getValue()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lfb7;
+
+    .line 8
+    .line 9
+    invoke-interface {p0, p1, p2}, Lfb7;->c(Lyg1;Lkz2;)I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    return p0
+.end method
+
+.method public final d(Lyg1;Lkz2;)I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lfs3;->a:Lgl4;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lgl4;->getValue()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lfb7;
+
+    .line 8
+    .line 9
+    invoke-interface {p0, p1, p2}, Lfb7;->d(Lyg1;Lkz2;)I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
     return p0
 .end method

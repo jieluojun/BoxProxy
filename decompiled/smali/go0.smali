@@ -1,71 +1,80 @@
 .class public final Lgo0;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lz71;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 
 # instance fields
-.field public final a:Lbd;
+.field public j:Ljava/lang/String;
 
-.field public final b:Lcd;
+.field public k:Ljava/lang/String;
 
-.field public final c:Lbd;
+.field public l:Ljava/lang/String;
+
+.field public m:I
+
+.field public synthetic n:Ljava/lang/Object;
+
+.field public final synthetic o:Ljo0;
+
+.field public p:I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 3
+.method public constructor <init>(Ljo0;Lz71;)V
+    .locals 0
 
     .line 1
-    invoke-static {}, Ldd;->a()Lbd;
+    iput-object p1, p0, Lgo0;->o:Ljo0;
 
     .line 2
     .line 3
-    .line 4
-    move-result-object v0
+    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
 
+    .line 4
     .line 5
-    new-instance v1, Lcd;
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iput-object p1, p0, Lgo0;->n:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Lgo0;->p:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
-    new-instance v2, Landroid/graphics/PathMeasure;
+    or-int/2addr p1, v0
 
     .line 8
-    .line 9
-    invoke-direct {v2}, Landroid/graphics/PathMeasure;-><init>()V
+    iput p1, p0, Lgo0;->p:I
 
+    .line 9
     .line 10
+    iget-object p1, p0, Lgo0;->o:Ljo0;
+
     .line 11
     .line 12
-    invoke-direct {v1, v2}, Lcd;-><init>(Landroid/graphics/PathMeasure;)V
+    const/4 v0, 0x0
 
     .line 13
+    invoke-virtual {p1, v0, v0, p0}, Ljo0;->i(Ljava/lang/String;Ljava/lang/String;Lz71;)Ljava/lang/Object;
+
     .line 14
     .line 15
-    invoke-static {}, Ldd;->a()Lbd;
-
     .line 16
+    move-result-object p0
+
     .line 17
-    .line 18
-    move-result-object v2
-
-    .line 19
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 20
-    .line 21
-    .line 22
-    iput-object v0, p0, Lgo0;->a:Lbd;
-
-    .line 23
-    .line 24
-    iput-object v1, p0, Lgo0;->b:Lcd;
-
-    .line 25
-    .line 26
-    iput-object v2, p0, Lgo0;->c:Lbd;
-
-    .line 27
-    .line 28
-    return-void
+    return-object p0
 .end method

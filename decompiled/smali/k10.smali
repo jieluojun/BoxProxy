@@ -1,39 +1,17 @@
-.class public final synthetic Lk10;
+.class public final Lk10;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lt62;
+.implements Lc8;
 
 
 # instance fields
-.field public final synthetic j:Lei;
-
-.field public final synthetic k:Lwp3;
-
-.field public final synthetic l:Lls6;
-
-.field public final synthetic m:Lp62;
-
-.field public final synthetic n:B
-
-.field public final synthetic o:Z
-
-.field public final synthetic p:I
-
-.field public final synthetic q:Z
-
-.field public final synthetic r:Ljava/util/Map;
-
-.field public final synthetic s:I
-
-.field public final synthetic t:I
-
-.field public final synthetic u:S
+.field public final a:F
 
 
 # direct methods
-.method public synthetic constructor <init>(Lei;Lwp3;Lls6;Lp62;IZIILjava/util/Map;III)V
+.method public constructor <init>(F)V
     .locals 0
 
     .line 1
@@ -42,155 +20,179 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lk10;->j:Lei;
+    iput p1, p0, Lk10;->a:F
 
     .line 5
     .line 6
-    iput-object p2, p0, Lk10;->k:Lwp3;
-
-    .line 7
-    .line 8
-    iput-object p3, p0, Lk10;->l:Lls6;
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Lk10;->m:Lp62;
-
-    .line 11
-    .line 12
-    iput-byte p5, p0, Lk10;->n:B
-
-    .line 13
-    .line 14
-    iput-boolean p6, p0, Lk10;->o:Z
-
-    .line 15
-    .line 16
-    iput p7, p0, Lk10;->p:I
-
-    .line 17
-    .line 18
-    iput-boolean p8, p0, Lk10;->q:Z
-
-    .line 19
-    .line 20
-    iput-object p9, p0, Lk10;->r:Ljava/util/Map;
-
-    .line 21
-    .line 22
-    iput p10, p0, Lk10;->s:I
-
-    .line 23
-    .line 24
-    iput p11, p0, Lk10;->t:I
-
-    .line 25
-    .line 26
-    iput-short p12, p0, Lk10;->u:S
-
-    .line 27
-    .line 28
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 13
+.method public final a(IILkz2;)I
+    .locals 0
 
     .line 1
-    move-object v9, p1
+    sub-int/2addr p2, p1
 
     .line 2
-    check-cast v9, Lz11;
+    int-to-float p1, p2
 
     .line 3
-    .line 4
-    check-cast p2, Ljava/lang/Integer;
+    const/high16 p2, 0x40000000    # 2.0f
 
+    .line 4
     .line 5
+    div-float/2addr p1, p2
+
     .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/high16 p2, 0x3f800000    # 1.0f
 
     .line 7
     .line 8
-    .line 9
-    iget p1, p0, Lk10;->s:I
+    iget p0, p0, Lk10;->a:F
 
+    .line 9
     .line 10
+    add-float/2addr p2, p0
+
     .line 11
-    or-int/lit8 p1, p1, 0x1
+    mul-float/2addr p2, p1
+
+    .line 12
+    invoke-static {p2}, Ljava/lang/Math;->round(F)I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result p0
+
+    .line 16
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lk10;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Lk10;
 
     .line 12
     .line 13
-    invoke-static {p1}, Lqu5;->f0(I)I
+    iget p0, p0, Lk10;->a:F
 
     .line 14
     .line 15
-    .line 16
-    move-result v10
+    iget p1, p1, Lk10;->a:F
 
+    .line 16
     .line 17
-    iget p1, p0, Lk10;->t:I
+    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
 
     .line 18
     .line 19
-    invoke-static {p1}, Lqu5;->f0(I)I
-
     .line 20
-    .line 21
-    .line 22
-    move-result v11
+    move-result p0
 
+    .line 21
+    if-eqz p0, :cond_2
+
+    .line 22
     .line 23
-    iget-object v0, p0, Lk10;->j:Lei;
+    return v2
 
     .line 24
-    .line 25
-    iget-object v1, p0, Lk10;->k:Lwp3;
+    :cond_2
+    return v0
+.end method
 
-    .line 26
-    .line 27
-    iget-object v2, p0, Lk10;->l:Lls6;
+.method public final hashCode()I
+    .locals 0
 
-    .line 28
-    .line 29
-    iget-object v3, p0, Lk10;->m:Lp62;
+    .line 1
+    iget p0, p0, Lk10;->a:F
 
-    .line 30
-    .line 31
-    iget-byte v4, p0, Lk10;->n:B
+    .line 2
+    .line 3
+    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
 
-    .line 32
-    .line 33
-    iget-boolean v5, p0, Lk10;->o:Z
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
 
-    .line 34
-    .line 35
-    iget v6, p0, Lk10;->p:I
+    .line 7
+    return p0
+.end method
 
-    .line 36
-    .line 37
-    iget-boolean v7, p0, Lk10;->q:Z
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
-    .line 38
-    .line 39
-    iget-object v8, p0, Lk10;->r:Ljava/util/Map;
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 40
-    .line 41
-    iget-short v12, p0, Lk10;->u:S
+    .line 2
+    .line 3
+    const-string v1, "Horizontal(bias="
 
-    .line 42
-    .line 43
-    invoke-static/range {v0 .. v12}, Lfm;->a(Lei;Lwp3;Lls6;Lp62;IZIILjava/util/Map;Lz11;III)V
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 44
-    .line 45
-    .line 46
-    sget-object p0, La47;->a:La47;
+    .line 6
+    .line 7
+    .line 8
+    iget p0, p0, Lk10;->a:F
 
-    .line 47
-    .line 48
+    .line 9
+    .line 10
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const-string p0, ")"
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object p0
+
+    .line 22
     return-object p0
 .end method

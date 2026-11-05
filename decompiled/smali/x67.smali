@@ -1,75 +1,237 @@
 .class public final Lx67;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Lv67;
+.implements Li92;
+.implements Llp5;
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
+.field public final synthetic j:Lq72;
 
-.field public final synthetic k:Ly67;
+.field public final synthetic k:Lu67;
 
-.field public l:I
+.field public final synthetic l:Lh63;
+
+.field public final synthetic m:Lr67;
+
+.field public final synthetic n:Ljb1;
+
+.field public final synthetic o:Landroid/os/Bundle;
 
 
 # direct methods
-.method public constructor <init>(Ly67;Lz81;)V
+.method public constructor <init>(Lq72;Lu67;Lh63;Lr67;Ljb1;Landroid/os/Bundle;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lx67;->k:Ly67;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
     .line 4
+    iput-object p1, p0, Lx67;->j:Lq72;
+
     .line 5
     .line 6
+    iput-object p2, p0, Lx67;->k:Lu67;
+
+    .line 7
+    .line 8
+    iput-object p3, p0, Lx67;->l:Lh63;
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Lx67;->m:Lr67;
+
+    .line 11
+    .line 12
+    iput-object p5, p0, Lx67;->n:Ljb1;
+
+    .line 13
+    .line 14
+    iput-object p6, p0, Lx67;->o:Landroid/os/Bundle;
+
+    .line 15
+    .line 16
+    const-string p2, "androidx.lifecycle.internal.SavedStateHandlesProvider"
+
+    .line 17
+    .line 18
+    invoke-virtual {p1, p2}, Lq72;->Q(Ljava/lang/String;)Ljp5;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object p1
+
+    .line 22
+    if-nez p1, :cond_0
+
+    .line 23
+    .line 24
+    invoke-static {p0}, Lk37;->m0(Llp5;)V
+
+    .line 25
+    .line 26
+    .line 27
+    :cond_0
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final c()Lq72;
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lx67;->j:Ljava/lang/Object;
+    iget-object p0, p0, Lx67;->j:Lq72;
 
     .line 2
     .line 3
-    iget p1, p0, Lx67;->l:I
+    return-object p0
+.end method
+
+.method public final d()Lr67;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lx67;->m:Lr67;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public final e()Lqq3;
+    .locals 5
+
+    .line 1
+    new-instance v0, Lqq3;
+
+    .line 2
+    .line 3
+    iget-object v1, p0, Lx67;->n:Ljb1;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    invoke-direct {v0, v1}, Lqq3;-><init>(Ljb1;)V
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lx67;->l:I
+    sget-object v1, Lk37;->N:Lo35;
 
     .line 9
     .line 10
-    const/4 p1, 0x0
+    const/4 v2, 0x0
 
     .line 11
-    const/4 v0, 0x0
+    new-array v3, v2, [Lnk4;
 
     .line 12
-    iget-object v1, p0, Lx67;->k:Ly67;
-
     .line 13
-    .line 14
-    invoke-virtual {v1, p1, v0, p0}, Ly67;->d(Lct5;FLz81;)Ljava/lang/Object;
+    invoke-static {v3, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
+    .line 14
     .line 15
     .line 16
+    move-result-object v2
+
     .line 17
-    move-result-object p0
+    check-cast v2, [Lnk4;
 
     .line 18
+    .line 19
+    invoke-static {v2}, Lp87;->x([Lnk4;)Landroid/os/Bundle;
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-object v2
+
+    .line 23
+    iget-object v3, v0, Ljb1;->a:Ljava/util/LinkedHashMap;
+
+    .line 24
+    .line 25
+    invoke-virtual {v3, v1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 26
+    .line 27
+    .line 28
+    move-result-object v4
+
+    .line 29
+    check-cast v4, Landroid/os/Bundle;
+
+    .line 30
+    .line 31
+    if-eqz v4, :cond_0
+
+    .line 32
+    .line 33
+    invoke-virtual {v2, v4}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
+
+    .line 34
+    .line 35
+    .line 36
+    :cond_0
+    iget-object v4, p0, Lx67;->o:Landroid/os/Bundle;
+
+    .line 37
+    .line 38
+    invoke-virtual {v2, v4}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
+
+    .line 39
+    .line 40
+    .line 41
+    invoke-interface {v3, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 42
+    .line 43
+    .line 44
+    sget-object v1, Lk37;->L:Lo35;
+
+    .line 45
+    .line 46
+    invoke-interface {v3, v1, p0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 47
+    .line 48
+    .line 49
+    sget-object v1, Lk37;->M:Lo35;
+
+    .line 50
+    .line 51
+    invoke-interface {v3, v1, p0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 52
+    .line 53
+    .line 54
+    return-object v0
+.end method
+
+.method public final g()Lu67;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lx67;->k:Lu67;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public final h()Lh63;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lx67;->l:Lh63;
+
+    .line 2
+    .line 3
     return-object p0
 .end method

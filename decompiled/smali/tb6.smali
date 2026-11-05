@@ -1,23 +1,49 @@
 .class public final Ltb6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
-# interfaces
-.implements Ljava/util/Map$Entry;
-.implements Lhy2;
+
+# static fields
+.field public static final d:Ltb6;
 
 
 # instance fields
-.field public final j:Ljava/lang/Object;
+.field public final a:I
 
-.field public k:Ljava/lang/Object;
+.field public final b:I
 
-.field public final synthetic l:Lub6;
+.field public final c:I
 
 
 # direct methods
-.method public constructor <init>(Lub6;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 3
+
+    .line 1
+    new-instance v0, Ltb6;
+
+    .line 2
+    .line 3
+    const/4 v1, -0x1
+
+    .line 4
+    const/4 v2, 0x0
+
+    .line 5
+    invoke-direct {v0, v1, v2, v2}, Ltb6;-><init>(III)V
+
+    .line 6
+    .line 7
+    .line 8
+    sput-object v0, Ltb6;->d:Ltb6;
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+.method public constructor <init>(III)V
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,152 +51,129 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Ltb6;->l:Lub6;
+    iput p1, p0, Ltb6;->a:I
 
     .line 5
     .line 6
-    iget-object v0, p1, Lka2;->m:Ljava/lang/Object;
+    iput p2, p0, Ltb6;->b:I
 
     .line 7
     .line 8
-    check-cast v0, Ljava/util/Map$Entry;
+    iput p3, p0, Ltb6;->c:I
 
     .line 9
     .line 10
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 11
-    .line 12
-    .line 13
-    invoke-interface {v0}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object v0
-
-    .line 17
-    iput-object v0, p0, Ltb6;->j:Ljava/lang/Object;
-
-    .line 18
-    .line 19
-    iget-object p1, p1, Lka2;->m:Ljava/lang/Object;
-
-    .line 20
-    .line 21
-    check-cast p1, Ljava/util/Map$Entry;
-
-    .line 22
-    .line 23
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 24
-    .line 25
-    .line 26
-    invoke-interface {p1}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
-
-    .line 27
-    .line 28
-    .line 29
-    move-result-object p1
-
-    .line 30
-    iput-object p1, p0, Ltb6;->k:Ljava/lang/Object;
-
-    .line 31
-    .line 32
     return-void
 .end method
 
 
 # virtual methods
-.method public final getKey()Ljava/lang/Object;
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
     .line 1
-    iget-object p0, p0, Ltb6;->j:Ljava/lang/Object;
+    const/4 v0, 0x1
 
     .line 2
+    if-ne p0, p1, :cond_0
+
     .line 3
-    return-object p0
-.end method
-
-.method public final getValue()Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Ltb6;->k:Ljava/lang/Object;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final setValue(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
-
-    .line 1
-    iget-object v0, p0, Ltb6;->l:Lub6;
-
-    .line 2
-    .line 3
-    iget-object v1, v0, Lka2;->k:Ljava/lang/Object;
-
     .line 4
+    return v0
+
     .line 5
-    check-cast v1, Lu86;
+    :cond_0
+    instance-of v1, p1, Ltb6;
 
     .line 6
     .line 7
-    invoke-virtual {v1}, Lu86;->e()Lt86;
+    const/4 v2, 0x0
 
     .line 8
+    if-eqz v1, :cond_1
+
     .line 9
     .line 10
-    move-result-object v2
+    check-cast p1, Ltb6;
 
     .line 11
-    iget v2, v2, Lt86;->d:I
-
     .line 12
+    iget v1, p0, Ltb6;->c:I
+
     .line 13
-    iget v0, v0, Lka2;->j:I
-
     .line 14
+    iget v3, p1, Ltb6;->c:I
+
     .line 15
-    if-ne v2, v0, :cond_0
-
     .line 16
+    if-ne v1, v3, :cond_1
+
     .line 17
-    iget-object v0, p0, Ltb6;->k:Ljava/lang/Object;
-
     .line 18
+    iget v1, p0, Ltb6;->a:I
+
     .line 19
-    iget-object v2, p0, Ltb6;->j:Ljava/lang/Object;
-
     .line 20
-    .line 21
-    invoke-virtual {v1, v2, p1}, Lu86;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    iget v3, p1, Ltb6;->a:I
 
+    .line 21
     .line 22
+    if-ne v1, v3, :cond_1
+
     .line 23
     .line 24
-    iput-object p1, p0, Ltb6;->k:Ljava/lang/Object;
+    iget p0, p0, Ltb6;->b:I
 
     .line 25
     .line 26
-    return-object v0
+    iget p1, p1, Ltb6;->b:I
 
     .line 27
-    :cond_0
-    new-instance p0, Ljava/util/ConcurrentModificationException;
-
     .line 28
-    .line 29
-    invoke-direct {p0}, Ljava/util/ConcurrentModificationException;-><init>()V
+    if-ne p0, p1, :cond_1
 
+    .line 29
     .line 30
+    return v0
+
     .line 31
-    .line 32
-    throw p0
+    :cond_1
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    .line 1
+    iget v0, p0, Ltb6;->c:I
+
+    .line 2
+    .line 3
+    add-int/lit8 v0, v0, 0x1f
+
+    .line 4
+    .line 5
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 6
+    .line 7
+    iget v1, p0, Ltb6;->a:I
+
+    .line 8
+    .line 9
+    add-int/2addr v0, v1
+
+    .line 10
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 11
+    .line 12
+    iget p0, p0, Ltb6;->b:I
+
+    .line 13
+    .line 14
+    add-int/2addr v0, p0
+
+    .line 15
+    return v0
 .end method

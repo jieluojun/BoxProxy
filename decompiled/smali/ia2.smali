@@ -1,323 +1,205 @@
-.class public final Lia2;
+.class public final synthetic Lia2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
 # instance fields
-.field public final a:B
+.field public final synthetic j:B
+
+.field public final synthetic k:Lha2;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-byte p1, p0, Lia2;->a:B
-
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public static a(I)Ljava/lang/String;
+.method public synthetic constructor <init>(Lha2;)V
     .locals 1
 
     .line 1
-    const/16 v0, 0x10
+    const/4 v0, 0x0
 
     .line 2
+    iput-byte v0, p0, Lia2;->j:B
+
     .line 3
-    if-ne p0, v0, :cond_0
-
     .line 4
-    .line 5
-    const-string p0, "Confirm"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 5
     .line 6
     .line 7
-    return-object p0
+    iput-object p1, p0, Lia2;->k:Lha2;
 
     .line 8
-    :cond_0
-    const/4 v0, 0x6
-
     .line 9
-    if-ne p0, v0, :cond_1
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lha2;IB)V
+    .locals 0
 
     .line 10
-    .line 11
-    const-string p0, "ContextClick"
+    iput-byte p3, p0, Lia2;->j:B
 
-    .line 12
-    .line 13
-    return-object p0
+    iput-object p1, p0, Lia2;->k:Lha2;
 
-    .line 14
-    :cond_1
-    const/16 v0, 0xd
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 15
-    .line 16
-    if-ne p0, v0, :cond_2
-
-    .line 17
-    .line 18
-    const-string p0, "GestureEnd"
-
-    .line 19
-    .line 20
-    return-object p0
-
-    .line 21
-    :cond_2
-    const/16 v0, 0x17
-
-    .line 22
-    .line 23
-    if-ne p0, v0, :cond_3
-
-    .line 24
-    .line 25
-    const-string p0, "GestureThresholdActivate"
-
-    .line 26
-    .line 27
-    return-object p0
-
-    .line 28
-    :cond_3
-    const/4 v0, 0x3
-
-    .line 29
-    if-ne p0, v0, :cond_4
-
-    .line 30
-    .line 31
-    const-string p0, "KeyboardTap"
-
-    .line 32
-    .line 33
-    return-object p0
-
-    .line 34
-    :cond_4
-    if-nez p0, :cond_5
-
-    .line 35
-    .line 36
-    const-string p0, "LongPress"
-
-    .line 37
-    .line 38
-    return-object p0
-
-    .line 39
-    :cond_5
-    const/16 v0, 0x11
-
-    .line 40
-    .line 41
-    if-ne p0, v0, :cond_6
-
-    .line 42
-    .line 43
-    const-string p0, "Reject"
-
-    .line 44
-    .line 45
-    return-object p0
-
-    .line 46
-    :cond_6
-    const/16 v0, 0x1b
-
-    .line 47
-    .line 48
-    if-ne p0, v0, :cond_7
-
-    .line 49
-    .line 50
-    const-string p0, "SegmentFrequentTick"
-
-    .line 51
-    .line 52
-    return-object p0
-
-    .line 53
-    :cond_7
-    const/16 v0, 0x1a
-
-    .line 54
-    .line 55
-    if-ne p0, v0, :cond_8
-
-    .line 56
-    .line 57
-    const-string p0, "SegmentTick"
-
-    .line 58
-    .line 59
-    return-object p0
-
-    .line 60
-    :cond_8
-    const/16 v0, 0x9
-
-    .line 61
-    .line 62
-    if-ne p0, v0, :cond_9
-
-    .line 63
-    .line 64
-    const-string p0, "TextHandleMove"
-
-    .line 65
-    .line 66
-    return-object p0
-
-    .line 67
-    :cond_9
-    const/16 v0, 0x16
-
-    .line 68
-    .line 69
-    if-ne p0, v0, :cond_a
-
-    .line 70
-    .line 71
-    const-string p0, "ToggleOff"
-
-    .line 72
-    .line 73
-    return-object p0
-
-    .line 74
-    :cond_a
-    const/16 v0, 0x15
-
-    .line 75
-    .line 76
-    if-ne p0, v0, :cond_b
-
-    .line 77
-    .line 78
-    const-string p0, "ToggleOn"
-
-    .line 79
-    .line 80
-    return-object p0
-
-    .line 81
-    :cond_b
-    const/4 v0, 0x1
-
-    .line 82
-    if-ne p0, v0, :cond_c
-
-    .line 83
-    .line 84
-    const-string p0, "VirtualKey"
-
-    .line 85
-    .line 86
-    return-object p0
-
-    .line 87
-    :cond_c
-    const-string p0, "Invalid"
-
-    .line 88
-    .line 89
-    return-object p0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
 
     .line 1
-    instance-of v0, p1, Lia2;
+    iget-byte v0, p0, Lia2;->j:B
 
     .line 2
     .line 3
-    if-nez v0, :cond_0
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
     .line 5
-    goto :goto_0
+    const/4 v2, 0x1
 
     .line 6
-    :cond_0
-    check-cast p1, Lia2;
+    iget-object p0, p0, Lia2;->k:Lha2;
 
     .line 7
     .line 8
-    iget-byte p1, p1, Lia2;->a:B
+    check-cast p1, Lv01;
 
     .line 9
     .line 10
-    iget-byte p0, p0, Lia2;->a:B
+    check-cast p2, Ljava/lang/Integer;
 
     .line 11
     .line 12
-    if-eq p0, p1, :cond_1
+    packed-switch v0, :pswitch_data_0
 
     .line 13
     .line 14
-    :goto_0
-    const/4 p0, 0x0
-
     .line 15
-    return p0
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 16
-    :cond_1
-    const/4 p0, 0x1
-
     .line 17
-    return p0
-.end method
+    .line 18
+    invoke-static {v2}, Lw23;->h0(I)I
 
-.method public final hashCode()I
-    .locals 0
+    .line 19
+    .line 20
+    .line 21
+    move-result p2
 
-    .line 1
-    iget-byte p0, p0, Lia2;->a:B
+    .line 22
+    invoke-static {p0, p1, p2}, Lrd1;->r(Lha2;Lv01;I)V
 
-    .line 2
-    .line 3
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+    .line 23
+    .line 24
+    .line 25
+    return-object v1
 
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
+    .line 26
+    :pswitch_0
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 7
-    return p0
-.end method
+    .line 27
+    .line 28
+    .line 29
+    invoke-static {v2}, Lw23;->h0(I)I
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    .line 30
+    .line 31
+    .line 32
+    move-result p2
 
-    .line 1
-    iget-byte p0, p0, Lia2;->a:B
+    .line 33
+    invoke-static {p0, p1, p2}, Lg51;->q(Lha2;Lv01;I)V
 
-    .line 2
-    .line 3
-    invoke-static {p0}, Lia2;->a(I)Ljava/lang/String;
+    .line 34
+    .line 35
+    .line 36
+    return-object v1
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
+    .line 37
+    :pswitch_1
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
-    .line 7
-    return-object p0
+    .line 38
+    .line 39
+    .line 40
+    move-result p2
+
+    .line 41
+    and-int/lit8 v0, p2, 0x3
+
+    .line 42
+    .line 43
+    const/4 v3, 0x2
+
+    .line 44
+    const/4 v4, 0x0
+
+    .line 45
+    if-eq v0, v3, :cond_0
+
+    .line 46
+    .line 47
+    move v0, v2
+
+    .line 48
+    goto :goto_0
+
+    .line 49
+    :cond_0
+    move v0, v4
+
+    .line 50
+    :goto_0
+    and-int/2addr p2, v2
+
+    .line 51
+    check-cast p1, Ls62;
+
+    .line 52
+    .line 53
+    invoke-virtual {p1, p2, v0}, Ls62;->T(IZ)Z
+
+    .line 54
+    .line 55
+    .line 56
+    move-result p2
+
+    .line 57
+    if-eqz p2, :cond_1
+
+    .line 58
+    .line 59
+    invoke-static {p0, p1, v4}, Lg51;->q(Lha2;Lv01;I)V
+
+    .line 60
+    .line 61
+    .line 62
+    goto :goto_1
+
+    .line 63
+    :cond_1
+    invoke-virtual {p1}, Ls62;->W()V
+
+    .line 64
+    .line 65
+    .line 66
+    :goto_1
+    return-object v1
+
+    .line 67
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

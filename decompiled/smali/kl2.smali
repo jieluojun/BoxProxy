@@ -1,221 +1,178 @@
-.class public final Lkl2;
-.super Ltx;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lkl2;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+
+# interfaces
+.implements Ls52;
 
 
 # instance fields
-.field public final synthetic n:Lll2;
+.field public final synthetic j:Ld52;
+
+.field public final synthetic k:Lko3;
+
+.field public final synthetic l:Z
+
+.field public final synthetic m:Z
+
+.field public final synthetic n:J
+
+.field public final synthetic o:F
+
+.field public final synthetic p:F
+
+.field public final synthetic q:F
+
+.field public final synthetic r:Ls52;
+
+.field public final synthetic s:I
+
+.field public final synthetic t:S
 
 
 # direct methods
-.method public constructor <init>(Lll2;)V
+.method public synthetic constructor <init>(Ld52;Lko3;ZZJFFFLs52;II)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lkl2;->n:Lll2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ltx;-><init>()V
-
     .line 4
+    iput-object p1, p0, Lkl2;->j:Ld52;
+
     .line 5
     .line 6
+    iput-object p2, p0, Lkl2;->k:Lko3;
+
+    .line 7
+    .line 8
+    iput-boolean p3, p0, Lkl2;->l:Z
+
+    .line 9
+    .line 10
+    iput-boolean p4, p0, Lkl2;->m:Z
+
+    .line 11
+    .line 12
+    iput-wide p5, p0, Lkl2;->n:J
+
+    .line 13
+    .line 14
+    iput p7, p0, Lkl2;->o:F
+
+    .line 15
+    .line 16
+    iput p8, p0, Lkl2;->p:F
+
+    .line 17
+    .line 18
+    iput p9, p0, Lkl2;->q:F
+
+    .line 19
+    .line 20
+    iput-object p10, p0, Lkl2;->r:Ls52;
+
+    .line 21
+    .line 22
+    iput p11, p0, Lkl2;->s:I
+
+    .line 23
+    .line 24
+    iput-short p12, p0, Lkl2;->t:S
+
+    .line 25
+    .line 26
     return-void
 .end method
 
 
 # virtual methods
-.method public final k()V
-    .locals 8
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 13
 
     .line 1
-    iget-object v0, p0, Lkl2;->n:Lll2;
+    move-object v10, p1
 
     .line 2
+    check-cast v10, Lv01;
+
     .line 3
-    sget-object v1, Lcw1;->q:Lcw1;
-
     .line 4
-    .line 5
-    invoke-virtual {v0, v1}, Lll2;->g(Lcw1;)V
+    check-cast p2, Ljava/lang/Integer;
 
+    .line 5
     .line 6
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 7
     .line 8
-    iget-object p0, p0, Lkl2;->n:Lll2;
-
     .line 9
+    iget p1, p0, Lkl2;->s:I
+
     .line 10
-    iget-object p0, p0, Lll2;->k:Lel2;
-
     .line 11
-    .line 12
-    monitor-enter p0
+    or-int/lit8 p1, p1, 0x1
 
+    .line 12
     .line 13
-    :try_start_0
-    iget-wide v0, p0, Lel2;->x:J
+    invoke-static {p1}, Lw23;->h0(I)I
 
     .line 14
     .line 15
-    iget-wide v2, p0, Lel2;->w:J
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
     .line 16
+    move-result v11
+
     .line 17
-    cmp-long v0, v0, v2
+    iget-object v0, p0, Lkl2;->j:Ld52;
 
     .line 18
     .line 19
-    if-gez v0, :cond_0
+    iget-object v1, p0, Lkl2;->k:Lko3;
 
     .line 20
     .line 21
-    monitor-exit p0
+    iget-boolean v2, p0, Lkl2;->l:Z
 
     .line 22
-    return-void
-
     .line 23
-    :cond_0
-    const-wide/16 v0, 0x1
+    iget-boolean v3, p0, Lkl2;->m:Z
 
     .line 24
     .line 25
-    add-long/2addr v2, v0
+    iget-wide v4, p0, Lkl2;->n:J
 
     .line 26
-    :try_start_1
-    iput-wide v2, p0, Lel2;->w:J
-
     .line 27
-    .line 28
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
+    iget v6, p0, Lkl2;->o:F
 
+    .line 28
     .line 29
+    iget v7, p0, Lkl2;->p:F
+
     .line 30
     .line 31
-    move-result-wide v0
+    iget v8, p0, Lkl2;->q:F
 
     .line 32
-    const-wide/32 v2, 0x3b9aca00
-
     .line 33
+    iget-object v9, p0, Lkl2;->r:Ls52;
+
     .line 34
     .line 35
-    add-long/2addr v0, v2
+    iget-short v12, p0, Lkl2;->t:S
 
     .line 36
-    iput-wide v0, p0, Lel2;->y:J
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
     .line 37
+    invoke-static/range {v0 .. v12}, Loc7;->d(Ld52;Lko3;ZZJFFFLs52;Lv01;II)V
+
     .line 38
-    monitor-exit p0
-
     .line 39
-    iget-object v2, p0, Lel2;->q:Ltk6;
-
     .line 40
+    sget-object p0, Lk27;->a:Lk27;
+
     .line 41
-    new-instance v0, Ljava/lang/StringBuilder;
-
     .line 42
-    .line 43
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 44
-    .line 45
-    .line 46
-    iget-object v1, p0, Lel2;->l:Ljava/lang/String;
-
-    .line 47
-    .line 48
-    const-string v3, " ping"
-
-    .line 49
-    .line 50
-    invoke-static {v0, v1, v3}, Ly96;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 51
-    .line 52
-    .line 53
-    move-result-object v3
-
-    .line 54
-    new-instance v6, Lg7;
-
-    .line 55
-    .line 56
-    const/16 v0, 0x1d
-
-    .line 57
-    .line 58
-    invoke-direct {v6, p0, v0}, Lg7;-><init>(Ljava/lang/Object;B)V
-
-    .line 59
-    .line 60
-    .line 61
-    const/4 v7, 0x6
-
-    .line 62
-    const-wide/16 v4, 0x0
-
-    .line 63
-    .line 64
-    invoke-static/range {v2 .. v7}, Ltk6;->c(Ltk6;Ljava/lang/String;JLe62;I)V
-
-    .line 65
-    .line 66
-    .line 67
-    return-void
-
-    .line 68
-    :catchall_0
-    move-exception v0
-
-    .line 69
-    monitor-exit p0
-
-    .line 70
-    throw v0
-.end method
-
-.method public final l()V
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Ltx;->j()Z
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    if-nez p0, :cond_0
-
-    .line 6
-    .line 7
-    return-void
-
-    .line 8
-    :cond_0
-    new-instance p0, Ljava/net/SocketTimeoutException;
-
-    .line 9
-    .line 10
-    const-string v0, "timeout"
-
-    .line 11
-    .line 12
-    invoke-direct {p0, v0}, Ljava/net/SocketTimeoutException;-><init>(Ljava/lang/String;)V
-
-    .line 13
-    .line 14
-    .line 15
-    throw p0
+    return-object p0
 .end method

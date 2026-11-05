@@ -1,255 +1,246 @@
 .class public final Lnq3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Lpq3;
+.implements Lpi3;
+.implements Llk0;
 
 
-# static fields
-.field public static final a:Lnq3;
+# instance fields
+.field public a:J
 
-.field public static final b:Lma6;
+.field public final b:Lb32;
 
-.field public static final c:Lma6;
+.field public final c:Lyg1;
 
-.field public static final d:Lma6;
+.field public final d:Ltq3;
 
-.field public static final e:Lma6;
+.field public final e:Lkz2;
 
-.field public static final f:Lma6;
+.field public final f:Lzi0;
 
-.field public static final g:Lma6;
+.field public final g:Lvj0;
+
+.field public final h:Lek0;
+
+.field public final i:Ljava/lang/Double;
+
+.field public final j:Ljava/lang/Integer;
+
+.field public final k:Lng0;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Lb32;Lyg1;Ltq3;Lkz2;Lzi0;Lvj0;Lek0;Ljava/lang/Double;Ljava/lang/Integer;Lng0;)V
+    .locals 2
 
     .line 1
-    new-instance v0, Lnq3;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 5
     .line 6
-    sput-object v0, Lnq3;->a:Lnq3;
-
     .line 7
-    .line 8
-    const v0, 0x3f4ccccd    # 0.8f
+    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 8
     .line 9
     .line 10
-    .line 11
-    const/high16 v1, 0x43be0000    # 380.0f
+    invoke-virtual {p5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 11
     .line 12
     .line 13
-    const/4 v2, 0x0
+    invoke-virtual {p6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 14
-    const/4 v3, 0x4
-
     .line 15
-    invoke-static {v0, v1, v2, v3}, Lbf0;->S(FFLjava/lang/Object;I)Lma6;
-
     .line 16
+    invoke-virtual {p10}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 17
     .line 18
-    move-result-object v1
-
     .line 19
-    sput-object v1, Lnq3;->b:Lma6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 20
     .line 21
-    const v1, 0x3f19999a    # 0.6f
-
     .line 22
+    const-wide/16 v0, 0x0
+
     .line 23
     .line 24
-    const/high16 v4, 0x44480000    # 800.0f
+    iput-wide v0, p0, Lnq3;->a:J
 
     .line 25
     .line 26
-    invoke-static {v1, v4, v2, v3}, Lbf0;->S(FFLjava/lang/Object;I)Lma6;
+    iput-object p1, p0, Lnq3;->b:Lb32;
 
     .line 27
     .line 28
-    .line 29
-    move-result-object v1
+    iput-object p2, p0, Lnq3;->c:Lyg1;
 
+    .line 29
     .line 30
-    sput-object v1, Lnq3;->c:Lma6;
+    iput-object p3, p0, Lnq3;->d:Ltq3;
 
     .line 31
     .line 32
-    const/high16 v1, 0x43480000    # 200.0f
+    iput-object p4, p0, Lnq3;->e:Lkz2;
 
     .line 33
     .line 34
-    invoke-static {v0, v1, v2, v3}, Lbf0;->S(FFLjava/lang/Object;I)Lma6;
+    iput-object p5, p0, Lnq3;->f:Lzi0;
 
     .line 35
     .line 36
-    .line 37
-    move-result-object v0
+    iput-object p6, p0, Lnq3;->g:Lvj0;
 
+    .line 37
     .line 38
-    sput-object v0, Lnq3;->d:Lma6;
+    iput-object p7, p0, Lnq3;->h:Lek0;
 
     .line 39
     .line 40
-    const/high16 v0, 0x44c80000    # 1600.0f
+    iput-object p8, p0, Lnq3;->i:Ljava/lang/Double;
 
     .line 41
     .line 42
-    const/high16 v1, 0x3f800000    # 1.0f
+    iput-object p9, p0, Lnq3;->j:Ljava/lang/Integer;
 
     .line 43
     .line 44
-    invoke-static {v1, v0, v2, v3}, Lbf0;->S(FFLjava/lang/Object;I)Lma6;
+    iput-object p10, p0, Lnq3;->k:Lng0;
 
     .line 45
     .line 46
-    .line 47
-    move-result-object v0
-
-    .line 48
-    sput-object v0, Lnq3;->e:Lma6;
-
-    .line 49
-    .line 50
-    const v0, 0x456d8000    # 3800.0f
-
-    .line 51
-    .line 52
-    .line 53
-    invoke-static {v1, v0, v2, v3}, Lbf0;->S(FFLjava/lang/Object;I)Lma6;
-
-    .line 54
-    .line 55
-    .line 56
-    move-result-object v0
-
-    .line 57
-    sput-object v0, Lnq3;->f:Lma6;
-
-    .line 58
-    .line 59
-    invoke-static {v1, v4, v2, v3}, Lbf0;->S(FFLjava/lang/Object;I)Lma6;
-
-    .line 60
-    .line 61
-    .line 62
-    move-result-object v0
-
-    .line 63
-    sput-object v0, Lnq3;->g:Lma6;
-
-    .line 64
-    .line 65
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lma6;
+.method public final a()Lyg1;
     .locals 0
 
     .line 1
-    sget-object p0, Lnq3;->c:Lma6;
+    iget-object p0, p0, Lnq3;->c:Lyg1;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 4
-    .line 5
-    .line 6
     return-object p0
 .end method
 
-.method public final b()Lma6;
+.method public final b()Lzi0;
     .locals 0
 
     .line 1
-    sget-object p0, Lnq3;->g:Lma6;
+    iget-object p0, p0, Lnq3;->f:Lzi0;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 4
-    .line 5
-    .line 6
     return-object p0
 .end method
 
-.method public final c()Lma6;
+.method public final c()Ljava/lang/Double;
     .locals 0
 
     .line 1
-    sget-object p0, Lnq3;->e:Lma6;
+    iget-object p0, p0, Lnq3;->i:Ljava/lang/Double;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 4
-    .line 5
-    .line 6
     return-object p0
 .end method
 
-.method public final d()Lma6;
+.method public final e()Lb32;
     .locals 0
 
     .line 1
-    sget-object p0, Lnq3;->d:Lma6;
+    iget-object p0, p0, Lnq3;->b:Lb32;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 4
-    .line 5
-    .line 6
     return-object p0
 .end method
 
-.method public final e()Lma6;
+.method public final f()Lvj0;
     .locals 0
 
     .line 1
-    sget-object p0, Lnq3;->f:Lma6;
+    iget-object p0, p0, Lnq3;->g:Lvj0;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 4
-    .line 5
-    .line 6
     return-object p0
 .end method
 
-.method public final f()Lma6;
+.method public final getLayoutDirection()Lkz2;
     .locals 0
 
     .line 1
-    sget-object p0, Lnq3;->b:Lma6;
+    iget-object p0, p0, Lnq3;->e:Lkz2;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-object p0
+.end method
 
-    .line 4
-    .line 5
-    .line 6
+.method public final h()J
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lnq3;->a:J
+
+    .line 2
+    .line 3
+    return-wide v0
+.end method
+
+.method public final i()Ljava/lang/Integer;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lnq3;->j:Ljava/lang/Integer;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public final j()Lng0;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lnq3;->k:Lng0;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public final k()Ltq3;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lnq3;->d:Ltq3;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public final m()Lek0;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lnq3;->h:Lek0;
+
+    .line 2
+    .line 3
     return-object p0
 .end method

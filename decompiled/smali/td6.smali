@@ -1,440 +1,285 @@
-.class public final Ltd6;
-.super Lkk3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Ltd6;
+.super Ljava/lang/Object;
+.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
 
 # interfaces
-.implements Landroid/view/SubMenu;
+.implements Lo52;
 
 
 # instance fields
-.field public final A:Lqk3;
+.field public final synthetic j:B
 
-.field public final z:Lkk3;
+.field public final synthetic k:Lmd6;
+
+.field public final synthetic l:Z
+
+.field public final synthetic m:Ljava/util/Set;
+
+.field public final synthetic n:Lo52;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lkk3;Lqk3;)V
+.method public synthetic constructor <init>(Lmd6;ZLjava/util/Set;Lo52;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1}, Lkk3;-><init>(Landroid/content/Context;)V
+    iput-byte p5, p0, Ltd6;->j:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Ltd6;->k:Lmd6;
+
     .line 4
-    iput-object p2, p0, Ltd6;->z:Lkk3;
-
     .line 5
-    .line 6
-    iput-object p3, p0, Ltd6;->A:Lqk3;
+    iput-boolean p2, p0, Ltd6;->l:Z
 
+    .line 6
     .line 7
+    iput-object p3, p0, Ltd6;->m:Ljava/util/Set;
+
     .line 8
+    .line 9
+    iput-object p4, p0, Ltd6;->n:Lo52;
+
+    .line 10
+    .line 11
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 12
+    .line 13
+    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final d(Lqk3;)Z
-    .locals 0
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 13
 
     .line 1
-    iget-object p0, p0, Ltd6;->z:Lkk3;
+    iget-byte v0, p0, Ltd6;->j:B
 
     .line 2
     .line 3
-    invoke-virtual {p0, p1}, Lkk3;->d(Lqk3;)Z
+    sget-object v1, Lk27;->a:Lk27;
 
     .line 4
     .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final e(Lkk3;Landroid/view/MenuItem;)Z
-    .locals 1
-
-    .line 1
-    invoke-super {p0, p1, p2}, Lkk3;->e(Lkk3;Landroid/view/MenuItem;)Z
-
-    .line 2
-    .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    if-nez v0, :cond_1
+    const v2, 0x2fd4df92
 
     .line 6
     .line 7
-    iget-object p0, p0, Ltd6;->z:Lkk3;
-
     .line 8
+    const/4 v3, 0x1
+
     .line 9
-    invoke-virtual {p0, p1, p2}, Lkk3;->e(Lkk3;Landroid/view/MenuItem;)Z
+    check-cast p1, Ly33;
 
     .line 10
     .line 11
+    packed-switch v0, :pswitch_data_0
+
     .line 12
-    move-result p0
-
     .line 13
-    if-eqz p0, :cond_0
-
     .line 14
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 15
-    goto :goto_0
-
     .line 16
-    :cond_0
-    const/4 p0, 0x0
-
     .line 17
-    return p0
+    iget-object v6, p0, Ltd6;->k:Lmd6;
 
     .line 18
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
     .line 19
-    return p0
-.end method
+    iget-object v5, v6, Lmd6;->k:Ljava/util/List;
 
-.method public final f(Lqk3;)Z
-    .locals 0
+    .line 20
+    .line 21
+    new-instance v0, Lnd6;
 
-    .line 1
-    iget-object p0, p0, Ltd6;->z:Lkk3;
+    .line 22
+    .line 23
+    invoke-direct {v0, v3}, Lnd6;-><init>(B)V
 
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lkk3;->f(Lqk3;)Z
+    .line 24
+    .line 25
+    .line 26
+    invoke-interface {v5}, Ljava/util/List;->size()I
 
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
+    .line 27
+    .line 28
+    .line 29
+    move-result v11
 
-    .line 7
-    return p0
-.end method
+    .line 30
+    new-instance v12, Lbj5;
 
-.method public final getItem()Landroid/view/MenuItem;
-    .locals 0
+    .line 31
+    .line 32
+    const/4 v4, 0x4
 
-    .line 1
-    iget-object p0, p0, Ltd6;->A:Lqk3;
+    .line 33
+    invoke-direct {v12, v0, v5, v4}, Lbj5;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
 
-    .line 2
-    .line 3
-    return-object p0
-.end method
+    .line 34
+    .line 35
+    .line 36
+    new-instance v0, Lf0;
 
-.method public final j()Ljava/lang/String;
-    .locals 1
+    .line 37
+    .line 38
+    const/16 v4, 0x16
 
-    .line 1
-    iget-object p0, p0, Ltd6;->A:Lqk3;
+    .line 39
+    .line 40
+    invoke-direct {v0, v5, v4}, Lf0;-><init>(Ljava/util/List;B)V
 
-    .line 2
-    .line 3
-    iget p0, p0, Lqk3;->a:I
+    .line 41
+    .line 42
+    .line 43
+    new-instance v4, Lwd6;
 
-    .line 4
-    .line 5
-    if-nez p0, :cond_0
+    .line 44
+    .line 45
+    const/4 v10, 0x1
 
-    .line 6
-    .line 7
-    const/4 p0, 0x0
+    .line 46
+    iget-boolean v7, p0, Ltd6;->l:Z
 
-    .line 8
-    return-object p0
+    .line 47
+    .line 48
+    iget-object v8, p0, Ltd6;->m:Ljava/util/Set;
 
-    .line 9
-    :cond_0
-    const-string v0, "android:menu:actionviewstates:"
+    .line 49
+    .line 50
+    iget-object v9, p0, Ltd6;->n:Lo52;
 
-    .line 10
-    .line 11
-    invoke-static {p0, v0}, Lhs5;->k(ILjava/lang/String;)Ljava/lang/String;
+    .line 51
+    .line 52
+    invoke-direct/range {v4 .. v10}, Lwd6;-><init>(Ljava/util/List;Lmd6;ZLjava/util/Set;Lo52;B)V
 
-    .line 12
-    .line 13
-    .line 14
-    move-result-object p0
+    .line 53
+    .line 54
+    .line 55
+    new-instance p0, Loy0;
 
-    .line 15
-    return-object p0
-.end method
+    .line 56
+    .line 57
+    invoke-direct {p0, v2, v3, v4}, Loy0;-><init>(IZLa62;)V
 
-.method public final k()Lkk3;
-    .locals 0
+    .line 58
+    .line 59
+    .line 60
+    invoke-virtual {p1, v11, v12, v0, p0}, Ly33;->Z(ILo52;Lo52;Loy0;)V
 
-    .line 1
-    iget-object p0, p0, Ltd6;->z:Lkk3;
+    .line 61
+    .line 62
+    .line 63
+    return-object v1
 
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lkk3;->k()Lkk3;
+    .line 64
+    :pswitch_0
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
+    .line 65
+    .line 66
+    .line 67
+    iget-object v6, p0, Ltd6;->k:Lmd6;
 
-    .line 7
-    return-object p0
-.end method
+    .line 68
+    .line 69
+    iget-object v5, v6, Lmd6;->k:Ljava/util/List;
 
-.method public final m()Z
-    .locals 0
+    .line 70
+    .line 71
+    new-instance v0, Lnd6;
 
-    .line 1
-    iget-object p0, p0, Ltd6;->z:Lkk3;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lkk3;->m()Z
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final n()Z
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Ltd6;->z:Lkk3;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lkk3;->n()Z
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final o()Z
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Ltd6;->z:Lkk3;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lkk3;->o()Z
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final setGroupDividerEnabled(Z)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Ltd6;->z:Lkk3;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lkk3;->setGroupDividerEnabled(Z)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public final setHeaderIcon(I)Landroid/view/SubMenu;
-    .locals 6
-
+    .line 72
+    .line 73
     const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    .line 74
+    invoke-direct {v0, v4}, Lnd6;-><init>(B)V
 
-    const/4 v1, 0x0
+    .line 75
+    .line 76
+    .line 77
+    invoke-interface {v5}, Ljava/util/List;->size()I
 
-    const/4 v2, 0x0
+    .line 78
+    .line 79
+    .line 80
+    move-result v11
 
-    move-object v0, p0
+    .line 81
+    new-instance v12, Lbj5;
 
-    move v3, p1
+    .line 82
+    .line 83
+    const/4 v4, 0x3
 
-    .line 11
-    invoke-virtual/range {v0 .. v5}, Lkk3;->u(ILjava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Landroid/view/View;)V
+    .line 84
+    invoke-direct {v12, v0, v5, v4}, Lbj5;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
 
-    return-object v0
-.end method
+    .line 85
+    .line 86
+    .line 87
+    new-instance v0, Lf0;
 
-.method public final setHeaderIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/SubMenu;
-    .locals 6
+    .line 88
+    .line 89
+    const/16 v4, 0x15
 
-    .line 1
-    const/4 v3, 0x0
+    .line 90
+    .line 91
+    invoke-direct {v0, v5, v4}, Lf0;-><init>(Ljava/util/List;B)V
 
-    .line 2
-    const/4 v5, 0x0
+    .line 92
+    .line 93
+    .line 94
+    new-instance v4, Lwd6;
 
-    .line 3
-    const/4 v1, 0x0
+    .line 95
+    .line 96
+    const/4 v10, 0x0
 
-    .line 4
-    const/4 v2, 0x0
+    .line 97
+    iget-boolean v7, p0, Ltd6;->l:Z
 
-    .line 5
-    move-object v0, p0
+    .line 98
+    .line 99
+    iget-object v8, p0, Ltd6;->m:Ljava/util/Set;
 
-    .line 6
-    move-object v4, p1
+    .line 100
+    .line 101
+    iget-object v9, p0, Ltd6;->n:Lo52;
 
-    .line 7
-    invoke-virtual/range {v0 .. v5}, Lkk3;->u(ILjava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Landroid/view/View;)V
+    .line 102
+    .line 103
+    invoke-direct/range {v4 .. v10}, Lwd6;-><init>(Ljava/util/List;Lmd6;ZLjava/util/Set;Lo52;B)V
 
-    .line 8
-    .line 9
-    .line 10
-    return-object v0
-.end method
+    .line 104
+    .line 105
+    .line 106
+    new-instance p0, Loy0;
 
-.method public final setHeaderTitle(I)Landroid/view/SubMenu;
-    .locals 6
+    .line 107
+    .line 108
+    invoke-direct {p0, v2, v3, v4}, Loy0;-><init>(IZLa62;)V
 
-    const/4 v4, 0x0
+    .line 109
+    .line 110
+    .line 111
+    invoke-virtual {p1, v11, v12, v0, p0}, Ly33;->Z(ILo52;Lo52;Loy0;)V
 
-    const/4 v5, 0x0
+    .line 112
+    .line 113
+    .line 114
+    return-object v1
 
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    move-object v0, p0
-
-    move v1, p1
-
-    .line 11
-    invoke-virtual/range {v0 .. v5}, Lkk3;->u(ILjava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Landroid/view/View;)V
-
-    return-object v0
-.end method
-
-.method public final setHeaderTitle(Ljava/lang/CharSequence;)Landroid/view/SubMenu;
-    .locals 6
-
-    .line 1
-    const/4 v4, 0x0
-
-    .line 2
-    const/4 v5, 0x0
-
-    .line 3
-    const/4 v1, 0x0
-
-    .line 4
-    const/4 v3, 0x0
-
-    .line 5
-    move-object v0, p0
-
-    .line 6
-    move-object v2, p1
-
-    .line 7
-    invoke-virtual/range {v0 .. v5}, Lkk3;->u(ILjava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Landroid/view/View;)V
-
-    .line 8
-    .line 9
-    .line 10
-    return-object v0
-.end method
-
-.method public final setHeaderView(Landroid/view/View;)Landroid/view/SubMenu;
-    .locals 6
-
-    .line 1
-    const/4 v3, 0x0
-
-    .line 2
-    const/4 v4, 0x0
-
-    .line 3
-    const/4 v1, 0x0
-
-    .line 4
-    const/4 v2, 0x0
-
-    .line 5
-    move-object v0, p0
-
-    .line 6
-    move-object v5, p1
-
-    .line 7
-    invoke-virtual/range {v0 .. v5}, Lkk3;->u(ILjava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Landroid/view/View;)V
-
-    .line 8
-    .line 9
-    .line 10
-    return-object v0
-.end method
-
-.method public final setIcon(I)Landroid/view/SubMenu;
-    .locals 1
-
-    .line 7
-    iget-object v0, p0, Ltd6;->A:Lqk3;
-
-    invoke-virtual {v0, p1}, Lqk3;->setIcon(I)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public final setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/SubMenu;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Ltd6;->A:Lqk3;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0, p1}, Lqk3;->setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/MenuItem;
-
-    .line 4
-    .line 5
-    .line 6
-    return-object p0
-.end method
-
-.method public final setQwertyMode(Z)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Ltd6;->z:Lkk3;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lkk3;->setQwertyMode(Z)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
+    .line 115
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
