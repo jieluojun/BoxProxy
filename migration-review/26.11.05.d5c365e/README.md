@@ -107,3 +107,11 @@ python3 scripts/customization_bundle.py bindings --bundle .tools/current.boxpatc
 已知问题：
 - 绑定中的 `targetTreeSha256` 仍为旧值 `b4d1cf08…`，本环境重新解码得到的树哈希为 `560428af…`，两次全新解码结果一致，原因未知（环境重置后出现）。在用绑定进入 apply 前必须重新生成并核对。
 - 1 个冲突 `Bindings unreviewed` 为设计使然，未设置 `reviewed: true`。
+
+## 第二批：字段/签名位置投票（已排除）
+
+尝试用已映射类的字段声明顺序补充未解析类型：仅 4 个候选通过"至少两个类支持"的规则，
+但其中 `Lzu6;→Lzm;` 被方法调用证据否定（`AppApplication.onCreate` 中的 `Lzu6;->m(Context,Lzq,ZZ)V`
+对应 139 版 `Lpr;->p(Context,Ltr,ZZ)V`，`zm.smali` 中不存在该方法）。因此字段位置投票不作为候选来源，已排除。
+
+结论：剩余 175 个未解析类型无法仅靠自动证据可靠确定，需要逐个人工判断。
