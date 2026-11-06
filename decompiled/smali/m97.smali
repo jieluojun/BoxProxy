@@ -1,25 +1,24 @@
-.class public final synthetic Lm97;
+.class public final Lm97;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Landroid/webkit/DownloadListener;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final synthetic a:Ljava/lang/String;
+.field public final a:Z
 
-.field public final synthetic b:Las3;
+.field public final b:Ljava/lang/Integer;
 
-.field public final synthetic c:Lo52;
+.field public final c:Z
 
-.field public final synthetic d:Ljava/lang/String;
+.field public final d:Ljava/lang/Integer;
 
-.field public final synthetic e:Lnf3;
+.field public final e:Z
+
+.field public final f:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;Las3;Lo52;Ljava/lang/String;Lnf3;)V
+.method public constructor <init>(ZLjava/lang/Integer;ZLjava/lang/Integer;ZZ)V
     .locals 0
 
     .line 1
@@ -28,260 +27,441 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lm97;->a:Ljava/lang/String;
+    iput-boolean p1, p0, Lm97;->a:Z
 
     .line 5
     .line 6
-    iput-object p2, p0, Lm97;->b:Las3;
+    iput-object p2, p0, Lm97;->b:Ljava/lang/Integer;
 
     .line 7
     .line 8
-    iput-object p3, p0, Lm97;->c:Lo52;
+    iput-boolean p3, p0, Lm97;->c:Z
 
     .line 9
     .line 10
-    iput-object p4, p0, Lm97;->d:Ljava/lang/String;
+    iput-object p4, p0, Lm97;->d:Ljava/lang/Integer;
 
     .line 11
     .line 12
-    iput-object p5, p0, Lm97;->e:Lnf3;
+    iput-boolean p5, p0, Lm97;->e:Z
 
     .line 13
     .line 14
+    iput-boolean p6, p0, Lm97;->f:Z
+
+    .line 15
+    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public final onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)V
-    .locals 7
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v0, 0x1
 
     .line 2
+    if-ne p0, p1, :cond_0
+
     .line 3
     .line 4
-    const-string p5, "blob:"
+    return v0
 
     .line 5
-    .line 6
-    const/4 p6, 0x0
+    :cond_0
+    instance-of v1, p1, Lm97;
 
+    .line 6
     .line 7
-    invoke-static {p1, p5, p6}, Lpb6;->k0(Ljava/lang/String;Ljava/lang/String;Z)Z
+    const/4 v2, 0x0
 
     .line 8
+    if-nez v1, :cond_1
+
     .line 9
     .line 10
-    move-result p5
+    return v2
 
     .line 11
-    if-nez p5, :cond_4
+    :cond_1
+    check-cast p1, Lm97;
 
     .line 12
     .line 13
-    const-string p5, "data:"
+    iget-boolean v1, p0, Lm97;->a:Z
 
     .line 14
     .line 15
-    invoke-static {p1, p5, p6}, Lpb6;->k0(Ljava/lang/String;Ljava/lang/String;Z)Z
+    iget-boolean v3, p1, Lm97;->a:Z
+
+    .line 16
+    .line 17
+    if-eq v1, v3, :cond_2
+
+    .line 18
+    .line 19
+    return v2
+
+    .line 20
+    :cond_2
+    iget-object v1, p0, Lm97;->b:Ljava/lang/Integer;
+
+    .line 21
+    .line 22
+    iget-object v3, p1, Lm97;->b:Ljava/lang/Integer;
+
+    .line 23
+    .line 24
+    invoke-static {v1, v3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 25
+    .line 26
+    .line 27
+    move-result v1
+
+    .line 28
+    if-nez v1, :cond_3
+
+    .line 29
+    .line 30
+    return v2
+
+    .line 31
+    :cond_3
+    iget-boolean v1, p0, Lm97;->c:Z
+
+    .line 32
+    .line 33
+    iget-boolean v3, p1, Lm97;->c:Z
+
+    .line 34
+    .line 35
+    if-eq v1, v3, :cond_4
+
+    .line 36
+    .line 37
+    return v2
+
+    .line 38
+    :cond_4
+    iget-object v1, p0, Lm97;->d:Ljava/lang/Integer;
+
+    .line 39
+    .line 40
+    iget-object v3, p1, Lm97;->d:Ljava/lang/Integer;
+
+    .line 41
+    .line 42
+    invoke-static {v1, v3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 43
+    .line 44
+    .line 45
+    move-result v1
+
+    .line 46
+    if-nez v1, :cond_5
+
+    .line 47
+    .line 48
+    return v2
+
+    .line 49
+    :cond_5
+    iget-boolean v1, p0, Lm97;->e:Z
+
+    .line 50
+    .line 51
+    iget-boolean v3, p1, Lm97;->e:Z
+
+    .line 52
+    .line 53
+    if-eq v1, v3, :cond_6
+
+    .line 54
+    .line 55
+    return v2
+
+    .line 56
+    :cond_6
+    iget-boolean p0, p0, Lm97;->f:Z
+
+    .line 57
+    .line 58
+    iget-boolean p1, p1, Lm97;->f:Z
+
+    .line 59
+    .line 60
+    if-eq p0, p1, :cond_7
+
+    .line 61
+    .line 62
+    return v2
+
+    .line 63
+    :cond_7
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 4
+
+    .line 1
+    iget-boolean v0, p0, Lm97;->a:Z
+
+    .line 2
+    .line 3
+    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    const/16 v1, 0x1f
+
+    .line 8
+    .line 9
+    mul-int/2addr v0, v1
+
+    .line 10
+    const/4 v2, 0x0
+
+    .line 11
+    iget-object v3, p0, Lm97;->b:Ljava/lang/Integer;
+
+    .line 12
+    .line 13
+    if-nez v3, :cond_0
+
+    .line 14
+    .line 15
+    move v3, v2
+
+    .line 16
+    goto :goto_0
+
+    .line 17
+    :cond_0
+    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v3
+
+    .line 21
+    :goto_0
+    add-int/2addr v0, v3
+
+    .line 22
+    mul-int/2addr v0, v1
+
+    .line 23
+    iget-boolean v3, p0, Lm97;->c:Z
+
+    .line 24
+    .line 25
+    invoke-static {v0, v1, v3}, Loc1;->f(IIZ)I
+
+    .line 26
+    .line 27
+    .line 28
+    move-result v0
+
+    .line 29
+    iget-object v3, p0, Lm97;->d:Ljava/lang/Integer;
+
+    .line 30
+    .line 31
+    if-nez v3, :cond_1
+
+    .line 32
+    .line 33
+    goto :goto_1
+
+    .line 34
+    :cond_1
+    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
+
+    .line 35
+    .line 36
+    .line 37
+    move-result v2
+
+    .line 38
+    :goto_1
+    add-int/2addr v0, v2
+
+    .line 39
+    mul-int/2addr v0, v1
+
+    .line 40
+    iget-boolean v2, p0, Lm97;->e:Z
+
+    .line 41
+    .line 42
+    invoke-static {v0, v1, v2}, Loc1;->f(IIZ)I
+
+    .line 43
+    .line 44
+    .line 45
+    move-result v0
+
+    .line 46
+    iget-boolean p0, p0, Lm97;->f:Z
+
+    .line 47
+    .line 48
+    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
+
+    .line 49
+    .line 50
+    .line 51
+    move-result p0
+
+    .line 52
+    add-int/2addr p0, v0
+
+    .line 53
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "WebSocketExtensions(perMessageDeflate="
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-boolean v1, p0, Lm97;->a:Z
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const-string v1, ", clientMaxWindowBits="
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 16
     .line 17
     .line 18
-    move-result p5
+    iget-object v1, p0, Lm97;->b:Ljava/lang/Integer;
 
     .line 19
-    if-eqz p5, :cond_0
-
     .line 20
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
     .line 21
-    goto :goto_1
-
     .line 22
-    :cond_0
-    invoke-static {p1, p3, p4}, Landroid/webkit/URLUtil;->guessFileName(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
     .line 23
+    const-string v1, ", clientNoContextTakeover="
+
     .line 24
     .line 25
-    move-result-object v2
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 26
-    const-string p3, "application/octet-stream"
-
     .line 27
     .line 28
-    if-eqz p4, :cond_2
+    iget-boolean v1, p0, Lm97;->c:Z
 
     .line 29
     .line 30
-    invoke-static {p4}, Lib6;->A0(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     .line 31
     .line 32
     .line 33
-    move-result p5
+    const-string v1, ", serverMaxWindowBits="
 
     .line 34
-    if-eqz p5, :cond_1
-
     .line 35
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 36
-    move-object p4, p3
-
     .line 37
-    :cond_1
-    move-object v3, p4
-
     .line 38
-    goto :goto_0
+    iget-object v1, p0, Lm97;->d:Ljava/lang/Integer;
 
     .line 39
-    :cond_2
-    move-object v3, p3
-
     .line 40
-    :goto_0
-    invoke-static {}, Landroid/webkit/CookieManager;->getInstance()Landroid/webkit/CookieManager;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 41
     .line 42
     .line 43
-    move-result-object p3
+    const-string v1, ", serverNoContextTakeover="
 
     .line 44
-    invoke-virtual {p3, p1}, Landroid/webkit/CookieManager;->getCookie(Ljava/lang/String;)Ljava/lang/String;
-
     .line 45
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 46
     .line 47
-    move-result-object v5
-
     .line 48
-    new-instance v0, Lym4;
+    iget-boolean v1, p0, Lm97;->e:Z
 
     .line 49
     .line 50
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     .line 51
     .line 52
     .line 53
-    if-nez p2, :cond_3
+    const-string v1, ", unknownValues="
 
     .line 54
     .line 55
-    const-string p2, ""
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 56
     .line 57
-    :cond_3
-    move-object v4, p2
-
     .line 58
-    iget-object v6, p0, Lm97;->a:Ljava/lang/String;
+    iget-boolean p0, p0, Lm97;->f:Z
 
     .line 59
     .line 60
-    move-object v1, p1
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
     .line 61
-    invoke-direct/range {v0 .. v6}, Lym4;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
     .line 62
     .line 63
+    const/16 p0, 0x29
+
     .line 64
-    iget-object p1, p0, Lm97;->b:Las3;
-
     .line 65
-    .line 66
-    invoke-interface {p1, v0}, Las3;->setValue(Ljava/lang/Object;)V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
+    .line 66
     .line 67
     .line 68
-    .line 69
-    new-instance p1, Landroid/content/Intent;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    .line 69
     .line 70
     .line 71
-    const-string p2, "android.intent.action.CREATE_DOCUMENT"
+    move-result-object p0
 
     .line 72
-    .line 73
-    invoke-direct {p1, p2}, Landroid/content/Intent;-><init>(Ljava/lang/String;)V
-
-    .line 74
-    .line 75
-    .line 76
-    const-string p2, "android.intent.category.OPENABLE"
-
-    .line 77
-    .line 78
-    invoke-virtual {p1, p2}, Landroid/content/Intent;->addCategory(Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 79
-    .line 80
-    .line 81
-    invoke-virtual {p1, v3}, Landroid/content/Intent;->setType(Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 82
-    .line 83
-    .line 84
-    const-string p2, "android.intent.extra.TITLE"
-
-    .line 85
-    .line 86
-    invoke-virtual {p1, p2, v2}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
-
-    .line 87
-    .line 88
-    .line 89
-    new-instance p2, Landroid/os/Handler;
-
-    .line 90
-    .line 91
-    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
-
-    .line 92
-    .line 93
-    .line 94
-    move-result-object p3
-
-    .line 95
-    invoke-direct {p2, p3}, Landroid/os/Handler;-><init>(Landroid/os/Looper;)V
-
-    .line 96
-    .line 97
-    .line 98
-    new-instance p3, Ln97;
-
-    .line 99
-    .line 100
-    iget-object p4, p0, Lm97;->c:Lo52;
-
-    .line 101
-    .line 102
-    iget-object p5, p0, Lm97;->d:Ljava/lang/String;
-
-    .line 103
-    .line 104
-    iget-object p0, p0, Lm97;->e:Lnf3;
-
-    .line 105
-    .line 106
-    invoke-direct {p3, p4, p5, p0, p1}, Ln97;-><init>(Lo52;Ljava/lang/String;Lnf3;Landroid/content/Intent;)V
-
-    .line 107
-    .line 108
-    .line 109
-    invoke-virtual {p2, p3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 110
-    .line 111
-    .line 112
-    :cond_4
-    :goto_1
-    return-void
+    return-object p0
 .end method

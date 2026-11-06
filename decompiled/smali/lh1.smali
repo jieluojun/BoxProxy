@@ -1,74 +1,46 @@
-.class public final synthetic Llh1;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class public final Llh1;
+.super Lz81;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final synthetic j:Lmh1;
+.field public synthetic j:Ljava/lang/Object;
 
-.field public final synthetic k:B
-
-.field public final synthetic l:Ljava/lang/Object;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lmh1;ILjava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p1, p0, Llh1;->j:Lmh1;
-
-    .line 5
-    .line 6
-    iput-byte p2, p0, Llh1;->k:B
-
-    .line 7
-    .line 8
-    iput-object p3, p0, Llh1;->l:Ljava/lang/Object;
-
-    .line 9
-    .line 10
-    return-void
-.end method
+.field public k:I
 
 
 # virtual methods
-.method public final run()V
-    .locals 2
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    iget-object v0, p0, Llh1;->j:Lmh1;
+    iput-object p1, p0, Llh1;->j:Ljava/lang/Object;
 
     .line 2
     .line 3
-    iget-object v0, v0, Lmh1;->c:Ljava/lang/Object;
+    iget p1, p0, Llh1;->k:I
 
     .line 4
     .line 5
-    check-cast v0, Lht4;
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
-    iget-byte v1, p0, Llh1;->k:B
+    or-int/2addr p1, v0
 
     .line 8
+    iput p1, p0, Llh1;->k:I
+
     .line 9
-    iget-object p0, p0, Llh1;->l:Ljava/lang/Object;
-
     .line 10
-    .line 11
-    invoke-interface {v0, v1, p0}, Lht4;->k(ILjava/lang/Object;)V
+    invoke-static {p0}, Laq;->A(Lz81;)V
 
+    .line 11
     .line 12
     .line 13
+    sget-object p0, Lbc1;->j:Lbc1;
+
     .line 14
-    return-void
+    .line 15
+    return-object p0
 .end method

@@ -1,315 +1,89 @@
-.class public final synthetic Lui;
+.class public abstract Lui;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Ld52;
-
-
-# instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Ljava/lang/String;
-
-.field public final synthetic l:Las3;
-
-.field public final synthetic m:Landroid/content/Context;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;Las3;Landroid/content/Context;B)V
-    .locals 0
+.method public static final a(JJII[Landroid/view/MotionEvent$PointerProperties;[Landroid/view/MotionEvent$PointerCoords;IIFFIIIII)Landroid/view/MotionEvent;
+    .locals 19
 
     .line 1
-    iput-byte p4, p0, Lui;->j:B
+    const/16 v16, 0x0
 
     .line 2
     .line 3
-    iput-object p1, p0, Lui;->k:Ljava/lang/String;
+    move-wide/from16 v1, p0
 
     .line 4
     .line 5
-    iput-object p2, p0, Lui;->l:Las3;
+    move-wide/from16 v3, p2
 
     .line 6
     .line 7
-    iput-object p3, p0, Lui;->m:Landroid/content/Context;
+    move/from16 v5, p4
 
     .line 8
     .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    move/from16 v6, p5
 
     .line 10
     .line 11
+    move-object/from16 v7, p6
+
     .line 12
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 6
-
-    .line 1
-    iget-byte v0, p0, Lui;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, Lk27;->a:Lk27;
-
-    .line 4
-    .line 5
-    const/4 v2, 0x0
-
-    .line 6
-    const-string v3, "api_config_reveal_preferences"
-
-    .line 7
-    .line 8
-    iget-object v4, p0, Lui;->m:Landroid/content/Context;
-
-    .line 9
-    .line 10
-    iget-object v5, p0, Lui;->l:Las3;
-
-    .line 11
-    .line 12
-    iget-object p0, p0, Lui;->k:Ljava/lang/String;
-
     .line 13
-    .line 14
-    packed-switch v0, :pswitch_data_0
+    move-object/from16 v8, p7
 
+    .line 14
     .line 15
+    move/from16 v9, p8
+
     .line 16
     .line 17
-    invoke-interface {v5}, Lu96;->getValue()Ljava/lang/Object;
+    move/from16 v10, p9
 
     .line 18
     .line 19
-    .line 20
-    move-result-object v0
+    move/from16 v11, p10
 
+    .line 20
     .line 21
-    check-cast v0, Ljava/lang/Boolean;
+    move/from16 v12, p11
 
     .line 22
     .line 23
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
+    move/from16 v13, p12
 
     .line 24
     .line 25
-    .line 26
-    move-result v0
+    move/from16 v14, p13
 
+    .line 26
     .line 27
-    xor-int/lit8 v0, v0, 0x1
+    move/from16 v15, p14
 
     .line 28
     .line 29
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    move/from16 v17, p15
 
     .line 30
     .line 31
-    .line 32
-    move-result-object v0
+    move/from16 v18, p16
 
+    .line 32
     .line 33
-    invoke-interface {v5, v0}, Las3;->setValue(Ljava/lang/Object;)V
+    invoke-static/range {v1 .. v18}, Landroid/view/MotionEvent;->obtain(JJII[Landroid/view/MotionEvent$PointerProperties;[Landroid/view/MotionEvent$PointerCoords;IIFFIIIIII)Landroid/view/MotionEvent;
 
     .line 34
     .line 35
     .line 36
-    if-eqz p0, :cond_0
+    move-result-object v0
 
     .line 37
-    .line 38
-    invoke-interface {v5}, Lu96;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 38
     .line 39
     .line 40
-    .line 41
-    move-result-object v0
-
-    .line 42
-    check-cast v0, Ljava/lang/Boolean;
-
-    .line 43
-    .line 44
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    .line 45
-    .line 46
-    .line 47
-    move-result v0
-
-    .line 48
-    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 49
-    .line 50
-    .line 51
-    invoke-virtual {v4}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    .line 52
-    .line 53
-    .line 54
-    move-result-object v4
-
-    .line 55
-    invoke-virtual {v4, v3, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    .line 56
-    .line 57
-    .line 58
-    move-result-object v2
-
-    .line 59
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 60
-    .line 61
-    .line 62
-    invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    .line 63
-    .line 64
-    .line 65
-    move-result-object v2
-
-    .line 66
-    invoke-interface {v2, p0, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
-
-    .line 67
-    .line 68
-    .line 69
-    move-result-object p0
-
-    .line 70
-    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    .line 71
-    .line 72
-    .line 73
-    :cond_0
-    return-object v1
-
-    .line 74
-    :pswitch_0
-    invoke-interface {v5}, Lu96;->getValue()Ljava/lang/Object;
-
-    .line 75
-    .line 76
-    .line 77
-    move-result-object v0
-
-    .line 78
-    check-cast v0, Ljava/lang/Boolean;
-
-    .line 79
-    .line 80
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    .line 81
-    .line 82
-    .line 83
-    move-result v0
-
-    .line 84
-    xor-int/lit8 v0, v0, 0x1
-
-    .line 85
-    .line 86
-    invoke-static {v0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 87
-    .line 88
-    .line 89
-    move-result-object v0
-
-    .line 90
-    invoke-interface {v5, v0}, Las3;->setValue(Ljava/lang/Object;)V
-
-    .line 91
-    .line 92
-    .line 93
-    if-eqz p0, :cond_1
-
-    .line 94
-    .line 95
-    invoke-interface {v5}, Lu96;->getValue()Ljava/lang/Object;
-
-    .line 96
-    .line 97
-    .line 98
-    move-result-object v0
-
-    .line 99
-    check-cast v0, Ljava/lang/Boolean;
-
-    .line 100
-    .line 101
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    .line 102
-    .line 103
-    .line 104
-    move-result v0
-
-    .line 105
-    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 106
-    .line 107
-    .line 108
-    invoke-virtual {v4}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
-    .line 109
-    .line 110
-    .line 111
-    move-result-object v4
-
-    .line 112
-    invoke-virtual {v4, v3, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    .line 113
-    .line 114
-    .line 115
-    move-result-object v2
-
-    .line 116
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 117
-    .line 118
-    .line 119
-    invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    .line 120
-    .line 121
-    .line 122
-    move-result-object v2
-
-    .line 123
-    invoke-interface {v2, p0, v0}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
-
-    .line 124
-    .line 125
-    .line 126
-    move-result-object p0
-
-    .line 127
-    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    .line 128
-    .line 129
-    .line 130
-    :cond_1
-    return-object v1
-
-    .line 131
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object v0
 .end method

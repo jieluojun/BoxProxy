@@ -1,6 +1,6 @@
-.class public final Lra5$a;
+.class public final Lfc5$a;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
 .implements Landroid/app/Application$ActivityLifecycleCallbacks;
@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lra5;
+    value = Lfc5;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,7 +18,7 @@
 
 
 # static fields
-.field public static final Companion:Lqa5;
+.field public static final Companion:Lec5;
 
 
 # direct methods
@@ -26,7 +26,7 @@
     .locals 1
 
     .line 1
-    new-instance v0, Lqa5;
+    new-instance v0, Lec5;
 
     .line 2
     .line 3
@@ -35,7 +35,7 @@
     .line 4
     .line 5
     .line 6
-    sput-object v0, Lra5$a;->Companion:Lqa5;
+    sput-object v0, Lfc5$a;->Companion:Lec5;
 
     .line 7
     .line 8
@@ -58,7 +58,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lra5$a;->Companion:Lqa5;
+    sget-object v0, Lfc5$a;->Companion:Lec5;
 
     .line 2
     .line 3
@@ -72,11 +72,11 @@
     .line 7
     .line 8
     .line 9
-    new-instance v0, Lra5$a;
+    new-instance v0, Lfc5$a;
 
     .line 10
     .line 11
-    invoke-direct {v0}, Lra5$a;-><init>()V
+    invoke-direct {v0}, Lfc5$a;-><init>()V
 
     .line 12
     .line 13
@@ -136,15 +136,15 @@
     .line 2
     .line 3
     .line 4
-    sget p0, Lra5;->j:I
+    sget p0, Lfc5;->j:I
 
     .line 5
     .line 6
-    sget-object p0, Lw53;->ON_CREATE:Lw53;
+    sget-object p0, Ls63;->ON_CREATE:Ls63;
 
     .line 7
     .line 8
-    invoke-static {p1, p0}, Lpa5;->a(Landroid/app/Activity;Lw53;)V
+    invoke-static {p1, p0}, Ldc5;->a(Landroid/app/Activity;Ls63;)V
 
     .line 9
     .line 10
@@ -161,15 +161,15 @@
     .line 2
     .line 3
     .line 4
-    sget p0, Lra5;->j:I
+    sget p0, Lfc5;->j:I
 
     .line 5
     .line 6
-    sget-object p0, Lw53;->ON_RESUME:Lw53;
+    sget-object p0, Ls63;->ON_RESUME:Ls63;
 
     .line 7
     .line 8
-    invoke-static {p1, p0}, Lpa5;->a(Landroid/app/Activity;Lw53;)V
+    invoke-static {p1, p0}, Ldc5;->a(Landroid/app/Activity;Ls63;)V
 
     .line 9
     .line 10
@@ -186,15 +186,15 @@
     .line 2
     .line 3
     .line 4
-    sget p0, Lra5;->j:I
+    sget p0, Lfc5;->j:I
 
     .line 5
     .line 6
-    sget-object p0, Lw53;->ON_START:Lw53;
+    sget-object p0, Ls63;->ON_START:Ls63;
 
     .line 7
     .line 8
-    invoke-static {p1, p0}, Lpa5;->a(Landroid/app/Activity;Lw53;)V
+    invoke-static {p1, p0}, Ldc5;->a(Landroid/app/Activity;Ls63;)V
 
     .line 9
     .line 10
@@ -211,15 +211,15 @@
     .line 2
     .line 3
     .line 4
-    sget p0, Lra5;->j:I
+    sget p0, Lfc5;->j:I
 
     .line 5
     .line 6
-    sget-object p0, Lw53;->ON_DESTROY:Lw53;
+    sget-object p0, Ls63;->ON_DESTROY:Ls63;
 
     .line 7
     .line 8
-    invoke-static {p1, p0}, Lpa5;->a(Landroid/app/Activity;Lw53;)V
+    invoke-static {p1, p0}, Ldc5;->a(Landroid/app/Activity;Ls63;)V
 
     .line 9
     .line 10
@@ -236,15 +236,15 @@
     .line 2
     .line 3
     .line 4
-    sget p0, Lra5;->j:I
+    sget p0, Lfc5;->j:I
 
     .line 5
     .line 6
-    sget-object p0, Lw53;->ON_PAUSE:Lw53;
+    sget-object p0, Ls63;->ON_PAUSE:Ls63;
 
     .line 7
     .line 8
-    invoke-static {p1, p0}, Lpa5;->a(Landroid/app/Activity;Lw53;)V
+    invoke-static {p1, p0}, Ldc5;->a(Landroid/app/Activity;Ls63;)V
 
     .line 9
     .line 10
@@ -261,15 +261,15 @@
     .line 2
     .line 3
     .line 4
-    sget p0, Lra5;->j:I
+    sget p0, Lfc5;->j:I
 
     .line 5
     .line 6
-    sget-object p0, Lw53;->ON_STOP:Lw53;
+    sget-object p0, Ls63;->ON_STOP:Ls63;
 
     .line 7
     .line 8
-    invoke-static {p1, p0}, Lpa5;->a(Landroid/app/Activity;Lw53;)V
+    invoke-static {p1, p0}, Ldc5;->a(Landroid/app/Activity;Ls63;)V
 
     .line 9
     .line 10

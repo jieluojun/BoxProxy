@@ -1,76 +1,109 @@
 .class public final Lwj;
-.super Lz71;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Le62;
 
 
 # instance fields
-.field public j:Z
+.field public final synthetic j:B
 
-.field public k:I
+.field public final synthetic k:Lp62;
 
-.field public synthetic l:Ljava/lang/Object;
-
-.field public final synthetic m:Lzj;
-
-.field public n:I
+.field public final synthetic l:I
 
 
 # direct methods
-.method public constructor <init>(Lzj;Lz71;)V
+.method public synthetic constructor <init>(Lp62;IB)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lwj;->m:Lzj;
+    iput-byte p3, p0, Lwj;->j:B
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
+    iput-object p1, p0, Lwj;->k:Lp62;
 
     .line 4
     .line 5
+    iput p2, p0, Lwj;->l:I
+
     .line 6
+    .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 8
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
 
     .line 1
-    iput-object p1, p0, Lwj;->l:Ljava/lang/Object;
+    iget-byte v0, p0, Lwj;->j:B
 
     .line 2
     .line 3
-    iget p1, p0, Lwj;->n:I
+    sget-object v1, La47;->a:La47;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    iget v2, p0, Lwj;->l:I
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    iget-object p0, p0, Lwj;->k:Lp62;
 
     .line 8
-    iput p1, p0, Lwj;->n:I
-
     .line 9
-    .line 10
-    iget-object p1, p0, Lwj;->m:Lzj;
+    packed-switch v0, :pswitch_data_0
 
+    .line 10
     .line 11
     .line 12
-    const/4 v0, 0x0
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 13
-    invoke-virtual {p1, v0, p0}, Lzj;->c(ZLz71;)Ljava/lang/Object;
-
     .line 14
     .line 15
+    move-result-object v0
+
     .line 16
-    move-result-object p0
+    invoke-interface {p0, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 17
-    return-object p0
+    .line 18
+    .line 19
+    return-object v1
+
+    .line 20
+    :pswitch_0
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    .line 21
+    .line 22
+    .line 23
+    move-result-object v0
+
+    .line 24
+    invoke-interface {p0, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 25
+    .line 26
+    .line 27
+    return-object v1
+
+    .line 28
+    nop
+
+    .line 29
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

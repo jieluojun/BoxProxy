@@ -1,67 +1,113 @@
 .class public final Lf10;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lcb4;
 
 
 # instance fields
-.field public final a:[F
+.field public final synthetic a:B
 
-.field public final b:[F
-
-.field public final c:[F
-
-.field public final d:[F
-
-.field public final e:F
-
-.field public final f:F
-
-.field public final g:F
-
-.field public final h:F
+.field public final synthetic b:Lup6;
 
 
 # direct methods
-.method public constructor <init>([F[F[F[FFFFF)V
+.method public synthetic constructor <init>(Lup6;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p2, p0, Lf10;->a:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Lf10;->b:Lup6;
+
     .line 4
-    iput-object p1, p0, Lf10;->a:[F
+    .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 6
+    .line 7
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()J
+    .locals 2
+
+    .line 1
+    iget-byte v0, p0, Lf10;->a:B
+
+    .line 2
+    .line 3
+    const/4 v1, 0x1
+
+    .line 4
+    iget-object p0, p0, Lf10;->b:Lup6;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lf10;->b:[F
+    packed-switch v0, :pswitch_data_0
 
     .line 7
     .line 8
-    iput-object p3, p0, Lf10;->c:[F
-
     .line 9
+    const/4 v0, 0x0
+
     .line 10
-    iput-object p4, p0, Lf10;->d:[F
+    invoke-virtual {p0, v0, v1}, Lup6;->p(ZZ)Lkn6;
 
     .line 11
     .line 12
-    iput p5, p0, Lf10;->e:F
-
     .line 13
+    move-result-object p0
+
     .line 14
-    iput p6, p0, Lf10;->f:F
+    iget-wide v0, p0, Lkn6;->b:J
 
     .line 15
     .line 16
-    iput p7, p0, Lf10;->g:F
+    return-wide v0
 
     .line 17
-    .line 18
-    iput p8, p0, Lf10;->h:F
+    :pswitch_0
+    invoke-virtual {p0, v1, v1}, Lup6;->p(ZZ)Lkn6;
 
+    .line 18
     .line 19
     .line 20
-    return-void
+    move-result-object p0
+
+    .line 21
+    iget-wide v0, p0, Lkn6;->b:J
+
+    .line 22
+    .line 23
+    return-wide v0
+
+    .line 24
+    :pswitch_1
+    invoke-virtual {p0, v1}, Lup6;->j(Z)Lkn6;
+
+    .line 25
+    .line 26
+    .line 27
+    move-result-object p0
+
+    .line 28
+    iget-wide v0, p0, Lkn6;->b:J
+
+    .line 29
+    .line 30
+    return-wide v0
+
+    .line 31
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

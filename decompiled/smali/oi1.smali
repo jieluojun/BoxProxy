@@ -1,17 +1,25 @@
-.class public final Loi1;
+.class public final synthetic Loi1;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lqi1;
+.implements Ly63;
 
 
 # instance fields
-.field public final a:I
+.field public final synthetic j:Lja5;
+
+.field public final synthetic k:Landroid/hardware/SensorManager;
+
+.field public final synthetic l:Lqi1;
+
+.field public final synthetic m:Landroid/hardware/Sensor;
+
+.field public final synthetic n:Lja5;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
+.method public synthetic constructor <init>(Lja5;Landroid/hardware/SensorManager;Lqi1;Landroid/hardware/Sensor;Lja5;)V
     .locals 0
 
     .line 1
@@ -20,127 +28,135 @@
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Loi1;->a:I
+    iput-object p1, p0, Loi1;->j:Lja5;
 
     .line 5
     .line 6
-    return-void
-.end method
-
-.method public static a(I)V
-    .locals 0
-
-    .line 1
-    if-lez p0, :cond_0
-
-    .line 2
-    .line 3
-    return-void
-
-    .line 4
-    :cond_0
-    const-string p0, "px must be > 0."
-
-    .line 5
-    .line 6
-    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+    iput-object p2, p0, Loi1;->k:Landroid/hardware/SensorManager;
 
     .line 7
     .line 8
+    iput-object p3, p0, Loi1;->l:Lqi1;
+
     .line 9
+    .line 10
+    iput-object p4, p0, Loi1;->m:Landroid/hardware/Sensor;
+
+    .line 11
+    .line 12
+    iput-object p5, p0, Loi1;->n:Lja5;
+
+    .line 13
+    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final f(La73;Ls63;)V
+    .locals 3
 
     .line 1
-    instance-of v0, p1, Loi1;
+    sget-object p1, Lpi1;->a:[I
 
     .line 2
     .line 3
-    if-nez v0, :cond_0
+    invoke-virtual {p2}, Ljava/lang/Enum;->ordinal()I
 
     .line 4
     .line 5
-    goto :goto_0
-
     .line 6
-    :cond_0
-    check-cast p1, Loi1;
+    move-result p2
 
     .line 7
+    aget p1, p1, p2
+
     .line 8
-    iget p1, p1, Loi1;->a:I
-
     .line 9
+    iget-object p2, p0, Loi1;->j:Lja5;
+
     .line 10
-    iget p0, p0, Loi1;->a:I
-
     .line 11
+    iget-object v0, p0, Loi1;->k:Landroid/hardware/SensorManager;
+
     .line 12
-    if-eq p0, p1, :cond_1
-
     .line 13
-    .line 14
-    :goto_0
-    const/4 p0, 0x0
+    iget-object v1, p0, Loi1;->l:Lqi1;
 
+    .line 14
     .line 15
-    return p0
+    const/4 v2, 0x1
 
     .line 16
-    :cond_1
-    const/4 p0, 0x1
+    if-eq p1, v2, :cond_1
 
     .line 17
-    return p0
-.end method
+    .line 18
+    const/4 v2, 0x2
 
-.method public final hashCode()I
-    .locals 0
+    .line 19
+    if-eq p1, v2, :cond_0
 
-    .line 1
-    iget p0, p0, Loi1;->a:I
+    .line 20
+    .line 21
+    goto :goto_0
 
-    .line 2
-    .line 3
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+    .line 22
+    :cond_0
+    iget-boolean p1, p2, Lja5;->j:Z
 
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
+    .line 23
+    .line 24
+    if-eqz p1, :cond_2
 
-    .line 7
-    return p0
-.end method
+    .line 25
+    .line 26
+    invoke-virtual {v0, v1}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+    .line 27
+    .line 28
+    .line 29
+    const/4 p1, 0x0
 
-    .line 1
-    const-string v0, "Pixels(px="
+    .line 30
+    iput-boolean p1, p2, Lja5;->j:Z
 
-    .line 2
-    .line 3
-    const-string v1, ")"
+    .line 31
+    .line 32
+    iget-object p0, p0, Loi1;->n:Lja5;
 
-    .line 4
-    .line 5
-    iget p0, p0, Loi1;->a:I
+    .line 33
+    .line 34
+    iput-boolean p1, p0, Lja5;->j:Z
 
-    .line 6
-    .line 7
-    invoke-static {p0, v0, v1}, Lpb1;->m(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 35
+    .line 36
+    return-void
 
-    .line 8
-    .line 9
-    .line 10
-    move-result-object p0
+    .line 37
+    :cond_1
+    iget-boolean p1, p2, Lja5;->j:Z
 
-    .line 11
-    return-object p0
+    .line 38
+    .line 39
+    if-nez p1, :cond_2
+
+    .line 40
+    .line 41
+    iget-object p0, p0, Loi1;->m:Landroid/hardware/Sensor;
+
+    .line 42
+    .line 43
+    invoke-virtual {v0, v1, p0, v2}, Landroid/hardware/SensorManager;->registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
+
+    .line 44
+    .line 45
+    .line 46
+    iput-boolean v2, p2, Lja5;->j:Z
+
+    .line 47
+    .line 48
+    :cond_2
+    :goto_0
+    return-void
 .end method

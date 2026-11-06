@@ -1,25 +1,16 @@
 .class public final Lhb7;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final synthetic a:Lpb7;
+.field public final a:F
 
-.field public final synthetic b:Lic7;
-
-.field public final synthetic c:Lic7;
-
-.field public final synthetic d:I
-
-.field public final synthetic e:Landroid/view/View;
+.field public final b:F
 
 
 # direct methods
-.method public constructor <init>(Lpb7;Lic7;Lic7;ILandroid/view/View;)V
+.method public constructor <init>(FF)V
     .locals 0
 
     .line 1
@@ -28,420 +19,234 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lhb7;->a:Lpb7;
+    iput p1, p0, Lhb7;->a:F
 
     .line 5
     .line 6
-    iput-object p2, p0, Lhb7;->b:Lic7;
+    iput p2, p0, Lhb7;->b:F
 
     .line 7
     .line 8
-    iput-object p3, p0, Lhb7;->c:Lic7;
-
-    .line 9
-    .line 10
-    iput p4, p0, Lhb7;->d:I
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Lhb7;->e:Landroid/view/View;
-
-    .line 13
-    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final onAnimationUpdate(Landroid/animation/ValueAnimator;)V
-    .locals 14
+.method public final a()[F
+    .locals 4
 
     .line 1
-    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
+    iget v0, p0, Lhb7;->a:F
 
     .line 2
     .line 3
-    .line 4
-    move-result p1
+    iget p0, p0, Lhb7;->b:F
 
+    .line 4
     .line 5
-    iget-object v0, p0, Lhb7;->a:Lpb7;
+    div-float v1, v0, p0
 
     .line 6
     .line 7
-    iget-object v1, v0, Lpb7;->a:Lob7;
+    const/high16 v2, 0x3f800000    # 1.0f
 
     .line 8
     .line 9
-    invoke-virtual {v1, p1}, Lob7;->e(F)V
+    sub-float v0, v2, v0
 
     .line 10
     .line 11
+    sub-float/2addr v0, p0
+
     .line 12
-    invoke-virtual {v1}, Lob7;->c()F
+    div-float/2addr v0, p0
 
     .line 13
-    .line 14
-    .line 15
-    move-result p1
+    const/4 p0, 0x3
 
+    .line 14
+    new-array p0, p0, [F
+
+    .line 15
     .line 16
-    sget-object v1, Lkb7;->e:Landroid/view/animation/PathInterpolator;
+    const/4 v3, 0x0
 
     .line 17
-    .line 18
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+    aput v1, p0, v3
 
+    .line 18
     .line 19
+    const/4 v1, 0x1
+
     .line 20
-    const/16 v2, 0x24
+    aput v2, p0, v1
 
     .line 21
     .line 22
-    iget-object v3, p0, Lhb7;->b:Lic7;
+    const/4 v1, 0x2
 
     .line 23
+    aput v0, p0, v1
+
     .line 24
-    if-lt v1, v2, :cond_0
+    .line 25
+    return-object p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lhb7;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Lhb7;
+
+    .line 12
+    .line 13
+    iget v1, p0, Lhb7;->a:F
+
+    .line 14
+    .line 15
+    iget v3, p1, Lhb7;->a:F
+
+    .line 16
+    .line 17
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v1
+
+    .line 21
+    if-eqz v1, :cond_2
+
+    .line 22
+    .line 23
+    return v2
+
+    .line 24
+    :cond_2
+    iget p0, p0, Lhb7;->b:F
 
     .line 25
     .line 26
-    new-instance v1, Lvb7;
+    iget p1, p1, Lhb7;->b:F
 
     .line 27
     .line 28
-    invoke-direct {v1, v3}, Lvb7;-><init>(Lic7;)V
+    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
 
     .line 29
     .line 30
     .line 31
-    goto :goto_0
+    move-result p0
 
     .line 32
-    :cond_0
-    const/16 v2, 0x23
+    if-eqz p0, :cond_3
 
     .line 33
     .line 34
-    if-lt v1, v2, :cond_1
+    return v2
 
     .line 35
-    .line 36
-    new-instance v1, Lub7;
-
-    .line 37
-    .line 38
-    invoke-direct {v1, v3}, Lub7;-><init>(Lic7;)V
-
-    .line 39
-    .line 40
-    .line 41
-    goto :goto_0
-
-    .line 42
-    :cond_1
-    const/16 v2, 0x22
-
-    .line 43
-    .line 44
-    if-lt v1, v2, :cond_2
-
-    .line 45
-    .line 46
-    new-instance v1, Ltb7;
-
-    .line 47
-    .line 48
-    invoke-direct {v1, v3}, Ltb7;-><init>(Lic7;)V
-
-    .line 49
-    .line 50
-    .line 51
-    goto :goto_0
-
-    .line 52
-    :cond_2
-    const/16 v2, 0x1f
-
-    .line 53
-    .line 54
-    if-lt v1, v2, :cond_3
-
-    .line 55
-    .line 56
-    new-instance v1, Lsb7;
-
-    .line 57
-    .line 58
-    invoke-direct {v1, v3}, Lsb7;-><init>(Lic7;)V
-
-    .line 59
-    .line 60
-    .line 61
-    goto :goto_0
-
-    .line 62
     :cond_3
-    const/16 v2, 0x1e
-
-    .line 63
-    .line 64
-    if-lt v1, v2, :cond_4
-
-    .line 65
-    .line 66
-    new-instance v1, Lrb7;
-
-    .line 67
-    .line 68
-    invoke-direct {v1, v3}, Lrb7;-><init>(Lic7;)V
-
-    .line 69
-    .line 70
-    .line 71
-    goto :goto_0
-
-    .line 72
-    :cond_4
-    new-instance v1, Lqb7;
+    return v0
+.end method
 
-    .line 73
-    .line 74
-    invoke-direct {v1, v3}, Lqb7;-><init>(Lic7;)V
+.method public final hashCode()I
+    .locals 1
 
-    .line 75
-    .line 76
-    .line 77
-    :goto_0
-    const/4 v2, 0x1
+    .line 1
+    iget v0, p0, Lhb7;->a:F
 
-    .line 78
-    :goto_1
-    const/16 v4, 0x200
+    .line 2
+    .line 3
+    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
 
-    .line 79
-    .line 80
-    if-gt v2, v4, :cond_6
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
 
-    .line 81
-    .line 82
-    iget v4, p0, Lhb7;->d:I
+    .line 7
+    mul-int/lit8 v0, v0, 0x1f
 
-    .line 83
-    .line 84
-    and-int/2addr v4, v2
+    .line 8
+    .line 9
+    iget p0, p0, Lhb7;->b:F
 
-    .line 85
-    iget-object v5, v3, Lic7;->a:Lfc7;
+    .line 10
+    .line 11
+    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
 
-    .line 86
-    .line 87
-    if-nez v4, :cond_5
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
 
-    .line 88
-    .line 89
-    invoke-virtual {v5, v2}, Lfc7;->i(I)Lpp2;
+    .line 15
+    add-int/2addr p0, v0
 
-    .line 90
-    .line 91
-    .line 92
-    move-result-object v4
+    .line 16
+    return p0
+.end method
 
-    .line 93
-    invoke-virtual {v1, v2, v4}, Lwb7;->d(ILpp2;)V
+.method public final toString()Ljava/lang/String;
+    .locals 4
 
-    .line 94
-    .line 95
-    .line 96
-    goto :goto_2
+    .line 1
+    const-string v0, ", y="
 
-    .line 97
-    :cond_5
-    invoke-virtual {v5, v2}, Lfc7;->i(I)Lpp2;
+    .line 2
+    .line 3
+    const-string v1, ")"
 
-    .line 98
-    .line 99
-    .line 100
-    move-result-object v4
+    .line 4
+    .line 5
+    const-string v2, "WhitePoint(x="
 
-    .line 101
-    iget-object v5, p0, Lhb7;->c:Lic7;
+    .line 6
+    .line 7
+    iget v3, p0, Lhb7;->a:F
 
-    .line 102
-    .line 103
-    iget-object v5, v5, Lic7;->a:Lfc7;
+    .line 8
+    .line 9
+    iget p0, p0, Lhb7;->b:F
 
-    .line 104
-    .line 105
-    invoke-virtual {v5, v2}, Lfc7;->i(I)Lpp2;
+    .line 10
+    .line 11
+    invoke-static {v2, v3, v0, p0, v1}, Ly96;->o(Ljava/lang/String;FLjava/lang/String;FLjava/lang/String;)Ljava/lang/String;
 
-    .line 106
-    .line 107
-    .line 108
-    move-result-object v5
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
 
-    .line 109
-    iget v6, v4, Lpp2;->a:I
-
-    .line 110
-    .line 111
-    iget v7, v5, Lpp2;->a:I
-
-    .line 112
-    .line 113
-    sub-int/2addr v6, v7
-
-    .line 114
-    int-to-float v6, v6
-
-    .line 115
-    const/high16 v7, 0x3f800000    # 1.0f
-
-    .line 116
-    .line 117
-    sub-float/2addr v7, p1
-
-    .line 118
-    mul-float/2addr v6, v7
-
-    .line 119
-    float-to-double v8, v6
-
-    .line 120
-    const-wide/high16 v10, 0x3fe0000000000000L    # 0.5
-
-    .line 121
-    .line 122
-    add-double/2addr v8, v10
-
-    .line 123
-    double-to-int v6, v8
-
-    .line 124
-    iget v8, v4, Lpp2;->b:I
-
-    .line 125
-    .line 126
-    iget v9, v5, Lpp2;->b:I
-
-    .line 127
-    .line 128
-    sub-int/2addr v8, v9
-
-    .line 129
-    int-to-float v8, v8
-
-    .line 130
-    mul-float/2addr v8, v7
-
-    .line 131
-    float-to-double v8, v8
-
-    .line 132
-    add-double/2addr v8, v10
-
-    .line 133
-    double-to-int v8, v8
-
-    .line 134
-    iget v9, v4, Lpp2;->c:I
-
-    .line 135
-    .line 136
-    iget v12, v5, Lpp2;->c:I
-
-    .line 137
-    .line 138
-    sub-int/2addr v9, v12
-
-    .line 139
-    int-to-float v9, v9
-
-    .line 140
-    mul-float/2addr v9, v7
-
-    .line 141
-    float-to-double v12, v9
-
-    .line 142
-    add-double/2addr v12, v10
-
-    .line 143
-    double-to-int v9, v12
-
-    .line 144
-    iget v12, v4, Lpp2;->d:I
-
-    .line 145
-    .line 146
-    iget v5, v5, Lpp2;->d:I
-
-    .line 147
-    .line 148
-    sub-int/2addr v12, v5
-
-    .line 149
-    int-to-float v5, v12
-
-    .line 150
-    mul-float/2addr v5, v7
-
-    .line 151
-    float-to-double v12, v5
-
-    .line 152
-    add-double/2addr v12, v10
-
-    .line 153
-    double-to-int v5, v12
-
-    .line 154
-    invoke-static {v4, v6, v8, v9, v5}, Lic7;->a(Lpp2;IIII)Lpp2;
-
-    .line 155
-    .line 156
-    .line 157
-    move-result-object v4
-
-    .line 158
-    invoke-virtual {v1, v2, v4}, Lwb7;->d(ILpp2;)V
-
-    .line 159
-    .line 160
-    .line 161
-    :goto_2
-    shl-int/lit8 v2, v2, 0x1
-
-    .line 162
-    .line 163
-    goto :goto_1
-
-    .line 164
-    :cond_6
-    invoke-virtual {v1}, Lqb7;->b()Lic7;
-
-    .line 165
-    .line 166
-    .line 167
-    move-result-object p1
-
-    .line 168
-    invoke-static {v0}, Ljava/util/Collections;->singletonList(Ljava/lang/Object;)Ljava/util/List;
-
-    .line 169
-    .line 170
-    .line 171
-    move-result-object v0
-
-    .line 172
-    iget-object p0, p0, Lhb7;->e:Landroid/view/View;
-
-    .line 173
-    .line 174
-    invoke-static {p0, p1, v0}, Lkb7;->h(Landroid/view/View;Lic7;Ljava/util/List;)V
-
-    .line 175
-    .line 176
-    .line 177
-    return-void
+    .line 15
+    return-object p0
 .end method

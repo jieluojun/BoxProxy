@@ -1,76 +1,136 @@
 .class public final Lqd5;
-.super Lz71;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Luf5;
 
 
 # instance fields
-.field public j:Lld5;
-
-.field public k:Lps3;
-
-.field public synthetic l:Ljava/lang/Object;
-
-.field public final synthetic m:Ltd5;
-
-.field public n:I
+.field public final a:Lx85;
 
 
 # direct methods
-.method public constructor <init>(Ltd5;Lz71;)V
+.method public constructor <init>(Lx85;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lqd5;->m:Ltd5;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
-
     .line 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 5
     .line 6
+    .line 7
+    iput-object p1, p0, Lqd5;->a:Lx85;
+
+    .line 8
+    .line 9
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a()Luf5;
     .locals 1
 
     .line 1
-    iput-object p1, p0, Lqd5;->l:Ljava/lang/Object;
+    new-instance p0, Ljava/lang/IllegalStateException;
 
     .line 2
     .line 3
-    iget p1, p0, Lqd5;->n:I
+    const-string v0, "unexpected retry"
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lqd5;->n:I
+    throw p0
+.end method
 
-    .line 9
-    .line 10
-    iget-object p1, p0, Lqd5;->m:Ltd5;
+.method public final c()Ltf5;
+    .locals 1
 
-    .line 11
-    .line 12
-    const/4 v0, 0x0
+    .line 1
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    .line 13
-    invoke-virtual {p1, v0, p0}, Ltd5;->g(Lld5;Lz71;)Ljava/lang/Object;
+    .line 2
+    .line 3
+    const-string v0, "already connected"
 
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p0
+    .line 4
+    .line 5
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    .line 17
+    .line 6
+    .line 7
+    .line 8
+    throw p0
+.end method
+
+.method public final cancel()V
+    .locals 1
+
+    .line 1
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    .line 2
+    .line 3
+    const-string v0, "unexpected cancel"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
+.end method
+
+.method public final d()Lx85;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lqd5;->a:Lx85;
+
+    .line 2
+    .line 3
     return-object p0
+.end method
+
+.method public final e()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x1
+
+    .line 2
+    return p0
+.end method
+
+.method public final g()Ltf5;
+    .locals 1
+
+    .line 1
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    .line 2
+    .line 3
+    const-string v0, "already connected"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
 .end method

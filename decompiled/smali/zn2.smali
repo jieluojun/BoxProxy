@@ -1,103 +1,254 @@
 .class public final Lzn2;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lkk1;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# static fields
-.field public static final b:Lzn2;
+# instance fields
+.field public final a:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(I)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lzn2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    iput p1, p0, Lzn2;->a:I
+
     .line 5
     .line 6
-    sput-object v0, Lzn2;->b:Lzn2;
+    return-void
+.end method
+
+.method public static a(I)Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    const/4 v0, -0x1
+
+    .line 2
+    if-ne p0, v0, :cond_0
+
+    .line 3
+    .line 4
+    const-string p0, "Unspecified"
+
+    .line 5
+    .line 6
+    return-object p0
 
     .line 7
+    :cond_0
+    if-nez p0, :cond_1
+
     .line 8
-    return-void
+    .line 9
+    const-string p0, "None"
+
+    .line 10
+    .line 11
+    return-object p0
+
+    .line 12
+    :cond_1
+    const/4 v0, 0x1
+
+    .line 13
+    if-ne p0, v0, :cond_2
+
+    .line 14
+    .line 15
+    const-string p0, "Default"
+
+    .line 16
+    .line 17
+    return-object p0
+
+    .line 18
+    :cond_2
+    const/4 v0, 0x2
+
+    .line 19
+    if-ne p0, v0, :cond_3
+
+    .line 20
+    .line 21
+    const-string p0, "Go"
+
+    .line 22
+    .line 23
+    return-object p0
+
+    .line 24
+    :cond_3
+    const/4 v0, 0x3
+
+    .line 25
+    if-ne p0, v0, :cond_4
+
+    .line 26
+    .line 27
+    const-string p0, "Search"
+
+    .line 28
+    .line 29
+    return-object p0
+
+    .line 30
+    :cond_4
+    const/4 v0, 0x4
+
+    .line 31
+    if-ne p0, v0, :cond_5
+
+    .line 32
+    .line 33
+    const-string p0, "Send"
+
+    .line 34
+    .line 35
+    return-object p0
+
+    .line 36
+    :cond_5
+    const/4 v0, 0x5
+
+    .line 37
+    if-ne p0, v0, :cond_6
+
+    .line 38
+    .line 39
+    const-string p0, "Previous"
+
+    .line 40
+    .line 41
+    return-object p0
+
+    .line 42
+    :cond_6
+    const/4 v0, 0x6
+
+    .line 43
+    if-ne p0, v0, :cond_7
+
+    .line 44
+    .line 45
+    const-string p0, "Next"
+
+    .line 46
+    .line 47
+    return-object p0
+
+    .line 48
+    :cond_7
+    const/4 v0, 0x7
+
+    .line 49
+    if-ne p0, v0, :cond_8
+
+    .line 50
+    .line 51
+    const-string p0, "Done"
+
+    .line 52
+    .line 53
+    return-object p0
+
+    .line 54
+    :cond_8
+    const-string p0, "Invalid"
+
+    .line 55
+    .line 56
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)Ljava/util/List;
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    instance-of v0, p1, Lzn2;
 
     .line 2
     .line 3
+    if-nez v0, :cond_0
+
     .line 4
-    :try_start_0
-    invoke-static {p1}, Ljava/net/InetAddress;->getAllByName(Ljava/lang/String;)[Ljava/net/InetAddress;
-
     .line 5
-    .line 6
-    .line 7
-    move-result-object p0
+    goto :goto_0
 
+    .line 6
+    :cond_0
+    check-cast p1, Lzn2;
+
+    .line 7
     .line 8
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget p1, p1, Lzn2;->a:I
 
     .line 9
     .line 10
-    .line 11
-    invoke-static {p0}, Lqv;->R0([Ljava/lang/Object;)Ljava/util/List;
+    iget p0, p0, Lzn2;->a:I
 
+    .line 11
     .line 12
+    if-eq p0, p1, :cond_1
+
     .line 13
     .line 14
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/lang/NullPointerException; {:try_start_0 .. :try_end_0} :catch_0
+    :goto_0
+    const/4 p0, 0x0
 
     .line 15
-    return-object p0
+    return p0
 
     .line 16
-    :catch_0
-    move-exception p0
+    :cond_1
+    const/4 p0, 0x1
 
     .line 17
-    new-instance v0, Ljava/net/UnknownHostException;
+    return p0
+.end method
 
-    .line 18
-    .line 19
-    const-string v1, "Broken system behaviour for dns lookup of "
+.method public final hashCode()I
+    .locals 0
 
-    .line 20
-    .line 21
-    invoke-virtual {v1, p1}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    .line 1
+    iget p0, p0, Lzn2;->a:I
 
-    .line 22
-    .line 23
-    .line 24
-    move-result-object p1
+    .line 2
+    .line 3
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
-    .line 25
-    invoke-direct {v0, p1}, Ljava/net/UnknownHostException;-><init>(Ljava/lang/String;)V
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
 
-    .line 26
-    .line 27
-    .line 28
-    invoke-virtual {v0, p0}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
+    .line 7
+    return p0
+.end method
 
-    .line 29
-    .line 30
-    .line 31
-    throw v0
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    iget p0, p0, Lzn2;->a:I
+
+    .line 2
+    .line 3
+    invoke-static {p0}, Lzn2;->a(I)Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    return-object p0
 .end method

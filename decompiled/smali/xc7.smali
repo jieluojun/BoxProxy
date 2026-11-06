@@ -1,24 +1,26 @@
-.class public interface abstract Lxc7;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-
-# static fields
-.field public static final a:Lwc7;
+.class public Lxc7;
+.super Lwc7;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 0
 
     .line 1
-    sget-object v0, Lwc7;->a:Lwc7;
+    invoke-direct {p0}, Lwc7;-><init>()V
 
     .line 2
     .line 3
-    sput-object v0, Lxc7;->a:Lwc7;
-
     .line 4
+    return-void
+.end method
+
+.method public constructor <init>(Lnd7;)V
+    .locals 0
+
     .line 5
+    invoke-direct {p0, p1}, Lwc7;-><init>(Lnd7;)V
+
     return-void
 .end method

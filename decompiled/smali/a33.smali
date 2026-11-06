@@ -1,44 +1,34 @@
-.class public interface abstract La33;
+.class public final La33;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lup3;
 
 
-# virtual methods
-.method public abstract a()I
-.end method
+# instance fields
+.field public final synthetic j:B
 
-.method public abstract b(I)J
-.end method
+.field public final synthetic k:Lgu5;
 
-.method public abstract c()I
-.end method
 
-.method public abstract d()I
-.end method
+# direct methods
+.method public synthetic constructor <init>(Lgu5;B)V
+    .locals 0
 
-.method public abstract e()I
-.end method
+    .line 1
+    iput-byte p2, p0, La33;->j:B
 
-.method public abstract f()I
-.end method
+    .line 2
+    .line 3
+    iput-object p1, p0, La33;->k:Lgu5;
 
-.method public abstract g()V
-.end method
+    .line 4
+    .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public abstract getIndex()I
-.end method
-
-.method public abstract getKey()Ljava/lang/Object;
-.end method
-
-.method public abstract h()J
-.end method
-
-.method public abstract i()Ljava/util/List;
-.end method
-
-.method public abstract j(IIII)V
-.end method
-
-.method public abstract k()I
+    .line 6
+    .line 7
+    .line 8
+    return-void
 .end method

@@ -1,146 +1,139 @@
-.class public final synthetic Ldm6;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Ljz1;
-.implements Lb62;
+.class public final Ldm6;
+.super Lol6;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final synthetic a:Ld52;
+.field public final b:Landroid/view/textclassifier/TextClassification;
+
+.field public final c:I
+
+.field public final d:Landroid/graphics/drawable/Drawable;
 
 
 # direct methods
-.method public constructor <init>(Ld52;)V
+.method public constructor <init>(Ljava/lang/Object;Landroid/view/textclassifier/TextClassification;ILandroid/graphics/drawable/Drawable;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lol6;-><init>(Ljava/lang/Object;)V
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Ldm6;->a:Ld52;
+    iput-object p2, p0, Ldm6;->b:Landroid/view/textclassifier/TextClassification;
 
     .line 5
     .line 6
+    iput p3, p0, Ldm6;->c:I
+
+    .line 7
+    .line 8
+    iput-object p4, p0, Ldm6;->d:Landroid/graphics/drawable/Drawable;
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()La62;
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
     .line 1
-    iget-object p0, p0, Ldm6;->a:Ld52;
+    new-instance v0, Ljava/lang/StringBuilder;
 
     .line 2
     .line 3
-    return-object p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    instance-of v0, p1, Ljz1;
-
-    .line 2
-    .line 3
-    if-eqz v0, :cond_0
+    const-string v1, "TextContextMenuTextClassificationItem(key="
 
     .line 4
     .line 5
-    instance-of v0, p1, Lb62;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 6
     .line 7
-    if-eqz v0, :cond_0
-
     .line 8
+    iget-object v1, p0, Lol6;->a:Ljava/lang/Object;
+
     .line 9
-    check-cast p1, Lb62;
-
     .line 10
-    .line 11
-    invoke-interface {p1}, Lb62;->b()La62;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    .line 11
     .line 12
     .line 13
-    .line 14
-    move-result-object p1
+    const-string v1, ", textClassification="
 
+    .line 14
     .line 15
-    iget-object p0, p0, Ldm6;->a:Ld52;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 16
     .line 17
-    invoke-static {p0, p1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
-
     .line 18
+    iget-object v1, p0, Ldm6;->b:Landroid/view/textclassifier/TextClassification;
+
     .line 19
     .line 20
-    move-result p0
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 21
-    return p0
-
     .line 22
-    :cond_0
-    const/4 p0, 0x0
-
     .line 23
-    return p0
-.end method
+    const-string v1, ", index="
 
-.method public final hashCode()I
-    .locals 0
+    .line 24
+    .line 25
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1
-    iget-object p0, p0, Ldm6;->a:Ld52;
+    .line 26
+    .line 27
+    .line 28
+    iget v1, p0, Ldm6;->c:I
 
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    .line 29
+    .line 30
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
+    .line 31
+    .line 32
+    .line 33
+    const-string v1, ", icon="
 
-    .line 7
-    return p0
-.end method
+    .line 34
+    .line 35
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public final synthetic invoke()F
-    .locals 0
+    .line 36
+    .line 37
+    .line 38
+    iget-object p0, p0, Ldm6;->d:Landroid/graphics/drawable/Drawable;
 
-    .line 1
-    iget-object p0, p0, Ldm6;->a:Ld52;
+    .line 39
+    .line 40
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 2
-    .line 3
-    invoke-interface {p0}, Ld52;->invoke()Ljava/lang/Object;
+    .line 41
+    .line 42
+    .line 43
+    const-string p0, ")"
 
-    .line 4
-    .line 5
-    .line 6
+    .line 44
+    .line 45
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 46
+    .line 47
+    .line 48
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 49
+    .line 50
+    .line 51
     move-result-object p0
 
-    .line 7
-    check-cast p0, Ljava/lang/Number;
-
-    .line 8
-    .line 9
-    invoke-virtual {p0}, Ljava/lang/Number;->floatValue()F
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    return p0
+    .line 52
+    return-object p0
 .end method

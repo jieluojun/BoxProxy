@@ -58,12 +58,12 @@ class CoreConfigHistorySqlTest(unittest.TestCase):
             self.assertEqual(db.execute(SELECT, ('mihomo',)).fetchone()[0], 'original.yaml')
 
     def test_callback_hook_is_inside_existing_transaction_before_save_and_return(self):
-        update = (SMALI / 'd40.smali').read_text()
-        read = update.index('invoke-static {p1}, Luu6;->P(')
+        update = (SMALI / 'f50.smali').read_text()
+        read = update.index('invoke-static {p1}, Lnu;->Q(')
         transaction = update.rindex('->beginTransaction()V', 0, read)
-        callback = update.index('invoke-interface {p0, v0}, Lo52;->invoke', read)
+        callback = update.index('invoke-interface {p0, v0}, Lp62;->invoke', read)
         hook = update.index('invoke-static {p1, v0, p0}, Lcom/box/app/vpn/CoreConfigHistory;->onUpdate', callback)
-        save = update.index('invoke-static {p1, p0}, Luu6;->a0(', hook)
+        save = update.index('invoke-static {p1, p0}, Lnu;->a0(', hook)
         success = update.index('->setTransactionSuccessful()V', save)
         result = update.index('return-object p0', success)
         self.assertLess(transaction, read)
@@ -74,8 +74,8 @@ class CoreConfigHistorySqlTest(unittest.TestCase):
         self.assertLess(success, result)
         # Both the returned model and database get the restored configuration.
         self.assertIn('move-result-object p0', update[hook:save])
-        switch = (SMALI / 'vu4.smali').read_text().split(':pswitch_0', 1)[0]
-        self.assertIn('iget-object v10, v2, Lta0;->h:Ljava/lang/String;', switch)
+        switch = (SMALI / 'iw4.smali').read_text().split(':pswitch_0', 1)[0]
+        self.assertIn('iget-object v10, v2, Lwb0;->h:Ljava/lang/String;', switch)
         self.assertNotIn('const-string v10, ""', switch)
 
 

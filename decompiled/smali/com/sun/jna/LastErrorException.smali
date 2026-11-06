@@ -1,6 +1,6 @@
 .class public Lcom/sun/jna/LastErrorException;
 .super Ljava/lang/RuntimeException;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # static fields
@@ -151,7 +151,7 @@
 
     .line 8
     .line 9
-    invoke-static {p0, v0}, Lqq5;->k(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v0}, Lhs5;->k(ILjava/lang/String;)Ljava/lang/String;
 
     .line 10
     .line 11
@@ -167,7 +167,7 @@
 
     .line 15
     .line 16
-    invoke-static {p0, v0}, Lqq5;->k(ILjava/lang/String;)Ljava/lang/String;
+    invoke-static {p0, v0}, Lhs5;->k(ILjava/lang/String;)Ljava/lang/String;
 
     .line 17
     .line 18

@@ -1,79 +1,86 @@
-.class public final Lay2;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-
-# instance fields
-.field public a:S
-
-.field public final b:Lyq3;
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 1
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    const/16 v0, 0x12c
-
-    .line 5
-    .line 6
-    iput-short v0, p0, Lay2;->a:S
-
-    .line 7
-    .line 8
-    sget-object v0, Lrq2;->a:Lyq3;
-
-    .line 9
-    .line 10
-    new-instance v0, Lyq3;
-
-    .line 11
-    .line 12
-    invoke-direct {v0}, Lyq3;-><init>()V
-
-    .line 13
-    .line 14
-    .line 15
-    iput-object v0, p0, Lay2;->b:Lyq3;
-
-    .line 16
-    .line 17
-    return-void
-.end method
+.class public Lay2;
+.super Lxy1;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # virtual methods
-.method public final a(Ljava/lang/Float;I)Lzx2;
-    .locals 2
+.method public final f(Lkn4;)V
+    .locals 1
 
     .line 1
-    new-instance v0, Lzx2;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    sget-object v1, Ltp1;->c:Lvd1;
-
     .line 4
-    .line 5
-    invoke-direct {v0, p1, v1}, Lzx2;-><init>(Ljava/lang/Float;Lrp1;)V
+    invoke-virtual {p1}, Lkn4;->toFile()Ljava/io/File;
 
+    .line 5
     .line 6
     .line 7
+    move-result-object v0
+
     .line 8
-    iget-object p0, p0, Lay2;->b:Lyq3;
+    invoke-virtual {v0}, Ljava/io/File;->mkdir()Z
 
     .line 9
     .line 10
-    invoke-virtual {p0, p2, v0}, Lyq3;->i(ILjava/lang/Object;)V
-
     .line 11
+    move-result v0
+
     .line 12
+    if-nez v0, :cond_1
+
     .line 13
-    return-object v0
+    .line 14
+    invoke-virtual {p0, p1}, Lxy1;->q(Lkn4;)Lty1;
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-object p0
+
+    .line 18
+    if-eqz p0, :cond_0
+
+    .line 19
+    .line 20
+    iget-boolean p0, p0, Lty1;->c:Z
+
+    .line 21
+    .line 22
+    const/4 v0, 0x1
+
+    .line 23
+    if-ne p0, v0, :cond_0
+
+    .line 24
+    .line 25
+    goto :goto_0
+
+    .line 26
+    :cond_0
+    const-string p0, "failed to create directory: "
+
+    .line 27
+    .line 28
+    invoke-static {p0, p1}, Lgb4;->p(Ljava/lang/String;Ljava/lang/Object;)V
+
+    .line 29
+    .line 30
+    .line 31
+    :cond_1
+    :goto_0
+    return-void
+.end method
+
+.method public toString()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    const-string p0, "JvmSystemFileSystem"
+
+    .line 2
+    .line 3
+    return-object p0
 .end method

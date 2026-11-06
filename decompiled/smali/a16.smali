@@ -1,140 +1,77 @@
-.class public final enum La16;
-.super Ljava/lang/Enum;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final La16;
+.super Lz81;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# static fields
-.field public static final enum j:La16;
+# instance fields
+.field public j:F
 
-.field public static final enum k:La16;
+.field public k:J
 
-.field public static final enum l:La16;
+.field public l:J
 
-.field public static final synthetic m:[La16;
+.field public m:J
+
+.field public synthetic n:Ljava/lang/Object;
+
+.field public final synthetic o:Lc16;
+
+.field public p:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>(Lc16;Lz81;)V
+    .locals 0
 
     .line 1
-    new-instance v0, La16;
+    iput-object p1, p0, La16;->o:Lc16;
 
     .line 2
     .line 3
-    const-string v1, "Hidden"
+    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
 
     .line 4
     .line 5
-    const/4 v2, 0x0
-
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 7
-    .line 8
-    .line 9
-    sput-object v0, La16;->j:La16;
-
-    .line 10
-    .line 11
-    new-instance v1, La16;
-
-    .line 12
-    .line 13
-    const-string v2, "Expanded"
-
-    .line 14
-    .line 15
-    const/4 v3, 0x1
-
-    .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 17
-    .line 18
-    .line 19
-    sput-object v1, La16;->k:La16;
-
-    .line 20
-    .line 21
-    new-instance v2, La16;
-
-    .line 22
-    .line 23
-    const-string v3, "PartiallyExpanded"
-
-    .line 24
-    .line 25
-    const/4 v4, 0x2
-
-    .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 27
-    .line 28
-    .line 29
-    sput-object v2, La16;->l:La16;
-
-    .line 30
-    .line 31
-    filled-new-array {v0, v1, v2}, [La16;
-
-    .line 32
-    .line 33
-    .line 34
-    move-result-object v0
-
-    .line 35
-    sput-object v0, La16;->m:[La16;
-
-    .line 36
-    .line 37
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)La16;
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     .line 1
-    const-class v0, La16;
+    iput-object p1, p0, La16;->n:Ljava/lang/Object;
 
     .line 2
     .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iget p1, p0, La16;->p:I
 
     .line 4
     .line 5
+    const/high16 v0, -0x80000000
+
     .line 6
+    .line 7
+    or-int/2addr p1, v0
+
+    .line 8
+    iput p1, p0, La16;->p:I
+
+    .line 9
+    .line 10
+    iget-object p1, p0, La16;->o:Lc16;
+
+    .line 11
+    .line 12
+    invoke-virtual {p1, p0}, Lc16;->d(Lz81;)Ljava/lang/Object;
+
+    .line 13
+    .line 14
+    .line 15
     move-result-object p0
 
-    .line 7
-    check-cast p0, La16;
-
-    .line 8
-    .line 9
+    .line 16
     return-object p0
-.end method
-
-.method public static values()[La16;
-    .locals 1
-
-    .line 1
-    sget-object v0, La16;->m:[La16;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [La16;
-
-    .line 8
-    .line 9
-    return-object v0
 .end method

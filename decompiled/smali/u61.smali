@@ -1,36 +1,71 @@
-.class public abstract Lu61;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final Lu61;
+.super Lz81;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# static fields
-.field public static final a:Lkp1;
+# instance fields
+.field public j:Lna5;
+
+.field public synthetic k:Ljava/lang/Object;
+
+.field public final synthetic l:Lv61;
+
+.field public m:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lv61;Lz81;)V
+    .locals 0
 
     .line 1
-    sget-object v0, Lbx;->p:Lbx;
+    iput-object p1, p0, Lu61;->l:Lv61;
 
     .line 2
     .line 3
-    new-instance v1, Lkp1;
+    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iput-object p1, p0, Lu61;->k:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Lu61;->m:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
 
     .line 6
-    invoke-direct {v1, v0, v2}, Lkp1;-><init>(Ld52;B)V
-
     .line 7
-    .line 8
-    .line 9
-    sput-object v1, Lu61;->a:Lkp1;
+    or-int/2addr p1, v0
 
+    .line 8
+    iput p1, p0, Lu61;->m:I
+
+    .line 9
     .line 10
+    iget-object p1, p0, Lu61;->l:Lv61;
+
     .line 11
-    return-void
+    .line 12
+    invoke-virtual {p1, p0}, Lv61;->a(Ly81;)Ljava/lang/Object;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p0
+
+    .line 16
+    return-object p0
 .end method

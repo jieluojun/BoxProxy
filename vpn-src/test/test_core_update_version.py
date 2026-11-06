@@ -11,12 +11,12 @@ class CoreUpdateVersionTest(detail_probe.CoreVersionTest):
     def setUpClass(cls):
         super().setUpClass()
         project = Path(os.environ.get('BOXPROXY_TEST_PROJECT', detail_probe.ROOT / 'decompiled'))
-        text = (project / 'smali/ma1.smali').read_text()
+        text = (project / 'smali/lb1.smali').read_text()
         method = text.split('.method public final d(', 1)[1].split('.end method', 1)[0]
         cls.fragment = detail_probe.const(method, 'p0', '\n            # Resolve')
         hook = method.index('LdFix;->wrapProbe(Ljava/lang/String;)Ljava/lang/String;')
-        assert hook < method.index('Ljb6;->X(Ljava/lang/String;)Ljava/lang/String;')
-        assert hook < method.index('Ltd5;->f(')
+        assert hook < method.index('Lbd6;->W(Ljava/lang/String;)Ljava/lang/String;')
+        assert hook < method.index('Ljf5;->f(')
 
     def run_probe(self, core, fragment=None):
         command = 'core=' + shlex.quote(str(core)) + (fragment or self.fragment)

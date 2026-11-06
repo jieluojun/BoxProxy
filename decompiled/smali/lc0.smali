@@ -1,161 +1,84 @@
-.class final Llc0;
-.super Lro3;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final Llc0;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lkc0;
 
 
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Lro3;"
-    }
-.end annotation
-
-
-# instance fields
-.field public final j:Lpf;
+# static fields
+.field public static final a:Llc0;
 
 
 # direct methods
-.method public constructor <init>(Lpf;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Llc0;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Llc0;->j:Lpf;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
+    .line 4
     .line 5
     .line 6
+    sput-object v0, Llc0;->a:Llc0;
+
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljo3;
+.method public final a(Lwp3;Lf8;)Lwp3;
     .locals 1
 
     .line 1
-    new-instance v0, Lnc0;
+    new-instance p0, Lra0;
 
     .line 2
     .line 3
-    iget-object p0, p0, Llc0;->j:Lpf;
+    const/4 v0, 0x0
 
     .line 4
-    .line 5
-    invoke-direct {v0, p0}, Lnc0;-><init>(Lpf;)V
+    invoke-direct {p0, p2, v0}, Lra0;-><init>(Lf8;Z)V
 
+    .line 5
     .line 6
     .line 7
-    .line 8
-    return-object v0
-.end method
-
-.method public final b(Ljo3;)V
-    .locals 1
-
-    .line 1
-    check-cast p1, Lnc0;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Llc0;->j:Lpf;
-
-    .line 4
-    .line 5
-    iput-object p0, p1, Lnc0;->x:Lpf;
-
-    .line 6
-    .line 7
-    iget-boolean v0, p1, Ljo3;->w:Z
+    invoke-interface {p1, p0}, Lwp3;->d0(Lwp3;)Lwp3;
 
     .line 8
     .line 9
-    if-eqz v0, :cond_0
-
     .line 10
+    move-result-object p0
+
     .line 11
-    iget-object p1, p1, Lnc0;->y:Lv90;
-
-    .line 12
-    .line 13
-    invoke-virtual {p0, p1}, Lpf;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
-    :cond_0
-    return-void
+    return-object p0
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final b()Lwp3;
+    .locals 2
 
     .line 1
-    if-eq p0, p1, :cond_1
+    new-instance p0, Lra0;
 
     .line 2
     .line 3
-    instance-of v0, p1, Llc0;
+    sget-object v0, Lr6;->p:Lq20;
 
     .line 4
     .line 5
-    if-eqz v0, :cond_0
+    const/4 v1, 0x1
 
     .line 6
-    .line 7
-    check-cast p1, Llc0;
+    invoke-direct {p0, v0, v1}, Lra0;-><init>(Lf8;Z)V
 
+    .line 7
     .line 8
     .line 9
-    iget-object p1, p1, Llc0;->j:Lpf;
-
-    .line 10
-    .line 11
-    iget-object p0, p0, Llc0;->j:Lpf;
-
-    .line 12
-    .line 13
-    if-ne p0, p1, :cond_0
-
-    .line 14
-    .line 15
-    goto :goto_0
-
-    .line 16
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 17
-    return p0
-
-    .line 18
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
-    .line 19
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Llc0;->j:Lpf;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
+    return-object p0
 .end method

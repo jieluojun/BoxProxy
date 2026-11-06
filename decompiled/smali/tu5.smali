@@ -1,54 +1,86 @@
-.class public final Ltu5;
-.super Lz71;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public abstract Ltu5;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public j:Lag6;
+# static fields
+.field public static final a:F
 
-.field public k:Lep3;
+.field public static final b:J
 
-.field public l:Lv85;
+.field public static final c:F
 
-.field public synthetic m:Ljava/lang/Object;
+.field public static final d:F
 
-.field public n:I
+.field public static final e:F
+
+.field public static final f:F
 
 
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Ltu5;->m:Ljava/lang/Object;
+    const/high16 v0, 0x41400000    # 12.0f
 
     .line 2
     .line 3
-    iget p1, p0, Ltu5;->n:I
+    const/4 v1, 0x0
 
     .line 4
-    .line 5
-    const/high16 v0, -0x80000000
+    invoke-static {v0, v1}, Lts;->o(FF)J
 
+    .line 5
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    const/high16 v0, 0x42340000    # 45.0f
 
     .line 8
-    iput p1, p0, Ltu5;->n:I
-
     .line 9
-    .line 10
-    const/4 p1, 0x0
+    sput v0, Ltu5;->a:F
 
+    .line 10
     .line 11
-    invoke-static {p1, p1, p1, p1, p0}, Lw23;->L(Lag6;Lep3;Lbn2;Lap4;Lbz;)Ljava/lang/Object;
+    const/16 v0, 0x11
 
     .line 12
     .line 13
-    .line 14
-    move-result-object p0
+    invoke-static {v0}, Lru5;->z(I)J
 
+    .line 14
     .line 15
-    return-object p0
+    .line 16
+    move-result-wide v0
+
+    .line 17
+    sput-wide v0, Ltu5;->b:J
+
+    .line 18
+    .line 19
+    const/high16 v0, 0x41800000    # 16.0f
+
+    .line 20
+    .line 21
+    sput v0, Ltu5;->c:F
+
+    .line 22
+    .line 23
+    const/high16 v1, 0x41000000    # 8.0f
+
+    .line 24
+    .line 25
+    sput v1, Ltu5;->d:F
+
+    .line 26
+    .line 27
+    sput v1, Ltu5;->e:F
+
+    .line 28
+    .line 29
+    sput v0, Ltu5;->f:F
+
+    .line 30
+    .line 31
+    return-void
 .end method

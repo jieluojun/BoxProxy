@@ -1,150 +1,241 @@
-.class public final Li70;
+.class public final synthetic Li70;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lo80;
+.implements Le62;
 
 
-# static fields
-.field public static final INSTANCE:Li70;
+# instance fields
+.field public final synthetic j:B
 
-.field public static final synthetic a:Lt03;
+.field public final synthetic k:Lry3;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lry3;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Li70;
+    iput-byte p2, p0, Li70;->j:B
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Li70;->k:Lry3;
 
     .line 4
     .line 5
-    .line 6
-    sput-object v0, Li70;->INSTANCE:Li70;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6
     .line 7
     .line 8
-    new-instance v0, Lfu;
-
-    .line 9
-    .line 10
-    const/16 v1, 0x18
-
-    .line 11
-    .line 12
-    invoke-direct {v0, v1}, Lfu;-><init>(B)V
-
-    .line 13
-    .line 14
-    .line 15
-    sget-object v1, Lt43;->j:Lt43;
-
-    .line 16
-    .line 17
-    invoke-static {v1, v0}, Loc7;->Q(Lt43;Ld52;)Lt03;
-
-    .line 18
-    .line 19
-    .line 20
-    move-result-object v0
-
-    .line 21
-    sput-object v0, Li70;->a:Lt03;
-
-    .line 22
-    .line 23
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final invoke()Ljava/lang/Object;
+    .locals 2
 
     .line 1
-    const/4 v0, 0x1
+    iget-byte v0, p0, Li70;->j:B
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
-    .line 4
-    return v0
+    sget-object v1, La47;->a:La47;
 
+    .line 4
     .line 5
-    :cond_0
-    instance-of p0, p1, Li70;
+    iget-object p0, p0, Li70;->k:Lry3;
 
     .line 6
     .line 7
-    if-nez p0, :cond_1
+    packed-switch v0, :pswitch_data_0
 
     .line 8
     .line 9
-    const/4 p0, 0x0
-
     .line 10
-    return p0
+    invoke-virtual {p0}, Lry3;->a()V
 
     .line 11
-    :cond_1
-    return v0
-.end method
+    .line 12
+    .line 13
+    return-object v1
 
-.method public final hashCode()I
-    .locals 0
+    .line 14
+    :pswitch_0
+    sget-object v0, Lv80;->INSTANCE:Lv80;
 
-    .line 1
-    const p0, -0x41fa076e
+    .line 15
+    .line 16
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
 
-    .line 2
-    .line 3
-    .line 4
-    return p0
-.end method
+    .line 17
+    .line 18
+    .line 19
+    return-object v1
 
-.method public final serializer()Lgx2;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lgx2;"
-        }
-    .end annotation
+    .line 20
+    :pswitch_1
+    sget-object v0, Lg80;->INSTANCE:Lg80;
 
-    .line 1
-    sget-object p0, Li70;->a:Lt03;
+    .line 21
+    .line 22
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
 
-    .line 2
-    .line 3
-    invoke-interface {p0}, Lt03;->getValue()Ljava/lang/Object;
+    .line 23
+    .line 24
+    .line 25
+    return-object v1
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
+    .line 26
+    :pswitch_2
+    sget-object v0, Ln80;->INSTANCE:Ln80;
 
-    .line 7
-    check-cast p0, Lgx2;
+    .line 27
+    .line 28
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
 
-    .line 8
-    .line 9
-    return-object p0
-.end method
+    .line 29
+    .line 30
+    .line 31
+    return-object v1
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    .line 32
+    :pswitch_3
+    sget-object v0, Lj90;->INSTANCE:Lj90;
 
-    .line 1
-    const-string p0, "ConnectionsDetails"
+    .line 33
+    .line 34
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
 
-    .line 2
-    .line 3
-    return-object p0
+    .line 35
+    .line 36
+    .line 37
+    return-object v1
+
+    .line 38
+    :pswitch_4
+    sget-object v0, Lh90;->INSTANCE:Lh90;
+
+    .line 39
+    .line 40
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
+
+    .line 41
+    .line 42
+    .line 43
+    return-object v1
+
+    .line 44
+    :pswitch_5
+    sget-object v0, Lh80;->INSTANCE:Lh80;
+
+    .line 45
+    .line 46
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
+
+    .line 47
+    .line 48
+    .line 49
+    return-object v1
+
+    .line 50
+    :pswitch_6
+    sget-object v0, Li80;->INSTANCE:Li80;
+
+    .line 51
+    .line 52
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
+
+    .line 53
+    .line 54
+    .line 55
+    return-object v1
+
+    .line 56
+    :pswitch_7
+    sget-object v0, Li90;->INSTANCE:Li90;
+
+    .line 57
+    .line 58
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
+
+    .line 59
+    .line 60
+    .line 61
+    return-object v1
+
+    .line 62
+    :pswitch_8
+    sget-object v0, Lv80;->INSTANCE:Lv80;
+
+    .line 63
+    .line 64
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
+
+    .line 65
+    .line 66
+    .line 67
+    return-object v1
+
+    .line 68
+    :pswitch_9
+    sget-object v0, Lg80;->INSTANCE:Lg80;
+
+    .line 69
+    .line 70
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
+
+    .line 71
+    .line 72
+    .line 73
+    return-object v1
+
+    .line 74
+    :pswitch_a
+    sget-object v0, Ln80;->INSTANCE:Ln80;
+
+    .line 75
+    .line 76
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
+
+    .line 77
+    .line 78
+    .line 79
+    return-object v1
+
+    .line 80
+    :pswitch_b
+    sget-object v0, Lj90;->INSTANCE:Lj90;
+
+    .line 81
+    .line 82
+    invoke-virtual {p0, v0}, Lry3;->b(Lq90;)V
+
+    .line 83
+    .line 84
+    .line 85
+    return-object v1
+
+    .line 86
+    nop
+
+    .line 87
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

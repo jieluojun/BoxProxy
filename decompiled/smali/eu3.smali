@@ -1,118 +1,194 @@
 .class public final Leu3;
-.super Ln67;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final b:Ljava/util/LinkedHashMap;
+.field public final a:[B
+
+.field public final b:I
+
+.field public final c:I
+
+.field public d:I
+
+.field public e:I
+
+.field public f:[I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(II[B)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ln67;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    new-instance v0, Ljava/util/LinkedHashMap;
+    iput-object p3, p0, Leu3;->a:[B
 
     .line 5
     .line 6
-    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
+    iput p1, p0, Leu3;->b:I
 
     .line 7
     .line 8
-    .line 9
-    iput-object v0, p0, Leu3;->b:Ljava/util/LinkedHashMap;
+    iput p2, p0, Leu3;->c:I
 
+    .line 9
     .line 10
-    .line 11
     return-void
 .end method
 
 
 # virtual methods
-.method public final b()V
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
     .line 1
-    invoke-virtual {p0}, Leu3;->c()V
+    new-instance v0, Ljava/lang/StringBuilder;
 
     .line 2
     .line 3
-    .line 4
-    return-void
-.end method
-
-.method public final c()V
-    .locals 2
-
-    .line 1
-    iget-object p0, p0, Leu3;->b:Ljava/util/LinkedHashMap;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
+    new-instance v1, Ljava/lang/String;
 
     .line 4
     .line 5
-    .line 6
-    move-result-object v0
+    iget v2, p0, Leu3;->c:I
 
+    .line 6
     .line 7
-    check-cast v0, Ljava/lang/Iterable;
+    iget v3, p0, Leu3;->b:I
 
     .line 8
     .line 9
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    sub-int/2addr v2, v3
 
     .line 10
+    iget-object v4, p0, Leu3;->a:[B
+
     .line 11
     .line 12
-    move-result-object v0
+    invoke-direct {v1, v4, v3, v2}, Ljava/lang/String;-><init>([BII)V
 
     .line 13
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
     .line 14
     .line 15
-    .line 16
-    move-result v1
+    const-string v2, " "
 
+    .line 16
     .line 17
-    if-eqz v1, :cond_0
+    invoke-virtual {v1, v2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     .line 18
     .line 19
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
     .line 20
-    .line 21
-    .line 22
     move-result-object v1
 
+    .line 21
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 22
     .line 23
-    check-cast v1, Lu67;
-
     .line 24
-    .line 25
-    invoke-virtual {v1}, Lu67;->a()V
+    iget v1, p0, Leu3;->d:I
 
+    .line 25
     .line 26
+    if-nez v1, :cond_0
+
     .line 27
     .line 28
-    goto :goto_0
+    const-string p0, "-"
 
     .line 29
-    :cond_0
-    invoke-virtual {p0}, Ljava/util/LinkedHashMap;->clear()V
-
     .line 30
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 31
     .line 32
-    return-void
+    .line 33
+    goto :goto_1
+
+    .line 34
+    :cond_0
+    const/4 v2, 0x1
+
+    .line 35
+    if-ne v1, v2, :cond_1
+
+    .line 36
+    .line 37
+    iget p0, p0, Leu3;->e:I
+
+    .line 38
+    .line 39
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 40
+    .line 41
+    .line 42
+    goto :goto_1
+
+    .line 43
+    :cond_1
+    const/4 v1, 0x0
+
+    .line 44
+    :goto_0
+    iget v2, p0, Leu3;->d:I
+
+    .line 45
+    .line 46
+    if-ge v1, v2, :cond_3
+
+    .line 47
+    .line 48
+    if-lez v1, :cond_2
+
+    .line 49
+    .line 50
+    const-string v2, ", "
+
+    .line 51
+    .line 52
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 53
+    .line 54
+    .line 55
+    :cond_2
+    iget-object v2, p0, Leu3;->f:[I
+
+    .line 56
+    .line 57
+    aget v2, v2, v1
+
+    .line 58
+    .line 59
+    invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 60
+    .line 61
+    .line 62
+    add-int/lit8 v1, v1, 0x1
+
+    .line 63
+    .line 64
+    goto :goto_0
+
+    .line 65
+    :cond_3
+    :goto_1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 66
+    .line 67
+    .line 68
+    move-result-object p0
+
+    .line 69
+    return-object p0
 .end method

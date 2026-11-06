@@ -1,123 +1,212 @@
 .class public final Lfx1;
-.super Lyi6;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Landroid/media/MediaDataSource;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final synthetic e:Lee5;
+.field public j:J
 
-.field public final synthetic f:Lgx1;
+.field public final synthetic k:Lkx1;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Lee5;Lgx1;)V
+.method public constructor <init>(Lkx1;)V
     .locals 0
 
     .line 1
-    iput-object p2, p0, Lfx1;->e:Lee5;
+    iput-object p1, p0, Lfx1;->k:Lkx1;
 
     .line 2
     .line 3
-    iput-object p3, p0, Lfx1;->f:Lgx1;
+    invoke-direct {p0}, Landroid/media/MediaDataSource;-><init>()V
 
     .line 4
     .line 5
-    const/4 p2, 0x1
-
     .line 6
-    invoke-direct {p0, p1, p2}, Lyi6;-><init>(Ljava/lang/String;Z)V
-
-    .line 7
-    .line 8
-    .line 9
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 4
+.method public final close()V
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lfx1;->e:Lee5;
+    return-void
+.end method
+
+.method public final getSize()J
+    .locals 2
+
+    .line 1
+    const-wide/16 v0, -0x1
 
     .line 2
     .line 3
-    :try_start_0
-    invoke-interface {v0}, Lee5;->g()Lde5;
+    return-wide v0
+.end method
+
+.method public final readAt(J[BII)I
+    .locals 8
+
+    .line 1
+    iget-object v0, p0, Lfx1;->k:Lkx1;
+
+    .line 2
+    .line 3
+    iget-object v1, v0, Lgx1;->j:Ljava/io/DataInputStream;
 
     .line 4
     .line 5
-    .line 6
-    move-result-object v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    if-nez p5, :cond_0
 
+    .line 6
     .line 7
-    goto :goto_0
+    const/4 p0, 0x0
 
     .line 8
-    :catchall_0
-    move-exception v1
+    return p0
 
     .line 9
-    new-instance v2, Lde5;
+    :cond_0
+    const-wide/16 v2, 0x0
 
     .line 10
     .line 11
-    const/4 v3, 0x2
+    cmp-long v4, p1, v2
 
     .line 12
-    invoke-direct {v2, v0, v1, v3}, Lde5;-><init>(Lee5;Ljava/lang/Throwable;I)V
-
     .line 13
-    .line 14
-    .line 15
-    move-object v1, v2
+    const/4 v5, -0x1
 
+    .line 14
+    if-gez v4, :cond_1
+
+    .line 15
     .line 16
-    :goto_0
-    iget-object p0, p0, Lfx1;->f:Lgx1;
+    goto :goto_0
 
     .line 17
+    :cond_1
+    :try_start_0
+    iget-wide v6, p0, Lfx1;->j:J
+
     .line 18
-    iget-object v2, p0, Lgx1;->m:Ljava/lang/Object;
-
     .line 19
+    cmp-long v4, v6, p1
+
     .line 20
-    check-cast v2, Ljava/util/concurrent/CopyOnWriteArrayList;
-
     .line 21
-    .line 22
-    invoke-virtual {v2, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->contains(Ljava/lang/Object;)Z
+    if-eqz v4, :cond_3
 
+    .line 22
     .line 23
+    cmp-long v2, v6, v2
+
     .line 24
     .line 25
-    move-result v0
+    if-ltz v2, :cond_2
 
     .line 26
-    if-eqz v0, :cond_0
-
     .line 27
-    .line 28
-    iget-object p0, p0, Lgx1;->n:Ljava/lang/Object;
+    invoke-virtual {v1}, Ljava/io/InputStream;->available()I
 
+    .line 28
     .line 29
     .line 30
-    check-cast p0, Ljava/util/concurrent/LinkedBlockingDeque;
+    move-result v2
 
     .line 31
+    int-to-long v2, v2
+
     .line 32
-    invoke-virtual {p0, v1}, Ljava/util/concurrent/LinkedBlockingDeque;->put(Ljava/lang/Object;)V
+    add-long/2addr v6, v2
 
     .line 33
+    cmp-long v2, p1, v6
+
     .line 34
     .line 35
-    :cond_0
-    const-wide/16 v0, -0x1
+    if-ltz v2, :cond_2
 
     .line 36
     .line 37
-    return-wide v0
+    :goto_0
+    return v5
+
+    .line 38
+    :cond_2
+    invoke-virtual {v0, p1, p2}, Lkx1;->c(J)V
+
+    .line 39
+    .line 40
+    .line 41
+    iput-wide p1, p0, Lfx1;->j:J
+
+    .line 42
+    .line 43
+    :cond_3
+    invoke-virtual {v1}, Ljava/io/InputStream;->available()I
+
+    .line 44
+    .line 45
+    .line 46
+    move-result p1
+
+    .line 47
+    if-le p5, p1, :cond_4
+
+    .line 48
+    .line 49
+    invoke-virtual {v1}, Ljava/io/InputStream;->available()I
+
+    .line 50
+    .line 51
+    .line 52
+    move-result p5
+
+    .line 53
+    :cond_4
+    invoke-virtual {v0, p3, p4, p5}, Lgx1;->read([BII)I
+
+    .line 54
+    .line 55
+    .line 56
+    move-result p1
+
+    .line 57
+    if-ltz p1, :cond_5
+
+    .line 58
+    .line 59
+    iget-wide p2, p0, Lfx1;->j:J
+
+    .line 60
+    .line 61
+    int-to-long p4, p1
+
+    .line 62
+    add-long/2addr p2, p4
+
+    .line 63
+    iput-wide p2, p0, Lfx1;->j:J
+    :try_end_0
+    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 64
+    .line 65
+    return p1
+
+    .line 66
+    :catch_0
+    :cond_5
+    const-wide/16 p1, -0x1
+
+    .line 67
+    .line 68
+    iput-wide p1, p0, Lfx1;->j:J
+
+    .line 69
+    .line 70
+    return v5
 .end method

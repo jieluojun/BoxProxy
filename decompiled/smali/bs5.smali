@@ -1,82 +1,34 @@
-.class public final Lbs5;
+.class public final synthetic Lbs5;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lth4;
-
-
-# instance fields
-.field public final j:I
-
-.field public final k:Ljava/util/List;
-
-.field public l:Ljava/lang/Float;
-
-.field public m:Ljava/lang/Float;
-
-.field public n:Lmr5;
-
-.field public o:Lmr5;
-
-
-# direct methods
-.method public constructor <init>(ILjava/util/ArrayList;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput p1, p0, Lbs5;->j:I
-
-    .line 5
-    .line 6
-    iput-object p2, p0, Lbs5;->k:Ljava/util/List;
-
-    .line 7
-    .line 8
-    const/4 p1, 0x0
-
-    .line 9
-    iput-object p1, p0, Lbs5;->l:Ljava/lang/Float;
-
-    .line 10
-    .line 11
-    iput-object p1, p0, Lbs5;->m:Ljava/lang/Float;
-
-    .line 12
-    .line 13
-    iput-object p1, p0, Lbs5;->n:Lmr5;
-
-    .line 14
-    .line 15
-    iput-object p1, p0, Lbs5;->o:Lmr5;
-
-    .line 16
-    .line 17
-    return-void
-.end method
+.implements Ljava/util/function/IntPredicate;
 
 
 # virtual methods
-.method public final P()Z
-    .locals 1
+.method public final test(I)Z
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lbs5;->k:Ljava/util/List;
+    const p0, 0xffff
 
     .line 2
     .line 3
-    invoke-interface {v0, p0}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-
     .line 4
+    if-ge p1, p0, :cond_0
+
     .line 5
     .line 6
-    move-result p0
+    const/4 p0, 0x1
 
     .line 7
+    return p0
+
+    .line 8
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 9
     return p0
 .end method

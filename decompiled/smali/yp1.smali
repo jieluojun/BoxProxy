@@ -1,422 +1,1181 @@
 .class public final Lyp1;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
+.field public final a:Ljava/lang/String;
 
-.field public final b:I
+.field public final b:Lp62;
 
-.field public c:J
+.field public final c:Lp62;
 
-.field public d:Landroid/widget/EdgeEffect;
+.field public final d:Z
 
-.field public e:Landroid/widget/EdgeEffect;
+.field public final e:Lp62;
 
-.field public f:Landroid/widget/EdgeEffect;
+.field public final f:Lp62;
 
-.field public g:Landroid/widget/EdgeEffect;
+.field public final g:Lp62;
 
-.field public h:Landroid/widget/EdgeEffect;
+.field public final h:Lp62;
 
-.field public i:Landroid/widget/EdgeEffect;
+.field public final i:Lp62;
 
-.field public j:Landroid/widget/EdgeEffect;
+.field public final j:Lp62;
 
-.field public k:Landroid/widget/EdgeEffect;
+.field public final k:Ljava/util/HashMap;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;I)V
+.method public constructor <init>(Ljava/lang/String;Lp62;Lp62;ZLp62;Lp62;Lp62;Lp62;Lp62;Lp62;)V
     .locals 0
 
     .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 5
+    .line 6
+    .line 7
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    .line 3
-    .line 4
-    iput-object p1, p0, Lyp1;->a:Landroid/content/Context;
-
-    .line 5
-    .line 6
-    iput p2, p0, Lyp1;->b:I
-
-    .line 7
     .line 8
-    const-wide/16 p1, 0x0
-
     .line 9
     .line 10
-    iput-wide p1, p0, Lyp1;->c:J
+    iput-object p1, p0, Lyp1;->a:Ljava/lang/String;
 
     .line 11
     .line 12
-    return-void
-.end method
-
-.method public static f(Landroid/widget/EdgeEffect;)Z
-    .locals 0
-
-    .line 1
-    if-nez p0, :cond_0
-
-    .line 2
-    .line 3
-    const/4 p0, 0x0
-
-    .line 4
-    return p0
-
-    .line 5
-    :cond_0
-    invoke-virtual {p0}, Landroid/widget/EdgeEffect;->isFinished()Z
-
-    .line 6
-    .line 7
-    .line 8
-    move-result p0
-
-    .line 9
-    xor-int/lit8 p0, p0, 0x1
-
-    .line 10
-    .line 11
-    return p0
-.end method
-
-.method public static g(Landroid/widget/EdgeEffect;)Z
-    .locals 4
-
-    .line 1
-    const/4 v0, 0x0
-
-    .line 2
-    if-nez p0, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    .line 6
-    .line 7
-    const/16 v2, 0x1f
-
-    .line 8
-    .line 9
-    const/4 v3, 0x0
-
-    .line 10
-    if-lt v1, v2, :cond_1
-
-    .line 11
-    .line 12
-    invoke-static {p0}, Ldb;->d(Landroid/widget/EdgeEffect;)F
+    iput-object p2, p0, Lyp1;->b:Lp62;
 
     .line 13
     .line 14
-    .line 15
-    move-result p0
+    iput-object p3, p0, Lyp1;->c:Lp62;
 
+    .line 15
     .line 16
-    goto :goto_0
+    iput-boolean p4, p0, Lyp1;->d:Z
 
     .line 17
-    :cond_1
-    move p0, v3
-
     .line 18
-    :goto_0
-    cmpg-float p0, p0, v3
+    iput-object p5, p0, Lyp1;->e:Lp62;
 
     .line 19
     .line 20
-    const/4 v1, 0x1
+    iput-object p6, p0, Lyp1;->f:Lp62;
 
     .line 21
-    if-nez p0, :cond_2
-
     .line 22
-    .line 23
-    move v0, v1
+    iput-object p7, p0, Lyp1;->g:Lp62;
 
+    .line 23
     .line 24
-    :cond_2
-    xor-int/lit8 p0, v0, 0x1
+    iput-object p8, p0, Lyp1;->h:Lp62;
 
     .line 25
     .line 26
-    return p0
+    iput-object p9, p0, Lyp1;->i:Lp62;
+
+    .line 27
+    .line 28
+    iput-object p10, p0, Lyp1;->j:Lp62;
+
+    .line 29
+    .line 30
+    new-instance p1, Ljava/util/HashMap;
+
+    .line 31
+    .line 32
+    invoke-direct {p1}, Ljava/util/HashMap;-><init>()V
+
+    .line 33
+    .line 34
+    .line 35
+    iput-object p1, p0, Lyp1;->k:Ljava/util/HashMap;
+
+    .line 36
+    .line 37
+    return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lid4;)Landroid/widget/EdgeEffect;
-    .locals 6
+.method public final a(Lmq1;)I
+    .locals 4
 
     .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    const/16 v1, 0x1f
-
     .line 4
+    iget-object v0, p0, Lyp1;->k:Ljava/util/HashMap;
+
     .line 5
-    iget-object v2, p0, Lyp1;->a:Landroid/content/Context;
-
     .line 6
-    .line 7
-    if-lt v0, v1, :cond_0
+    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 7
     .line 8
     .line 9
-    invoke-static {v2}, Ldb;->a(Landroid/content/Context;)Landroid/widget/EdgeEffect;
+    move-result-object v1
 
     .line 10
+    check-cast v1, Lna2;
+
     .line 11
     .line 12
-    move-result-object v0
+    if-eqz v1, :cond_0
 
     .line 13
-    goto :goto_0
-
     .line 14
-    :cond_0
-    new-instance v0, Lo72;
+    goto :goto_1
 
     .line 15
-    .line 16
-    invoke-direct {v0, v2}, Lo72;-><init>(Landroid/content/Context;)V
+    :cond_0
+    iget-object v1, p1, Lmq1;->l:Lbw0;
 
+    .line 16
     .line 17
+    sget-object v2, Lbw0;->m:Lbw0;
+
     .line 18
     .line 19
-    :goto_0
-    iget v1, p0, Lyp1;->b:I
+    if-ne v1, v2, :cond_1
 
     .line 20
     .line 21
-    invoke-virtual {v0, v1}, Landroid/widget/EdgeEffect;->setColor(I)V
+    sget-object v1, Lg61;->g:Lqw0;
 
     .line 22
     .line 23
+    goto :goto_0
+
     .line 24
-    iget-wide v1, p0, Lyp1;->c:J
+    :cond_1
+    sget-object v1, Lg61;->f:Liw0;
 
     .line 25
     .line 26
-    const-wide/16 v3, 0x0
+    :goto_0
+    invoke-virtual {v1, p0, p1}, Liw0;->e(Lyp1;Lmq1;)Lna2;
 
     .line 27
     .line 28
-    invoke-static {v1, v2, v3, v4}, Lar2;->a(JJ)Z
+    .line 29
+    move-result-object v1
+
+    .line 30
+    invoke-virtual {v0}, Ljava/util/HashMap;->size()I
+
+    .line 31
+    .line 32
+    .line 33
+    move-result v2
+
+    .line 34
+    const/4 v3, 0x4
+
+    .line 35
+    if-le v2, v3, :cond_2
+
+    .line 36
+    .line 37
+    invoke-virtual {v0}, Ljava/util/HashMap;->clear()V
+
+    .line 38
+    .line 39
+    .line 40
+    :cond_2
+    invoke-virtual {v0, p1, v1}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 41
+    .line 42
+    .line 43
+    :goto_1
+    iget v0, v1, Lna2;->a:I
+
+    .line 44
+    .line 45
+    iget-object p0, p0, Lyp1;->j:Lp62;
+
+    .line 46
+    .line 47
+    if-eqz p0, :cond_3
+
+    .line 48
+    .line 49
+    invoke-interface {p0, p1}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 50
+    .line 51
+    .line 52
+    move-result-object p1
+
+    .line 53
+    check-cast p1, Ljava/lang/Double;
+
+    .line 54
+    .line 55
+    goto :goto_2
+
+    .line 56
+    :cond_3
+    const/4 p1, 0x0
+
+    .line 57
+    :goto_2
+    if-eqz p0, :cond_5
+
+    .line 58
+    .line 59
+    if-nez p1, :cond_4
+
+    .line 60
+    .line 61
+    goto :goto_3
+
+    .line 62
+    :cond_4
+    invoke-virtual {p1}, Ljava/lang/Double;->doubleValue()D
+
+    .line 63
+    .line 64
+    .line 65
+    move-result-wide p0
+
+    .line 66
+    const-wide v1, 0x406fe00000000000L    # 255.0
+
+    .line 67
+    .line 68
+    .line 69
+    .line 70
+    .line 71
+    mul-double/2addr p0, v1
+
+    .line 72
+    invoke-static {p0, p1}, Ljava/lang/Math;->rint(D)D
+
+    .line 73
+    .line 74
+    .line 75
+    move-result-wide p0
+
+    .line 76
+    double-to-int p0, p0
+
+    .line 77
+    const/4 p1, 0x0
+
+    .line 78
+    const/16 v1, 0xff
+
+    .line 79
+    .line 80
+    invoke-static {p0, p1, v1}, Lgf3;->u(III)I
+
+    .line 81
+    .line 82
+    .line 83
+    move-result p0
+
+    .line 84
+    const p1, 0xffffff
+
+    .line 85
+    .line 86
+    .line 87
+    and-int/2addr p1, v0
+
+    .line 88
+    shl-int/lit8 p0, p0, 0x18
+
+    .line 89
+    .line 90
+    or-int/2addr p0, p1
+
+    .line 91
+    return p0
+
+    .line 92
+    :cond_5
+    :goto_3
+    return v0
+.end method
+
+.method public final b(Lmq1;)D
+    .locals 2
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    iget-object v0, p1, Lmq1;->l:Lbw0;
+
+    .line 5
+    .line 6
+    sget-object v1, Lbw0;->m:Lbw0;
+
+    .line 7
+    .line 8
+    if-ne v0, v1, :cond_0
+
+    .line 9
+    .line 10
+    sget-object v0, Lg61;->g:Lqw0;
+
+    .line 11
+    .line 12
+    goto :goto_0
+
+    .line 13
+    :cond_0
+    sget-object v0, Lg61;->f:Liw0;
+
+    .line 14
+    .line 15
+    :goto_0
+    invoke-virtual {v0, p0, p1}, Liw0;->k(Lyp1;Lmq1;)D
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-wide p0
+
+    .line 19
+    return-wide p0
+.end method
+
+.method public final c()Lxp1;
+    .locals 2
+
+    .line 1
+    new-instance v0, Lxp1;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object v1, p0, Lyp1;->a:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 9
+    .line 10
+    .line 11
+    iput-object v1, v0, Lxp1;->a:Ljava/lang/String;
+
+    .line 12
+    .line 13
+    iget-object v1, p0, Lyp1;->b:Lp62;
+
+    .line 14
+    .line 15
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 16
+    .line 17
+    .line 18
+    iput-object v1, v0, Lxp1;->b:Lp62;
+
+    .line 19
+    .line 20
+    iget-object v1, p0, Lyp1;->c:Lp62;
+
+    .line 21
+    .line 22
+    iput-object v1, v0, Lxp1;->c:Lp62;
+
+    .line 23
+    .line 24
+    iget-boolean v1, p0, Lyp1;->d:Z
+
+    .line 25
+    .line 26
+    iput-boolean v1, v0, Lxp1;->d:Z
+
+    .line 27
+    .line 28
+    iget-object v1, p0, Lyp1;->e:Lp62;
+
+    .line 29
+    .line 30
+    iput-object v1, v0, Lxp1;->e:Lp62;
+
+    .line 31
+    .line 32
+    iget-object v1, p0, Lyp1;->f:Lp62;
+
+    .line 33
+    .line 34
+    iput-object v1, v0, Lxp1;->f:Lp62;
+
+    .line 35
+    .line 36
+    iget-object v1, p0, Lyp1;->g:Lp62;
+
+    .line 37
+    .line 38
+    iput-object v1, v0, Lxp1;->g:Lp62;
+
+    .line 39
+    .line 40
+    iget-object v1, p0, Lyp1;->h:Lp62;
+
+    .line 41
+    .line 42
+    iput-object v1, v0, Lxp1;->h:Lp62;
+
+    .line 43
+    .line 44
+    iget-object v1, p0, Lyp1;->i:Lp62;
+
+    .line 45
+    .line 46
+    iput-object v1, v0, Lxp1;->i:Lp62;
+
+    .line 47
+    .line 48
+    iget-object p0, p0, Lyp1;->j:Lp62;
+
+    .line 49
+    .line 50
+    iput-object p0, v0, Lxp1;->j:Lp62;
+
+    .line 51
+    .line 52
+    return-object v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    .line 1
+    if-ne p0, p1, :cond_0
+
+    .line 2
+    .line 3
+    goto/16 :goto_1
+
+    .line 4
+    .line 5
+    :cond_0
+    instance-of v0, p1, Lyp1;
+
+    .line 6
+    .line 7
+    if-nez v0, :cond_1
+
+    .line 8
+    .line 9
+    goto/16 :goto_0
+
+    .line 10
+    .line 11
+    :cond_1
+    check-cast p1, Lyp1;
+
+    .line 12
+    .line 13
+    iget-object v0, p0, Lyp1;->a:Ljava/lang/String;
+
+    .line 14
+    .line 15
+    iget-object v1, p1, Lyp1;->a:Ljava/lang/String;
+
+    .line 16
+    .line 17
+    invoke-static {v0, v1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v0
+
+    .line 21
+    if-nez v0, :cond_2
+
+    .line 22
+    .line 23
+    goto :goto_0
+
+    .line 24
+    :cond_2
+    iget-object v0, p0, Lyp1;->b:Lp62;
+
+    .line 25
+    .line 26
+    iget-object v1, p1, Lyp1;->b:Lp62;
+
+    .line 27
+    .line 28
+    invoke-static {v0, v1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 29
     .line 30
     .line 31
-    move-result v1
+    move-result v0
 
     .line 32
-    if-nez v1, :cond_2
+    if-nez v0, :cond_3
 
     .line 33
     .line 34
-    iget-wide v1, p0, Lyp1;->c:J
+    goto :goto_0
 
     .line 35
-    .line 36
-    const-wide v3, 0xffffffffL
+    :cond_3
+    iget-object v0, p0, Lyp1;->c:Lp62;
 
+    .line 36
     .line 37
+    iget-object v1, p1, Lyp1;->c:Lp62;
+
     .line 38
     .line 39
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
     .line 40
     .line 41
-    const/16 p0, 0x20
-
     .line 42
+    move-result v0
+
     .line 43
-    sget-object v5, Lid4;->j:Lid4;
+    if-nez v0, :cond_4
 
     .line 44
     .line 45
-    if-ne p1, v5, :cond_1
+    goto :goto_0
 
     .line 46
+    :cond_4
+    iget-boolean v0, p0, Lyp1;->d:Z
+
     .line 47
-    shr-long p0, v1, p0
+    .line 48
+    iget-boolean v1, p1, Lyp1;->d:Z
+
+    .line 49
+    .line 50
+    if-eq v0, v1, :cond_5
+
+    .line 51
+    .line 52
+    goto :goto_0
+
+    .line 53
+    :cond_5
+    iget-object v0, p0, Lyp1;->e:Lp62;
+
+    .line 54
+    .line 55
+    iget-object v1, p1, Lyp1;->e:Lp62;
+
+    .line 56
+    .line 57
+    invoke-static {v0, v1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 58
+    .line 59
+    .line 60
+    move-result v0
+
+    .line 61
+    if-nez v0, :cond_6
+
+    .line 62
+    .line 63
+    goto :goto_0
+
+    .line 64
+    :cond_6
+    iget-object v0, p0, Lyp1;->f:Lp62;
+
+    .line 65
+    .line 66
+    iget-object v1, p1, Lyp1;->f:Lp62;
+
+    .line 67
+    .line 68
+    invoke-static {v0, v1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 69
+    .line 70
+    .line 71
+    move-result v0
+
+    .line 72
+    if-nez v0, :cond_7
+
+    .line 73
+    .line 74
+    goto :goto_0
+
+    .line 75
+    :cond_7
+    iget-object v0, p0, Lyp1;->g:Lp62;
+
+    .line 76
+    .line 77
+    iget-object v1, p1, Lyp1;->g:Lp62;
+
+    .line 78
+    .line 79
+    invoke-static {v0, v1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 80
+    .line 81
+    .line 82
+    move-result v0
+
+    .line 83
+    if-nez v0, :cond_8
+
+    .line 84
+    .line 85
+    goto :goto_0
+
+    .line 86
+    :cond_8
+    iget-object v0, p0, Lyp1;->h:Lp62;
+
+    .line 87
+    .line 88
+    iget-object v1, p1, Lyp1;->h:Lp62;
+
+    .line 89
+    .line 90
+    invoke-static {v0, v1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 91
+    .line 92
+    .line 93
+    move-result v0
+
+    .line 94
+    if-nez v0, :cond_9
+
+    .line 95
+    .line 96
+    goto :goto_0
+
+    .line 97
+    :cond_9
+    iget-object v0, p0, Lyp1;->i:Lp62;
+
+    .line 98
+    .line 99
+    iget-object v1, p1, Lyp1;->i:Lp62;
+
+    .line 100
+    .line 101
+    invoke-static {v0, v1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 102
+    .line 103
+    .line 104
+    move-result v0
+
+    .line 105
+    if-nez v0, :cond_a
+
+    .line 106
+    .line 107
+    goto :goto_0
+
+    .line 108
+    :cond_a
+    iget-object p0, p0, Lyp1;->j:Lp62;
+
+    .line 109
+    .line 110
+    iget-object p1, p1, Lyp1;->j:Lp62;
+
+    .line 111
+    .line 112
+    invoke-static {p0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 113
+    .line 114
+    .line 115
+    move-result p0
+
+    .line 116
+    if-nez p0, :cond_b
+
+    .line 117
+    .line 118
+    :goto_0
+    const/4 p0, 0x0
+
+    .line 119
+    return p0
+
+    .line 120
+    :cond_b
+    :goto_1
+    const/4 p0, 0x1
+
+    .line 121
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 4
+
+    .line 1
+    iget-object v0, p0, Lyp1;->a:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    const/16 v1, 0x1f
+
+    .line 8
+    .line 9
+    mul-int/2addr v0, v1
+
+    .line 10
+    iget-object v2, p0, Lyp1;->b:Lp62;
+
+    .line 11
+    .line 12
+    invoke-static {v0, v1, v2}, Ly96;->d(IILp62;)I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result v0
+
+    .line 16
+    iget-object v2, p0, Lyp1;->c:Lp62;
+
+    .line 17
+    .line 18
+    invoke-static {v0, v1, v2}, Ly96;->d(IILp62;)I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v0
+
+    .line 22
+    iget-boolean v2, p0, Lyp1;->d:Z
+
+    .line 23
+    .line 24
+    invoke-static {v0, v1, v2}, Loc1;->f(IIZ)I
+
+    .line 25
+    .line 26
+    .line 27
+    move-result v0
+
+    .line 28
+    const/4 v2, 0x0
+
+    .line 29
+    iget-object v3, p0, Lyp1;->e:Lp62;
+
+    .line 30
+    .line 31
+    if-nez v3, :cond_0
+
+    .line 32
+    .line 33
+    move v3, v2
+
+    .line 34
+    goto :goto_0
+
+    .line 35
+    :cond_0
+    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
+
+    .line 36
+    .line 37
+    .line 38
+    move-result v3
+
+    .line 39
+    :goto_0
+    add-int/2addr v0, v3
+
+    .line 40
+    mul-int/2addr v0, v1
+
+    .line 41
+    iget-object v3, p0, Lyp1;->f:Lp62;
+
+    .line 42
+    .line 43
+    if-nez v3, :cond_1
+
+    .line 44
+    .line 45
+    move v3, v2
+
+    .line 46
+    goto :goto_1
+
+    .line 47
+    :cond_1
+    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
 
     .line 48
     .line 49
-    long-to-int p0, p0
-
     .line 50
-    and-long/2addr v1, v3
+    move-result v3
 
     .line 51
-    long-to-int p1, v1
+    :goto_1
+    add-int/2addr v0, v3
 
     .line 52
-    invoke-virtual {v0, p0, p1}, Landroid/widget/EdgeEffect;->setSize(II)V
+    mul-int/2addr v0, v1
 
     .line 53
+    iget-object v3, p0, Lyp1;->g:Lp62;
+
     .line 54
     .line 55
-    return-object v0
+    if-nez v3, :cond_2
 
     .line 56
-    :cond_1
-    and-long/2addr v3, v1
-
     .line 57
-    long-to-int p1, v3
+    move v3, v2
 
     .line 58
-    shr-long/2addr v1, p0
+    goto :goto_2
 
     .line 59
-    long-to-int p0, v1
+    :cond_2
+    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
 
     .line 60
-    invoke-virtual {v0, p1, p0}, Landroid/widget/EdgeEffect;->setSize(II)V
+    .line 61
+    .line 62
+    move-result v3
+
+    .line 63
+    :goto_2
+    add-int/2addr v0, v3
+
+    .line 64
+    mul-int/2addr v0, v1
+
+    .line 65
+    iget-object v3, p0, Lyp1;->h:Lp62;
+
+    .line 66
+    .line 67
+    if-nez v3, :cond_3
+
+    .line 68
+    .line 69
+    move v3, v2
+
+    .line 70
+    goto :goto_3
+
+    .line 71
+    :cond_3
+    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
+
+    .line 72
+    .line 73
+    .line 74
+    move-result v3
+
+    .line 75
+    :goto_3
+    add-int/2addr v0, v3
+
+    .line 76
+    mul-int/2addr v0, v1
+
+    .line 77
+    iget-object v3, p0, Lyp1;->i:Lp62;
+
+    .line 78
+    .line 79
+    if-nez v3, :cond_4
+
+    .line 80
+    .line 81
+    move v3, v2
+
+    .line 82
+    goto :goto_4
+
+    .line 83
+    :cond_4
+    invoke-virtual {v3}, Ljava/lang/Object;->hashCode()I
+
+    .line 84
+    .line 85
+    .line 86
+    move-result v3
+
+    .line 87
+    :goto_4
+    add-int/2addr v0, v3
+
+    .line 88
+    mul-int/2addr v0, v1
+
+    .line 89
+    iget-object p0, p0, Lyp1;->j:Lp62;
+
+    .line 90
+    .line 91
+    if-nez p0, :cond_5
+
+    .line 92
+    .line 93
+    goto :goto_5
+
+    .line 94
+    :cond_5
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 95
+    .line 96
+    .line 97
+    move-result v2
+
+    .line 98
+    :goto_5
+    add-int/2addr v0, v2
+
+    .line 99
+    return v0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "DynamicColor(name="
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object v1, p0, Lyp1;->a:Ljava/lang/String;
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const-string v1, ", palette="
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    iget-object v1, p0, Lyp1;->b:Lp62;
+
+    .line 19
+    .line 20
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 21
+    .line 22
+    .line 23
+    const-string v1, ", tone="
+
+    .line 24
+    .line 25
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 26
+    .line 27
+    .line 28
+    iget-object v1, p0, Lyp1;->c:Lp62;
+
+    .line 29
+    .line 30
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 31
+    .line 32
+    .line 33
+    const-string v1, ", isBackground="
+
+    .line 34
+    .line 35
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 36
+    .line 37
+    .line 38
+    iget-boolean v1, p0, Lyp1;->d:Z
+
+    .line 39
+    .line 40
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    .line 41
+    .line 42
+    .line 43
+    const-string v1, ", chromaMultiplier="
+
+    .line 44
+    .line 45
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 46
+    .line 47
+    .line 48
+    iget-object v1, p0, Lyp1;->e:Lp62;
+
+    .line 49
+    .line 50
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 51
+    .line 52
+    .line 53
+    const-string v1, ", background="
+
+    .line 54
+    .line 55
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 56
+    .line 57
+    .line 58
+    iget-object v1, p0, Lyp1;->f:Lp62;
+
+    .line 59
+    .line 60
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 61
     .line 62
     .line 63
-    :cond_2
-    return-object v0
-.end method
+    const-string v1, ", secondBackground="
 
-.method public final b()Landroid/widget/EdgeEffect;
-    .locals 1
+    .line 64
+    .line 65
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1
-    iget-object v0, p0, Lyp1;->e:Landroid/widget/EdgeEffect;
+    .line 66
+    .line 67
+    .line 68
+    iget-object v1, p0, Lyp1;->g:Lp62;
 
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
+    .line 69
+    .line 70
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 4
-    .line 5
-    sget-object v0, Lid4;->j:Lid4;
+    .line 71
+    .line 72
+    .line 73
+    const-string v1, ", contrastCurve="
 
-    .line 6
-    .line 7
-    invoke-virtual {p0, v0}, Lyp1;->a(Lid4;)Landroid/widget/EdgeEffect;
+    .line 74
+    .line 75
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 8
-    .line 9
-    .line 10
-    move-result-object v0
+    .line 76
+    .line 77
+    .line 78
+    iget-object v1, p0, Lyp1;->h:Lp62;
 
-    .line 11
-    iput-object v0, p0, Lyp1;->e:Landroid/widget/EdgeEffect;
+    .line 79
+    .line 80
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 12
-    .line 13
-    :cond_0
-    return-object v0
-.end method
+    .line 81
+    .line 82
+    .line 83
+    const-string v1, ", toneDeltaPair="
 
-.method public final c()Landroid/widget/EdgeEffect;
-    .locals 1
+    .line 84
+    .line 85
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1
-    iget-object v0, p0, Lyp1;->f:Landroid/widget/EdgeEffect;
+    .line 86
+    .line 87
+    .line 88
+    iget-object v1, p0, Lyp1;->i:Lp62;
 
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
+    .line 89
+    .line 90
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 4
-    .line 5
-    sget-object v0, Lid4;->k:Lid4;
+    .line 91
+    .line 92
+    .line 93
+    const-string v1, ", opacity="
 
-    .line 6
-    .line 7
-    invoke-virtual {p0, v0}, Lyp1;->a(Lid4;)Landroid/widget/EdgeEffect;
+    .line 94
+    .line 95
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 8
-    .line 9
-    .line 10
-    move-result-object v0
+    .line 96
+    .line 97
+    .line 98
+    iget-object p0, p0, Lyp1;->j:Lp62;
 
-    .line 11
-    iput-object v0, p0, Lyp1;->f:Landroid/widget/EdgeEffect;
+    .line 99
+    .line 100
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-    .line 12
-    .line 13
-    :cond_0
-    return-object v0
-.end method
+    .line 101
+    .line 102
+    .line 103
+    const-string p0, ")"
 
-.method public final d()Landroid/widget/EdgeEffect;
-    .locals 1
+    .line 104
+    .line 105
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1
-    iget-object v0, p0, Lyp1;->g:Landroid/widget/EdgeEffect;
+    .line 106
+    .line 107
+    .line 108
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
+    .line 109
+    .line 110
+    .line 111
+    move-result-object p0
 
-    .line 4
-    .line 5
-    sget-object v0, Lid4;->k:Lid4;
-
-    .line 6
-    .line 7
-    invoke-virtual {p0, v0}, Lyp1;->a(Lid4;)Landroid/widget/EdgeEffect;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object v0
-
-    .line 11
-    iput-object v0, p0, Lyp1;->g:Landroid/widget/EdgeEffect;
-
-    .line 12
-    .line 13
-    :cond_0
-    return-object v0
-.end method
-
-.method public final e()Landroid/widget/EdgeEffect;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lyp1;->d:Landroid/widget/EdgeEffect;
-
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
-
-    .line 4
-    .line 5
-    sget-object v0, Lid4;->j:Lid4;
-
-    .line 6
-    .line 7
-    invoke-virtual {p0, v0}, Lyp1;->a(Lid4;)Landroid/widget/EdgeEffect;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object v0
-
-    .line 11
-    iput-object v0, p0, Lyp1;->d:Landroid/widget/EdgeEffect;
-
-    .line 12
-    .line 13
-    :cond_0
-    return-object v0
+    .line 112
+    return-object p0
 .end method

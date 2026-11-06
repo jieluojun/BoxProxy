@@ -1,118 +1,103 @@
-.class public abstract Lx77;
+.class public final synthetic Lx77;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lm71;
 
 
-# static fields
-.field public static final a:Lgo2;
+# instance fields
+.field public final synthetic a:Li56;
+
+.field public final synthetic b:Lwl4;
+
+.field public final synthetic c:Lhs3;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Li56;Lwl4;Lhs3;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lgo2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const-string v1, "^[a-z0-9!#$&^_.+-]+/[a-z0-9!#$&^_.+-]+$"
-
     .line 4
-    .line 5
-    invoke-direct {v0, v1}, Lgo2;-><init>(Ljava/lang/String;)V
+    iput-object p1, p0, Lx77;->a:Li56;
 
+    .line 5
     .line 6
+    iput-object p2, p0, Lx77;->b:Lwl4;
+
     .line 7
     .line 8
-    sput-object v0, Lx77;->a:Lgo2;
+    iput-object p3, p0, Lx77;->c:Lhs3;
 
     .line 9
     .line 10
     return-void
 .end method
 
-.method public static final a(Ljava/lang/String;)Ljava/lang/String;
-    .locals 1
+
+# virtual methods
+.method public final a(ILe81;Lvj1;)V
+    .locals 2
 
     .line 1
-    const/16 v0, 0x3b
+    const/4 p1, 0x0
 
     .line 2
-    .line 3
-    invoke-static {p0, v0}, Lib6;->W0(Ljava/lang/String;C)Ljava/lang/String;
+    iget p3, p2, Le81;->l:I
 
+    .line 3
     .line 4
+    iget-object v0, p0, Lx77;->a:Li56;
+
     .line 5
     .line 6
-    move-result-object p0
+    iget-object v1, p0, Lx77;->b:Lwl4;
 
     .line 7
-    invoke-static {p0}, Lib6;->a1(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-
     .line 8
+    invoke-virtual {v0, p2, p1, p3, v1}, Li56;->b(Ljava/lang/CharSequence;IILwl4;)F
+
     .line 9
     .line 10
-    move-result-object p0
-
     .line 11
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    move-result p1
 
     .line 12
+    float-to-double p1, p1
+
     .line 13
+    invoke-static {p1, p2}, Ljava/lang/Math;->ceil(D)D
+
     .line 14
-    move-result-object p0
-
     .line 15
-    sget-object v0, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
-
     .line 16
+    move-result-wide p1
+
     .line 17
-    invoke-virtual {p0, v0}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    double-to-int p1, p1
 
     .line 18
+    iget-object p0, p0, Lx77;->c:Lhs3;
+
     .line 19
     .line 20
-    move-result-object p0
+    iget p2, p0, Lhs3;->a:I
 
     .line 21
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 22
+    if-le p1, p2, :cond_0
+
     .line 23
     .line 24
-    sget-object v0, Lx77;->a:Lgo2;
+    iput p1, p0, Lhs3;->a:I
 
     .line 25
     .line 26
-    invoke-virtual {v0, p0}, Lgo2;->d(Ljava/lang/CharSequence;)Z
-
-    .line 27
-    .line 28
-    .line 29
-    move-result v0
-
-    .line 30
-    if-eqz v0, :cond_0
-
-    .line 31
-    .line 32
-    goto :goto_0
-
-    .line 33
     :cond_0
-    const/4 p0, 0x0
-
-    .line 34
-    :goto_0
-    if-nez p0, :cond_1
-
-    .line 35
-    .line 36
-    const-string p0, "application/octet-stream"
-
-    .line 37
-    .line 38
-    :cond_1
-    return-object p0
+    return-void
 .end method

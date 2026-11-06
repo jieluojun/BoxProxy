@@ -1,16 +1,16 @@
 .class public final Landroidx/lifecycle/ProcessLifecycleInitializer;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lho2;
+.implements Lrp2;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lho2;"
+        "Lrp2;"
     }
 .end annotation
 
@@ -34,7 +34,7 @@
     .locals 0
 
     .line 1
-    sget-object p0, Lqt1;->j:Lqt1;
+    sget-object p0, Lqu1;->j:Lqu1;
 
     .line 2
     .line 3
@@ -50,7 +50,7 @@
     .line 2
     .line 3
     .line 4
-    invoke-static {p1}, Lsr6;->M(Landroid/content/Context;)Lsr6;
+    invoke-static {p1}, Lit6;->M(Landroid/content/Context;)Lit6;
 
     .line 5
     .line 6
@@ -63,7 +63,7 @@
     .line 9
     .line 10
     .line 11
-    iget-object p0, p0, Lsr6;->l:Ljava/lang/Object;
+    iget-object p0, p0, Lit6;->l:Ljava/lang/Object;
 
     .line 12
     .line 13
@@ -87,7 +87,7 @@
 
     .line 22
     .line 23
-    sget-object p0, Lz53;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    sget-object p0, Lv63;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 24
     .line 25
@@ -127,11 +127,11 @@
 
     .line 41
     .line 42
-    new-instance v0, Ly53;
+    new-instance v0, Lu63;
 
     .line 43
     .line 44
-    invoke-direct {v0}, Ly53;-><init>()V
+    invoke-direct {v0}, Lu63;-><init>()V
 
     .line 45
     .line 46
@@ -142,7 +142,7 @@
     .line 49
     .line 50
     :goto_0
-    sget-object p0, Lzs4;->q:Lzs4;
+    sget-object p0, Llu4;->q:Llu4;
 
     .line 51
     .line 52
@@ -160,19 +160,19 @@
     .line 58
     .line 59
     .line 60
-    iput-object v0, p0, Lzs4;->n:Landroid/os/Handler;
+    iput-object v0, p0, Llu4;->n:Landroid/os/Handler;
 
     .line 61
     .line 62
-    iget-object v0, p0, Lzs4;->o:Lh63;
+    iget-object v0, p0, Llu4;->o:Ld73;
 
     .line 63
     .line 64
-    sget-object v1, Lw53;->ON_CREATE:Lw53;
+    sget-object v1, Ls63;->ON_CREATE:Ls63;
 
     .line 65
     .line 66
-    invoke-virtual {v0, v1}, Lh63;->d(Lw53;)V
+    invoke-virtual {v0, v1}, Ld73;->d(Ls63;)V
 
     .line 67
     .line 68
@@ -194,11 +194,11 @@
 
     .line 77
     .line 78
-    new-instance v0, Lys4;
+    new-instance v0, Lku4;
 
     .line 79
     .line 80
-    invoke-direct {v0, p0}, Lys4;-><init>(Lzs4;)V
+    invoke-direct {v0, p0}, Lku4;-><init>(Llu4;)V
 
     .line 81
     .line 82
@@ -216,7 +216,7 @@
 
     .line 88
     .line 89
-    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
+    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
 
     .line 90
     .line 91

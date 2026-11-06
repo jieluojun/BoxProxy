@@ -1,72 +1,40 @@
 .class public final Lb95;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+
+# instance fields
+.field public final a:Lxy1;
+
+.field public final b:Lck1;
 
 
 # direct methods
-.method public static a(Lc62;)Ljava/lang/String;
+.method public constructor <init>(JLxy1;Lkn4;)V
     .locals 1
 
     .line 1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    move-result-object p0
+    iput-object p3, p0, Lb95;->a:Lxy1;
 
     .line 5
-    invoke-virtual {p0}, Ljava/lang/Class;->getGenericInterfaces()[Ljava/lang/reflect/Type;
-
     .line 6
+    new-instance v0, Lck1;
+
     .line 7
     .line 8
-    move-result-object p0
+    invoke-direct {v0, p1, p2, p3, p4}, Lck1;-><init>(JLxy1;Lkn4;)V
 
     .line 9
-    const/4 v0, 0x0
-
     .line 10
-    aget-object p0, p0, v0
-
     .line 11
+    iput-object v0, p0, Lb95;->b:Lck1;
+
     .line 12
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
     .line 13
-    .line 14
-    .line 15
-    move-result-object p0
-
-    .line 16
-    const-string v0, "kotlin.jvm.functions."
-
-    .line 17
-    .line 18
-    invoke-virtual {p0, v0}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    .line 19
-    .line 20
-    .line 21
-    move-result v0
-
-    .line 22
-    if-eqz v0, :cond_0
-
-    .line 23
-    .line 24
-    const/16 v0, 0x15
-
-    .line 25
-    .line 26
-    invoke-virtual {p0, v0}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    .line 27
-    .line 28
-    .line 29
-    move-result-object p0
-
-    .line 30
-    :cond_0
-    return-object p0
+    return-void
 .end method

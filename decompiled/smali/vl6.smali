@@ -1,19 +1,19 @@
-.class public final synthetic Lvl6;
+.class public final Lvl6;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Ld52;
+.implements Lu62;
 
 
 # instance fields
 .field public final synthetic j:B
 
-.field public final synthetic k:Ldm6;
+.field public final synthetic k:Landroid/graphics/drawable/Drawable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ldm6;B)V
+.method public synthetic constructor <init>(Landroid/graphics/drawable/Drawable;B)V
     .locals 0
 
     .line 1
@@ -21,7 +21,7 @@
 
     .line 2
     .line 3
-    iput-object p1, p0, Lvl6;->k:Ldm6;
+    iput-object p1, p0, Lvl6;->k:Landroid/graphics/drawable/Drawable;
 
     .line 4
     .line 5
@@ -35,91 +35,199 @@
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
+.method public final b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 8
 
     .line 1
     iget-byte v0, p0, Lvl6;->j:B
 
     .line 2
     .line 3
-    const/high16 v1, 0x41800000    # 16.0f
+    sget-object v1, La47;->a:La47;
 
     .line 4
     .line 5
-    const/high16 v2, 0x41c00000    # 24.0f
+    const/16 v2, 0x30
 
     .line 6
     .line 7
-    iget-object p0, p0, Lvl6;->k:Ldm6;
+    iget-object p0, p0, Lvl6;->k:Landroid/graphics/drawable/Drawable;
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_0
+    const/4 v3, 0x0
 
     .line 10
+    const/16 v4, 0x10
+
     .line 11
     .line 12
-    invoke-virtual {p0}, Ldm6;->invoke()F
+    const/4 v5, 0x1
 
     .line 13
+    packed-switch v0, :pswitch_data_0
+
     .line 14
     .line 15
-    move-result p0
-
     .line 16
-    invoke-static {v2, v1, p0}, Lt87;->C(FFF)F
+    check-cast p1, Ljv0;
 
     .line 17
     .line 18
-    .line 19
-    move-result p0
+    iget-wide v6, p1, Ljv0;->a:J
 
+    .line 19
     .line 20
-    new-instance v0, Lxk1;
+    check-cast p2, Lz11;
 
     .line 21
     .line 22
-    invoke-direct {v0, p0}, Lxk1;-><init>(F)V
+    check-cast p3, Ljava/lang/Number;
 
     .line 23
     .line 24
+    invoke-virtual {p3}, Ljava/lang/Number;->intValue()I
+
     .line 25
-    return-object v0
-
     .line 26
-    :pswitch_0
-    invoke-virtual {p0}, Ldm6;->invoke()F
-
     .line 27
-    .line 28
-    .line 29
-    move-result p0
+    move-result p1
 
+    .line 28
+    and-int/lit8 p3, p1, 0x11
+
+    .line 29
     .line 30
-    invoke-static {v2, v1, p0}, Lt87;->C(FFF)F
+    if-eq p3, v4, :cond_0
 
     .line 31
     .line 32
+    move v3, v5
+
     .line 33
-    move-result p0
+    :cond_0
+    and-int/2addr p1, v5
 
     .line 34
-    new-instance v0, Lxk1;
+    check-cast p2, Lt72;
 
     .line 35
     .line 36
-    invoke-direct {v0, p0}, Lxk1;-><init>(F)V
+    invoke-virtual {p2, p1, v3}, Lt72;->T(IZ)Z
 
     .line 37
     .line 38
     .line 39
-    return-object v0
+    move-result p1
 
     .line 40
-    nop
+    if-eqz p1, :cond_1
 
     .line 41
+    .line 42
+    sget-object p1, Lge5;->H:Lge5;
+
+    .line 43
+    .line 44
+    invoke-virtual {p1, p0, p2, v2}, Lge5;->g(Landroid/graphics/drawable/Drawable;Lz11;I)V
+
+    .line 45
+    .line 46
+    .line 47
+    goto :goto_0
+
+    .line 48
+    :cond_1
+    invoke-virtual {p2}, Lt72;->W()V
+
+    .line 49
+    .line 50
+    .line 51
+    :goto_0
+    return-object v1
+
+    .line 52
+    :pswitch_0
+    check-cast p1, Ljv0;
+
+    .line 53
+    .line 54
+    iget-wide v6, p1, Ljv0;->a:J
+
+    .line 55
+    .line 56
+    check-cast p2, Lz11;
+
+    .line 57
+    .line 58
+    check-cast p3, Ljava/lang/Number;
+
+    .line 59
+    .line 60
+    invoke-virtual {p3}, Ljava/lang/Number;->intValue()I
+
+    .line 61
+    .line 62
+    .line 63
+    move-result p1
+
+    .line 64
+    and-int/lit8 p3, p1, 0x11
+
+    .line 65
+    .line 66
+    if-eq p3, v4, :cond_2
+
+    .line 67
+    .line 68
+    move v3, v5
+
+    .line 69
+    :cond_2
+    and-int/2addr p1, v5
+
+    .line 70
+    check-cast p2, Lt72;
+
+    .line 71
+    .line 72
+    invoke-virtual {p2, p1, v3}, Lt72;->T(IZ)Z
+
+    .line 73
+    .line 74
+    .line 75
+    move-result p1
+
+    .line 76
+    if-eqz p1, :cond_3
+
+    .line 77
+    .line 78
+    sget-object p1, Lge5;->H:Lge5;
+
+    .line 79
+    .line 80
+    invoke-virtual {p1, p0, p2, v2}, Lge5;->g(Landroid/graphics/drawable/Drawable;Lz11;I)V
+
+    .line 81
+    .line 82
+    .line 83
+    goto :goto_1
+
+    .line 84
+    :cond_3
+    invoke-virtual {p2}, Lt72;->W()V
+
+    .line 85
+    .line 86
+    .line 87
+    :goto_1
+    return-object v1
+
+    .line 88
+    nop
+
+    .line 89
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

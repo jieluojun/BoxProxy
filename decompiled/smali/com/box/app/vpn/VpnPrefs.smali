@@ -7,9 +7,9 @@
 
 
 # static fields
-.field private static hide:Lgl4;
+.field private static hide:Lum4;
 
-.field private static batt:Lgl4;
+.field private static batt:Lum4;
 
 
 # direct methods
@@ -103,14 +103,14 @@
     return-void
 .end method
 
-.method private static bool(Z)Lgl4;
+.method private static bool(Z)Lum4;
     .locals 1
 
     invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    invoke-static {v0}, Lg23;->M(Ljava/lang/Object;)Lgl4;
+    invoke-static {v0}, Lne3;->G(Ljava/lang/Object;)Lum4;
 
     move-result-object v0
 
@@ -120,7 +120,7 @@
 .method private static declared-synchronized init()V
     .locals 2
 
-    sget-object v1, Lcom/box/app/vpn/VpnPrefs;->hide:Lgl4;
+    sget-object v1, Lcom/box/app/vpn/VpnPrefs;->hide:Lum4;
 
     if-nez v1, :cond_done
 
@@ -130,20 +130,20 @@
 
     move-result v1
 
-    invoke-static {v1}, Lcom/box/app/vpn/VpnPrefs;->bool(Z)Lgl4;
+    invoke-static {v1}, Lcom/box/app/vpn/VpnPrefs;->bool(Z)Lum4;
 
     move-result-object v1
 
-    sput-object v1, Lcom/box/app/vpn/VpnPrefs;->hide:Lgl4;
+    sput-object v1, Lcom/box/app/vpn/VpnPrefs;->hide:Lum4;
 
     :cond_done
     return-void
 .end method
 
-.method private static read(Lgl4;)Z
+.method private static read(Lum4;)Z
     .locals 1
 
-    invoke-virtual {p0}, Lgl4;->getValue()Ljava/lang/Object;
+    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
 
     move-result-object v0
 
@@ -156,14 +156,14 @@
     return v0
 .end method
 
-.method private static write(Lgl4;Z)V
+.method private static write(Lum4;Z)V
     .locals 1
 
     invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     move-result-object v0
 
-    invoke-virtual {p0, v0}, Lgl4;->setValue(Ljava/lang/Object;)V
+    invoke-virtual {p0, v0}, Lum4;->setValue(Ljava/lang/Object;)V
 
     return-void
 .end method
@@ -176,9 +176,9 @@
 
     invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->init()V
 
-    sget-object v0, Lcom/box/app/vpn/VpnPrefs;->hide:Lgl4;
+    sget-object v0, Lcom/box/app/vpn/VpnPrefs;->hide:Lum4;
 
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->read(Lgl4;)Z
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->read(Lum4;)Z
 
     move-result v0
 
@@ -194,9 +194,9 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    sget-object v1, Lcom/box/app/vpn/VpnPrefs;->hide:Lgl4;
+    sget-object v1, Lcom/box/app/vpn/VpnPrefs;->hide:Lum4;
 
-    invoke-static {v1, v0}, Lcom/box/app/vpn/VpnPrefs;->write(Lgl4;Z)V
+    invoke-static {v1, v0}, Lcom/box/app/vpn/VpnPrefs;->write(Lum4;Z)V
 
     const-string v1, "hide_unavailable"
 
@@ -216,7 +216,7 @@
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    new-instance v1, Ljo1;
+    new-instance v1, Lip1;
 
     move-object v2, p1
 
@@ -234,7 +234,7 @@
 
     const/16 v7, 0x72
 
-    invoke-direct/range {v1 .. v7}, Ljo1;-><init>(Ljava/lang/String;ZZLd52;Ljava/util/ArrayList;I)V
+    invoke-direct/range {v1 .. v7}, Lip1;-><init>(Ljava/lang/String;ZZLe62;Ljava/util/ArrayList;I)V
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -327,7 +327,7 @@
 
     move-result-object v3
 
-    check-cast v3, Ltx4;
+    check-cast v3, Lfz4;
 
     invoke-interface {v0}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
 
@@ -337,7 +337,7 @@
 
     if-eqz v4, :goto_idx
 
-    iget-object v3, v3, Ltx4;->a:Ljava/lang/String;
+    iget-object v3, v3, Lfz4;->a:Ljava/lang/String;
 
     invoke-virtual {v4}, Ljava/lang/Integer;->intValue()I
 
@@ -398,12 +398,12 @@
 
     move-object v5, v4
 
-    check-cast v5, Lo25;
+    check-cast v5, Lb45;
 
-    iget-object v6, v5, Lo25;->a:Ljava/lang/String;
+    iget-object v6, v5, Lb45;->a:Ljava/lang/String;
 
     # built-in outbounds (Direct / Reject / Pass / Compatible / Dns ...) have no delay by nature: never hidden
-    iget-object v0, v5, Lo25;->c:Ljava/lang/String;
+    iget-object v0, v5, Lb45;->c:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->builtin(Ljava/lang/String;)Z
 
@@ -434,7 +434,7 @@
 
     if-nez v0, :cond_have
 
-    iget-object v7, v5, Lo25;->b:Ljava/lang/String;
+    iget-object v7, v5, Lb45;->b:Ljava/lang/String;
 
     invoke-virtual {v1, v7}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -455,7 +455,7 @@
 
     :cond_api
     # what the core API reported: alive flag, last delay, delay history
-    iget-object v0, v5, Lo25;->j:Ljava/lang/Boolean;
+    iget-object v0, v5, Lb45;->j:Ljava/lang/Boolean;
 
     if-eqz v0, :cond_alive
 
@@ -468,7 +468,7 @@
     :cond_alive
     const/4 v8, 0x0
 
-    iget-object v0, v5, Lo25;->g:Ljava/lang/Integer;
+    iget-object v0, v5, Lb45;->g:Ljava/lang/Integer;
 
     if-eqz v0, :cond_nog
 
@@ -481,7 +481,7 @@
     const/4 v8, 0x1
 
     :cond_nog
-    iget-object v0, v5, Lo25;->h:Ljava/util/Map;
+    iget-object v0, v5, Lb45;->h:Ljava/util/Map;
 
     if-eqz v0, :cond_decide
 
@@ -546,11 +546,11 @@
     .locals 8
 
     :try_start_0
-    invoke-static {}, Lgb0;->k()Lva0;
+    invoke-static {}, Ljc0;->k()Lyb0;
 
     move-result-object v0
 
-    iget-object v0, v0, Lva0;->c:Ljava/io/File;
+    iget-object v0, v0, Lyb0;->c:Ljava/io/File;
 
     new-instance v1, Ljava/io/File;
 
@@ -641,11 +641,11 @@
 # are saved (VpnBridge.beforeSave) and whenever the VPN starts (BoxVpnService.doStart).
 # "vpn_wanted" = the VPN was started by the user and not stopped explicitly.
 
-.method public static mirror(Lta0;Z)V
+.method public static mirror(Lwb0;Z)V
     .locals 2
 
     :try_start_0
-    iget-boolean v0, p0, Lta0;->w:Z
+    iget-boolean v0, p0, Lwb0;->w:Z
 
     const-string v1, "boot_auto"
 
@@ -675,7 +675,7 @@
     .locals 4
 
     :try_start_0
-    invoke-static {}, Lgb0;->g()Lta0;
+    invoke-static {}, Ljc0;->g()Lwb0;
 
     move-result-object v0
 
@@ -689,7 +689,7 @@
 
     invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    iget-object v3, v0, Lta0;->b:Ljava/lang/String;
+    iget-object v3, v0, Lwb0;->b:Ljava/lang/String;
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -697,7 +697,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-boolean v3, v0, Lta0;->w:Z
+    iget-boolean v3, v0, Lwb0;->w:Z
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
 
@@ -713,7 +713,7 @@
 
     invoke-static {v2}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
 
-    invoke-static {v0, v1}, Lcom/box/app/vpn/VpnPrefs;->mirror(Lta0;Z)V
+    invoke-static {v0, v1}, Lcom/box/app/vpn/VpnPrefs;->mirror(Lwb0;Z)V
 
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
@@ -893,11 +893,11 @@
 
     if-eqz v0, :cond_end
 
-    invoke-static {}, Lgb0;->g()Lta0;
+    invoke-static {}, Ljc0;->g()Lwb0;
 
     move-result-object v2
 
-    iget-object v0, v2, Lta0;->b:Ljava/lang/String;
+    iget-object v0, v2, Lwb0;->b:Ljava/lang/String;
 
     invoke-static {v0}, Lcom/box/app/vpn/VpnBridge;->isVpn(Ljava/lang/String;)Z
 
@@ -953,25 +953,25 @@
 
     const v26, 0x7ffffd
 
-    invoke-static/range {v2 .. v26}, Lta0;->a(Lta0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/String;ZZI)Lta0;
+    invoke-static/range {v2 .. v26}, Lwb0;->a(Lwb0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/String;ZZI)Lwb0;
 
     move-result-object v2
 
-    invoke-static {}, Lgb0;->k()Lva0;
+    invoke-static {}, Ljc0;->k()Lyb0;
 
     move-result-object v0
 
-    invoke-static {v0}, Lgb0;->d(Lva0;)V
+    invoke-static {v0}, Ljc0;->d(Lyb0;)V
 
-    sget-object v0, Lx90;->a:Lx90;
+    sget-object v0, Lza0;->a:Lza0;
 
-    new-instance v1, Lo2;
+    new-instance v1, Lq2;
 
     const/16 v3, 0x1d
 
-    invoke-direct {v1, v2, v3}, Lo2;-><init>(Ljava/lang/Object;B)V
+    invoke-direct {v1, v2, v3}, Lq2;-><init>(Ljava/lang/Object;B)V
 
-    invoke-virtual {v0, v1}, Lx90;->o(Lo52;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lza0;->o(Lp62;)Ljava/lang/Object;
 
     const-string v0, "no root: the run mode was saved as VPN"
 
@@ -991,11 +991,11 @@
     .locals 3
 
     :try_start_0
-    invoke-static {}, Lgb0;->k()Lva0;
+    invoke-static {}, Ljc0;->k()Lyb0;
 
     move-result-object v0
 
-    iget-object v0, v0, Lva0;->c:Ljava/io/File;
+    iget-object v0, v0, Lyb0;->c:Ljava/io/File;
 
     new-instance v1, Ljava/io/File;
 
@@ -1154,23 +1154,23 @@
 
     move-result-object v0
 
-    sget-object v1, Lou;->f:Lt8;
+    sget-object v1, Lnv;->f:Lv8;
 
-    invoke-virtual {v1, v0}, Lt8;->u(Landroid/content/Context;)Lou;
-
-    move-result-object v1
-
-    iget-object v1, v1, Lou;->e:Lc75;
-
-    iget-object v1, v1, Lc75;->j:Lx96;
-
-    invoke-virtual {v1}, Lx96;->getValue()Ljava/lang/Object;
+    invoke-virtual {v1, v0}, Lv8;->u(Landroid/content/Context;)Lnv;
 
     move-result-object v1
 
-    check-cast v1, Llu;
+    iget-object v1, v1, Lnv;->e:Lq85;
 
-    iget-boolean v1, v1, Llu;->g:Z
+    iget-object v1, v1, Lq85;->j:Lpb6;
+
+    invoke-virtual {v1}, Lpb6;->getValue()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lkv;
+
+    iget-boolean v1, v1, Lkv;->g:Z
 
     if-eqz v1, :cond_end
 
@@ -1453,7 +1453,7 @@
     monitor-enter v0
 
     :try_start_0
-    sget-object v1, Lcom/box/app/vpn/VpnPrefs;->batt:Lgl4;
+    sget-object v1, Lcom/box/app/vpn/VpnPrefs;->batt:Lum4;
 
     if-nez v1, :cond_have
 
@@ -1461,20 +1461,20 @@
 
     move-result v1
 
-    invoke-static {v1}, Lcom/box/app/vpn/VpnPrefs;->bool(Z)Lgl4;
+    invoke-static {v1}, Lcom/box/app/vpn/VpnPrefs;->bool(Z)Lum4;
 
     move-result-object v1
 
-    sput-object v1, Lcom/box/app/vpn/VpnPrefs;->batt:Lgl4;
+    sput-object v1, Lcom/box/app/vpn/VpnPrefs;->batt:Lum4;
 
     :cond_have
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    sget-object v0, Lcom/box/app/vpn/VpnPrefs;->batt:Lgl4;
+    sget-object v0, Lcom/box/app/vpn/VpnPrefs;->batt:Lum4;
 
-    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->read(Lgl4;)Z
+    invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->read(Lum4;)Z
 
     move-result v0
 
@@ -1497,7 +1497,7 @@
 .method public static battSync()V
     .locals 2
 
-    sget-object v0, Lcom/box/app/vpn/VpnPrefs;->batt:Lgl4;
+    sget-object v0, Lcom/box/app/vpn/VpnPrefs;->batt:Lum4;
 
     if-eqz v0, :cond_end
 
@@ -1505,7 +1505,7 @@
 
     move-result v1
 
-    invoke-static {v0, v1}, Lcom/box/app/vpn/VpnPrefs;->write(Lgl4;Z)V
+    invoke-static {v0, v1}, Lcom/box/app/vpn/VpnPrefs;->write(Lum4;Z)V
 
     :cond_end
     return-void
@@ -1520,13 +1520,13 @@
 
     move-result-object v0
 
-    const v1, 0x7f0f0515
+    const v1, 0x7f0f0513
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-static {v0, v1}, Lh17;->f(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-static {v0, v1}, Lx27;->h(Landroid/content/Context;Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 

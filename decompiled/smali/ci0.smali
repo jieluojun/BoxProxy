@@ -1,253 +1,287 @@
 .class public final Lci0;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Lvb6;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final a:J
+.field public final a:[B
 
-.field public final b:J
+.field public final b:I
 
-.field public final c:J
+.field public final c:I
 
-.field public final d:J
+.field public d:I
+
+.field public e:Lyu1;
+
+.field public f:Llo2;
 
 
 # direct methods
-.method public constructor <init>(JJJJ)V
-    .locals 0
+.method public constructor <init>(I[BII)V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/16 v0, 0xa
 
     .line 2
     .line 3
-    .line 4
-    iput-wide p1, p0, Lci0;->a:J
+    invoke-direct {p0, v0}, Lr74;-><init>(I)V
 
+    .line 4
     .line 5
     .line 6
-    iput-wide p3, p0, Lci0;->b:J
+    iput-object p2, p0, Lci0;->a:[B
 
     .line 7
     .line 8
-    iput-wide p5, p0, Lci0;->c:J
+    iput p1, p0, Lci0;->b:I
 
     .line 9
     .line 10
-    iput-wide p7, p0, Lci0;->d:J
+    iput p3, p0, Lci0;->c:I
 
     .line 11
     .line 12
+    iput p4, p0, Lci0;->d:I
+
+    .line 13
+    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final getName()Ljava/lang/String;
+    .locals 0
 
     .line 1
-    if-ne p0, p1, :cond_0
+    const-string p0, "Call"
 
     .line 2
     .line 3
-    goto :goto_0
+    return-object p0
+.end method
+
+.method public final setChild(Lr74;)V
+    .locals 0
+
+    .line 1
+    check-cast p1, Lyu1;
+
+    .line 2
+    .line 3
+    iput-object p1, p0, Lci0;->e:Lyu1;
 
     .line 4
-    :cond_0
-    if-eqz p1, :cond_6
+    .line 5
+    return-void
+.end method
+
+.method public final toString(I)Ljava/lang/String;
+    .locals 4
+
+    .line 1
+    new-instance p1, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const/4 v0, 0x0
+
+    .line 4
+    invoke-super {p0, v0}, Lvb6;->toString(I)Ljava/lang/String;
 
     .line 5
     .line 6
-    instance-of v0, p1, Lci0;
-
     .line 7
+    move-result-object v0
+
     .line 8
-    if-nez v0, :cond_1
+    invoke-direct {p1, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 9
     .line 10
-    goto :goto_1
-
     .line 11
-    :cond_1
-    check-cast p1, Lci0;
+    new-instance v0, Ljava/lang/String;
 
     .line 12
     .line 13
-    iget-wide v0, p1, Lci0;->a:J
+    iget v1, p0, Lci0;->c:I
 
     .line 14
     .line 15
-    iget-wide v2, p0, Lci0;->a:J
+    iget v2, p0, Lci0;->b:I
 
     .line 16
     .line 17
-    invoke-static {v2, v3, v0, v1}, Lm07;->a(JJ)Z
+    sub-int/2addr v1, v2
 
     .line 18
+    iget-object v3, p0, Lci0;->a:[B
+
     .line 19
     .line 20
-    move-result v0
+    invoke-direct {v0, v3, v2, v1}, Ljava/lang/String;-><init>([BII)V
 
     .line 21
-    if-nez v0, :cond_2
-
     .line 22
     .line 23
-    goto :goto_1
+    const-string v1, "\n  name: "
 
     .line 24
-    :cond_2
-    iget-wide v0, p0, Lci0;->b:J
-
     .line 25
-    .line 26
-    iget-wide v2, p1, Lci0;->b:J
+    invoke-virtual {v1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
+    .line 26
     .line 27
     .line 28
-    invoke-static {v0, v1, v2, v3}, Lm07;->a(JJ)Z
+    move-result-object v0
 
     .line 29
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 30
     .line 31
-    move-result v0
-
     .line 32
-    if-nez v0, :cond_3
+    new-instance v0, Ljava/lang/StringBuilder;
 
     .line 33
     .line 34
-    goto :goto_1
+    const-string v1, ", groupNum: "
 
     .line 35
-    :cond_3
-    iget-wide v0, p0, Lci0;->c:J
-
     .line 36
-    .line 37
-    iget-wide v2, p1, Lci0;->c:J
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    .line 37
     .line 38
     .line 39
-    invoke-static {v0, v1, v2, v3}, Lm07;->a(JJ)Z
+    iget v1, p0, Lci0;->d:I
 
     .line 40
     .line 41
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
     .line 42
-    move-result v0
-
     .line 43
-    if-nez v0, :cond_4
-
     .line 44
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
     .line 45
-    goto :goto_1
-
     .line 46
-    :cond_4
-    iget-wide v0, p0, Lci0;->d:J
-
     .line 47
+    move-result-object v0
+
     .line 48
-    iget-wide p0, p1, Lci0;->d:J
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 49
     .line 50
-    invoke-static {v0, v1, p0, p1}, Lm07;->a(JJ)Z
-
     .line 51
+    new-instance v0, Ljava/lang/StringBuilder;
+
     .line 52
     .line 53
-    move-result p0
+    const-string v1, "\n  unsetAddrList: "
 
     .line 54
-    if-nez p0, :cond_5
-
     .line 55
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
     .line 56
-    goto :goto_1
-
     .line 57
-    :cond_5
-    :goto_0
-    const/4 p0, 0x1
-
     .line 58
-    return p0
+    iget-object v1, p0, Lci0;->f:Llo2;
 
     .line 59
-    :cond_6
-    :goto_1
-    const/4 p0, 0x0
-
     .line 60
-    return p0
-.end method
+    const/4 v2, 0x1
 
-.method public final hashCode()I
-    .locals 4
+    .line 61
+    invoke-static {v1, v2}, Lr74;->pad(Ljava/lang/Object;I)Ljava/lang/String;
 
-    .line 1
-    iget-wide v0, p0, Lci0;->a:J
+    .line 62
+    .line 63
+    .line 64
+    move-result-object v1
 
-    .line 2
-    .line 3
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    .line 65
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
+    .line 66
+    .line 67
+    .line 68
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 7
-    const/16 v1, 0x1f
+    .line 69
+    .line 70
+    .line 71
+    move-result-object v0
 
-    .line 8
-    .line 9
-    mul-int/2addr v0, v1
+    .line 72
+    invoke-virtual {p1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 10
-    iget-wide v2, p0, Lci0;->b:J
+    .line 73
+    .line 74
+    .line 75
+    new-instance v0, Ljava/lang/StringBuilder;
 
-    .line 11
-    .line 12
-    invoke-static {v0, v1, v2, v3}, Lqq5;->d(IIJ)I
+    .line 76
+    .line 77
+    const-string v1, "\n  target: "
 
-    .line 13
-    .line 14
-    .line 15
-    move-result v0
+    .line 78
+    .line 79
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-    .line 16
-    iget-wide v2, p0, Lci0;->c:J
+    .line 80
+    .line 81
+    .line 82
+    iget-object p0, p0, Lci0;->e:Lyu1;
 
-    .line 17
-    .line 18
-    invoke-static {v0, v1, v2, v3}, Lqq5;->d(IIJ)I
+    .line 83
+    .line 84
+    invoke-virtual {p0}, Lr74;->getAddressName()Ljava/lang/String;
 
-    .line 19
-    .line 20
-    .line 21
-    move-result v0
+    .line 85
+    .line 86
+    .line 87
+    move-result-object p0
 
-    .line 22
-    iget-wide v1, p0, Lci0;->d:J
+    .line 88
+    invoke-static {p0, v2}, Lr74;->pad(Ljava/lang/Object;I)Ljava/lang/String;
 
-    .line 23
-    .line 24
-    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
+    .line 89
+    .line 90
+    .line 91
+    move-result-object p0
 
-    .line 25
-    .line 26
-    .line 27
-    move-result p0
+    .line 92
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 28
-    add-int/2addr p0, v0
+    .line 93
+    .line 94
+    .line 95
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 29
-    return p0
+    .line 96
+    .line 97
+    .line 98
+    move-result-object p0
+
+    .line 99
+    invoke-virtual {p1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 100
+    .line 101
+    .line 102
+    invoke-virtual {p1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 103
+    .line 104
+    .line 105
+    move-result-object p0
+
+    .line 106
+    return-object p0
 .end method

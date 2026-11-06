@@ -1,1972 +1,1567 @@
-.class public abstract Lpv0;
+.class public final Lpv0;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# static fields
-.field public static final a:Ljava/lang/ThreadLocal;
+# instance fields
+.field public final A:J
+
+.field public final B:J
+
+.field public final C:J
+
+.field public final D:J
+
+.field public final E:J
+
+.field public final F:J
+
+.field public final G:J
+
+.field public final H:J
+
+.field public final I:J
+
+.field public final J:J
+
+.field public final K:J
+
+.field public final L:J
+
+.field public final M:J
+
+.field public final N:J
+
+.field public final O:J
+
+.field public final P:J
+
+.field public final Q:J
+
+.field public final R:J
+
+.field public final S:J
+
+.field public final T:J
+
+.field public final U:J
+
+.field public final V:J
+
+.field public W:Ldf0;
+
+.field public X:Ldf0;
+
+.field public Y:Lej0;
+
+.field public Z:Lej0;
+
+.field public final a:J
+
+.field public a0:Lyw6;
+
+.field public final b:J
+
+.field public b0:Lio0;
+
+.field public final c:J
+
+.field public c0:Lqm2;
+
+.field public final d:J
+
+.field public d0:Lqm2;
+
+.field public final e:J
+
+.field public e0:Lca3;
+
+.field public final f:J
+
+.field public f0:Lok3;
+
+.field public final g:J
+
+.field public g0:Lrv5;
+
+.field public final h:J
+
+.field public h0:Lyw3;
+
+.field public final i:J
+
+.field public i0:Ljb7;
+
+.field public final j:J
+
+.field public j0:Lzx3;
+
+.field public final k:J
+
+.field public k0:Lv75;
+
+.field public final l:J
+
+.field public l0:Lfv5;
+
+.field public final m:J
+
+.field public m0:Li66;
+
+.field public final n:J
+
+.field public n0:Lpm6;
+
+.field public final o:J
+
+.field public final p:J
+
+.field public final q:J
+
+.field public final r:J
+
+.field public final s:J
+
+.field public final t:J
+
+.field public final u:J
+
+.field public final v:J
+
+.field public final w:J
+
+.field public final x:J
+
+.field public final y:J
+
+.field public final z:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/lang/ThreadLocal;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
+    iput-wide p1, p0, Lpv0;->a:J
+
     .line 3
-    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
+    iput-wide p3, p0, Lpv0;->b:J
 
     .line 4
+    iput-wide p5, p0, Lpv0;->c:J
+
     .line 5
+    iput-wide p7, p0, Lpv0;->d:J
+
     .line 6
-    sput-object v0, Lpv0;->a:Ljava/lang/ThreadLocal;
+    iput-wide p9, p0, Lpv0;->e:J
 
     .line 7
+    iput-wide p11, p0, Lpv0;->f:J
+
     .line 8
+    iput-wide p13, p0, Lpv0;->g:J
+
+    move-wide p1, p15
+
+    .line 9
+    iput-wide p1, p0, Lpv0;->h:J
+
+    move-wide/from16 p1, p17
+
+    .line 10
+    iput-wide p1, p0, Lpv0;->i:J
+
+    move-wide/from16 p1, p19
+
+    .line 11
+    iput-wide p1, p0, Lpv0;->j:J
+
+    move-wide/from16 p1, p21
+
+    .line 12
+    iput-wide p1, p0, Lpv0;->k:J
+
+    move-wide/from16 p1, p23
+
+    .line 13
+    iput-wide p1, p0, Lpv0;->l:J
+
+    move-wide/from16 p1, p25
+
+    .line 14
+    iput-wide p1, p0, Lpv0;->m:J
+
+    move-wide/from16 p1, p27
+
+    .line 15
+    iput-wide p1, p0, Lpv0;->n:J
+
+    move-wide/from16 p1, p29
+
+    .line 16
+    iput-wide p1, p0, Lpv0;->o:J
+
+    move-wide/from16 p1, p31
+
+    .line 17
+    iput-wide p1, p0, Lpv0;->p:J
+
+    move-wide/from16 p1, p33
+
+    .line 18
+    iput-wide p1, p0, Lpv0;->q:J
+
+    move-wide/from16 p1, p35
+
+    .line 19
+    iput-wide p1, p0, Lpv0;->r:J
+
+    move-wide/from16 p1, p37
+
+    .line 20
+    iput-wide p1, p0, Lpv0;->s:J
+
+    move-wide/from16 p1, p39
+
+    .line 21
+    iput-wide p1, p0, Lpv0;->t:J
+
+    move-wide/from16 p1, p41
+
+    .line 22
+    iput-wide p1, p0, Lpv0;->u:J
+
+    move-wide/from16 p1, p43
+
+    .line 23
+    iput-wide p1, p0, Lpv0;->v:J
+
+    move-wide/from16 p1, p45
+
+    .line 24
+    iput-wide p1, p0, Lpv0;->w:J
+
+    move-wide/from16 p1, p47
+
+    .line 25
+    iput-wide p1, p0, Lpv0;->x:J
+
+    move-wide/from16 p1, p49
+
+    .line 26
+    iput-wide p1, p0, Lpv0;->y:J
+
+    move-wide/from16 p1, p51
+
+    .line 27
+    iput-wide p1, p0, Lpv0;->z:J
+
+    move-wide/from16 p1, p53
+
+    .line 28
+    iput-wide p1, p0, Lpv0;->A:J
+
+    move-wide/from16 p1, p55
+
+    .line 29
+    iput-wide p1, p0, Lpv0;->B:J
+
+    move-wide/from16 p1, p57
+
+    .line 30
+    iput-wide p1, p0, Lpv0;->C:J
+
+    move-wide/from16 p1, p59
+
+    .line 31
+    iput-wide p1, p0, Lpv0;->D:J
+
+    move-wide/from16 p1, p61
+
+    .line 32
+    iput-wide p1, p0, Lpv0;->E:J
+
+    move-wide/from16 p1, p63
+
+    .line 33
+    iput-wide p1, p0, Lpv0;->F:J
+
+    move-wide/from16 p1, p65
+
+    .line 34
+    iput-wide p1, p0, Lpv0;->G:J
+
+    move-wide/from16 p1, p67
+
+    .line 35
+    iput-wide p1, p0, Lpv0;->H:J
+
+    move-wide/from16 p1, p69
+
+    .line 36
+    iput-wide p1, p0, Lpv0;->I:J
+
+    move-wide/from16 p1, p71
+
+    .line 37
+    iput-wide p1, p0, Lpv0;->J:J
+
+    move-wide/from16 p1, p73
+
+    .line 38
+    iput-wide p1, p0, Lpv0;->K:J
+
+    move-wide/from16 p1, p75
+
+    .line 39
+    iput-wide p1, p0, Lpv0;->L:J
+
+    move-wide/from16 p1, p77
+
+    .line 40
+    iput-wide p1, p0, Lpv0;->M:J
+
+    move-wide/from16 p1, p79
+
+    .line 41
+    iput-wide p1, p0, Lpv0;->N:J
+
+    move-wide/from16 p1, p81
+
+    .line 42
+    iput-wide p1, p0, Lpv0;->O:J
+
+    move-wide/from16 p1, p83
+
+    .line 43
+    iput-wide p1, p0, Lpv0;->P:J
+
+    move-wide/from16 p1, p85
+
+    .line 44
+    iput-wide p1, p0, Lpv0;->Q:J
+
+    move-wide/from16 p1, p87
+
+    .line 45
+    iput-wide p1, p0, Lpv0;->R:J
+
+    move-wide/from16 p1, p89
+
+    .line 46
+    iput-wide p1, p0, Lpv0;->S:J
+
+    move-wide/from16 p1, p91
+
+    .line 47
+    iput-wide p1, p0, Lpv0;->T:J
+
+    move-wide/from16 p1, p93
+
+    .line 48
+    iput-wide p1, p0, Lpv0;->U:J
+
+    move-wide/from16 p1, p95
+
+    .line 49
+    iput-wide p1, p0, Lpv0;->V:J
+
     return-void
 .end method
 
-.method public static a(Landroid/content/res/Resources;Landroid/content/res/XmlResourceParser;Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
-    .locals 4
 
-    .line 1
-    invoke-static {p1}, Landroid/util/Xml;->asAttributeSet(Lorg/xmlpull/v1/XmlPullParser;)Landroid/util/AttributeSet;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
-
-    .line 5
-    :goto_0
-    invoke-interface {p1}, Lorg/xmlpull/v1/XmlPullParser;->next()I
-
-    .line 6
-    .line 7
-    .line 8
-    move-result v1
-
-    .line 9
-    const/4 v2, 0x2
-
-    .line 10
-    if-eq v1, v2, :cond_0
-
-    .line 11
-    .line 12
-    const/4 v3, 0x1
-
-    .line 13
-    if-eq v1, v3, :cond_0
-
-    .line 14
-    .line 15
-    goto :goto_0
-
-    .line 16
-    :cond_0
-    if-ne v1, v2, :cond_1
-
-    .line 17
-    .line 18
-    invoke-static {p0, p1, v0, p2}, Lpv0;->b(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-object p0
-
-    .line 22
-    return-object p0
-
-    .line 23
-    :cond_1
-    new-instance p0, Lorg/xmlpull/v1/XmlPullParserException;
-
-    .line 24
-    .line 25
-    const-string p1, "No start tag found"
-
-    .line 26
-    .line 27
-    invoke-direct {p0, p1}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V
-
-    .line 28
-    .line 29
-    .line 30
-    throw p0
-.end method
-
-.method public static b(Landroid/content/res/Resources;Lorg/xmlpull/v1/XmlPullParser;Landroid/util/AttributeSet;Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
-    .locals 36
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 51
 
     .line 1
     move-object/from16 v0, p0
 
     .line 2
     .line 3
-    move-object/from16 v1, p2
+    iget-wide v1, v0, Lpv0;->a:J
 
     .line 4
     .line 5
-    move-object/from16 v2, p3
+    invoke-static {v1, v2}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 6
     .line 7
-    invoke-interface/range {p1 .. p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
-
     .line 8
-    .line 9
-    .line 10
-    move-result-object v3
+    move-result-object v1
 
+    .line 9
+    iget-wide v2, v0, Lpv0;->b:J
+
+    .line 10
     .line 11
-    const-string v4, "selector"
+    invoke-static {v2, v3}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 12
     .line 13
-    invoke-virtual {v3, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
     .line 14
-    .line 15
-    .line 16
-    move-result v4
+    move-result-object v2
 
+    .line 15
+    iget-wide v3, v0, Lpv0;->c:J
+
+    .line 16
     .line 17
-    if-eqz v4, :cond_25
+    invoke-static {v3, v4}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 18
     .line 19
-    invoke-interface/range {p1 .. p1}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
-
     .line 20
-    .line 21
-    .line 22
-    move-result v3
+    move-result-object v3
 
+    .line 21
+    iget-wide v4, v0, Lpv0;->d:J
+
+    .line 22
     .line 23
-    const/4 v4, 0x1
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 24
-    add-int/2addr v3, v4
-
     .line 25
-    const/16 v5, 0x14
-
     .line 26
+    move-result-object v6
+
     .line 27
-    new-array v6, v5, [[I
+    iget-wide v7, v0, Lpv0;->e:J
 
     .line 28
     .line 29
-    new-array v5, v5, [I
+    invoke-static {v7, v8}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 30
     .line 31
-    const/4 v7, 0x0
-
     .line 32
-    move v8, v7
+    move-result-object v7
 
     .line 33
-    :goto_0
-    invoke-interface/range {p1 .. p1}, Lorg/xmlpull/v1/XmlPullParser;->next()I
+    iget-wide v8, v0, Lpv0;->f:J
 
     .line 34
     .line 35
+    invoke-static {v8, v9}, Ljv0;->i(J)Ljava/lang/String;
+
     .line 36
-    move-result v9
-
     .line 37
-    if-eq v9, v4, :cond_24
-
     .line 38
+    move-result-object v8
+
     .line 39
-    invoke-interface/range {p1 .. p1}, Lorg/xmlpull/v1/XmlPullParser;->getDepth()I
+    iget-wide v9, v0, Lpv0;->g:J
 
     .line 40
     .line 41
+    invoke-static {v9, v10}, Ljv0;->i(J)Ljava/lang/String;
+
     .line 42
-    move-result v10
-
     .line 43
-    const/4 v11, 0x3
-
     .line 44
-    if-ge v10, v3, :cond_0
+    move-result-object v9
 
     .line 45
+    iget-wide v10, v0, Lpv0;->h:J
+
     .line 46
-    if-eq v9, v11, :cond_24
-
     .line 47
+    invoke-static {v10, v11}, Ljv0;->i(J)Ljava/lang/String;
+
     .line 48
-    :cond_0
-    const/4 v12, 0x2
-
     .line 49
-    if-ne v9, v12, :cond_1
-
     .line 50
+    move-result-object v10
+
     .line 51
-    if-gt v10, v3, :cond_1
+    iget-wide v11, v0, Lpv0;->i:J
 
     .line 52
     .line 53
-    invoke-interface/range {p1 .. p1}, Lorg/xmlpull/v1/XmlPullParser;->getName()Ljava/lang/String;
+    invoke-static {v11, v12}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 54
     .line 55
     .line 56
-    move-result-object v9
+    move-result-object v11
 
     .line 57
-    const-string v10, "item"
+    iget-wide v12, v0, Lpv0;->j:J
 
     .line 58
     .line 59
-    invoke-virtual {v9, v10}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-static {v12, v13}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 60
     .line 61
     .line 62
-    move-result v9
+    move-result-object v12
 
     .line 63
-    if-nez v9, :cond_2
+    iget-wide v13, v0, Lpv0;->k:J
 
     .line 64
     .line 65
-    :cond_1
-    move/from16 v34, v3
+    invoke-static {v13, v14}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 66
     .line 67
-    move/from16 v16, v4
-
     .line 68
+    move-result-object v13
+
     .line 69
-    goto/16 :goto_1a
+    iget-wide v14, v0, Lpv0;->l:J
 
     .line 70
     .line 71
-    :cond_2
-    sget-object v9, Lu55;->a:[I
+    invoke-static {v14, v15}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 72
     .line 73
-    if-nez v2, :cond_3
-
     .line 74
+    move-result-object v14
+
     .line 75
-    invoke-virtual {v0, v1, v9}, Landroid/content/res/Resources;->obtainAttributes(Landroid/util/AttributeSet;[I)Landroid/content/res/TypedArray;
+    move-wide v15, v4
 
     .line 76
+    iget-wide v4, v0, Lpv0;->m:J
+
     .line 77
     .line 78
-    move-result-object v9
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 79
-    goto :goto_1
-
     .line 80
-    :cond_3
-    invoke-virtual {v2, v1, v9, v7, v7}, Landroid/content/res/Resources$Theme;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
-
     .line 81
-    .line 82
-    .line 83
-    move-result-object v9
+    move-result-object v4
 
+    .line 82
+    move-object/from16 v17, v4
+
+    .line 83
     .line 84
-    :goto_1
-    const/4 v10, -0x1
+    iget-wide v4, v0, Lpv0;->n:J
 
     .line 85
-    invoke-virtual {v9, v7, v10}, Landroid/content/res/TypedArray;->getResourceId(II)I
-
     .line 86
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
+
     .line 87
     .line 88
-    move-result v13
-
     .line 89
-    const v14, -0xff01
+    move-result-object v4
 
     .line 90
+    move-object/from16 v18, v4
+
     .line 91
     .line 92
-    const/16 v15, 0x1f
+    iget-wide v4, v0, Lpv0;->o:J
 
     .line 93
     .line 94
-    if-eq v13, v10, :cond_6
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 95
     .line 96
-    sget-object v10, Lpv0;->a:Ljava/lang/ThreadLocal;
-
     .line 97
+    move-result-object v4
+
     .line 98
-    invoke-virtual {v10}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+    move-object/from16 v19, v4
 
     .line 99
     .line 100
-    .line 101
-    move-result-object v16
+    iget-wide v4, v0, Lpv0;->p:J
 
+    .line 101
     .line 102
-    check-cast v16, Landroid/util/TypedValue;
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 103
     .line 104
-    if-nez v16, :cond_4
-
     .line 105
+    move-result-object v4
+
     .line 106
-    new-instance v12, Landroid/util/TypedValue;
+    move-object/from16 v20, v4
 
     .line 107
     .line 108
-    invoke-direct {v12}, Landroid/util/TypedValue;-><init>()V
+    iget-wide v4, v0, Lpv0;->q:J
 
     .line 109
     .line 110
-    .line 111
-    invoke-virtual {v10, v12}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
+    .line 111
     .line 112
     .line 113
+    move-result-object v4
+
     .line 114
-    goto :goto_2
+    move-object/from16 v21, v4
 
     .line 115
-    :cond_4
-    move-object/from16 v12, v16
-
     .line 116
-    .line 117
-    :goto_2
-    invoke-virtual {v0, v13, v12, v4}, Landroid/content/res/Resources;->getValue(ILandroid/util/TypedValue;Z)V
+    iget-wide v4, v0, Lpv0;->r:J
 
+    .line 117
     .line 118
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
+
     .line 119
     .line 120
-    iget v10, v12, Landroid/util/TypedValue;->type:I
-
     .line 121
+    move-result-object v4
+
     .line 122
-    const/16 v12, 0x1c
+    move-object/from16 v22, v4
 
     .line 123
     .line 124
-    if-lt v10, v12, :cond_5
+    iget-wide v4, v0, Lpv0;->s:J
 
     .line 125
     .line 126
-    if-gt v10, v15, :cond_5
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 127
     .line 128
-    goto :goto_3
-
     .line 129
-    :cond_5
-    :try_start_0
-    invoke-virtual {v0, v13}, Landroid/content/res/Resources;->getXml(I)Landroid/content/res/XmlResourceParser;
+    move-result-object v4
 
     .line 130
+    move-object/from16 v23, v4
+
     .line 131
     .line 132
-    move-result-object v10
+    iget-wide v4, v0, Lpv0;->t:J
 
     .line 133
-    invoke-static {v0, v10, v2}, Lpv0;->a(Landroid/content/res/Resources;Landroid/content/res/XmlResourceParser;Landroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
-
     .line 134
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
+
     .line 135
     .line 136
-    move-result-object v10
-
     .line 137
-    invoke-virtual {v10}, Landroid/content/res/ColorStateList;->getDefaultColor()I
+    move-result-object v4
 
     .line 138
+    move-object/from16 v24, v4
+
     .line 139
     .line 140
-    move-result v10
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    iget-wide v4, v0, Lpv0;->u:J
 
     .line 141
-    goto :goto_4
-
     .line 142
-    :catch_0
-    invoke-virtual {v9, v7, v14}, Landroid/content/res/TypedArray;->getColor(II)I
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 143
     .line 144
     .line 145
-    move-result v10
+    move-result-object v4
 
     .line 146
-    goto :goto_4
+    move-object/from16 v25, v4
 
     .line 147
-    :cond_6
-    :goto_3
-    invoke-virtual {v9, v7, v14}, Landroid/content/res/TypedArray;->getColor(II)I
-
     .line 148
+    iget-wide v4, v0, Lpv0;->v:J
+
     .line 149
     .line 150
-    move-result v10
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 151
-    :goto_4
-    invoke-virtual {v9, v4}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
     .line 152
     .line 153
+    move-result-object v4
+
     .line 154
-    move-result v12
+    move-object/from16 v26, v4
 
     .line 155
-    const/high16 v13, 0x3f800000    # 1.0f
-
     .line 156
+    iget-wide v4, v0, Lpv0;->w:J
+
     .line 157
-    if-eqz v12, :cond_7
-
     .line 158
-    .line 159
-    invoke-virtual {v9, v4, v13}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
+    .line 159
     .line 160
     .line 161
+    move-result-object v4
+
     .line 162
-    move-result v11
+    move-object/from16 v27, v4
 
     .line 163
-    goto :goto_5
-
     .line 164
-    :cond_7
-    invoke-virtual {v9, v11}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    iget-wide v4, v0, Lpv0;->x:J
 
     .line 165
     .line 166
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
+
     .line 167
-    move-result v12
-
     .line 168
-    if-eqz v12, :cond_8
-
     .line 169
+    move-result-object v4
+
     .line 170
-    invoke-virtual {v9, v11, v13}, Landroid/content/res/TypedArray;->getFloat(IF)F
+    move-object/from16 v28, v4
 
     .line 171
     .line 172
-    .line 173
-    move-result v11
+    iget-wide v4, v0, Lpv0;->y:J
 
+    .line 173
     .line 174
-    goto :goto_5
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 175
-    :cond_8
-    move v11, v13
-
     .line 176
-    :goto_5
-    sget v12, Landroid/os/Build$VERSION;->SDK_INT:I
-
     .line 177
+    move-result-object v4
+
     .line 178
-    const/4 v14, 0x4
+    move-object/from16 v29, v4
 
     .line 179
-    move/from16 v16, v4
-
     .line 180
+    iget-wide v4, v0, Lpv0;->z:J
+
     .line 181
-    const/high16 v4, -0x40800000    # -1.0f
-
     .line 182
-    .line 183
-    if-lt v12, v15, :cond_9
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
+    .line 183
     .line 184
     .line 185
-    const/4 v12, 0x2
+    move-result-object v4
 
     .line 186
-    invoke-virtual {v9, v12}, Landroid/content/res/TypedArray;->hasValue(I)Z
+    move-object/from16 v30, v4
 
     .line 187
     .line 188
-    .line 189
-    move-result v15
+    iget-wide v4, v0, Lpv0;->A:J
 
+    .line 189
     .line 190
-    if-eqz v15, :cond_9
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 191
     .line 192
-    invoke-virtual {v9, v12, v4}, Landroid/content/res/TypedArray;->getFloat(IF)F
-
     .line 193
-    .line 194
-    .line 195
-    move-result v4
+    move-result-object v4
 
+    .line 194
+    move-object/from16 v31, v4
+
+    .line 195
     .line 196
-    goto :goto_6
+    iget-wide v4, v0, Lpv0;->B:J
 
     .line 197
-    :cond_9
-    invoke-virtual {v9, v14, v4}, Landroid/content/res/TypedArray;->getFloat(IF)F
-
     .line 198
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
+
     .line 199
     .line 200
-    move-result v4
-
     .line 201
-    :goto_6
-    invoke-virtual {v9}, Landroid/content/res/TypedArray;->recycle()V
+    move-result-object v4
 
     .line 202
+    move-object/from16 v32, v4
+
     .line 203
     .line 204
-    invoke-interface {v1}, Landroid/util/AttributeSet;->getAttributeCount()I
+    iget-wide v4, v0, Lpv0;->C:J
 
     .line 205
     .line 206
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
+
     .line 207
-    move-result v9
-
     .line 208
-    new-array v12, v9, [I
-
     .line 209
+    move-result-object v4
+
     .line 210
-    move v15, v7
+    move-object/from16 v33, v4
 
     .line 211
-    move/from16 v18, v13
-
     .line 212
-    .line 213
-    move v13, v15
+    iget-wide v4, v0, Lpv0;->D:J
 
+    .line 213
     .line 214
-    :goto_7
-    if-ge v15, v9, :cond_c
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 215
     .line 216
-    invoke-interface {v1, v15}, Landroid/util/AttributeSet;->getAttributeNameResource(I)I
-
     .line 217
-    .line 218
-    .line 219
-    move-result v14
+    move-result-object v4
 
+    .line 218
+    move-object/from16 v34, v4
+
+    .line 219
     .line 220
-    const v7, 0x10101a5
+    iget-wide v4, v0, Lpv0;->E:J
 
     .line 221
     .line 222
-    .line 223
-    if-eq v14, v7, :cond_b
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
+    .line 223
     .line 224
     .line 225
-    const v7, 0x101031f
+    move-result-object v4
 
     .line 226
+    move-object/from16 v35, v4
+
     .line 227
     .line 228
-    if-eq v14, v7, :cond_b
+    iget-wide v4, v0, Lpv0;->F:J
 
     .line 229
     .line 230
-    const v7, 0x7f04002b
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 231
     .line 232
     .line 233
-    if-eq v14, v7, :cond_b
+    move-result-object v4
 
     .line 234
-    .line 235
-    const v7, 0x7f0400b4
+    move-object/from16 v36, v4
 
+    .line 235
     .line 236
+    iget-wide v4, v0, Lpv0;->G:J
+
     .line 237
     .line 238
-    if-eq v14, v7, :cond_b
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 239
     .line 240
-    add-int/lit8 v7, v13, 0x1
-
     .line 241
+    move-result-object v4
+
     .line 242
-    const/4 v0, 0x0
+    move-object/from16 v37, v4
 
     .line 243
-    invoke-interface {v1, v15, v0}, Landroid/util/AttributeSet;->getAttributeBooleanValue(IZ)Z
-
     .line 244
+    iget-wide v4, v0, Lpv0;->H:J
+
     .line 245
     .line 246
-    move-result v20
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 247
-    if-eqz v20, :cond_a
-
     .line 248
     .line 249
-    goto :goto_8
+    move-result-object v4
 
     .line 250
-    :cond_a
-    neg-int v14, v14
+    move-object/from16 v38, v4
 
     .line 251
-    :goto_8
-    aput v14, v12, v13
-
     .line 252
-    .line 253
-    move v13, v7
+    iget-wide v4, v0, Lpv0;->I:J
 
+    .line 253
     .line 254
-    :cond_b
-    add-int/lit8 v15, v15, 0x1
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 255
     .line 256
-    move-object/from16 v0, p0
-
     .line 257
+    move-result-object v4
+
     .line 258
-    const/4 v7, 0x0
+    move-object/from16 v39, v4
 
     .line 259
-    const/4 v14, 0x4
-
     .line 260
-    goto :goto_7
+    iget-wide v4, v0, Lpv0;->J:J
 
     .line 261
-    :cond_c
-    invoke-static {v12, v13}, Landroid/util/StateSet;->trimStateSet([II)[I
-
     .line 262
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
+
     .line 263
     .line 264
-    move-result-object v0
-
     .line 265
-    const/4 v7, 0x0
+    move-result-object v4
 
     .line 266
-    cmpl-float v9, v4, v7
+    move-object/from16 v40, v4
 
     .line 267
     .line 268
-    const/high16 v12, 0x42c80000    # 100.0f
+    iget-wide v4, v0, Lpv0;->K:J
 
     .line 269
     .line 270
-    if-ltz v9, :cond_d
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 271
     .line 272
-    cmpg-float v9, v4, v12
-
     .line 273
+    move-result-object v4
+
     .line 274
-    if-gtz v9, :cond_d
+    move-object/from16 v41, v4
 
     .line 275
     .line 276
-    move/from16 v9, v16
+    iget-wide v4, v0, Lpv0;->L:J
 
     .line 277
     .line 278
-    goto :goto_9
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 279
-    :cond_d
-    const/4 v9, 0x0
-
     .line 280
-    :goto_9
-    cmpl-float v13, v11, v18
-
     .line 281
+    move-result-object v4
+
     .line 282
-    if-nez v13, :cond_e
+    invoke-static/range {v15 .. v16}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 283
     .line 284
-    if-nez v9, :cond_e
-
     .line 285
+    move-result-object v5
+
     .line 286
-    move-object/from16 v31, v0
+    move-object v15, v4
 
     .line 287
+    move-object/from16 v16, v5
+
     .line 288
-    move/from16 v34, v3
-
     .line 289
+    iget-wide v4, v0, Lpv0;->N:J
+
     .line 290
-    goto/16 :goto_17
-
     .line 291
-    .line 292
-    :cond_e
-    invoke-static {v10}, Landroid/graphics/Color;->alpha(I)I
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
+    .line 292
     .line 293
     .line 294
+    move-result-object v4
+
     .line 295
-    move-result v13
+    move-object/from16 v42, v4
 
     .line 296
-    int-to-float v13, v13
-
     .line 297
-    mul-float/2addr v13, v11
+    iget-wide v4, v0, Lpv0;->O:J
 
     .line 298
-    const/high16 v11, 0x3f000000    # 0.5f
-
     .line 299
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
+
     .line 300
-    add-float/2addr v13, v11
-
     .line 301
-    float-to-int v11, v13
-
     .line 302
-    if-gez v11, :cond_f
+    move-result-object v4
 
     .line 303
-    .line 304
-    const/4 v13, 0x0
+    move-object/from16 v43, v4
 
+    .line 304
     .line 305
-    goto :goto_a
+    iget-wide v4, v0, Lpv0;->P:J
 
     .line 306
-    :cond_f
-    const/16 v13, 0xff
-
     .line 307
-    .line 308
-    if-le v11, v13, :cond_10
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
+    .line 308
     .line 309
     .line 310
-    goto :goto_a
+    move-result-object v4
 
     .line 311
-    :cond_10
-    move v13, v11
+    move-object/from16 v44, v4
 
     .line 312
-    :goto_a
-    if-eqz v9, :cond_1f
-
     .line 313
-    .line 314
-    invoke-static {v10}, Ljh0;->a(I)Ljh0;
+    iget-wide v4, v0, Lpv0;->Q:J
 
+    .line 314
     .line 315
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
+
     .line 316
     .line 317
-    move-result-object v9
-
     .line 318
-    iget v10, v9, Ljh0;->a:F
+    move-result-object v4
 
     .line 319
+    move-object/from16 v45, v4
+
     .line 320
-    iget v9, v9, Ljh0;->b:F
-
     .line 321
+    iget-wide v4, v0, Lpv0;->R:J
+
     .line 322
-    sget-object v11, Ll77;->k:Ll77;
-
     .line 323
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
+
     .line 324
-    float-to-double v14, v9
-
     .line 325
-    const-wide/high16 v20, 0x3ff0000000000000L    # 1.0
-
     .line 326
+    move-result-object v4
+
     .line 327
-    cmpg-double v14, v14, v20
+    move-object/from16 v46, v4
 
     .line 328
     .line 329
-    if-ltz v14, :cond_11
+    iget-wide v4, v0, Lpv0;->S:J
 
     .line 330
     .line 331
-    invoke-static {v4}, Ljava/lang/Math;->round(F)I
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 332
     .line 333
     .line 334
-    move-result v14
+    move-result-object v4
 
     .line 335
-    int-to-double v14, v14
+    move-object/from16 v47, v4
 
     .line 336
-    const-wide/16 v20, 0x0
-
     .line 337
+    iget-wide v4, v0, Lpv0;->T:J
+
     .line 338
-    cmpg-double v14, v14, v20
-
     .line 339
-    .line 340
-    if-lez v14, :cond_11
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
+    .line 340
     .line 341
     .line 342
-    invoke-static {v4}, Ljava/lang/Math;->round(F)I
+    move-result-object v4
 
     .line 343
+    move-object/from16 v48, v4
+
     .line 344
     .line 345
-    move-result v14
+    iget-wide v4, v0, Lpv0;->U:J
 
     .line 346
-    int-to-double v14, v14
-
     .line 347
-    const-wide/high16 v20, 0x4059000000000000L    # 100.0
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 348
     .line 349
-    cmpl-double v14, v14, v20
-
     .line 350
+    move-result-object v4
+
     .line 351
-    if-ltz v14, :cond_12
+    move-object/from16 v49, v4
 
     .line 352
     .line 353
-    :cond_11
-    move-object/from16 v31, v0
+    iget-wide v4, v0, Lpv0;->V:J
 
     .line 354
     .line 355
-    move/from16 v34, v3
+    invoke-static {v4, v5}, Ljv0;->i(J)Ljava/lang/String;
 
     .line 356
     .line 357
-    goto/16 :goto_15
-
     .line 358
+    move-result-object v0
+
     .line 359
-    :cond_12
-    cmpg-float v14, v10, v7
+    const-string v4, "onPrimary="
 
     .line 360
     .line 361
-    if-gez v14, :cond_13
+    const-string v5, "primaryContainer="
 
     .line 362
     .line 363
-    move v10, v7
+    move-object/from16 v50, v15
 
     .line 364
-    goto :goto_b
-
     .line 365
-    :cond_13
-    const/high16 v14, 0x43b40000    # 360.0f
+    const-string v15, "ColorScheme(primary="
 
     .line 366
     .line 367
-    invoke-static {v14, v10}, Ljava/lang/Math;->min(FF)F
+    invoke-static {v15, v1, v4, v2, v5}, Loc1;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 368
     .line 369
     .line 370
-    move-result v10
+    move-result-object v1
 
     .line 371
-    :goto_b
-    move/from16 v21, v7
+    const-string v2, "onPrimaryContainer="
 
     .line 372
     .line 373
-    move/from16 v22, v21
+    const-string v4, "inversePrimary="
 
     .line 374
     .line 375
-    move v15, v9
+    invoke-static {v1, v3, v2, v6, v4}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 376
-    move/from16 v20, v16
-
     .line 377
     .line 378
-    const/4 v7, 0x0
+    const-string v2, "secondary="
 
     .line 379
-    :goto_c
-    sub-float v23, v21, v9
-
     .line 380
-    .line 381
-    invoke-static/range {v23 .. v23}, Ljava/lang/Math;->abs(F)F
+    const-string v3, "onSecondary="
 
+    .line 381
     .line 382
+    invoke-static {v1, v7, v2, v8, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
     .line 383
     .line 384
-    move-result v23
-
     .line 385
-    const v24, 0x3ecccccd    # 0.4f
+    const-string v2, "secondaryContainer="
 
     .line 386
     .line 387
+    const-string v3, "onSecondaryContainer="
+
     .line 388
-    cmpl-float v23, v23, v24
-
     .line 389
-    .line 390
-    if-ltz v23, :cond_1d
+    invoke-static {v1, v9, v2, v10, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 390
     .line 391
     .line 392
-    const/high16 v23, 0x447a0000    # 1000.0f
+    const-string v2, "tertiary="
 
     .line 393
     .line 394
-    move/from16 v26, v12
+    const-string v3, "onTertiary="
 
     .line 395
     .line 396
-    move/from16 v25, v22
+    invoke-static {v1, v11, v2, v12, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 397
     .line 398
-    move/from16 v24, v23
-
     .line 399
+    const-string v2, "tertiaryContainer="
+
     .line 400
-    const/16 v27, 0x0
-
     .line 401
+    const-string v3, "onTertiaryContainer="
+
     .line 402
-    :goto_d
-    sub-float v28, v25, v26
-
     .line 403
-    .line 404
-    invoke-static/range {v28 .. v28}, Ljava/lang/Math;->abs(F)F
+    invoke-static {v1, v13, v2, v14, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 404
     .line 405
     .line 406
-    .line 407
-    move-result v28
+    const-string v2, "background="
 
+    .line 407
     .line 408
-    const v29, 0x3c23d70a    # 0.01f
+    const-string v3, "onBackground="
 
     .line 409
     .line 410
+    move-object/from16 v4, v17
+
     .line 411
-    cmpl-float v28, v28, v29
-
     .line 412
+    move-object/from16 v5, v18
+
     .line 413
-    const/high16 v29, 0x40000000    # 2.0f
-
     .line 414
-    .line 415
-    if-lez v28, :cond_19
+    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 415
     .line 416
     .line 417
-    sub-float v28, v26, v25
+    const-string v2, "surface="
 
     .line 418
     .line 419
-    div-float v28, v28, v29
+    const-string v3, "onSurface="
 
     .line 420
     .line 421
-    move/from16 v30, v12
+    move-object/from16 v4, v19
 
     .line 422
     .line 423
-    add-float v12, v28, v25
+    move-object/from16 v5, v20
 
     .line 424
     .line 425
-    invoke-static {v12, v15, v10}, Ljh0;->b(FFF)Ljh0;
+    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 426
     .line 427
     .line 428
-    move-result-object v14
+    const-string v2, "surfaceVariant="
 
     .line 429
-    move-object/from16 v31, v0
-
     .line 430
+    const-string v3, "onSurfaceVariant="
+
     .line 431
-    sget-object v0, Ll77;->k:Ll77;
-
     .line 432
-    .line 433
-    invoke-virtual {v14, v0}, Ljh0;->d(Ll77;)I
+    move-object/from16 v4, v21
 
+    .line 433
     .line 434
+    move-object/from16 v5, v22
+
     .line 435
     .line 436
-    move-result v0
+    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 437
-    invoke-static {v0}, Landroid/graphics/Color;->red(I)I
-
     .line 438
     .line 439
-    .line 440
-    move-result v14
+    const-string v2, "surfaceTint="
 
+    .line 440
     .line 441
-    invoke-static {v14}, Los2;->F(I)F
+    const-string v3, "inverseSurface="
 
     .line 442
     .line 443
-    .line 444
-    move-result v14
+    move-object/from16 v4, v23
 
+    .line 444
     .line 445
-    invoke-static {v0}, Landroid/graphics/Color;->green(I)I
+    move-object/from16 v5, v24
 
     .line 446
     .line 447
+    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
     .line 448
-    move-result v32
-
     .line 449
-    invoke-static/range {v32 .. v32}, Los2;->F(I)F
-
     .line 450
+    const-string v2, "inverseOnSurface="
+
     .line 451
     .line 452
-    move-result v32
+    const-string v3, "error="
 
     .line 453
-    invoke-static {v0}, Landroid/graphics/Color;->blue(I)I
-
     .line 454
+    move-object/from16 v4, v25
+
     .line 455
     .line 456
-    move-result v33
+    move-object/from16 v5, v26
 
     .line 457
-    invoke-static/range {v33 .. v33}, Los2;->F(I)F
-
     .line 458
+    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
     .line 459
     .line 460
-    move-result v33
-
     .line 461
-    sget-object v34, Los2;->f:[[F
+    const-string v2, "onError="
 
     .line 462
     .line 463
-    aget-object v34, v34, v16
+    const-string v3, "errorContainer="
 
     .line 464
     .line 465
-    const/16 v19, 0x0
+    move-object/from16 v4, v27
 
     .line 466
     .line 467
-    aget v35, v34, v19
+    move-object/from16 v5, v28
 
     .line 468
     .line 469
-    mul-float v14, v14, v35
+    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 470
     .line 471
-    aget v35, v34, v16
-
     .line 472
+    const-string v2, "onErrorContainer="
+
     .line 473
-    mul-float v32, v32, v35
-
     .line 474
+    const-string v3, "outline="
+
     .line 475
-    add-float v32, v32, v14
-
     .line 476
+    move-object/from16 v4, v29
+
     .line 477
-    const/16 v17, 0x2
-
     .line 478
+    move-object/from16 v5, v30
+
     .line 479
-    aget v14, v34, v17
-
     .line 480
-    .line 481
-    mul-float v33, v33, v14
+    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 481
     .line 482
     .line 483
-    add-float v33, v33, v32
+    const-string v2, "outlineVariant="
 
     .line 484
     .line 485
-    div-float v14, v33, v30
+    const-string v3, "scrim="
 
     .line 486
     .line 487
-    const v32, 0x3c111aa7
+    move-object/from16 v4, v31
 
     .line 488
     .line 489
+    move-object/from16 v5, v32
+
     .line 490
-    cmpg-float v32, v14, v32
-
     .line 491
-    .line 492
-    if-gtz v32, :cond_14
+    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 492
     .line 493
     .line 494
-    const v32, 0x4461d2f7
+    const-string v2, "surfaceBright="
 
     .line 495
     .line 496
+    const-string v3, "surfaceDim="
+
     .line 497
-    mul-float v14, v14, v32
-
     .line 498
+    move-object/from16 v4, v33
+
     .line 499
-    move/from16 v32, v0
-
     .line 500
-    .line 501
-    goto :goto_e
+    move-object/from16 v5, v34
 
+    .line 501
     .line 502
-    :cond_14
-    move/from16 v32, v0
+    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 503
     .line 504
-    float-to-double v0, v14
-
     .line 505
-    invoke-static {v0, v1}, Ljava/lang/Math;->cbrt(D)D
+    const-string v2, "surfaceContainer="
 
     .line 506
     .line 507
-    .line 508
-    move-result-wide v0
+    const-string v3, "surfaceContainerHigh="
 
+    .line 508
     .line 509
-    double-to-float v0, v0
+    move-object/from16 v4, v35
 
     .line 510
-    const/high16 v1, 0x42e80000    # 116.0f
-
     .line 511
-    .line 512
-    mul-float/2addr v0, v1
+    move-object/from16 v5, v36
 
+    .line 512
     .line 513
-    const/high16 v1, 0x41800000    # 16.0f
+    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 514
     .line 515
-    sub-float v14, v0, v1
-
     .line 516
+    const-string v2, "surfaceContainerHighest="
+
     .line 517
-    :goto_e
-    sub-float v0, v4, v14
-
     .line 518
-    .line 519
-    invoke-static {v0}, Ljava/lang/Math;->abs(F)F
+    const-string v3, "surfaceContainerLow="
 
+    .line 519
     .line 520
+    move-object/from16 v4, v37
+
     .line 521
     .line 522
-    move-result v0
+    move-object/from16 v5, v38
 
     .line 523
-    const v1, 0x3e4ccccd    # 0.2f
-
     .line 524
+    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
     .line 525
     .line 526
-    cmpg-float v1, v0, v1
-
     .line 527
+    const-string v2, "surfaceContainerLowest="
+
     .line 528
-    if-gez v1, :cond_15
-
     .line 529
-    .line 530
-    invoke-static/range {v32 .. v32}, Ljh0;->a(I)Ljh0;
+    const-string v3, "primaryFixed="
 
+    .line 530
     .line 531
+    move-object/from16 v4, v39
+
     .line 532
     .line 533
-    move-result-object v1
+    move-object/from16 v5, v40
 
     .line 534
-    move/from16 v32, v0
-
     .line 535
-    .line 536
-    iget v0, v1, Ljh0;->c:F
+    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 536
     .line 537
     .line 538
-    iget v2, v1, Ljh0;->b:F
+    const-string v2, "primaryFixedDim="
 
     .line 539
     .line 540
-    invoke-static {v0, v2, v10}, Ljh0;->b(FFF)Ljh0;
+    const-string v3, "onPrimaryFixed="
 
     .line 541
     .line 542
-    .line 543
-    move-result-object v0
+    move-object/from16 v4, v41
 
+    .line 543
     .line 544
-    iget v2, v1, Ljh0;->d:F
+    move-object/from16 v15, v50
 
     .line 545
     .line 546
-    move/from16 v33, v2
+    invoke-static {v1, v4, v2, v15, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 547
     .line 548
-    iget v2, v0, Ljh0;->d:F
-
     .line 549
+    const-string v2, "onPrimaryFixedVariant="
+
     .line 550
-    sub-float v2, v33, v2
-
     .line 551
+    const-string v3, "secondaryFixed="
+
     .line 552
-    move/from16 v33, v2
-
     .line 553
+    move-object/from16 v4, v16
+
     .line 554
-    iget v2, v1, Ljh0;->e:F
-
     .line 555
+    move-object/from16 v5, v42
+
     .line 556
-    move/from16 v34, v2
-
     .line 557
-    .line 558
-    iget v2, v0, Ljh0;->e:F
+    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
+    .line 558
     .line 559
     .line 560
-    sub-float v2, v34, v2
+    const-string v2, "secondaryFixedDim="
 
     .line 561
     .line 562
-    move/from16 v34, v2
+    const-string v3, "onSecondaryFixed="
 
     .line 563
     .line 564
-    iget v2, v1, Ljh0;->f:F
+    move-object/from16 v4, v43
 
     .line 565
     .line 566
-    iget v0, v0, Ljh0;->f:F
+    move-object/from16 v5, v44
 
     .line 567
     .line 568
-    sub-float/2addr v2, v0
+    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
     .line 569
-    mul-float v0, v33, v33
-
     .line 570
     .line 571
-    mul-float v33, v34, v34
+    const-string v2, "onSecondaryFixedVariant="
 
     .line 572
     .line 573
-    add-float v33, v33, v0
+    const-string v3, "tertiaryFixed="
 
     .line 574
     .line 575
-    mul-float/2addr v2, v2
+    move-object/from16 v4, v45
 
     .line 576
-    add-float v2, v2, v33
-
     .line 577
+    move-object/from16 v5, v46
+
     .line 578
-    move-object/from16 v33, v1
-
     .line 579
+    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
     .line 580
-    float-to-double v0, v2
-
     .line 581
-    invoke-static {v0, v1}, Ljava/lang/Math;->sqrt(D)D
-
     .line 582
+    const-string v2, "tertiaryFixedDim="
+
     .line 583
     .line 584
-    move-result-wide v0
+    const-string v3, "onTertiaryFixed="
 
     .line 585
-    move/from16 v34, v3
-
     .line 586
-    .line 587
-    const-wide v2, 0x3fe428f5c28f5c29L    # 0.63
+    move-object/from16 v4, v47
 
+    .line 587
     .line 588
+    move-object/from16 v5, v48
+
     .line 589
     .line 590
+    invoke-static {v1, v4, v2, v5, v3}, Loc1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+
     .line 591
     .line 592
-    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->pow(DD)D
-
     .line 593
+    const-string v2, "onTertiaryFixedVariant="
+
     .line 594
     .line 595
-    move-result-wide v0
+    const-string v3, ")"
 
     .line 596
-    const-wide v2, 0x3ff68f5c28f5c28fL    # 1.41
-
     .line 597
+    move-object/from16 v4, v49
+
     .line 598
     .line 599
+    invoke-static {v1, v4, v2, v0, v3}, Loc1;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
     .line 600
     .line 601
-    mul-double/2addr v0, v2
-
     .line 602
-    double-to-float v0, v0
+    move-result-object v0
 
     .line 603
-    cmpg-float v1, v0, v18
-
-    .line 604
-    .line 605
-    if-gtz v1, :cond_16
-
-    .line 606
-    .line 607
-    move/from16 v24, v0
-
-    .line 608
-    .line 609
-    move/from16 v23, v32
-
-    .line 610
-    .line 611
-    move-object/from16 v27, v33
-
-    .line 612
-    .line 613
-    goto :goto_f
-
-    .line 614
-    :cond_15
-    move/from16 v34, v3
-
-    .line 615
-    .line 616
-    :cond_16
-    :goto_f
-    cmpl-float v0, v23, v22
-
-    .line 617
-    .line 618
-    if-nez v0, :cond_17
-
-    .line 619
-    .line 620
-    cmpl-float v0, v24, v22
-
-    .line 621
-    .line 622
-    if-nez v0, :cond_17
-
-    .line 623
-    .line 624
-    :goto_10
-    move-object/from16 v0, v27
-
-    .line 625
-    .line 626
-    goto :goto_12
-
-    .line 627
-    :cond_17
-    cmpg-float v0, v14, v4
-
-    .line 628
-    .line 629
-    if-gez v0, :cond_18
-
-    .line 630
-    .line 631
-    move/from16 v25, v12
-
-    .line 632
-    .line 633
-    goto :goto_11
-
-    .line 634
-    :cond_18
-    move/from16 v26, v12
-
-    .line 635
-    .line 636
-    :goto_11
-    move-object/from16 v1, p2
-
-    .line 637
-    .line 638
-    move-object/from16 v2, p3
-
-    .line 639
-    .line 640
-    move/from16 v12, v30
-
-    .line 641
-    .line 642
-    move-object/from16 v0, v31
-
-    .line 643
-    .line 644
-    move/from16 v3, v34
-
-    .line 645
-    .line 646
-    goto/16 :goto_d
-
-    .line 647
-    .line 648
-    :cond_19
-    move-object/from16 v31, v0
-
-    .line 649
-    .line 650
-    move/from16 v34, v3
-
-    .line 651
-    .line 652
-    move/from16 v30, v12
-
-    .line 653
-    .line 654
-    const/16 v17, 0x2
-
-    .line 655
-    .line 656
-    goto :goto_10
-
-    .line 657
-    :goto_12
-    if-eqz v20, :cond_1b
-
-    .line 658
-    .line 659
-    if-eqz v0, :cond_1a
-
-    .line 660
-    .line 661
-    invoke-virtual {v0, v11}, Ljh0;->d(Ll77;)I
-
-    .line 662
-    .line 663
-    .line 664
-    move-result v0
-
-    .line 665
-    :goto_13
-    move v10, v0
-
-    .line 666
-    goto :goto_16
-
-    .line 667
-    :cond_1a
-    sub-float v0, v9, v21
-
-    .line 668
-    .line 669
-    div-float v0, v0, v29
-
-    .line 670
-    .line 671
-    add-float v15, v0, v21
-
-    .line 672
-    .line 673
-    move-object/from16 v1, p2
-
-    .line 674
-    .line 675
-    move-object/from16 v2, p3
-
-    .line 676
-    .line 677
-    move/from16 v12, v30
-
-    .line 678
-    .line 679
-    move-object/from16 v0, v31
-
-    .line 680
-    .line 681
-    move/from16 v3, v34
-
-    .line 682
-    .line 683
-    const/16 v20, 0x0
-
-    .line 684
-    .line 685
-    goto/16 :goto_c
-
-    .line 686
-    .line 687
-    :cond_1b
-    if-nez v0, :cond_1c
-
-    .line 688
-    .line 689
-    move v9, v15
-
-    .line 690
-    goto :goto_14
-
-    .line 691
-    :cond_1c
-    move-object v7, v0
-
-    .line 692
-    move/from16 v21, v15
-
-    .line 693
-    .line 694
-    :goto_14
-    sub-float v0, v9, v21
-
-    .line 695
-    .line 696
-    div-float v0, v0, v29
-
-    .line 697
-    .line 698
-    add-float v15, v0, v21
-
-    .line 699
-    .line 700
-    move-object/from16 v1, p2
-
-    .line 701
-    .line 702
-    move-object/from16 v2, p3
-
-    .line 703
-    .line 704
-    move/from16 v12, v30
-
-    .line 705
-    .line 706
-    move-object/from16 v0, v31
-
-    .line 707
-    .line 708
-    move/from16 v3, v34
-
-    .line 709
-    .line 710
-    goto/16 :goto_c
-
-    .line 711
-    .line 712
-    :cond_1d
-    move-object/from16 v31, v0
-
-    .line 713
-    .line 714
-    move/from16 v34, v3
-
-    .line 715
-    .line 716
-    if-nez v7, :cond_1e
-
-    .line 717
-    .line 718
-    invoke-static {v4}, Los2;->y(F)I
-
-    .line 719
-    .line 720
-    .line 721
-    move-result v0
-
-    .line 722
-    goto :goto_13
-
-    .line 723
-    :cond_1e
-    invoke-virtual {v7, v11}, Ljh0;->d(Ll77;)I
-
-    .line 724
-    .line 725
-    .line 726
-    move-result v0
-
-    .line 727
-    goto :goto_13
-
-    .line 728
-    :goto_15
-    invoke-static {v4}, Los2;->y(F)I
-
-    .line 729
-    .line 730
-    .line 731
-    move-result v0
-
-    .line 732
-    goto :goto_13
-
-    .line 733
-    :cond_1f
-    move-object/from16 v31, v0
-
-    .line 734
-    .line 735
-    move/from16 v34, v3
-
-    .line 736
-    .line 737
-    :goto_16
-    const v0, 0xffffff
-
-    .line 738
-    .line 739
-    .line 740
-    and-int/2addr v0, v10
-
-    .line 741
-    shl-int/lit8 v1, v13, 0x18
-
-    .line 742
-    .line 743
-    or-int v10, v0, v1
-
-    .line 744
-    .line 745
-    :goto_17
-    add-int/lit8 v0, v8, 0x1
-
-    .line 746
-    .line 747
-    array-length v1, v5
-
-    .line 748
-    const/16 v2, 0x8
-
-    .line 749
-    .line 750
-    if-le v0, v1, :cond_21
-
-    .line 751
-    .line 752
-    const/4 v1, 0x4
-
-    .line 753
-    if-gt v8, v1, :cond_20
-
-    .line 754
-    .line 755
-    move v1, v2
-
-    .line 756
-    goto :goto_18
-
-    .line 757
-    :cond_20
-    mul-int/lit8 v1, v8, 0x2
-
-    .line 758
-    .line 759
-    :goto_18
-    new-array v1, v1, [I
-
-    .line 760
-    .line 761
-    const/4 v3, 0x0
-
-    .line 762
-    invoke-static {v5, v3, v1, v3, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 763
-    .line 764
-    .line 765
-    move-object v5, v1
-
-    .line 766
-    :cond_21
-    aput v10, v5, v8
-
-    .line 767
-    .line 768
-    array-length v1, v6
-
-    .line 769
-    if-le v0, v1, :cond_23
-
-    .line 770
-    .line 771
-    invoke-virtual {v6}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 772
-    .line 773
-    .line 774
-    move-result-object v1
-
-    .line 775
-    invoke-virtual {v1}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
-
-    .line 776
-    .line 777
-    .line 778
-    move-result-object v1
-
-    .line 779
-    const/4 v3, 0x4
-
-    .line 780
-    if-gt v8, v3, :cond_22
-
-    .line 781
-    .line 782
-    goto :goto_19
-
-    .line 783
-    :cond_22
-    mul-int/lit8 v2, v8, 0x2
-
-    .line 784
-    .line 785
-    :goto_19
-    invoke-static {v1, v2}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
-
-    .line 786
-    .line 787
-    .line 788
-    move-result-object v1
-
-    .line 789
-    check-cast v1, [Ljava/lang/Object;
-
-    .line 790
-    .line 791
-    const/4 v3, 0x0
-
-    .line 792
-    invoke-static {v6, v3, v1, v3, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 793
-    .line 794
-    .line 795
-    move-object v6, v1
-
-    .line 796
-    :cond_23
-    aput-object v31, v6, v8
-
-    .line 797
-    .line 798
-    check-cast v6, [[I
-
-    .line 799
-    .line 800
-    move-object/from16 v1, p2
-
-    .line 801
-    .line 802
-    move-object/from16 v2, p3
-
-    .line 803
-    .line 804
-    move v8, v0
-
-    .line 805
-    move/from16 v4, v16
-
-    .line 806
-    .line 807
-    move/from16 v3, v34
-
-    .line 808
-    .line 809
-    const/4 v7, 0x0
-
-    .line 810
-    move-object/from16 v0, p0
-
-    .line 811
-    .line 812
-    goto/16 :goto_0
-
-    .line 813
-    .line 814
-    :goto_1a
-    move-object/from16 v0, p0
-
-    .line 815
-    .line 816
-    move-object/from16 v1, p2
-
-    .line 817
-    .line 818
-    move-object/from16 v2, p3
-
-    .line 819
-    .line 820
-    move/from16 v4, v16
-
-    .line 821
-    .line 822
-    move/from16 v3, v34
-
-    .line 823
-    .line 824
-    const/4 v7, 0x0
-
-    .line 825
-    goto/16 :goto_0
-
-    .line 826
-    .line 827
-    :cond_24
-    new-array v0, v8, [I
-
-    .line 828
-    .line 829
-    new-array v1, v8, [[I
-
-    .line 830
-    .line 831
-    const/4 v3, 0x0
-
-    .line 832
-    invoke-static {v5, v3, v0, v3, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 833
-    .line 834
-    .line 835
-    invoke-static {v6, v3, v1, v3, v8}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
-
-    .line 836
-    .line 837
-    .line 838
-    new-instance v2, Landroid/content/res/ColorStateList;
-
-    .line 839
-    .line 840
-    invoke-direct {v2, v1, v0}, Landroid/content/res/ColorStateList;-><init>([[I[I)V
-
-    .line 841
-    .line 842
-    .line 843
-    return-object v2
-
-    .line 844
-    :cond_25
-    new-instance v0, Lorg/xmlpull/v1/XmlPullParserException;
-
-    .line 845
-    .line 846
-    invoke-interface/range {p1 .. p1}, Lorg/xmlpull/v1/XmlPullParser;->getPositionDescription()Ljava/lang/String;
-
-    .line 847
-    .line 848
-    .line 849
-    move-result-object v1
-
-    .line 850
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    .line 851
-    .line 852
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 853
-    .line 854
-    .line 855
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 856
-    .line 857
-    .line 858
-    const-string v1, ": invalid color state list tag "
-
-    .line 859
-    .line 860
-    invoke-virtual {v2, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 861
-    .line 862
-    .line 863
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 864
-    .line 865
-    .line 866
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 867
-    .line 868
-    .line 869
-    move-result-object v1
-
-    .line 870
-    invoke-direct {v0, v1}, Lorg/xmlpull/v1/XmlPullParserException;-><init>(Ljava/lang/String;)V
-
-    .line 871
-    .line 872
-    .line 873
-    throw v0
+    return-object v0
 .end method

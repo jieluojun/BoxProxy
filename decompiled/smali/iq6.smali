@@ -1,23 +1,14 @@
 .class public final Liq6;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lkq6;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public a:F
-
-.field public final b:Lhq6;
-
-.field public c:Landroid/graphics/Canvas;
-
-.field public final synthetic d:Lmq6;
+.field public final a:Z
 
 
 # direct methods
-.method public constructor <init>(Lmq6;Lhq6;)V
+.method public synthetic constructor <init>(I)V
     .locals 0
 
     .line 1
@@ -26,95 +17,103 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Liq6;->d:Lmq6;
+    iput-boolean p1, p0, Liq6;->a:Z
 
     .line 5
     .line 6
-    const/4 p1, 0x0
-
-    .line 7
-    iput p1, p0, Liq6;->a:F
-
-    .line 8
-    .line 9
-    iput-object p2, p0, Liq6;->b:Lhq6;
-
-    .line 10
-    .line 11
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/util/ArrayList;ZLsm3;)Z
-    .locals 7
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
     .line 1
-    iget v5, p0, Liq6;->a:F
+    instance-of v0, p1, Liq6;
 
     .line 2
     .line 3
-    iget-object v4, p0, Liq6;->c:Landroid/graphics/Canvas;
+    if-nez v0, :cond_0
 
     .line 4
     .line 5
-    iget-object v6, p0, Liq6;->b:Lhq6;
+    goto :goto_0
 
     .line 6
+    :cond_0
+    check-cast p1, Liq6;
+
     .line 7
-    iget-object v0, p0, Liq6;->d:Lmq6;
-
     .line 8
-    .line 9
-    move-object v1, p1
+    iget-boolean p1, p1, Liq6;->a:Z
 
+    .line 9
     .line 10
-    move v2, p2
+    iget-boolean p0, p0, Liq6;->a:Z
 
     .line 11
-    move-object v3, p3
-
     .line 12
-    invoke-virtual/range {v0 .. v6}, Lmq6;->h(Ljava/util/ArrayList;ZLsm3;Landroid/graphics/Canvas;FLhq6;)F
+    if-eq p0, p1, :cond_1
 
     .line 13
     .line 14
-    .line 15
-    move-result p1
-
-    .line 16
-    add-float/2addr v5, p1
-
-    .line 17
-    iput v5, p0, Liq6;->a:F
-
-    .line 18
-    .line 19
-    iget-object p0, p0, Liq6;->b:Lhq6;
-
-    .line 20
-    .line 21
-    iget p0, p0, Lhq6;->c:F
-
-    .line 22
-    .line 23
-    cmpg-float p0, v5, p0
-
-    .line 24
-    .line 25
-    if-gez p0, :cond_0
-
-    .line 26
-    .line 27
-    const/4 p0, 0x1
-
-    .line 28
-    return p0
-
-    .line 29
-    :cond_0
+    :goto_0
     const/4 p0, 0x0
 
-    .line 30
+    .line 15
     return p0
+
+    .line 16
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 17
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-boolean p0, p0, Liq6;->a:Z
+
+    .line 2
+    .line 3
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    const-string v0, "TextHighlightType(value="
+
+    .line 2
+    .line 3
+    const-string v1, ")"
+
+    .line 4
+    .line 5
+    iget-boolean p0, p0, Liq6;->a:Z
+
+    .line 6
+    .line 7
+    invoke-static {p0, v0, v1}, Loc1;->m(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p0
+
+    .line 11
+    return-object p0
 .end method

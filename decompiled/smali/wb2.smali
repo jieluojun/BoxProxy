@@ -1,152 +1,133 @@
-.class public final Lwb2;
+.class public final synthetic Lwb2;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lxb2;
+.implements Le62;
 
 
 # instance fields
-.field public final a:J
+.field public final synthetic j:B
+
+.field public final synthetic k:Lm55;
 
 
 # direct methods
-.method public constructor <init>(J)V
+.method public synthetic constructor <init>(Lm55;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p2, p0, Lwb2;->j:B
 
     .line 2
     .line 3
-    .line 4
-    iput-wide p1, p0, Lwb2;->a:J
+    iput-object p1, p0, Lwb2;->k:Lm55;
 
+    .line 4
     .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 6
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 5
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of v1, p1, Lwb2;
-
-    .line 6
-    .line 7
-    const/4 v2, 0x0
-
-    .line 8
-    if-nez v1, :cond_1
-
-    .line 9
-    .line 10
-    return v2
-
-    .line 11
-    :cond_1
-    check-cast p1, Lwb2;
-
-    .line 12
-    .line 13
-    iget-wide v3, p0, Lwb2;->a:J
-
-    .line 14
-    .line 15
-    iget-wide p0, p1, Lwb2;->a:J
-
-    .line 16
-    .line 17
-    cmp-long p0, v3, p0
-
-    .line 18
-    .line 19
-    if-eqz p0, :cond_2
-
-    .line 20
-    .line 21
-    return v2
-
-    .line 22
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
+.method public final invoke()Ljava/lang/Object;
     .locals 2
 
     .line 1
-    iget-wide v0, p0, Lwb2;->a:J
+    iget-byte v0, p0, Lwb2;->j:B
 
     .line 2
     .line 3
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    sget-object v1, La47;->a:La47;
 
     .line 4
     .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 3
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v1, "Success(latencyMs="
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    iget-object p0, p0, Lwb2;->k:Lm55;
 
     .line 6
     .line 7
+    packed-switch v0, :pswitch_data_0
+
     .line 8
-    iget-wide v1, p0, Lwb2;->a:J
-
     .line 9
     .line 10
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {p0}, Lm55;->a()V
 
     .line 11
     .line 12
     .line 13
-    const-string p0, ")"
+    return-object v1
 
     .line 14
-    .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    :pswitch_0
+    invoke-virtual {p0}, Lm55;->a()V
 
+    .line 15
     .line 16
     .line 17
+    return-object v1
+
     .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :pswitch_1
+    invoke-virtual {p0}, Lm55;->a()V
 
     .line 19
     .line 20
     .line 21
-    move-result-object p0
+    return-object v1
 
     .line 22
-    return-object p0
+    :pswitch_2
+    invoke-virtual {p0}, Lm55;->a()V
+
+    .line 23
+    .line 24
+    .line 25
+    return-object v1
+
+    .line 26
+    :pswitch_3
+    if-eqz p0, :cond_0
+
+    .line 27
+    .line 28
+    invoke-virtual {p0}, Lm55;->a()V
+
+    .line 29
+    .line 30
+    .line 31
+    :cond_0
+    return-object v1
+
+    .line 32
+    :pswitch_4
+    if-eqz p0, :cond_1
+
+    .line 33
+    .line 34
+    invoke-virtual {p0}, Lm55;->a()V
+
+    .line 35
+    .line 36
+    .line 37
+    :cond_1
+    return-object v1
+
+    .line 38
+    nop
+
+    .line 39
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_4
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

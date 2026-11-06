@@ -1,74 +1,90 @@
 .class public final Lza5;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Leb5;
 
 
-# instance fields
-.field public j:Ln32;
-
-.field public k:Lo32;
-
-.field public l:Landroid/os/Handler;
+# static fields
+.field public static final a:Lza5;
 
 
-# virtual methods
-.method public final run()V
-    .locals 5
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    :try_start_0
-    iget-object v0, p0, Lza5;->j:Ln32;
+    new-instance v0, Lza5;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ln32;->call()Ljava/lang/Object;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
     .line 6
-    move-result-object v0
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    sput-object v0, Lza5;->a:Lza5;
 
     .line 7
-    goto :goto_0
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of p0, p1, Lza5;
+
+    .line 6
+    .line 7
+    if-nez p0, :cond_1
 
     .line 8
-    :catch_0
-    const/4 v0, 0x0
-
     .line 9
-    :goto_0
-    iget-object v1, p0, Lza5;->k:Lo32;
+    const/4 p0, 0x0
 
     .line 10
+    return p0
+
     .line 11
-    iget-object p0, p0, Lza5;->l:Landroid/os/Handler;
+    :cond_1
+    return v0
+.end method
 
-    .line 12
-    .line 13
-    new-instance v2, La6;
+.method public final hashCode()I
+    .locals 0
 
-    .line 14
-    .line 15
-    const/4 v3, 0x3
+    .line 1
+    const p0, 0x32bcc6c7
 
-    .line 16
-    const/4 v4, 0x0
+    .line 2
+    .line 3
+    .line 4
+    return p0
+.end method
 
-    .line 17
-    invoke-direct {v2, v1, v4, v0, v3}, La6;-><init>(Ljava/lang/Object;ZLjava/lang/Object;B)V
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    .line 18
-    .line 19
-    .line 20
-    invoke-virtual {p0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+    .line 1
+    const-string p0, "Idle"
 
-    .line 21
-    .line 22
-    .line 23
-    return-void
+    .line 2
+    .line 3
+    return-object p0
 .end method

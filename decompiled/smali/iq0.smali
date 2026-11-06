@@ -1,82 +1,179 @@
-.class public final Liq0;
-.super Lz71;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final synthetic Liq0;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lt62;
 
 
 # instance fields
-.field public j:J
+.field public final synthetic j:Le62;
 
-.field public k:Lco0;
+.field public final synthetic k:Z
 
-.field public l:Lps3;
+.field public final synthetic l:Z
 
-.field public synthetic m:Ljava/lang/Object;
+.field public final synthetic m:Ljv0;
 
-.field public final synthetic n:Lmq0;
+.field public final synthetic n:F
 
-.field public o:I
+.field public final synthetic o:F
+
+.field public final synthetic p:Lwp3;
+
+.field public final synthetic q:F
+
+.field public final synthetic r:Lp62;
+
+.field public final synthetic s:Lp62;
+
+.field public final synthetic t:Lwp3;
 
 
 # direct methods
-.method public constructor <init>(Lmq0;Ly71;)V
+.method public synthetic constructor <init>(Le62;ZZLjv0;FFLwp3;FLp62;Lp62;Lwp3;I)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Liq0;->n:Lmq0;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
-
     .line 4
+    iput-object p1, p0, Liq0;->j:Le62;
+
     .line 5
     .line 6
+    iput-boolean p2, p0, Liq0;->k:Z
+
+    .line 7
+    .line 8
+    iput-boolean p3, p0, Liq0;->l:Z
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Liq0;->m:Ljv0;
+
+    .line 11
+    .line 12
+    iput p5, p0, Liq0;->n:F
+
+    .line 13
+    .line 14
+    iput p6, p0, Liq0;->o:F
+
+    .line 15
+    .line 16
+    iput-object p7, p0, Liq0;->p:Lwp3;
+
+    .line 17
+    .line 18
+    iput p8, p0, Liq0;->q:F
+
+    .line 19
+    .line 20
+    iput-object p9, p0, Liq0;->r:Lp62;
+
+    .line 21
+    .line 22
+    iput-object p10, p0, Liq0;->s:Lp62;
+
+    .line 23
+    .line 24
+    iput-object p11, p0, Liq0;->t:Lwp3;
+
+    .line 25
+    .line 26
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 13
 
     .line 1
-    iput-object p1, p0, Liq0;->m:Ljava/lang/Object;
+    move-object v11, p1
 
     .line 2
+    check-cast v11, Lz11;
+
     .line 3
-    iget p1, p0, Liq0;->o:I
-
     .line 4
+    check-cast p2, Ljava/lang/Integer;
+
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Liq0;->o:I
-
     .line 9
-    .line 10
-    const-wide/16 v0, 0x0
+    const p1, 0x1801b1
 
+    .line 10
     .line 11
     .line 12
-    const/4 p1, 0x0
+    invoke-static {p1}, Lqu5;->f0(I)I
 
     .line 13
-    iget-object v2, p0, Liq0;->n:Lmq0;
-
     .line 14
     .line 15
-    invoke-virtual {v2, v0, v1, p1, p0}, Lmq0;->c(JLco0;Ly71;)Ljava/lang/Object;
+    move-result v12
 
     .line 16
+    iget-object v0, p0, Liq0;->j:Le62;
+
     .line 17
     .line 18
-    move-result-object p0
+    iget-boolean v1, p0, Liq0;->k:Z
 
     .line 19
+    .line 20
+    iget-boolean v2, p0, Liq0;->l:Z
+
+    .line 21
+    .line 22
+    iget-object v3, p0, Liq0;->m:Ljv0;
+
+    .line 23
+    .line 24
+    iget v4, p0, Liq0;->n:F
+
+    .line 25
+    .line 26
+    iget v5, p0, Liq0;->o:F
+
+    .line 27
+    .line 28
+    iget-object v6, p0, Liq0;->p:Lwp3;
+
+    .line 29
+    .line 30
+    iget v7, p0, Liq0;->q:F
+
+    .line 31
+    .line 32
+    iget-object v8, p0, Liq0;->r:Lp62;
+
+    .line 33
+    .line 34
+    iget-object v9, p0, Liq0;->s:Lp62;
+
+    .line 35
+    .line 36
+    iget-object v10, p0, Liq0;->t:Lwp3;
+
+    .line 37
+    .line 38
+    invoke-static/range {v0 .. v12}, Lfm;->i(Le62;ZZLjv0;FFLwp3;FLp62;Lp62;Lwp3;Lz11;I)V
+
+    .line 39
+    .line 40
+    .line 41
+    sget-object p0, La47;->a:La47;
+
+    .line 42
+    .line 43
     return-object p0
 .end method

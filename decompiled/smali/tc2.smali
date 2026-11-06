@@ -1,209 +1,184 @@
-.class public final synthetic Ltc2;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Ls52;
+.class public final enum Ltc2;
+.super Ljava/lang/Enum;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final synthetic j:B
+# static fields
+.field public static final enum j:Ltc2;
 
-.field public final synthetic k:Ljava/lang/String;
+.field public static final enum k:Ltc2;
 
-.field public final synthetic l:Ljava/lang/String;
+.field public static final enum l:Ltc2;
 
-.field public final synthetic m:Ls52;
+.field public static final enum m:Ltc2;
 
-.field public final synthetic n:S
+.field public static final enum n:Ltc2;
 
-.field public final synthetic o:B
+.field public static final synthetic o:[Ltc2;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Ls52;IIB)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 7
 
     .line 1
-    iput-byte p6, p0, Ltc2;->j:B
+    new-instance v0, Ltc2;
 
     .line 2
     .line 3
-    iput-object p1, p0, Ltc2;->k:Ljava/lang/String;
+    const-string v1, "Good"
 
     .line 4
     .line 5
-    iput-object p2, p0, Ltc2;->l:Ljava/lang/String;
+    const/4 v2, 0x0
 
     .line 6
-    .line 7
-    iput-object p3, p0, Ltc2;->m:Ls52;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 7
     .line 8
     .line 9
-    iput-short p4, p0, Ltc2;->n:S
+    sput-object v0, Ltc2;->j:Ltc2;
 
     .line 10
     .line 11
-    iput-byte p5, p0, Ltc2;->o:B
+    new-instance v1, Ltc2;
 
     .line 12
     .line 13
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v2, "Warning"
 
     .line 14
     .line 15
+    const/4 v3, 0x1
+
     .line 16
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 16
-
-    .line 1
-    move-object/from16 v0, p0
-
-    .line 2
-    .line 3
-    iget-byte v1, v0, Ltc2;->j:B
-
-    .line 4
-    .line 5
-    sget-object v2, Lk27;->a:Lk27;
-
-    .line 6
-    .line 7
-    iget-short v3, v0, Ltc2;->n:S
-
-    .line 8
-    .line 9
-    packed-switch v1, :pswitch_data_0
-
-    .line 10
-    .line 11
-    .line 12
-    move-object/from16 v7, p1
-
-    .line 13
-    .line 14
-    check-cast v7, Lv01;
-
-    .line 15
-    .line 16
-    move-object/from16 v1, p2
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
     .line 18
-    check-cast v1, Ljava/lang/Integer;
-
     .line 19
-    .line 20
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sput-object v1, Ltc2;->k:Ltc2;
 
+    .line 20
     .line 21
+    new-instance v2, Ltc2;
+
     .line 22
     .line 23
-    or-int/lit8 v1, v3, 0x1
+    const-string v3, "Error"
 
     .line 24
     .line 25
-    invoke-static {v1}, Lw23;->h0(I)I
+    const/4 v4, 0x2
 
     .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 27
     .line 28
-    move-result v8
-
     .line 29
-    iget-object v4, v0, Ltc2;->k:Ljava/lang/String;
+    sput-object v2, Ltc2;->l:Ltc2;
 
     .line 30
     .line 31
-    iget-object v5, v0, Ltc2;->l:Ljava/lang/String;
+    new-instance v3, Ltc2;
 
     .line 32
     .line 33
-    iget-object v6, v0, Ltc2;->m:Ls52;
+    const-string v4, "Unavailable"
 
     .line 34
     .line 35
-    iget-byte v9, v0, Ltc2;->o:B
+    const/4 v5, 0x3
 
     .line 36
-    .line 37
-    invoke-static/range {v4 .. v9}, Lxa;->m(Ljava/lang/String;Ljava/lang/String;Ls52;Lv01;II)V
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 37
     .line 38
     .line 39
-    .line 40
-    return-object v2
+    sput-object v3, Ltc2;->m:Ltc2;
 
+    .line 40
     .line 41
-    :pswitch_0
-    move-object/from16 v13, p1
+    new-instance v4, Ltc2;
 
     .line 42
     .line 43
-    check-cast v13, Lv01;
+    const-string v5, "Loading"
 
     .line 44
     .line 45
-    move-object/from16 v1, p2
+    const/4 v6, 0x4
 
     .line 46
-    .line 47
-    check-cast v1, Ljava/lang/Integer;
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 47
     .line 48
     .line 49
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sput-object v4, Ltc2;->n:Ltc2;
 
     .line 50
     .line 51
-    .line 52
-    or-int/lit8 v1, v3, 0x1
+    filled-new-array {v0, v1, v2, v3, v4}, [Ltc2;
 
+    .line 52
     .line 53
     .line 54
-    invoke-static {v1}, Lw23;->h0(I)I
+    move-result-object v0
 
     .line 55
+    sput-object v0, Ltc2;->o:[Ltc2;
+
     .line 56
     .line 57
-    move-result v14
+    return-void
+.end method
 
-    .line 58
-    iget-object v10, v0, Ltc2;->k:Ljava/lang/String;
+.method public static valueOf(Ljava/lang/String;)Ltc2;
+    .locals 1
 
-    .line 59
-    .line 60
-    iget-object v11, v0, Ltc2;->l:Ljava/lang/String;
+    .line 1
+    const-class v0, Ltc2;
 
-    .line 61
-    .line 62
-    iget-object v12, v0, Ltc2;->m:Ls52;
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    .line 63
-    .line 64
-    iget-byte v15, v0, Ltc2;->o:B
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
 
-    .line 65
-    .line 66
-    invoke-static/range {v10 .. v15}, Lqz6;->k(Ljava/lang/String;Ljava/lang/String;Ls52;Lv01;II)V
+    .line 7
+    check-cast p0, Ltc2;
 
-    .line 67
-    .line 68
-    .line 69
-    return-object v2
+    .line 8
+    .line 9
+    return-object p0
+.end method
 
-    .line 70
-    nop
+.method public static values()[Ltc2;
+    .locals 1
 
-    .line 71
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 1
+    sget-object v0, Ltc2;->o:[Ltc2;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Ltc2;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

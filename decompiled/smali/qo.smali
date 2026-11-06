@@ -1,207 +1,198 @@
 .class public final Lqo;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Llh6;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Ljava/util/concurrent/Executor;
+.implements Lu62;
 
 
 # instance fields
-.field public final j:Ljava/lang/Object;
+.field public j:Z
 
-.field public final k:Ljava/util/ArrayDeque;
+.field public synthetic k:F
 
-.field public final l:Lro;
-
-.field public m:Ljava/lang/Runnable;
+.field public final synthetic l:Lux1;
 
 
 # direct methods
-.method public constructor <init>(Lro;)V
-    .locals 1
+.method public constructor <init>(Lux1;Ly81;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lqo;->l:Lux1;
 
     .line 2
     .line 3
+    const/4 p1, 0x3
+
     .line 4
-    new-instance v0, Ljava/lang/Object;
+    invoke-direct {p0, p1, p2}, Llh6;-><init>(ILy81;)V
 
     .line 5
     .line 6
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 7
-    .line 8
-    .line 9
-    iput-object v0, p0, Lqo;->j:Ljava/lang/Object;
-
-    .line 10
-    .line 11
-    new-instance v0, Ljava/util/ArrayDeque;
-
-    .line 12
-    .line 13
-    invoke-direct {v0}, Ljava/util/ArrayDeque;-><init>()V
-
-    .line 14
-    .line 15
-    .line 16
-    iput-object v0, p0, Lqo;->k:Ljava/util/ArrayDeque;
-
-    .line 17
-    .line 18
-    iput-object p1, p0, Lqo;->l:Lro;
-
-    .line 19
-    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 2
+.method public final b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lqo;->j:Ljava/lang/Object;
+    check-cast p1, Lac1;
 
     .line 2
     .line 3
-    monitor-enter v0
+    check-cast p2, Ljava/lang/Number;
 
     .line 4
-    :try_start_0
-    iget-object v1, p0, Lqo;->k:Ljava/util/ArrayDeque;
-
     .line 5
-    .line 6
-    invoke-virtual {v1}, Ljava/util/ArrayDeque;->poll()Ljava/lang/Object;
+    invoke-virtual {p2}, Ljava/lang/Number;->floatValue()F
 
+    .line 6
     .line 7
     .line 8
+    move-result p1
+
     .line 9
-    move-result-object v1
+    check-cast p3, Ly81;
 
     .line 10
-    check-cast v1, Ljava/lang/Runnable;
-
     .line 11
+    new-instance p2, Lqo;
+
     .line 12
-    iput-object v1, p0, Lqo;->m:Ljava/lang/Runnable;
-
     .line 13
+    iget-object p0, p0, Lqo;->l:Lux1;
+
     .line 14
-    if-eqz v1, :cond_0
-
     .line 15
-    .line 16
-    iget-object p0, p0, Lqo;->l:Lro;
+    invoke-direct {p2, p0, p3}, Lqo;-><init>(Lux1;Ly81;)V
 
+    .line 16
     .line 17
     .line 18
-    invoke-virtual {p0, v1}, Lro;->execute(Ljava/lang/Runnable;)V
+    iput p1, p2, Lqo;->k:F
 
     .line 19
     .line 20
-    .line 21
-    goto :goto_0
+    sget-object p0, La47;->a:La47;
 
+    .line 21
     .line 22
-    :catchall_0
-    move-exception p0
+    invoke-virtual {p2, p0}, Lqo;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 23
-    goto :goto_1
-
     .line 24
-    :cond_0
-    :goto_0
-    monitor-exit v0
-
     .line 25
-    return-void
+    move-result-object p0
 
     .line 26
-    :goto_1
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 27
-    throw p0
+    return-object p0
 .end method
 
-.method public final execute(Ljava/lang/Runnable;)V
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 4
 
     .line 1
-    iget-object v0, p0, Lqo;->j:Ljava/lang/Object;
+    iget v0, p0, Lqo;->k:F
 
     .line 2
     .line 3
-    monitor-enter v0
+    iget-boolean v1, p0, Lqo;->j:Z
 
     .line 4
-    :try_start_0
-    iget-object v1, p0, Lqo;->k:Ljava/util/ArrayDeque;
-
     .line 5
+    const/4 v2, 0x1
+
     .line 6
-    new-instance v2, Lcb;
+    if-eqz v1, :cond_1
 
     .line 7
     .line 8
-    const/4 v3, 0x1
+    if-ne v1, v2, :cond_0
 
     .line 9
-    invoke-direct {v2, p0, p1, v3}, Lcb;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
-
     .line 10
+    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+
     .line 11
     .line 12
-    invoke-virtual {v1, v2}, Ljava/util/ArrayDeque;->add(Ljava/lang/Object;)Z
-
     .line 13
-    .line 14
-    .line 15
-    iget-object p1, p0, Lqo;->m:Ljava/lang/Runnable;
-
-    .line 16
-    .line 17
-    if-nez p1, :cond_0
-
-    .line 18
-    .line 19
-    invoke-virtual {p0}, Lqo;->a()V
-
-    .line 20
-    .line 21
-    .line 22
     goto :goto_0
 
-    .line 23
-    :catchall_0
-    move-exception p0
+    .line 14
+    :cond_0
+    const-string p0, "call to \'resume\' before \'invoke\' with coroutine"
 
+    .line 15
+    .line 16
+    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+
+    .line 17
+    .line 18
+    .line 19
+    const/4 p0, 0x0
+
+    .line 20
+    return-object p0
+
+    .line 21
+    :cond_1
+    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+
+    .line 22
+    .line 23
     .line 24
-    goto :goto_1
+    iget-object p1, p0, Lqo;->l:Lux1;
 
     .line 25
-    :cond_0
-    :goto_0
-    monitor-exit v0
-
     .line 26
-    return-void
+    iget-object v1, p1, Lux1;->a:Lnx6;
 
     .line 27
-    :goto_1
-    monitor-exit v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
     .line 28
-    throw p0
+    iget-object v3, p1, Lux1;->c:Lse1;
+
+    .line 29
+    .line 30
+    iget-object p1, p1, Lux1;->b:Lrh;
+
+    .line 31
+    .line 32
+    iput v0, p0, Lqo;->k:F
+
+    .line 33
+    .line 34
+    iput-boolean v2, p0, Lqo;->j:Z
+
+    .line 35
+    .line 36
+    invoke-static {v1, v0, v3, p1, p0}, Lso;->g(Lnx6;FLse1;Lrh;Lz81;)Ljava/lang/Object;
+
+    .line 37
+    .line 38
+    .line 39
+    move-result-object p0
+
+    .line 40
+    sget-object p1, Lbc1;->j:Lbc1;
+
+    .line 41
+    .line 42
+    if-ne p0, p1, :cond_2
+
+    .line 43
+    .line 44
+    return-object p1
+
+    .line 45
+    :cond_2
+    :goto_0
+    sget-object p0, La47;->a:La47;
+
+    .line 46
+    .line 47
+    return-object p0
 .end method

@@ -1,142 +1,175 @@
-.class public abstract Lhb6;
+.class public final Lhb6;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lrh;
 
 
-# static fields
-.field public static final a:Ljava/util/regex/Pattern;
+# instance fields
+.field public final a:Lrh;
+
+.field public final b:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lrz1;J)V
+    .locals 0
 
     .line 1
-    const-string v0, ".*/|\\..*"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
     .line 4
+    iput-object p1, p0, Lhb6;->a:Lrh;
+
     .line 5
     .line 6
-    move-result-object v0
+    iput-wide p2, p0, Lhb6;->b:J
 
     .line 7
-    sput-object v0, Lhb6;->a:Ljava/util/regex/Pattern;
-
     .line 8
-    .line 9
     return-void
 .end method
 
-.method public static a(ILjava/lang/String;Z)I
+
+# virtual methods
+.method public final a(Lyz6;)Lv57;
     .locals 3
 
     .line 1
-    if-eqz p2, :cond_2
+    iget-object v0, p0, Lhb6;->a:Lrh;
 
     .line 2
     .line 3
-    const/4 p2, 0x0
+    invoke-interface {v0, p1}, Lrh;->a(Lyz6;)Lv57;
 
     .line 4
-    move v0, p2
-
     .line 5
-    :goto_0
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
     .line 6
-    .line 7
-    .line 8
-    move-result v1
+    move-result-object p1
 
+    .line 7
+    new-instance v0, Lib6;
+
+    .line 8
     .line 9
-    if-ge p2, v1, :cond_2
+    iget-wide v1, p0, Lhb6;->b:J
 
     .line 10
     .line 11
-    if-ne v0, p0, :cond_0
+    invoke-direct {v0, p1, v1, v2}, Lib6;-><init>(Lv57;J)V
 
     .line 12
     .line 13
-    return p2
+    .line 14
+    return-object v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 6
+
+    .line 1
+    instance-of v0, p1, Lhb6;
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    if-nez v0, :cond_0
+
+    .line 5
+    .line 6
+    return v1
+
+    .line 7
+    :cond_0
+    check-cast p1, Lhb6;
+
+    .line 8
+    .line 9
+    iget-wide v2, p1, Lhb6;->b:J
+
+    .line 10
+    .line 11
+    iget-wide v4, p0, Lhb6;->b:J
+
+    .line 12
+    .line 13
+    cmp-long v0, v2, v4
 
     .line 14
-    :cond_0
-    invoke-virtual {p1, p2}, Ljava/lang/String;->charAt(I)C
-
     .line 15
+    if-nez v0, :cond_1
+
     .line 16
     .line 17
-    move-result v1
+    iget-object p1, p1, Lhb6;->a:Lrh;
 
     .line 18
-    invoke-static {v1}, Ljava/lang/Character;->isHighSurrogate(C)Z
-
     .line 19
+    iget-object p0, p0, Lhb6;->a:Lrh;
+
     .line 20
     .line 21
-    move-result v1
+    invoke-static {p1, p0}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 22
-    if-eqz v1, :cond_1
-
     .line 23
     .line 24
-    add-int/lit8 v1, p2, 0x1
+    move-result p0
 
     .line 25
+    if-eqz p0, :cond_1
+
     .line 26
-    invoke-virtual {p1}, Ljava/lang/String;->length()I
-
     .line 27
+    const/4 p0, 0x1
+
     .line 28
+    return p0
+
     .line 29
-    move-result v2
-
-    .line 30
-    if-ge v1, v2, :cond_1
-
-    .line 31
-    .line 32
-    invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
-
-    .line 33
-    .line 34
-    .line 35
-    move-result v2
-
-    .line 36
-    invoke-static {v2}, Ljava/lang/Character;->isLowSurrogate(C)Z
-
-    .line 37
-    .line 38
-    .line 39
-    move-result v2
-
-    .line 40
-    if-eqz v2, :cond_1
-
-    .line 41
-    .line 42
-    move p2, v1
-
-    .line 43
     :cond_1
-    add-int/lit8 v0, v0, 0x1
+    return v1
+.end method
 
-    .line 44
-    .line 45
-    add-int/lit8 p2, p2, 0x1
+.method public final hashCode()I
+    .locals 3
 
-    .line 46
-    .line 47
-    goto :goto_0
+    .line 1
+    iget-object v0, p0, Lhb6;->a:Lrh;
 
-    .line 48
-    :cond_2
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 8
+    .line 9
+    iget-wide v1, p0, Lhb6;->b:J
+
+    .line 10
+    .line 11
+    invoke-static {v1, v2}, Ljava/lang/Long;->hashCode(J)I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    add-int/2addr p0, v0
+
+    .line 16
     return p0
 .end method

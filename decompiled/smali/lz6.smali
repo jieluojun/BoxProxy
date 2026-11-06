@@ -1,11 +1,23 @@
-.class public Llz6;
-.super Lky6;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public abstract Llz6;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Ljava/util/Iterator;
+.implements Lfy2;
+
+
+# instance fields
+.field public j:[Ljava/lang/Object;
+
+.field public k:I
+
+.field public l:I
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 0
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -13,150 +25,87 @@
     .line 2
     .line 3
     .line 4
+    sget-object v0, Lkz6;->e:Lkz6;
+
+    .line 5
+    .line 6
+    iget-object v0, v0, Lkz6;->d:[Ljava/lang/Object;
+
+    .line 7
+    .line 8
+    iput-object v0, p0, Llz6;->j:[Ljava/lang/Object;
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Lhw2;)Ljava/lang/Object;
-    .locals 3
+.method public final a([Ljava/lang/Object;II)V
+    .locals 0
 
     .line 1
-    invoke-virtual {p1}, Lhw2;->L()I
+    iput-object p1, p0, Llz6;->j:[Ljava/lang/Object;
 
     .line 2
     .line 3
-    .line 4
-    move-result p0
+    iput p2, p0, Llz6;->k:I
 
+    .line 4
     .line 5
-    const/16 v0, 0x9
+    iput p3, p0, Llz6;->l:I
 
     .line 6
     .line 7
-    if-ne p0, v0, :cond_0
+    return-void
+.end method
+
+.method public final hasNext()Z
+    .locals 1
+
+    .line 1
+    iget v0, p0, Llz6;->l:I
+
+    .line 2
+    .line 3
+    iget p0, p0, Llz6;->k:I
+
+    .line 4
+    .line 5
+    if-ge v0, p0, :cond_0
+
+    .line 6
+    .line 7
+    const/4 p0, 0x1
 
     .line 8
-    .line 9
-    invoke-virtual {p1}, Lhw2;->H()V
+    return p0
 
-    .line 10
-    .line 11
-    .line 12
+    .line 9
+    :cond_0
     const/4 p0, 0x0
 
-    .line 13
-    return-object p0
+    .line 10
+    return p0
+.end method
 
-    .line 14
-    :cond_0
-    :try_start_0
-    invoke-virtual {p1}, Lhw2;->z()I
+.method public final remove()V
+    .locals 1
 
-    .line 15
-    .line 16
-    .line 17
-    move-result p0
-    :try_end_0
-    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    .line 18
-    const v0, 0xffff
+    .line 2
+    .line 3
+    const-string v0, "Operation is not supported for read-only collection"
 
-    .line 19
-    .line 20
-    .line 21
-    if-gt p0, v0, :cond_1
+    .line 4
+    .line 5
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    .line 22
-    .line 23
-    const/16 v0, -0x8000
-
-    .line 24
-    .line 25
-    if-lt p0, v0, :cond_1
-
-    .line 26
-    .line 27
-    int-to-short p0, p0
-
-    .line 28
-    invoke-static {p0}, Ljava/lang/Short;->valueOf(S)Ljava/lang/Short;
-
-    .line 29
-    .line 30
-    .line 31
-    move-result-object p0
-
-    .line 32
-    return-object p0
-
-    .line 33
-    :cond_1
-    new-instance v0, Lov2;
-
-    .line 34
-    .line 35
-    const-string v1, "Lossy conversion from "
-
-    .line 36
-    .line 37
-    const-string v2, " to short; at path "
-
-    .line 38
-    .line 39
-    invoke-static {p0, v1, v2}, Lpb1;->t(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 40
-    .line 41
-    .line 42
-    move-result-object p0
-
-    .line 43
-    const/4 v1, 0x1
-
-    .line 44
-    invoke-virtual {p1, v1}, Lhw2;->p(Z)Ljava/lang/String;
-
-    .line 45
-    .line 46
-    .line 47
-    move-result-object p1
-
-    .line 48
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 49
-    .line 50
-    .line 51
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 52
-    .line 53
-    .line 54
-    move-result-object p0
-
-    .line 55
-    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
-
-    .line 56
-    .line 57
-    .line 58
-    throw v0
-
-    .line 59
-    :catch_0
-    move-exception p0
-
-    .line 60
-    new-instance p1, Lov2;
-
-    .line 61
-    .line 62
-    invoke-direct {p1, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
-
-    .line 63
-    .line 64
-    .line 65
-    throw p1
+    .line 6
+    .line 7
+    .line 8
+    throw p0
 .end method

@@ -1,235 +1,206 @@
-.class public final Lf04;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lg02;
+.class public final enum Lf04;
+.super Ljava/lang/Enum;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final synthetic j:B
+# static fields
+.field public static final enum j:Lf04;
 
-.field public final synthetic k:Ljava/util/List;
+.field public static final enum k:Lf04;
 
-.field public final synthetic l:Las3;
+.field public static final enum l:Lf04;
 
-.field public final synthetic m:Las3;
+.field public static final enum m:Lf04;
 
-.field public final synthetic n:Las3;
+.field public static final enum n:Lf04;
+
+.field public static final enum o:Lf04;
+
+.field public static final synthetic p:[Lf04;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/util/List;Las3;Las3;Las3;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 8
 
     .line 1
-    iput-byte p5, p0, Lf04;->j:B
+    new-instance v0, Lf04;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lf04;->k:Ljava/util/List;
+    const-string v1, "Idle"
 
     .line 4
     .line 5
-    iput-object p2, p0, Lf04;->l:Las3;
+    const/4 v2, 0x0
 
     .line 6
-    .line 7
-    iput-object p3, p0, Lf04;->m:Las3;
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 7
     .line 8
     .line 9
-    iput-object p4, p0, Lf04;->n:Las3;
+    sput-object v0, Lf04;->j:Lf04;
 
     .line 10
     .line 11
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v1, Lf04;
 
     .line 12
     .line 13
-    .line 14
-    return-void
-.end method
-
-
-# virtual methods
-.method public final e(Ljava/lang/Object;Ly71;)Ljava/lang/Object;
-    .locals 4
-
-    .line 1
-    iget-byte p2, p0, Lf04;->j:B
-
-    .line 2
-    .line 3
-    sget-object v0, Lk27;->a:Lk27;
-
-    .line 4
-    .line 5
-    iget-object v1, p0, Lf04;->k:Ljava/util/List;
-
-    .line 6
-    .line 7
-    iget-object v2, p0, Lf04;->n:Las3;
-
-    .line 8
-    .line 9
-    iget-object v3, p0, Lf04;->m:Las3;
-
-    .line 10
-    .line 11
-    iget-object p0, p0, Lf04;->l:Las3;
-
-    .line 12
-    .line 13
-    packed-switch p2, :pswitch_data_0
+    const-string v2, "Testing"
 
     .line 14
     .line 15
+    const/4 v3, 0x1
+
     .line 16
-    check-cast p1, Ljava/lang/String;
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
     .line 18
-    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
-
     .line 19
+    sput-object v1, Lf04;->k:Lf04;
+
     .line 20
     .line 21
-    move-result-object p0
+    new-instance v2, Lf04;
 
     .line 22
-    check-cast p0, Ljava/lang/String;
-
     .line 23
+    const-string v3, "Reachable"
+
     .line 24
-    invoke-static {p1, p0}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
-
     .line 25
+    const/4 v4, 0x2
+
     .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 27
-    move-result p0
-
     .line 28
-    if-nez p0, :cond_0
-
     .line 29
-    .line 30
-    invoke-interface {v3}, Lu96;->getValue()Ljava/lang/Object;
+    sput-object v2, Lf04;->l:Lf04;
 
+    .line 30
     .line 31
+    new-instance v3, Lf04;
+
     .line 32
     .line 33
-    move-result-object p0
+    const-string v4, "Limited"
 
     .line 34
-    check-cast p0, Lo52;
-
     .line 35
+    const/4 v5, 0x3
+
     .line 36
-    invoke-interface {v2}, Lu96;->getValue()Ljava/lang/Object;
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 37
     .line 38
     .line 39
-    move-result-object p2
+    sput-object v3, Lf04;->m:Lf04;
 
     .line 40
-    check-cast p2, Lk14;
-
     .line 41
-    .line 42
-    invoke-static {p2, v1, p1}, Lu23;->c0(Lk14;Ljava/util/List;Ljava/lang/String;)Lk14;
+    new-instance v4, Lf04;
 
+    .line 42
     .line 43
+    const-string v5, "Blocked"
+
     .line 44
     .line 45
-    move-result-object p1
+    const/4 v6, 0x4
 
     .line 46
-    invoke-interface {p0, p1}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 47
     .line 48
     .line 49
-    :cond_0
-    return-object v0
+    sput-object v4, Lf04;->n:Lf04;
 
     .line 50
-    :pswitch_0
-    check-cast p1, Ljava/lang/String;
-
     .line 51
-    .line 52
-    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
+    new-instance v5, Lf04;
 
+    .line 52
     .line 53
+    const-string v6, "Unreachable"
+
     .line 54
     .line 55
-    move-result-object p0
+    const/4 v7, 0x5
 
     .line 56
-    check-cast p0, Ljava/lang/String;
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 57
     .line 58
-    invoke-static {p1, p0}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
-
     .line 59
+    sput-object v5, Lf04;->o:Lf04;
+
     .line 60
     .line 61
-    move-result p0
+    filled-new-array/range {v0 .. v5}, [Lf04;
 
     .line 62
-    if-nez p0, :cond_1
-
     .line 63
     .line 64
-    invoke-interface {v3}, Lu96;->getValue()Ljava/lang/Object;
+    move-result-object v0
 
     .line 65
+    sput-object v0, Lf04;->p:[Lf04;
+
     .line 66
     .line 67
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lf04;
+    .locals 1
+
+    .line 1
+    const-class v0, Lf04;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
     move-result-object p0
 
-    .line 68
-    check-cast p0, Lo52;
+    .line 7
+    check-cast p0, Lf04;
 
-    .line 69
-    .line 70
-    invoke-interface {v2}, Lu96;->getValue()Ljava/lang/Object;
+    .line 8
+    .line 9
+    return-object p0
+.end method
 
-    .line 71
-    .line 72
-    .line 73
-    move-result-object p2
+.method public static values()[Lf04;
+    .locals 1
 
-    .line 74
-    check-cast p2, Lk14;
+    .line 1
+    sget-object v0, Lf04;->p:[Lf04;
 
-    .line 75
-    .line 76
-    invoke-static {p2, v1, p1}, Lu23;->c0(Lk14;Ljava/util/List;Ljava/lang/String;)Lk14;
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    .line 77
-    .line 78
-    .line 79
-    move-result-object p1
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
 
-    .line 80
-    invoke-interface {p0, p1}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 7
+    check-cast v0, [Lf04;
 
-    .line 81
-    .line 82
-    .line 83
-    :cond_1
+    .line 8
+    .line 9
     return-object v0
-
-    .line 84
-    nop
-
-    .line 85
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

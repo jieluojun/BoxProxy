@@ -1,0 +1,23 @@
+{
+  "versionName": "26.11.05.d5c365e",
+  "versionCode": 139,
+  "packageName": "com.boxproxy.box",
+  "abi": "arm64-v8a",
+  "inputFile": "BoxProxy-26.11.05.d5c365e-arm64-v8a.apk.txt",
+  "inputSha256": "4bf0a0d531038663781761692a169202fbf09893a2a385d38e011053bcf19093",
+  "apktoolVersion": "2.9.3",
+  "apktoolSha256": "7956eb04194300ce0d0a84ad18771eebc94b89fb8d1ddcce8ea4c056818646f4",
+  "baselineCommit": "89ae9d5b3b54b5e9697e62b764b8164db1595307",
+  "customizedCommit": "89ae9d5b3b54b5e9697e62b764b8164db1595307",
+  "sourceArchive": "apktool-source.tar.gz",
+  "sourceArchiveSha256": "ca4e2999f59cb4ddadb50ab67eff9dc44a874dee705a4d6e5d29efde8182c520",
+  "sourceFileCount": 9660,
+  "sourceBytes": 114944643,
+  "status": "decoded-and-customized-host-validated-device-validation-pending",
+  "migration": {
+    "status": "full-custom-migration-host-validated-device-validation-pending",
+    "plan": "migration/full.json",
+    "runtimeProjectReplaced": true,
+    "androidDeviceVerified": false
+  }
+}

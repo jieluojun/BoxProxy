@@ -1,177 +1,140 @@
-.class public abstract Lip6;
+.class public final synthetic Lip6;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Le62;
 
 
-# static fields
-.field public static final a:Ljava/lang/ThreadLocal;
+# instance fields
+.field public final synthetic j:B
 
-.field public static final b:J
+.field public final synthetic k:Lma5;
+
+.field public final synthetic l:Lma5;
+
+.field public final synthetic m:Lup6;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lma5;Lma5;Lup6;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/lang/ThreadLocal;
+    iput-byte p4, p0, Lip6;->j:B
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
+    iput-object p1, p0, Lip6;->k:Lma5;
 
     .line 4
     .line 5
+    iput-object p2, p0, Lip6;->l:Lma5;
+
     .line 6
-    sput-object v0, Lip6;->a:Ljava/lang/ThreadLocal;
-
     .line 7
-    .line 8
-    const/4 v0, 0x0
+    iput-object p3, p0, Lip6;->m:Lup6;
 
+    .line 8
     .line 9
-    invoke-static {v0, v0}, Lip6;->a(II)J
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 10
     .line 11
     .line 12
-    move-result-wide v0
-
-    .line 13
-    sput-wide v0, Lip6;->b:J
-
-    .line 14
-    .line 15
     return-void
 .end method
 
-.method public static final a(II)J
+.method public synthetic constructor <init>(Lma5;Lup6;Lma5;B)V
+    .locals 0
+
+    .line 13
+    iput-byte p4, p0, Lip6;->j:B
+
+    iput-object p1, p0, Lip6;->k:Lma5;
+
+    iput-object p2, p0, Lip6;->m:Lup6;
+
+    iput-object p3, p0, Lip6;->l:Lma5;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
     .locals 4
 
     .line 1
-    int-to-long v0, p0
-
-    .line 2
-    const/16 p0, 0x20
-
-    .line 3
-    .line 4
-    shl-long/2addr v0, p0
-
-    .line 5
-    int-to-long p0, p1
-
-    .line 6
-    const-wide v2, 0xffffffffL
-
-    .line 7
-    .line 8
-    .line 9
-    .line 10
-    .line 11
-    and-long/2addr p0, v2
-
-    .line 12
-    or-long/2addr p0, v0
-
-    .line 13
-    return-wide p0
-.end method
-
-.method public static final b(I)Landroid/text/TextDirectionHeuristic;
-    .locals 1
-
-    .line 1
-    if-eqz p0, :cond_5
+    iget-byte v0, p0, Lip6;->j:B
 
     .line 2
     .line 3
-    const/4 v0, 0x1
+    sget-object v1, La47;->a:La47;
 
     .line 4
-    if-eq p0, v0, :cond_4
-
     .line 5
-    .line 6
-    const/4 v0, 0x2
+    iget-object v2, p0, Lip6;->l:Lma5;
 
+    .line 6
     .line 7
-    if-eq p0, v0, :cond_3
+    iget-object v3, p0, Lip6;->m:Lup6;
 
     .line 8
     .line 9
-    const/4 v0, 0x3
+    iget-object p0, p0, Lip6;->k:Lma5;
 
     .line 10
-    if-eq p0, v0, :cond_2
-
     .line 11
+    packed-switch v0, :pswitch_data_0
+
     .line 12
-    const/4 v0, 0x4
-
     .line 13
-    if-eq p0, v0, :cond_1
-
     .line 14
+    invoke-static {p0, v2, v3}, Lup6;->i(Lma5;Lma5;Lup6;)V
+
     .line 15
-    const/4 v0, 0x5
-
     .line 16
-    if-eq p0, v0, :cond_0
-
     .line 17
+    return-object v1
+
     .line 18
-    sget-object p0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR:Landroid/text/TextDirectionHeuristic;
+    :pswitch_0
+    invoke-static {p0, v2, v3}, Lup6;->f(Lma5;Lma5;Lup6;)V
 
     .line 19
     .line 20
-    return-object p0
-
     .line 21
-    :cond_0
-    sget-object p0, Landroid/text/TextDirectionHeuristics;->LOCALE:Landroid/text/TextDirectionHeuristic;
+    return-object v1
 
     .line 22
+    :pswitch_1
+    invoke-static {p0, v2, v3}, Lup6;->f(Lma5;Lma5;Lup6;)V
+
     .line 23
-    return-object p0
-
     .line 24
-    :cond_1
-    sget-object p0, Landroid/text/TextDirectionHeuristics;->ANYRTL_LTR:Landroid/text/TextDirectionHeuristic;
-
     .line 25
+    return-object v1
+
     .line 26
-    return-object p0
+    :pswitch_2
+    invoke-static {p0, v2, v3}, Lup6;->i(Lma5;Lma5;Lup6;)V
 
     .line 27
-    :cond_2
-    sget-object p0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_RTL:Landroid/text/TextDirectionHeuristic;
-
     .line 28
     .line 29
-    return-object p0
+    return-object v1
 
     .line 30
-    :cond_3
-    sget-object p0, Landroid/text/TextDirectionHeuristics;->FIRSTSTRONG_LTR:Landroid/text/TextDirectionHeuristic;
+    nop
 
     .line 31
-    .line 32
-    return-object p0
-
-    .line 33
-    :cond_4
-    sget-object p0, Landroid/text/TextDirectionHeuristics;->RTL:Landroid/text/TextDirectionHeuristic;
-
-    .line 34
-    .line 35
-    return-object p0
-
-    .line 36
-    :cond_5
-    sget-object p0, Landroid/text/TextDirectionHeuristics;->LTR:Landroid/text/TextDirectionHeuristic;
-
-    .line 37
-    .line 38
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

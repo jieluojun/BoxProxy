@@ -1,121 +1,188 @@
 .class public final Lrh1;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Lnh1;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Luj1;
+.implements Lq21;
+.implements Lva4;
 
 
 # instance fields
-.field public final synthetic a:Lh63;
+.field public final A:Z
 
-.field public final synthetic b:Loh1;
+.field public final B:F
 
-.field public final synthetic c:Lv85;
+.field public final C:Lqh1;
 
-.field public final synthetic d:Landroid/hardware/SensorManager;
+.field public final D:Z
 
-.field public final synthetic e:Lqh1;
+.field public final E:Z
 
-.field public final synthetic f:Lv85;
+.field public final F:Z
+
+.field public final G:Z
+
+.field public H:Lfe5;
+
+.field public I:Lae5;
+
+.field public J:Lre5;
+
+.field public K:Lpq3;
+
+.field public L:Lpe5;
+
+.field public final M:Lqh1;
+
+.field public final N:Lph1;
+
+.field public final z:Lvs2;
 
 
 # direct methods
-.method public constructor <init>(Lh63;Loh1;Lv85;Landroid/hardware/SensorManager;Lqh1;Lv85;)V
+.method public constructor <init>(Lvs2;ZFLqh1;Ln06;Z)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Lnh1;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lrh1;->a:Lh63;
+    iput-object p1, p0, Lrh1;->z:Lvs2;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lrh1;->b:Loh1;
+    iput-boolean p2, p0, Lrh1;->A:Z
 
     .line 7
     .line 8
-    iput-object p3, p0, Lrh1;->c:Lv85;
+    iput p3, p0, Lrh1;->B:F
 
     .line 9
     .line 10
-    iput-object p4, p0, Lrh1;->d:Landroid/hardware/SensorManager;
+    iput-object p4, p0, Lrh1;->C:Lqh1;
 
     .line 11
     .line 12
-    iput-object p5, p0, Lrh1;->e:Lqh1;
+    const/4 p1, 0x1
 
     .line 13
-    .line 14
-    iput-object p6, p0, Lrh1;->f:Lv85;
+    iput-boolean p1, p0, Lrh1;->D:Z
 
+    .line 14
     .line 15
+    iput-boolean p6, p0, Lrh1;->E:Z
+
     .line 16
+    .line 17
+    iput-boolean p1, p0, Lrh1;->F:Z
+
+    .line 18
+    .line 19
+    iput-boolean p1, p0, Lrh1;->G:Z
+
+    .line 20
+    .line 21
+    new-instance p2, Lqh1;
+
+    .line 22
+    .line 23
+    const/4 p3, 0x0
+
+    .line 24
+    invoke-direct {p2, p0, p3}, Lqh1;-><init>(Ljava/lang/Object;B)V
+
+    .line 25
+    .line 26
+    .line 27
+    iput-object p2, p0, Lrh1;->M:Lqh1;
+
+    .line 28
+    .line 29
+    new-instance p2, Lqh1;
+
+    .line 30
+    .line 31
+    const/4 p3, 0x2
+
+    .line 32
+    invoke-direct {p2, p0, p3}, Lqh1;-><init>(Ljava/lang/Object;B)V
+
+    .line 33
+    .line 34
+    .line 35
+    new-instance p2, Lqh1;
+
+    .line 36
+    .line 37
+    invoke-direct {p2, p0, p1}, Lqh1;-><init>(Ljava/lang/Object;B)V
+
+    .line 38
+    .line 39
+    .line 40
+    new-instance p2, Lph1;
+
+    .line 41
+    .line 42
+    invoke-direct {p2, p0, p1}, Lph1;-><init>(Lrh1;B)V
+
+    .line 43
+    .line 44
+    .line 45
+    iput-object p2, p0, Lrh1;->N:Lph1;
+
+    .line 46
+    .line 47
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final i0()V
+    .locals 2
 
     .line 1
-    iget-object v0, p0, Lrh1;->a:Lh63;
+    new-instance v0, Lph1;
 
     .line 2
     .line 3
-    iget-object v1, p0, Lrh1;->b:Loh1;
-
-    .line 4
-    .line 5
-    invoke-virtual {v0, v1}, Lh63;->f(Ld63;)V
-
-    .line 6
-    .line 7
-    .line 8
-    iget-object v0, p0, Lrh1;->c:Lv85;
-
-    .line 9
-    .line 10
-    iget-boolean v1, v0, Lv85;->j:Z
-
-    .line 11
-    .line 12
-    if-eqz v1, :cond_0
-
-    .line 13
-    .line 14
-    iget-object v1, p0, Lrh1;->d:Landroid/hardware/SensorManager;
-
-    .line 15
-    .line 16
-    iget-object v2, p0, Lrh1;->e:Lqh1;
-
-    .line 17
-    .line 18
-    invoke-virtual {v1, v2}, Landroid/hardware/SensorManager;->unregisterListener(Landroid/hardware/SensorEventListener;)V
-
-    .line 19
-    .line 20
-    .line 21
     const/4 v1, 0x0
 
-    .line 22
-    iput-boolean v1, v0, Lv85;->j:Z
+    .line 4
+    invoke-direct {v0, p0, v1}, Lph1;-><init>(Lrh1;B)V
 
-    .line 23
-    .line 24
-    iget-object p0, p0, Lrh1;->f:Lv85;
+    .line 5
+    .line 6
+    .line 7
+    invoke-static {p0, v0}, Lne3;->K(Lvp3;Le62;)V
 
-    .line 25
-    .line 26
-    iput-boolean v1, p0, Lv85;->j:Z
+    .line 8
+    .line 9
+    .line 10
+    return-void
+.end method
 
-    .line 27
-    .line 28
-    :cond_0
+.method public final w1()V
+    .locals 2
+
+    .line 1
+    new-instance v0, Lph1;
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    invoke-direct {v0, p0, v1}, Lph1;-><init>(Lrh1;B)V
+
+    .line 5
+    .line 6
+    .line 7
+    invoke-static {p0, v0}, Lne3;->K(Lvp3;Le62;)V
+
+    .line 8
+    .line 9
+    .line 10
     return-void
 .end method

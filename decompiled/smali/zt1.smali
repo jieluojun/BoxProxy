@@ -1,21 +1,22 @@
 .class public final Lzt1;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lyt1;
 
 
 # instance fields
-.field public a:Lw2;
+.field public final j:I
 
-.field public final b:Ljava/lang/String;
+.field public k:I
 
-.field public final c:Z
-
-.field public final d:[B
+.field public l:I
 
 
 # direct methods
-.method public constructor <init>([BLjava/lang/String;Z)V
-    .locals 0
+.method public constructor <init>(I)V
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -23,38 +24,74 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lzt1;->d:[B
+    const/4 v0, -0x1
 
     .line 5
+    iput v0, p0, Lzt1;->k:I
+
     .line 6
-    iput-object p2, p0, Lzt1;->b:Ljava/lang/String;
-
     .line 7
-    .line 8
-    iput-boolean p3, p0, Lzt1;->c:Z
+    iput v0, p0, Lzt1;->l:I
 
+    .line 8
     .line 9
+    iput p1, p0, Lzt1;->j:I
+
     .line 10
+    .line 11
     return-void
 .end method
 
 
 # virtual methods
-.method public final hashCode()I
+.method public final a()Ljava/lang/Object;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lzt1;->b:Ljava/lang/String;
+    return-object p0
+.end method
+
+.method public final h(Ljava/lang/CharSequence;IILm17;)Z
+    .locals 0
+
+    .line 1
+    const/4 p1, 0x0
 
     .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+    iget p4, p0, Lzt1;->j:I
 
+    .line 3
     .line 4
+    if-gt p2, p4, :cond_0
+
     .line 5
     .line 6
-    move-result p0
+    if-ge p4, p3, :cond_0
 
     .line 7
+    .line 8
+    iput p2, p0, Lzt1;->k:I
+
+    .line 9
+    .line 10
+    iput p3, p0, Lzt1;->l:I
+
+    .line 11
+    .line 12
+    return p1
+
+    .line 13
+    :cond_0
+    if-gt p3, p4, :cond_1
+
+    .line 14
+    .line 15
+    const/4 p0, 0x1
+
+    .line 16
     return p0
+
+    .line 17
+    :cond_1
+    return p1
 .end method

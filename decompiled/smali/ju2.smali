@@ -1,30 +1,36 @@
-.class public abstract Lju2;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final Lju2;
+.super Lkv2;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+
+# static fields
+.field public static final synthetic o:J
 
 
 # instance fields
-.field public j:Ljava/lang/String;
+.field private volatile synthetic _invoked$volatile:I
+
+.field public final n:Li91;
 
 
-# virtual methods
-.method public equals(Ljava/lang/Object;)Z
-    .locals 2
+# direct methods
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    if-eqz p1, :cond_1
+    sget-object v0, Luw;->a:Lsun/misc/Unsafe;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-class v1, Lju2;
 
     .line 4
     .line 5
-    .line 6
-    move-result-object v0
+    const-string v2, "_invoked$volatile"
 
+    .line 6
     .line 7
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     .line 8
     .line 9
@@ -32,132 +38,91 @@
     move-result-object v1
 
     .line 11
-    if-eq v0, v1, :cond_0
+    invoke-virtual {v0, v1}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
 
     .line 12
     .line 13
-    goto :goto_0
-
     .line 14
-    :cond_0
-    check-cast p1, Lju2;
+    move-result-wide v0
 
     .line 15
+    sput-wide v0, Lju2;->o:J
+
     .line 16
-    iget-object p0, p0, Lju2;->j:Ljava/lang/String;
-
     .line 17
-    .line 18
-    iget-object p1, p1, Lju2;->j:Ljava/lang/String;
-
-    .line 19
-    .line 20
-    invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 21
-    .line 22
-    .line 23
-    move-result p0
-
-    .line 24
-    return p0
-
-    .line 25
-    :cond_1
-    :goto_0
-    const/4 p0, 0x0
-
-    .line 26
-    return p0
+    return-void
 .end method
 
-.method public hashCode()I
+.method public constructor <init>(Li91;)V
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lju2;->j:Ljava/lang/String;
+    invoke-direct {p0}, Lpc3;-><init>()V
 
     .line 2
     .line 3
-    invoke-static {p0}, Ljava/util/Objects;->hashCode(Ljava/lang/Object;)I
-
     .line 4
+    iput-object p1, p0, Lju2;->n:Li91;
+
     .line 5
     .line 6
-    move-result p0
+    return-void
+.end method
 
-    .line 7
+
+# virtual methods
+.method public final m()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x1
+
+    .line 2
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
+.method public final n(Ljava/lang/Throwable;)V
+    .locals 6
 
     .line 1
-    sget-object v0, Lpu2;->k:Lpu2;
+    sget-object v0, Luw;->a:Lsun/misc/Unsafe;
 
     .line 2
     .line 3
-    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    sget-wide v2, Lju2;->o:J
 
     .line 4
     .line 5
+    const/4 v4, 0x0
+
     .line 6
-    :try_start_0
-    new-instance v1, Ljava/io/StringWriter;
+    const/4 v5, 0x1
 
     .line 7
+    move-object v1, p0
+
     .line 8
-    invoke-direct {v1}, Ljava/io/StringWriter;-><init>()V
+    invoke-virtual/range {v0 .. v5}, Lsun/misc/Unsafe;->compareAndSwapInt(Ljava/lang/Object;JII)Z
 
     .line 9
     .line 10
     .line 11
-    new-instance v2, Lq72;
+    move-result p0
 
     .line 12
-    .line 13
-    const/4 v3, 0x6
+    if-eqz p0, :cond_0
 
+    .line 13
     .line 14
-    invoke-direct {v2, v0, v1, v3}, Lq72;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
+    iget-object p0, v1, Lju2;->n:Li91;
 
     .line 15
     .line 16
+    invoke-virtual {p0, p1}, Li91;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 17
-    const/4 v0, 0x0
-
     .line 18
-    invoke-virtual {v2, p0, v0}, Lq72;->h0(Lju2;I)V
-
     .line 19
-    .line 20
-    .line 21
-    invoke-virtual {v1}, Ljava/io/StringWriter;->toString()Ljava/lang/String;
-
-    .line 22
-    .line 23
-    .line 24
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 25
-    return-object p0
-
-    .line 26
-    :catch_0
-    move-exception p0
-
-    .line 27
-    new-instance v0, Ljava/lang/AssertionError;
-
-    .line 28
-    .line 29
-    invoke-direct {v0, p0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    .line 30
-    .line 31
-    .line 32
-    throw v0
+    :cond_0
+    return-void
 .end method

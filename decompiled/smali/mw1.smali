@@ -1,163 +1,98 @@
 .class public final Lmw1;
-.super Ljava/io/InputStream;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Low1;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final j:Ljava/io/InputStream;
+.field public final l:Lti0;
 
-.field public k:I
+.field public final synthetic m:Lqw1;
 
 
 # direct methods
-.method public constructor <init>(Ljava/io/InputStream;)V
+.method public constructor <init>(Lqw1;JLti0;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/io/InputStream;-><init>()V
+    iput-object p1, p0, Lmw1;->m:Lqw1;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lmw1;->j:Ljava/io/InputStream;
+    invoke-direct {p0, p2, p3}, Low1;-><init>(J)V
 
+    .line 4
     .line 5
     .line 6
-    const/high16 p1, 0x40000000    # 2.0f
+    iput-object p4, p0, Lmw1;->l:Lti0;
 
     .line 7
     .line 8
-    iput p1, p0, Lmw1;->k:I
-
-    .line 9
-    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final available()I
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lmw1;->k:I
-
-    .line 2
-    .line 3
-    return p0
-.end method
-
-.method public final close()V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lmw1;->j:Ljava/io/InputStream;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/io/InputStream;->close()V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public final read()I
+.method public final run()V
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lmw1;->j:Ljava/io/InputStream;
+    iget-object v0, p0, Lmw1;->m:Lqw1;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/io/InputStream;->read()I
+    sget-object v1, La47;->a:La47;
 
     .line 4
     .line 5
-    .line 6
-    move-result v0
+    iget-object p0, p0, Lmw1;->l:Lti0;
 
+    .line 6
     .line 7
-    const/4 v1, -0x1
+    invoke-virtual {p0, v0, v1}, Lti0;->C(Ltb1;Ljava/lang/Object;)V
 
     .line 8
-    if-ne v0, v1, :cond_0
-
     .line 9
     .line 10
-    const/4 v1, 0x0
-
-    .line 11
-    iput v1, p0, Lmw1;->k:I
-
-    .line 12
-    .line 13
-    :cond_0
-    return v0
+    return-void
 .end method
 
-.method public final read([B)I
-    .locals 1
-
-    .line 14
-    iget-object v0, p0, Lmw1;->j:Ljava/io/InputStream;
-
-    invoke-virtual {v0, p1}, Ljava/io/InputStream;->read([B)I
-
-    move-result p1
-
-    const/4 v0, -0x1
-
-    if-ne p1, v0, :cond_0
-
-    const/4 v0, 0x0
-
-    .line 15
-    iput v0, p0, Lmw1;->k:I
-
-    :cond_0
-    return p1
-.end method
-
-.method public final read([BII)I
-    .locals 1
-
-    .line 16
-    iget-object v0, p0, Lmw1;->j:Ljava/io/InputStream;
-
-    invoke-virtual {v0, p1, p2, p3}, Ljava/io/InputStream;->read([BII)I
-
-    move-result p1
-
-    const/4 p2, -0x1
-
-    if-ne p1, p2, :cond_0
-
-    const/4 p2, 0x0
-
-    .line 17
-    iput p2, p0, Lmw1;->k:I
-
-    :cond_0
-    return p1
-.end method
-
-.method public final skip(J)J
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
     .line 1
-    iget-object p0, p0, Lmw1;->j:Ljava/io/InputStream;
+    new-instance v0, Ljava/lang/StringBuilder;
 
     .line 2
     .line 3
-    invoke-virtual {p0, p1, p2}, Ljava/io/InputStream;->skip(J)J
+    invoke-super {p0}, Low1;->toString()Ljava/lang/String;
 
     .line 4
     .line 5
     .line 6
-    move-result-wide p0
+    move-result-object v1
 
     .line 7
-    return-wide p0
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 8
+    .line 9
+    .line 10
+    iget-object p0, p0, Lmw1;->l:Lti0;
+
+    .line 11
+    .line 12
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 13
+    .line 14
+    .line 15
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    return-object p0
 .end method

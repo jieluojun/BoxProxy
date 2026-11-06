@@ -6,7 +6,7 @@
 #   mode 0: the switch's onCheckedChange (Function1<Boolean, Unit>)
 #   mode 1: one-shot re-sync of the switch state with the system
 #   mode 2: re-sync poll tick (every 700 ms for ~2 min after the system page was opened)
-.implements Lo52;
+.implements Lp62;
 .implements Ljava/lang/Runnable;
 
 
@@ -100,7 +100,7 @@
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
     :catch_0
-    sget-object v0, Lk27;->a:Lk27;
+    sget-object v0, La47;->a:La47;
 
     return-object v0
 .end method

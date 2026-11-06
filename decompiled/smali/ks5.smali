@@ -1,82 +1,244 @@
 .class public final Lks5;
-.super Lz71;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public j:J
+.field public a:I
 
-.field public synthetic k:Ljava/lang/Object;
+.field public final b:I
 
-.field public final synthetic l:Lls5;
+.field public final c:Ly2;
+
+.field public d:I
+
+.field public e:I
+
+.field public f:I
+
+.field public g:I
+
+.field public h:I
+
+.field public i:Llo2;
+
+.field public j:I
+
+.field public k:I
+
+.field public l:[Lyu1;
 
 .field public m:I
 
+.field public n:I
+
+.field public o:I
+
+.field public p:Z
+
+.field public q:I
+
 
 # direct methods
-.method public constructor <init>(Lls5;Lz71;)V
-    .locals 0
+.method public constructor <init>(Ljb5;)V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lks5;->l:Lls5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
-
     .line 4
+    iget v0, p1, Ljb5;->q:I
+
     .line 5
     .line 6
+    iput v0, p0, Lks5;->a:I
+
+    .line 7
+    .line 8
+    iget v0, p1, Ljb5;->r:I
+
+    .line 9
+    .line 10
+    iput v0, p0, Lks5;->b:I
+
+    .line 11
+    .line 12
+    iget-object p1, p1, Ljb5;->p:Ly2;
+
+    .line 13
+    .line 14
+    iput-object p1, p0, Lks5;->c:Ly2;
+
+    .line 15
+    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+.method public final a()I
+    .locals 4
 
     .line 1
-    iput-object p1, p0, Lks5;->k:Ljava/lang/Object;
+    iget v0, p0, Lks5;->j:I
 
     .line 2
     .line 3
-    iget p1, p0, Lks5;->m:I
+    sget v1, Lz21;->v:I
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    if-ge v0, v1, :cond_2
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    add-int/lit8 v1, v0, 0x1
 
     .line 8
-    iput p1, p0, Lks5;->m:I
-
     .line 9
+    iput v1, p0, Lks5;->j:I
+
     .line 10
-    const-wide/16 v1, 0x0
-
     .line 11
+    if-nez v0, :cond_0
+
     .line 12
-    const-wide/16 v3, 0x0
-
     .line 13
+    sget v0, Lz21;->d:I
+
     .line 14
-    iget-object v0, p0, Lks5;->l:Lls5;
-
     .line 15
-    .line 16
-    move-object v5, p0
+    new-array v0, v0, [Lyu1;
 
+    .line 16
     .line 17
-    invoke-virtual/range {v0 .. v5}, Lls5;->P0(JJLy71;)Ljava/lang/Object;
+    iput-object v0, p0, Lks5;->l:[Lyu1;
 
     .line 18
     .line 19
+    goto :goto_0
+
     .line 20
-    move-result-object p0
+    :cond_0
+    iget-object v0, p0, Lks5;->l:[Lyu1;
 
     .line 21
-    return-object p0
+    .line 22
+    array-length v2, v0
+
+    .line 23
+    if-lt v1, v2, :cond_1
+
+    .line 24
+    .line 25
+    array-length v1, v0
+
+    .line 26
+    shl-int/lit8 v1, v1, 0x1
+
+    .line 27
+    .line 28
+    new-array v1, v1, [Lyu1;
+
+    .line 29
+    .line 30
+    array-length v2, v0
+
+    .line 31
+    const/4 v3, 0x0
+
+    .line 32
+    invoke-static {v0, v3, v1, v3, v2}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+
+    .line 33
+    .line 34
+    .line 35
+    iput-object v1, p0, Lks5;->l:[Lyu1;
+
+    .line 36
+    .line 37
+    :cond_1
+    :goto_0
+    iget p0, p0, Lks5;->j:I
+
+    .line 38
+    .line 39
+    return p0
+
+    .line 40
+    :cond_2
+    new-instance p0, Llt2;
+
+    .line 41
+    .line 42
+    const-string v0, "too many capture groups are specified"
+
+    .line 43
+    .line 44
+    invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+
+    .line 45
+    .line 46
+    .line 47
+    throw p0
+.end method
+
+.method public final b()V
+    .locals 3
+
+    .line 1
+    const v0, -0x785ffc25
+
+    .line 2
+    .line 3
+    .line 4
+    const/high16 v1, 0x4000000
+
+    .line 5
+    .line 6
+    and-int/2addr v0, v1
+
+    .line 7
+    if-eqz v0, :cond_0
+
+    .line 8
+    .line 9
+    const/4 v0, 0x1
+
+    .line 10
+    goto :goto_0
+
+    .line 11
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 12
+    :goto_0
+    if-eqz v0, :cond_1
+
+    .line 13
+    .line 14
+    iget v0, p0, Lks5;->q:I
+
+    .line 15
+    .line 16
+    and-int v2, v0, v1
+
+    .line 17
+    .line 18
+    if-nez v2, :cond_1
+
+    .line 19
+    .line 20
+    or-int/2addr v0, v1
+
+    .line 21
+    iput v0, p0, Lks5;->q:I
+
+    .line 22
+    .line 23
+    :cond_1
+    return-void
 .end method

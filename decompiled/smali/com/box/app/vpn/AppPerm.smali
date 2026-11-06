@@ -4,14 +4,14 @@
 
 # MIUI / HyperOS "get installed apps" runtime permission (the "允许 xxx 获取已安装的应用信息?" dialog).
 # Without it the system hands the app a trimmed package list, so the 应用管理 page shows almost nothing.
-# Like YumeBox: opening the page (Leu;->b, the app-list loader) asks for it when
+# Like YumeBox: opening the page (Ldv;->b, the app-list loader) asks for it when
 #   1) the ROM defines it as a runtime permission (MIUI / HyperOS: com.lbe.security.miui; OPPO / Honor / Huawei ...:
 #      the same TAF-standard name, defined by the ROM; AOSP: not defined -> skipped), and
 #   2) it is not granted yet.
 # After the dialog is answered with "allow" the list is reloaded (force = true, bypasses the 2 min cache).
 #   mode 0: main thread  -> show the dialog on the resumed activity, then start the poll thread
 #   mode 1: poll thread  -> wait (<= 2 min) until the permission is granted, then post mode 2
-#   mode 2: main thread  -> Leu;->b(true, false, false), the reload
+#   mode 2: main thread  -> Ldv;->b(true, false, false), the reload
 .implements Ljava/lang/Runnable;
 
 # static fields
@@ -20,17 +20,17 @@
 # instance fields
 .field private final mode:I
 
-.field private final ju:Leu;
+.field private final ju:Ldv;
 
 # direct methods
-.method private constructor <init>(ILeu;)V
+.method private constructor <init>(ILdv;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput p1, p0, Lcom/box/app/vpn/AppPerm;->mode:I
 
-    iput-object p2, p0, Lcom/box/app/vpn/AppPerm;->ju:Leu;
+    iput-object p2, p0, Lcom/box/app/vpn/AppPerm;->ju:Ldv;
 
     return-void
 .end method
@@ -127,8 +127,8 @@
     return-void
 .end method
 
-# Hooked at the start of Leu;->b(ZZZ)V.
-.method public static check(Leu;)V
+# Hooked at the start of Ldv;->b(ZZZ)V.
+.method public static check(Ldv;)V
     .locals 3
 
     :try_start_0
@@ -160,7 +160,7 @@
 
     const/4 v2, 0x0
 
-    invoke-direct {v1, v2, p0}, Lcom/box/app/vpn/AppPerm;-><init>(ILeu;)V
+    invoke-direct {v1, v2, p0}, Lcom/box/app/vpn/AppPerm;-><init>(ILdv;)V
 
     invoke-static {v1}, Lcom/box/app/vpn/AppPerm;->onMain(Ljava/lang/Runnable;)V
     :try_end_0
@@ -192,13 +192,13 @@
     if-eq v0, v1, :cond_poll
 
     # mode 2: reload the list
-    iget-object v0, p0, Lcom/box/app/vpn/AppPerm;->ju:Leu;
+    iget-object v0, p0, Lcom/box/app/vpn/AppPerm;->ju:Ldv;
 
     const/4 v1, 0x1
 
     const/4 v2, 0x0
 
-    invoke-virtual {v0, v1, v2, v2}, Leu;->b(ZZZ)V
+    invoke-virtual {v0, v1, v2, v2}, Ldv;->b(ZZZ)V
 
     sput-boolean v2, Lcom/box/app/vpn/AppPerm;->asking:Z
 
@@ -234,9 +234,9 @@
 
     const/4 v1, 0x1
 
-    iget-object v2, p0, Lcom/box/app/vpn/AppPerm;->ju:Leu;
+    iget-object v2, p0, Lcom/box/app/vpn/AppPerm;->ju:Ldv;
 
-    invoke-direct {v0, v1, v2}, Lcom/box/app/vpn/AppPerm;-><init>(ILeu;)V
+    invoke-direct {v0, v1, v2}, Lcom/box/app/vpn/AppPerm;-><init>(ILdv;)V
 
     new-instance v1, Ljava/lang/Thread;
 
@@ -278,9 +278,9 @@
 
     const/4 v1, 0x2
 
-    iget-object v2, p0, Lcom/box/app/vpn/AppPerm;->ju:Leu;
+    iget-object v2, p0, Lcom/box/app/vpn/AppPerm;->ju:Ldv;
 
-    invoke-direct {v0, v1, v2}, Lcom/box/app/vpn/AppPerm;-><init>(ILeu;)V
+    invoke-direct {v0, v1, v2}, Lcom/box/app/vpn/AppPerm;-><init>(ILdv;)V
 
     invoke-static {v0}, Lcom/box/app/vpn/AppPerm;->onMain(Ljava/lang/Runnable;)V
 

@@ -1,168 +1,74 @@
-.class public final synthetic Lia7;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Ls52;
+.class public final Lia7;
+.super Lz81;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final synthetic j:Lko3;
+.field public j:Ljava/io/File;
 
-.field public final synthetic k:Z
+.field public synthetic k:Ljava/lang/Object;
 
-.field public final synthetic l:Lea7;
+.field public final synthetic l:Lja7;
 
-.field public final synthetic m:Lvy5;
-
-.field public final synthetic n:Ls52;
-
-.field public final synthetic o:Ls63;
-
-.field public final synthetic p:Lyu;
-
-.field public final synthetic q:Lzh4;
-
-.field public final synthetic r:Loy0;
-
-.field public final synthetic s:I
+.field public m:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lko3;ZLea7;Lvy5;Ls52;Ls63;Lyu;Lzh4;Loy0;I)V
+.method public constructor <init>(Lja7;Lz81;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lia7;->l:Lja7;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lia7;->j:Lko3;
+    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
 
+    .line 4
     .line 5
     .line 6
-    iput-boolean p2, p0, Lia7;->k:Z
-
-    .line 7
-    .line 8
-    iput-object p3, p0, Lia7;->l:Lea7;
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Lia7;->m:Lvy5;
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Lia7;->n:Ls52;
-
-    .line 13
-    .line 14
-    iput-object p6, p0, Lia7;->o:Ls63;
-
-    .line 15
-    .line 16
-    iput-object p7, p0, Lia7;->p:Lyu;
-
-    .line 17
-    .line 18
-    iput-object p8, p0, Lia7;->q:Lzh4;
-
-    .line 19
-    .line 20
-    iput-object p9, p0, Lia7;->r:Loy0;
-
-    .line 21
-    .line 22
-    iput p10, p0, Lia7;->s:I
-
-    .line 23
-    .line 24
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 11
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    move-object v9, p1
+    iput-object p1, p0, Lia7;->k:Ljava/lang/Object;
 
     .line 2
-    check-cast v9, Lv01;
-
     .line 3
+    iget p1, p0, Lia7;->m:I
+
     .line 4
-    check-cast p2, Ljava/lang/Integer;
-
     .line 5
+    const/high16 v0, -0x80000000
+
     .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
+    iput p1, p0, Lia7;->m:I
+
     .line 9
-    iget p1, p0, Lia7;->s:I
-
     .line 10
-    .line 11
-    or-int/lit8 p1, p1, 0x1
+    iget-object p1, p0, Lia7;->l:Lja7;
 
+    .line 11
     .line 12
+    const/4 v0, 0x0
+
     .line 13
-    invoke-static {p1}, Lw23;->h0(I)I
+    invoke-virtual {p1, v0, v0, p0}, Lja7;->b(Ljava/lang/String;Ljava/io/File;Lz81;)Ljava/lang/Object;
 
     .line 14
     .line 15
     .line 16
-    move-result v10
+    move-result-object p0
 
     .line 17
-    iget-object v0, p0, Lia7;->j:Lko3;
-
-    .line 18
-    .line 19
-    iget-boolean v1, p0, Lia7;->k:Z
-
-    .line 20
-    .line 21
-    iget-object v2, p0, Lia7;->l:Lea7;
-
-    .line 22
-    .line 23
-    iget-object v3, p0, Lia7;->m:Lvy5;
-
-    .line 24
-    .line 25
-    iget-object v4, p0, Lia7;->n:Ls52;
-
-    .line 26
-    .line 27
-    iget-object v5, p0, Lia7;->o:Ls63;
-
-    .line 28
-    .line 29
-    iget-object v6, p0, Lia7;->p:Lyu;
-
-    .line 30
-    .line 31
-    iget-object v7, p0, Lia7;->q:Lzh4;
-
-    .line 32
-    .line 33
-    iget-object v8, p0, Lia7;->r:Loy0;
-
-    .line 34
-    .line 35
-    invoke-static/range {v0 .. v10}, Lhy6;->c(Lko3;ZLea7;Lvy5;Ls52;Ls63;Lyu;Lzh4;Loy0;Lv01;I)V
-
-    .line 36
-    .line 37
-    .line 38
-    sget-object p0, Lk27;->a:Lk27;
-
-    .line 39
-    .line 40
     return-object p0
 .end method

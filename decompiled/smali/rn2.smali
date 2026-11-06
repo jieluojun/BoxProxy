@@ -1,9 +1,11 @@
-.class public final Lrn2;
-.super Lt87;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public interface abstract Lrn2;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public g:Lon2;
+# virtual methods
+.method public abstract a()Lzm2;
+.end method
 
-.field public h:J
+.method public abstract b()Lnn2;
+.end method

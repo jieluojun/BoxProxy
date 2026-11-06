@@ -1,3 +1,85 @@
-.class public final Lcq2;
-.super Ljava/lang/IllegalArgumentException;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public abstract Lcq2;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+
+# direct methods
+.method public static final a(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    .line 2
+    .line 3
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    throw v0
+.end method
+
+.method public static final b(Ljava/lang/String;)Ljava/lang/Void;
+    .locals 1
+
+    .line 1
+    new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    .line 2
+    .line 3
+    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    throw v0
+.end method
+
+.method public static final c(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    .line 2
+    .line 3
+    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    throw v0
+.end method
+
+.method public static final d(Ljava/lang/String;)Ljava/lang/Void;
+    .locals 1
+
+    .line 1
+    new-instance v0, Ljava/lang/IllegalStateException;
+
+    .line 2
+    .line 3
+    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    throw v0
+.end method
+
+.method public static final e(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    new-instance v0, Ljava/lang/IndexOutOfBoundsException;
+
+    .line 2
+    .line 3
+    invoke-direct {v0, p0}, Ljava/lang/IndexOutOfBoundsException;-><init>(Ljava/lang/String;)V
+
+    .line 4
+    .line 5
+    .line 6
+    throw v0
+.end method

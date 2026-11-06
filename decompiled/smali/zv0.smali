@@ -1,79 +1,124 @@
-.class public final Lzv0;
-.super Lz71;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final synthetic Lzv0;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Ljava/util/function/DoubleUnaryOperator;
 
 
 # instance fields
-.field public j:Law0;
+.field public final synthetic a:B
 
-.field public k:Ltq3;
-
-.field public synthetic l:Ljava/lang/Object;
-
-.field public final synthetic m:Law0;
-
-.field public n:I
+.field public final synthetic b:Lp62;
 
 
 # direct methods
-.method public constructor <init>(Law0;Lz71;)V
+.method public synthetic constructor <init>(Lp62;B)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lzv0;->m:Law0;
+    iput-byte p2, p0, Lzv0;->a:B
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
+    iput-object p1, p0, Lzv0;->b:Lp62;
 
     .line 4
     .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 6
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final applyAsDouble(D)D
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lzv0;->l:Ljava/lang/Object;
+    iget-byte v0, p0, Lzv0;->a:B
 
     .line 2
     .line 3
-    iget p1, p0, Lzv0;->n:I
+    iget-object p0, p0, Lzv0;->b:Lp62;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lzv0;->n:I
+    invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     .line 9
     .line 10
-    const/4 p1, 0x0
-
     .line 11
-    const/4 v0, 0x0
+    move-result-object p1
 
     .line 12
-    iget-object v1, p0, Lzv0;->m:Law0;
+    invoke-interface {p0, p1}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 13
     .line 14
-    invoke-static {v1, p1, v0, p0}, Law0;->l(Law0;Ltq3;FLz71;)Ljava/lang/Object;
-
     .line 15
-    .line 16
-    .line 17
     move-result-object p0
 
+    .line 16
+    check-cast p0, Ljava/lang/Number;
+
+    .line 17
     .line 18
-    return-object p0
+    invoke-virtual {p0}, Ljava/lang/Number;->doubleValue()D
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-wide p0
+
+    .line 22
+    return-wide p0
+
+    .line 23
+    :pswitch_0
+    invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object p1
+
+    .line 27
+    invoke-interface {p0, p1}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 28
+    .line 29
+    .line 30
+    move-result-object p0
+
+    .line 31
+    check-cast p0, Ljava/lang/Number;
+
+    .line 32
+    .line 33
+    invoke-virtual {p0}, Ljava/lang/Number;->doubleValue()D
+
+    .line 34
+    .line 35
+    .line 36
+    move-result-wide p0
+
+    .line 37
+    return-wide p0
+
+    .line 38
+    nop
+
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,101 +1,87 @@
-.class public final synthetic Lf61;
+.class public final Lf61;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lb94;
+.implements Le61;
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Ljava/lang/String;
+.field public final b:Landroid/net/ConnectivityManager;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;B)V
+.method public constructor <init>(Landroid/net/ConnectivityManager;)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lf61;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lf61;->k:Ljava/lang/String;
-
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lf61;->b:Landroid/net/ConnectivityManager;
 
+    .line 5
     .line 6
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final c()Ljava/lang/Object;
+.method public final a()Z
     .locals 1
 
     .line 1
-    iget-byte v0, p0, Lf61;->j:B
+    iget-object p0, p0, Lf61;->b:Landroid/net/ConnectivityManager;
 
     .line 2
     .line 3
-    iget-object p0, p0, Lf61;->k:Ljava/lang/String;
+    invoke-virtual {p0}, Landroid/net/ConnectivityManager;->getActiveNetwork()Landroid/net/Network;
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_0
-
     .line 6
-    .line 7
-    .line 8
-    new-instance v0, Lov2;
+    move-result-object v0
 
+    .line 7
+    invoke-virtual {p0, v0}, Landroid/net/ConnectivityManager;->getNetworkCapabilities(Landroid/net/Network;)Landroid/net/NetworkCapabilities;
+
+    .line 8
     .line 9
     .line 10
-    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    move-result-object p0
 
     .line 11
+    if-eqz p0, :cond_0
+
     .line 12
     .line 13
-    throw v0
+    const/16 v0, 0xc
 
     .line 14
-    :pswitch_0
-    new-instance v0, Lov2;
-
     .line 15
-    .line 16
-    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p0, v0}, Landroid/net/NetworkCapabilities;->hasCapability(I)Z
 
+    .line 16
     .line 17
     .line 18
+    move-result p0
+
     .line 19
-    throw v0
+    if-eqz p0, :cond_0
 
     .line 20
-    :pswitch_1
-    new-instance v0, Lov2;
-
     .line 21
+    const/4 p0, 0x1
+
     .line 22
-    invoke-direct {v0, p0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
+    return p0
 
     .line 23
+    :cond_0
+    const/4 p0, 0x0
+
     .line 24
-    .line 25
-    throw v0
-
-    .line 26
-    nop
-
-    .line 27
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return p0
 .end method

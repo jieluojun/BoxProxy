@@ -1,143 +1,91 @@
-.class public final synthetic Lfc5;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lqk1;
+.class public Lfc5;
+.super Landroid/app/Fragment;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final synthetic j:B
+# annotations
+.annotation system Ldalvik/annotation/MemberClasses;
+    value = {
+        Lfc5$a;
+    }
+.end annotation
 
-.field public final synthetic k:Lic5;
+
+# static fields
+.field public static final synthetic j:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lic5;B)V
+.method public constructor <init>()V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lfc5;->j:B
+    invoke-direct {p0}, Landroid/app/Fragment;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lfc5;->k:Lic5;
-
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 6
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(D)D
-    .locals 8
+.method public final onActivityCreated(Landroid/os/Bundle;)V
+    .locals 0
 
     .line 1
-    iget-byte v0, p0, Lfc5;->j:B
+    invoke-super {p0, p1}, Landroid/app/Fragment;->onActivityCreated(Landroid/os/Bundle;)V
 
     .line 2
     .line 3
-    iget-object p0, p0, Lfc5;->k:Lic5;
-
     .line 4
-    .line 5
-    packed-switch v0, :pswitch_data_0
+    return-void
+.end method
 
-    .line 6
-    .line 7
-    .line 8
-    iget-object v0, p0, Lic5;->n:Lqk1;
+.method public final onPause()V
+    .locals 0
 
-    .line 9
-    .line 10
-    iget v1, p0, Lic5;->e:F
+    .line 1
+    invoke-super {p0}, Landroid/app/Fragment;->onPause()V
 
-    .line 11
-    .line 12
-    float-to-double v4, v1
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
 
-    .line 13
-    iget p0, p0, Lic5;->f:F
+.method public final onResume()V
+    .locals 0
 
-    .line 14
-    .line 15
-    float-to-double v6, p0
+    .line 1
+    invoke-super {p0}, Landroid/app/Fragment;->onResume()V
 
-    .line 16
-    move-wide v2, p1
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
 
-    .line 17
-    invoke-static/range {v2 .. v7}, Lg23;->p(DDD)D
+.method public final onStart()V
+    .locals 0
 
-    .line 18
-    .line 19
-    .line 20
-    move-result-wide p0
+    .line 1
+    invoke-super {p0}, Landroid/app/Fragment;->onStart()V
 
-    .line 21
-    invoke-interface {v0, p0, p1}, Lqk1;->b(D)D
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
 
-    .line 22
-    .line 23
-    .line 24
-    move-result-wide p0
+.method public final onStop()V
+    .locals 0
 
-    .line 25
-    return-wide p0
+    .line 1
+    invoke-super {p0}, Landroid/app/Fragment;->onStop()V
 
-    .line 26
-    :pswitch_0
-    move-wide v2, p1
-
-    .line 27
-    iget-object p1, p0, Lic5;->k:Lqk1;
-
-    .line 28
-    .line 29
-    invoke-interface {p1, v2, v3}, Lqk1;->b(D)D
-
-    .line 30
-    .line 31
-    .line 32
-    move-result-wide v0
-
-    .line 33
-    iget p1, p0, Lic5;->e:F
-
-    .line 34
-    .line 35
-    float-to-double v2, p1
-
-    .line 36
-    iget p0, p0, Lic5;->f:F
-
-    .line 37
-    .line 38
-    float-to-double v4, p0
-
-    .line 39
-    invoke-static/range {v0 .. v5}, Lg23;->p(DDD)D
-
-    .line 40
-    .line 41
-    .line 42
-    move-result-wide p0
-
-    .line 43
-    return-wide p0
-
-    .line 44
-    nop
-
-    .line 45
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 2
+    .line 3
+    .line 4
+    return-void
 .end method

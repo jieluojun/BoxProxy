@@ -1,82 +1,128 @@
-.class public final Laf2;
-.super Lz71;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final synthetic Laf2;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lt62;
 
 
 # instance fields
-.field public j:Lue2;
+.field public final synthetic j:Ljava/lang/String;
 
-.field public k:Lco0;
+.field public final synthetic k:F
 
-.field public l:Lorg/json/JSONObject;
+.field public final synthetic l:J
 
-.field public m:Lps3;
+.field public final synthetic m:J
 
-.field public n:Lps3;
+.field public final synthetic n:J
 
-.field public synthetic o:Ljava/lang/Object;
-
-.field public final synthetic p:Lff2;
-
-.field public q:I
+.field public final synthetic o:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lff2;Lz71;)V
+.method public synthetic constructor <init>(Ljava/lang/String;FJJJLjava/lang/String;I)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Laf2;->p:Lff2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
-
     .line 4
+    iput-object p1, p0, Laf2;->j:Ljava/lang/String;
+
     .line 5
     .line 6
+    iput p2, p0, Laf2;->k:F
+
+    .line 7
+    .line 8
+    iput-wide p3, p0, Laf2;->l:J
+
+    .line 9
+    .line 10
+    iput-wide p5, p0, Laf2;->m:J
+
+    .line 11
+    .line 12
+    iput-wide p7, p0, Laf2;->n:J
+
+    .line 13
+    .line 14
+    iput-object p9, p0, Laf2;->o:Ljava/lang/String;
+
+    .line 15
+    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 11
 
     .line 1
-    iput-object p1, p0, Laf2;->o:Ljava/lang/Object;
+    move-object v9, p1
 
     .line 2
+    check-cast v9, Lz11;
+
     .line 3
-    iget p1, p0, Laf2;->q:I
-
     .line 4
+    check-cast p2, Ljava/lang/Integer;
+
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Laf2;->q:I
-
     .line 9
+    const/16 p1, 0xdb1
+
     .line 10
-    iget-object p1, p0, Laf2;->p:Lff2;
-
     .line 11
+    invoke-static {p1}, Lqu5;->f0(I)I
+
     .line 12
-    const/4 v0, 0x0
-
     .line 13
-    invoke-virtual {p1, v0, v0, v0, p0}, Lff2;->g(Lue2;Lco0;Lorg/json/JSONObject;Lz71;)Ljava/lang/Object;
-
     .line 14
-    .line 15
-    .line 16
-    move-result-object p0
+    move-result v10
 
+    .line 15
+    iget-object v0, p0, Laf2;->j:Ljava/lang/String;
+
+    .line 16
     .line 17
+    iget v1, p0, Laf2;->k:F
+
+    .line 18
+    .line 19
+    iget-wide v2, p0, Laf2;->l:J
+
+    .line 20
+    .line 21
+    iget-wide v4, p0, Laf2;->m:J
+
+    .line 22
+    .line 23
+    iget-wide v6, p0, Laf2;->n:J
+
+    .line 24
+    .line 25
+    iget-object v8, p0, Laf2;->o:Ljava/lang/String;
+
+    .line 26
+    .line 27
+    invoke-static/range {v0 .. v10}, Laq;->l(Ljava/lang/String;FJJJLjava/lang/String;Lz11;I)V
+
+    .line 28
+    .line 29
+    .line 30
+    sget-object p0, La47;->a:La47;
+
+    .line 31
+    .line 32
     return-object p0
 .end method

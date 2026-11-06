@@ -1,17 +1,17 @@
 .class public final Lmf;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lf67;
+.implements Lx47;
 
 
 # instance fields
-.field public final a:Landroid/view/ViewConfiguration;
+.field public final a:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/ViewConfiguration;)V
+.method public constructor <init>(Landroid/content/Context;)V
     .locals 0
 
     .line 1
@@ -20,7 +20,7 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lmf;->a:Landroid/view/ViewConfiguration;
+    iput-object p1, p0, Lmf;->a:Landroid/content/Context;
 
     .line 5
     .line 6
@@ -29,177 +29,74 @@
 
 
 # virtual methods
-.method public final a()F
-    .locals 0
+.method public final a(Ljava/lang/String;)V
+    .locals 3
 
     .line 1
-    iget-object p0, p0, Lmf;->a:Landroid/view/ViewConfiguration;
+    :try_start_0
+    iget-object p0, p0, Lmf;->a:Landroid/content/Context;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Landroid/view/ViewConfiguration;->getScaledMaximumFlingVelocity()I
+    new-instance v0, Landroid/content/Intent;
 
     .line 4
     .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    int-to-float p0, p0
-
-    .line 8
-    return p0
-.end method
-
-.method public final b()J
-    .locals 2
-
-    .line 1
-    invoke-static {}, Landroid/view/ViewConfiguration;->getDoubleTapTimeout()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    int-to-long v0, p0
-
-    .line 6
-    return-wide v0
-.end method
-
-.method public final c()J
-    .locals 2
-
-    .line 1
-    const-wide/16 v0, 0x28
-
-    .line 2
-    .line 3
-    return-wide v0
-.end method
-
-.method public final d()J
-    .locals 2
-
-    .line 1
-    invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    int-to-long v0, p0
-
-    .line 6
-    return-wide v0
-.end method
-
-.method public final e()F
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lmf;->a:Landroid/view/ViewConfiguration;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    int-to-float p0, p0
-
-    .line 8
-    return p0
-.end method
-
-.method public final f()F
-    .locals 2
-
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    .line 2
-    .line 3
-    const/16 v1, 0x22
-
-    .line 4
-    .line 5
-    if-lt v0, v1, :cond_0
+    const-string v1, "android.intent.action.VIEW"
 
     .line 6
     .line 7
-    iget-object p0, p0, Lmf;->a:Landroid/view/ViewConfiguration;
+    invoke-static {p1}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     .line 8
     .line 9
-    invoke-static {p0}, Lkc;->a(Landroid/view/ViewConfiguration;)I
-
     .line 10
+    move-result-object v2
+
     .line 11
+    invoke-direct {v0, v1, v2}, Landroid/content/Intent;-><init>(Ljava/lang/String;Landroid/net/Uri;)V
+
     .line 12
-    move-result p0
-
     .line 13
-    int-to-float p0, p0
-
     .line 14
-    return p0
+    invoke-virtual {p0, v0}, Landroid/content/Context;->startActivity(Landroid/content/Intent;)V
+    :try_end_0
+    .catch Landroid/content/ActivityNotFoundException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 15
-    :cond_0
-    const/high16 p0, 0x40000000    # 2.0f
-
     .line 16
     .line 17
-    return p0
-.end method
+    return-void
 
-.method public final g()F
-    .locals 2
+    .line 18
+    :catch_0
+    move-exception p0
 
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    .line 19
+    new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    .line 2
-    .line 3
-    const/16 v1, 0x22
+    .line 20
+    .line 21
+    const-string v1, "Can\'t open "
 
-    .line 4
-    .line 5
-    if-lt v0, v1, :cond_0
+    .line 22
+    .line 23
+    const-string v2, "."
 
-    .line 6
-    .line 7
-    iget-object p0, p0, Lmf;->a:Landroid/view/ViewConfiguration;
+    .line 24
+    .line 25
+    invoke-static {v1, p1, v2}, Loc1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 8
-    .line 9
-    invoke-static {p0}, Lkc;->r(Landroid/view/ViewConfiguration;)I
+    .line 26
+    .line 27
+    .line 28
+    move-result-object p1
 
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
+    .line 29
+    invoke-direct {v0, p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
 
-    .line 13
-    int-to-float p0, p0
-
-    .line 14
-    return p0
-
-    .line 15
-    :cond_0
-    const/high16 p0, 0x41800000    # 16.0f
-
-    .line 16
-    .line 17
-    return p0
+    .line 30
+    .line 31
+    .line 32
+    throw v0
 .end method
