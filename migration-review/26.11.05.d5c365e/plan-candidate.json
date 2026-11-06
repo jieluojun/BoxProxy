@@ -1,0 +1,2664 @@
+{
+ "schemaVersion": 1,
+ "status": "conflicts",
+ "releaseReady": false,
+ "bundleSha256": "8a3f3ae6f648158cd09c266c07e66454d128287ca8c3dce938501bdba7637f85",
+ "baseVersion": "26.11.02.534f30c",
+ "targetTreeSha256": "83caa145ab50a60fafa5e68e8eead3e79a97918dbdfe13a56f12f9f6cc2a5343",
+ "sameBase": false,
+ "reviewedAdaptations": [],
+ "resourceAssignments": [
+  {
+   "type": "string",
+   "name": "proxy_mode_vpn",
+   "targetId": "0x7f0f0508"
+  },
+  {
+   "type": "string",
+   "name": "proxy_selector_hide_unavailable",
+   "targetId": "0x7f0f0509"
+  },
+  {
+   "type": "string",
+   "name": "proxy_core_mihomo_dingtalk",
+   "targetId": "0x7f0f050a"
+  },
+  {
+   "type": "string",
+   "name": "proxy_core_sing_box_dingtalk",
+   "targetId": "0x7f0f050b"
+  },
+  {
+   "type": "string",
+   "name": "proxy_config_restore_default",
+   "targetId": "0x7f0f050c"
+  },
+  {
+   "type": "string",
+   "name": "proxy_config_restore_done",
+   "targetId": "0x7f0f050d"
+  },
+  {
+   "type": "string",
+   "name": "proxy_config_restore_done_bak",
+   "targetId": "0x7f0f050e"
+  },
+  {
+   "type": "string",
+   "name": "proxy_config_restore_failed",
+   "targetId": "0x7f0f050f"
+  },
+  {
+   "type": "string",
+   "name": "proxy_config_restore_none",
+   "targetId": "0x7f0f0510"
+  },
+  {
+   "type": "string",
+   "name": "service_battery_unrestricted_title",
+   "targetId": "0x7f0f0511"
+  },
+  {
+   "type": "string",
+   "name": "service_battery_unrestricted_subtitle",
+   "targetId": "0x7f0f0512"
+  },
+  {
+   "type": "string",
+   "name": "service_battery_unrestricted_already",
+   "targetId": "0x7f0f0513"
+  }
+ ],
+ "features": [
+  {
+   "id": "config-history",
+   "title": "每内核配置历史与默认配置恢复",
+   "operations": 32,
+   "plannedOperations": 27,
+   "conflicts": 5
+  },
+  {
+   "id": "root-runtime",
+   "title": "root 路径、动态库与实时版本查询",
+   "operations": 13,
+   "plannedOperations": 8,
+   "conflicts": 5
+  },
+  {
+   "id": "editor-forms",
+   "title": "编辑器、可视化、锚点与 schema",
+   "operations": 863,
+   "plannedOperations": 858,
+   "conflicts": 5
+  },
+  {
+   "id": "core-downloads",
+   "title": "内核 fork 菜单、下载和识别",
+   "operations": 15,
+   "plannedOperations": 11,
+   "conflicts": 4
+  },
+  {
+   "id": "vpn-runtime",
+   "title": "VPN、非 root 引导、权限与服务",
+   "operations": 96,
+   "plannedOperations": 57,
+   "conflicts": 39
+  },
+  {
+   "id": "preferences-ui",
+   "title": "设置、过滤提示、电池与自启入口",
+   "operations": 19,
+   "plannedOperations": 19,
+   "conflicts": 0
+  },
+  {
+   "id": "bundled-configs",
+   "title": "内置配置与辅助资源",
+   "operations": 2,
+   "plannedOperations": 2,
+   "conflicts": 0
+  },
+  {
+   "id": "shared-runtime",
+   "title": "共享依赖与其余接入点",
+   "operations": 470,
+   "plannedOperations": 459,
+   "conflicts": 11
+  }
+ ],
+ "conflicts": [
+  {
+   "id": "bindings",
+   "reason": "Bindings unreviewed or target hash mismatch"
+  },
+  {
+   "id": "bindings",
+   "reason": "Missing explicit contracts",
+   "types": [
+    "La14;",
+    "La15;",
+    "Laa0;",
+    "Lab4;",
+    "Lah4;",
+    "Lai3;",
+    "Laj2;",
+    "Lam0;",
+    "Lan3;",
+    "Landroid/window/OnBackInvokedCallback;",
+    "Lap0;",
+    "Lar3;",
+    "Las3;",
+    "Law4;",
+    "Lb46;",
+    "Lb54;",
+    "Lbb1;",
+    "Lbb4;",
+    "Lbd6;",
+    "Lbj2;",
+    "Lbx4;",
+    "Lc01;",
+    "Lc12;",
+    "Lc75;",
+    "Lcf;",
+    "Lcg2;",
+    "Lcj0;",
+    "Lco2;",
+    "Lct4;",
+    "Ld43;",
+    "Ld52;",
+    "Ld53;",
+    "Ldb0;",
+    "Ldg1;",
+    "Ldg2;",
+    "Ldk4;",
+    "Ldk;",
+    "Ldo2;",
+    "Ldt0;",
+    "Ldu;",
+    "Ldw4;",
+    "Le0;",
+    "Le37;",
+    "Le3;",
+    "Le7;",
+    "Leb0;",
+    "Leg1;",
+    "Leg3;",
+    "Leo0;",
+    "Leo2;",
+    "Ley6;",
+    "Lf02;",
+    "Lf47;",
+    "Lfk4;",
+    "Lg02;",
+    "Lg23;",
+    "Lgk5;",
+    "Lgo2;",
+    "Lgp2;",
+    "Lgp6;",
+    "Lh17;",
+    "Lh72;",
+    "Lhj6;",
+    "Lhm2;",
+    "Lhn5;",
+    "Lht0;",
+    "Lhv4;",
+    "Li4;",
+    "Li50;",
+    "Lia1;",
+    "Lil5;",
+    "Lin6;",
+    "Liv4;",
+    "Liw4;",
+    "Liw;",
+    "Lj02;",
+    "Lj23;",
+    "Lja5;",
+    "Lju5;",
+    "Ljv4;",
+    "Ljw4;",
+    "Lk37;",
+    "Lka1;",
+    "Lke5;",
+    "Lkf3;",
+    "Lkf4;",
+    "Lkv6;",
+    "Lkw0;",
+    "Ll90;",
+    "Ll;",
+    "Llj1;",
+    "Llm2;",
+    "Llr2;",
+    "Lls3;",
+    "Llv;",
+    "Lm01;",
+    "Lm32;",
+    "Lm46;",
+    "Lma5;",
+    "Lmc;",
+    "Lmd5;",
+    "Lme5;",
+    "Lmm0;",
+    "Lmp1;",
+    "Lmt6;",
+    "Lmv6;",
+    "Lmw4;",
+    "Ln33;",
+    "Ln35;",
+    "Ln50;",
+    "Ln81;",
+    "Ln;",
+    "Lna0;",
+    "Lnc0;",
+    "Lnc7;",
+    "Lnf2;",
+    "Lnh;",
+    "Lnn;",
+    "Lns1;",
+    "Lns6;",
+    "Lnw6;",
+    "Lnw;",
+    "Lo0;",
+    "Lo36;",
+    "Lo52;",
+    "Lo91;",
+    "Loa5;",
+    "Loc7;",
+    "Loe2;",
+    "Loe;",
+    "Lol2;",
+    "Los2;",
+    "Lp16;",
+    "Lp87;",
+    "Lpg;",
+    "Lps2;",
+    "Lpx6;",
+    "Lpy;",
+    "Lq02;",
+    "Lq03;",
+    "Lq50;",
+    "Lqb2;",
+    "Lqc0;",
+    "Lqc6;",
+    "Lql1;",
+    "Lqx5;",
+    "Lqz6;",
+    "Lr00;",
+    "Lr3;",
+    "Lr87;",
+    "Lr96;",
+    "Lr97;",
+    "Lrd1;",
+    "Lrd4;",
+    "Ls1;",
+    "Ls52;",
+    "Ls77;",
+    "Lsa1;",
+    "Lsl1;",
+    "Lss5;",
+    "Lsu4;",
+    "Lt52;",
+    "Lt67;",
+    "Lt87;",
+    "Lt97;",
+    "Ltc0;",
+    "Ltf0;",
+    "Ltl1;",
+    "Lto4;",
+    "Ltp1;",
+    "Ltv0;",
+    "Ltw1;",
+    "Lu23;",
+    "Lu41;",
+    "Lu96;",
+    "Lua0;",
+    "Luf6;",
+    "Lul1;",
+    "Luu6;",
+    "Luv4;",
+    "Luw1;",
+    "Luw2;",
+    "Luw5;",
+    "Lv01;",
+    "Lve3;",
+    "Lvf2;",
+    "Lvj1;",
+    "Lvn3;",
+    "Lvu4;",
+    "Lw23;",
+    "Lw26;",
+    "Lw93;",
+    "Lwc0;",
+    "Lwo6;",
+    "Lwq;",
+    "Lx07;",
+    "Lx23;",
+    "Lx34;",
+    "Lx37;",
+    "Lxa4;",
+    "Lxa;",
+    "Lxe1;",
+    "Lxh3;",
+    "Lxi5;",
+    "Lxk;",
+    "Lxl2;",
+    "Lxp0;",
+    "Lxr0;",
+    "Ly35;",
+    "Ly43;",
+    "Ly71;",
+    "Lya0;",
+    "Lyd0;",
+    "Lyj;",
+    "Lz24;",
+    "Lz71;",
+    "Lz91;",
+    "Lzh4;",
+    "Lzu6;",
+    "Lzv4;"
+   ],
+   "members": [
+    "La03;->b0:Lyz1;",
+    "La14;-><init>(Ljava/lang/Object;Ly71;B)V",
+    "La15;-><init>(ZZZLdx4;ZZZZLcr4;Lo52;Lo52;Lo52;Lo52;Lo52;Lo52;Lo52;Ld52;I)V",
+    "Laa0;->c(Ld8;Z)Lhi3;",
+    "Lab4;-><init>(Liv1;Lz71;)V",
+    "Lab4;->j:Ljava/lang/Object;",
+    "Lab4;->l:I",
+    "Lah4;-><init>(Las3;B)V",
+    "Lai3;->p(Laz2;ZZLjava/util/List;Ljava/util/List;Ljava/util/List;Ld52;Ld52;Lv01;I)V",
+    "Lam0;->g(Lql2;Landroid/content/Context;)Lkk4;",
+    "Lam0;->i(Lmg1;Ld52;Lz71;)Ljava/lang/Object;",
+    "Lam0;->v(Lf02;Ls52;Lz71;)Ljava/lang/Object;",
+    "Lan3;->c(Lko3;Laz2;Z)Lko3;",
+    "Lao;->c(Loy0;Lko3;Loy0;Loy0;FLs63;Llv6;Lzh4;Lv01;I)V",
+    "Lap0;-><init>(BLd52;Las3;)V",
+    "Lar3;->b(Llr2;Ly71;)Ljava/lang/Object;",
+    "Las3;->setValue(Ljava/lang/Object;)V",
+    "Lau0;->F0(Ljava/util/List;)Ljava/lang/Object;",
+    "Lau0;->M0(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/String;Ljava/lang/String;Lo52;I)Ljava/lang/String;",
+    "Law4;-><init>(Ljava/lang/Object;B)V",
+    "Lb46;->a:Lom;",
+    "Lb46;->b:Lr77;",
+    "Lb54;-><init>(B)V",
+    "Lbb1;->e()Lsa1;",
+    "Lbb4;-><init>(Liv1;Lz71;)V",
+    "Lbb4;->j:Ljava/lang/Object;",
+    "Lbb4;->l:I",
+    "Lbd6;-><init>(ILjava/lang/String;Ljava/lang/String;)V",
+    "Lbh;->a(Lna1;Lz71;)Ljava/lang/Object;",
+    "Lbk5;-><init>(ZLxk5;Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;Ljava/lang/String;ZLas3;Ljava/lang/String;Ljava/lang/String;Ltk5;Lbl5;Las3;Ld52;Las3;Las3;Las3;)V",
+    "Lbk5;-><init>(ZLxk5;Ljava/lang/String;Ljava/lang/String;Landroid/content/Context;ZLas3;Ljava/lang/String;Ljava/lang/String;Ltk5;Lbl5;Las3;Ld52;Ljava/lang/String;Las3;Las3;Las3;)V",
+    "Lbo0;-><init>(Ljava/lang/Object;Lco0;Ljava/lang/String;Ljava/lang/Integer;I)V",
+    "Lbo0;->b:Lco0;",
+    "Lbo4;->a:Lo9;",
+    "Lbw6;->j:Lmg6;",
+    "Lbx4;-><init>(Las3;B)V",
+    "Lc01;-><init>(Ljava/lang/Object;Ly71;B)V",
+    "Lc75;->j:Lx96;",
+    "Lc91;->b(Ljava/lang/String;ZLz71;)Ljava/lang/Object;",
+    "Lc91;->c(Ljava/lang/String;Lz71;)Ljava/lang/Object;",
+    "Lcf2;-><init>(Ljava/lang/String;Ly71;)V",
+    "Lcf;-><init>(ILy71;B)V",
+    "Lcg2;-><init>(Ljava/lang/String;Z)V",
+    "Lcg2;->a:Z",
+    "Lcg2;->b:Ljava/lang/String;",
+    "Lcj0;-><init>(Lo52;Lu37;Ly71;B)V",
+    "Lco2;-><init>(Lbb1;B)V",
+    "Lco5;->k(Ljava/lang/String;)Ljava/lang/String;",
+    "Lco5;->q(Ljava/lang/String;)Ljava/lang/String;",
+    "Lco5;->s(Ljava/lang/String;)Ljava/lang/String;",
+    "Lcom/box/app/notification/BoxPersistentNotificationService;->g(ZZLz71;)Ljava/lang/Object;",
+    "Lcom/box/app/notification/BoxPersistentNotificationService;->h(Lcom/box/app/notification/BoxPersistentNotificationService;ZLuf6;I)Ljava/lang/Object;",
+    "Lcom/box/app/notification/BoxPersistentNotificationService;->r:Lka0;",
+    "Lcw4;-><init>(Ltu4;Lr35;Las3;Ljava/lang/String;Landroid/content/Context;Ljava/lang/String;B)V",
+    "Ld01;->d:Ls52;",
+    "Ld37;->a(Lnf;Lns;Lz71;)Ljava/lang/Object;",
+    "Ld40;->k:Lo52;",
+    "Ld43;->a(Loy0;Lv01;I)V",
+    "Ld43;->s(Lr35;)Ljava/lang/String;",
+    "Ld43;->v(Ljava/lang/String;)Lsi3;",
+    "Ld52;->invoke()Ljava/lang/Object;",
+    "Ld53;->K(Lorg/json/JSONObject;Lorg/json/JSONObject;)Lsf3;",
+    "Ld53;->c(ZLjava/util/List;Ld52;Lko3;Ldr4;Lcr4;ZFZLeo1;ZLv01;I)V",
+    "Ld53;->v(Ljava/util/List;Ljava/util/Map;Lv01;)Ljava/util/ArrayList;",
+    "Ld91;->a(Lgo2;)Lx81;",
+    "Ldb0;-><init>(Lgb0;Lz71;)V",
+    "Ldb0;->j:Lta0;",
+    "Ldb0;->k:Ljava/lang/Object;",
+    "Ldb0;->m:I",
+    "Ldf2;-><init>(Ljava/util/ArrayList;Ly71;)V",
+    "Ldf6;->a:Lql2;",
+    "Ldg1;->f(Lz71;)Ljava/lang/Object;",
+    "Ldg2;-><init>(Lgg2;Lz71;)V",
+    "Ldg2;->j:Ljava/lang/String;",
+    "Ldg2;->k:C",
+    "Ldg2;->l:Ljava/lang/Object;",
+    "Ldg2;->n:I",
+    "Ldg;->b(Ldg;Ljava/lang/Object;Lnh;Ljava/lang/Float;Lo52;Ly71;I)Ljava/lang/Object;",
+    "Ldg;->e()Ljava/lang/Object;",
+    "Ldg;->h(Ly71;Ljava/lang/Object;)Ljava/lang/Object;",
+    "Ldk;-><init>(Lo52;B)V",
+    "Ldt0;->a:Ljava/lang/Object;",
+    "Ldu;-><init>(ZLeu;ZZLy71;)V",
+    "Ldw4;-><init>(Ld52;Ld52;Ld52;B)V",
+    "Ldw4;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+    "Ldw4;->j:B",
+    "Ldw4;->k:Ld52;",
+    "Ldw4;->l:Ld52;",
+    "Ldw4;->m:Ld52;",
+    "Ldw;->a:Lxl2;",
+    "Le0;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V",
+    "Le16;->c()Z",
+    "Le16;->f()Z",
+    "Le37;->g(Lv01;)V",
+    "Le37;->i(Lv01;Ls52;Ljava/lang/Object;)V",
+    "Le3;-><init>(Ljava/lang/Object;B)V",
+    "Le3;->hasNext()Z",
+    "Le3;->next()Ljava/lang/Object;",
+    "Le53;->d()Lgp6;",
+    "Le7;-><init>(Ljava/lang/Object;B)V",
+    "Leb0;-><init>(Lgb0;Lz71;)V",
+    "Leb0;->j:Z",
+    "Leb0;->k:Ljava/lang/Object;",
+    "Leb0;->m:I",
+    "Led6;->a(Lz71;)Ljava/lang/Object;",
+    "Leg3;->S(Ljava/lang/Object;)V",
+    "Leg3;->e0(JLs52;Lz71;)Ljava/lang/Object;",
+    "Leg3;->f(II)J",
+    "Leg3;->g0(JLs52;Lz71;)Ljava/lang/Object;",
+    "Leg3;->l(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V",
+    "Leg3;->z([Lnk4;)Ljava/util/Map;",
+    "Leo0;-><init>(ZLy71;)V",
+    "Leu2;->w(Lz71;)Ljava/lang/Object;",
+    "Lev1;->a:Lql2;",
+    "Ley6;-><init>(IILrp1;)V",
+    "Lf02;->a(Lg02;Ly71;)Ljava/lang/Object;",
+    "Lf16;->b()Lvb5;",
+    "Lf2;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ly71;B)V",
+    "Lf47;->n0(JLvo1;)J",
+    "Lfa2;-><init>(ILy71;)V",
+    "Lfk4;->f(Luj4;Ldk4;Lz71;)Ljava/lang/Object;",
+    "Lfk4;->f:Lnd0;",
+    "Lfk4;->g:Lk96;",
+    "Lfp6;->c(I)Ls85;",
+    "Lfw;-><init>(Lkk4;Lev1;)V",
+    "Lg23;->A(Lv01;)Lnu0;",
+    "Lg23;->B(Lsa1;)Lhf;",
+    "Lg23;->G(I)J",
+    "Lg23;->M(Ljava/lang/Object;)Lgl4;",
+    "Lg23;->g(Ljava/lang/String;Lko3;JJLjava/lang/String;JLoy0;Lt52;Ltw1;ZFFFLs52;Lv01;II)V",
+    "Lg23;->q(FFF)F",
+    "Lg23;->r(III)I",
+    "Lg85;->d:Ls52;",
+    "Lgb0;->c(Ljava/lang/String;)Ljava/lang/String;",
+    "Lgb0;->f(Lz71;)Ljava/lang/Object;",
+    "Lgb0;->h(Ljava/lang/String;)Ljava/lang/String;",
+    "Lgb0;->j(Ljava/lang/String;)Ljava/lang/String;",
+    "Lgb0;->l(Lz71;)Ljava/lang/Object;",
+    "Lgb0;->o(Lz71;)Ljava/lang/Object;",
+    "Lgb0;->p(Ljava/lang/String;JLz71;)Ljava/lang/Object;",
+    "Lgb0;->q(Lta0;)Lua0;",
+    "Lgb0;->r(ZLz71;)Ljava/lang/Object;",
+    "Lgb0;->s(Ljava/lang/String;)Ljava/lang/String;",
+    "Lgb0;->u(Lz71;)Ljava/lang/Object;",
+    "Lgg2;->a(Ljava/lang/String;JLz71;)Ljava/lang/Object;",
+    "Lgk5;-><init>(Lxk5;B)V",
+    "Lgl5;->k:Lo52;",
+    "Lgl5;->l:Ls52;",
+    "Lgl5;->m:Ls52;",
+    "Lgl5;->p:Lzk5;",
+    "Lgl5;->q:Lsj5;",
+    "Lgl5;->r:Lo52;",
+    "Lgm0;->e(Ldt4;Ly71;)Ljava/lang/Object;",
+    "Lgo2;-><init>(Ljava/lang/String;)V",
+    "Lgp6;->a:Lfp6;",
+    "Lgv4;-><init>(Luw1;Ln35;Lr35;Ljava/util/List;Ljava/lang/String;ZLas3;Ljava/util/List;Ltu4;Landroid/content/Context;Ljava/lang/String;Ls35;Las3;Ljava/util/List;Lq35;Las3;ZLd52;Lo52;Lnf3;Las3;Las3;Las3;Ljava/lang/String;Lo52;Ljava/lang/String;Lnf3;Las3;Las3;Las3;Las3;)V",
+    "Lgv4;->A:Ld52;",
+    "Lgv4;->B:Lo52;",
+    "Lgv4;->D:Las3;",
+    "Lgv4;->E:Las3;",
+    "Lgv4;->F:Las3;",
+    "Lgv4;->H:Lo52;",
+    "Lgv4;->K:Las3;",
+    "Lgv4;->L:Las3;",
+    "Lgv4;->M:Las3;",
+    "Lgv4;->N:Las3;",
+    "Lgv4;->j:Luw1;",
+    "Lgv4;->k:Ln35;",
+    "Lgv4;->p:Las3;",
+    "Lgv4;->v:Las3;",
+    "Lgv4;->y:Las3;",
+    "Lh17;->f(Landroid/content/Context;Ljava/lang/String;)V",
+    "Lh25;->b(Landroid/content/Context;)Ljava/lang/String;",
+    "Lh25;->c(Landroid/content/Context;)Ljava/lang/String;",
+    "Lh72;->x:Lg72;",
+    "Lh86;->e(Ls62;IZ)Lmx0;",
+    "Lhf;->a(Lo52;Ly71;)Ljava/lang/Object;",
+    "Lhj6;->D(Laz2;ZZLjava/util/List;Ljava/util/List;Ld52;Lv01;I)V",
+    "Lhj6;->G(Lf02;)Lf02;",
+    "Lhj6;->s:Loy0;",
+    "Lhm1;->I1(Lr3;Llt0;)Ljava/lang/Object;",
+    "Lhm1;->P1(Lz71;)Ljava/lang/Object;",
+    "Lhm1;->Q1(Lsl1;Lz71;)Ljava/lang/Object;",
+    "Lhm1;->R1(Ltl1;Lz71;)Ljava/lang/Object;",
+    "Lhm;-><init>(ILy71;B)V",
+    "Lhn5;-><init>(Ljava/lang/Object;B)V",
+    "Lht0;-><init>(Ljava/lang/String;Z)V",
+    "Lht0;->a:Z",
+    "Lht0;->b:Ljava/lang/String;",
+    "Lhv4;-><init>(Ltu4;Landroid/content/Context;Lr35;Las3;Ljava/lang/String;B)V",
+    "Lhw;-><init>(Lkk4;Ldf6;)V",
+    "Li4;->j()Lld6;",
+    "Li50;-><init>(Ldg;B)V",
+    "Lia1;-><init>(Lma1;Lz71;)V",
+    "Lia1;->j:Ljava/lang/Object;",
+    "Lia1;->l:I",
+    "Lib6;->J0(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+    "Lib6;->K0(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+    "Lib6;->S0(Ljava/lang/String;C)Z",
+    "Lib6;->V0(Ljava/lang/String;CLjava/lang/String;)Ljava/lang/String;",
+    "Lil5;-><init>(Luj5;Lqt0;B)V",
+    "Lim0;->j(Lg02;Ly71;)Ljava/lang/Object;",
+    "Lin6;-><init>(Ljava/lang/Object;Ly71;B)V",
+    "Liv1;->p(Lz71;)Ljava/lang/Enum;",
+    "Liv1;->v(Lz71;)Ljava/lang/Enum;",
+    "Liv4;-><init>(BLas3;Ltu4;Lm35;Lr35;Landroid/content/Context;Ljava/lang/String;)V",
+    "Liw4;-><init>(BLas3;Ltu4;Lm35;Lr35;Landroid/content/Context;Ljava/lang/String;)V",
+    "Lj02;-><init>(Lct4;B)V",
+    "Lj15;-><init>(Ld52;B)V",
+    "Lj17;->k:Lmg6;",
+    "Lj23;->g(Ljava/util/List;ILjava/lang/String;Lko3;Lkz;Ljava/lang/String;Lkz;Leo1;Ls52;Lzh4;ZZZLo52;Lv01;III)V",
+    "Lj23;->i(Ljava/lang/String;Lko3;JJLa42;Lc32;JLjj6;JIZIILvq6;Lv01;III)V",
+    "Lja0;->c(Landroid/content/Context;ZLz71;)Ljava/lang/Object;",
+    "Lja5;->b:Lsr6;",
+    "Ljb6;->X(Ljava/lang/String;)Ljava/lang/String;",
+    "Ljj0;->a:[Lfx2;",
+    "Ljl5;->b(Lqt0;Luj5;Lzk5;Lsj5;)V",
+    "Ljo0;->g(Lz71;)Ljava/lang/Object;",
+    "Ljo1;-><init>(Ljava/lang/String;ZZLd52;Ljava/util/ArrayList;I)V",
+    "Ljv1;->e(Ljava/lang/String;)V",
+    "Ljv1;->h(Ljava/lang/String;)V",
+    "Ljv4;-><init>(Ltu4;B)V",
+    "Ljw4;-><init>(Ln35;Lr35;Ljava/util/List;ZLtu4;Landroid/content/Context;Ljava/lang/String;Ljava/util/List;Ls35;Lq35;ZLd52;Lo52;Ljava/util/List;Ljava/lang/String;Lnf3;Las3;Las3;Las3;Ljava/lang/String;Lo52;Ljava/lang/String;Lnf3;Las3;Las3;Las3;Las3;)V",
+    "Ljw;-><init>(ILy71;B)V",
+    "Ljw;->m(Ljava/lang/Object;)Ljava/lang/Object;",
+    "Ljw;->n(Ljava/lang/Object;)Ljava/lang/Object;",
+    "Ljw;->o(Ljava/lang/Object;)Ljava/lang/Object;",
+    "Ljw;->p(Ljava/lang/Object;)Ljava/lang/Object;",
+    "Lk02;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ly71;B)V",
+    "Lk37;->L(Landroid/content/Context;Ljava/lang/String;)V",
+    "Lk37;->i0(Las3;Z)V",
+    "Lka1;-><init>(Lma1;Lz71;)V",
+    "Lka1;->j:Z",
+    "Lka1;->k:Ljava/lang/Object;",
+    "Lka1;->m:I",
+    "Lkd0;->b(Lz71;)Ljava/lang/Object;",
+    "Lkd3;-><init>(Lpd3;Ly71;B)V",
+    "Lke5;->a(Lwu;Ln10;Lv01;I)Lle5;",
+    "Lkf3;->E(ZLd52;Lv01;I)V",
+    "Lkf3;->F(ZZZLdx4;ZZZZLcr4;Lo52;Lo52;Lo52;Lo52;Lo52;Lo52;Lo52;Ld52;Lv01;I)V",
+    "Lkf3;->W:Loy0;",
+    "Lkf3;->X:Loy0;",
+    "Lkf3;->a:[Le16;",
+    "Lkf3;->p0(ZLz71;)Ljava/lang/Object;",
+    "Lkf4;->b(Lko3;)Lko3;",
+    "Lkh3;->d(IILko3;Ldj3;JLoy0;Lv01;II)V",
+    "Lkh3;->f(ZLoy0;Ld52;Lko3;ZIILzt5;Lzh4;Lv01;I)V",
+    "Lkm2;->c()Llm2;",
+    "Lkq0;-><init>(ILy71;B)V",
+    "Lkr6;->j:Lmg6;",
+    "Lku;-><init>(Ljava/lang/Object;Ljava/lang/String;Lxc4;Ljava/lang/Throwable;I)V",
+    "Lkv6;->a()V",
+    "Lkv6;->b()Z",
+    "Lkv6;->c(Lgs3;Luf6;)Ljava/lang/Object;",
+    "Lkw0;->a(Lyu;Lc8;Lv01;I)Lmw0;",
+    "Lkw;->n(Liw;)V",
+    "Lkw;->x:Lnw;",
+    "Ll;-><init>(B)V",
+    "Llj0;->b:Ltq3;",
+    "Llj1;->a:Lpf1;",
+    "Llo4;->e(Ljava/lang/CharSequence;JLuf6;)Ljava/lang/Object;",
+    "Lls3;-><init>(Lgs3;Lms3;Ls52;Ljava/lang/Object;Ly71;)V",
+    "Llv;->G0(Lko3;)Lko3;",
+    "Llv;->S(ILv01;)V",
+    "Llv;->U(Ljava/util/List;Lo52;Lv01;I)V",
+    "Llv;->a:Luu;",
+    "Llv;->c:Lvu;",
+    "Llv;->h(Lnw0;ZLko3;Lvu1;Lpw1;Ljava/lang/String;Loy0;Lv01;II)V",
+    "Llv;->t0(Lko3;FF)Lko3;",
+    "Llv;->u0(Lko3;FFI)Lko3;",
+    "Llv;->v0(Lko3;FFFF)Lko3;",
+    "Llv;->w0(Lko3;FFFFI)Lko3;",
+    "Lm01;->d:Lp6;",
+    "Lm32;->a:Lns1;",
+    "Lm46;->a:Ljy1;",
+    "Lm46;->c(Lko3;F)Lko3;",
+    "Lm46;->c:Ljy1;",
+    "Lm46;->l(Lko3;F)Lko3;",
+    "Lm94;->e(I)I",
+    "Lm94;->g(I)I",
+    "Lma1;->c(Ljava/lang/String;)Ljava/lang/String;",
+    "Lma1;->d(Ljava/io/File;Lz71;)Ljava/lang/Object;",
+    "Lma1;->f(Ljava/lang/String;)Ljava/lang/String;",
+    "Lma1;->g(Ljava/lang/String;Lz71;)Ljava/lang/Object;",
+    "Lma1;->i(Ljava/lang/String;)Ljava/lang/String;",
+    "Lma5;->j:Lma5;",
+    "Lmc7;->l:Lh27;",
+    "Lmc;-><init>(Ljava/lang/Object;B)V",
+    "Lmd5;-><init>(Ltd5;Lz71;)V",
+    "Lmd5;->j:Lps3;",
+    "Lmd5;->k:Ljava/lang/Object;",
+    "Lmd5;->m:I",
+    "Lmf2;->k:Li11;",
+    "Lmk5;->A:Las3;",
+    "Lmk5;->B:Las3;",
+    "Lmk5;->C:Lk22;",
+    "Lmk5;->D:Las3;",
+    "Lmk5;->E:Las3;",
+    "Lmk5;->F:Las3;",
+    "Lmk5;->l:Ld52;",
+    "Lmk5;->r:Las3;",
+    "Lmk5;->w:Las3;",
+    "Lmk5;->x:Ld52;",
+    "Lmk5;->z:Las3;",
+    "Lmm0;-><init>(Lt52;Lf02;Lsa1;ILid0;)V",
+    "Lmo1;->c(Ljava/lang/String;IZIZLo52;Lv01;II)V",
+    "Lmq0;->d(Lz71;)Ljava/lang/Object;",
+    "Lmt0;->a(Lz71;)Ljava/lang/Object;",
+    "Lmt0;->b(Lgt0;Lz71;)Ljava/lang/Object;",
+    "Lmt6;->C(Lsa1;)Lxt2;",
+    "Lmt6;->H(Lsa1;)Z",
+    "Lmt6;->k(Lxt2;Luf6;)Ljava/lang/Object;",
+    "Lmt6;->n(Lf02;Ls52;Luf6;)Ljava/lang/Object;",
+    "Lmt6;->s(Lsa1;)V",
+    "Lmt;-><init>(Ljava/lang/Object;Ly71;B)V",
+    "Lmv6;->a:Lbi4;",
+    "Lmv6;->b(JJJJJLv01;)Llv6;",
+    "Lmw4;-><init>(Ltu4;B)V",
+    "Ln33;->n(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V",
+    "Ln35;-><init>(ILjava/lang/Object;Ljava/lang/String;)V",
+    "Ln35;->a:Ljava/lang/Object;",
+    "Ln50;->d:Lt8;",
+    "Ln50;->e:Lt8;",
+    "Ln50;->j0(Lko3;Ljx3;Lmx3;)Lko3;",
+    "Ln81;-><init>(Ljava/util/List;B)V",
+    "Ln87;->n:Las3;",
+    "Ln87;->o:Las3;",
+    "Ln87;->p:Las3;",
+    "Ln;->k:Ljava/lang/Object;",
+    "Ln;->l:Ljava/lang/Object;",
+    "Ln;->m:Ljava/lang/Object;",
+    "Ln;->p(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+    "Lna0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+    "Lna0;->j:B",
+    "Lna0;->k:B",
+    "Lna0;->l:Lcom/box/app/notification/BoxPersistentNotificationService;",
+    "Lnc7;->t(Ljava/io/InputStream;Ljava/io/OutputStream;)J",
+    "Lnd0;->o(Ly71;)Ljava/lang/Object;",
+    "Lnf2;->c:Z",
+    "Lnf;-><init>(Lz61;Ld37;Lxt2;Lss5;)V",
+    "Lnm3;->n(Ljava/lang/String;)Z",
+    "Lnn6;->c:Lo52;",
+    "Lnn;-><init>(Ld52;B)V",
+    "Lns1;->j(Lzu6;)V",
+    "Lns6;->o()Landroid/content/Context;",
+    "Lnv;->f(FF)V",
+    "Lnv;->h(FF)V",
+    "Lnw4;-><init>(Ljava/util/List;Ljava/lang/String;Lnf3;Lr35;Las3;Las3;Las3;Ljava/lang/String;Ltu4;Landroid/content/Context;Ljava/lang/String;Lo52;Ljava/lang/String;Lnf3;Las3;Las3;Las3;Las3;)V",
+    "Lnw4;->A:Las3;",
+    "Lnw4;->n:Las3;",
+    "Lnw4;->o:Las3;",
+    "Lnw4;->p:Las3;",
+    "Lnw4;->u:Lo52;",
+    "Lnw4;->x:Las3;",
+    "Lnw4;->y:Las3;",
+    "Lnw4;->z:Las3;",
+    "Lnw;->a(Lxl2;Ldm2;Lz71;)Ljava/lang/Object;",
+    "Lo0;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;B)V",
+    "Lo35;->f(Ljava/lang/String;Lsi3;)Lua5;",
+    "Lo36;->a:Ljava/lang/String;",
+    "Lo36;->b:Ljava/lang/String;",
+    "Lo41;->p:Las3;",
+    "Lo41;->q:Las3;",
+    "Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;",
+    "Lo66;->e(J)Lo66;",
+    "Lo91;-><init>(Lnn6;B)V",
+    "Loa2;-><init>(ILy71;)V",
+    "Loa5;-><init>(ILey6;Lma5;J)V",
+    "Lob0;-><init>(ZZZLy71;)V",
+    "Loc7;->L(Ly71;)Ly71;",
+    "Loc7;->R(Ljava/lang/Object;)Ljava/util/List;",
+    "Loc7;->S([Ljava/lang/Object;)Ljava/util/List;",
+    "Loc7;->d(Ld52;Lko3;ZZJFFFLs52;Lv01;II)V",
+    "Loc7;->d0(Ljava/io/InputStream;J)V",
+    "Loc7;->e0(Ljava/io/InputStream;J)V",
+    "Loc7;->g0([B)Ljava/lang/String;",
+    "Loc7;->h0([B)J",
+    "Loc7;->k0()V",
+    "Loc7;->l(Le93;)Le93;",
+    "Loc7;->t()Le93;",
+    "Loc7;->v(Ljava/io/InputStream;Ljava/lang/String;Ljava/io/File;Ljava/lang/Long;)V",
+    "Loc;-><init>(ILy71;)V",
+    "Loe2;->a:Z",
+    "Loe2;->b:Ljava/lang/String;",
+    "Loe;->close()V",
+    "Lol2;->a(Llm2;Ljava/lang/String;Lko3;JLv01;II)V",
+    "Los2;->e(Ljava/lang/String;Ljava/lang/String;Lko3;FLv01;II)V",
+    "Lou;->c(Lo52;)V",
+    "Lou;->e:Lc75;",
+    "Lp16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;",
+    "Lp16;->j:B",
+    "Lp16;->k:Lw26;",
+    "Lp16;->l:Ljava/lang/String;",
+    "Lp16;->m:Landroid/content/Context;",
+    "Lp41;->o:Las3;",
+    "Lp41;->p:Las3;",
+    "Lp6;->l:Lo10;",
+    "Lp6;->v:Ln10;",
+    "Lp6;->x:Lm10;",
+    "Lp87;->D([Lo52;)Lfx0;",
+    "Lp87;->G(Ls52;Ly71;)Ljava/lang/Object;",
+    "Lp87;->O(Lbb1;)Z",
+    "Lp87;->R([II)I",
+    "Lp87;->b0(Lmg1;)La03;",
+    "Lp87;->z(Ljava/io/Closeable;Ljava/lang/Throwable;)V",
+    "Lpb1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;",
+    "Lpb6;->c0(Ljava/lang/String;Ljava/lang/String;Z)Z",
+    "Lpd5;-><init>(Ljava/util/List;JLy71;)V",
+    "Lps2;->N(Ljava/lang/String;)V",
+    "Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z",
+    "Lps3;->d()Z",
+    "Lps3;->e(Ly71;)Ljava/lang/Object;",
+    "Lpw4;->B:Lo52;",
+    "Lpw4;->K:Las3;",
+    "Lpw4;->L:Las3;",
+    "Lpw4;->M:Las3;",
+    "Lpw4;->N:Las3;",
+    "Lpw4;->O:Las3;",
+    "Lpw4;->P:Las3;",
+    "Lpw4;->Q:Las3;",
+    "Lpw4;->j:Laz2;",
+    "Lpw4;->k:Ltw1;",
+    "Lpw4;->l:Ln35;",
+    "Lpw4;->w:Ld52;",
+    "Lpw4;->x:Lo52;",
+    "Lpw6;->f(Lnw6;Lz71;)Ljava/lang/Object;",
+    "Lpw6;->i:Lk96;",
+    "Lpy;-><init>(Ls52;Ly71;)V",
+    "Lq02;-><init>(Lf02;Ljava/lang/Object;B)V",
+    "Lq03;-><init>(FZ)V",
+    "Lq50;->k(Ljava/lang/String;JLv01;I)V",
+    "Lq50;->m(Ljava/lang/String;ZLko3;Lv01;I)V",
+    "Lqb2;->a(Lz71;)Ljava/lang/Object;",
+    "Lqb2;->a:Lqb2;",
+    "Lqb2;->c:Lx96;",
+    "Lqc0;->a(Ls85;Lz71;)Ljava/lang/Object;",
+    "Lqc6;->invoke()Ljava/lang/Object;",
+    "Lqc6;->j:B",
+    "Lqc6;->k:Ly77;",
+    "Lqc6;->l:Landroid/content/Context;",
+    "Lqc6;->m:Ljava/lang/String;",
+    "Lqc6;->n:Las3;",
+    "Lqr6;->j:Lmg6;",
+    "Lqs1;-><init>(Lzu6;Ljava/util/concurrent/ThreadPoolExecutor;)V",
+    "Lqt0;->W0:Lri1;",
+    "Lqt0;->Z()V",
+    "Lqt0;->a1:Lja5;",
+    "Lqt0;->b0()V",
+    "Lqt0;->f0()V",
+    "Lqt0;->l0(II)V",
+    "Lqu1;->c()Lvu1;",
+    "Lqu1;->d(Lry1;FI)Lvu1;",
+    "Lqu1;->e(Lry1;FI)Lpw1;",
+    "Lqu1;->h()Lpw1;",
+    "Lqx5;->N(ZZLv01;I)J",
+    "Lqx5;->P(Lv01;)J",
+    "Lqx5;->f(ZLko3;Ljava/lang/String;JLjava/lang/String;JJZLd52;JJZZFLoy0;Lv01;III)V",
+    "Lqx5;->i0(Ld52;)Lr02;",
+    "Lqz6;->P(Landroid/content/Context;Ljava/lang/String;)V",
+    "Lr00;-><init>(Lkv6;Ly71;B)V",
+    "Lr3;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ly71;B)V",
+    "Lr3;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ly71;B)V",
+    "Lr75;->b(Ldm2;Lz71;)Ljava/lang/Object;",
+    "Lr87;->k(Lko3;Ll43;Lzh4;Lyu;Lc8;Lzy1;ZLhf4;Lo52;Lv01;II)V",
+    "Lr87;->q(I[Ljava/lang/Object;)Ljava/lang/String;",
+    "Lr96;-><init>(Ls96;Ly71;)V",
+    "Lr97;->M(ILa62;Lv01;)Loy0;",
+    "Lr97;->X(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;)Ljava/util/ArrayList;",
+    "Lrd1;->G(ZZLr35;Ld52;Lt52;Lv01;I)V",
+    "Lrd1;->I(ZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ld52;Lo52;Lv01;II)V",
+    "Lrd1;->m(Laz2;ZZLjava/util/List;Ljava/util/List;Ljava/util/List;Ld52;Ld52;Lv01;I)V",
+    "Lrd4;-><init>(Lmd4;Landroid/content/Context;Ljava/lang/String;B)V",
+    "Lrh0;-><init>(ILy71;)V",
+    "Lrh0;->q()Ljava/lang/Object;",
+    "Lrh0;->t()V",
+    "Lrh0;->v(Lo52;)V",
+    "Lri2;->b(FLz71;)Ljava/lang/Object;",
+    "Lro1;->k:Li11;",
+    "Lrz1;->a(Llr2;Lz71;)Ljava/lang/Object;",
+    "Lrz1;->b(Lz71;)Ljava/lang/Object;",
+    "Ls06;->d(Lo52;Ljava/lang/String;)V",
+    "Ls06;->e(Lo52;Ljava/lang/String;)V",
+    "Ls1;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;B)V",
+    "Ls35;->t:Ls35;",
+    "Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+    "Ls62;->O()Ljava/lang/Object;",
+    "Ls62;->W()V",
+    "Ls62;->c0(I)V",
+    "Ls62;->d0(I)Lv01;",
+    "Ls62;->f0()V",
+    "Ls62;->g(Ljava/lang/Object;)Z",
+    "Ls62;->i(Ljava/lang/Object;)Z",
+    "Ls62;->k(Leu4;)Ljava/lang/Object;",
+    "Ls62;->l(Ld52;)V",
+    "Ls62;->l0(Ljava/lang/Object;)V",
+    "Ls62;->m()Ldn4;",
+    "Ls62;->o0()V",
+    "Ls62;->u()Lg85;",
+    "Ls63;-><init>(Lfb7;I)V",
+    "Ls77;->o(JLy71;)Ljava/lang/Object;",
+    "Lsa1;->p(Lra1;)Lqa1;",
+    "Lsf2;->b(Lz71;)Ljava/lang/Object;",
+    "Lsi3;->c:Lgo2;",
+    "Lsj0;-><init>(Ltj0;Ljava/util/ArrayList;Ltq3;Ly71;)V",
+    "Lsr1;->J()V",
+    "Lsr6;->l0(Ljava/lang/String;Ljava/lang/String;Lz71;)Ljava/lang/Object;",
+    "Lsr6;->t0(Lp25;Lz71;)Ljava/lang/Object;",
+    "Lsu4;-><init>(Lo52;Lo52;Ljava/lang/Object;ZLtu4;Lo52;Ly71;)V",
+    "Lsv0;->e()J",
+    "Lsv0;->i()J",
+    "Lsv0;->n()J",
+    "Lsv0;->t()J",
+    "Lt31;->g()Ln25;",
+    "Lt31;->m(Ln25;)V",
+    "Lt52;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+    "Lt67;->M(Ljava/io/InputStream;J)Ljava/lang/String;",
+    "Lt67;->r(Li75;Lz71;)Ljava/lang/Object;",
+    "Lt67;->w(Landroid/content/Context;)Lm32;",
+    "Lt87;->k(Las3;Z)V",
+    "Lt94;->a:Ljj1;",
+    "Lt94;->e:Lx6;",
+    "Lt94;->l:Lhk1;",
+    "Lt94;->v:Lns6;",
+    "Lt97;->a(Ljava/lang/String;)Z",
+    "Lt97;->b(Ljava/lang/String;)Ljava/lang/String;",
+    "Ltd5;->a(Lz71;)Ljava/lang/Object;",
+    "Ltd5;->b(Lvb5;JLz71;)Ljava/lang/Object;",
+    "Ltd5;->f(JLy71;Ljava/lang/String;)Ljava/lang/Object;",
+    "Ltd5;->i(Lz71;)Ljava/lang/Object;",
+    "Lte0;-><init>(ILy71;B)V",
+    "Ltf0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V",
+    "Ltk5;->a()Z",
+    "Ltk5;->b()Z",
+    "Lto4;->a()V",
+    "Lto6;->a:Lto4;",
+    "Ltp1;->c:Lvd1;",
+    "Ltv0;->a:Lkp1;",
+    "Ltv1;->e(Ljava/lang/Class;Lrv1;)Lue6;",
+    "Ltw1;->e:Lsw1;",
+    "Ltw5;->a(Ly71;Ljava/lang/Object;)Ljava/lang/Object;",
+    "Lu23;->J(Ljava/util/List;ZLe25;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)Ljava/util/List;",
+    "Lu23;->M(Ljava/util/List;ZLe25;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)Ljava/util/List;",
+    "Lu23;->t(FF)Lu86;",
+    "Lu26;-><init>(Ljava/lang/String;Lo26;JLy71;)V",
+    "Lu41;-><init>(Las3;B)V",
+    "Lu94;->a:Ljj1;",
+    "Lu94;->b(Lsa5;Lbq0;)Le85;",
+    "Lu94;->d:Lx6;",
+    "Lu94;->k:Lhk1;",
+    "Lu94;->u:Lns6;",
+    "Lu96;->getValue()Ljava/lang/Object;",
+    "Lua0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V",
+    "Lua0;->a:Ljava/lang/Object;",
+    "Lua0;->b:Ljava/lang/String;",
+    "Luf6;-><init>(ILy71;)V",
+    "Luj5;->a(Lqt0;)V",
+    "Luj5;->b:Lzk5;",
+    "Luj5;->c:Lo52;",
+    "Luj5;->d:Ls52;",
+    "Luj5;->e:Ls52;",
+    "Luu6;->F(Lso1;JI)Lao2;",
+    "Luu6;->L(Lv01;Lko3;)Lko3;",
+    "Luu6;->P(Landroid/database/sqlite/SQLiteDatabase;)Lta0;",
+    "Luu6;->a0(Landroid/database/sqlite/SQLiteDatabase;Lta0;)V",
+    "Luv4;-><init>(Ljava/util/List;Ls35;Ltu4;Landroid/content/Context;Ljava/lang/String;Las3;B)V",
+    "Luv4;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+    "Luv4;->j:B",
+    "Luv4;->k:Ljava/util/List;",
+    "Luv4;->l:Ls35;",
+    "Luv4;->m:Ltu4;",
+    "Luv4;->n:Landroid/content/Context;",
+    "Luv4;->o:Ljava/lang/String;",
+    "Luv4;->p:Las3;",
+    "Lva0;->b(Ljava/lang/String;)Ljava/io/File;",
+    "Lva0;->c(Ljava/lang/String;)Ljava/io/File;",
+    "Lva5;->a:Lta5;",
+    "Lvd1;->a()V",
+    "Lvd1;->l()V",
+    "Lvd1;->t()V",
+    "Lvd1;->x(Ljava/lang/String;Ljava/lang/Object;)V",
+    "Lvf2;-><init>(Lwf2;Lz71;)V",
+    "Lvf2;->j:Li81;",
+    "Lvf2;->k:Ljava/lang/Object;",
+    "Lvf2;->m:I",
+    "Lvi6;->e(Lmp4;Lt52;Lo52;Ly71;I)Ljava/lang/Object;",
+    "Lvj;-><init>(ZLjava/lang/Object;ZLy71;B)V",
+    "Lvn3;->c:Lgl4;",
+    "Lvn3;->d:Lgl4;",
+    "Lvn3;->e:Lgl4;",
+    "Lvn3;->f:Lgl4;",
+    "Lvn3;->g:Lgl4;",
+    "Lvn3;->h:Lgl4;",
+    "Lvn3;->i:Lgl4;",
+    "Lvu4;->invoke(Ljava/lang/Object;)Ljava/lang/Object;",
+    "Lvu4;->j:B",
+    "Lvu4;->k:Lr35;",
+    "Lw23;->j(ZLo52;Ljava/lang/String;Ljava/lang/String;Loy0;ZLv01;III)V",
+    "Lw23;->u(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V",
+    "Lw26;->b(Lp26;)V",
+    "Lw26;->c(Ls26;)V",
+    "Lw26;->d(Z)V",
+    "Lw93;->f:Lu86;",
+    "Lwb0;->a(Lsb0;Ljava/lang/String;Lz71;)Ljava/lang/Object;",
+    "Lwb0;->b(Lz71;)Ljava/lang/Object;",
+    "Lwc6;->q:Las3;",
+    "Lwc6;->r:Las3;",
+    "Lwf2;->a(Li81;Lz71;)Ljava/lang/Object;",
+    "Lwo6;-><init>(Lto6;Lto4;)V",
+    "Lwq;-><init>(BZ)V",
+    "Lwx1;->a:Lvx1;",
+    "Lx07;->b(Lv01;)Lmc7;",
+    "Lx23;->F(ILv01;)Ljava/lang/String;",
+    "Lx23;->G(I[Ljava/lang/Object;Lv01;)Ljava/lang/String;",
+    "Lx34;-><init>(Las3;B)V",
+    "Lx37;->J(Lbb1;Lsa1;Leb1;Ls52;I)Lk96;",
+    "Lx37;->N(Ljava/lang/String;)Ljava/lang/String;",
+    "Lx37;->P(Ljava/lang/String;)Lzw1;",
+    "Lx37;->e0(Lsa1;Ls52;Ly71;)Ljava/lang/Object;",
+    "Lx37;->j(Lbb1;Lsa1;Ls52;I)Leg1;",
+    "Lx37;->v(Ljava/lang/String;)Ljava/lang/String;",
+    "Lx90;->d(Landroid/database/sqlite/SQLiteDatabase;)V",
+    "Lx90;->o(Lo52;)Ljava/lang/Object;",
+    "Lx96;->k(Ljava/lang/Object;Ljava/lang/Object;)Z",
+    "Lx96;->m(Ljava/lang/Object;Ljava/lang/Object;)Z",
+    "Lxa4;->j(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+    "Lxa4;->j:Laz2;",
+    "Lxa4;->k:Z",
+    "Lxa4;->l:Z",
+    "Lxa4;->m:Ljava/util/List;",
+    "Lxa4;->n:Ljava/util/List;",
+    "Lxa4;->o:Las3;",
+    "Lxa4;->p:Ljava/util/List;",
+    "Lxa4;->q:Ld52;",
+    "Lxa;->S:Loy0;",
+    "Lxe1;->b:Lwe1;",
+    "Lxe1;->c:Lms3;",
+    "Lxh3;->b:Lkp1;",
+    "Lxi5;-><init>(B)V",
+    "Lxk5;->b()Ljava/lang/String;",
+    "Lxk5;->cfgD:Z",
+    "Lxk5;->m(Ljava/lang/String;)V",
+    "Lxk;-><init>(BLo52;Z)V",
+    "Lxp0;-><init>(Ljava/util/List;B)V",
+    "Lxr0;-><init>(Liu;ZLo52;B)V",
+    "Ly25;->d(Ljava/lang/String;Luf6;)Ljava/lang/Object;",
+    "Ly43;->G(J)J",
+    "Ly71;->getContext()Lsa1;",
+    "Ly71;->resumeWith(Ljava/lang/Object;)V",
+    "Ly77;->b()V",
+    "Ly77;->q(Ljava/lang/String;)V",
+    "Lya0;-><init>(Lgb0;Lz71;)V",
+    "Lya0;->j:Ljava/lang/Object;",
+    "Lya0;->l:I",
+    "Lyd0;->P(Ls35;Ls62;)Ljava/lang/String;",
+    "Lyg1;->N(F)F",
+    "Lyj;-><init>(Lzj;Lz71;)V",
+    "Lyj;->j:Ljava/lang/Object;",
+    "Lyj;->l:I",
+    "Lyo1;->b(Lmp1;)D",
+    "Lz0;->m:Las3;",
+    "Lz24;-><init>(ILjava/lang/Object;Ljava/lang/String;)V",
+    "Lz61;->E1(Lwc0;J)F",
+    "Lz71;-><init>(Ly71;Lsa1;)V",
+    "Lz91;-><init>(Lk22;Lbl5;Ld52;Las3;Las3;Las3;Las3;)V",
+    "Lzj;->b:Lbb1;",
+    "Lzj;->f(Lz71;)Ljava/lang/Object;",
+    "Lzl0;-><init>(Ljava/util/Set;Lns6;)V",
+    "Lzl0;->b:Lns6;",
+    "Lzq4;->q()V",
+    "Lzu6;->P(Ljava/lang/Throwable;)V",
+    "Lzu6;->m(Landroid/content/Context;Lzq;ZZ)V",
+    "Lzu6;->u(Landroid/content/ClipData;)Ljava/lang/String;",
+    "Lzv4;-><init>(Ltu4;Landroid/content/Context;Ljava/lang/String;B)V",
+    "Lzw5;->a0(Lvw5;Lo52;)Loy1;",
+    "Lzw5;->b0(Lvw5;)Ljava/util/List;"
+   ]
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "La14;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "La15;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Laa0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lab4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lah4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lai3;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Laj2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lam0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lan3;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Landroid/window/OnBackInvokedCallback;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lap0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lar3;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Las3;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Law4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lb46;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lb54;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lbb1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lbb4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lbd6;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lbj2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lbx4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lc01;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lc12;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lc75;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lcf;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lcg2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lcj0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lco2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lct4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ld43;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ld52;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ld53;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ldb0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ldg1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ldg2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ldk4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ldk;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ldo2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ldt0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ldu;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ldw4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Le0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Le37;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Le3;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Le7;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Leb0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Leg1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Leg3;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Leo0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Leo2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ley6;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lf02;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lf47;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lfk4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lg02;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lg23;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lgk5;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lgo2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lgp2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lgp6;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lh17;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lh72;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lhj6;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lhm2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lhn5;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lht0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lhv4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Li4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Li50;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lia1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lil5;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lin6;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Liv4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Liw4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Liw;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lj02;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lj23;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lja5;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lju5;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ljv4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ljw4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lk37;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lka1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lke5;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lkf3;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lkf4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lkv6;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lkw0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ll90;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ll;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Llj1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Llm2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Llr2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lls3;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Llv;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lm01;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lm32;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lm46;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lma5;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lmc;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lmd5;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lme5;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lmm0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lmp1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lmt6;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lmv6;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lmw4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ln33;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ln35;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ln50;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ln81;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ln;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lna0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lnc0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lnc7;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lnf2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lnh;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lnn;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lns1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lns6;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lnw6;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lnw;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lo0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lo36;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lo52;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lo91;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Loa5;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Loc7;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Loe2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Loe;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lol2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Los2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lp16;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lp87;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lpg;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lps2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lpx6;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lpy;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lq02;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lq03;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lq50;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lqb2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lqc0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lqc6;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lql1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lqx5;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lqz6;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lr00;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lr3;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lr87;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lr96;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lr97;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lrd1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lrd4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ls1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ls52;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ls77;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lsa1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lsl1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lss5;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lsu4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lt52;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lt67;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lt87;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lt97;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ltc0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ltf0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ltl1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lto4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ltp1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ltv0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ltw1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lu23;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lu41;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lu96;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lua0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Luf6;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lul1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Luu6;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Luv4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Luw1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Luw2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Luw5;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lv01;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lve3;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lvf2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lvj1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lvn3;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lvu4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lw23;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lw26;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lw93;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lwc0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lwo6;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lwq;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lx07;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lx23;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lx34;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lx37;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lxa4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lxa;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lxe1;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lxh3;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lxi5;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lxk;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lxl2;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lxp0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lxr0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ly35;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ly43;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Ly71;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lya0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lyd0;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lyj;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lz24;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lz71;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lz91;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lzh4;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lzu6;"
+  },
+  {
+   "id": "bindings",
+   "reason": "Invalid/missing target type",
+   "type": "Lzv4;"
+  },
+  {
+   "id": "vpn-runtime:00077",
+   "feature": "vpn-runtime",
+   "path": "smali/com/box/app/AppApplication.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lcom/box/app/AppApplication;->onCreate()V",
+   "actualCanonicalSha256": "85b4ea93aeb85c847ca1be5e315f0f1607215dd4e538b07b49a3e76d0315d210"
+  },
+  {
+   "id": "config-history:00802",
+   "feature": "config-history",
+   "path": "smali/d40.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lf50;->invoke(Ljava/lang/Object;)Ljava/lang/Object;",
+   "actualCanonicalSha256": "73abe5624de50efdeec1180c56f296f3dc5c3b4a0bd453a5a47ae033c6dddfd8"
+  },
+  {
+   "id": "core-downloads:00803",
+   "feature": "core-downloads",
+   "path": "smali/d53.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Ld53;->v(Ljava/util/List;Ljava/util/Map;Lv01;)Ljava/util/ArrayList;"
+  },
+  {
+   "id": "core-downloads:00804",
+   "feature": "core-downloads",
+   "path": "smali/dv6.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lqw6;-><clinit>()V",
+   "actualCanonicalSha256": "19f5e83837af00a124e41a3229b46ccb0e8541aaa21c5103d0b8efcc9f3daf69"
+  },
+  {
+   "id": "config-history:00805",
+   "feature": "config-history",
+   "path": "smali/dw4.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Ldw4;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "id": "vpn-runtime:00806",
+   "feature": "vpn-runtime",
+   "path": "smali/eg3.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Leg3;->l(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V"
+  },
+  {
+   "id": "vpn-runtime:00807",
+   "feature": "vpn-runtime",
+   "path": "smali/eu.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Ldv;->b(ZZZ)V",
+   "actualCanonicalSha256": "de3767b55fb6839f79181b06cf74d1c34604093afdc1e480e8361875038f5b9c"
+  },
+  {
+   "id": "vpn-runtime:00808",
+   "feature": "vpn-runtime",
+   "path": "smali/f2.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lh2;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+   "actualCanonicalSha256": "94aed1f752c6a374cd299f511429beec356b6d3b3f52732f154abed1e2a61bd0"
+  },
+  {
+   "id": "shared-runtime:00809",
+   "feature": "shared-runtime",
+   "path": "smali/fp2.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Loq2;->w()Lkv;",
+   "actualCanonicalSha256": "145bab80d24171d3baca083a4de9218522e6cfaccb883887f7de2b02dccdf33a"
+  },
+  {
+   "id": "root-runtime:00811",
+   "feature": "root-runtime",
+   "path": "smali/gb0.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Ljc0;->d(Lyb0;)V",
+   "actualCanonicalSha256": "c3db861bff5c5b0791df89642fb8ef857aa9f6ea85d55d54920e8a9fd77ab565"
+  },
+  {
+   "id": "shared-runtime:00814",
+   "feature": "shared-runtime",
+   "path": "smali/gb0.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Ljc0;->k()Lyb0;",
+   "actualCanonicalSha256": "4218fd61fa4eeb49b8636f9024e8ac40a872b11ec19c69c9e2191a1867fe90b4"
+  },
+  {
+   "id": "vpn-runtime:00815",
+   "feature": "vpn-runtime",
+   "path": "smali/gb0.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Ljc0;->q(Lwb0;)Lua0;"
+  },
+  {
+   "id": "shared-runtime:00816",
+   "feature": "shared-runtime",
+   "path": "smali/gb0.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Ljc0;->f(Lz71;)Ljava/lang/Object;"
+  },
+  {
+   "id": "vpn-runtime:00817",
+   "feature": "vpn-runtime",
+   "path": "smali/gb0.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Ljc0;->r(ZLz71;)Ljava/lang/Object;"
+  },
+  {
+   "id": "vpn-runtime:00818",
+   "feature": "vpn-runtime",
+   "path": "smali/gb0.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Ljc0;->u(Lz71;)Ljava/lang/Object;"
+  },
+  {
+   "id": "vpn-runtime:00819",
+   "feature": "vpn-runtime",
+   "path": "smali/gg2.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Lnh2;->a(Ljava/lang/String;JLz71;)Ljava/lang/Object;"
+  },
+  {
+   "id": "editor-forms:00820",
+   "feature": "editor-forms",
+   "path": "smali/gl5.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lzm5;->invoke(Ljava/lang/Object;)Ljava/lang/Object;",
+   "actualCanonicalSha256": "c756349cfa382958d1ba4e889948ca52c0f302c1e907d9da1766016a01f9b1fb"
+  },
+  {
+   "id": "config-history:00821",
+   "feature": "config-history",
+   "path": "smali/gv4.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Luw4;-><init>(Luw1;Ln35;Le55;Ljava/util/List;Ljava/lang/String;ZLas3;Ljava/util/List;Lgw4;Landroid/content/Context;Ljava/lang/String;Lf55;Las3;Ljava/util/List;Ld55;Las3;ZLd52;Lo52;Log3;Las3;Las3;Las3;Ljava/lang/String;Lo52;Ljava/lang/String;Log3;Las3;Las3;Las3;Las3;)V"
+  },
+  {
+   "id": "shared-runtime:00823",
+   "feature": "shared-runtime",
+   "path": "smali/iv1.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Liw1;->p(Lz71;)Ljava/lang/Enum;"
+  },
+  {
+   "id": "shared-runtime:00824",
+   "feature": "shared-runtime",
+   "path": "smali/iv1.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Liw1;->v(Lz71;)Ljava/lang/Enum;"
+  },
+  {
+   "id": "vpn-runtime:00825",
+   "feature": "vpn-runtime",
+   "path": "smali/jw.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Ljx;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+   "actualCanonicalSha256": "d40717ea072eef10c32739b1892251aa1edb6329315e86ed38313e9ab65fe333"
+  },
+  {
+   "id": "vpn-runtime:00826",
+   "feature": "vpn-runtime",
+   "path": "smali/k37.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Lk37;->L(Landroid/content/Context;Ljava/lang/String;)V"
+  },
+  {
+   "id": "vpn-runtime:00827",
+   "feature": "vpn-runtime",
+   "path": "smali/kc3.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lgd3;->invoke(Ljava/lang/Object;)Ljava/lang/Object;",
+   "actualCanonicalSha256": "aad9307d90c16b5cbf93cb55364db48683ee85530e908348820b016598c4a6a8"
+  },
+  {
+   "id": "vpn-runtime:00828",
+   "feature": "vpn-runtime",
+   "path": "smali/kf3.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Lkf3;->F(ZZZLpy4;ZZZZLos4;Lo52;Lo52;Lo52;Lo52;Lo52;Lo52;Lo52;Ld52;Lv01;I)V"
+  },
+  {
+   "id": "root-runtime:01278",
+   "feature": "root-runtime",
+   "path": "smali/lt0.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lnu0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+   "actualCanonicalSha256": "dfe95b85788471270ef7dea1e5e7e3d79fe04ba38181fee8d761ebdf0d8b418e"
+  },
+  {
+   "id": "vpn-runtime:01279",
+   "feature": "vpn-runtime",
+   "path": "smali/lw4.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lyx4;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+   "actualCanonicalSha256": "157220dc13c0b47383f71b7cede5edf140d6182c8ccaebeaf7e3c602e688b887"
+  },
+  {
+   "id": "core-downloads:01280",
+   "feature": "core-downloads",
+   "path": "smali/ma1.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Llb1;->f(Ljava/lang/String;)Ljava/lang/String;",
+   "actualCanonicalSha256": "710763307bc80a13d1e436ab4bf99f3c2f80d7691b1cedaccb89602709c76c28"
+  },
+  {
+   "id": "root-runtime:01281",
+   "feature": "root-runtime",
+   "path": "smali/ma1.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Llb1;->d(Ljava/io/File;Lz71;)Ljava/lang/Object;"
+  },
+  {
+   "id": "core-downloads:01282",
+   "feature": "core-downloads",
+   "path": "smali/ma1.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Llb1;->g(Ljava/lang/String;Lz71;)Ljava/lang/Object;"
+  },
+  {
+   "id": "editor-forms:01283",
+   "feature": "editor-forms",
+   "path": "smali/mk5.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lem5;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+   "actualCanonicalSha256": "05d6f6770cb1d80a884289ba19adb3048a2b7f501a1594a5c2084c7ad027dff4"
+  },
+  {
+   "id": "vpn-runtime:01284",
+   "feature": "vpn-runtime",
+   "path": "smali/mv4.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lbx4;->invoke(Ljava/lang/Object;)Ljava/lang/Object;",
+   "actualCanonicalSha256": "4f2ccfcfb6bebd3d803f192a67bbf17aec04f2d30619879e735284de185cfbc6"
+  },
+  {
+   "id": "config-history:01285",
+   "feature": "config-history",
+   "path": "smali/n.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Ln;->p(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "id": "vpn-runtime:01286",
+   "feature": "vpn-runtime",
+   "path": "smali/n33.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Ln33;->n(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V"
+  },
+  {
+   "id": "vpn-runtime:01287",
+   "feature": "vpn-runtime",
+   "path": "smali/n87.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lv97;->invoke()Ljava/lang/Object;",
+   "actualCanonicalSha256": "80f6660cf58c9c7fe44e1ad323cf6abd4c957c1c8c9abd426f86db2876a35137"
+  },
+  {
+   "id": "vpn-runtime:01288",
+   "feature": "vpn-runtime",
+   "path": "smali/na0.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Lna0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "id": "config-history:01289",
+   "feature": "config-history",
+   "path": "smali/nw4.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Lzx4;-><init>(Ljava/util/List;Ljava/lang/String;Log3;Le55;Las3;Las3;Las3;Ljava/lang/String;Lgw4;Landroid/content/Context;Ljava/lang/String;Lo52;Ljava/lang/String;Log3;Las3;Las3;Las3;Las3;)V"
+  },
+  {
+   "id": "root-runtime:01291",
+   "feature": "root-runtime",
+   "path": "smali/o35.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lb55;->e(Le55;)Ljava/util/ArrayList;",
+   "actualCanonicalSha256": "6fff65f102d497bfe8173af636ebf4b7ce4db2218110be2ff5b7df0892bb6af7"
+  },
+  {
+   "id": "vpn-runtime:01292",
+   "feature": "vpn-runtime",
+   "path": "smali/o41.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lo51;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+   "actualCanonicalSha256": "88fb942ea1e583e95f288d5e85e1c359827eb8bdf7e5a21e059e654c9b14c565"
+  },
+  {
+   "id": "shared-runtime:01293",
+   "feature": "shared-runtime",
+   "path": "smali/oc7.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Loc7;->v(Ljava/io/InputStream;Ljava/lang/String;Ljava/io/File;Ljava/lang/Long;)V"
+  },
+  {
+   "id": "vpn-runtime:01294",
+   "feature": "vpn-runtime",
+   "path": "smali/p16.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Lp16;->invoke(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "id": "vpn-runtime:01295",
+   "feature": "vpn-runtime",
+   "path": "smali/p41.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lp51;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+   "actualCanonicalSha256": "8e5b9c58ee47bd3ebbaf8c203705a58cc4502ad8179e02e180586dc9ef20ba81"
+  },
+  {
+   "id": "vpn-runtime:01296",
+   "feature": "vpn-runtime",
+   "path": "smali/pe.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lse;->run()V",
+   "actualCanonicalSha256": "3db961d2affafaa5a74c7db9b5049d9565085e533c67f634304f135e1e36a55f"
+  },
+  {
+   "id": "vpn-runtime:01297",
+   "feature": "vpn-runtime",
+   "path": "smali/pw4.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lby4;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+   "actualCanonicalSha256": "8c43f90a921434c15f6617f63e8a1ad91f70a64a8a4447958fcfc3b016721276"
+  },
+  {
+   "id": "vpn-runtime:01298",
+   "feature": "vpn-runtime",
+   "path": "smali/qc6.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Lqc6;->invoke()Ljava/lang/Object;"
+  },
+  {
+   "id": "editor-forms:01299",
+   "feature": "editor-forms",
+   "path": "smali/qd3.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lme3;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+   "actualCanonicalSha256": "d92357694220da113c02be462cbba079498c2ba10a468d7a11af075c60a383e0"
+  },
+  {
+   "id": "vpn-runtime:01300",
+   "feature": "vpn-runtime",
+   "path": "smali/qt0.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lsu0;->b0()V",
+   "actualCanonicalSha256": "34f7741fff2667e47b1e7043c2f2582ca983a677a0ac604418f4e97bc4256d6e"
+  },
+  {
+   "id": "vpn-runtime:01301",
+   "feature": "vpn-runtime",
+   "path": "smali/qt0.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lsu0;->x(IILjava/lang/CharSequence;)V",
+   "actualCanonicalSha256": "57710a88fbb9f702521e12fe4b4237488a91efd307c638512ad456433212b888"
+  },
+  {
+   "id": "vpn-runtime:01302",
+   "feature": "vpn-runtime",
+   "path": "smali/qz6.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Lqz6;->P(Landroid/content/Context;Ljava/lang/String;)V"
+  },
+  {
+   "id": "vpn-runtime:01303",
+   "feature": "vpn-runtime",
+   "path": "smali/r31.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Ls41;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+   "actualCanonicalSha256": "e98e0ecea1efa8f48af05851af8f3d5d12836c00574fd0aead538504fe7ec7de"
+  },
+  {
+   "id": "vpn-runtime:01306",
+   "feature": "vpn-runtime",
+   "path": "smali/ss0.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lvt0;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+   "actualCanonicalSha256": "8a9bab0206a57f599b6a918d732dcbbfc825cf4697e8b145fd82aa1324d1a0a9"
+  },
+  {
+   "id": "root-runtime:01308",
+   "feature": "root-runtime",
+   "path": "smali/td5.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Ljf5;->f(JLy71;Ljava/lang/String;)Ljava/lang/Object;"
+  },
+  {
+   "id": "shared-runtime:01309",
+   "feature": "shared-runtime",
+   "path": "smali/td5.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Ljf5;->a(Lz71;)Ljava/lang/Object;"
+  },
+  {
+   "id": "vpn-runtime:01493",
+   "feature": "vpn-runtime",
+   "path": "smali/u23.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Lu23;->J(Ljava/util/List;ZLr35;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)Ljava/util/List;"
+  },
+  {
+   "id": "vpn-runtime:01494",
+   "feature": "vpn-runtime",
+   "path": "smali/u94.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lib4;-><init>(Lhb4;)V",
+   "actualCanonicalSha256": "4f1cf1801b2b3d465556311b30997763ec5f743cef17257f6336e9b59da5d43d"
+  },
+  {
+   "id": "vpn-runtime:01495",
+   "feature": "vpn-runtime",
+   "path": "smali/uv4.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Luv4;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "id": "shared-runtime:01496",
+   "feature": "shared-runtime",
+   "path": "smali/vu4.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Lvu4;->invoke(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "id": "vpn-runtime:01497",
+   "feature": "vpn-runtime",
+   "path": "smali/w23.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Lw23;->u(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V"
+  },
+  {
+   "id": "vpn-runtime:01498",
+   "feature": "vpn-runtime",
+   "path": "smali/wa0.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lzb0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+   "actualCanonicalSha256": "d2bd3b9f3a373e05fd0ad978d4da94477095a37070a3687b2ce70d264fe74580"
+  },
+  {
+   "id": "vpn-runtime:01499",
+   "feature": "vpn-runtime",
+   "path": "smali/wc6.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Loe6;->invoke()Ljava/lang/Object;",
+   "actualCanonicalSha256": "55f02b04b0b55cbc4bb0f75b97508afc2188847a79a7e79811a3f41736ab02c6"
+  },
+  {
+   "id": "vpn-runtime:01500",
+   "feature": "vpn-runtime",
+   "path": "smali/wf2.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Ldh2;->a(Li91;Lz71;)Ljava/lang/Object;"
+  },
+  {
+   "id": "shared-runtime:01501",
+   "feature": "shared-runtime",
+   "path": "smali/x61.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lx71;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+   "actualCanonicalSha256": "6d7925b7972f209c91123c18742f6948ad575d82545b49af2d8116aff848623c"
+  },
+  {
+   "id": "shared-runtime:01502",
+   "feature": "shared-runtime",
+   "path": "smali/xa4.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Lxa4;->j(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "id": "vpn-runtime:01503",
+   "feature": "vpn-runtime",
+   "path": "smali/xf2.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Leh2;->invoke(Ljava/lang/Object;)Ljava/lang/Object;",
+   "actualCanonicalSha256": "0c1d3580e9571722491bf738772199ed6375b4e2c0ff987da1e128bf2d71822c"
+  },
+  {
+   "id": "editor-forms:01504",
+   "feature": "editor-forms",
+   "path": "smali/xk5.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lqm5;->j(Z)V",
+   "actualCanonicalSha256": "be849b1b10c273f5536c22cb3a77a0866797fbcb6889535b75c1223f2fe1a7f2"
+  },
+  {
+   "id": "editor-forms:01505",
+   "feature": "editor-forms",
+   "path": "smali/xk5.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Lqm5;->m(Ljava/lang/String;)V",
+   "actualCanonicalSha256": "c8397a10f9735515279b98c13ca21fb4a6b65e16169501886725716a96aa4b84"
+  },
+  {
+   "id": "shared-runtime:01507",
+   "feature": "shared-runtime",
+   "path": "smali/yd0.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Lyd0;->P(Lf55;Lt72;)Ljava/lang/String;"
+  },
+  {
+   "id": "vpn-runtime:01508",
+   "feature": "vpn-runtime",
+   "path": "smali/z0.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "La1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;",
+   "actualCanonicalSha256": "468bb2081d8750417ba2910f53891a2465b6486275a6254c80a2fcd4ddebd36b"
+  },
+  {
+   "id": "vpn-runtime:01509",
+   "feature": "vpn-runtime",
+   "path": "smali/zj.smali",
+   "reason": "Upstream method changed: exact instruction guard failed; manual adaptation required",
+   "targetMember": "Ldk;->a(Lek;Z)V",
+   "actualCanonicalSha256": "e20321e28de45c00d53b14770534c8b3b55bffdea90ad68d52a908700193b0e3"
+  },
+  {
+   "id": "vpn-runtime:01510",
+   "feature": "vpn-runtime",
+   "path": "smali/zj.smali",
+   "reason": "Target member missing; explicit binding required",
+   "targetMember": "Ldk;->f(Lz71;)Ljava/lang/Object;"
+  }
+ ],
+ "requiredValidation": [
+  "internal member checks",
+  "smali assembly and APK rebuild",
+  "behavior regressions",
+  "Android root/non-root and same-key upgrade tests"
+ ]
+}

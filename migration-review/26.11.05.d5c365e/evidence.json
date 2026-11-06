@@ -1,0 +1,5563 @@
+{
+ "types": {
+  "La03;": "tier1-unique-fingerprint",
+  "La14;": "unresolved",
+  "La15;": "unresolved",
+  "La46;": "tier2-round0",
+  "Laa0;": "unresolved",
+  "Lab4;": "unresolved",
+  "Lah4;": "unresolved",
+  "Lai3;": "unresolved",
+  "Lai;": "tier1-unique-fingerprint",
+  "Laj2;": "unresolved",
+  "Lak;": "tier1-unique-fingerprint",
+  "Lam0;": "unresolved",
+  "Lan3;": "unresolved",
+  "Landroid/window/OnBackInvokedCallback;": "unresolved",
+  "Lao0;": "tier1-unique-fingerprint",
+  "Lao;": "tier1-unique-fingerprint",
+  "Lap0;": "unresolved",
+  "Laq6;": "tier1-unique-fingerprint",
+  "Lar2;": "tier1-unique-fingerprint",
+  "Lar3;": "unresolved",
+  "Lar;": "tier1-unique-fingerprint",
+  "Las3;": "unresolved",
+  "Lau0;": "tier1-unique-fingerprint",
+  "Law4;": "tier3-full-signature",
+  "Lb46;": "unresolved",
+  "Lb54;": "unresolved",
+  "Lbb1;": "unresolved",
+  "Lbb4;": "unresolved",
+  "Lbd6;": "unresolved",
+  "Lbf7;": "tier1-unique-fingerprint",
+  "Lbh;": "tier1-unique-fingerprint",
+  "Lbj2;": "unresolved",
+  "Lbk4;": "tier1-unique-fingerprint",
+  "Lbk5;": "tier1-unique-fingerprint",
+  "Lbl5;": "tier1-unique-fingerprint",
+  "Lbm2;": "tier1-unique-fingerprint",
+  "Lbo0;": "tier1-unique-fingerprint",
+  "Lbo4;": "tier1-unique-fingerprint",
+  "Lbq0;": "tier1-unique-fingerprint",
+  "Lbu0;": "tier1-unique-fingerprint",
+  "Lbw6;": "tier1-unique-fingerprint",
+  "Lbw;": "tier1-unique-fingerprint",
+  "Lbx1;": "tier1-unique-fingerprint",
+  "Lbx4;": "unresolved",
+  "Lbz;": "tier1-unique-fingerprint",
+  "Lc01;": "unresolved",
+  "Lc03;": "tier1-unique-fingerprint",
+  "Lc12;": "unresolved",
+  "Lc25;": "tier1-unique-fingerprint",
+  "Lc35;": "tier1-unique-fingerprint",
+  "Lc6;": "tier1-unique-fingerprint",
+  "Lc75;": "unresolved",
+  "Lc91;": "tier1-unique-fingerprint",
+  "Lca1;": "tier1-unique-fingerprint",
+  "Lcb1;": "tier1-unique-fingerprint",
+  "Lcf2;": "tier1-unique-fingerprint",
+  "Lcf;": "unresolved",
+  "Lcg2;": "unresolved",
+  "Lcj0;": "unresolved",
+  "Lcn;": "tier1-unique-fingerprint",
+  "Lco2;": "unresolved",
+  "Lco5;": "tier1-unique-fingerprint",
+  "Lcom/box/app/AppApplication;": "tier1-unique-fingerprint",
+  "Lcom/box/app/notification/BoxPersistentNotificationService;": "tier1-unique-fingerprint",
+  "Lcom/box/app/tile/BoxServiceTileService;": "tier1-unique-fingerprint",
+  "Lcr4;": "tier1-unique-fingerprint",
+  "Lct0;": "tier1-unique-fingerprint",
+  "Lct4;": "unresolved",
+  "Lcw4;": "tier1-unique-fingerprint",
+  "Ld01;": "tier1-unique-fingerprint",
+  "Ld37;": "tier1-unique-fingerprint",
+  "Ld3;": "tier1-unique-fingerprint",
+  "Ld40;": "tier1-unique-fingerprint",
+  "Ld43;": "unresolved",
+  "Ld52;": "unresolved",
+  "Ld53;": "unresolved",
+  "Ld91;": "tier1-unique-fingerprint",
+  "Lda1;": "tier1-unique-fingerprint",
+  "Ldb0;": "unresolved",
+  "Ldc1;": "tier1-unique-fingerprint",
+  "Ldf2;": "tier1-unique-fingerprint",
+  "Ldf6;": "tier1-unique-fingerprint",
+  "Ldg1;": "unresolved",
+  "Ldg2;": "unresolved",
+  "Ldg;": "tier1-unique-fingerprint",
+  "Ldj6;": "tier1-unique-fingerprint",
+  "Ldk4;": "unresolved",
+  "Ldk;": "unresolved",
+  "Ldm2;": "tier1-unique-fingerprint",
+  "Ldo2;": "unresolved",
+  "Ldq0;": "tier1-unique-fingerprint",
+  "Ldr1;": "tier1-unique-fingerprint",
+  "Lds1;": "tier1-unique-fingerprint",
+  "Ldt0;": "unresolved",
+  "Ldt4;": "tier1-unique-fingerprint",
+  "Ldu;": "unresolved",
+  "Ldv6;": "tier1-unique-fingerprint",
+  "Ldw4;": "unresolved",
+  "Ldw;": "tier1-unique-fingerprint",
+  "Ldx4;": "tier1-unique-fingerprint",
+  "Le02;": "tier1-unique-fingerprint",
+  "Le0;": "unresolved",
+  "Le16;": "tier1-unique-fingerprint",
+  "Le25;": "tier1-unique-fingerprint",
+  "Le37;": "unresolved",
+  "Le3;": "tier3-full-signature",
+  "Le53;": "tier1-unique-fingerprint",
+  "Le7;": "unresolved",
+  "Le81;": "tier1-unique-fingerprint",
+  "Le93;": "tier1-unique-fingerprint",
+  "Leb0;": "unresolved",
+  "Led6;": "tier1-unique-fingerprint",
+  "Led;": "tier1-unique-fingerprint",
+  "Leg1;": "unresolved",
+  "Leg2;": "tier1-unique-fingerprint",
+  "Leg3;": "unresolved",
+  "Lem0;": "tier1-unique-fingerprint",
+  "Leo0;": "unresolved",
+  "Leo2;": "unresolved",
+  "Lep6;": "tier1-unique-fingerprint",
+  "Leu2;": "tier1-unique-fingerprint",
+  "Leu;": "tier1-unique-fingerprint",
+  "Lev1;": "tier1-unique-fingerprint",
+  "Ley6;": "unresolved",
+  "Lf02;": "unresolved",
+  "Lf16;": "tier1-unique-fingerprint",
+  "Lf2;": "tier1-unique-fingerprint",
+  "Lf47;": "unresolved",
+  "Lfa2;": "tier1-unique-fingerprint",
+  "Lff2;": "tier1-unique-fingerprint",
+  "Lfk4;": "unresolved",
+  "Lfm0;": "tier1-unique-fingerprint",
+  "Lfp2;": "tier1-unique-fingerprint",
+  "Lfp6;": "tier1-unique-fingerprint",
+  "Lft;": "tier1-unique-fingerprint",
+  "Lfw;": "tier1-unique-fingerprint",
+  "Lg02;": "unresolved",
+  "Lg17;": "tier1-unique-fingerprint",
+  "Lg23;": "unresolved",
+  "Lg74;": "tier1-unique-fingerprint",
+  "Lg85;": "tier1-unique-fingerprint",
+  "Lgb0;": "tier1-unique-fingerprint",
+  "Lgd5;": "tier1-unique-fingerprint",
+  "Lgf1;": "tier1-unique-fingerprint",
+  "Lgg2;": "tier1-unique-fingerprint",
+  "Lgk5;": "tier3-full-signature",
+  "Lgl4;": "tier1-unique-fingerprint",
+  "Lgl5;": "tier1-unique-fingerprint",
+  "Lgm0;": "tier1-unique-fingerprint",
+  "Lgo2;": "unresolved",
+  "Lgp2;": "unresolved",
+  "Lgp6;": "unresolved",
+  "Lgs3;": "tier1-unique-fingerprint",
+  "Lgt0;": "tier1-unique-fingerprint",
+  "Lgt4;": "tier1-unique-fingerprint",
+  "Lgv4;": "tier1-unique-fingerprint",
+  "Lh01;": "tier1-unique-fingerprint",
+  "Lh17;": "unresolved",
+  "Lh25;": "tier1-unique-fingerprint",
+  "Lh3;": "tier1-unique-fingerprint",
+  "Lh72;": "unresolved",
+  "Lh74;": "tier1-unique-fingerprint",
+  "Lh86;": "tier1-unique-fingerprint",
+  "Lhf;": "tier1-unique-fingerprint",
+  "Lhj6;": "unresolved",
+  "Lhm1;": "tier1-unique-fingerprint",
+  "Lhm2;": "unresolved",
+  "Lhm;": "tier1-unique-fingerprint",
+  "Lhn5;": "unresolved",
+  "Lho3;": "tier1-unique-fingerprint",
+  "Lht0;": "unresolved",
+  "Lht;": "tier1-unique-fingerprint",
+  "Lhu;": "tier1-unique-fingerprint",
+  "Lhv4;": "unresolved",
+  "Lhw;": "tier1-unique-fingerprint",
+  "Li4;": "unresolved",
+  "Li50;": "unresolved",
+  "Li75;": "tier1-unique-fingerprint",
+  "Li81;": "tier1-unique-fingerprint",
+  "Lia1;": "unresolved",
+  "Lib6;": "tier1-unique-fingerprint",
+  "Lid0;": "tier1-unique-fingerprint",
+  "Lie1;": "tier1-unique-fingerprint",
+  "Lil5;": "unresolved",
+  "Lim0;": "tier1-unique-fingerprint",
+  "Lin6;": "unresolved",
+  "Lio1;": "tier1-unique-fingerprint",
+  "Lir2;": "tier1-unique-fingerprint",
+  "Lit0;": "tier1-unique-fingerprint",
+  "Liu;": "tier1-unique-fingerprint",
+  "Liv1;": "tier1-unique-fingerprint",
+  "Liv4;": "unresolved",
+  "Liw4;": "unresolved",
+  "Liw;": "unresolved",
+  "Lj02;": "unresolved",
+  "Lj15;": "tier1-unique-fingerprint",
+  "Lj17;": "tier1-unique-fingerprint",
+  "Lj23;": "unresolved",
+  "Lj35;": "tier1-unique-fingerprint",
+  "Lj66;": "tier1-unique-fingerprint",
+  "Lj90;": "tier1-unique-fingerprint",
+  "Lj94;": "tier1-unique-fingerprint",
+  "Lja0;": "tier1-unique-fingerprint",
+  "Lja5;": "unresolved",
+  "Ljb6;": "tier1-unique-fingerprint",
+  "Ljg2;": "tier1-unique-fingerprint",
+  "Ljg3;": "tier1-unique-fingerprint",
+  "Ljj0;": "tier1-unique-fingerprint",
+  "Ljl5;": "tier1-unique-fingerprint",
+  "Ljo0;": "tier1-unique-fingerprint",
+  "Ljo1;": "tier1-unique-fingerprint",
+  "Ljo6;": "tier1-unique-fingerprint",
+  "Lju5;": "unresolved",
+  "Ljv1;": "tier1-unique-fingerprint",
+  "Ljv4;": "tier3-full-signature",
+  "Ljw4;": "unresolved",
+  "Ljw;": "tier1-unique-fingerprint",
+  "Ljz;": "tier1-unique-fingerprint",
+  "Lk02;": "tier1-unique-fingerprint",
+  "Lk25;": "tier1-unique-fingerprint",
+  "Lk27;": "tier1-unique-fingerprint",
+  "Lk37;": "unresolved",
+  "Lk83;": "tier1-unique-fingerprint",
+  "Lka1;": "unresolved",
+  "Lkc3;": "tier1-unique-fingerprint",
+  "Lkd0;": "tier1-unique-fingerprint",
+  "Lkd3;": "tier1-unique-fingerprint",
+  "Lkd5;": "tier1-unique-fingerprint",
+  "Lke1;": "tier1-unique-fingerprint",
+  "Lke5;": "unresolved",
+  "Lkf3;": "unresolved",
+  "Lkf4;": "unresolved",
+  "Lkh3;": "tier1-unique-fingerprint",
+  "Lki2;": "tier2-round0",
+  "Lkm2;": "tier1-unique-fingerprint",
+  "Lkq0;": "tier1-unique-fingerprint",
+  "Lkr6;": "tier1-unique-fingerprint",
+  "Lku;": "tier1-unique-fingerprint",
+  "Lkv6;": "unresolved",
+  "Lkw0;": "unresolved",
+  "Lkw;": "tier1-unique-fingerprint",
+  "Ll13;": "tier2-round0",
+  "Ll32;": "tier1-unique-fingerprint",
+  "Ll90;": "tier3-full-signature",
+  "Ll;": "unresolved",
+  "Lla5;": "tier1-unique-fingerprint",
+  "Llb0;": "tier2-round0",
+  "Lld5;": "tier1-unique-fingerprint",
+  "Llg6;": "tier1-unique-fingerprint",
+  "Llh;": "tier1-unique-fingerprint",
+  "Lli2;": "tier1-unique-fingerprint",
+  "Llj0;": "tier1-unique-fingerprint",
+  "Llj1;": "unresolved",
+  "Llk2;": "tier1-unique-fingerprint",
+  "Llm2;": "unresolved",
+  "Llm;": "tier1-unique-fingerprint",
+  "Llo4;": "tier1-unique-fingerprint",
+  "Llr2;": "unresolved",
+  "Lls3;": "unresolved",
+  "Llt0;": "tier1-unique-fingerprint",
+  "Llu;": "tier1-unique-fingerprint",
+  "Llv;": "unresolved",
+  "Llw4;": "tier1-unique-fingerprint",
+  "Llx5;": "tier2-round0",
+  "Lm01;": "unresolved",
+  "Lm32;": "unresolved",
+  "Lm35;": "tier1-unique-fingerprint",
+  "Lm46;": "unresolved",
+  "Lm71;": "tier1-unique-fingerprint",
+  "Lm94;": "tier2-round0",
+  "Lma1;": "tier1-unique-fingerprint",
+  "Lma5;": "unresolved",
+  "Lmc7;": "tier1-unique-fingerprint",
+  "Lmc;": "unresolved",
+  "Lmd4;": "tier1-unique-fingerprint",
+  "Lmd5;": "unresolved",
+  "Lme5;": "unresolved",
+  "Lmf2;": "tier1-unique-fingerprint",
+  "Lmk5;": "tier1-unique-fingerprint",
+  "Lmm0;": "unresolved",
+  "Lmo1;": "tier1-unique-fingerprint",
+  "Lmp1;": "unresolved",
+  "Lmp4;": "tier2-round0",
+  "Lmq0;": "tier1-unique-fingerprint",
+  "Lmt0;": "tier1-unique-fingerprint",
+  "Lmt1;": "tier1-unique-fingerprint",
+  "Lmt6;": "unresolved",
+  "Lmt;": "tier1-unique-fingerprint",
+  "Lmv4;": "tier1-unique-fingerprint",
+  "Lmv6;": "unresolved",
+  "Lmw4;": "tier3-full-signature",
+  "Ln25;": "tier1-unique-fingerprint",
+  "Ln33;": "unresolved",
+  "Ln35;": "unresolved",
+  "Ln50;": "unresolved",
+  "Ln61;": "tier1-unique-fingerprint",
+  "Ln81;": "tier3-full-signature",
+  "Ln87;": "tier1-unique-fingerprint",
+  "Ln;": "unresolved",
+  "Lna0;": "unresolved",
+  "Lna1;": "tier1-unique-fingerprint",
+  "Lnb0;": "tier1-unique-fingerprint",
+  "Lnb3;": "tier1-unique-fingerprint",
+  "Lnc0;": "unresolved",
+  "Lnc7;": "unresolved",
+  "Lnd0;": "tier1-unique-fingerprint",
+  "Lne;": "tier1-unique-fingerprint",
+  "Lnf2;": "unresolved",
+  "Lnf3;": "tier1-unique-fingerprint",
+  "Lnf;": "tier1-unique-fingerprint",
+  "Lnh;": "unresolved",
+  "Lnk0;": "tier1-unique-fingerprint",
+  "Lnk4;": "tier1-unique-fingerprint",
+  "Lnm3;": "tier1-unique-fingerprint",
+  "Lnm;": "tier1-unique-fingerprint",
+  "Lnn6;": "tier1-unique-fingerprint",
+  "Lnn;": "unresolved",
+  "Lno6;": "tier1-unique-fingerprint",
+  "Lnr5;": "tier1-unique-fingerprint",
+  "Lns1;": "unresolved",
+  "Lns6;": "unresolved",
+  "Lns;": "tier1-unique-fingerprint",
+  "Lnu0;": "tier1-unique-fingerprint",
+  "Lnv;": "tier1-unique-fingerprint",
+  "Lnw0;": "tier1-unique-fingerprint",
+  "Lnw4;": "tier1-unique-fingerprint",
+  "Lnw6;": "unresolved",
+  "Lnw;": "unresolved",
+  "Lo0;": "unresolved",
+  "Lo1;": "tier1-unique-fingerprint",
+  "Lo25;": "tier1-unique-fingerprint",
+  "Lo26;": "tier1-unique-fingerprint",
+  "Lo2;": "tier1-unique-fingerprint",
+  "Lo35;": "tier1-unique-fingerprint",
+  "Lo36;": "unresolved",
+  "Lo41;": "tier1-unique-fingerprint",
+  "Lo44;": "tier1-unique-fingerprint",
+  "Lo52;": "unresolved",
+  "Lo66;": "tier1-unique-fingerprint",
+  "Lo75;": "tier1-unique-fingerprint",
+  "Lo84;": "tier1-unique-fingerprint",
+  "Lo86;": "tier1-unique-fingerprint",
+  "Lo91;": "tier3-full-signature",
+  "Loa2;": "tier1-unique-fingerprint",
+  "Loa5;": "unresolved",
+  "Lob0;": "tier1-unique-fingerprint",
+  "Lob2;": "tier1-unique-fingerprint",
+  "Lob5;": "tier1-unique-fingerprint",
+  "Loc7;": "unresolved",
+  "Loc;": "tier1-unique-fingerprint",
+  "Loe2;": "unresolved",
+  "Loe;": "tier3-full-signature",
+  "Lol2;": "unresolved",
+  "Lom;": "tier2-round0",
+  "Lop5;": "tier1-unique-fingerprint",
+  "Lor6;": "tier1-unique-fingerprint",
+  "Lorg/chromium/support_lib_boundary/ProxyControllerBoundaryInterface;": "tier1-unique-fingerprint",
+  "Lorg/chromium/support_lib_boundary/WebViewProviderFactoryBoundaryInterface;": "tier1-unique-fingerprint",
+  "Los2;": "unresolved",
+  "Lou;": "tier1-unique-fingerprint",
+  "Low4;": "tier1-unique-fingerprint",
+  "Loy0;": "tier1-unique-fingerprint",
+  "Loz1;": "tier2-round0",
+  "Lp16;": "unresolved",
+  "Lp25;": "tier1-unique-fingerprint",
+  "Lp26;": "tier1-unique-fingerprint",
+  "Lp2;": "tier1-unique-fingerprint",
+  "Lp41;": "tier1-unique-fingerprint",
+  "Lp6;": "tier1-unique-fingerprint",
+  "Lp76;": "tier1-unique-fingerprint",
+  "Lp84;": "tier1-unique-fingerprint",
+  "Lp87;": "unresolved",
+  "Lpb1;": "tier1-unique-fingerprint",
+  "Lpb6;": "tier1-unique-fingerprint",
+  "Lpb;": "tier1-unique-fingerprint",
+  "Lpd3;": "tier1-unique-fingerprint",
+  "Lpd5;": "tier1-unique-fingerprint",
+  "Lpe2;": "tier1-unique-fingerprint",
+  "Lpe;": "tier1-unique-fingerprint",
+  "Lpg;": "unresolved",
+  "Lpq1;": "tier1-unique-fingerprint",
+  "Lps2;": "unresolved",
+  "Lps3;": "tier1-unique-fingerprint",
+  "Lpw1;": "tier1-unique-fingerprint",
+  "Lpw4;": "tier1-unique-fingerprint",
+  "Lpw6;": "tier1-unique-fingerprint",
+  "Lpx6;": "unresolved",
+  "Lpy;": "unresolved",
+  "Lq02;": "unresolved",
+  "Lq03;": "unresolved",
+  "Lq35;": "tier1-unique-fingerprint",
+  "Lq4;": "tier1-unique-fingerprint",
+  "Lq50;": "unresolved",
+  "Lq66;": "tier1-unique-fingerprint",
+  "Lqb2;": "unresolved",
+  "Lqb5;": "tier1-unique-fingerprint",
+  "Lqc0;": "unresolved",
+  "Lqc6;": "unresolved",
+  "Lqd3;": "tier1-unique-fingerprint",
+  "Lqe2;": "tier1-unique-fingerprint",
+  "Lqe;": "tier1-unique-fingerprint",
+  "Lql1;": "unresolved",
+  "Lqp0;": "tier1-unique-fingerprint",
+  "Lqq5;": "tier1-unique-fingerprint",
+  "Lqr6;": "tier1-unique-fingerprint",
+  "Lqs1;": "tier1-unique-fingerprint",
+  "Lqt0;": "tier1-unique-fingerprint",
+  "Lqu1;": "tier1-unique-fingerprint",
+  "Lqv;": "tier1-unique-fingerprint",
+  "Lqx5;": "unresolved",
+  "Lqy3;": "tier1-unique-fingerprint",
+  "Lqz6;": "unresolved",
+  "Lr00;": "unresolved",
+  "Lr26;": "tier1-unique-fingerprint",
+  "Lr31;": "tier1-unique-fingerprint",
+  "Lr35;": "tier1-unique-fingerprint",
+  "Lr3;": "unresolved",
+  "Lr75;": "tier1-unique-fingerprint",
+  "Lr87;": "unresolved",
+  "Lr96;": "unresolved",
+  "Lr97;": "unresolved",
+  "Lrd1;": "unresolved",
+  "Lrd4;": "tier3-full-signature",
+  "Lrh0;": "tier1-unique-fingerprint",
+  "Lri2;": "tier1-unique-fingerprint",
+  "Lro1;": "tier1-unique-fingerprint",
+  "Lrz1;": "tier1-unique-fingerprint",
+  "Ls06;": "tier1-unique-fingerprint",
+  "Ls1;": "tier3-full-signature",
+  "Ls35;": "tier1-unique-fingerprint",
+  "Ls52;": "tier3-full-signature",
+  "Ls61;": "tier1-unique-fingerprint",
+  "Ls62;": "tier1-unique-fingerprint",
+  "Ls63;": "tier1-unique-fingerprint",
+  "Ls77;": "unresolved",
+  "Ls85;": "tier1-unique-fingerprint",
+  "Ls96;": "tier1-unique-fingerprint",
+  "Lsa1;": "unresolved",
+  "Lsa5;": "tier1-unique-fingerprint",
+  "Lsb0;": "tier1-unique-fingerprint",
+  "Lsd7;": "tier1-unique-fingerprint",
+  "Lsf2;": "tier1-unique-fingerprint",
+  "Lsf3;": "tier1-unique-fingerprint",
+  "Lsi3;": "tier1-unique-fingerprint",
+  "Lsj0;": "tier1-unique-fingerprint",
+  "Lsl1;": "unresolved",
+  "Lsm3;": "tier1-unique-fingerprint",
+  "Lsq2;": "tier1-unique-fingerprint",
+  "Lsr1;": "tier1-unique-fingerprint",
+  "Lsr6;": "tier1-unique-fingerprint",
+  "Lss0;": "tier1-unique-fingerprint",
+  "Lss5;": "unresolved",
+  "Lsu4;": "unresolved",
+  "Lsv0;": "tier1-unique-fingerprint",
+  "Lsv;": "tier1-unique-fingerprint",
+  "Lsz0;": "tier1-unique-fingerprint",
+  "Lt01;": "tier2-round0",
+  "Lt06;": "tier2-round0",
+  "Lt31;": "tier1-unique-fingerprint",
+  "Lt35;": "tier1-unique-fingerprint",
+  "Lt52;": "tier3-full-signature",
+  "Lt67;": "unresolved",
+  "Lt87;": "unresolved",
+  "Lt8;": "tier1-unique-fingerprint",
+  "Lt94;": "tier1-unique-fingerprint",
+  "Lt97;": "unresolved",
+  "Lta0;": "tier1-unique-fingerprint",
+  "Ltb0;": "tier1-unique-fingerprint",
+  "Ltb5;": "tier1-unique-fingerprint",
+  "Ltc0;": "unresolved",
+  "Ltd5;": "tier1-unique-fingerprint",
+  "Ltd7;": "tier1-unique-fingerprint",
+  "Lte0;": "tier1-unique-fingerprint",
+  "Lte2;": "tier1-unique-fingerprint",
+  "Ltf0;": "unresolved",
+  "Ltj0;": "tier1-unique-fingerprint",
+  "Ltj5;": "tier1-unique-fingerprint",
+  "Ltk5;": "tier1-unique-fingerprint",
+  "Ltl1;": "unresolved",
+  "Lto4;": "unresolved",
+  "Lto6;": "tier1-unique-fingerprint",
+  "Ltp1;": "unresolved",
+  "Ltu4;": "tier1-unique-fingerprint",
+  "Ltv0;": "unresolved",
+  "Ltv1;": "tier1-unique-fingerprint",
+  "Ltw1;": "unresolved",
+  "Ltw5;": "tier1-unique-fingerprint",
+  "Ltx4;": "tier1-unique-fingerprint",
+  "Lu23;": "unresolved",
+  "Lu26;": "tier1-unique-fingerprint",
+  "Lu37;": "tier1-unique-fingerprint",
+  "Lu41;": "unresolved",
+  "Lu94;": "tier1-unique-fingerprint",
+  "Lu96;": "unresolved",
+  "Lua0;": "unresolved",
+  "Lub5;": "tier1-unique-fingerprint",
+  "Lub6;": "tier2-round0",
+  "Lue2;": "tier1-unique-fingerprint",
+  "Luf6;": "unresolved",
+  "Luj4;": "tier1-unique-fingerprint",
+  "Luj5;": "tier1-unique-fingerprint",
+  "Lul1;": "unresolved",
+  "Luu6;": "unresolved",
+  "Luv4;": "unresolved",
+  "Luw1;": "unresolved",
+  "Luw2;": "unresolved",
+  "Luw5;": "unresolved",
+  "Lux1;": "tier1-unique-fingerprint",
+  "Lv01;": "unresolved",
+  "Lv26;": "tier1-unique-fingerprint",
+  "Lv72;": "tier1-unique-fingerprint",
+  "Lv85;": "tier2-round0",
+  "Lv90;": "tier1-unique-fingerprint",
+  "Lv9;": "tier1-unique-fingerprint",
+  "Lva0;": "tier1-unique-fingerprint",
+  "Lva5;": "tier1-unique-fingerprint",
+  "Lvd1;": "tier1-unique-fingerprint",
+  "Lve3;": "unresolved",
+  "Lvf2;": "unresolved",
+  "Lvh3;": "tier1-unique-fingerprint",
+  "Lvi6;": "tier1-unique-fingerprint",
+  "Lvj1;": "unresolved",
+  "Lvj;": "tier1-unique-fingerprint",
+  "Lvk6;": "tier1-unique-fingerprint",
+  "Lvn3;": "unresolved",
+  "Lvo1;": "tier1-unique-fingerprint",
+  "Lvu1;": "tier1-unique-fingerprint",
+  "Lvu4;": "tier3-full-signature",
+  "Lvy3;": "tier1-unique-fingerprint",
+  "Lw17;": "tier1-unique-fingerprint",
+  "Lw23;": "unresolved",
+  "Lw26;": "unresolved",
+  "Lw6;": "tier1-unique-fingerprint",
+  "Lw85;": "tier2-round0",
+  "Lw93;": "unresolved",
+  "Lwa0;": "tier1-unique-fingerprint",
+  "Lwb0;": "tier1-unique-fingerprint",
+  "Lwb5;": "tier2-round0",
+  "Lwc0;": "unresolved",
+  "Lwc6;": "tier1-unique-fingerprint",
+  "Lwf2;": "tier1-unique-fingerprint",
+  "Lwo6;": "unresolved",
+  "Lwq;": "unresolved",
+  "Lwx1;": "tier1-unique-fingerprint",
+  "Lx07;": "unresolved",
+  "Lx23;": "unresolved",
+  "Lx34;": "unresolved",
+  "Lx37;": "unresolved",
+  "Lx61;": "tier1-unique-fingerprint",
+  "Lx64;": "tier1-unique-fingerprint",
+  "Lx81;": "tier1-unique-fingerprint",
+  "Lx90;": "tier1-unique-fingerprint",
+  "Lx96;": "tier1-unique-fingerprint",
+  "Lx;": "tier1-unique-fingerprint",
+  "Lxa4;": "unresolved",
+  "Lxa;": "unresolved",
+  "Lxe1;": "unresolved",
+  "Lxf2;": "tier1-unique-fingerprint",
+  "Lxh3;": "unresolved",
+  "Lxi5;": "unresolved",
+  "Lxk0;": "tier1-unique-fingerprint",
+  "Lxk5;": "tier1-unique-fingerprint",
+  "Lxk;": "unresolved",
+  "Lxl2;": "unresolved",
+  "Lxp0;": "unresolved",
+  "Lxr0;": "unresolved",
+  "Lxt2;": "tier1-unique-fingerprint",
+  "Lxu;": "tier1-unique-fingerprint",
+  "Ly00;": "tier1-unique-fingerprint",
+  "Ly02;": "tier1-unique-fingerprint",
+  "Ly25;": "tier1-unique-fingerprint",
+  "Ly31;": "tier1-unique-fingerprint",
+  "Ly35;": "unresolved",
+  "Ly43;": "unresolved",
+  "Ly6;": "tier1-unique-fingerprint",
+  "Ly71;": "unresolved",
+  "Ly77;": "tier1-unique-fingerprint",
+  "Ly90;": "tier1-unique-fingerprint",
+  "Lya0;": "unresolved",
+  "Lyd0;": "unresolved",
+  "Lyg1;": "tier1-unique-fingerprint",
+  "Lyj;": "unresolved",
+  "Lyk5;": "tier1-unique-fingerprint",
+  "Lyo1;": "tier1-unique-fingerprint",
+  "Lz0;": "tier1-unique-fingerprint",
+  "Lz24;": "unresolved",
+  "Lz61;": "tier1-unique-fingerprint",
+  "Lz71;": "unresolved",
+  "Lz85;": "tier2-round0",
+  "Lz91;": "unresolved",
+  "Lza4;": "tier1-unique-fingerprint",
+  "Lzh4;": "unresolved",
+  "Lzj;": "tier1-unique-fingerprint",
+  "Lzl0;": "tier1-unique-fingerprint",
+  "Lzq4;": "tier1-unique-fingerprint",
+  "Lzq;": "tier1-unique-fingerprint",
+  "Lzu1;": "tier1-unique-fingerprint",
+  "Lzu6;": "unresolved",
+  "Lzv4;": "tier3-full-signature",
+  "Lzw1;": "tier1-unique-fingerprint",
+  "Lzw5;": "tier1-unique-fingerprint"
+ },
+ "members": {
+  "Llw4;->j:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Llw4;->p:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Llw4;->k:Lr35;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Llw4;->l:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Llw4;->s:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Llw4;->m:Ltu4;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Llw4;->n:Landroid/content/Context;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Llw4;->o:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Llw4;->q:Ls35;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Llw4;->r:Lq35;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Llw4;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lc35;->g:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lbz;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Ld01;->d:Ls52;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ld01;->e:Lnd0;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lp6;->P:Lsz0;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lp6;->Q:Lsz0;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lp6;->R:Lsz0;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lp6;->S:Lsz0;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lx90;->a:Lx90;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lx90;->e(Landroid/database/sqlite/SQLiteDatabase;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Le02;-><init>(Lne;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lgv4;->C:Lnf3;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lgv4;->J:Lnf3;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lgv4;->G:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lgv4;->I:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lgv4;->n:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lgv4;->t:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lgv4;->l:Lr35;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lgv4;->m:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lgv4;->q:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lgv4;->w:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lgv4;->o:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lgv4;->z:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lgv4;->r:Ltu4;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lgv4;->s:Landroid/content/Context;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lgv4;->u:Ls35;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lgv4;->x:Lq35;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lwf2;->a:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lwf2;->b:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lwf2;->c:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Ly90;->d:Llg6;": {
+   "tier": "field-ordinal",
+   "detail": [
+    13
+   ]
+  },
+  "Lnu0;->q:J": {
+   "tier": "field-ordinal",
+   "detail": [
+    48
+   ]
+  },
+  "Lnu0;->s:J": {
+   "tier": "field-ordinal",
+   "detail": [
+    48
+   ]
+  },
+  "Ld40;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ld40;->invoke(Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Llo4;->e:Lps3;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Llo4;->f:Landroid/view/textclassifier/TextClassifier;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lgt4;->j:Ljava/lang/Object;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Llt0;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Llt0;->k:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Llt0;->l:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Llt0;->m:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Llt0;->n:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Llt0;->o:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Llt0;->m(Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Llt0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lg85;->d:Ls52;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lo25;->a:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Lo25;->b:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Lo25;->c:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Lo25;->g:Ljava/lang/Integer;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lo25;->h:Ljava/util/Map;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lo25;->j:Ljava/lang/Boolean;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lzl0;->c:Lzl0;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lzl0;->a:Ljava/util/Set;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lp2;->a()I": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lcom/box/app/notification/BoxPersistentNotificationService;->s:I": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lcom/box/app/notification/BoxPersistentNotificationService;->k:Lo84;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lpw6;->h:Lnd0;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lgl4;->getValue()Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lgl4;->setValue(Ljava/lang/Object;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lbf7;->j(Ljava/util/List;)Ljava/util/List;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lno6;->a:Lai;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lno6;->b:J": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lqv;->S0([Ljava/lang/Object;)Ljava/util/Set;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lc03;->c()V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lzq4;->L:[I": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lzq4;->v:Landroid/view/View;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lc25;-><init>(Ljava/lang/String;Ljava/util/List;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lu94;->A:C": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lu94;->B:S": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lu94;->C:Lgt4;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lu94;->D:Ldj6;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lu94;->E:Lc6;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lu94;->b:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lu94;->c:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lu94;->q:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lu94;->r:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lu94;->e:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lu94;->f:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lu94;->h:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lu94;->i:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lu94;->g:Lp6;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lu94;->j:Lp6;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lu94;->m:Lp6;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lu94;->l:Ljava/net/ProxySelector;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lu94;->n:Ljavax/net/SocketFactory;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lu94;->o:Ljavax/net/ssl/SSLSocketFactory;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lu94;->p:Ljavax/net/ssl/X509TrustManager;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lu94;->s:Ljavax/net/ssl/HostnameVerifier;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lu94;->t:Lzl0;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lu94;->v:I": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lu94;->w:I": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lu94;->x:I": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lu94;->y:I": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lu94;->z:I": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lu94;-><init>(Lt94;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lcn;->invoke(Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lt31;->a:Landroid/content/Context;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lt31;->g:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    8
+   ]
+  },
+  "Lt31;->d()Ljava/util/List;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lt31;->l(Ljava/util/List;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lt31;->n()V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lo35;-><init>(B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lo35;->e(Lr35;)Ljava/util/ArrayList;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lo35;->i(Ljava/lang/String;)Ls35;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lxf2;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lxf2;->k:Landroid/content/Context;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lxf2;->invoke(Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lq66;->c:Ljava/lang/Object;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lq66;->d:Lo66;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lj90;->d:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lm71;-><init>(J)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lp84;->a:Lp84;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ldf6;->b:Ldm2;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lkd5;->a:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lkd5;->b:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lkd5;-><init>(ILjava/lang/String;Ljava/lang/String;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lkd5;->a()Z": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lxu;-><init>(FZLjv1;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lie1;->j:Lke1;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lie1;->k:Landroid/content/Context;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lie1;->onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lj94;->a:J": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lsf2;->a:Lsf2;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lsf2;->c:Lx96;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lri2;->b:F": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Liu;->a:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Liu;->b:Ljava/util/ArrayList;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Liu;->a()Ljava/lang/String;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lzw1;->a:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lzw1;->b:Ljava/lang/Integer;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Le93;->add(Ljava/lang/Object;)Z": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Le93;->addAll(Ljava/util/Collection;)Z": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Le93;->isEmpty()Z": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Le93;->listIterator(I)Ljava/util/ListIterator;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Ljg2;->a:Z": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lo86;->k:Lo35;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lo86;->l:Lo86;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lo86;->p:Lzu1;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lo86;->j:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lpw4;->A:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lpw4;->C:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lpw4;->E:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lpw4;->F:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lpw4;->G:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lpw4;->I:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lpw4;->r:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lpw4;->D:Lnf3;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lpw4;->y:Lnf3;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lpw4;->H:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lpw4;->J:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lpw4;->o:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lpw4;->v:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lpw4;->m:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lpw4;->s:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lpw4;->z:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lpw4;->n:Lr35;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lpw4;->p:Ltu4;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lpw4;->q:Landroid/content/Context;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lpw4;->t:Ls35;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lpw4;->u:Lq35;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lpw4;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Low4;-><init>(Ljava/util/List;Ltu4;Landroid/content/Context;Ljava/lang/String;B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lo2;-><init>(Ljava/lang/Object;B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lp41;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lp41;->k:Z": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lp41;->l:Ljava/util/List;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lp41;->m:Landroid/content/Context;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lp41;->n:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lp41;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lo41;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lo41;->k:Z": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lo41;->l:Lpe2;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lo41;->m:Landroid/content/Context;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lo41;->n:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lo41;->o:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lo41;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lir2;-><init>(J)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lcb1;->j:Lcb1;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lfm0;-><init>(Lem0;Z)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lzq;->k:Lt8;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lpb1;->A(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lpb1;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lpb1;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lak;->a:Lp25;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lak;->b:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lak;->d:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lak;->g:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lak;->h:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lak;->i:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lak;->c:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lak;->e:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lak;->f:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lak;->j:I": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lak;->k:I": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lr75;->a:Lo75;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lkc3;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lkc3;->k:Landroid/content/Context;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lkc3;->l:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lkc3;->invoke(Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lid0;->j:Lid0;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Ldv6;->a:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Ldv6;->b:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Ldv6;-><clinit>()V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lnn6;->b:Lm94;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lnn6;->d:Le53;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lnn6;->v:Laq6;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lnn6;->b(Lai;J)Lno6;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lnn6;->l()Lno6;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Llu;->N:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    21
+   ]
+  },
+  "Llu;->g:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    21
+   ]
+  },
+  "Llu;-><init>(Lj17;Lar;Lmf2;ZZLjava/lang/String;ZILjava/lang/String;Ljava/lang/String;Lh74;ZLjava/lang/String;Lg74;ZLjava/lang/String;Lg74;ZLjava/lang/String;Lg74;ZZLor6;ZZIZLqr6;Lkr6;ZLbw6;ZZZZZZLo86;ZZFZ)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lorg/chromium/support_lib_boundary/WebViewProviderFactoryBoundaryInterface;->getProxyController()Ljava/lang/reflect/InvocationHandler;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lhu;->b(Liu;)Ljava/lang/String;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Li75;-><init>(Lu94;Lsa5;Z)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Ljw;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ljw;->k:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ljw;->l:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Ljw;->m:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Ljw;->n:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Ljw;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lbo0;->a:Ljava/lang/Object;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lbo0;->c:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lmv4;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lmv4;->k:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lmv4;->m:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lmv4;->l:Landroid/content/Context;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lmv4;->invoke(Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lnw0;->a:Lnw0;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lv72;-><init>(B)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lv72;->n()Lv72;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lv72;->r(Ljava/lang/String;Ljava/lang/String;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lv72;->t(Ljava/lang/String;)Ljava/util/List;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lv72;->u(Ljava/lang/String;Lva5;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lv72;->x(Ljava/lang/String;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lft;->a:Landroid/content/SharedPreferences;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ltb0;-><init>(Ljava/lang/Long;Ljava/lang/Long;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lop5;->a:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Ltd5;->a:Ltd5;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ltd5;->b:Ljava/util/ArrayList;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ltd5;->c:Lps3;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ltd5;->c()V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Ltd5;->e(J)Le16;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lgd5;->k:Lgd5;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lgd5;->l:Lgd5;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lux1;->a:Ljava/util/ArrayList;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lux1;->c()Lux1;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lnm;->b:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lpb6;->l0(Ljava/lang/String;)Ljava/lang/Integer;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Ld37;->e:F": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lcom/box/app/AppApplication;->j:Landroid/content/Context;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lcom/box/app/AppApplication;->a(Lsr6;Ljava/lang/String;Z)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lcom/box/app/AppApplication;->onCreate()V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lue2;->a:J": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lue2;->b:J": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lk27;->a:Lk27;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lqt0;->B0:Ln61;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lqt0;->f0:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    32
+   ]
+  },
+  "Lqt0;->u:I": {
+   "tier": "field-ordinal",
+   "detail": [
+    8
+   ]
+  },
+  "Lqt0;->Y0:Lub6;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lqt0;->b1:Lsr1;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lqt0;->q:Ldr1;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lqt0;->r:Ltv1;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lqt0;->y0:Landroid/content/ClipboardManager;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lqt0;-><init>(Landroid/content/Context;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lqt0;->H()I": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lqt0;->getEventHandler()Lds1;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lqt0;->getText()Ln61;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lqt0;->setLayoutBusy(Z)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lqt0;->setStyles(Lub6;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lqt0;->setText(Ljava/lang/CharSequence;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lqt0;->setTextSize(F)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lqt0;->setTypefaceLineNumber(Landroid/graphics/Typeface;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lqt0;->setTypefaceText(Landroid/graphics/Typeface;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lqt0;->x(IILjava/lang/CharSequence;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Ld3;->j:Lqt0;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lva0;->a:Ljava/io/File;": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lva0;->b:Ljava/io/File;": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lva0;->c:Ljava/io/File;": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lva0;->d:Ljava/io/File;": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lva0;->e:Ljava/io/File;": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lva0;->f:Ljava/io/File;": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lva0;-><init>(Ljava/io/File;Ljava/io/File;Ljava/io/File;Ljava/io/File;Ljava/io/File;Ljava/io/File;Ljava/io/File;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lva0;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lva0;->d()Ljava/io/File;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lq4;->n()Z": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lmf2;->l:Lmf2;": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lmf2;->m:Lmf2;": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lmf2;->n:Lmf2;": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lmf2;->o:Lmf2;": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lmf2;->p:Lmf2;": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lmf2;->q:Lmf2;": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lmf2;->t:Lzu1;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lmf2;->j:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lvd1;->c(Ljava/lang/Object;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lw17;->j:Ljava/util/ArrayList;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lw17;->k:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lw17;->o:I": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Ltx4;->a:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lto6;->b:Ljava/util/concurrent/atomic/AtomicReference;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lnb3;->p(Ljava/lang/String;)Lg74;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Ln61;->r:Lw17;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ln61;->D(II)Ljava/lang/String;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Ln61;->toString()Ljava/lang/String;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Ln61;->x(IILjava/lang/CharSequence;II)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Ln25;->a:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Ln25;->a(Ln25;Ljava/lang/String;Ljava/lang/String;Ljava/util/ArrayList;I)Ln25;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lsq2;-><init>(J)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lj35;->a:Lr35;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lj35;->b:Ls35;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lj35;->f:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lj17;->l:Lj17;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lj17;->m:Lj17;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lj17;->n:Lj17;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lj17;->j:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lld5;->a:Le16;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lld5;->b:Lps3;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lld5;->d:I": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lld5;-><init>(Le16;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lmt1;->j:Lmt1;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lib6;->A0(Ljava/lang/CharSequence;)Z": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lib6;->P0(Ljava/lang/CharSequence;[Ljava/lang/String;)Ljava/util/List;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lib6;->a1(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lsv;-><init>(Ljava/lang/Object;B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lx;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lda1;->b:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lda1;->d:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lda1;->c:Z": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ltj5;->a:Lqt0;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ltj5;-><init>(Lqt0;Lyk5;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lho3;->j:Lho3;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lsd7;->k:Ljava/util/ArrayList;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lev1;->b:Ldm2;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lla5;->a:I": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lla5;->b:Landroid/graphics/RenderNode;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lc6;->k:Ljava/lang/Object;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lc6;-><init>(IJLjava/util/concurrent/TimeUnit;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lob5;->l:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lob5;->m:I": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lob5;->p:Lqb5;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lob5;->y:Z": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lpb;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lbm2;->n:Lbx1;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lrz1;->a:F": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lrz1;->b:F": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lrz1;->c:F": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lrz1;->d:F": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Ly31;->a:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lgb0;->a:Lgb0;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lgb0;->b:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lgb0;->f:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lgb0;->d:Lx96;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lgb0;->d(Lva0;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lgb0;->e()V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lgb0;->g()Lta0;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lgb0;->k()Lva0;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lgb0;->v(I[Ljava/lang/Object;)Ljava/lang/String;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Ly6;-><init>(Ljava/lang/Object;B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lcr4;->j:Lcr4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Lcr4;->l:Lcr4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Lcr4;->n:Lcr4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Lt35;->a:Z": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lh25;->a:Lx96;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lh25;->c:Lx96;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lh25;->a(Landroid/content/Context;)Z": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lh25;->g(Landroid/content/Context;)Lc35;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lku;->a:Ljava/lang/Object;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lku;->b:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lp25;->equals(Ljava/lang/Object;)Z": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lnm3;->a:Lnm3;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ljz;-><init>(Ly00;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lbx1;->a:Ljava/util/Map;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lyk5;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lvh3;->a:Lnu0;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lsf3;-><init>()V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lsf3;->b()Lsf3;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lsf3;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lx61;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lx61;->k:Z": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lx61;->l:Ljava/lang/Object;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lx61;->m:J": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lx61;->n:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lx61;->o:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lx61;->p:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lx61;->q:Ljava/lang/Object;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lx61;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Ls62;->T:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    9
+   ]
+  },
+  "Ls62;->U:J": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ls62;->T(IZ)Z": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Ls62;->e(I)Z": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Ls62;->h(Z)Z": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Ls62;->r(Z)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lps3;->g(Ljava/lang/Object;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lnk4;->j:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lnk4;->k:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lnk4;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lqe2;->a(Lqe2;ZLjava/lang/String;ZI)Lqe2;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lub5;->a(Ljava/lang/Object;)Ljava/lang/Throwable;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lob2;->c:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Ldr1;->commitText(Ljava/lang/CharSequence;I)Z": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lqd3;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lqd3;->k:Lpd3;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lqd3;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Loy0;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lfp2;->k:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lfp2;->l:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lfp2;->K(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lfp2;->w()Llu;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lsz0;-><init>(B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lvk6;->l:Ljava/lang/CharSequence;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lli2;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lh01;->c:Lnr5;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lh01;->f:Lri2;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lte2;->a(Lte2;ZJJLjava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;ZI)Lte2;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lgf1;->l:Lgf1;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lfp6;->a:Lep6;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lio1;-><init>(Ljava/util/List;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Llj0;->a:Ljava/util/ArrayList;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Llj0;-><init>(Ltj0;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lbu0;->p0(Ljava/lang/Iterable;I)I": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lbl5;->a()Ltj5;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Ljo6;->c()Lvk6;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lqe;->a:Landroid/view/View;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lqe;->h:Landroid/view/ActionMode;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lh74;->k:Lnb3;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lh74;->l:Lh74;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lh74;->m:Lh74;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lh74;->n:Lh74;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lh74;->p:Lzu1;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lt8;->t(Ljava/lang/String;)Lzq;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lt8;->u(Landroid/content/Context;)Lou;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lh3;->iterator()Ljava/util/Iterator;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lorg/chromium/support_lib_boundary/ProxyControllerBoundaryInterface;->clearProxyOverride(Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lorg/chromium/support_lib_boundary/ProxyControllerBoundaryInterface;->setProxyOverride([[Ljava/lang/String;[Ljava/lang/String;Ljava/lang/Runnable;Ljava/util/concurrent/Executor;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lx64;->d:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Ly25;->a:Ly25;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ly25;->h:Lsr6;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lns;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lja0;->a:Lja0;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lt94;->A:I": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lt94;->w:I": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lt94;->x:I": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lt94;->y:I": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lt94;->z:I": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lt94;->B:C": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lt94;->C:S": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lt94;->D:Lgt4;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lt94;->E:Ldj6;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lt94;->b:Lc6;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lt94;->c:Ljava/util/ArrayList;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lt94;->d:Ljava/util/ArrayList;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lt94;->f:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lt94;->g:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lt94;->i:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lt94;->j:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lt94;->h:Lp6;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lt94;->k:Lp6;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lt94;->n:Lp6;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lt94;->m:Ljava/net/ProxySelector;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lt94;->o:Ljavax/net/SocketFactory;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lt94;->p:Ljavax/net/ssl/SSLSocketFactory;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lt94;->q:Ljavax/net/ssl/X509TrustManager;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lt94;->r:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lt94;->s:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lt94;->t:Ljavax/net/ssl/HostnameVerifier;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lt94;->u:Lzl0;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lo1;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lo1;->k:Landroid/content/Context;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lo1;->l:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lo1;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lpq1;->i(I)Z": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lwb0;->a:Lwb0;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lwb0;->c(Ljava/lang/String;Lorg/json/JSONObject;)Ljava/lang/Long;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lkw;->m(Ldm2;Z)Ldm2;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lht;->a:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lht;->b:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lo44;->a:Lo44;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lo44;->l(Lo86;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lbw;->b:Landroid/content/res/AssetManager;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ljg3;->A:F": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ljg3;->I:Ldg;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ljg3;->x:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ljg3;->y:S": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Ljg3;->z:S": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lr26;->a:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lau0;->I0(ILjava/util/List;)Ljava/lang/Object;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lau0;->T0(Ljava/util/Collection;Ljava/lang/Iterable;)Ljava/util/ArrayList;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lau0;->Y0(Ljava/lang/Iterable;Ljava/util/Comparator;)Ljava/util/List;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lf2;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lf2;->k:Z": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lf2;->l:Ljava/lang/Object;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lf2;->m:Ljava/lang/Object;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lf2;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Liv1;->q:Liv1;": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lo26;->l:Lo26;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Ly77;->a(Ljava/lang/String;Ljava/lang/String;)Lop5;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lep6;->a:Lai;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lnv;->a:Ljava/util/ArrayList;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lnv;-><init>()V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lnv;->a()V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lgs3;->k:Lgs3;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lgs3;->l:Lgs3;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lxk5;->a:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lxk5;->k:Ls06;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lxk5;->l:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    14
+   ]
+  },
+  "Lxk5;->p:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    14
+   ]
+  },
+  "Lxk5;->q:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    14
+   ]
+  },
+  "Lxk5;->y:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    14
+   ]
+  },
+  "Lxk5;->j(Z)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lxk5;->k()V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lsr6;->k:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lsr6;->m:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lsr6;->L()Lsr6;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lsr6;->s0(Ljava/lang/String;)Z": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lp76;-><init>(J)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lk83;-><init>(Ljava/lang/CharSequence;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lk83;->hasNext()Z": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lk83;->next()Ljava/lang/Object;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lg17;->k:Lg17;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lar2;->a:J": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ldw;->b:Ldm2;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lwa0;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lwa0;->k:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lwa0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lca1;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lx81;Le81;Ljava/lang/String;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lq35;->n:Lzu1;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lx96;->getValue()Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Ldx4;->l:Ldx4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Le25;->l:Le25;": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Leu;->b:Ls06;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Leu;->g:J": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Leu;->h:Z": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Leu;->a()Ljava/util/List;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Leu;->b(ZZZ)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lmq0;->a:Lmq0;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lem0;->iterator()Lkd0;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Ltu4;->a:Ls06;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ltu4;->c:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    14
+   ]
+  },
+  "Ltu4;->l:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    14
+   ]
+  },
+  "Ltu4;->m:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    14
+   ]
+  },
+  "Ltu4;->q:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    14
+   ]
+  },
+  "Ltu4;->r:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    14
+   ]
+  },
+  "Lj66;->g()J": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lpe;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lpe;->k:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lpe;->l:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lpe;->m:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lpe;->run()V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lm35;->a:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lqp0;->a:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lqp0;->a()Z": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Ll32;->l:Ljava/lang/Object;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ll32;->n:Ljava/util/concurrent/ThreadPoolExecutor;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lv26;->c()Ljava/io/File;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lv26;->e()Lr26;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lz0;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lz0;->k:Landroid/content/Context;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lz0;->l:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lz0;->invoke(Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lr31;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lr31;->k:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lr31;->l:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lr31;->m:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lr31;->n:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lr31;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Ljo0;->a:Ljo0;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ljo0;->n(Lao0;Ljava/lang/String;Ljava/util/Map;I)Lv72;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Ldc1;-><init>(ILjava/lang/String;Ljava/lang/String;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Ldq0;->j:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Le81;->j:Le81;": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Le81;->k:Le81;": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Le81;->m:Le81;": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Le81;->n:Le81;": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Ltk5;->b:Lxk5;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ltk5;->c:Lbl5;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lqb5;->b()Ljava/io/InputStream;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lqb5;->c()J": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lvu1;->a(Lvu1;)Lvu1;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lke1;->n:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lhm1;->D:Lnd0;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lmt0;->a:Lmt0;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lv90;-><init>(Ljava/lang/Object;B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lo84;->k:Ljava/lang/Object;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Led6;->a:Led6;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ldj6;->l:Ldj6;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lpe2;->a:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    33
+   ]
+  },
+  "Lg74;->k:Lnb3;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lg74;->r:Lzu1;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ls35;->k:Lo35;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ls35;->l:Ls35;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Ls35;->m:Ls35;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Ls35;->n:Ls35;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Ls35;->o:Ls35;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Ls35;->p:Ls35;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Ls35;->q:Ls35;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Ls35;->r:[Ls35;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ls35;->s:Lzu1;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ls35;->j:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ls35;-><clinit>()V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Ls35;-><init>(ILjava/lang/String;Ljava/lang/String;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lx81;->a:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Llk2;->a:Landroid/util/SparseIntArray;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lbw6;->k:Lbw6;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lbw6;->n:Lzu1;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lvo1;->l:Lvo1;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Lqy3;->a:Ljava/util/List;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lss0;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lss0;->k:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lss0;->l:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lss0;->m:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lss0;->n:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lss0;->o:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lss0;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lsm3;->j:I": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lsm3;->k:I": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lv9;-><init>(Ljavax/net/ssl/X509TrustManager;Landroid/net/http/X509TrustManagerExtensions;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lsa5;-><init>(Lv72;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lo75;->b:Lbm2;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ly02;->a:I": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lqq5;->m(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lzj;->a:Landroid/content/Context;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lzj;->e:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    15
+   ]
+  },
+  "Lzj;->g:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    15
+   ]
+  },
+  "Lzj;->h:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    15
+   ]
+  },
+  "Lzj;->i:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    15
+   ]
+  },
+  "Lzj;->j:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    15
+   ]
+  },
+  "Lzj;->k:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    15
+   ]
+  },
+  "Lzj;->l:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    15
+   ]
+  },
+  "Lzj;->m:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    15
+   ]
+  },
+  "Lzj;->n:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    15
+   ]
+  },
+  "Lzj;->o:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    15
+   ]
+  },
+  "Lzj;->p:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    15
+   ]
+  },
+  "Lzj;->q:Lgl4;": {
+   "tier": "field-ordinal",
+   "detail": [
+    15
+   ]
+  },
+  "Lzj;->a(Lak;Z)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lzj;->e(Z)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lkd0;->c()Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "La03;->H:Lyg1;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lh86;->l(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lh86;->m(Ls62;IILs62;Z)Ljava/lang/String;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lh86;->t(Ljava/util/Locale;Ljava/lang/String;Ljava/util/Locale;)Ljava/lang/String;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lh86;->y(ILs62;Lsz0;Ls62;)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Luj5;->a:I": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Luj5;->d:Ls52;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Luj5;->e:Ls52;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Luj5;->f:Ltj5;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lqr6;->k:Lqr6;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lqr6;->m:Lzu1;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lds1;->j(FFZ)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lr35;->n:Lr35;": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lr35;->o:Lr35;": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lr35;->p:Lr35;": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lr35;->j:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lr35;->l:Ljava/util/Set;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lnw4;->j:Ljava/util/List;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lnw4;->k:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lnw4;->q:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lnw4;->t:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lnw4;->v:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lnw4;->l:Lnf3;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lnw4;->w:Lnf3;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lnw4;->m:Lr35;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lnw4;->r:Ltu4;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lnw4;->s:Landroid/content/Context;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lmc7;->w:Ljava/util/WeakHashMap;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lmk5;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lmk5;->k:Lxk5;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lmk5;->m:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lmk5;->q:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lmk5;->n:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lmk5;->o:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lmk5;->s:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lmk5;->t:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lmk5;->y:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    5
+   ]
+  },
+  "Lmk5;->p:Landroid/content/Context;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lmk5;->u:Ltk5;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lmk5;->v:Lbl5;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lmk5;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lco5;->a:Lco5;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lco5;->o(Ljava/lang/String;)Lku;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lgl5;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lgl5;->l:Ls52;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lgl5;->m:Ls52;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lgl5;->n:I": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lgl5;->o:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lgl5;->invoke(Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lgt0;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lff2;->A:J": {
+   "tier": "field-ordinal",
+   "detail": [
+    7
+   ]
+  },
+  "Lff2;->a:Lff2;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lff2;->c:Lx96;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lff2;->g:Lx96;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lff2;->i:Lps3;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lff2;->j:Lps3;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lff2;->y:J": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Ln87;->j:Landroid/content/Context;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ln87;->k:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Ln87;->l:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Ln87;->m:Ly77;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ln87;->invoke()Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Ldm2;->a:Landroid/content/Context;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lxk0;-><init>(B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Ljv1;-><init>(B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lnr5;->a:Lgl4;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lk25;->a:Z": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lk25;->b:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lk25;-><init>(ILjava/lang/String;Z)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lct0;->c:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lct0;->d:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lct0;->f:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lct0;->g:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lct0;->h:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Lct0;->i:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Ltd7;->p:Ljava/util/List;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Le16;->s:Ljava/util/concurrent/ExecutorService;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Le16;->j:I": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Le16;->close()V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lzu1;-><init>([Ljava/lang/Enum;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lzu1;->a()I": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lzu1;->get(I)Ljava/lang/Object;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lzu1;->indexOf(Ljava/lang/Object;)I": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lta0;->a:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    11
+   ]
+  },
+  "Lta0;->b:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    11
+   ]
+  },
+  "Lta0;->c:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    11
+   ]
+  },
+  "Lta0;->h:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    11
+   ]
+  },
+  "Lta0;->s:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    11
+   ]
+  },
+  "Lta0;->d:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    12
+   ]
+  },
+  "Lta0;->r:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    12
+   ]
+  },
+  "Lta0;->w:Z": {
+   "tier": "field-ordinal",
+   "detail": [
+    12
+   ]
+  },
+  "Lta0;-><init>()V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lta0;->a(Lta0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/String;ZZI)Lta0;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lp26;->e:I": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Llg6;->getValue()Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lpd3;->b:Ls06;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lwc6;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lwc6;->k:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Lwc6;->l:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Lwc6;->m:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Lwc6;->n:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Lwc6;->o:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Lwc6;->p:Ljava/lang/Object;": {
+   "tier": "field-ordinal",
+   "detail": [
+    6
+   ]
+  },
+  "Lwc6;->invoke()Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lit0;->b:Z": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Laq6;->c:I": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Laq6;->a:J": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Laq6;-><init>(J)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Laq6;->b(JLjava/lang/Object;)Z": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lao0;->b:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lao0;->d:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    3
+   ]
+  },
+  "Lao0;->c:I": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lf16;->b:Ljava/util/ArrayList;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lf16;->c:Ljava/util/List;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lf16;-><init>(Le16;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lf16;->a([Ljava/lang/String;)Lf16;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lcom/box/app/tile/BoxServiceTileService;->k:I": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lcom/box/app/tile/BoxServiceTileService;->a(Z)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lor6;->j:Lor6;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lor6;->l:Lzu1;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lma1;->b:Lc91;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lar;->l:Lt8;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lar;->m:Lar;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lar;->o:Lzu1;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lar;->j:Ljava/lang/String;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Led;->k:Lto6;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lnb0;->a:Z": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lkm2;-><init>(Ljava/lang/String;FFFFJIZI)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lkm2;->b(Lkm2;Ljava/util/List;ILp76;FLp76;FFIIFI)V": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lkr6;->k:Lkr6;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lkr6;->n:Lzu1;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lpw1;->a(Lpw1;)Lpw1;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Ld91;->a:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lgg2;->a:Lgg2;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lgg2;->b:Lu94;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lgg2;->c(Lp26;)Ljava/lang/String;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lgg2;->e(I[Ljava/lang/Object;)Ljava/lang/String;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Ltb5;-><init>(Ljava/lang/Throwable;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lai;->k:Ljava/lang/String;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lou;->f:Lt8;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ly00;-><init>([Ljava/security/cert/X509Certificate;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lwb5;->a:I": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lv85;->j:Z": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lt06;->a:Lo35;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lt06;->b:Lo35;": {
+   "tier": "field-ordinal",
+   "detail": [
+    2
+   ]
+  },
+  "Lom;-><init>(B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Llx5;->a:Lxt2;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Llx5;->b:Ljava/lang/Object;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Llx5;-><init>(Lxt2;Ljava/lang/Object;)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lki2;-><init>(Lli2;Ljava/lang/String;I)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lt01;->a:Lt8;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Loz1;->a:F": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Loz1;->b:F": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Loz1;->c:F": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "Loz1;->d:F": {
+   "tier": "field-ordinal",
+   "detail": [
+    4
+   ]
+  },
+  "La46;->a:Ljava/util/concurrent/atomic/AtomicReference;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Ll13;->a:Ljava/util/List;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lz85;->j:Ljava/lang/Object;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Llb0;->a:Lnb0;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lw85;->j:F": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lvu4;->j:B": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lvu4;->k:Lr35;": {
+   "tier": "field-unique",
+   "detail": [
+    1
+   ]
+  },
+  "Lvu4;->invoke(Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Ln81;-><init>(Ljava/util/List;B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lrd4;-><init>(Lmd4;Landroid/content/Context;Ljava/lang/String;B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Le3;-><init>(Ljava/lang/Object;B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Le3;->hasNext()Z": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Le3;->next()Ljava/lang/Object;": {
+   "tier": "method-signature-unique-body-differs",
+   "detail": [
+    1
+   ]
+  },
+  "Lo91;-><init>(Lnn6;B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lt52;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lgk5;-><init>(Lxk5;B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lmw4;-><init>(Ltu4;B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Lzv4;-><init>(Ltu4;Landroid/content/Context;Ljava/lang/String;B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Ls1;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Ljv4;-><init>(Ltu4;B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Loe;->close()V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  },
+  "Law4;-><init>(Ljava/lang/Object;B)V": {
+   "tier": "method-body-exact",
+   "detail": [
+    1
+   ]
+  }
+ }
+}
