@@ -222,6 +222,7 @@ const/16 v21, 0x0
 const/high16 v23, 0xc00000
 move-object/from16 v22, v2
 invoke-static/range {v16 .. v25}, Lqu5;->o(ZLp62;Ljava/lang/String;Ljava/lang/String;Lqz0;ZLz11;III)V
+invoke-virtual {v2, v11}, Lt72;->r(Z)V
 const v4, 0x140043da
 invoke-virtual {v2, v4}, Lt72;->c0(I)V
 const v4, 0x7f0f0404
