@@ -211,7 +211,7 @@
     "smali/com/box/app/cfg/CfgClick.smali": "688d0770a35c57281e8fba085f2800db048ef9fb0e06eaa272bb5f64bb64e0e8",
     "smali/com/box/app/cfg/CfgDefer.smali": "149ab171f6dccc19017de7a78854e4e8f39c73c3acf8d20481dae135512c415a",
     "smali/com/box/app/cfg/CfgGlue.smali": "0fd81c14da1a08e8ee713f481ba17663d2c4b807ac672ef77d35ae9e77aaed9d",
-    "smali/com/box/app/cfg/CfgIcon.smali": "b988c7fd0101a41c2e334ee60ee9934f4b73d81fd6deeeb8cec6419ec69e7a48",
+    "smali/com/box/app/cfg/CfgIcon.smali": "f8e06124839d42bca4b8e967d2fef31b193357d541fe2ee78dc2763dc1a4fc88",
     "smali/com/box/app/cfg/CfgLauncher.smali": "30ed6954e673fa86da55c3a197a9cba770441e345a83602243a03dcc2190f95f",
     "smali/com/box/app/cfg/CfgNav.smali": "31752ef4b054c391b2d45ae67ec681e3d846c1d00cf1cbd47bf0f5184eb87276",
     "smali/com/box/app/cfg/CfgSession.smali": "5325f592d5dda0799682c104ce056598472e7b19bd94e5f609c325ecdf1e0553",

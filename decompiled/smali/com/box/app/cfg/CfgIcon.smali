@@ -493,7 +493,7 @@
     :have
     move-object v5, p1
 
-    check-cast v5, Lv01;
+    check-cast v5, Lz11;
 
     invoke-static {v5}, Ldj3;->A(Lz11;)Lpv0;
 
