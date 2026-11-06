@@ -1,16 +1,41 @@
-.class public final Lui3;
+.class public final synthetic Lui3;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lt62;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final synthetic j:Lwp3;
 
-.field public final b:Ljava/util/Map;
+.field public final synthetic k:Le62;
+
+.field public final synthetic l:Le62;
+
+.field public final synthetic m:Z
+
+.field public final synthetic n:Lca3;
+
+.field public final synthetic o:Lms3;
+
+.field public final synthetic p:Lt62;
+
+.field public final synthetic q:Lt62;
+
+.field public final synthetic r:Lt62;
+
+.field public final synthetic s:Lt62;
+
+.field public final synthetic t:I
+
+.field public final synthetic u:I
+
+.field public final synthetic v:S
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/util/Map;)V
+.method public synthetic constructor <init>(Lwp3;Le62;Le62;ZLca3;Lms3;Lt62;Lt62;Lt62;Lt62;III)V
     .locals 0
 
     .line 1
@@ -19,202 +44,167 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lui3;->a:Ljava/lang/String;
+    iput-object p1, p0, Lui3;->j:Lwp3;
 
     .line 5
     .line 6
-    invoke-static {p2}, Lns6;->I(Ljava/util/Map;)Ljava/util/Map;
+    iput-object p2, p0, Lui3;->k:Le62;
 
     .line 7
     .line 8
-    .line 9
-    move-result-object p1
+    iput-object p3, p0, Lui3;->l:Le62;
 
+    .line 9
     .line 10
-    iput-object p1, p0, Lui3;->b:Ljava/util/Map;
+    iput-boolean p4, p0, Lui3;->m:Z
 
     .line 11
     .line 12
+    iput-object p5, p0, Lui3;->n:Lca3;
+
+    .line 13
+    .line 14
+    iput-object p6, p0, Lui3;->o:Lms3;
+
+    .line 15
+    .line 16
+    iput-object p7, p0, Lui3;->p:Lt62;
+
+    .line 17
+    .line 18
+    iput-object p8, p0, Lui3;->q:Lt62;
+
+    .line 19
+    .line 20
+    iput-object p9, p0, Lui3;->r:Lt62;
+
+    .line 21
+    .line 22
+    iput-object p10, p0, Lui3;->s:Lt62;
+
+    .line 23
+    .line 24
+    iput p11, p0, Lui3;->t:I
+
+    .line 25
+    .line 26
+    iput p12, p0, Lui3;->u:I
+
+    .line 27
+    .line 28
+    iput-short p13, p0, Lui3;->v:S
+
+    .line 29
+    .line 30
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 14
 
     .line 1
-    const/4 v0, 0x1
+    move-object v10, p1
 
     .line 2
-    if-ne p0, p1, :cond_0
+    check-cast v10, Lz11;
 
     .line 3
     .line 4
-    return v0
+    move-object/from16 v0, p2
 
     .line 5
-    :cond_0
-    instance-of v1, p1, Lui3;
-
     .line 6
+    check-cast v0, Ljava/lang/Integer;
+
     .line 7
-    if-eqz v1, :cond_1
-
     .line 8
-    .line 9
-    check-cast p1, Lui3;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 9
     .line 10
     .line 11
-    iget-object v1, p1, Lui3;->a:Ljava/lang/String;
+    iget v0, p0, Lui3;->t:I
 
     .line 12
     .line 13
-    iget-object v2, p0, Lui3;->a:Ljava/lang/String;
+    or-int/lit8 v0, v0, 0x1
 
     .line 14
     .line 15
-    invoke-static {v2, v1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0}, Lqu5;->f0(I)I
 
     .line 16
     .line 17
     .line 18
-    move-result v1
+    move-result v11
 
     .line 19
-    if-eqz v1, :cond_1
+    iget v0, p0, Lui3;->u:I
 
     .line 20
     .line 21
-    iget-object p0, p0, Lui3;->b:Ljava/util/Map;
+    invoke-static {v0}, Lqu5;->f0(I)I
 
     .line 22
     .line 23
-    iget-object p1, p1, Lui3;->b:Ljava/util/Map;
-
     .line 24
+    move-result v12
+
     .line 25
-    invoke-static {p0, p1}, Lps2;->v(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-object v0, p0, Lui3;->j:Lwp3;
 
     .line 26
     .line 27
-    .line 28
-    move-result p0
+    iget-object v1, p0, Lui3;->k:Le62;
 
+    .line 28
     .line 29
-    if-eqz p0, :cond_1
+    iget-object v2, p0, Lui3;->l:Le62;
 
     .line 30
     .line 31
-    return v0
+    iget-boolean v3, p0, Lui3;->m:Z
 
     .line 32
-    :cond_1
-    const/4 p0, 0x0
-
     .line 33
-    return p0
-.end method
+    iget-object v4, p0, Lui3;->n:Lca3;
 
-.method public final hashCode()I
-    .locals 1
+    .line 34
+    .line 35
+    iget-object v5, p0, Lui3;->o:Lms3;
 
-    .line 1
-    iget-object v0, p0, Lui3;->a:Ljava/lang/String;
+    .line 36
+    .line 37
+    iget-object v6, p0, Lui3;->p:Lt62;
 
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    .line 38
+    .line 39
+    iget-object v7, p0, Lui3;->q:Lt62;
 
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
+    .line 40
+    .line 41
+    iget-object v8, p0, Lui3;->r:Lt62;
 
-    .line 7
-    mul-int/lit8 v0, v0, 0x1f
+    .line 42
+    .line 43
+    iget-object v9, p0, Lui3;->s:Lt62;
 
-    .line 8
-    .line 9
-    iget-object p0, p0, Lui3;->b:Ljava/util/Map;
+    .line 44
+    .line 45
+    iget-short v13, p0, Lui3;->v:S
 
-    .line 10
-    .line 11
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    .line 46
+    .line 47
+    invoke-static/range {v0 .. v13}, Lzi3;->e(Lwp3;Le62;Le62;ZLca3;Lms3;Lt62;Lt62;Lt62;Lt62;Lz11;III)V
 
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
+    .line 48
+    .line 49
+    .line 50
+    sget-object p0, La47;->a:La47;
 
-    .line 15
-    add-int/2addr p0, v0
-
-    .line 16
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v1, "Key(key="
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    iget-object v1, p0, Lui3;->a:Ljava/lang/String;
-
-    .line 9
-    .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 11
-    .line 12
-    .line 13
-    const-string v1, ", extras="
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    iget-object p0, p0, Lui3;->b:Ljava/util/Map;
-
-    .line 19
-    .line 20
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 21
-    .line 22
-    .line 23
-    const-string p0, ")"
-
-    .line 24
-    .line 25
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 26
-    .line 27
-    .line 28
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 29
-    .line 30
-    .line 31
-    move-result-object p0
-
-    .line 32
+    .line 51
+    .line 52
     return-object p0
 .end method

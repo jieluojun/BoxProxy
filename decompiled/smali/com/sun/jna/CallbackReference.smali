@@ -1,6 +1,6 @@
 .class public Lcom/sun/jna/CallbackReference;
 .super Ljava/lang/ref/WeakReference;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
 .implements Ljava/io/Closeable;
@@ -807,7 +807,7 @@
 
     .line 218
     .line 219
-    invoke-static {p0, p1, v0}, Lvd1;->o(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {p0, p1, v0}, Lue1;->o(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 220
     .line 221
@@ -978,7 +978,7 @@
 
     .line 301
     .line 302
-    invoke-static {p0, v6, v0}, Lvd1;->o(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
+    invoke-static {p0, v6, v0}, Lue1;->o(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 303
     .line 304
@@ -1611,7 +1611,7 @@
     move-result-object p0
 
     .line 72
-    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
 
     .line 73
     .line 74
@@ -1804,7 +1804,7 @@
 
     .line 56
     .line 57
-    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
 
     .line 58
     .line 59
@@ -2061,7 +2061,7 @@
 
     .line 103
     .line 104
-    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
 
     .line 105
     .line 106

@@ -1,310 +1,438 @@
-.class public final synthetic Lle;
+.class public final Lle;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Ld52;
+.implements Landroid/app/Application$ActivityLifecycleCallbacks;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final a:D
 
-.field public final synthetic k:Lqe;
-
-.field public final synthetic l:Lzj6;
+.field public final synthetic b:Lme;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lqe;Lzj6;B)V
+.method public constructor <init>(Lme;Lf95;)V
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Lle;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lle;->k:Lqe;
-
     .line 4
+    iput-object p1, p0, Lle;->b:Lme;
+
     .line 5
-    iput-object p2, p0, Lle;->l:Lzj6;
-
     .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object p1, p2, Lf95;->a:Lc95;
 
+    .line 7
     .line 8
+    sget-object p2, Lin2;->a:Lb97;
+
     .line 9
     .line 10
+    iget-object p1, p1, Lc95;->b:Lln2;
+
+    .line 11
+    .line 12
+    iget-object p1, p1, Lln2;->n:Lby1;
+
+    .line 13
+    .line 14
+    sget-object p2, Lin2;->d:Lb97;
+
+    .line 15
+    .line 16
+    iget-object p1, p1, Lby1;->a:Ljava/util/Map;
+
+    .line 17
+    .line 18
+    invoke-interface {p1, p2}, Ljava/util/Map;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object p1
+
+    .line 22
+    if-nez p1, :cond_0
+
+    .line 23
+    .line 24
+    const-wide/high16 p1, 0x3ff0000000000000L    # 1.0
+
+    .line 25
+    .line 26
+    invoke-static {p1, p2}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+
+    .line 27
+    .line 28
+    .line 29
+    move-result-object p1
+
+    .line 30
+    :cond_0
+    check-cast p1, Ljava/lang/Number;
+
+    .line 31
+    .line 32
+    invoke-virtual {p1}, Ljava/lang/Number;->doubleValue()D
+
+    .line 33
+    .line 34
+    .line 35
+    move-result-wide p1
+
+    .line 36
+    iput-wide p1, p0, Lle;->a:D
+
+    .line 37
+    .line 38
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 7
+.method public final a(Landroid/content/Context;)V
+    .locals 4
 
     .line 1
-    iget-byte v0, p0, Lle;->j:B
+    iget-wide v0, p0, Lle;->a:D
 
     .line 2
     .line 3
-    const-string v1, "result"
+    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
 
     .line 4
     .line 5
-    const/4 v2, 0x7
+    cmpg-double v2, v0, v2
 
     .line 6
-    const/4 v3, 0x0
-
     .line 7
-    iget-object v4, p0, Lle;->l:Lzj6;
+    if-nez v2, :cond_0
 
     .line 8
     .line 9
-    iget-object p0, p0, Lle;->k:Lqe;
+    goto :goto_0
 
     .line 10
-    .line 11
-    packed-switch v0, :pswitch_data_0
+    :cond_0
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
+    .line 11
     .line 12
     .line 13
+    move-result-object p1
+
     .line 14
-    iget-object p0, p0, Lqe;->c:Ld52;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 15
     .line 16
-    invoke-interface {p0}, Ld52;->invoke()Ljava/lang/Object;
-
     .line 17
+    check-cast p1, Landroid/app/Application;
+
     .line 18
     .line 19
-    move-result-object p0
+    invoke-virtual {p1, p0}, Landroid/app/Application;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
 
     .line 20
-    move-object v0, p0
-
     .line 21
-    check-cast v0, Ljz2;
-
     .line 22
-    .line 23
-    invoke-interface {v0}, Ljz2;->A()Z
+    iget-object p0, p0, Lle;->b:Lme;
 
+    .line 23
     .line 24
+    iget-object p1, p0, Lme;->b:Ljava/lang/Object;
+
     .line 25
     .line 26
-    move-result v0
+    check-cast p1, Ljava/lang/ref/WeakReference;
 
     .line 27
-    if-eqz v0, :cond_0
-
     .line 28
+    invoke-virtual {p1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
     .line 29
-    move-object v3, p0
-
     .line 30
-    :cond_0
-    check-cast v3, Ljz2;
-
     .line 31
+    move-result-object p1
+
     .line 32
-    if-nez v3, :cond_1
+    check-cast p1, Lf95;
 
     .line 33
     .line 34
-    sget-object p0, Ls85;->e:Ls85;
+    if-eqz p1, :cond_2
 
     .line 35
     .line 36
-    goto :goto_0
+    invoke-virtual {p1}, Lf95;->c()Lj95;
 
     .line 37
-    :cond_1
-    invoke-interface {v4, v3}, Lzj6;->w(Ljz2;)Ls85;
-
     .line 38
     .line 39
-    .line 40
     move-result-object p0
 
+    .line 40
+    if-eqz p0, :cond_1
+
     .line 41
-    const-wide/16 v0, 0x0
-
     .line 42
+    iget-object p1, p0, Lj95;->c:Ljava/lang/Object;
+
     .line 43
-    invoke-interface {v3, v0, v1}, Ljz2;->T(J)J
-
     .line 44
-    .line 45
-    .line 46
-    move-result-wide v0
+    monitor-enter p1
 
+    .line 45
+    :try_start_0
+    iget-object v2, p0, Lj95;->a:Lag3;
+
+    .line 46
     .line 47
-    invoke-virtual {p0, v0, v1}, Ls85;->k(J)Ls85;
+    iget-wide v2, v2, Lag3;->a:J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 48
     .line 49
+    monitor-exit p1
+
     .line 50
-    move-result-object p0
+    long-to-double v2, v2
 
     .line 51
-    :goto_0
-    return-object p0
+    mul-double/2addr v0, v2
 
     .line 52
-    :pswitch_0
-    iget-object v0, p0, Lqe;->g:Lke;
+    double-to-long v0, v0
 
     .line 53
-    .line 54
-    new-instance v5, Lle;
+    invoke-virtual {p0, v0, v1}, Lj95;->a(J)V
 
+    .line 54
     .line 55
     .line 56
-    const/4 v6, 0x2
+    return-void
 
     .line 57
-    invoke-direct {v5, p0, v4, v6}, Lle;-><init>(Lqe;Lzj6;B)V
+    :catchall_0
+    move-exception p0
 
     .line 58
+    monitor-exit p1
+
     .line 59
+    throw p0
+
     .line 60
-    new-instance v4, Lz85;
+    :cond_1
+    :goto_0
+    return-void
 
     .line 61
-    .line 62
-    invoke-direct {v4}, Ljava/lang/Object;-><init>()V
+    :cond_2
+    invoke-virtual {p0}, Lme;->d()V
 
+    .line 62
     .line 63
     .line 64
-    .line 65
-    iget-object p0, p0, Lqe;->e:Lf76;
+    return-void
+.end method
 
-    .line 66
-    .line 67
-    new-instance v6, Lx;
+.method public final b(Landroid/content/Context;)V
+    .locals 4
 
-    .line 68
-    .line 69
-    invoke-direct {v6, v4, v5, v2}, Lx;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
+    .line 1
+    iget-wide v0, p0, Lle;->a:D
 
-    .line 70
-    .line 71
-    .line 72
-    const-string v2, "positioner"
+    .line 2
+    .line 3
+    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
 
-    .line 73
-    .line 74
-    invoke-virtual {p0, v2, v0, v6}, Lf76;->c(Ljava/lang/Object;Lo52;Ld52;)V
+    .line 4
+    .line 5
+    cmpg-double v0, v0, v2
 
-    .line 75
-    .line 76
-    .line 77
-    iget-object p0, v4, Lz85;->j:Ljava/lang/Object;
+    .line 6
+    .line 7
+    if-nez v0, :cond_0
 
-    .line 78
-    .line 79
-    if-eqz p0, :cond_2
+    .line 8
+    .line 9
+    goto :goto_0
 
-    .line 80
-    .line 81
-    check-cast p0, Ls85;
+    .line 10
+    :cond_0
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
-    .line 82
-    .line 83
-    return-object p0
+    .line 11
+    .line 12
+    .line 13
+    move-result-object p1
 
-    .line 84
+    .line 14
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 15
+    .line 16
+    .line 17
+    check-cast p1, Landroid/app/Application;
+
+    .line 18
+    .line 19
+    invoke-virtual {p1, p0}, Landroid/app/Application;->unregisterActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
+
+    .line 20
+    .line 21
+    .line 22
+    iget-object p0, p0, Lle;->b:Lme;
+
+    .line 23
+    .line 24
+    iget-object p1, p0, Lme;->b:Ljava/lang/Object;
+
+    .line 25
+    .line 26
+    check-cast p1, Ljava/lang/ref/WeakReference;
+
+    .line 27
+    .line 28
+    invoke-virtual {p1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p1
+
+    .line 32
+    check-cast p1, Lf95;
+
+    .line 33
+    .line 34
+    if-eqz p1, :cond_2
+
+    .line 35
+    .line 36
+    invoke-virtual {p1}, Lf95;->c()Lj95;
+
+    .line 37
+    .line 38
+    .line 39
+    move-result-object p0
+
+    .line 40
+    if-eqz p0, :cond_1
+
+    .line 41
+    .line 42
+    iget-object p1, p0, Lj95;->c:Ljava/lang/Object;
+
+    .line 43
+    .line 44
+    monitor-enter p1
+
+    .line 45
+    :try_start_0
+    iget-object v0, p0, Lj95;->a:Lag3;
+
+    .line 46
+    .line 47
+    iget-wide v0, v0, Lag3;->a:J
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 48
+    .line 49
+    monitor-exit p1
+
+    .line 50
+    invoke-virtual {p0, v0, v1}, Lj95;->a(J)V
+
+    .line 51
+    .line 52
+    .line 53
+    return-void
+
+    .line 54
+    :catchall_0
+    move-exception p0
+
+    .line 55
+    monitor-exit p1
+
+    .line 56
+    throw p0
+
+    .line 57
+    :cond_1
+    :goto_0
+    return-void
+
+    .line 58
     :cond_2
-    invoke-static {v1}, Lps2;->N(Ljava/lang/String;)V
+    invoke-virtual {p0}, Lme;->d()V
 
-    .line 85
-    .line 86
-    .line 87
-    throw v3
+    .line 59
+    .line 60
+    .line 61
+    return-void
+.end method
 
-    .line 88
-    :pswitch_1
-    iget-object v0, p0, Lqe;->f:Lke;
+.method public final onActivityCreated(Landroid/app/Activity;Landroid/os/Bundle;)V
+    .locals 0
 
-    .line 89
-    .line 90
-    new-instance v5, Le7;
+    .line 1
+    return-void
+.end method
 
-    .line 91
-    .line 92
-    const/4 v6, 0x3
+.method public final onActivityDestroyed(Landroid/app/Activity;)V
+    .locals 0
 
-    .line 93
-    invoke-direct {v5, v4, v6}, Le7;-><init>(Ljava/lang/Object;B)V
+    .line 1
+    return-void
+.end method
 
-    .line 94
-    .line 95
-    .line 96
-    new-instance v4, Lz85;
+.method public final onActivityPaused(Landroid/app/Activity;)V
+    .locals 0
 
-    .line 97
-    .line 98
-    invoke-direct {v4}, Ljava/lang/Object;-><init>()V
+    .line 1
+    return-void
+.end method
 
-    .line 99
-    .line 100
-    .line 101
-    iget-object p0, p0, Lqe;->e:Lf76;
+.method public final onActivityResumed(Landroid/app/Activity;)V
+    .locals 0
 
-    .line 102
-    .line 103
-    new-instance v6, Lx;
+    .line 1
+    return-void
+.end method
 
-    .line 104
-    .line 105
-    invoke-direct {v6, v4, v5, v2}, Lx;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
+.method public final onActivitySaveInstanceState(Landroid/app/Activity;Landroid/os/Bundle;)V
+    .locals 0
 
-    .line 106
-    .line 107
-    .line 108
-    const-string v2, "dataBuilder"
+    .line 1
+    return-void
+.end method
 
-    .line 109
-    .line 110
-    invoke-virtual {p0, v2, v0, v6}, Lf76;->c(Ljava/lang/Object;Lo52;Ld52;)V
+.method public final onActivityStarted(Landroid/app/Activity;)V
+    .locals 0
 
-    .line 111
-    .line 112
-    .line 113
-    iget-object p0, v4, Lz85;->j:Ljava/lang/Object;
+    .line 1
+    invoke-virtual {p0, p1}, Lle;->b(Landroid/content/Context;)V
 
-    .line 114
-    .line 115
-    if-eqz p0, :cond_3
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
 
-    .line 116
-    .line 117
-    check-cast p0, Lyj6;
+.method public final onActivityStopped(Landroid/app/Activity;)V
+    .locals 0
 
-    .line 118
-    .line 119
-    return-object p0
-
-    .line 120
-    :cond_3
-    invoke-static {v1}, Lps2;->N(Ljava/lang/String;)V
-
-    .line 121
-    .line 122
-    .line 123
-    throw v3
-
-    .line 124
-    nop
-
-    .line 125
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 1
+    return-void
 .end method

@@ -1,118 +1,153 @@
-.class public final synthetic Lfu4;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Ls52;
+.class public final Lfu4;
+.super Ldj3;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final synthetic j:J
+# static fields
+.field public static final e:Lfu4;
 
-.field public final synthetic k:Lvq6;
+.field public static final f:Lfu4;
 
-.field public final synthetic l:[Lgu4;
+.field public static final g:Lfu4;
 
-.field public final synthetic m:Ls52;
+.field public static final h:Lfu4;
 
-.field public final synthetic n:B
+.field public static final i:Lfu4;
+
+.field public static final j:Lfu4;
+
+.field public static final k:Lfu4;
+
+.field public static final l:Lfu4;
+
+.field public static final m:Lfu4;
 
 
 # direct methods
-.method public synthetic constructor <init>(JLvq6;[Lgu4;Ls52;I)V
-    .locals 0
+.method static synthetic constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lfu4;
 
     .line 2
     .line 3
+    const/16 v1, 0x14
+
     .line 4
-    iput-wide p1, p0, Lfu4;->j:J
-
     .line 5
-    .line 6
-    iput-object p3, p0, Lfu4;->k:Lvq6;
+    invoke-direct {v0, v1}, Ldj3;-><init>(B)V
 
+    .line 6
     .line 7
     .line 8
-    iput-object p4, p0, Lfu4;->l:[Lgu4;
+    sput-object v0, Lfu4;->e:Lfu4;
 
     .line 9
     .line 10
-    iput-object p5, p0, Lfu4;->m:Ls52;
+    new-instance v0, Lfu4;
 
     .line 11
     .line 12
-    iput-byte p6, p0, Lfu4;->n:B
+    invoke-direct {v0, v1}, Ldj3;-><init>(B)V
 
     .line 13
-    .line 14
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
-
-    .line 1
-    move-object v5, p1
-
-    .line 2
-    check-cast v5, Lv01;
-
-    .line 3
-    .line 4
-    check-cast p2, Ljava/lang/Integer;
-
-    .line 5
-    .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 7
-    .line 8
-    .line 9
-    iget-byte p1, p0, Lfu4;->n:B
-
-    .line 10
-    .line 11
-    or-int/lit8 p1, p1, 0x1
-
-    .line 12
-    .line 13
-    invoke-static {p1}, Lw23;->h0(I)I
-
     .line 14
     .line 15
-    .line 16
-    move-result v6
+    sput-object v0, Lfu4;->f:Lfu4;
 
+    .line 16
     .line 17
-    iget-wide v0, p0, Lfu4;->j:J
+    new-instance v0, Lfu4;
 
     .line 18
     .line 19
-    iget-object v2, p0, Lfu4;->k:Lvq6;
+    invoke-direct {v0, v1}, Ldj3;-><init>(B)V
 
     .line 20
     .line 21
-    iget-object v3, p0, Lfu4;->l:[Lgu4;
-
     .line 22
+    sput-object v0, Lfu4;->g:Lfu4;
+
     .line 23
-    iget-object v4, p0, Lfu4;->m:Ls52;
-
     .line 24
-    .line 25
-    invoke-static/range {v0 .. v6}, Lv33;->i(JLvq6;[Lgu4;Ls52;Lv01;I)V
+    new-instance v0, Lfu4;
 
+    .line 25
     .line 26
+    invoke-direct {v0, v1}, Ldj3;-><init>(B)V
+
     .line 27
     .line 28
-    sget-object p0, Lk27;->a:Lk27;
-
     .line 29
+    sput-object v0, Lfu4;->h:Lfu4;
+
     .line 30
-    return-object p0
+    .line 31
+    new-instance v0, Lfu4;
+
+    .line 32
+    .line 33
+    invoke-direct {v0, v1}, Ldj3;-><init>(B)V
+
+    .line 34
+    .line 35
+    .line 36
+    sput-object v0, Lfu4;->i:Lfu4;
+
+    .line 37
+    .line 38
+    new-instance v0, Lfu4;
+
+    .line 39
+    .line 40
+    invoke-direct {v0, v1}, Ldj3;-><init>(B)V
+
+    .line 41
+    .line 42
+    .line 43
+    sput-object v0, Lfu4;->j:Lfu4;
+
+    .line 44
+    .line 45
+    new-instance v0, Lfu4;
+
+    .line 46
+    .line 47
+    invoke-direct {v0, v1}, Ldj3;-><init>(B)V
+
+    .line 48
+    .line 49
+    .line 50
+    sput-object v0, Lfu4;->k:Lfu4;
+
+    .line 51
+    .line 52
+    new-instance v0, Lfu4;
+
+    .line 53
+    .line 54
+    invoke-direct {v0, v1}, Ldj3;-><init>(B)V
+
+    .line 55
+    .line 56
+    .line 57
+    sput-object v0, Lfu4;->l:Lfu4;
+
+    .line 58
+    .line 59
+    new-instance v0, Lfu4;
+
+    .line 60
+    .line 61
+    invoke-direct {v0, v1}, Ldj3;-><init>(B)V
+
+    .line 62
+    .line 63
+    .line 64
+    sput-object v0, Lfu4;->m:Lfu4;
+
+    .line 65
+    .line 66
+    return-void
 .end method

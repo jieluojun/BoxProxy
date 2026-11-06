@@ -1,389 +1,267 @@
-.class public abstract synthetic Lbb;
+.class public abstract Lbb;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+
+# static fields
+.field public static final a:Lkq1;
+
+.field public static final b:Lkq1;
+
+.field public static final c:Lu21;
+
+.field public static final d:Lkq1;
+
+.field public static final e:Lkq1;
+
+.field public static final f:Lkq1;
 
 
 # direct methods
-.method public static bridge synthetic A(Landroid/view/ScrollCaptureSession;)Landroid/view/Surface;
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-virtual {p0}, Landroid/view/ScrollCaptureSession;->getSurface()Landroid/view/Surface;
+    new-instance v0, Lq;
 
     .line 2
     .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static synthetic B()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Landroid/view/inputmethod/SurroundingText;
-
-    .line 2
-    .line 3
-    return-void
-.end method
-
-.method public static bridge synthetic a(Landroid/widget/EdgeEffect;)F
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/widget/EdgeEffect;->getDistance()F
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    return p0
-.end method
-
-.method public static bridge synthetic b(Landroid/content/res/Configuration;)I
-    .locals 0
-
-    .line 1
-    iget p0, p0, Landroid/content/res/Configuration;->fontWeightAdjustment:I
-
-    .line 2
-    .line 3
-    return p0
-.end method
-
-.method public static bridge synthetic c(Landroid/view/ContentInfo;)I
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/ContentInfo;->getFlags()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    return p0
-.end method
-
-.method public static bridge synthetic d(Landroid/view/ContentInfo;)Landroid/content/ClipData;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/ContentInfo;->getClip()Landroid/content/ClipData;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static synthetic e(Landroid/content/ClipData;I)Landroid/view/ContentInfo$Builder;
-    .locals 1
-
-    .line 1
-    new-instance v0, Landroid/view/ContentInfo$Builder;
-
-    .line 2
-    .line 3
-    invoke-direct {v0, p0, p1}, Landroid/view/ContentInfo$Builder;-><init>(Landroid/content/ClipData;I)V
+    const/4 v1, 0x6
 
     .line 4
+    invoke-direct {v0, v1}, Lq;-><init>(B)V
+
     .line 5
     .line 6
-    return-object v0
-.end method
-
-.method public static bridge synthetic f(Landroid/view/ContentInfo$Builder;)Landroid/view/ContentInfo;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/ContentInfo$Builder;->build()Landroid/view/ContentInfo;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static bridge synthetic g(Ljava/lang/Object;)Landroid/view/ContentInfo;
-    .locals 0
-
-    .line 1
-    check-cast p0, Landroid/view/ContentInfo;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public static bridge synthetic h(Landroid/view/Display;I)Landroid/view/RoundedCorner;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/view/Display;->getRoundedCorner(I)Landroid/view/RoundedCorner;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static bridge synthetic i(Landroid/view/WindowInsets;)Landroid/view/RoundedCorner;
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x3
-
-    .line 2
-    invoke-virtual {p0, v0}, Landroid/view/WindowInsets;->getRoundedCorner(I)Landroid/view/RoundedCorner;
-
-    .line 3
-    .line 4
-    .line 5
-    move-result-object p0
-
-    .line 6
-    return-object p0
-.end method
-
-.method public static bridge synthetic j(Ljava/lang/Object;)Landroid/view/ScrollCaptureSession;
-    .locals 0
-
-    .line 1
-    check-cast p0, Landroid/view/ScrollCaptureSession;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public static bridge synthetic k(Landroid/view/ScrollCaptureSession;)Landroid/view/Surface;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/ScrollCaptureSession;->getSurface()Landroid/view/Surface;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static synthetic l(IIILjava/lang/CharSequence;)Landroid/view/inputmethod/SurroundingText;
-    .locals 1
-
-    .line 1
-    new-instance v0, Landroid/view/inputmethod/SurroundingText;
-
-    .line 2
-    .line 3
-    invoke-direct {v0, p3, p0, p1, p2}, Landroid/view/inputmethod/SurroundingText;-><init>(Ljava/lang/CharSequence;III)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-object v0
-.end method
-
-.method public static bridge synthetic m(Landroid/view/textclassifier/TextSelection;)Landroid/view/textclassifier/TextClassification;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/textclassifier/TextSelection;->getTextClassification()Landroid/view/textclassifier/TextClassification;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static bridge synthetic n(Landroid/view/translation/ViewTranslationResponse;)Landroid/view/translation/TranslationResponseValue;
-    .locals 1
-
-    .line 1
-    const-string v0, "android:text"
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, v0}, Landroid/view/translation/ViewTranslationResponse;->getValue(Ljava/lang/String;)Landroid/view/translation/TranslationResponseValue;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
     .line 7
-    return-object p0
+    new-instance v1, Lkq1;
+
+    .line 8
+    .line 9
+    const/4 v2, 0x0
+
+    .line 10
+    invoke-direct {v1, v0, v2}, Lkq1;-><init>(Le62;B)V
+
+    .line 11
+    .line 12
+    .line 13
+    sput-object v1, Lbb;->a:Lkq1;
+
+    .line 14
+    .line 15
+    new-instance v0, Lab;
+
+    .line 16
+    .line 17
+    const/4 v1, 0x0
+
+    .line 18
+    const-string v2, "LocalContext"
+
+    .line 19
+    .line 20
+    invoke-direct {v0, v2, v1}, Lab;-><init>(Ljava/lang/String;B)V
+
+    .line 21
+    .line 22
+    .line 23
+    new-instance v1, Lkq1;
+
+    .line 24
+    .line 25
+    const/4 v2, 0x1
+
+    .line 26
+    invoke-direct {v1, v0, v2}, Lkq1;-><init>(Le62;B)V
+
+    .line 27
+    .line 28
+    .line 29
+    sput-object v1, Lbb;->b:Lkq1;
+
+    .line 30
+    .line 31
+    new-instance v0, Ll;
+
+    .line 32
+    .line 33
+    const/16 v1, 0x11
+
+    .line 34
+    .line 35
+    invoke-direct {v0, v1}, Ll;-><init>(B)V
+
+    .line 36
+    .line 37
+    .line 38
+    new-instance v1, Lu21;
+
+    .line 39
+    .line 40
+    invoke-direct {v1, v0}, Lu21;-><init>(Lp62;)V
+
+    .line 41
+    .line 42
+    .line 43
+    sput-object v1, Lbb;->c:Lu21;
+
+    .line 44
+    .line 45
+    new-instance v0, Lab;
+
+    .line 46
+    .line 47
+    const/4 v1, 0x0
+
+    .line 48
+    const-string v2, "LocalImageVectorCache"
+
+    .line 49
+    .line 50
+    invoke-direct {v0, v2, v1}, Lab;-><init>(Ljava/lang/String;B)V
+
+    .line 51
+    .line 52
+    .line 53
+    new-instance v1, Lkq1;
+
+    .line 54
+    .line 55
+    const/4 v2, 0x1
+
+    .line 56
+    invoke-direct {v1, v0, v2}, Lkq1;-><init>(Le62;B)V
+
+    .line 57
+    .line 58
+    .line 59
+    sput-object v1, Lbb;->d:Lkq1;
+
+    .line 60
+    .line 61
+    new-instance v0, Lab;
+
+    .line 62
+    .line 63
+    const/4 v1, 0x0
+
+    .line 64
+    const-string v2, "LocalResourceIdCache"
+
+    .line 65
+    .line 66
+    invoke-direct {v0, v2, v1}, Lab;-><init>(Ljava/lang/String;B)V
+
+    .line 67
+    .line 68
+    .line 69
+    new-instance v1, Lkq1;
+
+    .line 70
+    .line 71
+    const/4 v2, 0x1
+
+    .line 72
+    invoke-direct {v1, v0, v2}, Lkq1;-><init>(Le62;B)V
+
+    .line 73
+    .line 74
+    .line 75
+    sput-object v1, Lbb;->e:Lkq1;
+
+    .line 76
+    .line 77
+    new-instance v0, Lab;
+
+    .line 78
+    .line 79
+    const/4 v1, 0x0
+
+    .line 80
+    const-string v2, "LocalView"
+
+    .line 81
+    .line 82
+    invoke-direct {v0, v2, v1}, Lab;-><init>(Ljava/lang/String;B)V
+
+    .line 83
+    .line 84
+    .line 85
+    new-instance v1, Lkq1;
+
+    .line 86
+    .line 87
+    const/4 v2, 0x1
+
+    .line 88
+    invoke-direct {v1, v0, v2}, Lkq1;-><init>(Le62;B)V
+
+    .line 89
+    .line 90
+    .line 91
+    sput-object v1, Lbb;->f:Lkq1;
+
+    .line 92
+    .line 93
+    return-void
 .end method
 
-.method public static bridge synthetic o(Ljava/lang/Object;)Landroid/view/translation/ViewTranslationResponse;
-    .locals 0
+.method public static final a(Ljava/lang/String;)V
+    .locals 3
 
     .line 1
-    check-cast p0, Landroid/view/translation/ViewTranslationResponse;
+    new-instance v0, Ljava/lang/IllegalStateException;
 
     .line 2
     .line 3
-    return-object p0
-.end method
+    new-instance v1, Ljava/lang/StringBuilder;
 
-.method public static bridge synthetic p(Landroid/view/translation/TranslationResponseValue;)Ljava/lang/CharSequence;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/translation/TranslationResponseValue;->getText()Ljava/lang/CharSequence;
-
-    .line 2
-    .line 3
     .line 4
+    .line 5
+    const-string v2, "CompositionLocal "
+
+    .line 6
+    .line 7
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 8
+    .line 9
+    .line 10
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const-string p0, " not present"
+
+    .line 14
+    .line 15
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 19
+    .line 20
+    .line 21
     move-result-object p0
 
-    .line 5
-    return-object p0
-.end method
+    .line 22
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
-.method public static bridge synthetic q(Landroid/graphics/Canvas;Landroid/graphics/NinePatch;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
-    .locals 0
+    .line 23
+    .line 24
+    .line 25
+    move-result-object p0
 
-    .line 1
-    invoke-virtual {p0, p1, p2, p3}, Landroid/graphics/Canvas;->drawPatch(Landroid/graphics/NinePatch;Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+    .line 26
+    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic r(Landroid/graphics/Canvas;Landroid/graphics/NinePatch;Landroid/graphics/RectF;Landroid/graphics/Paint;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1, p2, p3}, Landroid/graphics/Canvas;->drawPatch(Landroid/graphics/NinePatch;Landroid/graphics/RectF;Landroid/graphics/Paint;)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic s(Landroid/graphics/Canvas;[II[FIILandroid/graphics/fonts/Font;Landroid/graphics/Paint;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual/range {p0 .. p7}, Landroid/graphics/Canvas;->drawGlyphs([II[FIILandroid/graphics/fonts/Font;Landroid/graphics/Paint;)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic t(Landroid/view/ContentInfo$Builder;I)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/view/ContentInfo$Builder;->setFlags(I)Landroid/view/ContentInfo$Builder;
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic u(Landroid/view/ContentInfo$Builder;Landroid/net/Uri;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/view/ContentInfo$Builder;->setLinkUri(Landroid/net/Uri;)Landroid/view/ContentInfo$Builder;
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic v(Landroid/view/ContentInfo$Builder;Landroid/os/Bundle;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/view/ContentInfo$Builder;->setExtras(Landroid/os/Bundle;)Landroid/view/ContentInfo$Builder;
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic w(Landroid/view/textclassifier/TextSelection$Request$Builder;)V
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    invoke-virtual {p0, v0}, Landroid/view/textclassifier/TextSelection$Request$Builder;->setIncludeTextClassification(Z)Landroid/view/textclassifier/TextSelection$Request$Builder;
-
-    .line 3
-    .line 4
-    .line 5
-    return-void
-.end method
-
-.method public static bridge synthetic x(Landroid/widget/EdgeEffect;FF)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1, p2}, Landroid/widget/EdgeEffect;->onPullDistance(FF)F
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic y(Ljava/lang/Exception;)Z
-    .locals 0
-
-    .line 1
-    instance-of p0, p0, Landroid/app/ForegroundServiceStartNotAllowedException;
-
-    .line 2
-    .line 3
-    return p0
-.end method
-
-.method public static bridge synthetic z(Landroid/view/ContentInfo;)I
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/ContentInfo;->getSource()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    return p0
+    .line 27
+    .line 28
+    .line 29
+    throw v0
 .end method

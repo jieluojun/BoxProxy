@@ -1,17 +1,20 @@
 .class public final Lz94;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Landroid/window/OnBackAnimationCallback;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final synthetic a:Ly94;
+.field public final a:J
+
+.field public final b:J
+
+.field public final c:Ljava/lang/Long;
+
+.field public final d:Ljava/lang/Long;
 
 
 # direct methods
-.method public constructor <init>(Ly94;)V
+.method public constructor <init>(JJLjava/lang/Long;Ljava/lang/Long;)V
     .locals 0
 
     .line 1
@@ -20,138 +23,310 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lz94;->a:Ly94;
+    iput-wide p1, p0, Lz94;->a:J
 
     .line 5
     .line 6
+    iput-wide p3, p0, Lz94;->b:J
+
+    .line 7
+    .line 8
+    iput-object p5, p0, Lz94;->c:Ljava/lang/Long;
+
+    .line 9
+    .line 10
+    iput-object p6, p0, Lz94;->d:Ljava/lang/Long;
+
+    .line 11
+    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final onBackCancelled()V
-    .locals 0
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
     .line 1
-    iget-object p0, p0, Lz94;->a:Ly94;
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Lgw3;->a()V
+    goto :goto_1
 
     .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public final onBackInvoked()V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lz94;->a:Ly94;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lgw3;->b()V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public final onBackProgressed(Landroid/window/BackEvent;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    iget-object p0, p0, Lz94;->a:Ly94;
+    :cond_0
+    instance-of v0, p1, Lz94;
 
     .line 5
     .line 6
-    invoke-static {p1}, Lu23;->a0(Landroid/window/BackEvent;)Lvv3;
+    if-nez v0, :cond_1
 
     .line 7
     .line 8
+    goto :goto_0
+
     .line 9
-    move-result-object p1
+    :cond_1
+    check-cast p1, Lz94;
 
     .line 10
-    invoke-virtual {p0, p1}, Lgw3;->c(Lvv3;)V
-
     .line 11
+    iget-wide v0, p0, Lz94;->a:J
+
     .line 12
     .line 13
-    return-void
+    iget-wide v2, p1, Lz94;->a:J
+
+    .line 14
+    .line 15
+    cmp-long v0, v0, v2
+
+    .line 16
+    .line 17
+    if-eqz v0, :cond_2
+
+    .line 18
+    .line 19
+    goto :goto_0
+
+    .line 20
+    :cond_2
+    iget-wide v0, p0, Lz94;->b:J
+
+    .line 21
+    .line 22
+    iget-wide v2, p1, Lz94;->b:J
+
+    .line 23
+    .line 24
+    cmp-long v0, v0, v2
+
+    .line 25
+    .line 26
+    if-eqz v0, :cond_3
+
+    .line 27
+    .line 28
+    goto :goto_0
+
+    .line 29
+    :cond_3
+    iget-object v0, p0, Lz94;->c:Ljava/lang/Long;
+
+    .line 30
+    .line 31
+    iget-object v1, p1, Lz94;->c:Ljava/lang/Long;
+
+    .line 32
+    .line 33
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    .line 34
+    .line 35
+    .line 36
+    move-result v0
+
+    .line 37
+    if-nez v0, :cond_4
+
+    .line 38
+    .line 39
+    goto :goto_0
+
+    .line 40
+    :cond_4
+    iget-object p0, p0, Lz94;->d:Ljava/lang/Long;
+
+    .line 41
+    .line 42
+    iget-object p1, p1, Lz94;->d:Ljava/lang/Long;
+
+    .line 43
+    .line 44
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    .line 45
+    .line 46
+    .line 47
+    move-result p0
+
+    .line 48
+    if-nez p0, :cond_5
+
+    .line 49
+    .line 50
+    :goto_0
+    const/4 p0, 0x0
+
+    .line 51
+    return p0
+
+    .line 52
+    :cond_5
+    :goto_1
+    const/4 p0, 0x1
+
+    .line 53
+    return p0
 .end method
 
-.method public final onBackStarted(Landroid/window/BackEvent;)V
-    .locals 2
+.method public final hashCode()I
+    .locals 4
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-wide v0, p0, Lz94;->a:J
 
     .line 2
     .line 3
-    .line 4
-    invoke-static {p1}, Lu23;->a0(Landroid/window/BackEvent;)Lvv3;
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
 
+    .line 4
     .line 5
     .line 6
+    move-result v0
+
     .line 7
-    move-result-object p1
+    const/16 v1, 0x1f
 
     .line 8
-    iget-object p0, p0, Lz94;->a:Ly94;
-
     .line 9
+    mul-int/2addr v0, v1
+
     .line 10
-    iget-object v0, p0, Lgw3;->a:Lwv3;
+    iget-wide v2, p0, Lz94;->b:J
 
     .line 11
     .line 12
-    if-eqz v0, :cond_1
+    invoke-static {v0, v1, v2, v3}, Lhs5;->d(IIJ)I
 
     .line 13
     .line 14
-    iget-boolean v1, p0, Lgw3;->b:Z
-
     .line 15
+    move-result v0
+
     .line 16
-    if-nez v1, :cond_0
+    iget-object v2, p0, Lz94;->c:Ljava/lang/Long;
 
     .line 17
     .line 18
-    invoke-virtual {v0, p0, p1}, Lwv3;->e(Lgw3;Lvv3;)V
+    invoke-virtual {v2}, Ljava/lang/Object;->hashCode()I
 
     .line 19
     .line 20
     .line 21
-    const/4 p1, 0x1
+    move-result v2
 
     .line 22
-    iput-boolean p1, p0, Lgw3;->b:Z
+    add-int/2addr v2, v0
 
     .line 23
+    mul-int/2addr v2, v1
+
     .line 24
-    :cond_0
-    return-void
+    iget-object p0, p0, Lz94;->d:Ljava/lang/Long;
 
     .line 25
-    :cond_1
-    const-string p0, "This input is not added to any dispatcher."
-
     .line 26
-    .line 27
-    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
+    .line 27
     .line 28
     .line 29
+    move-result p0
+
     .line 30
-    return-void
+    add-int/2addr p0, v2
+
+    .line 31
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    .line 1
+    const-string v0, "State(uploadBytesPerSec="
+
+    .line 2
+    .line 3
+    const-string v1, ", downloadBytesPerSec="
+
+    .line 4
+    .line 5
+    iget-wide v2, p0, Lz94;->a:J
+
+    .line 6
+    .line 7
+    invoke-static {v2, v3, v0, v1}, Lhs5;->o(JLjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v0
+
+    .line 11
+    iget-wide v1, p0, Lz94;->b:J
+
+    .line 12
+    .line 13
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    .line 14
+    .line 15
+    .line 16
+    const-string v1, ", totalUploadBytes="
+
+    .line 17
+    .line 18
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 19
+    .line 20
+    .line 21
+    iget-object v1, p0, Lz94;->c:Ljava/lang/Long;
+
+    .line 22
+    .line 23
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 24
+    .line 25
+    .line 26
+    const-string v1, ", totalDownloadBytes="
+
+    .line 27
+    .line 28
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 29
+    .line 30
+    .line 31
+    iget-object p0, p0, Lz94;->d:Ljava/lang/Long;
+
+    .line 32
+    .line 33
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 34
+    .line 35
+    .line 36
+    const-string p0, ")"
+
+    .line 37
+    .line 38
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 39
+    .line 40
+    .line 41
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 42
+    .line 43
+    .line 44
+    move-result-object p0
+
+    .line 45
+    return-object p0
 .end method

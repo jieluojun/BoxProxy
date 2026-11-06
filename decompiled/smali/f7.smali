@@ -1,140 +1,148 @@
-.class public final Lf7;
-.super Lng1;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class final Lf7;
+.super Ldq3;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
-# interfaces
-.implements Lm11;
-.implements Lh94;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ldq3;"
+    }
+.end annotation
 
 
 # instance fields
-.field public final A:Lgl4;
-
-.field public final B:Lgl4;
-
-.field public z:Ls52;
+.field public final j:Lt62;
 
 
 # direct methods
-.method public constructor <init>(Ls52;)V
-    .locals 2
+.method public constructor <init>(Lt62;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Lng1;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lf7;->z:Ls52;
+    iput-object p1, p0, Lf7;->j:Lt62;
 
     .line 5
     .line 6
-    const/4 p1, 0x0
-
-    .line 7
-    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object v0
-
-    .line 11
-    iput-object v0, p0, Lf7;->A:Lgl4;
-
-    .line 12
-    .line 13
-    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p1
-
-    .line 17
-    iput-object p1, p0, Lf7;->B:Lgl4;
-
-    .line 18
-    .line 19
-    new-instance p1, Lc7;
-
-    .line 20
-    .line 21
-    new-instance v0, Lo2;
-
-    .line 22
-    .line 23
-    const/4 v1, 0x2
-
-    .line 24
-    invoke-direct {v0, p0, v1}, Lo2;-><init>(Ljava/lang/Object;B)V
-
-    .line 25
-    .line 26
-    .line 27
-    invoke-direct {p1}, Ljo3;-><init>()V
-
-    .line 28
-    .line 29
-    .line 30
-    iput-object v0, p1, Lc7;->x:Lo2;
-
-    .line 31
-    .line 32
-    invoke-virtual {p0, p1}, Lng1;->E1(Lmg1;)V
-
-    .line 33
-    .line 34
-    .line 35
     return-void
 .end method
 
 
 # virtual methods
-.method public final i0()V
-    .locals 2
+.method public final a()Lvp3;
+    .locals 1
 
     .line 1
-    new-instance v0, Le7;
+    new-instance v0, Lh7;
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    iget-object p0, p0, Lf7;->j:Lt62;
 
     .line 4
-    invoke-direct {v0, p0, v1}, Le7;-><init>(Ljava/lang/Object;B)V
-
     .line 5
+    invoke-direct {v0, p0}, Lh7;-><init>(Lt62;)V
+
     .line 6
     .line 7
-    invoke-static {p0, v0}, Lq43;->F(Ljo3;Ld52;)V
-
     .line 8
-    .line 9
-    .line 10
+    return-object v0
+.end method
+
+.method public final b(Lvp3;)V
+    .locals 0
+
+    .line 1
+    check-cast p1, Lh7;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lf7;->j:Lt62;
+
+    .line 4
+    .line 5
+    iput-object p0, p1, Lh7;->z:Lt62;
+
+    .line 6
+    .line 7
     return-void
 .end method
 
-.method public final w1()V
-    .locals 2
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
     .line 1
-    new-instance v0, Le7;
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    goto :goto_1
 
     .line 4
-    invoke-direct {v0, p0, v1}, Le7;-><init>(Ljava/lang/Object;B)V
+    :cond_0
+    instance-of v0, p1, Lf7;
 
     .line 5
     .line 6
-    .line 7
-    invoke-static {p0, v0}, Lq43;->F(Ljo3;Ld52;)V
+    if-nez v0, :cond_1
 
+    .line 7
     .line 8
+    goto :goto_0
+
     .line 9
+    :cond_1
+    check-cast p1, Lf7;
+
     .line 10
-    return-void
+    .line 11
+    iget-object p1, p1, Lf7;->j:Lt62;
+
+    .line 12
+    .line 13
+    iget-object p0, p0, Lf7;->j:Lt62;
+
+    .line 14
+    .line 15
+    if-eq p0, p1, :cond_2
+
+    .line 16
+    .line 17
+    :goto_0
+    const/4 p0, 0x0
+
+    .line 18
+    return p0
+
+    .line 19
+    :cond_2
+    :goto_1
+    const/4 p0, 0x1
+
+    .line 20
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lf7;->j:Lt62;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
 .end method

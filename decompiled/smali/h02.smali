@@ -1,29 +1,20 @@
-.class public final Lh02;
+.class public interface abstract Lh02;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# static fields
-.field public static final a:Lh02;
+# virtual methods
+.method public abstract g(F)J
+.end method
 
+.method public abstract h()F
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public abstract j(FF)F
+.end method
 
-    .line 1
-    new-instance v0, Lh02;
+.method public abstract l(JF)F
+.end method
 
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    sput-object v0, Lh02;->a:Lh02;
-
-    .line 7
-    .line 8
-    return-void
+.method public abstract n(FFJ)F
 .end method

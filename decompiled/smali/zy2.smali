@@ -1,24 +1,24 @@
-.class public final Lzy2;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class final Lzy2;
+.super Ldq3;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
-# interfaces
-.implements Lda5;
-.implements Lva1;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ldq3;"
+    }
+.end annotation
 
 
 # instance fields
-.field public final j:Lsa1;
+.field public final j:Lp62;
 
-.field public final k:Ls52;
-
-.field public final l:Lw71;
-
-.field public m:Lk96;
+.field public final k:Lp62;
 
 
 # direct methods
-.method public constructor <init>(Lsa1;Ls52;)V
+.method public constructor <init>(Lp62;Lp62;)V
     .locals 0
 
     .line 1
@@ -27,324 +27,201 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lzy2;->j:Lsa1;
+    iput-object p1, p0, Lzy2;->j:Lp62;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lzy2;->k:Ls52;
+    iput-object p2, p0, Lzy2;->k:Lp62;
 
     .line 7
     .line 8
-    invoke-interface {p1, p0}, Lsa1;->m(Lsa1;)Lsa1;
-
-    .line 9
-    .line 10
-    .line 11
-    move-result-object p1
-
-    .line 12
-    invoke-static {p1}, Lp87;->f(Lsa1;)Lw71;
-
-    .line 13
-    .line 14
-    .line 15
-    move-result-object p1
-
-    .line 16
-    iput-object p1, p0, Lzy2;->l:Lw71;
-
-    .line 17
-    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final a()Lvp3;
+    .locals 2
+
+    .line 1
+    new-instance v0, Lbz2;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Lvp3;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object v1, p0, Lzy2;->j:Lp62;
+
+    .line 7
+    .line 8
+    iput-object v1, v0, Lbz2;->x:Lp62;
+
+    .line 9
+    .line 10
+    iget-object p0, p0, Lzy2;->k:Lp62;
+
+    .line 11
+    .line 12
+    iput-object p0, v0, Lbz2;->y:Lp62;
+
+    .line 13
+    .line 14
+    return-object v0
+.end method
+
+.method public final b(Lvp3;)V
+    .locals 1
+
+    .line 1
+    check-cast p1, Lbz2;
+
+    .line 2
+    .line 3
+    iget-object v0, p0, Lzy2;->j:Lp62;
+
+    .line 4
+    .line 5
+    iput-object v0, p1, Lbz2;->x:Lp62;
+
+    .line 6
+    .line 7
+    iget-object p0, p0, Lzy2;->k:Lp62;
+
+    .line 8
+    .line 9
+    iput-object p0, p1, Lbz2;->y:Lp62;
+
+    .line 10
+    .line 11
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
     .locals 4
 
     .line 1
-    iget-object v0, p0, Lzy2;->m:Lk96;
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    const/4 v1, 0x0
+    if-ne p0, p1, :cond_0
 
+    .line 3
     .line 4
-    if-eqz v0, :cond_0
+    return v0
 
     .line 5
-    .line 6
-    new-instance v2, Ljava/util/concurrent/CancellationException;
-
-    .line 7
-    .line 8
-    const-string v3, "Old job was still running!"
-
-    .line 9
-    .line 10
-    invoke-direct {v2, v3}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
-
-    .line 11
-    .line 12
-    .line 13
-    invoke-virtual {v2, v1}, Ljava/lang/Throwable;->initCause(Ljava/lang/Throwable;)Ljava/lang/Throwable;
-
-    .line 14
-    .line 15
-    .line 16
-    invoke-virtual {v0, v2}, Leu2;->c(Ljava/util/concurrent/CancellationException;)V
-
-    .line 17
-    .line 18
-    .line 19
     :cond_0
-    iget-object v0, p0, Lzy2;->k:Ls52;
-
-    .line 20
-    .line 21
-    const/4 v2, 0x3
-
-    .line 22
-    iget-object v3, p0, Lzy2;->l:Lw71;
-
-    .line 23
-    .line 24
-    invoke-static {v3, v1, v1, v0, v2}, Lx37;->J(Lbb1;Lsa1;Leb1;Ls52;I)Lk96;
-
-    .line 25
-    .line 26
-    .line 27
-    move-result-object v0
-
-    .line 28
-    iput-object v0, p0, Lzy2;->m:Lk96;
-
-    .line 29
-    .line 30
-    return-void
-.end method
-
-.method public final d()V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lzy2;->m:Lk96;
-
-    .line 2
-    .line 3
-    if-eqz v0, :cond_0
-
-    .line 4
-    .line 5
-    new-instance v1, Lvw1;
+    instance-of v1, p1, Lzy2;
 
     .line 6
     .line 7
-    invoke-direct {v1}, Lvw1;-><init>()V
+    const/4 v2, 0x0
 
     .line 8
+    if-nez v1, :cond_1
+
     .line 9
     .line 10
-    invoke-virtual {v0, v1}, Leu2;->B(Ljava/util/concurrent/CancellationException;)V
+    return v2
 
     .line 11
-    .line 12
-    .line 13
-    :cond_0
-    const/4 v0, 0x0
-
-    .line 14
-    iput-object v0, p0, Lzy2;->m:Lk96;
-
-    .line 15
-    .line 16
-    return-void
-.end method
-
-.method public final getKey()Lra1;
-    .locals 0
-
-    .line 1
-    sget-object p0, Lp6;->a0:Lp6;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final h()V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lzy2;->m:Lk96;
-
-    .line 2
-    .line 3
-    if-eqz v0, :cond_0
-
-    .line 4
-    .line 5
-    new-instance v1, Lvw1;
-
-    .line 6
-    .line 7
-    invoke-direct {v1}, Lvw1;-><init>()V
-
-    .line 8
-    .line 9
-    .line 10
-    invoke-virtual {v0, v1}, Leu2;->B(Ljava/util/concurrent/CancellationException;)V
-
-    .line 11
-    .line 12
-    .line 13
-    :cond_0
-    const/4 v0, 0x0
-
-    .line 14
-    iput-object v0, p0, Lzy2;->m:Lk96;
-
-    .line 15
-    .line 16
-    return-void
-.end method
-
-.method public final m(Lsa1;)Lsa1;
-    .locals 0
-
-    .line 1
-    invoke-static {p0, p1}, Lx37;->R(Lqa1;Lsa1;)Lsa1;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public final p(Lra1;)Lqa1;
-    .locals 0
-
-    .line 1
-    invoke-static {p0, p1}, Lx37;->x(Lqa1;Lra1;)Lqa1;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public final q(Lsa1;Ljava/lang/Throwable;)V
-    .locals 3
-
-    .line 1
-    sget-object v0, Lj11;->k:Li11;
-
-    .line 2
-    .line 3
-    invoke-interface {p1, v0}, Lsa1;->p(Lra1;)Lqa1;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, Lj11;
-
-    .line 8
-    .line 9
-    if-eqz v0, :cond_0
-
-    .line 10
-    .line 11
-    new-instance v1, Lx;
+    :cond_1
+    check-cast p1, Lzy2;
 
     .line 12
     .line 13
-    const/16 v2, 0x18
+    iget-object v1, p1, Lzy2;->j:Lp62;
 
     .line 14
     .line 15
-    invoke-direct {v1, v0, p0, v2}, Lx;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
+    iget-object v3, p0, Lzy2;->j:Lp62;
 
     .line 16
     .line 17
+    if-eq v3, v1, :cond_2
+
     .line 18
-    invoke-static {p2, v1}, Lns6;->K(Ljava/lang/Throwable;Ld52;)Z
-
     .line 19
+    return v2
+
     .line 20
+    :cond_2
+    iget-object p0, p0, Lzy2;->k:Lp62;
+
     .line 21
-    :cond_0
-    iget-object p0, p0, Lzy2;->j:Lsa1;
-
     .line 22
+    iget-object p1, p1, Lzy2;->k:Lp62;
+
     .line 23
-    sget-object v0, Lp6;->a0:Lp6;
-
     .line 24
+    if-eq p0, p1, :cond_3
+
     .line 25
-    invoke-interface {p0, v0}, Lsa1;->p(Lra1;)Lqa1;
-
     .line 26
+    return v2
+
     .line 27
-    .line 28
-    move-result-object p0
+    :cond_3
+    return v0
+.end method
 
-    .line 29
-    check-cast p0, Lva1;
+.method public final hashCode()I
+    .locals 2
 
-    .line 30
-    .line 31
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    iget-object v1, p0, Lzy2;->j:Lp62;
+
+    .line 3
+    .line 4
+    if-eqz v1, :cond_0
+
+    .line 5
+    .line 6
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
+
+    .line 7
+    .line 8
+    .line 9
+    move-result v1
+
+    .line 10
+    goto :goto_0
+
+    .line 11
+    :cond_0
+    move v1, v0
+
+    .line 12
+    :goto_0
+    mul-int/lit8 v1, v1, 0x1f
+
+    .line 13
+    .line 14
+    iget-object p0, p0, Lzy2;->k:Lp62;
+
+    .line 15
+    .line 16
     if-eqz p0, :cond_1
 
-    .line 32
-    .line 33
-    invoke-interface {p0, p1, p2}, Lva1;->q(Lsa1;Ljava/lang/Throwable;)V
+    .line 17
+    .line 18
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    .line 34
-    .line 35
-    .line 36
-    return-void
+    .line 19
+    .line 20
+    .line 21
+    move-result v0
 
-    .line 37
+    .line 22
     :cond_1
-    throw p2
-.end method
+    add-int/2addr v1, v0
 
-.method public final v(Ls52;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    invoke-interface {p1, p2, p0}, Ls52;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public final z(Lra1;)Lsa1;
-    .locals 0
-
-    .line 1
-    invoke-static {p0, p1}, Lx37;->K(Lqa1;Lra1;)Lsa1;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
+    .line 23
+    return v1
 .end method

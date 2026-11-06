@@ -1,225 +1,113 @@
-.class public final Lap;
-.super Landroidx/appcompat/widget/ContentFrameLayout;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final synthetic Lap;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lj71;
 
 
 # instance fields
-.field public final synthetic r:Lcp;
+.field public final synthetic a:B
+
+.field public final synthetic b:Landroid/widget/TextView;
 
 
 # direct methods
-.method public constructor <init>(Lcp;Lx71;)V
+.method public synthetic constructor <init>(Landroid/widget/TextView;B)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lap;->r:Lcp;
+    iput-byte p2, p0, Lap;->a:B
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Landroidx/appcompat/widget/ContentFrameLayout;-><init>(Landroid/content/Context;)V
+    iput-object p1, p0, Lap;->b:Landroid/widget/TextView;
 
     .line 4
     .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 6
+    .line 7
+    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+.method public final accept(Ljava/lang/Object;)V
     .locals 1
 
     .line 1
-    iget-object v0, p0, Lap;->r:Lcp;
+    iget-byte v0, p0, Lap;->a:B
 
     .line 2
     .line 3
-    invoke-virtual {v0, p1}, Lcp;->x(Landroid/view/KeyEvent;)Z
+    iget-object p0, p0, Lap;->b:Landroid/widget/TextView;
 
     .line 4
     .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    if-nez v0, :cond_1
-
-    .line 8
-    .line 9
-    invoke-super {p0, p1}, Landroid/view/View;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    if-eqz p0, :cond_0
-
-    .line 14
-    .line 15
-    goto :goto_0
-
-    .line 16
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 17
-    return p0
-
-    .line 18
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
-    .line 19
-    return p0
-.end method
-
-.method public final onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 3
-
-    .line 1
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    if-nez v0, :cond_1
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
-
     .line 8
+    check-cast p0, Lcr;
+
     .line 9
     .line 10
-    move-result v0
+    check-cast p1, Landroid/graphics/Typeface;
 
     .line 11
-    float-to-int v0, v0
-
     .line 12
-    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+    invoke-static {p0, p1}, Lcr;->e(Lcr;Landroid/graphics/Typeface;)V
 
     .line 13
     .line 14
     .line 15
-    move-result v1
+    return-void
 
     .line 16
-    float-to-int v1, v1
+    :pswitch_0
+    check-cast p0, Lyp;
 
     .line 17
-    const/4 v2, -0x5
-
     .line 18
-    if-lt v0, v2, :cond_0
+    check-cast p1, Landroid/graphics/Typeface;
 
     .line 19
     .line 20
-    if-lt v1, v2, :cond_0
+    invoke-static {p0, p1}, Lyp;->a(Lyp;Landroid/graphics/Typeface;)V
 
     .line 21
     .line 22
-    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
-
     .line 23
-    .line 24
-    .line 25
-    move-result v2
+    return-void
 
+    .line 24
+    :pswitch_1
+    check-cast p0, Lbp;
+
+    .line 25
     .line 26
-    add-int/lit8 v2, v2, 0x5
+    check-cast p1, Landroid/graphics/Typeface;
 
     .line 27
     .line 28
-    if-gt v0, v2, :cond_0
+    invoke-static {p0, p1}, Lbp;->a(Lbp;Landroid/graphics/Typeface;)V
 
     .line 29
     .line 30
-    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
-
     .line 31
-    .line 32
-    .line 33
-    move-result v0
-
-    .line 34
-    add-int/lit8 v0, v0, 0x5
-
-    .line 35
-    .line 36
-    if-le v1, v0, :cond_1
-
-    .line 37
-    .line 38
-    :cond_0
-    const/4 p1, 0x0
-
-    .line 39
-    iget-object p0, p0, Lap;->r:Lcp;
-
-    .line 40
-    .line 41
-    invoke-virtual {p0, p1}, Lcp;->C(I)Lbp;
-
-    .line 42
-    .line 43
-    .line 44
-    move-result-object p1
-
-    .line 45
-    const/4 v0, 0x1
-
-    .line 46
-    invoke-virtual {p0, p1, v0}, Lcp;->v(Lbp;Z)V
-
-    .line 47
-    .line 48
-    .line 49
-    return v0
-
-    .line 50
-    :cond_1
-    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-
-    .line 51
-    .line 52
-    .line 53
-    move-result p0
-
-    .line 54
-    return p0
-.end method
-
-.method public final setBackgroundResource(I)V
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
-
-    .line 5
-    invoke-static {v0, p1}, Luu6;->A(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p1
-
-    .line 9
-    invoke-virtual {p0, p1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 10
-    .line 11
-    .line 12
     return-void
+
+    .line 32
+    nop
+
+    .line 33
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

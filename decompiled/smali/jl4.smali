@@ -1,61 +1,48 @@
 .class public final Ljl4;
-.super Ljo3;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lpx6;
-.implements Lcw5;
-
-
-# instance fields
-.field public x:Lnf;
-
-.field public y:Z
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # virtual methods
-.method public final C()Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 0
 
     .line 1
-    sget-object p0, Liv1;->E:Liv1;
+    instance-of p0, p1, Ljl4;
 
     .line 2
     .line 3
-    return-object p0
-.end method
-
-.method public final Q0(Llw5;)V
-    .locals 1
-
-    .line 1
-    iget-boolean v0, p0, Ljl4;->y:Z
-
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
+    if-eqz p0, :cond_0
 
     .line 4
     .line 5
-    iget-object p0, p0, Ljl4;->x:Lnf;
+    const/4 p0, 0x1
 
     .line 6
+    return p0
+
     .line 7
-    invoke-virtual {p0, p1}, Lnf;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    :cond_0
+    const/4 p0, 0x0
 
     .line 8
-    .line 9
-    .line 10
-    :cond_0
-    return-void
+    return p0
 .end method
 
-.method public final W0()Z
+.method public final hashCode()I
     .locals 0
 
     .line 1
     const/4 p0, 0x1
 
     .line 2
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+
+    .line 3
+    .line 4
+    .line 5
+    move-result p0
+
+    .line 6
     return p0
 .end method

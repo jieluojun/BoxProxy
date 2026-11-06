@@ -1,43 +1,127 @@
 .class public abstract Lxb6;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lwb6;
 
 
-# static fields
-.field public static final a:Z
+# instance fields
+.field public final j:Lvx;
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public constructor <init>()V
     .locals 2
 
     .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/16 v1, 0x22
-
     .line 4
-    .line 5
-    if-lt v0, v1, :cond_0
+    new-instance v0, Lvx;
 
+    .line 5
     .line 6
+    const/4 v1, 0x0
+
     .line 7
-    const/4 v0, 0x1
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
 
     .line 8
-    goto :goto_0
-
     .line 9
-    :cond_0
-    const/4 v0, 0x0
-
     .line 10
-    :goto_0
-    sput-boolean v0, Lxb6;->a:Z
+    iput-object v0, p0, Lxb6;->j:Lvx;
 
     .line 11
     .line 12
+    return-void
+.end method
+
+
+# virtual methods
+.method public final e(I)Z
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lxb6;->j:Lvx;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    and-int/2addr p0, p1
+
+    .line 8
+    if-eqz p0, :cond_0
+
+    .line 9
+    .line 10
+    const/4 p0, 0x1
+
+    .line 11
+    return p0
+
+    .line 12
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 13
+    return p0
+.end method
+
+.method public final f(I)V
+    .locals 3
+
+    .line 1
+    :cond_0
+    iget-object v0, p0, Lxb6;->j:Lvx;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v1
+
+    .line 7
+    and-int v2, v1, p1
+
+    .line 8
+    .line 9
+    if-eqz v2, :cond_1
+
+    .line 10
+    .line 11
+    goto :goto_0
+
+    .line 12
+    :cond_1
+    or-int v2, v1, p1
+
+    .line 13
+    .line 14
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicInteger;->compareAndSet(II)Z
+
+    .line 15
+    .line 16
+    .line 17
+    move-result v0
+
+    .line 18
+    if-eqz v0, :cond_0
+
+    .line 19
+    .line 20
+    :goto_0
     return-void
 .end method

@@ -1,37 +1,80 @@
-.class public final synthetic Lzo0;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final Lzo0;
+.super Ldq3;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
-# interfaces
-.implements Ld52;
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ldq3;"
+    }
+.end annotation
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Ljava/lang/Long;
-
-.field public final synthetic l:Las3;
+.field public final j:Lzl0;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Long;Las3;B)V
+.method public constructor <init>(Lzl0;)V
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Lzo0;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lzo0;->k:Ljava/lang/Long;
+    .line 4
+    iput-object p1, p0, Lzo0;->j:Lzl0;
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()Lvp3;
+    .locals 1
+
+    .line 1
+    new-instance v0, Lyo0;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Lvp3;-><init>()V
 
     .line 4
     .line 5
-    iput-object p2, p0, Lzo0;->l:Las3;
+    .line 6
+    iget-object p0, p0, Lzo0;->j:Lzl0;
+
+    .line 7
+    .line 8
+    iput-object p0, v0, Lyo0;->x:Lzl0;
+
+    .line 9
+    .line 10
+    return-object v0
+.end method
+
+.method public final b(Lvp3;)V
+    .locals 0
+
+    .line 1
+    check-cast p1, Lyo0;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lzo0;->j:Lzl0;
+
+    .line 4
+    .line 5
+    iput-object p0, p1, Lyo0;->x:Lzl0;
 
     .line 6
     .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {p1}, Lfh3;->H(Lux5;)V
 
     .line 8
     .line 9
@@ -39,55 +82,76 @@
     return-void
 .end method
 
-
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Lzo0;->j:B
+    if-ne p0, p1, :cond_0
 
     .line 2
     .line 3
-    sget-object v1, Lk27;->a:Lk27;
+    goto :goto_0
 
     .line 4
+    :cond_0
+    instance-of v0, p1, Lzo0;
+
     .line 5
-    iget-object v2, p0, Lzo0;->l:Las3;
-
     .line 6
-    .line 7
-    iget-object p0, p0, Lzo0;->k:Ljava/lang/Long;
+    if-nez v0, :cond_1
 
+    .line 7
     .line 8
+    goto :goto_1
+
     .line 9
-    packed-switch v0, :pswitch_data_0
+    :cond_1
+    check-cast p1, Lzo0;
 
     .line 10
     .line 11
-    .line 12
-    invoke-interface {v2, p0}, Las3;->setValue(Ljava/lang/Object;)V
+    iget-object p1, p1, Lzo0;->j:Lzl0;
 
+    .line 12
     .line 13
+    iget-object p0, p0, Lzo0;->j:Lzl0;
+
     .line 14
     .line 15
-    return-object v1
+    if-ne p0, p1, :cond_2
 
     .line 16
-    :pswitch_0
-    invoke-interface {v2, p0}, Las3;->setValue(Ljava/lang/Object;)V
-
     .line 17
+    :goto_0
+    const/4 p0, 0x1
+
     .line 18
+    return p0
+
     .line 19
-    return-object v1
+    :cond_2
+    :goto_1
+    const/4 p0, 0x0
 
     .line 20
-    nop
+    return p0
+.end method
 
-    .line 21
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lzo0;->j:Lzl0;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
 .end method

@@ -1,940 +1,495 @@
 .class public final Lff1;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Landroid/widget/BaseAdapter;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lci3;
+.implements Landroid/widget/Adapter;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public a:Lpr1;
 
-.field public final k:Lci3;
-
-.field public final l:Ljava/lang/Enum;
-
-.field public final m:Ljava/lang/Enum;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lci3;Ljava/lang/Enum;Ljava/lang/Enum;B)V
-    .locals 0
-
-    .line 1
-    iput-byte p4, p0, Lff1;->j:B
-
-    .line 2
-    .line 3
-    iput-object p1, p0, Lff1;->k:Lci3;
-
-    .line 4
-    .line 5
-    iput-object p2, p0, Lff1;->l:Ljava/lang/Enum;
-
-    .line 6
-    .line 7
-    iput-object p3, p0, Lff1;->m:Ljava/lang/Enum;
-
-    .line 8
-    .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 10
-    .line 11
-    .line 12
-    return-void
-.end method
+.field public b:Ljava/util/ArrayList;
 
 
 # virtual methods
-.method public final W(I)I
-    .locals 1
+.method public final getCount()I
+    .locals 0
 
     .line 1
-    iget-byte v0, p0, Lff1;->j:B
+    iget-object p0, p0, Lff1;->b:Ljava/util/ArrayList;
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_0
+    if-nez p0, :cond_0
 
     .line 4
     .line 5
+    const/4 p0, 0x0
+
     .line 6
-    iget-object p0, p0, Lff1;->k:Lci3;
+    return p0
 
     .line 7
-    .line 8
-    invoke-interface {p0, p1}, Lci3;->W(I)I
+    :cond_0
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
+    .line 8
     .line 9
     .line 10
+    move-result p0
+
     .line 11
-    move-result p0
-
-    .line 12
     return p0
-
-    .line 13
-    :pswitch_0
-    iget-object p0, p0, Lff1;->k:Lci3;
-
-    .line 14
-    .line 15
-    invoke-interface {p0, p1}, Lci3;->W(I)I
-
-    .line 16
-    .line 17
-    .line 18
-    move-result p0
-
-    .line 19
-    return p0
-
-    .line 20
-    :pswitch_1
-    iget-object p0, p0, Lff1;->k:Lci3;
-
-    .line 21
-    .line 22
-    invoke-interface {p0, p1}, Lci3;->W(I)I
-
-    .line 23
-    .line 24
-    .line 25
-    move-result p0
-
-    .line 26
-    return p0
-
-    .line 27
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method
 
-.method public final e(J)Lxn4;
-    .locals 6
+.method public final getItem(I)Ljava/lang/Object;
+    .locals 0
 
     .line 1
-    iget-byte v0, p0, Lff1;->j:B
+    iget-object p0, p0, Lff1;->b:Ljava/util/ArrayList;
 
     .line 2
     .line 3
-    iget-object v1, p0, Lff1;->l:Ljava/lang/Enum;
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     .line 4
     .line 5
-    iget-object v2, p0, Lff1;->m:Ljava/lang/Enum;
-
     .line 6
+    move-result-object p0
+
     .line 7
-    iget-object p0, p0, Lff1;->k:Lci3;
+    check-cast p0, Lx46;
 
     .line 8
     .line 9
-    const/16 v3, 0x7fff
+    return-object p0
+.end method
+
+.method public final getItemId(I)J
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lff1;->b:Ljava/util/ArrayList;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lx46;
+
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     .line 10
     .line 11
-    packed-switch v0, :pswitch_data_0
+    .line 12
+    move-result p0
+
+    .line 13
+    int-to-long p0, p0
+
+    .line 14
+    return-wide p0
+.end method
+
+.method public final getView(ILandroid/view/View;Landroid/view/ViewGroup;)Landroid/view/View;
+    .locals 5
+
+    .line 1
+    iget-object v0, p0, Lff1;->a:Lpr1;
+
+    .line 2
+    .line 3
+    iget v1, v0, Lpr1;->E:I
+
+    .line 4
+    .line 5
+    const/4 v2, 0x0
+
+    .line 6
+    if-ne p1, v1, :cond_0
+
+    .line 7
+    .line 8
+    const/4 v1, 0x1
+
+    .line 9
+    goto :goto_0
+
+    .line 10
+    :cond_0
+    move v1, v2
+
+    .line 11
+    :goto_0
+    if-nez p2, :cond_1
 
     .line 12
     .line 13
+    iget-object p2, v0, Lpr1;->x:Lsu0;
+
     .line 14
-    check-cast v2, Lr64;
-
     .line 15
-    .line 16
-    check-cast v1, Lq64;
+    invoke-virtual {p2}, Landroid/view/View;->getContext()Landroid/content/Context;
 
+    .line 16
     .line 17
     .line 18
-    const/4 v0, 0x2
+    move-result-object p2
 
     .line 19
-    sget-object v4, Lq64;->k:Lq64;
+    invoke-static {p2}, Landroid/view/LayoutInflater;->from(Landroid/content/Context;)Landroid/view/LayoutInflater;
 
     .line 20
     .line 21
-    sget-object v5, Lr64;->j:Lr64;
-
     .line 22
+    move-result-object p2
+
     .line 23
-    if-ne v2, v5, :cond_2
+    const v0, 0x7f0c001d
 
     .line 24
     .line 25
-    if-ne v1, v4, :cond_0
-
     .line 26
-    .line 27
-    invoke-static {p1, p2}, Ls51;->h(J)I
+    invoke-virtual {p2, v0, p3, v2}, Landroid/view/LayoutInflater;->inflate(ILandroid/view/ViewGroup;Z)Landroid/view/View;
 
+    .line 27
     .line 28
     .line 29
+    move-result-object p2
+
     .line 30
-    move-result v1
+    :cond_1
+    iget-object p3, p0, Lff1;->b:Ljava/util/ArrayList;
 
     .line 31
-    invoke-interface {p0, v1}, Lci3;->i0(I)I
-
     .line 32
+    invoke-virtual {p3, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
     .line 33
     .line 34
-    move-result p0
-
     .line 35
-    goto :goto_0
+    move-result-object p3
 
     .line 36
-    :cond_0
-    invoke-static {p1, p2}, Ls51;->h(J)I
+    check-cast p3, Lx46;
 
     .line 37
     .line 38
+    const v0, 0x7f09009f
+
     .line 39
-    move-result v1
-
     .line 40
-    invoke-interface {p0, v1}, Lci3;->W(I)I
-
     .line 41
+    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
     .line 42
     .line 43
-    move-result p0
-
     .line 44
-    :goto_0
-    invoke-static {p1, p2}, Ls51;->d(J)Z
+    move-result-object v0
 
     .line 45
+    check-cast v0, Landroid/widget/TextView;
+
     .line 46
     .line 47
-    move-result v1
+    iget-object v3, p3, Lx46;->b:Ljava/lang/CharSequence;
 
     .line 48
-    if-eqz v1, :cond_1
-
     .line 49
-    .line 50
-    invoke-static {p1, p2}, Ls51;->h(J)I
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
+    .line 50
     .line 51
     .line 52
-    .line 53
-    move-result v3
+    iget-object v3, p0, Lff1;->a:Lpr1;
 
+    .line 53
     .line 54
-    :cond_1
-    new-instance p1, Lvy1;
+    iget-object v3, v3, Lis1;->k:Lsu0;
 
     .line 55
     .line 56
-    invoke-direct {p1, p0, v3, v0}, Lvy1;-><init>(IIB)V
+    invoke-virtual {v3}, Lsu0;->getColorScheme()Lqr1;
 
     .line 57
     .line 58
     .line 59
-    goto :goto_2
+    move-result-object v3
 
     .line 60
-    :cond_2
-    if-ne v1, v4, :cond_3
+    const/16 v4, 0x2a
 
     .line 61
     .line 62
-    invoke-static {p1, p2}, Ls51;->i(J)I
+    invoke-virtual {v3, v4}, Lqr1;->e(I)I
 
     .line 63
     .line 64
     .line 65
-    move-result v1
+    move-result v3
 
     .line 66
-    invoke-interface {p0, v1}, Lci3;->f(I)I
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 67
     .line 68
     .line 69
-    move-result p0
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSelected(Z)V
 
     .line 70
-    goto :goto_1
-
     .line 71
-    :cond_3
-    invoke-static {p1, p2}, Ls51;->i(J)I
-
     .line 72
+    invoke-virtual {v0}, Landroid/widget/TextView;->getPaintFlags()I
+
     .line 73
     .line 74
-    move-result v1
-
     .line 75
-    invoke-interface {p0, v1}, Lci3;->j0(I)I
-
-    .line 76
-    .line 77
-    .line 78
-    move-result p0
-
-    .line 79
-    :goto_1
-    invoke-static {p1, p2}, Ls51;->e(J)Z
-
-    .line 80
-    .line 81
-    .line 82
-    move-result v1
-
-    .line 83
-    if-eqz v1, :cond_4
-
-    .line 84
-    .line 85
-    invoke-static {p1, p2}, Ls51;->i(J)I
-
-    .line 86
-    .line 87
-    .line 88
     move-result v3
 
-    .line 89
-    :cond_4
-    new-instance p1, Lvy1;
+    .line 76
+    and-int/lit8 v3, v3, -0x11
 
+    .line 77
+    .line 78
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setPaintFlags(I)V
+
+    .line 79
+    .line 80
+    .line 81
+    const v0, 0x7f09009d
+
+    .line 82
+    .line 83
+    .line 84
+    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 85
+    .line 86
+    .line 87
+    move-result-object v0
+
+    .line 88
+    check-cast v0, Landroid/widget/TextView;
+
+    .line 89
     .line 90
+    const/4 v3, 0x0
+
     .line 91
-    invoke-direct {p1, v3, p0, v0}, Lvy1;-><init>(IIB)V
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 92
     .line 93
     .line 94
-    :goto_2
-    return-object p1
+    iget-object v3, p0, Lff1;->a:Lpr1;
 
     .line 95
-    :pswitch_0
-    check-cast v2, Lri3;
-
     .line 96
+    iget-object v3, v3, Lis1;->k:Lsu0;
+
     .line 97
-    check-cast v1, Lqi3;
-
     .line 98
+    invoke-virtual {v3}, Lsu0;->getColorScheme()Lqr1;
+
     .line 99
-    const/4 v0, 0x1
-
     .line 100
-    sget-object v4, Lqi3;->k:Lqi3;
-
     .line 101
+    move-result-object v3
+
     .line 102
-    sget-object v5, Lri3;->j:Lri3;
+    const/16 v4, 0x2b
 
     .line 103
     .line 104
-    if-ne v2, v5, :cond_7
+    invoke-virtual {v3, v4}, Lqr1;->e(I)I
 
     .line 105
     .line 106
-    if-ne v1, v4, :cond_5
-
     .line 107
+    move-result v3
+
     .line 108
-    invoke-static {p1, p2}, Ls51;->h(J)I
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 109
     .line 110
     .line 111
-    move-result v1
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSelected(Z)V
 
     .line 112
-    invoke-interface {p0, v1}, Lci3;->i0(I)I
-
     .line 113
     .line 114
+    invoke-virtual {v0}, Landroid/widget/TextView;->getPaintFlags()I
+
     .line 115
-    move-result p0
-
     .line 116
-    goto :goto_3
-
     .line 117
-    :cond_5
-    invoke-static {p1, p2}, Ls51;->h(J)I
-
-    .line 118
-    .line 119
-    .line 120
-    move-result v1
-
-    .line 121
-    invoke-interface {p0, v1}, Lci3;->W(I)I
-
-    .line 122
-    .line 123
-    .line 124
-    move-result p0
-
-    .line 125
-    :goto_3
-    invoke-static {p1, p2}, Ls51;->d(J)Z
-
-    .line 126
-    .line 127
-    .line 128
-    move-result v1
-
-    .line 129
-    if-eqz v1, :cond_6
-
-    .line 130
-    .line 131
-    invoke-static {p1, p2}, Ls51;->h(J)I
-
-    .line 132
-    .line 133
-    .line 134
     move-result v3
 
-    .line 135
-    :cond_6
-    new-instance p1, Lvy1;
+    .line 118
+    and-int/lit8 v3, v3, -0x11
 
+    .line 119
+    .line 120
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setPaintFlags(I)V
+
+    .line 121
+    .line 122
+    .line 123
+    const v0, 0x7f09009c
+
+    .line 124
+    .line 125
+    .line 126
+    invoke-virtual {p2, v0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+
+    .line 127
+    .line 128
+    .line 129
+    move-result-object v0
+
+    .line 130
+    check-cast v0, Landroid/widget/TextView;
+
+    .line 131
+    .line 132
+    iget-object v3, p3, Lx46;->c:Ljava/lang/CharSequence;
+
+    .line 133
+    .line 134
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 135
     .line 136
     .line 137
-    invoke-direct {p1, p0, v3, v0}, Lvy1;-><init>(IIB)V
+    iget-object v3, p0, Lff1;->a:Lpr1;
 
     .line 138
     .line 139
-    .line 140
-    goto :goto_5
+    iget-object v3, v3, Lis1;->k:Lsu0;
 
+    .line 140
     .line 141
-    :cond_7
-    if-ne v1, v4, :cond_8
+    invoke-virtual {v3}, Lsu0;->getColorScheme()Lqr1;
 
     .line 142
     .line 143
-    invoke-static {p1, p2}, Ls51;->i(J)I
-
     .line 144
+    move-result-object v3
+
     .line 145
+    invoke-virtual {v3, v4}, Lqr1;->e(I)I
+
     .line 146
-    move-result v1
-
     .line 147
-    invoke-interface {p0, v1}, Lci3;->f(I)I
-
     .line 148
+    move-result v3
+
     .line 149
+    invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTextColor(I)V
+
     .line 150
-    move-result p0
-
     .line 151
-    goto :goto_4
-
     .line 152
-    :cond_8
-    invoke-static {p1, p2}, Ls51;->i(J)I
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSelected(Z)V
 
     .line 153
     .line 154
     .line 155
-    move-result v1
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 156
-    invoke-interface {p0, v1}, Lci3;->j0(I)I
-
     .line 157
     .line 158
+    move-result-object p1
+
     .line 159
-    move-result p0
+    invoke-virtual {p2, p1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     .line 160
-    :goto_4
-    invoke-static {p1, p2}, Ls51;->e(J)Z
-
     .line 161
     .line 162
-    .line 163
-    move-result v1
+    if-eqz v1, :cond_2
 
+    .line 163
     .line 164
-    if-eqz v1, :cond_9
+    iget-object p0, p0, Lff1;->a:Lpr1;
 
     .line 165
     .line 166
-    invoke-static {p1, p2}, Ls51;->i(J)I
+    iget-object p0, p0, Lis1;->k:Lsu0;
 
     .line 167
     .line 168
+    invoke-virtual {p0}, Lsu0;->getColorScheme()Lqr1;
+
     .line 169
-    move-result v3
-
     .line 170
-    :cond_9
-    new-instance p1, Lvy1;
-
     .line 171
+    move-result-object p0
+
     .line 172
-    invoke-direct {p1, v3, p0, v0}, Lvy1;-><init>(IIB)V
+    const/16 p1, 0x2c
 
     .line 173
     .line 174
+    invoke-virtual {p0, p1}, Lqr1;->e(I)I
+
     .line 175
-    :goto_5
-    return-object p1
-
     .line 176
-    :pswitch_1
-    check-cast v2, Lms2;
-
     .line 177
+    move-result p0
+
     .line 178
-    check-cast v1, Lis2;
+    invoke-virtual {p2, p0}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 179
     .line 180
-    const/4 v0, 0x0
-
     .line 181
-    sget-object v4, Lis2;->k:Lis2;
+    goto :goto_1
 
     .line 182
-    .line 183
-    sget-object v5, Lms2;->j:Lms2;
+    :cond_2
+    invoke-virtual {p2, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
+    .line 183
     .line 184
     .line 185
-    if-ne v2, v5, :cond_c
+    :goto_1
+    const p0, 0x7f09009e
 
     .line 186
     .line 187
-    if-ne v1, v4, :cond_a
-
     .line 188
-    .line 189
-    invoke-static {p1, p2}, Ls51;->h(J)I
+    invoke-virtual {p2, p0}, Landroid/view/View;->findViewById(I)Landroid/view/View;
 
+    .line 189
     .line 190
     .line 191
+    move-result-object p0
+
     .line 192
-    move-result v1
+    check-cast p0, Landroid/widget/ImageView;
 
     .line 193
-    invoke-interface {p0, v1}, Lci3;->i0(I)I
-
     .line 194
+    iget-object p1, p3, Lx46;->a:Lbp0;
+
     .line 195
     .line 196
-    move-result p0
+    invoke-virtual {p0, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 197
-    goto :goto_6
-
     .line 198
-    :cond_a
-    invoke-static {p1, p2}, Ls51;->h(J)I
-
     .line 199
-    .line 200
-    .line 201
-    move-result v1
-
-    .line 202
-    invoke-interface {p0, v1}, Lci3;->W(I)I
-
-    .line 203
-    .line 204
-    .line 205
-    move-result p0
-
-    .line 206
-    :goto_6
-    invoke-static {p1, p2}, Ls51;->d(J)Z
-
-    .line 207
-    .line 208
-    .line 209
-    move-result v1
-
-    .line 210
-    if-eqz v1, :cond_b
-
-    .line 211
-    .line 212
-    invoke-static {p1, p2}, Ls51;->h(J)I
-
-    .line 213
-    .line 214
-    .line 215
-    move-result v3
-
-    .line 216
-    :cond_b
-    new-instance p1, Lvy1;
-
-    .line 217
-    .line 218
-    invoke-direct {p1, p0, v3, v0}, Lvy1;-><init>(IIB)V
-
-    .line 219
-    .line 220
-    .line 221
-    goto :goto_8
-
-    .line 222
-    :cond_c
-    if-ne v1, v4, :cond_d
-
-    .line 223
-    .line 224
-    invoke-static {p1, p2}, Ls51;->i(J)I
-
-    .line 225
-    .line 226
-    .line 227
-    move-result v1
-
-    .line 228
-    invoke-interface {p0, v1}, Lci3;->f(I)I
-
-    .line 229
-    .line 230
-    .line 231
-    move-result p0
-
-    .line 232
-    goto :goto_7
-
-    .line 233
-    :cond_d
-    invoke-static {p1, p2}, Ls51;->i(J)I
-
-    .line 234
-    .line 235
-    .line 236
-    move-result v1
-
-    .line 237
-    invoke-interface {p0, v1}, Lci3;->j0(I)I
-
-    .line 238
-    .line 239
-    .line 240
-    move-result p0
-
-    .line 241
-    :goto_7
-    invoke-static {p1, p2}, Ls51;->e(J)Z
-
-    .line 242
-    .line 243
-    .line 244
-    move-result v1
-
-    .line 245
-    if-eqz v1, :cond_e
-
-    .line 246
-    .line 247
-    invoke-static {p1, p2}, Ls51;->i(J)I
-
-    .line 248
-    .line 249
-    .line 250
-    move-result v3
-
-    .line 251
-    :cond_e
-    new-instance p1, Lvy1;
-
-    .line 252
-    .line 253
-    invoke-direct {p1, v3, p0, v0}, Lvy1;-><init>(IIB)V
-
-    .line 254
-    .line 255
-    .line 256
-    :goto_8
-    return-object p1
-
-    .line 257
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final f(I)I
-    .locals 1
-
-    .line 1
-    iget-byte v0, p0, Lff1;->j:B
-
-    .line 2
-    .line 3
-    packed-switch v0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    iget-object p0, p0, Lff1;->k:Lci3;
-
-    .line 7
-    .line 8
-    invoke-interface {p0, p1}, Lci3;->f(I)I
-
-    .line 9
-    .line 10
-    .line 11
-    move-result p0
-
-    .line 12
-    return p0
-
-    .line 13
-    :pswitch_0
-    iget-object p0, p0, Lff1;->k:Lci3;
-
-    .line 14
-    .line 15
-    invoke-interface {p0, p1}, Lci3;->f(I)I
-
-    .line 16
-    .line 17
-    .line 18
-    move-result p0
-
-    .line 19
-    return p0
-
-    .line 20
-    :pswitch_1
-    iget-object p0, p0, Lff1;->k:Lci3;
-
-    .line 21
-    .line 22
-    invoke-interface {p0, p1}, Lci3;->f(I)I
-
-    .line 23
-    .line 24
-    .line 25
-    move-result p0
-
-    .line 26
-    return p0
-
-    .line 27
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final i0(I)I
-    .locals 1
-
-    .line 1
-    iget-byte v0, p0, Lff1;->j:B
-
-    .line 2
-    .line 3
-    packed-switch v0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    iget-object p0, p0, Lff1;->k:Lci3;
-
-    .line 7
-    .line 8
-    invoke-interface {p0, p1}, Lci3;->i0(I)I
-
-    .line 9
-    .line 10
-    .line 11
-    move-result p0
-
-    .line 12
-    return p0
-
-    .line 13
-    :pswitch_0
-    iget-object p0, p0, Lff1;->k:Lci3;
-
-    .line 14
-    .line 15
-    invoke-interface {p0, p1}, Lci3;->i0(I)I
-
-    .line 16
-    .line 17
-    .line 18
-    move-result p0
-
-    .line 19
-    return p0
-
-    .line 20
-    :pswitch_1
-    iget-object p0, p0, Lff1;->k:Lci3;
-
-    .line 21
-    .line 22
-    invoke-interface {p0, p1}, Lci3;->i0(I)I
-
-    .line 23
-    .line 24
-    .line 25
-    move-result p0
-
-    .line 26
-    return p0
-
-    .line 27
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final j0(I)I
-    .locals 1
-
-    .line 1
-    iget-byte v0, p0, Lff1;->j:B
-
-    .line 2
-    .line 3
-    packed-switch v0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    iget-object p0, p0, Lff1;->k:Lci3;
-
-    .line 7
-    .line 8
-    invoke-interface {p0, p1}, Lci3;->j0(I)I
-
-    .line 9
-    .line 10
-    .line 11
-    move-result p0
-
-    .line 12
-    return p0
-
-    .line 13
-    :pswitch_0
-    iget-object p0, p0, Lff1;->k:Lci3;
-
-    .line 14
-    .line 15
-    invoke-interface {p0, p1}, Lci3;->j0(I)I
-
-    .line 16
-    .line 17
-    .line 18
-    move-result p0
-
-    .line 19
-    return p0
-
-    .line 20
-    :pswitch_1
-    iget-object p0, p0, Lff1;->k:Lci3;
-
-    .line 21
-    .line 22
-    invoke-interface {p0, p1}, Lci3;->j0(I)I
-
-    .line 23
-    .line 24
-    .line 25
-    move-result p0
-
-    .line 26
-    return p0
-
-    .line 27
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final l()Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iget-byte v0, p0, Lff1;->j:B
-
-    .line 2
-    .line 3
-    packed-switch v0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    iget-object p0, p0, Lff1;->k:Lci3;
-
-    .line 7
-    .line 8
-    invoke-interface {p0}, Lci3;->l()Ljava/lang/Object;
-
-    .line 9
-    .line 10
-    .line 11
-    move-result-object p0
-
-    .line 12
-    return-object p0
-
-    .line 13
-    :pswitch_0
-    iget-object p0, p0, Lff1;->k:Lci3;
-
-    .line 14
-    .line 15
-    invoke-interface {p0}, Lci3;->l()Ljava/lang/Object;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object p0
-
-    .line 19
-    return-object p0
-
-    .line 20
-    :pswitch_1
-    iget-object p0, p0, Lff1;->k:Lci3;
-
-    .line 21
-    .line 22
-    invoke-interface {p0}, Lci3;->l()Ljava/lang/Object;
-
-    .line 23
-    .line 24
-    .line 25
-    move-result-object p0
-
-    .line 26
-    return-object p0
-
-    .line 27
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-object p2
 .end method

@@ -1,168 +1,74 @@
 .class public final Lun3;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Lz81;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final a:Las3;
+.field public j:Lwn3;
 
-.field public final b:F
+.field public synthetic k:Ljava/lang/Object;
 
-.field public final c:Lgl4;
+.field public final synthetic l:Lwn3;
 
-.field public final d:Lgl4;
-
-.field public final e:Lgl4;
-
-.field public final f:Lgl4;
-
-.field public final g:Lgl4;
-
-.field public final h:Lgl4;
-
-.field public final i:Lgl4;
-
-.field public final j:Lgl4;
-
-.field public final k:Lgl4;
+.field public m:I
 
 
 # direct methods
-.method public constructor <init>(Las3;F)V
-    .locals 1
+.method public constructor <init>(Lwn3;Lz81;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lun3;->l:Lwn3;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lun3;->a:Las3;
+    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
 
+    .line 4
     .line 5
     .line 6
-    iput p2, p0, Lun3;->b:F
+    return-void
+.end method
 
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iput-object p1, p0, Lun3;->k:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Lun3;->m:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
+
+    .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    const/4 p1, 0x0
+    iput p1, p0, Lun3;->m:I
 
     .line 9
-    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
-
     .line 10
+    iget-object p1, p0, Lun3;->l:Lwn3;
+
     .line 11
     .line 12
-    move-result-object p2
+    const/4 v0, 0x0
 
     .line 13
-    iput-object p2, p0, Lun3;->c:Lgl4;
+    invoke-virtual {p1, v0, v0, v0, p0}, Lwn3;->o(Le55;Landroid/content/Context;Ljava/lang/String;Lz81;)Ljava/lang/Object;
 
     .line 14
     .line 15
-    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
-
     .line 16
+    move-result-object p0
+
     .line 17
-    .line 18
-    move-result-object p2
-
-    .line 19
-    iput-object p2, p0, Lun3;->d:Lgl4;
-
-    .line 20
-    .line 21
-    sget-object p2, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    .line 22
-    .line 23
-    invoke-static {p2}, Lg23;->M(Ljava/lang/Object;)Lgl4;
-
-    .line 24
-    .line 25
-    .line 26
-    move-result-object v0
-
-    .line 27
-    iput-object v0, p0, Lun3;->e:Lgl4;
-
-    .line 28
-    .line 29
-    invoke-static {p2}, Lg23;->M(Ljava/lang/Object;)Lgl4;
-
-    .line 30
-    .line 31
-    .line 32
-    move-result-object p2
-
-    .line 33
-    iput-object p2, p0, Lun3;->f:Lgl4;
-
-    .line 34
-    .line 35
-    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
-
-    .line 36
-    .line 37
-    .line 38
-    move-result-object p2
-
-    .line 39
-    iput-object p2, p0, Lun3;->g:Lgl4;
-
-    .line 40
-    .line 41
-    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
-
-    .line 42
-    .line 43
-    .line 44
-    move-result-object p2
-
-    .line 45
-    iput-object p2, p0, Lun3;->h:Lgl4;
-
-    .line 46
-    .line 47
-    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
-
-    .line 48
-    .line 49
-    .line 50
-    move-result-object p2
-
-    .line 51
-    iput-object p2, p0, Lun3;->i:Lgl4;
-
-    .line 52
-    .line 53
-    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
-
-    .line 54
-    .line 55
-    .line 56
-    move-result-object p1
-
-    .line 57
-    iput-object p1, p0, Lun3;->j:Lgl4;
-
-    .line 58
-    .line 59
-    sget-object p1, Lq50;->g:Loy0;
-
-    .line 60
-    .line 61
-    invoke-static {p1}, Lg23;->M(Ljava/lang/Object;)Lgl4;
-
-    .line 62
-    .line 63
-    .line 64
-    move-result-object p1
-
-    .line 65
-    iput-object p1, p0, Lun3;->k:Lgl4;
-
-    .line 66
-    .line 67
-    return-void
+    return-object p0
 .end method

@@ -1,23 +1,20 @@
-.class public final Lc3;
+.class public abstract Lc3;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final a:I
+.field public final j:Le3;
 
-.field public final b:[Ljava/lang/Object;
-
-.field public final c:Lb3;
-
-.field public d:I
-
-.field public e:I
+.field public final synthetic k:Lf3;
 
 
 # direct methods
-.method public constructor <init>(ILb3;)V
-    .locals 1
+.method public constructor <init>(Lf3;Le3;)V
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,113 +22,133 @@
     .line 2
     .line 3
     .line 4
-    const/4 v0, 0x0
+    iput-object p1, p0, Lc3;->k:Lf3;
 
     .line 5
-    iput v0, p0, Lc3;->d:I
-
     .line 6
+    iput-object p2, p0, Lc3;->j:Le3;
+
     .line 7
-    iput v0, p0, Lc3;->e:I
-
     .line 8
-    .line 9
-    iput p1, p0, Lc3;->a:I
-
-    .line 10
-    .line 11
-    new-array p1, p1, [Ljava/lang/Object;
-
-    .line 12
-    .line 13
-    iput-object p1, p0, Lc3;->b:[Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    iput-object p2, p0, Lc3;->c:Lb3;
-
-    .line 16
-    .line 17
     return-void
 .end method
 
 
 # virtual methods
-.method public final declared-synchronized a(Ljava/lang/Object;)V
-    .locals 3
+.method public abstract a()Ljava/lang/Object;
+.end method
+
+.method public b()Z
+    .locals 0
 
     .line 1
-    monitor-enter p0
+    iget-object p0, p0, Lc3;->k:Lf3;
 
     .line 2
-    :try_start_0
-    iget-object v0, p0, Lc3;->b:[Ljava/lang/Object;
-
     .line 3
+    iget-object p0, p0, Lf3;->j:Lsu0;
+
     .line 4
-    iget v1, p0, Lc3;->d:I
-
     .line 5
-    .line 6
-    add-int/lit8 v2, v1, 0x1
+    if-eqz p0, :cond_0
 
+    .line 6
     .line 7
+    const/4 p0, 0x1
+
     .line 8
-    iput v2, p0, Lc3;->d:I
+    return p0
 
     .line 9
+    :cond_0
+    const/4 p0, 0x0
+
     .line 10
-    aput-object p1, v0, v1
+    return p0
+.end method
+
+.method public final run()V
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, Lc3;->b()Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    if-eqz v0, :cond_0
+
+    .line 6
+    .line 7
+    invoke-virtual {p0}, Lc3;->a()Ljava/lang/Object;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v0
 
     .line 11
+    iget-object p0, p0, Lc3;->j:Le3;
+
     .line 12
-    iget p1, p0, Lc3;->a:I
-
     .line 13
-    .line 14
-    if-ne v2, p1, :cond_0
+    invoke-virtual {p0, v0}, Le3;->a(Ljava/lang/Object;)V
 
+    .line 14
     .line 15
     .line 16
-    iget-object p1, p0, Lc3;->c:Lb3;
+    return-void
 
     .line 17
-    .line 18
-    iget v1, p0, Lc3;->e:I
+    :cond_0
+    iget-object p0, p0, Lc3;->j:Le3;
 
+    .line 18
     .line 19
+    monitor-enter p0
+
     .line 20
-    invoke-interface {p1, v1, v0}, Lb3;->b(I[Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :try_start_0
+    iget v0, p0, Le3;->e:I
 
     .line 21
     .line 22
-    .line 23
-    goto :goto_0
+    add-int/lit8 v0, v0, 0x1
 
+    .line 23
     .line 24
-    :catchall_0
-    move-exception p1
+    iput v0, p0, Le3;->e:I
 
     .line 25
-    goto :goto_1
-
     .line 26
-    :cond_0
-    :goto_0
-    monitor-exit p0
+    const/4 v0, 0x0
 
     .line 27
-    return-void
+    invoke-virtual {p0, v0}, Le3;->a(Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 28
-    :goto_1
+    .line 29
+    .line 30
+    monitor-exit p0
+
+    .line 31
+    return-void
+
+    .line 32
+    :catchall_0
+    move-exception v0
+
+    .line 33
     :try_start_1
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 29
-    throw p1
+    .line 34
+    throw v0
 .end method

@@ -6,13 +6,13 @@
 # 取代原来的文字。k = 1 → 「可视」（三条滑杆），k = 0 → 「锚点」（船锚）。图标只用 moveTo / lineTo / close 画实心多边形，颜色取当前主题的 onSurface。
 
 # interfaces
-.implements Ls52;
+.implements Lt62;
 
 
 # static fields
-.field private static a:Llm2;
+.field private static a:Lvn2;
 
-.field private static v:Llm2;
+.field private static v:Lvn2;
 
 
 # instance fields
@@ -31,10 +31,10 @@
 .end method
 
 # 按 [F 里的指令串画一个 24x24 的 ImageVector：0 x y = moveTo，1 x y = lineTo，2 = close
-.method private static mk(Ljava/lang/String;[F)Llm2;
+.method private static mk(Ljava/lang/String;[F)Lvn2;
     .locals 31
 
-    new-instance v19, Lkm2;
+    new-instance v19, Lun2;
 
     move-object/from16 v20, p0
 
@@ -54,17 +54,17 @@
 
     const/16 v29, 0x60
 
-    invoke-direct/range {v19 .. v29}, Lkm2;-><init>(Ljava/lang/String;FFFFJIZI)V
+    invoke-direct/range {v19 .. v29}, Lun2;-><init>(Ljava/lang/String;FFFFJIZI)V
 
-    new-instance v10, Lp76;
+    new-instance v10, Lg96;
 
     const-wide/high16 v14, -0x100000000000000L
 
-    invoke-direct {v10, v14, v15}, Lp76;-><init>(J)V
+    invoke-direct {v10, v14, v15}, Lg96;-><init>(J)V
 
-    new-instance v3, Lnv;
+    new-instance v3, Lmw;
 
-    invoke-direct {v3}, Lnv;-><init>()V
+    invoke-direct {v3}, Lmw;-><init>()V
 
     move-object/from16 v0, p1
 
@@ -93,12 +93,12 @@
 
     if-nez v4, :line
 
-    invoke-virtual {v3, v7, v8}, Lnv;->h(FF)V
+    invoke-virtual {v3, v7, v8}, Lmw;->h(FF)V
 
     goto :next
 
     :line
-    invoke-virtual {v3, v7, v8}, Lnv;->f(FF)V
+    invoke-virtual {v3, v7, v8}, Lmw;->f(FF)V
 
     :next
     add-int/lit8 v1, v1, 0x3
@@ -106,14 +106,14 @@
     goto :loop
 
     :close
-    invoke-virtual {v3}, Lnv;->a()V
+    invoke-virtual {v3}, Lmw;->a()V
 
     add-int/lit8 v1, v1, 0x1
 
     goto :loop
 
     :done
-    iget-object v3, v3, Lnv;->a:Ljava/util/ArrayList;
+    iget-object v3, v3, Lmw;->a:Ljava/util/ArrayList;
 
     move-object/from16 v20, v3
 
@@ -137,19 +137,19 @@
 
     const/16 v30, 0x3800
 
-    invoke-static/range {v19 .. v30}, Lkm2;->b(Lkm2;Ljava/util/List;ILp76;FLp76;FFIIFI)V
+    invoke-static/range {v19 .. v30}, Lun2;->b(Lun2;Ljava/util/List;ILg96;FLg96;FFIIFI)V
 
-    invoke-virtual/range {v19 .. v19}, Lkm2;->c()Llm2;
+    invoke-virtual/range {v19 .. v19}, Lun2;->c()Lvn2;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method private static vis()Llm2;
+.method private static vis()Lvn2;
     .locals 3
 
-    sget-object v0, Lcom/box/app/cfg/CfgIcon;->v:Llm2;
+    sget-object v0, Lcom/box/app/cfg/CfgIcon;->v:Lvn2;
 
     if-eqz v0, :build
 
@@ -164,11 +164,11 @@
 
     const-string v2, "Visual"
 
-    invoke-static {v2, v1}, Lcom/box/app/cfg/CfgIcon;->mk(Ljava/lang/String;[F)Llm2;
+    invoke-static {v2, v1}, Lcom/box/app/cfg/CfgIcon;->mk(Ljava/lang/String;[F)Lvn2;
 
     move-result-object v0
 
-    sput-object v0, Lcom/box/app/cfg/CfgIcon;->v:Llm2;
+    sput-object v0, Lcom/box/app/cfg/CfgIcon;->v:Lvn2;
 
     return-object v0
 
@@ -255,10 +255,10 @@
     .end array-data
 .end method
 
-.method private static anc()Llm2;
+.method private static anc()Lvn2;
     .locals 3
 
-    sget-object v0, Lcom/box/app/cfg/CfgIcon;->a:Llm2;
+    sget-object v0, Lcom/box/app/cfg/CfgIcon;->a:Lvn2;
 
     if-eqz v0, :build
 
@@ -273,11 +273,11 @@
 
     const-string v2, "Anchor"
 
-    invoke-static {v2, v1}, Lcom/box/app/cfg/CfgIcon;->mk(Ljava/lang/String;[F)Llm2;
+    invoke-static {v2, v1}, Lcom/box/app/cfg/CfgIcon;->mk(Ljava/lang/String;[F)Lvn2;
 
     move-result-object v0
 
-    sput-object v0, Lcom/box/app/cfg/CfgIcon;->a:Llm2;
+    sput-object v0, Lcom/box/app/cfg/CfgIcon;->a:Lvn2;
 
     return-object v0
 
@@ -476,14 +476,14 @@
     :try_start_0
     if-nez v0, :use_anchor
 
-    invoke-static {}, Lcom/box/app/cfg/CfgIcon;->vis()Llm2;
+    invoke-static {}, Lcom/box/app/cfg/CfgIcon;->vis()Lvn2;
 
     move-result-object v0
 
     goto :have
 
     :use_anchor
-    invoke-static {}, Lcom/box/app/cfg/CfgIcon;->anc()Llm2;
+    invoke-static {}, Lcom/box/app/cfg/CfgIcon;->anc()Lvn2;
 
     move-result-object v0
 
@@ -495,17 +495,17 @@
 
     check-cast v5, Lv01;
 
-    invoke-static {v5}, Lg23;->A(Lv01;)Lnu0;
+    invoke-static {v5}, Ldj3;->A(Lz11;)Lpv0;
 
     move-result-object v1
 
-    iget-wide v3, v1, Lnu0;->s:J
+    iget-wide v3, v1, Lpv0;->s:J
 
-    sget-object v2, Lho3;->j:Lho3;
+    sget-object v2, Ltp3;->j:Ltp3;
 
     const/high16 v6, 0x41b00000
 
-    invoke-static {v2, v6}, Lm46;->l(Lko3;F)Lko3;
+    invoke-static {v2, v6}, Lc66;->m(Lwp3;F)Lwp3;
 
     move-result-object v2
 
@@ -515,16 +515,16 @@
 
     const/4 v7, 0x0
 
-    invoke-static/range {v0 .. v7}, Lol2;->a(Llm2;Ljava/lang/String;Lko3;JLv01;II)V
+    invoke-static/range {v0 .. v7}, Lxm2;->a(Lvn2;Ljava/lang/String;Lwp3;JLz11;II)V
 
-    sget-object v0, Lk27;->a:Lk27;
+    sget-object v0, La47;->a:La47;
 
     return-object v0
 
     :fail
     move-exception v1
 
-    sget-object v0, Lk27;->a:Lk27;
+    sget-object v0, La47;->a:La47;
 
     return-object v0
 .end method

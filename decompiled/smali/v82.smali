@@ -1,84 +1,110 @@
-.class public final enum Lv82;
-.super Ljava/lang/Enum;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final synthetic Lv82;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Ljava/util/function/Function;
 
 
-# static fields
-.field public static final enum j:Lv82;
+# instance fields
+.field public final synthetic a:B
 
-.field public static final enum k:Lv82;
-
-.field public static final enum l:Lv82;
-
-.field public static final synthetic m:[Lv82;
+.field public final synthetic b:Ljava/lang/Object;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public synthetic constructor <init>(Ljava/lang/Object;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lv82;
+    iput-byte p2, p0, Lv82;->a:B
 
     .line 2
     .line 3
-    const-string v1, "None"
+    iput-object p1, p0, Lv82;->b:Ljava/lang/Object;
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 7
     .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public final apply(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
+
+    .line 1
+    iget-byte v0, p0, Lv82;->a:B
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lv82;->b:Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    packed-switch v0, :pswitch_data_0
+
+    .line 6
+    .line 7
+    .line 8
+    check-cast p0, Lau6;
+
     .line 9
-    sput-object v0, Lv82;->j:Lv82;
-
     .line 10
+    check-cast p1, Ljava/lang/String;
+
     .line 11
-    new-instance v1, Lv82;
-
     .line 12
-    .line 13
-    const-string v2, "Selection"
+    invoke-virtual {p0, p1}, Lau6;->b(Ljava/lang/String;)Ljava/util/List;
 
+    .line 13
     .line 14
     .line 15
-    const/4 v3, 0x1
+    move-result-object p0
 
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    return-object p0
 
     .line 17
+    :pswitch_0
+    check-cast p0, Ljava/lang/Class;
+
     .line 18
     .line 19
-    sput-object v1, Lv82;->k:Lv82;
+    check-cast p1, Ljava/lang/Class;
 
     .line 20
     .line 21
-    new-instance v2, Lv82;
+    invoke-static {p0, p1}, Lcom/sun/jna/Structure;->a(Ljava/lang/Class;Ljava/lang/Class;)Ljava/util/List;
 
     .line 22
     .line 23
-    const-string v3, "Cursor"
-
     .line 24
+    move-result-object p0
+
     .line 25
-    const/4 v4, 0x2
+    return-object p0
 
     .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    :pswitch_1
+    check-cast p0, Lw82;
 
     .line 27
     .line 28
-    .line 29
-    sput-object v2, Lv82;->l:Lv82;
+    check-cast p1, Lio/github/rosemoe/sora/langs/textmate/registry/model/GrammarDefinition;
 
+    .line 29
     .line 30
+    monitor-enter p0
+
     .line 31
-    filled-new-array {v0, v1, v2}, [Lv82;
+    :try_start_0
+    invoke-interface {p1}, Lio/github/rosemoe/sora/langs/textmate/registry/model/GrammarDefinition;->getName()Ljava/lang/String;
 
     .line 32
     .line 33
@@ -86,55 +112,166 @@
     move-result-object v0
 
     .line 35
-    sput-object v0, Lv82;->m:[Lv82;
+    iget-object v1, p0, Lw82;->d:Ljava/lang/Object;
 
     .line 36
     .line 37
-    return-void
-.end method
+    check-cast v1, Ljava/util/LinkedHashMap;
 
-.method public static valueOf(Ljava/lang/String;)Lv82;
-    .locals 1
+    .line 38
+    .line 39
+    invoke-interface {v1, v0}, Ljava/util/Map;->containsKey(Ljava/lang/Object;)Z
 
-    .line 1
-    const-class v0, Lv82;
+    .line 40
+    .line 41
+    .line 42
+    move-result v1
 
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    .line 43
+    if-eqz v1, :cond_0
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
+    .line 44
+    .line 45
+    invoke-interface {p1}, Lio/github/rosemoe/sora/langs/textmate/registry/model/GrammarDefinition;->getScopeName()Ljava/lang/String;
 
-    .line 7
-    check-cast p0, Lv82;
+    .line 46
+    .line 47
+    .line 48
+    move-result-object v1
 
-    .line 8
-    .line 9
-    return-object p0
-.end method
+    .line 49
+    if-eqz v1, :cond_0
 
-.method public static values()[Lv82;
-    .locals 1
+    .line 50
+    .line 51
+    iget-object v0, p0, Lw82;->a:Ljava/lang/Object;
 
-    .line 1
-    sget-object v0, Lv82;->m:[Lv82;
+    .line 52
+    .line 53
+    check-cast v0, Lmb5;
 
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    .line 54
+    .line 55
+    invoke-interface {p1}, Lio/github/rosemoe/sora/langs/textmate/registry/model/GrammarDefinition;->getScopeName()Ljava/lang/String;
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
+    .line 56
+    .line 57
+    .line 58
+    move-result-object p1
 
-    .line 7
-    check-cast v0, [Lv82;
+    .line 59
+    const/4 v1, 0x0
 
-    .line 8
-    .line 9
-    return-object v0
+    .line 60
+    invoke-virtual {v0, p1, v1, v1}, Lmb5;->a(Ljava/lang/String;Ljava/lang/Integer;Ljava/util/Map;)Lt82;
+
+    .line 61
+    .line 62
+    .line 63
+    move-result-object p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 64
+    monitor-exit p0
+
+    .line 65
+    goto :goto_0
+
+    .line 66
+    :catchall_0
+    move-exception p1
+
+    .line 67
+    goto :goto_1
+
+    .line 68
+    :cond_0
+    :try_start_1
+    invoke-virtual {p0, p1}, Lw82;->h(Lio/github/rosemoe/sora/langs/textmate/registry/model/GrammarDefinition;)Lt82;
+
+    .line 69
+    .line 70
+    .line 71
+    move-result-object v1
+
+    .line 72
+    invoke-interface {p1}, Lio/github/rosemoe/sora/langs/textmate/registry/model/GrammarDefinition;->getScopeName()Ljava/lang/String;
+
+    .line 73
+    .line 74
+    .line 75
+    move-result-object v2
+
+    .line 76
+    if-eqz v2, :cond_1
+
+    .line 77
+    .line 78
+    iget-object v2, p0, Lw82;->d:Ljava/lang/Object;
+
+    .line 79
+    .line 80
+    check-cast v2, Ljava/util/LinkedHashMap;
+
+    .line 81
+    .line 82
+    invoke-interface {p1}, Lio/github/rosemoe/sora/langs/textmate/registry/model/GrammarDefinition;->getScopeName()Ljava/lang/String;
+
+    .line 83
+    .line 84
+    .line 85
+    move-result-object v3
+
+    .line 86
+    invoke-interface {v2, v0, v3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 87
+    .line 88
+    .line 89
+    iget-object v0, p0, Lw82;->e:Ljava/lang/Object;
+
+    .line 90
+    .line 91
+    check-cast v0, Ljava/util/LinkedHashMap;
+
+    .line 92
+    .line 93
+    iget-object v2, v1, Lt82;->a:Ljava/lang/String;
+
+    .line 94
+    .line 95
+    invoke-interface {v0, v2, p1}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 96
+    .line 97
+    .line 98
+    :cond_1
+    monitor-exit p0
+
+    .line 99
+    move-object p1, v1
+
+    .line 100
+    :goto_0
+    return-object p1
+
+    .line 101
+    :goto_1
+    :try_start_2
+    monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
+    .line 102
+    throw p1
+
+    .line 103
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

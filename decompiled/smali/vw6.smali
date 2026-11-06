@@ -1,16 +1,19 @@
 .class public final Lvw6;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lqs4;
 
 
 # instance fields
-.field public final a:Lvk6;
+.field public final a:I
 
-.field public final b:Lwl0;
+.field public final b:J
 
 
 # direct methods
-.method public constructor <init>(Lvk6;Lwl0;)V
+.method public constructor <init>(IJ)V
     .locals 0
 
     .line 1
@@ -19,11 +22,11 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lvw6;->a:Lvk6;
+    iput p1, p0, Lvw6;->a:I
 
     .line 5
     .line 6
-    iput-object p2, p0, Lvw6;->b:Lwl0;
+    iput-wide p2, p0, Lvw6;->b:J
 
     .line 7
     .line 8
@@ -32,182 +35,156 @@
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final b(JJLfs2;Lt03;)J
+    .locals 5
 
     .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of v1, p1, Lvw6;
-
-    .line 6
-    .line 7
-    const/4 v2, 0x0
-
-    .line 8
-    if-nez v1, :cond_1
-
-    .line 9
-    .line 10
-    goto :goto_0
-
-    .line 11
-    :cond_1
-    check-cast p1, Lvw6;
-
-    .line 12
-    .line 13
-    iget-object v1, p0, Lvw6;->a:Lvk6;
-
-    .line 14
-    .line 15
-    iget-object v3, p1, Lvw6;->a:Lvk6;
-
-    .line 16
-    .line 17
-    invoke-virtual {v1, v3}, Lvk6;->equals(Ljava/lang/Object;)Z
-
-    .line 18
-    .line 19
-    .line 20
-    move-result v1
-
-    .line 21
-    if-nez v1, :cond_2
-
-    .line 22
-    .line 23
-    :goto_0
-    return v2
-
-    .line 24
-    :cond_2
-    iget-object p0, p0, Lvw6;->b:Lwl0;
-
-    .line 25
-    .line 26
-    iget-object p1, p1, Lvw6;->b:Lwl0;
-
-    .line 27
-    .line 28
-    if-eq p0, p1, :cond_3
-
-    .line 29
-    .line 30
-    return v2
-
-    .line 31
-    :cond_3
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lvw6;->a:Lvk6;
+    iget p1, p5, Lfs2;->a:I
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Lvk6;->hashCode()I
+    invoke-virtual {p5}, Lfs2;->d()I
 
     .line 4
     .line 5
     .line 6
-    move-result v0
+    move-result p2
 
     .line 7
-    mul-int/lit8 v0, v0, 0x1f
+    const/16 p6, 0x20
 
     .line 8
     .line 9
-    iget-object p0, p0, Lvw6;->b:Lwl0;
+    shr-long v0, p3, p6
 
     .line 10
     .line 11
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    long-to-int v0, v0
 
     .line 12
+    sub-int/2addr p2, v0
+
     .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    add-int/2addr p0, v0
-
-    .line 16
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v1, "TransformedText(text="
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    iget-object v1, p0, Lvw6;->a:Lvk6;
-
-    .line 9
-    .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 11
-    .line 12
-    .line 13
-    const-string v1, ", offsetMapping="
+    div-int/lit8 p2, p2, 0x2
 
     .line 14
     .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    add-int/2addr p2, p1
 
     .line 16
+    iget-wide v1, p0, Lvw6;->b:J
+
     .line 17
     .line 18
-    iget-object p0, p0, Lvw6;->b:Lwl0;
+    shr-long v3, v1, p6
 
     .line 19
     .line 20
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    long-to-int p1, v3
 
     .line 21
+    sub-int/2addr p1, v0
+
     .line 22
+    const/4 v0, 0x0
+
     .line 23
-    const-string p0, ")"
+    invoke-static {v0, p1}, Ljava/lang/Math;->max(II)I
 
     .line 24
     .line 25
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 26
-    .line 27
-    .line 28
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result p1
 
+    .line 27
+    invoke-static {p2, v0, p1}, Lgf3;->u(III)I
+
+    .line 28
     .line 29
     .line 30
+    move-result p1
+
     .line 31
-    move-result-object p0
+    iget p2, p5, Lfs2;->b:I
 
     .line 32
-    return-object p0
+    .line 33
+    const-wide v3, 0xffffffffL
+
+    .line 34
+    .line 35
+    .line 36
+    .line 37
+    .line 38
+    and-long/2addr p3, v3
+
+    .line 39
+    long-to-int p3, p3
+
+    .line 40
+    sub-int/2addr p2, p3
+
+    .line 41
+    iget p0, p0, Lvw6;->a:I
+
+    .line 42
+    .line 43
+    sub-int/2addr p2, p0
+
+    .line 44
+    if-gez p2, :cond_0
+
+    .line 45
+    .line 46
+    iget p2, p5, Lfs2;->d:I
+
+    .line 47
+    .line 48
+    add-int/2addr p2, p0
+
+    .line 49
+    :cond_0
+    and-long p4, v1, v3
+
+    .line 50
+    .line 51
+    long-to-int p0, p4
+
+    .line 52
+    sub-int/2addr p0, p3
+
+    .line 53
+    invoke-static {v0, p0}, Ljava/lang/Math;->max(II)I
+
+    .line 54
+    .line 55
+    .line 56
+    move-result p0
+
+    .line 57
+    invoke-static {p2, v0, p0}, Lgf3;->u(III)I
+
+    .line 58
+    .line 59
+    .line 60
+    move-result p0
+
+    .line 61
+    int-to-long p1, p1
+
+    .line 62
+    shl-long/2addr p1, p6
+
+    .line 63
+    int-to-long p3, p0
+
+    .line 64
+    and-long/2addr p3, v3
+
+    .line 65
+    or-long p0, p1, p3
+
+    .line 66
+    .line 67
+    return-wide p0
 .end method

@@ -1,535 +1,159 @@
-.class public final Liv;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Ljava/util/Collection;
+.class public final enum Liv;
+.super Ljava/lang/Enum;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final synthetic j:Ljv;
+# static fields
+.field public static final enum j:Liv;
+
+.field public static final synthetic k:[Liv;
+
+.field public static final synthetic l:Lzv1;
 
 
 # direct methods
-.method public constructor <init>(Ljv;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Liv;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Liv;->j:Ljv;
-
-    .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final add(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    .line 2
-    .line 3
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    const-string v1, "All"
 
     .line 4
     .line 5
-    .line 6
-    throw p0
-.end method
-
-.method public final addAll(Ljava/util/Collection;)Z
-    .locals 0
-
-    .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    .line 2
-    .line 3
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    throw p0
-.end method
-
-.method public final clear()V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Liv;->j:Ljv;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lg36;->clear()V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public final contains(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Liv;->j:Ljv;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lg36;->a(Ljava/lang/Object;)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    if-ltz p0, :cond_0
-
-    .line 8
-    .line 9
-    const/4 p0, 0x1
-
-    .line 10
-    return p0
-
-    .line 11
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 12
-    return p0
-.end method
-
-.method public final containsAll(Ljava/util/Collection;)Z
-    .locals 1
-
-    .line 1
-    invoke-interface {p1}, Ljava/util/Collection;->iterator()Ljava/util/Iterator;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p1
-
-    .line 5
-    :cond_0
-    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 6
-    .line 7
-    .line 8
-    move-result v0
-
-    .line 9
-    if-eqz v0, :cond_1
-
-    .line 10
-    .line 11
-    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object v0
-
-    .line 15
-    invoke-virtual {p0, v0}, Liv;->contains(Ljava/lang/Object;)Z
-
-    .line 16
-    .line 17
-    .line 18
-    move-result v0
-
-    .line 19
-    if-nez v0, :cond_0
-
-    .line 20
-    .line 21
-    const/4 p0, 0x0
-
-    .line 22
-    return p0
-
-    .line 23
-    :cond_1
-    const/4 p0, 0x1
-
-    .line 24
-    return p0
-.end method
-
-.method public final isEmpty()Z
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Liv;->j:Ljv;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lg36;->isEmpty()Z
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final iterator()Ljava/util/Iterator;
-    .locals 2
-
-    .line 1
-    new-instance v0, Lfv;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Liv;->j:Ljv;
-
-    .line 4
-    .line 5
-    const/4 v1, 0x1
-
-    .line 6
-    invoke-direct {v0, p0, v1}, Lfv;-><init>(Ljv;B)V
-
-    .line 7
-    .line 8
-    .line 9
-    return-object v0
-.end method
-
-.method public final remove(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Liv;->j:Ljv;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lg36;->a(Ljava/lang/Object;)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p1
-
-    .line 7
-    if-ltz p1, :cond_0
-
-    .line 8
-    .line 9
-    invoke-virtual {p0, p1}, Lg36;->f(I)Ljava/lang/Object;
-
-    .line 10
-    .line 11
-    .line 12
-    const/4 p0, 0x1
-
-    .line 13
-    return p0
-
-    .line 14
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 15
-    return p0
-.end method
-
-.method public final removeAll(Ljava/util/Collection;)Z
-    .locals 5
-
-    .line 1
-    iget-object p0, p0, Liv;->j:Ljv;
-
-    .line 2
-    .line 3
-    iget v0, p0, Lg36;->l:I
-
-    .line 4
-    .line 5
-    const/4 v1, 0x0
-
-    .line 6
-    move v2, v1
-
-    .line 7
-    :goto_0
-    if-ge v1, v0, :cond_1
-
-    .line 8
-    .line 9
-    invoke-virtual {p0, v1}, Lg36;->h(I)Ljava/lang/Object;
-
-    .line 10
-    .line 11
-    .line 12
-    move-result-object v3
-
-    .line 13
-    invoke-interface {p1, v3}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
-
-    .line 14
-    .line 15
-    .line 16
-    move-result v3
-
-    .line 17
-    const/4 v4, 0x1
-
-    .line 18
-    if-eqz v3, :cond_0
-
-    .line 19
-    .line 20
-    invoke-virtual {p0, v1}, Lg36;->f(I)Ljava/lang/Object;
-
-    .line 21
-    .line 22
-    .line 23
-    add-int/lit8 v1, v1, -0x1
-
-    .line 24
-    .line 25
-    add-int/lit8 v0, v0, -0x1
-
-    .line 26
-    .line 27
-    move v2, v4
-
-    .line 28
-    :cond_0
-    add-int/2addr v1, v4
-
-    .line 29
-    goto :goto_0
-
-    .line 30
-    :cond_1
-    return v2
-.end method
-
-.method public final retainAll(Ljava/util/Collection;)Z
-    .locals 5
-
-    .line 1
-    iget-object p0, p0, Liv;->j:Ljv;
-
-    .line 2
-    .line 3
-    iget v0, p0, Lg36;->l:I
-
-    .line 4
-    .line 5
-    const/4 v1, 0x0
-
-    .line 6
-    move v2, v1
-
-    .line 7
-    :goto_0
-    if-ge v1, v0, :cond_1
-
-    .line 8
-    .line 9
-    invoke-virtual {p0, v1}, Lg36;->h(I)Ljava/lang/Object;
-
-    .line 10
-    .line 11
-    .line 12
-    move-result-object v3
-
-    .line 13
-    invoke-interface {p1, v3}, Ljava/util/Collection;->contains(Ljava/lang/Object;)Z
-
-    .line 14
-    .line 15
-    .line 16
-    move-result v3
-
-    .line 17
-    const/4 v4, 0x1
-
-    .line 18
-    if-nez v3, :cond_0
-
-    .line 19
-    .line 20
-    invoke-virtual {p0, v1}, Lg36;->f(I)Ljava/lang/Object;
-
-    .line 21
-    .line 22
-    .line 23
-    add-int/lit8 v1, v1, -0x1
-
-    .line 24
-    .line 25
-    add-int/lit8 v0, v0, -0x1
-
-    .line 26
-    .line 27
-    move v2, v4
-
-    .line 28
-    :cond_0
-    add-int/2addr v1, v4
-
-    .line 29
-    goto :goto_0
-
-    .line 30
-    :cond_1
-    return v2
-.end method
-
-.method public final size()I
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Liv;->j:Ljv;
-
-    .line 2
-    .line 3
-    iget p0, p0, Lg36;->l:I
-
-    .line 4
-    .line 5
-    return p0
-.end method
-
-.method public final toArray()[Ljava/lang/Object;
-    .locals 4
-
-    .line 41
-    iget-object p0, p0, Liv;->j:Ljv;
-
-    iget v0, p0, Lg36;->l:I
-
-    .line 42
-    new-array v1, v0, [Ljava/lang/Object;
-
     const/4 v2, 0x0
 
-    :goto_0
-    if-ge v2, v0, :cond_0
-
-    .line 43
-    invoke-virtual {p0, v2}, Lg36;->h(I)Ljava/lang/Object;
-
-    move-result-object v3
-
-    aput-object v3, v1, v2
-
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    return-object v1
-.end method
-
-.method public final toArray([Ljava/lang/Object;)[Ljava/lang/Object;
-    .locals 3
-
-    .line 1
-    iget-object p0, p0, Liv;->j:Ljv;
-
-    .line 2
-    .line 3
-    iget v0, p0, Lg36;->l:I
-
-    .line 4
-    .line 5
-    array-length v1, p1
-
     .line 6
-    if-ge v1, v0, :cond_0
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 9
+    sput-object v0, Liv;->j:Liv;
+
     .line 10
     .line 11
-    move-result-object p1
+    new-instance v1, Liv;
 
     .line 12
-    invoke-virtual {p1}, Ljava/lang/Class;->getComponentType()Ljava/lang/Class;
-
     .line 13
+    const-string v2, "MainOnly"
+
     .line 14
     .line 15
-    move-result-object p1
+    const/4 v3, 0x1
 
     .line 16
-    invoke-static {p1, v0}, Ljava/lang/reflect/Array;->newInstance(Ljava/lang/Class;I)Ljava/lang/Object;
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
     .line 18
     .line 19
-    move-result-object p1
+    new-instance v2, Liv;
 
     .line 20
-    check-cast p1, [Ljava/lang/Object;
-
     .line 21
-    .line 22
-    :cond_0
-    const/4 v1, 0x0
+    const-string v3, "WorkClone"
 
+    .line 22
     .line 23
-    :goto_0
-    if-ge v1, v0, :cond_1
+    const/4 v4, 0x2
 
     .line 24
-    .line 25
-    invoke-virtual {p0, v1}, Lg36;->h(I)Ljava/lang/Object;
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 25
     .line 26
     .line 27
-    .line 28
-    move-result-object v2
+    new-instance v3, Liv;
 
+    .line 28
     .line 29
-    aput-object v2, p1, v1
+    const-string v4, "OtherUsers"
 
     .line 30
     .line 31
-    add-int/lit8 v1, v1, 0x1
+    const/4 v5, 0x3
 
     .line 32
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 33
-    goto :goto_0
-
     .line 34
-    :cond_1
-    array-length p0, p1
-
     .line 35
-    if-le p0, v0, :cond_2
+    filled-new-array {v0, v1, v2, v3}, [Liv;
 
     .line 36
     .line 37
-    const/4 p0, 0x0
-
     .line 38
-    aput-object p0, p1, v0
+    move-result-object v0
 
     .line 39
+    sput-object v0, Liv;->k:[Liv;
+
     .line 40
-    :cond_2
-    return-object p1
+    .line 41
+    new-instance v1, Lzv1;
+
+    .line 42
+    .line 43
+    invoke-direct {v1, v0}, Lzv1;-><init>([Ljava/lang/Enum;)V
+
+    .line 44
+    .line 45
+    .line 46
+    sput-object v1, Liv;->l:Lzv1;
+
+    .line 47
+    .line 48
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Liv;
+    .locals 1
+
+    .line 1
+    const-class v0, Liv;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Liv;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Liv;
+    .locals 1
+
+    .line 1
+    sget-object v0, Liv;->k:[Liv;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Liv;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

@@ -1,62 +1,88 @@
-.class public final enum Leu5;
-.super Ljava/lang/Enum;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final synthetic Leu5;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Le62;
 
 
-# static fields
-.field public static final enum j:Leu5;
+# instance fields
+.field public final synthetic j:B
 
-.field public static final enum k:Leu5;
-
-.field public static final synthetic l:[Leu5;
+.field public final synthetic k:Lfu5;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(Lfu5;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Leu5;
+    iput-byte p2, p0, Leu5;->j:B
 
     .line 2
     .line 3
-    const-string v1, "EditableText"
+    iput-object p1, p0, Leu5;->k:Lfu5;
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 7
     .line 8
-    .line 9
-    sput-object v0, Leu5;->j:Leu5;
+    return-void
+.end method
 
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
+
+    .line 1
+    iget-byte v0, p0, Leu5;->j:B
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Leu5;->k:Lfu5;
+
+    .line 4
+    .line 5
+    packed-switch v0, :pswitch_data_0
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object p0, p0, Lfu5;->c0:Lu32;
+
+    .line 9
     .line 10
+    move-object v0, p0
+
     .line 11
-    new-instance v1, Leu5;
+    check-cast v0, Lvp3;
 
     .line 12
     .line 13
-    const-string v2, "StaticText"
+    iget-object v0, v0, Lvp3;->j:Lvp3;
 
     .line 14
     .line 15
-    const/4 v3, 0x1
+    iget-boolean v0, v0, Lvp3;->w:Z
 
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 17
-    .line 18
-    .line 19
-    sput-object v1, Leu5;->k:Leu5;
+    const/4 v1, 0x0
 
+    .line 18
+    if-nez v0, :cond_0
+
+    .line 19
     .line 20
+    goto :goto_0
+
     .line 21
-    filled-new-array {v0, v1}, [Leu5;
+    :cond_0
+    invoke-virtual {p0}, Lu32;->J1()Lp32;
 
     .line 22
     .line 23
@@ -64,55 +90,121 @@
     move-result-object v0
 
     .line 25
-    sput-object v0, Leu5;->l:[Leu5;
+    invoke-virtual {v0}, Lp32;->a()Z
 
     .line 26
     .line 27
-    return-void
-.end method
+    .line 28
+    move-result v2
 
-.method public static valueOf(Ljava/lang/String;)Leu5;
-    .locals 1
+    .line 29
+    if-nez v2, :cond_1
 
-    .line 1
-    const-class v0, Leu5;
+    .line 30
+    .line 31
+    goto :goto_0
 
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    .line 32
+    :cond_1
+    invoke-virtual {v0}, Lp32;->b()Z
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
+    .line 33
+    .line 34
+    .line 35
+    move-result v0
 
-    .line 7
-    check-cast p0, Leu5;
+    .line 36
+    if-eqz v0, :cond_2
 
-    .line 8
-    .line 9
-    return-object p0
-.end method
+    .line 37
+    .line 38
+    invoke-virtual {p0, v1}, Lu32;->H1(Ls03;)Lga5;
 
-.method public static values()[Leu5;
-    .locals 1
+    .line 39
+    .line 40
+    .line 41
+    move-result-object v1
 
-    .line 1
-    sget-object v0, Leu5;->l:[Leu5;
+    .line 42
+    goto :goto_0
 
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    .line 43
+    :cond_2
+    invoke-static {p0}, Lhq;->i0(Lmh1;)Lgj4;
 
-    .line 4
-    .line 5
-    .line 6
+    .line 44
+    .line 45
+    .line 46
     move-result-object v0
 
-    .line 7
-    check-cast v0, [Leu5;
+    .line 47
+    check-cast v0, Lqa;
 
-    .line 8
-    .line 9
-    return-object v0
+    .line 48
+    .line 49
+    invoke-virtual {v0}, Lqa;->getFocusOwner()Le32;
+
+    .line 50
+    .line 51
+    .line 52
+    move-result-object v0
+
+    .line 53
+    check-cast v0, Lh32;
+
+    .line 54
+    .line 55
+    invoke-virtual {v0}, Lh32;->h()Lu32;
+
+    .line 56
+    .line 57
+    .line 58
+    move-result-object v0
+
+    .line 59
+    if-eqz v0, :cond_3
+
+    .line 60
+    .line 61
+    invoke-static {p0}, Lhq;->g0(Lmh1;)La84;
+
+    .line 62
+    .line 63
+    .line 64
+    move-result-object p0
+
+    .line 65
+    invoke-virtual {v0, p0}, Lu32;->H1(Ls03;)Lga5;
+
+    .line 66
+    .line 67
+    .line 68
+    move-result-object v1
+
+    .line 69
+    :cond_3
+    :goto_0
+    return-object v1
+
+    .line 70
+    :pswitch_0
+    iget-boolean p0, p0, Lvp3;->w:Z
+
+    .line 71
+    .line 72
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 73
+    .line 74
+    .line 75
+    move-result-object p0
+
+    .line 76
+    return-object p0
+
+    .line 77
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

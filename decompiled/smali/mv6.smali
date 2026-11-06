@@ -1,537 +1,200 @@
-.class public abstract Lmv6;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final enum Lmv6;
+.super Ljava/lang/Enum;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # static fields
-.field public static final a:Lbi4;
+.field public static final enum j:Lmv6;
 
-.field public static final b:F
+.field public static final enum k:Lmv6;
 
-.field public static final c:F
+.field public static final enum l:Lmv6;
 
-.field public static final d:F
+.field public static final enum m:Lmv6;
+
+.field public static final enum n:Lmv6;
+
+.field public static final synthetic o:[Lmv6;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 8
 
     .line 1
-    new-instance v0, Lbi4;
+    new-instance v0, Lmv6;
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    const-string v1, "DARKER"
 
     .line 4
-    invoke-direct {v0, v1, v1, v1, v1}, Lbi4;-><init>(FFFF)V
-
     .line 5
-    .line 6
-    .line 7
-    sput-object v0, Lmv6;->a:Lbi4;
+    const/4 v2, 0x0
 
+    .line 6
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 7
     .line 8
     .line 9
-    const/high16 v0, 0x42800000    # 64.0f
+    sput-object v0, Lmv6;->j:Lmv6;
 
     .line 10
     .line 11
-    sput v0, Lmv6;->b:F
+    new-instance v1, Lmv6;
 
     .line 12
     .line 13
-    sput v0, Lmv6;->c:F
+    const-string v2, "LIGHTER"
 
     .line 14
     .line 15
-    const/high16 v0, 0x42f00000    # 120.0f
+    const/4 v3, 0x1
 
     .line 16
-    .line 17
-    sput v0, Lmv6;->d:F
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 17
     .line 18
     .line 19
+    sput-object v1, Lmv6;->k:Lmv6;
+
+    .line 20
+    .line 21
+    new-instance v2, Lmv6;
+
+    .line 22
+    .line 23
+    const-string v3, "RELATIVE_DARKER"
+
+    .line 24
+    .line 25
+    const/4 v4, 0x2
+
+    .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 27
+    .line 28
+    .line 29
+    sput-object v2, Lmv6;->l:Lmv6;
+
+    .line 30
+    .line 31
+    new-instance v3, Lmv6;
+
+    .line 32
+    .line 33
+    const-string v4, "RELATIVE_LIGHTER"
+
+    .line 34
+    .line 35
+    const/4 v5, 0x3
+
+    .line 36
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 37
+    .line 38
+    .line 39
+    sput-object v3, Lmv6;->m:Lmv6;
+
+    .line 40
+    .line 41
+    new-instance v4, Lmv6;
+
+    .line 42
+    .line 43
+    const-string v5, "NEARER"
+
+    .line 44
+    .line 45
+    const/4 v6, 0x4
+
+    .line 46
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 47
+    .line 48
+    .line 49
+    sput-object v4, Lmv6;->n:Lmv6;
+
+    .line 50
+    .line 51
+    new-instance v5, Lmv6;
+
+    .line 52
+    .line 53
+    const-string v6, "FARTHER"
+
+    .line 54
+    .line 55
+    const/4 v7, 0x5
+
+    .line 56
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 57
+    .line 58
+    .line 59
+    filled-new-array/range {v0 .. v5}, [Lmv6;
+
+    .line 60
+    .line 61
+    .line 62
+    move-result-object v0
+
+    .line 63
+    sput-object v0, Lmv6;->o:[Lmv6;
+
+    .line 64
+    .line 65
     return-void
 .end method
 
-.method public static a(Law6;Lv01;)Luw1;
-    .locals 6
+.method public static valueOf(Ljava/lang/String;)Lmv6;
+    .locals 1
 
     .line 1
-    move-object v0, p1
+    const-class v0, Lmv6;
 
     .line 2
-    check-cast v0, Ls62;
-
     .line 3
-    .line 4
-    invoke-virtual {v0}, Ls62;->O()Ljava/lang/Object;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
+    .line 4
     .line 5
     .line 6
+    move-result-object p0
+
     .line 7
-    move-result-object v1
+    check-cast p0, Lmv6;
 
     .line 8
-    sget-object v2, Lt01;->a:Lt8;
-
     .line 9
-    .line 10
-    if-ne v1, v2, :cond_0
-
-    .line 11
-    .line 12
-    new-instance v1, Let0;
-
-    .line 13
-    .line 14
-    const/16 v3, 0x1b
-
-    .line 15
-    .line 16
-    invoke-direct {v1, v3}, Let0;-><init>(B)V
-
-    .line 17
-    .line 18
-    .line 19
-    invoke-virtual {v0, v1}, Ls62;->l0(Ljava/lang/Object;)V
-
-    .line 20
-    .line 21
-    .line 22
-    :cond_0
-    check-cast v1, Ld52;
-
-    .line 23
-    .line 24
-    const/4 v0, 0x3
-
-    .line 25
-    invoke-static {v0, p1}, Lx23;->K(ILv01;)Lry1;
-
-    .line 26
-    .line 27
-    .line 28
-    move-result-object v0
-
-    .line 29
-    invoke-static {p1}, Lq86;->a(Lv01;)Ltd1;
-
-    .line 30
-    .line 31
-    .line 32
-    move-result-object v3
-
-    .line 33
-    move-object v4, p1
-
-    .line 34
-    check-cast v4, Ls62;
-
-    .line 35
-    .line 36
-    invoke-virtual {v4, p0}, Ls62;->g(Ljava/lang/Object;)Z
-
-    .line 37
-    .line 38
-    .line 39
-    move-result v4
-
-    .line 40
-    move-object v5, p1
-
-    .line 41
-    check-cast v5, Ls62;
-
-    .line 42
-    .line 43
-    invoke-virtual {v5, v1}, Ls62;->g(Ljava/lang/Object;)Z
-
-    .line 44
-    .line 45
-    .line 46
-    move-result v5
-
-    .line 47
-    or-int/2addr v4, v5
-
-    .line 48
-    move-object v5, p1
-
-    .line 49
-    check-cast v5, Ls62;
-
-    .line 50
-    .line 51
-    invoke-virtual {v5, v0}, Ls62;->g(Ljava/lang/Object;)Z
-
-    .line 52
-    .line 53
-    .line 54
-    move-result v5
-
-    .line 55
-    or-int/2addr v4, v5
-
-    .line 56
-    move-object v5, p1
-
-    .line 57
-    check-cast v5, Ls62;
-
-    .line 58
-    .line 59
-    invoke-virtual {v5, v3}, Ls62;->g(Ljava/lang/Object;)Z
-
-    .line 60
-    .line 61
-    .line 62
-    move-result v5
-
-    .line 63
-    or-int/2addr v4, v5
-
-    .line 64
-    check-cast p1, Ls62;
-
-    .line 65
-    .line 66
-    invoke-virtual {p1}, Ls62;->O()Ljava/lang/Object;
-
-    .line 67
-    .line 68
-    .line 69
-    move-result-object v5
-
-    .line 70
-    if-nez v4, :cond_1
-
-    .line 71
-    .line 72
-    if-ne v5, v2, :cond_2
-
-    .line 73
-    .line 74
-    :cond_1
-    new-instance v5, Luw1;
-
-    .line 75
-    .line 76
-    invoke-direct {v5, p0, v0, v3, v1}, Luw1;-><init>(Law6;Lry1;Ltd1;Ld52;)V
-
-    .line 77
-    .line 78
-    .line 79
-    invoke-virtual {p1, v5}, Ls62;->l0(Ljava/lang/Object;)V
-
-    .line 80
-    .line 81
-    .line 82
-    :cond_2
-    check-cast v5, Luw1;
-
-    .line 83
-    .line 84
-    return-object v5
+    return-object p0
 .end method
 
-.method public static b(JJJJJLv01;)Llv6;
-    .locals 21
+.method public static values()[Lmv6;
+    .locals 1
 
     .line 1
-    const/4 v0, 0x0
+    sget-object v0, Lmv6;->o:[Lmv6;
 
     .line 2
-    sget-object v1, Lyu0;->u:Lic5;
-
     .line 3
-    .line 4
-    invoke-static {v0, v0, v0, v0, v1}, Lmt6;->a(FFFFLvu0;)J
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
+    .line 4
     .line 5
     .line 6
+    move-result-object v0
+
     .line 7
-    move-result-wide v0
+    check-cast v0, [Lmv6;
 
     .line 8
-    sget-object v2, Lxh3;->b:Lkp1;
-
     .line 9
-    .line 10
-    move-object/from16 v3, p10
-
-    .line 11
-    .line 12
-    check-cast v3, Ls62;
-
-    .line 13
-    .line 14
-    invoke-virtual {v3, v2}, Ls62;->k(Leu4;)Ljava/lang/Object;
-
-    .line 15
-    .line 16
-    .line 17
-    move-result-object v2
-
-    .line 18
-    check-cast v2, Lvh3;
-
-    .line 19
-    .line 20
-    iget-object v2, v2, Lvh3;->a:Lnu0;
-
-    .line 21
-    .line 22
-    iget-object v3, v2, Lnu0;->a0:Llv6;
-
-    .line 23
-    .line 24
-    if-nez v3, :cond_0
-
-    .line 25
-    .line 26
-    new-instance v4, Llv6;
-
-    .line 27
-    .line 28
-    const/16 v3, 0x22
-
-    .line 29
-    .line 30
-    invoke-static {v2, v3}, Lru0;->d(Lnu0;I)J
-
-    .line 31
-    .line 32
-    .line 33
-    move-result-wide v5
-
-    .line 34
-    const/16 v3, 0x24
-
-    .line 35
-    .line 36
-    invoke-static {v2, v3}, Lru0;->d(Lnu0;I)J
-
-    .line 37
-    .line 38
-    .line 39
-    move-result-wide v7
-
-    .line 40
-    const/16 v3, 0x11
-
-    .line 41
-    .line 42
-    invoke-static {v2, v3}, Lru0;->d(Lnu0;I)J
-
-    .line 43
-    .line 44
-    .line 45
-    move-result-wide v9
-
-    .line 46
-    invoke-static {v2, v3}, Lru0;->d(Lnu0;I)J
-
-    .line 47
-    .line 48
-    .line 49
-    move-result-wide v11
-
-    .line 50
-    const/16 v3, 0x12
-
-    .line 51
-    .line 52
-    invoke-static {v2, v3}, Lru0;->d(Lnu0;I)J
-
-    .line 53
-    .line 54
-    .line 55
-    move-result-wide v13
-
-    .line 56
-    invoke-static {v2, v3}, Lru0;->d(Lnu0;I)J
-
-    .line 57
-    .line 58
-    .line 59
-    move-result-wide v15
-
-    .line 60
-    invoke-direct/range {v4 .. v16}, Llv6;-><init>(JJJJJJ)V
-
-    .line 61
-    .line 62
-    .line 63
-    iput-object v4, v2, Lnu0;->a0:Llv6;
-
-    .line 64
-    .line 65
-    move-object v3, v4
-
-    .line 66
-    :cond_0
-    const-wide/16 v4, 0x10
-
-    .line 67
-    .line 68
-    cmp-long v2, p0, v4
-
-    .line 69
-    .line 70
-    if-eqz v2, :cond_1
-
-    .line 71
-    .line 72
-    move-wide/from16 v9, p0
-
-    .line 73
-    .line 74
-    goto :goto_0
-
-    .line 75
-    :cond_1
-    iget-wide v6, v3, Llv6;->a:J
-
-    .line 76
-    .line 77
-    move-wide v9, v6
-
-    .line 78
-    :goto_0
-    cmp-long v2, p2, v4
-
-    .line 79
-    .line 80
-    if-eqz v2, :cond_2
-
-    .line 81
-    .line 82
-    move-wide/from16 v11, p2
-
-    .line 83
-    .line 84
-    goto :goto_1
-
-    .line 85
-    :cond_2
-    iget-wide v6, v3, Llv6;->b:J
-
-    .line 86
-    .line 87
-    move-wide v11, v6
-
-    .line 88
-    :goto_1
-    cmp-long v2, p4, v4
-
-    .line 89
-    .line 90
-    if-eqz v2, :cond_3
-
-    .line 91
-    .line 92
-    move-wide/from16 v13, p4
-
-    .line 93
-    .line 94
-    goto :goto_2
-
-    .line 95
-    :cond_3
-    iget-wide v6, v3, Llv6;->c:J
-
-    .line 96
-    .line 97
-    move-wide v13, v6
-
-    .line 98
-    :goto_2
-    cmp-long v2, p6, v4
-
-    .line 99
-    .line 100
-    if-eqz v2, :cond_4
-
-    .line 101
-    .line 102
-    move-wide/from16 v15, p6
-
-    .line 103
-    .line 104
-    goto :goto_3
-
-    .line 105
-    :cond_4
-    iget-wide v6, v3, Llv6;->d:J
-
-    .line 106
-    .line 107
-    move-wide v15, v6
-
-    .line 108
-    :goto_3
-    cmp-long v2, p8, v4
-
-    .line 109
-    .line 110
-    if-eqz v2, :cond_5
-
-    .line 111
-    .line 112
-    move-wide/from16 v17, p8
-
-    .line 113
-    .line 114
-    goto :goto_4
-
-    .line 115
-    :cond_5
-    iget-wide v6, v3, Llv6;->e:J
-
-    .line 116
-    .line 117
-    move-wide/from16 v17, v6
-
-    .line 118
-    .line 119
-    :goto_4
-    cmp-long v2, v0, v4
-
-    .line 120
-    .line 121
-    if-eqz v2, :cond_6
-
-    .line 122
-    .line 123
-    :goto_5
-    move-wide/from16 v19, v0
-
-    .line 124
-    .line 125
-    goto :goto_6
-
-    .line 126
-    :cond_6
-    iget-wide v0, v3, Llv6;->f:J
-
-    .line 127
-    .line 128
-    goto :goto_5
-
-    .line 129
-    :goto_6
-    new-instance v8, Llv6;
-
-    .line 130
-    .line 131
-    invoke-direct/range {v8 .. v20}, Llv6;-><init>(JJJJJJ)V
-
-    .line 132
-    .line 133
-    .line 134
-    return-object v8
+    return-object v0
 .end method

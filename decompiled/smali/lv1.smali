@@ -1,259 +1,140 @@
-.class public abstract Llv1;
-.super Lua1;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final enum Llv1;
+.super Ljava/lang/Enum;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # static fields
-.field public static final synthetic o:I
+.field public static final enum j:Llv1;
+
+.field public static final enum k:Llv1;
+
+.field public static final enum l:Llv1;
+
+.field public static final synthetic m:[Llv1;
 
 
-# instance fields
-.field public l:J
-
-.field public m:Z
-
-.field public n:Lbv;
-
-
-# virtual methods
-.method public final K(I)Lua1;
-    .locals 0
+# direct methods
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    invoke-static {p1}, Lx23;->q(I)V
+    new-instance v0, Llv1;
 
     .line 2
     .line 3
+    const-string v1, "PreEnter"
+
     .line 4
+    .line 5
+    const/4 v2, 0x0
+
+    .line 6
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 7
+    .line 8
+    .line 9
+    sput-object v0, Llv1;->j:Llv1;
+
+    .line 10
+    .line 11
+    new-instance v1, Llv1;
+
+    .line 12
+    .line 13
+    const-string v2, "Visible"
+
+    .line 14
+    .line 15
+    const/4 v3, 0x1
+
+    .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    sput-object v1, Llv1;->k:Llv1;
+
+    .line 20
+    .line 21
+    new-instance v2, Llv1;
+
+    .line 22
+    .line 23
+    const-string v3, "PostExit"
+
+    .line 24
+    .line 25
+    const/4 v4, 0x2
+
+    .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 27
+    .line 28
+    .line 29
+    sput-object v2, Llv1;->l:Llv1;
+
+    .line 30
+    .line 31
+    filled-new-array {v0, v1, v2}, [Llv1;
+
+    .line 32
+    .line 33
+    .line 34
+    move-result-object v0
+
+    .line 35
+    sput-object v0, Llv1;->m:[Llv1;
+
+    .line 36
+    .line 37
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Llv1;
+    .locals 1
+
+    .line 1
+    const-class v0, Llv1;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Llv1;
+
+    .line 8
+    .line 9
     return-object p0
 .end method
 
-.method public final L(Z)V
-    .locals 4
-
-    .line 1
-    iget-wide v0, p0, Llv1;->l:J
-
-    .line 2
-    .line 3
-    if-eqz p1, :cond_0
-
-    .line 4
-    .line 5
-    const-wide v2, 0x100000000L
-
-    .line 6
-    .line 7
-    .line 8
-    .line 9
-    .line 10
-    goto :goto_0
-
-    .line 11
-    :cond_0
-    const-wide/16 v2, 0x1
-
-    .line 12
-    .line 13
-    :goto_0
-    sub-long/2addr v0, v2
-
-    .line 14
-    iput-wide v0, p0, Llv1;->l:J
-
-    .line 15
-    .line 16
-    const-wide/16 v2, 0x0
-
-    .line 17
-    .line 18
-    cmp-long p1, v0, v2
-
-    .line 19
-    .line 20
-    if-lez p1, :cond_1
-
-    .line 21
-    .line 22
-    goto :goto_1
-
-    .line 23
-    :cond_1
-    iget-boolean p1, p0, Llv1;->m:Z
-
-    .line 24
-    .line 25
-    if-eqz p1, :cond_2
-
-    .line 26
-    .line 27
-    invoke-virtual {p0}, Llv1;->shutdown()V
-
-    .line 28
-    .line 29
-    .line 30
-    :cond_2
-    :goto_1
-    return-void
-.end method
-
-.method public final M(Lhj1;)V
+.method public static values()[Llv1;
     .locals 1
 
     .line 1
-    iget-object v0, p0, Llv1;->n:Lbv;
+    sget-object v0, Llv1;->m:[Llv1;
 
     .line 2
     .line 3
-    if-nez v0, :cond_0
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     .line 4
     .line 5
-    new-instance v0, Lbv;
-
     .line 6
+    move-result-object v0
+
     .line 7
-    invoke-direct {v0}, Lbv;-><init>()V
+    check-cast v0, [Llv1;
 
     .line 8
     .line 9
-    .line 10
-    iput-object v0, p0, Llv1;->n:Lbv;
-
-    .line 11
-    .line 12
-    :cond_0
-    invoke-virtual {v0, p1}, Lbv;->addLast(Ljava/lang/Object;)V
-
-    .line 13
-    .line 14
-    .line 15
-    return-void
-.end method
-
-.method public final N(Z)V
-    .locals 4
-
-    .line 1
-    iget-wide v0, p0, Llv1;->l:J
-
-    .line 2
-    .line 3
-    if-eqz p1, :cond_0
-
-    .line 4
-    .line 5
-    const-wide v2, 0x100000000L
-
-    .line 6
-    .line 7
-    .line 8
-    .line 9
-    .line 10
-    goto :goto_0
-
-    .line 11
-    :cond_0
-    const-wide/16 v2, 0x1
-
-    .line 12
-    .line 13
-    :goto_0
-    add-long/2addr v2, v0
-
-    .line 14
-    iput-wide v2, p0, Llv1;->l:J
-
-    .line 15
-    .line 16
-    if-nez p1, :cond_1
-
-    .line 17
-    .line 18
-    const/4 p1, 0x1
-
-    .line 19
-    iput-boolean p1, p0, Llv1;->m:Z
-
-    .line 20
-    .line 21
-    :cond_1
-    return-void
-.end method
-
-.method public abstract O()J
-.end method
-
-.method public final P()Z
-    .locals 1
-
-    .line 1
-    iget-object p0, p0, Llv1;->n:Lbv;
-
-    .line 2
-    .line 3
-    if-nez p0, :cond_0
-
-    .line 4
-    .line 5
-    goto :goto_1
-
-    .line 6
-    :cond_0
-    invoke-virtual {p0}, Lbv;->isEmpty()Z
-
-    .line 7
-    .line 8
-    .line 9
-    move-result v0
-
-    .line 10
-    if-eqz v0, :cond_1
-
-    .line 11
-    .line 12
-    const/4 p0, 0x0
-
-    .line 13
-    goto :goto_0
-
-    .line 14
-    :cond_1
-    invoke-virtual {p0}, Lbv;->removeFirst()Ljava/lang/Object;
-
-    .line 15
-    .line 16
-    .line 17
-    move-result-object p0
-
-    .line 18
-    :goto_0
-    check-cast p0, Lhj1;
-
-    .line 19
-    .line 20
-    if-nez p0, :cond_2
-
-    .line 21
-    .line 22
-    :goto_1
-    const/4 p0, 0x0
-
-    .line 23
-    return p0
-
-    .line 24
-    :cond_2
-    invoke-virtual {p0}, Lhj1;->run()V
-
-    .line 25
-    .line 26
-    .line 27
-    const/4 p0, 0x1
-
-    .line 28
-    return p0
-.end method
-
-.method public abstract shutdown()V
+    return-object v0
 .end method

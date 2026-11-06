@@ -1,729 +1,1040 @@
 .class public final Luq0;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Llh6;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
-
-# static fields
-.field public static final c:Luq0;
+# interfaces
+.implements Lt62;
 
 
 # instance fields
-.field public final a:Ljava/util/HashMap;
+.field public j:Landroid/net/LocalSocket;
 
-.field public final b:Ljava/util/HashMap;
+.field public k:Ljava/io/Closeable;
+
+.field public l:Lwq0;
+
+.field public m:Ltq0;
+
+.field public n:Ljava/io/BufferedReader;
+
+.field public o:J
+
+.field public p:Z
+
+.field public final synthetic q:Lwq0;
+
+.field public final synthetic r:J
+
+.field public final synthetic s:Ltq0;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(Lwq0;JLtq0;Ly81;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Luq0;->q:Lwq0;
+
+    .line 2
+    .line 3
+    iput-wide p2, p0, Luq0;->r:J
+
+    .line 4
+    .line 5
+    iput-object p4, p0, Luq0;->s:Ltq0;
+
+    .line 6
+    .line 7
+    const/4 p1, 0x2
+
+    .line 8
+    invoke-direct {p0, p1, p5}, Llh6;-><init>(ILy81;)V
+
+    .line 9
+    .line 10
+    .line 11
+    return-void
+.end method
+
+
+# virtual methods
+.method public final create(Ljava/lang/Object;Ly81;)Ly81;
+    .locals 6
 
     .line 1
     new-instance v0, Luq0;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Luq0;-><init>()V
+    iget-wide v2, p0, Luq0;->r:J
 
     .line 4
     .line 5
-    .line 6
-    sput-object v0, Luq0;->c:Luq0;
+    iget-object v4, p0, Luq0;->s:Ltq0;
 
+    .line 6
     .line 7
+    iget-object v1, p0, Luq0;->q:Lwq0;
+
     .line 8
-    return-void
+    .line 9
+    move-object v5, p2
+
+    .line 10
+    invoke-direct/range {v0 .. v5}, Luq0;-><init>(Lwq0;JLtq0;Ly81;)V
+
+    .line 11
+    .line 12
+    .line 13
+    return-object v0
 .end method
 
-.method public constructor <init>()V
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    check-cast p1, Lac1;
 
     .line 2
     .line 3
+    check-cast p2, Ly81;
+
     .line 4
-    new-instance v0, Ljava/util/HashMap;
-
     .line 5
-    .line 6
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-virtual {p0, p1, p2}, Luq0;->create(Ljava/lang/Object;Ly81;)Ly81;
 
+    .line 6
     .line 7
     .line 8
+    move-result-object p0
+
     .line 9
-    iput-object v0, p0, Luq0;->a:Ljava/util/HashMap;
+    check-cast p0, Luq0;
 
     .line 10
     .line 11
-    new-instance v0, Ljava/util/HashMap;
+    sget-object p1, La47;->a:La47;
 
     .line 12
     .line 13
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+    invoke-virtual {p0, p1}, Luq0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 14
     .line 15
     .line 16
-    iput-object v0, p0, Luq0;->b:Ljava/util/HashMap;
+    move-result-object p0
 
     .line 17
-    .line 18
-    return-void
+    return-object p0
 .end method
 
-.method public static b(Ljava/util/HashMap;Ltq0;Lw53;Ljava/lang/Class;)V
-    .locals 4
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 12
 
     .line 1
-    invoke-virtual {p0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v0, "\n"
 
     .line 2
     .line 3
-    .line 4
-    move-result-object v0
+    sget-object v1, Lbc1;->j:Lbc1;
 
+    .line 4
     .line 5
-    check-cast v0, Lw53;
+    iget-boolean v2, p0, Luq0;->p:Z
 
     .line 6
     .line 7
-    if-eqz v0, :cond_1
+    const/4 v3, 0x1
 
     .line 8
+    const/4 v4, 0x0
+
     .line 9
-    if-ne p2, v0, :cond_0
+    if-eqz v2, :cond_1
 
     .line 10
     .line 11
-    goto :goto_0
+    if-ne v2, v3, :cond_0
 
     .line 12
-    :cond_0
-    iget-object p0, p1, Ltq0;->b:Ljava/lang/reflect/Method;
-
     .line 13
+    iget-wide v5, p0, Luq0;->o:J
+
     .line 14
-    new-instance p1, Ljava/lang/IllegalArgumentException;
-
     .line 15
-    .line 16
-    invoke-virtual {p0}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+    iget-object v0, p0, Luq0;->n:Ljava/io/BufferedReader;
 
+    .line 16
     .line 17
+    iget-object v2, p0, Luq0;->m:Ltq0;
+
     .line 18
     .line 19
-    move-result-object p0
-
-    .line 20
-    invoke-virtual {p3}, Ljava/lang/Class;->getName()Ljava/lang/String;
-
-    .line 21
-    .line 22
-    .line 23
-    move-result-object p3
-
-    .line 24
-    invoke-static {v0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    .line 25
-    .line 26
-    .line 27
-    move-result-object v0
-
-    .line 28
-    invoke-static {p2}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
-
-    .line 29
-    .line 30
-    .line 31
-    move-result-object p2
-
-    .line 32
-    const-string v1, " in "
-
-    .line 33
-    .line 34
-    const-string v2, " already declared with different @OnLifecycleEvent value: previous value "
-
-    .line 35
-    .line 36
-    const-string v3, "Method "
-
-    .line 37
-    .line 38
-    invoke-static {v3, p0, v1, p3, v2}, Lpb1;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 39
-    .line 40
-    .line 41
-    move-result-object p0
-
-    .line 42
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 43
-    .line 44
-    .line 45
-    const-string p3, ", new value "
-
-    .line 46
-    .line 47
-    invoke-virtual {p0, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 48
-    .line 49
-    .line 50
-    invoke-virtual {p0, p2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 51
-    .line 52
-    .line 53
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 54
-    .line 55
-    .line 56
-    move-result-object p0
-
-    .line 57
-    invoke-direct {p1, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
-    .line 58
-    .line 59
-    .line 60
-    throw p1
-
-    .line 61
-    :cond_1
-    :goto_0
-    if-nez v0, :cond_2
-
-    .line 62
-    .line 63
-    invoke-virtual {p0, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 64
-    .line 65
-    .line 66
-    :cond_2
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a(Ljava/lang/Class;[Ljava/lang/reflect/Method;)Lsq0;
-    .locals 13
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Class;->getSuperclass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
-
-    .line 5
-    new-instance v1, Ljava/util/HashMap;
-
-    .line 6
-    .line 7
-    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
-
-    .line 8
-    .line 9
-    .line 10
-    const/4 v2, 0x0
-
-    .line 11
-    iget-object v3, p0, Luq0;->a:Ljava/util/HashMap;
-
-    .line 12
-    .line 13
-    if-eqz v0, :cond_1
-
-    .line 14
-    .line 15
-    invoke-virtual {v3, v0}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object v4
-
-    .line 19
-    check-cast v4, Lsq0;
+    iget-object v7, p0, Luq0;->l:Lwq0;
 
     .line 20
     .line 21
-    if-eqz v4, :cond_0
+    iget-object v8, p0, Luq0;->k:Ljava/io/Closeable;
 
     .line 22
     .line 23
-    goto :goto_0
+    iget-object v9, p0, Luq0;->j:Landroid/net/LocalSocket;
 
     .line 24
-    :cond_0
-    invoke-virtual {p0, v0, v2}, Luq0;->a(Ljava/lang/Class;[Ljava/lang/reflect/Method;)Lsq0;
-
     .line 25
+    :try_start_0
+    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
     .line 26
     .line 27
-    move-result-object v4
-
     .line 28
-    :goto_0
-    iget-object v0, v4, Lsq0;->b:Ljava/util/HashMap;
+    goto/16 :goto_4
 
     .line 29
     .line 30
-    invoke-virtual {v1, v0}, Ljava/util/HashMap;->putAll(Ljava/util/Map;)V
+    :catchall_0
+    move-exception p1
 
     .line 31
+    goto/16 :goto_8
+
     .line 32
     .line 33
-    :cond_1
-    invoke-virtual {p1}, Ljava/lang/Class;->getInterfaces()[Ljava/lang/Class;
+    :cond_0
+    const-string p0, "call to \'resume\' before \'invoke\' with coroutine"
 
     .line 34
     .line 35
+    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+
     .line 36
-    move-result-object v0
-
     .line 37
-    array-length v4, v0
-
     .line 38
-    const/4 v5, 0x0
+    return-object v4
 
     .line 39
-    move v6, v5
+    :cond_1
+    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
 
     .line 40
-    :goto_1
-    if-ge v6, v4, :cond_4
-
     .line 41
     .line 42
-    aget-object v7, v0, v6
+    new-instance p1, Landroid/net/LocalSocket;
 
     .line 43
     .line 44
-    invoke-virtual {v3, v7}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {p1}, Landroid/net/LocalSocket;-><init>()V
 
     .line 45
     .line 46
     .line 47
-    move-result-object v8
+    :try_start_1
+    new-instance v2, Landroid/net/LocalSocketAddress;
 
     .line 48
-    check-cast v8, Lsq0;
-
     .line 49
+    iget-object v5, p0, Luq0;->q:Lwq0;
+
     .line 50
-    if-eqz v8, :cond_2
-
     .line 51
-    .line 52
-    goto :goto_2
+    iget-object v5, v5, Lwq0;->b:Ltf0;
 
+    .line 52
     .line 53
-    :cond_2
-    invoke-virtual {p0, v7, v2}, Luq0;->a(Ljava/lang/Class;[Ljava/lang/reflect/Method;)Lsq0;
+    invoke-virtual {v5}, Ltf0;->invoke()Ljava/lang/Object;
 
     .line 54
     .line 55
     .line 56
-    move-result-object v8
+    move-result-object v5
 
     .line 57
-    :goto_2
-    iget-object v7, v8, Lsq0;->b:Ljava/util/HashMap;
+    check-cast v5, Ljava/lang/String;
 
     .line 58
     .line 59
-    invoke-virtual {v7}, Ljava/util/HashMap;->entrySet()Ljava/util/Set;
+    sget-object v6, Landroid/net/LocalSocketAddress$Namespace;->FILESYSTEM:Landroid/net/LocalSocketAddress$Namespace;
 
     .line 60
     .line 61
+    invoke-direct {v2, v5, v6}, Landroid/net/LocalSocketAddress;-><init>(Ljava/lang/String;Landroid/net/LocalSocketAddress$Namespace;)V
+
     .line 62
-    move-result-object v7
-
     .line 63
-    invoke-interface {v7}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
-
     .line 64
+    invoke-virtual {p1, v2}, Landroid/net/LocalSocket;->connect(Landroid/net/LocalSocketAddress;)V
+
     .line 65
     .line 66
-    move-result-object v7
-
     .line 67
-    :goto_3
-    invoke-interface {v7}, Ljava/util/Iterator;->hasNext()Z
+    iget-object v2, p0, Luq0;->q:Lwq0;
 
     .line 68
     .line 69
-    .line 70
-    move-result v8
+    iget-wide v5, p0, Luq0;->r:J
 
+    .line 70
     .line 71
-    if-eqz v8, :cond_3
+    iget-object v7, v2, Lwq0;->d:Ljava/lang/Object;
 
     .line 72
     .line 73
-    invoke-interface {v7}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    monitor-enter v7
+    :try_end_1
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_1 .. :try_end_1} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_3
+    .catchall {:try_start_1 .. :try_end_1} :catchall_2
 
     .line 74
+    :try_start_2
+    invoke-virtual {v2, v5, v6}, Lwq0;->b(J)Z
+
     .line 75
     .line 76
-    move-result-object v8
-
     .line 77
-    check-cast v8, Ljava/util/Map$Entry;
+    move-result v2
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_a
 
     .line 78
+    :try_start_3
+    monitor-exit v7
+
     .line 79
-    invoke-interface {v8}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
+    if-nez v2, :cond_3
 
     .line 80
     .line 81
+    invoke-virtual {p1}, Landroid/net/LocalSocket;->close()V
+
     .line 82
-    move-result-object v9
-
     .line 83
-    check-cast v9, Ltq0;
-
     .line 84
-    .line 85
-    invoke-interface {v8}, Ljava/util/Map$Entry;->getValue()Ljava/lang/Object;
+    sget-object v0, La47;->a:La47;
+    :try_end_3
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_3 .. :try_end_3} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_2
 
+    .line 85
     .line 86
+    invoke-virtual {p1}, Landroid/net/LocalSocket;->close()V
+
     .line 87
     .line 88
-    move-result-object v8
-
     .line 89
-    check-cast v8, Lw53;
+    iget-object p0, p0, Luq0;->q:Lwq0;
 
     .line 90
     .line 91
-    invoke-static {v1, v9, v8, p1}, Luq0;->b(Ljava/util/HashMap;Ltq0;Lw53;Ljava/lang/Class;)V
+    iget-object v1, p0, Lwq0;->d:Ljava/lang/Object;
 
     .line 92
     .line 93
+    monitor-enter v1
+
     .line 94
-    goto :goto_3
+    :try_start_4
+    iget-object v2, p0, Lwq0;->h:Landroid/net/LocalSocket;
 
     .line 95
-    :cond_3
-    add-int/lit8 v6, v6, 0x1
-
     .line 96
-    .line 97
-    goto :goto_1
+    if-ne v2, p1, :cond_2
 
+    .line 97
     .line 98
-    :cond_4
-    if-eqz p2, :cond_5
+    iput-object v4, p0, Lwq0;->h:Landroid/net/LocalSocket;
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
 
     .line 99
     .line 100
-    goto :goto_4
+    goto :goto_0
 
     .line 101
-    :cond_5
-    :try_start_0
-    invoke-virtual {p1}, Ljava/lang/Class;->getDeclaredMethods()[Ljava/lang/reflect/Method;
+    :catchall_1
+    move-exception p0
 
     .line 102
+    goto :goto_1
+
     .line 103
+    :cond_2
+    :goto_0
+    monitor-exit v1
+
     .line 104
-    move-result-object p2
-    :try_end_0
-    .catch Ljava/lang/NoClassDefFoundError; {:try_start_0 .. :try_end_0} :catch_0
+    return-object v0
 
     .line 105
-    :goto_4
-    array-length v0, p2
+    :goto_1
+    monitor-exit v1
 
     .line 106
-    move v4, v5
+    throw p0
 
     .line 107
-    move v6, v4
+    :catchall_2
+    move-exception v0
 
     .line 108
-    :goto_5
-    if-ge v4, v0, :cond_d
+    goto/16 :goto_f
 
     .line 109
     .line 110
-    aget-object v7, p2, v4
+    :catch_0
+    move-exception v0
 
     .line 111
+    goto/16 :goto_e
+
     .line 112
-    const-class v8, Lma4;
-
     .line 113
-    .line 114
-    invoke-virtual {v7, v8}, Ljava/lang/reflect/Method;->getAnnotation(Ljava/lang/Class;)Ljava/lang/annotation/Annotation;
+    :cond_3
+    :try_start_5
+    iget-object v2, p0, Luq0;->q:Lwq0;
 
+    .line 114
     .line 115
+    iget-object v5, v2, Lwq0;->d:Ljava/lang/Object;
+
     .line 116
     .line 117
-    move-result-object v8
+    iget-wide v6, p0, Luq0;->r:J
 
     .line 118
-    check-cast v8, Lma4;
-
     .line 119
+    monitor-enter v5
+    :try_end_5
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_5 .. :try_end_5} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_3
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
+
     .line 120
-    if-nez v8, :cond_6
+    :try_start_6
+    invoke-virtual {v2, v6, v7}, Lwq0;->b(J)Z
 
     .line 121
     .line 122
-    goto :goto_8
-
     .line 123
-    :cond_6
-    invoke-virtual {v7}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
+    move-result v6
 
     .line 124
+    if-eqz v6, :cond_4
+
     .line 125
     .line 126
-    move-result-object v6
+    iput-object p1, v2, Lwq0;->h:Landroid/net/LocalSocket;
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_3
 
     .line 127
-    array-length v9, v6
-
     .line 128
-    const/4 v10, 0x1
+    goto :goto_2
 
     .line 129
-    if-lez v9, :cond_8
+    :catchall_3
+    move-exception v0
 
     .line 130
-    .line 131
-    const-class v9, Le63;
+    goto/16 :goto_9
 
+    .line 131
     .line 132
+    :cond_4
+    :goto_2
+    :try_start_7
+    monitor-exit v5
+
     .line 133
-    aget-object v11, v6, v5
+    invoke-virtual {p1}, Landroid/net/LocalSocket;->getOutputStream()Ljava/io/OutputStream;
 
     .line 134
     .line 135
-    invoke-virtual {v9, v11}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
-
     .line 136
-    .line 137
-    .line 138
-    move-result v9
+    move-result-object v2
 
+    .line 137
+    iget-object v5, p0, Luq0;->s:Ltq0;
+
+    .line 138
     .line 139
-    if-eqz v9, :cond_7
+    invoke-virtual {v5}, Ltq0;->a()Ljava/lang/String;
 
     .line 140
     .line 141
-    move v9, v10
-
     .line 142
-    goto :goto_6
+    move-result-object v5
 
     .line 143
-    :cond_7
-    const-string p0, "invalid parameter type. Must be one and instanceof LifecycleOwner"
+    invoke-virtual {v5, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     .line 144
     .line 145
-    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
-
     .line 146
-    .line 147
-    .line 148
-    return-object v2
+    move-result-object v0
 
+    .line 147
+    sget-object v5, Ldo0;->a:Ljava/nio/charset/Charset;
+
+    .line 148
     .line 149
-    :cond_8
-    move v9, v5
+    invoke-virtual {v0, v5}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
 
     .line 150
-    :goto_6
-    invoke-interface {v8}, Lma4;->value()Lw53;
-
     .line 151
     .line 152
+    move-result-object v0
+
     .line 153
-    move-result-object v8
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 154
-    array-length v11, v6
-
     .line 155
-    const/4 v12, 0x2
-
     .line 156
-    if-le v11, v10, :cond_b
+    invoke-virtual {v2, v0}, Ljava/io/OutputStream;->write([B)V
 
     .line 157
     .line 158
-    const-class v9, Lw53;
-
     .line 159
-    .line 160
-    aget-object v11, v6, v10
+    invoke-virtual {v2}, Ljava/io/OutputStream;->flush()V
 
+    .line 160
     .line 161
     .line 162
-    invoke-virtual {v9, v11}, Ljava/lang/Class;->isAssignableFrom(Ljava/lang/Class;)Z
+    new-instance v0, Ljava/io/BufferedReader;
 
     .line 163
     .line 164
-    .line 165
-    move-result v9
+    new-instance v2, Ljava/io/InputStreamReader;
 
+    .line 165
     .line 166
-    if-eqz v9, :cond_a
+    invoke-virtual {p1}, Landroid/net/LocalSocket;->getInputStream()Ljava/io/InputStream;
 
     .line 167
     .line 168
-    sget-object v9, Lw53;->ON_ANY:Lw53;
-
     .line 169
+    move-result-object v6
+
     .line 170
-    if-ne v8, v9, :cond_9
+    invoke-direct {v2, v6, v5}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;Ljava/nio/charset/Charset;)V
 
     .line 171
     .line 172
-    move v9, v12
-
     .line 173
-    goto :goto_7
+    invoke-direct {v0, v2}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
 
     .line 174
-    :cond_9
-    const-string p0, "Second arg is supported only for ON_ANY value"
-
     .line 175
     .line 176
-    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+    iget-object v2, p0, Luq0;->q:Lwq0;
 
     .line 177
     .line 178
-    .line 179
-    return-object v2
+    iget-wide v5, p0, Luq0;->r:J
 
+    .line 179
     .line 180
-    :cond_a
-    const-string p0, "invalid parameter type. second arg must be an event"
+    iget-object v7, p0, Luq0;->s:Ltq0;
+    :try_end_7
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_7 .. :try_end_7} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_3
+    .catchall {:try_start_7 .. :try_end_7} :catchall_2
 
     .line 181
     .line 182
-    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+    move-object v8, v7
 
     .line 183
+    move-object v7, v2
+
     .line 184
+    move-object v2, v8
+
     .line 185
-    return-object v2
+    move-object v9, p1
 
     .line 186
-    :cond_b
-    :goto_7
-    array-length v6, v6
+    move-object v8, v0
 
     .line 187
-    if-gt v6, v12, :cond_c
+    :cond_5
+    :goto_3
+    :try_start_8
+    iget-object p1, v7, Lwq0;->d:Ljava/lang/Object;
 
     .line 188
     .line 189
-    new-instance v6, Ltq0;
+    monitor-enter p1
+    :try_end_8
+    .catchall {:try_start_8 .. :try_end_8} :catchall_0
 
     .line 190
-    .line 191
-    invoke-direct {v6, v9, v7}, Ltq0;-><init>(ILjava/lang/reflect/Method;)V
+    :try_start_9
+    invoke-virtual {v7, v5, v6}, Lwq0;->b(J)Z
 
+    .line 191
     .line 192
     .line 193
+    move-result v10
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_8
+
     .line 194
-    invoke-static {v1, v6, v8, p1}, Luq0;->b(Ljava/util/HashMap;Ltq0;Lw53;Ljava/lang/Class;)V
+    :try_start_a
+    monitor-exit p1
 
     .line 195
+    if-eqz v10, :cond_8
+
     .line 196
     .line 197
-    move v6, v10
+    invoke-virtual {v0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
 
     .line 198
-    :goto_8
-    add-int/lit8 v4, v4, 0x1
-
     .line 199
     .line 200
-    goto :goto_5
+    move-result-object p1
 
     .line 201
-    :cond_c
-    const-string p0, "cannot have more than 2 params"
+    if-nez p1, :cond_6
 
     .line 202
     .line 203
-    invoke-static {p0}, Ljv1;->h(Ljava/lang/String;)V
+    goto :goto_5
 
     .line 204
+    :cond_6
+    invoke-static {p1}, Lad6;->y0(Ljava/lang/CharSequence;)Z
+
     .line 205
     .line 206
-    return-object v2
-
     .line 207
-    :cond_d
-    new-instance p2, Lsq0;
+    move-result v10
 
     .line 208
-    .line 209
-    invoke-direct {p2, v1}, Lsq0;-><init>(Ljava/util/HashMap;)V
+    if-nez v10, :cond_5
 
+    .line 209
     .line 210
+    iget-object v10, v7, Lwq0;->d:Ljava/lang/Object;
+
     .line 211
     .line 212
-    invoke-virtual {v3, p1, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    monitor-enter v10
+    :try_end_a
+    .catchall {:try_start_a .. :try_end_a} :catchall_0
 
     .line 213
+    :try_start_b
+    invoke-virtual {v7, v5, v6}, Lwq0;->b(J)Z
+
     .line 214
     .line 215
-    iget-object p0, p0, Luq0;->b:Ljava/util/HashMap;
-
     .line 216
+    move-result v11
+    :try_end_b
+    .catchall {:try_start_b .. :try_end_b} :catchall_5
+
     .line 217
-    invoke-static {v6}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    :try_start_c
+    monitor-exit v10
 
     .line 218
+    if-eqz v11, :cond_5
+
     .line 219
     .line 220
-    move-result-object v0
+    iget-object v10, v7, Lwq0;->c:Lla;
 
     .line 221
-    invoke-virtual {p0, p1, v0}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 222
+    iput-object v9, p0, Luq0;->j:Landroid/net/LocalSocket;
+
     .line 223
     .line 224
-    return-object p2
+    iput-object v8, p0, Luq0;->k:Ljava/io/Closeable;
 
     .line 225
-    :catch_0
-    move-exception p0
-
     .line 226
-    new-instance p1, Ljava/lang/IllegalArgumentException;
+    iput-object v7, p0, Luq0;->l:Lwq0;
 
     .line 227
     .line 228
-    const-string p2, "The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor."
+    iput-object v2, p0, Luq0;->m:Ltq0;
 
     .line 229
     .line 230
-    invoke-direct {p1, p2, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    iput-object v0, p0, Luq0;->n:Ljava/io/BufferedReader;
 
     .line 231
     .line 232
+    iput-wide v5, p0, Luq0;->o:J
+
     .line 233
+    .line 234
+    iput-boolean v3, p0, Luq0;->p:Z
+
+    .line 235
+    .line 236
+    invoke-virtual {v10, v2, p1, p0}, Lla;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 237
+    .line 238
+    .line 239
+    move-result-object p1
+
+    .line 240
+    if-ne p1, v1, :cond_7
+
+    .line 241
+    .line 242
+    return-object v1
+
+    .line 243
+    :cond_7
+    :goto_4
+    iget-object p1, v7, Lwq0;->d:Ljava/lang/Object;
+
+    .line 244
+    .line 245
+    monitor-enter p1
+    :try_end_c
+    .catchall {:try_start_c .. :try_end_c} :catchall_0
+
+    .line 246
+    const/4 v10, 0x0
+
+    .line 247
+    :try_start_d
+    iput v10, v7, Lwq0;->k:I
+    :try_end_d
+    .catchall {:try_start_d .. :try_end_d} :catchall_4
+
+    .line 248
+    .line 249
+    :try_start_e
+    monitor-exit p1
+
+    .line 250
+    goto :goto_3
+
+    .line 251
+    :catchall_4
+    move-exception v0
+
+    .line 252
+    monitor-exit p1
+
+    .line 253
+    throw v0
+
+    .line 254
+    :catchall_5
+    move-exception p1
+
+    .line 255
+    monitor-exit v10
+
+    .line 256
     throw p1
+    :try_end_e
+    .catchall {:try_start_e .. :try_end_e} :catchall_0
+
+    .line 257
+    :cond_8
+    :goto_5
+    :try_start_f
+    invoke-static {v8, v4}, Lyr;->i(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+    :try_end_f
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_f .. :try_end_f} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_f .. :try_end_f} :catch_1
+    .catchall {:try_start_f .. :try_end_f} :catchall_7
+
+    .line 258
+    .line 259
+    .line 260
+    invoke-virtual {v9}, Landroid/net/LocalSocket;->close()V
+
+    .line 261
+    .line 262
+    .line 263
+    iget-object p1, p0, Luq0;->q:Lwq0;
+
+    .line 264
+    .line 265
+    iget-object v0, p1, Lwq0;->d:Ljava/lang/Object;
+
+    .line 266
+    .line 267
+    monitor-enter v0
+
+    .line 268
+    :try_start_10
+    iget-object v1, p1, Lwq0;->h:Landroid/net/LocalSocket;
+
+    .line 269
+    .line 270
+    if-ne v1, v9, :cond_9
+
+    .line 271
+    .line 272
+    iput-object v4, p1, Lwq0;->h:Landroid/net/LocalSocket;
+    :try_end_10
+    .catchall {:try_start_10 .. :try_end_10} :catchall_6
+
+    .line 273
+    .line 274
+    goto :goto_6
+
+    .line 275
+    :catchall_6
+    move-exception p0
+
+    .line 276
+    goto :goto_7
+
+    .line 277
+    :cond_9
+    :goto_6
+    monitor-exit v0
+
+    .line 278
+    goto :goto_c
+
+    .line 279
+    :goto_7
+    monitor-exit v0
+
+    .line 280
+    throw p0
+
+    .line 281
+    :catchall_7
+    move-exception v0
+
+    .line 282
+    move-object p1, v9
+
+    .line 283
+    goto :goto_f
+
+    .line 284
+    :catch_1
+    move-object p1, v9
+
+    .line 285
+    goto :goto_a
+
+    .line 286
+    :catch_2
+    move-exception v0
+
+    .line 287
+    move-object p1, v9
+
+    .line 288
+    goto :goto_e
+
+    .line 289
+    :catchall_8
+    move-exception v0
+
+    .line 290
+    :try_start_11
+    monitor-exit p1
+
+    .line 291
+    throw v0
+    :try_end_11
+    .catchall {:try_start_11 .. :try_end_11} :catchall_0
+
+    .line 292
+    :goto_8
+    :try_start_12
+    throw p1
+    :try_end_12
+    .catchall {:try_start_12 .. :try_end_12} :catchall_9
+
+    .line 293
+    :catchall_9
+    move-exception v0
+
+    .line 294
+    :try_start_13
+    invoke-static {v8, p1}, Lyr;->i(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+
+    .line 295
+    .line 296
+    .line 297
+    throw v0
+    :try_end_13
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_13 .. :try_end_13} :catch_2
+    .catch Ljava/lang/Exception; {:try_start_13 .. :try_end_13} :catch_1
+    .catchall {:try_start_13 .. :try_end_13} :catchall_7
+
+    .line 298
+    :goto_9
+    :try_start_14
+    monitor-exit v5
+
+    .line 299
+    throw v0
+
+    .line 300
+    :catchall_a
+    move-exception v0
+
+    .line 301
+    monitor-exit v7
+
+    .line 302
+    throw v0
+    :try_end_14
+    .catch Ljava/util/concurrent/CancellationException; {:try_start_14 .. :try_end_14} :catch_0
+    .catch Ljava/lang/Exception; {:try_start_14 .. :try_end_14} :catch_3
+    .catchall {:try_start_14 .. :try_end_14} :catchall_2
+
+    .line 303
+    :catch_3
+    :goto_a
+    invoke-virtual {p1}, Landroid/net/LocalSocket;->close()V
+
+    .line 304
+    .line 305
+    .line 306
+    iget-object v0, p0, Luq0;->q:Lwq0;
+
+    .line 307
+    .line 308
+    iget-object v1, v0, Lwq0;->d:Ljava/lang/Object;
+
+    .line 309
+    .line 310
+    monitor-enter v1
+
+    .line 311
+    :try_start_15
+    iget-object v2, v0, Lwq0;->h:Landroid/net/LocalSocket;
+
+    .line 312
+    .line 313
+    if-ne v2, p1, :cond_a
+
+    .line 314
+    .line 315
+    iput-object v4, v0, Lwq0;->h:Landroid/net/LocalSocket;
+    :try_end_15
+    .catchall {:try_start_15 .. :try_end_15} :catchall_b
+
+    .line 316
+    .line 317
+    goto :goto_b
+
+    .line 318
+    :catchall_b
+    move-exception p0
+
+    .line 319
+    goto :goto_d
+
+    .line 320
+    :cond_a
+    :goto_b
+    monitor-exit v1
+
+    .line 321
+    :goto_c
+    iget-object p1, p0, Luq0;->q:Lwq0;
+
+    .line 322
+    .line 323
+    iget-wide v0, p0, Luq0;->r:J
+
+    .line 324
+    .line 325
+    invoke-virtual {p1, v0, v1}, Lwq0;->d(J)V
+
+    .line 326
+    .line 327
+    .line 328
+    sget-object p0, La47;->a:La47;
+
+    .line 329
+    .line 330
+    return-object p0
+
+    .line 331
+    :goto_d
+    monitor-exit v1
+
+    .line 332
+    throw p0
+
+    .line 333
+    :goto_e
+    :try_start_16
+    throw v0
+    :try_end_16
+    .catchall {:try_start_16 .. :try_end_16} :catchall_2
+
+    .line 334
+    :goto_f
+    invoke-virtual {p1}, Landroid/net/LocalSocket;->close()V
+
+    .line 335
+    .line 336
+    .line 337
+    iget-object p0, p0, Luq0;->q:Lwq0;
+
+    .line 338
+    .line 339
+    iget-object v1, p0, Lwq0;->d:Ljava/lang/Object;
+
+    .line 340
+    .line 341
+    monitor-enter v1
+
+    .line 342
+    :try_start_17
+    iget-object v2, p0, Lwq0;->h:Landroid/net/LocalSocket;
+
+    .line 343
+    .line 344
+    if-ne v2, p1, :cond_b
+
+    .line 345
+    .line 346
+    iput-object v4, p0, Lwq0;->h:Landroid/net/LocalSocket;
+    :try_end_17
+    .catchall {:try_start_17 .. :try_end_17} :catchall_c
+
+    .line 347
+    .line 348
+    goto :goto_10
+
+    .line 349
+    :catchall_c
+    move-exception p0
+
+    .line 350
+    goto :goto_11
+
+    .line 351
+    :cond_b
+    :goto_10
+    monitor-exit v1
+
+    .line 352
+    throw v0
+
+    .line 353
+    :goto_11
+    monitor-exit v1
+
+    .line 354
+    throw p0
 .end method

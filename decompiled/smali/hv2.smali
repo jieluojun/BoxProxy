@@ -1,29 +1,32 @@
-.class public abstract Lhv2;
+.class public interface abstract Lhv2;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lpb1;
 
 
-# static fields
-.field public static final Companion:Lgv2;
+# virtual methods
+.method public abstract D(ZZLi91;)Lwk1;
+.end method
 
+.method public abstract E(Lz81;)Ljava/lang/Object;
+.end method
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public abstract b()Z
+.end method
 
-    .line 1
-    new-instance v0, Lgv2;
+.method public abstract c(Ljava/util/concurrent/CancellationException;)V
+.end method
 
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+.method public abstract k(Lov2;)Lvo0;
+.end method
 
-    .line 4
-    .line 5
-    .line 6
-    sput-object v0, Lhv2;->Companion:Lgv2;
+.method public abstract start()Z
+.end method
 
-    .line 7
-    .line 8
-    return-void
+.method public abstract t()Ljava/util/concurrent/CancellationException;
+.end method
+
+.method public abstract x(Lp62;)Lwk1;
 .end method

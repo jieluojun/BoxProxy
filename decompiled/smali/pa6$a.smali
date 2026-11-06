@@ -1,14 +1,14 @@
-.class public Lx86$a;
+.class public Lpa6$a;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lly6;
+.implements Lb07;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lx86;
+    value = Lpa6;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -32,11 +32,11 @@
 
 
 # virtual methods
-.method public final a(Lm82;Lrz6;)Lky6;
+.method public final a(Ln92;Lh17;)La07;
     .locals 0
 
     .line 1
-    iget-object p0, p2, Lrz6;->a:Ljava/lang/Class;
+    iget-object p0, p2, Lh17;->a:Ljava/lang/Class;
 
     .line 2
     .line 3
@@ -48,14 +48,14 @@
 
     .line 6
     .line 7
-    new-instance p0, Lx86;
+    new-instance p0, Lpa6;
 
     .line 8
     .line 9
     const/4 p1, 0x0
 
     .line 10
-    invoke-direct {p0, p1}, Lx86;-><init>(I)V
+    invoke-direct {p0, p1}, Lpa6;-><init>(I)V
 
     .line 11
     .line 12

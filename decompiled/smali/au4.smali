@@ -1,49 +1,37 @@
 .class public final Lau4;
-.super Ljava/util/ArrayList;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lcu4;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# virtual methods
-.method public final setProperty(Ljava/lang/String;Ljava/lang/Object;)V
-    .locals 1
+# instance fields
+.field public a:I
+
+.field public b:I
+
+.field public c:I
+
+
+# direct methods
+.method public constructor <init>(III)V
+    .locals 0
 
     .line 1
-    invoke-static {p1}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;)I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    move-result p1
+    iput p1, p0, Lau4;->a:I
 
     .line 5
-    invoke-virtual {p0}, Ljava/util/AbstractCollection;->size()I
-
     .line 6
+    iput p2, p0, Lau4;->b:I
+
     .line 7
     .line 8
-    move-result v0
+    iput p3, p0, Lau4;->c:I
 
     .line 9
-    if-ne p1, v0, :cond_0
-
     .line 10
-    .line 11
-    invoke-virtual {p0, p2}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
-
-    .line 12
-    .line 13
-    .line 14
-    return-void
-
-    .line 15
-    :cond_0
-    invoke-virtual {p0, p1, p2}, Ljava/util/AbstractList;->set(ILjava/lang/Object;)Ljava/lang/Object;
-
-    .line 16
-    .line 17
-    .line 18
     return-void
 .end method

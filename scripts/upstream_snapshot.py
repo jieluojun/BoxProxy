@@ -2,8 +2,8 @@
 """Verify/extract a pinned, decoded upstream APK without touching decompiled/.
 
 Usage:
-  python3 scripts/upstream_snapshot.py upstream/26.11.02.534f30c
-  python3 scripts/upstream_snapshot.py upstream/26.11.02.534f30c --extract .tools/upstream-134
+  python3 scripts/upstream_snapshot.py upstream/26.11.05.d5c365e
+  python3 scripts/upstream_snapshot.py upstream/26.11.05.d5c365e --extract .tools/upstream-139
 """
 import argparse
 import hashlib

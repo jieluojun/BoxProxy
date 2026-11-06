@@ -1,400 +1,475 @@
-.class public abstract synthetic Lv4;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final Lv4;
+.super Ls4;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# direct methods
-.method public static bridge synthetic A(Landroid/service/quicksettings/Tile;Ljava/lang/String;)V
-    .locals 0
+# static fields
+.field public static c:Lv4;
+
+
+# virtual methods
+.method public final h(I)[I
+    .locals 4
 
     .line 1
-    invoke-virtual {p0, p1}, Landroid/service/quicksettings/Tile;->setStateDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {p0}, Ls4;->l()Ljava/lang/String;
 
     .line 2
     .line 3
     .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic B(Landroid/view/WindowInsetsController;I)V
-    .locals 0
-
-    .line 1
-    invoke-interface {p0, p1}, Landroid/view/WindowInsetsController;->hide(I)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic C(Landroid/view/WindowInsetsController;Ln76;)V
-    .locals 0
-
-    .line 1
-    invoke-interface {p0, p1}, Landroid/view/WindowInsetsController;->removeOnControllableInsetsChangedListener(Landroid/view/WindowInsetsController$OnControllableInsetsChangedListener;)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic a(Landroid/view/WindowInsetsAnimation;)F
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/WindowInsetsAnimation;->getAlpha()F
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
+    move-result-object v0
 
     .line 5
-    return p0
-.end method
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
 
-.method public static bridge synthetic b()I
-    .locals 1
-
-    .line 1
-    const/16 v0, 0x1e
-
-    .line 2
-    .line 3
-    invoke-static {v0}, Landroid/os/ext/SdkExtensions;->getExtensionVersion(I)I
-
-    .line 4
-    .line 5
     .line 6
+    .line 7
+    .line 8
     move-result v0
 
-    .line 7
-    return v0
+    .line 9
+    if-gtz v0, :cond_0
+
+    .line 10
+    .line 11
+    goto :goto_2
+
+    .line 12
+    :cond_0
+    if-lt p1, v0, :cond_1
+
+    .line 13
+    .line 14
+    goto :goto_2
+
+    .line 15
+    :cond_1
+    if-gez p1, :cond_2
+
+    .line 16
+    .line 17
+    const/4 p1, 0x0
+
+    .line 18
+    :cond_2
+    :goto_0
+    if-ge p1, v0, :cond_4
+
+    .line 19
+    .line 20
+    invoke-virtual {p0}, Ls4;->l()Ljava/lang/String;
+
+    .line 21
+    .line 22
+    .line 23
+    move-result-object v1
+
+    .line 24
+    invoke-virtual {v1, p1}, Ljava/lang/String;->charAt(I)C
+
+    .line 25
+    .line 26
+    .line 27
+    move-result v1
+
+    .line 28
+    const/16 v2, 0xa
+
+    .line 29
+    .line 30
+    if-ne v1, v2, :cond_4
+
+    .line 31
+    .line 32
+    invoke-virtual {p0}, Ls4;->l()Ljava/lang/String;
+
+    .line 33
+    .line 34
+    .line 35
+    move-result-object v1
+
+    .line 36
+    invoke-virtual {v1, p1}, Ljava/lang/String;->charAt(I)C
+
+    .line 37
+    .line 38
+    .line 39
+    move-result v1
+
+    .line 40
+    if-eq v1, v2, :cond_3
+
+    .line 41
+    .line 42
+    if-eqz p1, :cond_4
+
+    .line 43
+    .line 44
+    invoke-virtual {p0}, Ls4;->l()Ljava/lang/String;
+
+    .line 45
+    .line 46
+    .line 47
+    move-result-object v1
+
+    .line 48
+    add-int/lit8 v3, p1, -0x1
+
+    .line 49
+    .line 50
+    invoke-virtual {v1, v3}, Ljava/lang/String;->charAt(I)C
+
+    .line 51
+    .line 52
+    .line 53
+    move-result v1
+
+    .line 54
+    if-ne v1, v2, :cond_3
+
+    .line 55
+    .line 56
+    goto :goto_1
+
+    .line 57
+    :cond_3
+    add-int/lit8 p1, p1, 0x1
+
+    .line 58
+    .line 59
+    goto :goto_0
+
+    .line 60
+    :cond_4
+    :goto_1
+    if-lt p1, v0, :cond_5
+
+    .line 61
+    .line 62
+    :goto_2
+    const/4 p0, 0x0
+
+    .line 63
+    return-object p0
+
+    .line 64
+    :cond_5
+    add-int/lit8 v1, p1, 0x1
+
+    .line 65
+    .line 66
+    :goto_3
+    if-ge v1, v0, :cond_6
+
+    .line 67
+    .line 68
+    invoke-virtual {p0, v1}, Lv4;->x(I)Z
+
+    .line 69
+    .line 70
+    .line 71
+    move-result v2
+
+    .line 72
+    if-nez v2, :cond_6
+
+    .line 73
+    .line 74
+    add-int/lit8 v1, v1, 0x1
+
+    .line 75
+    .line 76
+    goto :goto_3
+
+    .line 77
+    :cond_6
+    invoke-virtual {p0, p1, v1}, Ls4;->k(II)[I
+
+    .line 78
+    .line 79
+    .line 80
+    move-result-object p0
+
+    .line 81
+    return-object p0
 .end method
 
-.method public static bridge synthetic c(Landroid/view/WindowInsetsAnimation;)I
-    .locals 0
+.method public final t(I)[I
+    .locals 4
 
     .line 1
-    invoke-virtual {p0}, Landroid/view/WindowInsetsAnimation;->getTypeMask()I
+    invoke-virtual {p0}, Ls4;->l()Ljava/lang/String;
 
     .line 2
     .line 3
     .line 4
-    move-result p0
+    move-result-object v0
 
     .line 5
-    return p0
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v0
+
+    .line 9
+    if-gtz v0, :cond_0
+
+    .line 10
+    .line 11
+    goto :goto_1
+
+    .line 12
+    :cond_0
+    if-gtz p1, :cond_1
+
+    .line 13
+    .line 14
+    goto :goto_1
+
+    .line 15
+    :cond_1
+    if-le p1, v0, :cond_2
+
+    .line 16
+    .line 17
+    move p1, v0
+
+    .line 18
+    :cond_2
+    :goto_0
+    const/16 v0, 0xa
+
+    .line 19
+    .line 20
+    if-lez p1, :cond_3
+
+    .line 21
+    .line 22
+    invoke-virtual {p0}, Ls4;->l()Ljava/lang/String;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object v1
+
+    .line 26
+    add-int/lit8 v2, p1, -0x1
+
+    .line 27
+    .line 28
+    invoke-virtual {v1, v2}, Ljava/lang/String;->charAt(I)C
+
+    .line 29
+    .line 30
+    .line 31
+    move-result v1
+
+    .line 32
+    if-ne v1, v0, :cond_3
+
+    .line 33
+    .line 34
+    invoke-virtual {p0, p1}, Lv4;->x(I)Z
+
+    .line 35
+    .line 36
+    .line 37
+    move-result v1
+
+    .line 38
+    if-nez v1, :cond_3
+
+    .line 39
+    .line 40
+    add-int/lit8 p1, p1, -0x1
+
+    .line 41
+    .line 42
+    goto :goto_0
+
+    .line 43
+    :cond_3
+    if-gtz p1, :cond_4
+
+    .line 44
+    .line 45
+    :goto_1
+    const/4 p0, 0x0
+
+    .line 46
+    return-object p0
+
+    .line 47
+    :cond_4
+    add-int/lit8 v1, p1, -0x1
+
+    .line 48
+    .line 49
+    :goto_2
+    if-lez v1, :cond_6
+
+    .line 50
+    .line 51
+    invoke-virtual {p0}, Ls4;->l()Ljava/lang/String;
+
+    .line 52
+    .line 53
+    .line 54
+    move-result-object v2
+
+    .line 55
+    invoke-virtual {v2, v1}, Ljava/lang/String;->charAt(I)C
+
+    .line 56
+    .line 57
+    .line 58
+    move-result v2
+
+    .line 59
+    if-eq v2, v0, :cond_5
+
+    .line 60
+    .line 61
+    if-eqz v1, :cond_6
+
+    .line 62
+    .line 63
+    invoke-virtual {p0}, Ls4;->l()Ljava/lang/String;
+
+    .line 64
+    .line 65
+    .line 66
+    move-result-object v2
+
+    .line 67
+    add-int/lit8 v3, v1, -0x1
+
+    .line 68
+    .line 69
+    invoke-virtual {v2, v3}, Ljava/lang/String;->charAt(I)C
+
+    .line 70
+    .line 71
+    .line 72
+    move-result v2
+
+    .line 73
+    if-ne v2, v0, :cond_5
+
+    .line 74
+    .line 75
+    goto :goto_3
+
+    .line 76
+    :cond_5
+    add-int/lit8 v1, v1, -0x1
+
+    .line 77
+    .line 78
+    goto :goto_2
+
+    .line 79
+    :cond_6
+    :goto_3
+    invoke-virtual {p0, v1, p1}, Ls4;->k(II)[I
+
+    .line 80
+    .line 81
+    .line 82
+    move-result-object p0
+
+    .line 83
+    return-object p0
 .end method
 
-.method public static bridge synthetic d(Landroid/view/WindowInsetsAnimation;)J
+.method public final x(I)Z
     .locals 2
 
     .line 1
-    invoke-virtual {p0}, Landroid/view/WindowInsetsAnimation;->getDurationMillis()J
+    if-lez p1, :cond_1
 
     .line 2
     .line 3
-    .line 4
-    move-result-wide v0
-
-    .line 5
-    return-wide v0
-.end method
-
-.method public static bridge synthetic e(Landroid/view/WindowInsetsAnimation$Bounds;)Landroid/graphics/Insets;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/WindowInsetsAnimation$Bounds;->getLowerBound()Landroid/graphics/Insets;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static bridge synthetic f(Landroid/view/WindowMetrics;)Landroid/graphics/Rect;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/WindowMetrics;->getBounds()Landroid/graphics/Rect;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static bridge synthetic g(Ljava/lang/Object;)Landroid/util/CloseGuard;
-    .locals 0
-
-    .line 1
-    check-cast p0, Landroid/util/CloseGuard;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public static synthetic h(Landroid/graphics/Insets;Landroid/graphics/Insets;)Landroid/view/WindowInsetsAnimation$Bounds;
-    .locals 1
-
-    .line 1
-    new-instance v0, Landroid/view/WindowInsetsAnimation$Bounds;
-
-    .line 2
-    .line 3
-    invoke-direct {v0, p0, p1}, Landroid/view/WindowInsetsAnimation$Bounds;-><init>(Landroid/graphics/Insets;Landroid/graphics/Insets;)V
+    invoke-virtual {p0}, Ls4;->l()Ljava/lang/String;
 
     .line 4
     .line 5
     .line 6
-    return-object v0
-.end method
+    move-result-object v0
 
-.method public static synthetic i(ILandroid/view/animation/Interpolator;J)Landroid/view/WindowInsetsAnimation;
-    .locals 1
+    .line 7
+    add-int/lit8 v1, p1, -0x1
 
-    .line 1
-    new-instance v0, Landroid/view/WindowInsetsAnimation;
+    .line 8
+    .line 9
+    invoke-virtual {v0, v1}, Ljava/lang/String;->charAt(I)C
 
-    .line 2
-    .line 3
-    invoke-direct {v0, p0, p1, p2, p3}, Landroid/view/WindowInsetsAnimation;-><init>(ILandroid/view/animation/Interpolator;J)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-object v0
-.end method
-
-.method public static bridge synthetic j(Landroid/view/View;)Landroid/view/WindowInsetsController;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/View;->getWindowInsetsController()Landroid/view/WindowInsetsController;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static bridge synthetic k(Landroid/view/WindowManager;)Landroid/view/WindowMetrics;
-    .locals 0
-
-    .line 1
-    invoke-interface {p0}, Landroid/view/WindowManager;->getCurrentWindowMetrics()Landroid/view/WindowMetrics;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static bridge synthetic l()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-    .locals 1
-
-    .line 1
-    sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_PRESS_AND_HOLD:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-
-    .line 2
-    .line 3
-    return-object v0
-.end method
-
-.method public static synthetic m()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Landroid/view/WindowInsetsAnimation$Bounds;
-
-    .line 2
-    .line 3
-    return-void
-.end method
-
-.method public static bridge synthetic n(Landroid/graphics/Outline;Landroid/graphics/Path;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/graphics/Outline;->setPath(Landroid/graphics/Path;)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic o(Landroid/service/quicksettings/Tile;Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/service/quicksettings/Tile;->setStateDescription(Ljava/lang/CharSequence;)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic p(Landroid/util/CloseGuard;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/util/CloseGuard;->warnIfOpen()V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic q(Landroid/view/View;Lmb7;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/view/View;->setWindowInsetsAnimationCallback(Landroid/view/WindowInsetsAnimation$Callback;)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic r(Landroid/view/WindowInsetsAnimation;F)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/view/WindowInsetsAnimation;->setFraction(F)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic s(Landroid/view/WindowInsetsController;I)V
-    .locals 0
-
-    .line 1
-    invoke-interface {p0, p1}, Landroid/view/WindowInsetsController;->show(I)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic t(Landroid/view/WindowInsetsController;Ln76;)V
-    .locals 0
-
-    .line 1
-    invoke-interface {p0, p1}, Landroid/view/WindowInsetsController;->addOnControllableInsetsChangedListener(Landroid/view/WindowInsetsController$OnControllableInsetsChangedListener;)V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public static bridge synthetic u(Landroid/graphics/Canvas;FFFF)Z
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1, p2, p3, p4}, Landroid/graphics/Canvas;->quickReject(FFFF)Z
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    return p0
-.end method
-
-.method public static bridge synthetic v(Landroid/graphics/Canvas;Landroid/graphics/Path;)Z
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/graphics/Canvas;->quickReject(Landroid/graphics/Path;)Z
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    return p0
-.end method
-
-.method public static bridge synthetic w(Landroid/graphics/Canvas;Landroid/graphics/RectF;)Z
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/graphics/Canvas;->quickReject(Landroid/graphics/RectF;)Z
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    return p0
-.end method
-
-.method public static bridge synthetic x(Landroid/view/WindowInsetsAnimation;)F
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/WindowInsetsAnimation;->getInterpolatedFraction()F
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    return p0
-.end method
-
-.method public static bridge synthetic y()I
-    .locals 1
-
-    .line 1
-    invoke-static {}, Landroid/view/WindowInsets$Type;->ime()I
-
-    .line 2
-    .line 3
-    .line 4
+    .line 10
+    .line 11
+    .line 12
     move-result v0
 
-    .line 5
-    return v0
-.end method
+    .line 13
+    const/16 v1, 0xa
 
-.method public static bridge synthetic z()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
-    .locals 1
+    .line 14
+    .line 15
+    if-eq v0, v1, :cond_1
 
-    .line 1
-    sget-object v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_IME_ENTER:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
+    .line 16
+    .line 17
+    invoke-virtual {p0}, Ls4;->l()Ljava/lang/String;
 
-    .line 2
-    .line 3
-    return-object v0
+    .line 18
+    .line 19
+    .line 20
+    move-result-object v0
+
+    .line 21
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    .line 22
+    .line 23
+    .line 24
+    move-result v0
+
+    .line 25
+    if-eq p1, v0, :cond_0
+
+    .line 26
+    .line 27
+    invoke-virtual {p0}, Ls4;->l()Ljava/lang/String;
+
+    .line 28
+    .line 29
+    .line 30
+    move-result-object p0
+
+    .line 31
+    invoke-virtual {p0, p1}, Ljava/lang/String;->charAt(I)C
+
+    .line 32
+    .line 33
+    .line 34
+    move-result p0
+
+    .line 35
+    if-ne p0, v1, :cond_1
+
+    .line 36
+    .line 37
+    :cond_0
+    const/4 p0, 0x1
+
+    .line 38
+    return p0
+
+    .line 39
+    :cond_1
+    const/4 p0, 0x0
+
+    .line 40
+    return p0
 .end method

@@ -1,11 +1,14 @@
 .class public interface abstract Lv96;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lez5;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # virtual methods
-.method public abstract getValue()Ljava/lang/Object;
+.method public abstract b(I)Ljava/util/List;
+.end method
+
+.method public abstract d(I)V
+.end method
+
+.method public abstract i()I
 .end method

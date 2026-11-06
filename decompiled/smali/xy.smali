@@ -1,104 +1,194 @@
-.class public abstract Lxy;
+.class public final Lxy;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lzj0;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final a:Lak0;
+.field public final a:F
+
+.field public final b:F
+
+.field public final c:F
+
+.field public final d:I
+
+.field public final e:J
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lhx3;)V
+    .locals 6
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
     .line 4
-    new-instance v0, Lak0;
+    iget v0, p1, Lhx3;->c:F
 
     .line 5
     .line 6
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iget v1, p1, Lhx3;->d:F
 
     .line 7
     .line 8
-    .line 9
-    iput-object v0, p0, Lxy;->a:Lak0;
+    iget v2, p1, Lhx3;->b:F
 
+    .line 9
     .line 10
+    iget v3, p1, Lhx3;->a:I
+
     .line 11
+    .line 12
+    iget-wide v4, p1, Lhx3;->e:J
+
+    .line 13
+    .line 14
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 15
+    .line 16
+    .line 17
+    iput v0, p0, Lxy;->a:F
+
+    .line 18
+    .line 19
+    iput v1, p0, Lxy;->b:F
+
+    .line 20
+    .line 21
+    iput v2, p0, Lxy;->c:F
+
+    .line 22
+    .line 23
+    iput v3, p0, Lxy;->d:I
+
+    .line 24
+    .line 25
+    iput-wide v4, p0, Lxy;->e:J
+
+    .line 26
+    .line 27
     return-void
 .end method
 
 
 # virtual methods
-.method public a(Llk0;Lak0;Lmq3;Ljava/lang/Object;)V
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
     .line 1
-    check-cast p4, Ldk0;
+    new-instance v0, Ljava/lang/StringBuilder;
 
     .line 2
     .line 3
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-string v1, "BackEventCompat(touchX="
 
     .line 4
     .line 5
-    .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    .line 6
     .line 7
     .line 8
-    .line 9
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget v1, p0, Lxy;->a:F
 
+    .line 9
     .line 10
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
     .line 11
     .line 12
-    return-void
-.end method
+    .line 13
+    const-string v1, ", touchY="
 
-.method public final b(Llk0;Lak0;FLjava/lang/Object;)V
-    .locals 0
+    .line 14
+    .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 1
-    check-cast p4, Ldk0;
+    .line 16
+    .line 17
+    .line 18
+    iget v1, p0, Lxy;->b:F
 
-    .line 2
-    .line 3
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .line 19
+    .line 20
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    .line 4
-    .line 5
-    .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .line 21
+    .line 22
+    .line 23
+    const-string v1, ", progress="
 
-    .line 7
-    .line 8
-    .line 9
-    return-void
-.end method
+    .line 24
+    .line 25
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public abstract d(Lwj0;Ldk0;)V
-.end method
+    .line 26
+    .line 27
+    .line 28
+    iget v1, p0, Lxy;->c:F
 
-.method public abstract e()Ljava/util/LinkedHashMap;
-.end method
+    .line 29
+    .line 30
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-.method public abstract f(Ldk0;Lvj0;Ltq3;)V
-.end method
+    .line 31
+    .line 32
+    .line 33
+    const-string v1, ", swipeEdge="
 
-.method public abstract g(Ltq3;FLki0;)Ljava/lang/Object;
-.end method
+    .line 34
+    .line 35
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public abstract h(Lkq3;Ldk0;)V
-.end method
+    .line 36
+    .line 37
+    .line 38
+    iget v1, p0, Lxy;->d:I
 
-.method public abstract i(Llk0;Lmq3;Ldk0;)V
+    .line 39
+    .line 40
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    .line 41
+    .line 42
+    .line 43
+    const-string v1, ", frameTimeMillis="
+
+    .line 44
+    .line 45
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 46
+    .line 47
+    .line 48
+    iget-wide v1, p0, Lxy;->e:J
+
+    .line 49
+    .line 50
+    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+
+    .line 51
+    .line 52
+    .line 53
+    const/16 p0, 0x29
+
+    .line 54
+    .line 55
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    .line 56
+    .line 57
+    .line 58
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 59
+    .line 60
+    .line 61
+    move-result-object p0
+
+    .line 62
+    return-object p0
 .end method

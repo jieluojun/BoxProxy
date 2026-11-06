@@ -1,197 +1,35 @@
-.class public final synthetic Lri0;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lo52;
+.class public final Lri0;
+.super Ltp4;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Ln57;
+# static fields
+.field public static final k:Lri0;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ln57;B)V
-    .locals 0
-
-    .line 1
-    iput-byte p2, p0, Lri0;->j:B
-
-    .line 2
-    .line 3
-    iput-object p1, p0, Lri0;->k:Ln57;
-
-    .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 6
-    .line 7
-    .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method static constructor <clinit>()V
     .locals 3
 
     .line 1
-    iget-byte v0, p0, Lri0;->j:B
+    new-instance v0, Lri0;
 
     .line 2
     .line 3
-    iget-object p0, p0, Lri0;->k:Ln57;
+    const/4 v1, 0x0
 
     .line 4
+    const/4 v2, 0x1
+
     .line 5
-    packed-switch v0, :pswitch_data_0
+    invoke-direct {v0, v1, v2}, Ltp4;-><init>(Ljava/lang/String;B)V
 
     .line 6
     .line 7
     .line 8
-    check-cast p1, Ljava/lang/Float;
+    sput-object v0, Lri0;->k:Lri0;
 
     .line 9
     .line 10
-    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
-
-    .line 11
-    .line 12
-    .line 13
-    move-result p1
-
-    .line 14
-    iget-object v0, p0, Ln57;->e:Lcl4;
-
-    .line 15
-    .line 16
-    invoke-virtual {v0}, Lcl4;->g()F
-
-    .line 17
-    .line 18
-    .line 19
-    move-result v1
-
-    .line 20
-    invoke-virtual {v0}, Lcl4;->g()F
-
-    .line 21
-    .line 22
-    .line 23
-    move-result v2
-
-    .line 24
-    add-float/2addr v2, p1
-
-    .line 25
-    invoke-virtual {p0, v2}, Ln57;->e(F)V
-
-    .line 26
-    .line 27
-    .line 28
-    invoke-virtual {v0}, Lcl4;->g()F
-
-    .line 29
-    .line 30
-    .line 31
-    move-result v2
-
-    .line 32
-    sub-float/2addr v2, v1
-
-    .line 33
-    add-float/2addr v1, p1
-
-    .line 34
-    invoke-virtual {v0}, Lcl4;->g()F
-
-    .line 35
-    .line 36
-    .line 37
-    move-result v0
-
-    .line 38
-    cmpg-float v0, v1, v0
-
-    .line 39
-    .line 40
-    if-nez v0, :cond_0
-
-    .line 41
-    .line 42
-    goto :goto_0
-
-    .line 43
-    :cond_0
-    iget-object p0, p0, Ln57;->m:Lhz5;
-
-    .line 44
-    .line 45
-    sub-float p1, v2, p1
-
-    .line 46
-    .line 47
-    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    .line 48
-    .line 49
-    .line 50
-    move-result-object p1
-
-    .line 51
-    invoke-virtual {p0, p1}, Lhz5;->f(Ljava/lang/Object;)Z
-
-    .line 52
-    .line 53
-    .line 54
-    move p1, v2
-
-    .line 55
-    :goto_0
-    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    .line 56
-    .line 57
-    .line 58
-    move-result-object p0
-
-    .line 59
-    return-object p0
-
-    .line 60
-    :pswitch_0
-    check-cast p1, Lvj1;
-
-    .line 61
-    .line 62
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 63
-    .line 64
-    .line 65
-    new-instance p1, Ly6;
-
-    .line 66
-    .line 67
-    const/4 v0, 0x7
-
-    .line 68
-    invoke-direct {p1, p0, v0}, Ly6;-><init>(Ljava/lang/Object;B)V
-
-    .line 69
-    .line 70
-    .line 71
-    return-object p1
-
-    .line 72
-    nop
-
-    .line 73
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

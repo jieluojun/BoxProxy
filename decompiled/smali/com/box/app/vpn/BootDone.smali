@@ -3,7 +3,7 @@
 .source "BootDone.java"
 
 # Outer continuation of BootCont: nothing left to do.
-.implements Ly71;
+.implements Ly81;
 
 
 .method public constructor <init>()V
@@ -14,10 +14,10 @@
     return-void
 .end method
 
-.method public final getContext()Lsa1;
+.method public final getContext()Lrb1;
     .locals 1
 
-    sget-object v0, Lmt1;->j:Lmt1;
+    sget-object v0, Lmu1;->j:Lmu1;
 
     return-object v0
 .end method

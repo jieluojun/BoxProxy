@@ -1,113 +1,165 @@
-.class public final Lqs1;
-.super Lzu6;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public abstract synthetic Lqs1;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final synthetic d:Lzu6;
+# static fields
+.field public static final synthetic a:[I
 
-.field public final synthetic e:Ljava/util/concurrent/ThreadPoolExecutor;
+.field public static final synthetic b:[I
 
 
 # direct methods
-.method public constructor <init>(Lzu6;Ljava/util/concurrent/ThreadPoolExecutor;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {}, Lwi1;->values()[Lwi1;
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lqs1;->d:Lzu6;
+    move-result-object v0
 
     .line 5
+    array-length v0, v0
+
     .line 6
-    iput-object p2, p0, Lqs1;->e:Ljava/util/concurrent/ThreadPoolExecutor;
+    new-array v0, v0, [I
 
     .line 7
     .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final P(Ljava/lang/Throwable;)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lqs1;->e:Ljava/util/concurrent/ThreadPoolExecutor;
-
-    .line 2
-    .line 3
-    :try_start_0
-    iget-object p0, p0, Lqs1;->d:Lzu6;
-
-    .line 4
-    .line 5
-    invoke-virtual {p0, p1}, Lzu6;->P(Ljava/lang/Throwable;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 6
-    .line 7
-    .line 8
-    invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdown()V
+    sput-object v0, Lqs1;->b:[I
 
     .line 9
     .line 10
+    const/4 v1, 0x1
+
     .line 11
-    return-void
+    const/4 v2, 0x3
 
     .line 12
-    :catchall_0
-    move-exception p0
-
-    .line 13
-    invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdown()V
-
-    .line 14
-    .line 15
-    .line 16
-    throw p0
-.end method
-
-.method public final Q(Lke1;)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lqs1;->e:Ljava/util/concurrent/ThreadPoolExecutor;
-
-    .line 2
-    .line 3
     :try_start_0
-    iget-object p0, p0, Lqs1;->d:Lzu6;
-
-    .line 4
-    .line 5
-    invoke-virtual {p0, p1}, Lzu6;->Q(Lke1;)V
+    aput v1, v0, v2
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 6
-    .line 7
-    .line 8
-    invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdown()V
-
-    .line 9
-    .line 10
-    .line 11
-    return-void
-
-    .line 12
-    :catchall_0
-    move-exception p0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 13
-    invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->shutdown()V
-
     .line 14
+    :catch_0
+    const/4 v0, 0x2
+
     .line 15
+    :try_start_1
+    sget-object v3, Lqs1;->b:[I
+
     .line 16
-    throw p0
+    .line 17
+    aput v0, v3, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    .line 18
+    .line 19
+    :catch_1
+    :try_start_2
+    sget-object v3, Lqs1;->b:[I
+
+    .line 20
+    .line 21
+    aput v2, v3, v0
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    .line 22
+    .line 23
+    :catch_2
+    invoke-static {}, Landroid/graphics/Paint$Align;->values()[Landroid/graphics/Paint$Align;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object v3
+
+    .line 27
+    array-length v3, v3
+
+    .line 28
+    new-array v3, v3, [I
+
+    .line 29
+    .line 30
+    sput-object v3, Lqs1;->a:[I
+
+    .line 31
+    .line 32
+    :try_start_3
+    sget-object v4, Landroid/graphics/Paint$Align;->LEFT:Landroid/graphics/Paint$Align;
+
+    .line 33
+    .line 34
+    invoke-virtual {v4}, Ljava/lang/Enum;->ordinal()I
+
+    .line 35
+    .line 36
+    .line 37
+    move-result v4
+
+    .line 38
+    aput v1, v3, v4
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+
+    .line 39
+    .line 40
+    :catch_3
+    :try_start_4
+    sget-object v1, Lqs1;->a:[I
+
+    .line 41
+    .line 42
+    sget-object v3, Landroid/graphics/Paint$Align;->RIGHT:Landroid/graphics/Paint$Align;
+
+    .line 43
+    .line 44
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
+
+    .line 45
+    .line 46
+    .line 47
+    move-result v3
+
+    .line 48
+    aput v0, v1, v3
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+
+    .line 49
+    .line 50
+    :catch_4
+    :try_start_5
+    sget-object v0, Lqs1;->a:[I
+
+    .line 51
+    .line 52
+    sget-object v1, Landroid/graphics/Paint$Align;->CENTER:Landroid/graphics/Paint$Align;
+
+    .line 53
+    .line 54
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    .line 55
+    .line 56
+    .line 57
+    move-result v1
+
+    .line 58
+    aput v2, v0, v1
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
+    .line 59
+    .line 60
+    :catch_5
+    return-void
 .end method

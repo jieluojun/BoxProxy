@@ -1,118 +1,142 @@
-.class public final enum Lng5;
-.super Ljava/lang/Enum;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final Lng5;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lpg5;
 
 
-# static fields
-.field public static final enum j:Lng5;
-
-.field public static final enum k:Lng5;
-
-.field public static final synthetic l:[Lng5;
+# instance fields
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lng5;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    const-string v1, "Mihomo"
-
     .line 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 5
-    const/4 v2, 0x0
-
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 7
+    iput-object p1, p0, Lng5;->a:Ljava/lang/String;
+
     .line 8
     .line 9
-    sput-object v0, Lng5;->j:Lng5;
-
-    .line 10
-    .line 11
-    new-instance v1, Lng5;
-
-    .line 12
-    .line 13
-    const-string v2, "SingBox"
-
-    .line 14
-    .line 15
-    const/4 v3, 0x1
-
-    .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 17
-    .line 18
-    .line 19
-    sput-object v1, Lng5;->k:Lng5;
-
-    .line 20
-    .line 21
-    filled-new-array {v0, v1}, [Lng5;
-
-    .line 22
-    .line 23
-    .line 24
-    move-result-object v0
-
-    .line 25
-    sput-object v0, Lng5;->l:[Lng5;
-
-    .line 26
-    .line 27
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lng5;
-    .locals 1
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
     .line 1
-    const-class v0, Lng5;
+    const/4 v0, 0x1
 
     .line 2
+    if-ne p0, p1, :cond_0
+
     .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
     .line 4
-    .line 5
-    .line 6
-    move-result-object p0
+    return v0
 
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lng5;
+
+    .line 6
     .line 7
-    check-cast p0, Lng5;
+    const/4 v2, 0x0
 
     .line 8
+    if-nez v1, :cond_1
+
     .line 9
-    return-object p0
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Lng5;
+
+    .line 12
+    .line 13
+    iget-object p0, p0, Lng5;->a:Ljava/lang/String;
+
+    .line 14
+    .line 15
+    iget-object p1, p1, Lng5;->a:Ljava/lang/String;
+
+    .line 16
+    .line 17
+    invoke-static {p0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 18
+    .line 19
+    .line 20
+    move-result p0
+
+    .line 21
+    if-nez p0, :cond_2
+
+    .line 22
+    .line 23
+    return v2
+
+    .line 24
+    :cond_2
+    return v0
 .end method
 
-.method public static values()[Lng5;
-    .locals 1
+.method public final hashCode()I
+    .locals 0
 
     .line 1
-    sget-object v0, Lng5;->l:[Lng5;
+    iget-object p0, p0, Lng5;->a:Ljava/lang/String;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
 
     .line 4
     .line 5
     .line 6
-    move-result-object v0
+    move-result p0
 
     .line 7
-    check-cast v0, [Lng5;
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    const-string v0, "Text(content="
+
+    .line 2
+    .line 3
+    const-string v1, ")"
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Lng5;->a:Ljava/lang/String;
+
+    .line 6
+    .line 7
+    invoke-static {v0, p0, v1}, Loc1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 8
     .line 9
-    return-object v0
+    .line 10
+    move-result-object p0
+
+    .line 11
+    return-object p0
 .end method

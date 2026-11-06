@@ -27,11 +27,11 @@
     invoke-static {v0}, Lcom/box/app/vpn/VpnPrefs;->note(Ljava/lang/String;)V
 
     # the "Auto Start On Boot" switch (ya0.w = boot_auto_start)
-    invoke-static {}, Lgb0;->g()Lta0;
+    invoke-static {}, Ljc0;->g()Lwb0;
 
     move-result-object v0
 
-    iget-boolean v0, v0, Lta0;->w:Z
+    iget-boolean v0, v0, Lwb0;->w:Z
 
     if-nez v0, :cond_on
 

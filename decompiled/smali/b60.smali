@@ -1,202 +1,51 @@
-.class public final synthetic Lb60;
+.class public abstract Lb60;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Ls52;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final synthetic j:I
+# static fields
+.field public static final a:J
 
-.field public final synthetic k:F
+.field public static final b:J
 
-.field public final synthetic l:Z
-
-.field public final synthetic m:Llu;
-
-.field public final synthetic n:Lou;
-
-.field public final synthetic o:Lj17;
-
-.field public final synthetic p:Ljava/util/List;
-
-.field public final synthetic q:Ljf3;
-
-.field public final synthetic r:Lj90;
-
-.field public final synthetic s:Li90;
-
-.field public final synthetic t:Z
-
-.field public final synthetic u:Lfx3;
-
-.field public final synthetic v:I
+.field public static final synthetic c:I
 
 
 # direct methods
-.method public synthetic constructor <init>(IFZLlu;Lou;Lj17;Ljava/util/List;Ljf3;Lj90;Li90;ZLfx3;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/4 v0, 0x0
 
     .line 2
+    invoke-static {v0, v0}, Lts;->o(FF)J
+
     .line 3
     .line 4
-    iput p1, p0, Lb60;->j:I
-
     .line 5
+    move-result-wide v1
+
     .line 6
-    iput p2, p0, Lb60;->k:F
+    sput-wide v1, Lb60;->a:J
 
     .line 7
     .line 8
-    iput-boolean p3, p0, Lb60;->l:Z
+    const/high16 v1, 0x41c00000    # 24.0f
 
     .line 9
     .line 10
-    iput-object p4, p0, Lb60;->m:Llu;
+    invoke-static {v1, v0}, Lts;->o(FF)J
 
     .line 11
     .line 12
-    iput-object p5, p0, Lb60;->n:Lou;
-
     .line 13
+    move-result-wide v0
+
     .line 14
-    iput-object p6, p0, Lb60;->o:Lj17;
+    sput-wide v0, Lb60;->b:J
 
     .line 15
     .line 16
-    iput-object p7, p0, Lb60;->p:Ljava/util/List;
-
-    .line 17
-    .line 18
-    iput-object p8, p0, Lb60;->q:Ljf3;
-
-    .line 19
-    .line 20
-    iput-object p9, p0, Lb60;->r:Lj90;
-
-    .line 21
-    .line 22
-    iput-object p10, p0, Lb60;->s:Li90;
-
-    .line 23
-    .line 24
-    iput-boolean p11, p0, Lb60;->t:Z
-
-    .line 25
-    .line 26
-    iput-object p12, p0, Lb60;->u:Lfx3;
-
-    .line 27
-    .line 28
-    iput p13, p0, Lb60;->v:I
-
-    .line 29
-    .line 30
     return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 14
-
-    .line 1
-    move-object v12, p1
-
-    .line 2
-    check-cast v12, Lv01;
-
-    .line 3
-    .line 4
-    move-object/from16 v0, p2
-
-    .line 5
-    .line 6
-    check-cast v0, Ljava/lang/Integer;
-
-    .line 7
-    .line 8
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 9
-    .line 10
-    .line 11
-    iget v0, p0, Lb60;->v:I
-
-    .line 12
-    .line 13
-    or-int/lit8 v0, v0, 0x1
-
-    .line 14
-    .line 15
-    invoke-static {v0}, Lw23;->h0(I)I
-
-    .line 16
-    .line 17
-    .line 18
-    move-result v13
-
-    .line 19
-    iget v0, p0, Lb60;->j:I
-
-    .line 20
-    .line 21
-    iget v1, p0, Lb60;->k:F
-
-    .line 22
-    .line 23
-    iget-boolean v2, p0, Lb60;->l:Z
-
-    .line 24
-    .line 25
-    iget-object v3, p0, Lb60;->m:Llu;
-
-    .line 26
-    .line 27
-    iget-object v4, p0, Lb60;->n:Lou;
-
-    .line 28
-    .line 29
-    iget-object v5, p0, Lb60;->o:Lj17;
-
-    .line 30
-    .line 31
-    iget-object v6, p0, Lb60;->p:Ljava/util/List;
-
-    .line 32
-    .line 33
-    iget-object v7, p0, Lb60;->q:Ljf3;
-
-    .line 34
-    .line 35
-    iget-object v8, p0, Lb60;->r:Lj90;
-
-    .line 36
-    .line 37
-    iget-object v9, p0, Lb60;->s:Li90;
-
-    .line 38
-    .line 39
-    iget-boolean v10, p0, Lb60;->t:Z
-
-    .line 40
-    .line 41
-    iget-object v11, p0, Lb60;->u:Lfx3;
-
-    .line 42
-    .line 43
-    invoke-static/range {v0 .. v13}, Llv;->m(IFZLlu;Lou;Lj17;Ljava/util/List;Ljf3;Lj90;Li90;ZLfx3;Lv01;I)V
-
-    .line 44
-    .line 45
-    .line 46
-    sget-object p0, Lk27;->a:Lk27;
-
-    .line 47
-    .line 48
-    return-object p0
 .end method

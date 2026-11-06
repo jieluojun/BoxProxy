@@ -1,237 +1,147 @@
-.class public abstract Ldy0;
+.class public final synthetic Ldy0;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Lt62;
 
 
-# static fields
-.field public static final a:Landroid/view/ViewGroup$LayoutParams;
+# instance fields
+.field public final synthetic j:B
+
+.field public final synthetic k:Lup6;
+
+.field public final synthetic l:Z
+
+.field public final synthetic m:Lqz0;
+
+.field public final synthetic n:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lup6;ZLqz0;IB)V
+    .locals 0
 
     .line 1
-    new-instance v0, Landroid/view/ViewGroup$LayoutParams;
+    iput-byte p5, p0, Ldy0;->j:B
 
     .line 2
     .line 3
-    const/4 v1, -0x2
+    iput-object p1, p0, Ldy0;->k:Lup6;
 
     .line 4
-    invoke-direct {v0, v1, v1}, Landroid/view/ViewGroup$LayoutParams;-><init>(II)V
-
     .line 5
-    .line 6
-    .line 7
-    sput-object v0, Ldy0;->a:Landroid/view/ViewGroup$LayoutParams;
-
-    .line 8
-    .line 9
-    return-void
-.end method
-
-.method public static a(Lgo;Loy0;)V
-    .locals 3
-
-    .line 1
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
-
-    .line 5
-    invoke-virtual {v0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+    iput-boolean p2, p0, Ldy0;->l:Z
 
     .line 6
     .line 7
-    .line 8
-    move-result-object v0
+    iput-object p3, p0, Ldy0;->m:Lqz0;
 
+    .line 8
     .line 9
-    const v1, 0x1020002
+    iput p4, p0, Ldy0;->n:I
 
     .line 10
     .line 11
-    .line 12
-    invoke-virtual {v0, v1}, Landroid/view/View;->findViewById(I)Landroid/view/View;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 12
     .line 13
     .line 14
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
+
+    .line 1
+    iget-byte v0, p0, Ldy0;->j:B
+
+    .line 2
+    .line 3
+    sget-object v1, La47;->a:La47;
+
+    .line 4
+    .line 5
+    iget v2, p0, Ldy0;->n:I
+
+    .line 6
+    .line 7
+    iget-object v3, p0, Ldy0;->m:Lqz0;
+
+    .line 8
+    .line 9
+    iget-boolean v4, p0, Ldy0;->l:Z
+
+    .line 10
+    .line 11
+    iget-object p0, p0, Ldy0;->k:Lup6;
+
+    .line 12
+    .line 13
+    check-cast p1, Lz11;
+
+    .line 14
     .line 15
-    move-result-object v0
+    check-cast p2, Ljava/lang/Integer;
 
     .line 16
-    check-cast v0, Landroid/view/ViewGroup;
-
     .line 17
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 18
-    const/4 v1, 0x0
-
     .line 19
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
     .line 20
+    packed-switch v0, :pswitch_data_0
+
     .line 21
     .line 22
-    move-result-object v0
-
     .line 23
-    instance-of v1, v0, Ln01;
+    or-int/lit8 p2, v2, 0x1
 
     .line 24
     .line 25
-    const/4 v2, 0x0
+    invoke-static {p2}, Lqu5;->f0(I)I
 
     .line 26
-    if-eqz v1, :cond_0
-
     .line 27
     .line 28
-    check-cast v0, Ln01;
+    move-result p2
 
     .line 29
+    invoke-static {p0, v4, v3, p1, p2}, Lpr;->e(Lup6;ZLqz0;Lz11;I)V
+
     .line 30
-    goto :goto_0
-
     .line 31
-    :cond_0
-    move-object v0, v2
-
     .line 32
-    :goto_0
-    if-eqz v0, :cond_1
+    return-object v1
 
     .line 33
-    .line 34
-    invoke-virtual {v0, v2}, Ls2;->setParentCompositionContext(Lf11;)V
+    :pswitch_0
+    or-int/lit8 p2, v2, 0x1
 
+    .line 34
     .line 35
+    invoke-static {p2}, Lqu5;->f0(I)I
+
     .line 36
     .line 37
-    invoke-virtual {v0, p1}, Ln01;->setContent(Ls52;)V
-
     .line 38
+    move-result p2
+
     .line 39
+    invoke-static {p0, v4, v3, p1, p2}, Lyr;->d(Lup6;ZLqz0;Lz11;I)V
+
     .line 40
-    return-void
-
     .line 41
-    :cond_1
-    new-instance v0, Ln01;
-
     .line 42
+    return-object v1
+
     .line 43
-    invoke-direct {v0, p0}, Ln01;-><init>(Lgo;)V
-
-    .line 44
-    .line 45
-    .line 46
-    invoke-virtual {v0, v2}, Ls2;->setParentCompositionContext(Lf11;)V
-
-    .line 47
-    .line 48
-    .line 49
-    invoke-virtual {v0, p1}, Ln01;->setContent(Ls52;)V
-
-    .line 50
-    .line 51
-    .line 52
-    invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
-
-    .line 53
-    .line 54
-    .line 55
-    move-result-object p1
-
-    .line 56
-    invoke-virtual {p1}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    .line 57
-    .line 58
-    .line 59
-    move-result-object p1
-
-    .line 60
-    invoke-static {p1}, Lr37;->d(Landroid/view/View;)Le63;
-
-    .line 61
-    .line 62
-    .line 63
-    move-result-object v1
-
-    .line 64
-    if-nez v1, :cond_2
-
-    .line 65
-    .line 66
-    const v1, 0x7f0900e1
-
-    .line 67
-    .line 68
-    .line 69
-    invoke-virtual {p1, v1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
-
-    .line 70
-    .line 71
-    .line 72
-    :cond_2
-    invoke-static {p1}, Lsz6;->g(Landroid/view/View;)Lv67;
-
-    .line 73
-    .line 74
-    .line 75
-    move-result-object v1
-
-    .line 76
-    if-nez v1, :cond_3
-
-    .line 77
-    .line 78
-    const v1, 0x7f0900e5
-
-    .line 79
-    .line 80
-    .line 81
-    invoke-virtual {p1, v1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
-
-    .line 82
-    .line 83
-    .line 84
-    :cond_3
-    invoke-static {p1}, Lhy6;->n(Landroid/view/View;)Llp5;
-
-    .line 85
-    .line 86
-    .line 87
-    move-result-object v1
-
-    .line 88
-    if-nez v1, :cond_4
-
-    .line 89
-    .line 90
-    const v1, 0x7f0900e4
-
-    .line 91
-    .line 92
-    .line 93
-    invoke-virtual {p1, v1, p0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
-
-    .line 94
-    .line 95
-    .line 96
-    :cond_4
-    sget-object p1, Ldy0;->a:Landroid/view/ViewGroup$LayoutParams;
-
-    .line 97
-    .line 98
-    invoke-virtual {p0, v0, p1}, Lgo;->setContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 99
-    .line 100
-    .line 101
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

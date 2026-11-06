@@ -1,4 +1,4 @@
-"""Full 134 runtime inventory, upstream preservation and custom wiring checks."""
+"""Full 139 runtime inventory, upstream preservation and custom wiring checks."""
 import hashlib
 import json
 from pathlib import Path
@@ -15,7 +15,7 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 import migrate_upstream as migration
 import check_smali_references as references
 
-SNAPSHOT = ROOT / 'upstream/26.11.02.534f30c'
+SNAPSHOT = ROOT / 'upstream/26.11.05.d5c365e'
 PLAN = json.loads((SNAPSHOT / 'migration/full.json').read_text())
 COVERAGE = json.loads((SNAPSHOT / 'migration/coverage.json').read_text())
 ANDROID = '{http://schemas.android.com/apk/res/android}'
@@ -43,33 +43,24 @@ class FullMigrationTest(unittest.TestCase):
         return (self.project / path).read_text()
 
     def test_full_inventory_and_version(self):
-        self.assertEqual(PLAN['versionCode'], 134)
+        self.assertEqual(PLAN['versionCode'], 139)
         self.assertEqual(PLAN['pendingImplementation'], [])
         self.assertEqual(COVERAGE['pending'], [])
-        self.assertEqual(len(COVERAGE['completed']), 42)
-        self.assertEqual(len(COVERAGE['manual']), 8)
+        self.assertEqual(len(COVERAGE['completed']), 45)
+        self.assertEqual(len(COVERAGE['manual']), 6)
         self.assertEqual(len(PLAN['additionsSha256']), 1362)
         self.assertEqual(len(PLAN['resultSha256']), 68)
         expected = dict(PLAN['upstreamUnchangedSha256'], **PLAN['resultSha256'], **PLAN['additionsSha256'])
         actual = {p.relative_to(self.project).as_posix(): migration.digest(p)
                   for p in self.project.rglob('*') if p.is_file()}
         self.assertEqual(actual, expected)
-        self.assertIn('  versionCode: 134', self.text('apktool.yml'))
-        self.assertIn('  versionName: 26.11.02.534f30c', self.text('apktool.yml'))
+        self.assertIn('  versionCode: 139', self.text('apktool.yml'))
+        self.assertIn('  versionName: 26.11.05.d5c365e', self.text('apktool.yml'))
 
     def test_unmodified_methods_including_new_upstream_features_preserved(self):
         allowed = {item['new'] for item in COVERAGE['completed']}
         allowed.update(item['target'] for item in PLAN.get('followUpMethods', []))
-        allowed.update({
-            'Lxa4;->j(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;',
-            'Lwa0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;',
-            'Lkf3;->F(ZZZLdx4;ZZZZLcr4;Lo52;Lo52;Lo52;Lo52;Lo52;Lo52;Lo52;Ld52;Lv01;I)V',
-            'Llt0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;',
-            'Lpw4;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;',
-            'Lss0;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;',
-            'Lmk5;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;',
-            'Lu94;-><init>(Lt94;)V',
-        })
+        allowed.update(item['target'] for item in COVERAGE['manual'])
         retained = 0
         seen_changes = set()
         with tarfile.open(SNAPSHOT / 'apktool-source.tar.gz') as archive:
@@ -138,17 +129,21 @@ class FullMigrationTest(unittest.TestCase):
     def test_custom_hooks_cover_vpn_root_editor_forms_and_forks(self):
         checks = {
             'smali/com/box/app/AppApplication.smali': ('VpnPrefs;->processStart', 'FToast;->init'),
-            'smali/wa0.smali': ('VpnBridge;->syncNow', 'VpnBridge;->applyNow'),
-            'smali/gg2.smali': ('VpnBridge;->control',),
-            'smali/gb0.smali': ('VpnSeed;->run', 'VpnRoot;->probe', 'VpnBridge;->beforeSave', 'LdFix;->wrap'),
-            'smali/xk5.smali': ('CfgGlue;->', 'CfgDefer;->'),
-            'smali/gl5.smali': ('CfgGlue;->replaceKeep',),
-            'smali/mk5.smali': ('CfgNav;->wrap',),
-            'smali/ss0.smali': ('BattToggle;->create', 'VpnPrefs;->battOn'),
-            'smali/kf3.smali': ('VpnPrefs;->items',),
-            'smali/ma1.smali': ('sing-box_ref1nd', 'sing-box_dingtalk'),
-            'smali/dv6.smali': ('sing-box_ref1nd', 'sing-box_dingtalk'),
-            'smali/s35.smali': ('"vpn"', '->t:Ls35;'),
+            'smali/zb0.smali': ('VpnBridge;->syncNow', 'VpnBridge;->applyNow'),
+            'smali/nh2.smali': ('VpnBridge;->control',),
+            'smali/jc0.smali': ('VpnSeed;->run', 'VpnRoot;->probe', 'VpnBridge;->beforeSave', 'LdFix;->wrap'),
+            'smali/qm5.smali': ('CfgGlue;->', 'CfgDefer;->'),
+            'smali/zm5.smali': ('CfgGlue;->replaceKeep',),
+            'smali/em5.smali': ('CfgNav;->wrap',),
+            'smali/vt0.smali': ('BattToggle;->create', 'VpnPrefs;->battOn'),
+            'smali/bf0.smali': ('VpnPrefs;->items',),
+            'smali/lb1.smali': ('sing-box_ref1nd', 'sing-box_dingtalk'),
+            'smali/qw6.smali': ('sing-box_ref1nd', 'sing-box_dingtalk'),
+            'smali/gf3.smali': ('mihomo_dingtalk', 'sing-box_dingtalk'),
+            'smali/by4.smali': ('VpnBridge;->key',),
+            'smali/jx4.smali': ('VpnBridge;->key',),
+            'smali/hl.smali': ('RestoreCfg;->MENU',),
+            'smali/f55.smali': ('"vpn"', '->t:Lf55;'),
         }
         for path, needles in checks.items():
             for needle in needles:

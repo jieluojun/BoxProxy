@@ -1,46 +1,131 @@
 .class public final Lee4;
-.super Ld43;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Lke4;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final c:Lzc;
+# static fields
+.field public static final c:Lee4;
 
 
 # direct methods
-.method public constructor <init>(Lzc;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lee4;
 
     .line 2
     .line 3
+    const/4 v1, 0x0
+
     .line 4
-    iput-object p1, p0, Lee4;->c:Lzc;
+    const/4 v2, 0x1
 
     .line 5
+    invoke-direct {v0, v1, v2, v2}, Lke4;-><init>(III)V
+
     .line 6
+    .line 7
+    .line 8
+    sput-object v0, Lee4;->c:Lee4;
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final w()Ls85;
+.method public final a(Lwq2;Lpv;Ln76;Lqb5;Lme4;)V
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lee4;->c:Lzc;
+    const/4 p0, 0x0
 
     .line 2
-    .line 3
-    invoke-virtual {p0}, Lzc;->e()Ls85;
+    invoke-virtual {p1, p0}, Lwq2;->c(I)Ljava/lang/Object;
 
+    .line 3
     .line 4
     .line 5
-    .line 6
     move-result-object p0
 
+    .line 6
+    check-cast p0, Lu95;
+
     .line 7
-    return-object p0
+    .line 8
+    iget-object p1, p4, Lqb5;->i:Lgt3;
+
+    .line 9
+    .line 10
+    if-eqz p1, :cond_0
+
+    .line 11
+    .line 12
+    invoke-virtual {p1, p0}, Lgt3;->g(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p0
+
+    .line 16
+    check-cast p0, Lio4;
+
+    .line 17
+    .line 18
+    goto :goto_0
+
+    .line 19
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 20
+    :goto_0
+    if-eqz p0, :cond_2
+
+    .line 21
+    .line 22
+    iget-object p1, p4, Lqb5;->j:Ljava/util/ArrayList;
+
+    .line 23
+    .line 24
+    if-nez p1, :cond_1
+
+    .line 25
+    .line 26
+    new-instance p1, Ljava/util/ArrayList;
+
+    .line 27
+    .line 28
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    .line 29
+    .line 30
+    .line 31
+    iput-object p1, p4, Lqb5;->j:Ljava/util/ArrayList;
+
+    .line 32
+    .line 33
+    :cond_1
+    iget-object p2, p4, Lqb5;->e:Lot3;
+
+    .line 34
+    .line 35
+    invoke-virtual {p1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 36
+    .line 37
+    .line 38
+    iget-object p0, p0, Lio4;->k:Lot3;
+
+    .line 39
+    .line 40
+    iput-object p0, p4, Lqb5;->e:Lot3;
+
+    .line 41
+    .line 42
+    :cond_2
+    return-void
 .end method

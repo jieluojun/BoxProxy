@@ -1,6 +1,6 @@
 .class public final Lcom/hashsequence/coilresvg/SvgSize;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # annotations
@@ -35,7 +35,7 @@
     const/4 v1, 0x0
 
     .line 4
-    invoke-direct {v0, v1}, Lcom/hashsequence/coilresvg/SvgSize$Companion;-><init>(Lle1;)V
+    invoke-direct {v0, v1}, Lcom/hashsequence/coilresvg/SvgSize$Companion;-><init>(Lkf1;)V
 
     .line 5
     .line 6
@@ -347,7 +347,7 @@
 
     .line 10
     .line 11
-    invoke-static {v3, v0, v1, p0, v2}, Lh86;->o(Ljava/lang/String;FLjava/lang/String;FLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v3, v0, v1, p0, v2}, Ly96;->o(Ljava/lang/String;FLjava/lang/String;FLjava/lang/String;)Ljava/lang/String;
 
     .line 12
     .line 13

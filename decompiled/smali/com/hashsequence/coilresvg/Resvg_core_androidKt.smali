@@ -1,6 +1,6 @@
 .class public final Lcom/hashsequence/coilresvg/Resvg_core_androidKt;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # static fields
@@ -106,12 +106,12 @@
     const-string p0, "cannot handle RustBuffer longer than Int.MAX_VALUE bytes: length is "
 
     .line 46
-    invoke-static {v0, v1, p0}, Lpb1;->n(JLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, p0}, Loc1;->n(JLjava/lang/String;)Ljava/lang/String;
 
     move-result-object p0
 
     .line 47
-    invoke-static {p0}, Ljv1;->d(Ljava/lang/Object;)V
+    invoke-static {p0}, Ljw1;->d(Ljava/lang/Object;)V
 
     return-object v3
 .end method
@@ -194,7 +194,7 @@
 
     .line 34
     .line 35
-    invoke-static {v0, v1, p0}, Lpb1;->n(JLjava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, v1, p0}, Loc1;->n(JLjava/lang/String;)Ljava/lang/String;
 
     .line 36
     .line 37
@@ -202,7 +202,7 @@
     move-result-object p0
 
     .line 39
-    invoke-static {p0}, Ljv1;->d(Ljava/lang/Object;)V
+    invoke-static {p0}, Ljw1;->d(Ljava/lang/Object;)V
 
     .line 40
     .line 41
@@ -545,7 +545,7 @@
     .line 13
     .line 14
     .line 15
-    invoke-virtual {v2, v3}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lo52;)Ljava/lang/Object;
+    invoke-virtual {v2, v3}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lp62;)Ljava/lang/Object;
 
     .line 16
     .line 17
@@ -858,14 +858,14 @@
     return-void
 .end method
 
-.method public static final uniffiRustCall(Lo52;)Ljava/lang/Object;
+.method public static final uniffiRustCall(Lp62;)Ljava/lang/Object;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "<U:",
             "Ljava/lang/Object;",
             ">(",
-            "Lo52;",
+            "Lp62;",
             ")TU;"
         }
     .end annotation
@@ -888,12 +888,12 @@
 
     .line 9
     .line 10
-    invoke-direct {v2, p0, v0}, Lcom/hashsequence/coilresvg/Resvg_core_androidKt$uniffiRustCallWithError$1;-><init>(Lo52;Lcom/hashsequence/coilresvg/UniffiRustCallStatusErrorHandler;)V
+    invoke-direct {v2, p0, v0}, Lcom/hashsequence/coilresvg/Resvg_core_androidKt$uniffiRustCallWithError$1;-><init>(Lp62;Lcom/hashsequence/coilresvg/UniffiRustCallStatusErrorHandler;)V
 
     .line 11
     .line 12
     .line 13
-    invoke-virtual {v1, v2}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lo52;)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lp62;)Ljava/lang/Object;
 
     .line 14
     .line 15
@@ -904,7 +904,7 @@
     return-object p0
 .end method
 
-.method public static final uniffiRustCallWithError(Lcom/hashsequence/coilresvg/UniffiRustCallStatusErrorHandler;Lo52;)Ljava/lang/Object;
+.method public static final uniffiRustCallWithError(Lcom/hashsequence/coilresvg/UniffiRustCallStatusErrorHandler;Lp62;)Ljava/lang/Object;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -915,7 +915,7 @@
             ">(",
             "Lcom/hashsequence/coilresvg/UniffiRustCallStatusErrorHandler<",
             "TE;>;",
-            "Lo52;",
+            "Lp62;",
             ")TU;"
         }
     .end annotation
@@ -939,12 +939,12 @@
 
     .line 10
     .line 11
-    invoke-direct {v1, p1, p0}, Lcom/hashsequence/coilresvg/Resvg_core_androidKt$uniffiRustCallWithError$1;-><init>(Lo52;Lcom/hashsequence/coilresvg/UniffiRustCallStatusErrorHandler;)V
+    invoke-direct {v1, p1, p0}, Lcom/hashsequence/coilresvg/Resvg_core_androidKt$uniffiRustCallWithError$1;-><init>(Lp62;Lcom/hashsequence/coilresvg/UniffiRustCallStatusErrorHandler;)V
 
     .line 12
     .line 13
     .line 14
-    invoke-virtual {v0, v1}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lo52;)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lp62;)Ljava/lang/Object;
 
     .line 15
     .line 16
@@ -1518,7 +1518,7 @@
     return-void
 .end method
 
-.method public static final uniffiTraitInterfaceCall(Lcom/hashsequence/coilresvg/UniffiRustCallStatusStruct$ByReference;Ld52;Lo52;)V
+.method public static final uniffiTraitInterfaceCall(Lcom/hashsequence/coilresvg/UniffiRustCallStatusStruct$ByReference;Le62;Lp62;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1526,8 +1526,8 @@
             "Ljava/lang/Object;",
             ">(",
             "Lcom/hashsequence/coilresvg/UniffiRustCallStatusStruct$ByReference;",
-            "Ld52;",
-            "Lo52;",
+            "Le62;",
+            "Lp62;",
             ")V"
         }
     .end annotation
@@ -1549,7 +1549,7 @@
     .line 9
     .line 10
     :try_start_0
-    invoke-interface {p1}, Ld52;->invoke()Ljava/lang/Object;
+    invoke-interface {p1}, Le62;->invoke()Ljava/lang/Object;
 
     .line 11
     .line 12
@@ -1557,7 +1557,7 @@
     move-result-object p1
 
     .line 14
-    invoke-interface {p2, p1}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, p1}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1605,7 +1605,7 @@
     return-void
 .end method
 
-.method public static final uniffiTraitInterfaceCallWithError(Lcom/hashsequence/coilresvg/UniffiRustCallStatusStruct$ByReference;Ld52;Lo52;Lo52;)V
+.method public static final uniffiTraitInterfaceCallWithError(Lcom/hashsequence/coilresvg/UniffiRustCallStatusStruct$ByReference;Le62;Lp62;Lp62;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -1615,9 +1615,9 @@
             "Ljava/lang/Throwable;",
             ">(",
             "Lcom/hashsequence/coilresvg/UniffiRustCallStatusStruct$ByReference;",
-            "Ld52;",
-            "Lo52;",
-            "Lo52;",
+            "Le62;",
+            "Lp62;",
+            "Lp62;",
             ")V"
         }
     .end annotation
@@ -1644,7 +1644,7 @@
     .line 12
     .line 13
     :try_start_0
-    invoke-interface {p1}, Ld52;->invoke()Ljava/lang/Object;
+    invoke-interface {p1}, Le62;->invoke()Ljava/lang/Object;
 
     .line 14
     .line 15
@@ -1652,7 +1652,7 @@
     move-result-object p0
 
     .line 17
-    invoke-interface {p2, p0}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {p2, p0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -1667,7 +1667,7 @@
 
     .line 22
     .line 23
-    invoke-static {p0}, Lvd1;->d(Ljava/lang/String;)V
+    invoke-static {p0}, Lue1;->d(Ljava/lang/String;)V
 
     .line 24
     .line 25

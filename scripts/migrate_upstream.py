@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reproduce the pinned custom 134 project in a NEW, atomically published directory.
+"""Reproduce the pinned custom 139 project in a NEW, atomically published directory.
 
 The default full plan overlays verified runtime files onto the immutable upstream
 snapshot. --phase phase1 reproduces the historical, non-release first batch.
@@ -126,7 +126,7 @@ def prepare(snapshot, output, phase="full"):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--snapshot', type=Path, default=Path('upstream/26.11.02.534f30c'))
+    parser.add_argument('--snapshot', type=Path, default=Path('upstream/26.11.05.d5c365e'))
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--phase', choices=('full', 'phase1'), default='full')
     args = parser.parse_args()

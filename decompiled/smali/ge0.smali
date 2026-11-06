@@ -1,199 +1,69 @@
-.class public final Lge0;
+.class public abstract Lge0;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 0
+# static fields
+.field public static final a:Landroid/graphics/Matrix;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    if-ne p0, p1, :cond_0
+    new-instance v0, Landroid/graphics/Matrix;
 
     .line 2
     .line 3
-    goto :goto_0
+    invoke-direct {v0}, Landroid/graphics/Matrix;-><init>()V
 
     .line 4
-    :cond_0
-    if-eqz p1, :cond_7
-
     .line 5
     .line 6
-    instance-of p0, p1, Lge0;
+    sput-object v0, Lge0;->a:Landroid/graphics/Matrix;
 
     .line 7
     .line 8
-    if-nez p0, :cond_1
-
-    .line 9
-    .line 10
-    goto :goto_1
-
-    .line 11
-    :cond_1
-    const/4 p0, 0x0
-
-    .line 12
-    invoke-static {p0, p0}, Lxk1;->b(FF)Z
-
-    .line 13
-    .line 14
-    .line 15
-    move-result p1
-
-    .line 16
-    if-nez p1, :cond_2
-
-    .line 17
-    .line 18
-    goto :goto_1
-
-    .line 19
-    :cond_2
-    invoke-static {p0, p0}, Lxk1;->b(FF)Z
-
-    .line 20
-    .line 21
-    .line 22
-    move-result p1
-
-    .line 23
-    if-nez p1, :cond_3
-
-    .line 24
-    .line 25
-    goto :goto_1
-
-    .line 26
-    :cond_3
-    invoke-static {p0, p0}, Lxk1;->b(FF)Z
-
-    .line 27
-    .line 28
-    .line 29
-    move-result p1
-
-    .line 30
-    if-nez p1, :cond_4
-
-    .line 31
-    .line 32
-    goto :goto_1
-
-    .line 33
-    :cond_4
-    const/high16 p1, 0x3f800000    # 1.0f
-
-    .line 34
-    .line 35
-    invoke-static {p1, p1}, Lxk1;->b(FF)Z
-
-    .line 36
-    .line 37
-    .line 38
-    move-result p1
-
-    .line 39
-    if-nez p1, :cond_5
-
-    .line 40
-    .line 41
-    goto :goto_1
-
-    .line 42
-    :cond_5
-    invoke-static {p0, p0}, Lxk1;->b(FF)Z
-
-    .line 43
-    .line 44
-    .line 45
-    move-result p0
-
-    .line 46
-    if-nez p0, :cond_6
-
-    .line 47
-    .line 48
-    goto :goto_1
-
-    .line 49
-    :cond_6
-    :goto_0
-    const/4 p0, 0x1
-
-    .line 50
-    return p0
-
-    .line 51
-    :cond_7
-    :goto_1
-    const/4 p0, 0x0
-
-    .line 52
-    return p0
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 3
+.method public static a(Landroid/graphics/Path;FFFFF)V
+    .locals 8
 
     .line 1
-    const/4 p0, 0x0
+    sub-float v1, p1, p3
 
     .line 2
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
-
     .line 3
+    sub-float v2, p2, p3
+
     .line 4
     .line 5
-    move-result v0
+    add-float v3, p1, p3
 
     .line 6
-    const/16 v1, 0x1f
-
     .line 7
-    .line 8
-    mul-int/2addr v0, v1
+    add-float v4, p2, p3
 
+    .line 8
     .line 9
-    invoke-static {p0, v0, v1}, Lpb1;->d(FII)I
+    const/4 v7, 0x0
 
     .line 10
+    move-object v0, p0
+
     .line 11
+    move v5, p4
+
     .line 12
-    move-result v0
+    move v6, p5
 
     .line 13
-    invoke-static {p0, v0, v1}, Lpb1;->d(FII)I
+    invoke-virtual/range {v0 .. v7}, Landroid/graphics/Path;->arcTo(FFFFFFZ)V
 
     .line 14
     .line 15
     .line 16
-    move-result v0
-
-    .line 17
-    const/high16 v2, 0x3f800000    # 1.0f
-
-    .line 18
-    .line 19
-    invoke-static {v2, v0, v1}, Lpb1;->d(FII)I
-
-    .line 20
-    .line 21
-    .line 22
-    move-result v0
-
-    .line 23
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 24
-    .line 25
-    .line 26
-    move-result p0
-
-    .line 27
-    add-int/2addr p0, v0
-
-    .line 28
-    return p0
+    return-void
 .end method

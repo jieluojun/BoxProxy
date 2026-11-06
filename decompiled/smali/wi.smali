@@ -1,49 +1,103 @@
-.class public abstract Lwi;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final Lwi;
+.super Landroid/text/SegmentFinder;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# static fields
-.field public static final a:Ljava/util/HashSet;
+# instance fields
+.field public final synthetic a:Lj26;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Lj26;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/util/HashSet;
+    iput-object p1, p0, Lwi;->a:Lj26;
 
     .line 2
     .line 3
-    sget-object v1, Lx97;->a:Lz97;
+    invoke-direct {p0}, Landroid/text/SegmentFinder;-><init>()V
 
     .line 4
     .line 5
-    invoke-interface {v1}, Lz97;->c()[Ljava/lang/String;
-
     .line 6
-    .line 7
-    .line 8
-    move-result-object v1
-
-    .line 9
-    invoke-static {v1}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
-
-    .line 10
-    .line 11
-    .line 12
-    move-result-object v1
-
-    .line 13
-    invoke-direct {v0, v1}, Ljava/util/HashSet;-><init>(Ljava/util/Collection;)V
-
-    .line 14
-    .line 15
-    .line 16
-    sput-object v0, Lwi;->a:Ljava/util/HashSet;
-
-    .line 17
-    .line 18
     return-void
+.end method
+
+
+# virtual methods
+.method public final nextEndBoundary(I)I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lwi;->a:Lj26;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Lj26;->m(I)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final nextStartBoundary(I)I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lwi;->a:Lj26;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Lj26;->B(I)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final previousEndBoundary(I)I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lwi;->a:Lj26;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Lj26;->C(I)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final previousStartBoundary(I)I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lwi;->a:Lj26;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Lj26;->c(I)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
 .end method

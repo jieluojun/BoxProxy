@@ -1,176 +1,69 @@
 .class public final Lqd7;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-
-# instance fields
-.field public final a:I
-
-.field public final b:I
-
-.field public final c:Ljava/util/List;
-
-.field public d:I
-
-.field public final e:F
-
-.field public final f:Z
-
-
-# direct methods
-.method public constructor <init>(IIILjava/util/List;FZ)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput p1, p0, Lqd7;->d:I
-
-    .line 5
-    .line 6
-    iput p2, p0, Lqd7;->a:I
-
-    .line 7
-    .line 8
-    iput p3, p0, Lqd7;->b:I
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Lqd7;->c:Ljava/util/List;
-
-    .line 11
-    .line 12
-    iput p5, p0, Lqd7;->e:F
-
-    .line 13
-    .line 14
-    iput-boolean p6, p0, Lqd7;->f:Z
-
-    .line 15
-    .line 16
-    return-void
-.end method
+.super Lpd7;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # virtual methods
-.method public final a(F)F
-    .locals 1
+.method public final e(Z)V
+    .locals 0
 
     .line 1
-    iget-boolean v0, p0, Lqd7;->f:Z
+    iget-object p0, p0, Lpd7;->b:Landroid/view/WindowInsetsController;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_0
+    if-eqz p1, :cond_0
 
     .line 4
     .line 5
-    iget p0, p0, Lqd7;->e:F
+    const/16 p1, 0x10
 
     .line 6
     .line 7
-    cmpl-float v0, p1, p0
+    goto :goto_0
 
     .line 8
+    :cond_0
+    const/4 p1, 0x0
+
     .line 9
-    if-lez v0, :cond_0
+    :goto_0
+    invoke-static {p0, p1}, Lqc7;->n(Landroid/view/WindowInsetsController;I)V
 
     .line 10
     .line 11
-    sub-float/2addr p1, p0
-
     .line 12
-    return p1
-
-    .line 13
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 14
-    return p0
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final f(Z)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-object p0, p0, Lpd7;->b:Landroid/view/WindowInsetsController;
 
     .line 2
     .line 3
-    const-string v1, "RowRegion{startColumn="
+    if-eqz p1, :cond_0
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    const/16 p1, 0x8
 
     .line 6
     .line 7
+    goto :goto_0
+
     .line 8
-    iget v1, p0, Lqd7;->a:I
+    :cond_0
+    const/4 p1, 0x0
 
     .line 9
-    .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    :goto_0
+    invoke-static {p0, p1}, Lqc7;->p(Landroid/view/WindowInsetsController;I)V
 
+    .line 10
     .line 11
     .line 12
-    .line 13
-    const-string v1, ", endColumn="
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    iget v1, p0, Lqd7;->b:I
-
-    .line 19
-    .line 20
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 21
-    .line 22
-    .line 23
-    const-string v1, ", line="
-
-    .line 24
-    .line 25
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 26
-    .line 27
-    .line 28
-    iget p0, p0, Lqd7;->d:I
-
-    .line 29
-    .line 30
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 31
-    .line 32
-    .line 33
-    const/16 p0, 0x7d
-
-    .line 34
-    .line 35
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 36
-    .line 37
-    .line 38
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 39
-    .line 40
-    .line 41
-    move-result-object p0
-
-    .line 42
-    return-object p0
+    return-void
 .end method

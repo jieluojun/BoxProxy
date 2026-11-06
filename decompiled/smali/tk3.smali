@@ -1,71 +1,48 @@
 .class public final Ltk3;
-.super Lz71;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Landroid/widget/FrameLayout;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+# interfaces
+.implements Ltu0;
 
 
 # instance fields
-.field public j:Lvk3;
-
-.field public synthetic k:Ljava/lang/Object;
-
-.field public final synthetic l:Lvk3;
-
-.field public m:I
+.field public final j:Landroid/view/CollapsibleActionView;
 
 
 # direct methods
-.method public constructor <init>(Lvk3;Lz71;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Ltk3;->l:Lvk3;
-
-    .line 2
-    .line 3
-    invoke-direct {p0, p2}, Lz71;-><init>(Ly71;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.method public constructor <init>(Landroid/view/View;)V
     .locals 1
 
     .line 1
-    iput-object p1, p0, Ltk3;->k:Ljava/lang/Object;
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     .line 2
     .line 3
-    iget p1, p0, Ltk3;->m:I
-
     .line 4
+    move-result-object v0
+
     .line 5
-    const/high16 v0, -0x80000000
+    invoke-direct {p0, v0}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Ltk3;->m:I
+    move-object v0, p1
 
     .line 9
+    check-cast v0, Landroid/view/CollapsibleActionView;
+
     .line 10
-    iget-object p1, p0, Ltk3;->l:Lvk3;
-
     .line 11
-    .line 12
-    invoke-virtual {p1, p0}, Lvk3;->h(Lz71;)Ljava/lang/Object;
+    iput-object v0, p0, Ltk3;->j:Landroid/view/CollapsibleActionView;
 
+    .line 12
     .line 13
+    invoke-virtual {p0, p1}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
     .line 14
     .line 15
-    move-result-object p0
-
     .line 16
-    return-object p0
+    return-void
 .end method

@@ -1,12 +1,32 @@
 .class public final Lhf5;
-.super Lz71;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Lz81;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
 .field public synthetic j:Ljava/lang/Object;
 
-.field public k:I
+.field public final synthetic k:Ljf5;
+
+.field public l:I
+
+
+# direct methods
+.method public constructor <init>(Ljf5;Lz81;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lhf5;->k:Ljf5;
+
+    .line 2
+    .line 3
+    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
 
 
 # virtual methods
@@ -18,7 +38,7 @@
 
     .line 2
     .line 3
-    iget p1, p0, Lhf5;->k:I
+    iget p1, p0, Lhf5;->l:I
 
     .line 4
     .line 5
@@ -29,20 +49,21 @@
     or-int/2addr p1, v0
 
     .line 8
-    iput p1, p0, Lhf5;->k:I
+    iput p1, p0, Lhf5;->l:I
 
     .line 9
     .line 10
-    const/4 p1, 0x0
+    iget-object p1, p0, Lhf5;->k:Ljf5;
 
     .line 11
-    invoke-static {p1, p1, p0}, Lx23;->J(Ljava/util/ArrayList;Law4;Lz71;)Ljava/lang/Object;
-
     .line 12
+    invoke-virtual {p1, p0}, Ljf5;->h(Lz81;)Ljava/lang/Object;
+
     .line 13
     .line 14
+    .line 15
     move-result-object p0
 
-    .line 15
+    .line 16
     return-object p0
 .end method

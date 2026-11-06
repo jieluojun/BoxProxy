@@ -1,63 +1,87 @@
 .class public final Lda4;
-.super Lgw3;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# instance fields
-.field public final c:Lwv3;
+# static fields
+.field public static final a:Lda4;
 
 
 # direct methods
-.method public constructor <init>(Lfa4;)V
-    .locals 3
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lda4;
 
     .line 2
     .line 3
-    .line 4
-    new-instance v0, Lwv3;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
+    .line 4
     .line 5
     .line 6
-    new-instance v1, Lx6;
+    sput-object v0, Lda4;->a:Lda4;
 
     .line 7
     .line 8
-    const/4 v2, 0x7
-
-    .line 9
-    invoke-direct {v1, p1, v2}, Lx6;-><init>(Ljava/lang/Object;B)V
-
-    .line 10
-    .line 11
-    .line 12
-    const/4 p1, 0x0
-
-    .line 13
-    invoke-direct {v0, p1, v1}, Lwv3;-><init>(Lwv3;Lx6;)V
-
-    .line 14
-    .line 15
-    .line 16
-    invoke-virtual {v0, p0}, Lwv3;->b(Lgw3;)V
-
-    .line 17
-    .line 18
-    .line 19
-    iput-object v0, p0, Lda4;->c:Lwv3;
-
-    .line 20
-    .line 21
     return-void
 .end method
 
 
 # virtual methods
-.method public final d(Z)V
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of p0, p1, Lda4;
+
+    .line 6
+    .line 7
+    if-nez p0, :cond_1
+
+    .line 8
+    .line 9
+    const/4 p0, 0x0
+
+    .line 10
+    return p0
+
+    .line 11
+    :cond_1
+    return v0
+.end method
+
+.method public final hashCode()I
     .locals 0
 
     .line 1
-    return-void
+    const p0, 0x7e007ce9
+
+    .line 2
+    .line 3
+    .line 4
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    const-string p0, "NullRequestData"
+
+    .line 2
+    .line 3
+    return-object p0
 .end method

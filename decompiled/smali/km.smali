@@ -1,19 +1,19 @@
 .class public final synthetic Lkm;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Ld52;
+.implements Le62;
 
 
 # instance fields
 .field public final synthetic j:B
 
-.field public final synthetic k:Lbk4;
+.field public final synthetic k:Lxm;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lbk4;B)V
+.method public synthetic constructor <init>(Lxm;B)V
     .locals 0
 
     .line 1
@@ -21,7 +21,7 @@
 
     .line 2
     .line 3
-    iput-object p1, p0, Lkm;->k:Lbk4;
+    iput-object p1, p0, Lkm;->k:Lxm;
 
     .line 4
     .line 5
@@ -36,137 +36,82 @@
 
 # virtual methods
 .method public final invoke()Ljava/lang/Object;
-    .locals 1
+    .locals 2
 
     .line 1
     iget-byte v0, p0, Lkm;->j:B
 
     .line 2
     .line 3
-    iget-object p0, p0, Lkm;->k:Lbk4;
+    sget-object v1, La47;->a:La47;
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_0
+    iget-object p0, p0, Lkm;->k:Lxm;
 
     .line 6
     .line 7
-    .line 8
-    invoke-virtual {p0}, Lbk4;->n()I
+    packed-switch v0, :pswitch_data_0
 
+    .line 8
     .line 9
     .line 10
-    .line 11
-    move-result p0
+    sget-object v0, Lcj;->l:Lcj;
 
+    .line 11
     .line 12
-    :goto_0
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {p0, v0}, Lxm;->b(Lcj;)V
 
     .line 13
     .line 14
     .line 15
-    move-result-object p0
+    return-object v1
 
     .line 16
-    return-object p0
+    :pswitch_0
+    sget-object v0, Lcj;->o:Lcj;
 
     .line 17
-    :pswitch_0
-    iget-object v0, p0, Lbk4;->k:Lrf1;
-
     .line 18
-    .line 19
-    invoke-virtual {v0}, Lrf1;->b()Z
+    invoke-virtual {p0, v0}, Lxm;->b(Lcj;)V
 
+    .line 19
     .line 20
     .line 21
+    return-object v1
+
     .line 22
-    move-result v0
+    :pswitch_1
+    sget-object v0, Lcj;->m:Lcj;
 
     .line 23
-    if-eqz v0, :cond_0
-
     .line 24
-    .line 25
-    iget-object p0, p0, Lbk4;->r:Ldl4;
+    invoke-virtual {p0, v0}, Lxm;->b(Lcj;)V
 
+    .line 25
     .line 26
     .line 27
-    invoke-virtual {p0}, Ldl4;->g()I
+    return-object v1
 
     .line 28
+    :pswitch_2
+    sget-object v0, Lcj;->n:Lcj;
+
     .line 29
     .line 30
-    move-result p0
+    invoke-virtual {p0, v0}, Lxm;->b(Lcj;)V
 
     .line 31
-    goto :goto_1
-
     .line 32
-    :cond_0
-    invoke-virtual {p0}, Lbk4;->k()I
-
     .line 33
+    return-object v1
+
     .line 34
-    .line 35
-    move-result p0
-
-    .line 36
-    :goto_1
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 37
-    .line 38
-    .line 39
-    move-result-object p0
-
-    .line 40
-    return-object p0
-
-    .line 41
-    :pswitch_1
-    invoke-virtual {p0}, Lbk4;->n()I
-
-    .line 42
-    .line 43
-    .line 44
-    move-result p0
-
-    .line 45
-    goto :goto_0
-
-    .line 46
-    :pswitch_2
-    invoke-virtual {p0}, Lbk4;->n()I
-
-    .line 47
-    .line 48
-    .line 49
-    move-result p0
-
-    .line 50
-    goto :goto_0
-
-    .line 51
-    :pswitch_3
-    invoke-virtual {p0}, Lbk4;->k()I
-
-    .line 52
-    .line 53
-    .line 54
-    move-result p0
-
-    .line 55
-    goto :goto_0
-
-    .line 56
     nop
 
-    .line 57
+    .line 35
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_3
         :pswitch_2
         :pswitch_1
         :pswitch_0

@@ -1,69 +1,58 @@
-.class public abstract Lqo2;
+.class public abstract synthetic Lqo2;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+
+# static fields
+.field public static final synthetic a:[I
 
 
 # direct methods
-.method public static final a(Ljava/lang/String;)V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    invoke-static {}, Landroid/text/Layout$Alignment;->values()[Landroid/text/Layout$Alignment;
 
     .line 2
     .line 3
-    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
-
     .line 4
+    move-result-object v0
+
     .line 5
+    array-length v0, v0
+
     .line 6
-    throw v0
-.end method
+    new-array v0, v0, [I
 
-.method public static final b(Ljava/lang/String;)Ljava/lang/Void;
-    .locals 1
+    .line 7
+    .line 8
+    :try_start_0
+    sget-object v1, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
 
-    .line 1
-    new-instance v0, Ljava/lang/IllegalArgumentException;
+    .line 9
+    .line 10
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    .line 2
-    .line 3
-    invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+    .line 11
+    .line 12
+    .line 13
+    move-result v1
 
-    .line 4
-    .line 5
-    .line 6
-    throw v0
-.end method
+    .line 14
+    const/4 v2, 0x1
 
-.method public static final c(Ljava/lang/String;)V
-    .locals 1
+    .line 15
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 1
-    new-instance v0, Ljava/lang/IllegalStateException;
+    .line 16
+    .line 17
+    :catch_0
+    sput-object v0, Lqo2;->a:[I
 
-    .line 2
-    .line 3
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    .line 4
-    .line 5
-    .line 6
-    throw v0
-.end method
-
-.method public static final d(Ljava/lang/String;)Ljava/lang/Void;
-    .locals 1
-
-    .line 1
-    new-instance v0, Ljava/lang/IllegalStateException;
-
-    .line 2
-    .line 3
-    invoke-direct {v0, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    .line 4
-    .line 5
-    .line 6
-    throw v0
+    .line 18
+    .line 19
+    return-void
 .end method

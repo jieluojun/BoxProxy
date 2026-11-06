@@ -1,103 +1,30 @@
-.class public final synthetic Lgc1;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Ld52;
+.class public final Lgc1;
+.super Lgw1;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Lsp4;
+.field public final c:Landroid/view/ContextMenu;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lsp4;B)V
+.method public constructor <init>(Lsu0;Landroid/view/ContextMenu;Lyn0;)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lgc1;->j:B
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lgc1;->k:Lsp4;
-
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0, p1}, Lgw1;-><init>(Lsu0;)V
 
+    .line 5
     .line 6
     .line 7
+    iput-object p2, p0, Lgc1;->c:Landroid/view/ContextMenu;
+
     .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
-
-    .line 1
-    iget-byte v0, p0, Lgc1;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, Lk27;->a:Lk27;
-
-    .line 4
-    .line 5
-    const/4 v2, 0x1
-
-    .line 6
-    iget-object p0, p0, Lgc1;->k:Lsp4;
-
-    .line 7
-    .line 8
-    packed-switch v0, :pswitch_data_0
-
     .line 9
-    .line 10
-    .line 11
-    invoke-virtual {p0, v2}, Lsp4;->e(Z)V
-
-    .line 12
-    .line 13
-    .line 14
-    return-object v1
-
-    .line 15
-    :pswitch_0
-    invoke-virtual {p0, v2}, Lsp4;->d(Z)V
-
-    .line 16
-    .line 17
-    .line 18
-    return-object v1
-
-    .line 19
-    :pswitch_1
-    invoke-virtual {p0, v2}, Lsp4;->e(Z)V
-
-    .line 20
-    .line 21
-    .line 22
-    return-object v1
-
-    .line 23
-    :pswitch_2
-    invoke-virtual {p0, v2}, Lsp4;->d(Z)V
-
-    .line 24
-    .line 25
-    .line 26
-    return-object v1
-
-    .line 27
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

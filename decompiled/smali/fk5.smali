@@ -1,787 +1,643 @@
-.class public final synthetic Lfk5;
+.class public final Lfk5;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Ld52;
+.implements Lv62;
 
 
 # instance fields
 .field public final synthetic j:B
 
-.field public final synthetic k:Las3;
+.field public final synthetic k:Ljava/util/List;
+
+.field public final synthetic l:Ljava/util/List;
+
+.field public final synthetic m:Lgl5;
+
+.field public final synthetic n:Lzk5;
 
 
 # direct methods
-.method public synthetic constructor <init>(Las3;B)V
+.method public synthetic constructor <init>(Ljava/util/List;Ljava/util/List;Lgl5;Lzk5;B)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lfk5;->j:B
+    iput-byte p5, p0, Lfk5;->j:B
 
     .line 2
     .line 3
-    iput-object p1, p0, Lfk5;->k:Las3;
+    iput-object p1, p0, Lfk5;->k:Ljava/util/List;
 
     .line 4
     .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p2, p0, Lfk5;->l:Ljava/util/List;
 
     .line 6
     .line 7
+    iput-object p3, p0, Lfk5;->m:Lgl5;
+
     .line 8
+    .line 9
+    iput-object p4, p0, Lfk5;->n:Lzk5;
+
+    .line 10
+    .line 11
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 12
+    .line 13
+    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 8
+.method public final j(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 17
 
     .line 1
-    iget-byte v0, p0, Lfk5;->j:B
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
-    const-string v1, "Editor operation failed: undo"
+    iget-byte v1, v0, Lfk5;->j:B
 
     .line 4
     .line 5
-    const-string v2, "Editor operation failed: redo"
+    sget-object v2, La47;->a:La47;
 
     .line 6
     .line 7
-    const-string v3, "Editor operation failed: indentOrCommitTab"
+    iget-object v3, v0, Lfk5;->n:Lzk5;
 
     .line 8
     .line 9
-    const-string v4, "Editor operation failed: unindentSelection"
+    iget-object v4, v0, Lfk5;->m:Lgl5;
 
     .line 10
     .line 11
-    const-string v5, ""
+    iget-object v5, v0, Lfk5;->l:Ljava/util/List;
 
     .line 12
     .line 13
-    const-string v6, "RuntimeFileTextMate"
+    iget-object v0, v0, Lfk5;->k:Ljava/util/List;
 
     .line 14
     .line 15
-    sget-object v7, Lk27;->a:Lk27;
+    const/16 v6, 0x92
 
     .line 16
     .line 17
-    iget-object p0, p0, Lfk5;->k:Las3;
+    const/16 v8, 0x20
 
     .line 18
     .line 19
-    packed-switch v0, :pswitch_data_0
+    const/4 v9, 0x2
 
     .line 20
+    const/4 v10, 0x4
+
     .line 21
+    const/4 v11, 0x1
+
     .line 22
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    const/4 v12, 0x0
 
     .line 23
-    .line 24
-    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
+    packed-switch v1, :pswitch_data_0
 
+    .line 24
     .line 25
     .line 26
-    .line 27
-    return-object v7
+    move-object/from16 v1, p1
 
+    .line 27
     .line 28
-    :pswitch_0
-    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
+    check-cast v1, Lg33;
 
     .line 29
     .line 30
-    .line 31
-    move-result-object p0
+    move-object/from16 v13, p2
 
+    .line 31
     .line 32
-    check-cast p0, Landroid/content/Context;
+    check-cast v13, Ljava/lang/Number;
 
     .line 33
     .line 34
-    return-object p0
+    invoke-virtual {v13}, Ljava/lang/Number;->intValue()I
 
     .line 35
-    :pswitch_1
-    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
-
     .line 36
     .line 37
+    move-result v13
+
     .line 38
-    move-result-object p0
+    move-object/from16 v14, p3
 
     .line 39
-    check-cast p0, Landroid/content/Context;
-
     .line 40
-    .line 41
-    return-object p0
+    check-cast v14, Lz11;
 
+    .line 41
     .line 42
-    :pswitch_2
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    move-object/from16 v15, p4
 
     .line 43
     .line 44
-    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
+    check-cast v15, Ljava/lang/Number;
 
     .line 45
     .line 46
+    invoke-virtual {v15}, Ljava/lang/Number;->intValue()I
+
     .line 47
-    return-object v7
-
     .line 48
-    :pswitch_3
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
     .line 49
+    move-result v15
+
     .line 50
-    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
+    and-int/lit8 v16, v15, 0x6
 
     .line 51
     .line 52
-    .line 53
-    return-object v7
+    if-nez v16, :cond_1
 
+    .line 53
     .line 54
-    :pswitch_4
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    move-object v7, v14
 
     .line 55
-    .line 56
-    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
+    check-cast v7, Lt72;
 
+    .line 56
     .line 57
+    invoke-virtual {v7, v1}, Lt72;->g(Ljava/lang/Object;)Z
+
     .line 58
     .line 59
-    return-object v7
-
     .line 60
-    :pswitch_5
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    move-result v1
 
     .line 61
+    if-eqz v1, :cond_0
+
     .line 62
-    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
-
     .line 63
-    .line 64
-    .line 65
-    return-object v7
+    move v9, v10
 
+    .line 64
+    :cond_0
+    or-int v1, v15, v9
+
+    .line 65
     .line 66
-    :pswitch_6
-    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
+    goto :goto_0
 
     .line 67
-    .line 68
-    .line 69
-    move-result-object p0
+    :cond_1
+    move v1, v15
 
+    .line 68
+    :goto_0
+    and-int/lit8 v7, v15, 0x30
+
+    .line 69
     .line 70
-    check-cast p0, Lo52;
+    if-nez v7, :cond_3
 
     .line 71
     .line 72
-    invoke-interface {p0, v5}, Lo52;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    move-object v7, v14
 
     .line 73
+    check-cast v7, Lt72;
+
     .line 74
     .line 75
-    return-object v7
+    invoke-virtual {v7, v13}, Lt72;->e(I)Z
 
     .line 76
-    :pswitch_7
-    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
-
     .line 77
     .line 78
+    move-result v7
+
     .line 79
-    move-result-object p0
+    if-eqz v7, :cond_2
 
     .line 80
-    check-cast p0, Landroid/content/Context;
-
     .line 81
+    move v7, v8
+
     .line 82
-    return-object p0
+    goto :goto_1
 
     .line 83
-    :pswitch_8
-    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
+    :cond_2
+    const/16 v7, 0x10
 
     .line 84
     .line 85
+    :goto_1
+    or-int/2addr v1, v7
+
     .line 86
-    move-result-object p0
+    :cond_3
+    and-int/lit16 v7, v1, 0x93
 
     .line 87
-    check-cast p0, Landroid/content/Context;
-
     .line 88
-    .line 89
-    return-object p0
+    if-eq v7, v6, :cond_4
 
+    .line 89
     .line 90
-    :pswitch_9
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    move v6, v11
 
     .line 91
+    goto :goto_2
+
     .line 92
-    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
+    :cond_4
+    move v6, v12
 
     .line 93
+    :goto_2
+    and-int/lit8 v7, v1, 0x1
+
     .line 94
     .line 95
-    return-object v7
+    check-cast v14, Lt72;
 
     .line 96
-    :pswitch_a
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
     .line 97
-    .line 98
-    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
+    invoke-virtual {v14, v7, v6}, Lt72;->T(IZ)Z
 
+    .line 98
     .line 99
     .line 100
+    move-result v6
+
     .line 101
-    return-object v7
+    if-eqz v6, :cond_5
 
     .line 102
-    :pswitch_b
-    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
-
     .line 103
+    invoke-interface {v0, v13}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
     .line 104
     .line 105
-    move-result-object p0
-
     .line 106
-    check-cast p0, Ltj5;
+    move-result-object v0
 
     .line 107
+    and-int/lit8 v1, v1, 0x7e
+
     .line 108
-    if-eqz p0, :cond_0
-
     .line 109
+    check-cast v0, Lnh5;
+
     .line 110
-    iget-object p0, p0, Ltj5;->a:Lqt0;
-
     .line 111
-    .line 112
-    :try_start_0
-    invoke-virtual {p0}, Lqt0;->r0()V
-    :try_end_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+    const v6, -0xa214277
 
+    .line 112
     .line 113
     .line 114
+    invoke-virtual {v14, v6}, Lt72;->c0(I)V
+
     .line 115
-    goto :goto_0
-
     .line 116
-    :catch_0
-    move-exception p0
-
     .line 117
-    invoke-static {v6, v4, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    invoke-interface {v5}, Ljava/util/List;->size()I
 
     .line 118
     .line 119
     .line 120
-    :cond_0
-    :goto_0
-    return-object v7
+    move-result v5
 
     .line 121
-    :pswitch_c
-    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
+    new-instance v6, Lck5;
 
     .line 122
     .line 123
+    invoke-direct {v6, v0, v4, v3, v11}, Lck5;-><init>(Ljava/lang/Object;Lgl5;Lzk5;B)V
+
     .line 124
-    move-result-object p0
-
     .line 125
-    check-cast p0, Ltj5;
-
     .line 126
-    .line 127
-    if-eqz p0, :cond_1
+    const v0, 0x709913a5    # 3.7899964E29f
 
+    .line 127
     .line 128
     .line 129
-    iget-object p0, p0, Ltj5;->a:Lqt0;
+    invoke-static {v0, v6, v14}, Lfm;->f0(ILb72;Lz11;)Lqz0;
 
     .line 130
     .line 131
-    :try_start_1
-    invoke-virtual {p0}, Lqt0;->P()V
-    :try_end_1
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_1
-
     .line 132
-    .line 133
-    .line 134
-    goto :goto_1
+    move-result-object v0
 
+    .line 133
+    shr-int/lit8 v1, v1, 0x3
+
+    .line 134
     .line 135
-    :catch_1
-    move-exception p0
+    and-int/lit8 v1, v1, 0xe
 
     .line 136
-    invoke-static {v6, v3, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
     .line 137
+    or-int/lit16 v1, v1, 0x180
+
     .line 138
     .line 139
-    :cond_1
-    :goto_1
-    return-object v7
+    invoke-static {v13, v5, v0, v14, v1}, Lzi3;->f(IILqz0;Lz11;I)V
 
     .line 140
-    :pswitch_d
-    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
-
     .line 141
     .line 142
+    invoke-virtual {v14, v12}, Lt72;->r(Z)V
+
     .line 143
-    move-result-object p0
-
     .line 144
-    check-cast p0, Ltj5;
-
     .line 145
+    goto :goto_3
+
     .line 146
-    if-eqz p0, :cond_2
+    :cond_5
+    invoke-virtual {v14}, Lt72;->W()V
 
     .line 147
     .line 148
-    iget-object p0, p0, Ltj5;->a:Lqt0;
-
     .line 149
+    :goto_3
+    return-object v2
+
     .line 150
-    :try_start_2
-    invoke-virtual {p0}, Lqt0;->e0()V
-    :try_end_2
-    .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_2
+    :pswitch_0
+    move-object/from16 v1, p1
 
     .line 151
     .line 152
-    .line 153
-    goto :goto_2
+    check-cast v1, Lg33;
 
+    .line 153
     .line 154
-    :catch_2
-    move-exception p0
+    move-object/from16 v7, p2
 
     .line 155
-    invoke-static {v6, v2, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
     .line 156
+    check-cast v7, Ljava/lang/Number;
+
     .line 157
     .line 158
-    :cond_2
-    :goto_2
-    return-object v7
+    invoke-virtual {v7}, Ljava/lang/Number;->intValue()I
 
     .line 159
-    :pswitch_e
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
     .line 160
     .line 161
-    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
+    move-result v7
 
     .line 162
+    move-object/from16 v13, p3
+
     .line 163
     .line 164
-    return-object v7
+    check-cast v13, Lz11;
 
     .line 165
-    :pswitch_f
-    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
-
     .line 166
+    move-object/from16 v14, p4
+
     .line 167
     .line 168
-    move-result-object p0
+    check-cast v14, Ljava/lang/Number;
 
     .line 169
-    check-cast p0, Ltj5;
-
     .line 170
-    .line 171
-    if-eqz p0, :cond_3
+    invoke-virtual {v14}, Ljava/lang/Number;->intValue()I
 
+    .line 171
     .line 172
     .line 173
-    iget-object p0, p0, Ltj5;->a:Lqt0;
+    move-result v14
 
     .line 174
-    .line 175
-    :try_start_3
-    invoke-virtual {p0}, Lqt0;->q0()V
-    :try_end_3
-    .catch Ljava/lang/RuntimeException; {:try_start_3 .. :try_end_3} :catch_3
+    and-int/lit8 v15, v14, 0x6
 
+    .line 175
     .line 176
+    if-nez v15, :cond_7
+
     .line 177
     .line 178
-    goto :goto_3
+    move-object v15, v13
 
     .line 179
-    :catch_3
-    move-exception p0
+    check-cast v15, Lt72;
 
     .line 180
-    invoke-static {v6, v1, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
     .line 181
+    invoke-virtual {v15, v1}, Lt72;->g(Ljava/lang/Object;)Z
+
     .line 182
     .line 183
-    :cond_3
-    :goto_3
-    return-object v7
-
     .line 184
-    :pswitch_10
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    move-result v1
 
     .line 185
+    if-eqz v1, :cond_6
+
     .line 186
-    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
-
     .line 187
-    .line 188
-    .line 189
-    return-object v7
+    move v9, v10
 
+    .line 188
+    :cond_6
+    or-int v1, v14, v9
+
+    .line 189
     .line 190
-    :pswitch_11
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    goto :goto_4
 
     .line 191
+    :cond_7
+    move v1, v14
+
     .line 192
-    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
+    :goto_4
+    and-int/lit8 v9, v14, 0x30
 
     .line 193
     .line 194
-    .line 195
-    return-object v7
+    if-nez v9, :cond_9
 
+    .line 195
     .line 196
-    :pswitch_12
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+    move-object v9, v13
 
     .line 197
-    .line 198
-    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
+    check-cast v9, Lt72;
 
+    .line 198
     .line 199
+    invoke-virtual {v9, v7}, Lt72;->e(I)Z
+
     .line 200
     .line 201
-    return-object v7
-
     .line 202
-    :pswitch_13
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+    move-result v9
 
     .line 203
+    if-eqz v9, :cond_8
+
     .line 204
-    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
-
     .line 205
-    .line 206
-    .line 207
-    return-object v7
+    goto :goto_5
 
+    .line 206
+    :cond_8
+    const/16 v8, 0x10
+
+    .line 207
     .line 208
-    :pswitch_14
-    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
+    :goto_5
+    or-int/2addr v1, v8
 
     .line 209
+    :cond_9
+    and-int/lit16 v8, v1, 0x93
+
     .line 210
     .line 211
-    move-result-object p0
+    if-eq v8, v6, :cond_a
 
     .line 212
-    check-cast p0, Ltj5;
-
     .line 213
+    goto :goto_6
+
     .line 214
-    if-eqz p0, :cond_4
+    :cond_a
+    move v11, v12
 
     .line 215
+    :goto_6
+    and-int/lit8 v6, v1, 0x1
+
     .line 216
-    iget-object p0, p0, Ltj5;->a:Lqt0;
-
     .line 217
-    .line 218
-    :try_start_4
-    invoke-virtual {p0}, Lqt0;->r0()V
-    :try_end_4
-    .catch Ljava/lang/RuntimeException; {:try_start_4 .. :try_end_4} :catch_4
+    check-cast v13, Lt72;
 
+    .line 218
     .line 219
+    invoke-virtual {v13, v6, v11}, Lt72;->T(IZ)Z
+
     .line 220
     .line 221
-    goto :goto_4
-
     .line 222
-    :catch_4
-    move-exception p0
+    move-result v6
 
     .line 223
-    invoke-static {v6, v4, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    if-eqz v6, :cond_b
 
     .line 224
     .line 225
+    invoke-interface {v0, v7}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
     .line 226
-    :cond_4
-    :goto_4
-    return-object v7
-
     .line 227
-    :pswitch_15
-    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
-
     .line 228
-    .line 229
-    .line 230
-    move-result-object p0
+    move-result-object v0
 
+    .line 229
+    and-int/lit8 v1, v1, 0x7e
+
+    .line 230
     .line 231
-    check-cast p0, Ltj5;
+    check-cast v0, Llh5;
 
     .line 232
     .line 233
-    if-eqz p0, :cond_5
+    const v6, -0x12039af3
 
     .line 234
     .line 235
-    iget-object p0, p0, Ltj5;->a:Lqt0;
-
     .line 236
-    .line 237
-    :try_start_5
-    invoke-virtual {p0}, Lqt0;->P()V
-    :try_end_5
-    .catch Ljava/lang/RuntimeException; {:try_start_5 .. :try_end_5} :catch_5
+    invoke-virtual {v13, v6}, Lt72;->c0(I)V
 
+    .line 237
     .line 238
     .line 239
+    invoke-interface {v5}, Ljava/util/List;->size()I
+
     .line 240
-    goto :goto_5
-
     .line 241
-    :catch_5
-    move-exception p0
-
     .line 242
-    invoke-static {v6, v3, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    move-result v5
 
     .line 243
+    new-instance v6, Lck5;
+
     .line 244
     .line 245
-    :cond_5
-    :goto_5
-    return-object v7
+    invoke-direct {v6, v0, v4, v3, v12}, Lck5;-><init>(Ljava/lang/Object;Lgl5;Lzk5;B)V
 
     .line 246
-    :pswitch_16
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
     .line 247
     .line 248
-    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
+    const v0, -0x4f2b2ed3
 
     .line 249
     .line 250
     .line 251
-    return-object v7
+    invoke-static {v0, v6, v13}, Lfm;->f0(ILb72;Lz11;)Lqz0;
 
     .line 252
-    :pswitch_17
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
     .line 253
     .line 254
-    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
+    move-result-object v0
 
     .line 255
+    shr-int/lit8 v1, v1, 0x3
+
     .line 256
     .line 257
-    return-object v7
+    and-int/lit8 v1, v1, 0xe
 
     .line 258
-    :pswitch_18
-    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
     .line 259
-    .line 260
-    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
+    or-int/lit16 v1, v1, 0x180
 
+    .line 260
     .line 261
+    invoke-static {v7, v5, v0, v13, v1}, Lzi3;->f(IILqz0;Lz11;I)V
+
     .line 262
     .line 263
-    return-object v7
-
     .line 264
-    :pswitch_19
-    invoke-interface {p0, v5}, Las3;->setValue(Ljava/lang/Object;)V
+    invoke-virtual {v13, v12}, Lt72;->r(Z)V
 
     .line 265
     .line 266
     .line 267
-    return-object v7
+    goto :goto_7
 
     .line 268
-    :pswitch_1a
-    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
+    :cond_b
+    invoke-virtual {v13}, Lt72;->W()V
 
     .line 269
     .line 270
     .line 271
-    move-result-object p0
+    :goto_7
+    return-object v2
 
     .line 272
-    check-cast p0, Ltj5;
-
-    .line 273
-    .line 274
-    if-eqz p0, :cond_6
-
-    .line 275
-    .line 276
-    iget-object p0, p0, Ltj5;->a:Lqt0;
-
-    .line 277
-    .line 278
-    :try_start_6
-    invoke-virtual {p0}, Lqt0;->e0()V
-    :try_end_6
-    .catch Ljava/lang/RuntimeException; {:try_start_6 .. :try_end_6} :catch_6
-
-    .line 279
-    .line 280
-    .line 281
-    goto :goto_6
-
-    .line 282
-    :catch_6
-    move-exception p0
-
-    .line 283
-    invoke-static {v6, v2, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 284
-    .line 285
-    .line 286
-    :cond_6
-    :goto_6
-    return-object v7
-
-    .line 287
-    :pswitch_1b
-    invoke-interface {p0}, Lu96;->getValue()Ljava/lang/Object;
-
-    .line 288
-    .line 289
-    .line 290
-    move-result-object p0
-
-    .line 291
-    check-cast p0, Ltj5;
-
-    .line 292
-    .line 293
-    if-eqz p0, :cond_7
-
-    .line 294
-    .line 295
-    iget-object p0, p0, Ltj5;->a:Lqt0;
-
-    .line 296
-    .line 297
-    :try_start_7
-    invoke-virtual {p0}, Lqt0;->q0()V
-    :try_end_7
-    .catch Ljava/lang/RuntimeException; {:try_start_7 .. :try_end_7} :catch_7
-
-    .line 298
-    .line 299
-    .line 300
-    goto :goto_7
-
-    .line 301
-    :catch_7
-    move-exception p0
-
-    .line 302
-    invoke-static {v6, v1, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 303
-    .line 304
-    .line 305
-    :cond_7
-    :goto_7
-    return-object v7
-
-    .line 306
-    :pswitch_1c
-    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    .line 307
-    .line 308
-    invoke-interface {p0, v0}, Las3;->setValue(Ljava/lang/Object;)V
-
-    .line 309
-    .line 310
-    .line 311
-    return-object v7
-
-    .line 312
     nop
 
-    .line 313
+    .line 273
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_1c
-        :pswitch_1b
-        :pswitch_1a
-        :pswitch_19
-        :pswitch_18
-        :pswitch_17
-        :pswitch_16
-        :pswitch_15
-        :pswitch_14
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_10
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

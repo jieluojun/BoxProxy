@@ -1,642 +1,601 @@
 .class public final Lps3;
-.super Lpw5;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-
-# static fields
-.field public static final synthetic i:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-.field public static final synthetic j:J
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field private volatile synthetic owner$volatile:Ljava/lang/Object;
+.field public a:[J
+
+.field public b:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>()V
+    .locals 1
 
-    .line 1
-    const-class v0, Lps3;
-
-    .line 2
-    .line 3
-    const-class v1, Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    const-string v2, "owner$volatile"
-
-    .line 6
-    .line 7
-    invoke-static {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object v1
-
-    .line 11
-    sput-object v1, Lps3;->i:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
-
-    .line 12
-    .line 13
-    sget-object v1, Lvv;->a:Lsun/misc/Unsafe;
+    const/16 v0, 0x10
 
     .line 14
-    .line 15
-    invoke-virtual {v0, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    invoke-direct {p0, v0}, Lps3;-><init>(I)V
 
-    .line 16
-    .line 17
-    .line 18
-    move-result-object v0
-
-    .line 19
-    invoke-virtual {v1, v0}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
-
-    .line 20
-    .line 21
-    .line 22
-    move-result-wide v0
-
-    .line 23
-    sput-wide v0, Lps3;->j:J
-
-    .line 24
-    .line 25
     return-void
 .end method
 
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(I)V
+    .locals 0
 
     .line 1
-    const/4 v0, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    invoke-direct {p0, v0}, Lpw5;-><init>(I)V
-
     .line 3
     .line 4
+    if-nez p1, :cond_0
+
     .line 5
-    sget-object v0, Lkf3;->r0:Lat1;
-
     .line 6
-    .line 7
-    iput-object v0, p0, Lps3;->owner$volatile:Ljava/lang/Object;
+    sget-object p1, Lif3;->a:[J
 
+    .line 7
     .line 8
+    goto :goto_0
+
     .line 9
+    :cond_0
+    new-array p1, p1, [J
+
+    .line 10
+    .line 11
+    :goto_0
+    iput-object p1, p0, Lps3;->a:[J
+
+    .line 12
+    .line 13
     return-void
 .end method
 
 
 # virtual methods
-.method public final d()Z
+.method public final a(J)V
+    .locals 2
+
+    .line 1
+    iget v0, p0, Lps3;->b:I
+
+    .line 2
+    .line 3
+    add-int/lit8 v0, v0, 0x1
+
+    .line 4
+    .line 5
+    invoke-virtual {p0, v0}, Lps3;->c(I)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object v0, p0, Lps3;->a:[J
+
+    .line 9
+    .line 10
+    iget v1, p0, Lps3;->b:I
+
+    .line 11
+    .line 12
+    aput-wide p1, v0, v1
+
+    .line 13
+    .line 14
+    add-int/lit8 v1, v1, 0x1
+
+    .line 15
+    .line 16
+    iput v1, p0, Lps3;->b:I
+
+    .line 17
+    .line 18
+    return-void
+.end method
+
+.method public final b(I[J)V
     .locals 3
 
     .line 1
-    sget-object v0, Lvv;->a:Lsun/misc/Unsafe;
+    if-ltz p1, :cond_2
 
     .line 2
     .line 3
-    sget-wide v1, Lpw5;->f:J
+    iget v0, p0, Lps3;->b:I
 
     .line 4
     .line 5
-    invoke-virtual {v0, p0, v1, v2}, Lsun/misc/Unsafe;->getIntVolatile(Ljava/lang/Object;J)I
+    if-gt p1, v0, :cond_2
 
     .line 6
     .line 7
-    .line 8
-    move-result p0
-
-    .line 9
-    const/4 v0, 0x0
-
-    .line 10
-    invoke-static {p0, v0}, Ljava/lang/Math;->max(II)I
-
-    .line 11
-    .line 12
-    .line 13
-    move-result p0
-
-    .line 14
-    if-nez p0, :cond_0
-
-    .line 15
-    .line 16
-    const/4 p0, 0x1
-
-    .line 17
-    return p0
-
-    .line 18
-    :cond_0
-    return v0
-.end method
-
-.method public final e(Ly71;)Ljava/lang/Object;
-    .locals 4
-
-    .line 1
-    invoke-virtual {p0}, Lps3;->f()Z
-
-    .line 2
-    .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    sget-object v1, Lk27;->a:Lk27;
-
-    .line 6
-    .line 7
-    if-eqz v0, :cond_0
+    array-length v1, p2
 
     .line 8
-    .line 9
-    goto :goto_2
-
-    .line 10
-    :cond_0
-    invoke-static {p1}, Loc7;->L(Ly71;)Ly71;
-
-    .line 11
-    .line 12
-    .line 13
-    move-result-object p1
-
-    .line 14
-    invoke-static {p1}, Lf47;->c0(Ly71;)Lrh0;
-
-    .line 15
-    .line 16
-    .line 17
-    move-result-object p1
-
-    .line 18
-    :try_start_0
-    new-instance v0, Los3;
-
-    .line 19
-    .line 20
-    invoke-direct {v0, p0, p1}, Los3;-><init>(Lps3;Lrh0;)V
-
-    .line 21
-    .line 22
-    .line 23
-    :cond_1
-    sget-object v2, Lpw5;->e:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
-
-    .line 24
-    .line 25
-    invoke-virtual {v2, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->getAndDecrement(Ljava/lang/Object;)I
-
-    .line 26
-    .line 27
-    .line 28
-    move-result v2
-
-    .line 29
-    iget v3, p0, Lpw5;->a:I
-
-    .line 30
-    .line 31
-    if-gt v2, v3, :cond_1
-
-    .line 32
-    .line 33
-    if-lez v2, :cond_2
-
-    .line 34
-    .line 35
-    iget-object p0, p0, Lpw5;->b:Lhn5;
-
-    .line 36
-    .line 37
-    invoke-virtual {v0, v1, p0}, Los3;->h(Ljava/lang/Object;Lt52;)V
-
-    .line 38
-    .line 39
-    .line 40
-    goto :goto_0
-
-    .line 41
-    :cond_2
-    invoke-virtual {p0, v0}, Lpw5;->b(Ln77;)Z
-
-    .line 42
-    .line 43
-    .line 44
-    move-result v2
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 45
-    if-eqz v2, :cond_1
-
-    .line 46
-    .line 47
-    :goto_0
-    invoke-virtual {p1}, Lrh0;->q()Ljava/lang/Object;
-
-    .line 48
-    .line 49
-    .line 50
-    move-result-object p0
-
-    .line 51
-    sget-object p1, Lcb1;->j:Lcb1;
-
-    .line 52
-    .line 53
-    if-ne p0, p1, :cond_3
-
-    .line 54
-    .line 55
-    goto :goto_1
-
-    .line 56
-    :cond_3
-    move-object p0, v1
-
-    .line 57
-    :goto_1
-    if-ne p0, p1, :cond_4
-
-    .line 58
-    .line 59
-    return-object p0
-
-    .line 60
-    :cond_4
-    :goto_2
-    return-object v1
-
-    .line 61
-    :catchall_0
-    move-exception p0
-
-    .line 62
-    invoke-virtual {p1}, Lrh0;->A()V
-
-    .line 63
-    .line 64
-    .line 65
-    throw p0
-.end method
-
-.method public final f()Z
-    .locals 11
-
-    .line 1
-    :goto_0
-    sget-object v0, Lvv;->a:Lsun/misc/Unsafe;
-
-    .line 2
-    .line 3
-    sget-wide v2, Lpw5;->f:J
-
-    .line 4
-    .line 5
-    invoke-virtual {v0, p0, v2, v3}, Lsun/misc/Unsafe;->getIntVolatile(Ljava/lang/Object;J)I
-
-    .line 6
-    .line 7
-    .line 8
-    move-result v4
+    if-nez v1, :cond_0
 
     .line 9
-    iget v1, p0, Lpw5;->a:I
-
     .line 10
-    .line 11
-    if-le v4, v1, :cond_3
-
-    .line 12
-    .line 13
-    :goto_1
-    sget-object v5, Lvv;->a:Lsun/misc/Unsafe;
-
-    .line 14
-    .line 15
-    sget-wide v7, Lpw5;->f:J
-
-    .line 16
-    .line 17
-    invoke-virtual {v5, p0, v7, v8}, Lsun/misc/Unsafe;->getIntVolatile(Ljava/lang/Object;J)I
-
-    .line 18
-    .line 19
-    .line 20
-    move-result v9
-
-    .line 21
-    iget v10, p0, Lpw5;->a:I
-
-    .line 22
-    .line 23
-    if-le v9, v10, :cond_1
-
-    .line 24
-    .line 25
-    move-object v6, p0
-
-    .line 26
-    invoke-virtual/range {v5 .. v10}, Lsun/misc/Unsafe;->compareAndSwapInt(Ljava/lang/Object;JII)Z
-
-    .line 27
-    .line 28
-    .line 29
-    move-result p0
-
-    .line 30
-    move-object v1, v6
-
-    .line 31
-    if-eqz p0, :cond_0
-
-    .line 32
-    .line 33
-    goto :goto_2
-
-    .line 34
-    :cond_0
-    move-object p0, v1
-
-    .line 35
-    goto :goto_1
-
-    .line 36
-    :cond_1
-    move-object v1, p0
-
-    .line 37
-    :cond_2
-    :goto_2
-    move-object p0, v1
-
-    .line 38
-    goto :goto_0
-
-    .line 39
-    :cond_3
-    move-object v1, p0
-
-    .line 40
-    if-gtz v4, :cond_4
-
-    .line 41
-    .line 42
-    const/4 p0, 0x0
-
-    .line 43
-    return p0
-
-    .line 44
-    :cond_4
-    add-int/lit8 v5, v4, -0x1
-
-    .line 45
-    .line 46
-    invoke-virtual/range {v0 .. v5}, Lsun/misc/Unsafe;->compareAndSwapInt(Ljava/lang/Object;JII)Z
-
-    .line 47
-    .line 48
-    .line 49
-    move-result p0
-
-    .line 50
-    if-eqz p0, :cond_2
-
-    .line 51
-    .line 52
-    sget-wide v2, Lps3;->j:J
-
-    .line 53
-    .line 54
-    const/4 p0, 0x0
-
-    .line 55
-    invoke-virtual {v0, v1, v2, v3, p0}, Lsun/misc/Unsafe;->putObjectVolatile(Ljava/lang/Object;JLjava/lang/Object;)V
-
-    .line 56
-    .line 57
-    .line 58
-    const/4 p0, 0x1
-
-    .line 59
-    return p0
-.end method
-
-.method public final g(Ljava/lang/Object;)V
-    .locals 9
-
-    .line 1
-    :cond_0
-    :goto_0
-    invoke-virtual {p0}, Lps3;->d()Z
-
-    .line 2
-    .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    if-eqz v0, :cond_5
-
-    .line 6
-    .line 7
-    sget-object v0, Lvv;->a:Lsun/misc/Unsafe;
-
-    .line 8
-    .line 9
-    sget-wide v1, Lps3;->j:J
-
-    .line 10
-    .line 11
-    invoke-virtual {v0, p0, v1, v2}, Lsun/misc/Unsafe;->getObjectVolatile(Ljava/lang/Object;J)Ljava/lang/Object;
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object v7
-
-    .line 15
-    sget-object v8, Lkf3;->r0:Lat1;
-
-    .line 16
-    .line 17
-    if-eq v7, v8, :cond_0
-
-    .line 18
-    .line 19
-    if-eq v7, p1, :cond_2
-
-    .line 20
-    .line 21
-    if-nez p1, :cond_1
-
-    .line 22
-    .line 23
-    goto :goto_1
-
-    .line 24
-    :cond_1
-    new-instance p0, Ljava/lang/StringBuilder;
-
-    .line 25
-    .line 26
-    const-string v0, "This mutex is locked by "
-
-    .line 27
-    .line 28
-    invoke-direct {p0, v0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 29
-    .line 30
-    .line 31
-    invoke-virtual {p0, v7}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 32
-    .line 33
-    .line 34
-    const-string v0, ", but "
-
-    .line 35
-    .line 36
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 37
-    .line 38
-    .line 39
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 40
-    .line 41
-    .line 42
-    const-string p1, " is expected"
-
-    .line 43
-    .line 44
-    invoke-virtual {p0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 45
-    .line 46
-    .line 47
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 48
-    .line 49
-    .line 50
-    move-result-object p0
-
-    .line 51
-    new-instance p1, Ljava/lang/IllegalStateException;
-
-    .line 52
-    .line 53
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    .line 54
-    .line 55
-    .line 56
-    move-result-object p0
-
-    .line 57
-    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    .line 58
-    .line 59
-    .line 60
-    throw p1
-
-    .line 61
-    :cond_2
-    :goto_1
-    sget-object v3, Lvv;->a:Lsun/misc/Unsafe;
-
-    .line 62
-    .line 63
-    sget-wide v5, Lps3;->j:J
-
-    .line 64
-    .line 65
-    move-object v4, p0
-
-    .line 66
-    invoke-virtual/range {v3 .. v8}, Lsun/misc/Unsafe;->compareAndSwapObject(Ljava/lang/Object;JLjava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 67
-    .line 68
-    .line 69
-    move-result p0
-
-    .line 70
-    if-eqz p0, :cond_3
-
-    .line 71
-    .line 72
-    invoke-virtual {v4}, Lpw5;->c()V
-
-    .line 73
-    .line 74
-    .line 75
     return-void
 
-    .line 76
+    .line 11
+    :cond_0
+    array-length v1, p2
+
+    .line 12
+    add-int/2addr v0, v1
+
+    .line 13
+    invoke-virtual {p0, v0}, Lps3;->c(I)V
+
+    .line 14
+    .line 15
+    .line 16
+    iget-object v0, p0, Lps3;->a:[J
+
+    .line 17
+    .line 18
+    iget v1, p0, Lps3;->b:I
+
+    .line 19
+    .line 20
+    if-eq p1, v1, :cond_1
+
+    .line 21
+    .line 22
+    array-length v2, p2
+
+    .line 23
+    add-int/2addr v2, p1
+
+    .line 24
+    invoke-static {v0, v0, v2, p1, v1}, Lpw;->r0([J[JIII)V
+
+    .line 25
+    .line 26
+    .line 27
+    :cond_1
+    const/4 v1, 0x0
+
+    .line 28
+    array-length v2, p2
+
+    .line 29
+    invoke-static {p2, v0, p1, v1, v2}, Lpw;->r0([J[JIII)V
+
+    .line 30
+    .line 31
+    .line 32
+    iget p1, p0, Lps3;->b:I
+
+    .line 33
+    .line 34
+    array-length p2, p2
+
+    .line 35
+    add-int/2addr p1, p2
+
+    .line 36
+    iput p1, p0, Lps3;->b:I
+
+    .line 37
+    .line 38
+    return-void
+
+    .line 39
+    :cond_2
+    const-string p0, ""
+
+    .line 40
+    .line 41
+    invoke-static {p0}, Lue1;->q(Ljava/lang/String;)V
+
+    .line 42
+    .line 43
+    .line 44
+    return-void
+.end method
+
+.method public final c(I)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lps3;->a:[J
+
+    .line 2
+    .line 3
+    array-length v1, v0
+
+    .line 4
+    if-ge v1, p1, :cond_0
+
+    .line 5
+    .line 6
+    array-length v1, v0
+
+    .line 7
+    mul-int/lit8 v1, v1, 0x3
+
+    .line 8
+    .line 9
+    div-int/lit8 v1, v1, 0x2
+
+    .line 10
+    .line 11
+    invoke-static {p1, v1}, Ljava/lang/Math;->max(II)I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p1
+
+    .line 15
+    invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([JI)[J
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p1
+
+    .line 19
+    iput-object p1, p0, Lps3;->a:[J
+
+    .line 20
+    .line 21
+    :cond_0
+    return-void
+.end method
+
+.method public final d(I)J
+    .locals 1
+
+    .line 1
+    if-ltz p1, :cond_0
+
+    .line 2
+    .line 3
+    iget v0, p0, Lps3;->b:I
+
+    .line 4
+    .line 5
+    if-ge p1, v0, :cond_0
+
+    .line 6
+    .line 7
+    iget-object p0, p0, Lps3;->a:[J
+
+    .line 8
+    .line 9
+    aget-wide p0, p0, p1
+
+    .line 10
+    .line 11
+    return-wide p0
+
+    .line 12
+    :cond_0
+    const-string p0, "Index must be between 0 and size"
+
+    .line 13
+    .line 14
+    invoke-static {p0}, Lue1;->q(Ljava/lang/String;)V
+
+    .line 15
+    .line 16
+    .line 17
+    const-wide/16 p0, 0x0
+
+    .line 18
+    .line 19
+    return-wide p0
+.end method
+
+.method public final e(II)V
+    .locals 2
+
+    .line 1
+    if-ltz p1, :cond_3
+
+    .line 2
+    .line 3
+    iget v0, p0, Lps3;->b:I
+
+    .line 4
+    .line 5
+    if-gt p1, v0, :cond_3
+
+    .line 6
+    .line 7
+    if-ltz p2, :cond_3
+
+    .line 8
+    .line 9
+    if-gt p2, v0, :cond_3
+
+    .line 10
+    .line 11
+    if-lt p2, p1, :cond_2
+
+    .line 12
+    .line 13
+    if-eq p2, p1, :cond_1
+
+    .line 14
+    .line 15
+    if-ge p2, v0, :cond_0
+
+    .line 16
+    .line 17
+    iget-object v1, p0, Lps3;->a:[J
+
+    .line 18
+    .line 19
+    invoke-static {v1, v1, p1, p2, v0}, Lpw;->r0([J[JIII)V
+
+    .line 20
+    .line 21
+    .line 22
+    :cond_0
+    iget v0, p0, Lps3;->b:I
+
+    .line 23
+    .line 24
+    sub-int/2addr p2, p1
+
+    .line 25
+    sub-int/2addr v0, p2
+
+    .line 26
+    iput v0, p0, Lps3;->b:I
+
+    .line 27
+    .line 28
+    :cond_1
+    return-void
+
+    .line 29
+    :cond_2
+    const-string p0, "The end index must be < start index"
+
+    .line 30
+    .line 31
+    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+
+    .line 32
+    .line 33
+    .line 34
+    return-void
+
+    .line 35
     :cond_3
-    invoke-virtual {v3, v4, v1, v2}, Lsun/misc/Unsafe;->getObjectVolatile(Ljava/lang/Object;J)Ljava/lang/Object;
+    const-string p0, "Index must be between 0 and size"
 
-    .line 77
-    .line 78
-    .line 79
-    move-result-object p0
+    .line 36
+    .line 37
+    invoke-static {p0}, Lue1;->q(Ljava/lang/String;)V
 
-    .line 80
-    if-eq p0, v7, :cond_4
+    .line 38
+    .line 39
+    .line 40
+    return-void
+.end method
 
-    .line 81
-    .line 82
-    move-object p0, v4
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 7
 
-    .line 83
-    goto :goto_0
+    .line 1
+    instance-of v0, p1, Lps3;
 
-    .line 84
-    :cond_4
-    move-object p0, v4
+    .line 2
+    .line 3
+    const/4 v1, 0x0
 
-    .line 85
+    .line 4
+    if-eqz v0, :cond_3
+
+    .line 5
+    .line 6
+    check-cast p1, Lps3;
+
+    .line 7
+    .line 8
+    iget v0, p1, Lps3;->b:I
+
+    .line 9
+    .line 10
+    iget v2, p0, Lps3;->b:I
+
+    .line 11
+    .line 12
+    if-eq v0, v2, :cond_0
+
+    .line 13
+    .line 14
     goto :goto_1
 
-    .line 86
-    :cond_5
-    const-string p0, "This mutex is not locked"
+    .line 15
+    :cond_0
+    iget-object p0, p0, Lps3;->a:[J
 
-    .line 87
-    .line 88
-    invoke-static {p0}, Ljv1;->e(Ljava/lang/String;)V
+    .line 16
+    .line 17
+    iget-object p1, p1, Lps3;->a:[J
 
-    .line 89
-    .line 90
-    .line 91
+    .line 18
+    .line 19
+    invoke-static {v1, v2}, Lgf3;->g0(II)Les2;
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-object v0
+
+    .line 23
+    iget v2, v0, Lcs2;->j:I
+
+    .line 24
+    .line 25
+    iget v0, v0, Lcs2;->k:I
+
+    .line 26
+    .line 27
+    if-gt v2, v0, :cond_2
+
+    .line 28
+    .line 29
+    :goto_0
+    aget-wide v3, p0, v2
+
+    .line 30
+    .line 31
+    aget-wide v5, p1, v2
+
+    .line 32
+    .line 33
+    cmp-long v3, v3, v5
+
+    .line 34
+    .line 35
+    if-eqz v3, :cond_1
+
+    .line 36
+    .line 37
+    return v1
+
+    .line 38
+    :cond_1
+    if-eq v2, v0, :cond_2
+
+    .line 39
+    .line 40
+    add-int/lit8 v2, v2, 0x1
+
+    .line 41
+    .line 42
+    goto :goto_0
+
+    .line 43
+    :cond_2
+    const/4 p0, 0x1
+
+    .line 44
+    return p0
+
+    .line 45
+    :cond_3
+    :goto_1
+    return v1
+.end method
+
+.method public final f(IJ)V
+    .locals 2
+
+    .line 1
+    if-ltz p1, :cond_0
+
+    .line 2
+    .line 3
+    iget v0, p0, Lps3;->b:I
+
+    .line 4
+    .line 5
+    if-ge p1, v0, :cond_0
+
+    .line 6
+    .line 7
+    iget-object p0, p0, Lps3;->a:[J
+
+    .line 8
+    .line 9
+    aget-wide v0, p0, p1
+
+    .line 10
+    .line 11
+    aput-wide p2, p0, p1
+
+    .line 12
+    .line 13
     return-void
+
+    .line 14
+    :cond_0
+    const-string p0, "Index must be between 0 and size"
+
+    .line 15
+    .line 16
+    invoke-static {p0}, Lue1;->q(Ljava/lang/String;)V
+
+    .line 17
+    .line 18
+    .line 19
+    return-void
+.end method
+
+.method public final hashCode()I
+    .locals 5
+
+    .line 1
+    iget-object v0, p0, Lps3;->a:[J
+
+    .line 2
+    .line 3
+    iget p0, p0, Lps3;->b:I
+
+    .line 4
+    .line 5
+    const/4 v1, 0x0
+
+    .line 6
+    move v2, v1
+
+    .line 7
+    :goto_0
+    if-ge v1, p0, :cond_0
+
+    .line 8
+    .line 9
+    aget-wide v3, v0, v1
+
+    .line 10
+    .line 11
+    invoke-static {v3, v4}, Ljava/lang/Long;->hashCode(J)I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result v3
+
+    .line 15
+    mul-int/lit8 v3, v3, 0x1f
+
+    .line 16
+    .line 17
+    add-int/2addr v2, v3
+
+    .line 18
+    add-int/lit8 v1, v1, 0x1
+
+    .line 19
+    .line 20
+    goto :goto_0
+
+    .line 21
+    :cond_0
+    return v2
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 4
+    .locals 6
 
     .line 1
     new-instance v0, Ljava/lang/StringBuilder;
 
     .line 2
     .line 3
-    const-string v1, "Mutex@"
+    const-string v1, "["
 
     .line 4
     .line 5
@@ -645,87 +604,90 @@
     .line 6
     .line 7
     .line 8
-    invoke-static {p0}, Lrd1;->T(Ljava/lang/Object;)Ljava/lang/String;
+    iget-object v1, p0, Lps3;->a:[J
 
     .line 9
     .line 10
-    .line 11
-    move-result-object v1
+    iget p0, p0, Lps3;->b:I
 
+    .line 11
     .line 12
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v2, 0x0
 
     .line 13
+    :goto_0
+    if-ge v2, p0, :cond_2
+
     .line 14
     .line 15
-    const-string v1, "[isLocked="
+    aget-wide v3, v1, v2
 
     .line 16
     .line 17
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const/4 v5, -0x1
 
     .line 18
+    if-ne v2, v5, :cond_0
+
     .line 19
     .line 20
-    invoke-virtual {p0}, Lps3;->d()Z
+    const-string p0, "..."
 
     .line 21
     .line 22
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
+
     .line 23
-    move-result v1
-
     .line 24
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
     .line 25
+    goto :goto_1
+
     .line 26
+    :cond_0
+    if-eqz v2, :cond_1
+
     .line 27
-    const-string v1, ",owner="
-
     .line 28
-    .line 29
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    const-string v5, ", "
 
+    .line 29
     .line 30
+    invoke-virtual {v0, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
+
     .line 31
     .line 32
-    sget-object v1, Lvv;->a:Lsun/misc/Unsafe;
-
     .line 33
-    .line 34
-    sget-wide v2, Lps3;->j:J
+    :cond_1
+    invoke-virtual {v0, v3, v4}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
+    .line 34
     .line 35
     .line 36
-    invoke-virtual {v1, p0, v2, v3}, Lsun/misc/Unsafe;->getObjectVolatile(Ljava/lang/Object;J)Ljava/lang/Object;
+    add-int/lit8 v2, v2, 0x1
 
     .line 37
     .line 38
+    goto :goto_0
+
     .line 39
-    move-result-object p0
+    :cond_2
+    const-string p0, "]"
 
     .line 40
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
     .line 41
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/CharSequence;)Ljava/lang/StringBuilder;
+
     .line 42
     .line 43
-    const/16 p0, 0x5d
-
     .line 44
-    .line 45
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 46
-    .line 47
-    .line 48
+    :goto_1
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    .line 49
-    .line 50
-    .line 51
+    .line 45
+    .line 46
+    .line 47
     move-result-object p0
 
-    .line 52
+    .line 48
     return-object p0
 .end method

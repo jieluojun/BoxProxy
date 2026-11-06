@@ -1,10 +1,10 @@
 .class public final Lcom/materialkolor/ktx/DynamicSchemeKt;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # direct methods
-.method public static final DynamicScheme-dtSySfE(JZLhu0;Lhu0;Lhu0;Lhu0;Lhu0;Lhu0;Lok4;DLzu0;Llp1;)Lmp1;
+.method public static final DynamicScheme-dtSySfE(JZLjv0;Ljv0;Ljv0;Ljv0;Ljv0;Ljv0;Lcm4;DLbw0;Llq1;)Lmq1;
     .locals 15
 
     .line 1
@@ -70,7 +70,7 @@
 
     .line 32
     .line 33
-    invoke-static/range {v6 .. v13}, Lcom/materialkolor/ktx/DynamicSchemeKt;->toDynamicScheme-KTwxG1Y(JZLok4;DLzu0;Llp1;)Lmp1;
+    invoke-static/range {v6 .. v13}, Lcom/materialkolor/ktx/DynamicSchemeKt;->toDynamicScheme-KTwxG1Y(JZLcm4;DLbw0;Llq1;)Lmq1;
 
     .line 34
     .line 35
@@ -78,7 +78,7 @@
     move-result-object v14
 
     .line 37
-    invoke-static/range {p0 .. p1}, Lcom/materialkolor/ktx/HctKt;->toHct-8_81llA(J)Lm92;
+    invoke-static/range {p0 .. p1}, Lcom/materialkolor/ktx/HctKt;->toHct-8_81llA(J)Lna2;
 
     .line 38
     .line 39
@@ -99,7 +99,7 @@
     .line 46
     .line 47
     .line 48
-    invoke-static {}, Lvd1;->a()V
+    invoke-static {}, Lue1;->a()V
 
     .line 49
     .line 50
@@ -111,7 +111,7 @@
 
     .line 53
     :pswitch_0
-    sget-object v7, Lc47;->p:Lc47;
+    sget-object v7, Lo57;->p:Lo57;
 
     .line 54
     .line 55
@@ -119,7 +119,7 @@
 
     .line 56
     :pswitch_1
-    sget-object v7, Lc47;->o:Lc47;
+    sget-object v7, Lo57;->o:Lo57;
 
     .line 57
     .line 58
@@ -127,7 +127,7 @@
 
     .line 59
     :pswitch_2
-    sget-object v7, Lc47;->j:Lc47;
+    sget-object v7, Lo57;->j:Lo57;
 
     .line 60
     .line 61
@@ -135,7 +135,7 @@
 
     .line 62
     :pswitch_3
-    sget-object v7, Lc47;->r:Lc47;
+    sget-object v7, Lo57;->r:Lo57;
 
     .line 63
     .line 64
@@ -143,7 +143,7 @@
 
     .line 65
     :pswitch_4
-    sget-object v7, Lc47;->q:Lc47;
+    sget-object v7, Lo57;->q:Lo57;
 
     .line 66
     .line 67
@@ -151,7 +151,7 @@
 
     .line 68
     :pswitch_5
-    sget-object v7, Lc47;->n:Lc47;
+    sget-object v7, Lo57;->n:Lo57;
 
     .line 69
     .line 70
@@ -159,7 +159,7 @@
 
     .line 71
     :pswitch_6
-    sget-object v7, Lc47;->m:Lc47;
+    sget-object v7, Lo57;->m:Lo57;
 
     .line 72
     .line 73
@@ -167,7 +167,7 @@
 
     .line 74
     :pswitch_7
-    sget-object v7, Lc47;->k:Lc47;
+    sget-object v7, Lo57;->k:Lo57;
 
     .line 75
     .line 76
@@ -175,7 +175,7 @@
 
     .line 77
     :pswitch_8
-    sget-object v7, Lc47;->l:Lc47;
+    sget-object v7, Lo57;->l:Lo57;
 
     .line 78
     .line 79
@@ -184,11 +184,11 @@
 
     .line 80
     .line 81
-    iget-wide v8, v0, Lhu0;->a:J
+    iget-wide v8, v0, Ljv0;->a:J
 
     .line 82
     .line 83
-    invoke-static {v8, v9}, Lcom/materialkolor/ktx/ColorKt;->toTonalPalette-8_81llA(J)Lut6;
+    invoke-static {v8, v9}, Lcom/materialkolor/ktx/ColorKt;->toTonalPalette-8_81llA(J)Liv6;
 
     .line 84
     .line 85
@@ -201,7 +201,7 @@
     .line 88
     .line 89
     :cond_0
-    iget-object v0, v14, Lmp1;->e:Lut6;
+    iget-object v0, v14, Lmq1;->e:Liv6;
 
     .line 90
     .line 91
@@ -210,11 +210,11 @@
 
     .line 92
     .line 93
-    iget-wide v8, v1, Lhu0;->a:J
+    iget-wide v8, v1, Ljv0;->a:J
 
     .line 94
     .line 95
-    invoke-static {v8, v9}, Lcom/materialkolor/ktx/ColorKt;->toTonalPalette-8_81llA(J)Lut6;
+    invoke-static {v8, v9}, Lcom/materialkolor/ktx/ColorKt;->toTonalPalette-8_81llA(J)Liv6;
 
     .line 96
     .line 97
@@ -227,7 +227,7 @@
     .line 100
     .line 101
     :cond_2
-    iget-object v1, v14, Lmp1;->f:Lut6;
+    iget-object v1, v14, Lmq1;->f:Liv6;
 
     .line 102
     .line 103
@@ -236,11 +236,11 @@
 
     .line 104
     .line 105
-    iget-wide v8, v2, Lhu0;->a:J
+    iget-wide v8, v2, Ljv0;->a:J
 
     .line 106
     .line 107
-    invoke-static {v8, v9}, Lcom/materialkolor/ktx/ColorKt;->toTonalPalette-8_81llA(J)Lut6;
+    invoke-static {v8, v9}, Lcom/materialkolor/ktx/ColorKt;->toTonalPalette-8_81llA(J)Liv6;
 
     .line 108
     .line 109
@@ -265,7 +265,7 @@
     .line 116
     :cond_5
     :goto_2
-    iget-object v2, v14, Lmp1;->g:Lut6;
+    iget-object v2, v14, Lmq1;->g:Liv6;
 
     .line 117
     .line 118
@@ -277,11 +277,11 @@
 
     .line 120
     .line 121
-    iget-wide v2, v3, Lhu0;->a:J
+    iget-wide v2, v3, Ljv0;->a:J
 
     .line 122
     .line 123
-    invoke-static {v2, v3}, Lcom/materialkolor/ktx/ColorKt;->toTonalPalette-8_81llA(J)Lut6;
+    invoke-static {v2, v3}, Lcom/materialkolor/ktx/ColorKt;->toTonalPalette-8_81llA(J)Liv6;
 
     .line 124
     .line 125
@@ -306,7 +306,7 @@
     .line 132
     :cond_7
     :goto_5
-    iget-object v2, v14, Lmp1;->h:Lut6;
+    iget-object v2, v14, Lmq1;->h:Liv6;
 
     .line 133
     .line 134
@@ -318,11 +318,11 @@
 
     .line 136
     .line 137
-    iget-wide v2, v4, Lhu0;->a:J
+    iget-wide v2, v4, Ljv0;->a:J
 
     .line 138
     .line 139
-    invoke-static {v2, v3}, Lcom/materialkolor/ktx/ColorKt;->toTonalPalette-8_81llA(J)Lut6;
+    invoke-static {v2, v3}, Lcom/materialkolor/ktx/ColorKt;->toTonalPalette-8_81llA(J)Liv6;
 
     .line 140
     .line 141
@@ -347,7 +347,7 @@
     .line 148
     :cond_9
     :goto_8
-    iget-object v2, v14, Lmp1;->i:Lut6;
+    iget-object v2, v14, Lmq1;->i:Liv6;
 
     .line 149
     .line 150
@@ -359,11 +359,11 @@
 
     .line 152
     .line 153
-    iget-wide v2, v5, Lhu0;->a:J
+    iget-wide v2, v5, Ljv0;->a:J
 
     .line 154
     .line 155
-    invoke-static {v2, v3}, Lcom/materialkolor/ktx/ColorKt;->toTonalPalette-8_81llA(J)Lut6;
+    invoke-static {v2, v3}, Lcom/materialkolor/ktx/ColorKt;->toTonalPalette-8_81llA(J)Liv6;
 
     .line 156
     .line 157
@@ -400,7 +400,7 @@
     .line 168
     :cond_b
     :goto_b
-    iget-object v2, v14, Lmp1;->k:Lut6;
+    iget-object v2, v14, Lmq1;->k:Liv6;
 
     .line 169
     .line 170
@@ -408,7 +408,7 @@
 
     .line 171
     :goto_c
-    new-instance v0, Lmp1;
+    new-instance v0, Lmq1;
 
     .line 172
     .line 173
@@ -428,7 +428,7 @@
 
     .line 180
     .line 181
-    invoke-direct/range {v0 .. v13}, Lmp1;-><init>(Lm92;Lc47;ZDLut6;Lut6;Lut6;Lut6;Lut6;Llp1;Lzu0;Lut6;)V
+    invoke-direct/range {v0 .. v13}, Lmq1;-><init>(Lna2;Lo57;ZDLiv6;Liv6;Liv6;Liv6;Liv6;Llq1;Lbw0;Liv6;)V
 
     .line 182
     .line 183
@@ -450,7 +450,7 @@
     .end packed-switch
 .end method
 
-.method public static DynamicScheme-dtSySfE$default(JZLhu0;Lhu0;Lhu0;Lhu0;Lhu0;Lhu0;Lok4;DLzu0;Llp1;ILjava/lang/Object;)Lmp1;
+.method public static DynamicScheme-dtSySfE$default(JZLjv0;Ljv0;Ljv0;Ljv0;Ljv0;Ljv0;Lcm4;DLbw0;Llq1;ILjava/lang/Object;)Lmq1;
     .locals 17
 
     .line 1
@@ -589,7 +589,7 @@
 
     .line 55
     .line 56
-    sget-object v1, Lok4;->j:Lok4;
+    sget-object v1, Lcm4;->j:Lcm4;
 
     .line 57
     .line 58
@@ -637,7 +637,7 @@
 
     .line 75
     .line 76
-    sget-object v1, Lzu0;->j:Lt8;
+    sget-object v1, Lbw0;->j:Lv8;
 
     .line 77
     .line 78
@@ -646,7 +646,7 @@
     .line 79
     .line 80
     .line 81
-    sget-object v1, Lzu0;->k:Lzu0;
+    sget-object v1, Lbw0;->k:Lbw0;
 
     .line 82
     .line 83
@@ -670,7 +670,7 @@
 
     .line 90
     .line 91
-    sget-object v0, Llp1;->j:Li11;
+    sget-object v0, Llq1;->j:Lm21;
 
     .line 92
     .line 93
@@ -679,7 +679,7 @@
     .line 94
     .line 95
     .line 96
-    sget-object v0, Llp1;->k:Llp1;
+    sget-object v0, Llq1;->k:Llq1;
 
     .line 97
     .line 98
@@ -708,7 +708,7 @@
 
     .line 108
     :goto_a
-    invoke-static/range {v3 .. v16}, Lcom/materialkolor/ktx/DynamicSchemeKt;->DynamicScheme-dtSySfE(JZLhu0;Lhu0;Lhu0;Lhu0;Lhu0;Lhu0;Lok4;DLzu0;Llp1;)Lmp1;
+    invoke-static/range {v3 .. v16}, Lcom/materialkolor/ktx/DynamicSchemeKt;->DynamicScheme-dtSySfE(JZLjv0;Ljv0;Ljv0;Ljv0;Ljv0;Ljv0;Lcm4;DLbw0;Llq1;)Lmq1;
 
     .line 109
     .line 110
@@ -719,7 +719,7 @@
     return-object v0
 .end method
 
-.method public static final getSourceColor(Lmp1;)J
+.method public static final getSourceColor(Lmq1;)J
     .locals 2
 
     .line 1
@@ -728,7 +728,7 @@
     .line 2
     .line 3
     .line 4
-    iget p0, p0, Lmp1;->n:I
+    iget p0, p0, Lmq1;->n:I
 
     .line 5
     .line 6
@@ -745,7 +745,7 @@
     return-wide v0
 .end method
 
-.method public static final rememberDynamicScheme-k1ZVges(JZLhu0;Lhu0;Lhu0;Lhu0;Lhu0;Lhu0;Lok4;DLzu0;Llp1;Lv01;III)Lmp1;
+.method public static final rememberDynamicScheme-k1ZVges(JZLjv0;Ljv0;Ljv0;Ljv0;Ljv0;Ljv0;Lcm4;DLbw0;Llq1;Lz11;III)Lmq1;
     .locals 16
 
     .line 1
@@ -885,7 +885,7 @@
 
     .line 56
     .line 57
-    sget-object v8, Lok4;->j:Lok4;
+    sget-object v8, Lcm4;->j:Lcm4;
 
     .line 58
     .line 59
@@ -927,7 +927,7 @@
 
     .line 74
     .line 75
-    sget-object v11, Lzu0;->j:Lt8;
+    sget-object v11, Lbw0;->j:Lv8;
 
     .line 76
     .line 77
@@ -936,7 +936,7 @@
     .line 78
     .line 79
     .line 80
-    sget-object v11, Lzu0;->k:Lzu0;
+    sget-object v11, Lbw0;->k:Lbw0;
 
     .line 81
     .line 82
@@ -960,7 +960,7 @@
 
     .line 89
     .line 90
-    sget-object v1, Llp1;->j:Li11;
+    sget-object v1, Llq1;->j:Lm21;
 
     .line 91
     .line 92
@@ -969,7 +969,7 @@
     .line 93
     .line 94
     .line 95
-    sget-object v1, Llp1;->k:Llp1;
+    sget-object v1, Llq1;->k:Llq1;
 
     .line 96
     .line 97
@@ -1001,7 +1001,7 @@
 
     .line 108
     .line 109
-    check-cast v13, Ls62;
+    check-cast v13, Lt72;
 
     .line 110
     .line 111
@@ -1009,7 +1009,7 @@
 
     .line 112
     .line 113
-    invoke-virtual {v13, v14, v15}, Ls62;->f(J)Z
+    invoke-virtual {v13, v14, v15}, Lt72;->f(J)Z
 
     .line 114
     .line 115
@@ -1077,7 +1077,7 @@
 
     .line 141
     .line 142
-    check-cast v13, Ls62;
+    check-cast v13, Lt72;
 
     .line 143
     .line 144
@@ -1085,7 +1085,7 @@
 
     .line 145
     .line 146
-    invoke-virtual {v13, v1}, Ls62;->h(Z)Z
+    invoke-virtual {v13, v1}, Lt72;->h(Z)Z
 
     .line 147
     .line 148
@@ -1153,11 +1153,11 @@
 
     .line 174
     .line 175
-    check-cast v12, Ls62;
+    check-cast v12, Lt72;
 
     .line 176
     .line 177
-    invoke-virtual {v12, v2}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v2}, Lt72;->g(Ljava/lang/Object;)Z
 
     .line 178
     .line 179
@@ -1213,11 +1213,11 @@
 
     .line 200
     .line 201
-    check-cast v12, Ls62;
+    check-cast v12, Lt72;
 
     .line 202
     .line 203
-    invoke-virtual {v12, v4}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v4}, Lt72;->g(Ljava/lang/Object;)Z
 
     .line 204
     .line 205
@@ -1277,11 +1277,11 @@
 
     .line 228
     .line 229
-    check-cast v12, Ls62;
+    check-cast v12, Lt72;
 
     .line 230
     .line 231
-    invoke-virtual {v12, v5}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v5}, Lt72;->g(Ljava/lang/Object;)Z
 
     .line 232
     .line 233
@@ -1347,11 +1347,11 @@
 
     .line 258
     .line 259
-    check-cast v12, Ls62;
+    check-cast v12, Lt72;
 
     .line 260
     .line 261
-    invoke-virtual {v12, v6}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v6}, Lt72;->g(Ljava/lang/Object;)Z
 
     .line 262
     .line 263
@@ -1417,11 +1417,11 @@
 
     .line 288
     .line 289
-    check-cast v12, Ls62;
+    check-cast v12, Lt72;
 
     .line 290
     .line 291
-    invoke-virtual {v12, v7}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v7}, Lt72;->g(Ljava/lang/Object;)Z
 
     .line 292
     .line 293
@@ -1487,11 +1487,11 @@
 
     .line 318
     .line 319
-    check-cast v12, Ls62;
+    check-cast v12, Lt72;
 
     .line 320
     .line 321
-    invoke-virtual {v12, v3}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v12, v3}, Lt72;->g(Ljava/lang/Object;)Z
 
     .line 322
     .line 323
@@ -1565,11 +1565,11 @@
 
     .line 352
     .line 353
-    check-cast v13, Ls62;
+    check-cast v13, Lt72;
 
     .line 354
     .line 355
-    invoke-virtual {v13, v12}, Ls62;->e(I)Z
+    invoke-virtual {v13, v12}, Lt72;->e(I)Z
 
     .line 356
     .line 357
@@ -1639,11 +1639,11 @@
 
     .line 384
     .line 385
-    check-cast v12, Ls62;
+    check-cast v12, Lt72;
 
     .line 386
     .line 387
-    invoke-virtual {v12, v9, v10}, Ls62;->c(D)Z
+    invoke-virtual {v12, v9, v10}, Lt72;->c(D)Z
 
     .line 388
     .line 389
@@ -1706,11 +1706,11 @@
 
     .line 413
     .line 414
-    check-cast v13, Ls62;
+    check-cast v13, Lt72;
 
     .line 415
     .line 416
-    invoke-virtual {v13, v1}, Ls62;->e(I)Z
+    invoke-virtual {v13, v1}, Lt72;->e(I)Z
 
     .line 417
     .line 418
@@ -1774,11 +1774,11 @@
 
     .line 443
     .line 444
-    check-cast v13, Ls62;
+    check-cast v13, Lt72;
 
     .line 445
     .line 446
-    invoke-virtual {v13, v1}, Ls62;->e(I)Z
+    invoke-virtual {v13, v1}, Lt72;->e(I)Z
 
     .line 447
     .line 448
@@ -1818,11 +1818,11 @@
 
     .line 461
     .line 462
-    check-cast v1, Ls62;
+    check-cast v1, Lt72;
 
     .line 463
     .line 464
-    invoke-virtual {v1}, Ls62;->O()Ljava/lang/Object;
+    invoke-virtual {v1}, Lt72;->O()Ljava/lang/Object;
 
     .line 465
     .line 466
@@ -1834,7 +1834,7 @@
 
     .line 469
     .line 470
-    sget-object v0, Lt01;->a:Lt8;
+    sget-object v0, Lx11;->a:Lv8;
 
     .line 471
     .line 472
@@ -1891,7 +1891,7 @@
 
     .line 497
     .line 498
-    invoke-static/range {p3 .. p16}, Lcom/materialkolor/ktx/DynamicSchemeKt;->DynamicScheme-dtSySfE(JZLhu0;Lhu0;Lhu0;Lhu0;Lhu0;Lhu0;Lok4;DLzu0;Llp1;)Lmp1;
+    invoke-static/range {p3 .. p16}, Lcom/materialkolor/ktx/DynamicSchemeKt;->DynamicScheme-dtSySfE(JZLjv0;Ljv0;Ljv0;Ljv0;Ljv0;Ljv0;Lcm4;DLbw0;Llq1;)Lmq1;
 
     .line 499
     .line 500
@@ -1899,20 +1899,20 @@
     move-result-object v12
 
     .line 502
-    invoke-virtual {v1, v12}, Ls62;->l0(Ljava/lang/Object;)V
+    invoke-virtual {v1, v12}, Lt72;->l0(Ljava/lang/Object;)V
 
     .line 503
     .line 504
     .line 505
     :cond_2f
-    check-cast v12, Lmp1;
+    check-cast v12, Lmq1;
 
     .line 506
     .line 507
     return-object v12
 .end method
 
-.method public static final toDynamicScheme-KTwxG1Y(JZLok4;DLzu0;Llp1;)Lmp1;
+.method public static final toDynamicScheme-KTwxG1Y(JZLcm4;DLbw0;Llq1;)Lmq1;
     .locals 0
 
     .line 1
@@ -1931,7 +1931,7 @@
     .line 8
     .line 9
     .line 10
-    invoke-static {p0, p1}, Lcom/materialkolor/ktx/HctKt;->toHct-8_81llA(J)Lm92;
+    invoke-static {p0, p1}, Lcom/materialkolor/ktx/HctKt;->toHct-8_81llA(J)Lna2;
 
     .line 11
     .line 12
@@ -1952,7 +1952,7 @@
     .line 19
     .line 20
     .line 21
-    invoke-static {}, Lvd1;->a()V
+    invoke-static {}, Lue1;->a()V
 
     .line 22
     .line 23
@@ -1964,7 +1964,7 @@
 
     .line 26
     :pswitch_0
-    new-instance p0, Lar5;
+    new-instance p0, Lrs5;
 
     .line 27
     .line 28
@@ -1980,7 +1980,7 @@
     const/4 p7, 0x0
 
     .line 32
-    invoke-direct/range {p0 .. p7}, Lar5;-><init>(Lm92;ZDLzu0;Llp1;B)V
+    invoke-direct/range {p0 .. p7}, Lrs5;-><init>(Lna2;ZDLbw0;Llq1;B)V
 
     .line 33
     .line 34
@@ -1998,14 +1998,14 @@
     move-object p6, p7
 
     .line 39
-    new-instance p0, Lar5;
+    new-instance p0, Lrs5;
 
     .line 40
     .line 41
     const/4 p7, 0x2
 
     .line 42
-    invoke-direct/range {p0 .. p7}, Lar5;-><init>(Lm92;ZDLzu0;Llp1;B)V
+    invoke-direct/range {p0 .. p7}, Lrs5;-><init>(Lna2;ZDLbw0;Llq1;B)V
 
     .line 43
     .line 44
@@ -2023,14 +2023,14 @@
     move-object p6, p7
 
     .line 49
-    new-instance p0, Lar5;
+    new-instance p0, Lrs5;
 
     .line 50
     .line 51
     const/4 p7, 0x4
 
     .line 52
-    invoke-direct/range {p0 .. p7}, Lar5;-><init>(Lm92;ZDLzu0;Llp1;B)V
+    invoke-direct/range {p0 .. p7}, Lrs5;-><init>(Lna2;ZDLbw0;Llq1;B)V
 
     .line 53
     .line 54
@@ -2048,14 +2048,14 @@
     move-object p6, p7
 
     .line 59
-    new-instance p0, Lar5;
+    new-instance p0, Lrs5;
 
     .line 60
     .line 61
     const/4 p7, 0x3
 
     .line 62
-    invoke-direct/range {p0 .. p7}, Lar5;-><init>(Lm92;ZDLzu0;Llp1;B)V
+    invoke-direct/range {p0 .. p7}, Lrs5;-><init>(Lna2;ZDLbw0;Llq1;B)V
 
     .line 63
     .line 64
@@ -2073,14 +2073,14 @@
     move-object p6, p7
 
     .line 69
-    new-instance p0, Lar5;
+    new-instance p0, Lrs5;
 
     .line 70
     .line 71
     const/4 p7, 0x6
 
     .line 72
-    invoke-direct/range {p0 .. p7}, Lar5;-><init>(Lm92;ZDLzu0;Llp1;B)V
+    invoke-direct/range {p0 .. p7}, Lrs5;-><init>(Lna2;ZDLbw0;Llq1;B)V
 
     .line 73
     .line 74
@@ -2098,14 +2098,14 @@
     move-object p6, p7
 
     .line 79
-    new-instance p0, Lar5;
+    new-instance p0, Lrs5;
 
     .line 80
     .line 81
     const/4 p7, 0x1
 
     .line 82
-    invoke-direct/range {p0 .. p7}, Lar5;-><init>(Lm92;ZDLzu0;Llp1;B)V
+    invoke-direct/range {p0 .. p7}, Lrs5;-><init>(Lna2;ZDLbw0;Llq1;B)V
 
     .line 83
     .line 84
@@ -2123,7 +2123,7 @@
     move-object p6, p7
 
     .line 89
-    new-instance p0, Lar5;
+    new-instance p0, Lrs5;
 
     .line 90
     .line 91
@@ -2131,7 +2131,7 @@
 
     .line 92
     .line 93
-    invoke-direct/range {p0 .. p7}, Lar5;-><init>(Lm92;ZDLzu0;Llp1;B)V
+    invoke-direct/range {p0 .. p7}, Lrs5;-><init>(Lna2;ZDLbw0;Llq1;B)V
 
     .line 94
     .line 95
@@ -2149,14 +2149,14 @@
     move-object p6, p7
 
     .line 100
-    new-instance p0, Lar5;
+    new-instance p0, Lrs5;
 
     .line 101
     .line 102
     const/4 p7, 0x5
 
     .line 103
-    invoke-direct/range {p0 .. p7}, Lar5;-><init>(Lm92;ZDLzu0;Llp1;B)V
+    invoke-direct/range {p0 .. p7}, Lrs5;-><init>(Lna2;ZDLbw0;Llq1;B)V
 
     .line 104
     .line 105
@@ -2174,14 +2174,14 @@
     move-object p6, p7
 
     .line 110
-    new-instance p0, Lar5;
+    new-instance p0, Lrs5;
 
     .line 111
     .line 112
     const/4 p7, 0x7
 
     .line 113
-    invoke-direct/range {p0 .. p7}, Lar5;-><init>(Lm92;ZDLzu0;Llp1;B)V
+    invoke-direct/range {p0 .. p7}, Lrs5;-><init>(Lna2;ZDLbw0;Llq1;B)V
 
     .line 114
     .line 115
@@ -2203,7 +2203,7 @@
     .end packed-switch
 .end method
 
-.method public static toDynamicScheme-KTwxG1Y$default(JZLok4;DLzu0;Llp1;ILjava/lang/Object;)Lmp1;
+.method public static toDynamicScheme-KTwxG1Y$default(JZLcm4;DLbw0;Llq1;ILjava/lang/Object;)Lmq1;
     .locals 8
 
     .line 1
@@ -2231,7 +2231,7 @@
 
     .line 11
     .line 12
-    sget-object p4, Lzu0;->j:Lt8;
+    sget-object p4, Lbw0;->j:Lv8;
 
     .line 13
     .line 14
@@ -2240,7 +2240,7 @@
     .line 15
     .line 16
     .line 17
-    sget-object p4, Lzu0;->k:Lzu0;
+    sget-object p4, Lbw0;->k:Lbw0;
 
     .line 18
     .line 19
@@ -2263,7 +2263,7 @@
 
     .line 25
     .line 26
-    sget-object p4, Llp1;->j:Li11;
+    sget-object p4, Llq1;->j:Lm21;
 
     .line 27
     .line 28
@@ -2272,7 +2272,7 @@
     .line 29
     .line 30
     .line 31
-    sget-object p4, Llp1;->k:Llp1;
+    sget-object p4, Llq1;->k:Llq1;
 
     .line 32
     .line 33
@@ -2300,7 +2300,7 @@
 
     .line 40
     :goto_2
-    invoke-static/range {v0 .. v7}, Lcom/materialkolor/ktx/DynamicSchemeKt;->toDynamicScheme-KTwxG1Y(JZLok4;DLzu0;Llp1;)Lmp1;
+    invoke-static/range {v0 .. v7}, Lcom/materialkolor/ktx/DynamicSchemeKt;->toDynamicScheme-KTwxG1Y(JZLcm4;DLbw0;Llq1;)Lmq1;
 
     .line 41
     .line 42

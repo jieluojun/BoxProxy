@@ -1,16 +1,22 @@
-.class public final Ldr2;
-.super Lkr2;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class final Ldr2;
+.super Ldq3;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ldq3;"
+    }
+.end annotation
 
 
 # instance fields
-.field public final b:J
-
-.field public final c:Z
+.field public final j:Lkc7;
 
 
 # direct methods
-.method public constructor <init>(JZ)V
+.method public constructor <init>(Lkc7;)V
     .locals 0
 
     .line 1
@@ -19,57 +25,103 @@
     .line 2
     .line 3
     .line 4
-    iput-wide p1, p0, Ldr2;->b:J
+    iput-object p1, p0, Ldr2;->j:Lkc7;
 
     .line 5
     .line 6
-    iput-boolean p3, p0, Ldr2;->c:Z
-
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 2
+.method public final a()Lvp3;
+    .locals 1
 
     .line 1
-    iget-wide v0, p0, Ldr2;->b:J
+    new-instance v0, Lfr2;
 
     .line 2
     .line 3
-    return-wide v0
-.end method
+    iget-object p0, p0, Ldr2;->j:Lkc7;
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 7
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
     .line 4
-    return v0
-
     .line 5
-    :cond_0
-    instance-of v1, p1, Ldr2;
+    invoke-direct {v0, p0}, Lfr2;-><init>(Lkc7;)V
 
     .line 6
     .line 7
-    const/4 v2, 0x0
+    .line 8
+    return-object v0
+.end method
+
+.method public final b(Lvp3;)V
+    .locals 1
+
+    .line 1
+    check-cast p1, Lfr2;
+
+    .line 2
+    .line 3
+    iget-object v0, p1, Lfr2;->z:Lkc7;
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Ldr2;->j:Lkc7;
+
+    .line 6
+    .line 7
+    invoke-static {p0, v0}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 8
-    if-nez v1, :cond_1
-
     .line 9
     .line 10
-    return v2
+    move-result v0
+
+    .line 11
+    if-nez v0, :cond_0
+
+    .line 12
+    .line 13
+    iput-object p0, p1, Lfr2;->z:Lkc7;
+
+    .line 14
+    .line 15
+    invoke-virtual {p1}, Lfr2;->F1()V
+
+    .line 16
+    .line 17
+    .line 18
+    :cond_0
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    if-ne p0, p1, :cond_0
+
+    .line 2
+    .line 3
+    const/4 p0, 0x1
+
+    .line 4
+    return p0
+
+    .line 5
+    :cond_0
+    instance-of v0, p1, Ldr2;
+
+    .line 6
+    .line 7
+    if-nez v0, :cond_1
+
+    .line 8
+    .line 9
+    const/4 p0, 0x0
+
+    .line 10
+    return p0
 
     .line 11
     :cond_1
@@ -77,155 +129,40 @@
 
     .line 12
     .line 13
-    iget-wide v3, p0, Ldr2;->b:J
+    iget-object p1, p1, Ldr2;->j:Lkc7;
 
     .line 14
     .line 15
-    iget-wide v5, p1, Ldr2;->b:J
+    iget-object p0, p0, Ldr2;->j:Lkc7;
 
     .line 16
     .line 17
-    invoke-static {v3, v4, v5, v6}, Ld43;->u(JJ)Z
+    invoke-static {p1, p0}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 18
     .line 19
     .line 20
-    move-result v1
-
-    .line 21
-    if-nez v1, :cond_2
-
-    .line 22
-    .line 23
-    return v2
-
-    .line 24
-    :cond_2
-    iget-boolean p0, p0, Ldr2;->c:Z
-
-    .line 25
-    .line 26
-    iget-boolean p1, p1, Ldr2;->c:Z
-
-    .line 27
-    .line 28
-    if-eq p0, p1, :cond_3
-
-    .line 29
-    .line 30
-    return v2
-
-    .line 31
-    :cond_3
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    .line 1
-    iget-wide v0, p0, Ldr2;->b:J
-
-    .line 2
-    .line 3
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    mul-int/lit8 v0, v0, 0x1f
-
-    .line 8
-    .line 9
-    iget-boolean p0, p0, Ldr2;->c:Z
-
-    .line 10
-    .line 11
-    invoke-static {p0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    .line 12
-    .line 13
-    .line 14
     move-result p0
 
-    .line 15
-    add-int/2addr p0, v0
-
-    .line 16
+    .line 21
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 3
+.method public final hashCode()I
+    .locals 0
 
     .line 1
-    iget-wide v0, p0, Ldr2;->b:J
+    iget-object p0, p0, Ldr2;->j:Lkc7;
 
     .line 2
     .line 3
-    invoke-static {v0, v1}, Ld43;->c0(J)Ljava/lang/String;
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     .line 4
     .line 5
     .line 6
-    move-result-object v0
+    move-result p0
 
     .line 7
-    new-instance v1, Ljava/lang/StringBuilder;
-
-    .line 8
-    .line 9
-    const-string v2, "Exit(point="
-
-    .line 10
-    .line 11
-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 12
-    .line 13
-    .line 14
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 15
-    .line 16
-    .line 17
-    const-string v0, ", isInBounds="
-
-    .line 18
-    .line 19
-    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 20
-    .line 21
-    .line 22
-    iget-boolean p0, p0, Ldr2;->c:Z
-
-    .line 23
-    .line 24
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    .line 25
-    .line 26
-    .line 27
-    const-string p0, ")"
-
-    .line 28
-    .line 29
-    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 30
-    .line 31
-    .line 32
-    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 33
-    .line 34
-    .line 35
-    move-result-object p0
-
-    .line 36
-    return-object p0
+    return p0
 .end method

@@ -1,5 +1,5 @@
 version: 2.9.3
-apkFileName: BoxProxy-26.11.02.534f30c-arm64-v8a.apk
+apkFileName: BoxProxy-26.11.05.d5c365e-arm64-v8a.apk
 isFrameworkApk: false
 usesFramework:
   ids:
@@ -12,8 +12,8 @@ packageInfo:
   forcedPackageId: 127
   renameManifestPackage: null
 versionInfo:
-  versionCode: 134
-  versionName: 26.11.02.534f30c
+  versionCode: 139
+  versionName: 26.11.05.d5c365e
 resourcesAreCompressed: false
 sharedLibrary: false
 sparseResources: false

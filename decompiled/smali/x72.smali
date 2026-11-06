@@ -1,19 +1,19 @@
-.class public final Lx72;
+.class public Lx72;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lda5;
+.implements Lsb5;
 
 
 # instance fields
-.field public final j:Lw72;
+.field public final a:Lrb5;
 
-.field public final k:Ly72;
+.field public final b:I
 
 
 # direct methods
-.method public constructor <init>(Lw72;)V
+.method public constructor <init>(Lrb5;I)V
     .locals 0
 
     .line 1
@@ -22,70 +22,26 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lx72;->j:Lw72;
+    iput-object p1, p0, Lx72;->a:Lrb5;
 
     .line 5
     .line 6
-    invoke-interface {p1}, Lw72;->c()Ly72;
+    iput p2, p0, Lx72;->b:I
 
     .line 7
     .line 8
-    .line 9
-    move-result-object p1
-
-    .line 10
-    iput-object p1, p0, Lx72;->k:Ly72;
-
-    .line 11
-    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
+.method public final b()Lrb5;
     .locals 0
 
     .line 1
-    return-void
-.end method
-
-.method public final d()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lx72;->j:Lw72;
+    iget-object p0, p0, Lx72;->a:Lrb5;
 
     .line 2
     .line 3
-    iget-object p0, p0, Lx72;->k:Ly72;
-
-    .line 4
-    .line 5
-    invoke-interface {v0, p0}, Lw72;->a(Ly72;)V
-
-    .line 6
-    .line 7
-    .line 8
-    return-void
-.end method
-
-.method public final h()V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lx72;->j:Lw72;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lx72;->k:Ly72;
-
-    .line 4
-    .line 5
-    invoke-interface {v0, p0}, Lw72;->a(Ly72;)V
-
-    .line 6
-    .line 7
-    .line 8
-    return-void
+    return-object p0
 .end method

@@ -1,139 +1,72 @@
-.class public abstract synthetic Lqp6;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final Lqp6;
+.super Lz81;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# static fields
-.field public static final synthetic a:[I
+# instance fields
+.field public synthetic j:Ljava/lang/Object;
+
+.field public final synthetic k:Lup6;
+
+.field public l:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lup6;Lz81;)V
+    .locals 0
 
     .line 1
-    invoke-static {}, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->values()[Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
+    iput-object p1, p0, Lqp6;->k:Lup6;
 
     .line 2
     .line 3
-    .line 4
-    move-result-object v0
+    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
 
+    .line 4
     .line 5
-    array-length v0, v0
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iput-object p1, p0, Lqp6;->j:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Lqp6;->l:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
 
     .line 6
-    new-array v0, v0, [I
-
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    sput-object v0, Lqp6;->a:[I
+    iput p1, p0, Lqp6;->l:I
 
     .line 9
     .line 10
-    :try_start_0
-    sget-object v1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->None:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
+    iget-object p1, p0, Lqp6;->k:Lup6;
 
     .line 11
     .line 12
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+    const/4 v0, 0x0
 
     .line 13
+    invoke-virtual {p1, v0, p0}, Lup6;->s(ZLz81;)Ljava/lang/Object;
+
     .line 14
     .line 15
-    move-result v1
-
     .line 16
-    const/4 v2, 0x1
+    move-result-object p0
 
     .line 17
-    aput v2, v0, v1
-    :try_end_0
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 18
-    .line 19
-    :catch_0
-    :try_start_1
-    sget-object v0, Lqp6;->a:[I
-
-    .line 20
-    .line 21
-    sget-object v1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->Indent:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
-
-    .line 22
-    .line 23
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    .line 24
-    .line 25
-    .line 26
-    move-result v1
-
-    .line 27
-    const/4 v2, 0x2
-
-    .line 28
-    aput v2, v0, v1
-    :try_end_1
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
-
-    .line 29
-    .line 30
-    :catch_1
-    :try_start_2
-    sget-object v0, Lqp6;->a:[I
-
-    .line 31
-    .line 32
-    sget-object v1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->IndentOutdent:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
-
-    .line 33
-    .line 34
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    .line 35
-    .line 36
-    .line 37
-    move-result v1
-
-    .line 38
-    const/4 v2, 0x3
-
-    .line 39
-    aput v2, v0, v1
-    :try_end_2
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
-
-    .line 40
-    .line 41
-    :catch_2
-    :try_start_3
-    sget-object v0, Lqp6;->a:[I
-
-    .line 42
-    .line 43
-    sget-object v1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->Outdent:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
-
-    .line 44
-    .line 45
-    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
-
-    .line 46
-    .line 47
-    .line 48
-    move-result v1
-
-    .line 49
-    const/4 v2, 0x4
-
-    .line 50
-    aput v2, v0, v1
-    :try_end_3
-    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
-
-    .line 51
-    .line 52
-    :catch_3
-    return-void
+    return-object p0
 .end method

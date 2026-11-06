@@ -1,249 +1,239 @@
-.class public final synthetic Lpp0;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.class public final enum Lpp0;
+.super Ljava/lang/Enum;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
-# interfaces
-.implements Ls52;
+
+# static fields
+.field public static final enum k:Lpp0;
+
+.field public static final enum l:Lpp0;
+
+.field public static final enum m:Lpp0;
+
+.field public static final enum n:Lpp0;
+
+.field public static final enum o:Lpp0;
+
+.field public static final synthetic p:[Lpp0;
+
+.field public static final synthetic q:Lzv1;
 
 
 # instance fields
-.field public final synthetic j:Ld52;
-
-.field public final synthetic k:Z
-
-.field public final synthetic l:Z
-
-.field public final synthetic m:Lhu0;
-
-.field public final synthetic n:F
-
-.field public final synthetic o:F
-
-.field public final synthetic p:F
-
-.field public final synthetic q:Lko3;
-
-.field public final synthetic r:F
-
-.field public final synthetic s:Lo52;
-
-.field public final synthetic t:Lo52;
-
-.field public final synthetic u:Lo52;
-
-.field public final synthetic v:Lko3;
+.field public final j:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ld52;ZZLhu0;FFFLko3;FLo52;Lo52;Lo52;Lko3;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 8
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lpp0;
 
     .line 2
     .line 3
+    const/4 v1, 0x0
+
     .line 4
-    iput-object p1, p0, Lpp0;->j:Ld52;
+    const-string v2, "outbound"
 
     .line 5
     .line 6
-    iput-boolean p2, p0, Lpp0;->k:Z
+    const-string v3, "Outbound"
 
     .line 7
     .line 8
-    iput-boolean p3, p0, Lpp0;->l:Z
+    invoke-direct {v0, v1, v3, v2}, Lpp0;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
     .line 9
     .line 10
-    iput-object p4, p0, Lpp0;->m:Lhu0;
-
     .line 11
-    .line 12
-    iput p5, p0, Lpp0;->n:F
-
-    .line 13
-    .line 14
-    iput p6, p0, Lpp0;->o:F
-
-    .line 15
-    .line 16
-    iput p7, p0, Lpp0;->p:F
-
-    .line 17
-    .line 18
-    iput-object p8, p0, Lpp0;->q:Lko3;
-
-    .line 19
-    .line 20
-    iput p9, p0, Lpp0;->r:F
-
-    .line 21
-    .line 22
-    iput-object p10, p0, Lpp0;->s:Lo52;
-
-    .line 23
-    .line 24
-    iput-object p11, p0, Lpp0;->t:Lo52;
-
-    .line 25
-    .line 26
-    iput-object p12, p0, Lpp0;->u:Lo52;
-
-    .line 27
-    .line 28
-    iput-object p13, p0, Lpp0;->v:Lko3;
-
-    .line 29
-    .line 30
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 16
-
-    .line 1
-    move-object/from16 v0, p0
-
-    .line 2
-    .line 3
-    move-object/from16 v13, p1
-
-    .line 4
-    .line 5
-    check-cast v13, Lv01;
-
-    .line 6
-    .line 7
-    move-object/from16 v1, p2
-
-    .line 8
-    .line 9
-    check-cast v1, Ljava/lang/Integer;
-
-    .line 10
-    .line 11
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sput-object v0, Lpp0;->k:Lpp0;
 
     .line 12
     .line 13
-    .line 14
-    const/16 v1, 0x1b1
+    new-instance v1, Lpp0;
 
+    .line 14
     .line 15
+    const/4 v2, 0x1
+
     .line 16
-    invoke-static {v1}, Lw23;->h0(I)I
+    const-string v3, "domain"
 
     .line 17
     .line 18
-    .line 19
-    move-result v14
+    const-string v4, "Domain"
 
+    .line 19
     .line 20
-    iget-object v1, v0, Lpp0;->j:Ld52;
+    invoke-direct {v1, v2, v4, v3}, Lpp0;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
     .line 21
     .line 22
-    move-object v2, v1
-
     .line 23
-    iget-boolean v1, v0, Lpp0;->k:Z
+    sput-object v1, Lpp0;->l:Lpp0;
 
     .line 24
     .line 25
-    move-object v3, v2
+    new-instance v2, Lpp0;
 
     .line 26
-    iget-boolean v2, v0, Lpp0;->l:Z
-
     .line 27
+    const/4 v3, 0x2
+
     .line 28
-    move-object v4, v3
+    const-string v4, "destination_ip"
 
     .line 29
-    iget-object v3, v0, Lpp0;->m:Lhu0;
-
     .line 30
+    const-string v5, "DestinationIp"
+
     .line 31
-    move-object v5, v4
-
     .line 32
-    iget v4, v0, Lpp0;->n:F
+    invoke-direct {v2, v3, v5, v4}, Lpp0;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
     .line 33
     .line 34
-    move-object v6, v5
-
     .line 35
-    iget v5, v0, Lpp0;->o:F
+    sput-object v2, Lpp0;->m:Lpp0;
 
     .line 36
     .line 37
-    move-object v7, v6
+    new-instance v3, Lpp0;
 
     .line 38
-    iget v6, v0, Lpp0;->p:F
-
     .line 39
+    const/4 v4, 0x3
+
     .line 40
-    move-object v8, v7
+    const-string v5, "rule"
 
     .line 41
-    iget-object v7, v0, Lpp0;->q:Lko3;
-
     .line 42
-    .line 43
-    move-object v9, v8
+    const-string v6, "Rule"
 
+    .line 43
     .line 44
-    iget v8, v0, Lpp0;->r:F
+    invoke-direct {v3, v4, v6, v5}, Lpp0;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
     .line 45
     .line 46
-    move-object v10, v9
-
     .line 47
-    iget-object v9, v0, Lpp0;->s:Lo52;
+    sput-object v3, Lpp0;->n:Lpp0;
 
     .line 48
     .line 49
-    move-object v11, v10
+    new-instance v4, Lpp0;
 
     .line 50
-    iget-object v10, v0, Lpp0;->t:Lo52;
-
     .line 51
+    const/4 v5, 0x4
+
     .line 52
-    move-object v12, v11
+    const-string v6, "process"
 
     .line 53
-    iget-object v11, v0, Lpp0;->u:Lo52;
-
     .line 54
+    const-string v7, "Process"
+
     .line 55
-    iget-object v0, v0, Lpp0;->v:Lko3;
-
     .line 56
+    invoke-direct {v4, v5, v7, v6}, Lpp0;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+
     .line 57
-    move-object v15, v12
-
     .line 58
-    move-object v12, v0
-
     .line 59
-    move-object v0, v15
+    sput-object v4, Lpp0;->o:Lpp0;
 
     .line 60
-    invoke-static/range {v0 .. v14}, Lwe7;->e(Ld52;ZZLhu0;FFFLko3;FLo52;Lo52;Lo52;Lko3;Lv01;I)V
-
     .line 61
+    filled-new-array {v0, v1, v2, v3, v4}, [Lpp0;
+
     .line 62
     .line 63
-    sget-object v0, Lk27;->a:Lk27;
-
     .line 64
+    move-result-object v0
+
     .line 65
+    sput-object v0, Lpp0;->p:[Lpp0;
+
+    .line 66
+    .line 67
+    new-instance v1, Lzv1;
+
+    .line 68
+    .line 69
+    invoke-direct {v1, v0}, Lzv1;-><init>([Ljava/lang/Enum;)V
+
+    .line 70
+    .line 71
+    .line 72
+    sput-object v1, Lpp0;->q:Lzv1;
+
+    .line 73
+    .line 74
+    return-void
+.end method
+
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p2, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p3, p0, Lpp0;->j:Ljava/lang/String;
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lpp0;
+    .locals 1
+
+    .line 1
+    const-class v0, Lpp0;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lpp0;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Lpp0;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lpp0;->p:[Lpp0;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lpp0;
+
+    .line 8
+    .line 9
     return-object v0
 .end method

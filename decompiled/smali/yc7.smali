@@ -1,159 +1,60 @@
-.class public final Lyc7;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lxc7;
-
-
-# instance fields
-.field public final b:Lzg1;
+.class public Lyc7;
+.super Lxc7;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # direct methods
 .method public constructor <init>()V
-    .locals 8
+    .locals 0
 
     .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    invoke-direct {p0}, Lxc7;-><init>()V
 
     .line 2
     .line 3
-    const/16 v1, 0x22
-
     .line 4
+    return-void
+.end method
+
+.method public constructor <init>(Lnd7;)V
+    .locals 0
+
     .line 5
-    if-lt v0, v1, :cond_0
+    invoke-direct {p0, p1}, Lxc7;-><init>(Lnd7;)V
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public d(ILyq2;)V
+    .locals 0
+
+    .line 1
+    invoke-static {p1}, Lmd7;->a(I)I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p1
+
+    .line 5
+    invoke-virtual {p2}, Lyq2;->d()Landroid/graphics/Insets;
 
     .line 6
     .line 7
-    sget-object v0, Lah1;->j:Lah1;
-
     .line 8
+    move-result-object p2
+
     .line 9
-    goto :goto_0
+    iget-object p0, p0, Lvc7;->e:Landroid/view/WindowInsets$Builder;
 
     .line 10
-    :cond_0
-    sget-object v0, Lp6;->c0:Lp6;
-
     .line 11
-    .line 12
-    :goto_0
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-static {p0, p1, p2}, Lqc7;->h(Landroid/view/WindowInsets$Builder;ILandroid/graphics/Insets;)V
 
+    .line 12
     .line 13
     .line 14
-    .line 15
-    iput-object v0, p0, Lyc7;->b:Lzg1;
-
-    .line 16
-    .line 17
-    const/4 p0, 0x1
-
-    .line 18
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-object v0
-
-    .line 22
-    const/4 p0, 0x2
-
-    .line 23
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 24
-    .line 25
-    .line 26
-    move-result-object v1
-
-    .line 27
-    const/4 p0, 0x4
-
-    .line 28
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 29
-    .line 30
-    .line 31
-    move-result-object v2
-
-    .line 32
-    const/16 p0, 0x8
-
-    .line 33
-    .line 34
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 35
-    .line 36
-    .line 37
-    move-result-object v3
-
-    .line 38
-    const/16 p0, 0x10
-
-    .line 39
-    .line 40
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 41
-    .line 42
-    .line 43
-    move-result-object v4
-
-    .line 44
-    const/16 p0, 0x20
-
-    .line 45
-    .line 46
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 47
-    .line 48
-    .line 49
-    move-result-object v5
-
-    .line 50
-    const/16 p0, 0x40
-
-    .line 51
-    .line 52
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 53
-    .line 54
-    .line 55
-    move-result-object v6
-
-    .line 56
-    const/16 p0, 0x80
-
-    .line 57
-    .line 58
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 59
-    .line 60
-    .line 61
-    move-result-object v7
-
-    .line 62
-    filled-new-array/range {v0 .. v7}, [Ljava/lang/Integer;
-
-    .line 63
-    .line 64
-    .line 65
-    move-result-object p0
-
-    .line 66
-    invoke-static {p0}, Loc7;->j([Ljava/lang/Object;)Ljava/util/ArrayList;
-
-    .line 67
-    .line 68
-    .line 69
     return-void
 .end method

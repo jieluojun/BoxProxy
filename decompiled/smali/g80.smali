@@ -1,15 +1,15 @@
 .class public final Lg80;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 # interfaces
-.implements Lo80;
+.implements Lq90;
 
 
 # static fields
 .field public static final INSTANCE:Lg80;
 
-.field public static final synthetic a:Lt03;
+.field public static final synthetic a:Lc23;
 
 
 # direct methods
@@ -30,24 +30,24 @@
 
     .line 7
     .line 8
-    new-instance v0, Lu70;
+    new-instance v0, Lev;
 
     .line 9
     .line 10
-    const/16 v1, 0x8
+    const/16 v1, 0x15
 
     .line 11
     .line 12
-    invoke-direct {v0, v1}, Lu70;-><init>(B)V
+    invoke-direct {v0, v1}, Lev;-><init>(B)V
 
     .line 13
     .line 14
     .line 15
-    sget-object v1, Lt43;->j:Lt43;
+    sget-object v1, Lr53;->j:Lr53;
 
     .line 16
     .line 17
-    invoke-static {v1, v0}, Loc7;->Q(Lt43;Ld52;)Lt03;
+    invoke-static {v1, v0}, Lcs;->H(Lr53;Le62;)Lc23;
 
     .line 18
     .line 19
@@ -55,7 +55,7 @@
     move-result-object v0
 
     .line 21
-    sput-object v0, Lg80;->a:Lt03;
+    sput-object v0, Lg80;->a:Lc23;
 
     .line 22
     .line 23
@@ -101,7 +101,7 @@
     .locals 0
 
     .line 1
-    const p0, 0x9ada5e6
+    const p0, 0x144748bf
 
     .line 2
     .line 3
@@ -109,21 +109,21 @@
     return p0
 .end method
 
-.method public final serializer()Lgx2;
+.method public final serializer()Lqy2;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lgx2;"
+            "Lqy2;"
         }
     .end annotation
 
     .line 1
-    sget-object p0, Lg80;->a:Lt03;
+    sget-object p0, Lg80;->a:Lc23;
 
     .line 2
     .line 3
-    invoke-interface {p0}, Lt03;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Lc23;->getValue()Ljava/lang/Object;
 
     .line 4
     .line 5
@@ -131,7 +131,7 @@
     move-result-object p0
 
     .line 7
-    check-cast p0, Lgx2;
+    check-cast p0, Lqy2;
 
     .line 8
     .line 9
@@ -142,7 +142,7 @@
     .locals 0
 
     .line 1
-    const-string p0, "SharedNetworkConfig"
+    const-string p0, "AppManagement"
 
     .line 2
     .line 3

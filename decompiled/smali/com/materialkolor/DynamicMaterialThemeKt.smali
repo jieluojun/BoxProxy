@@ -1,21 +1,21 @@
 .class public final Lcom/materialkolor/DynamicMaterialThemeKt;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # direct methods
-.method public static final DynamicMaterialTheme(Lip1;Lbz5;La07;ZLry1;Ls52;Lv01;II)V
+.method public static final DynamicMaterialTheme(Liq1;Lt06;Lq17;ZLrz1;Lt62;Lz11;II)V
     .locals 14
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lip1;",
-            "Lbz5;",
-            "La07;",
+            "Liq1;",
+            "Lt06;",
+            "Lq17;",
             "Z",
-            "Lry1;",
-            "Ls52;",
-            "Lv01;",
+            "Lrz1;",
+            "Lt62;",
+            "Lz11;",
             "II)V"
         }
     .end annotation
@@ -47,7 +47,7 @@
 
     .line 14
     .line 15
-    check-cast v3, Ls62;
+    check-cast v3, Lt72;
 
     .line 16
     .line 17
@@ -56,7 +56,7 @@
     .line 18
     .line 19
     .line 20
-    invoke-virtual {v3, v1}, Ls62;->d0(I)Lv01;
+    invoke-virtual {v3, v1}, Lt72;->d0(I)Lz11;
 
     .line 21
     .line 22
@@ -69,7 +69,7 @@
 
     .line 26
     .line 27
-    invoke-virtual {v3, p0}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v3, p0}, Lt72;->g(Ljava/lang/Object;)Z
 
     .line 28
     .line 29
@@ -119,7 +119,7 @@
 
     .line 46
     .line 47
-    invoke-virtual {v3, p1}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v3, p1}, Lt72;->g(Ljava/lang/Object;)Z
 
     .line 48
     .line 49
@@ -168,7 +168,7 @@
 
     .line 68
     .line 69
-    invoke-virtual {v3, v4}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v4}, Lt72;->g(Ljava/lang/Object;)Z
 
     .line 70
     .line 71
@@ -243,7 +243,7 @@
 
     .line 100
     .line 101
-    invoke-virtual {v3, v8}, Ls62;->h(Z)Z
+    invoke-virtual {v3, v8}, Lt72;->h(Z)Z
 
     .line 102
     .line 103
@@ -300,7 +300,7 @@
 
     .line 126
     .line 127
-    invoke-virtual {v3, v0}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v0}, Lt72;->g(Ljava/lang/Object;)Z
 
     .line 128
     .line 129
@@ -312,7 +312,7 @@
 
     .line 132
     :cond_a
-    invoke-virtual {v3, v0}, Ls62;->i(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v0}, Lt72;->i(Ljava/lang/Object;)Z
 
     .line 133
     .line 134
@@ -353,7 +353,7 @@
 
     .line 148
     .line 149
-    invoke-virtual {v3, v6}, Ls62;->i(Ljava/lang/Object;)Z
+    invoke-virtual {v3, v6}, Lt72;->i(Ljava/lang/Object;)Z
 
     .line 150
     .line 151
@@ -420,7 +420,7 @@
 
     .line 176
     .line 177
-    invoke-virtual {v3, v10, v9}, Ls62;->T(IZ)Z
+    invoke-virtual {v3, v10, v9}, Lt72;->T(IZ)Z
 
     .line 178
     .line 179
@@ -432,7 +432,7 @@
 
     .line 182
     .line 183
-    invoke-virtual {v3}, Ls62;->Y()V
+    invoke-virtual {v3}, Lt72;->Y()V
 
     .line 184
     .line 185
@@ -450,7 +450,7 @@
 
     .line 192
     .line 193
-    invoke-virtual {v3}, Ls62;->A()Z
+    invoke-virtual {v3}, Lt72;->A()Z
 
     .line 194
     .line 195
@@ -466,7 +466,7 @@
 
     .line 200
     :cond_10
-    invoke-virtual {v3}, Ls62;->W()V
+    invoke-virtual {v3}, Lt72;->W()V
 
     .line 201
     .line 202
@@ -534,11 +534,11 @@
 
     .line 228
     .line 229
-    sget-object v2, Lxh3;->b:Lkp1;
+    sget-object v2, Lfj3;->b:Lkq1;
 
     .line 230
     .line 231
-    invoke-virtual {v3, v2}, Ls62;->k(Leu4;)Ljava/lang/Object;
+    invoke-virtual {v3, v2}, Lt72;->k(Lrv4;)Ljava/lang/Object;
 
     .line 232
     .line 233
@@ -546,11 +546,11 @@
     move-result-object v2
 
     .line 235
-    check-cast v2, Lvh3;
+    check-cast v2, Lcj3;
 
     .line 236
     .line 237
-    iget-object v2, v2, Lvh3;->c:Lbz5;
+    iget-object v2, v2, Lcj3;->c:Lt06;
 
     .line 238
     .line 239
@@ -574,11 +574,11 @@
 
     .line 246
     .line 247
-    sget-object v4, Lxh3;->b:Lkp1;
+    sget-object v4, Lfj3;->b:Lkq1;
 
     .line 248
     .line 249
-    invoke-virtual {v3, v4}, Ls62;->k(Leu4;)Ljava/lang/Object;
+    invoke-virtual {v3, v4}, Lt72;->k(Lrv4;)Ljava/lang/Object;
 
     .line 250
     .line 251
@@ -586,11 +586,11 @@
     move-result-object v4
 
     .line 253
-    check-cast v4, Lvh3;
+    check-cast v4, Lcj3;
 
     .line 254
     .line 255
-    iget-object v4, v4, Lvh3;->b:La07;
+    iget-object v4, v4, Lcj3;->b:Lq17;
 
     .line 256
     .line 257
@@ -615,7 +615,7 @@
 
     .line 265
     .line 266
-    invoke-static {}, Lcom/materialkolor/ktx/ColorKt;->getDefaultColorSpring()Lu86;
+    invoke-static {}, Lcom/materialkolor/ktx/ColorKt;->getDefaultColorSpring()Lma6;
 
     .line 267
     .line 268
@@ -640,7 +640,7 @@
 
     .line 275
     :goto_d
-    invoke-virtual {v3}, Ls62;->s()V
+    invoke-virtual {v3}, Lt72;->s()V
 
     .line 276
     .line 277
@@ -649,7 +649,7 @@
 
     .line 279
     .line 280
-    invoke-virtual {p0, v3, v0}, Lip1;->a(Ls62;I)Lnu0;
+    invoke-virtual {p0, v3, v0}, Liq1;->a(Lt72;I)Lpv0;
 
     .line 281
     .line 282
@@ -666,13 +666,13 @@
     .line 287
     .line 288
     .line 289
-    invoke-virtual {v3, v1}, Ls62;->c0(I)V
+    invoke-virtual {v3, v1}, Lt72;->c0(I)V
 
     .line 290
     .line 291
     .line 292
     :goto_e
-    invoke-virtual {v3, v11}, Ls62;->r(Z)V
+    invoke-virtual {v3, v11}, Lt72;->r(Z)V
 
     .line 293
     .line 294
@@ -686,16 +686,16 @@
     .line 297
     .line 298
     .line 299
-    invoke-virtual {v3, v1}, Ls62;->c0(I)V
+    invoke-virtual {v3, v1}, Lt72;->c0(I)V
 
     .line 300
     .line 301
     .line 302
-    new-instance v1, Lbp1;
+    new-instance v1, Lbq1;
 
     .line 303
     .line 304
-    invoke-direct {v1, v13, v12}, Lbp1;-><init>(Lry1;B)V
+    invoke-direct {v1, v13, v12}, Lbq1;-><init>(Lrz1;B)V
 
     .line 305
     .line 306
@@ -709,7 +709,7 @@
     const/4 v2, 0x0
 
     .line 310
-    invoke-static/range {v0 .. v5}, Lcom/materialkolor/ktx/ColorSchemeKt;->animateColorScheme(Lnu0;Lt52;Ljava/lang/String;Lv01;II)Lnu0;
+    invoke-static/range {v0 .. v5}, Lcom/materialkolor/ktx/ColorSchemeKt;->animateColorScheme(Lpv0;Lu62;Ljava/lang/String;Lz11;II)Lpv0;
 
     .line 311
     .line 312
@@ -721,7 +721,7 @@
 
     .line 315
     :goto_f
-    invoke-static {}, Lcom/materialkolor/LocalDynamicMaterialThemeSeedKt;->getLocalDynamicMaterialThemeSeed()Leu4;
+    invoke-static {}, Lcom/materialkolor/LocalDynamicMaterialThemeSeedKt;->getLocalDynamicMaterialThemeSeed()Lrv4;
 
     .line 316
     .line 317
@@ -729,7 +729,7 @@
     move-result-object v1
 
     .line 319
-    invoke-virtual {p0}, Lip1;->e()J
+    invoke-virtual {p0}, Liq1;->e()J
 
     .line 320
     .line 321
@@ -737,16 +737,16 @@
     move-result-wide v4
 
     .line 323
-    new-instance v2, Lhu0;
+    new-instance v2, Ljv0;
 
     .line 324
     .line 325
-    invoke-direct {v2, v4, v5}, Lhu0;-><init>(J)V
+    invoke-direct {v2, v4, v5}, Ljv0;-><init>(J)V
 
     .line 326
     .line 327
     .line 328
-    invoke-virtual {v1, v2}, Leu4;->a(Ljava/lang/Object;)Lgu4;
+    invoke-virtual {v1, v2}, Lrv4;->a(Ljava/lang/Object;)Ltv4;
 
     .line 329
     .line 330
@@ -754,11 +754,11 @@
     move-result-object v1
 
     .line 332
-    new-instance v2, Lfp1;
+    new-instance v2, Lfq1;
 
     .line 333
     .line 334
-    invoke-direct {v2, v0, v8, v9, v6}, Lfp1;-><init>(Lnu0;Lbz5;La07;Ls52;)V
+    invoke-direct {v2, v0, v8, v9, v6}, Lfq1;-><init>(Lpv0;Lt06;Lq17;Lt62;)V
 
     .line 335
     .line 336
@@ -768,7 +768,7 @@
     .line 338
     .line 339
     .line 340
-    invoke-static {v0, v2, v3}, Lr97;->M(ILa62;Lv01;)Loy0;
+    invoke-static {v0, v2, v3}, Lfm;->f0(ILb72;Lz11;)Lqz0;
 
     .line 341
     .line 342
@@ -780,7 +780,7 @@
 
     .line 345
     .line 346
-    invoke-static {v1, v0, v3, v2}, Lam0;->a(Lgu4;Ls52;Lv01;I)V
+    invoke-static {v1, v0, v3, v2}, Lhq;->e(Ltv4;Lt62;Lz11;I)V
 
     .line 347
     .line 348
@@ -804,7 +804,7 @@
 
     .line 355
     :cond_1a
-    invoke-virtual {v3}, Ls62;->W()V
+    invoke-virtual {v3}, Lt72;->W()V
 
     .line 356
     .line 357
@@ -825,7 +825,7 @@
 
     .line 363
     :goto_10
-    invoke-virtual {v0}, Ls62;->u()Lg85;
+    invoke-virtual {v0}, Lt72;->u()Lu95;
 
     .line 364
     .line 365
@@ -837,7 +837,7 @@
 
     .line 368
     .line 369
-    new-instance v0, Lgp1;
+    new-instance v0, Lgq1;
 
     .line 370
     .line 371
@@ -848,12 +848,12 @@
 
     .line 373
     .line 374
-    invoke-direct/range {v0 .. v8}, Lgp1;-><init>(Lip1;Lbz5;La07;ZLry1;Ls52;II)V
+    invoke-direct/range {v0 .. v8}, Lgq1;-><init>(Liq1;Lt06;Lq17;ZLrz1;Lt62;II)V
 
     .line 375
     .line 376
     .line 377
-    iput-object v0, v9, Lg85;->d:Ls52;
+    iput-object v0, v9, Lu95;->d:Lt62;
 
     .line 378
     .line 379
@@ -861,26 +861,26 @@
     return-void
 .end method
 
-.method public static final DynamicMaterialTheme-0OstJqQ(JZZLhu0;Lhu0;Lhu0;Lhu0;Lhu0;Lok4;DLzu0;Llp1;Lbz5;La07;ZLry1;Ls52;Lv01;III)V
+.method public static final DynamicMaterialTheme-0OstJqQ(JZZLjv0;Ljv0;Ljv0;Ljv0;Ljv0;Lcm4;DLbw0;Llq1;Lt06;Lq17;ZLrz1;Lt62;Lz11;III)V
     .locals 41
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JZZ",
-            "Lhu0;",
-            "Lhu0;",
-            "Lhu0;",
-            "Lhu0;",
-            "Lhu0;",
-            "Lok4;",
+            "Ljv0;",
+            "Ljv0;",
+            "Ljv0;",
+            "Ljv0;",
+            "Ljv0;",
+            "Lcm4;",
             "D",
-            "Lzu0;",
-            "Llp1;",
-            "Lbz5;",
-            "La07;",
+            "Lbw0;",
+            "Llq1;",
+            "Lt06;",
+            "Lq17;",
             "Z",
-            "Lry1;",
-            "Ls52;",
-            "Lv01;",
+            "Lrz1;",
+            "Lt62;",
+            "Lz11;",
             "III)V"
         }
     .end annotation
@@ -898,11 +898,11 @@
     .line 1
     move-object/from16 v4, p19
 
-    check-cast v4, Ls62;
+    check-cast v4, Lt72;
 
     const v5, 0x73170d36
 
-    invoke-virtual {v4, v5}, Ls62;->d0(I)Lv01;
+    invoke-virtual {v4, v5}, Lt72;->d0(I)Lz11;
 
     and-int/lit8 v5, v1, 0x6
 
@@ -910,7 +910,7 @@
 
     if-nez v5, :cond_1
 
-    invoke-virtual {v4, v8, v9}, Ls62;->f(J)Z
+    invoke-virtual {v4, v8, v9}, Lt72;->f(J)Z
 
     move-result v5
 
@@ -942,7 +942,7 @@
 
     move/from16 v10, p2
 
-    invoke-virtual {v4, v10}, Ls62;->h(Z)Z
+    invoke-virtual {v4, v10}, Lt72;->h(Z)Z
 
     move-result v13
 
@@ -985,7 +985,7 @@
 
     move/from16 v6, p3
 
-    invoke-virtual {v4, v6}, Ls62;->h(Z)Z
+    invoke-virtual {v4, v6}, Lt72;->h(Z)Z
 
     move-result v16
 
@@ -1024,7 +1024,7 @@
 
     move-object/from16 v7, p4
 
-    invoke-virtual {v4, v7}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v7}, Lt72;->g(Ljava/lang/Object;)Z
 
     move-result v20
 
@@ -1063,7 +1063,7 @@
 
     move-object/from16 v11, p5
 
-    invoke-virtual {v4, v11}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v11}, Lt72;->g(Ljava/lang/Object;)Z
 
     move-result v24
 
@@ -1103,7 +1103,7 @@
 
     if-nez v28, :cond_10
 
-    invoke-virtual {v4, v12}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v12}, Lt72;->g(Ljava/lang/Object;)Z
 
     move-result v29
 
@@ -1144,7 +1144,7 @@
 
     if-nez v33, :cond_13
 
-    invoke-virtual {v4, v14}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v14}, Lt72;->g(Ljava/lang/Object;)Z
 
     move-result v34
 
@@ -1181,7 +1181,7 @@
 
     if-nez v35, :cond_16
 
-    invoke-virtual {v4, v1}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v1}, Lt72;->g(Ljava/lang/Object;)Z
 
     move-result v35
 
@@ -1237,7 +1237,7 @@
     move/from16 v1, v35
 
     :goto_10
-    invoke-virtual {v4, v1}, Ls62;->e(I)Z
+    invoke-virtual {v4, v1}, Lt72;->e(I)Z
 
     move-result v1
 
@@ -1268,7 +1268,7 @@
 
     move-wide/from16 v5, p10
 
-    invoke-virtual {v4, v5, v6}, Ls62;->c(D)Z
+    invoke-virtual {v4, v5, v6}, Lt72;->c(D)Z
 
     move-result v35
 
@@ -1319,7 +1319,7 @@
     move-result v1
 
     :goto_15
-    invoke-virtual {v4, v1}, Ls62;->e(I)Z
+    invoke-virtual {v4, v1}, Lt72;->e(I)Z
 
     move-result v1
 
@@ -1368,7 +1368,7 @@
     goto :goto_18
 
     :goto_19
-    invoke-virtual {v4, v1}, Ls62;->e(I)Z
+    invoke-virtual {v4, v1}, Lt72;->e(I)Z
 
     move-result v1
 
@@ -1402,7 +1402,7 @@
 
     move-object/from16 v1, p14
 
-    invoke-virtual {v4, v1}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v1}, Lt72;->g(Ljava/lang/Object;)Z
 
     move-result v19
 
@@ -1439,7 +1439,7 @@
 
     move-object/from16 v1, p15
 
-    invoke-virtual {v4, v1}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v1}, Lt72;->g(Ljava/lang/Object;)Z
 
     move-result v23
 
@@ -1485,7 +1485,7 @@
 
     move/from16 v6, p16
 
-    invoke-virtual {v4, v6}, Ls62;->h(Z)Z
+    invoke-virtual {v4, v6}, Lt72;->h(Z)Z
 
     move-result v17
 
@@ -1516,14 +1516,14 @@
 
     if-nez v17, :cond_2d
 
-    invoke-virtual {v4, v0}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v0}, Lt72;->g(Ljava/lang/Object;)Z
 
     move-result v17
 
     goto :goto_23
 
     :cond_2d
-    invoke-virtual {v4, v0}, Ls62;->i(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v0}, Lt72;->i(Ljava/lang/Object;)Z
 
     move-result v17
 
@@ -1542,7 +1542,7 @@
 
     if-nez v17, :cond_31
 
-    invoke-virtual {v4, v0}, Ls62;->i(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v0}, Lt72;->i(Ljava/lang/Object;)Z
 
     move-result v17
 
@@ -1588,13 +1588,13 @@
     :goto_25
     and-int/lit8 v1, v35, 0x1
 
-    invoke-virtual {v4, v1, v0}, Ls62;->T(IZ)Z
+    invoke-virtual {v4, v1, v0}, Lt72;->T(IZ)Z
 
     move-result v0
 
     if-eqz v0, :cond_4c
 
-    invoke-virtual {v4}, Ls62;->Y()V
+    invoke-virtual {v4}, Lt72;->Y()V
 
     and-int/lit8 v0, p20, 0x1
 
@@ -1604,7 +1604,7 @@
 
     if-eqz v0, :cond_3c
 
-    invoke-virtual {v4}, Ls62;->A()Z
+    invoke-virtual {v4}, Lt72;->A()Z
 
     move-result v0
 
@@ -1614,7 +1614,7 @@
 
     .line 2
     :cond_34
-    invoke-virtual {v4}, Ls62;->W()V
+    invoke-virtual {v4}, Lt72;->W()V
 
     and-int/lit8 v0, v3, 0x2
 
@@ -1718,7 +1718,7 @@
     if-eqz v0, :cond_3d
 
     .line 3
-    invoke-static {v4}, Lzu6;->M(Lv01;)Z
+    invoke-static {v4}, Lim;->O(Lz11;)Z
 
     move-result v0
 
@@ -1772,7 +1772,7 @@
     if-eqz v37, :cond_44
 
     .line 4
-    sget-object v15, Lok4;->j:Lok4;
+    sget-object v15, Lcm4;->j:Lcm4;
 
     goto :goto_2b
 
@@ -1805,13 +1805,13 @@
     if-eqz v0, :cond_46
 
     .line 5
-    sget-object v0, Lzu0;->j:Lt8;
+    sget-object v0, Lbw0;->j:Lv8;
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     and-int/lit8 v0, p19, -0xf
 
-    sget-object v21, Lzu0;->k:Lzu0;
+    sget-object v21, Lbw0;->k:Lbw0;
 
     goto :goto_2d
 
@@ -1828,13 +1828,13 @@
     if-eqz v0, :cond_47
 
     .line 6
-    sget-object v0, Llp1;->j:Li11;
+    sget-object v0, Llq1;->j:Lm21;
 
     invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     and-int/lit8 v0, p3, -0x71
 
-    sget-object v22, Llp1;->k:Llp1;
+    sget-object v22, Llq1;->k:Llq1;
 
     goto :goto_2e
 
@@ -1851,17 +1851,17 @@
     if-eqz v1, :cond_48
 
     .line 7
-    sget-object v1, Lxh3;->b:Lkp1;
+    sget-object v1, Lfj3;->b:Lkq1;
 
     .line 8
-    invoke-virtual {v4, v1}, Ls62;->k(Leu4;)Ljava/lang/Object;
+    invoke-virtual {v4, v1}, Lt72;->k(Lrv4;)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lvh3;
+    check-cast v1, Lcj3;
 
     .line 9
-    iget-object v1, v1, Lvh3;->c:Lbz5;
+    iget-object v1, v1, Lcj3;->c:Lt06;
 
     and-int/lit16 v0, v0, -0x381
 
@@ -1878,17 +1878,17 @@
     if-eqz v1, :cond_49
 
     .line 10
-    sget-object v1, Lxh3;->b:Lkp1;
+    sget-object v1, Lfj3;->b:Lkq1;
 
     .line 11
-    invoke-virtual {v4, v1}, Ls62;->k(Leu4;)Ljava/lang/Object;
+    invoke-virtual {v4, v1}, Lt72;->k(Lrv4;)Ljava/lang/Object;
 
     move-result-object v1
 
-    check-cast v1, Lvh3;
+    check-cast v1, Lcj3;
 
     .line 12
-    iget-object v1, v1, Lvh3;->b:La07;
+    iget-object v1, v1, Lcj3;->b:Lq17;
 
     and-int/lit16 v0, v0, -0x1c01
 
@@ -1911,7 +1911,7 @@
     if-eqz v5, :cond_4b
 
     .line 13
-    invoke-static {}, Lcom/materialkolor/ktx/ColorKt;->getDefaultColorSpring()Lu86;
+    invoke-static {}, Lcom/materialkolor/ktx/ColorKt;->getDefaultColorSpring()Lma6;
 
     move-result-object v5
 
@@ -1987,7 +1987,7 @@
 
     .line 14
     :goto_33
-    invoke-virtual {v4}, Ls62;->s()V
+    invoke-virtual {v4}, Lt72;->s()V
 
     const v18, 0x7ffffffe
 
@@ -2004,7 +2004,7 @@
     move-wide/from16 v4, p0
 
     .line 15
-    invoke-static/range {v4 .. v22}, Lcom/materialkolor/DynamicMaterialThemeStateKt;->rememberDynamicMaterialThemeState-CdFb-wI(JZZLhu0;Lhu0;Lhu0;Lhu0;Lhu0;Lok4;DLzu0;Llp1;Ls52;Lv01;III)Lip1;
+    invoke-static/range {v4 .. v22}, Lcom/materialkolor/DynamicMaterialThemeStateKt;->rememberDynamicMaterialThemeState-CdFb-wI(JZZLjv0;Ljv0;Ljv0;Ljv0;Ljv0;Lcm4;DLbw0;Llq1;Lt62;Lz11;III)Liq1;
 
     move-result-object v18
 
@@ -2035,7 +2035,7 @@
     move-object/from16 p6, v24
 
     .line 16
-    invoke-static/range {p2 .. p10}, Lcom/materialkolor/DynamicMaterialThemeKt;->DynamicMaterialTheme(Lip1;Lbz5;La07;ZLry1;Ls52;Lv01;II)V
+    invoke-static/range {p2 .. p10}, Lcom/materialkolor/DynamicMaterialThemeKt;->DynamicMaterialTheme(Liq1;Lt06;Lq17;ZLrz1;Lt62;Lz11;II)V
 
     move/from16 v4, p5
 
@@ -2073,7 +2073,7 @@
     move-object/from16 v19, v4
 
     .line 17
-    invoke-virtual/range {v19 .. v19}, Ls62;->W()V
+    invoke-virtual/range {v19 .. v19}, Lt72;->W()V
 
     move/from16 v4, p3
 
@@ -2105,7 +2105,7 @@
 
     .line 18
     :goto_34
-    invoke-virtual/range {v19 .. v19}, Ls62;->u()Lg85;
+    invoke-virtual/range {v19 .. v19}, Lt72;->u()Lu95;
 
     move-result-object v0
 
@@ -2113,7 +2113,7 @@
 
     move-object/from16 v19, v0
 
-    new-instance v0, Lhp1;
+    new-instance v0, Lhq1;
 
     move/from16 v20, p20
 
@@ -2135,40 +2135,40 @@
 
     move-wide/from16 v1, p0
 
-    invoke-direct/range {v0 .. v22}, Lhp1;-><init>(JZZLhu0;Lhu0;Lhu0;Lhu0;Lhu0;Lok4;DLzu0;Llp1;Lbz5;La07;ZLry1;Ls52;III)V
+    invoke-direct/range {v0 .. v22}, Lhq1;-><init>(JZZLjv0;Ljv0;Ljv0;Ljv0;Ljv0;Lcm4;DLbw0;Llq1;Lt06;Lq17;ZLrz1;Lt62;III)V
 
     move-object v1, v0
 
     move-object/from16 v0, v38
 
     .line 19
-    iput-object v1, v0, Lg85;->d:Ls52;
+    iput-object v1, v0, Lu95;->d:Lt62;
 
     :cond_4d
     return-void
 .end method
 
-.method public static final DynamicMaterialTheme-bLGS3X0(JZZLhu0;Lhu0;Lhu0;Lhu0;Lhu0;Lhu0;Lok4;DLzu0;Llp1;Lbz5;La07;ZLry1;Ls52;Lv01;III)V
+.method public static final DynamicMaterialTheme-bLGS3X0(JZZLjv0;Ljv0;Ljv0;Ljv0;Ljv0;Ljv0;Lcm4;DLbw0;Llq1;Lt06;Lq17;ZLrz1;Lt62;Lz11;III)V
     .locals 46
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(JZZ",
-            "Lhu0;",
-            "Lhu0;",
-            "Lhu0;",
-            "Lhu0;",
-            "Lhu0;",
-            "Lhu0;",
-            "Lok4;",
+            "Ljv0;",
+            "Ljv0;",
+            "Ljv0;",
+            "Ljv0;",
+            "Ljv0;",
+            "Ljv0;",
+            "Lcm4;",
             "D",
-            "Lzu0;",
-            "Llp1;",
-            "Lbz5;",
-            "La07;",
+            "Lbw0;",
+            "Llq1;",
+            "Lt06;",
+            "Lq17;",
             "Z",
-            "Lry1;",
-            "Ls52;",
-            "Lv01;",
+            "Lrz1;",
+            "Lt62;",
+            "Lz11;",
             "III)V"
         }
     .end annotation
@@ -2199,7 +2199,7 @@
 
     .line 13
     .line 14
-    check-cast v4, Ls62;
+    check-cast v4, Lt72;
 
     .line 15
     .line 16
@@ -2208,7 +2208,7 @@
     .line 17
     .line 18
     .line 19
-    invoke-virtual {v4, v5}, Ls62;->d0(I)Lv01;
+    invoke-virtual {v4, v5}, Lt72;->d0(I)Lz11;
 
     .line 20
     .line 21
@@ -2225,7 +2225,7 @@
 
     .line 27
     .line 28
-    invoke-virtual {v4, v8, v9}, Ls62;->f(J)Z
+    invoke-virtual {v4, v8, v9}, Lt72;->f(J)Z
 
     .line 29
     .line 30
@@ -2279,7 +2279,7 @@
 
     .line 49
     .line 50
-    invoke-virtual {v4, v10}, Ls62;->h(Z)Z
+    invoke-virtual {v4, v10}, Lt72;->h(Z)Z
 
     .line 51
     .line 52
@@ -2354,7 +2354,7 @@
 
     .line 81
     .line 82
-    invoke-virtual {v4, v6}, Ls62;->h(Z)Z
+    invoke-virtual {v4, v6}, Lt72;->h(Z)Z
 
     .line 83
     .line 84
@@ -2425,7 +2425,7 @@
 
     .line 113
     .line 114
-    invoke-virtual {v4, v7}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v7}, Lt72;->g(Ljava/lang/Object;)Z
 
     .line 115
     .line 116
@@ -2496,7 +2496,7 @@
 
     .line 145
     .line 146
-    invoke-virtual {v4, v11}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v11}, Lt72;->g(Ljava/lang/Object;)Z
 
     .line 147
     .line 148
@@ -2570,7 +2570,7 @@
 
     .line 179
     .line 180
-    invoke-virtual {v4, v12}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v12}, Lt72;->g(Ljava/lang/Object;)Z
 
     .line 181
     .line 182
@@ -2645,7 +2645,7 @@
 
     .line 213
     .line 214
-    invoke-virtual {v4, v14}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v14}, Lt72;->g(Ljava/lang/Object;)Z
 
     .line 215
     .line 216
@@ -2720,7 +2720,7 @@
 
     .line 247
     .line 248
-    invoke-virtual {v4, v1}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v1}, Lt72;->g(Ljava/lang/Object;)Z
 
     .line 249
     .line 250
@@ -2796,7 +2796,7 @@
 
     .line 281
     .line 282
-    invoke-virtual {v4, v1}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v1}, Lt72;->g(Ljava/lang/Object;)Z
 
     .line 283
     .line 284
@@ -2896,7 +2896,7 @@
     .line 326
     .line 327
     :goto_12
-    invoke-virtual {v4, v1}, Ls62;->e(I)Z
+    invoke-virtual {v4, v1}, Lt72;->e(I)Z
 
     .line 328
     .line 329
@@ -2948,7 +2948,7 @@
 
     .line 349
     .line 350
-    invoke-virtual {v4, v5, v6}, Ls62;->c(D)Z
+    invoke-virtual {v4, v5, v6}, Lt72;->c(D)Z
 
     .line 351
     .line 352
@@ -3042,7 +3042,7 @@
 
     .line 391
     :goto_17
-    invoke-virtual {v4, v1}, Ls62;->e(I)Z
+    invoke-virtual {v4, v1}, Lt72;->e(I)Z
 
     .line 392
     .line 393
@@ -3121,7 +3121,7 @@
 
     .line 425
     :goto_1b
-    invoke-virtual {v4, v1}, Ls62;->e(I)Z
+    invoke-virtual {v4, v1}, Lt72;->e(I)Z
 
     .line 426
     .line 427
@@ -3171,7 +3171,7 @@
 
     .line 447
     .line 448
-    invoke-virtual {v4, v1}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v1}, Lt72;->g(Ljava/lang/Object;)Z
 
     .line 449
     .line 450
@@ -3230,7 +3230,7 @@
 
     .line 473
     .line 474
-    invoke-virtual {v4, v1}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v1}, Lt72;->g(Ljava/lang/Object;)Z
 
     .line 475
     .line 476
@@ -3306,7 +3306,7 @@
 
     .line 507
     .line 508
-    invoke-virtual {v4, v1}, Ls62;->h(Z)Z
+    invoke-virtual {v4, v1}, Lt72;->h(Z)Z
 
     .line 509
     .line 510
@@ -3361,7 +3361,7 @@
 
     .line 532
     .line 533
-    invoke-virtual {v4, v0}, Ls62;->g(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v0}, Lt72;->g(Ljava/lang/Object;)Z
 
     .line 534
     .line 535
@@ -3373,7 +3373,7 @@
 
     .line 538
     :cond_30
-    invoke-virtual {v4, v0}, Ls62;->i(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v0}, Lt72;->i(Ljava/lang/Object;)Z
 
     .line 539
     .line 540
@@ -3408,7 +3408,7 @@
 
     .line 553
     .line 554
-    invoke-virtual {v4, v0}, Ls62;->i(Ljava/lang/Object;)Z
+    invoke-virtual {v4, v0}, Lt72;->i(Ljava/lang/Object;)Z
 
     .line 555
     .line 556
@@ -3491,7 +3491,7 @@
 
     .line 592
     .line 593
-    invoke-virtual {v4, v1, v0}, Ls62;->T(IZ)Z
+    invoke-virtual {v4, v1, v0}, Lt72;->T(IZ)Z
 
     .line 594
     .line 595
@@ -3503,7 +3503,7 @@
 
     .line 598
     .line 599
-    invoke-virtual {v4}, Ls62;->Y()V
+    invoke-virtual {v4}, Lt72;->Y()V
 
     .line 600
     .line 601
@@ -3526,7 +3526,7 @@
 
     .line 611
     .line 612
-    invoke-virtual {v4}, Ls62;->A()Z
+    invoke-virtual {v4}, Lt72;->A()Z
 
     .line 613
     .line 614
@@ -3542,7 +3542,7 @@
 
     .line 619
     :cond_37
-    invoke-virtual {v4}, Ls62;->W()V
+    invoke-virtual {v4}, Lt72;->W()V
 
     .line 620
     .line 621
@@ -3727,7 +3727,7 @@
 
     .line 701
     .line 702
-    invoke-static {v4}, Lzu6;->M(Lv01;)Z
+    invoke-static {v4}, Lim;->O(Lz11;)Z
 
     .line 703
     .line 704
@@ -3850,7 +3850,7 @@
 
     .line 754
     .line 755
-    sget-object v16, Lok4;->j:Lok4;
+    sget-object v16, Lcm4;->j:Lcm4;
 
     .line 756
     .line 757
@@ -3892,7 +3892,7 @@
 
     .line 773
     .line 774
-    sget-object v1, Lzu0;->j:Lt8;
+    sget-object v1, Lbw0;->j:Lv8;
 
     .line 775
     .line 776
@@ -3905,7 +3905,7 @@
 
     .line 780
     .line 781
-    sget-object v1, Lzu0;->k:Lzu0;
+    sget-object v1, Lbw0;->k:Lbw0;
 
     .line 782
     .line 783
@@ -3942,7 +3942,7 @@
 
     .line 796
     .line 797
-    sget-object v1, Llp1;->j:Li11;
+    sget-object v1, Llq1;->j:Lm21;
 
     .line 798
     .line 799
@@ -3955,7 +3955,7 @@
 
     .line 803
     .line 804
-    sget-object v1, Llp1;->k:Llp1;
+    sget-object v1, Llq1;->k:Llq1;
 
     .line 805
     .line 806
@@ -3980,11 +3980,11 @@
 
     .line 814
     .line 815
-    sget-object v1, Lxh3;->b:Lkp1;
+    sget-object v1, Lfj3;->b:Lkq1;
 
     .line 816
     .line 817
-    invoke-virtual {v4, v1}, Ls62;->k(Leu4;)Ljava/lang/Object;
+    invoke-virtual {v4, v1}, Lt72;->k(Lrv4;)Ljava/lang/Object;
 
     .line 818
     .line 819
@@ -3992,11 +3992,11 @@
     move-result-object v1
 
     .line 821
-    check-cast v1, Lvh3;
+    check-cast v1, Lcj3;
 
     .line 822
     .line 823
-    iget-object v1, v1, Lvh3;->c:Lbz5;
+    iget-object v1, v1, Lcj3;->c:Lt06;
 
     .line 824
     .line 825
@@ -4025,11 +4025,11 @@
 
     .line 835
     .line 836
-    sget-object v0, Lxh3;->b:Lkp1;
+    sget-object v0, Lfj3;->b:Lkq1;
 
     .line 837
     .line 838
-    invoke-virtual {v4, v0}, Ls62;->k(Leu4;)Ljava/lang/Object;
+    invoke-virtual {v4, v0}, Lt72;->k(Lrv4;)Ljava/lang/Object;
 
     .line 839
     .line 840
@@ -4037,11 +4037,11 @@
     move-result-object v0
 
     .line 842
-    check-cast v0, Lvh3;
+    check-cast v0, Lcj3;
 
     .line 843
     .line 844
-    iget-object v0, v0, Lvh3;->b:La07;
+    iget-object v0, v0, Lcj3;->b:Lq17;
 
     .line 845
     .line 846
@@ -4083,7 +4083,7 @@
 
     .line 861
     .line 862
-    invoke-static {}, Lcom/materialkolor/ktx/ColorKt;->getDefaultColorSpring()Lu86;
+    invoke-static {}, Lcom/materialkolor/ktx/ColorKt;->getDefaultColorSpring()Lma6;
 
     .line 863
     .line 864
@@ -4201,7 +4201,7 @@
 
     .line 913
     :goto_34
-    invoke-virtual {v4}, Ls62;->s()V
+    invoke-virtual {v4}, Lt72;->s()V
 
     .line 914
     .line 915
@@ -4239,7 +4239,7 @@
 
     .line 932
     .line 933
-    invoke-static/range {v4 .. v23}, Lcom/materialkolor/DynamicMaterialThemeStateKt;->rememberDynamicMaterialThemeState-UQznLDA(JZZLhu0;Lhu0;Lhu0;Lhu0;Lhu0;Lhu0;Lok4;DLzu0;Llp1;Ls52;Lv01;III)Lip1;
+    invoke-static/range {v4 .. v23}, Lcom/materialkolor/DynamicMaterialThemeStateKt;->rememberDynamicMaterialThemeState-UQznLDA(JZZLjv0;Ljv0;Ljv0;Ljv0;Ljv0;Ljv0;Lcm4;DLbw0;Llq1;Lt62;Lz11;III)Liq1;
 
     .line 934
     .line 935
@@ -4294,7 +4294,7 @@
 
     .line 959
     .line 960
-    invoke-static/range {p2 .. p10}, Lcom/materialkolor/DynamicMaterialThemeKt;->DynamicMaterialTheme(Lip1;Lbz5;La07;ZLry1;Ls52;Lv01;II)V
+    invoke-static/range {p2 .. p10}, Lcom/materialkolor/DynamicMaterialThemeKt;->DynamicMaterialTheme(Liq1;Lt06;Lq17;ZLrz1;Lt62;Lz11;II)V
 
     .line 961
     .line 962
@@ -4358,7 +4358,7 @@
 
     .line 986
     .line 987
-    invoke-virtual/range {v20 .. v20}, Ls62;->W()V
+    invoke-virtual/range {v20 .. v20}, Lt72;->W()V
 
     .line 988
     .line 989
@@ -4419,7 +4419,7 @@
     .line 1014
     .line 1015
     :goto_35
-    invoke-virtual/range {v20 .. v20}, Ls62;->u()Lg85;
+    invoke-virtual/range {v20 .. v20}, Lt72;->u()Lu95;
 
     .line 1016
     .line 1017
@@ -4461,7 +4461,7 @@
 
     .line 1034
     .line 1035
-    new-instance v0, Lap1;
+    new-instance v0, Laq1;
 
     .line 1036
     .line 1037
@@ -4493,7 +4493,7 @@
 
     .line 1050
     .line 1051
-    invoke-direct/range {v0 .. v23}, Lap1;-><init>(JZZLhu0;Lhu0;Lhu0;Lhu0;Lhu0;Lhu0;Lok4;DLzu0;Llp1;Lbz5;La07;ZLry1;Ls52;III)V
+    invoke-direct/range {v0 .. v23}, Laq1;-><init>(JZZLjv0;Ljv0;Ljv0;Ljv0;Ljv0;Ljv0;Lcm4;DLbw0;Llq1;Lt06;Lq17;ZLrz1;Lt62;III)V
 
     .line 1052
     .line 1053
@@ -4505,7 +4505,7 @@
 
     .line 1056
     .line 1057
-    iput-object v1, v0, Lg85;->d:Ls52;
+    iput-object v1, v0, Lu95;->d:Lt62;
 
     .line 1058
     .line 1059

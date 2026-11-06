@@ -1,76 +1,71 @@
-.class public final synthetic Lbx5;
-.super Ld62;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lo52;
+.class public abstract synthetic Lbx5;
+.super Ljava/lang/Object;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # static fields
-.field public static final k:Lbx5;
+.field public static final synthetic a:[I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 6
+    .locals 3
 
     .line 1
-    new-instance v0, Lbx5;
+    invoke-static {}, Lu92;->values()[Lu92;
 
     .line 2
     .line 3
-    const-string v4, "iterator()Ljava/util/Iterator;"
-
     .line 4
+    move-result-object v0
+
     .line 5
-    const/4 v5, 0x0
+    array-length v0, v0
 
     .line 6
-    const/4 v1, 0x1
+    new-array v0, v0, [I
 
     .line 7
-    const-class v2, Lvw5;
-
     .line 8
+    const/4 v1, 0x1
+
     .line 9
-    const-string v3, "iterator"
+    :try_start_0
+    aput v1, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 10
     .line 11
-    invoke-direct/range {v0 .. v5}, Ld62;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    :catch_0
+    const/4 v1, 0x2
 
     .line 12
+    :try_start_1
+    aput v1, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
     .line 13
     .line 14
-    sput-object v0, Lbx5;->k:Lbx5;
+    :catch_1
+    const/4 v1, 0x0
 
     .line 15
+    const/4 v2, 0x3
+
     .line 16
+    :try_start_2
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    .line 17
+    .line 18
+    :catch_2
+    sput-object v0, Lbx5;->a:[I
+
+    .line 19
+    .line 20
     return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    check-cast p1, Lvw5;
-
-    .line 2
-    .line 3
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 4
-    .line 5
-    .line 6
-    invoke-interface {p1}, Lvw5;->iterator()Ljava/util/Iterator;
-
-    .line 7
-    .line 8
-    .line 9
-    move-result-object p0
-
-    .line 10
-    return-object p0
 .end method

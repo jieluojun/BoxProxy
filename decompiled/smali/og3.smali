@@ -1,211 +1,199 @@
-.class public final synthetic Log3;
-.super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
-
-# interfaces
-.implements Lng3;
+.class public final Log3;
+.super Lp60;
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
 # instance fields
-.field public final synthetic a:B
-
-.field public final synthetic b:Ljava/lang/Object;
+.field public final U:Lv6;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;B)V
+.method public constructor <init>(Lv6;)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Log3;->a:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Log3;->b:Ljava/lang/Object;
-
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Log3;->U:Lv6;
 
+    .line 5
     .line 6
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Object;)Z
-    .locals 3
+.method public final Q(Ljava/lang/Object;)V
+    .locals 4
 
     .line 1
-    iget-byte v0, p0, Log3;->a:B
+    iget-object p0, p0, Log3;->U:Lv6;
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    iget-object p0, p0, Lv6;->a:Lx6;
 
     .line 4
-    const/4 v2, 0x1
-
     .line 5
-    iget-object p0, p0, Log3;->b:Ljava/lang/Object;
+    if-eqz p0, :cond_1
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_0
+    iget-object v0, p0, Lx6;->U:Lcz0;
 
     .line 8
     .line 9
+    iget-object v1, v0, Lcz0;->d:Ljava/util/ArrayList;
+
     .line 10
-    check-cast p0, Lng3;
-
     .line 11
+    iget-object v2, v0, Lcz0;->b:Ljava/util/LinkedHashMap;
+
     .line 12
-    if-eqz p0, :cond_0
-
     .line 13
-    .line 14
-    invoke-interface {p0, p1}, Lng3;->a(Ljava/lang/Object;)Z
+    iget-object v3, p0, Lx6;->V:Ljava/lang/String;
 
+    .line 14
     .line 15
+    invoke-virtual {v2, v3}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 16
     .line 17
-    move-result p0
-
     .line 18
-    if-nez p0, :cond_0
+    move-result-object v2
 
     .line 19
-    .line 20
-    move v1, v2
+    iget-object p0, p0, Lx6;->W:Llg3;
 
+    .line 20
     .line 21
-    :cond_0
-    return v1
+    if-eqz v2, :cond_0
 
     .line 22
-    :pswitch_0
-    check-cast p0, Ljava/util/ArrayList;
-
     .line 23
-    .line 24
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    check-cast v2, Ljava/lang/Number;
 
+    .line 24
     .line 25
+    invoke-virtual {v2}, Ljava/lang/Number;->intValue()I
+
     .line 26
     .line 27
-    move-result-object p0
-
     .line 28
-    :cond_1
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+    move-result v2
 
     .line 29
+    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
     .line 30
     .line 31
-    move-result v0
-
     .line 32
-    if-eqz v0, :cond_2
+    :try_start_0
+    invoke-virtual {v0, v2, p0, p1}, Lcz0;->b(ILlg3;Ljava/lang/Object;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 33
     .line 34
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
     .line 35
+    goto :goto_0
+
     .line 36
+    :catch_0
+    move-exception p0
+
     .line 37
-    move-result-object v0
+    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     .line 38
-    check-cast v0, Lng3;
-
     .line 39
     .line 40
-    invoke-interface {v0, p1}, Lng3;->a(Ljava/lang/Object;)Z
+    throw p0
 
     .line 41
+    :cond_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
     .line 42
     .line 43
-    move-result v0
+    const-string v1, "Attempting to launch an unregistered ActivityResultLauncher with contract "
 
     .line 44
-    if-eqz v0, :cond_1
-
     .line 45
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
     .line 46
-    move v1, v2
-
     .line 47
-    :cond_2
-    return v1
-
     .line 48
-    :pswitch_1
-    check-cast p0, Ljava/util/ArrayList;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 49
     .line 50
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
     .line 51
+    const-string p0, " and input "
+
     .line 52
     .line 53
-    move-result-object p0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 54
-    :cond_3
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
     .line 55
     .line 56
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
     .line 57
-    move-result v0
-
     .line 58
-    if-eqz v0, :cond_4
-
     .line 59
-    .line 60
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    const-string p0, ". You must ensure the ActivityResultLauncher is registered before calling launch()."
 
+    .line 60
     .line 61
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 62
     .line 63
-    move-result-object v0
-
     .line 64
-    check-cast v0, Lng3;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 65
     .line 66
-    invoke-interface {v0, p1}, Lng3;->a(Ljava/lang/Object;)Z
-
     .line 67
-    .line 68
-    .line 69
-    move-result v0
+    move-result-object p0
 
+    .line 68
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    .line 69
     .line 70
-    if-nez v0, :cond_3
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     .line 71
     .line 72
-    goto :goto_0
-
     .line 73
-    :cond_4
-    move v1, v2
+    move-result-object p0
 
     .line 74
-    :goto_0
-    return v1
+    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     .line 75
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 76
+    .line 77
+    throw p1
+
+    .line 78
+    :cond_1
+    const-string p0, "Launcher has not been initialized"
+
+    .line 79
+    .line 80
+    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+
+    .line 81
+    .line 82
+    .line 83
+    :goto_0
+    return-void
 .end method

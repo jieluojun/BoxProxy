@@ -1,24 +1,52 @@
-.class public abstract Lv57;
+.class public interface abstract Lv57;
 .super Ljava/lang/Object;
-.source "r8-map-id-adb9385fd45323bd1d9ee3e5a60d53e33e96c144368c2f9b042de79c702db584"
+.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
 
 
-# direct methods
-.method public static a(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
-    .locals 1
+# virtual methods
+.method public abstract a()Z
+.end method
+
+.method public abstract b(Lxh;Lxh;Lxh;)J
+.end method
+
+.method public abstract p(JLxh;Lxh;Lxh;)Lxh;
+.end method
+
+.method public abstract s(JLxh;Lxh;Lxh;)Lxh;
+.end method
+
+.method public t(Lxh;Lxh;Lxh;)Lxh;
+    .locals 6
 
     .line 1
-    sget v0, Lh67;->a:I
+    invoke-interface {p0, p1, p2, p3}, Lv57;->b(Lxh;Lxh;Lxh;)J
 
     .line 2
     .line 3
-    invoke-virtual {p0, p1}, Landroid/view/View;->dispatchApplyWindowInsets(Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
-
     .line 4
+    move-result-wide v1
+
     .line 5
+    move-object v0, p0
+
     .line 6
-    move-result-object p0
+    move-object v3, p1
 
     .line 7
+    move-object v4, p2
+
+    .line 8
+    move-object v5, p3
+
+    .line 9
+    invoke-interface/range {v0 .. v5}, Lv57;->p(JLxh;Lxh;Lxh;)Lxh;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
     return-object p0
 .end method
