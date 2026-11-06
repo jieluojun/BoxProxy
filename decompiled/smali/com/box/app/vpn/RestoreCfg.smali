@@ -350,7 +350,7 @@
 
     move-result-object v6
 
-    new-instance v7, Ln35;
+    new-instance v7, La55;
 
     const/4 v8, 0x0
 
@@ -383,7 +383,7 @@
 
     move-result-object v1
 
-    new-instance v2, Ln35;
+    new-instance v2, La55;
 
     const/4 v3, 0x0
 

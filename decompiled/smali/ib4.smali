@@ -139,336 +139,336 @@
 
 .method public constructor <init>(Lhb4;)V
 .locals 8
-invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-iget-object v0, p1, Lhb4;->a:Ljk1;
-iput-object v0, p0, Lib4;->a:Ljk1;
-iget-object v0, p1, Lhb4;->c:Ljava/util/ArrayList;
-invoke-static {v0}, Lfg7;->j(Ljava/util/List;)Ljava/util/List;
-move-result-object v0
-iput-object v0, p0, Lib4;->b:Ljava/util/List;
-iget-object v0, p1, Lhb4;->d:Ljava/util/ArrayList;
-invoke-static {v0}, Lfg7;->j(Ljava/util/List;)Ljava/util/List;
-move-result-object v0
-iput-object v0, p0, Lib4;->c:Ljava/util/List;
-iget-object v0, p1, Lhb4;->e:Lz6;
-iput-object v0, p0, Lib4;->d:Lz6;
-iget-boolean v0, p1, Lhb4;->f:Z
-iput-boolean v0, p0, Lib4;->e:Z
-iget-boolean v0, p1, Lhb4;->g:Z
-iput-boolean v0, p0, Lib4;->f:Z
-iget-object v0, p1, Lhb4;->h:Lr6;
-iput-object v0, p0, Lib4;->g:Lr6;
-iget-boolean v0, p1, Lhb4;->i:Z
-iput-boolean v0, p0, Lib4;->h:Z
-iget-boolean v0, p1, Lhb4;->j:Z
-iput-boolean v0, p0, Lib4;->i:Z
-iget-object v0, p1, Lhb4;->k:Lr6;
-iput-object v0, p0, Lib4;->j:Lr6;
-iget-object v0, p1, Lhb4;->l:Lhl1;
-iput-object v0, p0, Lib4;->k:Lhl1;
-iget-object v0, p1, Lhb4;->m:Ljava/net/ProxySelector;
-if-nez v0, :cond_0
-invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->sel()Ljava/net/ProxySelector;
-move-result-object v0
-if-nez v0, :cond_0
-sget-object v0, Lca4;->a:Lca4;
-:cond_0
-iput-object v0, p0, Lib4;->l:Ljava/net/ProxySelector;
-iget-object v0, p1, Lhb4;->n:Lr6;
-iput-object v0, p0, Lib4;->m:Lr6;
-iget-object v0, p1, Lhb4;->o:Ljavax/net/SocketFactory;
-iput-object v0, p0, Lib4;->n:Ljavax/net/SocketFactory;
-iget-object v0, p1, Lhb4;->r:Ljava/util/List;
-iput-object v0, p0, Lib4;->q:Ljava/util/List;
-iget-object v1, p1, Lhb4;->s:Ljava/util/List;
-iput-object v1, p0, Lib4;->r:Ljava/util/List;
-iget-object v1, p1, Lhb4;->t:Ljavax/net/ssl/HostnameVerifier;
-iput-object v1, p0, Lib4;->s:Ljavax/net/ssl/HostnameVerifier;
-iget v1, p1, Lhb4;->w:I
-iput v1, p0, Lib4;->v:I
-iget v1, p1, Lhb4;->x:I
-iput v1, p0, Lib4;->w:I
-iget v1, p1, Lhb4;->y:I
-iput v1, p0, Lib4;->x:I
-iget v1, p1, Lhb4;->z:I
-iput v1, p0, Lib4;->y:I
-iget v1, p1, Lhb4;->A:I
-iput v1, p0, Lib4;->z:I
-iget-char v1, p1, Lhb4;->B:C
-iput-char v1, p0, Lib4;->A:C
-iget-short v1, p1, Lhb4;->C:S
-int-to-long v1, v1
-long-to-int v1, v1
-iput-short v1, p0, Lib4;->B:S
-iget-object v1, p1, Lhb4;->D:Lsu4;
-if-nez v1, :cond_1
-new-instance v1, Lsu4;
-invoke-direct {v1}, Ljava/lang/Object;-><init>()V
-new-instance v2, Ljava/util/LinkedHashSet;
-invoke-direct {v2}, Ljava/util/LinkedHashSet;-><init>()V
-iput-object v2, v1, Lsu4;->j:Ljava/lang/Object;
-:cond_1
-iput-object v1, p0, Lib4;->C:Lsu4;
-iget-object v1, p1, Lhb4;->E:Luk6;
-if-nez v1, :cond_2
-sget-object v1, Luk6;->l:Luk6;
-:cond_2
-iput-object v1, p0, Lib4;->D:Luk6;
-iget-object v1, p1, Lhb4;->b:Le6;
-if-nez v1, :cond_3
-new-instance v1, Le6;
-const-wide/16 v2, 0x5
-sget-object v4, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
-const/4 v5, 0x5
-invoke-direct {v1, v5, v2, v3, v4}, Le6;-><init>(IJLjava/util/concurrent/TimeUnit;)V
-iput-object v1, p1, Lhb4;->b:Le6;
-:cond_3
-iput-object v1, p0, Lib4;->E:Le6;
-const/4 v1, 0x0
-if-eqz v0, :cond_4
-invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
-move-result v2
-if-eqz v2, :cond_4
-goto/16 :goto_5
-:cond_4
-invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-move-result-object v0
-:cond_5
-invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-move-result v2
-if-eqz v2, :cond_c
-invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-move-result-object v2
-check-cast v2, Lz41;
-iget-boolean v2, v2, Lz41;->a:Z
-if-eqz v2, :cond_5
-iget-object v0, p1, Lhb4;->p:Ljavax/net/ssl/SSLSocketFactory;
-if-eqz v0, :cond_7
-iput-object v0, p0, Lib4;->o:Ljavax/net/ssl/SSLSocketFactory;
-iget-object v2, p1, Lhb4;->v:Lyt;
-invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-iput-object v2, p0, Lib4;->u:Lyt;
-iget-object v3, p1, Lhb4;->q:Ljavax/net/ssl/X509TrustManager;
-invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-iput-object v3, p0, Lib4;->p:Ljavax/net/ssl/X509TrustManager;
-iget-object p1, p1, Lhb4;->u:Lan0;
-invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-iget-object v4, p1, Lan0;->b:Lyt;
-invoke-static {v4, v2}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-move-result v4
-if-eqz v4, :cond_6
-goto :goto_0
-:cond_6
-new-instance v4, Lan0;
-iget-object p1, p1, Lan0;->a:Ljava/util/Set;
-invoke-direct {v4, p1, v2}, Lan0;-><init>(Ljava/util/Set;Lyt;)V
-move-object p1, v4
-:goto_0
-iput-object p1, p0, Lib4;->t:Lan0;
-goto/16 :goto_6
-:cond_7
-sget-object v0, Lpp4;->a:Lq9;
-sget-object v0, Lpp4;->a:Lq9;
-invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-invoke-static {}, Ljavax/net/ssl/TrustManagerFactory;->getDefaultAlgorithm()Ljava/lang/String;
-move-result-object v0
-invoke-static {v0}, Ljavax/net/ssl/TrustManagerFactory;->getInstance(Ljava/lang/String;)Ljavax/net/ssl/TrustManagerFactory;
-move-result-object v0
-invoke-virtual {v0, v1}, Ljavax/net/ssl/TrustManagerFactory;->init(Ljava/security/KeyStore;)V
-invoke-virtual {v0}, Ljavax/net/ssl/TrustManagerFactory;->getTrustManagers()[Ljavax/net/ssl/TrustManager;
-move-result-object v0
-invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-array-length v2, v0
-const/4 v3, 0x1
-if-ne v2, v3, :cond_b
-const/4 v2, 0x0
-aget-object v4, v0, v2
-instance-of v5, v4, Ljavax/net/ssl/X509TrustManager;
-if-eqz v5, :cond_b
-move-object v0, v4
-check-cast v0, Ljavax/net/ssl/X509TrustManager;
-iput-object v0, p0, Lib4;->p:Ljavax/net/ssl/X509TrustManager;
-sget-object v4, Lpp4;->a:Lq9;
-invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-:try_start_0
-const-string v4, "newSSLContext"
-invoke-static {v4}, Landroid/os/StrictMode;->noteSlowCall(Ljava/lang/String;)V
-const-string v4, "TLS"
-invoke-static {v4}, Ljavax/net/ssl/SSLContext;->getInstance(Ljava/lang/String;)Ljavax/net/ssl/SSLContext;
-move-result-object v4
-invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-new-array v3, v3, [Ljavax/net/ssl/TrustManager;
-aput-object v0, v3, v2
-invoke-virtual {v4, v1, v3, v1}, Ljavax/net/ssl/SSLContext;->init([Ljavax/net/ssl/KeyManager;[Ljavax/net/ssl/TrustManager;Ljava/security/SecureRandom;)V
-invoke-virtual {v4}, Ljavax/net/ssl/SSLContext;->getSocketFactory()Ljavax/net/ssl/SSLSocketFactory;
-move-result-object v2
-invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-:try_end_0
-.catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_1
-iput-object v2, p0, Lib4;->o:Ljavax/net/ssl/SSLSocketFactory;
-sget-object v3, Lpp4;->a:Lq9;
-invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-:try_start_1
-new-instance v3, Landroid/net/http/X509TrustManagerExtensions;
-invoke-direct {v3, v0}, Landroid/net/http/X509TrustManagerExtensions;-><init>(Ljavax/net/ssl/X509TrustManager;)V
-:try_end_1
-.catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
-goto :goto_1
-:catch_0
-move-object v3, v1
-:goto_1
-if-eqz v3, :cond_8
-new-instance v4, Lx9;
-invoke-direct {v4, v0, v3}, Lx9;-><init>(Ljavax/net/ssl/X509TrustManager;Landroid/net/http/X509TrustManagerExtensions;)V
-goto :goto_2
-:cond_8
-move-object v4, v1
-:goto_2
-if-eqz v4, :cond_9
-move-object v3, v4
-goto :goto_3
-:cond_9
-new-instance v3, Lk00;
-const-string v4, "buildTrustRootIndex"
-invoke-static {v4}, Landroid/os/StrictMode;->noteSlowCall(Ljava/lang/String;)V
-new-instance v4, La20;
-invoke-interface {v0}, Ljavax/net/ssl/X509TrustManager;->getAcceptedIssuers()[Ljava/security/cert/X509Certificate;
-move-result-object v5
-array-length v6, v5
-invoke-static {v5, v6}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-move-result-object v5
-check-cast v5, [Ljava/security/cert/X509Certificate;
-invoke-direct {v4, v5}, La20;-><init>([Ljava/security/cert/X509Certificate;)V
-invoke-direct {v3, v4}, Lk00;-><init>(La20;)V
-:goto_3
-iput-object v3, p0, Lib4;->u:Lyt;
-iget-object p1, p1, Lhb4;->u:Lan0;
-invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-iget-object v4, p1, Lan0;->b:Lyt;
-invoke-static {v4, v3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-move-result v4
-if-eqz v4, :cond_a
-goto :goto_4
-:cond_a
-new-instance v4, Lan0;
-iget-object p1, p1, Lan0;->a:Ljava/util/Set;
-invoke-direct {v4, p1, v3}, Lan0;-><init>(Ljava/util/Set;Lyt;)V
-move-object p1, v4
-:goto_4
-iput-object p1, p0, Lib4;->t:Lan0;
-move-object v7, v3
-move-object v3, v0
-move-object v0, v2
-move-object v2, v7
-goto :goto_6
-:catch_1
-move-exception p0
-new-instance p1, Ljava/lang/AssertionError;
-new-instance v0, Ljava/lang/StringBuilder;
-const-string v1, "No System TLS: "
-invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-move-result-object v0
-invoke-direct {p1, v0, p0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
-throw p1
-:cond_b
-invoke-static {v0}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
-move-result-object p0
-invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-const-string p1, "Unexpected default trust managers: "
-invoke-virtual {p1, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-move-result-object p0
-invoke-static {p0}, Lue1;->c(Ljava/lang/Object;)V
-throw v1
-:cond_c
-:goto_5
-iput-object v1, p0, Lib4;->o:Ljavax/net/ssl/SSLSocketFactory;
-iput-object v1, p0, Lib4;->u:Lyt;
-iput-object v1, p0, Lib4;->p:Ljavax/net/ssl/X509TrustManager;
-sget-object p1, Lan0;->c:Lan0;
-iput-object p1, p0, Lib4;->t:Lan0;
-move-object v0, v1
-move-object v2, v0
-move-object v3, v2
-:goto_6
-iget-object p1, p0, Lib4;->c:Ljava/util/List;
-iget-object v4, p0, Lib4;->b:Ljava/util/List;
-invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-invoke-interface {v4, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-move-result v5
-if-nez v5, :cond_18
-invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-invoke-interface {p1, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
-move-result v4
-if-nez v4, :cond_17
-iget-object p1, p0, Lib4;->q:Ljava/util/List;
-if-eqz p1, :cond_d
-invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
-move-result v4
-if-eqz v4, :cond_d
-goto :goto_7
-:cond_d
-invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
-move-result-object p1
-:cond_e
-invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
-move-result v4
-if-eqz v4, :cond_12
-invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-move-result-object v4
-check-cast v4, Lz41;
-iget-boolean v4, v4, Lz41;->a:Z
-if-eqz v4, :cond_e
-if-eqz v0, :cond_11
-if-eqz v2, :cond_10
-if-eqz v3, :cond_f
-goto :goto_8
-:cond_f
-const-string p0, "x509TrustManager == null"
-invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
-throw v1
-:cond_10
-const-string p0, "certificateChainCleaner == null"
-invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
-throw v1
-:cond_11
-const-string p0, "sslSocketFactory == null"
-invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
-throw v1
-:cond_12
-:goto_7
-const-string p1, "Check failed."
-if-nez v0, :cond_16
-if-nez v2, :cond_15
-if-nez v3, :cond_14
-iget-object p0, p0, Lib4;->t:Lan0;
-sget-object v0, Lan0;->c:Lan0;
-invoke-static {p0, v0}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-move-result p0
-if-eqz p0, :cond_13
-:goto_8
-return-void
-:cond_13
-invoke-static {p1}, Ljw1;->e(Ljava/lang/String;)V
-throw v1
-:cond_14
-invoke-static {p1}, Ljw1;->e(Ljava/lang/String;)V
-throw v1
-:cond_15
-invoke-static {p1}, Ljw1;->e(Ljava/lang/String;)V
-throw v1
-:cond_16
-invoke-static {p1}, Ljw1;->e(Ljava/lang/String;)V
-throw v1
-:cond_17
-const-string p0, "Null network interceptor: "
-invoke-static {p0, p1}, Lue1;->x(Ljava/lang/String;Ljava/lang/Object;)V
-throw v1
-:cond_18
-const-string p0, "Null interceptor: "
-invoke-static {p0, v4}, Lue1;->x(Ljava/lang/String;Ljava/lang/Object;)V
-throw v1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object v0, p1, Lhb4;->a:Ljk1;
+    iput-object v0, p0, Lib4;->a:Ljk1;
+    iget-object v0, p1, Lhb4;->c:Ljava/util/ArrayList;
+    invoke-static {v0}, Lfg7;->j(Ljava/util/List;)Ljava/util/List;
+    move-result-object v0
+    iput-object v0, p0, Lib4;->b:Ljava/util/List;
+    iget-object v0, p1, Lhb4;->d:Ljava/util/ArrayList;
+    invoke-static {v0}, Lfg7;->j(Ljava/util/List;)Ljava/util/List;
+    move-result-object v0
+    iput-object v0, p0, Lib4;->c:Ljava/util/List;
+    iget-object v0, p1, Lhb4;->e:Lz6;
+    iput-object v0, p0, Lib4;->d:Lz6;
+    iget-boolean v0, p1, Lhb4;->f:Z
+    iput-boolean v0, p0, Lib4;->e:Z
+    iget-boolean v0, p1, Lhb4;->g:Z
+    iput-boolean v0, p0, Lib4;->f:Z
+    iget-object v0, p1, Lhb4;->h:Lr6;
+    iput-object v0, p0, Lib4;->g:Lr6;
+    iget-boolean v0, p1, Lhb4;->i:Z
+    iput-boolean v0, p0, Lib4;->h:Z
+    iget-boolean v0, p1, Lhb4;->j:Z
+    iput-boolean v0, p0, Lib4;->i:Z
+    iget-object v0, p1, Lhb4;->k:Lr6;
+    iput-object v0, p0, Lib4;->j:Lr6;
+    iget-object v0, p1, Lhb4;->l:Lhl1;
+    iput-object v0, p0, Lib4;->k:Lhl1;
+    iget-object v0, p1, Lhb4;->m:Ljava/net/ProxySelector;
+    if-nez v0, :cond_0
+    invoke-static {}, Lcom/box/app/vpn/VpnAppProxy;->sel()Ljava/net/ProxySelector;
+    move-result-object v0
+    if-nez v0, :cond_0
+    sget-object v0, Lca4;->a:Lca4;
+    :cond_0
+    iput-object v0, p0, Lib4;->l:Ljava/net/ProxySelector;
+    iget-object v0, p1, Lhb4;->n:Lr6;
+    iput-object v0, p0, Lib4;->m:Lr6;
+    iget-object v0, p1, Lhb4;->o:Ljavax/net/SocketFactory;
+    iput-object v0, p0, Lib4;->n:Ljavax/net/SocketFactory;
+    iget-object v0, p1, Lhb4;->r:Ljava/util/List;
+    iput-object v0, p0, Lib4;->q:Ljava/util/List;
+    iget-object v1, p1, Lhb4;->s:Ljava/util/List;
+    iput-object v1, p0, Lib4;->r:Ljava/util/List;
+    iget-object v1, p1, Lhb4;->t:Ljavax/net/ssl/HostnameVerifier;
+    iput-object v1, p0, Lib4;->s:Ljavax/net/ssl/HostnameVerifier;
+    iget v1, p1, Lhb4;->w:I
+    iput v1, p0, Lib4;->v:I
+    iget v1, p1, Lhb4;->x:I
+    iput v1, p0, Lib4;->w:I
+    iget v1, p1, Lhb4;->y:I
+    iput v1, p0, Lib4;->x:I
+    iget v1, p1, Lhb4;->z:I
+    iput v1, p0, Lib4;->y:I
+    iget v1, p1, Lhb4;->A:I
+    iput v1, p0, Lib4;->z:I
+    iget-char v1, p1, Lhb4;->B:C
+    iput-char v1, p0, Lib4;->A:C
+    iget-short v1, p1, Lhb4;->C:S
+    int-to-long v1, v1
+    long-to-int v1, v1
+    iput-short v1, p0, Lib4;->B:S
+    iget-object v1, p1, Lhb4;->D:Lsu4;
+    if-nez v1, :cond_1
+    new-instance v1, Lsu4;
+    invoke-direct {v1}, Ljava/lang/Object;-><init>()V
+    new-instance v2, Ljava/util/LinkedHashSet;
+    invoke-direct {v2}, Ljava/util/LinkedHashSet;-><init>()V
+    iput-object v2, v1, Lsu4;->j:Ljava/lang/Object;
+    :cond_1
+    iput-object v1, p0, Lib4;->C:Lsu4;
+    iget-object v1, p1, Lhb4;->E:Luk6;
+    if-nez v1, :cond_2
+    sget-object v1, Luk6;->l:Luk6;
+    :cond_2
+    iput-object v1, p0, Lib4;->D:Luk6;
+    iget-object v1, p1, Lhb4;->b:Le6;
+    if-nez v1, :cond_3
+    new-instance v1, Le6;
+    const-wide/16 v2, 0x5
+    sget-object v4, Ljava/util/concurrent/TimeUnit;->MINUTES:Ljava/util/concurrent/TimeUnit;
+    const/4 v5, 0x5
+    invoke-direct {v1, v5, v2, v3, v4}, Le6;-><init>(IJLjava/util/concurrent/TimeUnit;)V
+    iput-object v1, p1, Lhb4;->b:Le6;
+    :cond_3
+    iput-object v1, p0, Lib4;->E:Le6;
+    const/4 v1, 0x0
+    if-eqz v0, :cond_4
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
+    move-result v2
+    if-eqz v2, :cond_4
+    goto/16 :goto_5
+    :cond_4
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    move-result-object v0
+    :cond_5
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    move-result v2
+    if-eqz v2, :cond_c
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object v2
+    check-cast v2, Lz41;
+    iget-boolean v2, v2, Lz41;->a:Z
+    if-eqz v2, :cond_5
+    iget-object v0, p1, Lhb4;->p:Ljavax/net/ssl/SSLSocketFactory;
+    if-eqz v0, :cond_7
+    iput-object v0, p0, Lib4;->o:Ljavax/net/ssl/SSLSocketFactory;
+    iget-object v2, p1, Lhb4;->v:Lyt;
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object v2, p0, Lib4;->u:Lyt;
+    iget-object v3, p1, Lhb4;->q:Ljavax/net/ssl/X509TrustManager;
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object v3, p0, Lib4;->p:Ljavax/net/ssl/X509TrustManager;
+    iget-object p1, p1, Lhb4;->u:Lan0;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v4, p1, Lan0;->b:Lyt;
+    invoke-static {v4, v2}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v4
+    if-eqz v4, :cond_6
+    goto :goto_0
+    :cond_6
+    new-instance v4, Lan0;
+    iget-object p1, p1, Lan0;->a:Ljava/util/Set;
+    invoke-direct {v4, p1, v2}, Lan0;-><init>(Ljava/util/Set;Lyt;)V
+    move-object p1, v4
+    :goto_0
+    iput-object p1, p0, Lib4;->t:Lan0;
+    goto/16 :goto_6
+    :cond_7
+    sget-object v0, Lpp4;->a:Lq9;
+    sget-object v0, Lpp4;->a:Lq9;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {}, Ljavax/net/ssl/TrustManagerFactory;->getDefaultAlgorithm()Ljava/lang/String;
+    move-result-object v0
+    invoke-static {v0}, Ljavax/net/ssl/TrustManagerFactory;->getInstance(Ljava/lang/String;)Ljavax/net/ssl/TrustManagerFactory;
+    move-result-object v0
+    invoke-virtual {v0, v1}, Ljavax/net/ssl/TrustManagerFactory;->init(Ljava/security/KeyStore;)V
+    invoke-virtual {v0}, Ljavax/net/ssl/TrustManagerFactory;->getTrustManagers()[Ljavax/net/ssl/TrustManager;
+    move-result-object v0
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    array-length v2, v0
+    const/4 v3, 0x1
+    if-ne v2, v3, :cond_b
+    const/4 v2, 0x0
+    aget-object v4, v0, v2
+    instance-of v5, v4, Ljavax/net/ssl/X509TrustManager;
+    if-eqz v5, :cond_b
+    move-object v0, v4
+    check-cast v0, Ljavax/net/ssl/X509TrustManager;
+    iput-object v0, p0, Lib4;->p:Ljavax/net/ssl/X509TrustManager;
+    sget-object v4, Lpp4;->a:Lq9;
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :try_start_0
+    const-string v4, "newSSLContext"
+    invoke-static {v4}, Landroid/os/StrictMode;->noteSlowCall(Ljava/lang/String;)V
+    const-string v4, "TLS"
+    invoke-static {v4}, Ljavax/net/ssl/SSLContext;->getInstance(Ljava/lang/String;)Ljavax/net/ssl/SSLContext;
+    move-result-object v4
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-array v3, v3, [Ljavax/net/ssl/TrustManager;
+    aput-object v0, v3, v2
+    invoke-virtual {v4, v1, v3, v1}, Ljavax/net/ssl/SSLContext;->init([Ljavax/net/ssl/KeyManager;[Ljavax/net/ssl/TrustManager;Ljava/security/SecureRandom;)V
+    invoke-virtual {v4}, Ljavax/net/ssl/SSLContext;->getSocketFactory()Ljavax/net/ssl/SSLSocketFactory;
+    move-result-object v2
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :try_end_0
+    .catch Ljava/security/GeneralSecurityException; {:try_start_0 .. :try_end_0} :catch_1
+    iput-object v2, p0, Lib4;->o:Ljavax/net/ssl/SSLSocketFactory;
+    sget-object v3, Lpp4;->a:Lq9;
+    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    :try_start_1
+    new-instance v3, Landroid/net/http/X509TrustManagerExtensions;
+    invoke-direct {v3, v0}, Landroid/net/http/X509TrustManagerExtensions;-><init>(Ljavax/net/ssl/X509TrustManager;)V
+    :try_end_1
+    .catch Ljava/lang/IllegalArgumentException; {:try_start_1 .. :try_end_1} :catch_0
+    goto :goto_1
+    :catch_0
+    move-object v3, v1
+    :goto_1
+    if-eqz v3, :cond_8
+    new-instance v4, Lx9;
+    invoke-direct {v4, v0, v3}, Lx9;-><init>(Ljavax/net/ssl/X509TrustManager;Landroid/net/http/X509TrustManagerExtensions;)V
+    goto :goto_2
+    :cond_8
+    move-object v4, v1
+    :goto_2
+    if-eqz v4, :cond_9
+    move-object v3, v4
+    goto :goto_3
+    :cond_9
+    new-instance v3, Lk00;
+    const-string v4, "buildTrustRootIndex"
+    invoke-static {v4}, Landroid/os/StrictMode;->noteSlowCall(Ljava/lang/String;)V
+    new-instance v4, La20;
+    invoke-interface {v0}, Ljavax/net/ssl/X509TrustManager;->getAcceptedIssuers()[Ljava/security/cert/X509Certificate;
+    move-result-object v5
+    array-length v6, v5
+    invoke-static {v5, v6}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    move-result-object v5
+    check-cast v5, [Ljava/security/cert/X509Certificate;
+    invoke-direct {v4, v5}, La20;-><init>([Ljava/security/cert/X509Certificate;)V
+    invoke-direct {v3, v4}, Lk00;-><init>(La20;)V
+    :goto_3
+    iput-object v3, p0, Lib4;->u:Lyt;
+    iget-object p1, p1, Lhb4;->u:Lan0;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object v4, p1, Lan0;->b:Lyt;
+    invoke-static {v4, v3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v4
+    if-eqz v4, :cond_a
+    goto :goto_4
+    :cond_a
+    new-instance v4, Lan0;
+    iget-object p1, p1, Lan0;->a:Ljava/util/Set;
+    invoke-direct {v4, p1, v3}, Lan0;-><init>(Ljava/util/Set;Lyt;)V
+    move-object p1, v4
+    :goto_4
+    iput-object p1, p0, Lib4;->t:Lan0;
+    move-object v7, v3
+    move-object v3, v0
+    move-object v0, v2
+    move-object v2, v7
+    goto :goto_6
+    :catch_1
+    move-exception p0
+    new-instance p1, Ljava/lang/AssertionError;
+    new-instance v0, Ljava/lang/StringBuilder;
+    const-string v1, "No System TLS: "
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    move-result-object v0
+    invoke-direct {p1, v0, p0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    throw p1
+    :cond_b
+    invoke-static {v0}, Ljava/util/Arrays;->toString([Ljava/lang/Object;)Ljava/lang/String;
+    move-result-object p0
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-string p1, "Unexpected default trust managers: "
+    invoke-virtual {p1, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object p0
+    invoke-static {p0}, Lue1;->c(Ljava/lang/Object;)V
+    throw v1
+    :cond_c
+    :goto_5
+    iput-object v1, p0, Lib4;->o:Ljavax/net/ssl/SSLSocketFactory;
+    iput-object v1, p0, Lib4;->u:Lyt;
+    iput-object v1, p0, Lib4;->p:Ljavax/net/ssl/X509TrustManager;
+    sget-object p1, Lan0;->c:Lan0;
+    iput-object p1, p0, Lib4;->t:Lan0;
+    move-object v0, v1
+    move-object v2, v0
+    move-object v3, v2
+    :goto_6
+    iget-object p1, p0, Lib4;->c:Ljava/util/List;
+    iget-object v4, p0, Lib4;->b:Ljava/util/List;
+    invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-interface {v4, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    move-result v5
+    if-nez v5, :cond_18
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-interface {p1, v1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+    move-result v4
+    if-nez v4, :cond_17
+    iget-object p1, p0, Lib4;->q:Ljava/util/List;
+    if-eqz p1, :cond_d
+    invoke-interface {p1}, Ljava/util/Collection;->isEmpty()Z
+    move-result v4
+    if-eqz v4, :cond_d
+    goto :goto_7
+    :cond_d
+    invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    move-result-object p1
+    :cond_e
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
+    move-result v4
+    if-eqz v4, :cond_12
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    move-result-object v4
+    check-cast v4, Lz41;
+    iget-boolean v4, v4, Lz41;->a:Z
+    if-eqz v4, :cond_e
+    if-eqz v0, :cond_11
+    if-eqz v2, :cond_10
+    if-eqz v3, :cond_f
+    goto :goto_8
+    :cond_f
+    const-string p0, "x509TrustManager == null"
+    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+    throw v1
+    :cond_10
+    const-string p0, "certificateChainCleaner == null"
+    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+    throw v1
+    :cond_11
+    const-string p0, "sslSocketFactory == null"
+    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+    throw v1
+    :cond_12
+    :goto_7
+    const-string p1, "Check failed."
+    if-nez v0, :cond_16
+    if-nez v2, :cond_15
+    if-nez v3, :cond_14
+    iget-object p0, p0, Lib4;->t:Lan0;
+    sget-object v0, Lan0;->c:Lan0;
+    invoke-static {p0, v0}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result p0
+    if-eqz p0, :cond_13
+    :goto_8
+    return-void
+    :cond_13
+    invoke-static {p1}, Ljw1;->e(Ljava/lang/String;)V
+    throw v1
+    :cond_14
+    invoke-static {p1}, Ljw1;->e(Ljava/lang/String;)V
+    throw v1
+    :cond_15
+    invoke-static {p1}, Ljw1;->e(Ljava/lang/String;)V
+    throw v1
+    :cond_16
+    invoke-static {p1}, Ljw1;->e(Ljava/lang/String;)V
+    throw v1
+    :cond_17
+    const-string p0, "Null network interceptor: "
+    invoke-static {p0, p1}, Lue1;->x(Ljava/lang/String;Ljava/lang/Object;)V
+    throw v1
+    :cond_18
+    const-string p0, "Null interceptor: "
+    invoke-static {p0, v4}, Lue1;->x(Ljava/lang/String;Ljava/lang/Object;)V
+    throw v1
 .end method
 
 

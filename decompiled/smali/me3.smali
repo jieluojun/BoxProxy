@@ -176,100 +176,32 @@
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 4
-
-    .line 1
     iget-byte v0, p0, Lme3;->j:B
-
-    .line 2
-    .line 3
     sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
     const/4 v2, 0x0
-
-    .line 6
     iget-object p0, p0, Lme3;->k:Lle3;
-
-    .line 7
-    .line 8
     packed-switch v0, :pswitch_data_0
-
-    .line 9
-    .line 10
-    .line 11
     invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 12
-    .line 13
-    .line 14
     iget-object p1, p0, Lle3;->b:Lj26;
-
-    .line 15
-    .line 16
     new-instance v0, Lge3;
-
-    .line 17
-    .line 18
     const/4 v3, 0x2
-
-    .line 19
     invoke-direct {v0, p0, v2, v3}, Lge3;-><init>(Lle3;Ly81;B)V
-
-    .line 20
-    .line 21
-    .line 22
     const-string p0, "auto-refresh"
-
-    .line 23
-    .line 24
     invoke-static {p1, v0, p0}, Lcom/box/app/cfg/CfgDefer;->postD(Lj26;Lp62;Ljava/lang/String;)V
-
-    .line 25
-    .line 26
-    .line 27
     return-object v1
-
-    .line 28
     :pswitch_0
     invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 29
-    .line 30
-    .line 31
     iget-object p1, p0, Lle3;->b:Lj26;
-
-    .line 32
-    .line 33
     new-instance v0, Lge3;
-
-    .line 34
-    .line 35
     const/4 v3, 0x0
-
-    .line 36
     invoke-direct {v0, p0, v2, v3}, Lge3;-><init>(Lle3;Ly81;B)V
-
-    .line 37
-    .line 38
-    .line 39
     const-string p0, "refresh"
-
-    .line 40
-    .line 41
     const/4 v3, 0x1
-
     invoke-static {p1, v0, p0, v3}, Lcom/box/app/cfg/CfgDefer;->post(Lj26;Lp62;Ljava/lang/String;Z)V
-
-    .line 42
-    .line 43
-    .line 44
     return-object v1
-
-    .line 45
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_0
+    :pswitch_0
     .end packed-switch
 .end method
 

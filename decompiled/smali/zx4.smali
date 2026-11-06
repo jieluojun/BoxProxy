@@ -47,99 +47,29 @@
 # direct methods
 .method public synthetic constructor <init>(Ljava/util/List;Ljava/lang/String;Log3;Le55;Lmt3;Lmt3;Lmt3;Ljava/lang/String;Lgw4;Landroid/content/Context;Ljava/lang/String;Lp62;Ljava/lang/String;Log3;Lmt3;Lmt3;Lmt3;Lmt3;)V
     .locals 0
-
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
     iput-object p1, p0, Lzx4;->j:Ljava/util/List;
-
-    .line 5
-    .line 6
     iput-object p2, p0, Lzx4;->k:Ljava/lang/String;
-
-    .line 7
-    .line 8
     iput-object p3, p0, Lzx4;->l:Log3;
-
-    .line 9
-    .line 10
     iput-object p4, p0, Lzx4;->m:Le55;
-
-    .line 11
-    .line 12
     iput-object p5, p0, Lzx4;->n:Lmt3;
-
-    .line 13
-    .line 14
     iput-object p6, p0, Lzx4;->o:Lmt3;
-
-    .line 15
-    .line 16
     iput-object p7, p0, Lzx4;->p:Lmt3;
-
-    .line 17
-    .line 18
     iput-object p8, p0, Lzx4;->q:Ljava/lang/String;
-
-    .line 19
-    .line 20
     iput-object p9, p0, Lzx4;->r:Lgw4;
-
     invoke-static {p9}, Lcom/box/app/vpn/RestoreCfg;->vm(Lgw4;)V
-
-    .line 21
-    .line 22
     iput-object p10, p0, Lzx4;->s:Landroid/content/Context;
-
-    .line 23
-    .line 24
     iput-object p11, p0, Lzx4;->t:Ljava/lang/String;
-
-    .line 25
-    .line 26
     iput-object p12, p0, Lzx4;->u:Lp62;
-
-    .line 27
-    .line 28
     iput-object p13, p0, Lzx4;->v:Ljava/lang/String;
-
-    .line 29
-    .line 30
     iput-object p14, p0, Lzx4;->w:Log3;
-
-    .line 31
-    .line 32
     iput-object p15, p0, Lzx4;->x:Lmt3;
-
-    .line 33
-    .line 34
     move-object/from16 p1, p16
-
-    .line 35
-    .line 36
     iput-object p1, p0, Lzx4;->y:Lmt3;
-
-    .line 37
-    .line 38
     move-object/from16 p1, p17
-
-    .line 39
-    .line 40
     iput-object p1, p0, Lzx4;->z:Lmt3;
-
-    .line 41
-    .line 42
     move-object/from16 p1, p18
-
-    .line 43
-    .line 44
     iput-object p1, p0, Lzx4;->A:Lmt3;
-
-    .line 45
-    .line 46
     return-void
 .end method
 

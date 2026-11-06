@@ -150,124 +150,39 @@
 
 .method public final b(ZZZ)V
     .locals 7
-
-    # MIUI / HyperOS: ask for the "get installed apps" permission when the list is (re)loaded
     invoke-static {p0}, Lcom/box/app/vpn/AppPerm;->check(Ldv;)V
-
-    .line 1
     iget-boolean v0, p0, Ldv;->h:Z
-
-    .line 2
-    .line 3
     if-eqz v0, :cond_0
-
-    .line 4
-    .line 5
     goto :goto_0
-
-    .line 6
     :cond_0
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    .line 7
-    .line 8
-    .line 9
     move-result-wide v0
-
-    .line 10
     if-nez p1, :cond_1
-
-    .line 11
-    .line 12
     invoke-virtual {p0}, Ldv;->a()Ljava/util/List;
-
-    .line 13
-    .line 14
-    .line 15
     move-result-object v2
-
-    .line 16
     invoke-interface {v2}, Ljava/util/Collection;->isEmpty()Z
-
-    .line 17
-    .line 18
-    .line 19
     move-result v2
-
-    .line 20
     if-nez v2, :cond_1
-
-    .line 21
-    .line 22
     iget-wide v2, p0, Ldv;->g:J
-
-    .line 23
-    .line 24
     sub-long/2addr v0, v2
-
-    .line 25
     const-wide/32 v2, 0x1d4c0
-
-    .line 26
-    .line 27
-    .line 28
     cmp-long v0, v0, v2
-
-    .line 29
-    .line 30
     if-gez v0, :cond_1
-
-    .line 31
-    .line 32
     :goto_0
     return-void
-
-    .line 33
     :cond_1
     const/4 v0, 0x1
-
-    .line 34
     iput-boolean v0, p0, Ldv;->h:Z
-
-    .line 35
-    .line 36
     new-instance v1, Lcv;
-
-    .line 37
-    .line 38
     const/4 v6, 0x0
-
-    .line 39
     move-object v3, p0
-
-    .line 40
     move v5, p1
-
-    .line 41
     move v2, p2
-
-    .line 42
     move v4, p3
-
-    .line 43
     invoke-direct/range {v1 .. v6}, Lcv;-><init>(ZLdv;ZZLy81;)V
-
-    .line 44
-    .line 45
-    .line 46
     iget-object p0, v3, Ldv;->b:Lj26;
-
-    .line 47
-    .line 48
     const-string p1, "apps-load"
-
-    .line 49
-    .line 50
     invoke-virtual {p0, v1, p1}, Lj26;->e(Lp62;Ljava/lang/String;)V
-
-    .line 51
-    .line 52
-    .line 53
     return-void
 .end method
 

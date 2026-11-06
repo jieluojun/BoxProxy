@@ -259,63 +259,24 @@
 
 .method public static f(JLy81;Ljava/lang/String;)Ljava/lang/Object;
     .locals 3
-
-    # no root: the boxctl commands of the root modes cannot work, report success
     invoke-static {p3}, Lcom/box/app/vpn/VpnRoot;->skip(Ljava/lang/String;)Z
-
     move-result v0
-
     if-eqz v0, :cond_vpn_run
-
     new-instance v0, Laf5;
-
     const/4 v1, 0x0
-
     const-string v2, ""
-
     invoke-direct {v0, v1, v2, v2}, Laf5;-><init>(ILjava/lang/String;Ljava/lang/String;)V
-
     return-object v0
-
     :cond_vpn_run
-
-    .line 1
     invoke-static {p3}, Lim;->Q(Ljava/lang/Object;)Ljava/util/List;
-
-    .line 2
-    .line 3
-    .line 4
     move-result-object p3
-
-    .line 5
     sget-object v0, Llk1;->a:Log1;
-
-    .line 6
-    .line 7
     sget-object v0, Lfg1;->l:Lfg1;
-
-    .line 8
-    .line 9
     new-instance v1, Lff5;
-
-    .line 10
-    .line 11
     const/4 v2, 0x0
-
-    .line 12
     invoke-direct {v1, p3, p0, p1, v2}, Lff5;-><init>(Ljava/util/List;JLy81;)V
-
-    .line 13
-    .line 14
-    .line 15
     invoke-static {v0, v1, p2}, Lbn0;->S(Lrb1;Lt62;Ly81;)Ljava/lang/Object;
-
-    .line 16
-    .line 17
-    .line 18
     move-result-object p0
-
-    .line 19
     return-object p0
 .end method
 
@@ -324,380 +285,125 @@
 # virtual methods
 .method public final a(Lz81;)Ljava/lang/Object;
     .locals 5
-
-    .line 1
     sget-object v0, Ljf5;->b:Ljava/util/ArrayList;
-
-    .line 2
-    .line 3
-    instance-of v1, p1, Lmd5;
-
-    .line 4
-    .line 5
+    instance-of v1, p1, Lcf5;
     if-eqz v1, :cond_0
-
-    .line 6
-    .line 7
     move-object v1, p1
-
-    .line 8
-    check-cast v1, Lmd5;
-
-    .line 9
-    .line 10
+    check-cast v1, Lcf5;
     iget v2, v1, Lcf5;->m:I
-
-    .line 11
-    .line 12
     const/high16 v3, -0x80000000
-
-    .line 13
-    .line 14
     and-int v4, v2, v3
-
-    .line 15
-    .line 16
     if-eqz v4, :cond_0
-
-    .line 17
-    .line 18
     sub-int/2addr v2, v3
-
-    .line 19
     iput v2, v1, Lcf5;->m:I
-
-    .line 20
-    .line 21
     goto :goto_0
-
-    .line 22
     :cond_0
-    new-instance v1, Lmd5;
-
-    .line 23
-    .line 24
+    new-instance v1, Lcf5;
     invoke-direct {v1, p0, p1}, Lcf5;-><init>(Ljf5;Lz81;)V
-
-    .line 25
-    .line 26
-    .line 27
     :goto_0
     iget-object p0, v1, Lcf5;->k:Ljava/lang/Object;
-
-    .line 28
-    .line 29
     iget p1, v1, Lcf5;->m:I
-
-    .line 30
-    .line 31
     const/4 v2, 0x1
-
-    .line 32
     const/4 v3, 0x0
-
-    .line 33
     if-eqz p1, :cond_2
-
-    .line 34
-    .line 35
     if-ne p1, v2, :cond_1
-
-    .line 36
-    .line 37
     iget-object p1, v1, Lcf5;->j:Lbu3;
-
-    .line 38
-    .line 39
     invoke-static {p0}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 40
-    .line 41
-    .line 42
     goto :goto_1
-
-    .line 43
     :cond_1
     const-string p0, "call to \'resume\' before \'invoke\' with coroutine"
-
-    .line 44
-    .line 45
     invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
-
-    .line 46
-    .line 47
-    .line 48
     return-object v3
-
-    .line 49
     :cond_2
     invoke-static {p0}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 50
-    .line 51
-    .line 52
     sget-object p1, Ljf5;->c:Lbu3;
-
-    .line 53
-    .line 54
     iput-object p1, v1, Lcf5;->j:Lbu3;
-
-    .line 55
-    .line 56
     iput v2, v1, Lcf5;->m:I
-
-    .line 57
-    .line 58
     invoke-virtual {p1, v1}, Lbu3;->e(Ly81;)Ljava/lang/Object;
-
-    .line 59
-    .line 60
-    .line 61
     move-result-object p0
-
-    .line 62
     sget-object v1, Lbc1;->j:Lbc1;
-
-    .line 63
-    .line 64
     if-ne p0, v1, :cond_3
-
-    .line 65
-    .line 66
     return-object v1
-
-    .line 67
     :cond_3
     :goto_1
     :try_start_0
     invoke-static {}, Ljf5;->c()V
-
-    .line 68
-    .line 69
-    .line 70
     invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    .line 71
-    .line 72
-    .line 73
     move-result-object p0
-
-    .line 74
     :cond_4
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 75
-    .line 76
-    .line 77
     move-result v1
-
-    .line 78
     if-eqz v1, :cond_5
-
-    .line 79
-    .line 80
     invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 81
-    .line 82
-    .line 83
     move-result-object v1
-
-    .line 84
     move-object v2, v1
-
-    .line 85
     check-cast v2, Lbf5;
-
-    .line 86
-    .line 87
     iget-object v4, v2, Lbf5;->a:Lv26;
-
-    .line 88
-    .line 89
     invoke-virtual {v4}, Lv26;->c()Z
-
-    .line 90
-    .line 91
-    .line 92
     move-result v4
-
-    .line 93
     if-eqz v4, :cond_4
-
-    .line 94
-    .line 95
     iget-object v4, v2, Lbf5;->b:Lbu3;
-
-    .line 96
-    .line 97
     invoke-virtual {v4}, Lbu3;->d()Z
-
-    .line 98
-    .line 99
-    .line 100
     move-result v4
-
-    .line 101
     if-nez v4, :cond_4
-
-    .line 102
-    .line 103
     iget v2, v2, Lbf5;->d:I
-
-    .line 104
-    .line 105
     const/16 v4, 0x78
-
-    .line 106
-    .line 107
     if-ge v2, v4, :cond_4
-
-    .line 108
-    .line 109
     goto :goto_2
-
-    .line 110
     :catchall_0
     move-exception p0
-
-    .line 111
     goto :goto_7
-
-    .line 112
     :cond_5
     move-object v1, v3
-
-    .line 113
     :goto_2
     check-cast v1, Lbf5;
-
-    .line 114
-    .line 115
     if-eqz v1, :cond_6
-
-    .line 116
-    .line 117
     goto :goto_6
-
-    .line 118
     :cond_6
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
-
-    .line 119
-    .line 120
-    .line 121
     move-result p0
-
-    .line 122
     const/4 v1, 0x2
-
-    .line 123
     if-lt p0, v1, :cond_8
-
-    .line 124
-    .line 125
     :cond_7
     move-object v1, v3
-
-    .line 126
     goto :goto_6
-
-    .line 127
     :cond_8
     const-wide/16 v1, 0xc
-
-    .line 128
-    .line 129
     invoke-static {v1, v2}, Ljf5;->e(J)Lv26;
-
-    .line 130
-    .line 131
-    .line 132
     move-result-object p0
-
-    .line 133
     if-nez p0, :cond_9
-
-    .line 134
-    .line 135
     :catchall_1
     :goto_3
     move-object v1, v3
-
-    .line 136
     goto :goto_5
-
-    .line 137
     :cond_9
     invoke-virtual {p0}, Lv26;->c()Z
-
-    .line 138
-    .line 139
-    .line 140
     move-result v1
-
-    .line 141
     if-eqz v1, :cond_b
-
-    # Accept the builder's plain-sh fallback when root is unavailable.
-    # Lv26;->f() remains unchanged for callers that need to detect root.
-    .line 150
     :cond_a
     new-instance v1, Lbf5;
-
-    .line 151
-    .line 152
     invoke-direct {v1, p0}, Lbf5;-><init>(Lv26;)V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 153
-    .line 154
-    .line 155
     goto :goto_5
-
-    .line 156
     :cond_b
     :goto_4
     :try_start_1
     invoke-virtual {p0}, Lv26;->close()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
-
-    .line 157
-    .line 158
-    .line 159
     goto :goto_3
-
-    .line 160
     :goto_5
     if-eqz v1, :cond_7
-
-    .line 161
-    .line 162
     :try_start_2
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 163
-    .line 164
-    .line 165
     :goto_6
     invoke-virtual {p1, v3}, Lbu3;->g(Ljava/lang/Object;)V
-
-    .line 166
-    .line 167
-    .line 168
     return-object v1
-
-    .line 169
     :goto_7
     invoke-virtual {p1, v3}, Lbu3;->g(Ljava/lang/Object;)V
-
-    .line 170
-    .line 171
-    .line 172
     throw p0
 .end method
 

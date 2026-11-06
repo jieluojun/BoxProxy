@@ -976,85 +976,29 @@
 
 .method public final j(Z)V
     .locals 2
-
-    .line 1
     iget-object v0, p0, Lqm5;->y:Lum4;
-
-    .line 2
-    .line 3
     invoke-virtual {v0}, Lum4;->getValue()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
     move-result-object v1
-
-    .line 7
     check-cast v1, Ljava/lang/Boolean;
-
-    .line 8
-    .line 9
     invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    .line 10
-    .line 11
-    .line 12
     move-result v1
-
-    .line 13
     if-eqz v1, :cond_0
-
-    .line 14
-    .line 15
     if-nez p1, :cond_0
-
-    .line 16
-    .line 17
     return-void
-
-    .line 18
     :cond_0
     sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    .line 19
-    .line 20
     invoke-virtual {v0, p1}, Lum4;->setValue(Ljava/lang/Object;)V
-
-    .line 21
-    .line 22
-    .line 23
     new-instance p1, Ll24;
-
-    .line 24
-    .line 25
     const/4 v0, 0x0
-
-    .line 26
     const/4 v1, 0x1
-
-    .line 27
     invoke-direct {p1, p0, v0, v1}, Ll24;-><init>(Ljava/lang/Object;Ly81;B)V
-
-    .line 28
-    .line 29
-    .line 30
     iget-boolean v1, p0, Lqm5;->cfgD:Z
-
     const/4 v0, 0x1
-
     iput-boolean v0, p0, Lqm5;->cfgD:Z
-
     xor-int/lit8 v1, v1, 0x1
-
     iget-object p0, p0, Lqm5;->k:Lj26;
-
     const-string v0, "load"
-
     invoke-static {p0, p1, v0, v1}, Lcom/box/app/cfg/CfgDefer;->post(Lj26;Lp62;Ljava/lang/String;Z)V
-
-    .line 35
-    .line 36
-    .line 37
     return-void
 .end method
 
@@ -1359,85 +1303,26 @@
 
 .method public final m(Ljava/lang/String;)V
     .locals 1
-
-    .line 1
     invoke-virtual {p0}, Lqm5;->b()Ljava/lang/String;
-
-    .line 2
-    .line 3
-    .line 4
     move-result-object v0
-
-    .line 5
     invoke-static {v0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 6
-    .line 7
-    .line 8
     move-result v0
-
-    .line 9
     if-eqz v0, :cond_0
-
-    .line 10
-    .line 11
     return-void
-
-    .line 12
     :cond_0
-    # 整篇替换文本（CfgGlue.replaceKeep 随后在编辑器里落地）：记下自己，替换完成后 CfgGlue.nudge 用它触发一次重组
     sput-object p0, Lcom/box/app/cfg/CfgGlue;->sMj:Ljava/lang/Object;
-
     iget-object v0, p0, Lqm5;->p:Lum4;
-
-    .line 13
-    .line 14
     invoke-virtual {v0, p1}, Lum4;->setValue(Ljava/lang/Object;)V
-
-    .line 15
-    .line 16
-    .line 17
     iget-object p0, p0, Lqm5;->q:Lum4;
-
-    .line 18
-    .line 19
     invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
-
-    .line 20
-    .line 21
-    .line 22
     move-result-object p1
-
-    .line 23
     check-cast p1, Ljava/lang/Number;
-
-    .line 24
-    .line 25
     invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
-
-    .line 26
-    .line 27
-    .line 28
     move-result p1
-
-    .line 29
     add-int/lit8 p1, p1, 0x1
-
-    .line 30
-    .line 31
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 32
-    .line 33
-    .line 34
     move-result-object p1
-
-    .line 35
     invoke-virtual {p0, p1}, Lum4;->setValue(Ljava/lang/Object;)V
-
-    .line 36
-    .line 37
-    .line 38
     return-void
 .end method
 

@@ -91,204 +91,69 @@
 # virtual methods
 .method public final a()Z
     .locals 2
-
-    .line 1
     iget-object v0, p0, Lmm5;->b:Lqm5;
-
-    .line 2
-    .line 3
     invoke-virtual {v0}, Lqm5;->b()Ljava/lang/String;
-
-    # 读一下版本号（mj5.q）：面板 / 还原整篇替换编辑器后 CfgGlue.nudge 会把它 +1，让这里在替换（撤销栈已入栈）之后重新算一次 canUndo / canRedo
     iget-object v1, v0, Lqm5;->q:Lum4;
-
     invoke-virtual {v1}, Lum4;->getValue()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
     iget-object p0, p0, Lmm5;->c:Lum5;
-
-    .line 7
-    .line 8
     invoke-virtual {p0}, Lum5;->a()Lml5;
-
-    .line 9
-    .line 10
-    .line 11
     move-result-object p0
-
-    .line 12
     if-eqz p0, :cond_0
-
-    .line 13
-    .line 14
     iget-object p0, p0, Lml5;->a:Lsu0;
-
-    .line 15
-    .line 16
     :try_start_0
     iget-object p0, p0, Lsu0;->B0:Ln71;
-
-    .line 17
-    .line 18
     iget-object p0, p0, Ln71;->r:Lm37;
-
-    .line 19
-    .line 20
     iget-boolean v0, p0, Lm37;->k:Z
-
-    .line 21
-    .line 22
     if-eqz v0, :cond_0
-
-    .line 23
-    .line 24
     iget v0, p0, Lm37;->o:I
-
-    .line 25
-    .line 26
     iget-object p0, p0, Lm37;->j:Ljava/util/ArrayList;
-
-    .line 27
-    .line 28
     invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
-
-    .line 29
-    .line 30
-    .line 31
     move-result p0
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 32
     if-ge v0, p0, :cond_0
-
-    .line 33
-    .line 34
     const/4 p0, 0x1
-
-    .line 35
     return p0
-
-    .line 36
     :catch_0
     move-exception p0
-
-    .line 37
     const-string v0, "RuntimeFileTextMate"
-
-    .line 38
-    .line 39
     const-string v1, "Editor value read failed: canRedo"
-
-    .line 40
-    .line 41
     invoke-static {v0, v1, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 42
-    .line 43
-    .line 44
     :cond_0
     const/4 p0, 0x0
-
-    .line 45
     return p0
 .end method
 
 
 .method public final b()Z
     .locals 2
-
-    .line 1
     iget-object v0, p0, Lmm5;->b:Lqm5;
-
-    .line 2
-    .line 3
     invoke-virtual {v0}, Lqm5;->b()Ljava/lang/String;
-
-    # 读一下版本号（mj5.q）：面板 / 还原整篇替换编辑器后 CfgGlue.nudge 会把它 +1，让这里在替换（撤销栈已入栈）之后重新算一次 canUndo / canRedo
     iget-object v1, v0, Lqm5;->q:Lum4;
-
     invoke-virtual {v1}, Lum4;->getValue()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
     iget-object p0, p0, Lmm5;->c:Lum5;
-
-    .line 7
-    .line 8
     invoke-virtual {p0}, Lum5;->a()Lml5;
-
-    .line 9
-    .line 10
-    .line 11
     move-result-object p0
-
-    .line 12
     if-eqz p0, :cond_0
-
-    .line 13
-    .line 14
     iget-object p0, p0, Lml5;->a:Lsu0;
-
-    .line 15
-    .line 16
     :try_start_0
     iget-object p0, p0, Lsu0;->B0:Ln71;
-
-    .line 17
-    .line 18
     iget-object p0, p0, Ln71;->r:Lm37;
-
-    .line 19
-    .line 20
     iget-boolean v0, p0, Lm37;->k:Z
-
-    .line 21
-    .line 22
     if-eqz v0, :cond_0
-
-    .line 23
-    .line 24
     iget p0, p0, Lm37;->o:I
     :try_end_0
     .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 25
-    .line 26
     if-lez p0, :cond_0
-
-    .line 27
-    .line 28
     const/4 p0, 0x1
-
-    .line 29
     return p0
-
-    .line 30
     :catch_0
     move-exception p0
-
-    .line 31
     const-string v0, "RuntimeFileTextMate"
-
-    .line 32
-    .line 33
     const-string v1, "Editor value read failed: canUndo"
-
-    .line 34
-    .line 35
     invoke-static {v0, v1, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
-
-    .line 36
-    .line 37
-    .line 38
     :cond_0
     const/4 p0, 0x0
-
-    .line 39
     return p0
 .end method
 

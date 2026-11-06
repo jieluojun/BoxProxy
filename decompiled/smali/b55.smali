@@ -86,161 +86,50 @@
 
 .method public static e(Le55;)Ljava/util/ArrayList;
     .locals 6
-
-    .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
     new-instance v0, Ljava/util/ArrayList;
-
-    .line 5
-    .line 6
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    .line 7
-    .line 8
-    .line 9
     sget-object v1, Lf55;->s:Lzv1;
-
-    .line 10
-    .line 11
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 12
-    .line 13
-    .line 14
     new-instance v2, Lg3;
-
-    .line 15
-    .line 16
     const/4 v3, 0x0
-
-    .line 17
     invoke-direct {v2, v1, v3}, Lg3;-><init>(Ljava/lang/Object;B)V
-
-    .line 18
-    .line 19
-    .line 20
     :cond_0
     :goto_0
     invoke-virtual {v2}, Lg3;->hasNext()Z
-
-    .line 21
-    .line 22
-    .line 23
     move-result v1
-
-    .line 24
     if-eqz v1, :cond_3
-
-    .line 25
-    .line 26
     invoke-virtual {v2}, Lg3;->next()Ljava/lang/Object;
-
-    .line 27
-    .line 28
-    .line 29
     move-result-object v1
-
-    .line 30
     move-object v3, v1
-
-    .line 31
     check-cast v3, Lf55;
-
     sget-object v4, Lf55;->t:Lf55;
-
     if-eq v3, v4, :cond_vpn_ok
-
     invoke-static {}, Lcom/box/app/vpn/VpnRoot;->rootModes()Z
-
     move-result v4
-
     if-eqz v4, :cond_0
-
     :cond_vpn_ok
-    .line 32
-    .line 33
     sget-object v4, Lf55;->n:Lf55;
-
-    .line 34
-    .line 35
     if-ne v3, v4, :cond_1
-
-    .line 36
-    .line 37
     sget-object v4, Le55;->n:Le55;
-
-    .line 38
-    .line 39
     if-eq p0, v4, :cond_1
-
-    .line 40
-    .line 41
     sget-object v4, Le55;->o:Le55;
-
-    .line 42
-    .line 43
     if-ne p0, v4, :cond_0
-
-    .line 44
-    .line 45
     :cond_1
     sget-object v4, Le55;->p:Le55;
-
-    .line 46
-    .line 47
     if-ne p0, v4, :cond_2
-
-    .line 48
-    .line 49
     sget-object v4, Lf55;->l:Lf55;
-
-    .line 50
-    .line 51
     sget-object v5, Lf55;->p:Lf55;
-
-    .line 52
-    .line 53
     filled-new-array {v4, v5}, [Lf55;
-
-    .line 54
-    .line 55
-    .line 56
     move-result-object v4
-
-    .line 57
     invoke-static {v4}, Lpw;->M0([Ljava/lang/Object;)Ljava/util/Set;
-
-    .line 58
-    .line 59
-    .line 60
     move-result-object v4
-
-    .line 61
     invoke-interface {v4, v3}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
-
-    .line 62
-    .line 63
-    .line 64
     move-result v3
-
-    .line 65
     if-nez v3, :cond_0
-
-    .line 66
-    .line 67
     :cond_2
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 68
-    .line 69
-    .line 70
     goto :goto_0
-
-    .line 71
     :cond_3
     return-object v0
 .end method

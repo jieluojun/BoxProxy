@@ -73,106 +73,55 @@
 # direct methods
 .method public synthetic constructor <init>(Lux1;La55;Le55;Ljava/util/List;Ljava/lang/String;ZLmt3;Ljava/util/List;Lgw4;Landroid/content/Context;Ljava/lang/String;Lf55;Lmt3;Ljava/util/List;Ld55;Lmt3;ZLe62;Lp62;Log3;Lmt3;Lmt3;Lmt3;Ljava/lang/String;Lp62;Ljava/lang/String;Log3;Lmt3;Lmt3;Lmt3;Lmt3;)V
     .locals 0
-
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     iput-object p1, p0, Luw4;->j:Lux1;
-
     iput-object p2, p0, Luw4;->k:La55;
-
     iput-object p3, p0, Luw4;->l:Le55;
-
     iput-object p4, p0, Luw4;->m:Ljava/util/List;
-
     iput-object p5, p0, Luw4;->n:Ljava/lang/String;
-
     iput-boolean p6, p0, Luw4;->o:Z
-
     iput-object p7, p0, Luw4;->p:Lmt3;
-
     iput-object p8, p0, Luw4;->q:Ljava/util/List;
-
     iput-object p9, p0, Luw4;->r:Lgw4;
-
     invoke-static {p9}, Lcom/box/app/vpn/RestoreCfg;->vm(Lgw4;)V
-
     iput-object p10, p0, Luw4;->s:Landroid/content/Context;
-
     iput-object p11, p0, Luw4;->t:Ljava/lang/String;
-
     iput-object p12, p0, Luw4;->u:Lf55;
-
     iput-object p13, p0, Luw4;->v:Lmt3;
-
     iput-object p14, p0, Luw4;->w:Ljava/util/List;
-
     iput-object p15, p0, Luw4;->x:Ld55;
-
     move-object/from16 p1, p16
-
     iput-object p1, p0, Luw4;->y:Lmt3;
-
     move/from16 p1, p17
-
     iput-boolean p1, p0, Luw4;->z:Z
-
     move-object/from16 p1, p18
-
     iput-object p1, p0, Luw4;->A:Le62;
-
     move-object/from16 p1, p19
-
     iput-object p1, p0, Luw4;->B:Lp62;
-
     move-object/from16 p1, p20
-
     iput-object p1, p0, Luw4;->C:Log3;
-
     move-object/from16 p1, p21
-
     iput-object p1, p0, Luw4;->D:Lmt3;
-
     move-object/from16 p1, p22
-
     iput-object p1, p0, Luw4;->E:Lmt3;
-
     move-object/from16 p1, p23
-
     iput-object p1, p0, Luw4;->F:Lmt3;
-
     move-object/from16 p1, p24
-
     iput-object p1, p0, Luw4;->G:Ljava/lang/String;
-
     move-object/from16 p1, p25
-
     iput-object p1, p0, Luw4;->H:Lp62;
-
     move-object/from16 p1, p26
-
     iput-object p1, p0, Luw4;->I:Ljava/lang/String;
-
     move-object/from16 p1, p27
-
     iput-object p1, p0, Luw4;->J:Log3;
-
     move-object/from16 p1, p28
-
     iput-object p1, p0, Luw4;->K:Lmt3;
-
     move-object/from16 p1, p29
-
     iput-object p1, p0, Luw4;->L:Lmt3;
-
     move-object/from16 p1, p30
-
     iput-object p1, p0, Luw4;->M:Lmt3;
-
     move-object/from16 p1, p31
-
     iput-object p1, p0, Luw4;->N:Lmt3;
-
     return-void
 .end method
 

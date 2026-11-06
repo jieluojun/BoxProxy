@@ -7040,1576 +7040,431 @@
 
 .method public w()Lkv;
     .locals 51
-
-    .line 1
     move-object/from16 v0, p0
-
-    .line 2
-    .line 3
     iget-object v1, v0, Loq2;->k:Ljava/lang/Object;
-
-    .line 4
-    .line 5
     check-cast v1, Landroid/content/Context;
-
-    .line 6
-    .line 7
     const v2, 0x7f0f005f
-
-    .line 8
-    .line 9
-    .line 10
     invoke-virtual {v1, v2}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    .line 11
-    .line 12
-    .line 13
     move-result-object v2
-
-    .line 14
     invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 15
-    .line 16
-    .line 17
     const v3, 0x7f0f02bf
-
-    .line 18
-    .line 19
-    .line 20
     invoke-virtual {v1, v3}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    .line 21
-    .line 22
-    .line 23
     move-result-object v3
-
-    .line 24
     invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 25
-    .line 26
-    .line 27
     const v4, 0x7f0f02be
-
-    .line 28
-    .line 29
-    .line 30
     invoke-virtual {v1, v4}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    .line 31
-    .line 32
-    .line 33
     move-result-object v4
-
-    .line 34
     invoke-virtual {v4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 35
-    .line 36
-    .line 37
     const v5, 0x7f0f00cb
-
-    .line 38
-    .line 39
-    .line 40
     invoke-virtual {v1, v5}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    .line 41
-    .line 42
-    .line 43
     move-result-object v5
-
-    .line 44
     invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 45
-    .line 46
-    .line 47
     const v6, 0x7f0f0139
-
-    .line 48
-    .line 49
-    .line 50
     invoke-virtual {v1, v6}, Landroid/content/Context;->getString(I)Ljava/lang/String;
-
-    .line 51
-    .line 52
-    .line 53
     move-result-object v1
-
-    .line 54
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 55
-    .line 56
-    .line 57
     iget-object v6, v0, Loq2;->l:Ljava/lang/Object;
-
-    .line 58
-    .line 59
     check-cast v6, Landroid/content/SharedPreferences;
-
-    .line 60
-    .line 61
     sget-object v7, Lz27;->k:Ldi6;
-
-    .line 62
-    .line 63
     invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 64
-    .line 65
-    .line 66
     sget-object v7, Lz27;->l:Lz27;
-
-    .line 67
-    .line 68
     iget-object v8, v7, Lz27;->j:Ljava/lang/String;
-
-    .line 69
-    .line 70
     const-string v9, "ui_mode"
-
-    .line 71
-    .line 72
     invoke-interface {v6, v9, v8}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 73
-    .line 74
-    .line 75
     move-result-object v8
-
-    .line 76
     const-string v9, "material"
-
-    .line 77
-    .line 78
     invoke-static {v8, v9}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 79
-    .line 80
-    .line 81
     move-result v9
-
-    .line 82
     if-eqz v9, :cond_1
-
-    .line 83
-    .line 84
     sget-object v7, Lz27;->m:Lz27;
-
-    .line 85
-    .line 86
     :cond_0
     :goto_0
     move-object v9, v7
-
-    .line 87
     goto :goto_1
-
-    .line 88
     :cond_1
     const-string v9, "miuix"
-
-    .line 89
-    .line 90
     invoke-static {v8, v9}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 91
-    .line 92
-    .line 93
     move-result v8
-
-    .line 94
     if-eqz v8, :cond_0
-
-    .line 95
-    .line 96
     sget-object v7, Lz27;->n:Lz27;
-
-    .line 97
-    .line 98
     goto :goto_0
-
-    .line 99
     :goto_1
     const-string v7, "app_language"
-
-    .line 100
-    .line 101
     const-string v8, "system"
-
-    .line 102
-    .line 103
     invoke-interface {v6, v7, v8}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 104
-    .line 105
-    .line 106
     move-result-object v7
-
-    .line 107
     sget-object v8, Lur;->l:Lv8;
-
-    .line 108
-    .line 109
     invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 110
-    .line 111
-    .line 112
     sget-object v8, Lur;->o:Lzv1;
-
-    .line 113
-    .line 114
     invoke-virtual {v8}, Lj3;->iterator()Ljava/util/Iterator;
-
-    .line 115
-    .line 116
-    .line 117
     move-result-object v8
-
-    .line 118
     :cond_2
     invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 119
-    .line 120
-    .line 121
     move-result v10
-
-    .line 122
     const/4 v11, 0x0
-
-    .line 123
     if-eqz v10, :cond_3
-
-    .line 124
-    .line 125
     invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 126
-    .line 127
-    .line 128
     move-result-object v10
-
-    .line 129
     move-object v12, v10
-
-    .line 130
     check-cast v12, Lur;
-
-    .line 131
-    .line 132
     iget-object v12, v12, Lur;->j:Ljava/lang/String;
-
-    .line 133
-    .line 134
     invoke-virtual {v12, v7}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    .line 135
-    .line 136
-    .line 137
     move-result v12
-
-    .line 138
     if-eqz v12, :cond_2
-
-    .line 139
-    .line 140
     goto :goto_2
-
-    .line 141
     :cond_3
     move-object v10, v11
-
-    .line 142
     :goto_2
     check-cast v10, Lur;
-
-    .line 143
-    .line 144
     if-nez v10, :cond_4
-
-    .line 145
-    .line 146
     sget-object v10, Lur;->m:Lur;
-
-    .line 147
-    .line 148
     :cond_4
     const-string v7, "home_panel_entry_mode"
-
-    .line 149
-    .line 150
     const-string v8, "overview"
-
-    .line 151
-    .line 152
     invoke-interface {v6, v7, v8}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 153
-    .line 154
-    .line 155
     move-result-object v7
-
-    .line 156
     sget-object v8, Ltg2;->k:Lm21;
-
-    .line 157
-    .line 158
     invoke-virtual {v8}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 159
-    .line 160
-    .line 161
     sget-object v8, Ltg2;->t:Lzv1;
-
-    .line 162
-    .line 163
     invoke-virtual {v8}, Lj3;->iterator()Ljava/util/Iterator;
-
-    .line 164
-    .line 165
-    .line 166
     move-result-object v8
-
-    .line 167
     :cond_5
     invoke-interface {v8}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 168
-    .line 169
-    .line 170
     move-result v12
-
-    .line 171
     if-eqz v12, :cond_6
-
-    .line 172
-    .line 173
     invoke-interface {v8}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 174
-    .line 175
-    .line 176
     move-result-object v12
-
-    .line 177
     move-object v13, v12
-
-    .line 178
     check-cast v13, Ltg2;
-
-    .line 179
-    .line 180
     iget-object v13, v13, Ltg2;->j:Ljava/lang/String;
-
-    .line 181
-    .line 182
     invoke-virtual {v13, v7}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    .line 183
-    .line 184
-    .line 185
     move-result v13
-
-    .line 186
     if-eqz v13, :cond_5
-
-    .line 187
-    .line 188
     goto :goto_3
-
-    .line 189
     :cond_6
     move-object v12, v11
-
-    .line 190
     :goto_3
     check-cast v12, Ltg2;
-
-    .line 191
-    .line 192
     if-nez v12, :cond_7
-
-    .line 193
-    .line 194
     sget-object v12, Ltg2;->l:Ltg2;
-
-    .line 195
-    .line 196
     :cond_7
     const-string v7, "auto_start_enabled"
-
-    .line 197
-    .line 198
     const/4 v8, 0x0
-
-    .line 199
     invoke-interface {v6, v7, v8}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 200
-    .line 201
-    .line 202
     move-result v7
-
-    .line 203
     const-string v13, "accelerated_download_enabled"
-
-    .line 204
-    .line 205
     invoke-interface {v6, v13, v8}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 206
-    .line 207
-    .line 208
     move-result v13
-
-    .line 209
     const-string v14, "accelerated_download_prefix"
-
-    .line 210
-    .line 211
     invoke-interface {v6, v14, v11}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 212
-    .line 213
-    .line 214
     move-result-object v14
-
-    .line 215
     if-nez v14, :cond_8
-
-    .line 216
-    .line 217
     const-string v14, ""
-
-    .line 218
-    .line 219
     :cond_8
     const-string v15, "notifications_enabled"
-
-    .line 220
-    .line 221
     invoke-interface {v6, v15, v8}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 222
-    .line 223
-    .line 224
     move-result v15
-
-    .line 225
     const-string v11, "notification_refresh_interval_seconds"
-
-    .line 226
-    .line 227
     const/4 v8, 0x5
-
-    .line 228
     invoke-interface {v6, v11, v8}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    .line 229
-    .line 230
-    .line 231
     move-result v8
-
-    .line 232
     const/16 v11, 0x14
-
-    .line 233
-    .line 234
     move/from16 v18, v7
-
-    .line 235
-    .line 236
     const/4 v7, 0x0
-
-    .line 237
     invoke-static {v8, v7, v11}, Lgf3;->u(III)I
-
-    .line 238
-    .line 239
-    .line 240
     move-result v8
-
-    .line 241
     const-string v7, "notification_title"
-
-    .line 242
-    .line 243
     const-string v11, "Box"
-
-    .line 244
-    .line 245
     invoke-virtual {v0, v7, v2, v11}, Loq2;->K(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 246
-    .line 247
-    .line 248
     move-result-object v2
-
-    .line 249
     const-string v7, "notification_content"
-
-    .line 250
-    .line 251
     const-string v11, "{status} \u00b7 {uptime}\n\u2191 {upload} \u00b7 \u2193 {download}\nCPU {cpu} \u00b7 RAM {memory}"
-
-    .line 252
-    .line 253
     invoke-virtual {v0, v7, v3, v11}, Loq2;->K(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 254
-    .line 255
-    .line 256
     move-result-object v3
-
-    .line 257
     const-string v7, "panel"
-
-    .line 258
-    .line 259
     const-string v11, "notification_click_target"
-
-    .line 260
-    .line 261
     invoke-interface {v6, v11, v7}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 262
-    .line 263
-    .line 264
     move-result-object v7
-
-    .line 265
     sget-object v11, Lv84;->k:Ljc3;
-
-    .line 266
-    .line 267
     invoke-virtual {v11}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 268
-    .line 269
-    .line 270
     const-string v11, "web_ui"
-
-    .line 271
-    .line 272
     invoke-static {v7, v11}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 273
-    .line 274
-    .line 275
     move-result v11
-
-    .line 276
     if-eqz v11, :cond_9
-
-    .line 277
-    .line 278
     sget-object v7, Lv84;->m:Lv84;
-
-    .line 279
-    .line 280
     :goto_4
     move-object/from16 v19, v7
-
-    .line 281
-    .line 282
     goto :goto_5
-
-    .line 283
     :cond_9
     const-string v11, "app"
-
-    .line 284
-    .line 285
     invoke-static {v7, v11}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 286
-    .line 287
-    .line 288
     move-result v7
-
-    .line 289
     if-eqz v7, :cond_a
-
-    .line 290
-    .line 291
     sget-object v7, Lv84;->n:Lv84;
-
-    .line 292
-    .line 293
     goto :goto_4
-
-    .line 294
     :cond_a
     sget-object v7, Lv84;->l:Lv84;
-
-    .line 295
-    .line 296
     goto :goto_4
-
-    .line 297
     :goto_5
     const-string v7, "notification_action_reload"
-
-    .line 298
-    .line 299
     const/4 v11, 0x1
-
-    .line 300
     invoke-interface {v6, v7, v11}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 301
-    .line 302
-    .line 303
     move-result v20
-
-    .line 304
     const-string v7, "notification_action_reload_title"
-
-    .line 305
-    .line 306
     const-string v11, "Reload"
-
-    .line 307
-    .line 308
     invoke-virtual {v0, v7, v4, v11}, Loq2;->K(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 309
-    .line 310
-    .line 311
     move-result-object v4
-
-    .line 312
     const-string v7, "notification_action_reload_target"
-
-    .line 313
-    .line 314
     const-string v11, "reload"
-
-    .line 315
-    .line 316
     invoke-interface {v6, v7, v11}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 317
-    .line 318
-    .line 319
     move-result-object v7
-
-    .line 320
     sget-object v11, Lu84;->k:Ljc3;
-
-    .line 321
-    .line 322
     invoke-virtual {v11}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 323
-    .line 324
-    .line 325
     invoke-static {v7}, Ljc3;->p(Ljava/lang/String;)Lu84;
-
-    .line 326
-    .line 327
-    .line 328
     move-result-object v22
-
-    .line 329
     const-string v7, "notification_action_stop"
-
-    .line 330
-    .line 331
     const/4 v11, 0x1
-
-    .line 332
     invoke-interface {v6, v7, v11}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 333
-    .line 334
-    .line 335
     move-result v23
-
-    .line 336
     const-string v7, "notification_action_stop_title"
-
-    .line 337
-    .line 338
     const-string v11, "Stop"
-
-    .line 339
-    .line 340
     invoke-virtual {v0, v7, v5, v11}, Loq2;->K(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 341
-    .line 342
-    .line 343
     move-result-object v24
-
-    .line 344
     const-string v5, "notification_action_stop_target"
-
-    .line 345
-    .line 346
     const-string v7, "stop"
-
-    .line 347
-    .line 348
     invoke-interface {v6, v5, v7}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 349
-    .line 350
-    .line 351
     move-result-object v5
-
-    .line 352
     invoke-static {v5}, Ljc3;->p(Ljava/lang/String;)Lu84;
-
-    .line 353
-    .line 354
-    .line 355
     move-result-object v25
-
-    .line 356
     const-string v5, "notification_action_restart"
-
-    .line 357
-    .line 358
     const/4 v11, 0x1
-
-    .line 359
     invoke-interface {v6, v5, v11}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 360
-    .line 361
-    .line 362
     move-result v26
-
-    .line 363
     const-string v5, "notification_action_restart_title"
-
-    .line 364
-    .line 365
     const-string v7, "Restart"
-
-    .line 366
-    .line 367
     invoke-virtual {v0, v5, v1, v7}, Loq2;->K(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 368
-    .line 369
-    .line 370
     move-result-object v27
-
-    .line 371
     const-string v0, "notification_action_restart_target"
-
-    .line 372
-    .line 373
     const-string v1, "restart"
-
-    .line 374
-    .line 375
     invoke-interface {v6, v0, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 376
-    .line 377
-    .line 378
     move-result-object v0
-
-    .line 379
     invoke-static {v0}, Ljc3;->p(Ljava/lang/String;)Lu84;
-
-    .line 380
-    .line 381
-    .line 382
     move-result-object v28
-
-    .line 383
     const-string v0, "open_panel_on_launch"
-
-    .line 384
-    .line 385
     const/4 v7, 0x0
-
-    .line 386
     invoke-interface {v6, v0, v7}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 387
-    .line 388
-    .line 389
     move-result v29
-
-    .line 390
     const-string v0, "show_proxy_selector_bottom_bar_item"
-
-    .line 391
-    .line 392
     invoke-interface {v6, v0, v11}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 393
-    .line 394
-    .line 395
     move-result v30
-
-    .line 396
     const-string v0, "theme_mode"
-
-    .line 397
-    .line 398
     invoke-interface {v6, v0, v7}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    .line 399
-    .line 400
-    .line 401
     move-result v0
-
-    .line 402
     if-ltz v0, :cond_b
-
-    .line 403
-    .line 404
     sget-object v1, Let6;->l:Lzv1;
-
-    .line 405
-    .line 406
     invoke-virtual {v1}, Lzv1;->a()I
-
-    .line 407
-    .line 408
-    .line 409
     move-result v5
-
-    .line 410
     if-ge v0, v5, :cond_b
-
-    .line 411
-    .line 412
     invoke-virtual {v1, v0}, Lzv1;->get(I)Ljava/lang/Object;
-
-    .line 413
-    .line 414
-    .line 415
     move-result-object v0
-
-    .line 416
     goto :goto_6
-
-    .line 417
     :cond_b
     sget-object v0, Let6;->j:Let6;
-
-    .line 418
-    .line 419
     :goto_6
     move-object/from16 v31, v0
-
-    .line 420
-    .line 421
     check-cast v31, Let6;
-
-    .line 422
-    .line 423
     const-string v0, "pure_black_dark_theme"
-
-    .line 424
-    .line 425
     const/4 v7, 0x0
-
-    .line 426
     invoke-interface {v6, v0, v7}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 427
-    .line 428
-    .line 429
     move-result v32
-
-    .line 430
     const-string v0, "miuix_monet_enabled"
-
-    .line 431
-    .line 432
     invoke-interface {v6, v0, v7}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 433
-    .line 434
-    .line 435
     move-result v33
-
-    .line 436
     const-string v0, "accent_color"
-
-    .line 437
-    .line 438
     const v1, -0xb050b0
-
-    .line 439
-    .line 440
-    .line 441
     invoke-interface {v6, v0, v1}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
-
-    .line 442
-    .line 443
-    .line 444
     move-result v34
-
-    .line 445
     const-string v0, "accent_use_default"
-
-    .line 446
-    .line 447
     const/4 v11, 0x1
-
-    .line 448
     invoke-interface {v6, v0, v11}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 449
-    .line 450
-    .line 451
     move-result v35
-
-    .line 452
     const-string v0, "theme_palette_style"
-
-    .line 453
-    .line 454
     const/4 v1, 0x0
-
-    .line 455
     invoke-interface {v6, v0, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 456
-    .line 457
-    .line 458
     move-result-object v0
-
-    .line 459
     sget-object v1, Lgt6;->j:Ldi6;
-
-    .line 460
-    .line 461
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 462
-    .line 463
-    .line 464
     sget-object v1, Lgt6;->m:Lzv1;
-
-    .line 465
-    .line 466
     invoke-virtual {v1}, Lj3;->iterator()Ljava/util/Iterator;
-
-    .line 467
-    .line 468
-    .line 469
     move-result-object v1
-
-    .line 470
     :cond_c
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 471
-    .line 472
-    .line 473
     move-result v5
-
-    .line 474
     if-eqz v5, :cond_d
-
-    .line 475
-    .line 476
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 477
-    .line 478
-    .line 479
     move-result-object v5
-
-    .line 480
     move-object v7, v5
-
-    .line 481
     check-cast v7, Lgt6;
-
-    .line 482
-    .line 483
     invoke-virtual {v7}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    .line 484
-    .line 485
-    .line 486
     move-result-object v7
-
-    .line 487
     invoke-static {v7, v0}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 488
-    .line 489
-    .line 490
     move-result v7
-
-    .line 491
     if-eqz v7, :cond_c
-
-    .line 492
-    .line 493
     goto :goto_7
-
-    .line 494
     :cond_d
     const/4 v5, 0x0
-
-    .line 495
     :goto_7
     check-cast v5, Lgt6;
-
-    .line 496
-    .line 497
     if-nez v5, :cond_e
-
-    .line 498
-    .line 499
     sget-object v5, Lgt6;->k:Lgt6;
-
-    .line 500
-    .line 501
     :cond_e
     move-object/from16 v36, v5
-
-    .line 502
-    .line 503
     const-string v0, "theme_color_spec"
-
-    .line 504
-    .line 505
     const/4 v1, 0x0
-
-    .line 506
     invoke-interface {v6, v0, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 507
-    .line 508
-    .line 509
     move-result-object v0
-
-    .line 510
     sget-object v1, Lat6;->j:Ldi6;
-
-    .line 511
-    .line 512
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 513
-    .line 514
-    .line 515
     sget-object v1, Lat6;->n:Lzv1;
-
-    .line 516
-    .line 517
     invoke-virtual {v1}, Lj3;->iterator()Ljava/util/Iterator;
-
-    .line 518
-    .line 519
-    .line 520
     move-result-object v1
-
-    .line 521
     :cond_f
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 522
-    .line 523
-    .line 524
     move-result v5
-
-    .line 525
     if-eqz v5, :cond_10
-
-    .line 526
-    .line 527
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 528
-    .line 529
-    .line 530
     move-result-object v5
-
-    .line 531
     move-object v7, v5
-
-    .line 532
     check-cast v7, Lat6;
-
-    .line 533
-    .line 534
     invoke-virtual {v7}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    .line 535
-    .line 536
-    .line 537
     move-result-object v7
-
-    .line 538
     invoke-static {v7, v0}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 539
-    .line 540
-    .line 541
     move-result v7
-
-    .line 542
     if-eqz v7, :cond_f
-
-    .line 543
-    .line 544
     goto :goto_8
-
-    .line 545
     :cond_10
     const/4 v5, 0x0
-
-    .line 546
     :goto_8
     check-cast v5, Lat6;
-
-    .line 547
-    .line 548
     if-nez v5, :cond_11
-
-    .line 549
-    .line 550
     sget-object v5, Lat6;->k:Lat6;
-
-    .line 551
-    .line 552
     :cond_11
     move-object/from16 v37, v5
-
-    .line 553
-    .line 554
     const-string v0, "enable_blur"
-
-    .line 555
-    .line 556
     const/4 v11, 0x1
-
-    .line 557
     invoke-interface {v6, v0, v11}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 558
-    .line 559
-    .line 560
     move-result v38
-
-    .line 561
     const-string v0, "top_bar_blur_style"
-
-    .line 562
-    .line 563
     const/4 v1, 0x0
-
-    .line 564
     invoke-interface {v6, v0, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 565
-    .line 566
-    .line 567
     move-result-object v0
-
-    .line 568
     sget-object v1, Lox6;->j:Ldi6;
-
-    .line 569
-    .line 570
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 571
-    .line 572
-    .line 573
     sget-object v1, Lox6;->n:Lzv1;
-
-    .line 574
-    .line 575
     invoke-virtual {v1}, Lj3;->iterator()Ljava/util/Iterator;
-
-    .line 576
-    .line 577
-    .line 578
     move-result-object v1
-
-    .line 579
     :cond_12
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 580
-    .line 581
-    .line 582
     move-result v5
-
-    .line 583
     if-eqz v5, :cond_13
-
-    .line 584
-    .line 585
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 586
-    .line 587
-    .line 588
     move-result-object v5
-
-    .line 589
     move-object v7, v5
-
-    .line 590
     check-cast v7, Lox6;
-
-    .line 591
-    .line 592
     invoke-virtual {v7}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    .line 593
-    .line 594
-    .line 595
     move-result-object v7
-
-    .line 596
     invoke-static {v7, v0}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 597
-    .line 598
-    .line 599
     move-result v7
-
-    .line 600
     if-eqz v7, :cond_12
-
-    .line 601
-    .line 602
     move-object v1, v5
-
-    .line 603
     goto :goto_9
-
-    .line 604
     :cond_13
     const/4 v1, 0x0
-
-    .line 605
     :goto_9
     check-cast v1, Lox6;
-
-    .line 606
-    .line 607
     if-nez v1, :cond_14
-
-    .line 608
-    .line 609
     sget-object v1, Lox6;->k:Lox6;
-
-    .line 610
-    .line 611
     :cond_14
     move-object/from16 v39, v1
-
-    .line 612
-    .line 613
     const-string v0, "floating_bottom_bar"
-
-    .line 614
-    .line 615
     const/4 v7, 0x0
-
-    .line 616
     invoke-interface {v6, v0, v7}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 617
-    .line 618
-    .line 619
     move-result v40
-
-    .line 620
     const-string v0, "floating_bottom_bar_blur"
-
-    .line 621
-    .line 622
     invoke-interface {v6, v0, v7}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 623
-    .line 624
-    .line 625
     move-result v41
-
-    .line 626
     const-string v0, "enable_predictive_back_animation"
-
-    .line 627
-    .line 628
     const/4 v11, 0x1
-
-    .line 629
     invoke-interface {v6, v0, v11}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 630
-    .line 631
-    .line 632
     move-result v42
-
-    .line 633
     const-string v0, "predictive_back_animation_follow_edge"
-
-    .line 634
-    .line 635
     invoke-interface {v6, v0, v7}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 636
-    .line 637
-    .line 638
     move-result v43
-
-    .line 639
     const-string v0, "enable_swipe_back"
-
-    .line 640
-    .line 641
     invoke-interface {v6, v0, v7}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 642
-    .line 643
-    .line 644
     move-result v44
-
-    .line 645
     const-string v0, "use_net_speed_clash_api"
-
-    .line 646
-    .line 647
     const/4 v7, 0x1
-
     invoke-interface {v6, v0, v7}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 648
-    .line 649
-    .line 650
     move-result v45
-
     const/4 v7, 0x0
-
-    .line 651
     const-string v0, "speed_test_source"
-
-    .line 652
-    .line 653
     const/4 v1, 0x0
-
-    .line 654
     invoke-interface {v6, v0, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 655
-    .line 656
-    .line 657
     move-result-object v0
-
-    .line 658
     sget-object v5, Lga6;->k:Lb55;
-
-    .line 659
-    .line 660
     invoke-virtual {v5}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 661
-    .line 662
-    .line 663
     sget-object v5, Lga6;->p:Lzv1;
-
-    .line 664
-    .line 665
     invoke-virtual {v5}, Lj3;->iterator()Ljava/util/Iterator;
-
-    .line 666
-    .line 667
-    .line 668
     move-result-object v5
-
-    .line 669
     :cond_15
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 670
-    .line 671
-    .line 672
     move-result v7
-
-    .line 673
     if-eqz v7, :cond_16
-
-    .line 674
-    .line 675
     invoke-interface {v5}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 676
-    .line 677
-    .line 678
     move-result-object v7
-
-    .line 679
     move-object v11, v7
-
-    .line 680
     check-cast v11, Lga6;
-
-    .line 681
-    .line 682
     iget-object v11, v11, Lga6;->j:Ljava/lang/String;
-
-    .line 683
-    .line 684
     invoke-virtual {v11, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    .line 685
-    .line 686
-    .line 687
     move-result v11
-
-    .line 688
     if-eqz v11, :cond_15
-
-    .line 689
-    .line 690
     move-object v11, v7
-
-    .line 691
     goto :goto_a
-
-    .line 692
     :cond_16
     move-object v11, v1
-
-    .line 693
     :goto_a
     check-cast v11, Lga6;
-
-    .line 694
-    .line 695
     if-nez v11, :cond_17
-
-    .line 696
-    .line 697
     sget-object v11, Lga6;->l:Lga6;
-
-    .line 698
-    .line 699
     :cond_17
     move-object/from16 v46, v11
-
-    .line 700
-    .line 701
     const-string v0, "speed_test_use_megabytes"
-
-    .line 702
-    .line 703
     const/4 v7, 0x0
-
-    .line 704
     invoke-interface {v6, v0, v7}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 705
-    .line 706
-    .line 707
     move-result v47
-
-    .line 708
     const-string v0, "use_subscription_detail_clash_api"
-
-    .line 709
-    .line 710
     invoke-interface {v6, v0, v7}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 711
-    .line 712
-    .line 713
     move-result v48
-
-    .line 714
     const-string v0, "page_scale"
-
-    .line 715
-    .line 716
     const/high16 v1, 0x3f800000    # 1.0f
-
-    .line 717
-    .line 718
     invoke-interface {v6, v0, v1}, Landroid/content/SharedPreferences;->getFloat(Ljava/lang/String;F)F
-
-    .line 719
-    .line 720
-    .line 721
     move-result v0
-
-    .line 722
     const v1, 0x3f4ccccd    # 0.8f
-
-    .line 723
-    .line 724
-    .line 725
     const v5, 0x3f99999a    # 1.2f
-
-    .line 726
-    .line 727
-    .line 728
     invoke-static {v0, v1, v5}, Lgf3;->t(FFF)F
-
-    .line 729
-    .line 730
-    .line 731
     move-result v49
-
-    .line 732
     const-string v0, "welcome_onboarding_shown"
-
-    .line 733
-    .line 734
     invoke-interface {v6, v0, v7}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
-    .line 735
-    .line 736
-    .line 737
     move-result v50
-
-    .line 738
     move/from16 v16, v8
-
-    .line 739
-    .line 740
     new-instance v8, Lkv;
-
-    .line 741
-    .line 742
     move-object/from16 v17, v2
-
-    .line 743
-    .line 744
     move-object/from16 v21, v4
-
-    .line 745
-    .line 746
     move-object v11, v12
-
-    .line 747
     move/from16 v12, v18
-
-    .line 748
-    .line 749
     move-object/from16 v18, v3
-
-    .line 750
-    .line 751
     invoke-direct/range {v8 .. v50}, Lkv;-><init>(Lz27;Lur;Ltg2;ZZLjava/lang/String;ZILjava/lang/String;Ljava/lang/String;Lv84;ZLjava/lang/String;Lu84;ZLjava/lang/String;Lu84;ZLjava/lang/String;Lu84;ZZLet6;ZZIZLgt6;Lat6;ZLox6;ZZZZZZLga6;ZZFZ)V
-
-    .line 752
-    .line 753
-    .line 754
     return-object v8
 .end method
 
