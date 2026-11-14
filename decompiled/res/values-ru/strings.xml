@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="abc_action_bar_up_description">Перейти вверх</string>
     <string name="abc_action_mode_done">Готово</string>
@@ -45,6 +45,7 @@
     <string name="accent_default">По умолчанию</string>
     <string name="accent_title">Акцентный цвет</string>
     <string name="action_cancel">Отмена</string>
+    <string name="action_retry">Повторить</string>
     <string name="api_panel_unavailable_hint">Запустите службу или проверьте конфигурацию API.</string>
     <string name="api_panel_unavailable_title">API недоступен</string>
     <string name="app_management_empty">Приложения не найдены</string>
@@ -58,11 +59,10 @@
     <string name="app_management_filter_work_clone">Рабочий/клон</string>
     <string name="app_management_gid_add_item">Добавить</string>
     <string name="app_management_gid_hint">GID</string>
+    <string name="app_management_gid_load_failed">Не удалось прочитать список GID: ошибка или превышено время ожидания. Повторите попытку.</string>
     <string name="app_management_gid_rules">Правила GID</string>
-    <string name="app_management_gid_summary">По одному числовому GID в строке</string>
     <string name="app_management_invert_selection">Инвертировать</string>
     <string name="app_management_load_apps_failed">Не удалось загрузить установленные приложения</string>
-    <string name="app_management_more">Ещё</string>
     <string name="app_management_proxy_mode_update_failed">Не удалось обновить режим прокси</string>
     <string name="app_management_proxy_override_title">Применять к приложениям</string>
     <string name="app_management_search_hint">Поиск приложений</string>
@@ -75,7 +75,6 @@
     <string name="app_management_smart_select_whitelist_body">Выбрать зарубежные приложения для прокси.</string>
     <string name="app_management_smart_selecting_title">Умный выбор выполняется</string>
     <string name="app_management_sort_descending">По убыванию</string>
-    <string name="app_management_sort_filter_title">Фильтр &amp; сортировка</string>
     <string name="app_management_sort_install">Время установки</string>
     <string name="app_management_sort_mode_title">Сортировка по</string>
     <string name="app_management_sort_name">Имя</string>
@@ -84,6 +83,11 @@
     <string name="app_name">BoxProxy</string>
     <string name="back">Назад</string>
     <string name="blur_title">Эффекты размытия</string>
+    <string name="bottom_bar_style_classic">Классический</string>
+    <string name="bottom_bar_style_floating">Плавающая</string>
+    <string name="bottom_bar_style_glass">Стекло OS4</string>
+    <string name="bottom_bar_style_liquid_glass">Жидкое стекло</string>
+    <string name="bottom_bar_style_title">Стиль нижней панели</string>
     <string name="bypass_rules_apply_failed">Не удалось применить правила обхода</string>
     <string name="bypass_rules_blocked_interfaces_title">Отключённые интерфейсы</string>
     <string name="bypass_rules_cidr_hint">CIDR</string>
@@ -113,7 +117,6 @@
     <string name="clashapi_range_traffic_no_data">Нет данных о трафике в этом диапазоне</string>
     <string name="clashapi_range_traffic_subtitle">Последние %1$s · группировка по %2$s</string>
     <string name="clashapi_recent_connections">В диапазоне</string>
-    <string name="clashapi_settings">Настройки обзора</string>
     <string name="clashapi_sort_download">Загрузка</string>
     <string name="clashapi_sort_name">Имя</string>
     <string name="clashapi_sort_upload">Отправка</string>
@@ -207,6 +210,40 @@
     <string name="connection_duration">Длительность</string>
     <string name="connection_filter_all">Все</string>
     <string name="connection_filter_source_ip">Фильтр по IP источника</string>
+    <string name="connection_filters_action">Действие</string>
+    <string name="connection_filters_active">Фильтры включены</string>
+    <string name="connection_filters_add">Добавить правило</string>
+    <string name="connection_filters_adjust">Изменить фильтры</string>
+    <string name="connection_filters_checking">Фильтрация…</string>
+    <string name="connection_filters_clear">Сбросить условия</string>
+    <string name="connection_filters_delete_title">Удалить это правило?</string>
+    <string name="connection_filters_edit">Изменить правило</string>
+    <string name="connection_filters_expression">Регулярное выражение</string>
+    <string name="connection_filters_expression_empty">Введите регулярное выражение.</string>
+    <string name="connection_filters_expression_invalid">Недопустимое выражение: %1$s</string>
+    <string name="connection_filters_expression_limit">Не более %1$d символов.</string>
+    <string name="connection_filters_field_chain">Цепочка прокси</string>
+    <string name="connection_filters_field_destination">IP / порт назначения</string>
+    <string name="connection_filters_field_domain">Домен / определённый домен</string>
+    <string name="connection_filters_field_inbound">Сеть / входящее подключение</string>
+    <string name="connection_filters_field_process">Имя / путь процесса</string>
+    <string name="connection_filters_field_rule">Правило маршрутизации / параметр</string>
+    <string name="connection_filters_field_source">IP / порт источника</string>
+    <string name="connection_filters_fields">Поля для поиска</string>
+    <string name="connection_filters_fields_empty">Выберите хотя бы одно поле.</string>
+    <string name="connection_filters_hide">Скрывать совпадения</string>
+    <string name="connection_filters_ignore_case">Без учёта регистра</string>
+    <string name="connection_filters_include">Показывать только совпадения</string>
+    <string name="connection_filters_invalid_saved">Правило недопустимо. Измените его перед включением.</string>
+    <string name="connection_filters_name">Название (необязательно)</string>
+    <string name="connection_filters_no_connections">Нет активных соединений</string>
+    <string name="connection_filters_no_results">Нет соединений, соответствующих условиям.</string>
+    <string name="connection_filters_preview">Совпадений: %1$d из %2$d текущих соединений</string>
+    <string name="connection_filters_rule_limit">Не более %1$d правил на один источник API.</string>
+    <string name="connection_filters_rules">Правила регулярных выражений</string>
+    <string name="connection_filters_rules_empty">Правил пока нет. Фильтры влияют только на отображение соединений.</string>
+    <string name="connection_filters_syntax_hint">Синтаксис RE2. Каждое поле проверяется отдельно. Просмотр вперёд/назад и обратные ссылки не поддерживаются.</string>
+    <string name="connection_filters_title">Фильтры соединений</string>
     <string name="connection_host">Хост</string>
     <string name="connection_id">ID</string>
     <string name="connection_inbound">Входящее</string>
@@ -227,7 +264,6 @@
     <string name="connection_sort_connected_at">Время подключения</string>
     <string name="connection_sort_download_speed">Скорость загрузки</string>
     <string name="connection_sort_reverse">Обратный порядок</string>
-    <string name="connection_sort_title">Сортировка соединений</string>
     <string name="connection_sort_upload_speed">Скорость отправки</string>
     <string name="connection_source">Источник</string>
     <string name="connection_source_ip">Исходный IP</string>
@@ -276,8 +312,7 @@
     <string name="core_update_write_failed_path">Не удалось записать ядро: %1$s</string>
     <string name="default_error_message">Неправильный ввод</string>
     <string name="default_popup_window_title">Всплывающее окно</string>
-    <string name="floating_bar_blur_title">Эффект жидкого стекла нижней панели</string>
-    <string name="floating_bar_title">Плавающая нижняя панель</string>
+    <string name="editable_gid_list_title">Список GID</string>
     <string name="home_action_reload">Перезагрузить</string>
     <string name="home_action_restart">Перезапустить</string>
     <string name="home_action_start">Запустить</string>
@@ -312,6 +347,7 @@
     <string name="home_error_root_title">Требуется Root</string>
     <string name="home_ip_details_action">Подробности</string>
     <string name="home_ip_geo_field_asn">ASN</string>
+    <string name="home_ip_geo_field_domain">Домен</string>
     <string name="home_ip_geo_field_ip">IP</string>
     <string name="home_ip_geo_field_isp">ISP</string>
     <string name="home_ip_geo_field_location">Регион</string>
@@ -391,6 +427,7 @@
     <string name="latency_targets_save_done">Цели задержки сохранены</string>
     <string name="latency_targets_target_title">Цель %1$d</string>
     <string name="latency_targets_url_label">URL цели</string>
+    <string name="list_add_to_section">Добавить в %1$s</string>
     <string name="log_viewer_auto_refresh">Автообновление</string>
     <string name="log_viewer_card_view">Карточками</string>
     <string name="log_viewer_delete_confirm_message">Файл %1$s будет удалён безвозвратно.</string>
@@ -482,6 +519,7 @@
     <string name="network_rule_group_operator_title">Соответствие</string>
     <string name="network_rule_group_target_required">Выберите цель для этого действия</string>
     <string name="network_rule_group_target_title">Цель</string>
+    <string name="network_rule_groups_empty">Групп правил пока нет.</string>
     <string name="network_test_group_ai">ИИ-сервисы</string>
     <string name="network_test_group_media">Медиа</string>
     <string name="network_test_group_social">Соцсети</string>
@@ -733,6 +771,7 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="proxy_selector_icon_pack_url">JSON-адрес набора значков</string>
     <string name="proxy_selector_layout_auto">Авточисло столбцов</string>
     <string name="proxy_selector_locate_selected">Найти выбранный узел</string>
+    <string name="proxy_selector_locked">Закреплено на этом узле</string>
     <string name="proxy_selector_measured_count">%1$d/%2$d</string>
     <string name="proxy_selector_mode">Режим</string>
     <string name="proxy_selector_mode_unknown">Режим</string>
@@ -746,7 +785,6 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="proxy_selector_node_sort_descending">По убыванию</string>
     <string name="proxy_selector_node_sort_latency">Задержка</string>
     <string name="proxy_selector_node_sort_name">Имя</string>
-    <string name="proxy_selector_node_sort_title">Сортировка узлов</string>
     <string name="proxy_selector_open_app">Открыть приложение</string>
     <string name="proxy_selector_policy_icon_apply">Применить</string>
     <string name="proxy_selector_policy_icon_clear_all">Очистить все свои значки</string>
@@ -777,7 +815,7 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="proxy_selector_search_hint">Поиск групп или узлов</string>
     <string name="proxy_selector_selected">Выбран</string>
     <string name="proxy_selector_show_hidden_groups">Показывать скрытые группы</string>
-    <string name="proxy_selector_sort_filter_title">Фильтр</string>
+    <string name="proxy_selector_show_unavailable_nodes">Показывать недоступные узлы</string>
     <string name="proxy_taskset_cpu_title">Taskset</string>
     <string name="proxy_weight_title">Вес</string>
     <string name="pure_black_title">Чистый чёрный в тёмной теме</string>
@@ -802,7 +840,7 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="rules_tab_route">Маршрут</string>
     <string name="rules_trace_failure_connect">Не удалось открыть TCP-соединение с сервером</string>
     <string name="rules_trace_failure_dns">Не удалось разрешить доменное имя</string>
-    <string name="rules_trace_failure_exchange">Соединение закрылось до завершения ответа</string>
+    <string name="rules_trace_failure_exchange">Соединение было закрыто до завершения ответа</string>
     <string name="rules_trace_failure_invalid_target">Это не корректный адрес HTTP(S)</string>
     <string name="rules_trace_failure_protocol">Сервер нарушил протокол во время обмена</string>
     <string name="rules_trace_failure_timeout">Запрос превысил лимит времени проверки</string>
@@ -1009,6 +1047,7 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="subscription_detail_used">Использовано %1$s</string>
     <string name="subscription_management_save_failed">Не удалось сохранить настройки подписки</string>
     <string name="subscription_management_update_success">Подписка обновлена</string>
+    <string name="subscription_sources_title">Источники подписок</string>
     <string name="subscription_update_mihomo_item_name_empty">У подписки Mihomo #%1$d не указано имя</string>
     <string name="subscription_update_mihomo_item_url_empty">У подписки Mihomo #%1$d не указана ссылка</string>
     <string name="subscription_update_mihomo_only">Переопределение конфигурации подписок поддерживается только Mihomo</string>
@@ -1043,7 +1082,9 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="theme_accent_yellow">Жёлтый</string>
     <string name="theme_color_spec_2021">Material 3 2021</string>
     <string name="theme_color_spec_2025">Material 3 Expressive 2025</string>
+    <string name="theme_color_spec_2026">Material 3 2026</string>
     <string name="theme_color_spec_title">Стандарт цвета</string>
+    <string name="theme_color_style_cmf">CMF</string>
     <string name="theme_color_style_content">Content</string>
     <string name="theme_color_style_expressive">Expressive</string>
     <string name="theme_color_style_fidelity">Fidelity</string>
@@ -1116,9 +1157,9 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="tools_update_webui_url_label">Ссылка для скачивания</string>
     <string name="tooltip_description">Подсказка</string>
     <string name="tooltip_label">Показать подсказку</string>
-    <string name="top_bar_blur_style_gaussian">Размытие по Гауссу</string>
-    <string name="top_bar_blur_style_progressive">Прогрессивное размытие</string>
-    <string name="top_bar_blur_style_title">Стиль размытия верхней панели</string>
+    <string name="top_bar_blur_style_title">Стиль верхней панели</string>
+    <string name="top_bar_style_classic">Классический</string>
+    <string name="top_bar_style_glass">Стекло</string>
     <string name="ui_mode_material">Material3</string>
     <string name="ui_mode_miuix">Miuix</string>
     <string name="ui_mode_title">Стиль интерфейса</string>
@@ -1129,6 +1170,7 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="web_ui_add_panel_name_required">Сначала введите имя панели</string>
     <string name="web_ui_add_panel_url_invalid">Введите корректный адрес панели</string>
     <string name="web_ui_clear_cache">Очистить веб-кеш</string>
+    <string name="web_ui_custom_panels_empty">Пользовательских панелей пока нет.</string>
     <string name="web_ui_custom_panels_title">Пользовательские панели</string>
     <string name="web_ui_local_panel_mode">Локальный API</string>
     <string name="web_ui_local_panel_mode_auto">Автоматически</string>
@@ -1160,14 +1202,4 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="wifi_match_picker_location_required">Включите геолокацию для сканирования Wi-Fi</string>
     <string name="wifi_match_picker_permission_required">Требуется разрешение на Wi-Fi</string>
     <string name="wifi_match_ssid_hint">SSID</string>
-    <string name="proxy_core_mihomo_dingtalk">Mihomo Smart + eBPF + 钉钉直连</string>
-    <string name="proxy_core_sing_box_dingtalk">Sing-Box Smart + eBPF + 钉钉直连</string>
-    <string name="proxy_config_restore_default">Восстановить конфигурацию по умолчанию</string>
-    <string name="proxy_config_restore_done">Конфигурация по умолчанию восстановлена: %1$s</string>
-    <string name="proxy_config_restore_done_bak">Конфигурация по умолчанию восстановлена: %1$s (старый файл сохранён как %1$s.bak)</string>
-    <string name="proxy_config_restore_failed">Не удалось восстановить конфигурацию по умолчанию: %1$s</string>
-    <string name="proxy_config_restore_none">Для текущего ядра нет встроенной конфигурации по умолчанию</string>
-    <string name="service_battery_unrestricted_title">Без ограничений батареи</string>
-    <string name="service_battery_unrestricted_subtitle">Исключить приложение из оптимизации батареи, чтобы система не замораживала и не завершала его в фоне (отключение — на странице системных настроек)</string>
-    <string name="service_battery_unrestricted_already">Оптимизация батареи уже отключена</string>
-</resources>
+<string name="proxy_core_mihomo_dingtalk">Mihomo Smart + eBPF + 钉钉直连</string><string name="proxy_core_sing_box_dingtalk">Sing-Box Smart + eBPF + 钉钉直连</string><string name="proxy_config_restore_default">Восстановить конфигурацию по умолчанию</string><string name="proxy_config_restore_done">Конфигурация по умолчанию восстановлена: %1$s</string><string name="proxy_config_restore_done_bak">Конфигурация по умолчанию восстановлена: %1$s (старый файл сохранён как %1$s.bak)</string><string name="proxy_config_restore_failed">Не удалось восстановить конфигурацию по умолчанию: %1$s</string><string name="proxy_config_restore_none">Для текущего ядра нет встроенной конфигурации по умолчанию</string><string name="service_battery_unrestricted_title">Без ограничений батареи</string><string name="service_battery_unrestricted_subtitle">Исключить приложение из оптимизации батареи, чтобы система не замораживала и не завершала его в фоне (отключение — на странице системных настроек)</string><string name="service_battery_unrestricted_already">Оптимизация батареи уже отключена</string></resources>

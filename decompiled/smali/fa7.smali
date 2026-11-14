@@ -1,28 +1,27 @@
 .class public final Lfa7;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lei;
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
-
-.field public final synthetic k:Lge5;
-
-.field public l:I
+.field public final a:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(Lge5;Lz81;)V
+.method public constructor <init>(Ljava/lang/String;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lfa7;->k:Lge5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
     .line 4
+    iput-object p1, p0, Lfa7;->a:Ljava/lang/String;
+
     .line 5
     .line 6
     return-void
@@ -30,43 +29,102 @@
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
     .line 1
-    iput-object p1, p0, Lfa7;->j:Ljava/lang/Object;
+    if-eq p0, p1, :cond_1
 
     .line 2
     .line 3
-    iget p1, p0, Lfa7;->l:I
+    instance-of v0, p1, Lfa7;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    check-cast p1, Lfa7;
 
     .line 8
-    iput p1, p0, Lfa7;->l:I
-
     .line 9
+    iget-object p1, p1, Lfa7;->a:Ljava/lang/String;
+
     .line 10
-    iget-object p1, p0, Lfa7;->k:Lge5;
-
     .line 11
-    .line 12
-    const/4 v0, 0x0
+    iget-object p0, p0, Lfa7;->a:Ljava/lang/String;
 
+    .line 12
     .line 13
-    invoke-virtual {p1, v0, p0}, Lge5;->p(Ljava/lang/String;Lz81;)Ljava/lang/Object;
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 14
     .line 15
     .line 16
-    move-result-object p0
+    move-result p0
 
     .line 17
+    if-nez p0, :cond_1
+
+    .line 18
+    .line 19
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 20
+    return p0
+
+    .line 21
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 22
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lfa7;->a:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    const-string v0, "UrlAnnotation(url="
+
+    .line 2
+    .line 3
+    const-string v1, ")"
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Lfa7;->a:Ljava/lang/String;
+
+    .line 6
+    .line 7
+    invoke-static {v0, p0, v1}, Lky1;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p0
+
+    .line 11
     return-object p0
 .end method

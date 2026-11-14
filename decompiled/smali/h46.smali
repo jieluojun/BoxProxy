@@ -1,215 +1,141 @@
-.class public final Lh46;
+.class public abstract Lh46;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final a:Ljava/lang/String;
+# static fields
+.field public static final a:I
 
-.field public final b:Ljava/lang/String;
+.field public static final b:Lhx4;
+
+.field public static final c:Lhx4;
+
+.field public static final d:Lhx4;
+
+.field public static final e:Lhx4;
+
+.field public static final f:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p1, p0, Lh46;->a:Ljava/lang/String;
-
-    .line 5
-    .line 6
-    iput-object p2, p0, Lh46;->b:Ljava/lang/String;
-
-    .line 7
-    .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
+.method static constructor <clinit>()V
     .locals 4
 
     .line 1
-    const/4 v0, 0x1
+    const/16 v0, 0x64
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
-    .line 4
-    return v0
+    const-string v1, "kotlinx.coroutines.semaphore.maxSpinCycles"
 
+    .line 4
     .line 5
-    :cond_0
-    instance-of v1, p1, Lh46;
+    const/16 v2, 0xc
 
     .line 6
     .line 7
-    const/4 v2, 0x0
+    invoke-static {v0, v1, v2}, Lo06;->p0(ILjava/lang/String;I)I
 
     .line 8
-    if-nez v1, :cond_1
-
     .line 9
     .line 10
-    return v2
+    move-result v0
 
     .line 11
-    :cond_1
-    check-cast p1, Lh46;
+    sput v0, Lh46;->a:I
 
     .line 12
     .line 13
-    iget-object v1, p0, Lh46;->a:Ljava/lang/String;
+    new-instance v0, Lhx4;
 
     .line 14
     .line 15
-    iget-object v3, p1, Lh46;->a:Ljava/lang/String;
+    const-string v1, "PERMIT"
 
     .line 16
     .line 17
-    invoke-static {v1, v3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    const/4 v3, 0x6
 
     .line 18
+    invoke-direct {v0, v1, v3}, Lhx4;-><init>(Ljava/lang/Object;B)V
+
     .line 19
     .line 20
-    move-result v1
-
     .line 21
-    if-nez v1, :cond_2
+    sput-object v0, Lh46;->b:Lhx4;
 
     .line 22
     .line 23
-    return v2
+    new-instance v0, Lhx4;
 
     .line 24
-    :cond_2
-    iget-object p0, p0, Lh46;->b:Ljava/lang/String;
-
     .line 25
+    const-string v1, "TAKEN"
+
     .line 26
-    iget-object p1, p1, Lh46;->b:Ljava/lang/String;
-
     .line 27
-    .line 28
-    invoke-static {p0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-direct {v0, v1, v3}, Lhx4;-><init>(Ljava/lang/Object;B)V
 
+    .line 28
     .line 29
     .line 30
-    .line 31
-    move-result p0
+    sput-object v0, Lh46;->c:Lhx4;
 
+    .line 31
     .line 32
-    if-nez p0, :cond_3
+    new-instance v0, Lhx4;
 
     .line 33
     .line 34
-    return v2
+    const-string v1, "BROKEN"
 
     .line 35
-    :cond_3
-    return v0
-.end method
+    .line 36
+    invoke-direct {v0, v1, v3}, Lhx4;-><init>(Ljava/lang/Object;B)V
 
-.method public final hashCode()I
-    .locals 2
+    .line 37
+    .line 38
+    .line 39
+    sput-object v0, Lh46;->d:Lhx4;
 
-    .line 1
-    const/4 v0, 0x0
+    .line 40
+    .line 41
+    new-instance v0, Lhx4;
 
-    .line 2
-    iget-object v1, p0, Lh46;->a:Ljava/lang/String;
+    .line 42
+    .line 43
+    const-string v1, "CANCELLED"
 
-    .line 3
-    .line 4
-    if-nez v1, :cond_0
+    .line 44
+    .line 45
+    invoke-direct {v0, v1, v3}, Lhx4;-><init>(Ljava/lang/Object;B)V
 
-    .line 5
-    .line 6
-    move v1, v0
+    .line 46
+    .line 47
+    .line 48
+    sput-object v0, Lh46;->e:Lhx4;
 
-    .line 7
-    goto :goto_0
+    .line 49
+    .line 50
+    const-string v0, "kotlinx.coroutines.semaphore.segmentSize"
 
-    .line 8
-    :cond_0
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
+    .line 51
+    .line 52
+    const/16 v1, 0x10
 
-    .line 9
-    .line 10
-    .line 11
-    move-result v1
+    .line 53
+    .line 54
+    invoke-static {v1, v0, v2}, Lo06;->p0(ILjava/lang/String;I)I
 
-    .line 12
-    :goto_0
-    mul-int/lit8 v1, v1, 0x1f
-
-    .line 13
-    .line 14
-    iget-object p0, p0, Lh46;->b:Ljava/lang/String;
-
-    .line 15
-    .line 16
-    if-nez p0, :cond_1
-
-    .line 17
-    .line 18
-    goto :goto_1
-
-    .line 19
-    :cond_1
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
-
-    .line 20
-    .line 21
-    .line 22
+    .line 55
+    .line 56
+    .line 57
     move-result v0
 
-    .line 23
-    :goto_1
-    add-int/2addr v1, v0
+    .line 58
+    sput v0, Lh46;->f:I
 
-    .line 24
-    return v1
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    .line 1
-    const-string v0, ", postStopScript="
-
-    .line 2
-    .line 3
-    const-string v1, ")"
-
-    .line 4
-    .line 5
-    const-string v2, "LifecycleScripts(preStartScript="
-
-    .line 6
-    .line 7
-    iget-object v3, p0, Lh46;->a:Ljava/lang/String;
-
-    .line 8
-    .line 9
-    iget-object p0, p0, Lh46;->b:Ljava/lang/String;
-
-    .line 10
-    .line 11
-    invoke-static {v2, v3, v0, p0, v1}, Loc1;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object p0
-
-    .line 15
-    return-object p0
+    .line 59
+    .line 60
+    return-void
 .end method

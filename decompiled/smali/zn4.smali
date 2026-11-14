@@ -1,194 +1,119 @@
-.class public final Lzn4;
-.super Lfo4;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lzn4;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Le72;
 
 
 # instance fields
-.field public final c:F
+.field public final synthetic i:B
 
-.field public final d:F
+.field public final synthetic j:Lyo4;
+
+.field public final synthetic k:Lh04;
 
 
 # direct methods
-.method public constructor <init>(FF)V
-    .locals 1
+.method public synthetic constructor <init>(Lyo4;Lh04;B)V
+    .locals 0
 
     .line 1
-    const/4 v0, 0x3
+    iput-byte p3, p0, Lzn4;->i:B
 
     .line 2
-    invoke-direct {p0, v0}, Lfo4;-><init>(I)V
-
     .line 3
+    iput-object p1, p0, Lzn4;->j:Lyo4;
+
     .line 4
     .line 5
-    iput p1, p0, Lzn4;->c:F
+    iput-object p2, p0, Lzn4;->k:Lh04;
 
     .line 6
     .line 7
-    iput p2, p0, Lzn4;->d:F
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 8
     .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
 
     .line 1
-    const/4 v0, 0x1
+    iget-byte v0, p0, Lzn4;->i:B
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
-    .line 4
-    return v0
+    sget-object v1, Ll97;->a:Ll97;
 
+    .line 4
     .line 5
-    :cond_0
-    instance-of v1, p1, Lzn4;
+    iget-object v2, p0, Lzn4;->k:Lh04;
 
     .line 6
     .line 7
-    const/4 v2, 0x0
+    iget-object p0, p0, Lzn4;->j:Lyo4;
 
     .line 8
-    if-nez v1, :cond_1
-
     .line 9
+    packed-switch v0, :pswitch_data_0
+
     .line 10
-    return v2
-
     .line 11
-    :cond_1
-    check-cast p1, Lzn4;
-
     .line 12
+    iget-object p0, p0, Lyo4;->v:Le72;
+
     .line 13
-    iget v1, p0, Lzn4;->c:F
-
     .line 14
-    .line 15
-    iget v3, p1, Lzn4;->c:F
+    invoke-interface {p0}, Le72;->invoke()Ljava/lang/Object;
 
+    .line 15
     .line 16
     .line 17
-    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
+    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     .line 18
     .line 19
+    invoke-interface {v2, p0}, Lh04;->setValue(Ljava/lang/Object;)V
+
     .line 20
-    move-result v1
-
     .line 21
-    if-eqz v1, :cond_2
-
     .line 22
+    return-object v1
+
     .line 23
-    return v2
+    :pswitch_0
+    iget-object p0, p0, Lyo4;->v:Le72;
 
     .line 24
-    :cond_2
-    iget p0, p0, Lzn4;->d:F
-
     .line 25
-    .line 26
-    iget p1, p1, Lzn4;->d:F
+    invoke-interface {p0}, Le72;->invoke()Ljava/lang/Object;
 
+    .line 26
     .line 27
     .line 28
-    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
+    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     .line 29
     .line 30
+    invoke-interface {v2, p0}, Lh04;->setValue(Ljava/lang/Object;)V
+
     .line 31
-    move-result p0
-
     .line 32
-    if-eqz p0, :cond_3
-
     .line 33
+    return-object v1
+
     .line 34
-    return v2
+    nop
 
     .line 35
-    :cond_3
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    .line 1
-    iget v0, p0, Lzn4;->c:F
-
-    .line 2
-    .line 3
-    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    mul-int/lit8 v0, v0, 0x1f
-
-    .line 8
-    .line 9
-    iget p0, p0, Lzn4;->d:F
-
-    .line 10
-    .line 11
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    add-int/2addr p0, v0
-
-    .line 16
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    .line 1
-    const-string v0, ", dy="
-
-    .line 2
-    .line 3
-    const-string v1, ")"
-
-    .line 4
-    .line 5
-    const-string v2, "RelativeMoveTo(dx="
-
-    .line 6
-    .line 7
-    iget v3, p0, Lzn4;->c:F
-
-    .line 8
-    .line 9
-    iget p0, p0, Lzn4;->d:F
-
-    .line 10
-    .line 11
-    invoke-static {v2, v3, v0, p0, v1}, Ly96;->o(Ljava/lang/String;FLjava/lang/String;FLjava/lang/String;)Ljava/lang/String;
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object p0
-
-    .line 15
-    return-object p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

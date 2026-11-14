@@ -1,63 +1,135 @@
-.class public interface abstract Lc87;
+.class public final Lc87;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Le33;
+
+
+# static fields
+.field public static final a:Lc87;
+
+.field public static final b:Lfu2;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    .line 1
+    new-instance v0, Lc87;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    sput-object v0, Lc87;->a:Lc87;
+
+    .line 7
+    .line 8
+    const-string v0, "kotlin.UShort"
+
+    .line 9
+    .line 10
+    sget-object v1, Lma6;->a:Lma6;
+
+    .line 11
+    .line 12
+    invoke-static {v0, v1}, Lqm;->g(Ljava/lang/String;Le33;)Lfu2;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object v0
+
+    .line 16
+    sput-object v0, Lc87;->b:Lfu2;
+
+    .line 17
+    .line 18
+    return-void
+.end method
 
 
 # virtual methods
-.method public a(Ljava/lang/Class;)Ly77;
+.method public final b(Lpf1;)Ljava/lang/Object;
     .locals 0
 
     .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    sget-object p0, Lc87;->b:Lfu2;
 
     .line 2
     .line 3
-    const-string p1, "`Factory.create(String, CreationExtras)` is not implemented. You may need to override the method and provide a custom implementation. Note that using `Factory.create(String)` is not supported and considered an error."
+    invoke-interface {p1, p0}, Lpf1;->w(Lt46;)Lpf1;
 
     .line 4
     .line 5
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
     .line 6
-    .line 7
-    .line 8
-    throw p0
-.end method
-
-.method public b(Ljava/lang/Class;Lcs3;)Ly77;
-    .locals 0
-
-    .line 1
-    invoke-interface {p0, p1}, Lc87;->a(Ljava/lang/Class;)Ly77;
-
-    .line 2
-    .line 3
-    .line 4
     move-result-object p0
 
-    .line 5
+    .line 7
+    invoke-interface {p0}, Lpf1;->z()S
+
+    .line 8
+    .line 9
+    .line 10
+    move-result p0
+
+    .line 11
+    new-instance p1, Ly77;
+
+    .line 12
+    .line 13
+    invoke-direct {p1, p0}, Ly77;-><init>(S)V
+
+    .line 14
+    .line 15
+    .line 16
+    return-object p1
+.end method
+
+.method public final c()Lt46;
+    .locals 0
+
+    .line 1
+    sget-object p0, Lc87;->b:Lfu2;
+
+    .line 2
+    .line 3
     return-object p0
 .end method
 
-.method public c(Lsr0;Lcs3;)Ly77;
+.method public final d(Lji6;Ljava/lang/Object;)V
     .locals 0
 
     .line 1
-    invoke-static {p1}, Lbn0;->z(Lsr0;)Ljava/lang/Class;
+    check-cast p2, Ly77;
 
     .line 2
     .line 3
+    iget-short p0, p2, Ly77;->i:S
+
     .line 4
+    .line 5
+    sget-object p2, Lc87;->b:Lfu2;
+
+    .line 6
+    .line 7
+    invoke-virtual {p1, p2}, Lji6;->h(Lt46;)Lji6;
+
+    .line 8
+    .line 9
+    .line 10
     move-result-object p1
 
-    .line 5
-    invoke-interface {p0, p1, p2}, Lc87;->b(Ljava/lang/Class;Lcs3;)Ly77;
+    .line 11
+    invoke-virtual {p1, p0}, Lji6;->p(S)V
 
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    return-object p0
+    .line 12
+    .line 13
+    .line 14
+    return-void
 .end method

@@ -1,17 +1,17 @@
 .class public final synthetic Lp1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lt62;
+.implements Lt72;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final synthetic i:B
 
-.field public final synthetic k:Landroid/content/Context;
+.field public final synthetic j:Landroid/content/Context;
 
-.field public final synthetic l:Ljava/lang/String;
+.field public final synthetic k:Ljava/lang/String;
 
 
 # direct methods
@@ -19,15 +19,15 @@
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Lp1;->j:B
+    iput-byte p3, p0, Lp1;->i:B
 
     .line 2
     .line 3
-    iput-object p1, p0, Lp1;->k:Landroid/content/Context;
+    iput-object p1, p0, Lp1;->j:Landroid/content/Context;
 
     .line 4
     .line 5
-    iput-object p2, p0, Lp1;->l:Ljava/lang/String;
+    iput-object p2, p0, Lp1;->k:Ljava/lang/String;
 
     .line 6
     .line 7
@@ -45,11 +45,11 @@
     .locals 6
 
     .line 1
-    iget-byte v0, p0, Lp1;->j:B
+    iget-byte v0, p0, Lp1;->i:B
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    sget-object v1, Ll97;->a:Ll97;
 
     .line 4
     .line 5
@@ -63,11 +63,11 @@
 
     .line 8
     .line 9
-    iget-object v5, p0, Lp1;->l:Ljava/lang/String;
+    iget-object v5, p0, Lp1;->k:Ljava/lang/String;
 
     .line 10
     .line 11
-    iget-object p0, p0, Lp1;->k:Landroid/content/Context;
+    iget-object p0, p0, Lp1;->j:Landroid/content/Context;
 
     .line 12
     .line 13

@@ -1,10 +1,10 @@
 .class public abstract Lr2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Ljava/util/Collection;
-.implements Lfy2;
+.implements Lt23;
 
 
 # virtual methods
@@ -123,7 +123,7 @@
     move-result-object v0
 
     .line 23
-    invoke-static {v0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v0, p1}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 24
     .line 25
@@ -173,66 +173,61 @@
     move-result v0
 
     .line 13
-    if-eqz v0, :cond_0
+    if-nez v0, :cond_1
 
     .line 14
     .line 15
-    goto :goto_0
-
-    .line 16
-    :cond_0
     invoke-interface {p1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
+    .line 16
     .line 17
     .line 18
-    .line 19
     move-result-object p1
 
-    .line 20
-    :cond_1
+    .line 19
+    :cond_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
+    .line 20
     .line 21
     .line 22
-    .line 23
     move-result v0
+
+    .line 23
+    if-eqz v0, :cond_1
 
     .line 24
-    if-eqz v0, :cond_2
-
     .line 25
-    .line 26
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
+    .line 26
     .line 27
     .line 28
-    .line 29
     move-result-object v0
 
-    .line 30
+    .line 29
     invoke-virtual {p0, v0}, Lr2;->contains(Ljava/lang/Object;)Z
 
+    .line 30
     .line 31
     .line 32
-    .line 33
     move-result v0
 
-    .line 34
-    if-nez v0, :cond_1
+    .line 33
+    if-nez v0, :cond_0
 
+    .line 34
     .line 35
-    .line 36
     const/4 p0, 0x0
 
-    .line 37
+    .line 36
     return p0
 
-    .line 38
-    :cond_2
-    :goto_0
+    .line 37
+    :cond_1
     const/4 p0, 0x1
 
-    .line 39
+    .line 38
     return p0
 .end method
 
@@ -344,7 +339,7 @@
     .locals 0
 
     .line 9
-    invoke-static {p0}, Lbf0;->T(Ljava/util/Collection;)[Ljava/lang/Object;
+    invoke-static {p0}, Ljf1;->L(Ljava/util/Collection;)[Ljava/lang/Object;
 
     move-result-object p0
 
@@ -360,7 +355,7 @@
     .line 2
     .line 3
     .line 4
-    invoke-static {p0, p1}, Lbf0;->U(Ljava/util/Collection;[Ljava/lang/Object;)[Ljava/lang/Object;
+    invoke-static {p0, p1}, Ljf1;->M(Ljava/util/Collection;[Ljava/lang/Object;)[Ljava/lang/Object;
 
     .line 5
     .line 6
@@ -406,7 +401,7 @@
     move-object v0, p0
 
     .line 16
-    invoke-static/range {v0 .. v5}, Lcv0;->G0(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/String;Ljava/lang/String;Lp62;I)Ljava/lang/String;
+    invoke-static/range {v0 .. v5}, Lxu0;->A0(Ljava/lang/Iterable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/String;Lp72;I)Ljava/lang/String;
 
     .line 17
     .line 18

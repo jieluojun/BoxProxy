@@ -1,25 +1,25 @@
-.class public final synthetic Llg;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Llg;
+.super Lc43;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lt62;
+.implements Lt72;
 
 
 # instance fields
 .field public final synthetic j:Ljava/lang/Object;
 
-.field public final synthetic k:Lwp3;
+.field public final synthetic k:Lsw3;
 
-.field public final synthetic l:Lp62;
+.field public final synthetic l:Lp72;
 
-.field public final synthetic m:Lf8;
+.field public final synthetic m:Le20;
 
 .field public final synthetic n:Ljava/lang/String;
 
-.field public final synthetic o:Lp62;
+.field public final synthetic o:Lp72;
 
-.field public final synthetic p:Lqz0;
+.field public final synthetic p:Lnz0;
 
 .field public final synthetic q:I
 
@@ -27,51 +27,54 @@
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;Lwp3;Lp62;Lf8;Ljava/lang/String;Lp62;Lqz0;II)V
+.method public constructor <init>(Ljava/lang/Object;Lsw3;Lp72;Le20;Ljava/lang/String;Lp72;Lnz0;II)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Llg;->j:Ljava/lang/Object;
 
     .line 2
     .line 3
+    iput-object p2, p0, Llg;->k:Lsw3;
+
     .line 4
-    iput-object p1, p0, Llg;->j:Ljava/lang/Object;
-
     .line 5
+    iput-object p3, p0, Llg;->l:Lp72;
+
     .line 6
-    iput-object p2, p0, Llg;->k:Lwp3;
-
     .line 7
+    iput-object p4, p0, Llg;->m:Le20;
+
     .line 8
-    iput-object p3, p0, Llg;->l:Lp62;
-
     .line 9
-    .line 10
-    iput-object p4, p0, Llg;->m:Lf8;
-
-    .line 11
-    .line 12
     iput-object p5, p0, Llg;->n:Ljava/lang/String;
 
+    .line 10
+    .line 11
+    iput-object p6, p0, Llg;->o:Lp72;
+
+    .line 12
     .line 13
+    iput-object p7, p0, Llg;->p:Lnz0;
+
     .line 14
-    iput-object p6, p0, Llg;->o:Lp62;
-
     .line 15
-    .line 16
-    iput-object p7, p0, Llg;->p:Lqz0;
-
-    .line 17
-    .line 18
     iput p8, p0, Llg;->q:I
 
-    .line 19
-    .line 20
+    .line 16
+    .line 17
     iput-byte p9, p0, Llg;->r:B
+
+    .line 18
+    .line 19
+    const/4 p1, 0x2
+
+    .line 20
+    invoke-direct {p0, p1}, Lc43;-><init>(I)V
 
     .line 21
     .line 22
+    .line 23
     return-void
 .end method
 
@@ -84,15 +87,15 @@
     move-object v7, p1
 
     .line 2
-    check-cast v7, Lz11;
+    check-cast v7, Lt82;
 
     .line 3
     .line 4
-    check-cast p2, Ljava/lang/Integer;
+    check-cast p2, Ljava/lang/Number;
 
     .line 5
     .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {p2}, Ljava/lang/Number;->intValue()I
 
     .line 7
     .line 8
@@ -105,7 +108,7 @@
 
     .line 12
     .line 13
-    invoke-static {p1}, Lqu5;->f0(I)I
+    invoke-static {p1}, Lp06;->W(I)I
 
     .line 14
     .line 15
@@ -113,44 +116,44 @@
     move-result v8
 
     .line 17
-    iget-object v0, p0, Llg;->j:Ljava/lang/Object;
+    iget-byte v9, p0, Llg;->r:B
 
     .line 18
     .line 19
-    iget-object v1, p0, Llg;->k:Lwp3;
+    iget-object v0, p0, Llg;->j:Ljava/lang/Object;
 
     .line 20
     .line 21
-    iget-object v2, p0, Llg;->l:Lp62;
+    iget-object v1, p0, Llg;->k:Lsw3;
 
     .line 22
     .line 23
-    iget-object v3, p0, Llg;->m:Lf8;
+    iget-object v2, p0, Llg;->l:Lp72;
 
     .line 24
     .line 25
-    iget-object v4, p0, Llg;->n:Ljava/lang/String;
+    iget-object v3, p0, Llg;->m:Le20;
 
     .line 26
     .line 27
-    iget-object v5, p0, Llg;->o:Lp62;
+    iget-object v4, p0, Llg;->n:Ljava/lang/String;
 
     .line 28
     .line 29
-    iget-object v6, p0, Llg;->p:Lqz0;
+    iget-object v5, p0, Llg;->o:Lp72;
 
     .line 30
     .line 31
-    iget-byte v9, p0, Llg;->r:B
+    iget-object v6, p0, Llg;->p:Lnz0;
 
     .line 32
     .line 33
-    invoke-static/range {v0 .. v9}, Lag7;->b(Ljava/lang/Object;Lwp3;Lp62;Lf8;Ljava/lang/String;Lp62;Lqz0;Lz11;II)V
+    invoke-static/range {v0 .. v9}, Lab;->c(Ljava/lang/Object;Lsw3;Lp72;Le20;Ljava/lang/String;Lp72;Lnz0;Lt82;II)V
 
     .line 34
     .line 35
     .line 36
-    sget-object p0, La47;->a:La47;
+    sget-object p0, Ll97;->a:Ll97;
 
     .line 37
     .line 38

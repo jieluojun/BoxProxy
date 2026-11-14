@@ -1,156 +1,131 @@
-.class public final enum Ldd1;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Ldd1;
+.super Lc43;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt72;
 
 
-# static fields
-.field public static final enum j:Ldd1;
+# instance fields
+.field public final synthetic j:Lu47;
 
-.field public static final enum k:Ldd1;
+.field public final synthetic k:Lsw3;
 
-.field public static final enum l:Ldd1;
+.field public final synthetic l:Lm02;
 
-.field public static final synthetic m:[Ldd1;
+.field public final synthetic m:Lp72;
+
+.field public final synthetic n:Lnz0;
+
+.field public final synthetic o:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public constructor <init>(Lu47;Lsw3;Lm02;Lp72;Lnz0;I)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ldd1;
+    iput-object p1, p0, Ldd1;->j:Lu47;
 
     .line 2
     .line 3
-    const-string v1, "None"
+    iput-object p2, p0, Ldd1;->k:Lsw3;
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    iput-object p3, p0, Ldd1;->l:Lm02;
 
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 7
+    iput-object p4, p0, Ldd1;->m:Lp72;
+
     .line 8
     .line 9
-    sput-object v0, Ldd1;->j:Ldd1;
+    iput-object p5, p0, Ldd1;->n:Lnz0;
 
     .line 10
     .line 11
-    new-instance v1, Ldd1;
+    iput p6, p0, Ldd1;->o:I
 
     .line 12
     .line 13
-    const-string v2, "Cancelled"
+    const/4 p1, 0x2
 
     .line 14
+    invoke-direct {p0, p1}, Lc43;-><init>(I)V
+
     .line 15
-    const/4 v3, 0x1
-
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 17
-    .line 18
-    .line 19
-    sput-object v1, Ldd1;->k:Ldd1;
-
-    .line 20
-    .line 21
-    new-instance v2, Ldd1;
-
-    .line 22
-    .line 23
-    const-string v3, "Redirected"
-
-    .line 24
-    .line 25
-    const/4 v4, 0x2
-
-    .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 27
-    .line 28
-    .line 29
-    sput-object v2, Ldd1;->l:Ldd1;
-
-    .line 30
-    .line 31
-    new-instance v3, Ldd1;
-
-    .line 32
-    .line 33
-    const-string v4, "RedirectCancelled"
-
-    .line 34
-    .line 35
-    const/4 v5, 0x3
-
-    .line 36
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 37
-    .line 38
-    .line 39
-    filled-new-array {v0, v1, v2, v3}, [Ldd1;
-
-    .line 40
-    .line 41
-    .line 42
-    move-result-object v0
-
-    .line 43
-    sput-object v0, Ldd1;->m:[Ldd1;
-
-    .line 44
-    .line 45
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Ldd1;
-    .locals 1
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 7
 
     .line 1
-    const-class v0, Ldd1;
+    move-object v5, p1
 
     .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    check-cast v5, Lt82;
 
+    .line 3
     .line 4
+    check-cast p2, Ljava/lang/Number;
+
     .line 5
     .line 6
-    move-result-object p0
+    invoke-virtual {p2}, Ljava/lang/Number;->intValue()I
 
     .line 7
-    check-cast p0, Ldd1;
-
     .line 8
     .line 9
+    iget p1, p0, Ldd1;->o:I
+
+    .line 10
+    .line 11
+    or-int/lit8 p1, p1, 0x1
+
+    .line 12
+    .line 13
+    invoke-static {p1}, Lp06;->W(I)I
+
+    .line 14
+    .line 15
+    .line 16
+    move-result v6
+
+    .line 17
+    iget-object v0, p0, Ldd1;->j:Lu47;
+
+    .line 18
+    .line 19
+    iget-object v1, p0, Ldd1;->k:Lsw3;
+
+    .line 20
+    .line 21
+    iget-object v2, p0, Ldd1;->l:Lm02;
+
+    .line 22
+    .line 23
+    iget-object v3, p0, Ldd1;->m:Lp72;
+
+    .line 24
+    .line 25
+    iget-object v4, p0, Ldd1;->n:Lnz0;
+
+    .line 26
+    .line 27
+    invoke-static/range {v0 .. v6}, Ler;->l(Lu47;Lsw3;Lm02;Lp72;Lnz0;Lt82;I)V
+
+    .line 28
+    .line 29
+    .line 30
+    sget-object p0, Ll97;->a:Ll97;
+
+    .line 31
+    .line 32
     return-object p0
-.end method
-
-.method public static values()[Ldd1;
-    .locals 1
-
-    .line 1
-    sget-object v0, Ldd1;->m:[Ldd1;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [Ldd1;
-
-    .line 8
-    .line 9
-    return-object v0
 .end method

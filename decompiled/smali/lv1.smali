@@ -1,140 +1,123 @@
-.class public final enum Llv1;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Llv1;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lof6;
 
 
 # static fields
-.field public static final enum j:Llv1;
+.field public static final j:Llv1;
 
-.field public static final enum k:Llv1;
 
-.field public static final enum l:Llv1;
-
-.field public static final synthetic m:[Llv1;
+# instance fields
+.field public final i:Ljava/util/ArrayList;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 1
 
     .line 1
     new-instance v0, Llv1;
 
     .line 2
     .line 3
-    const-string v1, "PreEnter"
+    invoke-direct {v0}, Llv1;-><init>()V
 
     .line 4
     .line 5
-    const/4 v2, 0x0
-
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    sput-object v0, Llv1;->j:Llv1;
 
     .line 7
     .line 8
-    .line 9
-    sput-object v0, Llv1;->j:Llv1;
-
-    .line 10
-    .line 11
-    new-instance v1, Llv1;
-
-    .line 12
-    .line 13
-    const-string v2, "Visible"
-
-    .line 14
-    .line 15
-    const/4 v3, 0x1
-
-    .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 17
-    .line 18
-    .line 19
-    sput-object v1, Llv1;->k:Llv1;
-
-    .line 20
-    .line 21
-    new-instance v2, Llv1;
-
-    .line 22
-    .line 23
-    const-string v3, "PostExit"
-
-    .line 24
-    .line 25
-    const/4 v4, 0x2
-
-    .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 27
-    .line 28
-    .line 29
-    sput-object v2, Llv1;->l:Llv1;
-
-    .line 30
-    .line 31
-    filled-new-array {v0, v1, v2}, [Llv1;
-
-    .line 32
-    .line 33
-    .line 34
-    move-result-object v0
-
-    .line 35
-    sput-object v0, Llv1;->m:[Llv1;
-
-    .line 36
-    .line 37
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Llv1;
-    .locals 1
+.method public constructor <init>()V
+    .locals 3
 
     .line 1
-    const-class v0, Llv1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
     .line 4
+    new-instance v0, Ljava/util/ArrayList;
+
     .line 5
     .line 6
+    const/4 v1, 0x1
+
+    .line 7
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 8
+    .line 9
+    .line 10
+    iput-object v0, p0, Llv1;->i:Ljava/util/ArrayList;
+
+    .line 11
+    .line 12
+    const/4 p0, 0x0
+
+    .line 13
+    const-wide/16 v1, 0x5
+
+    .line 14
+    .line 15
+    invoke-static {p0, v1, v2}, Lee4;->j(IJ)Lee4;
+
+    .line 16
+    .line 17
+    .line 18
     move-result-object p0
 
-    .line 7
-    check-cast p0, Llv1;
+    .line 19
+    invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 8
-    .line 9
-    return-object p0
+    .line 20
+    .line 21
+    .line 22
+    return-void
 .end method
 
-.method public static values()[Llv1;
-    .locals 1
+
+# virtual methods
+.method public final b(I)Ljava/util/List;
+    .locals 0
 
     .line 1
-    sget-object v0, Llv1;->m:[Llv1;
+    new-instance p1, Ljava/util/ArrayList;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    iget-object p0, p0, Llv1;->i:Ljava/util/ArrayList;
 
     .line 4
     .line 5
+    invoke-direct {p1, p0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+
     .line 6
-    move-result-object v0
-
     .line 7
-    check-cast v0, [Llv1;
-
     .line 8
-    .line 9
-    return-object v0
+    return-object p1
+.end method
+
+.method public final c(I)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public final h()I
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x1
+
+    .line 2
+    return p0
 .end method

@@ -1,230 +1,524 @@
-.class public final Llp3;
-.super Lu2;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lkj1;
+.class public Llp3;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final s:Landroid/view/Window;
+.field public final a:Landroid/content/Context;
 
-.field public final t:Lum4;
+.field public final b:Lqo3;
 
-.field public u:Z
+.field public final c:Z
+
+.field public final d:I
+
+.field public e:Landroid/view/View;
+
+.field public f:I
+
+.field public g:Z
+
+.field public h:Lsp3;
+
+.field public i:Ljp3;
+
+.field public j:Lkp3;
+
+.field public final k:Lkp3;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Landroid/view/Window;)V
+.method public constructor <init>(Landroid/content/Context;Lqo3;Landroid/view/View;ZII)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1}, Lu2;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    iput-object p2, p0, Llp3;->s:Landroid/view/Window;
+    const p6, 0x800003
 
     .line 5
     .line 6
-    sget-object p1, Ls60;->g:Lqz0;
-
     .line 7
-    .line 8
-    invoke-static {p1}, Lne3;->G(Ljava/lang/Object;)Lum4;
+    iput p6, p0, Llp3;->f:I
 
+    .line 8
     .line 9
+    new-instance p6, Lkp3;
+
     .line 10
     .line 11
-    move-result-object p1
+    invoke-direct {p6, p0}, Lkp3;-><init>(Llp3;)V
 
     .line 12
-    iput-object p1, p0, Llp3;->t:Lum4;
-
     .line 13
     .line 14
+    iput-object p6, p0, Llp3;->k:Lkp3;
+
+    .line 15
+    .line 16
+    iput-object p1, p0, Llp3;->a:Landroid/content/Context;
+
+    .line 17
+    .line 18
+    iput-object p2, p0, Llp3;->b:Lqo3;
+
+    .line 19
+    .line 20
+    iput-object p3, p0, Llp3;->e:Landroid/view/View;
+
+    .line 21
+    .line 22
+    iput-boolean p4, p0, Llp3;->c:Z
+
+    .line 23
+    .line 24
+    iput p5, p0, Llp3;->d:I
+
+    .line 25
+    .line 26
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/view/Window;
-    .locals 0
+.method public final a()Ljp3;
+    .locals 8
 
     .line 1
-    iget-object p0, p0, Llp3;->s:Landroid/view/Window;
+    iget-object v0, p0, Llp3;->i:Ljp3;
 
     .line 2
     .line 3
-    return-object p0
-.end method
-
-.method public final b(ILz11;)V
-    .locals 5
-
-    .line 1
-    check-cast p2, Lt72;
-
-    .line 2
-    .line 3
-    const v0, 0x225fdedf
+    if-nez v0, :cond_1
 
     .line 4
     .line 5
-    .line 6
-    invoke-virtual {p2, v0}, Lt72;->d0(I)Lz11;
+    const-string v0, "window"
 
+    .line 6
     .line 7
+    iget-object v1, p0, Llp3;->a:Landroid/content/Context;
+
     .line 8
     .line 9
-    invoke-virtual {p2, p0}, Lt72;->i(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v0}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
 
     .line 10
     .line 11
     .line 12
-    move-result v0
+    move-result-object v0
 
     .line 13
-    const/4 v1, 0x2
+    check-cast v0, Landroid/view/WindowManager;
 
     .line 14
-    if-eqz v0, :cond_0
-
     .line 15
+    invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
+
     .line 16
-    const/4 v0, 0x4
-
     .line 17
-    goto :goto_0
-
     .line 18
-    :cond_0
-    move v0, v1
+    move-result-object v0
 
     .line 19
-    :goto_0
-    or-int/2addr v0, p1
+    new-instance v2, Landroid/graphics/Point;
 
     .line 20
-    and-int/lit8 v2, v0, 0x3
-
     .line 21
+    invoke-direct {v2}, Landroid/graphics/Point;-><init>()V
+
     .line 22
-    const/4 v3, 0x0
-
     .line 23
-    const/4 v4, 0x1
-
     .line 24
-    if-eq v2, v1, :cond_1
+    invoke-virtual {v0, v2}, Landroid/view/Display;->getRealSize(Landroid/graphics/Point;)V
 
     .line 25
     .line 26
-    move v1, v4
-
     .line 27
-    goto :goto_1
+    iget v0, v2, Landroid/graphics/Point;->x:I
 
     .line 28
-    :cond_1
-    move v1, v3
-
     .line 29
-    :goto_1
-    and-int/2addr v0, v4
+    iget v2, v2, Landroid/graphics/Point;->y:I
 
     .line 30
-    invoke-virtual {p2, v0, v1}, Lt72;->T(IZ)Z
-
     .line 31
+    invoke-static {v0, v2}, Ljava/lang/Math;->min(II)I
+
     .line 32
     .line 33
+    .line 34
     move-result v0
 
-    .line 34
-    if-eqz v0, :cond_2
-
     .line 35
-    .line 36
-    iget-object v0, p0, Llp3;->t:Lum4;
+    invoke-virtual {v1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
+    .line 36
     .line 37
     .line 38
-    invoke-virtual {v0}, Lum4;->getValue()Ljava/lang/Object;
+    move-result-object v1
 
     .line 39
+    const v2, 0x7f070016
+
     .line 40
     .line 41
-    move-result-object v0
-
     .line 42
-    check-cast v0, Lt62;
+    invoke-virtual {v1, v2}, Landroid/content/res/Resources;->getDimensionPixelSize(I)I
 
     .line 43
     .line 44
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
     .line 45
-    .line 46
-    .line 47
-    move-result-object v1
+    move-result v1
 
+    .line 46
+    iget-object v3, p0, Llp3;->a:Landroid/content/Context;
+
+    .line 47
     .line 48
-    invoke-interface {v0, p2, v1}, Lt62;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    if-lt v0, v1, :cond_0
 
     .line 49
     .line 50
-    .line 51
-    goto :goto_2
+    new-instance v0, Lhm0;
 
+    .line 51
     .line 52
-    :cond_2
-    invoke-virtual {p2}, Lt72;->W()V
+    iget-object v1, p0, Llp3;->e:Landroid/view/View;
 
     .line 53
     .line 54
-    .line 55
-    :goto_2
-    invoke-virtual {p2}, Lt72;->u()Lu95;
+    iget v2, p0, Llp3;->d:I
 
+    .line 55
     .line 56
+    iget-boolean v4, p0, Llp3;->c:Z
+
     .line 57
     .line 58
-    move-result-object p2
+    invoke-direct {v0, v3, v1, v2, v4}, Lhm0;-><init>(Landroid/content/Context;Landroid/view/View;IZ)V
 
     .line 59
-    if-eqz p2, :cond_3
-
     .line 60
     .line 61
-    new-instance v0, Lef3;
+    goto :goto_0
 
     .line 62
-    .line 63
-    const/4 v1, 0x5
+    :cond_0
+    new-instance v2, Lah6;
 
+    .line 63
     .line 64
-    invoke-direct {v0, v1, p1, p0}, Lef3;-><init>(BILjava/lang/Object;)V
+    iget-object v5, p0, Llp3;->e:Landroid/view/View;
 
     .line 65
     .line 66
-    .line 67
-    iput-object v0, p2, Lu95;->d:Lt62;
+    iget v6, p0, Llp3;->d:I
 
+    .line 67
     .line 68
+    iget-boolean v7, p0, Llp3;->c:Z
+
     .line 69
-    :cond_3
-    return-void
+    .line 70
+    iget-object v4, p0, Llp3;->b:Lqo3;
+
+    .line 71
+    .line 72
+    invoke-direct/range {v2 .. v7}, Lah6;-><init>(Landroid/content/Context;Lqo3;Landroid/view/View;IZ)V
+
+    .line 73
+    .line 74
+    .line 75
+    move-object v0, v2
+
+    .line 76
+    :goto_0
+    iget-object v1, p0, Llp3;->b:Lqo3;
+
+    .line 77
+    .line 78
+    invoke-virtual {v0, v1}, Ljp3;->l(Lqo3;)V
+
+    .line 79
+    .line 80
+    .line 81
+    iget-object v1, p0, Llp3;->k:Lkp3;
+
+    .line 82
+    .line 83
+    invoke-virtual {v0, v1}, Ljp3;->r(Landroid/widget/PopupWindow$OnDismissListener;)V
+
+    .line 84
+    .line 85
+    .line 86
+    iget-object v1, p0, Llp3;->e:Landroid/view/View;
+
+    .line 87
+    .line 88
+    invoke-virtual {v0, v1}, Ljp3;->n(Landroid/view/View;)V
+
+    .line 89
+    .line 90
+    .line 91
+    iget-object v1, p0, Llp3;->h:Lsp3;
+
+    .line 92
+    .line 93
+    invoke-interface {v0, v1}, Ltp3;->e(Lsp3;)V
+
+    .line 94
+    .line 95
+    .line 96
+    iget-boolean v1, p0, Llp3;->g:Z
+
+    .line 97
+    .line 98
+    invoke-virtual {v0, v1}, Ljp3;->o(Z)V
+
+    .line 99
+    .line 100
+    .line 101
+    iget v1, p0, Llp3;->f:I
+
+    .line 102
+    .line 103
+    invoke-virtual {v0, v1}, Ljp3;->p(I)V
+
+    .line 104
+    .line 105
+    .line 106
+    iput-object v0, p0, Llp3;->i:Ljp3;
+
+    .line 107
+    .line 108
+    :cond_1
+    return-object v0
 .end method
 
-.method public final getShouldCreateCompositionOnAttachedToWindow()Z
+.method public final b()Z
     .locals 0
 
     .line 1
-    iget-boolean p0, p0, Llp3;->u:Z
+    iget-object p0, p0, Llp3;->i:Ljp3;
 
     .line 2
     .line 3
+    if-eqz p0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-interface {p0}, Lpa6;->b()Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    if-eqz p0, :cond_0
+
+    .line 10
+    .line 11
+    const/4 p0, 0x1
+
+    .line 12
     return p0
+
+    .line 13
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 14
+    return p0
+.end method
+
+.method public c()V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    iput-object v0, p0, Llp3;->i:Ljp3;
+
+    .line 3
+    .line 4
+    iget-object p0, p0, Llp3;->j:Lkp3;
+
+    .line 5
+    .line 6
+    if-eqz p0, :cond_0
+
+    .line 7
+    .line 8
+    invoke-virtual {p0}, Lkp3;->onDismiss()V
+
+    .line 9
+    .line 10
+    .line 11
+    :cond_0
+    return-void
+.end method
+
+.method public final d(IIZZ)V
+    .locals 2
+
+    .line 1
+    invoke-virtual {p0}, Llp3;->a()Ljp3;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    invoke-virtual {v0, p4}, Ljp3;->s(Z)V
+
+    .line 6
+    .line 7
+    .line 8
+    if-eqz p3, :cond_1
+
+    .line 9
+    .line 10
+    iget p3, p0, Llp3;->f:I
+
+    .line 11
+    .line 12
+    iget-object p4, p0, Llp3;->e:Landroid/view/View;
+
+    .line 13
+    .line 14
+    invoke-virtual {p4}, Landroid/view/View;->getLayoutDirection()I
+
+    .line 15
+    .line 16
+    .line 17
+    move-result p4
+
+    .line 18
+    invoke-static {p3, p4}, Landroid/view/Gravity;->getAbsoluteGravity(II)I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result p3
+
+    .line 22
+    and-int/lit8 p3, p3, 0x7
+
+    .line 23
+    .line 24
+    const/4 p4, 0x5
+
+    .line 25
+    if-ne p3, p4, :cond_0
+
+    .line 26
+    .line 27
+    iget-object p3, p0, Llp3;->e:Landroid/view/View;
+
+    .line 28
+    .line 29
+    invoke-virtual {p3}, Landroid/view/View;->getWidth()I
+
+    .line 30
+    .line 31
+    .line 32
+    move-result p3
+
+    .line 33
+    sub-int/2addr p1, p3
+
+    .line 34
+    :cond_0
+    invoke-virtual {v0, p1}, Ljp3;->q(I)V
+
+    .line 35
+    .line 36
+    .line 37
+    invoke-virtual {v0, p2}, Ljp3;->t(I)V
+
+    .line 38
+    .line 39
+    .line 40
+    iget-object p0, p0, Llp3;->a:Landroid/content/Context;
+
+    .line 41
+    .line 42
+    invoke-virtual {p0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    .line 43
+    .line 44
+    .line 45
+    move-result-object p0
+
+    .line 46
+    invoke-virtual {p0}, Landroid/content/res/Resources;->getDisplayMetrics()Landroid/util/DisplayMetrics;
+
+    .line 47
+    .line 48
+    .line 49
+    move-result-object p0
+
+    .line 50
+    iget p0, p0, Landroid/util/DisplayMetrics;->density:F
+
+    .line 51
+    .line 52
+    const/high16 p3, 0x42400000    # 48.0f
+
+    .line 53
+    .line 54
+    mul-float/2addr p0, p3
+
+    .line 55
+    const/high16 p3, 0x40000000    # 2.0f
+
+    .line 56
+    .line 57
+    div-float/2addr p0, p3
+
+    .line 58
+    float-to-int p0, p0
+
+    .line 59
+    new-instance p3, Landroid/graphics/Rect;
+
+    .line 60
+    .line 61
+    sub-int p4, p1, p0
+
+    .line 62
+    .line 63
+    sub-int v1, p2, p0
+
+    .line 64
+    .line 65
+    add-int/2addr p1, p0
+
+    .line 66
+    add-int/2addr p2, p0
+
+    .line 67
+    invoke-direct {p3, p4, v1, p1, p2}, Landroid/graphics/Rect;-><init>(IIII)V
+
+    .line 68
+    .line 69
+    .line 70
+    iput-object p3, v0, Ljp3;->i:Landroid/graphics/Rect;
+
+    .line 71
+    .line 72
+    :cond_1
+    invoke-interface {v0}, Lpa6;->d()V
+
+    .line 73
+    .line 74
+    .line 75
+    return-void
 .end method

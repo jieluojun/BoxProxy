@@ -1,224 +1,135 @@
-.class public final Lal6;
+.class public final synthetic Lal6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt72;
 
 
 # instance fields
-.field public final a:I
+.field public final synthetic i:B
+
+.field public final synthetic j:Ljava/lang/String;
+
+.field public final synthetic k:Ljava/lang/String;
+
+.field public final synthetic l:Lsw3;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Lsw3;IB)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p5, p0, Lal6;->i:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Lal6;->j:Ljava/lang/String;
+
     .line 4
-    iput p1, p0, Lal6;->a:I
-
     .line 5
+    iput-object p2, p0, Lal6;->k:Ljava/lang/String;
+
     .line 6
-    return-void
-.end method
-
-.method public static a(I)Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, v0, :cond_0
-
-    .line 3
-    .line 4
-    const-string p0, "Left"
-
-    .line 5
-    .line 6
-    return-object p0
-
     .line 7
-    :cond_0
-    const/4 v0, 0x2
+    iput-object p3, p0, Lal6;->l:Lsw3;
 
     .line 8
-    if-ne p0, v0, :cond_1
-
     .line 9
-    .line 10
-    const-string p0, "Right"
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 10
     .line 11
     .line 12
-    return-object p0
-
-    .line 13
-    :cond_1
-    const/4 v0, 0x3
-
-    .line 14
-    if-ne p0, v0, :cond_2
-
-    .line 15
-    .line 16
-    const-string p0, "Center"
-
-    .line 17
-    .line 18
-    return-object p0
-
-    .line 19
-    :cond_2
-    const/4 v0, 0x4
-
-    .line 20
-    if-ne p0, v0, :cond_3
-
-    .line 21
-    .line 22
-    const-string p0, "Justify"
-
-    .line 23
-    .line 24
-    return-object p0
-
-    .line 25
-    :cond_3
-    const/4 v0, 0x5
-
-    .line 26
-    if-ne p0, v0, :cond_4
-
-    .line 27
-    .line 28
-    const-string p0, "Start"
-
-    .line 29
-    .line 30
-    return-object p0
-
-    .line 31
-    :cond_4
-    const/4 v0, 0x6
-
-    .line 32
-    if-ne p0, v0, :cond_5
-
-    .line 33
-    .line 34
-    const-string p0, "End"
-
-    .line 35
-    .line 36
-    return-object p0
-
-    .line 37
-    :cond_5
-    if-nez p0, :cond_6
-
-    .line 38
-    .line 39
-    const-string p0, "Unspecified"
-
-    .line 40
-    .line 41
-    return-object p0
-
-    .line 42
-    :cond_6
-    const-string p0, "Invalid"
-
-    .line 43
-    .line 44
-    return-object p0
+    return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
 
     .line 1
-    instance-of v0, p1, Lal6;
+    iget-byte v0, p0, Lal6;->i:B
 
     .line 2
     .line 3
-    if-nez v0, :cond_0
+    sget-object v1, Ll97;->a:Ll97;
 
     .line 4
     .line 5
-    goto :goto_0
+    const/4 v2, 0x1
 
     .line 6
-    :cond_0
-    check-cast p1, Lal6;
+    iget-object v3, p0, Lal6;->l:Lsw3;
 
     .line 7
     .line 8
-    iget p1, p1, Lal6;->a:I
+    iget-object v4, p0, Lal6;->k:Ljava/lang/String;
 
     .line 9
     .line 10
-    iget p0, p0, Lal6;->a:I
+    iget-object p0, p0, Lal6;->j:Ljava/lang/String;
 
     .line 11
     .line 12
-    if-eq p0, p1, :cond_1
+    check-cast p1, Lt82;
 
     .line 13
     .line 14
-    :goto_0
-    const/4 p0, 0x0
+    check-cast p2, Ljava/lang/Integer;
 
     .line 15
-    return p0
-
     .line 16
-    :cond_1
-    const/4 p0, 0x1
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 17
-    return p0
-.end method
+    .line 18
+    .line 19
+    packed-switch v0, :pswitch_data_0
 
-.method public final hashCode()I
-    .locals 0
+    .line 20
+    .line 21
+    .line 22
+    invoke-static {v2}, Lp06;->W(I)I
 
-    .line 1
-    iget p0, p0, Lal6;->a:I
+    .line 23
+    .line 24
+    .line 25
+    move-result p2
 
-    .line 2
-    .line 3
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+    .line 26
+    invoke-static {p0, v4, v3, p1, p2}, Lzb3;->x(Ljava/lang/String;Ljava/lang/String;Lsw3;Lt82;I)V
 
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
+    .line 27
+    .line 28
+    .line 29
+    return-object v1
 
-    .line 7
-    return p0
-.end method
+    .line 30
+    :pswitch_0
+    invoke-static {v2}, Lp06;->W(I)I
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    .line 31
+    .line 32
+    .line 33
+    move-result p2
 
-    .line 1
-    iget p0, p0, Lal6;->a:I
+    .line 34
+    invoke-static {p0, v4, v3, p1, p2}, Llb3;->H(Ljava/lang/String;Ljava/lang/String;Lsw3;Lt82;I)V
 
-    .line 2
-    .line 3
-    invoke-static {p0}, Lal6;->a(I)Ljava/lang/String;
+    .line 35
+    .line 36
+    .line 37
+    return-object v1
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
+    .line 38
+    nop
 
-    .line 7
-    return-object p0
+    .line 39
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

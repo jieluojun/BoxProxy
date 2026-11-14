@@ -1,209 +1,148 @@
 .class public final Ltj4;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lvy3;
+.super Lyk4;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public j:Z
-
-.field public k:Z
-
-.field public l:Z
+# static fields
+.field public static final c:Ltj4;
 
 
-# virtual methods
-.method public final M0(JLy81;)Ljava/lang/Object;
+# direct methods
+.method static constructor <clinit>()V
     .locals 4
 
     .line 1
-    iget-boolean p3, p0, Ltj4;->l:Z
+    new-instance v0, Ltj4;
 
     .line 2
     .line 3
-    const-wide/16 v0, 0x0
+    const/4 v1, 0x2
 
     .line 4
+    const/4 v2, 0x1
+
     .line 5
-    if-eqz p3, :cond_0
+    const/4 v3, 0x0
 
     .line 6
-    .line 7
-    new-instance p0, Lh67;
+    invoke-direct {v0, v3, v1, v2}, Lyk4;-><init>(III)V
 
+    .line 7
     .line 8
     .line 9
-    invoke-direct {p0, v0, v1}, Lh67;-><init>(J)V
+    sput-object v0, Ltj4;->c:Ltj4;
 
     .line 10
     .line 11
-    .line 12
-    return-object p0
+    return-void
+.end method
 
+
+# virtual methods
+.method public final a(Lgv2;Lcv;Lhd6;Lah5;Lal4;)V
+    .locals 1
+
+    .line 1
+    const/4 p0, 0x1
+
+    .line 2
+    invoke-virtual {p1, p0}, Lgv2;->d(I)Ljava/lang/Object;
+
+    .line 3
+    .line 4
+    .line 5
+    move-result-object p0
+
+    .line 6
+    check-cast p0, Lsw2;
+
+    .line 7
+    .line 8
+    const/4 v0, 0x0
+
+    .line 9
+    if-eqz p0, :cond_0
+
+    .line 10
+    .line 11
+    iget p0, p0, Lsw2;->a:I
+
+    .line 12
     .line 13
-    :cond_0
-    invoke-static {p1, p2}, Lh67;->b(J)F
+    goto :goto_0
 
     .line 14
+    :cond_0
+    move p0, v0
+
     .line 15
+    :goto_0
+    invoke-virtual {p1, v0}, Lgv2;->d(I)Ljava/lang/Object;
+
     .line 16
-    move-result p3
-
     .line 17
-    const/4 v2, 0x0
-
     .line 18
-    cmpg-float p3, p3, v2
+    move-result-object p1
 
     .line 19
-    .line 20
-    const/4 v3, 0x1
+    check-cast p1, Lan0;
 
+    .line 20
     .line 21
-    if-nez p3, :cond_1
+    if-lez p0, :cond_1
 
     .line 22
     .line 23
-    invoke-static {p1, p2}, Lh67;->c(J)F
+    new-instance v0, Laj0;
 
     .line 24
     .line 25
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
     .line 26
-    move-result p1
-
     .line 27
-    cmpg-float p1, p1, v2
-
     .line 28
+    iput-object p2, v0, Laj0;->k:Ljava/lang/Object;
+
     .line 29
-    if-nez p1, :cond_1
-
     .line 30
-    .line 31
-    const/4 p1, 0x0
+    iput p0, v0, Laj0;->i:I
 
+    .line 31
     .line 32
-    goto :goto_0
+    move-object p2, v0
 
     .line 33
     :cond_1
-    move p1, v3
+    if-eqz p5, :cond_2
 
     .line 34
-    :goto_0
-    iput-boolean p1, p0, Ltj4;->k:Z
-
     .line 35
+    new-instance p0, Lkd2;
+
     .line 36
-    iput-boolean v3, p0, Ltj4;->j:Z
-
     .line 37
+    const/16 v0, 0x11
+
     .line 38
-    new-instance p0, Lh67;
-
     .line 39
-    .line 40
-    invoke-direct {p0, v0, v1}, Lh67;-><init>(J)V
+    invoke-direct {p0, p5, p3, v0}, Lkd2;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
 
+    .line 40
     .line 41
     .line 42
+    goto :goto_1
+
     .line 43
-    return-object p0
-.end method
+    :cond_2
+    const/4 p0, 0x0
 
-.method public final P0(JJLy81;)Ljava/lang/Object;
-    .locals 0
+    .line 44
+    :goto_1
+    invoke-virtual {p1, p2, p3, p4, p0}, Lan0;->z(Lcv;Lhd6;Lah5;Lal4;)V
 
-    .line 1
-    iget-boolean p1, p0, Ltj4;->l:Z
-
-    .line 2
-    .line 3
-    const-wide/16 p2, 0x0
-
-    .line 4
-    .line 5
-    if-eqz p1, :cond_0
-
-    .line 6
-    .line 7
-    new-instance p0, Lh67;
-
-    .line 8
-    .line 9
-    invoke-direct {p0, p2, p3}, Lh67;-><init>(J)V
-
-    .line 10
-    .line 11
-    .line 12
-    return-object p0
-
-    .line 13
-    :cond_0
-    iget-boolean p1, p0, Ltj4;->k:Z
-
-    .line 14
-    .line 15
-    if-eqz p1, :cond_1
-
-    .line 16
-    .line 17
-    const/4 p1, 0x0
-
-    .line 18
-    iput-boolean p1, p0, Ltj4;->j:Z
-
-    .line 19
-    .line 20
-    iput-boolean p1, p0, Ltj4;->k:Z
-
-    .line 21
-    .line 22
-    :cond_1
-    new-instance p0, Lh67;
-
-    .line 23
-    .line 24
-    invoke-direct {p0, p2, p3}, Lh67;-><init>(J)V
-
-    .line 25
-    .line 26
-    .line 27
-    return-object p0
-.end method
-
-.method public final c1(IJ)J
-    .locals 0
-
-    .line 1
-    const/4 p2, 0x1
-
-    .line 2
-    if-ne p1, p2, :cond_0
-
-    .line 3
-    .line 4
-    const/4 p1, 0x0
-
-    .line 5
-    iput-boolean p1, p0, Ltj4;->j:Z
-
-    .line 6
-    .line 7
-    iput-boolean p1, p0, Ltj4;->k:Z
-
-    .line 8
-    .line 9
-    iput-boolean p1, p0, Ltj4;->l:Z
-
-    .line 10
-    .line 11
-    :cond_0
-    const-wide/16 p0, 0x0
-
-    .line 12
-    .line 13
-    return-wide p0
+    .line 45
+    .line 46
+    .line 47
+    return-void
 .end method

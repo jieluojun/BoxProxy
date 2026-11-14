@@ -1,791 +1,4629 @@
 .class public final Lac;
-.super Lgd5;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lt62;
+.implements Lkn4;
 
 
 # instance fields
-.field public final synthetic k:B
+.field public final a:Lsi1;
 
-.field public l:B
+.field public b:J
 
-.field public synthetic m:Ljava/lang/Object;
+.field public final c:Lkr1;
 
-.field public final synthetic n:Ljava/lang/Object;
+.field public final d:Lxs4;
+
+.field public final e:Z
+
+.field public f:Z
+
+.field public g:J
+
+.field public h:J
+
+.field public final i:Lgi1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;Ly81;B)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;Lsi1;JLsp4;)V
+    .locals 2
 
     .line 1
-    iput-byte p3, p0, Lac;->k:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lac;->n:Ljava/lang/Object;
-
     .line 4
-    .line 5
-    const/4 p1, 0x2
+    iput-object p2, p0, Lac;->a:Lsi1;
 
+    .line 5
     .line 6
-    invoke-direct {p0, p1, p2}, Lgd5;-><init>(ILy81;)V
+    const-wide v0, 0x7fc000007fc00000L    # 2.247117487993712E307
 
     .line 7
     .line 8
     .line 9
+    .line 10
+    .line 11
+    iput-wide v0, p0, Lac;->b:J
+
+    .line 12
+    .line 13
+    new-instance p2, Lkr1;
+
+    .line 14
+    .line 15
+    invoke-static {p3, p4}, Lxl;->b0(J)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result p3
+
+    .line 19
+    invoke-direct {p2, p1, p3}, Lkr1;-><init>(Landroid/content/Context;I)V
+
+    .line 20
+    .line 21
+    .line 22
+    iput-object p2, p0, Lac;->c:Lkr1;
+
+    .line 23
+    .line 24
+    sget-object p1, Ld42;->w:Ld42;
+
+    .line 25
+    .line 26
+    new-instance p3, Lxs4;
+
+    .line 27
+    .line 28
+    sget-object p4, Ll97;->a:Ll97;
+
+    .line 29
+    .line 30
+    invoke-direct {p3, p4, p1}, Lxs4;-><init>(Ljava/lang/Object;Lhe6;)V
+
+    .line 31
+    .line 32
+    .line 33
+    iput-object p3, p0, Lac;->d:Lxs4;
+
+    .line 34
+    .line 35
+    const/4 p1, 0x1
+
+    .line 36
+    iput-boolean p1, p0, Lac;->e:Z
+
+    .line 37
+    .line 38
+    const-wide/16 p3, 0x0
+
+    .line 39
+    .line 40
+    iput-wide p3, p0, Lac;->g:J
+
+    .line 41
+    .line 42
+    const-wide/16 p3, -0x1
+
+    .line 43
+    .line 44
+    iput-wide p3, p0, Lac;->h:J
+
+    .line 45
+    .line 46
+    new-instance p3, Lx3;
+
+    .line 47
+    .line 48
+    invoke-direct {p3, p0, p1}, Lx3;-><init>(Ljava/lang/Object;B)V
+
+    .line 49
+    .line 50
+    .line 51
+    invoke-static {p3}, Lbn6;->a(Landroidx/compose/ui/input/pointer/PointerInputEventHandler;)Lgn6;
+
+    .line 52
+    .line 53
+    .line 54
+    move-result-object p1
+
+    .line 55
+    sget p3, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 56
+    .line 57
+    const/16 p4, 0x1f
+
+    .line 58
+    .line 59
+    if-lt p3, p4, :cond_0
+
+    .line 60
+    .line 61
+    new-instance p3, Ljd2;
+
+    .line 62
+    .line 63
+    invoke-direct {p3, p1, p0, p2}, Ljd2;-><init>(Lgn6;Lac;Lkr1;)V
+
+    .line 64
+    .line 65
+    .line 66
+    goto :goto_0
+
+    .line 67
+    :cond_0
+    new-instance p3, Ljd2;
+
+    .line 68
+    .line 69
+    invoke-direct {p3, p1, p0, p2, p5}, Ljd2;-><init>(Lgn6;Lac;Lkr1;Lsp4;)V
+
+    .line 70
+    .line 71
+    .line 72
+    :goto_0
+    iput-object p3, p0, Lac;->i:Lgi1;
+
+    .line 73
+    .line 74
     return-void
 .end method
 
 
 # virtual methods
-.method public final create(Ljava/lang/Object;Ly81;)Ly81;
-    .locals 2
+.method public final a(JILp72;)J
+    .locals 19
 
     .line 1
-    iget-byte v0, p0, Lac;->k:B
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
-    iget-object p0, p0, Lac;->n:Ljava/lang/Object;
+    move-wide/from16 v1, p1
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_0
+    move/from16 v3, p3
 
     .line 6
     .line 7
-    .line 8
-    new-instance v0, Lac;
-
-    .line 9
-    .line 10
-    check-cast p0, Lp62;
-
-    .line 11
-    .line 12
-    const/4 v1, 0x1
-
-    .line 13
-    invoke-direct {v0, p0, p2, v1}, Lac;-><init>(Ljava/lang/Object;Ly81;B)V
-
-    .line 14
-    .line 15
-    .line 16
-    iput-object p1, v0, Lac;->m:Ljava/lang/Object;
-
-    .line 17
-    .line 18
-    return-object v0
-
-    .line 19
-    :pswitch_0
-    new-instance v0, Lac;
-
-    .line 20
-    .line 21
-    check-cast p0, Lbc;
-
-    .line 22
-    .line 23
-    const/4 v1, 0x0
-
-    .line 24
-    invoke-direct {v0, p0, p2, v1}, Lac;-><init>(Ljava/lang/Object;Ly81;B)V
-
-    .line 25
-    .line 26
-    .line 27
-    iput-object p1, v0, Lac;->m:Ljava/lang/Object;
-
-    .line 28
-    .line 29
-    return-object v0
-
-    .line 30
-    nop
-
-    .line 31
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
-
-    .line 1
-    iget-byte v0, p0, Lac;->k:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    check-cast p1, Lrh6;
-
-    .line 6
-    .line 7
-    check-cast p2, Ly81;
+    move-object/from16 v4, p4
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_0
+    iget-wide v5, v0, Lac;->g:J
 
     .line 10
     .line 11
-    .line 12
-    invoke-virtual {p0, p1, p2}, Lac;->create(Ljava/lang/Object;Ly81;)Ly81;
-
-    .line 13
-    .line 14
-    .line 15
-    move-result-object p0
-
-    .line 16
-    check-cast p0, Lac;
-
-    .line 17
-    .line 18
-    invoke-virtual {p0, v1}, Lac;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-object p0
-
-    .line 22
-    return-object p0
-
-    .line 23
-    :pswitch_0
-    invoke-virtual {p0, p1, p2}, Lac;->create(Ljava/lang/Object;Ly81;)Ly81;
-
-    .line 24
-    .line 25
-    .line 26
-    move-result-object p0
-
-    .line 27
-    check-cast p0, Lac;
-
-    .line 28
-    .line 29
-    invoke-virtual {p0, v1}, Lac;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 30
-    .line 31
-    .line 32
-    move-result-object p0
-
-    .line 33
-    return-object p0
-
-    .line 34
-    nop
-
-    .line 35
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 14
-
-    .line 1
-    iget-byte v0, p0, Lac;->k:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    sget-object v2, Lpq4;->k:Lpq4;
-
-    .line 6
-    .line 7
-    iget-object v3, p0, Lac;->n:Ljava/lang/Object;
-
-    .line 8
-    .line 9
-    const-string v4, "call to \'resume\' before \'invoke\' with coroutine"
-
-    .line 10
-    .line 11
-    sget-object v5, Lbc1;->j:Lbc1;
+    invoke-static {v5, v6}, Lqb6;->c(J)Z
 
     .line 12
     .line 13
-    const/4 v6, 0x1
-
     .line 14
-    const/4 v7, 0x2
+    move-result v5
 
     .line 15
-    const/4 v8, 0x0
+    if-eqz v5, :cond_0
 
     .line 16
-    packed-switch v0, :pswitch_data_0
-
     .line 17
+    new-instance v0, Llh4;
+
     .line 18
     .line 19
-    iget-byte v0, p0, Lac;->l:B
+    invoke-direct {v0, v1, v2}, Llh4;-><init>(J)V
 
     .line 20
     .line 21
-    if-eqz v0, :cond_2
-
     .line 22
-    .line 23
-    if-eq v0, v6, :cond_1
+    invoke-interface {v4, v0}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 23
     .line 24
     .line 25
-    if-ne v0, v7, :cond_0
+    move-result-object v0
 
     .line 26
-    .line 27
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    check-cast v0, Llh4;
 
+    .line 27
     .line 28
+    iget-wide v0, v0, Llh4;->a:J
+
     .line 29
     .line 30
-    goto :goto_2
+    return-wide v0
 
     .line 31
     :cond_0
-    invoke-static {v4}, Ljw1;->e(Ljava/lang/String;)V
+    iget-boolean v5, v0, Lac;->f:Z
 
     .line 32
     .line 33
-    .line 34
-    move-object v1, v8
+    const-wide/16 v6, 0x0
 
+    .line 34
     .line 35
-    goto :goto_3
+    const/4 v8, 0x1
 
     .line 36
-    :cond_1
-    iget-object v0, p0, Lac;->m:Ljava/lang/Object;
+    iget-object v9, v0, Lac;->c:Lkr1;
 
     .line 37
     .line 38
-    check-cast v0, Lrh6;
+    if-nez v5, :cond_5
 
     .line 39
     .line 40
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    iget-object v5, v9, Lkr1;->f:Landroid/widget/EdgeEffect;
 
     .line 41
     .line 42
+    invoke-static {v5}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
+
     .line 43
-    goto :goto_0
-
     .line 44
-    :cond_2
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
     .line 45
+    move-result v5
+
     .line 46
+    if-eqz v5, :cond_1
+
     .line 47
-    iget-object p1, p0, Lac;->m:Ljava/lang/Object;
-
     .line 48
+    invoke-virtual {v0, v6, v7}, Lac;->i(J)F
+
     .line 49
-    move-object v0, p1
-
     .line 50
-    check-cast v0, Lrh6;
-
     .line 51
+    :cond_1
+    iget-object v5, v9, Lkr1;->g:Landroid/widget/EdgeEffect;
+
     .line 52
-    iput-object v0, p0, Lac;->m:Ljava/lang/Object;
-
     .line 53
-    .line 54
-    iput-byte v6, p0, Lac;->l:B
+    invoke-static {v5}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
 
+    .line 54
     .line 55
     .line 56
-    invoke-static {v0, p0}, Lgj3;->A(Lrh6;Lc00;)Ljava/lang/Object;
+    move-result v5
 
     .line 57
+    if-eqz v5, :cond_2
+
     .line 58
     .line 59
-    move-result-object p1
+    invoke-virtual {v0, v6, v7}, Lac;->j(J)F
 
     .line 60
-    if-ne p1, v5, :cond_3
-
     .line 61
     .line 62
-    goto :goto_1
+    :cond_2
+    iget-object v5, v9, Lkr1;->d:Landroid/widget/EdgeEffect;
 
     .line 63
-    :cond_3
-    :goto_0
-    check-cast p1, Lwq4;
-
     .line 64
-    .line 65
-    invoke-virtual {p1}, Lwq4;->a()V
+    invoke-static {v5}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
 
+    .line 65
     .line 66
     .line 67
+    move-result v5
+
     .line 68
-    check-cast v3, Lp62;
+    if-eqz v5, :cond_3
 
     .line 69
     .line 70
-    iget-wide v9, p1, Lwq4;->c:J
+    invoke-virtual {v0, v6, v7}, Lac;->k(J)F
 
     .line 71
     .line 72
-    new-instance p1, Lxa4;
-
     .line 73
-    .line 74
-    invoke-direct {p1, v9, v10}, Lxa4;-><init>(J)V
+    :cond_3
+    iget-object v5, v9, Lkr1;->e:Landroid/widget/EdgeEffect;
 
+    .line 74
     .line 75
+    invoke-static {v5}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
+
     .line 76
     .line 77
-    invoke-interface {v3, p1}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 78
+    move-result v5
+
     .line 79
+    if-eqz v5, :cond_4
+
     .line 80
-    iput-object v8, p0, Lac;->m:Ljava/lang/Object;
-
     .line 81
-    .line 82
-    iput-byte v7, p0, Lac;->l:B
+    invoke-virtual {v0, v6, v7}, Lac;->h(J)F
 
+    .line 82
     .line 83
     .line 84
-    invoke-static {v0, v2, p0}, Lmk6;->j(Lrh6;Lpq4;Lc00;)Ljava/lang/Object;
+    :cond_4
+    iput-boolean v8, v0, Lac;->f:Z
 
     .line 85
     .line 86
-    .line 87
-    move-result-object p1
+    :cond_5
+    sget v5, Ltc;->a:I
 
+    .line 87
     .line 88
-    if-ne p1, v5, :cond_4
+    const/4 v5, 0x2
 
     .line 89
-    .line 90
-    :goto_1
-    move-object v1, v5
+    if-ne v3, v5, :cond_6
 
+    .line 90
     .line 91
-    goto :goto_3
+    const/high16 v5, 0x40800000    # 4.0f
 
     .line 92
-    :cond_4
-    :goto_2
-    check-cast p1, Lwq4;
-
     .line 93
+    goto :goto_0
+
     .line 94
-    if-eqz p1, :cond_5
+    :cond_6
+    const/high16 v5, 0x3f800000    # 1.0f
 
     .line 95
     .line 96
-    invoke-virtual {p1}, Lwq4;->a()V
+    :goto_0
+    invoke-static {v1, v2, v5}, Llh4;->h(JF)J
 
     .line 97
     .line 98
     .line 99
-    :cond_5
-    :goto_3
-    return-object v1
+    move-result-wide v10
 
     .line 100
-    :pswitch_0
-    check-cast v3, Lbc;
+    const-wide v12, 0xffffffffL
 
     .line 101
     .line 102
-    iget-byte v0, p0, Lac;->l:B
-
     .line 103
     .line 104
-    if-eqz v0, :cond_8
-
     .line 105
-    .line 106
-    if-eq v0, v6, :cond_7
+    and-long v14, v1, v12
 
+    .line 106
     .line 107
+    long-to-int v14, v14
+
     .line 108
-    if-ne v0, v7, :cond_6
+    invoke-static {v14}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     .line 109
     .line 110
-    iget-object v0, p0, Lac;->m:Ljava/lang/Object;
-
     .line 111
+    move-result v15
+
     .line 112
-    check-cast v0, Lrh6;
+    const/16 v16, 0x0
 
     .line 113
     .line 114
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    cmpg-float v15, v15, v16
 
     .line 115
     .line 116
-    .line 117
-    goto :goto_6
+    if-nez v15, :cond_8
 
+    .line 117
     .line 118
-    :cond_6
-    invoke-static {v4}, Ljw1;->e(Ljava/lang/String;)V
+    move-wide/from16 v17, v12
 
     .line 119
     .line 120
-    .line 121
-    move-object v1, v8
+    :cond_7
+    move/from16 v12, v16
 
+    .line 121
     .line 122
-    goto/16 :goto_a
+    goto/16 :goto_1
 
     .line 123
     .line 124
-    :cond_7
-    iget-object v0, p0, Lac;->m:Ljava/lang/Object;
+    :cond_8
+    iget-object v15, v9, Lkr1;->d:Landroid/widget/EdgeEffect;
 
     .line 125
     .line 126
-    check-cast v0, Lrh6;
+    invoke-static {v15}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
 
     .line 127
     .line 128
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
     .line 129
-    .line 130
-    .line 131
-    goto :goto_4
+    move-result v15
 
+    .line 130
+    if-eqz v15, :cond_b
+
+    .line 131
     .line 132
-    :cond_8
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-static {v14}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     .line 133
     .line 134
     .line 135
-    iget-object p1, p0, Lac;->m:Ljava/lang/Object;
+    move-result v15
 
     .line 136
-    .line 137
-    move-object v0, p1
+    cmpg-float v15, v15, v16
 
+    .line 137
     .line 138
-    check-cast v0, Lrh6;
+    if-gez v15, :cond_b
 
     .line 139
     .line 140
-    iput-object v0, p0, Lac;->m:Ljava/lang/Object;
+    invoke-virtual {v0, v10, v11}, Lac;->k(J)F
 
     .line 141
     .line 142
-    iput-byte v6, p0, Lac;->l:B
-
     .line 143
+    move-result v15
+
     .line 144
-    invoke-static {v0, p0, v7}, Lmk6;->b(Lrh6;Ly81;I)Ljava/lang/Object;
+    move-wide/from16 v17, v12
 
     .line 145
     .line 146
-    .line 147
-    move-result-object p1
+    iget-object v12, v9, Lkr1;->d:Landroid/widget/EdgeEffect;
 
+    .line 147
     .line 148
-    if-ne p1, v5, :cond_9
+    invoke-static {v12}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
 
     .line 149
     .line 150
-    goto :goto_5
-
     .line 151
-    :cond_9
-    :goto_4
-    check-cast p1, Lwq4;
+    move-result v12
 
     .line 152
+    if-nez v12, :cond_9
+
     .line 153
-    iget-wide v9, p1, Lwq4;->a:J
-
     .line 154
-    .line 155
-    iput-wide v9, v3, Lbc;->h:J
+    invoke-virtual {v9}, Lkr1;->e()Landroid/widget/EdgeEffect;
 
+    .line 155
     .line 156
     .line 157
-    iget-wide v9, p1, Lwq4;->c:J
+    move-result-object v12
 
     .line 158
-    .line 159
-    iput-wide v9, v3, Lbc;->b:J
+    invoke-virtual {v12}, Landroid/widget/EdgeEffect;->finish()V
 
+    .line 159
     .line 160
     .line 161
-    :cond_a
-    iput-object v0, p0, Lac;->m:Ljava/lang/Object;
+    :cond_9
+    and-long v12, v10, v17
 
     .line 162
     .line 163
-    iput-byte v7, p0, Lac;->l:B
+    long-to-int v12, v12
 
     .line 164
-    .line 165
-    invoke-virtual {v0, v2, p0}, Lrh6;->c(Lpq4;Ly81;)Ljava/lang/Object;
+    invoke-static {v12}, Ljava/lang/Float;->intBitsToFloat(I)F
 
+    .line 165
     .line 166
     .line 167
+    move-result v12
+
     .line 168
-    move-result-object p1
+    cmpg-float v12, v15, v12
 
     .line 169
-    if-ne p1, v5, :cond_b
-
     .line 170
-    .line 171
-    :goto_5
-    move-object v1, v5
+    if-nez v12, :cond_a
 
+    .line 171
     .line 172
-    goto :goto_a
+    invoke-static {v14}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     .line 173
-    :cond_b
-    :goto_6
-    check-cast p1, Loq4;
-
     .line 174
     .line 175
-    iget-object p1, p1, Loq4;->a:Ljava/util/List;
+    move-result v12
 
     .line 176
+    goto :goto_1
+
     .line 177
-    new-instance v4, Ljava/util/ArrayList;
+    :cond_a
+    div-float v12, v15, v5
 
     .line 178
     .line 179
-    invoke-interface {p1}, Ljava/util/List;->size()I
+    goto :goto_1
 
     .line 180
+    :cond_b
+    move-wide/from16 v17, v12
+
     .line 181
     .line 182
-    move-result v6
+    iget-object v12, v9, Lkr1;->e:Landroid/widget/EdgeEffect;
 
     .line 183
-    invoke-direct {v4, v6}, Ljava/util/ArrayList;-><init>(I)V
-
     .line 184
+    invoke-static {v12}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
+
     .line 185
     .line 186
-    invoke-interface {p1}, Ljava/util/Collection;->size()I
-
     .line 187
-    .line 188
-    .line 189
-    move-result v6
+    move-result v12
 
+    .line 188
+    if-eqz v12, :cond_7
+
+    .line 189
     .line 190
-    const/4 v9, 0x0
+    invoke-static {v14}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     .line 191
-    move v10, v9
-
     .line 192
-    :goto_7
-    if-ge v10, v6, :cond_d
-
     .line 193
+    move-result v12
+
     .line 194
-    invoke-interface {p1, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    cmpl-float v12, v12, v16
 
     .line 195
     .line 196
-    .line 197
-    move-result-object v11
+    if-lez v12, :cond_7
 
+    .line 197
     .line 198
-    move-object v12, v11
+    invoke-virtual {v0, v10, v11}, Lac;->h(J)F
 
     .line 199
-    check-cast v12, Lwq4;
-
     .line 200
     .line 201
-    iget-boolean v12, v12, Lwq4;->d:Z
+    move-result v12
 
     .line 202
+    iget-object v13, v9, Lkr1;->e:Landroid/widget/EdgeEffect;
+
     .line 203
-    if-eqz v12, :cond_c
-
     .line 204
-    .line 205
-    invoke-virtual {v4, v11}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-static {v13}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
 
+    .line 205
     .line 206
     .line 207
+    move-result v13
+
     .line 208
-    :cond_c
-    add-int/lit8 v10, v10, 0x1
+    if-nez v13, :cond_c
 
     .line 209
     .line 210
-    goto :goto_7
+    invoke-virtual {v9}, Lkr1;->b()Landroid/widget/EdgeEffect;
 
     .line 211
-    :cond_d
-    invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
-
     .line 212
     .line 213
+    move-result-object v13
+
     .line 214
-    move-result p1
+    invoke-virtual {v13}, Landroid/widget/EdgeEffect;->finish()V
 
     .line 215
-    :goto_8
-    if-ge v9, p1, :cond_f
-
     .line 216
     .line 217
-    invoke-virtual {v4, v9}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    :cond_c
+    and-long v6, v10, v17
 
     .line 218
     .line 219
+    long-to-int v6, v6
+
     .line 220
-    move-result-object v6
+    invoke-static {v6}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     .line 221
-    move-object v10, v6
-
     .line 222
-    check-cast v10, Lwq4;
-
     .line 223
+    move-result v6
+
     .line 224
-    iget-wide v10, v10, Lwq4;->a:J
+    cmpg-float v6, v12, v6
 
     .line 225
     .line 226
-    iget-wide v12, v3, Lbc;->h:J
+    if-nez v6, :cond_d
 
     .line 227
     .line 228
-    invoke-static {v10, v11, v12, v13}, Lvq4;->a(JJ)Z
+    invoke-static {v14}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     .line 229
     .line 230
     .line 231
-    move-result v10
+    move-result v12
 
     .line 232
-    if-eqz v10, :cond_e
+    goto :goto_1
 
     .line 233
+    :cond_d
+    div-float/2addr v12, v5
+
     .line 234
-    goto :goto_9
+    :goto_1
+    const/16 v13, 0x20
 
     .line 235
-    :cond_e
-    add-int/lit8 v9, v9, 0x1
-
     .line 236
-    .line 237
-    goto :goto_8
+    shr-long v6, v1, v13
 
+    .line 237
     .line 238
-    :cond_f
-    move-object v6, v8
+    long-to-int v6, v6
 
     .line 239
-    :goto_9
-    check-cast v6, Lwq4;
+    invoke-static {v6}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     .line 240
     .line 241
-    if-nez v6, :cond_10
-
     .line 242
+    move-result v7
+
     .line 243
-    invoke-static {v4}, Lcv0;->B0(Ljava/util/List;)Ljava/lang/Object;
+    cmpg-float v7, v7, v16
 
     .line 244
     .line 245
-    .line 246
-    move-result-object p1
+    if-eqz v7, :cond_12
 
+    .line 246
     .line 247
-    move-object v6, p1
+    iget-object v7, v9, Lkr1;->f:Landroid/widget/EdgeEffect;
 
     .line 248
-    check-cast v6, Lwq4;
-
     .line 249
-    .line 250
-    :cond_10
-    if-eqz v6, :cond_11
+    invoke-static {v7}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
 
+    .line 250
     .line 251
     .line 252
-    iget-wide v9, v6, Lwq4;->a:J
+    move-result v7
 
     .line 253
+    if-eqz v7, :cond_f
+
     .line 254
-    iput-wide v9, v3, Lbc;->h:J
+    .line 255
+    invoke-static {v6}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 256
+    .line 257
+    .line 258
+    move-result v7
+
+    .line 259
+    cmpg-float v7, v7, v16
+
+    .line 260
+    .line 261
+    if-gez v7, :cond_f
+
+    .line 262
+    .line 263
+    invoke-virtual {v0, v10, v11}, Lac;->i(J)F
+
+    .line 264
+    .line 265
+    .line 266
+    move-result v7
+
+    .line 267
+    iget-object v15, v9, Lkr1;->f:Landroid/widget/EdgeEffect;
+
+    .line 268
+    .line 269
+    invoke-static {v15}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
+
+    .line 270
+    .line 271
+    .line 272
+    move-result v15
+
+    .line 273
+    if-nez v15, :cond_e
+
+    .line 274
+    .line 275
+    invoke-virtual {v9}, Lkr1;->c()Landroid/widget/EdgeEffect;
+
+    .line 276
+    .line 277
+    .line 278
+    move-result-object v15
+
+    .line 279
+    invoke-virtual {v15}, Landroid/widget/EdgeEffect;->finish()V
+
+    .line 280
+    .line 281
+    .line 282
+    :cond_e
+    shr-long/2addr v10, v13
+
+    .line 283
+    long-to-int v10, v10
+
+    .line 284
+    invoke-static {v10}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 285
+    .line 286
+    .line 287
+    move-result v10
+
+    .line 288
+    cmpg-float v10, v7, v10
+
+    .line 289
+    .line 290
+    if-nez v10, :cond_11
+
+    .line 291
+    .line 292
+    invoke-static {v6}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 293
+    .line 294
+    .line 295
+    move-result v5
+
+    .line 296
+    goto :goto_2
+
+    .line 297
+    :cond_f
+    iget-object v7, v9, Lkr1;->g:Landroid/widget/EdgeEffect;
+
+    .line 298
+    .line 299
+    invoke-static {v7}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
+
+    .line 300
+    .line 301
+    .line 302
+    move-result v7
+
+    .line 303
+    if-eqz v7, :cond_12
+
+    .line 304
+    .line 305
+    invoke-static {v6}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 306
+    .line 307
+    .line 308
+    move-result v7
+
+    .line 309
+    cmpl-float v7, v7, v16
+
+    .line 310
+    .line 311
+    if-lez v7, :cond_12
+
+    .line 312
+    .line 313
+    invoke-virtual {v0, v10, v11}, Lac;->j(J)F
+
+    .line 314
+    .line 315
+    .line 316
+    move-result v7
+
+    .line 317
+    iget-object v15, v9, Lkr1;->g:Landroid/widget/EdgeEffect;
+
+    .line 318
+    .line 319
+    invoke-static {v15}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
+
+    .line 320
+    .line 321
+    .line 322
+    move-result v15
+
+    .line 323
+    if-nez v15, :cond_10
+
+    .line 324
+    .line 325
+    invoke-virtual {v9}, Lkr1;->d()Landroid/widget/EdgeEffect;
+
+    .line 326
+    .line 327
+    .line 328
+    move-result-object v15
+
+    .line 329
+    invoke-virtual {v15}, Landroid/widget/EdgeEffect;->finish()V
+
+    .line 330
+    .line 331
+    .line 332
+    :cond_10
+    shr-long/2addr v10, v13
+
+    .line 333
+    long-to-int v10, v10
+
+    .line 334
+    invoke-static {v10}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 335
+    .line 336
+    .line 337
+    move-result v10
+
+    .line 338
+    cmpg-float v10, v7, v10
+
+    .line 339
+    .line 340
+    if-nez v10, :cond_11
+
+    .line 341
+    .line 342
+    invoke-static {v6}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 343
+    .line 344
+    .line 345
+    move-result v5
+
+    .line 346
+    goto :goto_2
+
+    .line 347
+    :cond_11
+    div-float v5, v7, v5
+
+    .line 348
+    .line 349
+    goto :goto_2
+
+    .line 350
+    :cond_12
+    move/from16 v5, v16
+
+    .line 351
+    .line 352
+    :goto_2
+    invoke-static {v5}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 353
+    .line 354
+    .line 355
+    move-result v5
+
+    .line 356
+    int-to-long v10, v5
+
+    .line 357
+    invoke-static {v12}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 358
+    .line 359
+    .line 360
+    move-result v5
+
+    .line 361
+    move v12, v13
+
+    .line 362
+    move v7, v14
+
+    .line 363
+    int-to-long v13, v5
+
+    .line 364
+    shl-long/2addr v10, v12
+
+    .line 365
+    and-long v13, v13, v17
+
+    .line 366
+    .line 367
+    or-long/2addr v10, v13
+
+    .line 368
+    const-wide/16 v13, 0x0
+
+    .line 369
+    .line 370
+    invoke-static {v10, v11, v13, v14}, Llh4;->c(JJ)Z
+
+    .line 371
+    .line 372
+    .line 373
+    move-result v5
+
+    .line 374
+    if-nez v5, :cond_13
+
+    .line 375
+    .line 376
+    invoke-virtual {v0}, Lac;->g()V
+
+    .line 377
+    .line 378
+    .line 379
+    :cond_13
+    invoke-static {v1, v2, v10, v11}, Llh4;->f(JJ)J
+
+    .line 380
+    .line 381
+    .line 382
+    move-result-wide v1
+
+    .line 383
+    new-instance v5, Llh4;
+
+    .line 384
+    .line 385
+    invoke-direct {v5, v1, v2}, Llh4;-><init>(J)V
+
+    .line 386
+    .line 387
+    .line 388
+    invoke-interface {v4, v5}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 389
+    .line 390
+    .line 391
+    move-result-object v4
+
+    .line 392
+    check-cast v4, Llh4;
+
+    .line 393
+    .line 394
+    iget-wide v4, v4, Llh4;->a:J
+
+    .line 395
+    .line 396
+    invoke-static {v1, v2, v4, v5}, Llh4;->f(JJ)J
+
+    .line 397
+    .line 398
+    .line 399
+    move-result-wide v13
+
+    .line 400
+    move v15, v12
+
+    .line 401
+    move-wide/from16 p1, v13
+
+    .line 402
+    .line 403
+    shr-long v12, v1, v15
+
+    .line 404
+    .line 405
+    long-to-int v12, v12
+
+    .line 406
+    invoke-static {v12}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 407
+    .line 408
+    .line 409
+    move-result v12
+
+    .line 410
+    cmpg-float v12, v12, v16
+
+    .line 411
+    .line 412
+    if-nez v12, :cond_14
+
+    .line 413
+    .line 414
+    and-long v12, v1, v17
+
+    .line 415
+    .line 416
+    long-to-int v12, v12
+
+    .line 417
+    invoke-static {v12}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 418
+    .line 419
+    .line 420
+    move-result v12
+
+    .line 421
+    cmpg-float v12, v12, v16
+
+    .line 422
+    .line 423
+    if-eqz v12, :cond_17
+
+    .line 424
+    .line 425
+    :cond_14
+    shr-long v12, v4, v15
+
+    .line 426
+    .line 427
+    long-to-int v12, v12
+
+    .line 428
+    invoke-static {v12}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 429
+    .line 430
+    .line 431
+    move-result v12
+
+    .line 432
+    cmpg-float v12, v12, v16
+
+    .line 433
+    .line 434
+    if-nez v12, :cond_15
+
+    .line 435
+    .line 436
+    and-long v12, v4, v17
+
+    .line 437
+    .line 438
+    long-to-int v12, v12
+
+    .line 439
+    invoke-static {v12}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 440
+    .line 441
+    .line 442
+    move-result v12
+
+    .line 443
+    cmpg-float v12, v12, v16
+
+    .line 444
+    .line 445
+    if-eqz v12, :cond_17
+
+    .line 446
+    .line 447
+    :cond_15
+    iget-object v12, v9, Lkr1;->f:Landroid/widget/EdgeEffect;
+
+    .line 448
+    .line 449
+    invoke-static {v12}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
+
+    .line 450
+    .line 451
+    .line 452
+    move-result v12
+
+    .line 453
+    if-nez v12, :cond_16
+
+    .line 454
+    .line 455
+    iget-object v12, v9, Lkr1;->d:Landroid/widget/EdgeEffect;
+
+    .line 456
+    .line 457
+    invoke-static {v12}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
+
+    .line 458
+    .line 459
+    .line 460
+    move-result v12
+
+    .line 461
+    if-nez v12, :cond_16
+
+    .line 462
+    .line 463
+    iget-object v12, v9, Lkr1;->g:Landroid/widget/EdgeEffect;
+
+    .line 464
+    .line 465
+    invoke-static {v12}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
+
+    .line 466
+    .line 467
+    .line 468
+    move-result v12
+
+    .line 469
+    if-nez v12, :cond_16
+
+    .line 470
+    .line 471
+    iget-object v12, v9, Lkr1;->e:Landroid/widget/EdgeEffect;
+
+    .line 472
+    .line 473
+    invoke-static {v12}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
+
+    .line 474
+    .line 475
+    .line 476
+    move-result v12
+
+    .line 477
+    if-eqz v12, :cond_17
+
+    .line 478
+    .line 479
+    :cond_16
+    invoke-virtual {v0}, Lac;->e()V
+
+    .line 480
+    .line 481
+    .line 482
+    :cond_17
+    if-ne v3, v8, :cond_1d
+
+    .line 483
+    .line 484
+    shr-long v13, p1, v15
+
+    .line 485
+    .line 486
+    long-to-int v3, v13
+
+    .line 487
+    invoke-static {v3}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 488
+    .line 489
+    .line 490
+    move-result v13
+
+    .line 491
+    const/high16 v14, 0x3f000000    # 0.5f
+
+    .line 492
+    .line 493
+    cmpl-float v13, v13, v14
+
+    .line 494
+    .line 495
+    const/high16 v15, -0x41000000    # -0.5f
+
+    .line 496
+    .line 497
+    if-lez v13, :cond_18
+
+    .line 498
+    .line 499
+    move-wide/from16 v12, p1
+
+    .line 500
+    .line 501
+    invoke-virtual {v0, v12, v13}, Lac;->i(J)F
+
+    .line 502
+    .line 503
+    .line 504
+    :goto_3
+    move v3, v8
+
+    .line 505
+    move/from16 p1, v14
+
+    .line 506
+    .line 507
+    move/from16 p2, v15
+
+    .line 508
+    .line 509
+    goto :goto_4
+
+    .line 510
+    :cond_18
+    move-wide/from16 v12, p1
+
+    .line 511
+    .line 512
+    invoke-static {v3}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 513
+    .line 514
+    .line 515
+    move-result v3
+
+    .line 516
+    cmpg-float v3, v3, v15
+
+    .line 517
+    .line 518
+    if-gez v3, :cond_19
+
+    .line 519
+    .line 520
+    invoke-virtual {v0, v12, v13}, Lac;->j(J)F
+
+    .line 521
+    .line 522
+    .line 523
+    goto :goto_3
+
+    .line 524
+    :cond_19
+    move/from16 p1, v14
+
+    .line 525
+    .line 526
+    move/from16 p2, v15
+
+    .line 527
+    .line 528
+    const/4 v3, 0x0
+
+    .line 529
+    :goto_4
+    and-long v14, v12, v17
+
+    .line 530
+    .line 531
+    long-to-int v14, v14
+
+    .line 532
+    invoke-static {v14}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 533
+    .line 534
+    .line 535
+    move-result v15
+
+    .line 536
+    cmpl-float v15, v15, p1
+
+    .line 537
+    .line 538
+    if-lez v15, :cond_1a
+
+    .line 539
+    .line 540
+    invoke-virtual {v0, v12, v13}, Lac;->k(J)F
+
+    .line 541
+    .line 542
+    .line 543
+    :goto_5
+    move v12, v8
+
+    .line 544
+    goto :goto_6
+
+    .line 545
+    :cond_1a
+    invoke-static {v14}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 546
+    .line 547
+    .line 548
+    move-result v14
+
+    .line 549
+    cmpg-float v14, v14, p2
+
+    .line 550
+    .line 551
+    if-gez v14, :cond_1b
+
+    .line 552
+    .line 553
+    invoke-virtual {v0, v12, v13}, Lac;->h(J)F
+
+    .line 554
+    .line 555
+    .line 556
+    goto :goto_5
+
+    .line 557
+    :cond_1b
+    const/4 v12, 0x0
+
+    .line 558
+    :goto_6
+    if-nez v3, :cond_1c
+
+    .line 559
+    .line 560
+    if-eqz v12, :cond_1d
+
+    .line 561
+    .line 562
+    :cond_1c
+    move v3, v8
+
+    .line 563
+    :goto_7
+    const-wide/16 v13, 0x0
+
+    .line 564
+    .line 565
+    goto :goto_8
+
+    .line 566
+    :cond_1d
+    const/4 v3, 0x0
+
+    .line 567
+    goto :goto_7
+
+    .line 568
+    :goto_8
+    invoke-static {v1, v2, v13, v14}, Llh4;->c(JJ)Z
+
+    .line 569
+    .line 570
+    .line 571
+    move-result v1
+
+    .line 572
+    if-nez v1, :cond_2e
+
+    .line 573
+    .line 574
+    iget-object v1, v9, Lkr1;->f:Landroid/widget/EdgeEffect;
+
+    .line 575
+    .line 576
+    invoke-static {v1}, Lkr1;->f(Landroid/widget/EdgeEffect;)Z
+
+    .line 577
+    .line 578
+    .line 579
+    move-result v1
+
+    .line 580
+    if-eqz v1, :cond_20
+
+    .line 581
+    .line 582
+    invoke-static {v6}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 583
+    .line 584
+    .line 585
+    move-result v1
+
+    .line 586
+    cmpg-float v1, v1, v16
+
+    .line 587
+    .line 588
+    if-gez v1, :cond_20
+
+    .line 589
+    .line 590
+    invoke-virtual {v9}, Lkr1;->c()Landroid/widget/EdgeEffect;
+
+    .line 591
+    .line 592
+    .line 593
+    move-result-object v1
+
+    .line 594
+    invoke-static {v6}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 595
+    .line 596
+    .line 597
+    move-result v2
+
+    .line 598
+    instance-of v12, v1, Lid2;
+
+    .line 599
+    .line 600
+    if-eqz v12, :cond_1e
+
+    .line 601
+    .line 602
+    check-cast v1, Lid2;
+
+    .line 603
+    .line 604
+    iget v12, v1, Lid2;->b:F
+
+    .line 605
+    .line 606
+    add-float/2addr v12, v2
+
+    .line 607
+    iput v12, v1, Lid2;->b:F
+
+    .line 608
+    .line 609
+    invoke-static {v12}, Ljava/lang/Math;->abs(F)F
+
+    .line 610
+    .line 611
+    .line 612
+    move-result v2
+
+    .line 613
+    iget v12, v1, Lid2;->a:F
+
+    .line 614
+    .line 615
+    cmpl-float v2, v2, v12
+
+    .line 616
+    .line 617
+    if-lez v2, :cond_1f
+
+    .line 618
+    .line 619
+    invoke-virtual {v1}, Lid2;->onRelease()V
+
+    .line 620
+    .line 621
+    .line 622
+    goto :goto_9
+
+    .line 623
+    :cond_1e
+    invoke-virtual {v1}, Landroid/widget/EdgeEffect;->onRelease()V
+
+    .line 624
+    .line 625
+    .line 626
+    :cond_1f
+    :goto_9
+    iget-object v1, v9, Lkr1;->f:Landroid/widget/EdgeEffect;
+
+    .line 627
+    .line 628
+    invoke-static {v1}, Lkr1;->f(Landroid/widget/EdgeEffect;)Z
+
+    .line 629
+    .line 630
+    .line 631
+    move-result v1
+
+    .line 632
+    goto :goto_a
+
+    .line 633
+    :cond_20
+    const/4 v1, 0x0
+
+    .line 634
+    :goto_a
+    iget-object v2, v9, Lkr1;->g:Landroid/widget/EdgeEffect;
+
+    .line 635
+    .line 636
+    invoke-static {v2}, Lkr1;->f(Landroid/widget/EdgeEffect;)Z
+
+    .line 637
+    .line 638
+    .line 639
+    move-result v2
+
+    .line 640
+    if-eqz v2, :cond_24
+
+    .line 641
+    .line 642
+    invoke-static {v6}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 643
+    .line 644
+    .line 645
+    move-result v2
+
+    .line 646
+    cmpl-float v2, v2, v16
+
+    .line 647
+    .line 648
+    if-lez v2, :cond_24
+
+    .line 649
+    .line 650
+    invoke-virtual {v9}, Lkr1;->d()Landroid/widget/EdgeEffect;
+
+    .line 651
+    .line 652
+    .line 653
+    move-result-object v2
+
+    .line 654
+    invoke-static {v6}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 655
+    .line 656
+    .line 657
+    move-result v6
+
+    .line 658
+    instance-of v12, v2, Lid2;
+
+    .line 659
+    .line 660
+    if-eqz v12, :cond_21
+
+    .line 661
+    .line 662
+    check-cast v2, Lid2;
+
+    .line 663
+    .line 664
+    iget v12, v2, Lid2;->b:F
+
+    .line 665
+    .line 666
+    add-float/2addr v12, v6
+
+    .line 667
+    iput v12, v2, Lid2;->b:F
+
+    .line 668
+    .line 669
+    invoke-static {v12}, Ljava/lang/Math;->abs(F)F
+
+    .line 670
+    .line 671
+    .line 672
+    move-result v6
+
+    .line 673
+    iget v12, v2, Lid2;->a:F
+
+    .line 674
+    .line 675
+    cmpl-float v6, v6, v12
+
+    .line 676
+    .line 677
+    if-lez v6, :cond_22
+
+    .line 678
+    .line 679
+    invoke-virtual {v2}, Lid2;->onRelease()V
+
+    .line 680
+    .line 681
+    .line 682
+    goto :goto_b
+
+    .line 683
+    :cond_21
+    invoke-virtual {v2}, Landroid/widget/EdgeEffect;->onRelease()V
+
+    .line 684
+    .line 685
+    .line 686
+    :cond_22
+    :goto_b
+    if-nez v1, :cond_23
+
+    .line 687
+    .line 688
+    iget-object v1, v9, Lkr1;->g:Landroid/widget/EdgeEffect;
+
+    .line 689
+    .line 690
+    invoke-static {v1}, Lkr1;->f(Landroid/widget/EdgeEffect;)Z
+
+    .line 691
+    .line 692
+    .line 693
+    move-result v1
+
+    .line 694
+    if-nez v1, :cond_23
+
+    .line 695
+    .line 696
+    const/4 v1, 0x0
+
+    .line 697
+    goto :goto_c
+
+    .line 698
+    :cond_23
+    move v1, v8
+
+    .line 699
+    :cond_24
+    :goto_c
+    iget-object v2, v9, Lkr1;->d:Landroid/widget/EdgeEffect;
+
+    .line 700
+    .line 701
+    invoke-static {v2}, Lkr1;->f(Landroid/widget/EdgeEffect;)Z
+
+    .line 702
+    .line 703
+    .line 704
+    move-result v2
+
+    .line 705
+    if-eqz v2, :cond_28
+
+    .line 706
+    .line 707
+    invoke-static {v7}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 708
+    .line 709
+    .line 710
+    move-result v2
+
+    .line 711
+    cmpg-float v2, v2, v16
+
+    .line 712
+    .line 713
+    if-gez v2, :cond_28
+
+    .line 714
+    .line 715
+    invoke-virtual {v9}, Lkr1;->e()Landroid/widget/EdgeEffect;
+
+    .line 716
+    .line 717
+    .line 718
+    move-result-object v2
+
+    .line 719
+    invoke-static {v7}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 720
+    .line 721
+    .line 722
+    move-result v6
+
+    .line 723
+    instance-of v12, v2, Lid2;
+
+    .line 724
+    .line 725
+    if-eqz v12, :cond_25
+
+    .line 726
+    .line 727
+    check-cast v2, Lid2;
+
+    .line 728
+    .line 729
+    iget v12, v2, Lid2;->b:F
+
+    .line 730
+    .line 731
+    add-float/2addr v12, v6
+
+    .line 732
+    iput v12, v2, Lid2;->b:F
+
+    .line 733
+    .line 734
+    invoke-static {v12}, Ljava/lang/Math;->abs(F)F
+
+    .line 735
+    .line 736
+    .line 737
+    move-result v6
+
+    .line 738
+    iget v12, v2, Lid2;->a:F
+
+    .line 739
+    .line 740
+    cmpl-float v6, v6, v12
+
+    .line 741
+    .line 742
+    if-lez v6, :cond_26
+
+    .line 743
+    .line 744
+    invoke-virtual {v2}, Lid2;->onRelease()V
+
+    .line 745
+    .line 746
+    .line 747
+    goto :goto_d
+
+    .line 748
+    :cond_25
+    invoke-virtual {v2}, Landroid/widget/EdgeEffect;->onRelease()V
+
+    .line 749
+    .line 750
+    .line 751
+    :cond_26
+    :goto_d
+    if-nez v1, :cond_27
+
+    .line 752
+    .line 753
+    iget-object v1, v9, Lkr1;->d:Landroid/widget/EdgeEffect;
+
+    .line 754
+    .line 755
+    invoke-static {v1}, Lkr1;->f(Landroid/widget/EdgeEffect;)Z
+
+    .line 756
+    .line 757
+    .line 758
+    move-result v1
+
+    .line 759
+    if-nez v1, :cond_27
+
+    .line 760
+    .line 761
+    const/4 v1, 0x0
+
+    .line 762
+    goto :goto_e
+
+    .line 763
+    :cond_27
+    move v1, v8
+
+    .line 764
+    :cond_28
+    :goto_e
+    iget-object v2, v9, Lkr1;->e:Landroid/widget/EdgeEffect;
+
+    .line 765
+    .line 766
+    invoke-static {v2}, Lkr1;->f(Landroid/widget/EdgeEffect;)Z
+
+    .line 767
+    .line 768
+    .line 769
+    move-result v2
+
+    .line 770
+    if-eqz v2, :cond_2c
+
+    .line 771
+    .line 772
+    invoke-static {v7}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 773
+    .line 774
+    .line 775
+    move-result v2
+
+    .line 776
+    cmpl-float v2, v2, v16
+
+    .line 777
+    .line 778
+    if-lez v2, :cond_2c
+
+    .line 779
+    .line 780
+    invoke-virtual {v9}, Lkr1;->b()Landroid/widget/EdgeEffect;
+
+    .line 781
+    .line 782
+    .line 783
+    move-result-object v2
+
+    .line 784
+    invoke-static {v7}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 785
+    .line 786
+    .line 787
+    move-result v6
+
+    .line 788
+    instance-of v7, v2, Lid2;
+
+    .line 789
+    .line 790
+    if-eqz v7, :cond_29
+
+    .line 791
+    .line 792
+    check-cast v2, Lid2;
+
+    .line 793
+    .line 794
+    iget v7, v2, Lid2;->b:F
+
+    .line 795
+    .line 796
+    add-float/2addr v7, v6
+
+    .line 797
+    iput v7, v2, Lid2;->b:F
+
+    .line 798
+    .line 799
+    invoke-static {v7}, Ljava/lang/Math;->abs(F)F
+
+    .line 800
+    .line 801
+    .line 802
+    move-result v6
+
+    .line 803
+    iget v7, v2, Lid2;->a:F
+
+    .line 804
+    .line 805
+    cmpl-float v6, v6, v7
+
+    .line 806
+    .line 807
+    if-lez v6, :cond_2a
+
+    .line 808
+    .line 809
+    invoke-virtual {v2}, Lid2;->onRelease()V
+
+    .line 810
+    .line 811
+    .line 812
+    goto :goto_f
+
+    .line 813
+    :cond_29
+    invoke-virtual {v2}, Landroid/widget/EdgeEffect;->onRelease()V
+
+    .line 814
+    .line 815
+    .line 816
+    :cond_2a
+    :goto_f
+    if-nez v1, :cond_2b
+
+    .line 817
+    .line 818
+    iget-object v1, v9, Lkr1;->e:Landroid/widget/EdgeEffect;
+
+    .line 819
+    .line 820
+    invoke-static {v1}, Lkr1;->f(Landroid/widget/EdgeEffect;)Z
+
+    .line 821
+    .line 822
+    .line 823
+    move-result v1
+
+    .line 824
+    if-nez v1, :cond_2b
+
+    .line 825
+    .line 826
+    const/4 v1, 0x0
+
+    .line 827
+    goto :goto_10
+
+    .line 828
+    :cond_2b
+    move v1, v8
+
+    .line 829
+    :cond_2c
+    :goto_10
+    if-nez v1, :cond_2d
+
+    .line 830
+    .line 831
+    if-nez v3, :cond_2d
+
+    .line 832
+    .line 833
+    const/4 v8, 0x0
+
+    .line 834
+    :cond_2d
+    move v3, v8
+
+    .line 835
+    :cond_2e
+    if-eqz v3, :cond_2f
+
+    .line 836
+    .line 837
+    invoke-virtual {v0}, Lac;->g()V
+
+    .line 838
+    .line 839
+    .line 840
+    :cond_2f
+    invoke-static {v10, v11, v4, v5}, Llh4;->g(JJ)J
+
+    .line 841
+    .line 842
+    .line 843
+    move-result-wide v0
+
+    .line 844
+    return-wide v0
+.end method
+
+.method public final b()Lfi1;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lac;->i:Lgi1;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public final c()Z
+    .locals 4
+
+    .line 1
+    iget-object p0, p0, Lac;->c:Lkr1;
+
+    .line 2
+    .line 3
+    iget-object v0, p0, Lkr1;->d:Landroid/widget/EdgeEffect;
+
+    .line 4
+    .line 5
+    const/16 v1, 0x1f
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-eqz v0, :cond_1
+
+    .line 9
+    .line 10
+    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 11
+    .line 12
+    if-lt v3, v1, :cond_0
+
+    .line 13
+    .line 14
+    invoke-static {v0}, Leb;->d(Landroid/widget/EdgeEffect;)F
+
+    .line 15
+    .line 16
+    .line 17
+    move-result v0
+
+    .line 18
+    goto :goto_0
+
+    .line 19
+    :cond_0
+    move v0, v2
+
+    .line 20
+    :goto_0
+    cmpg-float v0, v0, v2
+
+    .line 21
+    .line 22
+    if-nez v0, :cond_7
+
+    .line 23
+    .line 24
+    :cond_1
+    iget-object v0, p0, Lkr1;->e:Landroid/widget/EdgeEffect;
+
+    .line 25
+    .line 26
+    if-eqz v0, :cond_3
+
+    .line 27
+    .line 28
+    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 29
+    .line 30
+    if-lt v3, v1, :cond_2
+
+    .line 31
+    .line 32
+    invoke-static {v0}, Leb;->d(Landroid/widget/EdgeEffect;)F
+
+    .line 33
+    .line 34
+    .line 35
+    move-result v0
+
+    .line 36
+    goto :goto_1
+
+    .line 37
+    :cond_2
+    move v0, v2
+
+    .line 38
+    :goto_1
+    cmpg-float v0, v0, v2
+
+    .line 39
+    .line 40
+    if-nez v0, :cond_7
+
+    .line 41
+    .line 42
+    :cond_3
+    iget-object v0, p0, Lkr1;->f:Landroid/widget/EdgeEffect;
+
+    .line 43
+    .line 44
+    if-eqz v0, :cond_5
+
+    .line 45
+    .line 46
+    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 47
+    .line 48
+    if-lt v3, v1, :cond_4
+
+    .line 49
+    .line 50
+    invoke-static {v0}, Leb;->d(Landroid/widget/EdgeEffect;)F
+
+    .line 51
+    .line 52
+    .line 53
+    move-result v0
+
+    .line 54
+    goto :goto_2
+
+    .line 55
+    :cond_4
+    move v0, v2
+
+    .line 56
+    :goto_2
+    cmpg-float v0, v0, v2
+
+    .line 57
+    .line 58
+    if-nez v0, :cond_7
+
+    .line 59
+    .line 60
+    :cond_5
+    iget-object p0, p0, Lkr1;->g:Landroid/widget/EdgeEffect;
+
+    .line 61
+    .line 62
+    if-eqz p0, :cond_8
+
+    .line 63
+    .line 64
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 65
+    .line 66
+    if-lt v0, v1, :cond_6
+
+    .line 67
+    .line 68
+    invoke-static {p0}, Leb;->d(Landroid/widget/EdgeEffect;)F
+
+    .line 69
+    .line 70
+    .line 71
+    move-result p0
+
+    .line 72
+    goto :goto_3
+
+    .line 73
+    :cond_6
+    move p0, v2
+
+    .line 74
+    :goto_3
+    cmpg-float p0, p0, v2
+
+    .line 75
+    .line 76
+    if-eqz p0, :cond_8
+
+    .line 77
+    .line 78
+    :cond_7
+    const/4 p0, 0x1
+
+    .line 79
+    return p0
+
+    .line 80
+    :cond_8
+    const/4 p0, 0x0
+
+    .line 81
+    return p0
+.end method
+
+.method public final d(JLt72;Lq91;)Ljava/lang/Object;
+    .locals 18
+
+    .line 1
+    move-object/from16 v0, p0
+
+    .line 2
+    .line 3
+    move-wide/from16 v1, p1
+
+    .line 4
+    .line 5
+    move-object/from16 v3, p3
+
+    .line 6
+    .line 7
+    move-object/from16 v4, p4
+
+    .line 8
+    .line 9
+    instance-of v5, v4, Lyb;
+
+    .line 10
+    .line 11
+    if-eqz v5, :cond_0
+
+    .line 12
+    .line 13
+    move-object v5, v4
+
+    .line 14
+    check-cast v5, Lyb;
+
+    .line 15
+    .line 16
+    iget v6, v5, Lyb;->l:I
+
+    .line 17
+    .line 18
+    const/high16 v7, -0x80000000
+
+    .line 19
+    .line 20
+    and-int v8, v6, v7
+
+    .line 21
+    .line 22
+    if-eqz v8, :cond_0
+
+    .line 23
+    .line 24
+    sub-int/2addr v6, v7
+
+    .line 25
+    iput v6, v5, Lyb;->l:I
+
+    .line 26
+    .line 27
+    goto :goto_0
+
+    .line 28
+    :cond_0
+    new-instance v5, Lyb;
+
+    .line 29
+    .line 30
+    invoke-direct {v5, v0, v4}, Lyb;-><init>(Lac;Lq91;)V
+
+    .line 31
+    .line 32
+    .line 33
+    :goto_0
+    iget-object v4, v5, Lyb;->j:Ljava/lang/Object;
+
+    .line 34
+    .line 35
+    iget v6, v5, Lyb;->l:I
+
+    .line 36
+    .line 37
+    sget-object v7, Ll97;->a:Ll97;
+
+    .line 38
+    .line 39
+    const/4 v8, 0x2
+
+    .line 40
+    const/4 v9, 0x1
+
+    .line 41
+    const/4 v10, 0x0
+
+    .line 42
+    iget-object v11, v0, Lac;->c:Lkr1;
+
+    .line 43
+    .line 44
+    if-eqz v6, :cond_3
+
+    .line 45
+    .line 46
+    if-eq v6, v9, :cond_2
+
+    .line 47
+    .line 48
+    if-ne v6, v8, :cond_1
+
+    .line 49
+    .line 50
+    iget-wide v1, v5, Lyb;->i:J
+
+    .line 51
+    .line 52
+    invoke-static {v4}, Lbe3;->R(Ljava/lang/Object;)V
+
+    .line 53
+    .line 54
+    .line 55
+    goto/16 :goto_3
+
+    .line 56
+    .line 57
+    :cond_1
+    const-string v0, "call to \'resume\' before \'invoke\' with coroutine"
+
+    .line 58
+    .line 59
+    invoke-static {v0}, Lex1;->d(Ljava/lang/String;)V
+
+    .line 60
+    .line 61
+    .line 62
+    const/4 v0, 0x0
+
+    .line 63
+    return-object v0
+
+    .line 64
+    :cond_2
+    invoke-static {v4}, Lbe3;->R(Ljava/lang/Object;)V
+
+    .line 65
+    .line 66
+    .line 67
+    return-object v7
+
+    .line 68
+    :cond_3
+    invoke-static {v4}, Lbe3;->R(Ljava/lang/Object;)V
+
+    .line 69
+    .line 70
+    .line 71
+    iget-wide v12, v0, Lac;->g:J
+
+    .line 72
+    .line 73
+    invoke-static {v12, v13}, Lqb6;->c(J)Z
+
+    .line 74
+    .line 75
+    .line 76
+    move-result v4
+
+    .line 77
+    sget-object v6, Lpc1;->i:Lpc1;
+
+    .line 78
+    .line 79
+    if-eqz v4, :cond_4
+
+    .line 80
+    .line 81
+    new-instance v0, Lpb7;
+
+    .line 82
+    .line 83
+    invoke-direct {v0, v1, v2}, Lpb7;-><init>(J)V
+
+    .line 84
+    .line 85
+    .line 86
+    iput v9, v5, Lyb;->l:I
+
+    .line 87
+    .line 88
+    invoke-interface {v3, v0, v5}, Lt72;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 89
+    .line 90
+    .line 91
+    move-result-object v0
+
+    .line 92
+    if-eq v0, v6, :cond_a
+
+    .line 93
+    .line 94
+    return-object v7
+
+    .line 95
+    :cond_4
+    iget-object v4, v11, Lkr1;->f:Landroid/widget/EdgeEffect;
+
+    .line 96
+    .line 97
+    invoke-static {v4}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
+
+    .line 98
+    .line 99
+    .line 100
+    move-result v4
+
+    .line 101
+    const/16 v9, 0x20
+
+    .line 102
+    .line 103
+    iget-object v12, v0, Lac;->a:Lsi1;
+
+    .line 104
+    .line 105
+    if-eqz v4, :cond_5
+
+    .line 106
+    .line 107
+    invoke-static {v1, v2}, Lpb7;->b(J)F
+
+    .line 108
+    .line 109
+    .line 110
+    move-result v4
+
+    .line 111
+    cmpg-float v4, v4, v10
+
+    .line 112
+    .line 113
+    if-gez v4, :cond_5
+
+    .line 114
+    .line 115
+    invoke-virtual {v11}, Lkr1;->c()Landroid/widget/EdgeEffect;
+
+    .line 116
+    .line 117
+    .line 118
+    move-result-object v4
+
+    .line 119
+    invoke-static {v1, v2}, Lpb7;->b(J)F
+
+    .line 120
+    .line 121
+    .line 122
+    move-result v13
+
+    .line 123
+    iget-wide v14, v0, Lac;->g:J
+
+    .line 124
+    .line 125
+    shr-long/2addr v14, v9
+
+    .line 126
+    long-to-int v9, v14
+
+    .line 127
+    invoke-static {v9}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 128
+    .line 129
+    .line 130
+    move-result v9
+
+    .line 131
+    invoke-static {v4, v13, v9, v12}, Lht;->L(Landroid/widget/EdgeEffect;FFLsi1;)F
+
+    .line 132
+    .line 133
+    .line 134
+    move-result v4
+
+    .line 135
+    goto :goto_1
+
+    .line 136
+    :cond_5
+    iget-object v4, v11, Lkr1;->g:Landroid/widget/EdgeEffect;
+
+    .line 137
+    .line 138
+    invoke-static {v4}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
+
+    .line 139
+    .line 140
+    .line 141
+    move-result v4
+
+    .line 142
+    if-eqz v4, :cond_6
+
+    .line 143
+    .line 144
+    invoke-static {v1, v2}, Lpb7;->b(J)F
+
+    .line 145
+    .line 146
+    .line 147
+    move-result v4
+
+    .line 148
+    cmpl-float v4, v4, v10
+
+    .line 149
+    .line 150
+    if-lez v4, :cond_6
+
+    .line 151
+    .line 152
+    invoke-virtual {v11}, Lkr1;->d()Landroid/widget/EdgeEffect;
+
+    .line 153
+    .line 154
+    .line 155
+    move-result-object v4
+
+    .line 156
+    invoke-static {v1, v2}, Lpb7;->b(J)F
+
+    .line 157
+    .line 158
+    .line 159
+    move-result v13
+
+    .line 160
+    neg-float v13, v13
+
+    .line 161
+    iget-wide v14, v0, Lac;->g:J
+
+    .line 162
+    .line 163
+    shr-long/2addr v14, v9
+
+    .line 164
+    long-to-int v9, v14
+
+    .line 165
+    invoke-static {v9}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 166
+    .line 167
+    .line 168
+    move-result v9
+
+    .line 169
+    invoke-static {v4, v13, v9, v12}, Lht;->L(Landroid/widget/EdgeEffect;FFLsi1;)F
+
+    .line 170
+    .line 171
+    .line 172
+    move-result v4
+
+    .line 173
+    neg-float v4, v4
+
+    .line 174
+    goto :goto_1
+
+    .line 175
+    :cond_6
+    move v4, v10
+
+    .line 176
+    :goto_1
+    iget-object v9, v11, Lkr1;->d:Landroid/widget/EdgeEffect;
+
+    .line 177
+    .line 178
+    invoke-static {v9}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
+
+    .line 179
+    .line 180
+    .line 181
+    move-result v9
+
+    .line 182
+    if-eqz v9, :cond_7
+
+    .line 183
+    .line 184
+    invoke-static {v1, v2}, Lpb7;->c(J)F
+
+    .line 185
+    .line 186
+    .line 187
+    move-result v9
+
+    .line 188
+    cmpg-float v9, v9, v10
+
+    .line 189
+    .line 190
+    if-gez v9, :cond_7
+
+    .line 191
+    .line 192
+    invoke-virtual {v11}, Lkr1;->e()Landroid/widget/EdgeEffect;
+
+    .line 193
+    .line 194
+    .line 195
+    move-result-object v9
+
+    .line 196
+    invoke-static {v1, v2}, Lpb7;->c(J)F
+
+    .line 197
+    .line 198
+    .line 199
+    move-result v15
+
+    .line 200
+    const-wide v16, 0xffffffffL
+
+    .line 201
+    .line 202
+    .line 203
+    .line 204
+    .line 205
+    iget-wide v13, v0, Lac;->g:J
+
+    .line 206
+    .line 207
+    and-long v13, v13, v16
+
+    .line 208
+    .line 209
+    long-to-int v13, v13
+
+    .line 210
+    invoke-static {v13}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 211
+    .line 212
+    .line 213
+    move-result v13
+
+    .line 214
+    invoke-static {v9, v15, v13, v12}, Lht;->L(Landroid/widget/EdgeEffect;FFLsi1;)F
+
+    .line 215
+    .line 216
+    .line 217
+    move-result v9
+
+    .line 218
+    goto :goto_2
+
+    .line 219
+    :cond_7
+    const-wide v16, 0xffffffffL
+
+    .line 220
+    .line 221
+    .line 222
+    .line 223
+    .line 224
+    iget-object v9, v11, Lkr1;->e:Landroid/widget/EdgeEffect;
+
+    .line 225
+    .line 226
+    invoke-static {v9}, Lkr1;->g(Landroid/widget/EdgeEffect;)Z
+
+    .line 227
+    .line 228
+    .line 229
+    move-result v9
+
+    .line 230
+    if-eqz v9, :cond_8
+
+    .line 231
+    .line 232
+    invoke-static {v1, v2}, Lpb7;->c(J)F
+
+    .line 233
+    .line 234
+    .line 235
+    move-result v9
+
+    .line 236
+    cmpl-float v9, v9, v10
+
+    .line 237
+    .line 238
+    if-lez v9, :cond_8
+
+    .line 239
+    .line 240
+    invoke-virtual {v11}, Lkr1;->b()Landroid/widget/EdgeEffect;
+
+    .line 241
+    .line 242
+    .line 243
+    move-result-object v9
+
+    .line 244
+    invoke-static {v1, v2}, Lpb7;->c(J)F
+
+    .line 245
+    .line 246
+    .line 247
+    move-result v13
+
+    .line 248
+    neg-float v13, v13
+
+    .line 249
+    iget-wide v14, v0, Lac;->g:J
+
+    .line 250
+    .line 251
+    and-long v14, v14, v16
+
+    .line 252
+    .line 253
+    long-to-int v14, v14
+
+    .line 254
+    invoke-static {v14}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     .line 255
     .line 256
-    iget-wide v9, v6, Lwq4;->c:J
-
     .line 257
+    move-result v14
+
     .line 258
-    iput-wide v9, v3, Lbc;->b:J
+    invoke-static {v9, v13, v14, v12}, Lht;->L(Landroid/widget/EdgeEffect;FFLsi1;)F
 
     .line 259
     .line 260
-    :cond_11
-    invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
-
     .line 261
+    move-result v9
+
     .line 262
+    neg-float v9, v9
+
     .line 263
-    move-result p1
+    goto :goto_2
 
     .line 264
-    if-eqz p1, :cond_a
+    :cond_8
+    move v9, v10
 
     .line 265
-    .line 266
-    const-wide/16 p0, -0x1
+    :goto_2
+    invoke-static {v4, v9}, Lpw6;->b(FF)J
 
+    .line 266
     .line 267
     .line 268
-    iput-wide p0, v3, Lbc;->h:J
+    move-result-wide v12
 
     .line 269
-    .line 270
-    :goto_a
-    return-object v1
+    const-wide/16 v14, 0x0
 
+    .line 270
     .line 271
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    cmp-long v4, v12, v14
+
+    .line 272
+    .line 273
+    if-eqz v4, :cond_9
+
+    .line 274
+    .line 275
+    invoke-virtual {v0}, Lac;->g()V
+
+    .line 276
+    .line 277
+    .line 278
+    :cond_9
+    invoke-static {v1, v2, v12, v13}, Lpb7;->d(JJ)J
+
+    .line 279
+    .line 280
+    .line 281
+    move-result-wide v1
+
+    .line 282
+    new-instance v4, Lpb7;
+
+    .line 283
+    .line 284
+    invoke-direct {v4, v1, v2}, Lpb7;-><init>(J)V
+
+    .line 285
+    .line 286
+    .line 287
+    iput-wide v1, v5, Lyb;->i:J
+
+    .line 288
+    .line 289
+    iput v8, v5, Lyb;->l:I
+
+    .line 290
+    .line 291
+    invoke-interface {v3, v4, v5}, Lt72;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 292
+    .line 293
+    .line 294
+    move-result-object v4
+
+    .line 295
+    if-ne v4, v6, :cond_b
+
+    .line 296
+    .line 297
+    :cond_a
+    return-object v6
+
+    .line 298
+    :cond_b
+    :goto_3
+    check-cast v4, Lpb7;
+
+    .line 299
+    .line 300
+    iget-wide v3, v4, Lpb7;->a:J
+
+    .line 301
+    .line 302
+    invoke-static {v1, v2, v3, v4}, Lpb7;->d(JJ)J
+
+    .line 303
+    .line 304
+    .line 305
+    move-result-wide v1
+
+    .line 306
+    const/4 v3, 0x0
+
+    .line 307
+    iput-boolean v3, v0, Lac;->f:Z
+
+    .line 308
+    .line 309
+    invoke-static {v1, v2}, Lpb7;->b(J)F
+
+    .line 310
+    .line 311
+    .line 312
+    move-result v3
+
+    .line 313
+    cmpl-float v3, v3, v10
+
+    .line 314
+    .line 315
+    const/16 v4, 0x1f
+
+    .line 316
+    .line 317
+    if-lez v3, :cond_d
+
+    .line 318
+    .line 319
+    invoke-virtual {v11}, Lkr1;->c()Landroid/widget/EdgeEffect;
+
+    .line 320
+    .line 321
+    .line 322
+    move-result-object v3
+
+    .line 323
+    invoke-static {v1, v2}, Lpb7;->b(J)F
+
+    .line 324
+    .line 325
+    .line 326
+    move-result v5
+
+    .line 327
+    invoke-static {v5}, Lqn3;->g0(F)I
+
+    .line 328
+    .line 329
+    .line 330
+    move-result v5
+
+    .line 331
+    sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 332
+    .line 333
+    if-lt v6, v4, :cond_c
+
+    .line 334
+    .line 335
+    invoke-virtual {v3, v5}, Landroid/widget/EdgeEffect;->onAbsorb(I)V
+
+    .line 336
+    .line 337
+    .line 338
+    goto :goto_4
+
+    .line 339
+    :cond_c
+    invoke-virtual {v3}, Landroid/widget/EdgeEffect;->isFinished()Z
+
+    .line 340
+    .line 341
+    .line 342
+    move-result v6
+
+    .line 343
+    if-eqz v6, :cond_f
+
+    .line 344
+    .line 345
+    invoke-virtual {v3, v5}, Landroid/widget/EdgeEffect;->onAbsorb(I)V
+
+    .line 346
+    .line 347
+    .line 348
+    goto :goto_4
+
+    .line 349
+    :cond_d
+    invoke-static {v1, v2}, Lpb7;->b(J)F
+
+    .line 350
+    .line 351
+    .line 352
+    move-result v3
+
+    .line 353
+    cmpg-float v3, v3, v10
+
+    .line 354
+    .line 355
+    if-gez v3, :cond_f
+
+    .line 356
+    .line 357
+    invoke-virtual {v11}, Lkr1;->d()Landroid/widget/EdgeEffect;
+
+    .line 358
+    .line 359
+    .line 360
+    move-result-object v3
+
+    .line 361
+    invoke-static {v1, v2}, Lpb7;->b(J)F
+
+    .line 362
+    .line 363
+    .line 364
+    move-result v5
+
+    .line 365
+    invoke-static {v5}, Lqn3;->g0(F)I
+
+    .line 366
+    .line 367
+    .line 368
+    move-result v5
+
+    .line 369
+    neg-int v5, v5
+
+    .line 370
+    sget v6, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 371
+    .line 372
+    if-lt v6, v4, :cond_e
+
+    .line 373
+    .line 374
+    invoke-virtual {v3, v5}, Landroid/widget/EdgeEffect;->onAbsorb(I)V
+
+    .line 375
+    .line 376
+    .line 377
+    goto :goto_4
+
+    .line 378
+    :cond_e
+    invoke-virtual {v3}, Landroid/widget/EdgeEffect;->isFinished()Z
+
+    .line 379
+    .line 380
+    .line 381
+    move-result v6
+
+    .line 382
+    if-eqz v6, :cond_f
+
+    .line 383
+    .line 384
+    invoke-virtual {v3, v5}, Landroid/widget/EdgeEffect;->onAbsorb(I)V
+
+    .line 385
+    .line 386
+    .line 387
+    :cond_f
+    :goto_4
+    invoke-static {v1, v2}, Lpb7;->c(J)F
+
+    .line 388
+    .line 389
+    .line 390
+    move-result v3
+
+    .line 391
+    cmpl-float v3, v3, v10
+
+    .line 392
+    .line 393
+    if-lez v3, :cond_11
+
+    .line 394
+    .line 395
+    invoke-virtual {v11}, Lkr1;->e()Landroid/widget/EdgeEffect;
+
+    .line 396
+    .line 397
+    .line 398
+    move-result-object v3
+
+    .line 399
+    invoke-static {v1, v2}, Lpb7;->c(J)F
+
+    .line 400
+    .line 401
+    .line 402
+    move-result v1
+
+    .line 403
+    invoke-static {v1}, Lqn3;->g0(F)I
+
+    .line 404
+    .line 405
+    .line 406
+    move-result v1
+
+    .line 407
+    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 408
+    .line 409
+    if-lt v2, v4, :cond_10
+
+    .line 410
+    .line 411
+    invoke-virtual {v3, v1}, Landroid/widget/EdgeEffect;->onAbsorb(I)V
+
+    .line 412
+    .line 413
+    .line 414
+    goto :goto_5
+
+    .line 415
+    :cond_10
+    invoke-virtual {v3}, Landroid/widget/EdgeEffect;->isFinished()Z
+
+    .line 416
+    .line 417
+    .line 418
+    move-result v2
+
+    .line 419
+    if-eqz v2, :cond_13
+
+    .line 420
+    .line 421
+    invoke-virtual {v3, v1}, Landroid/widget/EdgeEffect;->onAbsorb(I)V
+
+    .line 422
+    .line 423
+    .line 424
+    goto :goto_5
+
+    .line 425
+    :cond_11
+    invoke-static {v1, v2}, Lpb7;->c(J)F
+
+    .line 426
+    .line 427
+    .line 428
+    move-result v3
+
+    .line 429
+    cmpg-float v3, v3, v10
+
+    .line 430
+    .line 431
+    if-gez v3, :cond_13
+
+    .line 432
+    .line 433
+    invoke-virtual {v11}, Lkr1;->b()Landroid/widget/EdgeEffect;
+
+    .line 434
+    .line 435
+    .line 436
+    move-result-object v3
+
+    .line 437
+    invoke-static {v1, v2}, Lpb7;->c(J)F
+
+    .line 438
+    .line 439
+    .line 440
+    move-result v1
+
+    .line 441
+    invoke-static {v1}, Lqn3;->g0(F)I
+
+    .line 442
+    .line 443
+    .line 444
+    move-result v1
+
+    .line 445
+    neg-int v1, v1
+
+    .line 446
+    sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 447
+    .line 448
+    if-lt v2, v4, :cond_12
+
+    .line 449
+    .line 450
+    invoke-virtual {v3, v1}, Landroid/widget/EdgeEffect;->onAbsorb(I)V
+
+    .line 451
+    .line 452
+    .line 453
+    goto :goto_5
+
+    .line 454
+    :cond_12
+    invoke-virtual {v3}, Landroid/widget/EdgeEffect;->isFinished()Z
+
+    .line 455
+    .line 456
+    .line 457
+    move-result v2
+
+    .line 458
+    if-eqz v2, :cond_13
+
+    .line 459
+    .line 460
+    invoke-virtual {v3, v1}, Landroid/widget/EdgeEffect;->onAbsorb(I)V
+
+    .line 461
+    .line 462
+    .line 463
+    :cond_13
+    :goto_5
+    invoke-virtual {v0}, Lac;->e()V
+
+    .line 464
+    .line 465
+    .line 466
+    return-object v7
+.end method
+
+.method public final e()V
+    .locals 5
+
+    .line 1
+    iget-object v0, p0, Lac;->c:Lkr1;
+
+    .line 2
+    .line 3
+    iget-object v1, v0, Lkr1;->d:Landroid/widget/EdgeEffect;
+
+    .line 4
+    .line 5
+    const/4 v2, 0x1
+
+    .line 6
+    const/4 v3, 0x0
+
+    .line 7
+    if-eqz v1, :cond_0
+
+    .line 8
+    .line 9
+    invoke-virtual {v1}, Landroid/widget/EdgeEffect;->onRelease()V
+
+    .line 10
+    .line 11
+    .line 12
+    invoke-virtual {v1}, Landroid/widget/EdgeEffect;->isFinished()Z
+
+    .line 13
+    .line 14
+    .line 15
+    move-result v1
+
+    .line 16
+    xor-int/2addr v1, v2
+
+    .line 17
+    goto :goto_0
+
+    .line 18
+    :cond_0
+    move v1, v3
+
+    .line 19
+    :goto_0
+    iget-object v4, v0, Lkr1;->e:Landroid/widget/EdgeEffect;
+
+    .line 20
+    .line 21
+    if-eqz v4, :cond_2
+
+    .line 22
+    .line 23
+    invoke-virtual {v4}, Landroid/widget/EdgeEffect;->onRelease()V
+
+    .line 24
+    .line 25
+    .line 26
+    invoke-virtual {v4}, Landroid/widget/EdgeEffect;->isFinished()Z
+
+    .line 27
+    .line 28
+    .line 29
+    move-result v4
+
+    .line 30
+    if-eqz v4, :cond_1
+
+    .line 31
+    .line 32
+    if-nez v1, :cond_1
+
+    .line 33
+    .line 34
+    move v1, v3
+
+    .line 35
+    goto :goto_1
+
+    .line 36
+    :cond_1
+    move v1, v2
+
+    .line 37
+    :cond_2
+    :goto_1
+    iget-object v4, v0, Lkr1;->f:Landroid/widget/EdgeEffect;
+
+    .line 38
+    .line 39
+    if-eqz v4, :cond_4
+
+    .line 40
+    .line 41
+    invoke-virtual {v4}, Landroid/widget/EdgeEffect;->onRelease()V
+
+    .line 42
+    .line 43
+    .line 44
+    invoke-virtual {v4}, Landroid/widget/EdgeEffect;->isFinished()Z
+
+    .line 45
+    .line 46
+    .line 47
+    move-result v4
+
+    .line 48
+    if-eqz v4, :cond_3
+
+    .line 49
+    .line 50
+    if-nez v1, :cond_3
+
+    .line 51
+    .line 52
+    move v1, v3
+
+    .line 53
+    goto :goto_2
+
+    .line 54
+    :cond_3
+    move v1, v2
+
+    .line 55
+    :cond_4
+    :goto_2
+    iget-object v0, v0, Lkr1;->g:Landroid/widget/EdgeEffect;
+
+    .line 56
+    .line 57
+    if-eqz v0, :cond_6
+
+    .line 58
+    .line 59
+    invoke-virtual {v0}, Landroid/widget/EdgeEffect;->onRelease()V
+
+    .line 60
+    .line 61
+    .line 62
+    invoke-virtual {v0}, Landroid/widget/EdgeEffect;->isFinished()Z
+
+    .line 63
+    .line 64
+    .line 65
+    move-result v0
+
+    .line 66
+    if-eqz v0, :cond_5
+
+    .line 67
+    .line 68
+    if-nez v1, :cond_5
+
+    .line 69
+    .line 70
+    move v2, v3
+
+    .line 71
+    :cond_5
+    move v1, v2
+
+    .line 72
+    :cond_6
+    if-eqz v1, :cond_7
+
+    .line 73
+    .line 74
+    invoke-virtual {p0}, Lac;->g()V
+
+    .line 75
+    .line 76
+    .line 77
+    :cond_7
+    return-void
+.end method
+
+.method public final f()J
+    .locals 8
+
+    .line 1
+    iget-wide v0, p0, Lac;->b:J
+
+    .line 2
+    .line 3
+    const-wide v2, 0x7fffffff7fffffffL
+
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    and-long/2addr v2, v0
+
+    .line 9
+    const-wide v4, 0x7fc000007fc00000L    # 2.247117487993712E307
+
+    .line 10
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    cmp-long v2, v2, v4
+
+    .line 15
+    .line 16
+    if-nez v2, :cond_0
+
+    .line 17
+    .line 18
+    iget-wide v0, p0, Lac;->g:J
+
+    .line 19
+    .line 20
+    invoke-static {v0, v1}, Lp06;->v(J)J
+
+    .line 21
+    .line 22
+    .line 23
+    move-result-wide v0
+
+    .line 24
+    :cond_0
+    const/16 v2, 0x20
+
+    .line 25
+    .line 26
+    shr-long v3, v0, v2
+
+    .line 27
+    .line 28
+    long-to-int v3, v3
+
+    .line 29
+    invoke-static {v3}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 30
+    .line 31
+    .line 32
+    move-result v3
+
+    .line 33
+    iget-wide v4, p0, Lac;->g:J
+
+    .line 34
+    .line 35
+    shr-long/2addr v4, v2
+
+    .line 36
+    long-to-int v4, v4
+
+    .line 37
+    invoke-static {v4}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 38
+    .line 39
+    .line 40
+    move-result v4
+
+    .line 41
+    div-float/2addr v3, v4
+
+    .line 42
+    const-wide v4, 0xffffffffL
+
+    .line 43
+    .line 44
+    .line 45
+    .line 46
+    .line 47
+    and-long/2addr v0, v4
+
+    .line 48
+    long-to-int v0, v0
+
+    .line 49
+    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 50
+    .line 51
+    .line 52
+    move-result v0
+
+    .line 53
+    iget-wide v6, p0, Lac;->g:J
+
+    .line 54
+    .line 55
+    and-long/2addr v6, v4
+
+    .line 56
+    long-to-int p0, v6
+
+    .line 57
+    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 58
+    .line 59
+    .line 60
+    move-result p0
+
+    .line 61
+    div-float/2addr v0, p0
+
+    .line 62
+    invoke-static {v3}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 63
+    .line 64
+    .line 65
+    move-result p0
+
+    .line 66
+    int-to-long v6, p0
+
+    .line 67
+    invoke-static {v0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 68
+    .line 69
+    .line 70
+    move-result p0
+
+    .line 71
+    int-to-long v0, p0
+
+    .line 72
+    shl-long/2addr v6, v2
+
+    .line 73
+    and-long/2addr v0, v4
+
+    .line 74
+    or-long/2addr v6, v0
+
+    .line 75
+    return-wide v6
+.end method
+
+.method public final g()V
+    .locals 1
+
+    .line 1
+    iget-boolean v0, p0, Lac;->e:Z
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Lac;->d:Lxs4;
+
+    .line 6
+    .line 7
+    sget-object v0, Ll97;->a:Ll97;
+
+    .line 8
+    .line 9
+    invoke-virtual {p0, v0}, Lxs4;->setValue(Ljava/lang/Object;)V
+
+    .line 10
+    .line 11
+    .line 12
+    :cond_0
+    return-void
+.end method
+
+.method public final h(J)F
+    .locals 8
+
+    .line 1
+    invoke-virtual {p0}, Lac;->f()J
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-wide v0
+
+    .line 5
+    const/16 v2, 0x20
+
+    .line 6
+    .line 7
+    shr-long/2addr v0, v2
+
+    .line 8
+    long-to-int v0, v0
+
+    .line 9
+    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v0
+
+    .line 13
+    const-wide v1, 0xffffffffL
+
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    and-long/2addr p1, v1
+
+    .line 19
+    long-to-int p1, p1
+
+    .line 20
+    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 21
+    .line 22
+    .line 23
+    move-result p2
+
+    .line 24
+    iget-wide v3, p0, Lac;->g:J
+
+    .line 25
+    .line 26
+    and-long/2addr v3, v1
+
+    .line 27
+    long-to-int v3, v3
+
+    .line 28
+    invoke-static {v3}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 29
+    .line 30
+    .line 31
+    move-result v3
+
+    .line 32
+    div-float/2addr p2, v3
+
+    .line 33
+    iget-object v3, p0, Lac;->c:Lkr1;
+
+    .line 34
+    .line 35
+    invoke-virtual {v3}, Lkr1;->b()Landroid/widget/EdgeEffect;
+
+    .line 36
+    .line 37
+    .line 38
+    move-result-object v3
+
+    .line 39
+    neg-float p2, p2
+
+    .line 40
+    const/high16 v4, 0x3f800000    # 1.0f
+
+    .line 41
+    .line 42
+    sub-float/2addr v4, v0
+
+    .line 43
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 44
+    .line 45
+    const/16 v5, 0x1f
+
+    .line 46
+    .line 47
+    if-lt v0, v5, :cond_0
+
+    .line 48
+    .line 49
+    invoke-static {v3, p2, v4}, Leb;->f(Landroid/widget/EdgeEffect;FF)F
+
+    .line 50
+    .line 51
+    .line 52
+    move-result p2
+
+    .line 53
+    goto :goto_0
+
+    .line 54
+    :cond_0
+    invoke-virtual {v3, p2, v4}, Landroid/widget/EdgeEffect;->onPull(FF)V
+
+    .line 55
+    .line 56
+    .line 57
+    :goto_0
+    neg-float p2, p2
+
+    .line 58
+    iget-wide v6, p0, Lac;->g:J
+
+    .line 59
+    .line 60
+    and-long/2addr v6, v1
+
+    .line 61
+    long-to-int p0, v6
+
+    .line 62
+    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 63
+    .line 64
+    .line 65
+    move-result p0
+
+    .line 66
+    mul-float/2addr p0, p2
+
+    .line 67
+    const/4 p2, 0x0
+
+    .line 68
+    if-lt v0, v5, :cond_1
+
+    .line 69
+    .line 70
+    invoke-static {v3}, Leb;->d(Landroid/widget/EdgeEffect;)F
+
+    .line 71
+    .line 72
+    .line 73
+    move-result v0
+
+    .line 74
+    goto :goto_1
+
+    .line 75
+    :cond_1
+    move v0, p2
+
+    .line 76
+    :goto_1
+    cmpg-float p2, v0, p2
+
+    .line 77
+    .line 78
+    if-nez p2, :cond_2
+
+    .line 79
+    .line 80
+    return p0
+
+    .line 81
+    :cond_2
+    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 82
+    .line 83
+    .line 84
+    move-result p0
+
+    .line 85
+    return p0
+.end method
+
+.method public final i(J)F
+    .locals 7
+
+    .line 1
+    invoke-virtual {p0}, Lac;->f()J
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-wide v0
+
+    .line 5
+    const-wide v2, 0xffffffffL
+
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    and-long/2addr v0, v2
+
+    .line 11
+    long-to-int v0, v0
+
+    .line 12
+    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 13
+    .line 14
+    .line 15
+    move-result v0
+
+    .line 16
+    const/16 v1, 0x20
+
+    .line 17
+    .line 18
+    shr-long/2addr p1, v1
+
+    .line 19
+    long-to-int p1, p1
+
+    .line 20
+    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 21
+    .line 22
+    .line 23
+    move-result p2
+
+    .line 24
+    iget-wide v2, p0, Lac;->g:J
+
+    .line 25
+    .line 26
+    shr-long/2addr v2, v1
+
+    .line 27
+    long-to-int v2, v2
+
+    .line 28
+    invoke-static {v2}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 29
+    .line 30
+    .line 31
+    move-result v2
+
+    .line 32
+    div-float/2addr p2, v2
+
+    .line 33
+    iget-object v2, p0, Lac;->c:Lkr1;
+
+    .line 34
+    .line 35
+    invoke-virtual {v2}, Lkr1;->c()Landroid/widget/EdgeEffect;
+
+    .line 36
+    .line 37
+    .line 38
+    move-result-object v2
+
+    .line 39
+    const/high16 v3, 0x3f800000    # 1.0f
+
+    .line 40
+    .line 41
+    sub-float/2addr v3, v0
+
+    .line 42
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 43
+    .line 44
+    const/16 v4, 0x1f
+
+    .line 45
+    .line 46
+    if-lt v0, v4, :cond_0
+
+    .line 47
+    .line 48
+    invoke-static {v2, p2, v3}, Leb;->f(Landroid/widget/EdgeEffect;FF)F
+
+    .line 49
+    .line 50
+    .line 51
+    move-result p2
+
+    .line 52
+    goto :goto_0
+
+    .line 53
+    :cond_0
+    invoke-virtual {v2, p2, v3}, Landroid/widget/EdgeEffect;->onPull(FF)V
+
+    .line 54
+    .line 55
+    .line 56
+    :goto_0
+    iget-wide v5, p0, Lac;->g:J
+
+    .line 57
+    .line 58
+    shr-long/2addr v5, v1
+
+    .line 59
+    long-to-int p0, v5
+
+    .line 60
+    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 61
+    .line 62
+    .line 63
+    move-result p0
+
+    .line 64
+    mul-float/2addr p0, p2
+
+    .line 65
+    const/4 p2, 0x0
+
+    .line 66
+    if-lt v0, v4, :cond_1
+
+    .line 67
+    .line 68
+    invoke-static {v2}, Leb;->d(Landroid/widget/EdgeEffect;)F
+
+    .line 69
+    .line 70
+    .line 71
+    move-result v0
+
+    .line 72
+    goto :goto_1
+
+    .line 73
+    :cond_1
+    move v0, p2
+
+    .line 74
+    :goto_1
+    cmpg-float p2, v0, p2
+
+    .line 75
+    .line 76
+    if-nez p2, :cond_2
+
+    .line 77
+    .line 78
+    return p0
+
+    .line 79
+    :cond_2
+    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 80
+    .line 81
+    .line 82
+    move-result p0
+
+    .line 83
+    return p0
+.end method
+
+.method public final j(J)F
+    .locals 7
+
+    .line 1
+    invoke-virtual {p0}, Lac;->f()J
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-wide v0
+
+    .line 5
+    const-wide v2, 0xffffffffL
+
+    .line 6
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    and-long/2addr v0, v2
+
+    .line 11
+    long-to-int v0, v0
+
+    .line 12
+    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 13
+    .line 14
+    .line 15
+    move-result v0
+
+    .line 16
+    const/16 v1, 0x20
+
+    .line 17
+    .line 18
+    shr-long/2addr p1, v1
+
+    .line 19
+    long-to-int p1, p1
+
+    .line 20
+    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 21
+    .line 22
+    .line 23
+    move-result p2
+
+    .line 24
+    iget-wide v2, p0, Lac;->g:J
+
+    .line 25
+    .line 26
+    shr-long/2addr v2, v1
+
+    .line 27
+    long-to-int v2, v2
+
+    .line 28
+    invoke-static {v2}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 29
+    .line 30
+    .line 31
+    move-result v2
+
+    .line 32
+    div-float/2addr p2, v2
+
+    .line 33
+    iget-object v2, p0, Lac;->c:Lkr1;
+
+    .line 34
+    .line 35
+    invoke-virtual {v2}, Lkr1;->d()Landroid/widget/EdgeEffect;
+
+    .line 36
+    .line 37
+    .line 38
+    move-result-object v2
+
+    .line 39
+    neg-float p2, p2
+
+    .line 40
+    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 41
+    .line 42
+    const/16 v4, 0x1f
+
+    .line 43
+    .line 44
+    if-lt v3, v4, :cond_0
+
+    .line 45
+    .line 46
+    invoke-static {v2, p2, v0}, Leb;->f(Landroid/widget/EdgeEffect;FF)F
+
+    .line 47
+    .line 48
+    .line 49
+    move-result p2
+
+    .line 50
+    goto :goto_0
+
+    .line 51
+    :cond_0
+    invoke-virtual {v2, p2, v0}, Landroid/widget/EdgeEffect;->onPull(FF)V
+
+    .line 52
+    .line 53
+    .line 54
+    :goto_0
+    neg-float p2, p2
+
+    .line 55
+    iget-wide v5, p0, Lac;->g:J
+
+    .line 56
+    .line 57
+    shr-long/2addr v5, v1
+
+    .line 58
+    long-to-int p0, v5
+
+    .line 59
+    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 60
+    .line 61
+    .line 62
+    move-result p0
+
+    .line 63
+    mul-float/2addr p0, p2
+
+    .line 64
+    const/4 p2, 0x0
+
+    .line 65
+    if-lt v3, v4, :cond_1
+
+    .line 66
+    .line 67
+    invoke-static {v2}, Leb;->d(Landroid/widget/EdgeEffect;)F
+
+    .line 68
+    .line 69
+    .line 70
+    move-result v0
+
+    .line 71
+    goto :goto_1
+
+    .line 72
+    :cond_1
+    move v0, p2
+
+    .line 73
+    :goto_1
+    cmpg-float p2, v0, p2
+
+    .line 74
+    .line 75
+    if-nez p2, :cond_2
+
+    .line 76
+    .line 77
+    return p0
+
+    .line 78
+    :cond_2
+    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 79
+    .line 80
+    .line 81
+    move-result p0
+
+    .line 82
+    return p0
+.end method
+
+.method public final k(J)F
+    .locals 8
+
+    .line 1
+    invoke-virtual {p0}, Lac;->f()J
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-wide v0
+
+    .line 5
+    const/16 v2, 0x20
+
+    .line 6
+    .line 7
+    shr-long/2addr v0, v2
+
+    .line 8
+    long-to-int v0, v0
+
+    .line 9
+    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v0
+
+    .line 13
+    const-wide v1, 0xffffffffL
+
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    .line 18
+    and-long/2addr p1, v1
+
+    .line 19
+    long-to-int p1, p1
+
+    .line 20
+    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 21
+    .line 22
+    .line 23
+    move-result p2
+
+    .line 24
+    iget-wide v3, p0, Lac;->g:J
+
+    .line 25
+    .line 26
+    and-long/2addr v3, v1
+
+    .line 27
+    long-to-int v3, v3
+
+    .line 28
+    invoke-static {v3}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 29
+    .line 30
+    .line 31
+    move-result v3
+
+    .line 32
+    div-float/2addr p2, v3
+
+    .line 33
+    iget-object v3, p0, Lac;->c:Lkr1;
+
+    .line 34
+    .line 35
+    invoke-virtual {v3}, Lkr1;->e()Landroid/widget/EdgeEffect;
+
+    .line 36
+    .line 37
+    .line 38
+    move-result-object v3
+
+    .line 39
+    sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 40
+    .line 41
+    const/16 v5, 0x1f
+
+    .line 42
+    .line 43
+    if-lt v4, v5, :cond_0
+
+    .line 44
+    .line 45
+    invoke-static {v3, p2, v0}, Leb;->f(Landroid/widget/EdgeEffect;FF)F
+
+    .line 46
+    .line 47
+    .line 48
+    move-result p2
+
+    .line 49
+    goto :goto_0
+
+    .line 50
+    :cond_0
+    invoke-virtual {v3, p2, v0}, Landroid/widget/EdgeEffect;->onPull(FF)V
+
+    .line 51
+    .line 52
+    .line 53
+    :goto_0
+    iget-wide v6, p0, Lac;->g:J
+
+    .line 54
+    .line 55
+    and-long/2addr v6, v1
+
+    .line 56
+    long-to-int p0, v6
+
+    .line 57
+    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 58
+    .line 59
+    .line 60
+    move-result p0
+
+    .line 61
+    mul-float/2addr p0, p2
+
+    .line 62
+    const/4 p2, 0x0
+
+    .line 63
+    if-lt v4, v5, :cond_1
+
+    .line 64
+    .line 65
+    invoke-static {v3}, Leb;->d(Landroid/widget/EdgeEffect;)F
+
+    .line 66
+    .line 67
+    .line 68
+    move-result v0
+
+    .line 69
+    goto :goto_1
+
+    .line 70
+    :cond_1
+    move v0, p2
+
+    .line 71
+    :goto_1
+    cmpg-float p2, v0, p2
+
+    .line 72
+    .line 73
+    if-nez p2, :cond_2
+
+    .line 74
+    .line 75
+    return p0
+
+    .line 76
+    :cond_2
+    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 77
+    .line 78
+    .line 79
+    move-result p0
+
+    .line 80
+    return p0
+.end method
+
+.method public final l(J)V
+    .locals 10
+
+    .line 1
+    iget-wide v0, p0, Lac;->g:J
+
+    .line 2
+    .line 3
+    const-wide/16 v2, 0x0
+
+    .line 4
+    .line 5
+    invoke-static {v0, v1, v2, v3}, Lqb6;->a(JJ)Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v0
+
+    .line 9
+    iget-wide v1, p0, Lac;->g:J
+
+    .line 10
+    .line 11
+    invoke-static {p1, p2, v1, v2}, Lqb6;->a(JJ)Z
+
+    .line 12
+    .line 13
+    .line 14
+    move-result v1
+
+    .line 15
+    iput-wide p1, p0, Lac;->g:J
+
+    .line 16
+    .line 17
+    if-nez v1, :cond_7
+
+    .line 18
+    .line 19
+    const/16 v2, 0x20
+
+    .line 20
+    .line 21
+    shr-long v3, p1, v2
+
+    .line 22
+    .line 23
+    long-to-int v3, v3
+
+    .line 24
+    invoke-static {v3}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 25
+    .line 26
+    .line 27
+    move-result v3
+
+    .line 28
+    invoke-static {v3}, Lqn3;->g0(F)I
+
+    .line 29
+    .line 30
+    .line 31
+    move-result v3
+
+    .line 32
+    const-wide v4, 0xffffffffL
+
+    .line 33
+    .line 34
+    .line 35
+    .line 36
+    .line 37
+    and-long/2addr p1, v4
+
+    .line 38
+    long-to-int p1, p1
+
+    .line 39
+    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 40
+    .line 41
+    .line 42
+    move-result p1
+
+    .line 43
+    invoke-static {p1}, Lqn3;->g0(F)I
+
+    .line 44
+    .line 45
+    .line 46
+    move-result p1
+
+    .line 47
+    int-to-long v6, v3
+
+    .line 48
+    shl-long/2addr v6, v2
+
+    .line 49
+    int-to-long p1, p1
+
+    .line 50
+    and-long/2addr p1, v4
+
+    .line 51
+    or-long/2addr v6, p1
+
+    .line 52
+    iget-object p1, p0, Lac;->c:Lkr1;
+
+    .line 53
+    .line 54
+    iput-wide v6, p1, Lkr1;->c:J
+
+    .line 55
+    .line 56
+    iget-object p2, p1, Lkr1;->d:Landroid/widget/EdgeEffect;
+
+    .line 57
+    .line 58
+    if-eqz p2, :cond_0
+
+    .line 59
+    .line 60
+    shr-long v8, v6, v2
+
+    .line 61
+    .line 62
+    long-to-int v3, v8
+
+    .line 63
+    and-long v8, v6, v4
+
+    .line 64
+    .line 65
+    long-to-int v8, v8
+
+    .line 66
+    invoke-virtual {p2, v3, v8}, Landroid/widget/EdgeEffect;->setSize(II)V
+
+    .line 67
+    .line 68
+    .line 69
+    :cond_0
+    iget-object p2, p1, Lkr1;->e:Landroid/widget/EdgeEffect;
+
+    .line 70
+    .line 71
+    if-eqz p2, :cond_1
+
+    .line 72
+    .line 73
+    shr-long v8, v6, v2
+
+    .line 74
+    .line 75
+    long-to-int v3, v8
+
+    .line 76
+    and-long v8, v6, v4
+
+    .line 77
+    .line 78
+    long-to-int v8, v8
+
+    .line 79
+    invoke-virtual {p2, v3, v8}, Landroid/widget/EdgeEffect;->setSize(II)V
+
+    .line 80
+    .line 81
+    .line 82
+    :cond_1
+    iget-object p2, p1, Lkr1;->f:Landroid/widget/EdgeEffect;
+
+    .line 83
+    .line 84
+    if-eqz p2, :cond_2
+
+    .line 85
+    .line 86
+    and-long v8, v6, v4
+
+    .line 87
+    .line 88
+    long-to-int v3, v8
+
+    .line 89
+    shr-long v8, v6, v2
+
+    .line 90
+    .line 91
+    long-to-int v8, v8
+
+    .line 92
+    invoke-virtual {p2, v3, v8}, Landroid/widget/EdgeEffect;->setSize(II)V
+
+    .line 93
+    .line 94
+    .line 95
+    :cond_2
+    iget-object p2, p1, Lkr1;->g:Landroid/widget/EdgeEffect;
+
+    .line 96
+    .line 97
+    if-eqz p2, :cond_3
+
+    .line 98
+    .line 99
+    and-long v8, v6, v4
+
+    .line 100
+    .line 101
+    long-to-int v3, v8
+
+    .line 102
+    shr-long v8, v6, v2
+
+    .line 103
+    .line 104
+    long-to-int v8, v8
+
+    .line 105
+    invoke-virtual {p2, v3, v8}, Landroid/widget/EdgeEffect;->setSize(II)V
+
+    .line 106
+    .line 107
+    .line 108
+    :cond_3
+    iget-object p2, p1, Lkr1;->h:Landroid/widget/EdgeEffect;
+
+    .line 109
+    .line 110
+    if-eqz p2, :cond_4
+
+    .line 111
+    .line 112
+    shr-long v8, v6, v2
+
+    .line 113
+    .line 114
+    long-to-int v3, v8
+
+    .line 115
+    and-long v8, v6, v4
+
+    .line 116
+    .line 117
+    long-to-int v8, v8
+
+    .line 118
+    invoke-virtual {p2, v3, v8}, Landroid/widget/EdgeEffect;->setSize(II)V
+
+    .line 119
+    .line 120
+    .line 121
+    :cond_4
+    iget-object p2, p1, Lkr1;->i:Landroid/widget/EdgeEffect;
+
+    .line 122
+    .line 123
+    if-eqz p2, :cond_5
+
+    .line 124
+    .line 125
+    shr-long v8, v6, v2
+
+    .line 126
+    .line 127
+    long-to-int v3, v8
+
+    .line 128
+    and-long v8, v6, v4
+
+    .line 129
+    .line 130
+    long-to-int v8, v8
+
+    .line 131
+    invoke-virtual {p2, v3, v8}, Landroid/widget/EdgeEffect;->setSize(II)V
+
+    .line 132
+    .line 133
+    .line 134
+    :cond_5
+    iget-object p2, p1, Lkr1;->j:Landroid/widget/EdgeEffect;
+
+    .line 135
+    .line 136
+    if-eqz p2, :cond_6
+
+    .line 137
+    .line 138
+    and-long v8, v6, v4
+
+    .line 139
+    .line 140
+    long-to-int v3, v8
+
+    .line 141
+    shr-long v8, v6, v2
+
+    .line 142
+    .line 143
+    long-to-int v8, v8
+
+    .line 144
+    invoke-virtual {p2, v3, v8}, Landroid/widget/EdgeEffect;->setSize(II)V
+
+    .line 145
+    .line 146
+    .line 147
+    :cond_6
+    iget-object p1, p1, Lkr1;->k:Landroid/widget/EdgeEffect;
+
+    .line 148
+    .line 149
+    if-eqz p1, :cond_7
+
+    .line 150
+    .line 151
+    and-long/2addr v4, v6
+
+    .line 152
+    long-to-int p2, v4
+
+    .line 153
+    shr-long/2addr v6, v2
+
+    .line 154
+    long-to-int v2, v6
+
+    .line 155
+    invoke-virtual {p1, p2, v2}, Landroid/widget/EdgeEffect;->setSize(II)V
+
+    .line 156
+    .line 157
+    .line 158
+    :cond_7
+    if-nez v0, :cond_8
+
+    .line 159
+    .line 160
+    if-nez v1, :cond_8
+
+    .line 161
+    .line 162
+    invoke-virtual {p0}, Lac;->e()V
+
+    .line 163
+    .line 164
+    .line 165
+    :cond_8
+    return-void
 .end method

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="abc_action_bar_up_description">Navigate up</string>
     <string name="abc_action_mode_done">Done</string>
@@ -45,6 +45,7 @@
     <string name="accent_default">Default</string>
     <string name="accent_title">Accent Color</string>
     <string name="action_cancel">Cancel</string>
+    <string name="action_retry">Retry</string>
     <string name="androidx_startup">androidx.startup</string>
     <string name="api_panel_unavailable_hint">Start the service or check API config.</string>
     <string name="api_panel_unavailable_title">API unavailable</string>
@@ -59,11 +60,10 @@
     <string name="app_management_filter_work_clone">Work/Clone</string>
     <string name="app_management_gid_add_item">Add item</string>
     <string name="app_management_gid_hint">GID</string>
+    <string name="app_management_gid_load_failed">Could not read the GID list. The operation failed or timed out. Please retry.</string>
     <string name="app_management_gid_rules">GID Rules</string>
-    <string name="app_management_gid_summary">One numeric GID per row</string>
     <string name="app_management_invert_selection">Invert Selection</string>
     <string name="app_management_load_apps_failed">Failed to load installed apps</string>
-    <string name="app_management_more">More</string>
     <string name="app_management_proxy_mode_update_failed">Failed to update proxy mode</string>
     <string name="app_management_proxy_override_title">Override apps</string>
     <string name="app_management_search_hint">Search apps</string>
@@ -76,7 +76,6 @@
     <string name="app_management_smart_select_whitelist_body">Recommend global user apps to use proxy.</string>
     <string name="app_management_smart_selecting_title">Smart Selecting</string>
     <string name="app_management_sort_descending">Descending</string>
-    <string name="app_management_sort_filter_title">Sort &amp; Filter</string>
     <string name="app_management_sort_install">Install time</string>
     <string name="app_management_sort_mode_title">Sort by</string>
     <string name="app_management_sort_name">Name</string>
@@ -85,6 +84,11 @@
     <string name="app_name">BoxProxy</string>
     <string name="back">Back</string>
     <string name="blur_title">Blur Effects</string>
+    <string name="bottom_bar_style_classic">Classic</string>
+    <string name="bottom_bar_style_floating">Floating</string>
+    <string name="bottom_bar_style_glass">OS4 Glass</string>
+    <string name="bottom_bar_style_liquid_glass">Liquid Glass</string>
+    <string name="bottom_bar_style_title">Bottom Bar Style</string>
     <string name="bypass_rules_apply_failed">Failed to apply bypass rules</string>
     <string name="bypass_rules_blocked_interfaces_title">Disabled interfaces</string>
     <string name="bypass_rules_cidr_hint">CIDR</string>
@@ -114,7 +118,6 @@
     <string name="clashapi_range_traffic_no_data">No sampled traffic in this range</string>
     <string name="clashapi_range_traffic_subtitle">Last %1$s · grouped by %2$s</string>
     <string name="clashapi_recent_connections">In range</string>
-    <string name="clashapi_settings">Overview settings</string>
     <string name="clashapi_sort_download">Download</string>
     <string name="clashapi_sort_name">Name</string>
     <string name="clashapi_sort_upload">Upload</string>
@@ -208,6 +211,40 @@
     <string name="connection_duration">Duration</string>
     <string name="connection_filter_all">All</string>
     <string name="connection_filter_source_ip">Filter source IP</string>
+    <string name="connection_filters_action">Action</string>
+    <string name="connection_filters_active">Filters enabled</string>
+    <string name="connection_filters_add">Add filter rule</string>
+    <string name="connection_filters_adjust">Adjust filters</string>
+    <string name="connection_filters_checking">Filtering…</string>
+    <string name="connection_filters_clear">Clear conditions</string>
+    <string name="connection_filters_delete_title">Delete this filter rule?</string>
+    <string name="connection_filters_edit">Edit filter rule</string>
+    <string name="connection_filters_expression">Regular expression</string>
+    <string name="connection_filters_expression_empty">Enter a regular expression.</string>
+    <string name="connection_filters_expression_invalid">Invalid expression: %1$s</string>
+    <string name="connection_filters_expression_limit">Use at most %1$d characters.</string>
+    <string name="connection_filters_field_chain">Proxy chain</string>
+    <string name="connection_filters_field_destination">Destination IP / port</string>
+    <string name="connection_filters_field_domain">Domain / sniffed domain</string>
+    <string name="connection_filters_field_inbound">Network / inbound</string>
+    <string name="connection_filters_field_process">Process name / path</string>
+    <string name="connection_filters_field_rule">Routing rule / payload</string>
+    <string name="connection_filters_field_source">Source IP / port</string>
+    <string name="connection_filters_fields">Match fields</string>
+    <string name="connection_filters_fields_empty">Select at least one field.</string>
+    <string name="connection_filters_hide">Hide matches</string>
+    <string name="connection_filters_ignore_case">Ignore case</string>
+    <string name="connection_filters_include">Show matches only</string>
+    <string name="connection_filters_invalid_saved">Invalid rule. Edit it before enabling.</string>
+    <string name="connection_filters_name">Name (optional)</string>
+    <string name="connection_filters_no_connections">No active connections</string>
+    <string name="connection_filters_no_results">No connections match the current conditions.</string>
+    <string name="connection_filters_preview">Matches %1$d of %2$d current connections</string>
+    <string name="connection_filters_rule_limit">Up to %1$d rules per API source.</string>
+    <string name="connection_filters_rules">Regular expression rules</string>
+    <string name="connection_filters_rules_empty">No rules yet. Filtering changes only the displayed connections.</string>
+    <string name="connection_filters_syntax_hint">RE2 syntax. Fields match independently. Lookaround and backreferences are not supported.</string>
+    <string name="connection_filters_title">Connection filters</string>
     <string name="connection_host">Host</string>
     <string name="connection_id">ID</string>
     <string name="connection_inbound">Inbound</string>
@@ -228,7 +265,6 @@
     <string name="connection_sort_connected_at">Connected time</string>
     <string name="connection_sort_download_speed">Download speed</string>
     <string name="connection_sort_reverse">Reverse</string>
-    <string name="connection_sort_title">Connection sort</string>
     <string name="connection_sort_upload_speed">Upload speed</string>
     <string name="connection_source">Source</string>
     <string name="connection_source_ip">Source IP</string>
@@ -277,8 +313,7 @@
     <string name="core_update_write_failed_path">Core write failed: %1$s</string>
     <string name="default_error_message">Invalid input</string>
     <string name="default_popup_window_title">Pop-Up Window</string>
-    <string name="floating_bar_blur_title">Bottom Bar Liquid Glass</string>
-    <string name="floating_bar_title">Floating Bottom Bar</string>
+    <string name="editable_gid_list_title">GID list</string>
     <string name="home_action_reload">Reload</string>
     <string name="home_action_restart">Restart</string>
     <string name="home_action_start">Start</string>
@@ -313,6 +348,7 @@
     <string name="home_error_root_title">Root required</string>
     <string name="home_ip_details_action">Details</string>
     <string name="home_ip_geo_field_asn">ASN</string>
+    <string name="home_ip_geo_field_domain">Domain</string>
     <string name="home_ip_geo_field_ip">IP</string>
     <string name="home_ip_geo_field_isp">ISP</string>
     <string name="home_ip_geo_field_location">Location</string>
@@ -392,6 +428,7 @@
     <string name="latency_targets_save_done">Latency targets saved</string>
     <string name="latency_targets_target_title">Target %1$d</string>
     <string name="latency_targets_url_label">Target URL</string>
+    <string name="list_add_to_section">Add to %1$s</string>
     <string name="log_viewer_auto_refresh">Auto Refresh</string>
     <string name="log_viewer_card_view">Card Lines</string>
     <string name="log_viewer_delete_confirm_message">This will permanently delete %1$s.</string>
@@ -483,6 +520,7 @@
     <string name="network_rule_group_operator_title">Match</string>
     <string name="network_rule_group_target_required">Select a target for this action</string>
     <string name="network_rule_group_target_title">Target</string>
+    <string name="network_rule_groups_empty">No rule groups yet.</string>
     <string name="network_test_group_ai">AI services</string>
     <string name="network_test_group_media">Streaming</string>
     <string name="network_test_group_social">Social</string>
@@ -734,6 +772,7 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="proxy_selector_icon_pack_url">Icon pack JSON URL</string>
     <string name="proxy_selector_layout_auto">Automatic columns</string>
     <string name="proxy_selector_locate_selected">Locate selected proxy</string>
+    <string name="proxy_selector_locked">Pinned to this node</string>
     <string name="proxy_selector_measured_count">%1$d/%2$d</string>
     <string name="proxy_selector_mode">Mode</string>
     <string name="proxy_selector_mode_unknown">Mode</string>
@@ -747,7 +786,6 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="proxy_selector_node_sort_descending">Descending</string>
     <string name="proxy_selector_node_sort_latency">Delay</string>
     <string name="proxy_selector_node_sort_name">Name</string>
-    <string name="proxy_selector_node_sort_title">Node sort</string>
     <string name="proxy_selector_open_app">Open app</string>
     <string name="proxy_selector_policy_icon_apply">Apply</string>
     <string name="proxy_selector_policy_icon_clear_all">Clear all custom icons</string>
@@ -778,7 +816,7 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="proxy_selector_search_hint">Search groups or nodes</string>
     <string name="proxy_selector_selected">Selected</string>
     <string name="proxy_selector_show_hidden_groups">Show hidden groups</string>
-    <string name="proxy_selector_sort_filter_title">Filter</string>
+    <string name="proxy_selector_show_unavailable_nodes">Show unavailable nodes</string>
     <string name="proxy_taskset_cpu_title">Taskset</string>
     <string name="proxy_weight_title">Weight</string>
     <string name="pure_black_title">Pure Black In Dark Mode</string>
@@ -803,7 +841,7 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="rules_tab_route">Route</string>
     <string name="rules_trace_failure_connect">Could not open a TCP connection to the server</string>
     <string name="rules_trace_failure_dns">Domain name could not be resolved</string>
-    <string name="rules_trace_failure_exchange">The connection closed before the response completed</string>
+    <string name="rules_trace_failure_exchange">The connection was closed before the response completed</string>
     <string name="rules_trace_failure_invalid_target">This is not a valid HTTP(S) target</string>
     <string name="rules_trace_failure_protocol">The server violated the protocol during the exchange</string>
     <string name="rules_trace_failure_timeout">The request exceeded the probe deadline</string>
@@ -917,7 +955,7 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="service_accelerated_download_prefix_title">Accelerated URL Prefix</string>
     <string name="service_accelerated_download_subtitle">Use an accelerated channel for downloads</string>
     <string name="service_accelerated_download_title">Accelerated Download</string>
-    <string name="service_auto_start_subtitle">Install a root boot script to start the service after boot (the VPN run mode needs the app auto-start permission)</string>
+    <string name="service_auto_start_subtitle">Install a root boot script to start the service after boot</string>
     <string name="service_auto_start_title">Auto Start On Boot</string>
     <string name="settings_backup_action">Backup</string>
     <string name="settings_backup_cleanup_failed">Failed to clean old files before restore</string>
@@ -1014,6 +1052,7 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="subscription_detail_used">Used %1$s</string>
     <string name="subscription_management_save_failed">Failed to save subscription settings</string>
     <string name="subscription_management_update_success">Subscription updated</string>
+    <string name="subscription_sources_title">Subscription sources</string>
     <string name="subscription_update_mihomo_item_name_empty">Mihomo subscription #%1$d name is empty</string>
     <string name="subscription_update_mihomo_item_url_empty">Mihomo subscription #%1$d URL is empty</string>
     <string name="subscription_update_mihomo_only">Subscription configuration override is only supported by Mihomo</string>
@@ -1048,7 +1087,9 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="theme_accent_yellow">Yellow</string>
     <string name="theme_color_spec_2021">Material 3 2021</string>
     <string name="theme_color_spec_2025">Material 3 Expressive 2025</string>
+    <string name="theme_color_spec_2026">Material 3 2026</string>
     <string name="theme_color_spec_title">Color Standard</string>
+    <string name="theme_color_style_cmf">CMF</string>
     <string name="theme_color_style_content">Content</string>
     <string name="theme_color_style_expressive">Expressive</string>
     <string name="theme_color_style_fidelity">Fidelity</string>
@@ -1121,9 +1162,9 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="tools_update_webui_url_label">Download URL</string>
     <string name="tooltip_description">tooltip</string>
     <string name="tooltip_label">show tooltip</string>
-    <string name="top_bar_blur_style_gaussian">Gaussian Blur</string>
-    <string name="top_bar_blur_style_progressive">Progressive Blur</string>
-    <string name="top_bar_blur_style_title">Top App Bar Blur Style</string>
+    <string name="top_bar_blur_style_title">Top App Bar Style</string>
+    <string name="top_bar_style_classic">Classic</string>
+    <string name="top_bar_style_glass">Glass</string>
     <string name="ui_mode_material">Material3</string>
     <string name="ui_mode_miuix">Miuix</string>
     <string name="ui_mode_title">Interface Style</string>
@@ -1134,6 +1175,7 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="web_ui_add_panel_name_required">Enter a panel name first</string>
     <string name="web_ui_add_panel_url_invalid">Enter a valid panel URL</string>
     <string name="web_ui_clear_cache">Clear web cache</string>
+    <string name="web_ui_custom_panels_empty">No custom panels yet.</string>
     <string name="web_ui_custom_panels_title">Custom panels</string>
     <string name="web_ui_local_panel_mode">Local API</string>
     <string name="web_ui_local_panel_mode_auto">Automatic</string>
@@ -1165,16 +1207,4 @@ Do not use this app for illegal purposes, unauthorized access, network abuse, or
     <string name="wifi_match_picker_location_required">Enable location to scan Wi-Fi</string>
     <string name="wifi_match_picker_permission_required">Wi-Fi permission required</string>
     <string name="wifi_match_ssid_hint">SSID</string>
-    <string name="proxy_core_mihomo_dingtalk">Mihomo Smart + eBPF + 钉钉直连</string>
-    <string name="proxy_core_sing_box_dingtalk">Sing-Box Smart + eBPF + 钉钉直连</string>
-    <string name="proxy_config_restore_default">Restore default config</string>
-    <string name="proxy_config_restore_done">Restored default config: %1$s</string>
-    <string name="proxy_config_restore_done_bak">Restored default config: %1$s (old file backed up as %1$s.bak)</string>
-    <string name="proxy_config_restore_failed">Failed to restore default config: %1$s</string>
-    <string name="proxy_config_restore_none">The current core has no built-in default config</string>
-    <string name="proxy_mode_vpn">VPN</string>
-    <string name="proxy_selector_hide_unavailable">Hide unavailable nodes</string>
-    <string name="service_battery_unrestricted_title">Unrestricted battery usage</string>
-    <string name="service_battery_unrestricted_subtitle">Exempt the app from battery optimization so the system does not freeze or kill it in the background (turning it off opens the system settings page)</string>
-    <string name="service_battery_unrestricted_already">Battery optimization is already off</string>
-</resources>
+<string name="proxy_core_mihomo_dingtalk">Mihomo Smart + eBPF + 钉钉直连</string><string name="proxy_core_sing_box_dingtalk">Sing-Box Smart + eBPF + 钉钉直连</string><string name="proxy_config_restore_default">Restore default config</string><string name="proxy_config_restore_done">Restored default config: %1$s</string><string name="proxy_config_restore_done_bak">Restored default config: %1$s (old file backed up as %1$s.bak)</string><string name="proxy_config_restore_failed">Failed to restore default config: %1$s</string><string name="proxy_config_restore_none">The current core has no built-in default config</string><string name="proxy_mode_vpn">VPN</string><string name="proxy_selector_hide_unavailable">Hide unavailable nodes</string><string name="service_battery_unrestricted_title">Unrestricted battery usage</string><string name="service_battery_unrestricted_subtitle">Exempt the app from battery optimization so the system does not freeze or kill it in the background (turning it off opens the system settings page)</string><string name="service_battery_unrestricted_already">Battery optimization is already off</string></resources>

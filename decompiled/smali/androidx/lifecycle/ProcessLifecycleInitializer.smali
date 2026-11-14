@@ -1,16 +1,16 @@
 .class public final Landroidx/lifecycle/ProcessLifecycleInitializer;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lrp2;
+.implements Lbu2;
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lrp2;"
+        "Lbu2;"
     }
 .end annotation
 
@@ -34,7 +34,7 @@
     .locals 0
 
     .line 1
-    sget-object p0, Lqu1;->j:Lqu1;
+    sget-object p0, Liv1;->i:Liv1;
 
     .line 2
     .line 3
@@ -50,7 +50,7 @@
     .line 2
     .line 3
     .line 4
-    invoke-static {p1}, Lit6;->M(Landroid/content/Context;)Lit6;
+    invoke-static {p1}, Lyy6;->y(Landroid/content/Context;)Lyy6;
 
     .line 5
     .line 6
@@ -63,7 +63,7 @@
     .line 9
     .line 10
     .line 11
-    iget-object p0, p0, Lit6;->l:Ljava/lang/Object;
+    iget-object p0, p0, Lyy6;->k:Ljava/lang/Object;
 
     .line 12
     .line 13
@@ -87,7 +87,7 @@
 
     .line 22
     .line 23
-    sget-object p0, Lv63;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
+    sget-object p0, Lib3;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
 
     .line 24
     .line 25
@@ -102,127 +102,123 @@
     move-result p0
 
     .line 30
-    if-eqz p0, :cond_0
+    if-nez p0, :cond_0
 
     .line 31
     .line 32
-    goto :goto_0
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
     .line 33
-    :cond_0
-    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
-
     .line 34
     .line 35
-    .line 36
     move-result-object p0
 
-    .line 37
+    .line 36
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 37
     .line 38
     .line 39
-    .line 40
     check-cast p0, Landroid/app/Application;
 
+    .line 40
     .line 41
+    new-instance v0, Lhb3;
+
     .line 42
-    new-instance v0, Lu63;
-
     .line 43
-    .line 44
-    invoke-direct {v0}, Lu63;-><init>()V
+    invoke-direct {v0}, Lhb3;-><init>()V
 
+    .line 44
     .line 45
     .line 46
-    .line 47
     invoke-virtual {p0, v0}, Landroid/app/Application;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
 
+    .line 47
     .line 48
     .line 49
-    .line 50
-    :goto_0
-    sget-object p0, Llu4;->q:Llu4;
+    :cond_0
+    sget-object p0, Lz05;->p:Lz05;
 
+    .line 50
     .line 51
-    .line 52
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 52
     .line 53
     .line 54
-    .line 55
     new-instance v0, Landroid/os/Handler;
 
+    .line 55
     .line 56
-    .line 57
     invoke-direct {v0}, Landroid/os/Handler;-><init>()V
 
+    .line 57
     .line 58
     .line 59
+    iput-object v0, p0, Lz05;->m:Landroid/os/Handler;
+
     .line 60
-    iput-object v0, p0, Llu4;->n:Landroid/os/Handler;
-
     .line 61
+    iget-object v0, p0, Lz05;->n:Lrb3;
+
     .line 62
-    iget-object v0, p0, Llu4;->o:Ld73;
-
     .line 63
+    sget-object v1, Lfb3;->ON_CREATE:Lfb3;
+
     .line 64
-    sget-object v1, Ls63;->ON_CREATE:Ls63;
-
     .line 65
-    .line 66
-    invoke-virtual {v0, v1}, Ld73;->d(Ls63;)V
+    invoke-virtual {v0, v1}, Lrb3;->d(Lfb3;)V
 
+    .line 66
     .line 67
     .line 68
-    .line 69
     invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
 
+    .line 69
     .line 70
     .line 71
-    .line 72
     move-result-object p1
 
-    .line 73
+    .line 72
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 73
     .line 74
     .line 75
-    .line 76
     check-cast p1, Landroid/app/Application;
 
+    .line 76
     .line 77
+    new-instance v0, Ly05;
+
     .line 78
-    new-instance v0, Lku4;
-
     .line 79
-    .line 80
-    invoke-direct {v0, p0}, Lku4;-><init>(Llu4;)V
+    invoke-direct {v0, p0}, Ly05;-><init>(Lz05;)V
 
+    .line 80
     .line 81
     .line 82
-    .line 83
     invoke-virtual {p1, v0}, Landroid/app/Application;->registerActivityLifecycleCallbacks(Landroid/app/Application$ActivityLifecycleCallbacks;)V
 
+    .line 83
     .line 84
     .line 85
-    .line 86
     return-object p0
 
-    .line 87
+    .line 86
     :cond_1
     const-string p0, "ProcessLifecycleInitializer cannot be initialized lazily.\n               Please ensure that you have:\n               <meta-data\n                   android:name=\'androidx.lifecycle.ProcessLifecycleInitializer\'\n                   android:value=\'androidx.startup\' />\n               under InitializationProvider in your AndroidManifest.xml"
 
+    .line 87
     .line 88
-    .line 89
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+    invoke-static {p0}, Lex1;->d(Ljava/lang/String;)V
 
+    .line 89
     .line 90
     .line 91
-    .line 92
     const/4 p0, 0x0
 
-    .line 93
+    .line 92
     return-object p0
 .end method

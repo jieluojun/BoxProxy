@@ -1,44 +1,50 @@
-.class public abstract Lyb3;
+.class public final Lyb3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lbh1;
 
 
-# static fields
-.field public static final a:Lkq1;
+# instance fields
+.field public final synthetic i:Lri0;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(Lri0;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lg63;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const/4 v1, 0x5
-
     .line 4
-    invoke-direct {v0, v1}, Lg63;-><init>(B)V
+    iput-object p1, p0, Lyb3;->i:Lri0;
 
     .line 5
     .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onStart(Lob3;)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lyb3;->i:Lri0;
+
+    .line 2
+    .line 3
+    sget-object p1, Ll97;->a:Ll97;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0, p1}, Lri0;->resumeWith(Ljava/lang/Object;)V
+
+    .line 6
     .line 7
-    new-instance v1, Lkq1;
-
     .line 8
-    .line 9
-    const/4 v2, 0x0
-
-    .line 10
-    invoke-direct {v1, v0, v2}, Lkq1;-><init>(Le62;B)V
-
-    .line 11
-    .line 12
-    .line 13
-    sput-object v1, Lyb3;->a:Lkq1;
-
-    .line 14
-    .line 15
     return-void
 .end method

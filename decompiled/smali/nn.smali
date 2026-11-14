@@ -1,28 +1,40 @@
 .class public final Lnn;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public j:Ljava/io/File;
+.field public i:Landroid/content/Context;
 
-.field public synthetic k:Ljava/lang/Object;
+.field public j:Ljava/lang/String;
 
-.field public final synthetic l:Lzn;
+.field public k:Ljava/util/Collection;
 
-.field public m:I
+.field public l:Ljava/io/File;
+
+.field public m:Ljava/io/File;
+
+.field public n:Ljava/lang/Throwable;
+
+.field public o:I
+
+.field public synthetic p:Ljava/lang/Object;
+
+.field public final synthetic q:Lqn;
+
+.field public r:I
 
 
 # direct methods
-.method public constructor <init>(Lzn;Lz81;)V
+.method public constructor <init>(Lqn;Lq91;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lnn;->l:Lzn;
+    iput-object p1, p0, Lnn;->q:Lqn;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
     .line 4
     .line 5
@@ -36,11 +48,11 @@
     .locals 1
 
     .line 1
-    iput-object p1, p0, Lnn;->k:Ljava/lang/Object;
+    iput-object p1, p0, Lnn;->p:Ljava/lang/Object;
 
     .line 2
     .line 3
-    iget p1, p0, Lnn;->m:I
+    iget p1, p0, Lnn;->r:I
 
     .line 4
     .line 5
@@ -51,18 +63,18 @@
     or-int/2addr p1, v0
 
     .line 8
-    iput p1, p0, Lnn;->m:I
+    iput p1, p0, Lnn;->r:I
 
     .line 9
     .line 10
-    iget-object p1, p0, Lnn;->l:Lzn;
+    iget-object p1, p0, Lnn;->q:Lqn;
 
     .line 11
     .line 12
     const/4 v0, 0x0
 
     .line 13
-    invoke-virtual {p1, v0, p0}, Lzn;->e(Landroid/content/Context;Lz81;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v0, v0, p0}, Lqn;->o(Landroid/content/Context;Ljava/lang/String;Ljava/util/Collection;Lq91;)Ljava/lang/Object;
 
     .line 14
     .line 15

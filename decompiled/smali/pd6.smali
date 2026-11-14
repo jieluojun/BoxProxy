@@ -1,43 +1,69 @@
-.class public abstract Lpd6;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lpd6;
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final a:Z
+# instance fields
+.field public i:F
+
+.field public j:Lxh;
+
+.field public k:Lsf5;
+
+.field public synthetic l:Ljava/lang/Object;
+
+.field public m:I
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 6
 
     .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    iput-object p1, p0, Lpd6;->l:Ljava/lang/Object;
 
     .line 2
     .line 3
-    const/16 v1, 0x22
+    iget p1, p0, Lpd6;->m:I
 
     .line 4
     .line 5
-    if-lt v0, v1, :cond_0
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
-    const/4 v0, 0x1
+    or-int/2addr p1, v0
 
     .line 8
-    goto :goto_0
+    iput p1, p0, Lpd6;->m:I
 
     .line 9
-    :cond_0
-    const/4 v0, 0x0
-
     .line 10
-    :goto_0
-    sput-boolean v0, Lpd6;->a:Z
+    const/4 v3, 0x0
 
     .line 11
+    const/4 v4, 0x0
+
     .line 12
-    return-void
+    const/4 v0, 0x0
+
+    .line 13
+    const/4 v1, 0x0
+
+    .line 14
+    const/4 v2, 0x0
+
+    .line 15
+    move-object v5, p0
+
+    .line 16
+    invoke-static/range {v0 .. v5}, Lfc3;->p(Lrz5;FLxh;Llf1;Lld6;Lq91;)Ljava/lang/Object;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    return-object p0
 .end method

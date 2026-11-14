@@ -1,73 +1,206 @@
-.class public final Laz4;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Laz4;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public j:Lk53;
+# static fields
+.field public static final enum i:Laz4;
 
-.field public k:Ljava/lang/Object;
+.field public static final enum j:Laz4;
 
-.field public l:Ljava/lang/Integer;
+.field public static final enum k:Laz4;
 
-.field public m:I
+.field public static final enum l:Laz4;
 
-.field public n:I
+.field public static final enum m:Laz4;
 
-.field public o:I
+.field public static final enum n:Laz4;
 
-.field public p:I
-
-.field public q:I
-
-.field public r:F
-
-.field public s:F
-
-.field public t:F
-
-.field public synthetic u:Ljava/lang/Object;
-
-.field public v:I
+.field public static final synthetic o:[Laz4;
 
 
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+# direct methods
+.method static constructor <clinit>()V
+    .locals 8
 
     .line 1
-    iput-object p1, p0, Laz4;->u:Ljava/lang/Object;
+    new-instance v0, Laz4;
 
     .line 2
     .line 3
-    iget p1, p0, Laz4;->v:I
+    const-string v1, "Start"
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    const/4 v2, 0x0
 
     .line 6
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Laz4;->v:I
-
     .line 9
-    .line 10
-    const/4 p1, 0x0
+    sput-object v0, Laz4;->i:Laz4;
 
+    .line 10
     .line 11
-    const/4 v0, 0x0
+    new-instance v1, Laz4;
 
     .line 12
-    invoke-static {p1, v0, p1, p1, p0}, Ldj3;->o(Lk53;ILjava/lang/String;Ljava/lang/Integer;Lz81;)Ljava/lang/Object;
-
     .line 13
+    const-string v2, "End"
+
     .line 14
     .line 15
-    move-result-object p0
+    const/4 v3, 0x1
 
     .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    sput-object v1, Laz4;->j:Laz4;
+
+    .line 20
+    .line 21
+    new-instance v2, Laz4;
+
+    .line 22
+    .line 23
+    const-string v3, "TopStart"
+
+    .line 24
+    .line 25
+    const/4 v4, 0x2
+
+    .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 27
+    .line 28
+    .line 29
+    sput-object v2, Laz4;->k:Laz4;
+
+    .line 30
+    .line 31
+    new-instance v3, Laz4;
+
+    .line 32
+    .line 33
+    const-string v4, "TopEnd"
+
+    .line 34
+    .line 35
+    const/4 v5, 0x3
+
+    .line 36
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 37
+    .line 38
+    .line 39
+    sput-object v3, Laz4;->l:Laz4;
+
+    .line 40
+    .line 41
+    new-instance v4, Laz4;
+
+    .line 42
+    .line 43
+    const-string v5, "BottomStart"
+
+    .line 44
+    .line 45
+    const/4 v6, 0x4
+
+    .line 46
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 47
+    .line 48
+    .line 49
+    sput-object v4, Laz4;->m:Laz4;
+
+    .line 50
+    .line 51
+    new-instance v5, Laz4;
+
+    .line 52
+    .line 53
+    const-string v6, "BottomEnd"
+
+    .line 54
+    .line 55
+    const/4 v7, 0x5
+
+    .line 56
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 57
+    .line 58
+    .line 59
+    sput-object v5, Laz4;->n:Laz4;
+
+    .line 60
+    .line 61
+    filled-new-array/range {v0 .. v5}, [Laz4;
+
+    .line 62
+    .line 63
+    .line 64
+    move-result-object v0
+
+    .line 65
+    sput-object v0, Laz4;->o:[Laz4;
+
+    .line 66
+    .line 67
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Laz4;
+    .locals 1
+
+    .line 1
+    const-class v0, Laz4;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Laz4;
+
+    .line 8
+    .line 9
     return-object p0
+.end method
+
+.method public static values()[Laz4;
+    .locals 1
+
+    .line 1
+    sget-object v0, Laz4;->o:[Laz4;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Laz4;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

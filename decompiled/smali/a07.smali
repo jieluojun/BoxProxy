@@ -1,40 +1,56 @@
 .class public abstract La07;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# virtual methods
-.method public final a()Lzz6;
-    .locals 1
+# static fields
+.field public static final a:J
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    instance-of v0, p0, Lzz6;
+    :try_start_0
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
 
     .line 2
     .line 3
-    if-nez v0, :cond_0
-
     .line 4
+    move-result-object v0
+
     .line 5
-    new-instance v0, Lzz6;
+    invoke-virtual {v0}, Landroid/os/Looper;->getThread()Ljava/lang/Thread;
 
     .line 6
     .line 7
-    invoke-direct {v0, p0}, Lzz6;-><init>(La07;)V
-
     .line 8
+    move-result-object v0
+
     .line 9
+    invoke-virtual {v0}, Ljava/lang/Thread;->getId()J
+
     .line 10
-    return-object v0
-
     .line 11
-    :cond_0
-    check-cast p0, Lzz6;
-
     .line 12
-    .line 13
-    return-object p0
-.end method
+    move-result-wide v0
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-.method public abstract b(Lrx2;)Ljava/lang/Object;
+    .line 13
+    goto :goto_0
+
+    .line 14
+    :catch_0
+    const-wide/16 v0, -0x1
+
+    .line 15
+    .line 16
+    :goto_0
+    sput-wide v0, La07;->a:J
+
+    .line 17
+    .line 18
+    return-void
 .end method

@@ -1,92 +1,48 @@
 .class public final Lnc3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final a:Landroid/os/LocaleList;
+# static fields
+.field public static final synthetic a:Lnc3;
+
+.field public static final b:Lb91;
 
 
 # direct methods
-.method public constructor <init>(Landroid/os/LocaleList;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lnc3;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lnc3;->a:Landroid/os/LocaleList;
-
-    .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    check-cast p1, Lnc3;
-
-    .line 2
-    .line 3
-    iget-object p1, p1, Lnc3;->a:Landroid/os/LocaleList;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
-    iget-object p0, p0, Lnc3;->a:Landroid/os/LocaleList;
-
     .line 6
+    sput-object v0, Lnc3;->a:Lnc3;
+
     .line 7
-    invoke-virtual {p0, p1}, Landroid/os/LocaleList;->equals(Ljava/lang/Object;)Z
-
     .line 8
+    new-instance v0, Lb91;
+
     .line 9
     .line 10
-    move-result p0
+    const/16 v1, 0x1a
 
     .line 11
-    return p0
-.end method
+    .line 12
+    invoke-direct {v0, v1}, Lb91;-><init>(B)V
 
-.method public final hashCode()I
-    .locals 0
+    .line 13
+    .line 14
+    .line 15
+    sput-object v0, Lnc3;->b:Lb91;
 
-    .line 1
-    iget-object p0, p0, Lnc3;->a:Landroid/os/LocaleList;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Landroid/os/LocaleList;->hashCode()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lnc3;->a:Landroid/os/LocaleList;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Landroid/os/LocaleList;->toString()Ljava/lang/String;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
+    .line 16
+    .line 17
+    return-void
 .end method

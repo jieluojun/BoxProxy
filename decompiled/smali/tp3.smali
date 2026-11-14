@@ -1,69 +1,29 @@
-.class public final Ltp3;
+.class public interface abstract Ltp3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lwp3;
-
-
-# static fields
-.field public static final synthetic j:Ltp3;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 1
-
-    .line 1
-    new-instance v0, Ltp3;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    sput-object v0, Ltp3;->j:Ltp3;
-
-    .line 7
-    .line 8
-    return-void
-.end method
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # virtual methods
-.method public final d0(Lwp3;)Lwp3;
-    .locals 0
-
-    .line 1
-    return-object p1
+.method public abstract a(Lqo3;Z)V
 .end method
 
-.method public final e(Lt62;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    return-object p2
+.method public abstract c(Lwo3;)Z
 .end method
 
-.method public final i(Lp62;)Z
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x1
-
-    .line 2
-    return p0
+.method public abstract e(Lsp3;)V
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+.method public abstract f(Lwo3;)Z
+.end method
 
-    .line 1
-    const-string p0, "Modifier"
+.method public abstract g()V
+.end method
 
-    .line 2
-    .line 3
-    return-object p0
+.method public abstract i(Landroid/content/Context;Lqo3;)V
+.end method
+
+.method public abstract j(Lmj6;)Z
+.end method
+
+.method public abstract k()Z
 .end method

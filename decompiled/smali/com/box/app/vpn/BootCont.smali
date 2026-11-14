@@ -1,9 +1,9 @@
 .class public final Lcom/box/app/vpn/BootCont;
-.super Lz81;
+.super Lq91;
 .source "BootCont.java"
 
 # Continuation that lets plain (blocking) code wait for a Kotlin suspend function
-# (Ljc0;->r / Ljc0;->o): the latch is released when the function has finished.
+# (Lgc0;->r / Lgc0;->o): the latch is released when the function has finished.
 
 
 .field public final latch:Ljava/util/concurrent/CountDownLatch;
@@ -16,9 +16,9 @@
 
     invoke-direct {v0}, Lcom/box/app/vpn/BootDone;-><init>()V
 
-    sget-object v1, Lmu1;->j:Lmu1;
+    sget-object v1, Lev1;->j:Lev1;
 
-    invoke-direct {p0, v0, v1}, Lz81;-><init>(Ly81;Lrb1;)V
+    invoke-direct {p0, v0, v1}, Lq91;-><init>(Lp91;Lfc1;)V
 
     iput-object p1, p0, Lcom/box/app/vpn/BootCont;->latch:Ljava/util/concurrent/CountDownLatch;
 
@@ -32,7 +32,7 @@
 
     invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->countDown()V
 
-    sget-object v0, La47;->a:La47;
+    sget-object v0, Ll97;->a:Ll97;
 
     return-object v0
 .end method

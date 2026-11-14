@@ -1,24 +1,19 @@
-.class final Lq47;
-.super Ldq3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lq47;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ldq3;"
-    }
-.end annotation
+# interfaces
+.implements Lp47;
 
 
 # instance fields
-.field public final j:F
+.field public final a:Ljava/lang/Object;
 
-.field public final k:F
+.field public final b:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(FF)V
+.method public constructor <init>(Ljava/lang/Object;Ljava/lang/Object;)V
     .locals 0
 
     .line 1
@@ -27,11 +22,11 @@
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Lq47;->j:F
+    iput-object p1, p0, Lq47;->a:Ljava/lang/Object;
 
     .line 5
     .line 6
-    iput p2, p0, Lq47;->k:F
+    iput-object p2, p0, Lq47;->b:Ljava/lang/Object;
 
     .line 7
     .line 8
@@ -40,173 +35,159 @@
 
 
 # virtual methods
-.method public final a()Lvp3;
-    .locals 2
+.method public final b()Ljava/lang/Object;
+    .locals 0
 
     .line 1
-    new-instance v0, Lr47;
+    iget-object p0, p0, Lq47;->a:Ljava/lang/Object;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Lvp3;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    iget v1, p0, Lq47;->j:F
-
-    .line 7
-    .line 8
-    iput v1, v0, Lr47;->x:F
-
-    .line 9
-    .line 10
-    iget p0, p0, Lq47;->k:F
-
-    .line 11
-    .line 12
-    iput p0, v0, Lr47;->y:F
-
-    .line 13
-    .line 14
-    return-object v0
+    return-object p0
 .end method
 
-.method public final b(Lvp3;)V
-    .locals 1
+.method public final d()Ljava/lang/Object;
+    .locals 0
 
     .line 1
-    check-cast p1, Lr47;
+    iget-object p0, p0, Lq47;->b:Ljava/lang/Object;
 
     .line 2
     .line 3
-    iget v0, p0, Lq47;->j:F
-
-    .line 4
-    .line 5
-    iput v0, p1, Lr47;->x:F
-
-    .line 6
-    .line 7
-    iget p0, p0, Lq47;->k:F
-
-    .line 8
-    .line 9
-    iput p0, p1, Lr47;->y:F
-
-    .line 10
-    .line 11
-    return-void
+    return-object p0
 .end method
 
 .method public final equals(Ljava/lang/Object;)Z
     .locals 2
 
     .line 1
-    instance-of v0, p1, Lq47;
+    instance-of v0, p1, Lp47;
 
     .line 2
     .line 3
-    if-nez v0, :cond_0
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    goto :goto_0
+    check-cast p1, Lp47;
 
     .line 6
-    :cond_0
-    check-cast p1, Lq47;
-
     .line 7
-    .line 8
-    iget v0, p1, Lq47;->j:F
+    invoke-interface {p1}, Lp47;->b()Ljava/lang/Object;
 
+    .line 8
     .line 9
     .line 10
-    iget v1, p0, Lq47;->j:F
+    move-result-object v0
 
     .line 11
-    .line 12
-    invoke-static {v1, v0}, Lxl1;->b(FF)Z
+    iget-object v1, p0, Lq47;->a:Ljava/lang/Object;
 
+    .line 12
     .line 13
+    invoke-static {v1, v0}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
+
     .line 14
     .line 15
+    .line 16
     move-result v0
 
-    .line 16
-    if-eqz v0, :cond_1
-
     .line 17
+    if-eqz v0, :cond_0
+
     .line 18
-    iget p0, p0, Lq47;->k:F
-
     .line 19
+    iget-object p0, p0, Lq47;->b:Ljava/lang/Object;
+
     .line 20
-    iget p1, p1, Lq47;->k:F
-
     .line 21
-    .line 22
-    invoke-static {p0, p1}, Lxl1;->b(FF)Z
+    invoke-interface {p1}, Lp47;->d()Ljava/lang/Object;
 
+    .line 22
     .line 23
     .line 24
+    move-result-object p1
+
     .line 25
-    move-result p0
+    invoke-static {p0, p1}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 26
-    if-eqz p0, :cond_1
-
     .line 27
     .line 28
-    const/4 p0, 0x1
+    move-result p0
 
     .line 29
-    return p0
+    if-eqz p0, :cond_0
 
     .line 30
-    :cond_1
-    :goto_0
+    .line 31
+    const/4 p0, 0x1
+
+    .line 32
+    return p0
+
+    .line 33
+    :cond_0
     const/4 p0, 0x0
 
-    .line 31
+    .line 34
     return p0
 .end method
 
 .method public final hashCode()I
-    .locals 1
+    .locals 2
 
     .line 1
-    iget v0, p0, Lq47;->j:F
+    const/4 v0, 0x0
 
     .line 2
-    .line 3
-    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
+    iget-object v1, p0, Lq47;->a:Ljava/lang/Object;
 
+    .line 3
     .line 4
+    if-eqz v1, :cond_0
+
     .line 5
     .line 6
-    move-result v0
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     .line 7
-    mul-int/lit8 v0, v0, 0x1f
-
     .line 8
     .line 9
-    iget p0, p0, Lq47;->k:F
+    move-result v1
 
     .line 10
+    goto :goto_0
+
     .line 11
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
+    :cond_0
+    move v1, v0
 
     .line 12
+    :goto_0
+    mul-int/lit8 v1, v1, 0x1f
+
     .line 13
     .line 14
-    move-result p0
+    iget-object p0, p0, Lq47;->b:Ljava/lang/Object;
 
     .line 15
-    add-int/2addr p0, v0
-
     .line 16
-    return p0
+    if-eqz p0, :cond_1
+
+    .line 17
+    .line 18
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result v0
+
+    .line 22
+    :cond_1
+    add-int/2addr v1, v0
+
+    .line 23
+    return v1
 .end method

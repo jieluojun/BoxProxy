@@ -1,94 +1,399 @@
 .class public final Lvx1;
-.super Ljava/util/concurrent/CancellationException;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lhh7;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final a:Lhh7;
+
+.field public final b:Lhh7;
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Lhh7;Lhh7;)V
+    .locals 0
 
     .line 1
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-byte v0, p0, Lvx1;->j:B
-
     .line 3
     .line 4
-    const-string v0, "The coroutine was canceled because it left the composition"
+    iput-object p1, p0, Lvx1;->a:Lhh7;
 
     .line 5
     .line 6
-    invoke-direct {p0, v0}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
+    iput-object p2, p0, Lvx1;->b:Lhh7;
 
     .line 7
     .line 8
-    .line 9
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Ljava/lang/String;)V
-    .locals 1
-
-    .line 10
-    const/4 v0, 0x1
-
-    iput-byte v0, p0, Lvx1;->j:B
-
-    invoke-direct {p0, p1}, Ljava/util/concurrent/CancellationException;-><init>(Ljava/lang/String;)V
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final fillInStackTrace()Ljava/lang/Throwable;
+.method public final a(Lsi1;)I
     .locals 1
 
     .line 1
-    iget-byte v0, p0, Lvx1;->j:B
+    iget-object v0, p0, Lvx1;->a:Lhh7;
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_0
+    invoke-interface {v0, p1}, Lhh7;->a(Lsi1;)I
 
     .line 4
     .line 5
     .line 6
-    sget-object v0, Lbf0;->c0:[Ljava/lang/StackTraceElement;
+    move-result v0
 
     .line 7
-    .line 8
-    invoke-virtual {p0, v0}, Ljava/lang/Throwable;->setStackTrace([Ljava/lang/StackTraceElement;)V
+    iget-object p0, p0, Lvx1;->b:Lhh7;
 
+    .line 8
     .line 9
+    invoke-interface {p0, p1}, Lhh7;->a(Lsi1;)I
+
     .line 10
     .line 11
-    return-object p0
-
     .line 12
-    :pswitch_0
-    sget-object v0, Lg61;->i0:[Ljava/lang/StackTraceElement;
+    move-result p0
 
     .line 13
+    sub-int/2addr v0, p0
+
     .line 14
-    invoke-virtual {p0, v0}, Ljava/lang/Throwable;->setStackTrace([Ljava/lang/StackTraceElement;)V
+    if-gez v0, :cond_0
 
     .line 15
     .line 16
+    const/4 p0, 0x0
+
     .line 17
-    return-object p0
+    return p0
 
     .line 18
-    nop
+    :cond_0
+    return v0
+.end method
+
+.method public final b(Lsi1;)I
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lvx1;->a:Lhh7;
+
+    .line 2
+    .line 3
+    invoke-interface {v0, p1}, Lhh7;->b(Lsi1;)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    iget-object p0, p0, Lvx1;->b:Lhh7;
+
+    .line 8
+    .line 9
+    invoke-interface {p0, p1}, Lhh7;->b(Lsi1;)I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    sub-int/2addr v0, p0
+
+    .line 14
+    if-gez v0, :cond_0
+
+    .line 15
+    .line 16
+    const/4 p0, 0x0
+
+    .line 17
+    return p0
+
+    .line 18
+    :cond_0
+    return v0
+.end method
+
+.method public final c(Lsi1;Le53;)I
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lvx1;->a:Lhh7;
+
+    .line 2
+    .line 3
+    invoke-interface {v0, p1, p2}, Lhh7;->c(Lsi1;Le53;)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    iget-object p0, p0, Lvx1;->b:Lhh7;
+
+    .line 8
+    .line 9
+    invoke-interface {p0, p1, p2}, Lhh7;->c(Lsi1;Le53;)I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    sub-int/2addr v0, p0
+
+    .line 14
+    if-gez v0, :cond_0
+
+    .line 15
+    .line 16
+    const/4 p0, 0x0
+
+    .line 17
+    return p0
+
+    .line 18
+    :cond_0
+    return v0
+.end method
+
+.method public final d(Lsi1;Le53;)I
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lvx1;->a:Lhh7;
+
+    .line 2
+    .line 3
+    invoke-interface {v0, p1, p2}, Lhh7;->d(Lsi1;Le53;)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    iget-object p0, p0, Lvx1;->b:Lhh7;
+
+    .line 8
+    .line 9
+    invoke-interface {p0, p1, p2}, Lhh7;->d(Lsi1;Le53;)I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    sub-int/2addr v0, p0
+
+    .line 14
+    if-gez v0, :cond_0
+
+    .line 15
+    .line 16
+    const/4 p0, 0x0
+
+    .line 17
+    return p0
+
+    .line 18
+    :cond_0
+    return v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lvx1;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Lvx1;
+
+    .line 12
+    .line 13
+    iget-object v1, p1, Lvx1;->a:Lhh7;
+
+    .line 14
+    .line 15
+    iget-object v3, p0, Lvx1;->a:Lhh7;
+
+    .line 16
+    .line 17
+    invoke-static {v1, v3}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v1
+
+    .line 21
+    if-eqz v1, :cond_2
+
+    .line 22
+    .line 23
+    iget-object p1, p1, Lvx1;->b:Lhh7;
+
+    .line 24
+    .line 25
+    iget-object p0, p0, Lvx1;->b:Lhh7;
+
+    .line 26
+    .line 27
+    invoke-static {p1, p0}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 28
+    .line 29
+    .line 30
+    move-result p0
+
+    .line 31
+    if-eqz p0, :cond_2
+
+    .line 32
+    .line 33
+    return v0
+
+    .line 34
+    :cond_2
+    return v2
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lvx1;->a:Lhh7;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 8
+    .line 9
+    iget-object p0, p0, Lvx1;->b:Lhh7;
+
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    add-int/2addr p0, v0
+
+    .line 16
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "("
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object v1, p0, Lvx1;->a:Lhh7;
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const-string v1, " - "
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    iget-object p0, p0, Lvx1;->b:Lhh7;
 
     .line 19
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 20
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 21
+    .line 22
+    .line 23
+    const-string p0, ")"
+
+    .line 24
+    .line 25
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 26
+    .line 27
+    .line 28
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
+
+    .line 32
+    return-object p0
 .end method

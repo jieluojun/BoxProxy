@@ -1,24 +1,23 @@
 .class public final Lco3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ljava/lang/AutoCloseable;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final j:Lsu0;
+.field public final a:Lhd1;
 
-.field public k:Landroid/graphics/Bitmap;
+.field public final b:F
 
-.field public l:Z
+.field public c:F
 
-.field public final m:Ljava/util/ArrayList;
+.field public d:F
+
+.field public final synthetic e:Ldo3;
 
 
 # direct methods
-.method public constructor <init>(Lsu0;)V
-    .locals 4
+.method public constructor <init>(Ldo3;Lhd1;FF)V
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -26,392 +25,392 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lco3;->j:Lsu0;
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 5
     .line 6
-    new-instance v0, Ljc3;
-
     .line 7
-    .line 8
-    const/4 v1, 0x3
+    iput-object p1, p0, Lco3;->e:Ldo3;
 
+    .line 8
     .line 9
-    invoke-direct {v0, v1}, Ljc3;-><init>(B)V
+    iput-object p2, p0, Lco3;->a:Lhd1;
 
     .line 10
     .line 11
+    cmpl-float v0, p4, p3
+
     .line 12
-    new-instance v0, Landroid/graphics/RectF;
-
     .line 13
-    .line 14
-    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
+    if-ltz v0, :cond_0
 
+    .line 14
     .line 15
+    iget-object p1, p1, Ldo3;->i:Lb91;
+
     .line 16
     .line 17
-    new-instance v0, Landroid/graphics/RectF;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 18
     .line 19
-    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
-
     .line 20
+    const/high16 p1, 0x7f800000    # Float.POSITIVE_INFINITY
+
     .line 21
     .line 22
-    new-instance v0, Lwl4;
+    invoke-static {p2, p1}, Lb91;->d(Lhd1;F)J
 
     .line 23
     .line 24
-    const/4 v1, 0x0
-
     .line 25
-    invoke-direct {v0, v1}, Lwl4;-><init>(Z)V
+    move-result-wide p1
 
     .line 26
+    const-wide v0, 0xffffffffL
+
     .line 27
     .line 28
-    new-instance v0, Ljava/util/ArrayList;
-
     .line 29
     .line 30
-    const/4 v1, 0x4
-
     .line 31
-    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+    and-long/2addr p1, v0
 
     .line 32
-    .line 33
-    .line 34
-    new-instance v1, Lue1;
+    long-to-int p1, p1
 
+    .line 33
+    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 34
     .line 35
     .line 36
-    const/16 v2, 0x12
+    move-result p1
 
     .line 37
-    .line 38
-    invoke-direct {v1, p0, v2}, Lue1;-><init>(Lco3;B)V
+    iput p1, p0, Lco3;->b:F
 
+    .line 38
     .line 39
+    iput p3, p0, Lco3;->c:F
+
     .line 40
     .line 41
-    const-class v2, Ls71;
+    iput p4, p0, Lco3;->d:F
 
     .line 42
     .line 43
-    iget-object v3, p1, Lsu0;->r:Ltw1;
+    return-void
 
     .line 44
-    .line 45
-    invoke-virtual {v3, v2, v1}, Ltw1;->e(Ljava/lang/Class;Lrw1;)Llg6;
+    :cond_0
+    const-string p0, "endOutlineProgress is expected to be equal or greater than startOutlineProgress"
 
+    .line 45
     .line 46
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
+
     .line 47
     .line 48
-    move-result-object v1
-
     .line 49
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    const/4 p0, 0x0
 
     .line 50
-    .line 51
-    .line 52
-    new-instance v1, Lue1;
-
-    .line 53
-    .line 54
-    const/16 v2, 0x13
-
-    .line 55
-    .line 56
-    invoke-direct {v1, p0, v2}, Lue1;-><init>(Lco3;B)V
-
-    .line 57
-    .line 58
-    .line 59
-    const-class v2, Lvv0;
-
-    .line 60
-    .line 61
-    iget-object v3, p1, Lsu0;->r:Ltw1;
-
-    .line 62
-    .line 63
-    invoke-virtual {v3, v2, v1}, Ltw1;->e(Ljava/lang/Class;Lrw1;)Llg6;
-
-    .line 64
-    .line 65
-    .line 66
-    move-result-object v1
-
-    .line 67
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 68
-    .line 69
-    .line 70
-    new-instance v1, Lue1;
-
-    .line 71
-    .line 72
-    const/16 v2, 0x14
-
-    .line 73
-    .line 74
-    invoke-direct {v1, p0, v2}, Lue1;-><init>(Lco3;B)V
-
-    .line 75
-    .line 76
-    .line 77
-    const-class v2, Lgs6;
-
-    .line 78
-    .line 79
-    iget-object v3, p1, Lsu0;->r:Ltw1;
-
-    .line 80
-    .line 81
-    invoke-virtual {v3, v2, v1}, Ltw1;->e(Ljava/lang/Class;Lrw1;)Llg6;
-
-    .line 82
-    .line 83
-    .line 84
-    move-result-object v1
-
-    .line 85
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 86
-    .line 87
-    .line 88
-    new-instance v1, Lz6;
-
-    .line 89
-    .line 90
-    const/4 v2, 0x6
-
-    .line 91
-    invoke-direct {v1, p0, v2}, Lz6;-><init>(Ljava/lang/Object;B)V
-
-    .line 92
-    .line 93
-    .line 94
-    const-class v2, Ljs1;
-
-    .line 95
-    .line 96
-    iget-object p1, p1, Lsu0;->r:Ltw1;
-
-    .line 97
-    .line 98
-    invoke-virtual {p1, v2, v1}, Ltw1;->e(Ljava/lang/Class;Lrw1;)Llg6;
-
-    .line 99
-    .line 100
-    .line 101
-    move-result-object p1
-
-    .line 102
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 103
-    .line 104
-    .line 105
-    iput-object v0, p0, Lco3;->m:Ljava/util/ArrayList;
-
-    .line 106
-    .line 107
-    return-void
+    throw p0
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 6
+.method public final a(F)Lfs4;
+    .locals 5
 
     .line 1
-    iget-object v0, p0, Lco3;->m:Ljava/util/ArrayList;
+    iget v0, p0, Lco3;->c:F
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+    iget v1, p0, Lco3;->d:F
 
     .line 4
     .line 5
+    invoke-static {p1, v0, v1}, Ly93;->G(FFF)F
+
     .line 6
-    move-result-object v1
-
     .line 7
-    :goto_0
-    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
-
     .line 8
-    .line 9
-    .line 10
-    move-result v2
+    move-result p1
 
+    .line 9
+    iget v0, p0, Lco3;->d:F
+
+    .line 10
     .line 11
-    if-eqz v2, :cond_1
+    iget v1, p0, Lco3;->c:F
 
     .line 12
     .line 13
-    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    sub-float/2addr v0, v1
 
     .line 14
+    sub-float v1, p1, v1
+
     .line 15
     .line 16
-    move-result-object v2
+    div-float/2addr v1, v0
 
     .line 17
-    check-cast v2, Llg6;
+    iget-object v0, p0, Lco3;->e:Ldo3;
 
     .line 18
     .line 19
-    iget-object v3, v2, Llg6;->c:Ltw1;
+    iget-object v2, v0, Ldo3;->i:Lb91;
 
     .line 20
     .line 21
-    iget-object v4, v2, Llg6;->a:Ljava/lang/Class;
+    iget v3, p0, Lco3;->b:F
 
     .line 22
     .line 23
-    invoke-virtual {v3, v4}, Ltw1;->b(Ljava/lang/Class;)Lsw1;
+    mul-float/2addr v1, v3
 
     .line 24
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 25
     .line 26
-    move-result-object v3
-
     .line 27
-    iget-object v4, v3, Lsw1;->a:Ljava/util/concurrent/locks/ReentrantReadWriteLock;
+    iget-object v2, p0, Lco3;->a:Lhd1;
 
     .line 28
     .line 29
-    invoke-virtual {v4}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 30
     .line 31
     .line 32
-    move-result-object v5
+    invoke-static {v2, v1}, Lb91;->d(Lhd1;F)J
 
     .line 33
-    invoke-interface {v5}, Ljava/util/concurrent/locks/Lock;->lock()V
-
     .line 34
     .line 35
+    move-result-wide v3
+
     .line 36
-    :try_start_0
-    iget-object v2, v2, Llg6;->b:Ljava/lang/ref/WeakReference;
+    const/16 v1, 0x20
 
     .line 37
     .line 38
-    invoke-virtual {v2}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+    shr-long/2addr v3, v1
+
+    .line 39
+    long-to-int v1, v3
+
+    .line 40
+    invoke-static {v1}, Ljava/lang/Float;->intBitsToFloat(I)F
+
+    .line 41
+    .line 42
+    .line 43
+    move-result v1
+
+    .line 44
+    const/4 v3, 0x0
+
+    .line 45
+    cmpg-float v3, v3, v1
+
+    .line 46
+    .line 47
+    if-gtz v3, :cond_0
+
+    .line 48
+    .line 49
+    const/high16 v3, 0x3f800000    # 1.0f
+
+    .line 50
+    .line 51
+    cmpg-float v3, v1, v3
+
+    .line 52
+    .line 53
+    if-gtz v3, :cond_0
+
+    .line 54
+    .line 55
+    invoke-virtual {v2, v1}, Lhd1;->d(F)Lfs4;
+
+    .line 56
+    .line 57
+    .line 58
+    move-result-object v1
+
+    .line 59
+    iget-object v2, v1, Lfs4;->i:Ljava/lang/Object;
+
+    .line 60
+    .line 61
+    check-cast v2, Lhd1;
+
+    .line 62
+    .line 63
+    iget-object v1, v1, Lfs4;->j:Ljava/lang/Object;
+
+    .line 64
+    .line 65
+    check-cast v1, Lhd1;
+
+    .line 66
+    .line 67
+    new-instance v3, Lco3;
+
+    .line 68
+    .line 69
+    iget v4, p0, Lco3;->c:F
+
+    .line 70
+    .line 71
+    invoke-direct {v3, v0, v2, v4, p1}, Lco3;-><init>(Ldo3;Lhd1;FF)V
+
+    .line 72
+    .line 73
+    .line 74
+    new-instance v2, Lco3;
+
+    .line 75
+    .line 76
+    iget p0, p0, Lco3;->d:F
+
+    .line 77
+    .line 78
+    invoke-direct {v2, v0, v1, p1, p0}, Lco3;-><init>(Ldo3;Lhd1;FF)V
+
+    .line 79
+    .line 80
+    .line 81
+    new-instance p0, Lfs4;
+
+    .line 82
+    .line 83
+    invoke-direct {p0, v3, v2}, Lfs4;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 84
+    .line 85
+    .line 86
+    return-object p0
+
+    .line 87
+    :cond_0
+    const-string p0, "Cubic cut point is expected to be between 0 and 1"
+
+    .line 88
+    .line 89
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
+
+    .line 90
+    .line 91
+    .line 92
+    const/4 p0, 0x0
+
+    .line 93
+    return-object p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "MeasuredCubic(outlineProgress=["
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget v1, p0, Lco3;->c:F
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const-string v1, " .. "
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    iget v1, p0, Lco3;->d:F
+
+    .line 19
+    .line 20
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    .line 21
+    .line 22
+    .line 23
+    const-string v1, "], size="
+
+    .line 24
+    .line 25
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 26
+    .line 27
+    .line 28
+    iget v1, p0, Lco3;->b:F
+
+    .line 29
+    .line 30
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    .line 31
+    .line 32
+    .line 33
+    const-string v1, ", cubic="
+
+    .line 34
+    .line 35
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 36
+    .line 37
+    .line 38
+    iget-object p0, p0, Lco3;->a:Lhd1;
 
     .line 39
     .line 40
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
     .line 41
-    move-result-object v2
-
     .line 42
-    check-cast v2, Luw1;
-
     .line 43
+    const/16 p0, 0x29
+
     .line 44
-    if-eqz v2, :cond_0
-
     .line 45
-    .line 46
-    iget-object v3, v3, Lsw1;->b:Ljava/util/ArrayList;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
+    .line 46
     .line 47
     .line 48
-    invoke-virtual {v3, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 49
     .line 50
     .line 51
-    goto :goto_1
+    move-result-object p0
 
     .line 52
-    :catchall_0
-    move-exception p0
-
-    .line 53
-    goto :goto_2
-
-    .line 54
-    :cond_0
-    :goto_1
-    invoke-virtual {v4}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
-
-    .line 55
-    .line 56
-    .line 57
-    move-result-object v2
-
-    .line 58
-    invoke-interface {v2}, Ljava/util/concurrent/locks/Lock;->unlock()V
-
-    .line 59
-    .line 60
-    .line 61
-    goto :goto_0
-
-    .line 62
-    :goto_2
-    invoke-virtual {v4}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;->writeLock()Ljava/util/concurrent/locks/Lock;
-
-    .line 63
-    .line 64
-    .line 65
-    move-result-object v0
-
-    .line 66
-    invoke-interface {v0}, Ljava/util/concurrent/locks/Lock;->unlock()V
-
-    .line 67
-    .line 68
-    .line 69
-    throw p0
-
-    .line 70
-    :cond_1
-    invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
-
-    .line 71
-    .line 72
-    .line 73
-    iget-object v0, p0, Lco3;->k:Landroid/graphics/Bitmap;
-
-    .line 74
-    .line 75
-    if-eqz v0, :cond_2
-
-    .line 76
-    .line 77
-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
-
-    .line 78
-    .line 79
-    .line 80
-    :cond_2
-    const/4 v0, 0x0
-
-    .line 81
-    iput-object v0, p0, Lco3;->k:Landroid/graphics/Bitmap;
-
-    .line 82
-    .line 83
-    const/4 v0, 0x1
-
-    .line 84
-    iput-boolean v0, p0, Lco3;->l:Z
-
-    .line 85
-    .line 86
-    return-void
+    return-object p0
 .end method

@@ -1,87 +1,21 @@
-.class public final Lw81;
+.class public interface abstract Lw81;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lac1;
-
-
-# instance fields
-.field public final j:Lrb1;
-
-
-# direct methods
-.method public constructor <init>(Lrb1;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p1, p0, Lw81;->j:Lrb1;
-
-    .line 5
-    .line 6
-    return-void
-.end method
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # virtual methods
-.method public final e()Lrb1;
+.method public abstract a(Lc81;)V
+.end method
+
+.method public abstract e(Lc81;IIIILjava/lang/CharSequence;)V
+.end method
+
+.method public f(Lc81;)V
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lw81;->j:Lrb1;
-
-    .line 2
-    .line 3
-    return-object p0
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v1, "CoroutineScope(coroutineContext="
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    iget-object p0, p0, Lw81;->j:Lrb1;
-
-    .line 9
-    .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 11
-    .line 12
-    .line 13
-    const/16 p0, 0x29
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-object p0
-
-    .line 22
-    return-object p0
+.method public abstract q(Lc81;IIIILjava/lang/StringBuilder;)V
 .end method

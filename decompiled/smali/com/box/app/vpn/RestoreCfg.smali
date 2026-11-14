@@ -8,12 +8,12 @@
 # One class, four roles chosen by j:
 #   0 = menu click (Lg52)          1 = file work, run as the task body of Lwt4 (Lr52)
 #   2 = revert no-op (Lr52)        3 = result toast (Lr52)
-# Lwt4 reloads the config list (Lgw4;->l) after a successful restore.
+# Lwt4 reloads the config list (Lv25;->l) after a successful restore.
 
-.implements Le62;
-.implements Lp62;
+.implements Le72;
+.implements Lp72;
 
-.field public static vm:Lgw4;
+.field public static vm:Lv25;
 
 .field public static final MENU:Lcom/box/app/vpn/RestoreCfg;
 
@@ -55,10 +55,10 @@
     return-void
 .end method
 
-.method public static vm(Lgw4;)V
+.method public static vm(Lv25;)V
     .locals 0
 
-    sput-object p0, Lcom/box/app/vpn/RestoreCfg;->vm:Lgw4;
+    sput-object p0, Lcom/box/app/vpn/RestoreCfg;->vm:Lv25;
 
     return-void
 .end method
@@ -89,20 +89,20 @@
 .method public invoke()Ljava/lang/Object;
     .locals 18
 
-    sget-object v8, La47;->a:La47;
+    sget-object v8, Ll97;->a:Ll97;
 
     :try_start_0
-    sget-object v0, Lcom/box/app/vpn/RestoreCfg;->vm:Lgw4;
+    sget-object v0, Lcom/box/app/vpn/RestoreCfg;->vm:Lv25;
 
     if-eqz v0, :cond_end
 
-    iget-object v1, v0, Lgw4;->c:Lum4;
+    iget-object v1, v0, Lv25;->c:Lxs4;
 
-    invoke-virtual {v1}, Lum4;->getValue()Ljava/lang/Object;
+    invoke-virtual {v1}, Lxs4;->getValue()Ljava/lang/Object;
 
     move-result-object v1
 
-    sget-object v2, Le55;->n:Le55;
+    sget-object v2, Lya5;->n:Lya5;
 
     if-ne v1, v2, :cond_sb
 
@@ -115,7 +115,7 @@
     goto :cond_go
 
     :cond_sb
-    sget-object v2, Le55;->o:Le55;
+    sget-object v2, Lya5;->o:Lya5;
 
     if-ne v1, v2, :cond_none
 
@@ -146,7 +146,7 @@
 
     invoke-direct {v6, v3, v7, v7, v7}, Lcom/box/app/vpn/RestoreCfg;-><init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
 
-    new-instance v10, Lfw4;
+    new-instance v10, Lu25;
 
     move-object v11, v1
 
@@ -162,22 +162,22 @@
 
     const/16 v17, 0x0
 
-    invoke-direct/range {v10 .. v17}, Lfw4;-><init>(Lp62;Lp62;Ljava/lang/Object;ZLgw4;Lp62;Ly81;)V
+    invoke-direct/range {v10 .. v17}, Lu25;-><init>(Lp72;Lp72;Ljava/lang/Object;ZLv25;Lp72;Lp91;)V
 
-    iget-object v1, v0, Lgw4;->a:Lj26;
+    iget-object v1, v0, Lv25;->a:Li86;
 
     const-string v2, "proxy-config-restore"
 
-    invoke-virtual {v1, v10, v2}, Lj26;->d(Lp62;Ljava/lang/String;)V
+    invoke-virtual {v1, v10, v2}, Li86;->f(Lp72;Ljava/lang/String;)V
 
     goto :cond_end
 
     :cond_none
-    invoke-static {}, Ldn;->K()Landroid/content/Context;
+    invoke-static {}, Lum;->H()Landroid/content/Context;
 
     move-result-object v0
 
-    const v1, 0x7f0f0510
+    const v1, 0x7f0f053f
 
     invoke-virtual {v0, v1}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
@@ -221,7 +221,7 @@
     if-eqz p1, :cond_b
 
     :try_start_0
-    invoke-static {}, Ldn;->K()Landroid/content/Context;
+    invoke-static {}, Lum;->H()Landroid/content/Context;
 
     move-result-object v0
 
@@ -233,7 +233,7 @@
 
     :catch_0
     :cond_b
-    sget-object v0, La47;->a:La47;
+    sget-object v0, Ll97;->a:Ll97;
 
     return-object v0
 .end method
@@ -242,12 +242,12 @@
 .method private restore()Ljava/lang/Object;
     .locals 12
 
-    invoke-static {}, Ldn;->K()Landroid/content/Context;
+    invoke-static {}, Lum;->H()Landroid/content/Context;
 
     move-result-object v0
 
     :try_start_0
-    invoke-static {}, Ljc0;->k()Lyb0;
+    invoke-static {}, Lgc0;->k()Lvb0;
 
     move-result-object v1
 
@@ -255,7 +255,7 @@
 
     iget-object v3, p0, Lcom/box/app/vpn/RestoreCfg;->l:Ljava/lang/String;
 
-    invoke-virtual {v1, v2, v3}, Lyb0;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
+    invoke-virtual {v1, v2, v3}, Lvb0;->a(Ljava/lang/String;Ljava/lang/String;)Ljava/io/File;
 
     move-result-object v1
 
@@ -322,7 +322,7 @@
 
     invoke-direct {v6, v1}, Ljava/io/FileOutputStream;-><init>(Ljava/io/File;)V
 
-    invoke-static {v5, v6}, Lcs;->u(Ljava/io/InputStream;Ljava/io/OutputStream;)J
+    invoke-static {v5, v6}, Lwp;->v(Ljava/io/InputStream;Ljava/io/OutputStream;)J
 
     invoke-virtual {v6}, Ljava/io/FileOutputStream;->close()V
 
@@ -338,12 +338,12 @@
 
     if-eqz v4, :cond_nb
 
-    const v7, 0x7f0f050e
+    const v7, 0x7f0f053d
 
     goto :cond_m
 
     :cond_nb
-    const v7, 0x7f0f050d
+    const v7, 0x7f0f053c
 
     :cond_m
     invoke-virtual {v0, v7, v6}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
@@ -356,7 +356,7 @@
 
     sget-object v9, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
 
-    invoke-direct {v7, v8, v9, v6}, La55;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v7, v8, v9, v6}, Lva5;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
     :try_end_0
     .catch Ljava/lang/Throwable; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -377,7 +377,7 @@
 
     aput-object v1, v3, v4
 
-    const v1, 0x7f0f050f
+    const v1, 0x7f0f053e
 
     invoke-virtual {v0, v1, v3}, Landroid/content/Context;->getString(I[Ljava/lang/Object;)Ljava/lang/String;
 
@@ -389,7 +389,7 @@
 
     const/4 v4, 0x0
 
-    invoke-direct {v2, v3, v4, v1}, La55;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
+    invoke-direct {v2, v3, v4, v1}, Lva5;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
 
     return-object v2
 .end method

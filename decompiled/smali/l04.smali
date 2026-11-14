@@ -1,80 +1,197 @@
 .class public final Ll04;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lhh7;
 
 
 # instance fields
-.field public j:La95;
-
-.field public k:Lw44;
-
-.field public l:Lw44;
-
-.field public m:Lba4;
-
-.field public synthetic n:Ljava/lang/Object;
-
-.field public final synthetic o:Lm04;
-
-.field public p:I
+.field public final a:Lxs4;
 
 
 # direct methods
-.method public constructor <init>(Lm04;Lz81;)V
+.method public constructor <init>(Lhh7;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Ll04;->o:Lm04;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
     .line 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 5
     .line 6
+    .line 7
+    invoke-static {p1}, Lm93;->H(Ljava/lang/Object;)Lxs4;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p1
+
+    .line 11
+    iput-object p1, p0, Ll04;->a:Lxs4;
+
+    .line 12
+    .line 13
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a(Lsi1;)I
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Ll04;->n:Ljava/lang/Object;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    iget p1, p0, Ll04;->p:I
-
     .line 4
+    iget-object p0, p0, Ll04;->a:Lxs4;
+
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Ll04;->p:I
-
     .line 9
+    move-result-object p0
+
     .line 10
-    iget-object p1, p0, Ll04;->o:Lm04;
+    check-cast p0, Lhh7;
 
     .line 11
     .line 12
-    const/4 v0, 0x0
+    invoke-interface {p0, p1}, Lhh7;->a(Lsi1;)I
 
     .line 13
-    invoke-virtual {p1, v0, v0, v0, p0}, Lm04;->j(La95;Lw44;Lw44;Lz81;)Ljava/lang/Object;
+    .line 14
+    .line 15
+    move-result p0
+
+    .line 16
+    return p0
+.end method
+
+.method public final b(Lsi1;)I
+    .locals 0
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    iget-object p0, p0, Ll04;->a:Lxs4;
+
+    .line 5
+    .line 6
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
+    .line 7
+    .line 8
+    .line 9
+    move-result-object p0
+
+    .line 10
+    check-cast p0, Lhh7;
+
+    .line 11
+    .line 12
+    invoke-interface {p0, p1}, Lhh7;->b(Lsi1;)I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result p0
+
+    .line 16
+    return p0
+.end method
+
+.method public final c(Lsi1;Le53;)I
+    .locals 0
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 5
+    .line 6
+    .line 7
+    iget-object p0, p0, Ll04;->a:Lxs4;
+
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object p0
+
+    .line 13
+    check-cast p0, Lhh7;
 
     .line 14
     .line 15
+    invoke-interface {p0, p1, p2}, Lhh7;->c(Lsi1;Le53;)I
+
     .line 16
+    .line 17
+    .line 18
+    move-result p0
+
+    .line 19
+    return p0
+.end method
+
+.method public final d(Lsi1;Le53;)I
+    .locals 0
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 5
+    .line 6
+    .line 7
+    iget-object p0, p0, Ll04;->a:Lxs4;
+
+    .line 8
+    .line 9
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
+    .line 10
+    .line 11
+    .line 12
     move-result-object p0
 
+    .line 13
+    check-cast p0, Lhh7;
+
+    .line 14
+    .line 15
+    invoke-interface {p0, p1, p2}, Lhh7;->d(Lsi1;Le53;)I
+
+    .line 16
     .line 17
-    return-object p0
+    .line 18
+    move-result p0
+
+    .line 19
+    return p0
 .end method

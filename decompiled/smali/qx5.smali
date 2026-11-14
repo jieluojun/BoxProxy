@@ -1,585 +1,228 @@
-.class public abstract Lqx5;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lqx5;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
-.field public static final A:Lcy5;
+.field public static final enum i:Lqx5;
 
-.field public static final B:Lcy5;
+.field public static final enum j:Lqx5;
 
-.field public static final C:Lcy5;
+.field public static final enum k:Lqx5;
 
-.field public static final a:Lcy5;
+.field public static final enum l:Lqx5;
 
-.field public static final b:Lcy5;
+.field public static final enum m:Lqx5;
 
-.field public static final c:Lcy5;
+.field public static final enum n:Lqx5;
 
-.field public static final d:Lcy5;
+.field public static final enum o:Lqx5;
 
-.field public static final e:Lcy5;
-
-.field public static final f:Lcy5;
-
-.field public static final g:Lcy5;
-
-.field public static final h:Lcy5;
-
-.field public static final i:Lcy5;
-
-.field public static final j:Lcy5;
-
-.field public static final k:Lcy5;
-
-.field public static final l:Lcy5;
-
-.field public static final m:Lcy5;
-
-.field public static final n:Lcy5;
-
-.field public static final o:Lcy5;
-
-.field public static final p:Lcy5;
-
-.field public static final q:Lcy5;
-
-.field public static final r:Lcy5;
-
-.field public static final s:Lcy5;
-
-.field public static final t:Lcy5;
-
-.field public static final u:Lcy5;
-
-.field public static final v:Lcy5;
-
-.field public static final w:Lcy5;
-
-.field public static final x:Lcy5;
-
-.field public static final y:Lcy5;
-
-.field public static final z:Lcy5;
+.field public static final synthetic p:[Lqx5;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 9
 
     .line 1
-    sget-object v0, Llr5;->l:Llr5;
+    new-instance v0, Lqx5;
 
     .line 2
     .line 3
-    new-instance v1, Lcy5;
+    const-string v1, "TopBar"
 
     .line 4
     .line 5
-    const-string v2, "GetTextLayoutResult"
+    const/4 v2, 0x0
 
     .line 6
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 7
-    const/4 v3, 0x1
-
     .line 8
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
     .line 9
+    sput-object v0, Lqx5;->i:Lqx5;
+
     .line 10
     .line 11
-    sput-object v1, Lqx5;->a:Lcy5;
+    new-instance v1, Lqx5;
 
     .line 12
     .line 13
-    new-instance v1, Lcy5;
+    const-string v2, "BottomBar"
 
     .line 14
     .line 15
-    const-string v2, "OnClick"
+    const/4 v3, 0x1
 
     .line 16
-    .line 17
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 17
     .line 18
     .line 19
+    sput-object v1, Lqx5;->j:Lqx5;
+
     .line 20
-    sput-object v1, Lqx5;->b:Lcy5;
-
     .line 21
+    new-instance v2, Lqx5;
+
     .line 22
-    new-instance v1, Lcy5;
-
     .line 23
-    .line 24
-    const-string v2, "OnLongClick"
+    const-string v3, "Snackbar"
 
+    .line 24
     .line 25
+    const/4 v4, 0x2
+
     .line 26
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 27
     .line 28
     .line 29
-    sput-object v1, Lqx5;->c:Lcy5;
+    sput-object v2, Lqx5;->k:Lqx5;
 
     .line 30
     .line 31
-    new-instance v1, Lcy5;
+    new-instance v3, Lqx5;
 
     .line 32
     .line 33
-    const-string v2, "ScrollBy"
+    const-string v4, "FloatingToolbar"
 
     .line 34
     .line 35
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
+    const/4 v5, 0x3
 
     .line 36
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 37
     .line 38
-    sput-object v1, Lqx5;->d:Lcy5;
-
     .line 39
+    sput-object v3, Lqx5;->l:Lqx5;
+
     .line 40
-    new-instance v1, Lcy5;
-
     .line 41
+    new-instance v4, Lqx5;
+
     .line 42
-    const-string v2, "ScrollByOffset"
-
     .line 43
+    const-string v5, "Fab"
+
     .line 44
-    invoke-direct {v1, v2}, Lcy5;-><init>(Ljava/lang/String;)V
-
     .line 45
-    .line 46
-    .line 47
-    sput-object v1, Lqx5;->e:Lcy5;
+    const/4 v6, 0x4
 
+    .line 46
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 47
     .line 48
     .line 49
-    new-instance v1, Lcy5;
+    sput-object v4, Lqx5;->m:Lqx5;
 
     .line 50
     .line 51
-    const-string v2, "ScrollToIndex"
+    new-instance v5, Lqx5;
 
     .line 52
     .line 53
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
+    const-string v6, "Popup"
 
     .line 54
     .line 55
+    const/4 v7, 0x5
+
     .line 56
-    sput-object v1, Lqx5;->f:Lcy5;
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 57
     .line 58
-    new-instance v1, Lcy5;
-
     .line 59
+    sput-object v5, Lqx5;->n:Lqx5;
+
     .line 60
-    const-string v2, "OnAutofillText"
-
     .line 61
-    .line 62
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
+    new-instance v6, Lqx5;
 
+    .line 62
     .line 63
+    const-string v7, "MainContent"
+
     .line 64
     .line 65
-    sput-object v1, Lqx5;->g:Lcy5;
+    const/4 v8, 0x6
 
     .line 66
-    .line 67
-    new-instance v1, Lcy5;
+    invoke-direct {v6, v7, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 67
     .line 68
     .line 69
-    const-string v2, "OnFillData"
+    sput-object v6, Lqx5;->o:Lqx5;
 
     .line 70
     .line 71
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
+    filled-new-array/range {v0 .. v6}, [Lqx5;
 
     .line 72
     .line 73
     .line 74
-    sput-object v1, Lqx5;->h:Lcy5;
+    move-result-object v0
 
     .line 75
+    sput-object v0, Lqx5;->p:[Lqx5;
+
     .line 76
-    new-instance v1, Lcy5;
-
     .line 77
-    .line 78
-    const-string v2, "SetProgress"
-
-    .line 79
-    .line 80
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 81
-    .line 82
-    .line 83
-    sput-object v1, Lqx5;->i:Lcy5;
-
-    .line 84
-    .line 85
-    new-instance v1, Lcy5;
-
-    .line 86
-    .line 87
-    const-string v2, "SetSelection"
-
-    .line 88
-    .line 89
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 90
-    .line 91
-    .line 92
-    sput-object v1, Lqx5;->j:Lcy5;
-
-    .line 93
-    .line 94
-    new-instance v1, Lcy5;
-
-    .line 95
-    .line 96
-    const-string v2, "SetText"
-
-    .line 97
-    .line 98
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 99
-    .line 100
-    .line 101
-    sput-object v1, Lqx5;->k:Lcy5;
-
-    .line 102
-    .line 103
-    new-instance v1, Lcy5;
-
-    .line 104
-    .line 105
-    const-string v2, "SetTextSubstitution"
-
-    .line 106
-    .line 107
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 108
-    .line 109
-    .line 110
-    sput-object v1, Lqx5;->l:Lcy5;
-
-    .line 111
-    .line 112
-    new-instance v1, Lcy5;
-
-    .line 113
-    .line 114
-    const-string v2, "ShowTextSubstitution"
-
-    .line 115
-    .line 116
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 117
-    .line 118
-    .line 119
-    sput-object v1, Lqx5;->m:Lcy5;
-
-    .line 120
-    .line 121
-    new-instance v1, Lcy5;
-
-    .line 122
-    .line 123
-    const-string v2, "ClearTextSubstitution"
-
-    .line 124
-    .line 125
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 126
-    .line 127
-    .line 128
-    sput-object v1, Lqx5;->n:Lcy5;
-
-    .line 129
-    .line 130
-    new-instance v1, Lcy5;
-
-    .line 131
-    .line 132
-    const-string v2, "InsertTextAtCursor"
-
-    .line 133
-    .line 134
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 135
-    .line 136
-    .line 137
-    sput-object v1, Lqx5;->o:Lcy5;
-
-    .line 138
-    .line 139
-    new-instance v1, Lcy5;
-
-    .line 140
-    .line 141
-    const-string v2, "PerformImeAction"
-
-    .line 142
-    .line 143
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 144
-    .line 145
-    .line 146
-    sput-object v1, Lqx5;->p:Lcy5;
-
-    .line 147
-    .line 148
-    new-instance v1, Lcy5;
-
-    .line 149
-    .line 150
-    const-string v2, "CopyText"
-
-    .line 151
-    .line 152
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 153
-    .line 154
-    .line 155
-    sput-object v1, Lqx5;->q:Lcy5;
-
-    .line 156
-    .line 157
-    new-instance v1, Lcy5;
-
-    .line 158
-    .line 159
-    const-string v2, "CutText"
-
-    .line 160
-    .line 161
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 162
-    .line 163
-    .line 164
-    sput-object v1, Lqx5;->r:Lcy5;
-
-    .line 165
-    .line 166
-    new-instance v1, Lcy5;
-
-    .line 167
-    .line 168
-    const-string v2, "PasteText"
-
-    .line 169
-    .line 170
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 171
-    .line 172
-    .line 173
-    sput-object v1, Lqx5;->s:Lcy5;
-
-    .line 174
-    .line 175
-    new-instance v1, Lcy5;
-
-    .line 176
-    .line 177
-    const-string v2, "Expand"
-
-    .line 178
-    .line 179
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 180
-    .line 181
-    .line 182
-    sput-object v1, Lqx5;->t:Lcy5;
-
-    .line 183
-    .line 184
-    new-instance v1, Lcy5;
-
-    .line 185
-    .line 186
-    const-string v2, "Collapse"
-
-    .line 187
-    .line 188
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 189
-    .line 190
-    .line 191
-    sput-object v1, Lqx5;->u:Lcy5;
-
-    .line 192
-    .line 193
-    new-instance v1, Lcy5;
-
-    .line 194
-    .line 195
-    const-string v2, "Dismiss"
-
-    .line 196
-    .line 197
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 198
-    .line 199
-    .line 200
-    sput-object v1, Lqx5;->v:Lcy5;
-
-    .line 201
-    .line 202
-    new-instance v1, Lcy5;
-
-    .line 203
-    .line 204
-    const-string v2, "RequestFocus"
-
-    .line 205
-    .line 206
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 207
-    .line 208
-    .line 209
-    sput-object v1, Lqx5;->w:Lcy5;
-
-    .line 210
-    .line 211
-    new-instance v1, Lvt5;
-
-    .line 212
-    .line 213
-    const/16 v2, 0x14
-
-    .line 214
-    .line 215
-    invoke-direct {v1, v2}, Lvt5;-><init>(B)V
-
-    .line 216
-    .line 217
-    .line 218
-    new-instance v2, Lcy5;
-
-    .line 219
-    .line 220
-    const-string v4, "CustomActions"
-
-    .line 221
-    .line 222
-    invoke-direct {v2, v4, v3, v1}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 223
-    .line 224
-    .line 225
-    sput-object v2, Lqx5;->x:Lcy5;
-
-    .line 226
-    .line 227
-    new-instance v1, Lcy5;
-
-    .line 228
-    .line 229
-    const-string v2, "PageUp"
-
-    .line 230
-    .line 231
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 232
-    .line 233
-    .line 234
-    sput-object v1, Lqx5;->y:Lcy5;
-
-    .line 235
-    .line 236
-    new-instance v1, Lcy5;
-
-    .line 237
-    .line 238
-    const-string v2, "PageLeft"
-
-    .line 239
-    .line 240
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 241
-    .line 242
-    .line 243
-    sput-object v1, Lqx5;->z:Lcy5;
-
-    .line 244
-    .line 245
-    new-instance v1, Lcy5;
-
-    .line 246
-    .line 247
-    const-string v2, "PageDown"
-
-    .line 248
-    .line 249
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 250
-    .line 251
-    .line 252
-    sput-object v1, Lqx5;->A:Lcy5;
-
-    .line 253
-    .line 254
-    new-instance v1, Lcy5;
-
-    .line 255
-    .line 256
-    const-string v2, "PageRight"
-
-    .line 257
-    .line 258
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 259
-    .line 260
-    .line 261
-    sput-object v1, Lqx5;->B:Lcy5;
-
-    .line 262
-    .line 263
-    new-instance v1, Lcy5;
-
-    .line 264
-    .line 265
-    const-string v2, "GetScrollViewportLength"
-
-    .line 266
-    .line 267
-    invoke-direct {v1, v2, v3, v0}, Lcy5;-><init>(Ljava/lang/String;ZLt62;)V
-
-    .line 268
-    .line 269
-    .line 270
-    sput-object v1, Lqx5;->C:Lcy5;
-
-    .line 271
-    .line 272
     return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lqx5;
+    .locals 1
+
+    .line 1
+    const-class v0, Lqx5;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lqx5;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Lqx5;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lqx5;->p:[Lqx5;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lqx5;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

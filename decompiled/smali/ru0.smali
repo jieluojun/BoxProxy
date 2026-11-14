@@ -1,27 +1,24 @@
-.class public final synthetic Lru0;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ly62;
+.class public abstract Lru0;
+.super Ls2;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final a:Le33;
 
 
 # direct methods
-.method public synthetic constructor <init>(B)V
+.method public constructor <init>(Le33;)V
     .locals 0
 
     .line 1
-    iput-byte p1, p0, Lru0;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    iput-object p1, p0, Lru0;->a:Le33;
+
     .line 5
     .line 6
     return-void
@@ -29,171 +26,164 @@
 
 
 # virtual methods
-.method public final k(Ljava/lang/Object;Lyn0;Landroid/view/MotionEvent;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Integer;)Ljava/lang/Object;
-    .locals 0
+.method public d(Lji6;Ljava/lang/Object;)V
+    .locals 6
 
     .line 1
-    iget-byte p0, p0, Lru0;->j:B
+    invoke-virtual {p0, p2}, Ls2;->h(Ljava/lang/Object;)I
 
     .line 2
     .line 3
-    packed-switch p0, :pswitch_data_0
-
     .line 4
-    .line 5
-    .line 6
-    new-instance p0, Lyr0;
+    move-result v0
 
+    .line 5
+    invoke-interface {p0}, Le33;->c()Lt46;
+
+    .line 6
     .line 7
     .line 8
-    check-cast p1, Lsu0;
+    move-result-object v1
 
     .line 9
-    .line 10
-    check-cast p4, Lp96;
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 10
     .line 11
     .line 12
-    check-cast p5, Lpr6;
+    invoke-virtual {p1, v1}, Lji6;->a(Lt46;)Lji6;
 
     .line 13
     .line 14
-    check-cast p6, Ljava/lang/Integer;
-
     .line 15
+    move-result-object p1
+
     .line 16
-    invoke-direct {p0, p1, p2, p3}, Lgs1;-><init>(Lsu0;Lyn0;Landroid/view/MotionEvent;)V
+    invoke-virtual {p0, p2}, Ls2;->g(Ljava/lang/Object;)Ljava/util/Iterator;
 
     .line 17
     .line 18
     .line 19
-    return-object p0
+    move-result-object p2
 
     .line 20
-    :pswitch_0
-    new-instance p0, Lyr0;
+    const/4 v2, 0x0
 
     .line 21
+    :goto_0
+    if-ge v2, v0, :cond_0
+
     .line 22
-    check-cast p1, Lsu0;
-
     .line 23
-    .line 24
-    check-cast p4, Lp96;
+    invoke-interface {p0}, Le33;->c()Lt46;
 
+    .line 24
     .line 25
     .line 26
-    check-cast p5, Lpr6;
+    move-result-object v3
 
     .line 27
+    iget-object v4, p0, Lru0;->a:Le33;
+
     .line 28
-    check-cast p6, Ljava/lang/Integer;
-
     .line 29
-    .line 30
-    invoke-direct {p0, p1, p2, p3}, Lgs1;-><init>(Lsu0;Lyn0;Landroid/view/MotionEvent;)V
+    check-cast v4, Le33;
 
+    .line 30
     .line 31
+    invoke-interface {p2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
     .line 32
     .line 33
-    return-object p0
-
     .line 34
-    :pswitch_1
-    new-instance p0, Lyr0;
+    move-result-object v5
 
     .line 35
-    .line 36
-    check-cast p1, Lsu0;
+    invoke-virtual {p1, v3, v2, v4, v5}, Lji6;->n(Lt46;ILe33;Ljava/lang/Object;)V
 
+    .line 36
     .line 37
     .line 38
-    check-cast p4, Lp96;
+    add-int/lit8 v2, v2, 0x1
 
     .line 39
     .line 40
-    check-cast p5, Lpr6;
+    goto :goto_0
 
     .line 41
-    .line 42
-    check-cast p6, Ljava/lang/Integer;
+    :cond_0
+    invoke-virtual {p1, v1}, Lji6;->s(Lt46;)V
 
+    .line 42
     .line 43
     .line 44
-    invoke-direct {p0, p1, p2, p3}, Lgs1;-><init>(Lsu0;Lyn0;Landroid/view/MotionEvent;)V
+    return-void
+.end method
 
-    .line 45
-    .line 46
-    .line 47
-    return-object p0
+.method public j(La21;ILjava/lang/Object;)V
+    .locals 3
 
-    .line 48
-    :pswitch_2
-    new-instance p0, Lxe3;
+    .line 1
+    invoke-interface {p0}, Le33;->c()Lt46;
 
-    .line 49
-    .line 50
-    check-cast p1, Lsu0;
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
 
-    .line 51
-    .line 52
-    check-cast p4, Lp96;
+    .line 5
+    iget-object v1, p0, Lru0;->a:Le33;
 
-    .line 53
-    .line 54
-    check-cast p5, Lpr6;
+    .line 6
+    .line 7
+    check-cast v1, Le33;
 
-    .line 55
-    .line 56
-    check-cast p6, Ljava/lang/Integer;
+    .line 8
+    .line 9
+    const/4 v2, 0x0
 
-    .line 57
-    .line 58
-    invoke-direct {p0, p1, p2, p3}, Lgs1;-><init>(Lsu0;Lyn0;Landroid/view/MotionEvent;)V
+    .line 10
+    invoke-interface {p1, v0, p2, v1, v2}, La21;->x(Lt46;ILe33;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 59
-    .line 60
-    .line 61
-    return-object p0
+    .line 11
+    .line 12
+    .line 13
+    move-result-object p1
 
-    .line 62
-    :pswitch_3
-    new-instance p0, Lek2;
+    .line 14
+    invoke-virtual {p0, p2, p3, p1}, Lru0;->l(ILjava/lang/Object;Ljava/lang/Object;)V
 
-    .line 63
-    .line 64
-    check-cast p1, Lsu0;
+    .line 15
+    .line 16
+    .line 17
+    return-void
+.end method
 
-    .line 65
-    .line 66
-    check-cast p4, Lp96;
+.method public l(ILjava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
 
-    .line 67
-    .line 68
-    check-cast p5, Lpr6;
+    .line 1
+    check-cast p2, Lq05;
 
-    .line 69
-    .line 70
-    check-cast p6, Ljava/lang/Integer;
+    .line 2
+    .line 3
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 71
-    .line 72
-    invoke-direct {p0, p1, p2, p3}, Lgs1;-><init>(Lsu0;Lyn0;Landroid/view/MotionEvent;)V
+    .line 4
+    .line 5
+    .line 6
+    new-instance p0, Ljava/lang/IllegalStateException;
 
-    .line 73
-    .line 74
-    .line 75
-    return-object p0
+    .line 7
+    .line 8
+    const-string p1, "This method lead to boxing and must not be used, use Builder.append instead"
 
-    .line 76
-    nop
+    .line 9
+    .line 10
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    .line 77
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 11
+    .line 12
+    .line 13
+    throw p0
 .end method

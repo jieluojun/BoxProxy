@@ -1,6 +1,6 @@
 .class public Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
@@ -114,7 +114,7 @@
     const/4 v1, 0x0
 
     .line 6
-    if-eqz p1, :cond_2
+    if-eqz p1, :cond_1
 
     .line 7
     .line 8
@@ -134,63 +134,58 @@
     move-result-object v3
 
     .line 16
-    if-eq v2, v3, :cond_1
+    if-ne v2, v3, :cond_1
 
     .line 17
     .line 18
-    goto :goto_0
-
-    .line 19
-    :cond_1
     check-cast p1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;
 
+    .line 19
     .line 20
-    .line 21
     iget-object v2, p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;->open:Ljava/lang/String;
 
+    .line 21
     .line 22
-    .line 23
     iget-object v3, p1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;->open:Ljava/lang/String;
 
+    .line 23
     .line 24
-    .line 25
     invoke-static {v2, v3}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
+    .line 25
     .line 26
     .line 27
-    .line 28
     move-result v2
 
-    .line 29
-    if-eqz v2, :cond_2
+    .line 28
+    if-eqz v2, :cond_1
 
+    .line 29
     .line 30
-    .line 31
     iget-object p0, p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;->close:Ljava/lang/String;
 
+    .line 31
     .line 32
-    .line 33
     iget-object p1, p1, Lorg/eclipse/tm4e/languageconfiguration/internal/model/CharacterPair;->close:Ljava/lang/String;
 
+    .line 33
     .line 34
-    .line 35
     invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
 
+    .line 35
     .line 36
     .line 37
-    .line 38
     move-result p0
 
-    .line 39
-    if-eqz p0, :cond_2
+    .line 38
+    if-eqz p0, :cond_1
 
+    .line 39
     .line 40
-    .line 41
     return v0
 
-    .line 42
-    :cond_2
-    :goto_0
+    .line 41
+    :cond_1
     return v1
 .end method
 
@@ -229,19 +224,19 @@
     .locals 2
 
     .line 1
-    new-instance v0, Lyx;
+    new-instance v0, Ljx;
 
     .line 2
     .line 3
     const/4 v1, 0x1
 
     .line 4
-    invoke-direct {v0, p0, v1}, Lyx;-><init>(Ljava/lang/Object;B)V
+    invoke-direct {v0, p0, v1}, Ljx;-><init>(Ljava/lang/Object;B)V
 
     .line 5
     .line 6
     .line 7
-    invoke-static {p0, v0}, Lyc6;->e(Ljava/lang/Object;Ljava/util/function/Consumer;)Ljava/lang/String;
+    invoke-static {p0, v0}, Lqi6;->e(Ljava/lang/Object;Ljava/util/function/Consumer;)Ljava/lang/String;
 
     .line 8
     .line 9

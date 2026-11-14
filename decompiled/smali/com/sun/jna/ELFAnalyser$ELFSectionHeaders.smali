@@ -1,6 +1,6 @@
 .class Lcom/sun/jna/ELFAnalyser$ELFSectionHeaders;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # annotations
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x9
+    accessFlags = 0x8
     name = "ELFSectionHeaders"
 .end annotation
 
@@ -243,351 +243,340 @@
     mul-int/2addr v4, v2
 
     .line 104
-    if-eqz v4, :cond_9
+    if-eqz v4, :cond_7
 
     .line 105
     .line 106
-    if-nez p3, :cond_3
+    if-eqz p3, :cond_7
 
     .line 107
     .line 108
-    goto/16 :goto_8
+    invoke-static {v4}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     .line 109
     .line 110
-    :cond_3
-    invoke-static {v4}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
-
     .line 111
-    .line 112
-    .line 113
     move-result-object v4
 
+    .line 112
+    if-eqz p2, :cond_3
+
+    .line 113
     .line 114
-    if-eqz p2, :cond_4
+    sget-object v5, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
 
     .line 115
     .line 116
-    sget-object v5, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
-
-    .line 117
-    .line 118
     goto :goto_2
 
-    .line 119
-    :cond_4
+    .line 117
+    :cond_3
     sget-object v5, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
-    .line 120
-    .line 121
+    .line 118
+    .line 119
     :goto_2
     invoke-virtual {v4, v5}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
+    .line 120
+    .line 121
     .line 122
-    .line 123
-    .line 124
     invoke-virtual {p4}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;
 
+    .line 123
+    .line 124
     .line 125
-    .line 126
-    .line 127
     move-result-object v5
 
-    .line 128
+    .line 126
     invoke-virtual {v5, v4, v0, v1}, Ljava/nio/channels/FileChannel;->read(Ljava/nio/ByteBuffer;J)I
 
+    .line 127
+    .line 128
     .line 129
-    .line 130
-    .line 131
     const/4 v0, 0x0
 
-    .line 132
+    .line 130
     :goto_3
-    if-ge v0, v3, :cond_5
+    if-ge v0, v3, :cond_4
+
+    .line 131
+    .line 132
+    mul-int v1, v0, v2
 
     .line 133
     .line 134
-    mul-int v1, v0, v2
+    invoke-virtual {v4, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     .line 135
     .line 136
-    invoke-virtual {v4, v1}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
-
     .line 137
-    .line 138
-    .line 139
     invoke-virtual {v4}, Ljava/nio/ByteBuffer;->slice()Ljava/nio/ByteBuffer;
 
+    .line 138
+    .line 139
     .line 140
-    .line 141
-    .line 142
     move-result-object v1
 
-    .line 143
+    .line 141
     invoke-virtual {v4}, Ljava/nio/ByteBuffer;->order()Ljava/nio/ByteOrder;
 
+    .line 142
+    .line 143
     .line 144
-    .line 145
-    .line 146
     move-result-object v5
 
-    .line 147
+    .line 145
     invoke-virtual {v1, v5}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
+    .line 146
+    .line 147
     .line 148
-    .line 149
-    .line 150
     invoke-virtual {v1, v2}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
+    .line 149
+    .line 150
     .line 151
+    iget-object v5, p0, Lcom/sun/jna/ELFAnalyser$ELFSectionHeaders;->entries:Ljava/util/List;
+
     .line 152
     .line 153
-    iget-object v5, p0, Lcom/sun/jna/ELFAnalyser$ELFSectionHeaders;->entries:Ljava/util/List;
+    new-instance v6, Lcom/sun/jna/ELFAnalyser$ELFSectionHeaderEntry;
 
     .line 154
     .line 155
-    new-instance v6, Lcom/sun/jna/ELFAnalyser$ELFSectionHeaderEntry;
+    invoke-direct {v6, p1, v1}, Lcom/sun/jna/ELFAnalyser$ELFSectionHeaderEntry;-><init>(ZLjava/nio/ByteBuffer;)V
 
     .line 156
     .line 157
-    invoke-direct {v6, p1, v1}, Lcom/sun/jna/ELFAnalyser$ELFSectionHeaderEntry;-><init>(ZLjava/nio/ByteBuffer;)V
-
     .line 158
-    .line 159
-    .line 160
     invoke-interface {v5, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
+    .line 159
+    .line 160
     .line 161
-    .line 162
-    .line 163
     add-int/lit8 v0, v0, 0x1
 
-    .line 164
-    .line 165
+    .line 162
+    .line 163
     goto :goto_3
 
-    .line 166
-    :cond_5
+    .line 164
+    :cond_4
     iget-object p1, p0, Lcom/sun/jna/ELFAnalyser$ELFSectionHeaders;->entries:Ljava/util/List;
+
+    .line 165
+    .line 166
+    invoke-interface {p1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     .line 167
     .line 168
-    invoke-interface {p1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
     .line 169
-    .line 170
-    .line 171
     move-result-object p1
 
-    .line 172
+    .line 170
     check-cast p1, Lcom/sun/jna/ELFAnalyser$ELFSectionHeaderEntry;
+
+    .line 171
+    .line 172
+    invoke-virtual {p1}, Lcom/sun/jna/ELFAnalyser$ELFSectionHeaderEntry;->getSize()J
 
     .line 173
     .line 174
-    invoke-virtual {p1}, Lcom/sun/jna/ELFAnalyser$ELFSectionHeaderEntry;->getSize()J
-
     .line 175
-    .line 176
-    .line 177
     move-result-wide v0
 
-    .line 178
+    .line 176
     long-to-int p3, v0
 
-    .line 179
+    .line 177
     invoke-static {p3}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
+    .line 178
+    .line 179
     .line 180
-    .line 181
-    .line 182
     move-result-object p3
 
+    .line 181
+    if-eqz p2, :cond_5
+
+    .line 182
     .line 183
-    if-eqz p2, :cond_6
+    sget-object p2, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
 
     .line 184
     .line 185
-    sget-object p2, Ljava/nio/ByteOrder;->BIG_ENDIAN:Ljava/nio/ByteOrder;
-
-    .line 186
-    .line 187
     goto :goto_4
 
-    .line 188
-    :cond_6
+    .line 186
+    :cond_5
     sget-object p2, Ljava/nio/ByteOrder;->LITTLE_ENDIAN:Ljava/nio/ByteOrder;
 
-    .line 189
-    .line 190
+    .line 187
+    .line 188
     :goto_4
     invoke-virtual {p3, p2}, Ljava/nio/ByteBuffer;->order(Ljava/nio/ByteOrder;)Ljava/nio/ByteBuffer;
 
+    .line 189
+    .line 190
     .line 191
-    .line 192
-    .line 193
     invoke-virtual {p4}, Ljava/io/RandomAccessFile;->getChannel()Ljava/nio/channels/FileChannel;
 
+    .line 192
+    .line 193
     .line 194
-    .line 195
-    .line 196
     move-result-object p2
 
-    .line 197
+    .line 195
     invoke-virtual {p1}, Lcom/sun/jna/ELFAnalyser$ELFSectionHeaderEntry;->getOffset()J
 
+    .line 196
+    .line 197
     .line 198
-    .line 199
-    .line 200
     move-result-wide v0
 
-    .line 201
+    .line 199
     invoke-virtual {p2, p3, v0, v1}, Ljava/nio/channels/FileChannel;->read(Ljava/nio/ByteBuffer;J)I
 
+    .line 200
+    .line 201
     .line 202
-    .line 203
-    .line 204
     invoke-virtual {p3}, Ljava/nio/ByteBuffer;->rewind()Ljava/nio/Buffer;
 
+    .line 203
+    .line 204
     .line 205
+    new-instance p1, Ljava/io/ByteArrayOutputStream;
+
     .line 206
     .line 207
-    new-instance p1, Ljava/io/ByteArrayOutputStream;
+    const/16 p2, 0x14
 
     .line 208
     .line 209
-    const/16 p2, 0x14
+    invoke-direct {p1, p2}, Ljava/io/ByteArrayOutputStream;-><init>(I)V
 
     .line 210
     .line 211
-    invoke-direct {p1, p2}, Ljava/io/ByteArrayOutputStream;-><init>(I)V
-
     .line 212
+    iget-object p0, p0, Lcom/sun/jna/ELFAnalyser$ELFSectionHeaders;->entries:Ljava/util/List;
+
     .line 213
     .line 214
-    iget-object p0, p0, Lcom/sun/jna/ELFAnalyser$ELFSectionHeaders;->entries:Ljava/util/List;
+    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     .line 215
     .line 216
-    invoke-interface {p0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
     .line 217
-    .line 218
-    .line 219
     move-result-object p0
 
-    .line 220
+    .line 218
     :goto_5
     invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
+    .line 219
+    .line 220
     .line 221
-    .line 222
-    .line 223
     move-result p2
 
+    .line 222
+    if-eqz p2, :cond_7
+
+    .line 223
     .line 224
-    if-eqz p2, :cond_9
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     .line 225
     .line 226
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
     .line 227
-    .line 228
-    .line 229
     move-result-object p2
 
-    .line 230
+    .line 228
     check-cast p2, Lcom/sun/jna/ELFAnalyser$ELFSectionHeaderEntry;
+
+    .line 229
+    .line 230
+    invoke-virtual {p1}, Ljava/io/ByteArrayOutputStream;->reset()V
 
     .line 231
     .line 232
-    invoke-virtual {p1}, Ljava/io/ByteArrayOutputStream;->reset()V
-
     .line 233
-    .line 234
-    .line 235
     invoke-virtual {p2}, Lcom/sun/jna/ELFAnalyser$ELFSectionHeaderEntry;->getNameOffset()I
 
+    .line 234
+    .line 235
     .line 236
-    .line 237
-    .line 238
     move-result p4
 
-    .line 239
+    .line 237
     invoke-virtual {p3, p4}, Ljava/nio/Buffer;->position(I)Ljava/nio/Buffer;
 
+    .line 238
+    .line 239
     .line 240
-    .line 241
-    .line 242
     :goto_6
     invoke-virtual {p3}, Ljava/nio/Buffer;->position()I
 
+    .line 241
+    .line 242
     .line 243
-    .line 244
-    .line 245
     move-result p4
 
-    .line 246
+    .line 244
     invoke-virtual {p3}, Ljava/nio/Buffer;->limit()I
 
+    .line 245
+    .line 246
     .line 247
-    .line 248
-    .line 249
     move-result v0
 
+    .line 248
+    if-ge p4, v0, :cond_6
+
+    .line 249
     .line 250
-    if-ge p4, v0, :cond_8
+    invoke-virtual {p3}, Ljava/nio/ByteBuffer;->get()B
 
     .line 251
     .line 252
-    invoke-virtual {p3}, Ljava/nio/ByteBuffer;->get()B
-
     .line 253
-    .line 254
-    .line 255
     move-result p4
 
+    .line 254
+    if-eqz p4, :cond_6
+
+    .line 255
     .line 256
-    if-nez p4, :cond_7
+    invoke-virtual {p1, p4}, Ljava/io/ByteArrayOutputStream;->write(I)V
 
     .line 257
     .line 258
-    goto :goto_7
-
     .line 259
-    :cond_7
-    invoke-virtual {p1, p4}, Ljava/io/ByteArrayOutputStream;->write(I)V
-
-    .line 260
-    .line 261
-    .line 262
     goto :goto_6
 
-    .line 263
-    :cond_8
-    :goto_7
+    .line 260
+    :cond_6
     const-string p4, "ASCII"
 
-    .line 264
-    .line 265
+    .line 261
+    .line 262
     invoke-virtual {p1, p4}, Ljava/io/ByteArrayOutputStream;->toString(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 266
-    .line 267
-    .line 268
+    .line 263
+    .line 264
+    .line 265
     move-result-object p4
 
-    .line 269
+    .line 266
     invoke-virtual {p2, p4}, Lcom/sun/jna/ELFAnalyser$ELFSectionHeaderEntry;->setName(Ljava/lang/String;)V
 
-    .line 270
-    .line 271
-    .line 272
+    .line 267
+    .line 268
+    .line 269
     goto :goto_5
 
-    .line 273
-    :cond_9
-    :goto_8
+    .line 270
+    :cond_7
     return-void
 .end method
 

@@ -1,228 +1,214 @@
 .class public final synthetic Lal;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Le62;
+.implements Le72;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final synthetic i:B
 
-.field public final synthetic k:Z
-
-.field public final synthetic l:Lp62;
-
-.field public final synthetic m:Z
+.field public final synthetic j:Lbv6;
 
 
 # direct methods
-.method public synthetic constructor <init>(ZLp62;ZB)V
+.method public synthetic constructor <init>(Lbv6;B)V
     .locals 0
 
     .line 1
-    iput-byte p4, p0, Lal;->j:B
+    iput-byte p2, p0, Lal;->i:B
 
     .line 2
     .line 3
-    iput-boolean p1, p0, Lal;->k:Z
+    iput-object p1, p0, Lal;->j:Lbv6;
 
     .line 4
     .line 5
-    iput-object p2, p0, Lal;->l:Lp62;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 6
     .line 7
-    iput-boolean p3, p0, Lal;->m:Z
-
     .line 8
-    .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 10
-    .line 11
-    .line 12
     return-void
 .end method
 
 
 # virtual methods
 .method public final invoke()Ljava/lang/Object;
-    .locals 4
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Lal;->j:B
+    iget-byte v0, p0, Lal;->i:B
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    iget-object p0, p0, Lal;->j:Lbv6;
 
     .line 4
     .line 5
-    iget-boolean v2, p0, Lal;->m:Z
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
-    iget-object v3, p0, Lal;->l:Lp62;
-
     .line 8
-    .line 9
-    iget-boolean p0, p0, Lal;->k:Z
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
 
+    .line 9
     .line 10
     .line 11
-    packed-switch v0, :pswitch_data_0
+    move-result-object p0
 
     .line 12
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
+
     .line 13
     .line 14
-    if-eqz p0, :cond_0
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     .line 15
     .line 16
-    xor-int/lit8 p0, v2, 0x1
-
     .line 17
+    move-result-object p0
+
     .line 18
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    return-object p0
 
     .line 19
+    :pswitch_0
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
+
     .line 20
     .line 21
-    move-result-object p0
-
     .line 22
-    invoke-interface {v3, p0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object p0
 
     .line 23
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
+
     .line 24
     .line 25
-    :cond_0
-    return-object v1
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     .line 26
-    :pswitch_0
-    if-nez p0, :cond_1
-
     .line 27
     .line 28
-    goto :goto_0
+    move-result-object p0
 
     .line 29
-    :cond_1
-    xor-int/lit8 p0, v2, 0x1
+    return-object p0
 
     .line 30
-    .line 31
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    :pswitch_1
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
 
+    .line 31
     .line 32
     .line 33
-    .line 34
     move-result-object p0
+
+    .line 34
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
 
     .line 35
-    invoke-interface {v3, p0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 36
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
     .line 37
     .line 38
-    :goto_0
-    return-object v1
-
     .line 39
-    :pswitch_1
-    if-nez p0, :cond_2
-
-    .line 40
-    .line 41
-    goto :goto_1
-
-    .line 42
-    :cond_2
-    xor-int/lit8 p0, v2, 0x1
-
-    .line 43
-    .line 44
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 45
-    .line 46
-    .line 47
     move-result-object p0
 
-    .line 48
-    invoke-interface {v3, p0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 40
+    return-object p0
 
+    .line 41
+    :pswitch_2
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
+
+    .line 42
+    .line 43
+    .line 44
+    move-result-object p0
+
+    .line 45
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
+
+    .line 46
+    .line 47
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 48
     .line 49
     .line 50
+    move-result-object p0
+
     .line 51
-    :goto_1
-    return-object v1
+    return-object p0
 
     .line 52
-    :pswitch_2
-    if-eqz p0, :cond_3
+    :pswitch_3
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
 
     .line 53
     .line 54
-    xor-int/lit8 p0, v2, 0x1
-
     .line 55
+    move-result-object p0
+
     .line 56
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
 
     .line 57
     .line 58
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
     .line 59
+    .line 60
+    .line 61
     move-result-object p0
 
-    .line 60
-    invoke-interface {v3, p0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 61
     .line 62
+    return-object p0
+
     .line 63
-    :cond_3
-    return-object v1
+    :pswitch_4
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
 
     .line 64
-    :pswitch_3
-    if-eqz p0, :cond_4
-
     .line 65
     .line 66
-    xor-int/lit8 p0, v2, 0x1
-
-    .line 67
-    .line 68
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 69
-    .line 70
-    .line 71
     move-result-object p0
 
+    .line 67
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
+
+    .line 68
+    .line 69
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 70
+    .line 71
     .line 72
-    invoke-interface {v3, p0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object p0
 
     .line 73
+    return-object p0
+
     .line 74
+    :pswitch_5
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
+
     .line 75
-    :cond_4
-    return-object v1
-
     .line 76
-    :pswitch_4
-    if-eqz p0, :cond_5
-
     .line 77
+    move-result-object p0
+
     .line 78
-    xor-int/lit8 p0, v2, 0x1
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
 
     .line 79
     .line 80
-    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     .line 81
     .line 82
@@ -230,20 +216,340 @@
     move-result-object p0
 
     .line 84
-    invoke-interface {v3, p0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    return-object p0
 
     .line 85
+    :pswitch_6
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
+
     .line 86
     .line 87
-    :cond_5
-    return-object v1
-
     .line 88
-    nop
+    move-result-object p0
 
     .line 89
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
+
+    .line 90
+    .line 91
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 92
+    .line 93
+    .line 94
+    move-result-object p0
+
+    .line 95
+    return-object p0
+
+    .line 96
+    :pswitch_7
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
+
+    .line 97
+    .line 98
+    .line 99
+    move-result-object p0
+
+    .line 100
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
+
+    .line 101
+    .line 102
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 103
+    .line 104
+    .line 105
+    move-result-object p0
+
+    .line 106
+    return-object p0
+
+    .line 107
+    :pswitch_8
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
+
+    .line 108
+    .line 109
+    .line 110
+    move-result-object p0
+
+    .line 111
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
+
+    .line 112
+    .line 113
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 114
+    .line 115
+    .line 116
+    move-result-object p0
+
+    .line 117
+    return-object p0
+
+    .line 118
+    :pswitch_9
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
+
+    .line 119
+    .line 120
+    .line 121
+    move-result-object p0
+
+    .line 122
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
+
+    .line 123
+    .line 124
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 125
+    .line 126
+    .line 127
+    move-result-object p0
+
+    .line 128
+    return-object p0
+
+    .line 129
+    :pswitch_a
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
+
+    .line 130
+    .line 131
+    .line 132
+    move-result-object p0
+
+    .line 133
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
+
+    .line 134
+    .line 135
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 136
+    .line 137
+    .line 138
+    move-result-object p0
+
+    .line 139
+    return-object p0
+
+    .line 140
+    :pswitch_b
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
+
+    .line 141
+    .line 142
+    .line 143
+    move-result-object p0
+
+    .line 144
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
+
+    .line 145
+    .line 146
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 147
+    .line 148
+    .line 149
+    move-result-object p0
+
+    .line 150
+    return-object p0
+
+    .line 151
+    :pswitch_c
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
+
+    .line 152
+    .line 153
+    .line 154
+    move-result-object p0
+
+    .line 155
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
+
+    .line 156
+    .line 157
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 158
+    .line 159
+    .line 160
+    move-result-object p0
+
+    .line 161
+    return-object p0
+
+    .line 162
+    :pswitch_d
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
+
+    .line 163
+    .line 164
+    .line 165
+    move-result-object p0
+
+    .line 166
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
+
+    .line 167
+    .line 168
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 169
+    .line 170
+    .line 171
+    move-result-object p0
+
+    .line 172
+    return-object p0
+
+    .line 173
+    :pswitch_e
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
+
+    .line 174
+    .line 175
+    .line 176
+    move-result-object p0
+
+    .line 177
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
+
+    .line 178
+    .line 179
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 180
+    .line 181
+    .line 182
+    move-result-object p0
+
+    .line 183
+    return-object p0
+
+    .line 184
+    :pswitch_f
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
+
+    .line 185
+    .line 186
+    .line 187
+    move-result-object p0
+
+    .line 188
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
+
+    .line 189
+    .line 190
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 191
+    .line 192
+    .line 193
+    move-result-object p0
+
+    .line 194
+    return-object p0
+
+    .line 195
+    :pswitch_10
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
+
+    .line 196
+    .line 197
+    .line 198
+    move-result-object p0
+
+    .line 199
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
+
+    .line 200
+    .line 201
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 202
+    .line 203
+    .line 204
+    move-result-object p0
+
+    .line 205
+    return-object p0
+
+    .line 206
+    :pswitch_11
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
+
+    .line 207
+    .line 208
+    .line 209
+    move-result-object p0
+
+    .line 210
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
+
+    .line 211
+    .line 212
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 213
+    .line 214
+    .line 215
+    move-result-object p0
+
+    .line 216
+    return-object p0
+
+    .line 217
+    :pswitch_12
+    invoke-virtual {p0}, Lbv6;->c()Lor6;
+
+    .line 218
+    .line 219
+    .line 220
+    move-result-object p0
+
+    .line 221
+    iget-object p0, p0, Lor6;->k:Ljava/lang/CharSequence;
+
+    .line 222
+    .line 223
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 224
+    .line 225
+    .line 226
+    move-result-object p0
+
+    .line 227
+    return-object p0
+
+    .line 228
+    nop
+
+    .line 229
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_12
+        :pswitch_11
+        :pswitch_10
+        :pswitch_f
+        :pswitch_e
+        :pswitch_d
+        :pswitch_c
+        :pswitch_b
+        :pswitch_a
+        :pswitch_9
+        :pswitch_8
+        :pswitch_7
+        :pswitch_6
+        :pswitch_5
         :pswitch_4
         :pswitch_3
         :pswitch_2

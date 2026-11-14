@@ -1,597 +1,381 @@
 .class public final Lnw2;
-.super Lyt2;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final A0:Lb55;
-
-.field public final z0:Lzo;
+.field public final a:J
 
 
 # direct methods
-.method public constructor <init>(Lzo;Lbw2;)V
+.method public synthetic constructor <init>(J)V
     .locals 0
 
     .line 1
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-wide p1, p0, Lnw2;->a:J
 
     .line 5
     .line 6
+    return-void
+.end method
+
+.method public static a(IIIJ)J
+    .locals 4
+
+    .line 1
+    and-int/lit8 v0, p2, 0x1
+
+    .line 2
+    .line 3
+    const/16 v1, 0x20
+
+    .line 4
+    .line 5
+    if-eqz v0, :cond_0
+
+    .line 6
     .line 7
-    iput-object p1, p0, Lnw2;->z0:Lzo;
+    shr-long v2, p3, v1
 
     .line 8
     .line 9
-    iget-object p1, p2, Lbw2;->b:Lb55;
+    long-to-int p0, v2
 
     .line 10
-    .line 11
-    iput-object p1, p0, Lnw2;->A0:Lb55;
+    :cond_0
+    and-int/lit8 p2, p2, 0x2
 
+    .line 11
+    .line 12
+    const-wide v2, 0xffffffffL
+
+    .line 13
+    .line 14
+    .line 15
+    .line 16
+    .line 17
+    if-eqz p2, :cond_1
+
+    .line 18
+    .line 19
+    and-long/2addr p3, v2
+
+    .line 20
+    long-to-int p1, p3
+
+    .line 21
+    :cond_1
+    int-to-long p2, p0
+
+    .line 22
+    shl-long/2addr p2, v1
+
+    .line 23
+    int-to-long p0, p1
+
+    .line 24
+    and-long/2addr p0, v2
+
+    .line 25
+    or-long/2addr p2, p0
+
+    .line 26
+    return-wide p2
+.end method
+
+.method public static final b(JJ)Z
+    .locals 0
+
+    .line 1
+    cmp-long p0, p0, p2
+
+    .line 2
+    .line 3
+    if-nez p0, :cond_0
+
+    .line 4
+    .line 5
+    const/4 p0, 0x1
+
+    .line 6
+    return p0
+
+    .line 7
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 8
+    return p0
+.end method
+
+.method public static final c(JJ)J
+    .locals 4
+
+    .line 1
+    const/16 v0, 0x20
+
+    .line 2
+    .line 3
+    shr-long v1, p0, v0
+
+    .line 4
+    .line 5
+    long-to-int v1, v1
+
+    .line 6
+    shr-long v2, p2, v0
+
+    .line 7
+    .line 8
+    long-to-int v2, v2
+
+    .line 9
+    sub-int/2addr v1, v2
+
+    .line 10
+    const-wide v2, 0xffffffffL
+
+    .line 11
     .line 12
     .line 13
-    return-void
+    .line 14
+    .line 15
+    and-long/2addr p0, v2
+
+    .line 16
+    long-to-int p0, p0
+
+    .line 17
+    and-long/2addr p2, v2
+
+    .line 18
+    long-to-int p1, p2
+
+    .line 19
+    sub-int/2addr p0, p1
+
+    .line 20
+    int-to-long p1, v1
+
+    .line 21
+    shl-long/2addr p1, v0
+
+    .line 22
+    int-to-long v0, p0
+
+    .line 23
+    and-long/2addr v0, v2
+
+    .line 24
+    or-long/2addr p1, v0
+
+    .line 25
+    return-wide p1
+.end method
+
+.method public static final d(JJ)J
+    .locals 4
+
+    .line 1
+    const/16 v0, 0x20
+
+    .line 2
+    .line 3
+    shr-long v1, p0, v0
+
+    .line 4
+    .line 5
+    long-to-int v1, v1
+
+    .line 6
+    shr-long v2, p2, v0
+
+    .line 7
+    .line 8
+    long-to-int v2, v2
+
+    .line 9
+    add-int/2addr v1, v2
+
+    .line 10
+    const-wide v2, 0xffffffffL
+
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    and-long/2addr p0, v2
+
+    .line 16
+    long-to-int p0, p0
+
+    .line 17
+    and-long/2addr p2, v2
+
+    .line 18
+    long-to-int p1, p2
+
+    .line 19
+    add-int/2addr p0, p1
+
+    .line 20
+    int-to-long p1, v1
+
+    .line 21
+    shl-long/2addr p1, v0
+
+    .line 22
+    int-to-long v0, p0
+
+    .line 23
+    and-long/2addr v0, v2
+
+    .line 24
+    or-long/2addr p1, v0
+
+    .line 25
+    return-wide p1
+.end method
+
+.method public static e(J)Ljava/lang/String;
+    .locals 3
+
+    .line 1
+    const/16 v0, 0x20
+
+    .line 2
+    .line 3
+    shr-long v0, p0, v0
+
+    .line 4
+    .line 5
+    long-to-int v0, v0
+
+    .line 6
+    const-wide v1, 0xffffffffL
+
+    .line 7
+    .line 8
+    .line 9
+    .line 10
+    .line 11
+    and-long/2addr p0, v1
+
+    .line 12
+    long-to-int p0, p0
+
+    .line 13
+    const-string p1, ", "
+
+    .line 14
+    .line 15
+    const-string v1, ")"
+
+    .line 16
+    .line 17
+    const-string v2, "("
+
+    .line 18
+    .line 19
+    invoke-static {v0, p0, v2, p1, v1}, Lky1;->i(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-object p0
+
+    .line 23
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public final b()J
-    .locals 4
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
     .line 1
-    iget-object p0, p0, Lnw2;->z0:Lzo;
+    instance-of v0, p1, Lnw2;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Lzo;->k()Ljava/lang/String;
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    .line 6
-    move-result-object v0
+    check-cast p1, Lnw2;
 
+    .line 6
     .line 7
-    const/4 v1, 0x0
+    iget-wide v0, p1, Lnw2;->a:J
 
     .line 8
-    :try_start_0
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 9
+    iget-wide p0, p0, Lnw2;->a:J
+
     .line 10
     .line 11
-    invoke-static {v0}, Ln27;->l(Ljava/lang/String;)Lc27;
+    cmp-long p0, p0, v0
 
     .line 12
     .line 13
+    if-eqz p0, :cond_1
+
     .line 14
-    move-result-object v2
-
     .line 15
-    if-eqz v2, :cond_0
-
-    .line 16
-    .line 17
-    iget-wide v0, v2, Lc27;->j:J
-
-    .line 18
-    .line 19
-    return-wide v0
-
-    .line 20
     :cond_0
-    invoke-static {v0}, Lhd6;->d0(Ljava/lang/String;)V
-
-    .line 21
-    .line 22
-    .line 23
-    throw v1
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 24
-    :catch_0
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    .line 25
-    .line 26
-    const-string v3, "Failed to parse type \'ULong\' for input \'"
-
-    .line 27
-    .line 28
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 29
-    .line 30
-    .line 31
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 32
-    .line 33
-    .line 34
-    const/16 v0, 0x27
-
-    .line 35
-    .line 36
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 37
-    .line 38
-    .line 39
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 40
-    .line 41
-    .line 42
-    move-result-object v0
-
-    .line 43
-    const/4 v2, 0x0
-
-    .line 44
-    const/4 v3, 0x6
-
-    .line 45
-    invoke-static {p0, v0, v2, v1, v3}, Lzo;->m(Lzo;Ljava/lang/String;ILjava/lang/String;I)V
-
-    .line 46
-    .line 47
-    .line 48
-    throw v1
-.end method
-
-.method public final h(Luy5;)I
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    .line 5
-    .line 6
-    const-string p1, "unsupported"
-
-    .line 7
-    .line 8
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
-
-    .line 9
-    .line 10
-    .line 11
-    throw p0
-.end method
-
-.method public final q()I
-    .locals 4
-
-    .line 1
-    iget-object p0, p0, Lnw2;->z0:Lzo;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lzo;->k()Ljava/lang/String;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    const/4 v1, 0x0
-
-    .line 8
-    :try_start_0
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 9
-    .line 10
-    .line 11
-    invoke-static {v0}, Ln27;->k(Ljava/lang/String;)Lx17;
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object v2
-
-    .line 15
-    if-eqz v2, :cond_0
+    const/4 p0, 0x0
 
     .line 16
-    .line 17
-    iget p0, v2, Lx17;->j:I
-
-    .line 18
-    .line 19
     return p0
 
-    .line 20
-    :cond_0
-    invoke-static {v0}, Lhd6;->d0(Ljava/lang/String;)V
+    .line 17
+    :cond_1
+    const/4 p0, 0x1
 
-    .line 21
-    .line 22
-    .line 23
-    throw v1
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 24
-    :catch_0
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    .line 25
-    .line 26
-    const-string v3, "Failed to parse type \'UInt\' for input \'"
-
-    .line 27
-    .line 28
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 29
-    .line 30
-    .line 31
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 32
-    .line 33
-    .line 34
-    const/16 v0, 0x27
-
-    .line 35
-    .line 36
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 37
-    .line 38
-    .line 39
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 40
-    .line 41
-    .line 42
-    move-result-object v0
-
-    .line 43
-    const/4 v2, 0x0
-
-    .line 44
-    const/4 v3, 0x6
-
-    .line 45
-    invoke-static {p0, v0, v2, v1, v3}, Lzo;->m(Lzo;Ljava/lang/String;ILjava/lang/String;I)V
-
-    .line 46
-    .line 47
-    .line 48
-    throw v1
+    .line 18
+    return p0
 .end method
 
-.method public final t()Lb55;
-    .locals 0
+.method public final hashCode()I
+    .locals 2
 
     .line 1
-    iget-object p0, p0, Lnw2;->A0:Lb55;
+    iget-wide v0, p0, Lnw2;->a:J
 
     .line 2
     .line 3
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lnw2;->a:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Lnw2;->e(J)Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
     return-object p0
-.end method
-
-.method public final v()B
-    .locals 4
-
-    .line 1
-    iget-object p0, p0, Lnw2;->z0:Lzo;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lzo;->k()Ljava/lang/String;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    const/4 v1, 0x0
-
-    .line 8
-    :try_start_0
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 9
-    .line 10
-    .line 11
-    invoke-static {v0}, Ln27;->k(Ljava/lang/String;)Lx17;
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object v2
-
-    .line 15
-    if-eqz v2, :cond_1
-
-    .line 16
-    .line 17
-    iget v2, v2, Lx17;->j:I
-
-    .line 18
-    .line 19
-    const/16 v3, 0xff
-
-    .line 20
-    .line 21
-    invoke-static {v2, v3}, Ljava/lang/Integer;->compareUnsigned(II)I
-
-    .line 22
-    .line 23
-    .line 24
-    move-result v3
-
-    .line 25
-    if-lez v3, :cond_0
-
-    .line 26
-    .line 27
-    goto :goto_0
-
-    .line 28
-    :cond_0
-    int-to-byte v2, v2
-
-    .line 29
-    new-instance v3, Ls17;
-
-    .line 30
-    .line 31
-    invoke-direct {v3, v2}, Ls17;-><init>(B)V
-
-    .line 32
-    .line 33
-    .line 34
-    goto :goto_1
-
-    .line 35
-    :cond_1
-    :goto_0
-    move-object v3, v1
-
-    .line 36
-    :goto_1
-    if-eqz v3, :cond_2
-
-    .line 37
-    .line 38
-    iget-byte p0, v3, Ls17;->j:B
-
-    .line 39
-    .line 40
-    return p0
-
-    .line 41
-    :cond_2
-    invoke-static {v0}, Lhd6;->d0(Ljava/lang/String;)V
-
-    .line 42
-    .line 43
-    .line 44
-    throw v1
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 45
-    :catch_0
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    .line 46
-    .line 47
-    const-string v3, "Failed to parse type \'UByte\' for input \'"
-
-    .line 48
-    .line 49
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 50
-    .line 51
-    .line 52
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 53
-    .line 54
-    .line 55
-    const/16 v0, 0x27
-
-    .line 56
-    .line 57
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 58
-    .line 59
-    .line 60
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 61
-    .line 62
-    .line 63
-    move-result-object v0
-
-    .line 64
-    const/4 v2, 0x0
-
-    .line 65
-    const/4 v3, 0x6
-
-    .line 66
-    invoke-static {p0, v0, v2, v1, v3}, Lzo;->m(Lzo;Ljava/lang/String;ILjava/lang/String;I)V
-
-    .line 67
-    .line 68
-    .line 69
-    throw v1
-.end method
-
-.method public final z()S
-    .locals 4
-
-    .line 1
-    iget-object p0, p0, Lnw2;->z0:Lzo;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lzo;->k()Ljava/lang/String;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    const/4 v1, 0x0
-
-    .line 8
-    :try_start_0
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 9
-    .line 10
-    .line 11
-    invoke-static {v0}, Ln27;->k(Ljava/lang/String;)Lx17;
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object v2
-
-    .line 15
-    if-eqz v2, :cond_1
-
-    .line 16
-    .line 17
-    iget v2, v2, Lx17;->j:I
-
-    .line 18
-    .line 19
-    const v3, 0xffff
-
-    .line 20
-    .line 21
-    .line 22
-    invoke-static {v2, v3}, Ljava/lang/Integer;->compareUnsigned(II)I
-
-    .line 23
-    .line 24
-    .line 25
-    move-result v3
-
-    .line 26
-    if-lez v3, :cond_0
-
-    .line 27
-    .line 28
-    goto :goto_0
-
-    .line 29
-    :cond_0
-    int-to-short v2, v2
-
-    .line 30
-    new-instance v3, Li27;
-
-    .line 31
-    .line 32
-    invoke-direct {v3, v2}, Li27;-><init>(S)V
-
-    .line 33
-    .line 34
-    .line 35
-    goto :goto_1
-
-    .line 36
-    :cond_1
-    :goto_0
-    move-object v3, v1
-
-    .line 37
-    :goto_1
-    if-eqz v3, :cond_2
-
-    .line 38
-    .line 39
-    iget-short p0, v3, Li27;->j:S
-
-    .line 40
-    .line 41
-    return p0
-
-    .line 42
-    :cond_2
-    invoke-static {v0}, Lhd6;->d0(Ljava/lang/String;)V
-
-    .line 43
-    .line 44
-    .line 45
-    throw v1
-    :try_end_0
-    .catch Ljava/lang/IllegalArgumentException; {:try_start_0 .. :try_end_0} :catch_0
-
-    .line 46
-    :catch_0
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    .line 47
-    .line 48
-    const-string v3, "Failed to parse type \'UShort\' for input \'"
-
-    .line 49
-    .line 50
-    invoke-direct {v2, v3}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 51
-    .line 52
-    .line 53
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 54
-    .line 55
-    .line 56
-    const/16 v0, 0x27
-
-    .line 57
-    .line 58
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 59
-    .line 60
-    .line 61
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 62
-    .line 63
-    .line 64
-    move-result-object v0
-
-    .line 65
-    const/4 v2, 0x0
-
-    .line 66
-    const/4 v3, 0x6
-
-    .line 67
-    invoke-static {p0, v0, v2, v1, v3}, Lzo;->m(Lzo;Ljava/lang/String;ILjava/lang/String;I)V
-
-    .line 68
-    .line 69
-    .line 70
-    throw v1
 .end method

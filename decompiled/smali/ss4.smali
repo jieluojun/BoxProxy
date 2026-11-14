@@ -1,140 +1,427 @@
-.class public final enum Lss4;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Lss4;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
-.field public static final enum j:Lss4;
+.field public static final a:J
 
-.field public static final enum k:Lss4;
-
-.field public static final enum l:Lss4;
-
-.field public static final synthetic m:[Lss4;
+.field public static final synthetic b:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 2
 
     .line 1
-    new-instance v0, Lss4;
+    sget-object v0, Lgy6;->b:[Liy6;
 
     .line 2
     .line 3
-    const-string v1, "Start"
+    sget-wide v0, Lgy6;->c:J
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    sput-wide v0, Lss4;->a:J
 
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 7
-    .line 8
-    .line 9
-    sput-object v0, Lss4;->j:Lss4;
-
-    .line 10
-    .line 11
-    new-instance v1, Lss4;
-
-    .line 12
-    .line 13
-    const-string v2, "Center"
-
-    .line 14
-    .line 15
-    const/4 v3, 0x1
-
-    .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 17
-    .line 18
-    .line 19
-    sput-object v1, Lss4;->k:Lss4;
-
-    .line 20
-    .line 21
-    new-instance v2, Lss4;
-
-    .line 22
-    .line 23
-    const-string v3, "End"
-
-    .line 24
-    .line 25
-    const/4 v4, 0x2
-
-    .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 27
-    .line 28
-    .line 29
-    sput-object v2, Lss4;->l:Lss4;
-
-    .line 30
-    .line 31
-    filled-new-array {v0, v1, v2}, [Lss4;
-
-    .line 32
-    .line 33
-    .line 34
-    move-result-object v0
-
-    .line 35
-    sput-object v0, Lss4;->m:[Lss4;
-
-    .line 36
-    .line 37
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lss4;
-    .locals 1
+.method public static final a(Lrs4;IIJLkv6;Ldw4;Lhd3;IILrw6;)Lrs4;
+    .locals 17
 
     .line 1
-    const-class v0, Lss4;
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    move/from16 v1, p1
 
     .line 4
     .line 5
-    .line 6
-    move-result-object p0
+    move/from16 v2, p2
 
+    .line 6
     .line 7
-    check-cast p0, Lss4;
+    move-wide/from16 v3, p3
 
     .line 8
     .line 9
-    return-object p0
-.end method
+    move-object/from16 v5, p5
 
-.method public static values()[Lss4;
-    .locals 1
+    .line 10
+    .line 11
+    move-object/from16 v6, p6
 
-    .line 1
-    sget-object v0, Lss4;->m:[Lss4;
+    .line 12
+    .line 13
+    move-object/from16 v7, p7
 
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    .line 14
+    .line 15
+    move/from16 v8, p8
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
+    .line 16
+    .line 17
+    move/from16 v9, p9
 
-    .line 7
-    check-cast v0, [Lss4;
+    .line 18
+    .line 19
+    move-object/from16 v10, p10
 
-    .line 8
-    .line 9
+    .line 20
+    .line 21
+    const-wide/16 v11, 0x0
+
+    .line 22
+    .line 23
+    const-wide v13, 0xff00000000L
+
+    .line 24
+    .line 25
+    .line 26
+    .line 27
+    .line 28
+    if-eqz v1, :cond_0
+
+    .line 29
+    .line 30
+    iget v15, v0, Lrs4;->a:I
+
+    .line 31
+    .line 32
+    if-ne v1, v15, :cond_9
+
+    .line 33
+    .line 34
+    :cond_0
+    sget-object v15, Lgy6;->b:[Liy6;
+
+    .line 35
+    .line 36
+    and-long v15, v3, v13
+
+    .line 37
+    .line 38
+    cmp-long v15, v15, v11
+
+    .line 39
+    .line 40
+    if-nez v15, :cond_1
+
+    .line 41
+    .line 42
+    move-wide v15, v11
+
+    .line 43
+    goto :goto_0
+
+    .line 44
+    :cond_1
+    move-wide v15, v11
+
+    .line 45
+    iget-wide v11, v0, Lrs4;->c:J
+
+    .line 46
+    .line 47
+    invoke-static {v3, v4, v11, v12}, Lgy6;->a(JJ)Z
+
+    .line 48
+    .line 49
+    .line 50
+    move-result v11
+
+    .line 51
+    if-eqz v11, :cond_a
+
+    .line 52
+    .line 53
+    :goto_0
+    if-eqz v5, :cond_2
+
+    .line 54
+    .line 55
+    iget-object v11, v0, Lrs4;->d:Lkv6;
+
+    .line 56
+    .line 57
+    invoke-virtual {v5, v11}, Lkv6;->equals(Ljava/lang/Object;)Z
+
+    .line 58
+    .line 59
+    .line 60
+    move-result v11
+
+    .line 61
+    if-eqz v11, :cond_a
+
+    .line 62
+    .line 63
+    :cond_2
+    if-eqz v2, :cond_3
+
+    .line 64
+    .line 65
+    iget v11, v0, Lrs4;->b:I
+
+    .line 66
+    .line 67
+    if-ne v2, v11, :cond_a
+
+    .line 68
+    .line 69
+    :cond_3
+    if-eqz v6, :cond_4
+
+    .line 70
+    .line 71
+    iget-object v11, v0, Lrs4;->e:Ldw4;
+
+    .line 72
+    .line 73
+    invoke-virtual {v6, v11}, Ldw4;->equals(Ljava/lang/Object;)Z
+
+    .line 74
+    .line 75
+    .line 76
+    move-result v11
+
+    .line 77
+    if-eqz v11, :cond_a
+
+    .line 78
+    .line 79
+    :cond_4
+    if-eqz v7, :cond_5
+
+    .line 80
+    .line 81
+    iget-object v11, v0, Lrs4;->f:Lhd3;
+
+    .line 82
+    .line 83
+    invoke-virtual {v7, v11}, Lhd3;->equals(Ljava/lang/Object;)Z
+
+    .line 84
+    .line 85
+    .line 86
+    move-result v11
+
+    .line 87
+    if-eqz v11, :cond_a
+
+    .line 88
+    .line 89
+    :cond_5
+    if-eqz v8, :cond_6
+
+    .line 90
+    .line 91
+    iget v11, v0, Lrs4;->g:I
+
+    .line 92
+    .line 93
+    if-ne v8, v11, :cond_a
+
+    .line 94
+    .line 95
+    :cond_6
+    if-eqz v9, :cond_7
+
+    .line 96
+    .line 97
+    iget v11, v0, Lrs4;->h:I
+
+    .line 98
+    .line 99
+    if-ne v9, v11, :cond_a
+
+    .line 100
+    .line 101
+    :cond_7
+    if-eqz v10, :cond_8
+
+    .line 102
+    .line 103
+    iget-object v11, v0, Lrs4;->i:Lrw6;
+
+    .line 104
+    .line 105
+    invoke-virtual {v10, v11}, Lrw6;->equals(Ljava/lang/Object;)Z
+
+    .line 106
+    .line 107
+    .line 108
+    move-result v11
+
+    .line 109
+    if-eqz v11, :cond_a
+
+    .line 110
+    .line 111
+    :cond_8
+    return-object v0
+
+    .line 112
+    :cond_9
+    move-wide v15, v11
+
+    .line 113
+    :cond_a
+    sget-object v11, Lgy6;->b:[Liy6;
+
+    .line 114
+    .line 115
+    and-long v11, v3, v13
+
+    .line 116
+    .line 117
+    cmp-long v11, v11, v15
+
+    .line 118
+    .line 119
+    if-nez v11, :cond_b
+
+    .line 120
+    .line 121
+    iget-wide v3, v0, Lrs4;->c:J
+
+    .line 122
+    .line 123
+    :cond_b
+    if-nez v5, :cond_c
+
+    .line 124
+    .line 125
+    iget-object v5, v0, Lrs4;->d:Lkv6;
+
+    .line 126
+    .line 127
+    :cond_c
+    if-nez v1, :cond_d
+
+    .line 128
+    .line 129
+    iget v1, v0, Lrs4;->a:I
+
+    .line 130
+    .line 131
+    :cond_d
+    if-nez v2, :cond_e
+
+    .line 132
+    .line 133
+    iget v2, v0, Lrs4;->b:I
+
+    .line 134
+    .line 135
+    :cond_e
+    iget-object v11, v0, Lrs4;->e:Ldw4;
+
+    .line 136
+    .line 137
+    if-eqz v11, :cond_f
+
+    .line 138
+    .line 139
+    if-nez v6, :cond_f
+
+    .line 140
+    .line 141
+    move-object v6, v11
+
+    .line 142
+    :cond_f
+    if-nez v7, :cond_10
+
+    .line 143
+    .line 144
+    iget-object v7, v0, Lrs4;->f:Lhd3;
+
+    .line 145
+    .line 146
+    :cond_10
+    if-nez v8, :cond_11
+
+    .line 147
+    .line 148
+    iget v8, v0, Lrs4;->g:I
+
+    .line 149
+    .line 150
+    :cond_11
+    if-nez v9, :cond_12
+
+    .line 151
+    .line 152
+    iget v9, v0, Lrs4;->h:I
+
+    .line 153
+    .line 154
+    :cond_12
+    if-nez v10, :cond_13
+
+    .line 155
+    .line 156
+    iget-object v0, v0, Lrs4;->i:Lrw6;
+
+    .line 157
+    .line 158
+    move-object v10, v0
+
+    .line 159
+    :cond_13
+    new-instance v0, Lrs4;
+
+    .line 160
+    .line 161
+    move-object/from16 p0, v0
+
+    .line 162
+    .line 163
+    move/from16 p1, v1
+
+    .line 164
+    .line 165
+    move/from16 p2, v2
+
+    .line 166
+    .line 167
+    move-wide/from16 p3, v3
+
+    .line 168
+    .line 169
+    move-object/from16 p5, v5
+
+    .line 170
+    .line 171
+    move-object/from16 p6, v6
+
+    .line 172
+    .line 173
+    move-object/from16 p7, v7
+
+    .line 174
+    .line 175
+    move/from16 p8, v8
+
+    .line 176
+    .line 177
+    move/from16 p9, v9
+
+    .line 178
+    .line 179
+    move-object/from16 p10, v10
+
+    .line 180
+    .line 181
+    invoke-direct/range {p0 .. p10}, Lrs4;-><init>(IIJLkv6;Ldw4;Lhd3;IILrw6;)V
+
+    .line 182
+    .line 183
+    .line 184
     return-object v0
 .end method

@@ -1,151 +1,140 @@
-.class public final synthetic Lh5;
+.class public abstract Lh5;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lp62;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final synthetic j:B
+# static fields
+.field public static final a:Lsw3;
 
-.field public final synthetic k:Llp4;
-
-.field public final synthetic l:I
+.field public static final b:Lsw3;
 
 
 # direct methods
-.method public synthetic constructor <init>(Llp4;IB)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
     .line 1
-    iput-byte p3, p0, Lh5;->j:B
+    new-instance v0, Lqz0;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lh5;->k:Llp4;
+    const/4 v1, 0x4
 
     .line 4
-    .line 5
-    iput p2, p0, Lh5;->l:I
+    invoke-direct {v0, v1}, Lqz0;-><init>(B)V
 
+    .line 5
     .line 6
     .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sget-object v1, Lpw3;->i:Lpw3;
 
     .line 8
     .line 9
+    invoke-static {v1, v0}, Lxv;->G(Lsw3;Lu72;)Lsw3;
+
     .line 10
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 4
-
-    .line 1
-    iget-byte v0, p0, Lh5;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    const/4 v2, 0x0
-
-    .line 6
-    iget v3, p0, Lh5;->l:I
-
-    .line 7
-    .line 8
-    iget-object p0, p0, Lh5;->k:Llp4;
-
-    .line 9
-    .line 10
-    check-cast p1, Lkp4;
-
     .line 11
     .line 12
-    packed-switch v0, :pswitch_data_0
+    move-result-object v0
 
     .line 13
+    new-instance v2, Lj;
+
     .line 14
     .line 15
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v3, 0x7
 
     .line 16
+    invoke-direct {v2, v3}, Lj;-><init>(B)V
+
     .line 17
     .line 18
-    invoke-static {p1, p0, v3, v2}, Lkp4;->l(Lkp4;Llp4;II)V
-
     .line 19
+    const/4 v3, 0x1
+
     .line 20
+    invoke-static {v0, v3, v2}, Lq36;->a(Lsw3;ZLp72;)Lsw3;
+
     .line 21
-    return-object v1
-
     .line 22
-    :pswitch_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 23
+    move-result-object v0
+
     .line 24
+    const/4 v2, 0x2
+
     .line 25
-    invoke-static {p1, p0, v2, v3}, Lkp4;->l(Lkp4;Llp4;II)V
+    const/high16 v4, 0x41200000    # 10.0f
 
     .line 26
     .line 27
+    const/4 v5, 0x0
+
     .line 28
-    return-object v1
+    invoke-static {v0, v4, v5, v2}, Lok7;->M(Lsw3;FFI)Lsw3;
 
     .line 29
-    :pswitch_1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 30
     .line 31
+    move-result-object v0
+
     .line 32
-    const/4 v0, 0x0
+    sput-object v0, Lh5;->a:Lsw3;
 
     .line 33
-    invoke-virtual {p1, p0, v2, v3, v0}, Lkp4;->g(Llp4;IIF)V
-
     .line 34
+    new-instance v0, Lqz0;
+
     .line 35
     .line 36
-    return-object v1
+    const/4 v2, 0x5
 
     .line 37
-    :pswitch_2
-    neg-int v0, v3
+    invoke-direct {v0, v2}, Lqz0;-><init>(B)V
 
     .line 38
-    invoke-static {p1, p0, v2, v0}, Lkp4;->h(Lkp4;Llp4;II)V
-
     .line 39
     .line 40
+    invoke-static {v1, v0}, Lxv;->G(Lsw3;Lu72;)Lsw3;
+
     .line 41
-    return-object v1
-
     .line 42
-    :pswitch_3
-    neg-int v0, v3
-
     .line 43
-    invoke-static {p1, p0, v0, v2}, Lkp4;->h(Lkp4;Llp4;II)V
+    move-result-object v0
 
     .line 44
+    new-instance v1, Lj;
+
     .line 45
     .line 46
-    return-object v1
+    const/16 v2, 0x8
 
     .line 47
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 48
+    invoke-direct {v1, v2}, Lj;-><init>(B)V
+
+    .line 49
+    .line 50
+    .line 51
+    invoke-static {v0, v3, v1}, Lq36;->a(Lsw3;ZLp72;)Lsw3;
+
+    .line 52
+    .line 53
+    .line 54
+    move-result-object v0
+
+    .line 55
+    invoke-static {v0, v5, v4, v3}, Lok7;->M(Lsw3;FFI)Lsw3;
+
+    .line 56
+    .line 57
+    .line 58
+    move-result-object v0
+
+    .line 59
+    sput-object v0, Lh5;->b:Lsw3;
+
+    .line 60
+    .line 61
+    return-void
 .end method

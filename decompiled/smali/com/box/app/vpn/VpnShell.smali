@@ -520,11 +520,11 @@
 
     move-result-object v0
 
-    invoke-static {}, Ljc0;->g()Lwb0;
+    invoke-static {}, Lgc0;->g()Ltb0;
 
     move-result-object v1
 
-    iget-object v1, v1, Lwb0;->c:Ljava/lang/String;
+    iget-object v1, v1, Ltb0;->c:Ljava/lang/String;
 
     const-string v2, "whitelist"
 
@@ -662,11 +662,11 @@
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     :try_start_0
-    invoke-static {}, Ljc0;->k()Lyb0;
+    invoke-static {}, Lgc0;->k()Lvb0;
 
     move-result-object v1
 
-    iget-object v1, v1, Lyb0;->e:Ljava/io/File;
+    iget-object v1, v1, Lvb0;->e:Ljava/io/File;
 
     invoke-virtual {v1}, Ljava/io/File;->getPath()Ljava/lang/String;
 

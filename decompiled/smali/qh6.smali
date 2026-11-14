@@ -1,76 +1,123 @@
-.class public final Lqh6;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Lqh6;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lph6;
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
-
-.field public final synthetic k:Lrh6;
-
-.field public l:I
+.field public final i:Lgx;
 
 
 # direct methods
-.method public constructor <init>(Lrh6;Lz81;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Lqh6;->k:Lrh6;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
     .line 4
+    new-instance v0, Lgx;
+
     .line 5
     .line 6
+    const/4 v1, 0x0
+
+    .line 7
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    .line 8
+    .line 9
+    .line 10
+    iput-object v0, p0, Lqh6;->i:Lgx;
+
+    .line 11
+    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final e(I)Z
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lqh6;->j:Ljava/lang/Object;
+    iget-object p0, p0, Lqh6;->i:Lgx;
 
     .line 2
     .line 3
-    iget p1, p0, Lqh6;->l:I
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
+    move-result p0
+
     .line 7
-    or-int/2addr p1, v0
+    and-int/2addr p0, p1
 
     .line 8
-    iput p1, p0, Lqh6;->l:I
+    if-eqz p0, :cond_0
 
     .line 9
     .line 10
-    const-wide/16 v0, 0x0
+    const/4 p0, 0x1
 
     .line 11
+    return p0
+
     .line 12
-    const/4 p1, 0x0
+    :cond_0
+    const/4 p0, 0x0
 
     .line 13
-    iget-object v2, p0, Lqh6;->k:Lrh6;
+    return p0
+.end method
+
+.method public final f(I)V
+    .locals 3
+
+    .line 1
+    :cond_0
+    iget-object v0, p0, Lqh6;->i:Lgx;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v1
+
+    .line 7
+    and-int v2, v1, p1
+
+    .line 8
+    .line 9
+    if-nez v2, :cond_1
+
+    .line 10
+    .line 11
+    or-int v2, v1, p1
+
+    .line 12
+    .line 13
+    invoke-virtual {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicInteger;->compareAndSet(II)Z
 
     .line 14
     .line 15
-    invoke-virtual {v2, v0, v1, p1, p0}, Lrh6;->g(JLt62;Lz81;)Ljava/lang/Object;
-
     .line 16
-    .line 17
-    .line 18
-    move-result-object p0
+    move-result v0
 
+    .line 17
+    if-eqz v0, :cond_0
+
+    .line 18
     .line 19
-    return-object p0
+    :cond_1
+    return-void
 .end method

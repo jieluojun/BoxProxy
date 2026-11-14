@@ -1,215 +1,267 @@
-.class public final synthetic La34;
+.class public final La34;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lp62;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final a:F
 
-.field public final synthetic k:Z
+.field public b:Lz24;
 
-.field public final synthetic l:Ljava/lang/String;
+.field public c:F
 
-.field public final synthetic m:Ljava/util/List;
+.field public d:F
 
-.field public final synthetic n:Lj44;
-
-.field public final synthetic o:Lp62;
+.field public e:F
 
 
 # direct methods
-.method public synthetic constructor <init>(ZLjava/lang/String;Ljava/util/List;Lj44;Lp62;B)V
-    .locals 0
+.method public constructor <init>(F)V
+    .locals 1
 
     .line 1
-    iput-byte p6, p0, La34;->j:B
-
-    .line 2
-    .line 3
-    iput-boolean p1, p0, La34;->k:Z
-
-    .line 4
-    .line 5
-    iput-object p2, p0, La34;->l:Ljava/lang/String;
-
-    .line 6
-    .line 7
-    iput-object p3, p0, La34;->m:Ljava/util/List;
-
-    .line 8
-    .line 9
-    iput-object p4, p0, La34;->n:Lj44;
-
-    .line 10
-    .line 11
-    iput-object p5, p0, La34;->o:Lp62;
-
-    .line 12
-    .line 13
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 14
-    .line 15
-    .line 16
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 12
-
-    .line 1
-    iget-byte v0, p0, La34;->j:B
-
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
-
     .line 4
-    .line 5
-    const/4 v2, 0x3
+    iput p1, p0, La34;->a:F
 
+    .line 5
     .line 6
-    const/4 v3, 0x1
+    const/4 v0, 0x0
 
     .line 7
-    const/4 v4, 0x0
+    cmpl-float v0, p1, v0
 
     .line 8
-    check-cast p1, Ly43;
-
     .line 9
-    .line 10
-    packed-switch v0, :pswitch_data_0
+    if-ltz v0, :cond_0
 
+    .line 10
     .line 11
+    invoke-static {p1}, Ljava/lang/Math;->abs(F)F
+
     .line 12
     .line 13
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 14
-    .line 15
-    .line 16
-    new-instance v5, Lb34;
+    move-result p1
 
+    .line 15
+    const v0, 0x7f7fffff    # Float.MAX_VALUE
+
+    .line 16
     .line 17
     .line 18
-    const/4 v11, 0x1
+    cmpg-float p1, p1, v0
 
     .line 19
-    iget-boolean v6, p0, La34;->k:Z
-
     .line 20
+    if-gtz p1, :cond_0
+
     .line 21
-    iget-object v7, p0, La34;->l:Ljava/lang/String;
-
     .line 22
+    sget-object p1, Lz24;->i:Lz24;
+
     .line 23
-    iget-object v8, p0, La34;->m:Ljava/util/List;
-
     .line 24
-    .line 25
-    iget-object v9, p0, La34;->n:Lj44;
+    iput-object p1, p0, La34;->b:Lz24;
 
+    .line 25
     .line 26
+    return-void
+
     .line 27
-    iget-object v10, p0, La34;->o:Lp62;
+    :cond_0
+    const-string p0, "touchSlop must be finite and non-negative"
 
     .line 28
     .line 29
-    invoke-direct/range {v5 .. v11}, Lb34;-><init>(ZLjava/lang/String;Ljava/util/List;Lj44;Lp62;B)V
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
 
     .line 30
     .line 31
     .line 32
-    new-instance p0, Lqz0;
+    const/4 p0, 0x0
+
+    .line 33
+    throw p0
+.end method
+
+
+# virtual methods
+.method public final a()Ly24;
+    .locals 3
+
+    .line 1
+    iget v0, p0, La34;->d:F
+
+    .line 2
+    .line 3
+    iget v1, p0, La34;->a:F
+
+    .line 4
+    .line 5
+    cmpg-float v2, v0, v1
+
+    .line 6
+    .line 7
+    if-lez v2, :cond_1
+
+    .line 8
+    .line 9
+    iget v2, p0, La34;->e:F
+
+    .line 10
+    .line 11
+    invoke-static {v2}, Ljava/lang/Math;->abs(F)F
+
+    .line 12
+    .line 13
+    .line 14
+    move-result v2
+
+    .line 15
+    cmpg-float v0, v0, v2
+
+    .line 16
+    .line 17
+    if-ltz v0, :cond_1
+
+    .line 18
+    .line 19
+    iget v0, p0, La34;->d:F
+
+    .line 20
+    .line 21
+    sub-float/2addr v0, v1
+
+    .line 22
+    const/4 v1, 0x0
+
+    .line 23
+    cmpg-float v2, v0, v1
+
+    .line 24
+    .line 25
+    if-gez v2, :cond_0
+
+    .line 26
+    .line 27
+    move v0, v1
+
+    .line 28
+    :cond_0
+    iput v0, p0, La34;->c:F
+
+    .line 29
+    .line 30
+    sget-object v0, Lz24;->l:Lz24;
+
+    .line 31
+    .line 32
+    iput-object v0, p0, La34;->b:Lz24;
 
     .line 33
     .line 34
-    const v0, 0x3b678413
+    sget-object p0, Ly24;->k:Ly24;
 
     .line 35
     .line 36
+    return-object p0
+
     .line 37
-    invoke-direct {p0, v0, v3, v5}, Lqz0;-><init>(IZLjava/lang/Object;)V
+    :cond_1
+    sget-object p0, Ly24;->i:Ly24;
 
     .line 38
     .line 39
-    .line 40
-    invoke-static {p1, v4, p0, v2}, Ly43;->c0(Ly43;Ljava/lang/String;Lu62;I)V
+    return-object p0
+.end method
 
-    .line 41
-    .line 42
-    .line 43
-    return-object v1
+.method public final b()Ly24;
+    .locals 2
 
-    .line 44
-    :pswitch_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .line 1
+    iget-object p0, p0, La34;->b:Lz24;
 
-    .line 45
-    .line 46
-    .line 47
-    new-instance v5, Lb34;
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
 
-    .line 48
-    .line 49
-    const/4 v11, 0x0
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
 
-    .line 50
-    iget-boolean v6, p0, La34;->k:Z
+    .line 7
+    const/4 v0, 0x0
 
-    .line 51
-    .line 52
-    iget-object v7, p0, La34;->l:Ljava/lang/String;
+    .line 8
+    if-eqz p0, :cond_3
 
-    .line 53
-    .line 54
-    iget-object v8, p0, La34;->m:Ljava/util/List;
+    .line 9
+    .line 10
+    const/4 v1, 0x1
 
-    .line 55
-    .line 56
-    iget-object v9, p0, La34;->n:Lj44;
+    .line 11
+    if-eq p0, v1, :cond_3
 
-    .line 57
-    .line 58
-    iget-object v10, p0, La34;->o:Lp62;
+    .line 12
+    .line 13
+    const/4 v1, 0x2
 
-    .line 59
-    .line 60
-    invoke-direct/range {v5 .. v11}, Lb34;-><init>(ZLjava/lang/String;Ljava/util/List;Lj44;Lp62;B)V
+    .line 14
+    if-eq p0, v1, :cond_2
 
-    .line 61
-    .line 62
-    .line 63
-    new-instance p0, Lqz0;
+    .line 15
+    .line 16
+    const/4 v1, 0x3
 
-    .line 64
-    .line 65
-    const v0, -0x9771cf7
+    .line 17
+    if-eq p0, v1, :cond_1
 
-    .line 66
-    .line 67
-    .line 68
-    invoke-direct {p0, v0, v3, v5}, Lqz0;-><init>(IZLjava/lang/Object;)V
+    .line 18
+    .line 19
+    const/4 v1, 0x4
 
-    .line 69
-    .line 70
-    .line 71
-    invoke-static {p1, v4, p0, v2}, Ly43;->c0(Ly43;Ljava/lang/String;Lu62;I)V
+    .line 20
+    if-ne p0, v1, :cond_0
 
-    .line 72
-    .line 73
-    .line 74
-    return-object v1
+    .line 21
+    .line 22
+    sget-object p0, Ly24;->l:Ly24;
 
-    .line 75
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 23
+    .line 24
+    return-object p0
+
+    .line 25
+    :cond_0
+    invoke-static {}, Lnf1;->c()V
+
+    .line 26
+    .line 27
+    .line 28
+    return-object v0
+
+    .line 29
+    :cond_1
+    sget-object p0, Ly24;->k:Ly24;
+
+    .line 30
+    .line 31
+    return-object p0
+
+    .line 32
+    :cond_2
+    sget-object p0, Ly24;->j:Ly24;
+
+    .line 33
+    .line 34
+    return-object p0
+
+    .line 35
+    :cond_3
+    return-object v0
 .end method

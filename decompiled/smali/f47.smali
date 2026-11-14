@@ -1,20 +1,17 @@
 .class public final Lf47;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Landroid/text/Spannable;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public j:Z
+.field public final a:Lii;
 
-.field public k:Landroid/text/Spannable;
+.field public final b:Loh4;
 
 
 # direct methods
-.method public constructor <init>(Landroid/text/Spannable;)V
-    .locals 1
+.method public constructor <init>(Lii;Loh4;)V
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -22,339 +19,191 @@
     .line 2
     .line 3
     .line 4
-    const/4 v0, 0x0
+    iput-object p1, p0, Lf47;->a:Lii;
 
     .line 5
-    iput-boolean v0, p0, Lf47;->j:Z
-
     .line 6
-    .line 7
-    iput-object p1, p0, Lf47;->k:Landroid/text/Spannable;
+    iput-object p2, p0, Lf47;->b:Loh4;
 
+    .line 7
     .line 8
-    .line 9
     return-void
 .end method
 
 
 # virtual methods
-.method public final charAt(I)C
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lf47;->k:Landroid/text/Spannable;
-
-    .line 2
-    .line 3
-    invoke-interface {p0, p1}, Ljava/lang/CharSequence;->charAt(I)C
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final chars()Ljava/util/stream/IntStream;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lf47;->k:Landroid/text/Spannable;
-
-    .line 2
-    .line 3
-    invoke-interface {p0}, Ljava/lang/CharSequence;->chars()Ljava/util/stream/IntStream;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
-.end method
-
-.method public final codePoints()Ljava/util/stream/IntStream;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lf47;->k:Landroid/text/Spannable;
-
-    .line 2
-    .line 3
-    invoke-interface {p0}, Ljava/lang/CharSequence;->codePoints()Ljava/util/stream/IntStream;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
-.end method
-
-.method public final getSpanEnd(Ljava/lang/Object;)I
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lf47;->k:Landroid/text/Spannable;
-
-    .line 2
-    .line 3
-    invoke-interface {p0, p1}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final getSpanFlags(Ljava/lang/Object;)I
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lf47;->k:Landroid/text/Spannable;
-
-    .line 2
-    .line 3
-    invoke-interface {p0, p1}, Landroid/text/Spanned;->getSpanFlags(Ljava/lang/Object;)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final getSpanStart(Ljava/lang/Object;)I
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lf47;->k:Landroid/text/Spannable;
-
-    .line 2
-    .line 3
-    invoke-interface {p0, p1}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lf47;->k:Landroid/text/Spannable;
-
-    .line 2
-    .line 3
-    invoke-interface {p0, p1, p2, p3}, Landroid/text/Spanned;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
-.end method
-
-.method public final length()I
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lf47;->k:Landroid/text/Spannable;
-
-    .line 2
-    .line 3
-    invoke-interface {p0}, Ljava/lang/CharSequence;->length()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final nextSpanTransition(IILjava/lang/Class;)I
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lf47;->k:Landroid/text/Spannable;
-
-    .line 2
-    .line 3
-    invoke-interface {p0, p1, p2, p3}, Landroid/text/Spanned;->nextSpanTransition(IILjava/lang/Class;)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final removeSpan(Ljava/lang/Object;)V
+.method public final equals(Ljava/lang/Object;)Z
     .locals 2
 
     .line 1
-    iget-object v0, p0, Lf47;->k:Landroid/text/Spannable;
+    if-eq p0, p1, :cond_1
 
     .line 2
     .line 3
-    iget-boolean v1, p0, Lf47;->j:Z
+    instance-of v0, p1, Lf47;
 
     .line 4
     .line 5
-    if-nez v1, :cond_0
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    instance-of v1, v0, Landroid/text/PrecomputedText;
+    check-cast p1, Lf47;
 
     .line 8
     .line 9
-    if-eqz v1, :cond_0
+    iget-object v0, p1, Lf47;->a:Lii;
 
     .line 10
     .line 11
-    new-instance v1, Landroid/text/SpannableString;
+    iget-object v1, p0, Lf47;->a:Lii;
 
     .line 12
     .line 13
-    invoke-direct {v1, v0}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
+    invoke-static {v1, v0}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 14
     .line 15
     .line 16
-    iput-object v1, p0, Lf47;->k:Landroid/text/Spannable;
+    move-result v0
 
     .line 17
-    .line 18
-    move-object v0, v1
+    if-eqz v0, :cond_0
 
+    .line 18
     .line 19
-    :cond_0
-    const/4 v1, 0x1
+    iget-object p0, p0, Lf47;->b:Loh4;
 
     .line 20
-    iput-boolean v1, p0, Lf47;->j:Z
-
     .line 21
-    .line 22
-    invoke-interface {v0, p1}, Landroid/text/Spannable;->removeSpan(Ljava/lang/Object;)V
+    iget-object p1, p1, Lf47;->b:Loh4;
 
+    .line 22
     .line 23
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
     .line 24
     .line 25
-    return-void
+    .line 26
+    move-result p0
+
+    .line 27
+    if-nez p0, :cond_1
+
+    .line 28
+    .line 29
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 30
+    return p0
+
+    .line 31
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 32
+    return p0
 .end method
 
-.method public final setSpan(Ljava/lang/Object;III)V
-    .locals 2
+.method public final hashCode()I
+    .locals 1
 
     .line 1
-    iget-object v0, p0, Lf47;->k:Landroid/text/Spannable;
+    iget-object v0, p0, Lf47;->a:Lii;
 
     .line 2
     .line 3
-    iget-boolean v1, p0, Lf47;->j:Z
+    invoke-virtual {v0}, Lii;->hashCode()I
 
     .line 4
     .line 5
-    if-nez v1, :cond_0
-
     .line 6
+    move-result v0
+
     .line 7
-    instance-of v1, v0, Landroid/text/PrecomputedText;
+    mul-int/lit8 v0, v0, 0x1f
 
     .line 8
     .line 9
-    if-eqz v1, :cond_0
+    iget-object p0, p0, Lf47;->b:Loh4;
 
     .line 10
     .line 11
-    new-instance v1, Landroid/text/SpannableString;
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     .line 12
     .line 13
-    invoke-direct {v1, v0}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
-
     .line 14
+    move-result p0
+
     .line 15
+    add-int/2addr p0, v0
+
     .line 16
-    iput-object v1, p0, Lf47;->k:Landroid/text/Spannable;
-
-    .line 17
-    .line 18
-    move-object v0, v1
-
-    .line 19
-    :cond_0
-    const/4 v1, 0x1
-
-    .line 20
-    iput-boolean v1, p0, Lf47;->j:Z
-
-    .line 21
-    .line 22
-    invoke-interface {v0, p1, p2, p3, p4}, Landroid/text/Spannable;->setSpan(Ljava/lang/Object;III)V
-
-    .line 23
-    .line 24
-    .line 25
-    return-void
-.end method
-
-.method public final subSequence(II)Ljava/lang/CharSequence;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lf47;->k:Landroid/text/Spannable;
-
-    .line 2
-    .line 3
-    invoke-interface {p0, p1, p2}, Ljava/lang/CharSequence;->subSequence(II)Ljava/lang/CharSequence;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
+    return p0
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 0
+    .locals 2
 
     .line 1
-    iget-object p0, p0, Lf47;->k:Landroid/text/Spannable;
+    new-instance v0, Ljava/lang/StringBuilder;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    const-string v1, "TransformedText(text="
 
     .line 4
     .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
     .line 6
+    .line 7
+    .line 8
+    iget-object v1, p0, Lf47;->a:Lii;
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const-string v1, ", offsetMapping="
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 16
+    .line 17
+    .line 18
+    iget-object p0, p0, Lf47;->b:Loh4;
+
+    .line 19
+    .line 20
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 21
+    .line 22
+    .line 23
+    const-string p0, ")"
+
+    .line 24
+    .line 25
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 26
+    .line 27
+    .line 28
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 29
+    .line 30
+    .line 31
     move-result-object p0
 
-    .line 7
+    .line 32
     return-object p0
 .end method

@@ -1,9 +1,9 @@
 .class public final Lcom/hashsequence/coilresvg/SvgRenderer$UniffiPointerDestroyer$destroy$lambda$0$$inlined$uniffiRustCall$1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lp62;
+.implements Lp72;
 
 
 # annotations
@@ -19,7 +19,7 @@
 .annotation system Ldalvik/annotation/Signature;
     value = {
         "Ljava/lang/Object;",
-        "Lp62;"
+        "Lp72;"
     }
 .end annotation
 
@@ -60,7 +60,7 @@
             "(",
             "Lcom/hashsequence/coilresvg/UniffiRustCallStatusStruct$ByReference;",
             ")",
-            "La47;"
+            "Ll97;"
         }
     .end annotation
 
@@ -88,7 +88,7 @@
     .line 12
     .line 13
     .line 14
-    sget-object p0, La47;->a:La47;
+    sget-object p0, Ll97;->a:Ll97;
 
     .line 15
     .line 16

@@ -1,352 +1,507 @@
-.class public final Loa0;
-.super Llh6;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lt62;
+.class public abstract Loa0;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public j:Z
+# static fields
+.field public static final a:Ljava/util/concurrent/locks/ReentrantReadWriteLock;
 
-.field public final synthetic k:Z
+.field public static b:Landroid/database/sqlite/SQLiteDatabase;
 
-.field public final synthetic l:Lnv;
-
-.field public final synthetic m:Lla0;
-
-.field public final synthetic n:Z
-
-.field public final synthetic o:Landroid/content/Context;
-
-.field public final synthetic p:Ljava/lang/String;
+.field public static c:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(ZLnv;Lla0;ZLandroid/content/Context;Ljava/lang/String;Ly81;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    iput-boolean p1, p0, Loa0;->k:Z
+    new-instance v0, Ljava/util/concurrent/locks/ReentrantReadWriteLock;
 
     .line 2
     .line 3
-    iput-object p2, p0, Loa0;->l:Lnv;
+    invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantReadWriteLock;-><init>()V
 
     .line 4
     .line 5
-    iput-object p3, p0, Loa0;->m:Lla0;
-
     .line 6
+    sput-object v0, Loa0;->a:Ljava/util/concurrent/locks/ReentrantReadWriteLock;
+
     .line 7
-    iput-boolean p4, p0, Loa0;->n:Z
-
     .line 8
-    .line 9
-    iput-object p5, p0, Loa0;->o:Landroid/content/Context;
-
-    .line 10
-    .line 11
-    iput-object p6, p0, Loa0;->p:Ljava/lang/String;
-
-    .line 12
-    .line 13
-    const/4 p1, 0x2
-
-    .line 14
-    invoke-direct {p0, p1, p7}, Llh6;-><init>(ILy81;)V
-
-    .line 15
-    .line 16
-    .line 17
     return-void
 .end method
 
-
-# virtual methods
-.method public final create(Ljava/lang/Object;Ly81;)Ly81;
-    .locals 8
-
-    .line 1
-    new-instance v0, Loa0;
-
-    .line 2
-    .line 3
-    iget-object v5, p0, Loa0;->o:Landroid/content/Context;
-
-    .line 4
-    .line 5
-    iget-object v6, p0, Loa0;->p:Ljava/lang/String;
-
-    .line 6
-    .line 7
-    iget-boolean v1, p0, Loa0;->k:Z
-
-    .line 8
-    .line 9
-    iget-object v2, p0, Loa0;->l:Lnv;
-
-    .line 10
-    .line 11
-    iget-object v3, p0, Loa0;->m:Lla0;
-
-    .line 12
-    .line 13
-    iget-boolean v4, p0, Loa0;->n:Z
-
-    .line 14
-    .line 15
-    move-object v7, p2
-
-    .line 16
-    invoke-direct/range {v0 .. v7}, Loa0;-><init>(ZLnv;Lla0;ZLandroid/content/Context;Ljava/lang/String;Ly81;)V
-
-    .line 17
-    .line 18
-    .line 19
-    return-object v0
-.end method
-
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    check-cast p1, Lac1;
-
-    .line 2
-    .line 3
-    check-cast p2, Ly81;
-
-    .line 4
-    .line 5
-    invoke-virtual {p0, p1, p2}, Loa0;->create(Ljava/lang/Object;Ly81;)Ly81;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    check-cast p0, Loa0;
-
-    .line 10
-    .line 11
-    sget-object p1, La47;->a:La47;
-
-    .line 12
-    .line 13
-    invoke-virtual {p0, p1}, Loa0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p0
-
-    .line 17
-    return-object p0
-.end method
-
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.method public static a()V
     .locals 3
 
     .line 1
-    iget-boolean v0, p0, Loa0;->j:Z
+    sget-object v0, Loa0;->b:Landroid/database/sqlite/SQLiteDatabase;
 
     .line 2
     .line 3
-    iget-boolean v1, p0, Loa0;->k:Z
+    const/4 v1, 0x0
 
     .line 4
-    .line 5
-    const/4 v2, 0x1
-
-    .line 6
     if-eqz v0, :cond_1
+
+    .line 5
+    .line 6
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteDatabase;->isOpen()Z
 
     .line 7
     .line 8
-    if-ne v0, v2, :cond_0
-
     .line 9
+    move-result v2
+
     .line 10
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    if-nez v2, :cond_0
 
     .line 11
     .line 12
+    move-object v0, v1
+
     .line 13
-    goto :goto_0
+    :cond_0
+    if-eqz v0, :cond_1
 
     .line 14
-    :cond_0
-    const-string p0, "call to \'resume\' before \'invoke\' with coroutine"
+    .line 15
+    invoke-virtual {v0}, Landroid/database/sqlite/SQLiteClosable;->close()V
+
+    .line 16
+    .line 17
+    .line 18
+    :cond_1
+    sput-object v1, Loa0;->b:Landroid/database/sqlite/SQLiteDatabase;
+
+    .line 19
+    .line 20
+    sput-object v1, Loa0;->c:Ljava/lang/String;
+
+    .line 21
+    .line 22
+    return-void
+.end method
+
+.method public static b(Ljava/io/File;Ljava/io/File;)V
+    .locals 6
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    const/4 v1, 0x0
+
+    .line 3
+    :try_start_0
+    invoke-virtual {p0}, Ljava/io/File;->toPath()Ljava/nio/file/Path;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v2
+
+    .line 7
+    invoke-virtual {p1}, Ljava/io/File;->toPath()Ljava/nio/file/Path;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v3
+
+    .line 11
+    const/4 v4, 0x2
+
+    .line 12
+    new-array v4, v4, [Ljava/nio/file/CopyOption;
+
+    .line 13
+    .line 14
+    sget-object v5, Ljava/nio/file/StandardCopyOption;->ATOMIC_MOVE:Ljava/nio/file/StandardCopyOption;
 
     .line 15
     .line 16
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+    aput-object v5, v4, v1
 
     .line 17
     .line 18
-    .line 19
-    const/4 p0, 0x0
+    sget-object v5, Ljava/nio/file/StandardCopyOption;->REPLACE_EXISTING:Ljava/nio/file/StandardCopyOption;
 
+    .line 19
     .line 20
-    return-object p0
+    aput-object v5, v4, v0
 
     .line 21
-    :cond_1
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
     .line 22
+    invoke-static {v2, v3, v4}, Ljava/nio/file/Files;->move(Ljava/nio/file/Path;Ljava/nio/file/Path;[Ljava/nio/file/CopyOption;)Ljava/nio/file/Path;
+    :try_end_0
+    .catch Ljava/nio/file/AtomicMoveNotSupportedException; {:try_start_0 .. :try_end_0} :catch_0
+
     .line 23
     .line 24
-    iput-boolean v2, p0, Loa0;->j:Z
-
     .line 25
+    return-void
+
     .line 26
-    sget-object p1, Lj55;->a:Lj55;
+    :catch_0
+    invoke-virtual {p0}, Ljava/io/File;->toPath()Ljava/nio/file/Path;
 
     .line 27
     .line 28
-    invoke-virtual {p1, v1, p0}, Lj55;->b(ZLz81;)Ljava/lang/Object;
-
     .line 29
+    move-result-object p0
+
     .line 30
+    invoke-virtual {p1}, Ljava/io/File;->toPath()Ljava/nio/file/Path;
+
     .line 31
+    .line 32
+    .line 33
     move-result-object p1
 
-    .line 32
-    sget-object v0, Lbc1;->j:Lbc1;
-
-    .line 33
     .line 34
-    if-ne p1, v0, :cond_2
+    new-array v0, v0, [Ljava/nio/file/CopyOption;
 
     .line 35
     .line 36
-    return-object v0
+    sget-object v2, Ljava/nio/file/StandardCopyOption;->REPLACE_EXISTING:Ljava/nio/file/StandardCopyOption;
 
     .line 37
-    :cond_2
-    :goto_0
-    check-cast p1, La55;
+    .line 38
+    aput-object v2, v0, v1
+
+    .line 39
+    .line 40
+    invoke-static {p0, p1, v0}, Ljava/nio/file/Files;->move(Ljava/nio/file/Path;Ljava/nio/file/Path;[Ljava/nio/file/CopyOption;)Ljava/nio/file/Path;
+
+    .line 41
+    .line 42
+    .line 43
+    return-void
+.end method
+
+.method public static c(Ljava/io/File;Lp72;)Landroid/database/sqlite/SQLiteDatabase;
+    .locals 5
+
+    .line 1
+    invoke-virtual {p0}, Ljava/io/File;->getAbsoluteFile()Ljava/io/File;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-virtual {p0}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object v0
+
+    .line 9
+    invoke-virtual {p0}, Ljava/io/File;->getAbsoluteFile()Ljava/io/File;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v1
+
+    .line 13
+    invoke-virtual {v1}, Ljava/io/File;->getPath()Ljava/lang/String;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object v1
+
+    .line 17
+    sget-object v2, Loa0;->b:Landroid/database/sqlite/SQLiteDatabase;
+
+    .line 18
+    .line 19
+    const/4 v3, 0x0
+
+    .line 20
+    if-eqz v2, :cond_0
+
+    .line 21
+    .line 22
+    invoke-virtual {v2}, Landroid/database/sqlite/SQLiteDatabase;->isOpen()Z
+
+    .line 23
+    .line 24
+    .line 25
+    move-result v4
+
+    .line 26
+    if-eqz v4, :cond_0
+
+    .line 27
+    .line 28
+    sget-object v4, Loa0;->c:Ljava/lang/String;
+
+    .line 29
+    .line 30
+    invoke-static {v4, v1}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 31
+    .line 32
+    .line 33
+    move-result v1
+
+    .line 34
+    if-nez v1, :cond_1
+
+    .line 35
+    .line 36
+    :cond_0
+    move-object v2, v3
+
+    .line 37
+    :cond_1
+    if-eqz v2, :cond_2
 
     .line 38
     .line 39
-    iget-object v0, p1, La55;->b:Ljava/lang/String;
+    return-object v2
 
     .line 40
-    .line 41
-    if-eqz v0, :cond_5
+    :cond_2
+    invoke-static {}, Loa0;->a()V
 
+    .line 41
     .line 42
     .line 43
-    invoke-static {v0}, Lad6;->y0(Ljava/lang/CharSequence;)Z
+    invoke-virtual {p0}, Ljava/io/File;->getParentFile()Ljava/io/File;
 
     .line 44
     .line 45
     .line 46
-    move-result v0
+    move-result-object v1
 
     .line 47
-    if-eqz v0, :cond_3
+    if-eqz v1, :cond_3
 
     .line 48
     .line 49
-    goto :goto_1
+    invoke-virtual {v1}, Ljava/io/File;->mkdirs()Z
 
     .line 50
-    :cond_3
-    iget-object v0, p0, Loa0;->m:Lla0;
-
     .line 51
     .line 52
-    iget-object v0, v0, Lla0;->d:Lum4;
+    :cond_3
+    invoke-static {p0, v3}, Landroid/database/sqlite/SQLiteDatabase;->openOrCreateDatabase(Ljava/io/File;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;)Landroid/database/sqlite/SQLiteDatabase;
 
     .line 53
     .line 54
-    iget-boolean v1, p0, Loa0;->n:Z
-
     .line 55
+    move-result-object p0
+
     .line 56
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    :try_start_0
+    const-string v1, "PRAGMA busy_timeout=5000"
 
     .line 57
     .line 58
+    invoke-virtual {p0, v1, v3}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
+
     .line 59
+    .line 60
+    .line 61
     move-result-object v1
 
-    .line 60
-    invoke-virtual {v0, v1}, Lum4;->setValue(Ljava/lang/Object;)V
-
-    .line 61
     .line 62
-    .line 63
-    iget-object p1, p1, La55;->b:Ljava/lang/String;
+    invoke-static {v1, v3}, Lpp;->u(Ljava/io/Closeable;Ljava/lang/Throwable;)V
 
+    .line 63
     .line 64
     .line 65
-    invoke-static {p1}, Lad6;->y0(Ljava/lang/CharSequence;)Z
+    invoke-interface {p1, p0}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 66
     .line 67
     .line 68
-    move-result v0
+    sput-object p0, Loa0;->b:Landroid/database/sqlite/SQLiteDatabase;
 
     .line 69
-    if-eqz v0, :cond_4
-
     .line 70
-    .line 71
-    iget-object p1, p0, Loa0;->p:Ljava/lang/String;
+    sput-object v0, Loa0;->c:Ljava/lang/String;
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 71
     .line 72
+    return-object p0
+
     .line 73
-    :cond_4
-    iget-object p0, p0, Loa0;->o:Landroid/content/Context;
+    :catch_0
+    move-exception p1
 
     .line 74
-    .line 75
-    invoke-static {p0, p1}, Lx27;->h(Landroid/content/Context;Ljava/lang/String;)V
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->close()V
 
+    .line 75
     .line 76
     .line 77
-    .line 78
-    goto :goto_2
+    throw p1
+.end method
 
-    .line 79
-    :cond_5
-    :goto_1
-    iget-object p0, p0, Loa0;->l:Lnv;
+.method public static d(Ljava/io/File;Lu70;)V
+    .locals 3
 
-    .line 80
-    .line 81
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    .line 1
+    invoke-virtual {p0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
-    .line 82
-    .line 83
-    .line 84
-    new-instance p1, Lqr;
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
 
-    .line 85
-    .line 86
-    const/16 v0, 0x8
+    .line 5
+    const/4 v0, 0x0
 
-    .line 87
-    .line 88
-    invoke-direct {p1, v0, v1}, Lqr;-><init>(BZ)V
+    .line 6
+    const/4 v1, 0x0
 
-    .line 89
-    .line 90
-    .line 91
-    invoke-virtual {p0, p1}, Lnv;->c(Lp62;)V
+    .line 7
+    invoke-static {p0, v0, v1}, Landroid/database/sqlite/SQLiteDatabase;->openDatabase(Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)Landroid/database/sqlite/SQLiteDatabase;
 
-    .line 92
-    .line 93
-    .line 94
-    :goto_2
-    sget-object p0, La47;->a:La47;
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p0
 
-    .line 95
-    .line 96
-    return-object p0
+    .line 11
+    :try_start_0
+    const-string v2, "PRAGMA integrity_check"
+
+    .line 12
+    .line 13
+    invoke-virtual {p0, v2, v0}, Landroid/database/sqlite/SQLiteDatabase;->rawQuery(Ljava/lang/String;[Ljava/lang/String;)Landroid/database/Cursor;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
+
+    .line 17
+    :try_start_1
+    invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v2
+
+    .line 21
+    if-eqz v2, :cond_0
+
+    .line 22
+    .line 23
+    invoke-interface {v0, v1}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object v1
+
+    .line 27
+    const-string v2, "ok"
+
+    .line 28
+    .line 29
+    invoke-static {v1, v2}, Lzi6;->q0(Ljava/lang/String;Ljava/lang/String;)Z
+
+    .line 30
+    .line 31
+    .line 32
+    move-result v1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 33
+    if-eqz v1, :cond_0
+
+    .line 34
+    .line 35
+    :try_start_2
+    invoke-interface {v0}, Ljava/io/Closeable;->close()V
+
+    .line 36
+    .line 37
+    .line 38
+    invoke-virtual {p1, p0}, Lu70;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_2
+
+    .line 39
+    .line 40
+    .line 41
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->close()V
+
+    .line 42
+    .line 43
+    .line 44
+    return-void
+
+    .line 45
+    :cond_0
+    :try_start_3
+    const-string p1, "Database backup integrity check failed."
+
+    .line 46
+    .line 47
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    .line 48
+    .line 49
+    invoke-direct {v1, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    .line 50
+    .line 51
+    .line 52
+    throw v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+
+    .line 53
+    :catchall_0
+    move-exception p1
+
+    .line 54
+    :try_start_4
+    throw p1
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+
+    .line 55
+    :catchall_1
+    move-exception v1
+
+    .line 56
+    :try_start_5
+    invoke-static {v0, p1}, Lpp;->u(Ljava/io/Closeable;Ljava/lang/Throwable;)V
+
+    .line 57
+    .line 58
+    .line 59
+    throw v1
+    :try_end_5
+    .catchall {:try_start_5 .. :try_end_5} :catchall_2
+
+    .line 60
+    :catchall_2
+    move-exception p1
+
+    .line 61
+    invoke-virtual {p0}, Landroid/database/sqlite/SQLiteClosable;->close()V
+
+    .line 62
+    .line 63
+    .line 64
+    throw p1
 .end method

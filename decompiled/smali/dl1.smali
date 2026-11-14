@@ -1,135 +1,171 @@
 .class public final Ldl1;
-.super La3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lty5;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+
+# static fields
+.field public static final synthetic m:J
 
 
 # instance fields
-.field public final l:Ljava/util/Iterator;
-
-.field public final m:Lp62;
-
-.field public final n:Ljava/util/HashSet;
+.field private volatile synthetic _decision$volatile:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/util/Iterator;Lp62;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    sget-object v0, Lhw;->a:Lsun/misc/Unsafe;
 
     .line 2
     .line 3
-    .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-class v1, Ldl1;
 
+    .line 4
     .line 5
+    const-string v2, "_decision$volatile"
+
     .line 6
     .line 7
-    iput-object p1, p0, Ldl1;->l:Ljava/util/Iterator;
+    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     .line 8
     .line 9
-    iput-object p2, p0, Ldl1;->m:Lp62;
-
     .line 10
+    move-result-object v1
+
     .line 11
-    new-instance p1, Ljava/util/HashSet;
+    invoke-virtual {v0, v1}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
 
     .line 12
     .line 13
-    invoke-direct {p1}, Ljava/util/HashSet;-><init>()V
-
     .line 14
-    .line 15
-    .line 16
-    iput-object p1, p0, Ldl1;->n:Ljava/util/HashSet;
+    move-result-wide v0
 
+    .line 15
+    sput-wide v0, Ldl1;->m:J
+
+    .line 16
     .line 17
-    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final v(Ljava/lang/Object;)V
+    .locals 0
 
     .line 1
-    :cond_0
-    iget-object v0, p0, Ldl1;->l:Ljava/util/Iterator;
+    invoke-virtual {p0, p1}, Ldl1;->x(Ljava/lang/Object;)V
 
     .line 2
     .line 3
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    .line 4
+    return-void
+.end method
+
+.method public final x(Ljava/lang/Object;)V
+    .locals 6
+
+    .line 1
+    :goto_0
+    sget-object v0, Lhw;->a:Lsun/misc/Unsafe;
+
+    .line 2
+    .line 3
+    sget-wide v2, Ldl1;->m:J
 
     .line 4
     .line 5
+    invoke-virtual {v0, p0, v2, v3}, Lsun/misc/Unsafe;->getIntVolatile(Ljava/lang/Object;J)I
+
     .line 6
+    .line 7
+    .line 8
     move-result v1
 
-    .line 7
-    if-eqz v1, :cond_1
-
-    .line 8
     .line 9
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    if-eqz v1, :cond_1
 
     .line 10
     .line 11
-    .line 12
-    move-result-object v0
-
-    .line 13
-    iget-object v1, p0, Ldl1;->m:Lp62;
-
-    .line 14
-    .line 15
-    invoke-interface {v1, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object v1
-
-    .line 19
-    iget-object v2, p0, Ldl1;->n:Ljava/util/HashSet;
-
-    .line 20
-    .line 21
-    invoke-virtual {v2, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
-
-    .line 22
-    .line 23
-    .line 24
-    move-result v1
-
-    .line 25
-    if-eqz v1, :cond_0
-
-    .line 26
-    .line 27
-    iput-object v0, p0, La3;->k:Ljava/lang/Object;
-
-    .line 28
-    .line 29
     const/4 v0, 0x1
 
+    .line 12
+    if-ne v1, v0, :cond_0
+
+    .line 13
+    .line 14
+    iget-object p0, p0, Lty5;->l:Lp91;
+
+    .line 15
+    .line 16
+    invoke-static {p0}, Lul;->I(Lp91;)Lp91;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p0
+
+    .line 20
+    invoke-static {p1}, Lnr;->U(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 21
+    .line 22
+    .line 23
+    move-result-object p1
+
+    .line 24
+    invoke-static {p0, p1}, Lab;->F(Lp91;Ljava/lang/Object;)V
+
+    .line 25
+    .line 26
+    .line 27
+    return-void
+
+    .line 28
+    :cond_0
+    const-string p0, "Already resumed"
+
+    .line 29
     .line 30
-    iput-byte v0, p0, La3;->j:B
+    invoke-static {p0}, Lex1;->d(Ljava/lang/String;)V
 
     .line 31
     .line 32
-    return-void
-
     .line 33
-    :cond_1
-    const/4 v0, 0x2
+    return-void
 
     .line 34
-    iput-byte v0, p0, La3;->j:B
+    :cond_1
+    const/4 v4, 0x0
 
     .line 35
+    const/4 v5, 0x2
+
     .line 36
+    move-object v1, p0
+
+    .line 37
+    invoke-virtual/range {v0 .. v5}, Lsun/misc/Unsafe;->compareAndSwapInt(Ljava/lang/Object;JII)Z
+
+    .line 38
+    .line 39
+    .line 40
+    move-result p0
+
+    .line 41
+    if-eqz p0, :cond_2
+
+    .line 42
+    .line 43
     return-void
+
+    .line 44
+    :cond_2
+    move-object p0, v1
+
+    .line 45
+    goto :goto_0
 .end method

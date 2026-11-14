@@ -1,57 +1,38 @@
-.class public abstract Lbe0;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lbe0;
+.super Lh66;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final a:Lu21;
-
-.field public static final b:Lae0;
+# instance fields
+.field public final synthetic c:Landroid/graphics/Shader;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public constructor <init>(Landroid/graphics/Shader;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lz90;
+    iput-object p1, p0, Lbe0;->c:Landroid/graphics/Shader;
 
     .line 2
     .line 3
-    const/16 v1, 0x13
+    invoke-direct {p0}, Lh66;-><init>()V
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Lz90;-><init>(B)V
-
     .line 6
-    .line 7
-    .line 8
-    new-instance v1, Lu21;
-
-    .line 9
-    .line 10
-    invoke-direct {v1, v0}, Lu21;-><init>(Lp62;)V
-
-    .line 11
-    .line 12
-    .line 13
-    sput-object v1, Lbe0;->a:Lu21;
-
-    .line 14
-    .line 15
-    new-instance v0, Lae0;
-
-    .line 16
-    .line 17
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 18
-    .line 19
-    .line 20
-    sput-object v0, Lbe0;->b:Lae0;
-
-    .line 21
-    .line 22
     return-void
+.end method
+
+
+# virtual methods
+.method public final c(J)Landroid/graphics/Shader;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lbe0;->c:Landroid/graphics/Shader;
+
+    .line 2
+    .line 3
+    return-object p0
 .end method

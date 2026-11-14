@@ -1,276 +1,188 @@
-.class public final Lma7;
-.super Landroid/webkit/WebChromeClient;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract synthetic Lma7;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final synthetic a:Lmt3;
-
-.field public final synthetic b:Lmt3;
+# static fields
+.field public static final synthetic a:[I
 
 
 # direct methods
-.method public constructor <init>(Lmt3;Lmt3;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
     .line 1
-    iput-object p1, p0, Lma7;->a:Lmt3;
+    invoke-static {}, Lej3;->values()[Lej3;
 
     .line 2
     .line 3
-    iput-object p2, p0, Lma7;->b:Lmt3;
-
     .line 4
-    .line 5
-    invoke-direct {p0}, Landroid/webkit/WebChromeClient;-><init>()V
-
-    .line 6
-    .line 7
-    .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final onCreateWindow(Landroid/webkit/WebView;ZZLandroid/os/Message;)Z
-    .locals 1
-
-    .line 1
-    if-nez p1, :cond_0
-
-    .line 2
-    .line 3
-    goto :goto_1
-
-    .line 4
-    :cond_0
-    const/4 p0, 0x0
+    move-result-object v0
 
     .line 5
-    if-eqz p4, :cond_1
+    array-length v0, v0
 
     .line 6
-    .line 7
-    iget-object p2, p4, Landroid/os/Message;->obj:Ljava/lang/Object;
+    new-array v0, v0, [I
 
+    .line 7
     .line 8
+    const/4 v1, 0x1
+
     .line 9
-    goto :goto_0
+    const/4 v2, 0x0
 
     .line 10
-    :cond_1
-    move-object p2, p0
+    :try_start_0
+    aput v1, v0, v2
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 11
-    :goto_0
-    instance-of p3, p2, Landroid/webkit/WebView$WebViewTransport;
-
     .line 12
+    :catch_0
+    const/4 v2, 0x2
+
     .line 13
-    if-eqz p3, :cond_2
+    :try_start_1
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 14
     .line 15
-    move-object p0, p2
+    :catch_1
+    const/4 v3, 0x3
 
     .line 16
-    check-cast p0, Landroid/webkit/WebView$WebViewTransport;
+    :try_start_2
+    aput v3, v0, v2
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 17
     .line 18
-    :cond_2
-    if-nez p0, :cond_3
+    :catch_2
+    const/4 v4, 0x4
 
     .line 19
-    .line 20
-    :goto_1
-    const/4 p0, 0x0
+    :try_start_3
+    aput v4, v0, v3
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
+    .line 20
     .line 21
-    return p0
+    :catch_3
+    const/4 v5, 0x5
 
     .line 22
-    :cond_3
-    new-instance p2, Landroid/webkit/WebView;
+    :try_start_4
+    aput v5, v0, v4
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
 
     .line 23
     .line 24
-    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+    :catch_4
+    invoke-static {}, Landroid/widget/ImageView$ScaleType;->values()[Landroid/widget/ImageView$ScaleType;
 
     .line 25
     .line 26
     .line 27
-    move-result-object p3
+    move-result-object v0
 
     .line 28
-    invoke-direct {p2, p3}, Landroid/webkit/WebView;-><init>(Landroid/content/Context;)V
+    array-length v0, v0
 
     .line 29
+    new-array v0, v0, [I
+
     .line 30
     .line 31
-    invoke-virtual {p2}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
+    :try_start_5
+    sget-object v5, Landroid/widget/ImageView$ScaleType;->FIT_START:Landroid/widget/ImageView$ScaleType;
 
     .line 32
     .line 33
+    invoke-virtual {v5}, Ljava/lang/Enum;->ordinal()I
+
     .line 34
-    move-result-object p3
-
     .line 35
-    const/4 v0, 0x1
-
     .line 36
-    invoke-virtual {p3, v0}, Landroid/webkit/WebSettings;->setJavaScriptEnabled(Z)V
+    move-result v5
 
     .line 37
+    aput v1, v0, v5
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
     .line 38
     .line 39
-    invoke-virtual {p2}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
+    :catch_5
+    :try_start_6
+    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_CENTER:Landroid/widget/ImageView$ScaleType;
 
     .line 40
     .line 41
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
     .line 42
-    move-result-object p3
-
     .line 43
-    invoke-virtual {p3, v0}, Landroid/webkit/WebSettings;->setDomStorageEnabled(Z)V
-
     .line 44
-    .line 45
-    .line 46
-    invoke-virtual {p2}, Landroid/webkit/WebView;->getSettings()Landroid/webkit/WebSettings;
+    move-result v1
 
+    .line 45
+    aput v2, v0, v1
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
+
+    .line 46
     .line 47
+    :catch_6
+    :try_start_7
+    sget-object v1, Landroid/widget/ImageView$ScaleType;->FIT_END:Landroid/widget/ImageView$ScaleType;
+
     .line 48
     .line 49
-    move-result-object p3
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     .line 50
-    invoke-virtual {p3, v0}, Landroid/webkit/WebSettings;->setJavaScriptCanOpenWindowsAutomatically(Z)V
-
     .line 51
     .line 52
+    move-result v1
+
     .line 53
-    new-instance p3, Lla7;
+    aput v3, v0, v1
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
 
     .line 54
     .line 55
-    invoke-direct {p3, p1, p2}, Lla7;-><init>(Landroid/webkit/WebView;Landroid/webkit/WebView;)V
+    :catch_7
+    :try_start_8
+    sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER_INSIDE:Landroid/widget/ImageView$ScaleType;
 
     .line 56
     .line 57
-    .line 58
-    invoke-virtual {p2, p3}, Landroid/webkit/WebView;->setWebViewClient(Landroid/webkit/WebViewClient;)V
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
+    .line 58
     .line 59
     .line 60
+    move-result v1
+
     .line 61
-    invoke-virtual {p0, p2}, Landroid/webkit/WebView$WebViewTransport;->setWebView(Landroid/webkit/WebView;)V
+    aput v4, v0, v1
+    :try_end_8
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_8 .. :try_end_8} :catch_8
 
     .line 62
     .line 63
+    :catch_8
+    sput-object v0, Lma7;->a:[I
+
     .line 64
-    invoke-virtual {p4}, Landroid/os/Message;->sendToTarget()V
-
     .line 65
-    .line 66
-    .line 67
-    return v0
-.end method
-
-.method public final onReceivedTitle(Landroid/webkit/WebView;Ljava/lang/String;)V
-    .locals 1
-
-    .line 1
-    iget-object p0, p0, Lma7;->a:Lmt3;
-
-    .line 2
-    .line 3
-    invoke-interface {p0}, Lmb6;->getValue()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Lp62;
-
-    .line 8
-    .line 9
-    const/4 p1, 0x0
-
-    .line 10
-    if-eqz p2, :cond_1
-
-    .line 11
-    .line 12
-    invoke-static {p2}, Lad6;->y0(Ljava/lang/CharSequence;)Z
-
-    .line 13
-    .line 14
-    .line 15
-    move-result v0
-
-    .line 16
-    if-eqz v0, :cond_0
-
-    .line 17
-    .line 18
-    move-object p2, p1
-
-    .line 19
-    :cond_0
-    move-object p1, p2
-
-    .line 20
-    :cond_1
-    invoke-interface {p0, p1}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 21
-    .line 22
-    .line 23
     return-void
-.end method
-
-.method public final onShowFileChooser(Landroid/webkit/WebView;Landroid/webkit/ValueCallback;Landroid/webkit/WebChromeClient$FileChooserParams;)Z
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lma7;->b:Lmt3;
-
-    .line 2
-    .line 3
-    invoke-interface {p0}, Lmb6;->getValue()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Lt62;
-
-    .line 8
-    .line 9
-    invoke-interface {p0, p2, p3}, Lt62;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 10
-    .line 11
-    .line 12
-    move-result-object p0
-
-    .line 13
-    check-cast p0, Ljava/lang/Boolean;
-
-    .line 14
-    .line 15
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    .line 16
-    .line 17
-    .line 18
-    move-result p0
-
-    .line 19
-    return p0
 .end method

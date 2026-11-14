@@ -1,117 +1,73 @@
 .class public final Lh47;
-.super Led5;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lk96;
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final k:Lck3;
+.field public synthetic i:Ljava/lang/Object;
 
-.field public final l:J
+.field public final synthetic j:Lj47;
+
+.field public k:I
 
 
 # direct methods
-.method public constructor <init>(Lck3;J)V
+.method public constructor <init>(Lj47;Lq91;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lh47;->j:Lj47;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lh47;->k:Lck3;
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
+    .line 4
     .line 5
     .line 6
-    iput-wide p2, p0, Lh47;->l:J
-
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final B()Lve0;
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     .line 1
-    new-instance v0, Ls85;
+    iput-object p1, p0, Lh47;->i:Ljava/lang/Object;
 
     .line 2
     .line 3
-    invoke-direct {v0, p0}, Ls85;-><init>(Lk96;)V
+    iget p1, p0, Lh47;->k:I
 
     .line 4
     .line 5
+    const/high16 v0, -0x80000000
+
     .line 6
-    return-object v0
-.end method
-
-.method public final a()Luu6;
-    .locals 0
-
-    .line 1
-    sget-object p0, Luu6;->d:Ltu6;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final c()J
-    .locals 2
-
-    .line 1
-    iget-wide v0, p0, Lh47;->l:J
-
-    .line 2
-    .line 3
-    return-wide v0
-.end method
-
-.method public final close()V
-    .locals 0
-
-    .line 1
-    return-void
-.end method
-
-.method public final f()Lck3;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lh47;->k:Lck3;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final u(Lje0;J)J
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    new-instance p0, Ljava/lang/IllegalStateException;
-
-    .line 5
-    .line 6
-    const-string p1, "Unreadable ResponseBody! These Response objects have bodies that are stripped:\n * Response.cacheResponse\n * Response.networkResponse\n * Response.priorResponse\n * EventSourceListener\n * WebSocketListener\n(It is safe to call contentType() and contentLength() on these response bodies.)"
-
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    iput p1, p0, Lh47;->k:I
 
     .line 9
     .line 10
+    iget-object p1, p0, Lh47;->j:Lj47;
+
     .line 11
-    throw p0
+    .line 12
+    const/4 v0, 0x0
+
+    .line 13
+    invoke-virtual {p1, v0, p0}, Lj47;->b(Laf;Lq91;)V
+
+    .line 14
+    .line 15
+    .line 16
+    sget-object p0, Lpc1;->i:Lpc1;
+
+    .line 17
+    .line 18
+    return-object p0
 .end method

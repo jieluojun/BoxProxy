@@ -1,140 +1,261 @@
-.class public final enum Ljx5;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Ljx5;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt72;
 
 
-# static fields
-.field public static final enum j:Ljx5;
+# instance fields
+.field public final synthetic i:Lsw3;
 
-.field public static final enum k:Ljx5;
+.field public final synthetic j:Lnz0;
 
-.field public static final enum l:Ljx5;
+.field public final synthetic k:Lnz0;
 
-.field public static final synthetic m:[Ljx5;
+.field public final synthetic l:Lnz0;
+
+.field public final synthetic m:B
+
+.field public final synthetic n:Lnz0;
+
+.field public final synthetic o:B
+
+.field public final synthetic p:Lnz0;
+
+.field public final synthetic q:Lnz0;
+
+.field public final synthetic r:J
+
+.field public final synthetic s:Lhh7;
+
+.field public final synthetic t:Lnz0;
+
+.field public final synthetic u:I
+
+.field public final synthetic v:S
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public synthetic constructor <init>(Lsw3;Lnz0;Lnz0;Lnz0;ILnz0;ILnz0;Lnz0;JLhh7;Lnz0;II)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljx5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const-string v1, "LEFT_SELECTION"
-
     .line 4
-    .line 5
-    const/4 v2, 0x0
+    iput-object p1, p0, Ljx5;->i:Lsw3;
 
+    .line 5
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p2, p0, Ljx5;->j:Lnz0;
 
     .line 7
     .line 8
+    iput-object p3, p0, Ljx5;->k:Lnz0;
+
     .line 9
-    sput-object v0, Ljx5;->j:Ljx5;
-
     .line 10
+    iput-object p4, p0, Ljx5;->l:Lnz0;
+
     .line 11
-    new-instance v1, Ljx5;
-
     .line 12
+    iput-byte p5, p0, Ljx5;->m:B
+
     .line 13
-    const-string v2, "RIGHT_SELECTION"
-
     .line 14
-    .line 15
-    const/4 v3, 0x1
+    iput-object p6, p0, Ljx5;->n:Lnz0;
 
+    .line 15
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-byte p7, p0, Ljx5;->o:B
 
     .line 17
     .line 18
+    iput-object p8, p0, Ljx5;->p:Lnz0;
+
     .line 19
-    sput-object v1, Ljx5;->k:Ljx5;
-
     .line 20
+    iput-object p9, p0, Ljx5;->q:Lnz0;
+
     .line 21
-    new-instance v2, Ljx5;
-
     .line 22
+    iput-wide p10, p0, Ljx5;->r:J
+
     .line 23
-    const-string v3, "SELECTION_ANCHOR"
-
     .line 24
-    .line 25
-    const/4 v4, 0x2
+    iput-object p12, p0, Ljx5;->s:Lhh7;
 
+    .line 25
     .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iput-object p13, p0, Ljx5;->t:Lnz0;
 
     .line 27
     .line 28
+    iput p14, p0, Ljx5;->u:I
+
     .line 29
-    sput-object v2, Ljx5;->l:Ljx5;
-
     .line 30
+    iput-short p15, p0, Ljx5;->v:S
+
     .line 31
-    filled-new-array {v0, v1, v2}, [Ljx5;
-
     .line 32
-    .line 33
-    .line 34
-    move-result-object v0
-
-    .line 35
-    sput-object v0, Ljx5;->m:[Ljx5;
-
-    .line 36
-    .line 37
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Ljx5;
-    .locals 1
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 17
 
     .line 1
-    const-class v0, Ljx5;
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    move-object/from16 v13, p1
 
     .line 4
     .line 5
-    .line 6
-    move-result-object p0
+    check-cast v13, Lt82;
 
+    .line 6
     .line 7
-    check-cast p0, Ljx5;
+    move-object/from16 v1, p2
 
     .line 8
     .line 9
-    return-object p0
-.end method
+    check-cast v1, Ljava/lang/Integer;
 
-.method public static values()[Ljx5;
-    .locals 1
+    .line 10
+    .line 11
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 1
-    sget-object v0, Ljx5;->m:[Ljx5;
+    .line 12
+    .line 13
+    .line 14
+    iget v1, v0, Ljx5;->u:I
 
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    .line 15
+    .line 16
+    or-int/lit8 v1, v1, 0x1
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
+    .line 17
+    .line 18
+    invoke-static {v1}, Lp06;->W(I)I
 
-    .line 7
-    check-cast v0, [Ljx5;
+    .line 19
+    .line 20
+    .line 21
+    move-result v14
 
-    .line 8
-    .line 9
+    .line 22
+    iget-object v1, v0, Ljx5;->i:Lsw3;
+
+    .line 23
+    .line 24
+    move-object v2, v1
+
+    .line 25
+    iget-object v1, v0, Ljx5;->j:Lnz0;
+
+    .line 26
+    .line 27
+    move-object v3, v2
+
+    .line 28
+    iget-object v2, v0, Ljx5;->k:Lnz0;
+
+    .line 29
+    .line 30
+    move-object v4, v3
+
+    .line 31
+    iget-object v3, v0, Ljx5;->l:Lnz0;
+
+    .line 32
+    .line 33
+    move-object v5, v4
+
+    .line 34
+    iget-byte v4, v0, Ljx5;->m:B
+
+    .line 35
+    .line 36
+    move-object v6, v5
+
+    .line 37
+    iget-object v5, v0, Ljx5;->n:Lnz0;
+
+    .line 38
+    .line 39
+    move-object v7, v6
+
+    .line 40
+    iget-byte v6, v0, Ljx5;->o:B
+
+    .line 41
+    .line 42
+    move-object v8, v7
+
+    .line 43
+    iget-object v7, v0, Ljx5;->p:Lnz0;
+
+    .line 44
+    .line 45
+    move-object v9, v8
+
+    .line 46
+    iget-object v8, v0, Ljx5;->q:Lnz0;
+
+    .line 47
+    .line 48
+    move-object v11, v9
+
+    .line 49
+    iget-wide v9, v0, Ljx5;->r:J
+
+    .line 50
+    .line 51
+    move-object v12, v11
+
+    .line 52
+    iget-object v11, v0, Ljx5;->s:Lhh7;
+
+    .line 53
+    .line 54
+    move-object v15, v12
+
+    .line 55
+    iget-object v12, v0, Ljx5;->t:Lnz0;
+
+    .line 56
+    .line 57
+    iget-short v0, v0, Ljx5;->v:S
+
+    .line 58
+    .line 59
+    move-object/from16 v16, v15
+
+    .line 60
+    .line 61
+    move v15, v0
+
+    .line 62
+    move-object/from16 v0, v16
+
+    .line 63
+    .line 64
+    invoke-static/range {v0 .. v15}, Lfc3;->k(Lsw3;Lnz0;Lnz0;Lnz0;ILnz0;ILnz0;Lnz0;JLhh7;Lnz0;Lt82;II)V
+
+    .line 65
+    .line 66
+    .line 67
+    sget-object v0, Ll97;->a:Ll97;
+
+    .line 68
+    .line 69
     return-object v0
 .end method

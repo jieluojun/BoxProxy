@@ -1,294 +1,107 @@
-.class public final synthetic Lgf1;
+.class public abstract Lgf1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final synthetic j:Ljf1;
-
-.field public final synthetic k:I
-
-.field public final synthetic l:I
+# static fields
+.field public static final a:Lgf;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljf1;II)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 17
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lgf;
 
     .line 2
     .line 3
+    const/4 v1, 0x1
+
     .line 4
-    iput-object p1, p0, Lgf1;->j:Ljf1;
+    invoke-direct {v0, v1}, Lgf;-><init>(B)V
 
     .line 5
     .line 6
-    iput p2, p0, Lgf1;->k:I
-
     .line 7
-    .line 8
-    iput p3, p0, Lgf1;->l:I
-
-    .line 9
-    .line 10
-    return-void
-.end method
-
-
-# virtual methods
-.method public final run()V
-    .locals 8
-
-    .line 1
-    iget-object v0, p0, Lgf1;->j:Ljf1;
-
-    .line 2
-    .line 3
-    iget v1, p0, Lgf1;->k:I
-
-    .line 4
-    .line 5
-    iget p0, p0, Lgf1;->l:I
-
-    .line 6
-    .line 7
-    const/4 v2, 0x0
+    sput-object v0, Lgf1;->a:Lgf;
 
     .line 8
-    if-nez v1, :cond_0
-
     .line 9
-    .line 10
-    if-nez p0, :cond_0
+    const-string v15, "EEE, dd-MM-yyyy HH:mm:ss z"
 
+    .line 10
     .line 11
+    const-string v16, "EEE MMM d yyyy HH:mm:ss z"
+
     .line 12
-    iget-object p0, v0, Ljf1;->k:Ljava/lang/Object;
-
     .line 13
+    const-string v2, "EEE, dd MMM yyyy HH:mm:ss zzz"
+
     .line 14
-    check-cast p0, Landroid/widget/ListView;
-
     .line 15
-    .line 16
-    invoke-virtual {p0, v2, v2}, Landroid/widget/AbsListView;->setSelectionFromTop(II)V
+    const-string v3, "EEEE, dd-MMM-yy HH:mm:ss zzz"
 
+    .line 16
     .line 17
+    const-string v4, "EEE MMM d HH:mm:ss yyyy"
+
     .line 18
     .line 19
-    return-void
+    const-string v5, "EEE, dd-MMM-yyyy HH:mm:ss z"
 
     .line 20
-    :cond_0
-    move v3, v2
-
     .line 21
-    :goto_0
-    iget-object v4, v0, Ljf1;->k:Ljava/lang/Object;
+    const-string v6, "EEE, dd-MMM-yyyy HH-mm-ss z"
 
     .line 22
     .line 23
-    check-cast v4, Landroid/widget/ListView;
+    const-string v7, "EEE, dd MMM yy HH:mm:ss z"
 
     .line 24
     .line 25
-    invoke-virtual {v4}, Landroid/widget/AdapterView;->getFirstVisiblePosition()I
+    const-string v8, "EEE dd-MMM-yyyy HH:mm:ss z"
 
     .line 26
     .line 27
-    .line 28
-    move-result v4
+    const-string v9, "EEE dd MMM yyyy HH:mm:ss z"
 
+    .line 28
     .line 29
-    const/4 v5, 0x1
+    const-string v10, "EEE dd-MMM-yyyy HH-mm-ss z"
 
     .line 30
-    add-int/2addr v4, v5
-
     .line 31
-    const/16 v6, 0x64
+    const-string v11, "EEE dd-MMM-yy HH:mm:ss z"
 
     .line 32
     .line 33
-    if-le v4, v1, :cond_1
+    const-string v12, "EEE dd MMM yy HH:mm:ss z"
 
     .line 34
     .line 35
-    iget-object v4, v0, Ljf1;->k:Ljava/lang/Object;
+    const-string v13, "EEE,dd-MMM-yy HH:mm:ss z"
 
     .line 36
     .line 37
-    check-cast v4, Landroid/widget/ListView;
+    const-string v14, "EEE,dd-MMM-yyyy HH:mm:ss z"
 
     .line 38
     .line 39
-    const/4 v7, -0x1
+    filled-new-array/range {v2 .. v16}, [Ljava/lang/String;
 
     .line 40
-    invoke-virtual {v4, v7}, Landroid/widget/AbsListView;->canScrollList(I)Z
-
     .line 41
     .line 42
+    move-result-object v0
+
     .line 43
-    move-result v4
+    array-length v0, v0
 
     .line 44
-    if-eqz v4, :cond_1
+    new-array v0, v0, [Ljava/text/DateFormat;
 
     .line 45
     .line 46
-    if-ge v3, v6, :cond_1
-
-    .line 47
-    .line 48
-    div-int/lit8 v4, p0, 0x2
-
-    .line 49
-    .line 50
-    invoke-virtual {v0, v4}, Ljf1;->w(I)V
-
-    .line 51
-    .line 52
-    .line 53
-    add-int/lit8 v3, v3, 0x1
-
-    .line 54
-    .line 55
-    goto :goto_0
-
-    .line 56
-    :cond_1
-    :goto_1
-    iget-object v4, v0, Ljf1;->k:Ljava/lang/Object;
-
-    .line 57
-    .line 58
-    check-cast v4, Landroid/widget/ListView;
-
-    .line 59
-    .line 60
-    invoke-virtual {v4}, Landroid/widget/AdapterView;->getLastVisiblePosition()I
-
-    .line 61
-    .line 62
-    .line 63
-    move-result v4
-
-    .line 64
-    sub-int/2addr v4, v5
-
-    .line 65
-    if-ge v4, v1, :cond_2
-
-    .line 66
-    .line 67
-    iget-object v4, v0, Ljf1;->k:Ljava/lang/Object;
-
-    .line 68
-    .line 69
-    check-cast v4, Landroid/widget/ListView;
-
-    .line 70
-    .line 71
-    invoke-virtual {v4, v5}, Landroid/widget/AbsListView;->canScrollList(I)Z
-
-    .line 72
-    .line 73
-    .line 74
-    move-result v4
-
-    .line 75
-    if-eqz v4, :cond_2
-
-    .line 76
-    .line 77
-    if-ge v2, v6, :cond_2
-
-    .line 78
-    .line 79
-    neg-int v4, p0
-
-    .line 80
-    div-int/lit8 v4, v4, 0x2
-
-    .line 81
-    .line 82
-    invoke-virtual {v0, v4}, Ljf1;->w(I)V
-
-    .line 83
-    .line 84
-    .line 85
-    add-int/lit8 v2, v2, 0x1
-
-    .line 86
-    .line 87
-    goto :goto_1
-
-    .line 88
-    :cond_2
-    if-ge v3, v6, :cond_4
-
-    .line 89
-    .line 90
-    if-lt v2, v6, :cond_3
-
-    .line 91
-    .line 92
-    goto :goto_2
-
-    .line 93
-    :cond_3
-    return-void
-
-    .line 94
-    :cond_4
-    :goto_2
-    const-string p0, ", upScrolls="
-
-    .line 95
-    .line 96
-    const-string v0, ", downScrolls="
-
-    .line 97
-    .line 98
-    const-string v4, "ensureListPositionVisible hit iteration limit: position="
-
-    .line 99
-    .line 100
-    invoke-static {v1, v3, v4, p0, v0}, Loc1;->s(IILjava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 101
-    .line 102
-    .line 103
-    move-result-object p0
-
-    .line 104
-    invoke-virtual {p0, v2}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    .line 105
-    .line 106
-    .line 107
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 108
-    .line 109
-    .line 110
-    move-result-object p0
-
-    .line 111
-    const-string v0, "DefaultCompletionLayout"
-
-    .line 112
-    .line 113
-    invoke-static {v0, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
-
-    .line 114
-    .line 115
-    .line 116
     return-void
 .end method

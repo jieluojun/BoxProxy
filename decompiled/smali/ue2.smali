@@ -1,269 +1,175 @@
 .class public final synthetic Lue2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lt62;
+.implements Landroid/view/Choreographer$FrameCallback;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final synthetic i:B
 
-.field public final synthetic k:Ljava/lang/String;
-
-.field public final synthetic l:Lwp3;
-
-.field public final synthetic m:J
-
-.field public final synthetic n:Z
-
-.field public final synthetic o:Z
-
-.field public final synthetic p:Le62;
-
-.field public final synthetic q:S
-
-.field public final synthetic r:B
+.field public final synthetic j:Ljava/lang/Object;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/String;Lwp3;JZZLe62;IIB)V
+.method public synthetic constructor <init>(Landroidx/profileinstaller/ProfileInstallerInitializer;Landroid/content/Context;)V
     .locals 0
 
+    .line 10
+    const/4 p1, 0x1
+
+    iput-byte p1, p0, Lue2;->i:B
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p2, p0, Lue2;->j:Ljava/lang/Object;
+
+    return-void
+.end method
+
+.method public synthetic constructor <init>(Lri0;)V
+    .locals 1
+
     .line 1
-    iput-byte p10, p0, Lue2;->j:B
+    const/4 v0, 0x0
 
     .line 2
+    iput-byte v0, p0, Lue2;->i:B
+
     .line 3
-    iput-object p1, p0, Lue2;->k:Ljava/lang/String;
-
     .line 4
-    .line 5
-    iput-object p2, p0, Lue2;->l:Lwp3;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 5
     .line 6
     .line 7
-    iput-wide p3, p0, Lue2;->m:J
+    iput-object p1, p0, Lue2;->j:Ljava/lang/Object;
 
     .line 8
     .line 9
-    iput-boolean p5, p0, Lue2;->n:Z
-
-    .line 10
-    .line 11
-    iput-boolean p6, p0, Lue2;->o:Z
-
-    .line 12
-    .line 13
-    iput-object p7, p0, Lue2;->p:Le62;
-
-    .line 14
-    .line 15
-    iput-short p8, p0, Lue2;->q:S
-
-    .line 16
-    .line 17
-    iput-byte p9, p0, Lue2;->r:B
-
-    .line 18
-    .line 19
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 20
-    .line 21
-    .line 22
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 24
+.method public final doFrame(J)V
+    .locals 3
 
     .line 1
-    move-object/from16 v0, p0
+    iget-byte v0, p0, Lue2;->i:B
 
     .line 2
     .line 3
-    iget-byte v1, v0, Lue2;->j:B
+    iget-object p0, p0, Lue2;->j:Ljava/lang/Object;
 
     .line 4
     .line 5
-    sget-object v2, La47;->a:La47;
+    packed-switch v0, :pswitch_data_0
 
     .line 6
     .line 7
-    iget-short v3, v0, Lue2;->q:S
-
     .line 8
-    .line 9
-    packed-switch v1, :pswitch_data_0
+    check-cast p0, Landroid/content/Context;
 
+    .line 9
     .line 10
+    invoke-static {}, Landroid/os/Looper;->getMainLooper()Landroid/os/Looper;
+
     .line 11
     .line 12
-    move-object/from16 v11, p1
-
     .line 13
+    move-result-object p1
+
     .line 14
-    check-cast v11, Lz11;
+    invoke-static {p1}, Landroid/os/Handler;->createAsync(Landroid/os/Looper;)Landroid/os/Handler;
 
     .line 15
     .line 16
-    move-object/from16 v1, p2
-
     .line 17
+    move-result-object p1
+
     .line 18
-    check-cast v1, Ljava/lang/Integer;
+    new-instance p2, Ljava/util/Random;
 
     .line 19
     .line 20
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p2}, Ljava/util/Random;-><init>()V
 
     .line 21
     .line 22
     .line 23
-    or-int/lit8 v1, v3, 0x1
+    const/16 v0, 0x3e8
 
     .line 24
     .line 25
-    invoke-static {v1}, Lqu5;->f0(I)I
+    invoke-virtual {p2, v0}, Ljava/util/Random;->nextInt(I)I
 
     .line 26
     .line 27
     .line 28
-    move-result v12
+    move-result p2
 
     .line 29
-    iget-object v4, v0, Lue2;->k:Ljava/lang/String;
+    new-instance v0, Lvo;
 
     .line 30
     .line 31
-    iget-object v5, v0, Lue2;->l:Lwp3;
+    const/4 v1, 0x2
 
     .line 32
-    .line 33
-    iget-wide v6, v0, Lue2;->m:J
+    invoke-direct {v0, p0, v1}, Lvo;-><init>(Landroid/content/Context;B)V
 
+    .line 33
     .line 34
     .line 35
-    iget-boolean v8, v0, Lue2;->n:Z
+    add-int/lit16 p2, p2, 0x1388
 
     .line 36
     .line 37
-    iget-boolean v9, v0, Lue2;->o:Z
+    int-to-long v1, p2
 
     .line 38
-    .line 39
-    iget-object v10, v0, Lue2;->p:Le62;
+    invoke-virtual {p1, v0, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
 
+    .line 39
     .line 40
     .line 41
-    iget-byte v13, v0, Lue2;->r:B
+    return-void
 
     .line 42
-    .line 43
-    invoke-static/range {v4 .. v13}, Lkj3;->q(Ljava/lang/String;Lwp3;JZZLe62;Lz11;II)V
+    :pswitch_0
+    check-cast p0, Lri0;
 
+    .line 43
     .line 44
+    sget-object v0, Lil1;->a:Lhh1;
+
     .line 45
     .line 46
-    return-object v2
+    sget-object v0, Lvk3;->a:Lte2;
 
     .line 47
-    :pswitch_0
-    move-object/from16 v21, p1
-
     .line 48
-    .line 49
-    check-cast v21, Lz11;
+    invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
+    .line 49
     .line 50
     .line 51
-    move-object/from16 v1, p2
+    move-result-object p1
 
     .line 52
-    .line 53
-    check-cast v1, Ljava/lang/Integer;
+    invoke-virtual {p0, v0, p1}, Lri0;->C(Lhc1;Ljava/lang/Object;)V
 
+    .line 53
     .line 54
     .line 55
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return-void
 
     .line 56
-    .line 57
-    .line 58
-    or-int/lit8 v1, v3, 0x1
-
-    .line 59
-    .line 60
-    invoke-static {v1}, Lqu5;->f0(I)I
-
-    .line 61
-    .line 62
-    .line 63
-    move-result v22
-
-    .line 64
-    iget-object v14, v0, Lue2;->k:Ljava/lang/String;
-
-    .line 65
-    .line 66
-    iget-object v15, v0, Lue2;->l:Lwp3;
-
-    .line 67
-    .line 68
-    iget-wide v3, v0, Lue2;->m:J
-
-    .line 69
-    .line 70
-    iget-boolean v1, v0, Lue2;->n:Z
-
-    .line 71
-    .line 72
-    iget-boolean v5, v0, Lue2;->o:Z
-
-    .line 73
-    .line 74
-    iget-object v6, v0, Lue2;->p:Le62;
-
-    .line 75
-    .line 76
-    iget-byte v0, v0, Lue2;->r:B
-
-    .line 77
-    .line 78
-    move/from16 v23, v0
-
-    .line 79
-    .line 80
-    move/from16 v18, v1
-
-    .line 81
-    .line 82
-    move-wide/from16 v16, v3
-
-    .line 83
-    .line 84
-    move/from16 v19, v5
-
-    .line 85
-    .line 86
-    move-object/from16 v20, v6
-
-    .line 87
-    .line 88
-    invoke-static/range {v14 .. v23}, Lyt2;->L(Ljava/lang/String;Lwp3;JZZLe62;Lz11;II)V
-
-    .line 89
-    .line 90
-    .line 91
-    return-object v2
-
-    .line 92
     nop
 
-    .line 93
+    .line 57
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

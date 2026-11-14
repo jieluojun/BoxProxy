@@ -1,52 +1,103 @@
-.class public final Lvi0;
-.super Lmy0;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# static fields
-.field public static final synthetic c:J
-
-
-# instance fields
-.field private volatile synthetic _resumed$volatile:I
+.class public interface abstract Lvi0;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public static m(Lvi0;Lpf5;)V
+    .locals 6
 
     .line 1
-    sget-object v0, Luw;->a:Lsun/misc/Unsafe;
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    const-class v1, Lvi0;
-
     .line 4
+    iget v1, p1, Lpf5;->a:F
+
     .line 5
-    const-string v2, "_resumed$volatile"
-
     .line 6
-    .line 7
-    invoke-virtual {v1, v2}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
+    iget v2, p1, Lpf5;->b:F
 
+    .line 7
     .line 8
+    iget v3, p1, Lpf5;->c:F
+
     .line 9
     .line 10
-    move-result-object v1
+    iget v4, p1, Lpf5;->d:F
 
     .line 11
-    invoke-virtual {v0, v1}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
-
     .line 12
+    const/4 v5, 0x1
+
     .line 13
+    move-object v0, p0
+
     .line 14
-    move-result-wide v0
+    invoke-interface/range {v0 .. v5}, Lvi0;->h(FFFFI)V
 
     .line 15
-    sput-wide v0, Lvi0;->c:J
-
     .line 16
     .line 17
     return-void
+.end method
+
+
+# virtual methods
+.method public abstract a(Lkc;JLdl4;)V
+.end method
+
+.method public abstract b(FF)V
+.end method
+
+.method public abstract c(F)V
+.end method
+
+.method public abstract d(Lad;Ldl4;)V
+.end method
+
+.method public abstract e(FFFFFFLdl4;)V
+.end method
+
+.method public abstract f(Lpf5;Ldl4;)V
+.end method
+
+.method public abstract g(FFFFLdl4;)V
+.end method
+
+.method public abstract h(FFFFI)V
+.end method
+
+.method public abstract i(FF)V
+.end method
+
+.method public abstract j()V
+.end method
+
+.method public abstract k(FFFFFFLdl4;)V
+.end method
+
+.method public abstract l(FJLdl4;)V
+.end method
+
+.method public abstract n()V
+.end method
+
+.method public abstract o()V
+.end method
+
+.method public abstract p([F)V
+.end method
+
+.method public abstract q()V
+.end method
+
+.method public abstract r(JJLdl4;)V
+.end method
+
+.method public abstract s(Lad;)V
+.end method
+
+.method public abstract t(Lkc;JJJLdl4;)V
 .end method

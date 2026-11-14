@@ -1,129 +1,121 @@
-.class public final Ld52;
+.class public abstract Ld52;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final a:Landroid/net/Uri;
+# static fields
+.field public static final a:Lug1;
 
-.field public final b:I
+.field public static final b:Lc92;
 
-.field public final c:I
+.field public static final c:Lc92;
 
-.field public final d:Z
+.field public static final d:Lc92;
 
-.field public final e:Ljava/lang/String;
-
-.field public final f:I
+.field public static final e:Lc92;
 
 
 # direct methods
-.method public constructor <init>(Landroid/net/Uri;IIZLjava/lang/String;I)V
-    .locals 0
-
-    .line 39
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 40
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 41
-    iput-object p1, p0, Ld52;->a:Landroid/net/Uri;
-
-    .line 42
-    iput p2, p0, Ld52;->b:I
-
-    .line 43
-    iput p3, p0, Ld52;->c:I
-
-    .line 44
-    iput-boolean p4, p0, Ld52;->d:Z
-
-    .line 45
-    iput-object p5, p0, Ld52;->e:Ljava/lang/String;
-
-    .line 46
-    iput p6, p0, Ld52;->f:I
-
-    return-void
-.end method
-
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 2
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lug1;
 
     .line 2
     .line 3
-    .line 4
-    new-instance v0, Landroid/net/Uri$Builder;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
+    .line 4
     .line 5
     .line 6
-    invoke-direct {v0}, Landroid/net/Uri$Builder;-><init>()V
+    sput-object v0, Ld52;->a:Lug1;
 
     .line 7
     .line 8
+    new-instance v0, Lc92;
+
     .line 9
-    const-string v1, "systemfont"
-
     .line 10
-    .line 11
-    invoke-virtual {v0, v1}, Landroid/net/Uri$Builder;->scheme(Ljava/lang/String;)Landroid/net/Uri$Builder;
+    const-string v1, "sans-serif"
 
+    .line 11
     .line 12
+    const-string v2, "FontFamily.SansSerif"
+
     .line 13
     .line 14
-    move-result-object v0
+    invoke-direct {v0, v1, v2}, Lc92;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 15
-    invoke-virtual {v0, p1}, Landroid/net/Uri$Builder;->authority(Ljava/lang/String;)Landroid/net/Uri$Builder;
-
     .line 16
     .line 17
-    .line 18
-    move-result-object p1
+    sput-object v0, Ld52;->b:Lc92;
 
+    .line 18
     .line 19
-    invoke-virtual {p1}, Landroid/net/Uri$Builder;->build()Landroid/net/Uri;
+    new-instance v0, Lc92;
 
     .line 20
     .line 21
-    .line 22
-    move-result-object p1
+    const-string v1, "serif"
 
+    .line 22
     .line 23
-    iput-object p1, p0, Ld52;->a:Landroid/net/Uri;
+    const-string v2, "FontFamily.Serif"
 
     .line 24
     .line 25
-    const/4 p1, 0x0
+    invoke-direct {v0, v1, v2}, Lc92;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 26
-    iput p1, p0, Ld52;->b:I
-
     .line 27
     .line 28
-    const/16 v0, 0x190
+    sput-object v0, Ld52;->c:Lc92;
 
     .line 29
     .line 30
-    iput v0, p0, Ld52;->c:I
+    new-instance v0, Lc92;
 
     .line 31
     .line 32
-    iput-boolean p1, p0, Ld52;->d:Z
+    const-string v1, "monospace"
 
     .line 33
     .line 34
-    iput-object p2, p0, Ld52;->e:Ljava/lang/String;
+    const-string v2, "FontFamily.Monospace"
 
     .line 35
     .line 36
-    iput p1, p0, Ld52;->f:I
+    invoke-direct {v0, v1, v2}, Lc92;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 37
     .line 38
+    .line 39
+    sput-object v0, Ld52;->d:Lc92;
+
+    .line 40
+    .line 41
+    new-instance v0, Lc92;
+
+    .line 42
+    .line 43
+    const-string v1, "cursive"
+
+    .line 44
+    .line 45
+    const-string v2, "FontFamily.Cursive"
+
+    .line 46
+    .line 47
+    invoke-direct {v0, v1, v2}, Lc92;-><init>(Ljava/lang/String;Ljava/lang/String;)V
+
+    .line 48
+    .line 49
+    .line 50
+    sput-object v0, Ld52;->e:Lc92;
+
+    .line 51
+    .line 52
     return-void
 .end method

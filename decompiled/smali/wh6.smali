@@ -1,39 +1,17 @@
-.class public final synthetic Lwh6;
+.class public final Lwh6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lt62;
+.implements Lof1;
 
 
 # instance fields
-.field public final synthetic j:Lp62;
-
-.field public final synthetic k:Z
-
-.field public final synthetic l:Z
-
-.field public final synthetic m:Lt62;
-
-.field public final synthetic n:Ln06;
-
-.field public final synthetic o:Ln06;
-
-.field public final synthetic p:J
-
-.field public final synthetic q:J
-
-.field public final synthetic r:J
-
-.field public final synthetic s:J
-
-.field public final synthetic t:I
-
-.field public final synthetic u:I
+.field public final a:Lg46;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lp62;ZZLt62;Ln06;Ln06;JJJJII)V
+.method public constructor <init>(Lg46;)V
     .locals 0
 
     .line 1
@@ -42,209 +20,336 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lwh6;->j:Lp62;
+    iput-object p1, p0, Lwh6;->a:Lg46;
 
     .line 5
     .line 6
-    iput-boolean p2, p0, Lwh6;->k:Z
-
-    .line 7
-    .line 8
-    iput-boolean p3, p0, Lwh6;->l:Z
-
-    .line 9
-    .line 10
-    iput-object p4, p0, Lwh6;->m:Lt62;
-
-    .line 11
-    .line 12
-    iput-object p5, p0, Lwh6;->n:Ln06;
-
-    .line 13
-    .line 14
-    iput-object p6, p0, Lwh6;->o:Ln06;
-
-    .line 15
-    .line 16
-    iput-wide p7, p0, Lwh6;->p:J
-
-    .line 17
-    .line 18
-    iput-wide p9, p0, Lwh6;->q:J
-
-    .line 19
-    .line 20
-    iput-wide p11, p0, Lwh6;->r:J
-
-    .line 21
-    .line 22
-    iput-wide p13, p0, Lwh6;->s:J
-
-    .line 23
-    .line 24
-    iput p15, p0, Lwh6;->t:I
-
-    .line 25
-    .line 26
-    move/from16 p1, p16
-
-    .line 27
-    .line 28
-    iput p1, p0, Lwh6;->u:I
-
-    .line 29
-    .line 30
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 19
+.method public final create(Lef6;Lfl4;Lsr2;)Lqf1;
+    .locals 5
 
     .line 1
-    move-object/from16 v0, p0
+    invoke-static {p2}, Lbs2;->a(Lfl4;)Landroid/graphics/Bitmap$Config;
 
     .line 2
     .line 3
-    move-object/from16 v14, p1
-
     .line 4
+    move-result-object p3
+
     .line 5
-    check-cast v14, Lz11;
+    iget-object v0, p2, Lfl4;->a:Landroid/content/Context;
 
     .line 6
     .line 7
-    move-object/from16 v1, p2
+    sget-object v1, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
     .line 8
     .line 9
-    check-cast v1, Ljava/lang/Integer;
+    const/4 v2, 0x0
 
     .line 10
-    .line 11
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-eq p3, v1, :cond_0
 
+    .line 11
     .line 12
+    sget-object v1, Landroid/graphics/Bitmap$Config;->HARDWARE:Landroid/graphics/Bitmap$Config;
+
     .line 13
     .line 14
-    iget v1, v0, Lwh6;->t:I
+    if-ne p3, v1, :cond_6
 
     .line 15
     .line 16
-    or-int/lit8 v1, v1, 0x1
+    :cond_0
+    iget-object p3, p1, Lef6;->a:Lds2;
 
     .line 17
     .line 18
-    invoke-static {v1}, Lqu5;->f0(I)I
+    invoke-interface {p3}, Lds2;->getFileSystem()Ltz1;
 
     .line 19
     .line 20
     .line 21
-    move-result v15
+    move-result-object v1
 
     .line 22
-    iget v1, v0, Lwh6;->u:I
+    sget-object v3, Ltz1;->i:Lo23;
 
     .line 23
     .line 24
-    invoke-static {v1}, Lqu5;->f0(I)I
+    if-ne v1, v3, :cond_1
 
     .line 25
     .line 26
+    invoke-interface {p3}, Lds2;->o()Lpt4;
+
     .line 27
-    move-result v16
-
     .line 28
-    iget-object v1, v0, Lwh6;->j:Lp62;
-
     .line 29
+    move-result-object v1
+
     .line 30
-    move-object v2, v1
+    if-eqz v1, :cond_1
 
     .line 31
-    iget-boolean v1, v0, Lwh6;->k:Z
-
     .line 32
+    invoke-virtual {v1}, Lpt4;->toFile()Ljava/io/File;
+
     .line 33
-    move-object v3, v2
-
     .line 34
-    iget-boolean v2, v0, Lwh6;->l:Z
-
     .line 35
+    move-result-object p3
+
     .line 36
-    move-object v4, v3
+    invoke-static {p3}, Landroid/graphics/ImageDecoder;->createSource(Ljava/io/File;)Landroid/graphics/ImageDecoder$Source;
 
     .line 37
-    iget-object v3, v0, Lwh6;->m:Lt62;
-
     .line 38
     .line 39
-    move-object v5, v4
+    move-result-object p3
 
     .line 40
-    iget-object v4, v0, Lwh6;->n:Ln06;
+    goto :goto_0
 
     .line 41
+    :cond_1
+    invoke-interface {p3}, Lds2;->s()Lwp;
+
     .line 42
-    move-object v6, v5
-
     .line 43
-    iget-object v5, v0, Lwh6;->o:Ln06;
-
     .line 44
+    move-result-object p3
+
     .line 45
-    move-object v8, v6
+    instance-of v1, p3, Lkw;
 
     .line 46
-    iget-wide v6, v0, Lwh6;->p:J
-
     .line 47
-    .line 48
-    move-object v10, v8
+    if-eqz v1, :cond_2
 
+    .line 48
     .line 49
-    iget-wide v8, v0, Lwh6;->q:J
+    invoke-virtual {v0}, Landroid/content/Context;->getAssets()Landroid/content/res/AssetManager;
 
     .line 50
     .line 51
-    move-object v12, v10
-
     .line 52
-    iget-wide v10, v0, Lwh6;->r:J
+    move-result-object v0
 
     .line 53
-    .line 54
-    move v13, v1
+    check-cast p3, Lkw;
 
+    .line 54
     .line 55
-    iget-wide v0, v0, Lwh6;->s:J
+    iget-object p3, p3, Lkw;->n:Ljava/lang/String;
 
     .line 56
     .line 57
-    move-wide/from16 v17, v0
+    invoke-static {v0, p3}, Landroid/graphics/ImageDecoder;->createSource(Landroid/content/res/AssetManager;Ljava/lang/String;)Landroid/graphics/ImageDecoder$Source;
 
     .line 58
     .line 59
-    move-object v0, v12
-
     .line 60
-    move v1, v13
+    move-result-object p3
 
     .line 61
-    move-wide/from16 v12, v17
+    goto :goto_0
 
     .line 62
-    .line 63
-    invoke-static/range {v0 .. v16}, Lkj3;->D(Lp62;ZZLt62;Ln06;Ln06;JJJJLz11;II)V
+    :cond_2
+    instance-of v1, p3, Lx81;
 
+    .line 63
     .line 64
+    if-eqz v1, :cond_3
+
     .line 65
     .line 66
-    sget-object v0, La47;->a:La47;
+    :try_start_0
+    check-cast p3, Lx81;
 
     .line 67
     .line 68
+    iget-object p3, p3, Lx81;->n:Landroid/content/res/AssetFileDescriptor;
+
+    .line 69
+    .line 70
+    invoke-virtual {p3}, Landroid/content/res/AssetFileDescriptor;->getFileDescriptor()Ljava/io/FileDescriptor;
+
+    .line 71
+    .line 72
+    .line 73
+    move-result-object v0
+
+    .line 74
+    invoke-virtual {p3}, Landroid/content/res/AssetFileDescriptor;->getStartOffset()J
+
+    .line 75
+    .line 76
+    .line 77
+    move-result-wide v3
+
+    .line 78
+    sget v1, Landroid/system/OsConstants;->SEEK_SET:I
+
+    .line 79
+    .line 80
+    invoke-static {v0, v3, v4, v1}, Landroid/system/Os;->lseek(Ljava/io/FileDescriptor;JI)J
+
+    .line 81
+    .line 82
+    .line 83
+    new-instance v0, Lqz2;
+
+    .line 84
+    .line 85
+    const/4 v1, 0x2
+
+    .line 86
+    invoke-direct {v0, p3, v1}, Lqz2;-><init>(Ljava/lang/Object;B)V
+
+    .line 87
+    .line 88
+    .line 89
+    invoke-static {v0}, Landroid/graphics/ImageDecoder;->createSource(Ljava/util/concurrent/Callable;)Landroid/graphics/ImageDecoder$Source;
+
+    .line 90
+    .line 91
+    .line 92
+    move-result-object p3
+    :try_end_0
+    .catch Landroid/system/ErrnoException; {:try_start_0 .. :try_end_0} :catch_0
+
+    .line 93
+    goto :goto_0
+
+    .line 94
+    :cond_3
+    instance-of v1, p3, Lhi5;
+
+    .line 95
+    .line 96
+    if-eqz v1, :cond_4
+
+    .line 97
+    .line 98
+    move-object v1, p3
+
+    .line 99
+    check-cast v1, Lhi5;
+
+    .line 100
+    .line 101
+    iget-object v3, v1, Lhi5;->n:Ljava/lang/String;
+
+    .line 102
+    .line 103
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageName()Ljava/lang/String;
+
+    .line 104
+    .line 105
+    .line 106
+    move-result-object v4
+
+    .line 107
+    invoke-virtual {v3, v4}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
+    .line 108
+    .line 109
+    .line 110
+    move-result v3
+
+    .line 111
+    if-eqz v3, :cond_4
+
+    .line 112
+    .line 113
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    .line 114
+    .line 115
+    .line 116
+    move-result-object p3
+
+    .line 117
+    iget v0, v1, Lhi5;->o:I
+
+    .line 118
+    .line 119
+    invoke-static {p3, v0}, Landroid/graphics/ImageDecoder;->createSource(Landroid/content/res/Resources;I)Landroid/graphics/ImageDecoder$Source;
+
+    .line 120
+    .line 121
+    .line 122
+    move-result-object p3
+
+    .line 123
+    goto :goto_0
+
+    .line 124
+    :cond_4
+    instance-of v0, p3, Lzg0;
+
+    .line 125
+    .line 126
+    if-eqz v0, :cond_5
+
+    .line 127
+    .line 128
+    check-cast p3, Lzg0;
+
+    .line 129
+    .line 130
+    iget-object p3, p3, Lzg0;->n:Ljava/nio/ByteBuffer;
+
+    .line 131
+    .line 132
+    invoke-static {p3}, Landroid/graphics/ImageDecoder;->createSource(Ljava/nio/ByteBuffer;)Landroid/graphics/ImageDecoder$Source;
+
+    .line 133
+    .line 134
+    .line 135
+    move-result-object p3
+
+    .line 136
+    goto :goto_0
+
+    .line 137
+    :catch_0
+    :cond_5
+    move-object p3, v2
+
+    .line 138
+    :goto_0
+    if-nez p3, :cond_7
+
+    .line 139
+    .line 140
+    :cond_6
+    return-object v2
+
+    .line 141
+    :cond_7
+    new-instance v0, Lm20;
+
+    .line 142
+    .line 143
+    iget-object p1, p1, Lef6;->a:Lds2;
+
+    .line 144
+    .line 145
+    iget-object p0, p0, Lwh6;->a:Lg46;
+
+    .line 146
+    .line 147
+    invoke-direct {v0, p3, p1, p2, p0}, Lm20;-><init>(Landroid/graphics/ImageDecoder$Source;Ljava/lang/AutoCloseable;Lfl4;Lg46;)V
+
+    .line 148
+    .line 149
+    .line 150
     return-object v0
 .end method

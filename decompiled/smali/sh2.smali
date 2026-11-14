@@ -1,644 +1,315 @@
 .class public final Lsh2;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lzm6;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt72;
 
 
-# static fields
-.field public static final a:Lsh2;
+# instance fields
+.field public i:Lne0;
 
-.field public static final b:Lw81;
+.field public j:Ljava/lang/Integer;
 
-.field public static final c:Lpb6;
+.field public k:B
 
-.field public static final d:Lq85;
+.field public final synthetic l:Lne0;
 
-.field public static volatile e:Z
+.field public final synthetic m:I
 
-.field public static f:Lcb6;
-
-.field public static final g:Ljava/util/LinkedHashSet;
-
-.field public static final h:Lbu3;
+.field public final synthetic n:Lh43;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 9
+.method public constructor <init>(Lne0;ILh43;Lp91;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lsh2;
+    iput-object p1, p0, Lsh2;->l:Lne0;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput p2, p0, Lsh2;->m:I
 
     .line 4
     .line 5
-    .line 6
-    sput-object v0, Lsh2;->a:Lsh2;
+    iput-object p3, p0, Lsh2;->n:Lh43;
 
+    .line 6
     .line 7
+    const/4 p1, 0x2
+
     .line 8
-    sget-object v0, Ljr;->a:Lw81;
+    invoke-direct {p0, p1, p4}, Lzm6;-><init>(ILp91;)V
 
     .line 9
     .line 10
-    sput-object v0, Lsh2;->b:Lw81;
-
     .line 11
-    .line 12
-    new-instance v0, Lqh2;
-
-    .line 13
-    .line 14
-    new-instance v1, Lph2;
-
-    .line 15
-    .line 16
-    const/4 v7, 0x0
-
-    .line 17
-    const/4 v8, 0x0
-
-    .line 18
-    const/4 v2, 0x0
-
-    .line 19
-    const-string v3, ""
-
-    .line 20
-    .line 21
-    const/4 v4, 0x0
-
-    .line 22
-    const/4 v5, 0x0
-
-    .line 23
-    const/4 v6, 0x0
-
-    .line 24
-    invoke-direct/range {v1 .. v8}, Lph2;-><init>(ZLjava/lang/String;Ljava/lang/Integer;Ljava/lang/Long;FII)V
-
-    .line 25
-    .line 26
-    .line 27
-    const/4 v2, 0x1
-
-    .line 28
-    invoke-direct {v0, v2, v1}, Lqh2;-><init>(ZLph2;)V
-
-    .line 29
-    .line 30
-    .line 31
-    invoke-static {v0}, Lp60;->q(Ljava/lang/Object;)Lpb6;
-
-    .line 32
-    .line 33
-    .line 34
-    move-result-object v0
-
-    .line 35
-    sput-object v0, Lsh2;->c:Lpb6;
-
-    .line 36
-    .line 37
-    invoke-static {v0}, Ldn;->x(Lpb6;)Lq85;
-
-    .line 38
-    .line 39
-    .line 40
-    move-result-object v0
-
-    .line 41
-    sput-object v0, Lsh2;->d:Lq85;
-
-    .line 42
-    .line 43
-    new-instance v0, Ljava/util/LinkedHashSet;
-
-    .line 44
-    .line 45
-    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
-
-    .line 46
-    .line 47
-    .line 48
-    sput-object v0, Lsh2;->g:Ljava/util/LinkedHashSet;
-
-    .line 49
-    .line 50
-    new-instance v0, Lbu3;
-
-    .line 51
-    .line 52
-    invoke-direct {v0}, Lbu3;-><init>()V
-
-    .line 53
-    .line 54
-    .line 55
-    sput-object v0, Lsh2;->h:Lbu3;
-
-    .line 56
-    .line 57
     return-void
 .end method
 
-.method public static d()V
-    .locals 4
+
+# virtual methods
+.method public final create(Ljava/lang/Object;Lp91;)Lp91;
+    .locals 2
 
     .line 1
-    sget-object v0, Lsh2;->f:Lcb6;
+    new-instance p1, Lsh2;
+
+    .line 2
+    .line 3
+    iget v0, p0, Lsh2;->m:I
+
+    .line 4
+    .line 5
+    iget-object v1, p0, Lsh2;->n:Lh43;
+
+    .line 6
+    .line 7
+    iget-object p0, p0, Lsh2;->l:Lne0;
+
+    .line 8
+    .line 9
+    invoke-direct {p1, p0, v0, v1, p2}, Lsh2;-><init>(Lne0;ILh43;Lp91;)V
+
+    .line 10
+    .line 11
+    .line 12
+    return-object p1
+.end method
+
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    check-cast p1, Loc1;
+
+    .line 2
+    .line 3
+    check-cast p2, Lp91;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0, p1, p2}, Lsh2;->create(Ljava/lang/Object;Lp91;)Lp91;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    check-cast p0, Lsh2;
+
+    .line 10
+    .line 11
+    sget-object p1, Ll97;->a:Ll97;
+
+    .line 12
+    .line 13
+    invoke-virtual {p0, p1}, Lsh2;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p0
+
+    .line 17
+    return-object p0
+.end method
+
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 7
+
+    .line 1
+    iget-byte v0, p0, Lsh2;->k:B
 
     .line 2
     .line 3
     const/4 v1, 0x0
 
     .line 4
-    if-eqz v0, :cond_0
+    const/4 v2, 0x2
 
     .line 5
+    const/4 v3, 0x1
+
     .line 6
-    invoke-virtual {v0, v1}, Lov2;->c(Ljava/util/concurrent/CancellationException;)V
+    sget-object v4, Lpc1;->i:Lpc1;
 
     .line 7
     .line 8
-    .line 9
-    :cond_0
-    sput-object v1, Lsh2;->f:Lcb6;
-
-    .line 10
-    .line 11
-    sget-boolean v0, Lsh2;->e:Z
-
-    .line 12
-    .line 13
     if-eqz v0, :cond_2
 
-    .line 14
-    .line 15
-    sget-object v0, Lsh2;->g:Ljava/util/LinkedHashSet;
+    .line 9
+    .line 10
+    if-eq v0, v3, :cond_1
 
+    .line 11
+    .line 12
+    if-ne v0, v2, :cond_0
+
+    .line 13
+    .line 14
+    invoke-static {p1}, Lbe3;->R(Ljava/lang/Object;)V
+
+    .line 15
     .line 16
     .line 17
-    invoke-interface {v0}, Ljava/util/Set;->isEmpty()Z
+    goto :goto_1
 
     .line 18
+    :cond_0
+    const-string p0, "call to \'resume\' before \'invoke\' with coroutine"
+
     .line 19
     .line 20
-    move-result v0
+    invoke-static {p0}, Lex1;->d(Ljava/lang/String;)V
 
     .line 21
-    if-eqz v0, :cond_1
-
     .line 22
     .line 23
-    goto :goto_0
+    return-object v1
 
     .line 24
     :cond_1
-    sget-object v0, Lsh2;->b:Lw81;
+    iget-object v0, p0, Lsh2;->j:Ljava/lang/Integer;
 
     .line 25
     .line 26
-    new-instance v2, Lgy0;
+    iget-object v3, p0, Lsh2;->i:Lne0;
 
     .line 27
     .line 28
-    const/4 v3, 0x2
+    invoke-static {p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 29
-    invoke-direct {v2, v3, v1, v3}, Lgy0;-><init>(ILy81;B)V
-
     .line 30
     .line 31
-    .line 32
-    const/4 v3, 0x3
-
-    .line 33
-    invoke-static {v0, v1, v1, v2, v3}, Lbn0;->H(Lac1;Lrb1;Ldc1;Lt62;I)Lcb6;
-
-    .line 34
-    .line 35
-    .line 36
-    move-result-object v0
-
-    .line 37
-    sput-object v0, Lsh2;->f:Lcb6;
-
-    .line 38
-    .line 39
-    :cond_2
-    :goto_0
-    return-void
-.end method
-
-
-# virtual methods
-.method public final declared-synchronized a(Ljava/lang/Object;)V
-    .locals 1
-
-    .line 1
-    monitor-enter p0
-
-    .line 2
-    :try_start_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 3
-    .line 4
-    .line 5
-    sget-object v0, Lsh2;->g:Ljava/util/LinkedHashSet;
-
-    .line 6
-    .line 7
-    invoke-interface {v0, p1}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
-
-    .line 8
-    .line 9
-    .line 10
-    move-result p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 11
-    if-nez p1, :cond_0
-
-    .line 12
-    .line 13
-    monitor-exit p0
-
-    .line 14
-    return-void
-
-    .line 15
-    :cond_0
-    :try_start_1
-    invoke-static {}, Lsh2;->d()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 16
-    .line 17
-    .line 18
-    monitor-exit p0
-
-    .line 19
-    return-void
-
-    .line 20
-    :catchall_0
-    move-exception p1
-
-    .line 21
-    :try_start_2
-    monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 22
-    throw p1
-.end method
-
-.method public final b(Lz81;)Ljava/lang/Object;
-    .locals 6
-
-    .line 1
-    instance-of v0, p1, Lrh2;
-
-    .line 2
-    .line 3
-    if-eqz v0, :cond_0
-
-    .line 4
-    .line 5
-    move-object v0, p1
-
-    .line 6
-    check-cast v0, Lrh2;
-
-    .line 7
-    .line 8
-    iget v1, v0, Lrh2;->m:I
-
-    .line 9
-    .line 10
-    const/high16 v2, -0x80000000
-
-    .line 11
-    .line 12
-    and-int v3, v1, v2
-
-    .line 13
-    .line 14
-    if-eqz v3, :cond_0
-
-    .line 15
-    .line 16
-    sub-int/2addr v1, v2
-
-    .line 17
-    iput v1, v0, Lrh2;->m:I
-
-    .line 18
-    .line 19
     goto :goto_0
 
-    .line 20
-    :cond_0
-    new-instance v0, Lrh2;
-
-    .line 21
-    .line 22
-    invoke-direct {v0, p0, p1}, Lrh2;-><init>(Lsh2;Lz81;)V
-
-    .line 23
-    .line 24
-    .line 25
-    :goto_0
-    iget-object p0, v0, Lrh2;->k:Ljava/lang/Object;
-
-    .line 26
-    .line 27
-    iget p1, v0, Lrh2;->m:I
-
-    .line 28
-    .line 29
-    const/4 v1, 0x1
-
-    .line 30
-    const/4 v2, 0x2
-
-    .line 31
-    const/4 v3, 0x0
-
     .line 32
-    sget-object v4, Lbc1;->j:Lbc1;
+    :cond_2
+    invoke-static {p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 33
     .line 34
-    if-eqz p1, :cond_3
-
     .line 35
+    new-instance v0, Ljava/lang/Integer;
+
     .line 36
-    if-eq p1, v1, :cond_2
-
     .line 37
+    iget p1, p0, Lsh2;->m:I
+
     .line 38
-    if-ne p1, v2, :cond_1
-
     .line 39
-    .line 40
-    iget-object p1, v0, Lrh2;->j:Lbu3;
+    invoke-direct {v0, p1}, Ljava/lang/Integer;-><init>(I)V
 
+    .line 40
     .line 41
     .line 42
-    :try_start_0
-    invoke-static {p0}, Lsi3;->l0(Ljava/lang/Object;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    sget-object p1, Luh2;->a:Luh2;
 
     .line 43
     .line 44
-    .line 45
-    goto :goto_3
+    iget-object p1, p0, Lsh2;->n:Lh43;
 
+    .line 45
     .line 46
-    :catchall_0
-    move-exception p0
+    iget-object p1, p1, Lh43;->b:Ljava/lang/String;
 
     .line 47
-    goto :goto_4
-
     .line 48
-    :cond_1
-    const-string p0, "call to \'resume\' before \'invoke\' with coroutine"
+    iget-object v5, p0, Lsh2;->l:Lne0;
 
     .line 49
     .line 50
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+    iput-object v5, p0, Lsh2;->i:Lne0;
 
     .line 51
     .line 52
-    .line 53
-    return-object v3
+    iput-object v0, p0, Lsh2;->j:Ljava/lang/Integer;
 
+    .line 53
     .line 54
-    :cond_2
-    iget-object p1, v0, Lrh2;->j:Lbu3;
+    iput-byte v3, p0, Lsh2;->k:B
 
     .line 55
     .line 56
-    invoke-static {p0}, Lsi3;->l0(Ljava/lang/Object;)V
+    sget-object v3, Lil1;->a:Lhh1;
 
     .line 57
     .line 58
-    .line 59
-    goto :goto_1
+    sget-object v3, Lyg1;->k:Lyg1;
 
+    .line 59
     .line 60
-    :cond_3
-    invoke-static {p0}, Lsi3;->l0(Ljava/lang/Object;)V
+    new-instance v6, Lxf;
 
     .line 61
     .line 62
-    .line 63
-    sget-object p0, Lsh2;->h:Lbu3;
+    invoke-direct {v6, p1, v1}, Lxf;-><init>(Ljava/lang/String;Lp91;)V
 
+    .line 63
     .line 64
     .line 65
-    iput-object p0, v0, Lrh2;->j:Lbu3;
+    invoke-static {v3, v6, p0}, Lan0;->d0(Lfc1;Lt72;Lp91;)Ljava/lang/Object;
 
     .line 66
     .line 67
-    iput v1, v0, Lrh2;->m:I
-
     .line 68
+    move-result-object p1
+
     .line 69
-    invoke-virtual {p0, v0}, Lbu3;->e(Ly81;)Ljava/lang/Object;
+    if-eq p1, v4, :cond_3
 
     .line 70
     .line 71
+    move-object v3, v5
+
     .line 72
-    move-result-object p1
+    :goto_0
+    new-instance v5, Lfs4;
 
     .line 73
-    if-ne p1, v4, :cond_4
-
     .line 74
+    invoke-direct {v5, v0, p1}, Lfs4;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
     .line 75
-    goto :goto_2
-
     .line 76
-    :cond_4
-    move-object p1, p0
-
     .line 77
-    :goto_1
-    :try_start_1
-    iput-object p1, v0, Lrh2;->j:Lbu3;
+    iput-object v1, p0, Lsh2;->i:Lne0;
 
     .line 78
     .line 79
-    iput v2, v0, Lrh2;->m:I
+    iput-object v1, p0, Lsh2;->j:Ljava/lang/Integer;
 
     .line 80
     .line 81
-    sget-object p0, Llk1;->a:Log1;
+    iput-byte v2, p0, Lsh2;->k:B
 
     .line 82
     .line 83
-    sget-object p0, Lfg1;->l:Lfg1;
+    invoke-interface {v3, p0, v5}, Lj46;->a(Lp91;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 84
     .line 85
-    new-instance v1, Ltm;
-
     .line 86
-    .line 87
-    const/4 v5, 0x4
-
-    .line 88
-    invoke-direct {v1, v2, v3, v5}, Ltm;-><init>(ILy81;B)V
-
-    .line 89
-    .line 90
-    .line 91
-    invoke-static {p0, v1, v0}, Lbn0;->S(Lrb1;Lt62;Ly81;)Ljava/lang/Object;
-
-    .line 92
-    .line 93
-    .line 94
     move-result-object p0
 
-    .line 95
-    if-ne p0, v4, :cond_5
+    .line 87
+    if-ne p0, v4, :cond_4
 
-    .line 96
-    .line 97
-    :goto_2
+    .line 88
+    .line 89
+    :cond_3
     return-object v4
 
-    .line 98
-    :cond_5
-    :goto_3
-    check-cast p0, Loh2;
+    .line 90
+    :cond_4
+    :goto_1
+    sget-object p0, Ll97;->a:Ll97;
 
-    .line 99
-    .line 100
-    iget-object p0, p0, Loh2;->a:Lph2;
-
-    .line 101
-    .line 102
-    sget-object v0, Lsh2;->c:Lpb6;
-
-    .line 103
-    .line 104
-    new-instance v1, Lqh2;
-
-    .line 105
-    .line 106
-    const/4 v2, 0x0
-
-    .line 107
-    invoke-direct {v1, v2, p0}, Lqh2;-><init>(ZLph2;)V
-
-    .line 108
-    .line 109
-    .line 110
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 111
-    .line 112
-    .line 113
-    invoke-virtual {v0, v3, v1}, Lpb6;->m(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 114
-    .line 115
-    .line 116
-    sget-object p0, La47;->a:La47;
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 117
-    .line 118
-    invoke-virtual {p1, v3}, Lbu3;->g(Ljava/lang/Object;)V
-
-    .line 119
-    .line 120
-    .line 121
+    .line 91
+    .line 92
     return-object p0
-
-    .line 122
-    :goto_4
-    invoke-virtual {p1, v3}, Lbu3;->g(Ljava/lang/Object;)V
-
-    .line 123
-    .line 124
-    .line 125
-    throw p0
-.end method
-
-.method public final declared-synchronized c(Ljava/lang/Object;)V
-    .locals 1
-
-    .line 1
-    monitor-enter p0
-
-    .line 2
-    :try_start_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 3
-    .line 4
-    .line 5
-    sget-object v0, Lsh2;->g:Ljava/util/LinkedHashSet;
-
-    .line 6
-    .line 7
-    invoke-interface {v0, p1}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
-
-    .line 8
-    .line 9
-    .line 10
-    move-result p1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 11
-    if-nez p1, :cond_0
-
-    .line 12
-    .line 13
-    monitor-exit p0
-
-    .line 14
-    return-void
-
-    .line 15
-    :cond_0
-    :try_start_1
-    invoke-static {}, Lsh2;->d()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 16
-    .line 17
-    .line 18
-    monitor-exit p0
-
-    .line 19
-    return-void
-
-    .line 20
-    :catchall_0
-    move-exception p1
-
-    .line 21
-    :try_start_2
-    monitor-exit p0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
-
-    .line 22
-    throw p1
 .end method

@@ -1,123 +1,123 @@
 <?xml version='1.0' encoding='utf-8'?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:compileSdkVersion="37" android:compileSdkVersionCodename="17" package="com.boxproxy.box" platformBuildVersionCode="37" platformBuildVersionName="17">
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
-    <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
-    <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES" android:usesPermissionFlags="neverForLocation" />
-    <permission android:name="com.boxproxy.box.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" android:protectionLevel="signature" />
-    <uses-permission android:name="com.boxproxy.box.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
-    <uses-permission android:name="com.android.permission.GET_INSTALLED_APPS" /><uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" /><uses-permission android:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" /><application android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:dataExtractionRules="@xml/data_extraction_rules" android:enableOnBackInvokedCallback="true" android:extractNativeLibs="false" android:fullBackupContent="@xml/backup_rules" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:localeConfig="@xml/locales_config" android:name="com.box.app.AppApplication" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/Theme.BoxApp" android:usesCleartextTraffic="true">
-        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="true" android:name="com.box.app.MainActivity" android:resizeableActivity="true" android:theme="@style/Theme.BoxApp" android:windowSoftInputMode="adjustResize" />
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@mipmap/ic_launcher1" android:label="@string/app_name" android:name="com.box.app.MainLauncherAlternate" android:roundIcon="@mipmap/ic_launcher1_round" android:targetActivity="com.box.app.MainActivity">
+<manifest xmlns:ns0="http://schemas.android.com/apk/res/android" ns0:compileSdkVersion="37" ns0:compileSdkVersionCodename="17" package="com.boxproxy.box" platformBuildVersionCode="37" platformBuildVersionName="17">
+    <uses-permission ns0:name="android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS" /><uses-permission ns0:name="android.permission.RECEIVE_BOOT_COMPLETED" /><uses-permission ns0:name="com.android.permission.GET_INSTALLED_APPS" /><uses-permission ns0:name="android.permission.INTERNET" />
+    <uses-permission ns0:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission ns0:name="android.permission.VIBRATE" />
+    <uses-permission ns0:name="android.permission.QUERY_ALL_PACKAGES" />
+    <uses-permission ns0:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission ns0:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission ns0:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission ns0:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission ns0:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission ns0:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission ns0:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission ns0:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission ns0:name="android.permission.NEARBY_WIFI_DEVICES" ns0:usesPermissionFlags="neverForLocation" />
+    <permission ns0:name="com.boxproxy.box.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" ns0:protectionLevel="signature" />
+    <uses-permission ns0:name="com.boxproxy.box.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+    <application ns0:allowBackup="true" ns0:appComponentFactory="androidx.core.app.CoreComponentFactory" ns0:dataExtractionRules="@xml/data_extraction_rules" ns0:enableOnBackInvokedCallback="true" ns0:extractNativeLibs="false" ns0:fullBackupContent="@xml/backup_rules" ns0:icon="@mipmap/ic_launcher" ns0:label="@string/app_name" ns0:localeConfig="@xml/locales_config" ns0:name="com.box.app.AppApplication" ns0:roundIcon="@mipmap/ic_launcher_round" ns0:supportsRtl="true" ns0:theme="@style/Theme.BoxApp" ns0:usesCleartextTraffic="true">
+        <activity ns0:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" ns0:exported="true" ns0:name="com.box.app.MainActivity" ns0:resizeableActivity="true" ns0:theme="@style/Theme.BoxApp" ns0:windowSoftInputMode="adjustResize" />
+        <activity-alias ns0:enabled="false" ns0:exported="true" ns0:icon="@mipmap/ic_launcher1" ns0:label="@string/app_name" ns0:name="com.box.app.MainLauncherAlternate" ns0:roundIcon="@mipmap/ic_launcher1_round" ns0:targetActivity="com.box.app.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action ns0:name="android.intent.action.MAIN" />
+                <category ns0:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-        <activity-alias android:enabled="true" android:exported="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:name="com.box.app.MainLauncherDefault" android:roundIcon="@mipmap/ic_launcher_round" android:targetActivity="com.box.app.MainActivity">
+        <activity-alias ns0:enabled="true" ns0:exported="true" ns0:icon="@mipmap/ic_launcher" ns0:label="@string/app_name" ns0:name="com.box.app.MainLauncherDefault" ns0:roundIcon="@mipmap/ic_launcher_round" ns0:targetActivity="com.box.app.MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action ns0:name="android.intent.action.MAIN" />
+                <category ns0:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
-        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="true" android:finishOnTaskLaunch="true" android:launchMode="singleInstance" android:name="com.box.app.PanelSheetActivity" android:resizeableActivity="true" android:taskAffinity="" android:theme="@style/Theme.BoxApp.Translucent.Popup" android:windowSoftInputMode="adjustResize" />
-        <activity-alias android:enabled="false" android:exported="true" android:icon="@drawable/ic_stat_box" android:label="@string/tile_service_label" android:name="com.box.app.tile.BoxTilePreferencesAlternateActivity" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE" android:roundIcon="@drawable/ic_stat_box" android:targetActivity="com.box.app.PanelSheetActivity">
+        <activity ns0:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" ns0:excludeFromRecents="true" ns0:exported="true" ns0:finishOnTaskLaunch="true" ns0:launchMode="singleInstance" ns0:name="com.box.app.PanelSheetActivity" ns0:resizeableActivity="true" ns0:taskAffinity="" ns0:theme="@style/Theme.BoxApp.Translucent.Popup" ns0:windowSoftInputMode="adjustResize" />
+        <activity-alias ns0:enabled="false" ns0:exported="true" ns0:icon="@drawable/ic_stat_box" ns0:label="@string/tile_service_label" ns0:name="com.box.app.tile.BoxTilePreferencesAlternateActivity" ns0:permission="android.permission.BIND_QUICK_SETTINGS_TILE" ns0:roundIcon="@drawable/ic_stat_box" ns0:targetActivity="com.box.app.PanelSheetActivity">
             <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action ns0:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
+                <category ns0:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity-alias>
-        <activity-alias android:enabled="true" android:exported="true" android:icon="@drawable/ic_stat_box" android:label="@string/tile_service_label" android:name="com.box.app.tile.BoxTilePreferencesDefaultActivity" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE" android:roundIcon="@drawable/ic_stat_box" android:targetActivity="com.box.app.PanelSheetActivity">
+        <activity-alias ns0:enabled="true" ns0:exported="true" ns0:icon="@drawable/ic_stat_box" ns0:label="@string/tile_service_label" ns0:name="com.box.app.tile.BoxTilePreferencesDefaultActivity" ns0:permission="android.permission.BIND_QUICK_SETTINGS_TILE" ns0:roundIcon="@drawable/ic_stat_box" ns0:targetActivity="com.box.app.PanelSheetActivity">
             <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action ns0:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
+                <category ns0:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity-alias>
-        <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:excludeFromRecents="true" android:exported="true" android:finishOnTaskLaunch="true" android:name="com.box.app.CoreImportActivity" android:taskAffinity="" android:theme="@style/Theme.BoxApp.Translucent.Popup">
+        <activity ns0:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" ns0:excludeFromRecents="true" ns0:exported="true" ns0:finishOnTaskLaunch="true" ns0:name="com.box.app.CoreImportActivity" ns0:taskAffinity="" ns0:theme="@style/Theme.BoxApp.Translucent.Popup">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="content" />
-                <data android:scheme="file" />
-                <data android:mimeType="application/gzip" />
-                <data android:mimeType="application/x-gzip" />
-                <data android:mimeType="application/zip" />
-                <data android:mimeType="application/x-zip-compressed" />
-                <data android:mimeType="application/x-tar" />
-                <data android:mimeType="application/octet-stream" />
+                <action ns0:name="android.intent.action.VIEW" />
+                <category ns0:name="android.intent.category.DEFAULT" />
+                <category ns0:name="android.intent.category.BROWSABLE" />
+                <data ns0:scheme="content" />
+                <data ns0:scheme="file" />
+                <data ns0:mimeType="application/gzip" />
+                <data ns0:mimeType="application/x-gzip" />
+                <data ns0:mimeType="application/zip" />
+                <data ns0:mimeType="application/x-zip-compressed" />
+                <data ns0:mimeType="application/x-tar" />
+                <data ns0:mimeType="application/octet-stream" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="application/gzip" />
-                <data android:mimeType="application/x-gzip" />
-                <data android:mimeType="application/zip" />
-                <data android:mimeType="application/x-zip-compressed" />
-                <data android:mimeType="application/x-tar" />
-                <data android:mimeType="application/octet-stream" />
+                <action ns0:name="android.intent.action.SEND" />
+                <category ns0:name="android.intent.category.DEFAULT" />
+                <data ns0:mimeType="application/gzip" />
+                <data ns0:mimeType="application/x-gzip" />
+                <data ns0:mimeType="application/zip" />
+                <data ns0:mimeType="application/x-zip-compressed" />
+                <data ns0:mimeType="application/x-tar" />
+                <data ns0:mimeType="application/octet-stream" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="content" />
-                <data android:host="*" />
-                <data android:pathPattern=".*\\.gz" />
-                <data android:pathPattern=".*\\.tar\\.gz" />
-                <data android:pathPattern=".*\\.tgz" />
-                <data android:pathPattern=".*\\.tar" />
-                <data android:pathPattern=".*\\.zip" />
+                <action ns0:name="android.intent.action.VIEW" />
+                <category ns0:name="android.intent.category.DEFAULT" />
+                <category ns0:name="android.intent.category.BROWSABLE" />
+                <data ns0:scheme="content" />
+                <data ns0:host="*" />
+                <data ns0:pathPattern=".*\\.gz" />
+                <data ns0:pathPattern=".*\\.tar\\.gz" />
+                <data ns0:pathPattern=".*\\.tgz" />
+                <data ns0:pathPattern=".*\\.tar" />
+                <data ns0:pathPattern=".*\\.zip" />
             </intent-filter>
         </activity>
-        <service android:exported="true" android:icon="@drawable/ic_stat_box" android:label="@string/tile_service_label" android:name="com.box.app.tile.BoxServiceTileService" android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+        <service ns0:exported="true" ns0:icon="@drawable/ic_stat_box" ns0:label="@string/tile_service_label" ns0:name="com.box.app.tile.BoxServiceTileService" ns0:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE" />
+                <action ns0:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
-        <service android:enabled="true" android:exported="false" android:foregroundServiceType="specialUse" android:name="com.box.app.notification.BoxPersistentNotificationService" android:stopWithTask="false">
-            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="persistent_box_service_status_notification" />
+        <service ns0:enabled="true" ns0:exported="false" ns0:foregroundServiceType="specialUse" ns0:name="com.box.app.notification.BoxPersistentNotificationService" ns0:stopWithTask="false">
+            <property ns0:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" ns0:value="persistent_box_service_status_notification" />
         </service>
-        <provider android:authorities="com.boxproxy.box.androidx-startup" android:exported="false" android:name="androidx.startup.InitializationProvider">
-            <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup" />
-            <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup" />
-            <meta-data android:name="okhttp3.internal.platform.PlatformInitializer" android:value="androidx.startup" />
-            <meta-data android:name="androidx.profileinstaller.ProfileInstallerInitializer" android:value="androidx.startup" />
+        <uses-library ns0:name="androidx.window.extensions" ns0:required="false" />
+        <uses-library ns0:name="androidx.window.sidecar" ns0:required="false" />
+        <provider ns0:authorities="com.boxproxy.box.androidx-startup" ns0:exported="false" ns0:name="androidx.startup.InitializationProvider">
+            <meta-data ns0:name="androidx.emoji2.text.EmojiCompatInitializer" ns0:value="androidx.startup" />
+            <meta-data ns0:name="androidx.lifecycle.ProcessLifecycleInitializer" ns0:value="androidx.startup" />
+            <meta-data ns0:name="okhttp3.internal.platform.PlatformInitializer" ns0:value="androidx.startup" />
+            <meta-data ns0:name="androidx.profileinstaller.ProfileInstallerInitializer" ns0:value="androidx.startup" />
         </provider>
-        <uses-library android:name="androidx.window.extensions" android:required="false" />
-        <uses-library android:name="androidx.window.sidecar" android:required="false" />
-        <receiver android:directBootAware="false" android:enabled="true" android:exported="true" android:name="androidx.profileinstaller.ProfileInstallReceiver" android:permission="android.permission.DUMP">
+        <receiver ns0:directBootAware="false" ns0:enabled="true" ns0:exported="true" ns0:name="androidx.profileinstaller.ProfileInstallReceiver" ns0:permission="android.permission.DUMP">
             <intent-filter>
-                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+                <action ns0:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
             </intent-filter>
             <intent-filter>
-                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+                <action ns0:name="androidx.profileinstaller.action.SKIP_FILE" />
             </intent-filter>
             <intent-filter>
-                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+                <action ns0:name="androidx.profileinstaller.action.SAVE_PROFILE" />
             </intent-filter>
             <intent-filter>
-                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+                <action ns0:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
             </intent-filter>
         </receiver>
-    <service android:exported="false" android:foregroundServiceType="specialUse" android:name="com.box.app.vpn.BoxVpnService" android:permission="android.permission.BIND_VPN_SERVICE" android:stopWithTask="false">
+    <service ns0:exported="false" ns0:foregroundServiceType="specialUse" ns0:name="com.box.app.vpn.BoxVpnService" ns0:permission="android.permission.BIND_VPN_SERVICE" ns0:stopWithTask="false">
             <intent-filter>
-                <action android:name="android.net.VpnService" />
+                <action ns0:name="android.net.VpnService" />
             </intent-filter>
-            <meta-data android:name="android.net.VpnService.SUPPORTS_ALWAYS_ON" android:value="true" />
-            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" android:value="non_root_vpn_proxy_service" />
-        </service><receiver android:enabled="true" android:exported="true" android:name="com.box.app.vpn.BootReceiver">
+            <meta-data ns0:name="android.net.VpnService.SUPPORTS_ALWAYS_ON" ns0:value="true" />
+            <property ns0:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE" ns0:value="non_root_vpn_proxy_service" />
+        </service><receiver ns0:enabled="true" ns0:exported="true" ns0:name="com.box.app.vpn.BootReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action ns0:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
-        </receiver><activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.box.app.cfg.AnchorActivity" android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar" android:windowSoftInputMode="adjustResize" /><activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.box.app.cfg.FormActivity" android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar" android:windowSoftInputMode="adjustResize" /><activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" android:exported="false" android:name="com.box.app.cfg.SbFormActivity" android:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar" android:windowSoftInputMode="adjustResize" /><activity android:excludeFromRecents="true" android:exported="false" android:name="com.box.app.vpn.VpnPrepareActivity" android:noHistory="true" android:taskAffinity="" android:theme="@android:style/Theme.Translucent.NoTitleBar" /></application>
+        </receiver><activity ns0:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" ns0:exported="false" ns0:name="com.box.app.cfg.AnchorActivity" ns0:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar" ns0:windowSoftInputMode="adjustResize" /><activity ns0:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" ns0:exported="false" ns0:name="com.box.app.cfg.FormActivity" ns0:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar" ns0:windowSoftInputMode="adjustResize" /><activity ns0:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize" ns0:exported="false" ns0:name="com.box.app.cfg.SbFormActivity" ns0:theme="@android:style/Theme.DeviceDefault.Light.NoActionBar" ns0:windowSoftInputMode="adjustResize" /><activity ns0:excludeFromRecents="true" ns0:exported="false" ns0:name="com.box.app.vpn.VpnPrepareActivity" ns0:noHistory="true" ns0:taskAffinity="" ns0:theme="@android:style/Theme.Translucent.NoTitleBar" /></application>
 </manifest>

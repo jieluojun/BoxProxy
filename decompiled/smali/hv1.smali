@@ -1,99 +1,128 @@
-.class public final Lhv1;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public Lhv1;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Ld43;
 
 
-# instance fields
-.field public j:Loz0;
-
-.field public k:Lnn2;
-
-.field public l:Ljava/lang/Object;
-
-.field public m:Lre4;
-
-.field public n:Liw1;
-
-.field public o:I
-
-.field public synthetic p:Ljava/lang/Object;
-
-.field public final synthetic q:Ljv1;
-
-.field public r:I
+# static fields
+.field public static final a:Lyy6;
 
 
 # direct methods
-.method public constructor <init>(Ljv1;Lz81;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Lhv1;->q:Ljv1;
+    new-instance v0, Lyy6;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    const/4 v1, 0x0
 
     .line 4
+    invoke-direct {v0, v1}, Lyy6;-><init>(Lon6;)V
+
     .line 5
     .line 6
+    .line 7
+    sput-object v0, Lhv1;->a:Lyy6;
+
+    .line 8
+    .line 9
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
+.method public a()Lq4;
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lhv1;->p:Ljava/lang/Object;
+    sget-object p0, Lgv1;->c:Lgv1;
 
     .line 2
     .line 3
-    iget p1, p0, Lhv1;->r:I
-
-    .line 4
-    .line 5
-    const/high16 v0, -0x80000000
-
-    .line 6
-    .line 7
-    or-int/2addr p1, v0
-
-    .line 8
-    iput p1, p0, Lhv1;->r:I
-
-    .line 9
-    .line 10
-    const/4 v4, 0x0
-
-    .line 11
-    const/4 v5, 0x0
-
-    .line 12
-    iget-object v0, p0, Lhv1;->q:Ljv1;
-
-    .line 13
-    .line 14
-    const/4 v1, 0x0
-
-    .line 15
-    const/4 v2, 0x0
-
-    .line 16
-    const/4 v3, 0x0
-
-    .line 17
-    move-object v6, p0
-
-    .line 18
-    invoke-virtual/range {v0 .. v6}, Ljv1;->c(Loz0;Lnn2;Ljava/lang/Object;Lre4;Liw1;Lz81;)Ljava/lang/Object;
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-object p0
-
-    .line 22
     return-object p0
+.end method
+
+.method public final b()I
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public c(La91;Lyn0;Lny0;Landroid/os/Bundle;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public d()[Lbe4;
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    new-array p0, p0, [Lbe4;
+
+    .line 3
+    .line 4
+    return-object p0
+.end method
+
+.method public destroy()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public final e(La91;II)I
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public final f()Lo6;
+    .locals 0
+
+    .line 1
+    sget-object p0, Lo6;->g0:Lo6;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public g()Lyy6;
+    .locals 0
+
+    .line 1
+    sget-object p0, Lhv1;->a:Lyy6;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public h()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
 .end method

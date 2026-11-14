@@ -1,0 +1,47 @@
+{
+  "output": ".tools/ported-154",
+  "customStrings": [
+    "proxy_core_mihomo_dingtalk",
+    "proxy_core_sing_box_dingtalk",
+    "proxy_config_restore_default",
+    "proxy_config_restore_done",
+    "proxy_config_restore_done_bak",
+    "proxy_config_restore_failed",
+    "proxy_config_restore_none",
+    "proxy_mode_vpn",
+    "proxy_selector_hide_unavailable",
+    "service_battery_unrestricted_title",
+    "service_battery_unrestricted_subtitle",
+    "service_battery_unrestricted_already"
+  ],
+  "stringIds": {
+    "0x7f0f050a": "0x7f0f0539",
+    "0x7f0f050b": "0x7f0f053a",
+    "0x7f0f050c": "0x7f0f053b",
+    "0x7f0f050d": "0x7f0f053c",
+    "0x7f0f050e": "0x7f0f053d",
+    "0x7f0f050f": "0x7f0f053e",
+    "0x7f0f0510": "0x7f0f053f",
+    "0x7f0f0508": "0x7f0f0540",
+    "0x7f0f0509": "0x7f0f0541",
+    "0x7f0f0511": "0x7f0f0542",
+    "0x7f0f0512": "0x7f0f0543",
+    "0x7f0f0513": "0x7f0f0544"
+  },
+  "manifestAdditions": [
+    "com.android.permission.GET_INSTALLED_APPS",
+    "android.permission.RECEIVE_BOOT_COMPLETED",
+    "android.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS",
+    "com.box.app.vpn.BoxVpnService",
+    "com.box.app.vpn.BootReceiver",
+    "com.box.app.cfg.AnchorActivity",
+    "com.box.app.cfg.FormActivity",
+    "com.box.app.cfg.SbFormActivity",
+    "com.box.app.vpn.VpnPrepareActivity"
+  ],
+  "smaliFilesAdded": 1355,
+  "smaliFilesCarried": [
+    "smali/com/box/app/vpn/CtlResult.smali"
+  ],
+  "assetFilesAdded": 7
+}

@@ -1,66 +1,39 @@
-.class public final Lld6;
+.class public final synthetic Lld6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
-
-# static fields
-.field public static final d:Lld6;
+# interfaces
+.implements Lp72;
 
 
 # instance fields
-.field public final a:I
+.field public final synthetic i:B
 
-.field public final b:I
+.field public final synthetic j:Lsf5;
 
-.field public final c:I
+.field public final synthetic k:Lp72;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    .line 1
-    new-instance v0, Lld6;
-
-    .line 2
-    .line 3
-    const/4 v1, -0x1
-
-    .line 4
-    const/4 v2, 0x0
-
-    .line 5
-    invoke-direct {v0, v1, v2, v2}, Lld6;-><init>(III)V
-
-    .line 6
-    .line 7
-    .line 8
-    sput-object v0, Lld6;->d:Lld6;
-
-    .line 9
-    .line 10
-    return-void
-.end method
-
-.method public constructor <init>(III)V
+.method public synthetic constructor <init>(Lsf5;Lp72;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p3, p0, Lld6;->i:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Lld6;->j:Lsf5;
+
     .line 4
-    iput p1, p0, Lld6;->a:I
-
     .line 5
+    iput-object p2, p0, Lld6;->k:Lp72;
+
     .line 6
-    iput p2, p0, Lld6;->b:I
-
     .line 7
-    .line 8
-    iput p3, p0, Lld6;->c:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 8
     .line 9
     .line 10
     return-void
@@ -68,112 +41,103 @@
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
     .line 1
-    const/4 v0, 0x1
+    iget-byte v0, p0, Lld6;->i:B
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
-    .line 4
-    return v0
+    sget-object v1, Ll97;->a:Ll97;
 
+    .line 4
     .line 5
-    :cond_0
-    instance-of v1, p1, Lld6;
+    iget-object v2, p0, Lld6;->k:Lp72;
 
     .line 6
     .line 7
-    const/4 v2, 0x0
+    iget-object p0, p0, Lld6;->j:Lsf5;
 
     .line 8
-    if-eqz v1, :cond_1
-
     .line 9
+    check-cast p1, Ljava/lang/Float;
+
     .line 10
-    check-cast p1, Lld6;
-
     .line 11
-    .line 12
-    iget v1, p0, Lld6;->c:I
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
 
+    .line 12
     .line 13
     .line 14
-    iget v3, p1, Lld6;->c:I
+    move-result p1
 
     .line 15
-    .line 16
-    if-ne v1, v3, :cond_1
+    packed-switch v0, :pswitch_data_0
 
+    .line 16
     .line 17
     .line 18
-    iget v1, p0, Lld6;->a:I
+    iget v0, p0, Lsf5;->i:F
 
     .line 19
     .line 20
-    iget v3, p1, Lld6;->a:I
+    sub-float/2addr v0, p1
 
     .line 21
+    iput v0, p0, Lsf5;->i:F
+
     .line 22
-    if-ne v1, v3, :cond_1
-
     .line 23
-    .line 24
-    iget p0, p0, Lld6;->b:I
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
+    .line 24
     .line 25
     .line 26
-    iget p1, p1, Lld6;->b:I
+    move-result-object p0
 
     .line 27
-    .line 28
-    if-ne p0, p1, :cond_1
+    invoke-interface {v2, p0}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 28
     .line 29
     .line 30
-    return v0
+    return-object v1
 
     .line 31
-    :cond_1
-    return v2
-.end method
+    :pswitch_0
+    iget v0, p0, Lsf5;->i:F
 
-.method public final hashCode()I
-    .locals 2
+    .line 32
+    .line 33
+    sub-float/2addr v0, p1
 
-    .line 1
-    iget v0, p0, Lld6;->c:I
+    .line 34
+    iput v0, p0, Lsf5;->i:F
 
-    .line 2
-    .line 3
-    add-int/lit8 v0, v0, 0x1f
+    .line 35
+    .line 36
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    .line 4
-    .line 5
-    mul-int/lit8 v0, v0, 0x1f
+    .line 37
+    .line 38
+    .line 39
+    move-result-object p0
 
-    .line 6
-    .line 7
-    iget v1, p0, Lld6;->a:I
+    .line 40
+    invoke-interface {v2, p0}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 8
-    .line 9
-    add-int/2addr v0, v1
+    .line 41
+    .line 42
+    .line 43
+    return-object v1
 
-    .line 10
-    mul-int/lit8 v0, v0, 0x1f
+    .line 44
+    nop
 
-    .line 11
-    .line 12
-    iget p0, p0, Lld6;->b:I
-
-    .line 13
-    .line 14
-    add-int/2addr v0, p0
-
-    .line 15
-    return v0
+    .line 45
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

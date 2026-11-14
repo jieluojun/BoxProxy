@@ -1,120 +1,61 @@
-.class public final synthetic Lnu4;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lp62;
+.class public final Lnu4;
+.super Ljava/lang/RuntimeException;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:Landroid/content/Context;
-
-.field public final synthetic k:Landroid/content/pm/ResolveInfo;
-
-.field public final synthetic l:Z
-
-.field public final synthetic m:Ljava/lang/CharSequence;
-
-.field public final synthetic n:J
+.field public final i:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/content/Context;Landroid/content/pm/ResolveInfo;ZLjava/lang/CharSequence;J)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 17
+    const-string v0, "error parsing regexp: trailing backslash at end of expression"
 
-    .line 2
-    .line 3
-    .line 4
-    iput-object p1, p0, Lnu4;->j:Landroid/content/Context;
+    invoke-direct {p0, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
-    .line 5
-    .line 6
-    iput-object p2, p0, Lnu4;->k:Landroid/content/pm/ResolveInfo;
+    .line 18
+    const-string v0, "trailing backslash at end of expression"
 
-    .line 7
-    .line 8
-    iput-boolean p3, p0, Lnu4;->l:Z
+    iput-object v0, p0, Lnu4;->i:Ljava/lang/String;
 
-    .line 9
-    .line 10
-    iput-object p4, p0, Lnu4;->m:Ljava/lang/CharSequence;
-
-    .line 11
-    .line 12
-    iput-wide p5, p0, Lnu4;->n:J
-
-    .line 13
-    .line 14
     return-void
 .end method
 
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+    .locals 3
 
     .line 1
-    check-cast p1, Lcm6;
+    const-string v0, ": `"
 
     .line 2
     .line 3
-    sget-object v0, Lkj3;->K:La01;
+    const-string v1, "`"
 
     .line 4
     .line 5
-    iget-boolean v1, p0, Lnu4;->l:Z
+    const-string v2, "error parsing regexp: "
 
     .line 6
     .line 7
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    invoke-static {v2, p1, v0, p2, v1}, Lky1;->o(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 8
     .line 9
     .line 10
-    move-result-object v3
+    move-result-object p2
 
     .line 11
-    new-instance v5, Lqr6;
+    invoke-direct {p0, p2}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
     .line 12
     .line 13
-    iget-wide v1, p0, Lnu4;->n:J
-
     .line 14
+    iput-object p1, p0, Lnu4;->i:Ljava/lang/String;
+
     .line 15
-    invoke-direct {v5, v1, v2}, Lqr6;-><init>(J)V
-
     .line 16
-    .line 17
-    .line 18
-    iget-object v1, p0, Lnu4;->j:Landroid/content/Context;
-
-    .line 19
-    .line 20
-    iget-object v2, p0, Lnu4;->k:Landroid/content/pm/ResolveInfo;
-
-    .line 21
-    .line 22
-    iget-object v4, p0, Lnu4;->m:Ljava/lang/CharSequence;
-
-    .line 23
-    .line 24
-    invoke-virtual/range {v0 .. v5}, La01;->c(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 25
-    .line 26
-    .line 27
-    invoke-interface {p1}, Lcm6;->close()V
-
-    .line 28
-    .line 29
-    .line 30
-    sget-object p0, La47;->a:La47;
-
-    .line 31
-    .line 32
-    return-object p0
+    return-void
 .end method

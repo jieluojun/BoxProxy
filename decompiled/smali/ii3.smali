@@ -1,2765 +1,562 @@
-.class public final Lii3;
+.class public final synthetic Lii3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lu72;
 
 
-# static fields
-.field public static final a:Lqw0;
+# instance fields
+.field public final synthetic i:Lqy1;
+
+.field public final synthetic j:Lqp4;
+
+.field public final synthetic k:Z
+
+.field public final synthetic l:Z
+
+.field public final synthetic m:Z
+
+.field public final synthetic n:Lbj3;
+
+.field public final synthetic o:Lii;
+
+.field public final synthetic p:Ljava/util/List;
+
+.field public final synthetic q:Landroid/content/Context;
+
+.field public final synthetic r:Ljava/lang/String;
+
+.field public final synthetic s:Z
+
+.field public final synthetic t:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Lqy1;Lqp4;ZZZLbj3;Lii;Ljava/util/List;Landroid/content/Context;Ljava/lang/String;ZJ)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lqw0;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    iput-object p1, p0, Lii3;->i:Lqy1;
+
     .line 5
     .line 6
-    sput-object v0, Lii3;->a:Lqw0;
+    iput-object p2, p0, Lii3;->j:Lqp4;
 
     .line 7
     .line 8
+    iput-boolean p3, p0, Lii3;->k:Z
+
+    .line 9
+    .line 10
+    iput-boolean p4, p0, Lii3;->l:Z
+
+    .line 11
+    .line 12
+    iput-boolean p5, p0, Lii3;->m:Z
+
+    .line 13
+    .line 14
+    iput-object p6, p0, Lii3;->n:Lbj3;
+
+    .line 15
+    .line 16
+    iput-object p7, p0, Lii3;->o:Lii;
+
+    .line 17
+    .line 18
+    iput-object p8, p0, Lii3;->p:Ljava/util/List;
+
+    .line 19
+    .line 20
+    iput-object p9, p0, Lii3;->q:Landroid/content/Context;
+
+    .line 21
+    .line 22
+    iput-object p10, p0, Lii3;->r:Ljava/lang/String;
+
+    .line 23
+    .line 24
+    iput-boolean p11, p0, Lii3;->s:Z
+
+    .line 25
+    .line 26
+    iput-wide p12, p0, Lii3;->t:J
+
+    .line 27
+    .line 28
     return-void
 .end method
 
-.method public static a()Lyp1;
-    .locals 4
+
+# virtual methods
+.method public final a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 24
 
     .line 1
-    sget-object v0, Lii3;->a:Lqw0;
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Lqw0;->D()Lyp1;
+    move-object/from16 v1, p1
 
     .line 4
     .line 5
-    .line 6
-    move-result-object v0
+    check-cast v1, Lhc0;
 
+    .line 6
     .line 7
-    invoke-virtual {v0}, Lyp1;->c()Lxp1;
+    move-object/from16 v11, p2
 
     .line 8
     .line 9
-    .line 10
-    move-result-object v0
+    check-cast v11, Lt82;
 
+    .line 10
     .line 11
-    const-string v1, "on_background"
+    move-object/from16 v2, p3
 
     .line 12
     .line 13
-    iput-object v1, v0, Lxp1;->a:Ljava/lang/String;
+    check-cast v2, Ljava/lang/Integer;
 
     .line 14
     .line 15
-    new-instance v2, Ljw0;
+    invoke-virtual {v2}, Ljava/lang/Integer;->intValue()I
 
     .line 16
     .line 17
-    const/16 v3, 0xa
-
     .line 18
+    move-result v2
+
     .line 19
-    invoke-direct {v2, v3}, Ljw0;-><init>(B)V
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 20
     .line 21
     .line 22
-    iput-object v2, v0, Lxp1;->c:Lp62;
+    and-int/lit8 v1, v2, 0x11
 
     .line 23
     .line 24
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
+    const/16 v3, 0x10
 
     .line 25
     .line 26
+    const/4 v4, 0x1
+
     .line 27
-    move-result-object v0
+    if-eq v1, v3, :cond_0
 
     .line 28
-    new-instance v2, Lxp1;
-
     .line 29
+    move v1, v4
+
     .line 30
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
+    goto :goto_0
 
     .line 31
+    :cond_0
+    const/4 v1, 0x0
+
     .line 32
+    :goto_0
+    and-int/2addr v2, v4
+
     .line 33
-    iput-object v1, v2, Lxp1;->a:Ljava/lang/String;
+    invoke-virtual {v11, v2, v1}, Lt82;->S(IZ)Z
 
     .line 34
     .line 35
-    new-instance v1, Lfw0;
-
     .line 36
+    move-result v1
+
     .line 37
-    const/16 v3, 0x17
+    if-eqz v1, :cond_3
 
     .line 38
     .line 39
-    invoke-direct {v1, v3}, Lfw0;-><init>(B)V
+    sget-object v1, Lwb6;->c:Lf02;
 
     .line 40
     .line 41
-    .line 42
-    iput-object v1, v2, Lxp1;->b:Lp62;
-
-    .line 43
-    .line 44
-    new-instance v1, Lfw0;
-
-    .line 45
-    .line 46
-    const/16 v3, 0x18
-
-    .line 47
-    .line 48
-    invoke-direct {v1, v3}, Lfw0;-><init>(B)V
-
-    .line 49
-    .line 50
-    .line 51
-    iput-object v1, v2, Lxp1;->c:Lp62;
-
-    .line 52
-    .line 53
-    new-instance v1, Lfw0;
-
-    .line 54
-    .line 55
-    const/16 v3, 0x19
-
-    .line 56
-    .line 57
-    invoke-direct {v1, v3}, Lfw0;-><init>(B)V
-
-    .line 58
-    .line 59
-    .line 60
-    iput-object v1, v2, Lxp1;->f:Lp62;
-
-    .line 61
-    .line 62
-    new-instance v1, Lfw0;
-
-    .line 63
-    .line 64
-    const/16 v3, 0x1a
-
-    .line 65
-    .line 66
-    invoke-direct {v1, v3}, Lfw0;-><init>(B)V
-
-    .line 67
-    .line 68
-    .line 69
-    iput-object v1, v2, Lxp1;->h:Lp62;
-
-    .line 70
-    .line 71
-    invoke-virtual {v2}, Lxp1;->a()Lyp1;
-
-    .line 72
-    .line 73
-    .line 74
-    move-result-object v1
-
-    .line 75
-    invoke-virtual {v1}, Lyp1;->c()Lxp1;
-
-    .line 76
-    .line 77
-    .line 78
-    move-result-object v1
-
-    .line 79
-    invoke-virtual {v1, v0}, Lxp1;->b(Lyp1;)Lxp1;
-
-    .line 80
-    .line 81
-    .line 82
-    move-result-object v0
-
-    .line 83
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 84
-    .line 85
-    .line 86
-    move-result-object v0
-
-    .line 87
-    return-object v0
-.end method
-
-.method public static b()Lyp1;
-    .locals 4
-
-    .line 1
-    new-instance v0, Lxp1;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    const-string v1, "on_error"
-
-    .line 7
-    .line 8
-    iput-object v1, v0, Lxp1;->a:Ljava/lang/String;
-
-    .line 9
-    .line 10
-    new-instance v2, Ljw0;
-
-    .line 11
-    .line 12
-    const/16 v3, 0x13
-
-    .line 13
-    .line 14
-    invoke-direct {v2, v3}, Ljw0;-><init>(B)V
-
-    .line 15
-    .line 16
-    .line 17
-    iput-object v2, v0, Lxp1;->b:Lp62;
-
-    .line 18
-    .line 19
-    new-instance v2, Ljw0;
-
-    .line 20
-    .line 21
-    const/16 v3, 0x14
-
-    .line 22
-    .line 23
-    invoke-direct {v2, v3}, Ljw0;-><init>(B)V
-
-    .line 24
-    .line 25
-    .line 26
-    iput-object v2, v0, Lxp1;->f:Lp62;
-
-    .line 27
-    .line 28
-    new-instance v2, Ljw0;
-
-    .line 29
-    .line 30
-    const/16 v3, 0x15
-
-    .line 31
-    .line 32
-    invoke-direct {v2, v3}, Ljw0;-><init>(B)V
-
-    .line 33
-    .line 34
-    .line 35
-    iput-object v2, v0, Lxp1;->h:Lp62;
-
-    .line 36
-    .line 37
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 38
-    .line 39
-    .line 40
-    move-result-object v0
-
-    .line 41
-    new-instance v2, Lxp1;
+    iget-object v2, v0, Lii3;->i:Lqy1;
 
     .line 42
     .line 43
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
+    iget-object v2, v2, Lqy1;->e:Loy1;
 
     .line 44
     .line 45
-    .line 46
-    iput-object v1, v2, Lxp1;->a:Ljava/lang/String;
-
-    .line 47
-    .line 48
-    new-instance v1, Lfw0;
-
-    .line 49
-    .line 50
-    const/16 v3, 0xc
-
-    .line 51
-    .line 52
-    invoke-direct {v1, v3}, Lfw0;-><init>(B)V
-
-    .line 53
-    .line 54
-    .line 55
-    iput-object v1, v2, Lxp1;->b:Lp62;
-
-    .line 56
-    .line 57
-    new-instance v1, Lfw0;
-
-    .line 58
-    .line 59
-    const/16 v3, 0xd
-
-    .line 60
-    .line 61
-    invoke-direct {v1, v3}, Lfw0;-><init>(B)V
-
-    .line 62
-    .line 63
-    .line 64
-    iput-object v1, v2, Lxp1;->c:Lp62;
-
-    .line 65
-    .line 66
-    new-instance v1, Lfw0;
-
-    .line 67
-    .line 68
-    const/16 v3, 0xe
-
-    .line 69
-    .line 70
-    invoke-direct {v1, v3}, Lfw0;-><init>(B)V
-
-    .line 71
-    .line 72
-    .line 73
-    iput-object v1, v2, Lxp1;->f:Lp62;
-
-    .line 74
-    .line 75
-    new-instance v1, Lfw0;
-
-    .line 76
-    .line 77
-    const/16 v3, 0xf
-
-    .line 78
-    .line 79
-    invoke-direct {v1, v3}, Lfw0;-><init>(B)V
-
-    .line 80
-    .line 81
-    .line 82
-    iput-object v1, v2, Lxp1;->h:Lp62;
-
-    .line 83
-    .line 84
-    invoke-virtual {v2}, Lxp1;->a()Lyp1;
-
-    .line 85
-    .line 86
-    .line 87
-    move-result-object v1
-
-    .line 88
-    invoke-virtual {v1}, Lyp1;->c()Lxp1;
-
-    .line 89
-    .line 90
-    .line 91
-    move-result-object v1
-
-    .line 92
-    invoke-virtual {v1, v0}, Lxp1;->b(Lyp1;)Lxp1;
-
-    .line 93
-    .line 94
-    .line 95
-    move-result-object v0
-
-    .line 96
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 97
-    .line 98
-    .line 99
-    move-result-object v0
-
-    .line 100
-    return-object v0
-.end method
-
-.method public static c()Lyp1;
-    .locals 4
-
-    .line 1
-    new-instance v0, Lxp1;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    const-string v1, "on_error_container"
-
-    .line 7
-    .line 8
-    iput-object v1, v0, Lxp1;->a:Ljava/lang/String;
-
-    .line 9
-    .line 10
-    new-instance v2, Low0;
-
-    .line 11
-    .line 12
-    const/16 v3, 0x14
-
-    .line 13
-    .line 14
-    invoke-direct {v2, v3}, Low0;-><init>(B)V
-
-    .line 15
-    .line 16
-    .line 17
-    iput-object v2, v0, Lxp1;->b:Lp62;
-
-    .line 18
-    .line 19
-    new-instance v2, Low0;
-
-    .line 20
-    .line 21
-    const/16 v3, 0x15
-
-    .line 22
-    .line 23
-    invoke-direct {v2, v3}, Low0;-><init>(B)V
-
-    .line 24
-    .line 25
-    .line 26
-    iput-object v2, v0, Lxp1;->f:Lp62;
-
-    .line 27
-    .line 28
-    new-instance v2, Low0;
-
-    .line 29
-    .line 30
-    const/16 v3, 0x16
-
-    .line 31
-    .line 32
-    invoke-direct {v2, v3}, Low0;-><init>(B)V
-
-    .line 33
-    .line 34
-    .line 35
-    iput-object v2, v0, Lxp1;->h:Lp62;
-
-    .line 36
-    .line 37
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 38
-    .line 39
-    .line 40
-    move-result-object v0
-
-    .line 41
-    new-instance v2, Lxp1;
-
-    .line 42
-    .line 43
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
-
-    .line 44
-    .line 45
-    .line 46
-    iput-object v1, v2, Lxp1;->a:Ljava/lang/String;
-
-    .line 47
-    .line 48
-    new-instance v1, Ldw0;
-
-    .line 49
-    .line 50
-    const/16 v3, 0x1a
-
-    .line 51
-    .line 52
-    invoke-direct {v1, v3}, Ldw0;-><init>(B)V
-
-    .line 53
-    .line 54
-    .line 55
-    iput-object v1, v2, Lxp1;->b:Lp62;
-
-    .line 56
-    .line 57
-    new-instance v1, Ldw0;
-
-    .line 58
-    .line 59
-    const/16 v3, 0x1b
-
-    .line 60
-    .line 61
-    invoke-direct {v1, v3}, Ldw0;-><init>(B)V
-
-    .line 62
-    .line 63
-    .line 64
-    iput-object v1, v2, Lxp1;->c:Lp62;
-
-    .line 65
-    .line 66
-    new-instance v1, Ldw0;
-
-    .line 67
-    .line 68
-    const/16 v3, 0x1c
-
-    .line 69
-    .line 70
-    invoke-direct {v1, v3}, Ldw0;-><init>(B)V
-
-    .line 71
-    .line 72
-    .line 73
-    iput-object v1, v2, Lxp1;->f:Lp62;
-
-    .line 74
-    .line 75
-    new-instance v1, Ldw0;
-
-    .line 76
-    .line 77
-    const/16 v3, 0x1d
-
-    .line 78
-    .line 79
-    invoke-direct {v1, v3}, Ldw0;-><init>(B)V
-
-    .line 80
-    .line 81
-    .line 82
-    iput-object v1, v2, Lxp1;->h:Lp62;
-
-    .line 83
-    .line 84
-    invoke-virtual {v2}, Lxp1;->a()Lyp1;
-
-    .line 85
-    .line 86
-    .line 87
-    move-result-object v1
-
-    .line 88
-    invoke-virtual {v1}, Lyp1;->c()Lxp1;
-
-    .line 89
-    .line 90
-    .line 91
-    move-result-object v1
-
-    .line 92
-    invoke-virtual {v1, v0}, Lxp1;->b(Lyp1;)Lxp1;
-
-    .line 93
-    .line 94
-    .line 95
-    move-result-object v0
-
-    .line 96
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 97
-    .line 98
-    .line 99
-    move-result-object v0
-
-    .line 100
-    return-object v0
-.end method
-
-.method public static d()Lyp1;
-    .locals 4
-
-    .line 1
-    new-instance v0, Lxp1;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    const-string v1, "on_primary"
-
-    .line 7
-    .line 8
-    iput-object v1, v0, Lxp1;->a:Ljava/lang/String;
-
-    .line 9
-    .line 10
-    new-instance v2, Ljw0;
-
-    .line 11
-    .line 12
-    const/4 v3, 0x6
-
-    .line 13
-    invoke-direct {v2, v3}, Ljw0;-><init>(B)V
-
-    .line 14
-    .line 15
-    .line 16
-    iput-object v2, v0, Lxp1;->b:Lp62;
-
-    .line 17
-    .line 18
-    new-instance v2, Ljw0;
-
-    .line 19
-    .line 20
-    const/4 v3, 0x7
-
-    .line 21
-    invoke-direct {v2, v3}, Ljw0;-><init>(B)V
-
-    .line 22
-    .line 23
-    .line 24
-    iput-object v2, v0, Lxp1;->f:Lp62;
-
-    .line 25
-    .line 26
-    new-instance v2, Ljw0;
-
-    .line 27
-    .line 28
-    const/16 v3, 0x8
-
-    .line 29
-    .line 30
-    invoke-direct {v2, v3}, Ljw0;-><init>(B)V
-
-    .line 31
-    .line 32
-    .line 33
-    iput-object v2, v0, Lxp1;->h:Lp62;
-
-    .line 34
-    .line 35
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 36
-    .line 37
-    .line 38
-    move-result-object v0
-
-    .line 39
-    new-instance v2, Lxp1;
-
-    .line 40
-    .line 41
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
-
-    .line 42
-    .line 43
-    .line 44
-    iput-object v1, v2, Lxp1;->a:Ljava/lang/String;
-
-    .line 45
-    .line 46
-    new-instance v1, Lgw0;
-
-    .line 47
-    .line 48
-    const/16 v3, 0xc
-
-    .line 49
-    .line 50
-    invoke-direct {v1, v3}, Lgw0;-><init>(B)V
-
-    .line 51
-    .line 52
-    .line 53
-    iput-object v1, v2, Lxp1;->b:Lp62;
-
-    .line 54
-    .line 55
-    new-instance v1, Lgw0;
-
-    .line 56
-    .line 57
-    const/16 v3, 0xd
-
-    .line 58
-    .line 59
-    invoke-direct {v1, v3}, Lgw0;-><init>(B)V
-
-    .line 60
-    .line 61
-    .line 62
-    iput-object v1, v2, Lxp1;->c:Lp62;
-
-    .line 63
-    .line 64
-    new-instance v1, Lgw0;
-
-    .line 65
-    .line 66
-    const/16 v3, 0xe
-
-    .line 67
-    .line 68
-    invoke-direct {v1, v3}, Lgw0;-><init>(B)V
-
-    .line 69
-    .line 70
-    .line 71
-    iput-object v1, v2, Lxp1;->f:Lp62;
-
-    .line 72
-    .line 73
-    new-instance v1, Lgw0;
-
-    .line 74
-    .line 75
-    const/16 v3, 0xf
-
-    .line 76
-    .line 77
-    invoke-direct {v1, v3}, Lgw0;-><init>(B)V
-
-    .line 78
-    .line 79
-    .line 80
-    iput-object v1, v2, Lxp1;->h:Lp62;
-
-    .line 81
-    .line 82
-    invoke-virtual {v2}, Lxp1;->a()Lyp1;
-
-    .line 83
-    .line 84
-    .line 85
-    move-result-object v1
-
-    .line 86
-    invoke-virtual {v1}, Lyp1;->c()Lxp1;
-
-    .line 87
-    .line 88
-    .line 89
-    move-result-object v1
-
-    .line 90
-    invoke-virtual {v1, v0}, Lxp1;->b(Lyp1;)Lxp1;
-
-    .line 91
-    .line 92
-    .line 93
-    move-result-object v0
-
-    .line 94
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 95
-    .line 96
-    .line 97
-    move-result-object v0
-
-    .line 98
-    return-object v0
-.end method
-
-.method public static e()Lyp1;
-    .locals 4
-
-    .line 1
-    new-instance v0, Lxp1;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    const-string v1, "on_primary_container"
-
-    .line 7
-    .line 8
-    iput-object v1, v0, Lxp1;->a:Ljava/lang/String;
-
-    .line 9
-    .line 10
-    new-instance v2, Lhw0;
-
-    .line 11
-    .line 12
-    const/16 v3, 0x18
-
-    .line 13
-    .line 14
-    invoke-direct {v2, v3}, Lhw0;-><init>(B)V
-
-    .line 15
-    .line 16
-    .line 17
-    iput-object v2, v0, Lxp1;->b:Lp62;
-
-    .line 18
-    .line 19
-    new-instance v2, Lhw0;
-
-    .line 20
-    .line 21
-    const/16 v3, 0x19
-
-    .line 22
-    .line 23
-    invoke-direct {v2, v3}, Lhw0;-><init>(B)V
-
-    .line 24
-    .line 25
-    .line 26
-    iput-object v2, v0, Lxp1;->f:Lp62;
-
-    .line 27
-    .line 28
-    new-instance v2, Lhw0;
-
-    .line 29
-    .line 30
-    const/16 v3, 0x1a
-
-    .line 31
-    .line 32
-    invoke-direct {v2, v3}, Lhw0;-><init>(B)V
-
-    .line 33
-    .line 34
-    .line 35
-    iput-object v2, v0, Lxp1;->h:Lp62;
-
-    .line 36
-    .line 37
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 38
-    .line 39
-    .line 40
-    move-result-object v0
-
-    .line 41
-    new-instance v2, Lxp1;
-
-    .line 42
-    .line 43
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
-
-    .line 44
-    .line 45
-    .line 46
-    iput-object v1, v2, Lxp1;->a:Ljava/lang/String;
-
-    .line 47
-    .line 48
-    new-instance v1, Lfw0;
-
-    .line 49
-    .line 50
-    const/16 v3, 0x1c
-
-    .line 51
-    .line 52
-    invoke-direct {v1, v3}, Lfw0;-><init>(B)V
-
-    .line 53
-    .line 54
-    .line 55
-    iput-object v1, v2, Lxp1;->b:Lp62;
-
-    .line 56
-    .line 57
-    new-instance v1, Lfw0;
-
-    .line 58
-    .line 59
-    const/16 v3, 0x1d
-
-    .line 60
-    .line 61
-    invoke-direct {v1, v3}, Lfw0;-><init>(B)V
-
-    .line 62
-    .line 63
-    .line 64
-    iput-object v1, v2, Lxp1;->c:Lp62;
-
-    .line 65
-    .line 66
-    new-instance v1, Lgw0;
-
-    .line 67
-    .line 68
     const/4 v3, 0x0
 
-    .line 69
-    invoke-direct {v1, v3}, Lgw0;-><init>(B)V
-
-    .line 70
-    .line 71
-    .line 72
-    iput-object v1, v2, Lxp1;->f:Lp62;
-
-    .line 73
-    .line 74
-    new-instance v1, Lgw0;
-
-    .line 75
-    .line 76
-    const/4 v3, 0x1
-
-    .line 77
-    invoke-direct {v1, v3}, Lgw0;-><init>(B)V
-
-    .line 78
-    .line 79
-    .line 80
-    iput-object v1, v2, Lxp1;->h:Lp62;
-
-    .line 81
-    .line 82
-    invoke-virtual {v2}, Lxp1;->a()Lyp1;
-
-    .line 83
-    .line 84
-    .line 85
-    move-result-object v1
-
-    .line 86
-    invoke-virtual {v1}, Lyp1;->c()Lxp1;
-
-    .line 87
-    .line 88
-    .line 89
-    move-result-object v1
-
-    .line 90
-    invoke-virtual {v1, v0}, Lxp1;->b(Lyp1;)Lxp1;
-
-    .line 91
-    .line 92
-    .line 93
-    move-result-object v0
-
-    .line 94
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 95
-    .line 96
-    .line 97
-    move-result-object v0
-
-    .line 98
-    return-object v0
-.end method
-
-.method public static f()Lyp1;
-    .locals 4
-
-    .line 1
-    new-instance v0, Lxp1;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    const-string v1, "on_primary_fixed"
-
-    .line 7
-    .line 8
-    iput-object v1, v0, Lxp1;->a:Ljava/lang/String;
-
-    .line 9
-    .line 10
-    new-instance v2, Low0;
-
-    .line 11
-    .line 12
-    const/4 v3, 0x6
-
-    .line 13
-    invoke-direct {v2, v3}, Low0;-><init>(B)V
-
-    .line 14
-    .line 15
-    .line 16
-    iput-object v2, v0, Lxp1;->b:Lp62;
-
-    .line 17
-    .line 18
-    new-instance v2, Low0;
-
-    .line 19
-    .line 20
-    const/4 v3, 0x7
-
-    .line 21
-    invoke-direct {v2, v3}, Low0;-><init>(B)V
-
-    .line 22
-    .line 23
-    .line 24
-    iput-object v2, v0, Lxp1;->f:Lp62;
-
-    .line 25
-    .line 26
-    new-instance v2, Low0;
-
-    .line 27
-    .line 28
-    const/16 v3, 0x8
-
-    .line 29
-    .line 30
-    invoke-direct {v2, v3}, Low0;-><init>(B)V
-
-    .line 31
-    .line 32
-    .line 33
-    iput-object v2, v0, Lxp1;->h:Lp62;
-
-    .line 34
-    .line 35
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 36
-    .line 37
-    .line 38
-    move-result-object v0
-
-    .line 39
-    new-instance v2, Lxp1;
-
-    .line 40
-    .line 41
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
-
-    .line 42
-    .line 43
-    .line 44
-    iput-object v1, v2, Lxp1;->a:Ljava/lang/String;
-
-    .line 45
     .line 46
-    new-instance v1, Lew0;
+    invoke-static {v1, v2, v3}, Lx61;->Z(Lsw3;Lo54;Lr54;)Lsw3;
 
     .line 47
     .line 48
-    const/16 v3, 0xf
-
     .line 49
+    move-result-object v1
+
     .line 50
-    invoke-direct {v1, v3}, Lew0;-><init>(B)V
+    sget-object v2, Loi7;->w:Ljava/util/WeakHashMap;
 
     .line 51
     .line 52
-    .line 53
-    iput-object v1, v2, Lxp1;->b:Lp62;
+    invoke-static {v11}, Ljy6;->d(Lt82;)Loi7;
 
+    .line 53
     .line 54
     .line 55
-    new-instance v1, Lew0;
+    move-result-object v2
 
     .line 56
+    iget-object v2, v2, Loi7;->l:Li97;
+
     .line 57
-    const/16 v3, 0x11
-
     .line 58
-    .line 59
-    invoke-direct {v1, v3}, Lew0;-><init>(B)V
+    sget v3, Lvv6;->a:I
 
+    .line 59
     .line 60
+    invoke-static {v2, v3, v1}, Lrf6;->g(Li97;ILsw3;)Lsw3;
+
     .line 61
     .line 62
-    iput-object v1, v2, Lxp1;->c:Lp62;
-
     .line 63
+    move-result-object v1
+
     .line 64
-    new-instance v1, Lew0;
+    const/high16 v2, 0x41800000    # 16.0f
 
     .line 65
     .line 66
-    const/16 v3, 0x12
+    const/4 v3, 0x0
 
     .line 67
+    const/4 v4, 0x2
+
     .line 68
-    invoke-direct {v1, v3}, Lew0;-><init>(B)V
+    invoke-static {v1, v2, v3, v4}, Lok7;->M(Lsw3;FFI)Lsw3;
 
     .line 69
     .line 70
     .line 71
-    iput-object v1, v2, Lxp1;->f:Lp62;
+    move-result-object v2
 
     .line 72
+    iget-object v1, v0, Lii3;->j:Lqp4;
+
     .line 73
-    new-instance v1, Lew0;
-
     .line 74
-    .line 75
-    const/16 v3, 0x13
+    invoke-interface {v1}, Lqp4;->d()F
 
+    .line 75
     .line 76
     .line 77
-    invoke-direct {v1, v3}, Lew0;-><init>(B)V
+    move-result v4
 
     .line 78
+    const/high16 v5, 0x41400000    # 12.0f
+
     .line 79
     .line 80
-    iput-object v1, v2, Lxp1;->g:Lp62;
+    add-float/2addr v4, v5
 
     .line 81
-    .line 82
-    new-instance v1, Lew0;
+    invoke-interface {v1}, Lqp4;->c()F
 
+    .line 82
     .line 83
     .line 84
-    const/16 v3, 0x14
+    move-result v1
 
     .line 85
+    add-float/2addr v1, v5
+
     .line 86
-    invoke-direct {v1, v3}, Lew0;-><init>(B)V
+    const/4 v5, 0x5
 
     .line 87
+    invoke-static {v3, v4, v3, v1, v5}, Lok7;->i(FFFFI)Lsp4;
+
     .line 88
     .line 89
-    iput-object v1, v2, Lxp1;->h:Lp62;
-
     .line 90
+    move-result-object v4
+
     .line 91
-    invoke-virtual {v2}, Lxp1;->a()Lyp1;
+    iget-boolean v13, v0, Lii3;->k:Z
 
     .line 92
     .line 93
+    invoke-virtual {v11, v13}, Lt82;->h(Z)Z
+
     .line 94
-    move-result-object v1
-
     .line 95
-    invoke-virtual {v1}, Lyp1;->c()Lxp1;
-
     .line 96
-    .line 97
-    .line 98
-    move-result-object v1
+    move-result v1
 
+    .line 97
+    iget-boolean v14, v0, Lii3;->l:Z
+
+    .line 98
     .line 99
-    invoke-virtual {v1, v0}, Lxp1;->b(Lyp1;)Lxp1;
+    invoke-virtual {v11, v14}, Lt82;->h(Z)Z
 
     .line 100
     .line 101
     .line 102
-    move-result-object v0
+    move-result v3
 
     .line 103
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
+    or-int/2addr v1, v3
 
     .line 104
+    iget-boolean v15, v0, Lii3;->m:Z
+
     .line 105
     .line 106
-    move-result-object v0
-
-    .line 107
-    return-object v0
-.end method
-
-.method public static g()Lyp1;
-    .locals 4
-
-    .line 1
-    new-instance v0, Lxp1;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    const-string v1, "on_secondary"
-
-    .line 7
-    .line 8
-    iput-object v1, v0, Lxp1;->a:Ljava/lang/String;
-
-    .line 9
-    .line 10
-    new-instance v2, Ljw0;
-
-    .line 11
-    .line 12
-    const/16 v3, 0x17
-
-    .line 13
-    .line 14
-    invoke-direct {v2, v3}, Ljw0;-><init>(B)V
-
-    .line 15
-    .line 16
-    .line 17
-    iput-object v2, v0, Lxp1;->b:Lp62;
-
-    .line 18
-    .line 19
-    new-instance v2, Llw0;
-
-    .line 20
-    .line 21
-    const/4 v3, 0x4
-
-    .line 22
-    invoke-direct {v2, v3}, Llw0;-><init>(B)V
-
-    .line 23
-    .line 24
-    .line 25
-    iput-object v2, v0, Lxp1;->f:Lp62;
-
-    .line 26
-    .line 27
-    new-instance v2, Llw0;
-
-    .line 28
-    .line 29
-    const/16 v3, 0xc
-
-    .line 30
-    .line 31
-    invoke-direct {v2, v3}, Llw0;-><init>(B)V
-
-    .line 32
-    .line 33
-    .line 34
-    iput-object v2, v0, Lxp1;->h:Lp62;
-
-    .line 35
-    .line 36
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 37
-    .line 38
-    .line 39
-    move-result-object v0
-
-    .line 40
-    new-instance v2, Lxp1;
-
-    .line 41
-    .line 42
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
-
-    .line 43
-    .line 44
-    .line 45
-    iput-object v1, v2, Lxp1;->a:Ljava/lang/String;
-
-    .line 46
-    .line 47
-    new-instance v1, Lhw0;
-
-    .line 48
-    .line 49
-    const/4 v3, 0x7
-
-    .line 50
-    invoke-direct {v1, v3}, Lhw0;-><init>(B)V
-
-    .line 51
-    .line 52
-    .line 53
-    iput-object v1, v2, Lxp1;->b:Lp62;
-
-    .line 54
-    .line 55
-    new-instance v1, Lhw0;
-
-    .line 56
-    .line 57
-    const/16 v3, 0x9
-
-    .line 58
-    .line 59
-    invoke-direct {v1, v3}, Lhw0;-><init>(B)V
-
-    .line 60
-    .line 61
-    .line 62
-    iput-object v1, v2, Lxp1;->c:Lp62;
-
-    .line 63
-    .line 64
-    new-instance v1, Lhw0;
-
-    .line 65
-    .line 66
-    const/16 v3, 0xa
-
-    .line 67
-    .line 68
-    invoke-direct {v1, v3}, Lhw0;-><init>(B)V
-
-    .line 69
-    .line 70
-    .line 71
-    iput-object v1, v2, Lxp1;->f:Lp62;
-
-    .line 72
-    .line 73
-    new-instance v1, Lhw0;
-
-    .line 74
-    .line 75
-    const/16 v3, 0xb
-
-    .line 76
-    .line 77
-    invoke-direct {v1, v3}, Lhw0;-><init>(B)V
-
-    .line 78
-    .line 79
-    .line 80
-    iput-object v1, v2, Lxp1;->h:Lp62;
-
-    .line 81
-    .line 82
-    invoke-virtual {v2}, Lxp1;->a()Lyp1;
-
-    .line 83
-    .line 84
-    .line 85
-    move-result-object v1
-
-    .line 86
-    invoke-virtual {v1}, Lyp1;->c()Lxp1;
-
-    .line 87
-    .line 88
-    .line 89
-    move-result-object v1
-
-    .line 90
-    invoke-virtual {v1, v0}, Lxp1;->b(Lyp1;)Lxp1;
-
-    .line 91
-    .line 92
-    .line 93
-    move-result-object v0
-
-    .line 94
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 95
-    .line 96
-    .line 97
-    move-result-object v0
-
-    .line 98
-    return-object v0
-.end method
-
-.method public static h()Lyp1;
-    .locals 4
-
-    .line 1
-    new-instance v0, Lxp1;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    const-string v1, "on_secondary_container"
-
-    .line 7
-    .line 8
-    iput-object v1, v0, Lxp1;->a:Ljava/lang/String;
-
-    .line 9
-    .line 10
-    new-instance v2, Lmw0;
-
-    .line 11
-    .line 12
-    const/16 v3, 0xd
-
-    .line 13
-    .line 14
-    invoke-direct {v2, v3}, Lmw0;-><init>(B)V
-
-    .line 15
-    .line 16
-    .line 17
-    iput-object v2, v0, Lxp1;->b:Lp62;
-
-    .line 18
-    .line 19
-    new-instance v2, Lmw0;
-
-    .line 20
-    .line 21
-    const/16 v3, 0xe
-
-    .line 22
-    .line 23
-    invoke-direct {v2, v3}, Lmw0;-><init>(B)V
-
-    .line 24
-    .line 25
-    .line 26
-    iput-object v2, v0, Lxp1;->f:Lp62;
-
-    .line 27
-    .line 28
-    new-instance v2, Lmw0;
-
-    .line 29
-    .line 30
-    const/16 v3, 0xf
-
-    .line 31
-    .line 32
-    invoke-direct {v2, v3}, Lmw0;-><init>(B)V
-
-    .line 33
-    .line 34
-    .line 35
-    iput-object v2, v0, Lxp1;->h:Lp62;
-
-    .line 36
-    .line 37
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 38
-    .line 39
-    .line 40
-    move-result-object v0
-
-    .line 41
-    new-instance v2, Lxp1;
-
-    .line 42
-    .line 43
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
-
-    .line 44
-    .line 45
-    .line 46
-    iput-object v1, v2, Lxp1;->a:Ljava/lang/String;
-
-    .line 47
-    .line 48
-    new-instance v1, Lgw0;
-
-    .line 49
-    .line 50
-    const/16 v3, 0x1d
-
-    .line 51
-    .line 52
-    invoke-direct {v1, v3}, Lgw0;-><init>(B)V
-
-    .line 53
-    .line 54
-    .line 55
-    iput-object v1, v2, Lxp1;->b:Lp62;
-
-    .line 56
-    .line 57
-    new-instance v1, Lhw0;
-
-    .line 58
-    .line 59
-    const/4 v3, 0x0
-
-    .line 60
-    invoke-direct {v1, v3}, Lhw0;-><init>(B)V
-
-    .line 61
-    .line 62
-    .line 63
-    iput-object v1, v2, Lxp1;->c:Lp62;
-
-    .line 64
-    .line 65
-    new-instance v1, Lhw0;
-
-    .line 66
-    .line 67
-    const/4 v3, 0x1
-
-    .line 68
-    invoke-direct {v1, v3}, Lhw0;-><init>(B)V
-
-    .line 69
-    .line 70
-    .line 71
-    iput-object v1, v2, Lxp1;->f:Lp62;
-
-    .line 72
-    .line 73
-    new-instance v1, Lhw0;
-
-    .line 74
-    .line 75
-    const/4 v3, 0x2
-
-    .line 76
-    invoke-direct {v1, v3}, Lhw0;-><init>(B)V
-
-    .line 77
-    .line 78
-    .line 79
-    iput-object v1, v2, Lxp1;->h:Lp62;
-
-    .line 80
-    .line 81
-    invoke-virtual {v2}, Lxp1;->a()Lyp1;
-
-    .line 82
-    .line 83
-    .line 84
-    move-result-object v1
-
-    .line 85
-    invoke-virtual {v1}, Lyp1;->c()Lxp1;
-
-    .line 86
-    .line 87
-    .line 88
-    move-result-object v1
-
-    .line 89
-    invoke-virtual {v1, v0}, Lxp1;->b(Lyp1;)Lxp1;
-
-    .line 90
-    .line 91
-    .line 92
-    move-result-object v0
-
-    .line 93
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 94
-    .line 95
-    .line 96
-    move-result-object v0
-
-    .line 97
-    return-object v0
-.end method
-
-.method public static i()Lyp1;
-    .locals 12
-
-    .line 1
-    new-instance v0, Lxp1;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    const-string v1, "on_surface_variant"
-
-    .line 7
-    .line 8
-    iput-object v1, v0, Lxp1;->a:Ljava/lang/String;
-
-    .line 9
-    .line 10
-    new-instance v2, Ljw0;
-
-    .line 11
-    .line 12
-    const/4 v3, 0x1
-
-    .line 13
-    invoke-direct {v2, v3}, Ljw0;-><init>(B)V
-
-    .line 14
-    .line 15
-    .line 16
-    iput-object v2, v0, Lxp1;->b:Lp62;
-
-    .line 17
-    .line 18
-    new-instance v2, Ljw0;
-
-    .line 19
-    .line 20
-    const/4 v3, 0x2
-
-    .line 21
-    invoke-direct {v2, v3}, Ljw0;-><init>(B)V
-
-    .line 22
-    .line 23
-    .line 24
-    iput-object v2, v0, Lxp1;->e:Lp62;
-
-    .line 25
-    .line 26
-    new-instance v2, Ljw0;
-
-    .line 27
-    .line 28
-    const/4 v3, 0x3
-
-    .line 29
-    invoke-direct {v2, v3}, Ljw0;-><init>(B)V
-
-    .line 30
-    .line 31
-    .line 32
-    iput-object v2, v0, Lxp1;->f:Lp62;
-
-    .line 33
-    .line 34
-    new-instance v2, Ljw0;
-
-    .line 35
-    .line 36
-    const/4 v3, 0x4
-
-    .line 37
-    invoke-direct {v2, v3}, Ljw0;-><init>(B)V
-
-    .line 38
-    .line 39
-    .line 40
-    iput-object v2, v0, Lxp1;->h:Lp62;
-
-    .line 41
-    .line 42
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 43
-    .line 44
-    .line 45
-    move-result-object v0
-
-    .line 46
-    new-instance v2, Lxp1;
-
-    .line 47
-    .line 48
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
-
-    .line 49
-    .line 50
-    .line 51
-    iput-object v1, v2, Lxp1;->a:Ljava/lang/String;
-
-    .line 52
-    .line 53
-    new-instance v1, Lew0;
-
-    .line 54
-    .line 55
-    const/16 v3, 0xc
-
-    .line 56
-    .line 57
-    invoke-direct {v1, v3}, Lew0;-><init>(B)V
-
-    .line 58
-    .line 59
-    .line 60
-    iput-object v1, v2, Lxp1;->b:Lp62;
-
-    .line 61
-    .line 62
-    new-instance v1, Lew0;
-
-    .line 63
-    .line 64
-    const/16 v3, 0xd
-
-    .line 65
-    .line 66
-    invoke-direct {v1, v3}, Lew0;-><init>(B)V
-
-    .line 67
-    .line 68
-    .line 69
-    iput-object v1, v2, Lxp1;->c:Lp62;
-
-    .line 70
-    .line 71
-    new-instance v4, Lya0;
-
-    .line 72
-    .line 73
-    const/4 v10, 0x0
-
-    .line 74
-    const/16 v11, 0xb
-
-    .line 75
-    .line 76
-    const/4 v5, 0x1
-
-    .line 77
-    sget-object v6, Lii3;->a:Lqw0;
-
-    .line 78
-    .line 79
-    const-class v7, Liw0;
-
-    .line 80
-    .line 81
-    const-string v8, "highestSurface"
-
-    .line 82
-    .line 83
-    const-string v9, "highestSurface(Lcom/materialkolor/scheme/DynamicScheme;)Lcom/materialkolor/dynamiccolor/DynamicColor;"
-
-    .line 84
-    .line 85
-    invoke-direct/range {v4 .. v11}, Lya0;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;IB)V
-
-    .line 86
-    .line 87
-    .line 88
-    iput-object v4, v2, Lxp1;->f:Lp62;
-
-    .line 89
-    .line 90
-    new-instance v1, Lew0;
-
-    .line 91
-    .line 92
-    const/16 v3, 0xe
-
-    .line 93
-    .line 94
-    invoke-direct {v1, v3}, Lew0;-><init>(B)V
-
-    .line 95
-    .line 96
-    .line 97
-    iput-object v1, v2, Lxp1;->h:Lp62;
-
-    .line 98
-    .line 99
-    invoke-virtual {v2}, Lxp1;->a()Lyp1;
-
-    .line 100
-    .line 101
-    .line 102
-    move-result-object v1
-
-    .line 103
-    invoke-virtual {v1}, Lyp1;->c()Lxp1;
-
-    .line 104
-    .line 105
-    .line 106
-    move-result-object v1
-
-    .line 107
-    invoke-virtual {v1, v0}, Lxp1;->b(Lyp1;)Lxp1;
-
-    .line 108
-    .line 109
-    .line 110
-    move-result-object v0
-
-    .line 111
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 112
-    .line 113
-    .line 114
-    move-result-object v0
-
-    .line 115
-    return-object v0
-.end method
-
-.method public static j()Lyp1;
-    .locals 4
-
-    .line 1
-    new-instance v0, Lxp1;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    const-string v1, "on_tertiary_container"
-
-    .line 7
-    .line 8
-    iput-object v1, v0, Lxp1;->a:Ljava/lang/String;
-
-    .line 9
-    .line 10
-    new-instance v2, Lmw0;
-
-    .line 11
-    .line 12
-    const/16 v3, 0x13
-
-    .line 13
-    .line 14
-    invoke-direct {v2, v3}, Lmw0;-><init>(B)V
-
-    .line 15
-    .line 16
-    .line 17
-    iput-object v2, v0, Lxp1;->b:Lp62;
-
-    .line 18
-    .line 19
-    new-instance v2, Lmw0;
-
-    .line 20
-    .line 21
-    const/16 v3, 0x14
-
-    .line 22
-    .line 23
-    invoke-direct {v2, v3}, Lmw0;-><init>(B)V
-
-    .line 24
-    .line 25
-    .line 26
-    iput-object v2, v0, Lxp1;->f:Lp62;
-
-    .line 27
-    .line 28
-    new-instance v2, Lmw0;
-
-    .line 29
-    .line 30
-    const/16 v3, 0x15
-
-    .line 31
-    .line 32
-    invoke-direct {v2, v3}, Lmw0;-><init>(B)V
-
-    .line 33
-    .line 34
-    .line 35
-    iput-object v2, v0, Lxp1;->h:Lp62;
-
-    .line 36
-    .line 37
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 38
-    .line 39
-    .line 40
-    move-result-object v0
-
-    .line 41
-    new-instance v2, Lxp1;
-
-    .line 42
-    .line 43
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
-
-    .line 44
-    .line 45
-    .line 46
-    iput-object v1, v2, Lxp1;->a:Ljava/lang/String;
-
-    .line 47
-    .line 48
-    new-instance v1, Ldw0;
-
-    .line 49
-    .line 50
-    const/16 v3, 0x16
-
-    .line 51
-    .line 52
-    invoke-direct {v1, v3}, Ldw0;-><init>(B)V
-
-    .line 53
-    .line 54
-    .line 55
-    iput-object v1, v2, Lxp1;->b:Lp62;
-
-    .line 56
-    .line 57
-    new-instance v1, Ldw0;
-
-    .line 58
-    .line 59
-    const/16 v3, 0x17
-
-    .line 60
-    .line 61
-    invoke-direct {v1, v3}, Ldw0;-><init>(B)V
-
-    .line 62
-    .line 63
-    .line 64
-    iput-object v1, v2, Lxp1;->c:Lp62;
-
-    .line 65
-    .line 66
-    new-instance v1, Ldw0;
-
-    .line 67
-    .line 68
-    const/16 v3, 0x18
-
-    .line 69
-    .line 70
-    invoke-direct {v1, v3}, Ldw0;-><init>(B)V
-
-    .line 71
-    .line 72
-    .line 73
-    iput-object v1, v2, Lxp1;->f:Lp62;
-
-    .line 74
-    .line 75
-    new-instance v1, Ldw0;
-
-    .line 76
-    .line 77
-    const/16 v3, 0x19
-
-    .line 78
-    .line 79
-    invoke-direct {v1, v3}, Ldw0;-><init>(B)V
-
-    .line 80
-    .line 81
-    .line 82
-    iput-object v1, v2, Lxp1;->h:Lp62;
-
-    .line 83
-    .line 84
-    invoke-virtual {v2}, Lxp1;->a()Lyp1;
-
-    .line 85
-    .line 86
-    .line 87
-    move-result-object v1
-
-    .line 88
-    invoke-virtual {v1}, Lyp1;->c()Lxp1;
-
-    .line 89
-    .line 90
-    .line 91
-    move-result-object v1
-
-    .line 92
-    invoke-virtual {v1, v0}, Lxp1;->b(Lyp1;)Lxp1;
-
-    .line 93
-    .line 94
-    .line 95
-    move-result-object v0
-
-    .line 96
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 97
-    .line 98
-    .line 99
-    move-result-object v0
-
-    .line 100
-    return-object v0
-.end method
-
-.method public static k()Lyp1;
-    .locals 12
-
-    .line 1
-    new-instance v0, Lxp1;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    const-string v1, "outline"
-
-    .line 7
-    .line 8
-    iput-object v1, v0, Lxp1;->a:Ljava/lang/String;
-
-    .line 9
-    .line 10
-    new-instance v2, Low0;
-
-    .line 11
-    .line 12
-    const/16 v3, 0x1b
-
-    .line 13
-    .line 14
-    invoke-direct {v2, v3}, Low0;-><init>(B)V
-
-    .line 15
-    .line 16
-    .line 17
-    iput-object v2, v0, Lxp1;->b:Lp62;
-
-    .line 18
-    .line 19
-    new-instance v2, Low0;
-
-    .line 20
-    .line 21
-    const/16 v3, 0x1c
-
-    .line 22
-    .line 23
-    invoke-direct {v2, v3}, Low0;-><init>(B)V
-
-    .line 24
-    .line 25
-    .line 26
-    iput-object v2, v0, Lxp1;->e:Lp62;
-
-    .line 27
-    .line 28
-    new-instance v2, Low0;
-
-    .line 29
-    .line 30
-    const/16 v3, 0x1d
-
-    .line 31
-    .line 32
-    invoke-direct {v2, v3}, Low0;-><init>(B)V
-
-    .line 33
-    .line 34
-    .line 35
-    iput-object v2, v0, Lxp1;->f:Lp62;
-
-    .line 36
-    .line 37
-    new-instance v2, Lpw0;
-
-    .line 38
-    .line 39
-    const/4 v3, 0x0
-
-    .line 40
-    invoke-direct {v2, v3}, Lpw0;-><init>(B)V
-
-    .line 41
-    .line 42
-    .line 43
-    iput-object v2, v0, Lxp1;->h:Lp62;
-
-    .line 44
-    .line 45
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 46
-    .line 47
-    .line 48
-    move-result-object v0
-
-    .line 49
-    new-instance v2, Lxp1;
-
-    .line 50
-    .line 51
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
-
-    .line 52
-    .line 53
-    .line 54
-    iput-object v1, v2, Lxp1;->a:Ljava/lang/String;
-
-    .line 55
-    .line 56
-    new-instance v1, Lgw0;
-
-    .line 57
-    .line 58
-    const/16 v3, 0x13
-
-    .line 59
-    .line 60
-    invoke-direct {v1, v3}, Lgw0;-><init>(B)V
-
-    .line 61
-    .line 62
-    .line 63
-    iput-object v1, v2, Lxp1;->b:Lp62;
-
-    .line 64
-    .line 65
-    new-instance v1, Lgw0;
-
-    .line 66
-    .line 67
-    const/16 v3, 0x14
-
-    .line 68
-    .line 69
-    invoke-direct {v1, v3}, Lgw0;-><init>(B)V
-
-    .line 70
-    .line 71
-    .line 72
-    iput-object v1, v2, Lxp1;->c:Lp62;
-
-    .line 73
-    .line 74
-    new-instance v4, Lya0;
-
-    .line 75
-    .line 76
-    const/4 v10, 0x0
-
-    .line 77
-    const/16 v11, 0xc
-
-    .line 78
-    .line 79
-    const/4 v5, 0x1
-
-    .line 80
-    sget-object v6, Lii3;->a:Lqw0;
-
-    .line 81
-    .line 82
-    const-class v7, Liw0;
-
-    .line 83
-    .line 84
-    const-string v8, "highestSurface"
-
-    .line 85
-    .line 86
-    const-string v9, "highestSurface(Lcom/materialkolor/scheme/DynamicScheme;)Lcom/materialkolor/dynamiccolor/DynamicColor;"
-
-    .line 87
-    .line 88
-    invoke-direct/range {v4 .. v11}, Lya0;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;IB)V
-
-    .line 89
-    .line 90
-    .line 91
-    iput-object v4, v2, Lxp1;->f:Lp62;
-
-    .line 92
-    .line 93
-    new-instance v1, Lgw0;
-
-    .line 94
-    .line 95
-    const/16 v3, 0x15
-
-    .line 96
-    .line 97
-    invoke-direct {v1, v3}, Lgw0;-><init>(B)V
-
-    .line 98
-    .line 99
-    .line 100
-    iput-object v1, v2, Lxp1;->h:Lp62;
-
-    .line 101
-    .line 102
-    invoke-virtual {v2}, Lxp1;->a()Lyp1;
-
-    .line 103
-    .line 104
-    .line 105
-    move-result-object v1
-
-    .line 106
-    invoke-virtual {v1}, Lyp1;->c()Lxp1;
+    invoke-virtual {v11, v15}, Lt82;->h(Z)Z
 
     .line 107
     .line 108
     .line 109
-    move-result-object v1
+    move-result v3
 
     .line 110
-    invoke-virtual {v1, v0}, Lxp1;->b(Lyp1;)Lxp1;
+    or-int/2addr v1, v3
 
     .line 111
+    iget-object v3, v0, Lii3;->n:Lbj3;
+
     .line 112
     .line 113
-    move-result-object v0
+    invoke-virtual {v11, v3}, Lt82;->g(Ljava/lang/Object;)Z
 
     .line 114
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
     .line 115
     .line 116
+    move-result v5
+
     .line 117
-    move-result-object v0
+    or-int/2addr v1, v5
 
     .line 118
-    return-object v0
-.end method
-
-.method public static l()Lyp1;
-    .locals 13
-
-    .line 1
-    new-instance v0, Lxp1;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    const-string v1, "outline_variant"
-
-    .line 7
-    .line 8
-    iput-object v1, v0, Lxp1;->a:Ljava/lang/String;
-
-    .line 9
-    .line 10
-    new-instance v2, Ljw0;
-
-    .line 11
-    .line 12
-    const/16 v3, 0x16
-
-    .line 13
-    .line 14
-    invoke-direct {v2, v3}, Ljw0;-><init>(B)V
-
-    .line 15
-    .line 16
-    .line 17
-    iput-object v2, v0, Lxp1;->b:Lp62;
-
-    .line 18
-    .line 19
-    new-instance v2, Ljw0;
-
-    .line 20
-    .line 21
-    const/16 v3, 0x18
-
-    .line 22
-    .line 23
-    invoke-direct {v2, v3}, Ljw0;-><init>(B)V
-
-    .line 24
-    .line 25
-    .line 26
-    iput-object v2, v0, Lxp1;->e:Lp62;
-
-    .line 27
-    .line 28
-    new-instance v2, Ljw0;
-
-    .line 29
-    .line 30
-    const/16 v3, 0x19
-
-    .line 31
-    .line 32
-    invoke-direct {v2, v3}, Ljw0;-><init>(B)V
-
-    .line 33
-    .line 34
-    .line 35
-    iput-object v2, v0, Lxp1;->f:Lp62;
-
-    .line 36
-    .line 37
-    new-instance v2, Ljw0;
-
-    .line 38
-    .line 39
-    const/16 v4, 0x1a
-
-    .line 40
-    .line 41
-    invoke-direct {v2, v4}, Ljw0;-><init>(B)V
-
-    .line 42
-    .line 43
-    .line 44
-    iput-object v2, v0, Lxp1;->h:Lp62;
-
-    .line 45
-    .line 46
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 47
-    .line 48
-    .line 49
-    move-result-object v0
-
-    .line 50
-    new-instance v2, Lxp1;
-
-    .line 51
-    .line 52
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
-
-    .line 53
-    .line 54
-    .line 55
-    iput-object v1, v2, Lxp1;->a:Ljava/lang/String;
-
-    .line 56
-    .line 57
-    new-instance v1, Lew0;
-
-    .line 58
-    .line 59
-    invoke-direct {v1, v3}, Lew0;-><init>(B)V
-
-    .line 60
-    .line 61
-    .line 62
-    iput-object v1, v2, Lxp1;->b:Lp62;
-
-    .line 63
-    .line 64
-    new-instance v1, Lew0;
-
-    .line 65
-    .line 66
-    invoke-direct {v1, v4}, Lew0;-><init>(B)V
-
-    .line 67
-    .line 68
-    .line 69
-    iput-object v1, v2, Lxp1;->c:Lp62;
+    iget-object v5, v0, Lii3;->o:Lii;
 
-    .line 70
-    .line 71
-    new-instance v5, Lya0;
+    .line 119
+    .line 120
+    invoke-virtual {v11, v5}, Lt82;->g(Ljava/lang/Object;)Z
 
-    .line 72
-    .line 73
-    const/4 v11, 0x0
-
-    .line 74
-    const/16 v12, 0xd
-
-    .line 75
-    .line 76
-    const/4 v6, 0x1
-
-    .line 77
-    sget-object v7, Lii3;->a:Lqw0;
-
-    .line 78
-    .line 79
-    const-class v8, Liw0;
-
-    .line 80
-    .line 81
-    const-string v9, "highestSurface"
-
-    .line 82
-    .line 83
-    const-string v10, "highestSurface(Lcom/materialkolor/scheme/DynamicScheme;)Lcom/materialkolor/dynamiccolor/DynamicColor;"
-
-    .line 84
-    .line 85
-    invoke-direct/range {v5 .. v12}, Lya0;-><init>(ILjava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;IB)V
-
-    .line 86
-    .line 87
-    .line 88
-    iput-object v5, v2, Lxp1;->f:Lp62;
-
-    .line 89
-    .line 90
-    new-instance v1, Lew0;
-
-    .line 91
-    .line 92
-    const/16 v3, 0x1c
-
-    .line 93
-    .line 94
-    invoke-direct {v1, v3}, Lew0;-><init>(B)V
-
-    .line 95
-    .line 96
-    .line 97
-    iput-object v1, v2, Lxp1;->h:Lp62;
-
-    .line 98
-    .line 99
-    invoke-virtual {v2}, Lxp1;->a()Lyp1;
-
-    .line 100
-    .line 101
-    .line 102
-    move-result-object v1
-
-    .line 103
-    invoke-virtual {v1}, Lyp1;->c()Lxp1;
-
-    .line 104
-    .line 105
-    .line 106
-    move-result-object v1
-
-    .line 107
-    invoke-virtual {v1, v0}, Lxp1;->b(Lyp1;)Lxp1;
-
-    .line 108
-    .line 109
-    .line 110
-    move-result-object v0
-
-    .line 111
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 112
-    .line 113
-    .line 114
-    move-result-object v0
-
-    .line 115
-    return-object v0
-.end method
-
-.method public static m()Lyp1;
-    .locals 5
-
-    .line 1
-    new-instance v0, Lxp1;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    const-string v1, "surface_container"
-
-    .line 7
-    .line 8
-    iput-object v1, v0, Lxp1;->a:Ljava/lang/String;
-
-    .line 9
-    .line 10
-    new-instance v2, Lmw0;
-
-    .line 11
-    .line 12
-    const/16 v3, 0x1d
-
-    .line 13
-    .line 14
-    invoke-direct {v2, v3}, Lmw0;-><init>(B)V
-
-    .line 15
-    .line 16
-    .line 17
-    iput-object v2, v0, Lxp1;->b:Lp62;
-
-    .line 18
-    .line 19
-    new-instance v2, Low0;
-
-    .line 20
-    .line 21
+    .line 121
+    .line 122
+    .line 123
+    move-result v6
+
+    .line 124
+    or-int/2addr v1, v6
+
+    .line 125
+    iget-object v6, v0, Lii3;->p:Ljava/util/List;
+
+    .line 126
+    .line 127
+    invoke-virtual {v11, v6}, Lt82;->i(Ljava/lang/Object;)Z
+
+    .line 128
+    .line 129
+    .line 130
+    move-result v7
+
+    .line 131
+    or-int/2addr v1, v7
+
+    .line 132
+    iget-object v7, v0, Lii3;->q:Landroid/content/Context;
+
+    .line 133
+    .line 134
+    invoke-virtual {v11, v7}, Lt82;->i(Ljava/lang/Object;)Z
+
+    .line 135
+    .line 136
+    .line 137
+    move-result v8
+
+    .line 138
+    or-int/2addr v1, v8
+
+    .line 139
+    iget-object v8, v0, Lii3;->r:Ljava/lang/String;
+
+    .line 140
+    .line 141
+    invoke-virtual {v11, v8}, Lt82;->g(Ljava/lang/Object;)Z
+
+    .line 142
+    .line 143
+    .line 144
+    move-result v9
+
+    .line 145
+    or-int/2addr v1, v9
+
+    .line 146
+    iget-boolean v9, v0, Lii3;->s:Z
+
+    .line 147
+    .line 148
+    invoke-virtual {v11, v9}, Lt82;->h(Z)Z
+
+    .line 149
+    .line 150
+    .line 151
+    move-result v10
+
+    .line 152
+    or-int/2addr v1, v10
+
+    .line 153
+    move/from16 p1, v1
+
+    .line 154
+    .line 155
+    iget-wide v0, v0, Lii3;->t:J
+
+    .line 156
+    .line 157
+    invoke-virtual {v11, v0, v1}, Lt82;->f(J)Z
+
+    .line 158
+    .line 159
+    .line 160
+    move-result v10
+
+    .line 161
+    or-int v10, p1, v10
+
+    .line 162
+    .line 163
+    invoke-virtual {v11}, Lt82;->N()Ljava/lang/Object;
+
+    .line 164
+    .line 165
+    .line 166
+    move-result-object v12
+
+    .line 167
+    if-nez v10, :cond_1
+
+    .line 168
+    .line 169
+    sget-object v10, Lt11;->a:Lje;
+
+    .line 170
+    .line 171
+    if-ne v12, v10, :cond_2
+
+    .line 172
+    .line 173
+    :cond_1
+    new-instance v12, Lji3;
+
+    .line 174
+    .line 175
+    move-wide/from16 v22, v0
+
+    .line 176
+    .line 177
+    move-object/from16 v16, v3
+
+    .line 178
+    .line 179
+    move-object/from16 v18, v5
+
+    .line 180
+    .line 181
+    move-object/from16 v17, v6
+
+    .line 182
+    .line 183
+    move-object/from16 v19, v7
+
+    .line 184
+    .line 185
+    move-object/from16 v20, v8
+
+    .line 186
+    .line 187
+    move/from16 v21, v9
+
+    .line 188
+    .line 189
+    invoke-direct/range {v12 .. v23}, Lji3;-><init>(ZZZLbj3;Ljava/util/List;Lii;Landroid/content/Context;Ljava/lang/String;ZJ)V
+
+    .line 190
+    .line 191
+    .line 192
+    invoke-virtual {v11, v12}, Lt82;->k0(Ljava/lang/Object;)V
+
+    .line 193
+    .line 194
+    .line 195
+    :cond_2
+    move-object v10, v12
+
+    .line 196
+    check-cast v10, Lp72;
+
+    .line 197
+    .line 198
+    const/4 v12, 0x0
+
+    .line 199
+    const/16 v13, 0x1fa
+
+    .line 200
+    .line 201
     const/4 v3, 0x0
 
-    .line 22
-    invoke-direct {v2, v3}, Low0;-><init>(B)V
+    .line 202
+    const/4 v5, 0x0
 
-    .line 23
-    .line 24
-    .line 25
-    iput-object v2, v0, Lxp1;->c:Lp62;
+    .line 203
+    const/4 v6, 0x0
 
-    .line 26
-    .line 27
-    const/4 v2, 0x1
+    .line 204
+    const/4 v7, 0x0
 
-    .line 28
-    iput-boolean v2, v0, Lxp1;->d:Z
+    .line 205
+    const/4 v8, 0x0
 
-    .line 29
-    .line 30
-    new-instance v3, Low0;
+    .line 206
+    const/4 v9, 0x0
 
-    .line 31
-    .line 32
-    invoke-direct {v3, v2}, Low0;-><init>(B)V
+    .line 207
+    invoke-static/range {v2 .. v13}, Lzt;->r(Lsw3;Lu93;Lqp4;Lkv;Lc20;Ltg1;ZLkn4;Lp72;Lt82;II)V
 
-    .line 33
-    .line 34
-    .line 35
-    iput-object v3, v0, Lxp1;->e:Lp62;
+    .line 208
+    .line 209
+    .line 210
+    goto :goto_1
 
-    .line 36
-    .line 37
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
+    .line 211
+    :cond_3
+    invoke-virtual {v11}, Lt82;->V()V
 
-    .line 38
-    .line 39
-    .line 40
-    move-result-object v0
+    .line 212
+    .line 213
+    .line 214
+    :goto_1
+    sget-object v0, Ll97;->a:Ll97;
 
-    .line 41
-    new-instance v3, Lxp1;
-
-    .line 42
-    .line 43
-    invoke-direct {v3}, Ljava/lang/Object;-><init>()V
-
-    .line 44
-    .line 45
-    .line 46
-    iput-object v1, v3, Lxp1;->a:Ljava/lang/String;
-
-    .line 47
-    .line 48
-    new-instance v1, Lgw0;
-
-    .line 49
-    .line 50
-    const/16 v4, 0x10
-
-    .line 51
-    .line 52
-    invoke-direct {v1, v4}, Lgw0;-><init>(B)V
-
-    .line 53
-    .line 54
-    .line 55
-    iput-object v1, v3, Lxp1;->b:Lp62;
-
-    .line 56
-    .line 57
-    new-instance v1, Lgw0;
-
-    .line 58
-    .line 59
-    const/16 v4, 0x11
-
-    .line 60
-    .line 61
-    invoke-direct {v1, v4}, Lgw0;-><init>(B)V
-
-    .line 62
-    .line 63
-    .line 64
-    iput-object v1, v3, Lxp1;->c:Lp62;
-
-    .line 65
-    .line 66
-    iput-boolean v2, v3, Lxp1;->d:Z
-
-    .line 67
-    .line 68
-    invoke-virtual {v3}, Lxp1;->a()Lyp1;
-
-    .line 69
-    .line 70
-    .line 71
-    move-result-object v1
-
-    .line 72
-    invoke-virtual {v1}, Lyp1;->c()Lxp1;
-
-    .line 73
-    .line 74
-    .line 75
-    move-result-object v1
-
-    .line 76
-    invoke-virtual {v1, v0}, Lxp1;->b(Lyp1;)Lxp1;
-
-    .line 77
-    .line 78
-    .line 79
-    move-result-object v0
-
-    .line 80
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 81
-    .line 82
-    .line 83
-    move-result-object v0
-
-    .line 84
-    return-object v0
-.end method
-
-.method public static n()Lyp1;
-    .locals 4
-
-    .line 1
-    sget-object v0, Lii3;->a:Lqw0;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Lqw0;->I()Lyp1;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    invoke-virtual {v0}, Lyp1;->c()Lxp1;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object v0
-
-    .line 11
-    const-string v1, "surface_variant"
-
-    .line 12
-    .line 13
-    iput-object v1, v0, Lxp1;->a:Ljava/lang/String;
-
-    .line 14
-    .line 15
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object v0
-
-    .line 19
-    new-instance v2, Lxp1;
-
-    .line 20
-    .line 21
-    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
-
-    .line 22
-    .line 23
-    .line 24
-    iput-object v1, v2, Lxp1;->a:Ljava/lang/String;
-
-    .line 25
-    .line 26
-    new-instance v1, Lfw0;
-
-    .line 27
-    .line 28
-    const/16 v3, 0x1b
-
-    .line 29
-    .line 30
-    invoke-direct {v1, v3}, Lfw0;-><init>(B)V
-
-    .line 31
-    .line 32
-    .line 33
-    iput-object v1, v2, Lxp1;->b:Lp62;
-
-    .line 34
-    .line 35
-    new-instance v1, Lgw0;
-
-    .line 36
-    .line 37
-    const/16 v3, 0x8
-
-    .line 38
-    .line 39
-    invoke-direct {v1, v3}, Lgw0;-><init>(B)V
-
-    .line 40
-    .line 41
-    .line 42
-    iput-object v1, v2, Lxp1;->c:Lp62;
-
-    .line 43
-    .line 44
-    const/4 v1, 0x1
-
-    .line 45
-    iput-boolean v1, v2, Lxp1;->d:Z
-
-    .line 46
-    .line 47
-    invoke-virtual {v2}, Lxp1;->a()Lyp1;
-
-    .line 48
-    .line 49
-    .line 50
-    move-result-object v1
-
-    .line 51
-    invoke-virtual {v1}, Lyp1;->c()Lxp1;
-
-    .line 52
-    .line 53
-    .line 54
-    move-result-object v1
-
-    .line 55
-    invoke-virtual {v1, v0}, Lxp1;->b(Lyp1;)Lxp1;
-
-    .line 56
-    .line 57
-    .line 58
-    move-result-object v0
-
-    .line 59
-    invoke-virtual {v0}, Lxp1;->a()Lyp1;
-
-    .line 60
-    .line 61
-    .line 62
-    move-result-object v0
-
-    .line 63
+    .line 215
+    .line 216
     return-object v0
 .end method

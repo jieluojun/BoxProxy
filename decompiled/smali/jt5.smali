@@ -1,49 +1,91 @@
-.class public final Ljt5;
-.super Lgw1;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Ljt5;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Le72;
 
 
 # instance fields
-.field public final c:I
+.field public final synthetic i:B
 
-.field public final d:I
-
-.field public final e:I
-
-.field public final f:I
-
-.field public final g:B
+.field public final synthetic j:Ls23;
 
 
 # direct methods
-.method public constructor <init>(Lsu0;IIIII)V
+.method public synthetic constructor <init>(Ls23;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1}, Lgw1;-><init>(Lsu0;)V
+    iput-byte p2, p0, Ljt5;->i:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Ljt5;->j:Ls23;
+
     .line 4
-    iput p2, p0, Ljt5;->c:I
-
     .line 5
-    .line 6
-    iput p3, p0, Ljt5;->d:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6
     .line 7
     .line 8
-    iput p4, p0, Ljt5;->e:I
+    return-void
+.end method
 
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 2
+
+    .line 1
+    iget-byte v0, p0, Ljt5;->i:B
+
+    .line 2
+    .line 3
+    sget-object v1, Ll97;->a:Ll97;
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Ljt5;->j:Ls23;
+
+    .line 6
+    .line 7
+    packed-switch v0, :pswitch_data_0
+
+    .line 8
     .line 9
     .line 10
-    iput p5, p0, Ljt5;->f:I
+    check-cast p0, Le72;
 
     .line 11
     .line 12
-    iput-byte p6, p0, Ljt5;->g:B
+    invoke-interface {p0}, Le72;->invoke()Ljava/lang/Object;
 
     .line 13
     .line 14
-    return-void
+    .line 15
+    return-object v1
+
+    .line 16
+    :pswitch_0
+    check-cast p0, Le72;
+
+    .line 17
+    .line 18
+    invoke-interface {p0}, Le72;->invoke()Ljava/lang/Object;
+
+    .line 19
+    .line 20
+    .line 21
+    return-object v1
+
+    .line 22
+    nop
+
+    .line 23
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

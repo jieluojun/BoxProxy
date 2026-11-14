@@ -1,8 +1,52 @@
-.class public interface abstract Lyh0;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lyh0;
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+
+# instance fields
+.field public i:Lzm6;
+
+.field public j:Ljava/lang/Object;
+
+.field public synthetic k:Ljava/lang/Object;
+
+.field public l:I
 
 
 # virtual methods
-.method public abstract g()Ljava/util/Set;
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iput-object p1, p0, Lyh0;->k:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Lyh0;->l:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
+
+    .line 6
+    .line 7
+    or-int/2addr p1, v0
+
+    .line 8
+    iput p1, p0, Lyh0;->l:I
+
+    .line 9
+    .line 10
+    const/4 p1, 0x0
+
+    .line 11
+    invoke-static {p1, p1, p1, p0}, Lzh0;->a(Lvh4;Lib4;Lt72;Lp91;)Ljava/lang/Object;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    return-object p0
 .end method

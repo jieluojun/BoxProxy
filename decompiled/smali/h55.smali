@@ -1,26 +1,34 @@
 .class public final Lh55;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
+.field public i:Ljava/util/LinkedHashMap;
 
-.field public final synthetic k:Lj55;
+.field public j:Ljava/util/LinkedHashMap;
 
-.field public l:I
+.field public k:Ljava/util/LinkedHashMap;
+
+.field public l:Lvf5;
+
+.field public synthetic m:Ljava/lang/Object;
+
+.field public final synthetic n:Ll55;
+
+.field public o:I
 
 
 # direct methods
-.method public constructor <init>(Lj55;Lz81;)V
+.method public constructor <init>(Ll55;Lq91;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lh55;->k:Lj55;
+    iput-object p1, p0, Lh55;->n:Ll55;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
     .line 4
     .line 5
@@ -31,14 +39,14 @@
 
 # virtual methods
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    .locals 7
 
     .line 1
-    iput-object p1, p0, Lh55;->j:Ljava/lang/Object;
+    iput-object p1, p0, Lh55;->m:Ljava/lang/Object;
 
     .line 2
     .line 3
-    iget p1, p0, Lh55;->l:I
+    iget p1, p0, Lh55;->o:I
 
     .line 4
     .line 5
@@ -49,21 +57,39 @@
     or-int/2addr p1, v0
 
     .line 8
-    iput p1, p0, Lh55;->l:I
+    iput p1, p0, Lh55;->o:I
 
     .line 9
     .line 10
-    iget-object p1, p0, Lh55;->k:Lj55;
+    const/4 v4, 0x0
 
     .line 11
+    const/4 v5, 0x0
+
     .line 12
-    invoke-virtual {p1, p0}, Lj55;->a(Lz81;)Ljava/lang/Object;
+    iget-object v0, p0, Lh55;->n:Ll55;
 
     .line 13
     .line 14
+    const/4 v1, 0x0
+
     .line 15
-    move-result-object p0
+    const/4 v2, 0x0
 
     .line 16
+    const/4 v3, 0x0
+
+    .line 17
+    move-object v6, p0
+
+    .line 18
+    invoke-virtual/range {v0 .. v6}, Ll55;->e(Ljava/util/List;Ljava/util/Map;Ljava/lang/String;ZLt72;Lq91;)Ljava/lang/Object;
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-object p0
+
+    .line 22
     return-object p0
 .end method

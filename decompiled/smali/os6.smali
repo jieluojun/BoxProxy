@@ -1,44 +1,127 @@
-.class public abstract Los6;
+.class public final synthetic Los6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Le72;
 
 
-# static fields
-.field public static final a:Lkq1;
+# instance fields
+.field public final synthetic i:B
+
+.field public final synthetic j:Lws6;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(Lws6;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lzl6;
+    iput-byte p2, p0, Los6;->i:B
 
     .line 2
     .line 3
-    const/4 v1, 0x6
+    iput-object p1, p0, Los6;->j:Lws6;
 
     .line 4
-    invoke-direct {v0, v1}, Lzl6;-><init>(B)V
-
     .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 6
     .line 7
-    new-instance v1, Lkq1;
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
+
+    .line 1
+    iget-byte v0, p0, Los6;->i:B
+
+    .line 2
+    .line 3
+    const/high16 v1, 0x41800000    # 16.0f
+
+    .line 4
+    .line 5
+    const/high16 v2, 0x41c00000    # 24.0f
+
+    .line 6
+    .line 7
+    iget-object p0, p0, Los6;->j:Lws6;
 
     .line 8
     .line 9
-    const/4 v2, 0x1
+    packed-switch v0, :pswitch_data_0
 
     .line 10
-    invoke-direct {v1, v0, v2}, Lkq1;-><init>(Le62;B)V
-
     .line 11
     .line 12
-    .line 13
-    sput-object v1, Los6;->a:Lkq1;
+    invoke-virtual {p0}, Lws6;->invoke()F
 
+    .line 13
     .line 14
     .line 15
-    return-void
+    move-result p0
+
+    .line 16
+    invoke-static {v2, v1, p0}, Lte3;->J(FFF)F
+
+    .line 17
+    .line 18
+    .line 19
+    move-result p0
+
+    .line 20
+    new-instance v0, Ltm1;
+
+    .line 21
+    .line 22
+    invoke-direct {v0, p0}, Ltm1;-><init>(F)V
+
+    .line 23
+    .line 24
+    .line 25
+    return-object v0
+
+    .line 26
+    :pswitch_0
+    invoke-virtual {p0}, Lws6;->invoke()F
+
+    .line 27
+    .line 28
+    .line 29
+    move-result p0
+
+    .line 30
+    invoke-static {v2, v1, p0}, Lte3;->J(FFF)F
+
+    .line 31
+    .line 32
+    .line 33
+    move-result p0
+
+    .line 34
+    new-instance v0, Ltm1;
+
+    .line 35
+    .line 36
+    invoke-direct {v0, p0}, Ltm1;-><init>(F)V
+
+    .line 37
+    .line 38
+    .line 39
+    return-object v0
+
+    .line 40
+    nop
+
+    .line 41
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

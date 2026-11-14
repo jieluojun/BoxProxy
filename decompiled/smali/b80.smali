@@ -1,15 +1,15 @@
 .class public final Lb80;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lq90;
+.implements Ll90;
 
 
 # static fields
 .field public static final INSTANCE:Lb80;
 
-.field public static final synthetic a:Lc23;
+.field public static final synthetic a:Ln63;
 
 
 # direct methods
@@ -30,24 +30,24 @@
 
     .line 7
     .line 8
-    new-instance v0, Lev;
+    new-instance v0, Lnu;
 
     .line 9
     .line 10
-    const/16 v1, 0x13
+    const/16 v1, 0x16
 
     .line 11
     .line 12
-    invoke-direct {v0, v1}, Lev;-><init>(B)V
+    invoke-direct {v0, v1}, Lnu;-><init>(B)V
 
     .line 13
     .line 14
     .line 15
-    sget-object v1, Lr53;->j:Lr53;
+    sget-object v1, Lba3;->i:Lba3;
 
     .line 16
     .line 17
-    invoke-static {v1, v0}, Lcs;->H(Lr53;Le62;)Lc23;
+    invoke-static {v1, v0}, Lnm;->K(Lba3;Le72;)Ln63;
 
     .line 18
     .line 19
@@ -55,7 +55,7 @@
     move-result-object v0
 
     .line 21
-    sput-object v0, Lb80;->a:Lc23;
+    sput-object v0, Lb80;->a:Ln63;
 
     .line 22
     .line 23
@@ -101,7 +101,7 @@
     .locals 0
 
     .line 1
-    const p0, 0x61f45d71
+    const p0, 0x144748bf
 
     .line 2
     .line 3
@@ -109,21 +109,21 @@
     return p0
 .end method
 
-.method public final serializer()Lqy2;
+.method public final serializer()Le33;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
-            "Lqy2;"
+            "Le33;"
         }
     .end annotation
 
     .line 1
-    sget-object p0, Lb80;->a:Lc23;
+    sget-object p0, Lb80;->a:Ln63;
 
     .line 2
     .line 3
-    invoke-interface {p0}, Lc23;->getValue()Ljava/lang/Object;
+    invoke-interface {p0}, Ln63;->getValue()Ljava/lang/Object;
 
     .line 4
     .line 5
@@ -131,7 +131,7 @@
     move-result-object p0
 
     .line 7
-    check-cast p0, Lqy2;
+    check-cast p0, Le33;
 
     .line 8
     .line 9
@@ -142,7 +142,7 @@
     .locals 0
 
     .line 1
-    const-string p0, "AboutLibraries"
+    const-string p0, "AppManagement"
 
     .line 2
     .line 3

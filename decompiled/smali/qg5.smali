@@ -1,80 +1,76 @@
-.class public final Lqg5;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lqg5;
+.super Le82;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lp72;
 
 
-# instance fields
-.field public j:Lnh5;
-
-.field public k:Lyi5;
-
-.field public l:Lna5;
-
-.field public m:Ljava/lang/String;
-
-.field public synthetic n:Ljava/lang/Object;
-
-.field public final synthetic o:Lgy1;
-
-.field public p:I
+# static fields
+.field public static final j:Lqg5;
 
 
 # direct methods
-.method public constructor <init>(Lgy1;Lz81;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
     .line 1
-    iput-object p1, p0, Lqg5;->o:Lgy1;
+    new-instance v0, Lqg5;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    const-string v4, "next()Lkotlin/text/MatchResult;"
 
     .line 4
     .line 5
+    const/4 v5, 0x0
+
     .line 6
+    const/4 v1, 0x1
+
+    .line 7
+    const-class v2, Lim3;
+
+    .line 8
+    .line 9
+    const-string v3, "next"
+
+    .line 10
+    .line 11
+    invoke-direct/range {v0 .. v5}, Le82;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 12
+    .line 13
+    .line 14
+    sput-object v0, Lqg5;->j:Lqg5;
+
+    .line 15
+    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lqg5;->n:Ljava/lang/Object;
+    check-cast p1, Lim3;
 
     .line 2
     .line 3
-    iget p1, p0, Lqg5;->p:I
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
+    invoke-virtual {p1}, Lim3;->c()Lim3;
+
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lqg5;->p:I
-
     .line 9
-    .line 10
-    iget-object p1, p0, Lqg5;->o:Lgy1;
-
-    .line 11
-    .line 12
-    const/4 v0, 0x0
-
-    .line 13
-    invoke-virtual {p1, v0, p0}, Lgy1;->b(Lnh5;Lz81;)Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
     move-result-object p0
 
-    .line 17
+    .line 10
     return-object p0
 .end method

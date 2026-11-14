@@ -1,48 +1,153 @@
 .class public final Lex2;
-.super Lnx2;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lfx2;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final INSTANCE:Lex2;
+# instance fields
+.field public final b:J
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>(J)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lex2;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
-
     .line 4
+    iput-wide p1, p0, Lex2;->b:J
+
     .line 5
     .line 6
-    sput-object v0, Lex2;->INSTANCE:Lex2;
-
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final serializer()Lqy2;
-    .locals 0
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "()",
-            "Lqy2;"
-        }
-    .end annotation
+.method public final a()J
+    .locals 2
 
     .line 1
-    sget-object p0, Lgx2;->a:Lgx2;
+    iget-wide v0, p0, Lex2;->b:J
 
     .line 2
     .line 3
+    return-wide v0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 5
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lex2;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Lex2;
+
+    .line 12
+    .line 13
+    iget-wide v3, p0, Lex2;->b:J
+
+    .line 14
+    .line 15
+    iget-wide p0, p1, Lex2;->b:J
+
+    .line 16
+    .line 17
+    invoke-static {v3, v4, p0, p1}, Lga3;->t(JJ)Z
+
+    .line 18
+    .line 19
+    .line 20
+    move-result p0
+
+    .line 21
+    if-nez p0, :cond_2
+
+    .line 22
+    .line 23
+    return v2
+
+    .line 24
+    :cond_2
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lex2;->b:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Lex2;->b:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1}, Lga3;->P(J)Ljava/lang/String;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    const-string v0, "Zoom(point="
+
+    .line 8
+    .line 9
+    const-string v1, ")"
+
+    .line 10
+    .line 11
+    invoke-static {v0, p0, v1}, Lky1;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
     return-object p0
 .end method

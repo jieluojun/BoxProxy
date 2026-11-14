@@ -1,9 +1,115 @@
 .class public final Ll30;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Le33;
 
 
-# instance fields
-.field public a:Lk30;
+# static fields
+.field public static final a:Ll30;
 
-.field public b:I
+.field public static final b:Lu05;
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 3
+
+    .line 1
+    new-instance v0, Ll30;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    sput-object v0, Ll30;->a:Ll30;
+
+    .line 7
+    .line 8
+    new-instance v0, Lu05;
+
+    .line 9
+    .line 10
+    const-string v1, "kotlin.Boolean"
+
+    .line 11
+    .line 12
+    sget-object v2, Lt05;->f:Lt05;
+
+    .line 13
+    .line 14
+    invoke-direct {v0, v1, v2}, Lu05;-><init>(Ljava/lang/String;Lt05;)V
+
+    .line 15
+    .line 16
+    .line 17
+    sput-object v0, Ll30;->b:Lu05;
+
+    .line 18
+    .line 19
+    return-void
+.end method
+
+
+# virtual methods
+.method public final b(Lpf1;)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    invoke-interface {p1}, Lpf1;->d()Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    invoke-static {p0}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    return-object p0
+.end method
+
+.method public final c()Lt46;
+    .locals 0
+
+    .line 1
+    sget-object p0, Ll30;->b:Lu05;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public final d(Lji6;Ljava/lang/Object;)V
+    .locals 0
+
+    .line 1
+    check-cast p2, Ljava/lang/Boolean;
+
+    .line 2
+    .line 3
+    invoke-virtual {p2}, Ljava/lang/Boolean;->booleanValue()Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    invoke-virtual {p1, p0}, Lji6;->b(Z)V
+
+    .line 8
+    .line 9
+    .line 10
+    return-void
+.end method

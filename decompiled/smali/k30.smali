@@ -1,108 +1,107 @@
 .class public final Lk30;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ls05;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final a:[I
-
-.field public b:I
-
-.field public c:I
-
-.field public d:Lk30;
-
-.field public final synthetic e:Lm30;
+# static fields
+.field public static final c:Lk30;
 
 
 # direct methods
-.method public constructor <init>(Lm30;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lk30;
 
     .line 2
     .line 3
+    sget-object v1, Ll30;->a:Ll30;
+
     .line 4
-    iput-object p1, p0, Lk30;->e:Lm30;
-
     .line 5
-    .line 6
-    iget-short p1, p1, Lm30;->b:S
+    invoke-direct {v0, v1}, Ls05;-><init>(Le33;)V
 
+    .line 6
     .line 7
     .line 8
-    add-int/lit8 p1, p1, 0x5
+    sput-object v0, Lk30;->c:Lk30;
 
     .line 9
     .line 10
-    new-array p1, p1, [I
-
-    .line 11
-    .line 12
-    iput-object p1, p0, Lk30;->a:[I
-
-    .line 13
-    .line 14
-    const/4 p1, 0x0
-
-    .line 15
-    iput p1, p0, Lk30;->b:I
-
-    .line 16
-    .line 17
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()V
-    .locals 3
+.method public final h(Ljava/lang/Object;)I
+    .locals 0
 
     .line 1
-    const/4 v0, 0x0
+    check-cast p1, [Z
 
     .line 2
-    move v1, v0
-
     .line 3
-    :goto_0
-    iget v2, p0, Lk30;->b:I
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 4
     .line 5
-    if-ge v0, v2, :cond_0
-
     .line 6
+    array-length p0, p1
+
     .line 7
-    iget-object v2, p0, Lk30;->a:[I
+    return p0
+.end method
 
+.method public final j(La21;ILjava/lang/Object;)V
+    .locals 1
+
+    .line 1
+    check-cast p3, Lj30;
+
+    .line 2
+    .line 3
+    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object p0, p0, Ls05;->b:Lr05;
+
+    .line 7
     .line 8
-    .line 9
-    aget v2, v2, v0
+    invoke-interface {p1, p0, p2}, La21;->u(Lr05;I)Z
 
+    .line 9
     .line 10
     .line 11
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
+    move-result p0
 
     .line 12
+    invoke-static {p3}, Lq05;->c(Lq05;)V
+
     .line 13
     .line 14
-    move-result v1
-
     .line 15
-    add-int/lit8 v0, v0, 0x1
+    iget-object p1, p3, Lj30;->a:[Z
 
     .line 16
     .line 17
-    goto :goto_0
+    iget p2, p3, Lj30;->b:I
 
     .line 18
-    :cond_0
-    iput v1, p0, Lk30;->c:I
-
     .line 19
+    add-int/lit8 v0, p2, 0x1
+
     .line 20
+    .line 21
+    iput v0, p3, Lj30;->b:I
+
+    .line 22
+    .line 23
+    aput-boolean p0, p1, p2
+
+    .line 24
+    .line 25
     return-void
 .end method

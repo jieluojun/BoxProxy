@@ -1,51 +1,23 @@
 .class public final Lj37;
-.super Lg37;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lj37;",
-            ">;"
-        }
-    .end annotation
-.end field
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final k:Ljava/util/ArrayList;
+.field public final a:Lxs4;
+
+.field public final b:Lus4;
+
+.field public final c:Lxs4;
+
+.field public final d:Lxs4;
+
+.field public final e:Lxs4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
-
-    .line 1
-    new-instance v0, Ll6;
-
-    .line 2
-    .line 3
-    const/16 v1, 0x11
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ll6;-><init>(B)V
-
-    .line 6
-    .line 7
-    .line 8
-    sput-object v0, Lj37;->CREATOR:Landroid/os/Parcelable$Creator;
-
-    .line 9
-    .line 10
-    return-void
-.end method
-
 .method public constructor <init>()V
-    .locals 1
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -53,274 +25,109 @@
     .line 2
     .line 3
     .line 4
-    new-instance v0, Ljava/util/ArrayList;
+    new-instance v0, Lvw2;
 
     .line 5
     .line 6
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+    const-wide/16 v1, 0x0
 
     .line 7
     .line 8
-    .line 9
-    iput-object v0, p0, Lj37;->k:Ljava/util/ArrayList;
-
-    .line 10
-    .line 11
-    return-void
-.end method
-
-
-# virtual methods
-.method public final c(Ln71;)V
-    .locals 3
-
-    .line 1
-    const/4 v0, 0x0
-
-    .line 2
-    :goto_0
-    iget-object v1, p0, Lj37;->k:Ljava/util/ArrayList;
-
-    .line 3
-    .line 4
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
-
-    .line 5
-    .line 6
-    .line 7
-    move-result v2
-
-    .line 8
-    if-ge v0, v2, :cond_0
+    invoke-direct {v0, v1, v2}, Lvw2;-><init>(J)V
 
     .line 9
     .line 10
-    invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
     .line 11
-    .line 12
-    .line 13
-    move-result-object v1
-
-    .line 14
-    check-cast v1, Lg37;
-
-    .line 15
-    .line 16
-    invoke-virtual {v1, p1}, Lg37;->c(Ln71;)V
-
-    .line 17
-    .line 18
-    .line 19
-    add-int/lit8 v0, v0, 0x1
-
-    .line 20
-    .line 21
-    goto :goto_0
-
-    .line 22
-    :cond_0
-    return-void
-.end method
-
-.method public final d(Ln71;)V
-    .locals 2
-
-    .line 1
-    iget-object p0, p0, Lj37;->k:Ljava/util/ArrayList;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    add-int/lit8 v0, v0, -0x1
-
-    .line 8
-    .line 9
-    :goto_0
-    if-ltz v0, :cond_0
-
-    .line 10
-    .line 11
-    invoke-virtual {p0, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-static {v0}, Lm93;->H(Ljava/lang/Object;)Lxs4;
 
     .line 12
     .line 13
     .line 14
-    move-result-object v1
-
-    .line 15
-    check-cast v1, Lg37;
-
-    .line 16
-    .line 17
-    invoke-virtual {v1, p1}, Lg37;->d(Ln71;)V
-
-    .line 18
-    .line 19
-    .line 20
-    add-int/lit8 v0, v0, -0x1
-
-    .line 21
-    .line 22
-    goto :goto_0
-
-    .line 23
-    :cond_0
-    return-void
-.end method
-
-.method public final describeContents()I
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final e(Lg37;)V
-    .locals 2
-
-    .line 1
-    iget-object p0, p0, Lj37;->k:Ljava/util/ArrayList;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/util/ArrayList;->isEmpty()Z
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    if-eqz v0, :cond_0
-
-    .line 8
-    .line 9
-    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 10
-    .line 11
-    .line 12
-    return-void
-
-    .line 13
-    :cond_0
-    const/4 v0, 0x1
-
-    .line 14
-    invoke-static {v0, p0}, Ly96;->j(ILjava/util/ArrayList;)Ljava/lang/Object;
-
-    .line 15
-    .line 16
-    .line 17
     move-result-object v0
 
-    .line 18
-    check-cast v0, Lg37;
+    .line 15
+    iput-object v0, p0, Lj37;->a:Lxs4;
 
+    .line 16
+    .line 17
+    new-instance v0, Lus4;
+
+    .line 18
     .line 19
+    const/4 v3, 0x0
+
     .line 20
-    invoke-virtual {v0, p1}, Lg37;->a(Lg37;)Z
+    invoke-direct {v0, v3}, Lus4;-><init>(I)V
 
     .line 21
     .line 22
     .line 23
-    move-result v1
+    iput-object v0, p0, Lj37;->b:Lus4;
 
     .line 24
-    if-eqz v1, :cond_1
-
     .line 25
-    .line 26
-    invoke-virtual {v0, p1}, Lg37;->b(Lg37;)V
+    new-instance v0, Lnw2;
 
+    .line 26
     .line 27
+    invoke-direct {v0, v1, v2}, Lnw2;-><init>(J)V
+
     .line 28
     .line 29
-    return-void
-
     .line 30
-    :cond_1
-    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-static {v0}, Lm93;->H(Ljava/lang/Object;)Lxs4;
 
     .line 31
     .line 32
     .line 33
-    return-void
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 1
-
-    .line 1
-    iget-object p0, p0, Lj37;->k:Ljava/util/ArrayList;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    .line 8
-    .line 9
-    .line 10
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    .line 11
-    .line 12
-    .line 13
-    move-result-object p0
-
-    .line 14
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 15
-    .line 16
-    .line 17
-    move-result v0
-
-    .line 18
-    if-eqz v0, :cond_0
-
-    .line 19
-    .line 20
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 21
-    .line 22
-    .line 23
     move-result-object v0
 
-    .line 24
-    check-cast v0, Lg37;
+    .line 34
+    iput-object v0, p0, Lj37;->c:Lxs4;
 
-    .line 25
-    .line 26
-    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
+    .line 35
+    .line 36
+    new-instance v0, Lnw2;
 
-    .line 27
-    .line 28
-    .line 29
-    goto :goto_0
+    .line 37
+    .line 38
+    invoke-direct {v0, v1, v2}, Lnw2;-><init>(J)V
 
-    .line 30
-    :cond_0
+    .line 39
+    .line 40
+    .line 41
+    invoke-static {v0}, Lm93;->H(Ljava/lang/Object;)Lxs4;
+
+    .line 42
+    .line 43
+    .line 44
+    move-result-object v0
+
+    .line 45
+    iput-object v0, p0, Lj37;->d:Lxs4;
+
+    .line 46
+    .line 47
+    new-instance v0, Lnw2;
+
+    .line 48
+    .line 49
+    invoke-direct {v0, v1, v2}, Lnw2;-><init>(J)V
+
+    .line 50
+    .line 51
+    .line 52
+    invoke-static {v0}, Lm93;->H(Ljava/lang/Object;)Lxs4;
+
+    .line 53
+    .line 54
+    .line 55
+    move-result-object v0
+
+    .line 56
+    iput-object v0, p0, Lj37;->e:Lxs4;
+
+    .line 57
+    .line 58
     return-void
 .end method

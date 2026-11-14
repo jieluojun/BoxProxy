@@ -1,74 +1,77 @@
 .class public final Lp02;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
-
-# instance fields
-.field public j:Lus2;
-
-.field public synthetic k:Ljava/lang/Object;
-
-.field public final synthetic l:Lr02;
-
-.field public m:I
-
-
-# direct methods
-.method public constructor <init>(Lr02;Lz81;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lp02;->l:Lr02;
-
-    .line 2
-    .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
+# interfaces
+.implements Ld91;
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final c(JJ)J
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lp02;->k:Ljava/lang/Object;
+    const-wide p0, 0x3f8000003f800000L    # 0.007812501848093234
 
     .line 2
     .line 3
-    iget p1, p0, Lp02;->m:I
-
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    .line 6
+    return-wide p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of p0, p1, Lp02;
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    if-nez p0, :cond_1
 
     .line 8
-    iput p1, p0, Lp02;->m:I
-
     .line 9
+    const/4 p0, 0x0
+
     .line 10
-    iget-object p1, p0, Lp02;->l:Lr02;
+    return p0
 
     .line 11
-    .line 12
-    const/4 v0, 0x0
+    :cond_1
+    return v0
+.end method
 
-    .line 13
-    invoke-virtual {p1, v0, p0}, Lr02;->a(Lus2;Lz81;)Ljava/lang/Object;
+.method public final hashCode()I
+    .locals 0
 
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p0
+    .line 1
+    const/high16 p0, 0x3f800000    # 1.0f
 
-    .line 17
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    const-string p0, "FixedScale(value=1.0)"
+
+    .line 2
+    .line 3
     return-object p0
 .end method

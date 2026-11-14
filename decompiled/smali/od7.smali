@@ -1,14 +1,24 @@
 .class public final Lod7;
-.super Lx27;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lnd7;
+.implements Lbf2;
 
 
 # instance fields
-.field public final b:Landroid/view/Window;
+.field public final synthetic i:Lmd7;
+
+.field public final synthetic j:Lkd7;
+
+.field public final synthetic k:Lwc1;
+
+.field public final synthetic l:Landroid/os/Bundle;
 
 
 # direct methods
-.method public constructor <init>(Landroid/view/Window;)V
+.method public constructor <init>(Lmd7;Lkd7;Lwc1;Landroid/os/Bundle;)V
     .locals 0
 
     .line 1
@@ -17,185 +27,145 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lod7;->b:Landroid/view/Window;
+    iput-object p1, p0, Lod7;->i:Lmd7;
 
     .line 5
     .line 6
+    iput-object p2, p0, Lod7;->j:Lkd7;
+
+    .line 7
+    .line 8
+    iput-object p3, p0, Lod7;->k:Lwc1;
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Lod7;->l:Landroid/os/Bundle;
+
+    .line 11
+    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final e(Z)V
+.method public final d()Lkd7;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lod7;->b:Landroid/view/Window;
+    iget-object p0, p0, Lod7;->j:Lkd7;
 
     .line 2
     .line 3
-    if-eqz p1, :cond_0
-
-    .line 4
-    .line 5
-    const/high16 p1, 0x8000000
-
-    .line 6
-    .line 7
-    invoke-virtual {p0, p1}, Landroid/view/Window;->clearFlags(I)V
-
-    .line 8
-    .line 9
-    .line 10
-    const/high16 p1, -0x80000000
-
-    .line 11
-    .line 12
-    invoke-virtual {p0, p1}, Landroid/view/Window;->addFlags(I)V
-
-    .line 13
-    .line 14
-    .line 15
-    invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object p0
-
-    .line 19
-    invoke-virtual {p0}, Landroid/view/View;->getSystemUiVisibility()I
-
-    .line 20
-    .line 21
-    .line 22
-    move-result p1
-
-    .line 23
-    or-int/lit8 p1, p1, 0x10
-
-    .line 24
-    .line 25
-    invoke-virtual {p0, p1}, Landroid/view/View;->setSystemUiVisibility(I)V
-
-    .line 26
-    .line 27
-    .line 28
-    return-void
-
-    .line 29
-    :cond_0
-    invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
-    .line 30
-    .line 31
-    .line 32
-    move-result-object p0
-
-    .line 33
-    invoke-virtual {p0}, Landroid/view/View;->getSystemUiVisibility()I
-
-    .line 34
-    .line 35
-    .line 36
-    move-result p1
-
-    .line 37
-    and-int/lit8 p1, p1, -0x11
-
-    .line 38
-    .line 39
-    invoke-virtual {p0, p1}, Landroid/view/View;->setSystemUiVisibility(I)V
-
-    .line 40
-    .line 41
-    .line 42
-    return-void
+    return-object p0
 .end method
 
-.method public final f(Z)V
-    .locals 0
+.method public final e()Lxy3;
+    .locals 5
 
     .line 1
-    iget-object p0, p0, Lod7;->b:Landroid/view/Window;
+    new-instance v0, Lxy3;
 
     .line 2
     .line 3
-    if-eqz p1, :cond_0
+    iget-object v1, p0, Lod7;->k:Lwc1;
 
     .line 4
     .line 5
-    const/high16 p1, 0x4000000
+    invoke-direct {v0, v1}, Lxy3;-><init>(Lwc1;)V
 
     .line 6
     .line 7
-    invoke-virtual {p0, p1}, Landroid/view/Window;->clearFlags(I)V
-
     .line 8
+    sget-object v1, Lye0;->b0:Lza5;
+
     .line 9
     .line 10
-    const/high16 p1, -0x80000000
+    const/4 v2, 0x0
 
     .line 11
-    .line 12
-    invoke-virtual {p0, p1}, Landroid/view/Window;->addFlags(I)V
+    new-array v3, v2, [Lfs4;
 
+    .line 12
     .line 13
+    invoke-static {v3, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+
     .line 14
     .line 15
-    invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
-
     .line 16
-    .line 17
-    .line 18
-    move-result-object p0
+    move-result-object v2
 
+    .line 17
+    check-cast v2, [Lfs4;
+
+    .line 18
     .line 19
-    invoke-virtual {p0}, Landroid/view/View;->getSystemUiVisibility()I
+    invoke-static {v2}, Lqm;->p([Lfs4;)Landroid/os/Bundle;
 
     .line 20
     .line 21
     .line 22
-    move-result p1
+    move-result-object v2
 
     .line 23
-    or-int/lit16 p1, p1, 0x2000
+    iget-object v3, v0, Lwc1;->a:Ljava/util/LinkedHashMap;
 
     .line 24
     .line 25
-    invoke-virtual {p0, p1}, Landroid/view/View;->setSystemUiVisibility(I)V
+    invoke-virtual {v3, v1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 26
     .line 27
     .line 28
-    return-void
+    move-result-object v4
 
     .line 29
-    :cond_0
-    invoke-virtual {p0}, Landroid/view/Window;->getDecorView()Landroid/view/View;
+    check-cast v4, Landroid/os/Bundle;
 
     .line 30
     .line 31
-    .line 32
-    move-result-object p0
+    if-eqz v4, :cond_0
 
+    .line 32
     .line 33
-    invoke-virtual {p0}, Landroid/view/View;->getSystemUiVisibility()I
+    invoke-virtual {v2, v4}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
     .line 34
     .line 35
     .line 36
-    move-result p1
+    :cond_0
+    iget-object v4, p0, Lod7;->l:Landroid/os/Bundle;
 
     .line 37
-    and-int/lit16 p1, p1, -0x2001
-
     .line 38
-    .line 39
-    invoke-virtual {p0, p1}, Landroid/view/View;->setSystemUiVisibility(I)V
+    invoke-virtual {v2, v4}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
 
+    .line 39
     .line 40
     .line 41
+    invoke-interface {v3, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 42
-    return-void
+    .line 43
+    .line 44
+    sget-object v1, Lye0;->a0:Lza5;
+
+    .line 45
+    .line 46
+    invoke-interface {v3, v1, p0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 47
+    .line 48
+    .line 49
+    return-object v0
+.end method
+
+.method public final g()Lmd7;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lod7;->i:Lmd7;
+
+    .line 2
+    .line 3
+    return-object p0
 .end method

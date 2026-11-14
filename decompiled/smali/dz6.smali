@@ -1,204 +1,133 @@
-.class final Ldz6;
-.super Ldq3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Ldz6;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ldq3;"
-    }
-.end annotation
+# interfaces
+.implements Le72;
 
 
 # instance fields
-.field public final j:Lm43;
+.field public final synthetic i:B
+
+.field public final synthetic j:Lty6;
+
+.field public final synthetic k:Lts4;
 
 
 # direct methods
-.method public constructor <init>(Lm43;)V
+.method public synthetic constructor <init>(Lty6;Lts4;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p3, p0, Ldz6;->i:B
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Ldz6;->j:Lm43;
+    iput-object p1, p0, Ldz6;->j:Lty6;
 
+    .line 4
     .line 5
+    iput-object p2, p0, Ldz6;->k:Lts4;
+
     .line 6
+    .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 8
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lvp3;
-    .locals 1
-
-    .line 1
-    new-instance v0, Lez6;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Lvp3;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    iget-object p0, p0, Ldz6;->j:Lm43;
-
-    .line 7
-    .line 8
-    iput-object p0, v0, Lez6;->x:Lm43;
-
-    .line 9
-    .line 10
-    return-object v0
-.end method
-
-.method public final b(Lvp3;)V
-    .locals 0
-
-    .line 1
-    check-cast p1, Lez6;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Ldz6;->j:Lm43;
-
-    .line 4
-    .line 5
-    iput-object p0, p1, Lez6;->x:Lm43;
-
-    .line 6
-    .line 7
-    return-void
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
+.method public final invoke()Ljava/lang/Object;
     .locals 3
 
     .line 1
-    const/4 v0, 0x1
+    iget-byte v0, p0, Ldz6;->i:B
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
-    .line 4
-    return v0
+    sget-object v1, Ll97;->a:Ll97;
 
+    .line 4
     .line 5
-    :cond_0
-    instance-of v1, p1, Ldz6;
+    iget-object v2, p0, Ldz6;->k:Lts4;
 
     .line 6
     .line 7
-    const/4 v2, 0x0
+    iget-object p0, p0, Ldz6;->j:Lty6;
 
     .line 8
-    if-nez v1, :cond_1
-
     .line 9
+    packed-switch v0, :pswitch_data_0
+
     .line 10
-    return v2
-
     .line 11
-    :cond_1
-    check-cast p1, Ldz6;
-
     .line 12
+    iget-object p0, p0, Lty6;->o:Lp72;
+
     .line 13
-    iget-object p0, p0, Ldz6;->j:Lm43;
-
     .line 14
-    .line 15
-    iget-object p1, p1, Ldz6;->j:Lm43;
+    invoke-virtual {v2}, Lts4;->g()F
 
+    .line 15
     .line 16
     .line 17
-    invoke-static {p0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    move-result v0
 
     .line 18
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
     .line 19
     .line 20
-    move-result p0
-
     .line 21
-    if-nez p0, :cond_2
+    move-result-object v0
 
     .line 22
+    invoke-interface {p0, v0}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 23
-    return v2
-
     .line 24
-    :cond_2
-    return v0
-.end method
+    .line 25
+    return-object v1
 
-.method public final hashCode()I
-    .locals 0
+    .line 26
+    :pswitch_0
+    iget-object p0, p0, Lty6;->o:Lp72;
 
-    .line 1
-    iget-object p0, p0, Ldz6;->j:Lm43;
+    .line 27
+    .line 28
+    invoke-virtual {v2}, Lts4;->g()F
 
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    .line 29
+    .line 30
+    .line 31
+    move-result v0
 
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
+    .line 32
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
-    .line 7
-    return p0
-.end method
+    .line 33
+    .line 34
+    .line 35
+    move-result-object v0
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+    .line 36
+    invoke-interface {p0, v0}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    .line 37
+    .line 38
+    .line 39
+    return-object v1
 
-    .line 2
-    .line 3
-    const-string v1, "TraversablePrefetchStateModifierElement(prefetchState="
+    .line 40
+    nop
 
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    iget-object p0, p0, Ldz6;->j:Lm43;
-
-    .line 9
-    .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 11
-    .line 12
-    .line 13
-    const-string p0, ")"
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-object p0
-
-    .line 22
-    return-object p0
+    .line 41
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

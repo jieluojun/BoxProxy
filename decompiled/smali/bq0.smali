@@ -1,33 +1,33 @@
 .class public final synthetic Lbq0;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Le62;
+.implements Le72;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final synthetic i:B
 
-.field public final synthetic k:Ljava/lang/Long;
+.field public final synthetic j:Ljava/lang/Long;
 
-.field public final synthetic l:Lmt3;
+.field public final synthetic k:Lh04;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Long;Lmt3;B)V
+.method public synthetic constructor <init>(Ljava/lang/Long;Lh04;B)V
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Lbq0;->j:B
+    iput-byte p3, p0, Lbq0;->i:B
 
     .line 2
     .line 3
-    iput-object p1, p0, Lbq0;->k:Ljava/lang/Long;
+    iput-object p1, p0, Lbq0;->j:Ljava/lang/Long;
 
     .line 4
     .line 5
-    iput-object p2, p0, Lbq0;->l:Lmt3;
+    iput-object p2, p0, Lbq0;->k:Lh04;
 
     .line 6
     .line 7
@@ -45,19 +45,19 @@
     .locals 3
 
     .line 1
-    iget-byte v0, p0, Lbq0;->j:B
+    iget-byte v0, p0, Lbq0;->i:B
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    sget-object v1, Ll97;->a:Ll97;
 
     .line 4
     .line 5
-    iget-object v2, p0, Lbq0;->l:Lmt3;
+    iget-object v2, p0, Lbq0;->k:Lh04;
 
     .line 6
     .line 7
-    iget-object p0, p0, Lbq0;->k:Ljava/lang/Long;
+    iget-object p0, p0, Lbq0;->j:Ljava/lang/Long;
 
     .line 8
     .line 9
@@ -66,7 +66,7 @@
     .line 10
     .line 11
     .line 12
-    invoke-interface {v2, p0}, Lmt3;->setValue(Ljava/lang/Object;)V
+    invoke-interface {v2, p0}, Lh04;->setValue(Ljava/lang/Object;)V
 
     .line 13
     .line 14
@@ -75,7 +75,7 @@
 
     .line 16
     :pswitch_0
-    invoke-interface {v2, p0}, Lmt3;->setValue(Ljava/lang/Object;)V
+    invoke-interface {v2, p0}, Lh04;->setValue(Ljava/lang/Object;)V
 
     .line 17
     .line 18

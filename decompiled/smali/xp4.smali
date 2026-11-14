@@ -1,90 +1,140 @@
-.class public final Lxp4;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lxp4;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public j:Ljava/lang/Object;
+# static fields
+.field public static final enum i:Lxp4;
 
-.field public k:Ljava/lang/Object;
+.field public static final enum j:Lxp4;
 
-.field public l:Lbu3;
+.field public static final enum k:Lxp4;
 
-.field public m:J
-
-.field public synthetic n:Ljava/lang/Object;
-
-.field public final synthetic o:Lzp4;
-
-.field public p:I
+.field public static final synthetic l:[Lxp4;
 
 
 # direct methods
-.method public constructor <init>(Lzp4;Lz81;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    iput-object p1, p0, Lxp4;->o:Lzp4;
+    new-instance v0, Lxp4;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    const-string v1, "Idle"
 
     .line 4
     .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
-
-    .line 1
-    iput-object p1, p0, Lxp4;->n:Ljava/lang/Object;
-
-    .line 2
-    .line 3
-    iget p1, p0, Lxp4;->p:I
-
-    .line 4
-    .line 5
-    const/high16 v0, -0x80000000
+    const/4 v2, 0x0
 
     .line 6
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Lxp4;->p:I
-
     .line 9
+    sput-object v0, Lxp4;->i:Lxp4;
+
     .line 10
-    const-wide/16 v2, 0x0
-
     .line 11
-    .line 12
-    const/4 v4, 0x0
+    new-instance v1, Lxp4;
 
+    .line 12
     .line 13
-    iget-object v0, p0, Lxp4;->o:Lzp4;
+    const-string v2, "Vertical"
 
     .line 14
     .line 15
-    const/4 v1, 0x0
+    const/4 v3, 0x1
 
     .line 16
-    move-object v5, p0
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
-    invoke-virtual/range {v0 .. v5}, Lzp4;->a(Ljava/lang/CharSequence;JLandroid/view/textclassifier/TextClassifier;Lz81;)Ljava/lang/Object;
-
     .line 18
     .line 19
+    sput-object v1, Lxp4;->j:Lxp4;
+
     .line 20
+    .line 21
+    new-instance v2, Lxp4;
+
+    .line 22
+    .line 23
+    const-string v3, "Horizontal"
+
+    .line 24
+    .line 25
+    const/4 v4, 0x2
+
+    .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 27
+    .line 28
+    .line 29
+    sput-object v2, Lxp4;->k:Lxp4;
+
+    .line 30
+    .line 31
+    filled-new-array {v0, v1, v2}, [Lxp4;
+
+    .line 32
+    .line 33
+    .line 34
+    move-result-object v0
+
+    .line 35
+    sput-object v0, Lxp4;->l:[Lxp4;
+
+    .line 36
+    .line 37
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lxp4;
+    .locals 1
+
+    .line 1
+    const-class v0, Lxp4;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
     move-result-object p0
 
-    .line 21
+    .line 7
+    check-cast p0, Lxp4;
+
+    .line 8
+    .line 9
     return-object p0
+.end method
+
+.method public static values()[Lxp4;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lxp4;->l:[Lxp4;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lxp4;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

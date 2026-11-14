@@ -1,35 +1,33 @@
 .class public final Lak1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Ljava/lang/AutoCloseable;
+.implements Landroidx/compose/ui/input/pointer/PointerInputEventHandler;
 
 
 # instance fields
-.field public final j:Lzj1;
+.field public final synthetic a:B
 
-.field public k:Z
-
-.field public final synthetic l:Lck1;
+.field public final synthetic b:Lh04;
 
 
 # direct methods
-.method public constructor <init>(Lck1;Lzj1;)V
+.method public synthetic constructor <init>(Lh04;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p2, p0, Lak1;->a:B
 
     .line 2
     .line 3
+    iput-object p1, p0, Lak1;->b:Lh04;
+
     .line 4
-    iput-object p1, p0, Lak1;->l:Lck1;
-
     .line 5
-    .line 6
-    iput-object p2, p0, Lak1;->j:Lzj1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6
     .line 7
     .line 8
     return-void
@@ -37,97 +35,103 @@
 
 
 # virtual methods
-.method public final close()V
-    .locals 3
+.method public final invoke(Lkx4;Lp91;)Ljava/lang/Object;
+    .locals 5
 
     .line 1
-    iget-boolean v0, p0, Lak1;->k:Z
+    iget-byte v0, p0, Lak1;->a:B
 
     .line 2
     .line 3
-    if-nez v0, :cond_1
+    sget-object v1, Ll97;->a:Ll97;
 
     .line 4
     .line 5
-    const/4 v0, 0x1
+    sget-object v2, Lpc1;->i:Lpc1;
 
     .line 6
-    iput-boolean v0, p0, Lak1;->k:Z
-
     .line 7
+    const/4 v3, 0x0
+
     .line 8
-    iget-object v0, p0, Lak1;->l:Lck1;
+    iget-object p0, p0, Lak1;->b:Lh04;
 
     .line 9
     .line 10
-    iget-object v1, v0, Lck1;->q:Ljava/lang/Object;
+    packed-switch v0, :pswitch_data_0
 
     .line 11
     .line 12
-    monitor-enter v1
-
     .line 13
-    :try_start_0
-    iget-object p0, p0, Lak1;->j:Lzj1;
+    new-instance v0, Lf62;
 
     .line 14
     .line 15
-    iget v2, p0, Lzj1;->h:I
+    const/4 v4, 0x1
 
     .line 16
-    .line 17
-    add-int/lit8 v2, v2, -0x1
+    invoke-direct {v0, p0, v3, v4}, Lf62;-><init>(Ljava/lang/Object;Lp91;B)V
 
+    .line 17
     .line 18
     .line 19
-    iput v2, p0, Lzj1;->h:I
+    invoke-static {p1, v0, p2}, Lnm;->t(Lkx4;Lt72;Lp91;)Ljava/lang/Object;
 
     .line 20
     .line 21
-    if-nez v2, :cond_0
-
     .line 22
+    move-result-object p0
+
     .line 23
-    iget-boolean v2, p0, Lzj1;->f:Z
+    if-ne p0, v2, :cond_0
 
     .line 24
     .line 25
-    if-eqz v2, :cond_0
+    move-object v1, p0
 
     .line 26
+    :cond_0
+    return-object v1
+
     .line 27
-    invoke-virtual {v0, p0}, Lck1;->t(Lzj1;)V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :pswitch_0
+    new-instance v0, Lwe;
 
     .line 28
     .line 29
-    .line 30
-    goto :goto_0
+    const/16 v4, 0x15
 
+    .line 30
     .line 31
-    :catchall_0
-    move-exception p0
+    invoke-direct {v0, p0, v4}, Lwe;-><init>(Lh04;B)V
 
     .line 32
-    goto :goto_1
-
     .line 33
-    :cond_0
-    :goto_0
-    monitor-exit v1
-
     .line 34
-    return-void
+    const/4 p0, 0x7
 
     .line 35
-    :goto_1
-    monitor-exit v1
+    invoke-static {p1, v3, v0, p2, p0}, Lop6;->e(Lkx4;Lu72;Lp72;Lp91;I)Ljava/lang/Object;
 
     .line 36
-    throw p0
-
     .line 37
+    .line 38
+    move-result-object p0
+
+    .line 39
+    if-ne p0, v2, :cond_1
+
+    .line 40
+    .line 41
+    move-object v1, p0
+
+    .line 42
     :cond_1
-    return-void
+    return-object v1
+
+    .line 43
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

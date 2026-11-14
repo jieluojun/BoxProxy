@@ -64,7 +64,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    invoke-static {v1}, Lcom/box/app/vpn/VpnBridge;->control0(Ljava/lang/String;)Ljh2;
+    invoke-static {v1}, Lcom/box/app/vpn/VpnBridge;->control0(Ljava/lang/String;)Lcom/box/app/vpn/CtlResult;
 
     goto :goto_end
 

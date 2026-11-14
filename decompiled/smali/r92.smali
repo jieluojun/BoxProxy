@@ -1,454 +1,261 @@
-.class public final Lr92;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ljava/lang/reflect/WildcardType;
-.implements Ljava/io/Serializable;
+.class public final enum Lr92;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final j:Ljava/lang/reflect/Type;
+# static fields
+.field public static final enum i:Lr92;
 
-.field public final k:Ljava/lang/reflect/Type;
+.field public static final enum j:Lr92;
+
+.field public static final enum k:Lr92;
+
+.field public static final enum l:Lr92;
+
+.field public static final enum m:Lr92;
+
+.field public static final enum n:Lr92;
+
+.field public static final enum o:Lr92;
+
+.field public static final synthetic p:[Lr92;
 
 
 # direct methods
-.method public constructor <init>([Ljava/lang/reflect/Type;[Ljava/lang/reflect/Type;)V
-    .locals 4
+.method static constructor <clinit>()V
+    .locals 11
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lr92;
 
     .line 2
     .line 3
-    .line 4
-    array-length v0, p2
+    const-string v1, "SrcOver"
 
+    .line 4
     .line 5
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     .line 6
-    const/4 v2, 0x1
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
-    if-gt v0, v2, :cond_3
-
     .line 8
     .line 9
-    array-length v0, p1
+    sput-object v0, Lr92;->i:Lr92;
 
     .line 10
-    if-ne v0, v2, :cond_2
-
     .line 11
-    .line 12
-    array-length v0, p2
+    new-instance v1, Lr92;
 
+    .line 12
     .line 13
-    const/4 v3, 0x0
+    const-string v2, "PlusDarker"
 
     .line 14
-    if-ne v0, v2, :cond_1
-
     .line 15
+    const/4 v3, 0x1
+
     .line 16
-    aget-object v0, p2, v3
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
     .line 18
-    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 19
+    sput-object v1, Lr92;->j:Lr92;
+
     .line 20
     .line 21
-    aget-object v0, p2, v3
+    new-instance v2, Lr92;
 
     .line 22
     .line 23
-    invoke-static {v0}, Ls60;->u(Ljava/lang/reflect/Type;)V
+    const-string v3, "PlusLighter"
 
     .line 24
     .line 25
+    const/4 v4, 0x2
+
     .line 26
-    aget-object p1, p1, v3
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 27
     .line 28
-    const-class v0, Ljava/lang/Object;
-
     .line 29
+    new-instance v3, Lr92;
+
     .line 30
-    if-ne p1, v0, :cond_0
-
     .line 31
-    .line 32
-    aget-object p1, p2, v3
+    const-string v4, "SoftLight"
 
+    .line 32
     .line 33
+    const/4 v5, 0x3
+
     .line 34
-    invoke-static {p1}, Ls60;->s(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 35
     .line 36
     .line 37
-    move-result-object p1
+    sput-object v3, Lr92;->k:Lr92;
 
     .line 38
-    iput-object p1, p0, Lr92;->k:Ljava/lang/reflect/Type;
-
     .line 39
+    new-instance v4, Lr92;
+
     .line 40
-    iput-object v0, p0, Lr92;->j:Ljava/lang/reflect/Type;
-
     .line 41
-    .line 42
-    return-void
+    const-string v5, "HardLight"
 
+    .line 42
     .line 43
-    :cond_0
-    const-string p0, "When lower bound is specified, upper bound must be Object"
+    const/4 v6, 0x4
 
     .line 44
-    .line 45
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 45
     .line 46
     .line 47
-    .line 48
-    throw v1
+    sput-object v4, Lr92;->l:Lr92;
 
+    .line 48
     .line 49
-    :cond_1
-    aget-object p2, p1, v3
+    new-instance v5, Lr92;
 
     .line 50
     .line 51
-    invoke-static {p2}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    const-string v6, "Overlay"
 
     .line 52
     .line 53
+    const/4 v7, 0x5
+
     .line 54
-    aget-object p2, p1, v3
+    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 55
     .line 56
-    invoke-static {p2}, Ls60;->u(Ljava/lang/reflect/Type;)V
-
     .line 57
+    sput-object v5, Lr92;->m:Lr92;
+
     .line 58
     .line 59
-    iput-object v1, p0, Lr92;->k:Ljava/lang/reflect/Type;
+    new-instance v6, Lr92;
 
     .line 60
     .line 61
-    aget-object p1, p1, v3
+    const-string v7, "Luminosity"
 
     .line 62
     .line 63
-    invoke-static {p1}, Ls60;->s(Ljava/lang/reflect/Type;)Ljava/lang/reflect/Type;
+    const/4 v8, 0x6
 
     .line 64
+    invoke-direct {v6, v7, v8}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 65
     .line 66
-    move-result-object p1
-
     .line 67
-    iput-object p1, p0, Lr92;->j:Ljava/lang/reflect/Type;
+    sput-object v6, Lr92;->n:Lr92;
 
     .line 68
     .line 69
-    return-void
+    new-instance v7, Lr92;
 
     .line 70
-    :cond_2
-    const-string p0, "Exactly one upper bound must be specified"
-
     .line 71
+    const-string v8, "ColorDodge"
+
     .line 72
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
-
     .line 73
+    const/4 v9, 0x7
+
     .line 74
+    invoke-direct {v7, v8, v9}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 75
-    throw v1
-
     .line 76
-    :cond_3
-    const-string p0, "At most one lower bound is supported"
-
     .line 77
-    .line 78
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
+    new-instance v8, Lr92;
 
+    .line 78
     .line 79
+    const-string v9, "ColorBurn"
+
     .line 80
     .line 81
-    throw v1
-.end method
+    const/16 v10, 0x8
 
+    .line 82
+    .line 83
+    invoke-direct {v8, v9, v10}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+    .line 84
+    .line 85
+    .line 86
+    sput-object v8, Lr92;->o:Lr92;
 
-    .line 1
-    instance-of v0, p1, Ljava/lang/reflect/WildcardType;
+    .line 87
+    .line 88
+    filled-new-array/range {v0 .. v8}, [Lr92;
 
-    .line 2
-    .line 3
-    if-eqz v0, :cond_0
-
-    .line 4
-    .line 5
-    check-cast p1, Ljava/lang/reflect/WildcardType;
-
-    .line 6
-    .line 7
-    invoke-static {p0, p1}, Ls60;->y(Ljava/lang/reflect/Type;Ljava/lang/reflect/Type;)Z
-
-    .line 8
-    .line 9
-    .line 10
-    move-result p0
-
-    .line 11
-    if-eqz p0, :cond_0
-
-    .line 12
-    .line 13
-    const/4 p0, 0x1
-
-    .line 14
-    return p0
-
-    .line 15
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 16
-    return p0
-.end method
-
-.method public final getLowerBounds()[Ljava/lang/reflect/Type;
-    .locals 2
-
-    .line 1
-    iget-object p0, p0, Lr92;->k:Ljava/lang/reflect/Type;
-
-    .line 2
-    .line 3
-    if-eqz p0, :cond_0
-
-    .line 4
-    .line 5
-    const/4 v0, 0x1
-
-    .line 6
-    new-array v0, v0, [Ljava/lang/reflect/Type;
-
-    .line 7
-    .line 8
-    const/4 v1, 0x0
-
-    .line 9
-    aput-object p0, v0, v1
-
-    .line 10
-    .line 11
-    return-object v0
-
-    .line 12
-    :cond_0
-    sget-object p0, Ls60;->K:[Ljava/lang/reflect/Type;
-
-    .line 13
-    .line 14
-    return-object p0
-.end method
-
-.method public final getUpperBounds()[Ljava/lang/reflect/Type;
-    .locals 2
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    new-array v0, v0, [Ljava/lang/reflect/Type;
-
-    .line 3
-    .line 4
-    const/4 v1, 0x0
-
-    .line 5
-    iget-object p0, p0, Lr92;->j:Ljava/lang/reflect/Type;
-
-    .line 6
-    .line 7
-    aput-object p0, v0, v1
-
-    .line 8
-    .line 9
-    return-object v0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lr92;->k:Ljava/lang/reflect/Type;
-
-    .line 2
-    .line 3
-    if-eqz v0, :cond_0
-
-    .line 4
-    .line 5
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
-
-    .line 6
-    .line 7
-    .line 8
-    move-result v0
-
-    .line 9
-    add-int/lit8 v0, v0, 0x1f
-
-    .line 10
-    .line 11
-    goto :goto_0
-
-    .line 12
-    :cond_0
-    const/4 v0, 0x1
-
-    .line 13
-    :goto_0
-    iget-object p0, p0, Lr92;->j:Ljava/lang/reflect/Type;
-
-    .line 14
-    .line 15
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    .line 16
-    .line 17
-    .line 18
-    move-result p0
-
-    .line 19
-    add-int/lit8 p0, p0, 0x1f
-
-    .line 20
-    .line 21
-    xor-int/2addr p0, v0
-
-    .line 22
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lr92;->k:Ljava/lang/reflect/Type;
-
-    .line 2
-    .line 3
-    if-eqz v0, :cond_0
-
-    .line 4
-    .line 5
-    new-instance p0, Ljava/lang/StringBuilder;
-
-    .line 6
-    .line 7
-    const-string v1, "? super "
-
-    .line 8
-    .line 9
-    invoke-direct {p0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 10
-    .line 11
-    .line 12
-    invoke-static {v0}, Ls60;->V(Ljava/lang/reflect/Type;)Ljava/lang/String;
-
-    .line 13
-    .line 14
-    .line 15
+    .line 89
+    .line 90
+    .line 91
     move-result-object v0
 
-    .line 16
-    invoke-virtual {p0, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 92
+    sput-object v0, Lr92;->p:[Lr92;
 
-    .line 17
-    .line 18
-    .line 19
-    invoke-virtual {p0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    .line 93
+    .line 94
+    return-void
+.end method
 
-    .line 20
-    .line 21
-    .line 22
+.method public static valueOf(Ljava/lang/String;)Lr92;
+    .locals 1
+
+    .line 1
+    const-class v0, Lr92;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
     move-result-object p0
 
-    .line 23
+    .line 7
+    check-cast p0, Lr92;
+
+    .line 8
+    .line 9
     return-object p0
+.end method
 
-    .line 24
-    :cond_0
-    const-class v0, Ljava/lang/Object;
+.method public static values()[Lr92;
+    .locals 1
 
-    .line 25
-    .line 26
-    iget-object p0, p0, Lr92;->j:Ljava/lang/reflect/Type;
+    .line 1
+    sget-object v0, Lr92;->p:[Lr92;
 
-    .line 27
-    .line 28
-    if-ne p0, v0, :cond_1
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    .line 29
-    .line 30
-    const-string p0, "?"
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
 
-    .line 31
-    .line 32
-    return-object p0
+    .line 7
+    check-cast v0, [Lr92;
 
-    .line 33
-    :cond_1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 34
-    .line 35
-    const-string v1, "? extends "
-
-    .line 36
-    .line 37
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 38
-    .line 39
-    .line 40
-    invoke-static {p0}, Ls60;->V(Ljava/lang/reflect/Type;)Ljava/lang/String;
-
-    .line 41
-    .line 42
-    .line 43
-    move-result-object p0
-
-    .line 44
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 45
-    .line 46
-    .line 47
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 48
-    .line 49
-    .line 50
-    move-result-object p0
-
-    .line 51
-    return-object p0
+    .line 8
+    .line 9
+    return-object v0
 .end method

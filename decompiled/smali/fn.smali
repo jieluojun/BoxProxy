@@ -1,26 +1,36 @@
 .class public final Lfn;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
+.field public i:Ljava/io/OutputStream;
 
-.field public final synthetic k:Lgn;
+.field public j:Ljava/util/Set;
 
-.field public l:I
+.field public k:Landroid/content/Context;
+
+.field public l:Ljava/util/List;
+
+.field public m:Ljava/lang/Object;
+
+.field public synthetic n:Ljava/lang/Object;
+
+.field public final synthetic o:Lqn;
+
+.field public p:I
 
 
 # direct methods
-.method public constructor <init>(Lgn;Lz81;)V
+.method public constructor <init>(Lqn;Lq91;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lfn;->k:Lgn;
+    iput-object p1, p0, Lfn;->o:Lqn;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
     .line 4
     .line 5
@@ -34,11 +44,11 @@
     .locals 1
 
     .line 1
-    iput-object p1, p0, Lfn;->j:Ljava/lang/Object;
+    iput-object p1, p0, Lfn;->n:Ljava/lang/Object;
 
     .line 2
     .line 3
-    iget p1, p0, Lfn;->l:I
+    iget p1, p0, Lfn;->p:I
 
     .line 4
     .line 5
@@ -49,21 +59,45 @@
     or-int/2addr p1, v0
 
     .line 8
-    iput p1, p0, Lfn;->l:I
+    iput p1, p0, Lfn;->p:I
 
     .line 9
     .line 10
-    iget-object p1, p0, Lfn;->k:Lgn;
+    iget-object p1, p0, Lfn;->o:Lqn;
 
     .line 11
     .line 12
-    invoke-virtual {p1, p0}, Lgn;->a(Lz81;)Ljava/lang/Object;
+    const/4 v0, 0x0
 
     .line 13
+    invoke-virtual {p1, v0, v0, v0, p0}, Lqn;->h(Landroid/content/Context;Ljava/io/OutputStream;Ljava/util/Set;Lq91;)Ljava/lang/Object;
+
     .line 14
     .line 15
+    .line 16
     move-result-object p0
 
-    .line 16
+    .line 17
+    sget-object p1, Lpc1;->i:Lpc1;
+
+    .line 18
+    .line 19
+    if-ne p0, p1, :cond_0
+
+    .line 20
+    .line 21
     return-object p0
+
+    .line 22
+    :cond_0
+    new-instance p1, Lsi5;
+
+    .line 23
+    .line 24
+    invoke-direct {p1, p0}, Lsi5;-><init>(Ljava/lang/Object;)V
+
+    .line 25
+    .line 26
+    .line 27
+    return-object p1
 .end method

@@ -1,160 +1,88 @@
-.class public Les1;
-.super Lgw1;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Les1;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lpx1;
 
 
 # instance fields
-.field public c:Ljava/lang/Boolean;
+.field public final synthetic i:Lhs1;
 
-.field public final d:Landroid/view/KeyEvent;
-
-.field public final e:I
-
-.field public final f:Z
-
-.field public final g:Z
+.field public final synthetic j:Lp72;
 
 
 # direct methods
-.method public constructor <init>(Lsu0;Landroid/view/KeyEvent;I)V
+.method public synthetic constructor <init>(Lhs1;Lp72;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1}, Lgw1;-><init>(Lsu0;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    iput-object p2, p0, Les1;->d:Landroid/view/KeyEvent;
+    iput-object p1, p0, Les1;->i:Lhs1;
 
     .line 5
     .line 6
-    iput p3, p0, Les1;->e:I
+    iput-object p2, p0, Les1;->j:Lp72;
 
     .line 7
     .line 8
-    iget-object p1, p0, Lgw1;->a:Lsu0;
-
-    .line 9
-    .line 10
-    invoke-virtual {p1}, Lsu0;->getKeyMetaStates()Lcz2;
-
-    .line 11
-    .line 12
-    .line 13
-    move-result-object p1
-
-    .line 14
-    invoke-virtual {p1}, Lcz2;->b()Z
-
-    .line 15
-    .line 16
-    .line 17
-    move-result p1
-
-    .line 18
-    iput-boolean p1, p0, Les1;->f:Z
-
-    .line 19
-    .line 20
-    iget-object p1, p0, Lgw1;->a:Lsu0;
-
-    .line 21
-    .line 22
-    invoke-virtual {p1}, Lsu0;->getKeyMetaStates()Lcz2;
-
-    .line 23
-    .line 24
-    .line 25
-    move-result-object p1
-
-    .line 26
-    invoke-virtual {p1}, Lcz2;->a()Z
-
-    .line 27
-    .line 28
-    .line 29
-    move-result p1
-
-    .line 30
-    iput-boolean p1, p0, Les1;->g:Z
-
-    .line 31
-    .line 32
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Z)Z
-    .locals 3
+.method public final a(Lcx1;Lz71;)V
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Les1;->c:Ljava/lang/Boolean;
+    iget-object p2, p0, Les1;->j:Lp72;
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    if-eqz p2, :cond_0
 
     .line 4
-    const/4 v2, 0x1
-
     .line 5
-    if-eqz v0, :cond_0
+    invoke-interface {p2, p1}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 6
     .line 7
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
     .line 8
-    .line 9
-    .line 10
-    move-result v0
+    move-result-object p1
 
+    .line 9
+    check-cast p1, Ljava/lang/Boolean;
+
+    .line 10
     .line 11
-    if-eqz v0, :cond_0
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     .line 12
     .line 13
-    move v0, v2
-
     .line 14
-    goto :goto_0
+    move-result p1
 
     .line 15
-    :cond_0
-    move v0, v1
+    if-nez p1, :cond_0
 
     .line 16
-    :goto_0
-    iget-byte p0, p0, Lgw1;->b:B
-
     .line 17
+    return-void
+
     .line 18
-    if-eqz p0, :cond_1
+    :cond_0
+    iget-object p0, p0, Les1;->i:Lhs1;
 
     .line 19
     .line 20
-    return v0
+    invoke-virtual {p0}, Lhs1;->f()V
 
     .line 21
-    :cond_1
-    if-nez v0, :cond_3
-
     .line 22
     .line 23
-    if-eqz p1, :cond_2
-
-    .line 24
-    .line 25
-    goto :goto_1
-
-    .line 26
-    :cond_2
-    return v1
-
-    .line 27
-    :cond_3
-    :goto_1
-    return v2
+    return-void
 .end method

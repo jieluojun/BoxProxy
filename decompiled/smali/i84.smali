@@ -1,35 +1,39 @@
-.class public final Li84;
-.super Lx2;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Li84;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lhv2;
+.implements Lt72;
 
 
-# static fields
-.field public static final k:Li84;
+# instance fields
+.field public final synthetic i:B
+
+.field public final synthetic j:Lob4;
+
+.field public final synthetic k:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(Lob4;IB)V
+    .locals 0
 
     .line 1
-    new-instance v0, Li84;
+    iput-byte p3, p0, Li84;->i:B
 
     .line 2
     .line 3
-    sget-object v1, Liw1;->r:Liw1;
+    iput-object p1, p0, Li84;->j:Lob4;
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Lx2;-><init>(Lqb1;)V
+    iput p2, p0, Li84;->k:I
 
     .line 6
     .line 7
-    .line 8
-    sput-object v0, Li84;->k:Li84;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 8
     .line 9
     .line 10
     return-void
@@ -37,113 +41,97 @@
 
 
 # virtual methods
-.method public final D(ZZLi91;)Lwk1;
-    .locals 0
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
     .line 1
-    sget-object p0, Lj84;->j:Lj84;
+    iget-byte v0, p0, Li84;->i:B
 
     .line 2
     .line 3
-    return-object p0
-.end method
-
-.method public final E(Lz81;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    .line 2
-    .line 3
-    const-string p1, "This job is always active"
+    sget-object v1, Ll97;->a:Ll97;
 
     .line 4
     .line 5
-    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+    const/4 v2, 0x2
 
     .line 6
+    iget v3, p0, Li84;->k:I
+
     .line 7
     .line 8
-    throw p0
-.end method
+    iget-object p0, p0, Li84;->j:Lob4;
 
-.method public final b()Z
-    .locals 0
+    .line 9
+    .line 10
+    check-cast p1, Ljava/lang/Integer;
 
-    .line 1
-    const/4 p0, 0x1
+    .line 11
+    .line 12
+    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
 
-    .line 2
-    return p0
-.end method
+    .line 13
+    .line 14
+    .line 15
+    move-result p1
 
-.method public final c(Ljava/util/concurrent/CancellationException;)V
-    .locals 0
+    .line 16
+    check-cast p2, Lp72;
 
-    .line 1
-    return-void
-.end method
+    .line 17
+    .line 18
+    packed-switch v0, :pswitch_data_0
 
-.method public final k(Lov2;)Lvo0;
-    .locals 0
+    .line 19
+    .line 20
+    .line 21
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 1
-    sget-object p0, Lj84;->j:Lj84;
+    .line 22
+    .line 23
+    .line 24
+    new-instance v0, Li73;
 
-    .line 2
-    .line 3
-    return-object p0
-.end method
+    .line 25
+    .line 26
+    invoke-direct {v0, p1, p2, v2}, Li73;-><init>(ILjava/lang/Object;B)V
 
-.method public final start()Z
-    .locals 0
+    .line 27
+    .line 28
+    .line 29
+    invoke-virtual {p0, v3, v0}, Lob4;->f(ILp72;)V
 
-    .line 1
-    const/4 p0, 0x0
+    .line 30
+    .line 31
+    .line 32
+    return-object v1
 
-    .line 2
-    return p0
-.end method
+    .line 33
+    :pswitch_0
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.method public final t()Ljava/util/concurrent/CancellationException;
-    .locals 1
+    .line 34
+    .line 35
+    .line 36
+    new-instance v0, Li73;
 
-    .line 1
-    new-instance p0, Ljava/lang/IllegalStateException;
+    .line 37
+    .line 38
+    invoke-direct {v0, p1, p2, v2}, Li73;-><init>(ILjava/lang/Object;B)V
 
-    .line 2
-    .line 3
-    const-string v0, "This job is always active"
+    .line 39
+    .line 40
+    .line 41
+    invoke-virtual {p0, v3, v0}, Lob4;->f(ILp72;)V
 
-    .line 4
-    .line 5
-    invoke-direct {p0, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+    .line 42
+    .line 43
+    .line 44
+    return-object v1
 
-    .line 6
-    .line 7
-    .line 8
-    throw p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    const-string p0, "NonCancellable"
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final x(Lp62;)Lwk1;
-    .locals 0
-
-    .line 1
-    sget-object p0, Lj84;->j:Lj84;
-
-    .line 2
-    .line 3
-    return-object p0
+    .line 45
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

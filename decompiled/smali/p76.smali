@@ -1,118 +1,249 @@
-.class public final enum Lp76;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lp76;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt72;
 
 
-# static fields
-.field public static final enum j:Lp76;
+# instance fields
+.field public final synthetic i:B
 
-.field public static final enum k:Lp76;
+.field public final synthetic j:Ljava/lang/String;
 
-.field public static final synthetic l:[Lp76;
+.field public final synthetic k:Ljava/lang/String;
+
+.field public final synthetic l:Ljava/util/List;
+
+.field public final synthetic m:Z
+
+.field public final synthetic n:Lp72;
+
+.field public final synthetic o:Lp72;
+
+.field public final synthetic p:Ljava/lang/String;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ZLp72;Lp72;Ljava/lang/String;IB)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lp76;
+    iput-byte p9, p0, Lp76;->i:B
 
     .line 2
     .line 3
-    const-string v1, "Replace"
+    iput-object p1, p0, Lp76;->j:Ljava/lang/String;
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    iput-object p2, p0, Lp76;->k:Ljava/lang/String;
 
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 7
+    iput-object p3, p0, Lp76;->l:Ljava/util/List;
+
     .line 8
     .line 9
-    sput-object v0, Lp76;->j:Lp76;
+    iput-boolean p4, p0, Lp76;->m:Z
 
     .line 10
     .line 11
-    new-instance v1, Lp76;
+    iput-object p5, p0, Lp76;->n:Lp72;
 
     .line 12
     .line 13
-    const-string v2, "Merge"
+    iput-object p6, p0, Lp76;->o:Lp72;
 
     .line 14
     .line 15
-    const/4 v3, 0x1
+    iput-object p7, p0, Lp76;->p:Ljava/lang/String;
 
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 17
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 18
     .line 19
-    sput-object v1, Lp76;->k:Lp76;
-
     .line 20
-    .line 21
-    filled-new-array {v0, v1}, [Lp76;
-
-    .line 22
-    .line 23
-    .line 24
-    move-result-object v0
-
-    .line 25
-    sput-object v0, Lp76;->l:[Lp76;
-
-    .line 26
-    .line 27
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lp76;
-    .locals 1
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 22
 
     .line 1
-    const-class v0, Lp76;
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    iget-byte v1, v0, Lp76;->i:B
 
     .line 4
     .line 5
-    .line 6
-    move-result-object p0
+    sget-object v2, Ll97;->a:Ll97;
 
+    .line 6
     .line 7
-    check-cast p0, Lp76;
+    const/4 v3, 0x1
 
     .line 8
+    packed-switch v1, :pswitch_data_0
+
     .line 9
-    return-object p0
-.end method
+    .line 10
+    .line 11
+    move-object/from16 v11, p1
 
-.method public static values()[Lp76;
-    .locals 1
+    .line 12
+    .line 13
+    check-cast v11, Lt82;
 
-    .line 1
-    sget-object v0, Lp76;->l:[Lp76;
+    .line 14
+    .line 15
+    move-object/from16 v1, p2
 
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    .line 16
+    .line 17
+    check-cast v1, Ljava/lang/Integer;
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
+    .line 18
+    .line 19
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 7
-    check-cast v0, [Lp76;
+    .line 20
+    .line 21
+    .line 22
+    invoke-static {v3}, Lp06;->W(I)I
 
-    .line 8
-    .line 9
-    return-object v0
+    .line 23
+    .line 24
+    .line 25
+    move-result v12
+
+    .line 26
+    iget-object v4, v0, Lp76;->j:Ljava/lang/String;
+
+    .line 27
+    .line 28
+    iget-object v5, v0, Lp76;->k:Ljava/lang/String;
+
+    .line 29
+    .line 30
+    iget-object v6, v0, Lp76;->l:Ljava/util/List;
+
+    .line 31
+    .line 32
+    iget-boolean v7, v0, Lp76;->m:Z
+
+    .line 33
+    .line 34
+    iget-object v8, v0, Lp76;->n:Lp72;
+
+    .line 35
+    .line 36
+    iget-object v9, v0, Lp76;->o:Lp72;
+
+    .line 37
+    .line 38
+    iget-object v10, v0, Lp76;->p:Ljava/lang/String;
+
+    .line 39
+    .line 40
+    invoke-static/range {v4 .. v12}, Ljf1;->o(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ZLp72;Lp72;Ljava/lang/String;Lt82;I)V
+
+    .line 41
+    .line 42
+    .line 43
+    return-object v2
+
+    .line 44
+    :pswitch_0
+    move-object/from16 v20, p1
+
+    .line 45
+    .line 46
+    check-cast v20, Lt82;
+
+    .line 47
+    .line 48
+    move-object/from16 v1, p2
+
+    .line 49
+    .line 50
+    check-cast v1, Ljava/lang/Integer;
+
+    .line 51
+    .line 52
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 53
+    .line 54
+    .line 55
+    invoke-static {v3}, Lp06;->W(I)I
+
+    .line 56
+    .line 57
+    .line 58
+    move-result v21
+
+    .line 59
+    iget-object v13, v0, Lp76;->j:Ljava/lang/String;
+
+    .line 60
+    .line 61
+    iget-object v14, v0, Lp76;->k:Ljava/lang/String;
+
+    .line 62
+    .line 63
+    iget-object v15, v0, Lp76;->l:Ljava/util/List;
+
+    .line 64
+    .line 65
+    iget-boolean v1, v0, Lp76;->m:Z
+
+    .line 66
+    .line 67
+    iget-object v3, v0, Lp76;->n:Lp72;
+
+    .line 68
+    .line 69
+    iget-object v4, v0, Lp76;->o:Lp72;
+
+    .line 70
+    .line 71
+    iget-object v0, v0, Lp76;->p:Ljava/lang/String;
+
+    .line 72
+    .line 73
+    move-object/from16 v19, v0
+
+    .line 74
+    .line 75
+    move/from16 v16, v1
+
+    .line 76
+    .line 77
+    move-object/from16 v17, v3
+
+    .line 78
+    .line 79
+    move-object/from16 v18, v4
+
+    .line 80
+    .line 81
+    invoke-static/range {v13 .. v21}, Lx61;->A(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;ZLp72;Lp72;Ljava/lang/String;Lt82;I)V
+
+    .line 82
+    .line 83
+    .line 84
+    return-object v2
+
+    .line 85
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

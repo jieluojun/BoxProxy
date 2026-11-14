@@ -1,129 +1,180 @@
-.class public final synthetic Lzt0;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lzt0;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
-# interfaces
-.implements Le62;
+
+# static fields
+.field public static final j:Lje;
+
+.field public static final enum k:Lzt0;
+
+.field public static final enum l:Lzt0;
+
+.field public static final synthetic m:[Lzt0;
+
+.field public static final synthetic n:Lvw1;
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Z
-
-.field public final synthetic l:Lp62;
-
-.field public final synthetic m:I
+.field public final i:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(BILp62;Z)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    iput-byte p1, p0, Lzt0;->j:B
+    new-instance v0, Lzt0;
 
     .line 2
     .line 3
-    iput-boolean p4, p0, Lzt0;->k:Z
+    const/4 v1, 0x0
 
     .line 4
+    const-string v2, "ipset"
+
     .line 5
-    iput-object p3, p0, Lzt0;->l:Lp62;
-
     .line 6
+    const-string v3, "Ipset"
+
     .line 7
-    iput p2, p0, Lzt0;->m:I
-
     .line 8
-    .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {v0, v1, v3, v2}, Lzt0;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
+    .line 9
     .line 10
     .line 11
-    .line 12
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 4
-
-    .line 1
-    iget-byte v0, p0, Lzt0;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    iget v2, p0, Lzt0;->m:I
-
-    .line 6
-    .line 7
-    iget-object v3, p0, Lzt0;->l:Lp62;
-
-    .line 8
-    .line 9
-    iget-boolean p0, p0, Lzt0;->k:Z
-
-    .line 10
-    .line 11
-    packed-switch v0, :pswitch_data_0
+    sput-object v0, Lzt0;->k:Lzt0;
 
     .line 12
     .line 13
-    .line 14
-    if-eqz p0, :cond_0
+    new-instance v1, Lzt0;
 
+    .line 14
     .line 15
+    const/4 v2, 0x1
+
     .line 16
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    const-string v3, "ebpf"
 
     .line 17
     .line 18
-    .line 19
-    move-result-object p0
+    const-string v4, "Ebpf"
 
+    .line 19
     .line 20
-    invoke-interface {v3, p0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-direct {v1, v2, v4, v3}, Lzt0;-><init>(ILjava/lang/String;Ljava/lang/String;)V
 
     .line 21
     .line 22
     .line 23
-    :cond_0
-    return-object v1
+    sput-object v1, Lzt0;->l:Lzt0;
 
     .line 24
-    :pswitch_0
-    if-eqz p0, :cond_1
-
     .line 25
-    .line 26
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    filled-new-array {v0, v1}, [Lzt0;
 
+    .line 26
     .line 27
     .line 28
+    move-result-object v0
+
     .line 29
-    move-result-object p0
+    sput-object v0, Lzt0;->m:[Lzt0;
 
     .line 30
-    invoke-interface {v3, p0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 31
+    new-instance v1, Lvw1;
+
     .line 32
     .line 33
-    :cond_1
-    return-object v1
+    invoke-direct {v1, v0}, Lvw1;-><init>([Ljava/lang/Enum;)V
 
     .line 34
-    nop
-
     .line 35
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 36
+    sput-object v1, Lzt0;->n:Lvw1;
+
+    .line 37
+    .line 38
+    new-instance v0, Lje;
+
+    .line 39
+    .line 40
+    const/16 v1, 0x16
+
+    .line 41
+    .line 42
+    invoke-direct {v0, v1}, Lje;-><init>(B)V
+
+    .line 43
+    .line 44
+    .line 45
+    sput-object v0, Lzt0;->j:Lje;
+
+    .line 46
+    .line 47
+    return-void
+.end method
+
+.method public constructor <init>(ILjava/lang/String;Ljava/lang/String;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0, p2, p1}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p3, p0, Lzt0;->i:Ljava/lang/String;
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lzt0;
+    .locals 1
+
+    .line 1
+    const-class v0, Lzt0;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lzt0;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Lzt0;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lzt0;->m:[Lzt0;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lzt0;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

@@ -1,6 +1,6 @@
 .class final Lcom/sun/jna/NativeLibrary$NativeLibraryDisposer;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Ljava/lang/Runnable;
@@ -12,7 +12,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x19
+    accessFlags = 0x1a
     name = "NativeLibraryDisposer"
 .end annotation
 
@@ -50,7 +50,7 @@
     :try_start_0
     iget-wide v0, p0, Lcom/sun/jna/NativeLibrary$NativeLibraryDisposer;->handle:J
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 3
     .line 4
@@ -69,7 +69,7 @@
     :try_start_1
     invoke-static {v0, v1}, Lcom/sun/jna/Native;->close(J)V
     :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 11
     .line 12
@@ -86,36 +86,36 @@
     move-exception v0
 
     .line 17
-    goto :goto_1
-
-    .line 18
-    :catchall_1
-    move-exception v0
-
-    .line 19
     iput-wide v2, p0, Lcom/sun/jna/NativeLibrary$NativeLibraryDisposer;->handle:J
 
-    .line 20
-    .line 21
+    .line 18
+    .line 19
     throw v0
     :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_1
 
-    .line 22
+    .line 20
     :cond_0
     :goto_0
     monitor-exit p0
 
-    .line 23
+    .line 21
     return-void
 
-    .line 24
+    .line 22
     :goto_1
     :try_start_3
     monitor-exit p0
     :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
+
+    .line 23
+    throw v0
+
+    .line 24
+    :catchall_1
+    move-exception v0
 
     .line 25
-    throw v0
+    goto :goto_1
 .end method

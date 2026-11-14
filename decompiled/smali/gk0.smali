@@ -1,208 +1,176 @@
-.class public final Lgk0;
-.super Llh6;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lgk0;
+.super Le82;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lu62;
+.implements Lp72;
 
 
 # instance fields
-.field public j:Z
+.field public final synthetic j:B
 
-.field public synthetic k:Lfs3;
+.field public final synthetic k:Lsy3;
 
-.field public synthetic l:F
-
-.field public final synthetic m:Ln57;
+.field public final synthetic l:Lua7;
 
 
 # direct methods
-.method public constructor <init>(Ln57;Ly81;)V
-    .locals 0
+.method public constructor <init>(Lsy3;Lua7;B)V
+    .locals 12
 
     .line 1
-    iput-object p1, p0, Lgk0;->m:Ln57;
+    iput-byte p3, p0, Lgk0;->j:B
 
     .line 2
     .line 3
-    const/4 p1, 0x3
+    packed-switch p3, :pswitch_data_0
 
     .line 4
-    invoke-direct {p0, p1, p2}, Llh6;-><init>(ILy81;)V
-
     .line 5
     .line 6
+    iput-object p1, p0, Lgk0;->k:Lsy3;
+
     .line 7
+    .line 8
+    iput-object p2, p0, Lgk0;->l:Lua7;
+
+    .line 9
+    .line 10
+    const-string v4, "collectAsState$updateRanges(Lcom/patrykandpatrick/vico/compose/cartesian/data/MutableCartesianChartRanges;Lcom/patrykandpatrick/vico/compose/common/ValueWrapper;Lcom/patrykandpatrick/vico/compose/cartesian/data/CartesianChartModel;)Lcom/patrykandpatrick/vico/compose/cartesian/data/CartesianChartRanges;"
+
+    .line 11
+    .line 12
+    const/4 v5, 0x0
+
+    .line 13
+    const/4 v1, 0x1
+
+    .line 14
+    const-class v2, Ljy2;
+
+    .line 15
+    .line 16
+    const-string v3, "updateRanges"
+
+    .line 17
+    .line 18
+    move-object v0, p0
+
+    .line 19
+    invoke-direct/range {v0 .. v5}, Le82;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 20
+    .line 21
+    .line 22
     return-void
+
+    .line 23
+    :pswitch_0
+    move-object v0, p0
+
+    .line 24
+    iput-object p1, v0, Lgk0;->k:Lsy3;
+
+    .line 25
+    .line 26
+    iput-object p2, v0, Lgk0;->l:Lua7;
+
+    .line 27
+    .line 28
+    const-string v10, "collectAsState$updateRanges(Lcom/patrykandpatrick/vico/compose/cartesian/data/MutableCartesianChartRanges;Lcom/patrykandpatrick/vico/compose/common/ValueWrapper;Lcom/patrykandpatrick/vico/compose/cartesian/data/CartesianChartModel;)Lcom/patrykandpatrick/vico/compose/cartesian/data/CartesianChartRanges;"
+
+    .line 29
+    .line 30
+    const/4 v11, 0x0
+
+    .line 31
+    const/4 v7, 0x1
+
+    .line 32
+    const-class v8, Ljy2;
+
+    .line 33
+    .line 34
+    const-string v9, "updateRanges"
+
+    .line 35
+    .line 36
+    move-object v6, v0
+
+    .line 37
+    invoke-direct/range {v6 .. v11}, Le82;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 38
+    .line 39
+    .line 40
+    return-void
+
+    .line 41
+    :pswitch_data_0
+    .packed-switch 0x1
+        :pswitch_0
+    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
     .line 1
-    check-cast p1, Lfs3;
+    iget-byte v0, p0, Lgk0;->j:B
 
     .line 2
     .line 3
-    check-cast p2, Ljava/lang/Number;
+    iget-object v1, p0, Lgk0;->l:Lua7;
 
     .line 4
     .line 5
-    invoke-virtual {p2}, Ljava/lang/Number;->floatValue()F
+    iget-object p0, p0, Lgk0;->k:Lsy3;
 
     .line 6
     .line 7
+    packed-switch v0, :pswitch_data_0
+
     .line 8
-    move-result p2
-
     .line 9
-    check-cast p3, Ly81;
-
     .line 10
+    check-cast p1, Lak0;
+
     .line 11
-    new-instance v0, Lgk0;
-
     .line 12
-    .line 13
-    iget-object p0, p0, Lgk0;->m:Ln57;
+    invoke-static {p0, v1, p1}, Lkk0;->b(Lsy3;Lua7;Lak0;)Lwk0;
 
+    .line 13
     .line 14
     .line 15
-    invoke-direct {v0, p0, p3}, Lgk0;-><init>(Ln57;Ly81;)V
-
-    .line 16
-    .line 17
-    .line 18
-    iput-object p1, v0, Lgk0;->k:Lfs3;
-
-    .line 19
-    .line 20
-    iput p2, v0, Lgk0;->l:F
-
-    .line 21
-    .line 22
-    sget-object p0, La47;->a:La47;
-
-    .line 23
-    .line 24
-    invoke-virtual {v0, p0}, Lgk0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 25
-    .line 26
-    .line 27
     move-result-object p0
 
-    .line 28
-    return-object p0
-.end method
-
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
-
-    .line 1
-    iget-object v0, p0, Lgk0;->k:Lfs3;
-
-    .line 2
-    .line 3
-    iget v1, p0, Lgk0;->l:F
-
-    .line 4
-    .line 5
-    iget-boolean v2, p0, Lgk0;->j:Z
-
-    .line 6
-    .line 7
-    const/4 v3, 0x0
-
-    .line 8
-    const/4 v4, 0x1
-
-    .line 9
-    if-eqz v2, :cond_1
-
-    .line 10
-    .line 11
-    if-ne v2, v4, :cond_0
-
-    .line 12
-    .line 13
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 14
-    .line 15
     .line 16
-    goto :goto_0
+    return-object p0
 
     .line 17
-    :cond_0
-    const-string p0, "call to \'resume\' before \'invoke\' with coroutine"
+    :pswitch_0
+    check-cast p1, Lak0;
 
     .line 18
     .line 19
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+    invoke-static {p0, v1, p1}, Lkk0;->b(Lsy3;Lua7;Lak0;)Lwk0;
 
     .line 20
     .line 21
     .line 22
-    return-object v3
-
-    .line 23
-    :cond_1
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 24
-    .line 25
-    .line 26
-    iget-object p1, p0, Lgk0;->m:Ln57;
-
-    .line 27
-    .line 28
-    iget-object p1, p1, Ln57;->a:Ljava/lang/Object;
-
-    .line 29
-    .line 30
-    check-cast p1, Lnj0;
-
-    .line 31
-    .line 32
-    iput-object v3, p0, Lgk0;->k:Lfs3;
-
-    .line 33
-    .line 34
-    iput v1, p0, Lgk0;->l:F
-
-    .line 35
-    .line 36
-    iput-boolean v4, p0, Lgk0;->j:Z
-
-    .line 37
-    .line 38
-    invoke-virtual {p1, v0, v1, p0}, Lnj0;->g(Lfs3;FLz81;)Ljava/lang/Object;
-
-    .line 39
-    .line 40
-    .line 41
     move-result-object p0
 
-    .line 42
-    sget-object p1, Lbc1;->j:Lbc1;
-
-    .line 43
-    .line 44
-    if-ne p0, p1, :cond_2
-
-    .line 45
-    .line 46
-    return-object p1
-
-    .line 47
-    :cond_2
-    :goto_0
-    sget-object p0, La47;->a:La47;
-
-    .line 48
-    .line 49
+    .line 23
     return-object p0
+
+    .line 24
+    nop
+
+    .line 25
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

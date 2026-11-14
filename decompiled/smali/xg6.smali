@@ -1,323 +1,147 @@
 .class public final Lxg6;
-.super Landroid/view/ActionMode;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ln71;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:Landroid/content/Context;
-
-.field public final b:Lj6;
+.field public final synthetic b:Lkp;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lj6;)V
+.method public constructor <init>(Lkp;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Landroid/view/ActionMode;-><init>()V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lxg6;->a:Landroid/content/Context;
+    iput-object p1, p0, Lxg6;->b:Lkp;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lxg6;->b:Lj6;
-
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final finish()V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lxg6;->b:Lj6;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lj6;->a()V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public final getCustomView()Landroid/view/View;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lxg6;->b:Lj6;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lj6;->b()Landroid/view/View;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
-.end method
-
-.method public final getMenu()Landroid/view/Menu;
+.method public final a(Lie4;)Ljava/lang/Object;
     .locals 2
 
     .line 1
-    new-instance v0, Lql3;
+    check-cast p1, Lux5;
 
     .line 2
     .line 3
-    iget-object v1, p0, Lxg6;->b:Lj6;
+    iget-object p1, p1, Lux5;->e:Ljava/lang/String;
 
     .line 4
     .line 5
-    invoke-virtual {v1}, Lj6;->c()Lkk3;
+    iget-object p0, p0, Lxg6;->b:Lkp;
 
     .line 6
     .line 7
-    .line 8
-    move-result-object v1
+    iget-object p0, p0, Lkp;->f:Ljava/lang/Object;
 
+    .line 8
     .line 9
-    iget-object p0, p0, Lxg6;->a:Landroid/content/Context;
+    check-cast p0, Lfg3;
 
     .line 10
     .line 11
-    invoke-direct {v0, p0, v1}, Lql3;-><init>(Landroid/content/Context;Lkk3;)V
+    iget-object p0, p0, Lfg3;->h:Ljava/util/Optional;
 
     .line 12
     .line 13
+    invoke-virtual {p0}, Ljava/util/Optional;->isPresent()Z
+
     .line 14
+    .line 15
+    .line 16
+    move-result v0
+
+    .line 17
+    if-nez v0, :cond_0
+
+    .line 18
+    .line 19
+    return-object p1
+
+    .line 20
+    :cond_0
+    invoke-virtual {p0}, Ljava/util/Optional;->get()Ljava/lang/Object;
+
+    .line 21
+    .line 22
+    .line 23
+    move-result-object p0
+
+    .line 24
+    const/4 v0, 0x0
+
+    .line 25
+    if-eqz p0, :cond_1
+
+    .line 26
+    .line 27
+    invoke-static {}, Lnf1;->s()V
+
+    .line 28
+    .line 29
+    .line 30
     return-object v0
-.end method
 
-.method public final getMenuInflater()Landroid/view/MenuInflater;
-    .locals 0
+    .line 31
+    :cond_1
+    sget-object p0, Lwz;->c:Ljava/util/regex/Pattern;
 
-    .line 1
-    iget-object p0, p0, Lxg6;->b:Lj6;
+    .line 32
+    .line 33
+    invoke-virtual {p0, p1}, Ljava/util/regex/Pattern;->matcher(Ljava/lang/CharSequence;)Ljava/util/regex/Matcher;
 
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lj6;->e()Landroid/view/MenuInflater;
-
-    .line 4
-    .line 5
-    .line 6
+    .line 34
+    .line 35
+    .line 36
     move-result-object p0
 
-    .line 7
-    return-object p0
-.end method
+    .line 37
+    invoke-virtual {p0}, Ljava/util/regex/Matcher;->matches()Z
 
-.method public final getSubtitle()Ljava/lang/CharSequence;
-    .locals 0
+    .line 38
+    .line 39
+    .line 40
+    const/4 p1, 0x1
 
-    .line 1
-    iget-object p0, p0, Lxg6;->b:Lj6;
+    .line 41
+    invoke-virtual {p0, p1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lj6;->f()Ljava/lang/CharSequence;
+    .line 42
+    .line 43
+    .line 44
+    move-result-object p1
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
+    .line 45
+    const/4 v1, 0x3
 
-    .line 7
-    return-object p0
-.end method
+    .line 46
+    invoke-virtual {p0, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
-.method public final getTag()Ljava/lang/Object;
-    .locals 0
+    .line 47
+    .line 48
+    .line 49
+    const/4 v1, 0x2
 
-    .line 1
-    iget-object p0, p0, Lxg6;->b:Lj6;
+    .line 50
+    invoke-virtual {p0, v1}, Ljava/util/regex/Matcher;->group(I)Ljava/lang/String;
 
-    .line 2
-    .line 3
-    iget-object p0, p0, Lj6;->j:Ljava/lang/Object;
+    .line 51
+    .line 52
+    .line 53
+    invoke-static {p1}, Ljava/lang/System;->getenv(Ljava/lang/String;)Ljava/lang/String;
 
-    .line 4
-    .line 5
-    return-object p0
-.end method
-
-.method public final getTitle()Ljava/lang/CharSequence;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lxg6;->b:Lj6;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lj6;->g()Ljava/lang/CharSequence;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
-.end method
-
-.method public final getTitleOptionalHint()Z
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lxg6;->b:Lj6;
-
-    .line 2
-    .line 3
-    iget-boolean p0, p0, Lj6;->k:Z
-
-    .line 4
-    .line 5
-    return p0
-.end method
-
-.method public final invalidate()V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lxg6;->b:Lj6;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lj6;->i()V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public final isTitleOptional()Z
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lxg6;->b:Lj6;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lj6;->j()Z
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final setCustomView(Landroid/view/View;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lxg6;->b:Lj6;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lj6;->k(Landroid/view/View;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public final setSubtitle(I)V
-    .locals 0
-
-    .line 7
-    iget-object p0, p0, Lxg6;->b:Lj6;
-
-    invoke-virtual {p0, p1}, Lj6;->l(I)V
-
-    return-void
-.end method
-
-.method public final setSubtitle(Ljava/lang/CharSequence;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lxg6;->b:Lj6;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lj6;->m(Ljava/lang/CharSequence;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public final setTag(Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lxg6;->b:Lj6;
-
-    .line 2
-    .line 3
-    iput-object p1, p0, Lj6;->j:Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    return-void
-.end method
-
-.method public final setTitle(I)V
-    .locals 0
-
-    .line 7
-    iget-object p0, p0, Lxg6;->b:Lj6;
-
-    invoke-virtual {p0, p1}, Lj6;->n(I)V
-
-    return-void
-.end method
-
-.method public final setTitle(Ljava/lang/CharSequence;)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lxg6;->b:Lj6;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lj6;->o(Ljava/lang/CharSequence;)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public final setTitleOptionalHint(Z)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lxg6;->b:Lj6;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lj6;->p(Z)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
+    .line 54
+    .line 55
+    .line 56
+    throw v0
 .end method

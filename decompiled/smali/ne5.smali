@@ -1,61 +1,85 @@
 .class public final Lne5;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Loe5;
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
+# instance fields
+.field public i:Lth5;
 
-    .line 1
-    const/4 v0, 0x1
+.field public j:Lyr2;
 
-    .line 2
-    if-ne p0, p1, :cond_0
+.field public k:Lo6;
 
-    .line 3
-    .line 4
-    return v0
+.field public l:Lnr2;
 
-    .line 5
-    :cond_0
-    instance-of p0, p1, Lne5;
+.field public m:Z
 
-    .line 6
-    .line 7
-    if-nez p0, :cond_1
+.field public synthetic n:Ljava/lang/Object;
 
-    .line 8
-    .line 9
-    const/4 p0, 0x0
+.field public final synthetic o:Loe5;
 
-    .line 10
-    return p0
+.field public p:I
 
-    .line 11
-    :cond_1
-    return v0
-.end method
 
-.method public final hashCode()I
+# direct methods
+.method public constructor <init>(Loe5;Lq91;)V
     .locals 0
 
     .line 1
-    const p0, 0x3dcccccd    # 0.1f
+    iput-object p1, p0, Lne5;->o:Loe5;
 
     .line 2
     .line 3
-    .line 4
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
+    .line 4
     .line 5
     .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+
+    .line 1
+    iput-object p1, p0, Lne5;->n:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Lne5;->p:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
+
+    .line 6
     .line 7
-    move-result p0
+    or-int/2addr p1, v0
 
     .line 8
-    return p0
+    iput p1, p0, Lne5;->p:I
+
+    .line 9
+    .line 10
+    const/4 p1, 0x0
+
+    .line 11
+    const/4 v0, 0x0
+
+    .line 12
+    iget-object v1, p0, Lne5;->o:Loe5;
+
+    .line 13
+    .line 14
+    invoke-virtual {v1, p1, v0, p0}, Loe5;->a(Lyr2;ILq91;)Ljava/lang/Object;
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-object p0
+
+    .line 18
+    return-object p0
 .end method

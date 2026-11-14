@@ -1,32 +1,22 @@
-.class public final Lyo2;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class final Lyo2;
+.super Lbx3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lbx3;"
+    }
+.end annotation
 
 
 # instance fields
-.field public final a:J
-
-.field public final b:J
-
-.field public final c:J
-
-.field public final d:Z
-
-.field public final e:F
-
-.field public final f:J
-
-.field public final g:J
-
-.field public final h:Z
-
-.field public i:Lf33;
-
-.field public j:Z
+.field public final i:Lhz3;
 
 
 # direct methods
-.method public constructor <init>(JJJZFJJZ)V
+.method public constructor <init>(Lhz3;)V
     .locals 0
 
     .line 1
@@ -35,273 +25,160 @@
     .line 2
     .line 3
     .line 4
-    iput-wide p1, p0, Lyo2;->a:J
+    iput-object p1, p0, Lyo2;->i:Lhz3;
 
     .line 5
     .line 6
-    iput-wide p3, p0, Lyo2;->b:J
-
-    .line 7
-    .line 8
-    iput-wide p5, p0, Lyo2;->c:J
-
-    .line 9
-    .line 10
-    iput-boolean p7, p0, Lyo2;->d:Z
-
-    .line 11
-    .line 12
-    iput p8, p0, Lyo2;->e:F
-
-    .line 13
-    .line 14
-    iput-wide p9, p0, Lyo2;->f:J
-
-    .line 15
-    .line 16
-    iput-wide p11, p0, Lyo2;->g:J
-
-    .line 17
-    .line 18
-    iput-boolean p13, p0, Lyo2;->h:Z
-
-    .line 19
-    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method public final toString()Ljava/lang/String;
-    .locals 4
+.method public final a()Lrw3;
+    .locals 1
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    new-instance v0, Lcp2;
 
     .line 2
     .line 3
-    const-string v1, "IndirectPointerInputChange(id="
+    invoke-direct {v0}, Lrw3;-><init>()V
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
     .line 6
+    iget-object p0, p0, Lyo2;->i:Lhz3;
+
     .line 7
     .line 8
-    new-instance v1, Lvq4;
+    iput-object p0, v0, Lcp2;->w:Lhz3;
 
     .line 9
     .line 10
-    iget-wide v2, p0, Lyo2;->a:J
+    return-object v0
+.end method
+
+.method public final b(Lrw3;)V
+    .locals 1
+
+    .line 1
+    check-cast p1, Lcp2;
+
+    .line 2
+    .line 3
+    iget-object v0, p1, Lcp2;->w:Lhz3;
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Lyo2;->i:Lhz3;
+
+    .line 6
+    .line 7
+    invoke-static {v0, p0}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 8
+    .line 9
+    .line 10
+    move-result v0
 
     .line 11
-    .line 12
-    invoke-direct {v1, v2, v3}, Lvq4;-><init>(J)V
+    if-nez v0, :cond_0
 
+    .line 12
     .line 13
+    invoke-virtual {p1}, Lcp2;->I1()V
+
     .line 14
     .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    .line 16
+    iput-object p0, p1, Lcp2;->w:Lhz3;
+
+    .line 17
+    .line 18
+    :cond_0
+    return-void
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
+    :cond_0
+    instance-of v1, p1, Lyo2;
+
+    .line 6
+    .line 7
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Lyo2;
+
+    .line 12
+    .line 13
+    iget-object p1, p1, Lyo2;->i:Lhz3;
+
+    .line 14
+    .line 15
+    iget-object p0, p0, Lyo2;->i:Lhz3;
 
     .line 16
     .line 17
-    .line 18
-    const-string v1, ", uptimeMillis="
+    invoke-static {p1, p0}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
 
+    .line 18
     .line 19
     .line 20
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    move-result p0
 
     .line 21
+    if-nez p0, :cond_2
+
     .line 22
     .line 23
-    iget-wide v1, p0, Lyo2;->b:J
+    return v2
 
     .line 24
-    .line 25
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    :cond_2
+    return v0
+.end method
 
-    .line 26
-    .line 27
-    .line 28
-    const-string v1, ", position="
+.method public final hashCode()I
+    .locals 0
 
-    .line 29
-    .line 30
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 1
+    iget-object p0, p0, Lyo2;->i:Lhz3;
 
-    .line 31
-    .line 32
-    .line 33
-    new-instance v1, Lxa4;
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    .line 34
-    .line 35
-    iget-wide v2, p0, Lyo2;->c:J
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
 
-    .line 36
-    .line 37
-    invoke-direct {v1, v2, v3}, Lxa4;-><init>(J)V
+    .line 7
+    mul-int/lit8 p0, p0, 0x1f
 
-    .line 38
-    .line 39
-    .line 40
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 41
-    .line 42
-    .line 43
-    const-string v1, ", pressed="
-
-    .line 44
-    .line 45
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 46
-    .line 47
-    .line 48
-    iget-boolean v1, p0, Lyo2;->d:Z
-
-    .line 49
-    .line 50
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    .line 51
-    .line 52
-    .line 53
-    const-string v1, ", pressure="
-
-    .line 54
-    .line 55
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 56
-    .line 57
-    .line 58
-    iget v1, p0, Lyo2;->e:F
-
-    .line 59
-    .line 60
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 61
-    .line 62
-    .line 63
-    const-string v1, ", previousUptimeMillis="
-
-    .line 64
-    .line 65
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 66
-    .line 67
-    .line 68
-    iget-wide v1, p0, Lyo2;->f:J
-
-    .line 69
-    .line 70
-    invoke-virtual {v0, v1, v2}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
-
-    .line 71
-    .line 72
-    .line 73
-    const-string v1, ", previousPosition="
-
-    .line 74
-    .line 75
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 76
-    .line 77
-    .line 78
-    new-instance v1, Lxa4;
-
-    .line 79
-    .line 80
-    iget-wide v2, p0, Lyo2;->g:J
-
-    .line 81
-    .line 82
-    invoke-direct {v1, v2, v3}, Lxa4;-><init>(J)V
-
-    .line 83
-    .line 84
-    .line 85
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 86
-    .line 87
-    .line 88
-    const-string v1, ", previousPressed="
-
-    .line 89
-    .line 90
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 91
-    .line 92
-    .line 93
-    iget-boolean v1, p0, Lyo2;->h:Z
-
-    .line 94
-    .line 95
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
-
-    .line 96
-    .line 97
-    .line 98
-    const-string v1, ", historical="
-
-    .line 99
-    .line 100
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 101
-    .line 102
-    .line 103
-    iget-object v1, p0, Lyo2;->i:Lf33;
-
-    .line 104
-    .line 105
-    if-nez v1, :cond_0
-
-    .line 106
-    .line 107
-    sget-object v1, Lqu1;->j:Lqu1;
-
-    .line 108
-    .line 109
-    :cond_0
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 110
-    .line 111
-    .line 112
-    const-string v1, ", isConsumed="
-
-    .line 113
-    .line 114
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 115
-    .line 116
-    .line 117
-    iget-boolean p0, p0, Lyo2;->j:Z
-
-    .line 118
-    .line 119
-    const-string v1, ")"
-
-    .line 120
-    .line 121
-    invoke-static {v0, p0, v1}, Ly96;->s(Ljava/lang/StringBuilder;ZLjava/lang/String;)Ljava/lang/String;
-
-    .line 122
-    .line 123
-    .line 124
-    move-result-object p0
-
-    .line 125
-    return-object p0
+    .line 8
+    .line 9
+    return p0
 .end method

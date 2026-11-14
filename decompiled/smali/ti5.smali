@@ -1,78 +1,211 @@
 .class public final Lti5;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Ljava/util/concurrent/Future;
 
 
 # instance fields
-.field public j:Ljava/util/ArrayList;
+.field public i:Lui5;
 
-.field public k:Lbu3;
-
-.field public l:Ljava/lang/String;
-
-.field public synthetic m:Ljava/lang/Object;
-
-.field public final synthetic n:Lxi5;
-
-.field public o:I
+.field public final j:Ljava/util/concurrent/CountDownLatch;
 
 
 # direct methods
-.method public constructor <init>(Lxi5;Lz81;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Lti5;->n:Lxi5;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
     .line 4
+    new-instance v0, Ljava/util/concurrent/CountDownLatch;
+
     .line 5
     .line 6
+    const/4 v1, 0x1
+
+    .line 7
+    invoke-direct {v0, v1}, Ljava/util/concurrent/CountDownLatch;-><init>(I)V
+
+    .line 8
+    .line 9
+    .line 10
+    iput-object v0, p0, Lti5;->j:Ljava/util/concurrent/CountDownLatch;
+
+    .line 11
+    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final cancel(Z)Z
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Lti5;->m:Ljava/lang/Object;
+    iget-object p0, p0, Lti5;->j:Ljava/util/concurrent/CountDownLatch;
 
     .line 2
     .line 3
-    iget p1, p0, Lti5;->o:I
+    invoke-virtual {p0}, Ljava/util/concurrent/CountDownLatch;->getCount()J
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
+    move-result-wide p0
+
     .line 7
-    or-int/2addr p1, v0
+    const-wide/16 v0, 0x0
 
     .line 8
-    iput p1, p0, Lti5;->o:I
-
     .line 9
+    cmp-long p0, p0, v0
+
     .line 10
-    iget-object p1, p0, Lti5;->n:Lxi5;
-
     .line 11
-    .line 12
-    const/4 v0, 0x0
+    if-eqz p0, :cond_0
 
+    .line 12
     .line 13
-    invoke-virtual {p1, v0, p0}, Lxi5;->d(Ljava/util/ArrayList;Lz81;)Ljava/lang/Object;
+    const/4 p0, 0x1
+
+    .line 14
+    return p0
+
+    .line 15
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 16
+    return p0
+.end method
+
+.method public final get()Ljava/lang/Object;
+    .locals 1
+
+    .line 25
+    iget-object v0, p0, Lti5;->j:Ljava/util/concurrent/CountDownLatch;
+
+    invoke-virtual {v0}, Ljava/util/concurrent/CountDownLatch;->await()V
+
+    .line 26
+    iget-object p0, p0, Lti5;->i:Lui5;
+
+    if-nez p0, :cond_0
+
+    new-instance p0, Lui5;
+
+    invoke-direct {p0}, Lui5;-><init>()V
+
+    :cond_0
+    return-object p0
+.end method
+
+.method public final get(JLjava/util/concurrent/TimeUnit;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lti5;->j:Ljava/util/concurrent/CountDownLatch;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0, p1, p2, p3}, Ljava/util/concurrent/CountDownLatch;->await(JLjava/util/concurrent/TimeUnit;)Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p1
+
+    .line 7
+    if-eqz p1, :cond_1
+
+    .line 8
+    .line 9
+    iget-object p0, p0, Lti5;->i:Lui5;
+
+    .line 10
+    .line 11
+    if-nez p0, :cond_0
+
+    .line 12
+    .line 13
+    new-instance p0, Lui5;
 
     .line 14
     .line 15
-    .line 16
-    move-result-object p0
+    invoke-direct {p0}, Lui5;-><init>()V
 
+    .line 16
     .line 17
+    .line 18
+    :cond_0
     return-object p0
+
+    .line 19
+    :cond_1
+    new-instance p0, Ljava/util/concurrent/TimeoutException;
+
+    .line 20
+    .line 21
+    invoke-direct {p0}, Ljava/util/concurrent/TimeoutException;-><init>()V
+
+    .line 22
+    .line 23
+    .line 24
+    throw p0
+.end method
+
+.method public final isCancelled()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public final isDone()Z
+    .locals 4
+
+    .line 1
+    iget-object p0, p0, Lti5;->j:Ljava/util/concurrent/CountDownLatch;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/util/concurrent/CountDownLatch;->getCount()J
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-wide v0
+
+    .line 7
+    const-wide/16 v2, 0x0
+
+    .line 8
+    .line 9
+    cmp-long p0, v0, v2
+
+    .line 10
+    .line 11
+    if-nez p0, :cond_0
+
+    .line 12
+    .line 13
+    const/4 p0, 0x1
+
+    .line 14
+    return p0
+
+    .line 15
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 16
+    return p0
 .end method

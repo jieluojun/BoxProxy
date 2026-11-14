@@ -1,6 +1,6 @@
 .class public final Lso0;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
@@ -60,182 +60,153 @@
     .locals 4
 
     .line 1
-    if-ne p0, p1, :cond_0
+    if-eq p0, p1, :cond_1
 
     .line 2
     .line 3
-    goto :goto_1
-
-    .line 4
-    :cond_0
     instance-of v0, p1, Lso0;
 
+    .line 4
     .line 5
+    if-eqz v0, :cond_0
+
     .line 6
-    if-nez v0, :cond_1
-
     .line 7
-    .line 8
-    goto :goto_0
-
-    .line 9
-    :cond_1
     check-cast p1, Lso0;
+
+    .line 8
+    .line 9
+    iget-wide v0, p0, Lso0;->a:J
 
     .line 10
     .line 11
-    iget-wide v0, p0, Lso0;->a:J
+    iget-wide v2, p1, Lso0;->a:J
 
     .line 12
     .line 13
-    iget-wide v2, p1, Lso0;->a:J
+    invoke-static {v0, v1, v2, v3}, Llh4;->c(JJ)Z
 
     .line 14
     .line 15
-    invoke-static {v0, v1, v2, v3}, Lxa4;->c(JJ)Z
-
     .line 16
-    .line 17
-    .line 18
     move-result v0
 
+    .line 17
+    if-eqz v0, :cond_0
+
+    .line 18
     .line 19
-    if-nez v0, :cond_2
+    iget-wide v0, p0, Lso0;->b:J
 
     .line 20
     .line 21
-    goto :goto_0
-
-    .line 22
-    :cond_2
-    iget-wide v0, p0, Lso0;->b:J
-
-    .line 23
-    .line 24
     iget-wide v2, p1, Lso0;->b:J
 
+    .line 22
+    .line 23
+    invoke-static {v0, v1, v2, v3}, Llh4;->c(JJ)Z
+
+    .line 24
     .line 25
     .line 26
-    invoke-static {v0, v1, v2, v3}, Lxa4;->c(JJ)Z
-
-    .line 27
-    .line 28
-    .line 29
     move-result v0
 
-    .line 30
-    if-nez v0, :cond_3
+    .line 27
+    if-eqz v0, :cond_0
 
-    .line 31
-    .line 32
-    goto :goto_0
-
-    .line 33
-    :cond_3
+    .line 28
+    .line 29
     iget-wide v0, p0, Lso0;->c:J
+
+    .line 30
+    .line 31
+    iget-wide v2, p1, Lso0;->c:J
+
+    .line 32
+    .line 33
+    invoke-static {v0, v1, v2, v3}, Llh4;->c(JJ)Z
 
     .line 34
     .line 35
-    iget-wide v2, p1, Lso0;->c:J
-
     .line 36
+    move-result v0
+
     .line 37
-    invoke-static {v0, v1, v2, v3}, Lxa4;->c(JJ)Z
+    if-eqz v0, :cond_0
 
     .line 38
     .line 39
-    .line 40
-    move-result v0
+    iget v0, p0, Lso0;->d:F
 
+    .line 40
     .line 41
-    if-nez v0, :cond_4
+    iget v1, p1, Lso0;->d:F
 
     .line 42
     .line 43
-    goto :goto_0
-
-    .line 44
-    :cond_4
-    iget v0, p0, Lso0;->d:F
-
-    .line 45
-    .line 46
-    iget v1, p1, Lso0;->d:F
-
-    .line 47
-    .line 48
     invoke-static {v0, v1}, Ljava/lang/Float;->compare(FF)I
 
-    .line 49
-    .line 50
-    .line 51
+    .line 44
+    .line 45
+    .line 46
     move-result v0
 
-    .line 52
-    if-eqz v0, :cond_5
+    .line 47
+    if-nez v0, :cond_0
 
-    .line 53
-    .line 54
-    goto :goto_0
-
-    .line 55
-    :cond_5
+    .line 48
+    .line 49
     iget v0, p0, Lso0;->e:F
 
-    .line 56
-    .line 57
+    .line 50
+    .line 51
     iget v1, p1, Lso0;->e:F
+
+    .line 52
+    .line 53
+    invoke-static {v0, v1}, Ljava/lang/Float;->compare(FF)I
+
+    .line 54
+    .line 55
+    .line 56
+    move-result v0
+
+    .line 57
+    if-nez v0, :cond_0
 
     .line 58
     .line 59
-    invoke-static {v0, v1}, Ljava/lang/Float;->compare(FF)I
+    iget p0, p0, Lso0;->f:F
 
     .line 60
     .line 61
-    .line 62
-    move-result v0
+    iget p1, p1, Lso0;->f:F
 
+    .line 62
     .line 63
-    if-eqz v0, :cond_6
+    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
 
     .line 64
     .line 65
-    goto :goto_0
-
     .line 66
-    :cond_6
-    iget p0, p0, Lso0;->f:F
-
-    .line 67
-    .line 68
-    iget p1, p1, Lso0;->f:F
-
-    .line 69
-    .line 70
-    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
-
-    .line 71
-    .line 72
-    .line 73
     move-result p0
 
-    .line 74
-    if-eqz p0, :cond_7
+    .line 67
+    if-eqz p0, :cond_1
 
-    .line 75
-    .line 76
-    :goto_0
+    .line 68
+    .line 69
+    :cond_0
     const/4 p0, 0x0
 
-    .line 77
+    .line 70
     return p0
 
-    .line 78
-    :cond_7
-    :goto_1
+    .line 71
+    :cond_1
     const/4 p0, 0x1
 
-    .line 79
+    .line 72
     return p0
 .end method
 
@@ -266,7 +237,7 @@
 
     .line 11
     .line 12
-    invoke-static {v0, v1, v2, v3}, Lhs5;->d(IIJ)I
+    invoke-static {v0, v1, v2, v3}, Lky1;->e(IIJ)I
 
     .line 13
     .line 14
@@ -278,7 +249,7 @@
 
     .line 17
     .line 18
-    invoke-static {v0, v1, v2, v3}, Lhs5;->d(IIJ)I
+    invoke-static {v0, v1, v2, v3}, Lky1;->e(IIJ)I
 
     .line 19
     .line 20
@@ -290,7 +261,7 @@
 
     .line 23
     .line 24
-    invoke-static {v2, v0, v1}, Loc1;->d(FII)I
+    invoke-static {v2, v0, v1}, Lky1;->c(FII)I
 
     .line 25
     .line 26
@@ -302,7 +273,7 @@
 
     .line 29
     .line 30
-    invoke-static {v2, v0, v1}, Loc1;->d(FII)I
+    invoke-static {v2, v0, v1}, Lky1;->c(FII)I
 
     .line 31
     .line 32
@@ -336,7 +307,7 @@
 
     .line 2
     .line 3
-    invoke-static {v0, v1}, Lxa4;->i(J)Ljava/lang/String;
+    invoke-static {v0, v1}, Llh4;->i(J)Ljava/lang/String;
 
     .line 4
     .line 5
@@ -348,7 +319,7 @@
 
     .line 8
     .line 9
-    invoke-static {v1, v2}, Lxa4;->i(J)Ljava/lang/String;
+    invoke-static {v1, v2}, Llh4;->i(J)Ljava/lang/String;
 
     .line 10
     .line 11
@@ -360,7 +331,7 @@
 
     .line 14
     .line 15
-    invoke-static {v2, v3}, Lxa4;->i(J)Ljava/lang/String;
+    invoke-static {v2, v3}, Llh4;->i(J)Ljava/lang/String;
 
     .line 16
     .line 17
@@ -380,7 +351,7 @@
 
     .line 24
     .line 25
-    invoke-static {v5, v0, v3, v1, v4}, Loc1;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v5, v0, v3, v1, v4}, Lrf6;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 26
     .line 27

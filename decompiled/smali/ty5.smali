@@ -1,76 +1,136 @@
-.class public final synthetic Lty5;
-.super Le72;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public Lty5;
+.super Lw2;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lp62;
+.implements Lqc1;
 
 
-# static fields
-.field public static final k:Lty5;
+# instance fields
+.field public final l:Lp91;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 6
+.method public constructor <init>(Lp91;Lfc1;)V
+    .locals 1
 
     .line 1
-    new-instance v0, Lty5;
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    const-string v4, "iterator()Ljava/util/Iterator;"
+    invoke-direct {p0, p2, v0}, Lw2;-><init>(Lfc1;Z)V
 
+    .line 3
     .line 4
     .line 5
-    const/4 v5, 0x0
+    iput-object p1, p0, Lty5;->l:Lp91;
 
     .line 6
-    const/4 v1, 0x1
-
     .line 7
-    const-class v2, Lny5;
-
-    .line 8
-    .line 9
-    const-string v3, "iterator"
-
-    .line 10
-    .line 11
-    invoke-direct/range {v0 .. v5}, Le72;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 12
-    .line 13
-    .line 14
-    sput-object v0, Lty5;->k:Lty5;
-
-    .line 15
-    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final U()Z
     .locals 0
 
     .line 1
-    check-cast p1, Lny5;
+    const/4 p0, 0x1
+
+    .line 2
+    return p0
+.end method
+
+.method public final getCallerFrame()Lqc1;
+    .locals 1
+
+    .line 1
+    iget-object p0, p0, Lty5;->l:Lp91;
 
     .line 2
     .line 3
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    instance-of v0, p0, Lqc1;
+
+    .line 4
+    .line 5
+    if-eqz v0, :cond_0
+
+    .line 6
+    .line 7
+    check-cast p0, Lqc1;
+
+    .line 8
+    .line 9
+    return-object p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return-object p0
+.end method
+
+.method public l0()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public v(Ljava/lang/Object;)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lty5;->l:Lp91;
+
+    .line 2
+    .line 3
+    invoke-static {p0}, Lul;->I(Lp91;)Lp91;
 
     .line 4
     .line 5
     .line 6
-    invoke-interface {p1}, Lny5;->iterator()Ljava/util/Iterator;
-
-    .line 7
-    .line 8
-    .line 9
     move-result-object p0
 
+    .line 7
+    invoke-static {p1}, Lnr;->U(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 8
+    .line 9
     .line 10
-    return-object p0
+    move-result-object p1
+
+    .line 11
+    invoke-static {p0, p1}, Lab;->F(Lp91;Ljava/lang/Object;)V
+
+    .line 12
+    .line 13
+    .line 14
+    return-void
+.end method
+
+.method public x(Ljava/lang/Object;)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lty5;->l:Lp91;
+
+    .line 2
+    .line 3
+    invoke-static {p1}, Lnr;->U(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p1
+
+    .line 7
+    invoke-interface {p0, p1}, Lp91;->resumeWith(Ljava/lang/Object;)V
+
+    .line 8
+    .line 9
+    .line 10
+    return-void
 .end method

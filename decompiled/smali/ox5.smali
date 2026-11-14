@@ -1,68 +1,18 @@
 .class public final Lox5;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
-
-# static fields
-.field public static final d:Lir5;
+# interfaces
+.implements Lqp4;
 
 
 # instance fields
-.field public final a:Lum4;
-
-.field public b:Lax5;
-
-.field public final c:Lum4;
+.field public final a:Lxs4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
-
-    .line 1
-    new-instance v0, Lvt5;
-
-    .line 2
-    .line 3
-    const/16 v1, 0x13
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Lvt5;-><init>(B)V
-
-    .line 6
-    .line 7
-    .line 8
-    new-instance v1, Lor5;
-
-    .line 9
-    .line 10
-    const/16 v2, 0xa
-
-    .line 11
-    .line 12
-    invoke-direct {v1, v2}, Lor5;-><init>(B)V
-
-    .line 13
-    .line 14
-    .line 15
-    invoke-static {v0, v1}, Lyr;->x(Lt62;Lp62;)Lir5;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object v0
-
-    .line 19
-    sput-object v0, Lox5;->d:Lir5;
-
-    .line 20
-    .line 21
-    return-void
-.end method
-
 .method public constructor <init>()V
-    .locals 1
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,51 +20,116 @@
     .line 2
     .line 3
     .line 4
-    const/4 v0, 0x0
+    new-instance v0, Lsp4;
 
     .line 5
-    invoke-static {v0}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
     .line 6
+    const/4 v1, 0x0
+
     .line 7
+    invoke-direct {v0, v1, v1, v1, v1}, Lsp4;-><init>(FFFF)V
+
     .line 8
-    move-result-object v0
-
     .line 9
-    iput-object v0, p0, Lox5;->a:Lum4;
-
     .line 10
-    .line 11
-    sget-object v0, Lqu1;->j:Lqu1;
+    invoke-static {v0}, Lm93;->H(Ljava/lang/Object;)Lxs4;
 
+    .line 11
     .line 12
     .line 13
-    invoke-static {v0}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
-    .line 14
-    .line 15
-    .line 16
     move-result-object v0
 
-    .line 17
-    iput-object v0, p0, Lox5;->c:Lum4;
+    .line 14
+    iput-object v0, p0, Lox5;->a:Lxs4;
 
-    .line 18
-    .line 19
+    .line 15
+    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lyv5;
+.method public final a(Le53;)F
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lox5;->a:Lum4;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
+    .line 4
+    iget-object p0, p0, Lox5;->a:Lxs4;
+
+    .line 5
+    .line 6
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
+    .line 7
+    .line 8
+    .line 9
+    move-result-object p0
+
+    .line 10
+    check-cast p0, Lqp4;
+
+    .line 11
+    .line 12
+    invoke-interface {p0, p1}, Lqp4;->a(Le53;)F
+
+    .line 13
+    .line 14
+    .line 15
+    move-result p0
+
+    .line 16
+    return p0
+.end method
+
+.method public final b(Le53;)F
+    .locals 0
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    iget-object p0, p0, Lox5;->a:Lxs4;
+
+    .line 5
+    .line 6
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
+    .line 7
+    .line 8
+    .line 9
+    move-result-object p0
+
+    .line 10
+    check-cast p0, Lqp4;
+
+    .line 11
+    .line 12
+    invoke-interface {p0, p1}, Lqp4;->b(Le53;)F
+
+    .line 13
+    .line 14
+    .line 15
+    move-result p0
+
+    .line 16
+    return p0
+.end method
+
+.method public final c()F
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lox5;->a:Lxs4;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
 
     .line 4
     .line 5
@@ -122,9 +137,48 @@
     move-result-object p0
 
     .line 7
-    check-cast p0, Lyv5;
+    check-cast p0, Lqp4;
 
     .line 8
     .line 9
-    return-object p0
+    invoke-interface {p0}, Lqp4;->c()F
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    return p0
+.end method
+
+.method public final d()F
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lox5;->a:Lxs4;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lqp4;
+
+    .line 8
+    .line 9
+    invoke-interface {p0}, Lqp4;->d()F
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    return p0
 .end method

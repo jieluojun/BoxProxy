@@ -1,1312 +1,211 @@
-.class public Lqr1;
+.class public final synthetic Lqr1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
-
-# static fields
-.field public static final c:Lqr1;
+# interfaces
+.implements Le72;
 
 
 # instance fields
-.field public final a:Landroid/util/SparseIntArray;
+.field public final synthetic i:B
 
-.field public final b:Ljava/util/ArrayList;
+.field public final synthetic j:Lmr1;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public synthetic constructor <init>(Lmr1;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lqr1;
+    iput-byte p2, p0, Lqr1;->i:B
 
     .line 2
     .line 3
-    invoke-direct {v0}, Lqr1;-><init>()V
+    iput-object p1, p0, Lqr1;->j:Lmr1;
 
     .line 4
     .line 5
-    .line 6
-    sput-object v0, Lqr1;->c:Lqr1;
-
-    .line 7
-    .line 8
-    return-void
-.end method
-
-.method public constructor <init>()V
-    .locals 1
-
-    .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    .line 3
-    .line 4
-    new-instance v0, Landroid/util/SparseIntArray;
-
-    .line 5
     .line 6
-    invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
-
     .line 7
     .line 8
-    .line 9
-    iput-object v0, p0, Lqr1;->a:Landroid/util/SparseIntArray;
-
-    .line 10
-    .line 11
-    new-instance v0, Ljava/util/ArrayList;
-
-    .line 12
-    .line 13
-    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
-
-    .line 14
-    .line 15
-    .line 16
-    iput-object v0, p0, Lqr1;->b:Ljava/util/ArrayList;
-
-    .line 17
-    .line 18
-    invoke-virtual {p0}, Lqr1;->a()V
-
-    .line 19
-    .line 20
-    .line 21
     return-void
 .end method
 
 
 # virtual methods
-.method public a()V
-    .locals 9
+.method public final invoke()Ljava/lang/Object;
+    .locals 6
 
     .line 1
-    const/4 v0, 0x1
+    iget-byte v0, p0, Lqr1;->i:B
 
     .line 2
-    :goto_0
-    const/16 v1, 0x53
-
     .line 3
+    const-string v1, ""
+
     .line 4
-    if-gt v0, v1, :cond_d
-
     .line 5
+    const-string v2, "\nuniform float2 axis1;\nuniform float2 axis2;\n"
+
     .line 6
-    iget-object v1, p0, Lqr1;->a:Landroid/util/SparseIntArray;
-
     .line 7
-    .line 8
-    invoke-virtual {v1, v0}, Landroid/util/SparseIntArray;->get(I)I
+    sget-object v3, Lmr1;->j:Lmr1;
 
+    .line 8
     .line 9
+    iget-object p0, p0, Lqr1;->j:Lmr1;
+
     .line 10
     .line 11
-    move-result v1
+    packed-switch v0, :pswitch_data_0
 
     .line 12
-    const/4 v2, 0x0
-
     .line 13
-    const v3, -0x666667
-
     .line 14
+    new-instance v0, Lb91;
+
     .line 15
     .line 16
-    const/high16 v4, 0x1d000000
+    invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     .line 17
     .line 18
-    const/high16 v5, -0x1000000
-
     .line 19
+    move-result-object v4
+
     .line 20
-    const v6, -0xdededf
+    const-string v5, "MiuixGlassEdge"
 
     .line 21
     .line 22
+    invoke-static {v5, v4}, Llj6;->k(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
     .line 23
-    const/4 v7, -0x1
-
     .line 24
-    const v8, -0x111112
-
     .line 25
+    move-result-object v4
+
     .line 26
+    if-ne p0, v3, :cond_0
+
     .line 27
-    packed-switch v0, :pswitch_data_0
-
     .line 28
-    .line 29
-    .line 30
-    :pswitch_0
-    goto/16 :goto_5
+    move-object v1, v2
 
+    .line 29
+    :cond_0
+    invoke-static {p0}, Lrr1;->a(Lmr1;)Ljava/lang/String;
+
+    .line 30
     .line 31
     .line 32
-    :pswitch_1
-    invoke-virtual {p0}, Lqr1;->f()Z
+    move-result-object p0
 
     .line 33
+    const-string v2, "\nuniform float4 in_rimEdge;      // edge width, edge pow, surface opacity, unused\nuniform float4 in_lightDir;     // direction xyz, angle range * pi\nuniform float4 in_lightAmt;     // intensity, opposite intensity, unused, unused\nuniform float4 in_surface;      // the material\'s own colour, standing in for what is underneath\n\n\nfloat3 rimNormal(float2 coord, float2 half2d, float sdf, float radius, float inner) {\n    float2 offset = coord - in_halfViewFloor;\n    float2 folded = abs(offset);\n    // Lift the point off the surface. Depth is measured in the rim band, height in pixels.\n    float depth = smoothstep(-inner, 0.0, sdf);\n    float3 point = float3(folded, -sqrt(max(inner * inner - depth * depth, 0.0)));\n\n    float bevel = max(radius, inner);\n    float2 reference = half2d - bevel;\n    reference.x = min(reference.x, folded.x);\n    reference.y = min(reference.y, folded.y);\n    float2 toPoint = point.xy - reference;\n    float len = length(toPoint);\n    reference += ((len > 0.0001) ? toPoint / len : float2(0.0, 1.0)) * (bevel - inner);\n\n    // Inside the reference the surface is flat and faces straight away from the lights.\n    if (folded.x < reference.x || folded.y < reference.y) return float3(0.0, 0.0, -1.0);\n\n    float3 normal = normalize(point - float3(reference, 0.0));\n    normal.xy *= sign(offset);\n    return normal;\n}\n\n"
+
     .line 34
     .line 35
-    move-result v1
+    const-string v3, "\n\nhalf4 main(float2 coord) {\n    float d = silhouetteSdf(coord);\n    float cov = clamp(0.5 - d, 0.0, 1.0);\n\n    float2 half2d = in_size * 0.5;\n    float2 folded = abs(coord - half2d);\n    float radius = pickRadius(coord, half2d);\n    float inner = max(in_strokeBand.y, 0.5);\n    float bevel = max(radius, inner);\n    float edge = max(in_rimEdge.x * kRimBandFraction, 1.0);\n\n    // The stroke lights the band and a ring outside it, the rim a hairline of the band; everything\n    // else is the flat interior.\n    bool strokeInterior = folded.x < half2d.x - bevel && folded.y < half2d.y - bevel;\n    bool rimInterior = d > 0.5 || -d >= edge * 0.85;\n    if (strokeInterior && rimInterior) return half4(0.0);\n\n    float3 rgb = float3(0.0);\n    float alpha = 0.0;\n\n    if (!strokeInterior) {\n        float width = max(in_strokeBand.x, 0.75);\n        float band = smoothstep(-width, -width + 1.0, d);\n        float3 base = in_strokeColor.rgb * (in_strokeColor.a * band * band);\n        float3 normal = rimNormal(coord, half2d, d, radius, inner);\n        // One cov: the mask supplies the other, as the standalone stroke pass did.\n        float3 light = (base + edgeStrokeLights(normal)) * (in_strokeAlpha * cov);\n        rgb += light;\n        alpha += clamp(max(max(light.r, light.g), light.b), 0.0, 1.0);\n    }\n\n    if (!rimInterior) {\n        float2 gradient = sdfGradient(coord);\n        if (length(gradient) >= 0.5) {\n            float depth = clamp(-d / edge, 0.0, 1.0);\n            float slope = min(edgeCurveSlope(depth, in_rimEdge.y), kMaxBevelSlope);\n            float3 normal = normalize(float3(gradient * slope, 1.0));\n            float lighten = rimLighten(normal, in_lightDir, in_lightAmt.xy, in_surface.rgb);\n            float3 added = max(liftToward(in_surface.rgb, lighten) - in_surface.rgb, float3(0.0));\n            float3 light = added * (in_rimEdge.z * cov);\n            rgb += light;\n            alpha += clamp(max(max(light.r, light.g), light.b), 0.0, 1.0);\n        }\n    }\n\n    // Premultiplied; the alpha carries the sum of both lights, as the two passes did.\n    return half4(half3(rgb), half(clamp(alpha, 0.0, 1.0)));\n}\n"
 
     .line 36
-    if-eqz v1, :cond_0
-
     .line 37
-    .line 38
-    const v1, -0x4f000001
+    const-string v5, "\n\nuniform float2 in_size;         // component size\nuniform float4 in_radii;        // topLeft, topRight, bottomRight, bottomLeft\nuniform float in_smoothing;     // 0 = circular corner, 1 = continuous corner\n\nfloat roundedBoxSdf(float2 p, float2 b, float r) {\n    float2 d = p - b + r;\n    return min(max(d.x, d.y), 0.0) + length(max(d, float2(0.0))) - r;\n}\n\nfloat supercircleSdf(float2 off, float tile) {\n    float2 q = max(float2(0.0), (float2(tile) + off) / tile);\n    float hi = max(q.x, q.y);\n    float ratio = (hi == 0.0) ? 0.0 : clamp(min(q.x, q.y) / hi, 0.0, 1.0);\n    float fit = ((((-0.7391197 * ratio + 2.4034927) * ratio + -2.490732) * ratio + 0.4768709) * ratio + 0.47478476);\n    float len = length(q);\n    float distBase = (len + 1.0) - 1.0 / (1.0 - ratio * ratio * clamp(len, 0.0, 1.0) * fit);\n    return min(max(tile + off.x, tile + off.y), 0.0) + tile * (distBase - 1.0);\n}\n\nfloat pickRadius(float2 local, float2 b) {\n    float top = (local.x < b.x) ? in_radii.x : in_radii.y;\n    float bottom = (local.x < b.x) ? in_radii.w : in_radii.z;\n    return min((local.y < b.y) ? top : bottom, min(b.x, b.y));\n}\n\nfloat sdfShape(float2 p, float2 b, float r) {\n    float box = roundedBoxSdf(p, b, r);\n    float minHalf = min(b.x, b.y);\n    if (in_smoothing <= 0.001 || r < 0.5 || (minHalf - r) <= 1.0) {\n        return box;\n    }\n    float tile = min(1.528665 * r, minHalf);\n    return mix(box, supercircleSdf(p - b, tile), in_smoothing);\n}\n\n// Distance to the silhouette from a point in component space. Negative inside.\nfloat silhouetteSdf(float2 local) {\n    float2 b = in_size * 0.5;\n    return sdfShape(abs(local - b), b, pickRadius(local, b));\n}\n\n\nconst float3 kLumaWeights = float3(0.2126, 0.7152, 0.0722);\n\nfloat luma(float3 color) {\n    return dot(color, kLumaWeights);\n}\n\nfloat smooth5Map(float t) {\n    t = clamp(mix(0.5, 1.0, t), 0.0, 1.0);\n    t = t * t * t * (t * (t * 6.0 - 15.0) + 10.0);\n    return (t - 0.5) * 2.0;\n}\n\n// Depth 0 at the silhouette, 1 once the surface is flat. `p` shapes how fast it gets there.\nfloat edgeCurve(float x, float p) {\n    if (x >= 0.85) return 1.0;\n    float c = smooth5Map(sqrt(clamp(x, 0.0, 1.0)));\n    return 1.0 - pow(1.0 - c, p);\n}\n\n// Slope of `edgeCurve` in `x`.\n//\n// The rim profile is differentiated in closed form. A one-pixel step would be a sixth of the band\n// on the downscaled layer this pass runs on, and a step that coarse averages the turn away: the\n// tilt it reports inside the band comes out several times the real one, and the rim reads as a dome\n// rather than an edge.\nfloat edgeCurveSlope(float x, float p) {\n    if (x >= 0.85) return 0.0;\n    float t = sqrt(clamp(x, 0.000001, 1.0));\n    float u = 0.5 + 0.5 * t;\n    float um = u - 1.0;\n    float c = smooth5Map(t);\n    // d(smooth5Map(sqrt x))/dx, the quintic\'s derivative carried through the square root.\n    float slope = 15.0 * u * u * um * um / t;\n    return p * pow(max(1.0 - c, 0.0), p - 1.0) * slope;\n}\n\n// Direction the distance field grows in: a unit vector pointing out of the shape. The unshaped\n// field is locally a plane, so a half-pixel difference reads it exactly.\nfloat2 sdfGradient(float2 local) {\n    float dx = silhouetteSdf(local + float2(0.5, 0.0)) - silhouetteSdf(local - float2(0.5, 0.0));\n    float dy = silhouetteSdf(local + float2(0.0, 0.5)) - silhouetteSdf(local - float2(0.0, 0.5));\n    float2 gradient = float2(dx, dy);\n    float length2d = length(gradient);\n    return (length2d < 0.0001) ? float2(0.0) : gradient / length2d;\n}\n\n// Lifts a colour toward white without clipping: the gain is applied around a luminance-dependent\n// pivot, so bright pixels move less than dark ones.\nfloat3 liftToward(float3 color, float amount) {\n    float v = luma(color);\n    float w = smoothstep(0.0, 0.5, v);\n    float k = mix(1.0 - v, v, w);\n    float gain = 1.0 + smoothstep(0.0, 1.0, amount) * mix(0.75, 0.4, w);\n    return (color + k) * gain - k;\n}\n\nfloat dynamicAdd(float3 color) {\n    float toWhite = smoothstep(0.2, 1.0, distance(float3(1.0), color));\n    return mix(0.8, mix(0.2, 1.0, toWhite), luma(color));\n}\n\n// acos is not worth its cost here; this is the usual sqrt-based polynomial fit.\nfloat lightFalloff(float3 normal, float3 direction, float intensity, float angleRange) {\n    float dp = dot(normal, direction);\n    float d = clamp(dp, -1.0, 1.0);\n    float u = 1.0 - d;\n    float positive = sqrt(u) * (u * (u * 0.04587603 + 0.10884186) + 1.41502593);\n    float angle = (d < 0.0) ? (3.14159265 - positive) : positive;\n    return max(dp, 0.0) * max(intensity * (1.0 - angle / max(angleRange, 0.0001)), 0.0);\n}\n\n// How much light the rim carries where neither directional light reaches. Calibrated so the sides\n// between the two lit arcs come out about a dozen levels above the surface.\nconst float kEdgeAmbient = 0.24;\n\n// How much of the rim band the light rides, measured from the silhouette inward. The band itself\n// is what bends the refraction ray; the highlight drawn on it is a hairline.\nconst float kRimBandFraction = 0.33;\n\n// How far the two lights lift a surface of `color`, in `[0, 1]`. The second light points the\n// opposite way in x and y, so one direction lights both sides of the shape.\nfloat rimLighten(float3 normal, float4 lightDir, float2 amounts, float3 color) {\n    float3 lit = float3(normal.x, -normal.y, normal.z);\n    float primary = lightFalloff(lit, lightDir.xyz, amounts.x, lightDir.w);\n    float opposite = lightFalloff(lit, lightDir.xyz * float3(-1.0, -1.0, 1.0), amounts.y, lightDir.w);\n    // Two opposed lights alone leave two lit arcs and two dark ones. An ambient term proportional\n    // to how far the rim has turned away from the viewer joins them up.\n    float edgeFactor = clamp(length(lit.xy), 0.0, 1.0);\n    float raw = clamp(primary + opposite + kEdgeAmbient * edgeFactor, 0.0, 1.0) * dynamicAdd(color);\n    raw = pow(clamp(raw, 0.0, 1.0), 0.85);\n    // A soft knee, tighter over a bright backdrop: full light lifts the rim about half way, never\n    // to white. Without it the whole edge band clips and the hairline has nothing left to sit on.\n    float knee = mix(1.0, 0.7, smoothstep(0.0, 0.5, luma(color)));\n    return raw / (raw + knee);\n}\n\n// The steepest the bevel is allowed to get, as a rise over a run.\n//\n// The closed-form slope runs to the thousands at the silhouette, which stands the normal on end and\n// hands both lights everything they can take. The cap keeps the highlight a hairline.\nconst float kMaxBevelSlope = 1.7;\n\nuniform float2 in_halfViewFloor; // half size, floored, so the fold lands on a pixel boundary\nuniform float2 in_strokeBand;    // stroke width, bevel\nuniform float4 in_strokeColor;   // stroke rgb, stroke opacity\nuniform float in_strokeAlpha;    // stroke opacity multiplier\nuniform float4 in_light1;        // direction xyz, intensity\nuniform float4 in_light1Color;   // colour rgb, unused\nuniform float4 in_light2;        // direction xyz, intensity\nuniform float4 in_light2Color;   // colour rgb, unused\n"
 
+    .line 38
     .line 39
+    invoke-static {v5, v1, v2, p0, v3}, Lky1;->o(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
     .line 40
     .line 41
-    goto/16 :goto_5
-
     .line 42
+    move-result-object p0
+
     .line 43
-    :cond_0
-    const v1, -0x4fcccccd
+    invoke-direct {v0, v4, p0}, Lb91;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 44
     .line 45
     .line 46
-    goto/16 :goto_5
+    return-object v0
 
     .line 47
-    .line 48
-    :pswitch_2
-    invoke-virtual {p0}, Lqr1;->f()Z
+    :pswitch_0
+    new-instance v0, Lpr1;
 
+    .line 48
     .line 49
+    invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
+
     .line 50
     .line 51
-    move-result v1
-
     .line 52
-    if-eqz v1, :cond_1
+    move-result-object v4
 
     .line 53
-    .line 54
-    const v1, 0x30ffffff
+    const-string v5, "MiuixEdgeStroke"
 
+    .line 54
     .line 55
+    invoke-static {v5, v4}, Llj6;->k(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
     .line 56
     .line 57
-    goto/16 :goto_5
-
     .line 58
+    move-result-object v4
+
     .line 59
-    :cond_1
-    const v1, 0x30333333
+    if-ne p0, v3, :cond_1
 
     .line 60
     .line 61
+    move-object v1, v2
+
     .line 62
-    goto/16 :goto_5
+    :cond_1
+    invoke-static {p0}, Lrr1;->a(Lmr1;)Ljava/lang/String;
 
     .line 63
     .line 64
-    :pswitch_3
-    invoke-virtual {p0}, Lqr1;->f()Z
-
     .line 65
-    .line 66
-    .line 67
-    move-result v1
+    move-result-object p0
 
+    .line 66
+    const-string v2, "\n\nfloat3 rimNormal(float2 coord, float2 half2d, float sdf, float radius, float inner) {\n    float2 offset = coord - in_halfViewFloor;\n    float2 folded = abs(offset);\n    // Lift the point off the surface. Depth is measured in the rim band, height in pixels.\n    float depth = smoothstep(-inner, 0.0, sdf);\n    float3 point = float3(folded, -sqrt(max(inner * inner - depth * depth, 0.0)));\n\n    float bevel = max(radius, inner);\n    float2 reference = half2d - bevel;\n    reference.x = min(reference.x, folded.x);\n    reference.y = min(reference.y, folded.y);\n    float2 toPoint = point.xy - reference;\n    float len = length(toPoint);\n    reference += ((len > 0.0001) ? toPoint / len : float2(0.0, 1.0)) * (bevel - inner);\n\n    // Inside the reference the surface is flat and faces straight away from the lights.\n    if (folded.x < reference.x || folded.y < reference.y) return float3(0.0, 0.0, -1.0);\n\n    float3 normal = normalize(point - float3(reference, 0.0));\n    normal.xy *= sign(offset);\n    return normal;\n}\n\n"
+
+    .line 67
     .line 68
-    if-eqz v1, :cond_2
+    const-string v3, "\nhalf4 main(float2 coord) {\n    float2 half2d = in_size * 0.5;\n    float2 folded = abs(coord - half2d);\n    float radius = pickRadius(coord, half2d);\n    float inner = max(in_strokeBand.y, 0.5);\n    float bevel = max(radius, inner);\n\n    // The interior has no rim to light, and it is most of the surface.\n    if (folded.x < half2d.x - bevel && folded.y < half2d.y - bevel) return half4(0.0);\n\n    float sdf = silhouetteSdf(coord);\n    // A near-step band hugging the outer edge, squared by compositing it twice.\n    float width = max(in_strokeBand.x, 0.75);\n    float band = smoothstep(-width, -width + 1.0, sdf);\n    float3 rgb = in_strokeColor.rgb * (in_strokeColor.a * band * band);\n    float3 normal = rimNormal(coord, half2d, sdf, radius, inner);\n    rgb += edgeStrokeLights(normal);\n    // Light only: alpha stays at zero so a transparent surface never gains opacity from the rim.\n    float coverage = clamp(0.5 - sdf, 0.0, 1.0);\n    float3 light = rgb * (in_strokeAlpha * coverage);\n    // Premultiplied, so the alpha has to match the light: one whose channels sit above its own\n    // alpha is clamped away.\n    return half4(half3(light), half(clamp(max(max(light.r, light.g), light.b), 0.0, 1.0)));\n}\n"
 
     .line 69
     .line 70
-    goto :goto_1
+    const-string v5, "\n\nuniform float2 in_size;         // component size\nuniform float4 in_radii;        // topLeft, topRight, bottomRight, bottomLeft\nuniform float in_smoothing;     // 0 = circular corner, 1 = continuous corner\n\nfloat roundedBoxSdf(float2 p, float2 b, float r) {\n    float2 d = p - b + r;\n    return min(max(d.x, d.y), 0.0) + length(max(d, float2(0.0))) - r;\n}\n\nfloat supercircleSdf(float2 off, float tile) {\n    float2 q = max(float2(0.0), (float2(tile) + off) / tile);\n    float hi = max(q.x, q.y);\n    float ratio = (hi == 0.0) ? 0.0 : clamp(min(q.x, q.y) / hi, 0.0, 1.0);\n    float fit = ((((-0.7391197 * ratio + 2.4034927) * ratio + -2.490732) * ratio + 0.4768709) * ratio + 0.47478476);\n    float len = length(q);\n    float distBase = (len + 1.0) - 1.0 / (1.0 - ratio * ratio * clamp(len, 0.0, 1.0) * fit);\n    return min(max(tile + off.x, tile + off.y), 0.0) + tile * (distBase - 1.0);\n}\n\nfloat pickRadius(float2 local, float2 b) {\n    float top = (local.x < b.x) ? in_radii.x : in_radii.y;\n    float bottom = (local.x < b.x) ? in_radii.w : in_radii.z;\n    return min((local.y < b.y) ? top : bottom, min(b.x, b.y));\n}\n\nfloat sdfShape(float2 p, float2 b, float r) {\n    float box = roundedBoxSdf(p, b, r);\n    float minHalf = min(b.x, b.y);\n    if (in_smoothing <= 0.001 || r < 0.5 || (minHalf - r) <= 1.0) {\n        return box;\n    }\n    float tile = min(1.528665 * r, minHalf);\n    return mix(box, supercircleSdf(p - b, tile), in_smoothing);\n}\n\n// Distance to the silhouette from a point in component space. Negative inside.\nfloat silhouetteSdf(float2 local) {\n    float2 b = in_size * 0.5;\n    return sdfShape(abs(local - b), b, pickRadius(local, b));\n}\n\nuniform float2 in_halfViewFloor; // half size, floored, so the fold lands on a pixel boundary\nuniform float2 in_strokeBand;    // stroke width, bevel\nuniform float4 in_strokeColor;   // stroke rgb, stroke opacity\nuniform float in_strokeAlpha;    // surface opacity\nuniform float4 in_light1;        // direction xyz, intensity\nuniform float4 in_light1Color;   // colour rgb, unused\nuniform float4 in_light2;        // direction xyz, intensity\nuniform float4 in_light2Color;   // colour rgb, unused\n"
 
     .line 71
-    :cond_2
-    move v6, v7
-
     .line 72
-    :goto_1
-    const v1, 0xffffff
+    invoke-static {v5, v1, v2, p0, v3}, Lky1;->o(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 73
     .line 74
     .line 75
-    and-int/2addr v1, v6
+    move-result-object p0
 
     .line 76
-    const/high16 v2, -0x60000000
+    invoke-direct {v0, v4, p0}, Lpr1;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
     .line 77
     .line 78
-    or-int/2addr v1, v2
-
     .line 79
-    goto/16 :goto_5
+    return-object v0
 
     .line 80
-    .line 81
-    :pswitch_4
-    const v1, -0xc0ae4b
-
-    .line 82
-    .line 83
-    .line 84
-    goto/16 :goto_5
-
-    .line 85
-    .line 86
-    :pswitch_5
-    invoke-virtual {p0}, Lqr1;->f()Z
-
-    .line 87
-    .line 88
-    .line 89
-    move-result v1
-
-    .line 90
-    if-eqz v1, :cond_3
-
-    .line 91
-    .line 92
-    const v1, -0x47a8a8a9
-
-    .line 93
-    .line 94
-    .line 95
-    goto/16 :goto_5
-
-    .line 96
-    .line 97
-    :cond_3
-    const v1, 0x40575757
-
-    .line 98
-    .line 99
-    .line 100
-    goto/16 :goto_5
-
-    .line 101
-    .line 102
-    :pswitch_6
-    invoke-virtual {p0}, Lqr1;->f()Z
-
-    .line 103
-    .line 104
-    .line 105
-    move-result v1
-
-    .line 106
-    if-eqz v1, :cond_4
-
-    .line 107
-    .line 108
-    const v1, -0x47ffb68e
-
-    .line 109
-    .line 110
-    .line 111
-    goto/16 :goto_5
-
-    .line 112
-    .line 113
-    :cond_4
-    const v1, 0x400e639c
-
-    .line 114
-    .line 115
-    .line 116
-    goto/16 :goto_5
-
-    .line 117
-    .line 118
-    :pswitch_7
-    move v1, v3
-
-    .line 119
-    goto/16 :goto_5
-
-    .line 120
-    .line 121
-    :pswitch_8
-    const v1, -0xb25504
-
-    .line 122
-    .line 123
-    .line 124
-    goto/16 :goto_5
-
-    .line 125
-    .line 126
-    :pswitch_9
-    invoke-virtual {p0}, Lqr1;->f()Z
-
-    .line 127
-    .line 128
-    .line 129
-    move-result v1
-
-    .line 130
-    if-eqz v1, :cond_5
-
-    .line 131
-    .line 132
-    goto :goto_3
-
-    .line 133
-    :cond_5
-    const v1, -0x777778
-
-    .line 134
-    .line 135
-    .line 136
-    goto/16 :goto_5
-
-    .line 137
-    .line 138
-    :pswitch_a
-    const v1, -0x66111112
-
-    .line 139
-    .line 140
-    .line 141
-    goto/16 :goto_5
-
-    .line 142
-    .line 143
-    :pswitch_b
-    invoke-virtual {p0}, Lqr1;->f()Z
-
-    .line 144
-    .line 145
-    .line 146
-    move-result v1
-
-    .line 147
-    if-eqz v1, :cond_c
-
-    .line 148
-    .line 149
-    goto :goto_3
-
-    .line 150
-    :pswitch_c
-    const v1, -0xbd5a0b
-
-    .line 151
-    .line 152
-    .line 153
-    goto/16 :goto_5
-
-    .line 154
-    .line 155
-    :pswitch_d
-    invoke-virtual {p0}, Lqr1;->f()Z
-
-    .line 156
-    .line 157
-    .line 158
-    move-result v1
-
-    .line 159
-    if-eqz v1, :cond_6
-
-    .line 160
-    .line 161
-    goto :goto_3
-
-    .line 162
-    :cond_6
-    const v1, -0x9e9e9f
-
-    .line 163
-    .line 164
-    .line 165
-    goto/16 :goto_5
-
-    .line 166
-    .line 167
-    :pswitch_e
-    invoke-virtual {p0}, Lqr1;->f()Z
-
-    .line 168
-    .line 169
-    .line 170
-    move-result v1
-
-    .line 171
-    if-eqz v1, :cond_7
-
-    .line 172
-    .line 173
-    const v1, -0xa0a0b
-
-    .line 174
-    .line 175
-    .line 176
-    goto/16 :goto_5
-
-    .line 177
-    .line 178
-    :cond_7
-    const v1, -0xbdbdbe
-
-    .line 179
-    .line 180
-    .line 181
-    goto/16 :goto_5
-
-    .line 182
-    .line 183
-    :pswitch_f
-    invoke-virtual {p0}, Lqr1;->f()Z
-
-    .line 184
-    .line 185
-    .line 186
-    move-result v1
-
-    .line 187
-    if-eqz v1, :cond_8
-
-    .line 188
-    .line 189
-    :goto_2
-    move v1, v6
-
-    .line 190
-    goto/16 :goto_5
-
-    .line 191
-    .line 192
-    :cond_8
-    const v1, -0x10102
-
-    .line 193
-    .line 194
-    .line 195
-    goto/16 :goto_5
-
-    .line 196
-    .line 197
-    :pswitch_10
-    invoke-virtual {p0}, Lqr1;->f()Z
-
-    .line 198
-    .line 199
-    .line 200
-    move-result v1
-
-    .line 201
-    if-nez v1, :cond_a
-
-    .line 202
-    .line 203
-    goto :goto_3
-
-    .line 204
-    :pswitch_11
-    invoke-virtual {p0}, Lqr1;->f()Z
-
-    .line 205
-    .line 206
-    .line 207
-    move-result v1
-
-    .line 208
-    if-eqz v1, :cond_a
-
-    .line 209
-    .line 210
-    const v1, 0x1deeeeee
-
-    .line 211
-    .line 212
-    .line 213
-    goto/16 :goto_5
-
-    .line 214
-    .line 215
-    :pswitch_12
-    const v1, -0x333334
-
-    .line 216
-    .line 217
-    .line 218
-    goto/16 :goto_5
-
-    .line 219
-    .line 220
-    :pswitch_13
-    const v1, -0x55222223
-
-    .line 221
-    .line 222
-    .line 223
-    goto/16 :goto_5
-
-    .line 224
-    .line 225
-    :pswitch_14
-    const v1, 0x66dddddd
-
-    .line 226
-    .line 227
-    .line 228
-    goto/16 :goto_5
-
-    .line 229
-    .line 230
-    :goto_3
-    :pswitch_15
-    move v1, v8
-
-    .line 231
-    goto/16 :goto_5
-
-    .line 232
-    .line 233
-    :pswitch_16
-    invoke-virtual {p0}, Lqr1;->f()Z
-
-    .line 234
-    .line 235
-    .line 236
-    move-result v1
-
-    .line 237
-    if-eqz v1, :cond_9
-
-    .line 238
-    .line 239
-    const v1, -0x555556
-
-    .line 240
-    .line 241
-    .line 242
-    goto/16 :goto_5
-
-    .line 243
-    .line 244
-    :cond_9
-    const v1, -0xababac
-
-    .line 245
-    .line 246
-    .line 247
-    goto/16 :goto_5
-
-    .line 248
-    .line 249
-    :pswitch_17
-    invoke-virtual {p0}, Lqr1;->f()Z
-
-    .line 250
-    .line 251
-    .line 252
-    move-result v1
-
-    .line 253
-    if-eqz v1, :cond_c
-
-    .line 254
-    .line 255
-    goto :goto_4
-
-    .line 256
-    :cond_a
-    :pswitch_18
-    move v1, v4
-
-    .line 257
-    goto/16 :goto_5
-
-    .line 258
-    .line 259
-    :pswitch_19
-    move v1, v2
-
-    .line 260
-    goto/16 :goto_5
-
-    .line 261
-    .line 262
-    :pswitch_1a
-    const v1, 0x6600ff11
-
-    .line 263
-    .line 264
-    .line 265
-    goto/16 :goto_5
-
-    .line 266
-    .line 267
-    :pswitch_1b
-    const v1, -0x55000f00
-
-    .line 268
-    .line 269
-    .line 270
-    goto/16 :goto_5
-
-    .line 271
-    .line 272
-    :pswitch_1c
-    const/high16 v1, -0x55010000
-
-    .line 273
-    .line 274
-    goto/16 :goto_5
-
-    .line 275
-    .line 276
-    :pswitch_1d
-    const v1, -0x11333334
-
-    .line 277
-    .line 278
-    .line 279
-    goto/16 :goto_5
-
-    .line 280
-    .line 281
-    :pswitch_1e
-    const/16 v1, -0x100
-
-    .line 282
-    .line 283
-    goto/16 :goto_5
-
-    .line 284
-    .line 285
-    :pswitch_1f
-    const v1, -0x1fbf05
-
-    .line 286
-    .line 287
-    .line 288
-    goto :goto_5
-
-    .line 289
-    :pswitch_20
-    const v1, -0xfc560c
-
-    .line 290
-    .line 291
-    .line 292
-    goto :goto_5
-
-    .line 293
-    :pswitch_21
-    const v1, -0xab9186
-
-    .line 294
-    .line 295
-    .line 296
-    goto :goto_5
-
-    .line 297
-    :pswitch_22
-    const v1, -0xff7f80
-
-    .line 298
-    .line 299
-    .line 300
-    goto :goto_5
-
-    .line 301
-    :pswitch_23
-    const v1, -0xff992a
-
-    .line 302
-    .line 303
-    .line 304
-    goto :goto_5
-
-    .line 305
-    :pswitch_24
-    const v1, -0x575758
-
-    .line 306
-    .line 307
-    .line 308
-    goto :goto_5
-
-    .line 309
-    :pswitch_25
-    const v1, -0xde690d
-
-    .line 310
-    .line 311
-    .line 312
-    goto :goto_5
-
-    .line 313
-    :cond_b
-    :goto_4
-    :pswitch_26
-    move v1, v7
-
-    .line 314
-    goto :goto_5
-
-    .line 315
-    :pswitch_27
-    const/high16 v1, -0x23000000
-
-    .line 316
-    .line 317
-    goto :goto_5
-
-    .line 318
-    :pswitch_28
-    const v1, -0x222223
-
-    .line 319
-    .line 320
-    .line 321
-    goto :goto_5
-
-    .line 322
-    :pswitch_29
-    const v1, -0xd8d6d6
-
-    .line 323
-    .line 324
-    .line 325
-    goto :goto_5
-
-    .line 326
-    :pswitch_2a
-    const v1, -0x272728
-
-    .line 327
-    .line 328
-    .line 329
-    goto :goto_5
-
-    .line 330
-    :cond_c
-    :pswitch_2b
-    move v1, v5
-
-    .line 331
-    goto :goto_5
-
-    .line 332
-    :pswitch_2c
-    const/high16 v1, 0x10000000
-
-    .line 333
-    .line 334
-    goto :goto_5
-
-    .line 335
-    :pswitch_2d
-    const v1, -0xac9202
-
-    .line 336
-    .line 337
-    .line 338
-    goto :goto_5
-
-    .line 339
-    :pswitch_2e
-    const v1, -0x22ac9202
-
-    .line 340
-    .line 341
-    .line 342
-    goto :goto_5
-
-    .line 343
-    :pswitch_2f
-    const v1, 0x2d3f51b5
-
-    .line 344
-    .line 345
-    .line 346
-    goto :goto_5
-
-    .line 347
-    :pswitch_30
-    const v1, -0xcccccd
-
-    .line 348
-    .line 349
-    .line 350
-    goto :goto_5
-
-    .line 351
-    :pswitch_31
-    invoke-virtual {p0}, Lqr1;->f()Z
-
-    .line 352
-    .line 353
-    .line 354
-    move-result v1
-
-    .line 355
-    if-eqz v1, :cond_b
-
-    .line 356
-    .line 357
-    goto/16 :goto_2
-
-    .line 358
-    .line 359
-    :pswitch_32
-    const v1, -0xafafb0
-
-    .line 360
-    .line 361
-    .line 362
-    goto :goto_5
-
-    .line 363
-    :pswitch_33
-    const v1, -0x11111112
-
-    .line 364
-    .line 365
-    .line 366
-    :goto_5
-    invoke-virtual {p0, v0, v1}, Lqr1;->g(II)V
-
-    .line 367
-    .line 368
-    .line 369
-    add-int/lit8 v0, v0, 0x1
-
-    .line 370
-    .line 371
-    goto/16 :goto_0
-
-    .line 372
-    .line 373
-    :cond_d
-    return-void
-
-    .line 374
     nop
 
-    .line 375
+    .line 81
     :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_33
-        :pswitch_32
-        :pswitch_33
-        :pswitch_31
-        :pswitch_30
-        :pswitch_2f
-        :pswitch_2e
-        :pswitch_2d
-        :pswitch_2c
-        :pswitch_2b
-        :pswitch_2a
-        :pswitch_29
-        :pswitch_19
-        :pswitch_28
-        :pswitch_7
-        :pswitch_27
-        :pswitch_26
-        :pswitch_19
-        :pswitch_31
-        :pswitch_31
-        :pswitch_25
-        :pswitch_24
-        :pswitch_23
-        :pswitch_22
-        :pswitch_21
-        :pswitch_20
-        :pswitch_1f
-        :pswitch_20
-        :pswitch_1e
-        :pswitch_19
-        :pswitch_1d
+    .packed-switch 0x0
         :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_1c
-        :pswitch_1b
-        :pswitch_1a
-        :pswitch_7
-        :pswitch_19
-        :pswitch_19
-        :pswitch_18
-        :pswitch_17
-        :pswitch_16
-        :pswitch_15
-        :pswitch_32
-        :pswitch_14
-        :pswitch_13
-        :pswitch_12
-        :pswitch_11
-        :pswitch_17
-        :pswitch_10
-        :pswitch_2f
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_19
-        :pswitch_b
-        :pswitch_20
-        :pswitch_f
-        :pswitch_0
-        :pswitch_a
-        :pswitch_31
-        :pswitch_30
-        :pswitch_f
-        :pswitch_9
-        :pswitch_8
-        :pswitch_b
-        :pswitch_f
-        :pswitch_7
-        :pswitch_7
-        :pswitch_20
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
     .end packed-switch
-.end method
-
-.method public c(Lsu0;)V
-    .locals 2
-
-    .line 1
-    iget-object p0, p0, Lqr1;->b:Ljava/util/ArrayList;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    :cond_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 8
-    .line 9
-    .line 10
-    move-result v1
-
-    .line 11
-    if-eqz v1, :cond_1
-
-    .line 12
-    .line 13
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object v1
-
-    .line 17
-    check-cast v1, Ljava/lang/ref/WeakReference;
-
-    .line 18
-    .line 19
-    invoke-virtual {v1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
-
-    .line 20
-    .line 21
-    .line 22
-    move-result-object v1
-
-    .line 23
-    if-ne v1, p1, :cond_0
-
-    .line 24
-    .line 25
-    return-void
-
-    .line 26
-    :cond_1
-    new-instance v0, Ljava/lang/ref/WeakReference;
-
-    .line 27
-    .line 28
-    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
-
-    .line 29
-    .line 30
-    .line 31
-    invoke-virtual {p0, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 32
-    .line 33
-    .line 34
-    new-instance p0, Lvv0;
-
-    .line 35
-    .line 36
-    invoke-direct {p0, p1}, Lgw1;-><init>(Lsu0;)V
-
-    .line 37
-    .line 38
-    .line 39
-    iget-object v0, p1, Lsu0;->r:Ltw1;
-
-    .line 40
-    .line 41
-    invoke-virtual {v0, p0}, Ltw1;->a(Lgw1;)I
-
-    .line 42
-    .line 43
-    .line 44
-    iget-object p0, p1, Lsu0;->a1:Lxb5;
-
-    .line 45
-    .line 46
-    invoke-virtual {p0}, Lxb5;->a()V
-
-    .line 47
-    .line 48
-    .line 49
-    invoke-virtual {p1}, Landroid/view/View;->invalidate()V
-
-    .line 50
-    .line 51
-    .line 52
-    return-void
-.end method
-
-.method public d(Lsu0;)V
-    .locals 1
-
-    .line 1
-    iget-object p0, p0, Lqr1;->b:Ljava/util/ArrayList;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    :cond_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 8
-    .line 9
-    .line 10
-    move-result v0
-
-    .line 11
-    if-eqz v0, :cond_1
-
-    .line 12
-    .line 13
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object v0
-
-    .line 17
-    check-cast v0, Ljava/lang/ref/WeakReference;
-
-    .line 18
-    .line 19
-    invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
-
-    .line 20
-    .line 21
-    .line 22
-    move-result-object v0
-
-    .line 23
-    if-ne v0, p1, :cond_0
-
-    .line 24
-    .line 25
-    invoke-interface {p0}, Ljava/util/Iterator;->remove()V
-
-    .line 26
-    .line 27
-    .line 28
-    :cond_1
-    return-void
-.end method
-
-.method public e(I)I
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lqr1;->a:Landroid/util/SparseIntArray;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Landroid/util/SparseIntArray;->get(I)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public f()Z
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final g(II)V
-    .locals 1
-
-    .line 1
-    invoke-virtual {p0, p1}, Lqr1;->e(I)I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    if-ne v0, p2, :cond_0
-
-    .line 6
-    .line 7
-    goto :goto_1
-
-    .line 8
-    :cond_0
-    iget-object v0, p0, Lqr1;->a:Landroid/util/SparseIntArray;
-
-    .line 9
-    .line 10
-    invoke-virtual {v0, p1, p2}, Landroid/util/SparseIntArray;->put(II)V
-
-    .line 11
-    .line 12
-    .line 13
-    iget-object p0, p0, Lqr1;->b:Ljava/util/ArrayList;
-
-    .line 14
-    .line 15
-    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object p0
-
-    .line 19
-    :goto_0
-    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
-
-    .line 20
-    .line 21
-    .line 22
-    move-result p1
-
-    .line 23
-    if-eqz p1, :cond_2
-
-    .line 24
-    .line 25
-    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    .line 26
-    .line 27
-    .line 28
-    move-result-object p1
-
-    .line 29
-    check-cast p1, Ljava/lang/ref/WeakReference;
-
-    .line 30
-    .line 31
-    invoke-virtual {p1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
-
-    .line 32
-    .line 33
-    .line 34
-    move-result-object p1
-
-    .line 35
-    check-cast p1, Lsu0;
-
-    .line 36
-    .line 37
-    if-nez p1, :cond_1
-
-    .line 38
-    .line 39
-    invoke-interface {p0}, Ljava/util/Iterator;->remove()V
-
-    .line 40
-    .line 41
-    .line 42
-    goto :goto_0
-
-    .line 43
-    :cond_1
-    new-instance p2, Lvv0;
-
-    .line 44
-    .line 45
-    invoke-direct {p2, p1}, Lgw1;-><init>(Lsu0;)V
-
-    .line 46
-    .line 47
-    .line 48
-    iget-object v0, p1, Lsu0;->r:Ltw1;
-
-    .line 49
-    .line 50
-    invoke-virtual {v0, p2}, Ltw1;->a(Lgw1;)I
-
-    .line 51
-    .line 52
-    .line 53
-    iget-object p2, p1, Lsu0;->a1:Lxb5;
-
-    .line 54
-    .line 55
-    invoke-virtual {p2}, Lxb5;->a()V
-
-    .line 56
-    .line 57
-    .line 58
-    invoke-virtual {p1}, Landroid/view/View;->invalidate()V
-
-    .line 59
-    .line 60
-    .line 61
-    goto :goto_0
-
-    .line 62
-    :cond_2
-    :goto_1
-    return-void
 .end method

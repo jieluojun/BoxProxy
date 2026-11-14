@@ -1,149 +1,135 @@
-.class public final synthetic Lw77;
+.class public final Lw77;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lm71;
+.implements Le33;
 
 
-# instance fields
-.field public final synthetic a:Li56;
+# static fields
+.field public static final a:Lw77;
 
-.field public final synthetic b:Lwl4;
-
-.field public final synthetic c:Lhs3;
-
-.field public final synthetic d:I
+.field public static final b:Lfu2;
 
 
 # direct methods
-.method public synthetic constructor <init>(Li56;Lwl4;Lhs3;I)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lw77;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lw77;->a:Li56;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
+    .line 4
     .line 5
     .line 6
-    iput-object p2, p0, Lw77;->b:Lwl4;
+    sput-object v0, Lw77;->a:Lw77;
 
     .line 7
     .line 8
-    iput-object p3, p0, Lw77;->c:Lhs3;
+    const-string v0, "kotlin.ULong"
 
     .line 9
     .line 10
-    iput p4, p0, Lw77;->d:I
+    sget-object v1, Ltj3;->a:Ltj3;
 
     .line 11
     .line 12
+    invoke-static {v0, v1}, Lqm;->g(Ljava/lang/String;Le33;)Lfu2;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object v0
+
+    .line 16
+    sput-object v0, Lw77;->b:Lfu2;
+
+    .line 17
+    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(ILe81;Lvj1;)V
-    .locals 6
+.method public final b(Lpf1;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    const/4 p1, 0x0
+    sget-object p0, Lw77;->b:Lfu2;
 
     .line 2
-    iget p3, p2, Le81;->l:I
-
     .line 3
-    .line 4
-    iget-object v0, p0, Lw77;->a:Li56;
+    invoke-interface {p1, p0}, Lpf1;->w(Lt46;)Lpf1;
 
+    .line 4
     .line 5
     .line 6
-    iget-object v1, p0, Lw77;->b:Lwl4;
+    move-result-object p0
 
     .line 7
-    .line 8
-    invoke-virtual {v0, p2, p1, p3, v1}, Li56;->b(Ljava/lang/CharSequence;IILwl4;)F
+    invoke-interface {p0}, Lpf1;->b()J
 
+    .line 8
     .line 9
     .line 10
+    move-result-wide p0
+
     .line 11
-    move-result p1
+    new-instance v0, Ls77;
 
     .line 12
-    float-to-double p1, p1
-
     .line 13
-    invoke-static {p1, p2}, Ljava/lang/Math;->ceil(D)D
+    invoke-direct {v0, p0, p1}, Ls77;-><init>(J)V
 
     .line 14
     .line 15
     .line 16
-    move-result-wide p1
+    return-object v0
+.end method
 
-    .line 17
-    double-to-int p1, p1
+.method public final c()Lt46;
+    .locals 0
 
-    .line 18
-    iget-object p2, p0, Lw77;->c:Lhs3;
+    .line 1
+    sget-object p0, Lw77;->b:Lfu2;
 
-    .line 19
-    .line 20
-    iget p3, p2, Lhs3;->a:I
+    .line 2
+    .line 3
+    return-object p0
+.end method
 
-    .line 21
-    .line 22
-    int-to-double v0, p3
+.method public final d(Lji6;Ljava/lang/Object;)V
+    .locals 2
 
-    .line 23
-    int-to-double v2, p1
+    .line 1
+    check-cast p2, Ls77;
 
-    .line 24
-    const-wide/high16 v4, 0x3ff0000000000000L    # 1.0
+    .line 2
+    .line 3
+    iget-wide v0, p2, Ls77;->i:J
 
-    .line 25
-    .line 26
-    mul-double/2addr v2, v4
+    .line 4
+    .line 5
+    sget-object p0, Lw77;->b:Lfu2;
 
-    .line 27
-    iget p0, p0, Lw77;->d:I
+    .line 6
+    .line 7
+    invoke-virtual {p1, p0}, Lji6;->h(Lt46;)Lji6;
 
-    .line 28
-    .line 29
-    int-to-double p0, p0
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p0
 
-    .line 30
-    div-double/2addr v2, p0
+    .line 11
+    invoke-virtual {p0, v0, v1}, Lji6;->k(J)V
 
-    .line 31
-    invoke-static {v2, v3}, Ljava/lang/Math;->ceil(D)D
-
-    .line 32
-    .line 33
-    .line 34
-    move-result-wide p0
-
-    .line 35
-    invoke-static {v4, v5, p0, p1}, Ljava/lang/Math;->max(DD)D
-
-    .line 36
-    .line 37
-    .line 38
-    move-result-wide p0
-
-    .line 39
-    add-double/2addr p0, v0
-
-    .line 40
-    double-to-int p0, p0
-
-    .line 41
-    iput p0, p2, Lhs3;->a:I
-
-    .line 42
-    .line 43
+    .line 12
+    .line 13
+    .line 14
     return-void
 .end method

@@ -4,14 +4,14 @@
 
 # 配置编辑器顶栏 navigationIcon 的包装：先原样画返回键 (m05)，再在它右边多画两个图标按钮
 # （图标按钮：「可视」= 可视化修改（滑杆图标），「锚点」= 锚点面板（船锚图标））。navigationIcon 槽只有一个 layoutId 容器（Box 叠放），
-# 所以额外的按钮用 padding-start 错开。守卫 (Lt72;->T / W) 照 m05 的写法抄，避免 skipToGroupEnd 后再发射。
+# 所以额外的按钮用 padding-start 错开。守卫 (Lt82;->T / W) 照 m05 的写法抄，避免 skipToGroupEnd 后再发射。
 
 # interfaces
-.implements Lt62;
+.implements Lt72;
 
 
 # instance fields
-.field private final a:Lt62;
+.field private final a:Lt72;
 
 .field private final b:Ljava/lang/Object;
 
@@ -19,12 +19,12 @@
 
 
 # direct methods
-.method public constructor <init>(Lt62;Ljava/lang/Object;Landroid/content/Context;)V
+.method public constructor <init>(Lt72;Ljava/lang/Object;Landroid/content/Context;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/box/app/cfg/CfgNav;->a:Lt62;
+    iput-object p1, p0, Lcom/box/app/cfg/CfgNav;->a:Lt72;
 
     iput-object p2, p0, Lcom/box/app/cfg/CfgNav;->b:Ljava/lang/Object;
 
@@ -33,7 +33,7 @@
     return-void
 .end method
 
-.method private static e(Lt72;Ljava/lang/Object;Landroid/content/Context;ILjava/lang/String;F)V
+.method private static e(Lt82;Ljava/lang/Object;Landroid/content/Context;ILjava/lang/String;F)V
     .locals 20
 
     new-instance v0, Lcom/box/app/cfg/CfgClick;
@@ -46,13 +46,13 @@
 
     invoke-direct {v0, v3, v1, v2}, Lcom/box/app/cfg/CfgClick;-><init>(ILjava/lang/Object;Landroid/content/Context;)V
 
-    sget-object v1, Ltp3;->j:Ltp3;
+    sget-object v1, Lpw3;->i:Lpw3;
 
     move/from16 v2, p5
 
     const/4 v3, 0x0
 
-    invoke-static {v1, v2, v3, v3, v3}, Lag7;->I(Lwp3;FFFF)Lwp3;
+    invoke-static {v1, v2, v3, v3, v3}, Lok7;->N(Lsw3;FFFF)Lsw3;
 
     move-result-object v1
 
@@ -87,17 +87,17 @@
 
     const/16 v16, 0xfc
 
-    invoke-static/range {v4 .. v16}, Lpr;->h(Le62;Lwp3;ZZJFFFLt62;Lz11;II)V
+    invoke-static/range {v4 .. v16}, Ldw3;->b(Le72;Lsw3;ZZJFFFLt72;Lt82;II)V
 
     return-void
 .end method
 
-.method public static wrap(Lt62;Lqm5;Landroid/content/Context;)Lt62;
+.method public static wrap(Lt72;Les5;Landroid/content/Context;)Lt72;
     .locals 1
 
     new-instance v0, Lcom/box/app/cfg/CfgNav;
 
-    invoke-direct {v0, p0, p1, p2}, Lcom/box/app/cfg/CfgNav;-><init>(Lt62;Ljava/lang/Object;Landroid/content/Context;)V
+    invoke-direct {v0, p0, p1, p2}, Lcom/box/app/cfg/CfgNav;-><init>(Lt72;Ljava/lang/Object;Landroid/content/Context;)V
 
     return-object v0
 .end method
@@ -139,17 +139,17 @@
 
     move-object v6, v1
 
-    check-cast v6, Lt72;
+    check-cast v6, Lt82;
 
-    invoke-virtual {v6, v3, v4}, Lt72;->T(IZ)Z
+    invoke-virtual {v6, v3, v4}, Lt82;->S(IZ)Z
 
     move-result v3
 
     if-eqz v3, :cond_skip
 
-    iget-object v3, v0, Lcom/box/app/cfg/CfgNav;->a:Lt62;
+    iget-object v3, v0, Lcom/box/app/cfg/CfgNav;->a:Lt72;
 
-    invoke-interface {v3, v1, v2}, Lt62;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v3, v1, v2}, Lt72;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     iget-object v7, v0, Lcom/box/app/cfg/CfgNav;->b:Ljava/lang/Object;
 
@@ -173,7 +173,7 @@
 
     const/high16 v11, 0x42400000    # 48.0f
 
-    invoke-static/range {v6 .. v11}, Lcom/box/app/cfg/CfgNav;->e(Lt72;Ljava/lang/Object;Landroid/content/Context;ILjava/lang/String;F)V
+    invoke-static/range {v6 .. v11}, Lcom/box/app/cfg/CfgNav;->e(Lt82;Ljava/lang/Object;Landroid/content/Context;ILjava/lang/String;F)V
 
     goto :goto_done
 
@@ -186,7 +186,7 @@
 
     const/high16 v11, 0x42400000    # 48.0f
 
-    invoke-static/range {v6 .. v11}, Lcom/box/app/cfg/CfgNav;->e(Lt72;Ljava/lang/Object;Landroid/content/Context;ILjava/lang/String;F)V
+    invoke-static/range {v6 .. v11}, Lcom/box/app/cfg/CfgNav;->e(Lt82;Ljava/lang/Object;Landroid/content/Context;ILjava/lang/String;F)V
 
     const/4 v9, 0x0
 
@@ -194,15 +194,15 @@
 
     const/high16 v11, 0x42c00000    # 96.0f
 
-    invoke-static/range {v6 .. v11}, Lcom/box/app/cfg/CfgNav;->e(Lt72;Ljava/lang/Object;Landroid/content/Context;ILjava/lang/String;F)V
+    invoke-static/range {v6 .. v11}, Lcom/box/app/cfg/CfgNav;->e(Lt82;Ljava/lang/Object;Landroid/content/Context;ILjava/lang/String;F)V
 
     goto :goto_done
 
     :cond_skip
-    invoke-virtual {v6}, Lt72;->W()V
+    invoke-virtual {v6}, Lt82;->V()V
 
     :goto_done
-    sget-object v0, La47;->a:La47;
+    sget-object v0, Ll97;->a:Ll97;
 
     return-object v0
 .end method

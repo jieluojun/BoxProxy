@@ -1,56 +1,105 @@
-.class public interface abstract Lvh0;
+.class public final Lvh0;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+
+# static fields
+.field public static final c:Lje;
+
+
+# instance fields
+.field public a:Ljava/lang/Object;
+
+.field public b:I
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    .line 1
+    new-instance v0, Lje;
+
+    .line 2
+    .line 3
+    const/16 v1, 0x10
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Lje;-><init>(B)V
+
+    .line 6
+    .line 7
+    .line 8
+    sput-object v0, Lvh0;->c:Lje;
+
+    .line 9
+    .line 10
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract A()I
-.end method
+.method public final toString()Ljava/lang/String;
+    .locals 3
 
-.method public abstract a()Lyh1;
-.end method
+    .line 1
+    iget-object v0, p0, Lvh0;->a:Ljava/lang/Object;
 
-.method public abstract b()Z
-.end method
+    .line 2
+    .line 3
+    iget p0, p0, Lvh0;->b:I
 
-.method public abstract d()I
-.end method
+    .line 4
+    .line 5
+    new-instance v1, Ljava/lang/StringBuilder;
 
-.method public abstract f(I)I
-.end method
+    .line 6
+    .line 7
+    const-string v2, "CachedItem(key="
 
-.method public abstract g(I)I
-.end method
+    .line 8
+    .line 9
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
-.method public abstract h()I
-.end method
+    .line 10
+    .line 11
+    .line 12
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
-.method public abstract i(I)I
-.end method
+    .line 13
+    .line 14
+    .line 15
+    const-string v0, ", mainAxisSize="
 
-.method public abstract j([I)V
-.end method
+    .line 16
+    .line 17
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public abstract n([I)V
-.end method
+    .line 18
+    .line 19
+    .line 20
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-.method public abstract o([I)V
-.end method
+    .line 21
+    .line 22
+    .line 23
+    const-string p0, ")"
 
-.method public abstract p(ILp62;)Ljava/util/List;
-.end method
+    .line 24
+    .line 25
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-.method public abstract r()I
-.end method
+    .line 26
+    .line 27
+    .line 28
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-.method public abstract s()I
-.end method
+    .line 29
+    .line 30
+    .line 31
+    move-result-object p0
 
-.method public abstract t([I)V
-.end method
-
-.method public abstract v(I)Ljava/lang/Object;
-.end method
-
-.method public abstract x()I
+    .line 32
+    return-object p0
 .end method

@@ -1,125 +1,50 @@
 .class public final Ldw;
-.super Lwu0;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Ljava/lang/Iterable;
+.implements Lt23;
 
 
 # instance fields
-.field public final synthetic b:B
+.field public final synthetic i:B
 
-.field public final c:Loa3;
+.field public final j:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lqy2;B)V
-    .locals 1
+.method public synthetic constructor <init>(Ljava/lang/Object;B)V
+    .locals 0
 
     .line 1
-    iput-byte p2, p0, Ldw;->b:B
+    iput-byte p2, p0, Ldw;->i:B
 
     .line 2
     .line 3
-    packed-switch p2, :pswitch_data_0
+    iput-object p1, p0, Ldw;->j:Ljava/lang/Object;
 
     .line 4
     .line 5
-    .line 6
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6
     .line 7
     .line 8
-    .line 9
-    invoke-direct {p0, p1}, Lwu0;-><init>(Lqy2;)V
-
-    .line 10
-    .line 11
-    .line 12
-    new-instance p2, Lcw;
-
-    .line 13
-    .line 14
-    invoke-interface {p1}, Lqy2;->c()Luy5;
-
-    .line 15
-    .line 16
-    .line 17
-    move-result-object p1
-
-    .line 18
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 19
-    .line 20
-    .line 21
-    const/4 v0, 0x0
-
-    .line 22
-    invoke-direct {p2, p1, v0}, Lcw;-><init>(Luy5;B)V
-
-    .line 23
-    .line 24
-    .line 25
-    iput-object p2, p0, Ldw;->c:Loa3;
-
-    .line 26
-    .line 27
     return-void
-
-    .line 28
-    :pswitch_0
-    invoke-direct {p0, p1}, Lwu0;-><init>(Lqy2;)V
-
-    .line 29
-    .line 30
-    .line 31
-    new-instance p2, Lcw;
-
-    .line 32
-    .line 33
-    invoke-interface {p1}, Lqy2;->c()Luy5;
-
-    .line 34
-    .line 35
-    .line 36
-    move-result-object p1
-
-    .line 37
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 38
-    .line 39
-    .line 40
-    const/4 v0, 0x1
-
-    .line 41
-    invoke-direct {p2, p1, v0}, Lcw;-><init>(Luy5;B)V
-
-    .line 42
-    .line 43
-    .line 44
-    iput-object p2, p0, Ldw;->c:Loa3;
-
-    .line 45
-    .line 46
-    return-void
-
-    .line 47
-    :pswitch_data_0
-    .packed-switch 0x1
-        :pswitch_0
-    .end packed-switch
 .end method
 
 
 # virtual methods
-.method public final c()Luy5;
+.method public final iterator()Ljava/util/Iterator;
     .locals 1
 
     .line 1
-    iget-byte v0, p0, Ldw;->b:B
+    iget-byte v0, p0, Ldw;->i:B
 
     .line 2
     .line 3
-    iget-object p0, p0, Ldw;->c:Loa3;
+    iget-object p0, p0, Ldw;->j:Ljava/lang/Object;
 
     .line 4
     .line 5
@@ -128,275 +53,74 @@
     .line 6
     .line 7
     .line 8
-    check-cast p0, Lcw;
+    check-cast p0, Lqi1;
 
     .line 9
     .line 10
-    return-object p0
+    new-instance v0, Lpi1;
 
     .line 11
-    :pswitch_0
-    check-cast p0, Lcw;
-
     .line 12
-    .line 13
-    return-object p0
-
-    .line 14
-    nop
-
-    .line 15
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final e()Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    iget-byte p0, p0, Ldw;->b:B
-
-    .line 2
-    .line 3
-    packed-switch p0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    new-instance p0, Ljava/util/LinkedHashSet;
-
-    .line 7
-    .line 8
-    invoke-direct {p0}, Ljava/util/LinkedHashSet;-><init>()V
-
-    .line 9
-    .line 10
-    .line 11
-    return-object p0
-
-    .line 12
-    :pswitch_0
-    new-instance p0, Ljava/util/ArrayList;
+    invoke-direct {v0, p0}, Lpi1;-><init>(Lqi1;)V
 
     .line 13
     .line 14
-    invoke-direct {p0}, Ljava/util/ArrayList;-><init>()V
-
     .line 15
-    .line 16
-    .line 17
-    return-object p0
-
-    .line 18
-    nop
-
-    .line 19
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final f(Ljava/lang/Object;)I
-    .locals 0
-
-    .line 1
-    iget-byte p0, p0, Ldw;->b:B
-
-    .line 2
-    .line 3
-    packed-switch p0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    check-cast p1, Ljava/util/LinkedHashSet;
-
-    .line 7
-    .line 8
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 9
-    .line 10
-    .line 11
-    invoke-virtual {p1}, Ljava/util/AbstractCollection;->size()I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    return p0
+    return-object v0
 
     .line 16
     :pswitch_0
-    check-cast p1, Ljava/util/ArrayList;
+    new-instance v0, Lvp1;
 
     .line 17
     .line 18
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast p0, Le72;
 
     .line 19
     .line 20
-    .line 21
-    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
+    invoke-interface {p0}, Le72;->invoke()Ljava/lang/Object;
 
+    .line 21
     .line 22
     .line 23
+    move-result-object p0
+
     .line 24
-    move-result p0
+    check-cast p0, Ljava/util/Iterator;
 
     .line 25
-    return p0
-
     .line 26
-    nop
+    invoke-direct {v0, p0}, Lvp1;-><init>(Ljava/util/Iterator;)V
 
     .line 27
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
+    .line 28
+    .line 29
+    return-object v0
 
-.method public final k(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
+    .line 30
+    :pswitch_1
+    check-cast p0, [Ljava/lang/Object;
 
-    .line 1
-    iget-byte p0, p0, Ldw;->b:B
+    .line 31
+    .line 32
+    new-instance v0, Lg3;
 
-    .line 2
-    .line 3
-    packed-switch p0, :pswitch_data_0
+    .line 33
+    .line 34
+    invoke-direct {v0, p0}, Lg3;-><init>([Ljava/lang/Object;)V
 
-    .line 4
-    .line 5
-    .line 6
-    const/4 p0, 0x0
+    .line 35
+    .line 36
+    .line 37
+    return-object v0
 
-    .line 7
-    throw p0
-
-    .line 8
-    :pswitch_0
-    const/4 p0, 0x0
-
-    .line 9
-    throw p0
-
-    .line 10
+    .line 38
     nop
 
-    .line 11
+    .line 39
     :pswitch_data_0
     .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final l(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    iget-byte p0, p0, Ldw;->b:B
-
-    .line 2
-    .line 3
-    packed-switch p0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    check-cast p1, Ljava/util/LinkedHashSet;
-
-    .line 7
-    .line 8
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 9
-    .line 10
-    .line 11
-    return-object p1
-
-    .line 12
-    :pswitch_0
-    check-cast p1, Ljava/util/ArrayList;
-
-    .line 13
-    .line 14
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 15
-    .line 16
-    .line 17
-    return-object p1
-
-    .line 18
-    nop
-
-    .line 19
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final m(ILjava/lang/Object;Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    iget-byte p0, p0, Ldw;->b:B
-
-    .line 2
-    .line 3
-    packed-switch p0, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    check-cast p2, Ljava/util/LinkedHashSet;
-
-    .line 7
-    .line 8
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 9
-    .line 10
-    .line 11
-    invoke-virtual {p2, p3}, Ljava/util/AbstractCollection;->add(Ljava/lang/Object;)Z
-
-    .line 12
-    .line 13
-    .line 14
-    return-void
-
-    .line 15
-    :pswitch_0
-    check-cast p2, Ljava/util/ArrayList;
-
-    .line 16
-    .line 17
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 18
-    .line 19
-    .line 20
-    invoke-virtual {p2, p1, p3}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
-
-    .line 21
-    .line 22
-    .line 23
-    return-void
-
-    .line 24
-    nop
-
-    .line 25
-    :pswitch_data_0
-    .packed-switch 0x0
+        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

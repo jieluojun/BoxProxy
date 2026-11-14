@@ -1,123 +1,167 @@
 .class public final Ld47;
-.super Ltb1;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final l:Ld47;
+# instance fields
+.field public final a:Lxs4;
+
+.field public final b:Lts4;
+
+.field public final c:Lxs4;
+
+.field public final d:Lts4;
+
+.field public final e:Lxs4;
+
+.field public final f:Lxs4;
+
+.field public final g:Lxs4;
+
+.field public final h:Lxs4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 1
+.method public constructor <init>()V
+    .locals 4
 
     .line 1
-    new-instance v0, Ld47;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ltb1;-><init>()V
-
     .line 4
-    .line 5
-    .line 6
-    sput-object v0, Ld47;->l:Ld47;
-
-    .line 7
-    .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final H(Lrb1;Ljava/lang/Runnable;)V
-    .locals 1
-
-    .line 1
-    sget-object p0, Log1;->m:Log1;
-
-    .line 2
-    .line 3
-    const/4 p1, 0x1
-
-    .line 4
-    iget-object p0, p0, Log1;->l:Lzb1;
+    sget-object v0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
 
     .line 5
     .line 6
-    const/4 v0, 0x0
-
-    .line 7
-    invoke-virtual {p0, p2, p1, v0}, Lzb1;->c(Ljava/lang/Runnable;ZZ)V
-
-    .line 8
-    .line 9
-    .line 10
-    return-void
-.end method
-
-.method public final I(Lrb1;Ljava/lang/Runnable;)V
-    .locals 0
-
-    .line 1
-    sget-object p0, Log1;->m:Log1;
-
-    .line 2
-    .line 3
-    const/4 p1, 0x1
-
-    .line 4
-    iget-object p0, p0, Log1;->l:Lzb1;
-
-    .line 5
-    .line 6
-    invoke-virtual {p0, p2, p1, p1}, Lzb1;->c(Ljava/lang/Runnable;ZZ)V
+    invoke-static {v0}, Lm93;->H(Ljava/lang/Object;)Lxs4;
 
     .line 7
     .line 8
     .line 9
-    return-void
-.end method
-
-.method public final K(I)Ltb1;
-    .locals 1
-
-    .line 1
-    invoke-static {p1}, Lim;->y(I)V
-
-    .line 2
-    .line 3
-    .line 4
-    sget v0, Lvk6;->d:I
-
-    .line 5
-    .line 6
-    if-lt p1, v0, :cond_0
-
-    .line 7
-    .line 8
-    return-object p0
-
-    .line 9
-    :cond_0
-    invoke-super {p0, p1}, Ltb1;->K(I)Ltb1;
+    move-result-object v1
 
     .line 10
+    iput-object v1, p0, Ld47;->a:Lxs4;
+
     .line 11
     .line 12
-    move-result-object p0
+    new-instance v1, Lts4;
 
     .line 13
-    return-object p0
-.end method
+    .line 14
+    const/high16 v2, 0x3f800000    # 1.0f
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    .line 15
+    .line 16
+    invoke-direct {v1, v2}, Lts4;-><init>(F)V
 
-    .line 1
-    const-string p0, "Dispatchers.IO"
+    .line 17
+    .line 18
+    .line 19
+    iput-object v1, p0, Ld47;->b:Lts4;
 
-    .line 2
-    .line 3
-    return-object p0
+    .line 20
+    .line 21
+    invoke-static {v0}, Lm93;->H(Ljava/lang/Object;)Lxs4;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object v1
+
+    .line 25
+    iput-object v1, p0, Ld47;->c:Lxs4;
+
+    .line 26
+    .line 27
+    new-instance v1, Lts4;
+
+    .line 28
+    .line 29
+    invoke-direct {v1, v2}, Lts4;-><init>(F)V
+
+    .line 30
+    .line 31
+    .line 32
+    iput-object v1, p0, Ld47;->d:Lts4;
+
+    .line 33
+    .line 34
+    invoke-static {v0}, Lm93;->H(Ljava/lang/Object;)Lxs4;
+
+    .line 35
+    .line 36
+    .line 37
+    move-result-object v1
+
+    .line 38
+    iput-object v1, p0, Ld47;->e:Lxs4;
+
+    .line 39
+    .line 40
+    sget-wide v1, Lc47;->b:J
+
+    .line 41
+    .line 42
+    new-instance v3, Lc47;
+
+    .line 43
+    .line 44
+    invoke-direct {v3, v1, v2}, Lc47;-><init>(J)V
+
+    .line 45
+    .line 46
+    .line 47
+    invoke-static {v3}, Lm93;->H(Ljava/lang/Object;)Lxs4;
+
+    .line 48
+    .line 49
+    .line 50
+    move-result-object v1
+
+    .line 51
+    iput-object v1, p0, Ld47;->f:Lxs4;
+
+    .line 52
+    .line 53
+    invoke-static {v0}, Lm93;->H(Ljava/lang/Object;)Lxs4;
+
+    .line 54
+    .line 55
+    .line 56
+    move-result-object v0
+
+    .line 57
+    iput-object v0, p0, Ld47;->g:Lxs4;
+
+    .line 58
+    .line 59
+    sget-wide v0, Ldv0;->g:J
+
+    .line 60
+    .line 61
+    new-instance v2, Ldv0;
+
+    .line 62
+    .line 63
+    invoke-direct {v2, v0, v1}, Ldv0;-><init>(J)V
+
+    .line 64
+    .line 65
+    .line 66
+    invoke-static {v2}, Lm93;->H(Ljava/lang/Object;)Lxs4;
+
+    .line 67
+    .line 68
+    .line 69
+    move-result-object v0
+
+    .line 70
+    iput-object v0, p0, Ld47;->h:Lxs4;
+
+    .line 71
+    .line 72
+    return-void
 .end method

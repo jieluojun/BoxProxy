@@ -1,280 +1,143 @@
-.class public final Lor;
-.super Llh6;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lt62;
+.class public final enum Lor;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public j:Lmt3;
+# static fields
+.field public static final enum i:Lor;
 
-.field public k:Z
+.field public static final synthetic j:[Lor;
 
-.field public final synthetic l:Landroid/content/Context;
-
-.field public final synthetic m:Ljava/lang/String;
-
-.field public final synthetic n:I
-
-.field public final synthetic o:Ljava/lang/String;
-
-.field public final synthetic p:Lmt3;
+.field public static final synthetic k:Lvw1;
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Lmt3;Ly81;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lor;->l:Landroid/content/Context;
-
-    .line 2
-    .line 3
-    iput-object p2, p0, Lor;->m:Ljava/lang/String;
-
-    .line 4
-    .line 5
-    iput p3, p0, Lor;->n:I
-
-    .line 6
-    .line 7
-    iput-object p4, p0, Lor;->o:Ljava/lang/String;
-
-    .line 8
-    .line 9
-    iput-object p5, p0, Lor;->p:Lmt3;
-
-    .line 10
-    .line 11
-    const/4 p1, 0x2
-
-    .line 12
-    invoke-direct {p0, p1, p6}, Llh6;-><init>(ILy81;)V
-
-    .line 13
-    .line 14
-    .line 15
-    return-void
-.end method
-
-
-# virtual methods
-.method public final create(Ljava/lang/Object;Ly81;)Ly81;
-    .locals 7
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
     new-instance v0, Lor;
 
     .line 2
     .line 3
-    iget-object v4, p0, Lor;->o:Ljava/lang/String;
+    const-string v1, "All"
 
     .line 4
     .line 5
-    iget-object v5, p0, Lor;->p:Lmt3;
+    const/4 v2, 0x0
 
     .line 6
-    .line 7
-    iget-object v1, p0, Lor;->l:Landroid/content/Context;
-
-    .line 8
-    .line 9
-    iget-object v2, p0, Lor;->m:Ljava/lang/String;
-
-    .line 10
-    .line 11
-    iget v3, p0, Lor;->n:I
-
-    .line 12
-    .line 13
-    move-object v6, p2
-
-    .line 14
-    invoke-direct/range {v0 .. v6}, Lor;-><init>(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Lmt3;Ly81;)V
-
-    .line 15
-    .line 16
-    .line 17
-    return-object v0
-.end method
-
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    check-cast p1, Lac1;
-
-    .line 2
-    .line 3
-    check-cast p2, Ly81;
-
-    .line 4
-    .line 5
-    invoke-virtual {p0, p1, p2}, Lor;->create(Ljava/lang/Object;Ly81;)Ly81;
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    check-cast p0, Lor;
-
-    .line 10
-    .line 11
-    sget-object p1, La47;->a:La47;
-
-    .line 12
-    .line 13
-    invoke-virtual {p0, p1}, Lor;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p0
-
-    .line 17
-    return-object p0
-.end method
-
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 8
-
-    .line 1
-    iget-boolean v0, p0, Lor;->k:Z
-
-    .line 2
-    .line 3
-    const/4 v1, 0x1
-
-    .line 4
-    if-eqz v0, :cond_1
-
-    .line 5
-    .line 6
-    if-ne v0, v1, :cond_0
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
-    iget-object p0, p0, Lor;->j:Lmt3;
-
     .line 9
-    .line 10
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    sput-object v0, Lor;->i:Lor;
 
+    .line 10
     .line 11
+    new-instance v1, Lor;
+
     .line 12
     .line 13
-    goto :goto_0
+    const-string v2, "User"
 
     .line 14
-    :cond_0
-    const-string p0, "call to \'resume\' before \'invoke\' with coroutine"
-
     .line 15
+    const/4 v3, 0x1
+
     .line 16
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
     .line 18
     .line 19
-    const/4 p0, 0x0
+    new-instance v2, Lor;
 
     .line 20
-    return-object p0
-
     .line 21
-    :cond_1
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    const-string v3, "System"
 
     .line 22
     .line 23
+    const/4 v4, 0x2
+
     .line 24
-    sget-object p1, Llk1;->a:Log1;
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 25
     .line 26
-    sget-object p1, Lfg1;->l:Lfg1;
-
     .line 27
-    .line 28
-    new-instance v2, Lnr;
+    filled-new-array {v0, v1, v2}, [Lor;
 
+    .line 28
     .line 29
     .line 30
-    iget-object v6, p0, Lor;->o:Ljava/lang/String;
+    move-result-object v0
 
     .line 31
-    .line 32
-    const/4 v7, 0x0
+    sput-object v0, Lor;->j:[Lor;
 
+    .line 32
     .line 33
-    iget-object v3, p0, Lor;->l:Landroid/content/Context;
+    new-instance v1, Lvw1;
 
     .line 34
     .line 35
-    iget-object v4, p0, Lor;->m:Ljava/lang/String;
+    invoke-direct {v1, v0}, Lvw1;-><init>([Ljava/lang/Enum;)V
 
     .line 36
     .line 37
-    iget v5, p0, Lor;->n:I
-
     .line 38
+    sput-object v1, Lor;->k:Lvw1;
+
     .line 39
-    invoke-direct/range {v2 .. v7}, Lnr;-><init>(Landroid/content/Context;Ljava/lang/String;ILjava/lang/String;Ly81;)V
-
     .line 40
-    .line 41
-    .line 42
-    iget-object v0, p0, Lor;->p:Lmt3;
+    return-void
+.end method
 
-    .line 43
-    .line 44
-    iput-object v0, p0, Lor;->j:Lmt3;
+.method public static valueOf(Ljava/lang/String;)Lor;
+    .locals 1
 
-    .line 45
-    .line 46
-    iput-boolean v1, p0, Lor;->k:Z
+    .line 1
+    const-class v0, Lor;
 
-    .line 47
-    .line 48
-    invoke-static {p1, v2, p0}, Lbn0;->S(Lrb1;Lt62;Ly81;)Ljava/lang/Object;
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
-    .line 49
-    .line 50
-    .line 51
-    move-result-object p1
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
 
-    .line 52
-    sget-object p0, Lbc1;->j:Lbc1;
+    .line 7
+    check-cast p0, Lor;
 
-    .line 53
-    .line 54
-    if-ne p1, p0, :cond_2
-
-    .line 55
-    .line 56
+    .line 8
+    .line 9
     return-object p0
+.end method
 
-    .line 57
-    :cond_2
-    move-object p0, v0
+.method public static values()[Lor;
+    .locals 1
 
-    .line 58
-    :goto_0
-    check-cast p1, Landroid/graphics/Bitmap;
+    .line 1
+    sget-object v0, Lor;->j:[Lor;
 
-    .line 59
-    .line 60
-    invoke-interface {p0, p1}, Lmt3;->setValue(Ljava/lang/Object;)V
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    .line 61
-    .line 62
-    .line 63
-    sget-object p0, La47;->a:La47;
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
 
-    .line 64
-    .line 65
-    return-object p0
+    .line 7
+    check-cast v0, [Lor;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

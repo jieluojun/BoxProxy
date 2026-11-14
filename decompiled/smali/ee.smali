@@ -1,27 +1,27 @@
 .class public final synthetic Lee;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Le62;
+.implements Le72;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final synthetic i:B
 
-.field public final synthetic k:Lcb4;
+.field public final synthetic j:Lqh4;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lcb4;B)V
+.method public synthetic constructor <init>(Lqh4;B)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lee;->j:B
+    iput-byte p2, p0, Lee;->i:B
 
     .line 2
     .line 3
-    iput-object p1, p0, Lee;->k:Lcb4;
+    iput-object p1, p0, Lee;->j:Lqh4;
 
     .line 4
     .line 5
@@ -39,7 +39,7 @@
     .locals 9
 
     .line 1
-    iget-byte v0, p0, Lee;->j:B
+    iget-byte v0, p0, Lee;->i:B
 
     .line 2
     .line 3
@@ -63,7 +63,7 @@
     .line 13
     .line 14
     .line 15
-    iget-object p0, p0, Lee;->k:Lcb4;
+    iget-object p0, p0, Lee;->j:Lqh4;
 
     .line 16
     .line 17
@@ -72,7 +72,7 @@
     .line 18
     .line 19
     .line 20
-    invoke-interface {p0}, Lcb4;->a()J
+    invoke-interface {p0}, Lqh4;->b()J
 
     .line 21
     .line 22
@@ -80,10 +80,10 @@
     move-result-wide v7
 
     .line 24
-    and-long/2addr v5, v7
+    and-long/2addr v7, v5
 
     .line 25
-    cmp-long p0, v5, v3
+    cmp-long p0, v7, v3
 
     .line 26
     .line 27
@@ -91,59 +91,45 @@
 
     .line 28
     .line 29
-    move v1, v2
+    goto :goto_0
 
     .line 30
-    :cond_0
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+    :pswitch_0
+    invoke-interface {p0}, Lqh4;->b()J
 
     .line 31
     .line 32
     .line 33
-    move-result-object p0
+    move-result-wide v7
 
     .line 34
-    return-object p0
+    and-long/2addr v7, v5
 
     .line 35
-    :pswitch_0
-    invoke-interface {p0}, Lcb4;->a()J
+    cmp-long p0, v7, v3
 
     .line 36
     .line 37
-    .line 38
-    move-result-wide v7
+    if-eqz p0, :cond_0
 
+    .line 38
     .line 39
-    and-long/2addr v5, v7
+    :goto_0
+    move v1, v2
 
     .line 40
-    cmp-long p0, v5, v3
+    :cond_0
+    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
 
     .line 41
     .line 42
-    if-eqz p0, :cond_1
-
     .line 43
-    .line 44
-    move v1, v2
-
-    .line 45
-    :cond_1
-    invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    .line 46
-    .line 47
-    .line 48
     move-result-object p0
 
-    .line 49
+    .line 44
     return-object p0
 
-    .line 50
-    nop
-
-    .line 51
+    .line 45
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_0

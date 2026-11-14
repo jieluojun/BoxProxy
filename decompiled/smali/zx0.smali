@@ -1,117 +1,123 @@
-.class public final Lzx0;
-.super Ljava/util/AbstractQueue;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lzx0;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt72;
 
 
 # instance fields
-.field public final synthetic j:Lin4;
+.field public final synthetic i:B
+
+.field public final synthetic j:Lfu6;
+
+.field public final synthetic k:Lnz0;
 
 
 # direct methods
-.method public constructor <init>(Lin4;)V
+.method public synthetic constructor <init>(Lfu6;Lnz0;IB)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lzx0;->j:Lin4;
+    iput-byte p4, p0, Lzx0;->i:B
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ljava/util/AbstractQueue;-><init>()V
+    iput-object p1, p0, Lzx0;->j:Lfu6;
 
     .line 4
     .line 5
+    iput-object p2, p0, Lzx0;->k:Lnz0;
+
     .line 6
+    .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 8
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final iterator()Ljava/util/Iterator;
-    .locals 0
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
     .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    iget-byte v0, p0, Lzx0;->i:B
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    sget-object v1, Ll97;->a:Ll97;
 
     .line 4
     .line 5
-    .line 6
-    throw p0
-.end method
-
-.method public final offer(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    check-cast p1, Lfw1;
-
-    .line 2
-    .line 3
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
+    const/16 v2, 0x31
 
     .line 6
     .line 7
+    iget-object v3, p0, Lzx0;->k:Lnz0;
+
     .line 8
-    throw p0
-.end method
+    .line 9
+    iget-object p0, p0, Lzx0;->j:Lfu6;
 
-.method public final peek()Ljava/lang/Object;
-    .locals 0
+    .line 10
+    .line 11
+    check-cast p1, Lt82;
 
-    .line 1
-    iget-object p0, p0, Lzx0;->j:Lin4;
+    .line 12
+    .line 13
+    check-cast p2, Ljava/lang/Integer;
 
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lin4;->e()Lfw1;
+    .line 14
+    .line 15
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
+    .line 16
+    .line 17
+    .line 18
+    packed-switch v0, :pswitch_data_0
 
-    .line 7
-    return-object p0
-.end method
+    .line 19
+    .line 20
+    .line 21
+    invoke-static {v2}, Lp06;->W(I)I
 
-.method public final poll()Ljava/lang/Object;
-    .locals 0
+    .line 22
+    .line 23
+    .line 24
+    move-result p2
 
-    .line 1
-    iget-object p0, p0, Lzx0;->j:Lin4;
+    .line 25
+    invoke-static {p0, v3, p1, p2}, Lum;->e(Lfu6;Lnz0;Lt82;I)V
 
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lin4;->c()Lfw1;
+    .line 26
+    .line 27
+    .line 28
+    return-object v1
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
+    .line 29
+    :pswitch_0
+    invoke-static {v2}, Lp06;->W(I)I
 
-    .line 7
-    return-object p0
-.end method
+    .line 30
+    .line 31
+    .line 32
+    move-result p2
 
-.method public final size()I
-    .locals 0
+    .line 33
+    invoke-static {p0, v3, p1, p2}, Lpp;->h(Lfu6;Lnz0;Lt82;I)V
 
-    .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
+    .line 34
+    .line 35
+    .line 36
+    return-object v1
 
-    .line 2
-    .line 3
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    throw p0
+    .line 37
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

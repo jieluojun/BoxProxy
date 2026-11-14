@@ -1,151 +1,119 @@
-.class public final enum Lf13;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Lf13;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
-.field public static final enum j:Lf13;
-
-.field public static final enum k:Lf13;
-
-.field public static final enum l:Lf13;
-
-.field public static final enum m:Lf13;
-
-.field public static final enum n:Lf13;
-
-.field public static final synthetic o:[Lf13;
+.field public static final a:Lfu2;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 7
+    .locals 2
 
     .line 1
-    new-instance v0, Lf13;
+    const-string v0, "kotlinx.serialization.json.JsonUnquotedLiteral"
 
     .line 2
     .line 3
-    const-string v1, "Measuring"
+    sget-object v1, Lpi6;->a:Lpi6;
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    invoke-static {v0, v1}, Lqm;->g(Ljava/lang/String;Le33;)Lfu2;
 
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 7
     .line 8
+    move-result-object v0
+
     .line 9
-    sput-object v0, Lf13;->j:Lf13;
+    sput-object v0, Lf13;->a:Lfu2;
 
     .line 10
     .line 11
-    new-instance v1, Lf13;
+    return-void
+.end method
+
+.method public static final a(Ld13;)La23;
+    .locals 3
+
+    .line 1
+    instance-of v0, p0, La23;
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    if-eqz v0, :cond_0
+
+    .line 5
+    .line 6
+    move-object v0, p0
+
+    .line 7
+    check-cast v0, La23;
+
+    .line 8
+    .line 9
+    goto :goto_0
+
+    .line 10
+    :cond_0
+    move-object v0, v1
+
+    .line 11
+    :goto_0
+    if-eqz v0, :cond_1
 
     .line 12
     .line 13
-    const-string v2, "LookaheadMeasuring"
+    return-object v0
 
     .line 14
+    :cond_1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 15
-    const/4 v3, 0x1
-
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 17
-    .line 18
-    .line 19
-    sput-object v1, Lf13;->k:Lf13;
+    move-result-object p0
 
+    .line 18
+    invoke-static {p0}, Lwf5;->a(Ljava/lang/Class;)Lpr0;
+
+    .line 19
     .line 20
     .line 21
-    new-instance v2, Lf13;
+    move-result-object p0
 
     .line 22
+    const-string v0, " is not a JsonPrimitive"
+
     .line 23
-    const-string v3, "LayingOut"
-
     .line 24
-    .line 25
-    const/4 v4, 0x2
+    const-string v2, "Element "
 
+    .line 25
     .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-static {v2, p0, v0}, Lnf1;->o(Ljava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 
     .line 27
     .line 28
     .line 29
-    sput-object v2, Lf13;->l:Lf13;
-
-    .line 30
-    .line 31
-    new-instance v3, Lf13;
-
-    .line 32
-    .line 33
-    const-string v4, "LookaheadLayingOut"
-
-    .line 34
-    .line 35
-    const/4 v5, 0x3
-
-    .line 36
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 37
-    .line 38
-    .line 39
-    sput-object v3, Lf13;->m:Lf13;
-
-    .line 40
-    .line 41
-    new-instance v4, Lf13;
-
-    .line 42
-    .line 43
-    const-string v5, "Idle"
-
-    .line 44
-    .line 45
-    const/4 v6, 0x4
-
-    .line 46
-    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 47
-    .line 48
-    .line 49
-    sput-object v4, Lf13;->n:Lf13;
-
-    .line 50
-    .line 51
-    filled-new-array {v0, v1, v2, v3, v4}, [Lf13;
-
-    .line 52
-    .line 53
-    .line 54
-    move-result-object v0
-
-    .line 55
-    sput-object v0, Lf13;->o:[Lf13;
-
-    .line 56
-    .line 57
-    return-void
+    return-object v1
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lf13;
-    .locals 1
+.method public static final b(La23;)J
+    .locals 5
 
     .line 1
-    const-class v0, Lf13;
+    sget-object v0, Ln03;->d:Ld03;
 
     .line 2
     .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    invoke-virtual {p0}, La23;->b()Ljava/lang/String;
 
     .line 4
     .line 5
@@ -153,32 +121,137 @@
     move-result-object p0
 
     .line 7
-    check-cast p0, Lf13;
+    invoke-static {v0, p0}, Lm93;->o(Ln03;Ljava/lang/String;)Loo;
 
     .line 8
     .line 9
-    return-object p0
-.end method
+    .line 10
+    move-result-object p0
 
-.method public static values()[Lf13;
-    .locals 1
+    .line 11
+    iget-object v0, p0, Loo;->g:Ljava/lang/Object;
 
-    .line 1
-    sget-object v0, Lf13;->o:[Lf13;
+    .line 12
+    .line 13
+    check-cast v0, Ljava/lang/String;
 
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    .line 14
+    .line 15
+    invoke-virtual {p0}, Loo;->i()J
 
-    .line 4
-    .line 5
-    .line 6
+    .line 16
+    .line 17
+    .line 18
+    move-result-wide v1
+
+    .line 19
+    invoke-virtual {p0}, Loo;->f()B
+
+    .line 20
+    .line 21
+    .line 22
+    move-result v3
+
+    .line 23
+    const/16 v4, 0xa
+
+    .line 24
+    .line 25
+    if-eq v3, v4, :cond_2
+
+    .line 26
+    .line 27
+    iget v1, p0, Loo;->b:I
+
+    .line 28
+    .line 29
+    if-lez v1, :cond_0
+
+    .line 30
+    .line 31
+    add-int/lit8 v2, v1, -0x1
+
+    .line 32
+    .line 33
+    goto :goto_0
+
+    .line 34
+    :cond_0
+    move v2, v1
+
+    .line 35
+    :goto_0
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    .line 36
+    .line 37
+    .line 38
+    move-result v3
+
+    .line 39
+    if-eq v1, v3, :cond_1
+
+    .line 40
+    .line 41
+    if-ltz v2, :cond_1
+
+    .line 42
+    .line 43
+    invoke-virtual {v0, v2}, Ljava/lang/String;->charAt(I)C
+
+    .line 44
+    .line 45
+    .line 46
+    move-result v0
+
+    .line 47
+    invoke-static {v0}, Ljava/lang/String;->valueOf(C)Ljava/lang/String;
+
+    .line 48
+    .line 49
+    .line 50
     move-result-object v0
 
-    .line 7
-    check-cast v0, [Lf13;
+    .line 51
+    goto :goto_1
 
-    .line 8
-    .line 9
-    return-object v0
+    .line 52
+    :cond_1
+    const-string v0, "EOF"
+
+    .line 53
+    .line 54
+    :goto_1
+    const-string v1, "Expected input to contain a single valid number, but got \'"
+
+    .line 55
+    .line 56
+    const-string v3, "\' after it"
+
+    .line 57
+    .line 58
+    invoke-static {v1, v0, v3}, Lky1;->n(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 59
+    .line 60
+    .line 61
+    move-result-object v0
+
+    .line 62
+    const/4 v1, 0x4
+
+    .line 63
+    const/4 v3, 0x0
+
+    .line 64
+    invoke-static {p0, v0, v2, v3, v1}, Loo;->m(Loo;Ljava/lang/String;ILjava/lang/String;I)V
+
+    .line 65
+    .line 66
+    .line 67
+    throw v3
+
+    .line 68
+    :cond_2
+    return-wide v1
 .end method

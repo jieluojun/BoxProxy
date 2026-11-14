@@ -1,558 +1,334 @@
-.class public final synthetic Lev2;
+.class public final Lev2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Ljava/util/concurrent/Callable;
+.implements Ldf6;
 
 
 # instance fields
-.field public final synthetic a:B
+.field public final i:Ljava/io/InputStream;
 
-.field public final synthetic b:Ljava/lang/Object;
+.field public final j:Ln07;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;B)V
+.method public constructor <init>(Ljava/io/InputStream;Ln07;)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lev2;->a:B
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lev2;->b:Ljava/lang/Object;
-
     .line 4
-    .line 5
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 5
     .line 6
     .line 7
+    iput-object p1, p0, Lev2;->i:Ljava/io/InputStream;
+
     .line 8
+    .line 9
+    iput-object p2, p0, Lev2;->j:Ln07;
+
+    .line 10
+    .line 11
     return-void
 .end method
 
 
 # virtual methods
-.method public final call()Ljava/lang/Object;
-    .locals 7
+.method public final a()Ln07;
+    .locals 0
 
     .line 1
-    iget-byte v0, p0, Lev2;->a:B
+    iget-object p0, p0, Lev2;->j:Ln07;
 
     .line 2
     .line 3
-    iget-object p0, p0, Lev2;->b:Ljava/lang/Object;
+    return-object p0
+.end method
+
+.method public final close()V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lev2;->i:Ljava/io/InputStream;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/io/InputStream;->close()V
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_0
+    .line 6
+    return-void
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "source("
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 6
     .line 7
     .line 8
-    check-cast p0, Landroid/content/res/AssetFileDescriptor;
+    iget-object p0, p0, Lev2;->i:Ljava/io/InputStream;
 
     .line 9
     .line 10
-    return-object p0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 11
-    :pswitch_0
-    check-cast p0, Lv26;
-
     .line 12
     .line 13
-    iget-object v0, p0, Lv26;->m:Lt26;
+    const/16 p0, 0x29
 
     .line 14
     .line 15
-    iget-object v1, p0, Lv26;->l:Lu26;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 16
     .line 17
-    :try_start_0
-    iget-object v2, p0, Lv26;->k:Ljava/lang/Process;
-
     .line 18
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
     .line 19
-    invoke-virtual {v2}, Ljava/lang/Process;->exitValue()I
+    .line 20
+    .line 21
+    move-result-object p0
+
+    .line 22
+    return-object p0
+.end method
+
+.method public final v(Lge0;J)J
+    .locals 3
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    const-wide/16 v0, 0x0
+
+    .line 5
+    .line 6
+    cmp-long v2, p2, v0
+
+    .line 7
+    .line 8
+    if-nez v2, :cond_0
+
+    .line 9
+    .line 10
+    return-wide v0
+
+    .line 11
+    :cond_0
+    if-ltz v2, :cond_4
+
+    .line 12
+    .line 13
+    :try_start_0
+    iget-object v0, p0, Lev2;->j:Ln07;
+
+    .line 14
+    .line 15
+    invoke-virtual {v0}, Ln07;->f()V
+
+    .line 16
+    .line 17
+    .line 18
+    const/4 v0, 0x1
+
+    .line 19
+    invoke-virtual {p1, v0}, Lge0;->K(I)Ly06;
 
     .line 20
     .line 21
     .line 22
-    new-instance v2, Ljava/io/IOException;
+    move-result-object v0
 
     .line 23
+    iget v1, v0, Ly06;->c:I
+
     .line 24
-    const-string v3, "Created process has terminated"
-
     .line 25
+    rsub-int v1, v1, 0x2000
+
     .line 26
-    invoke-direct {v2, v3}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
     .line 27
+    int-to-long v1, v1
+
     .line 28
+    invoke-static {p2, p3, v1, v2}, Ljava/lang/Math;->min(JJ)J
+
     .line 29
-    throw v2
-    :try_end_0
-    .catch Ljava/lang/IllegalThreadStateException; {:try_start_0 .. :try_end_0} :catch_0
-
     .line 30
-    :catch_0
-    invoke-static {v0}, Lsi3;->F(Ljava/io/InputStream;)V
-
     .line 31
+    move-result-wide p2
+
     .line 32
+    long-to-int p2, p2
+
     .line 33
-    iget-object p0, p0, Lv26;->n:Lt26;
+    iget-object p0, p0, Lev2;->i:Ljava/io/InputStream;
 
     .line 34
     .line 35
-    invoke-static {p0}, Lsi3;->F(Ljava/io/InputStream;)V
+    iget-object p3, v0, Ly06;->a:[B
 
     .line 36
     .line 37
+    iget v1, v0, Ly06;->c:I
+
     .line 38
-    new-instance p0, Ljava/io/BufferedReader;
-
     .line 39
-    .line 40
-    new-instance v2, Ljava/io/InputStreamReader;
+    invoke-virtual {p0, p3, v1, p2}, Ljava/io/InputStream;->read([BII)I
 
+    .line 40
     .line 41
     .line 42
-    invoke-direct {v2, v0}, Ljava/io/InputStreamReader;-><init>(Ljava/io/InputStream;)V
+    move-result p0
 
     .line 43
-    .line 44
-    .line 45
-    invoke-direct {p0, v2}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
+    const/4 p2, -0x1
 
+    .line 44
+    if-ne p0, p2, :cond_2
+
+    .line 45
     .line 46
+    iget p0, v0, Ly06;->b:I
+
     .line 47
     .line 48
-    :try_start_1
-    const-string v0, "echo SHELL_TEST\n"
+    iget p2, v0, Ly06;->c:I
 
     .line 49
     .line 50
-    sget-object v2, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
+    if-ne p0, p2, :cond_1
 
     .line 51
     .line 52
-    invoke-virtual {v0, v2}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+    invoke-virtual {v0}, Ly06;->a()Ly06;
 
     .line 53
     .line 54
     .line 55
-    move-result-object v0
+    move-result-object p0
 
     .line 56
-    invoke-virtual {v1, v0}, Ljava/io/OutputStream;->write([B)V
+    iput-object p0, p1, Lge0;->i:Ly06;
 
     .line 57
     .line 58
-    .line 59
-    invoke-virtual {v1}, Ljava/io/OutputStream;->flush()V
+    invoke-static {v0}, Lb16;->a(Ly06;)V
 
+    .line 59
     .line 60
     .line 61
+    :cond_1
+    const-wide/16 p0, -0x1
+
     .line 62
-    invoke-virtual {p0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
-
     .line 63
-    .line 64
-    .line 65
-    move-result-object v0
+    return-wide p0
 
+    .line 64
+    :cond_2
+    iget p2, v0, Ly06;->c:I
+
+    .line 65
     .line 66
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    add-int/2addr p2, p0
 
     .line 67
+    iput p2, v0, Ly06;->c:I
+
     .line 68
     .line 69
-    move-result v3
+    iget-wide p2, p1, Lge0;->j:J
 
     .line 70
-    if-nez v3, :cond_3
-
     .line 71
+    int-to-long v0, p0
+
     .line 72
-    const-string v3, "SHELL_TEST"
+    add-long/2addr p2, v0
 
     .line 73
-    .line 74
-    invoke-virtual {v0, v3}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    iput-wide p2, p1, Lge0;->j:J
+    :try_end_0
+    .catch Ljava/lang/AssertionError; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 74
     .line 75
+    return-wide v0
+
     .line 76
+    :catch_0
+    move-exception p0
+
     .line 77
-    move-result v0
+    invoke-static {p0}, Lqk7;->a(Ljava/lang/AssertionError;)Z
 
     .line 78
-    if-eqz v0, :cond_3
-
     .line 79
     .line 80
-    const-string v0, "id\n"
+    move-result p1
 
     .line 81
-    .line 82
-    invoke-virtual {v0, v2}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
+    if-eqz p1, :cond_3
 
+    .line 82
     .line 83
+    new-instance p1, Ljava/io/IOException;
+
     .line 84
     .line 85
-    move-result-object v0
+    invoke-direct {p1, p0}, Ljava/io/IOException;-><init>(Ljava/lang/Throwable;)V
 
     .line 86
-    invoke-virtual {v1, v0}, Ljava/io/OutputStream;->write([B)V
-
     .line 87
     .line 88
+    throw p1
+
     .line 89
-    invoke-virtual {v1}, Ljava/io/OutputStream;->flush()V
+    :cond_3
+    throw p0
 
     .line 90
+    :cond_4
+    const-string p0, "byteCount < 0: "
+
     .line 91
     .line 92
-    invoke-virtual {p0}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+    invoke-static {p2, p3, p0}, Lky1;->k(JLjava/lang/String;)Ljava/lang/String;
 
     .line 93
     .line 94
     .line 95
-    move-result-object v0
+    move-result-object p0
 
     .line 96
-    invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
+    invoke-static {p0}, Lex1;->b(Ljava/lang/Object;)V
 
     .line 97
     .line 98
     .line 99
-    move-result v2
-
-    .line 100
-    const/4 v3, 0x0
-
-    .line 101
-    if-nez v2, :cond_2
-
-    .line 102
-    .line 103
-    const-string v2, "uid=0"
-
-    .line 104
-    .line 105
-    invoke-virtual {v0, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
-
-    .line 106
-    .line 107
-    .line 108
-    move-result v0
-
-    .line 109
-    if-eqz v0, :cond_2
-
-    .line 110
-    .line 111
-    const-class v0, La57;
-
-    .line 112
-    .line 113
-    monitor-enter v0
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
-
-    .line 114
-    const/4 v2, 0x2
-
-    .line 115
-    :try_start_2
-    sput v2, La57;->b:I
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
-
-    .line 116
-    .line 117
-    :try_start_3
-    monitor-exit v0
-
-    .line 118
-    const-string v0, "user.dir"
-
-    .line 119
-    .line 120
-    invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 121
-    .line 122
-    .line 123
-    move-result-object v0
-
-    .line 124
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    .line 125
-    .line 126
-    const-string v4, "\'"
-
-    .line 127
-    .line 128
-    invoke-direct {v2, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 129
-    .line 130
-    .line 131
-    invoke-virtual {v0}, Ljava/lang/String;->length()I
-
-    .line 132
-    .line 133
-    .line 134
-    move-result v4
-
-    .line 135
-    :goto_0
-    const/16 v5, 0x27
-
-    .line 136
-    .line 137
-    if-ge v3, v4, :cond_1
-
-    .line 138
-    .line 139
-    invoke-virtual {v0, v3}, Ljava/lang/String;->charAt(I)C
-
-    .line 140
-    .line 141
-    .line 142
-    move-result v6
-
-    .line 143
-    if-ne v6, v5, :cond_0
-
-    .line 144
-    .line 145
-    const-string v5, "\'\\\'\'"
-
-    .line 146
-    .line 147
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 148
-    .line 149
-    .line 150
-    goto :goto_1
-
-    .line 151
-    :cond_0
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 152
-    .line 153
-    .line 154
-    :goto_1
-    add-int/lit8 v3, v3, 0x1
-
-    .line 155
-    .line 156
-    goto :goto_0
-
-    .line 157
-    :cond_1
-    invoke-virtual {v2, v5}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 158
-    .line 159
-    .line 160
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 161
-    .line 162
-    .line 163
-    move-result-object v0
-
-    .line 164
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    .line 165
-    .line 166
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 167
-    .line 168
-    .line 169
-    const-string v3, "cd "
-
-    .line 170
-    .line 171
-    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 172
-    .line 173
-    .line 174
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 175
-    .line 176
-    .line 177
-    const-string v0, "\n"
-
-    .line 178
-    .line 179
-    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 180
-    .line 181
-    .line 182
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 183
-    .line 184
-    .line 185
-    move-result-object v0
-
-    .line 186
-    sget-object v2, Ljava/nio/charset/StandardCharsets;->UTF_8:Ljava/nio/charset/Charset;
-
-    .line 187
-    .line 188
-    invoke-virtual {v0, v2}, Ljava/lang/String;->getBytes(Ljava/nio/charset/Charset;)[B
-
-    .line 189
-    .line 190
-    .line 191
-    move-result-object v0
-
-    .line 192
-    invoke-virtual {v1, v0}, Ljava/io/OutputStream;->write([B)V
-
-    .line 193
-    .line 194
-    .line 195
-    invoke-virtual {v1}, Ljava/io/OutputStream;->flush()V
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
-
-    .line 196
-    .line 197
-    .line 198
-    const/4 v3, 0x1
-
-    .line 199
-    goto :goto_2
-
-    .line 200
-    :catchall_0
-    move-exception v0
-
-    .line 201
-    goto :goto_3
-
-    .line 202
-    :catchall_1
-    move-exception v1
-
-    .line 203
-    :try_start_4
-    monitor-exit v0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
-
-    .line 204
-    :try_start_5
-    throw v1
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
-
-    .line 205
-    :cond_2
-    :goto_2
-    invoke-virtual {p0}, Ljava/io/BufferedReader;->close()V
-
-    .line 206
-    .line 207
-    .line 208
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 209
-    .line 210
-    .line 211
-    move-result-object p0
-
-    .line 212
-    return-object p0
-
-    .line 213
-    :cond_3
-    :try_start_6
-    new-instance v0, Ljava/io/IOException;
-
-    .line 214
-    .line 215
-    const-string v1, "Created process is not a shell"
-
-    .line 216
-    .line 217
-    invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
-
-    .line 218
-    .line 219
-    .line 220
-    throw v0
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_0
-
-    .line 221
-    :goto_3
-    :try_start_7
-    invoke-virtual {p0}, Ljava/io/BufferedReader;->close()V
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_2
-
-    .line 222
-    .line 223
-    .line 224
-    goto :goto_4
-
-    .line 225
-    :catchall_2
-    move-exception p0
-
-    .line 226
-    invoke-virtual {v0, p0}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
-
-    .line 227
-    .line 228
-    .line 229
-    :goto_4
-    throw v0
-
-    .line 230
-    :pswitch_1
-    check-cast p0, Lorg/chromium/support_lib_boundary/JsReplyProxyBoundaryInterface;
-
-    .line 231
-    .line 232
-    new-instance v0, Lfv2;
-
-    .line 233
-    .line 234
-    invoke-direct {v0, p0}, Lfv2;-><init>(Lorg/chromium/support_lib_boundary/JsReplyProxyBoundaryInterface;)V
-
-    .line 235
-    .line 236
-    .line 237
-    return-object v0
-
-    .line 238
-    nop
-
-    .line 239
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-wide v0
 .end method

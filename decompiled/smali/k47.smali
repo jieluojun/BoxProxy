@@ -1,16 +1,20 @@
 .class public final Lk47;
-.super Ln47;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Ljava/util/Iterator;
+.implements Lt23;
 
 
 # instance fields
-.field public final synthetic b:Ljava/lang/reflect/Method;
+.field public final i:Ljava/util/Iterator;
 
-.field public final synthetic c:I
+.field public final synthetic j:Lbm1;
 
 
 # direct methods
-.method public constructor <init>(ILjava/lang/reflect/Method;)V
+.method public constructor <init>(Lbm1;)V
     .locals 0
 
     .line 1
@@ -19,94 +23,101 @@
     .line 2
     .line 3
     .line 4
-    iput-object p2, p0, Lk47;->b:Ljava/lang/reflect/Method;
+    iput-object p1, p0, Lk47;->j:Lbm1;
 
     .line 5
     .line 6
-    iput p1, p0, Lk47;->c:I
+    iget-object p1, p1, Lbm1;->b:Ll46;
 
     .line 7
     .line 8
+    invoke-interface {p1}, Ll46;->iterator()Ljava/util/Iterator;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object p1
+
+    .line 12
+    iput-object p1, p0, Lk47;->i:Ljava/util/Iterator;
+
+    .line 13
+    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/Class;)Ljava/lang/Object;
-    .locals 1
+.method public final hasNext()Z
+    .locals 0
 
     .line 1
-    invoke-static {p1}, Loq2;->o(Ljava/lang/Class;)Ljava/lang/String;
+    iget-object p0, p0, Lk47;->i:Ljava/util/Iterator;
 
     .line 2
     .line 3
-    .line 4
-    move-result-object v0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
 
+    .line 4
     .line 5
-    if-nez v0, :cond_0
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final next()Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lk47;->j:Lbm1;
+
+    .line 2
+    .line 3
+    iget-object v0, v0, Lbm1;->c:Lp72;
+
+    .line 4
+    .line 5
+    iget-object p0, p0, Lk47;->i:Ljava/util/Iterator;
 
     .line 6
     .line 7
-    iget v0, p0, Lk47;->c:I
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     .line 8
     .line 9
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
     .line 10
-    .line 11
-    .line 12
-    move-result-object v0
-
-    .line 13
-    filled-new-array {p1, v0}, [Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p1
-
-    .line 17
-    iget-object p0, p0, Lk47;->b:Ljava/lang/reflect/Method;
-
-    .line 18
-    .line 19
-    const/4 v0, 0x0
-
-    .line 20
-    invoke-virtual {p0, v0, p1}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 21
-    .line 22
-    .line 23
     move-result-object p0
 
-    .line 24
+    .line 11
+    invoke-interface {v0, p0}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
     return-object p0
+.end method
 
-    .line 25
-    :cond_0
-    new-instance p0, Ljava/lang/AssertionError;
+.method public final remove()V
+    .locals 1
 
-    .line 26
-    .line 27
-    const-string p1, "UnsafeAllocator is used for non-instantiable type: "
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    .line 28
-    .line 29
-    invoke-virtual {p1, v0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    .line 2
+    .line 3
+    const-string v0, "Operation is not supported for read-only collection"
 
-    .line 30
-    .line 31
-    .line 32
-    move-result-object p1
+    .line 4
+    .line 5
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    .line 33
-    invoke-direct {p0, p1}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
-
-    .line 34
-    .line 35
-    .line 36
+    .line 6
+    .line 7
+    .line 8
     throw p0
 .end method

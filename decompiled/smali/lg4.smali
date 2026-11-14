@@ -1,158 +1,185 @@
-.class public final synthetic Llg4;
+.class public final Llg4;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lt62;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:Lhp1;
+.field public final a:Ljava/lang/String;
 
-.field public final synthetic k:Z
-
-.field public final synthetic l:Le62;
-
-.field public final synthetic m:Le62;
-
-.field public final synthetic n:Ldp1;
-
-.field public final synthetic o:Z
-
-.field public final synthetic p:Z
-
-.field public final synthetic q:I
-
-.field public final synthetic r:S
+.field public final b:Ljava/lang/String;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lhp1;ZLe62;Le62;Ldp1;ZZII)V
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Llg4;->j:Lhp1;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 5
     .line 6
-    iput-boolean p2, p0, Llg4;->k:Z
-
     .line 7
+    iput-object p1, p0, Llg4;->a:Ljava/lang/String;
+
     .line 8
-    iput-object p3, p0, Llg4;->l:Le62;
-
     .line 9
+    iput-object p2, p0, Llg4;->b:Ljava/lang/String;
+
     .line 10
-    iput-object p4, p0, Llg4;->m:Le62;
-
     .line 11
-    .line 12
-    iput-object p5, p0, Llg4;->n:Ldp1;
-
-    .line 13
-    .line 14
-    iput-boolean p6, p0, Llg4;->o:Z
-
-    .line 15
-    .line 16
-    iput-boolean p7, p0, Llg4;->p:Z
-
-    .line 17
-    .line 18
-    iput p8, p0, Llg4;->q:I
-
-    .line 19
-    .line 20
-    iput-short p9, p0, Llg4;->r:S
-
-    .line 21
-    .line 22
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 10
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
     .line 1
-    move-object v7, p1
+    if-eq p0, p1, :cond_1
 
     .line 2
-    check-cast v7, Lz11;
-
     .line 3
+    instance-of v0, p1, Llg4;
+
     .line 4
-    check-cast p2, Ljava/lang/Integer;
-
     .line 5
-    .line 6
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-eqz v0, :cond_0
 
+    .line 6
     .line 7
+    check-cast p1, Llg4;
+
     .line 8
     .line 9
-    iget p1, p0, Llg4;->q:I
+    iget-object v0, p0, Llg4;->a:Ljava/lang/String;
 
     .line 10
     .line 11
-    or-int/lit8 p1, p1, 0x1
+    iget-object v1, p1, Llg4;->a:Ljava/lang/String;
 
     .line 12
     .line 13
-    invoke-static {p1}, Lqu5;->f0(I)I
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 14
     .line 15
     .line 16
-    move-result v8
+    move-result v0
 
     .line 17
-    iget-object v0, p0, Llg4;->j:Lhp1;
+    if-eqz v0, :cond_0
 
     .line 18
     .line 19
-    iget-boolean v1, p0, Llg4;->k:Z
+    iget-object p0, p0, Llg4;->b:Ljava/lang/String;
 
     .line 20
     .line 21
-    iget-object v2, p0, Llg4;->l:Le62;
+    iget-object p1, p1, Llg4;->b:Ljava/lang/String;
 
     .line 22
     .line 23
-    iget-object v3, p0, Llg4;->m:Le62;
+    invoke-static {p0, p1}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 24
     .line 25
-    iget-object v4, p0, Llg4;->n:Ldp1;
-
     .line 26
+    move-result p0
+
     .line 27
-    iget-boolean v5, p0, Llg4;->o:Z
+    if-nez p0, :cond_1
 
     .line 28
     .line 29
-    iget-boolean v6, p0, Llg4;->p:Z
+    :cond_0
+    const/4 p0, 0x0
 
     .line 30
+    return p0
+
     .line 31
-    iget-short v9, p0, Llg4;->r:S
+    :cond_1
+    const/4 p0, 0x1
 
     .line 32
-    .line 33
-    invoke-static/range {v0 .. v9}, Lqu5;->f(Lhp1;ZLe62;Le62;Ldp1;ZZLz11;II)V
+    return p0
+.end method
 
-    .line 34
-    .line 35
-    .line 36
-    sget-object p0, La47;->a:La47;
+.method public final hashCode()I
+    .locals 1
 
-    .line 37
-    .line 38
+    .line 1
+    iget-object v0, p0, Llg4;->a:Ljava/lang/String;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    mul-int/lit8 v0, v0, 0x1f
+
+    .line 8
+    .line 9
+    iget-object p0, p0, Llg4;->b:Ljava/lang/String;
+
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    add-int/2addr p0, v0
+
+    .line 16
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    .line 1
+    const-string v0, ", description="
+
+    .line 2
+    .line 3
+    const-string v1, ")"
+
+    .line 4
+    .line 5
+    const-string v2, "NotificationTemplateToken(value="
+
+    .line 6
+    .line 7
+    iget-object v3, p0, Llg4;->a:Ljava/lang/String;
+
+    .line 8
+    .line 9
+    iget-object p0, p0, Llg4;->b:Ljava/lang/String;
+
+    .line 10
+    .line 11
+    invoke-static {v2, v3, v0, p0, v1}, Lky1;->o(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
     return-object p0
 .end method

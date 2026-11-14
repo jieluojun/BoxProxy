@@ -1,193 +1,162 @@
-.class public final Lk92;
-.super La07;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lk92;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final synthetic a:B
+# static fields
+.field public static final enum i:Lk92;
+
+.field public static final enum j:Lk92;
+
+.field public static final enum k:Lk92;
+
+.field public static final enum l:Lk92;
+
+.field public static final synthetic m:[Lk92;
 
 
 # direct methods
-.method public synthetic constructor <init>(B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
     .line 1
-    iput-byte p1, p0, Lk92;->a:B
+    new-instance v0, Lk92;
 
     .line 2
     .line 3
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const-string v1, "Idle"
 
     .line 4
     .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final b(Lrx2;)Ljava/lang/Object;
-    .locals 2
-
-    .line 1
-    iget-byte p0, p0, Lk92;->a:B
-
-    .line 2
-    .line 3
-    const/16 v0, 0x9
-
-    .line 4
-    .line 5
-    const/4 v1, 0x0
+    const/4 v2, 0x0
 
     .line 6
-    packed-switch p0, :pswitch_data_0
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
     .line 9
-    invoke-virtual {p1}, Lrx2;->R()V
+    sput-object v0, Lk92;->i:Lk92;
 
     .line 10
     .line 11
-    .line 12
-    return-object v1
+    new-instance v1, Lk92;
 
+    .line 12
     .line 13
-    :pswitch_0
-    invoke-virtual {p1}, Lrx2;->L()I
+    const-string v2, "Loading"
 
     .line 14
     .line 15
+    const/4 v3, 0x1
+
     .line 16
-    move-result p0
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
-    if-ne p0, v0, :cond_0
-
     .line 18
     .line 19
-    invoke-virtual {p1}, Lrx2;->H()V
+    sput-object v1, Lk92;->j:Lk92;
 
     .line 20
     .line 21
-    .line 22
-    goto :goto_0
+    new-instance v2, Lk92;
 
+    .line 22
     .line 23
-    :cond_0
-    invoke-virtual {p1}, Lrx2;->x()D
+    const-string v3, "Ready"
 
     .line 24
     .line 25
+    const/4 v4, 0x2
+
     .line 26
-    move-result-wide p0
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 27
-    double-to-float p0, p0
-
     .line 28
-    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
     .line 29
+    sput-object v2, Lk92;->k:Lk92;
+
     .line 30
     .line 31
-    move-result-object v1
+    new-instance v3, Lk92;
 
     .line 32
-    :goto_0
-    return-object v1
-
     .line 33
-    :pswitch_1
-    invoke-virtual {p1}, Lrx2;->L()I
+    const-string v4, "Failed"
 
     .line 34
     .line 35
+    const/4 v5, 0x3
+
     .line 36
-    move-result p0
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 37
-    if-ne p0, v0, :cond_1
-
     .line 38
     .line 39
-    invoke-virtual {p1}, Lrx2;->H()V
+    sput-object v3, Lk92;->l:Lk92;
 
     .line 40
     .line 41
+    filled-new-array {v0, v1, v2, v3}, [Lk92;
+
     .line 42
-    goto :goto_1
-
     .line 43
-    :cond_1
-    invoke-virtual {p1}, Lrx2;->x()D
-
     .line 44
+    move-result-object v0
+
     .line 45
+    sput-object v0, Lk92;->m:[Lk92;
+
     .line 46
-    move-result-wide p0
-
     .line 47
-    invoke-static {p0, p1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    .line 48
-    .line 49
-    .line 50
-    move-result-object v1
-
-    .line 51
-    :goto_1
-    return-object v1
-
-    .line 52
-    nop
-
-    .line 53
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method
 
-.method public toString()Ljava/lang/String;
+.method public static valueOf(Ljava/lang/String;)Lk92;
     .locals 1
 
     .line 1
-    iget-byte v0, p0, Lk92;->a:B
+    const-class v0, Lk92;
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_0
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     .line 4
     .line 5
     .line 6
-    invoke-super {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    .line 7
-    .line 8
-    .line 9
     move-result-object p0
 
-    .line 10
+    .line 7
+    check-cast p0, Lk92;
+
+    .line 8
+    .line 9
     return-object p0
+.end method
 
-    .line 11
-    :pswitch_0
-    const-string p0, "AnonymousOrNonStaticLocalClassAdapter"
+.method public static values()[Lk92;
+    .locals 1
 
-    .line 12
-    .line 13
-    return-object p0
+    .line 1
+    sget-object v0, Lk92;->m:[Lk92;
 
-    .line 14
-    nop
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    .line 15
-    :pswitch_data_0
-    .packed-switch 0x2
-        :pswitch_0
-    .end packed-switch
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lk92;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

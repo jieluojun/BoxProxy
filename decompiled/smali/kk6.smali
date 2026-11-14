@@ -1,14 +1,34 @@
 .class public final Lkk6;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public j:Lna5;
+.field public i:Ljh6;
 
-.field public synthetic k:Ljava/lang/Object;
+.field public synthetic j:Ljava/lang/Object;
+
+.field public final synthetic k:Llk6;
 
 .field public l:I
+
+
+# direct methods
+.method public constructor <init>(Llk6;Lq91;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lkk6;->k:Llk6;
+
+    .line 2
+    .line 3
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
 
 
 # virtual methods
@@ -16,7 +36,7 @@
     .locals 1
 
     .line 1
-    iput-object p1, p0, Lkk6;->k:Ljava/lang/Object;
+    iput-object p1, p0, Lkk6;->j:Ljava/lang/Object;
 
     .line 2
     .line 3
@@ -35,16 +55,17 @@
 
     .line 9
     .line 10
-    const/4 p1, 0x0
+    iget-object p1, p0, Lkk6;->k:Llk6;
 
     .line 11
-    invoke-static {p1, p1, p0}, Lmk6;->i(Lrh6;Lpq4;Lz81;)Ljava/lang/Object;
-
     .line 12
+    invoke-virtual {p1, p0}, Llk6;->b(Lq91;)Ljava/lang/Object;
+
     .line 13
     .line 14
+    .line 15
     move-result-object p0
 
-    .line 15
+    .line 16
     return-object p0
 .end method

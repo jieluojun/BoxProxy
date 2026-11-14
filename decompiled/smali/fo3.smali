@@ -1,31 +1,108 @@
-.class public final Lfo3;
-.super Laz5;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public interface abstract Lfo3;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final j:Ljava/util/ArrayList;
+# virtual methods
+.method public abstract a()Lsi1;
+.end method
 
-.field public final k:Ljava/lang/String;
-
-
-# direct methods
-.method public constructor <init>(Ljava/lang/String;Lfo3;Ljava/util/ArrayList;Ljava/lang/String;)V
+.method public d()I
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;Ljava/lang/Throwable;)V
+    invoke-interface {p0}, Lfo3;->l()Z
 
     .line 2
     .line 3
     .line 4
-    iput-object p3, p0, Lfo3;->j:Ljava/util/ArrayList;
+    move-result p0
 
     .line 5
-    .line 6
-    iput-object p4, p0, Lfo3;->k:Ljava/lang/String;
+    if-eqz p0, :cond_0
 
+    .line 6
+    .line 7
+    const/4 p0, 0x1
+
+    .line 8
+    return p0
+
+    .line 9
+    :cond_0
+    const/4 p0, -0x1
+
+    .line 10
+    return p0
+.end method
+
+.method public abstract e()Lc52;
+.end method
+
+.method public g(F)F
+    .locals 0
+
+    .line 1
+    invoke-interface {p0}, Lfo3;->a()Lsi1;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-interface {p0, p1}, Lsi1;->J(F)F
+
+    .line 6
     .line 7
     .line 8
-    return-void
+    move-result p0
+
+    .line 9
+    return p0
+.end method
+
+.method public abstract getLayoutDirection()Le53;
+.end method
+
+.method public abstract h()J
+.end method
+
+.method public abstract j()Loh0;
+.end method
+
+.method public abstract k()Laz3;
+.end method
+
+.method public l()Z
+    .locals 1
+
+    .line 1
+    invoke-interface {p0}, Lfo3;->getLayoutDirection()Le53;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    sget-object v0, Le53;->i:Le53;
+
+    .line 6
+    .line 7
+    if-ne p0, v0, :cond_0
+
+    .line 8
+    .line 9
+    const/4 p0, 0x1
+
+    .line 10
+    return p0
+
+    .line 11
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 12
+    return p0
 .end method

@@ -1,159 +1,80 @@
-.class public final synthetic Ln34;
+.class public abstract Ln34;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Le62;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final synthetic j:B
+# static fields
+.field public static final a:J
 
-.field public final synthetic k:Ly44;
+.field public static final b:F
 
-.field public final synthetic l:I
+.field public static final c:F
 
-.field public final synthetic m:Lp24;
+.field public static final d:F
+
+.field public static final e:F
+
+.field public static final f:F
 
 
 # direct methods
-.method public synthetic constructor <init>(Ly44;ILp24;B)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    iput-byte p4, p0, Ln34;->j:B
+    const/16 v0, 0xc
 
     .line 2
     .line 3
-    iput-object p1, p0, Ln34;->k:Ly44;
+    invoke-static {v0}, Lhy6;->e(I)J
 
     .line 4
     .line 5
-    iput p2, p0, Ln34;->l:I
-
     .line 6
+    move-result-wide v0
+
     .line 7
-    iput-object p3, p0, Ln34;->m:Lp24;
+    sput-wide v0, Ln34;->a:J
 
     .line 8
     .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    const/high16 v0, 0x41000000    # 8.0f
 
     .line 10
     .line 11
-    .line 12
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 4
-
-    .line 1
-    iget-byte v0, p0, Ln34;->j:B
-
-    .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
-
-    .line 4
-    .line 5
-    iget-object v2, p0, Ln34;->m:Lp24;
-
-    .line 6
-    .line 7
-    iget v3, p0, Ln34;->l:I
-
-    .line 8
-    .line 9
-    iget-object p0, p0, Ln34;->k:Ly44;
-
-    .line 10
-    .line 11
-    packed-switch v0, :pswitch_data_0
+    sput v0, Ln34;->b:F
 
     .line 12
     .line 13
+    sput v0, Ln34;->c:F
+
     .line 14
-    add-int/lit8 v0, v3, 0x1
-
     .line 15
-    .line 16
-    invoke-virtual {p0, v3, v0}, Ly44;->c(II)V
+    const/high16 v0, 0x3f000000    # 0.5f
 
+    .line 16
     .line 17
+    sput v0, Ln34;->d:F
+
     .line 18
     .line 19
-    invoke-static {v2}, Lp24;->f(Lp24;)V
+    const v0, 0x3f19999a    # 0.6f
 
     .line 20
     .line 21
     .line 22
-    return-object v1
+    sput v0, Ln34;->e:F
 
     .line 23
-    :pswitch_0
-    add-int/lit8 v0, v3, -0x1
-
     .line 24
-    .line 25
-    invoke-virtual {p0, v3, v0}, Ly44;->c(II)V
+    const v0, 0x3ecccccd    # 0.4f
 
+    .line 25
     .line 26
     .line 27
+    sput v0, Ln34;->f:F
+
     .line 28
-    invoke-static {v2}, Lp24;->f(Lp24;)V
-
     .line 29
-    .line 30
-    .line 31
-    return-object v1
-
-    .line 32
-    :pswitch_1
-    add-int/lit8 v0, v3, 0x1
-
-    .line 33
-    .line 34
-    invoke-virtual {p0, v3, v0}, Ly44;->c(II)V
-
-    .line 35
-    .line 36
-    .line 37
-    invoke-static {v2}, Lp24;->f(Lp24;)V
-
-    .line 38
-    .line 39
-    .line 40
-    return-object v1
-
-    .line 41
-    :pswitch_2
-    add-int/lit8 v0, v3, -0x1
-
-    .line 42
-    .line 43
-    invoke-virtual {p0, v3, v0}, Ly44;->c(II)V
-
-    .line 44
-    .line 45
-    .line 46
-    invoke-static {v2}, Lp24;->f(Lp24;)V
-
-    .line 47
-    .line 48
-    .line 49
-    return-object v1
-
-    .line 50
-    nop
-
-    .line 51
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    return-void
 .end method

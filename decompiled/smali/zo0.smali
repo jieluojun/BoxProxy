@@ -1,22 +1,22 @@
 .class public final Lzo0;
-.super Ldq3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lbx3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # annotations
 .annotation system Ldalvik/annotation/Signature;
     value = {
-        "Ldq3;"
+        "Lbx3;"
     }
 .end annotation
 
 
 # instance fields
-.field public final j:Lzl0;
+.field public final i:Lno0;
 
 
 # direct methods
-.method public constructor <init>(Lzl0;)V
+.method public constructor <init>(Lno0;)V
     .locals 0
 
     .line 1
@@ -25,7 +25,7 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lzo0;->j:Lzl0;
+    iput-object p1, p0, Lzo0;->i:Lno0;
 
     .line 5
     .line 6
@@ -34,7 +34,7 @@
 
 
 # virtual methods
-.method public final a()Lvp3;
+.method public final a()Lrw3;
     .locals 1
 
     .line 1
@@ -42,23 +42,23 @@
 
     .line 2
     .line 3
-    invoke-direct {v0}, Lvp3;-><init>()V
+    invoke-direct {v0}, Lrw3;-><init>()V
 
     .line 4
     .line 5
     .line 6
-    iget-object p0, p0, Lzo0;->j:Lzl0;
+    iget-object p0, p0, Lzo0;->i:Lno0;
 
     .line 7
     .line 8
-    iput-object p0, v0, Lyo0;->x:Lzl0;
+    iput-object p0, v0, Lyo0;->w:Lno0;
 
     .line 9
     .line 10
     return-object v0
 .end method
 
-.method public final b(Lvp3;)V
+.method public final b(Lrw3;)V
     .locals 0
 
     .line 1
@@ -66,15 +66,15 @@
 
     .line 2
     .line 3
-    iget-object p0, p0, Lzo0;->j:Lzl0;
+    iget-object p0, p0, Lzo0;->i:Lno0;
 
     .line 4
     .line 5
-    iput-object p0, p1, Lyo0;->x:Lzl0;
+    iput-object p0, p1, Lyo0;->w:Lno0;
 
     .line 6
     .line 7
-    invoke-static {p1}, Lfh3;->H(Lux5;)V
+    invoke-static {p1}, Lwa3;->I(Lr36;)V
 
     .line 8
     .line 9
@@ -86,54 +86,45 @@
     .locals 1
 
     .line 1
-    if-ne p0, p1, :cond_0
+    if-eq p0, p1, :cond_0
 
     .line 2
     .line 3
-    goto :goto_0
-
-    .line 4
-    :cond_0
     instance-of v0, p1, Lzo0;
 
+    .line 4
     .line 5
+    if-eqz v0, :cond_1
+
     .line 6
-    if-nez v0, :cond_1
-
     .line 7
-    .line 8
-    goto :goto_1
-
-    .line 9
-    :cond_1
     check-cast p1, Lzo0;
+
+    .line 8
+    .line 9
+    iget-object p1, p1, Lzo0;->i:Lno0;
 
     .line 10
     .line 11
-    iget-object p1, p1, Lzo0;->j:Lzl0;
+    iget-object p0, p0, Lzo0;->i:Lno0;
 
     .line 12
     .line 13
-    iget-object p0, p0, Lzo0;->j:Lzl0;
+    if-ne p0, p1, :cond_1
 
     .line 14
     .line 15
-    if-ne p0, p1, :cond_2
-
-    .line 16
-    .line 17
-    :goto_0
+    :cond_0
     const/4 p0, 0x1
 
-    .line 18
+    .line 16
     return p0
 
-    .line 19
-    :cond_2
-    :goto_1
+    .line 17
+    :cond_1
     const/4 p0, 0x0
 
-    .line 20
+    .line 18
     return p0
 .end method
 
@@ -141,7 +132,7 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lzo0;->j:Lzl0;
+    iget-object p0, p0, Lzo0;->i:Lno0;
 
     .line 2
     .line 3

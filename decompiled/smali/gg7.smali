@@ -1,354 +1,232 @@
 .class public final Lgg7;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lzi;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:F
-
-.field public final b:F
-
-.field public final c:F
+.field public final synthetic e:B
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Double;Ljava/lang/Double;)V
-    .locals 2
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;B)V
+    .locals 0
 
     .line 1
-    const-wide/high16 v0, 0x3ff0000000000000L    # 1.0
+    iput-byte p3, p0, Lgg7;->e:B
 
     .line 2
     .line 3
-    invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
+    const/4 p3, 0x2
 
     .line 4
+    invoke-direct {p0, p1, p2, p3}, Lzi;-><init>(Ljava/lang/String;Ljava/lang/String;B)V
+
     .line 5
     .line 6
-    move-result-object v0
-
     .line 7
-    invoke-virtual {p1}, Ljava/lang/Number;->floatValue()F
-
-    .line 8
-    .line 9
-    .line 10
-    move-result p1
-
-    .line 11
-    invoke-virtual {p2}, Ljava/lang/Number;->floatValue()F
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p2
-
-    .line 15
-    invoke-virtual {v0}, Ljava/lang/Number;->floatValue()F
-
-    .line 16
-    .line 17
-    .line 18
-    move-result v0
-
-    .line 19
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 20
-    .line 21
-    .line 22
-    iput p1, p0, Lgg7;->a:F
-
-    .line 23
-    .line 24
-    iput p2, p0, Lgg7;->b:F
-
-    .line 25
-    .line 26
-    iput v0, p0, Lgg7;->c:F
-
-    .line 27
-    .line 28
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()F
-    .locals 2
+.method public final a()Z
+    .locals 6
 
     .line 1
-    const/high16 v0, 0x3f800000    # 1.0f
+    iget-byte v0, p0, Lgg7;->e:B
 
     .line 2
     .line 3
-    iget v1, p0, Lgg7;->a:F
+    const/4 v1, 0x0
 
     .line 4
+    packed-switch v0, :pswitch_data_0
+
     .line 5
-    sub-float/2addr v0, v1
-
     .line 6
-    iget v1, p0, Lgg7;->b:F
-
     .line 7
-    .line 8
-    sub-float/2addr v0, v1
+    const-string v0, "MULTI_PROFILE"
 
+    .line 8
     .line 9
-    iget p0, p0, Lgg7;->c:F
+    invoke-static {v0}, Lhg7;->a(Ljava/lang/String;)Z
 
     .line 10
     .line 11
-    mul-float/2addr v0, p0
-
     .line 12
-    div-float/2addr v0, v1
+    move-result v0
 
     .line 13
-    return v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of v1, p1, Lgg7;
-
-    .line 6
-    .line 7
-    const/4 v2, 0x0
-
-    .line 8
-    if-nez v1, :cond_1
-
-    .line 9
-    .line 10
-    return v2
-
-    .line 11
-    :cond_1
-    check-cast p1, Lgg7;
-
-    .line 12
-    .line 13
-    iget v1, p0, Lgg7;->a:F
+    if-eqz v0, :cond_0
 
     .line 14
     .line 15
-    iget v3, p1, Lgg7;->a:F
+    invoke-super {p0}, Lzi;->a()Z
 
     .line 16
     .line 17
-    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
-
     .line 18
-    .line 19
-    .line 20
     move-result v1
 
-    .line 21
-    if-eqz v1, :cond_2
+    .line 19
+    :cond_0
+    return v1
 
+    .line 20
+    :pswitch_0
+    invoke-super {p0}, Lzi;->a()Z
+
+    .line 21
     .line 22
     .line 23
-    return v2
+    move-result p0
 
     .line 24
-    :cond_2
-    iget v1, p0, Lgg7;->b:F
+    if-eqz p0, :cond_2
 
     .line 25
     .line 26
-    iget v3, p1, Lgg7;->b:F
+    const-string p0, "MULTI_PROCESS"
 
     .line 27
     .line 28
-    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
+    invoke-static {p0}, Lhg7;->a(Ljava/lang/String;)Z
 
     .line 29
     .line 30
     .line 31
-    move-result v1
+    move-result p0
 
     .line 32
-    if-eqz v1, :cond_3
+    if-eqz p0, :cond_2
 
     .line 33
     .line 34
-    return v2
+    sget-object p0, Lrf7;->a:Ljava/util/WeakHashMap;
 
     .line 35
-    :cond_3
-    iget p0, p0, Lgg7;->c:F
-
     .line 36
+    sget-object p0, Lhg7;->b:Lzi;
+
     .line 37
-    iget p1, p1, Lgg7;->c:F
-
     .line 38
-    .line 39
-    invoke-static {p0, p1}, Ljava/lang/Float;->compare(FF)I
+    invoke-virtual {p0}, Lzi;->a()Z
 
+    .line 39
     .line 40
     .line 41
-    .line 42
     move-result p0
+
+    .line 42
+    if-eqz p0, :cond_1
 
     .line 43
-    if-eqz p0, :cond_4
-
     .line 44
+    sget-object p0, Lig7;->a:Lkg7;
+
     .line 45
-    return v2
-
     .line 46
-    :cond_4
-    return v0
-.end method
+    invoke-interface {p0}, Lkg7;->getStatics()Lorg/chromium/support_lib_boundary/StaticsBoundaryInterface;
 
-.method public final hashCode()I
-    .locals 3
-
-    .line 1
-    iget v0, p0, Lgg7;->a:F
-
-    .line 2
-    .line 3
-    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    const/16 v1, 0x1f
-
-    .line 8
-    .line 9
-    mul-int/2addr v0, v1
-
-    .line 10
-    iget v2, p0, Lgg7;->b:F
-
-    .line 11
-    .line 12
-    invoke-static {v2, v0, v1}, Loc1;->d(FII)I
-
-    .line 13
-    .line 14
-    .line 15
-    move-result v0
-
-    .line 16
-    iget p0, p0, Lgg7;->c:F
-
-    .line 17
-    .line 18
-    invoke-static {p0}, Ljava/lang/Float;->hashCode(F)I
-
-    .line 19
-    .line 20
-    .line 21
-    move-result p0
-
-    .line 22
-    add-int/2addr p0, v0
-
-    .line 23
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v1, "xyY(x="
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    iget v1, p0, Lgg7;->a:F
-
-    .line 9
-    .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 11
-    .line 12
-    .line 13
-    const-string v1, ", y="
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    iget v1, p0, Lgg7;->b:F
-
-    .line 19
-    .line 20
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 21
-    .line 22
-    .line 23
-    const-string v1, ", Y="
-
-    .line 24
-    .line 25
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 26
-    .line 27
-    .line 28
-    iget p0, p0, Lgg7;->c:F
-
-    .line 29
-    .line 30
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
-
-    .line 31
-    .line 32
-    .line 33
-    const/16 p0, 0x29
-
-    .line 34
-    .line 35
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 36
-    .line 37
-    .line 38
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 39
-    .line 40
-    .line 41
+    .line 47
+    .line 48
+    .line 49
     move-result-object p0
 
-    .line 42
-    return-object p0
+    .line 50
+    invoke-interface {p0}, Lorg/chromium/support_lib_boundary/StaticsBoundaryInterface;->isMultiProcessEnabled()Z
+
+    .line 51
+    .line 52
+    .line 53
+    move-result v1
+
+    .line 54
+    goto :goto_0
+
+    .line 55
+    :cond_1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    .line 56
+    .line 57
+    const-string v0, "This method is not supported by the current version of the framework and the current WebView APK"
+
+    .line 58
+    .line 59
+    invoke-direct {p0, v0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    .line 60
+    .line 61
+    .line 62
+    throw p0
+
+    .line 63
+    :cond_2
+    :goto_0
+    return v1
+
+    .line 64
+    :pswitch_1
+    invoke-super {p0}, Lzi;->a()Z
+
+    .line 65
+    .line 66
+    .line 67
+    move-result p0
+
+    .line 68
+    if-eqz p0, :cond_3
+
+    .line 69
+    .line 70
+    sget-object p0, Lrf7;->a:Ljava/util/WeakHashMap;
+
+    .line 71
+    .line 72
+    invoke-static {}, Landroid/webkit/WebView;->getCurrentWebViewPackage()Landroid/content/pm/PackageInfo;
+
+    .line 73
+    .line 74
+    .line 75
+    move-result-object p0
+
+    .line 76
+    if-eqz p0, :cond_3
+
+    .line 77
+    .line 78
+    invoke-virtual {p0}, Landroid/content/pm/PackageInfo;->getLongVersionCode()J
+
+    .line 79
+    .line 80
+    .line 81
+    move-result-wide v2
+
+    .line 82
+    const-wide/32 v4, 0x25f34560
+
+    .line 83
+    .line 84
+    .line 85
+    cmp-long p0, v2, v4
+
+    .line 86
+    .line 87
+    if-ltz p0, :cond_3
+
+    .line 88
+    .line 89
+    const/4 v1, 0x1
+
+    .line 90
+    :cond_3
+    return v1
+
+    .line 91
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

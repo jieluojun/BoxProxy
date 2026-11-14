@@ -1,16 +1,10 @@
-.class public abstract Lfb0;
+.class public abstract synthetic Lfb0;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
-.field public static final a:Ltc1;
-
-.field public static final b:Ltc1;
-
-.field public static final c:Ltc1;
-
-.field public static final d:Ltc1;
+.field public static final synthetic a:[I
 
 
 # direct methods
@@ -18,61 +12,121 @@
     .locals 5
 
     .line 1
-    sget-object v0, Ltq1;->a:Ltc1;
+    invoke-static {}, Lkf4;->values()[Lkf4;
 
     .line 2
     .line 3
-    sput-object v0, Lfb0;->a:Ltc1;
-
     .line 4
+    move-result-object v0
+
     .line 5
-    sget-object v0, Ltq1;->b:Ltc1;
+    array-length v0, v0
 
     .line 6
-    .line 7
-    sput-object v0, Lfb0;->b:Ltc1;
+    new-array v0, v0, [I
 
+    .line 7
     .line 8
+    const/4 v1, 0x0
+
     .line 9
-    sget-object v0, Ltq1;->c:Ltc1;
+    const/4 v2, 0x1
 
     .line 10
-    .line 11
-    sput-object v0, Lfb0;->c:Ltc1;
+    :try_start_0
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
+    .line 11
     .line 12
+    :catch_0
+    const/4 v3, 0x2
+
     .line 13
-    new-instance v0, Ltc1;
+    :try_start_1
+    aput v3, v0, v2
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
 
     .line 14
     .line 15
-    const v1, 0x3dcccccd    # 0.1f
+    :catch_1
+    const/4 v4, 0x3
 
     .line 16
+    :try_start_2
+    aput v4, v0, v3
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
     .line 17
     .line 18
-    const/high16 v2, 0x3f800000    # 1.0f
+    :catch_2
+    invoke-static {}, Ljf4;->values()[Ljf4;
 
     .line 19
     .line 20
-    const v3, 0x3d4ccccd    # 0.05f
-
     .line 21
+    move-result-object v0
+
     .line 22
+    array-length v0, v0
+
     .line 23
-    const v4, 0x3f333333    # 0.7f
+    new-array v0, v0, [I
 
     .line 24
     .line 25
-    .line 26
-    invoke-direct {v0, v3, v4, v1, v2}, Ltc1;-><init>(FFFF)V
+    :try_start_3
+    aput v2, v0, v3
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
 
+    .line 26
     .line 27
+    :catch_3
+    :try_start_4
+    aput v3, v0, v4
+    :try_end_4
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_4 .. :try_end_4} :catch_4
+
     .line 28
     .line 29
-    sput-object v0, Lfb0;->d:Ltc1;
+    :catch_4
+    const/4 v3, 0x4
 
     .line 30
+    :try_start_5
+    aput v4, v0, v3
+    :try_end_5
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
+
     .line 31
+    .line 32
+    :catch_5
+    :try_start_6
+    aput v3, v0, v1
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
+
+    .line 33
+    .line 34
+    :catch_6
+    const/4 v1, 0x5
+
+    .line 35
+    :try_start_7
+    aput v1, v0, v2
+    :try_end_7
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_7 .. :try_end_7} :catch_7
+
+    .line 36
+    .line 37
+    :catch_7
+    sput-object v0, Lfb0;->a:[I
+
+    .line 38
+    .line 39
     return-void
 .end method

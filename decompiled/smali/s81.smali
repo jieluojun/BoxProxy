@@ -1,238 +1,94 @@
 .class public final Ls81;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lqs4;
+.implements Lt81;
 
 
 # instance fields
-.field public final a:Le62;
+.field public final a:Landroid/view/ContentInfo;
 
 
 # direct methods
-.method public synthetic constructor <init>(Le62;)V
+.method public constructor <init>(Landroid/view/ContentInfo;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Ls81;->a:Le62;
-
-    .line 2
-    .line 3
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public static d(J)F
-    .locals 2
-
-    .line 1
-    const-wide v0, 0xffffffffL
-
     .line 2
     .line 3
     .line 4
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 5
     .line 6
-    and-long/2addr p0, v0
-
     .line 7
-    long-to-int p0, p0
+    invoke-static {p1}, Lwa;->g(Ljava/lang/Object;)Landroid/view/ContentInfo;
 
     .line 8
-    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
-
     .line 9
     .line 10
+    move-result-object p1
+
     .line 11
-    move-result p0
+    iput-object p1, p0, Ls81;->a:Landroid/view/ContentInfo;
 
     .line 12
-    return p0
+    .line 13
+    return-void
 .end method
 
 
 # virtual methods
-.method public b(JJLfs2;Lt03;)J
-    .locals 7
-
-    .line 1
-    iget-object p0, p0, Ls81;->a:Le62;
-
-    .line 2
-    .line 3
-    invoke-interface {p0}, Le62;->invoke()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Lbs2;
-
-    .line 8
-    .line 9
-    iget-wide v0, p0, Lbs2;->a:J
-
-    .line 10
-    .line 11
-    iget p0, p5, Lfs2;->a:I
-
-    .line 12
-    .line 13
-    const/16 v2, 0x20
-
-    .line 14
-    .line 15
-    shr-long v3, v0, v2
-
-    .line 16
-    .line 17
-    long-to-int v3, v3
-
-    .line 18
-    add-int/2addr p0, v3
-
-    .line 19
-    shr-long v3, p3, v2
-
-    .line 20
-    .line 21
-    long-to-int v3, v3
-
-    .line 22
-    shr-long v4, p1, v2
-
-    .line 23
-    .line 24
-    long-to-int v4, v4
-
-    .line 25
-    sget-object v5, Lt03;->j:Lt03;
-
-    .line 26
-    .line 27
-    const/4 v6, 0x1
-
-    .line 28
-    if-ne p6, v5, :cond_0
-
-    .line 29
-    .line 30
-    move p6, v6
-
-    .line 31
-    goto :goto_0
-
-    .line 32
-    :cond_0
-    const/4 p6, 0x0
-
-    .line 33
-    :goto_0
-    invoke-static {p0, v3, v4, p6}, Lhq;->x(IIIZ)I
-
-    .line 34
-    .line 35
-    .line 36
-    move-result p0
-
-    .line 37
-    iget p5, p5, Lfs2;->b:I
-
-    .line 38
-    .line 39
-    const-wide v3, 0xffffffffL
-
-    .line 40
-    .line 41
-    .line 42
-    .line 43
-    .line 44
-    and-long/2addr v0, v3
-
-    .line 45
-    long-to-int p6, v0
-
-    .line 46
-    add-int/2addr p5, p6
-
-    .line 47
-    and-long/2addr p3, v3
-
-    .line 48
-    long-to-int p3, p3
-
-    .line 49
-    and-long/2addr p1, v3
-
-    .line 50
-    long-to-int p1, p1
-
-    .line 51
-    invoke-static {p5, p3, p1, v6}, Lhq;->x(IIIZ)I
-
-    .line 52
-    .line 53
-    .line 54
-    move-result p1
-
-    .line 55
-    int-to-long p2, p0
-
-    .line 56
-    shl-long/2addr p2, v2
-
-    .line 57
-    int-to-long p0, p1
-
-    .line 58
-    and-long/2addr p0, v3
-
-    .line 59
-    or-long/2addr p0, p2
-
-    .line 60
-    return-wide p0
-.end method
-
-.method public c(J)Ljava/lang/Object;
+.method public final b()I
     .locals 0
 
     .line 1
-    invoke-static {p1, p2}, Ls81;->d(J)F
+    iget-object p0, p0, Ls81;->a:Landroid/view/ContentInfo;
 
     .line 2
     .line 3
+    invoke-static {p0}, Lwa;->z(Landroid/view/ContentInfo;)I
+
     .line 4
+    .line 5
+    .line 6
     move-result p0
 
-    .line 5
-    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    .line 6
     .line 7
-    .line 8
+    return p0
+.end method
+
+.method public final c()Landroid/content/ClipData;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ls81;->a:Landroid/view/ContentInfo;
+
+    .line 2
+    .line 3
+    invoke-static {p0}, Lwa;->d(Landroid/view/ContentInfo;)Landroid/content/ClipData;
+
+    .line 4
+    .line 5
+    .line 6
     move-result-object p0
 
-    .line 9
+    .line 7
     return-object p0
 .end method
 
-.method public e(Ljava/lang/Object;)J
+.method public final d()I
     .locals 0
 
     .line 1
-    check-cast p1, Ljava/lang/Number;
+    iget-object p0, p0, Ls81;->a:Landroid/view/ContentInfo;
 
     .line 2
     .line 3
-    invoke-virtual {p1}, Ljava/lang/Number;->floatValue()F
+    invoke-static {p0}, Lwa;->c(Landroid/view/ContentInfo;)I
 
     .line 4
     .line 5
@@ -240,504 +96,62 @@
     move-result p0
 
     .line 7
-    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
-
-    .line 8
-    .line 9
-    .line 10
-    move-result p0
-
-    .line 11
-    int-to-long p0, p0
-
-    .line 12
-    return-wide p0
-.end method
-
-.method public f(J)Z
-    .locals 0
-
-    .line 1
-    invoke-static {p1, p2}, Ls81;->d(J)F
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    invoke-static {p0}, Ljava/lang/Math;->abs(F)F
-
-    .line 6
-    .line 7
-    .line 8
-    move-result p0
-
-    .line 9
-    const/high16 p1, 0x3f000000    # 0.5f
-
-    .line 10
-    .line 11
-    cmpg-float p0, p0, p1
-
-    .line 12
-    .line 13
-    if-gez p0, :cond_0
-
-    .line 14
-    .line 15
-    const/4 p0, 0x1
-
-    .line 16
-    return p0
-
-    .line 17
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 18
     return p0
 .end method
 
-.method public g(JJ)J
+.method public final e()Landroid/view/ContentInfo;
     .locals 0
 
     .line 1
-    invoke-static {p1, p2}, Ls81;->d(J)F
+    iget-object p0, p0, Ls81;->a:Landroid/view/ContentInfo;
 
     .line 2
     .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    invoke-static {p3, p4}, Ls81;->d(J)F
-
-    .line 6
-    .line 7
-    .line 8
-    move-result p1
-
-    .line 9
-    sub-float/2addr p0, p1
-
-    .line 10
-    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
-
-    .line 11
-    .line 12
-    .line 13
-    move-result p0
-
-    .line 14
-    int-to-long p0, p0
-
-    .line 15
-    return-wide p0
-.end method
-
-.method public h()Lsh;
-    .locals 1
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    const/16 v0, 0x1e
-
-    .line 3
-    .line 4
-    invoke-static {p0, p0, v0}, Lg61;->c(FFI)Lsh;
-
-    .line 5
-    .line 6
-    .line 7
-    move-result-object p0
-
-    .line 8
     return-object p0
 .end method
 
-.method public i(J)J
-    .locals 0
+.method public final toString()Ljava/lang/String;
+    .locals 2
 
     .line 1
-    invoke-static {p1, p2}, Ls81;->d(J)F
+    new-instance v0, Ljava/lang/StringBuilder;
 
     .line 2
     .line 3
-    .line 4
-    move-result p0
+    const-string v1, "ContentInfoCompat{"
 
+    .line 4
     .line 5
-    invoke-static {p0}, Ljava/lang/Math;->signum(F)F
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
     .line 6
     .line 7
     .line 8
-    move-result p0
+    iget-object p0, p0, Ls81;->a:Landroid/view/ContentInfo;
 
     .line 9
-    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
-
     .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    int-to-long p0, p0
-
-    .line 14
-    return-wide p0
-.end method
-
-.method public j(JJ)J
-    .locals 0
-
-    .line 1
-    invoke-static {p1, p2}, Ls81;->d(J)F
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    invoke-static {p3, p4}, Ls81;->d(J)F
-
-    .line 6
-    .line 7
-    .line 8
-    move-result p1
-
-    .line 9
-    add-float/2addr p1, p0
-
-    .line 10
-    invoke-static {p1}, Ljava/lang/Float;->floatToRawIntBits(F)I
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 11
     .line 12
     .line 13
-    move-result p0
-
-    .line 14
-    int-to-long p0, p0
-
-    .line 15
-    return-wide p0
-.end method
-
-.method public k(J)F
-    .locals 0
-
-    .line 1
-    invoke-static {p1, p2}, Ls81;->d(J)F
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    invoke-static {p0}, Ljava/lang/Math;->abs(F)F
-
-    .line 6
-    .line 7
-    .line 8
-    move-result p0
-
-    .line 9
-    return p0
-.end method
-
-.method public l(JF)J
-    .locals 0
-
-    .line 1
-    invoke-static {p1, p2}, Ls81;->d(J)F
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    mul-float/2addr p0, p3
-
-    .line 6
-    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
-
-    .line 7
-    .line 8
-    .line 9
-    move-result p0
-
-    .line 10
-    int-to-long p0, p0
-
-    .line 11
-    return-wide p0
-.end method
-
-.method public m(J)J
-    .locals 4
-
-    .line 1
-    invoke-static {p1, p2}, Ls81;->d(J)F
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p1
-
-    .line 5
-    iget-object p0, p0, Ls81;->a:Le62;
-
-    .line 6
-    .line 7
-    invoke-interface {p0}, Le62;->invoke()Ljava/lang/Object;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object p0
-
-    .line 11
-    check-cast p0, Ljava/lang/Boolean;
-
-    .line 12
-    .line 13
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+    const-string p0, "}"
 
     .line 14
     .line 15
-    .line 16
-    move-result p0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 17
-    const-wide v0, 0xffffffffL
-
-    .line 18
-    .line 19
-    .line 20
-    .line 21
-    .line 22
-    const/16 p2, 0x20
-
-    .line 23
-    .line 24
-    const/4 v2, 0x0
-
-    .line 25
-    if-eqz p0, :cond_0
-
-    .line 26
-    .line 27
-    invoke-static {v2}, Ljava/lang/Float;->floatToRawIntBits(F)I
-
-    .line 28
-    .line 29
-    .line 30
-    move-result p0
-
-    .line 31
-    int-to-long v2, p0
-
-    .line 32
-    invoke-static {p1}, Ljava/lang/Float;->floatToRawIntBits(F)I
-
-    .line 33
-    .line 34
-    .line 35
-    move-result p0
-
-    .line 36
-    int-to-long p0, p0
-
-    .line 37
-    shl-long/2addr v2, p2
-
-    .line 38
-    and-long/2addr p0, v0
-
-    .line 39
-    or-long/2addr p0, v2
-
-    .line 40
-    return-wide p0
-
-    .line 41
-    :cond_0
-    invoke-static {p1}, Ljava/lang/Float;->floatToRawIntBits(F)I
-
-    .line 42
-    .line 43
-    .line 44
-    move-result p0
-
-    .line 45
-    int-to-long p0, p0
-
-    .line 46
-    invoke-static {v2}, Ljava/lang/Float;->floatToRawIntBits(F)I
-
-    .line 47
-    .line 48
-    .line 49
-    move-result v2
-
-    .line 50
-    int-to-long v2, v2
-
-    .line 51
-    shl-long/2addr p0, p2
-
-    .line 52
-    and-long/2addr v0, v2
-
-    .line 53
-    or-long/2addr p0, v0
-
-    .line 54
-    return-wide p0
-.end method
-
-.method public n(J)J
-    .locals 3
-
-    .line 1
-    iget-object p0, p0, Ls81;->a:Le62;
-
-    .line 2
-    .line 3
-    invoke-interface {p0}, Le62;->invoke()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    check-cast p0, Ljava/lang/Boolean;
-
-    .line 8
-    .line 9
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    const-wide v0, 0xffffffffL
-
-    .line 14
-    .line 15
     .line 16
     .line 17
     .line 18
-    and-long/2addr v0, p1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 19
-    long-to-int v0, v0
-
     .line 20
-    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
-
     .line 21
+    move-result-object p0
+
     .line 22
-    .line 23
-    move-result v1
-
-    .line 24
-    invoke-static {v1}, Ljava/lang/Math;->abs(F)F
-
-    .line 25
-    .line 26
-    .line 27
-    move-result v1
-
-    .line 28
-    const/16 v2, 0x20
-
-    .line 29
-    .line 30
-    shr-long/2addr p1, v2
-
-    .line 31
-    long-to-int p1, p1
-
-    .line 32
-    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    .line 33
-    .line 34
-    .line 35
-    move-result p2
-
-    .line 36
-    invoke-static {p2}, Ljava/lang/Math;->abs(F)F
-
-    .line 37
-    .line 38
-    .line 39
-    move-result p2
-
-    .line 40
-    cmpl-float p2, v1, p2
-
-    .line 41
-    .line 42
-    const/4 v1, 0x0
-
-    .line 43
-    if-ltz p2, :cond_0
-
-    .line 44
-    .line 45
-    if-eqz p0, :cond_1
-
-    .line 46
-    .line 47
-    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    .line 48
-    .line 49
-    .line 50
-    move-result v1
-
-    .line 51
-    goto :goto_0
-
-    .line 52
-    :cond_0
-    if-nez p0, :cond_1
-
-    .line 53
-    .line 54
-    invoke-static {p1}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    .line 55
-    .line 56
-    .line 57
-    move-result v1
-
-    .line 58
-    :cond_1
-    :goto_0
-    invoke-static {v1}, Ljava/lang/Float;->floatToRawIntBits(F)I
-
-    .line 59
-    .line 60
-    .line 61
-    move-result p0
-
-    .line 62
-    int-to-long p0, p0
-
-    .line 63
-    return-wide p0
+    return-object p0
 .end method

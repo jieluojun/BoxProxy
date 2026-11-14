@@ -1,6 +1,6 @@
 .class public interface abstract Lorg/chromium/support_lib_boundary/WebSettingsBoundaryInterface;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # annotations
@@ -18,6 +18,8 @@
 
 # virtual methods
 .method public abstract getAttributionBehavior()I
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 .end method
 
 .method public abstract getBackForwardCacheEnabled()Z
@@ -108,6 +110,8 @@
 .end method
 
 .method public abstract setAttributionBehavior(I)V
+    .annotation runtime Ljava/lang/Deprecated;
+    .end annotation
 .end method
 
 .method public abstract setBackForwardCacheEnabled(Z)V

@@ -1,6 +1,6 @@
 .class public final enum Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
 .super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # annotations
@@ -230,146 +230,131 @@
     move-result p0
 
     .line 21
-    if-nez p0, :cond_1
+    if-eqz p0, :cond_1
 
     .line 22
     .line 23
-    goto :goto_0
-
-    .line 24
-    :cond_1
     const/4 v1, 0x3
 
-    .line 25
+    .line 24
     goto :goto_0
 
-    .line 26
+    .line 25
     :sswitch_1
     const-string v0, "outdent"
 
+    .line 26
     .line 27
-    .line 28
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
+    .line 28
     .line 29
     .line 30
-    .line 31
     move-result p0
 
-    .line 32
-    if-nez p0, :cond_2
+    .line 31
+    if-eqz p0, :cond_1
 
+    .line 32
     .line 33
+    const/4 v1, 0x2
+
     .line 34
     goto :goto_0
 
     .line 35
-    :cond_2
-    const/4 v1, 0x2
-
-    .line 36
-    goto :goto_0
-
-    .line 37
     :sswitch_2
     const-string v0, "indent"
 
-    .line 38
-    .line 39
+    .line 36
+    .line 37
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
+    .line 38
+    .line 39
     .line 40
-    .line 41
-    .line 42
     move-result p0
 
+    .line 41
+    if-eqz p0, :cond_1
+
+    .line 42
     .line 43
-    if-nez p0, :cond_3
-
-    .line 44
-    .line 45
-    goto :goto_0
-
-    .line 46
-    :cond_3
     const/4 v1, 0x1
 
-    .line 47
+    .line 44
     goto :goto_0
 
-    .line 48
+    .line 45
     :sswitch_3
     const-string v0, "indentOutdent"
 
-    .line 49
-    .line 50
+    .line 46
+    .line 47
     invoke-virtual {p0, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    .line 51
-    .line 52
-    .line 53
+    .line 48
+    .line 49
+    .line 50
     move-result p0
 
-    .line 54
-    if-nez p0, :cond_4
+    .line 51
+    if-eqz p0, :cond_1
 
-    .line 55
-    .line 56
-    goto :goto_0
-
-    .line 57
-    :cond_4
+    .line 52
+    .line 53
     const/4 v1, 0x0
 
-    .line 58
+    .line 54
+    :cond_1
     :goto_0
     packed-switch v1, :pswitch_data_0
 
-    .line 59
-    .line 60
-    .line 61
+    .line 55
+    .line 56
+    .line 57
     sget-object p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->None:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
 
-    .line 62
-    .line 63
+    .line 58
+    .line 59
     return-object p0
 
-    .line 64
+    .line 60
     :pswitch_0
     sget-object p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->None:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
 
-    .line 65
-    .line 66
+    .line 61
+    .line 62
     return-object p0
 
-    .line 67
+    .line 63
     :pswitch_1
     sget-object p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->Outdent:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
 
-    .line 68
-    .line 69
+    .line 64
+    .line 65
     return-object p0
 
-    .line 70
+    .line 66
     :pswitch_2
     sget-object p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->Indent:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
 
-    .line 71
-    .line 72
+    .line 67
+    .line 68
     return-object p0
 
-    .line 73
+    .line 69
     :pswitch_3
     sget-object p0, Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;->IndentOutdent:Lorg/eclipse/tm4e/languageconfiguration/internal/model/EnterAction$IndentAction;
 
-    .line 74
-    .line 75
+    .line 70
+    .line 71
     return-object p0
 
-    .line 76
+    .line 72
     nop
 
-    .line 77
+    .line 73
     :sswitch_data_0
     .sparse-switch
         -0x6ae8dbf7 -> :sswitch_3
@@ -378,6 +363,10 @@
         0x33af38 -> :sswitch_0
     .end sparse-switch
 
+    .line 74
+    .line 75
+    .line 76
+    .line 77
     .line 78
     .line 79
     .line 80
@@ -392,10 +381,6 @@
     .line 89
     .line 90
     .line 91
-    .line 92
-    .line 93
-    .line 94
-    .line 95
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_3

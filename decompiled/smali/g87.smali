@@ -1,171 +1,195 @@
 .class public final Lg87;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lf87;
-.implements Lja2;
+.super Lr02;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final synthetic j:Le87;
-
-.field public final synthetic k:Lc87;
-
-.field public final synthetic l:Lic1;
-
-.field public final synthetic m:Landroid/os/Bundle;
+# static fields
+.field public static final v:Lg87;
 
 
 # direct methods
-.method public constructor <init>(Le87;Lc87;Lic1;Landroid/os/Bundle;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 2
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lg87;
 
     .line 2
     .line 3
+    const-string v1, "UTF-32LE"
+
     .line 4
-    iput-object p1, p0, Lg87;->j:Le87;
-
     .line 5
-    .line 6
-    iput-object p2, p0, Lg87;->k:Lc87;
+    invoke-direct {v0, v1}, Lr02;-><init>(Ljava/lang/String;)V
 
+    .line 6
     .line 7
     .line 8
-    iput-object p3, p0, Lg87;->l:Lic1;
+    sput-object v0, Lg87;->v:Lg87;
 
     .line 9
     .line 10
-    iput-object p4, p0, Lg87;->m:Landroid/os/Bundle;
-
-    .line 11
-    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final d()Lc87;
-    .locals 0
+.method public final a(II[B)I
+    .locals 2
 
     .line 1
-    iget-object p0, p0, Lg87;->k:Lc87;
+    add-int/lit8 p0, p2, 0x1
 
     .line 2
     .line 3
-    return-object p0
-.end method
-
-.method public final e()Lcs3;
-    .locals 5
-
-    .line 1
-    new-instance v0, Lcs3;
-
-    .line 2
-    .line 3
-    iget-object v1, p0, Lg87;->l:Lic1;
+    and-int/lit16 v0, p1, 0xff
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Lcs3;-><init>(Lic1;)V
+    int-to-byte v0, v0
 
     .line 6
+    aput-byte v0, p3, p2
+
     .line 7
     .line 8
-    sget-object v1, Lbf0;->f0:Lb55;
+    add-int/lit8 v0, p2, 0x2
 
     .line 9
     .line 10
-    const/4 v2, 0x0
+    const v1, 0xff00
 
     .line 11
-    new-array v3, v2, [Lbm4;
-
     .line 12
     .line 13
-    invoke-static {v3, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    and-int/2addr v1, p1
 
     .line 14
+    ushr-int/lit8 v1, v1, 0x8
+
     .line 15
     .line 16
-    move-result-object v2
+    int-to-byte v1, v1
 
     .line 17
-    check-cast v2, [Lbm4;
+    aput-byte v1, p3, p0
 
     .line 18
     .line 19
-    invoke-static {v2}, Laq;->B([Lbm4;)Landroid/os/Bundle;
+    add-int/lit8 p2, p2, 0x3
 
     .line 20
     .line 21
-    .line 22
-    move-result-object v2
+    const/high16 p0, 0xff0000
 
+    .line 22
     .line 23
-    iget-object v3, v0, Lic1;->a:Ljava/util/LinkedHashMap;
+    and-int/2addr p0, p1
 
     .line 24
+    ushr-int/lit8 p0, p0, 0x10
+
     .line 25
-    invoke-virtual {v3, v1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 26
-    .line 27
-    .line 28
-    move-result-object v4
+    int-to-byte p0, p0
 
+    .line 27
+    aput-byte p0, p3, v0
+
+    .line 28
     .line 29
-    check-cast v4, Landroid/os/Bundle;
+    const/high16 p0, -0x1000000
 
     .line 30
     .line 31
-    if-eqz v4, :cond_0
+    and-int/2addr p1, p0
 
     .line 32
+    ushr-int/lit8 p1, p1, 0x18
+
     .line 33
-    invoke-virtual {v2, v4}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
-
     .line 34
+    int-to-byte p0, p1
+
     .line 35
+    aput-byte p0, p3, p2
+
     .line 36
-    :cond_0
-    iget-object v4, p0, Lg87;->m:Landroid/os/Bundle;
-
     .line 37
+    const/4 p0, 0x4
+
     .line 38
-    invoke-virtual {v2, v4}, Landroid/os/Bundle;->putAll(Landroid/os/Bundle;)V
-
-    .line 39
-    .line 40
-    .line 41
-    invoke-interface {v3, v1, v2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 42
-    .line 43
-    .line 44
-    sget-object v1, Lbf0;->e0:Lb55;
-
-    .line 45
-    .line 46
-    invoke-interface {v3, v1, p0}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 47
-    .line 48
-    .line 49
-    return-object v0
+    return p0
 .end method
 
-.method public final g()Le87;
+.method public final k(II[B)I
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lg87;->j:Le87;
+    add-int/lit8 p0, p1, 0x3
 
     .line 2
     .line 3
-    return-object p0
+    aget-byte p0, p3, p0
+
+    .line 4
+    .line 5
+    and-int/lit16 p0, p0, 0xff
+
+    .line 6
+    .line 7
+    shl-int/lit8 p0, p0, 0x8
+
+    .line 8
+    .line 9
+    add-int/lit8 p2, p1, 0x2
+
+    .line 10
+    .line 11
+    aget-byte p2, p3, p2
+
+    .line 12
+    .line 13
+    and-int/lit16 p2, p2, 0xff
+
+    .line 14
+    .line 15
+    add-int/2addr p0, p2
+
+    .line 16
+    shl-int/lit8 p0, p0, 0x8
+
+    .line 17
+    .line 18
+    add-int/lit8 p2, p1, 0x1
+
+    .line 19
+    .line 20
+    aget-byte p2, p3, p2
+
+    .line 21
+    .line 22
+    and-int/lit16 p2, p2, 0xff
+
+    .line 23
+    .line 24
+    add-int/2addr p0, p2
+
+    .line 25
+    shl-int/lit8 p0, p0, 0x8
+
+    .line 26
+    .line 27
+    aget-byte p1, p3, p1
+
+    .line 28
+    .line 29
+    and-int/lit16 p1, p1, 0xff
+
+    .line 30
+    .line 31
+    add-int/2addr p0, p1
+
+    .line 32
+    return p0
 .end method

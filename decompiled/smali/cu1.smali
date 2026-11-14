@@ -1,14 +1,18 @@
 .class public final Lcu1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:I
+.field public final a:Lgu1;
+
+.field public volatile b:Lyy6;
+
+.field public volatile c:Lcg1;
 
 
 # direct methods
-.method public synthetic constructor <init>(I)V
+.method public constructor <init>(Lgu1;)V
     .locals 0
 
     .line 1
@@ -17,160 +21,9 @@
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Lcu1;->a:I
+    iput-object p1, p0, Lcu1;->a:Lgu1;
 
     .line 5
     .line 6
     return-void
-.end method
-
-.method public static a(I)Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    if-nez p0, :cond_0
-
-    .line 2
-    .line 3
-    const-string p0, "EmojiSupportMatch.Default"
-
-    .line 4
-    .line 5
-    return-object p0
-
-    .line 6
-    :cond_0
-    const/4 v0, 0x1
-
-    .line 7
-    if-ne p0, v0, :cond_1
-
-    .line 8
-    .line 9
-    const-string p0, "EmojiSupportMatch.None"
-
-    .line 10
-    .line 11
-    return-object p0
-
-    .line 12
-    :cond_1
-    const/4 v0, 0x2
-
-    .line 13
-    if-ne p0, v0, :cond_2
-
-    .line 14
-    .line 15
-    const-string p0, "EmojiSupportMatch.All"
-
-    .line 16
-    .line 17
-    return-object p0
-
-    .line 18
-    :cond_2
-    const-string v0, "Invalid(value="
-
-    .line 19
-    .line 20
-    const-string v1, ")"
-
-    .line 21
-    .line 22
-    invoke-static {p0, v0, v1}, Loc1;->m(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 23
-    .line 24
-    .line 25
-    move-result-object p0
-
-    .line 26
-    return-object p0
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    instance-of v0, p1, Lcu1;
-
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
-
-    .line 4
-    .line 5
-    goto :goto_0
-
-    .line 6
-    :cond_0
-    check-cast p1, Lcu1;
-
-    .line 7
-    .line 8
-    iget p1, p1, Lcu1;->a:I
-
-    .line 9
-    .line 10
-    iget p0, p0, Lcu1;->a:I
-
-    .line 11
-    .line 12
-    if-eq p0, p1, :cond_1
-
-    .line 13
-    .line 14
-    :goto_0
-    const/4 p0, 0x0
-
-    .line 15
-    return p0
-
-    .line 16
-    :cond_1
-    const/4 p0, 0x1
-
-    .line 17
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lcu1;->a:I
-
-    .line 2
-    .line 3
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    iget p0, p0, Lcu1;->a:I
-
-    .line 2
-    .line 3
-    invoke-static {p0}, Lcu1;->a(I)Ljava/lang/String;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
 .end method

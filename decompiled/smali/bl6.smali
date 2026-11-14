@@ -1,127 +1,93 @@
-.class public abstract Lbl6;
+.class public final Lbl6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Le72;
 
 
-# static fields
-.field public static final a:Landroid/text/Layout$Alignment;
+# instance fields
+.field public final synthetic i:B
 
-.field public static final b:Landroid/text/Layout$Alignment;
+.field public final synthetic j:Lp72;
+
+.field public final synthetic k:Lpn2;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
+.method public synthetic constructor <init>(Lp72;Lpn2;B)V
+    .locals 0
 
     .line 1
-    invoke-static {}, Landroid/text/Layout$Alignment;->values()[Landroid/text/Layout$Alignment;
+    iput-byte p3, p0, Lbl6;->i:B
 
     .line 2
     .line 3
-    .line 4
-    move-result-object v0
+    iput-object p1, p0, Lbl6;->j:Lp72;
 
+    .line 4
     .line 5
-    sget-object v1, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
+    iput-object p2, p0, Lbl6;->k:Lpn2;
 
     .line 6
     .line 7
-    array-length v2, v0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 8
-    const/4 v3, 0x0
-
     .line 9
-    move v4, v3
+    .line 10
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
+
+    .line 1
+    iget-byte v0, p0, Lbl6;->i:B
+
+    .line 2
+    .line 3
+    sget-object v1, Ll97;->a:Ll97;
+
+    .line 4
+    .line 5
+    iget-object v2, p0, Lbl6;->k:Lpn2;
+
+    .line 6
+    .line 7
+    iget-object p0, p0, Lbl6;->j:Lp72;
+
+    .line 8
+    .line 9
+    packed-switch v0, :pswitch_data_0
 
     .line 10
-    move-object v3, v1
-
     .line 11
-    :goto_0
-    if-ge v4, v2, :cond_2
-
     .line 12
-    .line 13
-    aget-object v5, v0, v4
+    invoke-interface {p0, v2}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 13
     .line 14
     .line 15
-    invoke-virtual {v5}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    return-object v1
 
     .line 16
+    :pswitch_0
+    invoke-interface {p0, v2}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 17
     .line 18
-    move-result-object v6
-
     .line 19
-    const-string v7, "ALIGN_LEFT"
+    return-object v1
 
     .line 20
+    nop
+
     .line 21
-    invoke-static {v6, v7}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 22
-    .line 23
-    .line 24
-    move-result v6
-
-    .line 25
-    if-eqz v6, :cond_0
-
-    .line 26
-    .line 27
-    move-object v1, v5
-
-    .line 28
-    goto :goto_1
-
-    .line 29
-    :cond_0
-    invoke-virtual {v5}, Ljava/lang/Enum;->name()Ljava/lang/String;
-
-    .line 30
-    .line 31
-    .line 32
-    move-result-object v6
-
-    .line 33
-    const-string v7, "ALIGN_RIGHT"
-
-    .line 34
-    .line 35
-    invoke-static {v6, v7}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 36
-    .line 37
-    .line 38
-    move-result v6
-
-    .line 39
-    if-eqz v6, :cond_1
-
-    .line 40
-    .line 41
-    move-object v3, v5
-
-    .line 42
-    :cond_1
-    :goto_1
-    add-int/lit8 v4, v4, 0x1
-
-    .line 43
-    .line 44
-    goto :goto_0
-
-    .line 45
-    :cond_2
-    sput-object v1, Lbl6;->a:Landroid/text/Layout$Alignment;
-
-    .line 46
-    .line 47
-    sput-object v3, Lbl6;->b:Landroid/text/Layout$Alignment;
-
-    .line 48
-    .line 49
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

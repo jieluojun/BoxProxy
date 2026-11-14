@@ -1,109 +1,140 @@
 .class public final Li25;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lp62;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final a:Le25;
 
-.field public final synthetic k:Ln45;
+.field public final b:Z
+
+.field public final c:Lhe6;
+
+.field public final d:Lxs4;
+
+.field public final e:Lp72;
+
+.field public final f:Z
+
+.field public final g:Ljava/lang/Object;
+
+.field public h:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Ln45;B)V
+.method public constructor <init>(Le25;Ljava/lang/Object;ZLhe6;Lxs4;Lp72;Z)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Li25;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Li25;->k:Ln45;
-
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Li25;->a:Le25;
 
+    .line 5
     .line 6
+    iput-boolean p3, p0, Li25;->b:Z
+
     .line 7
     .line 8
+    iput-object p4, p0, Li25;->c:Lhe6;
+
+    .line 9
+    .line 10
+    iput-object p5, p0, Li25;->d:Lxs4;
+
+    .line 11
+    .line 12
+    iput-object p6, p0, Li25;->e:Lp72;
+
+    .line 13
+    .line 14
+    iput-boolean p7, p0, Li25;->f:Z
+
+    .line 15
+    .line 16
+    iput-object p2, p0, Li25;->g:Ljava/lang/Object;
+
+    .line 17
+    .line 18
+    const/4 p1, 0x1
+
+    .line 19
+    iput-boolean p1, p0, Li25;->h:Z
+
+    .line 20
+    .line 21
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final a()Ljava/lang/Object;
     .locals 2
 
     .line 1
-    iget-byte v0, p0, Li25;->j:B
+    iget-boolean v0, p0, Li25;->b:Z
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    const/4 v1, 0x0
 
     .line 4
-    .line 5
-    iget-object p0, p0, Li25;->k:Ln45;
+    if-eqz v0, :cond_0
 
+    .line 5
     .line 6
+    return-object v1
+
     .line 7
-    packed-switch v0, :pswitch_data_0
+    :cond_0
+    iget-object v0, p0, Li25;->d:Lxs4;
 
     .line 8
     .line 9
+    if-eqz v0, :cond_1
+
     .line 10
-    check-cast p1, Lb45;
-
     .line 11
-    .line 12
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0}, Lxs4;->getValue()Ljava/lang/Object;
 
+    .line 12
     .line 13
     .line 14
+    move-result-object p0
+
     .line 15
-    iget-object p1, p1, Lb45;->a:Ljava/lang/String;
+    return-object p0
 
     .line 16
-    .line 17
-    invoke-static {p0, p1}, Ln45;->v(Ln45;Ljava/lang/String;)V
+    :cond_1
+    iget-object p0, p0, Li25;->g:Ljava/lang/Object;
 
+    .line 17
     .line 18
+    if-eqz p0, :cond_2
+
     .line 19
     .line 20
-    return-object v1
+    return-object p0
 
     .line 21
-    :pswitch_0
-    check-cast p1, Lb45;
+    :cond_2
+    const-string p0, "Unexpected form of a provided value"
 
     .line 22
     .line 23
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-static {p0}, Lz11;->b(Ljava/lang/String;)Ljava/lang/Void;
 
     .line 24
     .line 25
     .line 26
-    iget-object p1, p1, Lb45;->a:Ljava/lang/String;
+    invoke-static {}, Lnf1;->l()V
 
     .line 27
     .line 28
-    invoke-static {p0, p1}, Ln45;->v(Ln45;Ljava/lang/String;)V
-
     .line 29
-    .line 30
-    .line 31
     return-object v1
-
-    .line 32
-    nop
-
-    .line 33
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method

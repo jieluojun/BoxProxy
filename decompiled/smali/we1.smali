@@ -1,56 +1,71 @@
-.class public interface abstract Lwe1;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lwe1;
+.super Lq91;
 
 
-# virtual methods
-.method public abstract A()Ljava/lang/String;
-.end method
+# instance fields
+.field public synthetic i:Ljava/lang/Object;
 
-.method public abstract B()F
-.end method
+.field public j:I
 
-.method public abstract C(Luy5;)Lg21;
-.end method
+.field public final synthetic k:Lze1;
 
-.method public abstract D()D
-.end method
 
-.method public a(Lqy2;)Ljava/lang/Object;
+# direct methods
+.method public constructor <init>(Lze1;Lp91;)V
     .locals 0
 
     .line 1
-    invoke-interface {p1, p0}, Lqy2;->b(Lwe1;)Ljava/lang/Object;
+    iput-object p1, p0, Lwe1;->k:Lze1;
 
     .line 2
     .line 3
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
+
     .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iput-object p1, p0, Lwe1;->i:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Lwe1;->j:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
+
+    .line 6
+    .line 7
+    or-int/2addr p1, v0
+
+    .line 8
+    iput p1, p0, Lwe1;->j:I
+
+    .line 9
+    .line 10
+    iget-object p1, p0, Lwe1;->k:Lze1;
+
+    .line 11
+    .line 12
+    const/4 v0, 0x0
+
+    .line 13
+    invoke-virtual {p1, v0, p0}, Lze1;->a(Le22;Lp91;)Ljava/lang/Object;
+
+    .line 14
+    .line 15
+    .line 16
     move-result-object p0
 
-    .line 5
+    .line 17
     return-object p0
-.end method
-
-.method public abstract b()J
-.end method
-
-.method public abstract d()Z
-.end method
-
-.method public abstract e()Z
-.end method
-
-.method public abstract f()C
-.end method
-
-.method public abstract q()I
-.end method
-
-.method public abstract v()B
-.end method
-
-.method public abstract w(Luy5;)Lwe1;
-.end method
-
-.method public abstract z()S
 .end method

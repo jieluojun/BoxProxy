@@ -1,11 +1,56 @@
-.class public interface abstract Ld72;
+.class public final Ld72;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lb72;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# virtual methods
-.method public abstract getArity()I
+# instance fields
+.field public final a:Ljava/lang/Object;
+
+.field public b:Z
+
+.field public final c:Ljava/util/ArrayList;
+
+
+# direct methods
+.method public constructor <init>(Ljava/util/concurrent/Executor;Lqy0;)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 5
+    .line 6
+    .line 7
+    new-instance p1, Ljava/lang/Object;
+
+    .line 8
+    .line 9
+    invoke-direct {p1}, Ljava/lang/Object;-><init>()V
+
+    .line 10
+    .line 11
+    .line 12
+    iput-object p1, p0, Ld72;->a:Ljava/lang/Object;
+
+    .line 13
+    .line 14
+    new-instance p1, Ljava/util/ArrayList;
+
+    .line 15
+    .line 16
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
+    .line 17
+    .line 18
+    .line 19
+    iput-object p1, p0, Ld72;->c:Ljava/util/ArrayList;
+
+    .line 20
+    .line 21
+    return-void
 .end method

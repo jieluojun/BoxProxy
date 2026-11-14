@@ -1,171 +1,75 @@
 .class public final Lvk2;
-.super Lrk2;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public n:Z
+.field public i:Lw04;
+
+.field public j:Llk2;
+
+.field public k:Lw04;
+
+.field public synthetic l:Ljava/lang/Object;
+
+.field public final synthetic m:Lwk2;
+
+.field public n:I
 
 
-# virtual methods
-.method public final close()V
-    .locals 1
+# direct methods
+.method public constructor <init>(Lwk2;Lp91;)V
+    .locals 0
 
     .line 1
-    iget-boolean v0, p0, Lrk2;->l:Z
+    iput-object p1, p0, Lvk2;->m:Lwk2;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_0
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
     .line 4
     .line 5
-    return-void
-
     .line 6
-    :cond_0
-    iget-boolean v0, p0, Lvk2;->n:Z
-
-    .line 7
-    .line 8
-    if-nez v0, :cond_1
-
-    .line 9
-    .line 10
-    sget-object v0, Lwk2;->f:Lpa2;
-
-    .line 11
-    .line 12
-    invoke-virtual {p0, v0}, Lrk2;->b(Lpa2;)V
-
-    .line 13
-    .line 14
-    .line 15
-    :cond_1
-    const/4 v0, 0x1
-
-    .line 16
-    iput-boolean v0, p0, Lrk2;->l:Z
-
-    .line 17
-    .line 18
     return-void
 .end method
 
-.method public final u(Lje0;J)J
-    .locals 3
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object p1, p0, Lvk2;->l:Ljava/lang/Object;
 
     .line 2
     .line 3
+    iget p1, p0, Lvk2;->n:I
+
     .line 4
-    const-wide/16 v0, 0x0
-
     .line 5
-    .line 6
-    cmp-long v2, p2, v0
+    const/high16 v0, -0x80000000
 
+    .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    if-ltz v2, :cond_3
+    iput p1, p0, Lvk2;->n:I
 
     .line 9
     .line 10
-    iget-boolean v2, p0, Lrk2;->l:Z
+    iget-object p1, p0, Lvk2;->m:Lwk2;
 
     .line 11
     .line 12
-    if-nez v2, :cond_2
+    invoke-virtual {p1, p0}, Lwk2;->p(Lp91;)Ljava/lang/Object;
 
     .line 13
     .line 14
-    iget-boolean v0, p0, Lvk2;->n:Z
-
     .line 15
-    .line 16
-    const-wide/16 v1, -0x1
-
-    .line 17
-    .line 18
-    if-eqz v0, :cond_0
-
-    .line 19
-    .line 20
-    return-wide v1
-
-    .line 21
-    :cond_0
-    invoke-super {p0, p1, p2, p3}, Lrk2;->u(Lje0;J)J
-
-    .line 22
-    .line 23
-    .line 24
-    move-result-wide p1
-
-    .line 25
-    cmp-long p3, p1, v1
-
-    .line 26
-    .line 27
-    if-nez p3, :cond_1
-
-    .line 28
-    .line 29
-    const/4 p1, 0x1
-
-    .line 30
-    iput-boolean p1, p0, Lvk2;->n:Z
-
-    .line 31
-    .line 32
-    sget-object p1, Lpa2;->k:Lpa2;
-
-    .line 33
-    .line 34
-    invoke-virtual {p0, p1}, Lrk2;->b(Lpa2;)V
-
-    .line 35
-    .line 36
-    .line 37
-    return-wide v1
-
-    .line 38
-    :cond_1
-    return-wide p1
-
-    .line 39
-    :cond_2
-    const-string p0, "closed"
-
-    .line 40
-    .line 41
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
-
-    .line 42
-    .line 43
-    .line 44
-    return-wide v0
-
-    .line 45
-    :cond_3
-    const-string p0, "byteCount < 0: "
-
-    .line 46
-    .line 47
-    invoke-static {p2, p3, p0}, Loc1;->n(JLjava/lang/String;)Ljava/lang/String;
-
-    .line 48
-    .line 49
-    .line 50
     move-result-object p0
 
-    .line 51
-    invoke-static {p0}, Ljw1;->d(Ljava/lang/Object;)V
-
-    .line 52
-    .line 53
-    .line 54
-    return-wide v0
+    .line 16
+    return-object p0
 .end method

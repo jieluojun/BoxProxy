@@ -1,90 +1,91 @@
 .class public final La13;
-.super Lvp3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lb13;
+.super Lz46;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public x:Lu62;
+.field public final i:Ljava/lang/String;
 
 
-# virtual methods
-.method public final h(Luj3;Lmj3;J)Lsj3;
+# direct methods
+.method public constructor <init>(Ljava/lang/String;)V
+    .locals 0
+
+    .line 26
+    invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    .line 27
+    iput-object p1, p0, La13;->i:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .locals 1
 
     .line 1
-    iget-object p0, p0, La13;->x:Lu62;
+    if-eqz p2, :cond_0
 
     .line 2
     .line 3
-    new-instance v0, Ls61;
+    invoke-static {p2}, Lsi6;->N0(Ljava/lang/CharSequence;)Z
 
     .line 4
     .line 5
-    invoke-direct {v0, p3, p4}, Ls61;-><init>(J)V
-
     .line 6
+    move-result v0
+
     .line 7
-    .line 8
-    invoke-interface {p0, p1, p2, v0}, Lu62;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 9
-    .line 10
-    .line 11
-    move-result-object p0
-
-    .line 12
-    check-cast p0, Lsj3;
-
-    .line 13
-    .line 14
-    return-object p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    iget-object p0, p0, La13;->x:Lu62;
-
-    .line 2
-    .line 3
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 4
-    .line 5
-    const-string v1, "LayoutModifierImpl(measureBlock="
-
-    .line 6
-    .line 7
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
-    .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    const-string v0, "\n"
 
+    .line 10
     .line 11
+    invoke-virtual {v0, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+
     .line 12
     .line 13
-    const-string p0, ")"
-
     .line 14
+    move-result-object p2
+
     .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    goto :goto_0
 
     .line 16
+    :cond_0
+    const-string p2, ""
+
     .line 17
     .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :goto_0
+    invoke-virtual {p1, p2}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
 
     .line 19
     .line 20
     .line 21
-    move-result-object p0
+    move-result-object p1
 
     .line 22
+    invoke-direct {p0, p1}, La13;-><init>(Ljava/lang/String;)V
+
+    .line 23
+    .line 24
+    .line 25
+    return-void
+.end method
+
+
+# virtual methods
+.method public final getMessage()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, La13;->i:Ljava/lang/String;
+
+    .line 2
+    .line 3
     return-object p0
 .end method

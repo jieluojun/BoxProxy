@@ -1,6 +1,6 @@
 .class public final Lcom/hashsequence/coilresvg/SvgRenderer$Companion;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # annotations
@@ -24,7 +24,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(Lkf1;)V
+.method public synthetic constructor <init>(Ldg1;)V
     .locals 0
 
     .line 1
@@ -68,7 +68,7 @@
     .line 13
     .line 14
     .line 15
-    invoke-virtual {v1, v2}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lp62;)Ljava/lang/Object;
+    invoke-virtual {v1, v2}, Lcom/hashsequence/coilresvg/UniffiRustCallStatusHelper;->withReference$coil_resvg_release(Lp72;)Ljava/lang/Object;
 
     .line 16
     .line 17

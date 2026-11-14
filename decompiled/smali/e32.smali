@@ -1,24 +1,158 @@
-.class public interface abstract Le32;
+.class public final synthetic Le32;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt72;
+
+
+# instance fields
+.field public final synthetic i:Lsw3;
+
+.field public final synthetic j:Liv;
+
+.field public final synthetic k:Lkv;
+
+.field public final synthetic l:Ld20;
+
+.field public final synthetic m:I
+
+.field public final synthetic n:I
+
+.field public final synthetic o:Lnz0;
+
+.field public final synthetic p:I
+
+.field public final synthetic q:B
 
 
 # direct methods
-.method public static synthetic a(Le32;)V
-    .locals 1
+.method public synthetic constructor <init>(Lsw3;Liv;Lkv;Ld20;IILnz0;II)V
+    .locals 0
 
     .line 1
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    check-cast p0, Lh32;
-
     .line 3
     .line 4
-    invoke-virtual {p0, v0}, Lh32;->b(Z)V
+    iput-object p1, p0, Le32;->i:Lsw3;
 
     .line 5
     .line 6
+    iput-object p2, p0, Le32;->j:Liv;
+
     .line 7
+    .line 8
+    iput-object p3, p0, Le32;->k:Lkv;
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Le32;->l:Ld20;
+
+    .line 11
+    .line 12
+    iput p5, p0, Le32;->m:I
+
+    .line 13
+    .line 14
+    iput p6, p0, Le32;->n:I
+
+    .line 15
+    .line 16
+    iput-object p7, p0, Le32;->o:Lnz0;
+
+    .line 17
+    .line 18
+    iput p8, p0, Le32;->p:I
+
+    .line 19
+    .line 20
+    iput-byte p9, p0, Le32;->q:B
+
+    .line 21
+    .line 22
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 10
+
+    .line 1
+    move-object v7, p1
+
+    .line 2
+    check-cast v7, Lt82;
+
+    .line 3
+    .line 4
+    check-cast p2, Ljava/lang/Integer;
+
+    .line 5
+    .line 6
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 7
+    .line 8
+    .line 9
+    iget p1, p0, Le32;->p:I
+
+    .line 10
+    .line 11
+    or-int/lit8 p1, p1, 0x1
+
+    .line 12
+    .line 13
+    invoke-static {p1}, Lp06;->W(I)I
+
+    .line 14
+    .line 15
+    .line 16
+    move-result v8
+
+    .line 17
+    iget-object v0, p0, Le32;->i:Lsw3;
+
+    .line 18
+    .line 19
+    iget-object v1, p0, Le32;->j:Liv;
+
+    .line 20
+    .line 21
+    iget-object v2, p0, Le32;->k:Lkv;
+
+    .line 22
+    .line 23
+    iget-object v3, p0, Le32;->l:Ld20;
+
+    .line 24
+    .line 25
+    iget v4, p0, Le32;->m:I
+
+    .line 26
+    .line 27
+    iget v5, p0, Le32;->n:I
+
+    .line 28
+    .line 29
+    iget-object v6, p0, Le32;->o:Lnz0;
+
+    .line 30
+    .line 31
+    iget-byte v9, p0, Le32;->q:B
+
+    .line 32
+    .line 33
+    invoke-static/range {v0 .. v9}, Lpp;->j(Lsw3;Liv;Lkv;Ld20;IILnz0;Lt82;II)V
+
+    .line 34
+    .line 35
+    .line 36
+    sget-object p0, Ll97;->a:Ll97;
+
+    .line 37
+    .line 38
+    return-object p0
 .end method

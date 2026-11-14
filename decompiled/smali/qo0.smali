@@ -1,10 +1,10 @@
 .class public interface abstract Lqo0;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
-.field public static final c:Lr6;
+.field public static final c:Lo6;
 
 
 # direct methods
@@ -12,11 +12,11 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lr6;->L:Lr6;
+    sget-object v0, Lo6;->K:Lo6;
 
     .line 2
     .line 3
-    sput-object v0, Lqo0;->c:Lr6;
+    sput-object v0, Lqo0;->c:Lo6;
 
     .line 4
     .line 5

@@ -1,6 +1,6 @@
 .class public final Lcom/hashsequence/coilresvg/SvgRenderResult;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # annotations
@@ -37,7 +37,7 @@
     const/4 v1, 0x0
 
     .line 4
-    invoke-direct {v0, v1}, Lcom/hashsequence/coilresvg/SvgRenderResult$Companion;-><init>(Lkf1;)V
+    invoke-direct {v0, v1}, Lcom/hashsequence/coilresvg/SvgRenderResult$Companion;-><init>(Ldg1;)V
 
     .line 5
     .line 6
@@ -86,7 +86,7 @@
     return-void
 .end method
 
-.method public synthetic constructor <init>(II[BLkf1;)V
+.method public synthetic constructor <init>(II[BLdg1;)V
     .locals 0
 
     .line 14
@@ -200,7 +200,7 @@
     const/4 v0, 0x0
 
     .line 7
-    invoke-direct {p0, p1, p2, p3, v0}, Lcom/hashsequence/coilresvg/SvgRenderResult;-><init>(II[BLkf1;)V
+    invoke-direct {p0, p1, p2, p3, v0}, Lcom/hashsequence/coilresvg/SvgRenderResult;-><init>(II[BLdg1;)V
 
     .line 8
     .line 9
@@ -226,7 +226,7 @@
     const/4 v1, 0x0
 
     .line 6
-    if-eqz p1, :cond_5
+    if-eqz p1, :cond_4
 
     .line 7
     .line 8
@@ -242,79 +242,74 @@
     move-result-object v3
 
     .line 14
-    if-eq v2, v3, :cond_1
+    if-ne v2, v3, :cond_4
 
     .line 15
     .line 16
-    goto :goto_0
-
-    .line 17
-    :cond_1
     check-cast p1, Lcom/hashsequence/coilresvg/SvgRenderResult;
 
+    .line 17
     .line 18
-    .line 19
     iget v2, p0, Lcom/hashsequence/coilresvg/SvgRenderResult;->width:I
 
+    .line 19
     .line 20
-    .line 21
     iget v3, p1, Lcom/hashsequence/coilresvg/SvgRenderResult;->width:I
 
+    .line 21
     .line 22
-    .line 23
-    if-eq v2, v3, :cond_2
+    if-eq v2, v3, :cond_1
 
+    .line 23
     .line 24
-    .line 25
     return v1
 
-    .line 26
-    :cond_2
+    .line 25
+    :cond_1
     iget v2, p0, Lcom/hashsequence/coilresvg/SvgRenderResult;->height:I
 
+    .line 26
     .line 27
-    .line 28
     iget v3, p1, Lcom/hashsequence/coilresvg/SvgRenderResult;->height:I
 
+    .line 28
     .line 29
-    .line 30
-    if-eq v2, v3, :cond_3
+    if-eq v2, v3, :cond_2
 
+    .line 30
     .line 31
-    .line 32
     return v1
 
-    .line 33
-    :cond_3
+    .line 32
+    :cond_2
     iget-object p0, p0, Lcom/hashsequence/coilresvg/SvgRenderResult;->pixels:[B
 
+    .line 33
     .line 34
-    .line 35
     iget-object p1, p1, Lcom/hashsequence/coilresvg/SvgRenderResult;->pixels:[B
 
+    .line 35
     .line 36
-    .line 37
     invoke-static {p0, p1}, Ljava/util/Arrays;->equals([B[B)Z
 
+    .line 37
     .line 38
     .line 39
-    .line 40
     move-result p0
 
-    .line 41
-    if-nez p0, :cond_4
+    .line 40
+    if-nez p0, :cond_3
 
+    .line 41
     .line 42
-    .line 43
     return v1
+
+    .line 43
+    :cond_3
+    return v0
 
     .line 44
     :cond_4
-    return v0
-
-    .line 45
-    :cond_5
-    :goto_0
     return v1
 .end method
 
@@ -378,7 +373,7 @@
 
     .line 11
     .line 12
-    invoke-static {v2, v0, v1}, Loc1;->e(III)I
+    invoke-static {v2, v0, v1}, Lky1;->d(III)I
 
     .line 13
     .line 14
@@ -478,61 +473,60 @@
     int-to-long v4, v1
 
     .line 17
-    and-long v1, v4, v2
+    and-long/2addr v4, v2
 
     .line 18
-    .line 19
-    invoke-static {v1, v2}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+    invoke-static {v4, v5}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
+    .line 19
     .line 20
     .line 21
-    .line 22
     move-result-object v1
 
-    .line 23
+    .line 22
     iget-object p0, p0, Lcom/hashsequence/coilresvg/SvgRenderResult;->pixels:[B
 
+    .line 23
     .line 24
-    .line 25
     invoke-static {p0}, Ljava/util/Arrays;->toString([B)Ljava/lang/String;
 
+    .line 25
     .line 26
     .line 27
-    .line 28
     move-result-object p0
 
-    .line 29
+    .line 28
     const-string v2, ", height="
 
+    .line 29
     .line 30
-    .line 31
     const-string v3, ", pixels="
 
+    .line 31
     .line 32
-    .line 33
     const-string v4, "SvgRenderResult(width="
 
+    .line 33
     .line 34
-    .line 35
-    invoke-static {v4, v0, v2, v1, v3}, Loc1;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-static {v4, v0, v2, v1, v3}, Lrf6;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 35
     .line 36
     .line 37
-    .line 38
     move-result-object v0
 
-    .line 39
+    .line 38
     const-string v1, ")"
 
+    .line 39
     .line 40
-    .line 41
-    invoke-static {v0, p0, v1}, Ly96;->r(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p0, v1}, Lrf6;->q(Ljava/lang/StringBuilder;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
+    .line 41
     .line 42
     .line 43
-    .line 44
     move-result-object p0
 
-    .line 45
+    .line 44
     return-object p0
 .end method

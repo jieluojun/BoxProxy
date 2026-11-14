@@ -1,85 +1,121 @@
-.class public final enum Lt03;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lt03;
+.super Le13;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Ljava/lang/Iterable;
 
 
-# static fields
-.field public static final enum j:Lt03;
-
-.field public static final enum k:Lt03;
-
-.field public static final synthetic l:[Lt03;
+# instance fields
+.field public final i:Ljava/util/ArrayList;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
-    new-instance v0, Lt03;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const-string v1, "Ltr"
-
     .line 4
-    .line 5
-    const/4 v2, 0x0
+    new-instance v0, Ljava/util/ArrayList;
 
+    .line 5
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     .line 7
     .line 8
     .line 9
-    sput-object v0, Lt03;->j:Lt03;
+    iput-object v0, p0, Lt03;->i:Ljava/util/ArrayList;
 
     .line 10
     .line 11
-    new-instance v1, Lt03;
-
-    .line 12
-    .line 13
-    const-string v2, "Rtl"
-
-    .line 14
-    .line 15
-    const/4 v3, 0x1
-
-    .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 17
-    .line 18
-    .line 19
-    sput-object v1, Lt03;->k:Lt03;
-
-    .line 20
-    .line 21
-    filled-new-array {v0, v1}, [Lt03;
-
-    .line 22
-    .line 23
-    .line 24
-    move-result-object v0
-
-    .line 25
-    sput-object v0, Lt03;->l:[Lt03;
-
-    .line 26
-    .line 27
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lt03;
-    .locals 1
+
+# virtual methods
+.method public final a()Z
+    .locals 0
 
     .line 1
-    const-class v0, Lt03;
+    invoke-virtual {p0}, Lt03;->f()Le13;
 
     .line 2
     .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-virtual {p0}, Le13;->a()Z
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+.end method
+
+.method public final b()I
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Lt03;->f()Le13;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-virtual {p0}, Le13;->b()I
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    return p0
+.end method
+
+.method public final d()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Lt03;->f()Le13;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    invoke-virtual {p0}, Le13;->d()Ljava/lang/String;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    return-object p0
+.end method
+
+.method public final e(I)Le13;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lt03;->i:Ljava/util/ArrayList;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     .line 4
     .line 5
@@ -87,32 +123,166 @@
     move-result-object p0
 
     .line 7
-    check-cast p0, Lt03;
+    check-cast p0, Le13;
 
     .line 8
     .line 9
     return-object p0
 .end method
 
-.method public static values()[Lt03;
+.method public final equals(Ljava/lang/Object;)Z
     .locals 1
 
     .line 1
-    sget-object v0, Lt03;->l:[Lt03;
+    if-eq p1, p0, :cond_1
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    instance-of v0, p1, Lt03;
+
+    .line 4
+    .line 5
+    if-eqz v0, :cond_0
+
+    .line 6
+    .line 7
+    check-cast p1, Lt03;
+
+    .line 8
+    .line 9
+    iget-object p1, p1, Lt03;->i:Ljava/util/ArrayList;
+
+    .line 10
+    .line 11
+    iget-object p0, p0, Lt03;->i:Ljava/util/ArrayList;
+
+    .line 12
+    .line 13
+    invoke-virtual {p1, p0}, Ljava/util/ArrayList;->equals(Ljava/lang/Object;)Z
+
+    .line 14
+    .line 15
+    .line 16
+    move-result p0
+
+    .line 17
+    if-nez p0, :cond_1
+
+    .line 18
+    .line 19
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 20
+    return p0
+
+    .line 21
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 22
+    return p0
+.end method
+
+.method public final f()Le13;
+    .locals 2
+
+    .line 1
+    iget-object p0, p0, Lt03;->i:Ljava/util/ArrayList;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/util/ArrayList;->size()I
 
     .line 4
     .line 5
     .line 6
-    move-result-object v0
+    move-result v0
 
     .line 7
-    check-cast v0, [Lt03;
+    const/4 v1, 0x1
 
     .line 8
+    if-ne v0, v1, :cond_0
+
     .line 9
-    return-object v0
+    .line 10
+    const/4 v0, 0x0
+
+    .line 11
+    invoke-virtual {p0, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    check-cast p0, Le13;
+
+    .line 16
+    .line 17
+    return-object p0
+
+    .line 18
+    :cond_0
+    const-string p0, "Array must have size 1, but has size "
+
+    .line 19
+    .line 20
+    invoke-static {v0, p0}, Llj6;->j(ILjava/lang/String;)Ljava/lang/String;
+
+    .line 21
+    .line 22
+    .line 23
+    move-result-object p0
+
+    .line 24
+    invoke-static {p0}, Lex1;->d(Ljava/lang/String;)V
+
+    .line 25
+    .line 26
+    .line 27
+    const/4 p0, 0x0
+
+    .line 28
+    return-object p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lt03;->i:Ljava/util/ArrayList;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/util/ArrayList;->hashCode()I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
+
+    .line 7
+    return p0
+.end method
+
+.method public final iterator()Ljava/util/Iterator;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lt03;->i:Ljava/util/ArrayList;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    return-object p0
 .end method

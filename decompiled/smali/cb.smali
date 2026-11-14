@@ -1,14 +1,14 @@
 .class public final enum Lcb;
 .super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
+.field public static final enum i:Lcb;
+
 .field public static final enum j:Lcb;
 
-.field public static final enum k:Lcb;
-
-.field public static final synthetic l:[Lcb;
+.field public static final synthetic k:[Lcb;
 
 
 # direct methods
@@ -32,7 +32,7 @@
     .line 7
     .line 8
     .line 9
-    sput-object v0, Lcb;->j:Lcb;
+    sput-object v0, Lcb;->i:Lcb;
 
     .line 10
     .line 11
@@ -52,7 +52,7 @@
     .line 17
     .line 18
     .line 19
-    sput-object v1, Lcb;->k:Lcb;
+    sput-object v1, Lcb;->j:Lcb;
 
     .line 20
     .line 21
@@ -64,7 +64,7 @@
     move-result-object v0
 
     .line 25
-    sput-object v0, Lcb;->l:[Lcb;
+    sput-object v0, Lcb;->k:[Lcb;
 
     .line 26
     .line 27
@@ -98,7 +98,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lcb;->l:[Lcb;
+    sget-object v0, Lcb;->k:[Lcb;
 
     .line 2
     .line 3

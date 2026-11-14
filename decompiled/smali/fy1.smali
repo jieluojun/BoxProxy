@@ -1,123 +1,134 @@
 .class public final Lfy1;
-.super Lpk6;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# instance fields
-.field public final synthetic e:Luf5;
-
-.field public final synthetic f:Lgy1;
+.super Lby1;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Luf5;Lgy1;)V
+.method public constructor <init>(Ljava/io/InputStream;)V
     .locals 0
 
     .line 1
-    iput-object p2, p0, Lfy1;->e:Luf5;
+    invoke-direct {p0, p1}, Lby1;-><init>(Ljava/io/InputStream;)V
 
     .line 2
     .line 3
-    iput-object p3, p0, Lfy1;->f:Lgy1;
-
     .line 4
+    invoke-virtual {p1}, Ljava/io/InputStream;->markSupported()Z
+
     .line 5
-    const/4 p2, 0x1
-
     .line 6
-    invoke-direct {p0, p1, p2}, Lpk6;-><init>(Ljava/lang/String;Z)V
-
     .line 7
+    move-result p1
+
     .line 8
+    if-eqz p1, :cond_0
+
     .line 9
+    .line 10
+    iget-object p0, p0, Lby1;->i:Ljava/io/DataInputStream;
+
+    .line 11
+    .line 12
+    const p1, 0x7fffffff
+
+    .line 13
+    .line 14
+    .line 15
+    invoke-virtual {p0, p1}, Ljava/io/InputStream;->mark(I)V
+
+    .line 16
+    .line 17
+    .line 18
+    return-void
+
+    .line 19
+    :cond_0
+    const-string p0, "Cannot create SeekableByteOrderedDataInputStream with stream that does not support mark/reset"
+
+    .line 20
+    .line 21
+    invoke-static {p0}, Lex1;->h(Ljava/lang/String;)V
+
+    .line 22
+    .line 23
+    .line 24
+    const/4 p0, 0x0
+
+    .line 25
+    throw p0
+.end method
+
+.method public constructor <init>([B)V
+    .locals 0
+
+    .line 26
+    invoke-direct {p0, p1}, Lby1;-><init>([B)V
+
+    .line 27
+    iget-object p0, p0, Lby1;->i:Ljava/io/DataInputStream;
+
+    const p1, 0x7fffffff
+
+    invoke-virtual {p0, p1}, Ljava/io/InputStream;->mark(I)V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 4
+.method public final c(J)V
+    .locals 3
 
     .line 1
-    iget-object v0, p0, Lfy1;->e:Luf5;
+    iget v0, p0, Lby1;->j:I
 
     .line 2
     .line 3
-    :try_start_0
-    invoke-interface {v0}, Luf5;->g()Ltf5;
+    int-to-long v1, v0
 
     .line 4
+    cmp-long v1, v1, p1
+
     .line 5
     .line 6
-    move-result-object v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    if-lez v1, :cond_0
 
     .line 7
-    goto :goto_0
-
     .line 8
-    :catchall_0
-    move-exception v1
+    const/4 v0, 0x0
 
     .line 9
-    new-instance v2, Ltf5;
+    iput v0, p0, Lby1;->j:I
 
     .line 10
     .line 11
-    const/4 v3, 0x2
+    iget-object v0, p0, Lby1;->i:Ljava/io/DataInputStream;
 
     .line 12
-    invoke-direct {v2, v0, v1, v3}, Ltf5;-><init>(Luf5;Ljava/lang/Throwable;I)V
-
     .line 13
+    invoke-virtual {v0}, Ljava/io/InputStream;->reset()V
+
     .line 14
     .line 15
-    move-object v1, v2
-
     .line 16
-    :goto_0
-    iget-object p0, p0, Lfy1;->f:Lgy1;
+    goto :goto_0
 
     .line 17
+    :cond_0
+    int-to-long v0, v0
+
     .line 18
-    iget-object v2, p0, Lgy1;->m:Ljava/lang/Object;
+    sub-long/2addr p1, v0
 
     .line 19
+    :goto_0
+    long-to-int p1, p1
+
     .line 20
-    check-cast v2, Ljava/util/concurrent/CopyOnWriteArrayList;
+    invoke-virtual {p0, p1}, Lby1;->b(I)V
 
     .line 21
     .line 22
-    invoke-virtual {v2, v0}, Ljava/util/concurrent/CopyOnWriteArrayList;->contains(Ljava/lang/Object;)Z
-
     .line 23
-    .line 24
-    .line 25
-    move-result v0
-
-    .line 26
-    if-eqz v0, :cond_0
-
-    .line 27
-    .line 28
-    iget-object p0, p0, Lgy1;->n:Ljava/lang/Object;
-
-    .line 29
-    .line 30
-    check-cast p0, Ljava/util/concurrent/LinkedBlockingDeque;
-
-    .line 31
-    .line 32
-    invoke-virtual {p0, v1}, Ljava/util/concurrent/LinkedBlockingDeque;->put(Ljava/lang/Object;)V
-
-    .line 33
-    .line 34
-    .line 35
-    :cond_0
-    const-wide/16 v0, -0x1
-
-    .line 36
-    .line 37
-    return-wide v0
+    return-void
 .end method

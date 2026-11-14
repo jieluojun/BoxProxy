@@ -1,139 +1,140 @@
-.class public final Lz47;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lai;
+.class public final enum Lz47;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final b:Ljava/lang/String;
+# static fields
+.field public static final enum i:Lz47;
+
+.field public static final enum j:Lz47;
+
+.field public static final enum k:Lz47;
+
+.field public static final synthetic l:[Lz47;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Lz47;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lz47;->b:Ljava/lang/String;
-
-    .line 5
-    .line 6
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    if-ne p0, p1, :cond_0
-
-    .line 2
-    .line 3
-    goto :goto_1
+    const-string v1, "ContinueTraversal"
 
     .line 4
-    :cond_0
-    instance-of v0, p1, Lz47;
-
     .line 5
+    const/4 v2, 0x0
+
     .line 6
-    if-nez v0, :cond_1
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 7
     .line 8
-    goto :goto_0
-
     .line 9
-    :cond_1
-    check-cast p1, Lz47;
+    sput-object v0, Lz47;->i:Lz47;
 
     .line 10
     .line 11
-    iget-object p1, p1, Lz47;->b:Ljava/lang/String;
+    new-instance v1, Lz47;
 
     .line 12
     .line 13
-    iget-object p0, p0, Lz47;->b:Ljava/lang/String;
+    const-string v2, "SkipSubtreeAndContinueTraversal"
 
     .line 14
     .line 15
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    const/4 v3, 0x1
 
     .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 17
     .line 18
-    move-result p0
-
     .line 19
-    if-nez p0, :cond_2
+    sput-object v1, Lz47;->j:Lz47;
 
     .line 20
     .line 21
-    :goto_0
-    const/4 p0, 0x0
+    new-instance v2, Lz47;
 
     .line 22
-    return p0
-
     .line 23
-    :cond_2
-    :goto_1
-    const/4 p0, 0x1
+    const-string v3, "CancelTraversal"
 
     .line 24
-    return p0
+    .line 25
+    const/4 v4, 0x2
+
+    .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 27
+    .line 28
+    .line 29
+    sput-object v2, Lz47;->k:Lz47;
+
+    .line 30
+    .line 31
+    filled-new-array {v0, v1, v2}, [Lz47;
+
+    .line 32
+    .line 33
+    .line 34
+    move-result-object v0
+
+    .line 35
+    sput-object v0, Lz47;->l:[Lz47;
+
+    .line 36
+    .line 37
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 0
+.method public static valueOf(Ljava/lang/String;)Lz47;
+    .locals 1
 
     .line 1
-    iget-object p0, p0, Lz47;->b:Ljava/lang/String;
+    const-class v0, Lz47;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     .line 4
     .line 5
     .line 6
-    move-result p0
+    move-result-object p0
 
     .line 7
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    const-string v0, "UrlAnnotation(url="
-
-    .line 2
-    .line 3
-    const-string v1, ")"
-
-    .line 4
-    .line 5
-    iget-object p0, p0, Lz47;->b:Ljava/lang/String;
-
-    .line 6
-    .line 7
-    invoke-static {v0, p0, v1}, Loc1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    check-cast p0, Lz47;
 
     .line 8
     .line 9
-    .line 10
-    move-result-object p0
-
-    .line 11
     return-object p0
+.end method
+
+.method public static values()[Lz47;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lz47;->l:[Lz47;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lz47;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

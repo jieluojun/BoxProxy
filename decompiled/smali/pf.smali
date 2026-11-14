@@ -1,9 +1,9 @@
 .class public final Lpf;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lq77;
+.implements Lyc7;
 
 
 # instance fields
@@ -73,17 +73,6 @@
     .locals 2
 
     .line 1
-    const-wide/16 v0, 0x28
-
-    .line 2
-    .line 3
-    return-wide v0
-.end method
-
-.method public final d()J
-    .locals 2
-
-    .line 1
     invoke-static {}, Landroid/view/ViewConfiguration;->getLongPressTimeout()I
 
     .line 2
@@ -98,7 +87,7 @@
     return-wide v0
 .end method
 
-.method public final e()F
+.method public final d()F
     .locals 0
 
     .line 1
@@ -117,6 +106,48 @@
     int-to-float p0, p0
 
     .line 8
+    return p0
+.end method
+
+.method public final e()F
+    .locals 2
+
+    .line 1
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 2
+    .line 3
+    const/16 v1, 0x22
+
+    .line 4
+    .line 5
+    if-lt v0, v1, :cond_0
+
+    .line 6
+    .line 7
+    iget-object p0, p0, Lpf;->a:Landroid/view/ViewConfiguration;
+
+    .line 8
+    .line 9
+    invoke-static {p0}, Llc;->a(Landroid/view/ViewConfiguration;)I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    int-to-float p0, p0
+
+    .line 14
+    return p0
+
+    .line 15
+    :cond_0
+    const/high16 p0, 0x40000000    # 2.0f
+
+    .line 16
+    .line 17
     return p0
 .end method
 
@@ -140,49 +171,7 @@
 
     .line 8
     .line 9
-    invoke-static {p0}, Lmc;->a(Landroid/view/ViewConfiguration;)I
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    int-to-float p0, p0
-
-    .line 14
-    return p0
-
-    .line 15
-    :cond_0
-    const/high16 p0, 0x40000000    # 2.0f
-
-    .line 16
-    .line 17
-    return p0
-.end method
-
-.method public final g()F
-    .locals 2
-
-    .line 1
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    .line 2
-    .line 3
-    const/16 v1, 0x22
-
-    .line 4
-    .line 5
-    if-lt v0, v1, :cond_0
-
-    .line 6
-    .line 7
-    iget-object p0, p0, Lpf;->a:Landroid/view/ViewConfiguration;
-
-    .line 8
-    .line 9
-    invoke-static {p0}, Lmc;->r(Landroid/view/ViewConfiguration;)I
+    invoke-static {p0}, Llc;->r(Landroid/view/ViewConfiguration;)I
 
     .line 10
     .line 11

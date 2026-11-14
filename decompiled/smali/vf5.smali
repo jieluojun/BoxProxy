@@ -1,19 +1,31 @@
 .class public final Lvf5;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Ljava/io/Serializable;
 
 
 # instance fields
-.field public a:I
+.field public i:Ljava/lang/Object;
 
-.field public b:Z
 
-.field public c:Z
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-.field public d:I
+    .line 1
+    iget-object p0, p0, Lvf5;->i:Ljava/lang/Object;
 
-.field public e:I
+    .line 2
+    .line 3
+    invoke-static {p0}, Ljava/lang/String;->valueOf(Ljava/lang/Object;)Ljava/lang/String;
 
-.field public f:Ljava/util/List;
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
 
-.field public g:F
+    .line 7
+    return-object p0
+.end method

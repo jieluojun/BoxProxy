@@ -1,29 +1,30 @@
 .class public final Lzv1;
-.super Lj3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lyv1;
-.implements Ljava/util/RandomAccess;
-.implements Ljava/io/Serializable;
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final j:[Ljava/lang/Enum;
+.field public i:Lre5;
+
+.field public synthetic j:Ljava/lang/Object;
+
+.field public final synthetic k:Law1;
+
+.field public l:I
 
 
 # direct methods
-.method public constructor <init>([Ljava/lang/Enum;)V
+.method public constructor <init>(Law1;Lq91;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lzv1;->k:Law1;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lzv1;->j:[Ljava/lang/Enum;
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
+    .line 4
     .line 5
     .line 6
     return-void
@@ -31,248 +32,43 @@
 
 
 # virtual methods
-.method public final a()I
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lzv1;->j:[Ljava/lang/Enum;
-
-    .line 2
-    .line 3
-    array-length p0, p0
-
-    .line 4
-    return p0
-.end method
-
-.method public final contains(Ljava/lang/Object;)Z
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     .line 1
-    instance-of v0, p1, Ljava/lang/Enum;
+    iput-object p1, p0, Lzv1;->j:Ljava/lang/Object;
 
     .line 2
     .line 3
-    if-nez v0, :cond_0
+    iget p1, p0, Lzv1;->l:I
 
     .line 4
     .line 5
-    goto :goto_0
+    const/high16 v0, -0x80000000
 
     .line 6
-    :cond_0
-    check-cast p1, Ljava/lang/Enum;
-
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    iget-object p0, p0, Lzv1;->j:[Ljava/lang/Enum;
+    iput p1, p0, Lzv1;->l:I
 
     .line 9
     .line 10
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
+    iget-object p1, p0, Lzv1;->k:Law1;
 
     .line 11
     .line 12
+    const/4 v0, 0x0
+
     .line 13
-    move-result v0
+    invoke-virtual {p1, v0, p0}, Law1;->d(Lre5;Lq91;)Ljava/lang/Object;
 
     .line 14
-    invoke-static {v0, p0}, Lpw;->F0(I[Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 15
     .line 16
-    .line 17
     move-result-object p0
 
-    .line 18
-    check-cast p0, Ljava/lang/Enum;
-
-    .line 19
-    .line 20
-    if-ne p0, p1, :cond_1
-
-    .line 21
-    .line 22
-    const/4 p0, 0x1
-
-    .line 23
-    return p0
-
-    .line 24
-    :cond_1
-    :goto_0
-    const/4 p0, 0x0
-
-    .line 25
-    return p0
-.end method
-
-.method public final get(I)Ljava/lang/Object;
-    .locals 2
-
-    .line 1
-    iget-object p0, p0, Lzv1;->j:[Ljava/lang/Enum;
-
-    .line 2
-    .line 3
-    array-length v0, p0
-
-    .line 4
-    if-ltz p1, :cond_0
-
-    .line 5
-    .line 6
-    if-ge p1, v0, :cond_0
-
-    .line 7
-    .line 8
-    aget-object p0, p0, p1
-
-    .line 9
-    .line 10
+    .line 17
     return-object p0
-
-    .line 11
-    :cond_0
-    const-string p0, "index: "
-
-    .line 12
-    .line 13
-    const-string v1, ", size: "
-
-    .line 14
-    .line 15
-    invoke-static {p1, v0, p0, v1}, Lhs5;->j(IILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object p0
-
-    .line 19
-    invoke-static {p0}, Lue1;->q(Ljava/lang/String;)V
-
-    .line 20
-    .line 21
-    .line 22
-    const/4 p0, 0x0
-
-    .line 23
-    return-object p0
-.end method
-
-.method public final indexOf(Ljava/lang/Object;)I
-    .locals 2
-
-    .line 1
-    instance-of v0, p1, Ljava/lang/Enum;
-
-    .line 2
-    .line 3
-    const/4 v1, -0x1
-
-    .line 4
-    if-nez v0, :cond_0
-
-    .line 5
-    .line 6
-    return v1
-
-    .line 7
-    :cond_0
-    check-cast p1, Ljava/lang/Enum;
-
-    .line 8
-    .line 9
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
-
-    .line 10
-    .line 11
-    .line 12
-    move-result v0
-
-    .line 13
-    iget-object p0, p0, Lzv1;->j:[Ljava/lang/Enum;
-
-    .line 14
-    .line 15
-    invoke-static {v0, p0}, Lpw;->F0(I[Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object p0
-
-    .line 19
-    check-cast p0, Ljava/lang/Enum;
-
-    .line 20
-    .line 21
-    if-ne p0, p1, :cond_1
-
-    .line 22
-    .line 23
-    return v0
-
-    .line 24
-    :cond_1
-    return v1
-.end method
-
-.method public final lastIndexOf(Ljava/lang/Object;)I
-    .locals 2
-
-    .line 1
-    instance-of v0, p1, Ljava/lang/Enum;
-
-    .line 2
-    .line 3
-    const/4 v1, -0x1
-
-    .line 4
-    if-nez v0, :cond_0
-
-    .line 5
-    .line 6
-    return v1
-
-    .line 7
-    :cond_0
-    check-cast p1, Ljava/lang/Enum;
-
-    .line 8
-    .line 9
-    invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
-
-    .line 10
-    .line 11
-    .line 12
-    move-result v0
-
-    .line 13
-    iget-object p0, p0, Lzv1;->j:[Ljava/lang/Enum;
-
-    .line 14
-    .line 15
-    invoke-static {v0, p0}, Lpw;->F0(I[Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object p0
-
-    .line 19
-    check-cast p0, Ljava/lang/Enum;
-
-    .line 20
-    .line 21
-    if-ne p0, p1, :cond_1
-
-    .line 22
-    .line 23
-    return v0
-
-    .line 24
-    :cond_1
-    return v1
 .end method

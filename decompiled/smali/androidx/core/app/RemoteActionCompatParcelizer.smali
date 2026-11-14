@@ -1,6 +1,6 @@
 .class public Landroidx/core/app/RemoteActionCompatParcelizer;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # direct methods
@@ -16,7 +16,7 @@
     return-void
 .end method
 
-.method public static read(Ln67;)Landroidx/core/app/RemoteActionCompat;
+.method public static read(Lvb7;)Landroidx/core/app/RemoteActionCompat;
     .locals 5
 
     .line 1
@@ -36,7 +36,7 @@
     const/4 v2, 0x1
 
     .line 9
-    invoke-virtual {p0, v2}, Ln67;->e(I)Z
+    invoke-virtual {p0, v2}, Lvb7;->e(I)Z
 
     .line 10
     .line 11
@@ -44,290 +44,272 @@
     move-result v3
 
     .line 13
-    if-nez v3, :cond_0
+    if-eqz v3, :cond_0
 
     .line 14
     .line 15
-    goto :goto_0
+    invoke-virtual {p0}, Lvb7;->g()Lxb7;
 
     .line 16
-    :cond_0
-    invoke-virtual {p0}, Ln67;->g()Lp67;
-
     .line 17
     .line 18
-    .line 19
     move-result-object v1
 
-    .line 20
-    :goto_0
+    .line 19
+    :cond_0
     check-cast v1, Landroidx/core/graphics/drawable/IconCompat;
 
+    .line 20
     .line 21
-    .line 22
     iput-object v1, v0, Landroidx/core/app/RemoteActionCompat;->a:Landroidx/core/graphics/drawable/IconCompat;
 
+    .line 22
     .line 23
-    .line 24
     iget-object v1, v0, Landroidx/core/app/RemoteActionCompat;->b:Ljava/lang/CharSequence;
 
+    .line 24
     .line 25
-    .line 26
     const/4 v3, 0x2
 
-    .line 27
-    invoke-virtual {p0, v3}, Ln67;->e(I)Z
+    .line 26
+    invoke-virtual {p0, v3}, Lvb7;->e(I)Z
 
+    .line 27
     .line 28
     .line 29
-    .line 30
     move-result v3
 
+    .line 30
+    if-eqz v3, :cond_1
+
     .line 31
-    if-nez v3, :cond_1
-
     .line 32
-    .line 33
-    goto :goto_1
-
-    .line 34
-    :cond_1
     move-object v1, p0
 
+    .line 33
+    check-cast v1, Lwb7;
+
+    .line 34
     .line 35
-    check-cast v1, Lo67;
+    sget-object v3, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
     .line 36
     .line 37
-    sget-object v3, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
+    iget-object v1, v1, Lwb7;->e:Landroid/os/Parcel;
 
     .line 38
     .line 39
-    iget-object v1, v1, Lo67;->e:Landroid/os/Parcel;
+    invoke-interface {v3, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
     .line 40
     .line 41
-    invoke-interface {v3, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
-
     .line 42
-    .line 43
-    .line 44
     move-result-object v1
 
-    .line 45
+    .line 43
     check-cast v1, Ljava/lang/CharSequence;
+
+    .line 44
+    .line 45
+    :cond_1
+    iput-object v1, v0, Landroidx/core/app/RemoteActionCompat;->b:Ljava/lang/CharSequence;
 
     .line 46
     .line 47
-    :goto_1
-    iput-object v1, v0, Landroidx/core/app/RemoteActionCompat;->b:Ljava/lang/CharSequence;
+    iget-object v1, v0, Landroidx/core/app/RemoteActionCompat;->c:Ljava/lang/CharSequence;
 
     .line 48
     .line 49
-    iget-object v1, v0, Landroidx/core/app/RemoteActionCompat;->c:Ljava/lang/CharSequence;
-
-    .line 50
-    .line 51
     const/4 v3, 0x3
 
-    .line 52
-    invoke-virtual {p0, v3}, Ln67;->e(I)Z
+    .line 50
+    invoke-virtual {p0, v3}, Lvb7;->e(I)Z
 
+    .line 51
+    .line 52
     .line 53
-    .line 54
-    .line 55
     move-result v3
 
+    .line 54
+    if-eqz v3, :cond_2
+
+    .line 55
     .line 56
-    if-nez v3, :cond_2
-
-    .line 57
-    .line 58
-    goto :goto_2
-
-    .line 59
-    :cond_2
     move-object v1, p0
 
-    .line 60
-    check-cast v1, Lo67;
+    .line 57
+    check-cast v1, Lwb7;
 
-    .line 61
-    .line 62
+    .line 58
+    .line 59
     sget-object v3, Landroid/text/TextUtils;->CHAR_SEQUENCE_CREATOR:Landroid/os/Parcelable$Creator;
 
-    .line 63
-    .line 64
-    iget-object v1, v1, Lo67;->e:Landroid/os/Parcel;
+    .line 60
+    .line 61
+    iget-object v1, v1, Lwb7;->e:Landroid/os/Parcel;
 
-    .line 65
-    .line 66
+    .line 62
+    .line 63
     invoke-interface {v3, v1}, Landroid/os/Parcelable$Creator;->createFromParcel(Landroid/os/Parcel;)Ljava/lang/Object;
 
-    .line 67
-    .line 68
-    .line 69
+    .line 64
+    .line 65
+    .line 66
     move-result-object v1
 
-    .line 70
+    .line 67
     check-cast v1, Ljava/lang/CharSequence;
 
-    .line 71
-    .line 72
-    :goto_2
+    .line 68
+    .line 69
+    :cond_2
     iput-object v1, v0, Landroidx/core/app/RemoteActionCompat;->c:Ljava/lang/CharSequence;
 
-    .line 73
-    .line 74
+    .line 70
+    .line 71
     iget-object v1, v0, Landroidx/core/app/RemoteActionCompat;->d:Landroid/app/PendingIntent;
+
+    .line 72
+    .line 73
+    const/4 v3, 0x4
+
+    .line 74
+    invoke-virtual {p0, v1, v3}, Lvb7;->f(Landroid/os/Parcelable;I)Landroid/os/Parcelable;
 
     .line 75
     .line 76
-    const/4 v3, 0x4
-
     .line 77
-    invoke-virtual {p0, v1, v3}, Ln67;->f(Landroid/os/Parcelable;I)Landroid/os/Parcelable;
-
-    .line 78
-    .line 79
-    .line 80
     move-result-object v1
 
-    .line 81
+    .line 78
     check-cast v1, Landroid/app/PendingIntent;
 
-    .line 82
-    .line 83
+    .line 79
+    .line 80
     iput-object v1, v0, Landroidx/core/app/RemoteActionCompat;->d:Landroid/app/PendingIntent;
 
-    .line 84
-    .line 85
+    .line 81
+    .line 82
     iget-boolean v1, v0, Landroidx/core/app/RemoteActionCompat;->e:Z
+
+    .line 83
+    .line 84
+    const/4 v3, 0x5
+
+    .line 85
+    invoke-virtual {p0, v3}, Lvb7;->e(I)Z
 
     .line 86
     .line 87
-    const/4 v3, 0x5
-
     .line 88
-    invoke-virtual {p0, v3}, Ln67;->e(I)Z
-
-    .line 89
-    .line 90
-    .line 91
     move-result v3
 
-    .line 92
+    .line 89
     const/4 v4, 0x0
 
+    .line 90
+    if-eqz v3, :cond_4
+
+    .line 91
+    .line 92
+    move-object v1, p0
+
     .line 93
-    if-nez v3, :cond_3
+    check-cast v1, Lwb7;
 
     .line 94
     .line 95
-    goto :goto_3
+    iget-object v1, v1, Lwb7;->e:Landroid/os/Parcel;
 
     .line 96
-    :cond_3
-    move-object v1, p0
-
     .line 97
-    check-cast v1, Lo67;
+    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
 
     .line 98
     .line 99
-    iget-object v1, v1, Lo67;->e:Landroid/os/Parcel;
-
     .line 100
+    move-result v1
+
     .line 101
-    invoke-virtual {v1}, Landroid/os/Parcel;->readInt()I
+    if-eqz v1, :cond_3
 
     .line 102
     .line 103
-    .line 104
-    move-result v1
-
-    .line 105
-    if-eqz v1, :cond_4
-
-    .line 106
-    .line 107
     move v1, v2
 
-    .line 108
-    goto :goto_3
+    .line 104
+    goto :goto_0
 
-    .line 109
-    :cond_4
+    .line 105
+    :cond_3
     move v1, v4
 
-    .line 110
-    :goto_3
+    .line 106
+    :cond_4
+    :goto_0
     iput-boolean v1, v0, Landroidx/core/app/RemoteActionCompat;->e:Z
 
-    .line 111
-    .line 112
+    .line 107
+    .line 108
     iget-boolean v1, v0, Landroidx/core/app/RemoteActionCompat;->f:Z
 
-    .line 113
-    .line 114
+    .line 109
+    .line 110
     const/4 v3, 0x6
 
+    .line 111
+    invoke-virtual {p0, v3}, Lvb7;->e(I)Z
+
+    .line 112
+    .line 113
+    .line 114
+    move-result v3
+
     .line 115
-    invoke-virtual {p0, v3}, Ln67;->e(I)Z
+    if-nez v3, :cond_5
 
     .line 116
     .line 117
+    move v2, v1
+
     .line 118
-    move-result v3
+    goto :goto_1
 
     .line 119
-    if-nez v3, :cond_5
+    :cond_5
+    check-cast p0, Lwb7;
 
     .line 120
     .line 121
-    move v2, v1
+    iget-object p0, p0, Lwb7;->e:Landroid/os/Parcel;
 
     .line 122
-    goto :goto_4
-
     .line 123
-    :cond_5
-    check-cast p0, Lo67;
+    invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
 
     .line 124
     .line 125
-    iget-object p0, p0, Lo67;->e:Landroid/os/Parcel;
-
     .line 126
+    move-result p0
+
     .line 127
-    invoke-virtual {p0}, Landroid/os/Parcel;->readInt()I
+    if-nez p0, :cond_6
 
     .line 128
     .line 129
-    .line 130
-    move-result p0
-
-    .line 131
-    if-eqz p0, :cond_6
-
-    .line 132
-    .line 133
-    goto :goto_4
-
-    .line 134
-    :cond_6
     move v2, v4
 
-    .line 135
-    :goto_4
+    .line 130
+    :cond_6
+    :goto_1
     iput-boolean v2, v0, Landroidx/core/app/RemoteActionCompat;->f:Z
 
-    .line 136
-    .line 137
+    .line 131
+    .line 132
     return-object v0
 .end method
 
-.method public static write(Landroidx/core/app/RemoteActionCompat;Ln67;)V
+.method public static write(Landroidx/core/app/RemoteActionCompat;Lvb7;)V
     .locals 4
 
     .line 1
@@ -343,12 +325,12 @@
     const/4 v1, 0x1
 
     .line 7
-    invoke-virtual {p1, v1}, Ln67;->h(I)V
+    invoke-virtual {p1, v1}, Lvb7;->h(I)V
 
     .line 8
     .line 9
     .line 10
-    invoke-virtual {p1, v0}, Ln67;->i(Lp67;)V
+    invoke-virtual {p1, v0}, Lvb7;->i(Lxb7;)V
 
     .line 11
     .line 12
@@ -360,7 +342,7 @@
     const/4 v1, 0x2
 
     .line 16
-    invoke-virtual {p1, v1}, Ln67;->h(I)V
+    invoke-virtual {p1, v1}, Lvb7;->h(I)V
 
     .line 17
     .line 18
@@ -368,11 +350,11 @@
     move-object v1, p1
 
     .line 20
-    check-cast v1, Lo67;
+    check-cast v1, Lwb7;
 
     .line 21
     .line 22
-    iget-object v1, v1, Lo67;->e:Landroid/os/Parcel;
+    iget-object v1, v1, Lwb7;->e:Landroid/os/Parcel;
 
     .line 23
     .line 24
@@ -391,7 +373,7 @@
     const/4 v3, 0x3
 
     .line 31
-    invoke-virtual {p1, v3}, Ln67;->h(I)V
+    invoke-virtual {p1, v3}, Lvb7;->h(I)V
 
     .line 32
     .line 33
@@ -408,7 +390,7 @@
     const/4 v3, 0x4
 
     .line 40
-    invoke-virtual {p1, v3}, Ln67;->h(I)V
+    invoke-virtual {p1, v3}, Lvb7;->h(I)V
 
     .line 41
     .line 42
@@ -425,7 +407,7 @@
     const/4 v2, 0x5
 
     .line 49
-    invoke-virtual {p1, v2}, Ln67;->h(I)V
+    invoke-virtual {p1, v2}, Lvb7;->h(I)V
 
     .line 50
     .line 51
@@ -442,7 +424,7 @@
     const/4 v0, 0x6
 
     .line 58
-    invoke-virtual {p1, v0}, Ln67;->h(I)V
+    invoke-virtual {p1, v0}, Lvb7;->h(I)V
 
     .line 59
     .line 60

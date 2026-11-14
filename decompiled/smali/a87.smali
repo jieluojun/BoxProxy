@@ -1,31 +1,100 @@
 .class public final La87;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lq05;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:Lsr0;
+.field public a:[S
 
-.field public final b:Lfg3;
+.field public b:I
 
 
-# direct methods
-.method public constructor <init>(Lsr0;Lfg3;)V
-    .locals 0
+# virtual methods
+.method public final a()Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iget-object v0, p0, La87;->a:[S
 
     .line 2
     .line 3
+    iget p0, p0, La87;->b:I
+
     .line 4
-    iput-object p1, p0, La87;->a:Lsr0;
+    .line 5
+    invoke-static {v0, p0}, Ljava/util/Arrays;->copyOf([SI)[S
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p0
+
+    .line 9
+    new-instance v0, Lz77;
+
+    .line 10
+    .line 11
+    invoke-direct {v0, p0}, Lz77;-><init>([S)V
+
+    .line 12
+    .line 13
+    .line 14
+    return-object v0
+.end method
+
+.method public final b(I)V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, La87;->a:[S
+
+    .line 2
+    .line 3
+    array-length v1, v0
+
+    .line 4
+    if-ge v1, p1, :cond_1
 
     .line 5
     .line 6
-    iput-object p2, p0, La87;->b:Lfg3;
+    array-length v1, v0
 
     .line 7
+    shl-int/lit8 v1, v1, 0x1
+
     .line 8
+    .line 9
+    if-ge p1, v1, :cond_0
+
+    .line 10
+    .line 11
+    move p1, v1
+
+    .line 12
+    :cond_0
+    invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([SI)[S
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p1
+
+    .line 16
+    iput-object p1, p0, La87;->a:[S
+
+    .line 17
+    .line 18
+    :cond_1
     return-void
+.end method
+
+.method public final d()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, La87;->b:I
+
+    .line 2
+    .line 3
+    return p0
 .end method

@@ -1,15 +1,15 @@
 .class public final Lic;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Landroid/content/ComponentCallbacks2;
+.implements Landroid/view/View$OnAttachStateChangeListener;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final synthetic i:B
 
-.field public final synthetic k:Ljava/lang/Object;
+.field public final synthetic j:Ljava/lang/Object;
 
 
 # direct methods
@@ -17,11 +17,11 @@
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lic;->j:B
+    iput-byte p2, p0, Lic;->i:B
 
     .line 2
     .line 3
-    iput-object p1, p0, Lic;->k:Ljava/lang/Object;
+    iput-object p1, p0, Lic;->j:Ljava/lang/Object;
 
     .line 4
     .line 5
@@ -33,207 +33,41 @@
     return-void
 .end method
 
-.method private final a(Landroid/content/res/Configuration;)V
+.method private final a(Landroid/view/View;)V
     .locals 0
 
     .line 1
     return-void
 .end method
 
-.method private final b()V
+.method private final b(Landroid/view/View;)V
     .locals 0
 
     .line 1
     return-void
 .end method
 
-.method private final c(I)V
-    .locals 2
+.method private final c(Landroid/view/View;)V
+    .locals 0
 
     .line 1
-    const/16 v0, 0x28
+    return-void
+.end method
 
-    .line 2
-    .line 3
-    if-lt p1, v0, :cond_2
+.method private final d(Landroid/view/View;)V
+    .locals 0
 
-    .line 4
-    .line 5
-    iget-object p0, p0, Lic;->k:Ljava/lang/Object;
-
-    .line 6
-    .line 7
-    check-cast p0, Lkc;
-
-    .line 8
-    .line 9
-    iget-object p1, p0, Lkc;->d:Loq2;
-
-    .line 10
-    .line 11
-    const/4 v0, 0x0
-
-    .line 12
-    if-eqz p1, :cond_1
-
-    .line 13
-    .line 14
-    monitor-enter p1
-
-    .line 15
-    :try_start_0
-    iget-object v1, p1, Loq2;->k:Ljava/lang/Object;
-
-    .line 16
-    .line 17
-    check-cast v1, Lgt3;
-
-    .line 18
-    .line 19
-    if-eqz v1, :cond_0
-
-    .line 20
-    .line 21
-    invoke-virtual {v1}, Lgt3;->a()V
-
-    .line 22
-    .line 23
-    .line 24
-    goto :goto_0
-
-    .line 25
-    :catchall_0
-    move-exception p0
-
-    .line 26
-    goto :goto_1
-
-    .line 27
-    :cond_0
-    :goto_0
-    iput-object v0, p1, Loq2;->l:Ljava/lang/Object;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 28
-    .line 29
-    monitor-exit p1
-
-    .line 30
-    goto :goto_2
-
-    .line 31
-    :goto_1
-    monitor-exit p1
-
-    .line 32
-    throw p0
-
-    .line 33
-    :cond_1
-    :goto_2
-    iput-object v0, p0, Lkc;->d:Loq2;
-
-    .line 34
-    .line 35
-    :cond_2
+    .line 1
     return-void
 .end method
 
 
 # virtual methods
-.method public final onConfigurationChanged(Landroid/content/res/Configuration;)V
-    .locals 0
-
-    .line 1
-    iget-byte p1, p0, Lic;->j:B
-
-    .line 2
-    .line 3
-    packed-switch p1, :pswitch_data_0
-
-    .line 4
-    .line 5
-    .line 6
-    iget-object p0, p0, Lic;->k:Ljava/lang/Object;
-
-    .line 7
-    .line 8
-    check-cast p0, Lme;
-
-    .line 9
-    .line 10
-    monitor-enter p0
-
-    .line 11
-    :try_start_0
-    iget-object p1, p0, Lme;->b:Ljava/lang/Object;
-
-    .line 12
-    .line 13
-    check-cast p1, Ljava/lang/ref/WeakReference;
-
-    .line 14
-    .line 15
-    invoke-virtual {p1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object p1
-
-    .line 19
-    check-cast p1, Lf95;
-
-    .line 20
-    .line 21
-    if-eqz p1, :cond_0
-
-    .line 22
-    .line 23
-    goto :goto_0
-
-    .line 24
-    :cond_0
-    invoke-virtual {p0}, Lme;->d()V
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 25
-    .line 26
-    .line 27
-    :goto_0
-    monitor-exit p0
-
-    .line 28
-    return-void
-
-    .line 29
-    :catchall_0
-    move-exception p1
-
-    .line 30
-    monitor-exit p0
-
-    .line 31
-    throw p1
-
-    .line 32
-    :pswitch_0
-    return-void
-
-    .line 33
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
-.end method
-
-.method public final onLowMemory()V
+.method public final onViewAttachedToWindow(Landroid/view/View;)V
     .locals 1
 
     .line 1
-    iget-byte v0, p0, Lic;->j:B
+    iget-byte v0, p0, Lic;->i:B
 
     .line 2
     .line 3
@@ -242,368 +76,541 @@
     .line 4
     .line 5
     .line 6
-    const/16 v0, 0x50
-
-    .line 7
-    .line 8
-    invoke-virtual {p0, v0}, Lic;->onTrimMemory(I)V
-
-    .line 9
-    .line 10
-    .line 11
     :pswitch_0
     return-void
 
+    .line 7
+    :pswitch_1
+    iget-object p0, p0, Lic;->j:Ljava/lang/Object;
+
+    .line 8
+    .line 9
+    check-cast p0, Ljc;
+
+    .line 10
+    .line 11
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
     .line 12
+    .line 13
+    .line 14
+    move-result-object p1
+
+    .line 15
+    iget-boolean v0, p0, Ljc;->c:Z
+
+    .line 16
+    .line 17
+    if-nez v0, :cond_0
+
+    .line 18
+    .line 19
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    .line 20
+    .line 21
+    .line 22
+    move-result-object p1
+
+    .line 23
+    iget-object v0, p0, Ljc;->e:Lhc;
+
+    .line 24
+    .line 25
+    invoke-virtual {p1, v0}, Landroid/content/Context;->registerComponentCallbacks(Landroid/content/ComponentCallbacks;)V
+
+    .line 26
+    .line 27
+    .line 28
+    const/4 p1, 0x1
+
+    .line 29
+    iput-boolean p1, p0, Ljc;->c:Z
+
+    .line 30
+    .line 31
+    :cond_0
+    return-void
+
+    .line 32
     nop
 
-    .line 13
+    .line 33
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_1
+        :pswitch_0
+        :pswitch_0
         :pswitch_0
     .end packed-switch
 .end method
 
-.method public final onTrimMemory(I)V
-    .locals 5
+.method public final onViewDetachedFromWindow(Landroid/view/View;)V
+    .locals 6
 
     .line 1
-    iget-byte v0, p0, Lic;->j:B
+    iget-byte v0, p0, Lic;->i:B
 
     .line 2
     .line 3
-    packed-switch v0, :pswitch_data_0
+    const/4 v1, 0x0
 
     .line 4
-    .line 5
-    .line 6
-    iget-object p0, p0, Lic;->k:Ljava/lang/Object;
+    const/4 v2, 0x0
 
+    .line 5
+    packed-switch v0, :pswitch_data_0
+
+    .line 6
     .line 7
     .line 8
-    check-cast p0, Lme;
+    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
     .line 9
     .line 10
-    monitor-enter p0
-
     .line 11
-    :try_start_0
-    iget-object v0, p0, Lme;->b:Ljava/lang/Object;
+    iget-object p0, p0, Lic;->j:Ljava/lang/Object;
 
     .line 12
     .line 13
-    check-cast v0, Ljava/lang/ref/WeakReference;
+    check-cast p0, Lwg6;
 
     .line 14
     .line 15
-    invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
+    invoke-virtual {p0, v2}, La03;->c(Ljava/util/concurrent/CancellationException;)V
 
     .line 16
     .line 17
     .line 18
-    move-result-object v0
+    return-void
 
     .line 19
-    check-cast v0, Lf95;
+    :pswitch_0
+    iget-object p0, p0, Lic;->j:Ljava/lang/Object;
 
     .line 20
     .line 21
-    if-eqz v0, :cond_2
+    check-cast p0, Lu2;
 
     .line 22
     .line 23
-    iget-object v1, v0, Lf95;->a:Lc95;
+    invoke-virtual {p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     .line 24
     .line 25
-    const/16 v2, 0x28
-
     .line 26
+    move-result-object p1
+
     .line 27
-    if-lt p1, v2, :cond_0
+    sget-object v0, Lbd7;->j:Lbd7;
 
     .line 28
     .line 29
-    invoke-virtual {v0}, Lf95;->c()Lj95;
+    if-nez p1, :cond_0
 
     .line 30
     .line 31
-    .line 32
-    move-result-object p1
+    sget-object p1, Lnv1;->a:Lnv1;
 
+    .line 32
     .line 33
-    if-eqz p1, :cond_3
+    goto :goto_0
 
     .line 34
+    :cond_0
+    new-instance v3, Lqi1;
+
     .line 35
-    iget-object v0, p1, Lj95;->c:Ljava/lang/Object;
-
     .line 36
-    .line 37
-    monitor-enter v0
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+    new-instance v4, Lqk5;
 
+    .line 37
     .line 38
-    :try_start_1
-    iget-object v1, p1, Lj95;->a:Lag3;
+    const/16 v5, 0x9
 
     .line 39
     .line 40
-    iget-object v1, v1, Lag3;->c:Ljava/lang/Object;
+    invoke-direct {v4, p1, v5}, Lqk5;-><init>(Ljava/lang/Object;B)V
 
     .line 41
     .line 42
-    check-cast v1, Lo95;
-
     .line 43
+    const/4 p1, 0x1
+
     .line 44
-    const-wide/16 v2, -0x1
+    invoke-direct {v3, v4, v0, p1}, Lqi1;-><init>(Ljava/lang/Object;Ljava/lang/Object;B)V
 
     .line 45
     .line 46
-    invoke-virtual {v1, v2, v3}, Lo95;->h(J)V
-
     .line 47
-    .line 48
-    .line 49
-    iget-object p1, p1, Lj95;->b:Lq7;
+    move-object p1, v3
 
+    .line 48
+    :goto_0
+    invoke-interface {p1}, Ll46;->iterator()Ljava/util/Iterator;
+
+    .line 49
     .line 50
     .line 51
-    const/4 v1, 0x0
+    move-result-object p1
 
     .line 52
-    iput v1, p1, Lq7;->b:I
+    :cond_1
+    invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 53
     .line 54
-    iget-object p1, p1, Lq7;->c:Ljava/lang/Object;
-
     .line 55
+    move-result v0
+
     .line 56
-    check-cast p1, Ljava/util/LinkedHashMap;
+    if-eqz v0, :cond_4
 
     .line 57
     .line 58
-    invoke-virtual {p1}, Ljava/util/LinkedHashMap;->clear()V
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+    invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     .line 59
     .line 60
     .line 61
-    :try_start_2
-    monitor-exit v0
+    move-result-object v0
 
     .line 62
-    goto :goto_0
+    check-cast v0, Landroid/view/ViewParent;
 
     .line 63
-    :catchall_0
-    move-exception p1
-
     .line 64
-    monitor-exit v0
+    instance-of v3, v0, Landroid/view/View;
 
     .line 65
-    throw p1
-
     .line 66
-    :catchall_1
-    move-exception p1
+    if-eqz v3, :cond_1
 
     .line 67
-    goto :goto_1
-
     .line 68
-    :cond_0
-    const/16 v2, 0x14
+    check-cast v0, Landroid/view/View;
 
     .line 69
     .line 70
-    if-lt p1, v2, :cond_1
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 71
     .line 72
-    iget-object p1, p0, Lme;->c:Ljava/lang/Object;
-
     .line 73
-    .line 74
-    check-cast p1, Lle;
+    const v3, 0x7f090079
 
+    .line 74
     .line 75
     .line 76
-    iget-object v0, v1, Lc95;->a:Landroid/content/Context;
+    invoke-virtual {v0, v3}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
     .line 77
     .line 78
-    invoke-virtual {p1, v0}, Lle;->a(Landroid/content/Context;)V
-
     .line 79
-    .line 80
-    .line 81
-    goto :goto_0
+    move-result-object v0
 
+    .line 80
+    instance-of v3, v0, Ljava/lang/Boolean;
+
+    .line 81
     .line 82
-    :cond_1
-    const/16 v1, 0xa
+    if-eqz v3, :cond_2
 
     .line 83
     .line 84
-    if-lt p1, v1, :cond_3
+    check-cast v0, Ljava/lang/Boolean;
 
     .line 85
     .line 86
-    invoke-virtual {v0}, Lf95;->c()Lj95;
+    goto :goto_1
 
     .line 87
-    .line 88
-    .line 89
-    move-result-object p1
+    :cond_2
+    move-object v0, v2
 
+    .line 88
+    :goto_1
+    if-eqz v0, :cond_3
+
+    .line 89
     .line 90
-    if-eqz p1, :cond_3
+    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
 
     .line 91
     .line 92
-    iget-object v0, p1, Lj95;->c:Ljava/lang/Object;
-
     .line 93
+    move-result v0
+
     .line 94
-    monitor-enter v0
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_1
+    goto :goto_2
 
     .line 95
-    :try_start_3
-    iget-object v1, p1, Lj95;->a:Lag3;
+    :cond_3
+    move v0, v1
 
     .line 96
-    .line 97
-    iget-object v1, v1, Lag3;->c:Ljava/lang/Object;
+    :goto_2
+    if-eqz v0, :cond_1
 
+    .line 97
     .line 98
+    goto :goto_3
+
     .line 99
-    check-cast v1, Lo95;
+    :cond_4
+    invoke-virtual {p0}, Lu2;->f()V
 
     .line 100
     .line 101
-    invoke-virtual {v1}, Lo95;->d()J
-
     .line 102
-    .line 103
-    .line 104
-    move-result-wide v1
-    :try_end_3
-    .catchall {:try_start_3 .. :try_end_3} :catchall_3
+    :goto_3
+    return-void
 
+    .line 103
+    :pswitch_1
+    iget-object v0, p0, Lic;->j:Ljava/lang/Object;
+
+    .line 104
     .line 105
-    :try_start_4
-    monitor-exit v0
+    check-cast v0, Lah6;
 
     .line 106
-    const-wide/16 v3, 0x2
-
     .line 107
-    .line 108
-    div-long/2addr v1, v3
+    iget-object v1, v0, Lah6;->w:Landroid/view/ViewTreeObserver;
 
+    .line 108
     .line 109
-    iget-object v0, p1, Lj95;->c:Ljava/lang/Object;
+    if-eqz v1, :cond_6
 
     .line 110
     .line 111
-    monitor-enter v0
-    :try_end_4
-    .catchall {:try_start_4 .. :try_end_4} :catchall_1
+    invoke-virtual {v1}, Landroid/view/ViewTreeObserver;->isAlive()Z
 
     .line 112
-    :try_start_5
-    iget-object p1, p1, Lj95;->a:Lag3;
-
     .line 113
     .line 114
-    iget-object p1, p1, Lag3;->c:Ljava/lang/Object;
+    move-result v1
 
     .line 115
+    if-nez v1, :cond_5
+
     .line 116
-    check-cast p1, Lo95;
-
     .line 117
-    .line 118
-    invoke-virtual {p1, v1, v2}, Lo95;->h(J)V
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_2
+    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
+    .line 118
     .line 119
     .line 120
+    move-result-object v1
+
     .line 121
-    :try_start_6
-    monitor-exit v0
+    iput-object v1, v0, Lah6;->w:Landroid/view/ViewTreeObserver;
 
     .line 122
-    goto :goto_0
-
     .line 123
-    :catchall_2
-    move-exception p1
+    :cond_5
+    iget-object v1, v0, Lah6;->w:Landroid/view/ViewTreeObserver;
 
     .line 124
-    monitor-exit v0
-
     .line 125
-    throw p1
+    iget-object v0, v0, Lah6;->q:Laq;
 
     .line 126
-    :catchall_3
-    move-exception p1
-
     .line 127
-    monitor-exit v0
+    invoke-virtual {v1, v0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
     .line 128
-    throw p1
-
     .line 129
-    :cond_2
-    invoke-virtual {p0}, Lme;->d()V
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_1
-
     .line 130
+    :cond_6
+    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+
     .line 131
     .line 132
-    :cond_3
-    :goto_0
-    monitor-exit p0
-
     .line 133
     return-void
 
     .line 134
-    :goto_1
-    monitor-exit p0
+    :pswitch_2
+    iget-object v0, p0, Lic;->j:Ljava/lang/Object;
 
     .line 135
-    throw p1
-
     .line 136
-    :pswitch_0
-    invoke-direct {p0, p1}, Lic;->c(I)V
+    check-cast v0, Lhm0;
 
     .line 137
     .line 138
-    .line 139
-    return-void
+    iget-object v1, v0, Lhm0;->F:Landroid/view/ViewTreeObserver;
 
+    .line 139
     .line 140
-    nop
+    if-eqz v1, :cond_8
 
     .line 141
+    .line 142
+    invoke-virtual {v1}, Landroid/view/ViewTreeObserver;->isAlive()Z
+
+    .line 143
+    .line 144
+    .line 145
+    move-result v1
+
+    .line 146
+    if-nez v1, :cond_7
+
+    .line 147
+    .line 148
+    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    .line 149
+    .line 150
+    .line 151
+    move-result-object v1
+
+    .line 152
+    iput-object v1, v0, Lhm0;->F:Landroid/view/ViewTreeObserver;
+
+    .line 153
+    .line 154
+    :cond_7
+    iget-object v1, v0, Lhm0;->F:Landroid/view/ViewTreeObserver;
+
+    .line 155
+    .line 156
+    iget-object v0, v0, Lhm0;->q:Laq;
+
+    .line 157
+    .line 158
+    invoke-virtual {v1, v0}, Landroid/view/ViewTreeObserver;->removeGlobalOnLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
+
+    .line 159
+    .line 160
+    .line 161
+    :cond_8
+    invoke-virtual {p1, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
+
+    .line 162
+    .line 163
+    .line 164
+    return-void
+
+    .line 165
+    :pswitch_3
+    iget-object p0, p0, Lic;->j:Ljava/lang/Object;
+
+    .line 166
+    .line 167
+    check-cast p0, Ljc;
+
+    .line 168
+    .line 169
+    invoke-virtual {p1}, Landroid/view/View;->getContext()Landroid/content/Context;
+
+    .line 170
+    .line 171
+    .line 172
+    move-result-object p1
+
+    .line 173
+    iget-boolean v0, p0, Ljc;->c:Z
+
+    .line 174
+    .line 175
+    if-eqz v0, :cond_9
+
+    .line 176
+    .line 177
+    invoke-virtual {p1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    .line 178
+    .line 179
+    .line 180
+    move-result-object p1
+
+    .line 181
+    iget-object v0, p0, Ljc;->e:Lhc;
+
+    .line 182
+    .line 183
+    invoke-virtual {p1, v0}, Landroid/content/Context;->unregisterComponentCallbacks(Landroid/content/ComponentCallbacks;)V
+
+    .line 184
+    .line 185
+    .line 186
+    iput-boolean v1, p0, Ljc;->c:Z
+
+    .line 187
+    .line 188
+    :cond_9
+    iget-object p1, p0, Ljc;->d:Lyu2;
+
+    .line 189
+    .line 190
+    if-eqz p1, :cond_b
+
+    .line 191
+    .line 192
+    monitor-enter p1
+
+    .line 193
+    :try_start_0
+    iget-object v0, p1, Lyu2;->j:Ljava/lang/Object;
+
+    .line 194
+    .line 195
+    check-cast v0, Lb04;
+
+    .line 196
+    .line 197
+    if-eqz v0, :cond_a
+
+    .line 198
+    .line 199
+    invoke-virtual {v0}, Lb04;->a()V
+
+    .line 200
+    .line 201
+    .line 202
+    :cond_a
+    iput-object v2, p1, Lyu2;->k:Ljava/lang/Object;
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 203
+    .line 204
+    monitor-exit p1
+
+    .line 205
+    goto :goto_4
+
+    .line 206
+    :catchall_0
+    move-exception p0
+
+    .line 207
+    monitor-exit p1
+
+    .line 208
+    throw p0
+
+    .line 209
+    :cond_b
+    :goto_4
+    iput-object v2, p0, Ljc;->d:Lyu2;
+
+    .line 210
+    .line 211
+    return-void
+
+    .line 212
+    nop
+
+    .line 213
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_3
+        :pswitch_2
+        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

@@ -1,250 +1,85 @@
-.class public final Lvy;
+.class public final synthetic Lvy;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lp75;
+.implements Le72;
 
 
-# static fields
-.field public static final j:Lvy;
+# instance fields
+.field public final synthetic i:B
 
-.field public static final k:D
+.field public final synthetic j:Lxy;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public synthetic constructor <init>(Lxy;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lvy;
+    iput-byte p2, p0, Lvy;->i:B
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lvy;->j:Lxy;
 
     .line 4
     .line 5
-    .line 6
-    sput-object v0, Lvy;->j:Lvy;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 6
     .line 7
     .line 8
-    const-wide v0, 0x3f9288ce703afb7fL    # 0.0181
-
-    .line 9
-    .line 10
-    .line 11
-    .line 12
-    .line 13
-    const-wide v2, 0x3fdccccccccccccdL    # 0.45
-
-    .line 14
-    .line 15
-    .line 16
-    .line 17
-    .line 18
-    invoke-static {v0, v1, v2, v3}, Ljava/lang/Math;->pow(DD)D
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-wide v0
-
-    .line 22
-    const-wide v2, 0x3ff196bb98c7e282L    # 1.0993
-
-    .line 23
-    .line 24
-    .line 25
-    .line 26
-    .line 27
-    mul-double/2addr v0, v2
-
-    .line 28
-    const-wide v2, 0x3fb96bb98c7e2820L    # 0.09929999999999994
-
-    .line 29
-    .line 30
-    .line 31
-    .line 32
-    .line 33
-    sub-double/2addr v0, v2
-
-    .line 34
-    sput-wide v0, Lvy;->k:D
-
-    .line 35
-    .line 36
     return-void
 .end method
 
 
 # virtual methods
-.method public final d(F)F
-    .locals 4
+.method public final invoke()Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    float-to-double v0, p1
+    iget-byte v0, p0, Lvy;->i:B
 
     .line 2
-    sget-wide v2, Lvy;->k:D
-
     .line 3
+    iget-object p0, p0, Lvy;->j:Lxy;
+
     .line 4
-    cmpg-double p0, v0, v2
-
     .line 5
-    .line 6
-    if-gez p0, :cond_0
+    packed-switch v0, :pswitch_data_0
 
+    .line 6
     .line 7
     .line 8
-    const/high16 p0, 0x40900000    # 4.5f
+    iget-object p0, p0, Lxy;->j:Ljb2;
 
     .line 9
     .line 10
-    div-float/2addr p1, p0
+    iget-object p0, p0, Ljb2;->a:Lhc2;
 
     .line 11
-    invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
     .line 12
+    return-object p0
+
     .line 13
-    .line 14
-    move-result-object p0
-
-    .line 15
-    goto :goto_0
-
-    .line 16
-    :cond_0
-    const-wide p0, 0x3fb96bb98c7e2820L    # 0.09929999999999994
-
-    .line 17
-    .line 18
-    .line 19
-    .line 20
-    .line 21
-    add-double/2addr v0, p0
-
-    .line 22
-    const-wide p0, 0x3ff196bb98c7e282L    # 1.0993
-
-    .line 23
-    .line 24
-    .line 25
-    .line 26
-    .line 27
-    div-double/2addr v0, p0
-
-    .line 28
-    const-wide p0, 0x4001c71c71c71c72L    # 2.2222222222222223
-
-    .line 29
-    .line 30
-    .line 31
-    .line 32
-    .line 33
-    invoke-static {v0, v1, p0, p1}, Ldn;->b0(DD)D
-
-    .line 34
-    .line 35
-    .line 36
-    move-result-wide p0
-
-    .line 37
-    invoke-static {p0, p1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
-
-    .line 38
-    .line 39
-    .line 40
-    move-result-object p0
-
-    .line 41
-    :goto_0
-    invoke-virtual {p0}, Ljava/lang/Number;->floatValue()F
-
-    .line 42
-    .line 43
-    .line 44
-    move-result p0
-
-    .line 45
-    return p0
-.end method
-
-.method public final e(F)F
-    .locals 2
-
-    .line 1
-    float-to-double p0, p1
-
-    .line 2
-    const-wide v0, 0x3f9288ce703afb7fL    # 0.0181
-
-    .line 3
-    .line 4
-    .line 5
-    .line 6
-    .line 7
-    cmpg-double v0, p0, v0
-
-    .line 8
-    .line 9
-    if-gez v0, :cond_0
-
-    .line 10
-    .line 11
-    const-wide/high16 v0, 0x4012000000000000L    # 4.5
-
-    .line 12
-    .line 13
-    mul-double/2addr p0, v0
+    :pswitch_0
+    iget-object p0, p0, Lxy;->j:Ljb2;
 
     .line 14
-    goto :goto_0
-
     .line 15
-    :cond_0
-    const-wide v0, 0x3fdccccccccccccdL    # 0.45
+    iget-object p0, p0, Ljb2;->a:Lhc2;
 
     .line 16
     .line 17
+    return-object p0
+
     .line 18
+    nop
+
     .line 19
-    .line 20
-    invoke-static {p0, p1, v0, v1}, Ldn;->b0(DD)D
-
-    .line 21
-    .line 22
-    .line 23
-    move-result-wide p0
-
-    .line 24
-    const-wide v0, 0x3ff196bb98c7e282L    # 1.0993
-
-    .line 25
-    .line 26
-    .line 27
-    .line 28
-    .line 29
-    mul-double/2addr p0, v0
-
-    .line 30
-    const-wide v0, 0x3fb96bb98c7e2820L    # 0.09929999999999994
-
-    .line 31
-    .line 32
-    .line 33
-    .line 34
-    .line 35
-    sub-double/2addr p0, v0
-
-    .line 36
-    :goto_0
-    double-to-float p0, p0
-
-    .line 37
-    return p0
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

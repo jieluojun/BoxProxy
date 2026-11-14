@@ -1,143 +1,261 @@
-.class public final synthetic Ltd5;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lql1;
-
-
-# instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Lwd5;
-
-
-# direct methods
-.method public synthetic constructor <init>(Lwd5;B)V
-    .locals 0
-
-    .line 1
-    iput-byte p2, p0, Ltd5;->j:B
-
-    .line 2
-    .line 3
-    iput-object p1, p0, Ltd5;->k:Lwd5;
-
-    .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 6
-    .line 7
-    .line 8
-    return-void
-.end method
+.class public Ltd5;
+.super Lb25;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # virtual methods
-.method public final b(D)D
-    .locals 8
+.method public final a()Lpd5;
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Ltd5;->j:B
+    const-string v0, "captures"
 
     .line 2
     .line 3
-    iget-object p0, p0, Ltd5;->k:Lwd5;
+    invoke-virtual {p0, v0}, Ltd5;->i(Ljava/lang/String;)V
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_0
-
     .line 6
+    invoke-virtual {p0, v0}, Ljava/util/AbstractMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 7
     .line 8
-    iget-object v0, p0, Lwd5;->n:Lql1;
-
     .line 9
+    move-result-object p0
+
     .line 10
-    iget v1, p0, Lwd5;->e:F
+    check-cast p0, Lpd5;
 
     .line 11
     .line 12
-    float-to-double v4, v1
+    return-object p0
+.end method
 
+.method public b()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    const-string v0, "name"
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, v0}, Ljava/util/AbstractMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Ljava/lang/String;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public c()Ljava/util/Collection;
+    .locals 1
+
+    .line 1
+    const-string v0, "patterns"
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, v0}, Ljava/util/AbstractMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Ljava/util/Collection;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public d()Lsd5;
+    .locals 1
+
+    .line 1
+    const-string v0, "repository"
+
+    .line 2
+    .line 3
+    invoke-virtual {p0, v0}, Ljava/util/AbstractMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lsd5;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public final e(Lwl5;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "id"
+
+    .line 2
+    .line 3
+    invoke-super {p0, v0, p1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final f(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "include"
+
+    .line 2
+    .line 3
+    invoke-super {p0, v0, p1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final g(Ljava/lang/String;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "name"
+
+    .line 2
+    .line 3
+    invoke-super {p0, v0, p1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final h(Ljava/util/Collection;)V
+    .locals 1
+
+    .line 1
+    const-string v0, "patterns"
+
+    .line 2
+    .line 3
+    invoke-super {p0, v0, p1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final i(Ljava/lang/String;)V
+    .locals 5
+
+    .line 1
+    invoke-virtual {p0, p1}, Ljava/util/AbstractMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    instance-of v1, v0, Ljava/util/List;
+
+    .line 6
+    .line 7
+    if-eqz v1, :cond_1
+
+    .line 8
+    .line 9
+    check-cast v0, Ljava/util/List;
+
+    .line 10
+    .line 11
+    new-instance v1, Ltd5;
+
+    .line 12
     .line 13
-    iget p0, p0, Lwd5;->f:F
+    invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
     .line 14
     .line 15
-    float-to-double v6, p0
-
     .line 16
-    move-wide v2, p1
+    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     .line 17
-    invoke-static/range {v2 .. v7}, Lgf3;->s(DDD)D
-
     .line 18
     .line 19
+    move-result-object v0
+
     .line 20
-    move-result-wide p0
+    const/4 v2, 0x0
 
     .line 21
-    invoke-interface {v0, p0, p1}, Lql1;->b(D)D
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 22
     .line 23
     .line 24
-    move-result-wide p0
+    move-result v3
 
     .line 25
-    return-wide p0
+    if-eqz v3, :cond_0
 
     .line 26
-    :pswitch_0
-    move-wide v2, p1
-
     .line 27
-    iget-object p1, p0, Lwd5;->k:Lql1;
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     .line 28
     .line 29
-    invoke-interface {p1, v2, v3}, Lql1;->b(D)D
-
     .line 30
-    .line 31
-    .line 32
-    move-result-wide v0
+    move-result-object v3
 
+    .line 31
+    add-int/lit8 v2, v2, 0x1
+
+    .line 32
     .line 33
-    iget p1, p0, Lwd5;->e:F
+    invoke-static {v2}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
 
     .line 34
     .line 35
-    float-to-double v2, p1
-
     .line 36
-    iget p0, p0, Lwd5;->f:F
+    move-result-object v4
 
     .line 37
+    invoke-virtual {v1, v4, v3}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 38
-    float-to-double v4, p0
-
     .line 39
-    invoke-static/range {v0 .. v5}, Lgf3;->s(DDD)D
-
     .line 40
+    goto :goto_0
+
     .line 41
+    :cond_0
+    invoke-super {p0, p1, v1}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
     .line 42
-    move-result-wide p0
-
     .line 43
-    return-wide p0
-
     .line 44
-    nop
-
-    .line 45
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    :cond_1
+    return-void
 .end method

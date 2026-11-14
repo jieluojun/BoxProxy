@@ -1,218 +1,111 @@
-.class public abstract Lsw2;
+.class public final Lsw2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+
+# instance fields
+.field public a:I
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    const/4 v0, 0x0
+
+    .line 5
+    iput v0, p0, Lsw2;->a:I
+
+    .line 6
+    .line 7
+    return-void
+.end method
 
 
 # virtual methods
-.method public a()Z
-    .locals 1
-
-    .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    invoke-virtual {p0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object p0
-
-    .line 11
-    invoke-direct {v0, p0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    .line 12
-    .line 13
-    .line 14
-    throw v0
-.end method
-
-.method public b()I
-    .locals 1
-
-    .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    invoke-virtual {p0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object p0
-
-    .line 11
-    invoke-direct {v0, p0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    .line 12
-    .line 13
-    .line 14
-    throw v0
-.end method
-
-.method public final c()Ljx2;
-    .locals 1
-
-    .line 1
-    instance-of v0, p0, Ljx2;
-
-    .line 2
-    .line 3
-    if-eqz v0, :cond_0
-
-    .line 4
-    .line 5
-    check-cast p0, Ljx2;
-
-    .line 6
-    .line 7
-    return-object p0
-
-    .line 8
-    :cond_0
-    const-string v0, "Not a JSON Object: "
-
-    .line 9
-    .line 10
-    invoke-static {v0, p0}, Lue1;->u(Ljava/lang/String;Ljava/lang/Object;)V
-
-    .line 11
-    .line 12
-    .line 13
-    const/4 p0, 0x0
-
-    .line 14
-    return-object p0
-.end method
-
-.method public d()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    new-instance v0, Ljava/lang/UnsupportedOperationException;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    invoke-virtual {p0}, Ljava/lang/Class;->getSimpleName()Ljava/lang/String;
-
-    .line 8
-    .line 9
-    .line 10
-    move-result-object p0
-
-    .line 11
-    invoke-direct {v0, p0}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
-
-    .line 12
-    .line 13
-    .line 14
-    throw v0
-.end method
-
 .method public final toString()Ljava/lang/String;
     .locals 3
 
     .line 1
-    :try_start_0
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget v0, p0, Lsw2;->a:I
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     .line 4
     .line 5
     .line 6
-    new-instance v1, Lyx2;
+    move-result p0
 
     .line 7
+    const/16 v1, 0x10
+
     .line 8
-    new-instance v2, Ltc6;
-
     .line 9
-    .line 10
-    invoke-direct {v2, v0}, Ltc6;-><init>(Ljava/lang/StringBuilder;)V
+    invoke-static {v1}, Ljs;->G(I)V
 
+    .line 10
     .line 11
     .line 12
-    .line 13
-    invoke-direct {v1, v2}, Lyx2;-><init>(Ljava/io/Writer;)V
+    invoke-static {p0, v1}, Ljava/lang/Integer;->toString(II)Ljava/lang/String;
 
+    .line 13
     .line 14
     .line 15
+    move-result-object p0
+
     .line 16
-    const/4 v2, 0x1
+    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 17
-    iput v2, v1, Lyx2;->q:I
-
     .line 18
     .line 19
-    sget-object v2, Lf17;->z:Lxw2;
+    new-instance v1, Ljava/lang/StringBuilder;
 
     .line 20
     .line 21
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-string v2, "IntRef(element = "
 
     .line 22
     .line 23
-    .line 24
-    invoke-static {v1, p0}, Lxw2;->d(Lyx2;Lsw2;)V
+    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    .line 24
     .line 25
     .line 26
-    .line 27
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
+    .line 27
     .line 28
     .line 29
-    .line 30
-    move-result-object p0
-    :try_end_0
-    .catch Ljava/io/IOException; {:try_start_0 .. :try_end_0} :catch_0
+    const-string v0, ")@"
 
+    .line 30
     .line 31
-    return-object p0
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 32
-    :catch_0
-    move-exception p0
-
     .line 33
-    new-instance v0, Ljava/lang/AssertionError;
-
     .line 34
-    .line 35
-    invoke-direct {v0, p0}, Ljava/lang/AssertionError;-><init>(Ljava/lang/Object;)V
+    invoke-virtual {v1, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
+    .line 35
     .line 36
     .line 37
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
     .line 38
-    throw v0
+    .line 39
+    .line 40
+    move-result-object p0
+
+    .line 41
+    return-object p0
 .end method

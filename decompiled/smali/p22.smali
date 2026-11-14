@@ -1,32 +1,28 @@
-.class final Lp22;
-.super Ldq3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ldq3;"
-    }
-.end annotation
+.class public final Lp22;
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final j:Lp62;
+.field public synthetic i:Ljava/lang/Object;
+
+.field public final synthetic j:Lbl;
+
+.field public k:I
 
 
 # direct methods
-.method public constructor <init>(Lp62;)V
+.method public constructor <init>(Lbl;Lp91;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lp22;->j:Lbl;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lp22;->j:Lp62;
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
+    .line 4
     .line 5
     .line 6
     return-void
@@ -34,117 +30,43 @@
 
 
 # virtual methods
-.method public final a()Lvp3;
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 1
 
     .line 1
-    new-instance v0, Lq22;
+    iput-object p1, p0, Lp22;->i:Ljava/lang/Object;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Lvp3;-><init>()V
+    iget p1, p0, Lp22;->k:I
 
     .line 4
     .line 5
-    .line 6
-    iget-object p0, p0, Lp22;->j:Lp62;
+    const/high16 v0, -0x80000000
 
+    .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    iput-object p0, v0, Lq22;->x:Lp62;
+    iput p1, p0, Lp22;->k:I
 
     .line 9
     .line 10
-    return-object v0
-.end method
-
-.method public final b(Lvp3;)V
-    .locals 0
-
-    .line 1
-    check-cast p1, Lq22;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lp22;->j:Lp62;
-
-    .line 4
-    .line 5
-    iput-object p0, p1, Lq22;->x:Lp62;
-
-    .line 6
-    .line 7
-    return-void
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of v1, p1, Lp22;
-
-    .line 6
-    .line 7
-    const/4 v2, 0x0
-
-    .line 8
-    if-nez v1, :cond_1
-
-    .line 9
-    .line 10
-    return v2
+    iget-object p1, p0, Lp22;->j:Lbl;
 
     .line 11
-    :cond_1
-    check-cast p1, Lp22;
-
     .line 12
+    const/4 v0, 0x0
+
     .line 13
-    iget-object p1, p1, Lp22;->j:Lp62;
+    invoke-virtual {p1, v0, p0}, Lbl;->d(Ljava/lang/Object;Lp91;)Ljava/lang/Object;
 
     .line 14
     .line 15
-    iget-object p0, p0, Lp22;->j:Lp62;
-
     .line 16
+    move-result-object p0
+
     .line 17
-    if-eq p0, p1, :cond_2
-
-    .line 18
-    .line 19
-    return v2
-
-    .line 20
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lp22;->j:Lp62;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
+    return-object p0
 .end method

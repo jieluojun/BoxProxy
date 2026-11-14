@@ -1,21 +1,17 @@
 .class public final Lt9;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lay;
+.implements Lds0;
 
 
 # instance fields
-.field public final a:Lqa;
-
-.field public final b:Lfy;
-
-.field public final c:Landroid/view/autofill/AutofillId;
+.field public final a:Lyu2;
 
 
 # direct methods
-.method public constructor <init>(Lqa;Lfy;)V
+.method public constructor <init>(Lyu2;)V
     .locals 0
 
     .line 1
@@ -24,53 +20,61 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lt9;->a:Lqa;
+    iput-object p1, p0, Lt9;->a:Lyu2;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lt9;->b:Lfy;
+    return-void
+.end method
 
+
+# virtual methods
+.method public final a(Lbs0;)V
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lt9;->a:Lyu2;
+
+    .line 2
+    .line 3
+    if-nez p1, :cond_0
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Lyu2;->q()Landroid/content/ClipboardManager;
+
+    .line 6
     .line 7
     .line 8
-    const/4 p2, 0x1
+    move-result-object p0
 
     .line 9
-    invoke-virtual {p1, p2}, Landroid/view/View;->setImportantForAutofill(I)V
+    invoke-virtual {p0}, Landroid/content/ClipboardManager;->clearPrimaryClip()V
 
     .line 10
     .line 11
     .line 12
-    invoke-virtual {p1}, Landroid/view/View;->getAutofillId()Landroid/view/autofill/AutofillId;
+    goto :goto_0
 
     .line 13
+    :cond_0
+    invoke-virtual {p0}, Lyu2;->q()Landroid/content/ClipboardManager;
+
     .line 14
     .line 15
-    move-result-object p1
-
     .line 16
-    if-eqz p1, :cond_0
-
-    .line 17
-    .line 18
-    iput-object p1, p0, Lt9;->c:Landroid/view/autofill/AutofillId;
-
-    .line 19
-    .line 20
-    return-void
-
-    .line 21
-    :cond_0
-    const-string p0, "Required value was null."
-
-    .line 22
-    .line 23
-    invoke-static {p0}, Ly96;->f(Ljava/lang/String;)Loy0;
-
-    .line 24
-    .line 25
-    .line 26
     move-result-object p0
 
-    .line 27
-    throw p0
+    .line 17
+    iget-object p1, p1, Lbs0;->a:Landroid/content/ClipData;
+
+    .line 18
+    .line 19
+    invoke-virtual {p0, p1}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
+
+    .line 20
+    .line 21
+    .line 22
+    :goto_0
+    return-void
 .end method

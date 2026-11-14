@@ -1,142 +1,188 @@
-.class public Lct3;
-.super Let3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lct3;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Loy2;
-.implements Lpy2;
+.implements Lt72;
+
+
+# instance fields
+.field public final synthetic i:Ljava/util/List;
+
+.field public final synthetic j:Ljava/lang/String;
+
+.field public final synthetic k:Z
+
+.field public final synthetic l:Lp72;
+
+.field public final synthetic m:Lbt3;
+
+.field public final synthetic n:Lsw3;
+
+.field public final synthetic o:Z
+
+.field public final synthetic p:Lp72;
+
+.field public final synthetic q:Lgs2;
+
+.field public final synthetic r:Ljava/lang/String;
+
+.field public final synthetic s:I
+
+.field public final synthetic t:S
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 6
+.method public synthetic constructor <init>(Ljava/util/List;Ljava/lang/String;ZLp72;Lbt3;Lsw3;ZLp72;Lgs2;Ljava/lang/String;II)V
+    .locals 0
 
     .line 1
-    const/4 v5, 0x1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    sget-object v1, Lfi0;->NO_RECEIVER:Ljava/lang/Object;
-
     .line 3
     .line 4
-    move-object v0, p0
+    iput-object p1, p0, Lct3;->i:Ljava/util/List;
 
     .line 5
-    move-object v2, p1
-
     .line 6
-    move-object v3, p2
+    iput-object p2, p0, Lct3;->j:Ljava/lang/String;
 
     .line 7
-    move-object v4, p3
-
     .line 8
-    invoke-direct/range {v0 .. v5}, Lmv4;-><init>(Ljava/lang/Object;Ljava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+    iput-boolean p3, p0, Lct3;->k:Z
 
     .line 9
     .line 10
+    iput-object p4, p0, Lct3;->l:Lp72;
+
     .line 11
+    .line 12
+    iput-object p5, p0, Lct3;->m:Lbt3;
+
+    .line 13
+    .line 14
+    iput-object p6, p0, Lct3;->n:Lsw3;
+
+    .line 15
+    .line 16
+    iput-boolean p7, p0, Lct3;->o:Z
+
+    .line 17
+    .line 18
+    iput-object p8, p0, Lct3;->p:Lp72;
+
+    .line 19
+    .line 20
+    iput-object p9, p0, Lct3;->q:Lgs2;
+
+    .line 21
+    .line 22
+    iput-object p10, p0, Lct3;->r:Ljava/lang/String;
+
+    .line 23
+    .line 24
+    iput p11, p0, Lct3;->s:I
+
+    .line 25
+    .line 26
+    iput-short p12, p0, Lct3;->t:S
+
+    .line 27
+    .line 28
     return-void
 .end method
 
 
 # virtual methods
-.method public final computeReflected()Lcy2;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 13
 
     .line 1
-    sget-object v0, Loa5;->a:Lpa5;
+    move-object v10, p1
 
     .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    check-cast v10, Lt82;
 
+    .line 3
     .line 4
+    check-cast p2, Ljava/lang/Integer;
+
     .line 5
     .line 6
-    return-object p0
-.end method
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-.method public get()Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Lct3;->getGetter()Lny2;
-
-    .line 2
-    .line 3
-    .line 4
-    const/4 p0, 0x0
-
-    .line 5
-    throw p0
-.end method
-
-.method public final getDelegate()Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Lmv4;->getReflected()Lpy2;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    check-cast p0, Lct3;
-
-    .line 6
     .line 7
-    invoke-virtual {p0}, Lct3;->getDelegate()Ljava/lang/Object;
-
     .line 8
     .line 9
+    iget p1, p0, Lct3;->s:I
+
     .line 10
-    move-result-object p0
-
     .line 11
-    return-object p0
-.end method
+    or-int/lit8 p1, p1, 0x1
 
-.method public final getGetter()Lny2;
-    .locals 0
+    .line 12
+    .line 13
+    invoke-static {p1}, Lp06;->W(I)I
 
-    .line 1
-    invoke-virtual {p0}, Lmv4;->getReflected()Lpy2;
+    .line 14
+    .line 15
+    .line 16
+    move-result v11
 
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
+    .line 17
+    iget-object v0, p0, Lct3;->i:Ljava/util/List;
 
-    .line 5
-    check-cast p0, Lct3;
+    .line 18
+    .line 19
+    iget-object v1, p0, Lct3;->j:Ljava/lang/String;
 
-    .line 6
-    .line 7
-    invoke-virtual {p0}, Lct3;->getGetter()Lny2;
+    .line 20
+    .line 21
+    iget-boolean v2, p0, Lct3;->k:Z
 
-    .line 8
-    .line 9
-    .line 10
-    const/4 p0, 0x0
+    .line 22
+    .line 23
+    iget-object v3, p0, Lct3;->l:Lp72;
 
-    .line 11
-    return-object p0
-.end method
+    .line 24
+    .line 25
+    iget-object v4, p0, Lct3;->m:Lbt3;
 
-.method public final invoke()Ljava/lang/Object;
-    .locals 0
+    .line 26
+    .line 27
+    iget-object v5, p0, Lct3;->n:Lsw3;
 
-    .line 1
-    invoke-interface {p0}, Loy2;->get()Ljava/lang/Object;
+    .line 28
+    .line 29
+    iget-boolean v6, p0, Lct3;->o:Z
 
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
+    .line 30
+    .line 31
+    iget-object v7, p0, Lct3;->p:Lp72;
 
-    .line 5
+    .line 32
+    .line 33
+    iget-object v8, p0, Lct3;->q:Lgs2;
+
+    .line 34
+    .line 35
+    iget-object v9, p0, Lct3;->r:Ljava/lang/String;
+
+    .line 36
+    .line 37
+    iget-short v12, p0, Lct3;->t:S
+
+    .line 38
+    .line 39
+    invoke-static/range {v0 .. v12}, Lo06;->j(Ljava/util/List;Ljava/lang/String;ZLp72;Lbt3;Lsw3;ZLp72;Lgs2;Ljava/lang/String;Lt82;II)V
+
+    .line 40
+    .line 41
+    .line 42
+    sget-object p0, Ll97;->a:Ll97;
+
+    .line 43
+    .line 44
     return-object p0
 .end method

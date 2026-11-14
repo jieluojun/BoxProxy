@@ -1,15 +1,15 @@
 .class public interface abstract Landroidx/compose/ui/input/pointer/PointerInputEventHandler;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # virtual methods
-.method public abstract invoke(Lar4;Ly81;)Ljava/lang/Object;
+.method public abstract invoke(Lkx4;Lp91;)Ljava/lang/Object;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Lar4;",
-            "Ly81;",
+            "Lkx4;",
+            "Lp91;",
             ")",
             "Ljava/lang/Object;"
         }

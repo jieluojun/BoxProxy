@@ -1,162 +1,75 @@
-.class public final enum Lgg6;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lgg6;
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final enum j:Lgg6;
+# instance fields
+.field public i:Lcg6;
 
-.field public static final enum k:Lgg6;
+.field public j:Lp72;
 
-.field public static final enum l:Lgg6;
+.field public k:Le72;
 
-.field public static final enum m:Lgg6;
+.field public l:Luf5;
 
-.field public static final synthetic n:[Lgg6;
+.field public m:F
+
+.field public n:F
+
+.field public synthetic o:Ljava/lang/Object;
+
+.field public p:I
 
 
-# direct methods
-.method static constructor <clinit>()V
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 6
 
     .line 1
-    new-instance v0, Lgg6;
+    iput-object p1, p0, Lgg6;->o:Ljava/lang/Object;
 
     .line 2
     .line 3
-    const-string v1, "InvalidRequest"
+    iget p1, p0, Lgg6;->p:I
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    const/high16 v0, -0x80000000
 
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 7
-    .line 8
-    .line 9
-    sput-object v0, Lgg6;->j:Lgg6;
+    or-int/2addr p1, v0
 
+    .line 8
+    iput p1, p0, Lgg6;->p:I
+
+    .line 9
     .line 10
+    const/4 v3, 0x0
+
     .line 11
-    new-instance v1, Lgg6;
+    const/4 v4, 0x0
 
     .line 12
+    const/4 v0, 0x0
+
     .line 13
-    const-string v2, "Network"
+    const/4 v1, 0x0
 
     .line 14
+    const/4 v2, 0x0
+
     .line 15
-    const/4 v3, 0x1
+    move-object v5, p0
 
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-static/range {v0 .. v5}, Lzb3;->a0(Lcg6;FFLp72;Le72;Lq91;)Ljava/lang/Object;
 
     .line 17
     .line 18
     .line 19
-    sput-object v1, Lgg6;->k:Lgg6;
-
-    .line 20
-    .line 21
-    new-instance v2, Lgg6;
-
-    .line 22
-    .line 23
-    const-string v3, "RedirectLimit"
-
-    .line 24
-    .line 25
-    const/4 v4, 0x2
-
-    .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 27
-    .line 28
-    .line 29
-    sput-object v2, Lgg6;->l:Lgg6;
-
-    .line 30
-    .line 31
-    new-instance v3, Lgg6;
-
-    .line 32
-    .line 33
-    const-string v4, "MissingUsageHeader"
-
-    .line 34
-    .line 35
-    const/4 v5, 0x3
-
-    .line 36
-    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 37
-    .line 38
-    .line 39
-    sput-object v3, Lgg6;->m:Lgg6;
-
-    .line 40
-    .line 41
-    filled-new-array {v0, v1, v2, v3}, [Lgg6;
-
-    .line 42
-    .line 43
-    .line 44
-    move-result-object v0
-
-    .line 45
-    sput-object v0, Lgg6;->n:[Lgg6;
-
-    .line 46
-    .line 47
-    return-void
-.end method
-
-.method public static valueOf(Ljava/lang/String;)Lgg6;
-    .locals 1
-
-    .line 1
-    const-class v0, Lgg6;
-
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
-
-    .line 4
-    .line 5
-    .line 6
     move-result-object p0
 
-    .line 7
-    check-cast p0, Lgg6;
-
-    .line 8
-    .line 9
+    .line 20
     return-object p0
-.end method
-
-.method public static values()[Lgg6;
-    .locals 1
-
-    .line 1
-    sget-object v0, Lgg6;->n:[Lgg6;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [Lgg6;
-
-    .line 8
-    .line 9
-    return-object v0
 .end method

@@ -1,96 +1,142 @@
 .class public final Li16;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:Lmt3;
+.field public final a:Ljava/lang/Object;
 
-.field public final b:Lmt3;
+.field public final b:Lu72;
 
-.field public final c:Lmt3;
+.field public final c:Lu72;
 
-.field public final d:Lmt3;
+.field public final d:Ljava/lang/Object;
+
+.field public final e:Lzm6;
+
+.field public f:Ljava/lang/Object;
+
+.field public g:I
+
+.field public final synthetic h:Lk16;
 
 
 # direct methods
-.method public constructor <init>(Lmt3;Lmt3;Lmt3;Lmt3;)V
+.method public constructor <init>(Lk16;Ljava/lang/Object;Lu72;Lu72;Ljava/lang/Object;Lzm6;Lje0;)V
     .locals 0
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object p1, p0, Li16;->h:Lk16;
 
     .line 5
     .line 6
-    .line 7
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object p2, p0, Li16;->a:Ljava/lang/Object;
 
+    .line 7
     .line 8
+    iput-object p3, p0, Li16;->b:Lu72;
+
     .line 9
     .line 10
-    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iput-object p4, p0, Li16;->c:Lu72;
 
     .line 11
     .line 12
-    .line 13
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p5, p0, Li16;->d:Ljava/lang/Object;
 
+    .line 13
     .line 14
+    iput-object p6, p0, Li16;->e:Lzm6;
+
     .line 15
     .line 16
-    iput-object p1, p0, Li16;->a:Lmt3;
+    const/4 p1, -0x1
 
     .line 17
+    iput p1, p0, Li16;->g:I
+
     .line 18
-    iput-object p2, p0, Li16;->b:Lmt3;
-
     .line 19
-    .line 20
-    iput-object p3, p0, Li16;->c:Lmt3;
-
-    .line 21
-    .line 22
-    iput-object p4, p0, Li16;->d:Lmt3;
-
-    .line 23
-    .line 24
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Z
-    .locals 0
+.method public final a()V
+    .locals 2
 
     .line 1
-    iget-object p0, p0, Li16;->a:Lmt3;
+    iget-object v0, p0, Li16;->f:Ljava/lang/Object;
 
     .line 2
     .line 3
-    invoke-interface {p0}, Lmb6;->getValue()Ljava/lang/Object;
+    instance-of v1, v0, Lz06;
 
     .line 4
     .line 5
-    .line 6
-    move-result-object p0
+    if-eqz v1, :cond_0
 
+    .line 6
     .line 7
-    check-cast p0, Ljava/lang/Boolean;
+    check-cast v0, Lz06;
 
     .line 8
     .line 9
-    invoke-virtual {p0}, Ljava/lang/Boolean;->booleanValue()Z
+    iget v1, p0, Li16;->g:I
 
     .line 10
     .line 11
-    .line 12
-    move-result p0
+    iget-object p0, p0, Li16;->h:Lk16;
 
+    .line 12
     .line 13
-    return p0
+    iget-object p0, p0, Lk16;->i:Lfc1;
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, v1, p0}, Lz06;->h(ILfc1;)V
+
+    .line 16
+    .line 17
+    .line 18
+    return-void
+
+    .line 19
+    :cond_0
+    instance-of p0, v0, Ltl1;
+
+    .line 20
+    .line 21
+    if-eqz p0, :cond_1
+
+    .line 22
+    .line 23
+    check-cast v0, Ltl1;
+
+    .line 24
+    .line 25
+    goto :goto_0
+
+    .line 26
+    :cond_1
+    const/4 v0, 0x0
+
+    .line 27
+    :goto_0
+    if-eqz v0, :cond_2
+
+    .line 28
+    .line 29
+    invoke-interface {v0}, Ltl1;->a()V
+
+    .line 30
+    .line 31
+    .line 32
+    :cond_2
+    return-void
 .end method

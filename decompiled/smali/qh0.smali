@@ -1,15 +1,39 @@
 .class public final Lqh0;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+
+# static fields
+.field public static final b:Lqh0;
 
 
 # instance fields
-.field public final a:Lw44;
+.field public final a:Lmb4;
 
 
 # direct methods
-.method public constructor <init>(Lw44;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
+
+    .line 1
+    new-instance v0, Lqh0;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Lqh0;-><init>()V
+
+    .line 4
+    .line 5
+    .line 6
+    sput-object v0, Lqh0;->b:Lqh0;
+
+    .line 7
+    .line 8
+    return-void
+.end method
+
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -17,10 +41,25 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lqh0;->a:Lw44;
+    const/4 v0, 0x0
 
     .line 5
+    iput-object v0, p0, Lqh0;->a:Lmb4;
+
     .line 6
+    .line 7
+    return-void
+.end method
+
+.method public constructor <init>(Lmb4;)V
+    .locals 0
+
+    .line 8
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 9
+    iput-object p1, p0, Lqh0;->a:Lmb4;
+
     return-void
 .end method
 
@@ -53,15 +92,15 @@
 
     .line 10
     .line 11
-    iget-object p0, p0, Lqh0;->a:Lw44;
+    iget-object p1, p1, Lqh0;->a:Lmb4;
 
     .line 12
     .line 13
-    iget-object p1, p1, Lqh0;->a:Lw44;
+    iget-object p0, p0, Lqh0;->a:Lmb4;
 
     .line 14
     .line 15
-    invoke-static {p0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {p0, p1}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 16
     .line 17
@@ -87,7 +126,7 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lqh0;->a:Lw44;
+    iget-object p0, p0, Lqh0;->a:Lmb4;
 
     .line 2
     .line 3
@@ -95,7 +134,7 @@
 
     .line 4
     .line 5
-    invoke-virtual {p0}, Lw44;->hashCode()I
+    invoke-virtual {p0}, Lmb4;->hashCode()I
 
     .line 6
     .line 7
@@ -121,7 +160,7 @@
 
     .line 2
     .line 3
-    const-string v1, "ReadResult(request=null, response="
+    const-string v1, "WriteResult(response="
 
     .line 4
     .line 5
@@ -130,7 +169,7 @@
     .line 6
     .line 7
     .line 8
-    iget-object p0, p0, Lqh0;->a:Lw44;
+    iget-object p0, p0, Lqh0;->a:Lmb4;
 
     .line 9
     .line 10

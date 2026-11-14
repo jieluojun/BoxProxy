@@ -1,17 +1,33 @@
-.class public abstract Loa3;
+.class public final synthetic Loa3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Luy5;
+.implements Lp72;
 
 
 # instance fields
-.field public final a:Luy5;
+.field public final synthetic i:F
+
+.field public final synthetic j:F
+
+.field public final synthetic k:F
+
+.field public final synthetic l:[F
+
+.field public final synthetic m:F
+
+.field public final synthetic n:F
+
+.field public final synthetic o:Z
+
+.field public final synthetic p:Z
+
+.field public final synthetic q:F
 
 
 # direct methods
-.method public constructor <init>(Luy5;)V
+.method public synthetic constructor <init>(FFF[FFFZZF)V
     .locals 0
 
     .line 1
@@ -20,464 +36,217 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Loa3;->a:Luy5;
+    iput p1, p0, Loa3;->i:F
 
     .line 5
     .line 6
+    iput p2, p0, Loa3;->j:F
+
+    .line 7
+    .line 8
+    iput p3, p0, Loa3;->k:F
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Loa3;->l:[F
+
+    .line 11
+    .line 12
+    iput p5, p0, Loa3;->m:F
+
+    .line 13
+    .line 14
+    iput p6, p0, Loa3;->n:F
+
+    .line 15
+    .line 16
+    iput-boolean p7, p0, Loa3;->o:Z
+
+    .line 17
+    .line 18
+    iput-boolean p8, p0, Loa3;->p:Z
+
+    .line 19
+    .line 20
+    iput p9, p0, Loa3;->q:F
+
+    .line 21
+    .line 22
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Ljava/lang/String;)I
-    .locals 0
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 4
 
     .line 1
+    check-cast p1, Lyd;
+
+    .line 2
+    .line 3
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
-    .line 2
-    .line 3
     .line 4
-    invoke-static {p1}, Lhd6;->j0(Ljava/lang/String;)Ljava/lang/Integer;
-
     .line 5
     .line 6
-    .line 7
-    move-result-object p0
-
-    .line 8
-    if-eqz p0, :cond_0
-
-    .line 9
-    .line 10
-    invoke-virtual {p0}, Ljava/lang/Integer;->intValue()I
-
-    .line 11
-    .line 12
-    .line 13
-    move-result p0
-
-    .line 14
-    return p0
-
-    .line 15
-    :cond_0
-    const-string p0, " is not a valid list index"
-
-    .line 16
-    .line 17
-    invoke-virtual {p1, p0}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-
-    .line 18
-    .line 19
-    .line 20
-    move-result-object p0
-
-    .line 21
-    invoke-static {p0}, Ljw1;->h(Ljava/lang/String;)V
-
-    .line 22
-    .line 23
-    .line 24
-    const/4 p0, 0x0
-
-    .line 25
-    return p0
-.end method
-
-.method public final c()Ldj3;
-    .locals 0
-
-    .line 1
-    sget-object p0, Lkd6;->f:Lkd6;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final d()I
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x1
-
-    .line 2
-    return p0
-.end method
-
-.method public final e(I)Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    invoke-static {p1}, Ljava/lang/String;->valueOf(I)Ljava/lang/String;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
-
-    .line 1
-    if-ne p0, p1, :cond_0
-
-    .line 2
-    .line 3
-    goto :goto_0
-
-    .line 4
-    :cond_0
-    instance-of v0, p1, Loa3;
-
-    .line 5
-    .line 6
-    if-nez v0, :cond_1
+    const-string v0, "size"
 
     .line 7
     .line 8
-    goto :goto_1
+    iget-object v1, p1, Lyd;->a:Landroid/graphics/RuntimeShader;
 
     .line 9
-    :cond_1
-    check-cast p1, Loa3;
-
     .line 10
+    iget v2, p0, Loa3;->i:F
+
     .line 11
-    iget-object v0, p1, Loa3;->a:Luy5;
-
     .line 12
+    iget v3, p0, Loa3;->j:F
+
     .line 13
-    iget-object v1, p0, Loa3;->a:Luy5;
-
     .line 14
-    .line 15
-    invoke-static {v1, v0}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-static {v1, v0, v2, v3}, Lx4;->t(Landroid/graphics/RuntimeShader;Ljava/lang/String;FF)V
 
+    .line 15
     .line 16
     .line 17
-    .line 18
-    move-result v0
+    iget v0, p0, Loa3;->k:F
 
+    .line 18
     .line 19
-    if-eqz v0, :cond_2
+    neg-float v0, v0
 
     .line 20
-    .line 21
-    invoke-interface {p0}, Luy5;->b()Ljava/lang/String;
+    iget-object v1, p1, Lyd;->a:Landroid/graphics/RuntimeShader;
 
+    .line 21
     .line 22
+    const-string v2, "offset"
+
     .line 23
     .line 24
-    move-result-object p0
+    invoke-static {v1, v2, v0, v0}, Lx4;->t(Landroid/graphics/RuntimeShader;Ljava/lang/String;FF)V
 
     .line 25
-    invoke-interface {p1}, Luy5;->b()Ljava/lang/String;
-
     .line 26
     .line 27
-    .line 28
-    move-result-object p1
+    const-string v0, "cornerRadii"
 
+    .line 28
     .line 29
-    invoke-static {p0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    iget-object v1, p1, Lyd;->a:Landroid/graphics/RuntimeShader;
 
     .line 30
     .line 31
-    .line 32
-    move-result p0
+    iget-object v2, p0, Loa3;->l:[F
 
+    .line 32
     .line 33
-    if-eqz p0, :cond_2
+    invoke-static {v1, v0, v2}, Lx4;->v(Landroid/graphics/RuntimeShader;Ljava/lang/String;[F)V
 
     .line 34
     .line 35
-    :goto_0
-    const/4 p0, 0x1
-
     .line 36
-    return p0
+    const-string v0, "refractionHeight"
 
     .line 37
-    :cond_2
-    :goto_1
-    const/4 p0, 0x0
-
     .line 38
-    return p0
-.end method
+    iget-object v1, p1, Lyd;->a:Landroid/graphics/RuntimeShader;
 
-.method public final hashCode()I
-    .locals 1
+    .line 39
+    .line 40
+    iget v2, p0, Loa3;->m:F
 
-    .line 1
-    iget-object v0, p0, Loa3;->a:Luy5;
+    .line 41
+    .line 42
+    invoke-static {v1, v0, v2}, Lx4;->s(Landroid/graphics/RuntimeShader;Ljava/lang/String;F)V
 
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
+    .line 43
+    .line 44
+    .line 45
+    iget v0, p0, Loa3;->n:F
 
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
+    .line 46
+    .line 47
+    neg-float v0, v0
 
-    .line 7
-    mul-int/lit8 v0, v0, 0x1f
+    .line 48
+    iget-object v1, p1, Lyd;->a:Landroid/graphics/RuntimeShader;
 
-    .line 8
-    .line 9
-    invoke-interface {p0}, Luy5;->b()Ljava/lang/String;
+    .line 49
+    .line 50
+    const-string v2, "refractionAmount"
 
-    .line 10
-    .line 11
-    .line 12
-    move-result-object p0
+    .line 51
+    .line 52
+    invoke-static {v1, v2, v0}, Lx4;->s(Landroid/graphics/RuntimeShader;Ljava/lang/String;F)V
 
-    .line 13
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
+    .line 53
+    .line 54
+    .line 55
+    iget-boolean v0, p0, Loa3;->o:Z
 
-    .line 14
-    .line 15
-    .line 16
-    move-result p0
+    .line 56
+    .line 57
+    if-eqz v0, :cond_0
 
-    .line 17
-    add-int/2addr p0, v0
+    .line 58
+    .line 59
+    const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 18
-    return p0
-.end method
+    .line 60
+    .line 61
+    goto :goto_0
 
-.method public final i(I)Ljava/util/List;
-    .locals 2
-
-    .line 1
-    if-ltz p1, :cond_0
-
-    .line 2
-    .line 3
-    sget-object p0, Lqu1;->j:Lqu1;
-
-    .line 4
-    .line 5
-    return-object p0
-
-    .line 6
+    .line 62
     :cond_0
-    const-string v0, "Illegal index "
+    const/4 v0, 0x0
 
-    .line 7
-    .line 8
-    const-string v1, ", "
+    .line 63
+    :goto_0
+    iget-object v1, p1, Lyd;->a:Landroid/graphics/RuntimeShader;
 
-    .line 9
-    .line 10
-    invoke-static {p1, v0, v1}, Loc1;->t(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+    .line 64
+    .line 65
+    const-string v2, "depthEffect"
 
-    .line 11
-    .line 12
-    .line 13
-    move-result-object p1
+    .line 66
+    .line 67
+    invoke-static {v1, v2, v0}, Lx4;->s(Landroid/graphics/RuntimeShader;Ljava/lang/String;F)V
 
-    .line 14
-    invoke-interface {p0}, Luy5;->b()Ljava/lang/String;
+    .line 68
+    .line 69
+    .line 70
+    iget-boolean v0, p0, Loa3;->p:Z
 
-    .line 15
-    .line 16
-    .line 17
-    move-result-object p0
+    .line 71
+    .line 72
+    if-eqz v0, :cond_1
 
-    .line 18
-    const-string v0, " expects only non-negative indices"
+    .line 73
+    .line 74
+    const-string v0, "chromaticAberration"
 
-    .line 19
-    .line 20
-    invoke-static {p1, p0, v0}, Lue1;->k(Ljava/lang/StringBuilder;Ljava/lang/Object;Ljava/lang/Object;)V
+    .line 75
+    .line 76
+    iget-object p1, p1, Lyd;->a:Landroid/graphics/RuntimeShader;
 
-    .line 21
-    .line 22
-    .line 23
-    const/4 p0, 0x0
+    .line 77
+    .line 78
+    iget p0, p0, Loa3;->q:F
 
-    .line 24
-    return-object p0
-.end method
+    .line 79
+    .line 80
+    invoke-static {p1, v0, p0}, Lx4;->s(Landroid/graphics/RuntimeShader;Ljava/lang/String;F)V
 
-.method public final j(I)Luy5;
-    .locals 2
+    .line 81
+    .line 82
+    .line 83
+    :cond_1
+    sget-object p0, Ll97;->a:Ll97;
 
-    .line 1
-    if-ltz p1, :cond_0
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Loa3;->a:Luy5;
-
-    .line 4
-    .line 5
-    return-object p0
-
-    .line 6
-    :cond_0
-    const-string v0, "Illegal index "
-
-    .line 7
-    .line 8
-    const-string v1, ", "
-
-    .line 9
-    .line 10
-    invoke-static {p1, v0, v1}, Loc1;->t(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 11
-    .line 12
-    .line 13
-    move-result-object p1
-
-    .line 14
-    invoke-interface {p0}, Luy5;->b()Ljava/lang/String;
-
-    .line 15
-    .line 16
-    .line 17
-    move-result-object p0
-
-    .line 18
-    const-string v0, " expects only non-negative indices"
-
-    .line 19
-    .line 20
-    invoke-static {p1, p0, v0}, Lue1;->k(Ljava/lang/StringBuilder;Ljava/lang/Object;Ljava/lang/Object;)V
-
-    .line 21
-    .line 22
-    .line 23
-    const/4 p0, 0x0
-
-    .line 24
-    return-object p0
-.end method
-
-.method public final k(I)Z
-    .locals 2
-
-    .line 1
-    if-ltz p1, :cond_0
-
-    .line 2
-    .line 3
-    const/4 p0, 0x0
-
-    .line 4
-    return p0
-
-    .line 5
-    :cond_0
-    const-string v0, "Illegal index "
-
-    .line 6
-    .line 7
-    const-string v1, ", "
-
-    .line 8
-    .line 9
-    invoke-static {p1, v0, v1}, Loc1;->t(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 10
-    .line 11
-    .line 12
-    move-result-object p1
-
-    .line 13
-    invoke-interface {p0}, Luy5;->b()Ljava/lang/String;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p0
-
-    .line 17
-    const-string v0, " expects only non-negative indices"
-
-    .line 18
-    .line 19
-    invoke-static {p1, p0, v0}, Lue1;->k(Ljava/lang/StringBuilder;Ljava/lang/Object;Ljava/lang/Object;)V
-
-    .line 20
-    .line 21
-    .line 22
-    const/4 p0, 0x0
-
-    .line 23
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    invoke-interface {p0}, Luy5;->b()Ljava/lang/String;
-
-    .line 7
-    .line 8
-    .line 9
-    move-result-object v1
-
-    .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 11
-    .line 12
-    .line 13
-    const/16 v1, 0x28
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    iget-object p0, p0, Loa3;->a:Luy5;
-
-    .line 19
-    .line 20
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 21
-    .line 22
-    .line 23
-    const/16 p0, 0x29
-
-    .line 24
-    .line 25
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 26
-    .line 27
-    .line 28
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 29
-    .line 30
-    .line 31
-    move-result-object p0
-
-    .line 32
+    .line 84
+    .line 85
     return-object p0
 .end method

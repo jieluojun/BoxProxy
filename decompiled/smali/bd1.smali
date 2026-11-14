@@ -1,442 +1,141 @@
 .class public final Lbd1;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lc43;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Ljava/lang/Runnable;
-.implements Luw1;
+.implements Lt72;
 
 
 # instance fields
-.field public final j:Lsu0;
+.field public final synthetic j:Ljava/lang/Object;
 
-.field public k:Z
+.field public final synthetic k:Lsw3;
 
-.field public l:Z
+.field public final synthetic l:Lm02;
 
-.field public m:J
+.field public final synthetic m:Ljava/lang/String;
 
-.field public n:I
+.field public final synthetic n:Lnz0;
 
-.field public o:[F
+.field public final synthetic o:I
+
+.field public final synthetic p:B
 
 
 # direct methods
-.method public constructor <init>(Lsu0;I)V
-    .locals 2
+.method public constructor <init>(Ljava/lang/Object;Lsw3;Lm02;Ljava/lang/String;Lnz0;II)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lbd1;->j:Ljava/lang/Object;
 
     .line 2
     .line 3
+    iput-object p2, p0, Lbd1;->k:Lsw3;
+
     .line 4
-    const-wide/16 v0, 0x0
-
     .line 5
+    iput-object p3, p0, Lbd1;->l:Lm02;
+
     .line 6
-    iput-wide v0, p0, Lbd1;->m:J
-
     .line 7
-    .line 8
-    const/4 v0, 0x1
+    iput-object p4, p0, Lbd1;->m:Ljava/lang/String;
 
+    .line 8
     .line 9
-    iput-boolean v0, p0, Lbd1;->k:Z
+    iput-object p5, p0, Lbd1;->n:Lnz0;
 
     .line 10
     .line 11
-    iput-object p1, p0, Lbd1;->j:Lsu0;
+    iput p6, p0, Lbd1;->o:I
 
     .line 12
     .line 13
-    iput p2, p0, Lbd1;->n:I
+    iput-byte p7, p0, Lbd1;->p:B
 
     .line 14
     .line 15
-    const-class p2, Lbw5;
+    const/4 p1, 0x2
 
     .line 16
-    .line 17
-    iget-object p1, p1, Lsu0;->r:Ltw1;
+    invoke-direct {p0, p1}, Lc43;-><init>(I)V
 
+    .line 17
     .line 18
     .line 19
-    invoke-virtual {p1, p2, p0}, Ltw1;->f(Ljava/lang/Class;Luw1;)Llg6;
-
-    .line 20
-    .line 21
-    .line 22
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lgw1;Lk71;)V
-    .locals 0
-
-    .line 1
-    check-cast p1, Lbw5;
-
-    .line 2
-    .line 3
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-wide p1
-
-    .line 7
-    iput-wide p1, p0, Lbd1;->m:J
-
-    .line 8
-    .line 9
-    const/4 p1, 0x1
-
-    .line 10
-    iput-boolean p1, p0, Lbd1;->k:Z
-
-    .line 11
-    .line 12
-    return-void
-.end method
-
-.method public final run()V
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 8
 
     .line 1
-    iget-boolean v0, p0, Lbd1;->l:Z
+    move-object v5, p1
 
     .line 2
-    .line 3
-    const/4 v1, 0x1
+    check-cast v5, Lt82;
 
+    .line 3
     .line 4
-    if-eqz v0, :cond_2
+    check-cast p2, Ljava/lang/Number;
 
     .line 5
     .line 6
-    iget v0, p0, Lbd1;->n:I
+    invoke-virtual {p2}, Ljava/lang/Number;->intValue()I
 
     .line 7
     .line 8
-    if-lez v0, :cond_2
-
     .line 9
-    .line 10
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    iget p1, p0, Lbd1;->o:I
 
+    .line 10
     .line 11
+    or-int/lit8 p1, p1, 0x1
+
     .line 12
     .line 13
-    move-result-wide v2
+    invoke-static {p1}, Lp06;->W(I)I
 
     .line 14
-    iget-wide v4, p0, Lbd1;->m:J
-
     .line 15
     .line 16
-    sub-long/2addr v2, v4
+    move-result v6
 
     .line 17
-    iget v0, p0, Lbd1;->n:I
+    iget-byte v7, p0, Lbd1;->p:B
 
     .line 18
     .line 19
-    int-to-long v4, v0
+    iget-object v0, p0, Lbd1;->j:Ljava/lang/Object;
 
     .line 20
-    const-wide/16 v6, 0x2
-
     .line 21
-    .line 22
-    mul-long/2addr v4, v6
+    iget-object v1, p0, Lbd1;->k:Lsw3;
 
+    .line 22
     .line 23
-    cmp-long v0, v2, v4
+    iget-object v2, p0, Lbd1;->l:Lm02;
 
     .line 24
     .line 25
-    iget-object v2, p0, Lbd1;->j:Lsu0;
+    iget-object v3, p0, Lbd1;->m:Ljava/lang/String;
 
     .line 26
     .line 27
-    if-ltz v0, :cond_0
+    iget-object v4, p0, Lbd1;->n:Lnz0;
 
     .line 28
     .line 29
-    iget-boolean v0, p0, Lbd1;->k:Z
+    invoke-static/range {v0 .. v7}, Ler;->m(Ljava/lang/Object;Lsw3;Lm02;Ljava/lang/String;Lnz0;Lt82;II)V
 
     .line 30
     .line 31
-    xor-int/2addr v0, v1
-
     .line 32
-    iput-boolean v0, p0, Lbd1;->k:Z
+    sget-object p0, Ll97;->a:Ll97;
 
     .line 33
     .line 34
-    invoke-virtual {v2}, Lsu0;->getCursor()Lvc1;
-
-    .line 35
-    .line 36
-    .line 37
-    move-result-object v0
-
-    .line 38
-    iget-object v0, v0, Lvc1;->c:Lyn0;
-
-    .line 39
-    .line 40
-    invoke-virtual {v0}, Lyn0;->a()Lyn0;
-
-    .line 41
-    .line 42
-    .line 43
-    move-result-object v0
-
-    .line 44
-    invoke-virtual {v2}, Lsu0;->getLayout()Lp03;
-
-    .line 45
-    .line 46
-    .line 47
-    move-result-object v3
-
-    .line 48
-    iget v4, v0, Lyn0;->b:I
-
-    .line 49
-    .line 50
-    iget v0, v0, Lyn0;->c:I
-
-    .line 51
-    .line 52
-    iget-object v5, p0, Lbd1;->o:[F
-
-    .line 53
-    .line 54
-    invoke-interface {v3, v4, v0, v5}, Lp03;->j(II[F)[F
-
-    .line 55
-    .line 56
-    .line 57
-    move-result-object v0
-
-    .line 58
-    iput-object v0, p0, Lbd1;->o:[F
-
-    .line 59
-    .line 60
-    invoke-virtual {v2}, Lsu0;->getCursor()Lvc1;
-
-    .line 61
-    .line 62
-    .line 63
-    move-result-object v0
-
-    .line 64
-    invoke-virtual {v0}, Lvc1;->a()Z
-
-    .line 65
-    .line 66
-    .line 67
-    move-result v0
-
-    .line 68
-    if-nez v0, :cond_1
-
-    .line 69
-    .line 70
-    iget-object v0, p0, Lbd1;->o:[F
-
-    .line 71
-    .line 72
-    const/4 v3, 0x0
-
-    .line 73
-    aget v0, v0, v3
-
-    .line 74
-    .line 75
-    invoke-virtual {v2}, Lsu0;->getOffsetY()I
-
-    .line 76
-    .line 77
-    .line 78
-    move-result v4
-
-    .line 79
-    int-to-float v4, v4
-
-    .line 80
-    cmpl-float v0, v0, v4
-
-    .line 81
-    .line 82
-    if-ltz v0, :cond_1
-
-    .line 83
-    .line 84
-    iget-object v0, p0, Lbd1;->o:[F
-
-    .line 85
-    .line 86
-    aget v0, v0, v3
-
-    .line 87
-    .line 88
-    invoke-virtual {v2}, Lsu0;->getRowHeight()I
-
-    .line 89
-    .line 90
-    .line 91
-    move-result v3
-
-    .line 92
-    int-to-float v3, v3
-
-    .line 93
-    sub-float/2addr v0, v3
-
-    .line 94
-    invoke-virtual {v2}, Lsu0;->getOffsetY()I
-
-    .line 95
-    .line 96
-    .line 97
-    move-result v3
-
-    .line 98
-    invoke-virtual {v2}, Landroid/view/View;->getHeight()I
-
-    .line 99
-    .line 100
-    .line 101
-    move-result v4
-
-    .line 102
-    add-int/2addr v4, v3
-
-    .line 103
-    int-to-float v3, v4
-
-    .line 104
-    cmpg-float v0, v0, v3
-
-    .line 105
-    .line 106
-    if-gtz v0, :cond_1
-
-    .line 107
-    .line 108
-    iget-object v0, p0, Lbd1;->o:[F
-
-    .line 109
-    .line 110
-    aget v0, v0, v1
-
-    .line 111
-    .line 112
-    invoke-virtual {v2}, Lsu0;->getOffsetX()I
-
-    .line 113
-    .line 114
-    .line 115
-    move-result v3
-
-    .line 116
-    int-to-float v3, v3
-
-    .line 117
-    cmpl-float v0, v0, v3
-
-    .line 118
-    .line 119
-    if-ltz v0, :cond_1
-
-    .line 120
-    .line 121
-    iget-object v0, p0, Lbd1;->o:[F
-
-    .line 122
-    .line 123
-    aget v0, v0, v1
-
-    .line 124
-    .line 125
-    const/high16 v1, 0x42c80000    # 100.0f
-
-    .line 126
-    .line 127
-    sub-float/2addr v0, v1
-
-    .line 128
-    invoke-virtual {v2}, Lsu0;->getOffsetX()I
-
-    .line 129
-    .line 130
-    .line 131
-    move-result v1
-
-    .line 132
-    invoke-virtual {v2}, Landroid/view/View;->getWidth()I
-
-    .line 133
-    .line 134
-    .line 135
-    move-result v3
-
-    .line 136
-    add-int/2addr v3, v1
-
-    .line 137
-    int-to-float v1, v3
-
-    .line 138
-    cmpg-float v0, v0, v1
-
-    .line 139
-    .line 140
-    if-gtz v0, :cond_1
-
-    .line 141
-    .line 142
-    invoke-virtual {v2}, Landroid/view/View;->postInvalidate()V
-
-    .line 143
-    .line 144
-    .line 145
-    goto :goto_0
-
-    .line 146
-    :cond_0
-    iput-boolean v1, p0, Lbd1;->k:Z
-
-    .line 147
-    .line 148
-    :cond_1
-    :goto_0
-    iget v0, p0, Lbd1;->n:I
-
-    .line 149
-    .line 150
-    int-to-long v0, v0
-
-    .line 151
-    invoke-virtual {v2, v0, v1, p0}, Lsu0;->c0(JLjava/lang/Runnable;)V
-
-    .line 152
-    .line 153
-    .line 154
-    return-void
-
-    .line 155
-    :cond_2
-    iput-boolean v1, p0, Lbd1;->k:Z
-
-    .line 156
-    .line 157
-    return-void
+    return-object p0
 .end method

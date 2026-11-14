@@ -1,39 +1,37 @@
 .class public final Lud;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lit4;
+.implements Lwz4;
 .implements Landroid/view/View$OnAttachStateChangeListener;
 .implements Ljava/lang/Runnable;
 .implements Landroid/view/Choreographer$FrameCallback;
 
 
 # static fields
-.field public static r:J
+.field public static p:J
 
 
 # instance fields
-.field public final j:Landroid/view/View;
+.field public final i:Landroid/view/View;
 
-.field public final k:Ljava/util/PriorityQueue;
+.field public final j:Ljava/util/PriorityQueue;
 
-.field public l:Z
+.field public k:Z
 
-.field public final m:Landroid/view/Choreographer;
+.field public final l:Landroid/view/Choreographer;
 
-.field public final n:Ltd;
+.field public final m:Ltd;
 
-.field public o:Z
+.field public n:Z
 
-.field public p:J
-
-.field public q:J
+.field public o:J
 
 
 # direct methods
 .method public constructor <init>(Landroid/view/View;)V
-    .locals 5
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -41,7 +39,7 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lud;->j:Landroid/view/View;
+    iput-object p1, p0, Lud;->i:Landroid/view/View;
 
     .line 5
     .line 6
@@ -49,28 +47,28 @@
 
     .line 7
     .line 8
-    new-instance v1, Lsa;
+    new-instance v1, Lsd;
 
     .line 9
     .line 10
-    const/4 v2, 0x1
+    const/4 v2, 0x0
 
     .line 11
-    invoke-direct {v1, v2}, Lsa;-><init>(B)V
+    invoke-direct {v1, v2}, Lsd;-><init>(B)V
 
     .line 12
     .line 13
     .line 14
-    const/16 v3, 0xb
+    const/16 v2, 0xb
 
     .line 15
     .line 16
-    invoke-direct {v0, v3, v1}, Ljava/util/PriorityQueue;-><init>(ILjava/util/Comparator;)V
+    invoke-direct {v0, v2, v1}, Ljava/util/PriorityQueue;-><init>(ILjava/util/Comparator;)V
 
     .line 17
     .line 18
     .line 19
-    iput-object v0, p0, Lud;->k:Ljava/util/PriorityQueue;
+    iput-object v0, p0, Lud;->j:Ljava/util/PriorityQueue;
 
     .line 20
     .line 21
@@ -82,7 +80,7 @@
     move-result-object v0
 
     .line 25
-    iput-object v0, p0, Lud;->m:Landroid/view/Choreographer;
+    iput-object v0, p0, Lud;->l:Landroid/view/Choreographer;
 
     .line 26
     .line 27
@@ -95,23 +93,23 @@
     .line 30
     .line 31
     .line 32
-    iput-object v0, p0, Lud;->n:Ltd;
+    iput-object v0, p0, Lud;->m:Ltd;
 
     .line 33
     .line 34
-    sget-wide v0, Lud;->r:J
+    sget-wide v0, Lud;->p:J
 
     .line 35
     .line 36
-    const-wide/16 v3, 0x0
+    const-wide/16 v2, 0x0
 
     .line 37
     .line 38
-    cmp-long v0, v0, v3
+    cmp-long v0, v0, v2
 
     .line 39
     .line 40
-    if-nez v0, :cond_1
+    if-nez v0, :cond_2
 
     .line 41
     .line 42
@@ -155,79 +153,79 @@
 
     .line 61
     .line 62
-    if-ltz v1, :cond_0
+    if-gez v1, :cond_1
 
     .line 63
     .line 64
-    goto :goto_0
-
-    .line 65
     :cond_0
     const/high16 v0, 0x42700000    # 60.0f
 
+    .line 65
     .line 66
-    .line 67
-    :goto_0
+    :cond_1
     const v1, 0x4e6e6b28    # 1.0E9f
 
+    .line 67
     .line 68
     .line 69
-    .line 70
     div-float/2addr v1, v0
 
-    .line 71
+    .line 70
     float-to-long v0, v1
 
-    .line 72
-    sput-wide v0, Lud;->r:J
+    .line 71
+    sput-wide v0, Lud;->p:J
 
+    .line 72
     .line 73
-    .line 74
-    :cond_1
+    :cond_2
     invoke-virtual {p1, p0}, Landroid/view/View;->addOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
+    .line 74
     .line 75
     .line 76
-    .line 77
     invoke-virtual {p1}, Landroid/view/View;->isAttachedToWindow()Z
 
+    .line 77
     .line 78
     .line 79
-    .line 80
     move-result p1
 
-    .line 81
-    if-eqz p1, :cond_2
+    .line 80
+    if-eqz p1, :cond_3
 
+    .line 81
     .line 82
+    const/4 p1, 0x1
+
     .line 83
-    iput-boolean v2, p0, Lud;->o:Z
+    iput-boolean p1, p0, Lud;->n:Z
 
     .line 84
     .line 85
-    :cond_2
+    :cond_3
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Lht4;)V
+.method public final a(Lvz4;)V
     .locals 2
 
     .line 1
-    new-instance v0, Liu4;
+    new-instance v0, Lw05;
 
     .line 2
     .line 3
     const/4 v1, 0x1
 
     .line 4
-    invoke-direct {v0, v1, p1}, Liu4;-><init>(ILht4;)V
+    invoke-direct {v0, v1, p1}, Lw05;-><init>(ILvz4;)V
 
     .line 5
     .line 6
     .line 7
-    iget-object p1, p0, Lud;->k:Ljava/util/PriorityQueue;
+    iget-object p1, p0, Lud;->j:Ljava/util/PriorityQueue;
 
     .line 8
     .line 9
@@ -236,7 +234,7 @@
     .line 10
     .line 11
     .line 12
-    iget-boolean p1, p0, Lud;->l:Z
+    iget-boolean p1, p0, Lud;->k:Z
 
     .line 13
     .line 14
@@ -244,11 +242,11 @@
 
     .line 15
     .line 16
-    iput-boolean v1, p0, Lud;->l:Z
+    iput-boolean v1, p0, Lud;->k:Z
 
     .line 17
     .line 18
-    iget-object p1, p0, Lud;->j:Landroid/view/View;
+    iget-object p1, p0, Lud;->i:Landroid/view/View;
 
     .line 19
     .line 20
@@ -261,11 +259,108 @@
     return-void
 .end method
 
+.method public final b()Z
+    .locals 5
+
+    .line 1
+    iget-object v0, p0, Lud;->m:Ltd;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ltd;->a()J
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-wide v1
+
+    .line 7
+    const-string v3, "compose:lazy:prefetch:available_time_nanos"
+
+    .line 8
+    .line 9
+    invoke-static {v3, v1, v2}, Landroid/os/Trace;->setCounter(Ljava/lang/String;J)V
+
+    .line 10
+    .line 11
+    .line 12
+    const-wide/16 v3, 0x0
+
+    .line 13
+    .line 14
+    cmp-long v1, v1, v3
+
+    .line 15
+    .line 16
+    const/4 v2, 0x1
+
+    .line 17
+    if-lez v1, :cond_1
+
+    .line 18
+    .line 19
+    iget-object p0, p0, Lud;->j:Ljava/util/PriorityQueue;
+
+    .line 20
+    .line 21
+    invoke-virtual {p0}, Ljava/util/PriorityQueue;->peek()Ljava/lang/Object;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object v1
+
+    .line 25
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 26
+    .line 27
+    .line 28
+    check-cast v1, Lw05;
+
+    .line 29
+    .line 30
+    iget-object v1, v1, Lw05;->b:Lvz4;
+
+    .line 31
+    .line 32
+    invoke-virtual {v1, v0}, Lvz4;->c(Ltd;)Z
+
+    .line 33
+    .line 34
+    .line 35
+    move-result v1
+
+    .line 36
+    const/4 v3, 0x0
+
+    .line 37
+    if-nez v1, :cond_0
+
+    .line 38
+    .line 39
+    invoke-virtual {p0}, Ljava/util/PriorityQueue;->poll()Ljava/lang/Object;
+
+    .line 40
+    .line 41
+    .line 42
+    move v2, v3
+
+    .line 43
+    :cond_0
+    iput-boolean v3, v0, Ltd;->a:Z
+
+    .line 44
+    .line 45
+    :cond_1
+    return v2
+.end method
+
 .method public final doFrame(J)V
     .locals 1
 
     .line 1
-    iget-boolean v0, p0, Lud;->o:Z
+    iget-boolean v0, p0, Lud;->n:Z
 
     .line 2
     .line 3
@@ -273,11 +368,11 @@
 
     .line 4
     .line 5
-    iput-wide p1, p0, Lud;->p:J
+    iput-wide p1, p0, Lud;->o:J
 
     .line 6
     .line 7
-    iget-object p1, p0, Lud;->j:Landroid/view/View;
+    iget-object p1, p0, Lud;->i:Landroid/view/View;
 
     .line 8
     .line 9
@@ -297,7 +392,7 @@
     const/4 p1, 0x1
 
     .line 2
-    iput-boolean p1, p0, Lud;->o:Z
+    iput-boolean p1, p0, Lud;->n:Z
 
     .line 3
     .line 4
@@ -311,11 +406,11 @@
     const/4 p1, 0x0
 
     .line 2
-    iput-boolean p1, p0, Lud;->o:Z
+    iput-boolean p1, p0, Lud;->n:Z
 
     .line 3
     .line 4
-    iget-object p1, p0, Lud;->j:Landroid/view/View;
+    iget-object p1, p0, Lud;->i:Landroid/view/View;
 
     .line 5
     .line 6
@@ -324,7 +419,7 @@
     .line 7
     .line 8
     .line 9
-    iget-object p1, p0, Lud;->m:Landroid/view/Choreographer;
+    iget-object p1, p0, Lud;->l:Landroid/view/Choreographer;
 
     .line 10
     .line 11
@@ -337,10 +432,10 @@
 .end method
 
 .method public final run()V
-    .locals 12
+    .locals 9
 
     .line 1
-    iget-object v0, p0, Lud;->k:Ljava/util/PriorityQueue;
+    iget-object v0, p0, Lud;->j:Ljava/util/PriorityQueue;
 
     .line 2
     .line 3
@@ -355,27 +450,27 @@
     const/4 v2, 0x0
 
     .line 8
-    if-nez v1, :cond_b
+    if-nez v1, :cond_4
 
     .line 9
     .line 10
-    iget-boolean v1, p0, Lud;->l:Z
+    iget-boolean v1, p0, Lud;->k:Z
 
     .line 11
     .line 12
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_4
 
     .line 13
     .line 14
-    iget-boolean v1, p0, Lud;->o:Z
+    iget-boolean v1, p0, Lud;->n:Z
 
     .line 15
     .line 16
-    if-eqz v1, :cond_b
+    if-eqz v1, :cond_4
 
     .line 17
     .line 18
-    iget-object v1, p0, Lud;->j:Landroid/view/View;
+    iget-object v1, p0, Lud;->i:Landroid/view/View;
 
     .line 19
     .line 20
@@ -387,32 +482,31 @@
     move-result v3
 
     .line 24
-    if-eqz v3, :cond_0
+    if-nez v3, :cond_4
 
     .line 25
     .line 26
-    goto/16 :goto_4
+    sget-object v3, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
     .line 27
     .line 28
-    :cond_0
-    iget-wide v3, p0, Lud;->p:J
+    invoke-virtual {v1}, Landroid/view/View;->getDrawingTime()J
 
     .line 29
     .line 30
-    sget-object v5, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
-
     .line 31
+    move-result-wide v4
+
     .line 32
-    invoke-virtual {v1}, Landroid/view/View;->getDrawingTime()J
+    invoke-virtual {v3, v4, v5}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
 
     .line 33
     .line 34
     .line 35
-    move-result-wide v6
+    move-result-wide v3
 
     .line 36
-    invoke-virtual {v5, v6, v7}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
 
     .line 37
     .line 38
@@ -420,345 +514,185 @@
     move-result-wide v5
 
     .line 40
-    invoke-static {v3, v4, v5, v6}, Ljava/lang/Math;->max(JJ)J
+    sget-wide v7, Lud;->p:J
 
     .line 41
     .line 42
+    const/4 v1, 0x1
+
     .line 43
-    move-result-wide v3
+    shl-long/2addr v7, v1
 
     .line 44
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
+    add-long/2addr v7, v3
 
     .line 45
+    cmp-long v5, v5, v7
+
     .line 46
     .line 47
-    move-result-wide v5
+    if-gtz v5, :cond_0
 
     .line 48
-    sub-long/2addr v5, v3
-
     .line 49
-    const-wide/16 v7, 0x2
+    move v1, v2
 
     .line 50
+    :cond_0
+    iget-object v5, p0, Lud;->m:Ltd;
+
     .line 51
-    sget-wide v9, Lud;->r:J
-
     .line 52
-    .line 53
-    mul-long/2addr v7, v9
+    iput-boolean v1, v5, Ltd;->a:Z
 
+    .line 53
     .line 54
-    cmp-long v5, v5, v7
+    iget-wide v6, p0, Lud;->o:J
 
     .line 55
     .line 56
-    const/4 v6, 0x1
+    invoke-static {v6, v7, v3, v4}, Ljava/lang/Math;->max(JJ)J
 
     .line 57
-    if-lez v5, :cond_2
-
     .line 58
     .line 59
-    iget-wide v7, p0, Lud;->q:J
+    move-result-wide v3
 
     .line 60
-    .line 61
-    cmp-long v5, v7, v3
+    sget-wide v6, Lud;->p:J
 
+    .line 61
     .line 62
+    add-long/2addr v3, v6
+
     .line 63
-    if-nez v5, :cond_1
+    iput-wide v3, v5, Ltd;->b:J
 
     .line 64
     .line 65
-    invoke-static {}, Ljava/lang/System;->nanoTime()J
+    move v1, v2
 
     .line 66
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
+
     .line 67
     .line 68
-    move-result-wide v3
-
     .line 69
-    move v5, v2
+    move-result v3
 
     .line 70
-    move v1, v6
+    if-nez v3, :cond_2
 
     .line 71
-    goto :goto_0
-
     .line 72
-    :cond_1
-    iput-wide v3, p0, Lud;->q:J
+    if-nez v1, :cond_2
 
     .line 73
     .line 74
-    invoke-virtual {v1, p0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+    iget-boolean v1, v5, Ltd;->a:Z
 
     .line 75
     .line 76
-    .line 77
-    move v1, v2
+    if-eqz v1, :cond_1
 
+    .line 77
     .line 78
-    move v5, v6
+    const-string v1, "compose:lazy:prefetch:idle_frame"
 
     .line 79
-    goto :goto_0
-
     .line 80
-    :cond_2
-    move v1, v2
+    invoke-static {v1}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
 
     .line 81
-    move v5, v1
-
     .line 82
-    :goto_0
-    sget-wide v7, Lud;->r:J
-
     .line 83
+    :try_start_0
+    invoke-virtual {p0}, Lud;->b()Z
+
     .line 84
-    add-long/2addr v3, v7
-
     .line 85
-    iget-object v7, p0, Lud;->n:Ltd;
-
     .line 86
+    move-result v1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
     .line 87
-    iput-wide v3, v7, Ltd;->a:J
+    invoke-static {}, Landroid/os/Trace;->endSection()V
 
     .line 88
     .line 89
-    :goto_1
-    invoke-interface {v0}, Ljava/util/Collection;->isEmpty()Z
-
     .line 90
+    goto :goto_0
+
     .line 91
+    :catchall_0
+    move-exception p0
+
     .line 92
-    move-result v3
+    invoke-static {}, Landroid/os/Trace;->endSection()V
 
     .line 93
-    if-nez v3, :cond_8
-
     .line 94
     .line 95
-    invoke-virtual {v7}, Ltd;->a()J
+    throw p0
 
     .line 96
+    :cond_1
+    invoke-virtual {p0}, Lud;->b()Z
+
     .line 97
     .line 98
-    move-result-wide v3
-
     .line 99
-    const-wide/16 v8, 0x0
+    move-result v1
 
     .line 100
+    goto :goto_0
+
     .line 101
-    cmp-long v8, v3, v8
+    :cond_2
+    if-eqz v1, :cond_3
 
     .line 102
     .line 103
-    if-gtz v8, :cond_3
+    iget-object v0, p0, Lud;->l:Landroid/view/Choreographer;
 
     .line 104
     .line 105
-    goto :goto_3
+    invoke-virtual {v0, p0}, Landroid/view/Choreographer;->postFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
 
     .line 106
-    :cond_3
-    const-string v8, "compose:lazy:prefetch:available_time_nanos"
-
     .line 107
     .line 108
-    invoke-static {v8, v3, v4}, Landroid/os/Trace;->setCounter(Ljava/lang/String;J)V
+    goto :goto_1
 
     .line 109
+    :cond_3
+    iput-boolean v2, p0, Lud;->k:Z
+
     .line 110
     .line 111
-    if-eqz v1, :cond_5
+    :goto_1
+    const-string p0, "compose:lazy:prefetch:available_time_nanos"
 
     .line 112
     .line 113
-    const-string v1, "compose:lazy:prefetch:idle_frame"
+    const-wide/16 v0, 0x0
 
     .line 114
     .line 115
-    invoke-static {v1}, Landroid/os/Trace;->beginSection(Ljava/lang/String;)V
+    invoke-static {p0, v0, v1}, Landroid/os/Trace;->setCounter(Ljava/lang/String;J)V
 
     .line 116
     .line 117
     .line 118
-    :try_start_0
-    invoke-virtual {v0}, Ljava/util/PriorityQueue;->peek()Ljava/lang/Object;
+    return-void
 
     .line 119
+    :cond_4
+    iput-boolean v2, p0, Lud;->k:Z
+
     .line 120
     .line 121
-    move-result-object v1
-
-    .line 122
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 123
-    .line 124
-    .line 125
-    check-cast v1, Liu4;
-
-    .line 126
-    .line 127
-    iget-object v1, v1, Liu4;->b:Lht4;
-
-    .line 128
-    .line 129
-    invoke-virtual {v1, v7}, Lht4;->c(Ltd;)Z
-
-    .line 130
-    .line 131
-    .line 132
-    move-result v1
-
-    .line 133
-    if-nez v1, :cond_4
-
-    .line 134
-    .line 135
-    invoke-virtual {v0}, Ljava/util/PriorityQueue;->poll()Ljava/lang/Object;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
-
-    .line 136
-    .line 137
-    .line 138
-    :cond_4
-    invoke-static {}, Landroid/os/Trace;->endSection()V
-
-    .line 139
-    .line 140
-    .line 141
-    move v3, v2
-
-    .line 142
-    goto :goto_2
-
-    .line 143
-    :catchall_0
-    move-exception p0
-
-    .line 144
-    invoke-static {}, Landroid/os/Trace;->endSection()V
-
-    .line 145
-    .line 146
-    .line 147
-    throw p0
-
-    .line 148
-    :cond_5
-    invoke-virtual {v0}, Ljava/util/PriorityQueue;->peek()Ljava/lang/Object;
-
-    .line 149
-    .line 150
-    .line 151
-    move-result-object v3
-
-    .line 152
-    invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 153
-    .line 154
-    .line 155
-    check-cast v3, Liu4;
-
-    .line 156
-    .line 157
-    iget-object v3, v3, Liu4;->b:Lht4;
-
-    .line 158
-    .line 159
-    invoke-virtual {v3, v7}, Lht4;->c(Ltd;)Z
-
-    .line 160
-    .line 161
-    .line 162
-    move-result v3
-
-    .line 163
-    if-nez v3, :cond_6
-
-    .line 164
-    .line 165
-    invoke-virtual {v0}, Ljava/util/PriorityQueue;->poll()Ljava/lang/Object;
-
-    .line 166
-    .line 167
-    .line 168
-    :cond_6
-    move v11, v3
-
-    .line 169
-    move v3, v1
-
-    .line 170
-    move v1, v11
-
-    .line 171
-    :goto_2
-    if-eqz v1, :cond_7
-
-    .line 172
-    .line 173
-    goto :goto_3
-
-    .line 174
-    :cond_7
-    move v1, v3
-
-    .line 175
-    goto :goto_1
-
-    .line 176
-    :cond_8
-    move v6, v2
-
-    .line 177
-    :goto_3
-    if-nez v5, :cond_a
-
-    .line 178
-    .line 179
-    if-eqz v6, :cond_9
-
-    .line 180
-    .line 181
-    iget-object v0, p0, Lud;->m:Landroid/view/Choreographer;
-
-    .line 182
-    .line 183
-    invoke-virtual {v0, p0}, Landroid/view/Choreographer;->postFrameCallback(Landroid/view/Choreographer$FrameCallback;)V
-
-    .line 184
-    .line 185
-    .line 186
-    return-void
-
-    .line 187
-    :cond_9
-    iput-boolean v2, p0, Lud;->l:Z
-
-    .line 188
-    .line 189
-    :cond_a
-    return-void
-
-    .line 190
-    :cond_b
-    :goto_4
-    iput-boolean v2, p0, Lud;->l:Z
-
-    .line 191
-    .line 192
     return-void
 .end method

@@ -1,118 +1,74 @@
-.class public final Lpv3;
-.super Ly77;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract synthetic Lpv3;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final b:Ljava/util/LinkedHashMap;
+# static fields
+.field public static final synthetic a:[I
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method static constructor <clinit>()V
+    .locals 4
 
     .line 1
-    invoke-direct {p0}, Ly77;-><init>()V
+    invoke-static {}, Llv0;->values()[Llv0;
 
     .line 2
     .line 3
     .line 4
-    new-instance v0, Ljava/util/LinkedHashMap;
-
-    .line 5
-    .line 6
-    invoke-direct {v0}, Ljava/util/LinkedHashMap;-><init>()V
-
-    .line 7
-    .line 8
-    .line 9
-    iput-object v0, p0, Lpv3;->b:Ljava/util/LinkedHashMap;
-
-    .line 10
-    .line 11
-    return-void
-.end method
-
-
-# virtual methods
-.method public final b()V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Lpv3;->c()V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public final c()V
-    .locals 2
-
-    .line 1
-    iget-object p0, p0, Lpv3;->b:Ljava/util/LinkedHashMap;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/util/LinkedHashMap;->values()Ljava/util/Collection;
-
-    .line 4
-    .line 5
-    .line 6
     move-result-object v0
 
-    .line 7
-    check-cast v0, Ljava/lang/Iterable;
+    .line 5
+    array-length v0, v0
 
+    .line 6
+    new-array v0, v0, [I
+
+    .line 7
     .line 8
+    const/4 v1, 0x3
+
     .line 9
-    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    const/4 v2, 0x1
 
     .line 10
+    :try_start_0
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
+
     .line 11
     .line 12
-    move-result-object v0
+    :catch_0
+    const/4 v2, 0x4
 
     .line 13
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
+    const/4 v3, 0x2
 
     .line 14
+    :try_start_1
+    aput v3, v0, v2
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
     .line 15
     .line 16
-    move-result v1
+    :catch_1
+    const/4 v2, 0x5
 
     .line 17
-    if-eqz v1, :cond_0
+    :try_start_2
+    aput v1, v0, v2
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
 
     .line 18
     .line 19
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    :catch_2
+    sput-object v0, Lpv3;->a:[I
 
     .line 20
     .line 21
-    .line 22
-    move-result-object v1
-
-    .line 23
-    check-cast v1, Le87;
-
-    .line 24
-    .line 25
-    invoke-virtual {v1}, Le87;->a()V
-
-    .line 26
-    .line 27
-    .line 28
-    goto :goto_0
-
-    .line 29
-    :cond_0
-    invoke-virtual {p0}, Ljava/util/LinkedHashMap;->clear()V
-
-    .line 30
-    .line 31
-    .line 32
     return-void
 .end method

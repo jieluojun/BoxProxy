@@ -1,179 +1,199 @@
 .class public final Lbl3;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Le62;
+.super Lo60;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Luy6;
+.field public final P:Ls6;
 
 
 # direct methods
-.method public synthetic constructor <init>(Luy6;B)V
+.method public constructor <init>(Ls6;)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lbl3;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lbl3;->k:Luy6;
-
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lbl3;->P:Ls6;
 
+    .line 5
     .line 6
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 1
+.method public final W(Ljava/lang/Object;)V
+    .locals 4
 
     .line 1
-    iget-byte v0, p0, Lbl3;->j:B
+    iget-object p0, p0, Lbl3;->P:Ls6;
 
     .line 2
     .line 3
-    iget-object p0, p0, Lbl3;->k:Luy6;
+    iget-object p0, p0, Ls6;->a:Lu6;
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_0
+    if-eqz p0, :cond_1
 
     .line 6
     .line 7
-    .line 8
-    invoke-virtual {p0}, Luy6;->f()Lqy6;
+    iget-object v0, p0, Lu6;->P:Lyy0;
 
+    .line 8
     .line 9
+    iget-object v1, v0, Lyy0;->d:Ljava/util/ArrayList;
+
     .line 10
     .line 11
-    move-result-object p0
+    iget-object v2, v0, Lyy0;->b:Ljava/util/LinkedHashMap;
 
     .line 12
-    return-object p0
-
     .line 13
-    :pswitch_0
-    iget-object p0, p0, Luy6;->d:Lum4;
+    iget-object v3, p0, Lu6;->Q:Ljava/lang/String;
 
     .line 14
     .line 15
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
+    invoke-virtual {v2, v3}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 16
     .line 17
     .line 18
-    move-result-object p0
+    move-result-object v2
 
     .line 19
-    return-object p0
+    iget-object p0, p0, Lu6;->R:Lxv;
 
     .line 20
-    :pswitch_1
-    invoke-virtual {p0}, Luy6;->f()Lqy6;
-
     .line 21
+    if-eqz v2, :cond_0
+
     .line 22
     .line 23
-    move-result-object p0
+    check-cast v2, Ljava/lang/Number;
 
     .line 24
-    return-object p0
-
     .line 25
-    :pswitch_2
-    iget-object p0, p0, Luy6;->d:Lum4;
+    invoke-virtual {v2}, Ljava/lang/Number;->intValue()I
 
     .line 26
     .line 27
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
-
     .line 28
+    move-result v2
+
     .line 29
+    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
     .line 30
-    move-result-object p0
-
     .line 31
-    return-object p0
-
     .line 32
-    :pswitch_3
-    invoke-virtual {p0}, Luy6;->f()Lqy6;
+    :try_start_0
+    invoke-virtual {v0, v2, p0, p1}, Lyy0;->b(ILxv;Ljava/lang/Object;)V
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 33
     .line 34
     .line 35
-    move-result-object p0
+    goto :goto_0
 
     .line 36
-    return-object p0
+    :catch_0
+    move-exception p0
 
     .line 37
-    :pswitch_4
-    iget-object p0, p0, Luy6;->d:Lum4;
+    invoke-virtual {v1, v3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
     .line 38
     .line 39
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
-
     .line 40
-    .line 41
-    .line 42
-    move-result-object p0
+    throw p0
 
+    .line 41
+    :cond_0
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 42
     .line 43
-    return-object p0
+    const-string v1, "Attempting to launch an unregistered ActivityResultLauncher with contract "
 
     .line 44
-    :pswitch_5
-    invoke-virtual {p0}, Luy6;->f()Lqy6;
-
     .line 45
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
     .line 46
     .line 47
-    move-result-object p0
-
     .line 48
-    return-object p0
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 49
-    :pswitch_6
-    iget-object p0, p0, Luy6;->d:Lum4;
-
     .line 50
     .line 51
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
+    const-string p0, " and input "
 
     .line 52
     .line 53
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 54
-    move-result-object p0
-
     .line 55
-    return-object p0
-
     .line 56
-    nop
+    invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     .line 57
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 58
+    .line 59
+    const-string p0, ". You must ensure the ActivityResultLauncher is registered before calling launch()."
+
+    .line 60
+    .line 61
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 62
+    .line 63
+    .line 64
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 65
+    .line 66
+    .line 67
+    move-result-object p0
+
+    .line 68
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    .line 69
+    .line 70
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    .line 71
+    .line 72
+    .line 73
+    move-result-object p0
+
+    .line 74
+    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    .line 75
+    .line 76
+    .line 77
+    throw p1
+
+    .line 78
+    :cond_1
+    const-string p0, "Launcher has not been initialized"
+
+    .line 79
+    .line 80
+    invoke-static {p0}, Lex1;->d(Ljava/lang/String;)V
+
+    .line 81
+    .line 82
+    .line 83
+    :goto_0
+    return-void
 .end method

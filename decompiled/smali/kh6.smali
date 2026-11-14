@@ -1,69 +1,112 @@
 .class public final Lkh6;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lj4;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public j:Lsh;
-
-.field public k:Lmh;
-
-.field public l:Lp62;
-
-.field public m:Lna5;
-
-.field public synthetic n:Ljava/lang/Object;
-
-.field public o:I
+.field public final a:Ljava/util/concurrent/atomic/AtomicReference;
 
 
-# virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+# direct methods
+.method public constructor <init>()V
+    .locals 2
 
     .line 1
-    iput-object p1, p0, Lkh6;->n:Ljava/lang/Object;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iget p1, p0, Lkh6;->o:I
-
     .line 4
-    .line 5
-    const/high16 v0, -0x80000000
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
+    .line 5
     .line 6
+    const/4 v1, 0x0
+
     .line 7
-    or-int/2addr p1, v0
+    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicReference;-><init>(Ljava/lang/Object;)V
 
     .line 8
-    iput p1, p0, Lkh6;->o:I
-
     .line 9
     .line 10
-    const-wide/16 v2, 0x0
+    iput-object v0, p0, Lkh6;->a:Ljava/util/concurrent/atomic/AtomicReference;
 
     .line 11
     .line 12
-    const/4 v4, 0x0
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Li4;)Z
+    .locals 0
+
+    .line 1
+    check-cast p1, Ljh6;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lkh6;->a:Ljava/util/concurrent/atomic/AtomicReference;
+
+    .line 4
+    .line 5
+    invoke-virtual {p0}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
+
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p1
+
+    .line 9
+    if-eqz p1, :cond_0
+
+    .line 10
+    .line 11
+    const/4 p0, 0x0
+
+    .line 12
+    return p0
 
     .line 13
-    const/4 v0, 0x0
+    :cond_0
+    sget-object p1, Lxv;->P:Lhx4;
 
     .line 14
-    const/4 v1, 0x0
-
     .line 15
-    move-object v5, p0
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
     .line 16
-    invoke-static/range {v0 .. v5}, Lff3;->m(Lsh;Lmh;JLp62;Lz81;)Ljava/lang/Object;
-
     .line 17
     .line 18
-    .line 19
-    move-result-object p0
+    const/4 p0, 0x1
 
-    .line 20
+    .line 19
+    return p0
+.end method
+
+.method public final b(Li4;)[Lp91;
+    .locals 0
+
+    .line 1
+    check-cast p1, Ljh6;
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lkh6;->a:Ljava/util/concurrent/atomic/AtomicReference;
+
+    .line 4
+    .line 5
+    const/4 p1, 0x0
+
+    .line 6
+    invoke-virtual {p0, p1}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
+
+    .line 7
+    .line 8
+    .line 9
+    sget-object p0, Lky2;->a:[Lp91;
+
+    .line 10
+    .line 11
     return-object p0
 .end method

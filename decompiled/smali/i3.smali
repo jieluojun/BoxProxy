@@ -1,17 +1,17 @@
 .class public final Li3;
 .super Lj3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Ljava/util/RandomAccess;
 
 
 # instance fields
-.field public final j:Lj3;
+.field public final i:Lj3;
+
+.field public final j:I
 
 .field public final k:I
-
-.field public final l:I
 
 
 # direct methods
@@ -24,11 +24,11 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Li3;->j:Lj3;
+    iput-object p1, p0, Li3;->i:Lj3;
 
     .line 5
     .line 6
-    iput p2, p0, Li3;->k:I
+    iput p2, p0, Li3;->j:I
 
     .line 7
     .line 8
@@ -40,7 +40,7 @@
     move-result p1
 
     .line 12
-    invoke-static {p2, p3, p1}, Lyk6;->y(III)V
+    invoke-static {p2, p3, p1}, Ly67;->P(III)V
 
     .line 13
     .line 14
@@ -48,7 +48,7 @@
     sub-int/2addr p3, p2
 
     .line 16
-    iput p3, p0, Li3;->l:I
+    iput p3, p0, Li3;->k:I
 
     .line 17
     .line 18
@@ -61,7 +61,7 @@
     .locals 0
 
     .line 1
-    iget p0, p0, Li3;->l:I
+    iget p0, p0, Li3;->k:I
 
     .line 2
     .line 3
@@ -72,7 +72,7 @@
     .locals 2
 
     .line 1
-    iget v0, p0, Li3;->l:I
+    iget v0, p0, Li3;->k:I
 
     .line 2
     .line 3
@@ -84,14 +84,14 @@
 
     .line 6
     .line 7
-    iget v0, p0, Li3;->k:I
+    iget v0, p0, Li3;->j:I
 
     .line 8
     .line 9
     add-int/2addr v0, p1
 
     .line 10
-    iget-object p0, p0, Li3;->j:Lj3;
+    iget-object p0, p0, Li3;->i:Lj3;
 
     .line 11
     .line 12
@@ -115,7 +115,7 @@
 
     .line 20
     .line 21
-    invoke-static {p1, v0, p0, v1}, Lhs5;->j(IILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, v0, p0, v1}, Llj6;->i(IILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     .line 22
     .line 23
@@ -123,7 +123,7 @@
     move-result-object p0
 
     .line 25
-    invoke-static {p0}, Lue1;->q(Ljava/lang/String;)V
+    invoke-static {p0}, Lnf1;->m(Ljava/lang/String;)V
 
     .line 26
     .line 27
@@ -138,11 +138,11 @@
     .locals 2
 
     .line 1
-    iget v0, p0, Li3;->l:I
+    iget v0, p0, Li3;->k:I
 
     .line 2
     .line 3
-    invoke-static {p1, p2, v0}, Lyk6;->y(III)V
+    invoke-static {p1, p2, v0}, Ly67;->P(III)V
 
     .line 4
     .line 5
@@ -151,7 +151,7 @@
 
     .line 7
     .line 8
-    iget v1, p0, Li3;->k:I
+    iget v1, p0, Li3;->j:I
 
     .line 9
     .line 10
@@ -161,7 +161,7 @@
     add-int/2addr v1, p2
 
     .line 12
-    iget-object p0, p0, Li3;->j:Lj3;
+    iget-object p0, p0, Li3;->i:Lj3;
 
     .line 13
     .line 14

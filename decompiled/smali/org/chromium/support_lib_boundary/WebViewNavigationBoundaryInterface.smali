@@ -1,6 +1,6 @@
 .class public interface abstract Lorg/chromium/support_lib_boundary/WebViewNavigationBoundaryInterface;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Lorg/chromium/support_lib_boundary/IsomorphicObjectBoundaryInterface;
@@ -14,6 +14,18 @@
 .end method
 
 .method public abstract getPage()Ljava/lang/reflect/InvocationHandler;
+.end method
+
+.method public abstract getResponseHeaders()Ljava/util/Map;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/Map<",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
 .end method
 
 .method public abstract getStatusCode()I

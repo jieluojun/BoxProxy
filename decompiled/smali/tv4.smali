@@ -1,27 +1,23 @@
-.class public final Ltv4;
+.class public abstract Ltv4;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:Lrv4;
+.field public i:I
 
-.field public final b:Z
+.field public j:I
 
-.field public final c:Lo86;
+.field public k:J
 
-.field public final d:Lp62;
+.field public l:J
 
-.field public final e:Z
-
-.field public final f:Ljava/lang/Object;
-
-.field public g:Z
+.field public m:J
 
 
 # direct methods
-.method public constructor <init>(Lrv4;Ljava/lang/Object;ZLo86;Lp62;Z)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 4
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -29,89 +25,333 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Ltv4;->a:Lrv4;
+    const-wide/16 v0, 0x0
 
     .line 5
     .line 6
-    iput-boolean p3, p0, Ltv4;->b:Z
+    iput-wide v0, p0, Ltv4;->k:J
 
     .line 7
     .line 8
-    iput-object p4, p0, Ltv4;->c:Lo86;
+    sget-wide v2, Luv4;->b:J
 
     .line 9
     .line 10
-    iput-object p5, p0, Ltv4;->d:Lp62;
+    iput-wide v2, p0, Ltv4;->l:J
 
     .line 11
     .line 12
-    iput-boolean p6, p0, Ltv4;->e:Z
+    iput-wide v0, p0, Ltv4;->m:J
 
     .line 13
     .line 14
-    iput-object p2, p0, Ltv4;->f:Ljava/lang/Object;
-
-    .line 15
-    .line 16
-    const/4 p1, 0x1
-
-    .line 17
-    iput-boolean p1, p0, Ltv4;->g:Z
-
-    .line 18
-    .line 19
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 1
+.method public final C0(J)V
+    .locals 2
 
     .line 1
-    iget-boolean v0, p0, Ltv4;->b:Z
+    iget-wide v0, p0, Ltv4;->k:J
 
     .line 2
     .line 3
-    if-eqz v0, :cond_0
+    invoke-static {v0, v1, p1, p2}, Lvw2;->a(JJ)Z
 
     .line 4
     .line 5
-    const/4 p0, 0x0
-
     .line 6
-    return-object p0
+    move-result v0
 
     .line 7
-    :cond_0
-    iget-object p0, p0, Ltv4;->f:Ljava/lang/Object;
+    if-nez v0, :cond_0
 
     .line 8
     .line 9
-    if-eqz p0, :cond_1
+    iput-wide p1, p0, Ltv4;->k:J
 
     .line 10
     .line 11
-    return-object p0
+    invoke-virtual {p0}, Ltv4;->u0()V
 
     .line 12
-    :cond_1
-    const-string p0, "Unexpected form of a provided value"
-
     .line 13
     .line 14
-    invoke-static {p0}, Le21;->b(Ljava/lang/String;)Ljava/lang/Void;
+    :cond_0
+    return-void
+.end method
 
-    .line 15
-    .line 16
-    .line 17
-    invoke-static {}, Lue1;->l()V
+.method public final D0(J)V
+    .locals 2
 
-    .line 18
-    .line 19
-    .line 20
+    .line 1
+    iget-wide v0, p0, Ltv4;->l:J
+
+    .line 2
+    .line 3
+    invoke-static {v0, v1, p1, p2}, Lh71;->c(JJ)Z
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    if-nez v0, :cond_0
+
+    .line 8
+    .line 9
+    iput-wide p1, p0, Ltv4;->l:J
+
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Ltv4;->u0()V
+
+    .line 12
+    .line 13
+    .line 14
+    :cond_0
+    return-void
+.end method
+
+.method public j()Ljava/lang/Object;
+    .locals 0
+
+    .line 1
     const/4 p0, 0x0
 
-    .line 21
+    .line 2
     return-object p0
+.end method
+
+.method public abstract k0(Lc8;)I
+.end method
+
+.method public l0()I
+    .locals 4
+
+    .line 1
+    iget-wide v0, p0, Ltv4;->k:J
+
+    .line 2
+    .line 3
+    const-wide v2, 0xffffffffL
+
+    .line 4
+    .line 5
+    .line 6
+    .line 7
+    .line 8
+    and-long/2addr v0, v2
+
+    .line 9
+    long-to-int p0, v0
+
+    .line 10
+    return p0
+.end method
+
+.method public p0()I
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Ltv4;->k:J
+
+    .line 2
+    .line 3
+    const/16 p0, 0x20
+
+    .line 4
+    .line 5
+    shr-long/2addr v0, p0
+
+    .line 6
+    long-to-int p0, v0
+
+    .line 7
+    return p0
+.end method
+
+.method public final u0()V
+    .locals 9
+
+    .line 1
+    iget-wide v0, p0, Ltv4;->k:J
+
+    .line 2
+    .line 3
+    const/16 v2, 0x20
+
+    .line 4
+    .line 5
+    shr-long/2addr v0, v2
+
+    .line 6
+    long-to-int v0, v0
+
+    .line 7
+    iget-wide v3, p0, Ltv4;->l:J
+
+    .line 8
+    .line 9
+    invoke-static {v3, v4}, Lh71;->k(J)I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v1
+
+    .line 13
+    iget-wide v3, p0, Ltv4;->l:J
+
+    .line 14
+    .line 15
+    invoke-static {v3, v4}, Lh71;->i(J)I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result v3
+
+    .line 19
+    invoke-static {v0, v1, v3}, Ly93;->H(III)I
+
+    .line 20
+    .line 21
+    .line 22
+    move-result v0
+
+    .line 23
+    iput v0, p0, Ltv4;->i:I
+
+    .line 24
+    .line 25
+    iget-wide v0, p0, Ltv4;->k:J
+
+    .line 26
+    .line 27
+    const-wide v3, 0xffffffffL
+
+    .line 28
+    .line 29
+    .line 30
+    .line 31
+    .line 32
+    and-long/2addr v0, v3
+
+    .line 33
+    long-to-int v0, v0
+
+    .line 34
+    iget-wide v5, p0, Ltv4;->l:J
+
+    .line 35
+    .line 36
+    invoke-static {v5, v6}, Lh71;->j(J)I
+
+    .line 37
+    .line 38
+    .line 39
+    move-result v1
+
+    .line 40
+    iget-wide v5, p0, Ltv4;->l:J
+
+    .line 41
+    .line 42
+    invoke-static {v5, v6}, Lh71;->h(J)I
+
+    .line 43
+    .line 44
+    .line 45
+    move-result v5
+
+    .line 46
+    invoke-static {v0, v1, v5}, Ly93;->H(III)I
+
+    .line 47
+    .line 48
+    .line 49
+    move-result v0
+
+    .line 50
+    iput v0, p0, Ltv4;->j:I
+
+    .line 51
+    .line 52
+    iget v1, p0, Ltv4;->i:I
+
+    .line 53
+    .line 54
+    iget-wide v5, p0, Ltv4;->k:J
+
+    .line 55
+    .line 56
+    shr-long v7, v5, v2
+
+    .line 57
+    .line 58
+    long-to-int v7, v7
+
+    .line 59
+    sub-int/2addr v1, v7
+
+    .line 60
+    div-int/lit8 v1, v1, 0x2
+
+    .line 61
+    .line 62
+    and-long/2addr v5, v3
+
+    .line 63
+    long-to-int v5, v5
+
+    .line 64
+    sub-int/2addr v0, v5
+
+    .line 65
+    div-int/lit8 v0, v0, 0x2
+
+    .line 66
+    .line 67
+    int-to-long v5, v1
+
+    .line 68
+    shl-long/2addr v5, v2
+
+    .line 69
+    int-to-long v0, v0
+
+    .line 70
+    and-long/2addr v0, v3
+
+    .line 71
+    or-long/2addr v5, v0
+
+    .line 72
+    iput-wide v5, p0, Ltv4;->m:J
+
+    .line 73
+    .line 74
+    return-void
+.end method
+
+.method public abstract x0(JFLp72;)V
+.end method
+
+.method public z0(JFLsd2;)V
+    .locals 0
+
+    .line 1
+    const/4 p4, 0x0
+
+    .line 2
+    invoke-virtual {p0, p1, p2, p3, p4}, Ltv4;->x0(JFLp72;)V
+
+    .line 3
+    .line 4
+    .line 5
+    return-void
 .end method

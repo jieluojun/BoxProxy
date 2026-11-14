@@ -1,13 +1,46 @@
-.class public final synthetic Lpe0;
-.super Le72;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lu62;
+.class public abstract Lpe0;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
-.field public static final k:Lpe0;
+.field public static final a:Lrn0;
+
+.field public static final b:I
+
+.field public static final c:I
+
+.field public static final d:Lhx4;
+
+.field public static final e:Lhx4;
+
+.field public static final f:Lhx4;
+
+.field public static final g:Lhx4;
+
+.field public static final h:Lhx4;
+
+.field public static final i:Lhx4;
+
+.field public static final j:Lhx4;
+
+.field public static final k:Lhx4;
+
+.field public static final l:Lhx4;
+
+.field public static final m:Lhx4;
+
+.field public static final n:Lhx4;
+
+.field public static final o:Lhx4;
+
+.field public static final p:Lhx4;
+
+.field public static final q:Lhx4;
+
+.field public static final r:Lhx4;
+
+.field public static final s:Lhx4;
 
 
 # direct methods
@@ -15,93 +48,350 @@
     .locals 6
 
     .line 1
-    new-instance v0, Lpe0;
+    new-instance v0, Lrn0;
 
     .line 2
     .line 3
-    const-string v4, "processResultSelectReceiveCatching(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+    const/4 v4, 0x0
 
     .line 4
-    .line 5
     const/4 v5, 0x0
 
-    .line 6
-    const/4 v1, 0x3
-
-    .line 7
-    const-class v2, Lqe0;
-
-    .line 8
-    .line 9
-    const-string v3, "processResultSelectReceiveCatching"
-
-    .line 10
-    .line 11
-    invoke-direct/range {v0 .. v5}, Le72;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
-
-    .line 12
-    .line 13
-    .line 14
-    sput-object v0, Lpe0;->k:Lpe0;
-
-    .line 15
-    .line 16
-    return-void
-.end method
-
-
-# virtual methods
-.method public final b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 0
-
-    .line 1
-    check-cast p1, Lqe0;
-
-    .line 2
-    .line 3
-    sget-object p0, Lqe0;->k:Ljava/util/concurrent/atomic/AtomicLongFieldUpdater;
-
-    .line 4
     .line 5
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-wide/16 v1, -0x1
 
     .line 6
     .line 7
+    const/4 v3, 0x0
+
     .line 8
-    sget-object p0, Lse0;->l:Lau1;
+    invoke-direct/range {v0 .. v5}, Lrn0;-><init>(JLrn0;Lne0;I)V
 
     .line 9
     .line 10
-    if-ne p3, p0, :cond_0
-
     .line 11
-    .line 12
-    invoke-virtual {p1}, Lqe0;->m()Ljava/lang/Throwable;
+    sput-object v0, Lpe0;->a:Lrn0;
 
+    .line 12
     .line 13
+    const/16 v0, 0x20
+
     .line 14
     .line 15
-    move-result-object p0
+    const-string v1, "kotlinx.coroutines.bufferedChannel.segmentSize"
 
     .line 16
-    new-instance p3, Lpn0;
-
     .line 17
-    .line 18
-    invoke-direct {p3, p0}, Lpn0;-><init>(Ljava/lang/Throwable;)V
+    const/16 v2, 0xc
 
+    .line 18
     .line 19
+    invoke-static {v0, v1, v2}, Lo06;->p0(ILjava/lang/String;I)I
+
     .line 20
     .line 21
-    :cond_0
-    new-instance p0, Lrn0;
-
     .line 22
+    move-result v0
+
     .line 23
-    invoke-direct {p0, p3}, Lrn0;-><init>(Ljava/lang/Object;)V
+    sput v0, Lpe0;->b:I
 
     .line 24
     .line 25
+    const-string v0, "kotlinx.coroutines.bufferedChannel.expandBufferCompletionWaitIterations"
+
     .line 26
-    return-object p0
+    .line 27
+    const/16 v1, 0x2710
+
+    .line 28
+    .line 29
+    invoke-static {v1, v0, v2}, Lo06;->p0(ILjava/lang/String;I)I
+
+    .line 30
+    .line 31
+    .line 32
+    move-result v0
+
+    .line 33
+    sput v0, Lpe0;->c:I
+
+    .line 34
+    .line 35
+    new-instance v0, Lhx4;
+
+    .line 36
+    .line 37
+    const-string v1, "BUFFERED"
+
+    .line 38
+    .line 39
+    const/4 v2, 0x6
+
+    .line 40
+    invoke-direct {v0, v1, v2}, Lhx4;-><init>(Ljava/lang/Object;B)V
+
+    .line 41
+    .line 42
+    .line 43
+    sput-object v0, Lpe0;->d:Lhx4;
+
+    .line 44
+    .line 45
+    new-instance v0, Lhx4;
+
+    .line 46
+    .line 47
+    const-string v1, "SHOULD_BUFFER"
+
+    .line 48
+    .line 49
+    invoke-direct {v0, v1, v2}, Lhx4;-><init>(Ljava/lang/Object;B)V
+
+    .line 50
+    .line 51
+    .line 52
+    sput-object v0, Lpe0;->e:Lhx4;
+
+    .line 53
+    .line 54
+    new-instance v0, Lhx4;
+
+    .line 55
+    .line 56
+    const-string v1, "S_RESUMING_BY_RCV"
+
+    .line 57
+    .line 58
+    invoke-direct {v0, v1, v2}, Lhx4;-><init>(Ljava/lang/Object;B)V
+
+    .line 59
+    .line 60
+    .line 61
+    sput-object v0, Lpe0;->f:Lhx4;
+
+    .line 62
+    .line 63
+    new-instance v0, Lhx4;
+
+    .line 64
+    .line 65
+    const-string v1, "RESUMING_BY_EB"
+
+    .line 66
+    .line 67
+    invoke-direct {v0, v1, v2}, Lhx4;-><init>(Ljava/lang/Object;B)V
+
+    .line 68
+    .line 69
+    .line 70
+    sput-object v0, Lpe0;->g:Lhx4;
+
+    .line 71
+    .line 72
+    new-instance v0, Lhx4;
+
+    .line 73
+    .line 74
+    const-string v1, "POISONED"
+
+    .line 75
+    .line 76
+    invoke-direct {v0, v1, v2}, Lhx4;-><init>(Ljava/lang/Object;B)V
+
+    .line 77
+    .line 78
+    .line 79
+    sput-object v0, Lpe0;->h:Lhx4;
+
+    .line 80
+    .line 81
+    new-instance v0, Lhx4;
+
+    .line 82
+    .line 83
+    const-string v1, "DONE_RCV"
+
+    .line 84
+    .line 85
+    invoke-direct {v0, v1, v2}, Lhx4;-><init>(Ljava/lang/Object;B)V
+
+    .line 86
+    .line 87
+    .line 88
+    sput-object v0, Lpe0;->i:Lhx4;
+
+    .line 89
+    .line 90
+    new-instance v0, Lhx4;
+
+    .line 91
+    .line 92
+    const-string v1, "INTERRUPTED_SEND"
+
+    .line 93
+    .line 94
+    invoke-direct {v0, v1, v2}, Lhx4;-><init>(Ljava/lang/Object;B)V
+
+    .line 95
+    .line 96
+    .line 97
+    sput-object v0, Lpe0;->j:Lhx4;
+
+    .line 98
+    .line 99
+    new-instance v0, Lhx4;
+
+    .line 100
+    .line 101
+    const-string v1, "INTERRUPTED_RCV"
+
+    .line 102
+    .line 103
+    invoke-direct {v0, v1, v2}, Lhx4;-><init>(Ljava/lang/Object;B)V
+
+    .line 104
+    .line 105
+    .line 106
+    sput-object v0, Lpe0;->k:Lhx4;
+
+    .line 107
+    .line 108
+    new-instance v0, Lhx4;
+
+    .line 109
+    .line 110
+    const-string v1, "CHANNEL_CLOSED"
+
+    .line 111
+    .line 112
+    invoke-direct {v0, v1, v2}, Lhx4;-><init>(Ljava/lang/Object;B)V
+
+    .line 113
+    .line 114
+    .line 115
+    sput-object v0, Lpe0;->l:Lhx4;
+
+    .line 116
+    .line 117
+    new-instance v0, Lhx4;
+
+    .line 118
+    .line 119
+    const-string v1, "SUSPEND"
+
+    .line 120
+    .line 121
+    invoke-direct {v0, v1, v2}, Lhx4;-><init>(Ljava/lang/Object;B)V
+
+    .line 122
+    .line 123
+    .line 124
+    sput-object v0, Lpe0;->m:Lhx4;
+
+    .line 125
+    .line 126
+    new-instance v0, Lhx4;
+
+    .line 127
+    .line 128
+    const-string v1, "SUSPEND_NO_WAITER"
+
+    .line 129
+    .line 130
+    invoke-direct {v0, v1, v2}, Lhx4;-><init>(Ljava/lang/Object;B)V
+
+    .line 131
+    .line 132
+    .line 133
+    sput-object v0, Lpe0;->n:Lhx4;
+
+    .line 134
+    .line 135
+    new-instance v0, Lhx4;
+
+    .line 136
+    .line 137
+    const-string v1, "FAILED"
+
+    .line 138
+    .line 139
+    invoke-direct {v0, v1, v2}, Lhx4;-><init>(Ljava/lang/Object;B)V
+
+    .line 140
+    .line 141
+    .line 142
+    sput-object v0, Lpe0;->o:Lhx4;
+
+    .line 143
+    .line 144
+    new-instance v0, Lhx4;
+
+    .line 145
+    .line 146
+    const-string v1, "NO_RECEIVE_RESULT"
+
+    .line 147
+    .line 148
+    invoke-direct {v0, v1, v2}, Lhx4;-><init>(Ljava/lang/Object;B)V
+
+    .line 149
+    .line 150
+    .line 151
+    sput-object v0, Lpe0;->p:Lhx4;
+
+    .line 152
+    .line 153
+    new-instance v0, Lhx4;
+
+    .line 154
+    .line 155
+    const-string v1, "CLOSE_HANDLER_CLOSED"
+
+    .line 156
+    .line 157
+    invoke-direct {v0, v1, v2}, Lhx4;-><init>(Ljava/lang/Object;B)V
+
+    .line 158
+    .line 159
+    .line 160
+    sput-object v0, Lpe0;->q:Lhx4;
+
+    .line 161
+    .line 162
+    new-instance v0, Lhx4;
+
+    .line 163
+    .line 164
+    const-string v1, "CLOSE_HANDLER_INVOKED"
+
+    .line 165
+    .line 166
+    invoke-direct {v0, v1, v2}, Lhx4;-><init>(Ljava/lang/Object;B)V
+
+    .line 167
+    .line 168
+    .line 169
+    sput-object v0, Lpe0;->r:Lhx4;
+
+    .line 170
+    .line 171
+    new-instance v0, Lhx4;
+
+    .line 172
+    .line 173
+    const-string v1, "NO_CLOSE_CAUSE"
+
+    .line 174
+    .line 175
+    invoke-direct {v0, v1, v2}, Lhx4;-><init>(Ljava/lang/Object;B)V
+
+    .line 176
+    .line 177
+    .line 178
+    sput-object v0, Lpe0;->s:Lhx4;
+
+    .line 179
+    .line 180
+    return-void
 .end method

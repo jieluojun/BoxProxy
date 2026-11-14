@@ -1,268 +1,213 @@
 .class public final Lz01;
-.super Landroid/view/View$DragShadowBuilder;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lzm6;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lu72;
 
 
 # instance fields
-.field public final a:Lbi1;
+.field public final synthetic i:B
 
-.field public final b:J
-
-.field public final c:Lp62;
+.field public final synthetic j:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lbi1;JLp62;)V
+.method public synthetic constructor <init>(Ljava/lang/Object;Lp91;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Landroid/view/View$DragShadowBuilder;-><init>()V
+    iput-byte p3, p0, Lz01;->i:B
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lz01;->a:Lbi1;
+    iput-object p1, p0, Lz01;->j:Ljava/lang/Object;
 
+    .line 4
     .line 5
+    const/4 p1, 0x3
+
     .line 6
-    iput-wide p2, p0, Lz01;->b:J
+    invoke-direct {p0, p1, p2}, Lzm6;-><init>(ILp91;)V
 
     .line 7
     .line 8
-    iput-object p4, p0, Lz01;->c:Lp62;
-
     .line 9
-    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final onDrawShadow(Landroid/graphics/Canvas;)V
-    .locals 9
+.method public final a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 2
 
     .line 1
-    new-instance v0, Lzi0;
+    iget-byte v0, p0, Lz01;->i:B
 
     .line 2
     .line 3
-    invoke-direct {v0}, Lzi0;-><init>()V
+    sget-object v1, Ll97;->a:Ll97;
 
     .line 4
     .line 5
+    iget-object p0, p0, Lz01;->j:Ljava/lang/Object;
+
     .line 6
-    sget-object v1, Lw9;->a:Landroid/graphics/Canvas;
-
     .line 7
-    .line 8
-    new-instance v1, Lv9;
+    packed-switch v0, :pswitch_data_0
 
+    .line 8
     .line 9
     .line 10
-    invoke-direct {v1}, Lv9;-><init>()V
+    check-cast p1, Loc1;
 
     .line 11
     .line 12
+    check-cast p2, Llh4;
+
     .line 13
-    iput-object p1, v1, Lv9;->a:Landroid/graphics/Canvas;
-
     .line 14
+    iget-wide p1, p2, Llh4;->a:J
+
     .line 15
-    iget-object p1, v0, Lzi0;->j:Lyi0;
-
     .line 16
+    check-cast p3, Lp91;
+
     .line 17
-    iget-object v2, p1, Lyi0;->a:Lyh1;
-
     .line 18
+    new-instance p1, Lz01;
+
     .line 19
-    iget-object v3, p1, Lyi0;->b:Lt03;
-
     .line 20
-    .line 21
-    iget-object v4, p1, Lyi0;->c:Lxi0;
+    check-cast p0, Lbd6;
 
+    .line 21
     .line 22
+    const/4 p2, 0x1
+
     .line 23
-    iget-wide v5, p1, Lyi0;->d:J
+    invoke-direct {p1, p0, p3, p2}, Lz01;-><init>(Ljava/lang/Object;Lp91;B)V
 
     .line 24
     .line 25
-    iget-object v7, p0, Lz01;->a:Lbi1;
-
     .line 26
-    .line 27
-    iput-object v7, p1, Lyi0;->a:Lyh1;
+    invoke-virtual {p1, v1}, Lz01;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
+    .line 27
     .line 28
     .line 29
-    sget-object v7, Lt03;->j:Lt03;
+    return-object v1
 
     .line 30
+    :pswitch_0
+    check-cast p1, Le22;
+
     .line 31
-    iput-object v7, p1, Lyi0;->b:Lt03;
-
     .line 32
+    check-cast p2, Ljava/lang/Throwable;
+
     .line 33
-    iput-object v1, p1, Lyi0;->c:Lxi0;
-
     .line 34
+    check-cast p3, Lp91;
+
     .line 35
-    iget-wide v7, p0, Lz01;->b:J
-
     .line 36
+    new-instance p1, Lz01;
+
     .line 37
-    iput-wide v7, p1, Lyi0;->d:J
-
     .line 38
+    check-cast p0, Lrf5;
+
     .line 39
-    invoke-virtual {v1}, Lv9;->o()V
-
     .line 40
-    .line 41
-    .line 42
-    iget-object p0, p0, Lz01;->c:Lp62;
+    const/4 p2, 0x0
 
+    .line 41
+    invoke-direct {p1, p0, p3, p2}, Lz01;-><init>(Ljava/lang/Object;Lp91;B)V
+
+    .line 42
     .line 43
     .line 44
-    invoke-interface {p0, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {p1, v1}, Lz01;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 45
     .line 46
     .line 47
-    invoke-virtual {v1}, Lv9;->j()V
+    return-object v1
 
     .line 48
+    nop
+
     .line 49
-    .line 50
-    iput-object v2, p1, Lyi0;->a:Lyh1;
-
-    .line 51
-    .line 52
-    iput-object v3, p1, Lyi0;->b:Lt03;
-
-    .line 53
-    .line 54
-    iput-object v4, p1, Lyi0;->c:Lxi0;
-
-    .line 55
-    .line 56
-    iput-wide v5, p1, Lyi0;->d:J
-
-    .line 57
-    .line 58
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method
 
-.method public final onProvideShadowMetrics(Landroid/graphics/Point;Landroid/graphics/Point;)V
-    .locals 5
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 3
 
     .line 1
-    const/16 v0, 0x20
+    iget-byte v0, p0, Lz01;->i:B
 
     .line 2
     .line 3
-    iget-wide v1, p0, Lz01;->b:J
+    sget-object v1, Ll97;->a:Ll97;
 
     .line 4
     .line 5
-    shr-long v3, v1, v0
+    const/4 v2, 0x1
 
     .line 6
-    .line 7
-    long-to-int v0, v3
+    iget-object p0, p0, Lz01;->j:Ljava/lang/Object;
 
+    .line 7
     .line 8
-    invoke-static {v0}, Ljava/lang/Float;->intBitsToFloat(I)F
+    packed-switch v0, :pswitch_data_0
 
     .line 9
     .line 10
     .line 11
-    move-result v0
+    invoke-static {p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 12
-    iget-object p0, p0, Lz01;->a:Lbi1;
-
     .line 13
     .line 14
-    invoke-interface {p0, v0}, Lyh1;->m1(F)F
+    check-cast p0, Lbd6;
 
     .line 15
     .line 16
+    invoke-virtual {p0, v2}, Lbd6;->e(Z)V
+
     .line 17
-    move-result v0
-
     .line 18
-    invoke-interface {p0, v0}, Lyh1;->t0(F)I
-
     .line 19
+    return-object v1
+
     .line 20
+    :pswitch_0
+    invoke-static {p1}, Lbe3;->R(Ljava/lang/Object;)V
+
     .line 21
-    move-result v0
-
     .line 22
-    const-wide v3, 0xffffffffL
-
     .line 23
+    check-cast p0, Lrf5;
+
     .line 24
     .line 25
+    iput-boolean v2, p0, Lrf5;->i:Z
+
     .line 26
     .line 27
-    and-long/2addr v1, v3
+    return-object v1
 
     .line 28
-    long-to-int v1, v1
+    nop
 
     .line 29
-    invoke-static {v1}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    .line 30
-    .line 31
-    .line 32
-    move-result v1
-
-    .line 33
-    invoke-interface {p0, v1}, Lyh1;->m1(F)F
-
-    .line 34
-    .line 35
-    .line 36
-    move-result v1
-
-    .line 37
-    invoke-interface {p0, v1}, Lyh1;->t0(F)I
-
-    .line 38
-    .line 39
-    .line 40
-    move-result p0
-
-    .line 41
-    invoke-virtual {p1, v0, p0}, Landroid/graphics/Point;->set(II)V
-
-    .line 42
-    .line 43
-    .line 44
-    iget p0, p1, Landroid/graphics/Point;->x:I
-
-    .line 45
-    .line 46
-    div-int/lit8 p0, p0, 0x2
-
-    .line 47
-    .line 48
-    iget p1, p1, Landroid/graphics/Point;->y:I
-
-    .line 49
-    .line 50
-    div-int/lit8 p1, p1, 0x2
-
-    .line 51
-    .line 52
-    invoke-virtual {p2, p0, p1}, Landroid/graphics/Point;->set(II)V
-
-    .line 53
-    .line 54
-    .line 55
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

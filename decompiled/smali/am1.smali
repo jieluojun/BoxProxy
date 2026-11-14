@@ -1,239 +1,135 @@
 .class public final Lam1;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super La3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:J
+.field public final k:Ljava/util/Iterator;
+
+.field public final l:Lp72;
+
+.field public final m:Ljava/util/HashSet;
 
 
 # direct methods
-.method public synthetic constructor <init>(J)V
+.method public constructor <init>(Ljava/util/Iterator;Lp72;)V
     .locals 0
 
     .line 1
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 2
+    .line 3
+    .line 4
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 2
-    .line 3
-    .line 4
-    iput-wide p1, p0, Lam1;->a:J
-
     .line 5
     .line 6
-    return-void
-.end method
-
-.method public static final a(J)F
-    .locals 2
-
-    .line 1
-    const-wide v0, 0xffffffffL
-
-    .line 2
-    .line 3
-    .line 4
-    .line 5
-    .line 6
-    and-long/2addr p0, v0
-
     .line 7
-    long-to-int p0, p0
+    iput-object p1, p0, Lam1;->k:Ljava/util/Iterator;
 
     .line 8
-    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
-
     .line 9
+    iput-object p2, p0, Lam1;->l:Lp72;
+
     .line 10
     .line 11
-    move-result p0
+    new-instance p1, Ljava/util/HashSet;
 
     .line 12
-    const/4 p1, 0x0
-
     .line 13
-    add-float/2addr p0, p1
+    invoke-direct {p1}, Ljava/util/HashSet;-><init>()V
 
     .line 14
-    return p0
-.end method
+    .line 15
+    .line 16
+    iput-object p1, p0, Lam1;->m:Ljava/util/HashSet;
 
-.method public static final b(J)F
-    .locals 1
-
-    .line 1
-    const/16 v0, 0x20
-
-    .line 2
-    .line 3
-    shr-long/2addr p0, v0
-
-    .line 4
-    long-to-int p0, p0
-
-    .line 5
-    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
-
-    .line 6
-    .line 7
-    .line 8
-    move-result p0
-
-    .line 9
-    const/4 p1, 0x0
-
-    .line 10
-    add-float/2addr p0, p1
-
-    .line 11
-    return p0
+    .line 17
+    .line 18
+    return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
+.method public final a()V
+    .locals 3
 
     .line 1
-    instance-of v0, p1, Lam1;
-
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
-
-    .line 4
-    .line 5
-    goto :goto_0
-
-    .line 6
     :cond_0
-    check-cast p1, Lam1;
-
-    .line 7
-    .line 8
-    iget-wide v0, p1, Lam1;->a:J
-
-    .line 9
-    .line 10
-    iget-wide p0, p0, Lam1;->a:J
-
-    .line 11
-    .line 12
-    cmp-long p0, p0, v0
-
-    .line 13
-    .line 14
-    if-eqz p0, :cond_1
-
-    .line 15
-    .line 16
-    :goto_0
-    const/4 p0, 0x0
-
-    .line 17
-    return p0
-
-    .line 18
-    :cond_1
-    const/4 p0, 0x1
-
-    .line 19
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    .line 1
-    iget-wide v0, p0, Lam1;->a:J
+    iget-object v0, p0, Lam1;->k:Ljava/util/Iterator;
 
     .line 2
     .line 3
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 4
     .line 5
     .line 6
-    move-result p0
+    move-result v1
 
     .line 7
-    return p0
-.end method
+    if-eqz v1, :cond_1
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
-
-    .line 1
-    const-wide v0, 0x7fc000007fc00000L    # 2.247117487993712E307
-
-    .line 2
-    .line 3
-    .line 4
-    .line 5
-    .line 6
-    iget-wide v2, p0, Lam1;->a:J
-
-    .line 7
     .line 8
-    cmp-long p0, v2, v0
-
     .line 9
-    .line 10
-    if-eqz p0, :cond_0
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
+    .line 10
     .line 11
     .line 12
-    invoke-static {v2, v3}, Lam1;->b(J)F
-
-    .line 13
-    .line 14
-    .line 15
-    move-result p0
-
-    .line 16
-    invoke-static {p0}, Lxl1;->c(F)Ljava/lang/String;
-
-    .line 17
-    .line 18
-    .line 19
-    move-result-object p0
-
-    .line 20
-    invoke-static {v2, v3}, Lam1;->a(J)F
-
-    .line 21
-    .line 22
-    .line 23
-    move-result v0
-
-    .line 24
-    invoke-static {v0}, Lxl1;->c(F)Ljava/lang/String;
-
-    .line 25
-    .line 26
-    .line 27
     move-result-object v0
 
-    .line 28
-    const-string v1, " x "
+    .line 13
+    iget-object v1, p0, Lam1;->l:Lp72;
 
+    .line 14
+    .line 15
+    invoke-interface {v1, v0}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object v1
+
+    .line 19
+    iget-object v2, p0, Lam1;->m:Ljava/util/HashSet;
+
+    .line 20
+    .line 21
+    invoke-virtual {v2, v1}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
+
+    .line 22
+    .line 23
+    .line 24
+    move-result v1
+
+    .line 25
+    if-eqz v1, :cond_0
+
+    .line 26
+    .line 27
+    iput-object v0, p0, La3;->j:Ljava/lang/Object;
+
+    .line 28
     .line 29
+    const/4 v0, 0x1
+
     .line 30
-    invoke-static {p0, v1, v0}, Loc1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    iput-byte v0, p0, La3;->i:B
 
     .line 31
     .line 32
+    return-void
+
     .line 33
-    move-result-object p0
+    :cond_1
+    const/4 v0, 0x2
 
     .line 34
-    return-object p0
+    iput-byte v0, p0, La3;->i:B
 
     .line 35
-    :cond_0
-    const-string p0, "DpSize.Unspecified"
-
     .line 36
-    .line 37
-    return-object p0
+    return-void
 .end method

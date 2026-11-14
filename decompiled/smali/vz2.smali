@@ -1,201 +1,183 @@
-.class public final Lvz2;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public Lvz2;
+.super La03;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
-
-.field public final b:Ljava/lang/String;
+.field public final k:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 2
-    .line 3
-    .line 4
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 5
-    .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 8
-    .line 9
-    .line 10
-    iput-object p1, p0, Lvz2;->a:Ljava/lang/String;
-
-    .line 11
-    .line 12
-    iput-object p2, p0, Lvz2;->b:Ljava/lang/String;
-
-    .line 13
-    .line 14
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public constructor <init>(Ltz2;)V
+    .locals 6
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p0, p1, :cond_0
+    invoke-direct {p0, v0}, La03;-><init>(Z)V
 
     .line 3
     .line 4
-    return v0
-
     .line 5
-    :cond_0
-    instance-of v1, p1, Lvz2;
+    invoke-virtual {p0, p1}, La03;->S(Ltz2;)V
 
     .line 6
     .line 7
-    const/4 v2, 0x0
-
     .line 8
-    if-nez v1, :cond_1
+    sget-object p1, Lhw;->a:Lsun/misc/Unsafe;
 
     .line 9
     .line 10
-    return v2
+    sget-wide v1, La03;->i:J
 
     .line 11
-    :cond_1
-    check-cast p1, Lvz2;
-
     .line 12
-    .line 13
-    iget-object v1, p0, Lvz2;->a:Ljava/lang/String;
+    invoke-virtual {p1, p0, v1, v2}, Lsun/misc/Unsafe;->getObjectVolatile(Ljava/lang/Object;J)Ljava/lang/Object;
 
+    .line 13
     .line 14
     .line 15
-    iget-object v3, p1, Lvz2;->a:Ljava/lang/String;
+    move-result-object p1
 
     .line 16
-    .line 17
-    invoke-static {v1, v3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    check-cast p1, Lvo0;
 
+    .line 17
     .line 18
+    instance-of v3, p1, Lwo0;
+
     .line 19
     .line 20
-    move-result v1
+    const/4 v4, 0x0
 
     .line 21
-    if-nez v1, :cond_2
+    if-eqz v3, :cond_0
 
     .line 22
     .line 23
-    return v2
+    check-cast p1, Lwo0;
 
     .line 24
-    :cond_2
-    iget-object p0, p0, Lvz2;->b:Ljava/lang/String;
-
     .line 25
+    goto :goto_0
+
     .line 26
-    iget-object p1, p1, Lvz2;->b:Ljava/lang/String;
+    :cond_0
+    move-object p1, v4
 
     .line 27
+    :goto_0
+    const/4 v3, 0x0
+
     .line 28
-    invoke-static {p0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    if-eqz p1, :cond_2
 
     .line 29
     .line 30
+    invoke-virtual {p1}, Lwz2;->l()La03;
+
     .line 31
-    move-result p0
-
     .line 32
-    if-nez p0, :cond_3
-
     .line 33
+    move-result-object p1
+
     .line 34
-    return v2
+    :goto_1
+    invoke-virtual {p1}, La03;->M()Z
 
     .line 35
+    .line 36
+    .line 37
+    move-result v5
+
+    .line 38
+    if-nez v5, :cond_3
+
+    .line 39
+    .line 40
+    sget-object v5, Lhw;->a:Lsun/misc/Unsafe;
+
+    .line 41
+    .line 42
+    invoke-virtual {v5, p1, v1, v2}, Lsun/misc/Unsafe;->getObjectVolatile(Ljava/lang/Object;J)Ljava/lang/Object;
+
+    .line 43
+    .line 44
+    .line 45
+    move-result-object p1
+
+    .line 46
+    check-cast p1, Lvo0;
+
+    .line 47
+    .line 48
+    instance-of v5, p1, Lwo0;
+
+    .line 49
+    .line 50
+    if-eqz v5, :cond_1
+
+    .line 51
+    .line 52
+    check-cast p1, Lwo0;
+
+    .line 53
+    .line 54
+    goto :goto_2
+
+    .line 55
+    :cond_1
+    move-object p1, v4
+
+    .line 56
+    :goto_2
+    if-eqz p1, :cond_2
+
+    .line 57
+    .line 58
+    invoke-virtual {p1}, Lwz2;->l()La03;
+
+    .line 59
+    .line 60
+    .line 61
+    move-result-object p1
+
+    .line 62
+    goto :goto_1
+
+    .line 63
+    :cond_2
+    move v0, v3
+
+    .line 64
     :cond_3
-    return v0
+    iput-boolean v0, p0, Lvz2;->k:Z
+
+    .line 65
+    .line 66
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 1
+
+# virtual methods
+.method public final M()Z
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lvz2;->a:Ljava/lang/String;
+    iget-boolean p0, p0, Lvz2;->k:Z
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    mul-int/lit8 v0, v0, 0x1f
-
-    .line 8
-    .line 9
-    iget-object p0, p0, Lvz2;->b:Ljava/lang/String;
-
-    .line 10
-    .line 11
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    add-int/2addr p0, v0
-
-    .line 16
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
+.method public final N()Z
+    .locals 0
 
     .line 1
-    const-string v0, ", url="
+    const/4 p0, 0x1
 
     .line 2
-    .line 3
-    const-string v1, ")"
-
-    .line 4
-    .line 5
-    const-string v2, "LatencyTarget(name="
-
-    .line 6
-    .line 7
-    iget-object v3, p0, Lvz2;->a:Ljava/lang/String;
-
-    .line 8
-    .line 9
-    iget-object p0, p0, Lvz2;->b:Ljava/lang/String;
-
-    .line 10
-    .line 11
-    invoke-static {v2, v3, v0, p0, v1}, Loc1;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object p0
-
-    .line 15
-    return-object p0
+    return p0
 .end method

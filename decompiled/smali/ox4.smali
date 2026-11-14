@@ -1,203 +1,178 @@
-.class public final synthetic Lox4;
+.class public final Lox4;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lp62;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Lgw4;
-
-.field public final synthetic l:Landroid/content/Context;
-
-.field public final synthetic m:Ljava/lang/String;
+.field public final a:B
 
 
 # direct methods
-.method public synthetic constructor <init>(Lgw4;Landroid/content/Context;Ljava/lang/String;B)V
+.method public synthetic constructor <init>(I)V
     .locals 0
 
     .line 1
-    iput-byte p4, p0, Lox4;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lox4;->k:Lgw4;
-
     .line 4
+    iput-byte p1, p0, Lox4;->a:B
+
     .line 5
-    iput-object p2, p0, Lox4;->l:Landroid/content/Context;
+    .line 6
+    return-void
+.end method
+
+.method public static a(I)Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-eq p0, v0, :cond_3
+
+    .line 3
+    .line 4
+    const/4 v0, 0x2
+
+    .line 5
+    if-eq p0, v0, :cond_2
 
     .line 6
     .line 7
-    iput-object p3, p0, Lox4;->m:Ljava/lang/String;
+    const/4 v0, 0x3
 
     .line 8
-    .line 9
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    if-eq p0, v0, :cond_1
 
+    .line 9
     .line 10
+    const/4 v0, 0x4
+
     .line 11
+    if-eq p0, v0, :cond_0
+
     .line 12
-    return-void
+    .line 13
+    const-string p0, "Unknown"
+
+    .line 14
+    .line 15
+    return-object p0
+
+    .line 16
+    :cond_0
+    const-string p0, "Eraser"
+
+    .line 17
+    .line 18
+    return-object p0
+
+    .line 19
+    :cond_1
+    const-string p0, "Stylus"
+
+    .line 20
+    .line 21
+    return-object p0
+
+    .line 22
+    :cond_2
+    const-string p0, "Mouse"
+
+    .line 23
+    .line 24
+    return-object p0
+
+    .line 25
+    :cond_3
+    const-string p0, "Touch"
+
+    .line 26
+    .line 27
+    return-object p0
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Lox4;->j:B
+    instance-of v0, p1, Lox4;
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    if-eqz v0, :cond_0
 
     .line 4
     .line 5
-    iget-object v2, p0, Lox4;->m:Ljava/lang/String;
+    check-cast p1, Lox4;
 
     .line 6
     .line 7
-    iget-object v3, p0, Lox4;->l:Landroid/content/Context;
+    iget-byte p1, p1, Lox4;->a:B
 
     .line 8
     .line 9
-    iget-object p0, p0, Lox4;->k:Lgw4;
+    iget-byte p0, p0, Lox4;->a:B
 
     .line 10
     .line 11
-    packed-switch v0, :pswitch_data_0
+    if-eq p0, p1, :cond_1
 
     .line 12
     .line 13
+    :cond_0
+    const/4 p0, 0x0
+
     .line 14
-    check-cast p1, Ljava/lang/Boolean;
+    return p0
 
     .line 15
+    :cond_1
+    const/4 p0, 0x1
+
     .line 16
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    return p0
+.end method
 
-    .line 17
-    .line 18
-    .line 19
-    move-result p1
+.method public final hashCode()I
+    .locals 0
 
-    .line 20
-    new-instance v0, Lgd3;
+    .line 1
+    iget-byte p0, p0, Lox4;->a:B
 
-    .line 21
-    .line 22
-    const/16 v4, 0xf
+    .line 2
+    .line 3
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
-    .line 23
-    .line 24
-    invoke-direct {v0, v3, v2, v4}, Lgd3;-><init>(Landroid/content/Context;Ljava/lang/String;B)V
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
 
-    .line 25
-    .line 26
-    .line 27
-    invoke-virtual {p0, v0, p1}, Lgw4;->r(Lp62;Z)V
+    .line 7
+    return p0
+.end method
 
-    .line 28
-    .line 29
-    .line 30
-    return-object v1
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    .line 31
-    :pswitch_0
-    check-cast p1, Ljava/lang/Integer;
+    .line 1
+    iget-byte p0, p0, Lox4;->a:B
 
-    .line 32
-    .line 33
-    invoke-virtual {p1}, Ljava/lang/Integer;->intValue()I
+    .line 2
+    .line 3
+    invoke-static {p0}, Lox4;->a(I)Ljava/lang/String;
 
-    .line 34
-    .line 35
-    .line 36
-    move-result p1
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
 
-    .line 37
-    sget-object v0, Ld55;->n:Lzv1;
-
-    .line 38
-    .line 39
-    invoke-virtual {v0, p1}, Lzv1;->get(I)Ljava/lang/Object;
-
-    .line 40
-    .line 41
-    .line 42
-    move-result-object p1
-
-    .line 43
-    check-cast p1, Ld55;
-
-    .line 44
-    .line 45
-    new-instance v0, Lgd3;
-
-    .line 46
-    .line 47
-    const/16 v4, 0x10
-
-    .line 48
-    .line 49
-    invoke-direct {v0, v3, v2, v4}, Lgd3;-><init>(Landroid/content/Context;Ljava/lang/String;B)V
-
-    .line 50
-    .line 51
-    .line 52
-    invoke-virtual {p0, p1, v0}, Lgw4;->p(Ld55;Lp62;)V
-
-    .line 53
-    .line 54
-    .line 55
-    return-object v1
-
-    .line 56
-    :pswitch_1
-    check-cast p1, Ljava/lang/Boolean;
-
-    .line 57
-    .line 58
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    .line 59
-    .line 60
-    .line 61
-    move-result p1
-
-    .line 62
-    new-instance v0, Lgd3;
-
-    .line 63
-    .line 64
-    const/4 v4, 0x6
-
-    .line 65
-    invoke-direct {v0, v3, v2, v4}, Lgd3;-><init>(Landroid/content/Context;Ljava/lang/String;B)V
-
-    .line 66
-    .line 67
-    .line 68
-    invoke-virtual {p0, v0, p1}, Lgw4;->r(Lp62;Z)V
-
-    .line 69
-    .line 70
-    .line 71
-    return-object v1
-
-    .line 72
-    nop
-
-    .line 73
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 7
+    return-object p0
 .end method

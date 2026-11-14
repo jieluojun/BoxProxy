@@ -1,161 +1,262 @@
-.class public final synthetic Lb41;
+.class public final Lb41;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Le62;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final a:Ljava/lang/String;
 
-.field public final synthetic k:La45;
+.field public final b:Lc41;
 
-.field public final synthetic l:Lp62;
+.field public final c:Lxs4;
+
+.field public final d:Lxs4;
+
+.field public final e:Lxs4;
 
 
 # direct methods
-.method public synthetic constructor <init>(La45;Lp62;B)V
+.method public constructor <init>(Ljava/lang/String;Lz31;Lc41;)V
     .locals 0
 
-    .line 12
-    iput-byte p3, p0, Lb41;->j:B
-
-    iput-object p1, p0, Lb41;->k:La45;
-
-    iput-object p2, p0, Lb41;->l:Lp62;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(Lp62;La45;)V
-    .locals 1
-
     .line 1
-    const/4 v0, 0x4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    iput-byte v0, p0, Lb41;->j:B
-
     .line 3
     .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lb41;->a:Ljava/lang/String;
 
     .line 5
     .line 6
+    iput-object p3, p0, Lb41;->b:Lc41;
+
     .line 7
-    iput-object p1, p0, Lb41;->l:Lp62;
-
     .line 8
-    .line 9
-    iput-object p2, p0, Lb41;->k:La45;
+    invoke-static {p2}, Lm93;->H(Ljava/lang/Object;)Lxs4;
 
+    .line 9
     .line 10
     .line 11
+    move-result-object p1
+
+    .line 12
+    iput-object p1, p0, Lb41;->c:Lxs4;
+
+    .line 13
+    .line 14
+    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
+
+    .line 15
+    .line 16
+    invoke-static {p1}, Lm93;->H(Ljava/lang/Object;)Lxs4;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p1
+
+    .line 20
+    iput-object p1, p0, Lb41;->d:Lxs4;
+
+    .line 21
+    .line 22
+    const/4 p1, 0x0
+
+    .line 23
+    invoke-static {p1}, Lm93;->H(Ljava/lang/Object;)Lxs4;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object p1
+
+    .line 27
+    iput-object p1, p0, Lb41;->e:Lxs4;
+
+    .line 28
+    .line 29
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 3
+.method public final a()V
+    .locals 11
 
     .line 1
-    iget-byte v0, p0, Lb41;->j:B
+    invoke-virtual {p0}, Lb41;->b()Lz31;
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
-
     .line 4
+    move-result-object v0
+
     .line 5
-    iget-object v2, p0, Lb41;->k:La45;
+    iget-object v0, v0, Lz31;->b:Ljava/util/List;
 
     .line 6
     .line 7
-    iget-object p0, p0, Lb41;->l:Lp62;
+    new-instance v1, Ljava/util/ArrayList;
 
     .line 8
     .line 9
-    packed-switch v0, :pswitch_data_0
+    const/16 v2, 0xa
 
     .line 10
     .line 11
-    .line 12
-    invoke-interface {p0, v2}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v0, v2}, Lyu0;->e0(Ljava/lang/Iterable;I)I
 
+    .line 12
     .line 13
     .line 14
+    move-result v2
+
     .line 15
-    return-object v1
+    invoke-direct {v1, v2}, Ljava/util/ArrayList;-><init>(I)V
 
     .line 16
-    :pswitch_0
-    if-eqz v2, :cond_0
-
     .line 17
     .line 18
-    invoke-interface {p0, v2}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
     .line 19
     .line 20
     .line 21
-    :cond_0
-    return-object v1
+    move-result-object v0
 
     .line 22
-    :pswitch_1
-    if-eqz v2, :cond_1
+    :goto_0
+    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
 
     .line 23
     .line 24
-    invoke-interface {p0, v2}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 25
-    .line 26
-    .line 27
-    :cond_1
-    return-object v1
+    move-result v2
 
+    .line 26
+    if-eqz v2, :cond_0
+
+    .line 27
     .line 28
-    :pswitch_2
-    if-eqz v2, :cond_2
+    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     .line 29
     .line 30
-    invoke-interface {p0, v2}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 31
+    move-result-object v2
+
     .line 32
+    move-object v3, v2
+
     .line 33
-    :cond_2
-    return-object v1
+    check-cast v3, Lx31;
 
     .line 34
-    :pswitch_3
-    if-eqz v2, :cond_3
-
     .line 35
+    const/4 v9, 0x0
+
     .line 36
-    invoke-interface {p0, v2}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    const/16 v10, 0x3f
 
     .line 37
     .line 38
+    const/4 v4, 0x0
+
     .line 39
-    :cond_3
-    return-object v1
+    const/4 v5, 0x0
 
     .line 40
-    nop
+    const/4 v6, 0x0
 
     .line 41
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    const/4 v7, 0x0
+
+    .line 42
+    const/4 v8, 0x0
+
+    .line 43
+    invoke-static/range {v3 .. v10}, Lx31;->a(Lx31;Ljava/lang/String;Ljava/lang/String;Lu31;Ljava/util/Set;ZZI)Lx31;
+
+    .line 44
+    .line 45
+    .line 46
+    move-result-object v2
+
+    .line 47
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 48
+    .line 49
+    .line 50
+    goto :goto_0
+
+    .line 51
+    :cond_0
+    new-instance v0, Lz31;
+
+    .line 52
+    .line 53
+    const/4 v2, 0x0
+
+    .line 54
+    invoke-direct {v0, v2, v1}, Lz31;-><init>(Ljava/lang/String;Ljava/util/List;)V
+
+    .line 55
+    .line 56
+    .line 57
+    invoke-virtual {p0, v0}, Lb41;->c(Lz31;)V
+
+    .line 58
+    .line 59
+    .line 60
+    return-void
+.end method
+
+.method public final b()Lz31;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lb41;->c:Lxs4;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Lxs4;->getValue()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lz31;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public final c(Lz31;)V
+    .locals 1
+
+    .line 1
+    iget-object v0, p0, Lb41;->b:Lc41;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0, p1}, Lc41;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    iget-object p0, p0, Lb41;->c:Lxs4;
+
+    .line 7
+    .line 8
+    invoke-virtual {p0, p1}, Lxs4;->setValue(Ljava/lang/Object;)V
+
+    .line 9
+    .line 10
+    .line 11
+    return-void
 .end method

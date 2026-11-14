@@ -1,132 +1,160 @@
 .class public final Lph0;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public a:Ljava/util/LinkedHashMap;
+.field public final a:Lmb4;
 
-.field public b:Ljava/util/LinkedHashMap;
+
+# direct methods
+.method public constructor <init>(Lmb4;)V
+    .locals 0
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Lph0;->a:Lmb4;
+
+    .line 5
+    .line 6
+    return-void
+.end method
 
 
 # virtual methods
-.method public final varargs a(Lv8;[Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v0, 0x1
 
     .line 2
+    if-ne p0, p1, :cond_0
+
     .line 3
     .line 4
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    return v0
 
     .line 5
+    :cond_0
+    instance-of v1, p1, Lph0;
+
     .line 6
     .line 7
-    array-length v0, p2
+    if-eqz v1, :cond_1
 
     .line 8
-    invoke-static {p2, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
-
     .line 9
+    check-cast p1, Lph0;
+
     .line 10
     .line 11
-    move-result-object p2
+    iget-object p0, p0, Lph0;->a:Lmb4;
 
     .line 12
-    invoke-virtual {p1, p2}, Lv8;->y([Ljava/lang/Object;)Ljava/lang/String;
-
     .line 13
+    iget-object p1, p1, Lph0;->a:Lmb4;
+
     .line 14
     .line 15
-    move-result-object p1
+    invoke-static {p0, p1}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 16
-    iget-object p2, p0, Lph0;->a:Ljava/util/LinkedHashMap;
-
     .line 17
     .line 18
-    invoke-virtual {p2, p1}, Ljava/util/LinkedHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result p0
 
     .line 19
+    if-eqz p0, :cond_1
+
     .line 20
     .line 21
-    move-result-object p2
+    return v0
 
     .line 22
-    if-eqz p2, :cond_0
+    :cond_1
+    const/4 p0, 0x0
 
     .line 23
-    .line 24
-    iget-object p0, p0, Lph0;->b:Ljava/util/LinkedHashMap;
-
-    .line 25
-    .line 26
-    invoke-interface {p0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 27
-    .line 28
-    .line 29
-    :cond_0
-    return-object p2
+    return p0
 .end method
 
-.method public final b(Lv8;[Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 1
+.method public final hashCode()I
+    .locals 0
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    iget-object p0, p0, Lph0;->a:Lmb4;
 
     .line 2
     .line 3
-    .line 4
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    if-eqz p0, :cond_0
 
+    .line 4
     .line 5
+    invoke-virtual {p0}, Lmb4;->hashCode()I
+
     .line 6
     .line 7
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 8
+    move-result p0
+
     .line 9
+    return p0
+
     .line 10
-    array-length v0, p2
+    :cond_0
+    const/4 p0, 0x0
 
     .line 11
-    invoke-static {p2, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    return p0
+.end method
 
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "ReadResult(request=null, response="
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget-object p0, p0, Lph0;->a:Lmb4;
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 11
     .line 12
     .line 13
-    .line 14
-    move-result-object p2
+    const-string p0, ")"
 
+    .line 14
     .line 15
-    invoke-virtual {p1, p2}, Lv8;->y([Ljava/lang/Object;)Ljava/lang/String;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 16
     .line 17
     .line 18
-    move-result-object p1
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 19
-    iget-object p2, p0, Lph0;->a:Ljava/util/LinkedHashMap;
-
     .line 20
     .line 21
-    invoke-interface {p2, p1, p3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    move-result-object p0
 
     .line 22
-    .line 23
-    .line 24
-    iget-object p0, p0, Lph0;->b:Ljava/util/LinkedHashMap;
-
-    .line 25
-    .line 26
-    invoke-interface {p0, p1, p3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 27
-    .line 28
-    .line 29
-    return-void
+    return-object p0
 .end method

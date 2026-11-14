@@ -1,23 +1,45 @@
 .class public final Ltf1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lp91;
 
 
 # instance fields
-.field public a:Lxr1;
+.field public i:Lj23;
 
-.field public b:Landroid/view/View;
+.field public j:Lp91;
 
-.field public c:Landroid/widget/TextView;
+.field public k:Ljava/lang/Object;
 
-.field public d:Landroid/widget/TextView;
 
-.field public e:Landroid/widget/TextView;
+# virtual methods
+.method public final getContext()Lfc1;
+    .locals 0
 
-.field public f:Landroid/widget/TextView;
+    .line 1
+    sget-object p0, Lev1;->i:Lev1;
 
-.field public g:Landroid/view/ViewGroup;
+    .line 2
+    .line 3
+    return-object p0
+.end method
 
-.field public h:Landroid/view/ViewGroup;
+.method public final resumeWith(Ljava/lang/Object;)V
+    .locals 1
 
-.field public i:Z
+    .line 1
+    const/4 v0, 0x0
+
+    .line 2
+    iput-object v0, p0, Ltf1;->j:Lp91;
+
+    .line 3
+    .line 4
+    iput-object p1, p0, Ltf1;->k:Ljava/lang/Object;
+
+    .line 5
+    .line 6
+    return-void
+.end method

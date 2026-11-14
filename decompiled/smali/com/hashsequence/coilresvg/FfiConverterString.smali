@@ -1,6 +1,6 @@
 .class public final Lcom/hashsequence/coilresvg/FfiConverterString;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Lcom/hashsequence/coilresvg/FfiConverter;
@@ -112,7 +112,7 @@
 .method public bridge synthetic lift(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 75
+    .line 74
     check-cast p1, Lcom/hashsequence/coilresvg/RustBufferStruct$ByValue;
 
     invoke-virtual {p0, p1}, Lcom/hashsequence/coilresvg/FfiConverterString;->lift(Lcom/hashsequence/coilresvg/RustBufferStruct$ByValue;)Ljava/lang/String;
@@ -213,69 +213,65 @@
     return-object v0
 
     .line 45
-    :catchall_0
-    move-exception p0
-
-    .line 46
-    goto :goto_0
-
-    .line 47
     :cond_0
     :try_start_1
     new-instance v2, Ljava/lang/StringBuilder;
 
-    .line 48
-    .line 49
+    .line 46
+    .line 47
     invoke-direct {v2, p0}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
 
+    .line 48
+    .line 49
     .line 50
-    .line 51
-    .line 52
     invoke-virtual {v2, v0, v1}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
+    .line 51
+    .line 52
     .line 53
-    .line 54
-    .line 55
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
+    .line 54
+    .line 55
     .line 56
-    .line 57
-    .line 58
     move-result-object p0
 
-    .line 59
+    .line 57
     new-instance v0, Ljava/lang/IllegalArgumentException;
+
+    .line 58
+    .line 59
+    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
     .line 60
     .line 61
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
     .line 62
-    .line 63
-    .line 64
     move-result-object p0
 
-    .line 65
+    .line 63
     invoke-direct {v0, p0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
+    .line 64
+    .line 65
     .line 66
-    .line 67
-    .line 68
     throw v0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 69
-    :goto_0
+    .line 67
+    :catchall_0
+    move-exception p0
+
+    .line 68
     sget-object v0, Lcom/hashsequence/coilresvg/RustBufferHelper;->INSTANCE:Lcom/hashsequence/coilresvg/RustBufferHelper;
 
+    .line 69
     .line 70
-    .line 71
     invoke-virtual {v0, p1}, Lcom/hashsequence/coilresvg/RustBufferHelper;->free$coil_resvg_release(Lcom/hashsequence/coilresvg/RustBufferStruct$ByValue;)V
 
+    .line 71
     .line 72
     .line 73
-    .line 74
     throw p0
 .end method
 
@@ -318,7 +314,7 @@
     .line 2
     .line 3
     .line 4
-    invoke-static {p1}, Lhd6;->a0(Ljava/lang/String;)[B
+    invoke-static {p1}, Lzi6;->o0(Ljava/lang/String;)[B
 
     .line 5
     .line 6
@@ -490,7 +486,7 @@
     .line 5
     .line 6
     .line 7
-    invoke-static {p1}, Lhd6;->a0(Ljava/lang/String;)[B
+    invoke-static {p1}, Lzi6;->o0(Ljava/lang/String;)[B
 
     .line 8
     .line 9

@@ -1,275 +1,252 @@
-.class public final Lnl5;
+.class public abstract Lnl5;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public a:I
-
-.field public b:Lsm5;
-
-.field public c:Lp62;
-
-.field public d:Lt62;
-
-.field public e:Lt62;
-
-.field public f:Lml5;
-
-.field public g:Lll5;
-
-.field public h:Lym5;
+# static fields
+.field public static final a:Lol5;
 
 
-# virtual methods
-.method public final a(Lsu0;)V
-    .locals 1
+# direct methods
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    invoke-virtual {p1}, Lsu0;->getCursor()Lvc1;
+    new-instance v0, Lol5;
 
     .line 2
     .line 3
-    .line 4
-    move-result-object p1
+    sget-object v1, Ly67;->b:Lgv;
 
+    .line 4
     .line 5
-    iget-object p0, p0, Lnl5;->e:Lt62;
+    sget-object v2, Lo6;->t:Ld20;
 
     .line 6
     .line 7
-    iget-object v0, p1, Lvc1;->d:Lyn0;
+    invoke-direct {v0, v1, v2}, Lol5;-><init>(Liv;Ld20;)V
 
     .line 8
     .line 9
-    iget v0, v0, Lyn0;->b:I
-
     .line 10
+    sput-object v0, Lnl5;->a:Lol5;
+
     .line 11
-    add-int/lit8 v0, v0, 0x1
-
     .line 12
-    .line 13
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object v0
-
-    .line 17
-    iget-object p1, p1, Lvc1;->d:Lyn0;
-
-    .line 18
-    .line 19
-    iget p1, p1, Lyn0;->c:I
-
-    .line 20
-    .line 21
-    add-int/lit8 p1, p1, 0x1
-
-    .line 22
-    .line 23
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 24
-    .line 25
-    .line 26
-    move-result-object p1
-
-    .line 27
-    invoke-interface {p0, v0, p1}, Lt62;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 28
-    .line 29
-    .line 30
     return-void
 .end method
 
-.method public final b(Lsu0;)V
-    .locals 6
+.method public static final a(Liv;Ld20;Lt82;I)Lol5;
+    .locals 5
 
     .line 1
-    const-string v0, "RuntimeFileTextMate"
+    sget-object v0, Ly67;->b:Lgv;
 
     .line 2
     .line 3
-    invoke-virtual {p1}, Lsu0;->getSearcher()Lws1;
+    invoke-virtual {p0, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 4
     .line 5
     .line 6
-    move-result-object p1
+    move-result v0
 
     .line 7
-    const/4 v1, 0x1
+    const/4 v1, 0x0
 
     .line 8
-    const/4 v2, 0x0
+    if-eqz v0, :cond_0
 
     .line 9
-    :try_start_0
-    iget-object v3, p1, Lws1;->b:Ljava/lang/String;
-
     .line 10
+    sget-object v0, Lo6;->t:Ld20;
+
     .line 11
-    if-eqz v3, :cond_0
-
     .line 12
+    invoke-static {p1, v0}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
+
     .line 13
-    move v3, v1
-
     .line 14
-    goto :goto_0
-
     .line 15
-    :cond_0
-    move v3, v2
+    move-result v0
 
     .line 16
-    :goto_0
-    if-eqz v3, :cond_3
+    if-eqz v0, :cond_0
 
     .line 17
     .line 18
-    invoke-virtual {p1}, Lws1;->a()V
+    const p0, -0x40015a57
 
     .line 19
     .line 20
     .line 21
-    invoke-virtual {p1}, Lws1;->f()Z
+    invoke-virtual {p2, p0}, Lt82;->b0(I)V
 
     .line 22
     .line 23
     .line 24
-    move-result v3
+    invoke-virtual {p2, v1}, Lt82;->r(Z)V
 
     .line 25
-    if-nez v3, :cond_1
-
     .line 26
     .line 27
-    :goto_1
-    goto :goto_2
+    sget-object p0, Lnl5;->a:Lol5;
 
     .line 28
-    :cond_1
-    iget-object v3, p1, Lws1;->e:Lse3;
-
     .line 29
+    return-object p0
+
     .line 30
-    if-nez v3, :cond_2
+    :cond_0
+    const v0, -0x400093a0
 
     .line 31
     .line 32
-    goto :goto_1
-
     .line 33
-    :cond_2
-    iget v3, v3, Lse3;->b:I
-    :try_end_0
-    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
+    invoke-virtual {p2, v0}, Lt82;->b0(I)V
 
     .line 34
     .line 35
-    goto :goto_3
-
     .line 36
-    :catch_0
-    move-exception v3
+    and-int/lit8 v0, p3, 0xe
 
     .line 37
-    const-string v4, "Editor value read failed: searchMatchCount"
-
     .line 38
-    .line 39
-    invoke-static {v0, v4, v3}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    xor-int/lit8 v0, v0, 0x6
 
+    .line 39
     .line 40
+    const/4 v2, 0x1
+
     .line 41
+    const/4 v3, 0x4
+
     .line 42
-    :cond_3
-    :goto_2
-    move v3, v2
+    if-le v0, v3, :cond_1
 
     .line 43
-    :goto_3
-    const/4 v4, -0x1
-
     .line 44
-    :try_start_1
-    iget-object v5, p1, Lws1;->b:Ljava/lang/String;
+    invoke-virtual {p2, p0}, Lt82;->g(Ljava/lang/Object;)Z
 
     .line 45
     .line 46
-    if-eqz v5, :cond_4
-
     .line 47
+    move-result v0
+
     .line 48
-    goto :goto_4
+    if-nez v0, :cond_2
 
     .line 49
-    :cond_4
-    move v1, v2
-
     .line 50
-    :goto_4
-    if-eqz v1, :cond_5
+    :cond_1
+    and-int/lit8 v0, p3, 0x6
 
     .line 51
     .line 52
-    invoke-virtual {p1}, Lws1;->c()I
+    if-ne v0, v3, :cond_3
 
     .line 53
     .line 54
+    :cond_2
+    move v0, v2
+
     .line 55
-    move-result v4
-    :try_end_1
-    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_1
+    goto :goto_0
 
     .line 56
-    goto :goto_5
+    :cond_3
+    move v0, v1
 
     .line 57
-    :catch_1
-    move-exception p1
+    :goto_0
+    and-int/lit8 v3, p3, 0x70
 
     .line 58
-    const-string v1, "Editor value read failed: searchMatchIndex"
-
     .line 59
-    .line 60
-    invoke-static {v0, v1, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
+    xor-int/lit8 v3, v3, 0x30
 
+    .line 60
     .line 61
+    const/16 v4, 0x20
+
     .line 62
     .line 63
-    :cond_5
-    :goto_5
-    iget-object p0, p0, Lnl5;->d:Lt62;
+    if-le v3, v4, :cond_4
 
     .line 64
     .line 65
-    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    invoke-virtual {p2, p1}, Lt82;->g(Ljava/lang/Object;)Z
 
     .line 66
     .line 67
     .line 68
-    move-result-object p1
+    move-result v3
 
     .line 69
-    invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    if-nez v3, :cond_5
 
     .line 70
     .line 71
-    .line 72
-    move-result-object v0
+    :cond_4
+    and-int/lit8 p3, p3, 0x30
 
+    .line 72
     .line 73
-    invoke-interface {p0, p1, v0}, Lt62;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    if-eq p3, v4, :cond_5
 
     .line 74
     .line 75
+    move v2, v1
+
     .line 76
-    return-void
+    :cond_5
+    or-int/2addr v0, v2
+
+    .line 77
+    invoke-virtual {p2}, Lt82;->N()Ljava/lang/Object;
+
+    .line 78
+    .line 79
+    .line 80
+    move-result-object p3
+
+    .line 81
+    if-nez v0, :cond_6
+
+    .line 82
+    .line 83
+    sget-object v0, Lt11;->a:Lje;
+
+    .line 84
+    .line 85
+    if-ne p3, v0, :cond_7
+
+    .line 86
+    .line 87
+    :cond_6
+    new-instance p3, Lol5;
+
+    .line 88
+    .line 89
+    invoke-direct {p3, p0, p1}, Lol5;-><init>(Liv;Ld20;)V
+
+    .line 90
+    .line 91
+    .line 92
+    invoke-virtual {p2, p3}, Lt82;->k0(Ljava/lang/Object;)V
+
+    .line 93
+    .line 94
+    .line 95
+    :cond_7
+    check-cast p3, Lol5;
+
+    .line 96
+    .line 97
+    invoke-virtual {p2, v1}, Lt82;->r(Z)V
+
+    .line 98
+    .line 99
+    .line 100
+    return-object p3
 .end method

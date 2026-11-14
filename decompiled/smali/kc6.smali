@@ -1,16 +1,11 @@
 .class public final Lkc6;
-.super Ldv6;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# virtual methods
-.method public final a()I
-    .locals 0
+# instance fields
+.field public a:Z
 
-    .line 1
-    const/16 p0, 0x11
+.field public b:F
 
-    .line 2
-    .line 3
-    return p0
-.end method
+.field public c:Z

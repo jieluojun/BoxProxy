@@ -1,55 +1,57 @@
 .class public final Lzp;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lj62;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:Landroid/widget/TextView;
+.field public final synthetic r:Lfq;
 
-.field public final b:Lb97;
+.field public final synthetic s:Liq;
 
 
 # direct methods
-.method public constructor <init>(Landroid/widget/TextView;)V
-    .locals 1
+.method public constructor <init>(Liq;Liq;Lfq;)V
+    .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lzp;->s:Liq;
 
     .line 2
     .line 3
+    iput-object p3, p0, Lzp;->r:Lfq;
+
     .line 4
-    iput-object p1, p0, Lzp;->a:Landroid/widget/TextView;
-
     .line 5
-    .line 6
-    new-instance v0, Lb97;
+    invoke-direct {p0, p2}, Lj62;-><init>(Landroid/view/View;)V
 
+    .line 6
     .line 7
     .line 8
-    invoke-direct {v0, p1}, Lb97;-><init>(Landroid/widget/TextView;)V
-
-    .line 9
-    .line 10
-    .line 11
-    iput-object v0, p0, Lzp;->b:Lb97;
-
-    .line 12
-    .line 13
     return-void
 .end method
 
 
 # virtual methods
-.method public final a(Landroid/util/AttributeSet;I)V
-    .locals 3
+.method public final b()Lpa6;
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Lzp;->a:Landroid/widget/TextView;
+    iget-object p0, p0, Lzp;->r:Lfq;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
+    return-object p0
+.end method
+
+.method public final c()Z
+    .locals 2
+
+    .line 1
+    iget-object p0, p0, Lzp;->s:Liq;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Liq;->getInternalPopup()Lhq;
 
     .line 4
     .line 5
@@ -57,129 +59,46 @@
     move-result-object v0
 
     .line 7
-    sget-object v1, Ll75;->i:[I
+    invoke-interface {v0}, Lhq;->b()Z
 
     .line 8
     .line 9
-    const/4 v2, 0x0
-
     .line 10
-    invoke-virtual {v0, p1, v1, p2, v2}, Landroid/content/Context;->obtainStyledAttributes(Landroid/util/AttributeSet;[III)Landroid/content/res/TypedArray;
-
-    .line 11
-    .line 12
-    .line 13
-    move-result-object p1
-
-    .line 14
-    const/16 p2, 0xe
-
-    .line 15
-    .line 16
-    :try_start_0
-    invoke-virtual {p1, p2}, Landroid/content/res/TypedArray;->hasValue(I)Z
-
-    .line 17
-    .line 18
-    .line 19
     move-result v0
 
+    .line 11
+    if-nez v0, :cond_0
+
+    .line 12
+    .line 13
+    iget-object v0, p0, Liq;->n:Lhq;
+
+    .line 14
+    .line 15
+    invoke-virtual {p0}, Landroid/view/View;->getTextDirection()I
+
+    .line 16
+    .line 17
+    .line 18
+    move-result v1
+
+    .line 19
+    invoke-virtual {p0}, Landroid/view/View;->getTextAlignment()I
+
     .line 20
-    const/4 v1, 0x1
-
     .line 21
-    if-eqz v0, :cond_0
-
     .line 22
+    move-result p0
+
     .line 23
-    invoke-virtual {p1, p2, v1}, Landroid/content/res/TypedArray;->getBoolean(IZ)Z
+    invoke-interface {v0, v1, p0}, Lhq;->n(II)V
 
     .line 24
     .line 25
     .line 26
-    move-result v1
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    :cond_0
+    const/4 p0, 0x1
 
     .line 27
-    goto :goto_0
-
-    .line 28
-    :catchall_0
-    move-exception p0
-
-    .line 29
-    goto :goto_1
-
-    .line 30
-    :cond_0
-    :goto_0
-    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
-
-    .line 31
-    .line 32
-    .line 33
-    invoke-virtual {p0, v1}, Lzp;->c(Z)V
-
-    .line 34
-    .line 35
-    .line 36
-    return-void
-
-    .line 37
-    :goto_1
-    invoke-virtual {p1}, Landroid/content/res/TypedArray;->recycle()V
-
-    .line 38
-    .line 39
-    .line 40
-    throw p0
-.end method
-
-.method public final b(Z)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lzp;->b:Lb97;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lb97;->k:Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    check-cast p0, Ldn;
-
-    .line 6
-    .line 7
-    invoke-virtual {p0, p1}, Ldn;->Z(Z)V
-
-    .line 8
-    .line 9
-    .line 10
-    return-void
-.end method
-
-.method public final c(Z)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lzp;->b:Lb97;
-
-    .line 2
-    .line 3
-    iget-object p0, p0, Lb97;->k:Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    check-cast p0, Ldn;
-
-    .line 6
-    .line 7
-    invoke-virtual {p0, p1}, Ldn;->a0(Z)V
-
-    .line 8
-    .line 9
-    .line 10
-    return-void
+    return p0
 .end method

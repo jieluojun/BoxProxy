@@ -1,9 +1,9 @@
 .class public final Lcom/hashsequence/coilresvg/ResvgDecoder;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lxe1;
+.implements Lqf1;
 
 
 # annotations
@@ -19,13 +19,13 @@
 
 
 # instance fields
-.field private final options:Lre4;
+.field private final options:Lfl4;
 
-.field private final source:Lsn2;
+.field private final source:Lds2;
 
 
 # direct methods
-.method public constructor <init>(Lsn2;Lre4;)V
+.method public constructor <init>(Lds2;Lfl4;)V
     .locals 0
 
     .line 1
@@ -44,11 +44,11 @@
     .line 8
     .line 9
     .line 10
-    iput-object p1, p0, Lcom/hashsequence/coilresvg/ResvgDecoder;->source:Lsn2;
+    iput-object p1, p0, Lcom/hashsequence/coilresvg/ResvgDecoder;->source:Lds2;
 
     .line 11
     .line 12
-    iput-object p2, p0, Lcom/hashsequence/coilresvg/ResvgDecoder;->options:Lre4;
+    iput-object p2, p0, Lcom/hashsequence/coilresvg/ResvgDecoder;->options:Lfl4;
 
     .line 13
     .line 14
@@ -57,23 +57,23 @@
 
 
 # virtual methods
-.method public decode(Ly81;)Ljava/lang/Object;
+.method public decode(Lp91;)Ljava/lang/Object;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
-            "Ly81;",
+            "Lp91;",
             ")",
             "Ljava/lang/Object;"
         }
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lcom/hashsequence/coilresvg/ResvgDecoder;->source:Lsn2;
+    iget-object v0, p0, Lcom/hashsequence/coilresvg/ResvgDecoder;->source:Lds2;
 
     .line 2
     .line 3
-    invoke-interface {v0}, Lsn2;->B()Lve0;
+    invoke-interface {v0}, Lds2;->C()Lse0;
 
     .line 4
     .line 5
@@ -85,7 +85,7 @@
 
     .line 8
     :try_start_0
-    invoke-interface {v0}, Lve0;->j()[B
+    invoke-interface {v0}, Lse0;->i()[B
 
     .line 9
     .line 10
@@ -142,7 +142,7 @@
     move-exception v0
 
     .line 27
-    invoke-static {v2, v0}, Lnu;->q(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
+    invoke-static {v2, v0}, Lzt;->u(Ljava/lang/Throwable;Ljava/lang/Throwable;)V
 
     .line 28
     .line 29
@@ -152,11 +152,11 @@
 
     .line 31
     .line 32
-    iget-object p0, p0, Lcom/hashsequence/coilresvg/ResvgDecoder;->options:Lre4;
+    iget-object p0, p0, Lcom/hashsequence/coilresvg/ResvgDecoder;->options:Lfl4;
 
     .line 33
     .line 34
-    invoke-static {v1, p0, p1}, Lcom/hashsequence/coilresvg/ResvgDecoder_androidKt;->renderSvgImage([BLre4;Ly81;)Ljava/lang/Object;
+    invoke-static {v1, p0, p1}, Lcom/hashsequence/coilresvg/ResvgDecoder_androidKt;->renderSvgImage([BLfl4;Lp91;)Ljava/lang/Object;
 
     .line 35
     .line 36

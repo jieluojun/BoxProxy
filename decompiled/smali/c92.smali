@@ -1,81 +1,44 @@
-.class public interface abstract Lc92;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lyh1;
+.class public final Lc92;
+.super Lvn6;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# virtual methods
-.method public abstract B(F)V
-.end method
+# instance fields
+.field public final f:Ljava/lang/String;
 
-.method public abstract I()V
-.end method
+.field public final g:Ljava/lang/String;
 
-.method public abstract J(Ln06;)V
-.end method
 
-.method public abstract J0(I)V
-.end method
-
-.method public abstract R(F)V
-.end method
-
-.method public abstract S(F)V
-.end method
-
-.method public abstract T0(F)V
-.end method
-
-.method public abstract U(J)V
-.end method
-
-.method public abstract X0()F
-.end method
-
-.method public abstract Z()V
-.end method
-
-.method public abstract a0(F)V
-.end method
-
-.method public abstract b()J
-.end method
-
-.method public abstract b0(I)V
-.end method
-
-.method public abstract b1(F)V
-.end method
-
-.method public i1(Lm03;)V
+# direct methods
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
     .locals 0
 
     .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    iput-object p1, p0, Lc92;->f:Ljava/lang/String;
+
+    .line 5
+    .line 6
+    iput-object p2, p0, Lc92;->g:Ljava/lang/String;
+
+    .line 7
+    .line 8
     return-void
 .end method
 
-.method public abstract j(F)V
-.end method
 
-.method public abstract m0(Z)V
-.end method
+# virtual methods
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-.method public abstract t(F)V
-.end method
+    .line 1
+    iget-object p0, p0, Lc92;->g:Ljava/lang/String;
 
-.method public abstract u()F
-.end method
-
-.method public abstract u0(J)V
-.end method
-
-.method public abstract w0(F)V
-.end method
-
-.method public abstract x0(J)V
-.end method
-
-.method public abstract z0(F)V
+    .line 2
+    .line 3
+    return-object p0
 .end method

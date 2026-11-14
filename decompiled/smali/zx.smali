@@ -1,157 +1,87 @@
 .class public final Lzx;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public a:S
-
-.field public b:S
-
-.field public c:F
-
-.field public d:F
-
-.field public e:J
-
-.field public f:J
-
-.field public g:J
-
-.field public h:F
-
-.field public i:I
+# static fields
+.field public static final a:Lzx;
 
 
-# virtual methods
-.method public final a(J)F
-    .locals 8
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    iget-wide v0, p0, Lzx;->e:J
+    new-instance v0, Lzx;
 
     .line 2
     .line 3
-    cmp-long v2, p1, v0
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
     .line 4
     .line 5
-    const/4 v3, 0x0
-
     .line 6
-    if-gez v2, :cond_0
+    sput-object v0, Lzx;->a:Lzx;
 
     .line 7
     .line 8
-    return v3
+    return-void
+.end method
 
-    .line 9
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    if-ne p0, p1, :cond_0
+
+    .line 3
+    .line 4
+    return v0
+
+    .line 5
     :cond_0
-    iget-wide v4, p0, Lzx;->g:J
+    instance-of p0, p1, Lzx;
+
+    .line 6
+    .line 7
+    if-nez p0, :cond_1
+
+    .line 8
+    .line 9
+    const/4 p0, 0x0
 
     .line 10
+    return p0
+
     .line 11
-    const-wide/16 v6, 0x0
-
-    .line 12
-    .line 13
-    cmp-long v2, v4, v6
-
-    .line 14
-    .line 15
-    const/high16 v6, 0x3f800000    # 1.0f
-
-    .line 16
-    .line 17
-    if-ltz v2, :cond_2
-
-    .line 18
-    .line 19
-    cmp-long v2, p1, v4
-
-    .line 20
-    .line 21
-    if-gez v2, :cond_1
-
-    .line 22
-    .line 23
-    goto :goto_0
-
-    .line 24
     :cond_1
-    sub-long/2addr p1, v4
+    return v0
+.end method
 
-    .line 25
-    iget v0, p0, Lzx;->h:F
+.method public final hashCode()I
+    .locals 0
 
-    .line 26
-    .line 27
-    sub-float v1, v6, v0
+    .line 1
+    const p0, 0x72e465b4
 
-    .line 28
-    .line 29
-    long-to-float p1, p1
-
-    .line 30
-    iget p0, p0, Lzx;->i:I
-
-    .line 31
-    .line 32
-    int-to-float p0, p0
-
-    .line 33
-    div-float/2addr p1, p0
-
-    .line 34
-    invoke-static {p1, v3, v6}, Lib3;->b(FFF)F
-
-    .line 35
-    .line 36
-    .line 37
-    move-result p0
-
-    .line 38
-    mul-float/2addr p0, v0
-
-    .line 39
-    add-float/2addr p0, v1
-
-    .line 40
+    .line 2
+    .line 3
+    .line 4
     return p0
+.end method
 
-    .line 41
-    :cond_2
-    :goto_0
-    sub-long/2addr p1, v0
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    .line 42
-    long-to-float p1, p1
+    .line 1
+    const-string p0, "Top"
 
-    .line 43
-    iget-short p0, p0, Lzx;->a:S
-
-    .line 44
-    .line 45
-    int-to-float p0, p0
-
-    .line 46
-    div-float/2addr p1, p0
-
-    .line 47
-    invoke-static {p1, v3, v6}, Lib3;->b(FFF)F
-
-    .line 48
-    .line 49
-    .line 50
-    move-result p0
-
-    .line 51
-    const/high16 p1, 0x3f000000    # 0.5f
-
-    .line 52
-    .line 53
-    mul-float/2addr p0, p1
-
-    .line 54
-    return p0
+    .line 2
+    .line 3
+    return-object p0
 .end method

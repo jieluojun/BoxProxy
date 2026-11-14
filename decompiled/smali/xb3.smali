@@ -1,42 +1,52 @@
-.class public abstract Lxb3;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lxb3;
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final a:Lu21;
+# instance fields
+.field public i:Lrb3;
+
+.field public j:Lvf5;
+
+.field public synthetic k:Ljava/lang/Object;
+
+.field public l:I
 
 
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    new-instance v0, Lvr2;
+    iput-object p1, p0, Lxb3;->k:Ljava/lang/Object;
 
     .line 2
     .line 3
-    const/16 v1, 0x12
+    iget p1, p0, Lxb3;->l:I
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Lvr2;-><init>(B)V
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    new-instance v1, Lu21;
+    iput p1, p0, Lxb3;->l:I
 
     .line 9
     .line 10
-    invoke-direct {v1, v0}, Lu21;-><init>(Lp62;)V
+    const/4 p1, 0x0
 
     .line 11
+    invoke-static {p1, p0}, Lzb3;->H(Lrb3;Lq91;)Ljava/lang/Object;
+
     .line 12
     .line 13
-    sput-object v1, Lxb3;->a:Lu21;
-
     .line 14
+    move-result-object p0
+
     .line 15
-    return-void
+    return-object p0
 .end method

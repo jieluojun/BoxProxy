@@ -1,111 +1,342 @@
-.class public final Lz06;
-.super Ll4;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Lz06;
+.super Lu21;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lff4;
+
+
+# static fields
+.field public static final synthetic m:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+
+.field public static final synthetic n:J
 
 
 # instance fields
-.field public a:J
+.field private volatile synthetic cleanedAndPointers$volatile:I
 
-.field public b:Lti0;
+.field public final l:J
 
 
-# virtual methods
-.method public final a(Lk4;)Z
-    .locals 4
+# direct methods
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    check-cast p1, Ly06;
+    const-class v0, Lz06;
 
     .line 2
     .line 3
-    iget-wide v0, p0, Lz06;->a:J
+    const-string v1, "cleanedAndPointers$volatile"
 
     .line 4
     .line 5
-    const-wide/16 v2, 0x0
+    invoke-static {v0, v1}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
     .line 6
     .line 7
-    cmp-long v0, v0, v2
-
     .line 8
+    move-result-object v2
+
     .line 9
-    if-ltz v0, :cond_0
+    sput-object v2, Lz06;->m:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
 
     .line 10
     .line 11
-    const/4 p0, 0x0
+    sget-object v2, Lhw;->a:Lsun/misc/Unsafe;
 
     .line 12
-    return p0
-
     .line 13
-    :cond_0
-    iget-wide v0, p1, Ly06;->r:J
+    invoke-virtual {v0, v1}, Ljava/lang/Class;->getDeclaredField(Ljava/lang/String;)Ljava/lang/reflect/Field;
 
     .line 14
     .line 15
-    iget-wide v2, p1, Ly06;->s:J
-
     .line 16
+    move-result-object v0
+
     .line 17
-    cmp-long v2, v0, v2
+    invoke-virtual {v2, v0}, Lsun/misc/Unsafe;->objectFieldOffset(Ljava/lang/reflect/Field;)J
 
     .line 18
     .line 19
-    if-gez v2, :cond_1
-
     .line 20
+    move-result-wide v0
+
     .line 21
-    iput-wide v0, p1, Ly06;->s:J
+    sput-wide v0, Lz06;->n:J
 
     .line 22
     .line 23
-    :cond_1
-    iput-wide v0, p0, Lz06;->a:J
-
-    .line 24
-    .line 25
-    const/4 p0, 0x1
-
-    .line 26
-    return p0
+    return-void
 .end method
 
-.method public final b(Lk4;)[Ly81;
-    .locals 4
+.method public constructor <init>(JLz06;I)V
+    .locals 0
 
     .line 1
-    check-cast p1, Ly06;
+    invoke-direct {p0, p3}, Lu21;-><init>(Lz06;)V
 
     .line 2
     .line 3
-    iget-wide v0, p0, Lz06;->a:J
+    .line 4
+    iput-wide p1, p0, Lz06;->l:J
+
+    .line 5
+    .line 6
+    shl-int/lit8 p4, p4, 0x10
+
+    .line 7
+    .line 8
+    iput p4, p0, Lz06;->cleanedAndPointers$volatile:I
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+
+# virtual methods
+.method public final d()Z
+    .locals 3
+
+    .line 1
+    sget-object v0, Lhw;->a:Lsun/misc/Unsafe;
+
+    .line 2
+    .line 3
+    sget-wide v1, Lz06;->n:J
 
     .line 4
     .line 5
-    const-wide/16 v2, -0x1
+    invoke-virtual {v0, p0, v1, v2}, Lsun/misc/Unsafe;->getIntVolatile(Ljava/lang/Object;J)I
 
     .line 6
     .line 7
-    iput-wide v2, p0, Lz06;->a:J
+    .line 8
+    move-result v0
+
+    .line 9
+    invoke-virtual {p0}, Lz06;->g()I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v1
+
+    .line 13
+    if-ne v0, v1, :cond_0
+
+    .line 14
+    .line 15
+    invoke-virtual {p0}, Lu21;->c()Lu21;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    if-eqz p0, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x1
+
+    .line 22
+    return p0
+
+    .line 23
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 24
+    return p0
+.end method
+
+.method public final f()Z
+    .locals 2
+
+    .line 1
+    sget-object v0, Lz06;->m:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+
+    .line 2
+    .line 3
+    const/high16 v1, -0x10000
+
+    .line 4
+    .line 5
+    invoke-virtual {v0, p0, v1}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->addAndGet(Ljava/lang/Object;I)I
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v0
+
+    .line 9
+    invoke-virtual {p0}, Lz06;->g()I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v1
+
+    .line 13
+    if-ne v0, v1, :cond_0
+
+    .line 14
+    .line 15
+    invoke-virtual {p0}, Lu21;->c()Lu21;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object p0
+
+    .line 19
+    if-eqz p0, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x1
+
+    .line 22
+    return p0
+
+    .line 23
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 24
+    return p0
+.end method
+
+.method public abstract g()I
+.end method
+
+.method public abstract h(ILfc1;)V
+.end method
+
+.method public final i()V
+    .locals 2
+
+    .line 1
+    sget-object v0, Lz06;->m:Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0, p0}, Ljava/util/concurrent/atomic/AtomicIntegerFieldUpdater;->incrementAndGet(Ljava/lang/Object;)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    invoke-virtual {p0}, Lz06;->g()I
 
     .line 8
     .line 9
-    const/4 v2, 0x0
-
     .line 10
-    iput-object v2, p0, Lz06;->b:Lti0;
+    move-result v1
 
     .line 11
-    .line 12
-    invoke-virtual {p1, v0, v1}, Ly06;->w(J)[Ly81;
+    if-ne v0, v1, :cond_0
 
+    .line 12
     .line 13
+    invoke-virtual {p0}, Lu21;->e()V
+
     .line 14
     .line 15
-    move-result-object p0
+    .line 16
+    :cond_0
+    return-void
+.end method
+
+.method public final j()Z
+    .locals 6
+
+    .line 1
+    :goto_0
+    sget-object v0, Lhw;->a:Lsun/misc/Unsafe;
+
+    .line 2
+    .line 3
+    sget-wide v2, Lz06;->n:J
+
+    .line 4
+    .line 5
+    invoke-virtual {v0, p0, v2, v3}, Lsun/misc/Unsafe;->getIntVolatile(Ljava/lang/Object;J)I
+
+    .line 6
+    .line 7
+    .line 8
+    move-result v4
+
+    .line 9
+    invoke-virtual {p0}, Lz06;->g()I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result v1
+
+    .line 13
+    if-ne v4, v1, :cond_0
+
+    .line 14
+    .line 15
+    invoke-virtual {p0}, Lu21;->c()Lu21;
 
     .line 16
-    return-object p0
+    .line 17
+    .line 18
+    move-result-object v1
+
+    .line 19
+    if-eqz v1, :cond_0
+
+    .line 20
+    .line 21
+    const/4 p0, 0x0
+
+    .line 22
+    return p0
+
+    .line 23
+    :cond_0
+    const/high16 v1, 0x10000
+
+    .line 24
+    .line 25
+    add-int v5, v4, v1
+
+    .line 26
+    .line 27
+    move-object v1, p0
+
+    .line 28
+    invoke-virtual/range {v0 .. v5}, Lsun/misc/Unsafe;->compareAndSwapInt(Ljava/lang/Object;JII)Z
+
+    .line 29
+    .line 30
+    .line 31
+    move-result p0
+
+    .line 32
+    if-eqz p0, :cond_1
+
+    .line 33
+    .line 34
+    const/4 p0, 0x1
+
+    .line 35
+    return p0
+
+    .line 36
+    :cond_1
+    move-object p0, v1
+
+    .line 37
+    goto :goto_0
 .end method

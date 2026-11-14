@@ -1,107 +1,147 @@
-.class public final synthetic Lhf1;
+.class public final Lhf1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:Ljf1;
-
-.field public final synthetic k:Landroid/content/Context;
-
-
-# direct methods
-.method public synthetic constructor <init>(Ljf1;Landroid/content/Context;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p1, p0, Lhf1;->j:Ljf1;
-
-    .line 5
-    .line 6
-    iput-object p2, p0, Lhf1;->k:Landroid/content/Context;
-
-    .line 7
-    .line 8
-    return-void
-.end method
+.field public a:Ljava/lang/Integer;
 
 
 # virtual methods
-.method public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V
-    .locals 0
+.method public final a(Landroid/view/KeyEvent;)Ljava/lang/Integer;
+    .locals 2
 
     .line 1
-    iget-object p1, p0, Lhf1;->j:Ljf1;
+    invoke-virtual {p1}, Landroid/view/KeyEvent;->getUnicodeChar()I
 
     .line 2
     .line 3
-    :try_start_0
-    iget-object p1, p1, Ljf1;->n:Ljava/lang/Object;
-
     .line 4
+    move-result p1
+
     .line 5
-    check-cast p1, Lpr1;
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
-    invoke-virtual {p1, p3}, Lpr1;->i(I)Z
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    and-int/2addr v0, p1
 
     .line 8
-    .line 9
-    .line 10
-    return-void
+    const/4 v1, 0x0
 
+    .line 9
+    if-eqz v0, :cond_0
+
+    .line 10
     .line 11
-    :catch_0
-    move-exception p1
+    const v0, 0x7fffffff
 
     .line 12
-    sget-object p2, Ljava/lang/System;->err:Ljava/io/PrintStream;
-
     .line 13
     .line 14
-    invoke-virtual {p1, p2}, Ljava/lang/Throwable;->printStackTrace(Ljava/io/PrintStream;)V
+    and-int/2addr p1, v0
 
     .line 15
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
     .line 16
     .line 17
-    invoke-virtual {p1}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
     .line 18
-    .line 19
-    .line 20
     move-result-object p1
 
+    .line 19
+    iput-object p1, p0, Lhf1;->a:Ljava/lang/Integer;
+
+    .line 20
     .line 21
-    const/4 p2, 0x0
+    return-object v1
 
     .line 22
-    iget-object p0, p0, Lhf1;->k:Landroid/content/Context;
+    :cond_0
+    iget-object v0, p0, Lhf1;->a:Ljava/lang/Integer;
 
     .line 23
     .line 24
-    invoke-static {p0, p1, p2}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    if-eqz v0, :cond_3
 
     .line 25
     .line 26
-    .line 27
-    move-result-object p0
+    iput-object v1, p0, Lhf1;->a:Ljava/lang/Integer;
 
+    .line 27
     .line 28
-    invoke-virtual {p0}, Landroid/widget/Toast;->show()V
+    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     .line 29
     .line 30
     .line 31
-    return-void
+    move-result p0
+
+    .line 32
+    invoke-static {p0, p1}, Landroid/view/KeyCharacterMap;->getDeadChar(II)I
+
+    .line 33
+    .line 34
+    .line 35
+    move-result p0
+
+    .line 36
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    .line 37
+    .line 38
+    .line 39
+    move-result-object p0
+
+    .line 40
+    invoke-virtual {p0}, Ljava/lang/Number;->intValue()I
+
+    .line 41
+    .line 42
+    .line 43
+    move-result v0
+
+    .line 44
+    if-eqz v0, :cond_1
+
+    .line 45
+    .line 46
+    move-object v1, p0
+
+    .line 47
+    :cond_1
+    if-eqz v1, :cond_2
+
+    .line 48
+    .line 49
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    .line 50
+    .line 51
+    .line 52
+    move-result p1
+
+    .line 53
+    :cond_2
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    .line 54
+    .line 55
+    .line 56
+    move-result-object p0
+
+    .line 57
+    return-object p0
+
+    .line 58
+    :cond_3
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    .line 59
+    .line 60
+    .line 61
+    move-result-object p0
+
+    .line 62
+    return-object p0
 .end method

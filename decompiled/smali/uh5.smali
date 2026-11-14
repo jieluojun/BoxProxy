@@ -1,72 +1,56 @@
 .class public final Luh5;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Thread;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
-
-.field public final synthetic k:Lvh5;
-
-.field public l:I
+.field public final i:B
 
 
 # direct methods
-.method public constructor <init>(Lvh5;Lz81;)V
-    .locals 0
+.method public constructor <init>(Ljava/lang/Runnable;)V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Luh5;->k:Lvh5;
+    const-string v0, "fonts-androidx"
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    invoke-direct {p0, p1, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
 
     .line 4
     .line 5
     .line 6
+    const/16 p1, 0xa
+
+    .line 7
+    .line 8
+    iput-byte p1, p0, Luh5;->i:B
+
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final run()V
     .locals 1
 
     .line 1
-    iput-object p1, p0, Luh5;->j:Ljava/lang/Object;
+    iget-byte v0, p0, Luh5;->i:B
 
     .line 2
     .line 3
-    iget p1, p0, Luh5;->l:I
+    invoke-static {v0}, Landroid/os/Process;->setThreadPriority(I)V
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
-
     .line 6
+    invoke-super {p0}, Ljava/lang/Thread;->run()V
+
     .line 7
-    or-int/2addr p1, v0
-
     .line 8
-    iput p1, p0, Luh5;->l:I
-
     .line 9
-    .line 10
-    iget-object p1, p0, Luh5;->k:Lvh5;
-
-    .line 11
-    .line 12
-    const/4 v0, 0x0
-
-    .line 13
-    invoke-virtual {p1, v0, v0, p0}, Lvh5;->i(Ljava/util/List;Lt62;Lz81;)Ljava/lang/Object;
-
-    .line 14
-    .line 15
-    .line 16
-    move-result-object p0
-
-    .line 17
-    return-object p0
+    return-void
 .end method

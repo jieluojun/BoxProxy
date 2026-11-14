@@ -1,135 +1,113 @@
 .class public final Ln87;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
+.super Lhc1;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public j:Z
-
-.field public final synthetic k:Lp95;
-
-.field public final synthetic l:Landroid/view/ViewTreeObserver;
-
-.field public final synthetic m:Lti0;
+# static fields
+.field public static final k:Ln87;
 
 
 # direct methods
-.method public constructor <init>(Lp95;Landroid/view/ViewTreeObserver;Lti0;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    new-instance v0, Ln87;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Ln87;->k:Lp95;
+    invoke-direct {v0}, Lhc1;-><init>()V
 
+    .line 4
     .line 5
     .line 6
-    iput-object p2, p0, Ln87;->l:Landroid/view/ViewTreeObserver;
+    sput-object v0, Ln87;->k:Ln87;
 
     .line 7
     .line 8
-    iput-object p3, p0, Ln87;->m:Lti0;
-
-    .line 9
-    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final onPreDraw()Z
-    .locals 5
+.method public final H(Lfc1;Ljava/lang/Runnable;)V
+    .locals 0
 
     .line 1
-    iget-object v0, p0, Ln87;->k:Lp95;
+    sget-object p0, Lck7;->k:Lny6;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Lp95;->c()Lv56;
+    invoke-interface {p1, p0}, Lfc1;->p(Lec1;)Ldc1;
 
     .line 4
     .line 5
     .line 6
-    move-result-object v1
+    move-result-object p0
 
     .line 7
-    const/4 v2, 0x1
+    check-cast p0, Lck7;
 
     .line 8
-    if-eqz v1, :cond_1
-
     .line 9
-    .line 10
-    iget-object v3, p0, Ln87;->l:Landroid/view/ViewTreeObserver;
+    if-eqz p0, :cond_0
 
+    .line 10
     .line 11
+    const/4 p1, 0x1
+
     .line 12
-    invoke-virtual {v3}, Landroid/view/ViewTreeObserver;->isAlive()Z
+    iput-boolean p1, p0, Lck7;->j:Z
 
     .line 13
     .line 14
+    return-void
+
     .line 15
-    move-result v4
+    :cond_0
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
     .line 16
-    if-eqz v4, :cond_0
-
     .line 17
-    .line 18
-    invoke-virtual {v3, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
+    const-string p1, "Dispatchers.Unconfined.dispatch function can only be used by the yield function. If you wrap Unconfined dispatcher in your code, make sure you properly delegate isDispatchNeeded and dispatch calls."
 
+    .line 18
     .line 19
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
     .line 20
     .line 21
-    goto :goto_0
-
     .line 22
-    :cond_0
-    iget-object v0, v0, Lp95;->j:Landroid/view/View;
+    throw p0
+.end method
 
-    .line 23
-    .line 24
-    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+.method public final K(I)Lhc1;
+    .locals 0
 
-    .line 25
-    .line 26
-    .line 27
-    move-result-object v0
+    .line 1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
 
-    .line 28
-    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
+    .line 2
+    .line 3
+    const-string p1, "limitedParallelism is not supported for Dispatchers.Unconfined"
 
-    .line 29
-    .line 30
-    .line 31
-    :goto_0
-    iget-boolean v0, p0, Ln87;->j:Z
+    .line 4
+    .line 5
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
 
-    .line 32
-    .line 33
-    if-nez v0, :cond_1
+    .line 6
+    .line 7
+    .line 8
+    throw p0
+.end method
 
-    .line 34
-    .line 35
-    iput-boolean v2, p0, Ln87;->j:Z
+.method public final toString()Ljava/lang/String;
+    .locals 0
 
-    .line 36
-    .line 37
-    iget-object p0, p0, Ln87;->m:Lti0;
+    .line 1
+    const-string p0, "Dispatchers.Unconfined"
 
-    .line 38
-    .line 39
-    invoke-virtual {p0, v1}, Lti0;->resumeWith(Ljava/lang/Object;)V
-
-    .line 40
-    .line 41
-    .line 42
-    :cond_1
-    return v2
+    .line 2
+    .line 3
+    return-object p0
 .end method

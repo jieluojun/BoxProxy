@@ -1,100 +1,148 @@
-.class public final Lk27;
-.super Lcu4;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lk27;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt72;
 
 
 # instance fields
-.field public a:[S
+.field public final synthetic i:Lo27;
 
-.field public b:I
+.field public final synthetic j:Lsw3;
+
+.field public final synthetic k:F
+
+.field public final synthetic l:Lo66;
+
+.field public final synthetic m:J
+
+.field public final synthetic n:J
+
+.field public final synthetic o:Lnz0;
+
+.field public final synthetic p:I
 
 
-# virtual methods
-.method public final a()Ljava/lang/Object;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lk27;->a:[S
-
-    .line 2
-    .line 3
-    iget p0, p0, Lk27;->b:I
-
-    .line 4
-    .line 5
-    invoke-static {v0, p0}, Ljava/util/Arrays;->copyOf([SI)[S
-
-    .line 6
-    .line 7
-    .line 8
-    move-result-object p0
-
-    .line 9
-    new-instance v0, Lj27;
-
-    .line 10
-    .line 11
-    invoke-direct {v0, p0}, Lj27;-><init>([S)V
-
-    .line 12
-    .line 13
-    .line 14
-    return-object v0
-.end method
-
-.method public final b(I)V
-    .locals 2
-
-    .line 1
-    iget-object v0, p0, Lk27;->a:[S
-
-    .line 2
-    .line 3
-    array-length v1, v0
-
-    .line 4
-    if-ge v1, p1, :cond_1
-
-    .line 5
-    .line 6
-    array-length v1, v0
-
-    .line 7
-    mul-int/lit8 v1, v1, 0x2
-
-    .line 8
-    .line 9
-    if-ge p1, v1, :cond_0
-
-    .line 10
-    .line 11
-    move p1, v1
-
-    .line 12
-    :cond_0
-    invoke-static {v0, p1}, Ljava/util/Arrays;->copyOf([SI)[S
-
-    .line 13
-    .line 14
-    .line 15
-    move-result-object p1
-
-    .line 16
-    iput-object p1, p0, Lk27;->a:[S
-
-    .line 17
-    .line 18
-    :cond_1
-    return-void
-.end method
-
-.method public final d()I
+# direct methods
+.method public synthetic constructor <init>(Lo27;Lsw3;FLo66;JJLnz0;I)V
     .locals 0
 
     .line 1
-    iget p0, p0, Lk27;->b:I
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    return p0
+    .line 4
+    iput-object p1, p0, Lk27;->i:Lo27;
+
+    .line 5
+    .line 6
+    iput-object p2, p0, Lk27;->j:Lsw3;
+
+    .line 7
+    .line 8
+    iput p3, p0, Lk27;->k:F
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Lk27;->l:Lo66;
+
+    .line 11
+    .line 12
+    iput-wide p5, p0, Lk27;->m:J
+
+    .line 13
+    .line 14
+    iput-wide p7, p0, Lk27;->n:J
+
+    .line 15
+    .line 16
+    iput-object p9, p0, Lk27;->o:Lnz0;
+
+    .line 17
+    .line 18
+    iput p10, p0, Lk27;->p:I
+
+    .line 19
+    .line 20
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 11
+
+    .line 1
+    move-object v9, p1
+
+    .line 2
+    check-cast v9, Lt82;
+
+    .line 3
+    .line 4
+    check-cast p2, Ljava/lang/Integer;
+
+    .line 5
+    .line 6
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 7
+    .line 8
+    .line 9
+    iget p1, p0, Lk27;->p:I
+
+    .line 10
+    .line 11
+    or-int/lit8 p1, p1, 0x1
+
+    .line 12
+    .line 13
+    invoke-static {p1}, Lp06;->W(I)I
+
+    .line 14
+    .line 15
+    .line 16
+    move-result v10
+
+    .line 17
+    iget-object v0, p0, Lk27;->i:Lo27;
+
+    .line 18
+    .line 19
+    iget-object v1, p0, Lk27;->j:Lsw3;
+
+    .line 20
+    .line 21
+    iget v2, p0, Lk27;->k:F
+
+    .line 22
+    .line 23
+    iget-object v3, p0, Lk27;->l:Lo66;
+
+    .line 24
+    .line 25
+    iget-wide v4, p0, Lk27;->m:J
+
+    .line 26
+    .line 27
+    iget-wide v6, p0, Lk27;->n:J
+
+    .line 28
+    .line 29
+    iget-object v8, p0, Lk27;->o:Lnz0;
+
+    .line 30
+    .line 31
+    invoke-static/range {v0 .. v10}, Lm27;->a(Lo27;Lsw3;FLo66;JJLnz0;Lt82;I)V
+
+    .line 32
+    .line 33
+    .line 34
+    sget-object p0, Ll97;->a:Ll97;
+
+    .line 35
+    .line 36
+    return-object p0
 .end method

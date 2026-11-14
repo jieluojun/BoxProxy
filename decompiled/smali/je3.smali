@@ -1,69 +1,482 @@
-.class public final Lje3;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Lje3;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Ljava/util/Iterator;
 
 
 # instance fields
-.field public synthetic j:Ljava/lang/Object;
+.field public final synthetic i:B
 
-.field public final synthetic k:Lle3;
+.field public j:I
 
-.field public l:I
+.field public k:Ljava/util/Map$Entry;
+
+.field public l:Ljava/util/Map$Entry;
+
+.field public final synthetic m:Ljava/util/AbstractMap;
 
 
 # direct methods
-.method public constructor <init>(Lle3;Lz81;)V
-    .locals 0
+.method public constructor <init>(Lme3;)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    iput-byte v0, p0, Lje3;->i:B
+
+    .line 23
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lje3;->m:Ljava/util/AbstractMap;
+
+    .line 24
+    iget-object v0, p1, Lme3;->m:Lke3;
+
+    iget-object v0, v0, Lke3;->l:Lke3;
+
+    iput-object v0, p0, Lje3;->k:Ljava/util/Map$Entry;
+
+    const/4 v0, 0x0
+
+    .line 25
+    iput-object v0, p0, Lje3;->l:Ljava/util/Map$Entry;
+
+    .line 26
+    iget p1, p1, Lme3;->l:I
+
+    iput p1, p0, Lje3;->j:I
+
+    return-void
+.end method
+
+.method public constructor <init>(Lne3;)V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lje3;->k:Lle3;
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    iput-byte v0, p0, Lje3;->i:B
 
+    .line 3
     .line 4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
     .line 5
     .line 6
+    .line 7
+    iput-object p1, p0, Lje3;->m:Ljava/util/AbstractMap;
+
+    .line 8
+    .line 9
+    iget-object v0, p1, Lne3;->n:Lle3;
+
+    .line 10
+    .line 11
+    iget-object v0, v0, Lle3;->l:Lle3;
+
+    .line 12
+    .line 13
+    iput-object v0, p0, Lje3;->k:Ljava/util/Map$Entry;
+
+    .line 14
+    .line 15
+    const/4 v0, 0x0
+
+    .line 16
+    iput-object v0, p0, Lje3;->l:Ljava/util/Map$Entry;
+
+    .line 17
+    .line 18
+    iget p1, p1, Lne3;->m:I
+
+    .line 19
+    .line 20
+    iput p1, p0, Lje3;->j:I
+
+    .line 21
+    .line 22
     return-void
 .end method
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final a()Lke3;
+    .locals 3
 
     .line 1
-    iput-object p1, p0, Lje3;->j:Ljava/lang/Object;
+    iget-object v0, p0, Lje3;->k:Ljava/util/Map$Entry;
 
     .line 2
     .line 3
-    iget p1, p0, Lje3;->l:I
+    check-cast v0, Lke3;
 
     .line 4
     .line 5
-    const/high16 v0, -0x80000000
+    iget-object v1, p0, Lje3;->m:Ljava/util/AbstractMap;
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    check-cast v1, Lme3;
 
     .line 8
-    iput p1, p0, Lje3;->l:I
+    .line 9
+    iget-object v2, v1, Lme3;->m:Lke3;
 
+    .line 10
+    .line 11
+    if-eq v0, v2, :cond_1
+
+    .line 12
+    .line 13
+    iget v1, v1, Lme3;->l:I
+
+    .line 14
+    .line 15
+    iget v2, p0, Lje3;->j:I
+
+    .line 16
+    .line 17
+    if-ne v1, v2, :cond_0
+
+    .line 18
+    .line 19
+    iget-object v1, v0, Lke3;->l:Lke3;
+
+    .line 20
+    .line 21
+    iput-object v1, p0, Lje3;->k:Ljava/util/Map$Entry;
+
+    .line 22
+    .line 23
+    iput-object v0, p0, Lje3;->l:Ljava/util/Map$Entry;
+
+    .line 24
+    .line 25
+    return-object v0
+
+    .line 26
+    :cond_0
+    new-instance p0, Ljava/util/ConcurrentModificationException;
+
+    .line 27
+    .line 28
+    invoke-direct {p0}, Ljava/util/ConcurrentModificationException;-><init>()V
+
+    .line 29
+    .line 30
+    .line 31
+    throw p0
+
+    .line 32
+    :cond_1
+    invoke-static {}, Lnf1;->p()V
+
+    .line 33
+    .line 34
+    .line 35
+    const/4 p0, 0x0
+
+    .line 36
+    return-object p0
+.end method
+
+.method public final b()Lle3;
+    .locals 3
+
+    .line 1
+    iget-object v0, p0, Lje3;->k:Ljava/util/Map$Entry;
+
+    .line 2
+    .line 3
+    check-cast v0, Lle3;
+
+    .line 4
+    .line 5
+    iget-object v1, p0, Lje3;->m:Ljava/util/AbstractMap;
+
+    .line 6
+    .line 7
+    check-cast v1, Lne3;
+
+    .line 8
+    .line 9
+    iget-object v2, v1, Lne3;->n:Lle3;
+
+    .line 10
+    .line 11
+    if-eq v0, v2, :cond_1
+
+    .line 12
+    .line 13
+    iget v1, v1, Lne3;->m:I
+
+    .line 14
+    .line 15
+    iget v2, p0, Lje3;->j:I
+
+    .line 16
+    .line 17
+    if-ne v1, v2, :cond_0
+
+    .line 18
+    .line 19
+    iget-object v1, v0, Lle3;->l:Lle3;
+
+    .line 20
+    .line 21
+    iput-object v1, p0, Lje3;->k:Ljava/util/Map$Entry;
+
+    .line 22
+    .line 23
+    iput-object v0, p0, Lje3;->l:Ljava/util/Map$Entry;
+
+    .line 24
+    .line 25
+    return-object v0
+
+    .line 26
+    :cond_0
+    new-instance p0, Ljava/util/ConcurrentModificationException;
+
+    .line 27
+    .line 28
+    invoke-direct {p0}, Ljava/util/ConcurrentModificationException;-><init>()V
+
+    .line 29
+    .line 30
+    .line 31
+    throw p0
+
+    .line 32
+    :cond_1
+    invoke-static {}, Lnf1;->p()V
+
+    .line 33
+    .line 34
+    .line 35
+    const/4 p0, 0x0
+
+    .line 36
+    return-object p0
+.end method
+
+.method public final hasNext()Z
+    .locals 4
+
+    .line 1
+    iget-byte v0, p0, Lje3;->i:B
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    const/4 v2, 0x1
+
+    .line 5
+    iget-object v3, p0, Lje3;->m:Ljava/util/AbstractMap;
+
+    .line 6
+    .line 7
+    packed-switch v0, :pswitch_data_0
+
+    .line 8
     .line 9
     .line 10
-    iget-object p1, p0, Lje3;->k:Lle3;
+    iget-object p0, p0, Lje3;->k:Ljava/util/Map$Entry;
 
     .line 11
     .line 12
-    invoke-virtual {p1, p0}, Lle3;->o(Lz81;)Ljava/lang/Object;
+    check-cast p0, Lle3;
 
     .line 13
     .line 14
-    .line 15
-    move-result-object p0
+    check-cast v3, Lne3;
 
+    .line 15
     .line 16
-    return-object p0
+    iget-object v0, v3, Lne3;->n:Lle3;
+
+    .line 17
+    .line 18
+    if-eq p0, v0, :cond_0
+
+    .line 19
+    .line 20
+    move v1, v2
+
+    .line 21
+    :cond_0
+    return v1
+
+    .line 22
+    :pswitch_0
+    iget-object p0, p0, Lje3;->k:Ljava/util/Map$Entry;
+
+    .line 23
+    .line 24
+    check-cast p0, Lke3;
+
+    .line 25
+    .line 26
+    check-cast v3, Lme3;
+
+    .line 27
+    .line 28
+    iget-object v0, v3, Lme3;->m:Lke3;
+
+    .line 29
+    .line 30
+    if-eq p0, v0, :cond_1
+
+    .line 31
+    .line 32
+    move v1, v2
+
+    .line 33
+    :cond_1
+    return v1
+
+    .line 34
+    nop
+
+    .line 35
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final remove()V
+    .locals 4
+
+    .line 1
+    iget-byte v0, p0, Lje3;->i:B
+
+    .line 2
+    .line 3
+    const/4 v1, 0x0
+
+    .line 4
+    const/4 v2, 0x1
+
+    .line 5
+    iget-object v3, p0, Lje3;->m:Ljava/util/AbstractMap;
+
+    .line 6
+    .line 7
+    packed-switch v0, :pswitch_data_0
+
+    .line 8
+    .line 9
+    .line 10
+    check-cast v3, Lne3;
+
+    .line 11
+    .line 12
+    iget-object v0, p0, Lje3;->l:Ljava/util/Map$Entry;
+
+    .line 13
+    .line 14
+    check-cast v0, Lle3;
+
+    .line 15
+    .line 16
+    if-eqz v0, :cond_0
+
+    .line 17
+    .line 18
+    invoke-virtual {v3, v0, v2}, Lne3;->c(Lle3;Z)V
+
+    .line 19
+    .line 20
+    .line 21
+    iput-object v1, p0, Lje3;->l:Ljava/util/Map$Entry;
+
+    .line 22
+    .line 23
+    iget v0, v3, Lne3;->m:I
+
+    .line 24
+    .line 25
+    iput v0, p0, Lje3;->j:I
+
+    .line 26
+    .line 27
+    return-void
+
+    .line 28
+    :cond_0
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    .line 29
+    .line 30
+    invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    .line 31
+    .line 32
+    .line 33
+    throw p0
+
+    .line 34
+    :pswitch_0
+    check-cast v3, Lme3;
+
+    .line 35
+    .line 36
+    iget-object v0, p0, Lje3;->l:Ljava/util/Map$Entry;
+
+    .line 37
+    .line 38
+    check-cast v0, Lke3;
+
+    .line 39
+    .line 40
+    if-eqz v0, :cond_1
+
+    .line 41
+    .line 42
+    invoke-virtual {v3, v0, v2}, Lme3;->c(Lke3;Z)V
+
+    .line 43
+    .line 44
+    .line 45
+    iput-object v1, p0, Lje3;->l:Ljava/util/Map$Entry;
+
+    .line 46
+    .line 47
+    iget v0, v3, Lme3;->l:I
+
+    .line 48
+    .line 49
+    iput v0, p0, Lje3;->j:I
+
+    .line 50
+    .line 51
+    return-void
+
+    .line 52
+    :cond_1
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    .line 53
+    .line 54
+    invoke-direct {p0}, Ljava/lang/IllegalStateException;-><init>()V
+
+    .line 55
+    .line 56
+    .line 57
+    throw p0
+
+    .line 58
+    nop
+
+    .line 59
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

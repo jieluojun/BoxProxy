@@ -1,133 +1,315 @@
 .class public final Las4;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Landroid/graphics/Paint;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public a:F
 
-.field public final b:Ljava/util/List;
+.field public b:Z
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/util/List;)V
+.method public constructor <init>(Z)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-direct {p0}, Landroid/graphics/Paint;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Las4;->a:Ljava/lang/String;
+    iput-boolean p1, p0, Las4;->b:Z
 
     .line 5
     .line 6
-    iput-object p2, p0, Las4;->b:Ljava/util/List;
+    const-string p1, " "
 
     .line 7
     .line 8
+    invoke-virtual {p0, p1}, Landroid/graphics/Paint;->measureText(Ljava/lang/String;)F
+
+    .line 9
+    .line 10
+    .line 11
+    move-result p1
+
+    .line 12
+    iput p1, p0, Las4;->a:F
+
+    .line 13
+    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
+.method public final a(Landroid/text/GetChars;IIIIZF)I
+    .locals 8
 
     .line 1
-    if-ne p0, p1, :cond_0
+    sub-int v5, p5, p4
 
     .line 2
     .line 3
-    goto :goto_1
+    invoke-static {v5}, Lyp6;->y(I)[C
 
     .line 4
-    :cond_0
-    instance-of v0, p1, Las4;
-
     .line 5
     .line 6
-    if-nez v0, :cond_1
+    move-result-object v1
 
     .line 7
+    const/4 v0, 0x0
+
     .line 8
-    goto :goto_0
+    invoke-interface {p1, p4, p5, v1, v0}, Landroid/text/GetChars;->getChars(II[CI)V
 
     .line 9
-    :cond_1
-    check-cast p1, Las4;
-
     .line 10
     .line 11
-    iget-object v0, p0, Las4;->a:Ljava/lang/String;
+    sub-int v2, p2, p4
 
     .line 12
     .line 13
-    iget-object v1, p1, Las4;->a:Ljava/lang/String;
+    sub-int v3, p3, p4
 
     .line 14
     .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    const/4 v4, 0x0
 
     .line 16
+    move-object v0, p0
+
     .line 17
+    move v6, p6
+
     .line 18
-    move-result v0
+    move v7, p7
 
     .line 19
-    if-nez v0, :cond_2
+    :try_start_0
+    invoke-virtual/range {v0 .. v7}, Landroid/graphics/Paint;->getOffsetForAdvance([CIIIIZF)I
 
     .line 20
     .line 21
-    goto :goto_0
-
     .line 22
-    :cond_2
-    iget-object p0, p0, Las4;->b:Ljava/util/List;
+    move-result p0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 23
+    add-int/2addr p4, p0
+
     .line 24
-    iget-object p1, p1, Las4;->b:Ljava/util/List;
+    invoke-static {v1}, Lyp6;->A([C)V
 
     .line 25
     .line 26
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
     .line 27
+    return p4
+
     .line 28
+    :catchall_0
+    move-exception v0
+
     .line 29
-    move-result p0
+    move-object p0, v0
 
     .line 30
-    if-nez p0, :cond_3
+    invoke-static {v1}, Lyp6;->A([C)V
 
     .line 31
     .line 32
-    :goto_0
-    const/4 p0, 0x0
-
     .line 33
-    return p0
-
-    .line 34
-    :cond_3
-    :goto_1
-    const/4 p0, 0x1
-
-    .line 35
-    return p0
+    throw p0
 .end method
 
-.method public final hashCode()I
+.method public final b(Landroid/text/GetChars;IIIIZ[FI)F
+    .locals 10
+
+    .line 1
+    invoke-static {p5}, Lyp6;->y(I)[C
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v1
+
+    .line 5
+    add-int v0, p4, p5
+
+    .line 6
+    .line 7
+    const/4 v9, 0x0
+
+    .line 8
+    invoke-interface {p1, p4, v0, v1, v9}, Landroid/text/GetChars;->getChars(II[CI)V
+
+    .line 9
+    .line 10
+    .line 11
+    sub-int v2, p2, p4
+
+    .line 12
+    .line 13
+    const/4 v4, 0x0
+
+    .line 14
+    move-object v0, p0
+
+    .line 15
+    move v3, p3
+
+    .line 16
+    move v5, p5
+
+    .line 17
+    move/from16 v6, p6
+
+    .line 18
+    .line 19
+    move-object/from16 v7, p7
+
+    .line 20
+    .line 21
+    move/from16 v8, p8
+
+    .line 22
+    .line 23
+    invoke-virtual/range {v0 .. v8}, Landroid/graphics/Paint;->getTextRunAdvances([CIIIIZ[FI)F
+
+    .line 24
+    .line 25
+    .line 26
+    move-result p4
+
+    .line 27
+    iget-boolean p5, p0, Las4;->b:Z
+
+    .line 28
+    .line 29
+    if-eqz p5, :cond_2
+
+    .line 30
+    .line 31
+    :goto_0
+    if-ge v9, p3, :cond_2
+
+    .line 32
+    .line 33
+    add-int p5, p2, v9
+
+    .line 34
+    .line 35
+    invoke-interface {p1, p5}, Ljava/lang/CharSequence;->charAt(I)C
+
+    .line 36
+    .line 37
+    .line 38
+    move-result p5
+
+    .line 39
+    invoke-static {p5}, Lab;->z(C)Z
+
+    .line 40
+    .line 41
+    .line 42
+    move-result v2
+
+    .line 43
+    if-eqz v2, :cond_1
+
+    .line 44
+    .line 45
+    invoke-static {p5}, Lab;->x(C)Ljava/lang/String;
+
+    .line 46
+    .line 47
+    .line 48
+    move-result-object v2
+
+    .line 49
+    invoke-virtual {p0, v2}, Landroid/graphics/Paint;->measureText(Ljava/lang/String;)F
+
+    .line 50
+    .line 51
+    .line 52
+    move-result v2
+
+    .line 53
+    if-eqz p7, :cond_0
+
+    .line 54
+    .line 55
+    add-int p5, p8, v9
+
+    .line 56
+    .line 57
+    aget v4, p7, p5
+
+    .line 58
+    .line 59
+    sub-float/2addr p4, v4
+
+    .line 60
+    aput v2, p7, p5
+
+    .line 61
+    .line 62
+    goto :goto_1
+
+    .line 63
+    :cond_0
+    invoke-static {p5}, Ljava/lang/Character;->toString(C)Ljava/lang/String;
+
+    .line 64
+    .line 65
+    .line 66
+    move-result-object p5
+
+    .line 67
+    invoke-virtual {p0, p5}, Landroid/graphics/Paint;->measureText(Ljava/lang/String;)F
+
+    .line 68
+    .line 69
+    .line 70
+    move-result p5
+
+    .line 71
+    sub-float/2addr p4, p5
+
+    .line 72
+    :goto_1
+    add-float/2addr p4, v2
+
+    .line 73
+    :cond_1
+    add-int/lit8 v9, v9, 0x1
+
+    .line 74
+    .line 75
+    goto :goto_0
+
+    .line 76
+    :cond_2
+    invoke-static {v1}, Lyp6;->A([C)V
+
+    .line 77
+    .line 78
+    .line 79
+    return p4
+.end method
+
+.method public final c()V
     .locals 1
 
     .line 1
-    iget-object v0, p0, Las4;->a:Ljava/lang/String;
+    const-string v0, " "
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    invoke-virtual {p0, v0}, Landroid/graphics/Paint;->measureText(Ljava/lang/String;)F
 
     .line 4
     .line 5
@@ -135,88 +317,26 @@
     move-result v0
 
     .line 7
-    mul-int/lit8 v0, v0, 0x1f
+    iput v0, p0, Las4;->a:F
 
     .line 8
     .line 9
-    iget-object p0, p0, Las4;->b:Ljava/util/List;
-
-    .line 10
-    .line 11
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    add-int/2addr p0, v0
-
-    .line 16
-    return p0
+    return-void
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final setLetterSpacing(F)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    invoke-super {p0, p1}, Landroid/graphics/Paint;->setLetterSpacing(F)V
 
     .line 2
     .line 3
-    const-string v1, "IconPack(name="
-
     .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+    invoke-virtual {p0}, Las4;->c()V
 
+    .line 5
     .line 6
     .line 7
-    .line 8
-    iget-object v1, p0, Las4;->a:Ljava/lang/String;
-
-    .line 9
-    .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 11
-    .line 12
-    .line 13
-    const-string v1, ", icons="
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    iget-object p0, p0, Las4;->b:Ljava/util/List;
-
-    .line 19
-    .line 20
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 21
-    .line 22
-    .line 23
-    const-string p0, ")"
-
-    .line 24
-    .line 25
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 26
-    .line 27
-    .line 28
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 29
-    .line 30
-    .line 31
-    move-result-object p0
-
-    .line 32
-    return-object p0
+    return-void
 .end method

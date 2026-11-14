@@ -1,19 +1,20 @@
 .class public final Lf77;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
-.implements Landroid/view/View$OnAttachStateChangeListener;
+.implements Lgh6;
 
 
 # instance fields
-.field public final j:Ljava/util/WeakHashMap;
+.field public final i:Ljava/lang/Object;
+
+.field public final j:Z
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 1
+.method public constructor <init>(Landroid/graphics/Typeface;)V
+    .locals 0
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -21,54 +22,29 @@
     .line 2
     .line 3
     .line 4
-    new-instance v0, Ljava/util/WeakHashMap;
+    iput-object p1, p0, Lf77;->i:Ljava/lang/Object;
 
     .line 5
     .line 6
-    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
+    const/4 p1, 0x1
 
     .line 7
+    iput-boolean p1, p0, Lf77;->j:Z
+
     .line 8
     .line 9
-    iput-object v0, p0, Lf77;->j:Ljava/util/WeakHashMap;
-
-    .line 10
-    .line 11
     return-void
 .end method
 
 
 # virtual methods
-.method public final onGlobalLayout()V
+.method public final getValue()Ljava/lang/Object;
     .locals 0
 
     .line 1
-    return-void
-.end method
-
-.method public final onViewAttachedToWindow(Landroid/view/View;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    iget-object p0, p0, Lf77;->i:Ljava/lang/Object;
 
     .line 2
     .line 3
-    .line 4
-    move-result-object p1
-
-    .line 5
-    invoke-virtual {p1, p0}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
-
-    .line 6
-    .line 7
-    .line 8
-    return-void
-.end method
-
-.method public final onViewDetachedFromWindow(Landroid/view/View;)V
-    .locals 0
-
-    .line 1
-    return-void
+    return-object p0
 .end method

@@ -1,280 +1,162 @@
-.class public final Lkn5;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lkn5;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final a:Lmt3;
+# static fields
+.field public static final enum i:Lkn5;
 
-.field public final b:Lmt3;
+.field public static final enum j:Lkn5;
 
-.field public final c:Lmt3;
+.field public static final enum k:Lkn5;
+
+.field public static final enum l:Lkn5;
+
+.field public static final synthetic m:[Lkn5;
 
 
 # direct methods
-.method public constructor <init>(Lmt3;Lmt3;Lmt3;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 6
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v0, Lkn5;
 
     .line 2
     .line 3
+    const-string v1, "Domain"
+
     .line 4
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 5
-    .line 6
-    .line 7
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v2, 0x0
 
+    .line 6
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 7
     .line 8
     .line 9
-    .line 10
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lkn5;->i:Lkn5;
 
+    .line 10
     .line 11
+    new-instance v1, Lkn5;
+
     .line 12
     .line 13
-    iput-object p1, p0, Lkn5;->a:Lmt3;
+    const-string v2, "IpCidr"
 
     .line 14
     .line 15
-    iput-object p2, p0, Lkn5;->b:Lmt3;
+    const/4 v3, 0x1
 
     .line 16
-    .line 17
-    iput-object p3, p0, Lkn5;->c:Lmt3;
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 17
     .line 18
     .line 19
+    sput-object v1, Lkn5;->j:Lkn5;
+
+    .line 20
+    .line 21
+    new-instance v2, Lkn5;
+
+    .line 22
+    .line 23
+    const-string v3, "Classical"
+
+    .line 24
+    .line 25
+    const/4 v4, 0x2
+
+    .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 27
+    .line 28
+    .line 29
+    sput-object v2, Lkn5;->k:Lkn5;
+
+    .line 30
+    .line 31
+    new-instance v3, Lkn5;
+
+    .line 32
+    .line 33
+    const-string v4, "Unknown"
+
+    .line 34
+    .line 35
+    const/4 v5, 0x3
+
+    .line 36
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 37
+    .line 38
+    .line 39
+    sput-object v3, Lkn5;->l:Lkn5;
+
+    .line 40
+    .line 41
+    filled-new-array {v0, v1, v2, v3}, [Lkn5;
+
+    .line 42
+    .line 43
+    .line 44
+    move-result-object v0
+
+    .line 45
+    sput-object v0, Lkn5;->m:[Lkn5;
+
+    .line 46
+    .line 47
     return-void
 .end method
 
-
-# virtual methods
-.method public final a(Landroid/content/Context;)Lln5;
-    .locals 3
+.method public static valueOf(Ljava/lang/String;)Lkn5;
+    .locals 1
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-class v0, Lkn5;
 
     .line 2
     .line 3
-    .line 4
-    new-instance v0, Lln5;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
+    .line 4
     .line 5
     .line 6
-    iget-object v1, p0, Lkn5;->a:Lmt3;
+    move-result-object p0
 
     .line 7
+    check-cast p0, Lkn5;
+
     .line 8
-    invoke-interface {v1}, Lmb6;->getValue()Ljava/lang/Object;
-
     .line 9
-    .line 10
-    .line 11
-    move-result-object v1
+    return-object p0
+.end method
 
-    .line 12
-    check-cast v1, Ljava/lang/String;
+.method public static values()[Lkn5;
+    .locals 1
 
-    .line 13
-    .line 14
-    invoke-static {v1}, Lad6;->Y0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+    .line 1
+    sget-object v0, Lkn5;->m:[Lkn5;
 
-    .line 15
-    .line 16
-    .line 17
-    move-result-object v1
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
-    .line 18
-    invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
 
-    .line 19
-    .line 20
-    .line 21
-    move-result-object v1
+    .line 7
+    check-cast v0, [Lkn5;
 
-    .line 22
-    iget-object v2, p0, Lkn5;->b:Lmt3;
-
-    .line 23
-    .line 24
-    invoke-interface {v2}, Lmb6;->getValue()Ljava/lang/Object;
-
-    .line 25
-    .line 26
-    .line 27
-    move-result-object v2
-
-    .line 28
-    check-cast v2, Ljava/lang/String;
-
-    .line 29
-    .line 30
-    invoke-static {v2}, Lad6;->Y0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-
-    .line 31
-    .line 32
-    .line 33
-    move-result-object v2
-
-    .line 34
-    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    .line 35
-    .line 36
-    .line 37
-    move-result-object v2
-
-    .line 38
-    iget-object p0, p0, Lkn5;->c:Lmt3;
-
-    .line 39
-    .line 40
-    invoke-interface {p0}, Lmb6;->getValue()Ljava/lang/Object;
-
-    .line 41
-    .line 42
-    .line 43
-    move-result-object p0
-
-    .line 44
-    check-cast p0, Ljava/lang/String;
-
-    .line 45
-    .line 46
-    invoke-direct {v0, v1, v2, p0}, Lln5;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 47
-    .line 48
-    .line 49
-    invoke-static {v1}, Lad6;->y0(Ljava/lang/CharSequence;)Z
-
-    .line 50
-    .line 51
-    .line 52
-    move-result p0
-
-    .line 53
-    const/4 v1, 0x0
-
-    .line 54
-    if-nez p0, :cond_0
-
-    .line 55
-    .line 56
-    invoke-static {v2}, Lad6;->y0(Ljava/lang/CharSequence;)Z
-
-    .line 57
-    .line 58
-    .line 59
-    move-result p0
-
-    .line 60
-    if-nez p0, :cond_0
-
-    .line 61
-    .line 62
-    goto :goto_0
-
-    .line 63
-    :cond_0
-    move-object v0, v1
-
-    .line 64
-    :goto_0
-    if-nez v0, :cond_1
-
-    .line 65
-    .line 66
-    return-object v1
-
-    .line 67
-    :cond_1
-    iget-object p0, v0, Lln5;->c:Ljava/lang/String;
-
-    .line 68
-    .line 69
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 70
-    .line 71
-    .line 72
-    const-string v1, "download_preferences"
-
-    .line 73
-    .line 74
-    const/4 v2, 0x0
-
-    .line 75
-    invoke-virtual {p1, v1, v2}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
-
-    .line 76
-    .line 77
-    .line 78
-    move-result-object p1
-
-    .line 79
-    invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
-
-    .line 80
-    .line 81
-    .line 82
-    move-result-object p1
-
-    .line 83
-    invoke-static {p0}, Lad6;->Y0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-
-    .line 84
-    .line 85
-    .line 86
-    move-result-object p0
-
-    .line 87
-    invoke-virtual {p0}, Ljava/lang/Object;->toString()Ljava/lang/String;
-
-    .line 88
-    .line 89
-    .line 90
-    move-result-object p0
-
-    .line 91
-    invoke-static {p0}, Lad6;->y0(Ljava/lang/CharSequence;)Z
-
-    .line 92
-    .line 93
-    .line 94
-    move-result v1
-
-    .line 95
-    if-eqz v1, :cond_2
-
-    .line 96
-    .line 97
-    const-string p0, "boxproxy"
-
-    .line 98
-    .line 99
-    :cond_2
-    const-string v1, "user_agent"
-
-    .line 100
-    .line 101
-    invoke-interface {p1, v1, p0}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
-
-    .line 102
-    .line 103
-    .line 104
-    move-result-object p0
-
-    .line 105
-    invoke-interface {p0}, Landroid/content/SharedPreferences$Editor;->apply()V
-
-    .line 106
-    .line 107
-    .line 108
+    .line 8
+    .line 9
     return-object v0
 .end method

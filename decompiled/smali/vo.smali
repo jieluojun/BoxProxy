@@ -1,85 +1,49 @@
-.class public final Lvo;
+.class public final synthetic Lvo;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lbr5;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic a:B
+.field public final synthetic i:B
 
-.field public final b:Ljava/lang/Object;
+.field public final synthetic j:Landroid/content/Context;
 
 
 # direct methods
-.method public constructor <init>(Lr82;)V
-    .locals 1
+.method public synthetic constructor <init>(Landroid/content/Context;B)V
+    .locals 0
 
     .line 1
-    const/4 v0, 0x1
+    iput-byte p2, p0, Lvo;->i:B
 
     .line 2
-    iput-byte v0, p0, Lvo;->a:B
-
     .line 3
+    iput-object p1, p0, Lvo;->j:Landroid/content/Context;
+
     .line 4
+    .line 5
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5
     .line 6
     .line 7
-    new-instance v0, Ljava/util/LinkedHashSet;
-
     .line 8
-    .line 9
-    invoke-direct {v0}, Ljava/util/LinkedHashSet;-><init>()V
-
-    .line 10
-    .line 11
-    .line 12
-    iput-object v0, p0, Lvo;->b:Ljava/lang/Object;
-
-    .line 13
-    .line 14
-    const-string v0, "androidx.savedstate.Restarter"
-
-    .line 15
-    .line 16
-    invoke-virtual {p1, v0, p0}, Lr82;->c0(Ljava/lang/String;Lbr5;)V
-
-    .line 17
-    .line 18
-    .line 19
-    return-void
-.end method
-
-.method public constructor <init>(Lxo;)V
-    .locals 1
-
-    const/4 v0, 0x0
-
-    iput-byte v0, p0, Lvo;->a:B
-
-    .line 20
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lvo;->b:Ljava/lang/Object;
-
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Landroid/os/Bundle;
-    .locals 2
+.method public final run()V
+    .locals 10
 
     .line 1
-    iget-byte v0, p0, Lvo;->a:B
+    iget-byte v0, p0, Lvo;->i:B
 
     .line 2
     .line 3
-    iget-object p0, p0, Lvo;->b:Ljava/lang/Object;
+    iget-object p0, p0, Lvo;->j:Landroid/content/Context;
 
     .line 4
     .line 5
@@ -88,110 +52,224 @@
     .line 6
     .line 7
     .line 8
-    const/4 v0, 0x0
+    new-instance v0, Lf15;
 
     .line 9
-    new-array v1, v0, [Lbm4;
-
     .line 10
-    .line 11
-    invoke-static {v1, v0}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
+    .line 11
     .line 12
     .line 13
-    .line 14
-    move-result-object v0
+    sget-object v1, Lyp6;->B:Lgn3;
 
+    .line 14
     .line 15
-    check-cast v0, [Lbm4;
+    const/4 v2, 0x0
 
     .line 16
-    .line 17
-    invoke-static {v0}, Laq;->B([Lbm4;)Landroid/os/Bundle;
+    invoke-static {p0, v0, v1, v2}, Lyp6;->E(Landroid/content/Context;Ljava/util/concurrent/Executor;Lg15;Z)V
 
+    .line 17
     .line 18
     .line 19
+    return-void
+
     .line 20
-    move-result-object v0
+    :pswitch_0
+    new-instance v3, Ljava/util/concurrent/ThreadPoolExecutor;
 
     .line 21
-    check-cast p0, Ljava/util/LinkedHashSet;
-
     .line 22
-    .line 23
-    invoke-static {p0}, Lcv0;->Y0(Ljava/lang/Iterable;)Ljava/util/List;
+    new-instance v9, Ljava/util/concurrent/LinkedBlockingQueue;
 
+    .line 23
     .line 24
+    invoke-direct {v9}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
+
     .line 25
     .line 26
-    move-result-object p0
-
     .line 27
-    instance-of v1, p0, Ljava/util/ArrayList;
+    const/4 v4, 0x0
 
     .line 28
+    const/4 v5, 0x1
+
     .line 29
-    if-eqz v1, :cond_0
+    const-wide/16 v6, 0x0
 
     .line 30
     .line 31
-    check-cast p0, Ljava/util/ArrayList;
+    sget-object v8, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
     .line 32
     .line 33
-    goto :goto_0
+    invoke-direct/range {v3 .. v9}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;)V
 
     .line 34
-    :cond_0
-    new-instance v1, Ljava/util/ArrayList;
-
     .line 35
     .line 36
-    invoke-direct {v1, p0}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
+    new-instance v0, Lvo;
 
     .line 37
     .line 38
+    const/4 v1, 0x3
+
     .line 39
-    move-object p0, v1
+    invoke-direct {v0, p0, v1}, Lvo;-><init>(Landroid/content/Context;B)V
 
     .line 40
-    :goto_0
-    const-string v1, "classes_to_restore"
-
     .line 41
     .line 42
-    invoke-virtual {v0, v1, p0}, Landroid/os/Bundle;->putStringArrayList(Ljava/lang/String;Ljava/util/ArrayList;)V
+    invoke-virtual {v3, v0}, Ljava/util/concurrent/ThreadPoolExecutor;->execute(Ljava/lang/Runnable;)V
 
     .line 43
     .line 44
     .line 45
-    return-object v0
+    return-void
 
     .line 46
-    :pswitch_0
-    new-instance v0, Landroid/os/Bundle;
+    :pswitch_1
+    invoke-static {p0}, Lyo;->p(Landroid/content/Context;)V
 
     .line 47
     .line 48
-    invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
-
     .line 49
+    return-void
+
     .line 50
+    :pswitch_2
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
     .line 51
-    check-cast p0, Lxo;
-
     .line 52
+    const/16 v1, 0x21
+
     .line 53
-    invoke-virtual {p0}, Lxo;->l()Ljp;
-
     .line 54
-    .line 55
-    .line 56
-    return-object v0
+    const/4 v2, 0x1
 
+    .line 55
+    if-lt v0, v1, :cond_1
+
+    .line 56
     .line 57
+    new-instance v0, Landroid/content/ComponentName;
+
+    .line 58
+    .line 59
+    const-string v1, "androidx.appcompat.app.AppLocalesMetadataHolderService"
+
+    .line 60
+    .line 61
+    invoke-direct {v0, p0, v1}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+
+    .line 62
+    .line 63
+    .line 64
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    .line 65
+    .line 66
+    .line 67
+    move-result-object v1
+
+    .line 68
+    invoke-virtual {v1, v0}, Landroid/content/pm/PackageManager;->getComponentEnabledSetting(Landroid/content/ComponentName;)I
+
+    .line 69
+    .line 70
+    .line 71
+    move-result v1
+
+    .line 72
+    if-eq v1, v2, :cond_1
+
+    .line 73
+    .line 74
+    invoke-static {}, Lyo;->b()Lfh3;
+
+    .line 75
+    .line 76
+    .line 77
+    move-result-object v1
+
+    .line 78
+    invoke-virtual {v1}, Lfh3;->b()Z
+
+    .line 79
+    .line 80
+    .line 81
+    move-result v1
+
+    .line 82
+    if-eqz v1, :cond_0
+
+    .line 83
+    .line 84
+    invoke-static {p0}, Ljf1;->K(Landroid/content/Context;)Ljava/lang/String;
+
+    .line 85
+    .line 86
+    .line 87
+    move-result-object v1
+
+    .line 88
+    const-string v3, "locale"
+
+    .line 89
+    .line 90
+    invoke-virtual {p0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+
+    .line 91
+    .line 92
+    .line 93
+    move-result-object v3
+
+    .line 94
+    if-eqz v3, :cond_0
+
+    .line 95
+    .line 96
+    invoke-static {v1}, Landroid/os/LocaleList;->forLanguageTags(Ljava/lang/String;)Landroid/os/LocaleList;
+
+    .line 97
+    .line 98
+    .line 99
+    move-result-object v1
+
+    .line 100
+    invoke-static {v3, v1}, La5;->j(Ljava/lang/Object;Landroid/os/LocaleList;)V
+
+    .line 101
+    .line 102
+    .line 103
+    :cond_0
+    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    .line 104
+    .line 105
+    .line 106
+    move-result-object p0
+
+    .line 107
+    invoke-virtual {p0, v0, v2, v2}, Landroid/content/pm/PackageManager;->setComponentEnabledSetting(Landroid/content/ComponentName;II)V
+
+    .line 108
+    .line 109
+    .line 110
+    :cond_1
+    sput-boolean v2, Lyo;->n:Z
+
+    .line 111
+    .line 112
+    return-void
+
+    .line 113
     :pswitch_data_0
     .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
         :pswitch_0
     .end packed-switch
 .end method

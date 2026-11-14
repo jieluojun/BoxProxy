@@ -1,29 +1,71 @@
-.class public interface abstract Lnl3;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lnl3;
+.super Lq91;
+
+
+# instance fields
+.field public synthetic i:Ljava/lang/Object;
+
+.field public j:I
+
+.field public final synthetic k:Lbl;
+
+
+# direct methods
+.method public constructor <init>(Lbl;Lp91;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Lnl3;->k:Lbl;
+
+    .line 2
+    .line 3
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
+
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
 
 
 # virtual methods
-.method public abstract a(Lkk3;Z)V
-.end method
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
-.method public abstract c(Lqk3;)Z
-.end method
+    .line 1
+    iput-object p1, p0, Lnl3;->i:Ljava/lang/Object;
 
-.method public abstract e(Lml3;)V
-.end method
+    .line 2
+    .line 3
+    iget p1, p0, Lnl3;->j:I
 
-.method public abstract f(Lqk3;)Z
-.end method
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
 
-.method public abstract g()V
-.end method
+    .line 6
+    .line 7
+    or-int/2addr p1, v0
 
-.method public abstract i(Landroid/content/Context;Lkk3;)V
-.end method
+    .line 8
+    iput p1, p0, Lnl3;->j:I
 
-.method public abstract j(Ltd6;)Z
-.end method
+    .line 9
+    .line 10
+    iget-object p1, p0, Lnl3;->k:Lbl;
 
-.method public abstract k()Z
+    .line 11
+    .line 12
+    const/4 v0, 0x0
+
+    .line 13
+    invoke-virtual {p1, v0, p0}, Lbl;->d(Ljava/lang/Object;Lp91;)Ljava/lang/Object;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p0
+
+    .line 17
+    return-object p0
 .end method

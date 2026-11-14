@@ -1,148 +1,139 @@
-.class public final Llx2;
+.class public abstract synthetic Llx2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lqy2;
-
-
-# static fields
-.field public static final a:Llx2;
-
-.field public static final b:Lkx2;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # direct methods
-.method static constructor <clinit>()V
+.method public static bridge synthetic a(Landroid/graphics/RuntimeShader;)Landroid/graphics/RenderEffect;
     .locals 1
 
     .line 1
-    new-instance v0, Llx2;
+    const-string v0, "child"
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-static {p0, v0}, Landroid/graphics/RenderEffect;->createRuntimeShaderEffect(Landroid/graphics/RuntimeShader;Ljava/lang/String;)Landroid/graphics/RenderEffect;
 
     .line 4
     .line 5
     .line 6
-    sput-object v0, Llx2;->a:Llx2;
+    move-result-object p0
 
     .line 7
-    .line 8
-    sget-object v0, Lkx2;->b:Lkx2;
-
-    .line 9
-    .line 10
-    sput-object v0, Llx2;->b:Lkx2;
-
-    .line 11
-    .line 12
-    return-void
+    return-object p0
 .end method
 
+.method public static bridge synthetic b(Landroid/graphics/RuntimeShader;Ljava/lang/String;)Landroid/graphics/RenderEffect;
+    .locals 0
 
-# virtual methods
-.method public final b(Lwe1;)Ljava/lang/Object;
+    .line 1
+    invoke-static {p0, p1}, Landroid/graphics/RenderEffect;->createRuntimeShaderEffect(Landroid/graphics/RuntimeShader;Ljava/lang/String;)Landroid/graphics/RenderEffect;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method public static synthetic c()Landroid/graphics/RuntimeShader;
+    .locals 2
+
+    .line 1
+    new-instance v0, Landroid/graphics/RuntimeShader;
+
+    .line 2
+    .line 3
+    const-string v1, "\n        uniform float2 size;\n        layout(color) uniform half4 color;\n        uniform float radius;\n        uniform float2 position;\n\n        half4 main(float2 coord) {\n            float dist = distance(coord, position);\n            float intensity = smoothstep(radius, radius * 0.5, dist);\n            return color * intensity;\n        }\n        "
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Landroid/graphics/RuntimeShader;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    return-object v0
+.end method
+
+.method public static bridge synthetic d(Landroid/net/wifi/ScanResult;)Landroid/net/wifi/WifiSsid;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Landroid/net/wifi/ScanResult;->getWifiSsid()Landroid/net/wifi/WifiSsid;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method public static bridge synthetic e(Landroid/net/wifi/WifiSsid;)Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Landroid/net/wifi/WifiSsid;->toString()Ljava/lang/String;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p0
+
+    .line 5
+    return-object p0
+.end method
+
+.method public static synthetic f()V
     .locals 1
 
     .line 1
-    invoke-static {p1}, Lwu;->A(Lwe1;)Lmw2;
+    new-instance v0, Landroid/graphics/RuntimeShader;
 
     .line 2
     .line 3
-    .line 4
-    new-instance p0, Lix2;
-
-    .line 5
-    .line 6
-    sget-object v0, Lxc6;->a:Lxc6;
-
-    .line 7
-    .line 8
-    sget-object v0, Lvw2;->a:Lvw2;
-
-    .line 9
-    .line 10
-    new-instance v0, Ln93;
-
-    .line 11
-    .line 12
-    invoke-direct {v0}, Ln93;-><init>()V
-
-    .line 13
-    .line 14
-    .line 15
-    invoke-virtual {v0, p1}, Ls2;->i(Lwe1;)Ljava/lang/Object;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object p1
-
-    .line 19
-    check-cast p1, Ljava/util/Map;
-
-    .line 20
-    .line 21
-    invoke-direct {p0, p1}, Lix2;-><init>(Ljava/util/Map;)V
-
-    .line 22
-    .line 23
-    .line 24
-    return-object p0
-.end method
-
-.method public final c()Luy5;
-    .locals 0
-
-    .line 1
-    sget-object p0, Llx2;->b:Lkx2;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final d(Lqc6;Ljava/lang/Object;)V
-    .locals 0
-
-    .line 1
-    check-cast p2, Lix2;
-
-    .line 2
-    .line 3
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 4
-    .line 5
-    .line 6
-    invoke-static {p1}, Lwu;->B(Lqc6;)V
-
-    .line 7
-    .line 8
-    .line 9
-    sget-object p0, Lxc6;->a:Lxc6;
-
-    .line 10
-    .line 11
-    sget-object p0, Lvw2;->a:Lvw2;
-
-    .line 12
-    .line 13
-    new-instance p0, Ln93;
-
-    .line 14
-    .line 15
-    invoke-direct {p0}, Ln93;-><init>()V
-
-    .line 16
-    .line 17
-    .line 18
-    invoke-virtual {p0, p1, p2}, Ln93;->d(Lqc6;Ljava/lang/Object;)V
-
-    .line 19
-    .line 20
-    .line 21
     return-void
+.end method
+
+.method public static bridge synthetic g(Landroid/window/OnBackInvokedDispatcher;ILandroid/window/OnBackInvokedCallback;)V
+    .locals 0
+
+    .line 1
+    invoke-interface {p0, p1, p2}, Landroid/window/OnBackInvokedDispatcher;->registerOnBackInvokedCallback(ILandroid/window/OnBackInvokedCallback;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public static bridge synthetic h(Landroid/window/OnBackInvokedDispatcher;Landroid/window/OnBackInvokedCallback;)V
+    .locals 0
+
+    .line 1
+    invoke-interface {p0, p1}, Landroid/window/OnBackInvokedDispatcher;->unregisterOnBackInvokedCallback(Landroid/window/OnBackInvokedCallback;)V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public static bridge synthetic i(Landroid/text/StaticLayout;)Z
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Landroid/text/StaticLayout;->isFallbackLineSpacingEnabled()Z
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    return p0
 .end method

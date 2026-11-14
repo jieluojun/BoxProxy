@@ -1,83 +1,513 @@
-.class public final synthetic Ldf3;
+.class public final Ldf3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Le62;
+.implements Le22;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final synthetic i:Ljava/util/ArrayList;
 
-.field public final synthetic k:Lkm6;
+.field public final synthetic j:Ljava/util/ArrayList;
+
+.field public final synthetic k:Ljava/util/ArrayList;
+
+.field public final synthetic l:Ljava/util/ArrayList;
+
+.field public final synthetic m:Lh04;
+
+.field public final synthetic n:Lh04;
+
+.field public final synthetic o:Lh04;
+
+.field public final synthetic p:Lh04;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lkm6;B)V
+.method public constructor <init>(Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;Lh04;Lh04;Lh04;Lh04;)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Ldf3;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Ldf3;->k:Lkm6;
-
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Ldf3;->i:Ljava/util/ArrayList;
 
+    .line 5
     .line 6
+    iput-object p2, p0, Ldf3;->j:Ljava/util/ArrayList;
+
     .line 7
     .line 8
+    iput-object p3, p0, Ldf3;->k:Ljava/util/ArrayList;
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Ldf3;->l:Ljava/util/ArrayList;
+
+    .line 11
+    .line 12
+    iput-object p5, p0, Ldf3;->m:Lh04;
+
+    .line 13
+    .line 14
+    iput-object p6, p0, Ldf3;->n:Lh04;
+
+    .line 15
+    .line 16
+    iput-object p7, p0, Ldf3;->o:Lh04;
+
+    .line 17
+    .line 18
+    iput-object p8, p0, Ldf3;->p:Lh04;
+
+    .line 19
+    .line 20
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()Ljava/lang/Object;
-    .locals 2
+.method public final d(Ljava/lang/Object;Lp91;)Ljava/lang/Object;
+    .locals 4
 
     .line 1
-    iget-byte v0, p0, Ldf3;->j:B
+    check-cast p1, Lgx2;
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    instance-of p2, p1, Lh05;
 
     .line 4
     .line 5
-    iget-object p0, p0, Ldf3;->k:Lkm6;
+    iget-object v0, p0, Ldf3;->k:Ljava/util/ArrayList;
 
     .line 6
     .line 7
-    packed-switch v0, :pswitch_data_0
+    iget-object v1, p0, Ldf3;->j:Ljava/util/ArrayList;
 
     .line 8
     .line 9
-    .line 10
-    invoke-interface {p0}, Lkm6;->onCancel()V
+    iget-object v2, p0, Ldf3;->l:Ljava/util/ArrayList;
 
+    .line 10
     .line 11
+    iget-object v3, p0, Ldf3;->i:Ljava/util/ArrayList;
+
     .line 12
     .line 13
-    return-object v1
+    if-eqz p2, :cond_0
 
     .line 14
-    :pswitch_0
-    invoke-interface {p0}, Lkm6;->b()V
-
     .line 15
+    if-eqz v3, :cond_9
+
     .line 16
     .line 17
-    return-object v1
+    invoke-virtual {v3, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 18
-    nop
-
     .line 19
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 20
+    goto/16 :goto_0
+
+    .line 21
+    .line 22
+    :cond_0
+    instance-of p2, p1, Li05;
+
+    .line 23
+    .line 24
+    if-eqz p2, :cond_1
+
+    .line 25
+    .line 26
+    if-eqz v3, :cond_9
+
+    .line 27
+    .line 28
+    check-cast p1, Li05;
+
+    .line 29
+    .line 30
+    iget-object p1, p1, Li05;->a:Lh05;
+
+    .line 31
+    .line 32
+    invoke-virtual {v3, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    .line 33
+    .line 34
+    .line 35
+    goto/16 :goto_0
+
+    .line 36
+    .line 37
+    :cond_1
+    instance-of p2, p1, Lg05;
+
+    .line 38
+    .line 39
+    if-eqz p2, :cond_2
+
+    .line 40
+    .line 41
+    if-eqz v3, :cond_9
+
+    .line 42
+    .line 43
+    check-cast p1, Lg05;
+
+    .line 44
+    .line 45
+    iget-object p1, p1, Lg05;->a:Lh05;
+
+    .line 46
+    .line 47
+    invoke-virtual {v3, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    .line 48
+    .line 49
+    .line 50
+    goto :goto_0
+
+    .line 51
+    :cond_2
+    instance-of p2, p1, Lt32;
+
+    .line 52
+    .line 53
+    if-eqz p2, :cond_3
+
+    .line 54
+    .line 55
+    if-eqz v1, :cond_9
+
+    .line 56
+    .line 57
+    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 58
+    .line 59
+    .line 60
+    goto :goto_0
+
+    .line 61
+    :cond_3
+    instance-of p2, p1, Lu32;
+
+    .line 62
+    .line 63
+    if-eqz p2, :cond_4
+
+    .line 64
+    .line 65
+    if-eqz v1, :cond_9
+
+    .line 66
+    .line 67
+    check-cast p1, Lu32;
+
+    .line 68
+    .line 69
+    iget-object p1, p1, Lu32;->a:Lt32;
+
+    .line 70
+    .line 71
+    invoke-virtual {v1, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    .line 72
+    .line 73
+    .line 74
+    goto :goto_0
+
+    .line 75
+    :cond_4
+    instance-of p2, p1, Lwo2;
+
+    .line 76
+    .line 77
+    if-eqz p2, :cond_5
+
+    .line 78
+    .line 79
+    if-eqz v0, :cond_9
+
+    .line 80
+    .line 81
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 82
+    .line 83
+    .line 84
+    goto :goto_0
+
+    .line 85
+    :cond_5
+    instance-of p2, p1, Lxo2;
+
+    .line 86
+    .line 87
+    if-eqz p2, :cond_6
+
+    .line 88
+    .line 89
+    if-eqz v0, :cond_9
+
+    .line 90
+    .line 91
+    check-cast p1, Lxo2;
+
+    .line 92
+    .line 93
+    iget-object p1, p1, Lxo2;->a:Lwo2;
+
+    .line 94
+    .line 95
+    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    .line 96
+    .line 97
+    .line 98
+    goto :goto_0
+
+    .line 99
+    :cond_6
+    instance-of p2, p1, Lfo1;
+
+    .line 100
+    .line 101
+    if-eqz p2, :cond_7
+
+    .line 102
+    .line 103
+    if-eqz v2, :cond_9
+
+    .line 104
+    .line 105
+    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 106
+    .line 107
+    .line 108
+    goto :goto_0
+
+    .line 109
+    :cond_7
+    instance-of p2, p1, Lgo1;
+
+    .line 110
+    .line 111
+    if-eqz p2, :cond_8
+
+    .line 112
+    .line 113
+    if-eqz v2, :cond_9
+
+    .line 114
+    .line 115
+    check-cast p1, Lgo1;
+
+    .line 116
+    .line 117
+    iget-object p1, p1, Lgo1;->a:Lfo1;
+
+    .line 118
+    .line 119
+    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    .line 120
+    .line 121
+    .line 122
+    goto :goto_0
+
+    .line 123
+    :cond_8
+    instance-of p2, p1, Leo1;
+
+    .line 124
+    .line 125
+    if-eqz p2, :cond_9
+
+    .line 126
+    .line 127
+    if-eqz v2, :cond_9
+
+    .line 128
+    .line 129
+    check-cast p1, Leo1;
+
+    .line 130
+    .line 131
+    iget-object p1, p1, Leo1;->a:Lfo1;
+
+    .line 132
+    .line 133
+    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    .line 134
+    .line 135
+    .line 136
+    :cond_9
+    :goto_0
+    iget-object p1, p0, Ldf3;->m:Lh04;
+
+    .line 137
+    .line 138
+    if-eqz p1, :cond_a
+
+    .line 139
+    .line 140
+    if-eqz v3, :cond_a
+
+    .line 141
+    .line 142
+    invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
+
+    .line 143
+    .line 144
+    .line 145
+    move-result p2
+
+    .line 146
+    xor-int/lit8 p2, p2, 0x1
+
+    .line 147
+    .line 148
+    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 149
+    .line 150
+    .line 151
+    move-result-object p2
+
+    .line 152
+    invoke-interface {p1, p2}, Lh04;->setValue(Ljava/lang/Object;)V
+
+    .line 153
+    .line 154
+    .line 155
+    :cond_a
+    iget-object p1, p0, Ldf3;->n:Lh04;
+
+    .line 156
+    .line 157
+    if-eqz p1, :cond_b
+
+    .line 158
+    .line 159
+    if-eqz v1, :cond_b
+
+    .line 160
+    .line 161
+    invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
+
+    .line 162
+    .line 163
+    .line 164
+    move-result p2
+
+    .line 165
+    xor-int/lit8 p2, p2, 0x1
+
+    .line 166
+    .line 167
+    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 168
+    .line 169
+    .line 170
+    move-result-object p2
+
+    .line 171
+    invoke-interface {p1, p2}, Lh04;->setValue(Ljava/lang/Object;)V
+
+    .line 172
+    .line 173
+    .line 174
+    :cond_b
+    iget-object p1, p0, Ldf3;->o:Lh04;
+
+    .line 175
+    .line 176
+    if-eqz p1, :cond_c
+
+    .line 177
+    .line 178
+    if-eqz v0, :cond_c
+
+    .line 179
+    .line 180
+    invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
+
+    .line 181
+    .line 182
+    .line 183
+    move-result p2
+
+    .line 184
+    xor-int/lit8 p2, p2, 0x1
+
+    .line 185
+    .line 186
+    invoke-static {p2}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 187
+    .line 188
+    .line 189
+    move-result-object p2
+
+    .line 190
+    invoke-interface {p1, p2}, Lh04;->setValue(Ljava/lang/Object;)V
+
+    .line 191
+    .line 192
+    .line 193
+    :cond_c
+    iget-object p0, p0, Ldf3;->p:Lh04;
+
+    .line 194
+    .line 195
+    if-eqz p0, :cond_d
+
+    .line 196
+    .line 197
+    if-eqz v2, :cond_d
+
+    .line 198
+    .line 199
+    invoke-virtual {v2}, Ljava/util/ArrayList;->isEmpty()Z
+
+    .line 200
+    .line 201
+    .line 202
+    move-result p1
+
+    .line 203
+    xor-int/lit8 p1, p1, 0x1
+
+    .line 204
+    .line 205
+    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
+
+    .line 206
+    .line 207
+    .line 208
+    move-result-object p1
+
+    .line 209
+    invoke-interface {p0, p1}, Lh04;->setValue(Ljava/lang/Object;)V
+
+    .line 210
+    .line 211
+    .line 212
+    :cond_d
+    sget-object p0, Ll97;->a:Ll97;
+
+    .line 213
+    .line 214
+    return-object p0
 .end method

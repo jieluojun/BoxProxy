@@ -1,89 +1,86 @@
 .class public final Lj32;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Li32;
+.implements Lpl5;
 
 
-# instance fields
-.field public a:Z
+# static fields
+.field public static final a:Lj32;
 
-.field public b:Ll32;
 
-.field public c:Ll32;
+# direct methods
+.method static constructor <clinit>()V
+    .locals 1
 
-.field public d:Ll32;
+    .line 1
+    new-instance v0, Lj32;
 
-.field public e:Ll32;
+    .line 2
+    .line 3
+    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
 
-.field public f:Ll32;
+    .line 4
+    .line 5
+    .line 6
+    sput-object v0, Lj32;->a:Lj32;
 
-.field public g:Ll32;
-
-.field public h:Ll32;
-
-.field public i:Ll32;
-
-.field public j:Lp62;
-
-.field public k:Lp62;
-
-.field public l:Lga5;
+    .line 7
+    .line 8
+    return-void
+.end method
 
 
 # virtual methods
-.method public final a(Lw22;)V
-    .locals 0
+.method public final a(Lsw3;Z)Lsw3;
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lj32;->j:Lp62;
+    new-instance p0, Lk63;
 
     .line 2
     .line 3
-    return-void
+    const/high16 v0, 0x3f800000    # 1.0f
+
+    .line 4
+    .line 5
+    invoke-direct {p0, v0, p2}, Lk63;-><init>(FZ)V
+
+    .line 6
+    .line 7
+    .line 8
+    invoke-interface {p1, p0}, Lsw3;->a0(Lsw3;)Lsw3;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object p0
+
+    .line 12
+    return-object p0
 .end method
 
-.method public final b()Z
+.method public final b(Lsw3;)Lsw3;
     .locals 0
 
     .line 1
-    iget-boolean p0, p0, Lj32;->a:Z
+    new-instance p0, Lyb7;
 
     .line 2
     .line 3
-    return p0
-.end method
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-.method public final c(Z)V
-    .locals 0
+    .line 4
+    .line 5
+    .line 6
+    invoke-interface {p1, p0}, Lsw3;->a0(Lsw3;)Lsw3;
 
-    .line 1
-    iput-boolean p1, p0, Lj32;->a:Z
+    .line 7
+    .line 8
+    .line 9
+    move-result-object p0
 
-    .line 2
-    .line 3
-    return-void
-.end method
-
-.method public final d(Lga5;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lj32;->l:Lga5;
-
-    .line 2
-    .line 3
-    return-void
-.end method
-
-.method public final e(Lw22;)V
-    .locals 0
-
-    .line 1
-    iput-object p1, p0, Lj32;->k:Lp62;
-
-    .line 2
-    .line 3
-    return-void
+    .line 10
+    return-object p0
 .end method

@@ -1,46 +1,90 @@
 .class public final Llg6;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lgg1;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:Ljava/lang/Class;
-
-.field public final b:Ljava/lang/ref/WeakReference;
-
-.field public final c:Ltw1;
+.field public final synthetic b:B
 
 
 # direct methods
-.method public constructor <init>(Ltw1;Ljava/lang/Class;Luw1;)V
+.method public synthetic constructor <init>(Ljava/lang/Class;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p2, p0, Llg6;->b:B
 
     .line 2
     .line 3
-    .line 4
-    iput-object p2, p0, Llg6;->a:Ljava/lang/Class;
+    invoke-direct {p0, p1}, Lgg1;-><init>(Ljava/lang/Class;)V
 
+    .line 4
     .line 5
     .line 6
-    new-instance p2, Ljava/lang/ref/WeakReference;
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a(Ljava/util/Date;)Ljava/util/Date;
+    .locals 2
+
+    .line 1
+    iget-byte p0, p0, Llg6;->b:B
+
+    .line 2
+    .line 3
+    packed-switch p0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    new-instance p0, Ljava/sql/Timestamp;
 
     .line 7
     .line 8
-    invoke-direct {p2, p3}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
+    invoke-virtual {p1}, Ljava/util/Date;->getTime()J
 
     .line 9
     .line 10
     .line 11
-    iput-object p2, p0, Llg6;->b:Ljava/lang/ref/WeakReference;
+    move-result-wide v0
 
     .line 12
-    .line 13
-    iput-object p1, p0, Llg6;->c:Ltw1;
+    invoke-direct {p0, v0, v1}, Ljava/sql/Timestamp;-><init>(J)V
 
+    .line 13
     .line 14
     .line 15
-    return-void
+    return-object p0
+
+    .line 16
+    :pswitch_0
+    new-instance p0, Ljava/sql/Date;
+
+    .line 17
+    .line 18
+    invoke-virtual {p1}, Ljava/util/Date;->getTime()J
+
+    .line 19
+    .line 20
+    .line 21
+    move-result-wide v0
+
+    .line 22
+    invoke-direct {p0, v0, v1}, Ljava/sql/Date;-><init>(J)V
+
+    .line 23
+    .line 24
+    .line 25
+    return-object p0
+
+    .line 26
+    nop
+
+    .line 27
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

@@ -1,369 +1,247 @@
-.class public final enum Le55;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# static fields
-.field public static final m:Lb55;
-
-.field public static final enum n:Le55;
-
-.field public static final enum o:Le55;
-
-.field public static final enum p:Le55;
-
-.field public static final enum q:Le55;
-
-.field public static final enum r:Le55;
-
-.field public static final synthetic s:[Le55;
-
-.field public static final synthetic t:Lzv1;
+.class public final Le55;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final j:Ljava/lang/String;
+.field public final a:Ljava/lang/String;
 
-.field public final k:Ljava/lang/String;
+.field public final b:Ljava/lang/String;
 
-.field public final l:Ljava/util/Set;
+.field public final c:Ljava/util/Set;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 17
+.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/Set;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Le55;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    const-string v6, ".yaml"
+    .line 4
+    iput-object p1, p0, Le55;->a:Ljava/lang/String;
+
+    .line 5
+    .line 6
+    iput-object p2, p0, Le55;->b:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    iput-object p3, p0, Le55;->c:Ljava/util/Set;
+
+    .line 9
+    .line 10
+    return-void
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 2
+
+    .line 1
+    if-eq p0, p1, :cond_1
+
+    .line 2
+    .line 3
+    instance-of v0, p1, Le55;
 
     .line 4
     .line 5
-    const-string v7, ".yml"
+    if-eqz v0, :cond_0
 
     .line 6
     .line 7
-    filled-new-array {v6, v7}, [Ljava/lang/String;
+    check-cast p1, Le55;
 
     .line 8
     .line 9
-    .line 10
-    move-result-object v1
+    iget-object v0, p0, Le55;->a:Ljava/lang/String;
 
+    .line 10
     .line 11
-    invoke-static {v1}, Lpw;->M0([Ljava/lang/Object;)Ljava/util/Set;
+    iget-object v1, p1, Le55;->a:Ljava/lang/String;
 
     .line 12
     .line 13
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
     .line 14
-    move-result-object v5
-
     .line 15
-    const-string v1, "Mihomo"
-
     .line 16
+    move-result v0
+
     .line 17
-    const/4 v2, 0x0
+    if-eqz v0, :cond_0
 
     .line 18
-    const-string v3, "mihomo"
-
     .line 19
+    iget-object v0, p0, Le55;->b:Ljava/lang/String;
+
     .line 20
-    const-string v4, "mihomo"
-
     .line 21
-    .line 22
-    invoke-direct/range {v0 .. v5}, Le55;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Set;)V
+    iget-object v1, p1, Le55;->b:Ljava/lang/String;
 
+    .line 22
     .line 23
+    invoke-virtual {v0, v1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
     .line 24
     .line 25
-    sput-object v0, Le55;->n:Le55;
-
     .line 26
+    move-result v0
+
     .line 27
-    new-instance v8, Le55;
+    if-eqz v0, :cond_0
 
     .line 28
     .line 29
-    const-string v1, ".jsonc"
+    iget-object p0, p0, Le55;->c:Ljava/util/Set;
 
     .line 30
     .line 31
-    const-string v2, ".json"
+    iget-object p1, p1, Le55;->c:Ljava/util/Set;
 
     .line 32
     .line 33
-    filled-new-array {v2, v1, v6, v7}, [Ljava/lang/String;
+    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
 
     .line 34
     .line 35
     .line 36
-    move-result-object v1
+    move-result p0
 
     .line 37
-    invoke-static {v1}, Lpw;->M0([Ljava/lang/Object;)Ljava/util/Set;
+    if-nez p0, :cond_1
 
     .line 38
     .line 39
+    :cond_0
+    const/4 p0, 0x0
+
     .line 40
-    move-result-object v13
+    return p0
 
     .line 41
-    const-string v9, "SingBox"
+    :cond_1
+    const/4 p0, 0x1
 
     .line 42
-    .line 43
-    const/4 v10, 0x1
-
-    .line 44
-    const-string v11, "sing-box"
-
-    .line 45
-    .line 46
-    const-string v12, "sing-box"
-
-    .line 47
-    .line 48
-    invoke-direct/range {v8 .. v13}, Le55;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Set;)V
-
-    .line 49
-    .line 50
-    .line 51
-    sput-object v8, Le55;->o:Le55;
-
-    .line 52
-    .line 53
-    new-instance v9, Le55;
-
-    .line 54
-    .line 55
-    const-string v13, "xray"
-
-    .line 56
-    .line 57
-    invoke-static {v2}, Lgj3;->e0(Ljava/lang/Object;)Ljava/util/Set;
-
-    .line 58
-    .line 59
-    .line 60
-    move-result-object v14
-
-    .line 61
-    const-string v10, "Xray"
-
-    .line 62
-    .line 63
-    const/4 v11, 0x2
-
-    .line 64
-    const-string v12, "xray"
-
-    .line 65
-    .line 66
-    invoke-direct/range {v9 .. v14}, Le55;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Set;)V
-
-    .line 67
-    .line 68
-    .line 69
-    sput-object v9, Le55;->p:Le55;
-
-    .line 70
-    .line 71
-    new-instance v10, Le55;
-
-    .line 72
-    .line 73
-    const-string v14, "v2fly"
-
-    .line 74
-    .line 75
-    invoke-static {v2}, Lgj3;->e0(Ljava/lang/Object;)Ljava/util/Set;
-
-    .line 76
-    .line 77
-    .line 78
-    move-result-object v15
-
-    .line 79
-    const-string v11, "V2fly"
-
-    .line 80
-    .line 81
-    const/4 v12, 0x3
-
-    .line 82
-    const-string v13, "v2fly"
-
-    .line 83
-    .line 84
-    invoke-direct/range {v10 .. v15}, Le55;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Set;)V
-
-    .line 85
-    .line 86
-    .line 87
-    sput-object v10, Le55;->q:Le55;
-
-    .line 88
-    .line 89
-    new-instance v11, Le55;
-
-    .line 90
-    .line 91
-    filled-new-array {v6, v7}, [Ljava/lang/String;
-
-    .line 92
-    .line 93
-    .line 94
-    move-result-object v1
-
-    .line 95
-    invoke-static {v1}, Lpw;->M0([Ljava/lang/Object;)Ljava/util/Set;
-
-    .line 96
-    .line 97
-    .line 98
-    move-result-object v16
-
-    .line 99
-    const-string v12, "Hysteria"
-
-    .line 100
-    .line 101
-    const/4 v13, 0x4
-
-    .line 102
-    const-string v14, "hysteria"
-
-    .line 103
-    .line 104
-    const-string v15, "hysteria"
-
-    .line 105
-    .line 106
-    invoke-direct/range {v11 .. v16}, Le55;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Set;)V
-
-    .line 107
-    .line 108
-    .line 109
-    sput-object v11, Le55;->r:Le55;
-
-    .line 110
-    .line 111
-    filled-new-array {v0, v8, v9, v10, v11}, [Le55;
-
-    .line 112
-    .line 113
-    .line 114
-    move-result-object v0
-
-    .line 115
-    sput-object v0, Le55;->s:[Le55;
-
-    .line 116
-    .line 117
-    new-instance v1, Lzv1;
-
-    .line 118
-    .line 119
-    invoke-direct {v1, v0}, Lzv1;-><init>([Ljava/lang/Enum;)V
-
-    .line 120
-    .line 121
-    .line 122
-    sput-object v1, Le55;->t:Lzv1;
-
-    .line 123
-    .line 124
-    new-instance v0, Lb55;
-
-    .line 125
-    .line 126
-    const/4 v1, 0x2
-
-    .line 127
-    invoke-direct {v0, v1}, Lb55;-><init>(B)V
-
-    .line 128
-    .line 129
-    .line 130
-    sput-object v0, Le55;->m:Lb55;
-
-    .line 131
-    .line 132
-    return-void
+    return p0
 .end method
 
-.method public constructor <init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/util/Set;)V
-    .locals 0
+.method public final hashCode()I
+    .locals 3
 
     .line 1
-    invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    iget-object v0, p0, Le55;->a:Ljava/lang/String;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p3, p0, Le55;->j:Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
+    .line 4
     .line 5
     .line 6
-    iput-object p4, p0, Le55;->k:Ljava/lang/String;
+    move-result v0
 
     .line 7
-    .line 8
-    iput-object p5, p0, Le55;->l:Ljava/util/Set;
+    const/16 v1, 0x1f
 
+    .line 8
     .line 9
+    mul-int/2addr v0, v1
+
     .line 10
-    return-void
+    iget-object v2, p0, Le55;->b:Ljava/lang/String;
+
+    .line 11
+    .line 12
+    invoke-static {v0, v2, v1}, Llj6;->f(ILjava/lang/String;I)I
+
+    .line 13
+    .line 14
+    .line 15
+    move-result v0
+
+    .line 16
+    iget-object p0, p0, Le55;->c:Ljava/util/Set;
+
+    .line 17
+    .line 18
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+
+    .line 19
+    .line 20
+    .line 21
+    move-result p0
+
+    .line 22
+    add-int/2addr p0, v0
+
+    .line 23
+    return p0
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Le55;
-    .locals 1
+.method public final toString()Ljava/lang/String;
+    .locals 5
 
     .line 1
-    const-class v0, Le55;
+    const-string v0, ", resolvedName="
 
     .line 2
     .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    const-string v1, ", aliases="
 
     .line 4
     .line 5
+    const-string v2, "MeasurementTarget(apiName="
+
     .line 6
+    .line 7
+    iget-object v3, p0, Le55;->a:Ljava/lang/String;
+
+    .line 8
+    .line 9
+    iget-object v4, p0, Le55;->b:Ljava/lang/String;
+
+    .line 10
+    .line 11
+    invoke-static {v2, v3, v0, v4, v1}, Lrf6;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object v0
+
+    .line 15
+    iget-object p0, p0, Le55;->c:Ljava/util/Set;
+
+    .line 16
+    .line 17
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    .line 18
+    .line 19
+    .line 20
+    const-string p0, ")"
+
+    .line 21
+    .line 22
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    .line 23
+    .line 24
+    .line 25
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    .line 26
+    .line 27
+    .line 28
     move-result-object p0
 
-    .line 7
-    check-cast p0, Le55;
-
-    .line 8
-    .line 9
+    .line 29
     return-object p0
-.end method
-
-.method public static values()[Le55;
-    .locals 1
-
-    .line 1
-    sget-object v0, Le55;->s:[Le55;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
-
-    .line 7
-    check-cast v0, [Le55;
-
-    .line 8
-    .line 9
-    return-object v0
 .end method

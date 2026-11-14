@@ -1,208 +1,195 @@
-.class public abstract Lvk6;
+.class public final synthetic Lvk6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt72;
 
 
-# static fields
-.field public static final a:Ljava/lang/String;
+# instance fields
+.field public final synthetic i:B
 
-.field public static final b:J
+.field public final synthetic j:Lpn2;
 
-.field public static final c:I
+.field public final synthetic k:Z
 
-.field public static final d:I
+.field public final synthetic l:Le72;
 
-.field public static final e:J
-
-.field public static final f:Liw1;
+.field public final synthetic m:Lsw3;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 8
+.method public synthetic constructor <init>(Lpn2;ZLe72;Lsw3;IB)V
+    .locals 0
 
     .line 1
-    const-string v0, "kotlinx.coroutines.scheduler.default.name"
+    iput-byte p6, p0, Lvk6;->i:B
 
     .line 2
     .line 3
-    sget v1, Lli6;->a:I
+    iput-object p1, p0, Lvk6;->j:Lpn2;
 
     .line 4
     .line 5
-    :try_start_0
-    invoke-static {v0}, Ljava/lang/System;->getProperty(Ljava/lang/String;)Ljava/lang/String;
+    iput-boolean p2, p0, Lvk6;->k:Z
 
     .line 6
     .line 7
-    .line 8
-    move-result-object v0
-    :try_end_0
-    .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
+    iput-object p3, p0, Lvk6;->l:Le72;
 
+    .line 8
     .line 9
-    goto :goto_0
+    iput-object p4, p0, Lvk6;->m:Lsw3;
 
     .line 10
-    :catch_0
-    const/4 v0, 0x0
-
     .line 11
-    :goto_0
-    if-nez v0, :cond_0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 12
     .line 13
-    const-string v0, "DefaultDispatcher"
-
     .line 14
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 16
+
+    .line 1
+    move-object/from16 v0, p0
+
+    .line 2
+    .line 3
+    iget-byte v1, v0, Lvk6;->i:B
+
+    .line 4
+    .line 5
+    sget-object v2, Ll97;->a:Ll97;
+
+    .line 6
+    .line 7
+    const/16 v3, 0xc01
+
+    .line 8
+    .line 9
+    packed-switch v1, :pswitch_data_0
+
+    .line 10
+    .line 11
+    .line 12
+    move-object/from16 v8, p1
+
+    .line 13
+    .line 14
+    check-cast v8, Lt82;
+
     .line 15
-    :cond_0
-    sput-object v0, Lvk6;->a:Ljava/lang/String;
-
     .line 16
+    move-object/from16 v1, p2
+
     .line 17
-    const-wide/16 v4, 0x1
-
     .line 18
-    .line 19
-    const-wide v6, 0x7fffffffffffffffL
+    check-cast v1, Ljava/lang/Integer;
 
+    .line 19
     .line 20
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 21
     .line 22
     .line 23
-    .line 24
-    const-string v1, "kotlinx.coroutines.scheduler.resolution.ns"
+    invoke-static {v3}, Lp06;->W(I)I
 
+    .line 24
     .line 25
     .line 26
-    const-wide/32 v2, 0x186a0
+    move-result v9
 
     .line 27
+    iget-object v4, v0, Lvk6;->j:Lpn2;
+
     .line 28
     .line 29
-    invoke-static/range {v1 .. v7}, Lei3;->X(Ljava/lang/String;JJJ)J
+    iget-boolean v5, v0, Lvk6;->k:Z
 
     .line 30
     .line 31
-    .line 32
-    move-result-wide v0
+    iget-object v6, v0, Lvk6;->l:Le72;
 
+    .line 32
     .line 33
-    sput-wide v0, Lvk6;->b:J
+    iget-object v7, v0, Lvk6;->m:Lsw3;
 
     .line 34
     .line 35
-    sget v0, Lli6;->a:I
+    invoke-static/range {v4 .. v9}, Lzb3;->z(Lpn2;ZLe72;Lsw3;Lt82;I)V
 
     .line 36
     .line 37
-    const/4 v1, 0x2
-
     .line 38
-    if-ge v0, v1, :cond_1
+    return-object v2
 
     .line 39
-    .line 40
-    move v0, v1
+    :pswitch_0
+    move-object/from16 v14, p1
 
+    .line 40
     .line 41
-    :cond_1
-    const/16 v1, 0x8
+    check-cast v14, Lt82;
 
     .line 42
     .line 43
-    const-string v2, "kotlinx.coroutines.scheduler.core.pool.size"
+    move-object/from16 v1, p2
 
     .line 44
     .line 45
-    invoke-static {v0, v2, v1}, Lei3;->Y(ILjava/lang/String;I)I
+    check-cast v1, Ljava/lang/Integer;
 
     .line 46
     .line 47
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
     .line 48
-    move-result v0
-
     .line 49
-    sput v0, Lvk6;->c:I
-
     .line 50
-    .line 51
-    const v0, 0x1ffffe
+    invoke-static {v3}, Lp06;->W(I)I
 
+    .line 51
     .line 52
     .line 53
+    move-result v15
+
     .line 54
-    const/4 v1, 0x4
+    iget-object v10, v0, Lvk6;->j:Lpn2;
 
     .line 55
-    const-string v2, "kotlinx.coroutines.scheduler.max.pool.size"
-
     .line 56
-    .line 57
-    invoke-static {v0, v2, v1}, Lei3;->Y(ILjava/lang/String;I)I
+    iget-boolean v11, v0, Lvk6;->k:Z
 
+    .line 57
     .line 58
+    iget-object v12, v0, Lvk6;->l:Le72;
+
     .line 59
     .line 60
-    move-result v0
+    iget-object v13, v0, Lvk6;->m:Lsw3;
 
     .line 61
-    sput v0, Lvk6;->d:I
-
     .line 62
-    .line 63
-    const-wide/16 v4, 0x1
+    invoke-static/range {v10 .. v15}, Llb3;->J(Lpn2;ZLe72;Lsw3;Lt82;I)V
 
+    .line 63
     .line 64
     .line 65
-    const-wide v6, 0x7fffffffffffffffL
+    return-object v2
 
     .line 66
+    nop
+
     .line 67
-    .line 68
-    .line 69
-    .line 70
-    const-string v1, "kotlinx.coroutines.scheduler.keep.alive.sec"
-
-    .line 71
-    .line 72
-    const-wide/16 v2, 0x3c
-
-    .line 73
-    .line 74
-    invoke-static/range {v1 .. v7}, Lei3;->X(Ljava/lang/String;JJJ)J
-
-    .line 75
-    .line 76
-    .line 77
-    move-result-wide v0
-
-    .line 78
-    sget-object v2, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
-
-    .line 79
-    .line 80
-    invoke-virtual {v2, v0, v1}, Ljava/util/concurrent/TimeUnit;->toNanos(J)J
-
-    .line 81
-    .line 82
-    .line 83
-    move-result-wide v0
-
-    .line 84
-    sput-wide v0, Lvk6;->e:J
-
-    .line 85
-    .line 86
-    sget-object v0, Liw1;->y:Liw1;
-
-    .line 87
-    .line 88
-    sput-object v0, Lvk6;->f:Liw1;
-
-    .line 89
-    .line 90
-    return-void
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

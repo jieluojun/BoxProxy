@@ -1,14 +1,14 @@
-.class public abstract Lxq1;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lxq1;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
-.field public static final a:F
+.field public static final enum i:Lxq1;
 
-.field public static final b:D
+.field public static final enum j:Lxq1;
 
-.field public static final c:D
+.field public static final synthetic k:[Lxq1;
 
 
 # direct methods
@@ -16,65 +16,103 @@
     .locals 4
 
     .line 1
-    invoke-static {}, Landroid/view/ViewConfiguration;->getScrollFriction()F
+    new-instance v0, Lxq1;
 
     .line 2
     .line 3
-    .line 4
-    move-result v0
+    const-string v1, "PHONE"
 
+    .line 4
     .line 5
-    sput v0, Lxq1;->a:F
+    const/4 v2, 0x0
 
     .line 6
-    .line 7
-    const-wide v0, 0x3fe8f5c28f5c28f6L    # 0.78
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 7
     .line 8
     .line 9
+    sput-object v0, Lxq1;->i:Lxq1;
+
     .line 10
     .line 11
-    .line 12
-    invoke-static {v0, v1}, Ljava/lang/Math;->log(D)D
+    new-instance v1, Lxq1;
 
+    .line 12
     .line 13
+    const-string v2, "WATCH"
+
     .line 14
     .line 15
-    move-result-wide v0
+    const/4 v3, 0x1
 
     .line 16
-    const-wide v2, 0x3feccccccccccccdL    # 0.9
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 17
     .line 18
     .line 19
+    sput-object v1, Lxq1;->j:Lxq1;
+
     .line 20
     .line 21
-    invoke-static {v2, v3}, Ljava/lang/Math;->log(D)D
+    filled-new-array {v0, v1}, [Lxq1;
 
     .line 22
     .line 23
     .line 24
-    move-result-wide v2
+    move-result-object v0
 
     .line 25
-    div-double/2addr v0, v2
+    sput-object v0, Lxq1;->k:[Lxq1;
 
     .line 26
-    sput-wide v0, Lxq1;->b:D
-
     .line 27
-    .line 28
-    const-wide/high16 v2, 0x3ff0000000000000L    # 1.0
-
-    .line 29
-    .line 30
-    sub-double/2addr v0, v2
-
-    .line 31
-    sput-wide v0, Lxq1;->c:D
-
-    .line 32
-    .line 33
     return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lxq1;
+    .locals 1
+
+    .line 1
+    const-class v0, Lxq1;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lxq1;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Lxq1;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lxq1;->k:[Lxq1;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lxq1;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

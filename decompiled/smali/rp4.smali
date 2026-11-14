@@ -1,203 +1,151 @@
-.class public abstract Lrp4;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class final Lrp4;
+.super Lbx3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final a:Ljava/lang/reflect/Method;
+# annotations
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Lbx3;"
+    }
+.end annotation
 
-.field public static final b:Ljava/lang/reflect/Method;
+
+# instance fields
+.field public final i:Lqp4;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 10
+.method public constructor <init>(Lqp4;)V
+    .locals 0
 
     .line 1
-    const-class v0, Ljava/lang/Throwable;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Ljava/lang/Class;->getMethods()[Ljava/lang/reflect/Method;
+    .line 4
+    iput-object p1, p0, Lrp4;->i:Lqp4;
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()Lrw3;
+    .locals 1
+
+    .line 1
+    new-instance v0, Ltp4;
+
+    .line 2
+    .line 3
+    invoke-direct {v0}, Lrw3;-><init>()V
 
     .line 4
     .line 5
     .line 6
-    move-result-object v1
+    iget-object p0, p0, Lrp4;->i:Lqp4;
 
     .line 7
-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 8
+    iput-object p0, v0, Ltp4;->w:Lqp4;
+
     .line 9
     .line 10
-    array-length v2, v1
+    return-object v0
+.end method
 
-    .line 11
-    const/4 v3, 0x0
+.method public final b(Lrw3;)V
+    .locals 0
 
-    .line 12
-    move v4, v3
+    .line 1
+    check-cast p1, Ltp4;
 
-    .line 13
-    :goto_0
-    const/4 v5, 0x0
+    .line 2
+    .line 3
+    iget-object p0, p0, Lrp4;->i:Lqp4;
 
-    .line 14
-    if-ge v4, v2, :cond_2
+    .line 4
+    .line 5
+    iput-object p0, p1, Ltp4;->w:Lqp4;
 
-    .line 15
-    .line 16
-    aget-object v6, v1, v4
+    .line 6
+    .line 7
+    return-void
+.end method
 
-    .line 17
-    .line 18
-    invoke-virtual {v6}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
 
-    .line 19
-    .line 20
-    .line 21
-    move-result-object v7
+    .line 1
+    instance-of v0, p1, Lrp4;
 
-    .line 22
-    const-string v8, "addSuppressed"
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
 
-    .line 23
-    .line 24
-    invoke-static {v7, v8}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .line 4
+    .line 5
+    check-cast p1, Lrp4;
 
-    .line 25
-    .line 26
-    .line 27
-    move-result v7
-
-    .line 28
-    if-eqz v7, :cond_1
-
-    .line 29
-    .line 30
-    invoke-virtual {v6}, Ljava/lang/reflect/Method;->getParameterTypes()[Ljava/lang/Class;
-
-    .line 31
-    .line 32
-    .line 33
-    move-result-object v7
-
-    .line 34
-    invoke-virtual {v7}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 35
-    .line 36
-    .line 37
-    array-length v8, v7
-
-    .line 38
-    const/4 v9, 0x1
-
-    .line 39
-    if-ne v8, v9, :cond_0
-
-    .line 40
-    .line 41
-    aget-object v7, v7, v3
-
-    .line 42
-    .line 43
-    goto :goto_1
-
-    .line 44
-    :cond_0
-    move-object v7, v5
-
-    .line 45
-    :goto_1
-    invoke-static {v7, v0}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 46
-    .line 47
-    .line 48
-    move-result v7
-
-    .line 49
-    if-eqz v7, :cond_1
-
-    .line 50
-    .line 51
-    goto :goto_2
-
-    .line 52
-    :cond_1
-    add-int/lit8 v4, v4, 0x1
-
-    .line 53
-    .line 54
+    .line 6
+    .line 7
     goto :goto_0
 
-    .line 55
-    :cond_2
-    move-object v6, v5
+    .line 8
+    :cond_0
+    const/4 p1, 0x0
 
-    .line 56
-    :goto_2
-    sput-object v6, Lrp4;->a:Ljava/lang/reflect/Method;
+    .line 9
+    :goto_0
+    if-nez p1, :cond_1
 
-    .line 57
-    .line 58
-    array-length v0, v1
+    .line 10
+    .line 11
+    const/4 p0, 0x0
 
-    .line 59
-    :goto_3
-    if-ge v3, v0, :cond_4
+    .line 12
+    return p0
 
-    .line 60
-    .line 61
-    aget-object v2, v1, v3
+    .line 13
+    :cond_1
+    iget-object p0, p0, Lrp4;->i:Lqp4;
 
-    .line 62
-    .line 63
-    invoke-virtual {v2}, Ljava/lang/reflect/Method;->getName()Ljava/lang/String;
+    .line 14
+    .line 15
+    iget-object p1, p1, Lrp4;->i:Lqp4;
 
-    .line 64
-    .line 65
-    .line 66
-    move-result-object v4
+    .line 16
+    .line 17
+    invoke-static {p0, p1}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
 
-    .line 67
-    const-string v6, "getSuppressed"
+    .line 18
+    .line 19
+    .line 20
+    move-result p0
 
-    .line 68
-    .line 69
-    invoke-static {v4, v6}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    .line 21
+    return p0
+.end method
 
-    .line 70
-    .line 71
-    .line 72
-    move-result v4
+.method public final hashCode()I
+    .locals 0
 
-    .line 73
-    if-eqz v4, :cond_3
+    .line 1
+    iget-object p0, p0, Lrp4;->i:Lqp4;
 
-    .line 74
-    .line 75
-    move-object v5, v2
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    .line 76
-    goto :goto_4
+    .line 4
+    .line 5
+    .line 6
+    move-result p0
 
-    .line 77
-    :cond_3
-    add-int/lit8 v3, v3, 0x1
-
-    .line 78
-    .line 79
-    goto :goto_3
-
-    .line 80
-    :cond_4
-    :goto_4
-    sput-object v5, Lrp4;->b:Ljava/lang/reflect/Method;
-
-    .line 81
-    .line 82
-    return-void
+    .line 7
+    return p0
 .end method

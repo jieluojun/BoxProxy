@@ -1,275 +1,220 @@
-.class public final synthetic Lgp;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.class public final Lgp;
+.super Landroidx/appcompat/widget/ContentFrameLayout;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Landroid/content/Context;
+.field public final synthetic q:Lip;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/content/Context;B)V
+.method public constructor <init>(Lip;Lo91;)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lgp;->j:B
+    iput-object p1, p0, Lgp;->q:Lip;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lgp;->k:Landroid/content/Context;
+    invoke-direct {p0, p2}, Landroidx/appcompat/widget/ContentFrameLayout;-><init>(Landroid/content/Context;)V
 
     .line 4
     .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
     .line 6
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 10
+.method public final dispatchKeyEvent(Landroid/view/KeyEvent;)Z
+    .locals 1
 
     .line 1
-    iget-byte v0, p0, Lgp;->j:B
+    iget-object v0, p0, Lgp;->q:Lip;
 
     .line 2
     .line 3
-    iget-object p0, p0, Lgp;->k:Landroid/content/Context;
+    invoke-virtual {v0, p1}, Lip;->x(Landroid/view/KeyEvent;)Z
 
     .line 4
     .line 5
-    packed-switch v0, :pswitch_data_0
-
     .line 6
+    move-result v0
+
     .line 7
+    if-nez v0, :cond_0
+
     .line 8
-    new-instance v0, Lru4;
-
     .line 9
-    .line 10
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    invoke-super {p0, p1}, Landroid/view/View;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
+    .line 10
     .line 11
     .line 12
+    move-result p0
+
     .line 13
-    sget-object v1, Lyk6;->S:Ljc3;
+    if-nez p0, :cond_0
 
     .line 14
     .line 15
-    const/4 v2, 0x0
+    const/4 p0, 0x0
 
     .line 16
-    invoke-static {p0, v0, v1, v2}, Lyk6;->P(Landroid/content/Context;Ljava/util/concurrent/Executor;Ltu4;Z)V
+    return p0
 
     .line 17
-    .line 18
-    .line 19
-    return-void
+    :cond_0
+    const/4 p0, 0x1
 
+    .line 18
+    return p0
+.end method
+
+.method public final onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 3
+
+    .line 1
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result v0
+
+    .line 5
+    if-nez v0, :cond_1
+
+    .line 6
+    .line 7
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
+
+    .line 8
+    .line 9
+    .line 10
+    move-result v0
+
+    .line 11
+    float-to-int v0, v0
+
+    .line 12
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
+
+    .line 13
+    .line 14
+    .line 15
+    move-result v1
+
+    .line 16
+    float-to-int v1, v1
+
+    .line 17
+    const/4 v2, -0x5
+
+    .line 18
+    if-lt v0, v2, :cond_0
+
+    .line 19
     .line 20
-    :pswitch_0
-    new-instance v3, Ljava/util/concurrent/ThreadPoolExecutor;
+    if-lt v1, v2, :cond_0
 
     .line 21
     .line 22
-    new-instance v9, Ljava/util/concurrent/LinkedBlockingQueue;
+    invoke-virtual {p0}, Landroid/view/View;->getWidth()I
 
     .line 23
     .line 24
-    invoke-direct {v9}, Ljava/util/concurrent/LinkedBlockingQueue;-><init>()V
-
     .line 25
-    .line 26
-    .line 27
-    const/4 v4, 0x0
+    move-result v2
 
+    .line 26
+    add-int/lit8 v2, v2, 0x5
+
+    .line 27
     .line 28
-    const/4 v5, 0x1
+    if-gt v0, v2, :cond_0
 
     .line 29
-    const-wide/16 v6, 0x0
-
     .line 30
-    .line 31
-    sget-object v8, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+    invoke-virtual {p0}, Landroid/view/View;->getHeight()I
 
+    .line 31
     .line 32
     .line 33
-    invoke-direct/range {v3 .. v9}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;)V
+    move-result v0
 
     .line 34
+    add-int/lit8 v0, v0, 0x5
+
     .line 35
     .line 36
-    new-instance v0, Lgp;
+    if-le v1, v0, :cond_1
 
     .line 37
     .line 38
-    const/4 v1, 0x3
+    :cond_0
+    const/4 p1, 0x0
 
     .line 39
-    invoke-direct {v0, p0, v1}, Lgp;-><init>(Landroid/content/Context;B)V
+    iget-object p0, p0, Lgp;->q:Lip;
 
     .line 40
     .line 41
-    .line 42
-    invoke-virtual {v3, v0}, Ljava/util/concurrent/ThreadPoolExecutor;->execute(Ljava/lang/Runnable;)V
+    invoke-virtual {p0, p1}, Lip;->C(I)Lhp;
 
+    .line 42
     .line 43
     .line 44
+    move-result-object p1
+
     .line 45
-    return-void
+    const/4 v0, 0x1
 
     .line 46
-    :pswitch_1
-    invoke-static {p0}, Ljp;->p(Landroid/content/Context;)V
+    invoke-virtual {p0, p1, v0}, Lip;->v(Lhp;Z)V
 
     .line 47
     .line 48
     .line 49
-    return-void
+    return v0
 
     .line 50
-    :pswitch_2
-    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+    :cond_1
+    invoke-super {p0, p1}, Landroid/view/ViewGroup;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     .line 51
     .line 52
-    const/16 v1, 0x21
-
     .line 53
+    move-result p0
+
     .line 54
-    const/4 v2, 0x1
+    return p0
+.end method
 
-    .line 55
-    if-lt v0, v1, :cond_1
+.method public final setBackgroundResource(I)V
+    .locals 1
 
-    .line 56
-    .line 57
-    new-instance v0, Landroid/content/ComponentName;
+    .line 1
+    invoke-virtual {p0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    .line 58
-    .line 59
-    const-string v1, "androidx.appcompat.app.AppLocalesMetadataHolderService"
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
 
-    .line 60
-    .line 61
-    invoke-direct {v0, p0, v1}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/String;)V
+    .line 5
+    invoke-static {v0, p1}, Lwp;->D(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
-    .line 62
-    .line 63
-    .line 64
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+    .line 6
+    .line 7
+    .line 8
+    move-result-object p1
 
-    .line 65
-    .line 66
-    .line 67
-    move-result-object v1
+    .line 9
+    invoke-virtual {p0, p1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 68
-    invoke-virtual {v1, v0}, Landroid/content/pm/PackageManager;->getComponentEnabledSetting(Landroid/content/ComponentName;)I
-
-    .line 69
-    .line 70
-    .line 71
-    move-result v1
-
-    .line 72
-    if-eq v1, v2, :cond_1
-
-    .line 73
-    .line 74
-    invoke-static {}, Ljp;->b()Lmc3;
-
-    .line 75
-    .line 76
-    .line 77
-    move-result-object v1
-
-    .line 78
-    invoke-virtual {v1}, Lmc3;->b()Z
-
-    .line 79
-    .line 80
-    .line 81
-    move-result v1
-
-    .line 82
-    if-eqz v1, :cond_0
-
-    .line 83
-    .line 84
-    invoke-static {p0}, Lg61;->N(Landroid/content/Context;)Ljava/lang/String;
-
-    .line 85
-    .line 86
-    .line 87
-    move-result-object v1
-
-    .line 88
-    const-string v3, "locale"
-
-    .line 89
-    .line 90
-    invoke-virtual {p0, v3}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
-
-    .line 91
-    .line 92
-    .line 93
-    move-result-object v3
-
-    .line 94
-    if-eqz v3, :cond_0
-
-    .line 95
-    .line 96
-    invoke-static {v1}, Landroid/os/LocaleList;->forLanguageTags(Ljava/lang/String;)Landroid/os/LocaleList;
-
-    .line 97
-    .line 98
-    .line 99
-    move-result-object v1
-
-    .line 100
-    invoke-static {v3, v1}, Lc5;->j(Ljava/lang/Object;Landroid/os/LocaleList;)V
-
-    .line 101
-    .line 102
-    .line 103
-    :cond_0
-    invoke-virtual {p0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
-
-    .line 104
-    .line 105
-    .line 106
-    move-result-object p0
-
-    .line 107
-    invoke-virtual {p0, v0, v2, v2}, Landroid/content/pm/PackageManager;->setComponentEnabledSetting(Landroid/content/ComponentName;II)V
-
-    .line 108
-    .line 109
-    .line 110
-    :cond_1
-    sput-boolean v2, Ljp;->o:Z
-
-    .line 111
-    .line 112
+    .line 10
+    .line 11
+    .line 12
     return-void
-
-    .line 113
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

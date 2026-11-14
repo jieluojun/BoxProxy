@@ -1,86 +1,91 @@
-.class public final Lsx2;
-.super Lh00;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lsx2;
+.super Le82;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt72;
 
 
 # static fields
-.field public static final d:Ljava/util/regex/Pattern;
-
-.field public static final e:Ljava/util/regex/Pattern;
-
-.field public static final f:Ljava/util/regex/Pattern;
-
-.field public static final g:Ljava/util/regex/Pattern;
+.field public static final j:Lsx2;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 6
 
     .line 1
-    const-string v0, "^(?:true|false)$"
+    new-instance v0, Lsx2;
 
     .line 2
     .line 3
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    const-string v4, "maxIntrinsicHeight(I)I"
 
     .line 4
     .line 5
+    const/4 v5, 0x0
+
     .line 6
-    move-result-object v0
+    const/4 v1, 0x2
 
     .line 7
-    sput-object v0, Lsx2;->d:Ljava/util/regex/Pattern;
+    const-class v2, Lsn3;
 
     .line 8
     .line 9
-    const-string v0, "^(-?(0|[1-9][0-9]*)(\\.[0-9]*)?([eE][-+]?[0-9]+)?)|(-?\\.inf)|(\\.nan)$"
+    const-string v3, "maxIntrinsicHeight"
 
     .line 10
     .line 11
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
+    invoke-direct/range {v0 .. v5}, Le82;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
 
     .line 12
     .line 13
     .line 14
-    move-result-object v0
+    sput-object v0, Lsx2;->j:Lsx2;
 
     .line 15
-    sput-object v0, Lsx2;->e:Ljava/util/regex/Pattern;
-
     .line 16
-    .line 17
-    const-string v0, "^-?(0|[1-9][0-9]*)$"
-
-    .line 18
-    .line 19
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    .line 20
-    .line 21
-    .line 22
-    move-result-object v0
-
-    .line 23
-    sput-object v0, Lsx2;->f:Ljava/util/regex/Pattern;
-
-    .line 24
-    .line 25
-    const-string v0, "^(?:null)$"
-
-    .line 26
-    .line 27
-    invoke-static {v0}, Ljava/util/regex/Pattern;->compile(Ljava/lang/String;)Ljava/util/regex/Pattern;
-
-    .line 28
-    .line 29
-    .line 30
-    move-result-object v0
-
-    .line 31
-    sput-object v0, Lsx2;->g:Ljava/util/regex/Pattern;
-
-    .line 32
-    .line 33
     return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
+
+    .line 1
+    check-cast p1, Lsn3;
+
+    .line 2
+    .line 3
+    check-cast p2, Ljava/lang/Number;
+
+    .line 4
+    .line 5
+    invoke-virtual {p2}, Ljava/lang/Number;->intValue()I
+
+    .line 6
+    .line 7
+    .line 8
+    move-result p0
+
+    .line 9
+    invoke-interface {p1, p0}, Lsn3;->f(I)I
+
+    .line 10
+    .line 11
+    .line 12
+    move-result p0
+
+    .line 13
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    .line 14
+    .line 15
+    .line 16
+    move-result-object p0
+
+    .line 17
+    return-object p0
 .end method

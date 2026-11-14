@@ -1,6 +1,6 @@
 .class public Lcom/sun/jna/WeakMemoryHolder;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
@@ -76,60 +76,64 @@
     monitor-enter p0
 
     .line 2
-    :goto_0
-    :try_start_0
-    iget-object v0, p0, Lcom/sun/jna/WeakMemoryHolder;->referenceQueue:Ljava/lang/ref/ReferenceQueue;
+    goto :goto_1
 
     .line 3
-    .line 4
-    invoke-virtual {v0}, Ljava/lang/ref/ReferenceQueue;->poll()Ljava/lang/ref/Reference;
-
-    .line 5
-    .line 6
-    .line 7
-    move-result-object v0
-
-    .line 8
+    :goto_0
     if-eqz v0, :cond_0
 
+    .line 4
+    .line 5
+    :try_start_0
+    iget-object v1, p0, Lcom/sun/jna/WeakMemoryHolder;->backingMap:Ljava/util/IdentityHashMap;
+
+    .line 6
+    .line 7
+    invoke-virtual {v1, v0}, Ljava/util/IdentityHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 8
     .line 9
     .line 10
-    iget-object v1, p0, Lcom/sun/jna/WeakMemoryHolder;->backingMap:Ljava/util/IdentityHashMap;
+    :goto_1
+    iget-object v0, p0, Lcom/sun/jna/WeakMemoryHolder;->referenceQueue:Ljava/lang/ref/ReferenceQueue;
 
     .line 11
     .line 12
-    invoke-virtual {v1, v0}, Ljava/util/IdentityHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
-    :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+    invoke-virtual {v0}, Ljava/lang/ref/ReferenceQueue;->poll()Ljava/lang/ref/Reference;
 
     .line 13
     .line 14
     .line 15
-    goto :goto_0
+    move-result-object v0
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 16
-    :catchall_0
-    move-exception v0
+    goto :goto_0
 
     .line 17
-    goto :goto_1
-
-    .line 18
     :cond_0
     monitor-exit p0
 
-    .line 19
+    .line 18
     return-void
 
-    .line 20
-    :goto_1
+    .line 19
+    :goto_2
     :try_start_1
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 21
+    .line 20
     throw v0
+
+    .line 21
+    :catchall_0
+    move-exception v0
+
+    .line 22
+    goto :goto_2
 .end method
 
 .method public declared-synchronized put(Ljava/lang/Object;Lcom/sun/jna/Memory;)V
@@ -175,15 +179,19 @@
     return-void
 
     .line 19
-    :catchall_0
-    move-exception p1
-
-    .line 20
+    :goto_0
     :try_start_1
     monitor-exit p0
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 21
+    .line 20
     throw p1
+
+    .line 21
+    :catchall_0
+    move-exception p1
+
+    .line 22
+    goto :goto_0
 .end method

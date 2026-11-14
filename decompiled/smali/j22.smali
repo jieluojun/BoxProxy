@@ -1,27 +1,28 @@
 .class public final Lj22;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Luj3;
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:Luj3;
+.field public synthetic i:Ljava/lang/Object;
+
+.field public final synthetic j:Lnc;
+
+.field public k:I
 
 
 # direct methods
-.method public constructor <init>(Luj3;)V
+.method public constructor <init>(Lnc;Lp91;)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lj22;->j:Lnc;
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lj22;->j:Luj3;
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
+    .line 4
     .line 5
     .line 6
     return-void
@@ -29,59 +30,43 @@
 
 
 # virtual methods
-.method public final a()F
-    .locals 0
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    iget-object p0, p0, Lj22;->j:Luj3;
+    iput-object p1, p0, Lj22;->i:Ljava/lang/Object;
 
     .line 2
     .line 3
-    invoke-interface {p0}, Lyh1;->a()F
+    iget p1, p0, Lj22;->k:I
 
     .line 4
     .line 5
-    .line 6
-    move-result p0
+    const/high16 v0, -0x80000000
 
+    .line 6
     .line 7
-    return p0
-.end method
+    or-int/2addr p1, v0
 
-.method public final getLayoutDirection()Lt03;
-    .locals 0
+    .line 8
+    iput p1, p0, Lj22;->k:I
 
-    .line 1
-    iget-object p0, p0, Lj22;->j:Luj3;
+    .line 9
+    .line 10
+    iget-object p1, p0, Lj22;->j:Lnc;
 
-    .line 2
-    .line 3
-    invoke-interface {p0}, Lqt2;->getLayoutDirection()Lt03;
+    .line 11
+    .line 12
+    const/4 v0, 0x0
 
-    .line 4
-    .line 5
-    .line 6
+    .line 13
+    invoke-virtual {p1, v0, p0}, Lnc;->d(Ljava/lang/Object;Lp91;)Ljava/lang/Object;
+
+    .line 14
+    .line 15
+    .line 16
     move-result-object p0
 
-    .line 7
+    .line 17
     return-object p0
-.end method
-
-.method public final v()F
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lj22;->j:Luj3;
-
-    .line 2
-    .line 3
-    invoke-interface {p0}, Lyh1;->v()F
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
 .end method

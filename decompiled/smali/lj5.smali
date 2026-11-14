@@ -1,370 +1,163 @@
-.class public final synthetic Llj5;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lp62;
+.class public final Llj5;
+.super Landroid/view/ViewGroup;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final i:B
 
-.field public final synthetic k:Lgl5;
+.field public final j:Ljava/util/ArrayList;
+
+.field public final k:Ljava/util/ArrayList;
+
+.field public final l:Lkd2;
+
+.field public m:I
 
 
 # direct methods
-.method public synthetic constructor <init>(Lgl5;B)V
-    .locals 0
+.method public constructor <init>(Landroid/content/Context;)V
+    .locals 4
 
     .line 1
-    iput-byte p2, p0, Llj5;->j:B
+    invoke-direct {p0, p1}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
 
     .line 2
     .line 3
-    iput-object p1, p0, Llj5;->k:Lgl5;
-
     .line 4
+    const/4 v0, 0x5
+
     .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte v0, p0, Llj5;->i:B
 
     .line 6
     .line 7
+    new-instance v0, Ljava/util/ArrayList;
+
     .line 8
+    .line 9
+    invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
+
+    .line 10
+    .line 11
+    .line 12
+    iput-object v0, p0, Llj5;->j:Ljava/util/ArrayList;
+
+    .line 13
+    .line 14
+    new-instance v1, Ljava/util/ArrayList;
+
+    .line 15
+    .line 16
+    invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
+
+    .line 17
+    .line 18
+    .line 19
+    iput-object v1, p0, Llj5;->k:Ljava/util/ArrayList;
+
+    .line 20
+    .line 21
+    new-instance v2, Lkd2;
+
+    .line 22
+    .line 23
+    const/16 v3, 0x19
+
+    .line 24
+    .line 25
+    invoke-direct {v2, v3}, Lkd2;-><init>(B)V
+
+    .line 26
+    .line 27
+    .line 28
+    iput-object v2, p0, Llj5;->l:Lkd2;
+
+    .line 29
+    .line 30
+    const/4 v2, 0x0
+
+    .line 31
+    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->setClipChildren(Z)V
+
+    .line 32
+    .line 33
+    .line 34
+    new-instance v2, Lmj5;
+
+    .line 35
+    .line 36
+    invoke-direct {v2, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+
+    .line 37
+    .line 38
+    .line 39
+    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    .line 40
+    .line 41
+    .line 42
+    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 43
+    .line 44
+    .line 45
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 46
+    .line 47
+    .line 48
+    const/4 p1, 0x1
+
+    .line 49
+    iput p1, p0, Llj5;->m:I
+
+    .line 50
+    .line 51
+    const p1, 0x7f090070
+
+    .line 52
+    .line 53
+    .line 54
+    sget-object v0, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    .line 55
+    .line 56
+    invoke-virtual {p0, p1, v0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+
+    .line 57
+    .line 58
+    .line 59
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 2
+.method public final onLayout(ZIIII)V
+    .locals 0
 
     .line 1
-    iget-byte v0, p0, Llj5;->j:B
+    return-void
+.end method
+
+.method public final onMeasure(II)V
+    .locals 0
+
+    .line 1
+    const/4 p1, 0x0
 
     .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
+    invoke-virtual {p0, p1, p1}, Landroid/view/View;->setMeasuredDimension(II)V
 
+    .line 3
     .line 4
     .line 5
-    iget-object p0, p0, Llj5;->k:Lgl5;
+    return-void
+.end method
 
-    .line 6
-    .line 7
-    packed-switch v0, :pswitch_data_0
+.method public final requestLayout()V
+    .locals 0
 
-    .line 8
-    .line 9
-    .line 10
-    check-cast p1, Ljava/lang/String;
-
-    .line 11
-    .line 12
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 13
-    .line 14
-    .line 15
-    invoke-virtual {p0, p1}, Lgl5;->u(Ljava/lang/String;)V
-
-    .line 16
-    .line 17
-    .line 18
-    return-object v1
-
-    .line 19
-    :pswitch_0
-    check-cast p1, Ljava/lang/Boolean;
-
-    .line 20
-    .line 21
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    .line 22
-    .line 23
-    .line 24
-    move-result p1
-
-    .line 25
-    if-nez p1, :cond_0
-
-    .line 26
-    .line 27
-    iget-object p1, p0, Lgl5;->d:Ljf1;
-
-    .line 28
-    .line 29
-    const/4 v0, 0x0
-
-    .line 30
-    invoke-virtual {p1, v0}, Ljf1;->x(Z)V
-
-    .line 31
-    .line 32
-    .line 33
-    invoke-static {p0}, Lfl5;->i(Lgl5;)V
-
-    .line 34
-    .line 35
-    .line 36
-    :cond_0
-    return-object v1
-
-    .line 37
-    :pswitch_1
-    check-cast p1, Ljava/lang/String;
-
-    .line 38
-    .line 39
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 40
-    .line 41
-    .line 42
-    invoke-static {p0}, Lfl5;->r(Lgl5;)V
-
-    .line 43
-    .line 44
-    .line 45
-    return-object v1
-
-    .line 46
-    :pswitch_2
-    check-cast p1, Ljava/lang/String;
-
-    .line 47
-    .line 48
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 49
-    .line 50
-    .line 51
-    iget-object p0, p0, Lgl5;->d:Ljf1;
-
-    .line 52
-    .line 53
-    iget-object p0, p0, Ljf1;->l:Ljava/lang/Object;
-
-    .line 54
-    .line 55
-    check-cast p0, Lum4;
-
-    .line 56
-    .line 57
-    invoke-virtual {p0, p1}, Lum4;->setValue(Ljava/lang/Object;)V
-
-    .line 58
-    .line 59
-    .line 60
-    return-object v1
-
-    .line 61
-    :pswitch_3
-    check-cast p1, La45;
-
-    .line 62
-    .line 63
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 64
-    .line 65
-    .line 66
-    iget-object p1, p1, La45;->a:Ljava/lang/String;
-
-    .line 67
-    .line 68
-    invoke-virtual {p0, p1}, Lgl5;->u(Ljava/lang/String;)V
-
-    .line 69
-    .line 70
-    .line 71
-    return-object v1
-
-    .line 72
-    :pswitch_4
-    check-cast p1, Ljava/lang/String;
-
-    .line 73
-    .line 74
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 75
-    .line 76
-    .line 77
-    invoke-virtual {p0, p1}, Lgl5;->u(Ljava/lang/String;)V
-
-    .line 78
-    .line 79
-    .line 80
-    return-object v1
-
-    .line 81
-    :pswitch_5
-    check-cast p1, Ljava/lang/String;
-
-    .line 82
-    .line 83
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 84
-    .line 85
-    .line 86
-    iget-object p0, p0, Lgl5;->d:Ljf1;
-
-    .line 87
-    .line 88
-    iget-object p0, p0, Ljf1;->l:Ljava/lang/Object;
-
-    .line 89
-    .line 90
-    check-cast p0, Lum4;
-
-    .line 91
-    .line 92
-    invoke-virtual {p0, p1}, Lum4;->setValue(Ljava/lang/Object;)V
-
-    .line 93
-    .line 94
-    .line 95
-    return-object v1
-
-    .line 96
-    :pswitch_6
-    check-cast p1, Ldz2;
-
-    .line 97
-    .line 98
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 99
-    .line 100
-    .line 101
-    invoke-static {p0}, Lfl5;->r(Lgl5;)V
-
-    .line 102
-    .line 103
-    .line 104
-    return-object v1
-
-    .line 105
-    :pswitch_7
-    check-cast p1, La45;
-
-    .line 106
-    .line 107
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 108
-    .line 109
-    .line 110
-    iget-object p1, p1, La45;->a:Ljava/lang/String;
-
-    .line 111
-    .line 112
-    invoke-virtual {p0, p1}, Lgl5;->u(Ljava/lang/String;)V
-
-    .line 113
-    .line 114
-    .line 115
-    return-object v1
-
-    .line 116
-    :pswitch_8
-    check-cast p1, Ljava/lang/String;
-
-    .line 117
-    .line 118
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 119
-    .line 120
-    .line 121
-    invoke-virtual {p0, p1}, Lgl5;->u(Ljava/lang/String;)V
-
-    .line 122
-    .line 123
-    .line 124
-    return-object v1
-
-    .line 125
-    :pswitch_9
-    check-cast p1, La45;
-
-    .line 126
-    .line 127
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 128
-    .line 129
-    .line 130
-    iget-object p1, p1, La45;->a:Ljava/lang/String;
-
-    .line 131
-    .line 132
-    invoke-virtual {p0, p1}, Lgl5;->u(Ljava/lang/String;)V
-
-    .line 133
-    .line 134
-    .line 135
-    return-object v1
-
-    .line 136
-    :pswitch_a
-    check-cast p1, Ljava/lang/String;
-
-    .line 137
-    .line 138
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 139
-    .line 140
-    .line 141
-    invoke-virtual {p0, p1}, Lgl5;->u(Ljava/lang/String;)V
-
-    .line 142
-    .line 143
-    .line 144
-    return-object v1
-
-    .line 145
-    :pswitch_b
-    check-cast p1, La45;
-
-    .line 146
-    .line 147
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 148
-    .line 149
-    .line 150
-    iget-object p1, p1, La45;->a:Ljava/lang/String;
-
-    .line 151
-    .line 152
-    invoke-virtual {p0, p1}, Lgl5;->u(Ljava/lang/String;)V
-
-    .line 153
-    .line 154
-    .line 155
-    return-object v1
-
-    .line 156
-    nop
-
-    .line 157
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 1
+    return-void
 .end method

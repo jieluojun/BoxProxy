@@ -1,108 +1,151 @@
-.class public final Lih2;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lih2;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final a:Lac1;
+# static fields
+.field public static final enum i:Lih2;
 
-.field public final b:Ljava/lang/String;
+.field public static final enum j:Lih2;
 
-.field public final c:Ljava/lang/String;
+.field public static final enum k:Lih2;
 
-.field public final d:Leh2;
+.field public static final enum l:Lih2;
 
-.field public final e:Lum4;
+.field public static final enum m:Lih2;
 
-.field public final f:Lum4;
+.field public static final synthetic n:[Lih2;
 
 
 # direct methods
-.method public constructor <init>(Lac1;Ljava/lang/String;Ljava/lang/String;Leh2;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 7
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v0, Lih2;
 
     .line 2
     .line 3
+    const-string v1, "Good"
+
     .line 4
-    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
     .line 5
-    .line 6
-    .line 7
-    invoke-virtual {p3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const/4 v2, 0x0
 
+    .line 6
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 7
     .line 8
     .line 9
-    .line 10
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    sput-object v0, Lih2;->i:Lih2;
 
+    .line 10
     .line 11
+    new-instance v1, Lih2;
+
     .line 12
     .line 13
-    iput-object p1, p0, Lih2;->a:Lac1;
+    const-string v2, "Warning"
 
     .line 14
     .line 15
-    iput-object p2, p0, Lih2;->b:Ljava/lang/String;
+    const/4 v3, 0x1
 
     .line 16
-    .line 17
-    iput-object p3, p0, Lih2;->c:Ljava/lang/String;
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 17
     .line 18
     .line 19
-    iput-object p4, p0, Lih2;->d:Leh2;
+    sput-object v1, Lih2;->j:Lih2;
 
     .line 20
     .line 21
-    const/4 p1, 0x0
+    new-instance v2, Lih2;
 
     .line 22
-    invoke-static {p1}, Lne3;->G(Ljava/lang/Object;)Lum4;
-
     .line 23
+    const-string v3, "Error"
+
     .line 24
     .line 25
-    move-result-object p1
+    const/4 v4, 0x2
 
     .line 26
-    iput-object p1, p0, Lih2;->e:Lum4;
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     .line 27
     .line 28
-    sget-object p1, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
     .line 29
-    .line 30
-    invoke-static {p1}, Lne3;->G(Ljava/lang/Object;)Lum4;
+    sput-object v2, Lih2;->k:Lih2;
 
+    .line 30
     .line 31
+    new-instance v3, Lih2;
+
     .line 32
     .line 33
-    move-result-object p1
+    const-string v4, "Unavailable"
 
     .line 34
-    iput-object p1, p0, Lih2;->f:Lum4;
-
     .line 35
+    const/4 v5, 0x3
+
     .line 36
+    invoke-direct {v3, v4, v5}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 37
+    .line 38
+    .line 39
+    sput-object v3, Lih2;->l:Lih2;
+
+    .line 40
+    .line 41
+    new-instance v4, Lih2;
+
+    .line 42
+    .line 43
+    const-string v5, "Loading"
+
+    .line 44
+    .line 45
+    const/4 v6, 0x4
+
+    .line 46
+    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 47
+    .line 48
+    .line 49
+    sput-object v4, Lih2;->m:Lih2;
+
+    .line 50
+    .line 51
+    filled-new-array {v0, v1, v2, v3, v4}, [Lih2;
+
+    .line 52
+    .line 53
+    .line 54
+    move-result-object v0
+
+    .line 55
+    sput-object v0, Lih2;->n:[Lih2;
+
+    .line 56
+    .line 57
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()Luh2;
-    .locals 0
+.method public static valueOf(Ljava/lang/String;)Lih2;
+    .locals 1
 
     .line 1
-    iget-object p0, p0, Lih2;->e:Lum4;
+    const-class v0, Lih2;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Lum4;->getValue()Ljava/lang/Object;
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     .line 4
     .line 5
@@ -110,90 +153,32 @@
     move-result-object p0
 
     .line 7
-    check-cast p0, Luh2;
+    check-cast p0, Lih2;
 
     .line 8
     .line 9
     return-object p0
 .end method
 
-.method public final b(Luh2;Lp62;)V
-    .locals 2
+.method public static values()[Lih2;
+    .locals 1
 
     .line 1
-    iget-object v0, p0, Lih2;->f:Lum4;
+    sget-object v0, Lih2;->n:[Lih2;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Lum4;->getValue()Ljava/lang/Object;
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
 
     .line 4
     .line 5
     .line 6
-    move-result-object v1
+    move-result-object v0
 
     .line 7
-    check-cast v1, Ljava/lang/Boolean;
+    check-cast v0, [Lih2;
 
     .line 8
     .line 9
-    invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z
-
-    .line 10
-    .line 11
-    .line 12
-    move-result v1
-
-    .line 13
-    if-eqz v1, :cond_0
-
-    .line 14
-    .line 15
-    return-void
-
-    .line 16
-    :cond_0
-    iget-object v1, p0, Lih2;->e:Lum4;
-
-    .line 17
-    .line 18
-    invoke-virtual {v1, p1}, Lum4;->setValue(Ljava/lang/Object;)V
-
-    .line 19
-    .line 20
-    .line 21
-    sget-object p1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
-
-    .line 22
-    .line 23
-    invoke-virtual {v0, p1}, Lum4;->setValue(Ljava/lang/Object;)V
-
-    .line 24
-    .line 25
-    .line 26
-    new-instance p1, Ll12;
-
-    .line 27
-    .line 28
-    const/4 v0, 0x0
-
-    .line 29
-    const/4 v1, 0x3
-
-    .line 30
-    invoke-direct {p1, p2, p0, v0, v1}, Ll12;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ly81;B)V
-
-    .line 31
-    .line 32
-    .line 33
-    iget-object p0, p0, Lih2;->a:Lac1;
-
-    .line 34
-    .line 35
-    invoke-static {p0, v0, v0, p1, v1}, Lbn0;->H(Lac1;Lrb1;Ldc1;Lt62;I)Lcb6;
-
-    .line 36
-    .line 37
-    .line 38
-    return-void
+    return-object v0
 .end method

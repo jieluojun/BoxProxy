@@ -1,22 +1,19 @@
 .class public final Lbu6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Llr6;
 
 
 # instance fields
-.field public a:I
+.field public final synthetic a:Lfu6;
 
-.field public final b:Ljava/util/List;
-
-.field public c:I
-
-.field public d:I
-
-.field public e:I
+.field public final synthetic b:Z
 
 
 # direct methods
-.method public constructor <init>(ILjava/util/List;III)V
+.method public constructor <init>(Lfu6;Z)V
     .locals 0
 
     .line 1
@@ -25,235 +22,356 @@
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Lbu6;->a:I
+    iput-object p1, p0, Lbu6;->a:Lfu6;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lbu6;->b:Ljava/util/List;
+    iput-boolean p2, p0, Lbu6;->b:Z
 
     .line 7
     .line 8
-    iput p3, p0, Lbu6;->c:I
-
-    .line 9
-    .line 10
-    iput p4, p0, Lbu6;->d:I
-
-    .line 11
-    .line 12
-    iput p5, p0, Lbu6;->e:I
-
-    .line 13
-    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final clone()Ljava/lang/Object;
-    .locals 6
+.method public final a(JLw16;)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lbu6;
-
-    .line 2
-    .line 3
-    iget v1, p0, Lbu6;->a:I
-
-    .line 4
-    .line 5
-    iget v3, p0, Lbu6;->c:I
-
-    .line 6
-    .line 7
-    iget v4, p0, Lbu6;->d:I
-
-    .line 8
-    .line 9
-    iget v5, p0, Lbu6;->e:I
-
-    .line 10
-    .line 11
-    iget-object v2, p0, Lbu6;->b:Ljava/util/List;
-
-    .line 12
-    .line 13
-    invoke-direct/range {v0 .. v5}, Lbu6;-><init>(ILjava/util/List;III)V
-
-    .line 14
-    .line 15
-    .line 16
-    return-object v0
+    return-void
 .end method
 
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final b()V
+    .locals 1
 
     .line 1
-    const/4 v0, 0x1
+    iget-object p0, p0, Lbu6;->a:Lfu6;
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
+    const/4 v0, 0x0
+
     .line 4
-    return v0
+    invoke-virtual {p0, v0}, Lfu6;->q(Lne2;)V
 
     .line 5
-    :cond_0
-    instance-of v1, p1, Lbu6;
+    .line 6
+    .line 7
+    invoke-virtual {p0, v0}, Lfu6;->p(Llh4;)V
+
+    .line 8
+    .line 9
+    .line 10
+    const/4 v0, 0x1
+
+    .line 11
+    invoke-virtual {p0, v0}, Lfu6;->u(Z)V
+
+    .line 12
+    .line 13
+    .line 14
+    return-void
+.end method
+
+.method public final c()V
+    .locals 1
+
+    .line 1
+    iget-object p0, p0, Lbu6;->a:Lfu6;
+
+    .line 2
+    .line 3
+    const/4 v0, 0x0
+
+    .line 4
+    invoke-virtual {p0, v0}, Lfu6;->q(Lne2;)V
+
+    .line 5
+    .line 6
+    .line 7
+    invoke-virtual {p0, v0}, Lfu6;->p(Llh4;)V
+
+    .line 8
+    .line 9
+    .line 10
+    const/4 v0, 0x1
+
+    .line 11
+    invoke-virtual {p0, v0}, Lfu6;->u(Z)V
+
+    .line 12
+    .line 13
+    .line 14
+    return-void
+.end method
+
+.method public final d()V
+    .locals 3
+
+    .line 1
+    iget-boolean v0, p0, Lbu6;->b:Z
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    sget-object v1, Lne2;->j:Lne2;
 
     .line 6
     .line 7
-    const/4 v2, 0x0
+    goto :goto_0
 
     .line 8
-    if-eqz v1, :cond_1
+    :cond_0
+    sget-object v1, Lne2;->k:Lne2;
 
     .line 9
     .line 10
-    check-cast p1, Lbu6;
+    :goto_0
+    iget-object p0, p0, Lbu6;->a:Lfu6;
 
     .line 11
     .line 12
-    iget v1, p0, Lbu6;->a:I
+    invoke-virtual {p0, v1}, Lfu6;->q(Lne2;)V
 
     .line 13
     .line 14
-    iget v3, p1, Lbu6;->a:I
-
     .line 15
-    .line 16
-    if-ne v1, v3, :cond_1
+    invoke-virtual {p0, v0}, Lfu6;->j(Z)J
 
+    .line 16
     .line 17
     .line 18
-    iget v1, p0, Lbu6;->e:I
+    move-result-wide v0
 
     .line 19
-    .line 20
-    iget v3, p1, Lbu6;->e:I
+    invoke-static {v0, v1}, Lr26;->a(J)J
 
+    .line 20
     .line 21
     .line 22
-    if-ne v1, v3, :cond_1
+    move-result-wide v0
 
     .line 23
+    iget-object v2, p0, Lfu6;->d:Lma3;
+
     .line 24
-    iget v1, p0, Lbu6;->c:I
-
     .line 25
+    if-eqz v2, :cond_2
+
     .line 26
-    iget v3, p1, Lbu6;->c:I
-
     .line 27
-    .line 28
-    if-ne v1, v3, :cond_1
+    invoke-virtual {v2}, Lma3;->d()Law6;
 
+    .line 28
     .line 29
     .line 30
-    iget v1, p0, Lbu6;->d:I
+    move-result-object v2
 
     .line 31
+    if-eqz v2, :cond_2
+
     .line 32
-    iget v3, p1, Lbu6;->d:I
-
     .line 33
-    .line 34
-    if-ne v1, v3, :cond_1
+    invoke-virtual {v2, v0, v1}, Law6;->e(J)J
 
+    .line 34
     .line 35
     .line 36
-    iget-object p0, p0, Lbu6;->b:Ljava/util/List;
+    move-result-wide v0
 
     .line 37
+    iput-wide v0, p0, Lfu6;->n:J
+
     .line 38
-    iget-object p1, p1, Lbu6;->b:Ljava/util/List;
-
     .line 39
-    .line 40
-    invoke-static {p0, p1}, Ljava/util/Objects;->equals(Ljava/lang/Object;Ljava/lang/Object;)Z
+    new-instance v2, Llh4;
 
+    .line 40
     .line 41
+    invoke-direct {v2, v0, v1}, Llh4;-><init>(J)V
+
     .line 42
     .line 43
-    move-result p0
-
     .line 44
-    if-eqz p0, :cond_1
+    invoke-virtual {p0, v2}, Lfu6;->p(Llh4;)V
 
     .line 45
     .line 46
-    return v0
-
     .line 47
+    const-wide/16 v0, 0x0
+
+    .line 48
+    .line 49
+    iput-wide v0, p0, Lfu6;->p:J
+
+    .line 50
+    .line 51
+    const/4 v0, -0x1
+
+    .line 52
+    iput v0, p0, Lfu6;->s:I
+
+    .line 53
+    .line 54
+    iget-object v0, p0, Lfu6;->d:Lma3;
+
+    .line 55
+    .line 56
+    if-eqz v0, :cond_1
+
+    .line 57
+    .line 58
+    iget-object v0, v0, Lma3;->q:Lxs4;
+
+    .line 59
+    .line 60
+    sget-object v1, Ljava/lang/Boolean;->TRUE:Ljava/lang/Boolean;
+
+    .line 61
+    .line 62
+    invoke-virtual {v0, v1}, Lxs4;->setValue(Ljava/lang/Object;)V
+
+    .line 63
+    .line 64
+    .line 65
     :cond_1
-    return v2
+    const/4 v0, 0x0
+
+    .line 66
+    invoke-virtual {p0, v0}, Lfu6;->u(Z)V
+
+    .line 67
+    .line 68
+    .line 69
+    :cond_2
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 2
+.method public final e(J)V
+    .locals 9
 
     .line 1
-    iget v0, p0, Lbu6;->e:I
+    iget-object v0, p0, Lbu6;->a:Lfu6;
 
     .line 2
     .line 3
-    add-int/lit8 v0, v0, 0x1f
+    iget-wide v1, v0, Lfu6;->p:J
 
     .line 4
     .line 5
-    mul-int/lit8 v0, v0, 0x1f
+    invoke-static {v1, v2, p1, p2}, Llh4;->g(JJ)J
 
     .line 6
     .line 7
-    iget v1, p0, Lbu6;->c:I
-
     .line 8
+    move-result-wide p1
+
     .line 9
-    add-int/2addr v0, v1
+    iput-wide p1, v0, Lfu6;->p:J
 
     .line 10
-    mul-int/lit8 v0, v0, 0x1f
-
     .line 11
+    iget-wide v1, v0, Lfu6;->n:J
+
     .line 12
-    iget v1, p0, Lbu6;->d:I
-
     .line 13
+    invoke-static {v1, v2, p1, p2}, Llh4;->g(JJ)J
+
     .line 14
-    add-int/2addr v0, v1
-
     .line 15
-    mul-int/lit8 v0, v0, 0x1f
-
     .line 16
+    move-result-wide p1
+
     .line 17
-    iget-object v1, p0, Lbu6;->b:Ljava/util/List;
+    new-instance v1, Llh4;
 
     .line 18
     .line 19
-    invoke-static {v1}, Ljava/util/Objects;->hashCode(Ljava/lang/Object;)I
+    invoke-direct {v1, p1, p2}, Llh4;-><init>(J)V
 
     .line 20
     .line 21
     .line 22
-    move-result v1
+    invoke-virtual {v0, v1}, Lfu6;->p(Llh4;)V
 
     .line 23
-    add-int/2addr v1, v0
-
     .line 24
-    mul-int/lit8 v1, v1, 0x1f
-
     .line 25
-    .line 26
-    iget p0, p0, Lbu6;->a:I
+    invoke-virtual {v0}, Lfu6;->l()Lfv6;
 
+    .line 26
     .line 27
     .line 28
-    add-int/2addr v1, p0
+    move-result-object v1
 
     .line 29
-    return v1
+    invoke-virtual {v0}, Lfu6;->g()Llh4;
+
+    .line 30
+    .line 31
+    .line 32
+    move-result-object p1
+
+    .line 33
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 34
+    .line 35
+    .line 36
+    iget-wide v2, p1, Llh4;->a:J
+
+    .line 37
+    .line 38
+    sget-object v6, Lxj5;->x:Lw16;
+
+    .line 39
+    .line 40
+    new-instance v8, Laf2;
+
+    .line 41
+    .line 42
+    const/16 p1, 0x9
+
+    .line 43
+    .line 44
+    invoke-direct {v8, p1}, Laf2;-><init>(I)V
+
+    .line 45
+    .line 46
+    .line 47
+    const/4 v4, 0x0
+
+    .line 48
+    iget-boolean v5, p0, Lbu6;->b:Z
+
+    .line 49
+    .line 50
+    const/4 v7, 0x1
+
+    .line 51
+    invoke-virtual/range {v0 .. v8}, Lfu6;->v(Lfv6;JZZLw16;ZLaf2;)J
+
+    .line 52
+    .line 53
+    .line 54
+    const/4 p0, 0x0
+
+    .line 55
+    invoke-virtual {v0, p0}, Lfu6;->u(Z)V
+
+    .line 56
+    .line 57
+    .line 58
+    return-void
+.end method
+
+.method public final onCancel()V
+    .locals 0
+
+    .line 1
+    return-void
 .end method

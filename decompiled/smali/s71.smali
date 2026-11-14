@@ -1,43 +1,63 @@
 .class public final Ls71;
-.super Lgw1;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ln71;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final c:B
-
-.field public final d:Lyn0;
-
-.field public final e:Lyn0;
-
-.field public final f:Z
-
-
-# direct methods
-.method public constructor <init>(Lsu0;ILyn0;Lyn0;Ljava/lang/CharSequence;Z)V
+# virtual methods
+.method public final a(Lie4;)Ljava/lang/Object;
     .locals 0
 
     .line 1
-    invoke-direct {p0, p1}, Lgw1;-><init>(Lsu0;)V
+    check-cast p1, Lux5;
 
     .line 2
     .line 3
+    iget-object p0, p1, Lux5;->e:Ljava/lang/String;
+
     .line 4
-    iput-byte p2, p0, Ls71;->c:B
-
     .line 5
-    .line 6
-    iput-object p3, p0, Ls71;->d:Lyn0;
+    :try_start_0
+    invoke-static {p0}, Ljava/lang/Integer;->valueOf(Ljava/lang/String;)Ljava/lang/Integer;
 
+    .line 6
     .line 7
     .line 8
-    iput-object p4, p0, Ls71;->e:Lyn0;
+    move-result-object p0
+    :try_end_0
+    .catch Ljava/lang/NumberFormatException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 9
+    return-object p0
+
     .line 10
-    iput-boolean p6, p0, Ls71;->f:Z
+    :catch_0
+    :try_start_1
+    invoke-static {p0}, Ljava/lang/Long;->valueOf(Ljava/lang/String;)Ljava/lang/Long;
 
     .line 11
     .line 12
-    return-void
+    .line 13
+    move-result-object p0
+    :try_end_1
+    .catch Ljava/lang/NumberFormatException; {:try_start_1 .. :try_end_1} :catch_1
+
+    .line 14
+    goto :goto_0
+
+    .line 15
+    :catch_1
+    new-instance p1, Ljava/math/BigInteger;
+
+    .line 16
+    .line 17
+    invoke-direct {p1, p0}, Ljava/math/BigInteger;-><init>(Ljava/lang/String;)V
+
+    .line 18
+    .line 19
+    .line 20
+    move-object p0, p1
+
+    .line 21
+    :goto_0
+    return-object p0
 .end method

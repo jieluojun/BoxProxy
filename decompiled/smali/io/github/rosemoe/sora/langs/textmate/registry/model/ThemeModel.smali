@@ -1,6 +1,6 @@
 .class public Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
@@ -12,11 +12,11 @@
 
 .field private name:Ljava/lang/String;
 
-.field private rawTheme:Lwl2;
+.field private rawTheme:Llq2;
 
-.field private theme:Lxs6;
+.field private theme:Lmy6;
 
-.field private themeSource:Lpm2;
+.field private themeSource:Ler2;
 
 
 # direct methods
@@ -44,34 +44,7 @@
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;)V
-    .locals 1
-
-    .line 28
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 v0, 0x0
-
-    .line 29
-    iput-object v0, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->themeSource:Lpm2;
-
-    .line 30
-    iput-object v0, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->rawTheme:Lwl2;
-
-    .line 31
-    iput-object p1, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->name:Ljava/lang/String;
-
-    .line 32
-    invoke-static {v0, v0}, Lxs6;->a(Ll85;Ljava/util/List;)Lxs6;
-
-    move-result-object p1
-
-    iput-object p1, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->theme:Lxs6;
-
-    return-void
-.end method
-
-.method public constructor <init>(Lpm2;)V
+.method public constructor <init>(Ler2;)V
     .locals 1
 
     .line 1
@@ -80,19 +53,19 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->themeSource:Lpm2;
+    iput-object p1, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->themeSource:Ler2;
 
     .line 5
     .line 6
-    check-cast p1, Lul2;
+    check-cast p1, Ljq2;
 
     .line 7
     .line 8
-    iget-object p1, p1, Lul2;->b:Ljava/lang/String;
+    iget-object p1, p1, Ljq2;->b:Ljava/lang/String;
 
     .line 9
     .line 10
-    sget-object v0, Lzc6;->a:Ljava/util/regex/Pattern;
+    sget-object v0, Lri6;->a:Ljava/util/regex/Pattern;
 
     .line 11
     .line 12
@@ -123,17 +96,44 @@
     return-void
 .end method
 
-.method public constructor <init>(Lpm2;Ljava/lang/String;)V
+.method public constructor <init>(Ler2;Ljava/lang/String;)V
     .locals 0
 
     .line 25
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 26
-    iput-object p1, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->themeSource:Lpm2;
+    iput-object p1, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->themeSource:Ler2;
 
     .line 27
     iput-object p2, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->name:Ljava/lang/String;
+
+    return-void
+.end method
+
+.method private constructor <init>(Ljava/lang/String;)V
+    .locals 1
+
+    .line 28
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    const/4 v0, 0x0
+
+    .line 29
+    iput-object v0, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->themeSource:Ler2;
+
+    .line 30
+    iput-object v0, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->rawTheme:Llq2;
+
+    .line 31
+    iput-object p1, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->name:Ljava/lang/String;
+
+    .line 32
+    invoke-static {v0, v0}, Lmy6;->a(Lud5;Ljava/util/List;)Lmy6;
+
+    move-result-object p1
+
+    iput-object p1, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->theme:Lmy6;
 
     return-void
 .end method
@@ -151,33 +151,33 @@
     return-object p0
 .end method
 
-.method public getRawTheme()Lwl2;
+.method public getRawTheme()Llq2;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->rawTheme:Lwl2;
+    iget-object p0, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->rawTheme:Llq2;
 
     .line 2
     .line 3
     return-object p0
 .end method
 
-.method public getTheme()Lxs6;
+.method public getTheme()Lmy6;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->theme:Lxs6;
+    iget-object p0, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->theme:Lmy6;
 
     .line 2
     .line 3
     return-object p0
 .end method
 
-.method public getThemeSource()Lpm2;
+.method public getThemeSource()Ler2;
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->themeSource:Lpm2;
+    iget-object p0, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->themeSource:Ler2;
 
     .line 2
     .line 3
@@ -199,7 +199,7 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->theme:Lxs6;
+    iget-object p0, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->theme:Lmy6;
 
     .line 2
     .line 3
@@ -225,7 +225,7 @@
 
     const/4 v0, 0x0
 
-    .line 87
+    .line 86
     invoke-virtual {p0, v0}, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->load(Ljava/util/List;)V
 
     return-void
@@ -243,18 +243,18 @@
     .end annotation
 
     .line 1
-    iget-object v0, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->themeSource:Lpm2;
+    iget-object v0, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->themeSource:Ler2;
 
     .line 2
     .line 3
-    sget-object v1, Lkj3;->L:Lb55;
+    sget-object v1, Lqn3;->R:Lza5;
 
     .line 4
     .line 5
     move-object v2, v0
 
     .line 6
-    check-cast v2, Lul2;
+    check-cast v2, Ljq2;
 
     .line 7
     .line 8
@@ -267,7 +267,7 @@
 
     .line 12
     .line 13
-    iget-object v2, v2, Lul2;->a:Ljava/lang/StringBuilder;
+    iget-object v2, v2, Ljq2;->a:Ljava/lang/StringBuilder;
 
     .line 14
     .line 15
@@ -285,15 +285,15 @@
     .line 21
     .line 22
     :try_start_0
-    check-cast v0, Lul2;
+    check-cast v0, Ljq2;
 
     .line 23
     .line 24
-    iget v0, v0, Lul2;->c:I
+    iget v0, v0, Ljq2;->c:I
 
     .line 25
     .line 26
-    invoke-static {v0}, Ly96;->D(I)I
+    invoke-static {v0}, Lrf6;->C(I)I
 
     .line 27
     .line 28
@@ -312,7 +312,7 @@
 
     .line 34
     .line 35
-    sget-object v0, Lri6;->b:Lri6;
+    sget-object v0, Lfo6;->b:Lfo6;
 
     .line 36
     .line 37
@@ -321,7 +321,7 @@
     .line 38
     .line 39
     .line 40
-    invoke-static {v3, v1}, Lri6;->a(Ljava/io/StringReader;Lb55;)Lpv4;
+    invoke-static {v3, v1}, Lfo6;->a(Ljava/io/StringReader;Lza5;)Lc25;
 
     .line 41
     .line 42
@@ -329,106 +329,102 @@
     move-result-object v0
 
     .line 44
-    check-cast v0, Ll85;
+    check-cast v0, Lud5;
 
     .line 45
     .line 46
     goto :goto_0
 
     .line 47
-    :catchall_0
-    move-exception p0
+    :cond_0
+    sget-object v0, Lio6;->c:Lio6;
 
     .line 48
-    goto :goto_1
-
     .line 49
-    :cond_0
-    sget-object v0, Lui6;->c:Lui6;
+    invoke-virtual {v0, v3, v1}, Lbo6;->c(Ljava/io/StringReader;Lza5;)Lc25;
 
     .line 50
     .line 51
-    invoke-virtual {v0, v3, v1}, Lni6;->c(Ljava/io/StringReader;Lb55;)Lpv4;
-
     .line 52
-    .line 53
-    .line 54
     move-result-object v0
 
-    .line 55
-    check-cast v0, Ll85;
+    .line 53
+    check-cast v0, Lud5;
 
-    .line 56
-    .line 57
+    .line 54
+    .line 55
     goto :goto_0
 
-    .line 58
+    .line 56
     :cond_1
-    sget-object v0, Lni6;->a:Lni6;
+    sget-object v0, Lbo6;->a:Lbo6;
+
+    .line 57
+    .line 58
+    invoke-virtual {v0, v3, v1}, Lbo6;->c(Ljava/io/StringReader;Lza5;)Lc25;
 
     .line 59
     .line 60
-    invoke-virtual {v0, v3, v1}, Lni6;->c(Ljava/io/StringReader;Lb55;)Lpv4;
-
     .line 61
-    .line 62
-    .line 63
     move-result-object v0
 
-    .line 64
-    check-cast v0, Ll85;
+    .line 62
+    check-cast v0, Lud5;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 65
-    .line 66
+    .line 63
+    .line 64
     :goto_0
     invoke-virtual {v3}, Ljava/io/Reader;->close()V
 
+    .line 65
+    .line 66
     .line 67
+    iput-object v0, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->rawTheme:Llq2;
+
     .line 68
     .line 69
-    iput-object v0, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->rawTheme:Lwl2;
+    invoke-static {v0, p1}, Lmy6;->a(Lud5;Ljava/util/List;)Lmy6;
 
     .line 70
     .line 71
-    invoke-static {v0, p1}, Lxs6;->a(Ll85;Ljava/util/List;)Lxs6;
-
     .line 72
-    .line 73
-    .line 74
     move-result-object p1
 
-    .line 75
-    iput-object p1, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->theme:Lxs6;
+    .line 73
+    iput-object p1, p0, Lio/github/rosemoe/sora/langs/textmate/registry/model/ThemeModel;->theme:Lmy6;
 
-    .line 76
-    .line 77
+    .line 74
+    .line 75
     return-void
 
-    .line 78
-    :goto_1
+    .line 76
+    :catchall_0
+    move-exception p0
+
+    .line 77
     :try_start_1
     invoke-virtual {v3}, Ljava/io/Reader;->close()V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_1
 
+    .line 78
     .line 79
     .line 80
-    .line 81
-    goto :goto_2
+    goto :goto_1
 
-    .line 82
+    .line 81
     :catchall_1
     move-exception p1
 
-    .line 83
+    .line 82
     invoke-virtual {p0, p1}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
+    .line 83
     .line 84
     .line 85
-    .line 86
-    :goto_2
+    :goto_1
     throw p0
 .end method
 

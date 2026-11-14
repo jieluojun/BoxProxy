@@ -1,123 +1,225 @@
-.class public final synthetic Lv15;
+.class public final Lv15;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lp62;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final a:F
 
-.field public final synthetic k:Ln45;
-
-.field public final synthetic l:La45;
+.field public final b:Liz1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Ln45;La45;B)V
+.method public constructor <init>(FLiz1;)V
     .locals 0
 
     .line 1
-    iput-byte p3, p0, Lv15;->j:B
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 2
     .line 3
-    iput-object p1, p0, Lv15;->k:Ln45;
-
     .line 4
-    .line 5
-    iput-object p2, p0, Lv15;->l:La45;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
+    .line 5
     .line 6
     .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput p1, p0, Lv15;->a:F
 
     .line 8
     .line 9
+    iput-object p2, p0, Lv15;->b:Liz1;
+
     .line 10
+    .line 11
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 3
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 4
 
     .line 1
-    iget-byte v0, p0, Lv15;->j:B
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    sget-object v1, La47;->a:La47;
+    if-ne p0, p1, :cond_0
 
+    .line 3
     .line 4
+    return v0
+
     .line 5
-    iget-object v2, p0, Lv15;->l:La45;
+    :cond_0
+    instance-of v1, p1, Lv15;
 
     .line 6
     .line 7
-    iget-object p0, p0, Lv15;->k:Ln45;
+    const/4 v2, 0x0
+
+    .line 8
+    if-nez v1, :cond_1
+
+    .line 9
+    .line 10
+    return v2
+
+    .line 11
+    :cond_1
+    check-cast p1, Lv15;
+
+    .line 12
+    .line 13
+    iget v1, p0, Lv15;->a:F
+
+    .line 14
+    .line 15
+    iget v3, p1, Lv15;->a:F
+
+    .line 16
+    .line 17
+    invoke-static {v1, v3}, Ljava/lang/Float;->compare(FF)I
+
+    .line 18
+    .line 19
+    .line 20
+    move-result v1
+
+    .line 21
+    if-eqz v1, :cond_2
+
+    .line 22
+    .line 23
+    return v2
+
+    .line 24
+    :cond_2
+    iget-object p0, p0, Lv15;->b:Liz1;
+
+    .line 25
+    .line 26
+    iget-object p1, p1, Lv15;->b:Liz1;
+
+    .line 27
+    .line 28
+    invoke-static {p0, p1}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    .line 29
+    .line 30
+    .line 31
+    move-result p0
+
+    .line 32
+    if-nez p0, :cond_3
+
+    .line 33
+    .line 34
+    return v2
+
+    .line 35
+    :cond_3
+    return v0
+.end method
+
+.method public final hashCode()I
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lv15;->a:F
+
+    .line 2
+    .line 3
+    invoke-static {v0}, Ljava/lang/Float;->hashCode(F)I
+
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
+
+    .line 7
+    mul-int/lit8 v0, v0, 0x1f
 
     .line 8
     .line 9
-    check-cast p1, Lb45;
+    iget-object p0, p0, Lv15;->b:Liz1;
 
     .line 10
     .line 11
-    packed-switch v0, :pswitch_data_0
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
     .line 12
     .line 13
     .line 14
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    move-result p0
 
     .line 15
+    add-int/2addr p0, v0
+
+    .line 16
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 2
+
+    .line 1
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    .line 2
+    .line 3
+    const-string v1, "ProgressableFeature(progress="
+
+    .line 4
+    .line 5
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    iget v1, p0, Lv15;->a:F
+
+    .line 9
+    .line 10
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
+
+    .line 11
+    .line 12
+    .line 13
+    const-string v1, ", feature="
+
+    .line 14
+    .line 15
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
     .line 16
     .line 17
-    iget-object v0, v2, La45;->a:Ljava/lang/String;
-
     .line 18
+    iget-object p0, p0, Lv15;->b:Liz1;
+
     .line 19
-    iget-object p1, p1, Lb45;->a:Ljava/lang/String;
-
     .line 20
-    .line 21
-    invoke-virtual {p0, v0, p1}, Ln45;->q(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
+    .line 21
     .line 22
     .line 23
-    .line 24
-    return-object v1
+    const/16 p0, 0x29
 
+    .line 24
     .line 25
-    :pswitch_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     .line 26
     .line 27
     .line 28
-    iget-object v0, v2, La45;->a:Ljava/lang/String;
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     .line 29
     .line 30
-    iget-object p1, p1, Lb45;->a:Ljava/lang/String;
-
     .line 31
+    move-result-object p0
+
     .line 32
-    invoke-virtual {p0, v0, p1}, Ln45;->q(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 33
-    .line 34
-    .line 35
-    return-object v1
-
-    .line 36
-    nop
-
-    .line 37
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    return-object p0
 .end method

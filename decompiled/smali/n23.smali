@@ -1,285 +1,340 @@
 .class public final Ln23;
-.super Lo11;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Ljava/io/Closeable;
 
 
 # instance fields
-.field public final c:Lj23;
+.field public i:Z
 
-.field public final d:Ld43;
+.field public j:I
 
-.field public final e:I
+.field public final k:Ljava/util/concurrent/locks/ReentrantLock;
 
-.field public final synthetic f:Ld43;
-
-.field public final synthetic g:Lc33;
-
-.field public final synthetic h:I
-
-.field public final synthetic i:I
-
-.field public final synthetic j:J
+.field public final l:Ljava/io/RandomAccessFile;
 
 
 # direct methods
-.method public constructor <init>(Lj23;Ld43;ILc33;IIJ)V
-    .locals 0
+.method public constructor <init>(Ljava/io/RandomAccessFile;)V
+    .locals 1
 
     .line 1
-    iput-object p2, p0, Ln23;->f:Ld43;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p4, p0, Ln23;->g:Lc33;
-
     .line 4
+    new-instance v0, Ljava/util/concurrent/locks/ReentrantLock;
+
     .line 5
-    iput p5, p0, Ln23;->h:I
-
     .line 6
-    .line 7
-    iput p6, p0, Ln23;->i:I
+    invoke-direct {v0}, Ljava/util/concurrent/locks/ReentrantLock;-><init>()V
 
+    .line 7
     .line 8
     .line 9
-    iput-wide p7, p0, Ln23;->j:J
+    iput-object v0, p0, Ln23;->k:Ljava/util/concurrent/locks/ReentrantLock;
 
     .line 10
     .line 11
-    const/4 p4, 0x1
+    iput-object p1, p0, Ln23;->l:Ljava/io/RandomAccessFile;
 
     .line 12
-    invoke-direct {p0, p4}, Lo11;-><init>(B)V
-
     .line 13
-    .line 14
-    .line 15
-    iput-object p1, p0, Ln23;->c:Lj23;
-
-    .line 16
-    .line 17
-    iput-object p2, p0, Ln23;->d:Ld43;
-
-    .line 18
-    .line 19
-    iput p3, p0, Ln23;->e:I
-
-    .line 20
-    .line 21
     return-void
 .end method
 
 
 # virtual methods
-.method public final i(IIIJ)Le43;
-    .locals 7
+.method public final b(J)Lnz1;
+    .locals 2
 
     .line 1
-    iget v6, p0, Ln23;->e:I
+    iget-object v0, p0, Ln23;->k:Ljava/util/concurrent/locks/ReentrantLock;
 
     .line 2
     .line 3
-    move-object v0, p0
-
-    .line 4
-    move v1, p1
-
-    .line 5
-    move v4, p2
-
-    .line 6
-    move v5, p3
-
-    .line 7
-    move-wide v2, p4
-
-    .line 8
-    invoke-virtual/range {v0 .. v6}, Ln23;->v(IJIII)Ls23;
-
-    .line 9
-    .line 10
-    .line 11
-    move-result-object p0
-
-    .line 12
-    return-object p0
-.end method
-
-.method public final v(IJIII)Ls23;
-    .locals 17
-
-    .line 1
-    move-object/from16 v0, p0
-
-    .line 2
-    .line 3
-    move/from16 v1, p1
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
     .line 4
     .line 5
-    iget-object v2, v0, Ln23;->c:Lj23;
-
     .line 6
-    .line 7
-    invoke-virtual {v2, v1}, Lj23;->c(I)Ljava/lang/Object;
+    :try_start_0
+    iget-boolean v1, p0, Ln23;->i:Z
 
+    .line 7
     .line 8
+    if-nez v1, :cond_0
+
     .line 9
     .line 10
-    move-result-object v3
+    iget v1, p0, Ln23;->j:I
 
     .line 11
-    iget-object v2, v2, Lj23;->b:Li23;
-
     .line 12
+    add-int/lit8 v1, v1, 0x1
+
     .line 13
-    invoke-virtual {v2, v1}, Lnu;->A(I)Ljava/lang/Object;
-
     .line 14
+    iput v1, p0, Ln23;->j:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
     .line 15
     .line 16
-    move-result-object v11
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
     .line 17
-    iget-object v2, v0, Ln23;->d:Ld43;
-
     .line 18
     .line 19
-    move-wide/from16 v13, p2
+    new-instance v0, Lnz1;
 
     .line 20
     .line 21
-    invoke-virtual {v0, v2, v1, v13, v14}, Lo11;->m(Ld43;IJ)Ljava/util/List;
+    invoke-direct {v0, p0, p1, p2}, Lnz1;-><init>(Ln23;J)V
 
     .line 22
     .line 23
     .line 24
-    move-result-object v8
+    return-object v0
 
     .line 25
-    invoke-static {v13, v14}, Ls61;->g(J)Z
+    :cond_0
+    :try_start_1
+    const-string p0, "closed"
 
     .line 26
     .line 27
-    .line 28
-    move-result v2
+    new-instance p1, Ljava/lang/IllegalStateException;
 
+    .line 28
     .line 29
-    if-eqz v2, :cond_0
+    invoke-direct {p1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
     .line 30
     .line 31
-    invoke-static {v13, v14}, Ls61;->k(J)I
+    .line 32
+    throw p1
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 33
+    :catchall_0
+    move-exception p0
+
+    .line 34
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    .line 35
+    .line 36
+    .line 37
+    throw p0
+.end method
+
+.method public final close()V
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Ln23;->k:Ljava/util/concurrent/locks/ReentrantLock;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
+
+    .line 4
+    .line 5
+    .line 6
+    :try_start_0
+    iget-boolean v1, p0, Ln23;->i:Z
+
+    .line 7
+    .line 8
+    if-nez v1, :cond_0
+
+    .line 9
+    .line 10
+    const/4 v1, 0x1
+
+    .line 11
+    iput-boolean v1, p0, Ln23;->i:Z
+
+    .line 12
+    .line 13
+    iget v1, p0, Ln23;->j:I
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
+
+    .line 14
+    .line 15
+    if-eqz v1, :cond_1
+
+    .line 16
+    .line 17
+    :cond_0
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    .line 18
+    .line 19
+    .line 20
+    return-void
+
+    .line 21
+    :cond_1
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    .line 22
+    .line 23
+    .line 24
+    monitor-enter p0
+
+    .line 25
+    :try_start_1
+    iget-object v0, p0, Ln23;->l:Ljava/io/RandomAccessFile;
+
+    .line 26
+    .line 27
+    invoke-virtual {v0}, Ljava/io/RandomAccessFile;->close()V
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 28
+    .line 29
+    .line 30
+    monitor-exit p0
+
+    .line 31
+    return-void
 
     .line 32
+    :goto_0
+    :try_start_2
+    monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+
     .line 33
+    throw v0
+
     .line 34
-    move-result v2
+    :catchall_0
+    move-exception v0
 
     .line 35
     goto :goto_0
 
     .line 36
-    :cond_0
-    invoke-static {v13, v14}, Ls61;->f(J)Z
+    :catchall_1
+    move-exception p0
 
     .line 37
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
     .line 38
     .line 39
-    move-result v2
-
     .line 40
-    if-nez v2, :cond_1
+    throw p0
+.end method
 
-    .line 41
-    .line 42
-    const-string v2, "does not have fixed height"
+.method public final size()J
+    .locals 2
 
-    .line 43
-    .line 44
-    invoke-static {v2}, Lcq2;->a(Ljava/lang/String;)V
+    .line 1
+    iget-object v0, p0, Ln23;->k:Ljava/util/concurrent/locks/ReentrantLock;
 
-    .line 45
-    .line 46
-    .line 47
-    :cond_1
-    invoke-static {v13, v14}, Ls61;->j(J)I
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->lock()V
 
-    .line 48
-    .line 49
-    .line 50
-    move-result v2
+    .line 4
+    .line 5
+    .line 6
+    :try_start_0
+    iget-boolean v1, p0, Ln23;->i:Z
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 51
+    .line 7
+    .line 8
+    if-nez v1, :cond_0
+
+    .line 9
+    .line 10
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
+
+    .line 11
+    .line 12
+    .line 13
+    monitor-enter p0
+
+    .line 14
+    :try_start_1
+    iget-object v0, p0, Ln23;->l:Ljava/io/RandomAccessFile;
+
+    .line 15
+    .line 16
+    invoke-virtual {v0}, Ljava/io/RandomAccessFile;->length()J
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-wide v0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
+
+    .line 20
+    monitor-exit p0
+
+    .line 21
+    return-wide v0
+
+    .line 22
     :goto_0
-    iget-object v4, v0, Ln23;->f:Ld43;
+    :try_start_2
+    monitor-exit p0
+    :try_end_2
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 52
-    .line 53
-    iget-object v4, v4, Ld43;->k:Laf6;
+    .line 23
+    throw v0
 
-    .line 54
-    .line 55
-    invoke-interface {v4}, Lqt2;->getLayoutDirection()Lt03;
+    .line 24
+    :catchall_0
+    move-exception v0
 
-    .line 56
-    .line 57
-    .line 58
-    move-result-object v5
+    .line 25
+    goto :goto_0
 
-    .line 59
-    iget-object v4, v0, Ln23;->g:Lc33;
+    .line 26
+    :cond_0
+    :try_start_3
+    const-string p0, "closed"
 
-    .line 60
-    .line 61
-    iget-object v12, v4, Lc33;->l:Ly33;
+    .line 27
+    .line 28
+    new-instance v1, Ljava/lang/IllegalStateException;
 
-    .line 62
-    .line 63
-    new-instance v4, Ls23;
+    .line 29
+    .line 30
+    invoke-direct {v1, p0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 
-    .line 64
-    .line 65
-    iget v7, v0, Ln23;->i:I
+    .line 31
+    .line 32
+    .line 33
+    throw v1
+    :try_end_3
+    .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 66
-    .line 67
-    iget-wide v9, v0, Ln23;->j:J
+    .line 34
+    :catchall_1
+    move-exception p0
 
-    .line 68
-    .line 69
-    iget v6, v0, Ln23;->h:I
+    .line 35
+    invoke-virtual {v0}, Ljava/util/concurrent/locks/ReentrantLock;->unlock()V
 
-    .line 70
-    .line 71
-    move-object v0, v3
-
-    .line 72
-    move v3, v2
-
-    .line 73
-    move-object v2, v0
-
-    .line 74
-    move/from16 v15, p4
-
-    .line 75
-    .line 76
-    move/from16 v16, p5
-
-    .line 77
-    .line 78
-    move-object v0, v4
-
-    .line 79
-    move/from16 v4, p6
-
-    .line 80
-    .line 81
-    invoke-direct/range {v0 .. v16}, Ls23;-><init>(ILjava/lang/Object;IILt03;IILjava/util/List;JLjava/lang/Object;Ly33;JII)V
-
-    .line 82
-    .line 83
-    .line 84
-    return-object v0
+    .line 36
+    .line 37
+    .line 38
+    throw p0
 .end method

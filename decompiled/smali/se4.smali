@@ -1,51 +1,50 @@
-.class public abstract Lse4;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lse4;
+.super Lih3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lws2;
 
 
-# static fields
-.field public static final a:Lzs3;
-
-
-# direct methods
-.method static constructor <clinit>()V
-    .locals 2
+# virtual methods
+.method public final b()Z
+    .locals 0
 
     .line 1
-    new-instance v0, Lzs3;
+    const/4 p0, 0x1
 
     .line 2
-    .line 3
-    const/4 v1, 0x0
-
-    .line 4
-    invoke-direct {v0, v1}, Lzs3;-><init>(I)V
-
-    .line 5
-    .line 6
-    .line 7
-    sput-object v0, Lse4;->a:Lzs3;
-
-    .line 8
-    .line 9
-    return-void
+    return p0
 .end method
 
-.method public static final a()Lzs3;
-    .locals 2
+.method public final d()Lse4;
+    .locals 0
 
     .line 1
-    new-instance v0, Lzs3;
+    return-object p0
+.end method
+
+.method public final k()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    invoke-super {p0}, Lih3;->toString()Ljava/lang/String;
 
     .line 2
     .line 3
-    const/4 v1, 0x6
-
     .line 4
-    invoke-direct {v0, v1}, Lzs3;-><init>(I)V
+    move-result-object p0
 
     .line 5
-    .line 6
-    .line 7
-    return-object v0
+    return-object p0
 .end method

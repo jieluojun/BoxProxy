@@ -1,35 +1,69 @@
 .class public final Lj12;
-.super Lvs5;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# virtual methods
-.method public final G(Ljava/lang/Throwable;)Z
-    .locals 1
+# instance fields
+.field public synthetic i:Ljava/lang/Object;
+
+.field public final synthetic j:Lk12;
+
+.field public k:I
+
+
+# direct methods
+.method public constructor <init>(Lk12;Lq91;)V
+    .locals 0
 
     .line 1
-    instance-of v0, p1, Lto0;
+    iput-object p1, p0, Lj12;->j:Lk12;
 
     .line 2
     .line 3
-    if-eqz v0, :cond_0
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
     .line 4
     .line 5
-    const/4 p0, 0x1
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iput-object p1, p0, Lj12;->i:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Lj12;->k:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
 
     .line 6
-    return p0
-
     .line 7
-    :cond_0
-    invoke-virtual {p0, p1}, Lov2;->y(Ljava/lang/Object;)Z
+    or-int/2addr p1, v0
 
     .line 8
+    iput p1, p0, Lj12;->k:I
+
     .line 9
     .line 10
-    move-result p0
+    iget-object p1, p0, Lj12;->j:Lk12;
 
     .line 11
-    return p0
+    .line 12
+    invoke-virtual {p1, p0}, Lk12;->b(Lq91;)Ljava/lang/Object;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p0
+
+    .line 16
+    return-object p0
 .end method

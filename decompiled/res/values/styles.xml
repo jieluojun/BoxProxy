@@ -637,7 +637,6 @@
     <style name="Base.Widget.AppCompat.Toolbar" parent="@style/Base.V26.Widget.AppCompat.Toolbar" />
     <style name="Base.Widget.AppCompat.Toolbar.Button.Navigation" parent="@android:style/Widget.Material.Toolbar.Button.Navigation" />
     <style name="DialogWindowTheme">
-        <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowClipToOutline">false</item>
     </style>
     <style name="EdgeToEdgeFloatingDialogTheme" parent="@android:style/Theme.DeviceDefault.Dialog">
@@ -653,11 +652,6 @@
     </style>
     <style name="EdgeToEdgeFloatingDialogWindowTheme">
         <item name="android:dialogTheme">@style/EdgeToEdgeFloatingDialogTheme</item>
-    </style>
-    <style name="FloatingDialogWindowTheme">
-        <item name="android:windowIsTranslucent">true</item>
-        <item name="android:backgroundDimEnabled">true</item>
-        <item name="android:windowClipToOutline">false</item>
     </style>
     <style name="Platform.AppCompat" parent="@style/Platform.V25.AppCompat" />
     <style name="Platform.AppCompat.Light" parent="@style/Platform.V25.AppCompat.Light" />

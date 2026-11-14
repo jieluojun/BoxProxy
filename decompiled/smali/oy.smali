@@ -1,87 +1,41 @@
-.class public final Loy;
+.class public abstract Loy;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
-.field public static final a:Loy;
+.field public static final a:Lid1;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 4
 
     .line 1
-    new-instance v0, Loy;
+    new-instance v0, Lid1;
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const/4 v1, 0x0
 
     .line 4
-    .line 5
-    .line 6
-    sput-object v0, Loy;->a:Loy;
-
-    .line 7
-    .line 8
-    return-void
-.end method
-
-
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
+    const/high16 v2, 0x3f800000    # 1.0f
 
     .line 5
-    :cond_0
-    instance-of p0, p1, Loy;
-
     .line 6
-    .line 7
-    if-nez p0, :cond_1
+    const v3, 0x3dcccccd    # 0.1f
 
+    .line 7
     .line 8
     .line 9
-    const/4 p0, 0x0
+    invoke-direct {v0, v3, v3, v1, v2}, Lid1;-><init>(FFFF)V
 
     .line 10
-    return p0
-
     .line 11
-    :cond_1
-    return v0
-.end method
+    .line 12
+    sput-object v0, Loy;->a:Lid1;
 
-.method public final hashCode()I
-    .locals 0
-
-    .line 1
-    const p0, 0x223a56c
-
-    .line 2
-    .line 3
-    .line 4
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 0
-
-    .line 1
-    const-string p0, "Bottom"
-
-    .line 2
-    .line 3
-    return-object p0
+    .line 13
+    .line 14
+    return-void
 .end method

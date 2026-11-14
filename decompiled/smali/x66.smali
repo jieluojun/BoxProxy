@@ -1,27 +1,23 @@
 .class public final Lx66;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Landroidx/compose/ui/input/pointer/PointerInputEventHandler;
+.implements Ltl1;
 
 
 # instance fields
-.field public final synthetic a:I
+.field public final i:Lz66;
 
-.field public final synthetic b:I
+.field public final j:J
 
-.field public final synthetic c:Lmb6;
+.field public final k:Ljava/lang/Object;
 
-.field public final synthetic d:Lls0;
-
-.field public final synthetic e:Z
-
-.field public final synthetic f:Lmt3;
+.field public final l:Lri0;
 
 
 # direct methods
-.method public constructor <init>(IILhg;Lls0;ZLmt3;)V
+.method public constructor <init>(Lz66;JLjava/lang/Object;Lri0;)V
     .locals 0
 
     .line 1
@@ -30,102 +26,122 @@
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Lx66;->a:I
+    iput-object p1, p0, Lx66;->i:Lz66;
 
     .line 5
     .line 6
-    iput p2, p0, Lx66;->b:I
+    iput-wide p2, p0, Lx66;->j:J
 
     .line 7
     .line 8
-    iput-object p3, p0, Lx66;->c:Lmb6;
+    iput-object p4, p0, Lx66;->k:Ljava/lang/Object;
 
     .line 9
     .line 10
-    iput-object p4, p0, Lx66;->d:Lls0;
+    iput-object p5, p0, Lx66;->l:Lri0;
 
     .line 11
     .line 12
-    iput-boolean p5, p0, Lx66;->e:Z
-
-    .line 13
-    .line 14
-    iput-object p6, p0, Lx66;->f:Lmt3;
-
-    .line 15
-    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Lar4;Ly81;)Ljava/lang/Object;
-    .locals 8
+.method public final a()V
+    .locals 6
 
     .line 1
-    new-instance v0, Lw66;
+    iget-object v0, p0, Lx66;->i:Lz66;
 
     .line 2
     .line 3
-    iget-object v6, p0, Lx66;->f:Lmt3;
+    monitor-enter v0
 
     .line 4
-    .line 5
-    const/4 v7, 0x0
+    :try_start_0
+    iget-wide v1, p0, Lx66;->j:J
 
+    .line 5
     .line 6
-    iget v1, p0, Lx66;->a:I
+    invoke-virtual {v0}, Lz66;->q()J
 
     .line 7
     .line 8
-    iget v2, p0, Lx66;->b:I
-
     .line 9
+    move-result-wide v3
+
     .line 10
-    iget-object v3, p0, Lx66;->c:Lmb6;
+    cmp-long v1, v1, v3
 
     .line 11
     .line 12
-    iget-object v4, p0, Lx66;->d:Lls0;
+    if-ltz v1, :cond_0
 
     .line 13
     .line 14
-    iget-boolean v5, p0, Lx66;->e:Z
+    iget-object v1, v0, Lz66;->p:[Ljava/lang/Object;
 
     .line 15
     .line 16
-    invoke-direct/range {v0 .. v7}, Lw66;-><init>(IILmb6;Lls0;ZLmt3;Ly81;)V
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 17
     .line 18
     .line 19
-    check-cast p1, Lsh6;
+    iget-wide v2, p0, Lx66;->j:J
 
     .line 20
     .line 21
-    invoke-virtual {p1, v0, p2}, Lsh6;->E1(Lt62;Ly81;)Ljava/lang/Object;
+    long-to-int v4, v2
 
     .line 22
-    .line 23
-    .line 24
-    move-result-object p0
+    array-length v5, v1
 
+    .line 23
+    add-int/lit8 v5, v5, -0x1
+
+    .line 24
     .line 25
-    sget-object p1, Lbc1;->j:Lbc1;
+    and-int/2addr v4, v5
 
     .line 26
+    aget-object v4, v1, v4
+
     .line 27
-    if-ne p0, p1, :cond_0
-
     .line 28
-    .line 29
-    return-object p0
+    if-ne v4, p0, :cond_0
 
+    .line 29
     .line 30
-    :cond_0
-    sget-object p0, La47;->a:La47;
+    sget-object p0, Lye0;->c0:Lhx4;
 
     .line 31
     .line 32
-    return-object p0
+    invoke-static {v1, v2, v3, p0}, Lye0;->V([Ljava/lang/Object;JLjava/lang/Object;)V
+
+    .line 33
+    .line 34
+    .line 35
+    invoke-virtual {v0}, Lz66;->l()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 36
+    .line 37
+    .line 38
+    :cond_0
+    monitor-exit v0
+
+    .line 39
+    return-void
+
+    .line 40
+    :catchall_0
+    move-exception p0
+
+    .line 41
+    monitor-exit v0
+
+    .line 42
+    throw p0
 .end method

@@ -1,100 +1,74 @@
-.class public abstract Lv55;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final Lv55;
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final a:Lls6;
+# instance fields
+.field public i:Ljava/lang/String;
+
+.field public synthetic j:Ljava/lang/Object;
+
+.field public final synthetic k:Lyy6;
+
+.field public l:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 14
+.method public constructor <init>(Lyy6;Lq91;)V
+    .locals 0
 
     .line 1
-    const-string v0, "Refreshing..."
+    iput-object p1, p0, Lv55;->k:Lyy6;
 
     .line 2
     .line 3
-    const-string v1, "Refreshed successfully"
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
     .line 4
     .line 5
-    const-string v2, "Pull down to refresh"
+    .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iput-object p1, p0, Lv55;->j:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Lv55;->l:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
 
     .line 6
     .line 7
-    const-string v3, "Release to refresh"
+    or-int/2addr p1, v0
 
     .line 8
-    .line 9
-    filled-new-array {v2, v3, v0, v1}, [Ljava/lang/String;
+    iput p1, p0, Lv55;->l:I
 
+    .line 9
     .line 10
+    iget-object p1, p0, Lv55;->k:Lyy6;
+
     .line 11
     .line 12
-    move-result-object v0
+    const/4 v0, 0x0
 
     .line 13
-    invoke-static {v0}, Lim;->R([Ljava/lang/Object;)Ljava/util/List;
+    invoke-virtual {p1, v0, v0, p0}, Lyy6;->O(Ljava/lang/String;Ljava/util/Map;Lq91;)Ljava/lang/Object;
 
     .line 14
     .line 15
     .line 16
-    const/16 v0, 0xe
+    move-result-object p0
 
     .line 17
-    .line 18
-    invoke-static {v0}, Lru5;->z(I)J
-
-    .line 19
-    .line 20
-    .line 21
-    move-result-wide v4
-
-    .line 22
-    sget-object v6, Lb52;->o:Lb52;
-
-    .line 23
-    .line 24
-    new-instance v1, Lls6;
-
-    .line 25
-    .line 26
-    const-wide/16 v11, 0x0
-
-    .line 27
-    .line 28
-    const v13, 0xfffff8
-
-    .line 29
-    .line 30
-    .line 31
-    const-wide v2, -0x77777800000000L
-
-    .line 32
-    .line 33
-    .line 34
-    .line 35
-    .line 36
-    const-wide/16 v7, 0x0
-
-    .line 37
-    .line 38
-    const/4 v9, 0x0
-
-    .line 39
-    const/4 v10, 0x0
-
-    .line 40
-    invoke-direct/range {v1 .. v13}, Lls6;-><init>(JJLb52;JIIJI)V
-
-    .line 41
-    .line 42
-    .line 43
-    sput-object v1, Lv55;->a:Lls6;
-
-    .line 44
-    .line 45
-    return-void
+    return-object p0
 .end method

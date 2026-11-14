@@ -1,31 +1,71 @@
 .class public final Lw83;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:Lzb6;
+.field public i:Lp93;
 
-.field public final b:Lc20;
+.field public j:Lrf5;
+
+.field public k:Lvf5;
+
+.field public l:Ltf5;
+
+.field public m:I
+
+.field public n:B
+
+.field public o:Z
+
+.field public p:F
+
+.field public q:F
+
+.field public r:F
+
+.field public synthetic s:Ljava/lang/Object;
+
+.field public t:I
 
 
-# direct methods
-.method public constructor <init>(Lzb6;Lc20;)V
-    .locals 0
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lw83;->s:Ljava/lang/Object;
 
     .line 2
     .line 3
+    iget p1, p0, Lw83;->t:I
+
     .line 4
-    iput-object p1, p0, Lw83;->a:Lzb6;
-
     .line 5
-    .line 6
-    iput-object p2, p0, Lw83;->b:Lc20;
+    const/high16 v0, -0x80000000
 
+    .line 6
     .line 7
+    or-int/2addr p1, v0
+
     .line 8
-    return-void
+    iput p1, p0, Lw83;->t:I
+
+    .line 9
+    .line 10
+    const/4 p1, 0x0
+
+    .line 11
+    const/4 v0, 0x0
+
+    .line 12
+    invoke-static {p1, v0, v0, p1, p0}, Ljs;->E(Lp93;IILsi1;Lq91;)Ljava/lang/Object;
+
+    .line 13
+    .line 14
+    .line 15
+    move-result-object p0
+
+    .line 16
+    return-object p0
 .end method

@@ -1,43 +1,128 @@
-.class public final Lbr;
-.super Loq2;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lbr;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt72;
 
 
 # instance fields
-.field public final synthetic o:Lcr;
+.field public final synthetic i:Ljava/lang/String;
+
+.field public final synthetic j:Ljava/lang/String;
+
+.field public final synthetic k:Lsw3;
+
+.field public final synthetic l:F
+
+.field public final synthetic m:S
+
+.field public final synthetic n:B
 
 
 # direct methods
-.method public constructor <init>(Lcr;)V
+.method public synthetic constructor <init>(Ljava/lang/String;Ljava/lang/String;Lsw3;FII)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lbr;->o:Lcr;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    invoke-direct {p0, p1}, Loq2;-><init>(Lcr;)V
-
     .line 4
+    iput-object p1, p0, Lbr;->i:Ljava/lang/String;
+
     .line 5
     .line 6
+    iput-object p2, p0, Lbr;->j:Ljava/lang/String;
+
+    .line 7
+    .line 8
+    iput-object p3, p0, Lbr;->k:Lsw3;
+
+    .line 9
+    .line 10
+    iput p4, p0, Lbr;->l:F
+
+    .line 11
+    .line 12
+    iput-short p5, p0, Lbr;->m:S
+
+    .line 13
+    .line 14
+    iput-byte p6, p0, Lbr;->n:B
+
+    .line 15
+    .line 16
     return-void
 .end method
 
 
 # virtual methods
-.method public final j(IF)V
-    .locals 0
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 7
 
     .line 1
-    iget-object p0, p0, Lbr;->o:Lcr;
+    move-object v4, p1
 
     .line 2
-    .line 3
-    invoke-static {p0, p1, p2}, Lcr;->d(Lcr;IF)V
+    check-cast v4, Lt82;
 
+    .line 3
     .line 4
+    check-cast p2, Ljava/lang/Integer;
+
     .line 5
     .line 6
-    return-void
+    invoke-virtual {p2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+
+    .line 7
+    .line 8
+    .line 9
+    iget-short p1, p0, Lbr;->m:S
+
+    .line 10
+    .line 11
+    or-int/lit8 p1, p1, 0x1
+
+    .line 12
+    .line 13
+    invoke-static {p1}, Lp06;->W(I)I
+
+    .line 14
+    .line 15
+    .line 16
+    move-result v5
+
+    .line 17
+    iget-object v0, p0, Lbr;->i:Ljava/lang/String;
+
+    .line 18
+    .line 19
+    iget-object v1, p0, Lbr;->j:Ljava/lang/String;
+
+    .line 20
+    .line 21
+    iget-object v2, p0, Lbr;->k:Lsw3;
+
+    .line 22
+    .line 23
+    iget v3, p0, Lbr;->l:F
+
+    .line 24
+    .line 25
+    iget-byte v6, p0, Lbr;->n:B
+
+    .line 26
+    .line 27
+    invoke-static/range {v0 .. v6}, Lye0;->b(Ljava/lang/String;Ljava/lang/String;Lsw3;FLt82;II)V
+
+    .line 28
+    .line 29
+    .line 30
+    sget-object p0, Ll97;->a:Ll97;
+
+    .line 31
+    .line 32
+    return-object p0
 .end method

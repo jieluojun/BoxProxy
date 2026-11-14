@@ -1,135 +1,89 @@
 .class public final Lg42;
-.super Landroid/text/style/MetricAffectingSpan;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Le42;
 
 
 # instance fields
-.field public final synthetic j:B
+.field public a:Z
 
-.field public final k:Ljava/lang/Object;
+.field public b:Lk42;
 
+.field public c:Lk42;
 
-# direct methods
-.method public synthetic constructor <init>(Ljava/lang/Object;B)V
-    .locals 0
+.field public d:Lk42;
 
-    .line 1
-    iput-byte p2, p0, Lg42;->j:B
+.field public e:Lk42;
 
-    .line 2
-    .line 3
-    invoke-direct {p0}, Landroid/text/style/MetricAffectingSpan;-><init>()V
+.field public f:Lk42;
 
-    .line 4
-    .line 5
-    .line 6
-    iput-object p1, p0, Lg42;->k:Ljava/lang/Object;
+.field public g:Lk42;
 
-    .line 7
-    .line 8
-    return-void
-.end method
+.field public h:Lk42;
+
+.field public i:Lk42;
+
+.field public j:Lp72;
+
+.field public k:Lp72;
+
+.field public l:Lpf5;
 
 
 # virtual methods
-.method public final updateDrawState(Landroid/text/TextPaint;)V
-    .locals 1
+.method public final a(Lr32;)V
+    .locals 0
 
     .line 1
-    iget-byte v0, p0, Lg42;->j:B
+    iput-object p1, p0, Lg42;->j:Lp72;
 
     .line 2
     .line 3
-    iget-object p0, p0, Lg42;->k:Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    packed-switch v0, :pswitch_data_0
-
-    .line 6
-    .line 7
-    .line 8
-    check-cast p0, Landroid/graphics/Typeface;
-
-    .line 9
-    .line 10
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
-
-    .line 11
-    .line 12
-    .line 13
     return-void
-
-    .line 14
-    :pswitch_0
-    check-cast p0, Ljava/lang/String;
-
-    .line 15
-    .line 16
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setFontFeatureSettings(Ljava/lang/String;)V
-
-    .line 17
-    .line 18
-    .line 19
-    return-void
-
-    .line 20
-    nop
-
-    .line 21
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
 .end method
 
-.method public final updateMeasureState(Landroid/text/TextPaint;)V
-    .locals 1
+.method public final b()Z
+    .locals 0
 
     .line 1
-    iget-byte v0, p0, Lg42;->j:B
+    iget-boolean p0, p0, Lg42;->a:Z
 
     .line 2
     .line 3
-    iget-object p0, p0, Lg42;->k:Ljava/lang/Object;
+    return p0
+.end method
 
-    .line 4
-    .line 5
-    packed-switch v0, :pswitch_data_0
+.method public final c(Z)V
+    .locals 0
 
-    .line 6
-    .line 7
-    .line 8
-    check-cast p0, Landroid/graphics/Typeface;
+    .line 1
+    iput-boolean p1, p0, Lg42;->a:Z
 
-    .line 9
-    .line 10
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setTypeface(Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
-
-    .line 11
-    .line 12
-    .line 13
+    .line 2
+    .line 3
     return-void
+.end method
 
-    .line 14
-    :pswitch_0
-    check-cast p0, Ljava/lang/String;
+.method public final d(Lpf5;)V
+    .locals 0
 
-    .line 15
-    .line 16
-    invoke-virtual {p1, p0}, Landroid/graphics/Paint;->setFontFeatureSettings(Ljava/lang/String;)V
+    .line 1
+    iput-object p1, p0, Lg42;->l:Lpf5;
 
-    .line 17
-    .line 18
-    .line 19
+    .line 2
+    .line 3
     return-void
+.end method
 
-    .line 20
-    nop
+.method public final e(Lr32;)V
+    .locals 0
 
-    .line 21
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 1
+    iput-object p1, p0, Lg42;->k:Lp72;
+
+    .line 2
+    .line 3
+    return-void
 .end method

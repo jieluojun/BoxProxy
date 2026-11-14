@@ -1,46 +1,154 @@
-.class public abstract Ln77;
+.class public final Ln77;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Ljava/lang/Comparable;
+
+
+# instance fields
+.field public final i:I
 
 
 # direct methods
-.method public static a(Landroid/view/View;)[Ljava/lang/String;
+.method public synthetic constructor <init>(I)V
     .locals 0
 
     .line 1
-    invoke-virtual {p0}, Landroid/view/View;->getReceiveContentMimeTypes()[Ljava/lang/String;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    move-result-object p0
+    iput p1, p0, Ln77;->i:I
 
     .line 5
-    return-object p0
+    .line 6
+    return-void
 .end method
 
-.method public static b(Landroid/view/View;Ld81;)Ld81;
+
+# virtual methods
+.method public final compareTo(Ljava/lang/Object;)I
     .locals 1
 
     .line 1
-    iget-object v0, p1, Ld81;->a:Lc81;
+    check-cast p1, Ln77;
 
     .line 2
     .line 3
-    invoke-interface {v0}, Lc81;->b()Landroid/view/ContentInfo;
+    iget p1, p1, Ln77;->i:I
+
+    .line 4
+    .line 5
+    iget p0, p0, Ln77;->i:I
+
+    .line 6
+    .line 7
+    const/high16 v0, -0x80000000
+
+    .line 8
+    .line 9
+    xor-int/2addr p0, v0
+
+    .line 10
+    xor-int/2addr p1, v0
+
+    .line 11
+    invoke-static {p0, p1}, Lky2;->I(II)I
+
+    .line 12
+    .line 13
+    .line 14
+    move-result p0
+
+    .line 15
+    return p0
+.end method
+
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    instance-of v0, p1, Ln77;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    check-cast p1, Ln77;
+
+    .line 6
+    .line 7
+    iget p1, p1, Ln77;->i:I
+
+    .line 8
+    .line 9
+    iget p0, p0, Ln77;->i:I
+
+    .line 10
+    .line 11
+    if-eq p0, p1, :cond_1
+
+    .line 12
+    .line 13
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 14
+    return p0
+
+    .line 15
+    :cond_1
+    const/4 p0, 0x1
+
+    .line 16
+    return p0
+.end method
+
+.method public final hashCode()I
+    .locals 0
+
+    .line 1
+    iget p0, p0, Ln77;->i:I
+
+    .line 2
+    .line 3
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
     .line 4
     .line 5
     .line 6
-    move-result-object v0
+    move-result p0
 
     .line 7
-    invoke-static {v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    return p0
+.end method
 
+.method public final toString()Ljava/lang/String;
+    .locals 4
+
+    .line 1
+    iget p0, p0, Ln77;->i:I
+
+    .line 2
+    .line 3
+    int-to-long v0, p0
+
+    .line 4
+    const-wide v2, 0xffffffffL
+
+    .line 5
+    .line 6
+    .line 7
     .line 8
     .line 9
+    and-long/2addr v0, v2
+
     .line 10
-    invoke-virtual {p0, v0}, Landroid/view/View;->performReceiveContent(Landroid/view/ContentInfo;)Landroid/view/ContentInfo;
+    invoke-static {v0, v1}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
     .line 11
     .line 12
@@ -48,42 +156,5 @@
     move-result-object p0
 
     .line 14
-    if-nez p0, :cond_0
-
-    .line 15
-    .line 16
-    const/4 p0, 0x0
-
-    .line 17
     return-object p0
-
-    .line 18
-    :cond_0
-    if-ne p0, v0, :cond_1
-
-    .line 19
-    .line 20
-    return-object p1
-
-    .line 21
-    :cond_1
-    new-instance p1, Ld81;
-
-    .line 22
-    .line 23
-    new-instance v0, Le6;
-
-    .line 24
-    .line 25
-    invoke-direct {v0, p0}, Le6;-><init>(Landroid/view/ContentInfo;)V
-
-    .line 26
-    .line 27
-    .line 28
-    invoke-direct {p1, v0}, Ld81;-><init>(Lc81;)V
-
-    .line 29
-    .line 30
-    .line 31
-    return-object p1
 .end method

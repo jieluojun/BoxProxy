@@ -1,9 +1,11 @@
 .class public final enum Lpp0;
 .super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
+.field public static final enum j:Lpp0;
+
 .field public static final enum k:Lpp0;
 
 .field public static final enum l:Lpp0;
@@ -12,15 +14,13 @@
 
 .field public static final enum n:Lpp0;
 
-.field public static final enum o:Lpp0;
+.field public static final synthetic o:[Lpp0;
 
-.field public static final synthetic p:[Lpp0;
-
-.field public static final synthetic q:Lzv1;
+.field public static final synthetic p:Lvw1;
 
 
 # instance fields
-.field public final j:Ljava/lang/String;
+.field public final i:Ljava/lang/String;
 
 
 # direct methods
@@ -48,7 +48,7 @@
     .line 9
     .line 10
     .line 11
-    sput-object v0, Lpp0;->k:Lpp0;
+    sput-object v0, Lpp0;->j:Lpp0;
 
     .line 12
     .line 13
@@ -72,7 +72,7 @@
     .line 21
     .line 22
     .line 23
-    sput-object v1, Lpp0;->l:Lpp0;
+    sput-object v1, Lpp0;->k:Lpp0;
 
     .line 24
     .line 25
@@ -96,7 +96,7 @@
     .line 33
     .line 34
     .line 35
-    sput-object v2, Lpp0;->m:Lpp0;
+    sput-object v2, Lpp0;->l:Lpp0;
 
     .line 36
     .line 37
@@ -120,7 +120,7 @@
     .line 45
     .line 46
     .line 47
-    sput-object v3, Lpp0;->n:Lpp0;
+    sput-object v3, Lpp0;->m:Lpp0;
 
     .line 48
     .line 49
@@ -144,7 +144,7 @@
     .line 57
     .line 58
     .line 59
-    sput-object v4, Lpp0;->o:Lpp0;
+    sput-object v4, Lpp0;->n:Lpp0;
 
     .line 60
     .line 61
@@ -156,20 +156,20 @@
     move-result-object v0
 
     .line 65
-    sput-object v0, Lpp0;->p:[Lpp0;
+    sput-object v0, Lpp0;->o:[Lpp0;
 
     .line 66
     .line 67
-    new-instance v1, Lzv1;
+    new-instance v1, Lvw1;
 
     .line 68
     .line 69
-    invoke-direct {v1, v0}, Lzv1;-><init>([Ljava/lang/Enum;)V
+    invoke-direct {v1, v0}, Lvw1;-><init>([Ljava/lang/Enum;)V
 
     .line 70
     .line 71
     .line 72
-    sput-object v1, Lpp0;->q:Lzv1;
+    sput-object v1, Lpp0;->p:Lvw1;
 
     .line 73
     .line 74
@@ -185,7 +185,7 @@
     .line 2
     .line 3
     .line 4
-    iput-object p3, p0, Lpp0;->j:Ljava/lang/String;
+    iput-object p3, p0, Lpp0;->i:Ljava/lang/String;
 
     .line 5
     .line 6
@@ -219,7 +219,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lpp0;->p:[Lpp0;
+    sget-object v0, Lpp0;->o:[Lpp0;
 
     .line 2
     .line 3

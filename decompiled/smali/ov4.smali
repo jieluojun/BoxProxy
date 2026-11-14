@@ -1,20 +1,9 @@
-.class public abstract Lov4;
-.super Ljava/util/HashMap;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lpv4;
+.class public final Lov4;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# virtual methods
-.method public final setProperty(Ljava/lang/String;Ljava/lang/Object;)V
-    .locals 0
+# instance fields
+.field public a:Lr6;
 
-    .line 1
-    invoke-virtual {p0, p1, p2}, Ljava/util/AbstractMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
+.field public b:Lo6;

@@ -1,79 +1,73 @@
-.class public abstract Lw57;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# static fields
-.field public static final a:[I
-
-.field public static final b:[F
-
-.field public static final c:Le6;
+.class public Lw57;
+.super Ls57;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public constructor <init>()V
+    .locals 0
 
     .line 1
-    const/4 v0, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    new-array v1, v0, [I
-
     .line 3
     .line 4
-    sput-object v1, Lw57;->a:[I
+    return-void
+.end method
+
+
+# virtual methods
+.method public final b(Le23;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    invoke-virtual {p1}, Le23;->L()I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
 
     .line 5
+    const/16 v0, 0x9
+
     .line 6
-    new-array v0, v0, [F
-
     .line 7
+    if-ne p0, v0, :cond_0
+
     .line 8
-    sput-object v0, Lw57;->b:[F
-
     .line 9
-    .line 10
-    new-instance v0, Le6;
+    invoke-virtual {p1}, Le23;->H()V
 
+    .line 10
     .line 11
     .line 12
-    const/4 v1, 0x2
+    const/4 p0, 0x0
 
     .line 13
-    new-array v2, v1, [I
+    return-object p0
 
     .line 14
-    .line 15
-    new-array v3, v1, [F
+    :cond_0
+    invoke-virtual {p1}, Le23;->x()D
 
+    .line 15
     .line 16
     .line 17
-    new-array v4, v1, [F
+    move-result-wide p0
 
     .line 18
+    double-to-float p0, p0
+
     .line 19
-    new-array v1, v1, [F
+    invoke-static {p0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     .line 20
     .line 21
-    filled-new-array {v4, v1}, [[F
-
     .line 22
+    move-result-object p0
+
     .line 23
-    .line 24
-    move-result-object v1
-
-    .line 25
-    invoke-direct {v0, v2, v3, v1}, Le6;-><init>([I[F[[F)V
-
-    .line 26
-    .line 27
-    .line 28
-    sput-object v0, Lw57;->c:Le6;
-
-    .line 29
-    .line 30
-    return-void
+    return-object p0
 .end method

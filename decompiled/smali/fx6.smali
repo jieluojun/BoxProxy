@@ -1,34 +1,45 @@
-.class public final synthetic Lfx6;
+.class public final Lfx6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lp62;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:Llp4;
+.field public a:J
 
-.field public final synthetic k:I
+.field public b:F
 
-.field public final synthetic l:J
+.field public c:F
 
-.field public final synthetic m:Llp4;
+.field public d:I
 
-.field public final synthetic n:Llp4;
+.field public e:F
 
-.field public final synthetic o:Llp4;
+.field public f:F
 
-.field public final synthetic p:I
+.field public g:I
 
-.field public final synthetic q:Llp4;
+.field public h:Lll5;
 
-.field public final synthetic r:I
+.field public i:Z
+
+.field public j:I
+
+.field public k:I
+
+.field public l:Lhx6;
+
+.field public m:Z
+
+.field public n:Ldx6;
+
+.field public o:Lif6;
+
+.field public p:Ll7;
 
 
 # direct methods
-.method public synthetic constructor <init>(Llp4;IJLlp4;Llp4;Llp4;ILlp4;I)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 2
 
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -36,291 +47,59 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lfx6;->j:Llp4;
+    const-wide/16 v0, -0x1
 
     .line 5
     .line 6
-    iput p2, p0, Lfx6;->k:I
+    iput-wide v0, p0, Lfx6;->a:J
 
     .line 7
     .line 8
-    iput-wide p3, p0, Lfx6;->l:J
+    const/4 v0, 0x0
 
     .line 9
+    iput v0, p0, Lfx6;->b:F
+
     .line 10
-    iput-object p5, p0, Lfx6;->m:Llp4;
-
     .line 11
-    .line 12
-    iput-object p6, p0, Lfx6;->n:Llp4;
+    const v1, 0x7f7fffff    # Float.MAX_VALUE
 
+    .line 12
     .line 13
     .line 14
-    iput-object p7, p0, Lfx6;->o:Llp4;
+    iput v1, p0, Lfx6;->c:F
 
     .line 15
     .line 16
-    iput p8, p0, Lfx6;->p:I
+    const/4 v1, -0x1
 
     .line 17
-    .line 18
-    iput-object p9, p0, Lfx6;->q:Llp4;
-
-    .line 19
-    .line 20
-    iput p10, p0, Lfx6;->r:I
-
-    .line 21
-    .line 22
-    return-void
-.end method
-
-
-# virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 10
-
-    .line 1
-    check-cast p1, Lkp4;
-
-    .line 2
-    .line 3
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 4
-    .line 5
-    .line 6
-    iget-object v0, p0, Lfx6;->j:Llp4;
-
-    .line 7
-    .line 8
-    iget v1, v0, Llp4;->k:I
-
-    .line 9
-    .line 10
-    div-int/lit8 v1, v1, 0x2
-
-    .line 11
-    .line 12
-    iget v2, p0, Lfx6;->k:I
-
-    .line 13
-    .line 14
-    sub-int v1, v2, v1
-
-    .line 15
-    .line 16
-    const/4 v3, 0x0
-
-    .line 17
-    invoke-static {p1, v0, v3, v1}, Lkp4;->l(Lkp4;Llp4;II)V
+    iput v1, p0, Lfx6;->d:I
 
     .line 18
     .line 19
+    iput v0, p0, Lfx6;->e:F
+
     .line 20
-    iget-wide v4, p0, Lfx6;->l:J
-
     .line 21
-    .line 22
-    invoke-static {v4, v5}, Ls61;->i(J)I
+    const/high16 v0, -0x40800000    # -1.0f
 
+    .line 22
     .line 23
+    iput v0, p0, Lfx6;->f:F
+
     .line 24
     .line 25
-    move-result v1
+    iput v1, p0, Lfx6;->g:I
 
     .line 26
-    iget-object v6, p0, Lfx6;->m:Llp4;
-
     .line 27
+    const/4 v0, 0x0
+
     .line 28
-    iget v7, v6, Llp4;->j:I
+    iput-boolean v0, p0, Lfx6;->i:Z
 
     .line 29
     .line 30
-    sub-int/2addr v1, v7
-
-    .line 31
-    div-int/lit8 v1, v1, 0x2
-
-    .line 32
-    .line 33
-    iget v0, v0, Llp4;->j:I
-
-    .line 34
-    .line 35
-    iget-object v8, p0, Lfx6;->n:Llp4;
-
-    .line 36
-    .line 37
-    if-ge v1, v0, :cond_0
-
-    .line 38
-    .line 39
-    sub-int/2addr v0, v1
-
-    .line 40
-    :goto_0
-    add-int/2addr v1, v0
-
-    .line 41
-    goto :goto_1
-
-    .line 42
-    :cond_0
-    add-int/2addr v7, v1
-
-    .line 43
-    invoke-static {v4, v5}, Ls61;->i(J)I
-
-    .line 44
-    .line 45
-    .line 46
-    move-result v0
-
-    .line 47
-    iget v9, v8, Llp4;->j:I
-
-    .line 48
-    .line 49
-    sub-int/2addr v0, v9
-
-    .line 50
-    if-le v7, v0, :cond_1
-
-    .line 51
-    .line 52
-    invoke-static {v4, v5}, Ls61;->i(J)I
-
-    .line 53
-    .line 54
-    .line 55
-    move-result v0
-
-    .line 56
-    iget v7, v8, Llp4;->j:I
-
-    .line 57
-    .line 58
-    sub-int/2addr v0, v7
-
-    .line 59
-    iget v7, v6, Llp4;->j:I
-
-    .line 60
-    .line 61
-    add-int/2addr v7, v1
-
-    .line 62
-    sub-int/2addr v0, v7
-
-    .line 63
-    goto :goto_0
-
-    .line 64
-    :cond_1
-    :goto_1
-    iget v0, v6, Llp4;->k:I
-
-    .line 65
-    .line 66
-    div-int/lit8 v0, v0, 0x2
-
-    .line 67
-    .line 68
-    sub-int v0, v2, v0
-
-    .line 69
-    .line 70
-    invoke-static {p1, v6, v1, v0}, Lkp4;->l(Lkp4;Llp4;II)V
-
-    .line 71
-    .line 72
-    .line 73
-    invoke-static {v4, v5}, Ls61;->i(J)I
-
-    .line 74
-    .line 75
-    .line 76
-    move-result v0
-
-    .line 77
-    iget v1, v8, Llp4;->j:I
-
-    .line 78
-    .line 79
-    sub-int/2addr v0, v1
-
-    .line 80
-    iget v1, v8, Llp4;->k:I
-
-    .line 81
-    .line 82
-    div-int/lit8 v1, v1, 0x2
-
-    .line 83
-    .line 84
-    sub-int/2addr v2, v1
-
-    .line 85
-    invoke-static {p1, v8, v0, v2}, Lkp4;->l(Lkp4;Llp4;II)V
-
-    .line 86
-    .line 87
-    .line 88
-    iget-object v0, p0, Lfx6;->o:Llp4;
-
-    .line 89
-    .line 90
-    if-eqz v0, :cond_2
-
-    .line 91
-    .line 92
-    invoke-static {v4, v5}, Ls61;->i(J)I
-
-    .line 93
-    .line 94
-    .line 95
-    move-result v1
-
-    .line 96
-    iget v2, v0, Llp4;->j:I
-
-    .line 97
-    .line 98
-    sub-int/2addr v1, v2
-
-    .line 99
-    div-int/lit8 v1, v1, 0x2
-
-    .line 100
-    .line 101
-    iget v2, p0, Lfx6;->p:I
-
-    .line 102
-    .line 103
-    invoke-static {p1, v0, v1, v2}, Lkp4;->l(Lkp4;Llp4;II)V
-
-    .line 104
-    .line 105
-    .line 106
-    :cond_2
-    iget-object v0, p0, Lfx6;->q:Llp4;
-
-    .line 107
-    .line 108
-    iget p0, p0, Lfx6;->r:I
-
-    .line 109
-    .line 110
-    invoke-static {p1, v0, v3, p0}, Lkp4;->l(Lkp4;Llp4;II)V
-
-    .line 111
-    .line 112
-    .line 113
-    sget-object p0, La47;->a:La47;
-
-    .line 114
-    .line 115
-    return-object p0
+    return-void
 .end method

@@ -1,440 +1,513 @@
-.class public final Ltd6;
-.super Lkk3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Landroid/view/SubMenu;
+.class public abstract Ltd6;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final A:Lqk3;
+.field public a:Lyd6;
 
-.field public final z:Lkk3;
+.field public b:J
+
+.field public c:Z
+
+.field public d:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;Lkk3;Lqk3;)V
-    .locals 0
+.method public constructor <init>(JLyd6;)V
+    .locals 7
 
     .line 1
-    invoke-direct {p0, p1}, Lkk3;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
     .line 4
-    iput-object p2, p0, Ltd6;->z:Lkk3;
+    iput-object p3, p0, Ltd6;->a:Lyd6;
 
     .line 5
     .line 6
-    iput-object p3, p0, Ltd6;->A:Lqk3;
+    iput-wide p1, p0, Ltd6;->b:J
 
     .line 7
     .line 8
+    sget-object p3, Lae6;->a:Lr46;
+
+    .line 9
+    .line 10
+    const-wide/16 v0, 0x0
+
+    .line 11
+    .line 12
+    cmp-long p3, p1, v0
+
+    .line 13
+    .line 14
+    if-eqz p3, :cond_3
+
+    .line 15
+    .line 16
+    invoke-virtual {p0}, Ltd6;->d()Lyd6;
+
+    .line 17
+    .line 18
+    .line 19
+    move-result-object p3
+
+    .line 20
+    iget-wide v2, p3, Lyd6;->k:J
+
+    .line 21
+    .line 22
+    iget-object v4, p3, Lyd6;->l:[J
+
+    .line 23
+    .line 24
+    if-eqz v4, :cond_0
+
+    .line 25
+    .line 26
+    const/4 p1, 0x0
+
+    .line 27
+    aget-wide p1, v4, p1
+
+    .line 28
+    .line 29
+    goto :goto_1
+
+    .line 30
+    :cond_0
+    iget-wide v4, p3, Lyd6;->j:J
+
+    .line 31
+    .line 32
+    cmp-long v6, v4, v0
+
+    .line 33
+    .line 34
+    if-eqz v6, :cond_1
+
+    .line 35
+    .line 36
+    invoke-static {v4, v5}, Ljava/lang/Long;->numberOfTrailingZeros(J)I
+
+    .line 37
+    .line 38
+    .line 39
+    move-result p1
+
+    .line 40
+    :goto_0
+    int-to-long p1, p1
+
+    .line 41
+    add-long/2addr p1, v2
+
+    .line 42
+    goto :goto_1
+
+    .line 43
+    :cond_1
+    iget-wide v4, p3, Lyd6;->i:J
+
+    .line 44
+    .line 45
+    cmp-long p3, v4, v0
+
+    .line 46
+    .line 47
+    if-eqz p3, :cond_2
+
+    .line 48
+    .line 49
+    const-wide/16 p1, 0x40
+
+    .line 50
+    .line 51
+    add-long/2addr v2, p1
+
+    .line 52
+    invoke-static {v4, v5}, Ljava/lang/Long;->numberOfTrailingZeros(J)I
+
+    .line 53
+    .line 54
+    .line 55
+    move-result p1
+
+    .line 56
+    goto :goto_0
+
+    .line 57
+    :cond_2
+    :goto_1
+    sget-object p3, Lae6;->c:Ljava/lang/Object;
+
+    .line 58
+    .line 59
+    monitor-enter p3
+
+    .line 60
+    :try_start_0
+    sget-object v0, Lae6;->f:Lof;
+
+    .line 61
+    .line 62
+    invoke-virtual {v0, p1, p2}, Lof;->a(J)I
+
+    .line 63
+    .line 64
+    .line 65
+    move-result p1
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 66
+    monitor-exit p3
+
+    .line 67
+    goto :goto_2
+
+    .line 68
+    :catchall_0
+    move-exception p0
+
+    .line 69
+    monitor-exit p3
+
+    .line 70
+    throw p0
+
+    .line 71
+    :cond_3
+    const/4 p1, -0x1
+
+    .line 72
+    :goto_2
+    iput p1, p0, Ltd6;->d:I
+
+    .line 73
+    .line 74
+    return-void
+.end method
+
+.method public static q(Ltd6;)V
+    .locals 1
+
+    .line 1
+    sget-object v0, Lae6;->b:Lyy6;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0, p0}, Lyy6;->c0(Ljava/lang/Object;)V
+
+    .line 4
+    .line 5
+    .line 6
     return-void
 .end method
 
 
 # virtual methods
-.method public final d(Lqk3;)Z
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Ltd6;->z:Lkk3;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lkk3;->d(Lqk3;)Z
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final e(Lkk3;Landroid/view/MenuItem;)Z
+.method public final a()V
     .locals 1
 
     .line 1
-    invoke-super {p0, p1, p2}, Lkk3;->e(Lkk3;Landroid/view/MenuItem;)Z
+    sget-object v0, Lae6;->c:Ljava/lang/Object;
 
     .line 2
     .line 3
+    monitor-enter v0
+
     .line 4
-    move-result v0
+    :try_start_0
+    invoke-virtual {p0}, Ltd6;->b()V
 
     .line 5
-    if-nez v0, :cond_1
-
     .line 6
     .line 7
-    iget-object p0, p0, Ltd6;->z:Lkk3;
+    invoke-virtual {p0}, Ltd6;->p()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     .line 8
     .line 9
-    invoke-virtual {p0, p1, p2}, Lkk3;->e(Lkk3;Landroid/view/MenuItem;)Z
+    .line 10
+    monitor-exit v0
+
+    .line 11
+    return-void
+
+    .line 12
+    :catchall_0
+    move-exception p0
+
+    .line 13
+    monitor-exit v0
+
+    .line 14
+    throw p0
+.end method
+
+.method public b()V
+    .locals 3
+
+    .line 1
+    sget-object v0, Lae6;->d:Lyd6;
+
+    .line 2
+    .line 3
+    invoke-virtual {p0}, Ltd6;->g()J
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-wide v1
+
+    .line 7
+    invoke-virtual {v0, v1, v2}, Lyd6;->b(J)Lyd6;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p0
+
+    .line 11
+    sput-object p0, Lae6;->d:Lyd6;
+
+    .line 12
+    .line 13
+    return-void
+.end method
+
+.method public abstract c()V
+.end method
+
+.method public d()Lyd6;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Ltd6;->a:Lyd6;
+
+    .line 2
+    .line 3
+    return-object p0
+.end method
+
+.method public abstract e()Lp72;
+.end method
+
+.method public f()Z
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public g()J
+    .locals 2
+
+    .line 1
+    iget-wide v0, p0, Ltd6;->b:J
+
+    .line 2
+    .line 3
+    return-wide v0
+.end method
+
+.method public h()I
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return p0
+.end method
+
+.method public i()Lp72;
+    .locals 0
+
+    .line 1
+    const/4 p0, 0x0
+
+    .line 2
+    return-object p0
+.end method
+
+.method public final j()Ltd6;
+    .locals 2
+
+    .line 1
+    sget-object v0, Lae6;->b:Lyy6;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Lyy6;->r()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v1
+
+    .line 7
+    check-cast v1, Ltd6;
+
+    .line 8
+    .line 9
+    invoke-virtual {v0, p0}, Lyy6;->c0(Ljava/lang/Object;)V
 
     .line 10
     .line 11
     .line 12
-    move-result p0
+    return-object v1
+.end method
 
-    .line 13
-    if-eqz p0, :cond_0
+.method public k()V
+    .locals 0
 
-    .line 14
-    .line 15
-    goto :goto_0
+    .line 1
+    invoke-static {}, Lok7;->S()V
 
-    .line 16
-    :cond_0
+    .line 2
+    .line 3
+    .line 4
     const/4 p0, 0x0
 
-    .line 17
-    return p0
-
-    .line 18
-    :cond_1
-    :goto_0
-    const/4 p0, 0x1
-
-    .line 19
-    return p0
+    .line 5
+    throw p0
 .end method
 
-.method public final f(Lqk3;)Z
+.method public l()V
     .locals 0
 
     .line 1
-    iget-object p0, p0, Ltd6;->z:Lkk3;
+    invoke-static {}, Lok7;->S()V
 
     .line 2
     .line 3
-    invoke-virtual {p0, p1}, Lkk3;->f(Lqk3;)Z
-
     .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final getItem()Landroid/view/MenuItem;
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Ltd6;->A:Lqk3;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public final j()Ljava/lang/String;
-    .locals 1
-
-    .line 1
-    iget-object p0, p0, Ltd6;->A:Lqk3;
-
-    .line 2
-    .line 3
-    iget p0, p0, Lqk3;->a:I
-
-    .line 4
-    .line 5
-    if-nez p0, :cond_0
-
-    .line 6
-    .line 7
     const/4 p0, 0x0
 
-    .line 8
-    return-object p0
-
-    .line 9
-    :cond_0
-    const-string v0, "android:menu:actionviewstates:"
-
-    .line 10
-    .line 11
-    invoke-static {p0, v0}, Lhs5;->k(ILjava/lang/String;)Ljava/lang/String;
-
-    .line 12
-    .line 13
-    .line 14
-    move-result-object p0
-
-    .line 15
-    return-object p0
+    .line 5
+    throw p0
 .end method
 
-.method public final k()Lkk3;
+.method public m()V
     .locals 0
 
     .line 1
-    iget-object p0, p0, Ltd6;->z:Lkk3;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lkk3;->k()Lkk3;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    return-object p0
-.end method
-
-.method public final m()Z
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Ltd6;->z:Lkk3;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lkk3;->m()Z
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final n()Z
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Ltd6;->z:Lkk3;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lkk3;->n()Z
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final o()Z
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Ltd6;->z:Lkk3;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lkk3;->o()Z
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final setGroupDividerEnabled(Z)V
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Ltd6;->z:Lkk3;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0, p1}, Lkk3;->setGroupDividerEnabled(Z)V
-
-    .line 4
-    .line 5
-    .line 6
     return-void
 .end method
 
-.method public final setHeaderIcon(I)Landroid/view/SubMenu;
-    .locals 6
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x0
-
-    move-object v0, p0
-
-    move v3, p1
-
-    .line 11
-    invoke-virtual/range {v0 .. v5}, Lkk3;->u(ILjava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Landroid/view/View;)V
-
-    return-object v0
-.end method
-
-.method public final setHeaderIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/SubMenu;
-    .locals 6
-
-    .line 1
-    const/4 v3, 0x0
-
-    .line 2
-    const/4 v5, 0x0
-
-    .line 3
-    const/4 v1, 0x0
-
-    .line 4
-    const/4 v2, 0x0
-
-    .line 5
-    move-object v0, p0
-
-    .line 6
-    move-object v4, p1
-
-    .line 7
-    invoke-virtual/range {v0 .. v5}, Lkk3;->u(ILjava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Landroid/view/View;)V
-
-    .line 8
-    .line 9
-    .line 10
-    return-object v0
-.end method
-
-.method public final setHeaderTitle(I)Landroid/view/SubMenu;
-    .locals 6
-
-    const/4 v4, 0x0
-
-    const/4 v5, 0x0
-
-    const/4 v2, 0x0
-
-    const/4 v3, 0x0
-
-    move-object v0, p0
-
-    move v1, p1
-
-    .line 11
-    invoke-virtual/range {v0 .. v5}, Lkk3;->u(ILjava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Landroid/view/View;)V
-
-    return-object v0
-.end method
-
-.method public final setHeaderTitle(Ljava/lang/CharSequence;)Landroid/view/SubMenu;
-    .locals 6
-
-    .line 1
-    const/4 v4, 0x0
-
-    .line 2
-    const/4 v5, 0x0
-
-    .line 3
-    const/4 v1, 0x0
-
-    .line 4
-    const/4 v3, 0x0
-
-    .line 5
-    move-object v0, p0
-
-    .line 6
-    move-object v2, p1
-
-    .line 7
-    invoke-virtual/range {v0 .. v5}, Lkk3;->u(ILjava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Landroid/view/View;)V
-
-    .line 8
-    .line 9
-    .line 10
-    return-object v0
-.end method
-
-.method public final setHeaderView(Landroid/view/View;)Landroid/view/SubMenu;
-    .locals 6
-
-    .line 1
-    const/4 v3, 0x0
-
-    .line 2
-    const/4 v4, 0x0
-
-    .line 3
-    const/4 v1, 0x0
-
-    .line 4
-    const/4 v2, 0x0
-
-    .line 5
-    move-object v0, p0
-
-    .line 6
-    move-object v5, p1
-
-    .line 7
-    invoke-virtual/range {v0 .. v5}, Lkk3;->u(ILjava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Landroid/view/View;)V
-
-    .line 8
-    .line 9
-    .line 10
-    return-object v0
-.end method
-
-.method public final setIcon(I)Landroid/view/SubMenu;
-    .locals 1
-
-    .line 7
-    iget-object v0, p0, Ltd6;->A:Lqk3;
-
-    invoke-virtual {v0, p1}, Lqk3;->setIcon(I)Landroid/view/MenuItem;
-
-    return-object p0
-.end method
-
-.method public final setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/SubMenu;
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Ltd6;->A:Lqk3;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0, p1}, Lqk3;->setIcon(Landroid/graphics/drawable/Drawable;)Landroid/view/MenuItem;
-
-    .line 4
-    .line 5
-    .line 6
-    return-object p0
-.end method
-
-.method public final setQwertyMode(Z)V
+.method public n(Lph6;)V
     .locals 0
 
     .line 1
-    iget-object p0, p0, Ltd6;->z:Lkk3;
+    sget-object p0, Lae6;->a:Lr46;
 
     .line 2
     .line 3
-    invoke-virtual {p0, p1}, Lkk3;->setQwertyMode(Z)V
+    new-instance p0, Ljava/lang/IllegalStateException;
 
     .line 4
     .line 5
+    const-string p1, "Cannot modify a state object in a read-only snapshot"
+
     .line 6
+    .line 7
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    .line 8
+    .line 9
+    .line 10
+    throw p0
+.end method
+
+.method public final o()V
+    .locals 1
+
+    .line 1
+    iget v0, p0, Ltd6;->d:I
+
+    .line 2
+    .line 3
+    if-ltz v0, :cond_0
+
+    .line 4
+    .line 5
+    invoke-static {v0}, Lae6;->t(I)V
+
+    .line 6
+    .line 7
+    .line 8
+    const/4 v0, -0x1
+
+    .line 9
+    iput v0, p0, Ltd6;->d:I
+
+    .line 10
+    .line 11
+    :cond_0
     return-void
+.end method
+
+.method public p()V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Ltd6;->o()V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public r(Lyd6;)V
+    .locals 0
+
+    .line 1
+    iput-object p1, p0, Ltd6;->a:Lyd6;
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+.method public s(J)V
+    .locals 0
+
+    .line 1
+    iput-wide p1, p0, Ltd6;->b:J
+
+    .line 2
+    .line 3
+    return-void
+.end method
+
+.method public t(I)V
+    .locals 0
+
+    .line 1
+    new-instance p0, Ljava/lang/IllegalStateException;
+
+    .line 2
+    .line 3
+    const-string p1, "Updating write count is not supported for this snapshot"
+
+    .line 4
+    .line 5
+    invoke-direct {p0, p1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    .line 6
+    .line 7
+    .line 8
+    throw p0
+.end method
+
+.method public abstract u(Lp72;)Ltd6;
 .end method

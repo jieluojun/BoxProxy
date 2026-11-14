@@ -1,99 +1,38 @@
-.class final Lv22;
-.super Ldq3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ldq3;"
-    }
-.end annotation
+.class public abstract synthetic Lv22;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
-.field public static final j:Lv22;
+.field public static final synthetic a:I
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 1
+    .locals 7
 
     .line 1
-    new-instance v0, Lv22;
+    const-wide/16 v3, 0x1
 
     .line 2
     .line 3
-    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+    const-wide/32 v5, 0x7fffffff
 
     .line 4
     .line 5
     .line 6
-    sput-object v0, Lv22;->j:Lv22;
+    const-string v0, "kotlinx.coroutines.flow.defaultConcurrency"
 
     .line 7
     .line 8
+    const-wide/16 v1, 0x10
+
+    .line 9
+    .line 10
+    invoke-static/range {v0 .. v6}, Lo06;->o0(Ljava/lang/String;JJJ)J
+
+    .line 11
+    .line 12
+    .line 13
     return-void
-.end method
-
-
-# virtual methods
-.method public final a()Lvp3;
-    .locals 0
-
-    .line 1
-    new-instance p0, Lx22;
-
-    .line 2
-    .line 3
-    invoke-direct {p0}, Lx22;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    return-object p0
-.end method
-
-.method public final b(Lvp3;)V
-    .locals 0
-
-    .line 1
-    check-cast p1, Lx22;
-
-    .line 2
-    .line 3
-    return-void
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 0
-
-    .line 1
-    if-ne p1, p0, :cond_0
-
-    .line 2
-    .line 3
-    const/4 p0, 0x1
-
-    .line 4
-    return p0
-
-    .line 5
-    :cond_0
-    const/4 p0, 0x0
-
-    .line 6
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    .line 1
-    const p0, -0x72ff26c6
-
-    .line 2
-    .line 3
-    .line 4
-    return p0
 .end method

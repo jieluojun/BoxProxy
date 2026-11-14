@@ -94,7 +94,7 @@ def translate(op, regmap, mapping, members):
     return REG.sub(swap, text), missing
 
 
-LOCALS_RE = re.compile(r'^\.locals\s+(\d+)\s*$', re.M)
+LOCALS_RE = re.compile(r'^\s*\.locals\s+(\d+)\s*$', re.M)
 
 
 def locals_count(body):
@@ -112,20 +112,63 @@ def used_registers(body):
     return used
 
 
-def allocate_locals(body, missing_v):
-    """Map each missing 139 v-register to a fresh, unused 154 v-register.
+def param_count(header):
+    """Number of parameter registers (including `this` for instance methods)."""
+    m = re.search(r'\((.*)\)', header)
+    if not m or not m.group(1).strip():
+        return 1 if ' static ' not in header else 0
+    return len([t for t in m.group(1).split(';') if t.strip()]) + \
+        (0 if ' static ' in header else 1)
+
+
+def allocate_locals(body, missing_v, ops, insert_rel):
+    """Map each missing 139 v-register to a 154 v-register.
 
     Returns (regmap_entries, new_locals_count). The customization introduces
-    locals that did not exist in the 139 vanilla method, so the injector has to
-    hand out fresh slots in the 154 target and bump `.locals`.
+    locals that did not exist in the 139 vanilla method, so the injector has
+    to hand out slots in the 154 target and bump `.locals` when needed.
+
+    invoke-* arguments are nibble-encoded and must stay within v0..v15, so
+    registers used there get the lowest free (or dead) nibble slot first.
+    When the target method is full, a register whose last use is before the
+    insertion point is reused (it is dead there).
     """
-    used = used_registers(body)
-    next_free = max(used | {locals_count(body) - 1}) + 1 if (used or locals_count(body)) else 0
+    used = set(used_registers(body))
+    locals_n = locals_count(body)
+    total = locals_n + param_count(body.splitlines()[0])
+    last_use = {}
+    for idx, line in enumerate(body.splitlines()):
+        for kind, num in REG.findall(line):
+            if kind == 'v':
+                last_use[int(num)] = idx
+    dead = {reg for reg, idx in last_use.items() if idx < insert_rel}
+    invoke_args = set()
+    for op in ops:
+        for m in re.finditer(r'invoke-\w+ \{([^}]*)\}', op):
+            for r in (x.strip() for x in m.group(1).split(',')):
+                if r in missing_v:
+                    invoke_args.add(r)
     entries = {}
     for name in sorted(missing_v, key=lambda n: int(n[1:])):
-        entries[name] = 'v' + str(next_free)
-        next_free += 1
-    new_count = max(locals_count(body), next_free)
+        inv = name in invoke_args
+
+        def pick(pool, nibble):
+            for v in sorted(pool):
+                if v >= total:
+                    continue
+                if nibble and v > 15:
+                    continue
+                return v
+            return None
+
+        slot = pick({v for v in range(total) if v not in used}, inv)
+        if slot is None:
+            slot = pick(dead, inv)
+        if slot is None:
+            slot = max(used | {locals_n})
+        entries[name] = 'v' + str(slot)
+        used.add(slot)
+    new_count = max(locals_n, max(used) + 1 if used else 0)
     return entries, new_count
 
 
@@ -144,8 +187,12 @@ def main():
     old_root = ROOT / 'decompiled'
 
     applied, skipped = [], []
+    sswitch_data = re.compile(r'-?0x[0-9a-fA-F]+ -> :')
     for hunk in hunks:
-        added = [item['op'] for item in hunk['added']]
+        # sswitch data tables belong to the enclosing method's sswitch, not
+        # to the customization block: drop them from the added ops
+        added = [item['op'] for item in hunk['added']
+                 if not sswitch_data.match(item['op'].strip())]
         if not added or all('FToast;->makeText' in op for op in added):
             continue
         site = sites.get(hunk['file'])
@@ -223,6 +270,25 @@ def main():
                 skipped.append((hunk['file'], hunk['method'], 'anchor not found'))
                 continue
 
+        # insertion line in the file (sswitch data skipped) so dead-register
+        # reuse knows which registers are dead at the insertion point
+        lines_all = new_text.splitlines()
+        body_start = new_text[:span[0]].count('\n')
+        cursor = body_start
+        seen = 0
+        while seen <= target_index:
+            strip = lines_all[cursor].strip()
+            is_data = re.match(r'-?0x[0-9a-fA-F]+ -> :', strip)
+            if strip and not strip.startswith(('.', ':', '#')) and not is_data:
+                if seen == target_index:
+                    break
+                seen += 1
+            cursor += 1
+        insertion_line = cursor + 1
+        while insertion_line < len(lines_all) and re.match(
+                r'-?0x[0-9a-fA-F]+ -> :', lines_all[insertion_line].strip()):
+            insertion_line += 1
+
         def do_translate():
             out, miss = [], set()
             for op in added:
@@ -245,7 +311,8 @@ def main():
                     regmap.setdefault(name, name)
                 changed = True
             if v_missing:
-                entries, new_locals = allocate_locals(span[2], v_missing)
+                entries, new_locals = allocate_locals(
+                    span[2], v_missing, added, insertion_line - body_start)
                 for name, fresh in entries.items():
                     regmap.setdefault(name, fresh)
                 if new_locals > locals_count(span[2]):
@@ -259,27 +326,42 @@ def main():
                             'registers unresolved: ' + ','.join(sorted(missing))))
             continue
 
+        # static methods have no p-register aliases: parameter N is vN, so
+        # p-registers left over from the 139 customization must be rewritten
+        header = span[2].splitlines()[0]
+        if ' static ' in header:
+            translated = [re.sub(r'(?<![A-Za-z0-9])p(\d+)(?![0-9])', r'v\1', op)
+                          for op in translated]
+
+        # labels referenced by the snippet but not defined in the 154 target
+        # method get local definitions at the end of the snippet (fall-through
+        # continuation), so the injected control flow stays self-contained
+        defined = set(re.findall(r'^\s*:([A-Za-z0-9_]+)\s*$', span[2], re.M))
+        refs = set()
+        for op in translated:
+            refs.update(re.findall(r':([A-Za-z][A-Za-z0-9_]*)', op))
+        extra_labels = sorted(refs - defined)
+
         if args.apply:
             lines = new_text.splitlines()
-            if locals_bump is not None:
-                for i, line in enumerate(lines):
-                    m = LOCALS_RE.match(line)
-                    if m and int(m.group(1)) < locals_bump:
-                        lines[i] = '    .locals ' + str(locals_bump)
-                        break
             # locate the target instruction line inside the file
             body_start = new_text[:span[0]].count('\n')
-            cursor = body_start
-            seen = 0
-            while seen <= target_index:
-                if lines[cursor].strip() and not lines[cursor].strip().startswith(('.', ':', '#')):
-                    if seen == target_index:
+            if locals_bump is not None:
+                # bump the .locals of the target method only: the first
+                # .locals at or after the method header, never an earlier
+                # method's declaration in the same file
+                for i in range(body_start, len(lines)):
+                    m = LOCALS_RE.match(lines[i])
+                    if m:
+                        if int(m.group(1)) < locals_bump:
+                            lines[i] = '    .locals ' + str(locals_bump)
                         break
-                    seen += 1
-                cursor += 1
-            insertion = cursor + 1
+            # insertion line was computed before translation (sswitch data
+            # skipped, never split from its table)
+            insertion = insertion_line
             snippet = ['', '    # --- boxproxy customization ---'] + \
-                      ['    ' + line for line in translated]
+                      ['    ' + line for line in translated] + \
+                      ['    :' + label for label in extra_labels]
             lines[insertion:insertion] = snippet
             new_path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
         applied.append((hunk['file'], target['class'], target['method'], len(translated)))

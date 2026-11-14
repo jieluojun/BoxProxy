@@ -1,140 +1,240 @@
-.class public final enum Lbz6;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lbz6;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Lt72;
 
 
-# static fields
-.field public static final enum j:Lbz6;
+# instance fields
+.field public final synthetic i:B
 
-.field public static final enum k:Lbz6;
-
-.field public static final enum l:Lbz6;
-
-.field public static final synthetic m:[Lbz6;
+.field public final synthetic j:Lwu;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 5
+.method public synthetic constructor <init>(Lwu;B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lbz6;
+    iput-byte p2, p0, Lbz6;->i:B
 
     .line 2
     .line 3
-    const-string v1, "ContinueTraversal"
+    iput-object p1, p0, Lbz6;->j:Lwu;
+
+    .line 4
+    .line 5
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 6
+    .line 7
+    .line 8
+    return-void
+.end method
+
+
+# virtual methods
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 13
+
+    .line 1
+    iget-byte v0, p0, Lbz6;->i:B
+
+    .line 2
+    .line 3
+    sget-object v1, Ll97;->a:Ll97;
 
     .line 4
     .line 5
     const/4 v2, 0x0
 
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    const/4 v3, 0x2
 
     .line 7
-    .line 8
-    .line 9
-    sput-object v0, Lbz6;->j:Lbz6;
+    const/4 v4, 0x1
 
+    .line 8
+    packed-switch v0, :pswitch_data_0
+
+    .line 9
     .line 10
     .line 11
-    new-instance v1, Lbz6;
+    move-object v10, p1
 
     .line 12
+    check-cast v10, Lt82;
+
     .line 13
-    const-string v2, "SkipSubtreeAndContinueTraversal"
-
     .line 14
-    .line 15
-    const/4 v3, 0x1
+    check-cast p2, Ljava/lang/Integer;
 
+    .line 15
     .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
     .line 17
     .line 18
     .line 19
-    sput-object v1, Lbz6;->k:Lbz6;
+    move-result p1
 
     .line 20
+    and-int/lit8 p2, p1, 0x3
+
     .line 21
-    new-instance v2, Lbz6;
-
     .line 22
-    .line 23
-    const-string v3, "CancelTraversal"
+    if-eq p2, v3, :cond_0
 
+    .line 23
     .line 24
+    move v2, v4
+
     .line 25
-    const/4 v4, 0x2
+    :cond_0
+    and-int/2addr p1, v4
 
     .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+    invoke-virtual {v10, p1, v2}, Lt82;->S(IZ)Z
 
     .line 27
     .line 28
     .line 29
-    sput-object v2, Lbz6;->l:Lbz6;
+    move-result p1
 
     .line 30
-    .line 31
-    filled-new-array {v0, v1, v2}, [Lbz6;
+    if-eqz p1, :cond_1
 
+    .line 31
     .line 32
+    iget-object v5, p0, Lbz6;->j:Lwu;
+
     .line 33
     .line 34
-    move-result-object v0
+    iget-object v6, v5, Lwu;->B:Lwy6;
 
     .line 35
-    sput-object v0, Lbz6;->m:[Lbz6;
-
     .line 36
+    const/4 v11, 0x0
+
     .line 37
-    return-void
-.end method
+    const/16 v12, 0x1c
 
-.method public static valueOf(Ljava/lang/String;)Lbz6;
-    .locals 1
+    .line 38
+    .line 39
+    const/4 v7, 0x0
 
-    .line 1
-    const-class v0, Lbz6;
+    .line 40
+    const/4 v8, 0x0
 
-    .line 2
-    .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    .line 41
+    const/4 v9, 0x0
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
+    .line 42
+    invoke-static/range {v5 .. v12}, Liz6;->d(Lwu;Lwy6;Lsw3;ZILt82;II)V
 
-    .line 7
-    check-cast p0, Lbz6;
+    .line 43
+    .line 44
+    .line 45
+    goto :goto_0
 
-    .line 8
-    .line 9
-    return-object p0
-.end method
+    .line 46
+    :cond_1
+    invoke-virtual {v10}, Lt82;->V()V
 
-.method public static values()[Lbz6;
-    .locals 1
+    .line 47
+    .line 48
+    .line 49
+    :goto_0
+    return-object v1
 
-    .line 1
-    sget-object v0, Lbz6;->m:[Lbz6;
+    .line 50
+    :pswitch_0
+    check-cast p1, Lt82;
 
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    .line 51
+    .line 52
+    check-cast p2, Ljava/lang/Integer;
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
+    .line 53
+    .line 54
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
-    .line 7
-    check-cast v0, [Lbz6;
+    .line 55
+    .line 56
+    .line 57
+    move-result p2
 
-    .line 8
-    .line 9
-    return-object v0
+    .line 58
+    and-int/lit8 v0, p2, 0x3
+
+    .line 59
+    .line 60
+    if-eq v0, v3, :cond_2
+
+    .line 61
+    .line 62
+    move v0, v4
+
+    .line 63
+    goto :goto_1
+
+    .line 64
+    :cond_2
+    move v0, v2
+
+    .line 65
+    :goto_1
+    and-int/2addr p2, v4
+
+    .line 66
+    invoke-virtual {p1, p2, v0}, Lt82;->S(IZ)Z
+
+    .line 67
+    .line 68
+    .line 69
+    move-result p2
+
+    .line 70
+    if-eqz p2, :cond_3
+
+    .line 71
+    .line 72
+    iget-object p0, p0, Lbz6;->j:Lwu;
+
+    .line 73
+    .line 74
+    invoke-static {p0}, Lpw6;->l(Lwu;)Loy6;
+
+    .line 75
+    .line 76
+    .line 77
+    move-result-object p2
+
+    .line 78
+    const/4 v0, 0x0
+
+    .line 79
+    invoke-static {p0, p2, v0, p1, v2}, Liz6;->c(Lwu;Loy6;Lsw3;Lt82;I)V
+
+    .line 80
+    .line 81
+    .line 82
+    goto :goto_2
+
+    .line 83
+    :cond_3
+    invoke-virtual {p1}, Lt82;->V()V
+
+    .line 84
+    .line 85
+    .line 86
+    :goto_2
+    return-object v1
+
+    .line 87
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

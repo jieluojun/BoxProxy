@@ -1,129 +1,131 @@
-.class public abstract Lrc6;
+.class public final Lrc6;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Landroidx/compose/ui/input/pointer/PointerInputEventHandler;
 
 
-# static fields
-.field public static final a:Ljava/util/Set;
+# instance fields
+.field public final synthetic a:I
+
+.field public final synthetic b:I
+
+.field public final synthetic c:Lgh6;
+
+.field public final synthetic d:Lis0;
+
+.field public final synthetic e:Z
+
+.field public final synthetic f:Lh04;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public constructor <init>(IILgh6;Lis0;ZLh04;)V
+    .locals 0
 
     .line 1
-    const/4 v0, 0x4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
-    new-array v0, v0, [Luy5;
-
     .line 3
     .line 4
-    sget-object v1, Lb27;->b:Lvp2;
+    iput p1, p0, Lrc6;->a:I
 
     .line 5
     .line 6
-    const/4 v2, 0x0
+    iput p2, p0, Lrc6;->b:I
 
     .line 7
-    aput-object v1, v0, v2
-
     .line 8
+    iput-object p3, p0, Lrc6;->c:Lgh6;
+
     .line 9
-    sget-object v1, Lg27;->b:Lvp2;
-
     .line 10
-    .line 11
-    const/4 v2, 0x1
+    iput-object p4, p0, Lrc6;->d:Lis0;
 
+    .line 11
     .line 12
-    aput-object v1, v0, v2
+    iput-boolean p5, p0, Lrc6;->e:Z
 
     .line 13
     .line 14
-    sget-object v1, Lw17;->b:Lvp2;
+    iput-object p6, p0, Lrc6;->f:Lh04;
 
     .line 15
     .line 16
-    const/4 v2, 0x2
-
-    .line 17
-    aput-object v1, v0, v2
-
-    .line 18
-    .line 19
-    sget-object v1, Lm27;->b:Lvp2;
-
-    .line 20
-    .line 21
-    const/4 v2, 0x3
-
-    .line 22
-    aput-object v1, v0, v2
-
-    .line 23
-    .line 24
-    invoke-static {v0}, Lpw;->M0([Ljava/lang/Object;)Ljava/util/Set;
-
-    .line 25
-    .line 26
-    .line 27
-    move-result-object v0
-
-    .line 28
-    sput-object v0, Lrc6;->a:Ljava/util/Set;
-
-    .line 29
-    .line 30
     return-void
 .end method
 
-.method public static final a(Luy5;)Z
-    .locals 1
+
+# virtual methods
+.method public final invoke(Lkx4;Lp91;)Ljava/lang/Object;
+    .locals 8
 
     .line 1
-    invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v0, Lqc6;
 
     .line 2
     .line 3
+    iget-object v6, p0, Lrc6;->f:Lh04;
+
     .line 4
-    invoke-interface {p0}, Luy5;->f()Z
-
     .line 5
-    .line 6
-    .line 7
-    move-result v0
+    const/4 v7, 0x0
 
+    .line 6
+    iget v1, p0, Lrc6;->a:I
+
+    .line 7
     .line 8
-    if-eqz v0, :cond_0
+    iget v2, p0, Lrc6;->b:I
 
     .line 9
     .line 10
-    sget-object v0, Lrc6;->a:Ljava/util/Set;
+    iget-object v3, p0, Lrc6;->c:Lgh6;
 
     .line 11
     .line 12
-    invoke-interface {v0, p0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
+    iget-object v4, p0, Lrc6;->d:Lis0;
 
     .line 13
     .line 14
-    .line 15
-    move-result p0
+    iget-boolean v5, p0, Lrc6;->e:Z
 
+    .line 15
     .line 16
-    if-eqz p0, :cond_0
+    invoke-direct/range {v0 .. v7}, Lqc6;-><init>(IILgh6;Lis0;ZLh04;Lp91;)V
 
     .line 17
     .line 18
-    const/4 p0, 0x1
-
     .line 19
-    return p0
+    check-cast p1, Lgn6;
 
     .line 20
-    :cond_0
-    const/4 p0, 0x0
-
     .line 21
-    return p0
+    invoke-virtual {p1, v0, p2}, Lgn6;->G1(Lt72;Lp91;)Ljava/lang/Object;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object p0
+
+    .line 25
+    sget-object p1, Lpc1;->i:Lpc1;
+
+    .line 26
+    .line 27
+    if-ne p0, p1, :cond_0
+
+    .line 28
+    .line 29
+    return-object p0
+
+    .line 30
+    :cond_0
+    sget-object p0, Ll97;->a:Ll97;
+
+    .line 31
+    .line 32
+    return-object p0
 .end method

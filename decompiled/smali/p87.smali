@@ -1,23 +1,407 @@
 .class public final Lp87;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lsk1;
+.super Lty5;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public volatile j:Leh1;
+.field public final m:Ljava/lang/ThreadLocal;
+
+.field private volatile threadLocalIsSet:Z
 
 
-# virtual methods
-.method public final a()Ldh1;
-    .locals 0
+# direct methods
+.method public constructor <init>(Lp91;Lfc1;)V
+    .locals 2
 
     .line 1
-    iget-object p0, p0, Lp87;->j:Leh1;
+    sget-object v0, Lui0;->k:Lui0;
 
     .line 2
     .line 3
-    return-object p0
+    invoke-interface {p2, v0}, Lfc1;->p(Lec1;)Ldc1;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v1
+
+    .line 7
+    if-nez v1, :cond_0
+
+    .line 8
+    .line 9
+    invoke-interface {p2, v0}, Lfc1;->k(Lfc1;)Lfc1;
+
+    .line 10
+    .line 11
+    .line 12
+    move-result-object v0
+
+    .line 13
+    goto :goto_0
+
+    .line 14
+    :cond_0
+    move-object v0, p2
+
+    .line 15
+    :goto_0
+    invoke-direct {p0, p1, v0}, Lty5;-><init>(Lp91;Lfc1;)V
+
+    .line 16
+    .line 17
+    .line 18
+    new-instance v0, Ljava/lang/ThreadLocal;
+
+    .line 19
+    .line 20
+    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
+
+    .line 21
+    .line 22
+    .line 23
+    iput-object v0, p0, Lp87;->m:Ljava/lang/ThreadLocal;
+
+    .line 24
+    .line 25
+    invoke-interface {p1}, Lp91;->getContext()Lfc1;
+
+    .line 26
+    .line 27
+    .line 28
+    move-result-object p1
+
+    .line 29
+    sget-object v0, Lo6;->X:Lo6;
+
+    .line 30
+    .line 31
+    invoke-interface {p1, v0}, Lfc1;->p(Lec1;)Ldc1;
+
+    .line 32
+    .line 33
+    .line 34
+    move-result-object p1
+
+    .line 35
+    instance-of p1, p1, Lhc1;
+
+    .line 36
+    .line 37
+    if-nez p1, :cond_1
+
+    .line 38
+    .line 39
+    const/4 p1, 0x0
+
+    .line 40
+    invoke-static {p2, p1}, Ll60;->U(Lfc1;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 41
+    .line 42
+    .line 43
+    move-result-object p1
+
+    .line 44
+    invoke-static {p2, p1}, Ll60;->Q(Lfc1;Ljava/lang/Object;)V
+
+    .line 45
+    .line 46
+    .line 47
+    invoke-virtual {p0, p2, p1}, Lp87;->o0(Lfc1;Ljava/lang/Object;)V
+
+    .line 48
+    .line 49
+    .line 50
+    :cond_1
+    return-void
+.end method
+
+
+# virtual methods
+.method public final l0()V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0}, Lp87;->n0()V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public final m0()Z
+    .locals 2
+
+    .line 1
+    iget-boolean v0, p0, Lp87;->threadLocalIsSet:Z
+
+    .line 2
+    .line 3
+    const/4 v1, 0x1
+
+    .line 4
+    if-eqz v0, :cond_0
+
+    .line 5
+    .line 6
+    iget-object v0, p0, Lp87;->m:Ljava/lang/ThreadLocal;
+
+    .line 7
+    .line 8
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+
+    .line 9
+    .line 10
+    .line 11
+    move-result-object v0
+
+    .line 12
+    if-nez v0, :cond_0
+
+    .line 13
+    .line 14
+    move v0, v1
+
+    .line 15
+    goto :goto_0
+
+    .line 16
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 17
+    :goto_0
+    iget-object p0, p0, Lp87;->m:Ljava/lang/ThreadLocal;
+
+    .line 18
+    .line 19
+    invoke-virtual {p0}, Ljava/lang/ThreadLocal;->remove()V
+
+    .line 20
+    .line 21
+    .line 22
+    xor-int/2addr v0, v1
+
+    .line 23
+    return v0
+.end method
+
+.method public final n0()V
+    .locals 2
+
+    .line 1
+    iget-boolean v0, p0, Lp87;->threadLocalIsSet:Z
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_1
+
+    .line 4
+    .line 5
+    iget-object v0, p0, Lp87;->m:Ljava/lang/ThreadLocal;
+
+    .line 6
+    .line 7
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object v0
+
+    .line 11
+    check-cast v0, Lfs4;
+
+    .line 12
+    .line 13
+    if-eqz v0, :cond_0
+
+    .line 14
+    .line 15
+    iget-object v1, v0, Lfs4;->i:Ljava/lang/Object;
+
+    .line 16
+    .line 17
+    check-cast v1, Lfc1;
+
+    .line 18
+    .line 19
+    iget-object v0, v0, Lfs4;->j:Ljava/lang/Object;
+
+    .line 20
+    .line 21
+    invoke-static {v1, v0}, Ll60;->Q(Lfc1;Ljava/lang/Object;)V
+
+    .line 22
+    .line 23
+    .line 24
+    :cond_0
+    iget-object p0, p0, Lp87;->m:Ljava/lang/ThreadLocal;
+
+    .line 25
+    .line 26
+    invoke-virtual {p0}, Ljava/lang/ThreadLocal;->remove()V
+
+    .line 27
+    .line 28
+    .line 29
+    :cond_1
+    return-void
+.end method
+
+.method public final o0(Lfc1;Ljava/lang/Object;)V
+    .locals 1
+
+    .line 1
+    const/4 v0, 0x1
+
+    .line 2
+    iput-boolean v0, p0, Lp87;->threadLocalIsSet:Z
+
+    .line 3
+    .line 4
+    iget-object p0, p0, Lp87;->m:Ljava/lang/ThreadLocal;
+
+    .line 5
+    .line 6
+    new-instance v0, Lfs4;
+
+    .line 7
+    .line 8
+    invoke-direct {v0, p1, p2}, Lfs4;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+
+    .line 9
+    .line 10
+    .line 11
+    invoke-virtual {p0, v0}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
+
+    .line 12
+    .line 13
+    .line 14
+    return-void
+.end method
+
+.method public final x(Ljava/lang/Object;)V
+    .locals 4
+
+    .line 1
+    invoke-virtual {p0}, Lp87;->n0()V
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-static {p1}, Lnr;->U(Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object p1
+
+    .line 8
+    iget-object p0, p0, Lty5;->l:Lp91;
+
+    .line 9
+    .line 10
+    invoke-interface {p0}, Lp91;->getContext()Lfc1;
+
+    .line 11
+    .line 12
+    .line 13
+    move-result-object v0
+
+    .line 14
+    const/4 v1, 0x0
+
+    .line 15
+    invoke-static {v0, v1}, Ll60;->U(Lfc1;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object v2
+
+    .line 19
+    sget-object v3, Ll60;->W:Lhx4;
+
+    .line 20
+    .line 21
+    if-eq v2, v3, :cond_0
+
+    .line 22
+    .line 23
+    invoke-static {p0, v0, v2}, Lnm;->V(Lp91;Lfc1;Ljava/lang/Object;)Lp87;
+
+    .line 24
+    .line 25
+    .line 26
+    move-result-object v1
+
+    .line 27
+    :cond_0
+    :try_start_0
+    invoke-interface {p0, p1}, Lp91;->resumeWith(Ljava/lang/Object;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 28
+    .line 29
+    .line 30
+    if-eqz v1, :cond_1
+
+    .line 31
+    .line 32
+    invoke-virtual {v1}, Lp87;->m0()Z
+
+    .line 33
+    .line 34
+    .line 35
+    move-result p0
+
+    .line 36
+    if-nez p0, :cond_1
+
+    .line 37
+    .line 38
+    return-void
+
+    .line 39
+    :cond_1
+    invoke-static {v0, v2}, Ll60;->Q(Lfc1;Ljava/lang/Object;)V
+
+    .line 40
+    .line 41
+    .line 42
+    return-void
+
+    .line 43
+    :catchall_0
+    move-exception p0
+
+    .line 44
+    if-eqz v1, :cond_2
+
+    .line 45
+    .line 46
+    invoke-virtual {v1}, Lp87;->m0()Z
+
+    .line 47
+    .line 48
+    .line 49
+    move-result p1
+
+    .line 50
+    if-eqz p1, :cond_3
+
+    .line 51
+    .line 52
+    :cond_2
+    invoke-static {v0, v2}, Ll60;->Q(Lfc1;Ljava/lang/Object;)V
+
+    .line 53
+    .line 54
+    .line 55
+    :cond_3
+    throw p0
 .end method

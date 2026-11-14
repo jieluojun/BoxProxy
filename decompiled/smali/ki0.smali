@@ -1,249 +1,188 @@
-.class public final Lki0;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# static fields
-.field public static final f:[[D
-
-.field public static final g:[[D
+.class public abstract Lki0;
+.super Lay3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final a:D
-
-.field public final b:D
-
-.field public final c:D
-
-.field public final d:D
-
-.field public final e:D
+.field public final s:[Z
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 4
+.method public constructor <init>(Ljava/lang/String;[I[[I[S[Z)V
+    .locals 7
 
     .line 1
-    const/4 v0, 0x3
+    const/4 v2, 0x1
 
     .line 2
-    new-array v1, v0, [D
+    const/4 v3, 0x2
 
     .line 3
+    move-object v0, p0
+
     .line 4
-    fill-array-data v1, :array_0
+    move-object v1, p1
 
     .line 5
+    move-object v4, p2
+
     .line 6
+    move-object v5, p3
+
     .line 7
-    new-array v2, v0, [D
+    move-object v6, p4
 
     .line 8
-    .line 9
-    fill-array-data v2, :array_1
+    invoke-direct/range {v0 .. v6}, Lay3;-><init>(Ljava/lang/String;II[I[[I[S)V
 
+    .line 9
     .line 10
     .line 11
+    iput-object p5, v0, Lki0;->s:[Z
+
     .line 12
-    new-array v3, v0, [D
-
     .line 13
-    .line 14
-    fill-array-data v3, :array_2
-
-    .line 15
-    .line 16
-    .line 17
-    filled-new-array {v1, v2, v3}, [[D
-
-    .line 18
-    .line 19
-    .line 20
-    move-result-object v1
-
-    .line 21
-    sput-object v1, Lki0;->f:[[D
-
-    .line 22
-    .line 23
-    new-array v1, v0, [D
-
-    .line 24
-    .line 25
-    fill-array-data v1, :array_3
-
-    .line 26
-    .line 27
-    .line 28
-    new-array v2, v0, [D
-
-    .line 29
-    .line 30
-    fill-array-data v2, :array_4
-
-    .line 31
-    .line 32
-    .line 33
-    new-array v0, v0, [D
-
-    .line 34
-    .line 35
-    fill-array-data v0, :array_5
-
-    .line 36
-    .line 37
-    .line 38
-    filled-new-array {v1, v2, v0}, [[D
-
-    .line 39
-    .line 40
-    .line 41
-    move-result-object v0
-
-    .line 42
-    sput-object v0, Lki0;->g:[[D
-
-    .line 43
-    .line 44
     return-void
-
-    .line 45
-    :array_0
-    .array-data 8
-        0x3fd9aeb3dd11be6eL    # 0.401288
-        0x3fe4ce379b77c02bL    # 0.650173
-        -0x4055a6e75ff609ddL    # -0.051461
-    .end array-data
-
-    .line 46
-    .line 47
-    .line 48
-    .line 49
-    .line 50
-    .line 51
-    .line 52
-    .line 53
-    .line 54
-    .line 55
-    .line 56
-    .line 57
-    .line 58
-    .line 59
-    .line 60
-    .line 61
-    :array_1
-    .array-data 8
-        -0x402ffb9bed30f063L    # -0.250268
-        0x3ff345479d4d8341L    # 1.204414
-        0x3fa77a2cecc814d7L    # 0.045854
-    .end array-data
-
-    .line 62
-    .line 63
-    .line 64
-    .line 65
-    .line 66
-    .line 67
-    .line 68
-    .line 69
-    .line 70
-    .line 71
-    .line 72
-    .line 73
-    .line 74
-    .line 75
-    .line 76
-    .line 77
-    :array_2
-    .array-data 8
-        -0x409ef8055fbb517aL    # -0.002079
-        0x3fa9103c8e25c811L    # 0.048952
-        0x3fee800431bde82dL    # 0.953127
-    .end array-data
-
-    .line 78
-    .line 79
-    .line 80
-    .line 81
-    .line 82
-    .line 83
-    .line 84
-    .line 85
-    .line 86
-    .line 87
-    .line 88
-    .line 89
-    .line 90
-    .line 91
-    .line 92
-    .line 93
-    :array_3
-    .array-data 8
-        0x3ffdcb079afef467L    # 1.8620678
-        -0x400fd1e697792de9L    # -1.0112547
-        0x3fc3188d6a8c3ae1L    # 0.14918678
-    .end array-data
-
-    .line 94
-    .line 95
-    .line 96
-    .line 97
-    .line 98
-    .line 99
-    .line 100
-    .line 101
-    .line 102
-    .line 103
-    .line 104
-    .line 105
-    .line 106
-    .line 107
-    .line 108
-    :array_4
-    .array-data 8
-        0x3fd8cd3c1de87346L    # 0.38752654
-        0x3fe3e2e5bddf7419L    # 0.62144744
-        -0x407d9f0ccb1490dcL    # -0.00897398
-    .end array-data
-
-    :array_5
-    .array-data 8
-        -0x406fc73eee525892L    # -0.0158415
-        -0x405e8770215031c7L    # -0.03412294
-        0x3ff0cca7787f6d9eL    # 1.0499644
-    .end array-data
 .end method
 
-.method public constructor <init>(DDDDDD)V
+
+# virtual methods
+.method public a(II[B)I
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    invoke-virtual {p0, p1, p2, p3}, Lki0;->q(II[B)I
 
     .line 2
     .line 3
     .line 4
-    iput-wide p1, p0, Lki0;->a:D
+    move-result p0
+
+    .line 5
+    return p0
+.end method
+
+.method public final i(III[B)I
+    .locals 4
+
+    .line 1
+    if-gt p2, p1, :cond_0
+
+    .line 2
+    .line 3
+    return p2
+
+    .line 4
+    :cond_0
+    aget-byte v0, p4, p2
 
     .line 5
     .line 6
-    iput-wide p3, p0, Lki0;->b:D
+    and-int/lit16 v0, v0, 0xff
 
     .line 7
     .line 8
-    iput-wide p7, p0, Lki0;->c:D
+    iget-object v1, p0, Lki0;->s:[Z
 
     .line 9
     .line 10
-    iput-wide p9, p0, Lki0;->d:D
+    aget-boolean v0, v1, v0
 
     .line 11
     .line 12
-    iput-wide p11, p0, Lki0;->e:D
+    if-eqz v0, :cond_1
 
     .line 13
     .line 14
-    return-void
+    move v0, p2
+
+    .line 15
+    :goto_0
+    if-le v0, p1, :cond_2
+
+    .line 16
+    .line 17
+    add-int/lit8 v1, v0, -0x1
+
+    .line 18
+    .line 19
+    aget-byte v2, p4, v1
+
+    .line 20
+    .line 21
+    and-int/lit16 v2, v2, 0xff
+
+    .line 22
+    .line 23
+    iget-object v3, p0, Lay3;->p:[I
+
+    .line 24
+    .line 25
+    aget v2, v3, v2
+
+    .line 26
+    .line 27
+    const/4 v3, 0x1
+
+    .line 28
+    if-le v2, v3, :cond_2
+
+    .line 29
+    .line 30
+    move v0, v1
+
+    .line 31
+    goto :goto_0
+
+    .line 32
+    :cond_1
+    move v0, p2
+
+    .line 33
+    :cond_2
+    invoke-virtual {p0, v0, p3, p4}, Ly2;->j(II[B)I
+
+    .line 34
+    .line 35
+    .line 36
+    move-result p0
+
+    .line 37
+    add-int/2addr p0, v0
+
+    .line 38
+    if-le p0, p2, :cond_3
+
+    .line 39
+    .line 40
+    return v0
+
+    .line 41
+    :cond_3
+    sub-int/2addr p2, p0
+
+    .line 42
+    and-int/lit8 p2, p2, -0x2
+
+    .line 43
+    .line 44
+    add-int/2addr p0, p2
+
+    .line 45
+    return p0
+.end method
+
+.method public j(II[B)I
+    .locals 0
+
+    .line 1
+    invoke-virtual {p0, p1, p2, p3}, Lki0;->t(II[B)I
+
+    .line 2
+    .line 3
+    .line 4
+    move-result p0
+
+    .line 5
+    return p0
 .end method

@@ -1,15 +1,62 @@
-.class public interface abstract Lue0;
+.class public abstract Lue0;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ls56;
-.implements Ljava/nio/channels/WritableByteChannel;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# virtual methods
-.method public abstract C(Ljava/lang/String;)Lue0;
-.end method
+# static fields
+.field public static final synthetic a:I
 
-.method public abstract writeByte(I)Lue0;
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 2
+
+    .line 1
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 2
+    .line 3
+    const/16 v1, 0x1e
+
+    .line 4
+    .line 5
+    if-lt v0, v1, :cond_0
+
+    .line 6
+    .line 7
+    invoke-static {v1}, Lz4;->b(I)V
+
+    .line 8
+    .line 9
+    .line 10
+    const/16 v0, 0x1f
+
+    .line 11
+    .line 12
+    invoke-static {v0}, Lz4;->b(I)V
+
+    .line 13
+    .line 14
+    .line 15
+    const/16 v0, 0x21
+
+    .line 16
+    .line 17
+    invoke-static {v0}, Lz4;->b(I)V
+
+    .line 18
+    .line 19
+    .line 20
+    const v0, 0xf4240
+
+    .line 21
+    .line 22
+    .line 23
+    invoke-static {v0}, Lz4;->b(I)V
+
+    .line 24
+    .line 25
+    .line 26
+    :cond_0
+    return-void
 .end method

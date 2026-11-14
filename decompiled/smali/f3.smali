@@ -1,19 +1,19 @@
 .class public abstract Lf3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lp03;
+.implements La53;
 
 
 # static fields
-.field public static final l:Ljava/util/concurrent/ThreadPoolExecutor;
+.field public static final k:Ljava/util/concurrent/ThreadPoolExecutor;
 
 
 # instance fields
-.field public j:Lsu0;
+.field public i:Lou0;
 
-.field public k:Ln71;
+.field public j:Lc81;
 
 
 # direct methods
@@ -81,14 +81,14 @@
     .line 29
     .line 30
     .line 31
-    sput-object v2, Lf3;->l:Ljava/util/concurrent/ThreadPoolExecutor;
+    sput-object v2, Lf3;->k:Ljava/util/concurrent/ThreadPoolExecutor;
 
     .line 32
     .line 33
     return-void
 .end method
 
-.method public constructor <init>(Lsu0;Ln71;)V
+.method public constructor <init>(Lou0;Lc81;)V
     .locals 0
 
     .line 1
@@ -97,11 +97,11 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lf3;->j:Lsu0;
+    iput-object p1, p0, Lf3;->i:Lou0;
 
     .line 5
     .line 6
-    iput-object p2, p0, Lf3;->k:Ln71;
+    iput-object p2, p0, Lf3;->j:Lc81;
 
     .line 7
     .line 8
@@ -114,11 +114,11 @@
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lf3;->j:Lsu0;
+    iget-object p0, p0, Lf3;->i:Lou0;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Lsu0;->getInlayHints()Lup2;
+    invoke-virtual {p0}, Lou0;->getInlayHints()Leu2;
 
     .line 4
     .line 5

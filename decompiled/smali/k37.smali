@@ -1,224 +1,178 @@
-.class public final Lk37;
-.super Lg37;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final enum Lk37;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
-.field public static final CREATOR:Landroid/os/Parcelable$Creator;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Landroid/os/Parcelable$Creator<",
-            "Lk37;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public static final i:Lny6;
 
+.field public static final enum j:Lk37;
 
-# instance fields
-.field public k:Li37;
+.field public static final enum k:Lk37;
 
-.field public l:Lh37;
+.field public static final synthetic l:[Lk37;
+
+.field public static final synthetic m:Lvw1;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 2
+    .locals 4
 
     .line 1
-    new-instance v0, Ll6;
+    new-instance v0, Lk37;
 
     .line 2
     .line 3
-    const/16 v1, 0x12
+    const-string v1, "Classic"
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ll6;-><init>(B)V
+    const/4 v2, 0x0
 
     .line 6
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
     .line 7
     .line 8
-    sput-object v0, Lk37;->CREATOR:Landroid/os/Parcelable$Creator;
-
     .line 9
+    sput-object v0, Lk37;->j:Lk37;
+
     .line 10
+    .line 11
+    new-instance v1, Lk37;
+
+    .line 12
+    .line 13
+    const-string v2, "Glass"
+
+    .line 14
+    .line 15
+    const/4 v3, 0x1
+
+    .line 16
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 17
+    .line 18
+    .line 19
+    sput-object v1, Lk37;->k:Lk37;
+
+    .line 20
+    .line 21
+    filled-new-array {v0, v1}, [Lk37;
+
+    .line 22
+    .line 23
+    .line 24
+    move-result-object v0
+
+    .line 25
+    sput-object v0, Lk37;->l:[Lk37;
+
+    .line 26
+    .line 27
+    new-instance v1, Lvw1;
+
+    .line 28
+    .line 29
+    invoke-direct {v1, v0}, Lvw1;-><init>([Ljava/lang/Enum;)V
+
+    .line 30
+    .line 31
+    .line 32
+    sput-object v1, Lk37;->m:Lvw1;
+
+    .line 33
+    .line 34
+    new-instance v0, Lny6;
+
+    .line 35
+    .line 36
+    const/4 v1, 0x5
+
+    .line 37
+    invoke-direct {v0, v1}, Lny6;-><init>(B)V
+
+    .line 38
+    .line 39
+    .line 40
+    sput-object v0, Lk37;->i:Lny6;
+
+    .line 41
+    .line 42
     return-void
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lk37;
+    .locals 1
+
+    .line 1
+    const-class v0, Lk37;
+
+    .line 2
+    .line 3
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object p0
+
+    .line 7
+    check-cast p0, Lk37;
+
+    .line 8
+    .line 9
+    return-object p0
+.end method
+
+.method public static values()[Lk37;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lk37;->l:[Lk37;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lk37;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method
 
 
 # virtual methods
-.method public final a(Lg37;)Z
-    .locals 0
+.method public final a()Z
+    .locals 1
 
     .line 1
+    sget-object v0, Lk37;->k:Lk37;
+
+    .line 2
+    .line 3
+    if-ne p0, v0, :cond_0
+
+    .line 4
+    .line 5
+    const/4 p0, 0x1
+
+    .line 6
+    return p0
+
+    .line 7
+    :cond_0
     const/4 p0, 0x0
 
-    .line 2
+    .line 8
     return p0
-.end method
-
-.method public final b(Lg37;)V
-    .locals 0
-
-    .line 1
-    new-instance p0, Ljava/lang/UnsupportedOperationException;
-
-    .line 2
-    .line 3
-    invoke-direct {p0}, Ljava/lang/UnsupportedOperationException;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    throw p0
-.end method
-
-.method public final c(Ln71;)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lk37;->l:Lh37;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0, p1}, Lh37;->c(Ln71;)V
-
-    .line 4
-    .line 5
-    .line 6
-    iget-object p0, p0, Lk37;->k:Li37;
-
-    .line 7
-    .line 8
-    invoke-virtual {p0, p1}, Li37;->c(Ln71;)V
-
-    .line 9
-    .line 10
-    .line 11
-    return-void
-.end method
-
-.method public final d(Ln71;)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lk37;->k:Li37;
-
-    .line 2
-    .line 3
-    invoke-virtual {v0, p1}, Li37;->d(Ln71;)V
-
-    .line 4
-    .line 5
-    .line 6
-    iget-object p0, p0, Lk37;->l:Lh37;
-
-    .line 7
-    .line 8
-    invoke-virtual {p0, p1}, Lh37;->d(Ln71;)V
-
-    .line 9
-    .line 10
-    .line 11
-    return-void
-.end method
-
-.method public final describeContents()I
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v1, "ReplaceAction{insert="
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    iget-object v1, p0, Lk37;->k:Li37;
-
-    .line 9
-    .line 10
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 11
-    .line 12
-    .line 13
-    const-string v1, ", delete="
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    iget-object p0, p0, Lk37;->l:Lh37;
-
-    .line 19
-    .line 20
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 21
-    .line 22
-    .line 23
-    const/16 p0, 0x7d
-
-    .line 24
-    .line 25
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    .line 26
-    .line 27
-    .line 28
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 29
-    .line 30
-    .line 31
-    move-result-object p0
-
-    .line 32
-    return-object p0
-.end method
-
-.method public final writeToParcel(Landroid/os/Parcel;I)V
-    .locals 1
-
-    .line 1
-    iget-object v0, p0, Lk37;->k:Li37;
-
-    .line 2
-    .line 3
-    invoke-virtual {p1, v0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
-
-    .line 4
-    .line 5
-    .line 6
-    iget-object p0, p0, Lk37;->l:Lh37;
-
-    .line 7
-    .line 8
-    invoke-virtual {p1, p0, p2}, Landroid/os/Parcel;->writeParcelable(Landroid/os/Parcelable;I)V
-
-    .line 9
-    .line 10
-    .line 11
-    return-void
 .end method

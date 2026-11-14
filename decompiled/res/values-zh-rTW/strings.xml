@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <resources>
     <string name="abc_action_bar_up_description">向上瀏覽</string>
     <string name="abc_action_mode_done">完成</string>
@@ -45,6 +45,7 @@
     <string name="accent_default">預設</string>
     <string name="accent_title">強調色</string>
     <string name="action_cancel">取消</string>
+    <string name="action_retry">重試</string>
     <string name="api_panel_unavailable_hint">請先啟動服務，或檢查 API 設定。</string>
     <string name="api_panel_unavailable_title">API 暫時無法使用</string>
     <string name="app_management_empty">暫無應用程式</string>
@@ -58,11 +59,10 @@
     <string name="app_management_filter_work_clone">工作/分身</string>
     <string name="app_management_gid_add_item">新增一項</string>
     <string name="app_management_gid_hint">GID</string>
+    <string name="app_management_gid_load_failed">讀取 GID 清單失敗或逾時，請重試。</string>
     <string name="app_management_gid_rules">GID 規則</string>
-    <string name="app_management_gid_summary">一行一個數字 GID</string>
     <string name="app_management_invert_selection">反選</string>
     <string name="app_management_load_apps_failed">載入應用程式失敗</string>
-    <string name="app_management_more">更多</string>
     <string name="app_management_proxy_mode_update_failed">更新代理模式失敗</string>
     <string name="app_management_proxy_override_title">覆寫應用程式</string>
     <string name="app_management_search_hint">搜尋應用程式</string>
@@ -75,7 +75,6 @@
     <string name="app_management_smart_select_whitelist_body">建議選擇境外使用者應用程式進入代理。</string>
     <string name="app_management_smart_selecting_title">智慧選擇中</string>
     <string name="app_management_sort_descending">倒序</string>
-    <string name="app_management_sort_filter_title">篩選與排序</string>
     <string name="app_management_sort_install">安裝時間</string>
     <string name="app_management_sort_mode_title">排序方式</string>
     <string name="app_management_sort_name">名稱</string>
@@ -84,6 +83,11 @@
     <string name="app_name">BoxProxy</string>
     <string name="back">返回</string>
     <string name="blur_title">模糊效果</string>
+    <string name="bottom_bar_style_classic">經典</string>
+    <string name="bottom_bar_style_floating">懸浮</string>
+    <string name="bottom_bar_style_glass">OS4 玻璃</string>
+    <string name="bottom_bar_style_liquid_glass">液態玻璃</string>
+    <string name="bottom_bar_style_title">底欄樣式</string>
     <string name="bypass_rules_apply_failed">繞過規則套用失敗</string>
     <string name="bypass_rules_blocked_interfaces_title">停用介面</string>
     <string name="bypass_rules_cidr_hint">CIDR</string>
@@ -113,7 +117,6 @@
     <string name="clashapi_range_traffic_no_data">目前範圍暫無已取樣流量</string>
     <string name="clashapi_range_traffic_subtitle">最近 %1$s · 每 %2$s 彙總</string>
     <string name="clashapi_recent_connections">範圍內連線</string>
-    <string name="clashapi_settings">概覽設定</string>
     <string name="clashapi_sort_download">依下行</string>
     <string name="clashapi_sort_name">依名稱</string>
     <string name="clashapi_sort_upload">依上行</string>
@@ -207,6 +210,40 @@
     <string name="connection_duration">持續時間</string>
     <string name="connection_filter_all">全部</string>
     <string name="connection_filter_source_ip">篩選來源 IP</string>
+    <string name="connection_filters_action">作用</string>
+    <string name="connection_filters_active">篩選已啟用</string>
+    <string name="connection_filters_add">新增篩選規則</string>
+    <string name="connection_filters_adjust">調整篩選</string>
+    <string name="connection_filters_checking">篩選中…</string>
+    <string name="connection_filters_clear">清除條件</string>
+    <string name="connection_filters_delete_title">刪除此篩選規則？</string>
+    <string name="connection_filters_edit">編輯篩選規則</string>
+    <string name="connection_filters_expression">正規表示式</string>
+    <string name="connection_filters_expression_empty">請輸入正規表示式。</string>
+    <string name="connection_filters_expression_invalid">表示式無效：%1$s</string>
+    <string name="connection_filters_expression_limit">表示式最多 %1$d 個字元。</string>
+    <string name="connection_filters_field_chain">代理鏈</string>
+    <string name="connection_filters_field_destination">目的 IP / 連接埠</string>
+    <string name="connection_filters_field_domain">網域 / 嗅探網域</string>
+    <string name="connection_filters_field_inbound">網路 / 輸入</string>
+    <string name="connection_filters_field_process">處理程序名稱 / 路徑</string>
+    <string name="connection_filters_field_rule">路由規則 / 參數</string>
+    <string name="connection_filters_field_source">來源 IP / 連接埠</string>
+    <string name="connection_filters_fields">比對欄位</string>
+    <string name="connection_filters_fields_empty">請至少選取一個比對欄位。</string>
+    <string name="connection_filters_hide">隱藏符合項目</string>
+    <string name="connection_filters_ignore_case">忽略大小寫</string>
+    <string name="connection_filters_include">僅顯示符合項目</string>
+    <string name="connection_filters_invalid_saved">規則無效，請編輯後啟用。</string>
+    <string name="connection_filters_name">名稱（選填）</string>
+    <string name="connection_filters_no_connections">目前沒有連線</string>
+    <string name="connection_filters_no_results">沒有符合目前條件的連線</string>
+    <string name="connection_filters_preview">目前 %2$d 個連線中符合 %1$d 個</string>
+    <string name="connection_filters_rule_limit">每個 API 來源最多儲存 %1$d 條規則。</string>
+    <string name="connection_filters_rules">正規表示式規則</string>
+    <string name="connection_filters_rules_empty">尚無規則。篩選僅影響連線清單的顯示。</string>
+    <string name="connection_filters_syntax_hint">使用 RE2 語法，各欄位獨立比對。不支援環視和反向參照。</string>
+    <string name="connection_filters_title">連線篩選</string>
     <string name="connection_host">主機</string>
     <string name="connection_id">ID</string>
     <string name="connection_inbound">入站</string>
@@ -227,7 +264,6 @@
     <string name="connection_sort_connected_at">連線時間</string>
     <string name="connection_sort_download_speed">下載速度</string>
     <string name="connection_sort_reverse">倒序</string>
-    <string name="connection_sort_title">連線排序</string>
     <string name="connection_sort_upload_speed">上傳速度</string>
     <string name="connection_source">來源</string>
     <string name="connection_source_ip">來源 IP</string>
@@ -276,8 +312,7 @@
     <string name="core_update_write_failed_path">核心寫入失敗: %1$s</string>
     <string name="default_error_message">輸入內容無效</string>
     <string name="default_popup_window_title">彈出式視窗</string>
-    <string name="floating_bar_blur_title">底欄液態玻璃效果</string>
-    <string name="floating_bar_title">懸浮底欄</string>
+    <string name="editable_gid_list_title">GID 清單</string>
     <string name="home_action_reload">重新載入</string>
     <string name="home_action_restart">重新啟動</string>
     <string name="home_action_start">啟動</string>
@@ -312,6 +347,7 @@
     <string name="home_error_root_title">未授予 Root 權限</string>
     <string name="home_ip_details_action">詳情</string>
     <string name="home_ip_geo_field_asn">ASN</string>
+    <string name="home_ip_geo_field_domain">域名</string>
     <string name="home_ip_geo_field_ip">IP</string>
     <string name="home_ip_geo_field_isp">ISP</string>
     <string name="home_ip_geo_field_location">地區</string>
@@ -391,6 +427,7 @@
     <string name="latency_targets_save_done">延遲目標已儲存</string>
     <string name="latency_targets_target_title">目標 %1$d</string>
     <string name="latency_targets_url_label">目標連結</string>
+    <string name="list_add_to_section">向%1$s新增</string>
     <string name="log_viewer_auto_refresh">自動重新整理</string>
     <string name="log_viewer_card_view">逐條卡片</string>
     <string name="log_viewer_delete_confirm_message">此操作會永久刪除 %1$s。</string>
@@ -482,6 +519,7 @@
     <string name="network_rule_group_operator_title">滿足方式</string>
     <string name="network_rule_group_target_required">請為該動作選擇目標</string>
     <string name="network_rule_group_target_title">目標</string>
+    <string name="network_rule_groups_empty">尚無規則群組</string>
     <string name="network_test_group_ai">AI 服務</string>
     <string name="network_test_group_media">影音娛樂</string>
     <string name="network_test_group_social">社群媒體</string>
@@ -733,6 +771,7 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="proxy_selector_icon_pack_url">圖示包 JSON 網址</string>
     <string name="proxy_selector_layout_auto">自動調整欄數</string>
     <string name="proxy_selector_locate_selected">定位已選節點</string>
+    <string name="proxy_selector_locked">已固定在此節點</string>
     <string name="proxy_selector_measured_count">%1$d/%2$d</string>
     <string name="proxy_selector_mode">模式</string>
     <string name="proxy_selector_mode_unknown">模式</string>
@@ -746,7 +785,6 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="proxy_selector_node_sort_descending">倒序</string>
     <string name="proxy_selector_node_sort_latency">延遲</string>
     <string name="proxy_selector_node_sort_name">名稱</string>
-    <string name="proxy_selector_node_sort_title">節點排序</string>
     <string name="proxy_selector_open_app">開啟應用程式</string>
     <string name="proxy_selector_policy_icon_apply">套用</string>
     <string name="proxy_selector_policy_icon_clear_all">清除全部自訂圖示</string>
@@ -777,7 +815,7 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="proxy_selector_search_hint">搜尋策略組或節點</string>
     <string name="proxy_selector_selected">已選擇</string>
     <string name="proxy_selector_show_hidden_groups">顯示隱藏策略</string>
-    <string name="proxy_selector_sort_filter_title">篩選</string>
+    <string name="proxy_selector_show_unavailable_nodes">顯示不可用節點</string>
     <string name="proxy_taskset_cpu_title">CPU 核心分配</string>
     <string name="proxy_weight_title">權重</string>
     <string name="pure_black_title">深色使用純黑背景</string>
@@ -916,7 +954,7 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="service_accelerated_download_prefix_title">加速位址</string>
     <string name="service_accelerated_download_subtitle">為下載資源啟用加速通道</string>
     <string name="service_accelerated_download_title">加速下載</string>
-    <string name="service_auto_start_subtitle">安裝 Root 開機腳本，開機後自動啟動服務（VPN 執行模式需授予應用程式自啟動權限）</string>
+    <string name="service_auto_start_subtitle">安裝 Root 開機腳本，開機後自動啟動服務</string>
     <string name="service_auto_start_title">開機自啟</string>
     <string name="settings_backup_action">備份</string>
     <string name="settings_backup_cleanup_failed">還原前清理舊檔案失敗</string>
@@ -1009,6 +1047,7 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="subscription_detail_used">已用 %1$s</string>
     <string name="subscription_management_save_failed">儲存訂閱設定失敗</string>
     <string name="subscription_management_update_success">訂閱更新成功</string>
+    <string name="subscription_sources_title">訂閱來源</string>
     <string name="subscription_update_mihomo_item_name_empty">Mihomo 訂閱 #%1$d 名稱為空</string>
     <string name="subscription_update_mihomo_item_url_empty">Mihomo 訂閱 #%1$d 連結為空</string>
     <string name="subscription_update_mihomo_only">訂閱設定覆寫僅支援 Mihomo 核心</string>
@@ -1043,7 +1082,9 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="theme_accent_yellow">黃色</string>
     <string name="theme_color_spec_2021">Material 3 2021</string>
     <string name="theme_color_spec_2025">Material 3 Expressive 2025</string>
+    <string name="theme_color_spec_2026">Material 3 2026</string>
     <string name="theme_color_spec_title">色彩標準</string>
+    <string name="theme_color_style_cmf">CMF</string>
     <string name="theme_color_style_content">Content</string>
     <string name="theme_color_style_expressive">Expressive</string>
     <string name="theme_color_style_fidelity">Fidelity</string>
@@ -1116,9 +1157,9 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="tools_update_webui_url_label">下載連結</string>
     <string name="tooltip_description">工具提示</string>
     <string name="tooltip_label">顯示工具提示</string>
-    <string name="top_bar_blur_style_gaussian">高斯模糊</string>
-    <string name="top_bar_blur_style_progressive">漸進式模糊</string>
-    <string name="top_bar_blur_style_title">頂欄模糊樣式</string>
+    <string name="top_bar_blur_style_title">頂欄樣式</string>
+    <string name="top_bar_style_classic">經典</string>
+    <string name="top_bar_style_glass">玻璃</string>
     <string name="ui_mode_material">Material3</string>
     <string name="ui_mode_miuix">Miuix</string>
     <string name="ui_mode_title">介面風格</string>
@@ -1129,6 +1170,7 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="web_ui_add_panel_name_required">請先輸入面板名稱</string>
     <string name="web_ui_add_panel_url_invalid">請輸入有效的面板網址</string>
     <string name="web_ui_clear_cache">清除網頁快取</string>
+    <string name="web_ui_custom_panels_empty">尚無自訂面板</string>
     <string name="web_ui_custom_panels_title">自訂面板</string>
     <string name="web_ui_local_panel_mode">本地 API</string>
     <string name="web_ui_local_panel_mode_auto">自動</string>
@@ -1160,15 +1202,4 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="wifi_match_picker_location_required">請開啟定位以掃描 Wi-Fi</string>
     <string name="wifi_match_picker_permission_required">需要 Wi-Fi 權限</string>
     <string name="wifi_match_ssid_hint">SSID</string>
-    <string name="proxy_core_mihomo_dingtalk">Mihomo Smart + eBPF + 钉钉直连</string>
-    <string name="proxy_core_sing_box_dingtalk">Sing-Box Smart + eBPF + 钉钉直连</string>
-    <string name="proxy_config_restore_default">恢復預設設定</string>
-    <string name="proxy_config_restore_done">已恢復預設設定：%1$s</string>
-    <string name="proxy_config_restore_done_bak">已恢復預設設定：%1$s（原檔案已備份為 %1$s.bak）</string>
-    <string name="proxy_config_restore_failed">恢復預設設定失敗：%1$s</string>
-    <string name="proxy_config_restore_none">目前核心沒有內建預設設定</string>
-    <string name="proxy_selector_hide_unavailable">隱藏不可用節點</string>
-    <string name="service_battery_unrestricted_title">電池最佳化無限制</string>
-    <string name="service_battery_unrestricted_subtitle">將應用程式加入電池最佳化白名單，避免背景被系統凍結或結束（關閉需在系統設定頁中操作）</string>
-    <string name="service_battery_unrestricted_already">電池最佳化已關閉</string>
-</resources>
+<string name="proxy_core_mihomo_dingtalk">Mihomo Smart + eBPF + 钉钉直连</string><string name="proxy_core_sing_box_dingtalk">Sing-Box Smart + eBPF + 钉钉直连</string><string name="proxy_config_restore_default">恢復預設設定</string><string name="proxy_config_restore_done">已恢復預設設定：%1$s</string><string name="proxy_config_restore_done_bak">已恢復預設設定：%1$s（原檔案已備份為 %1$s.bak）</string><string name="proxy_config_restore_failed">恢復預設設定失敗：%1$s</string><string name="proxy_config_restore_none">目前核心沒有內建預設設定</string><string name="proxy_selector_hide_unavailable">隱藏不可用節點</string><string name="service_battery_unrestricted_title">電池最佳化無限制</string><string name="service_battery_unrestricted_subtitle">將應用程式加入電池最佳化白名單，避免背景被系統凍結或結束（關閉需在系統設定頁中操作）</string><string name="service_battery_unrestricted_already">電池最佳化已關閉</string></resources>

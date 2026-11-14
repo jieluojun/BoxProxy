@@ -1,59 +1,127 @@
-.class public final Lkb3;
+.class public abstract synthetic Lkb3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 0
+# static fields
+.field public static final synthetic a:[I
+
+
+# direct methods
+.method static constructor <clinit>()V
+    .locals 3
 
     .line 1
-    instance-of p0, p1, Lkb3;
+    invoke-static {}, Lfb3;->values()[Lfb3;
 
     .line 2
     .line 3
-    if-nez p0, :cond_0
-
     .line 4
+    move-result-object v0
+
     .line 5
-    const/4 p0, 0x0
+    array-length v0, v0
 
     .line 6
-    return p0
+    new-array v0, v0, [I
 
     .line 7
-    :cond_0
-    const/4 p0, 0x1
-
     .line 8
-    return p0
-.end method
+    :try_start_0
+    sget-object v1, Lfb3;->ON_START:Lfb3;
 
-.method public final hashCode()I
-    .locals 0
+    .line 9
+    .line 10
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    .line 1
-    const/4 p0, 0x1
+    .line 11
+    .line 12
+    .line 13
+    move-result v1
 
-    .line 2
-    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
+    .line 14
+    const/4 v2, 0x1
 
-    .line 3
-    .line 4
-    .line 5
-    move-result p0
+    .line 15
+    aput v2, v0, v1
+    :try_end_0
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 6
-    return p0
-.end method
+    .line 16
+    .line 17
+    :catch_0
+    :try_start_1
+    sget-object v1, Lfb3;->ON_STOP:Lfb3;
 
-.method public final toString()Ljava/lang/String;
-    .locals 0
+    .line 18
+    .line 19
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
-    .line 1
-    const-string p0, "Assertive"
+    .line 20
+    .line 21
+    .line 22
+    move-result v1
 
-    .line 2
-    .line 3
-    return-object p0
+    .line 23
+    const/4 v2, 0x2
+
+    .line 24
+    aput v2, v0, v1
+    :try_end_1
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_1 .. :try_end_1} :catch_1
+
+    .line 25
+    .line 26
+    :catch_1
+    :try_start_2
+    sget-object v1, Lfb3;->ON_RESUME:Lfb3;
+
+    .line 27
+    .line 28
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    .line 29
+    .line 30
+    .line 31
+    move-result v1
+
+    .line 32
+    const/4 v2, 0x3
+
+    .line 33
+    aput v2, v0, v1
+    :try_end_2
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_2 .. :try_end_2} :catch_2
+
+    .line 34
+    .line 35
+    :catch_2
+    :try_start_3
+    sget-object v1, Lfb3;->ON_PAUSE:Lfb3;
+
+    .line 36
+    .line 37
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    .line 38
+    .line 39
+    .line 40
+    move-result v1
+
+    .line 41
+    const/4 v2, 0x4
+
+    .line 42
+    aput v2, v0, v1
+    :try_end_3
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_3 .. :try_end_3} :catch_3
+
+    .line 43
+    .line 44
+    :catch_3
+    sput-object v0, Lkb3;->a:[I
+
+    .line 45
+    .line 46
+    return-void
 .end method

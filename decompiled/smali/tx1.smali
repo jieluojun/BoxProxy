@@ -1,71 +1,38 @@
-.class public final Ltx1;
+.class public interface abstract Ltx1;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final a:Lmx6;
+# virtual methods
+.method public abstract a(Lph5;)V
+.end method
 
-.field public final b:Lma6;
+.method public abstract b(Lmi5;)Ldf6;
+.end method
 
-.field public final c:Lse1;
+.method public abstract c()V
+.end method
 
-.field public final d:Le62;
+.method public abstract cancel()V
+.end method
 
-.field public final e:Lsx1;
+.method public abstract d()Z
+.end method
 
+.method public abstract e()V
+.end method
 
-# direct methods
-.method public constructor <init>(Lmx6;Lma6;Lse1;Le62;)V
-    .locals 0
+.method public abstract f()Lte6;
+.end method
 
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.method public abstract g(Lph5;J)Llb6;
+.end method
 
-    .line 2
-    .line 3
-    .line 4
-    invoke-virtual {p4}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+.method public abstract h()Lsx1;
+.end method
 
-    .line 5
-    .line 6
-    .line 7
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+.method public abstract i(Lmi5;)J
+.end method
 
-    .line 8
-    .line 9
-    .line 10
-    iput-object p1, p0, Ltx1;->a:Lmx6;
-
-    .line 11
-    .line 12
-    iput-object p2, p0, Ltx1;->b:Lma6;
-
-    .line 13
-    .line 14
-    iput-object p3, p0, Ltx1;->c:Lse1;
-
-    .line 15
-    .line 16
-    iput-object p4, p0, Ltx1;->d:Le62;
-
-    .line 17
-    .line 18
-    new-instance p1, Lsx1;
-
-    .line 19
-    .line 20
-    const/4 p2, 0x0
-
-    .line 21
-    invoke-direct {p1, p0, p2}, Lsx1;-><init>(Ljava/lang/Object;B)V
-
-    .line 22
-    .line 23
-    .line 24
-    iput-object p1, p0, Ltx1;->e:Lsx1;
-
-    .line 25
-    .line 26
-    return-void
+.method public abstract j(Z)Lli5;
 .end method

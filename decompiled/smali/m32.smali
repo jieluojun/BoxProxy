@@ -1,22 +1,14 @@
-.class final Lm32;
-.super Ldq3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ldq3;"
-    }
-.end annotation
+.class public final Lm32;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final j:Ll32;
+.field public final a:B
 
 
 # direct methods
-.method public constructor <init>(Ll32;)V
+.method public synthetic constructor <init>(I)V
     .locals 0
 
     .line 1
@@ -25,150 +17,198 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Lm32;->j:Ll32;
+    iput-byte p1, p0, Lm32;->a:B
 
     .line 5
     .line 6
     return-void
 .end method
 
-
-# virtual methods
-.method public final a()Lvp3;
+.method public static a(I)Ljava/lang/String;
     .locals 1
-
-    .line 1
-    new-instance v0, Lo32;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Lvp3;-><init>()V
-
-    .line 4
-    .line 5
-    .line 6
-    iget-object p0, p0, Lm32;->j:Ll32;
-
-    .line 7
-    .line 8
-    iput-object p0, v0, Lo32;->x:Ll32;
-
-    .line 9
-    .line 10
-    return-object v0
-.end method
-
-.method public final b(Lvp3;)V
-    .locals 1
-
-    .line 1
-    check-cast p1, Lo32;
-
-    .line 2
-    .line 3
-    iget-object v0, p1, Lo32;->x:Ll32;
-
-    .line 4
-    .line 5
-    iget-object v0, v0, Ll32;->a:Lot3;
-
-    .line 6
-    .line 7
-    invoke-virtual {v0, p1}, Lot3;->j(Ljava/lang/Object;)Z
-
-    .line 8
-    .line 9
-    .line 10
-    iget-object p0, p0, Lm32;->j:Ll32;
-
-    .line 11
-    .line 12
-    iput-object p0, p1, Lo32;->x:Ll32;
-
-    .line 13
-    .line 14
-    iget-object p0, p0, Ll32;->a:Lot3;
-
-    .line 15
-    .line 16
-    invoke-virtual {p0, p1}, Lot3;->b(Ljava/lang/Object;)V
-
-    .line 17
-    .line 18
-    .line 19
-    return-void
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
 
     .line 1
     const/4 v0, 0x1
 
     .line 2
-    if-ne p0, p1, :cond_0
+    if-ne p0, v0, :cond_0
 
     .line 3
     .line 4
-    return v0
+    const-string p0, "Next"
 
     .line 5
-    :cond_0
-    instance-of v1, p1, Lm32;
-
     .line 6
+    return-object p0
+
     .line 7
-    const/4 v2, 0x0
+    :cond_0
+    const/4 v0, 0x2
 
     .line 8
-    if-nez v1, :cond_1
+    if-ne p0, v0, :cond_1
 
     .line 9
     .line 10
-    return v2
+    const-string p0, "Previous"
 
     .line 11
+    .line 12
+    return-object p0
+
+    .line 13
     :cond_1
+    const/4 v0, 0x3
+
+    .line 14
+    if-ne p0, v0, :cond_2
+
+    .line 15
+    .line 16
+    const-string p0, "Left"
+
+    .line 17
+    .line 18
+    return-object p0
+
+    .line 19
+    :cond_2
+    const/4 v0, 0x4
+
+    .line 20
+    if-ne p0, v0, :cond_3
+
+    .line 21
+    .line 22
+    const-string p0, "Right"
+
+    .line 23
+    .line 24
+    return-object p0
+
+    .line 25
+    :cond_3
+    const/4 v0, 0x5
+
+    .line 26
+    if-ne p0, v0, :cond_4
+
+    .line 27
+    .line 28
+    const-string p0, "Up"
+
+    .line 29
+    .line 30
+    return-object p0
+
+    .line 31
+    :cond_4
+    const/4 v0, 0x6
+
+    .line 32
+    if-ne p0, v0, :cond_5
+
+    .line 33
+    .line 34
+    const-string p0, "Down"
+
+    .line 35
+    .line 36
+    return-object p0
+
+    .line 37
+    :cond_5
+    const/4 v0, 0x7
+
+    .line 38
+    if-ne p0, v0, :cond_6
+
+    .line 39
+    .line 40
+    const-string p0, "Enter"
+
+    .line 41
+    .line 42
+    return-object p0
+
+    .line 43
+    :cond_6
+    const/16 v0, 0x8
+
+    .line 44
+    .line 45
+    if-ne p0, v0, :cond_7
+
+    .line 46
+    .line 47
+    const-string p0, "Exit"
+
+    .line 48
+    .line 49
+    return-object p0
+
+    .line 50
+    :cond_7
+    const-string p0, "Invalid FocusDirection"
+
+    .line 51
+    .line 52
+    return-object p0
+.end method
+
+
+# virtual methods
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 1
+
+    .line 1
+    instance-of v0, p1, Lm32;
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
     check-cast p1, Lm32;
+
+    .line 6
+    .line 7
+    iget-byte p1, p1, Lm32;->a:B
+
+    .line 8
+    .line 9
+    iget-byte p0, p0, Lm32;->a:B
+
+    .line 10
+    .line 11
+    if-eq p0, p1, :cond_1
 
     .line 12
     .line 13
-    iget-object p0, p0, Lm32;->j:Ll32;
+    :cond_0
+    const/4 p0, 0x0
 
     .line 14
+    return p0
+
     .line 15
-    iget-object p1, p1, Lm32;->j:Ll32;
+    :cond_1
+    const/4 p0, 0x1
 
     .line 16
-    .line 17
-    invoke-static {p0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    .line 18
-    .line 19
-    .line 20
-    move-result p0
-
-    .line 21
-    if-nez p0, :cond_2
-
-    .line 22
-    .line 23
-    return v2
-
-    .line 24
-    :cond_2
-    return v0
+    return p0
 .end method
 
 .method public final hashCode()I
     .locals 0
 
     .line 1
-    iget-object p0, p0, Lm32;->j:Ll32;
+    iget-byte p0, p0, Lm32;->a:B
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    invoke-static {p0}, Ljava/lang/Integer;->hashCode(I)I
 
     .line 4
     .line 5
@@ -180,47 +220,20 @@
 .end method
 
 .method public final toString()Ljava/lang/String;
-    .locals 2
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
+    iget-byte p0, p0, Lm32;->a:B
 
     .line 2
     .line 3
-    const-string v1, "FocusRequesterElement(focusRequester="
+    invoke-static {p0}, Lm32;->a(I)Ljava/lang/String;
 
     .line 4
     .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
     .line 6
-    .line 7
-    .line 8
-    iget-object p0, p0, Lm32;->j:Ll32;
-
-    .line 9
-    .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 11
-    .line 12
-    .line 13
-    const-string p0, ")"
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 19
-    .line 20
-    .line 21
     move-result-object p0
 
-    .line 22
+    .line 7
     return-object p0
 .end method

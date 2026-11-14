@@ -1,16 +1,23 @@
-.class public final Loc2;
+.class public final synthetic Loc2;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Le72;
 
 
 # instance fields
-.field public final a:Ljava/lang/String;
+.field public final synthetic i:Lpy1;
 
-.field public final b:Ljava/lang/String;
+.field public final synthetic j:F
+
+.field public final synthetic k:F
+
+.field public final synthetic l:Lh04;
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lpy1;FFLh04;)V
     .locals 0
 
     .line 1
@@ -19,197 +26,187 @@
     .line 2
     .line 3
     .line 4
-    iput-object p1, p0, Loc2;->a:Ljava/lang/String;
+    iput-object p1, p0, Loc2;->i:Lpy1;
 
     .line 5
     .line 6
-    iput-object p2, p0, Loc2;->b:Ljava/lang/String;
+    iput p2, p0, Loc2;->j:F
 
     .line 7
     .line 8
+    iput p3, p0, Loc2;->k:F
+
+    .line 9
+    .line 10
+    iput-object p4, p0, Loc2;->l:Lh04;
+
+    .line 11
+    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 4
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
 
     .line 1
-    const/4 v0, 0x1
+    iget-object v0, p0, Loc2;->l:Lh04;
 
     .line 2
-    if-ne p0, p1, :cond_0
-
     .line 3
+    invoke-interface {v0}, Lgh6;->getValue()Ljava/lang/Object;
+
     .line 4
-    return v0
-
     .line 5
-    :cond_0
-    instance-of v1, p1, Loc2;
-
     .line 6
+    move-result-object v0
+
     .line 7
-    const/4 v2, 0x0
+    check-cast v0, Le72;
 
     .line 8
-    if-nez v1, :cond_1
-
     .line 9
-    .line 10
-    return v2
+    if-eqz v0, :cond_0
 
+    .line 10
     .line 11
-    :cond_1
-    check-cast p1, Loc2;
+    invoke-interface {v0}, Le72;->invoke()Ljava/lang/Object;
 
     .line 12
     .line 13
-    iget-object v1, p0, Loc2;->a:Ljava/lang/String;
-
     .line 14
+    move-result-object v0
+
     .line 15
-    iget-object v3, p1, Loc2;->a:Ljava/lang/String;
+    check-cast v0, Ljava/lang/Number;
 
     .line 16
     .line 17
-    invoke-static {v1, v3}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Ljava/lang/Number;->floatValue()F
 
     .line 18
     .line 19
     .line 20
-    move-result v1
+    move-result v0
 
     .line 21
-    if-nez v1, :cond_2
+    :goto_0
+    invoke-static {v0}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     .line 22
     .line 23
-    return v2
-
     .line 24
-    :cond_2
-    iget-object p0, p0, Loc2;->b:Ljava/lang/String;
+    move-result-object v0
 
     .line 25
+    goto :goto_1
+
     .line 26
-    iget-object p1, p1, Loc2;->b:Ljava/lang/String;
+    :cond_0
+    iget-object v0, p0, Loc2;->i:Lpy1;
 
     .line 27
     .line 28
-    invoke-static {p0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    if-eqz v0, :cond_1
 
     .line 29
     .line 30
-    .line 31
-    move-result p0
+    iget-object v0, v0, Lpy1;->a:Lh37;
 
+    .line 31
     .line 32
-    if-nez p0, :cond_3
+    if-eqz v0, :cond_1
 
     .line 33
     .line 34
-    return v2
+    iget-object v1, v0, Lh37;->b:Lts4;
 
     .line 35
-    :cond_3
-    return v0
-.end method
+    .line 36
+    invoke-virtual {v1}, Lts4;->g()F
 
-.method public final hashCode()I
-    .locals 2
-
-    .line 1
-    const/4 v0, 0x0
-
-    .line 2
-    iget-object v1, p0, Loc2;->a:Ljava/lang/String;
-
-    .line 3
-    .line 4
-    if-nez v1, :cond_0
-
-    .line 5
-    .line 6
-    move v1, v0
-
-    .line 7
-    goto :goto_0
-
-    .line 8
-    :cond_0
-    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
-
-    .line 9
-    .line 10
-    .line 11
+    .line 37
+    .line 38
+    .line 39
     move-result v1
 
-    .line 12
-    :goto_0
-    mul-int/lit8 v1, v1, 0x1f
+    .line 40
+    iget-object v0, v0, Lh37;->c:Lts4;
 
-    .line 13
-    .line 14
-    iget-object p0, p0, Loc2;->b:Ljava/lang/String;
+    .line 41
+    .line 42
+    invoke-virtual {v0}, Lts4;->g()F
 
-    .line 15
-    .line 16
-    if-nez p0, :cond_1
-
-    .line 17
-    .line 18
-    goto :goto_1
-
-    .line 19
-    :cond_1
-    invoke-virtual {p0}, Ljava/lang/String;->hashCode()I
-
-    .line 20
-    .line 21
-    .line 22
+    .line 43
+    .line 44
+    .line 45
     move-result v0
 
-    .line 23
+    .line 46
+    add-float/2addr v0, v1
+
+    .line 47
+    goto :goto_0
+
+    .line 48
+    :cond_1
+    const/4 v0, 0x0
+
+    .line 49
     :goto_1
-    add-int/2addr v1, v0
+    const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 24
-    return v1
-.end method
+    .line 50
+    .line 51
+    if-eqz v0, :cond_2
 
-.method public final toString()Ljava/lang/String;
-    .locals 4
+    .line 52
+    .line 53
+    invoke-virtual {v0}, Ljava/lang/Float;->floatValue()F
 
-    .line 1
-    const-string v0, ", iface="
+    .line 54
+    .line 55
+    .line 56
+    move-result v0
 
-    .line 2
-    .line 3
-    const-string v1, ")"
+    .line 57
+    neg-float v0, v0
 
-    .line 4
-    .line 5
-    const-string v2, "LanIpInfo(ip="
+    .line 58
+    iget v2, p0, Loc2;->j:F
 
-    .line 6
-    .line 7
-    iget-object v3, p0, Loc2;->a:Ljava/lang/String;
+    .line 59
+    .line 60
+    sub-float/2addr v0, v2
 
-    .line 8
-    .line 9
-    iget-object p0, p0, Loc2;->b:Ljava/lang/String;
+    .line 61
+    iget p0, p0, Loc2;->k:F
 
-    .line 10
-    .line 11
-    invoke-static {v2, v3, v0, p0, v1}, Loc1;->q(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    .line 62
+    .line 63
+    div-float/2addr v0, p0
 
-    .line 12
-    .line 13
-    .line 14
+    .line 64
+    const/4 p0, 0x0
+
+    .line 65
+    invoke-static {v0, p0, v1}, Ly93;->G(FFF)F
+
+    .line 66
+    .line 67
+    .line 68
+    move-result v1
+
+    .line 69
+    :cond_2
+    invoke-static {v1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
+
+    .line 70
+    .line 71
+    .line 72
     move-result-object p0
 
-    .line 15
+    .line 73
     return-object p0
 .end method

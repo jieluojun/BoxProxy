@@ -1,169 +1,471 @@
 .class public final Lmv2;
-.super Lkv2;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lih7;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Ljava/lang/Runnable;
+.implements Lyh4;
+.implements Landroid/view/View$OnAttachStateChangeListener;
 
 
 # instance fields
-.field public final n:Lov2;
+.field public final k:Loi7;
 
-.field public final o:Lnv2;
+.field public l:Z
 
-.field public final p:Lwo0;
+.field public m:Z
 
-.field public final q:Ljava/lang/Object;
+.field public n:Lki7;
 
 
 # direct methods
-.method public constructor <init>(Lov2;Lnv2;Lwo0;Ljava/lang/Object;)V
-    .locals 0
+.method public constructor <init>(Loi7;)V
+    .locals 1
 
     .line 1
-    invoke-direct {p0}, Lpc3;-><init>()V
+    iget-boolean v0, p1, Loi7;->t:Z
 
     .line 2
     .line 3
+    xor-int/lit8 v0, v0, 0x1
+
     .line 4
-    iput-object p1, p0, Lmv2;->n:Lov2;
-
     .line 5
-    .line 6
-    iput-object p2, p0, Lmv2;->o:Lnv2;
+    invoke-direct {p0, v0}, Lih7;-><init>(I)V
 
+    .line 6
     .line 7
     .line 8
-    iput-object p3, p0, Lmv2;->p:Lwo0;
+    iput-object p1, p0, Lmv2;->k:Loi7;
 
     .line 9
     .line 10
-    iput-object p4, p0, Lmv2;->q:Ljava/lang/Object;
-
-    .line 11
-    .line 12
     return-void
 .end method
 
 
 # virtual methods
-.method public final m()Z
-    .locals 0
-
-    .line 1
-    const/4 p0, 0x0
-
-    .line 2
-    return p0
-.end method
-
-.method public final n(Ljava/lang/Throwable;)V
+.method public final a(Lrh7;)V
     .locals 5
 
     .line 1
-    iget-object p1, p0, Lmv2;->p:Lwo0;
+    const/4 v0, 0x0
 
     .line 2
-    .line 3
-    invoke-static {p1}, Lov2;->X(Lpc3;)Lwo0;
+    iput-boolean v0, p0, Lmv2;->l:Z
 
+    .line 3
     .line 4
+    iput-boolean v0, p0, Lmv2;->m:Z
+
     .line 5
     .line 6
-    move-result-object v0
+    iget-object v0, p0, Lmv2;->n:Lki7;
 
     .line 7
-    iget-object v1, p0, Lmv2;->n:Lov2;
-
     .line 8
+    iget-object p1, p1, Lrh7;->a:Lqh7;
+
     .line 9
-    iget-object v2, p0, Lmv2;->o:Lnv2;
-
     .line 10
-    .line 11
-    iget-object p0, p0, Lmv2;->q:Ljava/lang/Object;
+    invoke-virtual {p1}, Lqh7;->b()J
 
+    .line 11
     .line 12
     .line 13
-    if-eqz v0, :cond_0
+    move-result-wide v1
 
     .line 14
-    .line 15
-    invoke-virtual {v1, v2, v0, p0}, Lov2;->g0(Lnv2;Lwo0;Ljava/lang/Object;)Z
+    const-wide/16 v3, 0x0
 
+    .line 15
     .line 16
+    cmp-long p1, v1, v3
+
     .line 17
     .line 18
-    move-result v0
+    if-lez p1, :cond_0
 
     .line 19
+    .line 20
     if-eqz v0, :cond_0
 
-    .line 20
     .line 21
-    goto :goto_0
-
     .line 22
-    :cond_0
-    iget-object v0, v2, Lnv2;->j:Ld84;
+    iget-object p1, v0, Lki7;->a:Lhi7;
 
     .line 23
     .line 24
-    new-instance v3, Lba3;
+    iget-object v1, p0, Lmv2;->k:Loi7;
 
     .line 25
     .line 26
-    const/4 v4, 0x2
+    iget-object v2, v1, Loi7;->s:Lta7;
 
     .line 27
-    invoke-direct {v3, v4}, Lba3;-><init>(I)V
-
     .line 28
+    const/16 v3, 0x8
+
     .line 29
     .line 30
-    invoke-virtual {v0, v3, v4}, Lpc3;->e(Lpc3;I)Z
+    invoke-virtual {p1, v3}, Lhi7;->i(I)Liv2;
 
     .line 31
     .line 32
     .line 33
-    invoke-static {p1}, Lov2;->X(Lpc3;)Lwo0;
+    move-result-object v4
 
     .line 34
+    invoke-static {v4}, Lxv6;->k(Liv2;)Lrv2;
+
     .line 35
     .line 36
-    move-result-object p1
-
     .line 37
-    if-eqz p1, :cond_1
+    move-result-object v4
 
     .line 38
-    .line 39
-    invoke-virtual {v1, v2, p1, p0}, Lov2;->g0(Lnv2;Lwo0;Ljava/lang/Object;)Z
+    invoke-virtual {v2, v4}, Lta7;->f(Lrv2;)V
 
+    .line 39
     .line 40
     .line 41
-    .line 42
-    move-result p1
+    iget-object v2, v1, Loi7;->r:Lta7;
 
+    .line 42
     .line 43
-    if-eqz p1, :cond_1
+    invoke-virtual {p1, v3}, Lhi7;->i(I)Liv2;
 
     .line 44
     .line 45
-    :goto_0
+    .line 46
+    move-result-object p1
+
+    .line 47
+    invoke-static {p1}, Lxv6;->k(Liv2;)Lrv2;
+
+    .line 48
+    .line 49
+    .line 50
+    move-result-object p1
+
+    .line 51
+    invoke-virtual {v2, p1}, Lta7;->f(Lrv2;)V
+
+    .line 52
+    .line 53
+    .line 54
+    invoke-static {v1, v0}, Loi7;->b(Loi7;Lki7;)V
+
+    .line 55
+    .line 56
+    .line 57
+    :cond_0
+    const/4 p1, 0x0
+
+    .line 58
+    iput-object p1, p0, Lmv2;->n:Lki7;
+
+    .line 59
+    .line 60
     return-void
+.end method
+
+.method public final b(Lrh7;)V
+    .locals 0
+
+    .line 1
+    const/4 p1, 0x1
+
+    .line 2
+    iput-boolean p1, p0, Lmv2;->l:Z
+
+    .line 3
+    .line 4
+    iput-boolean p1, p0, Lmv2;->m:Z
+
+    .line 5
+    .line 6
+    return-void
+.end method
+
+.method public final c(Lki7;Ljava/util/List;)Lki7;
+    .locals 0
+
+    .line 1
+    iget-object p0, p0, Lmv2;->k:Loi7;
+
+    .line 2
+    .line 3
+    invoke-static {p0, p1}, Loi7;->b(Loi7;Lki7;)V
+
+    .line 4
+    .line 5
+    .line 6
+    iget-boolean p0, p0, Loi7;->t:Z
+
+    .line 7
+    .line 8
+    if-eqz p0, :cond_0
+
+    .line 9
+    .line 10
+    sget-object p0, Lki7;->b:Lki7;
+
+    .line 11
+    .line 12
+    return-object p0
+
+    .line 13
+    :cond_0
+    return-object p1
+.end method
+
+.method public final d(Lrh7;Li86;)Li86;
+    .locals 0
+
+    .line 1
+    const/4 p1, 0x0
+
+    .line 2
+    iput-boolean p1, p0, Lmv2;->l:Z
+
+    .line 3
+    .line 4
+    return-object p2
+.end method
+
+.method public final g(Landroid/view/View;Lki7;)Lki7;
+    .locals 5
+
+    .line 1
+    iput-object p2, p0, Lmv2;->n:Lki7;
+
+    .line 2
+    .line 3
+    iget-object v0, p0, Lmv2;->k:Loi7;
+
+    .line 4
+    .line 5
+    iget-object v1, v0, Loi7;->r:Lta7;
+
+    .line 6
+    .line 7
+    iget-object v2, p2, Lki7;->a:Lhi7;
+
+    .line 8
+    .line 9
+    const/16 v3, 0x8
+
+    .line 10
+    .line 11
+    invoke-virtual {v2, v3}, Lhi7;->i(I)Liv2;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object v4
+
+    .line 15
+    invoke-static {v4}, Lxv6;->k(Liv2;)Lrv2;
+
+    .line 16
+    .line 17
+    .line 18
+    move-result-object v4
+
+    .line 19
+    invoke-virtual {v1, v4}, Lta7;->f(Lrv2;)V
+
+    .line 20
+    .line 21
+    .line 22
+    iget-boolean v1, p0, Lmv2;->l:Z
+
+    .line 23
+    .line 24
+    if-eqz v1, :cond_0
+
+    .line 25
+    .line 26
+    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    .line 27
+    .line 28
+    const/16 v2, 0x1e
+
+    .line 29
+    .line 30
+    if-ne v1, v2, :cond_1
+
+    .line 31
+    .line 32
+    invoke-virtual {p1, p0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
+
+    .line 33
+    .line 34
+    .line 35
+    goto :goto_0
+
+    .line 36
+    :cond_0
+    iget-boolean p0, p0, Lmv2;->m:Z
+
+    .line 37
+    .line 38
+    if-nez p0, :cond_1
+
+    .line 39
+    .line 40
+    iget-object p0, v0, Loi7;->s:Lta7;
+
+    .line 41
+    .line 42
+    invoke-virtual {v2, v3}, Lhi7;->i(I)Liv2;
+
+    .line 43
+    .line 44
+    .line 45
+    move-result-object p1
 
     .line 46
-    :cond_1
-    invoke-virtual {v1, v2, p0}, Lov2;->J(Lnv2;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {p1}, Lxv6;->k(Liv2;)Lrv2;
 
     .line 47
     .line 48
     .line 49
-    move-result-object p0
+    move-result-object p1
 
     .line 50
-    invoke-virtual {v1, p0}, Lov2;->s(Ljava/lang/Object;)V
+    invoke-virtual {p0, p1}, Lta7;->f(Lrv2;)V
 
     .line 51
     .line 52
     .line 53
+    invoke-static {v0, p2}, Loi7;->b(Loi7;Lki7;)V
+
+    .line 54
+    .line 55
+    .line 56
+    :cond_1
+    :goto_0
+    iget-boolean p0, v0, Loi7;->t:Z
+
+    .line 57
+    .line 58
+    if-eqz p0, :cond_2
+
+    .line 59
+    .line 60
+    sget-object p0, Lki7;->b:Lki7;
+
+    .line 61
+    .line 62
+    return-object p0
+
+    .line 63
+    :cond_2
+    return-object p2
+.end method
+
+.method public final onViewAttachedToWindow(Landroid/view/View;)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p1}, Landroid/view/View;->requestApplyInsets()V
+
+    .line 2
+    .line 3
+    .line 4
+    return-void
+.end method
+
+.method public final onViewDetachedFromWindow(Landroid/view/View;)V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public final run()V
+    .locals 5
+
+    .line 1
+    iget-boolean v0, p0, Lmv2;->l:Z
+
+    .line 2
+    .line 3
+    if-eqz v0, :cond_0
+
+    .line 4
+    .line 5
+    const/4 v0, 0x0
+
+    .line 6
+    iput-boolean v0, p0, Lmv2;->l:Z
+
+    .line 7
+    .line 8
+    iput-boolean v0, p0, Lmv2;->m:Z
+
+    .line 9
+    .line 10
+    iget-object v0, p0, Lmv2;->n:Lki7;
+
+    .line 11
+    .line 12
+    if-eqz v0, :cond_0
+
+    .line 13
+    .line 14
+    iget-object v1, p0, Lmv2;->k:Loi7;
+
+    .line 15
+    .line 16
+    iget-object v2, v1, Loi7;->s:Lta7;
+
+    .line 17
+    .line 18
+    const/16 v3, 0x8
+
+    .line 19
+    .line 20
+    iget-object v4, v0, Lki7;->a:Lhi7;
+
+    .line 21
+    .line 22
+    invoke-virtual {v4, v3}, Lhi7;->i(I)Liv2;
+
+    .line 23
+    .line 24
+    .line 25
+    move-result-object v3
+
+    .line 26
+    invoke-static {v3}, Lxv6;->k(Liv2;)Lrv2;
+
+    .line 27
+    .line 28
+    .line 29
+    move-result-object v3
+
+    .line 30
+    invoke-virtual {v2, v3}, Lta7;->f(Lrv2;)V
+
+    .line 31
+    .line 32
+    .line 33
+    invoke-static {v1, v0}, Loi7;->b(Loi7;Lki7;)V
+
+    .line 34
+    .line 35
+    .line 36
+    const/4 v0, 0x0
+
+    .line 37
+    iput-object v0, p0, Lmv2;->n:Lki7;
+
+    .line 38
+    .line 39
+    :cond_0
     return-void
 .end method

@@ -1,14 +1,18 @@
 .class public final Lrs2;
-.super Lts2;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lj3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final b:J
+.field public final i:Lo3;
+
+.field public final j:I
+
+.field public final k:I
 
 
 # direct methods
-.method public constructor <init>(J)V
+.method public constructor <init>(Lo3;II)V
     .locals 0
 
     .line 1
@@ -17,131 +21,75 @@
     .line 2
     .line 3
     .line 4
-    iput-wide p1, p0, Lrs2;->b:J
+    iput-object p1, p0, Lrs2;->i:Lo3;
 
     .line 5
     .line 6
+    iput p2, p0, Lrs2;->j:I
+
+    .line 7
+    .line 8
+    invoke-virtual {p1}, Lr2;->a()I
+
+    .line 9
+    .line 10
+    .line 11
+    move-result p1
+
+    .line 12
+    invoke-static {p2, p3, p1}, Lte3;->p(III)V
+
+    .line 13
+    .line 14
+    .line 15
+    sub-int/2addr p3, p2
+
+    .line 16
+    iput p3, p0, Lrs2;->k:I
+
+    .line 17
+    .line 18
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()J
-    .locals 2
+.method public final a()I
+    .locals 0
 
     .line 1
-    iget-wide v0, p0, Lrs2;->b:J
+    iget p0, p0, Lrs2;->k:I
 
     .line 2
     .line 3
-    return-wide v0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 5
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of v1, p1, Lrs2;
-
-    .line 6
-    .line 7
-    const/4 v2, 0x0
-
-    .line 8
-    if-nez v1, :cond_1
-
-    .line 9
-    .line 10
-    return v2
-
-    .line 11
-    :cond_1
-    check-cast p1, Lrs2;
-
-    .line 12
-    .line 13
-    iget-wide v3, p0, Lrs2;->b:J
-
-    .line 14
-    .line 15
-    iget-wide p0, p1, Lrs2;->b:J
-
-    .line 16
-    .line 17
-    invoke-static {v3, v4, p0, p1}, Lgf3;->B(JJ)Z
-
-    .line 18
-    .line 19
-    .line 20
-    move-result p0
-
-    .line 21
-    if-nez p0, :cond_2
-
-    .line 22
-    .line 23
-    return v2
-
-    .line 24
-    :cond_2
-    return v0
-.end method
-
-.method public final hashCode()I
-    .locals 2
-
-    .line 1
-    iget-wide v0, p0, Lrs2;->b:J
-
-    .line 2
-    .line 3
-    invoke-static {v0, v1}, Ljava/lang/Long;->hashCode(J)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
     return p0
 .end method
 
-.method public final toString()Ljava/lang/String;
-    .locals 2
+.method public final get(I)Ljava/lang/Object;
+    .locals 1
 
     .line 1
-    iget-wide v0, p0, Lrs2;->b:J
+    iget v0, p0, Lrs2;->k:I
 
     .line 2
     .line 3
-    invoke-static {v0, v1}, Lgf3;->d0(J)Ljava/lang/String;
+    invoke-static {p1, v0}, Lte3;->n(II)V
 
     .line 4
     .line 5
     .line 6
-    move-result-object p0
+    iget v0, p0, Lrs2;->j:I
 
     .line 7
-    const-string v0, "Tap(point="
-
     .line 8
+    add-int/2addr v0, p1
+
     .line 9
-    const-string v1, ")"
+    iget-object p0, p0, Lrs2;->i:Lo3;
 
     .line 10
     .line 11
-    invoke-static {v0, p0, v1}, Loc1;->p(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-interface {p0, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     .line 12
     .line 13
@@ -150,4 +98,43 @@
 
     .line 15
     return-object p0
+.end method
+
+.method public final subList(II)Ljava/util/List;
+    .locals 2
+
+    .line 1
+    iget v0, p0, Lrs2;->k:I
+
+    .line 2
+    .line 3
+    invoke-static {p1, p2, v0}, Lte3;->p(III)V
+
+    .line 4
+    .line 5
+    .line 6
+    new-instance v0, Lrs2;
+
+    .line 7
+    .line 8
+    iget v1, p0, Lrs2;->j:I
+
+    .line 9
+    .line 10
+    add-int/2addr p1, v1
+
+    .line 11
+    add-int/2addr v1, p2
+
+    .line 12
+    iget-object p0, p0, Lrs2;->i:Lo3;
+
+    .line 13
+    .line 14
+    invoke-direct {v0, p0, p1, v1}, Lrs2;-><init>(Lo3;II)V
+
+    .line 15
+    .line 16
+    .line 17
+    return-object v0
 .end method

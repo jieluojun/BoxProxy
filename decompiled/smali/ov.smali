@@ -1,28 +1,16 @@
 .class public final Lov;
-.super Ldq3;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lsx5;
-
-
-# annotations
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ldq3;",
-        "Lsx5;"
-    }
-.end annotation
+.super Ljw2;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final j:Z
+.field public final i:[I
 
-.field public final k:Lp62;
+.field public j:I
 
 
 # direct methods
-.method public constructor <init>(ZLp62;)V
+.method public constructor <init>([I)V
     .locals 0
 
     .line 1
@@ -31,211 +19,108 @@
     .line 2
     .line 3
     .line 4
-    iput-boolean p1, p0, Lov;->j:Z
+    iput-object p1, p0, Lov;->i:[I
 
     .line 5
     .line 6
-    iput-object p2, p0, Lov;->k:Lp62;
-
-    .line 7
-    .line 8
     return-void
 .end method
 
 
 # virtual methods
-.method public final a()Lvp3;
+.method public final hasNext()Z
+    .locals 1
+
+    .line 1
+    iget v0, p0, Lov;->j:I
+
+    .line 2
+    .line 3
+    iget-object p0, p0, Lov;->i:[I
+
+    .line 4
+    .line 5
+    array-length p0, p0
+
+    .line 6
+    if-ge v0, p0, :cond_0
+
+    .line 7
+    .line 8
+    const/4 p0, 0x1
+
+    .line 9
+    return p0
+
+    .line 10
+    :cond_0
+    const/4 p0, 0x0
+
+    .line 11
+    return p0
+.end method
+
+.method public final nextInt()I
     .locals 3
 
     .line 1
-    new-instance v0, Lea1;
+    :try_start_0
+    iget-object v0, p0, Lov;->i:[I
 
     .line 2
     .line 3
-    const/4 v1, 0x0
-
-    .line 4
-    iget-object v2, p0, Lov;->k:Lp62;
-
-    .line 5
-    .line 6
-    iget-boolean p0, p0, Lov;->j:Z
-
-    .line 7
-    .line 8
-    invoke-direct {v0, p0, v1, v2}, Lea1;-><init>(ZZLp62;)V
-
-    .line 9
-    .line 10
-    .line 11
-    return-object v0
-.end method
-
-.method public final a1()Lrx5;
-    .locals 2
-
-    .line 1
-    new-instance v0, Lrx5;
-
-    .line 2
-    .line 3
-    invoke-direct {v0}, Lrx5;-><init>()V
+    iget v1, p0, Lov;->j:I
 
     .line 4
     .line 5
-    .line 6
-    iget-boolean v1, p0, Lov;->j:Z
-
-    .line 7
-    .line 8
-    iput-boolean v1, v0, Lrx5;->l:Z
-
-    .line 9
-    .line 10
-    iget-object p0, p0, Lov;->k:Lp62;
-
-    .line 11
-    .line 12
-    invoke-interface {p0, v0}, Lp62;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 13
-    .line 14
-    .line 15
-    return-object v0
-.end method
-
-.method public final b(Lvp3;)V
-    .locals 1
-
-    .line 1
-    check-cast p1, Lea1;
-
-    .line 2
-    .line 3
-    iget-boolean v0, p0, Lov;->j:Z
-
-    .line 4
-    .line 5
-    iput-boolean v0, p1, Lea1;->x:Z
+    add-int/lit8 v2, v1, 0x1
 
     .line 6
     .line 7
-    iget-object p0, p0, Lov;->k:Lp62;
+    iput v2, p0, Lov;->j:I
 
     .line 8
     .line 9
-    iput-object p0, p1, Lea1;->z:Lp62;
+    aget p0, v0, v1
+    :try_end_0
+    .catch Ljava/lang/ArrayIndexOutOfBoundsException; {:try_start_0 .. :try_end_0} :catch_0
 
     .line 10
     .line 11
-    return-void
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 2
-
-    .line 1
-    if-ne p0, p1, :cond_0
-
-    .line 2
-    .line 3
-    goto :goto_1
-
-    .line 4
-    :cond_0
-    instance-of v0, p1, Lov;
-
-    .line 5
-    .line 6
-    if-nez v0, :cond_1
-
-    .line 7
-    .line 8
-    goto :goto_0
-
-    .line 9
-    :cond_1
-    check-cast p1, Lov;
-
-    .line 10
-    .line 11
-    iget-boolean v0, p1, Lov;->j:Z
+    return p0
 
     .line 12
+    :catch_0
+    move-exception v0
+
     .line 13
-    iget-boolean v1, p0, Lov;->j:Z
+    iget v1, p0, Lov;->j:I
 
     .line 14
     .line 15
-    if-eq v1, v0, :cond_2
+    add-int/lit8 v1, v1, -0x1
 
     .line 16
     .line 17
-    goto :goto_0
+    iput v1, p0, Lov;->j:I
 
     .line 18
-    :cond_2
-    iget-object p0, p0, Lov;->k:Lp62;
-
     .line 19
-    .line 20
-    iget-object p1, p1, Lov;->k:Lp62;
+    invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
+    .line 20
     .line 21
     .line 22
-    if-eq p0, p1, :cond_3
+    move-result-object p0
 
     .line 23
+    invoke-static {p0}, Llt4;->h(Ljava/lang/String;)V
+
     .line 24
-    :goto_0
+    .line 25
+    .line 26
     const/4 p0, 0x0
 
-    .line 25
-    return p0
-
-    .line 26
-    :cond_3
-    :goto_1
-    const/4 p0, 0x1
-
     .line 27
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 1
-
-    .line 1
-    iget-boolean v0, p0, Lov;->j:Z
-
-    .line 2
-    .line 3
-    invoke-static {v0}, Ljava/lang/Boolean;->hashCode(Z)I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result v0
-
-    .line 7
-    mul-int/lit8 v0, v0, 0x1f
-
-    .line 8
-    .line 9
-    iget-object p0, p0, Lov;->k:Lp62;
-
-    .line 10
-    .line 11
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    .line 12
-    .line 13
-    .line 14
-    move-result p0
-
-    .line 15
-    add-int/2addr p0, v0
-
-    .line 16
     return p0
 .end method

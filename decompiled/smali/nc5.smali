@@ -1,74 +1,72 @@
 .class public final Lnc5;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ljava/lang/Runnable;
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public j:Lo42;
+.field public synthetic i:Ljava/lang/Object;
 
-.field public k:Lp42;
+.field public final synthetic j:Lrc5;
 
-.field public l:Landroid/os/Handler;
+.field public k:I
 
 
-# virtual methods
-.method public final run()V
-    .locals 5
+# direct methods
+.method public constructor <init>(Lrc5;Lq91;)V
+    .locals 0
 
     .line 1
-    :try_start_0
-    iget-object v0, p0, Lnc5;->j:Lo42;
+    iput-object p1, p0, Lnc5;->j:Lrc5;
 
     .line 2
     .line 3
-    invoke-virtual {v0}, Lo42;->call()Ljava/lang/Object;
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
     .line 4
     .line 5
     .line 6
-    move-result-object v0
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    return-void
+.end method
 
+
+# virtual methods
+.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 1
+
+    .line 1
+    iput-object p1, p0, Lnc5;->i:Ljava/lang/Object;
+
+    .line 2
+    .line 3
+    iget p1, p0, Lnc5;->k:I
+
+    .line 4
+    .line 5
+    const/high16 v0, -0x80000000
+
+    .line 6
     .line 7
-    goto :goto_0
+    or-int/2addr p1, v0
 
     .line 8
-    :catch_0
-    const/4 v0, 0x0
+    iput p1, p0, Lnc5;->k:I
 
     .line 9
-    :goto_0
-    iget-object v1, p0, Lnc5;->k:Lp42;
-
     .line 10
-    .line 11
-    iget-object p0, p0, Lnc5;->l:Landroid/os/Handler;
+    iget-object p1, p0, Lnc5;->j:Lrc5;
 
+    .line 11
     .line 12
+    const/4 v0, 0x0
+
     .line 13
-    new-instance v2, Lc6;
+    invoke-virtual {p1, v0, v0, p0}, Lrc5;->d(Le72;Le72;Lq91;)Ljava/lang/Object;
 
     .line 14
     .line 15
-    const/4 v3, 0x3
-
     .line 16
-    const/4 v4, 0x0
+    move-result-object p0
 
     .line 17
-    invoke-direct {v2, v1, v4, v0, v3}, Lc6;-><init>(Ljava/lang/Object;ZLjava/lang/Object;B)V
-
-    .line 18
-    .line 19
-    .line 20
-    invoke-virtual {p0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
-
-    .line 21
-    .line 22
-    .line 23
-    return-void
+    return-object p0
 .end method

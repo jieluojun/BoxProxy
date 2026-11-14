@@ -1,33 +1,30 @@
 .class public final Lx33;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Ljava/util/Comparator;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public final synthetic j:B
+.field public final a:Ljava/lang/Float;
 
-.field public final synthetic k:Llo2;
+.field public b:Ldr1;
 
 
 # direct methods
-.method public synthetic constructor <init>(Llo2;B)V
+.method public constructor <init>(Ljava/lang/Float;Ldr1;)V
     .locals 0
 
     .line 1
-    iput-byte p2, p0, Lx33;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p1, p0, Lx33;->k:Llo2;
-
     .line 4
-    .line 5
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-object p1, p0, Lx33;->a:Ljava/lang/Float;
 
+    .line 5
     .line 6
+    iput-object p2, p0, Lx33;->b:Ldr1;
+
     .line 7
     .line 8
     return-void
@@ -35,301 +32,117 @@
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+.method public final equals(Ljava/lang/Object;)Z
+    .locals 3
 
     .line 1
-    iget-byte v0, p0, Lx33;->j:B
+    const/4 v0, 0x1
 
     .line 2
-    .line 3
-    iget-object p0, p0, Lx33;->k:Llo2;
+    if-ne p1, p0, :cond_0
 
+    .line 3
     .line 4
+    return v0
+
     .line 5
-    packed-switch v0, :pswitch_data_0
+    :cond_0
+    instance-of v1, p1, Lx33;
 
     .line 6
     .line 7
+    if-eqz v1, :cond_1
+
     .line 8
-    check-cast p2, Le43;
-
     .line 9
-    .line 10
-    invoke-interface {p2}, Le43;->getKey()Ljava/lang/Object;
+    check-cast p1, Lx33;
 
+    .line 10
     .line 11
+    iget-object v1, p1, Lx33;->a:Ljava/lang/Float;
+
     .line 12
     .line 13
-    move-result-object p2
+    iget-object v2, p0, Lx33;->a:Ljava/lang/Float;
 
     .line 14
-    invoke-virtual {p0, p2}, Llo2;->f(Ljava/lang/Object;)I
-
     .line 15
+    invoke-virtual {v1, v2}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+
     .line 16
     .line 17
-    move-result p2
-
     .line 18
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result v1
 
     .line 19
+    if-eqz v1, :cond_1
+
     .line 20
     .line 21
-    move-result-object p2
+    iget-object p1, p1, Lx33;->b:Ldr1;
 
     .line 22
-    check-cast p1, Le43;
-
     .line 23
-    .line 24
-    invoke-interface {p1}, Le43;->getKey()Ljava/lang/Object;
+    iget-object p0, p0, Lx33;->b:Ldr1;
 
+    .line 24
     .line 25
+    invoke-static {p1, p0}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
+
     .line 26
     .line 27
-    move-result-object p1
-
     .line 28
-    invoke-virtual {p0, p1}, Llo2;->f(Ljava/lang/Object;)I
+    move-result p0
 
     .line 29
+    if-eqz p0, :cond_1
+
     .line 30
     .line 31
-    move-result p0
+    return v0
 
     .line 32
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    :cond_1
+    const/4 p0, 0x0
 
     .line 33
-    .line 34
-    .line 35
-    move-result-object p0
-
-    .line 36
-    invoke-virtual {p2, p0}, Ljava/lang/Integer;->compareTo(Ljava/lang/Object;)I
-
-    .line 37
-    .line 38
-    .line 39
-    move-result p0
-
-    .line 40
     return p0
+.end method
 
-    .line 41
-    :pswitch_0
-    check-cast p2, Le43;
+.method public final hashCode()I
+    .locals 1
 
-    .line 42
-    .line 43
-    invoke-interface {p2}, Le43;->getKey()Ljava/lang/Object;
+    .line 1
+    iget-object v0, p0, Lx33;->a:Ljava/lang/Float;
 
-    .line 44
-    .line 45
-    .line 46
-    move-result-object p2
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->hashCode()I
 
-    .line 47
-    invoke-virtual {p0, p2}, Llo2;->f(Ljava/lang/Object;)I
+    .line 4
+    .line 5
+    .line 6
+    move-result v0
 
-    .line 48
-    .line 49
-    .line 50
-    move-result p2
+    .line 7
+    mul-int/lit16 v0, v0, 0x3c1
 
-    .line 51
-    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 8
+    .line 9
+    iget-object p0, p0, Lx33;->b:Ldr1;
 
-    .line 52
-    .line 53
-    .line 54
-    move-result-object p2
+    .line 10
+    .line 11
+    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
 
-    .line 55
-    check-cast p1, Le43;
-
-    .line 56
-    .line 57
-    invoke-interface {p1}, Le43;->getKey()Ljava/lang/Object;
-
-    .line 58
-    .line 59
-    .line 60
-    move-result-object p1
-
-    .line 61
-    invoke-virtual {p0, p1}, Llo2;->f(Ljava/lang/Object;)I
-
-    .line 62
-    .line 63
-    .line 64
+    .line 12
+    .line 13
+    .line 14
     move-result p0
 
-    .line 65
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 15
+    add-int/2addr p0, v0
 
-    .line 66
-    .line 67
-    .line 68
-    move-result-object p0
-
-    .line 69
-    invoke-virtual {p2, p0}, Ljava/lang/Integer;->compareTo(Ljava/lang/Object;)I
-
-    .line 70
-    .line 71
-    .line 72
-    move-result p0
-
-    .line 73
+    .line 16
     return p0
-
-    .line 74
-    :pswitch_1
-    check-cast p1, Le43;
-
-    .line 75
-    .line 76
-    invoke-interface {p1}, Le43;->getKey()Ljava/lang/Object;
-
-    .line 77
-    .line 78
-    .line 79
-    move-result-object p1
-
-    .line 80
-    invoke-virtual {p0, p1}, Llo2;->f(Ljava/lang/Object;)I
-
-    .line 81
-    .line 82
-    .line 83
-    move-result p1
-
-    .line 84
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 85
-    .line 86
-    .line 87
-    move-result-object p1
-
-    .line 88
-    check-cast p2, Le43;
-
-    .line 89
-    .line 90
-    invoke-interface {p2}, Le43;->getKey()Ljava/lang/Object;
-
-    .line 91
-    .line 92
-    .line 93
-    move-result-object p2
-
-    .line 94
-    invoke-virtual {p0, p2}, Llo2;->f(Ljava/lang/Object;)I
-
-    .line 95
-    .line 96
-    .line 97
-    move-result p0
-
-    .line 98
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 99
-    .line 100
-    .line 101
-    move-result-object p0
-
-    .line 102
-    invoke-virtual {p1, p0}, Ljava/lang/Integer;->compareTo(Ljava/lang/Object;)I
-
-    .line 103
-    .line 104
-    .line 105
-    move-result p0
-
-    .line 106
-    return p0
-
-    .line 107
-    :pswitch_2
-    check-cast p1, Le43;
-
-    .line 108
-    .line 109
-    invoke-interface {p1}, Le43;->getKey()Ljava/lang/Object;
-
-    .line 110
-    .line 111
-    .line 112
-    move-result-object p1
-
-    .line 113
-    invoke-virtual {p0, p1}, Llo2;->f(Ljava/lang/Object;)I
-
-    .line 114
-    .line 115
-    .line 116
-    move-result p1
-
-    .line 117
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 118
-    .line 119
-    .line 120
-    move-result-object p1
-
-    .line 121
-    check-cast p2, Le43;
-
-    .line 122
-    .line 123
-    invoke-interface {p2}, Le43;->getKey()Ljava/lang/Object;
-
-    .line 124
-    .line 125
-    .line 126
-    move-result-object p2
-
-    .line 127
-    invoke-virtual {p0, p2}, Llo2;->f(Ljava/lang/Object;)I
-
-    .line 128
-    .line 129
-    .line 130
-    move-result p0
-
-    .line 131
-    invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    .line 132
-    .line 133
-    .line 134
-    move-result-object p0
-
-    .line 135
-    invoke-virtual {p1, p0}, Ljava/lang/Integer;->compareTo(Ljava/lang/Object;)I
-
-    .line 136
-    .line 137
-    .line 138
-    move-result p0
-
-    .line 139
-    return p0
-
-    .line 140
-    nop
-
-    .line 141
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
 .end method

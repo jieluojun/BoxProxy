@@ -1,293 +1,190 @@
-.class public abstract synthetic Lqc7;
+.class public abstract Lqc7;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # direct methods
-.method public static bridge synthetic a(Landroid/view/WindowInsetsAnimation;)F
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/WindowInsetsAnimation;->getFraction()F
-
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
-
-    .line 5
-    return p0
-.end method
-
-.method public static bridge synthetic b()I
+.method public static a(Landroid/view/WindowInsets;Landroid/view/View;)V
     .locals 1
 
     .line 1
-    invoke-static {}, Landroid/view/WindowInsets$Type;->statusBars()I
+    const v0, 0x7f0900d0
 
     .line 2
     .line 3
     .line 4
-    move-result v0
+    invoke-virtual {p1, v0}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
     .line 5
-    return v0
-.end method
+    .line 6
+    .line 7
+    move-result-object v0
 
-.method public static bridge synthetic c(Landroid/view/WindowInsets;I)Landroid/graphics/Insets;
-    .locals 0
+    .line 8
+    check-cast v0, Landroid/view/View$OnApplyWindowInsetsListener;
 
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/view/WindowInsets;->getInsetsIgnoringVisibility(I)Landroid/graphics/Insets;
+    .line 9
+    .line 10
+    if-eqz v0, :cond_0
 
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
+    .line 11
+    .line 12
+    invoke-interface {v0, p1, p0}, Landroid/view/View$OnApplyWindowInsetsListener;->onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
 
-    .line 5
-    return-object p0
-.end method
-
-.method public static bridge synthetic d(Landroid/view/WindowInsetsAnimation$Bounds;)Landroid/graphics/Insets;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/WindowInsetsAnimation$Bounds;->getUpperBound()Landroid/graphics/Insets;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static bridge synthetic e()Landroid/view/WindowInsets;
-    .locals 1
-
-    .line 1
-    sget-object v0, Landroid/view/WindowInsets;->CONSUMED:Landroid/view/WindowInsets;
-
-    .line 2
-    .line 3
-    return-object v0
-.end method
-
-.method public static bridge synthetic f(Ljava/lang/Object;)Landroid/view/WindowInsetsAnimation;
-    .locals 0
-
-    .line 1
-    check-cast p0, Landroid/view/WindowInsetsAnimation;
-
-    .line 2
-    .line 3
-    return-object p0
-.end method
-
-.method public static bridge synthetic g(Landroid/view/Window;)Landroid/view/WindowInsetsController;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Landroid/view/Window;->getInsetsController()Landroid/view/WindowInsetsController;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static bridge synthetic h(Landroid/view/WindowInsets$Builder;ILandroid/graphics/Insets;)V
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1, p2}, Landroid/view/WindowInsets$Builder;->setInsets(ILandroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;
-
-    .line 2
-    .line 3
-    .line 4
+    .line 13
+    .line 14
+    .line 15
+    :cond_0
     return-void
 .end method
 
-.method public static bridge synthetic i(Landroid/view/WindowInsetsController;I)V
+.method public static b(Landroid/view/View;Lki7;Landroid/graphics/Rect;)Lki7;
     .locals 1
 
     .line 1
+    invoke-virtual {p1}, Lki7;->b()Landroid/view/WindowInsets;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object v0
+
+    .line 5
+    if-eqz v0, :cond_0
+
+    .line 6
+    .line 7
+    invoke-virtual {p0, v0, p2}, Landroid/view/View;->computeSystemWindowInsets(Landroid/view/WindowInsets;Landroid/graphics/Rect;)Landroid/view/WindowInsets;
+
+    .line 8
+    .line 9
+    .line 10
+    move-result-object p1
+
+    .line 11
+    invoke-static {p1, p0}, Lki7;->c(Landroid/view/WindowInsets;Landroid/view/View;)Lki7;
+
+    .line 12
+    .line 13
+    .line 14
+    move-result-object p0
+
+    .line 15
+    return-object p0
+
+    .line 16
+    :cond_0
+    invoke-virtual {p2}, Landroid/graphics/Rect;->setEmpty()V
+
+    .line 17
+    .line 18
+    .line 19
+    return-object p1
+.end method
+
+.method public static c(Landroid/view/View;Lyh4;)V
+    .locals 2
+
+    .line 1
+    if-eqz p1, :cond_0
+
+    .line 2
+    .line 3
+    new-instance v0, Lpc7;
+
+    .line 4
+    .line 5
+    invoke-direct {v0, p0, p1}, Lpc7;-><init>(Landroid/view/View;Lyh4;)V
+
+    .line 6
+    .line 7
+    .line 8
+    goto :goto_0
+
+    .line 9
+    :cond_0
     const/4 v0, 0x0
 
-    .line 2
-    invoke-interface {p0, v0, p1}, Landroid/view/WindowInsetsController;->setSystemBarsAppearance(II)V
+    .line 10
+    :goto_0
+    sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    .line 3
-    .line 4
-    .line 5
+    .line 11
+    .line 12
+    const/16 v1, 0x1e
+
+    .line 13
+    .line 14
+    if-ge p1, v1, :cond_1
+
+    .line 15
+    .line 16
+    const p1, 0x7f0900c7
+
+    .line 17
+    .line 18
+    .line 19
+    invoke-virtual {p0, p1, v0}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+
+    .line 20
+    .line 21
+    .line 22
+    :cond_1
+    const p1, 0x7f0900c6
+
+    .line 23
+    .line 24
+    .line 25
+    invoke-virtual {p0, p1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
+
+    .line 26
+    .line 27
+    .line 28
+    move-result-object p1
+
+    .line 29
+    if-eqz p1, :cond_2
+
+    .line 30
+    .line 31
     return-void
-.end method
 
-.method public static bridge synthetic j(Landroid/view/WindowInsetsController;II)V
-    .locals 0
+    .line 32
+    :cond_2
+    if-eqz v0, :cond_3
 
-    .line 1
-    invoke-interface {p0, p1, p2}, Landroid/view/WindowInsetsController;->setSystemBarsAppearance(II)V
+    .line 33
+    .line 34
+    invoke-virtual {p0, v0}, Landroid/view/View;->setOnApplyWindowInsetsListener(Landroid/view/View$OnApplyWindowInsetsListener;)V
 
-    .line 2
-    .line 3
-    .line 4
+    .line 35
+    .line 36
+    .line 37
     return-void
-.end method
 
-.method public static bridge synthetic k(Landroid/view/WindowInsets;I)Z
-    .locals 0
+    .line 38
+    :cond_3
+    const p1, 0x7f0900d0
 
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/view/WindowInsets;->isVisible(I)Z
+    .line 39
+    .line 40
+    .line 41
+    invoke-virtual {p0, p1}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
 
-    .line 2
-    .line 3
-    .line 4
-    move-result p0
+    .line 42
+    .line 43
+    .line 44
+    move-result-object p1
 
-    .line 5
-    return p0
-.end method
+    .line 45
+    check-cast p1, Landroid/view/View$OnApplyWindowInsetsListener;
 
-.method public static bridge synthetic l()I
-    .locals 1
+    .line 46
+    .line 47
+    invoke-virtual {p0, p1}, Landroid/view/View;->setOnApplyWindowInsetsListener(Landroid/view/View$OnApplyWindowInsetsListener;)V
 
-    .line 1
-    invoke-static {}, Landroid/view/WindowInsets$Type;->navigationBars()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    return v0
-.end method
-
-.method public static bridge synthetic m(Landroid/view/WindowInsets;I)Landroid/graphics/Insets;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0, p1}, Landroid/view/WindowInsets;->getInsets(I)Landroid/graphics/Insets;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public static bridge synthetic n(Landroid/view/WindowInsetsController;I)V
-    .locals 1
-
-    .line 1
-    const/16 v0, 0x10
-
-    .line 2
-    .line 3
-    invoke-interface {p0, p1, v0}, Landroid/view/WindowInsetsController;->setSystemBarsAppearance(II)V
-
-    .line 4
-    .line 5
-    .line 6
+    .line 48
+    .line 49
+    .line 50
     return-void
-.end method
-
-.method public static bridge synthetic o()I
-    .locals 1
-
-    .line 1
-    invoke-static {}, Landroid/view/WindowInsets$Type;->captionBar()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    return v0
-.end method
-
-.method public static bridge synthetic p(Landroid/view/WindowInsetsController;I)V
-    .locals 1
-
-    .line 1
-    const/16 v0, 0x8
-
-    .line 2
-    .line 3
-    invoke-interface {p0, p1, v0}, Landroid/view/WindowInsetsController;->setSystemBarsAppearance(II)V
-
-    .line 4
-    .line 5
-    .line 6
-    return-void
-.end method
-
-.method public static bridge synthetic q()I
-    .locals 1
-
-    .line 1
-    invoke-static {}, Landroid/view/WindowInsets$Type;->systemGestures()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    return v0
-.end method
-
-.method public static bridge synthetic r()I
-    .locals 1
-
-    .line 1
-    invoke-static {}, Landroid/view/WindowInsets$Type;->mandatorySystemGestures()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    return v0
-.end method
-
-.method public static bridge synthetic s()I
-    .locals 1
-
-    .line 1
-    invoke-static {}, Landroid/view/WindowInsets$Type;->tappableElement()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    return v0
-.end method
-
-.method public static bridge synthetic t()I
-    .locals 1
-
-    .line 1
-    invoke-static {}, Landroid/view/WindowInsets$Type;->displayCutout()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    return v0
 .end method

@@ -1,205 +1,140 @@
-.class public final Lt24;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-# interfaces
-.implements Lv24;
+.class public final enum Lt24;
+.super Ljava/lang/Enum;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public final b:Lv24;
+# static fields
+.field public static final enum i:Lt24;
+
+.field public static final enum j:Lt24;
+
+.field public static final enum k:Lt24;
+
+.field public static final synthetic l:[Lt24;
 
 
 # direct methods
-.method public constructor <init>(Lv24;)V
-    .locals 0
+.method static constructor <clinit>()V
+    .locals 5
 
     .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    new-instance v0, Lt24;
 
     .line 2
     .line 3
-    .line 4
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 5
-    .line 6
-    .line 7
-    iput-object p1, p0, Lt24;->b:Lv24;
-
-    .line 8
-    .line 9
-    return-void
-.end method
-
-
-# virtual methods
-.method public final a()Lorg/json/JSONObject;
-    .locals 1
-
-    .line 1
-    iget-object p0, p0, Lt24;->b:Lv24;
-
-    .line 2
-    .line 3
-    invoke-static {p0}, Lim;->Q(Ljava/lang/Object;)Ljava/util/List;
+    const-string v1, "Commit"
 
     .line 4
     .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    sget-object v0, Lr24;->a:Lr24;
-
-    .line 8
-    .line 9
-    sget-object v0, Lv24;->a:Lr24;
-
-    .line 10
-    .line 11
-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 12
-    .line 13
-    .line 14
-    const-string v0, "not"
-
-    .line 15
-    .line 16
-    invoke-static {v0, p0}, Lr24;->a(Ljava/lang/String;Ljava/util/List;)Lorg/json/JSONObject;
-
-    .line 17
-    .line 18
-    .line 19
-    move-result-object p0
-
-    .line 20
-    return-object p0
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 3
-
-    .line 1
-    const/4 v0, 0x1
-
-    .line 2
-    if-ne p0, p1, :cond_0
-
-    .line 3
-    .line 4
-    return v0
-
-    .line 5
-    :cond_0
-    instance-of v1, p1, Lt24;
-
-    .line 6
-    .line 7
     const/4 v2, 0x0
 
+    .line 6
+    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 7
     .line 8
-    if-nez v1, :cond_1
-
     .line 9
-    .line 10
-    return v2
+    sput-object v0, Lt24;->i:Lt24;
 
+    .line 10
     .line 11
-    :cond_1
-    check-cast p1, Lt24;
+    new-instance v1, Lt24;
 
     .line 12
     .line 13
-    iget-object p0, p0, Lt24;->b:Lv24;
+    const-string v2, "Cancel"
 
     .line 14
     .line 15
-    iget-object p1, p1, Lt24;->b:Lv24;
+    const/4 v3, 0x1
 
     .line 16
-    .line 17
-    invoke-static {p0, p1}, Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z
+    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
+    .line 17
     .line 18
     .line 19
-    .line 20
-    move-result p0
+    sput-object v1, Lt24;->j:Lt24;
 
+    .line 20
     .line 21
-    if-nez p0, :cond_2
+    new-instance v2, Lt24;
 
     .line 22
     .line 23
-    return v2
+    const-string v3, "Programmatic"
 
     .line 24
-    :cond_2
-    return v0
+    .line 25
+    const/4 v4, 0x2
+
+    .line 26
+    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
+
+    .line 27
+    .line 28
+    .line 29
+    sput-object v2, Lt24;->k:Lt24;
+
+    .line 30
+    .line 31
+    filled-new-array {v0, v1, v2}, [Lt24;
+
+    .line 32
+    .line 33
+    .line 34
+    move-result-object v0
+
+    .line 35
+    sput-object v0, Lt24;->l:[Lt24;
+
+    .line 36
+    .line 37
+    return-void
 .end method
 
-.method public final hashCode()I
-    .locals 0
+.method public static valueOf(Ljava/lang/String;)Lt24;
+    .locals 1
 
     .line 1
-    iget-object p0, p0, Lt24;->b:Lv24;
+    const-class v0, Lt24;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
+    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
 
     .line 4
     .line 5
     .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v1, "Not(child="
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    iget-object p0, p0, Lt24;->b:Lv24;
-
-    .line 9
-    .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 11
-    .line 12
-    .line 13
-    const-string p0, ")"
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    .line 16
-    .line 17
-    .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    .line 19
-    .line 20
-    .line 21
     move-result-object p0
 
-    .line 22
+    .line 7
+    check-cast p0, Lt24;
+
+    .line 8
+    .line 9
     return-object p0
+.end method
+
+.method public static values()[Lt24;
+    .locals 1
+
+    .line 1
+    sget-object v0, Lt24;->l:[Lt24;
+
+    .line 2
+    .line 3
+    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+
+    .line 4
+    .line 5
+    .line 6
+    move-result-object v0
+
+    .line 7
+    check-cast v0, [Lt24;
+
+    .line 8
+    .line 9
+    return-object v0
 .end method

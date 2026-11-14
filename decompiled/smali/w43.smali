@@ -1,323 +1,142 @@
 .class public final Lw43;
-.super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lrw3;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lo33;
+.implements Ldp1;
+.implements Lcd2;
 
 
 # instance fields
-.field public final a:Lk53;
-
-
-# direct methods
-.method public constructor <init>(Lk53;)V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    iput-object p1, p0, Lw43;->a:Lk53;
-
-    .line 5
-    .line 6
-    return-void
-.end method
+.field public w:Lu43;
 
 
 # virtual methods
-.method public final a()I
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lw43;->a:Lk53;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lk53;->j()Ld53;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    iget p0, p0, Ld53;->o:I
-
-    .line 8
-    .line 9
-    return p0
-.end method
-
-.method public final b()Z
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lw43;->a:Lk53;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lk53;->j()Ld53;
-
-    .line 4
-    .line 5
-    .line 6
-    move-result-object p0
-
-    .line 7
-    iget-object p0, p0, Ld53;->l:Ljava/util/List;
-
-    .line 8
-    .line 9
-    invoke-interface {p0}, Ljava/util/Collection;->isEmpty()Z
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    xor-int/lit8 p0, p0, 0x1
-
-    .line 14
-    .line 15
-    return p0
-.end method
-
-.method public final c()I
+.method public final F(Lpe4;)V
     .locals 1
 
     .line 1
-    invoke-virtual {p0}, Lw43;->a()I
+    invoke-virtual {p1}, Lpe4;->A1()Lrw3;
 
     .line 2
     .line 3
     .line 4
-    move-result v0
-
-    .line 5
-    add-int/lit8 v0, v0, -0x1
-
-    .line 6
-    .line 7
-    iget-object p0, p0, Lw43;->a:Lk53;
-
-    .line 8
-    .line 9
-    invoke-virtual {p0}, Lk53;->j()Ld53;
-
-    .line 10
-    .line 11
-    .line 12
-    move-result-object p0
-
-    .line 13
-    iget-object p0, p0, Ld53;->l:Ljava/util/List;
-
-    .line 14
-    .line 15
-    invoke-static {p0}, Lcv0;->H0(Ljava/util/List;)Ljava/lang/Object;
-
-    .line 16
-    .line 17
-    .line 18
-    move-result-object p0
-
-    .line 19
-    check-cast p0, Le53;
-
-    .line 20
-    .line 21
-    iget p0, p0, Le53;->a:I
-
-    .line 22
-    .line 23
-    invoke-static {v0, p0}, Ljava/lang/Math;->min(II)I
-
-    .line 24
-    .line 25
-    .line 26
-    move-result p0
-
-    .line 27
-    return p0
-.end method
-
-.method public final d()I
-    .locals 4
-
-    .line 1
-    iget-object p0, p0, Lw43;->a:Lk53;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Lk53;->j()Ld53;
-
-    .line 4
-    .line 5
-    .line 6
     move-result-object v0
 
+    .line 5
+    iget-boolean v0, v0, Lrw3;->v:Z
+
+    .line 6
     .line 7
-    iget-object v0, v0, Ld53;->l:Ljava/util/List;
-
-    .line 8
-    .line 9
-    invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
-
-    .line 10
-    .line 11
-    .line 12
-    move-result v0
-
-    .line 13
     if-eqz v0, :cond_0
 
+    .line 8
+    .line 9
+    iget-object p0, p0, Lw43;->w:Lu43;
+
+    .line 10
+    .line 11
+    iget-object p0, p0, Lu43;->c:Lxs4;
+
+    .line 12
+    .line 13
+    invoke-virtual {p0, p1}, Lxs4;->setValue(Ljava/lang/Object;)V
+
     .line 14
     .line 15
-    const/4 p0, 0x0
-
     .line 16
-    return p0
-
-    .line 17
     :cond_0
-    invoke-virtual {p0}, Lk53;->j()Ld53;
+    return-void
+.end method
+
+.method public final l0(Lw53;)V
+    .locals 6
+
+    .line 1
+    invoke-virtual {p1}, Lw53;->c()V
+
+    .line 2
+    .line 3
+    .line 4
+    iget-object v0, p0, Lw43;->w:Lu43;
+
+    .line 5
+    .line 6
+    iget-object v0, v0, Lu43;->a:Lsd2;
+
+    .line 7
+    .line 8
+    iget-object v1, p1, Lw53;->i:Lxi0;
+
+    .line 9
+    .line 10
+    invoke-interface {v1}, Lfp1;->b()J
+
+    .line 11
+    .line 12
+    .line 13
+    move-result-wide v1
+
+    .line 14
+    invoke-static {v1, v2}, Ljs;->h0(J)J
+
+    .line 15
+    .line 16
+    .line 17
+    move-result-wide v1
 
     .line 18
+    invoke-static {p0}, Lum;->q0(Lfi1;)Lu53;
+
     .line 19
     .line 20
-    move-result-object v0
-
     .line 21
-    iget-object v1, v0, Ld53;->p:Lwe4;
+    move-result-object v3
 
     .line 22
+    iget-object v3, v3, Lu53;->G:Lsi1;
+
     .line 23
-    sget-object v2, Lwe4;->j:Lwe4;
-
     .line 24
-    .line 25
-    if-ne v1, v2, :cond_1
+    new-instance v4, Ln10;
 
+    .line 25
     .line 26
+    const/4 v5, 0x2
+
     .line 27
-    invoke-virtual {v0}, Ld53;->i()J
+    invoke-direct {v4, v3, p0, p1, v5}, Ln10;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;B)V
 
     .line 28
     .line 29
     .line 30
-    move-result-wide v0
+    invoke-virtual {p1, v1, v2, v4, v0}, Lw53;->i0(JLp72;Lsd2;)V
 
     .line 31
-    const-wide v2, 0xffffffffL
-
     .line 32
     .line 33
-    .line 34
-    .line 35
-    .line 36
-    and-long/2addr v0, v2
-
-    .line 37
-    :goto_0
-    long-to-int v0, v0
-
-    .line 38
-    goto :goto_1
-
-    .line 39
-    :cond_1
-    invoke-virtual {v0}, Ld53;->i()J
-
-    .line 40
-    .line 41
-    .line 42
-    move-result-wide v0
-
-    .line 43
-    const/16 v2, 0x20
-
-    .line 44
-    .line 45
-    shr-long/2addr v0, v2
-
-    .line 46
-    goto :goto_0
-
-    .line 47
-    :goto_1
-    invoke-virtual {p0}, Lk53;->j()Ld53;
-
-    .line 48
-    .line 49
-    .line 50
-    move-result-object p0
-
-    .line 51
-    invoke-static {p0}, Lhq;->n0(Ld53;)I
-
-    .line 52
-    .line 53
-    .line 54
-    move-result p0
-
-    .line 55
-    const/4 v1, 0x1
-
-    .line 56
-    if-nez p0, :cond_2
-
-    .line 57
-    .line 58
-    goto :goto_2
-
-    .line 59
-    :cond_2
-    div-int/2addr v0, p0
-
-    .line 60
-    if-ge v0, v1, :cond_3
-
-    .line 61
-    .line 62
-    :goto_2
-    return v1
-
-    .line 63
-    :cond_3
-    return v0
+    return-void
 .end method
 
-.method public final e()I
+.method public final z1()V
     .locals 1
 
     .line 1
-    iget-object p0, p0, Lw43;->a:Lk53;
+    iget-object p0, p0, Lw43;->w:Lu43;
 
     .line 2
     .line 3
-    invoke-virtual {p0}, Lk53;->h()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
     const/4 v0, 0x0
 
+    .line 4
+    iget-object p0, p0, Lu43;->c:Lxs4;
+
+    .line 5
+    .line 6
+    invoke-virtual {p0, v0}, Lxs4;->setValue(Ljava/lang/Object;)V
+
+    .line 7
     .line 8
-    invoke-static {v0, p0}, Ljava/lang/Math;->max(II)I
-
     .line 9
-    .line 10
-    .line 11
-    move-result p0
-
-    .line 12
-    return p0
+    return-void
 .end method

@@ -1,60 +1,67 @@
-.class public Lyc7;
-.super Lxc7;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
-
-
-# direct methods
-.method public constructor <init>()V
-    .locals 0
-
-    .line 1
-    invoke-direct {p0}, Lxc7;-><init>()V
-
-    .line 2
-    .line 3
-    .line 4
-    return-void
-.end method
-
-.method public constructor <init>(Lnd7;)V
-    .locals 0
-
-    .line 5
-    invoke-direct {p0, p1}, Lxc7;-><init>(Lnd7;)V
-
-    return-void
-.end method
+.class public interface abstract Lyc7;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # virtual methods
-.method public d(ILyq2;)V
+.method public a()F
     .locals 0
 
     .line 1
-    invoke-static {p1}, Lmd7;->a(I)I
+    const p0, 0x7f7fffff    # Float.MAX_VALUE
 
     .line 2
     .line 3
     .line 4
-    move-result p1
+    return p0
+.end method
 
+.method public abstract b()J
+.end method
+
+.method public abstract c()J
+.end method
+
+.method public abstract d()F
+.end method
+
+.method public e()F
+    .locals 0
+
+    .line 1
+    const/high16 p0, 0x40000000    # 2.0f
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public f()F
+    .locals 0
+
+    .line 1
+    const/high16 p0, 0x41800000    # 16.0f
+
+    .line 2
+    .line 3
+    return p0
+.end method
+
+.method public g()J
+    .locals 2
+
+    .line 1
+    const/high16 p0, 0x42400000    # 48.0f
+
+    .line 2
+    .line 3
+    invoke-static {p0, p0}, Ler;->n(FF)J
+
+    .line 4
     .line 5
-    invoke-virtual {p2}, Lyq2;->d()Landroid/graphics/Insets;
-
     .line 6
+    move-result-wide v0
+
     .line 7
-    .line 8
-    move-result-object p2
-
-    .line 9
-    iget-object p0, p0, Lvc7;->e:Landroid/view/WindowInsets$Builder;
-
-    .line 10
-    .line 11
-    invoke-static {p0, p1, p2}, Lqc7;->h(Landroid/view/WindowInsets$Builder;ILandroid/graphics/Insets;)V
-
-    .line 12
-    .line 13
-    .line 14
-    return-void
+    return-wide v0
 .end method

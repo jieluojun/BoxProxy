@@ -1,248 +1,263 @@
-.class public final Ly12;
-.super Llh6;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Ly12;
+.super Le82;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lu62;
+.implements Lp72;
 
 
 # instance fields
-.field public j:Lh12;
+.field public final synthetic j:B
 
-.field public k:B
+.field public final synthetic k:Lh04;
 
-.field public synthetic l:Lh12;
+.field public final synthetic l:Ljava/lang/Object;
 
-.field public synthetic m:Ljava/lang/Object;
-
-.field public final synthetic n:Lt62;
+.field public final synthetic m:Ljava/lang/Object;
 
 
 # direct methods
-.method public constructor <init>(Lt62;Ly81;)V
-    .locals 0
+.method public constructor <init>(Lbf1;Lus4;Lh04;)V
+    .locals 7
 
     .line 1
-    iput-object p1, p0, Ly12;->n:Lt62;
+    const/4 v0, 0x0
 
     .line 2
-    .line 3
-    const/4 p1, 0x3
+    iput-byte v0, p0, Ly12;->j:B
 
+    .line 3
     .line 4
-    invoke-direct {p0, p1, p2}, Llh6;-><init>(ILy81;)V
+    iput-object p1, p0, Ly12;->l:Ljava/lang/Object;
 
     .line 5
     .line 6
+    iput-object p2, p0, Ly12;->m:Ljava/lang/Object;
+
     .line 7
+    .line 8
+    iput-object p3, p0, Ly12;->k:Lh04;
+
+    .line 9
+    .line 10
+    const-string v5, "FloatingBottomBar_ADvHqfs$activateTab(Lcom/box/app/ui/animation/DampedDragAnimation;Landroidx/compose/runtime/MutableIntState;Landroidx/compose/runtime/State;I)V"
+
+    .line 11
+    .line 12
+    const/4 v6, 0x0
+
+    .line 13
+    const/4 v2, 0x1
+
+    .line 14
+    const-class v3, Ljy2;
+
+    .line 15
+    .line 16
+    const-string v4, "activateTab"
+
+    .line 17
+    .line 18
+    move-object v1, p0
+
+    .line 19
+    invoke-direct/range {v1 .. v6}, Le82;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
+    .line 20
+    .line 21
+    .line 22
+    return-void
+.end method
+
+.method public constructor <init>(Ljava/util/Map;Lga5;Lh04;)V
+    .locals 7
+
+    const/4 v0, 0x1
+
+    iput-byte v0, p0, Ly12;->j:B
+
+    .line 23
+    iput-object p1, p0, Ly12;->l:Ljava/lang/Object;
+
+    iput-object p2, p0, Ly12;->m:Ljava/lang/Object;
+
+    iput-object p3, p0, Ly12;->k:Lh04;
+
+    const-string v5, "ProxySelectorMiuixScreen_ZyDJxCo$lambda$3$openPolicyBottomSheet(Ljava/util/Map;Lcom/box/app/ui/screen/home/ProxySelectorScreenModel;Landroidx/compose/runtime/MutableState;Ljava/lang/String;)V"
+
+    const/4 v6, 0x0
+
+    const/4 v2, 0x1
+
+    const-class v3, Ljy2;
+
+    const-string v4, "openPolicyBottomSheet"
+
+    move-object v1, p0
+
+    invoke-direct/range {v1 .. v6}, Le82;-><init>(ILjava/lang/Class;Ljava/lang/String;Ljava/lang/String;I)V
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 5
 
     .line 1
-    check-cast p1, Lh12;
+    iget-byte v0, p0, Ly12;->j:B
 
     .line 2
     .line 3
-    check-cast p3, Ly81;
+    sget-object v1, Ll97;->a:Ll97;
 
     .line 4
     .line 5
-    new-instance v0, Ly12;
+    iget-object v2, p0, Ly12;->k:Lh04;
 
     .line 6
     .line 7
-    iget-object p0, p0, Ly12;->n:Lt62;
+    iget-object v3, p0, Ly12;->m:Ljava/lang/Object;
 
     .line 8
     .line 9
-    invoke-direct {v0, p0, p3}, Ly12;-><init>(Lt62;Ly81;)V
+    iget-object p0, p0, Ly12;->l:Ljava/lang/Object;
 
     .line 10
     .line 11
-    .line 12
-    iput-object p1, v0, Ly12;->l:Lh12;
+    packed-switch v0, :pswitch_data_0
 
+    .line 12
     .line 13
     .line 14
-    iput-object p2, v0, Ly12;->m:Ljava/lang/Object;
+    check-cast p1, Ljava/lang/String;
 
     .line 15
     .line 16
-    sget-object p0, La47;->a:La47;
+    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 17
     .line 18
-    invoke-virtual {v0, p0}, Ly12;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-
     .line 19
+    check-cast p0, Ljava/util/Map;
+
     .line 20
     .line 21
-    move-result-object p0
+    check-cast v3, Lga5;
 
     .line 22
-    return-object p0
-.end method
-
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 7
-
-    .line 1
-    iget-object v0, p0, Ly12;->l:Lh12;
-
-    .line 2
-    .line 3
-    iget-object v1, p0, Ly12;->m:Ljava/lang/Object;
-
-    .line 4
-    .line 5
-    iget-byte v2, p0, Ly12;->k:B
-
-    .line 6
-    .line 7
-    const/4 v3, 0x2
-
-    .line 8
-    const/4 v4, 0x1
-
-    .line 9
-    const/4 v5, 0x0
-
-    .line 10
-    sget-object v6, Lbc1;->j:Lbc1;
-
-    .line 11
-    .line 12
-    if-eqz v2, :cond_2
-
-    .line 13
-    .line 14
-    if-eq v2, v4, :cond_1
-
-    .line 15
-    .line 16
-    if-ne v2, v3, :cond_0
-
-    .line 17
-    .line 18
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
-    .line 19
-    .line 20
-    .line 21
-    goto :goto_2
-
-    .line 22
-    :cond_0
-    const-string p0, "call to \'resume\' before \'invoke\' with coroutine"
-
     .line 23
-    .line 24
-    invoke-static {p0}, Ljw1;->e(Ljava/lang/String;)V
+    invoke-static {p0, v3, v2, p1}, Ljy2;->q(Ljava/util/Map;Lga5;Lh04;Ljava/lang/String;)V
 
+    .line 24
     .line 25
     .line 26
+    return-object v1
+
     .line 27
-    return-object v5
+    :pswitch_0
+    check-cast p1, Ljava/lang/Number;
 
     .line 28
-    :cond_1
-    iget-object v0, p0, Ly12;->j:Lh12;
-
     .line 29
-    .line 30
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
+    invoke-virtual {p1}, Ljava/lang/Number;->intValue()I
 
+    .line 30
     .line 31
     .line 32
+    move-result p1
+
     .line 33
-    goto :goto_0
+    check-cast p0, Lbf1;
 
     .line 34
-    :cond_2
-    invoke-static {p1}, Lsi3;->l0(Ljava/lang/Object;)V
-
     .line 35
+    check-cast v3, Lus4;
+
     .line 36
     .line 37
-    iput-object v5, p0, Ly12;->l:Lh12;
+    invoke-virtual {v3}, Lus4;->g()I
 
     .line 38
     .line 39
-    iput-object v5, p0, Ly12;->m:Ljava/lang/Object;
-
     .line 40
+    move-result v0
+
     .line 41
-    iput-object v0, p0, Ly12;->j:Lh12;
+    if-eq v0, p1, :cond_0
 
     .line 42
     .line 43
-    iput-byte v4, p0, Ly12;->k:B
+    invoke-virtual {v3, p1}, Lus4;->h(I)V
 
     .line 44
     .line 45
-    iget-object p1, p0, Ly12;->n:Lt62;
-
     .line 46
-    .line 47
-    invoke-interface {p1, v1, p0}, Lt62;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-interface {v2}, Lgh6;->getValue()Ljava/lang/Object;
 
+    .line 47
     .line 48
     .line 49
+    move-result-object v0
+
     .line 50
-    move-result-object p1
+    check-cast v0, Lp72;
 
     .line 51
-    if-ne p1, v6, :cond_3
-
     .line 52
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
     .line 53
-    goto :goto_1
-
     .line 54
-    :cond_3
-    :goto_0
-    iput-object v5, p0, Ly12;->l:Lh12;
-
     .line 55
+    move-result-object v2
+
     .line 56
-    iput-object v5, p0, Ly12;->m:Ljava/lang/Object;
+    invoke-interface {v0, v2}, Lp72;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 57
     .line 58
-    iput-object v5, p0, Ly12;->j:Lh12;
-
     .line 59
+    :cond_0
+    int-to-float p1, p1
+
     .line 60
-    iput-byte v3, p0, Ly12;->k:B
+    iget-object v0, p0, Lbf1;->a:Loc1;
 
     .line 61
     .line 62
-    invoke-interface {v0, p1, p0}, Lh12;->e(Ljava/lang/Object;Ly81;)Ljava/lang/Object;
+    new-instance v2, Lte1;
 
     .line 63
     .line 64
+    const/4 v3, 0x0
+
     .line 65
-    move-result-object p0
+    const/4 v4, 0x0
 
     .line 66
-    if-ne p0, v6, :cond_4
+    invoke-direct {v2, p0, p1, v4, v3}, Lte1;-><init>(Ljava/lang/Object;FLp91;B)V
 
     .line 67
     .line 68
-    :goto_1
-    return-object v6
-
     .line 69
-    :cond_4
-    :goto_2
-    sget-object p0, La47;->a:La47;
+    const/4 p0, 0x3
 
     .line 70
+    invoke-static {v0, v4, v4, v2, p0}, Lan0;->M(Loc1;Lx2;Lrc1;Lt72;I)Lwg6;
+
     .line 71
-    return-object p0
+    .line 72
+    .line 73
+    return-object v1
+
+    .line 74
+    nop
+
+    .line 75
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

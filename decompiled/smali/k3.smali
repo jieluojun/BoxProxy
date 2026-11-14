@@ -1,16 +1,16 @@
 .class public abstract Lk3;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Ljava/util/ListIterator;
-.implements Lfy2;
+.implements Lt23;
 
 
 # instance fields
-.field public j:I
+.field public i:I
 
-.field public k:I
+.field public j:I
 
 
 # direct methods
@@ -23,11 +23,11 @@
     .line 2
     .line 3
     .line 4
-    iput p1, p0, Lk3;->j:I
+    iput p1, p0, Lk3;->i:I
 
     .line 5
     .line 6
-    iput p2, p0, Lk3;->k:I
+    iput p2, p0, Lk3;->j:I
 
     .line 7
     .line 8
@@ -60,11 +60,11 @@
     .locals 1
 
     .line 1
-    iget v0, p0, Lk3;->j:I
+    iget v0, p0, Lk3;->i:I
 
     .line 2
     .line 3
-    iget p0, p0, Lk3;->k:I
+    iget p0, p0, Lk3;->j:I
 
     .line 4
     .line 5
@@ -89,7 +89,7 @@
     .locals 0
 
     .line 1
-    iget p0, p0, Lk3;->j:I
+    iget p0, p0, Lk3;->i:I
 
     .line 2
     .line 3
@@ -114,7 +114,7 @@
     .locals 0
 
     .line 1
-    iget p0, p0, Lk3;->j:I
+    iget p0, p0, Lk3;->i:I
 
     .line 2
     .line 3
@@ -125,7 +125,7 @@
     .locals 0
 
     .line 1
-    iget p0, p0, Lk3;->j:I
+    iget p0, p0, Lk3;->i:I
 
     .line 2
     .line 3

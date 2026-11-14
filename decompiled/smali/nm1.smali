@@ -1,9 +1,8 @@
-.class public final Lnm1;
-.super Lwu;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public interface abstract Lnm1;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# instance fields
-.field public c:Lwq4;
-
-.field public d:J
+# virtual methods
+.method public abstract c(D)D
+.end method

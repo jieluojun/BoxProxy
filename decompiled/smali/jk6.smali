@@ -1,42 +1,44 @@
 .class public final Ljk6;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
-.field public j:Ljava/lang/Object;
+.field public synthetic i:Ljava/lang/Object;
 
-.field public k:Ljava/lang/Object;
+.field public final synthetic j:Llk6;
 
-.field public l:Ljava/lang/Object;
+.field public k:I
 
-.field public m:Lp62;
 
-.field public n:Ljava/lang/Object;
+# direct methods
+.method public constructor <init>(Llk6;Lq91;)V
+    .locals 0
 
-.field public o:Ljava/lang/Object;
+    .line 1
+    iput-object p1, p0, Ljk6;->j:Llk6;
 
-.field public p:Ljava/lang/Object;
+    .line 2
+    .line 3
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
-.field public q:Ljava/lang/Object;
-
-.field public r:Ljava/lang/Object;
-
-.field public synthetic s:Ljava/lang/Object;
-
-.field public t:I
+    .line 4
+    .line 5
+    .line 6
+    return-void
+.end method
 
 
 # virtual methods
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 6
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Ljk6;->s:Ljava/lang/Object;
+    iput-object p1, p0, Ljk6;->i:Ljava/lang/Object;
 
     .line 2
     .line 3
-    iget p1, p0, Ljk6;->t:I
+    iget p1, p0, Ljk6;->k:I
 
     .line 4
     .line 5
@@ -47,35 +49,21 @@
     or-int/2addr p1, v0
 
     .line 8
-    iput p1, p0, Ljk6;->t:I
+    iput p1, p0, Ljk6;->k:I
 
     .line 9
     .line 10
-    const/4 v3, 0x0
+    iget-object p1, p0, Ljk6;->j:Llk6;
 
     .line 11
-    const/4 v4, 0x0
-
     .line 12
-    const/4 v0, 0x0
+    invoke-virtual {p1, p0}, Llk6;->a(Lq91;)Ljava/lang/Object;
 
     .line 13
-    const/4 v1, 0x0
-
     .line 14
-    const/4 v2, 0x0
-
     .line 15
-    move-object v5, p0
-
-    .line 16
-    invoke-static/range {v0 .. v5}, Lmk6;->h(Lrh6;Lac1;Lrt4;Lu62;Lp62;Lc00;)Ljava/lang/Object;
-
-    .line 17
-    .line 18
-    .line 19
     move-result-object p0
 
-    .line 20
+    .line 16
     return-object p0
 .end method

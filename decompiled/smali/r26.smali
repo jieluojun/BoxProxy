@@ -1,140 +1,118 @@
-.class public final enum Lr26;
-.super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Lr26;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
-.field public static final enum j:Lr26;
-
-.field public static final enum k:Lr26;
-
-.field public static final enum l:Lr26;
-
-.field public static final synthetic m:[Lr26;
+.field public static final a:Lz36;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 5
+    .locals 2
 
     .line 1
-    new-instance v0, Lr26;
+    new-instance v0, Lz36;
 
     .line 2
     .line 3
-    const-string v1, "Hidden"
+    const-string v1, "SelectionHandleInfo"
 
     .line 4
     .line 5
-    const/4 v2, 0x0
+    invoke-direct {v0, v1}, Lz36;-><init>(Ljava/lang/String;)V
 
     .line 6
-    invoke-direct {v0, v1, v2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
     .line 7
     .line 8
+    sput-object v0, Lr26;->a:Lz36;
+
     .line 9
-    sput-object v0, Lr26;->j:Lr26;
-
     .line 10
-    .line 11
-    new-instance v1, Lr26;
-
-    .line 12
-    .line 13
-    const-string v2, "Expanded"
-
-    .line 14
-    .line 15
-    const/4 v3, 0x1
-
-    .line 16
-    invoke-direct {v1, v2, v3}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 17
-    .line 18
-    .line 19
-    sput-object v1, Lr26;->k:Lr26;
-
-    .line 20
-    .line 21
-    new-instance v2, Lr26;
-
-    .line 22
-    .line 23
-    const-string v3, "PartiallyExpanded"
-
-    .line 24
-    .line 25
-    const/4 v4, 0x2
-
-    .line 26
-    invoke-direct {v2, v3, v4}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 27
-    .line 28
-    .line 29
-    sput-object v2, Lr26;->l:Lr26;
-
-    .line 30
-    .line 31
-    filled-new-array {v0, v1, v2}, [Lr26;
-
-    .line 32
-    .line 33
-    .line 34
-    move-result-object v0
-
-    .line 35
-    sput-object v0, Lr26;->m:[Lr26;
-
-    .line 36
-    .line 37
     return-void
 .end method
 
-.method public static valueOf(Ljava/lang/String;)Lr26;
-    .locals 1
+.method public static final a(J)J
+    .locals 6
 
     .line 1
-    const-class v0, Lr26;
+    const/16 v0, 0x20
 
     .line 2
     .line 3
-    invoke-static {v0, p0}, Ljava/lang/Enum;->valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+    shr-long v1, p0, v0
 
     .line 4
     .line 5
+    long-to-int v1, v1
+
     .line 6
-    move-result-object p0
+    invoke-static {v1}, Ljava/lang/Float;->intBitsToFloat(I)F
 
     .line 7
-    check-cast p0, Lr26;
-
     .line 8
     .line 9
-    return-object p0
-.end method
+    move-result v1
 
-.method public static values()[Lr26;
-    .locals 1
+    .line 10
+    const-wide v2, 0xffffffffL
 
-    .line 1
-    sget-object v0, Lr26;->m:[Lr26;
+    .line 11
+    .line 12
+    .line 13
+    .line 14
+    .line 15
+    and-long/2addr p0, v2
 
-    .line 2
-    .line 3
-    invoke-virtual {v0}, Ljava/lang/Object;->clone()Ljava/lang/Object;
+    .line 16
+    long-to-int p0, p0
 
-    .line 4
-    .line 5
-    .line 6
-    move-result-object v0
+    .line 17
+    invoke-static {p0}, Ljava/lang/Float;->intBitsToFloat(I)F
 
-    .line 7
-    check-cast v0, [Lr26;
+    .line 18
+    .line 19
+    .line 20
+    move-result p0
 
-    .line 8
-    .line 9
-    return-object v0
+    .line 21
+    const/high16 p1, 0x3f800000    # 1.0f
+
+    .line 22
+    .line 23
+    sub-float/2addr p0, p1
+
+    .line 24
+    invoke-static {v1}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 25
+    .line 26
+    .line 27
+    move-result p1
+
+    .line 28
+    int-to-long v4, p1
+
+    .line 29
+    invoke-static {p0}, Ljava/lang/Float;->floatToRawIntBits(F)I
+
+    .line 30
+    .line 31
+    .line 32
+    move-result p0
+
+    .line 33
+    int-to-long p0, p0
+
+    .line 34
+    shl-long/2addr v4, v0
+
+    .line 35
+    and-long/2addr p0, v2
+
+    .line 36
+    or-long/2addr v4, p0
+
+    .line 37
+    return-wide v4
 .end method

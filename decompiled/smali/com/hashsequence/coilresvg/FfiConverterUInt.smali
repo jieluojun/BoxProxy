@@ -1,6 +1,6 @@
 .class public final Lcom/hashsequence/coilresvg/FfiConverterUInt;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Lcom/hashsequence/coilresvg/FfiConverter;
@@ -11,7 +11,7 @@
     value = {
         "Ljava/lang/Object;",
         "Lcom/hashsequence/coilresvg/FfiConverter<",
-        "Lx17;",
+        "Ln77;",
         "Ljava/lang/Integer;",
         ">;"
     }
@@ -63,11 +63,11 @@
     .locals 0
 
     .line 1
-    check-cast p1, Lx17;
+    check-cast p1, Ln77;
 
     .line 2
     .line 3
-    iget p1, p1, Lx17;->j:I
+    iget p1, p1, Ln77;->i:I
 
     .line 4
     .line 5
@@ -117,11 +117,11 @@
     move-result p0
 
     .line 11
-    new-instance p1, Lx17;
+    new-instance p1, Ln77;
 
     .line 12
     .line 13
-    invoke-direct {p1, p0}, Lx17;-><init>(I)V
+    invoke-direct {p1, p0}, Ln77;-><init>(I)V
 
     .line 14
     .line 15
@@ -148,11 +148,11 @@
     move-result p0
 
     .line 5
-    new-instance p1, Lx17;
+    new-instance p1, Ln77;
 
     .line 6
     .line 7
-    invoke-direct {p1, p0}, Lx17;-><init>(I)V
+    invoke-direct {p1, p0}, Ln77;-><init>(I)V
 
     .line 8
     .line 9
@@ -172,11 +172,11 @@
     move-result-object p0
 
     .line 5
-    check-cast p0, Lx17;
+    check-cast p0, Ln77;
 
     .line 6
     .line 7
-    iget p0, p0, Lx17;->j:I
+    iget p0, p0, Ln77;->i:I
 
     .line 8
     .line 9
@@ -187,11 +187,11 @@
     .locals 0
 
     .line 1
-    check-cast p1, Lx17;
+    check-cast p1, Ln77;
 
     .line 2
     .line 3
-    iget p1, p1, Lx17;->j:I
+    iget p1, p1, Ln77;->i:I
 
     .line 4
     .line 5
@@ -225,11 +225,11 @@
     .locals 0
 
     .line 1
-    check-cast p1, Lx17;
+    check-cast p1, Ln77;
 
     .line 2
     .line 3
-    iget p1, p1, Lx17;->j:I
+    iget p1, p1, Ln77;->i:I
 
     .line 4
     .line 5
@@ -248,11 +248,11 @@
     .locals 1
 
     .line 1
-    new-instance v0, Lx17;
+    new-instance v0, Ln77;
 
     .line 2
     .line 3
-    invoke-direct {v0, p1}, Lx17;-><init>(I)V
+    invoke-direct {v0, p1}, Ln77;-><init>(I)V
 
     .line 4
     .line 5
@@ -308,11 +308,11 @@
     move-result p0
 
     .line 5
-    new-instance p1, Lx17;
+    new-instance p1, Ln77;
 
     .line 6
     .line 7
-    invoke-direct {p1, p0}, Lx17;-><init>(I)V
+    invoke-direct {p1, p0}, Ln77;-><init>(I)V
 
     .line 8
     .line 9
@@ -341,11 +341,11 @@
     .locals 0
 
     .line 1
-    check-cast p1, Lx17;
+    check-cast p1, Ln77;
 
     .line 2
     .line 3
-    iget p1, p1, Lx17;->j:I
+    iget p1, p1, Ln77;->i:I
 
     .line 4
     .line 5

@@ -1,165 +1,129 @@
-.class public final Lo96;
+.class public final synthetic Lo96;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Ljava/lang/AutoCloseable;
+.implements Le72;
 
 
 # instance fields
-.field public final j:Lve0;
+.field public final synthetic i:B
+
+.field public final synthetic j:Lia6;
+
+.field public final synthetic k:Lda6;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lve0;)V
+.method public synthetic constructor <init>(Lia6;Lda6;B)V
     .locals 0
 
     .line 1
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    iput-byte p3, p0, Lo96;->i:B
 
     .line 2
     .line 3
-    .line 4
-    iput-object p1, p0, Lo96;->j:Lve0;
+    iput-object p1, p0, Lo96;->j:Lia6;
 
+    .line 4
     .line 5
+    iput-object p2, p0, Lo96;->k:Lda6;
+
     .line 6
+    .line 7
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 8
+    .line 9
+    .line 10
     return-void
 .end method
 
 
 # virtual methods
-.method public final close()V
-    .locals 0
+.method public final invoke()Ljava/lang/Object;
+    .locals 3
 
     .line 1
-    iget-object p0, p0, Lo96;->j:Lve0;
+    iget-byte v0, p0, Lo96;->i:B
 
     .line 2
     .line 3
-    invoke-interface {p0}, Ljava/io/Closeable;->close()V
+    sget-object v1, Ll97;->a:Ll97;
 
     .line 4
     .line 5
-    .line 6
-    return-void
-.end method
-
-.method public final equals(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    instance-of v0, p1, Lo96;
-
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
-
-    .line 4
-    .line 5
-    goto :goto_0
+    iget-object v2, p0, Lo96;->k:Lda6;
 
     .line 6
-    :cond_0
-    check-cast p1, Lo96;
-
     .line 7
+    iget-object p0, p0, Lo96;->j:Lia6;
+
     .line 8
-    iget-object p1, p1, Lo96;->j:Lve0;
-
     .line 9
-    .line 10
-    iget-object p0, p0, Lo96;->j:Lve0;
+    packed-switch v0, :pswitch_data_0
 
+    .line 10
     .line 11
     .line 12
-    invoke-virtual {p0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    iget-object v0, v2, Lda6;->a:Ljava/lang/String;
 
     .line 13
     .line 14
+    invoke-virtual {p0, v0}, Lia6;->e(Ljava/lang/String;)V
+
     .line 15
-    move-result p0
-
-    .line 16
-    if-nez p0, :cond_1
-
-    .line 17
-    .line 18
-    :goto_0
-    const/4 p0, 0x0
-
-    .line 19
-    return p0
-
-    .line 20
-    :cond_1
-    const/4 p0, 0x1
-
-    .line 21
-    return p0
-.end method
-
-.method public final hashCode()I
-    .locals 0
-
-    .line 1
-    iget-object p0, p0, Lo96;->j:Lve0;
-
-    .line 2
-    .line 3
-    invoke-virtual {p0}, Ljava/lang/Object;->hashCode()I
-
-    .line 4
-    .line 5
-    .line 6
-    move-result p0
-
-    .line 7
-    return p0
-.end method
-
-.method public final toString()Ljava/lang/String;
-    .locals 2
-
-    .line 1
-    new-instance v0, Ljava/lang/StringBuilder;
-
-    .line 2
-    .line 3
-    const-string v1, "SourceResponseBody(source="
-
-    .line 4
-    .line 5
-    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
-
-    .line 6
-    .line 7
-    .line 8
-    iget-object p0, p0, Lo96;->j:Lve0;
-
-    .line 9
-    .line 10
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
-
-    .line 11
-    .line 12
-    .line 13
-    const-string p0, ")"
-
-    .line 14
-    .line 15
-    invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
     .line 16
     .line 17
+    return-object v1
+
     .line 18
-    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    :pswitch_0
+    iget-object v0, v2, Lda6;->a:Ljava/lang/String;
 
     .line 19
     .line 20
-    .line 21
-    move-result-object p0
+    invoke-virtual {p0, v0}, Lia6;->f(Ljava/lang/String;)V
 
+    .line 21
     .line 22
-    return-object p0
+    .line 23
+    return-object v1
+
+    .line 24
+    :pswitch_1
+    iget-object v0, v2, Lda6;->a:Ljava/lang/String;
+
+    .line 25
+    .line 26
+    invoke-virtual {p0, v0}, Lia6;->e(Ljava/lang/String;)V
+
+    .line 27
+    .line 28
+    .line 29
+    return-object v1
+
+    .line 30
+    :pswitch_2
+    iget-object v0, v2, Lda6;->a:Ljava/lang/String;
+
+    .line 31
+    .line 32
+    invoke-virtual {p0, v0}, Lia6;->f(Ljava/lang/String;)V
+
+    .line 33
+    .line 34
+    .line 35
+    return-object v1
+
+    .line 36
+    nop
+
+    .line 37
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_2
+        :pswitch_1
+        :pswitch_0
+    .end packed-switch
 .end method

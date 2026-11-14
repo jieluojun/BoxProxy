@@ -1,28 +1,64 @@
 .class public final Lnc7;
-.super Landroid/animation/AnimatorListenerAdapter;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+.implements Landroid/view/View$OnAttachStateChangeListener;
 
 
 # instance fields
-.field public final synthetic a:Luc7;
-
-.field public final synthetic b:Landroid/view/View;
+.field public final i:Ljava/util/WeakHashMap;
 
 
 # direct methods
-.method public constructor <init>(Luc7;Landroid/view/View;)V
-    .locals 0
+.method public constructor <init>()V
+    .locals 1
 
     .line 1
-    iput-object p1, p0, Lnc7;->a:Luc7;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-object p2, p0, Lnc7;->b:Landroid/view/View;
-
     .line 4
+    new-instance v0, Ljava/util/WeakHashMap;
+
     .line 5
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    .line 6
+    invoke-direct {v0}, Ljava/util/WeakHashMap;-><init>()V
+
+    .line 7
+    .line 8
+    .line 9
+    iput-object v0, p0, Lnc7;->i:Ljava/util/WeakHashMap;
+
+    .line 10
+    .line 11
+    return-void
+.end method
+
+
+# virtual methods
+.method public final onGlobalLayout()V
+    .locals 0
+
+    .line 1
+    return-void
+.end method
+
+.method public final onViewAttachedToWindow(Landroid/view/View;)V
+    .locals 0
+
+    .line 1
+    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+
+    .line 2
+    .line 3
+    .line 4
+    move-result-object p1
+
+    .line 5
+    invoke-virtual {p1, p0}, Landroid/view/ViewTreeObserver;->addOnGlobalLayoutListener(Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)V
 
     .line 6
     .line 7
@@ -30,37 +66,9 @@
     return-void
 .end method
 
-
-# virtual methods
-.method public final onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+.method public final onViewDetachedFromWindow(Landroid/view/View;)V
+    .locals 0
 
     .line 1
-    const/high16 p1, 0x3f800000    # 1.0f
-
-    .line 2
-    .line 3
-    iget-object v0, p0, Lnc7;->a:Luc7;
-
-    .line 4
-    .line 5
-    iget-object v1, v0, Luc7;->a:Ltc7;
-
-    .line 6
-    .line 7
-    invoke-virtual {v1, p1}, Ltc7;->e(F)V
-
-    .line 8
-    .line 9
-    .line 10
-    iget-object p0, p0, Lnc7;->b:Landroid/view/View;
-
-    .line 11
-    .line 12
-    invoke-static {v0, p0}, Lpc7;->f(Luc7;Landroid/view/View;)V
-
-    .line 13
-    .line 14
-    .line 15
     return-void
 .end method

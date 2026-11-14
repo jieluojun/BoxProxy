@@ -1,26 +1,28 @@
 .class public final Lu54;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.super Lq91;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # instance fields
+.field public i:J
+
 .field public synthetic j:Ljava/lang/Object;
 
-.field public final synthetic k:Lc64;
+.field public final synthetic k:Lv54;
 
 .field public l:I
 
 
 # direct methods
-.method public constructor <init>(Lc64;Lz81;)V
+.method public constructor <init>(Lv54;Lq91;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lu54;->k:Lc64;
+    iput-object p1, p0, Lu54;->k:Lv54;
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
+    invoke-direct {p0, p2}, Lq91;-><init>(Lp91;)V
 
     .line 4
     .line 5
@@ -31,7 +33,7 @@
 
 # virtual methods
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    .locals 2
 
     .line 1
     iput-object p1, p0, Lu54;->j:Ljava/lang/Object;
@@ -53,17 +55,21 @@
 
     .line 9
     .line 10
-    iget-object p1, p0, Lu54;->k:Lc64;
+    iget-object p1, p0, Lu54;->k:Lv54;
 
     .line 11
     .line 12
-    invoke-virtual {p1, p0}, Lc64;->b(Lz81;)Ljava/lang/Object;
+    const-wide/16 v0, 0x0
 
     .line 13
     .line 14
+    invoke-virtual {p1, v0, v1, p0}, Lv54;->N0(JLp91;)Ljava/lang/Object;
+
     .line 15
+    .line 16
+    .line 17
     move-result-object p0
 
-    .line 16
+    .line 18
     return-object p0
 .end method

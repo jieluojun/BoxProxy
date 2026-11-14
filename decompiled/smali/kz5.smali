@@ -1,173 +1,70 @@
-.class public final synthetic Lkz5;
+.class public final Lkz5;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Lp62;
+.implements Llz5;
 
 
 # instance fields
-.field public final synthetic j:B
-
-.field public final synthetic k:Z
-
-.field public final synthetic l:Lma0;
-
-.field public final synthetic m:Lg2;
-
-.field public final synthetic n:Lmt3;
+.field public final i:Landroid/view/ScrollFeedbackProvider;
 
 
 # direct methods
-.method public synthetic constructor <init>(ZLma0;Lg2;Lmt3;B)V
+.method public constructor <init>(Landroidx/core/widget/NestedScrollView;)V
     .locals 0
 
     .line 1
-    iput-byte p5, p0, Lkz5;->j:B
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    iput-boolean p1, p0, Lkz5;->k:Z
-
     .line 4
-    .line 5
-    iput-object p2, p0, Lkz5;->l:Lma0;
+    invoke-static {p1}, Landroid/view/ScrollFeedbackProvider;->createProvider(Landroid/view/View;)Landroid/view/ScrollFeedbackProvider;
 
+    .line 5
     .line 6
     .line 7
-    iput-object p3, p0, Lkz5;->m:Lg2;
+    move-result-object p1
 
     .line 8
+    iput-object p1, p0, Lkz5;->i:Landroid/view/ScrollFeedbackProvider;
+
     .line 9
-    iput-object p4, p0, Lkz5;->n:Lmt3;
-
     .line 10
-    .line 11
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 12
-    .line 13
-    .line 14
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 5
+.method public final onScrollLimit(IIIZ)V
+    .locals 0
 
     .line 1
-    iget-byte v0, p0, Lkz5;->j:B
+    iget-object p0, p0, Lkz5;->i:Landroid/view/ScrollFeedbackProvider;
 
     .line 2
     .line 3
-    sget-object v1, La47;->a:La47;
+    invoke-interface {p0, p1, p2, p3, p4}, Landroid/view/ScrollFeedbackProvider;->onScrollLimit(IIIZ)V
 
     .line 4
     .line 5
-    iget-object v2, p0, Lkz5;->n:Lmt3;
-
     .line 6
-    .line 7
-    iget-object v3, p0, Lkz5;->m:Lg2;
+    return-void
+.end method
 
-    .line 8
-    .line 9
-    iget-object v4, p0, Lkz5;->l:Lma0;
+.method public final onScrollProgress(IIII)V
+    .locals 0
 
-    .line 10
-    .line 11
-    iget-boolean p0, p0, Lkz5;->k:Z
+    .line 1
+    iget-object p0, p0, Lkz5;->i:Landroid/view/ScrollFeedbackProvider;
 
-    .line 12
-    .line 13
-    check-cast p1, Ljava/util/Set;
+    .line 2
+    .line 3
+    invoke-interface {p0, p1, p2, p3, p4}, Landroid/view/ScrollFeedbackProvider;->onScrollProgress(IIII)V
 
-    .line 14
-    .line 15
-    packed-switch v0, :pswitch_data_0
-
-    .line 16
-    .line 17
-    .line 18
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 19
-    .line 20
-    .line 21
-    if-eqz p0, :cond_0
-
-    .line 22
-    .line 23
-    invoke-virtual {v4, p1}, Lma0;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 24
-    .line 25
-    .line 26
-    goto :goto_0
-
-    .line 27
-    :cond_0
-    invoke-virtual {v3, p1}, Lg2;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 28
-    .line 29
-    .line 30
-    :goto_0
-    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    .line 31
-    .line 32
-    invoke-interface {v2, p0}, Lmt3;->setValue(Ljava/lang/Object;)V
-
-    .line 33
-    .line 34
-    .line 35
-    return-object v1
-
-    .line 36
-    :pswitch_0
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    .line 37
-    .line 38
-    .line 39
-    if-eqz p0, :cond_1
-
-    .line 40
-    .line 41
-    invoke-virtual {v4, p1}, Lma0;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 42
-    .line 43
-    .line 44
-    goto :goto_1
-
-    .line 45
-    :cond_1
-    invoke-virtual {v3, p1}, Lg2;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
-
-    .line 46
-    .line 47
-    .line 48
-    :goto_1
-    sget-object p0, Ljava/lang/Boolean;->FALSE:Ljava/lang/Boolean;
-
-    .line 49
-    .line 50
-    invoke-interface {v2, p0}, Lmt3;->setValue(Ljava/lang/Object;)V
-
-    .line 51
-    .line 52
-    .line 53
-    return-object v1
-
-    .line 54
-    nop
-
-    .line 55
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_0
-    .end packed-switch
+    .line 4
+    .line 5
+    .line 6
+    return-void
 .end method

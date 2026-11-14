@@ -1,6 +1,6 @@
 .class public interface abstract Lorg/chromium/support_lib_boundary/WebViewNavigationListenerBoundaryInterface;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
 .implements Lorg/chromium/support_lib_boundary/FeatureFlagHolderBoundaryInterface;
@@ -23,6 +23,13 @@
 .end method
 
 .method public abstract onNavigationStarted(Ljava/lang/reflect/InvocationHandler;)V
+.end method
+
+.method public onNavigationVisible(Ljava/lang/reflect/InvocationHandler;)V
+    .locals 0
+
+    .line 1
+    return-void
 .end method
 
 .method public abstract onPageDOMContentLoadedEventFired(Ljava/lang/reflect/InvocationHandler;)V

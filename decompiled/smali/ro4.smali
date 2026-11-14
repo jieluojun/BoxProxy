@@ -1,302 +1,265 @@
-.class public final Lro4;
-.super Lso4;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public final synthetic Lro4;
+.super Ljava/lang/Object;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 # interfaces
-.implements Ls21;
+.implements Lt72;
 
 
-# static fields
-.field public static final m:Lro4;
+# instance fields
+.field public final synthetic i:Le72;
+
+.field public final synthetic j:Ldv0;
+
+.field public final synthetic k:F
+
+.field public final synthetic l:F
+
+.field public final synthetic m:F
+
+.field public final synthetic n:Lsw3;
+
+.field public final synthetic o:F
+
+.field public final synthetic p:Lsw3;
+
+.field public final synthetic q:Le72;
+
+.field public final synthetic r:Z
+
+.field public final synthetic s:Le72;
+
+.field public final synthetic t:Le72;
+
+.field public final synthetic u:Le72;
+
+.field public final synthetic v:Lp72;
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 3
+.method public synthetic constructor <init>(Le72;Ldv0;FFFLsw3;FLsw3;Le72;ZLe72;Le72;Le72;Lp72;I)V
+    .locals 0
 
     .line 1
-    new-instance v0, Lro4;
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 2
     .line 3
-    sget-object v1, Lkz6;->e:Lkz6;
-
     .line 4
-    .line 5
-    const/4 v2, 0x0
+    iput-object p1, p0, Lro4;->i:Le72;
 
+    .line 5
     .line 6
-    invoke-direct {v0, v1, v2}, Lso4;-><init>(Lkz6;I)V
+    iput-object p2, p0, Lro4;->j:Ldv0;
 
     .line 7
     .line 8
-    .line 9
-    sput-object v0, Lro4;->m:Lro4;
+    iput p3, p0, Lro4;->k:F
 
+    .line 9
     .line 10
+    iput p4, p0, Lro4;->l:F
+
     .line 11
+    .line 12
+    iput p5, p0, Lro4;->m:F
+
+    .line 13
+    .line 14
+    iput-object p6, p0, Lro4;->n:Lsw3;
+
+    .line 15
+    .line 16
+    iput p7, p0, Lro4;->o:F
+
+    .line 17
+    .line 18
+    iput-object p8, p0, Lro4;->p:Lsw3;
+
+    .line 19
+    .line 20
+    iput-object p9, p0, Lro4;->q:Le72;
+
+    .line 21
+    .line 22
+    iput-boolean p10, p0, Lro4;->r:Z
+
+    .line 23
+    .line 24
+    iput-object p11, p0, Lro4;->s:Le72;
+
+    .line 25
+    .line 26
+    iput-object p12, p0, Lro4;->t:Le72;
+
+    .line 27
+    .line 28
+    iput-object p13, p0, Lro4;->u:Le72;
+
+    .line 29
+    .line 30
+    iput-object p14, p0, Lro4;->v:Lp72;
+
+    .line 31
+    .line 32
     return-void
 .end method
 
 
 # virtual methods
-.method public final bridge synthetic a()Luo4;
-    .locals 0
+.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 17
 
     .line 1
-    invoke-virtual {p0}, Lro4;->d()Lqo4;
+    move-object/from16 v0, p0
 
     .line 2
     .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public final bridge synthetic b()Luo4;
-    .locals 0
-
-    .line 1
-    invoke-virtual {p0}, Lro4;->d()Lqo4;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object p0
-
-    .line 5
-    return-object p0
-.end method
-
-.method public final bridge containsKey(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    instance-of v0, p1, Lrv4;
-
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
+    move-object/from16 v14, p1
 
     .line 4
     .line 5
-    const/4 p0, 0x0
+    check-cast v14, Lt82;
 
     .line 6
-    return p0
-
     .line 7
-    :cond_0
-    check-cast p1, Lrv4;
+    move-object/from16 v1, p2
 
     .line 8
     .line 9
-    invoke-super {p0, p1}, Lso4;->containsKey(Ljava/lang/Object;)Z
+    check-cast v1, Ljava/lang/Integer;
 
     .line 10
     .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    return p0
-.end method
-
-.method public final bridge containsValue(Ljava/lang/Object;)Z
-    .locals 1
-
-    .line 1
-    instance-of v0, p1, Ll57;
-
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
-
-    .line 4
-    .line 5
-    const/4 p0, 0x0
-
-    .line 6
-    return p0
-
-    .line 7
-    :cond_0
-    check-cast p1, Ll57;
-
-    .line 8
-    .line 9
-    invoke-super {p0, p1}, Lso4;->containsValue(Ljava/lang/Object;)Z
-
-    .line 10
-    .line 11
-    .line 12
-    move-result p0
-
-    .line 13
-    return p0
-.end method
-
-.method public final d()Lqo4;
-    .locals 1
-
-    .line 1
-    new-instance v0, Lqo4;
-
-    .line 2
-    .line 3
-    invoke-direct {v0, p0}, Luo4;-><init>(Lso4;)V
-
-    .line 4
-    .line 5
-    .line 6
-    iput-object p0, v0, Lqo4;->p:Lro4;
-
-    .line 7
-    .line 8
-    return-object v0
-.end method
-
-.method public final e(Lrv4;Ll57;)Lro4;
-    .locals 3
-
-    .line 1
-    invoke-virtual {p1}, Ljava/lang/Object;->hashCode()I
-
-    .line 2
-    .line 3
-    .line 4
-    move-result v0
-
-    .line 5
-    const/4 v1, 0x0
-
-    .line 6
-    iget-object v2, p0, Lso4;->j:Lkz6;
-
-    .line 7
-    .line 8
-    invoke-virtual {v2, v0, v1, p1, p2}, Lkz6;->u(IILjava/lang/Object;Ljava/lang/Object;)Lis0;
-
-    .line 9
-    .line 10
-    .line 11
-    move-result-object p1
+    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 12
-    if-nez p1, :cond_0
-
     .line 13
     .line 14
-    return-object p0
+    const v1, 0x300001b1
 
     .line 15
-    :cond_0
-    new-instance p2, Lro4;
-
     .line 16
     .line 17
-    iget-object v0, p1, Lis0;->k:Ljava/lang/Object;
+    invoke-static {v1}, Lp06;->W(I)I
 
     .line 18
     .line 19
-    check-cast v0, Lkz6;
-
     .line 20
+    move-result v15
+
     .line 21
-    iget p0, p0, Lso4;->k:I
+    iget-object v1, v0, Lro4;->i:Le72;
 
     .line 22
     .line 23
-    iget-boolean p1, p1, Lis0;->j:Z
+    move-object v2, v1
 
     .line 24
-    .line 25
-    add-int/2addr p0, p1
+    iget-object v1, v0, Lro4;->j:Ldv0;
 
+    .line 25
     .line 26
-    invoke-direct {p2, v0, p0}, Lso4;-><init>(Lkz6;I)V
+    move-object v3, v2
 
     .line 27
+    iget v2, v0, Lro4;->k:F
+
     .line 28
     .line 29
-    return-object p2
-.end method
+    move-object v4, v3
 
-.method public final bridge get(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    .line 30
+    iget v3, v0, Lro4;->l:F
 
-    .line 1
-    instance-of v0, p1, Lrv4;
+    .line 31
+    .line 32
+    move-object v5, v4
 
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
+    .line 33
+    iget v4, v0, Lro4;->m:F
 
-    .line 4
-    .line 5
-    const/4 p0, 0x0
+    .line 34
+    .line 35
+    move-object v6, v5
 
-    .line 6
-    return-object p0
+    .line 36
+    iget-object v5, v0, Lro4;->n:Lsw3;
 
-    .line 7
-    :cond_0
-    check-cast p1, Lrv4;
+    .line 37
+    .line 38
+    move-object v7, v6
 
-    .line 8
-    .line 9
-    invoke-super {p0, p1}, Lso4;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    .line 39
+    iget v6, v0, Lro4;->o:F
 
-    .line 10
-    .line 11
-    .line 12
-    move-result-object p0
+    .line 40
+    .line 41
+    move-object v8, v7
 
-    .line 13
-    check-cast p0, Ll57;
+    .line 42
+    iget-object v7, v0, Lro4;->p:Lsw3;
 
-    .line 14
-    .line 15
-    return-object p0
-.end method
+    .line 43
+    .line 44
+    move-object v9, v8
 
-.method public final bridge getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+    .line 45
+    iget-object v8, v0, Lro4;->q:Le72;
 
-    .line 1
-    instance-of v0, p1, Lrv4;
+    .line 46
+    .line 47
+    move-object v10, v9
 
-    .line 2
-    .line 3
-    if-nez v0, :cond_0
+    .line 48
+    iget-boolean v9, v0, Lro4;->r:Z
 
-    .line 4
-    .line 5
-    return-object p2
+    .line 49
+    .line 50
+    move-object v11, v10
 
-    .line 6
-    :cond_0
-    check-cast p1, Lrv4;
+    .line 51
+    iget-object v10, v0, Lro4;->s:Le72;
 
-    .line 7
-    .line 8
-    check-cast p2, Ll57;
+    .line 52
+    .line 53
+    move-object v12, v11
 
-    .line 9
-    .line 10
-    invoke-super {p0, p1, p2}, Ljava/util/Map;->getOrDefault(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    .line 54
+    iget-object v11, v0, Lro4;->t:Le72;
 
-    .line 11
-    .line 12
-    .line 13
-    move-result-object p0
+    .line 55
+    .line 56
+    move-object v13, v12
 
-    .line 14
-    check-cast p0, Ll57;
+    .line 57
+    iget-object v12, v0, Lro4;->u:Le72;
 
-    .line 15
-    .line 16
-    return-object p0
+    .line 58
+    .line 59
+    iget-object v0, v0, Lro4;->v:Lp72;
+
+    .line 60
+    .line 61
+    move-object/from16 v16, v13
+
+    .line 62
+    .line 63
+    move-object v13, v0
+
+    .line 64
+    move-object/from16 v0, v16
+
+    .line 65
+    .line 66
+    invoke-static/range {v0 .. v15}, Lzb3;->k(Le72;Ldv0;FFFLsw3;FLsw3;Le72;ZLe72;Le72;Le72;Lp72;Lt82;I)V
+
+    .line 67
+    .line 68
+    .line 69
+    sget-object v0, Ll97;->a:Ll97;
+
+    .line 70
+    .line 71
+    return-object v0
 .end method

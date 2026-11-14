@@ -1,47 +1,118 @@
-.class public abstract Lo82;
+.class public final Lo82;
 .super Ljava/lang/Object;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
-# static fields
-.field public static final a:Ljava/util/concurrent/atomic/AtomicBoolean;
+# instance fields
+.field public final synthetic a:B
 
-.field public static final b:Ljava/util/concurrent/atomic/AtomicBoolean;
+.field public b:I
+
+.field public c:[C
+
+.field public d:I
+
+.field public e:I
 
 
 # direct methods
-.method static constructor <clinit>()V
-    .locals 2
+.method public synthetic constructor <init>(B)V
+    .locals 0
 
     .line 1
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    iput-byte p1, p0, Lo82;->a:B
 
     .line 2
     .line 3
-    const/4 v1, 0x0
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     .line 4
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
-
     .line 5
     .line 6
+    return-void
+.end method
+
+
+# virtual methods
+.method public final a()I
+    .locals 1
+
+    .line 1
+    iget-byte v0, p0, Lo82;->a:B
+
+    .line 2
+    .line 3
+    packed-switch v0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    iget v0, p0, Lo82;->e:I
+
     .line 7
-    sput-object v0, Lo82;->a:Ljava/util/concurrent/atomic/AtomicBoolean;
-
     .line 8
-    .line 9
-    new-instance v0, Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget p0, p0, Lo82;->d:I
 
+    .line 9
     .line 10
+    :goto_0
+    sub-int/2addr v0, p0
+
     .line 11
-    invoke-direct {v0, v1}, Ljava/util/concurrent/atomic/AtomicBoolean;-><init>(Z)V
+    return v0
 
     .line 12
+    :pswitch_0
+    iget v0, p0, Lo82;->e:I
+
     .line 13
     .line 14
-    sput-object v0, Lo82;->b:Ljava/util/concurrent/atomic/AtomicBoolean;
+    iget p0, p0, Lo82;->d:I
 
     .line 15
     .line 16
-    return-void
+    goto :goto_0
+
+    .line 17
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
+.end method
+
+.method public final toString()Ljava/lang/String;
+    .locals 0
+
+    .line 1
+    iget-byte p0, p0, Lo82;->a:B
+
+    .line 2
+    .line 3
+    packed-switch p0, :pswitch_data_0
+
+    .line 4
+    .line 5
+    .line 6
+    const-string p0, ""
+
+    .line 7
+    .line 8
+    return-object p0
+
+    .line 9
+    :pswitch_0
+    const-string p0, ""
+
+    .line 10
+    .line 11
+    return-object p0
+
+    .line 12
+    nop
+
+    .line 13
+    :pswitch_data_0
+    .packed-switch 0x0
+        :pswitch_0
+    .end packed-switch
 .end method

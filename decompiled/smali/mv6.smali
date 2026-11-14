@@ -1,32 +1,30 @@
 .class public final enum Lmv6;
 .super Ljava/lang/Enum;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
 
 
 # static fields
+.field public static final enum i:Lmv6;
+
 .field public static final enum j:Lmv6;
 
 .field public static final enum k:Lmv6;
 
 .field public static final enum l:Lmv6;
 
-.field public static final enum m:Lmv6;
-
-.field public static final enum n:Lmv6;
-
-.field public static final synthetic o:[Lmv6;
+.field public static final synthetic m:[Lmv6;
 
 
 # direct methods
 .method static constructor <clinit>()V
-    .locals 8
+    .locals 6
 
     .line 1
     new-instance v0, Lmv6;
 
     .line 2
     .line 3
-    const-string v1, "DARKER"
+    const-string v1, "StartInput"
 
     .line 4
     .line 5
@@ -38,7 +36,7 @@
     .line 7
     .line 8
     .line 9
-    sput-object v0, Lmv6;->j:Lmv6;
+    sput-object v0, Lmv6;->i:Lmv6;
 
     .line 10
     .line 11
@@ -46,7 +44,7 @@
 
     .line 12
     .line 13
-    const-string v2, "LIGHTER"
+    const-string v2, "StopInput"
 
     .line 14
     .line 15
@@ -58,7 +56,7 @@
     .line 17
     .line 18
     .line 19
-    sput-object v1, Lmv6;->k:Lmv6;
+    sput-object v1, Lmv6;->j:Lmv6;
 
     .line 20
     .line 21
@@ -66,7 +64,7 @@
 
     .line 22
     .line 23
-    const-string v3, "RELATIVE_DARKER"
+    const-string v3, "ShowKeyboard"
 
     .line 24
     .line 25
@@ -78,7 +76,7 @@
     .line 27
     .line 28
     .line 29
-    sput-object v2, Lmv6;->l:Lmv6;
+    sput-object v2, Lmv6;->k:Lmv6;
 
     .line 30
     .line 31
@@ -86,7 +84,7 @@
 
     .line 32
     .line 33
-    const-string v4, "RELATIVE_LIGHTER"
+    const-string v4, "HideKeyboard"
 
     .line 34
     .line 35
@@ -98,58 +96,22 @@
     .line 37
     .line 38
     .line 39
-    sput-object v3, Lmv6;->m:Lmv6;
+    sput-object v3, Lmv6;->l:Lmv6;
 
     .line 40
     .line 41
-    new-instance v4, Lmv6;
+    filled-new-array {v0, v1, v2, v3}, [Lmv6;
 
     .line 42
     .line 43
-    const-string v5, "NEARER"
-
     .line 44
-    .line 45
-    const/4 v6, 0x4
-
-    .line 46
-    invoke-direct {v4, v5, v6}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 47
-    .line 48
-    .line 49
-    sput-object v4, Lmv6;->n:Lmv6;
-
-    .line 50
-    .line 51
-    new-instance v5, Lmv6;
-
-    .line 52
-    .line 53
-    const-string v6, "FARTHER"
-
-    .line 54
-    .line 55
-    const/4 v7, 0x5
-
-    .line 56
-    invoke-direct {v5, v6, v7}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
-
-    .line 57
-    .line 58
-    .line 59
-    filled-new-array/range {v0 .. v5}, [Lmv6;
-
-    .line 60
-    .line 61
-    .line 62
     move-result-object v0
 
-    .line 63
-    sput-object v0, Lmv6;->o:[Lmv6;
+    .line 45
+    sput-object v0, Lmv6;->m:[Lmv6;
 
-    .line 64
-    .line 65
+    .line 46
+    .line 47
     return-void
 .end method
 
@@ -180,7 +142,7 @@
     .locals 1
 
     .line 1
-    sget-object v0, Lmv6;->o:[Lmv6;
+    sget-object v0, Lmv6;->m:[Lmv6;
 
     .line 2
     .line 3

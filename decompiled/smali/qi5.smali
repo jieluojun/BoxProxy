@@ -1,40 +1,27 @@
-.class public final Lqi5;
-.super Lz81;
-.source "r8-map-id-20ba21aa719a118f6636b4195284472d40e9653eb9bd33ff7cbddda1dfd1d123"
+.class public abstract Lqi5;
+.super Lpi5;
+.source "r8-map-id-bd0caf1bc4f5f32ccbf6362d02e487e5aa57647e3e4f9baa433c9379167097a7"
+
+# interfaces
+.implements Ld82;
 
 
 # instance fields
-.field public j:Lyi5;
-
-.field public k:Ljava/io/File;
-
-.field public l:Ljava/lang/String;
-
-.field public m:Ljava/lang/Object;
-
-.field public n:Ljava/util/List;
-
-.field public o:Lbu3;
-
-.field public synthetic p:Ljava/lang/Object;
-
-.field public final synthetic q:Lxi5;
-
-.field public r:I
+.field public final i:B
 
 
 # direct methods
-.method public constructor <init>(Lxi5;Lz81;)V
+.method public constructor <init>(ILp91;)V
     .locals 0
 
     .line 1
-    iput-object p1, p0, Lqi5;->q:Lxi5;
+    invoke-direct {p0, p2}, Lpi5;-><init>(Lp91;)V
 
     .line 2
     .line 3
-    invoke-direct {p0, p2}, Lz81;-><init>(Ly81;)V
-
     .line 4
+    iput-byte p1, p0, Lqi5;->i:B
+
     .line 5
     .line 6
     return-void
@@ -42,64 +29,61 @@
 
 
 # virtual methods
-.method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
-    .locals 1
+.method public final getArity()I
+    .locals 0
 
     .line 1
-    iput-object p1, p0, Lqi5;->p:Ljava/lang/Object;
+    iget-byte p0, p0, Lqi5;->i:B
 
     .line 2
     .line 3
-    iget p1, p0, Lqi5;->r:I
+    return p0
+.end method
 
+.method public final toString()Ljava/lang/String;
+    .locals 1
+
+    .line 1
+    invoke-virtual {p0}, Lrz;->getCompletion()Lp91;
+
+    .line 2
+    .line 3
     .line 4
+    move-result-object v0
+
     .line 5
-    const/high16 v0, -0x80000000
+    if-nez v0, :cond_0
 
     .line 6
     .line 7
-    or-int/2addr p1, v0
+    sget-object v0, Lwf5;->a:Lxf5;
 
     .line 8
-    iput p1, p0, Lqi5;->r:I
-
     .line 9
-    .line 10
-    iget-object p1, p0, Lqi5;->q:Lxi5;
+    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
+    .line 10
     .line 11
     .line 12
-    const/4 v0, 0x0
+    invoke-static {p0}, Lxf5;->a(Ld82;)Ljava/lang/String;
 
     .line 13
-    invoke-virtual {p1, p0, v0, v0}, Lxi5;->a(Lz81;Lyi5;Ljava/io/File;)Ljava/lang/Object;
-
     .line 14
     .line 15
-    .line 16
     move-result-object p0
 
+    .line 16
+    return-object p0
+
     .line 17
-    sget-object p1, Lbc1;->j:Lbc1;
+    :cond_0
+    invoke-super {p0}, Lrz;->toString()Ljava/lang/String;
 
     .line 18
     .line 19
-    if-ne p0, p1, :cond_0
-
     .line 20
+    move-result-object p0
+
     .line 21
     return-object p0
-
-    .line 22
-    :cond_0
-    new-instance p1, Lid5;
-
-    .line 23
-    .line 24
-    invoke-direct {p1, p0}, Lid5;-><init>(Ljava/lang/Object;)V
-
-    .line 25
-    .line 26
-    .line 27
-    return-object p1
 .end method
