@@ -1,0 +1,124 @@
+{
+  "note": "Reviewed 139 -> 154 member overrides, applied on top of symbol-map.json by scripts/port_154.py. Every entry was confirmed against the 154 class body (renamed member, identical or equivalent behaviour), not by name alone.",
+  "members": {
+    "Ltp3;->j:Ltp3;": [
+      "Lpw3;",
+      "i:Lpw3;",
+      "only field of the class, renamed j -> i"
+    ],
+    "Lt72;->T(IZ)Z": [
+      "Lt82;",
+      "S(IZ)Z",
+      "Composer.changed(int) guard, same body"
+    ],
+    "Lt72;->W()V": [
+      "Lt82;",
+      "V()V",
+      "skipAndEndGroup guard, literal 'No nodes can be emitted before calling skipAndEndGroup'"
+    ],
+    "Lq85;->j:Lpb6;": [
+      "Lzd5;",
+      "i:Ljh6;",
+      "only field of that type, renamed j -> i"
+    ],
+    "Ldn;->K()Landroid/content/Context;": [
+      "Lum;",
+      "H()Landroid/content/Context;",
+      "literal 'appContext' is unique to this method in 154"
+    ],
+    "Lcs;->u(Ljava/io/InputStream;Ljava/io/OutputStream;)J": [
+      "Lwp;",
+      "v(Ljava/io/InputStream;Ljava/io/OutputStream;)J",
+      "only copy helper with that signature"
+    ],
+    "Lv8;->u(Landroid/content/Context;)Lnv;": [
+      "Lje;",
+      "p(Landroid/content/Context;)Lav;",
+      "double-checked singleton body is identical"
+    ],
+    "Lj26;->d(Lp62;Ljava/lang/String;)V": [
+      "Li86;",
+      "f(Lp72;Ljava/lang/String;)V",
+      "same relative method order d->f"
+    ],
+    "Lj26;->e(Lp62;Ljava/lang/String;)V": [
+      "Li86;",
+      "g(Lp72;Ljava/lang/String;)V",
+      "same relative method order e->g"
+    ],
+    "Lqm5;->m(Ljava/lang/String;)V": [
+      "Les5;",
+      "n(Ljava/lang/String;)V",
+      "sets the editor state value (setValue on the same MutableState field)"
+    ],
+    "Lqm5;->k()V": [
+      "Les5;",
+      "j()V",
+      "guard/close path with the same 'Failed requirement.' assertion"
+    ],
+    "Lip1;-><init>(Ljava/lang/String;ZZLe62;Ljava/util/ArrayList;I)V": [
+      "Lfq1;",
+      "<init>(Ljava/lang/String;ZZLe72;Ljava/util/List;I)V",
+      "parameter was widened from ArrayList to List in 154"
+    ],
+    "Lz81;-><init>(Ly81;Lrb1;)V": [
+      "Lq91;",
+      "<init>(Lp91;Lfc1;)V",
+      "same abstract coroutine: getContext()/intercepted()/releaseIntercepted() match 1:1"
+    ],
+    "Lag7;->I(Lwp3;FFFF)Lwp3;": [
+      "Lok7;",
+      "N(Lsw3;FFFF)Lsw3;",
+      "only 139->154 modifier helper that wraps the 4-float graphics-layer element and calls Modifier.then (a0)"
+    ],
+    "Lpr;->h(Le62;Lwp3;ZZJFFFLt62;Lz11;II)V": [
+      "Ldw3;",
+      "b(Le72;Lsw3;ZZJFFFLt72;Lt82;II)V",
+      "same 12-parameter layout helper; the Lt62 param maps to Lt72 exactly as in dw3.b"
+    ],
+    "Lx27;->h(Landroid/content/Context;Ljava/lang/String;)V": [
+      "Lk87;",
+      "b(Landroid/content/Context;Ljava/lang/String;)V",
+      "one-line convenience wrapper around the log bridge at the same level"
+    ],
+    "Lyt2;->e0(Ljava/lang/Object;Ljava/lang/Object;)Z": [
+      "Lky2;",
+      "G(Ljava/lang/Object;Ljava/lang/Object;)Z",
+      "Intrinsics.areEqual equivalent; 154 renamed the intrinsics facade"
+    ]
+  },
+  "rejected": {
+    "Lx27;": "mapped to Ltw6; by body votes, but 154 Ltw6;.j(Context,String) is a settings writer, not the log bridge"
+  },
+  "classes": {
+    "Lz11;": [
+      "Lt82;",
+      "Composer: 154 inlined the interface, every mapped composable now takes the final Lt82;"
+    ],
+    "Lrb1;": [
+      "Lfc1;",
+      "coroutine context parameter: 139 z81.getContext()Lrb1; maps to 154 q91.getContext()Lfc1;"
+    ],
+    "Lag7;": [
+      "Lok7;",
+      "modifier helper class (graphics layer factory)"
+    ],
+    "Lpr;": [
+      "Ldw3;",
+      "composable layout helper"
+    ],
+    "Ljh2;": [
+      "Lcom/box/app/vpn/CtlResult;",
+      "154 already uses the name Ljh2; for an unrelated class, so the 139 data class is carried under a private name"
+    ]
+  },
+  "carry": {
+    "smali/jh2.smali": {
+      "target": "smali/com/box/app/vpn/CtlResult.smali",
+      "rename": [
+        "Ljh2;",
+        "Lcom/box/app/vpn/CtlResult;"
+      ]
+    }
+  }
+}

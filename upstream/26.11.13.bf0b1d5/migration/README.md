@@ -64,9 +64,41 @@ R8 映射文件可用，而 139 里我们的定制直接写在**混淆后的类*
 典型已确认的例子：`dv.b(ZZZ)V → mu.b(ZZZ)V`、`f55.<clinit> → ab5.<clinit>`（枚举常量串完全一致）、
 `jc0.g()Lwb0; → gc0.g()Ltb0;`、`w70 拷贝方法 → tb0.a(...)`。
 
+## 自写代码已迁完并验证
+
+`scripts/port_154.py` 以 154 快照为骨架生成暂存工程（`.tools/ported-154`，不入库）：
+
+- 1,355 个自写 smali 全部按映射重写后写入，另按需携带 1 个 139 数据类
+  （`jh2` → `com/box/app/vpn/CtlResult`，因为 154 已占用 `Ljh2;` 这个名字）；
+- 7 个 asset 原样复制；Manifest 结构化合并（3 个权限 + `BoxVpnService` + `BootReceiver`
+  + 4 个 Activity，已存在组件不重复添加）；
+- 12 个定制字符串按 `(type,name)` 重新编号到 `0x7f0f0539..0x7f0f0544`，并同步 4 个语言目录。
+
+校验结果：**9,801 个类 / 571,003 条引用，0 条悬空引用**（仅剩 154 自带的
+`Lio/github/rosemoe/oniguruma/OnigNative;` 引用，属上游 JNI 产物）。
+
+关键映射来自人工复核，记在 [overrides.json](overrides.json)（每条都注明证据）：
+
+| 139 | 154 | 依据 |
+|---|---|---|
+| `tp3.j` | `pw3.i` | 类内唯一同类型字段 |
+| `t72.T/W` | `t82.S/V` | `skipAndEndGroup` 断言字符串唯一 |
+| `dn.K()` | `um.H()` | `"appContext"` 字面量唯一 |
+| `j26.d/e` | `i86.f/g` | 方法序完全一致 |
+| `qm5.m/k` | `es5.n/j` | 同一 `MutableState` 的 `setValue`/断言 |
+| `ag7` | `ok7` | 4-float `graphicsLayer` 工厂 + `Modifier.then(a0)` |
+| `pr` | `dw3` | 12 参布局 helper，参数映射逐一对上 |
+| `z81` | `q91` | `getContext()/intercepted()/releaseIntercepted()` 一一对应 |
+| `z11` (Composer) | `t82` | 154 把接口内联，组合函数统一收 `Lt82;` |
+| `rb1` (CoroutineContext) | `fc1` | `q91.getContext()` 返回类型 |
+
+同时排除了两个错误映射（`x27→tw6`、`z81→q91` 的早期体证据），方法体内没有证据的同名类一律不采信。
+
 ## 下一步（可执行清单）
 
-1. **补齐 16 个未解决类**。其中 `pr`、`em5`、`si3`、`ru5`、`yt`、`ci3` 都是 Compose 大函数/字符串助手，
+0. **把 78 处注入点搬进 154**（唯一剩余的阻塞项）。`scripts/dump_patches.py` 已把增量导成
+   逐方法 hunk（27 个纯 Toast 替换 + 51 个真实注入），`port-sites.json` 给出候选落点与覆盖率。
+1. **补齐仍未解决的类**。其中 `em5`、`si3`、`ru5`、`yt`、`ci3` 都是 Compose 大函数/字符串助手，
    建议先定 `z11`（`Composer` 接口，0 成员）和 `t62/t72/p62` 这组 Compose 基础类型，
    再用它们的调用点反推宿主类。
 2. **把 78 处注入点分成三批处理**：29 处高置信（可直接搬 + 复核）、32 处中置信（对调用序列人工确认）、
