@@ -1,0 +1,12 @@
+{
+  "reviewed": [
+    {
+      "source": "smali/g17.smali",
+      "method": "v(Landroid/content/Context;Ljava/lang/String;)V",
+      "target": "Ly67;",
+      "targetMethod": "B(Landroid/content/Context;Ljava/lang/String;)V",
+      "edit": "toast",
+      "evidence": "only method in the mapped class that still calls Toast.makeText, same (Context,String) signature"
+    }
+  ]
+}
