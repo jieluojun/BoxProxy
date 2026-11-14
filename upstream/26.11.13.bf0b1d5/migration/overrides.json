@@ -131,8 +131,8 @@
    "clipboard helper E matches zb3.M exactly (line 1.000, string shell_script_variable)"
   ],
   "Lsi3;": [
-   "Llo06;",
-   "class-level op-Jaccard 25/70 methods >=0.7 (best); clipboard helper was a coincidental body match"
+   "Lo06;",
+   "class-level op-Jaccard 25/70 methods >=0.7 (best); class is Lo06; (file o06.smali)"
   ],
   "Lne3;": [
    "Lte3;",

@@ -662,6 +662,21 @@ def main():
         info = inventory(old_project, new_project, args.customized)
         map_file = args.output.parent / 'symbol-map.json'
         mapping = json.loads(map_file.read_text())['mapping'] if map_file.exists() else None
+        members = json.loads(map_file.read_text()).get('members', {}) if map_file.exists() else {}
+        # apply reviewed overrides at runtime so symbol-map.json stays the pure
+        # injective draft (overrides can legitimately be non-injective, e.g.
+        # two 139 classes that 154 merged into one)
+        overrides = args.output.parent / 'overrides.json'
+        if overrides.exists():
+            ov = json.loads(overrides.read_text())
+            if mapping is not None:
+                for key, (target, _reason) in ov.get('classes', {}).items():
+                    mapping[key] = target
+                for key in ov.get('rejected', {}):
+                    mapping.pop(key, None)
+            for key, (owner, member, _reason) in ov.get('members', {}).items():
+                members[key] = {'owner': owner, 'member': member,
+                                'votes': 0, 'total': 0, 'source': 'reviewed'}
         write_json(args.output, locate_sites(old_project, new_project, info, mapping=mapping))
 
 
