@@ -95,11 +95,15 @@
    "Lqr5;",
    "l:Landroid/content/Context;",
    "qr5 has the single Context field named l; em5.p is the same field renamed"
+  ],
+  "Lqu5;->o(ZLp62;Ljava/lang/String;Ljava/lang/String;Lqz0;ZLz11;III)V": [
+   "Ly93;",
+   "C(ZLp72;Ljava/lang/String;Ljava/lang/String;Lnz0;ZLt82;III)V",
+   "128-op config builder; translated line-score 0.798 vs ly93.C (125 ops), signature structure matches"
   ]
  },
  "rejected": {
-  "Lx27;": "mapped to Ltw6; by body votes, but 154 Ltw6;.j(Context,String) is a settings writer, not the log bridge",
-  "Lvt0;": "qu5.o counterpart not named (best op-Jaccard 0.62); injection would dangle"
+  "Lx27;": "mapped to Ltw6; by body votes, but 154 Ltw6;.j(Context,String) is a settings writer, not the log bridge"
  },
  "classes": {
   "Lz11;": [
@@ -157,6 +161,10 @@
   "Lem5;": [
    "Lqr5;",
    "invoke state machine: qr5.invoke has the Ly25 anchor and closest op count (393 vs 390)"
+  ],
+  "Lvt0;": [
+   "Ltt0;",
+   "b(Object,Object,Object) matches tt0.a (op 0.835); qu5.o now mapped to ly93.C"
   ]
  },
  "carry": {

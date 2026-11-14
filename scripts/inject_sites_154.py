@@ -94,6 +94,41 @@ def translate(op, regmap, mapping, members):
     return REG.sub(swap, text), missing
 
 
+LOCALS_RE = re.compile(r'^\.locals\s+(\d+)\s*$', re.M)
+
+
+def locals_count(body):
+    m = LOCALS_RE.search(body)
+    return int(m.group(1)) if m else 0
+
+
+def used_registers(body):
+    """All v-register numbers used in a method body (p-registers excluded)."""
+    used = set()
+    for line in instructions(body):
+        for kind, num in REG.findall(line):
+            if kind == 'v':
+                used.add(int(num))
+    return used
+
+
+def allocate_locals(body, missing_v):
+    """Map each missing 139 v-register to a fresh, unused 154 v-register.
+
+    Returns (regmap_entries, new_locals_count). The customization introduces
+    locals that did not exist in the 139 vanilla method, so the injector has to
+    hand out fresh slots in the 154 target and bump `.locals`.
+    """
+    used = used_registers(body)
+    next_free = max(used | {locals_count(body) - 1}) + 1 if (used or locals_count(body)) else 0
+    entries = {}
+    for name in sorted(missing_v, key=lambda n: int(n[1:])):
+        entries[name] = 'v' + str(next_free)
+        next_free += 1
+    new_count = max(locals_count(body), next_free)
+    return entries, new_count
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--project', default='.tools/ported-154')
@@ -143,6 +178,10 @@ def main():
         anchor = next((item['after'] for item in hunk['added'] if item['after']), None)
         anchor_masked = masked(anchor, mapping) if anchor else None
         target_index = None
+        if anchor is None:
+            # no anchor: the customization inserts at the very start of the
+            # method (e.g. ru5.K rewrites its list argument before any use)
+            target_index = 0
         if anchor_masked:
             for index, line in enumerate(new_instructions):
                 if masked(line, mapping) == anchor_masked:
@@ -184,21 +223,37 @@ def main():
                 skipped.append((hunk['file'], hunk['method'], 'anchor not found'))
                 continue
 
-        translated, missing = [], set()
-        for op in added:
-            text, gaps = translate(op, regmap, mapping, members)
-            translated.append(text)
-            missing.update(gaps)
-        # a parameter register keeps its position when both methods agree on the
-        # parameter list shape; fall back to identity only for p-registers
-        if missing and all(name.startswith('p') for name in missing):
-            for name in list(missing):
-                regmap[name] = name
-            translated, missing = [], set()
+        def do_translate():
+            out, miss = [], set()
             for op in added:
                 text, gaps = translate(op, regmap, mapping, members)
-                translated.append(text)
-                missing.update(gaps)
+                out.append(text)
+                miss.update(gaps)
+            return out, miss
+
+        translated, missing = do_translate()
+        locals_bump = None
+        # parameter registers are positional: if the param lists did not align,
+        # map missing p-registers to themselves. Locals introduced by the
+        # customization get fresh slots allocated in the 154 target method.
+        for _round in range(2):
+            p_missing = {n for n in missing if n.startswith('p')}
+            v_missing = {n for n in missing if n.startswith('v')}
+            changed = False
+            if p_missing:
+                for name in p_missing:
+                    regmap.setdefault(name, name)
+                changed = True
+            if v_missing:
+                entries, new_locals = allocate_locals(span[2], v_missing)
+                for name, fresh in entries.items():
+                    regmap.setdefault(name, fresh)
+                if new_locals > locals_count(span[2]):
+                    locals_bump = new_locals
+                changed = True
+            if not changed:
+                break
+            translated, missing = do_translate()
         if missing:
             skipped.append((hunk['file'], hunk['method'],
                             'registers unresolved: ' + ','.join(sorted(missing))))
@@ -206,6 +261,12 @@ def main():
 
         if args.apply:
             lines = new_text.splitlines()
+            if locals_bump is not None:
+                for i, line in enumerate(lines):
+                    m = LOCALS_RE.match(line)
+                    if m and int(m.group(1)) < locals_bump:
+                        lines[i] = '    .locals ' + str(locals_bump)
+                        break
             # locate the target instruction line inside the file
             body_start = new_text[:span[0]].count('\n')
             cursor = body_start
