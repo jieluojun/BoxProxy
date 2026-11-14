@@ -1,0 +1,254 @@
+{
+ "files": 1355,
+ "filesClean": 1339,
+ "unresolvedTypes": [
+  [
+   "ListActivity;",
+   1
+  ]
+ ],
+ "unresolvedMembers": [
+  [
+   "Ljc0;->g()Lwb0;",
+   6
+  ],
+  [
+   "Ldn;->K()Landroid/content/Context;",
+   3
+  ],
+  [
+   "Lj26;->d(Lp62;Ljava/lang/String;)V",
+   2
+  ],
+  [
+   "Ltp3;->j:Ltp3;",
+   2
+  ],
+  [
+   "Lmu1;->j:Lmu1;",
+   2
+  ],
+  [
+   "Lwb0;->a(Lwb0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/String;ZZI)Lwb0;",
+   2
+  ],
+  [
+   "Lcs;->u(Ljava/io/InputStream;Ljava/io/OutputStream;)J",
+   2
+  ],
+  [
+   "Lj26;->e(Lp62;Ljava/lang/String;)V",
+   1
+  ],
+  [
+   "Ln71;->x(IILjava/lang/CharSequence;II)V",
+   1
+  ],
+  [
+   "Lqm5;->k()V",
+   1
+  ],
+  [
+   "Lqm5;->m(Ljava/lang/String;)V",
+   1
+  ],
+  [
+   "Lmw;->f(FF)V",
+   1
+  ],
+  [
+   "Lun2;->b(Lun2;Ljava/util/List;ILg96;FLg96;FFIIFI)V",
+   1
+  ],
+  [
+   "Lxm2;->a(Lvn2;Ljava/lang/String;Lwp3;JLz11;II)V",
+   1
+  ],
+  [
+   "Lun2;-><init>(Ljava/lang/String;FFFFJIZI)V",
+   1
+  ],
+  [
+   "Lt72;->T(IZ)Z",
+   1
+  ],
+  [
+   "Lt72;->W()V",
+   1
+  ],
+  [
+   "Ldv;->b(ZZZ)V",
+   1
+  ],
+  [
+   "Ljc0;->o(Lz81;)Ljava/lang/Object;",
+   1
+  ],
+  [
+   "Ljc0;->r(ZLz81;)Ljava/lang/Object;",
+   1
+  ],
+  [
+   "Lfw4;-><init>(Lp62;Lp62;Ljava/lang/Object;ZLgw4;Lp62;Ly81;)V",
+   1
+  ],
+  [
+   "Lf55;->t:Lf55;",
+   1
+  ],
+  [
+   "Lx27;->h(Landroid/content/Context;Ljava/lang/String;)V",
+   1
+  ],
+  [
+   "Lq85;->j:Lpb6;",
+   1
+  ],
+  [
+   "Lip1;-><init>(Ljava/lang/String;ZZLe62;Ljava/util/ArrayList;I)V",
+   1
+  ],
+  [
+   "Lv8;->u(Landroid/content/Context;)Lnv;",
+   1
+  ]
+ ],
+ "filesWithIssues": [
+  {
+   "file": "smali/com/box/app/cfg/CfgDefer.smali",
+   "types": [],
+   "members": [
+    "Lj26;->d(Lp62;Ljava/lang/String;)V",
+    "Lj26;->e(Lp62;Ljava/lang/String;)V"
+   ]
+  },
+  {
+   "file": "smali/com/box/app/cfg/CfgGlue.smali",
+   "types": [],
+   "members": [
+    "Ln71;->x(IILjava/lang/CharSequence;II)V",
+    "Lqm5;->k()V",
+    "Lqm5;->m(Ljava/lang/String;)V"
+   ]
+  },
+  {
+   "file": "smali/com/box/app/cfg/CfgIcon.smali",
+   "types": [],
+   "members": [
+    "Lmw;->f(FF)V",
+    "Ltp3;->j:Ltp3;",
+    "Lun2;-><init>(Ljava/lang/String;FFFFJIZI)V",
+    "Lun2;->b(Lun2;Ljava/util/List;ILg96;FLg96;FFIIFI)V",
+    "Lxm2;->a(Lvn2;Ljava/lang/String;Lwp3;JLz11;II)V"
+   ]
+  },
+  {
+   "file": "smali/com/box/app/cfg/CfgNav.smali",
+   "types": [],
+   "members": [
+    "Lt72;->T(IZ)Z",
+    "Lt72;->W()V",
+    "Ltp3;->j:Ltp3;"
+   ]
+  },
+  {
+   "file": "smali/com/box/app/vpn/AppPerm.smali",
+   "types": [],
+   "members": [
+    "Ldv;->b(ZZZ)V"
+   ]
+  },
+  {
+   "file": "smali/com/box/app/vpn/BootCont.smali",
+   "types": [],
+   "members": [
+    "Lmu1;->j:Lmu1;"
+   ]
+  },
+  {
+   "file": "smali/com/box/app/vpn/BootDone.smali",
+   "types": [],
+   "members": [
+    "Lmu1;->j:Lmu1;"
+   ]
+  },
+  {
+   "file": "smali/com/box/app/vpn/BootSync.smali",
+   "types": [],
+   "members": [
+    "Ljc0;->g()Lwb0;",
+    "Ljc0;->o(Lz81;)Ljava/lang/Object;",
+    "Ljc0;->r(ZLz81;)Ljava/lang/Object;"
+   ]
+  },
+  {
+   "file": "smali/com/box/app/vpn/BootTask.smali",
+   "types": [],
+   "members": [
+    "Ljc0;->g()Lwb0;"
+   ]
+  },
+  {
+   "file": "smali/com/box/app/vpn/BoxVpnService.smali",
+   "types": [],
+   "members": [
+    "Ljc0;->g()Lwb0;"
+   ]
+  },
+  {
+   "file": "smali/com/box/app/vpn/CoreConfigHistory.smali",
+   "types": [],
+   "members": [
+    "Lwb0;->a(Lwb0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/String;ZZI)Lwb0;"
+   ]
+  },
+  {
+   "file": "smali/com/box/app/vpn/RestoreCfg.smali",
+   "types": [],
+   "members": [
+    "Lcs;->u(Ljava/io/InputStream;Ljava/io/OutputStream;)J",
+    "Ldn;->K()Landroid/content/Context;",
+    "Lfw4;-><init>(Lp62;Lp62;Ljava/lang/Object;ZLgw4;Lp62;Ly81;)V",
+    "Lj26;->d(Lp62;Ljava/lang/String;)V"
+   ]
+  },
+  {
+   "file": "smali/com/box/app/vpn/VpnBridge.smali",
+   "types": [],
+   "members": [
+    "Ldn;->K()Landroid/content/Context;",
+    "Lf55;->t:Lf55;",
+    "Ljc0;->g()Lwb0;"
+   ]
+  },
+  {
+   "file": "smali/com/box/app/vpn/VpnPrefs.smali",
+   "types": [
+    "ListActivity;"
+   ],
+   "members": [
+    "Lip1;-><init>(Ljava/lang/String;ZZLe62;Ljava/util/ArrayList;I)V",
+    "Ljc0;->g()Lwb0;",
+    "Lq85;->j:Lpb6;",
+    "Lv8;->u(Landroid/content/Context;)Lnv;",
+    "Lwb0;->a(Lwb0;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZZZZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/String;ZLjava/lang/String;ZZI)Lwb0;",
+    "Lx27;->h(Landroid/content/Context;Ljava/lang/String;)V"
+   ]
+  },
+  {
+   "file": "smali/com/box/app/vpn/VpnSeed.smali",
+   "types": [],
+   "members": [
+    "Lcs;->u(Ljava/io/InputStream;Ljava/io/OutputStream;)J",
+    "Ldn;->K()Landroid/content/Context;"
+   ]
+  },
+  {
+   "file": "smali/com/box/app/vpn/VpnShell.smali",
+   "types": [],
+   "members": [
+    "Ljc0;->g()Lwb0;"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,43 @@
+{
+  "versionName": "26.11.13.bf0b1d5",
+  "versionCode": 154,
+  "packageName": "com.boxproxy.box",
+  "abi": "arm64-v8a",
+  "inputFile": "BoxProxy-26.11.13.bf0b1d5-arm64-v8a.apk.txt",
+  "inputSha256": "e03fe9357bb9c5871fd5ee3b15d6307499253cd00783366f1e62debf89ea566e",
+  "apktoolVersion": "2.9.3",
+  "apktoolSha256": "7956eb04194300ce0d0a84ad18771eebc94b89fb8d1ddcce8ea4c056818646f4",
+  "baselineCommit": "3f41a568a6f9f6b3e920123506ab2102f6d3d1a1",
+  "sourceArchive": "apktool-source.tar.gz",
+  "sourceArchiveSha256": "855960c8d82c821cd952d969d8c907061960cb458aba4b8ae6f84905d46676c3",
+  "sourceFileCount": 9760,
+  "sourceBytes": 115114449,
+  "decodedClasses": 8445,
+  "decodedClassesPrevious": 8344,
+  "status": "decoded-and-analyzed-port-pending",
+  "migration": {
+    "status": "analysis-complete-port-pending",
+    "inventory": "migration/inventory.json",
+    "symbolMap": "migration/symbol-map.json",
+    "portSites": "migration/port-sites.json",
+    "dryRun": "migration/dry-run.json",
+    "report": "migration/README.md",
+    "metrics": {
+      "patchedMethods": 78,
+      "addedFiles": 1362,
+      "modifiedFiles": 68,
+      "mappedClasses": 4596,
+      "oldClasses": 8344,
+      "mappedMembers": 2269,
+      "neededClasses": 113,
+      "unresolvedClasses": 16,
+      "siteHighConfidence": 29,
+      "siteMediumConfidence": 32,
+      "siteLowConfidence": 17,
+      "customSmaliFiles": 1355,
+      "customSmaliFilesFullyRewritable": 1339
+    },
+    "runtimeProjectReplaced": false,
+    "androidDeviceVerified": false
+  }
+}

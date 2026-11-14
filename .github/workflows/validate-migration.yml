@@ -55,6 +55,12 @@ jobs:
         env:
           PYTHONDONTWRITEBYTECODE: '1'
         run: python3 -m unittest discover -s vpn-src/test -p 'test_upstream_snapshot.py' -v
+      - name: Test 154 baseline snapshot and migration analysis artifacts
+        env:
+          PYTHONDONTWRITEBYTECODE: '1'
+        run: |
+          python3 -m unittest discover -s vpn-src/test -p 'test_upstream_154_analysis.py' -v
+          python3 scripts/upstream_snapshot.py upstream/26.11.13.bf0b1d5
       - name: Test actual new model, migrated helpers, wiring and full smali assembly
         env:
           ECJ_JAR: .tools/ecj/package/jar/ctxo-jdt-analyzer-17.jar

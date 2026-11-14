@@ -9,6 +9,13 @@
 - [原版来源及不可变快照](upstream/26.11.05.d5c365e/README.md)
 - [VPN / 编辑器源码与工具链](vpn-src/README.md)
 
+> **154 升级（26.11.13.bf0b1d5）进行中。** 新版原版已解码入库为不可变快照
+> （[upstream/26.11.13.bf0b1d5](upstream/26.11.13.bf0b1d5/README.md)），并完成定制增量与
+> 139 → 154 符号映射的自动分析：[迁移分析报告](upstream/26.11.13.bf0b1d5/migration/README.md)。
+> 154 是整包 R8 重新混淆（短类名几乎全部轮换）且 Compose 由 1.13.0-alpha01 回退到 1.12.1，
+> 目前映射覆盖 4,596/8,344 类、定制依赖的 113 类中 97 类已定位，
+> 78 处注入点中 29 处高置信；`decompiled/` 仍保持 139 可构建状态，**尚未切换**。
+
 ```sh
 # apktool 2.9.3；Android build-tools 可用时会继续对齐、签名并验证
 bash scripts/build.sh
