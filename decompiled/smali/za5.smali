@@ -113,13 +113,14 @@
     sget-object v4, Lab5;->m:Lab5;
 
     # --- boxproxy customization ---
-    sget-object v4, Lab5;->t:Lab5;
-    if-eq v3, v4, :cond_vpn_ok
+    sget-object v5, Lab5;->t:Lab5;
+    if-eq v3, v5, :cond_vpn_ok
     invoke-static {}, Lcom/box/app/vpn/VpnRoot;->rootModes()Z
-    move-result v4
-    if-eqz v4, :cond_0
+    move-result v5
+    if-eqz v5, :cond_0
     :Lab5
     :cond_vpn_ok
+    sget-object v4, Lab5;->m:Lab5;
 
     .line 34
     .line 35

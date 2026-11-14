@@ -18,6 +18,8 @@
 
 .field public static final enum p:Lab5;
 
+.field public static final enum t:Lab5;
+
 .field public static final synthetic q:[Lab5;
 
 .field public static final synthetic r:Lvw1;
