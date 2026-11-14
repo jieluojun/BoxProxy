@@ -965,7 +965,7 @@
 
     sget-object v0, Lva0;->a:Lva0;
 
-    new-instance v1, Lq2;
+    new-instance v1, Lra0;
 
     const/16 v3, 0x1d
 
