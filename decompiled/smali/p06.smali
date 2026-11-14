@@ -16432,11 +16432,7 @@
 
     # --- boxproxy customization ---
     sget-object v0, Lab5;->t:Lab5;
-    if-ne v0, v0, :cond_notvpn
-    const v0, -0x5fdcc4fd
-    const v2, 0x7f0f0320
-    const/4 v0, 0x0
-    invoke-static {v1, v0, v2, v1, v0}, Lrf6;->m(Lt82;IILt82;Z)Ljava/lang/String;
+    if-ne p0, v0, :cond_notvpn
     const-string v0, "VPN"
     return-object v0
     :Lab5

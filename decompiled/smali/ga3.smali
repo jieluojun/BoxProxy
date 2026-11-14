@@ -1830,7 +1830,7 @@
     move-object/from16 v0, p0
 
     # --- boxproxy customization ---
-    invoke-static {v1, v3, v5}, Lcom/box/app/vpn/VpnPrefs;->filter(Ljava/util/List;Ljava/util/Map;Ljava/util/Map;)Ljava/util/List;
+    invoke-static {v0, v3, v5}, Lcom/box/app/vpn/VpnPrefs;->filter(Ljava/util/List;Ljava/util/Map;Ljava/util/Map;)Ljava/util/List;
     move-result-object v1
 
     .line 2
