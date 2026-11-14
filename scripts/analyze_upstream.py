@@ -581,6 +581,21 @@ def locate_sites(old_project, new_project, info, top=3, mapping=None):
                            'coverage': round(cover, 3)})
         ranked.sort(key=lambda item: -item['coverage'])
         mapped_class = (mapping or {}).get(patched['class'])
+        if mapped_class and not any(item['class'] == mapped_class for item in ranked):
+            # the class map is authoritative: find the best method inside the
+            # mapped class by op-sequence coverage and add it as a candidate
+            best = None
+            for (sig, idx), seq2 in new_seqs.items():
+                if sig != mapped_class:
+                    continue
+                matcher = difflib.SequenceMatcher(a=seq, b=seq2, autojunk=False)
+                cover = sum(block.size for block in matcher.get_matching_blocks()) / max(len(seq), len(seq2))
+                if best is None or cover > best[0]:
+                    best = (cover, sig, idx)
+            if best:
+                ranked.insert(0, {'class': mapped_class,
+                                  'method': method_sig(new_classes[mapped_class]['methods'][best[2]]['head']),
+                                  'coverage': round(best[0], 3)})
         consistent = any(item['class'] == mapped_class for item in ranked)
         results.append({**patched, 'mappedClass': mapped_class,
                         'candidates': ranked[:top],

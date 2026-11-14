@@ -34,6 +34,11 @@
   "mappedClass": "Lza5;",
   "candidates": [
    {
+    "class": "Lza5;",
+    "method": "e(Lya5;)Ljava/util/ArrayList;",
+    "coverage": 0.684
+   },
+   {
     "class": "Lok7;",
     "method": "r(ZZZZZ)Ljava/util/ArrayList;",
     "coverage": 0.579
@@ -42,14 +47,9 @@
     "class": "Lht;",
     "method": "x0(Z)Ljava/util/List;",
     "coverage": 0.474
-   },
-   {
-    "class": "Lf45;",
-    "method": "invoke(Ljava/lang/Object;)Ljava/lang/Object;",
-    "coverage": 0.32
    }
   ],
-  "consistentWithClassMap": false
+  "consistentWithClassMap": true
  },
  {
   "file": "smali/bf0.smali",
@@ -135,7 +135,7 @@
   "method": "E(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V",
   "addedOps": 1,
   "removedOps": 1,
-  "mappedClass": null,
+  "mappedClass": "Lzb3;",
   "candidates": [
    {
     "class": "Lbe3;",
@@ -153,7 +153,7 @@
     "coverage": 1.0
    }
   ],
-  "consistentWithClassMap": false
+  "consistentWithClassMap": true
  },
  {
   "file": "smali/com/box/app/AppApplication.smali",
@@ -307,7 +307,7 @@
   "method": "invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
   "addedOps": 6,
   "removedOps": 0,
-  "mappedClass": null,
+  "mappedClass": "Lqr5;",
   "candidates": [
    {
     "class": "Lqr5;",
@@ -325,7 +325,7 @@
     "coverage": 0.201
    }
   ],
-  "consistentWithClassMap": false
+  "consistentWithClassMap": true
  },
  {
   "file": "smali/f50.smali",
@@ -388,6 +388,11 @@
   "mappedClass": "Lp06;",
   "candidates": [
    {
+    "class": "Lp06;",
+    "method": "q(Lya5;)[Ljava/lang/String;",
+    "coverage": 0.5
+   },
+   {
     "class": "Lo06;",
     "method": "R(Lxa5;Lt82;)Ljava/lang/String;",
     "coverage": 0.75
@@ -396,14 +401,9 @@
     "class": "Lo06;",
     "method": "S(Lya5;Lt82;)Ljava/lang/String;",
     "coverage": 0.75
-   },
-   {
-    "class": "Lo06;",
-    "method": "T(Lab5;Lt82;)Ljava/lang/String;",
-    "coverage": 0.75
    }
   ],
-  "consistentWithClassMap": false
+  "consistentWithClassMap": true
  },
  {
   "file": "smali/g17.smali",
@@ -412,8 +412,14 @@
   "addedOps": 1,
   "removedOps": 1,
   "mappedClass": "Ly67;",
-  "candidates": [],
-  "consistentWithClassMap": false
+  "candidates": [
+   {
+    "class": "Ly67;",
+    "method": "B(Landroid/content/Context;Ljava/lang/String;)V",
+    "coverage": 1.0
+   }
+  ],
+  "consistentWithClassMap": true
  },
  {
   "file": "smali/gd3.smali",
@@ -450,6 +456,11 @@
   "mappedClass": "Ly93;",
   "candidates": [
    {
+    "class": "Ly93;",
+    "method": "c0(Lvg5;)Lvg5;",
+    "coverage": 0.185
+   },
+   {
     "class": "Ley6;",
     "method": "c(Ljava/util/List;Ljava/util/Map;Lt82;)Ljava/util/ArrayList;",
     "coverage": 0.694
@@ -458,14 +469,9 @@
     "class": "Lky2;",
     "method": "A(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Lp72;Lt82;I)V",
     "coverage": 0.184
-   },
-   {
-    "class": "Lae3;",
-    "method": "b0(Ljava/util/List;Ljava/util/List;IIZLjava/util/Set;Ll95;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;ZIILt82;I)Ljava/util/List;",
-    "coverage": 0.12
    }
   ],
-  "consistentWithClassMap": false
+  "consistentWithClassMap": true
  },
  {
   "file": "smali/h2.smali",
@@ -627,6 +633,11 @@
   "mappedClass": "Ld42;",
   "candidates": [
    {
+    "class": "Ld42;",
+    "method": "o(Lq91;)Ljava/lang/Enum;",
+    "coverage": 0.5
+   },
+   {
     "class": "Lc01;",
     "method": "create(Ljava/lang/Object;Lp91;)Lp91;",
     "coverage": 0.179
@@ -635,14 +646,9 @@
     "class": "La84;",
     "method": "invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
     "coverage": 0.129
-   },
-   {
-    "class": "Lju0;",
-    "method": "create(Ljava/lang/Object;Lp91;)Lp91;",
-    "coverage": 0.111
    }
   ],
-  "consistentWithClassMap": false
+  "consistentWithClassMap": true
  },
  {
   "file": "smali/iw1.smali",
@@ -653,6 +659,11 @@
   "mappedClass": "Ld42;",
   "candidates": [
    {
+    "class": "Ld42;",
+    "method": "u(Lq91;)Ljava/lang/Enum;",
+    "coverage": 0.5
+   },
+   {
     "class": "Lbl;",
     "method": "a(Lq44;Lp91;)Ljava/lang/Object;",
     "coverage": 0.4
@@ -661,14 +672,9 @@
     "class": "La06;",
     "method": "Q0(JJLp91;)Ljava/lang/Object;",
     "coverage": 0.176
-   },
-   {
-    "class": "La9;",
-    "method": "b2(FLq91;)Ljava/lang/Object;",
-    "coverage": 0.15
    }
   ],
-  "consistentWithClassMap": false
+  "consistentWithClassMap": true
  },
  {
   "file": "smali/iw4.smali",
@@ -676,8 +682,13 @@
   "method": "invoke(Ljava/lang/Object;)Ljava/lang/Object;",
   "addedOps": 1,
   "removedOps": 1,
-  "mappedClass": null,
+  "mappedClass": "Lx25;",
   "candidates": [
+   {
+    "class": "Lx25;",
+    "method": "invoke(Ljava/lang/Object;)Ljava/lang/Object;",
+    "coverage": 0.524
+   },
    {
     "class": "Lyy6;",
     "method": "<init>(Lcg1;Lb91;Lvg1;Ljava/util/Set;)V",
@@ -687,14 +698,9 @@
     "class": "Lzt;",
     "method": "x(Lu93;IZLq91;)Ljava/lang/Object;",
     "coverage": 0.147
-   },
-   {
-    "class": "Lfn6;",
-    "method": "<init>(Lgn6;Lri0;)V",
-    "coverage": 0.143
    }
   ],
-  "consistentWithClassMap": false
+  "consistentWithClassMap": true
  },
  {
   "file": "smali/jc0.smali",
@@ -937,8 +943,14 @@
   "addedOps": 9,
   "removedOps": 0,
   "mappedClass": "Lwk5;",
-  "candidates": [],
-  "consistentWithClassMap": false
+  "candidates": [
+   {
+    "class": "Lwk5;",
+    "method": "f(JLp91;Ljava/lang/String;)Ljava/lang/Object;",
+    "coverage": 0.5
+   }
+  ],
+  "consistentWithClassMap": true
  },
  {
   "file": "smali/jf5.smali",
@@ -998,8 +1010,13 @@
   "method": "b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
   "addedOps": 1,
   "removedOps": 1,
-  "mappedClass": null,
+  "mappedClass": "Ly35;",
   "candidates": [
+   {
+    "class": "Ly35;",
+    "method": "a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+    "coverage": 0.585
+   },
    {
     "class": "Laa4;",
     "method": "a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
@@ -1009,14 +1026,9 @@
     "class": "Lfn4;",
     "method": "a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
     "coverage": 0.232
-   },
-   {
-    "class": "Ls84;",
-    "method": "a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-    "coverage": 0.176
    }
   ],
-  "consistentWithClassMap": false
+  "consistentWithClassMap": true
  },
  {
   "file": "smali/lb1.smali",
@@ -1196,8 +1208,13 @@
   "method": "k(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V",
   "addedOps": 1,
   "removedOps": 1,
-  "mappedClass": null,
+  "mappedClass": "Lte3;",
   "candidates": [
+   {
+    "class": "Lte3;",
+    "method": "U(Lv95;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)I",
+    "coverage": 0.286
+   },
    {
     "class": "Lbe3;",
     "method": "x(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V",
@@ -1207,14 +1224,9 @@
     "class": "Lzb3;",
     "method": "L(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V",
     "coverage": 1.0
-   },
-   {
-    "class": "Lzb3;",
-    "method": "M(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V",
-    "coverage": 1.0
    }
   ],
-  "consistentWithClassMap": false
+  "consistentWithClassMap": true
  },
  {
   "file": "smali/nh2.smali",
@@ -1378,7 +1390,7 @@
   "method": "invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
   "addedOps": 2,
   "removedOps": 2,
-  "mappedClass": null,
+  "mappedClass": "Lj61;",
   "candidates": [
    {
     "class": "Lj61;",
@@ -1396,7 +1408,7 @@
     "coverage": 0.209
    }
   ],
-  "consistentWithClassMap": false
+  "consistentWithClassMap": true
  },
  {
   "file": "smali/qb0.smali",
@@ -1537,6 +1549,11 @@
   "mappedClass": "Lg45;",
   "candidates": [
    {
+    "class": "Lg45;",
+    "method": "invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+    "coverage": 0.59
+   },
+   {
     "class": "Lok7;",
     "method": "r(ZZZZZ)Ljava/util/ArrayList;",
     "coverage": 0.154
@@ -1545,14 +1562,9 @@
     "class": "Lqn;",
     "method": "o(Landroid/content/Context;Ljava/lang/String;Ljava/util/Collection;Lq91;)Ljava/lang/Object;",
     "coverage": 0.13
-   },
-   {
-    "class": "Lgk6;",
-    "method": "invoke()Ljava/lang/Object;",
-    "coverage": 0.128
    }
   ],
-  "consistentWithClassMap": false
+  "consistentWithClassMap": true
  },
  {
   "file": "smali/s41.smali",
@@ -1612,7 +1624,7 @@
   "method": "G(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V",
   "addedOps": 1,
   "removedOps": 1,
-  "mappedClass": null,
+  "mappedClass": "Llo06;",
   "candidates": [
    {
     "class": "Lbe3;",
@@ -1815,9 +1827,15 @@
   "method": "p(Landroid/content/Context;Ljava/lang/String;)V",
   "addedOps": 1,
   "removedOps": 1,
-  "mappedClass": null,
-  "candidates": [],
-  "consistentWithClassMap": false
+  "mappedClass": "Ly67;",
+  "candidates": [
+   {
+    "class": "Ly67;",
+    "method": "B(Landroid/content/Context;Ljava/lang/String;)V",
+    "coverage": 1.0
+   }
+  ],
+  "consistentWithClassMap": true
  },
  {
   "file": "smali/yt.smali",
@@ -1825,7 +1843,7 @@
   "method": "H(Ljava/io/InputStream;Ljava/lang/String;Ljava/io/File;Ljava/lang/Long;)V",
   "addedOps": 12,
   "removedOps": 2,
-  "mappedClass": null,
+  "mappedClass": "Lnr;",
   "candidates": [
    {
     "class": "Lnr;",
@@ -1843,7 +1861,7 @@
     "coverage": 0.231
    }
   ],
-  "consistentWithClassMap": false
+  "consistentWithClassMap": true
  },
  {
   "file": "smali/yx4.smali",
@@ -1932,6 +1950,11 @@
   "mappedClass": "Ljg4;",
   "candidates": [
    {
+    "class": "Ljg4;",
+    "method": "<init>(Ljava/util/List;Ljava/lang/String;Lh04;Lbl3;Lya5;Lh04;Lh04;Ljava/lang/String;Lv25;Landroid/content/Context;Ljava/lang/String;Lp72;Ljava/lang/String;Lbl3;Lh04;Lh04;Lh04;Lh04;)V",
+    "coverage": 0.9
+   },
+   {
     "class": "La75;",
     "method": "<init>(Ljava/util/List;Lu95;ILh95;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Set;Ljava/util/Map;Lc55;Ljava/util/Map;Lp72;Lp72;Lp72;Ljava/lang/String;Ljava/util/Set;Lp72;Lt72;B)V",
     "coverage": 0.895
@@ -1940,13 +1963,8 @@
     "class": "Lb75;",
     "method": "<init>(Lp86;Ljava/lang/String;Lu95;ILc55;ZLh95;Ll95;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;Ljava/util/Set;Ljava/util/Map;Ljava/util/Set;Lp72;Lp72;Lp72;Lt72;Lp72;I)V",
     "coverage": 0.895
-   },
-   {
-    "class": "Laf3;",
-    "method": "<init>(Lsw3;Lp72;Le72;Lgh6;Lsi1;Lo66;Lhz3;ZLe72;Lsp4;Ld20;Lr47;Le53;Lnz0;Lr47;Lt72;Lr47;Lr47;Lnz0;Lr47;Lt72;Lr47;)V",
-    "coverage": 0.783
    }
   ],
-  "consistentWithClassMap": false
+  "consistentWithClassMap": true
  }
 ]
