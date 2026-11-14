@@ -32279,14 +32279,6 @@
     if-ltz v6, :cond_7
     :boxproxy_match
 
-    .line 55
-    .line 56
-    .line 57
-    move-result v3
-
-    .line 58
-    if-eqz v3, :cond_6
-
     .line 59
     .line 60
     if-eqz p3, :cond_3
