@@ -5184,7 +5184,6 @@
 
     .line 20
     :cond_0
-    new-instance v0, Lec0;
 
     .line 21
     .line 22

@@ -283,7 +283,6 @@
     move-result v10
 
     .line 101
-    invoke-virtual {v6}, Ljava/lang/Enum;->ordinal()I
 
     .line 102
     .line 103

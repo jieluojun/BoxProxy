@@ -207,7 +207,6 @@
     .line 74
     .line 75
     .line 76
-    move-result-object v0
 
     .line 77
     sput-object v0, Lab5;->q:[Lab5;

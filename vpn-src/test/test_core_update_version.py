@@ -11,12 +11,14 @@ class CoreUpdateVersionTest(detail_probe.CoreVersionTest):
     def setUpClass(cls):
         super().setUpClass()
         project = Path(os.environ.get('BOXPROXY_TEST_PROJECT', detail_probe.ROOT / 'decompiled'))
-        text = (project / 'smali/lb1.smali').read_text()
-        method = text.split('.method public final d(', 1)[1].split('.end method', 1)[0]
-        cls.fragment = detail_probe.const(method, 'p0', '\n            # Resolve')
+        # The update-dialog version query lives in zb1.g on the 154 baseline
+        # (lb1.d on 139); the dialog call that follows wrapProbe is pa1.a.
+        text = (project / 'smali/zb1.smali').read_text()
+        method = text.split('.method public final g(', 1)[1].split('.end method', 1)[0]
+        cls.fragment = detail_probe.const(method, 'v0', '\n            # Resolve')
         hook = method.index('LdFix;->wrapProbe(Ljava/lang/String;)Ljava/lang/String;')
-        assert hook < method.index('Lbd6;->W(Ljava/lang/String;)Ljava/lang/String;')
-        assert hook < method.index('Ljf5;->f(')
+        assert hook < method.index('Lsg5;-><init>', hook)
+        assert hook < method.index('Lpa1;->a(', hook)
 
     def run_probe(self, core, fragment=None):
         command = 'core=' + shlex.quote(str(core)) + (fragment or self.fragment)

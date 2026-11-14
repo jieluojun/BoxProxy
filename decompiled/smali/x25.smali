@@ -186,7 +186,6 @@
     const/4 v9, 0x0
 
     .line 68
-    const-string v10, ""
 
     .line 69
     .line 70

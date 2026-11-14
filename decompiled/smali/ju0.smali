@@ -4826,7 +4826,6 @@
     move-result-object v1
 
     .line 1289
-    const-string v8, "\n            core_version=\"\"\n            if [ -x \"$core_path\" ]; then\n                core_version=\"$(\"$core_path\" --version 2>/dev/null | head -n 1)\"\n                [ -z \"$core_version\" ] && core_version=\"$(\"$core_path\" -v 2>/dev/null | head -n 1)\"\n                [ -z \"$core_version\" ] && core_version=\"$(\"$core_path\" version 2>/dev/null | head -n 1)\"\n            fi\n            echo \"$core_version\"\n            echo \'\n---SEP---\n\'\n            echo "
 
     .line 1290
     .line 1291

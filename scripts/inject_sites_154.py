@@ -44,6 +44,26 @@ def masked(line, mapping):
     return REG.sub('R', line)
 
 
+def signature(op, mapping, rmap):
+    # Normalize an op for matching 139 removed lines against 154 target lines:
+    # string literals and registers become placeholders, class names are
+    # expressed in 139 naming (154 names mapped back through rmap).
+    line = STR.sub('S', op)
+    line = TYPE.sub(lambda m: rmap.get(m.group(0), mapping.get(m.group(0), 'L?;')), line)
+    return REG.sub('R', line)
+
+
+def instr_line_numbers(lines, body_start, end_line):
+    # Map each instruction index (as produced by instructions()) to its 1-based
+    # file line, applying the exact same filtering as instructions().
+    out = []
+    for lineno in range(body_start + 1, end_line + 1):
+        strip = lines[lineno - 1].strip()
+        if strip and not strip.startswith(('.', ':', '#')):
+            out.append(lineno)
+    return out
+
+
 def method_text(text, signature):
     pattern = re.compile(r'^\.method[^\n]*' + re.escape(signature) + r'\s*$', re.M)
     match = pattern.search(text)
@@ -187,7 +207,8 @@ def main():
     old_root = ROOT / 'decompiled'
 
     applied, skipped = [], []
-    sswitch_data = re.compile(r'-?0x[0-9a-fA-F]+ -> :')
+    sswitch_data_re = re.compile(r'-?0x[0-9a-fA-F]+ -> :')
+    sswitch_data = sswitch_data_re
     for hunk in hunks:
         # sswitch data tables belong to the enclosing method's sswitch, not
         # to the customization block: drop them from the added ops
@@ -221,6 +242,28 @@ def main():
         old_instructions = instructions(vanilla[2])
         new_instructions = instructions(span[2])
         regmap, votes = learn_registers(old_instructions, new_instructions, mapping)
+
+        # The 139 customization replaced lines: apply the removals in the 154
+        # target too. Match each removed op by signature (class names mapped
+        # back to 139 naming, literals/registers masked) and delete one target
+        # instruction per removed op, consuming matches in order.
+        rmap = {v: k for k, v in mapping.items()}
+        sig_of = lambda op: signature(op, mapping, rmap)
+        del_idx, unmatched = [], 0
+        for op in hunk['removed']:
+            want = sig_of(op)
+            hit = next((i for i, line in enumerate(new_instructions)
+                        if i not in del_idx and sig_of(line) == want), None)
+            if hit is None:
+                unmatched += 1
+            else:
+                del_idx.append(hit)
+        lines_all = new_text.splitlines()
+        body_start = new_text[:span[0]].count('\n')
+        body_end = new_text[:span[1]].count('\n')
+        instr_lines = instr_line_numbers(lines_all, body_start, body_end)
+        # del_idx holds instruction indices; map them back to 1-based file lines
+        del_lines = [instr_lines[i] for i in del_idx]
 
         anchor = next((item['after'] for item in hunk['added'] if item['after']), None)
         anchor_masked = masked(anchor, mapping) if anchor else None
@@ -346,6 +389,8 @@ def main():
             lines = new_text.splitlines()
             # locate the target instruction line inside the file
             body_start = new_text[:span[0]].count('\n')
+            for lineno in del_lines:
+                del lines[lineno - 1]
             if locals_bump is not None:
                 # bump the .locals of the target method only: the first
                 # .locals at or after the method header, never an earlier
@@ -357,18 +402,22 @@ def main():
                             lines[i] = '    .locals ' + str(locals_bump)
                         break
             # insertion line was computed before translation (sswitch data
-            # skipped, never split from its table)
-            insertion = insertion_line
+            # skipped, never split from its table); removals above it shift it
+            insertion = insertion_line - sum(1 for l in del_lines
+                                             if l < insertion_line)
             snippet = ['', '    # --- boxproxy customization ---'] + \
                       ['    ' + line for line in translated] + \
                       ['    :' + label for label in extra_labels]
             lines[insertion:insertion] = snippet
             new_path.write_text('\n'.join(lines) + '\n', encoding='utf-8')
-        applied.append((hunk['file'], target['class'], target['method'], len(translated)))
+        applied.append((hunk['file'], target['class'], target['method'],
+                        len(translated), len(del_lines), unmatched))
 
     print(f"applied {len(applied)} / skipped {len(skipped)}")
     for row in applied:
-        print('  ok  ', row[0], '->', row[1], row[2][:44], f'{row[3]} ops')
+        print('  ok  ', row[0], '->', row[1], row[2][:44],
+              f'{row[3]} ops, {row[4]} removed'
+              + (f', {row[5]} removal(s) unmatched' if row[5] else ''))
     for row in skipped:
         print('  skip', row[0], row[1][:40], '-', row[2])
     return 0

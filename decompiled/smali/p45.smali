@@ -607,7 +607,6 @@
 
     .line 193
     .line 194
-    invoke-virtual {v8}, Ljava/lang/Enum;->ordinal()I
 
     .line 195
     .line 196

@@ -29,7 +29,7 @@ def relative_path(root, name):
     return candidate
 
 
-def apply_phase(project, bundle):
+def apply_phase(project, bundle, runtime=None):
     """Apply to a disposable project. The caller publishes it only on success."""
     project, bundle = Path(project), Path(bundle)
     plan = json.loads((bundle / 'phase1.json').read_text())
@@ -104,9 +104,9 @@ def apply_full(project, bundle, runtime=None):
     return {k: plan[k] for k in ('versionName', 'versionCode', 'status', 'pendingImplementation', 'deviceValidation')}
 
 
-def prepare(snapshot, output, phase="full"):
+def prepare(snapshot, output, phase="full", runtime=None):
     snapshot, output = Path(snapshot).resolve(), Path(output).resolve()
-    runtime = Path(__file__).resolve().parents[1] / 'decompiled'
+    runtime = Path(runtime) if runtime else Path(__file__).resolve().parents[1] / 'decompiled'
     if output == runtime or runtime in output.parents or output in runtime.parents:
         raise ValueError('Refusing to overwrite the current customized runtime')
     if output.exists():
@@ -118,7 +118,8 @@ def prepare(snapshot, output, phase="full"):
         project, _ = extract(snapshot, stage)
         if phase not in ('full', 'phase1'):
             raise ValueError('Unknown migration phase')
-        report = (apply_full if phase == 'full' else apply_phase)(project, snapshot / 'migration')
+        report = (apply_full if phase == 'full' else apply_phase)(
+            project, snapshot / 'migration', runtime=runtime)
         (stage / 'migration-report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
         stage.rename(output)
     return output / 'decompiled'

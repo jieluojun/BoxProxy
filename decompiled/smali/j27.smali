@@ -14,7 +14,7 @@
     .locals 9
 
     .line 1
-    const-string v5, "v2fly"
+
 
     # --- boxproxy customization ---
     const-string v2, "mihomo_dingtalk"
@@ -37,26 +37,21 @@
     move-result-object v8
     move-result-object v8
     filled-new-array/range {v1 .. v8}, [Ljava/lang/Integer;
-
     .line 2
     .line 3
     const-string v6, "hysteria"
-
     .line 4
     .line 5
     const-string v0, "mihomo"
 
-    .line 6
     .line 7
     const-string v1, "mihomo_smart"
 
     .line 8
-    .line 9
     const-string v2, "sing-box"
 
     .line 10
     .line 11
-    const-string v3, "sing-box_ref1nd"
 
     .line 12
     .line 13
@@ -69,13 +64,11 @@
     .line 16
     .line 17
     .line 18
-    move-result-object v0
 
     .line 19
     invoke-static {v0}, Lul;->L([Ljava/lang/Object;)Ljava/util/List;
 
     .line 20
-    .line 21
     .line 22
     move-result-object v0
 
@@ -84,7 +77,6 @@
 
     .line 24
     .line 25
-    const v0, 0x7f0f0331
 
     .line 26
     .line 27
@@ -102,7 +94,6 @@
     .line 33
     .line 34
     .line 35
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     .line 36
     .line 37
@@ -116,7 +107,6 @@
     .line 41
     .line 42
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
     .line 43
     .line 44
     .line 45
@@ -130,7 +120,6 @@
     .line 49
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    .line 50
     .line 51
     .line 52
     move-result-object v4
@@ -186,7 +175,6 @@
     invoke-static {v0}, Lul;->L([Ljava/lang/Object;)Ljava/util/List;
 
     .line 79
-    .line 80
     .line 81
     move-result-object v0
 

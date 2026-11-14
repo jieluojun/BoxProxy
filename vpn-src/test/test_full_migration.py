@@ -1,8 +1,10 @@
 """Full 139 runtime inventory, upstream preservation and custom wiring checks."""
 import hashlib
+import io
 import json
 from pathlib import Path
 import re
+import subprocess
 import sys
 import tarfile
 import tempfile
@@ -32,12 +34,24 @@ def executable(text):
                          ('.line ', '.source ', '.local ', '.end local', '.restart local', '#', '.prologue')))
 
 
+# The full-migration plan overlays the 139 customized tree; it is recovered
+# from the commit that recorded it (the current decompiled/ is the 154 port).
+LEGACY_TREE = '5dc9143'
+
+
 class FullMigrationTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.temp = tempfile.TemporaryDirectory()
         cls.addClassCleanup(cls.temp.cleanup)
-        cls.project = migration.prepare(SNAPSHOT, Path(cls.temp.name) / 'full')
+        legacy = Path(cls.temp.name) / 'legacy'
+        legacy.mkdir()
+        tar = subprocess.run(['git', 'archive', LEGACY_TREE, 'decompiled'],
+                             cwd=ROOT, check=True, stdout=subprocess.PIPE).stdout
+        with tarfile.open(fileobj=io.BytesIO(tar)) as archive:
+            archive.extractall(legacy)
+        cls.project = migration.prepare(SNAPSHOT, Path(cls.temp.name) / 'full',
+                                        runtime=legacy / 'decompiled')
 
     def text(self, path):
         return (self.project / path).read_text()

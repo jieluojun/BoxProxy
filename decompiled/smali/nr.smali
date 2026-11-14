@@ -32174,7 +32174,6 @@
     .line 12
     .line 13
     .line 14
-    move-result v4
 
     .line 15
     if-ltz v4, :cond_7
