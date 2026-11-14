@@ -160,8 +160,29 @@ def main():
                             target_index = block.b + (old_index - block.a)
                             break
         if target_index is None:
-            skipped.append((hunk['file'], hunk['method'], 'anchor not found'))
-            continue
+            # the anchor was inlined away upstream: fall back to the first
+            # following instruction that still aligns, and insert before it
+            matcher = SequenceMatcher(
+                a=[masked(x, mapping) for x in old_instructions],
+                b=[masked(x, mapping) for x in new_instructions], autojunk=False)
+            old_index = None
+            if anchor_masked:
+                old_index = next((i for i, line in enumerate(old_instructions)
+                                  if masked(line, mapping) == anchor_masked), None)
+            if old_index is not None:
+                insert_before = True
+                for block in matcher.get_matching_blocks():
+                    if block.a > old_index:
+                        target_index = block.b
+                        break
+                if target_index is not None:
+                    target_index -= 1 if target_index else 0
+                    before = (target_index, insert_before)
+                else:
+                    before = None
+            if target_index is None:
+                skipped.append((hunk['file'], hunk['method'], 'anchor not found'))
+                continue
 
         translated, missing = [], set()
         for op in added:
