@@ -32143,6 +32143,18 @@
 
 .method public static z(Ljava/io/InputStream;Ljava/lang/String;Ljava/io/File;Ljava/lang/Long;)V
     .locals 8
+    move-result v6
+    if-nez v6, :lbl_0
+    const-string v6, "-"
+    invoke-virtual {p1, v6}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v6
+    invoke-virtual {v3, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    move-result v6
+    if-eqz v6, :lbl_12
+    const-wide/32 v6, 0x100000
+    cmp-long v6, v4, v6
+    if-ltz v6, :lbl_12
+    :lbl_0
 
     .line 1
     const/16 v0, 0x200
@@ -32153,15 +32165,15 @@
 
     .line 4
     .line 5
-    :lbl_0
+    :lbl_1
     const/4 v2, 0x0
 
     .line 6
     move v3, v2
 
     .line 7
-    :lbl_1
-    if-ge v3, v0, :lbl_2
+    :lbl_2
+    if-ge v3, v0, :lbl_3
 
     .line 8
     .line 9
@@ -32184,14 +32196,14 @@
     add-int/2addr v3, v4
 
     .line 18
-    goto :lbl_1
+    goto :lbl_2
 
     .line 19
-    :lbl_2
+    :lbl_3
     move v3, v2
 
     .line 20
-    :lbl_3
+    :lbl_4
     if-ge v3, v0, :lbl_12
 
     .line 21
@@ -32200,7 +32212,7 @@
 
     .line 23
     .line 24
-    if-nez v4, :lbl_4
+    if-nez v4, :lbl_5
 
     .line 25
     .line 26
@@ -32208,10 +32220,10 @@
 
     .line 27
     .line 28
-    goto :lbl_3
+    goto :lbl_4
 
     .line 29
-    :lbl_4
+    :lbl_5
     invoke-static {v1}, Lnr;->b0([B)Ljava/lang/String;
 
     .line 30
@@ -32243,7 +32255,7 @@
 
     .line 43
     .line 44
-    if-eq v6, v7, :lbl_5
+    if-eq v6, v7, :lbl_6
 
     .line 45
     .line 46
@@ -32251,7 +32263,7 @@
 
     .line 47
     .line 48
-    :lbl_5
+    :lbl_6
     const/16 v6, 0x2f
 
     .line 49
@@ -32269,18 +32281,7 @@
     .line 55
     .line 56
     .line 57
-    move-result v6
-    if-nez v6, :lbl_6
-    const-string v6, "-"
-    invoke-virtual {p1, v6}, Ljava/lang/String;->concat(Ljava/lang/String;)Ljava/lang/String;
-    move-result-object v6
-    invoke-virtual {v3, v6}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-    move-result v6
-    if-eqz v6, :lbl_12
-    const-wide/32 v6, 0x100000
-    cmp-long v6, v4, v6
-    if-ltz v6, :lbl_12
-    :lbl_6
+    move-result v3
 
     .line 58
     if-eqz v3, :lbl_11
@@ -32490,7 +32491,7 @@
     .line 152
     .line 153
     .line 154
-    goto/16 :lbl_0
+    goto/16 :lbl_1
 
     .line 155
     .line 156

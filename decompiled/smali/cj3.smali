@@ -176,6 +176,9 @@
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 4
+    const/4 v3, 0x1
+    invoke-static {p1, v0, p0, v3}, Lcom/box/app/cfg/CfgDefer;->post(Li86;Lp72;Ljava/lang/String;Z)V
+    invoke-static {p1, v0, p0}, Lcom/box/app/cfg/CfgDefer;->postD(Li86;Lp72;Ljava/lang/String;)V
 
     .line 1
     iget-byte v0, p0, Lcj3;->i:B
@@ -223,7 +226,7 @@
 
     .line 23
     .line 24
-    invoke-static {p1, v0, p0}, Lcom/box/app/cfg/CfgDefer;->postD(Li86;Lp72;Ljava/lang/String;)V
+    invoke-virtual {p1, v0, p0}, Li86;->f(Lp72;Ljava/lang/String;)V
 
     .line 25
     .line 26
@@ -257,8 +260,7 @@
 
     .line 40
     .line 41
-    const/4 v3, 0x1
-    invoke-static {p1, v0, p0, v3}, Lcom/box/app/cfg/CfgDefer;->post(Li86;Lp72;Ljava/lang/String;Z)V
+    invoke-virtual {p1, v0, p0}, Li86;->g(Lp72;Ljava/lang/String;)V
 
     .line 42
     .line 43

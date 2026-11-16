@@ -46,10 +46,10 @@ class FullMigrationTest(unittest.TestCase):
         self.assertEqual(PLAN['versionCode'], 154)
         self.assertEqual(PLAN['pendingImplementation'], [])
         self.assertEqual(COVERAGE['pending'], [])
-        self.assertEqual(len(COVERAGE['completed']), 72)
-        self.assertEqual(len(COVERAGE['manual']), 6)
+        self.assertEqual(len(COVERAGE['completed']), 75)
+        self.assertEqual(len(COVERAGE['manual']), 3)
         self.assertEqual(len(PLAN['additionsSha256']), 1361)
-        self.assertEqual(len(PLAN['resultSha256']), 65)
+        self.assertEqual(len(PLAN['resultSha256']), 67)
         expected = dict(PLAN['upstreamUnchangedSha256'], **PLAN['resultSha256'], **PLAN['additionsSha256'])
         actual = {p.relative_to(self.project).as_posix(): migration.digest(p)
                   for p in self.project.rglob('*') if p.is_file()}
@@ -60,7 +60,7 @@ class FullMigrationTest(unittest.TestCase):
     def test_unmodified_methods_including_new_upstream_features_preserved(self):
         allowed = {item['new'] for item in COVERAGE['completed']}
         allowed.update(item['target'] for item in PLAN.get('followUpMethods', []))
-        allowed.update(item['target'] for item in COVERAGE['manual'])
+        allowed.update(item['target'] for item in COVERAGE['manual'] if item.get('target'))
         retained = 0
         seen_changes = set()
         with tarfile.open(SNAPSHOT / 'apktool-source.tar.gz') as archive:

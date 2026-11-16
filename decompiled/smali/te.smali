@@ -241,7 +241,7 @@
 
     .line 92
     :lbl_6
-    invoke-static {v0, v3, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {v0, v3, v1}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     .line 93
     .line 94
@@ -402,7 +402,7 @@
     .line 159
     .line 160
     :lbl_10
-    invoke-static {v0, v3, v1}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    return-void
 
     .line 161
     :lbl_11

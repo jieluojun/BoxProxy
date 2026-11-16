@@ -594,7 +594,7 @@
     .line 181
     .line 182
     :lbl_14
-    invoke-static {v0, v3, v8}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {v0, v3, v8}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     .line 183
     .line 184
@@ -608,7 +608,7 @@
     .line 188
     .line 189
     :lbl_15
-    invoke-static {v0, v3, v8}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    sget v0, Lcom/box/app/notification/BoxPersistentNotificationService;->r:I
 
     .line 190
     .line 191

@@ -111,6 +111,7 @@
 # virtual methods
 .method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 11
+    invoke-static {p1, v5}, Lcom/box/app/cfg/CfgGlue;->replaceKeep(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 1
     iget-byte v0, p0, Lls5;->i:B
@@ -244,8 +245,10 @@
     invoke-virtual {p1, v5}, Lou0;->setText(Ljava/lang/CharSequence;)V
 
     .line 66
-    invoke-static {p1, v5}, Lcom/box/app/cfg/CfgGlue;->replaceKeep(Ljava/lang/Object;Ljava/lang/String;)V
-:lbl_2
+    .line 67
+    .line 68
+    :lbl_2
+    invoke-static {p1, v0, v4, v3}, Los5;->b(Lou0;Lcr5;Lfs5;Lar5;)V
 
     .line 69
     .line 70

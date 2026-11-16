@@ -708,11 +708,12 @@
 
     .line 243
     .line 244
-    invoke-virtual {v14}, Ljava/lang/Enum;->ordinal()I
+invoke-static {v14}, Lcom/box/app/vpn/VpnBridge;->key(Lab5;)I
 
     .line 245
     .line 246
-invoke-static {v14}, Lcom/box/app/vpn/VpnBridge;->key(Lab5;)I
+    .line 247
+    move-result v1
 
     .line 248
     invoke-virtual {v10, v1}, Lt82;->e(I)Z

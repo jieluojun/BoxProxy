@@ -140,6 +140,8 @@
 
     .line 33
     .line 34
+    move-object/from16 v0, p0
+    iget-object v15, v0, Lzi4;->p:Le72;
     const/16 p1, 0x20
 
     .line 35
@@ -510,8 +512,6 @@
     move-result-object p1
 
     .line 210
-    move-object/from16 v0, p0
-    iget-object v15, v0, Lzi4;->p:Le72;
     if-nez p0, :lbl_14
 
     .line 211

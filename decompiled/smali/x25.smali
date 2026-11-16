@@ -182,10 +182,11 @@
     const/4 v9, 0x0
 
     .line 68
-    const-string v10, ""
+    iget-object v10, v2, Ltb0;->h:Ljava/lang/String;
 
     .line 69
-    iget-object v10, v2, Ltb0;->h:Ljava/lang/String;
+    .line 70
+    const/4 v11, 0x0
 
     .line 71
     const/4 v12, 0x0

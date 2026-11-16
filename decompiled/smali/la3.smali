@@ -6532,10 +6532,10 @@
 
 .method public static final Z(Ljava/util/List;ZLl95;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)Ljava/util/List;
     .locals 6
-
-    .line 1
     invoke-static {p0, p3, p5}, Lcom/box/app/vpn/VpnPrefs;->filter(Ljava/util/List;Ljava/util/Map;Ljava/util/Map;)Ljava/util/List;
     move-result-object p0
+
+    .line 1
     sget-object v0, Ll95;->k:Ll95;
 
     .line 2

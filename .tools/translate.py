@@ -288,6 +288,8 @@ def nearest(mapping, idx, side):
 
 def fuzzy_anchor(b_line, t_inner, after=-1):
     """Fuzzy fallback: locate the closest t_body line for an unmapped b_body line."""
+    if RAW_NOISE.match(b_line):
+        return None  # never anchor on noise lines (.line/.local/...)
     bs = re.sub(r'\s+', ' ', b_line.strip())
     best, bi = 0.0, None
     for j, tl in enumerate(t_inner):
@@ -310,19 +312,22 @@ def fuzzy_window(b_lines, t_inner, after=-1):
         if j <= after:
             continue
         tot = 0.0
-        ok = True
+        n = 0
         for k, bl in enumerate(bnorm):
+            if RAW_NOISE.match(b_lines[k]):
+                continue  # noise: wildcard, neither fails nor scores the window
             jj = j - 1 + k  # window centered so b_lines[-1] aligns with j
             if jj < 0 or jj >= len(t_inner):
                 continue
             r = difflib.SequenceMatcher(None, bl, re.sub(r'\s+', ' ', t_inner[jj].strip())).ratio()
             if r < 0.35:
-                ok = False
+                n = 0
                 break
             tot += r
-        if ok and len(bnorm) == 1:
-            tot /= 1
-        mean = tot / max(len(bnorm), 1)
+            n += 1
+        if not n:
+            continue
+        mean = tot / n
         if mean > best:
             best, bi = mean, j
     return bi if best >= 0.55 else None
@@ -570,6 +575,18 @@ def merge_anchor(out_text, cls, sig, target, b_text, o_text, ctx):
         left_b = i1 - 1  # last B body line before the hunk
         right_b = i2     # first B body line after the hunk
         t_inner = t_body[1:-1]
+        if tag != 'insert':
+            # exact-match anchor: the B hunk lines survive verbatim (stripped) in T
+            seg = [l.strip() for l in b_body[i1:i2]]
+            hits = [j for j in range(len(t_inner) - len(seg) + 1)
+                    if [x.strip() for x in t_inner[j:j + len(seg)]] == seg]
+            if len(hits) == 1:
+                j0 = hits[0]
+                new_lines = [translate_line(l, f'{cls}.{sig}') for l in o_body[j1:j2]]
+                edits.append((j0 + 1, j0 + 1 + len(seg), new_lines))
+                report['appliedHunks'] += 1
+                t_cursor = j0 + len(seg)
+                continue
         t_left = nearest(mapping, left_b, 'left') if left_b >= 0 else None
         if t_left is None and left_b >= 0:
             fl = fuzzy_anchor(b_body[left_b], t_inner, after=t_cursor - 2)

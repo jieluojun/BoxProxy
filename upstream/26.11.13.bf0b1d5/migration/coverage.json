@@ -91,12 +91,24 @@
    "old": "Lhf1;->onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V"
   },
   {
+   "new": "Luk;->s(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lhl;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
    "new": "Lvh4;-><init>(Luh4;)V",
    "old": "Lib4;-><init>(Lhb4;)V"
   },
   {
    "new": "Lyj6;->invoke()Ljava/lang/Object;",
    "old": "Lie6;->invoke()Ljava/lang/Object;"
+  },
+  {
+   "new": "Ld42;->o(Lq91;)Ljava/lang/Enum;",
+   "old": "Liw1;->p(Lz81;)Ljava/lang/Enum;"
+  },
+  {
+   "new": "Ld42;->u(Lq91;)Ljava/lang/Enum;",
+   "old": "Liw1;->v(Lz81;)Ljava/lang/Enum;"
   },
   {
    "new": "Lx25;->invoke(Ljava/lang/Object;)Ljava/lang/Object;",
@@ -310,38 +322,18 @@
    "key": "Lbf0;->m(ZZZLpy4;ZZZZLos4;Lp62;Lp62;Lp62;Lp62;Lp62;Lp62;Lp62;Lp62;Le62;Lz11;I)V",
    "reason": "HOOK_SITE",
    "resolution": "Applied hook-site patch: custom dispatch inserted at upstream call site",
-   "target": "Lp06;->m(ZZZLpy4;ZZZZLos4;Lp62;Lp62;Lp62;Lp62;Lp62;Lp62;Lp62;Lp62;Le62;Lz11;I)V"
-  },
-  {
-   "key": "Lhl;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
-   "reason": "NO_TARGET",
-   "resolution": "Applied method-local customization; current upstream method retained",
-   "target": "Luk;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
-  },
-  {
-   "key": "Liw1;->p(Lz81;)Ljava/lang/Enum;",
-   "reason": "NO_TARGET",
-   "resolution": "Applied method-local customization; current upstream method retained",
-   "target": "Ld42;->p(Lz81;)Ljava/lang/Enum;"
-  },
-  {
-   "key": "Liw1;->v(Lz81;)Ljava/lang/Enum;",
-   "reason": "NO_TARGET",
-   "resolution": "Applied method-local customization; current upstream method retained",
-   "target": "Ld42;->v(Lz81;)Ljava/lang/Enum;"
+   "target": "Lp06;->L(ZZZZLc55;ZZZZLp72;Lp72;Lp72;Lp72;Lp72;Lp72;Lp72;Lp72;Le72;Lt82;)Ljava/util/List;"
   },
   {
    "key": "Lzx4;-><init>(Ljava/util/List;Ljava/lang/String;Log3;Le55;Lmt3;Lmt3;Lmt3;Ljava/lang/String;Lgw4;Landroid/content/Context;Ljava/lang/String;Lp62;Ljava/lang/String;Log3;Lmt3;Lmt3;Lmt3;Lmt3;)V",
    "reason": "UPSTREAM_CLASS_REMOVED",
-   "resolution": "Custom class retained under its original name; upstream removed it",
-   "target": "Lzx4;-><init>(Ljava/util/List;Ljava/lang/String;Log3;Le55;Lmt3;Lmt3;Lmt3;Ljava/lang/String;Lgw4;Landroid/content/Context;Ljava/lang/String;Lp62;Ljava/lang/String;Log3;Lmt3;Lmt3;Lmt3;Lmt3;)V"
+   "resolution": "Upstream removed this class; the method-local customization has no target",
+   "target": null
   }
  ],
  "manualTargets": {
   "LAppApplication;": "Lcom/box/app/AppApplication;",
-  "Lbf0;": "Lp06;",
-  "Lhl;": "Luk;",
-  "Liw1;": "Ld42;"
+  "Lbf0;": "Lp06;"
  },
  "mappingPolicy": "Exact normalized upstream bodies only for whole-method ports; method-local edits for changed implementations. Global Toast->FToast substitution on upstream files. Resources remapped by (type,name) from public.xml; custom string ids appended from 0x7f0f0508. Class/member translation applied once to avoid double mapping.",
  "pending": []

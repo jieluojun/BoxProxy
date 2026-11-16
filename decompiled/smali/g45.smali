@@ -49,6 +49,13 @@
 # virtual methods
 .method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 12
+    const v8, 0x7f0f0539
+    invoke-static {v8, v14}, Lla3;->e0(ILt82;)Ljava/lang/String;
+    move-result-object v8
+    sget-object v9, Lcom/box/app/vpn/RestoreCfg;->MENU:Lcom/box/app/vpn/RestoreCfg;
+    new-instance v10, Lfs4;
+    invoke-direct {v10, v8, v9}, Lfs4;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+    filled-new-array {v3, v1, v4, v10}, [Lfs4;
 
     .line 1
     iget-byte v0, p0, Lg45;->i:B
@@ -329,13 +336,9 @@
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
     .line 133
-    const v8, 0x7f0f0539
-    invoke-static {v8, v14}, Lla3;->e0(ILt82;)Ljava/lang/String;
-    move-result-object v8
-    sget-object v9, Lcom/box/app/vpn/RestoreCfg;->MENU:Lcom/box/app/vpn/RestoreCfg;
-    new-instance v10, Lfs4;
-    invoke-direct {v10, v8, v9}, Lfs4;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
-    filled-new-array {v3, v1, v4, v10}, [Lfs4;
+    .line 134
+    .line 135
+    move-result p2
 
     .line 136
     if-eqz p2, :lbl_12

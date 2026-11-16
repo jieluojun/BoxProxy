@@ -10914,6 +10914,13 @@
 
 .method private final s(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 12
+const v0, 0x7f0f0539
+invoke-static {v0, v1}, Lla3;->e0(ILt82;)Ljava/lang/String;
+move-result-object v0
+new-instance v5, Lfs4;
+sget-object v10, Lcom/box/app/vpn/RestoreCfg;->MENU:Lcom/box/app/vpn/RestoreCfg;
+invoke-direct {v5, v0, v10}, Lfs4;-><init>(Ljava/lang/Object;Ljava/lang/Object;)V
+filled-new-array {v2, v4, v3, v5}, [Lfs4;
 
     .line 1
     iget-object v0, p0, Luk;->k:Ljava/lang/Object;
@@ -10979,21 +10986,21 @@
     const/4 v2, 0x1
 
     .line 32
-    if-eq p1, p3, :cond_0
+    if-eq p1, p3, :lbl_0
 
     .line 33
     .line 34
     move p1, v2
 
     .line 35
-    goto :goto_0
+    goto :lbl_1
 
     .line 36
-    :cond_0
+    :lbl_0
     const/4 p1, 0x0
 
     .line 37
-    :goto_0
+    :lbl_1
     and-int/2addr p2, v2
 
     .line 38
@@ -11005,7 +11012,7 @@
     move-result p1
 
     .line 42
-    if-eqz p1, :cond_1
+    if-eqz p1, :lbl_2
 
     .line 43
     .line 44
@@ -11142,16 +11149,16 @@
     .line 111
     .line 112
     .line 113
-    goto :goto_1
+    goto :lbl_3
 
     .line 114
-    :cond_1
+    :lbl_2
     invoke-virtual {v9}, Lt82;->V()V
 
     .line 115
     .line 116
     .line 117
-    :goto_1
+    :lbl_3
     sget-object p0, Ll97;->a:Ll97;
 
     .line 118

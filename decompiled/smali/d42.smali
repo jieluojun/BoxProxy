@@ -11400,7 +11400,7 @@
 
     .line 2
     .line 3
-    if-eqz v0, :cond_0
+    if-eqz v0, :lbl_0
 
     .line 4
     .line 5
@@ -11423,7 +11423,7 @@
 
     .line 13
     .line 14
-    if-eqz v3, :cond_0
+    if-eqz v3, :lbl_0
 
     .line 15
     .line 16
@@ -11434,10 +11434,10 @@
 
     .line 18
     .line 19
-    goto :goto_0
+    goto :lbl_1
 
     .line 20
-    :cond_0
+    :lbl_0
     new-instance v0, Lcj4;
 
     .line 21
@@ -11447,7 +11447,7 @@
     .line 23
     .line 24
     .line 25
-    :goto_0
+    :lbl_1
     iget-object p0, v0, Lcj4;->i:Ljava/lang/Object;
 
     .line 26
@@ -11462,11 +11462,11 @@
     const/4 v2, 0x1
 
     .line 31
-    if-eqz p1, :cond_2
+    if-eqz p1, :lbl_3
 
     .line 32
     .line 33
-    if-ne p1, v2, :cond_1
+    if-ne p1, v2, :lbl_2
 
     .line 34
     .line 35
@@ -11475,10 +11475,10 @@
     .line 36
     .line 37
     .line 38
-    goto :goto_1
+    goto :lbl_5
 
     .line 39
-    :cond_1
+    :lbl_2
     const-string p0, "call to \'resume\' before \'invoke\' with coroutine"
 
     .line 40
@@ -11491,7 +11491,7 @@
     return-object v1
 
     .line 45
-    :cond_2
+    :lbl_3
     invoke-static {p0}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 46
@@ -11537,15 +11537,15 @@
 
     .line 67
     .line 68
-    if-ne p0, p1, :cond_3
+    if-ne p0, p1, :lbl_4
 
     .line 69
     .line 70
     return-object p1
 
     .line 71
-    :cond_3
-    :goto_1
+    :lbl_4
+    :lbl_5
     check-cast p0, Ljava/lang/Boolean;
 
     .line 72
@@ -11558,7 +11558,7 @@
     move-result p0
 
     .line 77
-    if-eqz p0, :cond_4
+    if-eqz p0, :lbl_6
 
     .line 78
     .line 79
@@ -11569,8 +11569,8 @@
     return-object p0
 
     .line 82
-    :cond_4
-    sget-object p0, Lik5;->k:Lik5;
+    :lbl_6
+    sget-object p0, Lik5;->j:Lik5;
 
     .line 83
     .line 84
@@ -12170,7 +12170,7 @@
 
     .line 2
     .line 3
-    if-eqz v0, :cond_0
+    if-eqz v0, :lbl_0
 
     .line 4
     .line 5
@@ -12193,7 +12193,7 @@
 
     .line 13
     .line 14
-    if-eqz v3, :cond_0
+    if-eqz v3, :lbl_0
 
     .line 15
     .line 16
@@ -12204,10 +12204,10 @@
 
     .line 18
     .line 19
-    goto :goto_0
+    goto :lbl_1
 
     .line 20
-    :cond_0
+    :lbl_0
     new-instance v0, Ldj4;
 
     .line 21
@@ -12217,7 +12217,7 @@
     .line 23
     .line 24
     .line 25
-    :goto_0
+    :lbl_1
     iget-object p0, v0, Ldj4;->i:Ljava/lang/Object;
 
     .line 26
@@ -12229,11 +12229,11 @@
     const/4 v1, 0x1
 
     .line 30
-    if-eqz p1, :cond_2
+    if-eqz p1, :lbl_3
 
     .line 31
     .line 32
-    if-ne p1, v1, :cond_1
+    if-ne p1, v1, :lbl_2
 
     .line 33
     .line 34
@@ -12242,10 +12242,10 @@
     .line 35
     .line 36
     .line 37
-    goto :goto_1
+    goto :lbl_5
 
     .line 38
-    :cond_1
+    :lbl_2
     const-string p0, "call to \'resume\' before \'invoke\' with coroutine"
 
     .line 39
@@ -12261,7 +12261,7 @@
     return-object p0
 
     .line 45
-    :cond_2
+    :lbl_3
     invoke-static {p0}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 46
@@ -12287,15 +12287,15 @@
 
     .line 57
     .line 58
-    if-ne p0, p1, :cond_3
+    if-ne p0, p1, :lbl_4
 
     .line 59
     .line 60
     return-object p1
 
     .line 61
-    :cond_3
-    :goto_1
+    :lbl_4
+    :lbl_5
     check-cast p0, Ljava/lang/Boolean;
 
     .line 62
@@ -12308,7 +12308,7 @@
     move-result p0
 
     .line 67
-    if-eqz p0, :cond_4
+    if-eqz p0, :lbl_6
 
     .line 68
     .line 69
@@ -12319,8 +12319,8 @@
     return-object p0
 
     .line 72
-    :cond_4
-    sget-object p0, Lik5;->k:Lik5;
+    :lbl_6
+    sget-object p0, Lik5;->j:Lik5;
 
     .line 73
     .line 74

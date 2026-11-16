@@ -259,8 +259,6 @@
 
 .method public static f(JLp91;Ljava/lang/String;)Ljava/lang/Object;
     .locals 3
-
-    .line 1
     invoke-static {p3}, Lcom/box/app/vpn/VpnRoot;->skip(Ljava/lang/String;)Z
     move-result v0
     if-eqz v0, :lbl_0
@@ -270,6 +268,8 @@
     invoke-direct {v0, v1, v2, v2}, Lmk5;-><init>(ILjava/lang/String;Ljava/lang/String;)V
     return-object v0
     :lbl_0
+
+    .line 1
     invoke-static {p3}, Lul;->K(Ljava/lang/Object;)Ljava/util/List;
 
     .line 2
@@ -617,6 +617,10 @@
     new-instance v1, Lnk5;
 
     .line 143
+    .line 144
+    invoke-direct {v1, p0}, Lnk5;-><init>(Lu86;)V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     .line 145
     .line 146

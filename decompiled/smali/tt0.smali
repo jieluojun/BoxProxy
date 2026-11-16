@@ -424,25 +424,6 @@
     const/16 v22, 0x76
 
     .line 129
-invoke-static/range {v16 .. v25}, Lp06;->o(ZLp72;Ljava/lang/String;Ljava/lang/String;Lnz0;ZLt82;III)V
-invoke-virtual {v2, v11}, Lt82;->r(Z)V
-const v4, 0x13f2fb70
-invoke-virtual {v2, v4}, Lt82;->b0(I)V
-const v4, 0x7f0f0544
-invoke-static {v4, v2}, Lla3;->e0(ILt82;)Ljava/lang/String;
-move-result-object v18
-const v4, 0x7f0f0543
-invoke-static {v4, v2}, Lla3;->e0(ILt82;)Ljava/lang/String;
-move-result-object v19
-invoke-static {}, Lcom/box/app/vpn/BattToggle;->create()Lcom/box/app/vpn/BattToggle;
-move-result-object v17
-invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->battOn()Z
-move-result v16
-const/16 v24, 0x0
-const/16 v25, 0x3f58
-const/16 v21, 0x0
-const/high16 v23, 0xc00000
-move-object/from16 v22, v2
     .line 130
     const/16 v19, 0x0
 
@@ -734,6 +715,25 @@ move-object/from16 v22, v2
 
     .line 272
     .line 273
+invoke-static/range {v16 .. v25}, Lp06;->o(ZLp72;Ljava/lang/String;Ljava/lang/String;Lnz0;ZLt82;III)V
+invoke-virtual {v2, v11}, Lt82;->r(Z)V
+const v4, 0x13f2fb70
+invoke-virtual {v2, v4}, Lt82;->b0(I)V
+const v4, 0x7f0f0544
+invoke-static {v4, v2}, Lla3;->e0(ILt82;)Ljava/lang/String;
+move-result-object v18
+const v4, 0x7f0f0543
+invoke-static {v4, v2}, Lla3;->e0(ILt82;)Ljava/lang/String;
+move-result-object v19
+invoke-static {}, Lcom/box/app/vpn/BattToggle;->create()Lcom/box/app/vpn/BattToggle;
+move-result-object v17
+invoke-static {}, Lcom/box/app/vpn/VpnPrefs;->battOn()Z
+move-result v16
+const/16 v24, 0x0
+const/16 v25, 0x3f58
+const/16 v21, 0x0
+const/high16 v23, 0xc00000
+move-object/from16 v22, v2
     invoke-static/range {v15 .. v24}, Ly93;->C(ZLp72;Ljava/lang/String;Ljava/lang/String;Lnz0;ZLt82;III)V
 
     .line 274

@@ -67,9 +67,11 @@ def main():
             manual_targets[f'L{cls};'] = f'L{v["class"]};'
             continue
         if str(v.get('how', '')).startswith('HOOK-SITE') or v.get('how') == 'hook-site':
+            bf0_sig = ('L(ZZZZLc55;ZZZZLp72;Lp72;Lp72;Lp72;Lp72;Lp72;Lp72;Lp72;'
+                       'Le72;Lt82;)Ljava/util/List;')
             manual.append({
                 'key': f'L{cls};->{sig}',
-                'target': f'L{v["class"]};->{sig}',
+                'target': f'L{v["class"]};->{bf0_sig}',
                 'reason': 'HOOK_SITE',
                 'resolution': 'Applied hook-site patch: custom dispatch inserted at upstream call site',
             })
@@ -87,9 +89,9 @@ def main():
         if cls not in cmap:
             manual.append({
                 'key': f'L{cls};->{sig}',
-                'target': f'L{cls};->{sig}',
+                'target': None,
                 'reason': 'UPSTREAM_CLASS_REMOVED',
-                'resolution': 'Custom class retained under its original name; upstream removed it',
+                'resolution': 'Upstream removed this class; the method-local customization has no target',
             })
             continue
         manual.append({

@@ -689,10 +689,12 @@
     move-result-object v0
 
     .line 70
-    invoke-static {v12, v0, v11}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {v12, v0, v11}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     .line 71
-    invoke-static {v12, v0, v11}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    .line 72
+    .line 73
+    move-result-object v0
 
     .line 74
     invoke-virtual {v0}, Landroid/widget/Toast;->show()V

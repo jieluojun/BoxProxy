@@ -1015,6 +1015,7 @@
     iput-boolean v0, p0, Les5;->cfgD:Z
     xor-int/lit8 v1, v1, 0x1
     iget-object p0, p0, Les5;->k:Li86;
+    invoke-static {p0, p1, v0, v1}, Lcom/box/app/cfg/CfgDefer;->post(Li86;Lp72;Ljava/lang/String;Z)V
 
     .line 31
     .line 32
@@ -1022,7 +1023,7 @@
 
     .line 33
     .line 34
-    invoke-static {p0, p1, v0, v1}, Lcom/box/app/cfg/CfgDefer;->post(Li86;Lp72;Ljava/lang/String;Z)V
+    invoke-virtual {p0, p1, v0}, Li86;->g(Lp72;Ljava/lang/String;)V
 
     .line 35
     .line 36

@@ -252,6 +252,12 @@
 
     .line 85
     .line 86
+    invoke-static {v1}, Lcom/box/app/vpn/VpnBridge;->modeRes(Lab5;)I
+    move-result v1
+    if-eqz v1, :lbl_7
+    goto :lbl_20
+    :lbl_7
+    iget-object v1, p2, Lra5;->b:Lab5;
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     .line 87
@@ -266,23 +272,23 @@
     const/4 v6, 0x3
 
     .line 92
-    if-eqz v1, :lbl_11
+    if-eqz v1, :lbl_12
 
     .line 93
     .line 94
-    if-eq v1, v4, :lbl_10
+    if-eq v1, v4, :lbl_11
 
     .line 95
     .line 96
-    if-eq v1, v3, :lbl_9
+    if-eq v1, v3, :lbl_10
 
     .line 97
     .line 98
-    if-eq v1, v6, :lbl_8
+    if-eq v1, v6, :lbl_9
 
     .line 99
     .line 100
-    if-ne v1, v5, :lbl_7
+    if-ne v1, v5, :lbl_8
 
     .line 101
     .line 102
@@ -291,10 +297,10 @@
     .line 103
     .line 104
     .line 105
-    goto :lbl_12
+    goto :lbl_13
 
     .line 106
-    :lbl_7
+    :lbl_8
     invoke-static {}, Lnf1;->c()V
 
     .line 107
@@ -303,40 +309,40 @@
     return-object v2
 
     .line 110
-    :lbl_8
+    :lbl_9
     const v1, 0x7f0f0336
 
     .line 111
     .line 112
     .line 113
-    goto :lbl_12
+    goto :lbl_13
 
     .line 114
-    :lbl_9
+    :lbl_10
     const v1, 0x7f0f0337
 
     .line 115
     .line 116
     .line 117
-    goto :lbl_12
+    goto :lbl_13
 
     .line 118
-    :lbl_10
+    :lbl_11
     const v1, 0x7f0f0333
 
     .line 119
     .line 120
     .line 121
-    goto :lbl_12
+    goto :lbl_13
 
     .line 122
-    :lbl_11
+    :lbl_12
     const v1, 0x7f0f0331
 
     .line 123
     .line 124
     .line 125
-    :lbl_12
+    :lbl_13
     new-instance v7, Ljava/lang/Integer;
 
     .line 126
@@ -371,12 +377,6 @@
 
     .line 142
     .line 143
-    invoke-static {v1}, Lcom/box/app/vpn/VpnBridge;->modeRes(Lab5;)I
-    move-result v1
-    if-eqz v1, :lbl_13
-    goto :lbl_20
-    :lbl_13
-    iget-object v1, p2, Lra5;->b:Lab5;
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     .line 144

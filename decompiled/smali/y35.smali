@@ -67,6 +67,7 @@
 # virtual methods
 .method public final a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 27
+invoke-static {v7}, Lcom/box/app/vpn/VpnBridge;->key(Lab5;)I
 
     .line 1
     move-object/from16 v0, p0
@@ -285,7 +286,7 @@
     .line 102
     .line 103
     .line 104
-invoke-static {v7}, Lcom/box/app/vpn/VpnBridge;->key(Lab5;)I
+    move-result v13
 
     .line 105
     invoke-virtual {v15, v13}, Lt82;->e(I)Z

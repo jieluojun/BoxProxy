@@ -1100,9 +1100,6 @@
 
     .line 414
     .line 415
-iget-object v7, v0, Lqr5;->l:Landroid/content/Context;
-invoke-static {v4, v3, v7}, Lcom/box/app/cfg/CfgNav;->wrap(Lt72;Les5;Landroid/content/Context;)Lt72;
-move-result-object v4
     const/4 v9, 0x1
 
     .line 416
@@ -1597,6 +1594,9 @@ move-result-object v2
     const/4 v15, 0x0
 
     .line 661
+iget-object v7, v0, Lqr5;->l:Landroid/content/Context;
+invoke-static {v4, v3, v7}, Lcom/box/app/cfg/CfgNav;->wrap(Lt72;Les5;Landroid/content/Context;)Lt72;
+move-result-object v4
     const/16 v17, 0xd86
 
     .line 662

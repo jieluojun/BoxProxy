@@ -623,7 +623,7 @@
 
     .line 42
     .line 43
-    goto :lbl_5
+    goto :lbl_7
 
     .line 44
     :lbl_0
@@ -635,7 +635,7 @@
     move-object v15, v5
 
     .line 48
-    goto/16 :lbl_17
+    goto/16 :lbl_19
 
     .line 49
     .line 50
@@ -649,7 +649,7 @@
 
     .line 54
     .line 55
-    goto :lbl_3
+    goto :lbl_5
 
     .line 56
     :lbl_2
@@ -662,6 +662,20 @@
 
     .line 60
     .line 61
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z
+    move-result v1
+    if-eqz v1, :lbl_4
+    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->applyNow()Ljava/lang/String;
+    move-result-object v1
+    if-nez v1, :lbl_3
+    new-instance v15, Lub0;
+    invoke-direct {v15, v4, v12, v5}, Lub0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
+    goto/16 :lbl_162
+    :lbl_3
+    new-instance v15, Lub0;
+    invoke-direct {v15, v3, v5, v1}, Lub0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
+    goto/16 :lbl_162
+    :lbl_4
     iput-byte v3, v0, Lwb0;->j:B
 
     .line 62
@@ -695,11 +709,11 @@
     move-result-object v1
 
     .line 78
-    if-eq v1, v15, :lbl_16
+    if-eq v1, v15, :lbl_18
 
     .line 79
     .line 80
-    :lbl_3
+    :lbl_5
     check-cast v1, Ljava/lang/Boolean;
 
     .line 81
@@ -712,7 +726,7 @@
     move-result v1
 
     .line 86
-    if-nez v1, :lbl_4
+    if-nez v1, :lbl_6
 
     .line 87
     .line 88
@@ -742,11 +756,11 @@
     .line 100
     .line 101
     .line 102
-    goto/16 :lbl_17
+    goto/16 :lbl_19
 
     .line 103
     .line 104
-    :lbl_4
+    :lbl_6
     sget-object v1, Llk6;->a:Llk6;
 
     .line 105
@@ -763,11 +777,11 @@
     move-result-object v0
 
     .line 112
-    if-eq v0, v15, :lbl_16
+    if-eq v0, v15, :lbl_18
 
     .line 113
     .line 114
-    :lbl_5
+    :lbl_7
     check-cast v0, Ljava/util/Map;
 
     .line 115
@@ -793,7 +807,7 @@
     .line 125
     .line 126
     .line 127
-    if-eqz v1, :lbl_15
+    if-eqz v1, :lbl_17
 
     .line 128
     .line 129
@@ -813,7 +827,7 @@
 
     .line 136
     .line 137
-    if-eqz v6, :lbl_6
+    if-eqz v6, :lbl_8
 
     .line 138
     .line 139
@@ -825,20 +839,20 @@
     move-result v6
 
     .line 143
-    if-gt v3, v6, :lbl_6
+    if-gt v3, v6, :lbl_8
 
     .line 144
     .line 145
-    if-lt v6, v7, :lbl_7
+    if-lt v6, v7, :lbl_9
 
     .line 146
     .line 147
-    :lbl_6
+    :lbl_8
     move-object v1, v5
 
     .line 148
-    :lbl_7
-    if-eqz v1, :lbl_15
+    :lbl_9
+    if-eqz v1, :lbl_17
 
     .line 149
     .line 150
@@ -862,7 +876,7 @@
 
     .line 159
     .line 160
-    if-eqz v6, :lbl_10
+    if-eqz v6, :lbl_12
 
     .line 161
     .line 162
@@ -878,7 +892,7 @@
     move-result v6
 
     .line 168
-    if-ne v6, v3, :lbl_10
+    if-ne v6, v3, :lbl_12
 
     .line 169
     .line 170
@@ -898,7 +912,7 @@
 
     .line 177
     .line 178
-    if-eqz v0, :lbl_9
+    if-eqz v0, :lbl_11
 
     .line 179
     .line 180
@@ -914,15 +928,15 @@
     move-result v6
 
     .line 186
-    if-nez v6, :lbl_8
+    if-nez v6, :lbl_10
 
     .line 187
     .line 188
     move-object v0, v5
 
     .line 189
-    :lbl_8
-    if-eqz v0, :lbl_9
+    :lbl_10
+    if-eqz v0, :lbl_11
 
     .line 190
     .line 191
@@ -946,10 +960,10 @@
     move-result-object v0
 
     .line 201
-    goto :lbl_13
+    goto :lbl_15
 
     .line 202
-    :lbl_9
+    :lbl_11
     new-instance v15, Lik6;
 
     .line 203
@@ -971,10 +985,10 @@
     .line 211
     .line 212
     .line 213
-    goto :lbl_17
+    goto :lbl_19
 
     .line 214
-    :lbl_10
+    :lbl_12
     const-string v6, "SUB_STORE_FRONTEND_PORT"
 
     .line 215
@@ -991,7 +1005,7 @@
 
     .line 221
     .line 222
-    if-eqz v0, :lbl_14
+    if-eqz v0, :lbl_16
 
     .line 223
     .line 224
@@ -1003,7 +1017,7 @@
     move-result-object v6
 
     .line 228
-    if-eqz v6, :lbl_11
+    if-eqz v6, :lbl_13
 
     .line 229
     .line 230
@@ -1015,20 +1029,20 @@
     move-result v6
 
     .line 234
-    if-gt v3, v6, :lbl_11
+    if-gt v3, v6, :lbl_13
 
     .line 235
     .line 236
-    if-lt v6, v7, :lbl_12
+    if-lt v6, v7, :lbl_14
 
     .line 237
     .line 238
-    :lbl_11
+    :lbl_13
     move-object v0, v5
 
     .line 239
-    :lbl_12
-    if-eqz v0, :lbl_14
+    :lbl_14
+    if-eqz v0, :lbl_16
 
     .line 240
     .line 241
@@ -1044,7 +1058,7 @@
     move-result-object v0
 
     .line 247
-    :lbl_13
+    :lbl_15
     new-instance v15, Lik6;
 
     .line 248
@@ -1054,10 +1068,10 @@
     .line 250
     .line 251
     .line 252
-    goto :lbl_17
+    goto :lbl_19
 
     .line 253
-    :lbl_14
+    :lbl_16
     new-instance v15, Lik6;
 
     .line 254
@@ -1079,10 +1093,10 @@
     .line 262
     .line 263
     .line 264
-    goto :lbl_17
+    goto :lbl_19
 
     .line 265
-    :lbl_15
+    :lbl_17
     new-instance v15, Lik6;
 
     .line 266
@@ -1104,29 +1118,29 @@
     .line 274
     .line 275
     .line 276
-    :lbl_16
-    :lbl_17
+    :lbl_18
+    :lbl_19
     return-object v15
 
     .line 277
-    :lbl_18
+    :lbl_20
     iget-byte v1, v0, Lwb0;->j:B
 
     .line 278
     .line 279
-    if-eqz v1, :lbl_22
+    if-eqz v1, :lbl_24
 
     .line 280
     .line 281
-    if-eq v1, v3, :lbl_21
+    if-eq v1, v3, :lbl_23
 
     .line 282
     .line 283
-    if-eq v1, v4, :lbl_20
+    if-eq v1, v4, :lbl_22
 
     .line 284
     .line 285
-    if-ne v1, v10, :lbl_19
+    if-ne v1, v10, :lbl_21
 
     .line 286
     .line 287
@@ -1139,11 +1153,11 @@
 
     .line 291
     .line 292
-    goto/16 :lbl_30
+    goto/16 :lbl_32
 
     .line 293
     .line 294
-    :lbl_19
+    :lbl_21
     invoke-static {v14}, Lex1;->d(Ljava/lang/String;)V
 
     .line 295
@@ -1152,11 +1166,11 @@
     move-object v15, v5
 
     .line 298
-    goto/16 :lbl_34
+    goto/16 :lbl_36
 
     .line 299
     .line 300
-    :lbl_20
+    :lbl_22
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 301
@@ -1166,10 +1180,10 @@
 
     .line 304
     .line 305
-    goto :lbl_26
+    goto :lbl_28
 
     .line 306
-    :lbl_21
+    :lbl_23
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 307
@@ -1179,10 +1193,10 @@
 
     .line 310
     .line 311
-    goto :lbl_23
+    goto :lbl_25
 
     .line 312
-    :lbl_22
+    :lbl_24
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 313
@@ -1204,11 +1218,11 @@
     move-result-object v1
 
     .line 323
-    if-eq v1, v15, :lbl_33
+    if-eq v1, v15, :lbl_35
 
     .line 324
     .line 325
-    :lbl_23
+    :lbl_25
     check-cast v1, Lub0;
 
     .line 326
@@ -1217,7 +1231,7 @@
 
     .line 328
     .line 329
-    if-nez v2, :lbl_25
+    if-nez v2, :lbl_27
 
     .line 330
     .line 331
@@ -1229,7 +1243,7 @@
 
     .line 334
     .line 335
-    if-nez v0, :lbl_24
+    if-nez v0, :lbl_26
 
     .line 336
     .line 337
@@ -1245,16 +1259,16 @@
     move-result-object v0
 
     .line 343
-    :lbl_24
+    :lbl_26
     invoke-direct {v15, v3, v5, v0}, Lcb4;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
 
     .line 344
     .line 345
     .line 346
-    goto :lbl_34
+    goto :lbl_36
 
     .line 347
-    :lbl_25
+    :lbl_27
     sget-object v1, Lwk5;->a:Lwk5;
 
     .line 348
@@ -1287,11 +1301,11 @@
     move-result-object v1
 
     .line 363
-    if-eq v1, v15, :lbl_33
+    if-eq v1, v15, :lbl_35
 
     .line 364
     .line 365
-    :lbl_26
+    :lbl_28
     check-cast v1, Lmk5;
 
     .line 366
@@ -1304,7 +1318,7 @@
     move-result v2
 
     .line 371
-    if-nez v2, :lbl_29
+    if-nez v2, :lbl_31
 
     .line 372
     .line 373
@@ -1320,7 +1334,7 @@
     move-result v2
 
     .line 379
-    if-eqz v2, :lbl_27
+    if-eqz v2, :lbl_29
 
     .line 380
     .line 381
@@ -1328,7 +1342,7 @@
 
     .line 382
     .line 383
-    :lbl_27
+    :lbl_29
     invoke-static {v0}, Lsi6;->N0(Ljava/lang/CharSequence;)Z
 
     .line 384
@@ -1337,7 +1351,7 @@
     move-result v1
 
     .line 387
-    if-eqz v1, :lbl_28
+    if-eqz v1, :lbl_30
 
     .line 388
     .line 389
@@ -1358,7 +1372,7 @@
     move-result-object v0
 
     .line 398
-    :lbl_28
+    :lbl_30
     new-instance v15, Lcb4;
 
     .line 399
@@ -1368,10 +1382,10 @@
     .line 401
     .line 402
     .line 403
-    goto :lbl_34
+    goto :lbl_36
 
     .line 404
-    :lbl_29
+    :lbl_31
     sget-object v1, Lgc0;->a:Lgc0;
 
     .line 405
@@ -1388,11 +1402,11 @@
     move-result-object v0
 
     .line 412
-    if-eq v0, v15, :lbl_33
+    if-eq v0, v15, :lbl_35
 
     .line 413
     .line 414
-    :lbl_30
+    :lbl_32
     check-cast v0, Lub0;
 
     .line 415
@@ -1401,7 +1415,7 @@
 
     .line 417
     .line 418
-    if-nez v1, :lbl_32
+    if-nez v1, :lbl_34
 
     .line 419
     .line 420
@@ -1413,7 +1427,7 @@
 
     .line 423
     .line 424
-    if-nez v0, :lbl_31
+    if-nez v0, :lbl_33
 
     .line 425
     .line 426
@@ -1434,16 +1448,16 @@
     move-result-object v0
 
     .line 435
-    :lbl_31
+    :lbl_33
     invoke-direct {v15, v3, v5, v0}, Lcb4;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
 
     .line 436
     .line 437
     .line 438
-    goto :lbl_34
+    goto :lbl_36
 
     .line 439
-    :lbl_32
+    :lbl_34
     new-instance v15, Lcb4;
 
     .line 440
@@ -1453,25 +1467,25 @@
     .line 442
     .line 443
     .line 444
-    :lbl_33
-    :lbl_34
+    :lbl_35
+    :lbl_36
     return-object v15
 
     .line 445
-    :lbl_35
+    :lbl_37
     iget-byte v1, v0, Lwb0;->j:B
 
     .line 446
     .line 447
-    if-eqz v1, :lbl_38
+    if-eqz v1, :lbl_40
 
     .line 448
     .line 449
-    if-eq v1, v3, :lbl_37
+    if-eq v1, v3, :lbl_39
 
     .line 450
     .line 451
-    if-ne v1, v4, :lbl_36
+    if-ne v1, v4, :lbl_38
 
     .line 452
     .line 453
@@ -1480,10 +1494,10 @@
     .line 454
     .line 455
     .line 456
-    goto :lbl_46
+    goto :lbl_48
 
     .line 457
-    :lbl_36
+    :lbl_38
     invoke-static {v14}, Lex1;->d(Ljava/lang/String;)V
 
     .line 458
@@ -1492,19 +1506,19 @@
     move-object v12, v5
 
     .line 461
-    goto :lbl_46
+    goto :lbl_48
 
     .line 462
-    :lbl_37
+    :lbl_39
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 463
     .line 464
     .line 465
-    goto :lbl_41
+    goto :lbl_43
 
     .line 466
-    :lbl_38
+    :lbl_40
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 467
@@ -1538,7 +1552,7 @@
 
     .line 482
     .line 483
-    if-nez v2, :lbl_39
+    if-nez v2, :lbl_41
 
     .line 484
     .line 485
@@ -1550,20 +1564,20 @@
     move-result-object v1
 
     .line 489
-    if-eq v1, v15, :lbl_40
+    if-eq v1, v15, :lbl_42
 
     .line 490
     .line 491
-    :lbl_39
+    :lbl_41
     move-object v1, v12
 
     .line 492
-    :lbl_40
-    if-eq v1, v15, :lbl_44
+    :lbl_42
+    if-eq v1, v15, :lbl_46
 
     .line 493
     .line 494
-    :lbl_41
+    :lbl_43
     sget-object v1, Lol2;->a:Lol2;
 
     .line 495
@@ -1592,7 +1606,7 @@
 
     .line 507
     .line 508
-    if-nez v2, :lbl_42
+    if-nez v2, :lbl_44
 
     .line 509
     .line 510
@@ -1604,42 +1618,42 @@
     move-result-object v0
 
     .line 514
-    if-eq v0, v15, :lbl_43
+    if-eq v0, v15, :lbl_45
 
     .line 515
     .line 516
-    :lbl_42
+    :lbl_44
     move-object v0, v12
 
     .line 517
-    :lbl_43
-    if-ne v0, v15, :lbl_45
+    :lbl_45
+    if-ne v0, v15, :lbl_47
 
     .line 518
     .line 519
-    :lbl_44
+    :lbl_46
     move-object v12, v15
 
     .line 520
-    :lbl_45
-    :lbl_46
+    :lbl_47
+    :lbl_48
     return-object v12
 
     .line 521
-    :lbl_47
+    :lbl_49
     iget-byte v1, v0, Lwb0;->j:B
 
     .line 522
     .line 523
-    if-eqz v1, :lbl_50
+    if-eqz v1, :lbl_52
 
     .line 524
     .line 525
-    if-eq v1, v3, :lbl_49
+    if-eq v1, v3, :lbl_51
 
     .line 526
     .line 527
-    if-ne v1, v4, :lbl_48
+    if-ne v1, v4, :lbl_50
 
     .line 528
     .line 529
@@ -1648,10 +1662,10 @@
     .line 530
     .line 531
     .line 532
-    goto :lbl_54
+    goto :lbl_56
 
     .line 533
-    :lbl_48
+    :lbl_50
     invoke-static {v14}, Lex1;->d(Ljava/lang/String;)V
 
     .line 534
@@ -1660,19 +1674,19 @@
     move-object v12, v5
 
     .line 537
-    goto :lbl_54
+    goto :lbl_56
 
     .line 538
-    :lbl_49
+    :lbl_51
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 539
     .line 540
     .line 541
-    goto :lbl_51
+    goto :lbl_53
 
     .line 542
-    :lbl_50
+    :lbl_52
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 543
@@ -1694,11 +1708,11 @@
     move-result-object v1
 
     .line 553
-    if-eq v1, v15, :lbl_52
+    if-eq v1, v15, :lbl_54
 
     .line 554
     .line 555
-    :lbl_51
+    :lbl_53
     sget-object v1, Llr0;->a:Llr0;
 
     .line 556
@@ -1715,37 +1729,37 @@
     move-result-object v0
 
     .line 563
-    if-ne v0, v15, :lbl_53
+    if-ne v0, v15, :lbl_55
 
     .line 564
     .line 565
-    :lbl_52
+    :lbl_54
     move-object v12, v15
 
     .line 566
-    :lbl_53
-    :lbl_54
+    :lbl_55
+    :lbl_56
     return-object v12
 
     .line 567
-    :lbl_55
+    :lbl_57
     iget-byte v1, v0, Lwb0;->j:B
 
     .line 568
     .line 569
-    if-eqz v1, :lbl_59
+    if-eqz v1, :lbl_61
 
     .line 570
     .line 571
-    if-eq v1, v3, :lbl_58
+    if-eq v1, v3, :lbl_60
 
     .line 572
     .line 573
-    if-eq v1, v4, :lbl_57
+    if-eq v1, v4, :lbl_59
 
     .line 574
     .line 575
-    if-ne v1, v10, :lbl_56
+    if-ne v1, v10, :lbl_58
 
     .line 576
     .line 577
@@ -1758,10 +1772,10 @@
 
     .line 581
     .line 582
-    goto :lbl_64
+    goto :lbl_66
 
     .line 583
-    :lbl_56
+    :lbl_58
     invoke-static {v14}, Lex1;->d(Ljava/lang/String;)V
 
     .line 584
@@ -1770,11 +1784,11 @@
     move-object v15, v5
 
     .line 587
-    goto/16 :lbl_70
+    goto/16 :lbl_72
 
     .line 588
     .line 589
-    :lbl_57
+    :lbl_59
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 590
@@ -1784,10 +1798,10 @@
 
     .line 593
     .line 594
-    goto :lbl_61
+    goto :lbl_63
 
     .line 595
-    :lbl_58
+    :lbl_60
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 596
@@ -1797,10 +1811,10 @@
 
     .line 599
     .line 600
-    goto :lbl_60
+    goto :lbl_62
 
     .line 601
-    :lbl_59
+    :lbl_61
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 602
@@ -1835,11 +1849,11 @@
     move-result-object v1
 
     .line 619
-    if-eq v1, v15, :lbl_69
+    if-eq v1, v15, :lbl_71
 
     .line 620
     .line 621
-    :lbl_60
+    :lbl_62
     check-cast v1, Llc0;
 
     .line 622
@@ -1852,7 +1866,7 @@
 
     .line 626
     .line 627
-    if-ne v1, v3, :lbl_68
+    if-ne v1, v3, :lbl_70
 
     .line 628
     .line 629
@@ -1872,11 +1886,11 @@
     move-result-object v1
 
     .line 637
-    if-eq v1, v15, :lbl_69
+    if-eq v1, v15, :lbl_71
 
     .line 638
     .line 639
-    :lbl_61
+    :lbl_63
     check-cast v1, Lub0;
 
     .line 640
@@ -1885,7 +1899,7 @@
 
     .line 642
     .line 643
-    if-nez v2, :lbl_63
+    if-nez v2, :lbl_65
 
     .line 644
     .line 645
@@ -1897,7 +1911,7 @@
 
     .line 648
     .line 649
-    if-nez v0, :lbl_62
+    if-nez v0, :lbl_64
 
     .line 650
     .line 651
@@ -1913,16 +1927,16 @@
     move-result-object v0
 
     .line 657
-    :lbl_62
+    :lbl_64
     invoke-direct {v15, v3, v5, v0}, Lug0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
 
     .line 658
     .line 659
     .line 660
-    goto :lbl_70
+    goto :lbl_72
 
     .line 661
-    :lbl_63
+    :lbl_65
     sget-object v1, Lwk5;->a:Lwk5;
 
     .line 662
@@ -1951,11 +1965,11 @@
     move-result-object v0
 
     .line 675
-    if-eq v0, v15, :lbl_69
+    if-eq v0, v15, :lbl_71
 
     .line 676
     .line 677
-    :lbl_64
+    :lbl_66
     check-cast v0, Lmk5;
 
     .line 678
@@ -1968,7 +1982,7 @@
     move-result v1
 
     .line 683
-    if-nez v1, :lbl_67
+    if-nez v1, :lbl_69
 
     .line 684
     .line 685
@@ -1984,7 +1998,7 @@
     move-result v2
 
     .line 691
-    if-eqz v2, :lbl_65
+    if-eqz v2, :lbl_67
 
     .line 692
     .line 693
@@ -1992,7 +2006,7 @@
 
     .line 694
     .line 695
-    :lbl_65
+    :lbl_67
     invoke-static {v1}, Lsi6;->N0(Ljava/lang/CharSequence;)Z
 
     .line 696
@@ -2001,7 +2015,7 @@
     move-result v0
 
     .line 699
-    if-eqz v0, :lbl_66
+    if-eqz v0, :lbl_68
 
     .line 700
     .line 701
@@ -2022,7 +2036,7 @@
     move-result-object v1
 
     .line 710
-    :lbl_66
+    :lbl_68
     new-instance v15, Lug0;
 
     .line 711
@@ -2032,10 +2046,10 @@
     .line 713
     .line 714
     .line 715
-    goto :lbl_70
+    goto :lbl_72
 
     .line 716
-    :lbl_67
+    :lbl_69
     new-instance v15, Lug0;
 
     .line 717
@@ -2045,10 +2059,10 @@
     .line 719
     .line 720
     .line 721
-    goto :lbl_70
+    goto :lbl_72
 
     .line 722
-    :lbl_68
+    :lbl_70
     new-instance v15, Lug0;
 
     .line 723
@@ -2058,12 +2072,12 @@
     .line 725
     .line 726
     .line 727
-    :lbl_69
-    :lbl_70
+    :lbl_71
+    :lbl_72
     return-object v15
 
     .line 728
-    :lbl_71
+    :lbl_73
     iget-byte v1, v0, Lwb0;->j:B
 
     .line 729
@@ -2072,15 +2086,15 @@
 
     .line 731
     .line 732
-    if-eqz v1, :lbl_76
+    if-eqz v1, :lbl_78
 
     .line 733
     .line 734
-    if-eq v1, v3, :lbl_75
+    if-eq v1, v3, :lbl_77
 
     .line 735
     .line 736
-    if-ne v1, v4, :lbl_72
+    if-ne v1, v4, :lbl_74
 
     .line 737
     .line 738
@@ -2093,25 +2107,25 @@
 
     .line 742
     .line 743
-    goto :lbl_78
+    goto :lbl_80
 
     .line 744
-    :lbl_72
+    :lbl_74
     invoke-static {v14}, Lex1;->d(Ljava/lang/String;)V
 
     .line 745
     .line 746
     .line 747
-    :lbl_73
-    :lbl_74
+    :lbl_75
+    :lbl_76
     move-object v15, v5
 
     .line 748
-    goto/16 :lbl_90
+    goto/16 :lbl_92
 
     .line 749
     .line 750
-    :lbl_75
+    :lbl_77
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 751
@@ -2121,10 +2135,10 @@
 
     .line 754
     .line 755
-    goto :lbl_77
+    goto :lbl_79
 
     .line 756
-    :lbl_76
+    :lbl_78
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 757
@@ -2146,16 +2160,16 @@
     move-result-object v1
 
     .line 767
-    if-eq v1, v15, :lbl_89
+    if-eq v1, v15, :lbl_91
 
     .line 768
     .line 769
-    :lbl_77
+    :lbl_79
     check-cast v1, Lsc0;
 
     .line 770
     .line 771
-    if-eqz v1, :lbl_73
+    if-eqz v1, :lbl_75
 
     .line 772
     .line 773
@@ -2175,23 +2189,23 @@
     move-result-object v0
 
     .line 781
-    if-eq v0, v15, :lbl_89
+    if-eq v0, v15, :lbl_91
 
     .line 782
     .line 783
-    :lbl_78
+    :lbl_80
     check-cast v0, Lorg/json/JSONObject;
 
     .line 784
     .line 785
-    if-nez v0, :lbl_79
+    if-nez v0, :lbl_81
 
     .line 786
     .line 787
-    goto :lbl_74
+    goto :lbl_76
 
     .line 788
-    :lbl_79
+    :lbl_81
     sget-object v1, Lwc0;->a:Lwc0;
 
     .line 789
@@ -2208,7 +2222,7 @@
     move-result-object v1
 
     .line 796
-    if-nez v1, :lbl_80
+    if-nez v1, :lbl_82
 
     .line 797
     .line 798
@@ -2224,7 +2238,7 @@
     move-result-object v1
 
     .line 804
-    if-nez v1, :lbl_80
+    if-nez v1, :lbl_82
 
     .line 805
     .line 806
@@ -2240,7 +2254,7 @@
     move-result-object v1
 
     .line 812
-    :lbl_80
+    :lbl_82
     const-string v3, "uploadTotal"
 
     .line 813
@@ -2253,7 +2267,7 @@
     move-result-object v3
 
     .line 818
-    if-nez v3, :lbl_81
+    if-nez v3, :lbl_83
 
     .line 819
     .line 820
@@ -2269,7 +2283,7 @@
     move-result-object v3
 
     .line 826
-    if-nez v3, :lbl_81
+    if-nez v3, :lbl_83
 
     .line 827
     .line 828
@@ -2285,16 +2299,16 @@
     move-result-object v3
 
     .line 834
-    :lbl_81
-    if-eqz v1, :lbl_82
+    :lbl_83
+    if-eqz v1, :lbl_84
 
     .line 835
     .line 836
-    if-nez v3, :lbl_88
+    if-nez v3, :lbl_90
 
     .line 837
     .line 838
-    :lbl_82
+    :lbl_84
     invoke-virtual {v0, v2}, Lorg/json/JSONObject;->optJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     .line 839
@@ -2303,7 +2317,7 @@
     move-result-object v0
 
     .line 842
-    if-nez v0, :lbl_83
+    if-nez v0, :lbl_85
 
     .line 843
     .line 844
@@ -2316,7 +2330,7 @@
     .line 847
     .line 848
     .line 849
-    :lbl_83
+    :lbl_85
     invoke-virtual {v0}, Lorg/json/JSONArray;->length()I
 
     .line 850
@@ -2335,8 +2349,8 @@
     move-wide v8, v6
 
     .line 857
-    :lbl_84
-    if-ge v13, v2, :lbl_86
+    :lbl_86
+    if-ge v13, v2, :lbl_88
 
     .line 858
     .line 859
@@ -2348,7 +2362,7 @@
     move-result-object v10
 
     .line 863
-    if-eqz v10, :lbl_85
+    if-eqz v10, :lbl_87
 
     .line 864
     .line 865
@@ -2382,16 +2396,16 @@
     add-long/2addr v8, v10
 
     .line 879
-    :lbl_85
+    :lbl_87
     add-int/lit8 v13, v13, 0x1
 
     .line 880
     .line 881
-    goto :lbl_84
+    goto :lbl_86
 
     .line 882
-    :lbl_86
-    if-nez v1, :lbl_87
+    :lbl_88
+    if-nez v1, :lbl_89
 
     .line 883
     .line 884
@@ -2407,8 +2421,8 @@
     move-object v1, v0
 
     .line 890
-    :lbl_87
-    if-nez v3, :lbl_88
+    :lbl_89
+    if-nez v3, :lbl_90
 
     .line 891
     .line 892
@@ -2421,7 +2435,7 @@
     .line 895
     .line 896
     .line 897
-    :lbl_88
+    :lbl_90
     new-instance v15, Ltc0;
 
     .line 898
@@ -2431,29 +2445,29 @@
     .line 900
     .line 901
     .line 902
-    :lbl_89
-    :lbl_90
+    :lbl_91
+    :lbl_92
     return-object v15
 
     .line 903
-    :lbl_91
+    :lbl_93
     iget-byte v1, v0, Lwb0;->j:B
 
     .line 904
     .line 905
-    if-eqz v1, :lbl_95
+    if-eqz v1, :lbl_97
 
     .line 906
     .line 907
-    if-eq v1, v3, :lbl_94
+    if-eq v1, v3, :lbl_96
 
     .line 908
     .line 909
-    if-eq v1, v4, :lbl_93
+    if-eq v1, v4, :lbl_95
 
     .line 910
     .line 911
-    if-ne v1, v10, :lbl_92
+    if-ne v1, v10, :lbl_94
 
     .line 912
     .line 913
@@ -2466,10 +2480,10 @@
 
     .line 917
     .line 918
-    goto :lbl_100
+    goto :lbl_102
 
     .line 919
-    :lbl_92
+    :lbl_94
     invoke-static {v14}, Lex1;->d(Ljava/lang/String;)V
 
     .line 920
@@ -2478,11 +2492,11 @@
     move-object v15, v5
 
     .line 923
-    goto/16 :lbl_106
+    goto/16 :lbl_108
 
     .line 924
     .line 925
-    :lbl_93
+    :lbl_95
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 926
@@ -2492,10 +2506,10 @@
 
     .line 929
     .line 930
-    goto :lbl_97
+    goto :lbl_99
 
     .line 931
-    :lbl_94
+    :lbl_96
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 932
@@ -2505,10 +2519,10 @@
 
     .line 935
     .line 936
-    goto :lbl_96
+    goto :lbl_98
 
     .line 937
-    :lbl_95
+    :lbl_97
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 938
@@ -2543,11 +2557,11 @@
     move-result-object v1
 
     .line 955
-    if-eq v1, v15, :lbl_105
+    if-eq v1, v15, :lbl_107
 
     .line 956
     .line 957
-    :lbl_96
+    :lbl_98
     check-cast v1, Llc0;
 
     .line 958
@@ -2560,7 +2574,7 @@
 
     .line 962
     .line 963
-    if-ne v1, v3, :lbl_104
+    if-ne v1, v3, :lbl_106
 
     .line 964
     .line 965
@@ -2580,11 +2594,11 @@
     move-result-object v1
 
     .line 973
-    if-eq v1, v15, :lbl_105
+    if-eq v1, v15, :lbl_107
 
     .line 974
     .line 975
-    :lbl_97
+    :lbl_99
     check-cast v1, Lub0;
 
     .line 976
@@ -2593,7 +2607,7 @@
 
     .line 978
     .line 979
-    if-nez v2, :lbl_99
+    if-nez v2, :lbl_101
 
     .line 980
     .line 981
@@ -2605,7 +2619,7 @@
 
     .line 984
     .line 985
-    if-nez v0, :lbl_98
+    if-nez v0, :lbl_100
 
     .line 986
     .line 987
@@ -2625,16 +2639,16 @@
     move-result-object v0
 
     .line 995
-    :lbl_98
+    :lbl_100
     invoke-direct {v15, v3, v5, v0}, Lub0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
 
     .line 996
     .line 997
     .line 998
-    goto :lbl_106
+    goto :lbl_108
 
     .line 999
-    :lbl_99
+    :lbl_101
     sget-object v1, Lwk5;->a:Lwk5;
 
     .line 1000
@@ -2667,11 +2681,11 @@
     move-result-object v0
 
     .line 1015
-    if-eq v0, v15, :lbl_105
+    if-eq v0, v15, :lbl_107
 
     .line 1016
     .line 1017
-    :lbl_100
+    :lbl_102
     check-cast v0, Lmk5;
 
     .line 1018
@@ -2684,7 +2698,7 @@
     move-result v1
 
     .line 1023
-    if-eqz v1, :lbl_101
+    if-eqz v1, :lbl_103
 
     .line 1024
     .line 1025
@@ -2697,10 +2711,10 @@
     .line 1028
     .line 1029
     .line 1030
-    goto :lbl_106
+    goto :lbl_108
 
     .line 1031
-    :lbl_101
+    :lbl_103
     iget-object v1, v0, Lmk5;->b:Ljava/lang/String;
 
     .line 1032
@@ -2713,7 +2727,7 @@
     move-result v2
 
     .line 1037
-    if-eqz v2, :lbl_102
+    if-eqz v2, :lbl_104
 
     .line 1038
     .line 1039
@@ -2721,7 +2735,7 @@
 
     .line 1040
     .line 1041
-    :lbl_102
+    :lbl_104
     invoke-static {v1}, Lsi6;->N0(Ljava/lang/CharSequence;)Z
 
     .line 1042
@@ -2730,7 +2744,7 @@
     move-result v0
 
     .line 1045
-    if-eqz v0, :lbl_103
+    if-eqz v0, :lbl_105
 
     .line 1046
     .line 1047
@@ -2755,7 +2769,7 @@
     move-result-object v1
 
     .line 1058
-    :lbl_103
+    :lbl_105
     new-instance v15, Lub0;
 
     .line 1059
@@ -2765,10 +2779,10 @@
     .line 1061
     .line 1062
     .line 1063
-    goto :lbl_106
+    goto :lbl_108
 
     .line 1064
-    :lbl_104
+    :lbl_106
     new-instance v15, Lub0;
 
     .line 1065
@@ -2778,25 +2792,25 @@
     .line 1067
     .line 1068
     .line 1069
-    :lbl_105
-    :lbl_106
+    :lbl_107
+    :lbl_108
     return-object v15
 
     .line 1070
-    :lbl_107
+    :lbl_109
     iget-byte v1, v0, Lwb0;->j:B
 
     .line 1071
     .line 1072
-    if-eqz v1, :lbl_110
+    if-eqz v1, :lbl_112
 
     .line 1073
     .line 1074
-    if-eq v1, v3, :lbl_109
+    if-eq v1, v3, :lbl_111
 
     .line 1075
     .line 1076
-    if-ne v1, v4, :lbl_108
+    if-ne v1, v4, :lbl_110
 
     .line 1077
     .line 1078
@@ -2809,11 +2823,11 @@
 
     .line 1082
     .line 1083
-    goto/16 :lbl_117
+    goto/16 :lbl_119
 
     .line 1084
     .line 1085
-    :lbl_108
+    :lbl_110
     invoke-static {v14}, Lex1;->d(Ljava/lang/String;)V
 
     .line 1086
@@ -2822,11 +2836,11 @@
     move-object v15, v5
 
     .line 1089
-    goto/16 :lbl_122
+    goto/16 :lbl_124
 
     .line 1090
     .line 1091
-    :lbl_109
+    :lbl_111
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 1092
@@ -2836,10 +2850,10 @@
 
     .line 1095
     .line 1096
-    goto :lbl_111
+    goto :lbl_113
 
     .line 1097
-    :lbl_110
+    :lbl_112
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 1098
@@ -2861,11 +2875,11 @@
     move-result-object v1
 
     .line 1108
-    if-eq v1, v15, :lbl_121
+    if-eq v1, v15, :lbl_123
 
     .line 1109
     .line 1110
-    :lbl_111
+    :lbl_113
     check-cast v1, Lub0;
 
     .line 1111
@@ -2874,7 +2888,7 @@
 
     .line 1113
     .line 1114
-    if-nez v6, :lbl_113
+    if-nez v6, :lbl_115
 
     .line 1115
     .line 1116
@@ -2886,7 +2900,7 @@
 
     .line 1119
     .line 1120
-    if-nez v0, :lbl_112
+    if-nez v0, :lbl_114
 
     .line 1121
     .line 1122
@@ -2906,17 +2920,17 @@
     move-result-object v0
 
     .line 1130
-    :lbl_112
+    :lbl_114
     invoke-direct {v15, v3, v5, v0}, Lub0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
 
     .line 1131
     .line 1132
     .line 1133
-    goto/16 :lbl_122
+    goto/16 :lbl_124
 
     .line 1134
     .line 1135
-    :lbl_113
+    :lbl_115
     sget-object v1, Lgc0;->a:Lgc0;
 
     .line 1136
@@ -2969,7 +2983,7 @@
     move-result v8
 
     .line 1161
-    if-eqz v8, :lbl_114
+    if-eqz v8, :lbl_116
 
     .line 1162
     .line 1163
@@ -2985,7 +2999,7 @@
     move-result v1
 
     .line 1169
-    if-nez v1, :lbl_116
+    if-nez v1, :lbl_118
 
     .line 1170
     .line 1171
@@ -3015,11 +3029,11 @@
     .line 1183
     .line 1184
     .line 1185
-    goto/16 :lbl_122
+    goto/16 :lbl_124
 
     .line 1186
     .line 1187
-    :lbl_114
+    :lbl_116
     const-string v8, "xray"
 
     .line 1188
@@ -3052,7 +3066,7 @@
     move-result v7
 
     .line 1203
-    if-eqz v7, :lbl_115
+    if-eqz v7, :lbl_117
 
     .line 1204
     .line 1205
@@ -3082,10 +3096,10 @@
     .line 1217
     .line 1218
     .line 1219
-    goto :lbl_122
+    goto :lbl_124
 
     .line 1220
-    :lbl_115
+    :lbl_117
     invoke-static {}, Lgc0;->k()Lvb0;
 
     .line 1221
@@ -3110,7 +3124,7 @@
     move-result v6
 
     .line 1232
-    if-nez v6, :lbl_116
+    if-nez v6, :lbl_118
 
     .line 1233
     .line 1234
@@ -3157,10 +3171,10 @@
     .line 1255
     .line 1256
     .line 1257
-    goto :lbl_122
+    goto :lbl_124
 
     .line 1258
-    :lbl_116
+    :lbl_118
     sget-object v1, Lwk5;->a:Lwk5;
 
     .line 1259
@@ -3190,11 +3204,11 @@
     move-result-object v0
 
     .line 1273
-    if-eq v0, v15, :lbl_121
+    if-eq v0, v15, :lbl_123
 
     .line 1274
     .line 1275
-    :lbl_117
+    :lbl_119
     check-cast v0, Lmk5;
 
     .line 1276
@@ -3207,7 +3221,7 @@
     move-result v1
 
     .line 1281
-    if-nez v1, :lbl_120
+    if-nez v1, :lbl_122
 
     .line 1282
     .line 1283
@@ -3223,7 +3237,7 @@
     move-result v2
 
     .line 1289
-    if-eqz v2, :lbl_118
+    if-eqz v2, :lbl_120
 
     .line 1290
     .line 1291
@@ -3231,7 +3245,7 @@
 
     .line 1292
     .line 1293
-    :lbl_118
+    :lbl_120
     invoke-static {v1}, Lsi6;->N0(Ljava/lang/CharSequence;)Z
 
     .line 1294
@@ -3240,7 +3254,7 @@
     move-result v0
 
     .line 1297
-    if-eqz v0, :lbl_119
+    if-eqz v0, :lbl_121
 
     .line 1298
     .line 1299
@@ -3265,7 +3279,7 @@
     move-result-object v1
 
     .line 1310
-    :lbl_119
+    :lbl_121
     new-instance v15, Lub0;
 
     .line 1311
@@ -3275,10 +3289,10 @@
     .line 1313
     .line 1314
     .line 1315
-    goto :lbl_122
+    goto :lbl_124
 
     .line 1316
-    :lbl_120
+    :lbl_122
     new-instance v15, Lub0;
 
     .line 1317
@@ -3288,25 +3302,25 @@
     .line 1319
     .line 1320
     .line 1321
-    :lbl_121
-    :lbl_122
+    :lbl_123
+    :lbl_124
     return-object v15
 
     .line 1322
-    :lbl_123
+    :lbl_125
     iget-byte v1, v0, Lwb0;->j:B
 
     .line 1323
     .line 1324
-    if-eqz v1, :lbl_128
+    if-eqz v1, :lbl_130
 
     .line 1325
     .line 1326
-    if-eq v1, v3, :lbl_127
+    if-eq v1, v3, :lbl_129
 
     .line 1327
     .line 1328
-    if-ne v1, v4, :lbl_124
+    if-ne v1, v4, :lbl_126
 
     .line 1329
     .line 1330
@@ -3319,24 +3333,24 @@
 
     .line 1334
     .line 1335
-    goto :lbl_132
+    goto :lbl_134
 
     .line 1336
-    :lbl_124
+    :lbl_126
     invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z
     move-result v1
-    if-eqz v1, :lbl_126
+    if-eqz v1, :lbl_128
     invoke-static {}, Lcom/box/app/vpn/VpnBridge;->syncNow()Ljava/lang/String;
     move-result-object v1
-    if-nez v1, :lbl_125
+    if-nez v1, :lbl_127
     new-instance v15, Lub0;
     invoke-direct {v15, v4, v12, v5}, Lub0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
     goto/16 :lbl_166
-    :lbl_125
+    :lbl_127
     new-instance v15, Lub0;
     invoke-direct {v15, v3, v5, v1}, Lub0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
     goto/16 :lbl_166
-    :lbl_126
+    :lbl_128
     invoke-static {v14}, Lex1;->d(Ljava/lang/String;)V
 
     .line 1337
@@ -3345,10 +3359,10 @@
     move-object v15, v5
 
     .line 1340
-    goto :lbl_136
+    goto :lbl_138
 
     .line 1341
-    :lbl_127
+    :lbl_129
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 1342
@@ -3358,10 +3372,10 @@
 
     .line 1345
     .line 1346
-    goto :lbl_129
+    goto :lbl_131
 
     .line 1347
-    :lbl_128
+    :lbl_130
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 1348
@@ -3383,11 +3397,11 @@
     move-result-object v1
 
     .line 1358
-    if-eq v1, v15, :lbl_135
+    if-eq v1, v15, :lbl_137
 
     .line 1359
     .line 1360
-    :lbl_129
+    :lbl_131
     check-cast v1, Lub0;
 
     .line 1361
@@ -3400,7 +3414,7 @@
 
     .line 1365
     .line 1366
-    if-nez v2, :lbl_131
+    if-nez v2, :lbl_133
 
     .line 1367
     .line 1368
@@ -3412,7 +3426,7 @@
 
     .line 1371
     .line 1372
-    if-nez v0, :lbl_130
+    if-nez v0, :lbl_132
 
     .line 1373
     .line 1374
@@ -3432,16 +3446,16 @@
     move-result-object v0
 
     .line 1382
-    :lbl_130
+    :lbl_132
     invoke-direct {v15, v3, v5, v0}, Lub0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
 
     .line 1383
     .line 1384
     .line 1385
-    goto :lbl_136
+    goto :lbl_138
 
     .line 1386
-    :lbl_131
+    :lbl_133
     sget-object v1, Lwk5;->a:Lwk5;
 
     .line 1387
@@ -3478,11 +3492,11 @@
     move-result-object v0
 
     .line 1404
-    if-eq v0, v15, :lbl_135
+    if-eq v0, v15, :lbl_137
 
     .line 1405
     .line 1406
-    :lbl_132
+    :lbl_134
     check-cast v0, Lmk5;
 
     .line 1407
@@ -3495,7 +3509,7 @@
     move-result v1
 
     .line 1412
-    if-nez v1, :lbl_134
+    if-nez v1, :lbl_136
 
     .line 1413
     .line 1414
@@ -3511,7 +3525,7 @@
     move-result v2
 
     .line 1420
-    if-eqz v2, :lbl_133
+    if-eqz v2, :lbl_135
 
     .line 1421
     .line 1422
@@ -3519,7 +3533,7 @@
 
     .line 1423
     .line 1424
-    :lbl_133
+    :lbl_135
     new-instance v15, Lub0;
 
     .line 1425
@@ -3529,10 +3543,10 @@
     .line 1427
     .line 1428
     .line 1429
-    goto :lbl_136
+    goto :lbl_138
 
     .line 1430
-    :lbl_134
+    :lbl_136
     new-instance v15, Lub0;
 
     .line 1431
@@ -3542,12 +3556,12 @@
     .line 1433
     .line 1434
     .line 1435
-    :lbl_135
-    :lbl_136
+    :lbl_137
+    :lbl_138
     return-object v15
 
     .line 1436
-    :lbl_137
+    :lbl_139
     iget-byte v1, v0, Lwb0;->j:B
 
     .line 1437
@@ -3558,27 +3572,27 @@
     const/4 v9, 0x4
 
     .line 1440
-    if-eqz v1, :lbl_143
+    if-eqz v1, :lbl_145
 
     .line 1441
     .line 1442
-    if-eq v1, v3, :lbl_142
+    if-eq v1, v3, :lbl_144
 
     .line 1443
     .line 1444
-    if-eq v1, v4, :lbl_141
+    if-eq v1, v4, :lbl_143
 
     .line 1445
     .line 1446
-    if-eq v1, v10, :lbl_140
+    if-eq v1, v10, :lbl_142
 
     .line 1447
     .line 1448
-    if-eq v1, v9, :lbl_139
+    if-eq v1, v9, :lbl_141
 
     .line 1449
     .line 1450
-    if-ne v1, v8, :lbl_138
+    if-ne v1, v8, :lbl_140
 
     .line 1451
     .line 1452
@@ -3595,7 +3609,7 @@
 
     .line 1458
     .line 1459
-    :lbl_138
+    :lbl_140
     invoke-static {v14}, Lex1;->d(Ljava/lang/String;)V
 
     .line 1460
@@ -3608,7 +3622,7 @@
 
     .line 1464
     .line 1465
-    :lbl_139
+    :lbl_141
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 1466
@@ -3622,7 +3636,7 @@
 
     .line 1471
     .line 1472
-    :lbl_140
+    :lbl_142
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 1473
@@ -3636,7 +3650,7 @@
 
     .line 1478
     .line 1479
-    :lbl_141
+    :lbl_143
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 1480
@@ -3649,7 +3663,7 @@
     goto :lbl_147
 
     .line 1485
-    :lbl_142
+    :lbl_144
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 1486
@@ -3659,10 +3673,10 @@
 
     .line 1489
     .line 1490
-    goto :lbl_144
+    goto :lbl_146
 
     .line 1491
-    :lbl_143
+    :lbl_145
     invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 1492
@@ -3701,7 +3715,7 @@
 
     .line 1510
     .line 1511
-    :lbl_144
+    :lbl_146
     check-cast v1, Llc0;
 
     .line 1512
@@ -3729,20 +3743,6 @@
     invoke-virtual {v1, v0}, Lgc0;->l(Lp91;)Ljava/lang/Object;
 
     .line 1524
-    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z
-    move-result v1
-    if-eqz v1, :lbl_146
-    invoke-static {}, Lcom/box/app/vpn/VpnBridge;->applyNow()Ljava/lang/String;
-    move-result-object v1
-    if-nez v1, :lbl_145
-    new-instance v15, Lub0;
-    invoke-direct {v15, v4, v12, v5}, Lub0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
-    goto/16 :lbl_162
-    :lbl_145
-    new-instance v15, Lub0;
-    invoke-direct {v15, v3, v5, v1}, Lub0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
-    goto/16 :lbl_162
-    :lbl_146
     .line 1525
     .line 1526
     move-result-object v1
@@ -4244,14 +4244,14 @@
     .line 1767
     :lbl_167
     .packed-switch 0x0
-        :lbl_137
-        :lbl_123
-        :lbl_107
-        :lbl_91
-        :lbl_71
-        :lbl_55
-        :lbl_47
-        :lbl_35
-        :lbl_18
+        :lbl_139
+        :lbl_125
+        :lbl_109
+        :lbl_93
+        :lbl_73
+        :lbl_57
+        :lbl_49
+        :lbl_37
+        :lbl_20
     .end packed-switch
 .end method

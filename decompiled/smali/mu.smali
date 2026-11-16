@@ -150,9 +150,9 @@
 
 .method public final b(ZZZ)V
     .locals 7
+    invoke-static {p0}, Lcom/box/app/vpn/AppPerm;->check(Lmu;)V
 
     .line 1
-    invoke-static {p0}, Lcom/box/app/vpn/AppPerm;->check(Lmu;)V
     iget-boolean v0, p0, Lmu;->h:Z
 
     .line 2

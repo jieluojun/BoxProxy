@@ -83,6 +83,8 @@
 # virtual methods
 .method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 6
+    invoke-static {v4, v5, v1}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {v4, v5, v1}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     .line 1
     iget-byte v0, p0, Ly0;->i:B
@@ -334,8 +336,10 @@
     invoke-virtual {p0}, Landroid/widget/Toast;->show()V
 
     .line 120
-    invoke-static {v4, v5, v1}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-:lbl_12
+    .line 121
+    .line 122
+    :lbl_12
+    return-object v3
 
     .line 123
     :lbl_13
@@ -404,8 +408,9 @@
 
     .line 157
     .line 158
-    invoke-static {v4, v5, v1}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
-:lbl_14
+    .line 159
+    :lbl_14
+    return-object v3
 
     .line 160
     nop

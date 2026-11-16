@@ -37,6 +37,10 @@
 # virtual methods
 .method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 7
+    invoke-static {p0, p1, v4}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {p0, p1, v4}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {p0, p1, v4}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {p0, p1, v4}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     .line 1
     iget-byte v0, p0, Ltl2;->i:B
@@ -475,7 +479,8 @@
 
     .line 201
     .line 202
-    invoke-static {p0, p1, v4}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    .line 203
+    return-object v6
 
     .line 204
     :lbl_21
@@ -555,7 +560,7 @@
     .line 239
     .line 240
     .line 241
-    invoke-static {p0, p1, v4}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    return-object v6
 
     .line 242
     :lbl_25
@@ -638,8 +643,8 @@
     return-object v6
 
     .line 280
-:lbl_29
-    invoke-static {p0, p1, v4}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    :lbl_29
+    check-cast p1, Lya6;
 
     .line 281
     .line 282
@@ -722,7 +727,8 @@
     check-cast p1, Ljava/lang/String;
 
     .line 319
-    invoke-static {p0, p1, v4}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    .line 320
+    if-eqz p1, :lbl_34
 
     .line 321
     .line 322

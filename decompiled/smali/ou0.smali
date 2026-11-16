@@ -7140,12 +7140,12 @@
     const/4 v1, 0x0
 
     .line 53
-    invoke-static {p0, v0, v1}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {p0, v0, v1}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     .line 54
     .line 55
     .line 56
-    invoke-static {p0, v0, v1}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    move-result-object p0
 
     .line 57
     invoke-virtual {p0}, Landroid/widget/Toast;->show()V
@@ -29457,7 +29457,7 @@
     move-result-object p1
 
     .line 115
-    invoke-static {p0, p1, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+    invoke-static {p0, p1, v3}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
 
     .line 116
     .line 117
@@ -29472,7 +29472,6 @@
     .line 122
     :lbl_6
     :lbl_7
-    invoke-static {p0, p1, v3}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
     invoke-static {p0, v2, v3}, Lcom/box/app/vpn/FToast;->makeText(Landroid/content/Context;II)Landroid/widget/Toast;
     return-void
 .end method

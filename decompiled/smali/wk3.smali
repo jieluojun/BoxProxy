@@ -848,6 +848,8 @@
     iget-object p1, v3, Lxk3;->c:Lus4;
 
     .line 245
+    .line 246
+    invoke-virtual {p1, p0}, Lus4;->h(I)V
 
     .line 247
     .line 248

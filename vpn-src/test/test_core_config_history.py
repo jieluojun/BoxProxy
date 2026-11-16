@@ -61,7 +61,7 @@ class CoreConfigHistorySqlTest(unittest.TestCase):
         update = (SMALI / 'z40.smali').read_text()
         read = update.index('invoke-static {p1}, Ljs;->a0(Landroid/database/sqlite/SQLiteDatabase;)Ltb0;')
         transaction = update.rindex('->beginTransaction()V', 0, read)
-        callback = update.index('invoke-interface {p0, p1}, Lp72;->invoke', read)
+        callback = update.index('invoke-interface {p0, v0}, Lp72;->invoke', read)
         hook = update.index('invoke-static {p1, v0, p0}, Lcom/box/app/vpn/CoreConfigHistory;->onUpdate', callback)
         save = update.index('invoke-static {p1, p0}, Ljs;->l0(Landroid/database/sqlite/SQLiteDatabase;Ltb0;)V', hook)
         success = update.index('->setTransactionSuccessful()V', save)

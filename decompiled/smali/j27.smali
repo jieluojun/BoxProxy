@@ -15,10 +15,6 @@
 
     .line 1
 
-    .line 2
-    .line 3
-    const-string v6, "hysteria"
-
     .line 4
     .line 5
     const-string v0, "mihomo"
@@ -37,18 +33,6 @@
     const-string v7, "v2fly"
     const-string v8, "hysteria"
     filled-new-array/range {v0 .. v8}, [Ljava/lang/String;
-
-    .line 10
-    .line 11
-    const-string v3, "sing-box_ref1nd"
-
-    .line 12
-    .line 13
-    const-string v4, "xray"
-
-    .line 14
-    .line 15
-    filled-new-array/range {v0 .. v6}, [Ljava/lang/String;
 
     .line 16
     .line 17
@@ -94,9 +78,6 @@
     move-result-object v2
 
     .line 39
-    const v0, 0x7f0f053e
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-    move-result-object v3
     const v0, 0x7f0f0333
 
     .line 40
@@ -152,6 +133,9 @@
     move-result-object v8
 
     .line 67
+    const v0, 0x7f0f053e
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    move-result-object v3
     const v0, 0x7f0f0330
 
     .line 68
@@ -164,9 +148,6 @@
     .line 73
     move-result-object v9
     filled-new-array/range {v1 .. v9}, [Ljava/lang/Integer;
-
-    .line 74
-    filled-new-array/range {v1 .. v7}, [Ljava/lang/Integer;
 
     .line 75
     .line 76

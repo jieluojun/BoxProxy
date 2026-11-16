@@ -110,12 +110,6 @@
 
     .line 32
     .line 33
-    sget-object v4, Lab5;->t:Lab5;
-    if-eq v3, v4, :lbl_2
-    invoke-static {}, Lcom/box/app/vpn/VpnRoot;->rootModes()Z
-    move-result v4
-    if-eqz v4, :lbl_0
-    :lbl_2
     sget-object v4, Lab5;->m:Lab5;
 
     .line 34
@@ -132,6 +126,12 @@
 
     .line 40
     .line 41
+    sget-object v4, Lab5;->t:Lab5;
+    if-eq v3, v4, :lbl_2
+    invoke-static {}, Lcom/box/app/vpn/VpnRoot;->rootModes()Z
+    move-result v4
+    if-eqz v4, :lbl_0
+    :lbl_2
     sget-object v4, Lya5;->n:Lya5;
 
     .line 42

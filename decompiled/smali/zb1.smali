@@ -1380,6 +1380,8 @@
     .line 50
     .line 51
     move-result-object p0
+    invoke-static {p0}, Lcom/box/app/cfg/LdFix;->wrapProbe(Ljava/lang/String;)Ljava/lang/String;
+    move-result-object p0
 
     .line 52
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -1431,8 +1433,6 @@
     .line 77
     .line 78
     .line 79
-    move-result-object p0
-    invoke-static {p0}, Lcom/box/app/cfg/LdFix;->wrapProbe(Ljava/lang/String;)Ljava/lang/String;
     move-result-object p0
 
     .line 80
@@ -2003,10 +2003,10 @@
     .line 68
     :lbl_3
     invoke-static {v1}, Lzb3;->l0(Ljava/lang/Object;)V
-    goto/16 :lbl_34
+    goto/16 :lbl_36
     :lbl_4
     invoke-static {v1}, Lzb3;->l0(Ljava/lang/Object;)V
-    goto/16 :lbl_37
+    goto/16 :lbl_39
     :lbl_5
     invoke-static {v1}, Lbe3;->R(Ljava/lang/Object;)V
 
@@ -2052,7 +2052,7 @@
     .line 88
     .line 89
     .line 90
-    goto/16 :lbl_39
+    goto/16 :lbl_33
 
     .line 91
     .line 92
@@ -2926,70 +2926,6 @@
 
     .line 517
     :lbl_32
-    const-string v1, "mihomo_dingtalk"
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-    move-result v1
-    if-eqz v1, :lbl_45
-    const/16 v0, 0x9
-    iput v0, v3, Lxb1;->l:I
-    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-    const-string v0, "https://api.github.com/repos/jieluojun/mihomo/releases/tags/Prerelease-Alpha"
-    invoke-virtual {v2, v0, v3}, Loa1;->c(Ljava/lang/String;Lq91;)Ljava/lang/Object;
-    move-result-object v1
-    if-ne v1, v4, :lbl_33
-    goto/16 :lbl_43
-    :lbl_33
-    :lbl_34
-    check-cast v1, Lpa1;
-    new-instance v0, Lsg5;
-    const-string v2, "mihomo-android-arm64-v8-alpha-smart-[A-Za-z0-9._-]+\\.gz"
-    invoke-direct {v0, v2}, Lsg5;-><init>(Ljava/lang/String;)V
-    invoke-virtual {v1, v0}, Lpa1;->a(Lsg5;)Lja1;
-    move-result-object v5
-    new-instance v0, Lpb1;
-    iget-object v1, v5, Lja1;->a:Ljava/lang/String;
-    const-string v2, "mihomo-android-arm64-v8-alpha-"
-    invoke-static {v1, v2}, Lsi6;->W0(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    move-result-object v1
-    invoke-static {v1, v8}, Lsi6;->X0(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    move-result-object v4
-    const-string v7, "mihomo"
-    const-string v1, "mihomo_dingtalk"
-    const-string v2, "mihomo"
-    const-string v3, "Mihomo Smart + eBPF + \u9489\u9489\u76f4\u8fde"
-    invoke-direct/range {v0 .. v7}, Lpb1;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lja1;Lt91;Ljava/lang/String;)V
-    return-object v0
-    :lbl_35
-    const-string v1, "sing-box_dingtalk"
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-    move-result v1
-    if-eqz v1, :lbl_45
-    const/16 v0, 0xa
-    iput v0, v3, Lxb1;->l:I
-    const-string v0, "jieluojun/sing-box"
-    const/4 v1, 0x0
-    invoke-virtual {v2, v0, v1, v3}, Loa1;->b(Ljava/lang/String;ZLq91;)Ljava/lang/Object;
-    move-result-object v1
-    if-ne v1, v4, :lbl_36
-    goto/16 :lbl_43
-    :lbl_36
-    :lbl_37
-    check-cast v1, Lpa1;
-    new-instance v2, Lsg5;
-    const-string v0, "sing-box-.+-android-arm64-v8a-ebpf\\.tar\\.gz"
-    invoke-direct {v2, v0}, Lsg5;-><init>(Ljava/lang/String;)V
-    invoke-virtual {v1, v2}, Lpa1;->a(Lsg5;)Lja1;
-    move-result-object v19
-    new-instance v14, Lpb1;
-    iget-object v0, v1, Lpa1;->a:Ljava/lang/String;
-    const-string v21, "sing-box"
-    const-string v15, "sing-box_dingtalk"
-    const-string v16, "sing-box"
-    const-string v17, "Sing-Box Smart + eBPF + \u9489\u9489\u76f4\u8fde"
-    move-object/from16 v18, v0
-    invoke-direct/range {v14 .. v21}, Lpb1;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lja1;Lt91;Ljava/lang/String;)V
-    return-object v14
-    :lbl_38
     const-string v1, "mihomo_smart"
 
     .line 518
@@ -3034,7 +2970,7 @@
 
     .line 538
     .line 539
-    :lbl_39
+    :lbl_33
     check-cast v1, Lpa1;
 
     .line 540
@@ -3112,6 +3048,70 @@
     return-object v0
 
     .line 578
+    :lbl_34
+    const-string v1, "mihomo_dingtalk"
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v1
+    if-eqz v1, :lbl_45
+    const/16 v0, 0x9
+    iput v0, v3, Lxb1;->l:I
+    invoke-virtual {v2}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+    const-string v0, "https://api.github.com/repos/jieluojun/mihomo/releases/tags/Prerelease-Alpha"
+    invoke-virtual {v2, v0, v3}, Loa1;->c(Ljava/lang/String;Lq91;)Ljava/lang/Object;
+    move-result-object v1
+    if-ne v1, v4, :lbl_35
+    goto/16 :lbl_43
+    :lbl_35
+    :lbl_36
+    check-cast v1, Lpa1;
+    new-instance v0, Lsg5;
+    const-string v2, "mihomo-android-arm64-v8-alpha-smart-[A-Za-z0-9._-]+\\.gz"
+    invoke-direct {v0, v2}, Lsg5;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v0}, Lpa1;->a(Lsg5;)Lja1;
+    move-result-object v5
+    new-instance v0, Lpb1;
+    iget-object v1, v5, Lja1;->a:Ljava/lang/String;
+    const-string v2, "mihomo-android-arm64-v8-alpha-"
+    invoke-static {v1, v2}, Lsi6;->W0(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v1
+    invoke-static {v1, v8}, Lsi6;->X0(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object v4
+    const-string v7, "mihomo"
+    const-string v1, "mihomo_dingtalk"
+    const-string v2, "mihomo"
+    const-string v3, "Mihomo Smart + eBPF + \u9489\u9489\u76f4\u8fde"
+    invoke-direct/range {v0 .. v7}, Lpb1;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lja1;Lt91;Ljava/lang/String;)V
+    return-object v0
+    :lbl_37
+    const-string v1, "sing-box_dingtalk"
+    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    move-result v1
+    if-eqz v1, :lbl_45
+    const/16 v0, 0xa
+    iput v0, v3, Lxb1;->l:I
+    const-string v0, "jieluojun/sing-box"
+    const/4 v1, 0x0
+    invoke-virtual {v2, v0, v1, v3}, Loa1;->b(Ljava/lang/String;ZLq91;)Ljava/lang/Object;
+    move-result-object v1
+    if-ne v1, v4, :lbl_38
+    goto/16 :lbl_43
+    :lbl_38
+    :lbl_39
+    check-cast v1, Lpa1;
+    new-instance v2, Lsg5;
+    const-string v0, "sing-box-.+-android-arm64-v8a-ebpf\\.tar\\.gz"
+    invoke-direct {v2, v0}, Lsg5;-><init>(Ljava/lang/String;)V
+    invoke-virtual {v1, v2}, Lpa1;->a(Lsg5;)Lja1;
+    move-result-object v19
+    new-instance v14, Lpb1;
+    iget-object v0, v1, Lpa1;->a:Ljava/lang/String;
+    const-string v21, "sing-box"
+    const-string v15, "sing-box_dingtalk"
+    const-string v16, "sing-box"
+    const-string v17, "Sing-Box Smart + eBPF + \u9489\u9489\u76f4\u8fde"
+    move-object/from16 v18, v0
+    invoke-direct/range {v14 .. v21}, Lpb1;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lja1;Lt91;Ljava/lang/String;)V
+    return-object v14
     :lbl_40
     const-string v1, "sing-box_ref1nd"
 
@@ -3375,15 +3375,15 @@
     .line 711
     :lbl_48
     .sparse-switch
-    -0x7fc2cadc -> :lbl_32
+    -0x7fc2cadc -> :lbl_34
         -0x54707cda -> :lbl_40
-        -0x4cb56a71 -> :lbl_38
+        -0x4cb56a71 -> :lbl_32
         -0x40072b7b -> :lbl_21
         -0xe42b49 -> :lbl_19
         0x3844b2 -> :lbl_17
         0x6971c77 -> :lbl_15
         0x1e0bf18d -> :lbl_13
-    0x3ba6411c -> :lbl_35
+    0x3ba6411c -> :lbl_37
     .end sparse-switch
 .end method
 

@@ -31,6 +31,29 @@
 # direct methods
 .method static constructor <clinit>()V
     .locals 10
+    new-instance v6, Lab5;
+    const/4 v7, 0x0
+    const-string v8, "Vpn"
+    const-string v9, "vpn"
+    invoke-direct {v6, v7, v8, v9}, Lab5;-><init>(ILjava/lang/String;Ljava/lang/String;)V
+    sput-object v6, Lab5;->t:Lab5;
+    const/4 v7, 0x7
+    new-array v7, v7, [Lab5;
+    const/4 v8, 0x0
+    aput-object v6, v7, v8
+    const/4 v8, 0x1
+    aput-object v0, v7, v8
+    const/4 v8, 0x2
+    aput-object v1, v7, v8
+    const/4 v8, 0x3
+    aput-object v2, v7, v8
+    const/4 v8, 0x4
+    aput-object v3, v7, v8
+    const/4 v8, 0x5
+    aput-object v4, v7, v8
+    const/4 v8, 0x6
+    aput-object v5, v7, v8
+    move-object v0, v7
 
     .line 1
     new-instance v0, Lab5;
@@ -177,29 +200,7 @@
 
     .line 72
     .line 73
-    new-instance v6, Lab5;
-    const/4 v7, 0x0
-    const-string v8, "Vpn"
-    const-string v9, "vpn"
-    invoke-direct {v6, v7, v8, v9}, Lab5;-><init>(ILjava/lang/String;Ljava/lang/String;)V
-    sput-object v6, Lab5;->t:Lab5;
-    const/4 v7, 0x7
-    new-array v7, v7, [Lab5;
-    const/4 v8, 0x0
-    aput-object v6, v7, v8
-    const/4 v8, 0x1
-    aput-object v0, v7, v8
-    const/4 v8, 0x2
-    aput-object v1, v7, v8
-    const/4 v8, 0x3
-    aput-object v2, v7, v8
-    const/4 v8, 0x4
-    aput-object v3, v7, v8
-    const/4 v8, 0x5
-    aput-object v4, v7, v8
-    const/4 v8, 0x6
-    aput-object v5, v7, v8
-    move-object v0, v7
+    filled-new-array/range {v0 .. v5}, [Lab5;
 
     .line 74
     .line 75

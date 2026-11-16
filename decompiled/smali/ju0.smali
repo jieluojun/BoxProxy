@@ -2058,6 +2058,7 @@
 
 .method public final invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 23
+    const-string v5, "\n            # Match the root service's executable path (emulated storage may be noexec).\n            case \"$core_path\" in\n                /storage/emulated/*)\n                    _real_core=\"/data/media/${core_path#/storage/emulated/}\"\n                    if [ -f \"$_real_core\" ]; then\n                        chmod 755 \"$_real_core\" >/dev/null 2>&1\n                        [ -x \"$_real_core\" ] && core_path=\"$_real_core\"\n                    fi\n                    ;;\n            esac\n            core_version=\"\"\n            _version_dynamic=0\n            case \"${core_path##*/}\" in\n                sing-box|sing-box_*|sing-box-*|xray|v2fly|hysteria) _version_dynamic=1;;\n            esac\n            # Read the version live on every open; no version-result cache.\n            if [ -x \"$core_path\" ]; then\n                # Try the executable first. Static/working cores need no linker scan.\n                _bp_read_version(){\n                    if _version_output=\"$(\"$core_path\" \"$1\" 2>/dev/null </dev/null)\"; then\n                        core_version=\"$(printf '%s\\n' \"$_version_output\" | head -n 1)\"\n                        [ -n \"$core_version\" ]\n                    else\n                        return 1\n                    fi\n                }\n                case \"${core_path##*/}\" in\n                    sing-box|sing-box_*|sing-box-*|xray|hysteria) _version_args='version --version -v';;\n                    v2fly) _version_args='-version version --version -v';;\n                    *) _version_args='--version -v version';;\n                esac\n                _version_resolved=0\n                for _arg in $_version_args; do\n                    _bp_read_version \"$_arg\" && break\n                    if [ \"$_version_dynamic\" = 1 ] && [ \"$_version_resolved\" = 0 ]; then\n                        _version_resolved=1\n                        # Only the active binary, not every installed dynamic core.\n                        _lp=\"$(bpld \"$(dirname \"$core_path\")\" \"$_bp_seed\" \"${core_path##*/}\")\"\n                        [ -n \"$_lp\" ] && export LD_LIBRARY_PATH=\"$_lp${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}\"\n                        _bp_read_version \"$_arg\" && break\n                    fi\n                done\n            fi\n            echo \"$core_version\"\n            echo '\n---SEP---\n'\n            echo "
 
     .line 1
     move-object/from16 v0, p0
@@ -3022,6 +3023,8 @@
     .line 442
     .line 443
     .line 444
+    move-result-object v1
+    invoke-static {v1}, Lcom/box/app/cfg/LdFix;->wrapProbe(Ljava/lang/String;)Ljava/lang/String;
     move-result-object v1
 
     .line 445
@@ -4589,7 +4592,8 @@
     check-cast v3, Ljava/lang/String;
 
     .line 1175
-    const-string v5, "\n            # Match the root service's executable path (emulated storage may be noexec).\n            case \"$core_path\" in\n                /storage/emulated/*)\n                    _real_core=\"/data/media/${core_path#/storage/emulated/}\"\n                    if [ -f \"$_real_core\" ]; then\n                        chmod 755 \"$_real_core\" >/dev/null 2>&1\n                        [ -x \"$_real_core\" ] && core_path=\"$_real_core\"\n                    fi\n                    ;;\n            esac\n            core_version=\"\"\n            _version_dynamic=0\n            case \"${core_path##*/}\" in\n                sing-box|sing-box_*|sing-box-*|xray|v2fly|hysteria) _version_dynamic=1;;\n            esac\n            # Read the version live on every open; no version-result cache.\n            if [ -x \"$core_path\" ]; then\n                # Try the executable first. Static/working cores need no linker scan.\n                _bp_read_version(){\n                    if _version_output=\"$(\"$core_path\" \"$1\" 2>/dev/null </dev/null)\"; then\n                        core_version=\"$(printf '%s\\n' \"$_version_output\" | head -n 1)\"\n                        [ -n \"$core_version\" ]\n                    else\n                        return 1\n                    fi\n                }\n                case \"${core_path##*/}\" in\n                    sing-box|sing-box_*|sing-box-*|xray|hysteria) _version_args='version --version -v';;\n                    v2fly) _version_args='-version version --version -v';;\n                    *) _version_args='--version -v version';;\n                esac\n                _version_resolved=0\n                for _arg in $_version_args; do\n                    _bp_read_version \"$_arg\" && break\n                    if [ \"$_version_dynamic\" = 1 ] && [ \"$_version_resolved\" = 0 ]; then\n                        _version_resolved=1\n                        # Only the active binary, not every installed dynamic core.\n                        _lp=\"$(bpld \"$(dirname \"$core_path\")\" \"$_bp_seed\" \"${core_path##*/}\")\"\n                        [ -n \"$_lp\" ] && export LD_LIBRARY_PATH=\"$_lp${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}\"\n                        _bp_read_version \"$_arg\" && break\n                    fi\n                done\n            fi\n            echo \"$core_version\"\n            echo '\n---SEP---\n'\n            echo "
+    .line 1176
+    invoke-static/range {p1 .. p1}, Lbe3;->R(Ljava/lang/Object;)V
 
     .line 1177
     .line 1178
@@ -4646,8 +4650,6 @@
 
     .line 1203
     .line 1204
-    move-result-object v1
-    invoke-static {v1}, Lcom/box/app/cfg/LdFix;->wrapProbe(Ljava/lang/String;)Ljava/lang/String;
     .line 1205
     move-result-object v1
 

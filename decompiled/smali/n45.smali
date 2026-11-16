@@ -123,6 +123,13 @@
     move-result v2
 
     .line 19
+    invoke-static {v11}, Lcom/box/app/vpn/VpnBridge;->modeRes(Lab5;)I
+    move-result v14
+    if-eqz v14, :lbl_0
+    const v11, -0x1c301169
+    const/4 v15, 0x0
+    goto :lbl_23
+    :lbl_0
     invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
 
     .line 20
@@ -142,21 +149,21 @@
     const/4 v5, 0x0
 
     .line 28
-    if-eq v1, v3, :lbl_0
+    if-eq v1, v3, :lbl_1
 
     .line 29
     .line 30
     move v1, v4
 
     .line 31
-    goto :lbl_1
+    goto :lbl_2
 
     .line 32
-    :lbl_0
+    :lbl_1
     move v1, v5
 
     .line 33
-    :lbl_1
+    :lbl_2
     and-int/2addr v2, v4
 
     .line 34
@@ -228,7 +235,7 @@
     move-result-object v6
 
     .line 70
-    :lbl_2
+    :lbl_3
     invoke-interface {v6}, Ljava/util/Iterator;->hasNext()Z
 
     .line 71
@@ -246,7 +253,7 @@
     const/4 v11, 0x2
 
     .line 77
-    if-eqz v7, :lbl_10
+    if-eqz v7, :lbl_11
 
     .line 78
     .line 79
@@ -275,23 +282,23 @@
     move-result v7
 
     .line 92
-    if-eqz v7, :lbl_8
+    if-eqz v7, :lbl_9
 
     .line 93
     .line 94
-    if-eq v7, v4, :lbl_7
+    if-eq v7, v4, :lbl_8
 
     .line 95
     .line 96
-    if-eq v7, v11, :lbl_6
+    if-eq v7, v11, :lbl_7
 
     .line 97
     .line 98
-    if-eq v7, v9, :lbl_5
+    if-eq v7, v9, :lbl_6
 
     .line 99
     .line 100
-    if-ne v7, v15, :lbl_4
+    if-ne v7, v15, :lbl_5
 
     .line 101
     .line 102
@@ -305,7 +312,7 @@
     .line 106
     .line 107
     .line 108
-    :lbl_3
+    :lbl_4
     invoke-static {v8, v7, v9, v8, v5}, Lrf6;->m(Lt82;IILt82;Z)Ljava/lang/String;
 
     .line 109
@@ -314,10 +321,10 @@
     move-result-object v7
 
     .line 112
-    goto :lbl_9
+    goto :lbl_10
 
     .line 113
-    :lbl_4
+    :lbl_5
     const v0, -0x4982586a
 
     .line 114
@@ -334,7 +341,7 @@
     throw v0
 
     .line 121
-    :lbl_5
+    :lbl_6
     const v7, -0x49823a14
 
     .line 122
@@ -345,10 +352,10 @@
     .line 125
     .line 126
     .line 127
-    goto :lbl_3
+    goto :lbl_4
 
     .line 128
-    :lbl_6
+    :lbl_7
     const v7, -0x49824295
 
     .line 129
@@ -359,10 +366,10 @@
     .line 132
     .line 133
     .line 134
-    goto :lbl_3
+    goto :lbl_4
 
     .line 135
-    :lbl_7
+    :lbl_8
     const v7, -0x49824b71
 
     .line 136
@@ -373,10 +380,10 @@
     .line 139
     .line 140
     .line 141
-    goto :lbl_3
+    goto :lbl_4
 
     .line 142
-    :lbl_8
+    :lbl_9
     const v7, -0x49825473
 
     .line 143
@@ -387,19 +394,19 @@
     .line 146
     .line 147
     .line 148
-    goto :lbl_3
+    goto :lbl_4
 
     .line 149
-    :lbl_9
+    :lbl_10
     invoke-virtual {v2, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 150
     .line 151
     .line 152
-    goto :lbl_2
+    goto :lbl_3
 
     .line 153
-    :lbl_10
+    :lbl_11
     invoke-virtual {v8, v5}, Lt82;->r(Z)V
 
     .line 154
@@ -417,14 +424,14 @@
     move-result v6
 
     .line 162
-    if-gez v6, :lbl_11
+    if-gez v6, :lbl_12
 
     .line 163
     .line 164
     move v6, v5
 
     .line 165
-    :lbl_11
+    :lbl_12
     invoke-virtual {v8, v10}, Lt82;->i(Ljava/lang/Object;)Z
 
     .line 166
@@ -491,11 +498,11 @@
 
     .line 196
     .line 197
-    if-nez v7, :lbl_12
+    if-nez v7, :lbl_13
 
     .line 198
     .line 199
-    if-eq v3, v5, :lbl_12
+    if-eq v3, v5, :lbl_13
 
     .line 200
     .line 201
@@ -506,10 +513,10 @@
 
     .line 203
     .line 204
-    goto :lbl_13
+    goto :lbl_14
 
     .line 205
-    :lbl_12
+    :lbl_13
     new-instance v9, Lo45;
 
     .line 206
@@ -531,7 +538,7 @@
     .line 214
     .line 215
     .line 216
-    :lbl_13
+    :lbl_14
     check-cast v9, Lp72;
 
     .line 217
@@ -697,7 +704,7 @@
     move-result-object v5
 
     .line 295
-    :lbl_14
+    :lbl_15
     invoke-interface {v5}, Ljava/util/Iterator;->hasNext()Z
 
     .line 296
@@ -749,13 +756,6 @@
     const/4 v13, 0x2
 
     .line 320
-    invoke-static {v11}, Lcom/box/app/vpn/VpnBridge;->modeRes(Lab5;)I
-    move-result v14
-    if-eqz v14, :lbl_15
-    const v11, -0x1c301169
-    const/4 v15, 0x0
-    goto :lbl_23
-    :lbl_15
     if-eq v6, v13, :lbl_20
 
     .line 321
@@ -917,7 +917,7 @@
     .line 393
     .line 394
     .line 395
-    goto :lbl_14
+    goto :lbl_15
 
     .line 396
     :lbl_24

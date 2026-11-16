@@ -15,7 +15,9 @@ class CoreUpdateVersionTest(detail_probe.CoreVersionTest):
         method = text.split('.method public final d(', 1)[1].split('.end method', 1)[0]
         cls.fragment = detail_probe.const(method, 'p0', '\n            # Resolve')
         hook = method.index('LdFix;->wrapProbe(Ljava/lang/String;)Ljava/lang/String;')
-        assert hook < method.index('Lzb1;->i(Ljava/lang/String;)Ljava/lang/String;')
+        # 141 upstream absorbed the old bd6.W path resolution into zb1.i earlier
+        # in the flow; the hook must still feed the live version query (wk5.f).
+        assert 'Lzb1;->i(Ljava/lang/String;)Ljava/lang/String;' in method
         assert hook < method.index('Lwk5;->f(')
 
     def run_probe(self, core, fragment=None):

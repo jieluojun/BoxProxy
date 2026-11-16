@@ -7172,6 +7172,7 @@
     const/4 v7, 0x0
 
     .line 386
+    const/4 v7, 0x1
     invoke-interface {v6, v0, v7}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     .line 387
@@ -7722,7 +7723,6 @@
 
     .line 646
     .line 647
-    const/4 v7, 0x1
     invoke-virtual {v11}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     .line 648

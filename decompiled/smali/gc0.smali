@@ -214,6 +214,15 @@
 
 .method public static c(Ljava/lang/String;)Ljava/lang/String;
     .locals 4
+    invoke-static {v1, p0}, Lcom/box/app/vpn/BoxctlFix;->wrap(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object p0
+    invoke-static {}, Lgc0;->k()Lvb0;
+    move-result-object v0
+    iget-object v0, v0, Lvb0;->b:Ljava/io/File;
+    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    move-result-object v0
+    invoke-static {v0, p0}, Lcom/box/app/cfg/LdFix;->wrap(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    move-result-object p0
 
     .line 1
     invoke-virtual {p0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -295,15 +304,6 @@
     move-result-object p0
 
     .line 42
-    invoke-static {v1, p0}, Lcom/box/app/vpn/BoxctlFix;->wrap(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    move-result-object p0
-    invoke-static {}, Lgc0;->k()Lvb0;
-    move-result-object v0
-    iget-object v0, v0, Lvb0;->b:Ljava/io/File;
-    invoke-virtual {v0}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
-    move-result-object v0
-    invoke-static {v0, p0}, Lcom/box/app/cfg/LdFix;->wrap(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
-    move-result-object p0
     return-object p0
 .end method
 
@@ -769,6 +769,10 @@
     .line 24
     .line 25
     :lbl_2
+    const-string v0, "sing-box_dingtalk"
+    invoke-virtual {p0, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    move-result v0
+    if-nez v0, :lbl_4
     const-string v0, "singbox"
 
     .line 26
@@ -827,10 +831,6 @@
 
     .line 52
     :lbl_5
-    const-string v0, "sing-box_dingtalk"
-    invoke-virtual {p0, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-    move-result v0
-    if-nez v0, :lbl_4
     sget-object v0, Lgc0;->f:Ljava/util/List;
 
     .line 53
@@ -2960,11 +2960,13 @@
 
     .line 201
     .line 202
-    const-string v13, "\n            #!/system/bin/sh\n            (\n              export PATH=\"/data/adb/magisk:/data/adb/ksu/bin:/data/adb/ap/bin:/system/bin:/system/xbin:$PATH\"\n              export BOXCTL_STDOUT_LOG_LINE=1\n              run_dir="
+    const-string v13, "\n            #!/system/bin/sh\n            (\n              export PATH=\"/data/adb/magisk:/data/adb/ksu/bin:/data/adb/ap/bin:/system/bin:/system/xbin:$PATH\"\n              export BOXCTL_STDOUT_LOG_LINE=1\n              _ld=\"\"; for _c in /data/local/tmp/.boxproxy-ld-*; do [ -f \"$_c\" ] && _ld=\"${_ld:+$_ld:}$(sed -n 2p \"$_c\")\"; done; [ -n \"$_ld\" ] || _ld=\"/apex/com.android.tethering/lib64:/apex/com.android.i18n/lib64:/apex/com.android.art/lib64:/apex/com.android.runtime/lib64:/apex/com.android.os.statsd/lib64\"; export LD_LIBRARY_PATH=\"$_ld${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}\"\n              run_dir="
+    const-string p0, " 2>/dev/null || true\n              log -t BoxProxyBoot \'waiting for boot animation to stop\' 2>/dev/null || true\n\n              while [ \"$(getprop init.svc.bootanim 2>/dev/null)\" != \"stopped\" ]; do\n                sleep 10\n              done\n\n              log -t BoxProxyBoot \'waiting for runtime files\' 2>/dev/null || true\n              while [ ! -f \"$boxctl\" ] || [ ! -f \"$db\" ]; do\n                sleep 2\n              done\n              mkdir -p \"$run_dir\" 2>/dev/null || exit 1\n              : > \"$log_file\" 2>/dev/null || exit 1\n              boot_log "
+    const-string v1, "\n              log -t BoxProxyBoot \'runtime files are ready\' 2>/dev/null || true\n\n              _bh=; case \"$boxctl\" in /storage/emulated/*) _ba=\"/data/media/${boxctl#/storage/emulated/}\"; if [ -f \"$_ba\" ]; then chmod 755 \"$_ba\" 2>/dev/null; if [ -x \"$_ba\" ]; then _bh=\"--home ${_ba%/bin/boxctl}\"; boxctl=\"$_ba\"; fi; fi;; esac\n              \"$boxctl\" $_bh --db \"$db\" boot >> \"$log_file\" 2>&1\n              start_code=$?\n              if [ \"$start_code\" -eq 0 ]; then\n                boot_log "
 
     .line 203
     .line 204
-    const-string v13, "\n            #!/system/bin/sh\n            (\n              export PATH=\"/data/adb/magisk:/data/adb/ksu/bin:/data/adb/ap/bin:/system/bin:/system/xbin:$PATH\"\n              export BOXCTL_STDOUT_LOG_LINE=1\n              _ld=\"\"; for _c in /data/local/tmp/.boxproxy-ld-*; do [ -f \"$_c\" ] && _ld=\"${_ld:+$_ld:}$(sed -n 2p \"$_c\")\"; done; [ -n \"$_ld\" ] || _ld=\"/apex/com.android.tethering/lib64:/apex/com.android.i18n/lib64:/apex/com.android.art/lib64:/apex/com.android.runtime/lib64:/apex/com.android.os.statsd/lib64\"; export LD_LIBRARY_PATH=\"$_ld${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}\"\n              run_dir="
+    invoke-static {v13, v1, v11, p1, v12}, Lrf6;->v(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     .line 205
     .line 206
@@ -2989,8 +2991,7 @@
 
     .line 216
     .line 217
-    const-string p0, " 2>/dev/null || true\n              log -t BoxProxyBoot \'waiting for boot animation to stop\' 2>/dev/null || true\n\n              while [ \"$(getprop init.svc.bootanim 2>/dev/null)\" != \"stopped\" ]; do\n                sleep 10\n              done\n\n              log -t BoxProxyBoot \'waiting for runtime files\' 2>/dev/null || true\n              while [ ! -f \"$boxctl\" ] || [ ! -f \"$db\" ]; do\n                sleep 2\n              done\n              mkdir -p \"$run_dir\" 2>/dev/null || exit 1\n              : > \"$log_file\" 2>/dev/null || exit 1\n              boot_log "
-    const-string v1, "\n              log -t BoxProxyBoot \'runtime files are ready\' 2>/dev/null || true\n\n              _bh=; case \"$boxctl\" in /storage/emulated/*) _ba=\"/data/media/${boxctl#/storage/emulated/}\"; if [ -f \"$_ba\" ]; then chmod 755 \"$_ba\" 2>/dev/null; if [ -x \"$_ba\" ]; then _bh=\"--home ${_ba%/bin/boxctl}\"; boxctl=\"$_ba\"; fi; fi;; esac\n              \"$boxctl\" $_bh --db \"$db\" boot >> \"$log_file\" 2>&1\n              start_code=$?\n              if [ \"$start_code\" -eq 0 ]; then\n                boot_log "
+    const-string v1, "\n              log -t BoxProxyBoot \'runtime files are ready\' 2>/dev/null || true\n\n              \"$boxctl\" --db \"$db\" boot >> \"$log_file\" 2>&1\n              start_code=$?\n              if [ \"$start_code\" -eq 0 ]; then\n                boot_log "
 
     .line 218
     .line 219
@@ -5171,8 +5172,6 @@
 
 .method public final u(Lq91;)Ljava/lang/Object;
     .locals 10
-
-    .line 1
     invoke-static {}, Lcom/box/app/vpn/VpnBridge;->isVpnMode()Z
     move-result v0
     if-eqz v0, :lbl_0
@@ -5183,6 +5182,8 @@
     invoke-direct {p0, v0, p1, v1}, Lub0;-><init>(ILjava/lang/Object;Ljava/lang/String;)V
     return-object p0
     :lbl_0
+
+    .line 1
     instance-of v0, p1, Lec0;
 
     .line 2
