@@ -2322,7 +2322,6 @@
     <public type="xml" name="backup_rules" id="0x7f120000" />
     <public type="xml" name="data_extraction_rules" id="0x7f120001" />
     <public type="xml" name="locales_config" id="0x7f120002" />
-</resources>
     <public type="string" name="proxy_config_restore_default" id="0x7f0f0539" />
     <public type="string" name="proxy_config_restore_done" id="0x7f0f053a" />
     <public type="string" name="proxy_config_restore_done_bak" id="0x7f0f053b" />
@@ -2335,3 +2334,4 @@
     <public type="string" name="service_battery_unrestricted_already" id="0x7f0f0542" />
     <public type="string" name="service_battery_unrestricted_subtitle" id="0x7f0f0543" />
     <public type="string" name="service_battery_unrestricted_title" id="0x7f0f0544" />
+</resources>

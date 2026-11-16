@@ -138,8 +138,6 @@
 
     .line 49
     .line 50
-    invoke-static {p1, v0, p0}, Lcom/box/app/vpn/CoreConfigHistory;->onUpdate(Landroid/database/sqlite/SQLiteDatabase;Ltb0;Ltb0;)Ltb0;
-    move-result-object p0
     monitor-enter p1
 
     .line 51
@@ -1002,6 +1000,8 @@
 
     .line 459
     .line 460
+    invoke-static {p1, v0, p0}, Lcom/box/app/vpn/CoreConfigHistory;->onUpdate(Landroid/database/sqlite/SQLiteDatabase;Ltb0;Ltb0;)Ltb0;
+    move-result-object p0
     invoke-static {p1, p0}, Ljs;->l0(Landroid/database/sqlite/SQLiteDatabase;Ltb0;)V
 
     .line 461

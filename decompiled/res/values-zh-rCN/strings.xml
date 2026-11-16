@@ -1201,7 +1201,6 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="wifi_match_picker_location_required">请开启定位以扫描 Wi-Fi</string>
     <string name="wifi_match_picker_permission_required">需要 Wi-Fi 权限</string>
     <string name="wifi_match_ssid_hint">SSID</string>
-</resources>
     <string name="app_management_gid_summary">一行一个数字 GID</string>
     <string name="app_management_more">更多</string>
     <string name="app_management_sort_filter_title">筛选与排序</string>
@@ -1224,3 +1223,4 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="service_battery_unrestricted_title">电池优化无限制</string>
     <string name="service_battery_unrestricted_subtitle">将应用加入电池优化白名单，避免后台被系统冻结或杀掉（关闭需在系统设置页中操作）</string>
     <string name="service_battery_unrestricted_already">电池优化已关闭</string>
+</resources>

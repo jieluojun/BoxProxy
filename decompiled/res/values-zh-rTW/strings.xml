@@ -1202,7 +1202,6 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="wifi_match_picker_location_required">請開啟定位以掃描 Wi-Fi</string>
     <string name="wifi_match_picker_permission_required">需要 Wi-Fi 權限</string>
     <string name="wifi_match_ssid_hint">SSID</string>
-</resources>
     <string name="app_management_gid_summary">一行一個數字 GID</string>
     <string name="app_management_more">更多</string>
     <string name="app_management_sort_filter_title">篩選與排序</string>
@@ -1225,3 +1224,4 @@ CPU {cpu} · RAM {memory}"</string>
     <string name="service_battery_unrestricted_title">電池最佳化無限制</string>
     <string name="service_battery_unrestricted_subtitle">將應用程式加入電池最佳化白名單，避免背景被系統凍結或結束（關閉需在系統設定頁中操作）</string>
     <string name="service_battery_unrestricted_already">電池最佳化已關閉</string>
+</resources>

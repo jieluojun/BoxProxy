@@ -710,6 +710,11 @@
     .line 75
     .line 76
     .line 77
+    invoke-static/range {p1 .. p1}, Lcom/box/app/vpn/VpnBridge;->control(Ljava/lang/String;)Lyl2;
+    move-result-object v9
+    if-eqz v9, :lbl_6
+    return-object v9
+    :lbl_6
     sget-object p0, Lgc0;->a:Lgc0;
 
     .line 78
@@ -718,11 +723,6 @@
 
     .line 80
     .line 81
-    invoke-static/range {p1 .. p1}, Lcom/box/app/vpn/VpnBridge;->control(Ljava/lang/String;)Lyl2;
-    move-result-object v9
-    if-eqz v9, :lbl_6
-    return-object v9
-    :lbl_6
     long-to-int p4, p2
 
     .line 82

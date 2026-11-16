@@ -7731,7 +7731,6 @@
     move-result-object v11
 
     .line 651
-    const/4 v7, 0x0
     invoke-static {v11, v0}, Lky2;->G(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     .line 652
@@ -7891,6 +7890,7 @@
     move-result v44
 
     .line 721
+    const/4 v7, 0x0
     const-string v0, "speed_test_source"
 
     .line 722

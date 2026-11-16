@@ -299,6 +299,35 @@ def fuzzy_anchor(b_line, t_inner, after=-1):
     return bi if best >= 0.6 else None
 
 
+def fuzzy_window(b_lines, t_inner, after=-1):
+    """Disambiguating fuzzy anchor: score each T position by the mean ratio of a
+    small B context window, so identical instruction forms are told apart."""
+    if not b_lines:
+        return None
+    bnorm = [re.sub(r'\s+', ' ', x.strip()) for x in b_lines]
+    best, bi = 0.0, None
+    for j in range(len(t_inner)):
+        if j <= after:
+            continue
+        tot = 0.0
+        ok = True
+        for k, bl in enumerate(bnorm):
+            jj = j - 1 + k  # window centered so b_lines[-1] aligns with j
+            if jj < 0 or jj >= len(t_inner):
+                continue
+            r = difflib.SequenceMatcher(None, bl, re.sub(r'\s+', ' ', t_inner[jj].strip())).ratio()
+            if r < 0.35:
+                ok = False
+                break
+            tot += r
+        if ok and len(bnorm) == 1:
+            tot /= 1
+        mean = tot / max(len(bnorm), 1)
+        if mean > best:
+            best, bi = mean, j
+    return bi if best >= 0.55 else None
+
+
 def noise_only(lines):
     return all((not x.strip()) or RAW_NOISE.match(x) or LOCALS_RE.match(x)
                or x.strip().startswith('.param') or x.strip().startswith('.registers') for x in lines)
@@ -565,6 +594,16 @@ def merge_anchor(out_text, cls, sig, target, b_text, o_text, ctx):
             continue
         if tag == 'insert':
             gap = end - t_left_full - 1
+            if gap > 4 and left_b >= 0:
+                # drifted anchor: re-locate both B context lines by windowed fuzzy match
+                win = b_body[max(0, left_b - 1):left_b + 2]
+                fl = fuzzy_window(win, t_inner, after=-1)
+                fr = fuzzy_window(b_body[right_b:right_b + 2], t_inner, after=-1) if right_b <= len(b_lines) - 3 else None
+                if fl is not None and (fr is None or fr > fl):
+                    t_left = fl
+                    t_left_full = fl + 1
+                    end = (fr + 1) if fr is not None else end
+                    gap = end - t_left_full - 1
             if gap > 4:
                 flag('insertion-point-drift', f'{cls}.{sig} at B[{i1}] gap={gap}')
             new_lines = [translate_line(l, f'{cls}.{sig} insert') for l in o_body[j1:j2]]
@@ -795,8 +834,8 @@ def apply_resources():
     # public.xml
     pub141 = (T_ROOT / 'res/values/public.xml').read_text()
     entries = ''.join(f'    <public type="string" name="{n}" id="{hex(custom_ids[n])}" />\n'
-                      for n in CUSTOM_STRINGS)
-    out = pub141.rstrip('\n') + '\n' + entries
+                      for n in CUSTOM_STRINGS if n not in pub141)
+    out = pub141.replace('</resources>', entries + '</resources>')
     (OUT / 'res/values/public.xml').write_text(out)
     # strings per locale
     for locale in ('values', 'values-ru', 'values-zh-rCN', 'values-zh-rTW'):
@@ -808,7 +847,7 @@ def apply_resources():
             if m.group(1) not in up_names:
                 add.append(m.group(0))
         if add:
-            out = up.rstrip('\n') + '\n    ' + '\n    '.join(add) + '\n'
+            out = up.replace('</resources>', '    ' + '\n    '.join(add) + '\n</resources>')
             (OUT / ('res/' + locale + '/strings.xml')).write_text(out)
     # apktool.yml
     yml = (T_ROOT / 'apktool.yml').read_text()

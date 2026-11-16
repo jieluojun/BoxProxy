@@ -74,7 +74,6 @@
 .method public synthetic constructor <init>(Lqy1;Lva5;Lya5;Ljava/util/List;Ljava/lang/String;ZLh04;Ljava/util/List;Lv25;Landroid/content/Context;Ljava/lang/String;Lab5;Lh04;Ljava/util/List;Lxa5;Lh04;ZLe72;Lp72;Lbl3;Lh04;Lh04;Lh04;Ljava/lang/String;Lp72;Ljava/lang/String;Lbl3;Lh04;Lh04;Lh04;Lh04;)V
     .locals 0
 
-    invoke-static {p9}, Lcom/box/app/vpn/RestoreCfg;->vm(Lv25;)V
     .line 1
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
@@ -96,6 +95,7 @@
 
     iput-object p9, p0, Li35;->q:Lv25;
 
+    invoke-static {p9}, Lcom/box/app/vpn/RestoreCfg;->vm(Lv25;)V
     iput-object p10, p0, Li35;->r:Landroid/content/Context;
 
     iput-object p11, p0, Li35;->s:Ljava/lang/String;
