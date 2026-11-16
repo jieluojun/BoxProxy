@@ -1,0 +1,348 @@
+{
+ "added": [
+  "assets/box/mihomo/mianliu.yaml",
+  "assets/box/scripts/ipv6_disable.sh",
+  "assets/box/scripts/ipv6_restore.sh",
+  "assets/box/sing-box/mianliu.json",
+  "assets/schema/sing-box-fork-hints.json",
+  "assets/schema/sing-box-fork.json",
+  "assets/vpn/box-vpn.sh"
+ ],
+ "collisions": [],
+ "completed": [
+  {
+   "new": "Ly0;->invoke(Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "La1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lza5;->e(Lya5;)Ljava/util/ArrayList;",
+   "old": "Lb55;->e(Le55;)Ljava/util/ArrayList;"
+  },
+  {
+   "new": "Lq35;->invoke(Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lbx4;->invoke(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lp45;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lby4;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lzb3;->M(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V",
+   "old": "Lci3;->E(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V"
+  },
+  {
+   "new": "Lsl2;->a(Ls61;Lq91;)Ljava/lang/Object;",
+   "old": "Ldh2;->a(Li91;Lz81;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lqj;->a(Lrj;Z)V",
+   "old": "Ldk;->a(Lek;Z)V"
+  },
+  {
+   "new": "Lqj;->f(Lq91;)Ljava/lang/Object;",
+   "old": "Ldk;->f(Lz81;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lmu;->b(ZZZ)V",
+   "old": "Ldv;->b(ZZZ)V"
+  },
+  {
+   "new": "Ltl2;->invoke(Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Leh2;->invoke(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lqr5;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lem5;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lz40;->invoke(Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lf50;->invoke(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lab5;-><clinit>()V",
+   "old": "Lf55;-><clinit>()V"
+  },
+  {
+   "new": "Lo06;->T(Lab5;Lt82;)Ljava/lang/String;",
+   "old": "Lfh3;->K(Lf55;Lt72;)Ljava/lang/String;"
+  },
+  {
+   "new": "Ly67;->B(Landroid/content/Context;Ljava/lang/String;)V",
+   "old": "Lg17;->v(Landroid/content/Context;Ljava/lang/String;)V"
+  },
+  {
+   "new": "Lc41;->invoke(Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lgd3;->invoke(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Ley6;->c(Ljava/util/List;Ljava/util/Map;Lt82;)Ljava/util/ArrayList;",
+   "old": "Lgf3;->z(Ljava/util/List;Ljava/util/Map;Lz11;)Ljava/util/ArrayList;"
+  },
+  {
+   "new": "Lh2;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lh2;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lg96;->invoke(Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lh36;->invoke(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lag1;->onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V",
+   "old": "Lhf1;->onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V"
+  },
+  {
+   "new": "Lvh4;-><init>(Luh4;)V",
+   "old": "Lib4;-><init>(Lhb4;)V"
+  },
+  {
+   "new": "Lyj6;->invoke()Ljava/lang/Object;",
+   "old": "Lie6;->invoke()Ljava/lang/Object;"
+  },
+  {
+   "new": "Lx25;->invoke(Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Liw4;->invoke(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lgc0;->c(Ljava/lang/String;)Ljava/lang/String;",
+   "old": "Ljc0;->c(Ljava/lang/String;)Ljava/lang/String;"
+  },
+  {
+   "new": "Lgc0;->d(Lvb0;)V",
+   "old": "Ljc0;->d(Lyb0;)V"
+  },
+  {
+   "new": "Lgc0;->f(Lq91;)Ljava/lang/Object;",
+   "old": "Ljc0;->f(Lz81;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lgc0;->h(Ljava/lang/String;)Ljava/lang/String;",
+   "old": "Ljc0;->h(Ljava/lang/String;)Ljava/lang/String;"
+  },
+  {
+   "new": "Lgc0;->j(Ljava/lang/String;)Ljava/lang/String;",
+   "old": "Ljc0;->j(Ljava/lang/String;)Ljava/lang/String;"
+  },
+  {
+   "new": "Lgc0;->k()Lvb0;",
+   "old": "Ljc0;->k()Lyb0;"
+  },
+  {
+   "new": "Lgc0;->q(Ltb0;)Lub0;",
+   "old": "Ljc0;->q(Lwb0;)Lxb0;"
+  },
+  {
+   "new": "Lgc0;->r(ZLq91;)Ljava/lang/Object;",
+   "old": "Ljc0;->r(ZLz81;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lgc0;->u(Lq91;)Ljava/lang/Object;",
+   "old": "Ljc0;->u(Lz81;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lwk5;->a(Lq91;)Ljava/lang/Object;",
+   "old": "Ljf5;->a(Lz81;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lwk5;->f(JLp91;Ljava/lang/String;)Ljava/lang/Object;",
+   "old": "Ljf5;->f(JLy81;Ljava/lang/String;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lw3;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Ljx;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Ly35;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Ljx4;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lzb1;->d(Ljava/io/File;Lq91;)Ljava/lang/Object;",
+   "old": "Llb1;->d(Ljava/io/File;Lz81;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lzb1;->f(Ljava/lang/String;)Ljava/lang/String;",
+   "old": "Llb1;->f(Ljava/lang/String;)Ljava/lang/String;"
+  },
+  {
+   "new": "Lzb1;->g(Ljava/lang/String;Lq91;)Ljava/lang/Object;",
+   "old": "Llb1;->g(Ljava/lang/String;Lz81;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lzi4;->k(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Llc4;->j(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lcj3;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lme3;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Las5;->a()Z",
+   "old": "Lmm5;->a()Z"
+  },
+  {
+   "new": "Las5;->b()Z",
+   "old": "Lmm5;->b()Z"
+  },
+  {
+   "new": "Lbe3;->x(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V",
+   "old": "Lne3;->k(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V"
+  },
+  {
+   "new": "Lcm2;->a(Ljava/lang/String;JLq91;)Ljava/lang/Object;",
+   "old": "Lnh2;->a(Ljava/lang/String;JLz81;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lju0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lnu0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Li61;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lo51;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lck6;->invoke()Ljava/lang/Object;",
+   "old": "Loe6;->invoke()Ljava/lang/Object;"
+  },
+  {
+   "new": "Lyu2;->v()Lwu;",
+   "old": "Loq2;->w()Lkv;"
+  },
+  {
+   "new": "Lp1;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lp1;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lj61;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lp51;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lnb0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lqb0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Les5;->i(Z)V",
+   "old": "Lqm5;->j(Z)V"
+  },
+  {
+   "new": "Les5;->l(Ljava/lang/String;)V",
+   "old": "Lqm5;->m(Ljava/lang/String;)V"
+  },
+  {
+   "new": "Lj27;-><clinit>()V",
+   "old": "Lqw6;-><clinit>()V"
+  },
+  {
+   "new": "Lla3;->Z(Ljava/util/List;ZLl95;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)Ljava/util/List;",
+   "old": "Lru5;->K(Ljava/util/List;ZLr35;Ljava/util/Map;Ljava/util/Map;Ljava/util/Map;)Ljava/util/List;"
+  },
+  {
+   "new": "Lg45;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lrx4;->invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lm51;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Ls41;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lte;->run()V",
+   "old": "Lse;->run()V"
+  },
+  {
+   "new": "Lzb3;->L(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V",
+   "old": "Lsi3;->G(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V"
+  },
+  {
+   "new": "Lou0;->b0()V",
+   "old": "Lsu0;->b0()V"
+  },
+  {
+   "new": "Lou0;->x(IILjava/lang/CharSequence;)V",
+   "old": "Lsu0;->x(IILjava/lang/CharSequence;)V"
+  },
+  {
+   "new": "Lo51;->n()V",
+   "old": "Lu41;->n()V"
+  },
+  {
+   "new": "Li35;-><init>(Lqy1;Lva5;Lya5;Ljava/util/List;Ljava/lang/String;ZLh04;Ljava/util/List;Lv25;Landroid/content/Context;Ljava/lang/String;Lab5;Lh04;Ljava/util/List;Lxa5;Lh04;ZLe72;Lp72;Lbl3;Lh04;Lh04;Lh04;Ljava/lang/String;Lp72;Ljava/lang/String;Lbl3;Lh04;Lh04;Lh04;Lh04;)V",
+   "old": "Luw4;-><init>(Lux1;La55;Le55;Ljava/util/List;Ljava/lang/String;ZLmt3;Ljava/util/List;Lgw4;Landroid/content/Context;Ljava/lang/String;Lf55;Lmt3;Ljava/util/List;Ld55;Lmt3;ZLe62;Lp62;Log3;Lmt3;Lmt3;Lmt3;Ljava/lang/String;Lp62;Ljava/lang/String;Log3;Lmt3;Lmt3;Lmt3;Lmt3;)V"
+  },
+  {
+   "new": "Lcf7;->invoke()Ljava/lang/Object;",
+   "old": "Lv97;->invoke()Ljava/lang/Object;"
+  },
+  {
+   "new": "Ltt0;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lvt0;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lwk3;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lx71;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lyp6;->m(Landroid/content/Context;Ljava/lang/String;)V",
+   "old": "Lyk6;->p(Landroid/content/Context;Ljava/lang/String;)V"
+  },
+  {
+   "new": "Lnr;->z(Ljava/io/InputStream;Ljava/lang/String;Ljava/io/File;Ljava/lang/Long;)V",
+   "old": "Lyt;->H(Ljava/io/InputStream;Ljava/lang/String;Ljava/io/File;Ljava/lang/Long;)V"
+  },
+  {
+   "new": "Ln45;->a(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lyx4;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lwb0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lzb0;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "new": "Lls5;->invoke(Ljava/lang/Object;)Ljava/lang/Object;",
+   "old": "Lzm5;->invoke(Ljava/lang/Object;)Ljava/lang/Object;"
+  }
+ ],
+ "manual": [
+  {
+   "key": "LAppApplication;->onCreate()V",
+   "reason": "PATCH_NEEDED",
+   "resolution": "Applied method-local customization; current upstream method retained",
+   "target": "Lcom/box/app/AppApplication;->onCreate()V"
+  },
+  {
+   "key": "Lbf0;->m(ZZZLpy4;ZZZZLos4;Lp62;Lp62;Lp62;Lp62;Lp62;Lp62;Lp62;Lp62;Le62;Lz11;I)V",
+   "reason": "HOOK_SITE",
+   "resolution": "Applied hook-site patch: custom dispatch inserted at upstream call site",
+   "target": "Lp06;->m(ZZZLpy4;ZZZZLos4;Lp62;Lp62;Lp62;Lp62;Lp62;Lp62;Lp62;Lp62;Le62;Lz11;I)V"
+  },
+  {
+   "key": "Lhl;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;",
+   "reason": "NO_TARGET",
+   "resolution": "Applied method-local customization; current upstream method retained",
+   "target": "Luk;->b(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;"
+  },
+  {
+   "key": "Liw1;->p(Lz81;)Ljava/lang/Enum;",
+   "reason": "NO_TARGET",
+   "resolution": "Applied method-local customization; current upstream method retained",
+   "target": "Ld42;->p(Lz81;)Ljava/lang/Enum;"
+  },
+  {
+   "key": "Liw1;->v(Lz81;)Ljava/lang/Enum;",
+   "reason": "NO_TARGET",
+   "resolution": "Applied method-local customization; current upstream method retained",
+   "target": "Ld42;->v(Lz81;)Ljava/lang/Enum;"
+  },
+  {
+   "key": "Lzx4;-><init>(Ljava/util/List;Ljava/lang/String;Log3;Le55;Lmt3;Lmt3;Lmt3;Ljava/lang/String;Lgw4;Landroid/content/Context;Ljava/lang/String;Lp62;Ljava/lang/String;Log3;Lmt3;Lmt3;Lmt3;Lmt3;)V",
+   "reason": "UPSTREAM_CLASS_REMOVED",
+   "resolution": "Custom class retained under its original name; upstream removed it",
+   "target": "Lzx4;-><init>(Ljava/util/List;Ljava/lang/String;Log3;Le55;Lmt3;Lmt3;Lmt3;Ljava/lang/String;Lgw4;Landroid/content/Context;Ljava/lang/String;Lp62;Ljava/lang/String;Log3;Lmt3;Lmt3;Lmt3;Lmt3;)V"
+  }
+ ],
+ "manualTargets": {
+  "LAppApplication;": "Lcom/box/app/AppApplication;",
+  "Lbf0;": "Lp06;",
+  "Lhl;": "Luk;",
+  "Liw1;": "Ld42;"
+ },
+ "mappingPolicy": "Exact normalized upstream bodies only for whole-method ports; method-local edits for changed implementations. Global Toast->FToast substitution on upstream files. Resources remapped by (type,name) from public.xml; custom string ids appended from 0x7f0f0508. Class/member translation applied once to avoid double mapping.",
+ "pending": []
+}
